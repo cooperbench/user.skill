@@ -86,23 +86,23 @@ expected an object but got: array ([{"_links":{"git":"https: ...])
 tool_result
 id: toolu_01LYbaiiYUgbyT7CJTatLKp2
 ```
-/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/agents/skills/oura-daily-watch/scripts/__pycache__/oura_fetch.cpython-313.pyc
-/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/agents/skills/oura-daily-watch/scripts/oura_fetch.py
-/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/agents/skills/check-similarity/SKILL.md
-/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/agents/skills/dce/SKILL.md
-/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/agents/skills/gha-lint/SKILL.md
-/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/agents/skills/markitdown/SKILL.md
-/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/agents/skills/oura-daily-watch/SKILL.md
-/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/agents/skills/social-digest/SKILL.md
-/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/agents/skills/social-digest/scripts/fxtweet.ts
-/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/agents/skills/social-digest/scripts/social-digest.ts
-/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/agents/skills/social-digest/src/renderDaily.ts
-/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/agents/skills/social-digest/src/socialDigest.ts
-/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/agents/skills/social-digest/test/renderDaily.test.ts
-/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/agents/skills/social-digest/test/socialDigest.test.ts
-/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/agents/skills/speakerdeck/SKILL.md
-/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/agents/skills/speakerdeck/scripts/speakerdeck.ts
-/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/agents/skills/social-digest/scripts/render-daily.ts
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/agents/skills/oura-daily-watch/scripts/__pycache__/oura_fetch.cpython-313.pyc
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/agents/skills/oura-daily-watch/scripts/oura_fetch.py
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/agents/skills/check-similarity/SKILL.md
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/agents/skills/dce/SKILL.md
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/agents/skills/gha-lint/SKILL.md
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/agents/skills/markitdown/SKILL.md
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/agents/skills/oura-daily-watch/SKILL.md
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/agents/skills/social-digest/SKILL.md
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/agents/skills/social-digest/scripts/fxtweet.ts
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/agents/skills/social-digest/scripts/social-digest.ts
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/agents/skills/social-digest/src/renderDaily.ts
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/agents/skills/social-digest/src/socialDigest.ts
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/agents/skills/social-digest/test/renderDaily.test.ts
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/agents/skills/social-digest/test/socialDigest.test.ts
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/agents/skills/speakerdeck/SKILL.md
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/agents/skills/speakerdeck/scripts/speakerdeck.ts
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/agents/skills/social-digest/scripts/render-daily.ts
 ```
 
 > AGENT
@@ -301,7 +301,7 @@ tool_use Read
 id: toolu_01A4CfB6HpDeCVspzDWLakAp
 ```json
 {
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/agent-skills.nix"
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/<USER>"
 }
 ```
 
@@ -443,7 +443,7 @@ id: toolu_01MSyRsAyaHW5iwCvwgsPQiK
 
 ### パスエンコード規則
 プロジェクトディレクトリ名は、元のパスの `\`, `/`, `:` を `-` に変換。
-例: `C:\Users\shinta\Documents\GitHub\yonshogen` → `c--Users-shinta-Documents-GitHub-yonshogen`
+例: `C:\Users\<USER>\Documents\GitHub\yonshogen` → `c--Users-shinta-Documents-GitHub-yonshogen`
 
 ---
 
@@ -588,7 +588,7 @@ tool_use Read
 id: toolu_01BaDieSG2e2YFoMj8Cv7tG1
 ```json
 {
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/flake.nix"
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/flake.nix"
 }
 ```
 
@@ -664,7 +664,7 @@ id: toolu_017vUh7MPxmhXysg7Js1W4vv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/flake.nix",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/flake.nix",
   "old_string": "    obsidian-skills = {\n      url = \"github:kepano/obsidian-skills\";\n      flake = false;\n    };",
   "new_string": "    obsidian-skills = {\n      url = \"github:kepano/obsidian-skills\";\n      flake = false;\n    };\n    prompt-review-skill = {\n      url = \"github:tokoroten/prompt-review\";\n      flake = false;\n    };"
 }
@@ -675,7 +675,7 @@ id: toolu_017vUh7MPxmhXysg7Js1W4vv
 tool_result
 id: toolu_017vUh7MPxmhXysg7Js1W4vv
 ```
-The file /Users/yuta/ghq/github.com/yutakobayashidev/dotnix/flake.nix has been updated successfully.
+The file /home/<USER>/ghq/github.com/yutakobayashidev/dotnix/flake.nix has been updated successfully.
 ```
 
 > TOOL
@@ -685,7 +685,7 @@ id: toolu_01FppBijVGb26z7P43dAfhho
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/agent-skills.nix",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/<USER>",
   "old_string": "      # repiq: OSS metrics CLI skill\n      repiq = {\n        path = inputs.repiq;\n        subdir = \"skills\";\n      };",
   "new_string": "      # repiq: OSS metrics CLI skill\n      repiq = {\n        path = inputs.repiq;\n        subdir = \"skills\";\n      };\n      # prompt-review: AI対話履歴分析スキル\n      prompt-review = {\n        path = inputs.prompt-review-skill;\n        subdir = \".claude/skills\";\n      };"
 }
@@ -696,7 +696,7 @@ id: toolu_01FppBijVGb26z7P43dAfhho
 tool_result
 id: toolu_01FppBijVGb26z7P43dAfhho
 ```
-The file /Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/agent-skills.nix has been updated successfully.
+The file /home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/<USER> has been updated successfully.
 ```
 
 > AGENT
@@ -710,7 +710,7 @@ id: toolu_01UQd2gXqpdf9CGewwhLNpX2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/agent-skills.nix",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/<USER>",
   "old_string": "      # ast-grep skills\n      ast-grep = {\n        from = \"ast-grep\";\n        path = \"ast-grep\";\n      };",
   "new_string": "      # ast-grep skills\n      ast-grep = {\n        from = \"ast-grep\";\n        path = \"ast-grep\";\n      };\n      # prompt-review skills\n      prompt-review = {\n        from = \"prompt-review\";\n        path = \"prompt-review\";\n      };"
 }
@@ -721,7 +721,7 @@ id: toolu_01UQd2gXqpdf9CGewwhLNpX2
 tool_result
 id: toolu_01UQd2gXqpdf9CGewwhLNpX2
 ```
-The file /Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/agent-skills.nix has been updated successfully.
+The file /home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/<USER> has been updated successfully.
 ```
 
 > AGENT
@@ -746,7 +746,7 @@ id: toolu_01HcDf3QcSwF9AVdK5Kjhx4y
 ```
 flake.lock                        | 17 +++++++++++++++++
  flake.nix                         |  4 ++++
- nix/modules/home/agent-skills.nix | 10 ++++++++++
+ nix/modules/home/<USER> | 10 ++++++++++
  3 files changed, 31 insertions(+)
 
 --- Changes ---
@@ -790,7 +790,7 @@ flake.lock                        | 17 +++++++++++++++++
          inputs.nixpkgs.follows = "nixpkgs";
   +4 -0
 
-📄 nix/modules/home/agent-skills.nix
+📄 nix/modules/home/<USER>
   @@ -70,6 +70,11 @@
   +      # prompt-review: AI対話履歴分析スキル
   +      prompt-review = {
@@ -822,7 +822,7 @@ tool_use Read
 id: toolu_01KrkApHiR7RxdT4wvmFaaoR
 ```json
 {
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/CLAUDE.md",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/CLAUDE.md",
   "offset": 29,
   "limit": 30
 }
@@ -872,7 +872,7 @@ id: toolu_012pE2B9vY1HTSXq669SPVip
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/CLAUDE.md",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/CLAUDE.md",
   "old_string": "- `obsidian-markdown`, `obsidian-bases`, `json-canvas`, `obsidian-cli`, `defuddle` - Obsidian連携（kepano）",
   "new_string": "- `obsidian-markdown`, `obsidian-bases`, `json-canvas`, `obsidian-cli`, `defuddle` - Obsidian連携（kepano）\n- `prompt-review` - AIエージェント対話履歴の分析・プロンプティング力診断（tokoroten）"
 }
@@ -883,7 +883,7 @@ id: toolu_012pE2B9vY1HTSXq669SPVip
 tool_result
 id: toolu_012pE2B9vY1HTSXq669SPVip
 ```
-The file /Users/yuta/ghq/github.com/yutakobayashidev/dotnix/CLAUDE.md has been updated successfully.
+The file /home/<USER>/ghq/github.com/yutakobayashidev/dotnix/CLAUDE.md has been updated successfully.
 ```
 
 > AGENT
@@ -891,7 +891,7 @@ The file /Users/yuta/ghq/github.com/yutakobayashidev/dotnix/CLAUDE.md has been u
 完了しました。以下の変更を行いました：
 
 1. **`flake.nix`** — `prompt-review-skill` を flake input に追加（`github:tokoroten/prompt-review`, `flake = false`）
-2. **`nix/modules/home/agent-skills.nix`** — source に `prompt-review` を追加（subdir: `.claude/skills`）、`skills.explicit` にスキルエントリを追加
+2. **`nix/modules/home/<USER>`** — source に `prompt-review` を追加（subdir: `.claude/skills`）、`skills.explicit` にスキルエントリを追加
 3. **`CLAUDE.md`** — Agent Skillsセクションに `prompt-review` の説明を追加
 
 `nix run .#switch` で適用すると、`~/.config/claude/skills/` と `~/.agents/skills/` に `prompt-review` スキルがデプロイされます。

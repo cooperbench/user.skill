@@ -8,7 +8,7 @@ tool_use Read
 id: toolu_015HudMoW7MqQVEk93UpEceW
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/cli/cmd/entire/cli/versioncheck/versioncheck.go"
+  "file_path": "/home/<USER>/wks/cli/cli/cmd/entire/cli/versioncheck/versioncheck.go"
 }
 ```
 
@@ -71,7 +71,7 @@ id: toolu_013nV1HRY7VH697D8fexxEdS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/cli/cmd/entire/cli/versioncheck/versioncheck.go",
+  "file_path": "/home/<USER>/wks/cli/cli/cmd/entire/cli/versioncheck/versioncheck.go",
   "old_string": "\tif semver.Prerelease(current) != \"\" {\n\t\treturn false\n\t}",
   "new_string": "\t// Don't notify if current version is a prerelease (alpha, beta, rc, etc.)\n\t// Prerelease users are testing bleeding edge and shouldn't be bothered with updates\n\tif semver.Prerelease(current) != \"\" {\n\t\treturn false\n\t}"
 }
@@ -96,7 +96,7 @@ id: toolu_01WbvzwqSYqXnvoJo9FacAn2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/cli/cmd/entire/cli/versioncheck/versioncheck.go",
+  "file_path": "/home/<USER>/wks/cli/cli/cmd/entire/cli/versioncheck/versioncheck.go",
   "old_string": "\tif semver.Prerelease(current) != \"\" {\n\t\treturn false\n\t}",
   "new_string": "\t// Skip notification for prerelease versions (development builds).\n\t// We don't publish prerelease versions, so these are development builds and shouldn't trigger update notifications.\n\tif semver.Prerelease(current) != \"\" {\n\t\treturn false\n\t}"
 }
@@ -107,7 +107,7 @@ id: toolu_01WbvzwqSYqXnvoJo9FacAn2
 tool_result
 id: toolu_01WbvzwqSYqXnvoJo9FacAn2
 ```
-The file /Users/gtrrz-victor/wks/cli/cli/cmd/entire/cli/versioncheck/versioncheck.go has been updated successfully.
+The file /home/<USER>/wks/cli/cli/cmd/entire/cli/versioncheck/versioncheck.go has been updated successfully.
 ```
 
 > AGENT

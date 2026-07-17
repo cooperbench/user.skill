@@ -53,7 +53,7 @@ tool_use Read
 id: toolu_01DhPAxBGAxr9y3jWS3G5Y5z
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "offset": 150,
   "limit": 40
 }

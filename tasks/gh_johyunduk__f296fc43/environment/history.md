@@ -12,7 +12,7 @@ tool_use Bash
 id: toolu_016YwYCgrYbUfW1jTdp6gfGK
 ```json
 {
-  "command": "find /Users/johyunduk/Projects/ddong-avoid-game/src -name \"*eaderboard*\" -o -name \"*Leaderboard*\" | head -20",
+  "command": "find /home/<USER>/Projects/ddong-avoid-game/src -name \"*eaderboard*\" -o -name \"*Leaderboard*\" | head -20",
   "description": "리더보드 관련 파일 찾기"
 }
 ```
@@ -22,10 +22,10 @@ id: toolu_016YwYCgrYbUfW1jTdp6gfGK
 tool_result
 id: toolu_016YwYCgrYbUfW1jTdp6gfGK
 ```
-/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/BattleLeaderboardScene.ts
-/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts
-/Users/johyunduk/Projects/ddong-avoid-game/src/utils/leaderboard.ts
-/Users/johyunduk/Projects/ddong-avoid-game/src/utils/battleLeaderboard.ts
+/home/<USER>/Projects/ddong-avoid-game/src/scenes/BattleLeaderboardScene.ts
+/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts
+/home/<USER>/Projects/ddong-avoid-game/src/utils/leaderboard.ts
+/home/<USER>/Projects/ddong-avoid-game/src/utils/battleLeaderboard.ts
 ```
 
 > TOOL
@@ -34,7 +34,7 @@ tool_use Bash
 id: toolu_0194tmSUcTuugV3BKKZxmwoZ
 ```json
 {
-  "command": "ls /Users/johyunduk/Projects/ddong-avoid-game/supabase/functions/",
+  "command": "ls /home/<USER>/Projects/ddong-avoid-game/supabase/functions/",
   "description": "Supabase Edge Functions 목록"
 }
 ```
@@ -61,7 +61,7 @@ tool_use Read
 id: toolu_01VHWyTcELpUdoY7tYtJ47hu
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts"
 }
 ```
 
@@ -71,7 +71,7 @@ tool_use Read
 id: toolu_017UJzWJ9TS36tTTCmgxBPo5
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/utils/leaderboard.ts"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/utils/leaderboard.ts"
 }
 ```
 
@@ -191,7 +191,7 @@ tool_use Read
 id: toolu_01X9akRWLpPFDdpzQBQ3p8Va
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/supabase/functions/leaderboard-top/index.ts"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/supabase/functions/leaderboard-top/index.ts"
 }
 ```
 
@@ -249,7 +249,7 @@ id: toolu_01QkGKiuro6qmGo5KrdW9GzZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/supabase/functions/leaderboard-top/index.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/supabase/functions/leaderboard-top/index.ts",
   "old_string": "  try {\n    const { difficulty, limit: limitParam, characterType } = await req.json().catch(() => ({}));\n    const limit = parseInt(limitParam ?? '100', 10);\n\n    // 입력 검증\n    const validDifficulties = ['easy', 'normal', 'hard', 'extreme', 'physical'];\n    if (!difficulty || !validDifficulties.includes(difficulty)) {\n      return new Response(\n        JSON.stringify({ error: 'Invalid difficulty' }),\n        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }\n      );\n    }\n\n    const safeLimit = Math.min(Math.max(1, limit), 100);",
   "new_string": "  try {\n    const { difficulty, limit: limitParam, characterType, yearMonth: requestedYM } = await req.json().catch(() => ({}));\n    const limit = parseInt(limitParam ?? '100', 10);\n\n    // 입력 검증\n    const validDifficulties = ['easy', 'normal', 'hard', 'extreme', 'physical'];\n    if (!difficulty || !validDifficulties.includes(difficulty)) {\n      return new Response(\n        JSON.stringify({ error: 'Invalid difficulty' }),\n        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }\n      );\n    }\n\n    const safeLimit = Math.min(Math.max(1, limit), 100);\n\n    // 요청된 월이 있으면 사용 (과거 시즌 조회), 없으면 현재 월\n    const currentYM = getCurrentYearMonth();\n    const EARLIEST_YM = '2026-01';\n    let yearMonth = currentYM;\n    if (requestedYM && /^\\d{4}-\\d{2}$/.test(requestedYM)\n        && requestedYM >= EARLIEST_YM && requestedYM <= currentYM) {\n      yearMonth = requestedYM;\n    }\n    const isCurrentSeason = yearMonth === currentYM;"
 }
@@ -260,7 +260,7 @@ id: toolu_01QkGKiuro6qmGo5KrdW9GzZ
 tool_result
 id: toolu_01QkGKiuro6qmGo5KrdW9GzZ
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/supabase/functions/leaderboard-top/index.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/supabase/functions/leaderboard-top/index.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -270,7 +270,7 @@ id: toolu_01NiiRs4yB8PKKCUFLptA3ku
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/supabase/functions/leaderboard-top/index.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/supabase/functions/leaderboard-top/index.ts",
   "old_string": "    const yearMonth = getCurrentYearMonth();\n    const prevYearMonth = getPrevYearMonth(yearMonth);",
   "new_string": "    const prevYearMonth = getPrevYearMonth(yearMonth);"
 }
@@ -281,7 +281,7 @@ id: toolu_01NiiRs4yB8PKKCUFLptA3ku
 tool_result
 id: toolu_01NiiRs4yB8PKKCUFLptA3ku
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/supabase/functions/leaderboard-top/index.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/supabase/functions/leaderboard-top/index.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -295,7 +295,7 @@ id: toolu_01Wg9jLzQCaNCRTFs5rWN1Sb
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/supabase/functions/leaderboard-top/index.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/supabase/functions/leaderboard-top/index.ts",
   "old_string": "      let charPrevSeasonReward: {\n        yearMonth: string; rank: number | null; skorAwarded: number; alreadyClaimed: boolean;\n      } | null = null;\n\n      if (currentUserId) {",
   "new_string": "      let charPrevSeasonReward: {\n        yearMonth: string; rank: number | null; skorAwarded: number; alreadyClaimed: boolean;\n      } | null = null;\n\n      if (currentUserId && isCurrentSeason) {"
 }
@@ -306,7 +306,7 @@ id: toolu_01Wg9jLzQCaNCRTFs5rWN1Sb
 tool_result
 id: toolu_01Wg9jLzQCaNCRTFs5rWN1Sb
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/supabase/functions/leaderboard-top/index.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/supabase/functions/leaderboard-top/index.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -316,7 +316,7 @@ id: toolu_011hUL8HS5cQ9Kh6vfLYMbEg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/supabase/functions/leaderboard-top/index.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/supabase/functions/leaderboard-top/index.ts",
   "old_string": "    if (currentUserId && difficulty !== 'easy') {",
   "new_string": "    if (currentUserId && difficulty !== 'easy' && isCurrentSeason) {"
 }
@@ -327,7 +327,7 @@ id: toolu_011hUL8HS5cQ9Kh6vfLYMbEg
 tool_result
 id: toolu_011hUL8HS5cQ9Kh6vfLYMbEg
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/supabase/functions/leaderboard-top/index.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/supabase/functions/leaderboard-top/index.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -341,7 +341,7 @@ id: toolu_015ifpo1hCo35wFjPwfv2qWj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/utils/leaderboard.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/utils/leaderboard.ts",
   "old_string": "export async function getLeaderboard(\n  difficulty: Difficulty,\n  limit: number = 100,\n  characterType?: string\n): Promise<LeaderboardResponse> {\n  const cacheKey = `${difficulty}:${limit}:${characterType ?? ''}`;\n  const cached = _lbCache.get(cacheKey);\n  if (cached && Date.now() - cached.ts < _LB_TTL) {\n    return cached.data;\n  }\n\n  const body: Record<string, unknown> = { difficulty, limit };\n  if (characterType) body.characterType = characterType;",
   "new_string": "export async function getLeaderboard(\n  difficulty: Difficulty,\n  limit: number = 100,\n  characterType?: string,\n  yearMonth?: string\n): Promise<LeaderboardResponse> {\n  const cacheKey = `${difficulty}:${limit}:${characterType ?? ''}:${yearMonth ?? ''}`;\n  const cached = _lbCache.get(cacheKey);\n  if (cached && Date.now() - cached.ts < _LB_TTL) {\n    return cached.data;\n  }\n\n  const body: Record<string, unknown> = { difficulty, limit };\n  if (characterType) body.characterType = characterType;\n  if (yearMonth) body.yearMonth = yearMonth;"
 }
@@ -352,7 +352,7 @@ id: toolu_015ifpo1hCo35wFjPwfv2qWj
 tool_result
 id: toolu_015ifpo1hCo35wFjPwfv2qWj
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/utils/leaderboard.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/utils/leaderboard.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -366,7 +366,7 @@ id: toolu_01F6UFbbT49xPLhycUucGcob
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "old_string": "  // 시즌 UI 요소\n  private seasonText?: Phaser.GameObjects.Text;\n  private prevSeasonReward: PrevSeasonReward | null = null;",
   "new_string": "  // 시즌 UI 요소\n  private seasonText?: Phaser.GameObjects.Text;\n  private prevSeasonReward: PrevSeasonReward | null = null;\n  private viewingYearMonth: string | null = null; // null = 현재 시즌\n  private leftArrowBtn?: Phaser.GameObjects.Text;\n  private rightArrowBtn?: Phaser.GameObjects.Text;"
 }
@@ -377,7 +377,7 @@ id: toolu_01F6UFbbT49xPLhycUucGcob
 tool_result
 id: toolu_01F6UFbbT49xPLhycUucGcob
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -387,7 +387,7 @@ id: toolu_01N39FnFJVmXEXBrg5GJRPVw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "old_string": "  init() {\n    const last = localStorage.getItem('lastPlayedDifficulty') as Difficulty | null;\n    if (last) {\n      this.selectedDifficulty = last;\n    }\n  }",
   "new_string": "  init() {\n    const last = localStorage.getItem('lastPlayedDifficulty') as Difficulty | null;\n    if (last) {\n      this.selectedDifficulty = last;\n    }\n    this.viewingYearMonth = null;\n  }"
 }
@@ -398,7 +398,7 @@ id: toolu_01N39FnFJVmXEXBrg5GJRPVw
 tool_result
 id: toolu_01N39FnFJVmXEXBrg5GJRPVw
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -412,7 +412,7 @@ id: toolu_01N5eNREn2z3j7WYVxv6gpYm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "old_string": "    // 시즌 월 표시 (데이터 로드 후 갱신)\n    this.seasonText = this.add.text(cx, 70 + yOff, '', {\n      fontSize: '13px',\n      color: '#aaddff',\n      stroke: '#000',\n      strokeThickness: 3,\n    }).setOrigin(0.5);",
   "new_string": "    // 시즌 탐색 UI (◀ 시즌텍스트 ▶)\n    const arrowStyle = {\n      fontSize: '18px',\n      color: '#aaddff',\n      stroke: '#000',\n      strokeThickness: 3,\n    };\n    this.leftArrowBtn = this.add.text(cx - 145, 70 + yOff, '◀', arrowStyle)\n      .setOrigin(0.5).setInteractive({ useHandCursor: true });\n    this.leftArrowBtn.on('pointerdown', () => this.navigateSeason(-1));\n\n    this.seasonText = this.add.text(cx, 70 + yOff, '', {\n      fontSize: '13px',\n      color: '#aaddff',\n      stroke: '#000',\n      strokeThickness: 3,\n    }).setOrigin(0.5);\n\n    this.rightArrowBtn = this.add.text(cx + 145, 70 + yOff, '▶', arrowStyle)\n      .setOrigin(0.5).setInteractive({ useHandCursor: true });\n    this.rightArrowBtn.on('pointerdown', () => this.navigateSeason(1));"
 }
@@ -423,7 +423,7 @@ id: toolu_01N5eNREn2z3j7WYVxv6gpYm
 tool_result
 id: toolu_01N5eNREn2z3j7WYVxv6gpYm
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -437,7 +437,7 @@ id: toolu_01K3J5Q3c5Mxd7drPndgdKLA
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "old_string": "      const response = await getLeaderboard(\n        this.selectedDifficulty,\n        10,\n        this.selectedCharFilter ?? undefined\n      );\n\n      if (requestId !== this.currentRequestId) return;\n\n      this.leaderboardData = response.leaderboard;\n\n      // 시즌 텍스트 갱신\n      if (this.seasonText && response.yearMonth) {\n        const [y, m] = response.yearMonth.split('-');\n        const daysLeft = this.calcDaysUntilMonthEnd();\n        this.seasonText.setText(`${y}년 ${parseInt(m)}월 시즌  |  시즌 종료까지 D-${daysLeft}`);\n      }",
   "new_string": "      const response = await getLeaderboard(\n        this.selectedDifficulty,\n        10,\n        this.selectedCharFilter ?? undefined,\n        this.viewingYearMonth ?? undefined\n      );\n\n      if (requestId !== this.currentRequestId) return;\n\n      this.leaderboardData = response.leaderboard;\n\n      // 시즌 텍스트 갱신\n      if (this.seasonText && response.yearMonth) {\n        const [y, m] = response.yearMonth.split('-');\n        const isCurrentSeason = this.viewingYearMonth === null;\n        if (isCurrentSeason) {\n          const daysLeft = this.calcDaysUntilMonthEnd();\n          this.seasonText.setText(`${y}년 ${parseInt(m)}월 시즌  |  시즌 종료까지 D-${daysLeft}`);\n        } else {\n          this.seasonText.setText(`${y}년 ${parseInt(m)}월 시즌  |  종료된 시즌`);\n        }\n      }\n\n      // 화살표 활성/비활성 업데이트\n      this.updateArrowStates();"
 }
@@ -448,7 +448,7 @@ id: toolu_01K3J5Q3c5Mxd7drPndgdKLA
 tool_result
 id: toolu_01K3J5Q3c5Mxd7drPndgdKLA
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -462,7 +462,7 @@ id: toolu_01TS6dkok38cyrxEdp1apga8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "old_string": "  /** 보상수령 버튼 상태 갱신 */\n  private updateRewardUI() {\n    if (!this.rewardBtnBg || !this.rewardBtnLabel) return;\n\n    const btn = this.rewardBtnBg;\n    const label = this.rewardBtnLabel;\n\n    const reward = this.prevSeasonReward;",
   "new_string": "  /** 보상수령 버튼 상태 갱신 */\n  private updateRewardUI() {\n    if (!this.rewardBtnBg || !this.rewardBtnLabel) return;\n\n    const btn = this.rewardBtnBg;\n    const label = this.rewardBtnLabel;\n\n    // 과거 시즌 조회 중이면 보상 버튼 비활성\n    if (this.viewingYearMonth !== null) {\n      btn.removeAllListeners();\n      btn.disableInteractive();\n      btn.setFillStyle(0x333333).setStrokeStyle(3, 0x222222);\n      label.setText('현재 시즌만').setColor('#555555');\n      return;\n    }\n\n    const reward = this.prevSeasonReward;"
 }
@@ -473,7 +473,7 @@ id: toolu_01TS6dkok38cyrxEdp1apga8
 tool_result
 id: toolu_01TS6dkok38cyrxEdp1apga8
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -487,7 +487,7 @@ id: toolu_016nVYMgNHX9f38S9deKiQoF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "old_string": "  /** 이번 달 말일까지 남은 일수 */\n  private calcDaysUntilMonthEnd(): number {",
   "new_string": "  /** 클라이언트 기준 현재 'YYYY-MM' */\n  private getClientCurrentYM(): string {\n    const now = new Date();\n    const y = now.getUTCFullYear();\n    const m = String(now.getUTCMonth() + 1).padStart(2, '0');\n    return `${y}-${m}`;\n  }\n\n  /** 시즌 탐색 (delta: -1 = 이전달, +1 = 다음달) */\n  private navigateSeason(delta: number) {\n    const currentYM = this.getClientCurrentYM();\n    const viewingYM = this.viewingYearMonth ?? currentYM;\n    const [y, m] = viewingYM.split('-').map(Number) as [number, number];\n    const date = new Date(Date.UTC(y, m - 1 + delta, 1));\n    const newYM = `${date.getUTCFullYear()}-${String(date.getUTCMonth() + 1).padStart(2, '0')}`;\n\n    if (newYM < '2026-01' || newYM > currentYM) return;\n\n    this.viewingYearMonth = newYM === currentYM ? null : newYM;\n\n    // 난이도 전환 시와 동일하게 캐릭터 필터 유지하고 리로드\n    this.selectedCharFilter = null;\n    this.charFilterObjects.forEach(o => o.destroy());\n    this.charFilterObjects = [];\n\n    this.loadLeaderboard();\n  }\n\n  /** 화살표 버튼 활성/비활성 색상 갱신 */\n  private updateArrowStates() {\n    const currentYM = this.getClientCurrentYM();\n    const viewingYM = this.viewingYearMonth ?? currentYM;\n\n    if (this.leftArrowBtn) {\n      const canGoBack = viewingYM > '2026-01';\n      this.leftArrowBtn.setColor(canGoBack ? '#aaddff' : '#444455');\n    }\n    if (this.rightArrowBtn) {\n      const canGoForward = viewingYM < currentYM;\n      this.rightArrowBtn.setColor(canGoForward ? '#aaddff' : '#444455');\n    }\n  }\n\n  /** 이번 달 말일까지 남은 일수 […]
 
@@ -496,7 +496,7 @@ id: toolu_016nVYMgNHX9f38S9deKiQoF
 tool_result
 id: toolu_016nVYMgNHX9f38S9deKiQoF
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -532,7 +532,7 @@ tool_use Read
 id: toolu_01AuojSGeESXRvyEUxQ16AFq
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/supabase/functions/leaderboard-top/index.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/supabase/functions/leaderboard-top/index.ts",
   "limit": 80
 }
 ```
@@ -646,7 +646,7 @@ tool_use Read
 id: toolu_01PBQzirXQX6Eks6qs2v1BNU
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "limit": 130,
   "offset": 86
 }
@@ -710,7 +710,7 @@ tool_use Read
 id: toolu_018SRYFiBBddYfvfvkP3vhvs
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "limit": 60,
   "offset": 670
 }
@@ -777,7 +777,7 @@ id: toolu_016rDnt54pqj8our4LfbJVDU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "old_string": "      // 시즌 텍스트 갱신\n      if (this.seasonText && response.yearMonth) {\n        const [y, m] = response.yearMonth.split('-');\n        const isCurrentSeason = this.viewingYearMonth === null;\n        if (isCurrentSeason) {\n          const daysLeft = this.calcDaysUntilMonthEnd();\n          this.seasonText.setText(`${y}년 ${parseInt(m)}월 시즌  |  시즌 종료까지 D-${daysLeft}`);\n        } else {\n          this.seasonText.setText(`${y}년 ${parseInt(m)}월 시즌  |  종료된 시즌`);\n        }\n      }\n\n      // 화살표 활성/비활성 업데이트\n      this.updateArrowStates();",
   "new_string": "      // 시즌 텍스트 갱신 — viewingYearMonth 우선 (response는 항상 현재 달 반환)\n      if (this.seasonText) {\n        const displayYM = this.viewingYearMonth ?? response.yearMonth;\n        if (displayYM) {\n          const [y, m] = displayYM.split('-');\n          const isCurrentSeason = this.viewingYearMonth === null;\n          if (isCurrentSeason) {\n            const daysLeft = this.calcDaysUntilMonthEnd();\n            this.seasonText.setText(`${y}년 ${parseInt(m)}월 시즌  |  시즌 종료까지 D-${daysLeft}`);\n          } else {\n            this.seasonText.setText(`${y}년 ${parseInt(m)}월 시즌  |  종료된 시즌`);\n          }\n        }\n      }\n\n      // 화살표 활성/비활성 업데이트\n      this.updateArrowStates();"
 }
@@ -788,7 +788,7 @@ id: toolu_016rDnt54pqj8our4LfbJVDU
 tool_result
 id: toolu_016rDnt54pqj8our4LfbJVDU
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -802,7 +802,7 @@ id: toolu_01SmghFuSdE5uTeJuxHnAzq6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "old_string": "    // 시즌 탐색 UI (◀ 시즌텍스트 ▶)\n    const arrowStyle = {\n      fontSize: '18px',\n      color: '#aaddff',\n      stroke: '#000',\n      strokeThickness: 3,\n    };\n    this.leftArrowBtn = this.add.text(cx - 145, 70 + yOff, '◀', arrowStyle)\n      .setOrigin(0.5).setInteractive({ useHandCursor: true });\n    this.leftArrowBtn.on('pointerdown', () => this.navigateSeason(-1));\n\n    this.seasonText = this.add.text(cx, 70 + yOff, '', {\n      fontSize: '13px',\n      color: '#aaddff',\n      stroke: '#000',\n      strokeThickness: 3,\n    }).setOrigin(0.5);\n\n    this.rightArrowBtn = this.add.text(cx + 145, 70 + yOff, '▶', arrowStyle)\n      .setOrigin(0.5).setInteractive({ useHandCursor: true });\n    this.rightArrowBtn.on('pointerdown', () => this.navigateSeason(1));",
   "new_string": "    // 시즌 탐색 UI (◀ 시즌텍스트 ▶)\n    const arrowY = 70 + yOff;\n    const arrowStyle = {\n      fontSize: '18px',\n      color: '#aaddff',\n      stroke: '#000',\n      strokeThickness: 3,\n    };\n\n    // 왼쪽 화살표: 텍스트 + 투명 히트박스 Rectangle\n    this.leftArrowBtn = this.add.text(cx - 145, arrowY, '◀', arrowStyle).setOrigin(0.5);\n    const leftHit = this.add.rectangle(cx - 145, arrowY, 44, 36, 0xffffff, 0)\n      .setInteractive({ useHandCursor: true });\n    leftHit.on('pointerdown', () => this.navigateSeason(-1));\n\n    this.seasonText = this.add.text(cx, arrowY, '', {\n      fontSize: '13px',\n      color: '#aaddff',\n      stroke: '#000',\n      strokeThickness: 3,\n    }).setOrigin(0.5);\n\n    // 오른쪽 화살표: 텍스트 + 투명 히트박스 Rectangle\n    this.rightArrowBtn = this.add.text(cx + 145, arrowY, '▶', arrowStyle).setOrigin(0.5);\n    const rightHit = this.add.rectangle(cx + 145, arrowY, 44, 36, 0xffffff, 0)\n      .setInteractive({ useHandCursor: true });\n    rightHit.on('pointerdown', () => this.navigateSeason(1));"
 }
@@ -813,7 +813,7 @@ id: toolu_01SmghFuSdE5uTeJuxHnAzq6
 tool_result
 id: toolu_01SmghFuSdE5uTeJuxHnAzq6
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -868,7 +868,7 @@ tool_use Read
 id: toolu_01PuPqerSifg38koJSgGbVUt
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "limit": 50,
   "offset": 326
 }
@@ -934,7 +934,7 @@ id: toolu_018qxNCKwQW2Co7QmqKUdp8T
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "old_string": "  private displayLeaderboard() {\n    const W = this.scale.width;\n    const yOff = (this.scale.height - 600) / 2;\n    const startY = (this.selectedDifficulty === DifficultyEnum.EXTREME ? 170 : 130) + yOff;\n    const ROW_H = 38;\n    const PAD = 48;",
   "new_string": "  private displayLeaderboard() {\n    const W = this.scale.width;\n    const H = this.scale.height;\n    const yOff = (H - 600) / 2;\n    const startY = (this.selectedDifficulty === DifficultyEnum.EXTREME ? 170 : 130) + yOff;\n    const ROW_H = 36;\n    // 버튼 영역 상단 기준으로 표시 가능한 최대 행 수 계산\n    const BUTTON_TOP = H - 62;\n    const HEADER_H = 38;\n    const maxRows = Math.floor((BUTTON_TOP - startY - HEADER_H) / ROW_H);\n    const displayData = this.leaderboardData.slice(0, maxRows);\n    const PAD = 48;"
 }
@@ -945,7 +945,7 @@ id: toolu_018qxNCKwQW2Co7QmqKUdp8T
 tool_result
 id: toolu_018qxNCKwQW2Co7QmqKUdp8T
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -958,7 +958,7 @@ tool_use Read
 id: toolu_01LvsyPhf6hqgY6eQHwMyzuM
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "limit": 50,
   "offset": 380
 }
@@ -1014,7 +1014,7 @@ id: toolu_01RHu3XUooFprMgbUt4Mif3b
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "old_string": "    // ── 데이터 없음 ──────────────────────────────────────\n    if (this.leaderboardData.length === 0) {\n      const noDataText = this.add.text(\n        CX, startY + 80,\n        '아직 랭킹이 없습니다\\n\\n첫 번째 플레이어가 되어보세요!',\n        { fontSize: '18px', color: '#ccc', stroke: '#000', strokeThickness: 3, align: 'center' }\n      ).setOrigin(0.5);\n      this.leaderboardTexts.push(noDataText);\n      return;\n    }\n\n    // ── 각 행 ────────────────────────────────────────────\n    this.leaderboardData.forEach((entry, index) => {\n      const rowY = startY + 38 + index * ROW_H;",
   "new_string": "    // ── 데이터 없음 ──────────────────────────────────────\n    if (this.leaderboardData.length === 0) {\n      const noDataText = this.add.text(\n        CX, startY + 80,\n        '아직 랭킹이 없습니다\\n\\n첫 번째 플레이어가 되어보세요!',\n        { fontSize: '18px', color: '#ccc', stroke: '#000', strokeThickness: 3, align: 'center' }\n      ).setOrigin(0.5);\n      this.leaderboardTexts.push(noDataText);\n      return;\n    }\n\n    // ── 각 행 ────────────────────────────────────────────\n    displayData.forEach((entry, index) => {\n      const rowY = startY + HEADER_H + index * ROW_H;"
 }
@@ -1025,7 +1025,7 @@ id: toolu_01RHu3XUooFprMgbUt4Mif3b
 tool_result
 id: toolu_01RHu3XUooFprMgbUt4Mif3b
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL

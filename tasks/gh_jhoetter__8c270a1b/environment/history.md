@@ -1,6 +1,6 @@
 > DEVELOPER
 
-Wave 15 Worker E in /Users/jhoetter/repos/bim-ai. You are not alone in the codebase: other workers and the parent may edit/commit concurrently. Do not revert edits made by others, do not touch unrelated dirty files, stage only your own changes, commit locally when done, and do not push.
+Wave 15 Worker E in /home/<USER>/repos/bim-ai. You are not alone in the codebase: other workers and the parent may edit/commit concurrently. Do not revert edits made by others, do not touch unrelated dirty files, stage only your own changes, commit locally when done, and do not push.
 
 Base context: HEAD was pushed at 975cd6034 (Schedule wave 15 tracker work). The tracker is spec/bim-integrity-rendering-sketch-methodology-tracker.md. Your ownership is family/type schema, instance overrides, content assets, asset placement, and render/export parity: primary items BIR-V01 through BIR-V05.
 

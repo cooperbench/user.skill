@@ -1,6 +1,6 @@
 > SYSTEM
 
-# AGENTS.md instructions for /Users/tanishqpalandurkar/Projects/yyork
+# AGENTS.md instructions for /home/<USER>/Projects/yyork
 
 <INSTRUCTIONS>
 General instructions: follow these all the time.
@@ -15,11 +15,11 @@ General instructions: follow these all the time.
 
 </INSTRUCTIONS>
 <environment_context>
-  <cwd>/Users/tanishqpalandurkar/Projects/yyork</cwd>
+  <cwd>/home/<USER>/Projects/yyork</cwd>
   <shell>zsh</shell>
   <current_date>2026-06-09</current_date>
   <timezone>Asia/Kolkata</timezone>
-  <filesystem><workspace_roots><root>/Users/tanishqpalandurkar/Projects/yyork</root></workspace_roots><permission_profile type="disabled"><file_system type="unrestricted" /></permission_profile></filesystem>
+  <filesystem><workspace_roots><root>/home/<USER>/Projects/yyork</root></workspace_roots><permission_profile type="disabled"><file_system type="unrestricted" /></permission_profile></filesystem>
 </environment_context>
 
 > DEVELOPER
@@ -37,7 +37,7 @@ id: call_Dlm8F6JvWRZQOEZ1J2co98Hs
 ```json
 {
   "cmd": "rg -n \"go:embed|embed|frontend|web/dist|dist\" -S .",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -50,7 +50,7 @@ id: call_s30i0HhOkEsq0ji1QPWBU89i
 ```json
 {
   "cmd": "rg --files -g 'yyork' -g 'bin/**' -g 'cmd/**' -g 'web/dist/**' -g 'frontend/**'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -62,8 +62,8 @@ tool_use exec_command
 id: call_o8I5tCl94xypSOBrYHOg4JZ2
 ```json
 {
-  "cmd": "rg -n \"yyork|embedded frontend|frontend\" /Users/tanishqpalandurkar/.codex/memories/MEMORY.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "rg -n \"yyork|embedded frontend|frontend\" /home/<USER>/.codex/memories/MEMORY.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -302,13 +302,13 @@ Original token count: 8004
 Output:
 1:# Task Group: `Projects/yyork` dashboard review/files workflows, Zellij session validation, and terminal-gap debugging [chronicle memory]
 2:scope: Use for recent `yyork` dogfooding in the browser dashboard and local worktrees: Files/Review behavior, hook-review context, file-browser/layout changes, session-scoped diff rendering, Zellij layout/statusline validation, recap requests, merge-before-wipe semantics, and terminal gap measurement under disk pressure.
-3:applies_to: cwd=/Users/tanishqpalandurkar/Projects/yyork plus local worktrees under /Users/tanishqpalandurkar/.yyork/worktrees/*; reuse_rule=safe for similar yyork dashboard/session UX and validation work in this checkout, but re-open the touched backend/frontend files before claiming the current UI shape because several observations came from active local sessions and Chronicle windows
-9:- extensions/chronicle/resources/2026-06-07T22-17-00-hHns-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, rollout_path=/Users/tanishqpalandurkar/.codex/memories/extensions/chronicle/resources/2026-06-07T22-17-00-hHns-10min-memory-summary.md, updated_at=2026-06-07T22:17:00+00:00, thread_id=None, Files sidebar/header ergonomics, right-sidebar show/hide, and resizable-panel follow-up) [chronicle memory]
-10:- extensions/chronicle/resources/2026-06-07T21-57-00-xkzZ-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, rollout_path=/Users/tanishqpalandurkar/.codex/memories/extensions/chronicle/resources/2026-06-07T21-57-00-xkzZ-10min-memory-summary.md, updated_at=2026-06-07T21:57:00+00:00, thread_id=None, Files tab CodeView rendering, symlinked-directory handling, and scroll verification) [chronicle memory]
-11:- extensions/chronicle/resources/2026-06-07T17-04-00-YxmL-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, rollout_path=/Users/tanishqpalandurkar/.codex/memories/extensions/chronicle/resources/2026-06-07T17-04-00-YxmL-10min-memory-summary.md, updated_at=2026-06-07T17:04:00+00:00, thread_id=None, `.gitignore` local artifact ignores and `yyork` Files/Review dashboard context) [chronicle memory]
-12:- extensions/chronicle/resources/2026-06-07T17-03-00-pksH-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, rollout_path=/Users/tanishqpalandurkar/.codex/memories/extensions/chronicle/resources/2026-06-07T17-03-00-pksH-10min-memory-summary.md, updated_at=2026-06-07T17:03:00+00:00, thread_id=None, Cursor `.gitignore` context and local agent/session artifact ignores) [chronicle memory]
-13:- extensions/chronicle/resources/2026-06-07T07-23-00-MplA-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, rollout_path=/Users/tanishqpalandurkar/.codex/memories/extensions/chronicle/resources/2026-06-07T07-23-00-MplA-10min-memory-summary.md, updated_at=2026-06-07T07:23:00+00:00, thread_id=None, Files tab dogfooding, built-binary visibility explanation, and merge-before-wipe discussion) [chronicle memory]
-14:- extensions/chronicle/resources/2026-06-07T07-13-00-tibN-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, […]
+3:applies_to: cwd=/home/<USER>/Projects/yyork plus local worktrees under /home/<USER>/.yyork/worktrees/*; reuse_rule=safe for similar yyork dashboard/session UX and validation work in this checkout, but re-open the touched backend/frontend files before claiming the current UI shape because several observations came from active local sessions and Chronicle windows
+9:- extensions/chronicle/resources/2026-06-07T22-17-00-hHns-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-07T22-17-00-hHns-10min-memory-summary.md, updated_at=2026-06-07T22:17:00+00:00, thread_id=None, Files sidebar/header ergonomics, right-sidebar show/hide, and resizable-panel follow-up) [chronicle memory]
+10:- extensions/chronicle/resources/2026-06-07T21-57-00-xkzZ-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-07T21-57-00-xkzZ-10min-memory-summary.md, updated_at=2026-06-07T21:57:00+00:00, thread_id=None, Files tab CodeView rendering, symlinked-directory handling, and scroll verification) [chronicle memory]
+11:- extensions/chronicle/resources/2026-06-07T17-04-00-YxmL-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-07T17-04-00-YxmL-10min-memory-summary.md, updated_at=2026-06-07T17:04:00+00:00, thread_id=None, `.gitignore` local artifact ignores and `yyork` Files/Review dashboard context) [chronicle memory]
+12:- extensions/chronicle/resources/2026-06-07T17-03-00-pksH-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-07T17-03-00-pksH-10min-memory-summary.md, updated_at=2026-06-07T17:03:00+00:00, thread_id=None, Cursor `.gitignore` context and local agent/session artifact ignores) [chronicle memory]
+13:- extensions/chronicle/resources/2026-06-07T07-23-00-MplA-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-07T07-23-00-MplA-10min-memory-summary.md, updated_at=2026-06-07T07:23:00+00:00, thread_id=None, Files tab dogfooding, built-binary visibility explanation, and merge-before-wipe discussion) [chronicle memory]
+14:- extensions/chronicle/resources/2026-06-07T07-13-00-tibN-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, […]
 
 > AGENT
 
@@ -321,7 +321,7 @@ id: call_0DfMQrMBk6n8E7QQB6kXC9LS
 ```json
 {
   "cmd": "file yyork",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -334,7 +334,7 @@ id: call_0Ecc2JCCA46vueJbNvl4DTkj
 ```json
 {
   "cmd": "bytes=$(wc -c < yyork); awk -v b=\"$bytes\" 'BEGIN { printf \"bytes=%d\\ndecimal_MB=%.2f\\nbinary_MiB=%.2f\\n\", b, b/1000000, b/1048576 }'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -347,7 +347,7 @@ id: call_HtZLYcawSA3yIDeN4txS3ehR
 ```json
 {
   "cmd": "ls -lh yyork",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -399,7 +399,7 @@ Output:
 
 > AGENT
 
-The current root binary [yyork](/Users/tanishqpalandurkar/Projects/yyork/yyork) is **42.37 MB** decimal, or **40.41 MiB**.
+The current root binary [yyork](/home/<USER>/Projects/yyork/yyork) is **42.37 MB** decimal, or **40.41 MiB**.
 
 I measured it directly with `wc -c`; `ls -lh` reports it as `40M`.
 
@@ -426,7 +426,7 @@ id: call_QwNx0ztRm1UwKkvZ4C34wmBP
 ```json
 {
   "cmd": "command -v strip && strip -h 2>&1 | sed -n '1,80p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 6000
 }
@@ -439,7 +439,7 @@ id: call_mfMotzfoQ5YAzkuEpcmYyNi9
 ```json
 {
   "cmd": "bytes=$(wc -c < yyork); awk -v b=\"$bytes\" 'BEGIN { printf \"original_bytes=%d\\noriginal_MB=%.2f\\noriginal_MiB=%.2f\\n\", b, b/1000000, b/1048576 }'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -488,7 +488,7 @@ id: call_ZnlZawD0FZ53jDER0rDvVE75
 ```json
 {
   "cmd": "man strip | col -b | sed -n '1,180p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -520,7 +520,7 @@ id: call_e99OxWFnHzbD9V1HTrdFXRNS
 ```json
 {
   "cmd": "tmp=$(mktemp /tmp/yyork-strip-all.XXXXXX); cp -p yyork \"$tmp\"; strip \"$tmp\"; bytes=$(wc -c < \"$tmp\"); awk -v b=\"$bytes\" 'BEGIN { printf \"mode=strip_default\\nbytes=%d\\ndecimal_MB=%.2f\\nbinary_MiB=%.2f\\n\", b, b/1000000, b/1048576 }'; rm -f \"$tmp\"",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 6000
 }
@@ -533,7 +533,7 @@ id: call_rNK7xqfshRNRFgd1oP11wYKZ
 ```json
 {
   "cmd": "tmp=$(mktemp /tmp/yyork-strip-S.XXXXXX); cp -p yyork \"$tmp\"; strip -S \"$tmp\"; bytes=$(wc -c < \"$tmp\"); awk -v b=\"$bytes\" 'BEGIN { printf \"mode=strip_S\\nbytes=%d\\ndecimal_MB=%.2f\\nbinary_MiB=%.2f\\n\", b, b/1000000, b/1048576 }'; rm -f \"$tmp\"",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 6000
 }
@@ -546,7 +546,7 @@ id: call_iyAhsWkz6gjn5KXLJuwtFJge
 ```json
 {
   "cmd": "tmp=$(mktemp /tmp/yyork-strip-x.XXXXXX); cp -p yyork \"$tmp\"; strip -x \"$tmp\"; bytes=$(wc -c < \"$tmp\"); awk -v b=\"$bytes\" 'BEGIN { printf \"mode=strip_x\\nbytes=%d\\ndecimal_MB=%.2f\\nbinary_MiB=%.2f\\n\", b, b/1000000, b/1048576 }'; rm -f \"$tmp\"",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 6000
 }
@@ -614,7 +614,7 @@ id: call_eoSN4ikShOYJqflxMAweOLtx
 ```json
 {
   "cmd": "bytes=$(wc -c < yyork); awk -v b=\"$bytes\" 'BEGIN { printf \"repo_binary_bytes=%d\\nrepo_binary_MB=%.2f\\nrepo_binary_MiB=%.2f\\n\", b, b/1000000, b/1048576 }'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -627,7 +627,7 @@ id: call_qtHIXiYskKDzpQLnqhca0vBm
 ```json
 {
   "cmd": "tmp=$(mktemp /tmp/yyork-strip-verify.XXXXXX); cp -p yyork \"$tmp\"; strip \"$tmp\"; orig=$(wc -c < yyork); stripped=$(wc -c < \"$tmp\"); awk -v o=\"$orig\" -v s=\"$stripped\" 'BEGIN { printf \"saved_bytes=%d\\nsaved_MB=%.2f\\nsaved_MiB=%.2f\\nreduction_pct=%.2f\\n\", o-s, (o-s)/1000000, (o-s)/1048576, (o-s)*100/o }'; rm -f \"$tmp\"",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -668,6 +668,6 @@ reduction_pct=2.43
 
 > AGENT
 
-After stripping a temporary copy of [yyork](/Users/tanishqpalandurkar/Projects/yyork/yyork), the binary is **41.34 MB** decimal, or **39.42 MiB**.
+After stripping a temporary copy of [yyork](/home/<USER>/Projects/yyork/yyork), the binary is **41.34 MB** decimal, or **39.42 MiB**.
 
 That saves **1.03 MB** decimal, about **2.43%**. I did not modify the repo’s actual `./yyork` binary.

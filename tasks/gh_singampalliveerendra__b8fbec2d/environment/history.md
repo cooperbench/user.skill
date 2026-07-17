@@ -12,7 +12,7 @@ tool_use Bash
 id: toolu_01XjcQGowcQ9GaXuKMvGFHAR
 ```json
 {
-  "command": "grep -rn \"platform_fee\\|platformFee\" /home/veerendra/farmer/yourfamilyfarmer --include=\"*.ts\" --include=\"*.tsx\" --include=\"*.sql\" -l | head -30",
+  "command": "grep -rn \"platform_fee\\|platformFee\" /home/<USER>/farmer/yourfamilyfarmer --include=\"*.ts\" --include=\"*.tsx\" --include=\"*.sql\" -l | head -30",
   "description": "Find files referencing platform fee"
 }
 ```
@@ -23,7 +23,7 @@ tool_use Bash
 id: toolu_01LfkVhpgbysHAiGeoXvLoiV
 ```json
 {
-  "command": "ls /home/veerendra/farmer/yourfamilyfarmer/scripts/ 2>/dev/null; ls /home/veerendra/farmer/yourfamilyfarmer/*.sql 2>/dev/null",
+  "command": "ls /home/<USER>/farmer/yourfamilyfarmer/scripts/ 2>/dev/null; ls /home/<USER>/farmer/yourfamilyfarmer/*.sql 2>/dev/null",
   "description": "List SQL migration scripts"
 }
 ```
@@ -33,23 +33,23 @@ id: toolu_01LfkVhpgbysHAiGeoXvLoiV
 tool_result
 id: toolu_01XjcQGowcQ9GaXuKMvGFHAR
 ```
-/home/veerendra/farmer/yourfamilyfarmer/src/lib/orderReport.ts
-/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/page.tsx
-/home/veerendra/farmer/yourfamilyfarmer/src/app/farmer/dashboard/orders/page.tsx
-/home/veerendra/farmer/yourfamilyfarmer/src/app/api/farmer/orders/[id]/decline/route.ts
-/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx
-/home/veerendra/farmer/yourfamilyfarmer/src/app/api/consumer/orders/[id]/route.ts
-/home/veerendra/farmer/yourfamilyfarmer/src/lib/platform-fee.ts
-/home/veerendra/farmer/yourfamilyfarmer/src/app/api/orders/place/route.ts
-/home/veerendra/farmer/yourfamilyfarmer/src/components/farmer/OrderCard.tsx
-/home/veerendra/farmer/yourfamilyfarmer/src/app/api/consumer/orders/route.ts
-/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/CancelOrderModal.tsx
-/home/veerendra/farmer/yourfamilyfarmer/src/app/api/consumer/orders/[id]/cancel/route.ts
-/home/veerendra/farmer/yourfamilyfarmer/src/app/api/orders/razorpay/create/route.ts
-/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx
-/home/veerendra/farmer/yourfamilyfarmer/src/components/farmer/DeclineSheets.tsx
-/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/OrderCard.tsx
-/home/veerendra/farmer/yourfamilyfarmer/scripts/platform-fee-migration.sql
+/home/<USER>/farmer/yourfamilyfarmer/src/lib/orderReport.ts
+/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/page.tsx
+/home/<USER>/farmer/yourfamilyfarmer/src/app/farmer/dashboard/orders/page.tsx
+/home/<USER>/farmer/yourfamilyfarmer/src/app/api/farmer/orders/[id]/decline/route.ts
+/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx
+/home/<USER>/farmer/yourfamilyfarmer/src/app/api/consumer/orders/[id]/route.ts
+/home/<USER>/farmer/yourfamilyfarmer/src/lib/platform-fee.ts
+/home/<USER>/farmer/yourfamilyfarmer/src/app/api/orders/place/route.ts
+/home/<USER>/farmer/yourfamilyfarmer/src/components/farmer/OrderCard.tsx
+/home/<USER>/farmer/yourfamilyfarmer/src/app/api/consumer/orders/route.ts
+/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/CancelOrderModal.tsx
+/home/<USER>/farmer/yourfamilyfarmer/src/app/api/consumer/orders/[id]/cancel/route.ts
+/home/<USER>/farmer/yourfamilyfarmer/src/app/api/orders/razorpay/create/route.ts
+/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx
+/home/<USER>/farmer/yourfamilyfarmer/src/components/farmer/DeclineSheets.tsx
+/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/OrderCard.tsx
+/home/<USER>/farmer/yourfamilyfarmer/scripts/platform-fee-migration.sql
 ```
 
 > TOOL
@@ -117,7 +117,7 @@ tool_use Read
 id: toolu_018T6qFdbEXJitkgWjRFmS2B
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/lib/platform-fee.ts"
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/lib/platform-fee.ts"
 }
 ```
 
@@ -160,7 +160,7 @@ tool_use Read
 id: toolu_01PtCzy7immtX43yZnDLBivK
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/scripts/platform-fee-migration.sql"
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/scripts/platform-fee-migration.sql"
 }
 ```
 
@@ -194,7 +194,7 @@ tool_use Bash
 id: toolu_01AKkw85bFyHtMLziYWPbt1V
 ```json
 {
-  "command": "grep -n \"platform_fee\\|platformFee\" /home/veerendra/farmer/yourfamilyfarmer/src/app/api/orders/place/route.ts | head -20; echo ---; grep -n \"platform_fee\\|platformFee\" /home/veerendra/farmer/yourfamilyfarmer/src/components/farmer/OrderCard.tsx /home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/OrderCard.tsx /home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/\\[id\\]/page.tsx | head -40",
+  "command": "grep -n \"platform_fee\\|platformFee\" /home/<USER>/farmer/yourfamilyfarmer/src/app/api/orders/place/route.ts | head -20; echo ---; grep -n \"platform_fee\\|platformFee\" /home/<USER>/farmer/yourfamilyfarmer/src/components/farmer/OrderCard.tsx /home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/OrderCard.tsx /home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/\\[id\\]/page.tsx | head -40",
   "description": "See where platform_fee is stamped and displayed"
 }
 ```
@@ -210,18 +210,18 @@ id: toolu_01AKkw85bFyHtMLziYWPbt1V
 362:    platformFee,
 363:    grandTotal: total + deliveryFee + platformFee,
 ---
-/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/OrderCard.tsx:21:  platform_fee?: number | null
-/home/veerendra/farmer/yourfamilyfarmer/src/components/farmer/OrderCard.tsx:26:  platform_fee?: number | null
-/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx:26:  platform_fee: number | null
-/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx:548:  const platformFeeWithheld = Math.max(0, Number(order.platform_fee) || 0)
-/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx:574:            {platformFeeWithheld > 0 && (
-/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx:578:                  <span className="font-bold text-red-600">₹{platformFeeWithheld}</span>
-/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx:649:  const platformFeePaid = Math.max(0, Number(order.platform_fee) || 0)
-/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx:650:  const totalPaid = (Number(order.total_price) || 0) + platformFeePaid
-/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx:681:          {platformFeePaid > 0 && (
-/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx:684:              <span className="font-semibold text-gray-900">₹{platformFeePaid}</span>
-/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx:1005:      {order.status === 'cancelled' && (order.platform_fee ?? 0) > 0 && (
-/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx:1008:          <span className="font-bold text-red-600">₹{order.platform_fee}</span>
+/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/OrderCard.tsx:21:  platform_fee?: number | null
+/home/<USER>/farmer/yourfamilyfarmer/src/components/farmer/OrderCard.tsx:26:  platform_fee?: number | null
+/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx:26:  platform_fee: number | null
+/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx:548:  const platformFeeWithheld = Math.max(0, Number(order.platform_fee) || 0)
+/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx:574:            {platformFeeWithheld > 0 && (
+/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx:578:                  <span className="font-bold text-red-600">₹{platformFeeWithheld}</span>
+/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx:649:  const platformFeePaid = Math.max(0, Number(order.platform_fee) || 0)
+/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx:650:  const totalPaid = (Number(order.total_price) || 0) + platformFeePaid
+/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx:681:          {platformFeePaid > 0 && (
+/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx:684:              <span className="font-semibold text-gray-900">₹{platformFeePaid}</span>
+/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx:1005:      {order.status === 'cancelled' && (order.platform_fee ?? 0) > 0 && (
+/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx:1008:          <span className="font-bold text-red-600">₹{order.platform_fee}</span>
 ```
 
 > TOOL
@@ -230,7 +230,7 @@ tool_use Read
 id: toolu_0113gLBmbfyJAgDpGB7uSaKo
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/api/orders/place/route.ts",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/api/orders/place/route.ts",
   "offset": 270,
   "limit": 100
 }
@@ -278,7 +278,7 @@ tool_use Bash
 id: toolu_019ZH13kYFZoLfBGq2xCyyyG
 ```json
 {
-  "command": "grep -n \"platform_fee\\|platformFee\\|Platform fee\\|Platform Fee\" /home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/OrderCard.tsx /home/veerendra/farmer/yourfamilyfarmer/src/components/farmer/OrderCard.tsx /home/veerendra/farmer/yourfamilyfarmer/src/app/farmer/dashboard/orders/page.tsx /home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/page.tsx /home/veerendra/farmer/yourfamilyfarmer/src/lib/orderReport.ts; echo ---MOD---; grep -rn \"platform_fee\" /home/veerendra/farmer/yourfamilyfarmer/src/app/moderator 2>/dev/null | head",
+  "command": "grep -n \"platform_fee\\|platformFee\\|Platform fee\\|Platform Fee\" /home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/OrderCard.tsx /home/<USER>/farmer/yourfamilyfarmer/src/components/farmer/OrderCard.tsx /home/<USER>/farmer/yourfamilyfarmer/src/app/farmer/dashboard/orders/page.tsx /home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/page.tsx /home/<USER>/farmer/yourfamilyfarmer/src/lib/orderReport.ts; echo ---MOD---; grep -rn \"platform_fee\" /home/<USER>/farmer/yourfamilyfarmer/src/app/moderator 2>/dev/null | head",
   "description": "Check where platform fee is displayed in UI"
 }
 ```
@@ -288,14 +288,14 @@ id: toolu_019ZH13kYFZoLfBGq2xCyyyG
 tool_result
 id: toolu_019ZH13kYFZoLfBGq2xCyyyG
 ```
-/home/veerendra/farmer/yourfamilyfarmer/src/app/farmer/dashboard/orders/page.tsx:82:      .select('id, farmer_id, order_code, produce_listing_id, produce_name, quantity, unit, total_price, delivery_fee, platform_fee, buyer_name, buyer_phone, pickup_location, status, payment_method, payment_status, utr_number, decline_reason, refund_status, refund_amount, refunded_at, delivery_type, delivery_status, delivery_boy_id, collected_at, shipped_at, received_at, fulfillment_date, created_at, acknowledged_at')
-/home/veerendra/farmer/yourfamilyfarmer/src/components/farmer/OrderCard.tsx:26:  platform_fee?: number | null
-/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/OrderCard.tsx:18:  // Platform fee stamped on this row (cart's first row carries it, 0 on the
-/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/OrderCard.tsx:21:  platform_fee?: number | null
-/home/veerendra/farmer/yourfamilyfarmer/src/lib/orderReport.ts:112:  return (Number(o.total_price) || 0) + (Number(o.delivery_fee) || 0) + (Number(o.platform_fee) || 0)
-/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/page.tsx:31:  const [cancelledInfo, setCancelledInfo] = useState<{ wasPaid: boolean; refundAmount?: number; platformFeeWithheld?: number } | null>(null)
-/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/page.tsx:99:        platformFeeWithheld: typeof json?.platformFeeWithheld === 'number' ? json.platformFeeWithheld : undefined,
-/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/page.tsx:260:          platformFeeWithheld={cancelledInfo.platformFeeWithheld}
+/home/<USER>/farmer/yourfamilyfarmer/src/app/farmer/dashboard/orders/page.tsx:82:      .select('id, farmer_id, order_code, produce_listing_id, produce_name, quantity, unit, total_price, delivery_fee, platform_fee, buyer_name, buyer_phone, pickup_location, status, payment_method, payment_status, utr_number, decline_reason, refund_status, refund_amount, refunded_at, delivery_type, delivery_status, delivery_boy_id, collected_at, shipped_at, received_at, fulfillment_date, created_at, acknowledged_at')
+/home/<USER>/farmer/yourfamilyfarmer/src/components/farmer/OrderCard.tsx:26:  platform_fee?: number | null
+/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/OrderCard.tsx:18:  // Platform fee stamped on this row (cart's first row carries it, 0 on the
+/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/OrderCard.tsx:21:  platform_fee?: number | null
+/home/<USER>/farmer/yourfamilyfarmer/src/lib/orderReport.ts:112:  return (Number(o.total_price) || 0) + (Number(o.delivery_fee) || 0) + (Number(o.platform_fee) || 0)
+/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/page.tsx:31:  const [cancelledInfo, setCancelledInfo] = useState<{ wasPaid: boolean; refundAmount?: number; platformFeeWithheld?: number } | null>(null)
+/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/page.tsx:99:        platformFeeWithheld: typeof json?.platformFeeWithheld === 'number' ? json.platformFeeWithheld : undefined,
+/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/page.tsx:260:          platformFeeWithheld={cancelledInfo.platformFeeWithheld}
 ---MOD---
 ```
 
@@ -305,7 +305,7 @@ tool_use Bash
 id: toolu_01PtQxuwnLDJrXZ55KQN3rmf
 ```json
 {
-  "command": "ls /home/veerendra/farmer/yourfamilyfarmer/src/app/moderator/ 2>/dev/null; grep -rln \"total_price\" /home/veerendra/farmer/yourfamilyfarmer/src/app/moderator --include=\"*.tsx\" | head",
+  "command": "ls /home/<USER>/farmer/yourfamilyfarmer/src/app/moderator/ 2>/dev/null; grep -rln \"total_price\" /home/<USER>/farmer/yourfamilyfarmer/src/app/moderator --include=\"*.tsx\" | head",
   "description": "Locate moderator order views"
 }
 ```

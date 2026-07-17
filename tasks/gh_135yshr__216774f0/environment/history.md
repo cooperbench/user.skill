@@ -292,7 +292,7 @@ tool_use Read
 id: toolu_01Ei8fRFFAgVnBv3astzQJV2
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md"
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md"
 }
 ```
 
@@ -376,7 +376,7 @@ tool_use Read
 id: toolu_01EuZsCqcKtjNhDut1RN9AwG
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/9e3ec9a7d52c98.md"
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/9e3ec9a7d52c98.md"
 }
 ```
 
@@ -762,7 +762,7 @@ To verify author attribution and identify key topics on security/authorization i
 
 This would allow accurate identification of coverage regarding permissions, access control, or security patterns in CQRS architecture.
 
-[Binary content (application/pdf, 1.5MB) also saved to /Users/135yshr/.claude/projects/-Users-135yshr-projects-135yshr-documents/5d70c437-3168-4c82-86d1-46b5790e02d3/tool-results/webfetch-1776305146596-deuu3z.pdf]
+[Binary content (application/pdf, 1.5MB) also saved to /home/<USER>/.claude/projects/-Users-135yshr-projects-135yshr-documents/5d70c437-3168-4c82-86d1-46b5790e02d3/tool-results/webfetch-1776305146596-deuu3z.pdf]
 ```
 
 > AGENT
@@ -877,7 +877,7 @@ id: toolu_015TohYNgeqkyc2qkmsVMQya
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "old_string": "APIの認可設計で「middlewareで全部チェックすればよい」と考えていた時期が私にもありました。しかしDDDを導入したプロジェクトで、**コマンド（書き込み）とクエリ（読み取り）で認可の粒度が根本的に異なる**ことに気づきました。\n\nmiddlewareでJWTを検証してユーザーIDを取り出すところまではよいのですが、「このユーザーはこのタスクを編集できるか」「このクエリでどのデータが見えるべきか」はドメイン知識に依存します。結果として、認可ロジックがmiddleware・Handler・UseCaseに散在し、修正漏れによる権限バグが発生しました。\n\nこの記事では、CQRSパターンを前提に、**コマンドとクエリそれぞれに適した認可の設計箇所**を整理します。",
   "new_string": "APIの認可設計で「middlewareで全部チェックすればよい」と考えていた時期が私にもありました。しかしDDDを導入したプロジェクトで、**コマンド（書き込み）とクエリ（読み取り）で認可の粒度が根本的に異なる**ことに気づきました。\n\nmiddlewareでJWTを検証してユーザーIDを取り出すところまではよいのですが、「このユーザーはこのタスクを編集できるか」「このクエリでどのデータが見えるべきか」はドメイン知識に依存します。結果として、認可ロジックがmiddleware・Handler・UseCaseに散在し、修正漏れによる権限バグが発生しました。\n\nこの記事では、CQRSパターンを前提に、**コマンドとクエリそれぞれに適した認可の設計箇所**を整理します。CQRSそのものの解説は[「DDDにCQRSを導入する前に知っておきたいこと」](https://zenn.dev/and and and/articles/9e3ec9a7d52c98)をご覧ください。"
 }
@@ -888,7 +888,7 @@ id: toolu_015TohYNgeqkyc2qkmsVMQya
 tool_result
 id: toolu_015TohYNgeqkyc2qkmsVMQya
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -933,7 +933,7 @@ id: toolu_014nsr3A5WPajx4uDKD9dr35
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "old_string": "この記事では、CQRSパターンを前提に、**コマンドとクエリそれぞれに適した認可の設計箇所**を整理します。CQRSそのものの解説は[「DDDにCQRSを導入する前に知っておきたいこと」](https://zenn.dev/and and and/articles/9e3ec9a7d52c98)をご覧ください。",
   "new_string": "この記事では、CQRSパターンを前提に、**コマンドとクエリそれぞれに適した認可の設計箇所**を整理します。CQRSそのものの解説は「[DDDにCQRSを導入する前に知っておきたいこと](https://zenn.dev/135yshr/articles/9e3ec9a7d52c98)」をご覧ください。"
 }
@@ -944,7 +944,7 @@ id: toolu_014nsr3A5WPajx4uDKD9dr35
 tool_result
 id: toolu_014nsr3A5WPajx4uDKD9dr35
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -958,7 +958,7 @@ id: toolu_01WCCbTiEsyuMqB7oWWCnJcf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "old_string": "認可はさらに2つのレベルに分けて考えることができます。",
   "new_string": "認可はさらに2つのレベルに分けて考えることができます（[OWASP Authorization Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html)でも、RBACによる粗粒度の制御とリソース単位の細粒度の制御を区別しています）。"
 }
@@ -969,7 +969,7 @@ id: toolu_01WCCbTiEsyuMqB7oWWCnJcf
 tool_result
 id: toolu_01WCCbTiEsyuMqB7oWWCnJcf
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -983,7 +983,7 @@ id: toolu_01PXTB3VLa23cX7ngwQXcsbC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "old_string": "より複雑な認可ルールは、ドメイン層にポリシーオブジェクトとして表現できます。Vaughn Vernonは、認可ルールがドメイン知識の一部である場合、ドメイン層に配置すべきだと述べています。",
   "new_string": "より複雑な認可ルールは、ドメイン層にポリシーオブジェクトとして表現できます。Vaughn Vernonは _Implementing Domain-Driven Design_ のChapter 14で、アプリケーション層がセキュリティの窓口となる設計を解説しています。一方で「このタスクの作成者のみ削除可能」のような**ビジネスルールとしての認可**はドメイン知識そのものです。このような認可ルールはドメイン層にポリシーオブジェクトとして配置することで、ルールの散在を防げます。"
 }
@@ -994,7 +994,7 @@ id: toolu_01PXTB3VLa23cX7ngwQXcsbC
 tool_result
 id: toolu_01PXTB3VLa23cX7ngwQXcsbC
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1008,7 +1008,7 @@ id: toolu_01HoWrjJR7z6KZ2G1DAda2dM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "old_string": "| 内容 | 出典 |\n| --- | --- |\n| CQRSパターン | Greg Young, [CQRS Documents](https://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf) |\n| ドメイン層での認可 | Vaughn Vernon, _Implementing Domain-Driven Design_（2013）Chapter 14: Application |\n| OWASPの認可ガイドライン | OWASP, [Authorization Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html) |\n| RBACパターン | NIST, [Role-Based Access Control](https://csrc.nist.gov/projects/role-based-access-control) |\n| Go のmiddlewareパターン | Mat Ryer, [How I write HTTP services in Go after 13 years](https://grafana.com/blog/2024/02/09/how-i-write-http-services-in-go-after-13-years/) |",
   "new_string": "| 内容 | 出典 |\n| --- | --- |\n| CQRSパターン | Greg Young, [CQRS Documents](https://cqrs.wordpress.com/wp-content/uploads/2010/11/cqrs_documents.pdf) |\n| アプリケーション層のセキュリティ設計 | Vaughn Vernon, _Implementing Domain-Driven Design_（2013）Chapter 14: Application pp.521-530 |\n| OWASPの認可ガイドライン | OWASP, [Authorization Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html) |\n| RBACの定義と標準化 | NIST, [Role-Based Access Control](https://csrc.nist.gov/projects/role-based-access-control)（アーカイブ済み。ANSI/INCITS 359-2012として標準化） |\n| Go のmiddlewareパターン | Mat Ryer, [How I write HTTP services in Go after 13 years](https://grafana.com/blog/2024/02/09/how-i-write-http-services-in-go-after-13-years/) |"
 }
@@ -1019,7 +1019,7 @@ id: toolu_01HoWrjJR7z6KZ2G1DAda2dM
 tool_result
 id: toolu_01HoWrjJR7z6KZ2G1DAda2dM
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1079,7 +1079,7 @@ id: toolu_011MR5LmBui2BrupZDWH43Nh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "old_string": "この記事では、CQRSパターンを前提に、**コマンドとクエリそれぞれに適した認可の設計箇所**を整理します。CQRSそのものの解説は「[DDDにCQRSを導入する前に知っておきたいこと](https://zenn.dev/135yshr/articles/9e3ec9a7d52c98)」をご覧ください。",
   "new_string": "この記事では、CQRSパターンを前提に、**コマンドとクエリそれぞれに適した認可の設計箇所**を整理します。CQRSそのものの解説は「[DDDにCQRSを導入する前に知っておきたいこと](https://zenn.dev/135yshr/articles/9e3ec9a7d52c98)」をご覧ください。\n\n:::message\n\n本記事のコード例では、DDDシリーズで使用している `interface/rest/`（ハンドラ層）・`usecase/`（アプリケーション層）・`domain/model/`（ドメイン層）のディレクトリ構成を使用しています。CQRS記事で使用した`presentation/`・`application/`とは名称が異なりますが、各層の責務は同じです。\n\n:::"
 }
@@ -1090,7 +1090,7 @@ id: toolu_011MR5LmBui2BrupZDWH43Nh
 tool_result
 id: toolu_011MR5LmBui2BrupZDWH43Nh
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1114,7 +1114,7 @@ tool_use Read
 id: toolu_01QwkRQpo84PCKD984Bh7dR9
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "offset": 299,
   "limit": 45
 }
@@ -1183,7 +1183,7 @@ id: toolu_01Hr9jsjFkrb3UJkgGbSGoYs
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "old_string": "マルチテナントシステムでは、クエリが必ず自テナントのデータのみを返すように制御します。\n\n```go\n// usecase/list_tasks_interactor.go\n\ntype taskLister interface {\n    ListByProject(ctx context.Context, projectID model.ProjectID, filter *model.TaskFilter) ([]*model.Task, int64, error)\n}",
   "new_string": "マルチテナントシステムでは、クエリが必ず自テナントのデータのみを返すように制御します。\n\n:::message\n\n以下のコード例では認可パターンに焦点を当てるため、クエリの戻り値を簡略化しています。CQRSの原則に従う場合、Query側はドメインモデルではなくDTOを直接返すQueryServiceを使用します（詳細は[CQRS記事の「誤解3」](https://zenn.dev/135yshr/articles/9e3ec9a7d52c98#%E8%AA%A4%E8%A7%A33%EF%BC%9A%E3%80%8Cquery%E5%81%B4%E3%82%82repository%E3%82%92%E4%BD%BF%E3%81%86%E3%80%8D)を参照）。\n\n:::\n\n```go\n// usecase/list_tasks_interactor.go\n\ntype taskLister interface {\n    ListByProject(ctx context.Context, projectID model.ProjectID, filter *model.TaskFilter) ([]*model.Task, int64, error)\n}"
 }
@@ -1194,7 +1194,7 @@ id: toolu_01Hr9jsjFkrb3UJkgGbSGoYs
 tool_result
 id: toolu_01Hr9jsjFkrb3UJkgGbSGoYs
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1258,7 +1258,7 @@ id: toolu_011dB42Sor7BSq2YzHqswg3T
 ```
 Exit code 1
 
-/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md
+/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md
   25:691  error  Line 25 sentence length(107) exceeds the maximum sentence length of 100.
 Over 7 characters  ja-technical-writing/sentence-length
 
@@ -1275,7 +1275,7 @@ tool_use Read
 id: toolu_014Y5U54zUk3vekzeQhQErNg
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "offset": 24,
   "limit": 3
 }
@@ -1298,7 +1298,7 @@ id: toolu_014ikHY2JvNkfi6TctN7wa6j
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "old_string": "本記事のコード例では、DDDシリーズで使用している `interface/rest/`（ハンドラ層）・`usecase/`（アプリケーション層）・`domain/model/`（ドメイン層）のディレクトリ構成を使用しています。CQRS記事で使用した`presentation/`・`application/`とは名称が異なりますが、各層の責務は同じです。",
   "new_string": "本記事のコード例では、DDDシリーズで使用しているディレクトリ構成に従っています。CQRS記事で使用した`presentation/`・`application/`とは名称が異なりますが、各層の責務は同じです。\n\n- `interface/rest/` → ハンドラ層（CQRS記事の`presentation/`に相当）\n- `usecase/` → アプリケーション層（CQRS記事の`application/`に相当）\n- `domain/model/` → ドメイン層"
 }
@@ -1309,7 +1309,7 @@ id: toolu_014ikHY2JvNkfi6TctN7wa6j
 tool_result
 id: toolu_014ikHY2JvNkfi6TctN7wa6j
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1616,7 +1616,7 @@ tool_use Read
 id: toolu_017P1i1af7pGLLy5YX7p5uXy
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md"
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md"
 }
 ```
 
@@ -1634,7 +1634,7 @@ tool_use Read
 id: toolu_01SNyKiTi8L98xgSngzn4shx
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "offset": 0,
   "limit": 500
 }
@@ -1752,7 +1752,7 @@ id: toolu_014RJjpkaEjLrgDYk3SHdbec
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "old_string": "title: \"DDDで安全なAPIを設計する〜コマンドとクエリの権限制御パターン〜\"",
   "new_string": "title: \"DDD×CQRSの認可設計〜コマンドとクエリで異なる権限チェックをどこに置くか〜\""
 }
@@ -1763,7 +1763,7 @@ id: toolu_014RJjpkaEjLrgDYk3SHdbec
 tool_result
 id: toolu_014RJjpkaEjLrgDYk3SHdbec
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1815,7 +1815,7 @@ id: toolu_01XuDrrVrv8y1hZdCkzhmbw4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "old_string": "認可は大きく **認証（Authentication）**と**認可（Authorization）** に分かれます。本記事では認証済みのユーザーに対する認可に焦点を当てます。",
   "new_string": "APIセキュリティは大きく**認証（Authentication：本人確認）**と**認可（Authorization：権限判定）**に分かれます。本記事では認証済みのユーザーに対する認可に焦点を当てます。"
 }
@@ -1826,7 +1826,7 @@ id: toolu_01XuDrrVrv8y1hZdCkzhmbw4
 tool_result
 id: toolu_01XuDrrVrv8y1hZdCkzhmbw4
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1878,7 +1878,7 @@ id: toolu_01VXEQ1KJjfWaxSeoH8jNtgo
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "old_string": "func RequireRole(roles ...string) func(http.Handler) http.Handler {\n    return func(next http.Handler) http.Handler {\n        return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {\n            if len(roles) == 0 {\n                respondError(w, http.StatusInternalServerError, \"no roles specified\")\n                return\n            }\n\n            claims := ClaimsFromContext(r.Context())",
   "new_string": "func RequireRole(roles ...string) func(http.Handler) http.Handler {\n    if len(roles) == 0 {\n        panic(\"middleware: RequireRole called with no roles\")\n    }\n\n    return func(next http.Handler) http.Handler {\n        return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {\n            claims := ClaimsFromContext(r.Context())"
 }
@@ -1889,7 +1889,7 @@ id: toolu_01VXEQ1KJjfWaxSeoH8jNtgo
 tool_result
 id: toolu_01VXEQ1KJjfWaxSeoH8jNtgo
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1941,7 +1941,7 @@ id: toolu_015JLVsDrVMD3h7zp6MC1Z2m
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "old_string": "### アプリケーション層での権限チェック\n\nコマンドの実行前に、アプリケーション層で権限を検証します。\n\n```go\n// usecase/update_task_interactor.go\n\ntype taskFinder interface {\n    FindByID(ctx context.Context, id model.TaskID) (*model.Task, error)\n}\n\ntype taskSaver interface {\n    Save(ctx context.Context, task *model.Task) error\n}\n\ntype projectMemberChecker interface {\n    IsMember(ctx context.Context, projectID model.ProjectID, userID model.UserID) (bool, error)\n}\n\ntype UpdateTaskInteractor struct {\n    tasks    taskFinder\n    saver    taskSaver\n    members  projectMemberChecker\n}\n\nfunc (i *UpdateTaskInteractor) Execute(ctx context.Context, input *UpdateTaskInput) (*UpdateTaskOutput, error) {\n    actor := model.UserIDFromContext(ctx)\n\n    task, err := i.tasks.FindByID(ctx, model.TaskID(input.TaskID))\n    if err != nil {\n        return nil, fmt.Errorf(\"failed to find task: %w\", err)\n    }\n    if task == nil {\n        return nil, ErrTaskNotFound\n    }\n\n    // 権限チェック：タスクの作成者またはプロジェクトメンバーであること\n    if err := i.authorizeUpdate(ctx, task, actor); err != nil {\n        return nil, err\n    }\n\n    // ドメインモデルの操作\n    if err := task.UpdateTitle(input.Title); err != nil {\n        return nil, fmt.Errorf(\"failed to update title: %w\", err)\n    }\n\n    if err := i.saver.Save(ctx, task); err != nil {\n        return nil, fmt.Errorf(\"failed to save task: %w\", err)\n    }\n\n    return &UpdateTaskOutput{ID: task.ID().String()}, nil\n}\n\nfunc (i *UpdateTaskInteractor) authorizeUpdate(ctx context.Context, task *model.Task, actor model.UserID) error {\n    // 作成者本人は常に許可\n    if task.CreatedBy() == actor {\n        return nil\n    }\n\n    // プロジェクトメンバーかどうかを確認\n    isMember, err := i.members.IsMember(ctx, task.ProjectID(), actor)\n    if err != nil {\n        return fmt.Errorf(\"failed to check membership: %w\", err)\n    }\n    if !isMember {\n        return ErrNotAuthorized\n    }\n\n    return nil\n}\n```\n\n### ドメイン層での認可（ポリシーオブジェクト）\n\nより複雑な認可ルールは、ドメイン層にポリシーオブジェクトとして表現できます。Vaughn Vernonは _Implementing […]
 
 > TOOL
@@ -1949,7 +1949,7 @@ id: toolu_015JLVsDrVMD3h7zp6MC1Z2m
 tool_result
 id: toolu_015JLVsDrVMD3h7zp6MC1Z2m
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2001,7 +2001,7 @@ id: toolu_01D9LFgnAar1PU1sa5BMFBRw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "old_string": "type TaskPolicy struct{}\n\nfunc (p *TaskPolicy) CanPerform(task *Task, actor UserID, role MemberRole, action TaskAction) error {\n    switch action {\n    case TaskActionUpdate:\n        if task.CreatedBy() == actor || role == MemberRoleOwner || role == MemberRoleEditor {\n            return nil\n        }\n    case TaskActionDelete:\n        if task.CreatedBy() == actor || role == MemberRoleOwner {\n            return nil\n        }\n    case TaskActionChangeStatus:\n        if task.AssigneeID() == actor || task.CreatedBy() == actor || role == MemberRoleOwner {\n            return nil\n        }\n    case TaskActionAssign:\n        if role == MemberRoleOwner || role == MemberRoleEditor {\n            return nil\n        }\n    }\n    return fmt.Errorf(\"user %s is not allowed to %v on task %s\", actor, action, task.ID())\n}",
   "new_string": "// ErrPermissionDenied は認可失敗を表すドメインエラーです。\n// 内部IDを含めないことで、APIレスポンスにそのまま使っても情報漏洩しません。\nvar ErrPermissionDenied = errors.New(\"permission denied\")\n\ntype TaskPolicy struct{}\n\nfunc (p *TaskPolicy) CanPerform(task *Task, actor UserID, role MemberRole, action TaskAction) error {\n    switch action {\n    case TaskActionUpdate:\n        if task.CreatedBy() == actor || role == MemberRoleOwner || role == MemberRoleEditor {\n            return nil\n        }\n    case TaskActionDelete:\n        if task.CreatedBy() == actor || role == MemberRoleOwner {\n            return nil\n        }\n    case TaskActionChangeStatus:\n        if task.AssigneeID() == actor || task.CreatedBy() == actor || role == MemberRoleOwner {\n            return nil\n        }\n    case TaskActionAssign:\n        if role == MemberRoleOwner || role == MemberRoleEditor {\n            return nil\n        }\n    }\n    return […]
 
@@ -2010,7 +2010,7 @@ id: toolu_01D9LFgnAar1PU1sa5BMFBRw
 tool_result
 id: toolu_01D9LFgnAar1PU1sa5BMFBRw
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2024,7 +2024,7 @@ id: toolu_016KWsJzzqTpsDnwdV9cyQph
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "old_string": "アプリケーション層からポリシーオブジェクトを利用します。\n\n```go\n// usecase/delete_task_interactor.go\n\nfunc (i *DeleteTaskInteractor) Execute(ctx context.Context, input *DeleteTaskInput) error {\n    actor := model.UserIDFromContext(ctx)\n\n    task, err := i.tasks.FindByID(ctx, model.TaskID(input.TaskID))\n    if err != nil {\n        return fmt.Errorf(\"failed to find task: %w\", err)\n    }\n    if task == nil {\n        return ErrTaskNotFound\n    }\n\n    role, err := i.members.GetRole(ctx, task.ProjectID(), actor)\n    if err != nil {\n        return fmt.Errorf(\"failed to get role: %w\", err)\n    }\n\n    // ドメインポリシーによる認可\n    policy := &model.TaskPolicy{}\n    if err := policy.CanPerform(task, actor, role, model.TaskActionDelete); err != nil {\n        return ErrNotAuthorized\n    }\n\n    return i.tasks.Delete(ctx, task.ID())\n}\n```",
   "new_string": "アプリケーション層からポリシーオブジェクトを利用します。認可失敗時は**監査ログを記録**したうえで、外部には詳細を漏らさないエラーを返します。\n\n```go\n// usecase/delete_task_interactor.go\n\nfunc (i *DeleteTaskInteractor) Execute(ctx context.Context, input *DeleteTaskInput) error {\n    actor := model.UserIDFromContext(ctx)\n\n    task, err := i.tasks.FindByID(ctx, model.TaskID(input.TaskID))\n    if err != nil {\n        return fmt.Errorf(\"failed to find task: %w\", err)\n    }\n    if task == nil {\n        return ErrTaskNotFound\n    }\n\n    role, err := i.members.GetRole(ctx, task.ProjectID(), actor)\n    if err != nil {\n        return fmt.Errorf(\"failed to get role: %w\", err)\n    }\n\n    // ドメインポリシーによる認可\n    policy := &model.TaskPolicy{}\n    if err := policy.CanPerform(task, actor, role, model.TaskActionDelete); err != nil {\n        // 監査ログ：誰が・何を・いつ試みて拒否されたかを記録\n        slog.WarnContext(ctx, \"authorization denied\",\n            \"actor\", actor.String(),\n            \"action\", \"delete\",\n            \"taskID\", task.ID().String(),\n            \"role\", role.String(),\n        )\n        return ErrNotAuthorized\n    }\n\n    return i.tasks.Delete(ctx, task.ID())\n}\n```\n\nポリシーオブジェクト自体は `ErrPermissionDenied` を返すだけで、ユーザーIDやタスクIDを含めません。内部情報を含むログはアプリケーション層で出力し、外部に返すエラーとは分離します。"
 }
@@ -2035,7 +2035,7 @@ id: toolu_016KWsJzzqTpsDnwdV9cyQph
 tool_result
 id: toolu_016KWsJzzqTpsDnwdV9cyQph
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2087,7 +2087,7 @@ id: toolu_016FwgEdFZ1s14bxVc9Ct2YE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "old_string": "### フィールドレベルの可視性制御\n\nロールに応じて返すフィールドを制御するパターンです。\n\n```go\n// interface/rest/handler/task_response.go\n\ntype TaskResponse struct {\n    ID          string  `json:\"id\"`\n    Title       string  `json:\"title\"`\n    Status      string  `json:\"status\"`\n    AssigneeName string `json:\"assigneeName,omitempty\"`\n    // 管理者のみに見えるフィールド\n    InternalNote *string `json:\"internalNote,omitempty\"`\n    CostEstimate *int    `json:\"costEstimate,omitempty\"`\n}\n\nfunc toTaskResponse(task *model.Task, role model.MemberRole) TaskResponse {\n    resp := TaskResponse{\n        ID:           task.ID().String(),\n        Title:        task.Title().String(),\n        Status:       task.Status().String(),\n        AssigneeName: task.AssigneeName(),\n    }\n\n    // 管理者・オーナーのみ内部メモとコスト見積もりを含める\n    if role == model.MemberRoleOwner || role == model.MemberRoleAdmin {\n        note := task.InternalNote()\n        resp.InternalNote = &note\n        cost := task.CostEstimate()\n        resp.CostEstimate = &cost\n    }\n\n    return resp\n}\n```",
   "new_string": "### フィールドレベルの可視性制御\n\nロールに応じて返すフィールドを制御するパターンです。「どのフィールドをどのロールに見せるか」もビジネスルールの一部なので、判定ロジックはドメイン層のポリシーに置き、Handler層はその結果に従ってレスポンスを組み立てるだけにします。\n\n```go\n// domain/model/task_visibility.go\n\ntype TaskVisibility struct {\n    ShowInternalNote bool\n    ShowCostEstimate bool\n}\n\nfunc NewTaskVisibility(role MemberRole) TaskVisibility {\n    return TaskVisibility{\n        ShowInternalNote: role == MemberRoleOwner || role == MemberRoleAdmin,\n        ShowCostEstimate: role == MemberRoleOwner || role == MemberRoleAdmin,\n    }\n}\n```\n\nHandler層はドメインが返した可視性情報に基づいてレスポンスを構築します。ロールの判定ロジックはHandler層に持ち込みません。\n\n```go\n// interface/rest/handler/task_response.go\n\ntype TaskResponse struct {\n    ID           string  `json:\"id\"`\n    Title        string  `json:\"title\"`\n    Status       string  `json:\"status\"`\n    AssigneeName string  `json:\"assigneeName,omitempty\"`\n    InternalNote *string `json:\"internalNote,omitempty\"`\n    CostEstimate *int    `json:\"costEstimate,omitempty\"`\n}\n\nfunc toTaskResponse(task *model.Task, vis model.TaskVisibility) TaskResponse {\n    resp := TaskResponse{\n        ID:           task.ID().String(),\n        Title:        task.Title().String(),\n        Status:       task.Status().String(),\n        AssigneeName: task.AssigneeName(),\n    }\n\n    if vis.ShowInternalNote {\n        note := task.InternalNote()\n        resp.InternalNote = &note\n    }\n    if vis.ShowCostEstimate {\n        cost := task.CostEstimate()\n        resp.CostEstimate = &cost\n    }\n\n    return resp\n}\n```"
 }
@@ -2098,7 +2098,7 @@ id: toolu_016FwgEdFZ1s14bxVc9Ct2YE
 tool_result
 id: toolu_016FwgEdFZ1s14bxVc9Ct2YE
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2150,7 +2150,7 @@ id: toolu_01DWXPCaew2AwQmMLkof6CF4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "old_string": ":::message\n\n以下のコード例では認可パターンに焦点を当てるため、クエリの戻り値を簡略化しています。CQRSの原則に従う場合、Query側はドメインモデルではなくDTOを直接返すQueryServiceを使用します（詳細は[CQRS記事の「誤解3」](https://zenn.dev/135yshr/articles/9e3ec9a7d52c98#%E8%AA%A4%E8%A7%A33%EF%BC%9A%E3%80%8Cquery%E5%81%B4%E3%82%82repository%E3%82%92%E4%BD%BF%E3%81%86%E3%80%8D)を参照）。\n\n:::",
   "new_string": ":::message alert\n\n認可の観点でも、Query側でドメインモデルをそのまま返すのは危険です。ドメインモデルには内部フィールド（内部メモ、コスト見積もりなど）が含まれており、Handler層でのフィルタ漏れがそのまま情報漏洩につながります。CQRSの原則どおり、Query側はロールに応じた必要最小限のフィールドだけを含むDTOを直接返すQueryServiceを使用するのが安全です（詳細は[CQRS記事の「誤解3」](https://zenn.dev/135yshr/articles/9e3ec9a7d52c98#%E8%AA%A4%E8%A7%A33%EF%BC%9A%E3%80%8Cquery%E5%81%B4%E3%82%82repository%E3%82%92%E4%BD%BF%E3%81%86%E3%80%8D)を参照）。以下のコード例では認可の配置パターンを示すため、簡略化してドメインモデルを使用しています。\n\n:::"
 }
@@ -2161,7 +2161,7 @@ id: toolu_01DWXPCaew2AwQmMLkof6CF4
 tool_result
 id: toolu_01DWXPCaew2AwQmMLkof6CF4
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2212,7 +2212,7 @@ tool_use Read
 id: toolu_015vaSxu9AkHuc1W3VAS8QWE
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "offset": 310,
   "limit": 20
 }
@@ -2256,7 +2256,7 @@ id: toolu_01Q9EDNYStn8fEXwsB9BmErZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "old_string": "ポリシーオブジェクト自体は `ErrPermissionDenied` を返すだけで、ユーザーIDやタスクIDを含めません。内部情報を含むログはアプリケーション層で出力し、外部に返すエラーとは分離します。\n\n---\n\n## クエリの可視性制御",
   "new_string": "ポリシーオブジェクト自体は `ErrPermissionDenied` を返すだけで、ユーザーIDやタスクIDを含めません。内部情報を含むログはアプリケーション層で出力し、外部に返すエラーとは分離します。\n\n### ポリシーオブジェクトのテスト\n\nポリシーオブジェクトの最大の利点は**テスタビリティ**です。外部依存がないため、テーブルテストで全パターンを網羅できます。\n\n```go\n// domain/model/task_policy_test.go\n\nfunc TestTaskPolicy_CanPerform(t *testing.T) {\n    creator := NewUserID(\"user-1\")\n    assignee := NewUserID(\"user-2\")\n    other := NewUserID(\"user-3\")\n\n    task := newTestTask(creator, assignee) // テスト用のTask生成ヘルパー\n\n    tests := []struct {\n        name    string\n        actor   UserID\n        role    MemberRole\n        action  TaskAction\n        wantErr bool\n    }{\n        {\"作成者は更新可能\", creator, MemberRoleViewer, TaskActionUpdate, false},\n        {\"オーナーは削除可能\", other, MemberRoleOwner, TaskActionDelete, false},\n        {\"閲覧者は削除不可\", other, MemberRoleViewer, TaskActionDelete, true},\n        {\"担当者はステータス変更可能\", assignee, MemberRoleViewer, TaskActionChangeStatus, false},\n        {\"閲覧者はアサイン不可\", other, MemberRoleViewer, TaskActionAssign, true},\n        {\"エディターはアサイン可能\", other, MemberRoleEditor, TaskActionAssign, false},\n    }\n\n    policy := &TaskPolicy{}\n    for _, tt := range tests {\n        t.Run(tt.name, func(t *testing.T) {\n            err := policy.CanPerform(task, tt.actor, tt.role, tt.action)\n            if (err != nil) != tt.wantErr {\n                t.Errorf(\"CanPerform() error = %v, wantErr %v\", err, tt.wantErr)\n            }\n        })\n    }\n}\n```\n\n認可ルールの変更時に、既存の全パターンがリグレッションしていないことをこのテストで確認できます。\n\n---\n\n## クエリの可視性制御"
 }
@@ -2267,7 +2267,7 @@ id: toolu_01Q9EDNYStn8fEXwsB9BmErZ
 tool_result
 id: toolu_01Q9EDNYStn8fEXwsB9BmErZ
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2281,7 +2281,7 @@ id: toolu_01VgcSLGpSqmP7MgXMk8Sb2T
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "old_string": "middlewareで扱えるのは**ロールベースのアクセス制御（RBAC）**です。「このエンドポイントにはこのロールが必要」という静的なルールを宣言的に設定できます。",
   "new_string": "middlewareで扱えるのは**ロールベースのアクセス制御（RBAC）**です。「このエンドポイントにはこのロールが必要」という静的なルールを宣言的に設定できます。\n\nなお、コンテキストからのユーザー情報取得は `ClaimsFromContext` に統一します。`context.Value` は `any` を返すため、型アサーション失敗時にnilとなる点に注意が必要です。\n\n```go\n// interface/rest/middleware/context.go\n\nfunc ClaimsFromContext(ctx context.Context) *Claims {\n    claims, _ := ctx.Value(claimsKey).(*Claims)\n    return claims\n}\n```\n\nアプリケーション層以下では、Handlerが `Claims` からドメインの値オブジェクトに変換して渡します。\n\n```go\n// interface/rest/handler/task_handler.go\n\nfunc (h *TaskHandler) Delete(w http.ResponseWriter, r *http.Request) {\n    claims := middleware.ClaimsFromContext(r.Context())\n    if claims == nil {\n        respondError(w, http.StatusUnauthorized, \"not authenticated\")\n        return\n    }\n    actor := model.NewUserID(claims.UserID)\n\n    // actorをUseCaseに渡す（contextに型安全でない値を埋め込まない）\n    err := h.deleteTask.Execute(r.Context(), &usecase.DeleteTaskInput{\n        TaskID: chi.URLParam(r, \"taskID\"),\n        Actor:  actor,\n    })\n    // ...\n}\n```"
 }
@@ -2292,7 +2292,7 @@ id: toolu_01VgcSLGpSqmP7MgXMk8Sb2T
 tool_result
 id: toolu_01VgcSLGpSqmP7MgXMk8Sb2T
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2306,7 +2306,7 @@ id: toolu_01FWkqgvn8MUaMsvfSKDGey1
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "old_string": "    actor := model.UserIDFromContext(ctx)",
   "new_string": "    actor := input.Actor"
 }
@@ -2317,7 +2317,7 @@ id: toolu_01FWkqgvn8MUaMsvfSKDGey1
 tool_result
 id: toolu_01FWkqgvn8MUaMsvfSKDGey1
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated. All occurrences were successfully replaced. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated. All occurrences were successfully replaced. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2368,7 +2368,7 @@ tool_use Read
 id: toolu_01Fz5G47T9zRv1gxkArDhLRn
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "offset": 480,
   "limit": 60
 }
@@ -2444,7 +2444,7 @@ tool_use Read
 id: toolu_01J34JdrjDHfStcrV7aLqgtg
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "offset": 540,
   "limit": 60
 }
@@ -2522,7 +2522,7 @@ id: toolu_01H4LP9bJ9eUTQQBfCJZReoB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "old_string": "middlewareがリポジトリに依存すると、レイヤー構造が崩れます。middlewareはコンテキスト情報（トークン、ロール）のみを扱うべきです。\n\n---\n\n## まとめ",
   "new_string": "middlewareがリポジトリに依存すると、レイヤー構造が崩れます。middlewareはコンテキスト情報（トークン、ロール）のみを扱うべきです。\n\n### 3. 認可チェックの前に副作用を実行する\n\n```go\n// ❌ 認可チェック前にドメインイベントが発行される\nfunc (i *AssignTaskInteractor) Execute(ctx context.Context, input *AssignTaskInput) error {\n    task, _ := i.tasks.FindByID(ctx, model.TaskID(input.TaskID))\n\n    // 先にドメイン操作を実行してしまう\n    task.Assign(input.AssigneeID) // ← ドメインイベントが発行される可能性がある\n\n    // 後から認可チェック\n    policy := &model.TaskPolicy{}\n    if err := policy.CanPerform(task, input.Actor, role, model.TaskActionAssign); err != nil {\n        return ErrNotAuthorized // ← 拒否しても副作用は取り消せない\n    }\n\n    return i.tasks.Save(ctx, task)\n}\n```\n\n認可チェックは**必ずドメイン操作の前に実行します。** 順序が逆転すると、権限のないユーザーの操作でドメインイベントが発行されたり、不整合な状態が発生したりします。\n\n### 4. 認可エラーのメッセージに内部情報を含める\n\n```go\n// ❌ ユーザーID・タスクID・ロールがエラーメッセージに漏れる\nreturn fmt.Errorf(\"user %s with role %s cannot delete task %s\", actor, role, task.ID())\n```\n\n認可エラーのメッセージにリソースIDやユーザーIDを含めると、APIレスポンス経由で内部構造が推測可能になります。外部に返すエラーは `\"permission denied\"` のような汎用メッセージにとどめ、詳細はサーバーサイドの監査ログに記録します。\n\n---\n\n## まとめ"
 }
@@ -2533,7 +2533,7 @@ id: toolu_01H4LP9bJ9eUTQQBfCJZReoB
 tool_result
 id: toolu_01H4LP9bJ9eUTQQBfCJZReoB
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2547,7 +2547,7 @@ id: toolu_01EsuZQrvaxzwSYWPXmTfben
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "old_string": "    subgraph クエリ\n        Q1[middleware: 認証 + RBAC] --> Q2[アプリケーション層: テナント/メンバーシップチェック]\n        Q2 --> Q3[Handler: フィールドレベルフィルタ]\n        Q3 --> Q4[レスポンス]\n    end",
   "new_string": "    subgraph クエリ\n        Q1[middleware: 認証 + RBAC] --> Q2[アプリケーション層: テナント/メンバーシップチェック]\n        Q2 --> Q3[ドメイン層: 可視性ポリシー]\n        Q3 --> Q4[Handler: レスポンス構築]\n        Q4 --> Q5[レスポンス]\n    end"
 }
@@ -2558,7 +2558,7 @@ id: toolu_01EsuZQrvaxzwSYWPXmTfben
 tool_result
 id: toolu_01EsuZQrvaxzwSYWPXmTfben
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2568,7 +2568,7 @@ id: toolu_018uVa6T6hPugkhKKWGeSBVg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "old_string": "| 主な実装箇所 | アプリケーション層＋ドメインポリシー | アプリケーション層＋Handler |",
   "new_string": "| 主な実装箇所 | アプリケーション層＋ドメインポリシー | アプリケーション層＋ドメインポリシー（可視性） |"
 }
@@ -2579,7 +2579,7 @@ id: toolu_018uVa6T6hPugkhKKWGeSBVg
 tool_result
 id: toolu_018uVa6T6hPugkhKKWGeSBVg
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2593,7 +2593,7 @@ id: toolu_01NDVx1HokAKxmmm2GTDsEF2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "old_string": "| 認可レベル       | 実装箇所                             | 判断基準                 |\n| ---------------- | ------------------------------------ | ------------------------ |\n| 粗粒度（RBAC）   | middleware                           | ロール、エンドポイント   |\n| コマンドの細粒度 | アプリケーション層＋ドメインポリシー | リソースの所有権、状態   |\n| クエリの可視性   | アプリケーション層＋Handler          | テナント、メンバーシップ |",
   "new_string": "| 認可レベル       | 実装箇所                                       | 判断基準                 |\n| ---------------- | ---------------------------------------------- | ------------------------ |\n| 粗粒度（RBAC）   | middleware                                     | ロール、エンドポイント   |\n| コマンドの細粒度 | アプリケーション層＋ドメインポリシー           | リソースの所有権、状態   |\n| クエリの可視性   | アプリケーション層＋ドメインポリシー（可視性） | テナント、メンバーシップ |"
 }
@@ -2604,7 +2604,7 @@ id: toolu_01NDVx1HokAKxmmm2GTDsEF2
 tool_result
 id: toolu_01NDVx1HokAKxmmm2GTDsEF2
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2618,7 +2618,7 @@ id: toolu_01ERawHU2reVG59jhPZtQ9Vb
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "old_string": "| アプリケーション層のセキュリティ設計 | Vaughn Vernon, _Implementing Domain-Driven Design_（2013）Chapter 14: Application pp.521-530 |",
   "new_string": "| アプリケーション層のセキュリティ設計 | Vaughn Vernon, _Implementing Domain-Driven Design_（2013）Chapter 14: Application — アプリケーションサービスが認証・認可の窓口となる設計を解説。Identity and Access Contextとして認可を独立した境界づけられたコンテキストに分離するパターンも紹介 |"
 }
@@ -2629,7 +2629,7 @@ id: toolu_01ERawHU2reVG59jhPZtQ9Vb
 tool_result
 id: toolu_01ERawHU2reVG59jhPZtQ9Vb
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2643,7 +2643,7 @@ id: toolu_013jxgVJSSzMQ2wQo8MtifgC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "old_string": "認可設計で最も重要なのは、**各層の責務を明確に分けること**です。middlewareは認証とロールベースのチェックに専念し、リソースの状態に依存する細粒度の認可はアプリケーション層とドメイン層に委ねます。コマンドとクエリでは認可の性質が異なるため、それぞれに適した設計パターンを選択することが安全なAPIの実現につながります。",
   "new_string": "認可設計で最も重要なのは、**各層の責務を明確に分けること**です。middlewareは認証とロールベースのチェックに専念し、リソースの状態に依存する細粒度の認可はアプリケーション層とドメイン層に委ねます。認可ルールはポリシーオブジェクトに集約し、テーブルテストで全パターンを網羅します。認可失敗時は監査ログで記録し、外部に返すエラーには内部情報を含めません。コマンドとクエリでは認可の性質が異なるため、それぞれに適した設計パターンを選択することが、認可漏れのない設計につながります。"
 }
@@ -2654,7 +2654,7 @@ id: toolu_013jxgVJSSzMQ2wQo8MtifgC
 tool_result
 id: toolu_013jxgVJSSzMQ2wQo8MtifgC
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2687,7 +2687,7 @@ id: toolu_01EdZ7ZYLFz2WH4Yf2uSVos9
 ```json
 {
   "pattern": "input\\.Actor",
-  "path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "output_mode": "content"
 }
 ```
@@ -2713,7 +2713,7 @@ tool_use Read
 id: toolu_014iZ1wS8EqJSmeudUy3Ju4H
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "offset": 194,
   "limit": 10
 }
@@ -2761,7 +2761,7 @@ Finding: articles/60d7d006c0f38f.md !node_modules/**
 Linting: 1 file(s)
 Summary: 0 error(s)
 
-/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md
+/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md
   269:7106  error  Line 269 sentence length(140) exceeds the maximum sentence length of 100.
 Over 40 characters  ja-technical-writing/sentence-length
 
@@ -2774,7 +2774,7 @@ tool_use Read
 id: toolu_01Sa4ZixU2g1irCM3HH4FTrQ
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "offset": 268,
   "limit": 3
 }
@@ -2797,7 +2797,7 @@ id: toolu_01CcEZyjk1wvEmS5cZTea2tv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "old_string": "このアプローチは動作しますが、問題があります。認可ルールがUseCase内のプライベートメソッドに埋もれるため、**ルールの一覧性がなく、操作ごとに異なる判定ロジックが各UseCaseに散在します。** 「削除は作成者とオーナーのみ」「ステータス変更は担当者と作成者とオーナー」といったルールが増えると、全体像の把握が困難になります。",
   "new_string": "このアプローチは動作しますが、問題があります。認可ルールがUseCase内のプライベートメソッドに埋もれるため、**ルールの一覧性がありません。** 操作ごとに異なる判定ロジックが各UseCaseに散在します。「削除は作成者とオーナーのみ」「ステータス変更は担当者と作成者とオーナー」といったルールが増えると、全体像の把握が困難になります。"
 }
@@ -2808,7 +2808,7 @@ id: toolu_01CcEZyjk1wvEmS5cZTea2tv
 tool_result
 id: toolu_01CcEZyjk1wvEmS5cZTea2tv
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2857,7 +2857,7 @@ tool_use Read
 id: toolu_01YR3xWAU1bMV7F1FDtu9jcx
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md"
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md"
 }
 ```
 
@@ -3170,7 +3170,7 @@ tool_use Read
 id: toolu_0152hfn2EoyM6fQ5cbH8wefW
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "offset": 270,
   "limit": 50
 }
@@ -3244,7 +3244,7 @@ id: toolu_013JZiGJqTTKdj1tRxY2iHQq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "old_string": "このアプローチは動作しますが、問題があります。認可ルールがUseCase内のプライベートメソッドに埋もれるため、**ルールの一覧性がありません。** 操作ごとに異なる判定ロジックが各UseCaseに散在します。「削除は作成者とオーナーのみ」「ステータス変更は担当者と作成者とオーナー」といったルールが増えると、全体像の把握が困難になります。\n\n### 改善：ドメイン層のポリシーオブジェクトに集約する\n\n認可ルールをドメイン層のポリシーオブジェクトに集約することで、上記の問題を解決できます。Vaughn Vernonは _Implementing Domain-Driven Design_ のChapter 14で、アプリケーション層がセキュリティの窓口となる設計を解説しています。一方で「このタスクの作成者のみ削除可能」のような**ビジネスルールとしての認可**はドメイン知識そのものです。このような認可ルールはドメイン層にポリシーオブジェクトとして配置することで、ルールの一元管理とテスタビリティを両立できます。\n\n```go\n// domain/model/task_policy.go\n\ntype TaskAction int\n\nconst (\n    TaskActionUpdate TaskAction = iota + 1\n    TaskActionDelete\n    TaskActionChangeStatus\n    TaskActionAssign\n)\n\n// ErrPermissionDenied は認可失敗を表すドメインエラーです。\n// 内部IDを含めないことで、APIレスポンスにそのまま使っても情報漏洩しません。\nvar ErrPermissionDenied = errors.New(\"permission denied\")\n\ntype TaskPolicy struct{}\n\nfunc (p *TaskPolicy) CanPerform(task *Task, actor UserID, role MemberRole, action TaskAction) error {",
   "new_string": "このアプローチは動作しますが、問題があります。認可ルールがUseCase内のプライベートメソッドに埋もれるため、**ルールの一覧性がありません。** 操作ごとに異なる判定ロジックが各UseCaseに散在します。「削除は作成者とオーナーのみ」「ステータス変更は担当者と作成者とオーナー」といったルールが増えると、全体像の把握が困難になります。\n\nまた、上記の例では「プロジェクトメンバーかどうか」という粗い判定をしています。実際にはロール（オーナー、エディター、閲覧者）によって許可される操作は異なるため、メンバーシップの有無ではなくロールに基づく判定が必要です。次のセクションでは、この点も改善します。\n\n### 改善：ドメイン層のポリシーオブジェクトに集約する\n\n認可ルールをドメイン層のポリシーオブジェクトに集約することで、上記の問題を解決できます。Vaughn Vernonは _Implementing Domain-Driven Design_ のChapter 14で、アプリケーション層がセキュリティの窓口となる設計を解説しています。一方で「このタスクの作成者のみ削除可能」のような**ビジネスルールとしての認可**はドメイン知識そのものです。このような認可ルールはドメイン層にポリシーオブジェクトとして配置することで、ルールの一元管理とテスタビリティを両立できます。\n\n```go\n// domain/model/task_policy.go\n\ntype TaskAction int\n\nconst (\n    TaskActionUpdate TaskAction = iota + 1\n    TaskActionDelete\n    TaskActionChangeStatus\n    TaskActionAssign\n)\n\n// ErrPermissionDenied は認可失敗を表すドメインエラーです。\n// 内部IDを含めないことで、APIレスポンスにそのまま使っても情報漏洩しません。\nvar ErrPermissionDenied = errors.New(\"permission denied\")\n\n// TaskPolicy はタスクに対する認可ルールを集約するポリシーオブジェクトです。\n// 構造体にしているのは、テスト時にインターフェース経由でモックに差し替えたり、\n// 将来テナントごとのカスタムルールを注入したりする拡張点とするためです。\ntype TaskPolicy struct{}\n\nfunc (p *TaskPolicy) CanPerform(task *Task, actor UserID, role MemberRole, action TaskAction) error {"
 }
@@ -3255,7 +3255,7 @@ id: toolu_013JZiGJqTTKdj1tRxY2iHQq
 tool_result
 id: toolu_013JZiGJqTTKdj1tRxY2iHQq
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3326,7 +3326,7 @@ id: toolu_01Vn71aZEC4VDWm3xp5WCs5n
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "old_string": "なお、コンテキストからのユーザー情報取得は `ClaimsFromContext` に統一します。`context.Value` は `any` を返すため、型アサーション失敗時にnilとなる点に注意が必要です。\n\n```go\n// interface/rest/middleware/context.go\n\nfunc ClaimsFromContext(ctx context.Context) *Claims {\n    claims, _ := ctx.Value(claimsKey).(*Claims)\n    return claims\n}\n```\n\nアプリケーション層以下では、Handlerが `Claims` からドメインの値オブジェクトに変換して渡します。\n\n```go\n// interface/rest/handler/task_handler.go\n\nfunc (h *TaskHandler) Delete(w http.ResponseWriter, r *http.Request) {\n    claims := middleware.ClaimsFromContext(r.Context())\n    if claims == nil {\n        respondError(w, http.StatusUnauthorized, \"not authenticated\")\n        return\n    }\n    actor := model.NewUserID(claims.UserID)\n\n    // actorをUseCaseに渡す（contextに型安全でない値を埋め込まない）\n    err := h.deleteTask.Execute(r.Context(), &usecase.DeleteTaskInput{\n        TaskID: chi.URLParam(r, \"taskID\"),\n        Actor:  actor,\n    })\n    // ...\n}\n```",
   "new_string": "なお、コンテキストからのユーザー情報取得は `ClaimsFromContext` に統一します。`Authentication` middlewareを通過したリクエストには必ず `Claims` がセットされているため、middlewareの配下では非nilが保証されます。この不変条件を前提に、nilの場合はプログラミングエラーとしてパニックさせる `MustClaimsFromContext` を用意します。\n\n```go\n// interface/rest/middleware/context.go\n\n// ClaimsFromContext はコンテキストからClaimsを取得します。\n// Authentication middlewareを通過していない場合はnilを返します。\nfunc ClaimsFromContext(ctx context.Context) *Claims {\n    claims, _ := ctx.Value(claimsKey).(*Claims)\n    return claims\n}\n\n// MustClaimsFromContext はAuthentication middleware配下で使用します。\n// middlewareを通過していれば必ず非nilです。nilの場合はルーティング設定のバグです。\nfunc MustClaimsFromContext(ctx context.Context) *Claims {\n    claims := ClaimsFromContext(ctx)\n    if claims == nil {\n        panic(\"middleware: claims not found in context — is Authentication middleware applied?\")\n    }\n    return claims\n}\n```\n\nHandlerでは `MustClaimsFromContext` を使い、毎回のnilチェックを不要にします。`Authentication` middlewareの配下であることがルーター設定で保証されているためです。\n\n```go\n// interface/rest/handler/task_handler.go\n\nfunc (h *TaskHandler) Delete(w http.ResponseWriter, r *http.Request) {\n    claims := middleware.MustClaimsFromContext(r.Context())\n    actor := model.NewUserID(claims.UserID)\n\n    // actorをUseCaseに渡す（contextに型安全でない値を埋め込まない）\n    err := h.deleteTask.Execute(r.Context(), &usecase.DeleteTaskInput{\n        TaskID: chi.URLParam(r, \"taskID\"),\n        Actor:  actor,\n    })\n    // ...\n}\n```"
 }
@@ -3337,7 +3337,7 @@ id: toolu_01Vn71aZEC4VDWm3xp5WCs5n
 tool_result
 id: toolu_01Vn71aZEC4VDWm3xp5WCs5n
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3388,7 +3388,7 @@ tool_use Read
 id: toolu_018S3QEnymmbDuKa9GoX6r1G
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "offset": 445,
   "limit": 70
 }
@@ -3470,7 +3470,7 @@ id: toolu_01YQ5PuwXmqwb9Z7sfPEPBEN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "old_string": "    tasks, total, err := i.tasks.ListByProject(ctx, model.ProjectID(input.ProjectID), input.Filter)\n    if err != nil {\n        return nil, fmt.Errorf(\"failed to list tasks: %w\", err)\n    }\n\n    return &ListTasksOutput{Tasks: tasks, Total: total}, nil\n}\n```\n\n### フィールドレベルの可視性制御\n\nロールに応じて返すフィールドを制御するパターンです。「どのフィールドをどのロールに見せるか」もビジネスルールの一部なので、判定ロジックはドメイン層のポリシーに置き、Handler層はその結果に従ってレスポンスを組み立てるだけにします。\n\n```go\n// domain/model/task_visibility.go\n\ntype TaskVisibility struct {\n    ShowInternalNote bool\n    ShowCostEstimate bool\n}\n\nfunc NewTaskVisibility(role MemberRole) TaskVisibility {\n    return TaskVisibility{\n        ShowInternalNote: role == MemberRoleOwner || role == MemberRoleAdmin,\n        ShowCostEstimate: role == MemberRoleOwner || role == MemberRoleAdmin,\n    }\n}\n```\n\nHandler層はドメインが返した可視性情報に基づいてレスポンスを構築します。ロールの判定ロジックはHandler層に持ち込みません。\n\n```go\n// interface/rest/handler/task_response.go\n\ntype TaskResponse struct {\n    ID           string  `json:\"id\"`\n    Title        string  `json:\"title\"`\n    Status       string  `json:\"status\"`\n    AssigneeName string  `json:\"assigneeName,omitempty\"`\n    InternalNote *string `json:\"internalNote,omitempty\"`\n    CostEstimate *int    `json:\"costEstimate,omitempty\"`\n}\n\nfunc toTaskResponse(task *model.Task, vis model.TaskVisibility) TaskResponse {\n    resp := TaskResponse{\n        ID:           task.ID().String(),\n        Title:        task.Title().String(),\n        Status:       task.Status().String(),\n        AssigneeName: task.AssigneeName(),\n    }\n\n    if vis.ShowInternalNote {\n        note := task.InternalNote()\n        resp.InternalNote = &note\n    }\n    if vis.ShowCostEstimate {\n        cost := task.CostEstimate()\n        resp.CostEstimate = &cost\n    }\n\n    return resp\n}\n```",
   "new_string": "    role, err := i.members.GetRole(ctx, model.ProjectID(input.ProjectID), actor)\n    if err != nil {\n        return nil, fmt.Errorf(\"failed to get role: %w\", err)\n    }\n\n    tasks, total, err := i.tasks.ListByProject(ctx, model.ProjectID(input.ProjectID), input.Filter)\n    if err != nil {\n        return nil, fmt.Errorf(\"failed to list tasks: %w\", err)\n    }\n\n    // 可視性ポリシーをドメイン層で生成し、Outputに含める\n    vis := model.NewTaskVisibility(role)\n\n    return &ListTasksOutput{Tasks: tasks, Total: total, Visibility: vis}, nil\n}\n```\n\n### フィールドレベルの可視性制御\n\nロールに応じて返すフィールドを制御するパターンです。「どのフィールドをどのロールに見せるか」もビジネスルールの一部なので、判定ロジックはドメイン層のポリシーに置きます。\n\n```go\n// domain/model/task_visibility.go\n\ntype TaskVisibility struct {\n    ShowInternalNote bool\n    ShowCostEstimate bool\n}\n\nfunc NewTaskVisibility(role MemberRole) […]
 
@@ -3479,7 +3479,7 @@ id: toolu_01YQ5PuwXmqwb9Z7sfPEPBEN
 tool_result
 id: toolu_01YQ5PuwXmqwb9Z7sfPEPBEN
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3531,7 +3531,7 @@ id: toolu_01Q9aS7czCUiHEDeZp2V14bH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "old_string": "### 3. 認可チェックの前に副作用を実行する\n\n```go\n// ❌ 認可チェック前にドメインイベントが発行される\nfunc (i *AssignTaskInteractor) Execute(ctx context.Context, input *AssignTaskInput) error {\n    task, _ := i.tasks.FindByID(ctx, model.TaskID(input.TaskID))\n\n    // 先にドメイン操作を実行してしまう\n    task.Assign(input.AssigneeID) // ← ドメインイベントが発行される可能性がある\n\n    // 後から認可チェック\n    policy := &model.TaskPolicy{}\n    if err := policy.CanPerform(task, input.Actor, role, model.TaskActionAssign); err != nil {\n        return ErrNotAuthorized // ← 拒否しても副作用は取り消せない\n    }\n\n    return i.tasks.Save(ctx, task)\n}\n```\n\n認可チェックは**必ずドメイン操作の前に実行します。** 順序が逆転すると、権限のないユーザーの操作でドメインイベントが発行されたり、不整合な状態が発生したりします。",
   "new_string": "### 3. 認可をDBの制約に委ねる\n\n```go\n// ❌ 認可チェックをせず、DB制約で弾こうとする\nfunc (i *UpdateTaskInteractor) Execute(ctx context.Context, input *UpdateTaskInput) error {\n    task, _ := i.tasks.FindByID(ctx, model.TaskID(input.TaskID))\n\n    task.UpdateTitle(input.Title)\n\n    // 認可チェックなしでSave → DBのトリガーや制約で弾く想定\n    err := i.saver.Save(ctx, task)\n    if err != nil {\n        // DB制約エラーと認可エラーの区別がつかない\n        return fmt.Errorf(\"failed to save: %w\", err)\n    }\n    return nil\n}\n```\n\n認可をアプリケーション層で行わず、DBの制約やトリガーに委ねるパターンです。この方法では認可失敗なのかデータ不整合なのかの区別がつかず、適切なHTTPステータスコード（403 vs 500）を返せません。また、Saveの前にドメイン操作が走るため、認可されないはずの変更でドメインイベントが発行されるリスクもあります。認可チェックは**必ずドメイン操作の前に、アプリケーション層で明示的に実行します。**"
 }
@@ -3542,7 +3542,7 @@ id: toolu_01Q9aS7czCUiHEDeZp2V14bH
 tool_result
 id: toolu_01Q9aS7czCUiHEDeZp2V14bH
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3594,7 +3594,7 @@ id: toolu_01SqrXh7wxQPH8sPXn5h7nND
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "old_string": "認可設計で最も重要なのは、**各層の責務を明確に分けること**です。middlewareは認証とロールベースのチェックに専念し、リソースの状態に依存する細粒度の認可はアプリケーション層とドメイン層に委ねます。認可ルールはポリシーオブジェクトに集約し、テーブルテストで全パターンを網羅します。認可失敗時は監査ログで記録し、外部に返すエラーには内部情報を含めません。コマンドとクエリでは認可の性質が異なるため、それぞれに適した設計パターンを選択することが、認可漏れのない設計につながります。",
   "new_string": "認可設計で押さえるべきポイントは3つです。\n\n1. **認可ルールはポリシーオブジェクトに集約する。** UseCase内にバラバラに書くのではなく、ドメイン層のポリシーに一元化することで、ルールの見通しとテスタビリティを確保します。\n2. **middlewareとドメイン層の守備範囲を分ける。** middlewareはロールベースの粗粒度チェックに専念し、リソースの状態に依存する判定はドメインポリシーに委ねます。\n3. **コマンドとクエリで認可の性質が異なることを認識する。** コマンドは「この操作を実行できるか」、クエリは「どのデータが見えるか」が問われます。それぞれに適したポリシーを設計することで、認可漏れを防ぎます。"
 }
@@ -3605,7 +3605,7 @@ id: toolu_01SqrXh7wxQPH8sPXn5h7nND
 tool_result
 id: toolu_01SqrXh7wxQPH8sPXn5h7nND
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3669,7 +3669,7 @@ id: toolu_01DgkrKzPQ9GhKuyNiN8CJ8f
 ```
 Exit code 1
 
-/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md
+/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md
   668:43  error  【dict6】 "操作を実行"は冗長な表現です。"操作する"など簡潔な表現にすると文章が明瞭になります。
 解説: https://github.com/textlint-ja/textlint-rule-ja-no-redundant-expression#dict6  ja-technical-writing/ja-no-redundant-expression
 
@@ -3682,7 +3682,7 @@ tool_use Read
 id: toolu_01Ehw2EhsVGrGWY4EYhijbgK
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "offset": 667,
   "limit": 2
 }
@@ -3704,7 +3704,7 @@ id: toolu_01NnyzQ2votbwnrbM8FVZWpE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "old_string": "コマンドは「この操作を実行できるか」、クエリは「どのデータが見えるか」が問われます。",
   "new_string": "コマンドは「この操作が許可されるか」、クエリは「どのデータが見えるか」が問われます。"
 }
@@ -3715,7 +3715,7 @@ id: toolu_01NnyzQ2votbwnrbM8FVZWpE
 tool_result
 id: toolu_01NnyzQ2votbwnrbM8FVZWpE
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3992,7 +3992,7 @@ tool_use Bash
 id: toolu_01V6jtnMm3FUCptnLD47iGvo
 ```json
 {
-  "command": "git commit -m \"$(cat <<'EOF'\n📝 docs: review and improve CQRS authorization design article\n\nレビュー指摘に基づく全面的な改善:\n- タイトルをスコープに合わせて修正（安全なAPI→認可設計）\n- 認証/認可の日本語表現の破綻を修正\n- RequireRoleの空roles時500返却をpanic（起動時検出）に変更\n- CanPerformのエラーメッセージから内部ID除去（情報漏洩防止）\n- TaskPolicyの設計意図をコメントで明記\n- 素朴アプローチ→ポリシーオブジェクトの段階的構成に再編\n- 監査ログ（slog.WarnContext）パターンを追加\n- ポリシーオブジェクトのテーブルテストを追加\n- TaskVisibilityをドメイン層に移動しHandler矛盾を解消\n- ClaimsFromContext統一とMustClaimsFromContext追加\n- クエリ側Handler→UseCase→Visibility の完全な流れを追加\n- アンチパターン4件に拡充（DB制約委任、情報漏洩を追加）\n- まとめを3ポイントに集約\n- CQRS既公開記事との相互参照・レイヤー命名対応表を追加\n- 参考文献のURL更新・Vernon引用の精緻化・OWASP出典追加\n\nCo-Authored-By: Claude Opus 4.6 (1M context) <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git commit -m \"$(cat <<'EOF'\n📝 docs: review and improve CQRS authorization design article\n\nレビュー指摘に基づく全面的な改善:\n- タイトルをスコープに合わせて修正（安全なAPI→認可設計）\n- 認証/認可の日本語表現の破綻を修正\n- RequireRoleの空roles時500返却をpanic（起動時検出）に変更\n- CanPerformのエラーメッセージから内部ID除去（情報漏洩防止）\n- TaskPolicyの設計意図をコメントで明記\n- 素朴アプローチ→ポリシーオブジェクトの段階的構成に再編\n- 監査ログ（slog.WarnContext）パターンを追加\n- ポリシーオブジェクトのテーブルテストを追加\n- TaskVisibilityをドメイン層に移動しHandler矛盾を解消\n- ClaimsFromContext統一とMustClaimsFromContext追加\n- クエリ側Handler→UseCase→Visibility の完全な流れを追加\n- アンチパターン4件に拡充（DB制約委任、情報漏洩を追加）\n- まとめを3ポイントに集約\n- CQRS既公開記事との相互参照・レイヤー命名対応表を追加\n- 参考文献のURL更新・Vernon引用の精緻化・OWASP出典追加\n\nCo-Authored-By: Claude Opus 4.6 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit reviewed article changes"
 }
 ```
@@ -4296,7 +4296,7 @@ tool_use Read
 id: toolu_01Nb1gk7cqJAuvug3kMzaeLt
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "offset": 268,
   "limit": 15
 }
@@ -4330,7 +4330,7 @@ tool_use Read
 id: toolu_01TKefura97fMv4FW3pBYzsQ
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "offset": 448,
   "limit": 55
 }
@@ -4403,7 +4403,7 @@ tool_use Read
 id: toolu_017PTwuSvTM1tQSDYFHTFXGg
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "offset": 615,
   "limit": 25
 }
@@ -4447,7 +4447,7 @@ tool_use Read
 id: toolu_01M72vVgk9tU59BaerTKfitB
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "offset": 655,
   "limit": 25
 }
@@ -4495,7 +4495,7 @@ tool_use Read
 id: toolu_01V2Bp8uzdSfBYLWV4f1vVRb
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "offset": 498,
   "limit": 30
 }
@@ -4554,7 +4554,7 @@ id: toolu_01FMr7BBsrp6tSNiNSE1XQTL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "old_string": "また、上記の例では「プロジェクトメンバーかどうか」という粗い判定をしています。実際にはロール（オーナー、エディター、閲覧者）によって許可される操作は異なるため、メンバーシップの有無ではなくロールに基づく判定が必要です。次のセクションでは、この点も改善します。",
   "new_string": "また、上記の例では「プロジェクトメンバーかどうか」という粗い判定をしています。実際にはロール（オーナー、エディター、閲覧者）によって許可される操作は異なります。次のセクションでは、ポリシーオブジェクトへの移行に合わせて、メンバーシップの有無ではなくロールに基づく判定に変更しています。"
 }
@@ -4565,7 +4565,7 @@ id: toolu_01FMr7BBsrp6tSNiNSE1XQTL
 tool_result
 id: toolu_01FMr7BBsrp6tSNiNSE1XQTL
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4590,7 +4590,7 @@ Finding: articles/60d7d006c0f38f.md !node_modules/**
 Linting: 1 file(s)
 Summary: 0 error(s)
 
-/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md
+/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md
   279:134  error  一文に二回以上利用されている助詞 "に" がみつかりました。
 
 次の助詞が連続しているため、文を読みにくくしています。
@@ -4615,7 +4615,7 @@ id: toolu_019t7uZzhT5R6R8LuNfGFxqt
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "old_string": "次のセクションでは、ポリシーオブジェクトへの移行に合わせて、メンバーシップの有無ではなくロールに基づく判定に変更しています。",
   "new_string": "次のセクションのポリシーオブジェクトでは、メンバーシップの有無ではなくロールで判定するよう変更しています。"
 }
@@ -4626,7 +4626,7 @@ id: toolu_019t7uZzhT5R6R8LuNfGFxqt
 tool_result
 id: toolu_019t7uZzhT5R6R8LuNfGFxqt
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4671,7 +4671,7 @@ tool_use Bash
 id: toolu_01RERc8DhSzAMvC5LDGZ2EnD
 ```json
 {
-  "command": "git add articles/60d7d006c0f38f.md && git commit -m \"$(cat <<'EOF'\n📝 docs: clarify intentional rule change from membership to role-based auth\n\n素朴アプローチ→ポリシーオブジェクトの接続部分で、\n認可ルール自体がメンバーシップ判定からロール判定に\n意図的に厳格化されていることを明示\n\nCo-Authored-By: Claude Opus 4.6 (1M context) <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add articles/60d7d006c0f38f.md && git commit -m \"$(cat <<'EOF'\n📝 docs: clarify intentional rule change from membership to role-based auth\n\n素朴アプローチ→ポリシーオブジェクトの接続部分で、\n認可ルール自体がメンバーシップ判定からロール判定に\n意図的に厳格化されていることを明示\n\nCo-Authored-By: Claude Opus 4.6 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit the rule change clarification"
 }
 ```
@@ -4741,7 +4741,7 @@ tool_use Read
 id: toolu_01Ssa8UJzrsUwZQC69RzpSLq
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md"
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md"
 }
 ```
 
@@ -4760,7 +4760,7 @@ id: toolu_01SQ21TEthPUWAtUPnao2Czp
 ```json
 {
   "pattern": "type \\w+ struct|type \\w+ interface|func \\(|func [A-Z]|var \\w+|const \\w+",
-  "path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "output_mode": "content",
   "head_limit": 60
 }
@@ -4809,7 +4809,7 @@ id: toolu_01VkmzWxyBeRyBzn2Xss9CQy
 ```json
 {
   "pattern": "AssigneeName|AssigneeID|CreatedBy|InternalNote|CostEstimate|TaskID|UserID|ProjectID|MemberRole|contextKey|respondError|respondJSON|handleError|extractBearerToken",
-  "path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "output_mode": "content",
   "head_limit": 40
 }
@@ -4859,7 +4859,7 @@ id: toolu_01KYDZgAP6AnqajrYz4Yq6GJ
 ```json
 {
   "pattern": "AssigneeName|respondError|respondJSON|handleError|extractBearerToken|scanOrderList|reconstruct",
-  "path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "output_mode": "content"
 }
 ```
@@ -4891,7 +4891,7 @@ tool_use Read
 id: toolu_01J2Pm9Sd6FuQgajXRXgJHxi
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "offset": 520,
   "limit": 20
 }
@@ -4930,7 +4930,7 @@ tool_use Read
 id: toolu_017Vd65ReGvf3uBoqLUZLtaW
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "offset": 288,
   "limit": 15
 }
@@ -4964,7 +4964,7 @@ tool_use Read
 id: toolu_01EQV7ZFrJXbBajBy82uY1RD
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "offset": 588,
   "limit": 15
 }
@@ -5012,7 +5012,7 @@ id: toolu_01JCXbY7VyHc3UkMa18cgXCn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "old_string": "    if task.CreatedBy != claims.UserID && !contains(claims.Roles, \"admin\") {",
   "new_string": "    if task.CreatedBy() != claims.UserID && !contains(claims.Roles, \"admin\") {"
 }
@@ -5023,7 +5023,7 @@ id: toolu_01JCXbY7VyHc3UkMa18cgXCn
 tool_result
 id: toolu_01JCXbY7VyHc3UkMa18cgXCn
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5073,7 +5073,7 @@ id: toolu_01SrCYLNHutPgHyWrskkhc29
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "old_string": "    AssigneeName: task.AssigneeName(),",
   "new_string": "    AssigneeName: task.Assignee(),"
 }
@@ -5084,7 +5084,7 @@ id: toolu_01SrCYLNHutPgHyWrskkhc29
 tool_result
 id: toolu_01SrCYLNHutPgHyWrskkhc29
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated. All occurrences were successfully replaced. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md has been updated. All occurrences were successfully replaced. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

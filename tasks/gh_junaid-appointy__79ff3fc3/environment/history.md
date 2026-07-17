@@ -12,7 +12,7 @@ tool_use Bash
 id: toolu_012Zai4hixUeQj7fQT9VLvpT
 ```json
 {
-  "command": "cd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension && git status 2>/dev/null | head -5; echo \"---\"; ls -la",
+  "command": "cd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension && git status 2>/dev/null | head -5; echo \"---\"; ls -la",
   "description": "Check extension folder structure"
 }
 ```
@@ -23,7 +23,7 @@ tool_use Bash
 id: toolu_01MvXVhW3QGV4vMW5VaCc644
 ```json
 {
-  "command": "cd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension && find . -type f -not -path '*/node_modules/*' -not -path '*/.git/*' -not -path '*/dist/*' | head -60",
+  "command": "cd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension && find . -type f -not -path '*/node_modules/*' -not -path '*/.git/*' -not -path '*/dist/*' | head -60",
   "description": "List source files"
 }
 ```
@@ -133,7 +133,7 @@ tool_use Read
 id: toolu_015RSykYgbGRzsbvAo2Ebmh7
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx"
 }
 ```
 
@@ -186,7 +186,7 @@ tool_use Read
 id: toolu_01CJxupho8t48bVE2G7EdBk8
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/CLAUDE.md"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/CLAUDE.md"
 }
 ```
 
@@ -215,7 +215,7 @@ tool_use Read
 id: toolu_01XmFHCNhVxUbiCNcHhcN32V
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx"
 }
 ```
 
@@ -283,7 +283,7 @@ tool_use Read
 id: toolu_01JNmQRqefBjsk9LHcATzgef
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/hooks.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/hooks.ts"
 }
 ```
 
@@ -348,7 +348,7 @@ tool_use Read
 id: toolu_01RKenftDUMcqe6mxQkB9oTa
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/types.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/types.ts"
 }
 ```
 
@@ -420,7 +420,7 @@ tool_use Read
 id: toolu_01KHQvUWemynkn9VearLZHtU
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/engine.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/engine.ts"
 }
 ```
 
@@ -482,7 +482,7 @@ tool_use Bash
 id: toolu_0195BVsfiUsJpgyTr2WVpPG5
 ```json
 {
-  "command": "cd /Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine && grep -rln \"patch\" src --include=*.ts -i | grep -i \"draft\\|visit\\|addon\\|calendar\" | head",
+  "command": "cd /home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine && grep -rln \"patch\" src --include=*.ts -i | grep -i \"draft\\|visit\\|addon\\|calendar\" | head",
   "description": "Find engine draft patch handler"
 }
 ```
@@ -545,7 +545,7 @@ tool_use Read
 id: toolu_01KpepJyvRBhnxeN6BZzooQw
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/visit-drafts.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/visit-drafts.ts",
   "offset": 674,
   "limit": 60
 }
@@ -600,7 +600,7 @@ tool_use Bash
 id: toolu_01QcEttQF342sHJciZdhcSAK
 ```json
 {
-  "command": "cd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension && grep -n \"guest\" design/global.css",
+  "command": "cd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension && grep -n \"guest\" design/global.css",
   "description": "Find guest CSS classes"
 }
 ```
@@ -632,7 +632,7 @@ tool_use Read
 id: toolu_01FxKj8cGLK7KKQPL4D6eGzp
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/design/components/index.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/design/components/index.ts"
 }
 ```
 
@@ -659,7 +659,7 @@ tool_use Read
 id: toolu_01VJh35KPVTVobFww6qiLDby
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/design/global.css",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/design/global.css",
   "offset": 336,
   "limit": 60
 }
@@ -723,7 +723,7 @@ tool_use Read
 id: toolu_01UP8o6oTzCjrtDhmBQrXtMe
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/design/components/IconButton.tsx"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/design/components/IconButton.tsx"
 }
 ```
 
@@ -766,7 +766,7 @@ tool_use Read
 id: toolu_01UTnq5Xs8LkUibFKRfEckcj
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/design/components/Button.tsx"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/design/components/Button.tsx"
 }
 ```
 
@@ -823,7 +823,7 @@ tool_use Read
 id: toolu_01X7dQAA8k1Muh4sinvdWoe3
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/design/components/TextField.tsx"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/design/components/TextField.tsx"
 }
 ```
 
@@ -931,7 +931,7 @@ id: toolu_014wugymTqqY7CHJL9391bSM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx",
   "old_string": "import { useEffect, useState } from 'react';\nimport { Phone, User } from 'lucide-react';\nimport { Chip, Switch, TextField } from '@/design/components';\nimport type { DraftGuest } from '@/lib/types';",
   "new_string": "import { useEffect, useState } from 'react';\nimport { Check, Pencil, Phone, User } from 'lucide-react';\nimport { Chip, Switch, TextField } from '@/design/components';\nimport type { DraftGuest } from '@/lib/types';"
 }
@@ -942,7 +942,7 @@ id: toolu_014wugymTqqY7CHJL9391bSM
 tool_result
 id: toolu_014wugymTqqY7CHJL9391bSM
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -952,7 +952,7 @@ id: toolu_01NR7LJ7seLewuycGgwupTDS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx",
   "old_string": "  const [name, setName] = useState(guest.name);\n  const [phone, setPhone] = useState(guest.phone ?? '');\n\n  // Keep local inputs in sync when the server reconciles the row.\n  useEffect(() => setName(guest.name), [guest.name]);\n  useEffect(() => setPhone(guest.phone ?? ''), [guest.phone]);\n\n  const sent = guest.status === 'sent';\n  const cancelled = guest.status === 'cancelled';\n  const display = guest.name || guest.email;\n  const editable = guest.include && !sent;\n\n  return (",
   "new_string": "  const [name, setName] = useState(guest.name);\n  const [phone, setPhone] = useState(guest.phone ?? '');\n  // Details stay collapsed by default so each card is compact; the host opens\n  // them only to make a correction. Sent guests are editable too — re-sending\n  // pushes the change onto the already-issued pass.\n  const [editing, setEditing] = useState(false);\n\n  // Keep local inputs in sync when the server reconciles the row.\n  useEffect(() => setName(guest.name), [guest.name]);\n  useEffect(() => setPhone(guest.phone ?? ''), [guest.phone]);\n\n  const sent = guest.status === 'sent';\n  const cancelled = guest.status === 'cancelled';\n  const display = guest.name || guest.email;\n  // Anyone we'd actually send/update a pass for can be corrected — included\n  // guests whether or not their pass has already gone out.\n  const editable = guest.include && !cancelled;\n\n  return ("
 } […]
@@ -962,7 +962,7 @@ id: toolu_01NR7LJ7seLewuycGgwupTDS
 tool_result
 id: toolu_01NR7LJ7seLewuycGgwupTDS
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -976,7 +976,7 @@ id: toolu_0177zvGShXjaNFHsUrxCyjgM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx",
   "old_string": "      {editable ? (\n        <div className=\"guest__form\">\n          <TextField\n            label=\"Visitor name\"\n            value={name}\n            leadingIcon={<User size={16} strokeWidth={2} />}\n            onChange={(e) => setName(e.target.value)}\n            onBlur={() => name !== guest.name && onChange({ name })}\n            placeholder=\"Full name\"\n          />\n          <TextField\n            label=\"Phone (for WhatsApp pass)\"\n            value={phone}\n            inputMode=\"tel\"\n            leadingIcon={<Phone size={16} strokeWidth={2} />}\n            onChange={(e) => setPhone(e.target.value)}\n            onBlur={() => phone !== (guest.phone ?? '') && onChange({ phone })}\n            placeholder=\"+91…\"\n          />\n        </div>\n      ) : (\n        !guest.include &&\n        !cancelled && (\n          <div className=\"guest__hint type-label-sm\">Won’t receive a pass — toggle on to invite</div>\n        )\n      )}",
   "new_string": "      {editable ? (\n        editing ? (\n          <div className=\"guest__form\">\n            <TextField\n              label=\"Visitor name\"\n              value={name}\n              leadingIcon={<User size={16} strokeWidth={2} />}\n              onChange={(e) => setName(e.target.value)}\n              onBlur={() => name !== guest.name && onChange({ name })}\n              placeholder=\"Full name\"\n            />\n            <TextField\n              label=\"Phone (for WhatsApp pass)\"\n              value={phone}\n              inputMode=\"tel\"\n              leadingIcon={<Phone size={16} strokeWidth={2} />}\n              onChange={(e) => setPhone(e.target.value)}\n              onBlur={() => phone !== (guest.phone ?? '') && onChange({ phone })}\n              placeholder=\"+91…\"\n            />\n            {sent && (\n              <div className=\"type-label-sm text-muted\">\n                Re-send to update the pass that’s already been issued.\n              </div>\n            )}\n            <button type=\"button\" className=\"guest__done\" onClick={() => setEditing(false)}>\n              <Check size={14} strokeWidth={2.5} />\n              Done\n            </button>\n          </div>\n        ) : (\n          <div className=\"guest__summary\">\n            {guest.phone && (\n              <span className=\"guest__phone type-label-sm text-muted\">\n                <Phone size={13} strokeWidth={2} />\n                <span className=\"row__ellipsis\">{guest.phone}</span>\n              </span>\n            )}\n            <button […]
 
@@ -985,7 +985,7 @@ id: toolu_0177zvGShXjaNFHsUrxCyjgM
 tool_result
 id: toolu_0177zvGShXjaNFHsUrxCyjgM
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -999,7 +999,7 @@ id: toolu_01XUczNeysSeNcEs3yEkVFCk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/design/global.css",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/design/global.css",
   "old_string": ".guest__hint {\n  margin: var(--space-xs) 0 0 calc(36px + var(--space-md));\n  color: var(--color-on-surface-variant);\n  font-weight: 500;\n}\n@keyframes guest-expand {\n  from { opacity: 0; transform: translateY(-4px); }\n  to { opacity: 1; transform: none; }\n}",
   "new_string": ".guest__hint {\n  margin: var(--space-xs) 0 0 calc(36px + var(--space-md));\n  color: var(--color-on-surface-variant);\n  font-weight: 500;\n}\n@keyframes guest-expand {\n  from { opacity: 0; transform: translateY(-4px); }\n  to { opacity: 1; transform: none; }\n}\n\n/* Collapsed details row: a compact phone glimpse + an inline \"Edit\" affordance,\n   aligned under the name so it reads as this guest's detail. Keeps cards short\n   until the host actually wants to correct something. */\n.guest__summary {\n  display: flex;\n  align-items: center;\n  gap: var(--space-sm);\n  min-width: 0;\n  margin: var(--space-xs) 0 0 calc(36px + var(--space-md));\n}\n.guest__phone {\n  display: inline-flex;\n  align-items: center;\n  gap: 4px;\n  min-width: 0;\n}\n.guest__edit,\n.guest__done {\n  display: inline-flex;\n  align-items: center;\n  gap: 4px;\n  flex: 0 0 auto;\n  background: none;\n  border: none;\n  cursor: pointer;\n  font: inherit;\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--color-primary);\n  padding: 4px 8px;\n  border-radius: var(--radius-sm);\n  transition: background-color var(--motion-base) var(--motion-easing);\n}\n.guest__edit:hover,\n.guest__done:hover { background: var(--color-surface-high); }\n.guest__done { justify-self: start; margin-right: auto; }"
 }
@@ -1010,7 +1010,7 @@ id: toolu_01XUczNeysSeNcEs3yEkVFCk
 tool_result
 id: toolu_01XUczNeysSeNcEs3yEkVFCk
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/design/global.css has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/design/global.css has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1023,7 +1023,7 @@ tool_use Read
 id: toolu_011pJmcVvnSz31ViqsdV5LqQ
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json"
 }
 ```
 
@@ -1074,7 +1074,7 @@ id: toolu_01JVK3fJ6ik7MAHJPntZuV1G
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
   "old_string": "  \"version\": \"0.1.1\",",
   "new_string": "  \"version\": \"0.2.0\","
 }
@@ -1085,7 +1085,7 @@ id: toolu_01JVK3fJ6ik7MAHJPntZuV1G
 tool_result
 id: toolu_01JVK3fJ6ik7MAHJPntZuV1G
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1118,7 +1118,7 @@ tool_use Read
 id: toolu_019niso1E84bqbwLSsGHUuMS
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx",
   "offset": 40,
   "limit": 75
 }
@@ -1273,7 +1273,7 @@ tool_use Bash
 id: toolu_01Arc6zmGmi96vnuUWCFqTX4
 ```json
 {
-  "command": "cd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-workspace && find . -type f -not -path '*/node_modules/*' -not -path '*/.git/*' -not -path '*/dist/*' -not -path '*/.clasp*' | head -80; echo \"===\"; cat CLAUDE.md 2>/dev/null | head -60",
+  "command": "cd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-workspace && find . -type f -not -path '*/node_modules/*' -not -path '*/.git/*' -not -path '*/dist/*' -not -path '*/.clasp*' | head -80; echo \"===\"; cat CLAUDE.md 2>/dev/null | head -60",
   "description": "List add-on files and CLAUDE.md"
 }
 ```
@@ -1350,7 +1350,7 @@ tool_use Read
 id: toolu_01BJAjijsEoibGFmhjw31BkX
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-workspace/Code.js"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-workspace/Code.js"
 }
 ```
 
@@ -1395,7 +1395,7 @@ tool_use Read
 id: toolu_01Gcmp85rJknh19xB6NYiA3u
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/design/components/Card.tsx"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/design/components/Card.tsx"
 }
 ```
 
@@ -1419,7 +1419,7 @@ tool_use Read
 id: toolu_01KyfhzuQFz4sLCbc2DTzsrH
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/design/components/Chip.tsx"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/design/components/Chip.tsx"
 }
 ```
 
@@ -1465,7 +1465,7 @@ tool_use Bash
 id: toolu_01HoxYuwmXvC3tuUpUgbhPtf
 ```json
 {
-  "command": "cd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension && grep -n \"\\.card\" design/global.css | head; echo \"---tokens---\"; grep -n \"space-lg\\|space-md\\|space-sm\\|surface-high\\|surface-low\\b\" design/global.css | head",
+  "command": "cd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension && grep -n \"\\.card\" design/global.css | head; echo \"---tokens---\"; grep -n \"space-lg\\|space-md\\|space-sm\\|surface-high\\|surface-low\\b\" design/global.css | head",
   "description": "Find card padding and tokens"
 }
 ```
@@ -1495,7 +1495,7 @@ tool_use Read
 id: toolu_012zRRePd4RzG1P2SgVus1RJ
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/design/global.css",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/design/global.css",
   "offset": 150,
   "limit": 10
 }
@@ -1528,7 +1528,7 @@ tool_use Bash
 id: toolu_01325AC47pdvQwes1vtebFPH
 ```json
 {
-  "command": "cd /Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine && grep -rn \"cancel\\|include\" src/mastra/modules/visitor/visit-drafts.ts | grep -i \"include\\|cancel\" | head -30",
+  "command": "cd /home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine && grep -rn \"cancel\\|include\" src/mastra/modules/visitor/visit-drafts.ts | grep -i \"include\\|cancel\" | head -30",
   "description": "Find apply/cancel logic in visit-drafts"
 }
 ```
@@ -1592,7 +1592,7 @@ tool_use Read
 id: toolu_01GAVgSKTtS9Uog67XGvPbnA
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/visit-drafts.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/visit-drafts.ts",
   "offset": 840,
   "limit": 40
 }
@@ -1653,7 +1653,7 @@ Here's the design I'm going to build for the edit affordance (your "opening a sc
 COLLAPSED (compact)                    EXPANDED (unrolled)
 ┌─────────────────────────────────┐    ┌─────────────────────────────────┐
 │ (JD) Jane Doe      [Pass sent] ◉ │    │ (JD) Jane Doe      [Pass sent] ◉ │
-│      jane@acme.com               │    │      jane@acme.com               │
+│      <REDACTED_EMAIL>               │    │      <REDACTED_EMAIL>               │
 ├─────────────────────────────────┤    ├─────────────────────────────────┤ ← full-bleed
 │      ⌄  Edit details            │    │  Visitor name                    │   subtle panel
 └─────────────────────────────────┘    │  [ 👤 Jane Doe              ]    │
@@ -1674,7 +1674,7 @@ id: toolu_01GuZpMSVC4QUAhncd7HqQQP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx",
   "old_string": "import { useEffect, useState } from 'react';\nimport { Check, Pencil, Phone, User } from 'lucide-react';\nimport { Chip, Switch, TextField } from '@/design/components';\nimport type { DraftGuest } from '@/lib/types';",
   "new_string": "import { useEffect, useState } from 'react';\nimport { ChevronDown, Phone, User } from 'lucide-react';\nimport { Chip, Switch, TextField } from '@/design/components';\nimport type { DraftGuest } from '@/lib/types';"
 }
@@ -1685,7 +1685,7 @@ id: toolu_01GuZpMSVC4QUAhncd7HqQQP
 tool_result
 id: toolu_01GuZpMSVC4QUAhncd7HqQQP
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1706,7 +1706,7 @@ tool_use Read
 id: toolu_01KYzfxfEb7YDMCvLEaQ7SrK
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx"
 }
 ```
 
@@ -1760,7 +1760,7 @@ id: toolu_01UFCTeyFwyzDNcrwMmUTPFT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx",
   "old_string": "  const sent = guest.status === 'sent';\n  const cancelled = guest.status === 'cancelled';\n  const display = guest.name || guest.email;\n  // Anyone we'd actually send/update a pass for can be corrected — included\n  // guests whether or not their pass has already gone out.\n  const editable = guest.include && !cancelled;\n\n  return (\n    <div className={`guest${guest.include ? '' : ' guest--dim'}`}>\n      <div className=\"guest__head\">\n        <span\n          className={\n            'guest__avatar' +\n            (sent ? ' guest__avatar--sent' : guest.include ? '' : ' guest__avatar--dim')\n          }\n          aria-hidden\n        >\n          {monogram(guest.name || guest.email.split('@')[0])}\n        </span>\n\n        <div className=\"guest__id\">\n          <div className=\"guest__name\">\n            <span className=\"type-label row__ellipsis\">{display}</span>\n            {guest.internal && !sent && <Chip>Internal</Chip>}\n            {sent && <Chip tone=\"success\">Pass sent</Chip>}\n            {cancelled && <Chip tone=\"error\">Cancelled</Chip>}\n          </div>\n          <div className=\"type-label-sm text-muted row__ellipsis\">{guest.email}</div>\n        </div>\n\n        <Switch\n          checked={guest.include}\n          disabled={sent}\n          onChange={(v) => onChange({ include: v })}\n          label={`${guest.include ? 'Don’t invite' : 'Invite'} ${guest.email}`}\n        />\n      </div>\n\n      {editable ? (\n        editing ? (\n          <div className=\"guest__form\">\n            <TextField\n              label=\"Visitor name\"\n              value={name}\n              leadingIcon={<User size={16} strokeWidth={2} />}\n              onChange={(e) => setName(e.target.value)}\n              onBlur={() => name !== guest.name && onChange({ name })}\n              placeholder=\"Full name\"\n            />\n            <TextField\n              label=\"Phone (for WhatsApp pass)\"\n              value={phone}\n              inputMode=\"tel\"\n              leadingIcon={<Phone size={16} strokeWidth={2} />}\n              onChange={(e) => setPhone(e.target.value)}\n              onBlur={() => phone !== (guest.phone ?? '') && onChange({ phone })}\n              placeholder=\"+91…\"\n            />\n            {sent && (\n              <div […]
 
 > TOOL
@@ -1768,7 +1768,7 @@ id: toolu_01UFCTeyFwyzDNcrwMmUTPFT
 tool_result
 id: toolu_01UFCTeyFwyzDNcrwMmUTPFT
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1781,7 +1781,7 @@ tool_use Read
 id: toolu_01MqSzY8A7sk7xQdBEf9Ncs4
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/design/global.css",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/design/global.css",
   "offset": 372,
   "limit": 62
 }
@@ -1841,7 +1841,7 @@ id: toolu_01SqfjJGkijptG9r4gJeS94F
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/design/global.css",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/design/global.css",
   "old_string": "/* Inline edit form, recessed under the identity so it reads as \"this guest's\n   details\" rather than free-floating inputs. Indented to align under the name. */\n.guest__form {\n  display: grid;\n  gap: var(--space-sm);\n  margin: var(--space-sm) 0 var(--space-xs) calc(36px + var(--space-md));\n  padding: var(--space-md);\n  background: var(--color-surface-low);\n  border-radius: var(--radius-md);\n  animation: guest-expand var(--motion-base) var(--motion-easing) both;\n}\n.guest__hint {\n  margin: var(--space-xs) 0 0 calc(36px + var(--space-md));\n  color: var(--color-on-surface-variant);\n  font-weight: 500;\n}\n@keyframes guest-expand {\n  from { opacity: 0; transform: translateY(-4px); }\n  to { opacity: 1; transform: none; }\n}\n\n/* Collapsed details row: a compact phone glimpse + an inline \"Edit\" affordance,\n   aligned under the name so it reads as this guest's detail. Keeps cards short\n   until the host actually wants to correct something. */\n.guest__summary {\n  display: flex;\n  align-items: center;\n  gap: var(--space-sm);\n  min-width: 0;\n  margin: var(--space-xs) 0 0 calc(36px + var(--space-md));\n}\n.guest__phone {\n  display: inline-flex;\n  align-items: center;\n  gap: 4px;\n  min-width: 0;\n}\n.guest__edit,\n.guest__done {\n  display: inline-flex;\n  align-items: center;\n  gap: 4px;\n  flex: 0 0 auto;\n  background: none;\n  border: none;\n  cursor: pointer;\n  font: inherit;\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--color-primary);\n  padding: 4px 8px;\n  border-radius: var(--radius-sm);\n  transition: background-color var(--motion-base) var(--motion-easing);\n}\n.guest__edit:hover,\n.guest__done:hover { background: var(--color-surface-high); }\n.guest__done { justify-self: start; margin-right: auto; }",
   "new_string": ".guest__hint {\n  margin: var(--space-xs) 0 0 calc(36px […]
 
@@ -1850,7 +1850,7 @@ id: toolu_01SqfjJGkijptG9r4gJeS94F
 tool_result
 id: toolu_01SqfjJGkijptG9r4gJeS94F
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/design/global.css has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/design/global.css has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1864,7 +1864,7 @@ id: toolu_01V2wqLrdGC6GaSXBbarRY4u
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx",
   "old_string": "            <Card style={{ paddingTop: 0, paddingBottom: 0 }}>",
   "new_string": "            <Card style={{ paddingTop: 0, paddingBottom: 0, overflow: 'hidden' }}>"
 }
@@ -1875,7 +1875,7 @@ id: toolu_01V2wqLrdGC6GaSXBbarRY4u
 tool_result
 id: toolu_01V2wqLrdGC6GaSXBbarRY4u
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1888,7 +1888,7 @@ tool_use Read
 id: toolu_0195u4dcvd2ebKco3W1xnwQq
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/design/components/Switch.tsx"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/design/components/Switch.tsx"
 }
 ```
 
@@ -1938,7 +1938,7 @@ tool_use Bash
 id: toolu_011gGoaSnF6RQH9PsAtnoS5i
 ```json
 {
-  "command": "cd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension && npm run compile 2>&1 | tail -15",
+  "command": "cd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension && npm run compile 2>&1 | tail -15",
   "description": "Type-check extension"
 }
 ```
@@ -1963,7 +1963,7 @@ id: toolu_01TvkW7qkvEX8Z5744kp8WyR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
   "old_string": "  \"version\": \"0.2.0\",",
   "new_string": "  \"version\": \"0.3.0\","
 }
@@ -1974,7 +1974,7 @@ id: toolu_01TvkW7qkvEX8Z5744kp8WyR
 tool_result
 id: toolu_01TvkW7qkvEX8Z5744kp8WyR
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2013,7 +2013,7 @@ tool_use Read
 id: toolu_01Y7uy7xS4iH3B8TA84jwpGq
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/PreviewSheet.tsx"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/PreviewSheet.tsx"
 }
 ```
 
@@ -2051,7 +2051,7 @@ tool_use Read
 id: toolu_01Kco2LHZQwbFdXHUmG2pXDC
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/EmptyState.tsx"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/EmptyState.tsx"
 }
 ```
 
@@ -2137,7 +2137,7 @@ tool_use Read
 id: toolu_01UDJ8SgJj6YVP72RPvn7S2k
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/AccountMenu.tsx"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/AccountMenu.tsx"
 }
 ```
 
@@ -2205,7 +2205,7 @@ Build is done (v0.3.0). Here's everything.
 COLLAPSED (default — compact)              EXPANDED (pulled open)
 ┌────────────────────────────────┐         ┌────────────────────────────────┐
 │ (JD) Jane Doe     [Pass sent] ◉ │         │ (JD) Jane Doe     [Pass sent] ◉ │
-│      jane@acme.com              │         │      jane@acme.com              │
+│      <REDACTED_EMAIL>              │         │      <REDACTED_EMAIL>              │
 │════════════════════════════════│         │════════════════════════════════│
 │        ⌄  Edit details         │ ←tinted │        ⌃  Hide details         │
 └────────────────────────────────┘  strip  │  Visitor name                  │
@@ -2234,7 +2234,7 @@ tool_use Read
 id: toolu_01PSzQDiqMKGV5czWYwDZ2wX
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/auth.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/auth.ts"
 }
 ```
 
@@ -2295,7 +2295,7 @@ tool_use Read
 id: toolu_0113PHYHBUJkeJjqK4gR8uMG
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/config.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/config.ts"
 }
 ```
 
@@ -2321,7 +2321,7 @@ id: toolu_0113PHYHBUJkeJjqK4gR8uMG
 15	/** Marker that makes an event a "visitor event" (Phase 2). Lower-cased for
 16	 *  case-insensitive matching against attendee emails / location text. */
 17	export const MAGIC_ADDRESS = (
-18	  import.meta.env.WXT_MAGIC_ADDRESS ?? 'visitors@auxilio.app'
+18	  import.meta.env.WXT_MAGIC_ADDRESS ?? '<REDACTED_EMAIL>'
 19	).toLowerCase();
 20	
 21	/** All engine addon endpoints live under this prefix. */
@@ -2390,7 +2390,7 @@ tool_use Bash
 id: toolu_013oZ18p8xqsd3Qh7sztqDkd
 ```json
 {
-  "command": "cd /Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine && grep -rln \"connectUrl\\|access_type\\|refresh_token\\|calendar.*watch\\|events.watch\\|oauth\" src 2>/dev/null | grep -i \"calendar\\|oauth\\|visitor\\|connect\" | head -30",
+  "command": "cd /home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine && grep -rln \"connectUrl\\|access_type\\|refresh_token\\|calendar.*watch\\|events.watch\\|oauth\" src 2>/dev/null | grep -i \"calendar\\|oauth\\|visitor\\|connect\" | head -30",
   "description": "Find OAuth/connect/watch files"
 }
 ```
@@ -2425,7 +2425,7 @@ tool_use Read
 id: toolu_011Dg4Xv3FuiS4AtMPw8EgsY
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-oauth.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-oauth.ts"
 }
 ```
 
@@ -2469,7 +2469,7 @@ tool_use Read
 id: toolu_01G6MgT1JmjFiC2Q6trZCUeF
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-sync.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-sync.ts"
 }
 ```
 
@@ -2561,7 +2561,7 @@ tool_use Read
 id: toolu_01Bz2wE9FCZSXgFKxoPsXTWM
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/routes.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/routes.ts",
   "offset": 707,
   "limit": 120
 }
@@ -2613,7 +2613,7 @@ tool_use Read
 id: toolu_01Uw2Bkj9jvxJSMn8o6Bnx79
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/routes.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/routes.ts",
   "offset": 884,
   "limit": 90
 }
@@ -2727,7 +2727,7 @@ tool_use Read
 id: toolu_015xvJZxcyzHkxERe8tZHsWj
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/routes.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/routes.ts",
   "offset": 40,
   "limit": 75
 }
@@ -2782,7 +2782,7 @@ tool_use Read
 id: toolu_01RhfH77LZjEB4mvpX6etnGq
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/addon-auth.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/addon-auth.ts"
 }
 ```
 
@@ -2855,7 +2855,7 @@ tool_use Read
 id: toolu_01Nc9ShoqWSzLKPThW3GKimv
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/background.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/background.ts"
 }
 ```
 
@@ -2908,7 +2908,7 @@ tool_use Read
 id: toolu_014LY3oWeApXRv8ENzmZwpxV
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/messaging.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/messaging.ts"
 }
 ```
 
@@ -2957,7 +2957,7 @@ tool_use Read
 id: toolu_01GbKft4sGEKmwWgN3QYgfdJ
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-watch.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-watch.ts",
   "offset": 124,
   "limit": 40
 }
@@ -3012,7 +3012,7 @@ tool_use Read
 id: toolu_01VaVJz2d1PG6irGGu7ioWqC
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/lib/config.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/lib/config.ts",
   "offset": 95,
   "limit": 25
 }
@@ -3056,7 +3056,7 @@ tool_use Bash
 id: toolu_01BVuEYVGVzY9ysooYfLxF6F
 ```json
 {
-  "command": "grep -n \"envOptional\\|function env\\b\\|const env\" src/mastra/lib/config.ts | head; echo \"=== .env.example (extension) ===\"; cat /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/.env.example",
+  "command": "grep -n \"envOptional\\|function env\\b\\|const env\" src/mastra/lib/config.ts | head; echo \"=== .env.example (extension) ===\"; cat /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/.env.example",
   "description": "Config env helper + extension env example"
 }
 ```
@@ -3089,7 +3089,7 @@ WXT_OAUTH_CLIENT_ID=
 
 # The magic address that marks an event as a "visitor event" (Phase 2 auto-nudge).
 # Must match what the engine ingest pipeline keys on. Placeholder until confirmed.
-WXT_MAGIC_ADDRESS=visitors@auxilio.app
+WXT_MAGIC_ADDRESS=<REDACTED_EMAIL>
 ```
 
 > TOOL
@@ -3098,7 +3098,7 @@ tool_use Read
 id: toolu_016Fd65ZTUBYpJ7pyjyDFAmW
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/routes.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/routes.ts",
   "offset": 833,
   "limit": 52
 }
@@ -3188,7 +3188,7 @@ tool_use Write
 id: toolu_01EzmYFud3qBFK9GB6wjAc5S
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/Planning-docs/2026-06-23_extension_single_consent_calendar_connect_plan.md",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/Planning-docs/2026-06-23_extension_single_consent_calendar_connect_plan.md",
   "content": "# Plan: single-consent extension sign-in that also connects the engine calendar (closed-panel sync)\n\n## Goal\nMake the `auxilio-extension` sign-in establish, in **one Google consent**, both (a) the client tokens it\nalready uses and (b) an engine-side **refresh token** stored in `calendar_connections`, so the engine's\nexisting 5-minute background poll keeps visitor passes in sync when a meeting is moved/cancelled **with the\nside panel closed**. No second \"Connect calendar\" prompt. \"Done\" = after a fresh interactive sign-in,\n`calendar_connections` has a `connected` row with a refresh token for that host, the background poll syncs\nthat host, and `addon/draft` returns `calendarSync.connected: true`.\n\n## Background (verified facts — do not re-investigate)\n- Extension sign-in (`auxilio-extension/lib/auth.ts`) uses the **implicit** flow (`response_type=token id_token`),\n  scope `openid email profile calendar.events.readonly`, against a **Web** OAuth client (`WXT_OAUTH_CLIENT_ID`).\n  Tokens live in `chrome.storage.session`; the engine only ever receives the **id_token** as Bearer.\n- The engine already has the full connect/sync machinery in `office-ops-engine/src/mastra/modules/visitor/`:\n  - `calendar-oauth.ts`: `calendar_connections` store, `upsertCalendarConnection`, `getCalendarConnection`,\n    `exchangeCalendarCode` (bound to the **engine's** `GOOGLE_OAUTH_*` client + `/connect/callback` redirect),\n    `clientForRefreshToken` (builds the **engine** client), `CURRENT_SCOPE_VERSION = 'v3-events-rw'`,\n    `isWriteCapableConnection` (true only when `scope_version === CURRENT_SCOPE_VERSION`),\n    `listScopeStaleConnections` (flags anything `IS DISTINCT FROM CURRENT_SCOPE_VERSION`).\n  - `calendar-sync.ts`: `startCalendarSyncLoop()` polls every connected host every 5 min (poll-based by […]
 
 > TOOL
@@ -3196,7 +3196,7 @@ id: toolu_01EzmYFud3qBFK9GB6wjAc5S
 tool_result
 id: toolu_01EzmYFud3qBFK9GB6wjAc5S
 ```
-File created successfully at: /Users/appointy/work/OfficeOperationsUmbrella/Planning-docs/2026-06-23_extension_single_consent_calendar_connect_plan.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/work/OfficeOperationsUmbrella/Planning-docs/2026-06-23_extension_single_consent_calendar_connect_plan.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3209,7 +3209,7 @@ tool_use Write
 id: toolu_01KPM7nNYqhTCfMzwoRUfy8i
 ```json
 {
-  "file_path": "/Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_extension_single_consent_connect.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_extension_single_consent_connect.md",
   "content": "---\nname: project_extension_single_consent_connect\ndescription: auxilio-extension single sign-in also connects engine calendar for closed-panel sync (planned, not built)\nmetadata:\n  type: project\n---\n\nGoal: one Google consent at extension sign-in establishes BOTH the client tokens AND an engine-side\nrefresh token in `calendar_connections`, so the engine's 5-min poll syncs move/cancel when the side panel\nis closed. No second \"Connect calendar\" prompt. User cares about closed-panel sync but refused a second sign-in.\n\nKey facts (verified in code): extension sign-in is implicit (`token id_token`), readonly scope, Web OAuth\nclient; engine already has the full connect/poll/watch machinery (`calendar-oauth.ts`, `calendar-sync.ts` poll\nevery 5 min, `calendar-watch.ts`). Closed-panel sync = \"just get a refresh token into calendar_connections.\"\n\nLocked design (see Planning-docs/2026-06-23_extension_single_consent_calendar_connect_plan.md):\n- Interactive `mint` → hybrid `response_type=code token id_token` + `access_type=offline`; silent renew stays\n  implicit. Fragment yields client tokens (cached as today) + a `code`.\n- Extension POSTs `{code, redirectUri}` (Bearer id_token) to NEW engine route\n  `POST /api/visitor/calendar/addon/connect-calendar`; engine exchanges code with the EXTENSION client\n  (new `AUXILIO_EXTENSION_OAUTH_CLIENT_SECRET`) → stores refresh token. Best-effort; CTA stays as fallback.\n- CRITICAL: a refresh token can only be refreshed by its minting client. Extension token ≠ engine GOOGLE_OAUTH\n  client → add `clientForConnection(conn)` selecting client by `scope_version`; use it in poll + watch, else the\n  first poll throws invalid_grant […]
 
 > TOOL
@@ -3217,7 +3217,7 @@ id: toolu_01KPM7nNYqhTCfMzwoRUfy8i
 tool_result
 id: toolu_01KPM7nNYqhTCfMzwoRUfy8i
 ```
-File created successfully at: /Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_extension_single_consent_connect.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_extension_single_consent_connect.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3226,7 +3226,7 @@ tool_use Read
 id: toolu_01KgKAbqsfzUgs8jeKmKGV9u
 ```json
 {
-  "file_path": "/Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/MEMORY.md",
   "limit": 5
 }
 ```
@@ -3249,7 +3249,7 @@ tool_use Bash
 id: toolu_013cBhDdjcdTWws95BfRXdBy
 ```json
 {
-  "command": "cd /Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory && printf '%s\\n' '- [Extension single-consent calendar connect](project_extension_single_consent_connect.md) — Planned: hybrid sign-in grants engine a calendar refresh token so closed-panel move/cancel sync works without a 2nd consent; per-connection OAuth client is the must-not-break part.' >> MEMORY.md && tail -1 MEMORY.md",
+  "command": "cd /home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory && printf '%s\\n' '- [Extension single-consent calendar connect](project_extension_single_consent_connect.md) — Planned: hybrid sign-in grants engine a calendar refresh token so closed-panel move/cancel sync works without a 2nd consent; per-connection OAuth client is the must-not-break part.' >> MEMORY.md && tail -1 MEMORY.md",
   "description": "Append pointer to MEMORY.md"
 }
 ```
@@ -3260,7 +3260,7 @@ tool_result
 id: toolu_013cBhDdjcdTWws95BfRXdBy
 ```
 - [Extension single-consent calendar connect](project_extension_single_consent_connect.md) — Planned: hybrid sign-in grants engine a calendar refresh token so closed-panel move/cancel sync works without a 2nd consent; per-connection OAuth client is the must-not-break part.
-Shell cwd was reset to /Users/appointy/work/OfficeOperationsUmbrella
+Shell cwd was reset to /home/<USER>/work/OfficeOperationsUmbrella
 ```
 
 > AGENT
@@ -3318,7 +3318,7 @@ tool_use Read
 id: toolu_014j6BYL65yHiGa8njqttnf3
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/Planning-docs/2026-06-23_extension_single_consent_calendar_connect_plan.md",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/Planning-docs/2026-06-23_extension_single_consent_calendar_connect_plan.md",
   "offset": 36,
   "limit": 12
 }
@@ -3353,7 +3353,7 @@ tool_use Read
 id: toolu_01Wigu84xz9QbwysSQ5a2mJS
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/Planning-docs/2026-06-23_extension_single_consent_calendar_connect_plan.md",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/Planning-docs/2026-06-23_extension_single_consent_calendar_connect_plan.md",
   "offset": 30,
   "limit": 6
 }
@@ -3379,7 +3379,7 @@ id: toolu_01DCXVLpoXjoAJwWY4Kgrve4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/Planning-docs/2026-06-23_extension_single_consent_calendar_connect_plan.md",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/Planning-docs/2026-06-23_extension_single_consent_calendar_connect_plan.md",
   "old_string": "- **Client-binding invariant (the reason for the per-connection client selector below):** a Google refresh\n  token can only be exchanged for access tokens by the **same client_id + client_secret** that minted it.\n  The extension token is minted by the extension Web client, so the engine must refresh/watch it with the\n  **extension** client — not the `GOOGLE_OAUTH_*` engine client.\n\n## Open questions (resolve before building)",
   "new_string": "- **Client-binding invariant (the reason for the per-connection client selector below):** a Google refresh\n  token can only be exchanged for access tokens by the **same client_id + client_secret** that minted it.\n  The extension token is minted by the extension Web client, so the engine must refresh/watch it with the\n  **extension** client — not the `GOOGLE_OAUTH_*` engine client.\n\n## Why the extension needs special handling (vs. Slack / add-on)\n\nThe Slack connect and the Calendar add-on have **no** dual-client problem, and their move/delete sync already\nworks while those surfaces are closed. Understanding why pins down exactly what the extension must replicate.\n\n- **One client, end to end (Slack & add-on).** Both route the actual calendar grant through the engine's browser\n  redirect flow: `\"Connect calendar\" → GET /connect/start → Google consent (engine […]
 
@@ -3388,7 +3388,7 @@ id: toolu_01DCXVLpoXjoAJwWY4Kgrve4
 tool_result
 id: toolu_01DCXVLpoXjoAJwWY4Kgrve4
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/Planning-docs/2026-06-23_extension_single_consent_calendar_connect_plan.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/Planning-docs/2026-06-23_extension_single_consent_calendar_connect_plan.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3431,7 +3431,7 @@ tool_use Read
 id: toolu_01PsVkieGJgkrRYJWfhzN1WC
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/Planning-docs/2026-06-23_extension_single_consent_calendar_connect_plan.md",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/Planning-docs/2026-06-23_extension_single_consent_calendar_connect_plan.md",
   "offset": 63,
   "limit": 14
 }
@@ -3462,7 +3462,7 @@ id: toolu_017rc6oeLbUaL2MudvFSZowj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/Planning-docs/2026-06-23_extension_single_consent_calendar_connect_plan.md",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/Planning-docs/2026-06-23_extension_single_consent_calendar_connect_plan.md",
   "old_string": "| | **Option 1 (this plan)** — keep the extension's own Web client | **Option 2** — extension adopts the engine `GOOGLE_OAUTH_*` client (mirror Slack/add-on) |\n|---|---|---|\n| New refresh logic | `clientForConnection(conn)` picks client by `scope_version` (~10 lines + 4 call-site swaps) | **None** — poll/watch already use the engine client |\n| OAuth client coupling | Extension stays isolated | Extension's chrome redirect must be registered on the **admin-SSO** client |\n| `/addon/*` auth trust | Unchanged | Must add `GOOGLE_OAUTH_CLIENT_ID` to the addon audience → **any admin-SSO id_token could call `/addon/*`** |\n| Consent scope | `calendar.events.readonly` (lighter) | `calendar.events` read-**write** (heavier consent text) |\n| Client-side live reads | Unchanged | Now use an engine-client access token (works, but must be re-tested) |\n\n**Decision: Option 1**, chosen mainly to avoid pouring admin-SSO tokens into the `/addon/*` audience and to keep\nleast-privilege scope. `clientForConnection` is fully deterministic — the only failure mode is forgetting a\ncall-site swap, caught at build / first poll. If you later prefer the extension to be a carbon copy of the\nSlack/add-on flow (accepting the audience-widening and rw scope), switch to Option 2: drop steps 6, 9, 10 and the\n`scope_version` handling, […]
 
 > TOOL
@@ -3470,7 +3470,7 @@ id: toolu_017rc6oeLbUaL2MudvFSZowj
 tool_result
 id: toolu_017rc6oeLbUaL2MudvFSZowj
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/Planning-docs/2026-06-23_extension_single_consent_calendar_connect_plan.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/Planning-docs/2026-06-23_extension_single_consent_calendar_connect_plan.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3541,7 +3541,7 @@ id: toolu_01GgPoVUuKduxz4AjmgFVMzA
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/lib/config.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/lib/config.ts",
   "old_string": "// ─── Staff ────────────────────────────────────────────────\n\nexport const staff = {",
   "new_string": "// ─── Auxilio Chrome extension OAuth (Web client) ──────────\n// Same Web client the extension signs in with (WXT_OAUTH_CLIENT_ID). The engine\n// needs the secret to exchange the extension's hybrid-flow auth code for a\n// calendar refresh token, and to refresh/watch that token later.\nexport const auxilioExtensionOauth = {\n  clientId: () => envOptional('AUXILIO_EXTENSION_OAUTH_CLIENT_ID'),\n  clientSecret: () => envOptional('AUXILIO_EXTENSION_OAUTH_CLIENT_SECRET'),\n} as const;\n\n// ─── Staff ────────────────────────────────────────────────\n\nexport const staff = {"
 }
@@ -3552,7 +3552,7 @@ id: toolu_01GgPoVUuKduxz4AjmgFVMzA
 tool_result
 id: toolu_01GgPoVUuKduxz4AjmgFVMzA
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/lib/config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/lib/config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3566,7 +3566,7 @@ id: toolu_01PjwSyCeRDhNypjJBTdWAyy
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-oauth.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-oauth.ts",
   "old_string": "import { googleOauth as googleOauthConfig } from '../../lib/config';",
   "new_string": "import { googleOauth as googleOauthConfig, auxilioExtensionOauth } from '../../lib/config';"
 }
@@ -3577,7 +3577,7 @@ id: toolu_01PjwSyCeRDhNypjJBTdWAyy
 tool_result
 id: toolu_01PjwSyCeRDhNypjJBTdWAyy
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-oauth.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-oauth.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3587,7 +3587,7 @@ id: toolu_01X6nNCrb7ujjLbiD7RiWpTk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-oauth.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-oauth.ts",
   "old_string": "export const CURRENT_SCOPE_VERSION = 'v3-events-rw';",
   "new_string": "export const CURRENT_SCOPE_VERSION = 'v3-events-rw';\n\n/**\n * Scope marker for connections created by the Chrome extension sign-in. Readonly\n * (`calendar.events.readonly`) — enough for the poll + watch, never write-capable.\n * Kept distinct so isWriteCapableConnection stays false and the Slack reconnect\n * nudge (listScopeStaleConnections) skips these.\n */\nexport const EXTENSION_SCOPE_VERSION = 'v-ext-events-ro';"
 }
@@ -3598,7 +3598,7 @@ id: toolu_01X6nNCrb7ujjLbiD7RiWpTk
 tool_result
 id: toolu_01X6nNCrb7ujjLbiD7RiWpTk
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-oauth.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-oauth.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3608,7 +3608,7 @@ id: toolu_01UMKUiF9Jhi6A67TbDPKAbr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-oauth.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-oauth.ts",
   "old_string": "export function isCalendarOAuthConfigured(): boolean {\n  return !!(googleOauthConfig.clientId() && googleOauthConfig.clientSecret() && googleOauthConfig.publicOrigin());\n}",
   "new_string": "export function isCalendarOAuthConfigured(): boolean {\n  return !!(googleOauthConfig.clientId() && googleOauthConfig.clientSecret() && googleOauthConfig.publicOrigin());\n}\n\nexport function isAuxilioExtensionOAuthConfigured(): boolean {\n  return !!(auxilioExtensionOauth.clientId() && auxilioExtensionOauth.clientSecret());\n}"
 }
@@ -3619,7 +3619,7 @@ id: toolu_01UMKUiF9Jhi6A67TbDPKAbr
 tool_result
 id: toolu_01UMKUiF9Jhi6A67TbDPKAbr
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-oauth.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-oauth.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3633,7 +3633,7 @@ id: toolu_01WJCz98JzsZuLdcztj2Nuyc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-oauth.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-oauth.ts",
   "old_string": "export async function exchangeCalendarCode(code: string): Promise<CalendarTokenResult> {\n  const client = buildClient();\n  const { tokens } = await client.getToken(code);\n  return { refreshToken: tokens.refresh_token ?? undefined };\n}\n\n/** OAuth2 client bound to a host's stored refresh token (mints access tokens). */\nexport function clientForRefreshToken(refreshToken: string) {\n  const client = buildClient();\n  client.setCredentials({ refresh_token: refreshToken });\n  return client;\n}",
   "new_string": "export async function exchangeCalendarCode(code: string): Promise<CalendarTokenResult> {\n  const client = buildClient();\n  const { tokens } = await client.getToken(code);\n  return { refreshToken: tokens.refresh_token ?? undefined };\n}\n\n/**\n * Exchange the Chrome extension's hybrid-flow auth code for a refresh token, using\n * the EXTENSION's Web client (id+secret) and the same redirect URI the extension used\n * (chrome.identity.getRedirectURL()). The refresh token is bound to this client, so it\n * must later be refreshed via clientForConnection() (extension branch).\n */\nexport async function exchangeExtensionCalendarCode(code: string, redirectUri: string): Promise<CalendarTokenResult> {\n  const clientId = auxilioExtensionOauth.clientId();\n  const clientSecret=[REDACTED].clientSecret();\n  if (!clientId || !clientSecret) throw new Error('Auxilio extension OAuth client credentials are not configured');\n  const client = new google.auth.OAuth2(clientId, clientSecret, redirectUri);\n  const { tokens } = await client.getToken(code);\n  return { refreshToken: tokens.refresh_token ?? undefined };\n}\n\n/** OAuth2 client bound to a host's stored refresh token (mints access tokens). */\nexport […]
 
@@ -3642,7 +3642,7 @@ id: toolu_01WJCz98JzsZuLdcztj2Nuyc
 tool_result
 id: toolu_01WJCz98JzsZuLdcztj2Nuyc
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-oauth.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-oauth.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3656,7 +3656,7 @@ id: toolu_01LAFDRqafWwK13TRRSoRzeb
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-oauth.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-oauth.ts",
   "old_string": "export async function upsertCalendarConnection(input: {\n  email: string;\n  refreshToken?: string;\n  slackUserId?: string;\n  tenantId?: string;\n}): Promise<void> {",
   "new_string": "export async function upsertCalendarConnection(input: {\n  email: string;\n  refreshToken?: string;\n  slackUserId?: string;\n  tenantId?: string;\n  scopeVersion?: string;\n}): Promise<void> {"
 }
@@ -3667,7 +3667,7 @@ id: toolu_01LAFDRqafWwK13TRRSoRzeb
 tool_result
 id: toolu_01LAFDRqafWwK13TRRSoRzeb
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-oauth.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-oauth.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3677,7 +3677,7 @@ id: toolu_015VuaDqpwAHSitMYWgbGXvg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-oauth.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-oauth.ts",
   "old_string": "      input.refreshToken ?? null,\n      input.slackUserId ?? null,\n      CURRENT_SCOPE_VERSION,\n    ],\n  });\n}",
   "new_string": "      input.refreshToken ?? null,\n      input.slackUserId ?? null,\n      input.scopeVersion ?? CURRENT_SCOPE_VERSION,\n    ],\n  });\n}"
 }
@@ -3688,7 +3688,7 @@ id: toolu_015VuaDqpwAHSitMYWgbGXvg
 tool_result
 id: toolu_015VuaDqpwAHSitMYWgbGXvg
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-oauth.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-oauth.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3698,7 +3698,7 @@ id: toolu_01Hvf3Pp17SvQutR3T6iHBcP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-oauth.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-oauth.ts",
   "old_string": "  const stale = await db.execute({\n    sql: `SELECT * FROM calendar_connections\n          WHERE status = 'connected' AND (scope_version IS DISTINCT FROM ?)`,\n    args: [CURRENT_SCOPE_VERSION],\n  });",
   "new_string": "  const stale = await db.execute({\n    sql: `SELECT * FROM calendar_connections\n          WHERE status = 'connected'\n            AND scope_version IS DISTINCT FROM ?\n            AND scope_version IS DISTINCT FROM ?`,\n    args: [CURRENT_SCOPE_VERSION, EXTENSION_SCOPE_VERSION],\n  });"
 }
@@ -3709,7 +3709,7 @@ id: toolu_01Hvf3Pp17SvQutR3T6iHBcP
 tool_result
 id: toolu_01Hvf3Pp17SvQutR3T6iHBcP
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-oauth.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-oauth.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3722,7 +3722,7 @@ tool_use Bash
 id: toolu_011TJra6L1XHPtEyzCCyHBQg
 ```json
 {
-  "command": "cd /Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine && npm run build 2>&1 | tail -8",
+  "command": "cd /home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine && npm run build 2>&1 | tail -8",
   "description": "Phase 1 build check"
 }
 ```
@@ -3753,7 +3753,7 @@ id: toolu_01XhrHk7ZbT5986txwZ6wUpC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-sync.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-sync.ts",
   "old_string": "import {\n  clientForRefreshToken,\n  listActiveOAuthConnections,",
   "new_string": "import {\n  clientForConnection,\n  listActiveOAuthConnections,"
 }
@@ -3764,7 +3764,7 @@ id: toolu_01XhrHk7ZbT5986txwZ6wUpC
 tool_result
 id: toolu_01XhrHk7ZbT5986txwZ6wUpC
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-sync.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-sync.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3774,7 +3774,7 @@ id: toolu_01KR6eGCsR68qNVjdSUs6k4W
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-sync.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-sync.ts",
   "old_string": "  const client = clientForRefreshToken(conn.refresh_token);",
   "new_string": "  const client = clientForConnection(conn);"
 }
@@ -3785,7 +3785,7 @@ id: toolu_01KR6eGCsR68qNVjdSUs6k4W
 tool_result
 id: toolu_01KR6eGCsR68qNVjdSUs6k4W
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-sync.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-sync.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3798,7 +3798,7 @@ tool_use Read
 id: toolu_01YUmPjvzjW1Ds7jkQTBuNtr
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-watch.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-watch.ts",
   "offset": 18,
   "limit": 12
 }
@@ -3830,7 +3830,7 @@ id: toolu_01HgLD38532M4Uzmib8wK5wg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-watch.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-watch.ts",
   "old_string": "import {\n  clientForRefreshToken,\n  getCalendarConnection,\n  listActiveOAuthConnections,\n  clearConnection,\n  type CalendarConnection,\n} from './calendar-oauth';",
   "new_string": "import {\n  clientForConnection,\n  getCalendarConnection,\n  listActiveOAuthConnections,\n  clearConnection,\n  type CalendarConnection,\n} from './calendar-oauth';"
 }
@@ -3841,7 +3841,7 @@ id: toolu_01HgLD38532M4Uzmib8wK5wg
 tool_result
 id: toolu_01HgLD38532M4Uzmib8wK5wg
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-watch.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-watch.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3851,7 +3851,7 @@ id: toolu_015HGmm35rw8YPt9WBu7Hra3
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-watch.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-watch.ts",
   "old_string": "    const calendar = google.calendar({ version: 'v3', auth: clientForRefreshToken(conn.refresh_token) });",
   "new_string": "    const calendar = google.calendar({ version: 'v3', auth: clientForConnection(conn) });"
 }
@@ -3862,7 +3862,7 @@ id: toolu_015HGmm35rw8YPt9WBu7Hra3
 tool_result
 id: toolu_015HGmm35rw8YPt9WBu7Hra3
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-watch.ts has been updated. All occurrences were successfully replaced. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-watch.ts has been updated. All occurrences were successfully replaced. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3872,7 +3872,7 @@ id: toolu_01GCp3FDiyeVMGdeWoCnwe5s
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-watch.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-watch.ts",
   "old_string": "      await clientForRefreshToken(conn.refresh_token).revokeCredentials();",
   "new_string": "      await clientForConnection(conn).revokeCredentials();"
 }
@@ -3883,7 +3883,7 @@ id: toolu_01GCp3FDiyeVMGdeWoCnwe5s
 tool_result
 id: toolu_01GCp3FDiyeVMGdeWoCnwe5s
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-watch.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-watch.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3917,7 +3917,7 @@ id: toolu_01R4XjvLgxoHQdJCRQtwYGoq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/routes.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/routes.ts",
   "old_string": "import {\n  isCalendarConnected,\n  connectStartUrl,\n  isCalendarOAuthConfigured,\n  verifyCalendarState,\n  buildCalendarAuthUrl,\n  exchangeCalendarCode,\n  upsertCalendarConnection,\n  listActiveOAuthConnections,\n} from './calendar-oauth';",
   "new_string": "import {\n  isCalendarConnected,\n  connectStartUrl,\n  isCalendarOAuthConfigured,\n  isAuxilioExtensionOAuthConfigured,\n  verifyCalendarState,\n  buildCalendarAuthUrl,\n  exchangeCalendarCode,\n  exchangeExtensionCalendarCode,\n  upsertCalendarConnection,\n  getCalendarConnection,\n  listActiveOAuthConnections,\n  EXTENSION_SCOPE_VERSION,\n} from './calendar-oauth';"
 }
@@ -3928,7 +3928,7 @@ id: toolu_01R4XjvLgxoHQdJCRQtwYGoq
 tool_result
 id: toolu_01R4XjvLgxoHQdJCRQtwYGoq
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/routes.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/routes.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3942,7 +3942,7 @@ id: toolu_016sV8nndZuCTn39w7iQksnd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/routes.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/routes.ts",
   "old_string": "      const cancelled = await cancelInvitationById(invitationId).catch(() => false);\n      json(res, 200, { invitationId, cancelled });\n      return true;\n    }\n\n    json(res, 404, { error: 'unknown add-on route' });\n    return true;\n  }",
   "new_string": "      const cancelled = await cancelInvitationById(invitationId).catch(() => false);\n      json(res, 200, { invitationId, cancelled });\n      return true;\n    }\n\n    // POST /addon/connect-calendar — one-consent calendar connect from the Chrome\n    // extension's hybrid sign-in. Exchanges the auth code for a refresh token so the\n    // background poll keeps passes in sync when the panel is closed. Best-effort:\n    // always 200 (sign-in must not fail on this); the connectUrl CTA is the fallback.\n    if (pathname === '/api/visitor/calendar/addon/connect-calendar' && method === 'POST') {\n      if (!isAuxilioExtensionOAuthConfigured()) {\n        json(res, 200, { connected: false });\n        return true;\n      }\n      const body = await readBodyJson(req);\n      const code = String(body.code ?? '').trim();\n      const redirectUri = String(body.redirectUri ?? '').trim();\n      if (!code || !redirectUri) { json(res, 422, { error: 'code and redirectUri required' }); return true; }\n\n      // Never downgrade a host who already has offline access (e.g. Slack rw connect) —\n      // any connected refresh token already powers the read poll. (D7)\n      const existing = await getCalendarConnection(identity.email).catch(() => null);\n      if (existing?.status === […]
 
@@ -3951,7 +3951,7 @@ id: toolu_016sV8nndZuCTn39w7iQksnd
 tool_result
 id: toolu_016sV8nndZuCTn39w7iQksnd
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/routes.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/routes.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3985,7 +3985,7 @@ id: toolu_01VDLPvn7uQwFFmPz7z1mU3f
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/engine.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/engine.ts",
   "old_string": "  cancelGuest: (idToken: string, iCalUid: string, invitationId: string) =>\n    call<{ invitationId: string; cancelled: boolean }>(\n      'cancel-guest',\n      'POST',\n      idToken,\n      { iCalUid, invitationId },\n    ),\n};",
   "new_string": "  cancelGuest: (idToken: string, iCalUid: string, invitationId: string) =>\n    call<{ invitationId: string; cancelled: boolean }>(\n      'cancel-guest',\n      'POST',\n      idToken,\n      { iCalUid, invitationId },\n    ),\n\n  connectCalendar: (idToken: string, code: string, redirectUri: string) =>\n    call<{ connected: boolean }>('connect-calendar', 'POST', idToken, { code, redirectUri }),\n};"
 }
@@ -3996,7 +3996,7 @@ id: toolu_01VDLPvn7uQwFFmPz7z1mU3f
 tool_result
 id: toolu_01VDLPvn7uQwFFmPz7z1mU3f
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/engine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/engine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4010,7 +4010,7 @@ id: toolu_018pervxfHuohhy8FFRDUoja
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/auth.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/auth.ts",
   "old_string": "import { OAUTH_CLIENT_ID } from './config';\nimport type { AuthStatus } from './types';",
   "new_string": "import { OAUTH_CLIENT_ID } from './config';\nimport { engine } from './engine';\nimport type { AuthStatus } from './types';"
 }
@@ -4021,7 +4021,7 @@ id: toolu_018pervxfHuohhy8FFRDUoja
 tool_result
 id: toolu_018pervxfHuohhy8FFRDUoja
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/auth.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/auth.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4031,7 +4031,7 @@ id: toolu_017FjwgHTd8tr45nDTUeZUjV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/auth.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/auth.ts",
   "old_string": "function parseFragment(redirectUrl: string) {\n  const params = new URLSearchParams(new URL(redirectUrl).hash.slice(1));\n  return {\n    accessToken: params.get('access_token') ?? '',\n    idToken: params.get('id_token') ?? '',\n    expiresIn: Number(params.get('expires_in') ?? '3600'),\n    error: params.get('error') ?? undefined,\n  };\n}",
   "new_string": "function parseFragment(redirectUrl: string) {\n  const params = new URLSearchParams(new URL(redirectUrl).hash.slice(1));\n  return {\n    accessToken: params.get('access_token') ?? '',\n    idToken: params.get('id_token') ?? '',\n    code: params.get('code') ?? '',\n    expiresIn: Number(params.get('expires_in') ?? '3600'),\n    error: params.get('error') ?? undefined,\n  };\n}"
 }
@@ -4042,7 +4042,7 @@ id: toolu_017FjwgHTd8tr45nDTUeZUjV
 tool_result
 id: toolu_017FjwgHTd8tr45nDTUeZUjV
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/auth.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/auth.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4052,7 +4052,7 @@ id: toolu_01GRrehL5mFsc7XcwmJ5e9dq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/auth.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/auth.ts",
   "old_string": "async function mint(interactive: boolean): Promise<TokenBundle> {\n  if (!OAUTH_CLIENT_ID) {\n    throw new Error(\n      'OAuth client id missing. Set WXT_OAUTH_CLIENT_ID in .env and rebuild.',\n    );\n  }\n  const url = new URL('https://accounts.google.com/o/oauth2/v2/auth');\n  url.searchParams.set('client_id', OAUTH_CLIENT_ID);\n  url.searchParams.set('response_type', 'token id_token');\n  url.searchParams.set('redirect_uri', chrome.identity.getRedirectURL());\n  url.searchParams.set('scope', SCOPES);\n  url.searchParams.set('nonce', crypto.randomUUID());\n  url.searchParams.set('prompt', interactive ? 'consent select_account' : 'none');\n\n  const redirect = await chrome.identity.launchWebAuthFlow({\n    url: url.toString(),\n    interactive,\n  });\n  if (!redirect) throw new Error('Sign-in was cancelled');\n\n  const { accessToken, idToken, expiresIn, error } = parseFragment(redirect);\n  if (error) throw new Error(`Google sign-in error: ${error}`);\n  if (!idToken || !accessToken) throw new Error('Sign-in did not return tokens');\n\n  const bundle: TokenBundle = {\n    idToken,\n    accessToken,\n    email: emailFromIdToken(idToken),\n    expiresAt: Date.now() + (expiresIn - 60) * 1000, // refresh 60s early\n  };\n  await chrome.storage.session.set({ [KEY]: bundle });\n  return bundle;\n}",
   "new_string": "async function mint(interactive: boolean): Promise<{ bundle: TokenBundle; code?: string }> {\n  if (!OAUTH_CLIENT_ID) {\n    throw new Error(\n      'OAuth client id missing. Set WXT_OAUTH_CLIENT_ID in .env and rebuild.',\n    );\n  }\n  const url = new URL('https://accounts.google.com/o/oauth2/v2/auth');\n  url.searchParams.set('client_id', OAUTH_CLIENT_ID);\n  // Interactive: hybrid flow (+ offline) so we ALSO get a code to hand the engine\n  // for a calendar refresh token. Silent renew stays implicit (client tokens only).\n  url.searchParams.set('response_type', interactive ? […]
 
@@ -4061,7 +4061,7 @@ id: toolu_01GRrehL5mFsc7XcwmJ5e9dq
 tool_result
 id: toolu_01GRrehL5mFsc7XcwmJ5e9dq
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/auth.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/auth.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4075,7 +4075,7 @@ id: toolu_01BBDqV4WEmPEKFMRXtgTLbT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/auth.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/auth.ts",
   "old_string": "  const cached = await readCache();\n  if (cached && cached.expiresAt > Date.now()) return cached;\n  return mint(false); // prompt=none silent renew\n}\n\nexport async function signIn(): Promise<AuthStatus> {\n  const bundle = await mint(true);\n  return { signedIn: true, email: bundle.email };\n}",
   "new_string": "  const cached = await readCache();\n  if (cached && cached.expiresAt > Date.now()) return cached;\n  return (await mint(false)).bundle; // prompt=none silent renew\n}\n\nexport async function signIn(): Promise<AuthStatus> {\n  const { bundle, code } = await mint(true);\n  // Best-effort: hand the auth code to the engine so it can mint a calendar\n  // refresh token and keep passes in sync when the panel is closed. Never let a\n  // failure here break sign-in — the engine's connectUrl CTA remains the fallback.\n  if (code) {\n    await engine\n      .connectCalendar(bundle.idToken, code, chrome.identity.getRedirectURL())\n      .catch((err) => console.warn('[auxilio] calendar connect failed', err));\n  }\n  return { signedIn: true, email: bundle.email };\n}"
 }
@@ -4086,7 +4086,7 @@ id: toolu_01BBDqV4WEmPEKFMRXtgTLbT
 tool_result
 id: toolu_01BBDqV4WEmPEKFMRXtgTLbT
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/auth.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/auth.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4100,7 +4100,7 @@ id: toolu_011dThK6wbBkiNSEwVt8R5aM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/.env.example",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/.env.example",
   "old_string": "# Web OAuth client id used by chrome.identity.launchWebAuthFlow.\n# This same id must be added to the engine's AUXILIO_WORKSPACE_OAUTH_CLIENT_ID\n# audience allow-list (comma-separated) so /addon/* accepts the extension's id_token.\nWXT_OAUTH_CLIENT_ID=",
   "new_string": "# Web OAuth client id used by chrome.identity.launchWebAuthFlow.\n# This same id must be added to the engine's AUXILIO_WORKSPACE_OAUTH_CLIENT_ID\n# audience allow-list (comma-separated) so /addon/* accepts the extension's id_token.\n# NOTE: the engine must also hold this Web client's SECRET as\n# AUXILIO_EXTENSION_OAUTH_CLIENT_SECRET so it can exchange the sign-in auth code\n# for a calendar refresh token (closed-panel move/cancel sync).\nWXT_OAUTH_CLIENT_ID="
 }
@@ -4121,7 +4121,7 @@ id: toolu_01EWCF9uQEbi5jU8Lyt9bvDo
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
   "old_string": "  \"version\": \"0.3.0\",",
   "new_string": "  \"version\": \"0.4.0\","
 }
@@ -4132,7 +4132,7 @@ id: toolu_01EWCF9uQEbi5jU8Lyt9bvDo
 tool_result
 id: toolu_01EWCF9uQEbi5jU8Lyt9bvDo
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4152,7 +4152,7 @@ id: toolu_01Tg5SZLuKmwdWNxqFpVtunA
 10	
 11	# The magic address that marks an event as a "visitor event" (Phase 2 auto-nudge).
 12	# Must match what the engine ingest pipeline keys on. Placeholder until confirmed.
-13	WXT_MAGIC_ADDRESS=visitors@auxilio.app
+13	WXT_MAGIC_ADDRESS=<REDACTED_EMAIL>
 14	
 ```
 
@@ -4166,7 +4166,7 @@ tool_use Read
 id: toolu_01Tg5SZLuKmwdWNxqFpVtunA
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/.env.example"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/.env.example"
 }
 ```
 
@@ -4177,7 +4177,7 @@ id: toolu_01HTa21pK9JredZHKWRnZRGc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/.env.example",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/.env.example",
   "old_string": "# Web OAuth client id used by chrome.identity.launchWebAuthFlow.\n# This same id must be added to the engine's AUXILIO_WORKSPACE_OAUTH_CLIENT_ID\n# audience allow-list (comma-separated) so /addon/* accepts the extension's id_token.\nWXT_OAUTH_CLIENT_ID=",
   "new_string": "# Web OAuth client id used by chrome.identity.launchWebAuthFlow.\n# This same id must be added to the engine's AUXILIO_WORKSPACE_OAUTH_CLIENT_ID\n# audience allow-list (comma-separated) so /addon/* accepts the extension's id_token.\n# NOTE: the engine must also hold this Web client's SECRET as\n# AUXILIO_EXTENSION_OAUTH_CLIENT_SECRET so it can exchange the sign-in auth code\n# for a calendar refresh token (closed-panel move/cancel sync).\nWXT_OAUTH_CLIENT_ID="
 }
@@ -4188,7 +4188,7 @@ id: toolu_01HTa21pK9JredZHKWRnZRGc
 tool_result
 id: toolu_01HTa21pK9JredZHKWRnZRGc
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/.env.example has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/.env.example has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4201,7 +4201,7 @@ tool_use Bash
 id: toolu_01JMB8rGvP8Sz4d8AQo5ZfUQ
 ```json
 {
-  "command": "cd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension && npm run compile 2>&1 | tail -5 && echo \"--- build ---\" && npm run build 2>&1 | grep -iE \"version|manifest|Finished|error\" | tail -6",
+  "command": "cd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension && npm run compile 2>&1 | tail -5 && echo \"--- build ---\" && npm run build 2>&1 | grep -iE \"version|manifest|Finished|error\" | tail -6",
   "description": "Extension compile + build"
 }
 ```
@@ -4292,7 +4292,7 @@ tool_use Read
 id: toolu_015AxjUeydA87fQYxLnDrgSB
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/wxt.config.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/wxt.config.ts"
 }
 ```
 
@@ -4369,7 +4369,7 @@ REDACTED.apps.googleusercontent.com
 
 # The magic address that marks an event as a "visitor event" (Phase 2 auto-nudge).
 # Must match what the engine ingest pipeline keys on. Placeholder until confirmed.
-WXT_MAGIC_ADDRESS=findajx@gmail.com
+WXT_MAGIC_ADDRESS=<REDACTED_EMAIL>
 === existing zips in .output ===
 total 0
 drwxr-xr-x@  4 appointy  staff  128 26 Jun 12:49 .
@@ -4410,7 +4410,7 @@ id: toolu_011EzkQip5n6NCsksWiSVvBV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/wxt.config.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/wxt.config.ts",
   "old_string": "import { defineConfig } from 'wxt';\n\n// See https://wxt.dev/api/config.html\n// Manifest is intentionally minimal and Calendar-only (no Gmail/Drive — CASA line).\n// Auth uses chrome.identity.launchWebAuthFlow (web OAuth client), so no `oauth2`\n// manifest key is needed; the client id is read from env in lib/config.ts.\nexport default defineConfig({\n  modules: ['@wxt-dev/module-react'],\n  manifest: {\n    name: 'Auxilio Visitor',\n    description:\n      'Register office visitors directly from a Google Calendar event.',\n    permissions: ['identity', 'sidePanel', 'storage', 'alarms', 'notifications'],\n    host_permissions: [\n      'https://calendar.google.com/*',\n      'https://www.googleapis.com/*',\n      // People API (guest name + photo resolution) lives on its own host.\n      'https://people.googleapis.com/*',\n      // Engine: deployed bifrost dev + the local reserved backend tunnel.\n      'https://ops-engine-dev-330299.bifrost.saastack.site/*',\n      'https://unyearning-olympia-unclimactic.ngrok-free.dev/*',\n    ],",
   "new_string": "import { defineConfig } from 'wxt';\n\n// Engine host_permission is derived from the build-time engine URL so the\n// published manifest only ever carries the engine it actually targets (no stale\n// tunnel hosts). Prod: pass WXT_ENGINE_URL=<bifrost url>. Local dev against the\n// reserved tunnel: WXT_ENGINE_URL=<ngrok url> npm run dev. Falls back to the\n// deployed bifrost dev engine when unset.\nconst ENGINE_URL = (\n  process.env.WXT_ENGINE_URL ?? 'https://ops-engine-dev-330299.bifrost.saastack.site'\n).replace(/\\/$/, '');\nconst ENGINE_HOST = `${new URL(ENGINE_URL).origin}/*`;\n\n// See https://wxt.dev/api/config.html\n// Manifest is intentionally minimal and Calendar-only (no Gmail/Drive — CASA line).\n// Auth uses chrome.identity.launchWebAuthFlow (web OAuth client), so no `oauth2`\n// manifest […]
 
@@ -4419,12 +4419,12 @@ id: toolu_011EzkQip5n6NCsksWiSVvBV
 tool_result
 id: toolu_011EzkQip5n6NCsksWiSVvBV
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/wxt.config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/wxt.config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
 
-Now the one value I won't guess — the magic address gets compiled into the build and determines which calendar events are detected as visitor events. Your `.env` currently has `findajx@gmail.com`; the code default is `visitors@auxilio.app` (marked "placeholder"). Baking the wrong one silently breaks event detection, so confirm before I cut the zip.
+Now the one value I won't guess — the magic address gets compiled into the build and determines which calendar events are detected as visitor events. Your `.env` currently has `<REDACTED_EMAIL>`; the code default is `<REDACTED_EMAIL>` (marked "placeholder"). Baking the wrong one silently breaks event detection, so confirm before I cut the zip.
 
 > TOOL
 
@@ -4439,11 +4439,11 @@ id: toolu_01XeNtdzZrCJJ9F2ZuzjHVtR
       "multiSelect": false,
       "options": [
         {
-          "label": "findajx@gmail.com",
+          "label": "<REDACTED_EMAIL>",
           "description": "The value currently in your local .env. Use this if it's the real magic-address mailbox for this internal pilot on the bifrost dev engine."
         },
         {
-          "label": "visitors@auxilio.app",
+          "label": "<REDACTED_EMAIL>",
           "description": "The code default in lib/config.ts (commented 'placeholder until confirmed'). Use this only if the deployed engine actually keys on it."
         }
       ]
@@ -4457,12 +4457,12 @@ id: toolu_01XeNtdzZrCJJ9F2ZuzjHVtR
 tool_result
 id: toolu_01XeNtdzZrCJJ9F2ZuzjHVtR
 ```
-Your questions have been answered: "Which magic address should I compile into the production build? (It must match what the deployed engine ingest keys on.)"="findajx@gmail.com". You can now continue with these answers in mind.
+Your questions have been answered: "Which magic address should I compile into the production build? (It must match what the deployed engine ingest keys on.)"="<REDACTED_EMAIL>". You can now continue with these answers in mind.
 ```
 
 > AGENT
 
-Building the production zip now — engine URL = bifrost, magic address = `findajx@gmail.com`, passed inline so the artifact doesn't depend on `.env` state.
+Building the production zip now — engine URL = bifrost, magic address = `<REDACTED_EMAIL>`, passed inline so the artifact doesn't depend on `.env` state.
 
 > TOOL
 
@@ -4470,7 +4470,7 @@ tool_use Bash
 id: toolu_01SG9x6kRt1KnKg7EVHhr2Lh
 ```json
 {
-  "command": "env WXT_ENGINE_URL=https://ops-engine-dev-330299.bifrost.saastack.site WXT_MAGIC_ADDRESS=findajx@gmail.com REDACTED.apps.googleusercontent.com npm run zip 2>&1 | tail -20",
+  "command": "env WXT_ENGINE_URL=https://ops-engine-dev-330299.bifrost.saastack.site WXT_MAGIC_ADDRESS=<REDACTED_EMAIL> REDACTED.apps.googleusercontent.com npm run zip 2>&1 | tail -20",
   "description": "Build + zip production extension"
 }
 ```
@@ -4512,7 +4512,7 @@ tool_use Bash
 id: toolu_015TnNEaSRzYvpHzRgFNB8wM
 ```json
 {
-  "command": "cd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension\necho \"=== package.json version ===\"; grep '\"version\"' package.json\necho \"=== built manifest version + host_permissions ===\"; node -e \"const m=require('./.output/chrome-mv3/manifest.json'); console.log('version:', m.version); console.log('host_permissions:', JSON.stringify(m.host_permissions))\"\necho \"=== engine URL baked into background.js? ===\"; grep -o \"ops-engine-dev-330299.bifrost.saastack.site\" .output/chrome-mv3/background.js | head -1\necho \"=== ngrok present anywhere in build? (should be empty) ===\"; grep -rl \"ngrok-free\" .output/chrome-mv3/ 2>/dev/null\necho \"=== magic address baked? ===\"; grep -o \"findajx@gmail.com\" .output/chrome-mv3/background.js | head -1",
+  "command": "cd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension\necho \"=== package.json version ===\"; grep '\"version\"' package.json\necho \"=== built manifest version + host_permissions ===\"; node -e \"const m=require('./.output/chrome-mv3/manifest.json'); console.log('version:', m.version); console.log('host_permissions:', JSON.stringify(m.host_permissions))\"\necho \"=== engine URL baked into background.js? ===\"; grep -o \"ops-engine-dev-330299.bifrost.saastack.site\" .output/chrome-mv3/background.js | head -1\necho \"=== ngrok present anywhere in build? (should be empty) ===\"; grep -rl \"ngrok-free\" .output/chrome-mv3/ 2>/dev/null\necho \"=== magic address baked? ===\"; grep -o \"<REDACTED_EMAIL>\" .output/chrome-mv3/background.js | head -1",
   "description": "Verify built artifact contents"
 }
 ```
@@ -4531,7 +4531,7 @@ host_permissions: ["https://calendar.google.com/*","https://www.googleapis.com/*
 ops-engine-dev-330299.bifrost.saastack.site
 === ngrok present anywhere in build? (should be empty) ===
 === magic address baked? ===
-findajx@gmail.com
+<REDACTED_EMAIL>
 ```
 
 > AGENT
@@ -4541,7 +4541,7 @@ Verified — the artifact is clean and correct:
 - **`.output/auxilio-extension-0.11.5-chrome.zip`** (115 KB) — this is the file to upload.
 - `host_permissions`: exactly the four needed (`calendar`, `googleapis`, `people`, and the **bifrost** engine) — **no ngrok** anywhere in the build. ✔
 - Engine URL baked = `ops-engine-dev-330299.bifrost.saastack.site` ✔
-- Magic address baked = `findajx@gmail.com` ✔
+- Magic address baked = `<REDACTED_EMAIL>` ✔
 
 One thing to flag: it built as **version 0.11.5**, not the 0.4.0 from our earlier session — `package.json` was changed to 0.11.5 between then and now (the manifest matches it, so it's internally consistent and a valid higher version). Just confirming that's intentional on your side; I didn't touch the version this round.
 
@@ -4553,7 +4553,7 @@ tool_use Bash
 id: toolu_01P4BY13NSf9Y7L12d98yxBi
 ```json
 {
-  "command": "cd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension\necho \"=== connect-calendar route call bundled? ===\"; grep -o \"connect-calendar\" .output/chrome-mv3/background.js | head -1\necho \"=== hybrid response_type bundled? ===\"; grep -o \"code token id_token\" .output/chrome-mv3/background.js | head -1\necho \"=== access_type offline bundled? ===\"; grep -o \"access_type\" .output/chrome-mv3/background.js | head -1",
+  "command": "cd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension\necho \"=== connect-calendar route call bundled? ===\"; grep -o \"connect-calendar\" .output/chrome-mv3/background.js | head -1\necho \"=== hybrid response_type bundled? ===\"; grep -o \"code token id_token\" .output/chrome-mv3/background.js | head -1\necho \"=== access_type offline bundled? ===\"; grep -o \"access_type\" .output/chrome-mv3/background.js | head -1",
   "description": "Confirm new sign-in/connect code is in the bundle"
 }
 ```
@@ -4612,7 +4612,7 @@ id: toolu_01KUUVj5YY9XMfgg7uSRS4m2
 ```
 -rw-r--r--@ 1 appointy  staff   112K 26 Jun 17:21 .output/auxilio-extension-0.11.5-chrome.zip
 --- absolute path ---
-/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/.output/auxilio-extension-0.11.5-chrome.zip
+/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/.output/auxilio-extension-0.11.5-chrome.zip
 ```
 
 > AGENT
@@ -4620,7 +4620,7 @@ id: toolu_01KUUVj5YY9XMfgg7uSRS4m2
 It's here:
 
 ```
-/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/.output/auxilio-extension-0.11.5-chrome.zip
+/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/.output/auxilio-extension-0.11.5-chrome.zip
 ```
 
 (112 KB, in the `.output/` folder — that's the WXT build output directory.)
@@ -4709,7 +4709,7 @@ tool_use Bash
 id: toolu_01QPtvdCWDfwJ7BMsMr3T3hP
 ```json
 {
-  "command": "cd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension\necho \"=== icon dimensions ===\"; sips -g pixelWidth -g pixelHeight -g format public/icon/128.png 2>/dev/null\necho \"=== any existing screenshots in repo? ===\"; find . -path ./node_modules -prune -o \\( -iname \"*.png\" -o -iname \"*.jpg\" \\) -print 2>/dev/null | grep -iv \"icon/\" | grep -iE \"screen|shot|promo|store\" | head\necho \"=== sips available? ===\"; which sips",
+  "command": "cd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension\necho \"=== icon dimensions ===\"; sips -g pixelWidth -g pixelHeight -g format public/icon/128.png 2>/dev/null\necho \"=== any existing screenshots in repo? ===\"; find . -path ./node_modules -prune -o \\( -iname \"*.png\" -o -iname \"*.jpg\" \\) -print 2>/dev/null | grep -iv \"icon/\" | grep -iE \"screen|shot|promo|store\" | head\necho \"=== sips available? ===\"; which sips",
   "description": "Verify icon size and image tooling"
 }
 ```
@@ -4720,7 +4720,7 @@ tool_result
 id: toolu_01QPtvdCWDfwJ7BMsMr3T3hP
 ```
 === icon dimensions ===
-/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/public/icon/128.png
+/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/public/icon/128.png
   pixelWidth: 128
   pixelHeight: 128
   format: png
@@ -4743,7 +4743,7 @@ tool_use Write
 id: toolu_012bZkgWA7kjnF9xSvdCx5wc
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/PRIVACY_POLICY.md",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/PRIVACY_POLICY.md",
   "content": "# Privacy Policy — Auxilio Visitor (Chrome Extension)\n\n_Last updated: 26 June 2026_\n\nAuxilio Visitor (\"the extension\") is an internal tool that lets a meeting host\nregister in-person office visitors directly from a Google Calendar event. This\npolicy explains what data the extension accesses, why, and how it is handled.\n\n## Who this is for\n\nThe extension is distributed for internal use within our organization. It is not\na general-public consumer product.\n\n## What data we access\n\n- **Your Google account identity** — your email address and name, obtained when\n  you sign in, to authenticate you to our Auxilio backend and to authorize\n  reading the calendar event you have open.\n- **Google Calendar event data (read-only)** — the title, date/time, location,\n  and attendee list of the event you are actively viewing, used to build the\n  visitor roster. The extension requests only the\n  `calendar.events.readonly` scope. It never requests Gmail or Drive access.\n- **Visitor details you enter** — guest names and phone numbers you add or\n  correct in order to issue a pass.\n- **Contact display names/photos** — resolved from your Google contacts (People\n  API) to label guests in the roster.\n- **Authentication tokens** — short-lived OAuth tokens used to make the above\n  requests.\n\n## How […]
 
 > TOOL
@@ -4751,13 +4751,13 @@ id: toolu_012bZkgWA7kjnF9xSvdCx5wc
 tool_result
 id: toolu_012bZkgWA7kjnF9xSvdCx5wc
 ```
-File created successfully at: /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/PRIVACY_POLICY.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/PRIVACY_POLICY.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
 
 **Privacy policy drafted** → `auxilio-extension/PRIVACY_POLICY.md`. It's accurate to what the code does (calendar read-only, name/phone, OAuth tokens, sent to your backend, no Gmail/Drive, no selling). Two things to confirm before you publish it:
-- Contact email is a placeholder: **`privacy@appointy.com`** — change if you want a different one.
+- Contact email is a placeholder: **`<REDACTED_EMAIL>`** — change if you want a different one.
 - It says the backend is "operated by us / your organization" — fine for internal, adjust if needed.
 
 **Host it and paste the URL** in Privacy tab → "Privacy policy URL." Fastest options: paste the text into a **Google Doc → File → Share → Publish to web** and use that link, or drop the `.md`/an `.html` into a public repo with **GitHub Pages**. The store just needs a publicly reachable URL.
@@ -4799,7 +4799,7 @@ create one zip that I can share with him.
 
 > AGENT
 
-Creating a single, friend-friendly zip from the current production build (bifrost URL + `findajx@gmail.com` magic address, no ngrok). It'll unzip into a clearly-named folder they point "Load unpacked" at.
+Creating a single, friend-friendly zip from the current production build (bifrost URL + `<REDACTED_EMAIL>` magic address, no ngrok). It'll unzip into a clearly-named folder they point "Load unpacked" at.
 
 > DEVELOPER
 
@@ -4817,7 +4817,7 @@ tool_use Bash
 id: toolu_01YFm1gyjJSbyMSwTyYJNr2S
 ```json
 {
-  "command": "bash -c '\nset -e\ncd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension\nopenssl genrsa 2048 > key.pem 2>/dev/null\nopenssl rsa -in key.pem -pubout -outform DER -out /tmp/auxilio_pub.der 2>/dev/null\nPUBKEY=$(openssl base64 -A -in /tmp/auxilio_pub.der)\nID=$(openssl dgst -sha256 -hex /tmp/auxilio_pub.der | sed \"s/.*= //\" | cut -c1-32 | tr \"0-9a-f\" \"a-p\")\necho \"PUBKEY=$PUBKEY\"\necho \"EXTENSION_ID=$ID\"\necho \"REDIRECT_URI=https://$ID.chromiumapp.org/\"\n'",
+  "command": "bash -c '\nset -e\ncd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension\nopenssl genrsa 2048 > key.pem 2>/dev/null\nopenssl rsa -in key.pem -pubout -outform DER -out /tmp/auxilio_pub.der 2>/dev/null\nPUBKEY=$(openssl base64 -A -in /tmp/auxilio_pub.der)\nID=$(openssl dgst -sha256 -hex /tmp/auxilio_pub.der | sed \"s/.*= //\" | cut -c1-32 | tr \"0-9a-f\" \"a-p\")\necho \"PUBKEY=$PUBKEY\"\necho \"EXTENSION_ID=$ID\"\necho \"REDIRECT_URI=https://$ID.chromiumapp.org/\"\n'",
   "description": "Generate keypair, derive public key + extension ID"
 }
 ```
@@ -4838,7 +4838,7 @@ tool_use Read
 id: toolu_01CXSCMZ57wEATH5gEYzfQce
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/.gitignore"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/.gitignore"
 }
 ```
 
@@ -4887,7 +4887,7 @@ tool_use Read
 id: toolu_01Unejx4FqSGswRgQbRUY9Dz
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/wxt.config.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/wxt.config.ts"
 }
 ```
 
@@ -4937,7 +4937,7 @@ id: toolu_015mcwjRbmyU5kb8BXvyjwTn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/wxt.config.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/wxt.config.ts",
   "old_string": "const ENGINE_URL = (\n  process.env.WXT_ENGINE_URL ?? 'https://ops-engine-dev-330299.bifrost.saastack.site'\n).replace(/\\/$/, '');\nconst ENGINE_HOST = `${new URL(ENGINE_URL).origin}/*`;",
   "new_string": "const ENGINE_URL = (\n  process.env.WXT_ENGINE_URL ?? 'https://ops-engine-dev-330299.bifrost.saastack.site'\n).replace(/\\/$/, '');\nconst ENGINE_HOST = `${new URL(ENGINE_URL).origin}/*`;\n\n// Pinned public key → stable extension ID `babflijdehjlajekidajimhaggoceabn` on\n// every install (load-unpacked on any machine), so the OAuth redirect URI\n// `https://babflijdehjlajekidajimhaggoceabn.chromiumapp.org/` stays registered.\n// The matching private key lives in key.pem (gitignored — keep it safe for\n// packing/CWS). The public key below is NOT secret.\nconst EXTENSION_KEY =\n  'REDACTED';"
 }
@@ -4948,7 +4948,7 @@ id: toolu_015mcwjRbmyU5kb8BXvyjwTn
 tool_result
 id: toolu_015mcwjRbmyU5kb8BXvyjwTn
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/wxt.config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/wxt.config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4958,7 +4958,7 @@ id: toolu_016cHnpgWNGTSWfKsj3a9Yrt
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/wxt.config.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/wxt.config.ts",
   "old_string": "  manifest: {\n    name: 'Auxilio Visitor',\n    description:\n      'Register office visitors directly from a Google Calendar event.',\n    permissions: ['identity', 'sidePanel', 'storage', 'alarms', 'notifications'],",
   "new_string": "  manifest: {\n    key: EXTENSION_KEY,\n    name: 'Auxilio Visitor',\n    description:\n      'Register office visitors directly from a Google Calendar event.',\n    permissions: ['identity', 'sidePanel', 'storage', 'alarms', 'notifications'],"
 }
@@ -4969,7 +4969,7 @@ id: toolu_016cHnpgWNGTSWfKsj3a9Yrt
 tool_result
 id: toolu_016cHnpgWNGTSWfKsj3a9Yrt
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/wxt.config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/wxt.config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4979,7 +4979,7 @@ id: toolu_01Um9DVYmFiFMbHtJMZPmeLA
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/.gitignore",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/.gitignore",
   "old_string": "# Secrets / local env — never commit\n.env\n.env.*\n!.env.example",
   "new_string": "# Secrets / local env — never commit\n.env\n.env.*\n!.env.example\n\n# Extension signing private key — never commit (public key is pinned in wxt.config.ts)\nkey.pem\n*.pem"
 }
@@ -4990,7 +4990,7 @@ id: toolu_01Um9DVYmFiFMbHtJMZPmeLA
 tool_result
 id: toolu_01Um9DVYmFiFMbHtJMZPmeLA
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/.gitignore has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/.gitignore has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5003,7 +5003,7 @@ tool_use Bash
 id: toolu_015s1AnLvqZ8Xd8vALTsNa8n
 ```json
 {
-  "command": "bash -c '\nset -e\ncd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension\nenv WXT_ENGINE_URL=https://ops-engine-dev-330299.bifrost.saastack.site \\\n    WXT_MAGIC_ADDRESS=findajx@gmail.com \\\n    REDACTED.apps.googleusercontent.com \\\n    npm run build 2>&1 | tail -3\necho \"=== manifest checks ===\"\nnode -e \"const m=require(\\\"./.output/chrome-mv3/manifest.json\\\"); console.log(\\\"version:\\\",m.version); console.log(\\\"has key:\\\", !!m.key); console.log(\\\"host_permissions:\\\", JSON.stringify(m.host_permissions));\"\necho \"=== ngrok absent? (empty = good) ===\"; grep -rl \"ngrok-free\" .output/chrome-mv3/ 2>/dev/null || echo \"none\"\n'",
+  "command": "bash -c '\nset -e\ncd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension\nenv WXT_ENGINE_URL=https://ops-engine-dev-330299.bifrost.saastack.site \\\n    WXT_MAGIC_ADDRESS=<REDACTED_EMAIL> \\\n    REDACTED.apps.googleusercontent.com \\\n    npm run build 2>&1 | tail -3\necho \"=== manifest checks ===\"\nnode -e \"const m=require(\\\"./.output/chrome-mv3/manifest.json\\\"); console.log(\\\"version:\\\",m.version); console.log(\\\"has key:\\\", !!m.key); console.log(\\\"host_permissions:\\\", JSON.stringify(m.host_permissions));\"\necho \"=== ngrok absent? (empty = good) ===\"; grep -rl \"ngrok-free\" .output/chrome-mv3/ 2>/dev/null || echo \"none\"\n'",
   "description": "Rebuild prod with pinned key and verify manifest"
 }
 ```
@@ -5034,7 +5034,7 @@ tool_use Bash
 id: toolu_017C5FQU4udMrrf41M2MBLTQ
 ```json
 {
-  "command": "bash -c '\nset -e\ncd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension\n\n# 1) Confirm the built manifest key hashes to the expected extension ID\nKEY=$(node -e \"process.stdout.write(require(\\\"./.output/chrome-mv3/manifest.json\\\").key)\")\necho \"$KEY\" | openssl base64 -d -A > /tmp/manifest_pub.der\nID=$(openssl dgst -sha256 -hex /tmp/manifest_pub.der | sed \"s/.*= //\" | cut -c1-32 | tr \"0-9a-f\" \"a-p\")\necho \"computed ID from built manifest: $ID\"\n\n# 2) Package a friend-friendly zip: extracts to a named folder containing manifest.json\nrm -rf /tmp/auxilio-visitor \"$PWD/auxilio-visitor-share.zip\"\ncp -R .output/chrome-mv3 /tmp/auxilio-visitor\nditto -c -k --keepParent /tmp/auxilio-visitor \"$PWD/auxilio-visitor-share.zip\"\n\necho \"=== zip contents (top entries) ===\"\nunzip -l auxilio-visitor-share.zip | sed -n \"1,12p\"\necho \"=== zip path + size ===\"\nls -lh \"$PWD/auxilio-visitor-share.zip\" | awk \"{print \\$5, \\$9}\"\n'",
+  "command": "bash -c '\nset -e\ncd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension\n\n# 1) Confirm the built manifest key hashes to the expected extension ID\nKEY=$(node -e \"process.stdout.write(require(\\\"./.output/chrome-mv3/manifest.json\\\").key)\")\necho \"$KEY\" | openssl base64 -d -A > /tmp/manifest_pub.der\nID=$(openssl dgst -sha256 -hex /tmp/manifest_pub.der | sed \"s/.*= //\" | cut -c1-32 | tr \"0-9a-f\" \"a-p\")\necho \"computed ID from built manifest: $ID\"\n\n# 2) Package a friend-friendly zip: extracts to a named folder containing manifest.json\nrm -rf /tmp/auxilio-visitor \"$PWD/auxilio-visitor-share.zip\"\ncp -R .output/chrome-mv3 /tmp/auxilio-visitor\nditto -c -k --keepParent /tmp/auxilio-visitor \"$PWD/auxilio-visitor-share.zip\"\n\necho \"=== zip contents (top entries) ===\"\nunzip -l auxilio-visitor-share.zip | sed -n \"1,12p\"\necho \"=== zip path + size ===\"\nls -lh \"$PWD/auxilio-visitor-share.zip\" | awk \"{print \\$5, \\$9}\"\n'",
   "description": "Verify ID and create share zip"
 }
 ```
@@ -5059,7 +5059,7 @@ Archive:  auxilio-visitor-share.zip
       163  06-26-2026 18:00   auxilio-visitor/chunks/._options-CZkJ7oGK.js
     25922  06-26-2026 18:00   auxilio-visitor/chunks/sidepanel-v2O5bqD3.js
 === zip path + size ===
-120K /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/auxilio-visitor-share.zip
+120K /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/auxilio-visitor-share.zip
 ```
 
 > AGENT
@@ -5072,7 +5072,7 @@ tool_use Bash
 id: toolu_01ErkiFhHU1iXBkxpz46tVi6
 ```json
 {
-  "command": "bash -c '\nset -e\ncd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension\nrm -f auxilio-visitor-share.zip\nrm -rf /tmp/auxilio-visitor && cp -R .output/chrome-mv3 /tmp/auxilio-visitor\nxattr -cr /tmp/auxilio-visitor 2>/dev/null || true\nfind /tmp/auxilio-visitor -name \".DS_Store\" -delete 2>/dev/null || true\n( cd /tmp && zip -r -X -q \"$OLDPWD/auxilio-visitor-share.zip\" auxilio-visitor )\necho \"=== clean zip contents ===\"\nunzip -l auxilio-visitor-share.zip | sed -n \"1,10p\"\necho \"=== cruft check (should be empty) ===\"\nunzip -l auxilio-visitor-share.zip | grep -E \"__MACOSX|/\\._|\\.DS_Store\" || echo \"clean — no cruft\"\necho \"=== final ===\"\nls -lh auxilio-visitor-share.zip | awk \"{print \\$5, \\$9}\"\n'",
+  "command": "bash -c '\nset -e\ncd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension\nrm -f auxilio-visitor-share.zip\nrm -rf /tmp/auxilio-visitor && cp -R .output/chrome-mv3 /tmp/auxilio-visitor\nxattr -cr /tmp/auxilio-visitor 2>/dev/null || true\nfind /tmp/auxilio-visitor -name \".DS_Store\" -delete 2>/dev/null || true\n( cd /tmp && zip -r -X -q \"$OLDPWD/auxilio-visitor-share.zip\" auxilio-visitor )\necho \"=== clean zip contents ===\"\nunzip -l auxilio-visitor-share.zip | sed -n \"1,10p\"\necho \"=== cruft check (should be empty) ===\"\nunzip -l auxilio-visitor-share.zip | grep -E \"__MACOSX|/\\._|\\.DS_Store\" || echo \"clean — no cruft\"\necho \"=== final ===\"\nls -lh auxilio-visitor-share.zip | awk \"{print \\$5, \\$9}\"\n'",
   "description": "Repackage clean share zip and verify no cruft"
 }
 ```
@@ -5105,7 +5105,7 @@ Done — both the key pinning and the share zip are ready.
 
 ## The zip to send
 ```
-/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/auxilio-visitor-share.zip
+/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/auxilio-visitor-share.zip
 ```
 114 KB, clean (no macOS cruft). It unzips to a single `auxilio-visitor/` folder containing `manifest.json` — that's the folder your friend points "Load unpacked" at.
 
@@ -5198,7 +5198,7 @@ tool_use Bash
 id: toolu_017ptrUFG4Xy5cqRtGfRdAn7
 ```json
 {
-  "command": "bash -c '\ncd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension\nfor d in .output/chrome-mv3 .output/chrome-mv3-dev; do\n  if [ -f \"$d/manifest.json\" ]; then\n    HASKEY=$(node -e \"const m=require(\\\"./$d/manifest.json\\\"); console.log(m.key?\\\"yes\\\":\\\"NO\\\")\")\n    if [ \"$HASKEY\" = \"yes\" ]; then\n      node -e \"process.stdout.write(require(\\\"./$d/manifest.json\\\").key)\" | openssl base64 -d -A > /tmp/k.der 2>/dev/null\n      ID=$(openssl dgst -sha256 -hex /tmp/k.der | sed \"s/.*= //\" | cut -c1-32 | tr \"0-9a-f\" \"a-p\")\n    else\n      ID=\"(path-derived by Chrome → unstable)\"\n    fi\n    echo \"$d  | has key: $HASKEY | ID: $ID\"\n  else\n    echo \"$d  | (no build present)\"\n  fi\ndone\necho \"share zip manifest:\"\nunzip -p auxilio-visitor-share.zip auxilio-visitor/manifest.json 2>/dev/null | node -e \"let s=\\\"\\\";process.stdin.on(\\\"data\\\",d=>s+=d).on(\\\"end\\\",()=>{const m=JSON.parse(s);console.log(\\\"  has key:\\\", m.key?\\\"yes\\\":\\\"NO\\\")})\"\n'",
+  "command": "bash -c '\ncd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension\nfor d in .output/chrome-mv3 .output/chrome-mv3-dev; do\n  if [ -f \"$d/manifest.json\" ]; then\n    HASKEY=$(node -e \"const m=require(\\\"./$d/manifest.json\\\"); console.log(m.key?\\\"yes\\\":\\\"NO\\\")\")\n    if [ \"$HASKEY\" = \"yes\" ]; then\n      node -e \"process.stdout.write(require(\\\"./$d/manifest.json\\\").key)\" | openssl base64 -d -A > /tmp/k.der 2>/dev/null\n      ID=$(openssl dgst -sha256 -hex /tmp/k.der | sed \"s/.*= //\" | cut -c1-32 | tr \"0-9a-f\" \"a-p\")\n    else\n      ID=\"(path-derived by Chrome → unstable)\"\n    fi\n    echo \"$d  | has key: $HASKEY | ID: $ID\"\n  else\n    echo \"$d  | (no build present)\"\n  fi\ndone\necho \"share zip manifest:\"\nunzip -p auxilio-visitor-share.zip auxilio-visitor/manifest.json 2>/dev/null | node -e \"let s=\\\"\\\";process.stdin.on(\\\"data\\\",d=>s+=d).on(\\\"end\\\",()=>{const m=JSON.parse(s);console.log(\\\"  has key:\\\", m.key?\\\"yes\\\":\\\"NO\\\")})\"\n'",
   "description": "Check which build folders carry the pinned key"
 }
 ```
@@ -5231,7 +5231,7 @@ You loaded **`chrome-mv3-dev`** — the old `npm run dev` folder from before I p
 1. `chrome://extensions` → **remove** the currently-loaded one (the `phlplh…` instance).
 2. **Load unpacked** → select:
    ```
-   /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/.output/chrome-mv3
+   /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/.output/chrome-mv3
    ```
    (or unzip `auxilio-visitor-share.zip` and load the `auxilio-visitor` folder — same thing.)
 3. Confirm the card now shows ID **`babflijdehjlajekidajimhaggoceabn`** (with Developer mode on, the ID is listed under the name).
@@ -5257,7 +5257,7 @@ tool_use Bash
 id: toolu_01TrUtDpcX1aYbcZjB6YUV5P
 ```json
 {
-  "command": "bash -c '\nset -e\ncd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension\nenv WXT_ENGINE_URL=https://ops-engine-dev-330299.bifrost.saastack.site \\\n    WXT_MAGIC_ADDRESS=findajx@gmail.com \\\n    REDACTED.apps.googleusercontent.com \\\n    npm run zip 2>&1 | tail -4\necho \"=== store zip: structure (manifest must be at ROOT, not nested) ===\"\nZIP=$(ls -t .output/*-chrome.zip | head -1)\nunzip -l \"$ZIP\" | sed -n \"1,8p\"\necho \"=== path ===\"; ls -lh \"$ZIP\" | awk \"{print \\$5, \\$9}\"\n'",
+  "command": "bash -c '\nset -e\ncd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension\nenv WXT_ENGINE_URL=https://ops-engine-dev-330299.bifrost.saastack.site \\\n    WXT_MAGIC_ADDRESS=<REDACTED_EMAIL> \\\n    REDACTED.apps.googleusercontent.com \\\n    npm run zip 2>&1 | tail -4\necho \"=== store zip: structure (manifest must be at ROOT, not nested) ===\"\nZIP=$(ls -t .output/*-chrome.zip | head -1)\nunzip -l \"$ZIP\" | sed -n \"1,8p\"\necho \"=== path ===\"; ls -lh \"$ZIP\" | awk \"{print \\$5, \\$9}\"\n'",
   "description": "Build fresh store zip and verify root structure"
 }
 ```
@@ -5289,7 +5289,7 @@ Archive:  .output/auxilio-extension-0.11.5-chrome.zip
 Fresh store zip is ready, with `manifest.json` at the root (correct store format):
 
 ```
-/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/.output/auxilio-extension-0.11.5-chrome.zip
+/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/.output/auxilio-extension-0.11.5-chrome.zip
 ```
 
 **Upload that one.** (Not `auxilio-visitor-share.zip` — that's folder-nested, for Load unpacked only.)
@@ -5332,7 +5332,7 @@ id: toolu_01MJYi7eYHiqwZCWntCcQn3t
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/wxt.config.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/wxt.config.ts",
   "old_string": "const ENGINE_HOST = `${new URL(ENGINE_URL).origin}/*`;",
   "new_string": "const ENGINE_HOST = `${new URL(ENGINE_URL).origin}/*`;\n\n// Store builds must NOT ship our self-generated `key`: the Chrome Web Store\n// assigns the item its own key/ID on first upload, and a mismatching key is\n// rejected (\"key field value doesn't match the current item\"). Omit it for store\n// zips (WXT_STORE_BUILD=1); keep it for load-unpacked / self-distributed builds so\n// their ID stays the stable `babflij…`.\nconst STORE_BUILD = process.env.WXT_STORE_BUILD === '1';"
 }
@@ -5343,7 +5343,7 @@ id: toolu_01MJYi7eYHiqwZCWntCcQn3t
 tool_result
 id: toolu_01MJYi7eYHiqwZCWntCcQn3t
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/wxt.config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/wxt.config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5353,7 +5353,7 @@ id: toolu_01TFFDS9e4nYRSsxBGJaWuPT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/wxt.config.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/wxt.config.ts",
   "old_string": "  manifest: {\n    key: EXTENSION_KEY,\n    name: 'Auxilio Visitor',",
   "new_string": "  manifest: {\n    // Included for load-unpacked (stable ID); omitted for store builds.\n    ...(STORE_BUILD ? {} : { key: EXTENSION_KEY }),\n    name: 'Auxilio Visitor',"
 }
@@ -5364,7 +5364,7 @@ id: toolu_01TFFDS9e4nYRSsxBGJaWuPT
 tool_result
 id: toolu_01TFFDS9e4nYRSsxBGJaWuPT
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/wxt.config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/wxt.config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5373,7 +5373,7 @@ tool_use Read
 id: toolu_01RbLiWjf2gjfBPQWKD4udgz
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
   "limit": 6
 }
 ```
@@ -5398,7 +5398,7 @@ id: toolu_013nS7mVxcZ88tdJFNEmzyxk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
   "old_string": "  \"version\": \"0.11.5\",",
   "new_string": "  \"version\": \"0.11.6\","
 }
@@ -5409,7 +5409,7 @@ id: toolu_013nS7mVxcZ88tdJFNEmzyxk
 tool_result
 id: toolu_013nS7mVxcZ88tdJFNEmzyxk
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5422,7 +5422,7 @@ tool_use Bash
 id: toolu_01YJkZ2VoCfEiy6TQyiL2HXb
 ```json
 {
-  "command": "bash -c '\nset -e\ncd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension\nenv WXT_STORE_BUILD=1 \\\n    WXT_ENGINE_URL=https://ops-engine-dev-330299.bifrost.saastack.site \\\n    WXT_MAGIC_ADDRESS=findajx@gmail.com \\\n    REDACTED.apps.googleusercontent.com \\\n    npm run zip 2>&1 | tail -3\nZIP=$(ls -t .output/*-chrome.zip | head -1)\necho \"=== store zip checks ===\"\nnode -e \"const m=require(\\\"./.output/chrome-mv3/manifest.json\\\"); console.log(\\\"version:\\\", m.version); console.log(\\\"has key (must be false):\\\", !!m.key); console.log(\\\"host_permissions:\\\", JSON.stringify(m.host_permissions));\"\necho \"=== manifest at root? ===\"; unzip -l \"$ZIP\" | grep -E \"manifest.json|/\" | head -4\necho \"=== UPLOAD THIS ===\"; ls -lh \"$ZIP\" | awk \"{print \\$5, \\$9}\"\n'",
+  "command": "bash -c '\nset -e\ncd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension\nenv WXT_STORE_BUILD=1 \\\n    WXT_ENGINE_URL=https://ops-engine-dev-330299.bifrost.saastack.site \\\n    WXT_MAGIC_ADDRESS=<REDACTED_EMAIL> \\\n    REDACTED.apps.googleusercontent.com \\\n    npm run zip 2>&1 | tail -3\nZIP=$(ls -t .output/*-chrome.zip | head -1)\necho \"=== store zip checks ===\"\nnode -e \"const m=require(\\\"./.output/chrome-mv3/manifest.json\\\"); console.log(\\\"version:\\\", m.version); console.log(\\\"has key (must be false):\\\", !!m.key); console.log(\\\"host_permissions:\\\", JSON.stringify(m.host_permissions));\"\necho \"=== manifest at root? ===\"; unzip -l \"$ZIP\" | grep -E \"manifest.json|/\" | head -4\necho \"=== UPLOAD THIS ===\"; ls -lh \"$ZIP\" | awk \"{print \\$5, \\$9}\"\n'",
   "description": "Build store zip without key, v0.11.6"
 }
 ```
@@ -5453,7 +5453,7 @@ Archive:  .output/auxilio-extension-0.11.6-chrome.zip
 Both errors fixed. Upload this:
 
 ```
-/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/.output/auxilio-extension-0.11.6-chrome.zip
+/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/.output/auxilio-extension-0.11.6-chrome.zip
 ```
 
 Verified: **version 0.11.6** (> the published 0.11.5), **no `key` field** (so no more "doesn't match the current item"), manifest at root, bifrost engine host.
@@ -5488,7 +5488,7 @@ tool_use Bash
 id: toolu_01F1ucAvnqFaBtF9tbyXaVBP
 ```json
 {
-  "command": "bash -c '\nset -e\ncd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension\necho \"=== .env says ===\"; grep -E \"WXT_ENGINE_URL|WXT_MAGIC\" .env\necho \"=== plain build (no inline env) — does it read .env into BOTH the baked URL and host_permissions? ===\"\nnpm run build >/dev/null 2>&1\nnode -e \"const m=require(\\\"./.output/chrome-mv3/manifest.json\\\"); console.log(\\\"has key:\\\", !!m.key); console.log(\\\"host_permissions:\\\", JSON.stringify(m.host_permissions));\"\necho \"baked engine URL in bundle:\"; grep -oE \"https://[a-z0-9.-]*ngrok-free.dev|https://ops-engine-dev-330299[a-z0-9.-]*\" .output/chrome-mv3/chunks/*.js .output/chrome-mv3/background.js 2>/dev/null | sed \"s/.*://\" | sort -u | head\n'",
+  "command": "bash -c '\nset -e\ncd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension\necho \"=== .env says ===\"; grep -E \"WXT_ENGINE_URL|WXT_MAGIC\" .env\necho \"=== plain build (no inline env) — does it read .env into BOTH the baked URL and host_permissions? ===\"\nnpm run build >/dev/null 2>&1\nnode -e \"const m=require(\\\"./.output/chrome-mv3/manifest.json\\\"); console.log(\\\"has key:\\\", !!m.key); console.log(\\\"host_permissions:\\\", JSON.stringify(m.host_permissions));\"\necho \"baked engine URL in bundle:\"; grep -oE \"https://[a-z0-9.-]*ngrok-free.dev|https://ops-engine-dev-330299[a-z0-9.-]*\" .output/chrome-mv3/chunks/*.js .output/chrome-mv3/background.js 2>/dev/null | sed \"s/.*://\" | sort -u | head\n'",
   "description": "Test whether plain build reads .env for both engine URL and host permission"
 }
 ```
@@ -5500,7 +5500,7 @@ id: toolu_01F1ucAvnqFaBtF9tbyXaVBP
 ```
 === .env says ===
 WXT_ENGINE_URL=https://unyearning-olympia-unclimactic.ngrok-free.dev
-WXT_MAGIC_ADDRESS=findajx@gmail.com
+WXT_MAGIC_ADDRESS=<REDACTED_EMAIL>
 === plain build (no inline env) — does it read .env into BOTH the baked URL and host_permissions? ===
 has key: true
 host_permissions: ["https://calendar.google.com/*","https://www.googleapis.com/*","https://people.googleapis.com/*","https://ops-engine-dev-330299.bifrost.saastack.site/*"]
@@ -5523,7 +5523,7 @@ id: toolu_01LnhYyFrqBW8haCB6JceYnP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/wxt.config.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/wxt.config.ts",
   "old_string": "import { defineConfig } from 'wxt';\n\n// Engine host_permission is derived from the build-time engine URL so the",
   "new_string": "import { readFileSync } from 'node:fs';\nimport { defineConfig } from 'wxt';\n\n// WXT inlines import.meta.env (the baked engine URL in lib/config.ts) from .env,\n// but does NOT populate process.env — which this config reads to build the engine\n// host_permission. Load WXT_ENGINE_URL from .env here so host_permission always\n// matches the URL baked into the bundle. An inline `env WXT_ENGINE_URL=… ` still\n// wins (we only fill when it's unset).\nif (!process.env.WXT_ENGINE_URL) {\n  try {\n    const m = readFileSync(new URL('.env', import.meta.url), 'utf8')\n      .match(/^\\s*WXT_ENGINE_URL\\s*=\\s*(.+?)\\s*$/m);\n    if (m) process.env.WXT_ENGINE_URL = m[1].trim();\n  } catch { /* no .env — fall back to the default below */ }\n}\n\n// Engine host_permission is derived from the build-time engine URL so the"
 }
@@ -5534,7 +5534,7 @@ id: toolu_01LnhYyFrqBW8haCB6JceYnP
 tool_result
 id: toolu_01LnhYyFrqBW8haCB6JceYnP
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/wxt.config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/wxt.config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5543,7 +5543,7 @@ tool_use Bash
 id: toolu_01EQMXkp5REgxUK5UUgPa1nJ
 ```json
 {
-  "command": "bash -c '\nset -e\ncd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension\necho \"=== plain build now (reads .env=ngrok) — host must match baked URL ===\"\nnpm run build >/dev/null 2>&1\nnode -e \"const m=require(\\\"./.output/chrome-mv3/manifest.json\\\"); console.log(\\\"version:\\\", m.version); console.log(\\\"has key:\\\", !!m.key); console.log(\\\"host_permissions:\\\", JSON.stringify(m.host_permissions));\"\necho \"baked engine URL:\"; grep -oE \"unyearning-olympia-unclimactic.ngrok-free.dev|ops-engine-dev-330299\" .output/chrome-mv3/background.js | sort -u\necho \"=== inline override still wins? ===\"\nenv WXT_ENGINE_URL=https://ops-engine-dev-330299.bifrost.saastack.site npm run build >/dev/null 2>&1\nnode -e \"const m=require(\\\"./.output/chrome-mv3/manifest.json\\\"); console.log(\\\"host_permissions:\\\", JSON.stringify(m.host_permissions));\"\n'",
+  "command": "bash -c '\nset -e\ncd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension\necho \"=== plain build now (reads .env=ngrok) — host must match baked URL ===\"\nnpm run build >/dev/null 2>&1\nnode -e \"const m=require(\\\"./.output/chrome-mv3/manifest.json\\\"); console.log(\\\"version:\\\", m.version); console.log(\\\"has key:\\\", !!m.key); console.log(\\\"host_permissions:\\\", JSON.stringify(m.host_permissions));\"\necho \"baked engine URL:\"; grep -oE \"unyearning-olympia-unclimactic.ngrok-free.dev|ops-engine-dev-330299\" .output/chrome-mv3/background.js | sort -u\necho \"=== inline override still wins? ===\"\nenv WXT_ENGINE_URL=https://ops-engine-dev-330299.bifrost.saastack.site npm run build >/dev/null 2>&1\nnode -e \"const m=require(\\\"./.output/chrome-mv3/manifest.json\\\"); console.log(\\\"host_permissions:\\\", JSON.stringify(m.host_permissions));\"\n'",
   "description": "Verify host_permission now matches .env and inline still overrides"
 }
 ```
@@ -5651,7 +5651,7 @@ tool_use Read
 id: toolu_0186RY1oFiVLwptEeHH8zJVy
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json"
 }
 ```
 
@@ -5662,7 +5662,7 @@ id: toolu_01KK42LpRkAt2VuYAKRN1FVq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
   "old_string": "    \"zip\": \"wxt zip\",\n    \"zip:firefox\": \"wxt zip -b firefox\",\n    \"compile\": \"tsc --noEmit\",\n    \"postinstall\": \"wxt prepare\"",
   "new_string": "    \"zip\": \"wxt zip\",\n    \"zip:firefox\": \"wxt zip -b firefox\",\n    \"zip:store\": \"WXT_STORE_BUILD=1 WXT_ENGINE_URL=https://ops-engine-dev-330299.bifrost.saastack.site wxt zip && npm run reveal\",\n    \"reveal\": \"open -R \\\"$(ls -t .output/*-chrome.zip | head -1)\\\" 2>/dev/null || open .output\",\n    \"compile\": \"tsc --noEmit\",\n    \"postinstall\": \"wxt prepare\""
 }
@@ -5673,7 +5673,7 @@ id: toolu_01KK42LpRkAt2VuYAKRN1FVq
 tool_result
 id: toolu_01KK42LpRkAt2VuYAKRN1FVq
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5736,7 +5736,7 @@ id: toolu_01JpwbET7RYiMmmPbwHHgiti
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/wxt.config.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/wxt.config.ts",
   "old_string": "export default defineConfig({\n  modules: ['@wxt-dev/module-react'],\n  manifest: {",
   "new_string": "export default defineConfig({\n  // Visible (non-dot) output dir so Chrome's \"Load unpacked\" picker and Finder\n  // show it without toggling hidden files. Builds land in output/chrome-mv3,\n  // dev in output/chrome-mv3-dev, zips in output/*.zip.\n  outDir: 'output',\n  modules: ['@wxt-dev/module-react'],\n  manifest: {"
 }
@@ -5747,7 +5747,7 @@ id: toolu_01JpwbET7RYiMmmPbwHHgiti
 tool_result
 id: toolu_01JpwbET7RYiMmmPbwHHgiti
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/wxt.config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/wxt.config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5761,7 +5761,7 @@ id: toolu_01YXtDwM74t825gsQKMxPw7i
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/.gitignore",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/.gitignore",
   "old_string": "node_modules\n.output\nstats.html",
   "new_string": "node_modules\n.output\noutput\nstats.html"
 }
@@ -5772,7 +5772,7 @@ id: toolu_01YXtDwM74t825gsQKMxPw7i
 tool_result
 id: toolu_01YXtDwM74t825gsQKMxPw7i
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/.gitignore has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/.gitignore has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5782,7 +5782,7 @@ id: toolu_01EHFg4sTyY9HPTtddQwDpQi
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
   "old_string": "    \"reveal\": \"open -R \\\"$(ls -t .output/*-chrome.zip | head -1)\\\" 2>/dev/null || open .output\",",
   "new_string": "    \"reveal\": \"open -R \\\"$(ls -t output/*-chrome.zip | head -1)\\\" 2>/dev/null || open output\","
 }
@@ -5793,7 +5793,7 @@ id: toolu_01EHFg4sTyY9HPTtddQwDpQi
 tool_result
 id: toolu_01EHFg4sTyY9HPTtddQwDpQi
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5802,7 +5802,7 @@ tool_use Bash
 id: toolu_01FvtbMH3Zwy7FSTqKE9JcG9
 ```json
 {
-  "command": "bash -c '\nset -e\ncd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension\nrm -rf .output   # remove the old hidden dir to avoid confusion\necho \"=== dev-style build → visible output/ ===\"\nnpm run build >/dev/null 2>&1\nls -d output/chrome-mv3 2>/dev/null && echo \"  output/chrome-mv3 exists (load-unpacked target)\"\nnode -e \"const m=require(\\\"./output/chrome-mv3/manifest.json\\\"); console.log(\\\"  version:\\\",m.version,\\\"| has key:\\\", !!m.key)\"\necho \"=== store zip → visible output/ ===\"\nnpm run zip:store >/dev/null 2>&1\nls -1 output/*-chrome.zip 2>/dev/null\necho \"=== confirm no hidden .output remains ===\"\nls -d .output 2>/dev/null && echo \"STILL THERE\" || echo \"  gone — only visible output/ now\"\n'",
+  "command": "bash -c '\nset -e\ncd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension\nrm -rf .output   # remove the old hidden dir to avoid confusion\necho \"=== dev-style build → visible output/ ===\"\nnpm run build >/dev/null 2>&1\nls -d output/chrome-mv3 2>/dev/null && echo \"  output/chrome-mv3 exists (load-unpacked target)\"\nnode -e \"const m=require(\\\"./output/chrome-mv3/manifest.json\\\"); console.log(\\\"  version:\\\",m.version,\\\"| has key:\\\", !!m.key)\"\necho \"=== store zip → visible output/ ===\"\nnpm run zip:store >/dev/null 2>&1\nls -1 output/*-chrome.zip 2>/dev/null\necho \"=== confirm no hidden .output remains ===\"\nls -d .output 2>/dev/null && echo \"STILL THERE\" || echo \"  gone — only visible output/ now\"\n'",
   "description": "Switch to visible output dir, rebuild, verify"
 }
 ```
@@ -5879,7 +5879,7 @@ tool_use Bash
 id: toolu_01RXo23G4isFugG5HTq19Gex
 ```json
 {
-  "command": "bash -c '\nset -e\ncd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension\necho \"=== keyed build for load-unpacked (engine=bifrost, key INCLUDED) ===\"\nenv WXT_ENGINE_URL=https://ops-engine-dev-330299.bifrost.saastack.site npm run build >/dev/null 2>&1\nnode -e \"const m=require(\\\"./output/chrome-mv3/manifest.json\\\"); console.log(\\\"has key:\\\", !!m.key)\"\n# compute the ID this build will get\nnode -e \"process.stdout.write(require(\\\"./output/chrome-mv3/manifest.json\\\").key||\\\"\\\")\" | openssl base64 -d -A > /tmp/k.der 2>/dev/null\nID=$(openssl dgst -sha256 -hex /tmp/k.der | sed \"s/.*= //\" | cut -c1-32 | tr \"0-9a-f\" \"a-p\")\necho \"this build will load as ID: $ID\"\necho\necho \">>> LOAD THIS FOLDER:  output/chrome-mv3\"\n'",
+  "command": "bash -c '\nset -e\ncd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension\necho \"=== keyed build for load-unpacked (engine=bifrost, key INCLUDED) ===\"\nenv WXT_ENGINE_URL=https://ops-engine-dev-330299.bifrost.saastack.site npm run build >/dev/null 2>&1\nnode -e \"const m=require(\\\"./output/chrome-mv3/manifest.json\\\"); console.log(\\\"has key:\\\", !!m.key)\"\n# compute the ID this build will get\nnode -e \"process.stdout.write(require(\\\"./output/chrome-mv3/manifest.json\\\").key||\\\"\\\")\" | openssl base64 -d -A > /tmp/k.der 2>/dev/null\nID=$(openssl dgst -sha256 -hex /tmp/k.der | sed \"s/.*= //\" | cut -c1-32 | tr \"0-9a-f\" \"a-p\")\necho \"this build will load as ID: $ID\"\necho\necho \">>> LOAD THIS FOLDER:  output/chrome-mv3\"\n'",
   "description": "Rebuild keyed load-unpacked build and confirm ID"
 }
 ```

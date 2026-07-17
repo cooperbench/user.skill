@@ -77,7 +77,7 @@ tool_result
 id: toolu_01NwibDgNNbFqMLq5xBQPawo
 ```
 commit 32dc16f431070cbe94535ef7a911116089b309d3
-Author: Noah Dolev <noah@elixirtrials.com>
+Author: Noah Dolev <<REDACTED_EMAIL>>
 Date:   Tue Apr 21 15:20:54 2026 +0000
 
     feat(training): MLflow tracking in QLoRA trainer
@@ -99,14 +99,14 @@ Date:   Tue Apr 21 15:20:54 2026 +0000
     RUNE_DISABLE_MLFLOW path, the ImportError path, the log-helper no-op
     path, and the new kwargs surface on both public functions.
     
-    Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>
+    Co-Authored-By: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>
 
  libs/model-training/src/model_training/trainer.py | 142 +++++++++++++++++++++-
  libs/model-training/tests/test_trainer_mlflow.py  | 107 ++++++++++++++++
  2 files changed, 244 insertions(+), 5 deletions(-)
 
 commit 1651a96fe7d1fc5a9be5c90b62cd1cab26faaa98
-Author: Noah Dolev <noah@elixirtrials.com>
+Author: Noah Dolev <<REDACTED_EMAIL>>
 Date:   Tue Apr 21 15:27:54 2026 +0000
 
     feat(training): mined-pairs → SFT chat converter
@@ -254,7 +254,7 @@ tool_use Read
 id: toolu_01LXp5TZGDkomSeX6qufGzst
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_train.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_train.py",
   "offset": 1,
   "limit": 100
 }
@@ -344,7 +344,7 @@ tool_use Grep
 id: toolu_016yS7G5MeU5bZm1dWyTb1Mx
 ```json
 {
-  "pattern": "def |^class \">\n<parameter name=\"path\">/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/trainer.py",
+  "pattern": "def |^class \">\n<parameter name=\"path\">/home/<USER>/Code/rune/libs/model-training/src/model_training/trainer.py",
   "output_mode": "content",
   "-n": true
 }
@@ -365,7 +365,7 @@ id: toolu_01M7tA72FnNhpuwB83PRvkXV
 ```json
 {
   "pattern": "^def |^class |^    def ",
-  "path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/trainer.py",
+  "path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/trainer.py",
   "output_mode": "content",
   "-n": true
 }
@@ -398,7 +398,7 @@ tool_use Read
 id: toolu_01B6N8Yy6AqVJKfF2uCrTyh2
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/trainer.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/trainer.py",
   "offset": 375,
   "limit": 60
 }
@@ -524,7 +524,7 @@ tool_use Read
 id: toolu_01FMdenPkBHYJqwVHymzRu1T
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/docs/plans/training_upgrade.md",
+  "file_path": "/home/<USER>/Code/rune/docs/plans/training_upgrade.md",
   "offset": 1,
   "limit": 80
 }
@@ -604,7 +604,7 @@ id: toolu_01Jjk1nhF1rTExXEjniGAqzV
 ```json
 {
   "pattern": "^def |^class |^__all__",
-  "path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_data.py",
+  "path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_data.py",
   "output_mode": "content",
   "-n": true
 }
@@ -639,7 +639,7 @@ tool_use Read
 id: toolu_016tm3UZNFpZmoGeFQf2hsxR
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_data.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_data.py",
   "offset": 852,
   "limit": 50
 }
@@ -706,7 +706,7 @@ id: toolu_01F8JTjRreE3BmLV5NUKMtTN
 ```json
 {
   "pattern": "pairs_to_chat_messages|normalize_mined_pairs|format_for_distillation",
-  "path": "/Users/noahdolevelixir/Code/rune",
+  "path": "/home/<USER>/Code/rune",
   "output_mode": "files_with_matches"
 }
 ```
@@ -734,7 +734,7 @@ id: toolu_01Y2ACNXfnvnwxTx5uVCvnUu
 ```json
 {
   "pattern": "format_for_distillation|normalize_mined_pairs",
-  "path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_prep.py",
+  "path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_prep.py",
   "output_mode": "content",
   "-n": true
 }

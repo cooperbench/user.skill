@@ -1,7 +1,7 @@
 > DEVELOPER
 
 Goal: 
-1. achieve feature parity with /Users/alex/workspace/cli/cmd/entire/cli/e2e_test
+1. achieve feature parity with /home/<USER>/workspace/cli/cmd/entire/cli/e2e_test
 2. move all of this code into the cli repo proper
 3. (take out all the 'exploratory'/pending tests we're not using right now) - or figure out how to package-namespace them better
 
@@ -174,7 +174,7 @@ id: toolu_014nzRLg82MLPFGsyRN4iLYh
 {
   "description": "Explore e2e-tests repo structure",
   "subagent_type": "Explore",
-  "prompt": "Thoroughly explore the codebase at /Users/alex/workspace/entire-cli-e2e-tests. I need to understand:\n\n1. Full directory structure (all Go files, test files, packages)\n2. What tests exist in tests/ - list each test function name and a brief description of what it tests\n3. The agents/ package - what agents are supported, how the abstraction works\n4. The entire/ package - what CLI operations are wrapped\n5. The testutil/ package - what helpers exist\n6. Any tests that are skipped (t.Skip) and why\n7. The go.mod - dependencies and module name\n\nBe very thorough - read all test files completely to understand each test case."
+  "prompt": "Thoroughly explore the codebase at /home/<USER>/workspace/entire-cli-e2e-tests. I need to understand:\n\n1. Full directory structure (all Go files, test files, packages)\n2. What tests exist in tests/ - list each test function name and a brief description of what it tests\n3. The agents/ package - what agents are supported, how the abstraction works\n4. The entire/ package - what CLI operations are wrapped\n5. The testutil/ package - what helpers exist\n6. Any tests that are skipped (t.Skip) and why\n7. The go.mod - dependencies and module name\n\nBe very thorough - read all test files completely to understand each test case."
 }
 ```
 
@@ -186,7 +186,7 @@ id: toolu_011BLo9EAZ9KDfzTTQ61qV5E
 {
   "description": "Explore cli repo e2e_test",
   "subagent_type": "Explore",
-  "prompt": "Thoroughly explore the codebase at /Users/alex/workspace/cli/cmd/entire/cli/e2e_test. I need to understand:\n\n1. Full directory structure (all Go files, test files, packages)\n2. What tests exist - list each test function name and a brief description of what it tests\n3. Helper packages/utilities used\n4. How tests are structured (setup, agent interaction, assertions)\n5. The go.mod - dependencies and module name\n6. Any tests that are skipped and why\n7. How it compares to a standalone e2e test suite\n\nBe very thorough - read all test files and helper code completely."
+  "prompt": "Thoroughly explore the codebase at /home/<USER>/workspace/cli/cmd/entire/cli/e2e_test. I need to understand:\n\n1. Full directory structure (all Go files, test files, packages)\n2. What tests exist - list each test function name and a brief description of what it tests\n3. Helper packages/utilities used\n4. How tests are structured (setup, agent interaction, assertions)\n5. The go.mod - dependencies and module name\n6. Any tests that are skipped and why\n7. How it compares to a standalone e2e test suite\n\nBe very thorough - read all test files and helper code completely."
 }
 ```
 
@@ -251,7 +251,7 @@ Now I have enough information. Let me create a comprehensive report:
 
 ### 1. DIRECTORY STRUCTURE
 
-**Location:** `/Users/alex/workspace/cli/cmd/entire/cli/e2e_test`
+**Location:** `/home/<USER>/workspace/cli/cmd/entire/cli/e2e_test`
 
 **File Organization:**
 ```

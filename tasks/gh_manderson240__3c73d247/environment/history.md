@@ -43,7 +43,7 @@ tool_use Read
 id: toolu_01FNsPXDBDTiydWUP1f9iebQ
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/.claude/plans/dreamy-jingling-thacker.md"
+  "file_path": "/home/<USER>/dev/cohezion/.claude/plans/dreamy-jingling-thacker.md"
 }
 ```
 
@@ -52,7 +52,7 @@ id: toolu_01FNsPXDBDTiydWUP1f9iebQ
 tool_result ERROR
 id: toolu_01FNsPXDBDTiydWUP1f9iebQ
 ```
-File does not exist. Note: your current working directory is /home/mike-anderson/dev/cohezion.
+File does not exist. Note: your current working directory is /home/<USER>/dev/cohezion.
 ```
 
 > TOOL
@@ -61,7 +61,7 @@ tool_use Bash
 id: toolu_01DnCz14rcjMGWVt5ZRgYiyS
 ```json
 {
-  "command": "ls -la /home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/ 2>&1 | head -30",
+  "command": "ls -la /home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/ 2>&1 | head -30",
   "description": "List worktree directory"
 }
 ```
@@ -85,7 +85,7 @@ drwxrwxr-x  2 mike-anderson mike-anderson      2 Apr 18 20:14 anthropic-delivery
 -rw-rw-r--  1 mike-anderson mike-anderson  17013 Apr 18 20:14 BIDIRECTIONAL_LINKING.md
 -rw-rw-r--  1 mike-anderson mike-anderson   3065 Apr 18 21:28 BIOS_RESUME_INSTRUCTIONS.md
 -rw-rw-r--  1 mike-anderson mike-anderson      8 Apr 18 20:14 birdclef_pid.txt
-lrwxrwxrwx  1 mike-anderson mike-anderson     39 Apr 18 20:14 .cache -> /home/mike-anderson/dev/cohezion/.cache
+lrwxrwxrwx  1 mike-anderson mike-anderson     39 Apr 18 20:14 .cache -> /home/<USER>/dev/cohezion/.cache
 -rw-rw-r--  1 mike-anderson mike-anderson   1288 Apr 18 20:14 CHANGELOG.md
 drwxrwxr-x  2 mike-anderson mike-anderson      3 Apr 18 21:27 .claude
 -rw-rw-r--  1 mike-anderson mike-anderson  25790 Apr 18 20:14 CLAUDE.md
@@ -101,7 +101,7 @@ tool_use Bash
 id: toolu_01LH6g1N2s1BiUr3QKGZFqLr
 ```json
 {
-  "command": "find /home/mike-anderson/dev/cohezion/.claude/plans/ -type f -name \"*.md\" 2>&1 | head -20 && echo \"---\" && find /home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/.claude/plans/ -type f 2>&1 | head -20",
+  "command": "find /home/<USER>/dev/cohezion/.claude/plans/ -type f -name \"*.md\" 2>&1 | head -20 && echo \"---\" && find /home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/.claude/plans/ -type f 2>&1 | head -20",
   "description": "Find plan files in both locations"
 }
 ```
@@ -111,9 +111,9 @@ id: toolu_01LH6g1N2s1BiUr3QKGZFqLr
 tool_result
 id: toolu_01LH6g1N2s1BiUr3QKGZFqLr
 ```
-find: ‘/home/mike-anderson/dev/cohezion/.claude/plans/’: No such file or directory
+find: ‘/home/<USER>/dev/cohezion/.claude/plans/’: No such file or directory
 ---
-find: ‘/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/.claude/plans/’: No such file or directory
+find: ‘/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/.claude/plans/’: No such file or directory
 ```
 
 > TOOL
@@ -122,7 +122,7 @@ tool_use Bash
 id: toolu_01FT1sBXZGQMoGFBpJGmKCHo
 ```json
 {
-  "command": "find /home/mike-anderson -name \"dreamy-jingling-thacker*\" -type f 2>/dev/null | head -10",
+  "command": "find /home/<USER> -name \"dreamy-jingling-thacker*\" -type f 2>/dev/null | head -10",
   "description": "Search for plan file in home directory"
 }
 ```
@@ -141,7 +141,7 @@ tool_use Bash
 id: toolu_01KtxVAhuEAxWTTTmjKgcSJF
 ```json
 {
-  "command": "ls /home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/.claude/ 2>&1 && echo \"---BIOS INSTRUCTIONS---\" && cat /home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/BIOS_RESUME_INSTRUCTIONS.md",
+  "command": "ls /home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/.claude/ 2>&1 && echo \"---BIOS INSTRUCTIONS---\" && cat /home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/BIOS_RESUME_INSTRUCTIONS.md",
   "description": "Check worktree .claude/ and read BIOS instructions"
 }
 ```
@@ -210,7 +210,7 @@ tool_use Bash
 id: toolu_01MRkWWT9z4NJJTc2SjJbFof
 ```json
 {
-  "command": "find /home/mike-anderson -name \"dreamy-jingling-thacker.md\" -type f 2>/dev/null",
+  "command": "find /home/<USER> -name \"dreamy-jingling-thacker.md\" -type f 2>/dev/null",
   "description": "Locate plan file"
 }
 ```
@@ -256,7 +256,7 @@ id: toolu_016TDSZ87XH7q6PFQUjUZmsu
 ```json
 {
   "pattern": "**/dreamy-jingling-thacker.md",
-  "path": "/home/mike-anderson/.claude"
+  "path": "/home/<USER>/.claude"
 }
 ```
 
@@ -265,7 +265,7 @@ id: toolu_016TDSZ87XH7q6PFQUjUZmsu
 tool_result
 id: toolu_016TDSZ87XH7q6PFQUjUZmsu
 ```
-/home/mike-anderson/.claude/plans/dreamy-jingling-thacker.md
+/home/<USER>/.claude/plans/dreamy-jingling-thacker.md
 ```
 
 > TOOL
@@ -275,7 +275,7 @@ id: toolu_014hFaqiLBoQPxxmK74EU4Ud
 ```json
 {
   "pattern": "**/check_bios_state.py",
-  "path": "/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker"
+  "path": "/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker"
 }
 ```
 
@@ -293,7 +293,7 @@ tool_use Read
 id: toolu_01Mjd3YvdxFiKhM1Ev63CXp4
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/plans/dreamy-jingling-thacker.md"
+  "file_path": "/home/<USER>/.claude/plans/dreamy-jingling-thacker.md"
 }
 ```
 
@@ -329,7 +329,7 @@ tool_use Read
 id: toolu_014nSNhrQkH7EtA8wFwvz5y9
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/scripts/check_bios_state.py"
+  "file_path": "/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/scripts/check_bios_state.py"
 }
 ```
 
@@ -394,7 +394,7 @@ id: toolu_01RR12it5Ed8jTzhf1pYJaoP
 tool_result
 id: toolu_01RR12it5Ed8jTzhf1pYJaoP
 ```
-{"message":"Successfully stopped task: blywu3moz (find /home/mike-anderson -name \"dreamy-jingling-thacker*\" -type f 2>/dev/null | head -10)","task_id":"blywu3moz","task_type":"local_bash","command":"find /home/mike-anderson -name \"dreamy-jingling-thacker*\" -type f 2>/dev/null | head -10"}
+{"message":"Successfully stopped task: blywu3moz (find /home/<USER> -name \"dreamy-jingling-thacker*\" -type f 2>/dev/null | head -10)","task_id":"blywu3moz","task_type":"local_bash","command":"find /home/<USER> -name \"dreamy-jingling-thacker*\" -type f 2>/dev/null | head -10"}
 ```
 
 > TOOL
@@ -412,7 +412,7 @@ id: toolu_01Tpbf2W7g7JNzuLMfLsWXB3
 tool_result
 id: toolu_01Tpbf2W7g7JNzuLMfLsWXB3
 ```
-{"message":"Successfully stopped task: bqobuxtfi (find /home/mike-anderson -name \"dreamy-jingling-thacker.md\" -type f 2>/dev/null)","task_id":"bqobuxtfi","task_type":"local_bash","command":"find /home/mike-anderson -name \"dreamy-jingling-thacker.md\" -type f 2>/dev/null"}
+{"message":"Successfully stopped task: bqobuxtfi (find /home/<USER> -name \"dreamy-jingling-thacker.md\" -type f 2>/dev/null)","task_id":"bqobuxtfi","task_type":"local_bash","command":"find /home/<USER> -name \"dreamy-jingling-thacker.md\" -type f 2>/dev/null"}
 ```
 
 > AGENT
@@ -431,7 +431,7 @@ tool_use Bash
 id: toolu_01GuT6JMJGBJn1WeK6HPAPy6
 ```json
 {
-  "command": "cd /home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker && ls .venv/bin/python 2>&1 | head -2 && echo \"---\" && .venv/bin/python scripts/check_bios_state.py 2>&1 || uv run python scripts/check_bios_state.py 2>&1",
+  "command": "cd /home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker && ls .venv/bin/python 2>&1 | head -2 && echo \"---\" && .venv/bin/python scripts/check_bios_state.py 2>&1 || uv run python scripts/check_bios_state.py 2>&1",
   "description": "Run read-only BIOS state probe"
 }
 ```
@@ -464,7 +464,7 @@ Things this probe CANNOT check (verify manually in BIOS):
 Verdict: at least one item below target. BIOS visit and/or
 kernel/firmware/ROCm work required — see plan Phase 0a.
 warning: Resolving despite existing lockfile due to fork markers being disjoint with `requires-python`: `python_full_version >= '3.13'` vs `python_full_version == '3.11.*'`
-error: Distribution not found at: file:///home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/cloud-vault-mcp
+error: Distribution not found at: file:///home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/cloud-vault-mcp
 ```
 
 > AGENT
@@ -527,15 +527,15 @@ tool_use Write
 id: toolu_012Ckkes8vKhsNJs5Amm3rM7
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/plans/i-did-what-was-mutable-valley.md",
-  "content": "# Phase 0a Wrap-up + Pivot to Phase 0b (64 GB Ceiling, Reboot-Free Path)\n\n**Plan created:** 2026-04-18\n**Parent plan:** `/home/mike-anderson/.claude/plans/dreamy-jingling-thacker.md`\n**Worktree:** `.claude/worktrees/dreamy-jingling-thacker`\n**Branch:** `spec/dreamy-jingling-thacker`\n**Committed so far:** `5bcae51a0` (Phases 0–2), `4f2f0b2bc` (BIOS probe)\n\n---\n\n## Context\n\n**Why this plan exists.** The user completed the BIOS step from\n`BIOS_RESUME_INSTRUCTIONS.md` and reported that two of the three prescribed BIOS\ntoggles (**AI Max Performance Mode**, **PCIe Gen5**) are **not exposed by the\ncurrent Framework Desktop BIOS**, and the UMA Frame Buffer has **no \"Auto\"\noption — 64 GB is the highest fixed preset available**. A fresh run of\n`scripts/check_bios_state.py` confirms:\n\n```\n[✗] Kernel                       6.17.0-1017-oem — BELOW TARGET (6.18.4+)\n[✓] GPU target (gfx1151)         gfx1151 detected via rocminfo\n[✗] VRAM allocation (UMA)        device: 64.0 GB — LOW — BIOS UMA likely set to a fixed small value\n[✗] PCIe link speed              lspci -vv did not expose LnkSta (may need sudo for this device)\n[✓] CPU features                 AVX-512 / VNNI / BF16 — OK\n[✓] ROCm version                 /opt/rocm/.info/version = 7.2.1\n[✓] User groups                  groups: render video — OK\n```\n\n**User constraints for the remainder of Phase 0a:**\n1. The BIOS firmware update path (to unlock Auto-UMA + missing toggles) is\n   **out of scope** this session — 64 GB is the hard ceiling we plan against.\n2. **No more reboots unless strictly required […]
+  "file_path": "/home/<USER>/.claude/plans/i-did-what-was-mutable-valley.md",
+  "content": "# Phase 0a Wrap-up + Pivot to Phase 0b (64 GB Ceiling, Reboot-Free Path)\n\n**Plan created:** 2026-04-18\n**Parent plan:** `/home/<USER>/.claude/plans/dreamy-jingling-thacker.md`\n**Worktree:** `.claude/worktrees/dreamy-jingling-thacker`\n**Branch:** `spec/dreamy-jingling-thacker`\n**Committed so far:** `5bcae51a0` (Phases 0–2), `4f2f0b2bc` (BIOS probe)\n\n---\n\n## Context\n\n**Why this plan exists.** The user completed the BIOS step from\n`BIOS_RESUME_INSTRUCTIONS.md` and reported that two of the three prescribed BIOS\ntoggles (**AI Max Performance Mode**, **PCIe Gen5**) are **not exposed by the\ncurrent Framework Desktop BIOS**, and the UMA Frame Buffer has **no \"Auto\"\noption — 64 GB is the highest fixed preset available**. A fresh run of\n`scripts/check_bios_state.py` confirms:\n\n```\n[✗] Kernel                       6.17.0-1017-oem — BELOW TARGET (6.18.4+)\n[✓] GPU target (gfx1151)         gfx1151 detected via rocminfo\n[✗] VRAM allocation (UMA)        device: 64.0 GB — LOW — BIOS UMA likely set to a fixed small value\n[✗] PCIe link speed              lspci -vv did not expose LnkSta (may need sudo for this device)\n[✓] CPU features                 AVX-512 / VNNI / BF16 — OK\n[✓] ROCm version                 /opt/rocm/.info/version = 7.2.1\n[✓] User groups                  groups: render video — OK\n```\n\n**User constraints for the remainder of Phase 0a:**\n1. The BIOS firmware update path (to unlock Auto-UMA + missing toggles) is\n   **out of scope** this session — 64 GB is the hard ceiling we plan against.\n2. **No more reboots unless strictly required […]
 
 > TOOL
 
 tool_result
 id: toolu_012Ckkes8vKhsNJs5Amm3rM7
 ```
-File created successfully at: /home/mike-anderson/.claude/plans/i-did-what-was-mutable-valley.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/plans/i-did-what-was-mutable-valley.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -554,15 +554,15 @@ tool_use Write
 id: toolu_015bcXETjb6TMsWJNHQGDYHc
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/plans/i-did-what-was-mutable-valley.md",
-  "content": "# Phase 0a Completion: Kernel + Firmware + ROCm → Phase 0b Probe (the TurboQuant Unlock)\n\n**Plan created:** 2026-04-18\n**Parent plan:** `/home/mike-anderson/.claude/plans/dreamy-jingling-thacker.md`\n**Worktree:** `.claude/worktrees/dreamy-jingling-thacker`\n**Branch:** `spec/dreamy-jingling-thacker`\n**Committed so far:** `5bcae51a0` (Phases 0–2), `4f2f0b2bc` (BIOS probe)\n\n---\n\n## Context\n\n**Why this plan exists.** The goal is and has always been **unlocking\nTurboQuant on the Strix Halo host** — the parent plan's end state. The BIOS\nstep has partially completed: VRAM moved from 0.5 GB → 64 GB after the user's\nBIOS visit, but the user's current Framework BIOS revision **has no \"Auto\"\nUMA option, no AI Max Performance toggle, and no PCIe Gen5 toggle** (those\nappear only on Framework BIOS v3.05+, which the user opted not to flash this\nsession). The user explicitly stated: *\"If we need the kernel upgrade for\nTurboQuant then let's do it. I'll just need another email. The goal has been\nunlocking TurboQuant.\"* That reverses the earlier \"no reboots\" constraint\nand puts the kernel / firmware / ROCm upgrades back on the critical path,\nwith the affordance that each reboot-gated step gets an email-formatted\n`*_RESUME_INSTRUCTIONS.md` handoff so the user can pick up from anywhere.\n\n**Fresh probe (2026-04-18, post-BIOS):**\n```\n[✗] Kernel                       6.17.0-1017-oem — BELOW TARGET (6.18.4+)\n[✓] GPU target (gfx1151)         gfx1151 detected via rocminfo\n[✗] VRAM allocation (UMA)        device: 64.0 GB — […]
+  "file_path": "/home/<USER>/.claude/plans/i-did-what-was-mutable-valley.md",
+  "content": "# Phase 0a Completion: Kernel + Firmware + ROCm → Phase 0b Probe (the TurboQuant Unlock)\n\n**Plan created:** 2026-04-18\n**Parent plan:** `/home/<USER>/.claude/plans/dreamy-jingling-thacker.md`\n**Worktree:** `.claude/worktrees/dreamy-jingling-thacker`\n**Branch:** `spec/dreamy-jingling-thacker`\n**Committed so far:** `5bcae51a0` (Phases 0–2), `4f2f0b2bc` (BIOS probe)\n\n---\n\n## Context\n\n**Why this plan exists.** The goal is and has always been **unlocking\nTurboQuant on the Strix Halo host** — the parent plan's end state. The BIOS\nstep has partially completed: VRAM moved from 0.5 GB → 64 GB after the user's\nBIOS visit, but the user's current Framework BIOS revision **has no \"Auto\"\nUMA option, no AI Max Performance toggle, and no PCIe Gen5 toggle** (those\nappear only on Framework BIOS v3.05+, which the user opted not to flash this\nsession). The user explicitly stated: *\"If we need the kernel upgrade for\nTurboQuant then let's do it. I'll just need another email. The goal has been\nunlocking TurboQuant.\"* That reverses the earlier \"no reboots\" constraint\nand puts the kernel / firmware / ROCm upgrades back on the critical path,\nwith the affordance that each reboot-gated step gets an email-formatted\n`*_RESUME_INSTRUCTIONS.md` handoff so the user can pick up from anywhere.\n\n**Fresh probe (2026-04-18, post-BIOS):**\n```\n[✗] Kernel                       6.17.0-1017-oem — BELOW TARGET (6.18.4+)\n[✓] GPU target (gfx1151)         gfx1151 detected via rocminfo\n[✗] VRAM allocation (UMA)        device: 64.0 GB — […]
 
 > TOOL
 
 tool_result
 id: toolu_015bcXETjb6TMsWJNHQGDYHc
 ```
-The file /home/mike-anderson/.claude/plans/i-did-what-was-mutable-valley.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/i-did-what-was-mutable-valley.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -578,7 +578,7 @@ tool_use ExitPlanMode
 id: toolu_012xEidB9FRsAfjZqeSptrZA
 ```json
 {
-  "plan": "# Phase 0a Completion: Kernel + Firmware + ROCm → Phase 0b Probe (the TurboQuant Unlock)\n\n**Plan created:** 2026-04-18\n**Parent plan:** `/home/mike-anderson/.claude/plans/dreamy-jingling-thacker.md`\n**Worktree:** `.claude/worktrees/dreamy-jingling-thacker`\n**Branch:** `spec/dreamy-jingling-thacker`\n**Committed so far:** `5bcae51a0` (Phases 0–2), `4f2f0b2bc` (BIOS probe)\n\n---\n\n## Context\n\n**Why this plan exists.** The goal is and has always been **unlocking\nTurboQuant on the Strix Halo host** — the parent plan's end state. The BIOS\nstep has partially completed: VRAM moved from 0.5 GB → 64 GB after the user's\nBIOS visit, but the user's current Framework BIOS revision **has no \"Auto\"\nUMA option, no AI Max Performance toggle, and no PCIe Gen5 toggle** (those\nappear only on Framework BIOS v3.05+, which the user opted not to flash this\nsession). The user explicitly stated: *\"If we need the kernel upgrade for\nTurboQuant then let's do it. I'll just need another email. The goal has been\nunlocking TurboQuant.\"* That reverses the earlier \"no reboots\" constraint\nand puts the kernel / firmware / ROCm upgrades back on the critical path,\nwith the affordance that each reboot-gated step gets an email-formatted\n`*_RESUME_INSTRUCTIONS.md` handoff so the user can pick up from anywhere.\n\n**Fresh probe (2026-04-18, post-BIOS):**\n```\n[✗] Kernel                       6.17.0-1017-oem — BELOW TARGET (6.18.4+)\n[✓] GPU target (gfx1151)         gfx1151 detected via rocminfo\n[✗] VRAM allocation (UMA)        device: 64.0 GB — LOW\n[✗] PCIe […]
+  "plan": "# Phase 0a Completion: Kernel + Firmware + ROCm → Phase 0b Probe (the TurboQuant Unlock)\n\n**Plan created:** 2026-04-18\n**Parent plan:** `/home/<USER>/.claude/plans/dreamy-jingling-thacker.md`\n**Worktree:** `.claude/worktrees/dreamy-jingling-thacker`\n**Branch:** `spec/dreamy-jingling-thacker`\n**Committed so far:** `5bcae51a0` (Phases 0–2), `4f2f0b2bc` (BIOS probe)\n\n---\n\n## Context\n\n**Why this plan exists.** The goal is and has always been **unlocking\nTurboQuant on the Strix Halo host** — the parent plan's end state. The BIOS\nstep has partially completed: VRAM moved from 0.5 GB → 64 GB after the user's\nBIOS visit, but the user's current Framework BIOS revision **has no \"Auto\"\nUMA option, no AI Max Performance toggle, and no PCIe Gen5 toggle** (those\nappear only on Framework BIOS v3.05+, which the user opted not to flash this\nsession). The user explicitly stated: *\"If we need the kernel upgrade for\nTurboQuant then let's do it. I'll just need another email. The goal has been\nunlocking TurboQuant.\"* That reverses the earlier \"no reboots\" constraint\nand puts the kernel / firmware / ROCm upgrades back on the critical path,\nwith the affordance that each reboot-gated step gets an email-formatted\n`*_RESUME_INSTRUCTIONS.md` handoff so the user can pick up from anywhere.\n\n**Fresh probe (2026-04-18, post-BIOS):**\n```\n[✗] Kernel                       6.17.0-1017-oem — BELOW TARGET (6.18.4+)\n[✓] GPU target (gfx1151)         gfx1151 detected via rocminfo\n[✗] VRAM allocation (UMA)        device: 64.0 GB — LOW\n[✗] PCIe […]
 
 > TOOL
 
@@ -600,7 +600,7 @@ id: toolu_01QYwVui7Pm5EJJU7SzsQhJS
 ```json
 {
   "pattern": "COHEZION_SMTP|smtp_host|send_email|sendmail",
-  "path": "/home/mike-anderson/dev/cohezion",
+  "path": "/home/<USER>/dev/cohezion",
   "output_mode": "files_with_matches",
   "head_limit": 30
 }
@@ -645,7 +645,7 @@ tool_use Bash
 id: toolu_01VJKJpAGdTx7MHu6vUtnigw
 ```json
 {
-  "command": "env | grep -iE 'smtp|email|mail' 2>&1 | head -10 && echo \"---\" && ls /home/mike-anderson/dev/cohezion/scripts/*mail* /home/mike-anderson/dev/cohezion/scripts/*email* /home/mike-anderson/dev/cohezion/scripts/*notify* 2>/dev/null | head -10",
+  "command": "env | grep -iE 'smtp|email|mail' 2>&1 | head -10 && echo \"---\" && ls /home/<USER>/dev/cohezion/scripts/*mail* /home/<USER>/dev/cohezion/scripts/*email* /home/<USER>/dev/cohezion/scripts/*notify* 2>/dev/null | head -10",
   "description": "Check SMTP env vars and email-related scripts"
 }
 ```
@@ -656,16 +656,16 @@ tool_result
 id: toolu_01VJKJpAGdTx7MHu6vUtnigw
 ```
 ---
-/home/mike-anderson/dev/cohezion/scripts/notify_mining_start.py
-/home/mike-anderson/dev/cohezion/scripts/read_research_email.py
-/home/mike-anderson/dev/cohezion/scripts/read_research_email.py
-/home/mike-anderson/dev/cohezion/scripts/send_ascension_email.py
-/home/mike-anderson/dev/cohezion/scripts/send_ascension_email.py
-/home/mike-anderson/dev/cohezion/scripts/send_milestone_email.py
-/home/mike-anderson/dev/cohezion/scripts/send_milestone_email.py
-/home/mike-anderson/dev/cohezion/scripts/send_sprint_5_email.py
-/home/mike-anderson/dev/cohezion/scripts/send_sprint_5_email.py
-/home/mike-anderson/dev/cohezion/scripts/send_sprint_complete_email.py
+/home/<USER>/dev/cohezion/scripts/notify_mining_start.py
+/home/<USER>/dev/cohezion/scripts/read_research_email.py
+/home/<USER>/dev/cohezion/scripts/read_research_email.py
+/home/<USER>/dev/cohezion/scripts/send_ascension_email.py
+/home/<USER>/dev/cohezion/scripts/send_ascension_email.py
+/home/<USER>/dev/cohezion/scripts/send_milestone_email.py
+/home/<USER>/dev/cohezion/scripts/send_milestone_email.py
+/home/<USER>/dev/cohezion/scripts/send_sprint_5_email.py
+/home/<USER>/dev/cohezion/scripts/send_sprint_5_email.py
+/home/<USER>/dev/cohezion/scripts/send_sprint_complete_email.py
 ```
 
 > TOOL
@@ -674,7 +674,7 @@ tool_use Read
 id: toolu_01JeDprfYuhnYHs96MKtAcNS
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/scripts/send_summary_email.py",
+  "file_path": "/home/<USER>/dev/cohezion/scripts/send_summary_email.py",
   "limit": 60
 }
 ```
@@ -685,7 +685,7 @@ tool_result
 id: toolu_01JeDprfYuhnYHs96MKtAcNS
 ```
 1	#!/usr/bin/env python3
-2	"""Send the application summary email to manderson240@gmail.com.
+2	"""Send the application summary email to <REDACTED_EMAIL>.
 3	
 4	Usage:
 5	    # Set your Gmail App Password first (NOT your regular password):
@@ -716,8 +716,8 @@ id: toolu_01JeDprfYuhnYHs96MKtAcNS
 30	        print("  4. python scripts/send_summary_email.py")
 31	        return
 32	
-33	    sender = "manderson240@gmail.com"
-34	    recipient = "manderson240@gmail.com"
+33	    sender = "<REDACTED_EMAIL>"
+34	    recipient = "<REDACTED_EMAIL>"
 35	
 36	    msg = MIMEMultipart("alternative")
 37	    msg["Subject"] = "Cohezion — Anthropic Application Package Ready"
@@ -736,7 +736,7 @@ tool_use Bash
 id: toolu_01Jif1hriX9JdCSqZ6mUhg6y
 ```json
 {
-  "command": "grep -l 'smtplib\\|msmtp\\|mailutils' /home/mike-anderson/dev/cohezion/scripts/send_*.py 2>&1 | head -5 && echo \"---\" && grep -hE '(SMTP_HOST|SMTP_PORT|SMTP_USER|FROM_EMAIL|TO_EMAIL|EMAIL_TO|smtp\\.)' /home/mike-anderson/dev/cohezion/scripts/send_*.py 2>&1 | sort -u | head -20 && echo \"--- .env ---\" && [ -f /home/mike-anderson/dev/cohezion/.env ] && grep -iE 'smtp|email|mail' /home/mike-anderson/dev/cohezion/.env 2>&1 | sed 's/=.*/=<redacted>/' | head -10",
+  "command": "grep -l 'smtplib\\|msmtp\\|mailutils' /home/<USER>/dev/cohezion/scripts/send_*.py 2>&1 | head -5 && echo \"---\" && grep -hE '(SMTP_HOST|SMTP_PORT|SMTP_USER|FROM_EMAIL|TO_EMAIL|EMAIL_TO|smtp\\.)' /home/<USER>/dev/cohezion/scripts/send_*.py 2>&1 | sort -u | head -20 && echo \"--- .env ---\" && [ -f /home/<USER>/dev/cohezion/.env ] && grep -iE 'smtp|email|mail' /home/<USER>/dev/cohezion/.env 2>&1 | sed 's/=.*/=<redacted>/' | head -10",
   "description": "Inspect email send patterns and env config"
 }
 ```
@@ -746,7 +746,7 @@ id: toolu_01Jif1hriX9JdCSqZ6mUhg6y
 tool_result
 id: toolu_01Jif1hriX9JdCSqZ6mUhg6y
 ```
-/home/mike-anderson/dev/cohezion/scripts/send_summary_email.py
+/home/<USER>/dev/cohezion/scripts/send_summary_email.py
 ---
     with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
 --- .env ---
@@ -780,7 +780,7 @@ SMTP_HOST: UNSET
 EMAIL_TO: UNSET
 ---
 ---
-/home/mike-anderson/.local/bin/bw
+/home/<USER>/.local/bin/bw
 bitwarden-cli available
 no pass
 no op
@@ -792,7 +792,7 @@ tool_use Read
 id: toolu_01Vd4Pd4ApQJZsDfY6EK5EkV
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/scripts/send_phone_instructions.py",
+  "file_path": "/home/<USER>/dev/cohezion/scripts/send_phone_instructions.py",
   "limit": 80
 }
 ```
@@ -854,7 +854,7 @@ id: toolu_01HyVYzHeUVXf4nPV6GVz28Q
 ```json
 {
   "pattern": "**/email_notifier.py",
-  "path": "/home/mike-anderson/dev/cohezion"
+  "path": "/home/<USER>/dev/cohezion"
 }
 ```
 
@@ -873,7 +873,7 @@ id: toolu_013cZjKhpW9mJaQ4My63cwBB
 ```json
 {
   "pattern": "class EmailNotifier",
-  "path": "/home/mike-anderson/dev/cohezion",
+  "path": "/home/<USER>/dev/cohezion",
   "output_mode": "files_with_matches"
 }
 ```
@@ -892,7 +892,7 @@ tool_use Bash
 id: toolu_01TmFSYKbDB6Fs92iGArwS3E
 ```json
 {
-  "command": "find /home/mike-anderson/dev/cohezion -type f \\( -name 'email_notifier*' -o -name '*notifier*.py' \\) 2>/dev/null | head -10",
+  "command": "find /home/<USER>/dev/cohezion -type f \\( -name 'email_notifier*' -o -name '*notifier*.py' \\) 2>/dev/null | head -10",
   "description": "Find EmailNotifier file by alt name"
 }
 ```
@@ -911,7 +911,7 @@ tool_use Bash
 id: toolu_01PA9Tv4LmsQYJxjiCnXVXdr
 ```json
 {
-  "command": "find /home/mike-anderson/dev/cohezion -type d -name 'mcp' 2>/dev/null | head -10 && echo \"---\" && find /home/mike-anderson/dev/cohezion -type f -name '*.py' -exec grep -l 'class EmailNotifier\\|EmailNotifier(' {} \\; 2>/dev/null | head -10",
+  "command": "find /home/<USER>/dev/cohezion -type d -name 'mcp' 2>/dev/null | head -10 && echo \"---\" && find /home/<USER>/dev/cohezion -type f -name '*.py' -exec grep -l 'class EmailNotifier\\|EmailNotifier(' {} \\; 2>/dev/null | head -10",
   "description": "Locate EmailNotifier"
 }
 ```
@@ -950,27 +950,27 @@ id: toolu_01AB4NWmZPdfodYUSwtLPmNM
 <status>running</status>
 
 <output>
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.11/site-packages/mcp
-/home/mike-anderson/dev/cohezion/.mypy_cache/3.11/mcp
-/home/mike-anderson/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/.venv/lib/python3.13/site-packages/mcp
-/home/mike-anderson/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/tests/mcp
-/home/mike-anderson/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/src/web/anima_dashboard/tests/mcp
-/home/mike-anderson/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/src/cohezion-archive/mcp
-/home/mike-anderson/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/src/cohezion/mcp
-/home/mike-anderson/dev/cohezion/.worktrees/gemini-mcp-fix/tests/mcp
-/home/mike-anderson/dev/cohezion/.worktrees/gemini-mcp-fix/src/cohezion/mcp
-/home/mike-anderson/dev/cohezion/.worktrees/gemini-mcp-fix/src/cohezion-archive/mcp
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.11/site-packages/mcp
+/home/<USER>/dev/cohezion/.mypy_cache/3.11/mcp
+/home/<USER>/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/.venv/lib/python3.13/site-packages/mcp
+/home/<USER>/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/tests/mcp
+/home/<USER>/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/src/web/anima_dashboard/tests/mcp
+/home/<USER>/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/src/cohezion-archive/mcp
+/home/<USER>/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/src/cohezion/mcp
+/home/<USER>/dev/cohezion/.worktrees/gemini-mcp-fix/tests/mcp
+/home/<USER>/dev/cohezion/.worktrees/gemini-mcp-fix/src/cohezion/mcp
+/home/<USER>/dev/cohezion/.worktrees/gemini-mcp-fix/src/cohezion-archive/mcp
 ---
-/home/mike-anderson/dev/cohezion/overnight_driver.py
-/home/mike-anderson/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/overnight_driver.py
-/home/mike-anderson/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/scripts/notify_mining_start.py
-/home/mike-anderson/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/scripts/universe_driver.py
-/home/mike-anderson/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/scripts/send_milestone.py
-/home/mike-anderson/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/scripts/send_ascension_email.py
-/home/mike-anderson/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/scripts/send_technical_report.py
-/home/mike-anderson/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/scripts/mission_finalizer.py
-/home/mike-anderson/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/scripts/send_phone_instructions.py
-/home/mike-anderson/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/scripts/phone_orchestrator.py
+/home/<USER>/dev/cohezion/overnight_driver.py
+/home/<USER>/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/overnight_driver.py
+/home/<USER>/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/scripts/notify_mining_start.py
+/home/<USER>/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/scripts/universe_driver.py
+/home/<USER>/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/scripts/send_milestone.py
+/home/<USER>/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/scripts/send_ascension_email.py
+/home/<USER>/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/scripts/send_technical_report.py
+/home/<USER>/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/scripts/mission_finalizer.py
+/home/<USER>/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/scripts/send_phone_instructions.py
+/home/<USER>/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/scripts/phone_orchestrator.py
 </output>
 ```
 
@@ -989,7 +989,7 @@ id: toolu_01A8DTYSrRhnZLDjgvoyuHb8
 tool_result
 id: toolu_01A8DTYSrRhnZLDjgvoyuHb8
 ```
-{"message":"Successfully stopped task: bfxv77xh6 (find /home/mike-anderson/dev/cohezion -type d -name 'mcp' 2>/dev/null | head -10 && echo \"---\" && find /home/mike-anderson/dev/cohezion -type f -name '*.py' -exec grep -l 'class EmailNotifier\\|EmailNotifier(' {} \\; 2>/dev/null | head -10)","task_id":"bfxv77xh6","task_type":"local_bash","command":"find /home/mike-anderson/dev/cohezion -type d -name 'mcp' 2>/dev/null | head -10 && echo \"---\" && find /home/mike-anderson/dev/cohezion -type f -name '*.py' -exec grep -l 'class EmailNotifier\\|EmailNotifier(' {} \\; 2>/dev/null | head -10"}
+{"message":"Successfully stopped task: bfxv77xh6 (find /home/<USER>/dev/cohezion -type d -name 'mcp' 2>/dev/null | head -10 && echo \"---\" && find /home/<USER>/dev/cohezion -type f -name '*.py' -exec grep -l 'class EmailNotifier\\|EmailNotifier(' {} \\; 2>/dev/null | head -10)","task_id":"bfxv77xh6","task_type":"local_bash","command":"find /home/<USER>/dev/cohezion -type d -name 'mcp' 2>/dev/null | head -10 && echo \"---\" && find /home/<USER>/dev/cohezion -type f -name '*.py' -exec grep -l 'class EmailNotifier\\|EmailNotifier(' {} \\; 2>/dev/null | head -10"}
 ```
 
 > TOOL
@@ -999,7 +999,7 @@ id: toolu_01SaNFthxzrzHzm2PwFAP16F
 ```json
 {
   "pattern": "**/email_notifier.py",
-  "path": "/home/mike-anderson/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/src/cohezion/mcp"
+  "path": "/home/<USER>/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/src/cohezion/mcp"
 }
 ```
 
@@ -1017,7 +1017,7 @@ tool_use Bash
 id: toolu_01AsxNw74FdMHt5w7epHiNiE
 ```json
 {
-  "command": "ls /home/mike-anderson/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/src/cohezion/mcp/ 2>&1 | grep -iE 'email|notif' | head -5\necho \"---\"\nls /home/mike-anderson/dev/cohezion/src/cohezion/mcp/ 2>&1 | grep -iE 'email|notif' | head -5\necho \"---\"\n# Look for EmailNotifier class specifically in tracked code\ngrep -rn 'class EmailNotifier' /home/mike-anderson/dev/cohezion/src /home/mike-anderson/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/src 2>/dev/null | head -5",
+  "command": "ls /home/<USER>/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/src/cohezion/mcp/ 2>&1 | grep -iE 'email|notif' | head -5\necho \"---\"\nls /home/<USER>/dev/cohezion/src/cohezion/mcp/ 2>&1 | grep -iE 'email|notif' | head -5\necho \"---\"\n# Look for EmailNotifier class specifically in tracked code\ngrep -rn 'class EmailNotifier' /home/<USER>/dev/cohezion/src /home/<USER>/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/src 2>/dev/null | head -5",
   "description": "Locate EmailNotifier class definition"
 }
 ```
@@ -1053,7 +1053,7 @@ id: toolu_01AqyZUno4GCkmoJaL551PTb
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/i-did-what-was-mutable-valley.md",
+  "file_path": "/home/<USER>/.claude/plans/i-did-what-was-mutable-valley.md",
   "old_string": "## Recommended approach\n\nA four-step sudo-gated sequence, each with its own email-style handoff, then\nthe Phase 0b probe. The user pastes the re-probe output into the next Claude\nsession after each reboot; the agent advances.\n\n### Step 1 — Kernel 6.17 → 6.18.4 (reboot, produces VRAM verdict)",
   "new_string": "## Recommended approach\n\nA **Step 0 email-delivery test** followed by four sudo-gated upgrades, each\nwith an actual email handoff (not just a file), then the Phase 0b probe. The\nuser pastes the re-probe output into the next Claude session after each\nreboot; the agent advances.\n\n### Step 0 — Prove email delivery works before depending on it\n\n**Problem state as of this session:** (verified)\n- `GMAIL_APP_PASSWORD` is UNSET in the running shell.\n- `EmailNotifier` is imported by 5+ scripts but has no class definition in\n  tracked code — an orphaned import; those scripts silently no-op.\n- Only working email send in the codebase is the direct\n  `smtplib.SMTP_SSL(\"smtp.gmail.com\", 465)` pattern in\n  `scripts/send_summary_email.py`, which requires `GMAIL_APP_PASSWORD` set.\n- Bitwarden CLI (`bw`) is installed, so the credential can be pulled lazily\n  from the vault rather than pasted into a shell or `.env`.\n\n**Step 0 tasks:**\n1. **Retrieve the Gmail App Password.** Preference order: (a) if Bitwarden\n   vault has an item […]
 
@@ -1062,7 +1062,7 @@ id: toolu_01AqyZUno4GCkmoJaL551PTb
 tool_result
 id: toolu_01AqyZUno4GCkmoJaL551PTb
 ```
-The file /home/mike-anderson/.claude/plans/i-did-what-was-mutable-valley.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/i-did-what-was-mutable-valley.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1072,7 +1072,7 @@ id: toolu_013JoFWU14QRNvvKi5qX3ghs
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/i-did-what-was-mutable-valley.md",
+  "file_path": "/home/<USER>/.claude/plans/i-did-what-was-mutable-valley.md",
   "old_string": "### Create\n| Path | Purpose |\n|---|---|\n| `.claude/worktrees/dreamy-jingling-thacker/KERNEL_RESUME_INSTRUCTIONS.md` | Email-style handoff for Step 1 reboot |\n| `.claude/worktrees/dreamy-jingling-thacker/FIRMWARE_RESUME_INSTRUCTIONS.md` | Email-style handoff for Step 2 reboot |\n| `.claude/worktrees/dreamy-jingling-thacker/ROCM_RESUME_INSTRUCTIONS.md` | Conditional — only if ROCm upgrade triggers a DKMS reboot |\n| `.claude/worktrees/dreamy-jingling-thacker/scripts/probe_backend.py` | Phase 0b two-arm bake-off; < 120 lines |\n| `.claude/worktrees/dreamy-jingling-thacker/benchmarks/backend_probe_2026-04-18.md` | Probe outcome + primary backend recommendation |",
   "new_string": "### Create\n| Path | Purpose |\n|---|---|\n| `.claude/worktrees/dreamy-jingling-thacker/scripts/send_handoff.py` | **Step 0** — consolidated Gmail SMTP sender with preflight check; < 80 lines |\n| `.claude/worktrees/dreamy-jingling-thacker/EMAIL_TEST_2026-04-18.md` | **Step 0** — tiny payload for the round-trip email test |\n| `.claude/worktrees/dreamy-jingling-thacker/KERNEL_RESUME_INSTRUCTIONS.md` | Email-sent handoff for Step 1 reboot |\n| `.claude/worktrees/dreamy-jingling-thacker/FIRMWARE_RESUME_INSTRUCTIONS.md` | Email-sent handoff for Step 2 reboot |\n| `.claude/worktrees/dreamy-jingling-thacker/ROCM_RESUME_INSTRUCTIONS.md` | Conditional — only if ROCm upgrade triggers a DKMS reboot |\n| `.claude/worktrees/dreamy-jingling-thacker/scripts/probe_backend.py` | Phase 0b two-arm bake-off; < 120 lines |\n| `.claude/worktrees/dreamy-jingling-thacker/benchmarks/backend_probe_2026-04-18.md` | Probe outcome + primary backend recommendation |"
 }
@@ -1083,7 +1083,7 @@ id: toolu_013JoFWU14QRNvvKi5qX3ghs
 tool_result
 id: toolu_013JoFWU14QRNvvKi5qX3ghs
 ```
-The file /home/mike-anderson/.claude/plans/i-did-what-was-mutable-valley.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/i-did-what-was-mutable-valley.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1093,9 +1093,9 @@ id: toolu_011cKbVFbGoyhApeymop2TeR
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/i-did-what-was-mutable-valley.md",
+  "file_path": "/home/<USER>/.claude/plans/i-did-what-was-mutable-valley.md",
   "old_string": "## Verification\n\n**After Step 1 (kernel upgrade + reboot):**",
-  "new_string": "## Verification\n\n**After Step 0 (email delivery):**\n```bash\ncd /home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker\ntest -n \"$GMAIL_APP_PASSWORD\" || echo \"ABORT: credential not in env\"\npython scripts/send_handoff.py --subject '[Cohezion] Email delivery test' \\\n  --body-file EMAIL_TEST_2026-04-18.md\n# Then: user confirms the message appeared in their inbox within ~60 seconds.\n# If no arrival: fall back to file-only handoffs (see Step 0 decision gate).\n```\n\n**After Step 1 (kernel upgrade + reboot):**"
+  "new_string": "## Verification\n\n**After Step 0 (email delivery):**\n```bash\ncd /home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker\ntest -n \"$GMAIL_APP_PASSWORD\" || echo \"ABORT: credential not in env\"\npython scripts/send_handoff.py --subject '[Cohezion] Email delivery test' \\\n  --body-file EMAIL_TEST_2026-04-18.md\n# Then: user confirms the message appeared in their inbox within ~60 seconds.\n# If no arrival: fall back to file-only handoffs (see Step 0 decision gate).\n```\n\n**After Step 1 (kernel upgrade + reboot):**"
 }
 ```
 
@@ -1104,7 +1104,7 @@ id: toolu_011cKbVFbGoyhApeymop2TeR
 tool_result
 id: toolu_011cKbVFbGoyhApeymop2TeR
 ```
-The file /home/mike-anderson/.claude/plans/i-did-what-was-mutable-valley.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/i-did-what-was-mutable-valley.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1114,9 +1114,9 @@ id: toolu_017qusmBwpXcRUqouf7ZdeXG
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/i-did-what-was-mutable-valley.md",
+  "file_path": "/home/<USER>/.claude/plans/i-did-what-was-mutable-valley.md",
   "old_string": "**Acceptance criteria:**\n1. `uname -r` reports 6.18.4+ and the probe's kernel row is ✓.\n2. `strix_halo*` firmware blobs are loaded per dmesg.\n3. ROCm version reads 7.2.2 from `/opt/rocm/.info/version`.\n4. `benchmarks/backend_probe_2026-04-18.md` names a primary backend and lists the exact CLI flags that served a 32k-token prompt without OOM/crash.\n5. `HARDWARE_PROFILE_PRIME.md` reflects the actual post-upgrade numbers, not the target numbers.\n6. Each reboot was preceded by an `*_RESUME_INSTRUCTIONS.md` email-style handoff so the user could pick up in a new Claude session.",
-  "new_string": "**Acceptance criteria:**\n1. **Step 0 test email arrived in `manderson240@gmail.com` inbox** (or, failing that, an explicit \"file-only fallback\" note in `HARDWARE_PROFILE_PRIME.md`).\n2. `uname -r` reports 6.18.4+ and the probe's kernel row is ✓.\n3. `strix_halo*` firmware blobs are loaded per dmesg.\n4. ROCm version reads 7.2.2 from `/opt/rocm/.info/version`.\n5. `benchmarks/backend_probe_2026-04-18.md` names a primary backend and lists the exact CLI flags that served a 32k-token prompt without OOM/crash.\n6. `HARDWARE_PROFILE_PRIME.md` reflects the actual post-upgrade numbers, not the target numbers.\n7. Each reboot was preceded by an actual email (not just a file) so the user could resume from anywhere, **unless** Step 0 determined email delivery is unavailable and we explicitly fell back to file-only handoffs."
+  "new_string": "**Acceptance criteria:**\n1. **Step 0 test email arrived in `<REDACTED_EMAIL>` inbox** (or, failing that, an explicit \"file-only fallback\" note in `HARDWARE_PROFILE_PRIME.md`).\n2. `uname -r` reports 6.18.4+ and the probe's kernel row is ✓.\n3. `strix_halo*` firmware blobs are loaded per dmesg.\n4. ROCm version reads 7.2.2 from `/opt/rocm/.info/version`.\n5. `benchmarks/backend_probe_2026-04-18.md` names a primary backend and lists the exact CLI flags that served a 32k-token prompt without OOM/crash.\n6. `HARDWARE_PROFILE_PRIME.md` reflects the actual post-upgrade numbers, not the target numbers.\n7. Each reboot was preceded by an actual email (not just a file) so the user could resume from anywhere, **unless** Step 0 determined email delivery is unavailable and we explicitly fell back to file-only handoffs."
 }
 ```
 
@@ -1125,7 +1125,7 @@ id: toolu_017qusmBwpXcRUqouf7ZdeXG
 tool_result
 id: toolu_017qusmBwpXcRUqouf7ZdeXG
 ```
-The file /home/mike-anderson/.claude/plans/i-did-what-was-mutable-valley.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/i-did-what-was-mutable-valley.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1135,7 +1135,7 @@ id: toolu_01AEcfFPfqkJ3b4Dis9KQyLd
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/i-did-what-was-mutable-valley.md",
+  "file_path": "/home/<USER>/.claude/plans/i-did-what-was-mutable-valley.md",
   "old_string": "## Effort estimate\n\n| Step | Wall-clock |\n|---|---|\n| Step 1 — Kernel 6.17 → 6.18.4 + reboot + re-probe | 20–30 min (apt + mainline install + reboot + verification) |\n| Step 2 — Firmware refresh + reboot + re-probe | 15–20 min |\n| Step 3 — ROCm 7.2.2 upgrade (± reboot) | 15–25 min |\n| Step 4 — Amend `HARDWARE_PROFILE_PRIME.md` | 5 min |\n| Step 5 — Phase 0b probe (venv + install + two 32k runs) | 25–40 min |\n| Step 6 — Update parent plan | 5 min |\n| **Total** | **~90–125 min, 2–3 reboots, 3 email handoffs** |",
   "new_string": "## Effort estimate\n\n| Step | Wall-clock |\n|---|---|\n| Step 0 — Build `send_handoff.py` + round-trip email test | 10–15 min (Bitwarden unlock + App Password retrieval + send + user confirms) |\n| Step 1 — Kernel 6.17 → 6.18.4 + reboot + re-probe | 20–30 min |\n| Step 2 — Firmware refresh + reboot + re-probe | 15–20 min |\n| Step 3 — ROCm 7.2.2 upgrade (± reboot) | 15–25 min |\n| Step 4 — Amend `HARDWARE_PROFILE_PRIME.md` | 5 min |\n| Step 5 — Phase 0b probe (venv […]
 
@@ -1144,7 +1144,7 @@ id: toolu_01AEcfFPfqkJ3b4Dis9KQyLd
 tool_result
 id: toolu_01AEcfFPfqkJ3b4Dis9KQyLd
 ```
-The file /home/mike-anderson/.claude/plans/i-did-what-was-mutable-valley.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/i-did-what-was-mutable-valley.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1157,7 +1157,7 @@ tool_use ExitPlanMode
 id: toolu_01Mzb1zk2mEDTHMDz7CmhJ5q
 ```json
 {
-  "plan": "# Phase 0a Completion: Kernel + Firmware + ROCm → Phase 0b Probe (the TurboQuant Unlock)\n\n**Plan created:** 2026-04-18\n**Parent plan:** `/home/mike-anderson/.claude/plans/dreamy-jingling-thacker.md`\n**Worktree:** `.claude/worktrees/dreamy-jingling-thacker`\n**Branch:** `spec/dreamy-jingling-thacker`\n**Committed so far:** `5bcae51a0` (Phases 0–2), `4f2f0b2bc` (BIOS probe)\n\n---\n\n## Context\n\n**Why this plan exists.** The goal is and has always been **unlocking\nTurboQuant on the Strix Halo host** — the parent plan's end state. The BIOS\nstep has partially completed: VRAM moved from 0.5 GB → 64 GB after the user's\nBIOS visit, but the user's current Framework BIOS revision **has no \"Auto\"\nUMA option, no AI Max Performance toggle, and no PCIe Gen5 toggle** (those\nappear only on Framework BIOS v3.05+, which the user opted not to flash this\nsession). The user explicitly stated: *\"If we need the kernel upgrade for\nTurboQuant then let's do it. I'll just need another email. The goal has been\nunlocking TurboQuant.\"* That reverses the earlier \"no reboots\" constraint\nand puts the kernel / firmware / ROCm upgrades back on the critical path,\nwith the affordance that each reboot-gated step gets an email-formatted\n`*_RESUME_INSTRUCTIONS.md` handoff so the user can pick up from anywhere.\n\n**Fresh probe (2026-04-18, post-BIOS):**\n```\n[✗] Kernel                       6.17.0-1017-oem — BELOW TARGET (6.18.4+)\n[✓] GPU target (gfx1151)         gfx1151 detected via rocminfo\n[✗] VRAM allocation (UMA)        device: 64.0 GB — LOW\n[✗] PCIe […]
+  "plan": "# Phase 0a Completion: Kernel + Firmware + ROCm → Phase 0b Probe (the TurboQuant Unlock)\n\n**Plan created:** 2026-04-18\n**Parent plan:** `/home/<USER>/.claude/plans/dreamy-jingling-thacker.md`\n**Worktree:** `.claude/worktrees/dreamy-jingling-thacker`\n**Branch:** `spec/dreamy-jingling-thacker`\n**Committed so far:** `5bcae51a0` (Phases 0–2), `4f2f0b2bc` (BIOS probe)\n\n---\n\n## Context\n\n**Why this plan exists.** The goal is and has always been **unlocking\nTurboQuant on the Strix Halo host** — the parent plan's end state. The BIOS\nstep has partially completed: VRAM moved from 0.5 GB → 64 GB after the user's\nBIOS visit, but the user's current Framework BIOS revision **has no \"Auto\"\nUMA option, no AI Max Performance toggle, and no PCIe Gen5 toggle** (those\nappear only on Framework BIOS v3.05+, which the user opted not to flash this\nsession). The user explicitly stated: *\"If we need the kernel upgrade for\nTurboQuant then let's do it. I'll just need another email. The goal has been\nunlocking TurboQuant.\"* That reverses the earlier \"no reboots\" constraint\nand puts the kernel / firmware / ROCm upgrades back on the critical path,\nwith the affordance that each reboot-gated step gets an email-formatted\n`*_RESUME_INSTRUCTIONS.md` handoff so the user can pick up from anywhere.\n\n**Fresh probe (2026-04-18, post-BIOS):**\n```\n[✗] Kernel                       6.17.0-1017-oem — BELOW TARGET (6.18.4+)\n[✓] GPU target (gfx1151)         gfx1151 detected via rocminfo\n[✗] VRAM allocation (UMA)        device: 64.0 GB — LOW\n[✗] PCIe […]
 
 > TOOL
 
@@ -1166,7 +1166,7 @@ id: toolu_01Mzb1zk2mEDTHMDz7CmhJ5q
 ```
 User has approved your plan. You can now start coding. Start with updating your todo list if applicable
 
-Your plan has been saved to: /home/mike-anderson/.claude/plans/i-did-what-was-mutable-valley.md
+Your plan has been saved to: /home/<USER>/.claude/plans/i-did-what-was-mutable-valley.md
 You can refer back to it if needed during implementation.
 
 If this plan can be broken down into multiple independent tasks, consider using the TeamCreate tool to create a team and parallelize the work.
@@ -1175,7 +1175,7 @@ If this plan can be broken down into multiple independent tasks, consider using 
 # Phase 0a Completion: Kernel + Firmware + ROCm → Phase 0b Probe (the TurboQuant Unlock)
 
 **Plan created:** 2026-04-18
-**Parent plan:** `/home/mike-anderson/.claude/plans/dreamy-jingling-thacker.md`
+**Parent plan:** `/home/<USER>/.claude/plans/dreamy-jingling-thacker.md`
 **Worktree:** `.claude/worktrees/dreamy-jingling-thacker`
 **Branch:** `spec/dreamy-jingling-thacker`
 **Committed so far:** `5bcae51a0` (Phases 0–2), `4f2f0b2bc` (BIOS probe)
@@ -1264,7 +1264,7 @@ id: toolu_01BWdH6k8zfz1qHeMh8w2VqA
 ```json
 {
   "subject": "Step 0: round-trip send + user confirms receipt",
-  "description": "Run scripts/send_handoff.py with the test subject and body. Wait for user to confirm the message arrived in manderson240@gmail.com within ~60s. If it fails, record \"file-only fallback\" in HARDWARE_PROFILE_PRIME.md and proceed to Step 1 without email handoffs.",
+  "description": "Run scripts/send_handoff.py with the test subject and body. Wait for user to confirm the message arrived in <REDACTED_EMAIL> within ~60s. If it fails, record \"file-only fallback\" in HARDWARE_PROFILE_PRIME.md and proceed to Step 1 without email handoffs.",
   "activeForm": "Sending test email &amp; confirming receipt"
 }
 ```
@@ -1302,7 +1302,7 @@ tool_use Read
 id: toolu_01Sf3AZPsfRYynnwWs3oKs86
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/scripts/send_summary_email.py"
+  "file_path": "/home/<USER>/dev/cohezion/scripts/send_summary_email.py"
 }
 ```
 
@@ -1312,7 +1312,7 @@ tool_result
 id: toolu_01Sf3AZPsfRYynnwWs3oKs86
 ```
 1	#!/usr/bin/env python3
-2	"""Send the application summary email to manderson240@gmail.com.
+2	"""Send the application summary email to <REDACTED_EMAIL>.
 3	
 4	Usage:
 5	    # Set your Gmail App Password first (NOT your regular password):
@@ -1343,8 +1343,8 @@ id: toolu_01Sf3AZPsfRYynnwWs3oKs86
 30	        print("  4. python scripts/send_summary_email.py")
 31	        return
 32	
-33	    sender = "manderson240@gmail.com"
-34	    recipient = "manderson240@gmail.com"
+33	    sender = "<REDACTED_EMAIL>"
+34	    recipient = "<REDACTED_EMAIL>"
 35	
 36	    msg = MIMEMultipart("alternative")
 37	    msg["Subject"] = "Cohezion — Anthropic Application Package Ready"
@@ -1373,15 +1373,15 @@ tool_use Write
 id: toolu_01JkNvVRKjntstct7Rv9sDu1
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/scripts/send_handoff.py",
-  "content": "#!/usr/bin/env python3\n\"\"\"Send a handoff markdown file as an email via Gmail SMTP.\n\nReplaces the sprint-specific send_* scripts with one parameterized path.\n\nUsage:\n    export GMAIL_APP_PASSWORD='xxxx xxxx xxxx xxxx'  # from myaccount.google.com/apppasswords\n    python scripts/send_handoff.py \\\\\n        --subject '[Cohezion] Kernel reboot needed' \\\\\n        --body-file KERNEL_RESUME_INSTRUCTIONS.md\n\nExits non-zero (SystemExit 2) if GMAIL_APP_PASSWORD is missing, rather than\nsilently no-opping. No secrets are logged.\n\"\"\"\n\nfrom __future__ import annotations\n\nimport argparse\nimport os\nimport smtplib\nimport ssl\nimport sys\nfrom email.mime.multipart import MIMEMultipart\nfrom email.mime.text import MIMEText\nfrom pathlib import Path\n\nDEFAULT_TO = \"manderson240@gmail.com\"\nDEFAULT_FROM = \"manderson240@gmail.com\"\n\n\nclass EmailNotConfigured(SystemExit):\n    def __init__(self) -> None:\n        msg = (\n            \"GMAIL_APP_PASSWORD is not set.\\n\"\n            \"  1. Create an App Password: https://myaccount.google.com/apppasswords\\n\"\n            \"  2. Export it in the current shell (do not commit):\\n\"\n            \"       export GMAIL_APP_PASSWORD='xxxx xxxx xxxx xxxx'\\n\"\n            \"  3. Re-run this command.\"\n        )\n        super().__init__(msg)\n        self.code = 2\n\n\ndef _to_html(markdown_text: str) -> str:\n    try:\n        import markdown2  # type: ignore\n\n        return markdown2.markdown(markdown_text, extras=[\"fenced-code-blocks\", \"tables\"])\n    except ImportError:\n        return f\"<pre style='font-family:monospace;white-space:pre-wrap'>{markdown_text}</pre>\"\n\n\ndef send(subject: str, body_path: Path, to: str, sender: str) -> None:\n    password = os.environ.get(\"GMAIL_APP_PASSWORD\")\n    if not password:\n        raise EmailNotConfigured()\n    if not body_path.exists():\n        raise SystemExit(f\"body file not found: {body_path}\")\n\n    body_md = body_path.read_text()\n    msg = MIMEMultipart(\"alternative\")\n    msg[\"Subject\"] = subject\n    msg[\"From\"] = sender\n    msg[\"To\"] = to\n    msg.attach(MIMEText(body_md, \"plain\"))\n    msg.attach(MIMEText(_to_html(body_md), \"html\"))\n\n    context = ssl.create_default_context()\n    with smtplib.SMTP_SSL(\"smtp.gmail.com\", 465, […]
+  "file_path": "/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/scripts/send_handoff.py",
+  "content": "#!/usr/bin/env python3\n\"\"\"Send a handoff markdown file as an email via Gmail SMTP.\n\nReplaces the sprint-specific send_* scripts with one parameterized path.\n\nUsage:\n    export GMAIL_APP_PASSWORD='xxxx xxxx xxxx xxxx'  # from myaccount.google.com/apppasswords\n    python scripts/send_handoff.py \\\\\n        --subject '[Cohezion] Kernel reboot needed' \\\\\n        --body-file KERNEL_RESUME_INSTRUCTIONS.md\n\nExits non-zero (SystemExit 2) if GMAIL_APP_PASSWORD is missing, rather than\nsilently no-opping. No secrets are logged.\n\"\"\"\n\nfrom __future__ import annotations\n\nimport argparse\nimport os\nimport smtplib\nimport ssl\nimport sys\nfrom email.mime.multipart import MIMEMultipart\nfrom email.mime.text import MIMEText\nfrom pathlib import Path\n\nDEFAULT_TO = \"<REDACTED_EMAIL>\"\nDEFAULT_FROM = \"<REDACTED_EMAIL>\"\n\n\nclass EmailNotConfigured(SystemExit):\n    def __init__(self) -> None:\n        msg = (\n            \"GMAIL_APP_PASSWORD is not set.\\n\"\n            \"  1. Create an App Password: https://myaccount.google.com/apppasswords\\n\"\n            \"  2. Export it in the current shell (do not commit):\\n\"\n            \"       export GMAIL_APP_PASSWORD='xxxx xxxx xxxx xxxx'\\n\"\n            \"  3. Re-run this command.\"\n        )\n        super().__init__(msg)\n        self.code = 2\n\n\ndef _to_html(markdown_text: str) -> str:\n    try:\n        import markdown2  # type: ignore\n\n        return markdown2.markdown(markdown_text, extras=[\"fenced-code-blocks\", \"tables\"])\n    except ImportError:\n        return f\"<pre style='font-family:monospace;white-space:pre-wrap'>{markdown_text}</pre>\"\n\n\ndef send(subject: str, body_path: Path, to: str, sender: str) -> None:\n    password = os.environ.get(\"GMAIL_APP_PASSWORD\")\n    if not password:\n        raise EmailNotConfigured()\n    if not body_path.exists():\n        raise SystemExit(f\"body file not found: {body_path}\")\n\n    body_md = body_path.read_text()\n    msg = MIMEMultipart(\"alternative\")\n    msg[\"Subject\"] = subject\n    msg[\"From\"] = sender\n    msg[\"To\"] = to\n    msg.attach(MIMEText(body_md, \"plain\"))\n    msg.attach(MIMEText(_to_html(body_md), \"html\"))\n\n    context = ssl.create_default_context()\n    with smtplib.SMTP_SSL(\"smtp.gmail.com\", 465, […]
 
 > TOOL
 
 tool_result
 id: toolu_01JkNvVRKjntstct7Rv9sDu1
 ```
-File created successfully at: /home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/scripts/send_handoff.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/scripts/send_handoff.py (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1390,7 +1390,7 @@ tool_use Bash
 id: toolu_01M9dfEbjaQisUVZqa76HWv8
 ```json
 {
-  "command": "wc -l /home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/scripts/send_handoff.py && chmod +x /home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/scripts/send_handoff.py",
+  "command": "wc -l /home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/scripts/send_handoff.py && chmod +x /home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/scripts/send_handoff.py",
   "description": "Check line count and mark executable"
 }
 ```
@@ -1400,7 +1400,7 @@ id: toolu_01M9dfEbjaQisUVZqa76HWv8
 tool_result
 id: toolu_01M9dfEbjaQisUVZqa76HWv8
 ```
-90 /home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/scripts/send_handoff.py
+90 /home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/scripts/send_handoff.py
 ```
 
 > TOOL
@@ -1451,8 +1451,8 @@ tool_use Write
 id: toolu_013cTZSezuK42os8xvoSByUa
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/EMAIL_TEST_2026-04-18.md",
-  "content": "# Cohezion Email Delivery Test — 2026-04-18\n\nThis message confirms the **email-handoff path** is working ahead of the\nTurboQuant / Strix Halo Phase 0a reboots.\n\n- **Plan:** `/home/mike-anderson/.claude/plans/i-did-what-was-mutable-valley.md`\n- **Worktree:** `~/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker`\n- **Sender:** `scripts/send_handoff.py` (new; consolidates the sprint-specific\n  `send_*.py` scripts under one preflight-checked entry point)\n- **Reason for this test:** the old `EmailNotifier` abstraction imported by 5+\n  scripts has no class definition in tracked code — it silently no-oped. This\n  test proves the Gmail SMTP path actually delivers before we depend on it\n  for `KERNEL_RESUME_INSTRUCTIONS.md`, `FIRMWARE_RESUME_INSTRUCTIONS.md`, and\n  `ROCM_RESUME_INSTRUCTIONS.md`.\n\n## What to do now\n\nIf this landed in your inbox, reply with **ack** (or just acknowledge in the\nactive Claude session). The next step is the **kernel 6.17 → 6.18.4**\nupgrade, which will trigger a reboot; `KERNEL_RESUME_INSTRUCTIONS.md` will\narrive in this same channel once the upgrade command fires.\n\n## What to do if this did NOT arrive\n\nCheck Gmail spam / Promotions. If still missing after ~5 minutes, tell\nClaude \"email failed\" — we'll fall back to file-only handoffs in the\nworktree directory and continue with the plan.\n"
+  "file_path": "/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/EMAIL_TEST_2026-04-18.md",
+  "content": "# Cohezion Email Delivery Test — 2026-04-18\n\nThis message confirms the **email-handoff path** is working ahead of the\nTurboQuant / Strix Halo Phase 0a reboots.\n\n- **Plan:** `/home/<USER>/.claude/plans/i-did-what-was-mutable-valley.md`\n- **Worktree:** `~/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker`\n- **Sender:** `scripts/send_handoff.py` (new; consolidates the sprint-specific\n  `send_*.py` scripts under one preflight-checked entry point)\n- **Reason for this test:** the old `EmailNotifier` abstraction imported by 5+\n  scripts has no class definition in tracked code — it silently no-oped. This\n  test proves the Gmail SMTP path actually delivers before we depend on it\n  for `KERNEL_RESUME_INSTRUCTIONS.md`, `FIRMWARE_RESUME_INSTRUCTIONS.md`, and\n  `ROCM_RESUME_INSTRUCTIONS.md`.\n\n## What to do now\n\nIf this landed in your inbox, reply with **ack** (or just acknowledge in the\nactive Claude session). The next step is the **kernel 6.17 → 6.18.4**\nupgrade, which will trigger a reboot; `KERNEL_RESUME_INSTRUCTIONS.md` will\narrive in this same channel once the upgrade command fires.\n\n## What to do if this did NOT arrive\n\nCheck Gmail spam / Promotions. If still missing after ~5 minutes, tell\nClaude \"email failed\" — we'll fall back to file-only handoffs in the\nworktree directory and continue with the plan.\n"
 }
 ```
 
@@ -1461,7 +1461,7 @@ id: toolu_013cTZSezuK42os8xvoSByUa
 tool_result
 id: toolu_013cTZSezuK42os8xvoSByUa
 ```
-File created successfully at: /home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/EMAIL_TEST_2026-04-18.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/EMAIL_TEST_2026-04-18.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1586,10 +1586,10 @@ id: toolu_018wP8h2eEveB8naMFcds5rz
 ```json
 {
   "to": [
-    "manderson240@gmail.com"
+    "<REDACTED_EMAIL>"
   ],
   "subject": "[Cohezion] Email delivery test — TurboQuant Phase 0a handoff path",
-  "body": "Cohezion Email Delivery Test — 2026-04-18\n\nThis message confirms the email-handoff path is working ahead of the\nTurboQuant / Strix Halo Phase 0a reboots.\n\nPlan:     /home/mike-anderson/.claude/plans/i-did-what-was-mutable-valley.md\nWorktree: ~/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker\nSender:   Gmail MCP create_draft (sidesteps the old EmailNotifier which silently no-oped)\n\nWhy this test exists\n--------------------\nThe old `EmailNotifier` abstraction imported by 5+ scripts has no class\ndefinition in tracked code — it silently no-oped. Before we rely on email\nfor KERNEL_RESUME_INSTRUCTIONS.md / FIRMWARE_RESUME_INSTRUCTIONS.md /\nROCM_RESUME_INSTRUCTIONS.md, we prove the path actually delivers.\n\nWhat to do now\n--------------\nIf this appears in your Gmail Drafts folder (web or phone), reply \"ack\" in\nthe active Claude session — Step 1 (kernel 6.17 → 6.18.4 upgrade) will\nthen fire, and the next handoff draft will arrive in this same channel.\n\nIf it did NOT appear\n--------------------\nTell Claude \"gmail draft failed\" — we fall back to file-only handoffs in\nthe worktree and continue with the plan.\n\n— sent via Gmail MCP create_draft, 2026-04-18"
+  "body": "Cohezion Email Delivery Test — 2026-04-18\n\nThis message confirms the email-handoff path is working ahead of the\nTurboQuant / Strix Halo Phase 0a reboots.\n\nPlan:     /home/<USER>/.claude/plans/i-did-what-was-mutable-valley.md\nWorktree: ~/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker\nSender:   Gmail MCP create_draft (sidesteps the old EmailNotifier which silently no-oped)\n\nWhy this test exists\n--------------------\nThe old `EmailNotifier` abstraction imported by 5+ scripts has no class\ndefinition in tracked code — it silently no-oped. Before we rely on email\nfor KERNEL_RESUME_INSTRUCTIONS.md / FIRMWARE_RESUME_INSTRUCTIONS.md /\nROCM_RESUME_INSTRUCTIONS.md, we prove the path actually delivers.\n\nWhat to do now\n--------------\nIf this appears in your Gmail Drafts folder (web or phone), reply \"ack\" in\nthe active Claude session — Step 1 (kernel 6.17 → 6.18.4 upgrade) will\nthen fire, and the next handoff draft will arrive in this same channel.\n\nIf it did NOT appear\n--------------------\nTell Claude \"gmail draft failed\" — we fall back to file-only handoffs in\nthe worktree and continue with the plan.\n\n— sent via Gmail MCP create_draft, 2026-04-18"
 }
 ```
 

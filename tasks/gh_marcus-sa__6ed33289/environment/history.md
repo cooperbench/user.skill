@@ -2,7 +2,7 @@
 
 <system_instruction>
 You are working inside Conductor, a Mac app that lets the user run many coding agents in parallel.
-Your work should take place in the /Users/marcus/conductor/workspaces/brain-v1/los-angeles directory (unless otherwise directed), which has been set up for you to work in.
+Your work should take place in the /home/<USER>/conductor/workspaces/brain-v1/los-angeles directory (unless otherwise directed), which has been set up for you to work in.
 Each workspace has a .context directory (gitignored) where you can save files to collaborate with other agents.
 The target branch for this workspace is main. Use this for actions like creating new PRs, bisecting, etc., unless you're told otherwise.
 
@@ -27,7 +27,7 @@ tool_use Read
 id: toolu_019aCspbZQBqF1CN3XKunWVG
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/.context/attachments/Fix errors instructions-v1.md"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/.context/attachments/Fix errors instructions-v1.md"
 }
 ```
 
@@ -54,7 +54,7 @@ tool_use Read
 id: toolu_01J4DXWaD5a9Xw4f5KffFyMC
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/.context/attachments/typecheck_69368570861.log"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/.context/attachments/typecheck_69368570861.log"
 }
 ```
 
@@ -108,7 +108,7 @@ id: toolu_01J4DXWaD5a9Xw4f5KffFyMC
     43→2026-03-31T14:36:51.4105400Z Download action repository 'oven-sh/setup-bun@v2' (SHA:0c5077e51419868618aeaa5fe8019c62421857d6)
     44→2026-03-31T14:36:52.0056402Z Complete job name: typecheck
     45→2026-03-31T14:36:52.0363199Z A job started hook has been configured by the self-hosted runner administrator
-    46→2026-03-31T14:36:52.0470824Z ##[group]Run '/home/runner/actions-runner/start-hook.sh'
+    46→2026-03-31T14:36:52.0470824Z ##[group]Run '/home/<USER>/actions-runner/start-hook.sh'
     47→2026-03-31T14:36:52.0504393Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
     48→2026-03-31T14:36:52.0505172Z ##[endgroup]
     49→2026-03-31T14:36:52.0883458Z ##[group]Run actions/checkout@v4
@@ -124,7 +124,7 @@ tool_use Read
 id: toolu_01Pv4vjay7kG9SDfENYJBC8d
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/.context/attachments/acceptance-tests__observer-llm-reasoning__69368675208.log"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/.context/attachments/acceptance-tests__observer-llm-reasoning__69368675208.log"
 }
 ```
 
@@ -142,7 +142,7 @@ tool_use Read
 id: toolu_016DBfS4NnaQ2wgwRxYgvXzU
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/.context/attachments/acceptance-tests__intent-evidence__69368674914.log"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/.context/attachments/acceptance-tests__intent-evidence__69368674914.log"
 }
 ```
 
@@ -165,7 +165,7 @@ id: toolu_01ANkWdMz9BRQAtqknXY9LJB
 ```json
 {
   "pattern": "(error|fail|FAIL|Error|✗|✘|×)",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/.context/attachments/acceptance-tests__observer-llm-reasoning__69368675208.log",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/.context/attachments/acceptance-tests__observer-llm-reasoning__69368675208.log",
   "output_mode": "content",
   "-i": true,
   "head_limit": 40
@@ -202,7 +202,7 @@ id: toolu_01ST7pUHXM8k2iHpkzyKBJvr
 ```json
 {
   "pattern": "(error|fail|FAIL|Error|✗|✘|×)",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/.context/attachments/acceptance-tests__intent-evidence__69368674914.log",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/.context/attachments/acceptance-tests__intent-evidence__69368674914.log",
   "output_mode": "content",
   "-i": true,
   "head_limit": 40
@@ -246,7 +246,7 @@ tool_use Read
 id: toolu_01NyAma2nd3VFFW3GUFoAZoh
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/agent-create-page.test.tsx"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/agent-create-page.test.tsx"
 }
 ```
 
@@ -256,7 +256,7 @@ tool_use Read
 id: toolu_01TSnDmKR6cR7PGhNBzRGcZK
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/.context/attachments/acceptance-tests__observer-llm-reasoning__69368675208.log",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/.context/attachments/acceptance-tests__observer-llm-reasoning__69368675208.log",
   "offset": 470,
   "limit": 120
 }
@@ -279,12 +279,12 @@ id: toolu_01TSnDmKR6cR7PGhNBzRGcZK
    479→2026-03-31T14:38:50.7128038Z 426 |   throw new Error(
    480→2026-03-31T14:38:50.7128225Z                   ^
    481→2026-03-31T14:38:50.7128690Z error: No observation found for decision:dec-0cf58aec-4b66-47fb-9bd4-f2ab7882a030 within 30000ms
-   482→2026-03-31T14:38:50.7129386Z       at waitForObservation (/home/runner/work/osabio/osabio/tests/acceptance/observer-agent/observer-test-kit.ts:426:13)
-   483→2026-03-31T14:38:50.7130267Z       at async <anonymous> (/home/runner/work/osabio/osabio/tests/acceptance/observer-llm-reasoning/milestone-2-semantic-verification.test.ts:117:31)
+   482→2026-03-31T14:38:50.7129386Z       at waitForObservation (/home/<USER>/work/osabio/osabio/tests/acceptance/observer-agent/observer-test-kit.ts:426:13)
+   483→2026-03-31T14:38:50.7130267Z       at async <anonymous> (/home/<USER>/work/osabio/osabio/tests/acceptance/observer-llm-reasoning/milestone-2-semantic-verification.test.ts:117:31)
    484→2026-03-31T14:38:50.7131158Z 
    485→2026-03-31T14:38:50.7144894Z ##[error]
-   486→      at waitForObservation (/home/runner/work/osabio/osabio/tests/acceptance/observer-agent/observer-test-kit.ts:426:13)
-   487→      at async <anonymous> (/home/runner/work/osabio/osabio/tests/acceptance/observer-llm-reasoning/milestone-2-semantic-verification.test.ts:117:31)
+   486→      at waitForObservation (/home/<USER>/work/osabio/osabio/tests/acceptance/observer-agent/observer-test-kit.ts:426:13)
+   487→      at async <anonymous> (/home/<USER>/work/osabio/osabio/tests/acceptance/observer-llm-reasoning/milestone-2-semantic-verification.test.ts:117:31)
    488→2026-03-31T14:38:50.7150005Z (fail) Milestone 2: Semantic Contradiction Detection (AC-1.1) > LLM creates observes edges to both task and contradicted decision [60597.88ms]
    489→2026-03-31T14:38:50.7201214Z 
    490→2026-03-31T14:38:50.7201512Z ##[endgroup]
@@ -302,7 +302,7 @@ tool_use Read
 id: toolu_01HRoYxRDTpMR7WwCSRDaDv4
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/.context/attachments/acceptance-tests__intent-evidence__69368674914.log",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/.context/attachments/acceptance-tests__intent-evidence__69368674914.log",
   "offset": 475,
   "limit": 120
 }
@@ -377,12 +377,12 @@ id: toolu_01HRoYxRDTpMR7WwCSRDaDv4
    484→2026-03-31T14:38:24.5466929Z 308 |   throw new Error(
    485→2026-03-31T14:38:24.5467119Z                   ^
    486→2026-03-31T14:38:24.5467635Z error: Intent c50b0595-85c7-4290-829f-4ebfff2e7d20 did not reach authorized|pending_veto|vetoed|failed within 30000ms. Current status: pending_auth
-   487→2026-03-31T14:38:24.5468566Z       at waitForIntentStatus (/home/runner/work/osabio/osabio/tests/acceptance/intent-node/intent-test-kit.ts:308:13)
-   488→2026-03-31T14:38:24.5469390Z       at async <anonymous> (/home/runner/work/osabio/osabio/tests/acceptance/intent-evidence/milestone-2-fabrication-resistance.test.ts:199:11)
+   487→2026-03-31T14:38:24.5468566Z       at waitForIntentStatus (/home/<USER>/work/osabio/osabio/tests/acceptance/intent-node/intent-test-kit.ts:308:13)
+   488→2026-03-31T14:38:24.5469390Z       at async <anonymous> (/home/<USER>/work/osabio/osabio/tests/acceptance/intent-evidence/milestone-2-fabrication-resistance.test.ts:199:11)
    489→2026-03-31T14:38:24.5471901Z 
    490→2026-03-31T14:38:24.5497028Z ##[error]
-   491→      at waitForIntentStatus (/home/runner/work/osabio/osabio/tests/acceptance/intent-node/intent-test-kit.ts:308:13)
-   492→      at async <anonymous> (/home/runner/work/osabio/osabio/tests/acceptance/intent-evidence/milestone-2-fabrication-resistance.test.ts:199:11)
+   491→      at waitForIntentStatus (/home/<USER>/work/osabio/osabio/tests/acceptance/intent-node/intent-test-kit.ts:308:13)
+   492→      at async <anonymous> (/home/<USER>/work/osabio/osabio/tests/acceptance/intent-evidence/milestone-2-fabrication-resistance.test.ts:199:11)
    493→2026-03-31T14:38:24.5504563Z (fail) US-05: Authorship independence check > agent-confirmed evidence counts as independent from another agent [30742.95ms]
    494→2026-03-31T14:38:24.5583652Z 
    495→2026-03-31T14:38:24.5584110Z ##[endgroup]
@@ -509,7 +509,7 @@ tool_use Read
 id: toolu_017Mk9z5Q2Z5hXWffUSXQmxt
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/tests/acceptance/observer-llm-reasoning/milestone-2-semantic-verification.test.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/tests/acceptance/observer-llm-reasoning/milestone-2-semantic-verification.test.ts",
   "offset": 90,
   "limit": 40
 }
@@ -554,7 +554,7 @@ tool_use Read
 id: toolu_01R91wEqe7bH6nZER9bNW5Tc
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/tests/acceptance/observer-agent/observer-test-kit.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/tests/acceptance/observer-agent/observer-test-kit.ts",
   "offset": 400,
   "limit": 40
 }
@@ -622,7 +622,7 @@ id: toolu_01FVf7FGxgJ8Bvt9R3JwpNWQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/agent-create-page.test.tsx",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/agent-create-page.test.tsx",
   "old_string": "const EMPTY_SKILLS_RESPONSE = new Response(\n  JSON.stringify({ skills: [] }),\n  { status: 200, headers: { \"Content-Type\": \"application/json\" } },\n);\n\nconst EMPTY_TOOLS_RESPONSE = new Response(\n  JSON.stringify({ tools: [] }),\n  { status: 200, headers: { \"Content-Type\": \"application/json\" } },\n);\n\nfunction stubFetch",
   "new_string": "function stubFetch"
 }
@@ -633,7 +633,7 @@ id: toolu_01FVf7FGxgJ8Bvt9R3JwpNWQ
 tool_result
 id: toolu_01FVf7FGxgJ8Bvt9R3JwpNWQ
 ```
-The file /Users/marcus/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/agent-create-page.test.tsx has been updated successfully.
+The file /home/<USER>/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/agent-create-page.test.tsx has been updated successfully.
 ```
 
 > TOOL
@@ -643,7 +643,7 @@ id: toolu_01LDroQ34i2r7tssaKphXoKF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/tests/acceptance/observer-llm-reasoning/milestone-2-semantic-verification.test.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/tests/acceptance/observer-llm-reasoning/milestone-2-semantic-verification.test.ts",
   "old_string": "const decisionObs = await waitForObservation(surreal, \"decision\", decisionId, 30_000);",
   "new_string": "const decisionObs = await waitForObservation(surreal, \"decision\", decisionId, 60_000);"
 }
@@ -654,7 +654,7 @@ id: toolu_01LDroQ34i2r7tssaKphXoKF
 tool_result
 id: toolu_01LDroQ34i2r7tssaKphXoKF
 ```
-The file /Users/marcus/conductor/workspaces/brain-v1/los-angeles/tests/acceptance/observer-llm-reasoning/milestone-2-semantic-verification.test.ts has been updated successfully.
+The file /home/<USER>/conductor/workspaces/brain-v1/los-angeles/tests/acceptance/observer-llm-reasoning/milestone-2-semantic-verification.test.ts has been updated successfully.
 ```
 
 > AGENT
@@ -691,7 +691,7 @@ tool_use Read
 id: toolu_01KA62Mscqz6KtMsEnm3M79P
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/agent-create-page.test.tsx",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/agent-create-page.test.tsx",
   "offset": 36,
   "limit": 15
 }
@@ -817,7 +817,7 @@ tool_use Read
 id: toolu_01V6HWXZusR5S9D42dm2PrHH
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/tests/acceptance/intent-evidence/milestone-2-fabrication-resistance.test.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/tests/acceptance/intent-evidence/milestone-2-fabrication-resistance.test.ts",
   "offset": 190,
   "limit": 20
 }
@@ -857,7 +857,7 @@ id: toolu_01AecJvVvFStzXdtJhg57cPt
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/tests/acceptance/intent-evidence/milestone-2-fabrication-resistance.test.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/tests/acceptance/intent-evidence/milestone-2-fabrication-resistance.test.ts",
   "old_string": "    await waitForIntentStatus(surreal, intentId, [\"authorized\", \"pending_veto\", \"vetoed\", \"failed\"], 30_000);\n",
   "new_string": "    await waitForIntentStatus(surreal, intentId, [\"authorized\", \"pending_veto\", \"vetoed\", \"failed\"], 60_000);\n"
 }
@@ -884,7 +884,7 @@ id: toolu_01RREUZsdoqB8ARZu8CjNkxL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/tests/acceptance/intent-evidence/milestone-2-fabrication-resistance.test.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/tests/acceptance/intent-evidence/milestone-2-fabrication-resistance.test.ts",
   "old_string": "    await submitIntent(surreal, intentId);\n    await waitForIntentStatus(surreal, intentId, [\"authorized\", \"pending_veto\", \"vetoed\", \"failed\"], 30_000);\n\n    // Then the decision counts as independently authored evidence\n    const verification = await getEvidenceVerification(surreal, intentId);\n    expect(verification).toBeDefined();\n    expect(verification!.verified_count).toBe(1);\n  }, 60_000);",
   "new_string": "    await submitIntent(surreal, intentId);\n    await waitForIntentStatus(surreal, intentId, [\"authorized\", \"pending_veto\", \"vetoed\", \"failed\"], 60_000);\n\n    // Then the decision counts as independently authored evidence\n    const verification = await getEvidenceVerification(surreal, intentId);\n    expect(verification).toBeDefined();\n    expect(verification!.verified_count).toBe(1);\n  }, 120_000);"
 }
@@ -895,7 +895,7 @@ id: toolu_01RREUZsdoqB8ARZu8CjNkxL
 tool_result
 id: toolu_01RREUZsdoqB8ARZu8CjNkxL
 ```
-The file /Users/marcus/conductor/workspaces/brain-v1/los-angeles/tests/acceptance/intent-evidence/milestone-2-fabrication-resistance.test.ts has been updated successfully.
+The file /home/<USER>/conductor/workspaces/brain-v1/los-angeles/tests/acceptance/intent-evidence/milestone-2-fabrication-resistance.test.ts has been updated successfully.
 ```
 
 > AGENT

@@ -1,9 +1,9 @@
 > SYSTEM
 
-# AGENTS.md instructions for /home/pjensen/Repos/JSHack
+# AGENTS.md instructions for /home/<USER>/Repos/JSHack
 
 <INSTRUCTIONS>
-@/home/pjensen/.codex/RTK.md
+@/home/<USER>/.codex/RTK.md
 
 --- project-doc ---
 
@@ -58,7 +58,7 @@ id: call_JFtdg471OoVaYlnL5fWu03xt
 ```json
 {
   "cmd": "sed -n '1,220p' .agents/skills/using-entire/SKILL.md",
-  "workdir": "/home/pjensen/Repos/JSHack"
+  "workdir": "/home/<USER>/Repos/JSHack"
 }
 ```
 
@@ -114,7 +114,7 @@ id: call_EJwrBlT9aAdPWg7JWw5kE8li
 ```json
 {
   "cmd": "entire status",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -127,7 +127,7 @@ id: call_6BJpL70iLEfwdbUACkrdOESr
 ```json
 {
   "cmd": "rg -n \"gem|shop|store|lock|key|owner|night|door\" src tests --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -140,7 +140,7 @@ id: call_NomoRrJxLBPB5p6rndKiHVmm
 ```json
 {
   "cmd": "rg --files src/content src/rules tests | rg \"(shop|store|key|lock|door|town|npc|merchant|gem)\"",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -287,7 +287,7 @@ id: call_kkHpDmcsh9IpuCdZtV1NQhv5
 ```json
 {
   "cmd": "sed -n '1,260p' src/rules/data/buildings/gem_store.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -299,7 +299,7 @@ id: call_ErbHmjiUbaVKmvKKMr3yKW4C
 ```json
 {
   "cmd": "sed -n '1,260p' src/rules/data/buildings/general_store.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -311,7 +311,7 @@ id: call_QcbOpZF9axIP5mCpEuS9O6Ut
 ```json
 {
   "cmd": "sed -n '1,260p' src/rules/data/buildings/book_shop.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -323,7 +323,7 @@ id: call_gxltknw8EDnBpZmOxH8lhr8C
 ```json
 {
   "cmd": "sed -n '1,260p' src/rules/data/buildings/enchanter_shop.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -335,7 +335,7 @@ id: call_d4KjZeyRJ6tCj2EKfrMXx70N
 ```json
 {
   "cmd": "sed -n '1,260p' tests/shopDoorKeys.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -347,7 +347,7 @@ id: call_TUgvz3dAyMiQZAQf26OHnKjc
 ```json
 {
   "cmd": "sed -n '1,260p' src/rules/environment/dungeon/townPlacement.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -659,7 +659,7 @@ id: call_glZyW8qOFriKVi2DGzrDRvA2
 ```json
 {
   "cmd": "sed -n '260,620p' src/rules/environment/dungeon/townPlacement.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 18000
 }
 ```
@@ -671,7 +671,7 @@ id: call_9f2ew4vNgH2Z3nqVAJCIwKBE
 ```json
 {
   "cmd": "rg -n \"DoorLock|DoorKey|lockId|shopkeeperId|vendorRole|shop_door|gem_vendor|general_vendor|book_vendor|enchantress\" src/rules src/main tests --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 18000
 }
 ```
@@ -683,7 +683,7 @@ id: call_QF7MnZpw6aOQU9vqxSUvLTQL
 ```json
 {
   "cmd": "git log --format='%H %b' -5 -- src/rules/environment/dungeon/townPlacement.js src/rules/systems/aiTownfolkSystem.js tests/shopDoorKeys.test.mjs | rg -B1 \"Entire-Checkpoint\"",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 6000
 }
 ```
@@ -812,7 +812,7 @@ id: call_olmCYCRneA5zWUidxC0evUCT
 ```json
 {
   "cmd": "sed -n '330,430p' src/rules/environment/dungeon/populate.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -824,7 +824,7 @@ id: call_FJKEuXpOeYWlZQpY44TKubIq
 ```json
 {
   "cmd": "sed -n '2460,2865p' src/rules/environment/dungeon/populate.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 22000
 }
 ```
@@ -836,7 +836,7 @@ id: call_dG10Gzpr636zGWnNQrzBHxaf
 ```json
 {
   "cmd": "sed -n '620,705p' src/rules/environment/dungeon/townPlacement.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 10000
 }
 ```
@@ -848,7 +848,7 @@ id: call_IXQTWO0psLmaUkFjk0Qzpo5X
 ```json
 {
   "cmd": "sed -n '620,755p' tests/shopDoorKeys.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -860,7 +860,7 @@ id: call_7iWSmm3fpa8s4JjZbafcF296
 ```json
 {
   "cmd": "sed -n '210,250p' tests/overworldStructures.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 8000
 }
 ```
@@ -1137,7 +1137,7 @@ id: call_MyPKpvrrNnSRGO8WaOFeBCzL
 ```json
 {
   "cmd": "sed -n '760,890p' src/rules/systems/aiTownfolkSystem.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -1149,7 +1149,7 @@ id: call_MkueOTDsSRFNkjgoIBXwvwVX
 ```json
 {
   "cmd": "sed -n '1050,1115p' src/rules/systems/aiTownfolkSystem.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 10000
 }
 ```
@@ -1161,7 +1161,7 @@ id: call_2iKzcU8t3G8tobOjXiAYPdzo
 ```json
 {
   "cmd": "sed -n '1730,1785p' src/rules/systems/aiTownfolkSystem.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 10000
 }
 ```
@@ -1173,7 +1173,7 @@ id: call_XCjFocqcsEgzhVzVPXTEvCJi
 ```json
 {
   "cmd": "sed -n '1,130p' src/rules/environment/dungeon/stampBuilding.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 10000
 }
 ```
@@ -1185,7 +1185,7 @@ id: call_tYEc2cmJ1qqZIFqjICtgqEyf
 ```json
 {
   "cmd": "sed -n '1,130p' tests/stampBuilding.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 10000
 }
 ```
@@ -1509,7 +1509,7 @@ id: call_GFYrh6ayoO8dcr6zXQmTUkY9
 ```json
 {
   "cmd": "sed -n '360,470p' tests/shopDoorKeys.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 14000
 }
 ```
@@ -1568,7 +1568,7 @@ id: call_FxuXL71hbYtnSUriXLmMUT2B
 ```json
 {
   "cmd": "sed -n '300,375p' tests/shopDoorKeys.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 10000
 }
 ```
@@ -1644,7 +1644,7 @@ id: call_PEuQKVcmK6HINvGunfaPMFon
 ```json
 {
   "cmd": "sed -n '250,325p' tests/shopDoorKeys.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 10000
 }
 ```
@@ -1709,7 +1709,7 @@ id: call_82ts2W3eIaOM2tfk6ijUJ5Iw
 ```json
 {
   "cmd": "rg -n \"enchantress|general_vendor|book_vendor|gem_vendor|alchemist\" src/rules/data/townfolk.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 8000
 }
 ```
@@ -1753,7 +1753,7 @@ id: call_0huxFzmkBLdG15iBS5rJs18j
 ```json
 {
   "cmd": "deno test --allow-read tests/shopDoorKeys.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -1796,7 +1796,7 @@ id: call_GNucdcKcXtVJg8BQcfR088qs
 ```json
 {
   "cmd": "deno test --allow-read tests/stampBuilding.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -1809,7 +1809,7 @@ id: call_Lyrdi83dWolQ8fKWMvt3q6Ia
 ```json
 {
   "cmd": "deno test --allow-read tests/overworldStructures.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -1822,7 +1822,7 @@ id: call_fjfQ8ttqcARnsU4b4kc4WUOZ
 ```json
 {
   "cmd": "deno task guard:architecture",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 16000
 }
@@ -1835,7 +1835,7 @@ id: call_ydXeBVSq7BTCxuphDTUQqEsQ
 ```json
 {
   "cmd": "deno task guard:events",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 16000
 }
@@ -1978,7 +1978,7 @@ id: call_pHO6V0FkgEK35pXdKGDm2ehN
 ```json
 {
   "cmd": "git diff -- src/rules/environment/dungeon/populate.js tests/shopDoorKeys.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 16000
 }
 ```
@@ -1990,7 +1990,7 @@ id: call_n8YpJsphud4ViB36ReemQsgg
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 8000
 }
 ```
@@ -2068,7 +2068,7 @@ id: call_ze4ocDD9bxwtgW1TOdztIkoJ
 ```json
 {
   "cmd": "entire explain --checkpoint c9311bff3601 --json --no-pager",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -2154,11 +2154,11 @@ Command "explain" is deprecated, use 'entire checkpoint explain' instead
 
 Implemented.
 
-Changed [populate.js](/home/pjensen/Repos/JSHack/src/rules/environment/dungeon/populate.js) so:
+Changed [populate.js](/home/<USER>/Repos/JSHack/src/rules/environment/dungeon/populate.js) so:
 - General store and enchanter shop keys get explicit names/identities.
 - The enchantress now gets owned `RoomMetadata` for the enchanter shop, so the existing shop door/key/lock behavior can identify and lock her shop like the others.
 
-Updated [shopDoorKeys.test.mjs](/home/pjensen/Repos/JSHack/tests/shopDoorKeys.test.mjs) to verify all generated shopkeepers now have a keyed, locked shop door: alchemist, book vendor, enchantress, gem vendor, and general vendor.
+Updated [shopDoorKeys.test.mjs](/home/<USER>/Repos/JSHack/tests/shopDoorKeys.test.mjs) to verify all generated shopkeepers now have a keyed, locked shop door: alchemist, book vendor, enchantress, gem vendor, and general vendor.
 
 Verified:
 - `deno test --allow-read tests/shopDoorKeys.test.mjs`

@@ -13,7 +13,7 @@ tool_use Bash
 id: toolu_0126uwSnACrbF6JNHs6bazMq
 ```json
 {
-  "command": "ls /Users/arijit/Coding/Python/DataQ/.claude/agents/",
+  "command": "ls /home/<USER>/Coding/Python/DataQ/.claude/agents/",
   "description": "List agent definitions"
 }
 ```
@@ -55,7 +55,7 @@ tool_use Read
 id: toolu_01Y3sUDqk4f8DLo1A8wYjbLC
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/.claude/agents/qa-verifier.md"
 }
 ```
 
@@ -81,7 +81,7 @@ tool_use Read
 id: toolu_01UAmK6kCycP2725HkJhbTuL
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/.claude/agents/ui-tester.md"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/.claude/agents/ui-tester.md"
 }
 ```
 
@@ -110,7 +110,7 @@ tool_use Bash
 id: toolu_01TAx2Kt1viLEZJjCM82yvBz
 ```json
 {
-  "command": "grep -n \"run:\" /Users/arijit/Coding/Python/DataQ/.github/workflows/ci.yml | head -40",
+  "command": "grep -n \"run:\" /home/<USER>/Coding/Python/DataQ/.github/workflows/ci.yml | head -40",
   "description": "List CI job commands"
 }
 ```
@@ -160,7 +160,7 @@ tool_use Bash
 id: toolu_01XkZXiXgzeM7LYxyWwmwhEM
 ```json
 {
-  "command": "grep -rn \"dbt\" /Users/arijit/Coding/Python/DataQ/frontend/src/api/connections.ts /Users/arijit/Coding/Python/DataQ/frontend/src/api/connectionSources.ts 2>/dev/null | head; echo ---; grep -rn \"scroll={{\" /Users/arijit/Coding/Python/DataQ/frontend/src --include=\"*.tsx\" -l | head; echo ---; grep -n \"projects:\" -A 20 /Users/arijit/Coding/Python/DataQ/frontend/playwright.config.ts",
+  "command": "grep -rn \"dbt\" /home/<USER>/Coding/Python/DataQ/frontend/src/api/connections.ts /home/<USER>/Coding/Python/DataQ/frontend/src/api/connectionSources.ts 2>/dev/null | head; echo ---; grep -rn \"scroll={{\" /home/<USER>/Coding/Python/DataQ/frontend/src --include=\"*.tsx\" -l | head; echo ---; grep -n \"projects:\" -A 20 /home/<USER>/Coding/Python/DataQ/frontend/playwright.config.ts",
   "description": "Check dbt in frontend enums, table scroll props, playwright projects"
 }
 ```
@@ -170,11 +170,11 @@ id: toolu_01XkZXiXgzeM7LYxyWwmwhEM
 tool_result
 id: toolu_01XkZXiXgzeM7LYxyWwmwhEM
 ```
-/Users/arijit/Coding/Python/DataQ/frontend/src/api/connections.ts:5: * ADF, Airflow + dbt are orchestration providers, not datasources, but they are
-/Users/arijit/Coding/Python/DataQ/frontend/src/api/connections.ts:16:  'dbt',
-/Users/arijit/Coding/Python/DataQ/frontend/src/api/connections.ts:37:  dbt: 'orchestration',
-/Users/arijit/Coding/Python/DataQ/frontend/src/api/connections.ts:68:  dbt: null,
-/Users/arijit/Coding/Python/DataQ/frontend/src/api/connections.ts:120:  dbt: 'dbt',
+/home/<USER>/Coding/Python/DataQ/frontend/src/api/connections.ts:5: * ADF, Airflow + dbt are orchestration providers, not datasources, but they are
+/home/<USER>/Coding/Python/DataQ/frontend/src/api/connections.ts:16:  'dbt',
+/home/<USER>/Coding/Python/DataQ/frontend/src/api/connections.ts:37:  dbt: 'orchestration',
+/home/<USER>/Coding/Python/DataQ/frontend/src/api/connections.ts:68:  dbt: null,
+/home/<USER>/Coding/Python/DataQ/frontend/src/api/connections.ts:120:  dbt: 'dbt',
 ---
 ---
 41:  projects: [
@@ -205,7 +205,7 @@ tool_use Bash
 id: toolu_01MgZZZybnR7bZQN92FzaRVs
 ```json
 {
-  "command": "grep -rn \"events/\" /Users/arijit/Coding/Python/DataQ/backend/app/api/v1/orchestration*.py | grep -i \"post\\|router\" | head; echo ---; grep -rn \"ORCHESTRATION_PROVIDERS\\|'dbt'\" /Users/arijit/Coding/Python/DataQ/backend/app/db/models.py | head -5; echo ---; grep -n \"addopts\" /Users/arijit/Coding/Python/DataQ/pyproject.toml",
+  "command": "grep -rn \"events/\" /home/<USER>/Coding/Python/DataQ/backend/app/api/v1/orchestration*.py | grep -i \"post\\|router\" | head; echo ---; grep -rn \"ORCHESTRATION_PROVIDERS\\|'dbt'\" /home/<USER>/Coding/Python/DataQ/backend/app/db/models.py | head -5; echo ---; grep -n \"addopts\" /home/<USER>/Coding/Python/DataQ/pyproject.toml",
   "description": "Check dbt webhook endpoint, provider enum, pytest addopts"
 }
 ```
@@ -215,14 +215,14 @@ id: toolu_01MgZZZybnR7bZQN92FzaRVs
 tool_result
 id: toolu_01MgZZZybnR7bZQN92FzaRVs
 ```
-/Users/arijit/Coding/Python/DataQ/backend/app/api/v1/orchestration.py:7:- `POST /orchestration/events/adf` — Azure Monitor. Auth = shared secret in the
-/Users/arijit/Coding/Python/DataQ/backend/app/api/v1/orchestration.py:10:- `POST /orchestration/events/airflow` — our DAG callback snippet. Auth =
-/Users/arijit/Coding/Python/DataQ/backend/app/api/v1/orchestration.py:14:- `POST /orchestration/events/dbt` — our post-build callback snippet. Same
+/home/<USER>/Coding/Python/DataQ/backend/app/api/v1/orchestration.py:7:- `POST /orchestration/events/adf` — Azure Monitor. Auth = shared secret in the
+/home/<USER>/Coding/Python/DataQ/backend/app/api/v1/orchestration.py:10:- `POST /orchestration/events/airflow` — our DAG callback snippet. Auth =
+/home/<USER>/Coding/Python/DataQ/backend/app/api/v1/orchestration.py:14:- `POST /orchestration/events/dbt` — our post-build callback snippet. Same
 ---
-/Users/arijit/Coding/Python/DataQ/backend/app/db/models.py:40:ORCHESTRATION_PROVIDERS = ("adf", "airflow", "dbt")
-/Users/arijit/Coding/Python/DataQ/backend/app/db/models.py:132:                "type IN (" + ", ".join(f"'{p}'" for p in ORCHESTRATION_PROVIDERS) + ")"
-/Users/arijit/Coding/Python/DataQ/backend/app/db/models.py:441:        _in_check("provider", ORCHESTRATION_PROVIDERS, "provider_valid"),
-/Users/arijit/Coding/Python/DataQ/backend/app/db/models.py:467:        _in_check("provider", ORCHESTRATION_PROVIDERS, "provider_valid"),
+/home/<USER>/Coding/Python/DataQ/backend/app/db/models.py:40:ORCHESTRATION_PROVIDERS = ("adf", "airflow", "dbt")
+/home/<USER>/Coding/Python/DataQ/backend/app/db/models.py:132:                "type IN (" + ", ".join(f"'{p}'" for p in ORCHESTRATION_PROVIDERS) + ")"
+/home/<USER>/Coding/Python/DataQ/backend/app/db/models.py:441:        _in_check("provider", ORCHESTRATION_PROVIDERS, "provider_valid"),
+/home/<USER>/Coding/Python/DataQ/backend/app/db/models.py:467:        _in_check("provider", ORCHESTRATION_PROVIDERS, "provider_valid"),
 ---
 101:addopts = "--cov=backend/app --cov-report=term-missing --cov-fail-under=80"
 125:# bring the whole importable package + tests + this config, and `-o addopts=`
@@ -235,7 +235,7 @@ tool_use Bash
 id: toolu_019cgPYnKuQ4LCde2QH6CBWZ
 ```json
 {
-  "command": "ls /Users/arijit/Coding/Python/DataQ/frontend/src/pages/; echo ---; gh issue list --repo TheurgicDuke771/DataQ --state open --label bug --json number,title --jq '.[] | \"#\\(.number) \\(.title)\"' | head -15",
+  "command": "ls /home/<USER>/Coding/Python/DataQ/frontend/src/pages/; echo ---; gh issue list --repo TheurgicDuke771/DataQ --state open --label bug --json number,title --jq '.[] | \"#\\(.number) \\(.title)\"' | head -15",
   "description": "List frontend pages and open bug issues"
 }
 ```
@@ -281,7 +281,7 @@ tool_use Bash
 id: toolu_01NUC9NukiX1sLpyZx4X3G3W
 ```json
 {
-  "command": "ls /Users/arijit/Coding/Python/DataQ/.claude/skills/ 2>/dev/null; ls /Users/arijit/Coding/Python/DataQ/.claude/commands/ 2>/dev/null",
+  "command": "ls /home/<USER>/Coding/Python/DataQ/.claude/skills/ 2>/dev/null; ls /home/<USER>/Coding/Python/DataQ/.claude/commands/ 2>/dev/null",
   "description": "Check for repo-local skills/commands"
 }
 ```
@@ -304,7 +304,7 @@ id: toolu_01D8yoY7avGWXLaWUcgKamrX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/.claude/agents/qa-verifier.md",
   "old_string": "| Types | `pnpm typecheck` |\n| Tests | `pnpm test` |",
   "new_string": "| Types | `pnpm typecheck` |\n| Tests + coverage gate | `pnpm test:coverage` |"
 }
@@ -315,7 +315,7 @@ id: toolu_01D8yoY7avGWXLaWUcgKamrX
 tool_result
 id: toolu_01D8yoY7avGWXLaWUcgKamrX
 ```
-The file /Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/.claude/agents/qa-verifier.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -325,7 +325,7 @@ id: toolu_01C3zkg3vQYJBWRx4Jy1jJmg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/.claude/agents/qa-verifier.md",
   "old_string": "- **pytest addopts carry `--cov`** — a second `--cov` on the CLI is a pytest usage error (exit 4). Use `--cov=<module> --cov-report=term-missing -o addopts=` when you need targeted coverage.",
   "new_string": "- **pytest addopts carry `--cov` AND `--cov-fail-under=80`** — a second `--cov` on the CLI is a pytest usage error (exit 4), and a targeted subset run will spuriously fail the repo-wide 80% floor. Use `--cov=<module> --cov-report=term-missing -o addopts=` when you need targeted coverage. Frontend equivalent: the `lines: 80` gate only runs under `pnpm test:coverage`, not `pnpm test`."
 }
@@ -336,7 +336,7 @@ id: toolu_01C3zkg3vQYJBWRx4Jy1jJmg
 tool_result
 id: toolu_01C3zkg3vQYJBWRx4Jy1jJmg
 ```
-The file /Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/.claude/agents/qa-verifier.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -346,7 +346,7 @@ id: toolu_015wkNwEwaBoEusNBzxTXpkM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/.claude/agents/qa-verifier.md",
   "old_string": "2. **Orchestration tests covering only one provider** — parametrize over both `adf` and `airflow` (ADF-only fixtures mean the abstraction is rotting).",
   "new_string": "2. **Orchestration tests covering only one provider** — parametrize over the full `ORCHESTRATION_PROVIDERS` tuple (`adf`, `airflow`, `dbt` since ADR 0029), not a hardcoded subset (single-provider fixtures mean the abstraction is rotting)."
 }
@@ -357,7 +357,7 @@ id: toolu_015wkNwEwaBoEusNBzxTXpkM
 tool_result
 id: toolu_015wkNwEwaBoEusNBzxTXpkM
 ```
-The file /Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/.claude/agents/qa-verifier.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -367,7 +367,7 @@ id: toolu_01D29EGPPDfoTQgYS29PtiTR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/.claude/agents/qa-verifier.md",
   "old_string": "1. **Check-authoring edge cases** — through `POST/PATCH` on suites/checks: unknown expectation type; args missing/wrong-typed; thresholds inverted (warn worse than critical) or out of range; column names with quotes/unicode/SQL metacharacters; oversized strings. Expect 422/400 envelopes, never a 500 or a silently-persisted invalid check.",
   "new_string": "1. **Check-authoring edge cases** — through `POST/PATCH` on suites/checks: unknown expectation type; args missing/wrong-typed; thresholds inverted (warn worse than critical) or out of range; column names with quotes/unicode/SQL metacharacters/**NUL bytes and control characters** (`\u0000` in a string field 500'd all of v1 until #570 — always include it); oversized strings. Cover non-`expectation` kinds too: a `freshness`/`volume` check with kind-inappropriate or missing config must 422, not persist. Expect 422/400 envelopes, never a 500 or a silently-persisted invalid check."
 }
@@ -378,7 +378,7 @@ id: toolu_01D29EGPPDfoTQgYS29PtiTR
 tool_result
 id: toolu_01D29EGPPDfoTQgYS29PtiTR
 ```
-The file /Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/.claude/agents/qa-verifier.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -388,7 +388,7 @@ id: toolu_01SVCsNbLdnKyQ7S1EoxEV4y
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/.claude/agents/qa-verifier.md",
   "old_string": "5. **Authz probes** — with a second demo user (seeded), verify: view-only user gets 403 on edit endpoints; non-shared suite invisible in lists AND 403/404 by direct id (no IDOR); admin endpoints 403 for non-admins.\n6. **Webhook hostility** — POST to `/api/v1/orchestration/events/{adf,airflow}` with: missing/wrong auth (secret/HMAC), valid auth + malformed JSON, valid JSON missing required fields, duplicate delivery (dedup index #456 should absorb it). Expect 401/422 envelopes and no phantom `pipeline_runs` rows.",
   "new_string": "5. **Authz probes** — with a second demo user (seeded), verify: view-only user gets 403 on edit endpoints; non-shared suite invisible in lists AND 403/404 by direct id (no IDOR); admin endpoints 403 for non-admins.\n5a. **PAT surface** (ADR 0026, #613) — garbage, expired, and revoked `dq_live_…` tokens must all return a **uniform 401** (no oracle distinguishing \"unknown\" from \"expired\"); a valid PAT must carry the owner's authz scope, not more; the plaintext token must never appear in any read-back after mint (sha256-at-rest, show-once).\n6. **Webhook hostility** — POST to `/api/v1/orchestration/events/{adf,airflow,dbt}` with: missing/wrong auth (secret/HMAC per provider), valid auth + malformed JSON, valid JSON missing required fields, duplicate delivery (dedup index #456 should absorb it). Expect 401/422 envelopes and […]
 
@@ -399,7 +399,7 @@ id: toolu_01PhLp2DtHHQpYuon96GSK6V
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/.claude/agents/qa-verifier.md",
   "old_string": "Findings that warrant deferred work should be called out for `/gh-issue-from-finding` (working-agreement #3) — never silently dropped.",
   "new_string": "Before reporting a finding as new, check it against open issues (`gh issue list --state open --search \"<keywords>\"`) — a rediscovery of a known issue is reported as `known — #N (still reproduces)`, not as a fresh finding, and doesn't count toward the verdict unless the diff was supposed to fix it. Findings that warrant deferred work should be called out for `/gh-issue-from-finding` (working-agreement #3) — never silently dropped."
 }
@@ -410,7 +410,7 @@ id: toolu_01PhLp2DtHHQpYuon96GSK6V
 tool_result
 id: toolu_01SVCsNbLdnKyQ7S1EoxEV4y
 ```
-The file /Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/.claude/agents/qa-verifier.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -418,7 +418,7 @@ The file /Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md has bee
 tool_result
 id: toolu_01PhLp2DtHHQpYuon96GSK6V
 ```
-The file /Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/.claude/agents/qa-verifier.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -427,7 +427,7 @@ tool_use Bash
 id: toolu_01RGKJY6Bt5xBZaTcQvnLz9e
 ```json
 {
-  "command": "grep -n \"NUL\" /Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md | cat -v",
+  "command": "grep -n \"NUL\" /home/<USER>/Coding/Python/DataQ/.claude/agents/qa-verifier.md | cat -v",
   "description": "Verify NUL-byte edit rendered cleanly"
 }
 ```
@@ -446,7 +446,7 @@ tool_use Bash
 id: toolu_01CJtc1JWrVEnjAFKvjsKht8
 ```json
 {
-  "command": "grep -an \"NUL\" /Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md | cat -v",
+  "command": "grep -an \"NUL\" /home/<USER>/Coding/Python/DataQ/.claude/agents/qa-verifier.md | cat -v",
   "description": "Check for literal NUL byte in file (binary-safe grep)"
 }
 ```
@@ -469,7 +469,7 @@ tool_use Bash
 id: toolu_0152FuzB6aStFVPa5TKgwq99
 ```json
 {
-  "command": "perl -pi -e 's/\\x00/\\\\x00/g' /Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md && grep -n \"x00\" /Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md",
+  "command": "perl -pi -e 's/\\x00/\\\\x00/g' /home/<USER>/Coding/Python/DataQ/.claude/agents/qa-verifier.md && grep -n \"x00\" /home/<USER>/Coding/Python/DataQ/.claude/agents/qa-verifier.md",
   "description": "Replace literal NUL byte with \\x00 escape text"
 }
 ```
@@ -489,7 +489,7 @@ id: toolu_01QfxCRnDjN3D56wdcGSey6X
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/.claude/agents/ui-tester.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/.claude/agents/ui-tester.md",
   "old_string": "- **Frontend:** React + Vite + Ant Design (antd v6), Monaco, recharts. Routes are deep-linkable pages (ADR 0022): `/dashboard`, `/connections`, `/connections/new`, `/suites`, `/suites/:id`, `/suites/new`, check editor under a suite, `/results`, run detail, `/profile`, `/settings`, `/admin`.",
   "new_string": "- **Frontend:** React + Vite + Ant Design (antd v6), Monaco, recharts. Routes are deep-linkable pages (ADR 0022): `/dashboard`, `/connections`, `/connections/new`, `/connections/:id/edit`, `/suites`, `/suites/:id`, `/suites/new`, suite edit, check editor + check edit under a suite, `/results` (Runs + Pipeline runs tabs), run detail, `/profile`, `/settings`, `/admin`, plus the 404 page. `frontend/src/pages/` is the authoritative list — check it for screens added since this file was written."
 }
@@ -500,7 +500,7 @@ id: toolu_01QfxCRnDjN3D56wdcGSey6X
 tool_result
 id: toolu_01QfxCRnDjN3D56wdcGSey6X
 ```
-The file /Users/arijit/Coding/Python/DataQ/.claude/agents/ui-tester.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/.claude/agents/ui-tester.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -510,7 +510,7 @@ id: toolu_01SGs4spj2nYzAKUu1PNBMqV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/.claude/agents/ui-tester.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/.claude/agents/ui-tester.md",
   "old_string": "Before starting, get oriented cheaply: `git log --oneline -5`, and skim `frontend/src/api/` + `frontend/src/pages/` + `backend/app/api/v1/`.",
   "new_string": "Before starting, get oriented cheaply: `git log --oneline -5`, and skim `frontend/src/api/` + `frontend/src/pages/` + `backend/app/api/v1/`.\n\n**Known-issue triage (do this first):** pull the open bug list — `gh issue list --state open --label bug --json number,title` — before the sweep. A defect that matches an open issue is reported as **`known — #N (still reproduces)`**, never as a new finding; only genuinely new symptoms (or a known issue's stated scope clearly not covering what you see) go in the findings list. This keeps the report actionable and avoids re-filing e.g. an open mobile-responsiveness umbrella issue screen by screen."
 }
@@ -521,7 +521,7 @@ id: toolu_01SGs4spj2nYzAKUu1PNBMqV
 tool_result
 id: toolu_01SGs4spj2nYzAKUu1PNBMqV
 ```
-The file /Users/arijit/Coding/Python/DataQ/.claude/agents/ui-tester.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/.claude/agents/ui-tester.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -531,7 +531,7 @@ id: toolu_01TH1gvwYpdSVsXT2JBk21K7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/.claude/agents/ui-tester.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/.claude/agents/ui-tester.md",
   "old_string": "- **Horizontal overflow:** the page `<body>` must not scroll sideways. Check via `browser_evaluate` → `document.documentElement.scrollWidth > document.documentElement.clientWidth`. Wide content (tables, the Monaco editor, charts, run-detail rows) must scroll **inside its own container**, not push the page.\n- **Navigation:** the sidebar/nav must be reachable (collapsed/hamburger) and every route still navigable by tap.\n- **Forms & modals:** the add-connection drawer, check editor, notifications panel, and modals (create-PAT, run-now) must be usable — inputs reachable, buttons not off-screen, Selects openable, the copy-once PAT token visible.\n- **Tap targets & truncation:** controls aren't overlapping or clipped; labels truncate rather than break layout.\n- Exercise at least one **core flow** on mobile (e.g. open a suite → open the notifications panel → toggle a threshold) to prove functionality, not just rendering.\n\nCapture a screenshot of any screen that misbehaves at mobile width — it's the clearest evidence.",
   "new_string": "- **Horizontal overflow:** the page `<body>` must not scroll sideways. Check via `browser_evaluate` → `document.documentElement.scrollWidth > document.documentElement.clientWidth`. Wide content (tables, the Monaco editor, charts, run-detail rows) must scroll **inside its own container**, not push the page.\n- **Navigation:** the sidebar/nav must be reachable (collapsed/hamburger) and every route still navigable by tap.\n- **Forms […]
 
@@ -540,7 +540,7 @@ id: toolu_01TH1gvwYpdSVsXT2JBk21K7
 tool_result
 id: toolu_01TH1gvwYpdSVsXT2JBk21K7
 ```
-The file /Users/arijit/Coding/Python/DataQ/.claude/agents/ui-tester.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/.claude/agents/ui-tester.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -554,7 +554,7 @@ id: toolu_01AUvew3zpcDroUkReGsBpyx
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/.claude/agents/ui-tester.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/.claude/agents/ui-tester.md",
   "old_string": "- Find the frontend client for each: `frontend/src/api/*.ts`. A backend router with **no** matching client, or endpoints a client never calls, is a candidate gap (e.g. the historic `api_keys` router with no `apiKeys.ts`, or `dbt` missing from `CONNECTION_TYPES`).",
   "new_string": "- Find the frontend client for each: `frontend/src/api/*.ts`. A backend router with **no** matching client, or endpoints a client never calls, is a candidate gap (historic examples, both since fixed: the `api_keys` router shipping with no `apiKeys.ts`; `dbt` landing in the backend enums before the frontend `CONNECTION_TYPES`)."
 }
@@ -567,7 +567,7 @@ id: toolu_01FcpLKfoMcSv4WjS88tX4rn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/.claude/agents/ui-tester.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/.claude/agents/ui-tester.md",
   "old_string": "- **Summary line:** desktop OK/issues, mobile OK/issues, N parity gaps.\n- **Desktop findings** and **Mobile findings**: each with the screen/route, what's wrong (with a repro: viewport + steps), severity (**blocker** = broken/unusable · **major** = degraded but usable · **minor** = cosmetic), and a screenshot reference where you took one. Call out console errors and 4xx/5xx `/api` calls explicitly.",
   "new_string": "- **Summary line:** desktop OK/issues, mobile OK/issues, N parity gaps, N known issues re-confirmed.\n- **Desktop findings** and **Mobile findings**: each with the screen/route, what's wrong (with a repro: viewport + steps + measured numbers where you probed), severity (**blocker** = broken/unusable · **major** = degraded but usable · **minor** = cosmetic), the root-cause `file:line` where found, and a screenshot path where you took one. Call out console errors and 4xx/5xx `/api` calls explicitly. List `known — #N` re-confirmations separately from new findings."
 }
@@ -578,7 +578,7 @@ id: toolu_01FcpLKfoMcSv4WjS88tX4rn
 tool_result
 id: toolu_01AUvew3zpcDroUkReGsBpyx
 ```
-The file /Users/arijit/Coding/Python/DataQ/.claude/agents/ui-tester.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/.claude/agents/ui-tester.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -586,7 +586,7 @@ The file /Users/arijit/Coding/Python/DataQ/.claude/agents/ui-tester.md has been 
 tool_result
 id: toolu_01FcpLKfoMcSv4WjS88tX4rn
 ```
-The file /Users/arijit/Coding/Python/DataQ/.claude/agents/ui-tester.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/.claude/agents/ui-tester.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

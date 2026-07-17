@@ -8,7 +8,7 @@ tool_use Bash
 id: toolu_017jB9sdTmUv1yCP6zJcEtDE
 ```json
 {
-  "command": "ls /home/rob/Documents/openclaw-workspace/ && cat /home/rob/Documents/openclaw-workspace/DAILY-VPS-REPORT-SETUP.md | head -60",
+  "command": "ls /home/<USER>/Documents/openclaw-workspace/ && cat /home/<USER>/Documents/openclaw-workspace/DAILY-VPS-REPORT-SETUP.md | head -60",
   "description": "Check workspace files for VPS connection info"
 }
 ```
@@ -145,7 +145,7 @@ tool_use Bash
 id: toolu_01WC4BzToxoLUAsJ6Dio5Aa8
 ```json
 {
-  "command": "cat /home/rob/.ssh/config 2>/dev/null | head -40",
+  "command": "cat /home/<USER>/.ssh/config 2>/dev/null | head -40",
   "description": "Check SSH config for VPS host"
 }
 ```
@@ -404,7 +404,7 @@ tool_use Bash
 id: toolu_01PKpQWxTQxKbQDSFfYJ5Lx1
 ```json
 {
-  "command": "cat /home/rob/Documents/openclaw-workspace/ANYTYPE_SETUP_VERIFICATION.md | head -80",
+  "command": "cat /home/<USER>/Documents/openclaw-workspace/ANYTYPE_SETUP_VERIFICATION.md | head -80",
   "description": "Read AnyType setup verification doc"
 }
 ```
@@ -485,7 +485,7 @@ Peer ID: REDACTED ✅ MATCHES
 
 ### Account Configuration
 ```
-Location: /home/rob/.var/app/io.anytype.anytype/config/anytype/beta/
+Location: /home/<USER>/.var/app/io.anytype.anytype/config/anytype/beta/
 Account: REDACTED
 Network: REDACTED ✅ CORRECT
 ```

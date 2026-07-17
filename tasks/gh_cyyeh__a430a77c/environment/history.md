@@ -134,7 +134,7 @@ tool_use Bash
 id: toolu_01FSkRVuLav2RBZdULU3Jdnx
 ```json
 {
-  "command": "git add deploy/README.md && git commit -m \"$(cat <<'EOF'\ndocs: remove Docker deployment section from deploy README\n\nFocus deploy guide on Kubernetes only since OpenSandbox now\ntargets K8s pod creation exclusively.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add deploy/README.md && git commit -m \"$(cat <<'EOF'\ndocs: remove Docker deployment section from deploy README\n\nFocus deploy guide on Kubernetes only since OpenSandbox now\ntargets K8s pod creation exclusively.\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Stage and commit deploy/README.md changes"
 }
 ```
@@ -145,9 +145,9 @@ tool_result ERROR
 id: toolu_01FSkRVuLav2RBZdULU3Jdnx
 ```
 Exit code 128
-fatal: Unable to create '/Users/cyyeh/Desktop/duckdb-data-agent/.git/worktrees/opensandbox-integration/index.lock': Operation not permitted
+fatal: Unable to create '/home/<USER>/Desktop/duckdb-data-agent/.git/worktrees/opensandbox-integration/index.lock': Operation not permitted
 
-fatal: Unable to create '/Users/cyyeh/Desktop/duckdb-data-agent/.git/worktrees/opensandbox-integration/index.lock': Operation not permitted
+fatal: Unable to create '/home/<USER>/Desktop/duckdb-data-agent/.git/worktrees/opensandbox-integration/index.lock': Operation not permitted
 ```
 
 > TOOL
@@ -156,7 +156,7 @@ tool_use Bash
 id: toolu_01NEbz554B8Hs8D1pmRFmyh2
 ```json
 {
-  "command": "git add deploy/README.md && git commit -m \"$(cat <<'EOF'\ndocs: remove Docker deployment section from deploy README\n\nFocus deploy guide on Kubernetes only since OpenSandbox now\ntargets K8s pod creation exclusively.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add deploy/README.md && git commit -m \"$(cat <<'EOF'\ndocs: remove Docker deployment section from deploy README\n\nFocus deploy guide on Kubernetes only since OpenSandbox now\ntargets K8s pod creation exclusively.\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Stage and commit deploy/README.md changes",
   "dangerouslyDisableSandbox": true
 }

@@ -19,14 +19,14 @@ I have many posthog errors, here is one such stacktrace:
           "frames": [
             {
               "colno": 30,
-              "filename": "/C:/Users/juan.solorzano/AppData/Roaming/npm/node_modules/@code-insights/cli/server-dist/routes/route-helpers.js",
+              "filename": "/C:/home/<USER>/AppData/Roaming/npm/node_modules/@code-insights/cli/server-dist/routes/route-helpers.js",
               "function": "<anonymous>",
               "in_app": false,
               "lineno": 127
             },
             {
               "colno": 5,
-              "filename": "/C:/Users/juan.solorzano/AppData/Roaming/npm/node_modules/@code-insights/cli/node_modules/hono/dist/helper/streaming/sse.js",
+              "filename": "/C:/home/<USER>/AppData/Roaming/npm/node_modules/@code-insights/cli/node_modules/hono/dist/helper/streaming/sse.js",
               "function": "async run",
               "in_app": false,
               "lineno": 30
@@ -38,7 +38,7 @@ I have many posthog errors, here is one such stacktrace:
       }
     ],
     "$exception_message": "Cannot connect to Ollama at  http://10.10.10.67:11434 — is it running? Start it with: ollama serve",
-    "$exception_stack_trace_raw": "Error: Cannot connect to Ollama at  http://10.10.10.67:11434 — is it running? Start it with: ollama serve\n    at file:///C:/Users/juan.solorzano/AppData/Roaming/npm/node_modules/@code-insights/cli/server-dist/routes/route-helpers.js:127:30\n    at async run (file:///C:/Users/juan.solorzano/AppData/Roaming/npm/node_modules/@code-insights/cli/node_modules/hono/dist/helper/streaming/sse.js:30:5)",
+    "$exception_stack_trace_raw": "Error: Cannot connect to Ollama at  http://10.10.10.67:11434 — is it running? Start it with: ollama serve\n    at file:///C:/home/<USER>/AppData/Roaming/npm/node_modules/@code-insights/cli/server-dist/routes/route-helpers.js:127:30\n    at async run (file:///C:/home/<USER>/AppData/Roaming/npm/node_modules/@code-insights/cli/node_modules/hono/dist/helper/streaming/sse.js:30:5)",
     "$exception_type": "Error",
     "$geoip_disable": true,
     "$ip": "186.4.171.244",
@@ -76,7 +76,7 @@ tool_use Bash
 id: toolu_01Wqct2aVecoNLAxS5wHgS8K
 ```json
 {
-  "command": "find /Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes -name \"route-helpers*\" | head -5",
+  "command": "find /home/<USER>/Workspace/codeInsights/code-insights/server/src/routes -name \"route-helpers*\" | head -5",
   "description": "Find route-helpers source file"
 }
 ```
@@ -87,7 +87,7 @@ tool_use Bash
 id: toolu_017TkirexnbVCNF2it32bQoZ
 ```json
 {
-  "command": "grep -rn \"Cannot connect to Ollama\" /Users/melagiri/Workspace/codeInsights/code-insights --include=\"*.ts\" -l",
+  "command": "grep -rn \"Cannot connect to Ollama\" /home/<USER>/Workspace/codeInsights/code-insights --include=\"*.ts\" -l",
   "description": "Find where Ollama connection error is thrown"
 }
 ```
@@ -97,7 +97,7 @@ id: toolu_017TkirexnbVCNF2it32bQoZ
 tool_result
 id: toolu_01Wqct2aVecoNLAxS5wHgS8K
 ```
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts
 ```
 
 > TOOL
@@ -105,7 +105,7 @@ id: toolu_01Wqct2aVecoNLAxS5wHgS8K
 tool_result
 id: toolu_017TkirexnbVCNF2it32bQoZ
 ```
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts
 ```
 
 > TOOL
@@ -114,7 +114,7 @@ tool_use Read
 id: toolu_014hfSGMX2SUb7qa9aEAD9AJ
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts"
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts"
 }
 ```
 
@@ -124,7 +124,7 @@ tool_use Read
 id: toolu_01E8RpN2YP2v1xFu1Txstsyy
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts"
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts"
 }
 ```
 
@@ -209,7 +209,7 @@ tool_use Bash
 id: toolu_01NkZqg2A4w6hz1EJctX3GDM
 ```json
 {
-  "command": "grep -n \"captureError\\|trackEvent\" /Users/melagiri/Workspace/codeInsights/code-insights/cli/src/utils/telemetry.ts | head -40",
+  "command": "grep -n \"captureError\\|trackEvent\" /home/<USER>/Workspace/codeInsights/code-insights/cli/src/utils/telemetry.ts | head -40",
   "description": "Find captureError and trackEvent definitions in telemetry"
 }
 ```
@@ -232,7 +232,7 @@ tool_use Bash
 id: toolu_01J9GDsMczN3L84kaWGZiCnD
 ```json
 {
-  "command": "grep -n \"ECONNREFUSED\\|fetch\\|TypeError\" /Users/melagiri/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts",
+  "command": "grep -n \"ECONNREFUSED\\|fetch\\|TypeError\" /home/<USER>/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts",
   "description": "Check how Ollama handles connection errors"
 }
 ```
@@ -253,7 +253,7 @@ tool_use Read
 id: toolu_01CxzxZarja3h7dAwzmCQ4Lq
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/utils/telemetry.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/cli/src/utils/telemetry.ts",
   "offset": 185,
   "limit": 80
 }
@@ -316,7 +316,7 @@ tool_use Read
 id: toolu_01KisSGXWEFeedWyWJG7FyvP
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/utils/telemetry.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/cli/src/utils/telemetry.ts",
   "offset": 100,
   "limit": 90
 }
@@ -407,7 +407,7 @@ tool_use Bash
 id: toolu_01Gs9VqGjrTokH2x7EycaosJ
 ```json
 {
-  "command": "grep -rn \"captureError\" /Users/melagiri/Workspace/codeInsights/code-insights --include=\"*.ts\" | grep -v \"node_modules\" | grep -v \"dist/\"",
+  "command": "grep -rn \"captureError\" /home/<USER>/Workspace/codeInsights/code-insights --include=\"*.ts\" | grep -v \"node_modules\" | grep -v \"dist/\"",
   "description": "Find all captureError usages across the codebase"
 }
 ```
@@ -417,34 +417,34 @@ id: toolu_01Gs9VqGjrTokH2x7EycaosJ
 tool_result
 id: toolu_01Gs9VqGjrTokH2x7EycaosJ
 ```
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/telemetry.test.ts:18:  captureError: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts:18:  captureError: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts:4:import { trackEvent, captureError } from '@code-insights/cli/utils/telemetry';
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts:276:    captureError(error, { format, scope, depth, llm_provider: llmConfig?.provider, llm_model: llmConfig?.model });
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts:400:      captureError(err, { format, scope, depth, llm_provider: llmConfig?.provider, llm_model: llmConfig?.model });
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/reflect.test.ts:18:  captureError: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:9:import { trackEvent, captureError } from '@code-insights/cli/utils/telemetry';
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:68: * Emit the 'analysis_run' telemetry event (and captureError on failure) for a
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:100:    captureError(new Error(result.error ?? `${analysisType} analysis failed`), errorProperties);
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:202:        captureError(new Error(result.error ?? `${opts.analysisType} stream failed`), errorProperties);
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:241:      captureError(err, {
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.test.ts:19:  captureError: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/facets.test.ts:18:  captureError: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/utils/telemetry.ts:138: * Used to enrich trackEvent calls and captureError calls with consistent error metadata.
-/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/utils/telemetry.ts:196:export function captureError(error: unknown, properties?: Record<string, unknown>): void {
-/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/commands/dashboard.ts:7:import { trackEvent, identifyUser, captureError, classifyError } from '../utils/telemetry.js';
-/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/commands/dashboard.ts:129:    captureError(err, { command: 'dashboard', error_type });
-/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/commands/install-hook.ts:5:import { trackEvent, captureError, classifyError } from '../utils/telemetry.js';
-/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/commands/install-hook.ts:108:    captureError(error, { command: 'install_hook', error_type });
-/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/commands/status.ts:6:import { trackEvent, captureError, classifyError } from '../utils/telemetry.js';
-/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/commands/status.ts:86:    captureError(error, { command: 'status', error_type });
-/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/commands/__tests__/install-hook.test.ts:10:  captureError: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/commands/reset.ts:7:import { trackEvent, captureError, classifyError } from '../utils/telemetry.js';
-/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/commands/reset.ts:60:      captureError(error, { command: 'reset', error_type });
-/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/commands/init.ts:5:import { trackEvent, captureError, classifyError } from '../utils/telemetry.js';
-/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/commands/init.ts:49:    captureError(error, { command: 'init', error_type });
-/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/commands/sync.ts:7:import { trackEvent, identifyUser, captureError, classifyError } from '../utils/telemetry.js';
-/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/commands/sync.ts:352:    captureError(error, […]
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/telemetry.test.ts:18:  captureError: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts:18:  captureError: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts:4:import { trackEvent, captureError } from '@code-insights/cli/utils/telemetry';
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts:276:    captureError(error, { format, scope, depth, llm_provider: llmConfig?.provider, llm_model: llmConfig?.model });
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts:400:      captureError(err, { format, scope, depth, llm_provider: llmConfig?.provider, llm_model: llmConfig?.model });
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/reflect.test.ts:18:  captureError: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:9:import { trackEvent, captureError } from '@code-insights/cli/utils/telemetry';
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:68: * Emit the 'analysis_run' telemetry event (and captureError on failure) for a
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:100:    captureError(new Error(result.error ?? `${analysisType} analysis failed`), errorProperties);
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:202:        captureError(new Error(result.error ?? `${opts.analysisType} stream failed`), errorProperties);
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:241:      captureError(err, {
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.test.ts:19:  captureError: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/facets.test.ts:18:  captureError: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/cli/src/utils/telemetry.ts:138: * Used to enrich trackEvent calls and captureError calls with consistent error metadata.
+/home/<USER>/Workspace/codeInsights/code-insights/cli/src/utils/telemetry.ts:196:export function captureError(error: unknown, properties?: Record<string, unknown>): void {
+/home/<USER>/Workspace/codeInsights/code-insights/cli/src/commands/dashboard.ts:7:import { trackEvent, identifyUser, captureError, classifyError } from '../utils/telemetry.js';
+/home/<USER>/Workspace/codeInsights/code-insights/cli/src/commands/dashboard.ts:129:    captureError(err, { command: 'dashboard', error_type });
+/home/<USER>/Workspace/codeInsights/code-insights/cli/src/commands/install-hook.ts:5:import { trackEvent, captureError, classifyError } from '../utils/telemetry.js';
+/home/<USER>/Workspace/codeInsights/code-insights/cli/src/commands/install-hook.ts:108:    captureError(error, { command: 'install_hook', error_type });
+/home/<USER>/Workspace/codeInsights/code-insights/cli/src/commands/status.ts:6:import { trackEvent, captureError, classifyError } from '../utils/telemetry.js';
+/home/<USER>/Workspace/codeInsights/code-insights/cli/src/commands/status.ts:86:    captureError(error, { command: 'status', error_type });
+/home/<USER>/Workspace/codeInsights/code-insights/cli/src/commands/__tests__/install-hook.test.ts:10:  captureError: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/cli/src/commands/reset.ts:7:import { trackEvent, captureError, classifyError } from '../utils/telemetry.js';
+/home/<USER>/Workspace/codeInsights/code-insights/cli/src/commands/reset.ts:60:      captureError(error, { command: 'reset', error_type });
+/home/<USER>/Workspace/codeInsights/code-insights/cli/src/commands/init.ts:5:import { trackEvent, captureError, classifyError } from '../utils/telemetry.js';
+/home/<USER>/Workspace/codeInsights/code-insights/cli/src/commands/init.ts:49:    captureError(error, { command: 'init', error_type });
+/home/<USER>/Workspace/codeInsights/code-insights/cli/src/commands/sync.ts:7:import { trackEvent, identifyUser, captureError, classifyError } from '../utils/telemetry.js';
+/home/<USER>/Workspace/codeInsights/code-insights/cli/src/commands/sync.ts:352:    captureError(error, […]
 
 > TOOL
 
@@ -452,7 +452,7 @@ tool_use Bash
 id: toolu_015x4iYtUUhpDtPqwG7ipMPB
 ```json
 {
-  "command": "grep -rn \"trackEvent\\|captureError\" /Users/melagiri/Workspace/codeInsights/code-insights/server/src --include=\"*.ts\" | grep -v \"node_modules\"",
+  "command": "grep -rn \"trackEvent\\|captureError\" /home/<USER>/Workspace/codeInsights/code-insights/server/src --include=\"*.ts\" | grep -v \"node_modules\"",
   "description": "Find all telemetry calls in server routes"
 }
 ```
@@ -462,46 +462,46 @@ id: toolu_015x4iYtUUhpDtPqwG7ipMPB
 tool_result
 id: toolu_015x4iYtUUhpDtPqwG7ipMPB
 ```
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/telemetry.test.ts:17:  trackEvent: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/telemetry.test.ts:18:  captureError: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/messages.test.ts:17:  trackEvent: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/analytics.test.ts:17:  trackEvent: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/insights.test.ts:17:  trackEvent: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/sessions.test.ts:17:  trackEvent: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/reflect.test.ts:17:  trackEvent: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/reflect.test.ts:18:  captureError: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts:4:import { trackEvent, captureError } from '@code-insights/cli/utils/telemetry';
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts:102:  trackEvent('export_run', {
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts:257:    trackEvent('export_run', {
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts:276:    captureError(error, { format, scope, depth, llm_provider: llmConfig?.provider, llm_model: llmConfig?.model });
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts:277:    trackEvent('export_run', {
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts:381:      trackEvent('export_run', {
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts:400:      captureError(err, { format, scope, depth, llm_provider: llmConfig?.provider, llm_model: llmConfig?.model });
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts:401:      trackEvent('export_run', {
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/projects.test.ts:17:  trackEvent: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts:17:  trackEvent: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts:18:  captureError: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.test.ts:18:  trackEvent: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.test.ts:19:  captureError: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/facets.test.ts:17:  trackEvent: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/facets.test.ts:18:  captureError: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:9:import { trackEvent, captureError } from '@code-insights/cli/utils/telemetry';
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:68: * Emit the 'analysis_run' telemetry event (and captureError on failure) for a
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:74: *     onSuccess: () => trackEvent('insight_generated', { type: 'session', count: result.insights.length }),
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:99:    trackEvent('analysis_run', errorProperties);
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:100:    captureError(new Error(result.error ?? `${analysisType} analysis failed`), errorProperties);
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:102:    trackEvent('analysis_run', baseProperties);
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:201:        trackEvent('analysis_run', errorProperties);
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:202:        captureError(new Error(result.error ?? `${opts.analysisType} stream failed`), errorProperties);
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:208:        trackEvent('analysis_run', baseProperties);
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:241:      captureError(err, {
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/config.test.ts:18:  trackEvent: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/analysis.ts:3:import { trackEvent } from '@code-insights/cli/utils/telemetry';
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/analysis.ts:87:      trackEvent('insight_generated', { type: 'session', count: result.insights.length });
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/analysis.ts:123:      trackEvent('insight_generated', { type: 'session', count: result.insights.length });
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/analysis.ts:151:      trackEvent('insight_generated', { type: 'prompt_quality', count: result.insights.length });
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/analysis.ts:182:      trackEvent('insight_generated', { type: 'prompt_quality', count: result.insights.length });
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/analysis.ts:232:      trackEvent('insight_generated', { […]
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/telemetry.test.ts:17:  trackEvent: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/telemetry.test.ts:18:  captureError: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/messages.test.ts:17:  trackEvent: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/analytics.test.ts:17:  trackEvent: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/insights.test.ts:17:  trackEvent: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/sessions.test.ts:17:  trackEvent: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/reflect.test.ts:17:  trackEvent: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/reflect.test.ts:18:  captureError: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts:4:import { trackEvent, captureError } from '@code-insights/cli/utils/telemetry';
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts:102:  trackEvent('export_run', {
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts:257:    trackEvent('export_run', {
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts:276:    captureError(error, { format, scope, depth, llm_provider: llmConfig?.provider, llm_model: llmConfig?.model });
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts:277:    trackEvent('export_run', {
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts:381:      trackEvent('export_run', {
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts:400:      captureError(err, { format, scope, depth, llm_provider: llmConfig?.provider, llm_model: llmConfig?.model });
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts:401:      trackEvent('export_run', {
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/projects.test.ts:17:  trackEvent: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts:17:  trackEvent: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts:18:  captureError: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.test.ts:18:  trackEvent: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.test.ts:19:  captureError: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/facets.test.ts:17:  trackEvent: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/facets.test.ts:18:  captureError: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:9:import { trackEvent, captureError } from '@code-insights/cli/utils/telemetry';
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:68: * Emit the 'analysis_run' telemetry event (and captureError on failure) for a
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:74: *     onSuccess: () => trackEvent('insight_generated', { type: 'session', count: result.insights.length }),
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:99:    trackEvent('analysis_run', errorProperties);
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:100:    captureError(new Error(result.error ?? `${analysisType} analysis failed`), errorProperties);
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:102:    trackEvent('analysis_run', baseProperties);
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:201:        trackEvent('analysis_run', errorProperties);
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:202:        captureError(new Error(result.error ?? `${opts.analysisType} stream failed`), errorProperties);
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:208:        trackEvent('analysis_run', baseProperties);
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:241:      captureError(err, {
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/config.test.ts:18:  trackEvent: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/analysis.ts:3:import { trackEvent } from '@code-insights/cli/utils/telemetry';
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/analysis.ts:87:      trackEvent('insight_generated', { type: 'session', count: result.insights.length });
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/analysis.ts:123:      trackEvent('insight_generated', { type: 'session', count: result.insights.length });
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/analysis.ts:151:      trackEvent('insight_generated', { type: 'prompt_quality', count: result.insights.length });
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/analysis.ts:182:      trackEvent('insight_generated', { type: 'prompt_quality', count: result.insights.length });
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/analysis.ts:232:      trackEvent('insight_generated', { […]
 
 > AGENT
 
@@ -513,7 +513,7 @@ tool_use Read
 id: toolu_013cwxuL374TGCW5puJ1c1yu
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts",
   "offset": "[240, 410]"
 }
 ```
@@ -533,7 +533,7 @@ tool_use Read
 id: toolu_01YBDSMGnrvBxCReiKUGWKmG
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts",
   "offset": 236,
   "limit": 20
 }
@@ -572,7 +572,7 @@ tool_use Read
 id: toolu_01PEJzitppCZjDz3AfoJuFxb
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts",
   "offset": 240,
   "limit": 170
 }
@@ -640,7 +640,7 @@ tool_use Bash
 id: toolu_019v7N6BGHc5s8N8k7umZcBN
 ```json
 {
-  "command": "grep -n \"captureError\\|trackEvent\" /Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/reflect.ts | head -30",
+  "command": "grep -n \"captureError\\|trackEvent\" /home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/reflect.ts | head -30",
   "description": "Check reflect route for captureError patterns"
 }
 ```
@@ -659,7 +659,7 @@ tool_use Bash
 id: toolu_01Lhv9qHStxsus4gUT3trKZ9
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights log --oneline -15 -- server/src/routes/ cli/src/utils/telemetry.ts",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights log --oneline -15 -- server/src/routes/ cli/src/utils/telemetry.ts",
   "description": "Recent commits touching routes and telemetry"
 }
 ```
@@ -692,7 +692,7 @@ tool_use Bash
 id: toolu_015TGa1VXnw42s7BJMotCMi8
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights log --oneline -20 -- server/src/routes/route-helpers.ts",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights log --oneline -20 -- server/src/routes/route-helpers.ts",
   "description": "History of route-helpers specifically"
 }
 ```
@@ -716,7 +716,7 @@ tool_use Bash
 id: toolu_016TxXr7U6Xs8xJPa2m5JS5r
 ```json
 {
-  "command": "grep -n \"captureError\\|trackEvent\" /Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/reflect.ts 2>/dev/null | head -20",
+  "command": "grep -n \"captureError\\|trackEvent\" /home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/reflect.ts 2>/dev/null | head -20",
   "description": "Check reflect.ts for telemetry calls"
 }
 ```
@@ -739,7 +739,7 @@ tool_use Read
 id: toolu_01XqQqzVtioxuQ9NJnZ2bhRK
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts",
   "offset": 90,
   "limit": 50
 }
@@ -824,7 +824,7 @@ tool_use Bash
 id: toolu_01DExrQRLXQg3varSz2AZ78m
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights checkout -b fix/telemetry-captureError-noise",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights checkout -b fix/telemetry-captureError-noise",
   "description": "Create fix branch"
 }
 ```
@@ -852,7 +852,7 @@ id: toolu_01KEp7svzw3L3dkFJySUbbJ4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts",
   "old_string": "  if (!result.success) {\n    const errorProperties: Record<string, unknown> = {\n      ...baseProperties,\n      error_type: result.error_type,\n      error_message: result.error,\n      response_preview: result.response_preview,\n    };\n    trackEvent('analysis_run', errorProperties);\n    captureError(new Error(result.error ?? `${analysisType} analysis failed`), errorProperties);\n  } else {",
   "new_string": "  if (!result.success) {\n    trackEvent('analysis_run', {\n      ...baseProperties,\n      error_type: result.error_type,\n      error_message: result.error,\n      response_preview: result.response_preview,\n    });\n  } else {"
 }
@@ -863,7 +863,7 @@ id: toolu_01KEp7svzw3L3dkFJySUbbJ4
 tool_result
 id: toolu_01KEp7svzw3L3dkFJySUbbJ4
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts has been updated successfully.
 ```
 
 > TOOL
@@ -873,7 +873,7 @@ id: toolu_01J9QSLxfyMHj8N5YXWq9uP6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts",
   "old_string": "      if (!result.success) {\n        const errorProperties: Record<string, unknown> = {\n          ...baseProperties,\n          error_type: result.error_type,\n          error_message: result.error,\n          response_preview: result.response_preview,\n        };\n        trackEvent('analysis_run', errorProperties);\n        captureError(new Error(result.error ?? `${opts.analysisType} stream failed`), errorProperties);\n        await stream.writeSSE({",
   "new_string": "      if (!result.success) {\n        trackEvent('analysis_run', {\n          ...baseProperties,\n          error_type: result.error_type,\n          error_message: result.error,\n          response_preview: result.response_preview,\n        });\n        await stream.writeSSE({"
 }
@@ -884,7 +884,7 @@ id: toolu_01J9QSLxfyMHj8N5YXWq9uP6
 tool_result
 id: toolu_01J9QSLxfyMHj8N5YXWq9uP6
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts has been updated successfully.
 ```
 
 > TOOL
@@ -894,7 +894,7 @@ id: toolu_016oKVnjuHEcSorA7BavCFGr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts",
   "old_string": "      captureError(err, {\n        type: `${telemetryType}_stream`,\n        llm_provider: llmConfig?.provider,\n        llm_model: llmConfig?.model,\n      });",
   "new_string": "      captureError(err, {\n        analysis_type: `${telemetryType}_stream`,\n        llm_provider: llmConfig?.provider,\n        llm_model: llmConfig?.model,\n      });"
 }
@@ -905,7 +905,7 @@ id: toolu_016oKVnjuHEcSorA7BavCFGr
 tool_result
 id: toolu_016oKVnjuHEcSorA7BavCFGr
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts has been updated successfully.
 ```
 
 > AGENT
@@ -919,7 +919,7 @@ id: toolu_01YLRBCi3tMazpm3JbZLXLdN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts",
   "old_string": "    const message = error instanceof Error ? error.message : 'Export generation failed';\n    captureError(error, { format, scope, depth, llm_provider: llmConfig?.provider, llm_model: llmConfig?.model });\n    trackEvent('export_run', {",
   "new_string": "    const message = error instanceof Error ? error.message : 'Export generation failed';\n    trackEvent('export_run', {"
 }
@@ -930,7 +930,7 @@ id: toolu_01YLRBCi3tMazpm3JbZLXLdN
 tool_result
 id: toolu_01YLRBCi3tMazpm3JbZLXLdN
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts has been updated successfully.
 ```
 
 > TOOL
@@ -940,7 +940,7 @@ id: toolu_015B94VgwxKi3jL1bGbjfimr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts",
   "old_string": "      const message = err instanceof Error ? err.message : 'Unknown error';\n      captureError(err, { format, scope, depth, llm_provider: llmConfig?.provider, llm_model: llmConfig?.model });\n      trackEvent('export_run', {",
   "new_string": "      const message = err instanceof Error ? err.message : 'Unknown error';\n      trackEvent('export_run', {"
 }
@@ -951,7 +951,7 @@ id: toolu_015B94VgwxKi3jL1bGbjfimr
 tool_result
 id: toolu_015B94VgwxKi3jL1bGbjfimr
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts has been updated successfully.
 ```
 
 > AGENT
@@ -964,7 +964,7 @@ tool_use Bash
 id: toolu_01FCAPwrQEVKPX6EvumDKwC6
 ```json
 {
-  "command": "grep -n \"captureError\" /Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts",
+  "command": "grep -n \"captureError\" /home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts",
   "description": "Check if captureError is still referenced in export.ts"
 }
 ```
@@ -984,7 +984,7 @@ id: toolu_01Qf3q4SgGVsWds89XPRKLAa
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts",
   "old_string": "import { trackEvent, captureError } from '@code-insights/cli/utils/telemetry';",
   "new_string": "import { trackEvent } from '@code-insights/cli/utils/telemetry';"
 }
@@ -995,7 +995,7 @@ id: toolu_01Qf3q4SgGVsWds89XPRKLAa
 tool_result
 id: toolu_01Qf3q4SgGVsWds89XPRKLAa
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts has been updated successfully.
 ```
 
 > AGENT
@@ -1009,7 +1009,7 @@ id: toolu_01HXTiKXosVsxXMngvBEDDpU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts",
   "old_string": "  const url = baseUrl || DEFAULT_OLLAMA_URL;",
   "new_string": "  const url = (baseUrl || DEFAULT_OLLAMA_URL).trim();"
 }
@@ -1030,7 +1030,7 @@ tool_use Bash
 id: toolu_01DeWkaiNdW8HVmVfdyAbUVM
 ```json
 {
-  "command": "grep -n \"const url = baseUrl\" /Users/melagiri/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts",
+  "command": "grep -n \"const url = baseUrl\" /home/<USER>/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts",
   "description": "Find both occurrences of url assignment"
 }
 ```
@@ -1055,7 +1055,7 @@ id: toolu_01VyUA82yAocjkHAdPYJbKLv
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts",
   "old_string": "  const url = baseUrl || DEFAULT_OLLAMA_URL;",
   "new_string": "  const url = (baseUrl || DEFAULT_OLLAMA_URL).trim();"
 }
@@ -1066,7 +1066,7 @@ id: toolu_01VyUA82yAocjkHAdPYJbKLv
 tool_result
 id: toolu_01VyUA82yAocjkHAdPYJbKLv
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts has been updated. All occurrences were successfully replaced.
+The file /home/<USER>/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts has been updated. All occurrences were successfully replaced.
 ```
 
 > AGENT
@@ -1079,7 +1079,7 @@ tool_use Bash
 id: toolu_014TX4p1YY2jyGbGE18wNsKW
 ```json
 {
-  "command": "grep -n \"captureError\" /Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts",
+  "command": "grep -n \"captureError\" /home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts",
   "description": "Verify captureError still used in route-helpers.ts"
 }
 ```
@@ -1105,7 +1105,7 @@ id: toolu_013YRT1ABdbdtuouuf6UDLG4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts",
   "old_string": " * Emit the 'analysis_run' telemetry event (and captureError on failure) for a",
   "new_string": " * Emit the 'analysis_run' telemetry event for a"
 }
@@ -1116,7 +1116,7 @@ id: toolu_013YRT1ABdbdtuouuf6UDLG4
 tool_result
 id: toolu_013YRT1ABdbdtuouuf6UDLG4
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts has been updated successfully.
 ```
 
 > AGENT
@@ -1143,7 +1143,7 @@ id: toolu_01UC29aiForgKbhJGjcATwnS
 > tsc
 
 
-> @code-insights/dashboard@0.1.0 build /Users/melagiri/Workspace/codeInsights/code-insights/dashboard
+> @code-insights/dashboard@0.1.0 build /home/<USER>/Workspace/codeInsights/code-insights/dashboard
 > vite build
 
 vite v6.4.1 building for production...
@@ -1220,7 +1220,7 @@ tool_use Bash
 id: toolu_018WHhDA6aRPL2LCrGwyZxuf
 ```json
 {
-  "command": "grep -n \"captureError\\|analysis_type\\|type:\" /Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts | grep -v \"analysisType\\|opts\\.analysisType\\|error_type\\|AnalysisOptions\\|interface\\|string\\|Record\"",
+  "command": "grep -n \"captureError\\|analysis_type\\|type:\" /home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts | grep -v \"analysisType\\|opts\\.analysisType\\|error_type\\|AnalysisOptions\\|interface\\|string\\|Record\"",
   "description": "Verify route-helpers changes at a glance"
 }
 ```
@@ -1246,7 +1246,7 @@ tool_use Bash
 id: toolu_014uoiWiTbatgRvk6qVzKsVH
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights diff --stat",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights diff --stat",
   "description": "Show changed files summary"
 }
 ```
@@ -1315,7 +1315,7 @@ tool_use Bash
 id: toolu_01PHcAtebo4JNkz25hDhaNnC
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights push -u origin fix/telemetry-captureError-noise 2>&1",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights push -u origin fix/telemetry-captureError-noise 2>&1",
   "description": "Push branch to remote"
 }
 ```
@@ -1362,7 +1362,7 @@ tool_use Bash
 id: toolu_019bSDyy9afgYMJy7egRHWeP
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights status",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights status",
   "description": "Check working tree status"
 }
 ```
@@ -1373,7 +1373,7 @@ tool_use Bash
 id: toolu_01XQeKAQjfhEfHXDp364igvS
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights diff --stat HEAD",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights diff --stat HEAD",
   "description": "Show what changed vs HEAD"
 }
 ```
@@ -1417,7 +1417,7 @@ tool_use Bash
 id: toolu_01DXWndpb9BJBX3hAKuN7V44
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights add server/src/llm/providers/ollama.ts server/src/routes/export.ts server/src/routes/route-helpers.ts && git -C /Users/melagiri/Workspace/codeInsights/code-insights commit -m \"$(cat <<'EOF'\nfix(telemetry): stop captureError on expected LLM failures, fix PostHog type collision\n\n- Remove captureError from !result.success paths in trackAnalysisResult and\n  streamSessionAnalysis — expected LLM failures (Ollama not running, API auth,\n  model not found) were generating spurious PostHog \\$exception events. The\n  trackEvent('analysis_run') call already captures full context.\n- Rename type -> analysis_type in the catch-block captureError properties to\n  avoid colliding with PostHog's cymbal exception schema ('serde error: missing\n  field type').\n- Remove captureError from export.ts catch blocks wrapping direct client.chat()\n  calls — same signal/noise issue; trackEvent('export_run') is sufficient.\n- Trim Ollama baseUrl in createOllamaClient and discoverOllamaModels to prevent\n  double-space in error messages when users configure a URL with a leading space.\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights add server/src/llm/providers/ollama.ts server/src/routes/export.ts server/src/routes/route-helpers.ts && git -C /home/<USER>/Workspace/codeInsights/code-insights commit -m \"$(cat <<'EOF'\nfix(telemetry): stop captureError on expected LLM failures, fix PostHog type collision\n\n- Remove captureError from !result.success paths in trackAnalysisResult and\n  streamSessionAnalysis — expected LLM failures (Ollama not running, API auth,\n  model not found) were generating spurious PostHog \\$exception events. The\n  trackEvent('analysis_run') call already captures full context.\n- Rename type -> analysis_type in the catch-block captureError properties to\n  avoid colliding with PostHog's cymbal exception schema ('serde error: missing\n  field type').\n- Remove captureError from export.ts catch blocks wrapping direct client.chat()\n  calls — same signal/noise issue; trackEvent('export_run') is sufficient.\n- Trim Ollama baseUrl in createOllamaClient and discoverOllamaModels to prevent\n  double-space in error messages when users configure a URL with a leading space.\n\nCo-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit the telemetry fixes"
 }
 ```
@@ -1437,7 +1437,7 @@ tool_use Bash
 id: toolu_01WdqnGzsasJEkubQRkB5tuf
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights push 2>&1",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights push 2>&1",
   "description": "Push the commit"
 }
 ```
@@ -1574,7 +1574,7 @@ tool_use Read
 id: toolu_01VswbEZpxuWaVFd7UUbXLUh
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/REVIEW-SPECIALISTS.md"
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/REVIEW-SPECIALISTS.md"
 }
 ```
 
@@ -1650,7 +1650,7 @@ id: toolu_01FkAmvJioB61YNSM1ujQwyY
   "description": "Node/CLI Specialist Review — PR #290",
   "subagent_type": "superpowers:code-reviewer",
   "mode": "bypassPermissions",
-  "prompt": "You are a Node/CLI Specialist reviewer for PR #290. This is review ROUND 1.\n\nYour PRIMARY expertise is Node.js patterns, CLI design, async safety, and error handling\nin a Commander.js + ESM + TypeScript + Hono server environment.\nYou ALSO maintain general engineering awareness.\n\nFetch the PR diff: gh pr diff 290\nAlso fetch PR details: gh pr view 290\n\nThe working directory is: /Users/melagiri/Workspace/codeInsights/code-insights\n\nCONTEXT:\nThis PR fixes telemetry noise — `captureError` (which emits PostHog `$exception` events) was being called for expected/handled LLM failures (Ollama not running, API auth errors, model not found). The fix:\n1. Removes `captureError` from `!result.success` paths in `trackAnalysisResult` and `streamSessionAnalysis` in route-helpers.ts\n2. Renames `type` → `analysis_type` in catch-block captureError properties (fixes PostHog cymbal schema collision)\n3. Removes `captureError` from export.ts LLM catch blocks (same signal/noise issue)\n4. Trims `baseUrl` in Ollama provider to handle user-typed URLs with leading spaces\n\nDOMAIN-SPECIFIC CHECKS (80% of your focus):\n- Async patterns: proper await, unhandled rejections, concurrent operation safety\n- File system: path.join (not concat), permissions, symlinks, temp file cleanup\n- Stream handling: backpressure, error propagation, cleanup on abort\n- ESM resolution: .js extensions in imports, no CommonJS require()\n- CLI UX: error messages, exit codes, progress […]
+  "prompt": "You are a Node/CLI Specialist reviewer for PR #290. This is review ROUND 1.\n\nYour PRIMARY expertise is Node.js patterns, CLI design, async safety, and error handling\nin a Commander.js + ESM + TypeScript + Hono server environment.\nYou ALSO maintain general engineering awareness.\n\nFetch the PR diff: gh pr diff 290\nAlso fetch PR details: gh pr view 290\n\nThe working directory is: /home/<USER>/Workspace/codeInsights/code-insights\n\nCONTEXT:\nThis PR fixes telemetry noise — `captureError` (which emits PostHog `$exception` events) was being called for expected/handled LLM failures (Ollama not running, API auth errors, model not found). The fix:\n1. Removes `captureError` from `!result.success` paths in `trackAnalysisResult` and `streamSessionAnalysis` in route-helpers.ts\n2. Renames `type` → `analysis_type` in catch-block captureError properties (fixes PostHog cymbal schema collision)\n3. Removes `captureError` from export.ts LLM catch blocks (same signal/noise issue)\n4. Trims `baseUrl` in Ollama provider to handle user-typed URLs with leading spaces\n\nDOMAIN-SPECIFIC CHECKS (80% of your focus):\n- Async patterns: proper await, unhandled rejections, concurrent operation safety\n- File system: path.join (not concat), permissions, symlinks, temp file cleanup\n- Stream handling: backpressure, error propagation, cleanup on abort\n- ESM resolution: .js extensions in imports, no CommonJS require()\n- CLI UX: error messages, exit codes, progress […]
 
 > TOOL
 
@@ -1674,7 +1674,7 @@ id: toolu_01Hp7B8DyQ5TkuTe1STQMHCu
   "description": "LLM Expert Review — PR #290",
   "subagent_type": "general-purpose",
   "mode": "bypassPermissions",
-  "prompt": "You are performing an independent LLM EXPERT review of PR #290 in the code-insights repo. This is review ROUND 1.\n\nFetch the PR diff using: gh pr diff 290\nAlso fetch the PR details: gh pr view 290\n\nThe working directory is: /Users/melagiri/Workspace/codeInsights/code-insights\n\nCONTEXT:\nThis PR touches `server/src/llm/providers/ollama.ts` — specifically adding `.trim()` to the `baseUrl` in both `createOllamaClient` and `discoverOllamaModels`. The Ollama provider is a local LLM client that calls Ollama's REST API. The trim prevents double-space in error messages when users configure a URL with a leading space.\n\nReview all LLM-related code for:\n- The `.trim()` fix: is it sufficient? Are there other whitespace/normalization issues (trailing slash, trailing whitespace, protocol normalization)?\n- The Ollama provider's error detection heuristic: `cause?.code === 'ECONNREFUSED' || (err instanceof TypeError && err.message.includes('fetch'))` — does this reliably catch all \"Ollama not running\" scenarios across Node versions and OS platforms?\n- Cross-platform behavior: Windows vs Mac/Linux differences in network error codes\n- The `discoverOllamaModels` function uses `AbortSignal.timeout(3000)` — is 3 seconds a reasonable timeout for model discovery?\n- Are there other URL construction sites in the Ollama provider where the untrimmed URL could still cause issues?\n\nAlso review:\n- Prompt quality: […]
+  "prompt": "You are performing an independent LLM EXPERT review of PR #290 in the code-insights repo. This is review ROUND 1.\n\nFetch the PR diff using: gh pr diff 290\nAlso fetch the PR details: gh pr view 290\n\nThe working directory is: /home/<USER>/Workspace/codeInsights/code-insights\n\nCONTEXT:\nThis PR touches `server/src/llm/providers/ollama.ts` — specifically adding `.trim()` to the `baseUrl` in both `createOllamaClient` and `discoverOllamaModels`. The Ollama provider is a local LLM client that calls Ollama's REST API. The trim prevents double-space in error messages when users configure a URL with a leading space.\n\nReview all LLM-related code for:\n- The `.trim()` fix: is it sufficient? Are there other whitespace/normalization issues (trailing slash, trailing whitespace, protocol normalization)?\n- The Ollama provider's error detection heuristic: `cause?.code === 'ECONNREFUSED' || (err instanceof TypeError && err.message.includes('fetch'))` — does this reliably catch all \"Ollama not running\" scenarios across Node versions and OS platforms?\n- Cross-platform behavior: Windows vs Mac/Linux differences in network error codes\n- The `discoverOllamaModels` function uses `AbortSignal.timeout(3000)` — is 3 seconds a reasonable timeout for model discovery?\n- Are there other URL construction sites in the Ollama provider where the untrimmed URL could still cause issues?\n\nAlso review:\n- Prompt quality: […]
 
 > TOOL
 
@@ -1714,7 +1714,7 @@ id: toolu_01FmMGqXMgTBvRnUXYW6geKh
   "description": "TA Synthesis — PR #290 Round 1",
   "subagent_type": "technical-architect",
   "mode": "bypassPermissions",
-  "prompt": "You are performing Phase 2 SYNTHESIS for PR #290. This is review ROUND 1.\n\nFetch the PR diff: gh pr diff 290\nAlso fetch PR details: gh pr view 290\n\nThe working directory is: /Users/melagiri/Workspace/codeInsights/code-insights\n\n---\n\n## Round 1 Review Outputs\n\n### TA Insider (Phase 1) — CHANGES REQUIRED\n\nArchitectural intent is correct. `captureError` removal from `!result.success` paths is right.\n\n**🔴 FIX NOW:** `.trim()` fix is incomplete. Three other sites have the identical bug:\n- `server/src/llm/providers/llamacpp.ts:27` (`createLlamaCppClient`) \n- `server/src/llm/providers/llamacpp.ts:196` (`discoverLlamaCppModels`)\n- `cli/src/analysis/provider-runner.ts:153` (`makeOllamaChat`)\n- `cli/src/analysis/provider-runner.ts:179` (`makeLlamaCppChat`)\nAll four read `baseUrl || DEFAULT_X` without `.trim()`. Same root cause.\n\n**🟡 SUGGESTION:** `type:` in `baseProperties` at route-helpers.ts lines 85 and 185 (regular `trackEvent` calls) is a latent foot-gun; worth a code comment marking it safe-on-trackEvent / unsafe-on-captureError.\n\n**🔵 NOTE:** export.ts loses stack traces for genuinely unexpected non-LLM errors — acceptable trade-off given the over-firing problem.\n\n---\n\n### Node/CLI Specialist — APPROVE\n\n**🔵 NOTE:** llamacpp.ts also missing `.trim()` at the same locations (same finding as TA, flagged as lower priority)\n\n**🟡 SUGGESTION:** Add `expect(captureError).not.toHaveBeenCalled()` assertions to `!result.success` test cases in analysis.test.ts and export.test.ts to codify and prevent regression.\n\n**🔵 NOTE:** `type` → `analysis_type` rename is correct and self-evident.\n\n**🔵 NOTE:** `captureError` import retained in route-helpers.ts […]
+  "prompt": "You are performing Phase 2 SYNTHESIS for PR #290. This is review ROUND 1.\n\nFetch the PR diff: gh pr diff 290\nAlso fetch PR details: gh pr view 290\n\nThe working directory is: /home/<USER>/Workspace/codeInsights/code-insights\n\n---\n\n## Round 1 Review Outputs\n\n### TA Insider (Phase 1) — CHANGES REQUIRED\n\nArchitectural intent is correct. `captureError` removal from `!result.success` paths is right.\n\n**🔴 FIX NOW:** `.trim()` fix is incomplete. Three other sites have the identical bug:\n- `server/src/llm/providers/llamacpp.ts:27` (`createLlamaCppClient`) \n- `server/src/llm/providers/llamacpp.ts:196` (`discoverLlamaCppModels`)\n- `cli/src/analysis/provider-runner.ts:153` (`makeOllamaChat`)\n- `cli/src/analysis/provider-runner.ts:179` (`makeLlamaCppChat`)\nAll four read `baseUrl || DEFAULT_X` without `.trim()`. Same root cause.\n\n**🟡 SUGGESTION:** `type:` in `baseProperties` at route-helpers.ts lines 85 and 185 (regular `trackEvent` calls) is a latent foot-gun; worth a code comment marking it safe-on-trackEvent / unsafe-on-captureError.\n\n**🔵 NOTE:** export.ts loses stack traces for genuinely unexpected non-LLM errors — acceptable trade-off given the over-firing problem.\n\n---\n\n### Node/CLI Specialist — APPROVE\n\n**🔵 NOTE:** llamacpp.ts also missing `.trim()` at the same locations (same finding as TA, flagged as lower priority)\n\n**🟡 SUGGESTION:** Add `expect(captureError).not.toHaveBeenCalled()` assertions to `!result.success` test cases in analysis.test.ts and export.test.ts to codify and prevent regression.\n\n**🔵 NOTE:** `type` → `analysis_type` rename is correct and self-evident.\n\n**🔵 NOTE:** `captureError` import retained in route-helpers.ts […]
 
 > TOOL
 
@@ -1749,7 +1749,7 @@ Dev must deliver:
 
 ### Files referenced
 
-- `/Users/melagiri/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts` (already […]
+- `/home/<USER>/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts` (already […]
 
 > AGENT
 
@@ -1795,7 +1795,7 @@ tool_use Read
 id: toolu_015MyDavuTw6qX3JJFipkG2Y
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/llm/providers/llamacpp.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/llm/providers/llamacpp.ts",
   "offset": 20,
   "limit": 20
 }
@@ -1834,7 +1834,7 @@ tool_use Read
 id: toolu_01Bx3QA7ScUATtU9wMJVkiun
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/llm/providers/llamacpp.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/llm/providers/llamacpp.ts",
   "offset": 190,
   "limit": 15
 }
@@ -1868,7 +1868,7 @@ tool_use Read
 id: toolu_018ARhoEqk77uhVi4aeHESfw
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/analysis/provider-runner.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/cli/src/analysis/provider-runner.ts",
   "offset": 145,
   "limit": 45
 }
@@ -1924,7 +1924,7 @@ tool_use Read
 id: toolu_0192Xw6njYiaUoxKQpuKZYfZ
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts",
   "offset": 1,
   "limit": 50
 }
@@ -1991,7 +1991,7 @@ tool_use Read
 id: toolu_01VWwmEx9QHkB11qJQ1nhst7
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.test.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.test.ts",
   "offset": 1,
   "limit": 50
 }
@@ -2055,7 +2055,7 @@ tool_use Read
 id: toolu_018n4Vfi9Q6CYJtBGLYmRBAe
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts",
   "offset": 80,
   "limit": 30
 }
@@ -2108,7 +2108,7 @@ tool_use Bash
 id: toolu_019znsi9se7mUgXgPjSK1Shc
 ```json
 {
-  "command": "grep -n \"success: false\\|result.success\\|422\\|fails\\|failure\\|error\" /Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts | head -30",
+  "command": "grep -n \"success: false\\|result.success\\|422\\|fails\\|failure\\|error\" /home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts | head -30",
   "description": "Find failure-path test cases in analysis.test.ts"
 }
 ```
@@ -2152,7 +2152,7 @@ tool_use Bash
 id: toolu_01PL1ATqmyzozyH9JCDBwBeU
 ```json
 {
-  "command": "grep -n \"success: false\\|422\\|fails\\|failure\\|error\\|captureError\\|mockChat\" /Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.test.ts | head -30",
+  "command": "grep -n \"success: false\\|422\\|fails\\|failure\\|error\\|captureError\\|mockChat\" /home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.test.ts | head -30",
   "description": "Find failure-path test cases in export.test.ts"
 }
 ```
@@ -2198,7 +2198,7 @@ tool_use Read
 id: toolu_014RBKyx8VraJXpZbzWhNzyL
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts",
   "offset": 155,
   "limit": 50
 }
@@ -2262,7 +2262,7 @@ tool_use Read
 id: toolu_01HDsvp1e1Lc2ZHMGBJPtcLM
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts",
   "offset": 255,
   "limit": 50
 }
@@ -2330,7 +2330,7 @@ tool_use Read
 id: toolu_01Tn2cgfdE5bCVnocMuDTott
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts",
   "offset": 350,
   "limit": 30
 }
@@ -2378,7 +2378,7 @@ tool_use Read
 id: toolu_01CzBzrVkJRs9mCM3PR1Q4DD
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.test.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.test.ts",
   "offset": 388,
   "limit": 35
 }
@@ -2432,7 +2432,7 @@ tool_use Bash
 id: toolu_01LYz8spag7wbB5yFKY6XSi7
 ```json
 {
-  "command": "grep -n \"import\\|captureError\\|{ captureError\" /Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts | head -15",
+  "command": "grep -n \"import\\|captureError\\|{ captureError\" /home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts | head -15",
   "description": "Check how captureError mock is accessible in analysis.test.ts"
 }
 ```
@@ -2455,7 +2455,7 @@ tool_use Read
 id: toolu_01GEHZs7dXY8PDd5FFecBsDu
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts",
   "offset": 60,
   "limit": 40
 }
@@ -2514,7 +2514,7 @@ tool_use Read
 id: toolu_01K2BTbEgGv3ao95cq1pB6Zh
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.test.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.test.ts",
   "offset": 85,
   "limit": 20
 }
@@ -2562,7 +2562,7 @@ id: toolu_01WdLGGZXBzZEFyFFHEcN4ZS
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts",
   "old_string": "  const url = (baseUrl || DEFAULT_OLLAMA_URL).trim();",
   "new_string": "  const url = (baseUrl || DEFAULT_OLLAMA_URL).trim().replace(/\\/$/, '');"
 }
@@ -2573,7 +2573,7 @@ id: toolu_01WdLGGZXBzZEFyFFHEcN4ZS
 tool_result
 id: toolu_01WdLGGZXBzZEFyFFHEcN4ZS
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts has been updated. All occurrences were successfully replaced.
+The file /home/<USER>/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts has been updated. All occurrences were successfully replaced.
 ```
 
 > TOOL
@@ -2583,7 +2583,7 @@ id: toolu_01NR1SpByk3rxu8C2C2PE4mQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/llm/providers/llamacpp.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/llm/providers/llamacpp.ts",
   "old_string": "export function createLlamaCppClient(model: string, baseUrl?: string): LLMClient {\n  const url = baseUrl || DEFAULT_LLAMACPP_URL;",
   "new_string": "export function createLlamaCppClient(model: string, baseUrl?: string): LLMClient {\n  const url = (baseUrl || DEFAULT_LLAMACPP_URL).trim().replace(/\\/$/, '');"
 }
@@ -2594,7 +2594,7 @@ id: toolu_01NR1SpByk3rxu8C2C2PE4mQ
 tool_result
 id: toolu_01NR1SpByk3rxu8C2C2PE4mQ
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/server/src/llm/providers/llamacpp.ts has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/server/src/llm/providers/llamacpp.ts has been updated successfully.
 ```
 
 > TOOL
@@ -2604,7 +2604,7 @@ id: toolu_01CM5BeyWevbcMdX6QU9TMsB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/llm/providers/llamacpp.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/llm/providers/llamacpp.ts",
   "old_string": "export async function discoverLlamaCppModels(\n  baseUrl?: string\n): Promise<Array<{ id: string; object: string }>> {\n  const url = baseUrl || DEFAULT_LLAMACPP_URL;",
   "new_string": "export async function discoverLlamaCppModels(\n  baseUrl?: string\n): Promise<Array<{ id: string; object: string }>> {\n  const url = (baseUrl || DEFAULT_LLAMACPP_URL).trim().replace(/\\/$/, '');"
 }
@@ -2615,7 +2615,7 @@ id: toolu_01CM5BeyWevbcMdX6QU9TMsB
 tool_result
 id: toolu_01CM5BeyWevbcMdX6QU9TMsB
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/server/src/llm/providers/llamacpp.ts has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/server/src/llm/providers/llamacpp.ts has been updated successfully.
 ```
 
 > TOOL
@@ -2625,7 +2625,7 @@ id: toolu_01UtWjSS2Z3T5RSirCaAZcwc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/analysis/provider-runner.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/cli/src/analysis/provider-runner.ts",
   "old_string": "function makeOllamaChat(model: string, baseUrl?: string): LLMChatFn {\n  const url = baseUrl || 'http://localhost:11434';",
   "new_string": "function makeOllamaChat(model: string, baseUrl?: string): LLMChatFn {\n  const url = (baseUrl || 'http://localhost:11434').trim().replace(/\\/$/, '');"
 }
@@ -2636,7 +2636,7 @@ id: toolu_01UtWjSS2Z3T5RSirCaAZcwc
 tool_result
 id: toolu_01UtWjSS2Z3T5RSirCaAZcwc
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/cli/src/analysis/provider-runner.ts has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/cli/src/analysis/provider-runner.ts has been updated successfully.
 ```
 
 > TOOL
@@ -2646,7 +2646,7 @@ id: toolu_01D9fiReiLSrpwjgBMvM7asK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/analysis/provider-runner.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/cli/src/analysis/provider-runner.ts",
   "old_string": "function makeLlamaCppChat(model: string, baseUrl?: string): LLMChatFn {\n  // Use 0.3 temperature — small quantized models produce more consistent structured JSON\n  // output at lower temperatures (LLM Expert requirement).\n  const url = baseUrl || 'http://localhost:8080';",
   "new_string": "function makeLlamaCppChat(model: string, baseUrl?: string): LLMChatFn {\n  // Use 0.3 temperature — small quantized models produce more consistent structured JSON\n  // output at lower temperatures (LLM Expert requirement).\n  const url = (baseUrl || 'http://localhost:8080').trim().replace(/\\/$/, '');"
 }
@@ -2657,7 +2657,7 @@ id: toolu_01D9fiReiLSrpwjgBMvM7asK
 tool_result
 id: toolu_01D9fiReiLSrpwjgBMvM7asK
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/cli/src/analysis/provider-runner.ts has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/cli/src/analysis/provider-runner.ts has been updated successfully.
 ```
 
 > AGENT
@@ -2671,7 +2671,7 @@ id: toolu_019axS5qAxzPnjW1Y5JJWbaw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts",
   "old_string": "  const baseProperties: Record<string, unknown> = {\n    type: analysisType,\n    llm_provider: llmConfig?.provider,\n    llm_model: llmConfig?.model,\n    duration_ms: Date.now() - startTime,\n    success: result.success,\n  };\n\n  if (!result.success) {\n    trackEvent('analysis_run', {",
   "new_string": "  const baseProperties: Record<string, unknown> = {\n    // 'type' is safe here — only flows to trackEvent, never to captureError (which has a\n    // PostHog schema collision with that key). Keep it out of any captureError call sites.\n    type: analysisType,\n    llm_provider: llmConfig?.provider,\n    llm_model: llmConfig?.model,\n    duration_ms: Date.now() - startTime,\n    success: result.success,\n  };\n\n  if (!result.success) {\n    trackEvent('analysis_run', {"
 }
@@ -2682,7 +2682,7 @@ id: toolu_019axS5qAxzPnjW1Y5JJWbaw
 tool_result
 id: toolu_019axS5qAxzPnjW1Y5JJWbaw
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts has been updated successfully.
 ```
 
 > AGENT
@@ -2695,7 +2695,7 @@ tool_use Read
 id: toolu_01Sb2VdDqjr3SABGgDTdEXaB
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts",
   "offset": 183,
   "limit": 20
 }
@@ -2735,7 +2735,7 @@ id: toolu_01JzWJeCEnXoc75uVWmVtqWe
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts",
   "old_string": "      const baseProperties: Record<string, unknown> = {\n        type: opts.analysisType,\n        llm_provider: llmConfig?.provider,\n        llm_model: llmConfig?.model,\n        duration_ms: Date.now() - streamStart,\n        success: result.success,\n      };\n\n      if (!result.success) {\n        trackEvent('analysis_run', {",
   "new_string": "      const baseProperties: Record<string, unknown> = {\n        // 'type' is safe here — only flows to trackEvent, never to captureError (which has a\n        // PostHog schema collision with that key). Keep it out of any captureError call sites.\n        type: opts.analysisType,\n        llm_provider: llmConfig?.provider,\n        llm_model: llmConfig?.model,\n        duration_ms: Date.now() - streamStart,\n        success: result.success,\n      };\n\n      if (!result.success) {\n        trackEvent('analysis_run', {"
 }
@@ -2746,7 +2746,7 @@ id: toolu_01JzWJeCEnXoc75uVWmVtqWe
 tool_result
 id: toolu_01JzWJeCEnXoc75uVWmVtqWe
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts has been updated successfully.
 ```
 
 > AGENT
@@ -2760,7 +2760,7 @@ id: toolu_01S5Q94uT3PeXqRu7UYgvyZ4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts",
   "old_string": "vi.mock('@code-insights/cli/utils/telemetry', () => ({\n  trackEvent: vi.fn(),\n  captureError: vi.fn(),\n  isTelemetryEnabled: () => false,\n  getStableMachineId: () => 'test-id',\n}));",
   "new_string": "const mockCaptureError = vi.fn();\n\nvi.mock('@code-insights/cli/utils/telemetry', () => ({\n  trackEvent: vi.fn(),\n  captureError: mockCaptureError,\n  isTelemetryEnabled: () => false,\n  getStableMachineId: () => 'test-id',\n}));"
 }
@@ -2771,7 +2771,7 @@ id: toolu_01S5Q94uT3PeXqRu7UYgvyZ4
 tool_result
 id: toolu_01S5Q94uT3PeXqRu7UYgvyZ4
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts has been updated successfully.
 ```
 
 > TOOL
@@ -2781,7 +2781,7 @@ id: toolu_01D5VGeA2fszbhEr1WUyDNqH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts",
   "old_string": "  beforeEach(() => {\n    testDb = initTestDb();\n    mockIsLLMConfigured.mockReturnValue(false);\n    mockAnalyzeSession.mockReset();\n    mockAnalyzePromptQuality.mockReset();\n    mockFindRecurringInsights.mockReset();\n    mockLoadLLMConfig.mockReset();\n    mockLoadLLMConfig.mockReturnValue({ provider: 'openai', model: 'gpt-4o' });\n  });",
   "new_string": "  beforeEach(() => {\n    testDb = initTestDb();\n    mockIsLLMConfigured.mockReturnValue(false);\n    mockAnalyzeSession.mockReset();\n    mockAnalyzePromptQuality.mockReset();\n    mockFindRecurringInsights.mockReset();\n    mockLoadLLMConfig.mockReset();\n    mockLoadLLMConfig.mockReturnValue({ provider: 'openai', model: 'gpt-4o' });\n    mockCaptureError.mockReset();\n  });"
 }
@@ -2792,7 +2792,7 @@ id: toolu_01D5VGeA2fszbhEr1WUyDNqH
 tool_result
 id: toolu_01D5VGeA2fszbhEr1WUyDNqH
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts has been updated successfully.
 ```
 
 > AGENT
@@ -2806,7 +2806,7 @@ id: toolu_01YWWLS7E7rws3SgepY39kwH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts",
   "old_string": "    it('returns 422 when analysis fails', async () => {\n      seedProject('proj-1', 'myproject');\n      seedSession('sess-1', 'proj-1');\n      mockIsLLMConfigured.mockReturnValue(true);\n      mockAnalyzeSession.mockResolvedValue({\n        success: false,\n        error: 'parse error',\n        error_type: 'json_parse_error',\n      });\n      const app = createApp();\n      const res = await app.request('/api/analysis/session', {\n        method: 'POST',\n        headers: { 'Content-Type': 'application/json' },\n        body: JSON.stringify({ sessionId: 'sess-1' }),\n      });\n      expect(res.status).toBe(422);\n      const body = await res.json();\n      expect(body.success).toBe(false);\n    });",
   "new_string": "    it('returns 422 when analysis fails', async () => {\n      seedProject('proj-1', 'myproject');\n      seedSession('sess-1', 'proj-1');\n      mockIsLLMConfigured.mockReturnValue(true);\n      mockAnalyzeSession.mockResolvedValue({\n        success: false,\n        error: 'parse error',\n        error_type: 'json_parse_error',\n      });\n      const app = createApp();\n      const res = await app.request('/api/analysis/session', {\n        method: 'POST',\n        headers: { 'Content-Type': 'application/json' },\n        body: JSON.stringify({ sessionId: 'sess-1' }),\n      });\n      expect(res.status).toBe(422);\n      const body = await res.json();\n      expect(body.success).toBe(false);\n      expect(mockCaptureError).not.toHaveBeenCalled();\n    });"
 }
@@ -2817,7 +2817,7 @@ id: toolu_01YWWLS7E7rws3SgepY39kwH
 tool_result
 id: toolu_01YWWLS7E7rws3SgepY39kwH
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts has been updated successfully.
 ```
 
 > TOOL
@@ -2827,7 +2827,7 @@ id: toolu_01CpU1f9pSPDVTYgG3tCMxw1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts",
   "old_string": "    it('returns 422 when analysis fails', async () => {\n      seedProject('proj-1', 'myproject');\n      seedSession('sess-1', 'proj-1');\n      mockIsLLMConfigured.mockReturnValue(true);\n      mockAnalyzePromptQuality.mockResolvedValue({\n        success: false,\n        error: 'LLM error',\n        error_type: 'api_error',\n      });\n      const app = createApp();\n      const res = await app.request('/api/analysis/prompt-quality', {\n        method: 'POST',\n        headers: { 'Content-Type': 'application/json' },\n        body: JSON.stringify({ sessionId: 'sess-1' }),\n      });\n      expect(res.status).toBe(422);\n      const body = await res.json();\n      expect(body.success).toBe(false);\n    });",
   "new_string": "    it('returns 422 when analysis fails', async () => {\n      seedProject('proj-1', 'myproject');\n      seedSession('sess-1', 'proj-1');\n      mockIsLLMConfigured.mockReturnValue(true);\n      mockAnalyzePromptQuality.mockResolvedValue({\n        success: false,\n        error: 'LLM error',\n        error_type: 'api_error',\n      });\n      const app = createApp();\n      const res = await app.request('/api/analysis/prompt-quality', {\n        method: 'POST',\n        headers: { 'Content-Type': 'application/json' },\n        body: JSON.stringify({ sessionId: 'sess-1' }),\n      });\n      expect(res.status).toBe(422);\n      const body = await res.json();\n      expect(body.success).toBe(false);\n      expect(mockCaptureError).not.toHaveBeenCalled();\n    });"
 }
@@ -2838,7 +2838,7 @@ id: toolu_01CpU1f9pSPDVTYgG3tCMxw1
 tool_result
 id: toolu_01CpU1f9pSPDVTYgG3tCMxw1
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts has been updated successfully.
 ```
 
 > TOOL
@@ -2848,7 +2848,7 @@ id: toolu_01PTADVgksJuZ85hQnyYFeGU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts",
   "old_string": "    it('returns 422 when recurring analysis fails', async () => {\n      mockIsLLMConfigured.mockReturnValue(true);\n      mockFindRecurringInsights.mockResolvedValue({\n        success: false,\n        error: 'LLM error',\n      });\n      const app = createApp();\n      const res = await app.request('/api/analysis/recurring', {\n        method: 'POST',\n        headers: { 'Content-Type': 'application/json' },\n        body: JSON.stringify({}),\n      });\n      expect(res.status).toBe(422);\n      const body = await res.json();\n      expect(body.success).toBe(false);\n    });",
   "new_string": "    it('returns 422 when recurring analysis fails', async () => {\n      mockIsLLMConfigured.mockReturnValue(true);\n      mockFindRecurringInsights.mockResolvedValue({\n        success: false,\n        error: 'LLM error',\n      });\n      const app = createApp();\n      const res = await app.request('/api/analysis/recurring', {\n        method: 'POST',\n        headers: { 'Content-Type': 'application/json' },\n        body: JSON.stringify({}),\n      });\n      expect(res.status).toBe(422);\n      const body = await res.json();\n      expect(body.success).toBe(false);\n      expect(mockCaptureError).not.toHaveBeenCalled();\n    });"
 }
@@ -2859,7 +2859,7 @@ id: toolu_01PTADVgksJuZ85hQnyYFeGU
 tool_result
 id: toolu_01PTADVgksJuZ85hQnyYFeGU
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts has been updated successfully.
 ```
 
 > AGENT
@@ -2873,7 +2873,7 @@ id: toolu_01C1WwwdLgARrnvFxwS6gJXL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.test.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.test.ts",
   "old_string": "vi.mock('@code-insights/cli/utils/telemetry', () => ({\n  trackEvent: vi.fn(),\n  captureError: vi.fn(),\n}));",
   "new_string": "const mockCaptureError = vi.fn();\n\nvi.mock('@code-insights/cli/utils/telemetry', () => ({\n  trackEvent: vi.fn(),\n  captureError: mockCaptureError,\n}));"
 }
@@ -2884,7 +2884,7 @@ id: toolu_01C1WwwdLgARrnvFxwS6gJXL
 tool_result
 id: toolu_01C1WwwdLgARrnvFxwS6gJXL
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.test.ts has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.test.ts has been updated successfully.
 ```
 
 > TOOL
@@ -2894,7 +2894,7 @@ id: toolu_01D8imrDkUuzCJNaWfCfRiy6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.test.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.test.ts",
   "old_string": "  beforeEach(() => {\n    testDb = initTestDb();\n    mockIsLLMConfigured.mockReturnValue(false);\n    mockChat.mockReset();\n    mockLoadLLMConfig.mockReturnValue({ provider: 'openai', model: 'gpt-4o' });\n  });",
   "new_string": "  beforeEach(() => {\n    testDb = initTestDb();\n    mockIsLLMConfigured.mockReturnValue(false);\n    mockChat.mockReset();\n    mockCaptureError.mockReset();\n    mockLoadLLMConfig.mockReturnValue({ provider: 'openai', model: 'gpt-4o' });\n  });"
 }
@@ -2905,7 +2905,7 @@ id: toolu_01D8imrDkUuzCJNaWfCfRiy6
 tool_result
 id: toolu_01D8imrDkUuzCJNaWfCfRiy6
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.test.ts has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.test.ts has been updated successfully.
 ```
 
 > TOOL
@@ -2915,7 +2915,7 @@ id: toolu_01SFRBcmwt7evaeZ4346Ky7h
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.test.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.test.ts",
   "old_string": "    it('returns 422 when LLM throws an error', async () => {\n      seedProjectAndSession('proj-1', 'sess-1');\n      seedInsight('sess-1', 'proj-1', 'decision', 'Some decision', 'Content.', {});\n\n      mockIsLLMConfigured.mockReturnValue(true);\n      mockChat.mockRejectedValue(new Error('API rate limit'));\n\n      const app = createApp();\n      const res = await app.request('/api/export/generate', {\n        method: 'POST',\n        headers: { 'Content-Type': 'application/json' },\n        body: JSON.stringify({ scope: 'all', format: 'knowledge-brief' }),\n      });\n      expect(res.status).toBe(422);\n      const body = await res.json();\n      expect(body.error).toContain('API rate limit');\n    });",
   "new_string": "    it('returns 422 when LLM throws an error', async () => {\n      seedProjectAndSession('proj-1', 'sess-1');\n      seedInsight('sess-1', 'proj-1', 'decision', 'Some decision', 'Content.', {});\n\n      mockIsLLMConfigured.mockReturnValue(true);\n      mockChat.mockRejectedValue(new Error('API rate limit'));\n\n      const app = createApp();\n      const res = await app.request('/api/export/generate', {\n        method: 'POST',\n        headers: { 'Content-Type': 'application/json' },\n        body: JSON.stringify({ scope: 'all', format: 'knowledge-brief' }),\n      });\n      expect(res.status).toBe(422);\n      const body = await res.json();\n      expect(body.error).toContain('API rate limit');\n      expect(mockCaptureError).not.toHaveBeenCalled();\n    });"
 }
@@ -2926,7 +2926,7 @@ id: toolu_01SFRBcmwt7evaeZ4346Ky7h
 tool_result
 id: toolu_01SFRBcmwt7evaeZ4346Ky7h
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.test.ts has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.test.ts has been updated successfully.
 ```
 
 > AGENT
@@ -2939,7 +2939,7 @@ tool_use Read
 id: toolu_01MaF8RqcKJoqEDPNLTedPdD
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/analysis/provider-runner.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/cli/src/analysis/provider-runner.ts",
   "offset": 152,
   "limit": 30
 }
@@ -2992,7 +2992,7 @@ tool_use Read
 id: toolu_01TsMfjpuWu2QjvqJGtSUvkx
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts",
   "offset": 29,
   "limit": 12
 }
@@ -3024,7 +3024,7 @@ id: toolu_01SSGHAyQj9rJtNnjiRz2SnG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts",
   "old_string": "      } catch (err) {\n        // Network-level failure — Ollama is likely not running\n        const cause = (err as { cause?: { code?: string } })?.cause;\n        if (cause?.code === 'ECONNREFUSED' || (err instanceof TypeError && err.message.includes('fetch'))) {\n          throw new Error(`Cannot connect to Ollama at ${url} — is it running? Start it with: ollama serve`);\n        }\n        throw err;\n      }",
   "new_string": "      } catch (err) {\n        // Network-level failure — Ollama is likely not running.\n        // On macOS/Linux, Node's undici surfaces ECONNREFUSED via err.cause.code.\n        // On Windows, undici may wrap it in an AggregateError, making cause.code undefined —\n        // the TypeError fallback ('fetch failed') handles that case.\n        const cause = (err as { cause?: { code?: string } })?.cause;\n        if (cause?.code === 'ECONNREFUSED' || (err instanceof TypeError && err.message.includes('fetch'))) {\n          throw new Error(`Cannot connect to Ollama at ${url} — is it running? Start it with: ollama serve`);\n        }\n        throw err;\n      }"
 }
@@ -3035,7 +3035,7 @@ id: toolu_01SSGHAyQj9rJtNnjiRz2SnG
 tool_result
 id: toolu_01SSGHAyQj9rJtNnjiRz2SnG
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts has been updated successfully.
 ```
 
 > AGENT
@@ -3123,7 +3123,7 @@ tool_use Bash
 id: toolu_01EWN5gyvurpAREFaHr42Rd8
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights add \\\n  server/src/llm/providers/ollama.ts \\\n  server/src/llm/providers/llamacpp.ts \\\n  cli/src/analysis/provider-runner.ts \\\n  server/src/routes/route-helpers.ts \\\n  server/src/routes/analysis.test.ts \\\n  server/src/routes/export.test.ts && \\\ngit -C /Users/melagiri/Workspace/codeInsights/code-insights commit -m \"$(cat <<'EOF'\nfix(telemetry): address Round 1 review — complete baseUrl normalization + regression tests\n\n- Apply .trim().replace(/\\/$/, '') to all 6 baseUrl sites (ollama.ts x2, llamacpp.ts x2,\n  provider-runner.ts x2) — Round 1 only fixed ollama.ts, leaving identical bugs in the\n  llamacpp provider and CLI analysis runner\n- Add captureError behavioral contract assertions to analysis.test.ts (3 tests) and\n  export.test.ts (1 test): expect(mockCaptureError).not.toHaveBeenCalled() on all\n  !result.success paths — prevents silent regression if captureError is re-added\n- Add code comment on baseProperties.type in route-helpers.ts (both trackAnalysisResult\n  and streamSessionAnalysis) explaining why 'type' is safe for trackEvent but must not\n  flow to captureError\n- Document Windows AggregateError caveat in ollama.ts error detection heuristic\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>\nEOF\n)\" && git -C /Users/melagiri/Workspace/codeInsights/code-insights push",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights add \\\n  server/src/llm/providers/ollama.ts \\\n  server/src/llm/providers/llamacpp.ts \\\n  cli/src/analysis/provider-runner.ts \\\n  server/src/routes/route-helpers.ts \\\n  server/src/routes/analysis.test.ts \\\n  server/src/routes/export.test.ts && \\\ngit -C /home/<USER>/Workspace/codeInsights/code-insights commit -m \"$(cat <<'EOF'\nfix(telemetry): address Round 1 review — complete baseUrl normalization + regression tests\n\n- Apply .trim().replace(/\\/$/, '') to all 6 baseUrl sites (ollama.ts x2, llamacpp.ts x2,\n  provider-runner.ts x2) — Round 1 only fixed ollama.ts, leaving identical bugs in the\n  llamacpp provider and CLI analysis runner\n- Add captureError behavioral contract assertions to analysis.test.ts (3 tests) and\n  export.test.ts (1 test): expect(mockCaptureError).not.toHaveBeenCalled() on all\n  !result.success paths — prevents silent regression if captureError is re-added\n- Add code comment on baseProperties.type in route-helpers.ts (both trackAnalysisResult\n  and streamSessionAnalysis) explaining why 'type' is safe for trackEvent but must not\n  flow to captureError\n- Document Windows AggregateError caveat in ollama.ts error detection heuristic\n\nCo-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>\nEOF\n)\" && git -C /home/<USER>/Workspace/codeInsights/code-insights push",
   "description": "Commit and push Round 2 fixes"
 }
 ```
@@ -3153,7 +3153,7 @@ id: toolu_01Bn64jkK53Uep4TgiPc6M2F
   "description": "TA Insider Review — PR #290 Round 2",
   "subagent_type": "technical-architect",
   "mode": "bypassPermissions",
-  "prompt": "You are performing a Phase 1 INSIDER review of PR #290 in the code-insights repo. This is review ROUND 2.\n\nFetch the PR diff using: gh pr diff 290\nAlso fetch the PR details: gh pr view 290\n\nThe working directory is: /Users/melagiri/Workspace/codeInsights/code-insights\n\nROUND 2 FOCUS — verify fixes for these specific Round 1 FIX NOW items:\n\n1. **baseUrl normalization completeness** — Round 1 found that .trim() was applied only to ollama.ts but missed 4 other sites. The fix should now apply `.trim().replace(/\\/$/, '')` to ALL 6 baseUrl sites:\n   - `server/src/llm/providers/ollama.ts:9` (createOllamaClient)\n   - `server/src/llm/providers/ollama.ts:83` (discoverOllamaModels)\n   - `server/src/llm/providers/llamacpp.ts:27` (createLlamaCppClient)\n   - `server/src/llm/providers/llamacpp.ts:196` (discoverLlamaCppModels)\n   - `cli/src/analysis/provider-runner.ts:153` (makeOllamaChat)\n   - `cli/src/analysis/provider-runner.ts:179` (makeLlamaCppChat)\n\n2. **Regression test assertions** — `expect(mockCaptureError).not.toHaveBeenCalled()` should be present in:\n   - `server/src/routes/analysis.test.ts` — 3 failure-path tests (session, prompt-quality, recurring)\n   - `server/src/routes/export.test.ts` — the \"returns 422 when LLM throws an error\" test\n\n3. **`type` footgun comment** — baseProperties.type in route-helpers.ts should have a comment explaining it's safe for trackEvent but must not flow to captureError.\n\nAlso check: did the fixes introduce any new issues? Are there any other baseUrl sites in the codebase that were missed?\n\nOutput:\n## TA Review (Phase 1 - Insider): […]
+  "prompt": "You are performing a Phase 1 INSIDER review of PR #290 in the code-insights repo. This is review ROUND 2.\n\nFetch the PR diff using: gh pr diff 290\nAlso fetch the PR details: gh pr view 290\n\nThe working directory is: /home/<USER>/Workspace/codeInsights/code-insights\n\nROUND 2 FOCUS — verify fixes for these specific Round 1 FIX NOW items:\n\n1. **baseUrl normalization completeness** — Round 1 found that .trim() was applied only to ollama.ts but missed 4 other sites. The fix should now apply `.trim().replace(/\\/$/, '')` to ALL 6 baseUrl sites:\n   - `server/src/llm/providers/ollama.ts:9` (createOllamaClient)\n   - `server/src/llm/providers/ollama.ts:83` (discoverOllamaModels)\n   - `server/src/llm/providers/llamacpp.ts:27` (createLlamaCppClient)\n   - `server/src/llm/providers/llamacpp.ts:196` (discoverLlamaCppModels)\n   - `cli/src/analysis/provider-runner.ts:153` (makeOllamaChat)\n   - `cli/src/analysis/provider-runner.ts:179` (makeLlamaCppChat)\n\n2. **Regression test assertions** — `expect(mockCaptureError).not.toHaveBeenCalled()` should be present in:\n   - `server/src/routes/analysis.test.ts` — 3 failure-path tests (session, prompt-quality, recurring)\n   - `server/src/routes/export.test.ts` — the \"returns 422 when LLM throws an error\" test\n\n3. **`type` footgun comment** — baseProperties.type in route-helpers.ts should have a comment explaining it's safe for trackEvent but must not flow to captureError.\n\nAlso check: did the fixes introduce any new issues? Are there any other baseUrl sites in the codebase that were missed?\n\nOutput:\n## TA Review (Phase 1 - Insider): […]
 
 > TOOL
 
@@ -3177,7 +3177,7 @@ id: toolu_01P2zPb9GDxUWBqrnRP1YzQ5
   "description": "LLM Expert Review — PR #290 Round 2",
   "subagent_type": "general-purpose",
   "mode": "bypassPermissions",
-  "prompt": "You are performing an independent LLM EXPERT review of PR #290 in the code-insights repo. This is review ROUND 2.\n\nFetch the PR diff using: gh pr diff 290\nAlso fetch the PR details: gh pr view 290\n\nThe working directory is: /Users/melagiri/Workspace/codeInsights/code-insights\n\nROUND 2 FOCUS — verify the fix for your Round 1 VERIFY AT RUNTIME item and your trailing slash suggestion:\n\n1. **Windows AggregateError VERIFY AT RUNTIME** — You flagged that on Windows, undici may wrap ECONNREFUSED in an AggregateError, making `err.cause.code` undefined and bypassing the friendly error message. The dev has addressed this by adding a code comment in `ollama.ts` documenting the Windows caveat and explaining that the `TypeError` fallback handles the AggregateError case. Evaluate whether:\n   - The comment accurately describes the behavior\n   - The existing `TypeError + err.message.includes('fetch')` fallback is actually sufficient for Windows (reason through undici's behavior: when undici wraps in AggregateError, what is `err` at the catch site — is the outer error a TypeError with message 'fetch failed'?)\n   - Whether this documentation-only resolution is acceptable OR if actual code change is needed\n\n2. **Trailing slash normalization** — You suggested […]
+  "prompt": "You are performing an independent LLM EXPERT review of PR #290 in the code-insights repo. This is review ROUND 2.\n\nFetch the PR diff using: gh pr diff 290\nAlso fetch the PR details: gh pr view 290\n\nThe working directory is: /home/<USER>/Workspace/codeInsights/code-insights\n\nROUND 2 FOCUS — verify the fix for your Round 1 VERIFY AT RUNTIME item and your trailing slash suggestion:\n\n1. **Windows AggregateError VERIFY AT RUNTIME** — You flagged that on Windows, undici may wrap ECONNREFUSED in an AggregateError, making `err.cause.code` undefined and bypassing the friendly error message. The dev has addressed this by adding a code comment in `ollama.ts` documenting the Windows caveat and explaining that the `TypeError` fallback handles the AggregateError case. Evaluate whether:\n   - The comment accurately describes the behavior\n   - The existing `TypeError + err.message.includes('fetch')` fallback is actually sufficient for Windows (reason through undici's behavior: when undici wraps in AggregateError, what is `err` at the catch site — is the outer error a TypeError with message 'fetch failed'?)\n   - Whether this documentation-only resolution is acceptable OR if actual code change is needed\n\n2. **Trailing slash normalization** — You suggested […]
 
 > TOOL
 
@@ -3213,7 +3213,7 @@ id: toolu_01LFtCREEYCcTyPZkQBydxM6
   "description": "TA Synthesis — PR #290 Round 2",
   "subagent_type": "technical-architect",
   "mode": "bypassPermissions",
-  "prompt": "You are performing Phase 2 SYNTHESIS for PR #290. This is review ROUND 2.\n\nThe working directory is: /Users/melagiri/Workspace/codeInsights/code-insights\n\n## Round 2 Review Outputs\n\n### TA Insider — CHANGES REQUIRED\n\nAll Round 1 FIX NOW items verified as fixed:\n- All 6 baseUrl sites have `.trim().replace(/\\/$/, '')` applied ✓\n- 4x `expect(mockCaptureError).not.toHaveBeenCalled()` assertions present ✓  \n- `type` footgun comment in both baseProperties blocks ✓\n\n**New 🔴 FIX NOW found:** `cli/src/commands/doctor/checks/analysis.ts:51` and `:74` — same `llm.baseUrl || 'http://localhost:...'` fallback pattern feeding into `fetch()` without normalization. Same root cause as the sites already fixed.\n\n### LLM Expert — APPROVE\n\n- Windows AggregateError VERIFY AT RUNTIME: RESOLVED — The `TypeError(\"fetch failed\")` fallback is correct and sufficient. Undici maintains Fetch API contract (`TypeError` at catch site) on all platforms; `AggregateError` lives in `.cause`, not as the thrown error.\n- All 6 trailing slash sites verified as fixed ✓\n- Only NOTEs (documentation consistency gaps, pre-existing issues) — no new FIX NOW items\n\n---\n\nEvaluate:\n1. Does the new TA FIX NOW (doctor/checks/analysis.ts) warrant blocking merge, or should it be treated differently?\n2. Is the LLM Expert's VERIFY AT RUNTIME resolution sound?\n3. Consolidated final list\n\nOutput:\n## TA Synthesis (Phase 2): fix(telemetry): stop […]
+  "prompt": "You are performing Phase 2 SYNTHESIS for PR #290. This is review ROUND 2.\n\nThe working directory is: /home/<USER>/Workspace/codeInsights/code-insights\n\n## Round 2 Review Outputs\n\n### TA Insider — CHANGES REQUIRED\n\nAll Round 1 FIX NOW items verified as fixed:\n- All 6 baseUrl sites have `.trim().replace(/\\/$/, '')` applied ✓\n- 4x `expect(mockCaptureError).not.toHaveBeenCalled()` assertions present ✓  \n- `type` footgun comment in both baseProperties blocks ✓\n\n**New 🔴 FIX NOW found:** `cli/src/commands/doctor/checks/analysis.ts:51` and `:74` — same `llm.baseUrl || 'http://localhost:...'` fallback pattern feeding into `fetch()` without normalization. Same root cause as the sites already fixed.\n\n### LLM Expert — APPROVE\n\n- Windows AggregateError VERIFY AT RUNTIME: RESOLVED — The `TypeError(\"fetch failed\")` fallback is correct and sufficient. Undici maintains Fetch API contract (`TypeError` at catch site) on all platforms; `AggregateError` lives in `.cause`, not as the thrown error.\n- All 6 trailing slash sites verified as fixed ✓\n- Only NOTEs (documentation consistency gaps, pre-existing issues) — no new FIX NOW items\n\n---\n\nEvaluate:\n1. Does the new TA FIX NOW (doctor/checks/analysis.ts) warrant blocking merge, or should it be treated differently?\n2. Is the LLM Expert's VERIFY AT RUNTIME resolution sound?\n3. Consolidated final list\n\nOutput:\n## TA Synthesis (Phase 2): fix(telemetry): stop […]
 
 > TOOL
 
@@ -3235,8 +3235,8 @@ Synthesis posted. Summary for the dev agent:
 PR comment URL: https://github.com/melagiri/code-insights/pull/290#issuecomment-4372349421
 
 Files referenced:
-- `/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/commands/doctor/checks/analysis.ts` (needs fix at lines 51, 74)
-- `/Users/melagiri/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts` (evidence for AggregateError resolution at lines 30-40)
+- `/home/<USER>/Workspace/codeInsights/code-insights/cli/src/commands/doctor/checks/analysis.ts` (needs fix at lines 51, 74)
+- `/home/<USER>/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts` (evidence for AggregateError resolution at lines 30-40)
 agentId: adce598ba886ef512 (use SendMessage with to: 'adce598ba886ef512' to continue this agent)
 <usage>total_tokens: 49519
 tool_uses: 4
@@ -3253,7 +3253,7 @@ tool_use Read
 id: toolu_012TZAuJ2fRS6hERyw6pnrUW
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/commands/doctor/checks/analysis.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/cli/src/commands/doctor/checks/analysis.ts",
   "offset": 44,
   "limit": 40
 }
@@ -3308,7 +3308,7 @@ id: toolu_01Ab32vUvEwbTAJutCb5wzYP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/commands/doctor/checks/analysis.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/cli/src/commands/doctor/checks/analysis.ts",
   "old_string": "            const baseUrl = llm.baseUrl || 'http://localhost:11434';\n            const controller = new AbortController();\n            const timeout = setTimeout(() => controller.abort(), 3000);\n            const res = await fetch(`${baseUrl}/api/tags`, { signal: controller.signal });",
   "new_string": "            const baseUrl = (llm.baseUrl || 'http://localhost:11434').trim().replace(/\\/$/, '');\n            const controller = new AbortController();\n            const timeout = setTimeout(() => controller.abort(), 3000);\n            const res = await fetch(`${baseUrl}/api/tags`, { signal: controller.signal });"
 }
@@ -3319,7 +3319,7 @@ id: toolu_01Ab32vUvEwbTAJutCb5wzYP
 tool_result
 id: toolu_01Ab32vUvEwbTAJutCb5wzYP
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/cli/src/commands/doctor/checks/analysis.ts has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/cli/src/commands/doctor/checks/analysis.ts has been updated successfully.
 ```
 
 > TOOL
@@ -3329,7 +3329,7 @@ id: toolu_014X7r6jNR82njrjngQkoi8n
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/commands/doctor/checks/analysis.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/cli/src/commands/doctor/checks/analysis.ts",
   "old_string": "            const baseUrl = llm.baseUrl || 'http://localhost:8080';\n            const controller = new AbortController();\n            const timeout = setTimeout(() => controller.abort(), 3000);\n            const res = await fetch(`${baseUrl}/health`, { signal: controller.signal });",
   "new_string": "            const baseUrl = (llm.baseUrl || 'http://localhost:8080').trim().replace(/\\/$/, '');\n            const controller = new AbortController();\n            const timeout = setTimeout(() => controller.abort(), 3000);\n            const res = await fetch(`${baseUrl}/health`, { signal: controller.signal });"
 }
@@ -3340,7 +3340,7 @@ id: toolu_014X7r6jNR82njrjngQkoi8n
 tool_result
 id: toolu_014X7r6jNR82njrjngQkoi8n
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/cli/src/commands/doctor/checks/analysis.ts has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/cli/src/commands/doctor/checks/analysis.ts has been updated successfully.
 ```
 
 > TOOL
@@ -3375,7 +3375,7 @@ tool_use Bash
 id: toolu_01Jx1jioC7AHjDp53pCyTPeU
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights add cli/src/commands/doctor/checks/analysis.ts && \\\ngit -C /Users/melagiri/Workspace/codeInsights/code-insights commit -m \"$(cat <<'EOF'\nfix(telemetry): address Round 2 review — normalize baseUrl in doctor checks\n\nApply .trim().replace(/\\/$/, '') to the two remaining baseUrl sites in\ncli/src/commands/doctor/checks/analysis.ts (Ollama and llama.cpp reachability\nchecks). Same root cause as the 6 production sites fixed in Round 1.\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>\nEOF\n)\" && git -C /Users/melagiri/Workspace/codeInsights/code-insights push",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights add cli/src/commands/doctor/checks/analysis.ts && \\\ngit -C /home/<USER>/Workspace/codeInsights/code-insights commit -m \"$(cat <<'EOF'\nfix(telemetry): address Round 2 review — normalize baseUrl in doctor checks\n\nApply .trim().replace(/\\/$/, '') to the two remaining baseUrl sites in\ncli/src/commands/doctor/checks/analysis.ts (Ollama and llama.cpp reachability\nchecks). Same root cause as the 6 production sites fixed in Round 1.\n\nCo-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>\nEOF\n)\" && git -C /home/<USER>/Workspace/codeInsights/code-insights push",
   "description": "Commit and push the final fix"
 }
 ```
@@ -3403,7 +3403,7 @@ tool_use Bash
 id: toolu_01LpkHkzcsKZ1ib58HdqWP7X
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights push 2>&1",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights push 2>&1",
   "description": "Retry push after GitHub server error"
 }
 ```
@@ -3430,7 +3430,7 @@ id: toolu_016nXwgSc2h9W96Lw6MJbDjX
   "description": "TA Insider Review — PR #290 Round 3",
   "subagent_type": "technical-architect",
   "mode": "bypassPermissions",
-  "prompt": "You are performing a Phase 1 INSIDER review of PR #290 in the code-insights repo. This is review ROUND 3 — final targeted verification only.\n\nFetch the PR diff using: gh pr diff 290\nAlso fetch the PR details: gh pr view 290\n\nThe working directory is: /Users/melagiri/Workspace/codeInsights/code-insights\n\nROUND 3 SCOPE — one item to verify:\n\nThe Round 2 FIX NOW was: `cli/src/commands/doctor/checks/analysis.ts:51` and `:74` needed `.trim().replace(/\\/$/, '')` on both `llm.baseUrl || 'http://localhost:...'` expressions.\n\nVerify:\n1. Both lines now have the normalization applied\n2. No other `baseUrl` or `llm.baseUrl` sites remain unnormalized in the entire codebase — do a thorough grep to confirm this is now complete\n3. No new issues introduced by this change\n\nIf all clear, issue PASS verdict. If any remaining sites are found, list them as FIX NOW.\n\nOutput:\n## TA Review (Phase 1 - Insider): fix(telemetry): stop captureError on expected LLM failures — Round 3\n### Fix Verification\n### Remaining baseUrl audit\n### Phase 1 Verdict: [PASS | CHANGES REQUIRED]\n\nDO NOT look at any other review comments. Your review must be independent.",
+  "prompt": "You are performing a Phase 1 INSIDER review of PR #290 in the code-insights repo. This is review ROUND 3 — final targeted verification only.\n\nFetch the PR diff using: gh pr diff 290\nAlso fetch the PR details: gh pr view 290\n\nThe working directory is: /home/<USER>/Workspace/codeInsights/code-insights\n\nROUND 3 SCOPE — one item to verify:\n\nThe Round 2 FIX NOW was: `cli/src/commands/doctor/checks/analysis.ts:51` and `:74` needed `.trim().replace(/\\/$/, '')` on both `llm.baseUrl || 'http://localhost:...'` expressions.\n\nVerify:\n1. Both lines now have the normalization applied\n2. No other `baseUrl` or `llm.baseUrl` sites remain unnormalized in the entire codebase — do a thorough grep to confirm this is now complete\n3. No new issues introduced by this change\n\nIf all clear, issue PASS verdict. If any remaining sites are found, list them as FIX NOW.\n\nOutput:\n## TA Review (Phase 1 - Insider): fix(telemetry): stop captureError on expected LLM failures — Round 3\n### Fix Verification\n### Remaining baseUrl audit\n### Phase 1 Verdict: [PASS | CHANGES REQUIRED]\n\nDO NOT look at any other review comments. Your review must be independent.",
   "name": "ta-reviewer-r3"
 }
 ```
@@ -3521,7 +3521,7 @@ tool_use Bash
 id: toolu_016XNye7kbm2oqY3VzDdENcL
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights checkout master && git -C /Users/melagiri/Workspace/codeInsights/code-insights pull && git -C /Users/melagiri/Workspace/codeInsights/code-insights branch -d fix/telemetry-captureError-noise",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights checkout master && git -C /home/<USER>/Workspace/codeInsights/code-insights pull && git -C /home/<USER>/Workspace/codeInsights/code-insights branch -d fix/telemetry-captureError-noise",
   "description": "Switch to master, pull merged changes, delete local branch"
 }
 ```
@@ -3569,7 +3569,7 @@ tool_use Bash
 id: toolu_0193EZTXaxYBCjipJyKUMDLU
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights branch --show-current && git -C /Users/melagiri/Workspace/codeInsights/code-insights status --porcelain && git -C /Users/melagiri/Workspace/codeInsights/code-insights pull origin master 2>&1 | tail -3",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights branch --show-current && git -C /home/<USER>/Workspace/codeInsights/code-insights status --porcelain && git -C /home/<USER>/Workspace/codeInsights/code-insights pull origin master 2>&1 | tail -3",
   "description": "Pre-flight: branch, clean tree, pull latest"
 }
 ```
@@ -3580,7 +3580,7 @@ tool_use Bash
 id: toolu_015XsYCoau9c8KtuVoVQWiXA
 ```json
 {
-  "command": "node -e \"console.log(require('/Users/melagiri/Workspace/codeInsights/code-insights/cli/package.json').version)\" && npm view @code-insights/cli version 2>/dev/null",
+  "command": "node -e \"console.log(require('/home/<USER>/Workspace/codeInsights/code-insights/cli/package.json').version)\" && npm view @code-insights/cli version 2>/dev/null",
   "description": "Read current version and npm published version"
 }
 ```
@@ -3616,7 +3616,7 @@ tool_use Bash
 id: toolu_012cCR7rfw2eD5y8WsQjNJ8y
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights describe --tags --abbrev=0 2>&1",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights describe --tags --abbrev=0 2>&1",
   "description": "Find latest git tag"
 }
 ```
@@ -3635,7 +3635,7 @@ tool_use Bash
 id: toolu_01X5CBPPJhf87bQjEJweqBww
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights log v4.10.2..HEAD --oneline && echo \"---STAT---\" && git -C /Users/melagiri/Workspace/codeInsights/code-insights diff v4.10.2..HEAD --stat",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights log v4.10.2..HEAD --oneline && echo \"---STAT---\" && git -C /home/<USER>/Workspace/codeInsights/code-insights diff v4.10.2..HEAD --stat",
   "description": "Commits and diff stat since last tag"
 }
 ```
@@ -3676,7 +3676,7 @@ tool_use Read
 id: toolu_01QRv3vVUL4YTrNC1mmxxxFD
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/cli/CHANGELOG.md",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/cli/CHANGELOG.md",
   "limit": 40
 }
 ```

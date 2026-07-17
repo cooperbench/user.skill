@@ -254,7 +254,7 @@ tool_use Read
 id: toolu_01Sf6xLgGASqNpeMnJAynDrT
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts"
 }
 ```
 
@@ -291,7 +291,7 @@ tool_use Read
 id: toolu_01HxcasVXZh7NJakQniEqqVE
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts"
 }
 ```
 
@@ -331,7 +331,7 @@ tool_use Read
 id: toolu_01Sxi9YL5wKMhxnWBhgWvWH1
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts"
 }
 ```
 
@@ -341,7 +341,7 @@ tool_use Read
 id: toolu_01XBs5PWVfPmU1QvyQP1sLRY
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/background.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/background.ts"
 }
 ```
 
@@ -434,7 +434,7 @@ tool_use Read
 id: toolu_01MoaHaxZZCVBfWQACkJ69Aq
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-workspace/appsscript.json"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-workspace/appsscript.json"
 }
 ```
 
@@ -498,7 +498,7 @@ tool_use Read
 id: toolu_01RfyM5Q5HuaXqKvJqBWYUhs
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-workspace/Code.js"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-workspace/Code.js"
 }
 ```
 
@@ -543,7 +543,7 @@ tool_use Read
 id: toolu_01V8HcdDFdErb9qR4jVRd74B
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/auth.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/auth.ts"
 }
 ```
 
@@ -589,7 +589,7 @@ tool_use Read
 id: toolu_01UmeY6oKwEd9qAVtgycyjLV
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/messaging.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/messaging.ts"
 }
 ```
 
@@ -639,7 +639,7 @@ tool_use Read
 id: toolu_011U12q4xnzNkV8Vdcvrui2G
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/types.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/types.ts"
 }
 ```
 
@@ -709,7 +709,7 @@ id: toolu_016wNUXftDjULsB5w6u3yaz4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts",
   "old_string": "  organizer?: { email?: string };",
   "new_string": "  organizer?: { email?: string; self?: boolean };"
 }
@@ -722,7 +722,7 @@ id: toolu_01VibKi9hDqRn4vLVw8TzoSD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts",
   "old_string": "      'items(id,iCalUID,status,summary,location,recurringEventId,start,end,attendees(email,resource)),nextPageToken,nextSyncToken',",
   "new_string": "      'items(id,iCalUID,status,summary,location,recurringEventId,start,end,organizer(self,email),attendees(email,resource)),nextPageToken,nextSyncToken',"
 }
@@ -733,7 +733,7 @@ id: toolu_01VibKi9hDqRn4vLVw8TzoSD
 tool_result
 id: toolu_016wNUXftDjULsB5w6u3yaz4
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -741,7 +741,7 @@ The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/cal
 tool_result
 id: toolu_01VibKi9hDqRn4vLVw8TzoSD
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -755,7 +755,7 @@ id: toolu_01WmDejRApG6PmoUsgPARkFg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts",
   "old_string": "/** Bump when the events.list query SHAPE changes (e.g. adding timeMax) so the next\n *  load does one clean full re-scan to rebuild the marked set under the new query.\n *  v2 = bounded forward window (timeMax). */\nconst SYNC_SCHEMA_VERSION = 2;",
   "new_string": "/** Bump when the events.list query SHAPE changes (e.g. adding timeMax) so the next\n *  load does one clean full re-scan to rebuild the marked set under the new query.\n *  v2 = bounded forward window (timeMax). v3 = organizer-only gate — forces a clean\n *  re-scan that drops events the user is merely a GUEST of, which earlier builds\n *  wrongly marked + nudged. */\nconst SYNC_SCHEMA_VERSION = 3;"
 }
@@ -766,7 +766,7 @@ id: toolu_01WmDejRApG6PmoUsgPARkFg
 tool_result
 id: toolu_01WmDejRApG6PmoUsgPARkFg
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -776,7 +776,7 @@ id: toolu_015iSTUFWV9d5QTbHVoMNPYE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts",
   "old_string": "    const cancelled = ev.status === 'cancelled';\n    const marked_ = isMarked(ev);\n    // DIAGNOSTIC: the magic address is somewhere in this event's payload, yet\n    // isMarked() didn't flag it — i.e. it's not a structured attendee email and\n    // not in `location` (e.g. it's only in the description, or events.list\n    // returned a trimmed attendee list). This is the signature of a primary-\n    // calendar miss; the warning shows exactly what we got back.\n    if (!marked_ && MAGIC_ADDRESS && JSON.stringify(ev).toLowerCase().includes(MAGIC_ADDRESS)) {\n      console.warn(\n        '[auxilio] sync MISS: magic address in payload but isMarked() is false',\n        { id: ev.id, summary: ev.summary, location: ev.location, attendees: ev.attendees, status: ev.status },\n      );\n    }\n    if (marked_ && !cancelled) {",
   "new_string": "    const cancelled = ev.status === 'cancelled';\n    const hasMagic = isMarked(ev);\n    // DIAGNOSTIC: the magic address is somewhere in this event's payload, yet\n    // isMarked() didn't flag it — i.e. it's not a structured attendee email and\n    // not in `location` (e.g. it's only in the description, or events.list\n    // returned a trimmed attendee list). This is the signature of a primary-\n    // calendar miss; the warning shows exactly what we got back.\n    if (!hasMagic && MAGIC_ADDRESS […]
 
@@ -785,7 +785,7 @@ id: toolu_015iSTUFWV9d5QTbHVoMNPYE
 tool_result
 id: toolu_015iSTUFWV9d5QTbHVoMNPYE
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -799,7 +799,7 @@ id: toolu_012AhKBdyikKUchx6koev5hY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/messaging.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/messaging.ts",
   "old_string": "  | { type: 'IS_EVENT_HANDLED'; eventId: string }\n  | { type: 'SYNC_NOW' }",
   "new_string": "  | { type: 'IS_EVENT_HANDLED'; eventId: string }\n  | { type: 'IS_NUDGE_WORTHY'; eid: string; eventId: string }\n  | { type: 'SYNC_NOW' }"
 }
@@ -810,7 +810,7 @@ id: toolu_012AhKBdyikKUchx6koev5hY
 tool_result
 id: toolu_012AhKBdyikKUchx6koev5hY
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/messaging.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/messaging.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -820,7 +820,7 @@ id: toolu_01BKNzTHvKCjGHuJVfaJQhgu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/messaging.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/messaging.ts",
   "old_string": "  IS_EVENT_HANDLED: { handled: boolean };\n  SYNC_NOW: { synced: boolean };",
   "new_string": "  IS_EVENT_HANDLED: { handled: boolean };\n  IS_NUDGE_WORTHY: { worthy: boolean };\n  SYNC_NOW: { synced: boolean };"
 }
@@ -831,7 +831,7 @@ id: toolu_01BKNzTHvKCjGHuJVfaJQhgu
 tool_result
 id: toolu_01BKNzTHvKCjGHuJVfaJQhgu
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/messaging.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/messaging.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -841,7 +841,7 @@ id: toolu_01SMnSQhXfb8HHmbDjCrwHjS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/background.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/background.ts",
   "old_string": "    case 'IS_EVENT_HANDLED':\n      // Lets the in-page optimistic nudge skip an event whose passes were already\n      // sent from this extension (the sync filters these, the optimistic path can't).\n      return ok({ handled: await isEventHandled(msg.eventId) });",
   "new_string": "    case 'IS_EVENT_HANDLED':\n      // Lets the in-page optimistic nudge skip an event whose passes were already\n      // sent from this extension (the sync filters these, the optimistic path can't).\n      return ok({ handled: await isEventHandled(msg.eventId) });\n\n    case 'IS_NUDGE_WORTHY':\n      // Gate the in-page OPTIMISTIC nudge (the instant, DOM-derived guess) on two\n      // things the cheap DOM snapshot can't know: the event isn't already handled,\n      // and the signed-in user is the event's ORGANIZER — not a mere guest who was\n      // invited to someone else's visitor event. On a just-created event (events.get\n      // still 404s) or any transient error we return worthy:true so the host's\n      // instant nudge for their own new event still fires; the organizer-gated\n      // background sync reconciles it moments later.\n      return withTokens(async (t) => {\n        if (await isEventHandled(msg.eventId)) return { worthy: false };\n        try {\n          const ev = await fetchActiveEvent(msg.eid, t.accessToken);\n          const me = (t.email ?? (await authStatus()).email ?? '').toLowerCase();\n          const […]
 
@@ -850,7 +850,7 @@ id: toolu_01SMnSQhXfb8HHmbDjCrwHjS
 tool_result
 id: toolu_01SMnSQhXfb8HHmbDjCrwHjS
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/background.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/background.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -860,7 +860,7 @@ id: toolu_01Qk2iT1Mpou7rvxTQpdnJj7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "old_string": "          // …but NOT for an event whose passes are already sent: viewing+closing it\n          // must not re-nudge (the sync set filters handled events; this optimistic\n          // path bypasses that, so check the background's handled overlay first).\n          safeSend<{ ok?: boolean; data?: { handled?: boolean } }>({\n            type: 'IS_EVENT_HANDLED',\n            eventId: pm.eventId,\n          }).then((res) => {\n            if (res?.ok && res.data?.handled) return; // already done → no nudge\n            nudge.addOptimistic({\n              eid: pm.eid,\n              eventId: pm.eventId,\n              iCalUid: '',\n              title: pm.title,\n              start: undefined,\n            });\n          });",
   "new_string": "          // …but NOT for an event whose passes are already sent, or one the user is\n          // only a GUEST of: viewing+closing it must not nudge. The sync set filters\n          // both, but this optimistic path bypasses it — so ask the background to\n          // confirm (not handled AND the user is the organizer) before showing the\n          // instant nudge.\n          safeSend<{ ok?: boolean; data?: { worthy?: boolean } }>({\n            type: 'IS_NUDGE_WORTHY',\n            eid: pm.eid,\n            eventId: pm.eventId,\n          }).then((res) => {\n            if (!res?.ok || !res.data?.worthy) return; // already done / not host → no nudge\n            nudge.addOptimistic({\n              eid: pm.eid,\n              eventId: pm.eventId,\n              iCalUid: '',\n              title: pm.title,\n              start: undefined,\n            });\n          });"
 }
@@ -871,7 +871,7 @@ id: toolu_01Qk2iT1Mpou7rvxTQpdnJj7
 tool_result
 id: toolu_01Qk2iT1Mpou7rvxTQpdnJj7
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -896,7 +896,7 @@ tool_use Read
 id: toolu_01HSBCmTz84ZEiVsRqRBscob
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
   "limit": 5
 }
 ```
@@ -908,7 +908,7 @@ id: toolu_01R1cQkBuDt95Rz4krmT8zqq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
   "old_string": "  \"version\": \"0.11.6\",",
   "new_string": "  \"version\": \"0.11.7\","
 }
@@ -919,7 +919,7 @@ id: toolu_01R1cQkBuDt95Rz4krmT8zqq
 tool_result
 id: toolu_01R1cQkBuDt95Rz4krmT8zqq
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -932,7 +932,7 @@ tool_use Bash
 id: toolu_01Xj4BZoZz6gzAyY3hsq8U5E
 ```json
 {
-  "command": "cd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension && npm run compile 2>&1 | tail -30",
+  "command": "cd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension && npm run compile 2>&1 | tail -30",
   "description": "Type-check the extension"
 }
 ```
@@ -957,7 +957,7 @@ id: toolu_019KJZDB9nbwsk83VWVx1qAf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-workspace/Code.js",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-workspace/Code.js",
   "old_string": "function buildVisitorCard_(e) {\n  // Fast path: no external guests in the payload → render immediately without any\n  // network call. Keeps empty events snappy so the loader never lingers.\n  var cal = e.calendar || {};\n  if (mapAttendees_(cal.attendees).length === 0) {",
   "new_string": "function buildVisitorCard_(e) {\n  var cal = e.calendar || {};\n\n  // Only the event's HOST (organizer) registers visitors. A guest who was merely\n  // invited sees the magic address among the attendees on their copy too, but there\n  // is nothing for them to manage here — and running the engine flow for them is what\n  // surfaced the confusing \"Reconnect / grant permission\" wall (the engine call needs\n  // the external-request scope a guest may never have granted). Show a calm guest card\n  // instead so we never push a non-host into a flow that isn't theirs.\n  if (!isCurrentUserOrganizer_(e)) return buildGuestCard_(cal);\n\n  // Fast path: no external guests in the payload → render immediately without any\n  // network call. Keeps empty events snappy so the loader never lingers.\n  if (mapAttendees_(cal.attendees).length === 0) {"
 }
@@ -968,7 +968,7 @@ id: toolu_019KJZDB9nbwsk83VWVx1qAf
 tool_result
 id: toolu_019KJZDB9nbwsk83VWVx1qAf
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-workspace/Code.js has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-workspace/Code.js has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -982,7 +982,7 @@ id: toolu_01U8yCpJ41SCFoaNUBL1CrwU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-workspace/Code.js",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-workspace/Code.js",
   "old_string": "function mapAttendees_(list) {\n  return (list || [])\n    .filter(function (a) { return a && a.email && !a.self && !a.organizer && !a.resource; })\n    .map(function (a) {\n      // Google often sets displayName = the email for non-contacts → treat as no name.\n      var nm = (a.displayName && a.displayName !== a.email) ? a.displayName : '';\n      return { email: a.email, name: nm };\n    });\n}",
   "new_string": "function mapAttendees_(list) {\n  return (list || [])\n    .filter(function (a) { return a && a.email && !a.self && !a.organizer && !a.resource; })\n    .map(function (a) {\n      // Google often sets displayName = the email for non-contacts → treat as no name.\n      var nm = (a.displayName && a.displayName !== a.email) ? a.displayName : '';\n      return { email: a.email, name: nm };\n    });\n}\n\n// ── Host vs guest gate ────────────────────────────────────\n// Is the signed-in user the organizer (host) of the open event? Only the host\n// registers visitors; a guest must not be pushed into the host flow.\nfunction isCurrentUserOrganizer_(e) {\n  var cal = e.calendar || {};\n  var atts = cal.attendees || [];\n  // Most reliable signal: the attendee flagged `self` carries `organizer:true` when\n  // this user owns the event. Google sets this on the host's copy.\n […]
 
@@ -991,7 +991,7 @@ id: toolu_01U8yCpJ41SCFoaNUBL1CrwU
 tool_result
 id: toolu_01U8yCpJ41SCFoaNUBL1CrwU
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-workspace/Code.js has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-workspace/Code.js has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1004,7 +1004,7 @@ tool_use Bash
 id: toolu_01BPb2SBWU1ZYTuAnTRy6Tmz
 ```json
 {
-  "command": "cd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-workspace && node --check Code.js && echo \"Code.js: syntax OK\"",
+  "command": "cd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-workspace && node --check Code.js && echo \"Code.js: syntax OK\"",
   "description": "Parse-check the add-on Code.js"
 }
 ```
@@ -1027,7 +1027,7 @@ tool_use Bash
 id: toolu_01UPovMAny4iK7qkvCRJTTPi
 ```json
 {
-  "command": "cd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension && npm run build 2>&1 | tail -20",
+  "command": "cd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension && npm run build 2>&1 | tail -20",
   "description": "Production build of the extension"
 }
 ```
@@ -1069,7 +1069,7 @@ tool_use Write
 id: toolu_01D7ijdHp1zBcASWur9S4u33
 ```json
 {
-  "file_path": "/Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_calendar_host_only_gate.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_calendar_host_only_gate.md",
   "content": "---\nname: project_calendar_host_only_gate\ndescription: Calendar visitor surfaces (extension + add-on) must engage only the event organizer, never a guest\nmetadata:\n  type: project\n---\n\nBoth calendar visitor surfaces must treat visitor events as **host-only**: only the event ORGANIZER registers/manages visitors, never a guest who was merely invited.\n\n**Why:** A guest's copy of a visitor event also carries the magic address among its attendees, so any \"magic address present\" check matches on the guest's calendar too. Reported bug (2026-06-27): a coworker created an event with the magic address and invited the user; the user got an extension nudge to \"manage\" it AND the add-on showed the \"Reconnect Auxilio / grant script.external_request\" wall (the engine call needs the external-request scope a guest never granted).\n\n**How to apply:**\n- Extension sync (`auxilio-extension/lib/calendar-sync.ts`): mark gate is `isMarked(ev) && ev.organizer?.self === true`. `isMarked` stays magic-only (drives the diagnostic). Needs `organizer(self,email)` in the `events.list` fields (`lib/calendar.ts`). Bumped `SYNC_SCHEMA_VERSION` to 3 to force a clean re-scan that drops already-mis-marked guest events.\n- Extension optimistic in-page nudge: gated via new `IS_NUDGE_WORTHY` RPC — background does `events.get` and returns worthy = not-handled AND organizerEmail === signed-in email. On 404 (just-created event) / error returns worthy:true so the host's instant nudge […]
 
 > TOOL
@@ -1077,7 +1077,7 @@ id: toolu_01D7ijdHp1zBcASWur9S4u33
 tool_result
 id: toolu_01D7ijdHp1zBcASWur9S4u33
 ```
-File created successfully at: /Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_calendar_host_only_gate.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_calendar_host_only_gate.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1086,7 +1086,7 @@ tool_use Read
 id: toolu_01XFGiKsPTnuAmLwD3Z5zaSd
 ```json
 {
-  "file_path": "/Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/MEMORY.md",
   "offset": 38,
   "limit": 10
 }
@@ -1106,7 +1106,7 @@ tool_use Read
 id: toolu_01PY4PKimHtvi7n6QFi54Fnv
 ```json
 {
-  "file_path": "/Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/MEMORY.md",
   "offset": 33,
   "limit": 6
 }
@@ -1132,7 +1132,7 @@ id: toolu_01Ws2D6KFPBAyNiN9nXueymT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/MEMORY.md",
   "old_string": "- [Pass email embeds entry QR](project_pass_email_qr.md) — Offline fallback QR in the pass email via inline CID attachment (Gmail-safe, NOT data-URI); regenerated from qr_token to match the offline payload; signed QR + SOS block deferred.",
   "new_string": "- [Pass email embeds entry QR](project_pass_email_qr.md) — Offline fallback QR in the pass email via inline CID attachment (Gmail-safe, NOT data-URI); regenerated from qr_token to match the offline payload; signed QR + SOS block deferred.\n- [Calendar surfaces are host-only](project_calendar_host_only_gate.md) — Extension nudge + add-on card must engage only the event organizer, never a guest (guest's copy also carries the magic address). Sync gates on organizer.self; add-on shows guest card. Fixed 2026-06-27."
 }
@@ -1143,7 +1143,7 @@ id: toolu_01Ws2D6KFPBAyNiN9nXueymT
 tool_result
 id: toolu_01Ws2D6KFPBAyNiN9nXueymT
 ```
-The file /Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1185,7 +1185,7 @@ tool_use Read
 id: toolu_01LQy9Ud9jrEMuqzs4QEVeaK
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/sidepanel/App.tsx"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/sidepanel/App.tsx"
 }
 ```
 
@@ -1208,7 +1208,7 @@ tool_use Read
 id: toolu_01JL2BML5HwdwwbYv6R1AJa7
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/hooks.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/hooks.ts"
 }
 ```
 
@@ -1272,7 +1272,7 @@ tool_use Read
 id: toolu_014jNb9D6EGtL7u1PnJssZwY
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx"
 }
 ```
 
@@ -1347,7 +1347,7 @@ id: toolu_01CKD7yMdhwumF1pYJw1di6q
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/hooks.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/hooks.ts",
   "old_string": "export function useDraft(event: ActiveEvent | undefined) {\n  return useQuery({\n    queryKey: ['draft', event?.iCalUid],\n    queryFn: () => rpc({ type: 'DRAFT_LOAD', event: event! }),\n    enabled: !!event?.iCalUid,\n  });\n}",
   "new_string": "export function useDraft(event: ActiveEvent | undefined, enabled = true) {\n  return useQuery({\n    queryKey: ['draft', event?.iCalUid],\n    queryFn: () => rpc({ type: 'DRAFT_LOAD', event: event! }),\n    // `enabled` lets the caller suppress the engine draft call entirely for an event\n    // the user only attends (a guest) — they never register visitors, so we don't\n    // load/create a draft for them.\n    enabled: enabled && !!event?.iCalUid,\n  });\n}"
 }
@@ -1358,7 +1358,7 @@ id: toolu_01CKD7yMdhwumF1pYJw1di6q
 tool_result
 id: toolu_01CKD7yMdhwumF1pYJw1di6q
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/hooks.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/hooks.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1368,7 +1368,7 @@ id: toolu_01BTGkwZcCF1ieoWrK5FqQ71
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx",
   "old_string": "  const resolve = useResolveEvent(eid);\n  const event = resolve.data;\n  const draft = useDraft(event);",
   "new_string": "  const resolve = useResolveEvent(eid);\n  const event = resolve.data;\n  // Host-only: only the event's ORGANIZER registers visitors. A guest who opens the\n  // panel for an event they were merely invited to must not be able to edit/send —\n  // their copy of the event carries the magic address too, but it isn't theirs to\n  // manage. We compare the resolved organizer to the signed-in user; on any missing\n  // signal we default to NOT a guest, so a legitimate host is never blocked.\n  const myEmail = auth.data?.email?.toLowerCase();\n  const organizerEmail = event?.organizerEmail?.toLowerCase();\n  const isGuest = !!event && !!organizerEmail && !!myEmail && organizerEmail !== myEmail;\n  const draft = useDraft(event, !isGuest);"
 }
@@ -1379,7 +1379,7 @@ id: toolu_01BTGkwZcCF1ieoWrK5FqQ71
 tool_result
 id: toolu_01BTGkwZcCF1ieoWrK5FqQ71
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1393,7 +1393,7 @@ id: toolu_01EkduAaaNRF4DXPsPKTHvjT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx",
   "old_string": "  // Event resolved but no iCalUID → the draft query can't run (would sit on a\n  // skeleton forever). Surface it instead of hanging.\n  if (event && !event.iCalUid) {",
   "new_string": "  // Guest of someone else's event → nothing to manage here (see isGuest above).\n  if (isGuest) {\n    return (\n      <Shell onBack={back}>\n        <NoticeState\n          title=\"You are a guest of this event\"\n          body={`${hostNameFromEmail(event?.organizerEmail)} manages visitor passes for this event. There is nothing for you to do here.`}\n        />\n      </Shell>\n    );\n  }\n  // Event resolved but no iCalUID → the draft query can't run (would sit on a\n  // skeleton forever). Surface it instead of hanging.\n  if (event && !event.iCalUid) {"
 }
@@ -1404,7 +1404,7 @@ id: toolu_01EkduAaaNRF4DXPsPKTHvjT
 tool_result
 id: toolu_01EkduAaaNRF4DXPsPKTHvjT
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1414,7 +1414,7 @@ id: toolu_013H7jxGPE2kjBn5zxQFeZhU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx",
   "old_string": "function formatWhen(start: string, end?: string): string {",
   "new_string": "/** Friendly host name from the organizer email (local part, title-cased), for the\n *  guest notice. Falls back to \"The host\" when there's no usable email. */\nfunction hostNameFromEmail(email?: string): string {\n  const local = (email ?? '').split('@')[0] ?? '';\n  const name = local\n    .replace(/[._-]+/g, ' ')\n    .replace(/\\b\\w/g, (c) => c.toUpperCase())\n    .trim();\n  return name || 'The host';\n}\n\nfunction formatWhen(start: string, end?: string): string {"
 }
@@ -1425,7 +1425,7 @@ id: toolu_013H7jxGPE2kjBn5zxQFeZhU
 tool_result
 id: toolu_013H7jxGPE2kjBn5zxQFeZhU
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1468,7 +1468,7 @@ id: toolu_014qG5fQLhXexVRobZVaddo3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
   "old_string": "  \"version\": \"0.11.7\",",
   "new_string": "  \"version\": \"0.11.8\","
 }
@@ -1479,7 +1479,7 @@ id: toolu_014qG5fQLhXexVRobZVaddo3
 tool_result
 id: toolu_014qG5fQLhXexVRobZVaddo3
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1515,7 +1515,7 @@ id: toolu_01Dv3XECGLiZUKeFdkuouLfw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_calendar_host_only_gate.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_calendar_host_only_gate.md",
   "old_string": "Note the in-page \"Manage Visitors\" button still shows on any open event surface on purpose (clicking IS explicit intent); only the unsolicited nudge/badge/notification is host-gated. Related: [[project_extension_homescreen_management_surface]], [[project_extension_nudge_reliability]], [[project_calendar_visitor_addon]].",
   "new_string": "- Extension side PANEL (`features/visit/VisitPanel.tsx` + `hooks.ts`): also host-gated (v0.11.8). Compares `event.organizerEmail` (from `fetchActiveEvent`) to `auth.email`; a guest gets a \"You are a guest of this event\" NoticeState and `useDraft(event, !isGuest)` suppresses the engine draft call entirely. Defaults to NOT-guest on any missing signal so a real host is never blocked. This was a needed follow-up: gating only the nudge/badge/notification still let a guest open the panel and edit/send.\n\nNote the in-page \"Manage Visitors\" button still shows on any open event surface on purpose (clicking IS explicit intent), but the panel it opens now shows the guest notice for non-hosts. Related: [[project_extension_homescreen_management_surface]], [[project_extension_nudge_reliability]], [[project_calendar_visitor_addon]]."
 }
@@ -1526,7 +1526,7 @@ id: toolu_01Dv3XECGLiZUKeFdkuouLfw
 tool_result
 id: toolu_01Dv3XECGLiZUKeFdkuouLfw
 ```
-The file /Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_calendar_host_only_gate.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_calendar_host_only_gate.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1536,7 +1536,7 @@ id: toolu_01KjfNRxu6tSsVAcFzzzez27
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/MEMORY.md",
   "old_string": "- [Calendar surfaces are host-only](project_calendar_host_only_gate.md) — Extension nudge + add-on card must engage only the event organizer, never a guest (guest's copy also carries the magic address). Sync gates on organizer.self; add-on shows guest card. Fixed 2026-06-27.",
   "new_string": "- [Calendar surfaces are host-only](project_calendar_host_only_gate.md) — Extension nudge + side panel + add-on card must engage only the event organizer, never a guest (guest's copy also carries the magic address). Sync gates on organizer.self; panel shows guest notice + skips draft call; add-on shows guest card. Fixed 2026-06-27 (ext v0.11.8)."
 }
@@ -1547,7 +1547,7 @@ id: toolu_01KjfNRxu6tSsVAcFzzzez27
 tool_result
 id: toolu_01KjfNRxu6tSsVAcFzzzez27
 ```
-The file /Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1603,7 +1603,7 @@ id: toolu_0164CuWFxbJjU2HS6HdWx45a
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "old_string": "    let pendingMagic: { eid: string; eventId: string; title: string } | null = null;\n    let everSawEventId = false;",
   "new_string": "    let pendingMagic: { eid: string; eventId: string; title: string } | null = null;\n    let everSawEventId = false;\n    // Set by readSurface when a non-event modal is open (a confirmation): we keep the\n    // injected button in the form behind it, but must not float the FAB over the modal.\n    let suppressFab = false;"
 }
@@ -1614,7 +1614,7 @@ id: toolu_0164CuWFxbJjU2HS6HdWx45a
 tool_result
 id: toolu_0164CuWFxbJjU2HS6HdWx45a
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1624,7 +1624,7 @@ id: toolu_01Mx9X2WECA21wFXZ3D1nEyE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "old_string": "    function readSurface(): { el: HTMLElement; eid: string } | null {\n      const fromUrl = urlEid();\n      const dialog = document.querySelector('[role=\"dialog\"]') as HTMLElement | null;\n      // A dialog that isn't an event surface — e.g. Google's \"Send update emails\n      // to existing guests?\" save confirmation — must NEVER host our button, and\n      // while one is open we suppress entirely so we don't inject onto it (or\n      // behind it, over the editor). This is what kept the button appearing on\n      // unrelated dialogs and \"flashing\" away when such a dialog opened/closed.\n      if (dialog) {\n        // Sticky recognition: once a dialog node is accepted as an event\n        // surface, keep treating it as one until it actually leaves the DOM.\n        // Google re-renders the popover's innards constantly; isEventDialog is a\n        // heuristic, so a single tick where it momentarily reads false would\n        // otherwise yank the button and pop it back a frame later — the flicker.\n        // A genuinely different dialog (a confirmation) is a different node, so\n        // it's still evaluated strictly and correctly rejected.\n        const isEvent = dialog === eventDialog || isEventDialog(dialog);\n        if (!isEvent) return null;\n        eventDialog […]
 
 > TOOL
@@ -1632,7 +1632,7 @@ id: toolu_01Mx9X2WECA21wFXZ3D1nEyE
 tool_result
 id: toolu_01Mx9X2WECA21wFXZ3D1nEyE
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1646,7 +1646,7 @@ id: toolu_01CySMaZTM9UtJ2nf2EH94Cy
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "old_string": "      // appears as a genuine last resort. (We no longer navigate the tab on click,\n      // so the old \"flash while a navigated page loads\" concern is moot.)\n      button.update(!!surface);\n      if (panelOpen) maybeFollow();",
   "new_string": "      // appears as a genuine last resort. (We no longer navigate the tab on click,\n      // so the old \"flash while a navigated page loads\" concern is moot.) The FAB is\n      // held back while a non-event modal is up so it never floats over a confirmation.\n      button.update(!!surface, !suppressFab);\n      if (panelOpen) maybeFollow();"
 }
@@ -1657,7 +1657,7 @@ id: toolu_01CySMaZTM9UtJ2nf2EH94Cy
 tool_result
 id: toolu_01CySMaZTM9UtJ2nf2EH94Cy
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1671,7 +1671,7 @@ id: toolu_017hjGq8aT33VAbN8QCUX5b4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
   "old_string": "  \"version\": \"0.11.8\",",
   "new_string": "  \"version\": \"0.11.9\","
 }
@@ -1682,7 +1682,7 @@ id: toolu_017hjGq8aT33VAbN8QCUX5b4
 tool_result
 id: toolu_017hjGq8aT33VAbN8QCUX5b4
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1719,7 +1719,7 @@ tool_use Write
 id: toolu_011SjWrpzzbHYLQUqBAMYaE8
 ```json
 {
-  "file_path": "/Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_extension_button_surface_detection.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_extension_button_surface_detection.md",
   "content": "---\nname: project_extension_button_surface_detection\ndescription: Manage Visitors button surface-detection rules (visible dialogs only; page-surface survives overlays)\nmetadata:\n  type: project\n---\n\n`auxilio-extension/entrypoints/calendar.content.ts` `readSurface()` decides whether the \"Manage Visitors\" button shows. Two rules that must not regress (fixed v0.11.9):\n\n1. **Only VISIBLE `[role=\"dialog\"]` nodes count.** Google leaves hidden dialog nodes in the DOM (Meet/conferencing picker, recurrence/notification menus, transient loaders). Matching a hidden leftover as a \"confirmation dialog\" made the button vanish the moment Calendar lazy-loaded anything (e.g. the Meet link) and never return until reopen. Filter `document.querySelectorAll('[role=\"dialog\"]')` through `isVisible`.\n2. **A non-event dialog must NOT suppress the button when the event surface is the edit PAGE underneath** (URL eid or `/eventedit`). The button is anchored in the page form; the dialog is just an overlay. Only `return null` when a non-event dialog is the SOLE surface (so we never decorate a confirmation). When such an overlay is up, set `suppressFab=true` so the floating fallback never floats over a real modal.\n\nRecovery from Google re-rendering away the injected button is via the MutationObserver (150ms debounce) + 1s editorPoll safety net calling `render()`. Those only work if `readSurface()` returns the surface (non-null) — so the bug was always in detection, not re-injection.\n\n**Fallback (FAB) trigger:** […]
 
 > TOOL
@@ -1727,7 +1727,7 @@ id: toolu_011SjWrpzzbHYLQUqBAMYaE8
 tool_result
 id: toolu_011SjWrpzzbHYLQUqBAMYaE8
 ```
-File created successfully at: /Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_extension_button_surface_detection.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_extension_button_surface_detection.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1737,7 +1737,7 @@ id: toolu_01XyHUfMx1odgMSKGSaRG73H
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/MEMORY.md",
   "old_string": "- [Calendar surfaces are host-only](project_calendar_host_only_gate.md) —",
   "new_string": "- [Manage Visitors button surface detection](project_extension_button_surface_detection.md) — Only visible [role=dialog] nodes suppress the button; a non-event overlay over the edit page keeps the button in the form. Fixed disappear-on-lazy-load (v0.11.9). Also documents the FAB fallback trigger.\n- [Calendar surfaces are host-only](project_calendar_host_only_gate.md) —"
 }
@@ -1748,7 +1748,7 @@ id: toolu_01XyHUfMx1odgMSKGSaRG73H
 tool_result
 id: toolu_01XyHUfMx1odgMSKGSaRG73H
 ```
-The file /Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1785,7 +1785,7 @@ tool_use Read
 id: toolu_01NdcgDy1droBFTunGYoTxDn
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts",
   "offset": 236,
   "limit": 14
 }
@@ -1830,7 +1830,7 @@ id: toolu_01R34MqB1DYtQEm7N4X2oKdx
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts",
   "old_string": "    } else {\n      // Cancelled (deleted) or no longer a visitor event → not pending. Report\n      // it so any optimistic in-page nudge for it gets purged, and forget any\n      // \"handled\" record so the id can't linger.\n      if (cancelled || prevMarked[ev.id]) cancelledIds.push(ev.id);\n      delete marked[ev.id];\n      delete handled[ev.id];\n    }",
   "new_string": "    } else {\n      // Cancelled (deleted) or no longer a tracked visitor event (magic removed, or\n      // not organized by us) → not pending. Report it so any optimistic in-page nudge\n      // for it gets purged, and drop it from the marked set.\n      if (cancelled || prevMarked[ev.id]) cancelledIds.push(ev.id);\n      delete marked[ev.id];\n      // Only FORGET the \"handled\" record on a genuine cancel/delete. Don't drop it\n      // just because the event left our tracked set for another reason (e.g. a\n      // momentarily-absent organizer.self on one sync pass) — that would let an\n      // already-sent event re-nudge through the optimistic path. The 30-day TTL\n      // (handledCutoff below) prunes stale records anyway.\n      if (cancelled) delete handled[ev.id];\n    }"
 }
@@ -1841,7 +1841,7 @@ id: toolu_01R34MqB1DYtQEm7N4X2oKdx
 tool_result
 id: toolu_01R34MqB1DYtQEm7N4X2oKdx
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1851,7 +1851,7 @@ id: toolu_01FY7hkLmkEiEC4UJv8qfCKL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/background.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/background.ts",
   "old_string": "import {\n  clearSyncToken,\n  isEventHandled,\n  listForPanel,\n  listMarked,\n  listPendingICalUids,\n  markHandled,\n  readEngineHandled,\n  runSync,\n  setEngineHandled,\n  syncConfigChanged,\n} from '@/lib/calendar-sync';",
   "new_string": "import {\n  clearSyncToken,\n  isEventHandled,\n  isEventMarked,\n  listForPanel,\n  listMarked,\n  listPendingICalUids,\n  markHandled,\n  readEngineHandled,\n  runSync,\n  setEngineHandled,\n  syncConfigChanged,\n} from '@/lib/calendar-sync';"
 }
@@ -1862,7 +1862,7 @@ id: toolu_01FY7hkLmkEiEC4UJv8qfCKL
 tool_result
 id: toolu_01FY7hkLmkEiEC4UJv8qfCKL
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/background.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/background.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1872,7 +1872,7 @@ id: toolu_016wa5TZqUE3vxJFWs47PDWf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/background.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/background.ts",
   "old_string": "    case 'IS_NUDGE_WORTHY':\n      // Gate the in-page OPTIMISTIC nudge (the instant, DOM-derived guess) on two\n      // things the cheap DOM snapshot can't know: the event isn't already handled,\n      // and the signed-in user is the event's ORGANIZER — not a mere guest who was\n      // invited to someone else's visitor event. On a just-created event (events.get\n      // still 404s) or any transient error we return worthy:true so the host's\n      // instant nudge for their own new event still fires; the organizer-gated\n      // background sync reconciles it moments later.\n      return withTokens(async (t) => {\n        if (await isEventHandled(msg.eventId)) return { worthy: false };\n        try {\n          const ev = await fetchActiveEvent(msg.eid, t.accessToken);\n          const me = (t.email ?? (await authStatus()).email ?? '').toLowerCase();\n          const org = (ev.organizerEmail ?? '').toLowerCase();\n          if (!org || !me) return { worthy: true };\n          return { worthy: org === me };\n        } catch {\n          return { worthy: true };\n        }\n      });",
   "new_string": "    case 'IS_NUDGE_WORTHY':\n      // The in-page OPTIMISTIC nudge (the instant, DOM-derived guess) exists ONLY to\n      // bridge sync lag for a brand-new event. So suppress it for anything the sync\n      // already knows about:\n      //  - isEventHandled → […]
 
@@ -1881,7 +1881,7 @@ id: toolu_016wa5TZqUE3vxJFWs47PDWf
 tool_result
 id: toolu_016wa5TZqUE3vxJFWs47PDWf
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/background.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/background.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1891,7 +1891,7 @@ id: toolu_01CujW5t4HZQMZR1tPu2nxs8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
   "old_string": "  \"version\": \"0.11.9\",",
   "new_string": "  \"version\": \"0.11.10\","
 }
@@ -1902,7 +1902,7 @@ id: toolu_01CujW5t4HZQMZR1tPu2nxs8
 tool_result
 id: toolu_01CujW5t4HZQMZR1tPu2nxs8
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1940,7 +1940,7 @@ id: toolu_01VBXtxnu9mz7HpktYS8hPqj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_calendar_host_only_gate.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_calendar_host_only_gate.md",
   "old_string": "- Extension optimistic in-page nudge: gated via new `IS_NUDGE_WORTHY` RPC — background does `events.get` and returns worthy = not-handled AND organizerEmail === signed-in email. On 404 (just-created event) / error returns worthy:true so the host's instant nudge for their own new event survives; the organizer-gated sync reconciles.",
   "new_string": "- Extension optimistic in-page nudge: gated via `IS_NUDGE_WORTHY` RPC. It is ONLY for a brand-new event the sync hasn't caught — so it returns worthy:false when `isEventHandled(eventId)` OR `isEventMarked(eventId)` (already in the marked set = pending-and-dismissed or handled). Only a genuinely new event reaches the `events.get` organizer check (organizerEmail === signed-in email; 404/error → worthy:true so the host's own new event still nudges). This fixed an already-sent / already-dismissed event re-nudging after a page refresh when reopened+closed.\n- Related fix in `calendar-sync.ts`: the marked-set else-branch now deletes the `handled[ev.id]` record ONLY on a genuine `cancelled` event, not whenever an event leaves the tracked set. The host-only gate (`organizer.self`) widened \"leaves the tracked set\", and a momentarily-absent `organizer.self` on one sync pass was wiping the sent-record and letting the optimistic path re-nudge. 30-day TTL still prunes stale handled records."
 }
@@ -1951,7 +1951,7 @@ id: toolu_01VBXtxnu9mz7HpktYS8hPqj
 tool_result
 id: toolu_01VBXtxnu9mz7HpktYS8hPqj
 ```
-The file /Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_calendar_host_only_gate.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_calendar_host_only_gate.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2019,7 +2019,7 @@ tool_use Read
 id: toolu_01RSUvHmmVtSBbZhZCnyxH7Y
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "offset": 446,
   "limit": 130
 }
@@ -2036,7 +2036,7 @@ id: toolu_01LhYe2k7AzpdD2UN9nWAuM1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "old_string": "  function findAnchor(): Anchor | null {\n    // Full-screen edit page → our own row just BELOW the Availability/Visibility\n    // info section (falling back to above Description).\n    if (/\\/eventedit/.test(location.pathname)) {\n      // Primary: an inline button right before the native \"Save\" in the editor's\n      // action bar, so it sits next to Save / More options and reads as a native\n      // inline action — what the host wants on a new/unsaved event.\n      const save = findButtonByText('save');\n      const saveParent = save?.parentElement;\n      if (save && saveParent) {\n        return { insert: (el) => saveParent.insertBefore(el, save), inset: 0, inline: true };\n      }\n      // Fallback: our own full-width row just BELOW the Availability/Visibility info\n      // section (else above Description) when the action bar can't be found.\n      const avail = findAvailabilityInfo();\n      const afterAvail = avail ? rowsListFor(avail) : null;\n      if (afterAvail) {\n        const { list, row } = afterAvail;\n        return { insert: (el) => list.insertBefore(el, row.nextSibling), inset: rowInset(row, list) };\n      }\n      const desc = findEditDescription();\n      const aboveDesc = desc ? rowsListFor(desc) : null;\n      if (aboveDesc) {\n        const { list, row } = aboveDesc;\n        return { insert: (el) => list.insertBefore(el, row), inset: rowInset(row, list) };\n      }\n […]
 
 > TOOL
@@ -2044,7 +2044,7 @@ id: toolu_01LhYe2k7AzpdD2UN9nWAuM1
 tool_result
 id: toolu_01LhYe2k7AzpdD2UN9nWAuM1
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2054,7 +2054,7 @@ id: toolu_016VsDhbGD3v8FoLr9Jwuxiu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "old_string": "    update(show: boolean, allowFab = true) {\n      clearTimeout(retryTimer);\n      if (!show) {\n        // Defer the hide: if the surface comes right back (hydration churn), the\n        // next update(true) cancels this and the button never visibly disappears.\n        clearTimeout(hideTimer);\n        hideTimer = setTimeout(() => {\n          removeInjected();\n          fab.setVisible(false);\n        }, HIDE_GRACE_MS);\n        return;\n      }\n      clearTimeout(hideTimer); // surface is present → cancel any pending hide",
   "new_string": "    update(show: boolean, allowFab = true, surfaceEl: HTMLElement | null = null) {\n      clearTimeout(retryTimer);\n      if (!show) {\n        // Defer the hide: if the surface comes right back (hydration churn), the\n        // next update(true) cancels this and the button never visibly disappears.\n        clearTimeout(hideTimer);\n        hideTimer = setTimeout(() => {\n          removeInjected();\n          fab.setVisible(false);\n        }, HIDE_GRACE_MS);\n        return;\n      }\n      clearTimeout(hideTimer); // surface is present → cancel any pending hide"
 }
@@ -2065,7 +2065,7 @@ id: toolu_016VsDhbGD3v8FoLr9Jwuxiu
 tool_result
 id: toolu_016VsDhbGD3v8FoLr9Jwuxiu
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2074,7 +2074,7 @@ tool_use Read
 id: toolu_01LKh8rCmQr2qfHXE5YqzQKe
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "offset": 576,
   "limit": 18
 }
@@ -2112,7 +2112,7 @@ id: toolu_017TFxhmQoGRbn79FcWGypSR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "old_string": "      let attempts = 0;\n      const attempt = () => {\n        const placed = ensureInjected();",
   "new_string": "      let attempts = 0;\n      const attempt = () => {\n        const placed = ensureInjected(surfaceEl);"
 }
@@ -2123,7 +2123,7 @@ id: toolu_017TFxhmQoGRbn79FcWGypSR
 tool_result
 id: toolu_017TFxhmQoGRbn79FcWGypSR
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2137,7 +2137,7 @@ id: toolu_01S1LbHY34voKWBbb21QTAru
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "old_string": "      // appears as a genuine last resort. (We no longer navigate the tab on click,\n      // so the old \"flash while a navigated page loads\" concern is moot.) The FAB is\n      // held back while a non-event modal is up so it never floats over a confirmation.\n      button.update(!!surface, !suppressFab);\n      if (panelOpen) maybeFollow();",
   "new_string": "      // appears as a genuine last resort. (We no longer navigate the tab on click,\n      // so the old \"flash while a navigated page loads\" concern is moot.) The FAB is\n      // held back while a non-event modal is up so it never floats over a confirmation.\n      // Pass the resolved surface element so the button anchors INSIDE it (never a\n      // hidden leftover dialog) and re-places itself if a re-render drifts it out.\n      button.update(!!surface, !suppressFab, surface?.el ?? null);\n      if (panelOpen) maybeFollow();"
 }
@@ -2148,7 +2148,7 @@ id: toolu_01S1LbHY34voKWBbb21QTAru
 tool_result
 id: toolu_01S1LbHY34voKWBbb21QTAru
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2158,7 +2158,7 @@ id: toolu_01NX9MifW5tf9sY5qg1coi8H
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
   "old_string": "  \"version\": \"0.11.10\",",
   "new_string": "  \"version\": \"0.11.11\","
 }
@@ -2169,7 +2169,7 @@ id: toolu_01NX9MifW5tf9sY5qg1coi8H
 tool_result
 id: toolu_01NX9MifW5tf9sY5qg1coi8H
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2207,7 +2207,7 @@ id: toolu_01LEEbEAqbBwD79pkGrLafN9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_extension_button_surface_detection.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_extension_button_surface_detection.md",
   "old_string": "Recovery from Google re-rendering away the injected button is via the MutationObserver (150ms debounce) + 1s editorPoll safety net calling `render()`. Those only work if `readSurface()` returns the surface (non-null) — so the bug was always in detection, not re-injection.",
   "new_string": "3. **`findAnchor()` must anchor inside the EXACT surface element `readSurface` chose** (passed through `update(show, allowFab, surfaceEl)` → `ensureInjected(surfaceEl)` → `findAnchor(surfaceEl)`), NOT `document.querySelector('[role=\"dialog\"]')`. The querySelector returned the first dialog in DOM order, which during lazy-load can be a hidden leftover — injecting there placed the button in an invisible node. This was the actual cause of \"button disappears on dynamic load and never returns\" (the readSurface visibility fix alone did NOT fix it). `surfaceEl` is the dialog for a popover, or `document.body` for the editor/url-eid page (→ page-level Save/Availability/Description anchors).\n4. **`ensureInjected` health check is `isConnected && surfaceEl.contains(injected)`**, not just `isConnected`. A button left attached to a stale/hidden subtree after a re-render stays `isConnected:true` and would read as \"placed\" forever; the contains() check forces a re-place when it drifts out of the current surface.\n\nRecovery from Google re-rendering away the injected button is via the MutationObserver (150ms debounce) + 1s editorPoll […]
 
@@ -2216,7 +2216,7 @@ id: toolu_01LEEbEAqbBwD79pkGrLafN9
 tool_result
 id: toolu_01LEEbEAqbBwD79pkGrLafN9
 ```
-The file /Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_extension_button_surface_detection.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_extension_button_surface_detection.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2252,7 +2252,7 @@ id: toolu_016Rv4b1aBgjauuF2cHA7SUm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "old_string": "  const fab = mountFloating(onClick);\n  let injected: HTMLElement | null = null;\n  let retryTimer: ReturnType<typeof setTimeout> | undefined;",
   "new_string": "  const fab = mountFloating(onClick);\n  let injected: HTMLElement | null = null;\n  let retryTimer: ReturnType<typeof setTimeout> | undefined;\n  // Last decision from update(), so keepAlive() can re-place the button synchronously\n  // (flicker-free) when a Google re-render detaches it, without recomputing the surface.\n  let lastShow = false;\n  let lastSurfaceEl: HTMLElement | null = null;"
 }
@@ -2263,7 +2263,7 @@ id: toolu_016Rv4b1aBgjauuF2cHA7SUm
 tool_result
 id: toolu_016Rv4b1aBgjauuF2cHA7SUm
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2281,7 +2281,7 @@ id: toolu_015HDQU58xmnL82Yq8YbnmJ6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "old_string": "    update(show: boolean, allowFab = true, surfaceEl: HTMLElement | null = null) {\n      clearTimeout(retryTimer);\n      if (!show) {",
   "new_string": "    update(show: boolean, allowFab = true, surfaceEl: HTMLElement | null = null) {\n      lastShow = show;\n      lastSurfaceEl = surfaceEl;\n      clearTimeout(retryTimer);\n      if (!show) {"
 }
@@ -2292,7 +2292,7 @@ id: toolu_015HDQU58xmnL82Yq8YbnmJ6
 tool_result
 id: toolu_015HDQU58xmnL82Yq8YbnmJ6
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2305,7 +2305,7 @@ tool_use Read
 id: toolu_01TSVDNAKkn5CGt9ntEpydGk
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "offset": 588,
   "limit": 22
 }
@@ -2347,7 +2347,7 @@ id: toolu_01GA2KjCmXYXhmmff3Bjz1yC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "old_string": "        if (placed || attempts++ >= 30) return;\n        retryTimer = setTimeout(attempt, 150);\n      };\n      attempt();\n    },\n  };\n}",
   "new_string": "        if (placed || attempts++ >= 30) return;\n        retryTimer = setTimeout(attempt, 150);\n      };\n      attempt();\n    },\n\n    // Synchronous, cheap re-assert called from the MutationObserver on every DOM\n    // change: if a Google re-render just detached our button (the Meet link / \"take\n    // meeting notes\" / any lazy section finishing its skeleton), put it back in the\n    // SAME microtask — before the browser paints — so it never visibly flickers, and\n    // so a re-render that lands exactly as loading completes can't drop it until the\n    // next poll. Heavy work (findAnchor) runs ONLY when the button is actually missing;\n    // when it's still placed this is two cheap DOM checks and returns immediately.\n    keepAlive() {\n      if (!lastShow) return; // surface not shown → nothing to keep alive\n      const el = lastSurfaceEl;\n      if (el && (!el.isConnected || !isVisible(el))) return; // stale → let render() recompute\n      if (injected && injected.isConnected && (!el || el.contains(injected))) return; // still placed\n      ensureInjected(el);\n    },\n  };\n}"
 }
@@ -2358,7 +2358,7 @@ id: toolu_01GA2KjCmXYXhmmff3Bjz1yC
 tool_result
 id: toolu_01GA2KjCmXYXhmmff3Bjz1yC
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2372,7 +2372,7 @@ id: toolu_01FQsWQxzdeQYgTW6ppbq9xF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "old_string": "    let timer: number | undefined;\n    const observer = new MutationObserver(() => {\n      clearTimeout(timer);\n      timer = setTimeout(() => {\n        if (!document.querySelector('[role=\"dialog\"]') && !urlEid()) {\n          clickedEid = null;\n        }\n        render();\n      }, 150) as unknown as number;\n    });",
   "new_string": "    let timer: number | undefined;\n    const observer = new MutationObserver(() => {\n      // Flicker-free keep-alive FIRST, synchronously: if Google's re-render just\n      // detached our button, re-place it in this same microtask (before paint) rather\n      // than waiting out the 150ms debounce below — that gap was the visible flicker,\n      // and a re-render landing as a lazy section finishes loading could otherwise drop\n      // the button until the next poll. The full re-evaluation still runs debounced.\n      button.keepAlive();\n      clearTimeout(timer);\n      timer = setTimeout(() => {\n        if (!document.querySelector('[role=\"dialog\"]') && !urlEid()) {\n          clickedEid = null;\n        }\n        render();\n      }, 150) as unknown as number;\n    });"
 }
@@ -2383,7 +2383,7 @@ id: toolu_01FQsWQxzdeQYgTW6ppbq9xF
 tool_result
 id: toolu_01FQsWQxzdeQYgTW6ppbq9xF
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2393,7 +2393,7 @@ id: toolu_01C9XYGivXeUENuZPVvaA7hD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
   "old_string": "  \"version\": \"0.11.11\",",
   "new_string": "  \"version\": \"0.11.12\","
 }
@@ -2404,7 +2404,7 @@ id: toolu_01C9XYGivXeUENuZPVvaA7hD
 tool_result
 id: toolu_01C9XYGivXeUENuZPVvaA7hD
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2442,7 +2442,7 @@ id: toolu_01FDyfUoyxMybivApVXYh1QC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_extension_button_surface_detection.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_extension_button_surface_detection.md",
   "old_string": "Recovery from Google re-rendering away the injected button is via the MutationObserver (150ms debounce) + 1s editorPoll safety net calling `render()`. Those only work if `readSurface()` returns the surface (non-null) AND `findAnchor`/`ensureInjected` target the right (visible) surface element.",
   "new_string": "5. **`button.keepAlive()` runs SYNCHRONOUSLY in the MutationObserver callback (v0.11.12)**, before the 150ms-debounced `render()`. When a Google re-render detaches the injected button (the Meet link / \"take meeting notes\" / any lazy section finishing its skeleton), keepAlive re-places it in the same microtask, before paint — eliminating the flicker AND the \"button disappears when the skeleton finishes loading and never returns until reopen\" symptom (the debounce gap was the bug). keepAlive is cheap when the button is still placed (two DOM checks via cached `lastShow`/`lastSurfaceEl`); it only runs `findAnchor` when the button is actually missing. The debounced `render()` still does the full surface re-evaluation (FAB, follow, hide-grace).\n\nRecovery from Google re-rendering away the injected button is via keepAlive (synchronous, flicker-free) plus the debounced `render()` + 1s editorPoll. All of it only works if `readSurface()` returns the surface (non-null) AND `findAnchor`/`ensureInjected` target the right (visible) surface element."
 }
@@ -2453,7 +2453,7 @@ id: toolu_01FDyfUoyxMybivApVXYh1QC
 tool_result
 id: toolu_01FDyfUoyxMybivApVXYh1QC
 ```
-The file /Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_extension_button_surface_detection.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_extension_button_surface_detection.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2486,7 +2486,7 @@ const observer = new MutationObserver(() => {
 > DEVELOPER
 
 the issue is still there: this is the full html when everything is loaded and the manage visitor button has disappearad. 
-<div class="ecHOgf RDlrG Inn9w iWO5td" jscontroller="dIQ6id" jsaction="Vws5Ae:JIbuQc;DahzHe:U8CY9;vbKBWe:IrPMqd;WB41gf:iuJMzb;eAkbGb:PA60s;CCI6n:zjRS5;rcuQ6b:rcuQ6b; mousedown:H8nU8b; touchstart:H8nU8b; focus:H8nU8b; blur:H8nU8b; keydown:I481le; clickonly:cOuCgd;Bp7Oie:PGxz3c;kQj7Pe:Hm2uIf;LNlWBf:.CLIENT;touchmove:.CLIENT;A4uS1b:.CLIENT;znnfEd:.CLIENT;YOrDqe:.CLIENT;vL1IB:.CLIENT;sSfkvb:.CLIENT;zHe0gf:.CLIENT;y6LN7c:.CLIENT;pPc6Qe:.CLIENT;przuUe:.CLIENT" jsshadow="" role="dialog" jsname="ssXDle" data-chips-dialog="true" data-back-to-cancel="false" data-allow-wheel-scroll="false" aria-labelledby="rAECCd" data-is-adaptive="true" data-position="pdYghb" data-cancelids="IbE0S" tabindex="-1" data-layout-mode="bubble" aria-modal="true" data-last-opened-height="651" style="opacity: 1; transform: none;"><div tabindex="0" aria-hidden="true" class="pw1uU" jsaction="focus:.CLIENT"></div><div tabindex="0" aria-hidden="true" class="pw1uU" jsaction="focus:.CLIENT"></div><span jsslot="" jsname="bN97Pc" class="kma42e"><div data-keyboardactiontype="0;1" id="xDetDlg" jscontroller="qxis9" jsaction="BBrEN: Vtdxob;Aiz01e: r9DEDb;A4uS1b: r9DEDb;rcuQ6b: npT2md; keydown:Hq2uPe;M888bd: sI1Jxb;DoxWPd: sI1Jxb;MNWSEd: sI1Jxb;JIbuQc:g7PVYc(lezaG),QFcJOe(XC5Xbb),QFcJOe(dc6VWd),QFcJOe(H3V8Zc),QFcJOe(oMW9Rd),ffvsSd(q0FqOb),YQ6iBf(ViOCad),UIKNRb(NyZ9Md),rBhrhc(TtJ8Me),fCusRc(EVpSp),QkT4Dd(O4MOEe),BTRoxd(j5VdQb),v28Gec(tWElCe),aHIeKe(P8X4Af),lMhmVc(ln0Av),rwRlcf(eMh1ib);HQBcFf:pR0Pw(sI0lre),prlX2(gLBrGc);AOyNJd:qh1n2c(sI0lre),r03Dqe(gLBrGc);FC9Wt:IPtIV;SAqyGd:IPtIV;wQRIKd:B4jmff;moT1c:SY9G8;DoeCdb:HaXkN;RzOypd:S6T5Yb;GLDBhb: sI1Jxb;rvQICb:msHTdf;kskXN:sI1Jxb;eUGxtf:PvwwDd;XDlRmd:PKqYRe;SGFpHc:S7qQOd;KLuJ3:OoaMCb;C529ac:AyyNZc;ewKkh:StZ7S;VSsylf:cWqeLc;KBvjzf:a4d0ib;beB2zc:V6n7Hd;ErGTge:jy6Dpc;kiRcZ:e5wAvd" jsmodel="yEXys" jslog="35389; 2:[&quot;1dq60v6utpm0k3o5l079rpgu4a&quot;,&quot;junaid@appointy.com&quot;,0,null,4,0,null,null,0,0,[],null,null,0,null,null,null,null,1,1,&quot;auj-edcg-hkr&quot;,null,null,6,null,[2],0,null,5];1:[&quot;junaid@appointy.com&quot;,1];2:[&quot;1dq60v6utpm0k3o5l079rpgu4a&quot;,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,6];14:[2,[0,0,1,0,null,1,4,0,0,0,0,0,1,null,1,0,1,2,null,1,1,4]];track:impression; mutable:rci;" data-origin="2" data-eventid="REDACTED" data-actions-expanded="false" data-open-edit-note="false" data-inferred-join-method="0" data-disable-meeting-brief="false" class="jefcFd Fqhyrf" data-1="46"><div class="pdqVLc"><div class="Tnsqdc "><div class="i5a7ie"><div class="wv9rPe"><div class="M30cEf" jsaction="JIbuQc:r9DEDb"><span data-is-tooltip-wrapper="true"><button class="pYTkkf-Bz112c-LgbsSe pYTkkf-Bz112c-LgbsSe-OWXEXe-SfQLQb-suEOdc" jscontroller="PIVayb" jsaction="click:h5M12e;clickmod:h5M12e;pointerdown:FEiYhc;pointerup:mF5Elf;pointerenter:EX0mI;pointerleave:vpvbp;pointercancel:xyn4sd;contextmenu:xexox;focus:h06R8; blur:zjh6rb;mlnRJb:fLiPzd" jsname="LgbsSe" aria-label="Close" data-tooltip-enabled="true" data-tooltip-id="tt-c172" data-tooltip-y-position="3" data-id="TvD9Pc" id="xDetDlgCloseBu"><span class="XjoK4b pYTkkf-Bz112c-UHGRz"></span><span class="UTNHae" jscontroller="LBaJxb" jsname="m9ZlFb" jsaction="QBlI0e:u4uo5d;BTifte:aV6zj;nqgE9d:f6959e;fHTtBd:ynrQde"></span><span jsname="S5tZuc" aria-hidden="true" class="pYTkkf-Bz112c-kBDsod-Rtc0Jf"><span class="notranslate VfPpkd-kBDsod" aria-hidden="true"><svg focusable="false" width="20" height="20" viewBox="0 0 24 24" class=" NMm5M"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg></span></span><div class="pYTkkf-Bz112c-RLmnJb"></div></button><div class="ne2Ple-oshW8e-V67aGc" role="tooltip" aria-hidden="true" id="tt-c172">Close</div></span></div><div class="pPTZAe"><div jsaction="JIbuQc:DyVDA"><span data-is-tooltip-wrapper="true"><button class="pYTkkf-Bz112c-LgbsSe pYTkkf-Bz112c-LgbsSe-OWXEXe-SfQLQb-suEOdc" jscontroller="PIVayb" jsaction="click:h5M12e;clickmod:h5M12e;pointerdown:FEiYhc;pointerup:mF5Elf;pointerenter:EX0mI;pointerleave:vpvbp;pointercancel:xyn4sd;contextmenu:xexox;focus:h06R8; blur:zjh6rb;mlnRJb:fLiPzd" data-use-native-focus-logic="true" jsname="DyVDA" aria-label="Edit event" data-tooltip-enabled="true" data-tooltip-id="tt-c175"><span class="XjoK4b pYTkkf-Bz112c-UHGRz"></span><span class="UTNHae" jscontroller="LBaJxb" jsname="m9ZlFb" jsaction="QBlI0e:u4uo5d;BTifte:aV6zj;nqgE9d:f6959e;fHTtBd:ynrQde"></span><span jsname="S5tZuc" aria-hidden="true" class="pYTkkf-Bz112c-kBDsod-Rtc0Jf"><span class="notranslate VfPpkd-kBDsod" aria-hidden="true"><svg focusable="false" width="20" height="20" viewBox="0 0 24 24" class=" NMm5M"><path d="M20.41 4.94l-1.35-1.35c-.78-.78-2.05-.78-2.83 0L3 16.82V21h4.18L20.41 7.77c.79-.78.79-2.05 […]
+<div class="ecHOgf RDlrG Inn9w iWO5td" jscontroller="dIQ6id" jsaction="Vws5Ae:JIbuQc;DahzHe:U8CY9;vbKBWe:IrPMqd;WB41gf:iuJMzb;eAkbGb:PA60s;CCI6n:zjRS5;rcuQ6b:rcuQ6b; mousedown:H8nU8b; touchstart:H8nU8b; focus:H8nU8b; blur:H8nU8b; keydown:I481le; clickonly:cOuCgd;Bp7Oie:PGxz3c;kQj7Pe:Hm2uIf;LNlWBf:.CLIENT;touchmove:.CLIENT;A4uS1b:.CLIENT;znnfEd:.CLIENT;YOrDqe:.CLIENT;vL1IB:.CLIENT;sSfkvb:.CLIENT;zHe0gf:.CLIENT;y6LN7c:.CLIENT;pPc6Qe:.CLIENT;przuUe:.CLIENT" jsshadow="" role="dialog" jsname="ssXDle" data-chips-dialog="true" data-back-to-cancel="false" data-allow-wheel-scroll="false" aria-labelledby="rAECCd" data-is-adaptive="true" data-position="pdYghb" data-cancelids="IbE0S" tabindex="-1" data-layout-mode="bubble" aria-modal="true" data-last-opened-height="651" style="opacity: 1; transform: none;"><div tabindex="0" aria-hidden="true" class="pw1uU" jsaction="focus:.CLIENT"></div><div tabindex="0" aria-hidden="true" class="pw1uU" jsaction="focus:.CLIENT"></div><span jsslot="" jsname="bN97Pc" class="kma42e"><div data-keyboardactiontype="0;1" id="xDetDlg" jscontroller="qxis9" jsaction="BBrEN: Vtdxob;Aiz01e: r9DEDb;A4uS1b: r9DEDb;rcuQ6b: npT2md; keydown:Hq2uPe;M888bd: sI1Jxb;DoxWPd: sI1Jxb;MNWSEd: sI1Jxb;JIbuQc:g7PVYc(lezaG),QFcJOe(XC5Xbb),QFcJOe(dc6VWd),QFcJOe(H3V8Zc),QFcJOe(oMW9Rd),ffvsSd(q0FqOb),YQ6iBf(ViOCad),UIKNRb(NyZ9Md),rBhrhc(TtJ8Me),fCusRc(EVpSp),QkT4Dd(O4MOEe),BTRoxd(j5VdQb),v28Gec(tWElCe),aHIeKe(P8X4Af),lMhmVc(ln0Av),rwRlcf(eMh1ib);HQBcFf:pR0Pw(sI0lre),prlX2(gLBrGc);AOyNJd:qh1n2c(sI0lre),r03Dqe(gLBrGc);FC9Wt:IPtIV;SAqyGd:IPtIV;wQRIKd:B4jmff;moT1c:SY9G8;DoeCdb:HaXkN;RzOypd:S6T5Yb;GLDBhb: sI1Jxb;rvQICb:msHTdf;kskXN:sI1Jxb;eUGxtf:PvwwDd;XDlRmd:PKqYRe;SGFpHc:S7qQOd;KLuJ3:OoaMCb;C529ac:AyyNZc;ewKkh:StZ7S;VSsylf:cWqeLc;KBvjzf:a4d0ib;beB2zc:V6n7Hd;ErGTge:jy6Dpc;kiRcZ:e5wAvd" jsmodel="yEXys" jslog="35389; 2:[&quot;1dq60v6utpm0k3o5l079rpgu4a&quot;,&quot;<REDACTED_EMAIL>&quot;,0,null,4,0,null,null,0,0,[],null,null,0,null,null,null,null,1,1,&quot;auj-edcg-hkr&quot;,null,null,6,null,[2],0,null,5];1:[&quot;<REDACTED_EMAIL>&quot;,1];2:[&quot;1dq60v6utpm0k3o5l079rpgu4a&quot;,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,6];14:[2,[0,0,1,0,null,1,4,0,0,0,0,0,1,null,1,0,1,2,null,1,1,4]];track:impression; mutable:rci;" data-origin="2" data-eventid="REDACTED" data-actions-expanded="false" data-open-edit-note="false" data-inferred-join-method="0" data-disable-meeting-brief="false" class="jefcFd Fqhyrf" data-1="46"><div class="pdqVLc"><div class="Tnsqdc "><div class="i5a7ie"><div class="wv9rPe"><div class="M30cEf" jsaction="JIbuQc:r9DEDb"><span data-is-tooltip-wrapper="true"><button class="pYTkkf-Bz112c-LgbsSe pYTkkf-Bz112c-LgbsSe-OWXEXe-SfQLQb-suEOdc" jscontroller="PIVayb" jsaction="click:h5M12e;clickmod:h5M12e;pointerdown:FEiYhc;pointerup:mF5Elf;pointerenter:EX0mI;pointerleave:vpvbp;pointercancel:xyn4sd;contextmenu:xexox;focus:h06R8; blur:zjh6rb;mlnRJb:fLiPzd" jsname="LgbsSe" aria-label="Close" data-tooltip-enabled="true" data-tooltip-id="tt-c172" data-tooltip-y-position="3" data-id="TvD9Pc" id="xDetDlgCloseBu"><span class="XjoK4b pYTkkf-Bz112c-UHGRz"></span><span class="UTNHae" jscontroller="LBaJxb" jsname="m9ZlFb" jsaction="QBlI0e:u4uo5d;BTifte:aV6zj;nqgE9d:f6959e;fHTtBd:ynrQde"></span><span jsname="S5tZuc" aria-hidden="true" class="pYTkkf-Bz112c-kBDsod-Rtc0Jf"><span class="notranslate VfPpkd-kBDsod" aria-hidden="true"><svg focusable="false" width="20" height="20" viewBox="0 0 24 24" class=" NMm5M"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg></span></span><div class="pYTkkf-Bz112c-RLmnJb"></div></button><div class="ne2Ple-oshW8e-V67aGc" role="tooltip" aria-hidden="true" id="tt-c172">Close</div></span></div><div class="pPTZAe"><div jsaction="JIbuQc:DyVDA"><span data-is-tooltip-wrapper="true"><button class="pYTkkf-Bz112c-LgbsSe pYTkkf-Bz112c-LgbsSe-OWXEXe-SfQLQb-suEOdc" jscontroller="PIVayb" jsaction="click:h5M12e;clickmod:h5M12e;pointerdown:FEiYhc;pointerup:mF5Elf;pointerenter:EX0mI;pointerleave:vpvbp;pointercancel:xyn4sd;contextmenu:xexox;focus:h06R8; blur:zjh6rb;mlnRJb:fLiPzd" data-use-native-focus-logic="true" jsname="DyVDA" aria-label="Edit event" data-tooltip-enabled="true" data-tooltip-id="tt-c175"><span class="XjoK4b pYTkkf-Bz112c-UHGRz"></span><span class="UTNHae" jscontroller="LBaJxb" jsname="m9ZlFb" jsaction="QBlI0e:u4uo5d;BTifte:aV6zj;nqgE9d:f6959e;fHTtBd:ynrQde"></span><span jsname="S5tZuc" aria-hidden="true" class="pYTkkf-Bz112c-kBDsod-Rtc0Jf"><span class="notranslate VfPpkd-kBDsod" aria-hidden="true"><svg focusable="false" width="20" height="20" viewBox="0 0 24 24" class=" NMm5M"><path d="M20.41 4.94l-1.35-1.35c-.78-.78-2.05-.78-2.83 0L3 16.82V21h4.18L20.41 7.77c.79-.78.79-2.05 […]
 
 > AGENT
 
@@ -2503,7 +2503,7 @@ id: toolu_015mXJCBwipHgj9kwCrDz4SC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "old_string": "    const list = findContentList(dialog);\n    if (list) {\n      const ref = firstIconLedRow(list);\n      return { insert: (el) => list.appendChild(el), inset: ref ? rowInset(ref, list) : 0 };\n    }\n    // Fallback → bottom of the scrolling content of THIS dialog.",
   "new_string": "    const list = findContentList(dialog);\n    if (list) {\n      const ref = firstIconLedRow(list);\n      const inset = ref ? rowInset(ref, list) : 0;\n      // Insert AFTER the content list as a SIBLING — never inside it. Google's content\n      // list (e.g. `ibJzMe`) is a data-bound, jscontroller-managed node: it reconciles\n      // its OWN children on every dynamic section load (Meet link, \"take meeting notes\",\n      // guests) and strips our injected child — and since our re-add is itself a\n      // mutation, that became a strip/re-add loop (the flicker), ending with the button\n      // gone. A sibling in the stable content slot is outside that reconciliation, so it\n      // survives; keepAlive only has to cover a full slot rebuild (event reopen).\n      return { insert: (el) => list.insertAdjacentElement('afterend', el), inset };\n    }\n    // Fallback → bottom of the scrolling content of THIS dialog."
 }
@@ -2514,7 +2514,7 @@ id: toolu_015mXJCBwipHgj9kwCrDz4SC
 tool_result
 id: toolu_015mXJCBwipHgj9kwCrDz4SC
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2524,7 +2524,7 @@ id: toolu_01MR3qgfj36xHGayHRtJHGJW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
   "old_string": "  \"version\": \"0.11.12\",",
   "new_string": "  \"version\": \"0.11.13\","
 }
@@ -2535,7 +2535,7 @@ id: toolu_01MR3qgfj36xHGayHRtJHGJW
 tool_result
 id: toolu_01MR3qgfj36xHGayHRtJHGJW
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2573,7 +2573,7 @@ id: toolu_01Hvqm1DBDP1vMn7Z2SgqnQw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_extension_button_surface_detection.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_extension_button_surface_detection.md",
   "old_string": "5. **`button.keepAlive()` runs SYNCHRONOUSLY in the MutationObserver callback (v0.11.12)**,",
   "new_string": "6. **NEVER inject the button INSIDE Google's content list — insert it as a SIBLING after it (v0.11.13).** The detail-popover content list is `div.ibJzMe` (`jscontroller=\"I4fut\"`), a data-bound node that reconciles its OWN children on every dynamic section load (Meet link, \"take meeting notes\", guests) and strips any foreign child. Appending inside it caused a strip/re-add loop (the flicker) ending with the button gone — `keepAlive` cannot win against a controller that actively removes foreign children of its subtree. Fix: `findAnchor` does `list.insertAdjacentElement('afterend', el)` so the button lives in the stable content slot (`span.kma42e`) as a sibling of `ibJzMe`, outside its reconciliation. The dialog node carries `data-eventid` on an inner `div#xDetDlg`, so `isEventDialog` matches via that. If a future report shows even the slot gets rebuilt mid-load, the fully-immune fallback is a contextual overlay in our own shadow DOM (extend the FAB to anchor to the surface rect) — not yet needed.\n\n5. **`button.keepAlive()` runs SYNCHRONOUSLY in the MutationObserver callback (v0.11.12)**,"
 }
@@ -2584,7 +2584,7 @@ id: toolu_01Hvqm1DBDP1vMn7Z2SgqnQw
 tool_result
 id: toolu_01Hvqm1DBDP1vMn7Z2SgqnQw
 ```
-The file /Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_extension_button_surface_detection.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_extension_button_surface_detection.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2701,7 +2701,7 @@ tool_use Read
 id: toolu_01FBSUU5Ff3VufgdacPaeQmJ
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "offset": 459,
   "limit": 12
 }
@@ -2733,7 +2733,7 @@ id: toolu_01WJKvZFpgM2naxKEPHYejqP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "old_string": "function createButtonUI(onClick: () => void) {\n  const fab = mountFloating(onClick);\n  let injected: HTMLElement | null = null;\n  let retryTimer: ReturnType<typeof setTimeout> | undefined;",
   "new_string": "function createButtonUI(onClick: () => void) {\n  const fab = mountFloating(onClick);\n  let injected: HTMLElement | null = null;\n  let injectCount = 0; // diagnostic: climbs fast if Google keeps stripping our node\n  let retryTimer: ReturnType<typeof setTimeout> | undefined;"
 }
@@ -2744,7 +2744,7 @@ id: toolu_01WJKvZFpgM2naxKEPHYejqP
 tool_result
 id: toolu_01WJKvZFpgM2naxKEPHYejqP
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2758,7 +2758,7 @@ id: toolu_01WsagxtFb6Y3fePXVwmAAKU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "old_string": "      const dialogs = (\n        Array.from(document.querySelectorAll('[role=\"dialog\"]')) as HTMLElement[]\n      ).filter(isVisible);\n      // Prefer the dialog we already accepted as the event surface (sticky across\n      // Google's constant re-renders); otherwise the first visible one.\n      const dialog = dialogs.find((d) => d === eventDialog) ?? dialogs[0] ?? null;\n\n      if (dialog) {\n        // Sticky recognition: once a node is accepted as the event surface, keep\n        // treating it as one until it leaves the DOM — isEventDialog is a heuristic,\n        // and a single tick reading false would yank the button and pop it back a\n        // frame later (the flicker).\n        const isEvent = dialog === eventDialog || isEventDialog(dialog);\n        if (isEvent) {\n          eventDialog = dialog;\n          return { el: dialog, eid: fromUrl ?? clickedEid ?? '' };\n        }\n        // A visible NON-event dialog — e.g. the \"Send update emails to existing\n        // guests?\" confirmation. We must never decorate it. But if the real event\n        // surface is the edit PAGE underneath (URL eid / eventedit), keep the button\n        // anchored in that page's form; the dialog is just an overlay. Suppress\n        // entirely only when this dialog is the SOLE surface open. Either way, don't\n        // […]
 
 > TOOL
@@ -2766,7 +2766,7 @@ id: toolu_01WsagxtFb6Y3fePXVwmAAKU
 tool_result
 id: toolu_01WsagxtFb6Y3fePXVwmAAKU
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2780,7 +2780,7 @@ id: toolu_01SazUaCL8oSnz7phgkji8jN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "old_string": "    const list = findContentList(dialog);\n    if (list) {\n      const ref = firstIconLedRow(list);\n      const inset = ref ? rowInset(ref, list) : 0;\n      // Insert AFTER the content list as a SIBLING — never inside it. Google's content\n      // list (e.g. `ibJzMe`) is a data-bound, jscontroller-managed node: it reconciles\n      // its OWN children on every dynamic section load (Meet link, \"take meeting notes\",\n      // guests) and strips our injected child — and since our re-add is itself a\n      // mutation, that became a strip/re-add loop (the flicker), ending with the button\n      // gone. A sibling in the stable content slot is outside that reconciliation, so it\n      // survives; keepAlive only has to cover a full slot rebuild (event reopen).\n      return { insert: (el) => list.insertAdjacentElement('afterend', el), inset };\n    }\n    // Fallback → bottom of the scrolling content of THIS dialog.\n    const scope = scrollContainer(dialog) ?? dialog;\n    const l = mainVerticalList(scope) ?? scope;\n    return { insert: (el) => l.appendChild(el), inset: 0 };",
   "new_string": "    const list = findContentList(dialog);\n    if (list) {\n      // Climb to the dialog's OWN direct content child (the stable slot, e.g.\n      // span.kma42e) and drop the button right AFTER […]
 
@@ -2789,7 +2789,7 @@ id: toolu_01SazUaCL8oSnz7phgkji8jN
 tool_result
 id: toolu_01SazUaCL8oSnz7phgkji8jN
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2799,7 +2799,7 @@ id: toolu_01GwqKvjzDgofLsXEgbkNtr9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "old_string": "    injected = anchor.inline\n      ? buildInlineButton(onClick)\n      : buildInjectedRow(onClick, anchor.inset);\n    anchor.insert(injected);\n    return true;\n  }",
   "new_string": "    injected = anchor.inline\n      ? buildInlineButton(onClick)\n      : buildInjectedRow(onClick, anchor.inset);\n    anchor.insert(injected);\n    injectCount += 1;\n    // Diagnostic: one line per (re)placement. If this climbs rapidly while an event is\n    // open, Google is still stripping our node and we should anchor higher / overlay.\n    console.log('[auxilio] Manage Visitors button placed', {\n      count: injectCount,\n      parent: (injected.parentElement?.className || injected.parentElement?.tagName || '?').slice(0, 60),\n    });\n    return true;\n  }"
 }
@@ -2810,7 +2810,7 @@ id: toolu_01GwqKvjzDgofLsXEgbkNtr9
 tool_result
 id: toolu_01GwqKvjzDgofLsXEgbkNtr9
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2820,7 +2820,7 @@ id: toolu_01VPvxiB7FvKWXztoFXvxk38
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
   "old_string": "  \"version\": \"0.11.13\",",
   "new_string": "  \"version\": \"0.11.14\","
 }
@@ -2831,7 +2831,7 @@ id: toolu_01VPvxiB7FvKWXztoFXvxk38
 tool_result
 id: toolu_01VPvxiB7FvKWXztoFXvxk38
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2869,7 +2869,7 @@ id: toolu_01RFNtbLi1GUQSuSLMuJW7qK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_extension_button_surface_detection.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_extension_button_surface_detection.md",
   "old_string": "6. **NEVER inject the button INSIDE Google's content list — insert it as a SIBLING after it (v0.11.13).** The detail-popover content list is `div.ibJzMe` (`jscontroller=\"I4fut\"`), a data-bound node that reconciles its OWN children on every dynamic section load (Meet link, \"take meeting notes\", guests) and strips any foreign child. Appending inside it caused a strip/re-add loop (the flicker) ending with the button gone — `keepAlive` cannot win against a controller that actively removes foreign children of its subtree. Fix: `findAnchor` does `list.insertAdjacentElement('afterend', el)` so the button lives in the stable content slot (`span.kma42e`) as a sibling of `ibJzMe`, outside its reconciliation. The dialog node carries `data-eventid` on an inner `div#xDetDlg`, so `isEventDialog` matches via that. If a future report shows even the slot gets rebuilt mid-load, the fully-immune fallback is a contextual overlay in our own shadow DOM (extend the FAB to anchor to the surface rect) — not yet needed.",
   "new_string": "6. **Anchor the popover button as a DIRECT CHILD of the `[role=\"dialog\"]` node, not inside Google's content blocks (v0.11.14).** A console probe (planted sentinels at three depths, armed before opening the event so it catches the skeleton→loaded […]
 
@@ -2878,7 +2878,7 @@ id: toolu_01RFNtbLi1GUQSuSLMuJW7qK
 tool_result
 id: toolu_01RFNtbLi1GUQSuSLMuJW7qK
 ```
-The file /Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_extension_button_surface_detection.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_extension_button_surface_detection.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2974,7 +2974,7 @@ id: toolu_01JU3U8Z11tFdLV2duFJkiwk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "old_string": "  type Anchor = { insert: (el: HTMLElement) => void; inset: number; inline?: boolean };",
   "new_string": "  type Anchor = {\n    insert: (el: HTMLElement) => void;\n    inset: number;\n    inline?: boolean;\n    /** Render as a bottom footer action (divider + filled button) — the popover style. */\n    footer?: boolean;\n  };"
 }
@@ -2985,7 +2985,7 @@ id: toolu_01JU3U8Z11tFdLV2duFJkiwk
 tool_result
 id: toolu_01JU3U8Z11tFdLV2duFJkiwk
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2995,7 +2995,7 @@ id: toolu_0129eBbwyUKYMisqEQjvYG4u
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "old_string": "      return {\n        insert: (el) =>\n          slot.parentElement === dialog\n            ? slot.insertAdjacentElement('afterend', el)\n            : dialog.appendChild(el),\n        inset,\n      };",
   "new_string": "      return {\n        insert: (el) =>\n          slot.parentElement === dialog\n            ? slot.insertAdjacentElement('afterend', el)\n            : dialog.appendChild(el),\n        inset,\n        footer: true,\n      };"
 }
@@ -3006,7 +3006,7 @@ id: toolu_0129eBbwyUKYMisqEQjvYG4u
 tool_result
 id: toolu_0129eBbwyUKYMisqEQjvYG4u
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3016,7 +3016,7 @@ id: toolu_01XPwELYwmGmGZjGZX9opw98
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "old_string": "    injected = anchor.inline\n      ? buildInlineButton(onClick)\n      : buildInjectedRow(onClick, anchor.inset);\n    anchor.insert(injected);",
   "new_string": "    injected = anchor.inline\n      ? buildInlineButton(onClick)\n      : anchor.footer\n        ? buildFooterRow(onClick, anchor.inset)\n        : buildInjectedRow(onClick, anchor.inset);\n    anchor.insert(injected);"
 }
@@ -3027,7 +3027,7 @@ id: toolu_01XPwELYwmGmGZjGZX9opw98
 tool_result
 id: toolu_01XPwELYwmGmGZjGZX9opw98
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3040,7 +3040,7 @@ tool_use Read
 id: toolu_013UMtRsqQgr65QKp4qwx39M
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "offset": 800,
   "limit": 70
 }
@@ -3086,7 +3086,7 @@ tool_use Read
 id: toolu_01LewUx3HDDSrVJPMJ3DDanM
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "offset": 874,
   "limit": 66
 }
@@ -3150,7 +3150,7 @@ id: toolu_01YNEWSN48unfQqkR2xxXZm4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "old_string": "    .auxilio-mv-btn:hover{background:rgba(146,40,142,.08);}\n    .auxilio-mv-btn:active{background:rgba(146,40,142,.12);}\n    .auxilio-mv-btn:focus-visible{outline:2px solid #92288e;outline-offset:2px;}\n    .auxilio-mv-btn[disabled]{opacity:.6;cursor:default;}\n    .auxilio-mv-btn svg{width:18px;height:18px;flex:0 0 auto;}\n  `;",
   "new_string": "    .auxilio-mv-btn:hover{background:rgba(146,40,142,.08);}\n    .auxilio-mv-btn:active{background:rgba(146,40,142,.12);}\n    .auxilio-mv-btn:focus-visible{outline:2px solid #92288e;outline-offset:2px;}\n    .auxilio-mv-btn[disabled]{opacity:.6;cursor:default;}\n    .auxilio-mv-btn svg{width:18px;height:18px;flex:0 0 auto;}\n    /* Popover footer action: a divider then a FILLED brand button, so it reads as the\n       popover's primary action like the native RSVP buttons. */\n    .auxilio-mv-footer{box-sizing:border-box;display:flex;align-items:center;width:100%;\n      padding:12px 16px 14px;margin-top:4px;border-top:1px solid rgba(0,0,0,.12);}\n    .auxilio-mv-btn--filled{color:#fff;background:#92288e;border-color:transparent;\n      box-shadow:0 1px 2px rgba(0,0,0,.18);}\n    .auxilio-mv-btn--filled:hover{background:#85267f;box-shadow:0 1px 3px rgba(0,0,0,.28);}\n    .auxilio-mv-btn--filled:active{background:#73206e;}\n  `;"
 }
@@ -3161,7 +3161,7 @@ id: toolu_01YNEWSN48unfQqkR2xxXZm4
 tool_result
 id: toolu_01YNEWSN48unfQqkR2xxXZm4
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3171,7 +3171,7 @@ id: toolu_013Jjjxq5Tk9BPajCzz9TVhe
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "old_string": "/** Inline button that sits in the editor / quick-create action bar, next to the",
   "new_string": "/** A bottom footer action row for the detail popover: a top divider then a FILLED\n *  brand button, so it reads as the popover's primary action (like the native RSVP\n *  buttons) rather than a stray row. The button is left-aligned to the content text\n *  column (inset) to line up with the rows above. Lives at the dialog level, so\n *  Google's content re-renders can't strip it. */\nfunction buildFooterRow(onClick: () => void, inset: number): HTMLElement {\n  const row = document.createElement('div');\n  row.id = INJECT_ID;\n  row.className = 'auxilio-mv-footer';\n  // Align the button's left edge with the rows above when we have a good measurement;\n  // otherwise keep the footer's default 16px padding.\n  if (inset > 16) row.style.paddingLeft = `${inset}px`;\n  const btn = makeNativeButton(onClick);\n  btn.classList.add('auxilio-mv-btn--filled');\n  row.appendChild(btn);\n  // Guard the row's empty padding so a tap beside the button can't dismiss the popover.\n  shieldPadding(row);\n  return row;\n}\n\n/** Inline button that sits in the editor / quick-create action bar, next to the"
 }
@@ -3182,7 +3182,7 @@ id: toolu_013Jjjxq5Tk9BPajCzz9TVhe
 tool_result
 id: toolu_013Jjjxq5Tk9BPajCzz9TVhe
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3192,7 +3192,7 @@ id: toolu_01D6pNZJmtf5hm2DSBcs66hP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
   "old_string": "  \"version\": \"0.11.14\",",
   "new_string": "  \"version\": \"0.11.15\","
 }
@@ -3203,7 +3203,7 @@ id: toolu_01D6pNZJmtf5hm2DSBcs66hP
 tool_result
 id: toolu_01D6pNZJmtf5hm2DSBcs66hP
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3241,7 +3241,7 @@ id: toolu_01StKoLzf7XEp3xuopoidSTL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_extension_button_surface_detection.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_extension_button_surface_detection.md",
   "old_string": "6. **Anchor the popover button as a DIRECT CHILD of the `[role=\"dialog\"]` node, not inside Google's content blocks (v0.11.14).**",
   "new_string": "7. **Popover button style = footer action (v0.11.15, user-chosen).** Rendered via `buildFooterRow` as a dialog-level child after the content slot: a top divider then a FILLED brand button (`.auxilio-mv-btn--filled`), left-aligned to the content text column (inset). User explicitly rejected putting it literally in the native rows (top toolbar / RSVP pills) once told those live inside the stripped `ibJzMe` zone and would need a fragile overlay — chose the reliable footer. Edit page keeps the inline-next-to-Save (outlined) placement. If they ever want it literally inline with the RSVP pills, that requires a shadow-DOM overlay tracking that row's rect.\n\n6. **Anchor the popover button as a DIRECT CHILD of the `[role=\"dialog\"]` node, not inside Google's content blocks (v0.11.14).**"
 }
@@ -3252,7 +3252,7 @@ id: toolu_01StKoLzf7XEp3xuopoidSTL
 tool_result
 id: toolu_01StKoLzf7XEp3xuopoidSTL
 ```
-The file /Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_extension_button_surface_detection.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_extension_button_surface_detection.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3289,7 +3289,7 @@ id: toolu_01EazBSXVZjDzFZDzZ9hVtbF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "old_string": "      let slot = list;\n      while (slot.parentElement && slot.parentElement !== dialog) slot = slot.parentElement;\n      const ref = firstIconLedRow(list);\n      const inset = ref ? rowInset(ref, list) : 0;\n      return {\n        insert: (el) =>\n          slot.parentElement === dialog\n            ? slot.insertAdjacentElement('afterend', el)\n            : dialog.appendChild(el),\n        inset,\n        footer: true,\n      };",
   "new_string": "      let slot = list;\n      while (slot.parentElement && slot.parentElement !== dialog) slot = slot.parentElement;\n      const ref = firstIconLedRow(list);\n      const inset = ref ? rowInset(ref, list) : 0;\n      // Append INSIDE the dialog's content slot (e.g. span.kma42e) as its LAST child so\n      // it stacks at the BOTTOM of the content column. The dialog lays its OWN direct\n      // children out in a row, so inserting as a sibling after the slot put the button\n      // beside the content (the right-side bug); appending within the slot keeps it in\n      // the vertical content flow. A child of the slot survives the load (confirmed by\n      // probe); only the inner content blocks reconcile + strip their own children.\n      return { insert: (el) => slot.appendChild(el), inset, footer: true };"
 }
@@ -3300,7 +3300,7 @@ id: toolu_01EazBSXVZjDzFZDzZ9hVtbF
 tool_result
 id: toolu_01EazBSXVZjDzFZDzZ9hVtbF
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3310,7 +3310,7 @@ id: toolu_01TvYjWrtTjZVo6x5NjQigGD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
   "old_string": "  \"version\": \"0.11.15\",",
   "new_string": "  \"version\": \"0.11.16\","
 }
@@ -3321,7 +3321,7 @@ id: toolu_01TvYjWrtTjZVo6x5NjQigGD
 tool_result
 id: toolu_01TvYjWrtTjZVo6x5NjQigGD
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3359,7 +3359,7 @@ id: toolu_01LPzRiugpiYpgD3ffKKTKZD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_extension_button_surface_detection.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_extension_button_surface_detection.md",
   "old_string": "7. **Popover button style = footer action (v0.11.15, user-chosen).** Rendered via `buildFooterRow` as a dialog-level child after the content slot: a top divider then a FILLED brand button (`.auxilio-mv-btn--filled`), left-aligned to the content text column (inset). User explicitly rejected putting it literally in the native rows (top toolbar / RSVP pills) once told those live inside the stripped `ibJzMe` zone and would need a fragile overlay — chose the reliable footer. Edit page keeps the inline-next-to-Save (outlined) placement. If they ever want it literally inline with the RSVP pills, that requires a shadow-DOM overlay tracking that row's rect.",
   "new_string": "7. **Popover button = footer action APPENDED INSIDE the content slot (v0.11.16, user-chosen).** Rendered via `buildFooterRow`: top divider + FILLED brand button (`.auxilio-mv-btn--filled`), left-aligned to the content text column. CRITICAL layout detail: the `[role=\"dialog\"]` lays its OWN direct children out in a ROW, so inserting the button as a sibling AFTER the content slot put it on the RIGHT of the content, not the bottom (v0.11.15 bug). Fix: `slot.appendChild(el)` — append INSIDE the slot (e.g. `span.kma42e`) as its last child, which stacks vertically → bottom. A slot child survives the […]
 
@@ -3368,7 +3368,7 @@ id: toolu_01LPzRiugpiYpgD3ffKKTKZD
 tool_result
 id: toolu_01LPzRiugpiYpgD3ffKKTKZD
 ```
-The file /Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_extension_button_surface_detection.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_extension_button_surface_detection.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3404,7 +3404,7 @@ id: toolu_011p37V3YNNUugUtgJuz493A
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "old_string": "      let slot = list;\n      while (slot.parentElement && slot.parentElement !== dialog) slot = slot.parentElement;\n      const ref = firstIconLedRow(list);\n      const inset = ref ? rowInset(ref, list) : 0;\n      // Append INSIDE the dialog's content slot (e.g. span.kma42e) as its LAST child so\n      // it stacks at the BOTTOM of the content column. The dialog lays its OWN direct\n      // children out in a row, so inserting as a sibling after the slot put the button\n      // beside the content (the right-side bug); appending within the slot keeps it in\n      // the vertical content flow. A child of the slot survives the load (confirmed by\n      // probe); only the inner content blocks reconcile + strip their own children.\n      return { insert: (el) => slot.appendChild(el), inset, footer: true };",
   "new_string": "      // Climb from the content list to the visible CARD (the content column) and append\n      // the button there as the LAST child, so it stacks at the BOTTOM of the content.\n      // We climb past the reconciling content blocks (whose own children get stripped)\n      // but STOP before the dialog AND before any much-wider layout wrapper: the dialog\n      // lays […]
 
@@ -3413,7 +3413,7 @@ id: toolu_011p37V3YNNUugUtgJuz493A
 tool_result
 id: toolu_011p37V3YNNUugUtgJuz493A
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3423,7 +3423,7 @@ id: toolu_01PGTV4q53U9f8KZ56PVWwtz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
   "old_string": "  \"version\": \"0.11.16\",",
   "new_string": "  \"version\": \"0.11.17\","
 }
@@ -3434,7 +3434,7 @@ id: toolu_01PGTV4q53U9f8KZ56PVWwtz
 tool_result
 id: toolu_01PGTV4q53U9f8KZ56PVWwtz
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3472,7 +3472,7 @@ id: toolu_012PXUze7SSnXGbw8HR3z3jr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_extension_button_surface_detection.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_extension_button_surface_detection.md",
   "old_string": "7. **Popover button = footer action APPENDED INSIDE the content slot (v0.11.16, user-chosen).** Rendered via `buildFooterRow`: top divider + FILLED brand button (`.auxilio-mv-btn--filled`), left-aligned to the content text column. CRITICAL layout detail: the `[role=\"dialog\"]` lays its OWN direct children out in a ROW, so inserting the button as a sibling AFTER the content slot put it on the RIGHT of the content, not the bottom (v0.11.15 bug). Fix: `slot.appendChild(el)` — append INSIDE the slot (e.g. `span.kma42e`) as its last child, which stacks vertically → bottom. A slot child survives the load (probe-confirmed); only the inner content blocks (`ibJzMe`/`hMdQi`) reconcile+strip their own children. Edit page keeps inline-next-to-Save (outlined) and was NEVER affected by the disappear bug (its action bar is stable — even old v0.11.6 worked there); the whole disappear saga was popover-only. User rejected literal native-row placement (toolbar/RSVP pills) since those need a fragile overlay.",
   "new_string": "7. **Popover button = footer action appended to the visible CARD, found by width (v0.11.17, user-chosen).** Rendered via `buildFooterRow`: top divider + FILLED brand button (`.auxilio-mv-btn--filled`). CRITICAL layout detail seen in a screenshot: the `[role=\"dialog\"]` is MUCH WIDER than the visible content card […]
 
@@ -3481,7 +3481,7 @@ id: toolu_012PXUze7SSnXGbw8HR3z3jr
 tool_result
 id: toolu_012PXUze7SSnXGbw8HR3z3jr
 ```
-The file /Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_extension_button_surface_detection.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_extension_button_surface_detection.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3513,7 +3513,7 @@ id: toolu_01MfSWRcQe8ZZbqAeP1tZ8bq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "old_string": "function createButtonUI(onClick: () => void) {\n  const fab = mountFloating(onClick);\n  let injected: HTMLElement | null = null;",
   "new_string": "function createButtonUI(onClick: () => void) {\n  const fab = mountFloating(onClick);\n  // Popover surface: a shadow-DOM overlay anchored to the card (immune to Google's DOM).\n  const overlay = mountCardOverlay(onClick);\n  let injected: HTMLElement | null = null;"
 }
@@ -3524,7 +3524,7 @@ id: toolu_01MfSWRcQe8ZZbqAeP1tZ8bq
 tool_result
 id: toolu_01MfSWRcQe8ZZbqAeP1tZ8bq
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

@@ -335,14 +335,14 @@ This is a detailed technical summary of the Forge orchestrator's runtime archite
 
 **Sequential (Runner-based) Execution:**
 - Primary: `src/orchestrator/runner.rs` (ClaudeRunner) implements single-phase sequential execution
-- File: `/Users/jdsingh/Projects/AI/forge/src/orchestrator/runner.rs` (70.7 KB)
+- File: `/home/<USER>/Projects/AI/forge/src/orchestrator/runner.rs` (70.7 KB)
 - Pattern: Single phase → iterate with budget until `<promise>DONE</promise>` or budget exhausted
 - Command spawning: `tokio::process::Command` at line 511-559
 - stdin writing: direct prompt injection via pipe
 - stdout parsing: line-by-line streaming with signal extraction
 
 **DAG-based Parallel Execution:**
-- File: `/Users/jdsingh/Projects/AI/forge/src/dag/executor.rs` (57.2 KB)
+- File: `/home/<USER>/Projects/AI/forge/src/dag/executor.rs` (57.2 KB)
 - Architecture: `DagScheduler` (computes dependency waves) + `DagExecutor` (spawns async tasks)
 - Concurrency model: **Semaphore-gated with max_parallel limit** (default: 4)
   - Not wave-based barriers — waves are for reporting only
@@ -352,7 +352,7 @@ This is a detailed technical summary of the Forge orchestrator's runtime archite
 - Configuration: `DagConfig` with max_parallel, fail_fast, swarm_enabled, review settings
 
 **Swarm (Multi-agent) Execution:**
-- File: `/Users/jdsingh/Projects/AI/forge/src/swarm/executor.rs` (150 lines)
+- File: `/home/<USER>/Projects/AI/forge/src/swarm/executor.rs` (150 lines)
 - Purpose: Delegate a phase to Claude Code swarm for parallel micro-tasks
 - Flow:
   1. […]
@@ -1124,7 +1124,7 @@ tool_use Bash
 id: toolu_012NUk3wNX6txee89xEg6tr5
 ```json
 {
-  "command": "ls /Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/ 2>/dev/null || echo \"directory does not exist\"",
+  "command": "ls /home/<USER>/Projects/AI/forge/docs/superpowers/specs/ 2>/dev/null || echo \"directory does not exist\"",
   "description": "Check if specs directory exists"
 }
 ```
@@ -1149,7 +1149,7 @@ tool_use Write
 id: toolu_0196vPwDqyPSg3eDoD7dj18n
 ```json
 {
-  "file_path": "/Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
+  "file_path": "/home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
   "content": "# Forge Runtime Platform Design\n\n**Date:** 2026-03-13\n**Status:** Draft\n**Scope:** Runtime layer redesign — transforming forge from a single-machine process spawner into an agentic platform backbone with Nix-defined environments, namespace isolation, shared services, and dynamic agent team composition.\n\n## 1. Problem Statement\n\nForge currently executes agents by spawning Claude CLI processes directly via `tokio::process::Command`. This works for single-machine sequential and DAG-parallel execution, but lacks:\n\n- **Agent isolation** — processes share the host environment with no sandboxing\n- **Shared services** — no auth proxy, secret vault, cache, or MCP routing layer\n- **Inter-agent communication** — no message bus; coordination is through the orchestrator only\n- **Dynamic team composition** — agents cannot autonomously spawn sub-agents\n- **Declarative environments** — no reproducible, auditable definition of what tools/permissions an agent has\n- **Security boundaries** — secrets in env vars, no network egress control, no audit trail\n\n## 2. Design Goals\n\n1. **Platform backbone** — Forge becomes infrastructure for running arbitrary agent teams on repositories\n2. **Nix as DSL** — Agent environments defined as Nix expressions; evaluated for approval, materialized for execution\n3. **Self-hosted first** — Runs on a single node; no cloud dependency required\n4. **Sub-second agent spawning** — Nix-cached environments + lightweight Linux namespaces (bubblewrap)\n5. **Rich sidecar services** — Auth, […]
 
 > TOOL
@@ -1157,7 +1157,7 @@ id: toolu_0196vPwDqyPSg3eDoD7dj18n
 tool_result
 id: toolu_0196vPwDqyPSg3eDoD7dj18n
 ```
-File created successfully at: /Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md
+File created successfully at: /home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md
 ```
 
 > TOOL
@@ -1166,7 +1166,7 @@ tool_use Bash
 id: toolu_01WYAefJkVKty3yiq54BkMrR
 ```json
 {
-  "command": "git add docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md && git commit -m \"$(cat <<'EOF'\ndocs: add forge runtime platform design spec\n\nDefines the architecture for transforming forge into an agentic platform\nbackbone with Nix-defined agent environments, namespace isolation,\nshared services (auth, cache, vault, MCP, message bus), dynamic team\ncomposition, and full observability.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md && git commit -m \"$(cat <<'EOF'\ndocs: add forge runtime platform design spec\n\nDefines the architecture for transforming forge into an agentic platform\nbackbone with Nix-defined agent environments, namespace isolation,\nshared services (auth, cache, vault, MCP, message bus), dynamic team\ncomposition, and full observability.\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit the design spec"
 }
 ```
@@ -1230,7 +1230,7 @@ id: toolu_01UHJZHa78svNERd57xzKdcP
 ```json
 {
   "description": "Review runtime platform spec",
-  "prompt": "You are a spec document reviewer. Review the design spec at `/Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md` for the following quality criteria:\n\n**Context:** This is a design spec for transforming \"forge\" (an AI-powered development orchestrator written in Rust) into an agentic platform backbone. The key decisions are:\n- Self-hosted deployment (single node first)\n- Three-process split: forge CLI, forge-runtime daemon, agent processes\n- Nix as the declarative DSL for agent environments\n- Bubblewrap (Linux namespaces) for agent isolation, Docker fallback on macOS\n- Shared services via Unix domain sockets (auth, cache, vault, MCP router, message bus)\n- Dynamic agent team composition with spawn approval gates\n- Hybrid git worktree model for workspace coordination\n\n**Review criteria:**\n1. **Completeness** — Are there missing sections or gaps? Any unstated assumptions?\n2. **Internal consistency** — Do the sections contradict each other? Do data flows make sense end-to-end?\n3. **Feasibility** — Are there technical claims that are unrealistic or understated in complexity?\n4. **Ambiguity** — Are there terms, interfaces, or behaviors that are underspecified and would block implementation?\n5. **Security** — Are there gaps in the security model? Attack vectors not covered?\n6. **Edge cases** — What happens when things go wrong? Are failure modes addressed?\n\nOutput your review as:\n- **APPROVED** if the spec […]
+  "prompt": "You are a spec document reviewer. Review the design spec at `/home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md` for the following quality criteria:\n\n**Context:** This is a design spec for transforming \"forge\" (an AI-powered development orchestrator written in Rust) into an agentic platform backbone. The key decisions are:\n- Self-hosted deployment (single node first)\n- Three-process split: forge CLI, forge-runtime daemon, agent processes\n- Nix as the declarative DSL for agent environments\n- Bubblewrap (Linux namespaces) for agent isolation, Docker fallback on macOS\n- Shared services via Unix domain sockets (auth, cache, vault, MCP router, message bus)\n- Dynamic agent team composition with spawn approval gates\n- Hybrid git worktree model for workspace coordination\n\n**Review criteria:**\n1. **Completeness** — Are there missing sections or gaps? Any unstated assumptions?\n2. **Internal consistency** — Do the sections contradict each other? Do data flows make sense end-to-end?\n3. **Feasibility** — Are there technical claims that are unrealistic or understated in complexity?\n4. **Ambiguity** — Are there terms, interfaces, or behaviors that are underspecified and would block implementation?\n5. **Security** — Are there gaps in the security model? Attack vectors not covered?\n6. **Edge cases** — What happens when things go wrong? Are failure modes addressed?\n\nOutput your review as:\n- **APPROVED** if the spec […]
 
 > TOOL
 
@@ -1265,7 +1265,7 @@ tool_use Read
 id: toolu_01EV87nMCYygcJsYTQ1UhMgp
 ```json
 {
-  "file_path": "/Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md"
+  "file_path": "/home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md"
 }
 ```
 
@@ -1308,7 +1308,7 @@ id: toolu_01J6DNjox84j9dwGmXk3ETMm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
+  "file_path": "/home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
   "old_string": "- CLI and daemon communicate over **gRPC on a Unix domain socket** (`$XDG_RUNTIME_DIR/forge.sock`). gRPC provides streaming (live agent output) and strong typing (protobuf schemas).\n- The daemon is a **single Rust binary** (`forge-runtime`) using tokio.\n- Agents are **not containers by default** — they run in Linux namespaces (bubblewrap) with Nix-provided environments for sub-second spawning.\n- The existing orchestration logic (DAG scheduler, phase runner, reviews, Factory) stays in the CLI but delegates agent execution to the daemon.\n- **macOS fallback**: Docker replaces bubblewrap where Linux namespaces are unavailable, abstracted behind an `AgentRuntime` trait.",
   "new_string": "- CLI and daemon communicate over **gRPC on a Unix domain socket**. Socket path resolution: `$FORGE_SOCKET_PATH` (override) → `$XDG_RUNTIME_DIR/forge.sock` (Linux) → `$TMPDIR/forge-$UID/forge.sock` (macOS). gRPC provides streaming (live agent output) and strong typing (protobuf schemas).\n- The daemon is a **single Rust binary** (`forge-runtime`) using tokio.\n- Agents are **not containers by default** — they run in Linux namespaces (bubblewrap) with Nix-provided environments for sub-second spawning.\n- The existing orchestration logic (DAG scheduler, phase runner, reviews, Factory) stays in the CLI but delegates agent execution to the daemon.\n- **macOS runtime**: See Section 4.6 for macOS-specific runtime details.\n- **Nix is optional**: Agents can run […]
 
@@ -1317,7 +1317,7 @@ id: toolu_01J6DNjox84j9dwGmXk3ETMm
 tool_result
 id: toolu_01J6DNjox84j9dwGmXk3ETMm
 ```
-The file /Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md has been updated successfully.
+The file /home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md has been updated successfully.
 ```
 
 > TOOL
@@ -1327,7 +1327,7 @@ id: toolu_01SBA8ABU2MJkWM2BbKZwusN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
+  "file_path": "/home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
   "old_string": "### 4.5 macOS Fallback\n\n```rust\n#[async_trait]\ntrait AgentRuntime: Send + Sync {\n    async fn spawn(&self, manifest: AgentManifest, workspace: &Path) -> Result<AgentHandle>;\n    async fn kill(&self, handle: &AgentHandle) -> Result<()>;\n    async fn status(&self, handle: &AgentHandle) -> Result<AgentStatus>;\n}\n\nstruct BwrapRuntime { /* Linux namespace impl */ }\nstruct DockerRuntime { /* Docker/bollard impl */ }\n```",
   "new_string": "### 4.5 AgentRuntime Trait\n\n```rust\n#[async_trait]\ntrait AgentRuntime: Send + Sync {\n    async fn spawn(&self, manifest: AgentManifest, workspace: &Path) -> Result<AgentHandle>;\n    async fn kill(&self, handle: &AgentHandle) -> Result<()>;\n    async fn status(&self, handle: &AgentHandle) -> Result<AgentStatus>;\n}\n\nstruct BwrapRuntime { /* Linux namespace impl */ }\nstruct DockerRuntime { /* Docker/macOS impl */ }\nstruct HostRuntime { /* No-sandbox fallback, current behavior */ }\n```\n\n### 4.6 macOS Runtime\n\nmacOS cannot use Linux namespaces or bubblewrap. Rather than treating it as a degraded fallback, the macOS runtime is a first-class target with its own characteristics:\n\n**Primary option: Docker (via colima or Docker Desktop)**\n- Agent spawning latency: 1-3 seconds (vs. <1s on Linux with bwrap)\n- UDS sockets bind-mounted into containers via Docker volumes\n- File system performance: Use `:cached` mount flag for workspace volumes; expect ~2x latency vs. native on write-heavy workloads\n- Resource monitoring via Docker API (`bollard`) instead of cgroups\n- Network isolation via Docker […]
 
@@ -1336,7 +1336,7 @@ id: toolu_01SBA8ABU2MJkWM2BbKZwusN
 tool_result
 id: toolu_01SBA8ABU2MJkWM2BbKZwusN
 ```
-The file /Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md has been updated successfully.
+The file /home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md has been updated successfully.
 ```
 
 > AGENT
@@ -1350,7 +1350,7 @@ id: toolu_01BmV7JfKreom8zFADFYH6J1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
+  "file_path": "/home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
   "old_string": "### 7.4 Integration Points",
   "new_string": "### 7.4 Version Negotiation\n\nCLI and daemon are separate binaries that may be updated independently. Protocol:\n\n1. `HealthResponse` includes `protocol_version: u32` (starts at 1) and `daemon_version: String` (semver)\n2. CLI checks version on connect. If `protocol_version` matches, proceed normally\n3. If CLI protocol > daemon protocol: CLI warns \"daemon is outdated, some features may not work\" and falls back to the daemon's protocol version\n4. If daemon protocol > CLI protocol: daemon accepts the connection (backwards compatible) — new fields are ignored by the older CLI\n5. Protobuf schema follows standard forwards-compatible conventions: no field renumbering, no removing required fields, new fields are always optional\n\n**Breaking changes** (protocol version bump) require both binaries to be updated. The daemon refuses connections from CLIs with incompatible protocol versions and prints upgrade instructions.\n\n### 7.5 CLI ↔ Daemon Interaction Patterns\n\n**Connection model:** CLI opens a persistent gRPC connection to the daemon for the duration of a run. Multiple CLI instances can connect simultaneously (e.g., two terminals running different projects).\n\n**CLI disconnect behavior:**\n- If CLI disconnects while agents are running, the daemon **continues execution** (agents are daemon children, not CLI children)\n- CLI can reconnect and resume streaming via […]
 
@@ -1359,7 +1359,7 @@ id: toolu_01BmV7JfKreom8zFADFYH6J1
 tool_result
 id: toolu_01BmV7JfKreom8zFADFYH6J1
 ```
-The file /Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md has been updated successfully.
+The file /home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md has been updated successfully.
 ```
 
 > AGENT
@@ -1373,7 +1373,7 @@ id: toolu_01ErBRYmUEScuim5C85vQjfa
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
+  "file_path": "/home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
   "old_string": "  resources = { cpu = 1; memory = \"2Gi\"; };\n  permissions = {\n    repo = \"read-write\";\n    network = [];\n    spawn = { max-children = 5; require-approval-after = 3; };\n  };\n}",
   "new_string": "  resources = { cpu = 1; memory = \"2Gi\"; token-budget = 50000; };\n  permissions = {\n    repo = \"read-write\";\n    network = [];\n    spawn = { max-children = 5; require-approval-after = 3; };\n  };\n}"
 }
@@ -1384,7 +1384,7 @@ id: toolu_01ErBRYmUEScuim5C85vQjfa
 tool_result
 id: toolu_01ErBRYmUEScuim5C85vQjfa
 ```
-The file /Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md has been updated successfully.
+The file /home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md has been updated successfully.
 ```
 
 > TOOL
@@ -1394,7 +1394,7 @@ id: toolu_01NHvrdStwFUKi3YQhZho7ud
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
+  "file_path": "/home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
   "old_string": "  resources = { cpu = 2; memory = \"4Gi\"; };\n  permissions = {\n    repo = \"read-only\";\n    network = [ \"api.github.com\" \"*.semgrep.dev\" ];\n    spawn = { max-children = 0; };\n  };\n}",
   "new_string": "  resources = { cpu = 2; memory = \"4Gi\"; token-budget = 100000; };\n  permissions = {\n    repo = \"read-only\";\n    network = [ \"api.github.com\" \"*.semgrep.dev\" ];\n    spawn = { max-children = 0; };\n  };\n}"
 }
@@ -1405,7 +1405,7 @@ id: toolu_01NHvrdStwFUKi3YQhZho7ud
 tool_result
 id: toolu_01NHvrdStwFUKi3YQhZho7ud
 ```
-The file /Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md has been updated successfully.
+The file /home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md has been updated successfully.
 ```
 
 > TOOL
@@ -1415,7 +1415,7 @@ id: toolu_01B85YmEpWG6diokap9cguE4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
+  "file_path": "/home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
   "old_string": "  resources = { cpu = 4; memory = \"8Gi\"; };\n  permissions = {\n    repo = \"read-write\";\n    network = [ \"registry.npmjs.org\" \"crates.io\" ];\n    spawn = { max-children = 10; require-approval-after = 5; };\n  };\n}",
   "new_string": "  resources = { cpu = 4; memory = \"8Gi\"; token-budget = 200000; };\n  permissions = {\n    repo = \"read-write\";\n    network = [ \"registry.npmjs.org\" \"crates.io\" ];\n    spawn = { max-children = 10; require-approval-after = 5; };\n  };\n}"
 }
@@ -1426,7 +1426,7 @@ id: toolu_01B85YmEpWG6diokap9cguE4
 tool_result
 id: toolu_01B85YmEpWG6diokap9cguE4
 ```
-The file /Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md has been updated successfully.
+The file /home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md has been updated successfully.
 ```
 
 > AGENT
@@ -1440,7 +1440,7 @@ id: toolu_019Qk36n4AaJk1VfQc8DGxQk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
+  "file_path": "/home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
   "old_string": "**Evaluation order:**\n1. Global hard limits (max_agents_total, max_depth)\n2. Project limits (max_agents_per_parent, max_concurrent)\n3. Manifest secrets vs. policy allowlist/denylist\n4. Manifest network egress vs. policy allowlist\n5. Profile auto-approve or always-require-approval\n6. Soft cap check → parent approval if exceeded",
   "new_string": "```toml\n[costs]\nmax_tokens_per_agent = 200000     # hard cap per agent\nmax_tokens_per_run = 2000000      # hard cap per run\nwarn_at_percent = 80              # alert parent when agent hits 80% of budget\n```\n\n**Token budget enforcement:**\n- Daemon intercepts Claude CLI output and parses token usage from stream-json events\n- Cumulative token count tracked per agent and per run in state store\n- When agent hits `warn_at_percent` of its `token-budget`: daemon alerts parent via bus\n- When agent hits 100% of `token-budget`: daemon sends SIGTERM, status → `Failed(token_budget_exceeded)`\n- When run hits `max_tokens_per_run`: daemon pauses all spawns, notifies CLI, requires manual approval to continue\n- Sub-agent tokens count toward both the sub-agent's budget AND the parent's cumulative tree budget\n- Cost attribution: `runs` table gains `total_tokens` and `estimated_cost_usd` columns\n\n**Evaluation order:**\n1. Global hard limits (max_agents_total, max_depth)\n2. Project limits (max_agents_per_parent, max_concurrent)\n3. Manifest secrets vs. policy allowlist/denylist\n4. Manifest network egress vs. policy allowlist\n5. Profile auto-approve or always-require-approval\n6. Soft cap check → parent approval if exceeded"
 }
@@ -1451,7 +1451,7 @@ id: toolu_019Qk36n4AaJk1VfQc8DGxQk
 tool_result
 id: toolu_019Qk36n4AaJk1VfQc8DGxQk
 ```
-The file /Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md has been updated successfully.
+The file /home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md has been updated successfully.
 ```
 
 > AGENT
@@ -1465,7 +1465,7 @@ id: toolu_018uH6gGSYZ94Ya31RFGbKtE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
+  "file_path": "/home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
   "old_string": "## 7. CLI ↔ Daemon Integration",
   "new_string": "### 6.8 Daemon Reliability\n\nThe daemon is a single point of failure. Mitigations:\n\n**Process supervision:** The daemon should be managed by a process supervisor that auto-restarts on crash:\n- Linux: systemd unit file (`forge-runtime.service`) with `Restart=on-failure`, `RestartSec=2`\n- macOS: launchd plist (`com.forge.runtime.plist`) with `KeepAlive=true`\n- `forge runtime install` generates and installs the appropriate service file\n\n**Agent survival across daemon restarts:**\n- `--die-with-parent` is used for bubblewrap agents (they die with daemon). This is intentional — agents without daemon services are non-functional (no vault, no bus, no MCP).\n- Docker agents survive daemon crashes (containers are independent). On restart, daemon re-adopts them via Docker API, reconnects UDS sockets, and resumes service proxying.\n- The state store (SQLite) persists across restarts. On recovery, daemon marks bwrap agents as `Failed(daemon_restart)` and re-adopts Docker agents.\n\n**Minimizing blast radius:**\n- Long-running agents should checkpoint their work to git (commit to worktree branch) periodically. The daemon can enforce this via a configurable `checkpoint_interval` that sends a checkpoint signal to agents.\n- The orchestration layer (CLI-side DAG scheduler) tracks completed phases. On daemon restart, only the in-progress phase needs re-execution — completed phases are not re-run.\n- Expected recovery time: daemon restart […]
 
@@ -1474,7 +1474,7 @@ id: toolu_018uH6gGSYZ94Ya31RFGbKtE
 tool_result
 id: toolu_018uH6gGSYZ94Ya31RFGbKtE
 ```
-The file /Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md has been updated successfully.
+The file /home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md has been updated successfully.
 ```
 
 > AGENT
@@ -1488,7 +1488,7 @@ id: toolu_01SyambvGkgBACgiJncasqgp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
+  "file_path": "/home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
   "old_string": "**Alternative patterns:** Shared workspace + file locks (small teams), or full worktree isolation (independent modules). Configurable per-run.",
   "new_string": "**File locking protocol** (for shared workspace mode only — hybrid/worktree modes rarely need it):\n- Locks are **lease-based with TTL**: agent acquires lock with a TTL (default: 300s), must renew before expiry\n- Locks are **daemon-managed**: stored in-memory in the daemon, not on filesystem. No stale lockfiles.\n- **Crash safety**: if an agent dies while holding a lock, the daemon detects process termination and immediately releases all locks held by that agent\n- **Deadlock prevention**: locks are acquired in lexicographic path order. If agent A holds `src/a.rs` and requests `src/b.rs`, and agent B holds `src/b.rs` and requests `src/a.rs`, the daemon detects the cycle and rejects the second request with a `DeadlockDetected` error\n- **Granularity**: file-level only. Directory locks are not supported (lock individual files)\n- **When needed**: primarily in shared workspace mode where multiple agents write to the same checkout. In hybrid worktree mode, each agent has its own worktree, so file locks are only needed for shared config files (e.g., `Cargo.lock`, `package-lock.json`)\n\n**Alternative patterns:** Shared workspace + file locks (small teams), or full worktree isolation (independent modules). […]
 
@@ -1497,7 +1497,7 @@ id: toolu_01SyambvGkgBACgiJncasqgp
 tool_result
 id: toolu_01SyambvGkgBACgiJncasqgp
 ```
-The file /Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md has been updated successfully.
+The file /home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md has been updated successfully.
 ```
 
 > AGENT
@@ -1511,7 +1511,7 @@ id: toolu_017ZgmC8zhu9yf49HXM6pCRP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
+  "file_path": "/home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
   "old_string": "## 11. Migration Path",
   "new_string": "## 11. Data Retention & Cleanup\n\nAgent logs, audit entries, and state records grow unboundedly. Retention policies:\n\n**Configurable retention in `$FORGE_STATE_DIR/retention.toml`:**\n```toml\n[logs]\nmax_runs = 100              # keep last N runs' log files\nmax_age_days = 30           # delete logs older than this\ncompress_after_days = 7     # gzip logs older than 7 days\n\n[audit]\nmax_age_days = 90           # audit trail kept longer for compliance\narchive_format = \"jsonl.gz\" # compressed archive\n\n[state]\nmax_runs = 500              # keep last N runs in runtime.db\nvacuum_on_cleanup = true    # SQLite VACUUM after deletion\n\n[nix]\ngc_after_days = 14          # nix store garbage collection for unused profiles\n```\n\n**Cleanup commands:**\n- `forge runtime gc` — manual cleanup: applies retention policies, runs Nix garbage collection\n- `forge runtime gc --dry-run` — shows what would be deleted\n- Daemon runs automatic cleanup daily (configurable interval) if running as a service\n\n## 12. MCP Router Validation\n\nThe MCP router validates responses from MCP servers to mitigate compromised or misbehaving servers:\n\n- **Schema conformance**: responses must match the MCP protocol JSON-RPC schema. Malformed responses are dropped and logged as errors.\n- **Response size limits**: configurable max response size per server (default: 10MB). Oversized responses are truncated and the agent is notified.\n- **Timeout enforcement**: per-server timeout (default: 30s). Timed-out requests […]
 
@@ -1520,7 +1520,7 @@ id: toolu_017ZgmC8zhu9yf49HXM6pCRP
 tool_result
 id: toolu_017ZgmC8zhu9yf49HXM6pCRP
 ```
-The file /Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md has been updated successfully.
+The file /home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md has been updated successfully.
 ```
 
 > AGENT
@@ -1534,7 +1534,7 @@ id: toolu_017MHVesQhbqtvwg6c5nZCgL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
+  "file_path": "/home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
   "old_string": "### 11.1 From Current Architecture",
   "new_string": "### 14.1 From Current Architecture"
 }
@@ -1545,7 +1545,7 @@ id: toolu_017MHVesQhbqtvwg6c5nZCgL
 tool_result
 id: toolu_017MHVesQhbqtvwg6c5nZCgL
 ```
-The file /Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md has been updated successfully.
+The file /home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md has been updated successfully.
 ```
 
 > TOOL
@@ -1555,7 +1555,7 @@ id: toolu_01Bo8BVEDZ2GVQeciE3r8MUt
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
+  "file_path": "/home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
   "old_string": "### 11.2 Future: Docker/k8s Backend",
   "new_string": "### 14.2 Future: Docker/k8s Backend"
 }
@@ -1566,7 +1566,7 @@ id: toolu_01Bo8BVEDZ2GVQeciE3r8MUt
 tool_result
 id: toolu_01Bo8BVEDZ2GVQeciE3r8MUt
 ```
-The file /Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md has been updated successfully.
+The file /home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md has been updated successfully.
 ```
 
 > AGENT
@@ -1580,7 +1580,7 @@ id: toolu_01TnH9BvH6gWY6azvoCCoT5W
 ```json
 {
   "description": "Re-review updated runtime spec",
-  "prompt": "You are a spec document reviewer. Review the design spec at `/Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md`.\n\nThis is a SECOND review after the first review found 12 issues (2 Critical, 5 Major, 5 Minor). The author has updated the spec to address them. Check whether all issues have been resolved:\n\n**Previously identified issues:**\n1. [Critical] No versioning or compatibility strategy for gRPC interface\n2. [Critical] macOS developer experience is second-class with Docker fallback\n3. [Major] Nix as a hard dependency is a significant adoption barrier\n4. [Major] forge_lock_files mechanism is underspecified\n5. [Major] Daemon is a single point of failure with no HA story\n6. [Major] No resource accounting or cost control for LLM API calls\n7. [Major] Relationship between existing orchestration and daemon is blurry\n8. [Minor] $XDG_RUNTIME_DIR is Linux-only\n9. [Minor] No log/audit data retention or rotation\n10. [Minor] MCP Router \"validates responses\" is vague\n11. [Minor] No discussion of Nix flake relationship to project flakes\n12. [Minor] Missing error handling for Nix evaluation failures\n\nFor each issue, state whether it is RESOLVED, PARTIALLY RESOLVED, or UNRESOLVED.\n\nAlso check for any NEW issues introduced by the updates.\n\nOutput your final verdict as **APPROVED** or **ISSUES FOUND**."
+  "prompt": "You are a spec document reviewer. Review the design spec at `/home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md`.\n\nThis is a SECOND review after the first review found 12 issues (2 Critical, 5 Major, 5 Minor). The author has updated the spec to address them. Check whether all issues have been resolved:\n\n**Previously identified issues:**\n1. [Critical] No versioning or compatibility strategy for gRPC interface\n2. [Critical] macOS developer experience is second-class with Docker fallback\n3. [Major] Nix as a hard dependency is a significant adoption barrier\n4. [Major] forge_lock_files mechanism is underspecified\n5. [Major] Daemon is a single point of failure with no HA story\n6. [Major] No resource accounting or cost control for LLM API calls\n7. [Major] Relationship between existing orchestration and daemon is blurry\n8. [Minor] $XDG_RUNTIME_DIR is Linux-only\n9. [Minor] No log/audit data retention or rotation\n10. [Minor] MCP Router \"validates responses\" is vague\n11. [Minor] No discussion of Nix flake relationship to project flakes\n12. [Minor] Missing error handling for Nix evaluation failures\n\nFor each issue, state whether it is RESOLVED, PARTIALLY RESOLVED, or UNRESOLVED.\n\nAlso check for any NEW issues introduced by the updates.\n\nOutput your final verdict as **APPROVED** or **ISSUES FOUND**."
 }
 ```
 
@@ -1639,7 +1639,7 @@ id: toolu_01WkJZvxQHsbQ4s5twaK1pwd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
+  "file_path": "/home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
   "old_string": "### 7.6 Integration Points",
   "new_string": "### 7.7 Integration Points"
 }
@@ -1650,7 +1650,7 @@ id: toolu_01WkJZvxQHsbQ4s5twaK1pwd
 tool_result
 id: toolu_01WkJZvxQHsbQ4s5twaK1pwd
 ```
-The file /Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md has been updated successfully.
+The file /home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md has been updated successfully.
 ```
 
 > TOOL
@@ -1660,7 +1660,7 @@ id: toolu_01UWMFyrNNWpCpZauBmiDFcd
 ```json
 {
   "pattern": "### 7\\.\\d",
-  "path": "/Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
+  "path": "/home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
   "output_mode": "content"
 }
 ```
@@ -1686,7 +1686,7 @@ id: toolu_011dRwTZdUh4b2VspdvHF5ZC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
+  "file_path": "/home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
   "old_string": "### 7.5 Crate Structure",
   "new_string": "### 7.8 Crate Structure"
 }
@@ -1697,7 +1697,7 @@ id: toolu_011dRwTZdUh4b2VspdvHF5ZC
 tool_result
 id: toolu_011dRwTZdUh4b2VspdvHF5ZC
 ```
-The file /Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md has been updated successfully.
+The file /home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md has been updated successfully.
 ```
 
 > TOOL
@@ -1707,7 +1707,7 @@ id: toolu_013TYLb8pNkQVkUdYtJePV3H
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
+  "file_path": "/home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
   "old_string": "- Uses `sandbox-exec` (Apple's Sandbox framework) for basic filesystem restrictions where available",
   "new_string": "- Uses `sandbox-exec` (Apple's Sandbox framework) for basic filesystem restrictions where available. Note: `sandbox-exec` is deprecated by Apple and may be removed in future macOS versions. If unavailable, this mode provides no filesystem isolation — rely on the daemon's service ACLs and network proxy as the primary security boundary."
 }
@@ -1718,7 +1718,7 @@ id: toolu_013TYLb8pNkQVkUdYtJePV3H
 tool_result
 id: toolu_013TYLb8pNkQVkUdYtJePV3H
 ```
-The file /Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md has been updated successfully.
+The file /home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md has been updated successfully.
 ```
 
 > TOOL
@@ -1728,7 +1728,7 @@ id: toolu_01JNryBx1XJDJNGqqtdYVgUM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
+  "file_path": "/home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
   "old_string": "- Daemon logs its own health metrics (goroutine count, memory usage, GC pressure)",
   "new_string": "- Daemon logs its own health metrics (tokio task count, allocator stats, open file descriptors)"
 }
@@ -1739,7 +1739,7 @@ id: toolu_01JNryBx1XJDJNGqqtdYVgUM
 tool_result
 id: toolu_01JNryBx1XJDJNGqqtdYVgUM
 ```
-The file /Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md has been updated successfully.
+The file /home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md has been updated successfully.
 ```
 
 > AGENT
@@ -1753,7 +1753,7 @@ id: toolu_01GGU31ckestSm2mxcQWhADy
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
+  "file_path": "/home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
   "old_string": "/run/forge/agent-$ID/",
   "new_string": "$FORGE_RUNTIME_DIR/agent-$ID/"
 }
@@ -1764,7 +1764,7 @@ id: toolu_01GGU31ckestSm2mxcQWhADy
 tool_result
 id: toolu_01GGU31ckestSm2mxcQWhADy
 ```
-The file /Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md has been updated. All occurrences of '/run/forge/agent-$ID/' were successfully replaced with '$FORGE_RUNTIME_DIR/agent-$ID/'.
+The file /home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md has been updated. All occurrences of '/run/forge/agent-$ID/' were successfully replaced with '$FORGE_RUNTIME_DIR/agent-$ID/'.
 ```
 
 > TOOL
@@ -1774,7 +1774,7 @@ id: toolu_01MhGqHP8Y19fYzq95SybjVK
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
+  "file_path": "/home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
   "old_string": "/run/forge/agent-$ID",
   "new_string": "$FORGE_RUNTIME_DIR/agent-$ID"
 }
@@ -1785,7 +1785,7 @@ id: toolu_01MhGqHP8Y19fYzq95SybjVK
 tool_result
 id: toolu_01MhGqHP8Y19fYzq95SybjVK
 ```
-The file /Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md has been updated. All occurrences of '/run/forge/agent-$ID' were successfully replaced with '$FORGE_RUNTIME_DIR/agent-$ID'.
+The file /home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md has been updated. All occurrences of '/run/forge/agent-$ID' were successfully replaced with '$FORGE_RUNTIME_DIR/agent-$ID'.
 ```
 
 > TOOL
@@ -1795,7 +1795,7 @@ id: toolu_01C6CQejk8yXKySLXRs3WMFK
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
+  "file_path": "/home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
   "old_string": "`/run/forge/`",
   "new_string": "`$FORGE_RUNTIME_DIR/`"
 }
@@ -1806,7 +1806,7 @@ id: toolu_01C6CQejk8yXKySLXRs3WMFK
 tool_result
 id: toolu_01C6CQejk8yXKySLXRs3WMFK
 ```
-The file /Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md has been updated. All occurrences of '`/run/forge/`' were successfully replaced with '`$FORGE_RUNTIME_DIR/`'.
+The file /home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md has been updated. All occurrences of '`/run/forge/`' were successfully replaced with '`$FORGE_RUNTIME_DIR/`'.
 ```
 
 > AGENT
@@ -1820,7 +1820,7 @@ id: toolu_01Y4QcyJD2zXHuEcyz9ddSev
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
+  "file_path": "/home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md",
   "old_string": "- CLI and daemon communicate over **gRPC on a Unix domain socket**. Socket path resolution: `$FORGE_SOCKET_PATH` (override) → `$XDG_RUNTIME_DIR/forge.sock` (Linux) → `$TMPDIR/forge-$UID/forge.sock` (macOS).",
   "new_string": "- **Runtime directory** (`$FORGE_RUNTIME_DIR`): resolves to `$XDG_RUNTIME_DIR/forge/` (Linux) or `$TMPDIR/forge-$UID/` (macOS). All UDS socket paths in this spec use `$FORGE_RUNTIME_DIR` as shorthand. Override with `$FORGE_RUNTIME_DIR` env var.\n- CLI and daemon communicate over **gRPC on a Unix domain socket** at `$FORGE_RUNTIME_DIR/forge.sock`."
 }
@@ -1831,7 +1831,7 @@ id: toolu_01Y4QcyJD2zXHuEcyz9ddSev
 tool_result
 id: toolu_01Y4QcyJD2zXHuEcyz9ddSev
 ```
-The file /Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md has been updated successfully.
+The file /home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md has been updated successfully.
 ```
 
 > AGENT
@@ -1844,7 +1844,7 @@ tool_use Bash
 id: toolu_01YYmYqyPYvzaFpCF8DiYUNB
 ```json
 {
-  "command": "git add docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md && git commit -m \"$(cat <<'EOF'\ndocs: address spec review findings for runtime platform design\n\nFixes all 12 issues from initial review plus 4 minor issues from\nsecond pass: adds gRPC version negotiation, macOS first-class runtime,\nhost-mode (no-Nix) fallback, file locking protocol, daemon reliability,\ntoken budget enforcement, CLI-daemon sequence diagrams, data retention,\nMCP validation details, Nix profile composition, and editorial fixes.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md && git commit -m \"$(cat <<'EOF'\ndocs: address spec review findings for runtime platform design\n\nFixes all 12 issues from initial review plus 4 minor issues from\nsecond pass: adds gRPC version negotiation, macOS first-class runtime,\nhost-mode (no-Nix) fallback, file locking protocol, daemon reliability,\ntoken budget enforcement, CLI-daemon sequence diagrams, data retention,\nMCP validation details, Nix profile composition, and editorial fixes.\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit spec review fixes"
 }
 ```
@@ -2045,7 +2045,7 @@ id: toolu_01QrfjjoTxX46GPBxpsjZEvu
 {
   "description": "Write runtime.proto contract",
   "mode": "auto",
-  "prompt": "You are writing the gRPC protobuf contract for the forge-runtime daemon. Read the design spec at `/Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md` — specifically sections 7.3 (gRPC Interface), 7.4 (Version Negotiation), 6.2 (Run Orchestrator & Task Graph), 6.4 (Policy Engine), 6.5 (State Store), 5.x (Shared Services), 8.x (Dynamic Teams), 9.x (Security), and 10.x (Observability).\n\n**Your task:** Write a complete `runtime.proto` file to `/Users/jdsingh/Projects/AI/forge/crates/forge-proto/proto/runtime.proto`. Create any necessary directories.\n\n**Requirements:**\n\n1. **Package**: `forge.runtime.v1`\n\n2. **ForgeRuntime service** with ALL RPCs:\n   - Run lifecycle: SubmitRun, AttachRun, StopRun, GetRun, ListRuns\n   - Task lifecycle: GetTask, ListTasks, StreamTaskOutput, CreateChildTask, KillTask\n   - Approval flow: PendingApprovals, ResolveApproval\n   - MCP service management: RegisterMcpServer, ListMcpServers\n   - Observability: StreamEvents, GetMetrics\n   - Daemon management: Health, Shutdown\n\n3. **Messages** — define complete request/response types for each RPC. Key messages:\n   - SubmitRunRequest: project, plan (bytes), workspace, policy overrides\n   - RunInfo: id, project, status, milestones, task_count, token_usage, cost, timestamps\n   - TaskInfo: id, run_id, parent_task_id, milestone_id, objective, expected_output, profile, budget, memory_scope, status, assigned_agent_id, children, timestamps\n   - CreateChildTaskRequest: run_id, parent_task_id, profile, objective, expected_output, budget overrides, memory_scope\n   - RuntimeEvent: oneof (run_status_changed, task_status_changed, task_output, approval_request, resource_snapshot, service_event, memory_event)\n   - TaskOutputEvent: task_id, oneof (stdout_line, signal, promise, child_task_request, agent_exited)\n   - ApprovalRequest: id, run_id, parent_task_id, child_manifest, requested_capabilities\n   - HealthResponse: protocol_version, […]
+  "prompt": "You are writing the gRPC protobuf contract for the forge-runtime daemon. Read the design spec at `/home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md` — specifically sections 7.3 (gRPC Interface), 7.4 (Version Negotiation), 6.2 (Run Orchestrator & Task Graph), 6.4 (Policy Engine), 6.5 (State Store), 5.x (Shared Services), 8.x (Dynamic Teams), 9.x (Security), and 10.x (Observability).\n\n**Your task:** Write a complete `runtime.proto` file to `/home/<USER>/Projects/AI/forge/crates/forge-proto/proto/runtime.proto`. Create any necessary directories.\n\n**Requirements:**\n\n1. **Package**: `forge.runtime.v1`\n\n2. **ForgeRuntime service** with ALL RPCs:\n   - Run lifecycle: SubmitRun, AttachRun, StopRun, GetRun, ListRuns\n   - Task lifecycle: GetTask, ListTasks, StreamTaskOutput, CreateChildTask, KillTask\n   - Approval flow: PendingApprovals, ResolveApproval\n   - MCP service management: RegisterMcpServer, ListMcpServers\n   - Observability: StreamEvents, GetMetrics\n   - Daemon management: Health, Shutdown\n\n3. **Messages** — define complete request/response types for each RPC. Key messages:\n   - SubmitRunRequest: project, plan (bytes), workspace, policy overrides\n   - RunInfo: id, project, status, milestones, task_count, token_usage, cost, timestamps\n   - TaskInfo: id, run_id, parent_task_id, milestone_id, objective, expected_output, profile, budget, memory_scope, status, assigned_agent_id, children, timestamps\n   - CreateChildTaskRequest: run_id, parent_task_id, profile, objective, expected_output, budget overrides, memory_scope\n   - RuntimeEvent: oneof (run_status_changed, task_status_changed, task_output, approval_request, resource_snapshot, service_event, memory_event)\n   - TaskOutputEvent: task_id, oneof (stdout_line, signal, promise, child_task_request, agent_exited)\n   - ApprovalRequest: id, run_id, parent_task_id, child_manifest, requested_capabilities\n   - HealthResponse: protocol_version, […]
 
 > TOOL
 
@@ -2068,7 +2068,7 @@ id: toolu_01HAngBUQ2Vajai5o2E77h5s
 {
   "description": "Write Rust type sketch",
   "mode": "auto",
-  "prompt": "You are writing the core Rust domain types for the forge-runtime daemon. Read the design spec at `/Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md` — specifically sections 6.2 (Run Orchestrator & Task Graph), 4.1-4.5 (Agent Lifecycle), 5.x (Shared Services), 6.4 (Policy Engine), and 8.x (Dynamic Teams).\n\n**Your task:** Write Rust type definitions to `/Users/jdsingh/Projects/AI/forge/crates/forge-common/src/`. Create directories and files as needed.\n\n**File structure:**\n- `crates/forge-common/src/lib.rs` — re-exports\n- `crates/forge-common/src/ids.rs` — RunId, TaskNodeId, AgentId, MilestoneId, ApprovalId, SpawnId, ChannelId (newtype wrappers over String)\n- `crates/forge-common/src/manifest.rs` — CompiledProfile, AgentManifest, RuntimeEnvPlan, MemoryPolicy, ResourceLimits, PermissionSet, BudgetEnvelope, WorktreePlan\n- `crates/forge-common/src/run_graph.rs` — RunGraph, RunState, TaskNode, AgentInstance, RunStatus, TaskStatus, MilestoneInfo, SchedulerCursor\n- `crates/forge-common/src/policy.rs` — Policy, LimitsPolicy, CredentialPolicy, NetworkPolicy, MemoryPolicyConfig, ApprovalPolicy, CostPolicy\n- `crates/forge-common/src/events.rs` — RuntimeEvent, BusMessage, TaskOutputEvent, and all event variants\n- `crates/forge-common/src/runtime.rs` — AgentRuntime trait, AgentHandle, AgentStatus\n\n**Requirements:**\n\n1. Use `derive(Debug, Clone, Serialize, Deserialize)` where appropriate (serde for persistence/gRPC translation)\n2. Use strong typing: newtype IDs, enums with data, no stringly-typed fields\n3. Resource limits should support cpu (f32), memory as bytes (u64), token_budget (u64)\n4. BudgetEnvelope should track allocated, consumed, remaining tokens with subtree rollup\n5. MemoryScope enum: Scratch, RunShared, Project\n6. TaskStatus enum with data variants matching the spec (Pending, AwaitingApproval, Enqueued, Materializing, Running { agent_id, since }, Completed { result, duration }, Failed […]
+  "prompt": "You are writing the core Rust domain types for the forge-runtime daemon. Read the design spec at `/home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md` — specifically sections 6.2 (Run Orchestrator & Task Graph), 4.1-4.5 (Agent Lifecycle), 5.x (Shared Services), 6.4 (Policy Engine), and 8.x (Dynamic Teams).\n\n**Your task:** Write Rust type definitions to `/home/<USER>/Projects/AI/forge/crates/forge-common/src/`. Create directories and files as needed.\n\n**File structure:**\n- `crates/forge-common/src/lib.rs` — re-exports\n- `crates/forge-common/src/ids.rs` — RunId, TaskNodeId, AgentId, MilestoneId, ApprovalId, SpawnId, ChannelId (newtype wrappers over String)\n- `crates/forge-common/src/manifest.rs` — CompiledProfile, AgentManifest, RuntimeEnvPlan, MemoryPolicy, ResourceLimits, PermissionSet, BudgetEnvelope, WorktreePlan\n- `crates/forge-common/src/run_graph.rs` — RunGraph, RunState, TaskNode, AgentInstance, RunStatus, TaskStatus, MilestoneInfo, SchedulerCursor\n- `crates/forge-common/src/policy.rs` — Policy, LimitsPolicy, CredentialPolicy, NetworkPolicy, MemoryPolicyConfig, ApprovalPolicy, CostPolicy\n- `crates/forge-common/src/events.rs` — RuntimeEvent, BusMessage, TaskOutputEvent, and all event variants\n- `crates/forge-common/src/runtime.rs` — AgentRuntime trait, AgentHandle, AgentStatus\n\n**Requirements:**\n\n1. Use `derive(Debug, Clone, Serialize, Deserialize)` where appropriate (serde for persistence/gRPC translation)\n2. Use strong typing: newtype IDs, enums with data, no stringly-typed fields\n3. Resource limits should support cpu (f32), memory as bytes (u64), token_budget (u64)\n4. BudgetEnvelope should track allocated, consumed, remaining tokens with subtree rollup\n5. MemoryScope enum: Scratch, RunShared, Project\n6. TaskStatus enum with data variants matching the spec (Pending, AwaitingApproval, Enqueued, Materializing, Running { agent_id, since }, Completed { result, duration }, Failed […]
 
 > TOOL
 
@@ -2091,7 +2091,7 @@ id: toolu_01PTxFHTpBny2HFWZYP7Pkxg
 {
   "description": "Map spawn sites to facade",
   "mode": "auto",
-  "prompt": "You are auditing the forge codebase to find every location that spawns a Claude CLI process or a forge subprocess. Read the design spec at `/Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md` — specifically sections 7.6 (Integration Points) and 14 (Migration Path) for context.\n\n**Your task:** Search the entire codebase under `/Users/jdsingh/Projects/AI/forge/src/` for:\n1. All `Command::new` calls that spawn `claude` or the claude CLI\n2. All `Command::new` calls that spawn `forge` subprocesses\n3. All `tokio::process::Command` usage\n4. Any direct process spawning patterns (look for `Stdio`, `spawn()`, `child.stdout`, etc.)\n5. All places that parse stdout from spawned processes (signal parsing, stream-json parsing)\n\nFor each spawn site found, document:\n- **File and line number**\n- **Current pattern** (what it spawns, how it manages stdout, what it parses)\n- **Calling context** (which subsystem: orchestrator, swarm, factory pipeline, review, council, generate, interview, autoresearch, etc.)\n- **New pattern** (how this maps to the daemon: SubmitRun, CreateChildTask, StreamTaskOutput, etc.)\n- **Migration complexity** (Low/Medium/High) and notes on what makes it complex\n\nWrite the migration checklist to `/Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-13-spawn-site-migration-checklist.md`.\n\nBe thorough — check every .rs file under src/. Don't miss any spawn sites. Use Grep and Read tools extensively.",
+  "prompt": "You are auditing the forge codebase to find every location that spawns a Claude CLI process or a forge subprocess. Read the design spec at `/home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md` — specifically sections 7.6 (Integration Points) and 14 (Migration Path) for context.\n\n**Your task:** Search the entire codebase under `/home/<USER>/Projects/AI/forge/src/` for:\n1. All `Command::new` calls that spawn `claude` or the claude CLI\n2. All `Command::new` calls that spawn `forge` subprocesses\n3. All `tokio::process::Command` usage\n4. Any direct process spawning patterns (look for `Stdio`, `spawn()`, `child.stdout`, etc.)\n5. All places that parse stdout from spawned processes (signal parsing, stream-json parsing)\n\nFor each spawn site found, document:\n- **File and line number**\n- **Current pattern** (what it spawns, how it manages stdout, what it parses)\n- **Calling context** (which subsystem: orchestrator, swarm, factory pipeline, review, council, generate, interview, autoresearch, etc.)\n- **New pattern** (how this maps to the daemon: SubmitRun, CreateChildTask, StreamTaskOutput, etc.)\n- **Migration complexity** (Low/Medium/High) and notes on what makes it complex\n\nWrite the migration checklist to `/home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-13-spawn-site-migration-checklist.md`.\n\nBe thorough — check every .rs file under src/. Don't miss any spawn sites. Use Grep and Read tools extensively.",
   "run_in_background": true
 }
 ```
@@ -2205,7 +2205,7 @@ tool_result
 id: toolu_01XkZQpZD1rqr7uCoXJ3KLa9
 ```
 <persisted-output>
-Output too large (140.3KB). Full output saved to: /Users/jdsingh/.claude/projects/-Users-jdsingh-Projects-AI-forge/9c79c99e-b470-42b7-bd40-f7c4d9e6547b/tool-results/bjs95ezzf.txt
+Output too large (140.3KB). Full output saved to: /home/<USER>/.claude/projects/-Users-jdsingh-Projects-AI-forge/9c79c99e-b470-42b7-bd40-f7c4d9e6547b/tool-results/bjs95ezzf.txt
 
 Preview (first 2KB):
 On branch main
@@ -2255,7 +2255,7 @@ tool_use Bash
 id: toolu_01BNaeKGQyGwkXDLAAQau1ZE
 ```json
 {
-  "command": "git add crates/forge-proto/proto/runtime.proto crates/forge-common/Cargo.toml crates/forge-common/src/ docs/superpowers/specs/2026-03-13-spawn-site-migration-checklist.md docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md && git commit -m \"$(cat <<'EOF'\nfeat(runtime): add proto contract, domain types, and spawn site migration checklist\n\nThree artifacts for the forge-runtime platform:\n- crates/forge-proto/proto/runtime.proto: 964-line gRPC contract with\n  16 RPCs, durable replay semantics, and full request/response types\n- crates/forge-common/src/: Rust domain model with strong-typed IDs,\n  CompiledProfile, RunGraph, TaskNode, AgentRuntime trait, policy\n  engine types, and 33 event variants (17 tests passing)\n- docs/superpowers/specs/2026-03-13-spawn-site-migration-checklist.md:\n  26 spawn sites across 16 files mapped to daemon-backed facade\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add crates/forge-proto/proto/runtime.proto crates/forge-common/Cargo.toml crates/forge-common/src/ docs/superpowers/specs/2026-03-13-spawn-site-migration-checklist.md docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md && git commit -m \"$(cat <<'EOF'\nfeat(runtime): add proto contract, domain types, and spawn site migration checklist\n\nThree artifacts for the forge-runtime platform:\n- crates/forge-proto/proto/runtime.proto: 964-line gRPC contract with\n  16 RPCs, durable replay semantics, and full request/response types\n- crates/forge-common/src/: Rust domain model with strong-typed IDs,\n  CompiledProfile, RunGraph, TaskNode, AgentRuntime trait, policy\n  engine types, and 33 event variants (17 tests passing)\n- docs/superpowers/specs/2026-03-13-spawn-site-migration-checklist.md:\n  26 spawn sites across 16 files mapped to daemon-backed facade\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit all three artifacts"
 }
 ```
@@ -2338,7 +2338,7 @@ tool_use Write
 id: toolu_01Uy3XgWMMBLSVYLvEDmLUcQ
 ```json
 {
-  "file_path": "/Users/jdsingh/.claude/projects/-Users-jdsingh-Projects-AI-forge/memory/project_runtime_platform_status.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-jdsingh-Projects-AI-forge/memory/project_runtime_platform_status.md",
   "content": "---\nname: runtime-platform-status\ndescription: Current state of the forge-runtime platform redesign — spec approved, proto + domain types written, next step is codegen + workspace wiring\ntype: project\n---\n\nForge runtime platform redesign is in progress. **Why:** Transform forge from a single-machine process spawner into an agentic platform backbone with daemon-authoritative orchestration, Nix-defined agent environments, namespace isolation, shared services, and dynamic team composition.\n\n**Current state (2026-03-13):**\n- Design spec approved: `docs/superpowers/specs/2026-03-13-forge-runtime-platform-design.md`\n- Spawn site migration checklist: `docs/superpowers/specs/2026-03-13-spawn-site-migration-checklist.md` (26 sites across 16 files)\n- Proto contract: `crates/forge-proto/proto/runtime.proto` — typed RunPlan, milestone/task-plan messages, parent-vs-operator approvals, capability envelopes, credential access modes\n- Rust domain types: `crates/forge-common/src/` — RunPlan, TaskNode, BudgetEnvelope, CompiledProfile, events, policy. Tests pass.\n- Neither crate is wired into the workspace Cargo.toml yet\n- No proto codegen (prost/tonic) yet\n\n**Key design decisions by user:**\n- Daemon-authoritative: forge-runtime owns run graph, scheduling, approvals, retries, cancellation, event log\n- Trusted base profiles (Nix) + untrusted project overlays (TOML data parsed by daemon)\n- Task nodes replace runtime sub-phases; milestones are top-level operator-facing phases\n- Credential broker with proxy_only vs exportable modes (no raw env var injection by default)\n- Memory service with scratch/run-shared/project scopes and provenance\n- Output is a first-class event in the shared model, not a side channel\n\n**Next concrete step:** Add […]
 
 > TOOL
@@ -2346,7 +2346,7 @@ id: toolu_01Uy3XgWMMBLSVYLvEDmLUcQ
 tool_result
 id: toolu_01Uy3XgWMMBLSVYLvEDmLUcQ
 ```
-File created successfully at: /Users/jdsingh/.claude/projects/-Users-jdsingh-Projects-AI-forge/memory/project_runtime_platform_status.md
+File created successfully at: /home/<USER>/.claude/projects/-Users-jdsingh-Projects-AI-forge/memory/project_runtime_platform_status.md
 ```
 
 > TOOL
@@ -2355,7 +2355,7 @@ tool_use Read
 id: toolu_018WKv29ykRRbS7zbbCyGsWm
 ```json
 {
-  "file_path": "/Users/jdsingh/.claude/projects/-Users-jdsingh-Projects-AI-forge/memory/MEMORY.md"
+  "file_path": "/home/<USER>/.claude/projects/-Users-jdsingh-Projects-AI-forge/memory/MEMORY.md"
 }
 ```
 
@@ -2364,7 +2364,7 @@ id: toolu_018WKv29ykRRbS7zbbCyGsWm
 tool_result ERROR
 id: toolu_018WKv29ykRRbS7zbbCyGsWm
 ```
-File does not exist. Note: your current working directory is /Users/jdsingh/Projects/AI/forge.
+File does not exist. Note: your current working directory is /home/<USER>/Projects/AI/forge.
 ```
 
 > TOOL
@@ -2373,7 +2373,7 @@ tool_use Write
 id: toolu_01H3c752pFwoZT5qr9La3u4b
 ```json
 {
-  "file_path": "/Users/jdsingh/.claude/projects/-Users-jdsingh-Projects-AI-forge/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-jdsingh-Projects-AI-forge/memory/MEMORY.md",
   "content": "# Memory Index\n\n- [project_runtime_platform_status.md](project_runtime_platform_status.md) — Current state of forge-runtime platform redesign (spec, proto, domain types, next steps)\n"
 }
 ```
@@ -2383,7 +2383,7 @@ id: toolu_01H3c752pFwoZT5qr9La3u4b
 tool_result
 id: toolu_01H3c752pFwoZT5qr9La3u4b
 ```
-File created successfully at: /Users/jdsingh/.claude/projects/-Users-jdsingh-Projects-AI-forge/memory/MEMORY.md
+File created successfully at: /home/<USER>/.claude/projects/-Users-jdsingh-Projects-AI-forge/memory/MEMORY.md
 ```
 
 > AGENT

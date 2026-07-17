@@ -470,7 +470,7 @@ tool_use Bash
 id: toolu_0163epm9r5j8w5JNLeWm48Ru
 ```json
 {
-  "command": "cd /Users/anton/src/agent-skills-shaper\ngit rm .claude/commands/delivery.md .claude/commands/design.md .claude/commands/idea.md .claude/commands/plan-review.md .claude/commands/pr-prepare.md .claude/commands/project.md .claude/commands/render-html.md .claude/commands/exec/build.md .claude/commands/exec/debug.md .claude/commands/exec/finish.md .claude/commands/exec/pickup.md .claude/commands/exec/review.md .claude/commands/exec/simplify.md .claude/commands/exec/verify.md 2>&1 | tail -3\necho \"--- remaining commands ---\"\nls -R .claude/commands/\necho \"--- refs to dropped slash verbs (non-worktree) ---\"\ngrep -rEn \"/(shape|exec):(idea|project|design|delivery|plan-review|pr-prepare|render-html|pickup|build|debug|finish|review|simplify|verify)\" --include=\"*.md\" . | grep -v \"/.worktrees/\" | grep -v \"/docs/adr/\" | head -40",
+  "command": "cd /home/<USER>/src/agent-skills-shaper\ngit rm .claude/commands/delivery.md .claude/commands/design.md .claude/commands/idea.md .claude/commands/plan-review.md .claude/commands/pr-prepare.md .claude/commands/project.md .claude/commands/render-html.md .claude/commands/exec/build.md .claude/commands/exec/debug.md .claude/commands/exec/finish.md .claude/commands/exec/pickup.md .claude/commands/exec/review.md .claude/commands/exec/simplify.md .claude/commands/exec/verify.md 2>&1 | tail -3\necho \"--- remaining commands ---\"\nls -R .claude/commands/\necho \"--- refs to dropped slash verbs (non-worktree) ---\"\ngrep -rEn \"/(shape|exec):(idea|project|design|delivery|plan-review|pr-prepare|render-html|pickup|build|debug|finish|review|simplify|verify)\" --include=\"*.md\" . | grep -v \"/.worktrees/\" | grep -v \"/docs/adr/\" | head -40",
   "description": "Delete wrappers, list remainder, scan for references"
 }
 ```
@@ -547,7 +547,7 @@ id: toolu_01VZrkVuCoraRMgwCunxP1NV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/agent-skills-shaper/README.md",
+  "file_path": "/home/<USER>/src/agent-skills-shaper/README.md",
   "old_string": "- **16 skills**, auto-invoked when the task matches (e.g. say *\"how should we build this?\"* and shape:design fires).\n- **Slash commands** for the core skills, namespaced `/shape:` (e.g. `/shape:idea`, `/shape:design`).\n- A **SessionStart hook** that loads the navigator skill so the agent always knows which step it's on.\n\nPrefer to drive it yourself? Type the slash command. Prefer the agent to choose? Just describe what you're doing — the skills trigger on natural phrases.",
   "new_string": "- **16 skills**, auto-invoked when the task matches (e.g. say *\"how should we build this?\"* and shape:design fires). Each also invokes by name when you want to drive a step yourself.\n- A **SessionStart hook** that loads the navigator skill so the agent always knows which step it's on.\n- **Two utility slash commands** — `/shape:stop-the-line` and `/shape:ta[REDACTED_SK]` — that run the diff-scan and task-annotation hooks on demand.\n\nPrefer the agent to choose? Just describe what you're doing — the skills trigger on natural phrases. Prefer to drive a step yourself? Name the skill (e.g. *\"run shape:delivery\"*)."
 }
@@ -571,7 +571,7 @@ tool_use Read
 id: toolu_01SskKCofvo9m6N3jXMNQiQn
 ```json
 {
-  "file_path": "/Users/anton/src/agent-skills-shaper/README.md",
+  "file_path": "/home/<USER>/src/agent-skills-shaper/README.md",
   "offset": 49,
   "limit": 22
 }
@@ -606,7 +606,7 @@ id: toolu_01C3uDke443CSLhazAe8TCNH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/agent-skills-shaper/README.md",
+  "file_path": "/home/<USER>/src/agent-skills-shaper/README.md",
   "old_string": "- **16 skills**, auto-invoked when the task matches (e.g. say *\"how should we build this?\"* and shape:design fires).\n- **Slash commands** for the core skills, namespaced `/shape:` (e.g. `/shape:idea`, `/shape:design`).\n- A **SessionStart hook** that loads the navigator skill so the agent always knows which step it's on.\n\nPrefer to drive it yourself? Type the slash command. Prefer the agent to choose? Just describe what you're doing — the skills trigger on natural phrases.",
   "new_string": "- **16 skills**, auto-invoked when the task matches (e.g. say *\"how should we build this?\"* and shape:design fires). Each also invokes by name when you want to drive a step yourself.\n- A **SessionStart hook** that loads the navigator skill so the agent always knows which step it's on.\n- **Two utility slash commands** — `/shape:stop-the-line` and `/shape:ta[REDACTED_SK]` — that run the diff-scan and task-annotation hooks on demand.\n\nPrefer the agent to choose? Just describe what you're doing — the skills trigger on natural phrases. Prefer to drive a step yourself? Name the skill (e.g. *\"run shape:delivery\"*)."
 }
@@ -617,7 +617,7 @@ id: toolu_01C3uDke443CSLhazAe8TCNH
 tool_result
 id: toolu_01C3uDke443CSLhazAe8TCNH
 ```
-The file /Users/anton/src/agent-skills-shaper/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/agent-skills-shaper/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -627,7 +627,7 @@ id: toolu_01PFYBJn5U1fw69uEEw6hgob
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/agent-skills-shaper/README.md",
+  "file_path": "/home/<USER>/src/agent-skills-shaper/README.md",
   "old_string": "1. **An idea arrives.** *\"A customer asked for bulk export.\"* → `/shape:idea` scores it, classifies it, and routes it — to the idea bank if it's strong, to a design spike if the bet is unproven.\n2. **It's worth doing.** → `/shape:project` turns it into a committed project with a well defined goal and clear measures of success that an agent can self-grade. Will automatically re-route to creating an individual task if a project is unnecessary.\n3. **Time to design.** → `/shape:design` lays out the approach, the trade-offs, and the operability plan on the design-doc track. Unsure about a risky unknown first? The product-spike or backend-spike tracks answer the one question before you commit.\n4. **Plan the build.** → `/shape:delivery` decomposes the initiative into an ordered, verifiable task list. `/plan-review` reads it adversarially and catches what's missing *before* a line of code is written.\n5. **Build it.** → `/exec:build` runs a gated red/green/commit loop, one small increment at a time. Stuck? `/exec:debug` finds the root cause. Heavy? `/exec:simplify` trims it once it's green.\n6. **Prove it's done.** → `/exec:verify` checks the diff against the ticket's acceptance criteria; `/exec:review` runs spec, security, and quality passes. […]
 
 > TOOL
@@ -635,7 +635,7 @@ id: toolu_01PFYBJn5U1fw69uEEw6hgob
 tool_result
 id: toolu_01PFYBJn5U1fw69uEEw6hgob
 ```
-The file /Users/anton/src/agent-skills-shaper/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/agent-skills-shaper/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -649,7 +649,7 @@ id: toolu_01LvmrebnY59C8JGimNQUQKd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/agent-skills-shaper/README.md",
+  "file_path": "/home/<USER>/src/agent-skills-shaper/README.md",
   "old_string": "5. **Build it.** → **shape:exec:build** runs a gated red/green/commit loop, one small increment at a time. Stuck? **shape:exec:debug** finds the root cause. Heavy? **shape:exec:simplify** trims it once it's green.\n6. **Prove it's done.** → **shape:exec:verify** checks the diff against the ticket's acceptance criteria; **shape:exec:review** runs spec, security, and quality passes. A fail is a halt, not a suggestion.\n7. **Ship it.** → **shape:exec:finish** submits the stack, one small PR per slice, and delegates to **shape:pr-prepare** to write each PR's reviewer body and route it for merge or human review.",
   "new_string": "5. **Build it.** → **exec:build** runs a gated red/green/commit loop, one small increment at a time. Stuck? **exec:debug** finds the root cause. Heavy? **exec:simplify** trims it once it's green.\n6. **Prove it's done.** → **exec:verify** checks the diff against the ticket's acceptance criteria; **exec:review** runs spec, security, and quality passes. A fail is a halt, not a suggestion.\n7. **Ship it.** → **exec:finish** submits the stack, one small PR per slice, and delegates to **shape:pr-prepare** to write each PR's reviewer body and route it for merge or human review."
 }
@@ -660,7 +660,7 @@ id: toolu_01LvmrebnY59C8JGimNQUQKd
 tool_result
 id: toolu_01LvmrebnY59C8JGimNQUQKd
 ```
-The file /Users/anton/src/agent-skills-shaper/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/agent-skills-shaper/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -673,7 +673,7 @@ tool_use Read
 id: toolu_01XkVFuJVxPzfL19YCoj1y82
 ```json
 {
-  "file_path": "/Users/anton/src/agent-skills-shaper/install.sh",
+  "file_path": "/home/<USER>/src/agent-skills-shaper/install.sh",
   "offset": 160,
   "limit": 25
 }
@@ -717,7 +717,7 @@ id: toolu_01XbBoJK8s61uJxfqVqkw1a2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/agent-skills-shaper/install.sh",
+  "file_path": "/home/<USER>/src/agent-skills-shaper/install.sh",
   "old_string": "echo \"Available commands:\"\necho \"  /shape:idea                         Triage an incoming idea\"\necho \"  /shape:design                       Work through a technical or product unknown before building (design doc, backend spike, or product spike)\"\necho \"  /shape:delivery                     Decompose an initiative into a delivery plan\"\necho \"  /shape:project                      Shape a vague idea into a goal-driven initiative\"\necho \"  /shape:plan-review                  Review a plan/spec/design before approval\"\necho \"  /shape:exec:pickup                  Drain a Linear issue end-to-end\"\necho \"  /shape:exec:review                  Multi-persona execution review of a diff\"\necho \"  /shape:verify-implementation        Check a diff against ticket AC before Done\"\necho \"  /shape:pr-prepare                   Write PR bodies and route the stack to merge or review\"\necho \"  /shape:render-html                  Render a markdown doc as a reviewable HTML file\"\necho \"  /shape:stop-the-line                Scan a diff for quality red flags\"\necho \"  /shape:ta[REDACTED_SK]        Check docs/tasks/*.md for model-tier annotations\"\necho \"\"\necho \"Auto-invocable skills (model-triggered, namespaced as shape-<name>):\"",
   "new_string": "echo \"Utility slash commands (on-demand hook runs):\"\necho \"  /shape:stop-the-line                Scan a diff for quality red flags\"\necho \"  /shape:ta[REDACTED_SK]        Check docs/tasks/*.md for model-tier annotations\"\necho \"\"\necho \"Every workflow ships as an auto-invocable skill (model-triggered, or invoke by name).\"\necho \"Skills installed, namespaced as shape-<name>:\""
 }
@@ -728,7 +728,7 @@ id: toolu_01XbBoJK8s61uJxfqVqkw1a2
 tool_result
 id: toolu_01XbBoJK8s61uJxfqVqkw1a2
 ```
-The file /Users/anton/src/agent-skills-shaper/install.sh has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/agent-skills-shaper/install.sh has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -742,7 +742,7 @@ id: toolu_01AYsfxXqVx9RWWcY6d6P5DG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/agent-skills-shaper/CLAUDE.md",
+  "file_path": "/home/<USER>/src/agent-skills-shaper/CLAUDE.md",
   "old_string": ".claude-plugin/     plugin.json — manifest for marketplace install\n.claude/commands/   Slash-command wrappers",
   "new_string": ".claude-plugin/     plugin.json — manifest for marketplace install\n.claude/commands/   Slash-command wrappers — utility hooks only (stop-the-line,\n                    ta[REDACTED_SK]). Workflow skills are invoked by name,\n                    not via wrappers."
 }
@@ -753,7 +753,7 @@ id: toolu_01AYsfxXqVx9RWWcY6d6P5DG
 tool_result
 id: toolu_01AYsfxXqVx9RWWcY6d6P5DG
 ```
-The file /Users/anton/src/agent-skills-shaper/CLAUDE.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/agent-skills-shaper/CLAUDE.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -766,7 +766,7 @@ tool_use Read
 id: toolu_01Dvb719UjPggipiXLFP2TWJ
 ```json
 {
-  "file_path": "/Users/anton/src/agent-skills-shaper/CONTRIBUTING.md",
+  "file_path": "/home/<USER>/src/agent-skills-shaper/CONTRIBUTING.md",
   "offset": 85,
   "limit": 8
 }
@@ -794,7 +794,7 @@ id: toolu_017RskJKQS148roCqR7ZDiwK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/agent-skills-shaper/CONTRIBUTING.md",
+  "file_path": "/home/<USER>/src/agent-skills-shaper/CONTRIBUTING.md",
   "old_string": "1. Slash commands in `~/.claude/commands/shape/`\n2. Auto-invocable skill symlinks in `~/.claude/skills/shape-<name>`\n3. `@`-refs to the rule files in `~/.claude/CLAUDE.md`",
   "new_string": "1. Auto-invocable skill symlinks in `~/.claude/skills/shape-<name>` — the primary invocation surface for every workflow\n2. Utility slash commands in `~/.claude/commands/shape/` — only the two hook runners (`stop-the-line`, `ta[REDACTED_SK]`)\n3. `@`-refs to the rule files in `~/.claude/CLAUDE.md`"
 }
@@ -805,7 +805,7 @@ id: toolu_017RskJKQS148roCqR7ZDiwK
 tool_result
 id: toolu_017RskJKQS148roCqR7ZDiwK
 ```
-The file /Users/anton/src/agent-skills-shaper/CONTRIBUTING.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/agent-skills-shaper/CONTRIBUTING.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -818,7 +818,7 @@ tool_use Bash
 id: toolu_011mqd3m91eWBg5mDoheyJSK
 ```json
 {
-  "command": "cd /Users/anton/src/agent-skills-shaper\necho \"=== design:28 ===\" && sed -n '28p' skills/design/SKILL.md\necho \"=== plan-review:38 ===\" && sed -n '38p' skills/plan-review/SKILL.md\necho \"=== PRODUCT_RULES:3 ===\" && sed -n '3p' rules/PRODUCT_RULES.md\necho \"=== project-types 5,15,21,39,362,363 ===\" && sed -n '5p;15p;21p;39p;362p;363p' references/project-types.md",
+  "command": "cd /home/<USER>/src/agent-skills-shaper\necho \"=== design:28 ===\" && sed -n '28p' skills/design/SKILL.md\necho \"=== plan-review:38 ===\" && sed -n '38p' skills/plan-review/SKILL.md\necho \"=== PRODUCT_RULES:3 ===\" && sed -n '3p' rules/PRODUCT_RULES.md\necho \"=== project-types 5,15,21,39,362,363 ===\" && sed -n '5p;15p;21p;39p;362p;363p' references/project-types.md",
   "description": "Read exact cross-ref lines"
 }
 ```
@@ -845,7 +845,7 @@ tool_use Read
 id: toolu_014Az1PhdLLk93Aya7itBRDk
 ```json
 {
-  "file_path": "/Users/anton/src/agent-skills-shaper/skills/design/SKILL.md",
+  "file_path": "/home/<USER>/src/agent-skills-shaper/skills/design/SKILL.md",
   "offset": 28,
   "limit": 1
 }
@@ -865,7 +865,7 @@ tool_use Read
 id: toolu_018zrnShhLkAhuAU3QAj3jon
 ```json
 {
-  "file_path": "/Users/anton/src/agent-skills-shaper/skills/plan-review/SKILL.md",
+  "file_path": "/home/<USER>/src/agent-skills-shaper/skills/plan-review/SKILL.md",
   "offset": 38,
   "limit": 1
 }
@@ -885,7 +885,7 @@ tool_use Read
 id: toolu_01J7sCn9HjMSrrJ8yrD5ewqS
 ```json
 {
-  "file_path": "/Users/anton/src/agent-skills-shaper/rules/PRODUCT_RULES.md",
+  "file_path": "/home/<USER>/src/agent-skills-shaper/rules/PRODUCT_RULES.md",
   "offset": 3,
   "limit": 1
 }
@@ -905,7 +905,7 @@ tool_use Read
 id: toolu_01SFANGjcNHAWvwABtT9gMRN
 ```json
 {
-  "file_path": "/Users/anton/src/agent-skills-shaper/references/project-types.md",
+  "file_path": "/home/<USER>/src/agent-skills-shaper/references/project-types.md",
   "offset": 3,
   "limit": 40
 }
@@ -943,7 +943,7 @@ id: toolu_015be3ZXgPr1CDwVdZW9VyGN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/agent-skills-shaper/skills/design/SKILL.md",
+  "file_path": "/home/<USER>/src/agent-skills-shaper/skills/design/SKILL.md",
   "old_string": "If the problem itself is not yet framed, run `/shape:idea` first.",
   "new_string": "If the problem itself is not yet framed, run **shape:idea** first."
 }
@@ -954,7 +954,7 @@ id: toolu_015be3ZXgPr1CDwVdZW9VyGN
 tool_result
 id: toolu_015be3ZXgPr1CDwVdZW9VyGN
 ```
-The file /Users/anton/src/agent-skills-shaper/skills/design/SKILL.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/agent-skills-shaper/skills/design/SKILL.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -964,7 +964,7 @@ id: toolu_01MBNFFNUMZy44dLCW4osKuH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/agent-skills-shaper/skills/plan-review/SKILL.md",
+  "file_path": "/home/<USER>/src/agent-skills-shaper/skills/plan-review/SKILL.md",
   "old_string": "- **The plan itself doesn't exist yet.** Use `/shape:design` or `/shape:idea` to produce a plan first.",
   "new_string": "- **The plan itself doesn't exist yet.** Use **shape:design** or **shape:idea** to produce a plan first."
 }
@@ -975,7 +975,7 @@ id: toolu_01MBNFFNUMZy44dLCW4osKuH
 tool_result
 id: toolu_01MBNFFNUMZy44dLCW4osKuH
 ```
-The file /Users/anton/src/agent-skills-shaper/skills/plan-review/SKILL.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/agent-skills-shaper/skills/plan-review/SKILL.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -985,7 +985,7 @@ id: toolu_012F4uxuwJK7hF6vqbdNs4rK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/agent-skills-shaper/rules/PRODUCT_RULES.md",
+  "file_path": "/home/<USER>/src/agent-skills-shaper/rules/PRODUCT_RULES.md",
   "old_string": "The `/shape:idea` skill handles problem-framing and roadmap mechanics at the point of intake.",
   "new_string": "The **shape:idea** skill handles problem-framing and roadmap mechanics at the point of intake."
 }
@@ -996,7 +996,7 @@ id: toolu_012F4uxuwJK7hF6vqbdNs4rK
 tool_result
 id: toolu_012F4uxuwJK7hF6vqbdNs4rK
 ```
-The file /Users/anton/src/agent-skills-shaper/rules/PRODUCT_RULES.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/agent-skills-shaper/rules/PRODUCT_RULES.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1010,7 +1010,7 @@ id: toolu_01AX2Ms8kf6BxDontC9GuysL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/agent-skills-shaper/references/project-types.md",
+  "file_path": "/home/<USER>/src/agent-skills-shaper/references/project-types.md",
   "old_string": "  Used by /shape:project to set the Objective shape and the rubric the KRs are judged",
   "new_string": "  Used by shape:project to set the Objective shape and the rubric the KRs are judged"
 }
@@ -1021,7 +1021,7 @@ id: toolu_01AX2Ms8kf6BxDontC9GuysL
 tool_result
 id: toolu_01AX2Ms8kf6BxDontC9GuysL
 ```
-The file /Users/anton/src/agent-skills-shaper/references/project-types.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/agent-skills-shaper/references/project-types.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1031,7 +1031,7 @@ id: toolu_01QR41PNfAD6dTTBZLoLk9Sg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/agent-skills-shaper/references/project-types.md",
+  "file_path": "/home/<USER>/src/agent-skills-shaper/references/project-types.md",
   "old_string": "The `/shape:project` skill probes the project type before shaping KRs.",
   "new_string": "The **shape:project** skill probes the project type before shaping KRs."
 }
@@ -1042,7 +1042,7 @@ id: toolu_01QR41PNfAD6dTTBZLoLk9Sg
 tool_result
 id: toolu_01QR41PNfAD6dTTBZLoLk9Sg
 ```
-The file /Users/anton/src/agent-skills-shaper/references/project-types.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/agent-skills-shaper/references/project-types.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1052,7 +1052,7 @@ id: toolu_01RYR1RryfTXUpu3USRr3Zh9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/agent-skills-shaper/references/project-types.md",
+  "file_path": "/home/<USER>/src/agent-skills-shaper/references/project-types.md",
   "old_string": "Each example below uses the PM-readable KR shape `/shape:project` emits",
   "new_string": "Each example below uses the PM-readable KR shape **shape:project** emits"
 }
@@ -1063,7 +1063,7 @@ id: toolu_01RYR1RryfTXUpu3USRr3Zh9
 tool_result
 id: toolu_01RYR1RryfTXUpu3USRr3Zh9
 ```
-The file /Users/anton/src/agent-skills-shaper/references/project-types.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/agent-skills-shaper/references/project-types.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1073,7 +1073,7 @@ id: toolu_01JBwHyBBHp3WgeEpmhVCGTB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/agent-skills-shaper/references/project-types.md",
+  "file_path": "/home/<USER>/src/agent-skills-shaper/references/project-types.md",
   "old_string": "**Worked example — `/shape:project` itself.**",
   "new_string": "**Worked example — `shape:project` itself.**"
 }
@@ -1084,7 +1084,7 @@ id: toolu_01JBwHyBBHp3WgeEpmhVCGTB
 tool_result
 id: toolu_01JBwHyBBHp3WgeEpmhVCGTB
 ```
-The file /Users/anton/src/agent-skills-shaper/references/project-types.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/agent-skills-shaper/references/project-types.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1093,7 +1093,7 @@ tool_use Read
 id: toolu_01F8V26VAzwFp9CAB8qG8aaU
 ```json
 {
-  "file_path": "/Users/anton/src/agent-skills-shaper/references/project-types.md",
+  "file_path": "/home/<USER>/src/agent-skills-shaper/references/project-types.md",
   "offset": 360,
   "limit": 5
 }
@@ -1118,7 +1118,7 @@ id: toolu_01R7y2xJPhhwhmRsnkB141A6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/agent-skills-shaper/references/project-types.md",
+  "file_path": "/home/<USER>/src/agent-skills-shaper/references/project-types.md",
   "old_string": "- `skills/shape:project/SKILL.md` — the six-field initiative format the type field is added to (defined inline in the skill); tracker capture is owned by the Workflow pack when installed\n- `skills/shape:project/SKILL.md` — invokes the type probe at Step 2.5",
   "new_string": "- `skills/project/SKILL.md` — the six-field initiative format the type field is added to (defined inline in the skill); tracker capture is owned by the Workflow pack when installed\n- `skills/project/SKILL.md` — invokes the type probe at Step 2.5"
 }
@@ -1129,7 +1129,7 @@ id: toolu_01R7y2xJPhhwhmRsnkB141A6
 tool_result
 id: toolu_01R7y2xJPhhwhmRsnkB141A6
 ```
-The file /Users/anton/src/agent-skills-shaper/references/project-types.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/agent-skills-shaper/references/project-types.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1142,7 +1142,7 @@ tool_use Write
 id: toolu_01RBEjSan7BDtqEWVzauT6cc
 ```json
 {
-  "file_path": "/Users/anton/src/agent-skills-shaper/docs/adr/0006-drop-command-wrapper-surface.md",
+  "file_path": "/home/<USER>/src/agent-skills-shaper/docs/adr/0006-drop-command-wrapper-surface.md",
   "content": "# ADR 0006 — Drop the command-wrapper surface for workflow skills\n\n- **Status:** Accepted\n- **Date:** 2026-06-18\n- **Supersedes (in part):** ADR 0004 (`exec:*` verb namespace) and ADR 0005 (shaping door leaf names) — specifically the part of each that realised the reserved verbs as generated `/shape:*` and `/exec:*` slash-command wrappers. The reserved verb *names* stand; only the wrapper *invocation surface* is withdrawn.\n- **Serves:** Pack ergonomics — one invocation surface per workflow, so the skill picker lists each workflow once instead of three times.\n\n## Context\n\nEvery workflow shipped on two installed surfaces:\n\n1. **Auto-invocable skill** — `skills/<name>/SKILL.md`, installed as `~/.claude/skills/shape-<name>`, model-triggered or invoked by name via the Skill tool.\n2. **Slash-command wrapper** — `.claude/commands/<name>.md`, a thin file that `@`-imports the same `SKILL.md` and invokes it, installed as `/shape:<name>` (and `/exec:<name>`).\n\nBecause the pack is loaded as a Claude Code plugin, each wrapper is also registered twice — once bare (`delivery`) and once plugin-namespaced (`shape:delivery`). The net effect in the skill picker: one workflow (e.g. delivery) appears three times — `shape-delivery` (the skill), `delivery` (bare command), and `shape:delivery` (namespaced command). Across 14 workflows that is ~42 entries for 14 capabilities. Operators read this as duplication or a caching fault.\n\nThe […]
 
 > TOOL
@@ -1150,7 +1150,7 @@ id: toolu_01RBEjSan7BDtqEWVzauT6cc
 tool_result
 id: toolu_01RBEjSan7BDtqEWVzauT6cc
 ```
-File created successfully at: /Users/anton/src/agent-skills-shaper/docs/adr/0006-drop-command-wrapper-surface.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/src/agent-skills-shaper/docs/adr/0006-drop-command-wrapper-surface.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1164,7 +1164,7 @@ id: toolu_012jWBQqVTGdz8KPnaDbMMWv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/agent-skills-shaper/docs/adr/0004-execution-verb-namespace.md",
+  "file_path": "/home/<USER>/src/agent-skills-shaper/docs/adr/0004-execution-verb-namespace.md",
   "old_string": "- **Status:** Accepted\n- **Date:** 2026-06-10",
   "new_string": "- **Status:** Accepted (wrapper surface superseded in part by ADR 0006 — the `exec:*` verb names stand; they are no longer published as typed slash commands)\n- **Date:** 2026-06-10"
 }
@@ -1185,7 +1185,7 @@ id: toolu_01KdfMFSMv55Q5B5tt9nkmhZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/agent-skills-shaper/docs/adr/0005-shaping-door-leaf-names.md",
+  "file_path": "/home/<USER>/src/agent-skills-shaper/docs/adr/0005-shaping-door-leaf-names.md",
   "old_string": "- **Status:** Accepted\n- **Date:** 2026-06-12",
   "new_string": "- **Status:** Accepted (wrapper surface superseded in part by ADR 0006 — the leaf names stand; the `.claude/commands/*.md` wrappers are withdrawn for core skills)\n- **Date:** 2026-06-12"
 }
@@ -1205,7 +1205,7 @@ tool_use Read
 id: toolu_01NgJg1ReyoxSiVQisi8CJ7x
 ```json
 {
-  "file_path": "/Users/anton/src/agent-skills-shaper/docs/adr/0004-execution-verb-namespace.md",
+  "file_path": "/home/<USER>/src/agent-skills-shaper/docs/adr/0004-execution-verb-namespace.md",
   "limit": 4
 }
 ```
@@ -1227,7 +1227,7 @@ tool_use Read
 id: toolu_019sudPNi61zJxU1wgYxKjcn
 ```json
 {
-  "file_path": "/Users/anton/src/agent-skills-shaper/docs/adr/0005-shaping-door-leaf-names.md",
+  "file_path": "/home/<USER>/src/agent-skills-shaper/docs/adr/0005-shaping-door-leaf-names.md",
   "limit": 4
 }
 ```
@@ -1250,7 +1250,7 @@ id: toolu_01SNLysC4wcnwNTwhzWtf1U2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/agent-skills-shaper/docs/adr/0004-execution-verb-namespace.md",
+  "file_path": "/home/<USER>/src/agent-skills-shaper/docs/adr/0004-execution-verb-namespace.md",
   "old_string": "- **Status:** Accepted\n- **Date:** 2026-06-10",
   "new_string": "- **Status:** Accepted (wrapper surface superseded in part by ADR 0006 — the `exec:*` verb names stand; they are no longer published as typed slash commands)\n- **Date:** 2026-06-10"
 }
@@ -1261,7 +1261,7 @@ id: toolu_01SNLysC4wcnwNTwhzWtf1U2
 tool_result
 id: toolu_01SNLysC4wcnwNTwhzWtf1U2
 ```
-The file /Users/anton/src/agent-skills-shaper/docs/adr/0004-execution-verb-namespace.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/agent-skills-shaper/docs/adr/0004-execution-verb-namespace.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1271,7 +1271,7 @@ id: toolu_01NV7xoaLBSTcfJES3hNyDUk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/agent-skills-shaper/docs/adr/0005-shaping-door-leaf-names.md",
+  "file_path": "/home/<USER>/src/agent-skills-shaper/docs/adr/0005-shaping-door-leaf-names.md",
   "old_string": "- **Status:** Accepted\n- **Date:** 2026-06-12",
   "new_string": "- **Status:** Accepted (wrapper surface superseded in part by ADR 0006 — the leaf names stand; the `.claude/commands/*.md` wrappers are withdrawn for core skills)\n- **Date:** 2026-06-12"
 }
@@ -1282,7 +1282,7 @@ id: toolu_01NV7xoaLBSTcfJES3hNyDUk
 tool_result
 id: toolu_01NV7xoaLBSTcfJES3hNyDUk
 ```
-The file /Users/anton/src/agent-skills-shaper/docs/adr/0005-shaping-door-leaf-names.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/agent-skills-shaper/docs/adr/0005-shaping-door-leaf-names.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1295,7 +1295,7 @@ tool_use Bash
 id: toolu_018jYayXBXYpTKG25CtesW9Z
 ```json
 {
-  "command": "cd /Users/anton/src/agent-skills-shaper\necho \"=== remaining /shape: or /exec: refs (excl worktrees & ADRs) ===\"\ngrep -rEn \"/(shape|exec):\" --include=\"*.md\" . | grep -v \"/.worktrees/\" | grep -v \"/docs/adr/\" | grep -vE \"/shape:(stop-the-line|ta[REDACTED_SK])\" || echo \"(none)\"\necho \"\"\necho \"=== bash syntax check install.sh ===\"\nbash -n install.sh && echo \"OK\"\necho \"\"\necho \"=== git status ===\"\ngit status --short",
+  "command": "cd /home/<USER>/src/agent-skills-shaper\necho \"=== remaining /shape: or /exec: refs (excl worktrees & ADRs) ===\"\ngrep -rEn \"/(shape|exec):\" --include=\"*.md\" . | grep -v \"/.worktrees/\" | grep -v \"/docs/adr/\" | grep -vE \"/shape:(stop-the-line|ta[REDACTED_SK])\" || echo \"(none)\"\necho \"\"\necho \"=== bash syntax check install.sh ===\"\nbash -n install.sh && echo \"OK\"\necho \"\"\necho \"=== git status ===\"\ngit status --short",
   "description": "Sweep stale refs, lint install.sh, show status"
 }
 ```
@@ -1322,7 +1322,7 @@ tool_use Read
 id: toolu_01F9NRXJJjPZNxaHmUT3bUoH
 ```json
 {
-  "file_path": "/Users/anton/src/agent-skills-shaper/README.md",
+  "file_path": "/home/<USER>/src/agent-skills-shaper/README.md",
   "offset": 73,
   "limit": 1
 }
@@ -1343,7 +1343,7 @@ id: toolu_01GWBVzhijpTWpFnDW558CeZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/agent-skills-shaper/README.md",
+  "file_path": "/home/<USER>/src/agent-skills-shaper/README.md",
   "old_string": "Not sure which skill applies? Ask, or run `/shape:using-this-pack` — the navigator maps your task to the right step.",
   "new_string": "Not sure which skill applies? Ask, or invoke **shape:using-this-pack** — the navigator maps your task to the right step."
 }
@@ -1354,7 +1354,7 @@ id: toolu_01GWBVzhijpTWpFnDW558CeZ
 tool_result
 id: toolu_01GWBVzhijpTWpFnDW558CeZ
 ```
-The file /Users/anton/src/agent-skills-shaper/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/agent-skills-shaper/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1363,7 +1363,7 @@ tool_use Bash
 id: toolu_01Bsr8qn3NYGLH7J3W9uye4E
 ```json
 {
-  "command": "cd /Users/anton/src/agent-skills-shaper\necho \"=== README 'command'/'slash' mentions ===\" && grep -niE \"slash|command\" README.md || echo \"(none)\"\necho \"\" && echo \"=== .claude/commands tree ===\" && find .claude/commands -type f -o -type d | sort\necho \"\" && echo \"=== exec dir on disk? ===\" && ls .claude/commands/exec 2>&1 || true",
+  "command": "cd /home/<USER>/src/agent-skills-shaper\necho \"=== README 'command'/'slash' mentions ===\" && grep -niE \"slash|command\" README.md || echo \"(none)\"\necho \"\" && echo \"=== .claude/commands tree ===\" && find .claude/commands -type f -o -type d | sort\necho \"\" && echo \"=== exec dir on disk? ===\" && ls .claude/commands/exec 2>&1 || true",
   "description": "Check README mentions and commands dir state"
 }
 ```
@@ -1396,7 +1396,7 @@ tool_use Read
 id: toolu_01T1ozGnwTe7ULHcHMBWYXeP
 ```json
 {
-  "file_path": "/Users/anton/src/agent-skills-shaper/README.md",
+  "file_path": "/home/<USER>/src/agent-skills-shaper/README.md",
   "offset": 145,
   "limit": 4
 }
@@ -1420,7 +1420,7 @@ id: toolu_01XtSbScBvaMQkiMZbxBYK3x
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/agent-skills-shaper/README.md",
+  "file_path": "/home/<USER>/src/agent-skills-shaper/README.md",
   "old_string": "The script writes slash-command wrappers, symlinks each skill into `~/.claude/skills/shape-<name>`, and installs the SessionStart hook. Re-run after a `git pull` — it's idempotent and prunes stale symlinks.",
   "new_string": "The script symlinks each skill into `~/.claude/skills/shape-<name>`, writes the two utility hook wrappers, and installs the SessionStart hook. Re-run after a `git pull` — it's idempotent and prunes stale symlinks."
 }
@@ -1431,7 +1431,7 @@ id: toolu_01XtSbScBvaMQkiMZbxBYK3x
 tool_result
 id: toolu_01XtSbScBvaMQkiMZbxBYK3x
 ```
-The file /Users/anton/src/agent-skills-shaper/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/agent-skills-shaper/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

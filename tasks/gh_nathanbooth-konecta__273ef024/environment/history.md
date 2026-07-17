@@ -20,7 +20,7 @@ id: toolu_018EY6pTwkT3ytxRkj5p79Ef
 ```json
 {
   "pattern": "repository|repo.*url|source.*repo|chart.*repo",
-  "path": "/home/nathan_booth/code/konecta-ix-workloads/kix-workload-konectaiq",
+  "path": "/home/<USER>/code/konecta-ix-workloads/kix-workload-konectaiq",
   "output_mode": "content",
   "glob": "*.{yaml,yml,tf}",
   "-i": true
@@ -70,7 +70,7 @@ tool_use Read
 id: toolu_01KRXPzb13PN6C4Xyrj39Vdb
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-workloads/kix-workload-konectaiq/environments/dev/helm/kix-app-iqportal/values-dev.yaml"
+  "file_path": "/home/<USER>/code/konecta-ix-workloads/kix-workload-konectaiq/environments/dev/helm/kix-app-iqportal/values-dev.yaml"
 }
 ```
 
@@ -228,7 +228,7 @@ tool_use Bash
 id: toolu_01TtxpNRXSdUaRmDgfxzJC5y
 ```json
 {
-  "command": "git add environments/dev/helm/kix-app-iqportal/values-dev.yaml && git commit -m \"$(cat <<'EOF'\nchore: update dev image repository to kix-apps-konectaiq\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add environments/dev/helm/kix-app-iqportal/values-dev.yaml && git commit -m \"$(cat <<'EOF'\nchore: update dev image repository to kix-apps-konectaiq\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Stage and commit the change"
 }
 ```
@@ -301,7 +301,7 @@ id: toolu_01NJNH7oZRajJfuKYQe8nsy6
 ```json
 {
   "pattern": "google_client_id|GOOGLE_CLIENT_ID",
-  "path": "/home/nathan_booth/code/konecta-ix-workloads/kix-workload-konectaiq",
+  "path": "/home/<USER>/code/konecta-ix-workloads/kix-workload-konectaiq",
   "output_mode": "content",
   "-i": true
 }
@@ -314,7 +314,7 @@ id: toolu_01W7veaQoWmYSwvHzxWmyZyi
 ```json
 {
   "pattern": "ExternalSecret|externalsecret|external.secret",
-  "path": "/home/nathan_booth/code/konecta-ix-workloads/kix-workload-konectaiq",
+  "path": "/home/<USER>/code/konecta-ix-workloads/kix-workload-konectaiq",
   "output_mode": "files_with_matches",
   "-i": true
 }
@@ -327,7 +327,7 @@ id: toolu_011EWaBNqMPAToEPERCkB6EJ
 ```json
 {
   "pattern": "kix-app-iqportal-app-secrets",
-  "path": "/home/nathan_booth/code/konecta-ix-workloads/kix-workload-konectaiq",
+  "path": "/home/<USER>/code/konecta-ix-workloads/kix-workload-konectaiq",
   "output_mode": "content"
 }
 ```
@@ -417,7 +417,7 @@ tool_use Read
 id: toolu_01NiXGimV2TqFQtM7ZWQG8qq
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-workloads/kix-workload-konectaiq/environments/dev/terraform/main.tf",
+  "file_path": "/home/<USER>/code/konecta-ix-workloads/kix-workload-konectaiq/environments/dev/terraform/main.tf",
   "offset": 80,
   "limit": 80
 }
@@ -429,7 +429,7 @@ tool_use Read
 id: toolu_01Hxv8fpZ4DzdiLY5d9nZ9NB
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-workloads/kix-workload-konectaiq/environments/dev/terraform/locals.tf"
+  "file_path": "/home/<USER>/code/konecta-ix-workloads/kix-workload-konectaiq/environments/dev/terraform/locals.tf"
 }
 ```
 
@@ -510,7 +510,7 @@ id: toolu_01RwFnLqYBCMDZQTzEb4uWA9
 ```json
 {
   "pattern": "module \\\"workload_base\\\"|source.*workload-base",
-  "path": "/home/nathan_booth/code/konecta-ix-workloads/kix-workload-konectaiq/environments/dev/terraform/main.tf",
+  "path": "/home/<USER>/code/konecta-ix-workloads/kix-workload-konectaiq/environments/dev/terraform/main.tf",
   "output_mode": "content",
   "-C": 5
 }
@@ -522,7 +522,7 @@ tool_use Read
 id: toolu_01JoFVyLTFkae13Qhm1tefRA
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-workloads/kix-workload-konectaiq/environments/dev/terraform/main.tf",
+  "file_path": "/home/<USER>/code/konecta-ix-workloads/kix-workload-konectaiq/environments/dev/terraform/main.tf",
   "offset": 1,
   "limit": 80
 }
@@ -607,7 +607,7 @@ tool_use Read
 id: toolu_01B4Rkk1hLFhxqBtYsgvLbCk
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-workloads/kix-workload-konectaiq/environments/dev/config.json",
+  "file_path": "/home/<USER>/code/konecta-ix-workloads/kix-workload-konectaiq/environments/dev/config.json",
   "offset": 70,
   "limit": 20
 }
@@ -620,7 +620,7 @@ id: toolu_01QmR2Rd8xPFowj59ihpunpS
 ```json
 {
   "pattern": "refreshInterval|refresh_interval",
-  "path": "/home/nathan_booth/code/konecta-ix-workloads/kix-workload-konectaiq",
+  "path": "/home/<USER>/code/konecta-ix-workloads/kix-workload-konectaiq",
   "output_mode": "content"
 }
 ```
@@ -692,7 +692,7 @@ tool_use Bash
 id: toolu_01Dt5c3YzGNwFxrh5J2x4yoK
 ```json
 {
-  "command": "find /home/nathan_booth/.terraform.d/plugin-cache -path \"*/workload-base*\" -name \"*.tf\" 2>/dev/null; find /tmp -path \"*workload-base*\" -name \"*.tf\" 2>/dev/null; ls /home/nathan_booth/code/konecta-ix-platform/kix-platform-modules/terraform/gcp/workload-base/ 2>/dev/null",
+  "command": "find /home/<USER>/.terraform.d/plugin-cache -path \"*/workload-base*\" -name \"*.tf\" 2>/dev/null; find /tmp -path \"*workload-base*\" -name \"*.tf\" 2>/dev/null; ls /home/<USER>/code/konecta-ix-platform/kix-platform-modules/terraform/gcp/workload-base/ 2>/dev/null",
   "description": "Find the workload-base module source"
 }
 ```
@@ -711,7 +711,7 @@ tool_use Bash
 id: toolu_015rEPCpq4WcZbad1ycwhE18
 ```json
 {
-  "command": "ls /home/nathan_booth/code/konecta-ix-workloads/kix-workload-konectaiq/environments/dev/terraform/.terraform/modules/ 2>/dev/null",
+  "command": "ls /home/<USER>/code/konecta-ix-workloads/kix-workload-konectaiq/environments/dev/terraform/.terraform/modules/ 2>/dev/null",
   "description": "Check cached module source"
 }
 ```
@@ -771,7 +771,7 @@ tool_use Read
 id: toolu_01RrQGFXrmsD5g9PzAKkJkVB
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-workloads/kix-workload-konectaiq/environments/dev/terraform/main.tf",
+  "file_path": "/home/<USER>/code/konecta-ix-workloads/kix-workload-konectaiq/environments/dev/terraform/main.tf",
   "offset": 88,
   "limit": 80
 }
@@ -987,7 +987,7 @@ id: toolu_01PkGYzfD8nPtjncuhCN9qUn
 ```json
 {
   "pattern": "gcs.*image|image.*bucket|upload|storage|GCS_IMAGE",
-  "path": "/home/nathan_booth/code/konecta-ix-workloads/kix-workload-konectaiq/environments/dev",
+  "path": "/home/<USER>/code/konecta-ix-workloads/kix-workload-konectaiq/environments/dev",
   "output_mode": "content",
   "-i": true
 }
@@ -999,7 +999,7 @@ tool_use Read
 id: toolu_01MhxBjAEVFnwzFVYr81bkMc
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-workloads/kix-workload-konectaiq/environments/dev/helm/kix-app-iqportal/templates/deployment.yaml"
+  "file_path": "/home/<USER>/code/konecta-ix-workloads/kix-workload-konectaiq/environments/dev/helm/kix-app-iqportal/templates/deployment.yaml"
 }
 ```
 
@@ -1090,7 +1090,7 @@ tool_use Read
 id: toolu_01AHHCQgtNR71LQtE7L4VNiy
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-workloads/kix-workload-konectaiq/environments/dev/terraform/main.tf",
+  "file_path": "/home/<USER>/code/konecta-ix-workloads/kix-workload-konectaiq/environments/dev/terraform/main.tf",
   "offset": 240,
   "limit": 40
 }
@@ -1103,7 +1103,7 @@ id: toolu_0156Va3bRarba4Wj5NoYTycd
 ```json
 {
   "pattern": "network.*polic|egress|allowInternetEgress",
-  "path": "/home/nathan_booth/code/konecta-ix-workloads/kix-workload-konectaiq/environments/dev/helm/kix-app-iqportal",
+  "path": "/home/<USER>/code/konecta-ix-workloads/kix-workload-konectaiq/environments/dev/helm/kix-app-iqportal",
   "output_mode": "files_with_matches"
 }
 ```
@@ -1173,7 +1173,7 @@ tool_use Read
 id: toolu_016VLdYYPJ9PhF1UYyGi3BE2
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-workloads/kix-workload-konectaiq/environments/dev/helm/kix-app-iqportal/templates/networkpolicy.yaml"
+  "file_path": "/home/<USER>/code/konecta-ix-workloads/kix-workload-konectaiq/environments/dev/helm/kix-app-iqportal/templates/networkpolicy.yaml"
 }
 ```
 
@@ -1298,7 +1298,7 @@ id: toolu_01AsVEuPDJYiVsRZt7j64kAW
 ```json
 {
   "pattern": "signBlob|serviceAccountTokenCreator|iam.serviceAccount",
-  "path": "/home/nathan_booth/code/konecta-ix-workloads/kix-workload-konectaiq/environments/dev/terraform",
+  "path": "/home/<USER>/code/konecta-ix-workloads/kix-workload-konectaiq/environments/dev/terraform",
   "output_mode": "content"
 }
 ```
@@ -1309,7 +1309,7 @@ tool_use Read
 id: toolu_01XBLLJeRqJrYaGt8Jodrj4d
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-workloads/kix-workload-konectaiq/environments/dev/terraform/main.tf",
+  "file_path": "/home/<USER>/code/konecta-ix-workloads/kix-workload-konectaiq/environments/dev/terraform/main.tf",
   "offset": 60,
   "limit": 30
 }
@@ -1373,7 +1373,7 @@ id: toolu_01DwSxDF3CemnWNd4GYZPcgz
 ```json
 {
   "pattern": "google_service_account\\.|gcp_sa_name|sa_email|service_account_email",
-  "path": "/home/nathan_booth/code/konecta-ix-workloads/kix-workload-konectaiq/environments/dev/terraform",
+  "path": "/home/<USER>/code/konecta-ix-workloads/kix-workload-konectaiq/environments/dev/terraform",
   "output_mode": "content"
 }
 ```
@@ -1384,7 +1384,7 @@ tool_use Read
 id: toolu_012Pdr5eZj8xiw6wEcKhhfUL
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-workloads/kix-workload-konectaiq/environments/dev/terraform/outputs.tf"
+  "file_path": "/home/<USER>/code/konecta-ix-workloads/kix-workload-konectaiq/environments/dev/terraform/outputs.tf"
 }
 ```
 
@@ -1483,7 +1483,7 @@ tool_use Read
 id: toolu_012cr3x1ZxZuWWB2hqqWPxTq
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-workloads/kix-workload-konectaiq/environments/dev/terraform/main.tf",
+  "file_path": "/home/<USER>/code/konecta-ix-workloads/kix-workload-konectaiq/environments/dev/terraform/main.tf",
   "offset": 130,
   "limit": 30
 }
@@ -1495,7 +1495,7 @@ tool_use Read
 id: toolu_018hFkUZY1gucdq5iCDHPfV7
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-workloads/kix-workload-konectaiq/environments/dev/config.json",
+  "file_path": "/home/<USER>/code/konecta-ix-workloads/kix-workload-konectaiq/environments/dev/config.json",
   "offset": 1,
   "limit": 30
 }

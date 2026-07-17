@@ -12,7 +12,7 @@ tool_use Bash
 id: toolu_0184vVRi54DSkjzwxMmdZ3NS
 ```json
 {
-  "command": "cd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension && find . -type f -not -path '*/node_modules/*' -not -path '*/.git/*' -not -path '*/dist/*' -not -path '*/build/*' | head -100",
+  "command": "cd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension && find . -type f -not -path '*/node_modules/*' -not -path '*/.git/*' -not -path '*/dist/*' -not -path '*/build/*' | head -100",
   "description": "List extension files"
 }
 ```
@@ -130,7 +130,7 @@ tool_use Read
 id: toolu_01WttnHuVmMy35HDKdrf8xV3
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/CLAUDE.md"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/CLAUDE.md"
 }
 ```
 
@@ -163,7 +163,7 @@ tool_use Read
 id: toolu_01SYFAZnDGckPWBfEyFk1xk2
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts"
 }
 ```
 
@@ -206,7 +206,7 @@ tool_use Read
 id: toolu_01JRCn1gS6tKZymdmXrwrR7h
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "offset": 1154,
   "limit": 700
 }
@@ -218,7 +218,7 @@ tool_use Read
 id: toolu_01SK5RYjqDxbwqjPSrh2612i
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/background.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/background.ts"
 }
 ```
 
@@ -316,7 +316,7 @@ tool_use Read
 id: toolu_011Vdch1vcdk1nJGaFaiAzST
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts"
 }
 ```
 
@@ -326,7 +326,7 @@ tool_use Read
 id: toolu_01VFDFdkfAEyqJbgYBQswvvE
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts"
 }
 ```
 
@@ -393,7 +393,7 @@ tool_use Read
 id: toolu_01F94xY4zEfU5eYfMxWwA12w
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/sidepanel/App.tsx"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/sidepanel/App.tsx"
 }
 ```
 
@@ -416,7 +416,7 @@ tool_use Read
 id: toolu_01XJ2naLMTqYm9z2MPBvatz2
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/hooks.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/hooks.ts"
 }
 ```
 
@@ -476,7 +476,7 @@ tool_use Read
 id: toolu_01FtLLWVNwDHWbCECGLZb2yr
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/auth.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/auth.ts"
 }
 ```
 
@@ -526,7 +526,7 @@ tool_use Read
 id: toolu_01T8TUJ37rqB3GkZzioojoWt
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx"
 }
 ```
 
@@ -599,7 +599,7 @@ tool_use Read
 id: toolu_01MGKgxxyZxdzJN55GgS57iK
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/people.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/people.ts"
 }
 ```
 
@@ -637,7 +637,7 @@ tool_use Read
 id: toolu_01FNfUZJtB71k1Ycq5RGY1Zd
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/messaging.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/messaging.ts"
 }
 ```
 
@@ -721,7 +721,7 @@ tool_use Read
 id: toolu_012VhGBKCSFEQimtwCDtRwNA
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/sidepanel/main.tsx"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/sidepanel/main.tsx"
 }
 ```
 
@@ -731,7 +731,7 @@ tool_use Read
 id: toolu_01NMPnETyLf7mpFJFhTduptp
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/wxt.config.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/wxt.config.ts"
 }
 ```
 
@@ -809,7 +809,7 @@ tool_use Bash
 id: toolu_01GYiEKidaV56j2H6NLnAPYd
 ```json
 {
-  "command": "cd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension\necho \"=== callers of possibly-dead helpers (excluding their own definitions/comments) ===\"\nfor fn in scrollContainer mainVerticalList shieldPadding stacksVertically; do\n  n=$(grep -rn \"\\b$fn\\b\" entrypoints/ lib/ | grep -v \"function $fn\" | grep -v \"^\\s*\\*\" | wc -l | tr -d ' ')\n  echo \"$fn: $n reference(s) outside its definition\"\ndone\necho \"=== getComputedStyle / getBoundingClientRect / getClientRects counts (content script) ===\"\ngrep -c \"getComputedStyle\" entrypoints/calendar.content.ts\ngrep -c \"getBoundingClientRect\\|getClientRects\" entrypoints/calendar.content.ts\necho \"=== version ===\"\ngrep '\"version\"' package.json"
+  "command": "cd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension\necho \"=== callers of possibly-dead helpers (excluding their own definitions/comments) ===\"\nfor fn in scrollContainer mainVerticalList shieldPadding stacksVertically; do\n  n=$(grep -rn \"\\b$fn\\b\" entrypoints/ lib/ | grep -v \"function $fn\" | grep -v \"^\\s*\\*\" | wc -l | tr -d ' ')\n  echo \"$fn: $n reference(s) outside its definition\"\ndone\necho \"=== getComputedStyle / getBoundingClientRect / getClientRects counts (content script) ===\"\ngrep -c \"getComputedStyle\" entrypoints/calendar.content.ts\ngrep -c \"getBoundingClientRect\\|getClientRects\" entrypoints/calendar.content.ts\necho \"=== version ===\"\ngrep '\"version\"' package.json"
 }
 ```
 
@@ -866,7 +866,7 @@ tool_use Write
 id: toolu_01W8kwqep8QfzHCCwMiBicPp
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/PERFORMANCE_AUDIT.md",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/PERFORMANCE_AUDIT.md",
   "content": "# Performance & Resource Audit — `auxilio-extension`\n\n- **Version audited:** 0.14.1\n- **Date:** 2026-06-30\n- **Scope:** content script (`entrypoints/calendar.content.ts`), MV3 service worker\n  (`entrypoints/background.ts`), sync engine (`lib/calendar-sync.ts`, `lib/calendar.ts`),\n  auth/people libs, side-panel React app (`features/visit/*`, `lib/*`).\n\nGoal: find performance issues, memory leaks, and anything that can cause excess\nsystem-resource consumption, slowdown, or a crash of the browser / webpage / extension.\n\n---\n\n## Summary\n\nThe code is defensively written: sync coalescing, burst caps, throttles, a bounded\n90-day window, TTL'd caches, and orphaned-context guards. There is **no catastrophic\nleak or runaway loop**.\n\nThere are, however, a handful of real, fixable hot paths. The most important (full-page\n`innerText` on a recurring timer) will cause noticeable jank on the low-end Android-class\nhardware the project constraints target. Most findings are in the content script, because\nit runs inside Google Calendar — a heavy, constantly-mutating SPA.\n\nNone of these are correctness bugs, so they can ship as a single \"performance pass\" patch.\n\n---\n\n## HIGH severity\n\n### H1 — Full-page `document.body.innerText` on a recurring timer while editing an event\n**File:** `entrypoints/calendar.content.ts`\n\n- `readSurface()` returns `{ el: document.body, eid }` for the URL-eid case and the\n  full-screen editor case (`calendar.content.ts:282`, `:287`).\n- `render()` then calls `snapshotOf(surface.el, …)` (`:322`), which runs\n  `const text = el.innerText || '';` (`:292`), then `extractEmails(text)` and\n […]
 
 > TOOL
@@ -874,7 +874,7 @@ id: toolu_01W8kwqep8QfzHCCwMiBicPp
 tool_result
 id: toolu_01W8kwqep8QfzHCCwMiBicPp
 ```
-File created successfully at: /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/PERFORMANCE_AUDIT.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/PERFORMANCE_AUDIT.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -901,7 +901,7 @@ tool_use Read
 id: toolu_018LNDBYqYoR5N4ArRxUiHYR
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/config.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/config.ts"
 }
 ```
 
@@ -927,7 +927,7 @@ id: toolu_018LNDBYqYoR5N4ArRxUiHYR
 15	/** Marker that makes an event a "visitor event" (Phase 2). Lower-cased for
 16	 *  case-insensitive matching against attendee emails / location text. */
 17	export const MAGIC_ADDRESS = (
-18	  import.meta.env.WXT_MAGIC_ADDRESS ?? 'visitors@auxilio.app'
+18	  import.meta.env.WXT_MAGIC_ADDRESS ?? '<REDACTED_EMAIL>'
 19	).toLowerCase();
 20	
 21	/** All engine addon endpoints live under this prefix. */
@@ -941,7 +941,7 @@ tool_use Read
 id: toolu_019eGrgMWKU11GKqNoA7oFog
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/.env.example"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/.env.example"
 }
 ```
 
@@ -965,7 +965,7 @@ id: toolu_019eGrgMWKU11GKqNoA7oFog
 13	
 14	# The magic address that marks an event as a "visitor event" (Phase 2 auto-nudge).
 15	# Must match what the engine ingest pipeline keys on. Placeholder until confirmed.
-16	WXT_MAGIC_ADDRESS=visitors@auxilio.app
+16	WXT_MAGIC_ADDRESS=<REDACTED_EMAIL>
 17	
 ```
 
@@ -979,7 +979,7 @@ tool_use Read
 id: toolu_012avhjeXCtq4sCi7Du2gJoK
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/env.d.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/env.d.ts"
 }
 ```
 
@@ -1011,7 +1011,7 @@ id: toolu_01KGFcm8dVRqCBCtTfc6KBg8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/env.d.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/env.d.ts",
   "old_string": "  readonly WXT_ENGINE_URL?: string;\n  readonly WXT_OAUTH_CLIENT_ID?: string;\n  readonly WXT_MAGIC_ADDRESS?: string;\n}",
   "new_string": "  readonly WXT_ENGINE_URL?: string;\n  readonly WXT_OAUTH_CLIENT_ID?: string;\n  readonly WXT_MAGIC_ADDRESS?: string;\n  /** Force verbose diagnostic logging in a production build (\"1\"/\"true\"). Off by\n   *  default in prod; always on in dev. See lib/config.ts DEBUG. */\n  readonly WXT_DEBUG?: string;\n}"
 }
@@ -1022,7 +1022,7 @@ id: toolu_01KGFcm8dVRqCBCtTfc6KBg8
 tool_result
 id: toolu_01KGFcm8dVRqCBCtTfc6KBg8
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/env.d.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/env.d.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1032,7 +1032,7 @@ id: toolu_01Sv4oPvMVdNWmPTK1uXuq14
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/config.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/config.ts",
   "old_string": "/** All engine addon endpoints live under this prefix. */\nexport const ADDON_API = `${ENGINE_BASE_URL}/api/visitor/calendar/addon`;",
   "new_string": "/** All engine addon endpoints live under this prefix. */\nexport const ADDON_API = `${ENGINE_BASE_URL}/api/visitor/calendar/addon`;\n\n/** Verbose diagnostic logging gate. On in dev; off in production unless forced with\n *  WXT_DEBUG=1. The steady-state diagnostics (per-minute sync log, per-render roster\n *  log, the per-event payload stringify) cost CPU and can pin objects (defeating GC)\n *  in a long-lived Calendar tab, so production ships quiet. Errors/warnings are NOT\n *  gated by this — only the chatty informational logs. */\nexport const DEBUG =\n  import.meta.env.WXT_DEBUG === '1' ||\n  import.meta.env.WXT_DEBUG === 'true' ||\n  !!import.meta.env.DEV;"
 }
@@ -1043,7 +1043,7 @@ id: toolu_01Sv4oPvMVdNWmPTK1uXuq14
 tool_result
 id: toolu_01Sv4oPvMVdNWmPTK1uXuq14
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1057,7 +1057,7 @@ id: toolu_01ToDw4fVzTNef4pCgJZQfLf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "old_string": "    function snapshotOf(el: HTMLElement, eid: string): DomEventSnapshot {\n      const text = el.innerText || '';\n      const lower = text.toLowerCase();",
   "new_string": "    function snapshotOf(el: HTMLElement, eid: string): DomEventSnapshot {\n      // Read with textContent (NOT innerText) so taking a snapshot never forces a\n      // synchronous reflow. render() runs on the 1s poll plus every mutation debounce,\n      // and `document.body.innerText` (the editor / url-eid surface) was the single most\n      // expensive repeated op — innerText computes layout to decide what's \"rendered\".\n      // For the body surface, scope to the [role=\"main\"] region so we read the event\n      // form, not the whole app shell (and skip head/inline scripts that textContent\n      // would otherwise pull in). ARIA-only, no class coupling; falls back to the body.\n      const scope =\n        el === document.body\n          ? document.querySelector<HTMLElement>('[role=\"main\"]') ?? el\n          : el;\n      const text = scope.textContent || '';\n      const lower = text.toLowerCase();"
 }
@@ -1068,7 +1068,7 @@ id: toolu_01ToDw4fVzTNef4pCgJZQfLf
 tool_result
 id: toolu_01ToDw4fVzTNef4pCgJZQfLf
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1082,7 +1082,7 @@ id: toolu_01AYZsjCYtfAsBYyp8kaoW9A
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "old_string": "    const editorPoll = setInterval(() => {\n      if (!extAlive()) return teardown(); // orphaned by an extension reload → stop\n      if (!isCurrent()) return teardown(); // a newer injected instance took over → stop\n      const isEditor = /\\/eventedit/.test(location.pathname);",
   "new_string": "    const editorPoll = setInterval(() => {\n      if (!extAlive()) return teardown(); // orphaned by an extension reload → stop\n      if (!isCurrent()) return teardown(); // a newer injected instance took over → stop\n      // Backgrounded tab → do no DOM work: the user can't be editing, and the\n      // visibilitychange listener fires syncNow() + render() the moment it's visible\n      // again. This stops every open-but-hidden Calendar tab from running readSurface\n      // (and its layout reads) once a second forever.\n      if (document.hidden) return;\n      const isEditor = /\\/eventedit/.test(location.pathname);"
 }
@@ -1093,7 +1093,7 @@ id: toolu_01AYZsjCYtfAsBYyp8kaoW9A
 tool_result
 id: toolu_01AYZsjCYtfAsBYyp8kaoW9A
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1107,7 +1107,7 @@ id: toolu_01KbTBhNHgTNtV6k9Nre4mUX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "old_string": "    document.addEventListener('visibilitychange', () => {\n      if (document.visibilityState === 'visible') syncNow();\n    });",
   "new_string": "    document.addEventListener('visibilitychange', () => {\n      if (document.visibilityState === 'visible') {\n        syncNow();\n        render(); // editorPoll skips while hidden — repaint at once on return\n      }\n    });"
 }
@@ -1118,7 +1118,7 @@ id: toolu_01KbTBhNHgTNtV6k9Nre4mUX
 tool_result
 id: toolu_01KbTBhNHgTNtV6k9Nre4mUX
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1132,7 +1132,7 @@ id: toolu_01HJcsWu2AbUuJgkRyjn77e6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "old_string": "/** Does this element stack its visible children vertically (a column of rows),\n *  rather than laying them out side by side? Geometry, not CSS classes. */\nfunction stacksVertically(el: HTMLElement): boolean {\n  const kids = [...el.children].filter((c): c is HTMLElement => c instanceof HTMLElement && isVisible(c));\n  if (kids.length < 2) return false;\n  for (let i = 1; i < kids.length; i++) {\n    const a = kids[i - 1].getBoundingClientRect();\n    const b = kids[i].getBoundingClientRect();\n    if (b.top >= a.bottom - 2) return true; // the next child starts below the previous\n  }\n  return false;\n}\n\n/** A native Calendar content row",
   "new_string": "/** A native Calendar content row"
 }
@@ -1143,7 +1143,7 @@ id: toolu_01HJcsWu2AbUuJgkRyjn77e6
 tool_result
 id: toolu_01HJcsWu2AbUuJgkRyjn77e6
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1153,7 +1153,7 @@ id: toolu_01WooSDLkpA7vkKqyFpbu5Zu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "old_string": "/** The biggest vertically-stacking container inside `root` — the content column\n *  whose last child is the visual bottom of the surface. */\nfunction mainVerticalList(root: HTMLElement): HTMLElement | null {\n  let best: HTMLElement | null = null;\n  let bestArea = 0;\n  for (const el of root.querySelectorAll<HTMLElement>('*')) {\n    if (!isVisible(el) || !stacksVertically(el)) continue;\n    const r = el.getBoundingClientRect();\n    const area = r.width * r.height;\n    if (area > bestArea) {\n      bestArea = area;\n      best = el;\n    }\n  }\n  return best;\n}\n\n/** Left indent (px)",
   "new_string": "/** Left indent (px)"
 }
@@ -1164,7 +1164,7 @@ id: toolu_01WooSDLkpA7vkKqyFpbu5Zu
 tool_result
 id: toolu_01WooSDLkpA7vkKqyFpbu5Zu
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1174,7 +1174,7 @@ id: toolu_01REdRn3ebgZyvN6xSufJ2An
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "old_string": "/** The scrolling content region inside a surface (overflow-y auto/scroll),\n *  largest first — so our row lives with the content and scrolls, not in a\n *  pinned header/footer. Null when nothing scrolls. */\nfunction scrollContainer(root: HTMLElement): HTMLElement | null {\n  let best: HTMLElement | null = null;\n  let bestArea = 0;\n  for (const el of root.querySelectorAll<HTMLElement>('*')) {\n    if (!isVisible(el)) continue;\n    const oy = getComputedStyle(el).overflowY;\n    if (oy !== 'auto' && oy !== 'scroll') continue;\n    const r = el.getBoundingClientRect();\n    const area = r.width * r.height;\n    if (area > bestArea) {\n      bestArea = area;\n      best = el;\n    }\n  }\n  return best;\n}\n\n/** Stop our interactions dismissing",
   "new_string": "/** Stop our interactions dismissing"
 }
@@ -1185,7 +1185,7 @@ id: toolu_01REdRn3ebgZyvN6xSufJ2An
 tool_result
 id: toolu_01REdRn3ebgZyvN6xSufJ2An
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1195,7 +1195,7 @@ id: toolu_01N6RQ3Yr4tTn1WwuBPPMhrA
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "old_string": "/** Stop interactions on the row's own padding (but not the button) from reaching\n *  Google — so an accidental tap beside the button can't close the dialog. */\nfunction shieldPadding(row: HTMLElement) {\n  const guard = (e: Event) => {\n    if (e.target === row) {\n      e.preventDefault();\n      e.stopPropagation();\n    }\n  };\n  for (const type of ['pointerdown', 'mousedown', 'touchstart', 'click'] as const) {\n    row.addEventListener(type, guard, true);\n  }\n}\n\n/** Floating fallback button",
   "new_string": "/** Floating fallback button"
 }
@@ -1206,7 +1206,7 @@ id: toolu_01N6RQ3Yr4tTn1WwuBPPMhrA
 tool_result
 id: toolu_01N6RQ3Yr4tTn1WwuBPPMhrA
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1220,7 +1220,7 @@ id: toolu_01XDM6hgmFz4wxMDBkz5ydkp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts",
   "old_string": "import { MAGIC_ADDRESS } from './config';",
   "new_string": "import { DEBUG, MAGIC_ADDRESS } from './config';"
 }
@@ -1231,7 +1231,7 @@ id: toolu_01XDM6hgmFz4wxMDBkz5ydkp
 tool_result
 id: toolu_01XDM6hgmFz4wxMDBkz5ydkp
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1241,7 +1241,7 @@ id: toolu_01RDWyYi9xJ1Kh33KsmJK35W
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts",
   "old_string": "    // DIAGNOSTIC: the magic address is somewhere in this event's payload, yet\n    // isMarked() didn't flag it — i.e. it's not a structured attendee email and\n    // not in `location` (e.g. it's only in the description, or events.list\n    // returned a trimmed attendee list). This is the signature of a primary-\n    // calendar miss; the warning shows exactly what we got back.\n    if (!hasMagic && MAGIC_ADDRESS && JSON.stringify(ev).toLowerCase().includes(MAGIC_ADDRESS)) {",
   "new_string": "    // DIAGNOSTIC (debug-only): the magic address is somewhere in this event's\n    // payload, yet isMarked() didn't flag it — i.e. it's not a structured attendee\n    // email and not in `location` (e.g. only in the description, or events.list\n    // returned a trimmed attendee list). The signature of a primary-calendar miss.\n    // Gated behind DEBUG so we don't JSON.stringify EVERY non-marked event on every\n    // sync (the 12h full re-scan walks the whole 90-day window) in production.\n    if (DEBUG && !hasMagic && MAGIC_ADDRESS && JSON.stringify(ev).toLowerCase().includes(MAGIC_ADDRESS)) {"
 }
@@ -1252,7 +1252,7 @@ id: toolu_01RDWyYi9xJ1Kh33KsmJK35W
 tool_result
 id: toolu_01RDWyYi9xJ1Kh33KsmJK35W
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1262,7 +1262,7 @@ id: toolu_017PZEkK3NhanfQspA88VqJo
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts",
   "old_string": "  // DIAGNOSTIC: one line per sync so a primary-calendar miss is obvious — did the\n  // list even return the event (itemsReturned), and did anything end up marked?\n  console.log('[auxilio] sync done', {\n    mode: fullSync ? 'full' : 'incremental',\n    magicAddress: MAGIC_ADDRESS,\n    itemsReturned: resp.items.length,\n    markedTotal: Object.keys(marked).length,\n    newMarked: newMarked.length,\n  });",
   "new_string": "  // DIAGNOSTIC (debug-only): one line per sync so a primary-calendar miss is obvious —\n  // did the list even return the event (itemsReturned), and did anything end up marked?\n  // Gated behind DEBUG: this fires every minute (the alarm cadence) for the life of the\n  // browser, so in production it's pure log churn that can pin objects.\n  if (DEBUG) {\n    console.log('[auxilio] sync done', {\n      mode: fullSync ? 'full' : 'incremental',\n      magicAddress: MAGIC_ADDRESS,\n      itemsReturned: resp.items.length,\n      markedTotal: Object.keys(marked).length,\n      newMarked: newMarked.length,\n    });\n  }"
 }
@@ -1273,7 +1273,7 @@ id: toolu_017PZEkK3NhanfQspA88VqJo
 tool_result
 id: toolu_017PZEkK3NhanfQspA88VqJo
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1287,7 +1287,7 @@ id: toolu_015dU2uq7wn4Qu7z4AaA9FZF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/hooks.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/hooks.ts",
   "old_string": "  // Stable key so the effect fires only when the pending set actually changes.\n  const key = pending.join('|');\n\n  // DIAGNOSTIC: what the panel loaded + who needs resolving. Reveals whether the\n  // resolver even runs (pending non-empty) and whether nameIsFallback is set.\n  console.log(\n    '[auxilio] resolve-names: roster',\n    (draft?.roster ?? []).map((g) => ({ email: g.email, name: g.name, fb: g.nameIsFallback })),\n    '| pending', pending,\n  );\n\n  useEffect(() => {\n    if (!iCalUid || pending.length === 0) return;\n    let cancelled = false;\n    rpc({ type: 'RESOLVE_GUESTS', emails: pending })\n      .then((resolved) => {\n        console.log('[auxilio] resolve-names: RESOLVE_GUESTS returned', resolved);\n        if (cancelled || !resolved || Object.keys(resolved).length === 0) return;",
   "new_string": "  // Stable key so the effect fires only when the pending set actually changes.\n  const key = pending.join('|');\n\n  useEffect(() => {\n    if (!iCalUid || pending.length === 0) return;\n    let cancelled = false;\n    rpc({ type: 'RESOLVE_GUESTS', emails: pending })\n      .then((resolved) => {\n        if (cancelled || !resolved || Object.keys(resolved).length === 0) return;"
 }
@@ -1298,7 +1298,7 @@ id: toolu_015dU2uq7wn4Qu7z4AaA9FZF
 tool_result
 id: toolu_015dU2uq7wn4Qu7z4AaA9FZF
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/hooks.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/hooks.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1312,7 +1312,7 @@ id: toolu_01Cn9F2FiryiFmoy5BNXPRCg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts",
   "old_string": "import { MAGIC_ADDRESS } from './config';",
   "new_string": "import { DEBUG, MAGIC_ADDRESS } from './config';"
 }
@@ -1323,7 +1323,7 @@ id: toolu_01Cn9F2FiryiFmoy5BNXPRCg
 tool_result
 id: toolu_01Cn9F2FiryiFmoy5BNXPRCg
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1333,7 +1333,7 @@ id: toolu_01DXaV35MSGm1d3KmHJtC7UC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts",
   "old_string": "  console.log('[auxilio] resolve event', { eid, ...dec, candidates });",
   "new_string": "  if (DEBUG) console.log('[auxilio] resolve event', { eid, ...dec, candidates });"
 }
@@ -1344,7 +1344,7 @@ id: toolu_01DXaV35MSGm1d3KmHJtC7UC
 tool_result
 id: toolu_01DXaV35MSGm1d3KmHJtC7UC
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1354,7 +1354,7 @@ id: toolu_01SQHSAR7ZEZfEYyk11cBG5S
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts",
   "old_string": "  const ev = (await res.json()) as GCalEvent;\n  console.log('[auxilio] resolved event', {\n    iCalUID: ev.iCalUID,\n    summary: ev.summary,\n    attendees: ev.attendees?.length ?? 0,\n  });",
   "new_string": "  const ev = (await res.json()) as GCalEvent;\n  if (DEBUG) {\n    console.log('[auxilio] resolved event', {\n      iCalUID: ev.iCalUID,\n      summary: ev.summary,\n      attendees: ev.attendees?.length ?? 0,\n    });\n  }"
 }
@@ -1365,7 +1365,7 @@ id: toolu_01SQHSAR7ZEZfEYyk11cBG5S
 tool_result
 id: toolu_01SQHSAR7ZEZfEYyk11cBG5S
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1379,7 +1379,7 @@ id: toolu_01HrA7MSR8PRyrSLRe4BiV3V
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
   "old_string": "  \"version\": \"0.14.1\",",
   "new_string": "  \"version\": \"0.14.2\","
 }
@@ -1399,7 +1399,7 @@ tool_use Read
 id: toolu_01TkUDHqGTXn9ts4136gwpFm
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
   "limit": 15
 }
 ```
@@ -1433,7 +1433,7 @@ id: toolu_011hDbcMuYGvFwUaBBVWNz69
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
   "old_string": "  \"version\": \"0.14.1\",",
   "new_string": "  \"version\": \"0.14.2\","
 }
@@ -1444,7 +1444,7 @@ id: toolu_011hDbcMuYGvFwUaBBVWNz69
 tool_result
 id: toolu_011hDbcMuYGvFwUaBBVWNz69
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1528,7 +1528,7 @@ tool_use Bash
 id: toolu_01SsQzWq8acZd6ifaumwZH9M
 ```json
 {
-  "command": "cd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension\necho \"=== gated logs that should be ABSENT in prod build ===\"\nfor s in \"sync done\" \"resolve-names\" \"resolved event\" \"mainVerticalList\" \"scrollContainer\"; do\n  hits=$(grep -rl \"$s\" output/chrome-mv3/ 2>/dev/null | wc -l | tr -d ' ')\n  echo \"\\\"$s\\\": $hits file(s)\"\ndone\necho \"=== warnings that should still be PRESENT (not gated) ===\"\nfor s in \"sync failed\" \"events.get miss\"; do\n  hits=$(grep -rl \"$s\" output/chrome-mv3/ 2>/dev/null | wc -l | tr -d ' ')\n  echo \"\\\"$s\\\": $hits file(s)\"\ndone\necho \"=== textContent now used in content script, innerText reduced ===\"\ngrep -o \"innerText\" output/chrome-mv3/content-scripts/calendar.js | wc -l | tr -d ' ' | xargs echo \"innerText occurrences:\"\ngrep -o \"document.hidden\" output/chrome-mv3/content-scripts/calendar.js | wc -l | tr -d ' ' | xargs echo \"document.hidden guard present:\"",
+  "command": "cd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension\necho \"=== gated logs that should be ABSENT in prod build ===\"\nfor s in \"sync done\" \"resolve-names\" \"resolved event\" \"mainVerticalList\" \"scrollContainer\"; do\n  hits=$(grep -rl \"$s\" output/chrome-mv3/ 2>/dev/null | wc -l | tr -d ' ')\n  echo \"\\\"$s\\\": $hits file(s)\"\ndone\necho \"=== warnings that should still be PRESENT (not gated) ===\"\nfor s in \"sync failed\" \"events.get miss\"; do\n  hits=$(grep -rl \"$s\" output/chrome-mv3/ 2>/dev/null | wc -l | tr -d ' ')\n  echo \"\\\"$s\\\": $hits file(s)\"\ndone\necho \"=== textContent now used in content script, innerText reduced ===\"\ngrep -o \"innerText\" output/chrome-mv3/content-scripts/calendar.js | wc -l | tr -d ' ' | xargs echo \"innerText occurrences:\"\ngrep -o \"document.hidden\" output/chrome-mv3/content-scripts/calendar.js | wc -l | tr -d ' ' | xargs echo \"document.hidden guard present:\"",
   "description": "Verify prod build stripped debug logs and dead code"
 }
 ```
@@ -1565,7 +1565,7 @@ id: toolu_01YJrTFDh8C6Q2rR1gtABynZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/PERFORMANCE_AUDIT.md",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/PERFORMANCE_AUDIT.md",
   "old_string": "None of these are correctness bugs, so they can ship as a single \"performance pass\" patch.\n\n---",
   "new_string": "None of these are correctness bugs, so they can ship as a single \"performance pass\" patch.\n\n---\n\n## Status — resolved in 0.14.2\n\nThe high-value set has been implemented (type-check + prod build clean; the prod build\nconstant-folds the new `DEBUG` flag to `false` and tree-shakes every gated log):\n\n- **H1 — fixed.** `snapshotOf` now reads `textContent` (no forced reflow), and the\n  `document.body` surface is scoped to `[role=\"main\"]` so it reads the event form, not the\n  whole app shell.\n- **M2 — fixed.** The 1 Hz `editorPoll` early-returns on `document.hidden`; the\n  `visibilitychange` listener repaints immediately on return.\n- **M3 — fixed.** The per-event `JSON.stringify` payload diagnostic is gated behind `DEBUG`.\n- **M4 — fixed.** Per-minute \"sync done\" log, the per-render roster log in\n  `useResolveGuestNames`, and the two `events.get` object-logs are gated/removed. Errors\n  and warnings are left intact.\n- **L9 — fixed.** Deleted `scrollContainer`, `mainVerticalList`, `stacksVertically`,\n  `shieldPadding`.\n\nNew build flag: `WXT_DEBUG=1` forces the verbose diagnostics back on in a production build\n(they're always on in `npm run dev`). See `lib/config.ts` `DEBUG`.\n\nStill open (opportunistic): **M5, L6, L7, L8, L10**.\n\n---"
 }
@@ -1576,7 +1576,7 @@ id: toolu_01YJrTFDh8C6Q2rR1gtABynZ
 tool_result
 id: toolu_01YJrTFDh8C6Q2rR1gtABynZ
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/PERFORMANCE_AUDIT.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/PERFORMANCE_AUDIT.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1603,7 +1603,7 @@ Done. Here's what I shipped (v0.14.1 → **0.14.2**):
 now lets first plan on these and then we will implement one by one. The flow after cancellation from the extension. can we invite again, if yes, why are button disabled. 
 how can we make the nudge after the room, location addition faster and accurate?
 Need to improve notification section - like the one that pops up : up to date no changes - that need to be graceful and that should only pop when I open an event which is already linked to a invite, not after sending an invite. the other notification that shows n passes sent, that also needs to be temporary. all these will pop up and leave gracefully.
-I opened an old event there was no guests in it, but still the extension showed me one guest : j765894110@gmail.com
+I opened an old event there was no guests in it, but still the extension showed me one guest : <REDACTED_EMAIL>
 first give me answer of all, then I will tell you which one to implement.
 
 > AGENT
@@ -1616,7 +1616,7 @@ tool_use Read
 id: toolu_01DaUmyrMT2yQVcg7YosuHzd
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx"
 }
 ```
 
@@ -1665,7 +1665,7 @@ tool_use Read
 id: toolu_019vmS5BnXyXzukM5Ee61Dsq
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/types.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/types.ts"
 }
 ```
 
@@ -1706,7 +1706,7 @@ tool_use Read
 id: toolu_01Bb3zrEcUWVt8intmZNXCqn
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/engine.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/engine.ts"
 }
 ```
 
@@ -1792,7 +1792,7 @@ tool_use Read
 id: toolu_018PnQwu8gKQynssgA6LNj32
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/design/global.css"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/design/global.css"
 }
 ```
 
@@ -1983,7 +1983,7 @@ id: toolu_0198YxikJrhY7skk5CT3cnWv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx",
   "old_string": "  // What's actually pending. A new/uninvited guest still to get a pass, or a sent\n  // guest toggled off (a pending revoke), is a STRUCTURAL change visible in the\n  // roster (and reverts cleanly because it's recomputed here every render).\n  const pendingNew = data.roster.filter(\n    (g) => g.include && g.status !== 'sent' && g.status !== 'cancelled',\n  );",
   "new_string": "  // What's actually pending. A new/uninvited guest still to get a pass, or a sent\n  // guest toggled off (a pending revoke), is a STRUCTURAL change visible in the\n  // roster (and reverts cleanly because it's recomputed here every render).\n  // A previously-CANCELLED guest the host toggles back on counts here too — it's a\n  // re-invite, and the engine issues a fresh pass for them on the next send. (Right\n  // after a cancel they come back toggled off, so this is empty until the host opts\n  // them back in — the button stays quiet until there's a real change.)\n  const pendingNew = data.roster.filter(\n    (g) => g.include && g.status !== 'sent',\n  );"
 }
@@ -1994,7 +1994,7 @@ id: toolu_0198YxikJrhY7skk5CT3cnWv
 tool_result
 id: toolu_0198YxikJrhY7skk5CT3cnWv
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2008,7 +2008,7 @@ id: toolu_01TGT7nBoHtadxPGfVEvvCEL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx",
   "old_string": "  const sent = guest.status === 'sent';\n  const cancelled = guest.status === 'cancelled';\n  const display = guest.name || guest.email;\n  // A sent guest toggled OFF is a pending cancel — re-sending will revoke their\n  // pass (engine applyDraft cancels !include guests with an active pass), so we\n  // dim the row and don't offer edits. Everyone we'd still issue/update a pass\n  // for can be corrected, whether or not their pass already went out.\n  const pendingCancel = sent && !guest.include;\n  const editable = guest.include && !cancelled;",
   "new_string": "  const sent = guest.status === 'sent';\n  const cancelled = guest.status === 'cancelled';\n  const display = guest.name || guest.email;\n  // A sent guest toggled OFF is a pending cancel — re-sending will revoke their\n  // pass (engine applyDraft cancels !include guests with an active pass), so we\n  // dim the row and don't offer edits.\n  const pendingCancel = sent && !guest.include;\n  // A previously-cancelled guest toggled back ON is a re-invite: it reads as a fresh\n  // pending invite (no \"Cancelled\" chip, editable details) rather than a dead row.\n  const reinviting = cancelled && guest.include;\n  // Everyone we'd still issue/update a pass […]
 
@@ -2017,7 +2017,7 @@ id: toolu_01TGT7nBoHtadxPGfVEvvCEL
 tool_result
 id: toolu_01TGT7nBoHtadxPGfVEvvCEL
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2027,7 +2027,7 @@ id: toolu_01C1FHLMj9xtuj9LAFRFb7dz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx",
   "old_string": "  // Switch is no longer locked once a pass is sent: toggling off cancels on the\n  // next update (mirrors the add-on), toggling back on re-issues.\n  const switchLabel = sent\n    ? guest.include\n      ? `Cancel the pass for ${guest.email}`\n      : `Re-issue a pass for ${guest.email}`\n    : guest.include\n      ? `Don’t invite ${guest.email}`\n      : `Invite ${guest.email}`;",
   "new_string": "  // Switch is no longer locked once a pass is sent: toggling off cancels on the\n  // next update (mirrors the add-on), toggling back on re-issues. A cancelled guest\n  // can be re-invited (a fresh pass is issued on the next send).\n  const switchLabel = cancelled\n    ? guest.include\n      ? `Don’t re-invite ${guest.email}`\n      : `Re-invite ${guest.email}`\n    : sent\n      ? guest.include\n        ? `Cancel the pass for ${guest.email}`\n        : `Re-issue a pass for ${guest.email}`\n      : guest.include\n        ? `Don’t invite ${guest.email}`\n        : `Invite ${guest.email}`;"
 }
@@ -2038,7 +2038,7 @@ id: toolu_01C1FHLMj9xtuj9LAFRFb7dz
 tool_result
 id: toolu_01C1FHLMj9xtuj9LAFRFb7dz
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2048,7 +2048,7 @@ id: toolu_01QWZ7TKGUf3phFnFzJm8f2Y
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx",
   "old_string": "            {pendingCancel && <Chip tone=\"error\">Will cancel</Chip>}\n            {cancelled && <Chip tone=\"error\">Cancelled</Chip>}",
   "new_string": "            {pendingCancel && <Chip tone=\"error\">Will cancel</Chip>}\n            {/* Re-inviting (cancelled but toggled back on) reads as a fresh pending\n                invite, so the \"Cancelled\" chip only shows while it stays off. */}\n            {cancelled && !guest.include && <Chip tone=\"error\">Cancelled</Chip>}"
 }
@@ -2059,7 +2059,7 @@ id: toolu_01QWZ7TKGUf3phFnFzJm8f2Y
 tool_result
 id: toolu_01QWZ7TKGUf3phFnFzJm8f2Y
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2071,7 +2071,7 @@ Now the hint/else branch — give a cancelled, toggled-off guest a re-invite pro
 tool_result ERROR
 id: toolu_01JqT2yss2tYxFKy7vWh2fsJ
 ```
-<tool_use_error>File does not exist. Note: your current working directory is /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension.</tool_use_error>
+<tool_use_error>File does not exist. Note: your current working directory is /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension.</tool_use_error>
 ```
 
 > TOOL
@@ -2081,7 +2081,7 @@ id: toolu_01JqT2yss2tYxFKy7vWh2fsJ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrription/auxilio-extension/features/visit/RosterRow.tsx",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrription/auxilio-extension/features/visit/RosterRow.tsx",
   "old_string": "      ) : (\n        !guest.include &&\n        !cancelled && (\n          <div className=\"guest__hint type-label-sm\">Will not receive a pass. Toggle on to invite.</div>\n        )\n      )}",
   "new_string": "      ) : (\n        !guest.include && (\n          <div className=\"guest__hint type-label-sm\">\n            {cancelled\n              ? 'Pass cancelled. Toggle on to re-invite.'\n              : 'Will not receive a pass. Toggle on to invite.'}\n          </div>\n        )\n      )}"
 }
@@ -2098,7 +2098,7 @@ id: toolu_017FJzESxew1PAxtYg6GehFD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx",
   "old_string": "      ) : (\n        !guest.include &&\n        !cancelled && (\n          <div className=\"guest__hint type-label-sm\">Will not receive a pass. Toggle on to invite.</div>\n        )\n      )}",
   "new_string": "      ) : (\n        !guest.include && (\n          <div className=\"guest__hint type-label-sm\">\n            {cancelled\n              ? 'Pass cancelled. Toggle on to re-invite.'\n              : 'Will not receive a pass. Toggle on to invite.'}\n          </div>\n        )\n      )}"
 }
@@ -2109,7 +2109,7 @@ id: toolu_017FJzESxew1PAxtYg6GehFD
 tool_result
 id: toolu_017FJzESxew1PAxtYg6GehFD
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2123,7 +2123,7 @@ id: toolu_012Un8BHFtjDeUYbXhaqeZgY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx",
   "old_string": "  const pendingCancel = sent && !guest.include;\n  // A previously-cancelled guest toggled back ON is a re-invite: it reads as a fresh\n  // pending invite (no \"Cancelled\" chip, editable details) rather than a dead row.\n  const reinviting = cancelled && guest.include;\n  // Everyone we'd still issue/update a pass for can have their details corrected —\n  // whether or not their pass already went out, and including a re-invite.\n  const editable = guest.include;",
   "new_string": "  const pendingCancel = sent && !guest.include;\n  // Everyone we'd still issue/update a pass for can have their details corrected —\n  // whether or not their pass already went out, and including a re-invite (a\n  // previously-cancelled guest toggled back on, which reads as a fresh pending\n  // invite rather than a dead row).\n  const editable = guest.include;"
 }
@@ -2134,7 +2134,7 @@ id: toolu_012Un8BHFtjDeUYbXhaqeZgY
 tool_result
 id: toolu_012Un8BHFtjDeUYbXhaqeZgY
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2210,7 +2210,7 @@ id: toolu_01TZbUMgBYsknWdHijgUR556
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/design/global.css",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/design/global.css",
   "old_string": ".banner--error { background: var(--color-error-container); color: var(--color-on-error-container); }\n.banner--info { background: var(--color-primary-container); color: var(--color-on-primary-container); }",
   "new_string": ".banner--error { background: var(--color-error-container); color: var(--color-on-error-container); }\n.banner--info { background: var(--color-primary-container); color: var(--color-on-primary-container); }\n\n/* ---------- Transient notice (self-dismissing inline message) ----------\n   Wrapper for messages that animate in, hold, then animate out before unmounting\n   (the \"Up to date\" / \"passes sent\" confirmations). The global prefers-reduced-motion\n   rule below collapses the transition, so it just appears/disappears for those users. */\n.transient {\n  opacity: 0;\n  transform: translateY(-6px);\n  transition: opacity var(--motion-base) var(--motion-easing),\n    transform var(--motion-base) var(--motion-easing);\n}\n.transient--show { opacity: 1; transform: none; }"
 }
@@ -2221,7 +2221,7 @@ id: toolu_01TZbUMgBYsknWdHijgUR556
 tool_result
 id: toolu_01TZbUMgBYsknWdHijgUR556
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/design/global.css has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/design/global.css has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2235,7 +2235,7 @@ id: toolu_017sCD8nfPXBuaYnxqGGAyyu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx",
   "old_string": "/** Shows its children for ~5s each time `show` flips true, then auto-hides — an\n *  ephemeral notice rather than a banner that lingers. Re-shows if `show` cycles. */\nfunction AutoHideBanner({ show, children }: { show: boolean; children: React.ReactNode }) {\n  const [visible, setVisible] = useState(false);\n  useEffect(() => {\n    if (!show) {\n      setVisible(false);\n      return;\n    }\n    setVisible(true);\n    const t = setTimeout(() => setVisible(false), 5000);\n    return () => clearTimeout(t);\n  }, [show]);\n  return visible ? <>{children}</> : null;\n}",
   "new_string": "/** Mounts its children, animates them in, holds for `duration`, then animates them\n *  out before unmounting — a transient, self-dismissing notice (no abrupt\n *  appear/disappear). Re-shows whenever `show` cycles back to true. Pass\n *  `duration={Infinity}` to hold until `show` goes false (used when a send has\n *  partial failures the host must see). Reduced-motion users get an instant\n *  show/hide via the global CSS rule. */\nfunction TransientNotice({\n  show,\n  duration = 5000,\n  children,\n}: {\n  show: boolean;\n  duration?: number;\n  children: React.ReactNode;\n}) {\n  const [mounted, setMounted] = useState(false);\n  const [shown, setShown] = useState(false);\n  useEffect(() => {\n    if (!show) {\n      setShown(false); // animate out; the effect below unmounts after the transition\n      return;\n    }\n    setMounted(true);\n    const raf = […]
 
@@ -2244,7 +2244,7 @@ id: toolu_017sCD8nfPXBuaYnxqGGAyyu
 tool_result
 id: toolu_017sCD8nfPXBuaYnxqGGAyyu
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2258,7 +2258,7 @@ id: toolu_01N1V3TSm2QxbcP5TFNwxeRi
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx",
   "old_string": "  useEffect(resetEditBaseline, [event?.iCalUid]);\n  // Drop a half-armed cancel-all confirm when switching events.\n  useEffect(() => setConfirmCancelAll(false), [event?.iCalUid]);",
   "new_string": "  useEffect(resetEditBaseline, [event?.iCalUid]);\n  // Drop a half-armed cancel-all confirm when switching events.\n  useEffect(() => setConfirmCancelAll(false), [event?.iCalUid]);\n  // Clear any prior send/preview result when the active event changes, so a \"passes\n  // sent\" confirmation (or the \"up to date\" suppression that keys off send.isSuccess)\n  // never leaks onto the next event the panel follows to.\n  useEffect(() => {\n    send.reset();\n    preview.reset();\n    // eslint-disable-next-line react-hooks/exhaustive-deps\n  }, [event?.iCalUid]);"
 }
@@ -2269,7 +2269,7 @@ id: toolu_01N1V3TSm2QxbcP5TFNwxeRi
 tool_result
 id: toolu_01N1V3TSm2QxbcP5TFNwxeRi
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2279,7 +2279,7 @@ id: toolu_017kWXy4rhHot9axstj8BkMT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx",
   "old_string": "        {/* Send result */}\n        {send.isSuccess && <SendSummary result={send.data} />}\n        {send.isError && !isAuthError(send.error) && (",
   "new_string": "        {/* Send result — a temporary confirmation that fades out on its own. Holds\n            indefinitely only when some passes failed, so the host can read what to fix. */}\n        <TransientNotice\n          show={send.isSuccess}\n          duration={send.data?.failed.length ? Infinity : 6000}\n        >\n          {send.data && <SendSummary result={send.data} />}\n        </TransientNotice>\n        {send.isError && !isAuthError(send.error) && ("
 }
@@ -2290,7 +2290,7 @@ id: toolu_017kWXy4rhHot9axstj8BkMT
 tool_result
 id: toolu_017kWXy4rhHot9axstj8BkMT
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2300,7 +2300,7 @@ id: toolu_012R2BdBkEfrCsqbi65rAd41
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx",
   "old_string": "        <AutoHideBanner show={nothingToDo}>\n          <div\n            className=\"banner banner--info\"\n            role=\"status\"\n            style={{ marginBottom: 'var(--space-sm)' }}\n          >\n            <CheckCircle2 size={18} strokeWidth={2} style={{ flex: '0 0 auto' }} />\n            <span className=\"type-body\">Up to date. No changes to send.</span>\n          </div>\n        </AutoHideBanner>",
   "new_string": "        {/* \"Up to date\" only greets you when you OPEN an already-linked event with\n            nothing pending — never right after a send (that's what the \"passes sent\"\n            confirmation above is for, so we suppress this while it's showing). */}\n        <TransientNotice show={nothingToDo && !send.isSuccess}>\n          <div\n            className=\"banner banner--info\"\n            role=\"status\"\n            style={{ marginBottom: 'var(--space-sm)' }}\n          >\n            <CheckCircle2 size={18} strokeWidth={2} style={{ flex: '0 0 auto' }} />\n            <span className=\"type-body\">Up to date. No changes to send.</span>\n          </div>\n        </TransientNotice>"
 }
@@ -2311,7 +2311,7 @@ id: toolu_012R2BdBkEfrCsqbi65rAd41
 tool_result
 id: toolu_012R2BdBkEfrCsqbi65rAd41
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2383,7 +2383,7 @@ id: toolu_01Y4RUMwxgW1J4NZ4GjYAxsa
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts",
   "old_string": "  url.searchParams.set(\n    'fields',\n    'iCalUID,summary,location,description,start,end,organizer,attendees(email,displayName,resource,self,organizer)',\n  );\n  return fetch(url, { headers: { Authorization: `Bearer ${accessToken}` } });",
   "new_string": "  url.searchParams.set(\n    'fields',\n    // id/status/recurringEventId + organizer.self are needed by the targeted\n    // checkEventNow path (isMarked/isSuggested + the host gate + series collapsing);\n    // the rest feeds the side panel's ActiveEvent. One mask serves both callers.\n    'id,iCalUID,status,summary,location,description,recurringEventId,start,end,organizer(self,email),attendees(email,displayName,resource,self,organizer)',\n  );\n  return fetch(url, { headers: { Authorization: `Bearer ${accessToken}` } });"
 }
@@ -2394,7 +2394,7 @@ id: toolu_01Y4RUMwxgW1J4NZ4GjYAxsa
 tool_result
 id: toolu_01Y4RUMwxgW1J4NZ4GjYAxsa
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2449,7 +2449,7 @@ id: toolu_01UxuX5MoUHgPbT64s1QKAQK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts",
   "old_string": "export async function fetchActiveEvent(\n  eid: string,\n  accessToken: string,\n): Promise<ActiveEvent> {\n  const dec = decodeEid(eid);\n  if (!dec) throw new Error('Could not read the event id from this page.');\n\n  // Recurring chips carry an instance id (\"<base>_<ts>\"); events.get often 404s\n  // on the instance, so also try the base id. And try `primary` in case the\n  // decoded calendar id isn't directly fetchable.\n  const baseId = dec.eventId.includes('_') ? dec.eventId.split('_')[0] : null;\n  const candidates: { cal: string; id: string }[] = [\n    { cal: dec.calendarId, id: dec.eventId },\n    ...(dec.calendarId !== 'primary' ? [{ cal: 'primary', id: dec.eventId }] : []),\n    ...(baseId ? [{ cal: dec.calendarId, id: baseId }] : []),\n    ...(baseId && dec.calendarId !== 'primary' ? [{ cal: 'primary', id: baseId }] : []),\n  ];\n  console.log('[auxilio] resolve event', { eid, ...dec, candidates });\n\n  let res: Response | null = null;\n  let lastStatus = 0;\n  let lastBody = '';\n  for (const c of candidates) {\n    const r = await getEvent(c.cal, c.id, accessToken);\n    if (r.ok) {\n      res = r;\n      break;\n    }\n    lastStatus = r.status;\n    lastBody = await r.text().catch(() => '');\n    console.warn('[auxilio] events.get miss', c, r.status, lastBody.slice(0, 200));\n  }\n\n  if (!res) {\n    console.warn('[auxilio] resolve 404', […]
 
 > AGENT
@@ -2462,7 +2462,7 @@ tool_use Read
 id: toolu_018enmoay1WYj2YoLtxV3Wi2
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts",
   "offset": 123,
   "limit": 80
 }
@@ -2512,7 +2512,7 @@ id: toolu_01CLPtwBdJm6MA9rkTXvH6cm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts",
   "old_string": "export async function fetchActiveEvent(\n  eid: string,\n  accessToken: string,\n): Promise<ActiveEvent> {\n  const dec = decodeEid(eid);\n  if (!dec) throw new Error('Could not read the event id from this page.');\n\n  // Recurring chips carry an instance id (\"<base>_<ts>\"); events.get often 404s\n  // on the instance, so also try the base id. And try `primary` in case the\n  // decoded calendar id isn't directly fetchable.\n  const baseId = dec.eventId.includes('_') ? dec.eventId.split('_')[0] : null;\n  const candidates: { cal: string; id: string }[] = [\n    { cal: dec.calendarId, id: dec.eventId },\n    ...(dec.calendarId !== 'primary' ? [{ cal: 'primary', id: dec.eventId }] : []),\n    ...(baseId ? [{ cal: dec.calendarId, id: baseId }] : []),\n    ...(baseId && dec.calendarId !== 'primary' ? [{ cal: 'primary', id: baseId }] : []),\n  ];\n  if (DEBUG) console.log('[auxilio] resolve event', { eid, ...dec, candidates });\n\n  let res: Response | null = null;\n  let lastStatus = 0;\n  let lastBody = '';\n  for (const c of candidates) {\n    const r = await getEvent(c.cal, c.id, accessToken);\n    if (r.ok) {\n      res = r;\n      break;\n    }\n    lastStatus = r.status;\n    lastBody = await r.text().catch(() => '');\n    console.warn('[auxilio] events.get miss', c, r.status, lastBody.slice(0, 200));\n  }\n\n  if (!res) {\n    console.warn('[auxilio] […]
 
 > TOOL
@@ -2520,7 +2520,7 @@ id: toolu_01CLPtwBdJm6MA9rkTXvH6cm
 tool_result
 id: toolu_01CLPtwBdJm6MA9rkTXvH6cm
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2530,7 +2530,7 @@ id: toolu_01CtitCDGJMfwX53xFzYHENG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts",
   "old_string": "  return {\n    iCalUid: ev.iCalUID ?? '',\n    providerEventId: dec.eventId,\n    title: ev.summary,",
   "new_string": "  return {\n    iCalUid: ev.iCalUID ?? '',\n    providerEventId: dec?.eventId,\n    title: ev.summary,"
 }
@@ -2541,7 +2541,7 @@ id: toolu_01CtitCDGJMfwX53xFzYHENG
 tool_result
 id: toolu_01CtitCDGJMfwX53xFzYHENG
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2555,7 +2555,7 @@ id: toolu_01CrPJDwpi6WtBSJauWAHHiP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts",
   "old_string": "  if (!myDomain || isMarked(ev)) return false;\n  const hasLocation = !!(ev.location ?? '').trim();\n  const hasRoom = (ev.attendees ?? []).some((a) => a.resource);\n  if (!hasLocation && !hasRoom) return false;",
   "new_string": "  if (!myDomain || isMarked(ev)) return false;\n  const loc = (ev.location ?? '').trim();\n  // A pasted video-call link (Meet / Zoom / Teams) is a VIRTUAL meeting, not a\n  // physical visit — a URL-only location must not trigger the \"visitors coming?\" hint.\n  const hasLocation = !!loc && !/^https?:\\/\\//i.test(loc);\n  const hasRoom = (ev.attendees ?? []).some((a) => a.resource);\n  if (!hasLocation && !hasRoom) return false;"
 }
@@ -2566,7 +2566,7 @@ id: toolu_01CrPJDwpi6WtBSJauWAHHiP
 tool_result
 id: toolu_01CrPJDwpi6WtBSJauWAHHiP
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2580,7 +2580,7 @@ id: toolu_01GvNAbRzo9BUz9QMn7XjqsU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts",
   "old_string": "import { DEBUG, MAGIC_ADDRESS } from './config';\nimport { encodeEid, isMarked, isSuggested, listEvents } from './calendar';",
   "new_string": "import { DEBUG, MAGIC_ADDRESS } from './config';\nimport { encodeEid, isMarked, isSuggested, listEvents, resolveRawEvent } from './calendar';"
 }
@@ -2591,7 +2591,7 @@ id: toolu_01GvNAbRzo9BUz9QMn7XjqsU
 tool_result
 id: toolu_01GvNAbRzo9BUz9QMn7XjqsU
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2601,7 +2601,7 @@ id: toolu_01STQ2Kkwb4PZYNADjPzzzL6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts",
   "old_string": "/** Is this event id currently a known visitor event? */\nexport async function isEventMarked(eventId: string): Promise<boolean> {\n  const marked = await readMarked();\n  return !!marked[eventId];\n}",
   "new_string": "/** Is this event id currently a known visitor event? */\nexport async function isEventMarked(eventId: string): Promise<boolean> {\n  const marked = await readMarked();\n  return !!marked[eventId];\n}\n\n/**\n * Targeted, low-latency check of ONE event right after the host likely saved it (they\n * left the editor). Does a single events.get — which is consistent immediately, unlike\n * events.list (the change feed lags a few seconds behind a save) — and folds the event\n * into the marked OR suggested set, or removes it. This lets a freshly added room /\n * location / external guest surface the firm or soft nudge within one round-trip\n * instead of waiting on the next list sync. Best-effort: a 404 (a brand-new event not\n * yet consistent) or any error is swallowed, and the regular sync reconciles later.\n * `selfDomain` (the host's email domain) gates the soft suggestion (internal vs\n * external guest). Returns true if it changed either set (so the caller can refresh\n * the badge/banner), false otherwise.\n */\nexport […]
 
@@ -2610,7 +2610,7 @@ id: toolu_01STQ2Kkwb4PZYNADjPzzzL6
 tool_result
 id: toolu_01STQ2Kkwb4PZYNADjPzzzL6
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2624,7 +2624,7 @@ id: toolu_01Adn8wsDD8izfLQs7683Gcb
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/messaging.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/messaging.ts",
   "old_string": "  | { type: 'SYNC_NOW' }\n  | { type: 'GET_PANEL_STATE' }\n  | { type: 'NAVIGATE_TO_EVENT'; eventId?: string; eid?: string };",
   "new_string": "  | { type: 'SYNC_NOW' }\n  | { type: 'CHECK_EVENT_NOW'; eid: string }\n  | { type: 'GET_PANEL_STATE' }\n  | { type: 'NAVIGATE_TO_EVENT'; eventId?: string; eid?: string };"
 }
@@ -2635,7 +2635,7 @@ id: toolu_01Adn8wsDD8izfLQs7683Gcb
 tool_result
 id: toolu_01Adn8wsDD8izfLQs7683Gcb
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/messaging.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/messaging.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2645,7 +2645,7 @@ id: toolu_01LniqLsjFLwLRSVgFRd6MH2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/messaging.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/messaging.ts",
   "old_string": "  SYNC_NOW: { synced: boolean };\n  GET_PANEL_STATE: { open: boolean };",
   "new_string": "  SYNC_NOW: { synced: boolean };\n  CHECK_EVENT_NOW: { checked: boolean };\n  GET_PANEL_STATE: { open: boolean };"
 }
@@ -2656,7 +2656,7 @@ id: toolu_01LniqLsjFLwLRSVgFRd6MH2
 tool_result
 id: toolu_01LniqLsjFLwLRSVgFRd6MH2
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/messaging.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/messaging.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2670,7 +2670,7 @@ id: toolu_016m92KWhkvzQGiNarob8CM6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/background.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/background.ts",
   "old_string": "import {\n  clearSyncToken,\n  eventState,\n  isEventHandled,\n  isEventMarked,\n  listForPanel,\n  listMarked,\n  listPendingICalUids,\n  listSuggested,\n  markHandled,\n  markUnhandled,\n  readEngineHandled,\n  runSync,\n  setEngineHandled,\n  syncConfigChanged,\n} from '@/lib/calendar-sync';",
   "new_string": "import {\n  checkEventNow,\n  clearSyncToken,\n  eventState,\n  isEventHandled,\n  isEventMarked,\n  listForPanel,\n  listMarked,\n  listPendingICalUids,\n  listSuggested,\n  markHandled,\n  markUnhandled,\n  readEngineHandled,\n  runSync,\n  setEngineHandled,\n  syncConfigChanged,\n} from '@/lib/calendar-sync';"
 }
@@ -2681,7 +2681,7 @@ id: toolu_016m92KWhkvzQGiNarob8CM6
 tool_result
 id: toolu_016m92KWhkvzQGiNarob8CM6
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/background.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/background.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2691,7 +2691,7 @@ id: toolu_012Mv3vrdXL4Qs5XiuhaiDtL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/background.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/background.ts",
   "old_string": "    case 'SYNC_NOW':\n      // On-demand sync (page load / tab focus / just left the editor) so the\n      // banner appears fast instead of waiting up to a minute for the alarm.\n      await doSync();\n      return ok({ synced: true });",
   "new_string": "    case 'SYNC_NOW':\n      // On-demand sync (page load / tab focus / just left the editor) so the\n      // banner appears fast instead of waiting up to a minute for the alarm.\n      await doSync();\n      return ok({ synced: true });\n\n    case 'CHECK_EVENT_NOW':\n      // Targeted instant check of the event the host just finished editing: one\n      // events.get (consistent immediately, unlike the laggy events.list change feed)\n      // folds it into the marked/suggested set, then we refresh the badge + in-page\n      // banner so a freshly added room/location/guest nudges within a round-trip.\n      return withTokens(async (t) => {\n        const changed = await checkEventNow(msg.eid, t.accessToken, domainOf(t.email));\n        if (changed) await refreshNudgeSurfaces();\n        return { checked: changed };\n      });"
 }
@@ -2702,7 +2702,7 @@ id: toolu_012Mv3vrdXL4Qs5XiuhaiDtL
 tool_result
 id: toolu_012Mv3vrdXL4Qs5XiuhaiDtL
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/background.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/background.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2715,7 +2715,7 @@ tool_use Read
 id: toolu_01QA9y7euvRGX5QGEawXuiY6
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "offset": 203,
   "limit": 30
 }
@@ -2758,7 +2758,7 @@ id: toolu_01UxDfvbkDUH7TSV5B55oHuY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "old_string": "    let wasEditor = /\\/eventedit/.test(location.pathname);\n    const editorPoll = setInterval(() => {\n      if (!extAlive()) return teardown(); // orphaned by an extension reload → stop\n      if (!isCurrent()) return teardown(); // a newer injected instance took over → stop\n      // Backgrounded tab → do no DOM work: the user can't be editing, and the\n      // visibilitychange listener fires syncNow() + render() the moment it's visible\n      // again. This stops every open-but-hidden Calendar tab from running readSurface\n      // (and its layout reads) once a second forever.\n      if (document.hidden) return;\n      const isEditor = /\\/eventedit/.test(location.pathname);\n      if (wasEditor && !isEditor) syncBurst(); // left the editor → likely saved\n      wasEditor = isEditor;",
   "new_string": "    let wasEditor = /\\/eventedit/.test(location.pathname);\n    // The eid of the event currently open in the editor — captured while editing so\n    // that on exit (a likely save) we can fire a TARGETED check of exactly that event.\n    let lastEditorEid: string | null = wasEditor ? urlEid() : null;\n    const editorPoll = setInterval(() => {\n      if (!extAlive()) return teardown(); // orphaned by an extension reload → stop\n      if (!isCurrent()) return teardown(); // a newer injected instance took over → stop\n      // Backgrounded tab → […]
 
@@ -2767,7 +2767,7 @@ id: toolu_01UxDfvbkDUH7TSV5B55oHuY
 tool_result
 id: toolu_01UxDfvbkDUH7TSV5B55oHuY
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2801,7 +2801,7 @@ id: toolu_01B43f5gCEQDa2eqxX7bpwAp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
   "old_string": "  \"version\": \"0.14.2\",",
   "new_string": "  \"version\": \"0.15.0\","
 }
@@ -2812,7 +2812,7 @@ id: toolu_01B43f5gCEQDa2eqxX7bpwAp
 tool_result
 id: toolu_01B43f5gCEQDa2eqxX7bpwAp
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2886,7 +2886,7 @@ tool_use Bash
 id: toolu_015iCSSqYb9Xz3xxmgocqMpJ
 ```json
 {
-  "command": "cd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension\necho \"=== CHECK_EVENT_NOW present in content + background bundles ===\"\ngrep -l \"CHECK_EVENT_NOW\" output/chrome-mv3/content-scripts/calendar.js output/chrome-mv3/background.js 2>/dev/null\necho \"=== transient class in built CSS ===\"\ngrep -o \"transient--show\" output/chrome-mv3/assets/*.css | head -1\necho \"=== re-invite hint in sidepanel bundle ===\"\ngrep -o \"re-invite\" output/chrome-mv3/chunks/sidepanel-*.js | head -1",
+  "command": "cd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension\necho \"=== CHECK_EVENT_NOW present in content + background bundles ===\"\ngrep -l \"CHECK_EVENT_NOW\" output/chrome-mv3/content-scripts/calendar.js output/chrome-mv3/background.js 2>/dev/null\necho \"=== transient class in built CSS ===\"\ngrep -o \"transient--show\" output/chrome-mv3/assets/*.css | head -1\necho \"=== re-invite hint in sidepanel bundle ===\"\ngrep -o \"re-invite\" output/chrome-mv3/chunks/sidepanel-*.js | head -1",
   "description": "Confirm new wiring in built output"
 }
 ```
@@ -2925,11 +2925,11 @@ the phantom was shown in the normal guest roster (with toggles)
 
 That confirms it — and it rules out the DOM scrape (and my H1 change) as the cause.
 
-**Why:** the normal roster with toggles is rendered from `data.roster`, which comes **only** from the engine's draft (`useDraft` → `DRAFT_LOAD`). The DOM snapshot's scraped emails never reach that roster — they only appear on the pre-save "Save the event…" notice. So `j765894110@gmail.com` is **engine-draft-sourced**, not scraped from the page.
+**Why:** the normal roster with toggles is rendered from `data.roster`, which comes **only** from the engine's draft (`useDraft` → `DRAFT_LOAD`). The DOM snapshot's scraped emails never reach that roster — they only appear on the pre-save "Save the event…" notice. So `<REDACTED_EMAIL>` is **engine-draft-sourced**, not scraped from the page.
 
 That leaves two sub-causes, and they need different fixes:
 
 1. **Stale persisted draft** — the engine keeps a guest keyed by `iCalUid` even after it's removed from the calendar event (its reconcile is deliberately conservative; the panel even comments on it). A previous session seeded that address and it's been sticking around. → **a data wipe clears it and it won't come back.**
-2. **Live Calendar API attendee** — the event genuinely still carries `j765894110@gmail.com` per Google's API (a declined guest, a group-expanded invite, or a Google-internal pseudo-address), even though the UI shows "no guests." `fetchActiveEvent` forwards it to the engine each open. → **a wipe won't help; it reappears on next open, and the fix is to filter/understand it.**
+2. **Live Calendar API attendee** — the event genuinely still carries `<REDACTED_EMAIL>` per Google's API (a declined guest, a group-expanded invite, or a Google-internal pseudo-address), even though the UI shows "no guests." `fetchActiveEvent` forwards it to the engine each open. → **a wipe won't help; it reappears on next open, and the fix is to filter/understand it.**
 
 The address itself (`j` + 9 digits `@gmail.com`) looks auto-generated, which mildly favors […]

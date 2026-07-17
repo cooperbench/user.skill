@@ -192,7 +192,7 @@ tool_use Read
 id: toolu_019dvgHxXgcSkBHzHE37ccDd
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/smarthttp.go"
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/smarthttp.go"
 }
 ```
 
@@ -324,7 +324,7 @@ tool_use Read
 id: toolu_012m4Kf8GxWacDadNfhtryWv
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go",
   "offset": 277,
   "limit": 160
 }
@@ -377,7 +377,7 @@ tool_use Read
 id: toolu_012qyLBV8pLE85E3os4CWjwz
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap.go"
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap.go"
 }
 ```
 
@@ -464,7 +464,7 @@ tool_use Read
 id: toolu_016HvXDwGgHr3g9MjM7wChct
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap.go",
   "offset": 1290,
   "limit": 207
 }
@@ -601,7 +601,7 @@ tool_use Read
 id: toolu_01PnncwbPd2UcrerhtBktikZ
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap_test.go",
   "offset": 87,
   "limit": 160
 }
@@ -709,7 +709,7 @@ tool_use Read
 id: toolu_01R669YHWvCfZVqNJoVQ9iLU
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap_test.go",
   "offset": 1190,
   "limit": 130
 }
@@ -771,7 +771,7 @@ tool_use Read
 id: toolu_01DFMNfV5QCP9iVUtg8Su691
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap_test.go",
   "offset": 1318,
   "limit": 120
 }
@@ -838,7 +838,7 @@ id: toolu_016rMDdMkyYojQNS7ay1aSXg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap.go",
   "old_string": "func isTargetBodyLimitError(err error) bool {\n\tif err == nil {\n\t\treturn false\n\t}\n\tmsg := strings.ToLower(err.Error())\n\treturn strings.Contains(msg, \"body exceeded size limit\") ||\n\t\t(strings.Contains(msg, \"request body\") && strings.Contains(msg, \"too large\")) ||\n\t\t(strings.Contains(msg, \"payload\") && strings.Contains(msg, \"too large\")) ||\n\t\tstrings.Contains(msg, \"http 413\")\n}",
   "new_string": "func isTargetBodyLimitError(err error) bool {\n\tif err == nil {\n\t\treturn false\n\t}\n\tmsg := strings.ToLower(err.Error())\n\treturn strings.Contains(msg, \"body exceeded size limit\") ||\n\t\t(strings.Contains(msg, \"request body\") && strings.Contains(msg, \"too large\")) ||\n\t\t(strings.Contains(msg, \"payload\") && strings.Contains(msg, \"too large\")) ||\n\t\tstrings.Contains(msg, \"http 413\")\n}\n\n// isTargetPushDeadlineError reports whether err indicates the target cut the\n// receive-pack POST short because it ran past a server-side deadline rather\n// than because the pack exceeded an announced size limit. GitHub returns 408\n// (Request Timeout) when a slow or oversized push outlasts its receive-pack\n// wall-clock window — common when relaying a large repo over a slow source\n// link, where the upstream read rate throttles the downstream write. Gateways\n// fronting other hosts surface the same condition as 504 (Gateway Timeout).\n//\n// Both are remedied the way a body-limit rejection is: smaller packs each\n// finish inside the window, so callers route them into the same batched\n// bootstrap retry. Kept distinct from isTargetBodyLimitError because the\n// trigger is a timeout, not a size rejection, and there's no body […]
 
@@ -847,7 +847,7 @@ id: toolu_016rMDdMkyYojQNS7ay1aSXg
 tool_result
 id: toolu_016rMDdMkyYojQNS7ay1aSXg
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -857,7 +857,7 @@ id: toolu_016gvj2E4rz7VuJy7dqt9WMe
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap.go",
   "old_string": "func autoTargetMaxPackBytes(p Params, err error) (int64, bool) {\n\tif p.TargetMaxPack > 0 || !isTargetBodyLimitError(err) {\n\t\treturn 0, false\n\t}",
   "new_string": "func autoTargetMaxPackBytes(p Params, err error) (int64, bool) {\n\tif p.TargetMaxPack > 0 || !isBatchableTargetPushError(err) {\n\t\treturn 0, false\n\t}"
 }
@@ -868,7 +868,7 @@ id: toolu_016gvj2E4rz7VuJy7dqt9WMe
 tool_result
 id: toolu_016gvj2E4rz7VuJy7dqt9WMe
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -882,7 +882,7 @@ id: toolu_01D1oBtywh9rjQN3khtjBwt5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap.go",
   "old_string": "\t\t\t\t// Treat abortedEarly the same as a body-limit error:\n\t\t\t\t// both indicate \"this pack is too big for the target\",\n\t\t\t\t// just one is detected by the server and one by us.\n\t\t\t\tsizeIssue := abortedEarly || isTargetBodyLimitError(pushErr)",
   "new_string": "\t\t\t\t// Treat abortedEarly the same as a body-limit error:\n\t\t\t\t// both indicate \"this pack is too big for the target\",\n\t\t\t\t// just one is detected by the server and one by us. A\n\t\t\t\t// receive-pack deadline (408/504) lands here too — a\n\t\t\t\t// checkpoint that times out is also too big for this\n\t\t\t\t// target/link, and subdividing makes each push finish sooner.\n\t\t\t\tsizeIssue := abortedEarly || isBatchableTargetPushError(pushErr)"
 }
@@ -893,7 +893,7 @@ id: toolu_01D1oBtywh9rjQN3khtjBwt5
 tool_result
 id: toolu_01D1oBtywh9rjQN3khtjBwt5
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -951,7 +951,7 @@ id: toolu_01MQUTKkjSJ44ESessAvdiYx
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap_test.go",
   "old_string": "func TestTargetBodyLimit(t *testing.T) {",
   "new_string": "func TestIsTargetPushDeadlineError(t *testing.T) {\n\ttests := []struct {\n\t\tname string\n\t\terr  error\n\t\twant bool\n\t}{\n\t\t{name: \"nil error\", err: nil, want: false},\n\t\t{\n\t\t\tname: \"github receive-pack 408\",\n\t\t\terr:  errors.New(\"push target refs: target receive-pack: post RPC stream body: http 408: https://github.com/o/r.git/git-receive-pack\"),\n\t\t\twant: true,\n\t\t},\n\t\t{\n\t\t\tname: \"gateway 504\",\n\t\t\terr:  errors.New(\"target receive-pack: http 504: gateway timeout\"),\n\t\t\twant: true,\n\t\t},\n\t\t{\n\t\t\tname: \"body limit is not a deadline\",\n\t\t\terr:  errors.New(\"body exceeded size limit 1048576\"),\n\t\t\twant: false,\n\t\t},\n\t\t{\n\t\t\tname: \"413 is not a deadline\",\n\t\t\terr:  errors.New(\"http 413: payload too large\"),\n\t\t\twant: false,\n\t\t},\n\t\t{\n\t\t\tname: \"unrelated error\",\n\t\t\terr:  errors.New(\"connection refused\"),\n\t\t\twant: false,\n\t\t},\n\t}\n\n\tfor _, tt := range tests {\n\t\tt.Run(tt.name, func(t *testing.T) {\n\t\t\tif got := isTargetPushDeadlineError(tt.err); got != tt.want {\n\t\t\t\tt.Errorf(\"isTargetPushDeadlineError(%v) = %v, want %v\", tt.err, got, tt.want)\n\t\t\t}\n\t\t})\n\t}\n}\n\nfunc TestIsBatchableTargetPushError(t *testing.T) {\n\ttests := []struct {\n\t\tname string\n\t\terr  error\n\t\twant bool\n\t}{\n\t\t{name: \"nil error\", err: nil, want: false},\n\t\t{name: \"body limit\", err: errors.New(\"body exceeded size limit 1048576\"), want: true},\n\t\t{name: \"http 413\", err: errors.New(\"http 413\"), want: true},\n\t\t{name: \"http 408 deadline\", err: errors.New(\"http 408: request timeout\"), want: true},\n\t\t{name: \"http 504 deadline\", err: errors.New(\"http 504: gateway timeout\"), want: true},\n\t\t{name: \"unrelated\", err: errors.New(\"connection refused\"), want: false},\n\t}\n\n\tfor _, tt := range tests {\n\t\tt.Run(tt.name, func(t *testing.T) {\n\t\t\tif got := isBatchableTargetPushError(tt.err); got != tt.want {\n\t\t\t\tt.Errorf(\"isBatchableTargetPushError(%v) = %v, want %v\", tt.err, got, tt.want)\n\t\t\t}\n\t\t})\n\t}\n}\n\nfunc TestTargetBodyLimit(t *testing.T) {"
 }
@@ -962,7 +962,7 @@ id: toolu_01MQUTKkjSJ44ESessAvdiYx
 tool_result
 id: toolu_01MQUTKkjSJ44ESessAvdiYx
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1023,7 +1023,7 @@ tool_use Bash
 id: toolu_01FpoXajNxGCxbncquuxddYP
 ```json
 {
-  "command": "git add internal/strategy/bootstrap/bootstrap.go internal/strategy/bootstrap/bootstrap_test.go && git commit -q -F - <<'EOF'\nbootstrap: treat receive-pack timeouts (408/504) as batchable\n\nGitHub kills a receive-pack POST with HTTP 408 when a slow or oversized\npush outlasts its server-side deadline — the failure mode in #70, where\na large GitLab repo relayed over a slow link timed out before the single\none-shot pack finished. Only body-limit rejections (413) previously\ntriggered the batched-bootstrap fallback, so a 408 hard-failed with no\nremediation despite --target-max-pack-bytes being the exact fix.\n\nClassify 408 (and gateway 504) as a receive-pack deadline and route it\nthrough the same batched retry as a size rejection: smaller packs each\nfinish inside the target's window. Applied both to the one-shot\nauto-batch decision and the mid-batch subdivision path.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\nEOF\ngit log --oneline -1",
+  "command": "git add internal/strategy/bootstrap/bootstrap.go internal/strategy/bootstrap/bootstrap_test.go && git commit -q -F - <<'EOF'\nbootstrap: treat receive-pack timeouts (408/504) as batchable\n\nGitHub kills a receive-pack POST with HTTP 408 when a slow or oversized\npush outlasts its server-side deadline — the failure mode in #70, where\na large GitLab repo relayed over a slow link timed out before the single\none-shot pack finished. Only body-limit rejections (413) previously\ntriggered the batched-bootstrap fallback, so a 408 hard-failed with no\nremediation despite --target-max-pack-bytes being the exact fix.\n\nClassify 408 (and gateway 504) as a receive-pack deadline and route it\nthrough the same batched retry as a size rejection: smaller packs each\nfinish inside the target's window. Applied both to the one-shot\nauto-batch decision and the mid-batch subdivision path.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\nEOF\ngit log --oneline -1",
   "description": "Commit classifier + wiring"
 }
 ```
@@ -1046,7 +1046,7 @@ tool_use Read
 id: toolu_017fW7t7tccf8eni6uCge55W
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap.go",
   "offset": 177,
   "limit": 18
 }
@@ -1084,7 +1084,7 @@ id: toolu_01PqgY1x38txC7ECesiLDPK7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap.go",
   "old_string": "\t\tautoBatch, ok := autoTargetMaxPackBytes(p, pushErr)\n\t\tif !ok {\n\t\t\treturn result, fmt.Errorf(\"push target refs: %w\", pushErr)\n\t\t}\n\t\tp.log(\"bootstrap retrying with batched mode after target rejection\",\n\t\t\t\"target_max_pack_bytes\", autoBatch)\n\t\tp.notice(fmt.Sprintf(\"target rejected pack — switching to batched mode (limit %s)\",\n\t\t\thumanBytes(autoBatch)))\n\t\tp.TargetMaxPack = autoBatch\n\t\treturn executeBatched(ctx, p, plans, result)",
   "new_string": "\t\tautoBatch, ok := autoTargetMaxPackBytes(p, pushErr)\n\t\tif !ok {\n\t\t\treturn result, fmt.Errorf(\"push target refs: %w\", actionableTargetPushError(p, pushErr))\n\t\t}\n\t\treason := \"target rejected pack\"\n\t\tif isTargetPushDeadlineError(pushErr) {\n\t\t\treason = \"target push timed out\"\n\t\t}\n\t\tp.log(\"bootstrap retrying with batched mode after target rejection\",\n\t\t\t\"target_max_pack_bytes\", autoBatch, \"reason\", reason)\n\t\tp.notice(fmt.Sprintf(\"%s — switching to batched mode (limit %s)\",\n\t\t\treason, humanBytes(autoBatch)))\n\t\tp.TargetMaxPack = autoBatch\n\t\treturn executeBatched(ctx, p, plans, result)"
 }
@@ -1095,7 +1095,7 @@ id: toolu_01PqgY1x38txC7ECesiLDPK7
 tool_result
 id: toolu_01PqgY1x38txC7ECesiLDPK7
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1109,7 +1109,7 @@ id: toolu_01Ex4oZjEDmxVtA8w711jCb5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap.go",
   "old_string": "// isBatchableTargetPushError reports whether err is a target-side push failure\n// that batched bootstrap can work around by sending smaller packs: an explicit\n// body-size rejection (413 / \"body exceeded size limit\") or a receive-pack\n// deadline (408 / 504).\nfunc isBatchableTargetPushError(err error) bool {\n\treturn isTargetBodyLimitError(err) || isTargetPushDeadlineError(err)\n}",
   "new_string": "// isBatchableTargetPushError reports whether err is a target-side push failure\n// that batched bootstrap can work around by sending smaller packs: an explicit\n// body-size rejection (413 / \"body exceeded size limit\") or a receive-pack\n// deadline (408 / 504).\nfunc isBatchableTargetPushError(err error) bool {\n\treturn isTargetBodyLimitError(err) || isTargetPushDeadlineError(err)\n}\n\n// actionableTargetPushError augments a one-shot push failure with guidance\n// when the target rejected the pack for being too large or slow but batched\n// bootstrap couldn't take over — which, on the one-shot path, means the source\n// can't serve the protocol-v2 fetch filter that checkpointing requires. The\n// extra context tells the user why the obvious knob (--target-max-pack-bytes)\n// won't help here, instead of leaving a bare \"http 408\". Returns err unchanged\n// for non-batchable failures or when batching is in fact available.\nfunc actionableTargetPushError(p Params, err error) error {\n\tif !isBatchableTargetPushError(err) {\n\t\treturn err\n\t}\n\tif p.SourceService != nil && p.SourceService.SupportsBootstrapBatch() {\n\t\treturn err\n\t}\n\treturn fmt.Errorf(\"%w (target rejected the pack as […]
 
@@ -1118,7 +1118,7 @@ id: toolu_01Ex4oZjEDmxVtA8w711jCb5
 tool_result
 id: toolu_01Ex4oZjEDmxVtA8w711jCb5
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1128,7 +1128,7 @@ id: toolu_01UQgoG6wKaMWC3u5gYzsgQF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap.go",
   "old_string": "\treturn fmt.Errorf(\"%w (target rejected the pack as too large or too slow to receive; \"+\n\t\t\"batched bootstrap could split it into smaller pushes, but the source does not \"+\n\t\t\"support the protocol-v2 fetch filter that requires)\", err)",
   "new_string": "\treturn fmt.Errorf(\"%w (target rejected the pack as too large or too slow to receive; \"+\n\t\t\"batched bootstrap could split it into smaller pushes, but the source does not \"+\n\t\t\"support the protocol-v2 fetch filter batched bootstrap requires)\", err)"
 }
@@ -1139,7 +1139,7 @@ id: toolu_01UQgoG6wKaMWC3u5gYzsgQF
 tool_result
 id: toolu_01UQgoG6wKaMWC3u5gYzsgQF
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1153,7 +1153,7 @@ id: toolu_01GTMUqKU4RNmmiJJEBfQuso
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap_test.go",
   "old_string": "func TestExecuteBatchedClosesCheckpointPackOnPushError(t *testing.T) {",
   "new_string": "// noBatchSource is a source that can't serve the protocol-v2 fetch filter\n// batched bootstrap needs, so a one-shot push failure has no batched fallback.\ntype noBatchSource struct{ fakeBootstrapSource }\n\nfunc (noBatchSource) SupportsBootstrapBatch() bool { return false }\n\nfunc TestAutoTargetMaxPackBytesTimeoutTriggersBatching(t *testing.T) {\n\tlimit, ok := autoTargetMaxPackBytes(\n\t\tParams{SourceService: fakeBootstrapSource{}},\n\t\terrors.New(\"target receive-pack: http 408: request timeout\"),\n\t)\n\tif !ok {\n\t\tt.Fatal(\"autoTargetMaxPackBytes(408) = not ok, want batched fallback\")\n\t}\n\tif limit != defaultTargetMaxPackBytes {\n\t\tt.Fatalf(\"limit = %d, want default %d\", limit, int64(defaultTargetMaxPackBytes))\n\t}\n}\n\nfunc TestExecuteOneShotTimeoutWithoutBatchSupportIsActionable(t *testing.T) {\n\tmainRef := plumbing.NewBranchReferenceName(\"main\")\n\tmainHash := plumbing.NewHash(\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\")\n\tpushErr := errors.New(\"target receive-pack: post RPC stream body: http 408: request timeout\")\n\n\t_, err := Execute(context.Background(), Params{\n\t\tSourceService: noBatchSource{},\n\t\tTargetPusher: fakeBootstrapPusher{\n\t\t\tpushPack: func(_ context.Context, _ []gitproto.PushCommand, pack io.ReadCloser) error {\n\t\t\t\t_ = pack.Close()\n\t\t\t\treturn pushErr\n\t\t\t},\n\t\t},\n\t\tDesiredRefs: map[plumbing.ReferenceName]planner.DesiredRef{\n\t\t\tmainRef: {SourceRef: mainRef, TargetRef: mainRef, SourceHash: mainHash, Kind: planner.RefKindBranch},\n\t\t},\n\t}, \"empty target\")\n\tif err == nil {\n\t\tt.Fatal(\"Execute() error = nil, want actionable timeout error\")\n\t}\n\tif !errors.Is(err, pushErr) {\n\t\tt.Fatalf(\"Execute() error does not wrap original push error: %v\", err)\n\t}\n\tif !strings.Contains(err.Error(), \"protocol-v2 fetch filter\") {\n\t\tt.Fatalf(\"Execute() error missing batched-bootstrap guidance: %v\", err)\n\t}\n}\n\nfunc TestExecuteBatchedClosesCheckpointPackOnPushError(t *testing.T) {"
 }
@@ -1164,7 +1164,7 @@ id: toolu_01GTMUqKU4RNmmiJJEBfQuso
 tool_result
 id: toolu_01GTMUqKU4RNmmiJJEBfQuso
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1203,19 +1203,19 @@ id: toolu_01QC7kwTDGU7GvxSWBeNyA3y
 tool_result
 id: toolu_01QC7kwTDGU7GvxSWBeNyA3y
 ```
-	/Users/soph/.local/share/mise/installs/go/1.26.2/src/testing/testing.go:1977 +0x318
+	/home/<USER>/.local/share/mise/installs/go/1.26.2/src/testing/testing.go:1977 +0x318
 panic({0x1012cdb20?, 0x1013c6b70?})
-	/Users/soph/.local/share/mise/installs/go/1.26.2/src/runtime/panic.go:860 +0x12c
+	/home/<USER>/.local/share/mise/installs/go/1.26.2/src/runtime/panic.go:860 +0x12c
 entire.io/entire/git-sync/internal/strategy/bootstrap.fakeBootstrapSource.FetchPack(...)
-	/Users/soph/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap_test.go:1292
+	/home/<USER>/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap_test.go:1292
 entire.io/entire/git-sync/internal/strategy/bootstrap.Execute({0x10135e828, 0x1014050a0}, {{0x0, 0x0}, {0x10135dfb8, 0x101407360}, {0x10135c550, 0x387141f21540}, 0x387141fcd350, 0x0, ...}, ...)
-	/Users/soph/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap.go:162 +0x71c
+	/home/<USER>/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap.go:162 +0x71c
 entire.io/entire/git-sync/internal/strategy/bootstrap.TestExecuteOneShotTimeoutWithoutBatchSupportIsActionable(0x387141f7b208)
-	/Users/soph/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap_test.go:1523 +0x284
+	/home/<USER>/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap_test.go:1523 +0x284
 testing.tRunner(0x387141f7b208, 0x101355a58)
-	/Users/soph/.local/share/mise/installs/go/1.26.2/src/testing/testing.go:2036 +0xc4
+	/home/<USER>/.local/share/mise/installs/go/1.26.2/src/testing/testing.go:2036 +0xc4
 created by testing.(*T).Run in goroutine 1
-	/Users/soph/.local/share/mise/installs/go/1.26.2/src/testing/testing.go:2101 +0x3a8
+	/home/<USER>/.local/share/mise/installs/go/1.26.2/src/testing/testing.go:2101 +0x3a8
 FAIL	entire.io/entire/git-sync/internal/strategy/bootstrap	0.334s
 FAIL
 ```
@@ -1231,7 +1231,7 @@ id: toolu_01DRyVKqu4TijpvAag8J6a9a
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap_test.go",
   "old_string": "\t_, err := Execute(context.Background(), Params{\n\t\tSourceService: noBatchSource{},\n\t\tTargetPusher: fakeBootstrapPusher{",
   "new_string": "\t_, err := Execute(context.Background(), Params{\n\t\tSourceService: noBatchSource{fakeBootstrapSource{\n\t\t\tfetchPack: func(_ context.Context, _ gitproto.Conn, _ map[plumbing.ReferenceName]gitproto.DesiredRef, _ map[plumbing.ReferenceName]plumbing.Hash) (io.ReadCloser, error) {\n\t\t\t\treturn io.NopCloser(bytes.NewReader([]byte(\"PACK\"))), nil\n\t\t\t},\n\t\t}},\n\t\tTargetPusher: fakeBootstrapPusher{"
 }
@@ -1242,7 +1242,7 @@ id: toolu_01DRyVKqu4TijpvAag8J6a9a
 tool_result
 id: toolu_01DRyVKqu4TijpvAag8J6a9a
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1297,7 +1297,7 @@ tool_use Bash
 id: toolu_013LcNSf1s6e4HSCfsF9Kdjh
 ```json
 {
-  "command": "git add internal/strategy/bootstrap/bootstrap.go internal/strategy/bootstrap/bootstrap_test.go && git commit -q -F - <<'EOF'\nbootstrap: clearer messaging when a push times out\n\nDistinguish a timeout from a size rejection in the auto-batch notice\n(\"target push timed out\" vs \"target rejected pack\") so the user sees why\nthe retry kicked in.\n\nWhen a one-shot push hits a batchable failure (408/504/413) but no\nbatched fallback is possible — the source can't serve the protocol-v2\nfetch filter checkpointing needs — wrap the error with guidance instead\nof surfacing a bare \"http 408\", while still wrapping the original error\nfor callers that inspect it.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\nEOF\ngit log --oneline -3",
+  "command": "git add internal/strategy/bootstrap/bootstrap.go internal/strategy/bootstrap/bootstrap_test.go && git commit -q -F - <<'EOF'\nbootstrap: clearer messaging when a push times out\n\nDistinguish a timeout from a size rejection in the auto-batch notice\n(\"target push timed out\" vs \"target rejected pack\") so the user sees why\nthe retry kicked in.\n\nWhen a one-shot push hits a batchable failure (408/504/413) but no\nbatched fallback is possible — the source can't serve the protocol-v2\nfetch filter checkpointing needs — wrap the error with guidance instead\nof surfacing a bare \"http 408\", while still wrapping the original error\nfor callers that inspect it.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\nEOF\ngit log --oneline -3",
   "description": "Commit messaging changes"
 }
 ```
@@ -1396,7 +1396,7 @@ id: toolu_01HfuPFdC8virqFMfwWarwYU
 {
   "description": "Reuse review",
   "subagent_type": "general-purpose",
-  "prompt": "You are reviewing a git diff for REUSE issues only — new code that re-implements something the codebase already has. Do NOT hunt for correctness bugs.\n\nThe diff is in the Go file `internal/strategy/bootstrap/bootstrap.go` (and its test). Working dir: /Users/soph/Work/entire/devenv/git-sync\n\nHere is the diff under review:\n\n```\n[bootstrap.go changes]\n- Execute(): when one-shot push fails, calls actionableTargetPushError(p, pushErr); varies notice reason \"target rejected pack\" vs \"target push timed out\" based on isTargetPushDeadlineError(pushErr).\n- executeBatched(): sizeIssue := abortedEarly || isBatchableTargetPushError(pushErr)  (was isTargetBodyLimitError)\n- autoTargetMaxPackBytes(): gate changed to !isBatchableTargetPushError(err)\n- NEW func isTargetPushDeadlineError(err) bool: lowercases err.Error(), returns strings.Contains(msg,\"http 408\") || strings.Contains(msg,\"http 504\")\n- NEW func isBatchableTargetPushError(err) bool: isTargetBodyLimitError(err) || isTargetPushDeadlineError(err)\n- NEW func actionableTargetPushError(p Params, err error) error: if not batchable return err; if p.SourceService != nil && p.SourceService.SupportsBootstrapBatch() return err; else wrap err with guidance about protocol-v2 fetch filter.\n```\n\nExisting related code: isTargetBodyLimitError(err) already exists (matches \"body exceeded size limit\", \"http 413\", etc.); targetBodyLimit(err) parses a numeric limit.\n\nTasks:\n1. Read bootstrap.go to see existing error-classification helpers and patterns.\n2. Check whether there is an existing shared HTTP-status classification helper anywhere (grep internal/ for \"http 4\", \"StatusCode\", error classifiers in internal/gitproto, errors.go) that the new 408/504 check should reuse instead of substring-matching err.Error().\n3. […]
+  "prompt": "You are reviewing a git diff for REUSE issues only — new code that re-implements something the codebase already has. Do NOT hunt for correctness bugs.\n\nThe diff is in the Go file `internal/strategy/bootstrap/bootstrap.go` (and its test). Working dir: /home/<USER>/Work/entire/devenv/git-sync\n\nHere is the diff under review:\n\n```\n[bootstrap.go changes]\n- Execute(): when one-shot push fails, calls actionableTargetPushError(p, pushErr); varies notice reason \"target rejected pack\" vs \"target push timed out\" based on isTargetPushDeadlineError(pushErr).\n- executeBatched(): sizeIssue := abortedEarly || isBatchableTargetPushError(pushErr)  (was isTargetBodyLimitError)\n- autoTargetMaxPackBytes(): gate changed to !isBatchableTargetPushError(err)\n- NEW func isTargetPushDeadlineError(err) bool: lowercases err.Error(), returns strings.Contains(msg,\"http 408\") || strings.Contains(msg,\"http 504\")\n- NEW func isBatchableTargetPushError(err) bool: isTargetBodyLimitError(err) || isTargetPushDeadlineError(err)\n- NEW func actionableTargetPushError(p Params, err error) error: if not batchable return err; if p.SourceService != nil && p.SourceService.SupportsBootstrapBatch() return err; else wrap err with guidance about protocol-v2 fetch filter.\n```\n\nExisting related code: isTargetBodyLimitError(err) already exists (matches \"body exceeded size limit\", \"http 413\", etc.); targetBodyLimit(err) parses a numeric limit.\n\nTasks:\n1. Read bootstrap.go to see existing error-classification helpers and patterns.\n2. Check whether there is an existing shared HTTP-status classification helper anywhere (grep internal/ for \"http 4\", \"StatusCode\", error classifiers in internal/gitproto, errors.go) that the new 408/504 check should reuse instead of substring-matching err.Error().\n3. […]
 
 > TOOL
 
@@ -1406,7 +1406,7 @@ id: toolu_01CdskpMjuxzAMFhywFrqQ2C
 {
   "description": "Simplification review",
   "subagent_type": "general-purpose",
-  "prompt": "You are reviewing a git diff for SIMPLIFICATION issues only — unnecessary complexity the diff adds (redundant/derivable state, copy-paste with slight variation, deep nesting, dead code). Do NOT hunt for correctness bugs.\n\nWorking dir: /Users/soph/Work/entire/devenv/git-sync. File: internal/strategy/bootstrap/bootstrap.go and bootstrap_test.go.\n\nDiff summary:\n- NEW isTargetPushDeadlineError(err): lowercases err.Error(); returns strings.Contains(msg,\"http 408\") || strings.Contains(msg,\"http 504\").\n- NEW isBatchableTargetPushError(err): isTargetBodyLimitError(err) || isTargetPushDeadlineError(err).\n- NEW actionableTargetPushError(p Params, err error) error: guard returns err if !batchable; returns err if SourceService supports batch; else wraps err with a multi-line guidance string.\n- Execute(): adds `reason := \"target rejected pack\"; if isTargetPushDeadlineError(pushErr){reason=\"target push timed out\"}` used in both p.log and p.notice.\n- executeBatched(): sizeIssue now uses isBatchableTargetPushError.\n- Tests added: TestIsTargetPushDeadlineError, TestIsBatchableTargetPushError (table tests), TestAutoTargetMaxPackBytesTimeoutTriggersBatching, TestExecuteOneShotTimeoutWithoutBatchSupportIsActionable, plus a noBatchSource test type embedding fakeBootstrapSource.\n\nRead the actual file to verify. Look for:\n- Whether the three new helpers are over-factored or could be inlined/merged without losing clarity.\n- Whether the new TestIsBatchableTargetPushError meaningfully differs from TestIsTargetPushDeadlineError + TestIsTargetBodyLimitError or is redundant coverage.\n- Any awkward duplication in the reason-string handling.\n\nReport findings with file:line, one-line summary, concrete cost, and the simpler form. Be concise. Do NOT edit files."
+  "prompt": "You are reviewing a git diff for SIMPLIFICATION issues only — unnecessary complexity the diff adds (redundant/derivable state, copy-paste with slight variation, deep nesting, dead code). Do NOT hunt for correctness bugs.\n\nWorking dir: /home/<USER>/Work/entire/devenv/git-sync. File: internal/strategy/bootstrap/bootstrap.go and bootstrap_test.go.\n\nDiff summary:\n- NEW isTargetPushDeadlineError(err): lowercases err.Error(); returns strings.Contains(msg,\"http 408\") || strings.Contains(msg,\"http 504\").\n- NEW isBatchableTargetPushError(err): isTargetBodyLimitError(err) || isTargetPushDeadlineError(err).\n- NEW actionableTargetPushError(p Params, err error) error: guard returns err if !batchable; returns err if SourceService supports batch; else wraps err with a multi-line guidance string.\n- Execute(): adds `reason := \"target rejected pack\"; if isTargetPushDeadlineError(pushErr){reason=\"target push timed out\"}` used in both p.log and p.notice.\n- executeBatched(): sizeIssue now uses isBatchableTargetPushError.\n- Tests added: TestIsTargetPushDeadlineError, TestIsBatchableTargetPushError (table tests), TestAutoTargetMaxPackBytesTimeoutTriggersBatching, TestExecuteOneShotTimeoutWithoutBatchSupportIsActionable, plus a noBatchSource test type embedding fakeBootstrapSource.\n\nRead the actual file to verify. Look for:\n- Whether the three new helpers are over-factored or could be inlined/merged without losing clarity.\n- Whether the new TestIsBatchableTargetPushError meaningfully differs from TestIsTargetPushDeadlineError + TestIsTargetBodyLimitError or is redundant coverage.\n- Any awkward duplication in the reason-string handling.\n\nReport findings with file:line, one-line summary, concrete cost, and the simpler form. Be concise. Do NOT edit files."
 }
 ```
 
@@ -1418,7 +1418,7 @@ id: toolu_01H9MmUrfd6rpTL9wArAHuA3
 {
   "description": "Efficiency review",
   "subagent_type": "general-purpose",
-  "prompt": "You are reviewing a git diff for EFFICIENCY issues only — wasted work the diff introduces (redundant computation, repeated I/O, blocking work on hot paths, closures keeping large scopes alive). Do NOT hunt for correctness bugs.\n\nWorking dir: /Users/soph/Work/entire/devenv/git-sync. File: internal/strategy/bootstrap/bootstrap.go.\n\nDiff summary:\n- isTargetPushDeadlineError(err): calls strings.ToLower(err.Error()) then two strings.Contains.\n- isBatchableTargetPushError(err): calls isTargetBodyLimitError(err) || isTargetPushDeadlineError(err) — note isTargetBodyLimitError ALSO calls strings.ToLower(err.Error()) internally, so on a batchable check err.Error() may be lowercased twice.\n- These run only on a push-error path (not a hot loop), once per failed push attempt.\n- Execute() computes `reason` once; fine.\n\nRead the file. Assess:\n- Is the double strings.ToLower(err.Error()) in the batchable path worth avoiding given it only runs on push failure (cold path)? Be pragmatic — note it but weigh whether it's worth fixing.\n- Any other wasted work introduced.\n\nReport findings with file:line, one-line summary, concrete cost, and cheaper alternative. Be concise and pragmatic about cold-path vs hot-path. Do NOT edit files."
+  "prompt": "You are reviewing a git diff for EFFICIENCY issues only — wasted work the diff introduces (redundant computation, repeated I/O, blocking work on hot paths, closures keeping large scopes alive). Do NOT hunt for correctness bugs.\n\nWorking dir: /home/<USER>/Work/entire/devenv/git-sync. File: internal/strategy/bootstrap/bootstrap.go.\n\nDiff summary:\n- isTargetPushDeadlineError(err): calls strings.ToLower(err.Error()) then two strings.Contains.\n- isBatchableTargetPushError(err): calls isTargetBodyLimitError(err) || isTargetPushDeadlineError(err) — note isTargetBodyLimitError ALSO calls strings.ToLower(err.Error()) internally, so on a batchable check err.Error() may be lowercased twice.\n- These run only on a push-error path (not a hot loop), once per failed push attempt.\n- Execute() computes `reason` once; fine.\n\nRead the file. Assess:\n- Is the double strings.ToLower(err.Error()) in the batchable path worth avoiding given it only runs on push failure (cold path)? Be pragmatic — note it but weigh whether it's worth fixing.\n- Any other wasted work introduced.\n\nReport findings with file:line, one-line summary, concrete cost, and cheaper alternative. Be concise and pragmatic about cold-path vs hot-path. Do NOT edit files."
 }
 ```
 
@@ -1430,7 +1430,7 @@ id: toolu_01AtsBxh8G7tRVirfk8AjupJ
 {
   "description": "Altitude review",
   "subagent_type": "general-purpose",
-  "prompt": "You are reviewing a git diff for ALTITUDE issues only — is each change implemented at the right depth, or is it a fragile bandaid / special-case layered on shared infra when generalizing would be cleaner? Do NOT hunt for correctness bugs.\n\nWorking dir: /Users/soph/Work/entire/devenv/git-sync. Files: internal/strategy/bootstrap/bootstrap.go, and the HTTP layer internal/gitproto/smarthttp.go which produces errors like `http 408: <url> [headers] <body>` from httpError().\n\nContext: The fix makes git-sync treat GitHub's HTTP 408 (and 504) receive-pack timeout as a \"batchable\" push failure, routing it into the same batched-bootstrap fallback used for 413 body-limit rejections. It does this by substring-matching \"http 408\"/\"http 504\" on err.Error() in a new isTargetPushDeadlineError() in the bootstrap package.\n\nKey questions:\n1. Is substring-matching the formatted error string (\"http 408\") the right altitude, or should HTTP status classification live in the gitproto layer (smarthttp.go httpError) as a typed/sentinel error that bootstrap inspects via errors.As/errors.Is? Look at how errors.go and gitproto currently expose classified errors (e.g. RefRejectedError, ErrTargetRefMoved were recently added per git log). Is there an established pattern the new code should follow?\n2. Is conflating 408 (timeout) and 504 with 413 (size) under \"isBatchableTargetPushError\" the right generalization, or a leaky […]
+  "prompt": "You are reviewing a git diff for ALTITUDE issues only — is each change implemented at the right depth, or is it a fragile bandaid / special-case layered on shared infra when generalizing would be cleaner? Do NOT hunt for correctness bugs.\n\nWorking dir: /home/<USER>/Work/entire/devenv/git-sync. Files: internal/strategy/bootstrap/bootstrap.go, and the HTTP layer internal/gitproto/smarthttp.go which produces errors like `http 408: <url> [headers] <body>` from httpError().\n\nContext: The fix makes git-sync treat GitHub's HTTP 408 (and 504) receive-pack timeout as a \"batchable\" push failure, routing it into the same batched-bootstrap fallback used for 413 body-limit rejections. It does this by substring-matching \"http 408\"/\"http 504\" on err.Error() in a new isTargetPushDeadlineError() in the bootstrap package.\n\nKey questions:\n1. Is substring-matching the formatted error string (\"http 408\") the right altitude, or should HTTP status classification live in the gitproto layer (smarthttp.go httpError) as a typed/sentinel error that bootstrap inspects via errors.As/errors.Is? Look at how errors.go and gitproto currently expose classified errors (e.g. RefRejectedError, ErrTargetRefMoved were recently added per git log). Is there an established pattern the new code should follow?\n2. Is conflating 408 (timeout) and 504 with 413 (size) under \"isBatchableTargetPushError\" the right generalization, or a leaky […]
 
 > TOOL
 
@@ -1523,7 +1523,7 @@ id: toolu_01YADnDLgSaC3GNeUbxSsWT3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap_test.go",
   "old_string": "func TestIsBatchableTargetPushError(t *testing.T) {\n\ttests := []struct {\n\t\tname string\n\t\terr  error\n\t\twant bool\n\t}{\n\t\t{name: \"nil error\", err: nil, want: false},\n\t\t{name: \"body limit\", err: errors.New(\"body exceeded size limit 1048576\"), want: true},\n\t\t{name: \"http 413\", err: errors.New(\"http 413\"), want: true},\n\t\t{name: \"http 408 deadline\", err: errors.New(\"http 408: request timeout\"), want: true},\n\t\t{name: \"http 504 deadline\", err: errors.New(\"http 504: gateway timeout\"), want: true},\n\t\t{name: \"unrelated\", err: errors.New(\"connection refused\"), want: false},\n\t}",
   "new_string": "func TestIsBatchableTargetPushError(t *testing.T) {\n\t// Per-status edge cases are covered by TestIsTargetBodyLimitError and\n\t// TestIsTargetPushDeadlineError; this only confirms the OR wires both in.\n\ttests := []struct {\n\t\tname string\n\t\terr  error\n\t\twant bool\n\t}{\n\t\t{name: \"body limit\", err: errors.New(\"body exceeded size limit 1048576\"), want: true},\n\t\t{name: \"deadline\", err: errors.New(\"http 408: request timeout\"), want: true},\n\t\t{name: \"unrelated\", err: errors.New(\"connection refused\"), want: false},\n\t}"
 }
@@ -1534,7 +1534,7 @@ id: toolu_01YADnDLgSaC3GNeUbxSsWT3
 tool_result
 id: toolu_01YADnDLgSaC3GNeUbxSsWT3
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1562,7 +1562,7 @@ tool_use Bash
 id: toolu_01F47d9brzsQ4cvM1ipGJsVD
 ```json
 {
-  "command": "git add -A && git commit -q -m \"$(cat <<'EOF'\nbootstrap: trim redundant batchable-error test cases\n\nPer-status edge cases are already owned by TestIsTargetBodyLimitError and\nTestIsTargetPushDeadlineError; the combinator test only needs to confirm\nthe OR wires both predicates in.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\nEOF\n)\" && git log --oneline -3",
+  "command": "git add -A && git commit -q -m \"$(cat <<'EOF'\nbootstrap: trim redundant batchable-error test cases\n\nPer-status edge cases are already owned by TestIsTargetBodyLimitError and\nTestIsTargetPushDeadlineError; the combinator test only needs to confirm\nthe OR wires both predicates in.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\" && git log --oneline -3",
   "description": "Commit test trim"
 }
 ```
@@ -1613,7 +1613,7 @@ tool_use Bash
 id: toolu_01CDF5vF38SHHpiN8TMBQLUU
 ```json
 {
-  "command": "cd /Users/soph/Work/entire/devenv/git-sync\necho \"=== httpError callers ===\" && grep -rn \"httpError\\|RefRejectedError\\|asRefRejectedError\\|CommandStatusErr\" internal/gitproto/*.go | grep -v _test\necho \"=== errors.go public surface ===\" && sed -n '1,60p' errors.go | grep -n \"type\\|var\\|func\\|Error\" ",
+  "command": "cd /home/<USER>/Work/entire/devenv/git-sync\necho \"=== httpError callers ===\" && grep -rn \"httpError\\|RefRejectedError\\|asRefRejectedError\\|CommandStatusErr\" internal/gitproto/*.go | grep -v _test\necho \"=== errors.go public surface ===\" && sed -n '1,60p' errors.go | grep -n \"type\\|var\\|func\\|Error\" ",
   "description": "Trace httpError and the typed-error pattern"
 }
 ```
@@ -1656,7 +1656,7 @@ tool_use Bash
 id: toolu_01XitJiQbBVMhsoyf14axpTh
 ```json
 {
-  "command": "cd /Users/soph/Work/entire/devenv/git-sync\necho \"=== test errors that rely on http-status / body-limit STRING form ===\" && grep -rn 'http 41[0-9]\\|http 40[0-9]\\|http 50[0-9]\\|body exceeded size limit\\|too large\\|payload' --include=\"*_test.go\" internal/ cmd/ | wc -l\necho \"=== which files ===\" && grep -rln 'http 41[0-9]\\|http 50[0-9]\\|body exceeded size limit\\|too large' --include=\"*_test.go\" internal/ cmd/\necho \"=== does anything besides httpError emit 'http <code>'? ===\" && grep -rn '\"http %d\\|http %d:\\|\"http ' --include=\"*.go\" internal/ | grep -v _test",
+  "command": "cd /home/<USER>/Work/entire/devenv/git-sync\necho \"=== test errors that rely on http-status / body-limit STRING form ===\" && grep -rn 'http 41[0-9]\\|http 40[0-9]\\|http 50[0-9]\\|body exceeded size limit\\|too large\\|payload' --include=\"*_test.go\" internal/ cmd/ | wc -l\necho \"=== which files ===\" && grep -rln 'http 41[0-9]\\|http 50[0-9]\\|body exceeded size limit\\|too large' --include=\"*_test.go\" internal/ cmd/\necho \"=== does anything besides httpError emit 'http <code>'? ===\" && grep -rn '\"http %d\\|http %d:\\|\"http ' --include=\"*.go\" internal/ | grep -v _test",
   "description": "Estimate test churn and confirm sole error producer"
 }
 ```

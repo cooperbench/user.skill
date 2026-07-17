@@ -133,7 +133,7 @@ id: toolu_01GG8iuBeWWEie3yYRQVT2Gt
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md",
   "old_string": "**Verdict:** Include in Phase 1. Trivial to implement, zero LLM calls, direct SQLite read. Unique differentiator — CLAUDE.md, Cursor rules, and entire.io have no freshness enforcement mechanism.",
   "new_string": "**Verdict:** Include in Phase 1. Trivial to implement, zero LLM calls, direct SQLite read. No equivalent freshness enforcement exists in CLAUDE.md, `.cursorrules`, or competing knowledge extraction tools."
 }
@@ -144,7 +144,7 @@ id: toolu_01GG8iuBeWWEie3yYRQVT2Gt
 tool_result
 id: toolu_01GG8iuBeWWEie3yYRQVT2Gt
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

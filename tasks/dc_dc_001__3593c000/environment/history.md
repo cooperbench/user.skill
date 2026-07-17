@@ -4473,7 +4473,7 @@ Date:   Sat May 23 13:03:49 2026 +0800
     .so 备份；rejected git checkout HEAD -- 全清 + venv 回上一 accepted + 文档仅
     留教训摘要。current.md 精简 1145 → 354 行（-69%）。
     
-    Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>
+    Co-Authored-By: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>
 
 diff --git a/demo-sala/sglang/python/sglang/srt/models/minicpm.py b/demo-sala/sglang/python/sglang/srt/models/minicpm.py
 index 4866d9c..8fa9949 100644
@@ -4865,7 +4865,7 @@ Date:   Sat May 23 13:03:49 2026 +0800
     .so 备份；rejected git checkout HEAD -- 全清 + venv 回上一 accepted + 文档仅
     留教训摘要。current.md 精简 1145 → 354 行（-69%）。
     
-    Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>
+    Co-Authored-By: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>
 
 diff --git a/demo-sala/sglang/python/sglang/srt/models/minicpm.py b/demo-sala/sglang/python/sglang/srt/models/minicpm.py
 index 4866d9c..8fa9949 100644
@@ -5770,7 +5770,7 @@ Date:   Sat May 23 13:03:49 2026 +0800
     .so 备份；rejected git checkout HEAD -- 全清 + venv 回上一 accepted + 文档仅
     留教训摘要。current.md 精简 1145 → 354 行（-69%）。
     
-    Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>
+    Co-Authored-By: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>
 
  .../sglang/python/sglang/srt/models/minicpm.py     |  23 +-
  docs/gemm/so-replacements.md                       |  38 +
@@ -6596,7 +6596,7 @@ minicpm_sparse_stage2.py
     max(k1_lens[sparse_bs]) 与 fallback 不等价，影响 compressed_attention
     fast prefill 分支选择），保留原状未动。
     
-    Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>
+    Co-Authored-By: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>
 
 --
 -try:

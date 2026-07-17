@@ -67,7 +67,7 @@ tool_use Read
 id: toolu_012umg4VNBniHaJTmfdxAeh6
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/old-prs/cmd/entire/cli/status_style.go",
+  "file_path": "/home/<USER>/wks/cli/old-prs/cmd/entire/cli/status_style.go",
   "offset": 60,
   "limit": 35
 }
@@ -154,7 +154,7 @@ id: toolu_011vR3qsKFfrvgxU7z843N3D
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/old-prs/cmd/entire/cli/status_style.go",
+  "file_path": "/home/<USER>/wks/cli/old-prs/cmd/entire/cli/status_style.go",
   "old_string": "\tif f, ok := w.(*os.File); ok {\n\t\treturn term.IsTerminal(int(f.Fd()))\n\t}",
   "new_string": "\tif f, ok := w.(*os.File); ok {\n\t\treturn term.IsTerminal(int(f.Fd())) //nolint:gosec // G115: uintptr->int is safe for fd\n\t}"
 }
@@ -167,7 +167,7 @@ id: toolu_017FkCGarLj6roC5oyX7c8NN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/old-prs/cmd/entire/cli/status_style.go",
+  "file_path": "/home/<USER>/wks/cli/old-prs/cmd/entire/cli/status_style.go",
   "old_string": "\tif f, ok := w.(*os.File); ok {\n\t\tif width, _, err := term.GetSize(int(f.Fd())); err == nil && width > 0 {",
   "new_string": "\tif f, ok := w.(*os.File); ok {\n\t\tif width, _, err := term.GetSize(int(f.Fd())); err == nil && width > 0 { //nolint:gosec // G115: uintptr->int is safe for fd"
 }
@@ -178,7 +178,7 @@ id: toolu_017FkCGarLj6roC5oyX7c8NN
 tool_result
 id: toolu_011vR3qsKFfrvgxU7z843N3D
 ```
-The file /Users/gtrrz-victor/wks/cli/old-prs/cmd/entire/cli/status_style.go has been updated successfully.
+The file /home/<USER>/wks/cli/old-prs/cmd/entire/cli/status_style.go has been updated successfully.
 ```
 
 > TOOL
@@ -186,7 +186,7 @@ The file /Users/gtrrz-victor/wks/cli/old-prs/cmd/entire/cli/status_style.go has 
 tool_result
 id: toolu_017FkCGarLj6roC5oyX7c8NN
 ```
-The file /Users/gtrrz-victor/wks/cli/old-prs/cmd/entire/cli/status_style.go has been updated successfully.
+The file /home/<USER>/wks/cli/old-prs/cmd/entire/cli/status_style.go has been updated successfully.
 ```
 
 > AGENT
@@ -199,7 +199,7 @@ tool_use Read
 id: toolu_01XUCytcmV8iCXkjv9QwnyKu
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/old-prs/cmd/entire/cli/status_style.go",
+  "file_path": "/home/<USER>/wks/cli/old-prs/cmd/entire/cli/status_style.go",
   "offset": 84,
   "limit": 10
 }
@@ -229,7 +229,7 @@ id: toolu_01RmKjkoxv5xRXr8hitzBjgX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/old-prs/cmd/entire/cli/status_style.go",
+  "file_path": "/home/<USER>/wks/cli/old-prs/cmd/entire/cli/status_style.go",
   "old_string": "\t\tif width, _, err := term.GetSize(int(f.Fd())); err == nil && width > 0 {\n\t\t\treturn min(width, 80)\n\t\t}\n\t}",
   "new_string": "\t\tif width, _, err := term.GetSize(int(f.Fd())); err == nil && width > 0 { //nolint:gosec // G115: uintptr->int is safe for fd\n\t\t\treturn min(width, 80)\n\t\t}\n\t}"
 }
@@ -240,7 +240,7 @@ id: toolu_01RmKjkoxv5xRXr8hitzBjgX
 tool_result
 id: toolu_01RmKjkoxv5xRXr8hitzBjgX
 ```
-The file /Users/gtrrz-victor/wks/cli/old-prs/cmd/entire/cli/status_style.go has been updated successfully.
+The file /home/<USER>/wks/cli/old-prs/cmd/entire/cli/status_style.go has been updated successfully.
 ```
 
 > AGENT

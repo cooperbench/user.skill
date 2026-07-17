@@ -8,7 +8,7 @@ tool_use Read
 id: toolu_01FX8xQji39nUguyTVXAUnMP
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/db/app/src/client.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/db/app/src/client.ts"
 }
 ```
 
@@ -66,7 +66,7 @@ tool_use Read
 id: toolu_011qWiRGdhzQcnqG4sdXuW5K
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/app/src/app/(auth)/_actions/sign-in.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/app/src/app/(auth)/_actions/sign-in.ts"
 }
 ```
 
@@ -124,7 +124,7 @@ tool_use Read
 id: toolu_01R7PWh8Eu2F2qrCuM4KxEMU
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/platform/src/lib/project-urls.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/platform/src/lib/project-urls.ts"
 }
 ```
 
@@ -154,7 +154,7 @@ tool_use Read
 id: toolu_0177b8ZKd2YRhfECd43N5QWN
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/app/src/app/(auth)/_components/otp-island.tsx"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/app/src/app/(auth)/_components/otp-island.tsx"
 }
 ```
 
@@ -210,7 +210,7 @@ tool_use Read
 id: toolu_01WV2qFGp7zuCWQ5qedkhmq1
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/app/src/app/(auth)/_components/session-activator.tsx"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/app/src/app/(auth)/_components/session-activator.tsx"
 }
 ```
 
@@ -280,7 +280,7 @@ tool_use Bash
 id: toolu_01N61w9ttcGfQKaJKguDSXJe
 ```json
 {
-  "command": "ls /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/app/src/app/\\(auth\\)/_components/ /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/app/src/app/\\(auth\\)/_lib/ 2>&1 | head -40",
+  "command": "ls /home/<USER>/Code/@lightfastai/lightfast/apps/app/src/app/\\(auth\\)/_components/ /home/<USER>/Code/@lightfastai/lightfast/apps/app/src/app/\\(auth\\)/_lib/ 2>&1 | head -40",
   "description": "List auth components and _lib directory"
 }
 ```
@@ -290,7 +290,7 @@ id: toolu_01N61w9ttcGfQKaJKguDSXJe
 tool_result
 id: toolu_01N61w9ttcGfQKaJKguDSXJe
 ```
-/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/app/src/app/(auth)/_components/:
+/home/<USER>/Code/@lightfastai/lightfast/apps/app/src/app/(auth)/_components/:
 email-form.tsx
 error-banner.tsx
 oauth-button.tsx
@@ -299,7 +299,7 @@ separator-with-text.tsx
 session-activator.tsx
 shared
 
-/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/app/src/app/(auth)/_lib/:
+/home/<USER>/Code/@lightfastai/lightfast/apps/app/src/app/(auth)/_lib/:
 search-params.test.ts
 search-params.ts
 ```
@@ -310,7 +310,7 @@ tool_use Read
 id: toolu_011UuMqKgGgq5RVzP1BCeoXS
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/thoughts/shared/plans/2026-05-04-pr630-test-plan-execution.md"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/thoughts/shared/plans/2026-05-04-pr630-test-plan-execution.md"
 }
 ```
 
@@ -321,7 +321,7 @@ id: toolu_011UuMqKgGgq5RVzP1BCeoXS
 ```
 1	---
 2	date: 2026-05-04
-3	owner: jp@jeevanpillay.com
+3	owner: <REDACTED_EMAIL>
 4	branch: desktop-portless-runtime-batch
 5	pr: https://github.com/lightfastai/lightfast/pull/630
 6	type: test-execution
@@ -402,7 +402,7 @@ tool_use Read
 id: toolu_01FuwyQpiKNFe5Y4jytWZSAU
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/app/src/lib/project-urls.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/app/src/lib/project-urls.ts"
 }
 ```
 
@@ -432,7 +432,7 @@ tool_use Read
 id: toolu_01X8vPrU6vG9Nh6TocrEmebs
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/platform/src/lib/project-urls.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/platform/src/lib/project-urls.ts"
 }
 ```
 
@@ -464,7 +464,7 @@ id: toolu_0168vs485kyZahu4GJRmRQ4k
 {
   "description": "Find all project-urls callers",
   "subagent_type": "codebase-locator",
-  "prompt": "Find every caller of project URL / related-projects helpers across the monorepo at /Users/jeevanpillay/Code/@lightfastai/lightfast.\n\nSpecifically locate:\n\n1. Every file that imports from any of these:\n   - `apps/app/src/lib/project-urls.ts` (exports `platformUrl`)\n   - `apps/app/src/lib/microfrontends.ts` (exports `wwwUrl`)\n   - `apps/www/src/lib/project-urls.ts` (exports `appUrl`)\n   - `apps/platform/src/lib/project-urls.ts` (exports `appUrl`)\n   - `api/platform/src/lib/project-urls.ts` (exports `appUrl`)\n\n2. Every file that imports from `@lightfastai/dev-proxy/projects` (`withProject`, `resolveProjectUrl`, `resolvePortlessApplicationUrl`, `resolvePortlessMfeUrl`, `relatedProjects`, etc.).\n\n3. Every file that imports from `@lightfastai/dev-proxy/next` (`withPortlessMfeDev`, `getPortlessMfeDevOrigins`).\n\n4. Every file that imports `@vercel/related-projects` (legacy — should be zero, but verify).\n\n5. Every place in `apps/desktop/` that resolves the app origin (URL construction for sign-in handoff). I expect `apps/desktop/src/main/app-origin.ts` and `apps/desktop/src/main/auth-flow.ts` based on prior research.\n\nFor each, include the file path, line range, and a one-line description of how the URL is used (CORS allowlist, fetch target, rewrite destination, redirect target, env injection, etc.).\n\nDon't read whole files — just enumerate the call sites. Group results by the imported symbol."
+  "prompt": "Find every caller of project URL / related-projects helpers across the monorepo at /home/<USER>/Code/@lightfastai/lightfast.\n\nSpecifically locate:\n\n1. Every file that imports from any of these:\n   - `apps/app/src/lib/project-urls.ts` (exports `platformUrl`)\n   - `apps/app/src/lib/microfrontends.ts` (exports `wwwUrl`)\n   - `apps/www/src/lib/project-urls.ts` (exports `appUrl`)\n   - `apps/platform/src/lib/project-urls.ts` (exports `appUrl`)\n   - `api/platform/src/lib/project-urls.ts` (exports `appUrl`)\n\n2. Every file that imports from `@lightfastai/dev-proxy/projects` (`withProject`, `resolveProjectUrl`, `resolvePortlessApplicationUrl`, `resolvePortlessMfeUrl`, `relatedProjects`, etc.).\n\n3. Every file that imports from `@lightfastai/dev-proxy/next` (`withPortlessMfeDev`, `getPortlessMfeDevOrigins`).\n\n4. Every file that imports `@vercel/related-projects` (legacy — should be zero, but verify).\n\n5. Every place in `apps/desktop/` that resolves the app origin (URL construction for sign-in handoff). I expect `apps/desktop/src/main/app-origin.ts` and `apps/desktop/src/main/auth-flow.ts` based on prior research.\n\nFor each, include the file path, line range, and a one-line description of how the URL is used (CORS allowlist, fetch target, rewrite destination, redirect target, env injection, etc.).\n\nDon't read whole files — just enumerate the call sites. Group results by the imported symbol."
 }
 ```
 
@@ -476,7 +476,7 @@ id: toolu_011i7AGduadJBLFEXzcooH96
 {
   "description": "Analyze dev-proxy package API",
   "subagent_type": "codebase-analyzer",
-  "prompt": "Analyze the `@lightfastai/dev-proxy` package (vendored at `/Users/jeevanpillay/Code/@lightfastai/lightfast/node_modules/@lightfastai/dev-proxy/`) to document its public API.\n\nFor each of these exports, give file:line references and document:\n1. Function signature (TypeScript)\n2. What it returns (and when it returns null/undefined/empty)\n3. Which env vars / config files it reads\n4. The decision logic (e.g. \"in preview mode, returns project.preview.branch\")\n\nExports to document:\n- From `@lightfastai/dev-proxy/projects`: `withProject`, `resolveProjectUrl`, `resolvePortlessApplicationUrl`, `resolvePortlessMfeUrl`, `relatedProjects`\n- From `@lightfastai/dev-proxy/next`: `withPortlessMfeDev`, `getPortlessMfeDevOrigins`\n- Top-level `@lightfastai/dev-proxy`: any other helpers (esp. anything referenced in scripts/dev-services.mjs)\n\nThen specifically explain:\n- How `resolvePortlessMfeUrl` reads `lightfast.dev.json` to decide between `https://lightfast.localhost`, `https://<prefix>.lightfast.localhost`, and any port-suffixed forms.\n- How portless URLs differ across worktrees (the `<prefix>.<name>.<tld>` form mentioned in the research doc).\n- The HTTPS-on-443 vs HTTP-on-port behavior.\n- What `getPortlessMfeDevOrigins({ allowMissingConfig, includePort: \"both\" })` actually returns — concrete examples.\n\nRead the package's `dist/` files (compiled JS with source maps) and `package.json`. This is the ground truth for our code's behavior."
+  "prompt": "Analyze the `@lightfastai/dev-proxy` package (vendored at `/home/<USER>/Code/@lightfastai/lightfast/node_modules/@lightfastai/dev-proxy/`) to document its public API.\n\nFor each of these exports, give file:line references and document:\n1. Function signature (TypeScript)\n2. What it returns (and when it returns null/undefined/empty)\n3. Which env vars / config files it reads\n4. The decision logic (e.g. \"in preview mode, returns project.preview.branch\")\n\nExports to document:\n- From `@lightfastai/dev-proxy/projects`: `withProject`, `resolveProjectUrl`, `resolvePortlessApplicationUrl`, `resolvePortlessMfeUrl`, `relatedProjects`\n- From `@lightfastai/dev-proxy/next`: `withPortlessMfeDev`, `getPortlessMfeDevOrigins`\n- Top-level `@lightfastai/dev-proxy`: any other helpers (esp. anything referenced in scripts/dev-services.mjs)\n\nThen specifically explain:\n- How `resolvePortlessMfeUrl` reads `lightfast.dev.json` to decide between `https://lightfast.localhost`, `https://<prefix>.lightfast.localhost`, and any port-suffixed forms.\n- How portless URLs differ across worktrees (the `<prefix>.<name>.<tld>` form mentioned in the research doc).\n- The HTTPS-on-443 vs HTTP-on-port behavior.\n- What `getPortlessMfeDevOrigins({ allowMissingConfig, includePort: \"both\" })` actually returns — concrete examples.\n\nRead the package's `dist/` files (compiled JS with source maps) and `package.json`. This is the ground truth for our code's behavior."
 }
 ```
 
@@ -488,7 +488,7 @@ id: toolu_01Gd8Cwfw4gGDx286gkQKWEw
 {
   "description": "Find allowlist + CORS sites",
   "subagent_type": "codebase-locator",
-  "prompt": "Find every URL/origin allowlist or CORS check across the monorepo at /Users/jeevanpillay/Code/@lightfastai/lightfast that touches inter-app, microfrontend, related-project, or desktop origins.\n\nLook for:\n1. `Access-Control-Allow-Origin` header construction (CORS responders).\n2. Sets/arrays of `allowedOrigins` or `allowed-origins` in any TS/TSX/JS/MJS file.\n3. `serverActions.allowedOrigins` in next.config files.\n4. Server actions that validate `redirect_url` (should find `apps/app/src/app/(auth)/_actions/sign-in.ts`).\n5. CSP / `frame-ancestors` / `connect-src` directives in middleware/proxy files (esp. `apps/app/src/proxy.ts`).\n6. Anywhere that whitelists `lightfast.localhost`, `*.lightfast.localhost`, `lightfast.ai`, `*.lightfast.ai`, or related variants.\n7. tRPC server route handlers in all three apps (app, platform, www) — they may have their own CORS logic.\n\nDon't read whole files — list paths, line ranges, and a one-liner per site. Group by category (CORS, allowedOrigins, redirect validation, CSP)."
+  "prompt": "Find every URL/origin allowlist or CORS check across the monorepo at /home/<USER>/Code/@lightfastai/lightfast that touches inter-app, microfrontend, related-project, or desktop origins.\n\nLook for:\n1. `Access-Control-Allow-Origin` header construction (CORS responders).\n2. Sets/arrays of `allowedOrigins` or `allowed-origins` in any TS/TSX/JS/MJS file.\n3. `serverActions.allowedOrigins` in next.config files.\n4. Server actions that validate `redirect_url` (should find `apps/app/src/app/(auth)/_actions/sign-in.ts`).\n5. CSP / `frame-ancestors` / `connect-src` directives in middleware/proxy files (esp. `apps/app/src/proxy.ts`).\n6. Anywhere that whitelists `lightfast.localhost`, `*.lightfast.localhost`, `lightfast.ai`, `*.lightfast.ai`, or related variants.\n7. tRPC server route handlers in all three apps (app, platform, www) — they may have their own CORS logic.\n\nDon't read whole files — list paths, line ranges, and a one-liner per site. Group by category (CORS, allowedOrigins, redirect validation, CSP)."
 }
 ```
 
@@ -510,7 +510,7 @@ id: toolu_015MM3pTYbMnpYWS6DUdxttE
 {
   "description": "Find desktop app-origin callers",
   "subagent_type": "codebase-analyzer",
-  "prompt": "In `/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/`, document every place that constructs, resolves, or consumes the \"app origin\" / lightfast.ai URL — i.e. anywhere that needs to know where the Next.js `apps/app` lives.\n\nSpecifically:\n1. `apps/desktop/src/main/app-origin.ts` — read fully and document every branch (prod/beta/dev) and what env vars / runtime config it reads.\n2. `apps/desktop/src/main/auth-flow.ts` — find every `shell.openExternal`, every URL construction involving the app origin.\n3. Any `getRuntimeConfig()` call sites in main and renderer.\n4. Any `LIGHTFAST_APP_ORIGIN` references anywhere in `apps/desktop/`.\n5. The renderer side (`apps/desktop/src/renderer/`) — does any code there build origin URLs or only consume tokens?\n\nFor each call site, give file:line and a one-line \"what it does with the origin\" description.\n\nThen answer the meta-question: **\"Does the desktop app care about the apps/platform URL, or only apps/app?\"** — i.e. is platform a concern for desktop at all?\n\nBe specific with file:line refs."
+  "prompt": "In `/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/`, document every place that constructs, resolves, or consumes the \"app origin\" / lightfast.ai URL — i.e. anywhere that needs to know where the Next.js `apps/app` lives.\n\nSpecifically:\n1. `apps/desktop/src/main/app-origin.ts` — read fully and document every branch (prod/beta/dev) and what env vars / runtime config it reads.\n2. `apps/desktop/src/main/auth-flow.ts` — find every `shell.openExternal`, every URL construction involving the app origin.\n3. Any `getRuntimeConfig()` call sites in main and renderer.\n4. Any `LIGHTFAST_APP_ORIGIN` references anywhere in `apps/desktop/`.\n5. The renderer side (`apps/desktop/src/renderer/`) — does any code there build origin URLs or only consume tokens?\n\nFor each call site, give file:line and a one-line \"what it does with the origin\" description.\n\nThen answer the meta-question: **\"Does the desktop app care about the apps/platform URL, or only apps/app?\"** — i.e. is platform a concern for desktop at all?\n\nBe specific with file:line refs."
 }
 ```
 
@@ -533,7 +533,7 @@ The desktop app has a single, central concept of "app origin" — the base URL o
 
 ### 1. Origin Resolution — `app-origin.ts`
 
-`/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/app-origin.ts`
+`/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/app-origin.ts`
 
 **Three branches inside `resolveDesktopAppOrigin(buildFlavor: BuildFlavor)`:**
 
@@ -561,10 +561,10 @@ Now I have a complete picture. Here are all the findings:
 ### 1. `platformUrl` — exported from `apps/app/src/lib/project-urls.ts`
 
 **Definition:**
-- `/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/app/src/lib/project-urls.ts` — lines 1, 7: imports `withProject`, exports `platformUrl` via `withProject({ projectName: "lightfast-platform" })`
+- `/home/<USER>/Code/@lightfastai/lightfast/apps/app/src/lib/project-urls.ts` — lines 1, 7: imports `withProject`, exports `platformUrl` via `withProject({ projectName: "lightfast-platform" })`
 
 **Consumers of `platformUrl`:**
-- `/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/app/next.config.ts` — lines 103, 107: rewrite destination (`/api/connect/:path*` → `${platformUrl}/api/connect/:path*` and `/api/ingest/:path*` → `${platformUrl}/api/ingest/:path*`)
+- `/home/<USER>/Code/@lightfastai/lightfast/apps/app/next.config.ts` — lines 103, 107: rewrite destination (`/api/connect/:path*` → `${platformUrl}/api/connect/:path*` and `/api/ingest/:path*` → `${platformUrl}/api/ingest/:path*`)
 
 Note: `apps/app/next.config.ts` line 25 re-derives `platformUrl` directly via `withProject` (not importing from `lib/project-urls.ts`) — so there are two separate `platformUrl` derivations, one in the lib file (unused externally) and one inline in `next.config.ts`.
 
@@ -573,28 +573,28 @@ Note: `apps/app/next.config.ts` line 25 re-derives `platformUrl` directly via `w
 ### 2. `wwwUrl` — exported from `apps/app/src/lib/microfrontends.ts`
 
 **Definition:**
-- `/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/app/src/lib/microfrontends.ts` — lines 1, 3: imports `resolveProjectUrl`, exports `wwwUrl = resolveProjectUrl("lightfast-www")`
+- `/home/<USER>/Code/@lightfastai/lightfast/apps/app/src/lib/microfrontends.ts` — lines 1, 3: imports `resolveProjectUrl`, exports `wwwUrl = resolveProjectUrl("lightfast-www")`
 
 **Consumers of `wwwUrl`:**
-- `/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/app/src/app/(trpc)/api/trpc/[trpc]/route.ts` — lines 5, 13: CORS allowlist (`new Set<string>([wwwUrl])` for tRPC handler allowed origins)
+- `/home/<USER>/Code/@lightfastai/lightfast/apps/app/src/app/(trpc)/api/trpc/[trpc]/route.ts` — lines 5, 13: CORS allowlist (`new Set<string>([wwwUrl])` for tRPC handler allowed origins)
 
 ---
 
 ### 3. `appUrl` — exported from `apps/www/src/lib/project-urls.ts`
 
 **Definition:**
-- `/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/www/src/lib/project-urls.ts` — lines 1, 4: imports `resolveProjectUrl`, exports `appUrl = resolveProjectUrl("lightfast-app")`
+- `/home/<USER>/Code/@lightfastai/lightfast/apps/www/src/lib/project-urls.ts` — lines 1, 4: imports `resolveProjectUrl`, exports `appUrl = resolveProjectUrl("lightfast-app")`
 
 **Consumers:**
-- `/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/www/src/app/(app)/(content)/docs/(general)/layout.tsx` — lines 12, 19: redirect target (`signInUrl = \`${appUrl}/sign-in\``)
-- `/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/www/src/app/(app)/(content)/docs/(api)/layout.tsx` — lines 12, 15: redirect target (`signInUrl = \`${appUrl}/sign-in\``)
+- `/home/<USER>/Code/@lightfastai/lightfast/apps/www/src/app/(app)/(content)/docs/(general)/layout.tsx` — lines 12, 19: redirect target (`signInUrl = \`${appUrl}/sign-in\``)
+- `/home/<USER>/Code/@lightfastai/lightfast/apps/www/src/app/(app)/(content)/docs/(api)/layout.tsx` — lines 12, 15: redirect target (`signInUrl = \`${appUrl}/sign-in\``)
 
 ---
 
 ### 4. `appUrl` — exported from `apps/platform/src/lib/project-urls.ts`
 
 **Definition:**
-- `/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/platform/src/lib/project-urls.ts` — lines 1, 9–11: imports `withProject`, exports […]
+- `/home/<USER>/Code/@lightfastai/lightfast/apps/platform/src/lib/project-urls.ts` — lines 1, 9–11: imports `withProject`, exports […]
 
 > TOOL
 
@@ -633,13 +633,13 @@ Every API helper that needs the Portless config calls `loadPortlessMfeConfigSync
 | `microfrontends.apps` | `{}` |
 | `microfrontends.proxyPortRange` | `{ min: 9000, max: 9999 }` |
 
-The full schema is at `/Users/jeevanpillay/Code/@lightfastai/lightfast/node_modules/@lightfastai/dev-proxy/schema/config.schema.json`.
+The full schema is at `/home/<USER>/Code/@lightfastai/lightfast/node_modules/@lightfastai/dev-proxy/schema/config.schema.json`.
 
 ---
 
 ### Entrypoint: `@lightfastai/dev-proxy/projects`
 
-Source file: `/Users/jeevanpillay/Code/@lightfastai/lightfast/node_modules/@lightfastai/dev-proxy/dist/projects.js`
+Source file: `/home/<USER>/Code/@lightfastai/lightfast/node_modules/@lightfastai/dev-proxy/dist/projects.js`
 
 ---
 
@@ -683,27 +683,27 @@ Here is the complete map of every URL/origin allowlist and CORS check across the
 
 ## CORS — `Access-Control-Allow-Origin` Responders
 
-**`/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/app/src/app/(trpc)/api/trpc/[trpc]/route.ts`**
+**`/home/<USER>/Code/@lightfastai/lightfast/apps/app/src/app/(trpc)/api/trpc/[trpc]/route.ts`**
 - Lines 13–47: Full CORS handler. `allowedOrigins` is a `Set` seeded with `wwwUrl` (resolved from `resolveProjectUrl("lightfast-www")`). In production: only `wwwUrl`. In development: also any `localhost` or `*.localhost` origin (line 15–32 `isDevelopmentLocalOrigin` helper). Sets `Access-Control-Allow-Origin`, `Allow-Methods`, `Allow-Headers`, `Vary: Origin`, `Allow-Credentials: true`.
 
-**`/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/platform/src/app/(trpc)/api/trpc/[trpc]/route.ts`**
+**`/home/<USER>/Code/@lightfastai/lightfast/apps/platform/src/app/(trpc)/api/trpc/[trpc]/route.ts`**
 - Lines 8–24: Strict single-origin check. `origin !== appUrl` (line 11) — only the app (`lightfast.ai` in prod, `http://localhost:3024` in dev, via `withProject("lightfast-app")`). No development wildcard. Sets same four CORS headers.
 
 ---
 
 ## `allowedOrigins` Arrays / Sets
 
-**`/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/app/src/app/(trpc)/api/trpc/[trpc]/route.ts`**
+**`/home/<USER>/Code/@lightfastai/lightfast/apps/app/src/app/(trpc)/api/trpc/[trpc]/route.ts`**
 - Line 13: `const allowedOrigins = new Set<string>([wwwUrl])` — runtime `Set`, not a static literal.
 
-**`/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/app/next.config.ts`**
+**`/home/<USER>/Code/@lightfastai/lightfast/apps/app/next.config.ts`**
 - Lines 91–97: `experimental.serverActions.allowedOrigins`. Dev: `["localhost:*", ...portlessMfeDevOrigins]`. Prod: `["lightfast.ai", "*.lightfast.ai"]`. `portlessMfeDevOrigins` is computed at config-build time by `getPortlessMfeDevOrigins({ allowMissingConfig: true, includePort: "both" })` from `@lightfastai/dev-proxy/next` (line 16–19), which reads `lightfast.dev.json` and expands to `lightfast.<tld>` and `<app>.lightfast.<tld>` hostnames for every app in `microfrontends.json`.
 
 ---
 
 ## Origin Resolution — `project-urls.ts` Files (the single source of truth for inter-app origins)
 
-**`/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/app/src/lib/microfrontends.ts`**
+**`/home/<USER>/Code/@lightfastai/lightfast/apps/app/src/lib/microfrontends.ts`**
 - Line 3: `wwwUrl = resolveProjectUrl("lightfast-www")` — used as the sole production allowed-origin for the app's tRPC CORS […]
 
 > AGENT
@@ -716,7 +716,7 @@ tool_use Bash
 id: toolu_01Jxac9CxtcseKsDJrmTFgHh
 ```json
 {
-  "command": "ls /Users/jeevanpillay/Code/@lightfastai/lightfast/packages/url-utils/src/ 2>/dev/null && echo \"---\" && cat /Users/jeevanpillay/Code/@lightfastai/lightfast/packages/url-utils/src/index.ts 2>/dev/null | head -40 && echo \"---vercel.json---\" && cat /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/app/vercel.json /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/www/vercel.json /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/platform/vercel.json 2>/dev/null",
+  "command": "ls /home/<USER>/Code/@lightfastai/lightfast/packages/url-utils/src/ 2>/dev/null && echo \"---\" && cat /home/<USER>/Code/@lightfastai/lightfast/packages/url-utils/src/index.ts 2>/dev/null | head -40 && echo \"---vercel.json---\" && cat /home/<USER>/Code/@lightfastai/lightfast/apps/app/vercel.json /home/<USER>/Code/@lightfastai/lightfast/apps/www/vercel.json /home/<USER>/Code/@lightfastai/lightfast/apps/platform/vercel.json 2>/dev/null",
   "description": "Inspect @repo/url-utils and vercel.json files"
 }
 ```
@@ -735,7 +735,7 @@ tool_use Bash
 id: toolu_01RHiDbq5nogXoYYGTwMCWP4
 ```json
 {
-  "command": "ls /Users/jeevanpillay/Code/@lightfastai/lightfast/packages/url-utils/src/ 2>/dev/null; echo \"---index.ts---\"; cat /Users/jeevanpillay/Code/@lightfastai/lightfast/packages/url-utils/src/index.ts 2>/dev/null; echo \"---app/vercel.json---\"; cat /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/app/vercel.json 2>/dev/null; echo \"---www/vercel.json---\"; cat /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/www/vercel.json 2>/dev/null; echo \"---platform/vercel.json---\"; cat /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/platform/vercel.json 2>/dev/null; echo \"---packages list---\"; ls /Users/jeevanpillay/Code/@lightfastai/lightfast/packages/ 2>/dev/null | head -30",
+  "command": "ls /home/<USER>/Code/@lightfastai/lightfast/packages/url-utils/src/ 2>/dev/null; echo \"---index.ts---\"; cat /home/<USER>/Code/@lightfastai/lightfast/packages/url-utils/src/index.ts 2>/dev/null; echo \"---app/vercel.json---\"; cat /home/<USER>/Code/@lightfastai/lightfast/apps/app/vercel.json 2>/dev/null; echo \"---www/vercel.json---\"; cat /home/<USER>/Code/@lightfastai/lightfast/apps/www/vercel.json 2>/dev/null; echo \"---platform/vercel.json---\"; cat /home/<USER>/Code/@lightfastai/lightfast/apps/platform/vercel.json 2>/dev/null; echo \"---packages list---\"; ls /home/<USER>/Code/@lightfastai/lightfast/packages/ 2>/dev/null | head -30",
   "description": "Inspect url-utils and vercel.json files"
 }
 ```
@@ -792,7 +792,7 @@ tool_use Bash
 id: toolu_01QhJMXLGTuPmHJasGKJCwjV
 ```json
 {
-  "command": "find /Users/jeevanpillay/Code/@lightfastai/lightfast/packages -maxdepth 2 -name \"url-utils\" -type d 2>/dev/null; find /Users/jeevanpillay/Code/@lightfastai/lightfast -maxdepth 4 -name \"package.json\" -path \"*url-utils*\" 2>/dev/null | head -5",
+  "command": "find /home/<USER>/Code/@lightfastai/lightfast/packages -maxdepth 2 -name \"url-utils\" -type d 2>/dev/null; find /home/<USER>/Code/@lightfastai/lightfast -maxdepth 4 -name \"package.json\" -path \"*url-utils*\" 2>/dev/null | head -5",
   "description": "Locate url-utils package"
 }
 ```
@@ -811,7 +811,7 @@ tool_use Bash
 id: toolu_01PeRRf8SANwcWQvEdmM2zG8
 ```json
 {
-  "command": "find /Users/jeevanpillay/Code/@lightfastai/lightfast -maxdepth 5 -name \"package.json\" -not -path \"*/node_modules/*\" 2>/dev/null | xargs grep -l '\"name\": \"@repo/url-utils\"' 2>/dev/null | head -3",
+  "command": "find /home/<USER>/Code/@lightfastai/lightfast -maxdepth 5 -name \"package.json\" -not -path \"*/node_modules/*\" 2>/dev/null | xargs grep -l '\"name\": \"@repo/url-utils\"' 2>/dev/null | head -3",
   "description": "Locate @repo/url-utils package"
 }
 ```

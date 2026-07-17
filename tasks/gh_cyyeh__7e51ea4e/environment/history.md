@@ -22,7 +22,7 @@ put skills,memories in s3-compatible storage, backend sends something like STS t
 
 > SYSTEM
 
-Base directory for this skill: /Users/cyyeh/.claude/plugins/cache/superpowers-marketplace/superpowers/4.3.1/skills/brainstorming
+Base directory for this skill: /home/<USER>/.claude/plugins/cache/superpowers-marketplace/superpowers/4.3.1/skills/brainstorming
 
 # Brainstorming Ideas Into Designs
 

@@ -2,7 +2,7 @@
 
 <system_instruction>
 You are working inside Conductor, a Mac app that lets the user run many coding agents in parallel.
-Your work should take place in the /Users/marcus/conductor/workspaces/brain-v1/munich-v2 directory (unless otherwise directed), which has been set up for you to work in.
+Your work should take place in the /home/<USER>/conductor/workspaces/brain-v1/munich-v2 directory (unless otherwise directed), which has been set up for you to work in.
 Each workspace has a .context directory (gitignored) where you can save files to collaborate with other agents.
 The target branch for this workspace is main. Use this for actions like creating new PRs, bisecting, etc., unless you're told otherwise.
 
@@ -22,7 +22,7 @@ id: toolu_01MiN7VmouSndgMZwvv9Lur3
 ```json
 {
   "skill": "nw-bugfix",
-  "args": "when i assign a task to a sandboxed agent, then it fails with:\n\nfrontend:\n{\"error\":\"internal server error\"}\n\nbackend:\n[withTracing] orchestrator.assign error: MCP auth intent is \"pending_veto\" (expected \"authorized\") Error: MCP auth intent is \"pending_veto\" (expected \"authorized\")\n    at <anonymous> (/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server/orchestrator/routes.ts:465:17)\n    at processTicksAndRejections (native:7:39)"
+  "args": "when i assign a task to a sandboxed agent, then it fails with:\n\nfrontend:\n{\"error\":\"internal server error\"}\n\nbackend:\n[withTracing] orchestrator.assign error: MCP auth intent is \"pending_veto\" (expected \"authorized\") Error: MCP auth intent is \"pending_veto\" (expected \"authorized\")\n    at <anonymous> (/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server/orchestrator/routes.ts:465:17)\n    at processTicksAndRejections (native:7:39)"
 }
 ```
 
@@ -87,7 +87,7 @@ tool_use Read
 id: toolu_015UHAQviyZWUp9ufEpbWnXb
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server/orchestrator/routes.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server/orchestrator/routes.ts",
   "offset": 440,
   "limit": 50
 }
@@ -156,7 +156,7 @@ tool_use Read
 id: toolu_012NE68PwZir3US5eoDFkRJH
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server/orchestrator/routes.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server/orchestrator/routes.ts",
   "offset": 420,
   "limit": 25
 }
@@ -201,7 +201,7 @@ id: toolu_01Tpx1NohAGwHdN66jvQAEvK
 ```json
 {
   "pattern": "pending_veto",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server",
   "output_mode": "content",
   "-n": true
 }
@@ -245,7 +245,7 @@ tool_use Read
 id: toolu_01BZqzV5TH3URL7FusbHqnJ7
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server/mcp/create-intent-handler.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server/mcp/create-intent-handler.ts",
   "offset": 240,
   "limit": 80
 }
@@ -311,7 +311,7 @@ id: toolu_012mCt7i8Tuep8crJTE5dG2m
 ```json
 {
   "pattern": "submitIntentForAuthorization",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server",
   "output_mode": "content",
   "-n": true
 }
@@ -334,7 +334,7 @@ tool_use Read
 id: toolu_016bqoFydw4u3fXcws1eF2tx
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server/oauth/intent-submission.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server/oauth/intent-submission.ts",
   "offset": 162,
   "limit": 60
 }
@@ -406,7 +406,7 @@ tool_use Read
 id: toolu_01DyARRPnCsLrHBQwS98bnNW
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server/oauth/intent-submission.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server/oauth/intent-submission.ts",
   "offset": 220,
   "limit": 60
 }
@@ -477,7 +477,7 @@ tool_use Read
 id: toolu_019YRvTXvsd7PtubQ9ZcFsm6
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server/oauth/intent-submission.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server/oauth/intent-submission.ts",
   "offset": 280,
   "limit": 50
 }
@@ -546,7 +546,7 @@ tool_use Read
 id: toolu_01YFGCYicpH5GL67giHBaFjb
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server/intent/intent-evaluation.ts"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server/intent/intent-evaluation.ts"
 }
 ```
 
@@ -621,7 +621,7 @@ tool_use Read
 id: toolu_01D7LP4uJq3ugAYk9hzhWEwX
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server/intent/risk-router.ts"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server/intent/risk-router.ts"
 }
 ```
 

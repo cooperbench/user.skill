@@ -64,7 +64,7 @@ tool_use Read
 id: toolu_01SUaCHbiXezfNRo6SEFrzCa
 ```json
 {
-  "file_path": "/home/mohmqat/Work/week-5-project-express/src/controllers/anime-details.js"
+  "file_path": "/home/<USER>/Work/week-5-project-express/src/controllers/anime-details.js"
 }
 ```
 
@@ -96,7 +96,7 @@ tool_use Read
 id: toolu_01RZXSHvA3gaAbv96bBJ3w3m
 ```json
 {
-  "file_path": "/home/mohmqat/Work/week-5-project-express/public/detail/app.js"
+  "file_path": "/home/<USER>/Work/week-5-project-express/public/detail/app.js"
 }
 ```
 
@@ -105,7 +105,7 @@ id: toolu_01RZXSHvA3gaAbv96bBJ3w3m
 tool_result ERROR
 id: toolu_01RZXSHvA3gaAbv96bBJ3w3m
 ```
-File does not exist. Note: your current working directory is /home/mohmqat/Work/week-5-project-express.
+File does not exist. Note: your current working directory is /home/<USER>/Work/week-5-project-express.
 ```
 
 > TOOL
@@ -150,7 +150,7 @@ tool_use Bash
 id: toolu_01F2pzYaT8JLLQYsPZYUw6Qi
 ```json
 {
-  "command": "ls /home/mohmqat/Work/week-5-project-express/public/",
+  "command": "ls /home/<USER>/Work/week-5-project-express/public/",
   "description": "List public directory contents"
 }
 ```
@@ -177,7 +177,7 @@ tool_use Bash
 id: toolu_01LQh98aeo28W612QLBVMgMT
 ```json
 {
-  "command": "ls /home/mohmqat/Work/week-5-project-express/public/entity/",
+  "command": "ls /home/<USER>/Work/week-5-project-express/public/entity/",
   "description": "List entity directory contents"
 }
 ```

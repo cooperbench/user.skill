@@ -8,14 +8,14 @@ Yes.
 
 > DEVELOPER
 
-Read the full megaplan phase prompt from this file and follow it exactly: /Users/user_c042661f/Documents/Veas/.megaplan/plans/hector-commitments-sprint/critique_shannon_prompt.txt. Your final response must satisfy the structured output contract in that file. Do not summarize the file; execute its instructions.
+Read the full megaplan phase prompt from this file and follow it exactly: /home/<USER>/Documents/Veas/.megaplan/plans/hector-commitments-sprint/critique_shannon_prompt.txt. Your final response must satisfy the structured output contract in that file. Do not summarize the file; execute its instructions.
 
 > TOOL
 
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/.megaplan/plans/hector-commitments-sprint/critique_shannon_prompt.txt"
+  "file_path": "/home/<USER>/Documents/Veas/.megaplan/plans/hector-commitments-sprint/critique_shannon_prompt.txt"
 }
 ```
 
@@ -31,7 +31,7 @@ File content (41349 tokens) exceeds maximum allowed tokens (25000). Use offset a
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/.megaplan/plans/hector-commitments-sprint/critique_shannon_prompt.txt",
+  "file_path": "/home/<USER>/Documents/Veas/.megaplan/plans/hector-commitments-sprint/critique_shannon_prompt.txt",
   "limit": 200
 }
 ```
@@ -47,7 +47,7 @@ tool_result Read
 5	You are an independent reviewer. Critique the plan against the actual repository.
 6	
 7	        Project directory:
-8	        /Users/user_c042661f/Documents/Veas
+8	        /home/<USER>/Documents/Veas
 9	
 10	
 11	
@@ -61,7 +61,7 @@ tool_result Read
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/.megaplan/plans/hector-commitments-sprint/critique_shannon_prompt.txt",
+  "file_path": "/home/<USER>/Documents/Veas/.megaplan/plans/hector-commitments-sprint/critique_shannon_prompt.txt",
   "offset": 200,
   "limit": 400
 }
@@ -110,7 +110,7 @@ tool_result Read
 tool_use Bash
 ```json
 {
-  "command": "wc -l /Users/user_c042661f/Documents/Veas/.megaplan/plans/hector-commitments-sprint/critique_shannon_prompt.txt"
+  "command": "wc -l /home/<USER>/Documents/Veas/.megaplan/plans/hector-commitments-sprint/critique_shannon_prompt.txt"
 }
 ```
 
@@ -118,7 +118,7 @@ tool_use Bash
 
 tool_result Bash
 ```
-1422 /Users/user_c042661f/Documents/Veas/.megaplan/plans/hector-commitments-sprint/critique_shannon_prompt.txt
+1422 /home/<USER>/Documents/Veas/.megaplan/plans/hector-commitments-sprint/critique_shannon_prompt.txt
 ```
 
 > TOOL
@@ -126,7 +126,7 @@ tool_result Bash
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/.megaplan/plans/hector-commitments-sprint/critique_shannon_prompt.txt",
+  "file_path": "/home/<USER>/Documents/Veas/.megaplan/plans/hector-commitments-sprint/critique_shannon_prompt.txt",
   "offset": 1200,
   "limit": 222
 }
@@ -162,7 +162,7 @@ tool_result Read
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/.megaplan/plans/hector-commitments-sprint/critique_shannon_prompt.txt",
+  "file_path": "/home/<USER>/Documents/Veas/.megaplan/plans/hector-commitments-sprint/critique_shannon_prompt.txt",
   "offset": 1417
 }
 ```
@@ -185,7 +185,7 @@ tool_result Read
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/.megaplan/plans/hector-commitments-sprint/critique_output.json"
+  "file_path": "/home/<USER>/Documents/Veas/.megaplan/plans/hector-commitments-sprint/critique_output.json"
 }
 ```
 
@@ -305,7 +305,7 @@ validation
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/migrations/0033_pregnancy_topic.sql"
+  "file_path": "/home/<USER>/Documents/Veas/migrations/0033_pregnancy_topic.sql"
 }
 ```
 
@@ -334,7 +334,7 @@ tool_result Read
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/bots/tante_rosi.py"
+  "file_path": "/home/<USER>/Documents/Veas/app/bots/tante_rosi.py"
 }
 ```
 
@@ -385,7 +385,7 @@ tool_result Read
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/docs/fitness-bot-commitments-plan.md"
+  "file_path": "/home/<USER>/Documents/Veas/docs/fitness-bot-commitments-plan.md"
 }
 ```
 
@@ -428,7 +428,7 @@ tool_result Read
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/bots/registry.py"
+  "file_path": "/home/<USER>/Documents/Veas/app/bots/registry.py"
 }
 ```
 
@@ -496,7 +496,7 @@ tool_result Read
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/hot_context_solo.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/hot_context_solo.py",
   "offset": 1,
   "limit": 80
 }
@@ -562,7 +562,7 @@ tool_result Read
 tool_use Bash
 ```json
 {
-  "command": "grep -n \"tante_rosi\\|pregnancy\\|bot_id\" /Users/user_c042661f/Documents/Veas/app/services/hot_context_solo.py | head -40"
+  "command": "grep -n \"tante_rosi\\|pregnancy\\|bot_id\" /home/<USER>/Documents/Veas/app/services/hot_context_solo.py | head -40"
 }
 ```
 
@@ -617,7 +617,7 @@ tool_result Bash
 tool_use Bash
 ```json
 {
-  "command": "grep -rn \"TOOL_DISPATCH\\b\" /Users/user_c042661f/Documents/Veas/app/services/tools/registry.py | head; grep -n \"^def \\|^async def \\|TOOL_DISPATCH\" /Users/user_c042661f/Documents/Veas/app/services/tools/registry.py | head -50"
+  "command": "grep -rn \"TOOL_DISPATCH\\b\" /home/<USER>/Documents/Veas/app/services/tools/registry.py | head; grep -n \"^def \\|^async def \\|TOOL_DISPATCH\" /home/<USER>/Documents/Veas/app/services/tools/registry.py | head -50"
 }
 ```
 
@@ -625,8 +625,8 @@ tool_use Bash
 
 tool_result Bash
 ```
-/Users/user_c042661f/Documents/Veas/app/services/tools/registry.py:123:TOOL_DISPATCH: dict[str, ToolFn] = {
-/Users/user_c042661f/Documents/Veas/app/services/tools/registry.py:484:    fn = TOOL_DISPATCH.get(name)
+/home/<USER>/Documents/Veas/app/services/tools/registry.py:123:TOOL_DISPATCH: dict[str, ToolFn] = {
+/home/<USER>/Documents/Veas/app/services/tools/registry.py:484:    fn = TOOL_DISPATCH.get(name)
 33:async def _consult_perspective(ctx: TurnContext, args: BaseModel) -> BaseModel:
 39:async def _update_turn_plan(
 123:TOOL_DISPATCH: dict[str, ToolFn] = {
@@ -644,7 +644,7 @@ tool_result Bash
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/tools/registry.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/tools/registry.py",
   "offset": 123,
   "limit": 170
 }
@@ -727,7 +727,7 @@ tool_result Read
 tool_use Bash
 ```json
 {
-  "command": "grep -n \"topic_id\\|bot_id\\|def \" /Users/user_c042661f/Documents/Veas/app/services/tools/scope_guard.py | head -40"
+  "command": "grep -n \"topic_id\\|bot_id\\|def \" /home/<USER>/Documents/Veas/app/services/tools/scope_guard.py | head -40"
 }
 ```
 
@@ -749,7 +749,7 @@ tool_result Bash
 tool_use Bash
 ```json
 {
-  "command": "grep -n \"STAGING\\|build_tante_rosi\\|tante_rosi\\|register\" /Users/user_c042661f/Documents/Veas/app/bots/registry.py | head; ls /Users/user_c042661f/Documents/Veas/app/bots/prompts/"
+  "command": "grep -n \"STAGING\\|build_tante_rosi\\|tante_rosi\\|register\" /home/<USER>/Documents/Veas/app/bots/registry.py | head; ls /home/<USER>/Documents/Veas/app/bots/prompts/"
 }
 ```
 
@@ -780,7 +780,7 @@ tante_rosi.py
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/bots/prompts/tante_rosi.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/bots/prompts/tante_rosi.py",
   "offset": 1,
   "limit": 30
 }
@@ -827,7 +827,7 @@ tool_result Read
 tool_use Bash
 ```json
 {
-  "command": "grep -n \"tool_allowlist\\|tool_schema\\|set_pregnancy_edd\" /Users/user_c042661f/Documents/Veas/app/bots/mediator.py /Users/user_c042661f/Documents/Veas/app/bots/coach.py 2>/dev/null | head -30"
+  "command": "grep -n \"tool_allowlist\\|tool_schema\\|set_pregnancy_edd\" /home/<USER>/Documents/Veas/app/bots/mediator.py /home/<USER>/Documents/Veas/app/bots/coach.py 2>/dev/null | head -30"
 }
 ```
 
@@ -835,9 +835,9 @@ tool_use Bash
 
 tool_result Bash
 ```
-/Users/user_c042661f/Documents/Veas/app/bots/coach.py:64:    write_tools, which doesn't import coach).  The tool_allowlist is the
-/Users/user_c042661f/Documents/Veas/app/bots/coach.py:80:        tool_allowlist=frozenset(TOOL_DISPATCH.keys())
-/Users/user_c042661f/Documents/Veas/app/bots/coach.py:92:                "set_pregnancy_edd",
+/home/<USER>/Documents/Veas/app/bots/coach.py:64:    write_tools, which doesn't import coach).  The tool_allowlist is the
+/home/<USER>/Documents/Veas/app/bots/coach.py:80:        tool_allowlist=frozenset(TOOL_DISPATCH.keys())
+/home/<USER>/Documents/Veas/app/bots/coach.py:92:                "set_pregnancy_edd",
 ```
 
 > TOOL
@@ -845,7 +845,7 @@ tool_result Bash
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/bots/coach.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/bots/coach.py",
   "offset": 75,
   "limit": 25
 }
@@ -887,7 +887,7 @@ tool_result Read
 tool_use Bash
 ```json
 {
-  "command": "grep -n \"tool_allowlist\\|frozenset\" /Users/user_c042661f/Documents/Veas/app/bots/mediator.py | head -20"
+  "command": "grep -n \"tool_allowlist\\|frozenset\" /home/<USER>/Documents/Veas/app/bots/mediator.py | head -20"
 }
 ```
 
@@ -904,7 +904,7 @@ tool_result Bash
 tool_use Bash
 ```json
 {
-  "command": "grep -n \"tool_allowlist\" /Users/user_c042661f/Documents/Veas/app/bots/base.py /Users/user_c042661f/Documents/Veas/app/bots/mediator.py | head"
+  "command": "grep -n \"tool_allowlist\" /home/<USER>/Documents/Veas/app/bots/base.py /home/<USER>/Documents/Veas/app/bots/mediator.py | head"
 }
 ```
 
@@ -912,7 +912,7 @@ tool_use Bash
 
 tool_result Bash
 ```
-/Users/user_c042661f/Documents/Veas/app/bots/base.py:58:    tool_allowlist: frozenset[str] | None = None
+/home/<USER>/Documents/Veas/app/bots/base.py:58:    tool_allowlist: frozenset[str] | None = None
 ```
 
 > TOOL
@@ -920,14 +920,14 @@ tool_result Bash
 tool_use Write
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/.megaplan/plans/hector-commitments-sprint/critique_output.json",
+  "file_path": "/home/<USER>/Documents/Veas/.megaplan/plans/hector-commitments-sprint/critique_output.json",
   "content": "{\n  \"checks\": [\n    {\n      \"id\": \"issue_hints\",\n      \"question\": \"Did the work fully address the issue hints, user notes, and approved plan requirements?\",\n      \"findings\": [\n        {\"detail\": \"docs/fitness-bot-commitments-plan.md §Locked Decisions and the commitments DDL require `bot_id text NOT NULL REFERENCES mediator.bots(id)`. The plan's Step 1 says only 'Insert the Hector row into mediator.bots (mirroring how tante_rosi / mediator are seeded — verify in existing seed/migration; if bots table seeding lives elsewhere, add Hector there).' This is unresolved — there is no Hector row inserted by any prior migration, and inspection of registry.populate_tante_rosi_spec_from_db comments shows tante_rosi's prod bots row was still pending (Phase 2/U3). Without an explicit Hector bots-row INSERT in 0037, any later commitments/events insert (Hector-only tools) will fail the FK at runtime. Plan should commit to an explicit `INSERT INTO mediator.bots (id, display_name) VALUES ('hector', 'Hector') ON CONFLICT DO NOTHING` in 0037.\", \"flagged\": true},\n        {\"detail\": \"Plan's Step 11 (prompt test) asserts the rendered system prompt contains 'no calorie pressure, unknown vs missed, defer medical, low-key pressure'. The doc Prompt Requirements list adds: 'no shaming', 'no overpraise', 'prefer one concrete next action', 'respect constraints from memories/observations', 'avoid body-image escalation and ED-like behavior', and 'do not make […]
 
 > TOOL
 
 tool_result Write
 ```
-The file /Users/user_c042661f/Documents/Veas/.megaplan/plans/hector-commitments-sprint/critique_output.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Documents/Veas/.megaplan/plans/hector-commitments-sprint/critique_output.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

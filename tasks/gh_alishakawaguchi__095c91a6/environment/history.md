@@ -8,7 +8,7 @@ tool_use Bash
 id: toolu_01MoyWYeevNeh2R78pWfuwFG
 ```json
 {
-  "command": "ls -la /Users/alisha/Projects/wt/external-agents/kiro-windows-bug/.github/workflows/ 2>/dev/null && echo \"---\" && ls /Users/alisha/Projects/wt/external-agents/kiro-windows-bug/",
+  "command": "ls -la /home/<USER>/Projects/wt/external-agents/kiro-windows-bug/.github/workflows/ 2>/dev/null && echo \"---\" && ls /home/<USER>/Projects/wt/external-agents/kiro-windows-bug/",
   "description": "List workflow files"
 }
 ```
@@ -42,7 +42,7 @@ tool_use Read
 id: toolu_01VJT4o4J5xcVdHj91YThWY2
 ```json
 {
-  "file_path": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/.github/workflows/ci.yml"
+  "file_path": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/.github/workflows/ci.yml"
 }
 ```
 
@@ -117,7 +117,7 @@ tool_use Read
 id: toolu_017nCezZvSdWm9Q5geWrJ5j2
 ```json
 {
-  "file_path": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/.github/workflows/protocol-compliance.yml"
+  "file_path": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/.github/workflows/protocol-compliance.yml"
 }
 ```
 
@@ -190,7 +190,7 @@ tool_use Read
 id: toolu_01P7q4Z2jsNFhVtVgi6vc7Ui
 ```json
 {
-  "file_path": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/.github/workflows/lint.yml"
+  "file_path": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/.github/workflows/lint.yml"
 }
 ```
 
@@ -289,7 +289,7 @@ tool_use Bash
 id: toolu_01DLCoHrSapyKMhFod7sgnRi
 ```json
 {
-  "command": "ls /Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e/ && echo \"---\" && ls /Users/alisha/Projects/wt/external-agents/kiro-windows-bug/tests/ 2>/dev/null",
+  "command": "ls /home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e/ && echo \"---\" && ls /home/<USER>/Projects/wt/external-agents/kiro-windows-bug/tests/ 2>/dev/null",
   "description": "List e2e and tests directories"
 }
 ```
@@ -320,7 +320,7 @@ tool_use Bash
 id: toolu_01VEuB6F7FK75N5TEELbDLWq
 ```json
 {
-  "command": "cat /Users/alisha/Projects/wt/external-agents/kiro-windows-bug/mise.toml; echo \"---\"; ls /Users/alisha/Projects/wt/external-agents/kiro-windows-bug/mise-tasks/",
+  "command": "cat /home/<USER>/Projects/wt/external-agents/kiro-windows-bug/mise.toml; echo \"---\"; ls /home/<USER>/Projects/wt/external-agents/kiro-windows-bug/mise-tasks/",
   "description": "Inspect mise config and tasks"
 }
 ```
@@ -388,7 +388,7 @@ tool_use Bash
 id: toolu_01LpNK5q3k3fzbgx15RBa7zN
 ```json
 {
-  "command": "cat /Users/alisha/Projects/wt/external-agents/kiro-windows-bug/mise-tasks/test /Users/alisha/Projects/wt/external-agents/kiro-windows-bug/mise-tasks/build /Users/alisha/Projects/wt/external-agents/kiro-windows-bug/mise-tasks/lint",
+  "command": "cat /home/<USER>/Projects/wt/external-agents/kiro-windows-bug/mise-tasks/test /home/<USER>/Projects/wt/external-agents/kiro-windows-bug/mise-tasks/build /home/<USER>/Projects/wt/external-agents/kiro-windows-bug/mise-tasks/lint",
   "description": "Inspect mise task scripts"
 }
 ```
@@ -470,7 +470,7 @@ tool_use Read
 id: toolu_017ZFsq94j1f7Y3L3XXK1SnS
 ```json
 {
-  "file_path": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e/lifecycle_test.go",
+  "file_path": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e/lifecycle_test.go",
   "limit": 80
 }
 ```
@@ -480,7 +480,7 @@ id: toolu_017ZFsq94j1f7Y3L3XXK1SnS
 tool_result ERROR
 id: toolu_017ZFsq94j1f7Y3L3XXK1SnS
 ```
-<tool_use_error>Cancelled: parallel tool call Bash(cat /Users/alisha/Projects/wt/external-a…) errored</tool_use_error>
+<tool_use_error>Cancelled: parallel tool call Bash(cat /home/<USER>/Projects/wt/external-a…) errored</tool_use_error>
 ```
 
 > TOOL
@@ -489,7 +489,7 @@ tool_use Read
 id: toolu_01XuZeAux934YT1Hgu72v3Uk
 ```json
 {
-  "file_path": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e/lifecycle_test.go"
+  "file_path": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e/lifecycle_test.go"
 }
 ```
 
@@ -597,7 +597,7 @@ tool_use Bash
 id: toolu_019p3Q6GWW51CeGJTb5UYyW6
 ```json
 {
-  "command": "ls /Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e/testutil/",
+  "command": "ls /home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e/testutil/",
   "description": "List testutil package contents"
 }
 ```
@@ -619,7 +619,7 @@ tool_use Bash
 id: toolu_0168dQXDDv32XNZhMdpcCZaX
 ```json
 {
-  "command": "grep -rn -i \"tmux\\|StartSession\\|pty\\|conpty\\|winpty\\|expect\" /Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e/ --include=\"*.go\" 2>/dev/null | head -60",
+  "command": "grep -rn -i \"tmux\\|StartSession\\|pty\\|conpty\\|winpty\\|expect\" /home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e/ --include=\"*.go\" 2>/dev/null | head -60",
   "description": "Find tmux/session/pty references"
 }
 ```
@@ -629,29 +629,29 @@ id: toolu_0168dQXDDv32XNZhMdpcCZaX
 tool_result
 id: toolu_0168dQXDDv32XNZhMdpcCZaX
 ```
-/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e/setup_test.go:72:	if _, err := exec.LookPath("tmux"); err != nil {
-/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e/setup_test.go:73:		fmt.Fprintln(os.Stderr, "warning: tmux not found — interactive session tests will fail")
-/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e/lifecycle_test.go:38:			ExpectedTranscriptContent: []string{"hello"},
-/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e/lifecycle_test.go:71:		require.NoError(t, err, "expected .entire/ directory after enable")
-/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e/lifecycle_test.go:101:		require.NotEmpty(t, points, "expected at least one rewind point after first prompt")
-/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e/lifecycle_test.go:133:		require.NotEmpty(t, pointsBefore, "expected rewind points before commit")
-/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e/lifecycle_test.go:142:		require.NotNil(t, shadowPoint, "expected at least one non-logs-only shadow branch rewind point")
-/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e/lifecycle_test.go:189:		assert.True(t, hasSession, "expected at least one .json session file in .entire/tmp/")
-/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e/lifecycle_test.go:193:// TestLifecycle_InteractiveSession verifies that an interactive tmux session
-/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e/lifecycle_test.go:197:		session := s.StartSession(t, ctx)
-/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e/agents/tmux.go:12:// TmuxSession implements Session using tmux for PTY-based interactive agents.
-/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e/agents/tmux.go:13:type TmuxSession struct {
-/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e/agents/tmux.go:20:func (s *TmuxSession) OnClose(fn func()) {
-/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e/agents/tmux.go:24:// NewTmuxSession creates a new tmux session running the given command in dir.
-/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e/agents/tmux.go:28:// tmux sessions inherit the tmux server's environment (not the client's), so
-/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e/agents/tmux.go:30:func NewTmuxSession(name string, dir string, unsetEnv []string, command string, args ...string) (*TmuxSession, error) {
-/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e/agents/tmux.go:31:	s := &TmuxSession{name: name}
-/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e/agents/tmux.go:33:	tmuxArgs := []string{"new-session", "-d", "-s", name, "-c", dir}
-/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e/agents/tmux.go:45:	tmuxArgs = append(tmuxArgs, strings.Join(parts, " "))
-/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e/agents/tmux.go:47:	cmd := exec.Command("tmux", tmuxArgs...)
-/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e/agents/tmux.go:49:		return nil, fmt.Errorf("tmux new-session: %w\n%s", err, out)
-/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e/agents/tmux.go:52:	setCmd := exec.Command("tmux", "set-option", "-t", name, "remain-on-exit", "on")
-/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e/agents/tmux.go:57:func (s *TmuxSession) Send(input […]
+/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e/setup_test.go:72:	if _, err := exec.LookPath("tmux"); err != nil {
+/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e/setup_test.go:73:		fmt.Fprintln(os.Stderr, "warning: tmux not found — interactive session tests will fail")
+/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e/lifecycle_test.go:38:			ExpectedTranscriptContent: []string{"hello"},
+/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e/lifecycle_test.go:71:		require.NoError(t, err, "expected .entire/ directory after enable")
+/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e/lifecycle_test.go:101:		require.NotEmpty(t, points, "expected at least one rewind point after first prompt")
+/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e/lifecycle_test.go:133:		require.NotEmpty(t, pointsBefore, "expected rewind points before commit")
+/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e/lifecycle_test.go:142:		require.NotNil(t, shadowPoint, "expected at least one non-logs-only shadow branch rewind point")
+/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e/lifecycle_test.go:189:		assert.True(t, hasSession, "expected at least one .json session file in .entire/tmp/")
+/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e/lifecycle_test.go:193:// TestLifecycle_InteractiveSession verifies that an interactive tmux session
+/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e/lifecycle_test.go:197:		session := s.StartSession(t, ctx)
+/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e/agents/tmux.go:12:// TmuxSession implements Session using tmux for PTY-based interactive agents.
+/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e/agents/tmux.go:13:type TmuxSession struct {
+/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e/agents/tmux.go:20:func (s *TmuxSession) OnClose(fn func()) {
+/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e/agents/tmux.go:24:// NewTmuxSession creates a new tmux session running the given command in dir.
+/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e/agents/tmux.go:28:// tmux sessions inherit the tmux server's environment (not the client's), so
+/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e/agents/tmux.go:30:func NewTmuxSession(name string, dir string, unsetEnv []string, command string, args ...string) (*TmuxSession, error) {
+/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e/agents/tmux.go:31:	s := &TmuxSession{name: name}
+/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e/agents/tmux.go:33:	tmuxArgs := []string{"new-session", "-d", "-s", name, "-c", dir}
+/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e/agents/tmux.go:45:	tmuxArgs = append(tmuxArgs, strings.Join(parts, " "))
+/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e/agents/tmux.go:47:	cmd := exec.Command("tmux", tmuxArgs...)
+/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e/agents/tmux.go:49:		return nil, fmt.Errorf("tmux new-session: %w\n%s", err, out)
+/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e/agents/tmux.go:52:	setCmd := exec.Command("tmux", "set-option", "-t", name, "remain-on-exit", "on")
+/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e/agents/tmux.go:57:func (s *TmuxSession) Send(input […]
 
 > AGENT
 

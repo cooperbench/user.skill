@@ -1,1 +1,8 @@
-{"point_id": "019edb59-c141-7680-9a9d-6d5e46df37a4#123", "developer": "gh:blackgirlbytes", "condition": "noprofile", "real": "oh we should probably mention this is an entire enabled repo and allow people to see the sessions here: https://entire.io/gh/blackgirlbytes/planetfall-seed-signalkit/sessions", "prev_agent": "Committed and pushed `CONTRIBUTING.md` to `origin/preview`.\n\nCommit: `8a59c6c Add contributor guidelines`\n\nOne note: the local post-commit Entire hook hung after the commit was created, so I interrupted that hook session. The later `git push` completed successfully and pushed `entire/checkpoints/v1` too. Working tree is clean except for the pre-existing untracked `.codex/`.\n\n::git-stage{cwd=\"/Users/goose-guest/Documents/work/planetfall-seed-signalkit\"}\n::git-commit{cwd=\"/Users/goose-guest/Documents/work/planetfall-seed-signalkit\"}\n::git-push{cwd=\"/Users/goose-guest/Documents/work/planetfall-seed-signalkit\" branch=\"preview\"}", "gold_move": null}
+{
+  "point_id": "019edb59-c141-7680-9a9d-6d5e46df37a4#123",
+  "developer": "gh:blackgirlbytes",
+  "condition": "noprofile",
+  "real": "oh we should probably mention this is an entire enabled repo and allow people to see the sessions here: https://entire.io/gh/blackgirlbytes/planetfall-seed-signalkit/sessions",
+  "prev_agent": "Committed and pushed `CONTRIBUTING.md` to `origin/preview`.\n\nCommit: `8a59c6c Add contributor guidelines`\n\nOne note: the local post-commit Entire hook hung after the commit was created, so I interrupted that hook session. The later `git push` completed successfully and pushed `entire/checkpoints/v1` too. Working tree is clean except for the pre-existing untracked `.codex/`.\n\n::git-stage{cwd=\"/home/<USER>/Documents/work/planetfall-seed-signalkit\"}\n::git-commit{cwd=\"/home/<USER>/Documents/work/planetfall-seed-signalkit\"}\n::git-push{cwd=\"/home/<USER>/Documents/work/planetfall-seed-signalkit\" branch=\"preview\"}",
+  "gold_move": null
+}

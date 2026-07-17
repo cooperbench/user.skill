@@ -8,7 +8,7 @@ tool_use Read
 id: toolu_01SMdXS4SSCwSKZZxTZpdC3h
 ```json
 {
-  "file_path": "/Users/jdsingh/Projects/AI/forge/scripts/run-autoresearch-tasks.sh"
+  "file_path": "/home/<USER>/Projects/AI/forge/scripts/run-autoresearch-tasks.sh"
 }
 ```
 

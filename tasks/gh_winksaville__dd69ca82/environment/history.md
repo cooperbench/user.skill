@@ -67,7 +67,7 @@ tool_use Bash
 id: toolu_01UfvX8Zd9Lso65djsthkGYH
 ```json
 {
-  "command": "grep -rn \"framing\" --include=\"*.rs\" -l /home/wink/data/prgs/rust/iiac-perf/src | head",
+  "command": "grep -rn \"framing\" --include=\"*.rs\" -l /home/<USER>/data/prgs/rust/iiac-perf/src | head",
   "description": "Find files mentioning framing"
 }
 ```
@@ -77,10 +77,10 @@ id: toolu_01UfvX8Zd9Lso65djsthkGYH
 tool_result
 id: toolu_01UfvX8Zd9Lso65djsthkGYH
 ```
-/home/wink/data/prgs/rust/iiac-perf/src/overhead.rs
-/home/wink/data/prgs/rust/iiac-perf/src/benches/tp_pc.rs
-/home/wink/data/prgs/rust/iiac-perf/src/main.rs
-/home/wink/data/prgs/rust/iiac-perf/src/harness.rs
+/home/<USER>/data/prgs/rust/iiac-perf/src/overhead.rs
+/home/<USER>/data/prgs/rust/iiac-perf/src/benches/tp_pc.rs
+/home/<USER>/data/prgs/rust/iiac-perf/src/main.rs
+/home/<USER>/data/prgs/rust/iiac-perf/src/harness.rs
 ```
 
 > TOOL
@@ -89,7 +89,7 @@ tool_use Read
 id: toolu_01PUGvmyUrrJ4F124y4F3U1U
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/iiac-perf/src/overhead.rs"
+  "file_path": "/home/<USER>/data/prgs/rust/iiac-perf/src/overhead.rs"
 }
 ```
 
@@ -287,7 +287,7 @@ tool_use Bash
 id: toolu_01BmaRCdq7Bf3LqRCGTbcqpD
 ```json
 {
-  "command": "grep -n \"inner\" /home/wink/data/prgs/rust/iiac-perf/src/harness.rs | head -40",
+  "command": "grep -n \"inner\" /home/<USER>/data/prgs/rust/iiac-perf/src/harness.rs | head -40",
   "description": "Find inner-tuning logic in harness.rs"
 }
 ```
@@ -330,7 +330,7 @@ tool_use Read
 id: toolu_01QRfLhQr5SPBGQR6pCRCtLN
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/iiac-perf/src/harness.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/iiac-perf/src/harness.rs",
   "offset": 130,
   "limit": 22
 }
@@ -371,7 +371,7 @@ tool_use Bash
 id: toolu_016UNTuKvgoV9TKSCaKVUy9K
 ```json
 {
-  "command": "grep -n \"FRAMING_DOMINATION_RATIO\\|MAX_INNER\\|ESTIMATE_STEPS\\|ESTIMATE_SAMPLES\" /home/wink/data/prgs/rust/iiac-perf/src/harness.rs | head",
+  "command": "grep -n \"FRAMING_DOMINATION_RATIO\\|MAX_INNER\\|ESTIMATE_STEPS\\|ESTIMATE_SAMPLES\" /home/<USER>/data/prgs/rust/iiac-perf/src/harness.rs | head",
   "description": "Find tuning constants"
 }
 ```
@@ -427,7 +427,7 @@ tool_use Bash
 id: toolu_01G5z97TRs96n3SjzGBVxaa4
 ```json
 {
-  "command": "ls /home/wink/data/prgs/rust/iiac-perf/notes/ /home/wink/data/prgs/rust/iiac-perf/notes/chores/",
+  "command": "ls /home/<USER>/data/prgs/rust/iiac-perf/notes/ /home/<USER>/data/prgs/rust/iiac-perf/notes/chores/",
   "description": "List notes directory"
 }
 ```
@@ -437,7 +437,7 @@ id: toolu_01G5z97TRs96n3SjzGBVxaa4
 tool_result
 id: toolu_01G5z97TRs96n3SjzGBVxaa4
 ```
-/home/wink/data/prgs/rust/iiac-perf/notes/:
+/home/<USER>/data/prgs/rust/iiac-perf/notes/:
 bot-convo.txt
 chores
 chores-01.md
@@ -452,7 +452,7 @@ todo.md
 vc-notes.md
 versioning.md
 
-/home/wink/data/prgs/rust/iiac-perf/notes/chores/:
+/home/<USER>/data/prgs/rust/iiac-perf/notes/chores/:
 chores-04.md
 ```
 
@@ -462,7 +462,7 @@ tool_use Bash
 id: toolu_01MjsCSTDoneoqWPa2PGP78K
 ```json
 {
-  "command": "grep -n '^## \\|^# ' /home/wink/data/prgs/rust/iiac-perf/notes/chores/chores-04.md",
+  "command": "grep -n '^## \\|^# ' /home/<USER>/data/prgs/rust/iiac-perf/notes/chores/chores-04.md",
   "description": "Scan chores-04 headings"
 }
 ```
@@ -496,7 +496,7 @@ tool_use Read
 id: toolu_011DGr9esUJ4z5bEPuCirh7U
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/iiac-perf/notes/chores/chores-04.md",
+  "file_path": "/home/<USER>/data/prgs/rust/iiac-perf/notes/chores/chores-04.md",
   "offset": 440,
   "limit": 80
 }
@@ -541,7 +541,7 @@ tool_use Read
 id: toolu_01FtPaNkKGr2FH64ZdFWWx5B
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/iiac-perf/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/iiac-perf/notes/todo.md",
   "offset": 0,
   "limit": 60
 }
@@ -591,7 +591,7 @@ tool_use Bash
 id: toolu_017vDZb2fMyrKDnmMjjqmz73
 ```json
 {
-  "command": "grep -n \"design\\|README\" /home/wink/data/prgs/rust/iiac-perf/notes/README.md | head -20",
+  "command": "grep -n \"design\\|README\" /home/<USER>/data/prgs/rust/iiac-perf/notes/README.md | head -20",
   "description": "Peek at notes/README.md structure"
 }
 ```
@@ -610,7 +610,7 @@ tool_use Read
 id: toolu_01LKD2RfvkJeEnYzYzUJGetS
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/iiac-perf/notes/README.md"
+  "file_path": "/home/<USER>/data/prgs/rust/iiac-perf/notes/README.md"
 }
 ```
 
@@ -656,7 +656,7 @@ tool_use Bash
 id: toolu_01HVNHKB92hxsH8RjwpMUNSw
 ```json
 {
-  "command": "grep -rn \"config\" /home/wink/data/prgs/rust/iiac-perf/src/main.rs | head; ls /home/wink/data/prgs/rust/iiac-perf/src/",
+  "command": "grep -rn \"config\" /home/<USER>/data/prgs/rust/iiac-perf/src/main.rs | head; ls /home/<USER>/data/prgs/rust/iiac-perf/src/",
   "description": "Check config-file implementation surface"
 }
 ```
@@ -666,16 +666,16 @@ id: toolu_01HVNHKB92hxsH8RjwpMUNSw
 tool_result
 id: toolu_01HVNHKB92hxsH8RjwpMUNSw
 ```
-/home/wink/data/prgs/rust/iiac-perf/src/main.rs:4:mod config;
-/home/wink/data/prgs/rust/iiac-perf/src/main.rs:35:    /// config `duration`). Auto-sizes outer and inner loop counts.
-/home/wink/data/prgs/rust/iiac-perf/src/main.rs:63:    /// the config file expands to that profile's core spec (e.g.
-/home/wink/data/prgs/rust/iiac-perf/src/main.rs:100:    /// config `band_labels`; both absent defaults to 'both'.
-/home/wink/data/prgs/rust/iiac-perf/src/main.rs:108:    /// config `decimals`; both absent defaults to 1.
-/home/wink/data/prgs/rust/iiac-perf/src/main.rs:127:/// Banner text listing which config files were loaded, or
-/home/wink/data/prgs/rust/iiac-perf/src/main.rs:129:fn config_summary(files: &[std::path::PathBuf]) -> String {
-/home/wink/data/prgs/rust/iiac-perf/src/main.rs:169:    // CLI). A malformed config is fatal so a typo surfaces.
-/home/wink/data/prgs/rust/iiac-perf/src/main.rs:170:    let (config, config_files) = match config::load() {
-/home/wink/data/prgs/rust/iiac-perf/src/main.rs:173:            eprintln!("error: config: {e}");
+/home/<USER>/data/prgs/rust/iiac-perf/src/main.rs:4:mod config;
+/home/<USER>/data/prgs/rust/iiac-perf/src/main.rs:35:    /// config `duration`). Auto-sizes outer and inner loop counts.
+/home/<USER>/data/prgs/rust/iiac-perf/src/main.rs:63:    /// the config file expands to that profile's core spec (e.g.
+/home/<USER>/data/prgs/rust/iiac-perf/src/main.rs:100:    /// config `band_labels`; both absent defaults to 'both'.
+/home/<USER>/data/prgs/rust/iiac-perf/src/main.rs:108:    /// config `decimals`; both absent defaults to 1.
+/home/<USER>/data/prgs/rust/iiac-perf/src/main.rs:127:/// Banner text listing which config files were loaded, or
+/home/<USER>/data/prgs/rust/iiac-perf/src/main.rs:129:fn config_summary(files: &[std::path::PathBuf]) -> String {
+/home/<USER>/data/prgs/rust/iiac-perf/src/main.rs:169:    // CLI). A malformed config is fatal so a typo surfaces.
+/home/<USER>/data/prgs/rust/iiac-perf/src/main.rs:170:    let (config, config_files) = match config::load() {
+/home/<USER>/data/prgs/rust/iiac-perf/src/main.rs:173:            eprintln!("error: config: {e}");
 bands.rs
 band_table.rs
 benches
@@ -702,7 +702,7 @@ tool_use Write
 id: toolu_01G8hHRQ18mEeDvnXTmeXudQ
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/iiac-perf/notes/design.md",
+  "file_path": "/home/<USER>/data/prgs/rust/iiac-perf/notes/design.md",
   "content": "# Design\n\nDurable design analyses for iiac-perf. Chores sections record\nwhat landed per commit; this file holds the analysis and\nreasoning that should outlive any one cycle — measurement\ntheory, error models, and the design decisions they drive.\nChores and todo entries link here rather than restating.\n\n## Calibration accuracy: framing quantization\n\nAnalysis from a 2026-07-08 session on the 3900X, prompted by\nthe framing/sample header value jumping between ~1 ns and\n~21 ns across runs while loop/iter held steady at 0.49 ns.\n\n### Observation: framing sits on a ~10 ns lattice\n\nRepeated runs reported framing/sample of 1.02, 11.12, 11.22,\nand 21.22 ns — not a continuous drift but discrete steps of\n~10.1 ns. Decoding through the two-point fit\n(`src/overhead.rs`), the underlying `min_low` measurements\nwere 50, 60, and 70 ns.\n\nWe think the mechanism is TSC granularity: `minstant` reads\nthe TSC, and on Zen 2 the TSC is derived from the 100 MHz\nreference clock, so elapsed-time readings quantize to ~10 ns\nsteps.\n\n### Why framing wobbles but loop/iter is steady\n\nBoth constants come from the same two measurements; they\ndiffer in amortization:\n\n- `framing = min_low - N_LOW * loop_per_iter` — inherits\n  `min_low`'s quantization one-for-one (noise amplification\n  ~1.01, per the comment in `src/overhead.rs`).\n- `loop_per_iter = (min_high - min_low) / 9_900` — the same\n  ±1-2 […]
 
 > TOOL
@@ -710,7 +710,7 @@ id: toolu_01G8hHRQ18mEeDvnXTmeXudQ
 tool_result
 id: toolu_01G8hHRQ18mEeDvnXTmeXudQ
 ```
-File created successfully at: /home/wink/data/prgs/rust/iiac-perf/notes/design.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/data/prgs/rust/iiac-perf/notes/design.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -724,7 +724,7 @@ id: toolu_01BH2wdhFqhkNk3DfXwJBman
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/iiac-perf/notes/chores/chores-04.md",
+  "file_path": "/home/<USER>/data/prgs/rust/iiac-perf/notes/chores/chores-04.md",
   "old_string": "- Cargo.lock: the zc-ring-x1 git dep advances to 0.11.1 (the\n  MPSC release + backfill tip).\n\n# References",
   "new_string": "- Cargo.lock: the zc-ring-x1 git dep advances to 0.11.1 (the\n  MPSC release + backfill tip).\n\n## docs: add notes/design.md (calibration accuracy)\n\nCommits:\n\nRepeated runs showed framing/sample jumping 1-21 ns while\nloop/iter held steady — traced to ~10 ns TSC quantization of\nthe un-amortized `min_low` measurement, not sampling noise.\nThe analysis and the resulting design (amortized framing\nmeasurement + cached calibration in the config file) are too\ndurable for a chores section, so this cycle opens\n[notes/design.md](../design.md) as the home for\nmeasurement-theory / error-model analyses, with this as its\nfirst entry\n([Calibration accuracy](../design.md#calibration-accuracy-framing-quantization)).\n\n- Key findings recorded there: the min estimator can't\n  resolve inside a quantum (true framing ∈ ~[1, 11] ns); the\n  framing estimate sizes `inner` via `pick_inner`, so an\n  under-read under-sizes the experiment (worst case ~50%\n  apparatus contamination, invisible in the report); the TSC\n  quantum is frequency-invariant but the framing *cost* is\n  core-clocked.\n- Design direction: amortized framing measurement (M timer\n  pairs in one window, error q/M), constants cached in the\n  config file with provenance and a cheap live validity\n  check each run; duration-scaled calibration rejected.\n- notes/README.md gains a pointer to design.md.\n\n# References"
 }
@@ -735,7 +735,7 @@ id: toolu_01BH2wdhFqhkNk3DfXwJBman
 tool_result
 id: toolu_01BH2wdhFqhkNk3DfXwJBman
 ```
-The file /home/wink/data/prgs/rust/iiac-perf/notes/chores/chores-04.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/iiac-perf/notes/chores/chores-04.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -745,7 +745,7 @@ id: toolu_013tAtFmKoVjfURQDUbaLjje
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/iiac-perf/notes/README.md",
+  "file_path": "/home/<USER>/data/prgs/rust/iiac-perf/notes/README.md",
   "old_string": "By default there are chores-*.md and todo.md. Chores are general notes\nabout tasks and todo.md contains short term tasks and their status.",
   "new_string": "By default there are chores-*.md and todo.md. Chores are general notes\nabout tasks and todo.md contains short term tasks and their status.\nDurable design analyses (measurement theory, error models, decisions\nthat outlive a cycle) live in [design.md](design.md)."
 }
@@ -756,7 +756,7 @@ id: toolu_013tAtFmKoVjfURQDUbaLjje
 tool_result
 id: toolu_013tAtFmKoVjfURQDUbaLjje
 ```
-The file /home/wink/data/prgs/rust/iiac-perf/notes/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/iiac-perf/notes/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -770,7 +770,7 @@ id: toolu_018X2M53hMwKdUNnQjdkwi2s
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/iiac-perf/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/iiac-perf/notes/todo.md",
   "old_string": "1. Unit scaling in report columns (`us`/`ms`) — per-row",
   "new_string": "1. Amortized framing calibration + cached constants in config\n   — framing is quantized to the ~10 ns TSC lattice and the\n   estimate sizes `inner`, so a low draw under-sizes the\n   experiment (up to ~9% relative error, worst case ~50%\n   apparatus contamination); measure M timer pairs in one\n   window (error q/M), cache in config with provenance +\n   live validity check, header says cached vs live\n   [analysis](design.md#calibration-accuracy-framing-quantization)\n1. Unit scaling in report columns (`us`/`ms`) — per-row"
 }
@@ -781,7 +781,7 @@ id: toolu_018X2M53hMwKdUNnQjdkwi2s
 tool_result
 id: toolu_018X2M53hMwKdUNnQjdkwi2s
 ```
-The file /home/wink/data/prgs/rust/iiac-perf/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/iiac-perf/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -866,7 +866,7 @@ tool_use Bash
 id: toolu_01QxVHU4uGPXdeiMB4whLfeW
 ```json
 {
-  "command": "for f in /home/wink/data/prgs/rust/iiac-perf/src/*.rs /home/wink/data/prgs/rust/iiac-perf/src/benches/*.rs; do echo \"=== $f\"; sed -n '1,8p' \"$f\" | grep '^//!'; done",
+  "command": "for f in /home/<USER>/data/prgs/rust/iiac-perf/src/*.rs /home/<USER>/data/prgs/rust/iiac-perf/src/benches/*.rs; do echo \"=== $f\"; sed -n '1,8p' \"$f\" | grep '^//!'; done",
   "description": "Show module docstrings for all source files"
 }
 ```
@@ -876,7 +876,7 @@ id: toolu_01QxVHU4uGPXdeiMB4whLfeW
 tool_result
 id: toolu_01QxVHU4uGPXdeiMB4whLfeW
 ```
-=== /home/wink/data/prgs/rust/iiac-perf/src/bands.rs
+=== /home/<USER>/data/prgs/rust/iiac-perf/src/bands.rs
 //! Report band boundaries and label styles: the single source of
 //! truth for the min/z/p/n/max ladder that
 //! [`crate::harness::print_report`] renders, documented by the
@@ -885,7 +885,7 @@ id: toolu_01QxVHU4uGPXdeiMB4whLfeW
 //! - Familiar deciles in the body; nines/zeros tails generated
 //!   from [`Z_DEPTH`]/[`N_DEPTH`]. Fractions and names come from
 //!   one structural description, so the label styles can never
-=== /home/wink/data/prgs/rust/iiac-perf/src/band_table.rs
+=== /home/<USER>/data/prgs/rust/iiac-perf/src/band_table.rs
 //! Shared band-table renderer for tick-valued histograms.
 //!
 //! Both `TProbe` (fast path, direct-histogram) and `TProbe2`
@@ -894,7 +894,7 @@ id: toolu_01QxVHU4uGPXdeiMB4whLfeW
 //! rows with first/last/range/count/mean columns, plus summary
 //! lines for mean, stdev, mean min-p99, stdev min-p99. This
 //! module provides a single implementation both can call into.
-=== /home/wink/data/prgs/rust/iiac-perf/src/config.rs
+=== /home/<USER>/data/prgs/rust/iiac-perf/src/config.rs
 //! Layered configuration for defaults: built-in < XDG config file <
 //! project-local file < CLI flags.
 //!
@@ -903,7 +903,7 @@ id: toolu_01QxVHU4uGPXdeiMB4whLfeW
 //!   is unset. The per-user home for defaults and pin profiles.
 //! - **Project-local file** — [`LOCAL_FILE`] in the current
 //!   directory (no upward walk). Overrides the XDG file
-=== /home/wink/data/prgs/rust/iiac-perf/src/harness.rs
+=== /home/<USER>/data/prgs/rust/iiac-perf/src/harness.rs
 //! Generic bench driver: the […]
 
 > TOOL
@@ -912,7 +912,7 @@ tool_use Read
 id: toolu_01NQNaEahDe9hiffpLNyj7NF
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/iiac-perf/src/main.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/iiac-perf/src/main.rs",
   "offset": 1,
   "limit": 30
 }
@@ -961,7 +961,7 @@ tool_use Read
 id: toolu_0164WoinQsWDH7ynkNEcwuXT
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/iiac-perf/src/main.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/iiac-perf/src/main.rs",
   "offset": 150,
   "limit": 110
 }
@@ -1023,7 +1023,7 @@ id: toolu_01Hq8oTU3maDpyVZ9VZjaex2
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/iiac-perf/notes/design.md",
+  "file_path": "/home/<USER>/data/prgs/rust/iiac-perf/notes/design.md",
   "old_string": "Durable design analyses for iiac-perf. Chores sections record\nwhat landed per commit; this file holds the analysis and\nreasoning that should outlive any one cycle — measurement\ntheory, error models, and the design decisions they drive.\nChores and todo entries link here rather than restating.\n\n## Calibration accuracy: framing quantization",
   "new_string": "Durable design analyses for iiac-perf. Chores sections record\nwhat landed per commit; this file holds the analysis and\nreasoning that should outlive any one cycle — measurement\ntheory, error models, and the design decisions they drive.\nChores and todo entries link here rather than restating.\n\n## Architecture Overview\n\niiac-perf is a latency microbenchmark harness: a single binary\nthat runs named benches (mostly inter-thread communication\nround-trips) and renders each as a band-table latency\nhistogram. The architecture has four layers — startup /\nenvironment control, measurement, benches, and reporting.\n\n### Startup and environment control\n\n`main.rs` runs a fixed pipeline before any bench executes:\n\n- **CLI** (clap) — bench selection by exact name or prefix\n  (`zcr` runs every `zcr-*` bench), plus duration, outer/inner\n  overrides, pinning, and report options.\n- **Sleep inhibition** (`inhibit.rs`) — re-exec the process\n  under `systemd-inhibit` so an idle suspend can't poison a\n  long run; harness suspend detection remains the backstop.\n- **Layered config** (`config.rs`) — built-in < XDG […]
 
@@ -1032,7 +1032,7 @@ id: toolu_01Hq8oTU3maDpyVZ9VZjaex2
 tool_result
 id: toolu_01Hq8oTU3maDpyVZ9VZjaex2
 ```
-The file /home/wink/data/prgs/rust/iiac-perf/notes/design.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/iiac-perf/notes/design.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1045,7 +1045,7 @@ tool_use Bash
 id: toolu_01GvwhHU7GoKh3NsDPHhFV6C
 ```json
 {
-  "command": "grep -rn 'NAME: &str\\|pub const NAME' /home/wink/data/prgs/rust/iiac-perf/src/benches/*.rs",
+  "command": "grep -rn 'NAME: &str\\|pub const NAME' /home/<USER>/data/prgs/rust/iiac-perf/src/benches/*.rs",
   "description": "List registered bench names"
 }
 ```
@@ -1055,23 +1055,23 @@ id: toolu_01GvwhHU7GoKh3NsDPHhFV6C
 tool_result
 id: toolu_01GvwhHU7GoKh3NsDPHhFV6C
 ```
-/home/wink/data/prgs/rust/iiac-perf/src/benches/zcr_with_1t.rs:12:pub const NAME: &str = "zcr-with-1t";
-/home/wink/data/prgs/rust/iiac-perf/src/benches/min_now.rs:8:pub const NAME: &str = "min-now";
-/home/wink/data/prgs/rust/iiac-perf/src/benches/zcr_mpsc_2t.rs:14:pub const NAME: &str = "zcr-mpsc-2t";
-/home/wink/data/prgs/rust/iiac-perf/src/benches/ice_rr_1t.rs:12:pub const NAME: &str = "ice-rr-1t";
-/home/wink/data/prgs/rust/iiac-perf/src/benches/ice_ps_1t.rs:12:pub const NAME: &str = "ice-ps-1t";
-/home/wink/data/prgs/rust/iiac-perf/src/benches/tp2_pc.rs:22:pub const NAME: &str = "tp2-pc";
-/home/wink/data/prgs/rust/iiac-perf/src/benches/probe_mpsc_2t.rs:18:pub const NAME: &str = "probe-mpsc-2t";
-/home/wink/data/prgs/rust/iiac-perf/src/benches/std_now.rs:8:pub const NAME: &str = "std-now";
-/home/wink/data/prgs/rust/iiac-perf/src/benches/mpsc_1t.rs:9:pub const NAME: &str = "mpsc-1t";
-/home/wink/data/prgs/rust/iiac-perf/src/benches/mpsc_2t.rs:11:pub const NAME: &str = "mpsc-2t";
-/home/wink/data/prgs/rust/iiac-perf/src/benches/ice_ps_2t.rs:16:pub const NAME: &str = "ice-ps-2t";
-/home/wink/data/prgs/rust/iiac-perf/src/benches/zcr_with_2t.rs:14:pub const NAME: &str = "zcr-with-2t";
-/home/wink/data/prgs/rust/iiac-perf/src/benches/producer_consumer.rs:24:pub const NAME: &str = "producer-consumer";
-/home/wink/data/prgs/rust/iiac-perf/src/benches/ice_rr_2t.rs:15:pub const NAME: &str = "ice-rr-2t";
-/home/wink/data/prgs/rust/iiac-perf/src/benches/mpsc_2t_spin.rs:11:pub const NAME: &str = "mpsc-2t-spin";
-/home/wink/data/prgs/rust/iiac-perf/src/benches/tp_pc.rs:23:pub const NAME: &str = "tp-pc";
-/home/wink/data/prgs/rust/iiac-perf/src/benches/zcr_mpsc_1t.rs:12:pub const NAME: &str = "zcr-mpsc-1t";
+/home/<USER>/data/prgs/rust/iiac-perf/src/benches/zcr_with_1t.rs:12:pub const NAME: &str = "zcr-with-1t";
+/home/<USER>/data/prgs/rust/iiac-perf/src/benches/min_now.rs:8:pub const NAME: &str = "min-now";
+/home/<USER>/data/prgs/rust/iiac-perf/src/benches/zcr_mpsc_2t.rs:14:pub const NAME: &str = "zcr-mpsc-2t";
+/home/<USER>/data/prgs/rust/iiac-perf/src/benches/ice_rr_1t.rs:12:pub const NAME: &str = "ice-rr-1t";
+/home/<USER>/data/prgs/rust/iiac-perf/src/benches/ice_ps_1t.rs:12:pub const NAME: &str = "ice-ps-1t";
+/home/<USER>/data/prgs/rust/iiac-perf/src/benches/tp2_pc.rs:22:pub const NAME: &str = "tp2-pc";
+/home/<USER>/data/prgs/rust/iiac-perf/src/benches/probe_mpsc_2t.rs:18:pub const NAME: &str = "probe-mpsc-2t";
+/home/<USER>/data/prgs/rust/iiac-perf/src/benches/std_now.rs:8:pub const NAME: &str = "std-now";
+/home/<USER>/data/prgs/rust/iiac-perf/src/benches/mpsc_1t.rs:9:pub const NAME: &str = "mpsc-1t";
+/home/<USER>/data/prgs/rust/iiac-perf/src/benches/mpsc_2t.rs:11:pub const NAME: &str = "mpsc-2t";
+/home/<USER>/data/prgs/rust/iiac-perf/src/benches/ice_ps_2t.rs:16:pub const NAME: &str = "ice-ps-2t";
+/home/<USER>/data/prgs/rust/iiac-perf/src/benches/zcr_with_2t.rs:14:pub const NAME: &str = "zcr-with-2t";
+/home/<USER>/data/prgs/rust/iiac-perf/src/benches/producer_consumer.rs:24:pub const NAME: &str = "producer-consumer";
+/home/<USER>/data/prgs/rust/iiac-perf/src/benches/ice_rr_2t.rs:15:pub const NAME: &str = "ice-rr-2t";
+/home/<USER>/data/prgs/rust/iiac-perf/src/benches/mpsc_2t_spin.rs:11:pub const NAME: &str = "mpsc-2t-spin";
+/home/<USER>/data/prgs/rust/iiac-perf/src/benches/tp_pc.rs:23:pub const NAME: &str = "tp-pc";
+/home/<USER>/data/prgs/rust/iiac-perf/src/benches/zcr_mpsc_1t.rs:12:pub const NAME: &str = "zcr-mpsc-1t";
 ```
 
 > TOOL
@@ -1081,7 +1081,7 @@ id: toolu_01K9VZPbvWAb1bu6iwdgwfUW
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/iiac-perf/notes/design.md",
+  "file_path": "/home/<USER>/data/prgs/rust/iiac-perf/notes/design.md",
   "old_string": "(`ice-*`), and probe-instrumented producer/consumer variants\n(`pc`, `tp-pc`, `tp2-pc`) used to measure the probes\nthemselves.",
   "new_string": "(`ice-*`), and probe-instrumented variants (`probe-mpsc-2t`,\n`producer-consumer`, `tp-pc`, `tp2-pc`) used to measure the\nprobes themselves."
 }
@@ -1092,7 +1092,7 @@ id: toolu_01K9VZPbvWAb1bu6iwdgwfUW
 tool_result
 id: toolu_01K9VZPbvWAb1bu6iwdgwfUW
 ```
-The file /home/wink/data/prgs/rust/iiac-perf/notes/design.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/iiac-perf/notes/design.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1106,7 +1106,7 @@ id: toolu_01Xb5MyDoMeeYH9Aja1hWwyK
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/iiac-perf/notes/chores/chores-04.md",
+  "file_path": "/home/<USER>/data/prgs/rust/iiac-perf/notes/chores/chores-04.md",
   "old_string": "- notes/README.md gains a pointer to design.md.",
   "new_string": "- design.md also opens with an `## Architecture Overview` —\n  the four layers (startup / environment control,\n  measurement, benches, reporting), the two measurement\n  styles (harness-driven `Bench` vs self-driven probes), and\n  the bench-family map — so the error-model sections have a\n  structural map to hang off.\n- notes/README.md gains a pointer to design.md."
 }
@@ -1117,7 +1117,7 @@ id: toolu_01Xb5MyDoMeeYH9Aja1hWwyK
 tool_result
 id: toolu_01Xb5MyDoMeeYH9Aja1hWwyK
 ```
-The file /home/wink/data/prgs/rust/iiac-perf/notes/chores/chores-04.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/iiac-perf/notes/chores/chores-04.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

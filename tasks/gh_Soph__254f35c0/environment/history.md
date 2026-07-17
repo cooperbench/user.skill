@@ -185,7 +185,14 @@ id: toolu_01U6t5CgBKXywLQ3S7EsECbj
 tool_result
 id: toolu_01U6t5CgBKXywLQ3S7EsECbj
 ```
-Rebasing (1/8)Rebasing (2/8)Rebasing (3/8)Rebasing (4/8)Rebasing (5/8)Rebasing (6/8)Rebasing (7/8)Auto-merging go.mod
+Rebasing (1/8)
+Rebasing (2/8)
+Rebasing (3/8)
+Rebasing (4/8)
+Rebasing (5/8)
+Rebasing (6/8)
+Rebasing (7/8)
+Auto-merging go.mod
 CONFLICT (content): Merge conflict in go.mod
 Auto-merging go.sum
 CONFLICT (content): Merge conflict in go.sum
@@ -253,7 +260,7 @@ tool_result
 id: toolu_01N3en8REgc6n7LJLqixQMfv
 ```
 commit 8aa0dab7f17c413efd27765509bfcb3fccad6196
-Author: Stefan Haubold <stefan@entire.io>
+Author: Stefan Haubold <<REDACTED_EMAIL>>
 Date:   Fri May 22 14:17:44 2026 +0200
 
     gitproto: use go-git's WithObjectSelector to stream materialized push
@@ -323,7 +330,7 @@ tool_use Read
 id: toolu_01Um52romL4pqwHwZbteZkLZ
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/go.mod",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/go.mod",
   "limit": 20
 }
 ```
@@ -362,7 +369,7 @@ id: toolu_01UMaiAUgtSgTByLTnZvMvQ7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/go.mod",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/go.mod",
   "old_string": "\tgithub.com/go-git/go-billy/v6 v6.0.0-alpha.1\n<<<<<<< HEAD\n\tgithub.com/go-git/go-git/v6 v6.0.0-alpha.4\n=======\n\tgithub.com/go-git/go-git/v6 v6.0.0-alpha.4.0.20260521151600-590487407c38\n>>>>>>> 8aa0dab7 (gitproto: use go-git's WithObjectSelector to stream materialized push)\n\tgithub.com/spf13/cobra v1.10.2",
   "new_string": "\tgithub.com/go-git/go-billy/v6 v6.0.0-alpha.1\n\tgithub.com/go-git/go-git/v6 v6.0.0-alpha.4.0.20260521151600-590487407c38\n\tgithub.com/spf13/cobra v1.10.2"
 }
@@ -373,7 +380,7 @@ id: toolu_01UMaiAUgtSgTByLTnZvMvQ7
 tool_result
 id: toolu_01UMaiAUgtSgTByLTnZvMvQ7
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/go.mod has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/go.mod has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -411,7 +418,7 @@ tool_use Read
 id: toolu_01UY5gL4W6rVKDZ1vY3yjGpu
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/go.sum",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/go.sum",
   "offset": 25,
   "limit": 11
 }
@@ -442,7 +449,7 @@ id: toolu_0139gEw5DHvtt68sAP8hCk7X
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/go.sum",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/go.sum",
   "old_string": "<<<<<<< HEAD\ngithub.com/go-git/go-git/v6 v6.0.0-alpha.4 h1:REDACTED/D+esDQ=\ngithub.com/go-git/go-git/v6 v6.0.0-alpha.4/go.mod h1:4ODa/REDACTED\n=======\ngithub.com/go-git/go-git/v6 v6.0.0-alpha.4.0.20260521151600-590487407c38 h1:REDACTED\ngithub.com/go-git/go-git/v6 v6.0.0-alpha.4.0.20260521151600-590487407c38/go.mod h1:4ODa/REDACTED\n>>>>>>> 8aa0dab7 (gitproto: use go-git's WithObjectSelector to stream materialized push)",
   "new_string": "github.com/go-git/go-git/v6 v6.0.0-alpha.4.0.20260521151600-590487407c38 h1:REDACTED\ngithub.com/go-git/go-git/v6 v6.0.0-alpha.4.0.20260521151600-590487407c38/go.mod h1:4ODa/REDACTED"
 }
@@ -453,7 +460,7 @@ id: toolu_0139gEw5DHvtt68sAP8hCk7X
 tool_result
 id: toolu_0139gEw5DHvtt68sAP8hCk7X
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/go.sum has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/go.sum has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -543,7 +550,8 @@ id: toolu_0145rFp7iXbvNRfmbEsSt8RD
 ```
 [detached HEAD 38c6b8df] gitproto: use go-git's WithObjectSelector to stream materialized push
  5 files changed, 125 insertions(+), 153 deletions(-)
-Rebasing (8/8)Successfully rebased and updated refs/heads/soph/http-stale-pool-fix.
+Rebasing (8/8)
+Successfully rebased and updated refs/heads/soph/http-stale-pool-fix.
 ```
 
 > AGENT

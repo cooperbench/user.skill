@@ -6,7 +6,7 @@ Here is a list of plugins that are available but not installed. If the user's qu
 - Atlassian Rovo (atlassian-rovo@openai-curated-remote)
 - Slack (slack@openai-curated-remote)
 </recommended_plugins>
-# AGENTS.md instructions for /Users/hedde/.codex/worktrees/06f8/evorto
+# AGENTS.md instructions for /home/<USER>/.codex/worktrees/06f8/evorto
 
 <INSTRUCTIONS>
 # Repository Guidelines

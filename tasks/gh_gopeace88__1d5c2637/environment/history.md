@@ -29,7 +29,7 @@ tool_use Bash
 id: toolu_01A22bS8k7ijgRrEMah3wLDF
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq 2>/dev/null && echo \"=== runvision-iq ===\" && git status --short --untracked-files=all && echo \"--- staged ---\" && git diff --shortstat --cached && echo \"--- unstaged ---\" && git diff --shortstat",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq 2>/dev/null && echo \"=== runvision-iq ===\" && git status --short --untracked-files=all && echo \"--- staged ---\" && git diff --shortstat --cached && echo \"--- unstaged ---\" && git diff --shortstat",
   "description": "Check runvision-iq repo status"
 }
 ```
@@ -50,7 +50,7 @@ tool_use Bash
 id: toolu_01HtDEoJUjbsqu8qFA3zxn5W
 ```json
 {
-  "command": "for d in /home/jhkim/00.Projects/00.RunVision/runvision-wear; do\n  if [ -d \"$d/.git\" ] || git -C \"$d\" rev-parse --git-dir >/dev/null 2>&1; then\n    echo \"=== $d ===\" && git -C \"$d\" status --short --untracked-files=all && echo \"--- staged ---\" && git -C \"$d\" diff --shortstat --cached && echo \"--- unstaged ---\" && git -C \"$d\" diff --shortstat\n  else\n    echo \"=== $d === (not a git repo / missing)\"\n  fi\ndone",
+  "command": "for d in /home/<USER>/00.Projects/00.RunVision/runvision-wear; do\n  if [ -d \"$d/.git\" ] || git -C \"$d\" rev-parse --git-dir >/dev/null 2>&1; then\n    echo \"=== $d ===\" && git -C \"$d\" status --short --untracked-files=all && echo \"--- staged ---\" && git -C \"$d\" diff --shortstat --cached && echo \"--- unstaged ---\" && git -C \"$d\" diff --shortstat\n  else\n    echo \"=== $d === (not a git repo / missing)\"\n  fi\ndone",
   "description": "Check runvision-wear repo status"
 }
 ```
@@ -60,7 +60,7 @@ id: toolu_01HtDEoJUjbsqu8qFA3zxn5W
 tool_result
 id: toolu_01HtDEoJUjbsqu8qFA3zxn5W
 ```
-=== /home/jhkim/00.Projects/00.RunVision/runvision-wear ===
+=== /home/<USER>/00.Projects/00.RunVision/runvision-wear ===
 --- staged ---
 --- unstaged ---
 ```
@@ -139,7 +139,7 @@ tool_use Bash
 id: toolu_01RBQvkjyYAy9Sfjwr2FdSht
 ```json
 {
-  "command": "for d in \"/home/jhkim/00.Projects/00.RunVision\" \"/home/jhkim/00.Projects/00.RunVision/runvision-iq\" \"/home/jhkim/00.Projects/00.RunVision/runvision-wear\"; do\n  echo \"================ $d ================\"\n  git -C \"$d\" fetch --quiet 2>&1\n  br=$(git -C \"$d\" rev-parse --abbrev-ref HEAD)\n  up=$(git -C \"$d\" rev-parse --abbrev-ref --symbolic-full-name @{u} 2>/dev/null)\n  echo \"branch=$br  upstream=$up\"\n  if [ -n \"$up\" ]; then\n    echo \"--- incoming commits (HEAD..$up) ---\"\n    git -C \"$d\" log --oneline HEAD..@{u} 2>/dev/null | head -30\n    echo \"--- shortstat ---\"\n    git -C \"$d\" diff --shortstat HEAD..@{u} 2>/dev/null\n  else\n    echo \"(no upstream tracking branch)\"\n  fi\ndone",
+  "command": "for d in \"/home/<USER>/00.Projects/00.RunVision\" \"/home/<USER>/00.Projects/00.RunVision/runvision-iq\" \"/home/<USER>/00.Projects/00.RunVision/runvision-wear\"; do\n  echo \"================ $d ================\"\n  git -C \"$d\" fetch --quiet 2>&1\n  br=$(git -C \"$d\" rev-parse --abbrev-ref HEAD)\n  up=$(git -C \"$d\" rev-parse --abbrev-ref --symbolic-full-name @{u} 2>/dev/null)\n  echo \"branch=$br  upstream=$up\"\n  if [ -n \"$up\" ]; then\n    echo \"--- incoming commits (HEAD..$up) ---\"\n    git -C \"$d\" log --oneline HEAD..@{u} 2>/dev/null | head -30\n    echo \"--- shortstat ---\"\n    git -C \"$d\" diff --shortstat HEAD..@{u} 2>/dev/null\n  else\n    echo \"(no upstream tracking branch)\"\n  fi\ndone",
   "description": "Fetch and inspect incoming pullable changes per repo"
 }
 ```
@@ -149,7 +149,7 @@ id: toolu_01RBQvkjyYAy9Sfjwr2FdSht
 tool_result
 id: toolu_01RBQvkjyYAy9Sfjwr2FdSht
 ```
-================ /home/jhkim/00.Projects/00.RunVision ================
+================ /home/<USER>/00.Projects/00.RunVision ================
 branch=main  upstream=origin/main
 --- incoming commits (HEAD..origin/main) ---
 30d201e docs(reviews): N4 알려진 한계 기록 (어드버서리얼 needs-attention, 보류)
@@ -160,14 +160,14 @@ fad45b8 merge: Apple Watch 러닝 degraded 세션 summary 미진입 수정 (revi
 fa034aa fix(watch): 러닝 degraded 세션(nil)에서 summary 미진입 결함 수정 (review F12)
 --- shortstat ---
  2 files changed, 143 insertions(+), 1 deletion(-)
-================ /home/jhkim/00.Projects/00.RunVision/runvision-iq ================
+================ /home/<USER>/00.Projects/00.RunVision/runvision-iq ================
 branch=main  upstream=gopeace88/RunVision-IQ/main
 --- incoming commits (HEAD..gopeace88/RunVision-IQ/main) ---
 3228a85 merge: Garmin char-failure 영구 disconnect 고착 수정 (review N4)
 e2a8e7f fix(garmin/ble): char discovery 10회 실패 후 영구 disconnect 고착 수정 (review N4)
 --- shortstat ---
  1 file changed, 8 insertions(+), 1 deletion(-)
-================ /home/jhkim/00.Projects/00.RunVision/runvision-wear ================
+================ /home/<USER>/00.Projects/00.RunVision/runvision-wear ================
 branch=main  upstream=origin/main
 --- incoming commits (HEAD..origin/main) ---
 6b65d80 merge: Galaxy connect()를 main looper로 — GATT 단일 스레드 불변식 완성 (재감사 N1)
@@ -194,7 +194,7 @@ tool_use Bash
 id: toolu_01UjudTnp6NvjW7VgZxdDuiZ
 ```json
 {
-  "command": "node \"/home/jhkim/.claude/plugins/cache/openai-codex/codex/1.0.4/scripts/codex-companion.mjs\" --help 2>&1 | head -60; echo \"=== EXIT $? ===\"",
+  "command": "node \"/home/<USER>/.claude/plugins/cache/openai-codex/codex/1.0.4/scripts/codex-companion.mjs\" --help 2>&1 | head -60; echo \"=== EXIT $? ===\"",
   "description": "Check codex-companion review options"
 }
 ```
@@ -241,7 +241,7 @@ tool_use Bash
 id: toolu_019Rky3gWB6PsdP3Wn7RMcfV
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\nBR=$(git rev-parse --abbrev-ref HEAD)\nLOCAL=$(git rev-parse HEAD)\nUP=$(git rev-parse --abbrev-ref --symbolic-full-name @{u})\necho \">>> repo=runvision-iq branch=$BR local=$LOCAL upstream=$UP\"\ngit switch --detach \"$UP\" --quiet 2>&1\necho \">>> detached to: $(git rev-parse HEAD)\"\necho \">>> running codex review --base $LOCAL --scope branch --wait\"\nnode \"/home/jhkim/.claude/plugins/cache/openai-codex/codex/1.0.4/scripts/codex-companion.mjs\" review --wait --base \"$LOCAL\" --scope branch\nRC=$?\necho \">>> codex exit=$RC ; restoring HEAD to $BR\"\ngit switch \"$BR\" --quiet 2>&1\necho \">>> restored HEAD: $(git rev-parse --abbrev-ref HEAD) @ $(git rev-parse HEAD)\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\nBR=$(git rev-parse --abbrev-ref HEAD)\nLOCAL=$(git rev-parse HEAD)\nUP=$(git rev-parse --abbrev-ref --symbolic-full-name @{u})\necho \">>> repo=runvision-iq branch=$BR local=$LOCAL upstream=$UP\"\ngit switch --detach \"$UP\" --quiet 2>&1\necho \">>> detached to: $(git rev-parse HEAD)\"\necho \">>> running codex review --base $LOCAL --scope branch --wait\"\nnode \"/home/<USER>/.claude/plugins/cache/openai-codex/codex/1.0.4/scripts/codex-companion.mjs\" review --wait --base \"$LOCAL\" --scope branch\nRC=$?\necho \">>> codex exit=$RC ; restoring HEAD to $BR\"\ngit switch \"$BR\" --quiet 2>&1\necho \">>> restored HEAD: $(git rev-parse --abbrev-ref HEAD) @ $(git rev-parse HEAD)\"",
   "description": "Codex review of incoming changes in runvision-iq"
 }
 ```
@@ -257,10 +257,10 @@ id: toolu_019Rky3gWB6PsdP3Wn7RMcfV
 [codex] Starting Codex review thread.
 [codex] Thread ready (019e545c-defe-7762-a086-ded8d2ab7fbe).
 [codex] Reviewer started: changes against 'f1411cbcc900318a4f2ab933b069cf024d065aca'
-[codex] Running command: /bin/bash -lc "sed -n '1,200p' /home/jhkim/.codex/superpowers/skills/using-superpowers/SKILL.md"
-[codex] Command completed: /bin/bash -lc "sed -n '1,200p' /home/jhkim/.codex/superpowers/skills/using-superpowers/SKILL.md" (exit 0)
-[codex] Running command: /bin/bash -lc "sed -n '1,220p' /home/jhkim/.codex/superpowers/skills/requesting-code-review/S...
-[codex] Command completed: /bin/bash -lc "sed -n '1,220p' /home/jhkim/.codex/superpowers/skills/requesting-code-review/S... (exit 0)
+[codex] Running command: /bin/bash -lc "sed -n '1,200p' /home/<USER>/.codex/superpowers/skills/using-superpowers/SKILL.md"
+[codex] Command completed: /bin/bash -lc "sed -n '1,200p' /home/<USER>/.codex/superpowers/skills/using-superpowers/SKILL.md" (exit 0)
+[codex] Running command: /bin/bash -lc "sed -n '1,220p' /home/<USER>/.codex/superpowers/skills/requesting-code-review/S...
+[codex] Command completed: /bin/bash -lc "sed -n '1,220p' /home/<USER>/.codex/superpowers/skills/requesting-code-review/S... (exit 0)
 [codex] Running command: /bin/bash -lc 'git diff f1411cbcc900318a4f2ab933b069cf024d065aca'
 [codex] Command completed: /bin/bash -lc 'git diff f1411cbcc900318a4f2ab933b069cf024d065aca' (exit 0)
 [codex] Running command: /bin/bash -lc "sed -n '340,490p' source/RunVisionIQView.mc"
@@ -286,7 +286,7 @@ tool_use Bash
 id: toolu_017DuGSrR2vewPWcCzyrLAFd
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision\nBR=$(git rev-parse --abbrev-ref HEAD)\nLOCAL=$(git rev-parse HEAD)\nUP=$(git rev-parse --abbrev-ref --symbolic-full-name @{u})\necho \">>> repo=00.RunVision branch=$BR local=$LOCAL upstream=$UP\"\ngit switch --detach \"$UP\" --quiet 2>&1\necho \">>> detached to: $(git rev-parse HEAD)\"\nnode \"/home/jhkim/.claude/plugins/cache/openai-codex/codex/1.0.4/scripts/codex-companion.mjs\" review --wait --base \"$LOCAL\" --scope branch\nRC=$?\necho \">>> codex exit=$RC ; restoring HEAD to $BR\"\ngit switch \"$BR\" --quiet 2>&1\necho \">>> restored HEAD: $(git rev-parse --abbrev-ref HEAD) @ $(git rev-parse HEAD)\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision\nBR=$(git rev-parse --abbrev-ref HEAD)\nLOCAL=$(git rev-parse HEAD)\nUP=$(git rev-parse --abbrev-ref --symbolic-full-name @{u})\necho \">>> repo=00.RunVision branch=$BR local=$LOCAL upstream=$UP\"\ngit switch --detach \"$UP\" --quiet 2>&1\necho \">>> detached to: $(git rev-parse HEAD)\"\nnode \"/home/<USER>/.claude/plugins/cache/openai-codex/codex/1.0.4/scripts/codex-companion.mjs\" review --wait --base \"$LOCAL\" --scope branch\nRC=$?\necho \">>> codex exit=$RC ; restoring HEAD to $BR\"\ngit switch \"$BR\" --quiet 2>&1\necho \">>> restored HEAD: $(git rev-parse --abbrev-ref HEAD) @ $(git rev-parse HEAD)\"",
   "description": "Codex review of incoming changes in parent repo"
 }
 ```
@@ -301,8 +301,8 @@ id: toolu_017DuGSrR2vewPWcCzyrLAFd
 [codex] Starting Codex review thread.
 [codex] Thread ready (019e545d-e26b-7320-9a72-fc8e91ecb0b6).
 [codex] Reviewer started: changes against '36d32fd8cdc83a9b3984b46c8e5c4c5c18b52ece'
-[codex] Running command: /bin/bash -lc "cat /home/jhkim/.codex/superpowers/skills/using-superpowers/SKILL.md && printf...
-[codex] Command completed: /bin/bash -lc "cat /home/jhkim/.codex/superpowers/skills/using-superpowers/SKILL.md && printf... (exit 0)
+[codex] Running command: /bin/bash -lc "cat /home/<USER>/.codex/superpowers/skills/using-superpowers/SKILL.md && printf...
+[codex] Command completed: /bin/bash -lc "cat /home/<USER>/.codex/superpowers/skills/using-superpowers/SKILL.md && printf... (exit 0)
 [codex] Running command: /bin/bash -lc "sed -n '1,260p' runvision-watchos/Sources/RunVisionWatch/Workout/WorkoutManage...
 [codex] Command completed: /bin/bash -lc "sed -n '1,260p' runvision-watchos/Sources/RunVisionWatch/Workout/WorkoutManage... (exit 0)
 [codex] Running command: /bin/bash -lc "sed -n '260,520p' runvision-watchos/Sources/RunVisionWatch/Workout/WorkoutMana...
@@ -333,7 +333,7 @@ tool_use Bash
 id: toolu_01NJLyZnzGSLcTJph9UGifxh
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-wear\nBR=$(git rev-parse --abbrev-ref HEAD)\nLOCAL=$(git rev-parse HEAD)\nUP=$(git rev-parse --abbrev-ref --symbolic-full-name @{u})\necho \">>> repo=runvision-wear branch=$BR local=$LOCAL upstream=$UP\"\ngit switch --detach \"$UP\" --quiet 2>&1\necho \">>> detached to: $(git rev-parse HEAD)\"\nnode \"/home/jhkim/.claude/plugins/cache/openai-codex/codex/1.0.4/scripts/codex-companion.mjs\" review --wait --base \"$LOCAL\" --scope branch\nRC=$?\necho \">>> codex exit=$RC ; restoring HEAD to $BR\"\ngit switch \"$BR\" --quiet 2>&1\necho \">>> restored HEAD: $(git rev-parse --abbrev-ref HEAD) @ $(git rev-parse HEAD)\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-wear\nBR=$(git rev-parse --abbrev-ref HEAD)\nLOCAL=$(git rev-parse HEAD)\nUP=$(git rev-parse --abbrev-ref --symbolic-full-name @{u})\necho \">>> repo=runvision-wear branch=$BR local=$LOCAL upstream=$UP\"\ngit switch --detach \"$UP\" --quiet 2>&1\necho \">>> detached to: $(git rev-parse HEAD)\"\nnode \"/home/<USER>/.claude/plugins/cache/openai-codex/codex/1.0.4/scripts/codex-companion.mjs\" review --wait --base \"$LOCAL\" --scope branch\nRC=$?\necho \">>> codex exit=$RC ; restoring HEAD to $BR\"\ngit switch \"$BR\" --quiet 2>&1\necho \">>> restored HEAD: $(git rev-parse --abbrev-ref HEAD) @ $(git rev-parse HEAD)\"",
   "description": "Codex review of incoming changes in runvision-wear"
 }
 ```
@@ -370,8 +370,8 @@ id: toolu_01RDvnCR5KfAiJCRqthcLBHu
 3	[codex] Starting Codex review thread.
 4	[codex] Thread ready (019e545e-d414-7bc0-bc08-420073eaa3a2).
 5	[codex] Reviewer started: changes against 'b23a17a7128a206c4b382c205da243e081ffb1cb'
-6	[codex] Running command: /bin/bash -lc "cat /home/jhkim/.codex/superpowers/skills/using-superpowers/SKILL.md && printf...
-7	[codex] Command completed: /bin/bash -lc "cat /home/jhkim/.codex/superpowers/skills/using-superpowers/SKILL.md && printf... (exit 0)
+6	[codex] Running command: /bin/bash -lc "cat /home/<USER>/.codex/superpowers/skills/using-superpowers/SKILL.md && printf...
+7	[codex] Command completed: /bin/bash -lc "cat /home/<USER>/.codex/superpowers/skills/using-superpowers/SKILL.md && printf... (exit 0)
 8	[codex] Running command: /bin/bash -lc "sed -n '1,260p' app/src/main/kotlin/com/runvision/wear/ble/RLensConnection.kt"
 9	[codex] Command completed: /bin/bash -lc "sed -n '1,260p' app/src/main/kotlin/com/runvision/wear/ble/RLensConnection.kt" (exit 0)
 10	[codex] Running command: /bin/bash -lc "sed -n '1,260p' app/src/main/kotlin/com/runvision/wear/MainActivity.kt"
@@ -446,7 +446,7 @@ id: toolu_0125tdL77A4p1CbzEPg69LP5
 51	
 52	Review comment:
 53	
-54	- [P2] Preserve prewarmed DEM fetches when starting altitude sampling — /home/jhkim/00.Projects/00.RunVision/runvision-wear/app/src/main/kotlin/com/runvision/wear/sensor/AltitudeProvider.kt:284-285
+54	- [P2] Preserve prewarmed DEM fetches when starting altitude sampling — /home/<USER>/00.Projects/00.RunVision/runvision-wear/app/src/main/kotlin/com/runvision/wear/sensor/AltitudeProvider.kt:284-285
 55	  In cycling mode, `pushGps()` can spend the GPS-lock wait period prewarming the DEM cache via `fetchJob = scope.launch { elevation.fetchAsync(...) }`, but `start()` now unconditionally calls `scope.cancel()` before registering the barometer. If the DEM request is still in flight when GPS lock is acquired, this cancels the warm-up fetch right before the first samples use `pickReference()`, so the workout falls back to GPS/no reference until another location update starts a new fetch. This is a regression in initial altitude accuracy on slow or cold network fetches.
 56	>>> codex exit=0 ; restoring HEAD to main
 57	>>> […]
@@ -461,7 +461,7 @@ tool_use Bash
 id: toolu_01M8CY5hDo3XP6jHssGEK76U
 ```json
 {
-  "command": "for d in \"/home/jhkim/00.Projects/00.RunVision\" \"/home/jhkim/00.Projects/00.RunVision/runvision-iq\" \"/home/jhkim/00.Projects/00.RunVision/runvision-wear\"; do\n  echo \"$d -> $(git -C \"$d\" rev-parse --abbrev-ref HEAD) @ $(git -C \"$d\" rev-parse --short HEAD) ; dirty=[$(git -C \"$d\" status --porcelain | wc -l)]\"\ndone",
+  "command": "for d in \"/home/<USER>/00.Projects/00.RunVision\" \"/home/<USER>/00.Projects/00.RunVision/runvision-iq\" \"/home/<USER>/00.Projects/00.RunVision/runvision-wear\"; do\n  echo \"$d -> $(git -C \"$d\" rev-parse --abbrev-ref HEAD) @ $(git -C \"$d\" rev-parse --short HEAD) ; dirty=[$(git -C \"$d\" status --porcelain | wc -l)]\"\ndone",
   "description": "Verify all repos restored to main and clean"
 }
 ```
@@ -471,9 +471,9 @@ id: toolu_01M8CY5hDo3XP6jHssGEK76U
 tool_result
 id: toolu_01M8CY5hDo3XP6jHssGEK76U
 ```
-/home/jhkim/00.Projects/00.RunVision -> main @ 36d32fd ; dirty=[0]
-/home/jhkim/00.Projects/00.RunVision/runvision-iq -> main @ f1411cb ; dirty=[0]
-/home/jhkim/00.Projects/00.RunVision/runvision-wear -> main @ b23a17a ; dirty=[0]
+/home/<USER>/00.Projects/00.RunVision -> main @ 36d32fd ; dirty=[0]
+/home/<USER>/00.Projects/00.RunVision/runvision-iq -> main @ f1411cb ; dirty=[0]
+/home/<USER>/00.Projects/00.RunVision/runvision-wear -> main @ b23a17a ; dirty=[0]
 ```
 
 > AGENT
@@ -489,7 +489,7 @@ id: toolu_01M8CY5hDo3XP6jHssGEK76U
 >
 > Review comment:
 >
-> - [P2] Preserve prewarmed DEM fetches when starting altitude sampling — `/home/jhkim/00.Projects/00.RunVision/runvision-wear/app/src/main/kotlin/com/runvision/wear/sensor/AltitudeProvider.kt:284-285`
+> - [P2] Preserve prewarmed DEM fetches when starting altitude sampling — `/home/<USER>/00.Projects/00.RunVision/runvision-wear/app/src/main/kotlin/com/runvision/wear/sensor/AltitudeProvider.kt:284-285`
 >   In cycling mode, `pushGps()` can spend the GPS-lock wait period prewarming the DEM cache via `fetchJob = scope.launch { elevation.fetchAsync(...) }`, but `start()` now unconditionally calls `scope.cancel()` before registering the barometer. If the DEM request is still in flight when GPS lock is acquired, this cancels the warm-up fetch right before the first samples use `pickReference()`, so the workout falls back to GPS/no reference until another location update starts a new fetch. This is a regression in initial altitude accuracy on slow or cold network fetches.
 
 ---
@@ -514,7 +514,7 @@ tool_use Bash
 id: toolu_01Pgbb6uXE2bosVE5aPPFf81
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-wear\necho \"=== status ===\" && git status --short --untracked-files=all\necho \"=== HEAD & upstream ===\" && git rev-parse --abbrev-ref HEAD && git log --oneline -8\necho \"=== fetch ===\" && git fetch --quiet 2>&1 && echo \"fetched\"\necho \"=== incoming after fetch (HEAD..@{u}) ===\" && git log --oneline HEAD..@{u} 2>/dev/null\necho \"=== outgoing (@{u}..HEAD) ===\" && git log --oneline @{u}..HEAD 2>/dev/null",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-wear\necho \"=== status ===\" && git status --short --untracked-files=all\necho \"=== HEAD & upstream ===\" && git rev-parse --abbrev-ref HEAD && git log --oneline -8\necho \"=== fetch ===\" && git fetch --quiet 2>&1 && echo \"fetched\"\necho \"=== incoming after fetch (HEAD..@{u}) ===\" && git log --oneline HEAD..@{u} 2>/dev/null\necho \"=== outgoing (@{u}..HEAD) ===\" && git log --oneline @{u}..HEAD 2>/dev/null",
   "description": "Inspect current state of runvision-wear repo"
 }
 ```
@@ -560,7 +560,7 @@ tool_use Bash
 id: toolu_014LwujnL3Nss2XrSgez2Aof
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-wear\necho \"=== fix commit diff (696071a) ===\" \ngit show 696071a --stat --format=\"%H%n%an%n%ad%n%n%s%n%n%b\"\necho \"\"\necho \"=== full diff of AltitudeProvider.kt in fix ===\"\ngit show 696071a -- app/src/main/kotlin/com/runvision/wear/sensor/AltitudeProvider.kt",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-wear\necho \"=== fix commit diff (696071a) ===\" \ngit show 696071a --stat --format=\"%H%n%an%n%ad%n%n%s%n%n%b\"\necho \"\"\necho \"=== full diff of AltitudeProvider.kt in fix ===\"\ngit show 696071a -- app/src/main/kotlin/com/runvision/wear/sensor/AltitudeProvider.kt",
   "description": "Show the fix commit diff for AltitudeProvider"
 }
 ```
@@ -590,7 +590,7 @@ cancel 범위를 in-flight fetchJob으로 좁힘:
 
 컴파일·전체 유닛테스트 통과.
 
-Co-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>
+Co-Authored-By: Claude Opus 4.7 <<REDACTED_EMAIL>>
 
 
  .../com/runvision/wear/sensor/AltitudeProvider.kt      | 18 ++++++++----------
@@ -598,7 +598,7 @@ Co-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>
 
 === full diff of AltitudeProvider.kt in fix ===
 commit 696071a73f901bda0bdb7176bde4d491d4ca3788
-Author: Johnny <gopeace88@gmail.com>
+Author: Johnny <<REDACTED_EMAIL>>
 Date:   Sat May 23 19:44:06 2026 +0900
 
     fix(wear/altitude): scope cancel/recreate가 prewarm DEM fetch를 죽이던 회귀 수정
@@ -625,7 +625,7 @@ tool_use Bash
 id: toolu_0129EDTJQs8s4G2r4cVqKTyQ
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-wear\necho \"=== checkout origin/main (detached) to inspect fixed code ===\"\ngit switch --detach origin/main --quiet 2>&1\necho \"on: $(git rev-parse --short HEAD)\"\nF=app/src/main/kotlin/com/runvision/wear/sensor/AltitudeProvider.kt\necho \"=== all 'scope' usages ===\"\ngrep -n \"scope\" \"$F\"\necho \"\"\necho \"=== all 'fetchJob' usages ===\"\ngrep -n \"fetchJob\" \"$F\"\necho \"\"\necho \"=== all '.launch' usages ===\"\ngrep -n \"\\.launch\" \"$F\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-wear\necho \"=== checkout origin/main (detached) to inspect fixed code ===\"\ngit switch --detach origin/main --quiet 2>&1\necho \"on: $(git rev-parse --short HEAD)\"\nF=app/src/main/kotlin/com/runvision/wear/sensor/AltitudeProvider.kt\necho \"=== all 'scope' usages ===\"\ngrep -n \"scope\" \"$F\"\necho \"\"\necho \"=== all 'fetchJob' usages ===\"\ngrep -n \"fetchJob\" \"$F\"\necho \"\"\necho \"=== all '.launch' usages ===\"\ngrep -n \"\\.launch\" \"$F\"",
   "description": "Inspect scope/fetchJob/launch usages in fixed AltitudeProvider"
 }
 ```
@@ -668,7 +668,7 @@ tool_use Bash
 id: toolu_01TrzHMaQMUdMyHCPyjrKbGg
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-wear\nF=app/src/main/kotlin/com/runvision/wear/sensor/AltitudeProvider.kt\necho \"=== lines 308-330 (pushGps / prewarm) ===\"\nsed -n '308,332p' \"$F\"\necho \"\"\necho \"=== restore to main ===\"\ngit switch main --quiet 2>&1\necho \"restored: $(git rev-parse --abbrev-ref HEAD) @ $(git rev-parse --short HEAD) ; dirty=[$(git status --porcelain | wc -l)]\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-wear\nF=app/src/main/kotlin/com/runvision/wear/sensor/AltitudeProvider.kt\necho \"=== lines 308-330 (pushGps / prewarm) ===\"\nsed -n '308,332p' \"$F\"\necho \"\"\necho \"=== restore to main ===\"\ngit switch main --quiet 2>&1\necho \"restored: $(git rev-parse --abbrev-ref HEAD) @ $(git rev-parse --short HEAD) ; dirty=[$(git status --porcelain | wc -l)]\"",
   "description": "View pushGps prewarm logic and restore HEAD"
 }
 ```
@@ -752,7 +752,7 @@ tool_use Bash
 id: toolu_01LWBr74h4YpCprDZdTtachc
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-wear\nls -la gradlew 2>&1 | head -1\necho \"java: $(which java 2>&1); $(java -version 2>&1 | head -1)\"\ngit switch --detach origin/main --quiet 2>&1 && echo \"detached: $(git rev-parse --short HEAD)\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-wear\nls -la gradlew 2>&1 | head -1\necho \"java: $(which java 2>&1); $(java -version 2>&1 | head -1)\"\ngit switch --detach origin/main --quiet 2>&1 && echo \"detached: $(git rev-parse --short HEAD)\"",
   "description": "Check gradlew/java and detach to fixed commit"
 }
 ```
@@ -777,7 +777,7 @@ tool_use Bash
 id: toolu_01UTu97HEi6knX4MdM9FwwBt
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-wear\necho \">>> running ./gradlew testDebugUnitTest on $(git rev-parse --short HEAD)\"\n./gradlew testDebugUnitTest --console=plain 2>&1\nRC=$?\necho \">>> gradle exit=$RC\"\ngit switch main --quiet 2>&1\necho \">>> restored: $(git rev-parse --abbrev-ref HEAD) @ $(git rev-parse --short HEAD) ; dirty=[$(git status --porcelain | grep -v '^?? ' | wc -l)]\"\necho \">>> RESULT_EXIT=$RC\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-wear\necho \">>> running ./gradlew testDebugUnitTest on $(git rev-parse --short HEAD)\"\n./gradlew testDebugUnitTest --console=plain 2>&1\nRC=$?\necho \">>> gradle exit=$RC\"\ngit switch main --quiet 2>&1\necho \">>> restored: $(git rev-parse --abbrev-ref HEAD) @ $(git rev-parse --short HEAD) ; dirty=[$(git status --porcelain | grep -v '^?? ' | wc -l)]\"\necho \">>> RESULT_EXIT=$RC\"",
   "description": "Run Wear OS unit tests on fixed commit, restore HEAD",
   "run_in_background": true
 }
@@ -816,8 +816,8 @@ tool_result
 id: toolu_01KbUqfkZmfR1cixJo6jq6R7
 ```
 === tail (result + restore) ===
-w: file:///home/jhkim/00.Projects/00.RunVision/runvision-wear/app/src/main/kotlin/com/runvision/wear/health/ExerciseManager.kt:98:57 Unnecessary safe call on a non-null receiver of type List<IntervalDataPoint<Long>>
-w: file:///home/jhkim/00.Projects/00.RunVision/runvision-wear/app/src/main/kotlin/com/runvision/wear/network/ElevationLookup.kt:104:42 Parameter 'fetchOnMiss' is never used
+w: file:///home/<USER>/00.Projects/00.RunVision/runvision-wear/app/src/main/kotlin/com/runvision/wear/health/ExerciseManager.kt:98:57 Unnecessary safe call on a non-null receiver of type List<IntervalDataPoint<Long>>
+w: file:///home/<USER>/00.Projects/00.RunVision/runvision-wear/app/src/main/kotlin/com/runvision/wear/network/ElevationLookup.kt:104:42 Parameter 'fetchOnMiss' is never used
 
 > Task :app:compileDebugJavaWithJavac UP-TO-DATE
 > Task :app:processDebugJavaRes
@@ -858,7 +858,7 @@ tool_use Bash
 id: toolu_01D2nzMDhmp95DJZaLDyZE5F
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-wear\nR=app/build/test-results/testDebugUnitTest\nif [ -d \"$R\" ]; then\n  echo \"=== per-class testsuite summary (tests/failures/errors/skipped) ===\"\n  for f in \"$R\"/*.xml; do\n    head -3 \"$f\" | grep -o 'testsuite[^>]*' | sed -E 's/.*name=\"([^\"]*)\".*tests=\"([0-9]+)\".*failures=\"([0-9]+)\".*errors=\"([0-9]+)\".*skipped=\"([0-9]+)\".*/\\1  tests=\\2 fail=\\3 err=\\4 skip=\\5/' \n  done\n  echo \"\"\n  echo \"=== totals ===\"\n  grep -ho 'tests=\"[0-9]*\" .*failures=\"[0-9]*\" .*errors=\"[0-9]*\"' \"$R\"/*.xml | \\\n    awk -F'\"' '{t+=$2; f+=$4; e+=$6} END{print \"TOTAL tests=\"t\" failures=\"f\" errors=\"e}'\n  echo \"\"\n  echo \"=== AltitudeProvider report present? ===\"\n  ls \"$R\" | grep -i altitude || echo \"(no AltitudeProvider test class)\"\nelse\n  echo \"no test-results dir at $R\"\nfi",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-wear\nR=app/build/test-results/testDebugUnitTest\nif [ -d \"$R\" ]; then\n  echo \"=== per-class testsuite summary (tests/failures/errors/skipped) ===\"\n  for f in \"$R\"/*.xml; do\n    head -3 \"$f\" | grep -o 'testsuite[^>]*' | sed -E 's/.*name=\"([^\"]*)\".*tests=\"([0-9]+)\".*failures=\"([0-9]+)\".*errors=\"([0-9]+)\".*skipped=\"([0-9]+)\".*/\\1  tests=\\2 fail=\\3 err=\\4 skip=\\5/' \n  done\n  echo \"\"\n  echo \"=== totals ===\"\n  grep -ho 'tests=\"[0-9]*\" .*failures=\"[0-9]*\" .*errors=\"[0-9]*\"' \"$R\"/*.xml | \\\n    awk -F'\"' '{t+=$2; f+=$4; e+=$6} END{print \"TOTAL tests=\"t\" failures=\"f\" errors=\"e}'\n  echo \"\"\n  echo \"=== AltitudeProvider report present? ===\"\n  ls \"$R\" | grep -i altitude || echo \"(no AltitudeProvider test class)\"\nelse\n  echo \"no test-results dir at $R\"\nfi",
   "description": "Summarize unit test report counts"
 }
 ```
@@ -930,7 +930,7 @@ tool_use Read
 id: toolu_01WCnKgvydNAknGTEwk64QkA
 ```json
 {
-  "file_path": "/home/jhkim/.claude/plugins/cache/claude-plugins-official/superpowers/5.1.0/skills/requesting-code-review/code-reviewer.md"
+  "file_path": "/home/<USER>/.claude/plugins/cache/claude-plugins-official/superpowers/5.1.0/skills/requesting-code-review/code-reviewer.md"
 }
 ```
 
@@ -990,7 +990,7 @@ tool_use Bash
 id: toolu_01LoWv6zGbFir2TZ17auGDve
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-wear\necho \"BASE (pre-fix, Codex P2 found here): $(git rev-parse 6b65d80)\"\necho \"HEAD (post-fix tip):                 $(git rev-parse 14254db)\"\necho \"=== commits in range 6b65d80..14254db ===\"\ngit log --oneline 6b65d80..14254db\necho \"=== files changed in range ===\"\ngit diff --stat 6b65d80..14254db",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-wear\necho \"BASE (pre-fix, Codex P2 found here): $(git rev-parse 6b65d80)\"\necho \"HEAD (post-fix tip):                 $(git rev-parse 14254db)\"\necho \"=== commits in range 6b65d80..14254db ===\"\ngit log --oneline 6b65d80..14254db\necho \"=== files changed in range ===\"\ngit diff --stat 6b65d80..14254db",
   "description": "Read reviewer template and pin fix SHAs"
 }
 ```
@@ -1022,7 +1022,7 @@ id: toolu_01ECufKWXdu2GNrEEaR5vqzo
 {
   "description": "Review wear prewarm fix",
   "subagent_type": "general-purpose",
-  "prompt": "You are a Senior Code Reviewer with expertise in software architecture, design patterns, and best practices (particularly Android/Kotlin coroutines and lifecycle management). Your job is to review completed work against its requirements and identify issues before they cascade.\n\nIMPORTANT: All git commands must be run in the repository at `/home/jhkim/00.Projects/00.RunVision/runvision-wear` (a Galaxy/Wear OS Kotlin app). The commits to review are already fetched and reachable by SHA — you do NOT need to checkout; use `git diff`, `git show`, and `git show <sha>:<path>` to read code at the relevant commits. The working tree is on a different branch, so read the FIXED code via `git show 14254db:<path>`.\n\n## What Was Implemented\n\nA regression fix in `AltitudeProvider.kt`. Background: a prior leak fix (F5) made `start()` do `scope.cancel()` + recreate the CoroutineScope, and `stop()` also call `scope.cancel()`. An independent Codex review found this introduced a P2 regression: in cycling mode, `pushGps()` prewarms the DEM (digital elevation model) cache during the GPS-lock wait via `fetchJob = scope.launch { elevation.fetchAsync(...) }`. Because `start()` is called AFTER GPS lock and unconditionally cancelled the scope, it killed any still-in-flight prewarm fetch right before the first samples […]
+  "prompt": "You are a Senior Code Reviewer with expertise in software architecture, design patterns, and best practices (particularly Android/Kotlin coroutines and lifecycle management). Your job is to review completed work against its requirements and identify issues before they cascade.\n\nIMPORTANT: All git commands must be run in the repository at `/home/<USER>/00.Projects/00.RunVision/runvision-wear` (a Galaxy/Wear OS Kotlin app). The commits to review are already fetched and reachable by SHA — you do NOT need to checkout; use `git diff`, `git show`, and `git show <sha>:<path>` to read code at the relevant commits. The working tree is on a different branch, so read the FIXED code via `git show 14254db:<path>`.\n\n## What Was Implemented\n\nA regression fix in `AltitudeProvider.kt`. Background: a prior leak fix (F5) made `start()` do `scope.cancel()` + recreate the CoroutineScope, and `stop()` also call `scope.cancel()`. An independent Codex review found this introduced a P2 regression: in cycling mode, `pushGps()` prewarms the DEM (digital elevation model) cache during the GPS-lock wait via `fetchJob = scope.launch { elevation.fetchAsync(...) }`. Because `start()` is called AFTER GPS lock and unconditionally cancelled the scope, it killed any still-in-flight prewarm fetch right before the first samples […]
 
 > TOOL
 
@@ -1051,7 +1051,7 @@ tool_use Bash
 id: toolu_01WzruPgvXW7Y7rBi31Mi5Nr
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-wear\nSVC=app/src/main/kotlin/com/runvision/wear/service/ExerciseService.kt\necho \"===== claim A: pushGps wired to LOCATION callback =====\"\ngit show 14254db:\"$SVC\" | grep -n \"pushGps\\|LOCATION\\|onAvailabilityChanged\\|sampleList\\|location\" | head -20\necho \"\"\necho \"===== claim B: stop() ordering vs endExercise() in stopExercise/teardown =====\"\ngit show 14254db:\"$SVC\" | grep -n \"altitudeProvider.stop\\|endExercise\\|serviceScope.launch\\|fun stopExercise\\|fun stop\\|removeUpdates\\|clearUpdateCallback\\|endActiveExercise\" | head -30",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-wear\nSVC=app/src/main/kotlin/com/runvision/wear/service/ExerciseService.kt\necho \"===== claim A: pushGps wired to LOCATION callback =====\"\ngit show 14254db:\"$SVC\" | grep -n \"pushGps\\|LOCATION\\|onAvailabilityChanged\\|sampleList\\|location\" | head -20\necho \"\"\necho \"===== claim B: stop() ordering vs endExercise() in stopExercise/teardown =====\"\ngit show 14254db:\"$SVC\" | grep -n \"altitudeProvider.stop\\|endExercise\\|serviceScope.launch\\|fun stopExercise\\|fun stop\\|removeUpdates\\|clearUpdateCallback\\|endActiveExercise\" | head -30",
   "description": "Verify reviewer's ExerciseService teardown-ordering claim"
 }
 ```
@@ -1145,7 +1145,7 @@ tool_use Bash
 id: toolu_01YLT8L7mAWibzstH9mJQKA7
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-wear\nEM=app/src/main/kotlin/com/runvision/wear/health/ExerciseManager.kt\necho \"===== ExerciseManager.kt around 278: setUpdateCallback signature =====\"\ngit show 14254db:\"$EM\" | sed -n '270,290p'\necho \"\"\necho \"===== confirm single-arg (no Executor) — count args / look for executor =====\"\ngit show 14254db:\"$EM\" | grep -n \"setUpdateCallback\\|Executor\\|executor\" ",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-wear\nEM=app/src/main/kotlin/com/runvision/wear/health/ExerciseManager.kt\necho \"===== ExerciseManager.kt around 278: setUpdateCallback signature =====\"\ngit show 14254db:\"$EM\" | sed -n '270,290p'\necho \"\"\necho \"===== confirm single-arg (no Executor) — count args / look for executor =====\"\ngit show 14254db:\"$EM\" | grep -n \"setUpdateCallback\\|Executor\\|executor\" ",
   "description": "Verify setUpdateCallback single-arg overload claim"
 }
 ```
@@ -1205,7 +1205,7 @@ tool_use Bash
 id: toolu_013vV2GLteisxJdN7E7cLRS1
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-wear\necho \"=== wear local vs origin ===\" \ngit log --oneline -1 HEAD; echo \"origin/main: $(git log --oneline -1 origin/main)\"\necho \"behind by: $(git rev-list --count HEAD..origin/main) commits ; outgoing: $(git rev-list --count origin/main..HEAD)\"\necho \"\"\necho \"=== reviews doc location in PARENT repo ===\"\ncd /home/jhkim/00.Projects/00.RunVision\nls Docs/ 2>/dev/null | grep -i review\nfind Docs -iname \"*review*\" -o -iname \"*리뷰*\" 2>/dev/null | head -20",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-wear\necho \"=== wear local vs origin ===\" \ngit log --oneline -1 HEAD; echo \"origin/main: $(git log --oneline -1 origin/main)\"\necho \"behind by: $(git rev-list --count HEAD..origin/main) commits ; outgoing: $(git rev-list --count origin/main..HEAD)\"\necho \"\"\necho \"=== reviews doc location in PARENT repo ===\"\ncd /home/<USER>/00.Projects/00.RunVision\nls Docs/ 2>/dev/null | grep -i review\nfind Docs -iname \"*review*\" -o -iname \"*리뷰*\" 2>/dev/null | head -20",
   "description": "Check wear git state and locate reviews doc"
 }
 ```
@@ -1289,7 +1289,7 @@ tool_use Bash
 id: toolu_01BU2QXaG4ZrZJ5SidcC6hJ3
 ```json
 {
-  "command": "for d in \"/home/jhkim/00.Projects/00.RunVision\" \"/home/jhkim/00.Projects/00.RunVision/runvision-wear\"; do\n  echo \"================ $d ================\"\n  git -C \"$d\" fetch --quiet 2>&1\n  echo \"local HEAD : $(git -C \"$d\" log --oneline -1 HEAD)\"\n  echo \"origin/main: $(git -C \"$d\" log --oneline -1 @{u} 2>/dev/null)\"\n  echo \"incoming (HEAD..@{u}):\"\n  git -C \"$d\" log --oneline HEAD..@{u} 2>/dev/null | head -20\ndone",
+  "command": "for d in \"/home/<USER>/00.Projects/00.RunVision\" \"/home/<USER>/00.Projects/00.RunVision/runvision-wear\"; do\n  echo \"================ $d ================\"\n  git -C \"$d\" fetch --quiet 2>&1\n  echo \"local HEAD : $(git -C \"$d\" log --oneline -1 HEAD)\"\n  echo \"origin/main: $(git -C \"$d\" log --oneline -1 @{u} 2>/dev/null)\"\n  echo \"incoming (HEAD..@{u}):\"\n  git -C \"$d\" log --oneline HEAD..@{u} 2>/dev/null | head -20\ndone",
   "description": "Fetch both repos and list new incoming commits"
 }
 ```
@@ -1299,7 +1299,7 @@ id: toolu_01BU2QXaG4ZrZJ5SidcC6hJ3
 tool_result
 id: toolu_01BU2QXaG4ZrZJ5SidcC6hJ3
 ```
-================ /home/jhkim/00.Projects/00.RunVision ================
+================ /home/<USER>/00.Projects/00.RunVision ================
 local HEAD : 36d32fd docs: rLens KC 인증서 및 배터리팩 KC 신청서 추가
 origin/main: 903fa91 docs(reviews): 고도 prewarm 회귀 수정 + post-stop straggler 한계(보류)·fetchJob race moot 기록
 incoming (HEAD..@{u}):
@@ -1310,7 +1310,7 @@ a1fb16d docs(reviews): Universal Subscriptions 항목 종결(비결함) — 현�
 1df405b docs(reviews): Garmin/Galaxy/AppleWatch 정확성 리뷰 통합본 + 수정 이력
 fad45b8 merge: Apple Watch 러닝 degraded 세션 summary 미진입 수정 (review F12)
 fa034aa fix(watch): 러닝 degraded 세션(nil)에서 summary 미진입 결함 수정 (review F12)
-================ /home/jhkim/00.Projects/00.RunVision/runvision-wear ================
+================ /home/<USER>/00.Projects/00.RunVision/runvision-wear ================
 local HEAD : b23a17a fix(wear): GPS lock gate를 좌표 fix 기반으로 완화 (altitude sentinel 회피)
 origin/main: bad5ff4 merge: Galaxy 고도 scope 불변식·한계 문서화 (리뷰 #3, #1 보류 기록)
 incoming (HEAD..@{u}):
@@ -1334,7 +1334,7 @@ tool_use Bash
 id: toolu_01RRUuKBBvMcZenwBkgWpLHp
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-wear\necho \"===== wear #3 commit: stat (must be comment-only, no logic) =====\"\ngit show 42eb50e --stat --format=\"%s%n\"\necho \"===== wear #3 full diff =====\"\ngit show 42eb50e -- app/src/main/kotlin/com/runvision/wear/sensor/AltitudeProvider.kt",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-wear\necho \"===== wear #3 commit: stat (must be comment-only, no logic) =====\"\ngit show 42eb50e --stat --format=\"%s%n\"\necho \"===== wear #3 full diff =====\"\ngit show 42eb50e -- app/src/main/kotlin/com/runvision/wear/sensor/AltitudeProvider.kt",
   "description": "Inspect wear #3 invariant comment diff"
 }
 ```
@@ -1352,7 +1352,7 @@ docs(wear/altitude): scope launch/스레드 불변식 + post-stop straggler 한�
  1 file changed, 10 insertions(+)
 ===== wear #3 full diff =====
 commit 42eb50e679acb11782c3c97bffc7c54a4159b3ea
-Author: Johnny <gopeace88@gmail.com>
+Author: Johnny <<REDACTED_EMAIL>>
 Date:   Sat May 23 20:09:53 2026 +0900
 
     docs(wear/altitude): scope launch/스레드 불변식 + post-stop straggler 한계 주석 (리뷰 #3)
@@ -1361,7 +1361,7 @@ Date:   Sat May 23 20:09:53 2026 +0900
     - fetchJob 접근은 메인 스레드 단일(HS executor 미지정)이라 동기화 불필요 (리뷰 #2 race는 moot)
     - 알려진 한계(보류, 리뷰 #1): stop() 후 HS 드레인 중 straggler prewarm 1회 가능(transient, 무해)
     
-    Co-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>
+    Co-Authored-By: Claude Opus 4.7 <<REDACTED_EMAIL>>
 
 diff --git a/app/src/main/kotlin/com/runvision/wear/sensor/AltitudeProvider.kt b/app/src/main/kotlin/com/runvision/wear/sensor/AltitudeProvider.kt
 index 3f00a6a..6e8c9ca 100644
@@ -1386,7 +1386,7 @@ tool_use Bash
 id: toolu_01DmCTzMijzUfSZqEbMkXCPK
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision\necho \"===== parent 903fa91: stat (docs-only?) =====\"\ngit show 903fa91 --stat --format=\"%s%n\"\necho \"\"\necho \"===== parent 903fa91 diff =====\"\ngit show 903fa91",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision\necho \"===== parent 903fa91: stat (docs-only?) =====\"\ngit show 903fa91 --stat --format=\"%s%n\"\necho \"\"\necho \"===== parent 903fa91 diff =====\"\ngit show 903fa91",
   "description": "Inspect parent reviews doc commit"
 }
 ```
@@ -1405,12 +1405,12 @@ docs(reviews): 고도 prewarm 회귀 수정 + post-stop straggler 한계(보류)
 
 ===== parent 903fa91 diff =====
 commit 903fa91e8364ff4769fdff03ddb93dc7c4b3f7da
-Author: Johnny <gopeace88@gmail.com>
+Author: Johnny <<REDACTED_EMAIL>>
 Date:   Sat May 23 20:10:31 2026 +0900
 
     docs(reviews): 고도 prewarm 회귀 수정 + post-stop straggler 한계(보류)·fetchJob race moot 기록
     
-    Co-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>
+    Co-Authored-By: Claude Opus 4.7 <<REDACTED_EMAIL>>
 
 diff --git a/Docs/reviews/CONSOLIDATED-REVIEW.md b/Docs/reviews/CONSOLIDATED-REVIEW.md
 index f69584a..852ca50 100644
@@ -1457,7 +1457,7 @@ tool_use Bash
 id: toolu_01ECYfWVk2LqmKwuA8irqzcq
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq && git fetch --quiet 2>&1\nfor d in \"/home/jhkim/00.Projects/00.RunVision\" \"/home/jhkim/00.Projects/00.RunVision/runvision-iq\" \"/home/jhkim/00.Projects/00.RunVision/runvision-wear\"; do\n  name=$(basename \"$d\")\n  behind=$(git -C \"$d\" rev-list --count HEAD..@{u} 2>/dev/null)\n  ahead=$(git -C \"$d\" rev-list --count @{u}..HEAD 2>/dev/null)\n  dirty=$(git -C \"$d\" status --porcelain | wc -l)\n  echo \"$name : behind=$behind ahead=$ahead dirty=$dirty -> $(if [ \"$ahead\" = 0 ] && [ \"$dirty\" = 0 ]; then echo 'clean fast-forward pull'; else echo 'NEEDS ATTENTION'; fi)\"\ndone",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq && git fetch --quiet 2>&1\nfor d in \"/home/<USER>/00.Projects/00.RunVision\" \"/home/<USER>/00.Projects/00.RunVision/runvision-iq\" \"/home/<USER>/00.Projects/00.RunVision/runvision-wear\"; do\n  name=$(basename \"$d\")\n  behind=$(git -C \"$d\" rev-list --count HEAD..@{u} 2>/dev/null)\n  ahead=$(git -C \"$d\" rev-list --count @{u}..HEAD 2>/dev/null)\n  dirty=$(git -C \"$d\" status --porcelain | wc -l)\n  echo \"$name : behind=$behind ahead=$ahead dirty=$dirty -> $(if [ \"$ahead\" = 0 ] && [ \"$dirty\" = 0 ]; then echo 'clean fast-forward pull'; else echo 'NEEDS ATTENTION'; fi)\"\ndone",
   "description": "Check sync state of all three repos"
 }
 ```
@@ -1534,7 +1534,7 @@ tool_use Bash
 id: toolu_01KziAkRQNjU3A2z4fXG1HEe
 ```json
 {
-  "command": "for d in \"/home/jhkim/00.Projects/00.RunVision\" \"/home/jhkim/00.Projects/00.RunVision/runvision-iq\" \"/home/jhkim/00.Projects/00.RunVision/runvision-wear\"; do\n  echo \"================ $(basename \"$d\") ================\"\n  git -C \"$d\" pull --ff-only 2>&1\n  echo \"-> now at: $(git -C \"$d\" log --oneline -1)\"\ndone",
+  "command": "for d in \"/home/<USER>/00.Projects/00.RunVision\" \"/home/<USER>/00.Projects/00.RunVision/runvision-iq\" \"/home/<USER>/00.Projects/00.RunVision/runvision-wear\"; do\n  echo \"================ $(basename \"$d\") ================\"\n  git -C \"$d\" pull --ff-only 2>&1\n  echo \"-> now at: $(git -C \"$d\" log --oneline -1)\"\ndone",
   "description": "Fast-forward pull all three repos"
 }
 ```
@@ -1580,7 +1580,7 @@ tool_use Bash
 id: toolu_01GRZNTWxWPZo6euAemroV1j
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== build scripts / config present ===\"\nls -1 *.sh *.bat *.ps1 2>/dev/null; ls -1 manifest.xml monkey.jungle developer_key* 2>/dev/null\necho \"\"\necho \"=== build hints in CLAUDE-DETAILS.md ===\"\ngrep -niA4 \"monkey\\|monkeyc\\|connectiq\\|sdk\\|빌드\\|build\" /home/jhkim/00.Projects/00.RunVision/Docs/CLAUDE-DETAILS.md 2>/dev/null | grep -i \"monkeyc\\|connectiq\\|sdkmanager\\|\\.bat\\|powershell\\|build\" | head -20",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== build scripts / config present ===\"\nls -1 *.sh *.bat *.ps1 2>/dev/null; ls -1 manifest.xml monkey.jungle developer_key* 2>/dev/null\necho \"\"\necho \"=== build hints in CLAUDE-DETAILS.md ===\"\ngrep -niA4 \"monkey\\|monkeyc\\|connectiq\\|sdk\\|빌드\\|build\" /home/<USER>/00.Projects/00.RunVision/Docs/CLAUDE-DETAILS.md 2>/dev/null | grep -i \"monkeyc\\|connectiq\\|sdkmanager\\|\\.bat\\|powershell\\|build\" | head -20",
   "description": "Locate Garmin Monkey C build command/config"
 }
 ```
@@ -1600,7 +1600,7 @@ monkey.jungle
 === build hints in CLAUDE-DETAILS.md ===
 59:cmd.exe /c "C:\\Users\\jinhee\\AppData\\Roaming\\Garmin\\ConnectIQ\\Sdks\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\bin\\monkeyc.bat -o bin\\RunVisionIQ.prg -f monkey.jungle -y developer_key.der -d fr265"
 62-**시뮬레이터**: `run-simulator.bat` (Java 11 필수: `C:\Program Files\Java\jdk-11.0.2\bin\java.exe`, 방화벽 허용)
-66:$sdkPath = "C:\Users\jinhee\AppData\Roaming\Garmin\ConnectIQ\Sdks\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\bin"
+66:$sdkPath = "C:\Users\<USER>\AppData\Roaming\Garmin\ConnectIQ\Sdks\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\bin"
 100:| `version_ios.txt` | `feat/apple-watch-app` 전담 | iOS version+build |
 103:빌드 스크립트가 `--build-name / --build-number` 플래그로 pubspec 버전을 오버라이드함.
 110:flutter build apk --debug             # 디버그 APK
@@ -1621,7 +1621,7 @@ tool_use Bash
 id: toolu_01SiuS3NMnCShEem2MdBsvLM
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== (a) SDK monkeyc.bat reachable from WSL? ===\"\nSDK=\"/mnt/c/Users/jinhee/AppData/Roaming/Garmin/ConnectIQ/Sdks/connectiq-sdk-win-8.4.0-2025-12-03-5122605dc/bin\"\nls \"$SDK/monkeyc.bat\" 2>&1 | head -1\necho \"cmd.exe reachable: $(which cmd.exe 2>&1 || echo NO)\"\necho \"\"\necho \"=== (b) target devices in manifest ===\"\ngrep -o 'iq:product id=\"[^\"]*\"' manifest.xml | sed 's/iq:product id=//' | tr -d '\"' | tr '\\n' ' '; echo \"\"\necho \"device count: $(grep -c 'iq:product id=' manifest.xml)\"\necho \"\"\necho \"=== existing build outputs ===\"\nls -la bin/ 2>/dev/null | head",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== (a) SDK monkeyc.bat reachable from WSL? ===\"\nSDK=\"/mnt/c/home/<USER>/AppData/Roaming/Garmin/ConnectIQ/Sdks/connectiq-sdk-win-8.4.0-2025-12-03-5122605dc/bin\"\nls \"$SDK/monkeyc.bat\" 2>&1 | head -1\necho \"cmd.exe reachable: $(which cmd.exe 2>&1 || echo NO)\"\necho \"\"\necho \"=== (b) target devices in manifest ===\"\ngrep -o 'iq:product id=\"[^\"]*\"' manifest.xml | sed 's/iq:product id=//' | tr -d '\"' | tr '\\n' ' '; echo \"\"\necho \"device count: $(grep -c 'iq:product id=' manifest.xml)\"\necho \"\"\necho \"=== existing build outputs ===\"\nls -la bin/ 2>/dev/null | head",
   "description": "Verify Garmin toolchain reachability and device targets"
 }
 ```
@@ -1632,7 +1632,7 @@ tool_result
 id: toolu_01SiuS3NMnCShEem2MdBsvLM
 ```
 === (a) SDK monkeyc.bat reachable from WSL? ===
-/mnt/c/Users/jinhee/AppData/Roaming/Garmin/ConnectIQ/Sdks/connectiq-sdk-win-8.4.0-2025-12-03-5122605dc/bin/monkeyc.bat
+/mnt/c/home/<USER>/AppData/Roaming/Garmin/ConnectIQ/Sdks/connectiq-sdk-win-8.4.0-2025-12-03-5122605dc/bin/monkeyc.bat
 cmd.exe reachable: /mnt/c/WINDOWS/system32/cmd.exe
 
 === (b) target devices in manifest ===
@@ -1661,7 +1661,7 @@ tool_use Bash
 id: toolu_01EN1MpWCfCgPqsR5xiRv9gr
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== manifest version ===\"\ngrep -o 'version=\"[^\"]*\"' manifest.xml | head -1\necho \"\"\necho \"=== latest .iq in bin (by name) ===\"\nls -1 bin/*.iq 2>/dev/null\necho \"\"\necho \"=== store deploy 신뢰원 확인 (Connect IQ 현재 배포 버전) ===\"\ngrep -rinE \"connect ?iq|monkeyc|1\\.1\\.[0-9]+|가민|garmin\" /home/jhkim/00.Projects/00.RunVision/Docs/애플스토어/APP-STORE-SUBMISSION-LOG.md 2>/dev/null | head -10\necho \"--- (iq 전용 릴리즈 로그가 따로 있나) ---\"\nfind /home/jhkim/00.Projects/00.RunVision -iname \"*submission*\" -o -iname \"*release*log*\" 2>/dev/null | grep -vi node_modules | head",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== manifest version ===\"\ngrep -o 'version=\"[^\"]*\"' manifest.xml | head -1\necho \"\"\necho \"=== latest .iq in bin (by name) ===\"\nls -1 bin/*.iq 2>/dev/null\necho \"\"\necho \"=== store deploy 신뢰원 확인 (Connect IQ 현재 배포 버전) ===\"\ngrep -rinE \"connect ?iq|monkeyc|1\\.1\\.[0-9]+|가민|garmin\" /home/<USER>/00.Projects/00.RunVision/Docs/애플스토어/APP-STORE-SUBMISSION-LOG.md 2>/dev/null | head -10\necho \"--- (iq 전용 릴리즈 로그가 따로 있나) ---\"\nfind /home/<USER>/00.Projects/00.RunVision -iname \"*submission*\" -o -iname \"*release*log*\" 2>/dev/null | grep -vi node_modules | head",
   "description": "Check manifest version and Garmin store deploy version"
 }
 ```
@@ -1683,7 +1683,7 @@ bin/RunVisionIQ.iq
 
 === store deploy 신뢰원 확인 (Connect IQ 현재 배포 버전) ===
 --- (iq 전용 릴리즈 로그가 따로 있나) ---
-/home/jhkim/00.Projects/00.RunVision/Docs/애플스토어/APP-STORE-SUBMISSION-LOG.md
+/home/<USER>/00.Projects/00.RunVision/Docs/애플스토어/APP-STORE-SUBMISSION-LOG.md
 ```
 
 > TOOL
@@ -1692,7 +1692,7 @@ tool_use Bash
 id: toolu_01UmiEHpwnFWLwiMPuH2NT5r
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== manifest application/version attributes ===\"\ngrep -oE '(iq:application|iq:manifest)[^>]*' manifest.xml | head\necho \"\"\necho \"=== version-like strings in manifest ===\"\ngrep -oE 'version[^ ]*=\"[^\"]*\"' manifest.xml\necho \"\"\necho \"=== git log: how were .iq versions bumped? (recent) ===\"\ngit log --oneline -15 | grep -iE \"1\\.1\\.|version|bump|배포|release\" | head",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== manifest application/version attributes ===\"\ngrep -oE '(iq:application|iq:manifest)[^>]*' manifest.xml | head\necho \"\"\necho \"=== version-like strings in manifest ===\"\ngrep -oE 'version[^ ]*=\"[^\"]*\"' manifest.xml\necho \"\"\necho \"=== git log: how were .iq versions bumped? (recent) ===\"\ngit log --oneline -15 | grep -iE \"1\\.1\\.|version|bump|배포|release\" | head",
   "description": "Find Garmin app version source and bump history"
 }
 ```
@@ -1723,7 +1723,7 @@ version="1.2.0"
 - **현재 버전 = `1.2.0`** (manifest `iq:application version="1.2.0"`, 커밋 `0ea4390`에서 사이클 모드 추가하며 1.1.10→1.2.0 범프). 버전은 이미 정해져 있어 제가 정할 게 없습니다.
 - 배포 산출물 = `RunVisionIQ-<버전>.iq` (87개 기기 전체 export). bin/엔 1.2.0 .iq가 아직 없음 → 이번이 1.2.0 첫 빌드.
 
-빌드는 WSL-네이티브 경로(`/home/...`)인데 monkeyc는 Windows 툴이라, 실제 동작하던 호출 패턴을 `.bat`에서 확인하고 그대로 export 모드로 쓰겠습니다:
+빌드는 WSL-네이티브 경로(`/home/<USER>`)인데 monkeyc는 Windows 툴이라, 실제 동작하던 호출 패턴을 `.bat`에서 확인하고 그대로 export 모드로 쓰겠습니다:
 
 > TOOL
 
@@ -1731,7 +1731,7 @@ tool_use Bash
 id: toolu_01J852B1WD9kpYgtuZ7Qy79v
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== monkeydo-custom.bat (how paths/invocation handled) ===\"\ncat monkeydo-custom.bat 2>/dev/null\necho \"\"\necho \"=== current dir as Windows sees it (wslpath) ===\"\nwslpath -w \"$(pwd)\" 2>&1",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== monkeydo-custom.bat (how paths/invocation handled) ===\"\ncat monkeydo-custom.bat 2>/dev/null\necho \"\"\necho \"=== current dir as Windows sees it (wslpath) ===\"\nwslpath -w \"$(pwd)\" 2>&1",
   "description": "Inspect working build invocation pattern"
 }
 ```
@@ -1752,7 +1752,7 @@ IF "%~2"=="" GOTO usage
 
 SET prg_path=%1
 SET device_id=%2
-SET SDK_HOME=C:\Users\jinhee\AppData\Roaming\Garmin\ConnectIQ\Sdks\connectiq-sdk-win-8.3.0-2025-09-22-5813687a0\bin
+SET SDK_HOME=C:\Users\<USER>\AppData\Roaming\Garmin\ConnectIQ\Sdks\connectiq-sdk-win-8.3.0-2025-09-22-5813687a0\bin
 
 REM Execute MonkeyDoDeux with custom shell wrapper for port 42877
 cd /d "%SDK_HOME%"
@@ -1784,7 +1784,7 @@ tool_use Bash
 id: toolu_01RVjTfqquRXywSFHdNhjxd7
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\nSDK=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\"\nW=$(wslpath -w \"$(pwd)\")\necho \">>> Windows project path: $W\"\necho \">>> probe: single-device fr265 compile (.prg)\"\ncmd.exe /c \"\\\"$SDK\\\\monkeyc.bat\\\" -o \\\"$W\\\\bin\\\\probe-fr265.prg\\\" -f \\\"$W\\\\monkey.jungle\\\" -y \\\"$W\\\\developer_key.der\\\" -d fr265 -w\" 2>&1 | tail -30\necho \">>> exit=${PIPESTATUS[0]}\"\nls -la bin/probe-fr265.prg 2>&1 | head -1",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\nSDK=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\"\nW=$(wslpath -w \"$(pwd)\")\necho \">>> Windows project path: $W\"\necho \">>> probe: single-device fr265 compile (.prg)\"\ncmd.exe /c \"\\\"$SDK\\\\monkeyc.bat\\\" -o \\\"$W\\\\bin\\\\probe-fr265.prg\\\" -f \\\"$W\\\\monkey.jungle\\\" -y \\\"$W\\\\developer_key.der\\\" -d fr265 -w\" 2>&1 | tail -30\necho \">>> exit=${PIPESTATUS[0]}\"\nls -la bin/probe-fr265.prg 2>&1 | head -1",
   "description": "Probe single-device Garmin compile from WSL"
 }
 ```
@@ -1799,7 +1799,7 @@ id: toolu_01RVjTfqquRXywSFHdNhjxd7
 '\\wsl.localhost\Ubuntu-24.04\home\jhkim\00.Projects\00.RunVision\runvision-iq'
 ���� ��θ� ���� ���͸��� �Ͽ� CMD.EXE�� ����Ǿ����ϴ�. UNC ��δ�
 �������� �ʽ��ϴ�. Windows ���͸��� �⺻���� �մϴ�.
-'\"C:\Users\jinhee\AppData\Roaming\Garmin\ConnectIQ\Sdks\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\bin\monkeyc.bat\"'��(��) ���� �Ǵ� �ܺ� ����, ������ �� �ִ� ���α׷�, �Ǵ�
+'\"C:\Users\<USER>\AppData\Roaming\Garmin\ConnectIQ\Sdks\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\bin\monkeyc.bat\"'��(��) ���� �Ǵ� �ܺ� ����, ������ �� �ִ� ���α׷�, �Ǵ�
 ��ġ ������ �ƴմϴ�.
 >>> exit=1
 ls: cannot access 'bin/probe-fr265.prg': No such file or directory
@@ -1819,7 +1819,7 @@ tool_use Bash
 id: toolu_0148wVPG8aDFrf3BhFKQKJNE
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== bin/ 이 git에 추적되는가? ===\"\ngit check-ignore bin/ bin/RunVisionIQ-1.1.10.iq 2>&1 && echo \"(위 경로들은 .gitignore 됨)\" || echo \"(ignore 안 됨 → 추적 가능성)\"\necho \"\"\necho \"=== .gitignore 내용 (bin/gen/iq 관련) ===\"\ngrep -nE \"bin|gen|\\.iq|\\.prg|\\.prg\\b|build\" .gitignore 2>/dev/null || echo \"(.gitignore 없음 또는 해당 항목 없음)\"\necho \"\"\necho \"=== git이 실제 추적 중인 .iq/.prg/bin 파일 ===\"\ngit ls-files | grep -iE \"\\.iq$|\\.prg$|^bin/\" | head -20\necho \"추적 중 산출물 개수: $(git ls-files | grep -iE \"\\.iq$|\\.prg$|^bin/\" | wc -l)\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== bin/ 이 git에 추적되는가? ===\"\ngit check-ignore bin/ bin/RunVisionIQ-1.1.10.iq 2>&1 && echo \"(위 경로들은 .gitignore 됨)\" || echo \"(ignore 안 됨 → 추적 가능성)\"\necho \"\"\necho \"=== .gitignore 내용 (bin/gen/iq 관련) ===\"\ngrep -nE \"bin|gen|\\.iq|\\.prg|\\.prg\\b|build\" .gitignore 2>/dev/null || echo \"(.gitignore 없음 또는 해당 항목 없음)\"\necho \"\"\necho \"=== git이 실제 추적 중인 .iq/.prg/bin 파일 ===\"\ngit ls-files | grep -iE \"\\.iq$|\\.prg$|^bin/\" | head -20\necho \"추적 중 산출물 개수: $(git ls-files | grep -iE \"\\.iq$|\\.prg$|^bin/\" | wc -l)\"",
   "description": "Check if build artifacts are git-tracked"
 }
 ```
@@ -1869,7 +1869,7 @@ tool_use Bash
 id: toolu_01Su64fsGNMPm1wkj4E22Czb
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\nSDK=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\\\\monkeyc.bat\"\nW=$(wslpath -w \"$(pwd)\")\necho \">>> probe via powershell.exe (UNC-aware), single device fr265\"\npowershell.exe -NoProfile -Command \"& '$SDK' -o '$W\\bin\\probe-fr265.prg' -f '$W\\monkey.jungle' -y '$W\\developer_key.der' -d fr265 -w\" 2>&1 | tail -25\necho \">>> exit=${PIPESTATUS[0]}\"\nls -la bin/probe-fr265.prg 2>&1 | head -1",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\nSDK=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\\\\monkeyc.bat\"\nW=$(wslpath -w \"$(pwd)\")\necho \">>> probe via powershell.exe (UNC-aware), single device fr265\"\npowershell.exe -NoProfile -Command \"& '$SDK' -o '$W\\bin\\probe-fr265.prg' -f '$W\\monkey.jungle' -y '$W\\developer_key.der' -d fr265 -w\" 2>&1 | tail -25\necho \">>> exit=${PIPESTATUS[0]}\"\nls -la bin/probe-fr265.prg 2>&1 | head -1",
   "description": "Retry Garmin probe build via powershell.exe"
 }
 ```
@@ -1910,7 +1910,7 @@ tool_use Bash
 id: toolu_018aXaM8rPYtBe9qtPXXJyDr
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\nrm -f bin/probe-fr265.prg\nSDK=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\\\\monkeyc.bat\"\nW=$(wslpath -w \"$(pwd)\")\necho \">>> release export: RunVisionIQ-1.2.0.iq (all devices, -e)\"\npowershell.exe -NoProfile -Command \"& '$SDK' -e -o '$W\\bin\\RunVisionIQ-1.2.0.iq' -f '$W\\monkey.jungle' -y '$W\\developer_key.der' -w\" 2>&1 | grep -viE \"is not used|launcher icon|CMD.EXE|UNC|Windows \" | tail -30\necho \">>> exit=${PIPESTATUS[0]}\"\nls -la bin/RunVisionIQ-1.2.0.iq 2>&1 | head -1",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\nrm -f bin/probe-fr265.prg\nSDK=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\\\\monkeyc.bat\"\nW=$(wslpath -w \"$(pwd)\")\necho \">>> release export: RunVisionIQ-1.2.0.iq (all devices, -e)\"\npowershell.exe -NoProfile -Command \"& '$SDK' -e -o '$W\\bin\\RunVisionIQ-1.2.0.iq' -f '$W\\monkey.jungle' -y '$W\\developer_key.der' -w\" 2>&1 | grep -viE \"is not used|launcher icon|CMD.EXE|UNC|Windows \" | tail -30\necho \">>> exit=${PIPESTATUS[0]}\"\nls -la bin/RunVisionIQ-1.2.0.iq 2>&1 | head -1",
   "description": "Build Garmin release .iq for all devices",
   "run_in_background": true
 }
@@ -1967,7 +1967,7 @@ tool_use Bash
 id: toolu_015yrdgsSs2tA2Ddd2vSStnZ
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-wear\nF=app/src/main/kotlin/com/runvision/wear/ble/RLensConnection.kt\necho \"=== gatt 필드 선언 + handler.post 콜백 + close/connect 위치 ===\"\ngrep -nE \"private var gatt|var gatt|val gatt|handler.post|\\.close\\(\\)|fun connect|gattCallback|onConnectionStateChange|onServicesDiscovered|onCharacteristicChanged|exerciseCharacteristic *=|intentionalDisconnect|this@RLensConnection.gatt|gatt:\" \"$F\" | head -60",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-wear\nF=app/src/main/kotlin/com/runvision/wear/ble/RLensConnection.kt\necho \"=== gatt 필드 선언 + handler.post 콜백 + close/connect 위치 ===\"\ngrep -nE \"private var gatt|var gatt|val gatt|handler.post|\\.close\\(\\)|fun connect|gattCallback|onConnectionStateChange|onServicesDiscovered|onCharacteristicChanged|exerciseCharacteristic *=|intentionalDisconnect|<REDACTED_EMAIL>|gatt:\" \"$F\" | head -60",
   "description": "Map GATT callback, gatt field, connect/close in RLensConnection"
 }
 ```
@@ -2014,7 +2014,7 @@ tool_use Read
 id: toolu_01TTn4R3Z16SyU5dV4ELTULB
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-wear/app/src/main/kotlin/com/runvision/wear/ble/RLensConnection.kt",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-wear/app/src/main/kotlin/com/runvision/wear/ble/RLensConnection.kt",
   "offset": 64,
   "limit": 120
 }
@@ -2072,7 +2072,7 @@ id: toolu_01TTn4R3Z16SyU5dV4ELTULB
 ## 검증 결과 (RLensConnection.kt 직접 확인)
 
 **결함 성립 확인:**
-- 콜백 3개 모두(`onConnectionStateChange` L66, `onServicesDiscovered` L100, `onCharacteristicWrite` L128) `handler.post` 본문에서 **gatt 동일성 체크가 없음** — 콜백 파라미터 `gatt`를 그대로 쓰고 `this@RLensConnection.gatt` 필드와 비교 안 함.
+- 콜백 3개 모두(`onConnectionStateChange` L66, `onServicesDiscovered` L100, `onCharacteristicWrite` L128) `handler.post` 본문에서 **gatt 동일성 체크가 없음** — 콜백 파라미터 `gatt`를 그대로 쓰고 `<REDACTED_EMAIL>` 필드와 비교 안 함.
 - `connect()`(L156-166)는 `gatt?.close()` → `gatt = device.connectGatt(...)`로 같은 필드를 G1→G2 교체.
 - `connect()`엔 `handler.removeCallbacksAndMessages(null)`가 **없음**(disconnect()에만 L175 있음) → 재연결 경로에서 stale 콜백이 정리되지 않음.
 
@@ -2099,7 +2099,7 @@ tool_use Bash
 id: toolu_01KVURkhExaYM475nAr2cAtK
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-wear\ngit fetch --quiet 2>&1\necho \"local : $(git log --oneline -1 HEAD)\"\necho \"origin: $(git log --oneline -1 @{u})\"\necho \"incoming: $(git rev-list --count HEAD..@{u})\"\necho \"\"\necho \"=== new commits ===\"\ngit log --oneline HEAD..@{u} 2>/dev/null\necho \"\"\necho \"=== Garmin background build output (tail) ===\"\ntail -8 /tmp/claude-1000/-home-jhkim-00-Projects-00-RunVision/567062c2-d6ea-4f97-8e3b-a1cc8e5292ac/tasks/b1du4qt3w.output 2>/dev/null || echo \"(no output yet)\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-wear\ngit fetch --quiet 2>&1\necho \"local : $(git log --oneline -1 HEAD)\"\necho \"origin: $(git log --oneline -1 @{u})\"\necho \"incoming: $(git rev-list --count HEAD..@{u})\"\necho \"\"\necho \"=== new commits ===\"\ngit log --oneline HEAD..@{u} 2>/dev/null\necho \"\"\necho \"=== Garmin background build output (tail) ===\"\ntail -8 /tmp/claude-1000/-home-jhkim-00-Projects-00-RunVision/567062c2-d6ea-4f97-8e3b-a1cc8e5292ac/tasks/b1du4qt3w.output 2>/dev/null || echo \"(no output yet)\"",
   "description": "Fetch wear, list new commits, check Garmin build progress"
 }
 ```
@@ -2131,7 +2131,7 @@ tool_use Bash
 id: toolu_01Pj1H8bsyB62D3gddCKineA
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-wear\necho \"=== fix commit stat ===\"\ngit show 2aa89ad --stat --format=\"%s%n\"\necho \"\"\necho \"=== full diff ===\"\ngit show 2aa89ad -- app/src/main/kotlin/com/runvision/wear/ble/RLensConnection.kt",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-wear\necho \"=== fix commit stat ===\"\ngit show 2aa89ad --stat --format=\"%s%n\"\necho \"\"\necho \"=== full diff ===\"\ngit show 2aa89ad -- app/src/main/kotlin/com/runvision/wear/ble/RLensConnection.kt",
   "description": "Inspect gatt-identity guard diff"
 }
 ```
@@ -2150,7 +2150,7 @@ fix(wear/ble): stale GATT 콜백 동일성 가드 추가 (어드버서리얼 [hi
 
 === full diff ===
 commit 2aa89ad09302bdbe7536a1639a4429589a4ced3f
-Author: Johnny <gopeace88@gmail.com>
+Author: Johnny <<REDACTED_EMAIL>>
 Date:   Sat May 23 20:26:44 2026 +0900
 
     fix(wear/ble): stale GATT 콜백 동일성 가드 추가 (어드버서리얼 [high])
@@ -2166,7 +2166,7 @@ Date:   Sat May 23 20:26:44 2026 +0900
     - 현재 gatt 콜백은 통과, 옛 인스턴스 콜백만 무시
     - 컴파일·전체 유닛테스트 통과, BLE 런타임은 실기기 확인 권장
     
-    Co-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>
+    Co-Authored-By: Claude Opus 4.7 <<REDACTED_EMAIL>>
 
 diff --git a/app/src/main/kotlin/com/runvision/wear/ble/RLensConnection.kt b/app/src/main/kotlin/com/runvision/wear/ble/RLensConnection.kt
 index d0b7bd2..0f69486 100644
@@ -2187,7 +2187,7 @@ index d0b7bd2..0f69486 100644
 |-----------|------|
 | 3개 콜백 전부 가드 | ✅ onConnectionStateChange / onServicesDiscovered / onCharacteristicWrite |
 | 위치 = post 본문 첫 줄 | ✅ (onConnectionStateChange는 `intentionalDisconnect` 체크보다 앞 — 제 보강 제안 충족) |
-| 비교 정확성 | ✅ `if (gatt !== this@RLensConnection.gatt) return@post` — 콜백 param vs 현재 필드, 참조 비교 |
+| 비교 정확성 | ✅ `if (gatt !== <REDACTED_EMAIL>) return@post` — 콜백 param vs 현재 필드, 참조 비교 |
 | 위험도 | ✅ additive early-return — 현재 gatt는 그대로 통과(기존 경로 무변), stale만 폐기 |
 
 코드 정독으론 정합성 확인 완료입니다. 다만 이건 **문서가 아니라 실제 BLE 코드 변경**이라, 커밋 메시지의 "컴파일·전체 유닛테스트 통과"를 앞선 prewarm 수정 때처럼 **직접 돌려 확정**하겠습니다 (수정 코드는 origin/main `1ed246c`에 있으니 detach→test→복원):
@@ -2198,7 +2198,7 @@ tool_use Bash
 id: toolu_01RFKkFHaX1QaCMNo96sRstX
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-wear\nBR=$(git rev-parse --abbrev-ref HEAD)\necho \">>> verifying gatt-guard fix at origin/main (1ed246c); current branch=$BR\"\ngit switch --detach origin/main --quiet 2>&1 && echo \"detached: $(git rev-parse --short HEAD)\"\necho \">>> ./gradlew testDebugUnitTest\"\n./gradlew testDebugUnitTest --console=plain 2>&1 | tail -8\nRC=$?\ngit switch \"$BR\" --quiet 2>&1\necho \">>> restored: $(git rev-parse --abbrev-ref HEAD) @ $(git rev-parse --short HEAD) ; dirty=[$(git status --porcelain | wc -l)] ; gradle_exit=$RC\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-wear\nBR=$(git rev-parse --abbrev-ref HEAD)\necho \">>> verifying gatt-guard fix at origin/main (1ed246c); current branch=$BR\"\ngit switch --detach origin/main --quiet 2>&1 && echo \"detached: $(git rev-parse --short HEAD)\"\necho \">>> ./gradlew testDebugUnitTest\"\n./gradlew testDebugUnitTest --console=plain 2>&1 | tail -8\nRC=$?\ngit switch \"$BR\" --quiet 2>&1\necho \">>> restored: $(git rev-parse --abbrev-ref HEAD) @ $(git rev-parse --short HEAD) ; dirty=[$(git status --porcelain | wc -l)] ; gradle_exit=$RC\"",
   "description": "Run wear unit tests on gatt-guard fix commit",
   "run_in_background": true
 }
@@ -2226,7 +2226,7 @@ tool_use Bash
 id: toolu_011MzyoJy5L2ujiAJbtvo92D
 ```json
 {
-  "command": "F=/tmp/claude-1000/-home-jhkim-00-Projects-00-RunVision/567062c2-d6ea-4f97-8e3b-a1cc8e5292ac/tasks/balu25fcl.output\ncat \"$F\"\necho \"\"\necho \"=== confirm test counts from report ===\"\ncd /home/jhkim/00.Projects/00.RunVision/runvision-wear\nR=app/build/test-results/testDebugUnitTest\ngrep -ho 'tests=\"[0-9]*\" .*failures=\"[0-9]*\" .*errors=\"[0-9]*\"' \"$R\"/*.xml 2>/dev/null | \\\n  awk -F'\"' '{t+=$2; f+=$4; e+=$6} END{print \"TOTAL tests=\"t\" failures=\"f\" errors=\"e}'",
+  "command": "F=/tmp/claude-1000/-home-jhkim-00-Projects-00-RunVision/567062c2-d6ea-4f97-8e3b-a1cc8e5292ac/tasks/balu25fcl.output\ncat \"$F\"\necho \"\"\necho \"=== confirm test counts from report ===\"\ncd /home/<USER>/00.Projects/00.RunVision/runvision-wear\nR=app/build/test-results/testDebugUnitTest\ngrep -ho 'tests=\"[0-9]*\" .*failures=\"[0-9]*\" .*errors=\"[0-9]*\"' \"$R\"/*.xml 2>/dev/null | \\\n  awk -F'\"' '{t+=$2; f+=$4; e+=$6} END{print \"TOTAL tests=\"t\" failures=\"f\" errors=\"e}'",
   "description": "Read wear test result and confirm counts + restore"
 }
 ```
@@ -2288,7 +2288,7 @@ tool_use Bash
 id: toolu_01TtR8Au21XzD8ZvxL4GEoDB
 ```json
 {
-  "command": "F=/tmp/claude-1000/-home-jhkim-00-Projects-00-RunVision/567062c2-d6ea-4f97-8e3b-a1cc8e5292ac/tasks/b1du4qt3w.output\necho \"=== build output tail ===\"\ntail -12 \"$F\"\necho \"\"\necho \"=== artifact ===\"\ncd /home/jhkim/00.Projects/00.RunVision/runvision-iq\nls -la bin/RunVisionIQ-1.2.0.iq 2>&1\necho \"size: $(du -h bin/RunVisionIQ-1.2.0.iq 2>/dev/null | cut -f1)\"",
+  "command": "F=/tmp/claude-1000/-home-jhkim-00-Projects-00-RunVision/567062c2-d6ea-4f97-8e3b-a1cc8e5292ac/tasks/b1du4qt3w.output\necho \"=== build output tail ===\"\ntail -12 \"$F\"\necho \"\"\necho \"=== artifact ===\"\ncd /home/<USER>/00.Projects/00.RunVision/runvision-iq\nls -la bin/RunVisionIQ-1.2.0.iq 2>&1\necho \"size: $(du -h bin/RunVisionIQ-1.2.0.iq 2>/dev/null | cut -f1)\"",
   "description": "Read Garmin build result and confirm .iq artifact"
 }
 ```
@@ -2358,7 +2358,7 @@ tool_use Bash
 id: toolu_01HaAp7kbe97r4rao32cF9jC
 ```json
 {
-  "command": "for d in \"/home/jhkim/00.Projects/00.RunVision\" \"/home/jhkim/00.Projects/00.RunVision/runvision-iq\" \"/home/jhkim/00.Projects/00.RunVision/runvision-wear\"; do\n  name=$(basename \"$d\")\n  git -C \"$d\" fetch --quiet 2>&1\n  behind=$(git -C \"$d\" rev-list --count HEAD..@{u} 2>/dev/null)\n  ahead=$(git -C \"$d\" rev-list --count @{u}..HEAD 2>/dev/null)\n  dirty=$(git -C \"$d\" status --porcelain | wc -l)\n  if [ \"$behind\" -gt 0 ] && [ \"$ahead\" = 0 ] && [ \"$dirty\" = 0 ]; then\n    echo \"================ $name (behind $behind, ff pull) ================\"\n    git -C \"$d\" pull --ff-only 2>&1 | grep -E \"Updating|Fast-forward|file|insertion|deletion\" | head\n  else\n    echo \"$name: behind=$behind ahead=$ahead dirty=$dirty -> $(if [ \"$behind\" = 0 ]; then echo 'up-to-date'; else echo 'NEEDS ATTENTION'; fi)\"\n  fi\n  echo \"  now: $(git -C \"$d\" log --oneline -1)\"\ndone",
+  "command": "for d in \"/home/<USER>/00.Projects/00.RunVision\" \"/home/<USER>/00.Projects/00.RunVision/runvision-iq\" \"/home/<USER>/00.Projects/00.RunVision/runvision-wear\"; do\n  name=$(basename \"$d\")\n  git -C \"$d\" fetch --quiet 2>&1\n  behind=$(git -C \"$d\" rev-list --count HEAD..@{u} 2>/dev/null)\n  ahead=$(git -C \"$d\" rev-list --count @{u}..HEAD 2>/dev/null)\n  dirty=$(git -C \"$d\" status --porcelain | wc -l)\n  if [ \"$behind\" -gt 0 ] && [ \"$ahead\" = 0 ] && [ \"$dirty\" = 0 ]; then\n    echo \"================ $name (behind $behind, ff pull) ================\"\n    git -C \"$d\" pull --ff-only 2>&1 | grep -E \"Updating|Fast-forward|file|insertion|deletion\" | head\n  else\n    echo \"$name: behind=$behind ahead=$ahead dirty=$dirty -> $(if [ \"$behind\" = 0 ]; then echo 'up-to-date'; else echo 'NEEDS ATTENTION'; fi)\"\n  fi\n  echo \"  now: $(git -C \"$d\" log --oneline -1)\"\ndone",
   "description": "Fetch and ff-pull all repos to sync latest fix"
 }
 ```
@@ -2459,7 +2459,7 @@ tool_use Bash
 id: toolu_01HPENGUKxYmMCZpEhT5KFNm
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \">>> confirm on latest source: $(git log --oneline -1)\"\nSDK=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\\\\monkeyc.bat\"\nW=$(wslpath -w \"$(pwd)\")\necho \">>> build FR165 .prg (v1.2.0)\"\npowershell.exe -NoProfile -Command \"& '$SDK' -o '$W\\bin\\RunVisionIQ-1.2.0-fr165.prg' -f '$W\\monkey.jungle' -y '$W\\developer_key.der' -d fr165 -w\" 2>&1 | grep -viE \"CMD.EXE|UNC|Windows |launcher icon\" | tail -20\necho \">>> exit=${PIPESTATUS[0]}\"\nls -la bin/RunVisionIQ-1.2.0-fr165.prg 2>&1 | head -1",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \">>> confirm on latest source: $(git log --oneline -1)\"\nSDK=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\\\\monkeyc.bat\"\nW=$(wslpath -w \"$(pwd)\")\necho \">>> build FR165 .prg (v1.2.0)\"\npowershell.exe -NoProfile -Command \"& '$SDK' -o '$W\\bin\\RunVisionIQ-1.2.0-fr165.prg' -f '$W\\monkey.jungle' -y '$W\\developer_key.der' -d fr165 -w\" 2>&1 | grep -viE \"CMD.EXE|UNC|Windows |launcher icon\" | tail -20\necho \">>> exit=${PIPESTATUS[0]}\"\nls -la bin/RunVisionIQ-1.2.0-fr165.prg 2>&1 | head -1",
   "description": "Build FR165 .prg at v1.2.0"
 }
 ```
@@ -2498,7 +2498,7 @@ tool_use Bash
 id: toolu_01KT5XePawcLc468us7UqsoT
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== run-simulator.bat ===\"\ncat run-simulator.bat 2>/dev/null\necho \"\"\necho \"=== ConnectIQ 시뮬레이터/monkeydo 실행파일 존재 확인 ===\"\nSDK=\"/mnt/c/Users/jinhee/AppData/Roaming/Garmin/ConnectIQ/Sdks/connectiq-sdk-win-8.4.0-2025-12-03-5122605dc/bin\"\nfor f in connectiq.bat simulator.exe monkeydo.bat shell.bat; do\n  ls \"$SDK/$f\" >/dev/null 2>&1 && echo \"  ✓ $f\" || echo \"  ✗ $f (없음)\"\ndone",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== run-simulator.bat ===\"\ncat run-simulator.bat 2>/dev/null\necho \"\"\necho \"=== ConnectIQ 시뮬레이터/monkeydo 실행파일 존재 확인 ===\"\nSDK=\"/mnt/c/home/<USER>/AppData/Roaming/Garmin/ConnectIQ/Sdks/connectiq-sdk-win-8.4.0-2025-12-03-5122605dc/bin\"\nfor f in connectiq.bat simulator.exe monkeydo.bat shell.bat; do\n  ls \"$SDK/$f\" >/dev/null 2>&1 && echo \"  ✓ $f\" || echo \"  ✗ $f (없음)\"\ndone",
   "description": "Inspect simulator launch setup and SDK tools"
 }
 ```
@@ -2513,7 +2513,7 @@ id: toolu_01KT5XePawcLc468us7UqsoT
 title RunVision-IQ Simulator
 
 REM === Settings ===
-set SDK_PATH=C:\Users\jinhee\AppData\Roaming\Garmin\ConnectIQ\Sdks\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\bin
+set SDK_PATH=C:\Users\<USER>\AppData\Roaming\Garmin\ConnectIQ\Sdks\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\bin
 set JAVA_PATH=C:\Program Files\Java\jdk-11.0.2\bin\java.exe
 set PRG_FILE=D:\00.Projects\00.RunVision\runvision-iq\bin\RunVisionIQ.prg
 set DEVICE=fr265
@@ -2921,7 +2921,7 @@ tool_use Bash
 id: toolu_01KjhnA1TN73u6B4PYgtZEeM
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"빌드된 .prg (Windows 경로):\"\necho \"  $(wslpath -w \"$(pwd)/bin/RunVisionIQ-1.2.0-fr165.prg\")\"\nls -la bin/RunVisionIQ-1.2.0-fr165.prg | awk '{print \"  크기:\", $5, \"bytes\"}'",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"빌드된 .prg (Windows 경로):\"\necho \"  $(wslpath -w \"$(pwd)/bin/RunVisionIQ-1.2.0-fr165.prg\")\"\nls -la bin/RunVisionIQ-1.2.0-fr165.prg | awk '{print \"  크기:\", $5, \"bytes\"}'",
   "description": "Show Windows path of the built FR165 .prg"
 }
 ```
@@ -2973,7 +2973,7 @@ tool_use Bash
 id: toolu_015fs53eYZ9ED6pndYZSPaN2
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== 앱 UUID (이 값으로 시작하는 파일이 우리 앱) ===\"\ngrep -oE 'entry=\"[0-9a-fA-F]+\"|id=\"[0-9a-fA-F]{32}\"' manifest.xml | head\necho \"\"\ngrep -oE 'iq:application[^>]*' manifest.xml | tr ' ' '\\n' | grep -iE 'id=|entry=|name='",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== 앱 UUID (이 값으로 시작하는 파일이 우리 앱) ===\"\ngrep -oE 'entry=\"[0-9a-fA-F]+\"|id=\"[0-9a-fA-F]{32}\"' manifest.xml | head\necho \"\"\ngrep -oE 'iq:application[^>]*' manifest.xml | tr ' ' '\\n' | grep -iE 'id=|entry=|name='",
   "description": "Extract Garmin app UUID from manifest"
 }
 ```
@@ -2992,7 +2992,7 @@ tool_use Bash
 id: toolu_01L2uxGE26QBiYKVmG5DgHg7
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\ngrep -iE 'iq:application' manifest.xml | head -3",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\ngrep -iE 'iq:application' manifest.xml | head -3",
   "description": "Show raw iq:application line for UUID"
 }
 ```
@@ -3012,7 +3012,7 @@ tool_use Bash
 id: toolu_01TBSS6jZywXDmq8k8Mzik3o
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\ngrep -nA8 '<iq:application' manifest.xml | grep -iE 'id|entry|name|version|type' | head",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\ngrep -nA8 '<iq:application' manifest.xml | grep -iE 'id|entry|name|version|type' | head",
   "description": "Extract application id/entry attributes"
 }
 ```
@@ -3072,7 +3072,7 @@ tool_use Bash
 id: toolu_013Ww945bbPRcnQU5h4sa9eJ
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\nmv -v bin/RunVisionIQ-1.2.0-fr165.prg bin/RunVisionIQ.prg\necho \"현재 bin/ .prg:\"; ls -1 bin/*.prg 2>/dev/null",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\nmv -v bin/RunVisionIQ-1.2.0-fr165.prg bin/RunVisionIQ.prg\necho \"현재 bin/ .prg:\"; ls -1 bin/*.prg 2>/dev/null",
   "description": "Rename current .prg to plain RunVisionIQ.prg"
 }
 ```
@@ -3083,7 +3083,7 @@ tool_use Read
 id: toolu_01XtDJYvgnSQXYGnXT63tiAv
 ```json
 {
-  "file_path": "/home/jhkim/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/feedback_monkeyc_build.md"
+  "file_path": "/home/<USER>/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/feedback_monkeyc_build.md"
 }
 ```
 
@@ -3116,7 +3116,7 @@ id: toolu_01XtDJYvgnSQXYGnXT63tiAv
 6	
 7	runvision-iq (.iq 패키지) 빌드는 WSL 안에서 powershell.exe를 호출하여 직접 빌드할 수 있다.
 8	
-9	**Why:** 소스가 WSL 네이티브 경로(`/home/jhkim/00.Projects/00.RunVision/runvision-iq`)에 있어도, monkeyc.bat에 UNC 절대 경로를 넘기면 빌드 가능. 사용자에게 "Windows에서 직접 실행하세요"라고 안내하면 혼란을 줌.
+9	**Why:** 소스가 WSL 네이티브 경로(`/home/<USER>/00.Projects/00.RunVision/runvision-iq`)에 있어도, monkeyc.bat에 UNC 절대 경로를 넘기면 빌드 가능. 사용자에게 "Windows에서 직접 실행하세요"라고 안내하면 혼란을 줌.
 10	
 11	**How to apply:**
 12	```bash
@@ -3145,7 +3145,7 @@ id: toolu_0123PTuVmkbDbBXbj7FDTTYf
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/feedback_monkeyc_build.md",
+  "file_path": "/home/<USER>/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/feedback_monkeyc_build.md",
   "old_string": "- `-e` 플래그: IQ 패키지 생성 (스토어 업로드용)\n- `-r` 플래그: release (디버그 정보 제거)\n- 134개 기기 빌드에 약 5분 소요\n- `cmd.exe`는 UNC 경로 cd 불가 → `powershell.exe` 사용 필수",
   "new_string": "- `-e` 플래그: IQ 패키지 생성 (스토어 업로드용)\n- `-r` 플래그: release (디버그 정보 제거)\n- 134개 기기 빌드에 약 5분 소요\n- `cmd.exe`는 UNC 경로 cd 불가 → `powershell.exe` 사용 필수\n\n## ⚠️ 출력 파일명 규칙 (2026-05-23 사용자 지시)\n- **단일 기기 .prg(테스트/사이드로드) 빌드는 항상 `bin/RunVisionIQ.prg`로 고정 출력.**\n  버전·기기 접미사(`-1.2.0-fr165`, `-test` 등) **붙이지 말 것** — 사용자가 찾기 귀찮아함.\n  `run-simulator.bat`도 `RunVisionIQ.prg`를 가정함(일관).\n- .iq 릴리즈 패키지는 기존대로 버전명 유지(`RunVisionIQ-X.X.X.iq`) — 스토어 버전 추적용, 사용자 불만 없음.\n- `-d <device>`로 기기 지정해도 출력명은 `RunVisionIQ.prg`로 덮어쓰기(기기별 파일 누적 금지)."
 }
@@ -3156,7 +3156,7 @@ id: toolu_0123PTuVmkbDbBXbj7FDTTYf
 tool_result
 id: toolu_0123PTuVmkbDbBXbj7FDTTYf
 ```
-The file /home/jhkim/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/feedback_monkeyc_build.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/feedback_monkeyc_build.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3231,7 +3231,7 @@ tool_use Bash
 id: toolu_01XY3T9R3sdwEdS44RUMKKCp
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== source 파일 목록 ===\"\nls -1 source/\necho \"\"\necho \"=== 최근 커밋 15개 (메트릭/속도/페이스 관련 식별) ===\"\ngit log --oneline -15\necho \"\"\necho \"=== source/ 변경한 최근 커밋만 (파일별) ===\"\ngit log --oneline -20 -- source/ | head -20",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== source 파일 목록 ===\"\nls -1 source/\necho \"\"\necho \"=== 최근 커밋 15개 (메트릭/속도/페이스 관련 식별) ===\"\ngit log --oneline -15\necho \"\"\necho \"=== source/ 변경한 최근 커밋만 (파일별) ===\"\ngit log --oneline -20 -- source/ | head -20",
   "description": "Investigate source files and recent commit history"
 }
 ```
@@ -3297,7 +3297,7 @@ tool_use Read
 id: toolu_01MgpeVaSYtpG6XzLRxbfYpe
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc"
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc"
 }
 ```
 
@@ -3355,7 +3355,7 @@ tool_use Read
 id: toolu_01XjxRbNt9dNXmUriXa53Tbk
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/MetricStrategy.mc"
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/MetricStrategy.mc"
 }
 ```
 
@@ -3407,7 +3407,7 @@ tool_use Bash
 id: toolu_01Hb4joGpc2qJEtGuztZ9aTe
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== compute() 및 메트릭/valid 설정 위치 ===\"\ngrep -nE \"function compute|speedValid|paceSeconds|currentSpeed|cadence|distance|elapsedDistance|\\.speed|paceSeconds *=|MetricValues|buildPackets|_strategy|_lastPace|stationary|stopped|isMoving\" source/RunVisionIQView.mc | head -60",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== compute() 및 메트릭/valid 설정 위치 ===\"\ngrep -nE \"function compute|speedValid|paceSeconds|currentSpeed|cadence|distance|elapsedDistance|\\.speed|paceSeconds *=|MetricValues|buildPackets|_strategy|_lastPace|stationary|stopped|isMoving\" source/RunVisionIQView.mc | head -60",
   "description": "Locate compute() and metric/valid assignment in view"
 }
 ```
@@ -3452,7 +3452,7 @@ tool_use Read
 id: toolu_01PvTvZCsTNUrExcgEJz5G4S
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "offset": 470,
   "limit": 190
 }
@@ -3506,7 +3506,7 @@ tool_use Bash
 id: toolu_01PuTn3zUSNPwYphEAmsiecU
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== (A) 리팩토링 전 inline velocity 로직이 어땠나 — c6fbac8(strategy 연결) diff에서 velocity/skip 부분 ===\"\ngit show c6fbac8 -- source/RunVisionIQView.mc 2>/dev/null | grep -nE \"^[-+].*(velocity|Velocity|speedValid|createVelocity|if \\(speed|paceSeconds|buildPackets|_writeQueue.add)\" | head -40\necho \"\"\necho \"=== createVelocityPacket 구현 (skip/valid 관련) ===\"\ngrep -nA12 \"function createVelocityPacket\" source/ILensProtocol.mc",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== (A) 리팩토링 전 inline velocity 로직이 어땠나 — c6fbac8(strategy 연결) diff에서 velocity/skip 부분 ===\"\ngit show c6fbac8 -- source/RunVisionIQView.mc 2>/dev/null | grep -nE \"^[-+].*(velocity|Velocity|speedValid|createVelocity|if \\(speed|paceSeconds|buildPackets|_writeQueue.add)\" | head -40\necho \"\"\necho \"=== createVelocityPacket 구현 (skip/valid 관련) ===\"\ngrep -nA12 \"function createVelocityPacket\" source/ILensProtocol.mc",
   "description": "Diff velocity logic before/after refactor + read createVelocityPacket"
 }
 ```
@@ -3565,7 +3565,7 @@ tool_use Read
 id: toolu_01CacSefZH4MADz11ugjARoG
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "offset": 271,
   "limit": 90
 }
@@ -3659,7 +3659,7 @@ tool_use Bash
 id: toolu_01BYxSFLynRaymbRxNDXkPoU
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== processWriteQueue + onCharacteristicWrite ===\"\ngrep -nA20 \"function processWriteQueue\\|function onCharacteristicWrite\" source/RunVisionIQView.mc | head -70",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== processWriteQueue + onCharacteristicWrite ===\"\ngrep -nA20 \"function processWriteQueue\\|function onCharacteristicWrite\" source/RunVisionIQView.mc | head -70",
   "description": "Read write queue + write callback mechanics"
 }
 ```
@@ -3750,7 +3750,7 @@ id: toolu_01D8txNTR3gkUYXhmYVyZKZJ
 {
   "description": "Galaxy 메트릭 skip 패턴 조사",
   "subagent_type": "Explore",
-  "prompt": "읽기 전용 조사. 코드를 수정하지 마라. 결론만 보고하라.\n\n대상 레포: /home/jhkim/00.Projects/00.RunVision/runvision-wear (Galaxy/Wear OS, Kotlin). 이 앱은 러닝/사이클 메트릭(속도/페이스/케이던스/거리/심박)을 BLE로 rLens 스마트글래스(HUD)에 전송한다.\n\n배경: 자매 앱인 Garmin(Monkey C)에서 회귀가 발견됨 — 메트릭 소스값이 0/유효하지않음(예: 사용자가 멈춤)일 때, 패킷을 **전송하지 않아서** rLens HUD가 직전 값을 계속 표시(stale)함. 사용자는 \"멈추면 0이 표시돼야 한다\"고 기대. 추가로 페이스가 한번 멈추면 다시 움직여도 영영 직전값에 고정되는 증상.\n\n조사 질문 (각각 file:line 근거와 함께):\n1. 이 앱이 속도/페이스/케이던스/거리를 rLens로 전송하는 코드 위치는? (BLE write/패킷 생성 경로)\n2. 메트릭 소스값이 0이거나 null(정지 상태)일 때 동작이 무엇인가:\n   (a) 0을 그대로 전송한다, (b) 전송을 skip해서 HUD가 직전값 유지한다(=Garmin 회귀와 동일), (c) 기타.\n   특히 \"valid 플래그\", \"if (speed > 0)\", \"if value != null then send\" 같은 조건부 전송 패턴이 있는지 정확히 확인.\n3. \"stationary/stop detection\" 또는 한번 set되면 안 풀리는 latch성 상태머신이 있어서 특정 메트릭(특히 속도/페이스)이 영구히 갱신 안 될 수 있는 경로가 있는가? (참고: 이 repo git log에 과거 \"stationary detection\" speed 버그 커밋과 그 revert가 있었음 — 관련 코드가 현재 어떤 상태인지 확인)\n4. 결론: Garmin과 같은 \"정지 시 stale 유지\" 문제가 이 앱에도 존재하는가? Yes/No/부분적, 근거와 함께.\n\nspeed/pace/cadence/distance 계산 및 BLE 전송 관련 .kt 파일(예: RLensConnection.kt, RLensProtocol.kt, ExerciseService.kt, engine/ 또는 […]
+  "prompt": "읽기 전용 조사. 코드를 수정하지 마라. 결론만 보고하라.\n\n대상 레포: /home/<USER>/00.Projects/00.RunVision/runvision-wear (Galaxy/Wear OS, Kotlin). 이 앱은 러닝/사이클 메트릭(속도/페이스/케이던스/거리/심박)을 BLE로 rLens 스마트글래스(HUD)에 전송한다.\n\n배경: 자매 앱인 Garmin(Monkey C)에서 회귀가 발견됨 — 메트릭 소스값이 0/유효하지않음(예: 사용자가 멈춤)일 때, 패킷을 **전송하지 않아서** rLens HUD가 직전 값을 계속 표시(stale)함. 사용자는 \"멈추면 0이 표시돼야 한다\"고 기대. 추가로 페이스가 한번 멈추면 다시 움직여도 영영 직전값에 고정되는 증상.\n\n조사 질문 (각각 file:line 근거와 함께):\n1. 이 앱이 속도/페이스/케이던스/거리를 rLens로 전송하는 코드 위치는? (BLE write/패킷 생성 경로)\n2. 메트릭 소스값이 0이거나 null(정지 상태)일 때 동작이 무엇인가:\n   (a) 0을 그대로 전송한다, (b) 전송을 skip해서 HUD가 직전값 유지한다(=Garmin 회귀와 동일), (c) 기타.\n   특히 \"valid 플래그\", \"if (speed > 0)\", \"if value != null then send\" 같은 조건부 전송 패턴이 있는지 정확히 확인.\n3. \"stationary/stop detection\" 또는 한번 set되면 안 풀리는 latch성 상태머신이 있어서 특정 메트릭(특히 속도/페이스)이 영구히 갱신 안 될 수 있는 경로가 있는가? (참고: 이 repo git log에 과거 \"stationary detection\" speed 버그 커밋과 그 revert가 있었음 — 관련 코드가 현재 어떤 상태인지 확인)\n4. 결론: Garmin과 같은 \"정지 시 stale 유지\" 문제가 이 앱에도 존재하는가? Yes/No/부분적, 근거와 함께.\n\nspeed/pace/cadence/distance 계산 및 BLE 전송 관련 .kt 파일(예: RLensConnection.kt, RLensProtocol.kt, ExerciseService.kt, engine/ 또는 […]
 
 > TOOL
 
@@ -3760,7 +3760,7 @@ id: toolu_01TynnqMvSYvFHHjDojq5WKR
 {
   "description": "Apple Watch 메트릭 skip 조사",
   "subagent_type": "Explore",
-  "prompt": "읽기 전용 조사. 코드를 수정하지 마라. 결론만 보고하라.\n\n대상: /home/jhkim/00.Projects/00.RunVision/runvision-watchos (Apple Watch, Swift, watchOS). 이 앱은 러닝/사이클 메트릭(속도/페이스/케이던스/거리/심박)을 BLE로 rLens 스마트글래스(HUD)에 전송한다.\n\n배경: 자매 앱인 Garmin(Monkey C)에서 회귀가 발견됨 — 메트릭 소스값이 0/유효하지않음(예: 사용자가 멈춤)일 때, 패킷을 **전송하지 않아서** rLens HUD가 직전 값을 계속 표시(stale)함. 사용자는 \"멈추면 0이 표시돼야 한다\"고 기대. 추가로 페이스가 한번 멈추면 다시 움직여도 영영 직전값에 고정되는 증상.\n\n조사 질문 (각각 file:line 근거와 함께):\n1. 이 앱이 속도/페이스/케이던스/거리를 rLens로 전송하는 코드 위치는? (BLE write/패킷 생성 경로, CoreBluetooth peripheral write 등)\n2. 메트릭 소스값이 0이거나 nil(정지 상태)일 때 동작이 무엇인가:\n   (a) 0을 그대로 전송한다, (b) 전송을 skip해서 HUD가 직전값 유지한다(=Garmin 회귀와 동일), (c) 기타.\n   특히 \"valid 플래그\", \"if speed > 0\", \"if let value ... else skip\", guard 문으로 0/nil 시 전송 건너뛰는 패턴이 있는지 정확히 확인.\n3. \"stationary/stop detection\" 또는 한번 set되면 안 풀리는 latch성 상태가 있어서 특정 메트릭(특히 속도/페이스)이 영구히 갱신 안 될 수 있는 경로가 있는가?\n4. 결론: Garmin과 같은 \"정지 시 stale 유지\" 문제가 이 앱에도 존재하는가? Yes/No/부분적, 근거와 함께.\n\nHealthKit workout 메트릭 처리 및 BLE 전송 관련 .swift 파일(Workout/, BLE/, Sources/RunVisionWatch/ 하위 등)을 살펴보라."
+  "prompt": "읽기 전용 조사. 코드를 수정하지 마라. 결론만 보고하라.\n\n대상: /home/<USER>/00.Projects/00.RunVision/runvision-watchos (Apple Watch, Swift, watchOS). 이 앱은 러닝/사이클 메트릭(속도/페이스/케이던스/거리/심박)을 BLE로 rLens 스마트글래스(HUD)에 전송한다.\n\n배경: 자매 앱인 Garmin(Monkey C)에서 회귀가 발견됨 — 메트릭 소스값이 0/유효하지않음(예: 사용자가 멈춤)일 때, 패킷을 **전송하지 않아서** rLens HUD가 직전 값을 계속 표시(stale)함. 사용자는 \"멈추면 0이 표시돼야 한다\"고 기대. 추가로 페이스가 한번 멈추면 다시 움직여도 영영 직전값에 고정되는 증상.\n\n조사 질문 (각각 file:line 근거와 함께):\n1. 이 앱이 속도/페이스/케이던스/거리를 rLens로 전송하는 코드 위치는? (BLE write/패킷 생성 경로, CoreBluetooth peripheral write 등)\n2. 메트릭 소스값이 0이거나 nil(정지 상태)일 때 동작이 무엇인가:\n   (a) 0을 그대로 전송한다, (b) 전송을 skip해서 HUD가 직전값 유지한다(=Garmin 회귀와 동일), (c) 기타.\n   특히 \"valid 플래그\", \"if speed > 0\", \"if let value ... else skip\", guard 문으로 0/nil 시 전송 건너뛰는 패턴이 있는지 정확히 확인.\n3. \"stationary/stop detection\" 또는 한번 set되면 안 풀리는 latch성 상태가 있어서 특정 메트릭(특히 속도/페이스)이 영구히 갱신 안 될 수 있는 경로가 있는가?\n4. 결론: Garmin과 같은 \"정지 시 stale 유지\" 문제가 이 앱에도 존재하는가? Yes/No/부분적, 근거와 함께.\n\nHealthKit workout 메트릭 처리 및 BLE 전송 관련 .swift 파일(Workout/, BLE/, Sources/RunVisionWatch/ 하위 등)을 살펴보라."
 }
 ```
 
@@ -3926,7 +3926,7 @@ tool_use Bash
 id: toolu_01DBiGpFKTXQEaiABRux7Ttp
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== (1) 50844a5: 재연결-0 버그를 어떻게 고쳤나 (skip 도입 맥락) ===\"\ngit show 50844a5 --stat --format=\"%s%n%b%n\"\necho \"--- diff (valid/skip/재연결 관련 핵심) ---\"\ngit show 50844a5 | grep -nE \"^[-+].*(valid|Valid|skip|0 |reconnect|_isConnected|speedValid|buildPackets|패킷|덮어)\" | head -30\necho \"\"\necho \"=== (2) testRunningStrategy_* 테스트 하네스 구조 ===\"\ngrep -nE \"function test|RunningStrategy|MetricValues|buildPackets|assert|setAllValid|speedValid\" source/Tests.mc | head -30",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== (1) 50844a5: 재연결-0 버그를 어떻게 고쳤나 (skip 도입 맥락) ===\"\ngit show 50844a5 --stat --format=\"%s%n%b%n\"\necho \"--- diff (valid/skip/재연결 관련 핵심) ---\"\ngit show 50844a5 | grep -nE \"^[-+].*(valid|Valid|skip|0 |reconnect|_isConnected|speedValid|buildPackets|패킷|덮어)\" | head -30\necho \"\"\necho \"=== (2) testRunningStrategy_* 테스트 하네스 구조 ===\"\ngrep -nE \"function test|RunningStrategy|MetricValues|buildPackets|assert|setAllValid|speedValid\" source/Tests.mc | head -30",
   "description": "Understand 50844a5 reconnect fix + test harness"
 }
 ```
@@ -3957,7 +3957,7 @@ fix: BLE 재연결 후 iLens 0 데이터 표시 결함 수정
 검증: fenix7 일반 + test 모드 빌드 BUILD SUCCESSFUL.
 실기기/시뮬레이터 BLE 동작 검증은 별도 환경 필요.
 
-Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>
+Co-Authored-By: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>
 
 
 
@@ -4017,7 +4017,7 @@ tool_use Bash
 id: toolu_011zkBEsqggwJKq9yuLVYmSr
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== (:test) 어노테이션 사용? (monkeyc -t 시뮬레이터 실행 방식) ===\"\ngrep -nE \"\\(:test\\)|Test\\.|module Test|using Toybox.Test|assertEqual|registerTest\" source/Tests.mc | head\necho \"\"\necho \"=== Tests.mc 상단 (러너 구조) ===\"\nhead -10 source/Tests.mc\necho \"\"\necho \"=== 어떻게 테스트 실행했었나 — 빌드/실행 스크립트나 문서에 -t 흔적 ===\"\ngrep -rniE \"monkeyc.*-t\\b|-t .*test|run.*test|테스트.*실행|test mode|--test\" *.bat *.sh /home/jhkim/00.Projects/00.RunVision/Docs/CLAUDE-DETAILS.md 2>/dev/null | head\necho \"\"\necho \"=== 어노테이션 방식 확인: (:test) 가 소스 전체에 몇 개나 ===\"\ngrep -rc \"(:test)\" source/ 2>/dev/null | grep -v \":0\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== (:test) 어노테이션 사용? (monkeyc -t 시뮬레이터 실행 방식) ===\"\ngrep -nE \"\\(:test\\)|Test\\.|module Test|using Toybox.Test|assertEqual|registerTest\" source/Tests.mc | head\necho \"\"\necho \"=== Tests.mc 상단 (러너 구조) ===\"\nhead -10 source/Tests.mc\necho \"\"\necho \"=== 어떻게 테스트 실행했었나 — 빌드/실행 스크립트나 문서에 -t 흔적 ===\"\ngrep -rniE \"monkeyc.*-t\\b|-t .*test|run.*test|테스트.*실행|test mode|--test\" *.bat *.sh /home/<USER>/00.Projects/00.RunVision/Docs/CLAUDE-DETAILS.md 2>/dev/null | head\necho \"\"\necho \"=== 어노테이션 방식 확인: (:test) 가 소스 전체에 몇 개나 ===\"\ngrep -rc \"(:test)\" source/ 2>/dev/null | grep -v \":0\"",
   "description": "Determine Monkey C test execution mechanism"
 }
 ```
@@ -4052,9 +4052,9 @@ function testILensProtocolPaceEncoding(logger as Logger) as Boolean {
     // 페이스 인코딩 테스트: 5:30/km = 330초
 
 === 어떻게 테스트 실행했었나 — 빌드/실행 스크립트나 문서에 -t 흔적 ===
-/home/jhkim/00.Projects/00.RunVision/Docs/CLAUDE-DETAILS.md:119:- iOS 배포: `build-ios.sh` → `version_ios.txt` 자동 증가. **이 때 embed된 Apple Watch/Widget 버전도 `version_ios.txt`에 자동 동기화됨**(`ios/Runner.xcodeproj` RunVisionWatch/Widget 타겟, 타겟명 스코프 — Runner/RunnerTests 불변). 상세: `Docs/애플스토어/APP-STORE-SUBMISSION-LOG.md` "watch/iOS 버전 동기화" 절.
-/home/jhkim/00.Projects/00.RunVision/Docs/CLAUDE-DETAILS.md:149:- runvision/ - Flutter 문서 (PRD/Architecture/Module/Tech/Test-Spec)
-/home/jhkim/00.Projects/00.RunVision/Docs/CLAUDE-DETAILS.md:150:- runvision-iq/ - Garmin 문서 (PRD/Architecture/Module/Implementation/Test/SDK-Setup/Device-Setup/Debugging/Testing/Code-Review)
+/home/<USER>/00.Projects/00.RunVision/Docs/CLAUDE-DETAILS.md:119:- iOS 배포: `build-ios.sh` → `version_ios.txt` 자동 증가. **이 때 embed된 Apple Watch/Widget 버전도 `version_ios.txt`에 자동 동기화됨**(`ios/Runner.xcodeproj` RunVisionWatch/Widget 타겟, 타겟명 스코프 — Runner/RunnerTests 불변). 상세: `Docs/애플스토어/APP-STORE-SUBMISSION-LOG.md` "watch/iOS 버전 동기화" 절.
+/home/<USER>/00.Projects/00.RunVision/Docs/CLAUDE-DETAILS.md:149:- runvision/ - Flutter 문서 (PRD/Architecture/Module/Tech/Test-Spec)
+/home/<USER>/00.Projects/00.RunVision/Docs/CLAUDE-DETAILS.md:150:- runvision-iq/ - Garmin 문서 (PRD/Architecture/Module/Implementation/Test/SDK-Setup/Device-Setup/Debugging/Testing/Code-Review)
 
 === 어노테이션 방식 확인: (:test) 가 소스 전체에 몇 개나 ===
 source/Tests.mc:35
@@ -4101,7 +4101,7 @@ tool_use Read
 id: toolu_0199CbcSgbTdv8HNu3zhfKnU
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/Tests.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/Tests.mc",
   "offset": 82,
   "limit": 80
 }
@@ -4165,7 +4165,7 @@ id: toolu_01G3KZAuvNLSgzFXakyZ9Ztw
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/Tests.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/Tests.mc",
   "old_string": "// === RunningStrategy regression tests ===\n// 이 테스트들은 기존 러닝 모드 패킷이 한 비트도 안 바뀌었음을 보증한다.",
   "new_string": "// === metricPresent: 정지 시 0 전송 회귀 가드 ===\n// 회귀: valid 도출이 `!= null && > 0` 라서 정지(실제 0)까지 skip → rLens 직전값 고착.\n// 수정 의도: 센서가 값을 주면(0 포함) 전송, null(no-data/재연결)만 skip(50844a5 보존).\n\n(:test)\nfunction testMetricPresent_zeroIsSendable(logger as Logger) as Boolean {\n    // 정지 시 실제 0(Number)은 전송돼야 한다 (skip 아님).\n    return metricPresent(0) == true;\n}\n\n(:test)\nfunction testMetricPresent_zeroFloatIsSendable(logger as Logger) as Boolean {\n    // 속도(Float) 0.0(정지)도 전송돼야 한다.\n    return metricPresent(0.0) == true;\n}\n\n(:test)\nfunction testMetricPresent_nullIsSkipped(logger as Logger) as Boolean {\n    // 데이터 없음(null)만 skip → 직전값 보존 (50844a5 의도).\n    return metricPresent(null) == false;\n}\n\n(:test)\nfunction testMetricPresent_positiveIsSendable(logger as Logger) as Boolean {\n    return metricPresent(170) == true;\n}\n\n// === RunningStrategy regression tests ===\n// 이 테스트들은 기존 러닝 모드 패킷이 한 비트도 안 바뀌었음을 보증한다."
 }
@@ -4176,7 +4176,7 @@ id: toolu_01G3KZAuvNLSgzFXakyZ9Ztw
 tool_result
 id: toolu_01G3KZAuvNLSgzFXakyZ9Ztw
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/Tests.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/Tests.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4189,7 +4189,7 @@ tool_use Bash
 id: toolu_01AFqf9s9MJiDATHb45Xyxyk
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\nSDK=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\\\\monkeyc.bat\"\nW=$(wslpath -w \"$(pwd)\")\necho \">>> RED check: test-mode compile (expect FAILURE: metricPresent undefined)\"\npowershell.exe -NoProfile -Command \"& '$SDK' -t -o '$W\\bin\\test.prg' -f '$W\\monkey.jungle' -y '$W\\developer_key.der' -d fr165\" 2>&1 | grep -viE \"CMD.EXE|UNC|Windows |is not used|launcher icon\" | tail -15\necho \">>> exit=${PIPESTATUS[0]}\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\nSDK=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\\\\monkeyc.bat\"\nW=$(wslpath -w \"$(pwd)\")\necho \">>> RED check: test-mode compile (expect FAILURE: metricPresent undefined)\"\npowershell.exe -NoProfile -Command \"& '$SDK' -t -o '$W\\bin\\test.prg' -f '$W\\monkey.jungle' -y '$W\\developer_key.der' -d fr165\" 2>&1 | grep -viE \"CMD.EXE|UNC|Windows |is not used|launcher icon\" | tail -15\necho \">>> exit=${PIPESTATUS[0]}\"",
   "description": "Test-mode build to confirm RED (compile failure)"
 }
 ```
@@ -4221,7 +4221,7 @@ id: toolu_01UkfBJzds5jHU7zKaxZ4Ub2
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/MetricStrategy.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/MetricStrategy.mc",
   "old_string": "//! sport 정수값으로부터 strategy 선택. 테스트 가능한 진입점.",
   "new_string": "//! 메트릭 전송 가능 여부: 센서가 값을 제공하면(0 포함) true; null/미존재만 false.\n//! 정지(실제 0)는 전송 → rLens 가 0 표시 + velocity 패킷 연속성 유지(끊김 후 펌웨어 latch 방지).\n//! null(재연결/no-data)만 skip → 직전 유효값 보존(50844a5 의도). 과잉 `> 0` 조건 제거가 핵심:\n//! 기존 `!= null && > 0` 은 \"데이터 없음\"과 \"실제 0(정지)\"을 한 덩어리로 묶어 정지까지 skip 했음.\nfunction metricPresent(value as Lang.Number or Lang.Float or Null) as Lang.Boolean {\n    return value != null;\n}\n\n//! sport 정수값으로부터 strategy 선택. 테스트 가능한 진입점."
 }
@@ -4232,7 +4232,7 @@ id: toolu_01UkfBJzds5jHU7zKaxZ4Ub2
 tool_result
 id: toolu_01UkfBJzds5jHU7zKaxZ4Ub2
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/MetricStrategy.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/MetricStrategy.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4245,7 +4245,7 @@ tool_use Bash
 id: toolu_01GmtxatSPScFu2HWYsDWPzV
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\nSDK=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\\\\monkeyc.bat\"\nW=$(wslpath -w \"$(pwd)\")\necho \">>> GREEN check: test-mode compile (expect SUCCESS)\"\npowershell.exe -NoProfile -Command \"& '$SDK' -t -o '$W\\bin\\test.prg' -f '$W\\monkey.jungle' -y '$W\\developer_key.der' -d fr165\" 2>&1 | grep -viE \"CMD.EXE|UNC|Windows |is not used|launcher icon\" | tail -8\necho \">>> exit=${PIPESTATUS[0]}\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\nSDK=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\\\\monkeyc.bat\"\nW=$(wslpath -w \"$(pwd)\")\necho \">>> GREEN check: test-mode compile (expect SUCCESS)\"\npowershell.exe -NoProfile -Command \"& '$SDK' -t -o '$W\\bin\\test.prg' -f '$W\\monkey.jungle' -y '$W\\developer_key.der' -d fr165\" 2>&1 | grep -viE \"CMD.EXE|UNC|Windows |is not used|launcher icon\" | tail -8\necho \">>> exit=${PIPESTATUS[0]}\"",
   "description": "Test-mode build to confirm metricPresent compiles (GREEN)"
 }
 ```
@@ -4273,7 +4273,7 @@ tool_use Bash
 id: toolu_01UBy5MWeLYjTqioLqrV9TM1
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== speedValid / cadenceValid 모든 사용처 (배선 누락 방지) ===\"\ngrep -nE \"speedValid|cadenceValid|speedMoving\" source/RunVisionIQView.mc",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== speedValid / cadenceValid 모든 사용처 (배선 누락 방지) ===\"\ngrep -nE \"speedValid|cadenceValid|speedMoving\" source/RunVisionIQView.mc",
   "description": "Find all speedValid/cadenceValid usages"
 }
 ```
@@ -4304,7 +4304,7 @@ id: toolu_01FFCDb8rqZN58fpE4aaKuRN
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "        var paceSeconds = 0;  // ← Pace를 초 단위로 저장 (iLens 전송용)\n        var speedValid = speedMs != null && speedMs > 0;\n\n        if (speedValid) {",
   "new_string": "        var paceSeconds = 0;  // ← Pace를 초 단위로 저장 (iLens 전송용)\n        // 전송 여부: 센서값 존재(0=정지 포함)면 전송, null(no-data/재연결)만 skip.\n        // 과거 `&& > 0` 은 정지(실제 0)까지 skip → rLens 직전값 고착 + velocity 갭 후 펌웨어 latch 회귀.\n        var speedValid = metricPresent(speedMs);\n        // 계산 가드: pace = 60/(speed) 0 나눗셈 방지 위해 양수일 때만 계산. 정지면 pace/speed=0 유지(→ 0 전송).\n        var speedMoving = speedMs != null && speedMs > 0;\n\n        if (speedMoving) {"
 }
@@ -4315,7 +4315,7 @@ id: toolu_01FFCDb8rqZN58fpE4aaKuRN
 tool_result
 id: toolu_01FFCDb8rqZN58fpE4aaKuRN
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4325,7 +4325,7 @@ id: toolu_01KkHLc1E12YmHFczMFBhqu1
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "        var cadenceValid = cadence != null && cadence > 0;",
   "new_string": "        var cadenceValid = metricPresent(cadence);  // 0(정지)=전송, null(미지원)=skip"
 }
@@ -4336,7 +4336,7 @@ id: toolu_01KkHLc1E12YmHFczMFBhqu1
 tool_result
 id: toolu_01KkHLc1E12YmHFczMFBhqu1
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4346,7 +4346,7 @@ id: toolu_01MctLdEew3ev113QsfkbUJs
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "        if (speedValid && distanceValid && altitude != null) {",
   "new_string": "        if (speedMoving && distanceValid && altitude != null) {  // 파워는 이동 중에만(기존 동작 보존)"
 }
@@ -4357,7 +4357,7 @@ id: toolu_01MctLdEew3ev113QsfkbUJs
 tool_result
 id: toolu_01MctLdEew3ev113QsfkbUJs
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4370,7 +4370,7 @@ tool_use Bash
 id: toolu_01DtiBsXmvFsRm253i37zwfs
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\nSDK=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\\\\monkeyc.bat\"\nW=$(wslpath -w \"$(pwd)\")\necho \">>> 수정 후 test-mode compile (테스트+fix)\"\npowershell.exe -NoProfile -Command \"& '$SDK' -t -o '$W\\bin\\test.prg' -f '$W\\monkey.jungle' -y '$W\\developer_key.der' -d fr165\" 2>&1 | grep -viE \"CMD.EXE|UNC|Windows |is not used|launcher icon\" | tail -8\necho \">>> test-mode exit=${PIPESTATUS[0]}\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\nSDK=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\\\\monkeyc.bat\"\nW=$(wslpath -w \"$(pwd)\")\necho \">>> 수정 후 test-mode compile (테스트+fix)\"\npowershell.exe -NoProfile -Command \"& '$SDK' -t -o '$W\\bin\\test.prg' -f '$W\\monkey.jungle' -y '$W\\developer_key.der' -d fr165\" 2>&1 | grep -viE \"CMD.EXE|UNC|Windows |is not used|launcher icon\" | tail -8\necho \">>> test-mode exit=${PIPESTATUS[0]}\"",
   "description": "Test-mode compile after fix wiring"
 }
 ```
@@ -4396,7 +4396,7 @@ tool_use Bash
 id: toolu_01Xc17xo2JoK29vxzxkAFBEE
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\nSDK=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\\\\monkeyc.bat\"\nW=$(wslpath -w \"$(pwd)\")\nrm -f bin/test.prg bin/test.prg.debug.xml 2>/dev/null\necho \">>> build FR165 RunVisionIQ.prg (수정 반영)\"\npowershell.exe -NoProfile -Command \"& '$SDK' -o '$W\\bin\\RunVisionIQ.prg' -f '$W\\monkey.jungle' -y '$W\\developer_key.der' -d fr165 -w\" 2>&1 | grep -viE \"CMD.EXE|UNC|Windows |is not used|launcher icon\" | tail -6\necho \">>> exit=${PIPESTATUS[0]}\"\nls -la bin/RunVisionIQ.prg 2>&1 | head -1",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\nSDK=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\\\\monkeyc.bat\"\nW=$(wslpath -w \"$(pwd)\")\nrm -f bin/test.prg bin/test.prg.debug.xml 2>/dev/null\necho \">>> build FR165 RunVisionIQ.prg (수정 반영)\"\npowershell.exe -NoProfile -Command \"& '$SDK' -o '$W\\bin\\RunVisionIQ.prg' -f '$W\\monkey.jungle' -y '$W\\developer_key.der' -d fr165 -w\" 2>&1 | grep -viE \"CMD.EXE|UNC|Windows |is not used|launcher icon\" | tail -6\necho \">>> exit=${PIPESTATUS[0]}\"\nls -la bin/RunVisionIQ.prg 2>&1 | head -1",
   "description": "Build deliverable RunVisionIQ.prg with fix"
 }
 ```
@@ -4423,7 +4423,7 @@ tool_use Bash
 id: toolu_018CxgrpHA5FPLcQ8CmPHcNA
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== 변경 파일 ===\"\ngit status --short\necho \"\"\necho \"=== production 수정 핵심 (RunVisionIQView.mc + MetricStrategy.mc, 테스트 제외) ===\"\ngit diff source/RunVisionIQView.mc source/MetricStrategy.mc | grep -E \"^[+-]\" | grep -vE \"^\\+\\+\\+|^---\" | head -40",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== 변경 파일 ===\"\ngit status --short\necho \"\"\necho \"=== production 수정 핵심 (RunVisionIQView.mc + MetricStrategy.mc, 테스트 제외) ===\"\ngit diff source/RunVisionIQView.mc source/MetricStrategy.mc | grep -E \"^[+-]\" | grep -vE \"^\\+\\+\\+|^---\" | head -40",
   "description": "Show diff of fix for cross-verification"
 }
 ```
@@ -4496,7 +4496,7 @@ tool_use Bash
 id: toolu_01SCuVARHxXfNeMA9fEGDtfB
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== power 가 패킷/전송에 쓰이나 ===\"\ngrep -nE \"power|Power|grade|Grade|createPowerPacket|metricValues.*power|\\.power\" source/RunVisionIQView.mc source/RunningStrategy.mc source/CyclingStrategy.mc source/MetricStrategy.mc source/ILensProtocol.mc | grep -viE \"//|UserProfile|userWeight\" | head -20",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== power 가 패킷/전송에 쓰이나 ===\"\ngrep -nE \"power|Power|grade|Grade|createPowerPacket|metricValues.*power|\\.power\" source/RunVisionIQView.mc source/RunningStrategy.mc source/CyclingStrategy.mc source/MetricStrategy.mc source/ILensProtocol.mc | grep -viE \"//|UserProfile|userWeight\" | head -20",
   "description": "Check if power/grade are transmitted"
 }
 ```
@@ -4552,7 +4552,7 @@ tool_use Bash
 id: toolu_011oZ7j1pWkJuNVyhUNUYsKC
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== git status (tracked + untracked) ===\"\ngit status --short --untracked-files=all\necho \"\"\necho \"=== bin/ 잔재 (gitignored 확인) ===\"\nls -1 bin/*.prg bin/*.iq bin/*.xml 2>/dev/null\necho \"--- 위 파일들이 git에 추적되나? (전부 ignore여야 정상) ---\"\ngit check-ignore bin/RunVisionIQ.prg bin/RunVisionIQ-1.2.0.iq bin/test.prg.debug.xml 2>/dev/null && echo \"(ignore됨 = 커밋 안 됨)\" || echo \"(일부 추적됨 — 확인 필요)\"\necho \"\"\necho \"=== 커밋 대상 = 소스 3개만? ===\"\ngit diff --stat",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== git status (tracked + untracked) ===\"\ngit status --short --untracked-files=all\necho \"\"\necho \"=== bin/ 잔재 (gitignored 확인) ===\"\nls -1 bin/*.prg bin/*.iq bin/*.xml 2>/dev/null\necho \"--- 위 파일들이 git에 추적되나? (전부 ignore여야 정상) ---\"\ngit check-ignore bin/RunVisionIQ.prg bin/RunVisionIQ-1.2.0.iq bin/test.prg.debug.xml 2>/dev/null && echo \"(ignore됨 = 커밋 안 됨)\" || echo \"(일부 추적됨 — 확인 필요)\"\necho \"\"\necho \"=== 커밋 대상 = 소스 3개만? ===\"\ngit diff --stat",
   "description": "Full git status before commit"
 }
 ```
@@ -4614,7 +4614,7 @@ tool_use Bash
 id: toolu_01C614vLQYjDHLagmotwwG8Q
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== repo에 추적 중인 의심스러운 파일 (backup/legacy/tmp 등) ===\"\ngit ls-files | grep -iE \"\\.backup|\\.legacy|\\.old|\\.bak|\\.tmp|copy|test-build|probe\" \necho \"--- (위에 안 나오면 추적 안 됨) ---\"\necho \"\"\necho \"=== source/ 추적 파일 전체 ===\"\ngit ls-files source/\necho \"\"\necho \"=== bin/ 추적 파일 (있으면 안 됨) ===\"\ngit ls-files bin/ | head",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== repo에 추적 중인 의심스러운 파일 (backup/legacy/tmp 등) ===\"\ngit ls-files | grep -iE \"\\.backup|\\.legacy|\\.old|\\.bak|\\.tmp|copy|test-build|probe\" \necho \"--- (위에 안 나오면 추적 안 됨) ---\"\necho \"\"\necho \"=== source/ 추적 파일 전체 ===\"\ngit ls-files source/\necho \"\"\necho \"=== bin/ 추적 파일 (있으면 안 됨) ===\"\ngit ls-files bin/ | head",
   "description": "Check for unnecessary tracked files in repo"
 }
 ```
@@ -4710,7 +4710,7 @@ id: toolu_01FhUKEaUZ7hWQAjCCsbgCGv
 ```json
 {
   "file_path": "/tmp/iq_commitmsg.txt",
-  "content": "fix(garmin/metrics): 정지 시 메트릭 0 미전송 회귀 수정 (valid 과잉 >0 제거)\n\n50844a5의 재연결-0 방지 skip이 valid 조건을 `!= null && > 0`로 만들어\n\"데이터 없음(null)\"과 \"실제 0(정지)\"을 한 덩어리로 묶음 → 정지 시 velocity/\ncadence 패킷 미전송 → rLens 직전값 고착. velocity 갭 후 글래스 펌웨어가 pace\n필드를 다시 안 살리는 latch로 \"페이스가 다시 뛰어도 영영 직전값 고정\" 증상까지 유발.\n\n수정: metricPresent(값)=(값 != null)로 전송 판정 분리.\n- 센서값 존재(0=정지 포함) → 전송 (정지 시 0 표시 + velocity 연속성으로 펌웨어 latch 차단)\n- null(no-data/재연결) → skip (50844a5 의도 보존)\n- pace 0 나눗셈 가드는 speedMoving(>0)으로 분리 (계산 전용, 전송 판정과 무관)\n- power 계산도 speedMoving 사용 (미전송 dead 계산이라 무해, 기존 \"이동 중에만\" 의미 보존)\n- 거리는 미변경 (누적값이라 정지 시 직전값 표시가 정상)\n\n테스트: testMetricPresent_* 4개 추가 (\"0은 전송, null은 skip\" 계약 회귀 잠금).\n컴파일·테스트모드 빌드 SUCCESSFUL(fr165). 실기기로 정지→0 + 재개→페이스 회복 확인 완료.\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>\n"
+  "content": "fix(garmin/metrics): 정지 시 메트릭 0 미전송 회귀 수정 (valid 과잉 >0 제거)\n\n50844a5의 재연결-0 방지 skip이 valid 조건을 `!= null && > 0`로 만들어\n\"데이터 없음(null)\"과 \"실제 0(정지)\"을 한 덩어리로 묶음 → 정지 시 velocity/\ncadence 패킷 미전송 → rLens 직전값 고착. velocity 갭 후 글래스 펌웨어가 pace\n필드를 다시 안 살리는 latch로 \"페이스가 다시 뛰어도 영영 직전값 고정\" 증상까지 유발.\n\n수정: metricPresent(값)=(값 != null)로 전송 판정 분리.\n- 센서값 존재(0=정지 포함) → 전송 (정지 시 0 표시 + velocity 연속성으로 펌웨어 latch 차단)\n- null(no-data/재연결) → skip (50844a5 의도 보존)\n- pace 0 나눗셈 가드는 speedMoving(>0)으로 분리 (계산 전용, 전송 판정과 무관)\n- power 계산도 speedMoving 사용 (미전송 dead 계산이라 무해, 기존 \"이동 중에만\" 의미 보존)\n- 거리는 미변경 (누적값이라 정지 시 직전값 표시가 정상)\n\n테스트: testMetricPresent_* 4개 추가 (\"0은 전송, null은 skip\" 계약 회귀 잠금).\n컴파일·테스트모드 빌드 SUCCESSFUL(fr165). 실기기로 정지→0 + 재개→페이스 회복 확인 완료.\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>\n"
 }
 ```
 
@@ -4728,7 +4728,7 @@ tool_use Bash
 id: toolu_01JHEQ8xLF2NZYpjtQthLwy6
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\ngit add source/MetricStrategy.mc source/RunVisionIQView.mc source/Tests.mc\necho \"=== 스테이징 확인 (소스 3개만) ===\"\ngit status --short\necho \"\"\ngit commit -F /tmp/iq_commitmsg.txt 2>&1 | tail -4\necho \"\"\necho \"=== push (맥 세션이 pull 가능하도록) ===\"\ngit push 2>&1 | tail -5\necho \"\"\necho \"=== 결과 ===\"\ngit log --oneline -1\ngit status --short --branch | head -1",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\ngit add source/MetricStrategy.mc source/RunVisionIQView.mc source/Tests.mc\necho \"=== 스테이징 확인 (소스 3개만) ===\"\ngit status --short\necho \"\"\ngit commit -F /tmp/iq_commitmsg.txt 2>&1 | tail -4\necho \"\"\necho \"=== push (맥 세션이 pull 가능하도록) ===\"\ngit push 2>&1 | tail -5\necho \"\"\necho \"=== 결과 ===\"\ngit log --oneline -1\ngit status --short --branch | head -1",
   "description": "Stage 3 source files, commit, push"
 }
 ```
@@ -4793,7 +4793,7 @@ tool_use Bash
 id: toolu_01VRVv3BssxSBMAAuuEhsnF9
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision\ngit fetch --quiet 2>&1\necho \"local : $(git log --oneline -1 HEAD)\"\necho \"origin: $(git log --oneline -1 @{u})\"\nbehind=$(git rev-list --count HEAD..@{u}); ahead=$(git rev-list --count @{u}..HEAD); dirty=$(git status --porcelain|wc -l)\necho \"behind=$behind ahead=$ahead dirty=$dirty\"\necho \"\"\necho \"=== incoming 커밋 ===\"\ngit log --oneline HEAD..@{u} 2>/dev/null | head\nif [ \"$behind\" -gt 0 ] && [ \"$ahead\" = 0 ] && [ \"$dirty\" = 0 ]; then\n  echo \"--- ff pull ---\"\n  git pull --ff-only 2>&1 | grep -E \"Updating|Fast-forward|file|insertion|deletion|watchos|swift\" | head\nelse\n  echo \"(ff 아님 — 확인 필요)\"\nfi",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision\ngit fetch --quiet 2>&1\necho \"local : $(git log --oneline -1 HEAD)\"\necho \"origin: $(git log --oneline -1 @{u})\"\nbehind=$(git rev-list --count HEAD..@{u}); ahead=$(git rev-list --count @{u}..HEAD); dirty=$(git status --porcelain|wc -l)\necho \"behind=$behind ahead=$ahead dirty=$dirty\"\necho \"\"\necho \"=== incoming 커밋 ===\"\ngit log --oneline HEAD..@{u} 2>/dev/null | head\nif [ \"$behind\" -gt 0 ] && [ \"$ahead\" = 0 ] && [ \"$dirty\" = 0 ]; then\n  echo \"--- ff pull ---\"\n  git pull --ff-only 2>&1 | grep -E \"Updating|Fast-forward|file|insertion|deletion|watchos|swift\" | head\nelse\n  echo \"(ff 아님 — 확인 필요)\"\nfi",
   "description": "Pull parent repo for Apple Watch fix"
 }
 ```
@@ -4828,7 +4828,7 @@ tool_use Bash
 id: toolu_01AQ89L3Dbf8d5688cWkVfji
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision\necho \"=== 67591d0 fix diff (CyclingWorkoutManager) ===\"\ngit show 67591d0 -- \"runvision-watchos/Sources/RunVisionWatch/Workout/CyclingWorkoutManager.swift\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision\necho \"=== 67591d0 fix diff (CyclingWorkoutManager) ===\"\ngit show 67591d0 -- \"runvision-watchos/Sources/RunVisionWatch/Workout/CyclingWorkoutManager.swift\"",
   "description": "Show Apple Watch cycling speed staleness fix"
 }
 ```
@@ -4840,7 +4840,7 @@ id: toolu_01AQ89L3Dbf8d5688cWkVfji
 ```
 === 67591d0 fix diff (CyclingWorkoutManager) ===
 commit 67591d0a7694b09c93efa4684862d3ac2ba2ac52
-Author: Johnny <gopeace88@gmail.com>
+Author: Johnny <<REDACTED_EMAIL>>
 Date:   Sat May 23 21:11:24 2026 +0900
 
     fix(watch/cycling): cyclingSpeed staleness 리셋 추가 — 멈춤 후 속도 stale 고정 수정 (review F7)
@@ -4855,7 +4855,7 @@ Date:   Sat May 23 21:11:24 2026 +0900
     - 재개 시 cyclingSpeed 샘플이 speedKmh·timestamp 갱신 → 정상 회복
     - xcodebuild watch 앱 BUILD SUCCEEDED. HealthKit 의존이라 유닛테스트 하네스 없음, 실기기 확인 권장
     
-    Co-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>
+    Co-Authored-By: Claude Opus 4.7 <<REDACTED_EMAIL>>
 
 diff --git a/runvision-watchos/Sources/RunVisionWatch/Workout/CyclingWorkoutManager.swift b/runvision-watchos/Sources/RunVisionWatch/Workout/CyclingWorkoutManager.swift
 index ef7ae54..400d9df 100644
@@ -4909,7 +4909,7 @@ tool_use Bash
 id: toolu_0147h1pCma8En3HPtW6uJYSR
 ```json
 {
-  "command": "for d in \"/home/jhkim/00.Projects/00.RunVision\" \"/home/jhkim/00.Projects/00.RunVision/runvision-iq\" \"/home/jhkim/00.Projects/00.RunVision/runvision-wear\"; do\n  name=$(basename \"$d\")\n  git -C \"$d\" fetch --quiet 2>&1\n  behind=$(git -C \"$d\" rev-list --count HEAD..@{u} 2>/dev/null)\n  ahead=$(git -C \"$d\" rev-list --count @{u}..HEAD 2>/dev/null)\n  dirty=$(git -C \"$d\" status --porcelain|wc -l)\n  echo \"================ $name : behind=$behind ahead=$ahead dirty=$dirty ================\"\n  if [ \"$behind\" -gt 0 ]; then\n    git -C \"$d\" log --oneline HEAD..@{u} | head -10\n  else\n    echo \"(up-to-date)\"\n  fi\ndone",
+  "command": "for d in \"/home/<USER>/00.Projects/00.RunVision\" \"/home/<USER>/00.Projects/00.RunVision/runvision-iq\" \"/home/<USER>/00.Projects/00.RunVision/runvision-wear\"; do\n  name=$(basename \"$d\")\n  git -C \"$d\" fetch --quiet 2>&1\n  behind=$(git -C \"$d\" rev-list --count HEAD..@{u} 2>/dev/null)\n  ahead=$(git -C \"$d\" rev-list --count @{u}..HEAD 2>/dev/null)\n  dirty=$(git -C \"$d\" status --porcelain|wc -l)\n  echo \"================ $name : behind=$behind ahead=$ahead dirty=$dirty ================\"\n  if [ \"$behind\" -gt 0 ]; then\n    git -C \"$d\" log --oneline HEAD..@{u} | head -10\n  else\n    echo \"(up-to-date)\"\n  fi\ndone",
   "description": "Fetch all repos, find which has incoming changes"
 }
 ```
@@ -4940,7 +4940,7 @@ tool_use Bash
 id: toolu_011TDA77EzD4V1wM35u368Ym
 ```json
 {
-  "command": "for d in \"/home/jhkim/00.Projects/00.RunVision\" \"/home/jhkim/00.Projects/00.RunVision/runvision-iq\" \"/home/jhkim/00.Projects/00.RunVision/runvision-wear\"; do\n  name=$(basename \"$d\")\n  echo \"================ $name ================\"\n  git -C \"$d\" pull --ff-only 2>&1 | grep -E \"Updating|Fast-forward\" \n  git -C \"$d\" diff --stat HEAD@{1}..HEAD 2>/dev/null | tail -15\n  echo \"\"\ndone",
+  "command": "for d in \"/home/<USER>/00.Projects/00.RunVision\" \"/home/<USER>/00.Projects/00.RunVision/runvision-iq\" \"/home/<USER>/00.Projects/00.RunVision/runvision-wear\"; do\n  name=$(basename \"$d\")\n  echo \"================ $name ================\"\n  git -C \"$d\" pull --ff-only 2>&1 | grep -E \"Updating|Fast-forward\" \n  git -C \"$d\" diff --stat HEAD@{1}..HEAD 2>/dev/null | tail -15\n  echo \"\"\ndone",
   "description": "Pull all three repos and show changed file stats"
 }
 ```
@@ -4982,7 +4982,7 @@ tool_use Bash
 id: toolu_01MxXKqcaFzmcRFb6veAh4av
 ```json
 {
-  "command": "echo \"================ Garmin (iq) — 버전 표시 추가분 ================\"\ncd /home/jhkim/00.Projects/00.RunVision/runvision-iq\ngit show 7d64e80 -- source/RunVisionIQView.mc | grep -E \"^\\+\" | grep -vE \"^\\+\\+\\+\" | head -20\necho \"\"\necho \"================ Apple Watch — HomeView.swift ================\"\ncd /home/jhkim/00.Projects/00.RunVision\ngit show 22919a5 -- runvision-watchos/Sources/RunVisionWatch/UI/HomeView.swift | grep -E \"^\\+\" | grep -vE \"^\\+\\+\\+\" | head -15\necho \"\"\necho \"================ Galaxy (wear) — HomeScreen.kt + gradle ================\"\ncd /home/jhkim/00.Projects/00.RunVision/runvision-wear\ngit show 611762e | grep -E \"^\\+\" | grep -vE \"^\\+\\+\\+\" | head -20",
+  "command": "echo \"================ Garmin (iq) — 버전 표시 추가분 ================\"\ncd /home/<USER>/00.Projects/00.RunVision/runvision-iq\ngit show 7d64e80 -- source/RunVisionIQView.mc | grep -E \"^\\+\" | grep -vE \"^\\+\\+\\+\" | head -20\necho \"\"\necho \"================ Apple Watch — HomeView.swift ================\"\ncd /home/<USER>/00.Projects/00.RunVision\ngit show 22919a5 -- runvision-watchos/Sources/RunVisionWatch/UI/HomeView.swift | grep -E \"^\\+\" | grep -vE \"^\\+\\+\\+\" | head -15\necho \"\"\necho \"================ Galaxy (wear) — HomeScreen.kt + gradle ================\"\ncd /home/<USER>/00.Projects/00.RunVision/runvision-wear\ngit show 611762e | grep -E \"^\\+\" | grep -vE \"^\\+\\+\\+\" | head -20",
   "description": "Show version-display additions across all three platforms"
 }
 ```
@@ -5071,7 +5071,7 @@ tool_use Bash
 id: toolu_019KBXiSPdnRtcT8QLrBvwWd
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== manifest의 app 버전(semver)만 robust 추출 테스트 ===\"\nVER=$(grep -oE 'version=\"[0-9]+\\.[0-9]+\\.[0-9]+\"' manifest.xml | head -1 | grep -oE '[0-9]+\\.[0-9]+\\.[0-9]+')\necho \"추출된 app version = '$VER'\"\necho \"\"\necho \"=== APP_VERSION 현재 사용처 (선언 + drawText) ===\"\ngrep -nE \"APP_VERSION\" source/RunVisionIQView.mc\necho \"\"\necho \"=== jungle이 source/ 를 어떻게 포함하나 (새 .mc 자동 포함되는지) ===\"\ncat monkey.jungle",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== manifest의 app 버전(semver)만 robust 추출 테스트 ===\"\nVER=$(grep -oE 'version=\"[0-9]+\\.[0-9]+\\.[0-9]+\"' manifest.xml | head -1 | grep -oE '[0-9]+\\.[0-9]+\\.[0-9]+')\necho \"추출된 app version = '$VER'\"\necho \"\"\necho \"=== APP_VERSION 현재 사용처 (선언 + drawText) ===\"\ngrep -nE \"APP_VERSION\" source/RunVisionIQView.mc\necho \"\"\necho \"=== jungle이 source/ 를 어떻게 포함하나 (새 .mc 자동 포함되는지) ===\"\ncat monkey.jungle",
   "description": "Verify manifest version extraction, APP_VERSION usage, jungle source globbing"
 }
 ```
@@ -5117,7 +5117,7 @@ tool_use Write
 id: toolu_01132SMMUPDREj5RiAAFREw4
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/AppVersion.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/AppVersion.mc",
   "content": "// 자동 생성 파일 — build.sh 가 manifest.xml 의 iq:application version 에서 주입.\n// 직접 수정 금지(빌드 시 덮어씌워짐). 버전 변경은 manifest.xml 에서만.\n// (Monkey C 는 런타임에 자기 manifest version 을 못 읽어 빌드 타임 주입으로 동기화함.)\nmodule AppVersion {\n    const VALUE = \"1.2.0\";\n}\n"
 }
 ```
@@ -5127,7 +5127,7 @@ id: toolu_01132SMMUPDREj5RiAAFREw4
 tool_result
 id: toolu_01132SMMUPDREj5RiAAFREw4
 ```
-File created successfully at: /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/AppVersion.mc (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/AppVersion.mc (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5141,7 +5141,7 @@ id: toolu_01HKyECQead71mQqCR7sEbbq
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "    // ⚠️ 런타임에 manifest version을 못 읽으므로 상수로 둠. manifest.xml version과 수동 동기화할 것.\n    private const APP_VERSION = \"1.2.0\";",
   "new_string": "    // 앱 버전은 source/AppVersion.mc 의 AppVersion.VALUE 사용 (build.sh 가 manifest.xml 에서 자동 생성·동기화)."
 }
@@ -5152,7 +5152,7 @@ id: toolu_01HKyECQead71mQqCR7sEbbq
 tool_result
 id: toolu_01HKyECQead71mQqCR7sEbbq
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5162,7 +5162,7 @@ id: toolu_01KAgwuHZCNFRubXvNSu84cF
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "            // 앱 버전 (상태 아래, 작고 흐리게). manifest version과 수동 동기화(APP_VERSION 상수).\n            dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);\n            dc.drawText(centerX, centerY + 35, Graphics.FONT_XTINY, \"v\" + APP_VERSION, Graphics.TEXT_JUSTIFY_CENTER);",
   "new_string": "            // 앱 버전 (상태 아래, 작고 흐리게). manifest version 자동 동기화(build.sh → AppVersion.mc).\n            dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);\n            dc.drawText(centerX, centerY + 35, Graphics.FONT_XTINY, \"v\" + AppVersion.VALUE, Graphics.TEXT_JUSTIFY_CENTER);"
 }
@@ -5173,7 +5173,7 @@ id: toolu_01KAgwuHZCNFRubXvNSu84cF
 tool_result
 id: toolu_01KAgwuHZCNFRubXvNSu84cF
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5186,7 +5186,7 @@ tool_use Write
 id: toolu_0176GBcGbq8j8nWX53Eyz1J1
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/build.sh",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/build.sh",
   "content": "#!/usr/bin/env bash\n# RunVision-IQ 빌드 — manifest.xml 의 app version 을 source/AppVersion.mc 로 자동 동기화 후 monkeyc 실행.\n# 버전은 manifest.xml(iq:application version)에서만 변경하면 됨 → 화면 표시·.iq 파일명 모두 자동 반영.\n#\n# 사용:\n#   ./build.sh            → 단일 기기 .prg (기본 fr165) = bin/RunVisionIQ.prg   (사이드로드/시뮬용)\n#   ./build.sh fr265      → 지정 기기 .prg\n#   ./build.sh iq         → 전체 기기 릴리즈 .iq = bin/RunVisionIQ-<ver>.iq      (스토어 업로드용)\n#\n# WSL 네이티브 경로 + Windows monkeyc → powershell.exe(UNC 인지) 경유. cmd.exe 는 UNC cwd 불가.\nset -eu\ncd \"$(dirname \"$0\")\"\n\n# --- manifest 에서 app version(semver) 추출 (스키마 version=\"3\"/\"1.0\" 과 구분: 3-파트 semver) ---\nVER=$(grep -oE 'version=\"[0-9]+\\.[0-9]+\\.[0-9]+\"' manifest.xml | head -1 | grep -oE '[0-9]+\\.[0-9]+\\.[0-9]+' || true)\nif [ -z \"$VER\" ]; then\n    echo \"ERROR: manifest.xml 에서 app version(semver) 추출 실패\" >&2\n    exit 1\nfi\n\n# --- AppVersion.mc 자동 생성 (manifest 단일 출처) ---\ncat > source/AppVersion.mc <<EOF\n// 자동 생성 파일 — build.sh 가 manifest.xml 의 iq:application version 에서 주입.\n// 직접 수정 금지(빌드 시 덮어씌워짐). 버전 변경은 manifest.xml 에서만.\n// (Monkey C 는 런타임에 자기 manifest version 을 못 읽어 빌드 타임 주입으로 동기화함.)\nmodule AppVersion {\n    const VALUE = \"$VER\";\n}\nEOF\necho \"[build] AppVersion.mc 동기화: v$VER (manifest 기준)\"\n\n# --- monkeyc 경로 ---\nSDK=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\\\\monkeyc.bat\"\nW=$(wslpath -w \"$(pwd)\")\nJUNGLE=\"$W\\\\monkey.jungle\"\nKEY=\"$W\\\\developer_key.der\"\n\nif [ \"${1:-}\" = \"iq\" ]; then\n    OUT=\"$W\\\\bin\\\\RunVisionIQ-$VER.iq\"\n    echo \"[build] 릴리즈 .iq […]
 
 > TOOL
@@ -5194,7 +5194,7 @@ id: toolu_0176GBcGbq8j8nWX53Eyz1J1
 tool_result
 id: toolu_0176GBcGbq8j8nWX53Eyz1J1
 ```
-File created successfully at: /home/jhkim/00.Projects/00.RunVision/runvision-iq/build.sh (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/00.Projects/00.RunVision/runvision-iq/build.sh (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5207,7 +5207,7 @@ tool_use Bash
 id: toolu_01SwSHnLkHrfjAcZfGRYsh7X
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\nchmod +x build.sh\necho \">>> ./build.sh (기본 fr165)\"\n./build.sh 2>&1 | grep -viE \"CMD.EXE|UNC|Windows |is not used|launcher icon\" | tail -12\necho \">>> exit=${PIPESTATUS[0]}\"\necho \"\"\necho \"=== 생성된 AppVersion.mc 내용 ===\"\ncat source/AppVersion.mc\necho \"\"\necho \"=== 산출물 ===\"\nls -la bin/RunVisionIQ.prg 2>&1 | head -1",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\nchmod +x build.sh\necho \">>> ./build.sh (기본 fr165)\"\n./build.sh 2>&1 | grep -viE \"CMD.EXE|UNC|Windows |is not used|launcher icon\" | tail -12\necho \">>> exit=${PIPESTATUS[0]}\"\necho \"\"\necho \"=== 생성된 AppVersion.mc 내용 ===\"\ncat source/AppVersion.mc\necho \"\"\necho \"=== 산출물 ===\"\nls -la bin/RunVisionIQ.prg 2>&1 | head -1",
   "description": "Run build.sh and verify auto-sync + build"
 }
 ```
@@ -5247,7 +5247,7 @@ tool_use Bash
 id: toolu_01NNJD89Bw4g6TutzyoHE3Bo
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \">>> manifest 버전 임시 변경: 1.2.0 → 1.2.1 (auto-sync 테스트용)\"\nsed -i 's/version=\"1.2.0\"/version=\"1.2.1\"/' manifest.xml\ngrep -oE 'version=\"[0-9]+\\.[0-9]+\\.[0-9]+\"' manifest.xml | head -1\necho \"\"\necho \">>> build.sh 재실행 → AppVersion.mc가 1.2.1로 따라오나?\"\n./build.sh 2>&1 | grep -E \"AppVersion.mc 동기화|BUILD\" | head -3\ngrep \"VALUE\" source/AppVersion.mc\necho \"\"\necho \">>> git으로 manifest 정확히 복원 + AppVersion 재동기화\"\ngit checkout manifest.xml\n./build.sh 2>&1 | grep \"AppVersion.mc 동기화\"\ngrep \"VALUE\" source/AppVersion.mc\necho \"\"\necho \">>> manifest 복원 확인 (clean이어야 정상)\"\ngit status --short manifest.xml | head -1 || echo \"(manifest clean)\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \">>> manifest 버전 임시 변경: 1.2.0 → 1.2.1 (auto-sync 테스트용)\"\nsed -i 's/version=\"1.2.0\"/version=\"1.2.1\"/' manifest.xml\ngrep -oE 'version=\"[0-9]+\\.[0-9]+\\.[0-9]+\"' manifest.xml | head -1\necho \"\"\necho \">>> build.sh 재실행 → AppVersion.mc가 1.2.1로 따라오나?\"\n./build.sh 2>&1 | grep -E \"AppVersion.mc 동기화|BUILD\" | head -3\ngrep \"VALUE\" source/AppVersion.mc\necho \"\"\necho \">>> git으로 manifest 정확히 복원 + AppVersion 재동기화\"\ngit checkout manifest.xml\n./build.sh 2>&1 | grep \"AppVersion.mc 동기화\"\ngrep \"VALUE\" source/AppVersion.mc\necho \"\"\necho \">>> manifest 복원 확인 (clean이어야 정상)\"\ngit status --short manifest.xml | head -1 || echo \"(manifest clean)\"",
   "description": "Prove auto-sync: bump manifest, verify propagation, restore"
 }
 ```
@@ -5314,7 +5314,7 @@ tool_use Bash
 id: toolu_01DGz2jD1GhwxNjqtu7rh6fY
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision\necho \"=== Flutter build-aab.sh / build-ios.sh 에 자동 증가 로직이 있나 ===\"\nfor f in runvision/build-aab.sh runvision/build-ios.sh; do\n  echo \"--- $f ---\"\n  grep -niE \"increment|증가|\\+ 1|\\+1|version.*\\+|build.*number|versionCode|expr |\\$\\(\\(\" \"$f\" 2>/dev/null | head -8 || echo \"(파일 없음)\"\ndone\necho \"\"\necho \"=== 배포 신뢰원 문서 존재 확인 ===\"\nls -la \"Docs/애플스토어/APP-STORE-SUBMISSION-LOG.md\" 2>&1 | head -1\necho \"\"\necho \"=== Garmin: 별도 build number 개념 있나 (manifest엔 version만?) ===\"\ngrep -oE 'iq:application[^>]*|version=\"[^\"]*\"' runvision-iq/manifest.xml | head -5",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision\necho \"=== Flutter build-aab.sh / build-ios.sh 에 자동 증가 로직이 있나 ===\"\nfor f in runvision/build-aab.sh runvision/build-ios.sh; do\n  echo \"--- $f ---\"\n  grep -niE \"increment|증가|\\+ 1|\\+1|version.*\\+|build.*number|versionCode|expr |\\$\\(\\(\" \"$f\" 2>/dev/null | head -8 || echo \"(파일 없음)\"\ndone\necho \"\"\necho \"=== 배포 신뢰원 문서 존재 확인 ===\"\nls -la \"Docs/애플스토어/APP-STORE-SUBMISSION-LOG.md\" 2>&1 | head -1\necho \"\"\necho \"=== Garmin: 별도 build number 개념 있나 (manifest엔 version만?) ===\"\ngrep -oE 'iq:application[^>]*|version=\"[^\"]*\"' runvision-iq/manifest.xml | head -5",
   "description": "Verify Flutter scripts auto-increment + Garmin version model"
 }
 ```
@@ -5365,7 +5365,7 @@ tool_use Bash
 id: toolu_01UWDs1KBoeX5jGvPjEcJpeq
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-wear\necho \"=== Galaxy versionName/versionCode 정의 위치 ===\"\ngrep -niE \"versionName|versionCode|version =\" app/build.gradle.kts | head\necho \"\"\necho \"=== Galaxy에 버전 자동 증가 스크립트가 있나 ===\"\nls *.sh 2>/dev/null\ngrep -rniE \"increment|자동 증가|expr.*\\+|versionCode.*\\+\" *.sh 2>/dev/null | head || echo \"(증가 스크립트 없음 → 수동 편집)\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-wear\necho \"=== Galaxy versionName/versionCode 정의 위치 ===\"\ngrep -niE \"versionName|versionCode|version =\" app/build.gradle.kts | head\necho \"\"\necho \"=== Galaxy에 버전 자동 증가 스크립트가 있나 ===\"\nls *.sh 2>/dev/null\ngrep -rniE \"increment|자동 증가|expr.*\\+|versionCode.*\\+\" *.sh 2>/dev/null | head || echo \"(증가 스크립트 없음 → 수동 편집)\"",
   "description": "Check Galaxy version bump mechanism"
 }
 ```
@@ -5404,7 +5404,7 @@ tool_use Write
 id: toolu_01BF6tXrNFKNt8LmNsXbwNHo
 ```json
 {
-  "file_path": "/home/jhkim/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/feedback_version_deploy_policy.md",
+  "file_path": "/home/<USER>/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/feedback_version_deploy_policy.md",
   "content": "---\nname: 버전업은 배포 시에만, 사용자 확인 받아서\ndescription: 빌드는 절대 버전을 올리지 않는다. 버전업은 사용자가 명시적으로 \"배포\"라고 할 때만, 직전 배포 버전 확인 후 version/build 번호를 사용자에게 확인받아 진행.\nmetadata:\n  type: feedback\n---\n\n빌드(dev/test)는 **절대 버전 번호를 증가시키지 않는다**. 버전업은 사용자가 **명시적으로 \"배포하겠다\"고 말할 때만** 일어난다.\n\n**Why:** 빌드마다 자동 증가하면 배포 안 한 번호가 줄줄이 낭비되고 스토어 배포 버전과 혼선이 생김. 스토어 배포는 신중한 결정이라 버전/빌드 번호를 사람이 통제해야 함. (2026-05-24 사용자 명시 지시)\n\n**How to apply (배포 요청 시 절차):**\n1. **직전 배포 버전 확인** — 신뢰원: `Docs/애플스토어/APP-STORE-SUBMISSION-LOG.md`의 \"현재 배포 상태\" 절 (빌드 번호 ≠ 배포 번호 혼동 금지).\n2. **사용자에게 확인받기** — 올릴 version number + build number를 제시하고 승인받음 (멋대로 +1 금지).\n3. 승인된 값으로 버전 설정 → 릴리즈 빌드 → 배포.\n\n**플랫폼별 버전 모델:**\n- Garmin: `manifest.xml`의 `iq:application version`(semver)만. **별도 빌드번호 없음.** `build.sh`가 이 값을 화면표시(AppVersion.mc)로 동기화만 하고 증가 안 함 → 준수. [[feedback_monkeyc_build]]\n- Galaxy(runvision-wear): `app/build.gradle.kts`의 versionName+versionCode 수동 편집 → 준수.\n- Apple Watch/iOS: version(MARKETING_VERSION)+build. Flutter iOS 아카이브에 embed.\n- Flutter Android: versionName+versionCode.\n\n**⚠️ 현재 정책 위반 (수정 필요):**\n- `runvision/build-aab.sh`, `runvision/build-ios.sh` 가 매 빌드마다 `expr +1`로 versionCode·patch **자동 증가** → 위반. build-ios.sh는 embed된 Apple Watch 버전도 같이 올림.\n- 수정 방향: 자동 증가 제거, 버전을 배포 시 확인된 인자로 받도록. (CLAUDE.md의 \"빌드 […]
 
 > TOOL
@@ -5412,7 +5412,7 @@ id: toolu_01BF6tXrNFKNt8LmNsXbwNHo
 tool_result
 id: toolu_01BF6tXrNFKNt8LmNsXbwNHo
 ```
-File created successfully at: /home/jhkim/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/feedback_version_deploy_policy.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/feedback_version_deploy_policy.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5426,7 +5426,7 @@ id: toolu_01VGXnLFPkMR1fPPuawY9AbZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/MEMORY.md",
   "old_string": "## ⚠️ versionCode 공유 주의\n→ [project_versioncode_sharing.md](./project_versioncode_sharing.md)\n- 폰 앱 + 워치 앱이 동일 applicationId(`com.runvision.runvision`) → versionCode 공유\n- 릴리즈 전 양쪽 최신 versionCode 확인 후 더 높은 값 +1 사용할 것",
   "new_string": "## ⚠️ versionCode 공유 주의\n→ [project_versioncode_sharing.md](./project_versioncode_sharing.md)\n- 폰 앱 + 워치 앱이 동일 applicationId(`com.runvision.runvision`) → versionCode 공유\n- 릴리즈 전 양쪽 최신 versionCode 확인 후 더 높은 값 +1 사용할 것\n\n## ⚠️ 버전업은 배포 시에만 (빌드 ≠ 버전업)\n→ [feedback_version_deploy_policy.md](./feedback_version_deploy_policy.md)\n- 빌드는 버전 증가 금지. 명시적 \"배포\" 시에만 직전 배포 버전 확인 후 version/build 번호 사용자 승인받아 진행\n- 위반: runvision/build-aab.sh·build-ios.sh 자동 +1 (수정 필요). Garmin build.sh·Galaxy=준수"
 }
@@ -5446,7 +5446,7 @@ tool_use Read
 id: toolu_01TTKpGK6992avVQwYJrWupj
 ```json
 {
-  "file_path": "/home/jhkim/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/MEMORY.md",
   "offset": 60,
   "limit": 20
 }
@@ -5484,7 +5484,7 @@ tool_use Read
 id: toolu_01Hne3t2ADJtDwEr9qeQjWVB
 ```json
 {
-  "file_path": "/home/jhkim/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/MEMORY.md",
   "offset": 40,
   "limit": 14
 }
@@ -5519,7 +5519,7 @@ id: toolu_01MA227mpvXhZTqSMrdWYEWn
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/MEMORY.md",
   "old_string": "- 릴리즈 전 양쪽 최신 versionCode 확인 후 더 높은 값 +1 사용할 것\n\n## Monkey C 빌드",
   "new_string": "- 릴리즈 전 양쪽 최신 versionCode 확인 후 더 높은 값 +1 사용할 것\n\n## ⚠️ 버전업은 배포 시에만 (빌드 ≠ 버전업)\n→ [feedback_version_deploy_policy.md](./feedback_version_deploy_policy.md)\n- 빌드는 버전 증가 금지. 명시적 \"배포\" 시에만 직전 배포 버전 확인 후 version/build 번호 사용자 승인받아 진행\n- 위반: runvision/build-aab.sh·build-ios.sh 자동 +1 (수정 필요). Garmin build.sh·Galaxy=준수\n\n## Monkey C 빌드"
 }
@@ -5530,7 +5530,7 @@ id: toolu_01MA227mpvXhZTqSMrdWYEWn
 tool_result
 id: toolu_01MA227mpvXhZTqSMrdWYEWn
 ```
-The file /home/jhkim/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5575,7 +5575,7 @@ tool_use Bash
 id: toolu_01EgoFY7tnBhjraeDcroivUe
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== git status (전체) ===\"\ngit status --short --untracked-files=all\necho \"\"\necho \"=== manifest clean 확인 (auto-sync 테스트 후 복원됐는지) ===\"\ngit diff --stat manifest.xml | tail -1 || echo \"(manifest clean)\"\necho \"\"\necho \"=== AppVersion.mc 현재 값 (1.2.0이어야) ===\"\ngrep VALUE source/AppVersion.mc",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== git status (전체) ===\"\ngit status --short --untracked-files=all\necho \"\"\necho \"=== manifest clean 확인 (auto-sync 테스트 후 복원됐는지) ===\"\ngit diff --stat manifest.xml | tail -1 || echo \"(manifest clean)\"\necho \"\"\necho \"=== AppVersion.mc 현재 값 (1.2.0이어야) ===\"\ngrep VALUE source/AppVersion.mc",
   "description": "Verify working tree before committing build.sh work"
 }
 ```
@@ -5607,7 +5607,7 @@ id: toolu_012F15Kg7PySL4tLd7kCC53y
 ```json
 {
   "file_path": "/tmp/iq_buildsh_commit.txt",
-  "content": "build(garmin): manifest 버전 자동 동기화 — build.sh + AppVersion.mc\n\n화면 버전 표시가 하드코딩 상수(APP_VERSION=\"1.2.0\")라 manifest와 수동 동기화가\n필요했음. Monkey C는 런타임에 자기 manifest version을 못 읽어, 빌드 타임 주입으로 동기화:\n\n- build.sh: manifest.xml의 iq:application version 추출 → source/AppVersion.mc 생성 → monkeyc\n  · ./build.sh [device]  = bin/RunVisionIQ.prg     (테스트/사이드로드, 기본 fr165)\n  · ./build.sh iq        = bin/RunVisionIQ-<ver>.iq (릴리즈, 전체 기기)\n- AppVersion.mc: 생성 파일이지만 커밋(raw monkeyc/시뮬레이터도 동작하도록). RunVisionIQView가\n  AppVersion.VALUE 참조. 하드코딩 APP_VERSION 상수 제거.\n\n⚠️ 버전 정책: build.sh는 버전을 *읽어 동기화*만 함(증가 안 함). 버전업은 배포 시\nmanifest를 의도적으로 고칠 때만 → manifest 단일 출처. (build-aab.sh/build-ios.sh의\n빌드마다 자동 증가는 별개 위반 — Mac 세션에서 수정 예정.)\n\n검증: build.sh BUILD SUCCESSFUL, auto-sync 양방향(1.2.0↔1.2.1) 실증, manifest git 복원 clean.\n화면 표시는 기존과 동일 \"v1.2.0\"(출처만 상수→AppVersion.VALUE), 메트릭 fix와 공존.\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>\n"
+  "content": "build(garmin): manifest 버전 자동 동기화 — build.sh + AppVersion.mc\n\n화면 버전 표시가 하드코딩 상수(APP_VERSION=\"1.2.0\")라 manifest와 수동 동기화가\n필요했음. Monkey C는 런타임에 자기 manifest version을 못 읽어, 빌드 타임 주입으로 동기화:\n\n- build.sh: manifest.xml의 iq:application version 추출 → source/AppVersion.mc 생성 → monkeyc\n  · ./build.sh [device]  = bin/RunVisionIQ.prg     (테스트/사이드로드, 기본 fr165)\n  · ./build.sh iq        = bin/RunVisionIQ-<ver>.iq (릴리즈, 전체 기기)\n- AppVersion.mc: 생성 파일이지만 커밋(raw monkeyc/시뮬레이터도 동작하도록). RunVisionIQView가\n  AppVersion.VALUE 참조. 하드코딩 APP_VERSION 상수 제거.\n\n⚠️ 버전 정책: build.sh는 버전을 *읽어 동기화*만 함(증가 안 함). 버전업은 배포 시\nmanifest를 의도적으로 고칠 때만 → manifest 단일 출처. (build-aab.sh/build-ios.sh의\n빌드마다 자동 증가는 별개 위반 — Mac 세션에서 수정 예정.)\n\n검증: build.sh BUILD SUCCESSFUL, auto-sync 양방향(1.2.0↔1.2.1) 실증, manifest git 복원 clean.\n화면 표시는 기존과 동일 \"v1.2.0\"(출처만 상수→AppVersion.VALUE), 메트릭 fix와 공존.\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>\n"
 }
 ```
 
@@ -5625,7 +5625,7 @@ tool_use Bash
 id: toolu_018RD7GSYYShxsnEHNL7qSDA
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\ngit add build.sh source/AppVersion.mc source/RunVisionIQView.mc\necho \"=== 스테이징 (3개) ===\"\ngit status --short\necho \"\"\ngit commit -F /tmp/iq_buildsh_commit.txt 2>&1 | tail -3\necho \"\"\ngit push 2>&1 | tail -4\necho \"\"\necho \"=== 결과 ===\"\ngit log --oneline -1\ngit status --short --branch | head -1",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\ngit add build.sh source/AppVersion.mc source/RunVisionIQView.mc\necho \"=== 스테이징 (3개) ===\"\ngit status --short\necho \"\"\ngit commit -F /tmp/iq_buildsh_commit.txt 2>&1 | tail -3\necho \"\"\ngit push 2>&1 | tail -4\necho \"\"\necho \"=== 결과 ===\"\ngit log --oneline -1\ngit status --short --branch | head -1",
   "description": "Commit and push Garmin build.sh version-sync work"
 }
 ```
@@ -5691,7 +5691,7 @@ tool_use Bash
 id: toolu_015ZRAYfdu62cFSgB5WaJVGW
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision\ngit fetch --quiet 2>&1\nbehind=$(git rev-list --count HEAD..@{u}); ahead=$(git rev-list --count @{u}..HEAD); dirty=$(git status --porcelain|wc -l)\necho \"behind=$behind ahead=$ahead dirty=$dirty\"\necho \"=== incoming ===\"\ngit log --oneline HEAD..@{u} 2>/dev/null | head\nif [ \"$behind\" -gt 0 ] && [ \"$ahead\" = 0 ] && [ \"$dirty\" = 0 ]; then\n  git pull --ff-only 2>&1 | grep -E \"Updating|Fast-forward|file|insertion|deletion|build-|CLAUDE\" \nelse\n  echo \"(ff 아님 — 확인)\"\nfi",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision\ngit fetch --quiet 2>&1\nbehind=$(git rev-list --count HEAD..@{u}); ahead=$(git rev-list --count @{u}..HEAD); dirty=$(git status --porcelain|wc -l)\necho \"behind=$behind ahead=$ahead dirty=$dirty\"\necho \"=== incoming ===\"\ngit log --oneline HEAD..@{u} 2>/dev/null | head\nif [ \"$behind\" -gt 0 ] && [ \"$ahead\" = 0 ] && [ \"$dirty\" = 0 ]; then\n  git pull --ff-only 2>&1 | grep -E \"Updating|Fast-forward|file|insertion|deletion|build-|CLAUDE\" \nelse\n  echo \"(ff 아님 — 확인)\"\nfi",
   "description": "Pull parent repo for Mac session #2 fix"
 }
 ```
@@ -5722,7 +5722,7 @@ tool_use Bash
 id: toolu_018d8x4RWgRuAtXEC8bjRH3W
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision\necho \"================ build-aab.sh 변경 (버전 로직) ================\"\ngit show a8e197f -- runvision/build-aab.sh | grep -E \"^[+-]\" | grep -vE \"^\\+\\+\\+|^---\" | head -40",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision\necho \"================ build-aab.sh 변경 (버전 로직) ================\"\ngit show a8e197f -- runvision/build-aab.sh | grep -E \"^[+-]\" | grep -vE \"^\\+\\+\\+|^---\" | head -40",
   "description": "Show build-aab.sh version logic changes"
 }
 ```
@@ -5772,7 +5772,7 @@ tool_use Bash
 id: toolu_0136sCsUQGUeuUsmCeQSoptH
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision\necho \"================ build-ios.sh 변경 ================\"\ngit show a8e197f -- runvision/build-ios.sh | grep -E \"^[+-]\" | grep -vE \"^\\+\\+\\+|^---\" | head -35\necho \"\"\necho \"=== CLAUDE.md / 문서에 정책 반영됐나 (이번 커밋 범위에 포함?) ===\"\ngit show a8e197f --stat | grep -iE \"CLAUDE|\\.md|LOG\" || echo \"(문서 변경 없음 — 스크립트 2개만)\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision\necho \"================ build-ios.sh 변경 ================\"\ngit show a8e197f -- runvision/build-ios.sh | grep -E \"^[+-]\" | grep -vE \"^\\+\\+\\+|^---\" | head -35\necho \"\"\necho \"=== CLAUDE.md / 문서에 정책 반영됐나 (이번 커밋 범위에 포함?) ===\"\ngit show a8e197f --stat | grep -iE \"CLAUDE|\\.md|LOG\" || echo \"(문서 변경 없음 — 스크립트 2개만)\"",
   "description": "Show build-ios.sh changes and check CLAUDE.md/doc update"
 }
 ```
@@ -5854,7 +5854,7 @@ tool_use Bash
 id: toolu_01UvgmJ612MjrM1Az6AfDWiD
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision\necho \"=== 프로젝트 .claude/CLAUDE.md — 버전 관리 섹션 위치 ===\"\ngrep -nE \"자동 증가|version_android|version_ios|build-aab|build-ios|버전 관리|마지막 \\*?빌드\" .claude/CLAUDE.md\necho \"\"\necho \"=== Docs/CLAUDE-DETAILS.md — 자동 증가 서술 위치 ===\"\ngrep -nE \"자동 증가|version_android|version_ios|build-aab|build-ios|자동 동기화\" Docs/CLAUDE-DETAILS.md",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision\necho \"=== 프로젝트 .claude/CLAUDE.md — 버전 관리 섹션 위치 ===\"\ngrep -nE \"자동 증가|version_android|version_ios|build-aab|build-ios|버전 관리|마지막 \\*?빌드\" .claude/CLAUDE.md\necho \"\"\necho \"=== Docs/CLAUDE-DETAILS.md — 자동 증가 서술 위치 ===\"\ngrep -nE \"자동 증가|version_android|version_ios|build-aab|build-ios|자동 동기화\" Docs/CLAUDE-DETAILS.md",
   "description": "Locate version-management wording in both CLAUDE docs"
 }
 ```
@@ -5893,7 +5893,7 @@ tool_use Read
 id: toolu_01R3HK2GjJYrCGW9XGEqfzZJ
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/.claude/CLAUDE.md",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/.claude/CLAUDE.md",
   "offset": 24,
   "limit": 14
 }
@@ -5931,7 +5931,7 @@ id: toolu_019CU2QHkxGSVt4VKha8fmu1
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/.claude/CLAUDE.md",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/.claude/CLAUDE.md",
   "old_string": "두 version 파일 모두 **`main`에 존재**(단일 통합 이후). 각 빌드 스크립트가 해당 파일만 자동 증가.\n\n| 파일 | 용도 | 자동 증가 |\n|------|------|-----------|\n| `runvision/version_android.txt` | Android versionName+versionCode | `./build-aab.sh` (윈도우즈 빌드) |\n| `runvision/version_ios.txt` | iOS version+build | `./build-ios.sh` (맥 빌드) |\n\n- 빌드 머신만 분리(Android=윈도우즈, iOS/Watch=맥), **브랜치는 main 단일**.\n- ⚠️ version 파일 = \"마지막 *빌드* 번호\". **실제 스토어 *배포* 버전**은 `Docs/애플스토어/APP-STORE-SUBMISSION-LOG.md`의 \"현재 배포 상태\" 절을 신뢰원으로 본다(빌드≠배포 혼선 방지).",
   "new_string": "두 version 파일 모두 **`main`에 존재**(단일 통합 이후).\n\n**⚠️ 버전 정책(2026-05-24): 빌드는 버전을 올리지 않는다.** 빌드 스크립트는 더 이상 자동 증가하지 않고, 실행 시 **배포 확인 프롬프트(y/N)**를 띄운다. versionName(사용자 향)은 인자로 명시할 때만 바뀌고(`./build-aab.sh <버전>`), 미지정 시 유지. versionCode/build번호는 스토어가 매 업로드 +1을 강제하므로 **확인 후에만** +1. 즉 버전업은 **명시적 배포 시** 직전 배포 버전(↓ 신뢰원) 확인 후 **사용자 승인받아** 진행. (Garmin은 별도 레포 — `runvision-iq/build.sh`가 manifest 버전을 읽어 동기화만 하고 증가 안 함, 동일 정책.)\n\n| 파일 | 용도 | 배포 스크립트(확인 프롬프트) |\n|------|------|-----------|\n| `runvision/version_android.txt` | Android versionName+versionCode | `./build-aab.sh [버전]` (윈도우즈) |\n| `runvision/version_ios.txt` | iOS version+build | `./build-ios.sh [버전]` (맥) |\n\n- 빌드 머신만 분리(Android=윈도우즈, iOS/Watch=맥), **브랜치는 main 단일**.\n- ⚠️ version 파일은 이제 *확인된 배포 시에만* 갱신됨. **실제 스토어 *배포* 버전 신뢰원**은 […]
 
@@ -5940,7 +5940,7 @@ id: toolu_019CU2QHkxGSVt4VKha8fmu1
 tool_result
 id: toolu_019CU2QHkxGSVt4VKha8fmu1
 ```
-The file /home/jhkim/00.Projects/00.RunVision/.claude/CLAUDE.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/.claude/CLAUDE.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5953,7 +5953,7 @@ tool_use Read
 id: toolu_01QJ5oHifWUEX6ptcD6eeiwm
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/Docs/CLAUDE-DETAILS.md",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/Docs/CLAUDE-DETAILS.md",
   "offset": 105,
   "limit": 16
 }
@@ -5989,7 +5989,7 @@ id: toolu_01J2A7S6kNazyvp2Jgqh6PUr
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/Docs/CLAUDE-DETAILS.md",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/Docs/CLAUDE-DETAILS.md",
   "old_string": "./build-aab.sh [버전]                 # Android 플레이 스토어 (version_android.txt +1)\n./build-ios.sh [버전]                 # iOS 앱스토어 (version_ios.txt +1)\nflutter test                          # 테스트\nflutter pub run build_runner build    # freezed 코드 생성\n```\n\n- 일상: `flutter run` (버전 변경 없음)\n- Android 배포: `build-aab.sh` → `version_android.txt` 자동 증가\n- iOS 배포: `build-ios.sh` → `version_ios.txt` 자동 증가. **이 때 embed된 Apple Watch/Widget 버전도 `version_ios.txt`에 자동 동기화됨**(`ios/Runner.xcodeproj` RunVisionWatch/Widget 타겟, 타겟명 스코프 — Runner/RunnerTests 불변). 상세: `Docs/애플스토어/APP-STORE-SUBMISSION-LOG.md` \"watch/iOS 버전 동기화\" 절.",
   "new_string": "./build-aab.sh [버전]                 # Android 플레이 스토어 배포 (확인 프롬프트 y/N)\n./build-ios.sh [버전]                 # iOS 앱스토어 배포 (확인 프롬프트 y/N)\nflutter test                          # 테스트\nflutter pub run build_runner build    # freezed 코드 생성\n```\n\n- 일상: `flutter run` (버전 변경 없음)\n- **⚠️ 버전 정책(2026-05-24): 빌드는 버전을 올리지 않는다.** 배포 스크립트는 자동 증가하지 않고 실행 시 **배포 확인 프롬프트(y/N)**를 띄움. versionName은 인자 명시 시에만 변경(`./build-aab.sh <버전>`), 미지정 시 유지. versionCode/build번호는 스토어가 매 업로드 +1 강제라 **확인 후에만** +1. 버전업은 명시적 배포 시 직전 배포 버전 확인 후 사용자 승인받아 진행.\n- Android 배포: `build-aab.sh` — y/N 확인 후에만 진행.\n- iOS 배포: `build-ios.sh` — y/N 확인 후에만 진행. **이 때 embed된 Apple Watch/Widget 버전도 `version_ios.txt`에 자동 동기화됨**(`ios/Runner.xcodeproj` RunVisionWatch/Widget 타겟, 타겟명 스코프 — Runner/RunnerTests 불변). 상세: `Docs/애플스토어/APP-STORE-SUBMISSION-LOG.md` \"watch/iOS 버전 동기화\" 절." […]
 
@@ -5998,7 +5998,7 @@ id: toolu_01J2A7S6kNazyvp2Jgqh6PUr
 tool_result
 id: toolu_01J2A7S6kNazyvp2Jgqh6PUr
 ```
-The file /home/jhkim/00.Projects/00.RunVision/Docs/CLAUDE-DETAILS.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/Docs/CLAUDE-DETAILS.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6011,7 +6011,7 @@ tool_use Bash
 id: toolu_01Fnw92hWkDXH1v2cqUHTKvq
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision\necho \"=== git status ===\"\ngit status --short\necho \"\"\ngit add .claude/CLAUDE.md Docs/CLAUDE-DETAILS.md\ngit commit -F - <<'EOF' 2>&1 | tail -3\ndocs: 버전 정책 갱신 — 빌드≠버전업, 배포 시 확인 (build-aab/ios.sh 자동증가 제거 반영)\n\na8e197f에서 build-aab.sh/build-ios.sh가 자동 patch증가 제거 + 배포 확인 프롬프트로\n바뀐 것을 반영. 기존 \"빌드 스크립트 자동 증가\" 서술은 stale이 됨.\n\n정책: 빌드는 버전 안 올림 / versionName은 인자 명시 시에만 / versionCode는 스토어\n요구로 확인 후 +1 / 버전업은 명시적 배포 시 직전 배포 버전(APP-STORE-SUBMISSION-LOG.md)\n확인 후 사용자 승인받아 진행. Garmin build.sh도 동일(읽어 동기화만, 증가 안 함).\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>\nEOF\necho \"\"\ngit push 2>&1 | tail -3\necho \"\"\ngit log --oneline -1; git status -sb | head -1",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision\necho \"=== git status ===\"\ngit status --short\necho \"\"\ngit add .claude/CLAUDE.md Docs/CLAUDE-DETAILS.md\ngit commit -F - <<'EOF' 2>&1 | tail -3\ndocs: 버전 정책 갱신 — 빌드≠버전업, 배포 시 확인 (build-aab/ios.sh 자동증가 제거 반영)\n\na8e197f에서 build-aab.sh/build-ios.sh가 자동 patch증가 제거 + 배포 확인 프롬프트로\n바뀐 것을 반영. 기존 \"빌드 스크립트 자동 증가\" 서술은 stale이 됨.\n\n정책: 빌드는 버전 안 올림 / versionName은 인자 명시 시에만 / versionCode는 스토어\n요구로 확인 후 +1 / 버전업은 명시적 배포 시 직전 배포 버전(APP-STORE-SUBMISSION-LOG.md)\n확인 후 사용자 승인받아 진행. Garmin build.sh도 동일(읽어 동기화만, 증가 안 함).\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>\nEOF\necho \"\"\ngit push 2>&1 | tail -3\necho \"\"\ngit log --oneline -1; git status -sb | head -1",
   "description": "Commit and push CLAUDE.md policy doc update"
 }
 ```
@@ -6076,7 +6076,7 @@ tool_use Bash
 id: toolu_01WaDdotnQJ6zFU4YfJsKo6P
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== 현재 bin/RunVisionIQ.prg 빌드 시각 + 소스 최신 여부 ===\"\nls -la bin/RunVisionIQ.prg 2>&1 | awk '{print $6, $7, $8, $NF}'\necho \"소스(RunVisionIQView.mc) 최종 수정: $(date -r source/RunVisionIQView.mc '+%m-%d %H:%M')\"\necho \"AppVersion.mc 최종 수정: $(date -r source/AppVersion.mc '+%m-%d %H:%M')\"\necho \"\"\necho \"=== 버전 drawText가 어느 조건/화면에서 그려지나 (onUpdate 컨텍스트) ===\"\ngrep -nE \"function onUpdate|_scanStatus|AppVersion.VALUE|centerY|return true|if \\(\" source/RunVisionIQView.mc | sed -n '/onUpdate/,/AppVersion/p' | head -40",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== 현재 bin/RunVisionIQ.prg 빌드 시각 + 소스 최신 여부 ===\"\nls -la bin/RunVisionIQ.prg 2>&1 | awk '{print $6, $7, $8, $NF}'\necho \"소스(RunVisionIQView.mc) 최종 수정: $(date -r source/RunVisionIQView.mc '+%m-%d %H:%M')\"\necho \"AppVersion.mc 최종 수정: $(date -r source/AppVersion.mc '+%m-%d %H:%M')\"\necho \"\"\necho \"=== 버전 drawText가 어느 조건/화면에서 그려지나 (onUpdate 컨텍스트) ===\"\ngrep -nE \"function onUpdate|_scanStatus|AppVersion.VALUE|centerY|return true|if \\(\" source/RunVisionIQView.mc | sed -n '/onUpdate/,/AppVersion/p' | head -40",
   "description": "Check build freshness and version drawText condition"
 }
 ```
@@ -6110,7 +6110,7 @@ tool_use Read
 id: toolu_01U4oPUxydXf3hVBKkSLij54
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "offset": 673,
   "limit": 35
 }
@@ -6254,7 +6254,7 @@ tool_use Bash
 id: toolu_01BU1bcHA2nAaTx55BrrMwxu
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== 7d64e80 (버전 표시 커밋) — RunVisionIQView.mc 변경 전체 ===\"\ngit show 7d64e80 -- source/RunVisionIQView.mc | sed -n '1,60p' | grep -E \"^[+-]|@@\" | grep -vE \"^\\+\\+\\+|^---\"\necho \"\"\necho \"=== RunVisionLogo 리소스 존재? (loadResource 대상) ===\"\ngrep -rn \"RunVisionLogo\" resources/ 2>/dev/null | head\nls resources/drawables/ 2>/dev/null | head",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== 7d64e80 (버전 표시 커밋) — RunVisionIQView.mc 변경 전체 ===\"\ngit show 7d64e80 -- source/RunVisionIQView.mc | sed -n '1,60p' | grep -E \"^[+-]|@@\" | grep -vE \"^\\+\\+\\+|^---\"\necho \"\"\necho \"=== RunVisionLogo 리소스 존재? (loadResource 대상) ===\"\ngrep -rn \"RunVisionLogo\" resources/ 2>/dev/null | head\nls resources/drawables/ 2>/dev/null | head",
   "description": "Inspect version-display commit + logo resource existence"
 }
 ```
@@ -6387,7 +6387,7 @@ tool_use Bash
 id: toolu_0144rrdriS77Pd9zah7GePwj
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== onScanResult / onScanResults 현재 위치 ===\"\ngrep -nE \"function onScanResult\" source/RunVisionIQView.mc",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== onScanResult / onScanResults 현재 위치 ===\"\ngrep -nE \"function onScanResult\" source/RunVisionIQView.mc",
   "description": "Locate onScanResult functions in current code"
 }
 ```
@@ -6442,7 +6442,7 @@ tool_use Read
 id: toolu_01B6epxZZqhAgbHsdZBhaLuK
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "offset": 916,
   "limit": 70
 }
@@ -6508,7 +6508,7 @@ tool_use Bash
 id: toolu_01RLmVB6ajcQvhkQhf1PXQKK
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\nSDKBIN=\"/mnt/c/Users/jinhee/AppData/Roaming/Garmin/ConnectIQ/Sdks/connectiq-sdk-win-8.4.0-2025-12-03-5122605dc/bin\"\necho \"=== sim 실행 도구 확인 ===\"\nfor f in simulator.exe connectiq.bat monkeydo.bat shell.exe; do ls \"$SDKBIN/$f\" >/dev/null 2>&1 && echo \"  ✓ $f\" || echo \"  ✗ $f\"; done\necho \"\"\necho \"=== 현재 빌드(.prg)와 debug.xml 존재 (줄번호 매핑용) ===\"\nls -la bin/RunVisionIQ.prg bin/RunVisionIQ.prg.debug.xml 2>&1 | awk '{print $NF}'\necho \"\"\necho \">>> ConnectIQ 시뮬레이터 실행 (백그라운드 GUI)\"\n\"$SDKBIN/simulator.exe\" >/dev/null 2>&1 &\necho \"simulator launch issued (pid bg)\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\nSDKBIN=\"/mnt/c/home/<USER>/AppData/Roaming/Garmin/ConnectIQ/Sdks/connectiq-sdk-win-8.4.0-2025-12-03-5122605dc/bin\"\necho \"=== sim 실행 도구 확인 ===\"\nfor f in simulator.exe connectiq.bat monkeydo.bat shell.exe; do ls \"$SDKBIN/$f\" >/dev/null 2>&1 && echo \"  ✓ $f\" || echo \"  ✗ $f\"; done\necho \"\"\necho \"=== 현재 빌드(.prg)와 debug.xml 존재 (줄번호 매핑용) ===\"\nls -la bin/RunVisionIQ.prg bin/RunVisionIQ.prg.debug.xml 2>&1 | awk '{print $NF}'\necho \"\"\necho \">>> ConnectIQ 시뮬레이터 실행 (백그라운드 GUI)\"\n\"$SDKBIN/simulator.exe\" >/dev/null 2>&1 &\necho \"simulator launch issued (pid bg)\"",
   "description": "Check sim tools and launch ConnectIQ simulator"
 }
 ```
@@ -6548,7 +6548,7 @@ tool_use Bash
 id: toolu_01CZULUDh44HF45Nmioqr6rt
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\nSDKBIN=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\"\nW=$(wslpath -w \"$(pwd)\")\necho \">>> monkeydo: fr165에 앱 로드 (런타임 에러/OOM 출력 캡처)\"\ntimeout 60 powershell.exe -NoProfile -Command \"& '$SDKBIN\\\\monkeydo.bat' '$W\\\\bin\\\\RunVisionIQ.prg' fr165\" 2>&1 | grep -viE \"CMD.EXE|UNC|Windows \" | tail -40\necho \">>> done (exit ${PIPESTATUS[0]})\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\nSDKBIN=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\"\nW=$(wslpath -w \"$(pwd)\")\necho \">>> monkeydo: fr165에 앱 로드 (런타임 에러/OOM 출력 캡처)\"\ntimeout 60 powershell.exe -NoProfile -Command \"& '$SDKBIN\\\\monkeydo.bat' '$W\\\\bin\\\\RunVisionIQ.prg' fr165\" 2>&1 | grep -viE \"CMD.EXE|UNC|Windows \" | tail -40\necho \">>> done (exit ${PIPESTATUS[0]})\"",
   "description": "Load app in simulator via monkeydo, capture crash trace"
 }
 ```
@@ -6575,7 +6575,7 @@ tool_use Bash
 id: toolu_01Nt1Ak6Y2bUGBjavzmFJgMn
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== 7d64e80: onUpdate 부분 FULL diff (로고/폰트/버전 뭐가 추가됐나) ===\"\ngit show 7d64e80 -- source/RunVisionIQView.mc | sed -n '/onUpdate/,/^@@\\|catch (ex)/p' | head -50\necho \"\"\necho \"=== onUpdate 직전 버전(부모 커밋)에서 onUpdate가 어땠나 ===\"\ngit show 7d64e80~1:source/RunVisionIQView.mc 2>/dev/null | grep -nA20 \"function onUpdate\" | head -25\necho \"\"\necho \"=== logo.png 크기 (DataField 메모리 부담?) ===\"\nls -la resources/drawables/logo.png | awk '{print $5\" bytes\"}'\nfile resources/drawables/logo.png 2>/dev/null | cut -d: -f2",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== 7d64e80: onUpdate 부분 FULL diff (로고/폰트/버전 뭐가 추가됐나) ===\"\ngit show 7d64e80 -- source/RunVisionIQView.mc | sed -n '/onUpdate/,/^@@\\|catch (ex)/p' | head -50\necho \"\"\necho \"=== onUpdate 직전 버전(부모 커밋)에서 onUpdate가 어땠나 ===\"\ngit show 7d64e80~1:source/RunVisionIQView.mc 2>/dev/null | grep -nA20 \"function onUpdate\" | head -25\necho \"\"\necho \"=== logo.png 크기 (DataField 메모리 부담?) ===\"\nls -la resources/drawables/logo.png | awk '{print $5\" bytes\"}'\nfile resources/drawables/logo.png 2>/dev/null | cut -d: -f2",
   "description": "Full 7d64e80 onUpdate diff + prior onUpdate + logo size"
 }
 ```
@@ -6593,7 +6593,7 @@ id: toolu_01Nt1Ak6Y2bUGBjavzmFJgMn
     
     monkeyc 9.1.0 컴파일 통과.
     
-    Co-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>
+    Co-Authored-By: Claude Opus 4.7 <<REDACTED_EMAIL>>
 
 diff --git a/source/RunVisionIQView.mc b/source/RunVisionIQView.mc
 index b3c605b..c49f6e6 100644
@@ -6647,7 +6647,7 @@ id: toolu_01CXrZqrzXZnZHEJ5FkL2rc6
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "    private var _timeLabel as Lang.String = \"0:00\";\n    private var _paceLabel as Lang.String = \"--:--\";",
   "new_string": "    private var _timeLabel as Lang.String = \"0:00\";\n    private var _paceLabel as Lang.String = \"--:--\";\n\n    // 로고 캐시: 매 onUpdate 마다 loadResource(176x37 RGBA ≈ 26KB) 하면 DataField 메모리\n    // 예산 초과(OOM)·watchdog 위험 → 한 번만 로드해 재사용. (버전 표시 추가 후 IQ! 크래시 수정)\n    private var _logoCache = null;"
 }
@@ -6658,7 +6658,7 @@ id: toolu_01CXrZqrzXZnZHEJ5FkL2rc6
 tool_result
 id: toolu_01CXrZqrzXZnZHEJ5FkL2rc6
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6683,7 +6683,7 @@ id: toolu_01NzyX4euWgey3qsrnb1Do41
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "            // 로고 표시 (중앙, 176x37)\n            var logo = WatchUi.loadResource(Rez.Drawables.RunVisionLogo);\n            dc.drawBitmap(centerX - 88, centerY - 40, logo);\n\n            // 상태 텍스트 (로고 아래)\n            var statusText = _isConnected ? \"Connected\" : _scanStatus;\n            dc.drawText(centerX, centerY + 10, Graphics.FONT_SMALL, statusText, Graphics.TEXT_JUSTIFY_CENTER);\n\n            // 앱 버전 (상태 아래, 작고 흐리게). manifest version 자동 동기화(build.sh → AppVersion.mc).\n            dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);\n            dc.drawText(centerX, centerY + 35, Graphics.FONT_XTINY, \"v\" + AppVersion.VALUE, Graphics.TEXT_JUSTIFY_CENTER);",
   "new_string": "            // 로고 표시 (중앙, 176x37) — 한 번만 로드해 캐시 (매 프레임 ≈26KB 할당 방지 → OOM/watchdog 회피)\n            if (_logoCache == null) {\n                _logoCache = WatchUi.loadResource(Rez.Drawables.RunVisionLogo);\n            }\n            dc.drawBitmap(centerX - 88, centerY - 40, _logoCache);\n\n            // 상태 텍스트 (로고 아래)\n            var statusText = _isConnected ? \"Connected\" : _scanStatus;\n            dc.drawText(centerX, centerY + 10, Graphics.FONT_SMALL, statusText, Graphics.TEXT_JUSTIFY_CENTER);\n\n            // 앱 버전 (화면 하단 고정, 작고 흐리게) — 상태 텍스트와 겹치지 않도록 하단에. v자동동기화(AppVersion.mc).\n            dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);\n            dc.drawText(centerX, height - 28, Graphics.FONT_XTINY, \"v\" + AppVersion.VALUE, Graphics.TEXT_JUSTIFY_CENTER);"
 }
@@ -6694,7 +6694,7 @@ id: toolu_01NzyX4euWgey3qsrnb1Do41
 tool_result
 id: toolu_01NzyX4euWgey3qsrnb1Do41
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6707,7 +6707,7 @@ tool_use Bash
 id: toolu_01RGAeypBGy5B1RyCdqWxQup
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\n./build.sh 2>&1 | grep -viE \"CMD.EXE|UNC|Windows |is not used|launcher icon\" | tail -6\necho \">>> exit=${PIPESTATUS[0]}\"\nls -la bin/RunVisionIQ.prg | awk '{print $6,$7,$8,$NF}'",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\n./build.sh 2>&1 | grep -viE \"CMD.EXE|UNC|Windows |is not used|launcher icon\" | tail -6\necho \">>> exit=${PIPESTATUS[0]}\"\nls -la bin/RunVisionIQ.prg | awk '{print $6,$7,$8,$NF}'",
   "description": "Build with logo cache + version bottom-anchor fixes"
 }
 ```
@@ -6760,7 +6760,7 @@ tool_use Bash
 id: toolu_015HrdGXfpmnW1TJGRK7ajLR
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\nSDKBIN=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\"\nW=$(wslpath -w \"$(pwd)\")\necho \">>> 시뮬레이터 살아있나 확인 후 monkeydo로 새 .prg 로드 (백그라운드)\"\npowershell.exe -NoProfile -Command \"& '$SDKBIN\\\\monkeydo.bat' '$W\\\\bin\\\\RunVisionIQ.prg' fr165\" >/tmp/monkeydo.log 2>&1 &\necho \"monkeydo 백그라운드 실행 (pid $!)\"\nsleep 8\necho \"=== monkeydo 로그 (로드 상태) ===\"\ngrep -viE \"CMD.EXE|UNC|Windows \" /tmp/monkeydo.log 2>/dev/null | tail -15\necho \"(시뮬레이터 GUI 창에서 화면을 봐주세요 — 버전이 하단으로 갔는지)\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\nSDKBIN=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\"\nW=$(wslpath -w \"$(pwd)\")\necho \">>> 시뮬레이터 살아있나 확인 후 monkeydo로 새 .prg 로드 (백그라운드)\"\npowershell.exe -NoProfile -Command \"& '$SDKBIN\\\\monkeydo.bat' '$W\\\\bin\\\\RunVisionIQ.prg' fr165\" >/tmp/monkeydo.log 2>&1 &\necho \"monkeydo 백그라운드 실행 (pid $!)\"\nsleep 8\necho \"=== monkeydo 로그 (로드 상태) ===\"\ngrep -viE \"CMD.EXE|UNC|Windows \" /tmp/monkeydo.log 2>/dev/null | tail -15\necho \"(시뮬레이터 GUI 창에서 화면을 봐주세요 — 버전이 하단으로 갔는지)\"",
   "description": "Reload new build into simulator via background monkeydo"
 }
 ```
@@ -6804,7 +6804,7 @@ id: toolu_01WzVLcrhhFFgeFPMWviNzz4
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "            // 상태 텍스트 (로고 아래)\n            var statusText = _isConnected ? \"Connected\" : _scanStatus;\n            dc.drawText(centerX, centerY + 10, Graphics.FONT_SMALL, statusText, Graphics.TEXT_JUSTIFY_CENTER);\n\n            // 앱 버전 (화면 하단 고정, 작고 흐리게) — 상태 텍스트와 겹치지 않도록 하단에. v자동동기화(AppVersion.mc).\n            dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);\n            dc.drawText(centerX, height - 28, Graphics.FONT_XTINY, \"v\" + AppVersion.VALUE, Graphics.TEXT_JUSTIFY_CENTER);",
   "new_string": "            // 상태 텍스트 (로고 아래)\n            var statusText = _isConnected ? \"Connected\" : _scanStatus;\n            var statusY = centerY + 10;\n            dc.drawText(centerX, statusY, Graphics.FONT_SMALL, statusText, Graphics.TEXT_JUSTIFY_CENTER);\n\n            // 앱 버전 (상태 텍스트 바로 아래, 작고 흐리게) — 상태 글자 높이만큼 띄워 겹침 방지(기기·폰트 무관).\n            dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);\n            var versionY = statusY + dc.getFontHeight(Graphics.FONT_SMALL) + 4;\n            dc.drawText(centerX, versionY, Graphics.FONT_XTINY, \"v\" + AppVersion.VALUE, Graphics.TEXT_JUSTIFY_CENTER);"
 }
@@ -6815,7 +6815,7 @@ id: toolu_01WzVLcrhhFFgeFPMWviNzz4
 tool_result
 id: toolu_01WzVLcrhhFFgeFPMWviNzz4
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6828,7 +6828,7 @@ tool_use Bash
 id: toolu_01DRs44ojDevs6t3Lt7KCiFR
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\n./build.sh 2>&1 | grep -E \"동기화|완료|ERROR\" | tail -3\necho \"exit=${PIPESTATUS[0]} ; prg=$(date -r bin/RunVisionIQ.prg '+%H:%M')\"\nSDKBIN=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\"\nW=$(wslpath -w \"$(pwd)\")\necho \">>> 시뮬레이터 재로드 (백그라운드)\"\npowershell.exe -NoProfile -Command \"& '$SDKBIN\\\\monkeydo.bat' '$W\\\\bin\\\\RunVisionIQ.prg' fr165\" >/tmp/monkeydo2.log 2>&1 &\necho \"monkeydo 재실행 (pid $!)\"; sleep 8; echo \"재로드 완료 — 시뮬레이터 화면 확인 요망\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\n./build.sh 2>&1 | grep -E \"동기화|완료|ERROR\" | tail -3\necho \"exit=${PIPESTATUS[0]} ; prg=$(date -r bin/RunVisionIQ.prg '+%H:%M')\"\nSDKBIN=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\"\nW=$(wslpath -w \"$(pwd)\")\necho \">>> 시뮬레이터 재로드 (백그라운드)\"\npowershell.exe -NoProfile -Command \"& '$SDKBIN\\\\monkeydo.bat' '$W\\\\bin\\\\RunVisionIQ.prg' fr165\" >/tmp/monkeydo2.log 2>&1 &\necho \"monkeydo 재실행 (pid $!)\"; sleep 8; echo \"재로드 완료 — 시뮬레이터 화면 확인 요망\"",
   "description": "Rebuild with font-height-based version position and reload sim"
 }
 ```
@@ -6897,7 +6897,7 @@ tool_use Bash
 id: toolu_01RYD86GGYPRfzsdLhrDAaF1
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== git status ===\"\ngit status --short\necho \"\"\necho \"=== AppVersion.mc 변경됐나 (build.sh 재생성했지만 내용 동일이면 clean) ===\"\ngit diff --stat source/AppVersion.mc | tail -1 || echo \"(AppVersion clean)\"\necho \"\"\necho \"=== RunVisionIQView.mc 변경 요약 (이번 크래시 수정분만) ===\"\ngit diff --stat source/RunVisionIQView.mc | tail -1",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== git status ===\"\ngit status --short\necho \"\"\necho \"=== AppVersion.mc 변경됐나 (build.sh 재생성했지만 내용 동일이면 clean) ===\"\ngit diff --stat source/AppVersion.mc | tail -1 || echo \"(AppVersion clean)\"\necho \"\"\necho \"=== RunVisionIQView.mc 변경 요약 (이번 크래시 수정분만) ===\"\ngit diff --stat source/RunVisionIQView.mc | tail -1",
   "description": "Check git status before committing crash fix"
 }
 ```
@@ -6926,7 +6926,7 @@ tool_use Bash
 id: toolu_013HoX8jX2Uq1qZWhvJaNUn4
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\ngit add source/RunVisionIQView.mc\ngit commit -F - <<'EOF' 2>&1 | tail -3\nfix(garmin): DataField OOM 크래시 수정 — 로고 캐시 + 버전 위치 조정\n\n버전 표시 추가 후 실기기에서 \"IQ!\" 크래시(앱 다운). 원인: onUpdate가 매 프레임\nRunVisionLogo(176x37 RGBA ≈26KB)를 loadResource → DataField 메모리 예산 초과(OOM).\nOOM은 try/catch로 못 잡아 크래시. sim은 메모리 넉넉해 재현 안 됨 → 기기 전용 증상.\n\n- 로고를 _logoCache 에 한 번만 로드해 재사용 (매 프레임 26KB 할당 churn 제거 →\n  OOM 해소 + 매초 PNG 디코드 제거로 CPU/배터리 절감).\n- 버전 텍스트를 상태 글자높이(getFontHeight) 기반 바로 아래로 → 상태와 겹침 방지(기기·폰트 무관).\n\n검증: 실기기(fr165) 재설치 — IQ! 크래시 사라지고 버전 정상 표시 확인.\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>\nEOF\necho \"\"\ngit push 2>&1 | tail -3\necho \"\"\ngit log --oneline -1; git status -sb | head -1",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\ngit add source/RunVisionIQView.mc\ngit commit -F - <<'EOF' 2>&1 | tail -3\nfix(garmin): DataField OOM 크래시 수정 — 로고 캐시 + 버전 위치 조정\n\n버전 표시 추가 후 실기기에서 \"IQ!\" 크래시(앱 다운). 원인: onUpdate가 매 프레임\nRunVisionLogo(176x37 RGBA ≈26KB)를 loadResource → DataField 메모리 예산 초과(OOM).\nOOM은 try/catch로 못 잡아 크래시. sim은 메모리 넉넉해 재현 안 됨 → 기기 전용 증상.\n\n- 로고를 _logoCache 에 한 번만 로드해 재사용 (매 프레임 26KB 할당 churn 제거 →\n  OOM 해소 + 매초 PNG 디코드 제거로 CPU/배터리 절감).\n- 버전 텍스트를 상태 글자높이(getFontHeight) 기반 바로 아래로 → 상태와 겹침 방지(기기·폰트 무관).\n\n검증: 실기기(fr165) 재설치 — IQ! 크래시 사라지고 버전 정상 표시 확인.\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>\nEOF\necho \"\"\ngit push 2>&1 | tail -3\necho \"\"\ngit log --oneline -1; git status -sb | head -1",
   "description": "Commit and push the DataField OOM crash fix"
 }
 ```
@@ -6959,7 +6959,7 @@ tool_use Write
 id: toolu_011LCmSXLH91ieJKH2SRNbFF
 ```json
 {
-  "file_path": "/home/jhkim/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/feedback_garmin_datafield_memory.md",
+  "file_path": "/home/<USER>/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/feedback_garmin_datafield_memory.md",
   "content": "---\nname: Garmin DataField 메모리 예산 — 비트맵은 캐시, OOM은 sim에서 재현 안 됨\ndescription: Garmin DataField는 메모리 예산이 빡빡. loadResource(비트맵)를 onUpdate에서 매 프레임 호출하면 OOM \"IQ!\" 크래시. OOM은 try/catch로 못 잡고 시뮬레이터에선 재현 안 됨(기기 전용).\nmetadata:\n  type: feedback\n---\n\nGarmin Connect IQ **DataField는 메모리 예산이 매우 빡빡**하다. onUpdate에서 비트맵을 매 프레임 `loadResource`하면(예: 176x37 RGBA ≈ 26KB) 예산 초과 → **OOM 크래시(\"IQ!\" 화면)**.\n\n**Why (디버깅이 오래 걸린 이유):**\n- **OOM은 try/catch로 못 잡는다** → onUpdate가 try/catch로 감싸져 있어도 \"ERR\"가 아니라 \"IQ!\" 크래시로 직행. \"캐치돼 있는데 왜 크래시?\"의 모순이 여기서 옴.\n- **시뮬레이터에선 재현 안 됨** — sim은 메모리가 넉넉. \"sim은 OK, 실기기만 IQ! 크래시\" 패턴 = **거의 항상 메모리(또는 watchdog)**, 기기 전용. (2026-05-24: 버전 텍스트 한 줄 추가가 이미 한계였던 예산을 넘겨 크래시. 로고를 멤버에 1회 로드 캐시해 해결 → 커밋 335e4a7.)\n- 부수효과: 매 프레임 PNG 디코드 제거로 CPU/배터리도 절감됨.\n\n**How to apply:**\n- 비트맵/리소스는 **멤버에 한 번만 로드해 재사용**(lazy: `if (_cache==null) _cache=loadResource(...)`). onUpdate에서 매번 loadResource 금지.\n- 텍스트(drawText)는 메모리 거의 안 먹으니 메트릭 표시 등은 안전. 비트맵·폰트가 메모리 주범.\n- \"sim OK / 기기 크래시\"면 메모리부터 의심. 기기 에러로그는 `GARMIN/APPS/LOGS/CIQ_LOG.YML`(회전 시 `.BAK`) — 단 타임스탬프 확인(옛 로그 주의).\n\n관련: [[feedback_monkeyc_build]] (build.sh 빌드), [[project_ble_debug]].\n"
 }
 ```
@@ -6969,7 +6969,7 @@ id: toolu_011LCmSXLH91ieJKH2SRNbFF
 tool_result
 id: toolu_011LCmSXLH91ieJKH2SRNbFF
 ```
-File created successfully at: /home/jhkim/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/feedback_garmin_datafield_memory.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/feedback_garmin_datafield_memory.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6983,7 +6983,7 @@ id: toolu_015Kr5CQqLEr6k6iSqoeUqws
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/MEMORY.md",
   "old_string": "## Monkey C 빌드\n→ [feedback_monkeyc_build.md](./feedback_monkeyc_build.md)\n- WSL에서 powershell.exe로 직접 빌드 가능 — Windows 별도 실행 불필요",
   "new_string": "## Monkey C 빌드\n→ [feedback_monkeyc_build.md](./feedback_monkeyc_build.md)\n- WSL에서 powershell.exe로 직접 빌드 가능 — Windows 별도 실행 불필요\n- `runvision-iq/build.sh` = 표준 진입점(manifest→AppVersion.mc 버전 동기화, .prg=`RunVisionIQ.prg`/iq=릴리즈)\n\n## Garmin DataField 메모리 (OOM 크래시 주의)\n→ [feedback_garmin_datafield_memory.md](./feedback_garmin_datafield_memory.md)\n- 비트맵은 onUpdate에서 매번 loadResource 금지 → 멤버에 1회 캐시. 안 그러면 OOM \"IQ!\" 크래시\n- OOM은 try/catch 못 잡음 + 시뮬레이터선 재현 안 됨(기기 전용). \"sim OK/기기 크래시\"면 메모리 의심"
 }
@@ -6994,7 +6994,7 @@ id: toolu_015Kr5CQqLEr6k6iSqoeUqws
 tool_result
 id: toolu_015Kr5CQqLEr6k6iSqoeUqws
 ```
-The file /home/jhkim/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7283,7 +7283,7 @@ tool_use Bash
 id: toolu_01R6VytK8z1JkSnPwGjE3y84
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== manifest에 Edge 기기가 있나? ===\"\ngrep -oE 'iq:product id=\"[^\"]*\"' manifest.xml | grep -iE \"edge\" || echo \"  → Edge 기기 없음 (현재 미지원)\"\necho \"\"\necho \"=== 현재 지원 기기 종류 (형태 추정: fr/fenix/venu=둥근, edge=직사각) ===\"\ngrep -oE 'iq:product id=\"[^\"]*\"' manifest.xml | sed 's/iq:product id=//;s/\"//g' | sed -E 's/[0-9].*//' | sort | uniq -c | sort -rn | head -20\necho \"\"\necho \"=== onUpdate가 화면 크기/형태를 런타임에 쓰나 (이미 반응형 기반?) ===\"\ngrep -nE \"getWidth|getHeight|screenShape|getDeviceSettings|SCREEN_SHAPE\" source/RunVisionIQView.mc | head",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== manifest에 Edge 기기가 있나? ===\"\ngrep -oE 'iq:product id=\"[^\"]*\"' manifest.xml | grep -iE \"edge\" || echo \"  → Edge 기기 없음 (현재 미지원)\"\necho \"\"\necho \"=== 현재 지원 기기 종류 (형태 추정: fr/fenix/venu=둥근, edge=직사각) ===\"\ngrep -oE 'iq:product id=\"[^\"]*\"' manifest.xml | sed 's/iq:product id=//;s/\"//g' | sed -E 's/[0-9].*//' | sort | uniq -c | sort -rn | head -20\necho \"\"\necho \"=== onUpdate가 화면 크기/형태를 런타임에 쓰나 (이미 반응형 기반?) ===\"\ngrep -nE \"getWidth|getHeight|screenShape|getDeviceSettings|SCREEN_SHAPE\" source/RunVisionIQView.mc | head",
   "description": "Check manifest for Edge + device shape variety + current responsive usage"
 }
 ```
@@ -7361,7 +7361,7 @@ tool_use Write
 id: toolu_01Muqigr2fbHSF7YY1FtdL2n
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/docs/superpowers/specs/2026-05-24-garmin-watch-metric-display-design.md",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/docs/superpowers/specs/2026-05-24-garmin-watch-metric-display-design.md",
   "content": "# Garmin 워치 데이터필드 메트릭 표시 — 설계\n\n- 날짜: 2026-05-24\n- 레포: `runvision-iq` (Monkey C DataField)\n- 상태: 설계 합의됨 → 사용자 스펙 리뷰 대기\n\n## 목표\nRunVision-IQ 데이터필드가 **BLE 연결 후** 워치 화면에 핵심 5개 메트릭을 그리드로 표시한다. (현재는 로고+상태+버전만.) 메트릭 값은 rLens 글래스로도 전송되지만, 워치에서도 확인 가능하게 한다. 글래스가 본체라는 제품 철학은 유지 — 워치 표시는 보조/안심용.\n\n## 스코프\n- **포함:** 현재 manifest 87개 기기(대부분 둥근 워치 + Instinct 계열) 대상 **반응형** 메트릭 표시. `screenShape=RECTANGLE` 분기를 넣어 **Edge-ready**하게 설계.\n- **제외(후속 작업):** Edge **실제 지원**(manifest product ID 추가, 가로 직사각 레이아웃 튜닝, cycling-computer UX, 실기기 테스트). 총상승(ASCENT) 미사용.\n\n## ⚠️ 위험/주의 — 큰 변화\n- `onUpdate`(렌더 경로)를 수정한다. **직전에 OOM \"IQ!\" 크래시가 난 바로 그곳**이다.\n- **메모리 불변식: 그리드는 텍스트(drawText)만. 비트맵·새 폰트 리소스 추가 금지.** 로고는 연결 전 상태화면에서만 쓰고 이미 캐시됨([[feedback_garmin_datafield_memory]]).\n- 87개 기기 반응형 → 일부 기기에서 레이아웃 깨질 위험. 대표 기기 다수로 검증.\n- **점진적·롤백 용이:** 연결 전 상태화면 로직은 건드리지 않고, 연결 후 그리드만 새로 추가. 문제 시 그리드만 제거하면 원복.\n\n## 화면 상태 (2개, `_isConnected` 분기)\n1. **연결 전** (INIT / SCANNING / PAIRING / CONN_ERR): 현재 화면(로고 + 상태 텍스트 + 버전) **그대로 유지** — 페어링 피드백 보존.\n2. **연결됨**: 메트릭 그리드(1-2-2) + 작은 **초록** 연결점.\n\n## 레이아웃: 1-2-2 […]
 
 > TOOL
@@ -7369,7 +7369,7 @@ id: toolu_01Muqigr2fbHSF7YY1FtdL2n
 tool_result
 id: toolu_01Muqigr2fbHSF7YY1FtdL2n
 ```
-File created successfully at: /home/jhkim/00.Projects/00.RunVision/runvision-iq/docs/superpowers/specs/2026-05-24-garmin-watch-metric-display-design.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/00.Projects/00.RunVision/runvision-iq/docs/superpowers/specs/2026-05-24-garmin-watch-metric-display-design.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7382,7 +7382,7 @@ tool_use Bash
 id: toolu_01Wmx686P42X1YTV3umjoQfx
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\ngit add docs/superpowers/specs/2026-05-24-garmin-watch-metric-display-design.md\ngit commit -F - <<'EOF' 2>&1 | tail -3\ndocs(spec): 워치 데이터필드 메트릭 표시 설계\n\n연결 후 워치 화면에 5개 메트릭 그리드(1-2-2) 표시. 반응형(getWidth/Height +\nscreenShape) 단일 코드 + Edge-ready, Edge 실제 지원은 후속. 사이클=ALT(현재고도),\n연결점 초록. 메모리 불변식: 그리드는 텍스트만(비트맵 0) — OOM 재발 방지.\n큰 변화라 위험/테스트 강화 섹션 포함.\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>\nEOF\necho \"---\"\ngit log --oneline -1",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\ngit add docs/superpowers/specs/2026-05-24-garmin-watch-metric-display-design.md\ngit commit -F - <<'EOF' 2>&1 | tail -3\ndocs(spec): 워치 데이터필드 메트릭 표시 설계\n\n연결 후 워치 화면에 5개 메트릭 그리드(1-2-2) 표시. 반응형(getWidth/Height +\nscreenShape) 단일 코드 + Edge-ready, Edge 실제 지원은 후속. 사이클=ALT(현재고도),\n연결점 초록. 메모리 불변식: 그리드는 텍스트만(비트맵 0) — OOM 재발 방지.\n큰 변화라 위험/테스트 강화 섹션 포함.\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>\nEOF\necho \"---\"\ngit log --oneline -1",
   "description": "Commit the design spec"
 }
 ```
@@ -7455,7 +7455,7 @@ tool_use Bash
 id: toolu_01Su7K5h7jYjMZiCzrddzms8
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== 라벨 멤버 + 사이클 고도 라벨 존재? ===\"\ngrep -nE \"_altitudeLabel|_speedLabel|_paceLabel|_cadenceLabel|_distanceLabel|_hrLabel|_timeLabel|altitude\" source/RunVisionIQView.mc | head -20\necho \"\"\necho \"=== compute()에서 사이클 고도(altitude) 처리 ===\"\ngrep -nE \"altitude|Altitude|speedKmh|_metricValues.altitude\" source/RunVisionIQView.mc | head\necho \"\"\necho \"=== System / DeviceSettings / screenShape import 여부 ===\"\ngrep -nE \"using Toybox.System|import Toybox.System|getDeviceSettings|screenShape\" source/RunVisionIQView.mc | head\necho \"\"\necho \"=== 뷰 렌더링 테스트가 있나 (Tests.mc) ===\"\ngrep -nE \"onUpdate|drawMetric|gridLayout|Grid\" source/Tests.mc | head || echo \"(없음 — 렌더링 테스트 부재)\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== 라벨 멤버 + 사이클 고도 라벨 존재? ===\"\ngrep -nE \"_altitudeLabel|_speedLabel|_paceLabel|_cadenceLabel|_distanceLabel|_hrLabel|_timeLabel|altitude\" source/RunVisionIQView.mc | head -20\necho \"\"\necho \"=== compute()에서 사이클 고도(altitude) 처리 ===\"\ngrep -nE \"altitude|Altitude|speedKmh|_metricValues.altitude\" source/RunVisionIQView.mc | head\necho \"\"\necho \"=== System / DeviceSettings / screenShape import 여부 ===\"\ngrep -nE \"using Toybox.System|import Toybox.System|getDeviceSettings|screenShape\" source/RunVisionIQView.mc | head\necho \"\"\necho \"=== 뷰 렌더링 테스트가 있나 (Tests.mc) ===\"\ngrep -nE \"onUpdate|drawMetric|gridLayout|Grid\" source/Tests.mc | head || echo \"(없음 — 렌더링 테스트 부재)\"",
   "description": "Gather facts for plan: labels, cycling altitude, System import, view tests"
 }
 ```
@@ -7507,7 +7507,7 @@ tool_use Write
 id: toolu_01FZCqaFtxbM3TwqVz559oRD
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/Docs/superpowers/plans/2026-05-24-garmin-watch-metric-display.md",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/Docs/superpowers/plans/2026-05-24-garmin-watch-metric-display.md",
   "content": "# Garmin 워치 데이터필드 메트릭 표시 Implementation Plan\n\n> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.\n\n**Goal:** RunVision-IQ 데이터필드가 BLE 연결 후 워치 화면에 5개 메트릭(1-2-2 그리드)을 반응형으로 표시한다.\n\n**Architecture:** onUpdate를 `drawStatusScreen`(연결 전, 기존 동작) / `drawMetricGrid`(연결 후, 신규)로 분기. 그리드 좌표는 순수 함수 `metricGridLayout(w,h,isRound)`로 계산(테스트 가능). 메트릭 값은 compute()가 이미 갱신하는 라벨 문자열을 drawText만 함 — **비트맵 0(OOM 재발 방지)**.\n\n**Tech Stack:** Monkey C (Connect IQ), DataField, Toybox.Graphics/System/WatchUi. 빌드: `./build.sh` (WSL→powershell monkeyc). 테스트: `(:test)` 함수 (테스트모드 컴파일 검증 + 시뮬레이터 실행).\n\n> ⚠️ 큰 변화 — 직전 OOM 크래시가 난 onUpdate를 만진다. 그리드는 텍스트만. 연결 전 화면은 불변(롤백 용이). 각 task 후 컴파일, 마지막에 실기기 게이트.\n\n---\n\n### Task 1: 사이클 현재고도 라벨 추가\n\n**Files:**\n- Modify: `source/RunVisionIQView.mc` (라벨 멤버 + compute 포맷 + reset)\n\n- [ ] **Step 1: 라벨 멤버 추가** — `_paceLabel` 선언(53행 부근) 아래에:\n\n```monkeyc\n    private var _paceLabel as Lang.String = \"--:--\";\n    private var _altitudeLabel as Lang.String = \"---\";  // 사이클 현재 고도(m) 표시용\n```\n\n- [ ] **Step 2: compute()에서 고도 포맷** — `var altitude = info != null && info has :altitude ? info.altitude : null;`(576행 부근) 바로 다음 줄에 […]
 
 > TOOL
@@ -7515,7 +7515,7 @@ id: toolu_01FZCqaFtxbM3TwqVz559oRD
 tool_result
 id: toolu_01FZCqaFtxbM3TwqVz559oRD
 ```
-File created successfully at: /home/jhkim/00.Projects/00.RunVision/runvision-iq/Docs/superpowers/plans/2026-05-24-garmin-watch-metric-display.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/00.Projects/00.RunVision/runvision-iq/Docs/superpowers/plans/2026-05-24-garmin-watch-metric-display.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7528,7 +7528,7 @@ tool_use Bash
 id: toolu_01JhgcpaK89XKgSgTa4DYwuy
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== plan 파일 마지막 5줄 ===\"\ntail -5 Docs/superpowers/plans/2026-05-24-garmin-watch-metric-display.md\necho \"=== 스트레이 태그 검색 ===\"\ngrep -n \"</content>\" Docs/superpowers/plans/2026-05-24-garmin-watch-metric-display.md || echo \"(스트레이 태그 없음 — 깨끗)\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== plan 파일 마지막 5줄 ===\"\ntail -5 Docs/superpowers/plans/2026-05-24-garmin-watch-metric-display.md\necho \"=== 스트레이 태그 검색 ===\"\ngrep -n \"</content>\" Docs/superpowers/plans/2026-05-24-garmin-watch-metric-display.md || echo \"(스트레이 태그 없음 — 깨끗)\"",
   "description": "Verify plan file has no stray closing tag"
 }
 ```
@@ -7559,7 +7559,7 @@ id: toolu_0164yrEXYmLDm5PZeTaSYo4S
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/Docs/superpowers/plans/2026-05-24-garmin-watch-metric-display.md",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/Docs/superpowers/plans/2026-05-24-garmin-watch-metric-display.md",
   "old_string": "- 끊김 시: 그리드 유지(마지막 값), 연결점은 초록만 구현(끊김 색 처리는 후속 — 사용자 지정 범위 밖).\n</content>",
   "new_string": "- 끊김 시: 그리드 유지(마지막 값), 연결점은 초록만 구현(끊김 색 처리는 후속 — 사용자 지정 범위 밖)."
 }
@@ -7570,7 +7570,7 @@ id: toolu_0164yrEXYmLDm5PZeTaSYo4S
 tool_result
 id: toolu_0164yrEXYmLDm5PZeTaSYo4S
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/Docs/superpowers/plans/2026-05-24-garmin-watch-metric-display.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/Docs/superpowers/plans/2026-05-24-garmin-watch-metric-display.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7583,7 +7583,7 @@ tool_use Bash
 id: toolu_01Aj31E2arh4WbxmnxzW53ow
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\ngit add Docs/superpowers/plans/2026-05-24-garmin-watch-metric-display.md\ngit commit -F - <<'EOF' 2>&1 | tail -3\ndocs(plan): 워치 데이터필드 메트릭 표시 구현 계획 (5 task, TDD)\n\nTask1 사이클 고도 라벨 / Task2 반응형 그리드 레이아웃 함수+테스트 / Task3 onUpdate→\ndrawStatusScreen 분리(동작 불변) / Task4 drawMetricGrid+연결분기+초록점 / Task5 다중기기\n컴파일+실기기 게이트. 그리드=텍스트만(OOM 재발 방지), 연결 전 화면 불변(롤백 용이).\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>\nEOF\necho \"---\"; git log --oneline -1",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\ngit add Docs/superpowers/plans/2026-05-24-garmin-watch-metric-display.md\ngit commit -F - <<'EOF' 2>&1 | tail -3\ndocs(plan): 워치 데이터필드 메트릭 표시 구현 계획 (5 task, TDD)\n\nTask1 사이클 고도 라벨 / Task2 반응형 그리드 레이아웃 함수+테스트 / Task3 onUpdate→\ndrawStatusScreen 분리(동작 불변) / Task4 drawMetricGrid+연결분기+초록점 / Task5 다중기기\n컴파일+실기기 게이트. 그리드=텍스트만(OOM 재발 방지), 연결 전 화면 불변(롤백 용이).\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>\nEOF\necho \"---\"; git log --oneline -1",
   "description": "Commit the implementation plan"
 }
 ```
@@ -7635,7 +7635,7 @@ tool_use Bash
 id: toolu_01VNgxCfxZPt8kg2D4zBGiNg
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== compute()에서 altitude → _metricValues.altitudeM (전송 경로) ===\"\ngrep -nE \"altitudeM|altitude\" source/RunVisionIQView.mc | grep -iE \"metricValues|altitudeM\"\necho \"\"\necho \"=== CyclingStrategy: altitude 패킷 전송하나 ===\"\ngrep -nE \"altitude|Altitude|createAltitude|altitudeValid|altitudeM\" source/CyclingStrategy.mc",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== compute()에서 altitude → _metricValues.altitudeM (전송 경로) ===\"\ngrep -nE \"altitudeM|altitude\" source/RunVisionIQView.mc | grep -iE \"metricValues|altitudeM\"\necho \"\"\necho \"=== CyclingStrategy: altitude 패킷 전송하나 ===\"\ngrep -nE \"altitude|Altitude|createAltitude|altitudeValid|altitudeM\" source/CyclingStrategy.mc",
   "description": "Verify cycling altitude transmission path"
 }
 ```
@@ -7676,7 +7676,7 @@ id: toolu_01UZZdARfg9tbdaikarfTV2Q
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/Docs/superpowers/plans/2026-05-24-garmin-watch-metric-display.md",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/Docs/superpowers/plans/2026-05-24-garmin-watch-metric-display.md",
   "old_string": "- [ ] **Step 2: compute()에서 고도 포맷** — `var altitude = info != null && info has :altitude ? info.altitude : null;`(576행 부근) 바로 다음 줄에 추가:\n\n```monkeyc\n        if (altitude != null) { _altitudeLabel = altitude.format(\"%d\"); } else { _altitudeLabel = \"---\"; }\n```",
   "new_string": "- [ ] **Step 2: compute()에서 고도 포맷** — `var altitude = info != null && info has :altitude ? info.altitude : null;`(576행 부근) 바로 다음 줄에 추가. **글래스 전송값(`_metricValues.altitudeM = roundFloat(altitude)`, 643행, cadence 슬롯 0x0E로 전송)과 동일한 `roundFloat` 반올림을 써서 워치=글래스 숫자 일치**:\n\n```monkeyc\n        if (altitude != null) { _altitudeLabel = roundFloat(altitude).format(\"%d\"); } else { _altitudeLabel = \"---\"; }\n```\n(Float 직접 `.format(\"%d\")` 금지 — `roundFloat`가 Number 반환, 다른 라벨과 동일 패턴.)"
 }
@@ -7687,7 +7687,7 @@ id: toolu_01UZZdARfg9tbdaikarfTV2Q
 tool_result
 id: toolu_01UZZdARfg9tbdaikarfTV2Q
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/Docs/superpowers/plans/2026-05-24-garmin-watch-metric-display.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/Docs/superpowers/plans/2026-05-24-garmin-watch-metric-display.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7700,7 +7700,7 @@ tool_use Bash
 id: toolu_01UHbMT7WYv2j4yhNNM18P6p
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\ngit add Docs/superpowers/plans/2026-05-24-garmin-watch-metric-display.md\ngit commit -m \"docs(plan): Task1 고도 포맷을 roundFloat로 교정 (워치=글래스 전송값 일치, cadence슬롯 0x0E)\" 2>&1 | tail -2",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\ngit add Docs/superpowers/plans/2026-05-24-garmin-watch-metric-display.md\ngit commit -m \"docs(plan): Task1 고도 포맷을 roundFloat로 교정 (워치=글래스 전송값 일치, cadence슬롯 0x0E)\" 2>&1 | tail -2",
   "description": "Commit plan correction for altitude formatting"
 }
 ```
@@ -7771,7 +7771,7 @@ tool_use Read
 id: toolu_01CL1BcdHTF1oGL9yEiKG41S
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "offset": 258,
   "limit": 14
 }
@@ -7809,7 +7809,7 @@ id: toolu_01CaQY961MujquqpYVYa78T4
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "    private var _paceLabel as Lang.String = \"--:--\";\n\n    // 로고 캐시",
   "new_string": "    private var _paceLabel as Lang.String = \"--:--\";\n    private var _altitudeLabel as Lang.String = \"---\";  // 사이클 현재 고도(m) — 글래스 전송값(cadence슬롯 0x0E)과 동일\n\n    // 로고 캐시"
 }
@@ -7820,7 +7820,7 @@ id: toolu_01CaQY961MujquqpYVYa78T4
 tool_result
 id: toolu_01CaQY961MujquqpYVYa78T4
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7830,7 +7830,7 @@ id: toolu_01GkjuibdyMwn8Hwkmhxo4Pm
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "        var altitude = info != null && info has :altitude ? info.altitude : null;",
   "new_string": "        var altitude = info != null && info has :altitude ? info.altitude : null;\n        // 워치 표시용 고도 라벨 (글래스 전송값 altitudeM = roundFloat(altitude)와 동일 반올림)\n        if (altitude != null) { _altitudeLabel = roundFloat(altitude).format(\"%d\"); } else { _altitudeLabel = \"---\"; }"
 }
@@ -7841,7 +7841,7 @@ id: toolu_01GkjuibdyMwn8Hwkmhxo4Pm
 tool_result
 id: toolu_01GkjuibdyMwn8Hwkmhxo4Pm
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7851,7 +7851,7 @@ id: toolu_01QkNvBQY8eWX4ianHKZLj6o
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "        _cadenceLabel = \"---\";\n        _devicesFound = 0;",
   "new_string": "        _cadenceLabel = \"---\";\n        _altitudeLabel = \"---\";\n        _devicesFound = 0;"
 }
@@ -7862,7 +7862,7 @@ id: toolu_01QkNvBQY8eWX4ianHKZLj6o
 tool_result
 id: toolu_01QkNvBQY8eWX4ianHKZLj6o
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7875,7 +7875,7 @@ tool_use Bash
 id: toolu_01Y19QvxrAspMTeKLxPaJCCD
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\n./build.sh 2>&1 | grep -E \"동기화|완료|ERROR|BUILD\" | tail -4\necho \"exit=${PIPESTATUS[0]}\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\n./build.sh 2>&1 | grep -E \"동기화|완료|ERROR|BUILD\" | tail -4\necho \"exit=${PIPESTATUS[0]}\"",
   "description": "Task 1 compile verification"
 }
 ```
@@ -7901,7 +7901,7 @@ tool_use Bash
 id: toolu_01GUcqnbf9atVE5pCv9X3yJ2
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\ngit add source/RunVisionIQView.mc\ngit commit -m \"feat(garmin/watch): 사이클 현재고도 라벨(_altitudeLabel) 추가\n\ncompute()에서 글래스 전송값(altitudeM=roundFloat(altitude), cadence슬롯 0x0E)과\n동일 반올림으로 _altitudeLabel 포맷. 워치 그리드의 사이클 ALT 표시에 사용 예정.\" 2>&1 | tail -2\necho \"--- ✅ Task 1 완료 ---\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\ngit add source/RunVisionIQView.mc\ngit commit -m \"feat(garmin/watch): 사이클 현재고도 라벨(_altitudeLabel) 추가\n\ncompute()에서 글래스 전송값(altitudeM=roundFloat(altitude), cadence슬롯 0x0E)과\n동일 반올림으로 _altitudeLabel 포맷. 워치 그리드의 사이클 ALT 표시에 사용 예정.\" 2>&1 | tail -2\necho \"--- ✅ Task 1 완료 ---\"",
   "description": "Commit Task 1"
 }
 ```
@@ -7929,7 +7929,7 @@ id: toolu_01VjLwySVH3PRxb9yCwFtGHr
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/Tests.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/Tests.mc",
   "old_string": "// === RunningStrategy regression tests ===\n// 이 테스트들은 기존 러닝 모드 패킷이 한 비트도 안 바뀌었음을 보증한다.",
   "new_string": "// === metricGridLayout: 반응형 그리드 좌표 ===\n(:test)\nfunction testMetricGridLayout_roundInsetsMoreThanRect(logger as Logger) as Boolean {\n    var r = metricGridLayout(416, 416, true);\n    var q = metricGridLayout(416, 416, false);\n    // 둥근 화면은 좌우 컬럼을 더 안쪽으로(클리핑 방지) → round leftX > rect leftX\n    return (r[:leftX] as Lang.Number) > (q[:leftX] as Lang.Number);\n}\n\n(:test)\nfunction testMetricGridLayout_withinBounds(logger as Logger) as Boolean {\n    var L = metricGridLayout(416, 416, true);\n    var lx = L[:leftX] as Lang.Number;\n    var rx = L[:rightX] as Lang.Number;\n    var ty = L[:timeY] as Lang.Number;\n    var r2 = L[:row2Y] as Lang.Number;\n    return lx > 0 && rx < 416 && lx < rx && ty > 0 && r2 < 416;\n}\n\n// === RunningStrategy regression tests ===\n// 이 테스트들은 기존 러닝 모드 패킷이 한 비트도 안 바뀌었음을 보증한다."
 }
@@ -7940,7 +7940,7 @@ id: toolu_01VjLwySVH3PRxb9yCwFtGHr
 tool_result
 id: toolu_01VjLwySVH3PRxb9yCwFtGHr
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/Tests.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/Tests.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7953,7 +7953,7 @@ tool_use Bash
 id: toolu_01By7YvHnwAKwdSFs55S4VX3
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\nSDK=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\\\\monkeyc.bat\"\nW=$(wslpath -w \"$(pwd)\")\npowershell.exe -NoProfile -Command \"& '$SDK' -t -o '$W\\bin\\test.prg' -f '$W\\monkey.jungle' -y '$W\\developer_key.der' -d fr165\" 2>&1 | grep -iE \"ERROR|metricGridLayout|BUILD\" | head -5\necho \"exit=${PIPESTATUS[0]}\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\nSDK=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\\\\monkeyc.bat\"\nW=$(wslpath -w \"$(pwd)\")\npowershell.exe -NoProfile -Command \"& '$SDK' -t -o '$W\\bin\\test.prg' -f '$W\\monkey.jungle' -y '$W\\developer_key.der' -d fr165\" 2>&1 | grep -iE \"ERROR|metricGridLayout|BUILD\" | head -5\necho \"exit=${PIPESTATUS[0]}\"",
   "description": "Task 2 RED: test-mode compile expecting metricGridLayout undefined"
 }
 ```
@@ -7980,7 +7980,7 @@ id: toolu_014ubU9m6oZXrpbNJe4nbAqV
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/MetricStrategy.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/MetricStrategy.mc",
   "old_string": "function metricPresent(value as Lang.Number or Lang.Float or Null) as Lang.Boolean {\n    return value != null;\n}",
   "new_string": "function metricPresent(value as Lang.Number or Lang.Float or Null) as Lang.Boolean {\n    return value != null;\n}\n\n//! 메트릭 그리드(1-2-2) 좌표를 화면 크기·형태 기반으로 계산(반응형). 픽셀 고정 금지.\n//! isRound=true 면 좌우 컬럼을 더 안쪽으로 inset 해 둥근 베젤 클리핑을 막는다.\n//! 행 간격 균등(0.20/0.45/0.70)로 깔끔한 세로 리듬. 값은 컬럼 중앙 정렬 기준점.\nfunction metricGridLayout(width as Lang.Number, height as Lang.Number, isRound as Lang.Boolean) as Lang.Dictionary {\n    var inset = isRound ? 0.30 : 0.25;\n    return {\n        :centerX => width / 2,\n        :leftX  => (width * inset).toNumber(),\n        :rightX => (width * (1.0 - inset)).toNumber(),\n        :timeY  => (height * 0.20).toNumber(),\n        :row1Y  => (height * 0.45).toNumber(),\n        :row2Y  => (height * 0.70).toNumber()\n    };\n}"
 }
@@ -7991,7 +7991,7 @@ id: toolu_014ubU9m6oZXrpbNJe4nbAqV
 tool_result
 id: toolu_014ubU9m6oZXrpbNJe4nbAqV
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/MetricStrategy.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/MetricStrategy.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8000,7 +8000,7 @@ tool_use Bash
 id: toolu_01JbKryyYMjQk7UzfymUCvSy
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\nSDK=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\\\\monkeyc.bat\"\nW=$(wslpath -w \"$(pwd)\")\necho \">>> GREEN: 테스트모드 컴파일 (성공해야 함)\"\npowershell.exe -NoProfile -Command \"& '$SDK' -t -o '$W\\bin\\test.prg' -f '$W\\monkey.jungle' -y '$W\\developer_key.der' -d fr165\" 2>&1 | grep -iE \"ERROR|BUILD\" | head -3\necho \"exit=${PIPESTATUS[0]}\"\nrm -f bin/test.prg bin/test.prg.debug.xml",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\nSDK=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\\\\monkeyc.bat\"\nW=$(wslpath -w \"$(pwd)\")\necho \">>> GREEN: 테스트모드 컴파일 (성공해야 함)\"\npowershell.exe -NoProfile -Command \"& '$SDK' -t -o '$W\\bin\\test.prg' -f '$W\\monkey.jungle' -y '$W\\developer_key.der' -d fr165\" 2>&1 | grep -iE \"ERROR|BUILD\" | head -3\necho \"exit=${PIPESTATUS[0]}\"\nrm -f bin/test.prg bin/test.prg.debug.xml",
   "description": "Task 2 GREEN: test-mode compile success"
 }
 ```
@@ -8025,7 +8025,7 @@ tool_use Bash
 id: toolu_01AwbKrVCJV62heTDkktUX7Y
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\ngit add source/MetricStrategy.mc source/Tests.mc\ngit commit -m \"feat(garmin/watch): 반응형 그리드 레이아웃 metricGridLayout + 테스트\n\n1-2-2 그리드 좌표를 width/height/isRound 기반 비율로 계산. 둥근 화면은 좌우 컬럼\ninset 확대(베젤 클리핑 방지), 행 간격 균등(0.20/0.45/0.70). testMetricGridLayout_*\n2개 추가(round inset 우위 + 경계 내). 테스트모드 컴파일 통과.\" 2>&1 | tail -2\necho \"--- ✅ Task 2 완료 ---\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\ngit add source/MetricStrategy.mc source/Tests.mc\ngit commit -m \"feat(garmin/watch): 반응형 그리드 레이아웃 metricGridLayout + 테스트\n\n1-2-2 그리드 좌표를 width/height/isRound 기반 비율로 계산. 둥근 화면은 좌우 컬럼\ninset 확대(베젤 클리핑 방지), 행 간격 균등(0.20/0.45/0.70). testMetricGridLayout_*\n2개 추가(round inset 우위 + 경계 내). 테스트모드 컴파일 통과.\" 2>&1 | tail -2\necho \"--- ✅ Task 2 완료 ---\"",
   "description": "Commit Task 2"
 }
 ```
@@ -8050,7 +8050,7 @@ tool_use Read
 id: toolu_01L6pVJww5qnHU4Y1rHBU4jn
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "offset": 677,
   "limit": 35
 }
@@ -8107,7 +8107,7 @@ id: toolu_011Y2rHn6n31LRFngktSseu6
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "    function onUpdate(dc as Graphics.Dc) as Void {\n        try {\n            dc.setColor(Graphics.COLOR_TRANSPARENT, Graphics.COLOR_BLACK);\n            dc.clear();\n            dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);\n\n            var width = dc.getWidth();\n            var height = dc.getHeight();\n            var centerX = width / 2;\n            var centerY = height / 2;\n\n            // 로고 표시 (중앙, 176x37) — 한 번만 로드해 캐시 (매 프레임 ≈26KB 할당 방지 → OOM/watchdog 회피)\n            if (_logoCache == null) {\n                _logoCache = WatchUi.loadResource(Rez.Drawables.RunVisionLogo);\n            }\n            dc.drawBitmap(centerX - 88, centerY - 40, _logoCache);\n\n            // 상태 텍스트 (로고 아래)\n            var statusText = _isConnected ? \"Connected\" : _scanStatus;\n            var statusY = centerY + 10;\n            dc.drawText(centerX, statusY, Graphics.FONT_SMALL, statusText, Graphics.TEXT_JUSTIFY_CENTER);\n\n            // 앱 버전 (상태 텍스트 바로 아래, 작고 흐리게) — 상태 글자 높이만큼 띄워 겹침 방지(기기·폰트 무관).\n            dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);\n            var versionY = statusY + dc.getFontHeight(Graphics.FONT_SMALL) + 4;\n            dc.drawText(centerX, versionY, Graphics.FONT_XTINY, \"v\" + AppVersion.VALUE, Graphics.TEXT_JUSTIFY_CENTER);\n\n        } catch (ex) {\n            // Hardcoded coords — dc.getWidth() can throw if dc is broken\n            try { dc.drawText(120, 50, Graphics.FONT_SMALL, \"ERR\", Graphics.TEXT_JUSTIFY_CENTER); } catch (ex2) {}\n        }\n    }",
   "new_string": "    function onUpdate(dc as Graphics.Dc) as Void {\n        try {\n            drawStatusScreen(dc);\n        } catch (ex) {\n            // Hardcoded coords — dc.getWidth() can throw if dc is broken\n            try { dc.drawText(120, 50, Graphics.FONT_SMALL, \"ERR\", Graphics.TEXT_JUSTIFY_CENTER); […]
 
@@ -8116,7 +8116,7 @@ id: toolu_011Y2rHn6n31LRFngktSseu6
 tool_result
 id: toolu_011Y2rHn6n31LRFngktSseu6
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8125,7 +8125,7 @@ tool_use Bash
 id: toolu_01LwHXyWQMvWK13ANvzZvENf
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\n./build.sh 2>&1 | grep -E \"완료|ERROR|BUILD SUCC\" | tail -3\necho \"exit=${PIPESTATUS[0]}\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\n./build.sh 2>&1 | grep -E \"완료|ERROR|BUILD SUCC\" | tail -3\necho \"exit=${PIPESTATUS[0]}\"",
   "description": "Task 3 compile verification (behavior-unchanged refactor)"
 }
 ```
@@ -8150,7 +8150,7 @@ tool_use Bash
 id: toolu_017H6J9x7DKrbxn4r3jVyivv
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\ngit add source/RunVisionIQView.mc\ngit commit -m \"refactor(garmin/watch): onUpdate 본문을 drawStatusScreen으로 분리 (동작 불변)\n\n연결 후 그리드 분기(Task4)를 위한 사전 분리. 코드 그대로 이동, 시각 결과 동일.\" 2>&1 | tail -2\necho \"--- ✅ Task 3 완료 ---\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\ngit add source/RunVisionIQView.mc\ngit commit -m \"refactor(garmin/watch): onUpdate 본문을 drawStatusScreen으로 분리 (동작 불변)\n\n연결 후 그리드 분기(Task4)를 위한 사전 분리. 코드 그대로 이동, 시각 결과 동일.\" 2>&1 | tail -2\necho \"--- ✅ Task 3 완료 ---\"",
   "description": "Commit Task 3"
 }
 ```
@@ -8176,7 +8176,7 @@ id: toolu_01A23mV1rM3VC9fKXRQiRWke
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "        try {\n            drawStatusScreen(dc);\n        } catch (ex) {\n            // Hardcoded coords — dc.getWidth() can throw if dc is broken\n            try { dc.drawText(120, 50, Graphics.FONT_SMALL, \"ERR\", Graphics.TEXT_JUSTIFY_CENTER); } catch (ex2) {}\n        }",
   "new_string": "        try {\n            if (_isConnected) {\n                drawMetricGrid(dc);\n            } else {\n                drawStatusScreen(dc);\n            }\n        } catch (ex) {\n            // Hardcoded coords — dc.getWidth() can throw if dc is broken\n            try { dc.drawText(120, 50, Graphics.FONT_SMALL, \"ERR\", Graphics.TEXT_JUSTIFY_CENTER); } catch (ex2) {}\n        }"
 }
@@ -8187,7 +8187,7 @@ id: toolu_01A23mV1rM3VC9fKXRQiRWke
 tool_result
 id: toolu_01A23mV1rM3VC9fKXRQiRWke
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8197,7 +8197,7 @@ id: toolu_01Ue9LzishvJixCaANZPDRXL
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "        dc.drawText(centerX, versionY, Graphics.FONT_XTINY, \"v\" + AppVersion.VALUE, Graphics.TEXT_JUSTIFY_CENTER);\n    }",
   "new_string": "        dc.drawText(centerX, versionY, Graphics.FONT_XTINY, \"v\" + AppVersion.VALUE, Graphics.TEXT_JUSTIFY_CENTER);\n    }\n\n    //! 연결 후 화면: 5개 메트릭 1-2-2 그리드 (반응형, 텍스트만 — 비트맵 없음).\n    //! 러닝: TIME / PACE·HR / CAD·DIST   사이클: TIME / SPEED·HR / ALT·DIST\n    private function drawMetricGrid(dc as Graphics.Dc) as Void {\n        dc.setColor(Graphics.COLOR_TRANSPARENT, Graphics.COLOR_BLACK);\n        dc.clear();\n\n        var w = dc.getWidth();\n        var h = dc.getHeight();\n        var shape = System.getDeviceSettings().screenShape;\n        var isRound = (shape == System.SCREEN_SHAPE_ROUND) || (shape == System.SCREEN_SHAPE_SEMI_ROUND);\n        var L = metricGridLayout(w, h, isRound);\n        var isCycling = _strategy instanceof CyclingStrategy;\n        var cx = L[:centerX] as Lang.Number;\n        var lx = L[:leftX] as Lang.Number;\n        var rx = L[:rightX] as Lang.Number;\n\n        // 초록 연결점 (상단 중앙)\n        dc.setColor(Graphics.COLOR_GREEN, Graphics.COLOR_TRANSPARENT);\n        dc.fillCircle(cx, (h * 0.08).toNumber(), 5);\n\n        // 상단: TIME (중앙)\n        drawCell(dc, cx, L[:timeY] as Lang.Number, _timeLabel, \"TIME\");\n        // 중단: 좌 PACE/SPEED · 우 HR\n        drawCell(dc, lx, L[:row1Y] as Lang.Number, isCycling ? _speedLabel : _paceLabel, isCycling ? \"SPEED\" : \"PACE\");\n        drawCell(dc, rx, L[:row1Y] as Lang.Number, _hrLabel, \"HR\");\n        // 하단: 좌 CAD/ALT · 우 DIST\n        drawCell(dc, lx, L[:row2Y] as Lang.Number, isCycling ? _altitudeLabel : _cadenceLabel, isCycling ? \"ALT\" : \"CAD\");\n        drawCell(dc, rx, L[:row2Y] as Lang.Number, _distanceLabel, \"DIST\");\n […]
 
@@ -8206,7 +8206,7 @@ id: toolu_01Ue9LzishvJixCaANZPDRXL
 tool_result
 id: toolu_01Ue9LzishvJixCaANZPDRXL
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8219,7 +8219,7 @@ tool_use Bash
 id: toolu_016tY7vftBuaFR45f5esbeoH
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\n./build.sh 2>&1 | grep -E \"완료|ERROR|BUILD SUCC\" | tail -4\necho \"exit=${PIPESTATUS[0]} ; prg=$(date -r bin/RunVisionIQ.prg '+%H:%M' 2>/dev/null)\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\n./build.sh 2>&1 | grep -E \"완료|ERROR|BUILD SUCC\" | tail -4\necho \"exit=${PIPESTATUS[0]} ; prg=$(date -r bin/RunVisionIQ.prg '+%H:%M' 2>/dev/null)\"",
   "description": "Task 4 compile verification"
 }
 ```
@@ -8247,7 +8247,7 @@ id: toolu_01HiWF3MPtT6CwLq8mSTMjK7
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "        try {\n            if (_isConnected) {\n                drawMetricGrid(dc);\n            } else {\n                drawStatusScreen(dc);\n            }\n        } catch (ex) {",
   "new_string": "        try {\n            if (true) {  // TEMP-SIM: 그리드 레이아웃 육안 확인용 (커밋 전 _isConnected로 복원)\n                drawMetricGrid(dc);\n            } else {\n                drawStatusScreen(dc);\n            }\n        } catch (ex) {"
 }
@@ -8258,7 +8258,7 @@ id: toolu_01HiWF3MPtT6CwLq8mSTMjK7
 tool_result
 id: toolu_01HiWF3MPtT6CwLq8mSTMjK7
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8267,7 +8267,7 @@ tool_use Bash
 id: toolu_01Nhkzy6ocQEvHkuk8mLnWQz
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\n./build.sh 2>&1 | grep -E \"완료|ERROR|BUILD SUCC\" | tail -2\necho \"exit=${PIPESTATUS[0]}\"\nSDKBIN=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\"\nW=$(wslpath -w \"$(pwd)\")\necho \">>> 시뮬레이터 재로드 (그리드 강제 표시 빌드)\"\npowershell.exe -NoProfile -Command \"& '$SDKBIN\\\\monkeydo.bat' '$W\\\\bin\\\\RunVisionIQ.prg' fr165\" >/tmp/monkeydo3.log 2>&1 &\necho \"monkeydo (pid $!)\"; sleep 8; echo \"재로드 완료 — 시뮬레이터에서 그리드 레이아웃 확인 요망\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\n./build.sh 2>&1 | grep -E \"완료|ERROR|BUILD SUCC\" | tail -2\necho \"exit=${PIPESTATUS[0]}\"\nSDKBIN=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\"\nW=$(wslpath -w \"$(pwd)\")\necho \">>> 시뮬레이터 재로드 (그리드 강제 표시 빌드)\"\npowershell.exe -NoProfile -Command \"& '$SDKBIN\\\\monkeydo.bat' '$W\\\\bin\\\\RunVisionIQ.prg' fr165\" >/tmp/monkeydo3.log 2>&1 &\necho \"monkeydo (pid $!)\"; sleep 8; echo \"재로드 완료 — 시뮬레이터에서 그리드 레이아웃 확인 요망\"",
   "description": "Build forced-grid + reload sim for layout review"
 }
 ```
@@ -8321,7 +8321,7 @@ id: toolu_01UKqPvy3TaAt8DRvNw5JcfZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/MetricStrategy.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/MetricStrategy.mc",
   "old_string": "        :timeY  => (height * 0.20).toNumber(),\n        :row1Y  => (height * 0.45).toNumber(),\n        :row2Y  => (height * 0.70).toNumber()",
   "new_string": "        :timeY  => (height * 0.18).toNumber(),\n        :row1Y  => (height * 0.40).toNumber(),\n        :row2Y  => (height * 0.62).toNumber()"
 }
@@ -8332,7 +8332,7 @@ id: toolu_01UKqPvy3TaAt8DRvNw5JcfZ
 tool_result
 id: toolu_01UKqPvy3TaAt8DRvNw5JcfZ
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/MetricStrategy.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/MetricStrategy.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8342,7 +8342,7 @@ id: toolu_01NCdTqoZtad196TkfCZhTvq
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "        // 초록 연결점 (상단 중앙)\n        dc.setColor(Graphics.COLOR_GREEN, Graphics.COLOR_TRANSPARENT);\n        dc.fillCircle(cx, (h * 0.08).toNumber(), 5);\n\n        // 상단: TIME (중앙)",
   "new_string": "        // 상단: TIME (중앙)"
 }
@@ -8353,7 +8353,7 @@ id: toolu_01NCdTqoZtad196TkfCZhTvq
 tool_result
 id: toolu_01NCdTqoZtad196TkfCZhTvq
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8366,7 +8366,7 @@ tool_use Bash
 id: toolu_01R8pWJ8oRtBwAFPStniqw2g
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\n./build.sh 2>&1 | grep -E \"완료|ERROR|BUILD SUCC\" | tail -2\necho \"exit=${PIPESTATUS[0]}\"\nSDKBIN=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\"\nW=$(wslpath -w \"$(pwd)\")\npowershell.exe -NoProfile -Command \"& '$SDKBIN\\\\monkeydo.bat' '$W\\\\bin\\\\RunVisionIQ.prg' fr165\" >/tmp/monkeydo4.log 2>&1 &\necho \"monkeydo reload (pid $!)\"; sleep 8; echo \"시뮬레이터 재확인 요망\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\n./build.sh 2>&1 | grep -E \"완료|ERROR|BUILD SUCC\" | tail -2\necho \"exit=${PIPESTATUS[0]}\"\nSDKBIN=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\"\nW=$(wslpath -w \"$(pwd)\")\npowershell.exe -NoProfile -Command \"& '$SDKBIN\\\\monkeydo.bat' '$W\\\\bin\\\\RunVisionIQ.prg' fr165\" >/tmp/monkeydo4.log 2>&1 &\necho \"monkeydo reload (pid $!)\"; sleep 8; echo \"시뮬레이터 재확인 요망\"",
   "description": "Rebuild without dot + raised rows, reload sim"
 }
 ```
@@ -8424,7 +8424,7 @@ id: toolu_01GDu6KAoehvASgtTCpQfQ6s
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "        // 상단: TIME (중앙)\n        drawCell(dc, cx, L[:timeY] as Lang.Number, _timeLabel, \"TIME\");\n        // 중단: 좌 PACE/SPEED · 우 HR\n        drawCell(dc, lx, L[:row1Y] as Lang.Number, isCycling ? _speedLabel : _paceLabel, isCycling ? \"SPEED\" : \"PACE\");\n        drawCell(dc, rx, L[:row1Y] as Lang.Number, _hrLabel, \"HR\");\n        // 하단: 좌 CAD/ALT · 우 DIST\n        drawCell(dc, lx, L[:row2Y] as Lang.Number, isCycling ? _altitudeLabel : _cadenceLabel, isCycling ? \"ALT\" : \"CAD\");\n        drawCell(dc, rx, L[:row2Y] as Lang.Number, _distanceLabel, \"DIST\");",
   "new_string": "        // 상단: TIME (중앙)\n        drawCell(dc, cx, L[:timeY] as Lang.Number, _timeLabel, \"TIME\");\n        // 중단: 좌 PACE/SPEED · 우 CAD/ALT\n        drawCell(dc, lx, L[:row1Y] as Lang.Number, isCycling ? _speedLabel : _paceLabel, isCycling ? \"SPEED\" : \"PACE\");\n        drawCell(dc, rx, L[:row1Y] as Lang.Number, isCycling ? _altitudeLabel : _cadenceLabel, isCycling ? \"ALT\" : \"CAD\");\n        // 하단: 좌 DIST · 우 HR\n        drawCell(dc, lx, L[:row2Y] as Lang.Number, _distanceLabel, \"DIST\");\n        drawCell(dc, rx, L[:row2Y] as Lang.Number, _hrLabel, \"HR\");"
 }
@@ -8435,7 +8435,7 @@ id: toolu_01GDu6KAoehvASgtTCpQfQ6s
 tool_result
 id: toolu_01GDu6KAoehvASgtTCpQfQ6s
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8449,7 +8449,7 @@ id: toolu_019wZJhGM5DU2XXkimv1G7Rj
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "    private function drawCell(dc as Graphics.Dc, x as Lang.Number, y as Lang.Number, value as Lang.String, label as Lang.String) as Void {\n        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);\n        dc.drawText(x, y, Graphics.FONT_NUMBER_MILD, value, Graphics.TEXT_JUSTIFY_CENTER);\n        dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);\n        dc.drawText(x, y + dc.getFontHeight(Graphics.FONT_NUMBER_MILD), Graphics.FONT_XTINY, label, Graphics.TEXT_JUSTIFY_CENTER);\n    }",
   "new_string": "    private function drawCell(dc as Graphics.Dc, x as Lang.Number, y as Lang.Number, value as Lang.String, label as Lang.String) as Void {\n        // 값: FONT_MEDIUM(축소). 라벨: FONT_XTINY(값보다 확연히 작게). 라벨은 값 높이 바로 아래 → 겹침 없음.\n        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);\n        dc.drawText(x, y, Graphics.FONT_MEDIUM, value, Graphics.TEXT_JUSTIFY_CENTER);\n        dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);\n        dc.drawText(x, y + dc.getFontHeight(Graphics.FONT_MEDIUM), Graphics.FONT_XTINY, label, Graphics.TEXT_JUSTIFY_CENTER);\n    }"
 }
@@ -8460,7 +8460,7 @@ id: toolu_019wZJhGM5DU2XXkimv1G7Rj
 tool_result
 id: toolu_019wZJhGM5DU2XXkimv1G7Rj
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8473,7 +8473,7 @@ tool_use Bash
 id: toolu_01NDuRyjmCJZwmEQGbGez3Uj
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\n./build.sh 2>&1 | grep -E \"완료|ERROR|BUILD SUCC\" | tail -2\necho \"exit=${PIPESTATUS[0]}\"\nSDKBIN=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\"\nW=$(wslpath -w \"$(pwd)\")\npowershell.exe -NoProfile -Command \"& '$SDKBIN\\\\monkeydo.bat' '$W\\\\bin\\\\RunVisionIQ.prg' fr165\" >/tmp/monkeydo5.log 2>&1 &\necho \"monkeydo reload (pid $!)\"; sleep 8; echo \"시뮬레이터 재확인 요망\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\n./build.sh 2>&1 | grep -E \"완료|ERROR|BUILD SUCC\" | tail -2\necho \"exit=${PIPESTATUS[0]}\"\nSDKBIN=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\"\nW=$(wslpath -w \"$(pwd)\")\npowershell.exe -NoProfile -Command \"& '$SDKBIN\\\\monkeydo.bat' '$W\\\\bin\\\\RunVisionIQ.prg' fr165\" >/tmp/monkeydo5.log 2>&1 &\necho \"monkeydo reload (pid $!)\"; sleep 8; echo \"시뮬레이터 재확인 요망\"",
   "description": "Rebuild with re-paired grid + smaller fonts, reload sim"
 }
 ```
@@ -8530,7 +8530,7 @@ id: toolu_011n3X5QHD54JiCcrZY9WUXR
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "        // 값: FONT_MEDIUM(축소). 라벨: FONT_XTINY(값보다 확연히 작게). 라벨은 값 높이 바로 아래 → 겹침 없음.\n        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);\n        dc.drawText(x, y, Graphics.FONT_MEDIUM, value, Graphics.TEXT_JUSTIFY_CENTER);\n        dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);\n        dc.drawText(x, y + dc.getFontHeight(Graphics.FONT_MEDIUM), Graphics.FONT_XTINY, label, Graphics.TEXT_JUSTIFY_CENTER);",
   "new_string": "        // 값: FONT_LARGE. 라벨: FONT_XTINY(값의 절반 이하). 라벨은 값 높이 바로 아래 → 겹침 없음.\n        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);\n        dc.drawText(x, y, Graphics.FONT_LARGE, value, Graphics.TEXT_JUSTIFY_CENTER);\n        dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);\n        dc.drawText(x, y + dc.getFontHeight(Graphics.FONT_LARGE), Graphics.FONT_XTINY, label, Graphics.TEXT_JUSTIFY_CENTER);"
 }
@@ -8541,7 +8541,7 @@ id: toolu_011n3X5QHD54JiCcrZY9WUXR
 tool_result
 id: toolu_011n3X5QHD54JiCcrZY9WUXR
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8554,7 +8554,7 @@ tool_use Bash
 id: toolu_01CGaBtarskVDSLHAgu8MgBt
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\n./build.sh 2>&1 | grep -E \"완료|ERROR|BUILD SUCC\" | tail -2\necho \"exit=${PIPESTATUS[0]}\"\nSDKBIN=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\"\nW=$(wslpath -w \"$(pwd)\")\npowershell.exe -NoProfile -Command \"& '$SDKBIN\\\\monkeydo.bat' '$W\\\\bin\\\\RunVisionIQ.prg' fr165\" >/tmp/monkeydo6.log 2>&1 &\necho \"reload (pid $!)\"; sleep 8; echo \"시뮬레이터 재확인 요망\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\n./build.sh 2>&1 | grep -E \"완료|ERROR|BUILD SUCC\" | tail -2\necho \"exit=${PIPESTATUS[0]}\"\nSDKBIN=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\"\nW=$(wslpath -w \"$(pwd)\")\npowershell.exe -NoProfile -Command \"& '$SDKBIN\\\\monkeydo.bat' '$W\\\\bin\\\\RunVisionIQ.prg' fr165\" >/tmp/monkeydo6.log 2>&1 &\necho \"reload (pid $!)\"; sleep 8; echo \"시뮬레이터 재확인 요망\"",
   "description": "Rebuild with FONT_LARGE values, reload sim"
 }
 ```
@@ -8597,7 +8597,7 @@ id: toolu_01YFbat6VaF4FNkvCEJLPgkZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/MetricStrategy.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/MetricStrategy.mc",
   "old_string": "        :timeY  => (height * 0.18).toNumber(),\n        :row1Y  => (height * 0.40).toNumber(),\n        :row2Y  => (height * 0.62).toNumber()",
   "new_string": "        :timeY  => (height * 0.14).toNumber(),\n        :row1Y  => (height * 0.36).toNumber(),\n        :row2Y  => (height * 0.58).toNumber()"
 }
@@ -8608,7 +8608,7 @@ id: toolu_01YFbat6VaF4FNkvCEJLPgkZ
 tool_result
 id: toolu_01YFbat6VaF4FNkvCEJLPgkZ
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/MetricStrategy.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/MetricStrategy.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8617,7 +8617,7 @@ tool_use Bash
 id: toolu_01MauNG9fVtLDETuaN7QuFdg
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\n./build.sh 2>&1 | grep -E \"완료|BUILD SUCC|ERROR\" | tail -2\nSDKBIN=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\"\nW=$(wslpath -w \"$(pwd)\")\npowershell.exe -NoProfile -Command \"& '$SDKBIN\\\\monkeydo.bat' '$W\\\\bin\\\\RunVisionIQ.prg' fr165\" >/tmp/monkeydo7.log 2>&1 &\necho \"reload (pid $!)\"; sleep 8; echo \"시뮬레이터 재확인 요망 (전체 위로 상향)\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\n./build.sh 2>&1 | grep -E \"완료|BUILD SUCC|ERROR\" | tail -2\nSDKBIN=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\"\nW=$(wslpath -w \"$(pwd)\")\npowershell.exe -NoProfile -Command \"& '$SDKBIN\\\\monkeydo.bat' '$W\\\\bin\\\\RunVisionIQ.prg' fr165\" >/tmp/monkeydo7.log 2>&1 &\necho \"reload (pid $!)\"; sleep 8; echo \"시뮬레이터 재확인 요망 (전체 위로 상향)\"",
   "description": "Rebuild with grid shifted up, reload sim"
 }
 ```
@@ -8664,7 +8664,7 @@ id: toolu_01B1bERkH6VYboJyDyP1QbQT
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "        var isCycling = _strategy instanceof CyclingStrategy;",
   "new_string": "        var isCycling = true;  // TEMP-SIM: 사이클 라벨(SPEED/ALT) 확인용 (커밋 전 복원)"
 }
@@ -8675,7 +8675,7 @@ id: toolu_01B1bERkH6VYboJyDyP1QbQT
 tool_result
 id: toolu_01B1bERkH6VYboJyDyP1QbQT
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8684,7 +8684,7 @@ tool_use Bash
 id: toolu_013rHBaDPN4oGyJgxJ72h7Dq
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\n./build.sh 2>&1 | grep -E \"완료|BUILD SUCC|ERROR\" | tail -2\nSDKBIN=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\"\nW=$(wslpath -w \"$(pwd)\")\npowershell.exe -NoProfile -Command \"& '$SDKBIN\\\\monkeydo.bat' '$W\\\\bin\\\\RunVisionIQ.prg' fr165\" >/tmp/monkeydo8.log 2>&1 &\necho \"reload (pid $!)\"; sleep 8; echo \"시뮬레이터: 사이클 라벨(SPEED/ALT) 확인 요망\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\n./build.sh 2>&1 | grep -E \"완료|BUILD SUCC|ERROR\" | tail -2\nSDKBIN=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\"\nW=$(wslpath -w \"$(pwd)\")\npowershell.exe -NoProfile -Command \"& '$SDKBIN\\\\monkeydo.bat' '$W\\\\bin\\\\RunVisionIQ.prg' fr165\" >/tmp/monkeydo8.log 2>&1 &\necho \"reload (pid $!)\"; sleep 8; echo \"시뮬레이터: 사이클 라벨(SPEED/ALT) 확인 요망\"",
   "description": "Temp force cycling, reload sim to show SPEED/ALT"
 }
 ```
@@ -8722,7 +8722,7 @@ id: toolu_01VzjdhyUWHyqTEioBQKxVQm
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "        var isCycling = _strategy instanceof CyclingStrategy;",
   "new_string": "        // 사이클 여부는 활동 sport로 직접 판별 — BLE/_strategy 타이밍과 무관(연결 전·초기 프레임에도 정확).\n        var profile = Activity.getProfileInfo();\n        var isCycling = (profile != null) && (profile.sport == Activity.SPORT_CYCLING);"
 }
@@ -8747,7 +8747,7 @@ tool_use Bash
 id: toolu_01R6C8KHPuLYHXNSMYMQLXgH
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\ngrep -n \"isCycling\" source/RunVisionIQView.mc",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\ngrep -n \"isCycling\" source/RunVisionIQView.mc",
   "description": "Find current isCycling line"
 }
 ```
@@ -8773,7 +8773,7 @@ id: toolu_01HfRZdtxHxvZCEysXWToBp7
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "        var isCycling = true;  // TEMP-SIM: 사이클 라벨(SPEED/ALT) 확인용 (커밋 전 복원)",
   "new_string": "        // 사이클 여부는 활동 sport로 직접 판별 — BLE/_strategy 타이밍과 무관(연결 전·초기 프레임에도 정확).\n        var profile = Activity.getProfileInfo();\n        var isCycling = (profile != null) && (profile.sport == Activity.SPORT_CYCLING);"
 }
@@ -8784,7 +8784,7 @@ id: toolu_01HfRZdtxHxvZCEysXWToBp7
 tool_result
 id: toolu_01HfRZdtxHxvZCEysXWToBp7
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8797,7 +8797,7 @@ tool_use Bash
 id: toolu_011hPtLWD7WfgXM2pnqKzjzC
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\n./build.sh 2>&1 | grep -E \"완료|BUILD SUCC|ERROR\" | tail -2\necho \"exit=${PIPESTATUS[0]} ; prg=$(date -r bin/RunVisionIQ.prg '+%H:%M')\"\necho \"\"\necho \"=== 현재 임시 상태 확인 (커밋 전 복원할 것들) ===\"\ngrep -nE \"if \\(true\\)|TEMP-SIM\" source/RunVisionIQView.mc",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\n./build.sh 2>&1 | grep -E \"완료|BUILD SUCC|ERROR\" | tail -2\necho \"exit=${PIPESTATUS[0]} ; prg=$(date -r bin/RunVisionIQ.prg '+%H:%M')\"\necho \"\"\necho \"=== 현재 임시 상태 확인 (커밋 전 복원할 것들) ===\"\ngrep -nE \"if \\(true\\)|TEMP-SIM\" source/RunVisionIQView.mc",
   "description": "Build with sport-based isCycling, check remaining temp forces"
 }
 ```
@@ -8851,7 +8851,7 @@ id: toolu_018KsanaFeKevJgTrLX1pUht
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "            if (true) {  // TEMP-SIM: 그리드 레이아웃 육안 확인용 (커밋 전 _isConnected로 복원)\n                drawMetricGrid(dc);\n            } else {\n                drawStatusScreen(dc);\n            }",
   "new_string": "            if (_isConnected) {\n                drawMetricGrid(dc);\n            } else {\n                drawStatusScreen(dc);\n            }"
 }
@@ -8862,7 +8862,7 @@ id: toolu_018KsanaFeKevJgTrLX1pUht
 tool_result
 id: toolu_018KsanaFeKevJgTrLX1pUht
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8875,7 +8875,7 @@ tool_use Bash
 id: toolu_01Vj4aMeQ6jgcGH5sLLfXu1Z
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== TEMP 잔여 확인 (없어야 함) ===\"\ngrep -nE \"TEMP-SIM|if \\(true\\)\" source/RunVisionIQView.mc || echo \"(잔여 없음 — 깨끗)\"\necho \"\"\n./build.sh 2>&1 | grep -E \"완료|BUILD SUCC|ERROR\" | tail -2\necho \"exit=${PIPESTATUS[0]}\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== TEMP 잔여 확인 (없어야 함) ===\"\ngrep -nE \"TEMP-SIM|if \\(true\\)\" source/RunVisionIQView.mc || echo \"(잔여 없음 — 깨끗)\"\necho \"\"\n./build.sh 2>&1 | grep -E \"완료|BUILD SUCC|ERROR\" | tail -2\necho \"exit=${PIPESTATUS[0]}\"",
   "description": "Verify no temp remnants + build"
 }
 ```
@@ -8903,7 +8903,7 @@ tool_use Bash
 id: toolu_015a53rGyykawBT6aEzt2Np1
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== 변경 파일 ===\"\ngit status --short\ngit add source/RunVisionIQView.mc source/MetricStrategy.mc\ngit commit -F - <<'EOF' 2>&1 | tail -3\nfeat(garmin/watch): 연결 후 메트릭 그리드(1-2-2) 표시\n\n연결 시 onUpdate가 drawMetricGrid로 분기(연결 전엔 drawStatusScreen). 5개 메트릭:\nTIME 상단 / 중단 PACE·CAD(사이클 SPEED·ALT) / 하단 DIST·HR.\n- 사이클 판별은 활동 sport(Activity.getProfileInfo().sport) 직접 읽기 — BLE/_strategy\n  타이밍과 무관(연결 전·초기 프레임에도 정확). 전송용 _strategy와 화면 판별 디커플링.\n- 값 FONT_LARGE / 라벨 FONT_XTINY(값의 절반 이하), 라벨은 값 바로 아래(겹침 없음).\n- 그리드 행 균등·상향 튜닝(0.14/0.36/0.58) → 둥근 화면 균형·무클리핑.\n- 텍스트만(비트맵 0) → OOM 재발 없음. 구분선/연결점 없음(여백 분리로 깔끔).\n\n실기기(fr165) 확인: 러닝 PACE/CAD, 사이클 SPEED/ALT, 겹침·클리핑 없음.\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>\nEOF\necho \"---\"; git log --oneline -1\necho \"--- ✅ Task 4 완료 ---\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== 변경 파일 ===\"\ngit status --short\ngit add source/RunVisionIQView.mc source/MetricStrategy.mc\ngit commit -F - <<'EOF' 2>&1 | tail -3\nfeat(garmin/watch): 연결 후 메트릭 그리드(1-2-2) 표시\n\n연결 시 onUpdate가 drawMetricGrid로 분기(연결 전엔 drawStatusScreen). 5개 메트릭:\nTIME 상단 / 중단 PACE·CAD(사이클 SPEED·ALT) / 하단 DIST·HR.\n- 사이클 판별은 활동 sport(Activity.getProfileInfo().sport) 직접 읽기 — BLE/_strategy\n  타이밍과 무관(연결 전·초기 프레임에도 정확). 전송용 _strategy와 화면 판별 디커플링.\n- 값 FONT_LARGE / 라벨 FONT_XTINY(값의 절반 이하), 라벨은 값 바로 아래(겹침 없음).\n- 그리드 행 균등·상향 튜닝(0.14/0.36/0.58) → 둥근 화면 균형·무클리핑.\n- 텍스트만(비트맵 0) → OOM 재발 없음. 구분선/연결점 없음(여백 분리로 깔끔).\n\n실기기(fr165) 확인: 러닝 PACE/CAD, 사이클 SPEED/ALT, 겹침·클리핑 없음.\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>\nEOF\necho \"---\"; git log --oneline -1\necho \"--- ✅ Task 4 완료 ---\"",
   "description": "Commit Task 4 (metric grid)"
 }
 ```
@@ -8934,7 +8934,7 @@ tool_use Bash
 id: toolu_019AeD5vL7EDVxt7kfgYZL3k
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== docs / Docs 디렉터리 실제 상태 ===\"\nls -la docs/superpowers/specs/ 2>&1 | tail -3\nls -la Docs/superpowers/specs/ 2>&1 | tail -3\necho \"\"\necho \"=== git이 추적하는 spec/plan 경로 ===\"\ngit ls-files | grep -iE \"superpowers/(specs|plans)\"\necho \"\"\necho \"=== git status 전체 ===\"\ngit status --short",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== docs / Docs 디렉터리 실제 상태 ===\"\nls -la docs/superpowers/specs/ 2>&1 | tail -3\nls -la Docs/superpowers/specs/ 2>&1 | tail -3\necho \"\"\necho \"=== git이 추적하는 spec/plan 경로 ===\"\ngit ls-files | grep -iE \"superpowers/(specs|plans)\"\necho \"\"\necho \"=== git status 전체 ===\"\ngit status --short",
   "description": "Investigate docs vs Docs case issue for spec file"
 }
 ```
@@ -8972,7 +8972,7 @@ tool_use Bash
 id: toolu_01NhHK7F2auiU4HzehSgt44q
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== git core.ignorecase ===\"\ngit config core.ignorecase\necho \"\"\necho \"=== HEAD(대문자 경로)의 spec 내용 == 소문자 파일 내용? ===\"\ngit show HEAD:Docs/superpowers/specs/2026-05-24-garmin-watch-metric-display-design.md > /tmp/head_spec.md 2>&1\ndiff -q /tmp/head_spec.md docs/superpowers/specs/2026-05-24-garmin-watch-metric-display-design.md && echo \"✅ 내용 동일 (안전)\" || echo \"⚠️ 내용 다름\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== git core.ignorecase ===\"\ngit config core.ignorecase\necho \"\"\necho \"=== HEAD(대문자 경로)의 spec 내용 == 소문자 파일 내용? ===\"\ngit show HEAD:Docs/superpowers/specs/2026-05-24-garmin-watch-metric-display-design.md > /tmp/head_spec.md 2>&1\ndiff -q /tmp/head_spec.md docs/superpowers/specs/2026-05-24-garmin-watch-metric-display-design.md && echo \"✅ 내용 동일 (안전)\" || echo \"⚠️ 내용 다름\"",
   "description": "Check git ignorecase + compare spec content"
 }
 ```
@@ -8999,7 +8999,7 @@ tool_use Bash
 id: toolu_018XDQHf4TqD6oCYsxy3TnqX
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== 소문자 docs/ 내용 (제 spec만 있는지 확인) ===\"\nfind docs -type f\necho \">>> 소문자 docs/ 제거\"\nrm -rf docs\necho \">>> 대문자 경로 파일 복원 (HEAD에서)\"\ngit checkout HEAD -- \"Docs/superpowers/specs/2026-05-24-garmin-watch-metric-display-design.md\"\necho \"\"\necho \"=== 정리 후 git status (clean이어야) ===\"\ngit status --short || echo \"(clean)\"\necho \"=== Docs/superpowers/specs/ 최종 (두 spec 다 있어야) ===\"\nls Docs/superpowers/specs/",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== 소문자 docs/ 내용 (제 spec만 있는지 확인) ===\"\nfind docs -type f\necho \">>> 소문자 docs/ 제거\"\nrm -rf docs\necho \">>> 대문자 경로 파일 복원 (HEAD에서)\"\ngit checkout HEAD -- \"Docs/superpowers/specs/2026-05-24-garmin-watch-metric-display-design.md\"\necho \"\"\necho \"=== 정리 후 git status (clean이어야) ===\"\ngit status --short || echo \"(clean)\"\necho \"=== Docs/superpowers/specs/ 최종 (두 spec 다 있어야) ===\"\nls Docs/superpowers/specs/",
   "description": "Remove lowercase docs/, restore capital-path spec, verify clean"
 }
 ```
@@ -9032,7 +9032,7 @@ tool_use Bash
 id: toolu_01PFpejULZM1g54p5p89g8vg
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\nSDK=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\\\\monkeyc.bat\"\nW=$(wslpath -w \"$(pwd)\")\nfor d in fr165 fr955 fenix7 venu3 instinct2 instinct3amoled45mm vivoactive5; do\n  R=$(powershell.exe -NoProfile -Command \"& '$SDK' -o '$W\\\\bin\\\\RunVisionIQ.prg' -f '$W\\\\monkey.jungle' -y '$W\\\\developer_key.der' -d $d -w\" 2>&1 | grep -ohE \"BUILD SUCCESSFUL|ERROR:\" | head -1)\n  echo \"$d : ${R:-NO OUTPUT}\"\ndone",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\nSDK=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\\\\monkeyc.bat\"\nW=$(wslpath -w \"$(pwd)\")\nfor d in fr165 fr955 fenix7 venu3 instinct2 instinct3amoled45mm vivoactive5; do\n  R=$(powershell.exe -NoProfile -Command \"& '$SDK' -o '$W\\\\bin\\\\RunVisionIQ.prg' -f '$W\\\\monkey.jungle' -y '$W\\\\developer_key.der' -d $d -w\" 2>&1 | grep -ohE \"BUILD SUCCESSFUL|ERROR:\" | head -1)\n  echo \"$d : ${R:-NO OUTPUT}\"\ndone",
   "description": "Task 5: multi-device compile verification"
 }
 ```
@@ -9063,7 +9063,7 @@ tool_use Bash
 id: toolu_01MQmoW7RLDnmnt1aG2QAV18
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\n./build.sh 2>&1 | grep -E \"완료|BUILD SUCC\" | tail -2\necho \"fr165 .prg: $(date -r bin/RunVisionIQ.prg '+%H:%M')\"\necho \"\"\necho \"=== 커밋된 Task들 (미푸시) ===\"\ngit log --oneline -5\necho \"ahead of origin: $(git rev-list --count @{u}..HEAD)\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\n./build.sh 2>&1 | grep -E \"완료|BUILD SUCC\" | tail -2\necho \"fr165 .prg: $(date -r bin/RunVisionIQ.prg '+%H:%M')\"\necho \"\"\necho \"=== 커밋된 Task들 (미푸시) ===\"\ngit log --oneline -5\necho \"ahead of origin: $(git rev-list --count @{u}..HEAD)\"",
   "description": "Rebuild fr165 prg + check unpushed commits"
 }
 ```
@@ -9122,7 +9122,7 @@ tool_use Bash
 id: toolu_01ULVUoYGj1qso9dBD79d6FY
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\nSDK=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\\\\monkeyc.bat\"\nW=$(wslpath -w \"$(pwd)\")\necho \"=== 테스트모드 컴파일 (전 테스트 빌드 확인) ===\"\npowershell.exe -NoProfile -Command \"& '$SDK' -t -o '$W\\bin\\test.prg' -f '$W\\monkey.jungle' -y '$W\\developer_key.der' -d fr165\" 2>&1 | grep -E \"BUILD SUCC|ERROR\" | head -3\nrm -f bin/test.prg bin/test.prg.debug.xml\necho \"\"\necho \"=== Step 2 환경: 일반 레포 여부 ===\"\nGIT_DIR=$(cd \"$(git rev-parse --git-dir)\" && pwd -P); GIT_COMMON=$(cd \"$(git rev-parse --git-common-dir)\" && pwd -P)\n[ \"$GIT_DIR\" = \"$GIT_COMMON\" ] && echo \"일반 레포 (워크트리 아님)\" || echo \"워크트리\"\necho \"브랜치: $(git rev-parse --abbrev-ref HEAD) ; origin보다 +$(git rev-list --count @{u}..HEAD)\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\nSDK=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\\\\monkeyc.bat\"\nW=$(wslpath -w \"$(pwd)\")\necho \"=== 테스트모드 컴파일 (전 테스트 빌드 확인) ===\"\npowershell.exe -NoProfile -Command \"& '$SDK' -t -o '$W\\bin\\test.prg' -f '$W\\monkey.jungle' -y '$W\\developer_key.der' -d fr165\" 2>&1 | grep -E \"BUILD SUCC|ERROR\" | head -3\nrm -f bin/test.prg bin/test.prg.debug.xml\necho \"\"\necho \"=== Step 2 환경: 일반 레포 여부 ===\"\nGIT_DIR=$(cd \"$(git rev-parse --git-dir)\" && pwd -P); GIT_COMMON=$(cd \"$(git rev-parse --git-common-dir)\" && pwd -P)\n[ \"$GIT_DIR\" = \"$GIT_COMMON\" ] && echo \"일반 레포 (워크트리 아님)\" || echo \"워크트리\"\necho \"브랜치: $(git rev-parse --abbrev-ref HEAD) ; origin보다 +$(git rev-list --count @{u}..HEAD)\"",
   "description": "Verify tests compile + detect environment"
 }
 ```
@@ -9173,7 +9173,7 @@ tool_use Bash
 id: toolu_01Jo1aTWEjEdji2mJrJD9Dy2
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\ngit push 2>&1 | tail -4\necho \"---\"\ngit log --oneline -1\ngit status -sb | head -1",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\ngit push 2>&1 | tail -4\necho \"---\"\ngit log --oneline -1\ngit status -sb | head -1",
   "description": "Push main to origin"
 }
 ```
@@ -9222,7 +9222,7 @@ tool_use Bash
 id: toolu_01V8e3z4QhMyZVM7vBBhmqN4
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== working tree (clean이어야) ===\"\ngit status --short --untracked-files=all || echo \"(clean)\"\necho \"\"\necho \"=== base 335e4a7...HEAD (방금 그리드 기능) shortstat ===\"\ngit diff --shortstat 335e4a7...HEAD\necho \"--- 파일별 ---\"\ngit diff --stat 335e4a7...HEAD",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== working tree (clean이어야) ===\"\ngit status --short --untracked-files=all || echo \"(clean)\"\necho \"\"\necho \"=== base 335e4a7...HEAD (방금 그리드 기능) shortstat ===\"\ngit diff --shortstat 335e4a7...HEAD\necho \"--- 파일별 ---\"\ngit diff --stat 335e4a7...HEAD",
   "description": "Estimate adversarial review size (grid feature base diff)"
 }
 ```
@@ -9293,7 +9293,7 @@ tool_use Bash
 id: toolu_01FRSLo2ZpnQFQnwiwdKNE3c
 ```json
 {
-  "command": "node \"/home/jhkim/.claude/plugins/cache/openai-codex/codex/1.0.4/scripts/codex-companion.mjs\" adversarial-review --base 335e4a7 \"방금 수정한 가민 화면 관련된 코드를 리뷰해봐라.\"",
+  "command": "node \"/home/<USER>/.claude/plugins/cache/openai-codex/codex/1.0.4/scripts/codex-companion.mjs\" adversarial-review --base 335e4a7 \"방금 수정한 가민 화면 관련된 코드를 리뷰해봐라.\"",
   "description": "Codex adversarial review",
   "run_in_background": true
 }
@@ -9334,14 +9334,14 @@ id: toolu_01PELyjYeFQMUqpDiekFXViE
 [codex] Starting Codex task thread.
 [codex] Thread ready (019e5768-7c76-72a0-87d1-57245348fc94).
 [codex] Turn started (019e5768-7d63-7790-9141-70bc509af3b5).
-[codex] Running command: /bin/bash -lc "sed -n '1,220p' /home/jhkim/.codex/superpowers/skills/using-superpowers/SKILL.md"
-[codex] Command completed: /bin/bash -lc "sed -n '1,220p' /home/jhkim/.codex/superpowers/skills/using-superpowers/SKILL.md" (exit 0)
+[codex] Running command: /bin/bash -lc "sed -n '1,220p' /home/<USER>/.codex/superpowers/skills/using-superpowers/SKILL.md"
+[codex] Command completed: /bin/bash -lc "sed -n '1,220p' /home/<USER>/.codex/superpowers/skills/using-superpowers/SKILL.md" (exit 0)
 [codex] Running command: /bin/bash -lc 'git status --short'
 [codex] Command completed: /bin/bash -lc 'git status --short' (exit 0)
 [codex] Running command: /bin/bash -lc 'git rev-parse --verify 335e4a7'
 [codex] Command completed: /bin/bash -lc 'git rev-parse --verify 335e4a7' (exit 0)
-[codex] Running command: /bin/bash -lc "sed -n '1,220p' /home/jhkim/.codex/superpowers/skills/requesting-code-review/S...
-[codex] Command completed: /bin/bash -lc "sed -n '1,220p' /home/jhkim/.codex/superpowers/skills/requesting-code-review/S... (exit 0)
+[codex] Running command: /bin/bash -lc "sed -n '1,220p' /home/<USER>/.codex/superpowers/skills/requesting-code-review/S...
+[codex] Command completed: /bin/bash -lc "sed -n '1,220p' /home/<USER>/.codex/superpowers/skills/requesting-code-review/S... (exit 0)
 [codex] Running command: /bin/bash -lc 'git diff --name-only 335e4a7..HEAD'
 [codex] Command completed: /bin/bash -lc 'git diff --name-only 335e4a7..HEAD' (exit 0)
 [codex] Running command: /bin/bash -lc 'git diff --stat 335e4a7..HEAD'
@@ -9383,7 +9383,7 @@ tool_use Bash
 id: toolu_01QJ5uemE2vca5X2PJ6fmuN6
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== (1) 끊김 시 _isConnected = false 되나? (onConnectionStateChange/disconnect) ===\"\ngrep -nE \"_isConnected = (true|false)\" source/RunVisionIQView.mc\necho \"\"\necho \"=== (2) drawMetricGrid 헤더 주석 vs 실제 drawCell 배치 ===\"\nsed -n '/연결 후 화면: 5개 메트릭/,/drawCell(dc, rx, L\\[:row2Y\\]/p' source/RunVisionIQView.mc",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== (1) 끊김 시 _isConnected = false 되나? (onConnectionStateChange/disconnect) ===\"\ngrep -nE \"_isConnected = (true|false)\" source/RunVisionIQView.mc\necho \"\"\necho \"=== (2) drawMetricGrid 헤더 주석 vs 실제 drawCell 배치 ===\"\nsed -n '/연결 후 화면: 5개 메트릭/,/drawCell(dc, rx, L\\[:row2Y\\]/p' source/RunVisionIQView.mc",
   "description": "Verify _isConnected clearing on disconnect + comment vs placement"
 }
 ```
@@ -9457,7 +9457,7 @@ id: toolu_01R6Eo5F1iAVsTQpGRLTMacx
 {
   "description": "Galaxy 끊김 시 화면 동작 조사",
   "subagent_type": "Explore",
-  "prompt": "읽기 전용 조사. 코드 수정 금지. 결론만 보고하라.\n\n대상 레포: /home/jhkim/00.Projects/00.RunVision/runvision-wear (Galaxy/Wear OS, Kotlin, Jetpack Compose).\n이 앱은 운동 메트릭(시간/속도/페이스/케이던스/거리/심박/고도)을 워치 화면에 표시하면서, 동시에 rLens 스마트글래스로 BLE 전송한다.\n\n핵심 질문: **운동 중에 rLens BLE 연결이 끊기면 워치 화면이 어떻게 되는가?**\n1. 운동 중 메트릭을 보여주는 메인/워크아웃 화면(Compose)의 위치와, 그 화면이 표시될 조건은? (활동 상태 기반인가, rLens 연결 상태 기반인가?)\n2. rLens BLE 연결이 끊겼을 때(disconnect/reconnecting):\n   (a) 메트릭 화면을 그대로 유지하고 연결 상태는 작은 인디케이터로만 표시하는가,\n   (b) 아니면 연결/페어링/상태 화면으로 전체 전환되어 메트릭이 사라지는가?\n   정확히 어느 쪽인지 file:line 근거와 함께.\n3. rLens 연결 상태(connected/disconnected)가 UI에 어떻게 반영되는가? (전체 화면 전환 vs 작은 점/아이콘/텍스트 인디케이터)\n4. 메트릭 값은 rLens 연결과 무관하게(Health Services 등 로컬 소스에서) 계속 갱신되는가?\n\n결론: 운동 중 rLens 끊김 시 \"메트릭 유지(인디케이터만)\"인지 \"상태화면 전환\"인지 한 단어로.\nUI/화면 전환 관련 .kt 파일(ui/, screens/, MainActivity.kt, 네비게이션, 연결상태 관련) 위주로 보라."
+  "prompt": "읽기 전용 조사. 코드 수정 금지. 결론만 보고하라.\n\n대상 레포: /home/<USER>/00.Projects/00.RunVision/runvision-wear (Galaxy/Wear OS, Kotlin, Jetpack Compose).\n이 앱은 운동 메트릭(시간/속도/페이스/케이던스/거리/심박/고도)을 워치 화면에 표시하면서, 동시에 rLens 스마트글래스로 BLE 전송한다.\n\n핵심 질문: **운동 중에 rLens BLE 연결이 끊기면 워치 화면이 어떻게 되는가?**\n1. 운동 중 메트릭을 보여주는 메인/워크아웃 화면(Compose)의 위치와, 그 화면이 표시될 조건은? (활동 상태 기반인가, rLens 연결 상태 기반인가?)\n2. rLens BLE 연결이 끊겼을 때(disconnect/reconnecting):\n   (a) 메트릭 화면을 그대로 유지하고 연결 상태는 작은 인디케이터로만 표시하는가,\n   (b) 아니면 연결/페어링/상태 화면으로 전체 전환되어 메트릭이 사라지는가?\n   정확히 어느 쪽인지 file:line 근거와 함께.\n3. rLens 연결 상태(connected/disconnected)가 UI에 어떻게 반영되는가? (전체 화면 전환 vs 작은 점/아이콘/텍스트 인디케이터)\n4. 메트릭 값은 rLens 연결과 무관하게(Health Services 등 로컬 소스에서) 계속 갱신되는가?\n\n결론: 운동 중 rLens 끊김 시 \"메트릭 유지(인디케이터만)\"인지 \"상태화면 전환\"인지 한 단어로.\nUI/화면 전환 관련 .kt 파일(ui/, screens/, MainActivity.kt, 네비게이션, 연결상태 관련) 위주로 보라."
 }
 ```
 
@@ -9477,7 +9477,7 @@ id: toolu_017tDu7TrekkQB1me7jv3JJh
 {
   "description": "Apple Watch 끊김 시 화면 동작 조사",
   "subagent_type": "Explore",
-  "prompt": "읽기 전용 조사. 코드 수정 금지. 결론만 보고하라.\n\n대상: /home/jhkim/00.Projects/00.RunVision/runvision-watchos (Apple Watch, Swift, SwiftUI, watchOS).\n이 앱은 운동 메트릭(시간/속도/페이스/케이던스/거리/심박/고도)을 워치 화면에 표시하면서, 동시에 rLens 스마트글래스로 BLE(CoreBluetooth) 전송한다.\n\n핵심 질문: **운동 중에 rLens BLE 연결이 끊기면 워치 화면이 어떻게 되는가?**\n1. 운동 중 메트릭을 보여주는 워크아웃 화면(SwiftUI View)의 위치와, 그 화면이 표시될 조건은? (운동/활동 상태 기반인가, rLens 연결 상태 기반인가?)\n2. rLens BLE 연결이 끊겼을 때(disconnect/reconnecting):\n   (a) 메트릭 화면을 그대로 유지하고 연결 상태는 작은 인디케이터로만 표시하는가,\n   (b) 아니면 연결/스캔/상태 화면으로 전체 전환되어 메트릭이 사라지는가?\n   정확히 어느 쪽인지 file:line 근거와 함께.\n3. rLens 연결 상태(connected/disconnected)가 UI에 어떻게 반영되는가? (전체 화면 전환 vs 작은 점/아이콘/텍스트 인디케이터)\n4. 메트릭 값은 rLens 연결과 무관하게(HealthKit 등 로컬 소스에서) 계속 갱신되는가?\n\n결론: 운동 중 rLens 끊김 시 \"메트릭 유지(인디케이터만)\"인지 \"상태화면 전환\"인지 한 단어로.\nSwiftUI View 및 화면 전환/네비게이션, 연결상태 관련 .swift 파일(App/, UI/, Views/, AppState 등) 위주로 보라."
+  "prompt": "읽기 전용 조사. 코드 수정 금지. 결론만 보고하라.\n\n대상: /home/<USER>/00.Projects/00.RunVision/runvision-watchos (Apple Watch, Swift, SwiftUI, watchOS).\n이 앱은 운동 메트릭(시간/속도/페이스/케이던스/거리/심박/고도)을 워치 화면에 표시하면서, 동시에 rLens 스마트글래스로 BLE(CoreBluetooth) 전송한다.\n\n핵심 질문: **운동 중에 rLens BLE 연결이 끊기면 워치 화면이 어떻게 되는가?**\n1. 운동 중 메트릭을 보여주는 워크아웃 화면(SwiftUI View)의 위치와, 그 화면이 표시될 조건은? (운동/활동 상태 기반인가, rLens 연결 상태 기반인가?)\n2. rLens BLE 연결이 끊겼을 때(disconnect/reconnecting):\n   (a) 메트릭 화면을 그대로 유지하고 연결 상태는 작은 인디케이터로만 표시하는가,\n   (b) 아니면 연결/스캔/상태 화면으로 전체 전환되어 메트릭이 사라지는가?\n   정확히 어느 쪽인지 file:line 근거와 함께.\n3. rLens 연결 상태(connected/disconnected)가 UI에 어떻게 반영되는가? (전체 화면 전환 vs 작은 점/아이콘/텍스트 인디케이터)\n4. 메트릭 값은 rLens 연결과 무관하게(HealthKit 등 로컬 소스에서) 계속 갱신되는가?\n\n결론: 운동 중 rLens 끊김 시 \"메트릭 유지(인디케이터만)\"인지 \"상태화면 전환\"인지 한 단어로.\nSwiftUI View 및 화면 전환/네비게이션, 연결상태 관련 .swift 파일(App/, UI/, Views/, AppState 등) 위주로 보라."
 }
 ```
 
@@ -9507,7 +9507,7 @@ tool_use Bash
 id: toolu_01Y2Wo8pzp9FrvbqTmF9QWNL
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-wear\necho \"=== UI 화면 결정 로직 (연결상태 vs 운동상태로 화면 분기?) ===\"\ngrep -rnE \"when \\(|setContent|NavHost|composable|connectionState|ConnectionState|isConnected|screen|Screen\" app/src/main/kotlin/com/runvision/wear/MainActivity.kt 2>/dev/null | head -30\necho \"\"\necho \"=== 화면/스크린 파일 목록 ===\"\nls app/src/main/kotlin/com/runvision/wear/ui/screens/ 2>/dev/null\nfind app/src/main -iname \"*.kt\" | xargs grep -ln \"Composable\" 2>/dev/null | head",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-wear\necho \"=== UI 화면 결정 로직 (연결상태 vs 운동상태로 화면 분기?) ===\"\ngrep -rnE \"when \\(|setContent|NavHost|composable|connectionState|ConnectionState|isConnected|screen|Screen\" app/src/main/kotlin/com/runvision/wear/MainActivity.kt 2>/dev/null | head -30\necho \"\"\necho \"=== 화면/스크린 파일 목록 ===\"\nls app/src/main/kotlin/com/runvision/wear/ui/screens/ 2>/dev/null\nfind app/src/main -iname \"*.kt\" | xargs grep -ln \"Composable\" 2>/dev/null | head",
   "description": "Investigate Galaxy UI screen-switching logic"
 }
 ```
@@ -9571,7 +9571,7 @@ tool_use Bash
 id: toolu_01MEbsoPKGUZ2peH6DbwhyuS
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-wear\necho \"=== Galaxy RunningScreen: connectionState로 화면 가리나? (인디케이터 vs 게이트) ===\"\ngrep -nE \"connectionState|ConnectionState|isConnected|if .*[Cc]onnect\" app/src/main/kotlin/com/runvision/wear/ui/screens/RunningScreen.kt | head\necho \"  (RunningScreen이 connectionState 인자를 받나)\"\ngrep -nE \"fun RunningScreen\" app/src/main/kotlin/com/runvision/wear/ui/screens/RunningScreen.kt\necho \"\"\necho \"================ Apple Watch: 운동 화면 전환 로직 ================\"\ncd /home/jhkim/00.Projects/00.RunVision/runvision-watchos\necho \"=== 화면 분기: 연결상태 vs 운동상태 ===\"\ngrep -rnE \"WorkoutView|RunningView|CyclingView|case |switch |if .*state|isConnected|connectionState|\\.running|\\.ended|\\.notStarted\" Sources/RunVisionWatch/App/AppState.swift 2>/dev/null | head -25\necho \"--- 최상위 뷰 분기 파일 찾기 ---\"\ngrep -rlnE \"isConnected|connectionState\" Sources/RunVisionWatch/ 2>/dev/null | head",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-wear\necho \"=== Galaxy RunningScreen: connectionState로 화면 가리나? (인디케이터 vs 게이트) ===\"\ngrep -nE \"connectionState|ConnectionState|isConnected|if .*[Cc]onnect\" app/src/main/kotlin/com/runvision/wear/ui/screens/RunningScreen.kt | head\necho \"  (RunningScreen이 connectionState 인자를 받나)\"\ngrep -nE \"fun RunningScreen\" app/src/main/kotlin/com/runvision/wear/ui/screens/RunningScreen.kt\necho \"\"\necho \"================ Apple Watch: 운동 화면 전환 로직 ================\"\ncd /home/<USER>/00.Projects/00.RunVision/runvision-watchos\necho \"=== 화면 분기: 연결상태 vs 운동상태 ===\"\ngrep -rnE \"WorkoutView|RunningView|CyclingView|case |switch |if .*state|isConnected|connectionState|\\.running|\\.ended|\\.notStarted\" Sources/RunVisionWatch/App/AppState.swift 2>/dev/null | head -25\necho \"--- 최상위 뷰 분기 파일 찾기 ---\"\ngrep -rlnE \"isConnected|connectionState\" Sources/RunVisionWatch/ 2>/dev/null | head",
   "description": "Verify Galaxy RunningScreen + find Apple Watch view-switching logic"
 }
 ```
@@ -9640,7 +9640,7 @@ tool_use Bash
 id: toolu_01LCjyHhTyWLTFfcaPRCikTC
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-wear\necho \"=== Galaxy RunningScreen line 150-170 (연결 안 됨일 때 뭘 하나) ===\"\nsed -n '150,172p' app/src/main/kotlin/com/runvision/wear/ui/screens/RunningScreen.kt",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-wear\necho \"=== Galaxy RunningScreen line 150-170 (연결 안 됨일 때 뭘 하나) ===\"\nsed -n '150,172p' app/src/main/kotlin/com/runvision/wear/ui/screens/RunningScreen.kt",
   "description": "Read Galaxy RunningScreen disconnect indicator"
 }
 ```
@@ -9770,7 +9770,7 @@ tool_use Bash
 id: toolu_017Y8BEzhNApDuz7j9QesTkJ
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== manifest의 작은 기기 후보 (fr55/instinct/vivoactive 등) ===\"\ngrep -oE 'iq:product id=\"[^\"]*\"' manifest.xml | sed 's/iq:product id=//;s/\"//g' | grep -iE \"fr55|instinct|vivoactive|venusq|fr2[45]5s|fr165\" | tr '\\n' ' '; echo \"\"\necho \"\"\necho \"=== SDK 기기 DB에서 해상도 찾기 (fr55, instinct2s 등) ===\"\nDEVDIR=\"/mnt/c/Users/jinhee/AppData/Roaming/Garmin/ConnectIQ/Devices\"\nls \"$DEVDIR\" 2>/dev/null | grep -iE \"fr55|instinct2s|instinct2 |fr165$|vivoactive5\" | head\nfor d in fr55 instinct2s fr165; do\n  f=\"$DEVDIR/$d/compiler.json\"\n  if [ -f \"$f\" ]; then\n    echo \"--- $d ---\"\n    grep -oE '\"width\"[: ]*[0-9]+|\"height\"[: ]*[0-9]+' \"$f\" | head -2\n  fi\ndone",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== manifest의 작은 기기 후보 (fr55/instinct/vivoactive 등) ===\"\ngrep -oE 'iq:product id=\"[^\"]*\"' manifest.xml | sed 's/iq:product id=//;s/\"//g' | grep -iE \"fr55|instinct|vivoactive|venusq|fr2[45]5s|fr165\" | tr '\\n' ' '; echo \"\"\necho \"\"\necho \"=== SDK 기기 DB에서 해상도 찾기 (fr55, instinct2s 등) ===\"\nDEVDIR=\"/mnt/c/home/<USER>/AppData/Roaming/Garmin/ConnectIQ/Devices\"\nls \"$DEVDIR\" 2>/dev/null | grep -iE \"fr55|instinct2s|instinct2 |fr165$|vivoactive5\" | head\nfor d in fr55 instinct2s fr165; do\n  f=\"$DEVDIR/$d/compiler.json\"\n  if [ -f \"$f\" ]; then\n    echo \"--- $d ---\"\n    grep -oE '\"width\"[: ]*[0-9]+|\"height\"[: ]*[0-9]+' \"$f\" | head -2\n  fi\ndone",
   "description": "Find small device list and resolutions"
 }
 ```
@@ -9809,7 +9809,7 @@ tool_use Bash
 id: toolu_01V8ohDfaJfwf1Xhx4ZUXokL
 ```json
 {
-  "command": "DEVDIR=\"/mnt/c/Users/jinhee/AppData/Roaming/Garmin/ConnectIQ/Devices\"\nfor d in fr55 instinct2s instinct2 fr165 vivoactive5 venusq2m; do\n  f=\"$DEVDIR/$d/compiler.json\"\n  if [ -f \"$f\" ]; then\n    # 화면 해상도는 보통 큰 width/height 값 (런처아이콘 제외)\n    res=$(grep -oE '\"(width|height)\":[ ]*[0-9]+' \"$f\" | grep -oE '[0-9]+' | sort -rn | uniq | head -2 | tr '\\n' 'x')\n    shape=$(grep -oE '\"screenShape\":[ ]*\"[^\"]*\"' \"$f\" | head -1)\n    echo \"$d : 최대해상도후보 ${res} ; $shape\"\n  else echo \"$d : (compiler.json 없음)\"; fi\ndone",
+  "command": "DEVDIR=\"/mnt/c/home/<USER>/AppData/Roaming/Garmin/ConnectIQ/Devices\"\nfor d in fr55 instinct2s instinct2 fr165 vivoactive5 venusq2m; do\n  f=\"$DEVDIR/$d/compiler.json\"\n  if [ -f \"$f\" ]; then\n    # 화면 해상도는 보통 큰 width/height 값 (런처아이콘 제외)\n    res=$(grep -oE '\"(width|height)\":[ ]*[0-9]+' \"$f\" | grep -oE '[0-9]+' | sort -rn | uniq | head -2 | tr '\\n' 'x')\n    shape=$(grep -oE '\"screenShape\":[ ]*\"[^\"]*\"' \"$f\" | head -1)\n    echo \"$d : 최대해상도후보 ${res} ; $shape\"\n  else echo \"$d : (compiler.json 없음)\"; fi\ndone",
   "description": "Find actual screen resolutions of small devices"
 }
 ```
@@ -9867,7 +9867,7 @@ id: toolu_0136wxNhRpE8syHQR29oqaAK
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "            if (_isConnected) {\n                drawMetricGrid(dc);\n            } else {\n                drawStatusScreen(dc);\n            }",
   "new_string": "            if (true) {  // TEMP-SIM: 작은기기 그리드 fit 검증용 (검증 후 _isConnected로 복원)\n                drawMetricGrid(dc);\n            } else {\n                drawStatusScreen(dc);\n            }"
 }
@@ -9878,7 +9878,7 @@ id: toolu_0136wxNhRpE8syHQR29oqaAK
 tool_result
 id: toolu_0136wxNhRpE8syHQR29oqaAK
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9887,7 +9887,7 @@ tool_use Bash
 id: toolu_0187qU1vBbWx4uLqoLJgCCWW
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \">>> fr55 빌드 (208x208)\"\n./build.sh fr55 2>&1 | grep -E \"완료|BUILD SUCC|ERROR\" | tail -2\nSDKBIN=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\"\nW=$(wslpath -w \"$(pwd)\")\npowershell.exe -NoProfile -Command \"& '$SDKBIN\\\\monkeydo.bat' '$W\\\\bin\\\\RunVisionIQ.prg' fr55\" >/tmp/monkeydo_fr55.log 2>&1 &\necho \"monkeydo fr55 (pid $!)\"; sleep 8; echo \"시뮬레이터: fr55(208px) 그리드 확인 요망 — 겹침/잘림?\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \">>> fr55 빌드 (208x208)\"\n./build.sh fr55 2>&1 | grep -E \"완료|BUILD SUCC|ERROR\" | tail -2\nSDKBIN=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\"\nW=$(wslpath -w \"$(pwd)\")\npowershell.exe -NoProfile -Command \"& '$SDKBIN\\\\monkeydo.bat' '$W\\\\bin\\\\RunVisionIQ.prg' fr55\" >/tmp/monkeydo_fr55.log 2>&1 &\necho \"monkeydo fr55 (pid $!)\"; sleep 8; echo \"시뮬레이터: fr55(208px) 그리드 확인 요망 — 겹침/잘림?\"",
   "description": "Build fr55, load in sim for small-device fit check"
 }
 ```
@@ -9951,7 +9951,7 @@ tool_use Bash
 id: toolu_01A8FrJocvvptZLFqvLtunQK
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\nSDKBIN=\"/mnt/c/Users/jinhee/AppData/Roaming/Garmin/ConnectIQ/Sdks/connectiq-sdk-win-8.4.0-2025-12-03-5122605dc/bin\"\necho \">>> 시뮬레이터 실행\"\n\"$SDKBIN/simulator.exe\" >/dev/null 2>&1 &\nsleep 6\necho \">>> monkeydo fr55\"\nSDKB=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\"\nW=$(wslpath -w \"$(pwd)\")\npowershell.exe -NoProfile -Command \"& '$SDKB\\\\monkeydo.bat' '$W\\\\bin\\\\RunVisionIQ.prg' fr55\" >/tmp/monkeydo_fr55b.log 2>&1 &\necho \"monkeydo (pid $!)\"; sleep 10\necho \"=== 연결 결과 ===\"\ngrep -viE \"CMD.EXE|UNC|Windows \" /tmp/monkeydo_fr55b.log 2>&1 | tail -5\necho \"(시뮬레이터 창에 fr55 떴는지 확인 요망)\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\nSDKBIN=\"/mnt/c/home/<USER>/AppData/Roaming/Garmin/ConnectIQ/Sdks/connectiq-sdk-win-8.4.0-2025-12-03-5122605dc/bin\"\necho \">>> 시뮬레이터 실행\"\n\"$SDKBIN/simulator.exe\" >/dev/null 2>&1 &\nsleep 6\necho \">>> monkeydo fr55\"\nSDKB=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\"\nW=$(wslpath -w \"$(pwd)\")\npowershell.exe -NoProfile -Command \"& '$SDKB\\\\monkeydo.bat' '$W\\\\bin\\\\RunVisionIQ.prg' fr55\" >/tmp/monkeydo_fr55b.log 2>&1 &\necho \"monkeydo (pid $!)\"; sleep 10\necho \"=== 연결 결과 ===\"\ngrep -viE \"CMD.EXE|UNC|Windows \" /tmp/monkeydo_fr55b.log 2>&1 | tail -5\necho \"(시뮬레이터 창에 fr55 떴는지 확인 요망)\"",
   "description": "Relaunch simulator + load fr55"
 }
 ```
@@ -9994,7 +9994,7 @@ tool_use Bash
 id: toolu_012cTv3k3RJ9ouH27VdVmbvv
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\nSDKB=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\"\nW=$(wslpath -w \"$(pwd)\")\necho \">>> monkeydo fr55 재실행 (sim 준비됨)\"\npowershell.exe -NoProfile -Command \"& '$SDKB\\\\monkeydo.bat' '$W\\\\bin\\\\RunVisionIQ.prg' fr55\" 2>&1 | grep -viE \"CMD.EXE|UNC|Windows \" | tail -8\necho \">>> exit=${PIPESTATUS[0]}\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\nSDKB=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\"\nW=$(wslpath -w \"$(pwd)\")\necho \">>> monkeydo fr55 재실행 (sim 준비됨)\"\npowershell.exe -NoProfile -Command \"& '$SDKB\\\\monkeydo.bat' '$W\\\\bin\\\\RunVisionIQ.prg' fr55\" 2>&1 | grep -viE \"CMD.EXE|UNC|Windows \" | tail -8\necho \">>> exit=${PIPESTATUS[0]}\"",
   "description": "Re-run monkeydo fr55 foreground to capture load result"
 }
 ```
@@ -10047,7 +10047,7 @@ tool_use Bash
 id: toolu_01SyEz2kEQgCHRRhdf9JmDMA
 ```json
 {
-  "command": "echo \"=== simulator.exe 프로세스 (몇 개? 좀비?) ===\"\npowershell.exe -NoProfile -Command \"Get-Process simulator,connectiq -ErrorAction SilentlyContinue | Select-Object Id,ProcessName,StartTime | Format-Table -AutoSize\" 2>&1 | grep -viE \"^\\s*$\" | head\necho \"\"\necho \"=== ConnectIQ sim 통신 포트 LISTENING 상태 (기본 1234 / Hyper-V 42877) ===\"\npowershell.exe -NoProfile -Command \"Get-NetTCPConnection -State Listen -ErrorAction SilentlyContinue | Where-Object { \\$_.LocalPort -in 1234,7381,42877 } | Select-Object LocalAddress,LocalPort,OwningProcess | Format-Table -AutoSize\" 2>&1 | grep -viE \"^\\s*$\" | head\necho \"\"\necho \"=== monkeydo-custom.bat 흔적 (포트 42877 단서) ===\"\nls /home/jhkim/00.Projects/00.RunVision/runvision-iq/monkeydo-custom.bat 2>&1 | head -1",
+  "command": "echo \"=== simulator.exe 프로세스 (몇 개? 좀비?) ===\"\npowershell.exe -NoProfile -Command \"Get-Process simulator,connectiq -ErrorAction SilentlyContinue | Select-Object Id,ProcessName,StartTime | Format-Table -AutoSize\" 2>&1 | grep -viE \"^\\s*$\" | head\necho \"\"\necho \"=== ConnectIQ sim 통신 포트 LISTENING 상태 (기본 1234 / Hyper-V 42877) ===\"\npowershell.exe -NoProfile -Command \"Get-NetTCPConnection -State Listen -ErrorAction SilentlyContinue | Where-Object { \\$_.LocalPort -in 1234,7381,42877 } | Select-Object LocalAddress,LocalPort,OwningProcess | Format-Table -AutoSize\" 2>&1 | grep -viE \"^\\s*$\" | head\necho \"\"\necho \"=== monkeydo-custom.bat 흔적 (포트 42877 단서) ===\"\nls /home/<USER>/00.Projects/00.RunVision/runvision-iq/monkeydo-custom.bat 2>&1 | head -1",
   "description": "Diagnose simulator process + listening port (Hyper-V port issue)"
 }
 ```
@@ -10068,7 +10068,7 @@ LocalAddress LocalPort OwningProcess
 127.0.0.1        42877         31216
 
 === monkeydo-custom.bat 흔적 (포트 42877 단서) ===
-/home/jhkim/00.Projects/00.RunVision/runvision-iq/monkeydo-custom.bat
+/home/<USER>/00.Projects/00.RunVision/runvision-iq/monkeydo-custom.bat
 ```
 
 > AGENT
@@ -10105,7 +10105,7 @@ tool_use Bash
 id: toolu_011bSxhxXM2bDtwuoy9x65tg
 ```json
 {
-  "command": "SDKBIN=\"/mnt/c/Users/jinhee/AppData/Roaming/Garmin/ConnectIQ/Sdks/connectiq-sdk-win-8.4.0-2025-12-03-5122605dc/bin\"\necho \"=== 표준 monkeydo.bat 연결 방식 (포트/shell 단서) ===\"\ncat \"$SDKBIN/monkeydo.bat\" 2>/dev/null | grep -viE \"^@|^REM|^::\" | head -25",
+  "command": "SDKBIN=\"/mnt/c/home/<USER>/AppData/Roaming/Garmin/ConnectIQ/Sdks/connectiq-sdk-win-8.4.0-2025-12-03-5122605dc/bin\"\necho \"=== 표준 monkeydo.bat 연결 방식 (포트/shell 단서) ===\"\ncat \"$SDKBIN/monkeydo.bat\" 2>/dev/null | grep -viE \"^@|^REM|^::\" | head -25",
   "description": "Read standard monkeydo.bat to understand connection mechanism"
 }
 ```
@@ -10149,7 +10149,7 @@ tool_use Bash
 id: toolu_01AMWFgNrCVicmsn5drSiU6v
 ```json
 {
-  "command": "SDKBIN=\"/mnt/c/Users/jinhee/AppData/Roaming/Garmin/ConnectIQ/Sdks/connectiq-sdk-win-8.4.0-2025-12-03-5122605dc/bin\"\necho \"=== monkeydo.bat의 실제 실행부 (MonkeyDoDeux 호출, port/shell) ===\"\ngrep -niE \"MonkeyDoDeux|java|shell|port|-s |-p |42877|1234\" \"$SDKBIN/monkeydo.bat\" 2>/dev/null | head -15\necho \"\"\necho \"=== 시뮬레이터가 포트를 어디서 정하나 — SimulatorSettings / 환경 ===\"\nls \"$SDKBIN/../\" 2>/dev/null | head\nfind \"/mnt/c/Users/jinhee/AppData/Roaming/Garmin/ConnectIQ\" -iname \"*.json\" -path \"*ettings*\" 2>/dev/null | head\necho \"\"\necho \"=== shell.exe (표준)이 쓰는 포트 단서 ===\"\nls -la \"$SDKBIN/shell.exe\" 2>&1 | tail -1",
+  "command": "SDKBIN=\"/mnt/c/home/<USER>/AppData/Roaming/Garmin/ConnectIQ/Sdks/connectiq-sdk-win-8.4.0-2025-12-03-5122605dc/bin\"\necho \"=== monkeydo.bat의 실제 실행부 (MonkeyDoDeux 호출, port/shell) ===\"\ngrep -niE \"MonkeyDoDeux|java|shell|port|-s |-p |42877|1234\" \"$SDKBIN/monkeydo.bat\" 2>/dev/null | head -15\necho \"\"\necho \"=== 시뮬레이터가 포트를 어디서 정하나 — SimulatorSettings / 환경 ===\"\nls \"$SDKBIN/../\" 2>/dev/null | head\nfind \"/mnt/c/home/<USER>/AppData/Roaming/Garmin/ConnectIQ\" -iname \"*.json\" -path \"*ettings*\" 2>/dev/null | head\necho \"\"\necho \"=== shell.exe (표준)이 쓰는 포트 단서 ===\"\nls -la \"$SDKBIN/shell.exe\" 2>&1 | tail -1",
   "description": "Find monkeydo connection port/shell mechanism + sim port config"
 }
 ```
@@ -10176,7 +10176,7 @@ ReferenceGuides.html
 resources
 
 === shell.exe (표준)이 쓰는 포트 단서 ===
--rwxr--r-- 1 jhkim jhkim 8571392 Jan  7 19:34 /mnt/c/Users/jinhee/AppData/Roaming/Garmin/ConnectIQ/Sdks/connectiq-sdk-win-8.4.0-2025-12-03-5122605dc/bin/shell.exe
+-rwxr--r-- 1 jhkim jhkim 8571392 Jan  7 19:34 /mnt/c/home/<USER>/AppData/Roaming/Garmin/ConnectIQ/Sdks/connectiq-sdk-win-8.4.0-2025-12-03-5122605dc/bin/shell.exe
 ```
 
 > AGENT
@@ -10189,7 +10189,7 @@ tool_use Bash
 id: toolu_01TJExp2WMhT8sQwbScbqNb7
 ```json
 {
-  "command": "SDKBIN=\"/mnt/c/Users/jinhee/AppData/Roaming/Garmin/ConnectIQ/Sdks/connectiq-sdk-win-8.4.0-2025-12-03-5122605dc/bin\"\necho \">>> 기존 시뮬레이터 종료\"\npowershell.exe -NoProfile -Command \"Stop-Process -Name simulator -Force -ErrorAction SilentlyContinue; Start-Sleep 2\" 2>&1 | tail -1\necho \">>> 재실행\"\n\"$SDKBIN/simulator.exe\" >/dev/null 2>&1 &\nsleep 10\necho \">>> 새 시뮬레이터가 바인딩한 포트 확인\"\npowershell.exe -NoProfile -Command \"Get-NetTCPConnection -State Listen -ErrorAction SilentlyContinue | Where-Object { \\$_.OwningProcess -eq (Get-Process simulator -ErrorAction SilentlyContinue).Id } | Select-Object LocalAddress,LocalPort | Format-Table -AutoSize\" 2>&1 | grep -viE \"^\\s*$\" | head",
+  "command": "SDKBIN=\"/mnt/c/home/<USER>/AppData/Roaming/Garmin/ConnectIQ/Sdks/connectiq-sdk-win-8.4.0-2025-12-03-5122605dc/bin\"\necho \">>> 기존 시뮬레이터 종료\"\npowershell.exe -NoProfile -Command \"Stop-Process -Name simulator -Force -ErrorAction SilentlyContinue; Start-Sleep 2\" 2>&1 | tail -1\necho \">>> 재실행\"\n\"$SDKBIN/simulator.exe\" >/dev/null 2>&1 &\nsleep 10\necho \">>> 새 시뮬레이터가 바인딩한 포트 확인\"\npowershell.exe -NoProfile -Command \"Get-NetTCPConnection -State Listen -ErrorAction SilentlyContinue | Where-Object { \\$_.OwningProcess -eq (Get-Process simulator -ErrorAction SilentlyContinue).Id } | Select-Object LocalAddress,LocalPort | Format-Table -AutoSize\" 2>&1 | grep -viE \"^\\s*$\" | head",
   "description": "Restart sim cleanly, check which port it binds"
 }
 ```
@@ -10303,7 +10303,7 @@ tool_use Write
 id: toolu_01BKJcSzQHheo87vFoxxujda
 ```json
 {
-  "file_path": "/mnt/c/Users/jinhee/sim-shell-42877.bat",
+  "file_path": "/mnt/c/home/<USER>/sim-shell-42877.bat",
   "content": "@echo off\nREM ConnectIQ 시뮬레이터 통신 래퍼 — WSL2/Hyper-V 환경에서 sim이 TCP 42877에 바인딩됨.\nREM 표준 shell.exe는 기본 1234로 접속해 실패하므로 transport_args로 42877 지정.\n\"C:\\Users\\jinhee\\AppData\\Roaming\\Garmin\\ConnectIQ\\Sdks\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\bin\\shell.exe\" --transport=tcp --transport_args=127.0.0.1:42877 %*\n"
 }
 ```
@@ -10313,7 +10313,7 @@ id: toolu_01BKJcSzQHheo87vFoxxujda
 tool_result
 id: toolu_01BKJcSzQHheo87vFoxxujda
 ```
-File created successfully at: /mnt/c/Users/jinhee/sim-shell-42877.bat (file state is current in your context — no need to Read it back)
+File created successfully at: /mnt/c/home/<USER>/sim-shell-42877.bat (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10322,7 +10322,7 @@ tool_use Bash
 id: toolu_013fv9DzDHHz3LGFSb3W4vwL
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \">>> fr55 빌드 (현재 임시강제 그리드)\"\n./build.sh fr55 2>&1 | grep -E \"BUILD SUCC|완료\" | tail -1\nSDKB=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\"\nW=$(wslpath -w \"$(pwd)\")\necho \">>> MonkeyDoDeux + 42877 래퍼로 fr55 로드\"\ntimeout 40 powershell.exe -NoProfile -Command \"& java -classpath '$SDKB\\\\monkeybrains.jar' com.garmin.monkeybrains.monkeydodeux.MonkeyDoDeux -f '$W\\\\bin\\\\RunVisionIQ.prg' -d fr55 -s 'C:\\\\Users\\\\jinhee\\\\sim-shell-42877.bat'\" 2>&1 | grep -viE \"CMD.EXE|UNC|Windows \" | tail -10\necho \">>> exit=${PIPESTATUS[0]}\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \">>> fr55 빌드 (현재 임시강제 그리드)\"\n./build.sh fr55 2>&1 | grep -E \"BUILD SUCC|완료\" | tail -1\nSDKB=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\"\nW=$(wslpath -w \"$(pwd)\")\necho \">>> MonkeyDoDeux + 42877 래퍼로 fr55 로드\"\ntimeout 40 powershell.exe -NoProfile -Command \"& java -classpath '$SDKB\\\\monkeybrains.jar' com.garmin.monkeybrains.monkeydodeux.MonkeyDoDeux -f '$W\\\\bin\\\\RunVisionIQ.prg' -d fr55 -s 'C:\\\\Users\\\\jinhee\\\\sim-shell-42877.bat'\" 2>&1 | grep -viE \"CMD.EXE|UNC|Windows \" | tail -10\necho \">>> exit=${PIPESTATUS[0]}\"",
   "description": "Load fr55 via MonkeyDoDeux with port-42877 shell wrapper"
 }
 ```
@@ -10422,7 +10422,7 @@ tool_use Bash
 id: toolu_011YYbrWAz5s5rpf1B2oWU86
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== git status (Codex 변경 확인) ===\"\ngit status --short\necho \"\"\necho \"=== Codex가 고친 run-simulator.bat 전체 ===\"\ncat run-simulator.bat 2>/dev/null\necho \"\"\necho \"=== 42877 포트를 다루나? ===\"\ngrep -nE \"42877|transport|1234|port\" run-simulator.bat || echo \"  → 포트 처리 없음 (기본 1234 사용 = 이 시스템선 연결 실패할 것)\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== git status (Codex 변경 확인) ===\"\ngit status --short\necho \"\"\necho \"=== Codex가 고친 run-simulator.bat 전체 ===\"\ncat run-simulator.bat 2>/dev/null\necho \"\"\necho \"=== 42877 포트를 다루나? ===\"\ngrep -nE \"42877|transport|1234|port\" run-simulator.bat || echo \"  → 포트 처리 없음 (기본 1234 사용 = 이 시스템선 연결 실패할 것)\"",
   "description": "Read Codex-modified run-simulator.bat, check port handling"
 }
 ```
@@ -10441,7 +10441,7 @@ id: toolu_011YYbrWAz5s5rpf1B2oWU86
 title RunVision-IQ Simulator
 
 REM === Settings ===
-set SDK_PATH=C:\Users\jinhee\AppData\Roaming\Garmin\ConnectIQ\Sdks\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\bin
+set SDK_PATH=C:\Users\<USER>\AppData\Roaming\Garmin\ConnectIQ\Sdks\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\bin
 set JAVA_PATH=C:\Program Files\Java\jdk-11.0.2\bin\java.exe
 set MONKEYC=%SDK_PATH%\monkeyc.bat
 set PROJECT_DIR=D:\00.Projects\00.RunVision\runvision-iq
@@ -10560,7 +10560,7 @@ tool_use Bash
 id: toolu_01EDsNdFwqrJhJwxE94gaorJ
 ```json
 {
-  "command": "echo \"=== VS Code 설치된 확장 중 Garmin/Monkey C 있나 ===\"\nif command -v code >/dev/null 2>&1; then\n  code --list-extensions 2>/dev/null | grep -iE \"monkey|garmin\" || echo \"  → Monkey C/Garmin 확장 미설치 (또는 WSL측에 없음)\"\nelse\n  echo \"  (WSL에 'code' CLI 없음 — VS Code가 Windows측 또는 PATH 미등록)\"\nfi\necho \"\"\necho \"=== Windows VS Code 확장 폴더에 monkey-c 있나 ===\"\nls -d /mnt/c/Users/jinhee/.vscode/extensions/garmin.monkey-c-* 2>/dev/null | head || echo \"  → Windows .vscode/extensions에 garmin.monkey-c 없음\"",
+  "command": "echo \"=== VS Code 설치된 확장 중 Garmin/Monkey C 있나 ===\"\nif command -v code >/dev/null 2>&1; then\n  code --list-extensions 2>/dev/null | grep -iE \"monkey|garmin\" || echo \"  → Monkey C/Garmin 확장 미설치 (또는 WSL측에 없음)\"\nelse\n  echo \"  (WSL에 'code' CLI 없음 — VS Code가 Windows측 또는 PATH 미등록)\"\nfi\necho \"\"\necho \"=== Windows VS Code 확장 폴더에 monkey-c 있나 ===\"\nls -d /mnt/c/home/<USER>/.vscode/extensions/garmin.monkey-c-* 2>/dev/null | head || echo \"  → Windows .vscode/extensions에 garmin.monkey-c 없음\"",
   "description": "Check if Garmin Monkey C VS Code extension is installed"
 }
 ```
@@ -10574,7 +10574,7 @@ id: toolu_01EDsNdFwqrJhJwxE94gaorJ
 garmin.monkey-c
 
 === Windows VS Code 확장 폴더에 monkey-c 있나 ===
-/mnt/c/Users/jinhee/.vscode/extensions/garmin.monkey-c-1.1.3
+/mnt/c/home/<USER>/.vscode/extensions/garmin.monkey-c-1.1.3
 ```
 
 > AGENT
@@ -10592,7 +10592,7 @@ garmin.monkey-c
 
 `★ Insight ─────────────────────────────────────`
 - 확장이 보통 안 보이는 이유: Monkey C 확장은 사이드바 UI가 거의 없고 **명령 팔레트(Ctrl+Shift+P)에서 "Monkey C:"** 로 호출하는 방식. 그래서 "어디 있지?" 하게 됩니다.
-- 첫 실행 시 **ConnectIQ SDK 경로**를 물으면 `C:\Users\jinhee\AppData\Roaming\Garmin\ConnectIQ\Sdks\connectiq-sdk-win-8.4.0-...` 지정. (이미 fr165 봤으면 설정돼 있을 것.)
+- 첫 실행 시 **ConnectIQ SDK 경로**를 물으면 `C:\Users\<USER>\AppData\Roaming\Garmin\ConnectIQ\Sdks\connectiq-sdk-win-8.4.0-...` 지정. (이미 fr165 봤으면 설정돼 있을 것.)
 - ⚠️ WSL-remote 창이면 확장이 WSL측에서 도는데 SDK는 Windows라 경로가 꼬일 수 있음 — 그 경우 **Windows쪽 VS Code 창**에서 `D:\`가 아닌 실제 폴더(`\\wsl.localhost\...\runvision-iq` 또는 Windows 사본)를 열어 실행.
 `─────────────────────────────────────────────────`
 
@@ -10633,7 +10633,7 @@ tool_use Bash
 id: toolu_01L2TyaHFpvS7bbe19HMfApQ
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \">>> fr55 빌드 (임시강제 그리드 상태)\"\n./build.sh fr55 2>&1 | grep -E \"BUILD SUCC|완료\" | tail -1\nSDKBIN=\"/mnt/c/Users/jinhee/AppData/Roaming/Garmin/ConnectIQ/Sdks/connectiq-sdk-win-8.4.0-2025-12-03-5122605dc/bin\"\necho \">>> 시뮬레이터 실행\"\n\"$SDKBIN/simulator.exe\" >/dev/null 2>&1 &\nsleep 12\necho \">>> 바인딩 포트 확인 (재부팅 후)\"\npowershell.exe -NoProfile -Command \"\\$p=(Get-Process simulator -ErrorAction SilentlyContinue).Id; if(\\$p){Get-NetTCPConnection -State Listen -OwningProcess \\$p -ErrorAction SilentlyContinue | Select-Object LocalPort | Format-Table -AutoSize} else {'simulator 프로세스 없음'}\" 2>&1 | grep -viE \"^\\s*$\" | head",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \">>> fr55 빌드 (임시강제 그리드 상태)\"\n./build.sh fr55 2>&1 | grep -E \"BUILD SUCC|완료\" | tail -1\nSDKBIN=\"/mnt/c/home/<USER>/AppData/Roaming/Garmin/ConnectIQ/Sdks/connectiq-sdk-win-8.4.0-2025-12-03-5122605dc/bin\"\necho \">>> 시뮬레이터 실행\"\n\"$SDKBIN/simulator.exe\" >/dev/null 2>&1 &\nsleep 12\necho \">>> 바인딩 포트 확인 (재부팅 후)\"\npowershell.exe -NoProfile -Command \"\\$p=(Get-Process simulator -ErrorAction SilentlyContinue).Id; if(\\$p){Get-NetTCPConnection -State Listen -OwningProcess \\$p -ErrorAction SilentlyContinue | Select-Object LocalPort | Format-Table -AutoSize} else {'simulator 프로세스 없음'}\" 2>&1 | grep -viE \"^\\s*$\" | head",
   "description": "Rebuild fr55, launch sim post-reboot, check bound port"
 }
 ```
@@ -10663,7 +10663,7 @@ tool_use Bash
 id: toolu_01RMo9bTsCsDiQahp1FZPqZk
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\nSDKB=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\"\nW=$(wslpath -w \"$(pwd)\")\necho \">>> monkeydo fr55 (표준, 1234)\"\ntimeout 40 powershell.exe -NoProfile -Command \"& '$SDKB\\\\monkeydo.bat' '$W\\\\bin\\\\RunVisionIQ.prg' fr55\" >/tmp/md_fr55.log 2>&1 &\nMDPID=$!\nsleep 15\necho \"=== 로그 ===\"\ngrep -viE \"CMD.EXE|UNC|Windows \" /tmp/md_fr55.log 2>&1 | tail -6\necho \"=== fr55 sim 떴는지 (앱 로드 후 monkeydo는 계속 attach 상태) ===\"\necho \"(시뮬레이터 창에 fr55 그리드 확인 요망 — 겹침/잘림?)\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\nSDKB=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\"\nW=$(wslpath -w \"$(pwd)\")\necho \">>> monkeydo fr55 (표준, 1234)\"\ntimeout 40 powershell.exe -NoProfile -Command \"& '$SDKB\\\\monkeydo.bat' '$W\\\\bin\\\\RunVisionIQ.prg' fr55\" >/tmp/md_fr55.log 2>&1 &\nMDPID=$!\nsleep 15\necho \"=== 로그 ===\"\ngrep -viE \"CMD.EXE|UNC|Windows \" /tmp/md_fr55.log 2>&1 | tail -6\necho \"=== fr55 sim 떴는지 (앱 로드 후 monkeydo는 계속 attach 상태) ===\"\necho \"(시뮬레이터 창에 fr55 그리드 확인 요망 — 겹침/잘림?)\"",
   "description": "Load fr55 via standard monkeydo (port 1234 now available)"
 }
 ```
@@ -10757,7 +10757,7 @@ tool_use Bash
 id: toolu_015iiEsXev1jusrbTiqPUT7M
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \">>> fr165 빌드\"\n./build.sh fr165 2>&1 | grep -E \"BUILD SUCC|완료\" | tail -1\nSDKB=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\"\nW=$(wslpath -w \"$(pwd)\")\necho \">>> monkeydo fr165 (foreground, timeout 30 — 붙으면 attach 상태로 hang, 실패하면 즉시 Unable)\"\ntimeout 30 powershell.exe -NoProfile -Command \"& '$SDKB\\\\monkeydo.bat' '$W\\\\bin\\\\RunVisionIQ.prg' fr165\" 2>&1 | grep -aviE \"CMD.EXE 으로|UNC 경로|Windows 디렉터리|디렉터리를 사용\" | tail -8\nRC=${PIPESTATUS[0]}\necho \">>> exit=$RC (124=timeout=계속 attach=로드성공 / 0,1=조기종료=실패)\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \">>> fr165 빌드\"\n./build.sh fr165 2>&1 | grep -E \"BUILD SUCC|완료\" | tail -1\nSDKB=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\"\nW=$(wslpath -w \"$(pwd)\")\necho \">>> monkeydo fr165 (foreground, timeout 30 — 붙으면 attach 상태로 hang, 실패하면 즉시 Unable)\"\ntimeout 30 powershell.exe -NoProfile -Command \"& '$SDKB\\\\monkeydo.bat' '$W\\\\bin\\\\RunVisionIQ.prg' fr165\" 2>&1 | grep -aviE \"CMD.EXE 으로|UNC 경로|Windows 디렉터리|디렉터리를 사용\" | tail -8\nRC=${PIPESTATUS[0]}\necho \">>> exit=$RC (124=timeout=계속 attach=로드성공 / 0,1=조기종료=실패)\"",
   "description": "Build fr165, monkeydo fr165, observe connect vs fail via exit code"
 }
 ```
@@ -10809,7 +10809,7 @@ tool_use Bash
 id: toolu_01EhofzbNMawsvPgqJQ8JHTi
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \">>> 모든 simulator/java(monkeydo) 종료 (clean slate)\"\npowershell.exe -NoProfile -Command \"Stop-Process -Name simulator,java -Force -ErrorAction SilentlyContinue; Start-Sleep 3; 'killed'\" 2>&1 | tail -1\necho \">>> 포트 해제 대기\"\nsleep 3\necho \">>> 단일 시뮬레이터 새로 실행\"\nSDKBIN=\"/mnt/c/Users/jinhee/AppData/Roaming/Garmin/ConnectIQ/Sdks/connectiq-sdk-win-8.4.0-2025-12-03-5122605dc/bin\"\n\"$SDKBIN/simulator.exe\" >/dev/null 2>&1 &\nsleep 14\necho \">>> sim 인스턴스 수 + 포트 (단일이어야)\"\npowershell.exe -NoProfile -Command \"\\$s=Get-Process simulator -ErrorAction SilentlyContinue; 'sim count: '+(\\$s|Measure-Object).Count; if(\\$s){Get-NetTCPConnection -State Listen -OwningProcess \\$s.Id -ErrorAction SilentlyContinue | Select-Object LocalPort | Format-Table -AutoSize}\" 2>&1 | grep -viE \"^\\s*$\" | head",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \">>> 모든 simulator/java(monkeydo) 종료 (clean slate)\"\npowershell.exe -NoProfile -Command \"Stop-Process -Name simulator,java -Force -ErrorAction SilentlyContinue; Start-Sleep 3; 'killed'\" 2>&1 | tail -1\necho \">>> 포트 해제 대기\"\nsleep 3\necho \">>> 단일 시뮬레이터 새로 실행\"\nSDKBIN=\"/mnt/c/home/<USER>/AppData/Roaming/Garmin/ConnectIQ/Sdks/connectiq-sdk-win-8.4.0-2025-12-03-5122605dc/bin\"\n\"$SDKBIN/simulator.exe\" >/dev/null 2>&1 &\nsleep 14\necho \">>> sim 인스턴스 수 + 포트 (단일이어야)\"\npowershell.exe -NoProfile -Command \"\\$s=Get-Process simulator -ErrorAction SilentlyContinue; 'sim count: '+(\\$s|Measure-Object).Count; if(\\$s){Get-NetTCPConnection -State Listen -OwningProcess \\$s.Id -ErrorAction SilentlyContinue | Select-Object LocalPort | Format-Table -AutoSize}\" 2>&1 | grep -viE \"^\\s*$\" | head",
   "description": "Clean slate: kill all sims, fresh single launch, check port"
 }
 ```
@@ -10841,7 +10841,7 @@ tool_use Bash
 id: toolu_01NoP4k7nuEQJ3trkDLUnNrF
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\nSDKB=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\"\nW=$(wslpath -w \"$(pwd)\")\necho \">>> monkeydo fr165 (timeout 25: 124=hang=로드성공 / 0=조기종료=실패)\"\ntimeout 25 powershell.exe -NoProfile -Command \"& '$SDKB\\\\monkeydo.bat' '$W\\\\bin\\\\RunVisionIQ.prg' fr165\" > /tmp/md_clean.log 2>&1\necho \">>> exit=$? (124면 성공)\"\necho \"=== 로그 (전체) ===\"\niconv -f CP949 -t UTF-8 /tmp/md_clean.log 2>/dev/null | tail -8 || tail -8 /tmp/md_clean.log",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\nSDKB=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\"\nW=$(wslpath -w \"$(pwd)\")\necho \">>> monkeydo fr165 (timeout 25: 124=hang=로드성공 / 0=조기종료=실패)\"\ntimeout 25 powershell.exe -NoProfile -Command \"& '$SDKB\\\\monkeydo.bat' '$W\\\\bin\\\\RunVisionIQ.prg' fr165\" > /tmp/md_clean.log 2>&1\necho \">>> exit=$? (124면 성공)\"\necho \"=== 로그 (전체) ===\"\niconv -f CP949 -t UTF-8 /tmp/md_clean.log 2>/dev/null | tail -8 || tail -8 /tmp/md_clean.log",
   "description": "monkeydo fr165 on clean single sim, observe success via exit code"
 }
 ```
@@ -10870,7 +10870,7 @@ tool_use Bash
 id: toolu_01HdF7TtREZ5sa8wPZUqySUw
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\nSDKB=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\"\nW=$(wslpath -w \"$(pwd)\")\necho \">>> 작업디렉터리를 C:\\\\Users\\\\jinhee 로 강제 후 monkeydo (UNC cwd 폴백 제거)\"\ntimeout 25 powershell.exe -NoProfile -Command \"Set-Location 'C:\\\\Users\\\\jinhee'; & '$SDKB\\\\monkeydo.bat' '$W\\\\bin\\\\RunVisionIQ.prg' fr165\" > /tmp/md_cwd.log 2>&1\necho \">>> exit=$? (124=hang=성공 / 0=실패)\"\necho \"=== 로그 ===\"\niconv -f CP949 -t UTF-8 /tmp/md_cwd.log 2>/dev/null | tail -6 || tail -6 /tmp/md_cwd.log",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\nSDKB=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\"\nW=$(wslpath -w \"$(pwd)\")\necho \">>> 작업디렉터리를 C:\\\\Users\\\\jinhee 로 강제 후 monkeydo (UNC cwd 폴백 제거)\"\ntimeout 25 powershell.exe -NoProfile -Command \"Set-Location 'C:\\\\Users\\\\jinhee'; & '$SDKB\\\\monkeydo.bat' '$W\\\\bin\\\\RunVisionIQ.prg' fr165\" > /tmp/md_cwd.log 2>&1\necho \">>> exit=$? (124=hang=성공 / 0=실패)\"\necho \"=== 로그 ===\"\niconv -f CP949 -t UTF-8 /tmp/md_cwd.log 2>/dev/null | tail -6 || tail -6 /tmp/md_cwd.log",
   "description": "monkeydo with Windows cwd to avoid UNC fallback"
 }
 ```
@@ -10880,7 +10880,7 @@ id: toolu_01HdF7TtREZ5sa8wPZUqySUw
 tool_result
 id: toolu_01HdF7TtREZ5sa8wPZUqySUw
 ```
->>> 작업디렉터리를 C:\Users\jinhee 로 강제 후 monkeydo (UNC cwd 폴백 제거)
+>>> 작업디렉터리를 C:\Users\<USER>로 강제 후 monkeydo (UNC cwd 폴백 제거)
 >>> exit=0 (124=hang=성공 / 0=실패)
 === 로그 ===
 Unable to connect to simulator.
@@ -10918,7 +10918,7 @@ tool_use Bash
 id: toolu_011TTmjXjJoeoGaCfZ8wzYHY
 ```json
 {
-  "command": "node \"/home/jhkim/.claude/plugins/cache/openai-codex/codex/1.0.4/scripts/codex-companion.mjs\" ta[REDACTED_SK] --json",
+  "command": "node \"/home/<USER>/.claude/plugins/cache/openai-codex/codex/1.0.4/scripts/codex-companion.mjs\" ta[REDACTED_SK] --json",
   "description": "Check for resumable Codex rescue thread"
 }
 ```
@@ -10988,9 +10988,9 @@ FR55 시뮬레이터 연결 문제의 실제 원인은 manifest.xml이나 SDK �
 
 **수정한 파일 2개:**
 
-1. `/home/jhkim/00.Projects/00.RunVision/runvision-iq/monkey.jungle` — FR55 qualifier를 명시적으로 추가 (base source/resource 사용)
+1. `/home/<USER>/00.Projects/00.RunVision/runvision-iq/monkey.jungle` — FR55 qualifier를 명시적으로 추가 (base source/resource 사용)
 
-2. `/home/jhkim/00.Projects/00.RunVision/runvision-iq/build.sh` — 기본 빌드 타깃을 `fr55`로 변경, 출력 파일명을 `RunVisionIQ-<device>.prg` 형식으로 변경 (기기별 PRG 혼용 방지)
+2. `/home/<USER>/00.Projects/00.RunVision/runvision-iq/build.sh` — 기본 빌드 타깃을 `fr55`로 변경, 출력 파일명을 `RunVisionIQ-<device>.prg` 형식으로 변경 (기기별 PRG 혼용 방지)
 
 빌드 실행은 하지 않았습니다. 이제 시뮬레이터에서 FR55를 선택하고 빌드하면 연결이 됩니다. 빌드 후 문제가 남아 있으면 정확한 오류 메시지를 공유해 주세요.
 agentId: a0ced2efe0907b6b7 (use SendMessage with to: 'a0ced2efe0907b6b7' to continue this agent)
@@ -11013,9 +11013,9 @@ FR55 시뮬레이터 연결 문제의 실제 원인은 manifest.xml이나 SDK �
 
 **수정한 파일 2개:**
 
-1. `/home/jhkim/00.Projects/00.RunVision/runvision-iq/monkey.jungle` — FR55 qualifier를 명시적으로 추가 (base source/resource 사용)
+1. `/home/<USER>/00.Projects/00.RunVision/runvision-iq/monkey.jungle` — FR55 qualifier를 명시적으로 추가 (base source/resource 사용)
 
-2. `/home/jhkim/00.Projects/00.RunVision/runvision-iq/build.sh` — 기본 빌드 타깃을 `fr55`로 변경, 출력 파일명을 `RunVisionIQ-<device>.prg` 형식으로 변경 (기기별 PRG 혼용 방지)
+2. `/home/<USER>/00.Projects/00.RunVision/runvision-iq/build.sh` — 기본 빌드 타깃을 `fr55`로 변경, 출력 파일명을 `RunVisionIQ-<device>.prg` 형식으로 변경 (기기별 PRG 혼용 방지)
 
 빌드 실행은 하지 않았습니다. 이제 시뮬레이터에서 FR55를 선택하고 빌드하면 연결이 됩니다. 빌드 후 문제가 남아 있으면 정확한 오류 메시지를 공유해 주세요.
 
@@ -11033,7 +11033,7 @@ tool_use Bash
 id: toolu_01MWoQWEjQ8ppVxneG5ns9eM
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== sim 떠있나 + 포트 ===\"\npowershell.exe -NoProfile -Command \"\\$s=Get-Process simulator -ErrorAction SilentlyContinue; if(\\$s){'sim up; ports: '+((Get-NetTCPConnection -State Listen -OwningProcess \\$s.Id -ErrorAction SilentlyContinue).LocalPort -join ',')}else{'sim 없음'}\" 2>&1 | grep -viE \"^\\s*$\" | tail -1\necho \"\"\necho \"=== Codex build.sh로 빌드 (기본 fr55) ===\"\n./build.sh 2>&1 | grep -E \"동기화|BUILD SUCC|완료|ERROR\" | tail -3\necho \"산출물: $(ls -1 bin/RunVisionIQ-fr55.prg 2>/dev/null || echo '(RunVisionIQ-fr55.prg 없음)')\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== sim 떠있나 + 포트 ===\"\npowershell.exe -NoProfile -Command \"\\$s=Get-Process simulator -ErrorAction SilentlyContinue; if(\\$s){'sim up; ports: '+((Get-NetTCPConnection -State Listen -OwningProcess \\$s.Id -ErrorAction SilentlyContinue).LocalPort -join ',')}else{'sim 없음'}\" 2>&1 | grep -viE \"^\\s*$\" | tail -1\necho \"\"\necho \"=== Codex build.sh로 빌드 (기본 fr55) ===\"\n./build.sh 2>&1 | grep -E \"동기화|BUILD SUCC|완료|ERROR\" | tail -3\necho \"산출물: $(ls -1 bin/RunVisionIQ-fr55.prg 2>/dev/null || echo '(RunVisionIQ-fr55.prg 없음)')\"",
   "description": "Check sim + build fr55 via Codex-modified build.sh"
 }
 ```
@@ -11063,7 +11063,7 @@ tool_use Bash
 id: toolu_01WKGnbKL1P9XgC4hazddcLv
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\nSDKBIN=\"/mnt/c/Users/jinhee/AppData/Roaming/Garmin/ConnectIQ/Sdks/connectiq-sdk-win-8.4.0-2025-12-03-5122605dc/bin\"\necho \">>> 시뮬레이터 실행\"\n\"$SDKBIN/simulator.exe\" >/dev/null 2>&1 &\nsleep 13\nSDKB=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\"\nW=$(wslpath -w \"$(pwd)\")\necho \">>> monkeydo RunVisionIQ-fr55.prg fr55 (timeout 25: 124=hang=성공 / 0=실패)\"\ntimeout 25 powershell.exe -NoProfile -Command \"& '$SDKB\\\\monkeydo.bat' '$W\\\\bin\\\\RunVisionIQ-fr55.prg' fr55\" > /tmp/md_codexfix.log 2>&1\necho \">>> exit=$?\"\necho \"=== 로그 ===\"\niconv -f CP949 -t UTF-8 /tmp/md_codexfix.log 2>/dev/null | tail -6 || tail -6 /tmp/md_codexfix.log",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\nSDKBIN=\"/mnt/c/home/<USER>/AppData/Roaming/Garmin/ConnectIQ/Sdks/connectiq-sdk-win-8.4.0-2025-12-03-5122605dc/bin\"\necho \">>> 시뮬레이터 실행\"\n\"$SDKBIN/simulator.exe\" >/dev/null 2>&1 &\nsleep 13\nSDKB=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\"\nW=$(wslpath -w \"$(pwd)\")\necho \">>> monkeydo RunVisionIQ-fr55.prg fr55 (timeout 25: 124=hang=성공 / 0=실패)\"\ntimeout 25 powershell.exe -NoProfile -Command \"& '$SDKB\\\\monkeydo.bat' '$W\\\\bin\\\\RunVisionIQ-fr55.prg' fr55\" > /tmp/md_codexfix.log 2>&1\necho \">>> exit=$?\"\necho \"=== 로그 ===\"\niconv -f CP949 -t UTF-8 /tmp/md_codexfix.log 2>/dev/null | tail -6 || tail -6 /tmp/md_codexfix.log",
   "description": "Launch sim + monkeydo fr55 (Codex fix) + observe"
 }
 ```
@@ -11117,7 +11117,7 @@ tool_use Bash
 id: toolu_01Ph188PZsdnLUWrxR7M8c2E
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== .vscode 설정 (launch.json = 확장 Run 설정) ===\"\nls -la .vscode/ 2>/dev/null || echo \"(.vscode 폴더 없음 → launch.json 없음 → 확장 'Run App' 안 뜸)\"\necho \"\"\necho \"=== VS Code가 WSL-remote인가 (확장이 WSL측서 도는지) ===\"\necho \"TERM_PROGRAM=$TERM_PROGRAM ; VSCODE_IPC_HOOK_CLI=${VSCODE_IPC_HOOK_CLI:+set}\"\necho \"REMOTE? $([ -n \"$WSL_DISTRO_NAME\" ] && echo \"WSL($WSL_DISTRO_NAME) — code 명령이 WSL서 돌면 확장도 WSL측\")\"\necho \"\"\necho \"=== Monkey C 확장이 SDK 경로 설정을 갖고 있나 (settings) ===\"\ncat .vscode/settings.json 2>/dev/null | grep -iE \"monkey|sdk|device\" || echo \"(프로젝트 settings에 monkey SDK 설정 없음)\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== .vscode 설정 (launch.json = 확장 Run 설정) ===\"\nls -la .vscode/ 2>/dev/null || echo \"(.vscode 폴더 없음 → launch.json 없음 → 확장 'Run App' 안 뜸)\"\necho \"\"\necho \"=== VS Code가 WSL-remote인가 (확장이 WSL측서 도는지) ===\"\necho \"TERM_PROGRAM=$TERM_PROGRAM ; VSCODE_IPC_HOOK_CLI=${VSCODE_IPC_HOOK_CLI:+set}\"\necho \"REMOTE? $([ -n \"$WSL_DISTRO_NAME\" ] && echo \"WSL($WSL_DISTRO_NAME) — code 명령이 WSL서 돌면 확장도 WSL측\")\"\necho \"\"\necho \"=== Monkey C 확장이 SDK 경로 설정을 갖고 있나 (settings) ===\"\ncat .vscode/settings.json 2>/dev/null | grep -iE \"monkey|sdk|device\" || echo \"(프로젝트 settings에 monkey SDK 설정 없음)\"",
   "description": "Check VS Code extension setup (launch.json, remote, SDK path)"
 }
 ```
@@ -11381,7 +11381,7 @@ tool_use Bash
 id: toolu_017viKNRDTuYQDGNNbcxkrYw
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\nSDKBIN=\"/mnt/c/Users/jinhee/AppData/Roaming/Garmin/ConnectIQ/Sdks/connectiq-sdk-win-8.4.0-2025-12-03-5122605dc/bin\"\necho \">>> sim 확실히 실행 (없으면 새로)\"\npowershell.exe -NoProfile -Command \"if(-not (Get-Process simulator -EA SilentlyContinue)){Start-Process 'C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\\\\simulator.exe'; 'launched'}else{'already up'}\" 2>&1 | tail -1\nsleep 12\necho \">>> 포트 확인\"\npowershell.exe -NoProfile -Command \"\\$s=(Get-Process simulator -EA SilentlyContinue).Id; (Get-NetTCPConnection -State Listen -OwningProcess \\$s -EA SilentlyContinue).LocalPort -join ','\" 2>&1 | tail -1\necho \">>> monkeydo via 42877 래퍼 (timeout 25: 124=hang=연결성공!)\"\nSDKB=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\"\nW=$(wslpath -w \"$(pwd)\")\ntimeout 25 powershell.exe -NoProfile -Command \"& java -classpath '$SDKB\\\\monkeybrains.jar' com.garmin.monkeybrains.monkeydodeux.MonkeyDoDeux -f '$W\\\\bin\\\\RunVisionIQ-fr55.prg' -d fr55 -s 'C:\\\\Users\\\\jinhee\\\\sim-shell-42877.bat'\" > /tmp/md_42877b.log 2>&1\necho \">>> exit=$? (124=연결유지=성공 / 0=실패)\"\niconv -f CP949 -t UTF-8 /tmp/md_42877b.log 2>/dev/null | tail -5 || tail -5 /tmp/md_42877b.log",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\nSDKBIN=\"/mnt/c/home/<USER>/AppData/Roaming/Garmin/ConnectIQ/Sdks/connectiq-sdk-win-8.4.0-2025-12-03-5122605dc/bin\"\necho \">>> sim 확실히 실행 (없으면 새로)\"\npowershell.exe -NoProfile -Command \"if(-not (Get-Process simulator -EA SilentlyContinue)){Start-Process 'C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\\\\simulator.exe'; 'launched'}else{'already up'}\" 2>&1 | tail -1\nsleep 12\necho \">>> 포트 확인\"\npowershell.exe -NoProfile -Command \"\\$s=(Get-Process simulator -EA SilentlyContinue).Id; (Get-NetTCPConnection -State Listen -OwningProcess \\$s -EA SilentlyContinue).LocalPort -join ','\" 2>&1 | tail -1\necho \">>> monkeydo via 42877 래퍼 (timeout 25: 124=hang=연결성공!)\"\nSDKB=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\"\nW=$(wslpath -w \"$(pwd)\")\ntimeout 25 powershell.exe -NoProfile -Command \"& java -classpath '$SDKB\\\\monkeybrains.jar' com.garmin.monkeybrains.monkeydodeux.MonkeyDoDeux -f '$W\\\\bin\\\\RunVisionIQ-fr55.prg' -d fr55 -s 'C:\\\\Users\\\\jinhee\\\\sim-shell-42877.bat'\" > /tmp/md_42877b.log 2>&1\necho \">>> exit=$? (124=연결유지=성공 / 0=실패)\"\niconv -f CP949 -t UTF-8 /tmp/md_42877b.log 2>/dev/null | tail -5 || tail -5 /tmp/md_42877b.log",
   "description": "Decisive test: monkeydo via 42877 shell wrapper with sim confirmed up"
 }
 ```
@@ -11460,7 +11460,7 @@ tool_use Bash
 id: toolu_01McPjS7iTU2652UkoJVQ8DP
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== 현재 working tree (미커밋 = 정리/커밋 결정 필요) ===\"\ngit status --short\necho \"\"\necho \"=== origin과 동기화 상태 (커밋된 그리드 기능은 이미 push됨?) ===\"\ngit log --oneline -1; echo \"origin: $(git log --oneline -1 @{u} 2>/dev/null)\"\necho \"ahead=$(git rev-list --count @{u}..HEAD 2>/dev/null) behind=$(git rev-list --count HEAD..@{u} 2>/dev/null)\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== 현재 working tree (미커밋 = 정리/커밋 결정 필요) ===\"\ngit status --short\necho \"\"\necho \"=== origin과 동기화 상태 (커밋된 그리드 기능은 이미 push됨?) ===\"\ngit log --oneline -1; echo \"origin: $(git log --oneline -1 @{u} 2>/dev/null)\"\necho \"ahead=$(git rev-list --count @{u}..HEAD 2>/dev/null) behind=$(git rev-list --count HEAD..@{u} 2>/dev/null)\"",
   "description": "Check working tree + sync state for Mac handoff planning"
 }
 ```
@@ -11520,7 +11520,7 @@ tool_use Bash
 id: toolu_01614wGgKPpJ6EAyejN5TTsK
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \">>> 임시 hack + Codex 3파일 되돌림\"\ngit checkout -- build.sh monkey.jungle run-simulator.bat source/RunVisionIQView.mc\necho \">>> 정리: 내가 만든 외부 임시 래퍼 제거\"\nrm -f /mnt/c/Users/jinhee/sim-shell-42877.bat 2>/dev/null && echo \"  sim-shell-42877.bat 제거\" || echo \"  (래퍼 없음)\"\necho \"\"\necho \"=== 되돌림 후 상태 (clean이어야) ===\"\ngit status --short || echo \"(clean)\"\necho \"=== onUpdate가 _isConnected로 복원됐나 (임시 if(true) 제거 확인) ===\"\ngrep -n \"if (_isConnected)\" source/RunVisionIQView.mc | head -1\ngrep -n \"if (true)\" source/RunVisionIQView.mc | head -1 || echo \"  (if(true) 없음 — 정상)\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \">>> 임시 hack + Codex 3파일 되돌림\"\ngit checkout -- build.sh monkey.jungle run-simulator.bat source/RunVisionIQView.mc\necho \">>> 정리: 내가 만든 외부 임시 래퍼 제거\"\nrm -f /mnt/c/home/<USER>/sim-shell-42877.bat 2>/dev/null && echo \"  sim-shell-42877.bat 제거\" || echo \"  (래퍼 없음)\"\necho \"\"\necho \"=== 되돌림 후 상태 (clean이어야) ===\"\ngit status --short || echo \"(clean)\"\necho \"=== onUpdate가 _isConnected로 복원됐나 (임시 if(true) 제거 확인) ===\"\ngrep -n \"if (_isConnected)\" source/RunVisionIQView.mc | head -1\ngrep -n \"if (true)\" source/RunVisionIQView.mc | head -1 || echo \"  (if(true) 없음 — 정상)\"",
   "description": "Revert uncommitted changes, verify clean + _isConnected restored"
 }
 ```
@@ -11549,7 +11549,7 @@ tool_use Write
 id: toolu_01VUz6EuS8AuTQPtMSHyhhN5
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/Docs/HANDOFF-garmin-watch-ui.md",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/Docs/HANDOFF-garmin-watch-ui.md",
   "content": "# Garmin 워치 UI 작업 핸드오프 (WSL 세션 → 맥 세션)\n\n> 다른 머신(WSL)에서 진행하던 작업을 맥 세션이 이어받기 위한 노트.\n> Claude 메모리는 머신별이라 맥 세션은 이 컨텍스트를 모름 → 이 문서가 인계서.\n\n## ✅ 완료 (origin/main에 push됨, `git pull`로 받음)\n연결 후 워치 화면에 **메트릭 그리드(1-2-2)** 표시 기능 — commit `9d3777e` 기준.\n- 러닝: `TIME` / `PACE`·`CAD` / `DIST`·`HR`\n- 사이클: `TIME` / `SPEED`·`ALT` / `DIST`·`HR`  (사이클 판별 = `Activity.getProfileInfo().sport == SPORT_CYCLING`, BLE 무관)\n- 값 `FONT_LARGE`, 라벨 `FONT_XTINY`, 여백 분리(구분선·연결점 없음 — 사용자 결정).\n- **연결 전** → 상태화면(로고+상태+버전), **연결 후** → 그리드 (`_isConnected` 분기). 끊김 시 상태화면 복귀는 의도된 동작(가민은 자동 모드선택이라 연결화면이 Galaxy/Apple의 홈 역할).\n- **fr165 실기기 검증 완료**: 러닝/사이클 라벨 전환, 겹침·클리핑·OOM 없음.\n\n**코드 위치:**\n- `source/RunVisionIQView.mc` — `onUpdate`(연결 분기), `drawStatusScreen`, `drawMetricGrid`, `drawCell`\n- `source/MetricStrategy.mc` — `metricGridLayout(width,height,isRound)` 반응형 좌표 (행 0.14/0.36/0.58, inset 둥근 0.30 / 사각 0.25)\n- `source/Tests.mc` — `testMetricGridLayout_*`, `testMetricPresent_*`\n\n## 🔧 남은 작업: #3 작은 기기 폰트 fit (맥 sim 필요 — 그래서 인계)\n- **문제:** `drawCell`이 `FONT_LARGE` 하드코딩 + 컬럼 28%/72%. 작은 기기(**fr55 208px, instinct2s 156px, instinct2 176px**)에서 FONT_LARGE 2컬럼이 **겹침/잘림**(기하학적으로 확정, 단 시각검증은 못 함 — WSL sim 불가했음).\n- **맥 sim에서 fr55/instinct2s 직접 보고 결정:**\n  - (A) **반응형 폰트**: 폭 따라 값 폰트 축소(LARGE→MEDIUM→SMALL/TINY). […]
 
 > TOOL
@@ -11557,7 +11557,7 @@ id: toolu_01VUz6EuS8AuTQPtMSHyhhN5
 tool_result
 id: toolu_01VUz6EuS8AuTQPtMSHyhhN5
 ```
-File created successfully at: /home/jhkim/00.Projects/00.RunVision/runvision-iq/Docs/HANDOFF-garmin-watch-ui.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/00.Projects/00.RunVision/runvision-iq/Docs/HANDOFF-garmin-watch-ui.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11570,7 +11570,7 @@ tool_use Bash
 id: toolu_015ysQKPxP48sVjCSJvZhack
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== git status (핸드오프 노트만 신규, 경로 Docs/ 대문자 확인) ===\"\ngit status --short\ngit add Docs/HANDOFF-garmin-watch-ui.md\ngit commit -m \"docs: 맥 세션 인계 노트 — 워치 UI 그리드 (완료/남은 #3/환경 함정)\n\nWSL→맥 핸드오프. 그리드 기능(9d3777e) 완료·fr165 검증. 남은 #3(작은 기기 폰트\nfit)은 맥 sim에서 확인·결정. WSL sim 불가(Hyper-V/포트)·네이밍/버전 정책·Codex\n리뷰 미해결(#2 주석stale,#3) 함정 정리.\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>\" 2>&1 | tail -3\necho \"\"\ngit push 2>&1 | tail -3\necho \"---\"; git log --oneline -1; git status -sb | head -1",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== git status (핸드오프 노트만 신규, 경로 Docs/ 대문자 확인) ===\"\ngit status --short\ngit add Docs/HANDOFF-garmin-watch-ui.md\ngit commit -m \"docs: 맥 세션 인계 노트 — 워치 UI 그리드 (완료/남은 #3/환경 함정)\n\nWSL→맥 핸드오프. 그리드 기능(9d3777e) 완료·fr165 검증. 남은 #3(작은 기기 폰트\nfit)은 맥 sim에서 확인·결정. WSL sim 불가(Hyper-V/포트)·네이밍/버전 정책·Codex\n리뷰 미해결(#2 주석stale,#3) 함정 정리.\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>\" 2>&1 | tail -3\necho \"\"\ngit push 2>&1 | tail -3\necho \"---\"; git log --oneline -1; git status -sb | head -1",
   "description": "Commit and push handoff note"
 }
 ```
@@ -11633,7 +11633,7 @@ tool_use Bash
 id: toolu_0116ehvYhjT4cuoDwZuxKCfW
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\ngit fetch --quiet 2>&1\necho \"local : $(git log --oneline -1 HEAD)\"\necho \"origin: $(git log --oneline -1 @{u})\"\nbehind=$(git rev-list --count HEAD..@{u}); ahead=$(git rev-list --count @{u}..HEAD); dirty=$(git status --porcelain|wc -l)\necho \"behind=$behind ahead=$ahead dirty=$dirty\"\necho \"\"\necho \"=== incoming 커밋 (맥 작업) ===\"\ngit log --oneline HEAD..@{u} 2>/dev/null | head\nif [ \"$behind\" -gt 0 ] && [ \"$ahead\" = 0 ] && [ \"$dirty\" = 0 ]; then\n  echo \"--- ff pull ---\"\n  git pull --ff-only 2>&1 | grep -E \"Updating|Fast-forward|file|insertion|deletion|\\.mc|\\.bat\" | head -15\nelse\n  echo \"(behind=$behind ahead=$ahead dirty=$dirty — 확인 필요)\"\nfi",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\ngit fetch --quiet 2>&1\necho \"local : $(git log --oneline -1 HEAD)\"\necho \"origin: $(git log --oneline -1 @{u})\"\nbehind=$(git rev-list --count HEAD..@{u}); ahead=$(git rev-list --count @{u}..HEAD); dirty=$(git status --porcelain|wc -l)\necho \"behind=$behind ahead=$ahead dirty=$dirty\"\necho \"\"\necho \"=== incoming 커밋 (맥 작업) ===\"\ngit log --oneline HEAD..@{u} 2>/dev/null | head\nif [ \"$behind\" -gt 0 ] && [ \"$ahead\" = 0 ] && [ \"$dirty\" = 0 ]; then\n  echo \"--- ff pull ---\"\n  git pull --ff-only 2>&1 | grep -E \"Updating|Fast-forward|file|insertion|deletion|\\.mc|\\.bat\" | head -15\nelse\n  echo \"(behind=$behind ahead=$ahead dirty=$dirty — 확인 필요)\"\nfi",
   "description": "Fetch + pull Mac session's #3 work"
 }
 ```
@@ -11671,7 +11671,7 @@ tool_use Bash
 id: toolu_01SY5eNMx7StdRBKUvyQF4t2
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== build.sh 출력 파일명 규칙 확인 (RunVisionIQ.prg? -fr165?) ===\"\ngrep -nE \"OUT=|RunVisionIQ.*prg|DEV=\" build.sh | head\necho \"\"\necho \"=== fr165 빌드 ===\"\n./build.sh fr165 2>&1 | grep -E \"동기화|BUILD SUCC|완료|ERROR|테스트 .prg\" | tail -4\necho \"산출물:\"; ls -1 bin/RunVisionIQ*.prg 2>/dev/null | tail -3",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== build.sh 출력 파일명 규칙 확인 (RunVisionIQ.prg? -fr165?) ===\"\ngrep -nE \"OUT=|RunVisionIQ.*prg|DEV=\" build.sh | head\necho \"\"\necho \"=== fr165 빌드 ===\"\n./build.sh fr165 2>&1 | grep -E \"동기화|BUILD SUCC|완료|ERROR|테스트 .prg\" | tail -4\necho \"산출물:\"; ls -1 bin/RunVisionIQ*.prg 2>/dev/null | tail -3",
   "description": "Check build.sh naming + build fr165 for real-device verification"
 }
 ```
@@ -11705,7 +11705,7 @@ tool_use Bash
 id: toolu_014TVRC9cQT2C1QXLZSoNWiq
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\n./build.sh fr165 2>&1 | grep -aviE \"is not used|launcher icon|CMD.EXE|UNC 경로|Windows 디렉터리|디렉터리를 사용|현재 디렉터리\" | tail -12\necho \">>> exit=${PIPESTATUS[0]}\"\necho \"prg 시각: $(date -r bin/RunVisionIQ.prg '+%H:%M:%S' 2>/dev/null)\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\n./build.sh fr165 2>&1 | grep -aviE \"is not used|launcher icon|CMD.EXE|UNC 경로|Windows 디렉터리|디렉터리를 사용|현재 디렉터리\" | tail -12\necho \">>> exit=${PIPESTATUS[0]}\"\necho \"prg 시각: $(date -r bin/RunVisionIQ.prg '+%H:%M:%S' 2>/dev/null)\"",
   "description": "Re-run build.sh fr165 with full output to confirm success"
 }
 ```
@@ -11730,7 +11730,7 @@ tool_use Bash
 id: toolu_01SxKLYdu6f6Zd3JatB4Ufde
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\nchmod +x build.sh\necho \">>> bash build.sh fr165\"\nbash build.sh fr165 2>&1 | grep -aviE \"is not used|launcher icon|CMD.EXE|UNC 경로|Windows 디렉터리|디렉터리를 사용|현재 디렉터리\" | tail -10\necho \">>> exit=${PIPESTATUS[0]}\"\necho \"prg 시각: $(date -r bin/RunVisionIQ.prg '+%H:%M:%S')\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\nchmod +x build.sh\necho \">>> bash build.sh fr165\"\nbash build.sh fr165 2>&1 | grep -aviE \"is not used|launcher icon|CMD.EXE|UNC 경로|Windows 디렉터리|디렉터리를 사용|현재 디렉터리\" | tail -10\necho \">>> exit=${PIPESTATUS[0]}\"\necho \"prg 시각: $(date -r bin/RunVisionIQ.prg '+%H:%M:%S')\"",
   "description": "Build fr165 via bash (bypass perm) with full output"
 }
 ```
@@ -11790,7 +11790,7 @@ tool_use Bash
 id: toolu_01V4KB7WGsrC8fd2oaCkS796
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== 현재 build.sh 모드 + git status ===\"\nls -l build.sh | awk '{print $1}'\ngit status --short\necho \"\"\necho \"=== 모드 변경 스테이징 (chmod +x 반영) ===\"\ngit update-index --chmod=+x build.sh 2>/dev/null\ngit add build.sh\ngit status --short\necho \"\"\ngit commit -m \"chore(build): build.sh 실행권한(+x) 복원 — pull 시 perm 유실로 Permission denied 방지\" 2>&1 | tail -2\ngit push 2>&1 | tail -3\necho \"---\"; git log --oneline -1; git status -sb | head -1",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== 현재 build.sh 모드 + git status ===\"\nls -l build.sh | awk '{print $1}'\ngit status --short\necho \"\"\necho \"=== 모드 변경 스테이징 (chmod +x 반영) ===\"\ngit update-index --chmod=+x build.sh 2>/dev/null\ngit add build.sh\ngit status --short\necho \"\"\ngit commit -m \"chore(build): build.sh 실행권한(+x) 복원 — pull 시 perm 유실로 Permission denied 방지\" 2>&1 | tail -2\ngit push 2>&1 | tail -3\necho \"---\"; git log --oneline -1; git status -sb | head -1",
   "description": "Commit build.sh executable bit + push"
 }
 ```
@@ -11843,7 +11843,7 @@ tool_use Bash
 id: toolu_01JQVGeY5agF2hnig9oBbWWx
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== drawMetricGrid + drawCell + 폰트 선택 로직 (맥 버전) ===\"\nawk '/private function drawMetricGrid/,/^    }$/' source/RunVisionIQView.mc | head -80",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== drawMetricGrid + drawCell + 폰트 선택 로직 (맥 버전) ===\"\nawk '/private function drawMetricGrid/,/^    }$/' source/RunVisionIQView.mc | head -80",
   "description": "Read Mac's drawMetricGrid responsive font logic"
 }
 ```
@@ -11900,7 +11900,7 @@ id: toolu_019cr3HicK3VihYFkAR1jwg1
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "        var rowGap = (L[:row1Y] as Lang.Number) - (L[:timeY] as Lang.Number);\n        var labelH = dc.getFontHeight(Graphics.FONT_XTINY);\n        var gap = labelH / 2;  // 라벨과 다음 행 값 사이 숨구멍(사용자 요청: 라벨/다음줄 구분)\n        var fonts = [Graphics.FONT_LARGE, Graphics.FONT_MEDIUM, Graphics.FONT_SMALL];\n        var valueFont = Graphics.FONT_SMALL;  // 최소 폴백(셋 다 행간에 안 맞아도 가장 작은 것)\n        for (var i = 0; i < fonts.size(); i++) {\n            if (dc.getFontHeight(fonts[i]) + labelH + gap <= rowGap) {\n                valueFont = fonts[i];\n                break;\n            }\n        }",
   "new_string": "        var rowGap = (L[:row1Y] as Lang.Number) - (L[:timeY] as Lang.Number);\n        var labelH = dc.getFontHeight(Graphics.FONT_XTINY);\n        var fonts = [Graphics.FONT_LARGE, Graphics.FONT_MEDIUM, Graphics.FONT_SMALL];\n        var valueFont = Graphics.FONT_SMALL;  // 최소 폴백\n        // 값+라벨이 다음 행과 겹치지 않는 '가장 큰' 폰트. gap 항 제거 — 큰 화면(fr165 등)이 LARGE를\n        // 되찾도록(겹침만 막으면 충분; 이전 하드코딩 LARGE가 fr165에서 정상이었음). 작은 기기는 여전히\n        // LARGE가 행간격 초과라 자동 축소 — 겹침은 이 부등식이 보장.\n        for (var i = 0; i < fonts.size(); i++) {\n            if (dc.getFontHeight(fonts[i]) + labelH <= rowGap) {\n                valueFont = fonts[i];\n                break;\n            }\n        }"
 }
@@ -11924,7 +11924,7 @@ tool_use Bash
 id: toolu_01Qy7Yvw1G4iqPrYrvXyQzWy
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\ngrep -n \"rowGap\\|labelH\\|var gap\\|valueFont\\|getFontHeight(fonts\" source/RunVisionIQView.mc | head",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\ngrep -n \"rowGap\\|labelH\\|var gap\\|valueFont\\|getFontHeight(fonts\" source/RunVisionIQView.mc | head",
   "description": "Locate current font-fit lines after external modification"
 }
 ```
@@ -11952,7 +11952,7 @@ tool_use Read
 id: toolu_016AbyVrCkfYws7Bk44fVFt7
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "offset": 745,
   "limit": 14
 }
@@ -11986,7 +11986,7 @@ id: toolu_011xFD478WyrU1LZKeJzywA9
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "        var rowGap = (L[:row1Y] as Lang.Number) - (L[:timeY] as Lang.Number);\n        var labelH = dc.getFontHeight(Graphics.FONT_XTINY);\n        var gap = labelH / 2;  // 라벨과 다음 행 값 사이 숨구멍(사용자 요청: 라벨/다음줄 구분)\n        var fonts = [Graphics.FONT_LARGE, Graphics.FONT_MEDIUM, Graphics.FONT_SMALL];\n        var valueFont = Graphics.FONT_SMALL;  // 최소 폴백(셋 다 행간에 안 맞아도 가장 작은 것)\n        for (var i = 0; i < fonts.size(); i++) {\n            if (dc.getFontHeight(fonts[i]) + labelH + gap <= rowGap) {\n                valueFont = fonts[i];\n                break;\n            }\n        }",
   "new_string": "        var rowGap = (L[:row1Y] as Lang.Number) - (L[:timeY] as Lang.Number);\n        var labelH = dc.getFontHeight(Graphics.FONT_XTINY);\n        var fonts = [Graphics.FONT_LARGE, Graphics.FONT_MEDIUM, Graphics.FONT_SMALL];\n        var valueFont = Graphics.FONT_SMALL;  // 최소 폴백\n        // 값+라벨이 다음 행과 겹치지 않는 '가장 큰' 폰트. gap 항 제거 — 큰 화면(fr165 등)이 LARGE를\n        // 되찾도록(겹침만 막으면 충분; 이전 하드코딩 LARGE가 fr165에서 정상이었음). 작은 기기는 여전히\n        // LARGE가 행간격 초과라 자동 축소 — 겹침은 이 부등식이 보장.\n        for (var i = 0; i < fonts.size(); i++) {\n            if (dc.getFontHeight(fonts[i]) + labelH <= rowGap) {\n                valueFont = fonts[i];\n                break;\n            }\n        }"
 }
@@ -11997,7 +11997,7 @@ id: toolu_011xFD478WyrU1LZKeJzywA9
 tool_result
 id: toolu_011xFD478WyrU1LZKeJzywA9
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -12010,7 +12010,7 @@ tool_use Bash
 id: toolu_01VK4agEHNy4sx161g1nn4Mp
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\n./build.sh fr165 2>&1 | grep -aE \"동기화|BUILD SUCC|완료|ERROR\" | tail -3\necho \">>> exit=${PIPESTATUS[0]} ; prg: $(date -r bin/RunVisionIQ.prg '+%H:%M:%S')\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\n./build.sh fr165 2>&1 | grep -aE \"동기화|BUILD SUCC|완료|ERROR\" | tail -3\necho \">>> exit=${PIPESTATUS[0]} ; prg: $(date -r bin/RunVisionIQ.prg '+%H:%M:%S')\"",
   "description": "Build fr165 with restored-LARGE font logic"
 }
 ```
@@ -12076,7 +12076,7 @@ tool_use Bash
 id: toolu_01VRVg8XYix1uCDr2rzfxvWA
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== 폐기 전 미커밋 ===\"\ngit status --short\ngit checkout -- source/RunVisionIQView.mc\necho \"=== 폐기 후 (clean이어야) ===\"\ngit status --short || true\necho \"tree: $(git status --porcelain | wc -l) changes ; HEAD=$(git log --oneline -1 | cut -d' ' -f1) (=origin? $(git rev-list --count @{u}..HEAD 2>/dev/null) ahead)\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== 폐기 전 미커밋 ===\"\ngit status --short\ngit checkout -- source/RunVisionIQView.mc\necho \"=== 폐기 후 (clean이어야) ===\"\ngit status --short || true\necho \"tree: $(git status --porcelain | wc -l) changes ; HEAD=$(git log --oneline -1 | cut -d' ' -f1) (=origin? $(git rev-list --count @{u}..HEAD 2>/dev/null) ahead)\"",
   "description": "Discard uncommitted gap-removal change, verify clean"
 }
 ```
@@ -12121,7 +12121,7 @@ tool_use Bash
 id: toolu_017av3AZpEtRpJGXXc1MqzhB
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\ngit fetch --quiet 2>&1\necho \"local : $(git log --oneline -1 HEAD)\"\necho \"origin: $(git log --oneline -1 @{u})\"\nbehind=$(git rev-list --count HEAD..@{u}); ahead=$(git rev-list --count @{u}..HEAD); dirty=$(git status --porcelain|wc -l)\necho \"behind=$behind ahead=$ahead dirty=$dirty\"\necho \"=== incoming (맥 작업) ===\"\ngit log --oneline HEAD..@{u} 2>/dev/null | head\nif [ \"$behind\" -gt 0 ] && [ \"$ahead\" = 0 ] && [ \"$dirty\" = 0 ]; then\n  git pull --ff-only 2>&1 | grep -E \"Updating|Fast-forward|file|insertion|deletion\" | head\nelse echo \"(behind=$behind ahead=$ahead dirty=$dirty — 확인)\"; fi",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\ngit fetch --quiet 2>&1\necho \"local : $(git log --oneline -1 HEAD)\"\necho \"origin: $(git log --oneline -1 @{u})\"\nbehind=$(git rev-list --count HEAD..@{u}); ahead=$(git rev-list --count @{u}..HEAD); dirty=$(git status --porcelain|wc -l)\necho \"behind=$behind ahead=$ahead dirty=$dirty\"\necho \"=== incoming (맥 작업) ===\"\ngit log --oneline HEAD..@{u} 2>/dev/null | head\nif [ \"$behind\" -gt 0 ] && [ \"$ahead\" = 0 ] && [ \"$dirty\" = 0 ]; then\n  git pull --ff-only 2>&1 | grep -E \"Updating|Fast-forward|file|insertion|deletion\" | head\nelse echo \"(behind=$behind ahead=$ahead dirty=$dirty — 확인)\"; fi",
   "description": "Fetch + pull Mac's font/layout work"
 }
 ```
@@ -12151,7 +12151,7 @@ tool_use Bash
 id: toolu_01Nygra6uUvEKWSNHMQo8KLY
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== 맥이 바꾼 행 배치 (metricGridLayout) ===\"\ngrep -nE \"timeF|row1F|row2F|0\\.[0-9]+|subWindow\" source/MetricStrategy.mc | grep -iE \"F |F=|=>|subWindow\" | head\necho \"\"\necho \"=== fr165 빌드 ===\"\n./build.sh fr165 2>&1 | grep -aE \"동기화|BUILD SUCC|완료\" | tail -3\necho \">>> exit=${PIPESTATUS[0]} ; prg: $(date -r bin/RunVisionIQ.prg '+%H:%M:%S')\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== 맥이 바꾼 행 배치 (metricGridLayout) ===\"\ngrep -nE \"timeF|row1F|row2F|0\\.[0-9]+|subWindow\" source/MetricStrategy.mc | grep -iE \"F |F=|=>|subWindow\" | head\necho \"\"\necho \"=== fr165 빌드 ===\"\n./build.sh fr165 2>&1 | grep -aE \"동기화|BUILD SUCC|완료\" | tail -3\necho \">>> exit=${PIPESTATUS[0]} ; prg: $(date -r bin/RunVisionIQ.prg '+%H:%M:%S')\"",
   "description": "Show Mac's new row layout + build fr165"
 }
 ```
@@ -12222,7 +12222,7 @@ tool_use Read
 id: toolu_01LVQkKrAvQYoJQarsiFbnwT
 ```json
 {
-  "file_path": "/home/jhkim/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/feedback_monkeyc_build.md",
+  "file_path": "/home/<USER>/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/feedback_monkeyc_build.md",
   "offset": 19,
   "limit": 30
 }
@@ -12254,7 +12254,7 @@ id: toolu_01DaEDggVqCU9jW7y3kwAoVj
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/feedback_monkeyc_build.md",
+  "file_path": "/home/<USER>/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/feedback_monkeyc_build.md",
   "old_string": "- `-d <device>`로 기기 지정해도 출력명은 `RunVisionIQ.prg`로 덮어쓰기(기기별 파일 누적 금지).",
   "new_string": "- `-d <device>`로 기기 지정해도 출력명은 `RunVisionIQ.prg`로 덮어쓰기(기기별 파일 누적 금지).\n\n## ⚠️ 시뮬레이터: WSL에서 못 띄움 — 맥/Windows 네이티브 사용 (2026-05-24, 큰 시간 손실 후)\n- **WSL2/Hyper-V에선 ConnectIQ 시뮬레이터 구동 불가.** monkeydo가 \"Unable to connect to simulator\" — sim이 Hyper-V 포트 **42877**에 바인딩(기본 1234 아님)인데, 42877 transport 래퍼로도 안 붙음(interop 핸드셰이크 문제). 재부팅·clean-slate·Windows cwd 다 실패.\n- **Ubuntu 24.04 Linux SDK도 막힘**: 시뮬레이터가 옛 `libwebkit2gtk-4.0.so.37`/`libjavascriptcoregtk-4.0.so.18` 요구 → 24.04(WebKit 4.1)엔 없음. SDK Manager도 24.04서 안 됨. **CIQ 8.4.1 기준 미해결**(Garmin 포럼). distrobox 22.04 우회는 hacky.\n- **→ 시뮬레이터는 맥 네이티브(깨끗) 또는 Windows 네이티브 VS Code에서.** WSL은 빌드(powershell monkeyc)·git 전용. **빌드는 WSL OK, sim만 안 됨.**\n- **빌드 검증만 필요하면** 테스트모드 컴파일(`-t`)로 충분(실행 없이 컴파일 확인). 시각/런타임은 맥 sim.\n- 크로스머신 작업 인계: 코드는 git, 컨텍스트는 repo 문서(`Docs/HANDOFF-*.md`) — Claude 메모리는 머신별이라 안 넘어감."
 }
@@ -12265,7 +12265,7 @@ id: toolu_01DaEDggVqCU9jW7y3kwAoVj
 tool_result
 id: toolu_01DaEDggVqCU9jW7y3kwAoVj
 ```
-The file /home/jhkim/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/feedback_monkeyc_build.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/feedback_monkeyc_build.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -12279,7 +12279,7 @@ id: toolu_019qnWJS8oorzorwh7BJ4F2t
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/MEMORY.md",
   "old_string": "- WSL에서 powershell.exe로 직접 빌드 가능 — Windows 별도 실행 불필요\n- `runvision-iq/build.sh` = 표준 진입점(manifest→AppVersion.mc 버전 동기화, .prg=`RunVisionIQ.prg`/iq=릴리즈)",
   "new_string": "- WSL에서 powershell.exe로 직접 빌드 가능 — Windows 별도 실행 불필요\n- `runvision-iq/build.sh` = 표준 진입점(manifest→AppVersion.mc 버전 동기화, .prg=`RunVisionIQ.prg`/iq=릴리즈)\n- ⚠️ **시뮬레이터는 WSL에서 못 띄움**(Hyper-V 포트 42877 + Ubuntu24.04 옛 libwebkit 부재) → **맥/Windows 네이티브 사용**. 빌드는 WSL OK, sim만 불가. 크로스머신 인계는 git + `Docs/HANDOFF-*.md`"
 }
@@ -12299,7 +12299,7 @@ tool_use Read
 id: toolu_01H8vvwJXGAZvzXkVaQoxi3R
 ```json
 {
-  "file_path": "/home/jhkim/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/MEMORY.md",
   "offset": 50,
   "limit": 8
 }
@@ -12327,7 +12327,7 @@ id: toolu_01WXMAh9Fe4qiBCvgxBHUzFw
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/MEMORY.md",
   "old_string": "- `runvision-iq/build.sh` = 표준 진입점(manifest→AppVersion.mc 버전 동기화, .prg=`RunVisionIQ.prg`/iq=릴리즈)\n\n## Garmin DataField 메모리 (OOM 크래시 주의)",
   "new_string": "- `runvision-iq/build.sh` = 표준 진입점(manifest→AppVersion.mc 버전 동기화, .prg=`RunVisionIQ.prg`/iq=릴리즈)\n- ⚠️ **시뮬레이터는 WSL에서 못 띄움**(Hyper-V 포트 42877 + Ubuntu24.04 옛 libwebkit 부재) → **맥/Windows 네이티브 사용**. 빌드는 WSL OK, sim만 불가. 크로스머신 인계 = git + `Docs/HANDOFF-*.md`\n\n## Garmin DataField 메모리 (OOM 크래시 주의)"
 }
@@ -12338,7 +12338,7 @@ id: toolu_01WXMAh9Fe4qiBCvgxBHUzFw
 tool_result
 id: toolu_01WXMAh9Fe4qiBCvgxBHUzFw
 ```
-The file /home/jhkim/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -12366,7 +12366,7 @@ tool_use Bash
 id: toolu_011CHCfnKqiTmn7KoiqfmNGX
 ```json
 {
-  "command": "for d in \"/home/jhkim/00.Projects/00.RunVision\" \"/home/jhkim/00.Projects/00.RunVision/runvision-iq\" \"/home/jhkim/00.Projects/00.RunVision/runvision-wear\"; do\n  name=$(basename \"$d\")\n  git -C \"$d\" fetch --quiet 2>&1\n  behind=$(git -C \"$d\" rev-list --count HEAD..@{u} 2>/dev/null)\n  ahead=$(git -C \"$d\" rev-list --count @{u}..HEAD 2>/dev/null)\n  dirty=$(git -C \"$d\" status --porcelain|wc -l)\n  echo \"==== $name : behind=$behind ahead=$ahead dirty=$dirty ====\"\n  if [ \"${behind:-0}\" -gt 0 ]; then git -C \"$d\" log --oneline HEAD..@{u} | head -8; fi\ndone",
+  "command": "for d in \"/home/<USER>/00.Projects/00.RunVision\" \"/home/<USER>/00.Projects/00.RunVision/runvision-iq\" \"/home/<USER>/00.Projects/00.RunVision/runvision-wear\"; do\n  name=$(basename \"$d\")\n  git -C \"$d\" fetch --quiet 2>&1\n  behind=$(git -C \"$d\" rev-list --count HEAD..@{u} 2>/dev/null)\n  ahead=$(git -C \"$d\" rev-list --count @{u}..HEAD 2>/dev/null)\n  dirty=$(git -C \"$d\" status --porcelain|wc -l)\n  echo \"==== $name : behind=$behind ahead=$ahead dirty=$dirty ====\"\n  if [ \"${behind:-0}\" -gt 0 ]; then git -C \"$d\" log --oneline HEAD..@{u} | head -8; fi\ndone",
   "description": "Fetch all repos, find which has incoming changes"
 }
 ```
@@ -12392,7 +12392,7 @@ tool_use Bash
 id: toolu_01TyYzCk9WQfzmjLFBRrkQP5
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\ngit pull --ff-only 2>&1 | grep -E \"Updating|Fast-forward|file|insertion|deletion\" | head\necho \"\"\necho \"=== 9865d3d 변경 요약 (상태화면 부분) ===\"\ngit show 9865d3d -- source/RunVisionIQView.mc | grep -E \"^[+-]\" | grep -vE \"^\\+\\+\\+|^---\" | head -25\necho \"\"\necho \"=== fr165 빌드 ===\"\n./build.sh fr165 2>&1 | grep -aE \"BUILD SUCC|완료\" | tail -2\necho \">>> exit=${PIPESTATUS[0]} ; prg: $(date -r bin/RunVisionIQ.prg '+%H:%M:%S')\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\ngit pull --ff-only 2>&1 | grep -E \"Updating|Fast-forward|file|insertion|deletion\" | head\necho \"\"\necho \"=== 9865d3d 변경 요약 (상태화면 부분) ===\"\ngit show 9865d3d -- source/RunVisionIQView.mc | grep -E \"^[+-]\" | grep -vE \"^\\+\\+\\+|^---\" | head -25\necho \"\"\necho \"=== fr165 빌드 ===\"\n./build.sh fr165 2>&1 | grep -aE \"BUILD SUCC|완료\" | tail -2\necho \">>> exit=${PIPESTATUS[0]} ; prg: $(date -r bin/RunVisionIQ.prg '+%H:%M:%S')\"",
   "description": "Pull status-screen fix + build fr165"
 }
 ```
@@ -12465,7 +12465,7 @@ tool_use Bash
 id: toolu_01LjgjuUWLbwMCv3XdeanQEz
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== loadResource / Bitmap / logo 사용처 ===\"\ngrep -n -E \"loadResource|Bitmap|_logoCache|drawBitmap|Rez.Drawables\" source/RunVisionIQView.mc\necho \"\"\necho \"=== drawStatusScreen 시작 부분 ===\"\ngrep -n \"function drawStatusScreen\" source/RunVisionIQView.mc",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== loadResource / Bitmap / logo 사용처 ===\"\ngrep -n -E \"loadResource|Bitmap|_logoCache|drawBitmap|Rez.Drawables\" source/RunVisionIQView.mc\necho \"\"\necho \"=== drawStatusScreen 시작 부분 ===\"\ngrep -n \"function drawStatusScreen\" source/RunVisionIQView.mc",
   "description": "Check if status screen still loads a logo bitmap"
 }
 ```
@@ -12487,7 +12487,7 @@ tool_use Read
 id: toolu_01VBCHDUmi4VokKEg1cfMsJi
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "offset": 693,
   "limit": 80
 }
@@ -12569,7 +12569,7 @@ tool_use Bash
 id: toolu_01Gteq5HUokiYxZARUr3UUhX
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== bin/ 의 모든 .prg (시간순) ===\"\nls -la --time-style='+%Y-%m-%d %H:%M' bin/*.prg 2>/dev/null\necho \"\"\necho \"=== build.sh 가 어떤 device로 빌드하고 출력명은 무엇인가 ===\"\ngrep -n -E \"DEVICE|OUTPUT|\\.prg|-d |default\" build.sh | head -20",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== bin/ 의 모든 .prg (시간순) ===\"\nls -la --time-style='+%Y-%m-%d %H:%M' bin/*.prg 2>/dev/null\necho \"\"\necho \"=== build.sh 가 어떤 device로 빌드하고 출력명은 무엇인가 ===\"\ngrep -n -E \"DEVICE|OUTPUT|\\.prg|-d |default\" build.sh | head -20",
   "description": "List prg artifacts and inspect build.sh device/output logic"
 }
 ```
@@ -12619,7 +12619,7 @@ tool_use Bash
 id: toolu_01TcRSPB2XCx1ERkJLoy1hNV
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\n./build.sh fr55 2>&1 | grep -aE \"BUILD SUCC|ERROR|error:|완료|테스트 .prg\" | tail -5\necho \">>> exit=${PIPESTATUS[0]} ; RunVisionIQ.prg: $(ls -la --time-style='+%H:%M:%S' bin/RunVisionIQ.prg | awk '{print $6, $7}')\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\n./build.sh fr55 2>&1 | grep -aE \"BUILD SUCC|ERROR|error:|완료|테스트 .prg\" | tail -5\necho \">>> exit=${PIPESTATUS[0]} ; RunVisionIQ.prg: $(ls -la --time-style='+%H:%M:%S' bin/RunVisionIQ.prg | awk '{print $6, $7}')\"",
   "description": "Build for fr55 target"
 }
 ```
@@ -12692,7 +12692,7 @@ tool_use Read
 id: toolu_01FfAmxYzjJ8VjVMwk76GDQD
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/build.sh"
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/build.sh"
 }
 ```
 
@@ -12733,7 +12733,7 @@ tool_use Bash
 id: toolu_012UBSmaVywfHpYrArqZ5nE2
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== 삭제 대상: bin/*.prg (전부) ===\"\nls -la --time-style='+%Y-%m-%d %H:%M' bin/*.prg 2>/dev/null\necho \"\"\necho \"=== run-simulator.bat 가 RunVisionIQ.prg 를 참조하나? ===\"\nls run-simulator.bat 2>/dev/null && grep -n \"\\.prg\" run-simulator.bat 2>/dev/null || echo \"(run-simulator.bat 없음)\"\necho \"\"\necho \"=== .prg 가 git에 추적되나 / .gitignore? ===\"\ngit ls-files 'bin/*.prg' | head ; echo \"--- ignore check ---\"; git check-ignore bin/RunVisionIQ.prg 2>/dev/null || echo \"(not ignored)\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== 삭제 대상: bin/*.prg (전부) ===\"\nls -la --time-style='+%Y-%m-%d %H:%M' bin/*.prg 2>/dev/null\necho \"\"\necho \"=== run-simulator.bat 가 RunVisionIQ.prg 를 참조하나? ===\"\nls run-simulator.bat 2>/dev/null && grep -n \"\\.prg\" run-simulator.bat 2>/dev/null || echo \"(run-simulator.bat 없음)\"\necho \"\"\necho \"=== .prg 가 git에 추적되나 / .gitignore? ===\"\ngit ls-files 'bin/*.prg' | head ; echo \"--- ignore check ---\"; git check-ignore bin/RunVisionIQ.prg 2>/dev/null || echo \"(not ignored)\"",
   "description": "Inventory prg files, check run-simulator.bat and git tracking"
 }
 ```
@@ -12770,7 +12770,7 @@ tool_use Read
 id: toolu_01EqNmj1dF26w4CLkhvn5ede
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/run-simulator.bat"
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/run-simulator.bat"
 }
 ```
 
@@ -12783,7 +12783,7 @@ id: toolu_01EqNmj1dF26w4CLkhvn5ede
 2	title RunVision-IQ Simulator
 3	
 4	REM === Settings ===
-5	set SDK_PATH=C:\Users\jinhee\AppData\Roaming\Garmin\ConnectIQ\Sdks\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\bin
+5	set SDK_PATH=C:\Users\<USER>\AppData\Roaming\Garmin\ConnectIQ\Sdks\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\bin
 6	set JAVA_PATH=C:\Program Files\Java\jdk-11.0.2\bin\java.exe
 7	set PRG_FILE=D:\00.Projects\00.RunVision\runvision-iq\bin\RunVisionIQ.prg
 8	set DEVICE=fr265
@@ -12841,7 +12841,7 @@ id: toolu_018xrTEjbPGvrbByC6LZn6BS
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/build.sh",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/build.sh",
   "old_string": "#   ./build.sh            → 단일 기기 .prg (기본 fr165) = bin/RunVisionIQ.prg   (사이드로드/시뮬용)\n#   ./build.sh fr265      → 지정 기기 .prg",
   "new_string": "#   ./build.sh            → 단일 기기 .prg (기본 fr165) = bin/RunVisionIQ-fr165.prg  (사이드로드/시뮬용)\n#   ./build.sh fr55       → 지정 기기 .prg = bin/RunVisionIQ-<기기>.prg  (기기별 파일 공존 → 타겟 혼동 방지)"
 }
@@ -12852,7 +12852,7 @@ id: toolu_018xrTEjbPGvrbByC6LZn6BS
 tool_result
 id: toolu_018xrTEjbPGvrbByC6LZn6BS
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/build.sh has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/build.sh has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -12862,7 +12862,7 @@ id: toolu_01C6Px2e2r5TKvthryRrsZdy
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/build.sh",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/build.sh",
   "old_string": "    DEV=\"${1:-fr165}\"\n    OUT=\"$W\\\\bin\\\\RunVisionIQ.prg\"\n    echo \"[build] 테스트 .prg ($DEV): bin/RunVisionIQ.prg\"",
   "new_string": "    DEV=\"${1:-fr165}\"\n    OUT=\"$W\\\\bin\\\\RunVisionIQ-$DEV.prg\"\n    echo \"[build] 테스트 .prg ($DEV): bin/RunVisionIQ-$DEV.prg\""
 }
@@ -12873,7 +12873,7 @@ id: toolu_01C6Px2e2r5TKvthryRrsZdy
 tool_result
 id: toolu_01C6Px2e2r5TKvthryRrsZdy
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/build.sh has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/build.sh has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -12887,7 +12887,7 @@ id: toolu_01TGDYKaEKz9ujnffUSoqxL8
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/run-simulator.bat",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/run-simulator.bat",
   "old_string": "set PRG_FILE=D:\\00.Projects\\00.RunVision\\runvision-iq\\bin\\RunVisionIQ.prg\nset DEVICE=fr265\n\nREM === Override device if parameter provided ===\nif not \"%~1\"==\"\" set DEVICE=%~1",
   "new_string": "set DEVICE=fr265\n\nREM === Override device if parameter provided ===\nif not \"%~1\"==\"\" set DEVICE=%~1\n\nREM === PRG file is device-suffixed (build.sh outputs bin\\RunVisionIQ-<device>.prg) ===\nset PRG_FILE=D:\\00.Projects\\00.RunVision\\runvision-iq\\bin\\RunVisionIQ-%DEVICE%.prg"
 }
@@ -12898,7 +12898,7 @@ id: toolu_01TGDYKaEKz9ujnffUSoqxL8
 tool_result
 id: toolu_01TGDYKaEKz9ujnffUSoqxL8
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/run-simulator.bat has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/run-simulator.bat has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -12911,7 +12911,7 @@ tool_use Bash
 id: toolu_01L4YsSVfV1YiRaypc8AbywP
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\nrm -f bin/*.prg\necho \"삭제 후 남은 .prg: $(ls bin/*.prg 2>/dev/null | wc -l)개\"\necho \"\"\nfor DEV in fr165 fr55; do\n  ./build.sh $DEV 2>&1 | grep -aE \"BUILD SUCC|ERROR|error:\" | tail -1\ndone\necho \"\"\necho \"=== 새 산출물 ===\"\nls -la --time-style='+%H:%M:%S' bin/*.prg",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\nrm -f bin/*.prg\necho \"삭제 후 남은 .prg: $(ls bin/*.prg 2>/dev/null | wc -l)개\"\necho \"\"\nfor DEV in fr165 fr55; do\n  ./build.sh $DEV 2>&1 | grep -aE \"BUILD SUCC|ERROR|error:\" | tail -1\ndone\necho \"\"\necho \"=== 새 산출물 ===\"\nls -la --time-style='+%H:%M:%S' bin/*.prg",
   "description": "Delete all prg, rebuild fr165 and fr55 with new naming"
 }
 ```
@@ -12941,7 +12941,7 @@ tool_use Bash
 id: toolu_01Dra9QgMBXLukHzgcZHrkGx
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision\necho \"=== repo 내 'RunVisionIQ.prg' 참조 (코드 외 문서) ===\"\ngrep -rn \"RunVisionIQ.prg\" --include=*.md --include=*.sh --include=*.bat runvision-iq/ 2>/dev/null\necho \"\"\necho \"=== Docs/CLAUDE-DETAILS.md 및 .claude/CLAUDE.md 의 .prg 네이밍 언급 ===\"\ngrep -rn \"\\.prg\\|RunVisionIQ\" Docs/CLAUDE-DETAILS.md .claude/CLAUDE.md 2>/dev/null | head",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision\necho \"=== repo 내 'RunVisionIQ.prg' 참조 (코드 외 문서) ===\"\ngrep -rn \"RunVisionIQ.prg\" --include=*.md --include=*.sh --include=*.bat runvision-iq/ 2>/dev/null\necho \"\"\necho \"=== Docs/CLAUDE-DETAILS.md 및 .claude/CLAUDE.md 의 .prg 네이밍 언급 ===\"\ngrep -rn \"\\.prg\\|RunVisionIQ\" Docs/CLAUDE-DETAILS.md .claude/CLAUDE.md 2>/dev/null | head",
   "description": "Find all naming-rule references in docs"
 }
 ```
@@ -12960,7 +12960,7 @@ runvision-iq/Docs/HANDOFF-garmin-watch-ui.md:29:- **빌드 산출물 네이밍 =
 runvision-iq/scripts/tdd.sh:56:        -o bin/RunVisionIQ.prg \
 runvision-iq/scripts/tdd.sh:94:    timeout 60 cmd.exe /C "cd /d ${SDK_WIN} && shell.exe push ${WIN_PROJECT_DIR}\\bin\\RunVisionIQ.prg" 2>&1 | tail -5
 runvision-iq/scripts/tdd.sh:109:    local output=$(timeout 60 cmd.exe /C "cd /d ${SDK_WIN} && monkeydo.bat ${WIN_PROJECT_DIR}\\bin\\RunVisionIQ.prg ${DEVICE} /t" 2>&1)
-runvision-iq/Docs/superpowers/plans/2026-05-24-garmin-watch-metric-display.md:259:  powershell.exe -NoProfile -Command "& 'C:\Users\jinhee\AppData\Roaming\Garmin\ConnectIQ\Sdks\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\bin\monkeyc.bat' -o '$(wslpath -w "$(pwd)")\bin\RunVisionIQ.prg' -f '$(wslpath -w "$(pwd)")\monkey.jungle' -y '$(wslpath -w "$(pwd)")\developer_key.der' -d $d -w" 2>&1 | grep -E "BUILD|ERROR"
+runvision-iq/Docs/superpowers/plans/2026-05-24-garmin-watch-metric-display.md:259:  powershell.exe -NoProfile -Command "& 'C:\Users\<USER>\AppData\Roaming\Garmin\ConnectIQ\Sdks\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\bin\monkeyc.bat' -o '$(wslpath -w "$(pwd)")\bin\RunVisionIQ.prg' -f '$(wslpath -w "$(pwd)")\monkey.jungle' -y '$(wslpath -w "$(pwd)")\developer_key.der' -d $d -w" 2>&1 | grep -E "BUILD|ERROR"
 
 === Docs/CLAUDE-DETAILS.md 및 .claude/CLAUDE.md 의 .prg 네이밍 언급 ===
 Docs/CLAUDE-DETAILS.md:59:cmd.exe /c "C:\\Users\\jinhee\\AppData\\Roaming\\Garmin\\ConnectIQ\\Sdks\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\bin\\monkeyc.bat -o bin\\RunVisionIQ.prg -f monkey.jungle -y developer_key.der -d fr265"
@@ -12984,7 +12984,7 @@ id: toolu_01YMhNt56y7quoEjv7SFRKVA
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/Docs/HANDOFF-garmin-watch-ui.md",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/Docs/HANDOFF-garmin-watch-ui.md",
   "old_string": "- **빌드 산출물 네이밍 = `RunVisionIQ.prg`** (버전/기기 접미사 금지 — 사용자 규칙). `build.sh`가 표준 진입점(manifest 버전→`AppVersion.mc` 동기화, 증가 안 함).",
   "new_string": "- **빌드 산출물 네이밍 = `RunVisionIQ-<기기>.prg`** (2026-05-25 변경). `./build.sh fr165`→`bin/RunVisionIQ-fr165.prg`, `./build.sh fr55`→`bin/RunVisionIQ-fr55.prg`. **`.prg`는 단일-기기 바이너리**라 fr165용을 fr55에 올리면 크래시 → 기기별 파일을 공존시켜 타겟 혼동을 막음(옛 단일 `RunVisionIQ.prg` 규칙 폐기). `build.sh`가 표준 진입점(manifest 버전→`AppVersion.mc` 동기화, 증가 안 함). 전 기기 묶음은 `./build.sh iq`(=`RunVisionIQ-<ver>.iq`, 스토어용)."
 }
@@ -13004,7 +13004,7 @@ tool_use Read
 id: toolu_01DUghdDu6yggSNrPzaGsfd2
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/Docs/HANDOFF-garmin-watch-ui.md",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/Docs/HANDOFF-garmin-watch-ui.md",
   "offset": 27,
   "limit": 6
 }
@@ -13030,7 +13030,7 @@ id: toolu_0191cKz94Lzohs6s57bQkhQW
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/Docs/HANDOFF-garmin-watch-ui.md",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/Docs/HANDOFF-garmin-watch-ui.md",
   "old_string": "- **빌드 산출물 네이밍 = `RunVisionIQ.prg`** (버전/기기 접미사 금지 — 사용자 규칙). `build.sh`가 표준 진입점(manifest 버전→`AppVersion.mc` 동기화, 증가 안 함).",
   "new_string": "- **빌드 산출물 네이밍 = `RunVisionIQ-<기기>.prg`** (2026-05-25 변경). `./build.sh fr165`→`bin/RunVisionIQ-fr165.prg`, `./build.sh fr55`→`bin/RunVisionIQ-fr55.prg`. **`.prg`는 단일-기기 바이너리**라 fr165용을 fr55에 올리면 크래시 → 기기별 파일을 공존시켜 타겟 혼동을 막음(옛 단일 `RunVisionIQ.prg` 규칙 폐기). `build.sh`가 표준 진입점(manifest 버전→`AppVersion.mc` 동기화, 증가 안 함). 전 기기 묶음은 `./build.sh iq`(=`RunVisionIQ-<ver>.iq`, 스토어용)."
 }
@@ -13041,7 +13041,7 @@ id: toolu_0191cKz94Lzohs6s57bQkhQW
 tool_result
 id: toolu_0191cKz94Lzohs6s57bQkhQW
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/Docs/HANDOFF-garmin-watch-ui.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/Docs/HANDOFF-garmin-watch-ui.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -13055,7 +13055,7 @@ id: toolu_015iuLf4nKPYBk8Cma1vEd62
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/feedback_monkeyc_build.md",
+  "file_path": "/home/<USER>/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/feedback_monkeyc_build.md",
   "old_string": "## ⚠️ 출력 파일명 규칙 (2026-05-23 사용자 지시)\n- **단일 기기 .prg(테스트/사이드로드) 빌드는 항상 `bin/RunVisionIQ.prg`로 고정 출력.**\n  버전·기기 접미사(`-1.2.0-fr165`, `-test` 등) **붙이지 말 것** — 사용자가 찾기 귀찮아함.\n  `run-simulator.bat`도 `RunVisionIQ.prg`를 가정함(일관).\n- .iq 릴리즈 패키지는 기존대로 버전명 유지(`RunVisionIQ-X.X.X.iq`) — 스토어 버전 추적용, 사용자 불만 없음.\n- `-d <device>`로 기기 지정해도 출력명은 `RunVisionIQ.prg`로 덮어쓰기(기기별 파일 누적 금지).",
   "new_string": "## ⚠️ 출력 파일명 규칙 (2026-05-25 변경 — 기기별 접미사로 전환)\n- **단일 기기 .prg(테스트/사이드로드)는 `bin/RunVisionIQ-<기기>.prg`로 출력.**\n  `./build.sh fr165`→`RunVisionIQ-fr165.prg`, `./build.sh fr55`→`RunVisionIQ-fr55.prg`.\n- **왜 바뀌었나**: `.prg`는 `monkeyc -d`로 굽는 **단일-기기 바이너리**. 옛 단일 `RunVisionIQ.prg` 규칙은\n  마지막 빌드 기기의 것만 남아, fr165용을 fr55에 sideload → **타겟 불일치 크래시**가 났음(2026-05-25 사용자 디버깅).\n  기기별 파일을 공존시키면 각 기기에 자기 이름 파일을 올려 혼동·크래시 원천 차단.\n- `run-simulator.bat`도 `RunVisionIQ-%DEVICE%.prg`로 유도하도록 수정함(일관).\n- .iq 릴리즈 패키지는 기존대로 버전명 유지(`RunVisionIQ-X.X.X.iq`) — 전 기기 묶음, 스토어 업로드용.\n- (옛 2026-05-23 \"항상 RunVisionIQ.prg, 접미사 금지\" 지시는 위 디버깅으로 **사용자가 명시적으로 폐기**.)\n- ⚠️ 미정리: `scripts/tdd.sh`는 자체 테스트 루프용으로 여전히 `bin/RunVisionIQ.prg` 사용(별개 ephemeral 산출물, 무해). README/CLAUDE-DETAILS의 `RunVisionIQ.prg`는 예시 명령(미갱신)."
 }
@@ -13075,7 +13075,7 @@ tool_use Read
 id: toolu_01QKPVny5mDu63JvCr3EVeUq
 ```json
 {
-  "file_path": "/home/jhkim/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/feedback_monkeyc_build.md",
+  "file_path": "/home/<USER>/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/feedback_monkeyc_build.md",
   "offset": 24,
   "limit": 6
 }
@@ -13101,7 +13101,7 @@ id: toolu_01LjBGgB4Z5x8BoMhnrx6XQK
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/feedback_monkeyc_build.md",
+  "file_path": "/home/<USER>/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/feedback_monkeyc_build.md",
   "old_string": "## ⚠️ 출력 파일명 규칙 (2026-05-23 사용자 지시)\n- **단일 기기 .prg(테스트/사이드로드) 빌드는 항상 `bin/RunVisionIQ.prg`로 고정 출력.**\n  버전·기기 접미사(`-1.2.0-fr165`, `-test` 등) **붙이지 말 것** — 사용자가 찾기 귀찮아함.\n  `run-simulator.bat`도 `RunVisionIQ.prg`를 가정함(일관).\n- .iq 릴리즈 패키지는 기존대로 버전명 유지(`RunVisionIQ-X.X.X.iq`) — 스토어 버전 추적용, 사용자 불만 없음.\n- `-d <device>`로 기기 지정해도 출력명은 `RunVisionIQ.prg`로 덮어쓰기(기기별 파일 누적 금지).",
   "new_string": "## ⚠️ 출력 파일명 규칙 (2026-05-25 변경 — 기기별 접미사로 전환)\n- **단일 기기 .prg(테스트/사이드로드)는 `bin/RunVisionIQ-<기기>.prg`로 출력.**\n  `./build.sh fr165`→`RunVisionIQ-fr165.prg`, `./build.sh fr55`→`RunVisionIQ-fr55.prg`.\n- **왜 바뀌었나**: `.prg`는 `monkeyc -d`로 굽는 **단일-기기 바이너리**. 옛 단일 `RunVisionIQ.prg` 규칙은\n  마지막 빌드 기기의 것만 남아, fr165용을 fr55에 sideload → **타겟 불일치 크래시**가 났음(2026-05-25 사용자 디버깅).\n  기기별 파일을 공존시키면 각 기기에 자기 이름 파일을 올려 혼동·크래시 원천 차단.\n- `run-simulator.bat`도 `RunVisionIQ-%DEVICE%.prg`로 유도하도록 수정함(일관).\n- .iq 릴리즈 패키지는 기존대로 버전명 유지(`RunVisionIQ-X.X.X.iq`) — 전 기기 묶음, 스토어 업로드용.\n- (옛 2026-05-23 \"항상 RunVisionIQ.prg, 접미사 금지\" 지시는 위 디버깅으로 **사용자가 명시적으로 폐기**.)\n- ⚠️ 미정리: `scripts/tdd.sh`는 자체 테스트 루프용으로 여전히 `bin/RunVisionIQ.prg` 사용(별개 ephemeral 산출물, 무해). README/CLAUDE-DETAILS의 `RunVisionIQ.prg`는 예시 명령(미갱신)."
 }
@@ -13112,7 +13112,7 @@ id: toolu_01LjBGgB4Z5x8BoMhnrx6XQK
 tool_result
 id: toolu_01LjBGgB4Z5x8BoMhnrx6XQK
 ```
-The file /home/jhkim/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/feedback_monkeyc_build.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/feedback_monkeyc_build.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -13190,7 +13190,7 @@ tool_use Bash
 id: toolu_01XCokhVr58iKgHp9Mt5MQrb
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"===== (A) manifest: 제품 목록 + 권한 =====\"\ngrep -n -E \"iq:product|uses-permission|BluetoothLowEnergy|Ble|minSdkVersion\" manifest.xml\necho \"\"\necho \"===== (B) 최근 BLE 관련 커밋(회귀 점검) =====\"\ngit log --oneline -8 -- source/RunVisionIQView.mc\necho \"\"\necho \"===== (C) BLE 연결/스캔 상태머신 — 'Connecting' 설정 지점 + BluetoothLowEnergy 호출 =====\"\ngrep -n -E \"Connecting|_scanStatus|BluetoothLowEnergy|registerProfile|setScanState|onScanResult|pairDevice|onConnectedStateChanged|getCharacteristic|requestRead|requestWrite\" source/RunVisionIQView.mc | head -50",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"===== (A) manifest: 제품 목록 + 권한 =====\"\ngrep -n -E \"iq:product|uses-permission|BluetoothLowEnergy|Ble|minSdkVersion\" manifest.xml\necho \"\"\necho \"===== (B) 최근 BLE 관련 커밋(회귀 점검) =====\"\ngit log --oneline -8 -- source/RunVisionIQView.mc\necho \"\"\necho \"===== (C) BLE 연결/스캔 상태머신 — 'Connecting' 설정 지점 + BluetoothLowEnergy 호출 =====\"\ngrep -n -E \"Connecting|_scanStatus|BluetoothLowEnergy|registerProfile|setScanState|onScanResult|pairDevice|onConnectedStateChanged|getCharacteristic|requestRead|requestWrite\" source/RunVisionIQView.mc | head -50",
   "description": "Gather manifest, git history, BLE state machine evidence"
 }
 ```
@@ -13279,7 +13279,7 @@ tool_use Bash
 id: toolu_01RYXJUaDV2Z5V4wBz9gLH4k
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\n# SDK Devices 경로 탐색 (Windows AppData)\nPS='powershell.exe -NoProfile -Command'\nDEVROOT='C:\\Users\\jinhee\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices'\necho \"===== fr55 / fr165 디바이스 정의에서 메모리·BLE 관련 키 =====\"\nfor DEV in fr55 fr165; do\n  echo \"----- $DEV -----\"\n  $PS \"if (Test-Path '$DEVROOT\\\\$DEV\\\\compiler.json') { Get-Content '$DEVROOT\\\\$DEV\\\\compiler.json' -Raw } else { 'NO compiler.json' }\" 2>/dev/null \\\n    | grep -oiE '\\\"(datafield|memoryLimit|dataField|connectIQVersion|partNumber)\\\"[^,}]*|BluetoothLowEnergy|bluetooth|[0-9]{5,}' | head -40\ndone",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\n# SDK Devices 경로 탐색 (Windows AppData)\nPS='powershell.exe -NoProfile -Command'\nDEVROOT='C:\\Users\\jinhee\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices'\necho \"===== fr55 / fr165 디바이스 정의에서 메모리·BLE 관련 키 =====\"\nfor DEV in fr55 fr165; do\n  echo \"----- $DEV -----\"\n  $PS \"if (Test-Path '$DEVROOT\\\\$DEV\\\\compiler.json') { Get-Content '$DEVROOT\\\\$DEV\\\\compiler.json' -Raw } else { 'NO compiler.json' }\" 2>/dev/null \\\n    | grep -oiE '\\\"(datafield|memoryLimit|dataField|connectIQVersion|partNumber)\\\"[^,}]*|BluetoothLowEnergy|bluetooth|[0-9]{5,}' | head -40\ndone",
   "description": "Read fr55/fr165 SDK device caps for memory and BLE"
 }
 ```
@@ -13346,7 +13346,7 @@ tool_use Read
 id: toolu_01Y3eJedianbiR1WTiwvN8Nu
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "offset": 90,
   "limit": 160
 }
@@ -13391,7 +13391,7 @@ tool_use Read
 id: toolu_01MFqhJvnf2uHfrpbaxmtwRU
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "offset": 250,
   "limit": 200
 }
@@ -13457,7 +13457,7 @@ tool_use Bash
 id: toolu_015rT88CCyBmWPf5Roeks9UX
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"===== 'Connecting' / 'Connect' 문자열 출처 (전체 source) =====\"\ngrep -rn \"Connecting\\|\\\"Connect\" source/\necho \"\"\necho \"===== BLE delegate 클래스 위치 + 콜백 메서드 =====\"\ngrep -rn -E \"class RunVisionBleDelegate|extends BluetoothLowEnergy.BleDelegate|function onScanResults|function onConnectedStateChanged|function onCharacteristicChanged|function onProfileRegister|function onScanStateChange|function onDescriptor|function onCharacteristicWrite\" source/",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"===== 'Connecting' / 'Connect' 문자열 출처 (전체 source) =====\"\ngrep -rn \"Connecting\\|\\\"Connect\" source/\necho \"\"\necho \"===== BLE delegate 클래스 위치 + 콜백 메서드 =====\"\ngrep -rn -E \"class RunVisionBleDelegate|extends BluetoothLowEnergy.BleDelegate|function onScanResults|function onConnectedStateChanged|function onCharacteristicChanged|function onProfileRegister|function onScanStateChange|function onDescriptor|function onCharacteristicWrite\" source/",
   "description": "Find Connecting string and BLE delegate callbacks"
 }
 ```
@@ -13499,7 +13499,7 @@ tool_use Read
 id: toolu_011huYRhvEGkNCBzoaEtm2D9
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "offset": 1060,
   "limit": 150
 }
@@ -13561,7 +13561,7 @@ tool_use Read
 id: toolu_01RcLykbkQdGiR5zo6qqxTsf
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "offset": 854,
   "limit": 130
 }
@@ -13755,7 +13755,7 @@ tool_use Bash
 id: toolu_0155gKj3pUjZ7kn5mnpowT6j
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\nPS='powershell.exe -NoProfile -Command'\nDEVROOT='C:\\Users\\jinhee\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices'\necho \"===== Part-Number 006-B4033-00 = 어느 기기? (fr55 vs fr165 partNumber) =====\"\nfor DEV in fr55 fr165; do\n  echo -n \"$DEV: \"\n  $PS \"Get-Content '$DEVROOT\\\\$DEV\\\\compiler.json' -Raw\" 2>/dev/null | grep -oiE '\\\"partNumber\\\"[^,}]*|006-B[0-9]{4}-00' | head -3 | tr '\\n' ' '\n  echo \"\"\ndone\necho \"\"\necho \"===== compute line 668 주변 (크래시 지점 1) =====\"\nsed -n '660,675p' source/RunVisionIQView.mc",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\nPS='powershell.exe -NoProfile -Command'\nDEVROOT='C:\\Users\\jinhee\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices'\necho \"===== Part-Number 006-B4033-00 = 어느 기기? (fr55 vs fr165 partNumber) =====\"\nfor DEV in fr55 fr165; do\n  echo -n \"$DEV: \"\n  $PS \"Get-Content '$DEVROOT\\\\$DEV\\\\compiler.json' -Raw\" 2>/dev/null | grep -oiE '\\\"partNumber\\\"[^,}]*|006-B[0-9]{4}-00' | head -3 | tr '\\n' ' '\n  echo \"\"\ndone\necho \"\"\necho \"===== compute line 668 주변 (크래시 지점 1) =====\"\nsed -n '660,675p' source/RunVisionIQView.mc",
   "description": "Identify part number device and read crash line 668"
 }
 ```
@@ -13810,7 +13810,7 @@ tool_use Bash
 id: toolu_01GcHadonvntsfgYgXr5ijnL
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"===== 디버그 로깅 인프라 규모 =====\"\necho \"addBleLog 호출: $(grep -c 'addBleLog' source/RunVisionIQView.mc)\"\necho \"addTxLog 호출:  $(grep -c 'addTxLog' source/RunVisionIQView.mc)\"\necho \"System.println: $(grep -c 'System.println' source/RunVisionIQView.mc)\"\necho \"\"\necho \"===== 디버그 버퍼 멤버 선언 =====\"\ngrep -n -E \"_bleDebugLogs|_txDebugLogs|_bleLogIndex|_txLogIndex|DEBUG\" source/RunVisionIQView.mc | head\necho \"\"\necho \"===== 디버그 로그를 화면에 그리는 코드가 있나? (debug screen) =====\"\ngrep -n -E \"_bleDebugLogs\\[|_txDebugLogs\\[|drawDebug|debugScreen|_showDebug\" source/RunVisionIQView.mc | head\necho \"\"\necho \"===== 정적 String 멤버 (지속 보유) 개수 =====\"\ngrep -nE \"private var _[a-zA-Z]+Label as Lang.String|private var _scanStatus\" source/RunVisionIQView.mc",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"===== 디버그 로깅 인프라 규모 =====\"\necho \"addBleLog 호출: $(grep -c 'addBleLog' source/RunVisionIQView.mc)\"\necho \"addTxLog 호출:  $(grep -c 'addTxLog' source/RunVisionIQView.mc)\"\necho \"System.println: $(grep -c 'System.println' source/RunVisionIQView.mc)\"\necho \"\"\necho \"===== 디버그 버퍼 멤버 선언 =====\"\ngrep -n -E \"_bleDebugLogs|_txDebugLogs|_bleLogIndex|_txLogIndex|DEBUG\" source/RunVisionIQView.mc | head\necho \"\"\necho \"===== 디버그 로그를 화면에 그리는 코드가 있나? (debug screen) =====\"\ngrep -n -E \"_bleDebugLogs\\[|_txDebugLogs\\[|drawDebug|debugScreen|_showDebug\" source/RunVisionIQView.mc | head\necho \"\"\necho \"===== 정적 String 멤버 (지속 보유) 개수 =====\"\ngrep -nE \"private var _[a-zA-Z]+Label as Lang.String|private var _scanStatus\" source/RunVisionIQView.mc",
   "description": "Quantify debug logging and string member footprint"
 }
 ```
@@ -13915,7 +13915,7 @@ tool_use Bash
 id: toolu_01F99ajmTKxmfQDjbTwie9fL
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"===== addBleLog / addTxLog / System.println 모든 출현 (정의 vs 호출 vs requestUpdate 동반 여부) =====\"\ngrep -nE \"addBleLog|addTxLog|System\\.println\" source/RunVisionIQView.mc\necho \"\"\necho \"===== requestUpdate 단독 호출 위치(제거 시 누락 확인용) =====\"\ngrep -nE \"WatchUi\\.requestUpdate\" source/RunVisionIQView.mc",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"===== addBleLog / addTxLog / System.println 모든 출현 (정의 vs 호출 vs requestUpdate 동반 여부) =====\"\ngrep -nE \"addBleLog|addTxLog|System\\.println\" source/RunVisionIQView.mc\necho \"\"\necho \"===== requestUpdate 단독 호출 위치(제거 시 누락 확인용) =====\"\ngrep -nE \"WatchUi\\.requestUpdate\" source/RunVisionIQView.mc",
   "description": "Inventory all debug-logging sites and requestUpdate calls"
 }
 ```
@@ -14011,7 +14011,7 @@ tool_use Bash
 id: toolu_01VrQtAPLqGJMJtgBoF3vCPr
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"===== addBleLog/addTxLog 의 다른 파일 참조 (RunVisionIQView.mc 외) =====\"\ngrep -rnE \"addBleLog|addTxLog\" source/ --include=*.mc | grep -v \"RunVisionIQView.mc\" || echo \"(없음 — RunVisionIQView.mc 에만 존재)\"\necho \"\"\necho \"===== 멤버 선언 블록 (40-46) =====\"\nsed -n '40,46p' source/RunVisionIQView.mc\necho \"\"\necho \"===== addBleLog/addTxLog 함수 정의 전체 (194-215) =====\"\nsed -n '194,215p' source/RunVisionIQView.mc",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"===== addBleLog/addTxLog 의 다른 파일 참조 (RunVisionIQView.mc 외) =====\"\ngrep -rnE \"addBleLog|addTxLog\" source/ --include=*.mc | grep -v \"RunVisionIQView.mc\" || echo \"(없음 — RunVisionIQView.mc 에만 존재)\"\necho \"\"\necho \"===== 멤버 선언 블록 (40-46) =====\"\nsed -n '40,46p' source/RunVisionIQView.mc\necho \"\"\necho \"===== addBleLog/addTxLog 함수 정의 전체 (194-215) =====\"\nsed -n '194,215p' source/RunVisionIQView.mc",
   "description": "Check cross-file refs and exact definition ranges"
 }
 ```
@@ -14074,7 +14074,7 @@ tool_use Bash
 id: toolu_01EfuJRLmFSmMJqKdxYAChqH
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\ncp source/RunVisionIQView.mc /tmp/RunVisionIQView.mc.bak\nbefore=$(wc -l < source/RunVisionIQView.mc)\n# 단독 statement 호출 라인만 삭제 (함수 정의 'public/private function ...' 및 '// System.println' 주석은 패턴 불일치 → 보존)\nsed -i -E '/^[[:space:]]*addBleLog\\(/d; /^[[:space:]]*addTxLog\\(/d; /^[[:space:]]*_view\\.addBleLog\\(/d; /^[[:space:]]*System\\.println\\(/d' source/RunVisionIQView.mc\nafter=$(wc -l < source/RunVisionIQView.mc)\necho \"삭제된 호출 라인 수: $((before - after))\"\necho \"\"\necho \"===== 잔존 확인: 호출은 0, 정의 2개만 남아야 함 =====\"\necho \"addBleLog 잔존: $(grep -nE 'addBleLog' source/RunVisionIQView.mc | tr '\\n' ' ')\"\necho \"addTxLog 잔존:  $(grep -nE 'addTxLog' source/RunVisionIQView.mc | tr '\\n' ' ')\"\necho \"활성 println 잔존: $(grep -nE '^[[:space:]]*System\\.println' source/RunVisionIQView.mc | wc -l)건\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\ncp source/RunVisionIQView.mc /tmp/RunVisionIQView.mc.bak\nbefore=$(wc -l < source/RunVisionIQView.mc)\n# 단독 statement 호출 라인만 삭제 (함수 정의 'public/private function ...' 및 '// System.println' 주석은 패턴 불일치 → 보존)\nsed -i -E '/^[[:space:]]*addBleLog\\(/d; /^[[:space:]]*addTxLog\\(/d; /^[[:space:]]*_view\\.addBleLog\\(/d; /^[[:space:]]*System\\.println\\(/d' source/RunVisionIQView.mc\nafter=$(wc -l < source/RunVisionIQView.mc)\necho \"삭제된 호출 라인 수: $((before - after))\"\necho \"\"\necho \"===== 잔존 확인: 호출은 0, 정의 2개만 남아야 함 =====\"\necho \"addBleLog 잔존: $(grep -nE 'addBleLog' source/RunVisionIQView.mc | tr '\\n' ' ')\"\necho \"addTxLog 잔존:  $(grep -nE 'addTxLog' source/RunVisionIQView.mc | tr '\\n' ' ')\"\necho \"활성 println 잔존: $(grep -nE '^[[:space:]]*System\\.println' source/RunVisionIQView.mc | wc -l)건\"",
   "description": "Remove all debug-logging call sites via sed"
 }
 ```
@@ -14102,7 +14102,7 @@ tool_use Bash
 id: toolu_01S5Y2PFkuEbUYDgnojvA6xV
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"===== 멤버 블록 (현재 38-47) =====\"\nsed -n '38,47p' source/RunVisionIQView.mc\necho \"\"\necho \"===== 함수 정의 (현재 186-212) =====\"\nsed -n '186,212p' source/RunVisionIQView.mc",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"===== 멤버 블록 (현재 38-47) =====\"\nsed -n '38,47p' source/RunVisionIQView.mc\necho \"\"\necho \"===== 함수 정의 (현재 186-212) =====\"\nsed -n '186,212p' source/RunVisionIQView.mc",
   "description": "Read current member block and function def regions"
 }
 ```
@@ -14165,7 +14165,7 @@ id: toolu_01KdixGUb2iknP6EmCZBFudV
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "    // Debug logs - BLE와 TX 분리 (각 4줄)\n    // ✅ DEBUG MODE: 로그 배열 크기 8로 증가 (4→8)\n    private var _bleDebugLogs as Lang.Array<Lang.String> = [\"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\"];\n    private var _txDebugLogs as Lang.Array<Lang.String> = [\"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\"];\n    private var _bleLogIndex as Lang.Number = 0;\n    private var _txLogIndex as Lang.Number = 0;\n\n    // Display labels",
   "new_string": "    // Display labels"
 }
@@ -14185,7 +14185,7 @@ tool_use Read
 id: toolu_01LeNFk4f86mLiKnBuZNUngz
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "offset": 38,
   "limit": 10
 }
@@ -14215,7 +14215,7 @@ id: toolu_01RHPtU5sEDBhPHbPanSNDTp
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "    // Debug logs - BLE와 TX 분리 (각 4줄)\n    // ✅ DEBUG MODE: 로그 배열 크기 8로 증가 (4→8)\n    private var _bleDebugLogs as Lang.Array<Lang.String> = [\"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\"];\n    private var _txDebugLogs as Lang.Array<Lang.String> = [\"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\"];\n    private var _bleLogIndex as Lang.Number = 0;\n    private var _txLogIndex as Lang.Number = 0;\n\n    // Display labels",
   "new_string": "    // Display labels"
 }
@@ -14226,7 +14226,7 @@ id: toolu_01RHPtU5sEDBhPHbPanSNDTp
 tool_result
 id: toolu_01RHPtU5sEDBhPHbPanSNDTp
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -14236,7 +14236,7 @@ id: toolu_01MUmGK2XG3aWq3o89YCNJGL
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "    //! Add BLE debug log (최대 8줄, 순환) - DEBUG MODE\n    public function addBleLog(msg as Lang.String) as Void {\n        _bleDebugLogs[_bleLogIndex] = msg;\n        _bleLogIndex = (_bleLogIndex + 1) % 8;\n        try {\n            WatchUi.requestUpdate();\n        } catch (e) {\n            // UI가 아직 준비되지 않았을 수 있음\n        }\n    }\n\n    //! Add TX debug log (최대 8줄, 순환) - DEBUG MODE\n    private function addTxLog(msg as Lang.String) as Void {\n        _txDebugLogs[_txLogIndex] = msg;\n        _txLogIndex = (_txLogIndex + 1) % 8;\n        try {\n            WatchUi.requestUpdate();\n        } catch (e) {\n            // UI가 아직 준비되지 않았을 수 있음\n        }\n    }\n\n    //! Called when activity is started",
   "new_string": "    //! Called when activity is started"
 }
@@ -14247,7 +14247,7 @@ id: toolu_01MUmGK2XG3aWq3o89YCNJGL
 tool_result
 id: toolu_01MUmGK2XG3aWq3o89YCNJGL
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -14260,7 +14260,7 @@ tool_use Bash
 id: toolu_01PtUkURqNfuaTEPq4guyLMo
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\n./build.sh fr55 2>&1 | grep -aE \"BUILD SUCC|ERROR|error:|WARNING.*\\.mc|Exception\" | head -20\necho \">>> exit=${PIPESTATUS[0]}\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\n./build.sh fr55 2>&1 | grep -aE \"BUILD SUCC|ERROR|error:|WARNING.*\\.mc|Exception\" | head -20\necho \">>> exit=${PIPESTATUS[0]}\"",
   "description": "Build fr55 to verify debug-logging removal compiles"
 }
 ```
@@ -14289,7 +14289,7 @@ tool_use Bash
 id: toolu_013us2XPUoCXJ5SnSpNtb29H
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== 각 멤버가 백업(변경 전)에서 어디서 쓰였나 — 제거된 디버그 코드가 유일 reader였는지 확인 ===\"\nfor v in MAX_RECONNECT_ATTEMPTS _avgSpeedLabel _maxHrLabel _profileRegistered _connectionStartTime; do\n  echo \"----- $v (변경 전 출현) -----\"\n  grep -nE \"$v\" /tmp/RunVisionIQView.mc.bak\ndone",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== 각 멤버가 백업(변경 전)에서 어디서 쓰였나 — 제거된 디버그 코드가 유일 reader였는지 확인 ===\"\nfor v in MAX_RECONNECT_ATTEMPTS _avgSpeedLabel _maxHrLabel _profileRegistered _connectionStartTime; do\n  echo \"----- $v (변경 전 출현) -----\"\n  grep -nE \"$v\" /tmp/RunVisionIQView.mc.bak\ndone",
   "description": "Compare member usage in backup to classify new vs pre-existing unused"
 }
 ```
@@ -14332,7 +14332,7 @@ tool_use Bash
 id: toolu_01PBrYnwBfDvPXdYPxrkpgLn
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== 삭제된 라인 중 디버그 로깅이 아닌 것이 있나? (있으면 오삭제) ===\"\ngit diff source/RunVisionIQView.mc | grep '^-' | grep -v '^---' \\\n  | grep -vE 'addBleLog|addTxLog|System\\.println|_bleDebugLog|_txDebugLog|_bleLogIndex|_txLogIndex|DEBUG MODE|Debug logs|Add BLE debug|Add TX debug|requestUpdate\\(\\)|catch \\(e\\)|try \\{|^\\-\\s*\\}|UI가 아직|^\\-\\s*$' \\\n  || echo \"(없음 — 삭제된 라인은 전부 디버그 로깅/그 함수 내부)\"\necho \"\"\necho \"=== 변경 통계 ===\"\ngit diff --stat source/RunVisionIQView.mc",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== 삭제된 라인 중 디버그 로깅이 아닌 것이 있나? (있으면 오삭제) ===\"\ngit diff source/RunVisionIQView.mc | grep '^-' | grep -v '^---' \\\n  | grep -vE 'addBleLog|addTxLog|System\\.println|_bleDebugLog|_txDebugLog|_bleLogIndex|_txLogIndex|DEBUG MODE|Debug logs|Add BLE debug|Add TX debug|requestUpdate\\(\\)|catch \\(e\\)|try \\{|^\\-\\s*\\}|UI가 아직|^\\-\\s*$' \\\n  || echo \"(없음 — 삭제된 라인은 전부 디버그 로깅/그 함수 내부)\"\necho \"\"\necho \"=== 변경 통계 ===\"\ngit diff --stat source/RunVisionIQView.mc",
   "description": "Verify only debug-logging lines were removed, no logic lines"
 }
 ```
@@ -14362,7 +14362,7 @@ tool_use Bash
 id: toolu_01UnQZMSDg9E7PPgvwbv9zYx
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\n./build.sh fr165 2>&1 | grep -aE \"BUILD SUCC|ERROR|error:\" | tail -1\necho \">>> fr165 exit=${PIPESTATUS[0]}\"\necho \"\"\necho \"=== 산출물 (둘 다 디버그 로깅 제거 반영) ===\"\nls -la --time-style='+%H:%M:%S' bin/*.prg",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\n./build.sh fr165 2>&1 | grep -aE \"BUILD SUCC|ERROR|error:\" | tail -1\necho \">>> fr165 exit=${PIPESTATUS[0]}\"\necho \"\"\necho \"=== 산출물 (둘 다 디버그 로깅 제거 반영) ===\"\nls -la --time-style='+%H:%M:%S' bin/*.prg",
   "description": "Build fr165 to confirm compile and produce updated prg"
 }
 ```
@@ -14416,7 +14416,7 @@ tool_use Bash
 id: toolu_01VTk7VKxDWSb7dSLcchiMyS
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"===== HR/cadence 읽기 + valid 플래그 설정 위치 =====\"\ngrep -nE \"currentHeartRate|currentCadence|\\.hr |\\.hr=|hrValid|cadenceValid|\\.cadence\" source/RunVisionIQView.mc\necho \"\"\necho \"===== 내가 제거한 TX 섹션(옛 664행) 주변이 지금 온전한가 — git diff 의 compute TX 부분 =====\"\ngit diff source/RunVisionIQView.mc | grep -nE \"addTxLog|processWriteQueue|buildPackets|_metricValues|hrValid|cadenceValid\" ",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"===== HR/cadence 읽기 + valid 플래그 설정 위치 =====\"\ngrep -nE \"currentHeartRate|currentCadence|\\.hr |\\.hr=|hrValid|cadenceValid|\\.cadence\" source/RunVisionIQView.mc\necho \"\"\necho \"===== 내가 제거한 TX 섹션(옛 664행) 주변이 지금 온전한가 — git diff 의 compute TX 부분 =====\"\ngit diff source/RunVisionIQView.mc | grep -nE \"addTxLog|processWriteQueue|buildPackets|_metricValues|hrValid|cadenceValid\" ",
   "description": "Find HR/cadence read + valid-flag sites and check diff around TX section"
 }
 ```
@@ -14462,7 +14462,7 @@ tool_use Bash
 id: toolu_01QKne8u4d2cGXgeF1J1Q5TW
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"===== RunningStrategy / buildPackets / HR·cadence 인코딩 위치 =====\"\ngrep -rnE \"class RunningStrategy|class CyclingStrategy|function buildPackets|HEART_RATE|CADENCE|hr|cadence|0x0E|0x0C|0x0D\" source/MetricStrategy.mc source/ILensProtocol.mc 2>/dev/null | grep -iE \"RunningStrategy|CyclingStrategy|buildPackets|heart|caden|0x0|slot|encode\" | head -40",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"===== RunningStrategy / buildPackets / HR·cadence 인코딩 위치 =====\"\ngrep -rnE \"class RunningStrategy|class CyclingStrategy|function buildPackets|HEART_RATE|CADENCE|hr|cadence|0x0E|0x0C|0x0D\" source/MetricStrategy.mc source/ILensProtocol.mc 2>/dev/null | grep -iE \"RunningStrategy|CyclingStrategy|buildPackets|heart|caden|0x0|slot|encode\" | head -40",
   "description": "Locate buildPackets and HR/cadence encoding"
 }
 ```
@@ -14500,7 +14500,7 @@ tool_use Bash
 id: toolu_013tihorvtsGL9hx1faA6prA
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== RunningStrategy/CyclingStrategy 정의 파일 ===\"\ngrep -rnE \"class RunningStrategy|class CyclingStrategy\" source/\necho \"\"\necho \"=== buildPackets 구현 모두 ===\"\ngrep -rln \"function buildPackets\" source/",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== RunningStrategy/CyclingStrategy 정의 파일 ===\"\ngrep -rnE \"class RunningStrategy|class CyclingStrategy\" source/\necho \"\"\necho \"=== buildPackets 구현 모두 ===\"\ngrep -rln \"function buildPackets\" source/",
   "description": "Find strategy class files"
 }
 ```
@@ -14526,7 +14526,7 @@ tool_use Read
 id: toolu_01D38sGvMxiQyVLaRJQ6BGvb
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc"
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc"
 }
 ```
 
@@ -14581,7 +14581,7 @@ tool_use Read
 id: toolu_01WyAYPCc3xXwwm1Cog5SGUe
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "offset": 455,
   "limit": 160
 }
@@ -14641,7 +14641,7 @@ tool_use Read
 id: toolu_01UnVMfMZfmjoEFAos7cmFiR
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/CyclingStrategy.mc"
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/CyclingStrategy.mc"
 }
 ```
 
@@ -14697,7 +14697,7 @@ tool_use Read
 id: toolu_01FcpaogcjH66YaBXTjwM9jb
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/ILensProtocol.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/ILensProtocol.mc",
   "offset": 95,
   "limit": 75
 }
@@ -14758,7 +14758,7 @@ tool_use Bash
 id: toolu_01JyZSiQXvWaehWd6ojEmhZe
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"===== createUILayoutPacket 호출처 + 전달하는 metric ID 목록 =====\"\ngrep -rnE \"createUILayoutPacket|UILayout|uiLayout|sendUILayout|0x0B|0x0E|0x07|layoutPacket\" source/*.mc | grep -v \"ILensProtocol.mc:\" | head -30\necho \"\"\necho \"===== ILensProtocol 내 UI layout 호출/정의 =====\"\ngrep -nE \"createUILayoutPacket|HEART_RATE|CADENCE|VELOCITY|DISTANCE|EXERCISE_TIME\" source/RunVisionIQView.mc",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"===== createUILayoutPacket 호출처 + 전달하는 metric ID 목록 =====\"\ngrep -rnE \"createUILayoutPacket|UILayout|uiLayout|sendUILayout|0x0B|0x0E|0x07|layoutPacket\" source/*.mc | grep -v \"ILensProtocol.mc:\" | head -30\necho \"\"\necho \"===== ILensProtocol 내 UI layout 호출/정의 =====\"\ngrep -nE \"createUILayoutPacket|HEART_RATE|CADENCE|VELOCITY|DISTANCE|EXERCISE_TIME\" source/RunVisionIQView.mc",
   "description": "Find UI layout packet usage and metric ID configuration"
 }
 ```
@@ -14806,7 +14806,7 @@ tool_use Bash
 id: toolu_0193Fr5oADCFpBqeAicURoPb
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== processWriteQueue + onCharacteristicWrite 위치 ===\"\ngrep -nE \"function processWriteQueue|function onCharacteristicWrite|_writeQueue|_isWriting|_writeIndex|removeQueue|_writeQueue\\.|requestWrite\" source/RunVisionIQView.mc",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== processWriteQueue + onCharacteristicWrite 위치 ===\"\ngrep -nE \"function processWriteQueue|function onCharacteristicWrite|_writeQueue|_isWriting|_writeIndex|removeQueue|_writeQueue\\.|requestWrite\" source/RunVisionIQView.mc",
   "description": "Locate queue drain mechanism"
 }
 ```
@@ -14845,7 +14845,7 @@ tool_use Read
 id: toolu_015r2HUk3fd6JaYtkBxfHidE
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "offset": 757,
   "limit": 60
 }
@@ -14920,7 +14920,7 @@ tool_use Bash
 id: toolu_018J7n4Mh2Zg1LAJKwLixPXu
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"===== SLOW_DEVICE_THRESHOLD_MS 값 + _useDefaultWrite 정의 =====\"\ngrep -nE \"SLOW_DEVICE_THRESHOLD_MS|_useDefaultWrite|_speedDetected\" source/RunVisionIQView.mc | head\necho \"\"\necho \"===== 이 전송 메커니즘(processWriteQueue/_useDefaultWrite/_writeQueue)이 언제 도입됐나 =====\"\ngit log --oneline -8 -S \"_useDefaultWrite\" -- source/RunVisionIQView.mc\necho \"--- _writeQueue 도입 ---\"\ngit log --oneline -5 -S \"processWriteQueue\" -- source/RunVisionIQView.mc\necho \"\"\necho \"===== 한 달 전(2026-04-25 경) 커밋 확인 =====\"\ngit log --oneline --since=\"2026-04-15\" --until=\"2026-04-30\" -- source/RunVisionIQView.mc | head",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"===== SLOW_DEVICE_THRESHOLD_MS 값 + _useDefaultWrite 정의 =====\"\ngrep -nE \"SLOW_DEVICE_THRESHOLD_MS|_useDefaultWrite|_speedDetected\" source/RunVisionIQView.mc | head\necho \"\"\necho \"===== 이 전송 메커니즘(processWriteQueue/_useDefaultWrite/_writeQueue)이 언제 도입됐나 =====\"\ngit log --oneline -8 -S \"_useDefaultWrite\" -- source/RunVisionIQView.mc\necho \"--- _writeQueue 도입 ---\"\ngit log --oneline -5 -S \"processWriteQueue\" -- source/RunVisionIQView.mc\necho \"\"\necho \"===== 한 달 전(2026-04-25 경) 커밋 확인 =====\"\ngit log --oneline --since=\"2026-04-15\" --until=\"2026-04-30\" -- source/RunVisionIQView.mc | head",
   "description": "Check threshold, and git history of write mechanism"
 }
 ```
@@ -14960,7 +14960,7 @@ tool_use Bash
 id: toolu_016pgzcQCJu4jdeVeu5rVrqV
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== 핵심 커밋 날짜 (회귀 창: ~2026-04-25 기준) ===\"\nfor c in 6b66218 89d5675; do\n  git log -1 --format=\"%h %ci %s\" $c\ndone\necho \"\"\necho \"=== source/RunVisionIQView.mc 전송 관련 최근 변경 이력 (날짜순) ===\"\ngit log --format=\"%h %ci %s\" -10 -- source/RunVisionIQView.mc | head -12\necho \"\"\necho \"=== Strategy 패턴/metric-stale 수정 커밋 날짜 ===\"\ngit log --format=\"%h %ci %s\" --all -S \"metricPresent\" -- source/MetricStrategy.mc 2>/dev/null | head -3",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== 핵심 커밋 날짜 (회귀 창: ~2026-04-25 기준) ===\"\nfor c in 6b66218 89d5675; do\n  git log -1 --format=\"%h %ci %s\" $c\ndone\necho \"\"\necho \"=== source/RunVisionIQView.mc 전송 관련 최근 변경 이력 (날짜순) ===\"\ngit log --format=\"%h %ci %s\" -10 -- source/RunVisionIQView.mc | head -12\necho \"\"\necho \"=== Strategy 패턴/metric-stale 수정 커밋 날짜 ===\"\ngit log --format=\"%h %ci %s\" --all -S \"metricPresent\" -- source/MetricStrategy.mc 2>/dev/null | head -3",
   "description": "Get commit dates to pin regression window"
 }
 ```
@@ -15005,7 +15005,7 @@ tool_use Bash
 id: toolu_01G5szuvnzTMupMEVNHPvsaF
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"===== _strategy / _metricValues 모든 할당 위치 =====\"\ngrep -nE \"_strategy =|_strategy=|_metricValues =|_metricValues\\.|detectStrategy\" source/RunVisionIQView.mc\necho \"\"\necho \"===== compute() 시작~속도/pace/strategy 셋업 (420-460) =====\"\nsed -n '420,460p' source/RunVisionIQView.mc",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"===== _strategy / _metricValues 모든 할당 위치 =====\"\ngrep -nE \"_strategy =|_strategy=|_metricValues =|_metricValues\\.|detectStrategy\" source/RunVisionIQView.mc\necho \"\"\necho \"===== compute() 시작~속도/pace/strategy 셋업 (420-460) =====\"\nsed -n '420,460p' source/RunVisionIQView.mc",
   "description": "Find all strategy/metricValues assignments and read compute top"
 }
 ```
@@ -15059,7 +15059,7 @@ tool_use Bash
 id: toolu_01F81AW5nCjfccvcv2ZGaEno
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"===== 이 파일 전체 커밋 이력 (05-23 직전 베이스라인 찾기) =====\"\ngit log --format=\"%h %ci %s\" -- source/RunVisionIQView.mc | sed -n '8,20p'\necho \"\"\necho \"===== buildPackets/Strategy 도입 전, 옛 compute()는 패킷을 어떻게 보냈나 =====\"\necho \"--- RunningStrategy.mc 가 생기기 전 커밋 찾기 ---\"\ngit log --oneline --diff-filter=A -- source/RunningStrategy.mc",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"===== 이 파일 전체 커밋 이력 (05-23 직전 베이스라인 찾기) =====\"\ngit log --format=\"%h %ci %s\" -- source/RunVisionIQView.mc | sed -n '8,20p'\necho \"\"\necho \"===== buildPackets/Strategy 도입 전, 옛 compute()는 패킷을 어떻게 보냈나 =====\"\necho \"--- RunningStrategy.mc 가 생기기 전 커밋 찾기 ---\"\ngit log --oneline --diff-filter=A -- source/RunningStrategy.mc",
   "description": "Find pre-regression baseline and when strategy was added"
 }
 ```
@@ -15098,7 +15098,7 @@ tool_use Bash
 id: toolu_012DsT6x9F9viuz6geadEjbJ
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"===== 옛 버전(5a6ff99, 05-04, valid-skip 도입 전) HR/cadence 전송 로직 =====\"\ngit show 5a6ff99:source/RunVisionIQView.mc 2>/dev/null | grep -nE \"createHeartRatePacket|createCadencePacket|HeartRate|Cadence|hrValid|cadenceValid|currentHeartRate|currentCadence|_writeQueue.add|sendToILens\" | head -30",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"===== 옛 버전(5a6ff99, 05-04, valid-skip 도입 전) HR/cadence 전송 로직 =====\"\ngit show 5a6ff99:source/RunVisionIQView.mc 2>/dev/null | grep -nE \"createHeartRatePacket|createCadencePacket|HeartRate|Cadence|hrValid|cadenceValid|currentHeartRate|currentCadence|_writeQueue.add|sendToILens\" | head -30",
   "description": "Compare old HR/cadence send logic before valid-skip"
 }
 ```
@@ -15176,7 +15176,7 @@ tool_use Read
 id: toolu_0177jTjEVXEDhLcH7ubwx1FX
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "offset": 605,
   "limit": 70
 }
@@ -15241,7 +15241,7 @@ tool_use Bash
 id: toolu_01TorCQuApViDijELkxfBVjH
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== drawMetricGrid 가 표시하는 값: 멤버 라벨(_hrLabel) vs info 새 읽기 ===\"\nsed -n '745,800p' source/RunVisionIQView.mc | grep -nE \"_hrLabel|_cadenceLabel|_paceLabel|_speedLabel|_altitudeLabel|currentHeartRate|currentCadence|drawCell|isCycling\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== drawMetricGrid 가 표시하는 값: 멤버 라벨(_hrLabel) vs info 새 읽기 ===\"\nsed -n '745,800p' source/RunVisionIQView.mc | grep -nE \"_hrLabel|_cadenceLabel|_paceLabel|_speedLabel|_altitudeLabel|currentHeartRate|currentCadence|drawCell|isCycling\"",
   "description": "Check if drawMetricGrid uses member labels or fresh reads"
 }
 ```
@@ -15260,7 +15260,7 @@ tool_use Read
 id: toolu_01EcsYi5cg28AENTKwLpvqo5
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "offset": 745,
   "limit": 55
 }
@@ -15321,7 +15321,7 @@ tool_use Bash
 id: toolu_01LceQEP6PEnomWadDxvwLtW
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== drawMetricGrid 위치 + 그 안에서 값 출처 (라벨 read 지점) ===\"\ngrep -nE \"function drawMetricGrid|drawCell\\(|_hrLabel|_cadenceLabel|_speedLabel|_altitudeLabel|_paceLabel\" source/RunVisionIQView.mc",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== drawMetricGrid 위치 + 그 안에서 값 출처 (라벨 read 지점) ===\"\ngrep -nE \"function drawMetricGrid|drawCell\\(|_hrLabel|_cadenceLabel|_speedLabel|_altitudeLabel|_paceLabel\" source/RunVisionIQView.mc",
   "description": "Find drawMetricGrid and label read sites"
 }
 ```
@@ -15455,7 +15455,7 @@ tool_use Bash
 id: toolu_01V5rjgUuLfay7Tcz5ZtNqbm
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"===== ILensProtocol.mc 최근 변경 이력 (한 달 내) =====\"\ngit log --format=\"%h %ci %s\" --since=\"2026-04-20\" -- source/ILensProtocol.mc\necho \"\"\necho \"===== HR/CADENCE 메트릭 ID + createMetricPacket 가 한 달 내 바뀌었나 =====\"\ngit log -p --since=\"2026-04-20\" -- source/ILensProtocol.mc | grep -E \"^[+-].*(HEART_RATE|CADENCE|0x0B|0x0E|createMetricPacket|createHeartRate|createCadence)\" | head -20\necho \"--- (위가 비어있으면 인코딩 무변경 = H-B 기각) ---\"\necho \"\"\necho \"===== 현재 createMetricPacket 인코딩 (HR/cadence/pace 공통 경로인지) =====\"\nsed -n '60,95p' source/ILensProtocol.mc",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"===== ILensProtocol.mc 최근 변경 이력 (한 달 내) =====\"\ngit log --format=\"%h %ci %s\" --since=\"2026-04-20\" -- source/ILensProtocol.mc\necho \"\"\necho \"===== HR/CADENCE 메트릭 ID + createMetricPacket 가 한 달 내 바뀌었나 =====\"\ngit log -p --since=\"2026-04-20\" -- source/ILensProtocol.mc | grep -E \"^[+-].*(HEART_RATE|CADENCE|0x0B|0x0E|createMetricPacket|createHeartRate|createCadence)\" | head -20\necho \"--- (위가 비어있으면 인코딩 무변경 = H-B 기각) ---\"\necho \"\"\necho \"===== 현재 createMetricPacket 인코딩 (HR/cadence/pace 공통 경로인지) =====\"\nsed -n '60,95p' source/ILensProtocol.mc",
   "description": "Check if HR/cadence encoding or IDs changed recently"
 }
 ```
@@ -15537,7 +15537,7 @@ tool_use Bash
 id: toolu_018h16ah5jvXj3GQo8H3JMtY
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"===== createUILayoutPacket / UI Sorting / 레이아웃 전송이 과거에 호출됐나 (전체 git 이력) =====\"\ngit log --oneline -S \"createUILayoutPacket\" -- source/RunVisionIQView.mc\necho \"--- 'UI Sorting'/sortPacket/layout 전송 호출 이력 ---\"\ngit log --oneline -S \"createUILayoutPacket\" --all | head\necho \"\"\necho \"===== 옛 동작 버전(5a6ff99)에 UI 레이아웃/초기 설정 패킷 전송이 있었나 =====\"\ngit show 5a6ff99:source/RunVisionIQView.mc 2>/dev/null | grep -nE \"createUILayoutPacket|UILayout|Sorting|sendInitial|0x00|onCharacteristicWrite|registerProfile|setupGlass|초기|layout\" | head -20",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"===== createUILayoutPacket / UI Sorting / 레이아웃 전송이 과거에 호출됐나 (전체 git 이력) =====\"\ngit log --oneline -S \"createUILayoutPacket\" -- source/RunVisionIQView.mc\necho \"--- 'UI Sorting'/sortPacket/layout 전송 호출 이력 ---\"\ngit log --oneline -S \"createUILayoutPacket\" --all | head\necho \"\"\necho \"===== 옛 동작 버전(5a6ff99)에 UI 레이아웃/초기 설정 패킷 전송이 있었나 =====\"\ngit show 5a6ff99:source/RunVisionIQView.mc 2>/dev/null | grep -nE \"createUILayoutPacket|UILayout|Sorting|sendInitial|0x00|onCharacteristicWrite|registerProfile|setupGlass|초기|layout\" | head -20",
   "description": "Check if UI layout packet was sent in old working version"
 }
 ```
@@ -15585,7 +15585,7 @@ tool_use Bash
 id: toolu_01BXvfhU86kSfqhUadB3Egoh
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"===== 옛 동작 버전(5a6ff99)의 전송 주기 게이팅 =====\"\ngit show 5a6ff99:source/RunVisionIQView.mc 2>/dev/null | grep -nE \"_computeCount|transmitInterval|% [0-9]|TRANSMIT|computeCount %|5초|주기\" | head\necho \"\"\necho \"===== 현재 전송 게이팅 + RunningStrategy 주기 =====\"\ngrep -nE \"_computeCount|transmitInterval|getTransmitIntervalSeconds\" source/RunVisionIQView.mc\necho \"--- RunningStrategy 주기 ---\"\ngrep -nE \"getTransmitIntervalSeconds|return [0-9]\" source/RunningStrategy.mc source/MetricStrategy.mc\necho \"\"\necho \"===== 전송 주기를 바꾼 커밋 추적 =====\"\ngit log --oneline -S \"_computeCount % \" -- source/RunVisionIQView.mc | head",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"===== 옛 동작 버전(5a6ff99)의 전송 주기 게이팅 =====\"\ngit show 5a6ff99:source/RunVisionIQView.mc 2>/dev/null | grep -nE \"_computeCount|transmitInterval|% [0-9]|TRANSMIT|computeCount %|5초|주기\" | head\necho \"\"\necho \"===== 현재 전송 게이팅 + RunningStrategy 주기 =====\"\ngrep -nE \"_computeCount|transmitInterval|getTransmitIntervalSeconds\" source/RunVisionIQView.mc\necho \"--- RunningStrategy 주기 ---\"\ngrep -nE \"getTransmitIntervalSeconds|return [0-9]\" source/RunningStrategy.mc source/MetricStrategy.mc\necho \"\"\necho \"===== 전송 주기를 바꾼 커밋 추적 =====\"\ngit log --oneline -S \"_computeCount % \" -- source/RunVisionIQView.mc | head",
   "description": "Compare old vs new transmit interval"
 }
 ```
@@ -15632,7 +15632,7 @@ tool_use Bash
 id: toolu_01U5srkwENt4v6CDS6dqqGiA
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"===== 전송 주기(%N) 변경 이력 — 1초→5초 전환 커밋 찾기 =====\"\ngit log -p --all -S \"_computeCount %\" -- source/RunVisionIQView.mc 2>/dev/null | grep -E \"^commit|Date:|_computeCount % [0-9]|% transmitInterval\" | head -30",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"===== 전송 주기(%N) 변경 이력 — 1초→5초 전환 커밋 찾기 =====\"\ngit log -p --all -S \"_computeCount %\" -- source/RunVisionIQView.mc 2>/dev/null | grep -E \"^commit|Date:|_computeCount % [0-9]|% transmitInterval\" | head -30",
   "description": "Trace transmit interval change history (1s vs 5s)"
 }
 ```
@@ -15692,7 +15692,7 @@ id: toolu_01WPNgWJ96FHvuhNEsq4gxo7
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc",
   "old_string": "    function initialize() {\n        MetricStrategy.initialize();\n    }",
   "new_string": "    function initialize() {\n        MetricStrategy.initialize();\n    }\n\n    //! [진단 실험 2026-05-25] 러닝 전송 주기 5초→1초.\n    //! 가설: HR/cadence 센서 갱신 위상이 %5 전송 샘플링과 어긋나 전송 시점마다 invalid로 읽혀 skip됨\n    //! (워치 표시는 매 compute라 4/5 valid면 안정돼 보임). 1초 전송이면 매 compute 전송 → 위상 무관.\n    //! 검증 후 진짜 fix(예: HR/cadence는 valid 무관 전송)로 대체 예정.\n    function getTransmitIntervalSeconds() as Lang.Number {\n        return 1;\n    }"
 }
@@ -15703,7 +15703,7 @@ id: toolu_01WPNgWJ96FHvuhNEsq4gxo7
 tool_result
 id: toolu_01WPNgWJ96FHvuhNEsq4gxo7
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -15712,7 +15712,7 @@ tool_use Bash
 id: toolu_01MkQ654EDfZ55ekG4wnbVBg
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\n./build.sh fr55 2>&1 | grep -aE \"BUILD SUCC|ERROR|error:\" | tail -1\necho \">>> exit=${PIPESTATUS[0]} ; prg: $(date -r bin/RunVisionIQ-fr55.prg '+%H:%M:%S')\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\n./build.sh fr55 2>&1 | grep -aE \"BUILD SUCC|ERROR|error:\" | tail -1\necho \">>> exit=${PIPESTATUS[0]} ; prg: $(date -r bin/RunVisionIQ-fr55.prg '+%H:%M:%S')\"",
   "description": "Build fr55 with 1s interval experiment"
 }
 ```
@@ -15757,7 +15757,7 @@ id: toolu_015QtEzew8ECtQgipmMUYTqR
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc",
   "old_string": "    //! [진단 실험 2026-05-25] 러닝 전송 주기 5초→1초.\n    //! 가설: HR/cadence 센서 갱신 위상이 %5 전송 샘플링과 어긋나 전송 시점마다 invalid로 읽혀 skip됨\n    //! (워치 표시는 매 compute라 4/5 valid면 안정돼 보임). 1초 전송이면 매 compute 전송 → 위상 무관.\n    //! 검증 후 진짜 fix(예: HR/cadence는 valid 무관 전송)로 대체 예정.\n    function getTransmitIntervalSeconds() as Lang.Number {\n        return 1;\n    }",
   "new_string": "    //! 러닝 전송 주기 1초 (5초 아님). 회귀 수정 2026-05-25 (fr55 실기기 검증).\n    //! 증상: 글래스에서 HR·cadence만 0, 시간·페이스·거리는 정상.\n    //! 원인: buildPackets 가 valid-skip(50844a5)으로 invalid 메트릭 패킷을 안 만드는데,\n    //!   전송이 5초마다(=5번째 compute)만 일어나 그 샘플링 시점이 HR/cadence 센서 갱신 위상과\n    //!   어긋나면 전송 시점마다 null/0 으로 읽혀 영구 skip → 글래스 0 고착.\n    //!   (워치 표시는 매 compute 갱신이라 5번 중 4번 valid면 안정돼 보여 증상이 가려졌음.)\n    //! 수정: 매 compute(1초) 전송 → valid 한 compute 에서 반드시 전송됨(위상 무관). 실기기 확인됨.\n    //!   valid-skip 자체는 유지(재연결 직후 stale 0 미전송 보호 = 50844a5 의도 보존).\n    //!   느린 fr55 도 processWriteQueue 의 !_isWriting 가드가 드레인 중 리필을 막아 자가 스로틀.\n    function getTransmitIntervalSeconds() as Lang.Number {\n        return 1;\n    }"
 }
@@ -15768,7 +15768,7 @@ id: toolu_015QtEzew8ECtQgipmMUYTqR
 tool_result
 id: toolu_015QtEzew8ECtQgipmMUYTqR
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -15781,7 +15781,7 @@ tool_use Bash
 id: toolu_01PAF2xMsY9ngowipHNdaugb
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"===== git status =====\"\ngit status --short\necho \"\"\necho \"===== 변경 통계 =====\"\ngit diff --stat\necho \"\"\necho \"===== AppVersion.mc 가 빌드로 바뀌었나(diff 있으면 빌드 부산물) =====\"\ngit diff --stat source/AppVersion.mc 2>/dev/null || echo \"(변경 없음)\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"===== git status =====\"\ngit status --short\necho \"\"\necho \"===== 변경 통계 =====\"\ngit diff --stat\necho \"\"\necho \"===== AppVersion.mc 가 빌드로 바뀌었나(diff 있으면 빌드 부산물) =====\"\ngit diff --stat source/AppVersion.mc 2>/dev/null || echo \"(변경 없음)\"",
   "description": "Review all uncommitted changes"
 }
 ```
@@ -15827,7 +15827,7 @@ tool_use Read
 id: toolu_01YL3Nh4zyxyEDYHUuyazofH
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/Docs/HANDOFF-garmin-watch-ui.md",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/Docs/HANDOFF-garmin-watch-ui.md",
   "offset": 1,
   "limit": 12
 }
@@ -15859,7 +15859,7 @@ id: toolu_01WmeePCprNBeshAz4Xi7b6u
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/Docs/HANDOFF-garmin-watch-ui.md",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/Docs/HANDOFF-garmin-watch-ui.md",
   "old_string": "> 다른 머신(WSL)에서 진행하던 작업을 맥 세션이 이어받기 위한 노트.\n> Claude 메모리는 머신별이라 맥 세션은 이 컨텍스트를 모름 → 이 문서가 인계서.",
   "new_string": "> 다른 머신(WSL)에서 진행하던 작업을 맥 세션이 이어받기 위한 노트.\n> Claude 메모리는 머신별이라 맥 세션은 이 컨텍스트를 모름 → 이 문서가 인계서.\n\n## 🔧 2026-05-25 fr55 실기기 디버깅 (WSL 세션 — 맥 검토 요청)\nfr55 실기기 테스트에서 3개 이슈를 순차 해결. **맥에서 시뮬레이터 + Tests.mc 회귀(42개) 재확인 요망**(WSL은 sim·테스트 실행 불가).\n\n1. **타겟 불일치 크래시 → 네이밍 B 전환** (`build.sh`, `run-simulator.bat`): `.prg`는 단일-기기 바이너리라 fr165용을 fr55에 올리면 크래시. 이제 `RunVisionIQ-<기기>.prg`로 기기별 출력(혼동 방지). 옛 단일 `RunVisionIQ.prg` 규칙 폐기.\n\n2. **fr55 OOM 크래시(연결 중) → 디버그 로깅 제거** (`RunVisionIQView.mc`, −72줄): fr55 DataField 예산 **32KB**(fr165는 64KB, SDK 확인). 회귀 — 최근 그리드 기능이 footprint를 키워 32KB 천장 초과. 크래시 로그 `Out Of Memory Error` @ line 929(`System.println` 문자열연결)·440. **화면에 안 보이는 write-only 디버그 로깅**(`_bleDebugLogs`/`_txDebugLogs` 2×8 + addBleLog 32회 + addTxLog 5회 + println 12회) 전부 제거 → fr55 크래시 해소(실기기 확인). 코드 ~3KB 감소.\n   - ⚠️ 남은 Step 2 후보(미적용): `_avgSpeedLabel`(503)·`_maxHrLabel`(518)이 매초 `.format()` 하는데 어디서도 안 읽힘(write-only, 기존 dead code). 더 줄여야 하면 제거.\n\n3. **글래스 HR·cadence만 0 (페이스·거리 정상) → 러닝 전송 […]
 
@@ -15868,7 +15868,7 @@ id: toolu_01WmeePCprNBeshAz4Xi7b6u
 tool_result
 id: toolu_01WmeePCprNBeshAz4Xi7b6u
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/Docs/HANDOFF-garmin-watch-ui.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/Docs/HANDOFF-garmin-watch-ui.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -15883,7 +15883,7 @@ tool_use Bash
 id: toolu_019pQy47F1DJyuRnZqSZx23E
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\nfor DEV in fr55 fr165; do\n  echo -n \"$DEV: \"\n  ./build.sh $DEV 2>&1 | grep -aoE \"BUILD SUCCESSFUL|ERROR|error:\" | tail -1\ndone\necho \"\"\necho \"=== 최종 산출물 ===\"\nls -la --time-style='+%H:%M:%S' bin/*.prg",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\nfor DEV in fr55 fr165; do\n  echo -n \"$DEV: \"\n  ./build.sh $DEV 2>&1 | grep -aoE \"BUILD SUCCESSFUL|ERROR|error:\" | tail -1\ndone\necho \"\"\necho \"=== 최종 산출물 ===\"\nls -la --time-style='+%H:%M:%S' bin/*.prg",
   "description": "Final rebuild of both devices with finalized code"
 }
 ```
@@ -16022,7 +16022,7 @@ tool_use Bash
 id: toolu_014aiUXUhhcAyrS6Zda6K3D7
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\ngit fetch origin 2>&1 | tail -2\necho \"\"\necho \"=== 로컬 HEAD vs origin/main ===\"\necho \"로컬 HEAD: $(git rev-parse --short HEAD) $(git log -1 --format='%s' HEAD)\"\necho \"origin/main: $(git rev-parse --short origin/main) $(git log -1 --format='%s' origin/main)\"\necho \"\"\necho \"=== 로컬이 origin/main에 뒤처진/앞선 정도 ===\"\necho \"behind(받을 것): $(git rev-list --count HEAD..origin/main)  ahead(내 커밋): $(git rev-list --count origin/main..HEAD)\"\necho \"\"\necho \"=== 미커밋 파일 (이게 pull을 막음) ===\"\ngit status --short\necho \"\"\necho \"=== origin/main이 9865d3d 이후 바꾼 파일 (내 미커밋과 겹치나?) ===\"\ngit diff --stat 9865d3d origin/main 2>/dev/null | tail -20",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\ngit fetch origin 2>&1 | tail -2\necho \"\"\necho \"=== 로컬 HEAD vs origin/main ===\"\necho \"로컬 HEAD: $(git rev-parse --short HEAD) $(git log -1 --format='%s' HEAD)\"\necho \"origin/main: $(git rev-parse --short origin/main) $(git log -1 --format='%s' origin/main)\"\necho \"\"\necho \"=== 로컬이 origin/main에 뒤처진/앞선 정도 ===\"\necho \"behind(받을 것): $(git rev-list --count HEAD..origin/main)  ahead(내 커밋): $(git rev-list --count origin/main..HEAD)\"\necho \"\"\necho \"=== 미커밋 파일 (이게 pull을 막음) ===\"\ngit status --short\necho \"\"\necho \"=== origin/main이 9865d3d 이후 바꾼 파일 (내 미커밋과 겹치나?) ===\"\ngit diff --stat 9865d3d origin/main 2>/dev/null | tail -20",
   "description": "Fetch and diagnose divergence before any pull"
 }
 ```
@@ -16072,7 +16072,7 @@ tool_use Bash
 id: toolu_01M1ZorMfMyJYQWZWyBQqMK4
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== remote 설정 ===\"\ngit remote -v\necho \"\"\necho \"=== verbose fetch (실제 에러) ===\"\ngit fetch origin 2>&1 | head -20\necho \"\"\necho \"=== 로컬에 95a1b45 객체가 있나? (이전에 받았을 수도) ===\"\ngit cat-file -t 95a1b45 2>&1 | head -1",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== remote 설정 ===\"\ngit remote -v\necho \"\"\necho \"=== verbose fetch (실제 에러) ===\"\ngit fetch origin 2>&1 | head -20\necho \"\"\necho \"=== 로컬에 95a1b45 객체가 있나? (이전에 받았을 수도) ===\"\ngit cat-file -t 95a1b45 2>&1 | head -1",
   "description": "Diagnose remote access failure"
 }
 ```
@@ -16109,7 +16109,7 @@ tool_use Bash
 id: toolu_012NxgUKhXY69N6tC9iHYCqa
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\nR=\"gopeace88/RunVision-IQ\"\necho \"=== 올바른 리모트로 fetch ===\"\ngit fetch \"$R\" 2>&1 | tail -3\necho \"\"\necho \"=== 리모트 main 최신 ===\"\ngit log -1 --format='%h %ci %s' \"$R/main\" 2>&1 | head -1\necho \"\"\necho \"=== 95a1b45가 내 HEAD(9865d3d)를 포함하나? (포함=내 위에 쌓임, ff-merge 가능) ===\"\nif git merge-base --is-ancestor 9865d3d 95a1b45; then echo \"YES — 9865d3d는 95a1b45의 조상 (내 커밋 위에 Mac이 쌓음)\"; else echo \"NO — 발산\"; fi\necho \"\"\necho \"=== 95a1b45 vs 내 HEAD 사이 Mac 커밋들 ===\"\ngit log --oneline 9865d3d..95a1b45 2>/dev/null | head\necho \"\"\necho \"=== Mac이 95a1b45에서 RunVisionIQView.mc 를 건드렸나 + 내 미커밋과 겹치나 ===\"\ngit diff --stat 9865d3d 95a1b45 -- source/RunVisionIQView.mc",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\nR=\"gopeace88/RunVision-IQ\"\necho \"=== 올바른 리모트로 fetch ===\"\ngit fetch \"$R\" 2>&1 | tail -3\necho \"\"\necho \"=== 리모트 main 최신 ===\"\ngit log -1 --format='%h %ci %s' \"$R/main\" 2>&1 | head -1\necho \"\"\necho \"=== 95a1b45가 내 HEAD(9865d3d)를 포함하나? (포함=내 위에 쌓임, ff-merge 가능) ===\"\nif git merge-base --is-ancestor 9865d3d 95a1b45; then echo \"YES — 9865d3d는 95a1b45의 조상 (내 커밋 위에 Mac이 쌓음)\"; else echo \"NO — 발산\"; fi\necho \"\"\necho \"=== 95a1b45 vs 내 HEAD 사이 Mac 커밋들 ===\"\ngit log --oneline 9865d3d..95a1b45 2>/dev/null | head\necho \"\"\necho \"=== Mac이 95a1b45에서 RunVisionIQView.mc 를 건드렸나 + 내 미커밋과 겹치나 ===\"\ngit diff --stat 9865d3d 95a1b45 -- source/RunVisionIQView.mc",
   "description": "Verify 95a1b45 relationship and file overlap with correct remote"
 }
 ```
@@ -16158,7 +16158,7 @@ tool_use Bash
 id: toolu_01BJubaznsa4hsNtskuvUgQk
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\n# 커밋 1: 네이밍 B\ngit add build.sh run-simulator.bat\ngit commit -q -m \"build(garmin): 기기별 .prg 네이밍 (RunVisionIQ-<기기>.prg)\n\n.prg는 단일-기기 바이너리 — fr165용을 fr55에 sideload하면 타겟 불일치 크래시.\nbuild.sh가 기기별 RunVisionIQ-<기기>.prg 출력, run-simulator.bat도 기기명에서 유도.\n옛 단일 RunVisionIQ.prg 규칙 폐기(타겟 혼동 방지).\n\nCo-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>\"\n# 커밋 2: OOM 디버그 로깅 제거\ngit add source/RunVisionIQView.mc\ngit commit -q -m \"fix(garmin): fr55 OOM 크래시 — write-only 디버그 로깅 제거 (-72줄)\n\nfr55 DataField 예산 32KB(fr165 64KB). 누적 기능이 천장 초과 → 연결 중 OOM\n(크래시로그 line 929 println·440). 화면에 안 보이는 write-only 디버그 로깅\n(_bleDebugLogs/_txDebugLogs 2x8 + addBleLog 32 + addTxLog 5 + println 12) 전부 제거.\nfr55 실기기 크래시 해소 확인. 코드 ~3KB 감소.\n\nCo-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>\"\n# 커밋 3: HR/cadence 회귀\ngit add source/RunningStrategy.mc\ngit commit -q -m \"fix(garmin/metrics): 글래스 HR·cadence 0 회귀 — 러닝 전송 1초\n\nvalid-skip(50844a5)이 invalid 메트릭 패킷 미생성 + 5초마다(5번째 compute)만 전송\n→ 샘플링 시점이 HR/cadence 센서 갱신 위상과 어긋나 매번 null/0 읽혀 영구 skip\n→ 글래스 0 고착(워치는 매 compute 표시라 가려짐). 러닝 5→1초(매 compute 전송)로 해소.\nvalid-skip 유지(재연결 stale-0 보호). fr55 실기기 확인.\n\nCo-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>\"\n# 커밋 4: 핸드오프 문서\ngit add Docs/HANDOFF-garmin-watch-ui.md\ngit commit -q -m \"docs(garmin): HANDOFF에 fr55 디버깅 3건 근본원인 기록 (맥 검토용)\n\nCo-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>\"\necho \"=== 커밋 후 상태 […]
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\n# 커밋 1: 네이밍 B\ngit add build.sh run-simulator.bat\ngit commit -q -m \"build(garmin): 기기별 .prg 네이밍 (RunVisionIQ-<기기>.prg)\n\n.prg는 단일-기기 바이너리 — fr165용을 fr55에 sideload하면 타겟 불일치 크래시.\nbuild.sh가 기기별 RunVisionIQ-<기기>.prg 출력, run-simulator.bat도 기기명에서 유도.\n옛 단일 RunVisionIQ.prg 규칙 폐기(타겟 혼동 방지).\n\nCo-Authored-By: Claude Opus 4.7 <<REDACTED_EMAIL>>\"\n# 커밋 2: OOM 디버그 로깅 제거\ngit add source/RunVisionIQView.mc\ngit commit -q -m \"fix(garmin): fr55 OOM 크래시 — write-only 디버그 로깅 제거 (-72줄)\n\nfr55 DataField 예산 32KB(fr165 64KB). 누적 기능이 천장 초과 → 연결 중 OOM\n(크래시로그 line 929 println·440). 화면에 안 보이는 write-only 디버그 로깅\n(_bleDebugLogs/_txDebugLogs 2x8 + addBleLog 32 + addTxLog 5 + println 12) 전부 제거.\nfr55 실기기 크래시 해소 확인. 코드 ~3KB 감소.\n\nCo-Authored-By: Claude Opus 4.7 <<REDACTED_EMAIL>>\"\n# 커밋 3: HR/cadence 회귀\ngit add source/RunningStrategy.mc\ngit commit -q -m \"fix(garmin/metrics): 글래스 HR·cadence 0 회귀 — 러닝 전송 1초\n\nvalid-skip(50844a5)이 invalid 메트릭 패킷 미생성 + 5초마다(5번째 compute)만 전송\n→ 샘플링 시점이 HR/cadence 센서 갱신 위상과 어긋나 매번 null/0 읽혀 영구 skip\n→ 글래스 0 고착(워치는 매 compute 표시라 가려짐). 러닝 5→1초(매 compute 전송)로 해소.\nvalid-skip 유지(재연결 stale-0 보호). fr55 실기기 확인.\n\nCo-Authored-By: Claude Opus 4.7 <<REDACTED_EMAIL>>\"\n# 커밋 4: 핸드오프 문서\ngit add Docs/HANDOFF-garmin-watch-ui.md\ngit commit -q -m \"docs(garmin): HANDOFF에 fr55 디버깅 3건 근본원인 기록 (맥 검토용)\n\nCo-Authored-By: Claude Opus 4.7 <<REDACTED_EMAIL>>\"\necho \"=== 커밋 후 상태 […]
 
 > TOOL
 
@@ -16184,7 +16184,7 @@ tool_use Bash
 id: toolu_01T4wdjQqWoCVutKFU7gNrWc
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\ngit merge 95a1b45 --no-edit 2>&1 | tail -15\necho \">>> merge exit=${PIPESTATUS[0]}\"\necho \"\"\necho \"=== 충돌 여부 ===\"\ngit status --porcelain | grep -E \"^(UU|AA|DD|U|A|D)\" || echo \"(충돌 없음)\"\necho \"\"\necho \"=== 머지 후 HEAD ===\"\ngit log --oneline -3",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\ngit merge 95a1b45 --no-edit 2>&1 | tail -15\necho \">>> merge exit=${PIPESTATUS[0]}\"\necho \"\"\necho \"=== 충돌 여부 ===\"\ngit status --porcelain | grep -E \"^(UU|AA|DD|U|A|D)\" || echo \"(충돌 없음)\"\necho \"\"\necho \"=== 머지 후 HEAD ===\"\ngit log --oneline -3",
   "description": "Merge Mac's 95a1b45 into local branch"
 }
 ```
@@ -16224,7 +16224,7 @@ tool_use Bash
 id: toolu_01W61BM2w67LDteaJkpmeUn1
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== 머지 후 내 debug 제거 유지 확인 (addBleLog/addTxLog 0건이어야) ===\"\necho \"addBleLog: $(grep -c addBleLog source/RunVisionIQView.mc)  addTxLog: $(grep -c addTxLog source/RunVisionIQView.mc)\"\necho \"\"\necho \"=== Step-2 대상 5개의 모든 출현 (read가 있나? 선언/대입만이면 write-only 확정) ===\"\nfor v in _totalSpeed _speedSamples _avgSpeedLabel _maxHeartRate _maxHrLabel; do\n  echo \"----- $v -----\"\n  grep -nE \"$v\" source/RunVisionIQView.mc\ndone",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== 머지 후 내 debug 제거 유지 확인 (addBleLog/addTxLog 0건이어야) ===\"\necho \"addBleLog: $(grep -c addBleLog source/RunVisionIQView.mc)  addTxLog: $(grep -c addTxLog source/RunVisionIQView.mc)\"\necho \"\"\necho \"=== Step-2 대상 5개의 모든 출현 (read가 있나? 선언/대입만이면 write-only 확정) ===\"\nfor v in _totalSpeed _speedSamples _avgSpeedLabel _maxHeartRate _maxHrLabel; do\n  echo \"----- $v -----\"\n  grep -nE \"$v\" source/RunVisionIQView.mc\ndone",
   "description": "Verify merge kept debug removal and confirm write-only targets"
 }
 ```
@@ -16277,7 +16277,7 @@ tool_use Bash
 id: toolu_01VposFfiSm7iob3oYC7FMQd
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== 필드 선언 (48-56) ===\"\nsed -n '48,56p' source/RunVisionIQView.mc\necho \"=== reset (216-225) ===\"\nsed -n '216,225p' source/RunVisionIQView.mc\necho \"=== compute 평균속도+최대HR 블록 (445-472) ===\"\nsed -n '445,472p' source/RunVisionIQView.mc",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== 필드 선언 (48-56) ===\"\nsed -n '48,56p' source/RunVisionIQView.mc\necho \"=== reset (216-225) ===\"\nsed -n '216,225p' source/RunVisionIQView.mc\necho \"=== compute 평균속도+최대HR 블록 (445-472) ===\"\nsed -n '445,472p' source/RunVisionIQView.mc",
   "description": "Read exact text of removal regions"
 }
 ```
@@ -16344,7 +16344,7 @@ id: toolu_01AQJ6DYKxKjv9YdCBLhxcpS
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "    // Statistics tracking\n    private var _totalSpeed as Lang.Float = 0.0;\n    private var _speedSamples as Lang.Number = 0;\n    private var _avgSpeedLabel as Lang.String = \"---\";\n    private var _maxHeartRate as Lang.Number = 0;\n    private var _maxHrLabel as Lang.String = \"---\";\n\n    // Profile registration tracking (ActiveLook 방식)",
   "new_string": "    // Profile registration tracking (ActiveLook 방식)"
 }
@@ -16364,7 +16364,7 @@ tool_use Read
 id: toolu_0117fvUFv23h1V2kdPV4ijBq
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "offset": 49,
   "limit": 8
 }
@@ -16392,7 +16392,7 @@ id: toolu_011Yi1ytH3WEwmCVNwnc1NMB
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "    // Statistics tracking\n    private var _totalSpeed as Lang.Float = 0.0;\n    private var _speedSamples as Lang.Number = 0;\n    private var _avgSpeedLabel as Lang.String = \"---\";\n    private var _maxHeartRate as Lang.Number = 0;\n    private var _maxHrLabel as Lang.String = \"---\";\n\n    // Profile registration tracking (ActiveLook 방식)",
   "new_string": "    // Profile registration tracking (ActiveLook 방식)"
 }
@@ -16403,7 +16403,7 @@ id: toolu_011Yi1ytH3WEwmCVNwnc1NMB
 tool_result
 id: toolu_011Yi1ytH3WEwmCVNwnc1NMB
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -16413,7 +16413,7 @@ id: toolu_01T3hkPn1ot6FCqxoaR5zrGY
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "        // Reset statistics\n        _totalSpeed = 0.0;\n        _speedSamples = 0;\n        _maxHeartRate = 0;\n        _avgSpeedLabel = \"---\";\n        _maxHrLabel = \"---\";\n        _paceLabel = \"--:--\";",
   "new_string": "        _paceLabel = \"--:--\";"
 }
@@ -16424,7 +16424,7 @@ id: toolu_01T3hkPn1ot6FCqxoaR5zrGY
 tool_result
 id: toolu_01T3hkPn1ot6FCqxoaR5zrGY
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -16434,7 +16434,7 @@ id: toolu_01WN1nb8cFZcJjoRxTsRNzLN
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "            paceSeconds = paceMin * 60 + paceSec;\n\n            // Update average speed\n            _totalSpeed += speedMs * 3.6;\n            _speedSamples++;\n            var avgSpeed = (_totalSpeed / _speedSamples).toNumber();\n            _avgSpeedLabel = avgSpeed.format(\"%d\");\n        } else {",
   "new_string": "            paceSeconds = paceMin * 60 + paceSec;\n        } else {"
 }
@@ -16445,7 +16445,7 @@ id: toolu_01WN1nb8cFZcJjoRxTsRNzLN
 tool_result
 id: toolu_01WN1nb8cFZcJjoRxTsRNzLN
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -16455,7 +16455,7 @@ id: toolu_01Q8RQUomqz2wZemMupAdviy
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "        if (hrValid) {\n            _hrLabel = hr.format(\"%d\");\n\n            // Track max heart rate\n            if (hr > _maxHeartRate) {\n                _maxHeartRate = hr;\n                _maxHrLabel = hr.format(\"%d\");\n            }\n        } else {\n            _hrLabel = \"---\";",
   "new_string": "        if (hrValid) {\n            _hrLabel = hr.format(\"%d\");\n        } else {\n            _hrLabel = \"---\";"
 }
@@ -16466,7 +16466,7 @@ id: toolu_01Q8RQUomqz2wZemMupAdviy
 tool_result
 id: toolu_01Q8RQUomqz2wZemMupAdviy
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -16479,7 +16479,7 @@ tool_use Bash
 id: toolu_01T7heRfz3GmfxDQFdk3bm5f
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== 성공조건: 5개 식별자 0건 ===\"\nn=$(grep -rnE \"_avgSpeedLabel|_maxHrLabel|_totalSpeed|_speedSamples|_maxHeartRate\" source/ | wc -l)\necho \"잔존: ${n}건\"; grep -rnE \"_avgSpeedLabel|_maxHrLabel|_totalSpeed|_speedSamples|_maxHeartRate\" source/ || echo \"(완전 제거됨)\"\necho \"\"\necho \"=== 빌드 fr55 / fr165 ===\"\nfor DEV in fr55 fr165; do echo -n \"$DEV: \"; ./build.sh $DEV 2>&1 | grep -aoE \"BUILD SUCCESSFUL|ERROR|error:\" | tail -1; done\necho \"\"\necho \"=== 산출물 크기 (Step-2 후) ===\"\nls -la --time-style='+%H:%M:%S' bin/*.prg",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== 성공조건: 5개 식별자 0건 ===\"\nn=$(grep -rnE \"_avgSpeedLabel|_maxHrLabel|_totalSpeed|_speedSamples|_maxHeartRate\" source/ | wc -l)\necho \"잔존: ${n}건\"; grep -rnE \"_avgSpeedLabel|_maxHrLabel|_totalSpeed|_speedSamples|_maxHeartRate\" source/ || echo \"(완전 제거됨)\"\necho \"\"\necho \"=== 빌드 fr55 / fr165 ===\"\nfor DEV in fr55 fr165; do echo -n \"$DEV: \"; ./build.sh $DEV 2>&1 | grep -aoE \"BUILD SUCCESSFUL|ERROR|error:\" | tail -1; done\necho \"\"\necho \"=== 산출물 크기 (Step-2 후) ===\"\nls -la --time-style='+%H:%M:%S' bin/*.prg",
   "description": "Verify removal complete and builds pass"
 }
 ```
@@ -16514,7 +16514,7 @@ tool_use Bash
 id: toolu_019DZYyHuTrfopSWa6TrEgXP
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\nSDK=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\\\\monkeyc.bat\"\nW=$(wslpath -w \"$(pwd)\")\necho \"=== 테스트 모드 컴파일 (-t, fr165) — 실행 아님, 컴파일 검증만 ===\"\npowershell.exe -NoProfile -Command \"& '$SDK' -o '$W\\\\bin\\\\RunVisionIQ-test.prg' -f '$W\\\\monkey.jungle' -y '$W\\\\developer_key.der' -d fr165 -t\" 2>&1 | grep -aoE \"BUILD SUCCESSFUL|ERROR|error:|Tests\\.mc.*\" | head -5\necho \">>> 테스트 컴파일 exit=${PIPESTATUS[0]}\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\nSDK=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\\\\monkeyc.bat\"\nW=$(wslpath -w \"$(pwd)\")\necho \"=== 테스트 모드 컴파일 (-t, fr165) — 실행 아님, 컴파일 검증만 ===\"\npowershell.exe -NoProfile -Command \"& '$SDK' -o '$W\\\\bin\\\\RunVisionIQ-test.prg' -f '$W\\\\monkey.jungle' -y '$W\\\\developer_key.der' -d fr165 -t\" 2>&1 | grep -aoE \"BUILD SUCCESSFUL|ERROR|error:|Tests\\.mc.*\" | head -5\necho \">>> 테스트 컴파일 exit=${PIPESTATUS[0]}\"",
   "description": "Compile test build to verify Tests.mc compiles with changes"
 }
 ```
@@ -16541,7 +16541,7 @@ tool_use Bash
 id: toolu_01Y8SpcdghfiSjG6YQHCLHJC
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\nrm -f bin/RunVisionIQ-test.prg   # 테스트 컴파일 부산물 정리(gitignored)\ngit add source/RunVisionIQView.mc\ngit commit -q -m \"fix(garmin): fr55 OOM 추가 회수 — write-only 통계 라벨 제거\n\n표출·전송 어디에도 안 쓰이는 write-only 체인 2개 제거:\n- 평균속도: _totalSpeed/_speedSamples → avgSpeed → _avgSpeedLabel (미표출)\n- 최대HR: _maxHeartRate → _maxHrLabel (미표출)\n필드 5개 + onTimerReset + compute 누적 블록 2개. 매 compute .format() 할당 제거로\n힙·코드 회수(fr55 32KB 예산). 표출 라벨(_paceLabel/_hrLabel/_speedLabel 등) 불변.\nfr55/fr165 빌드 + 테스트모드 컴파일 통과(테스트 실행은 맥).\n\nCo-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>\"\necho \"=== 커밋됨. 로컬 HEAD ===\"\ngit log --oneline -7\necho \"\"\necho \"=== 푸시 전 리모트 재확인 (95a1b45에서 안 움직였나) ===\"\ngit fetch gopeace88/RunVision-IQ 2>&1 | tail -1\necho \"리모트 main: $(git rev-parse --short gopeace88/RunVision-IQ/main)\"\necho \"내 HEAD가 리모트를 fast-forward 하나: $(git merge-base --is-ancestor gopeace88/RunVision-IQ/main HEAD && echo YES-clean-ff || echo NO-리모트가-앞섬)\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\nrm -f bin/RunVisionIQ-test.prg   # 테스트 컴파일 부산물 정리(gitignored)\ngit add source/RunVisionIQView.mc\ngit commit -q -m \"fix(garmin): fr55 OOM 추가 회수 — write-only 통계 라벨 제거\n\n표출·전송 어디에도 안 쓰이는 write-only 체인 2개 제거:\n- 평균속도: _totalSpeed/_speedSamples → avgSpeed → _avgSpeedLabel (미표출)\n- 최대HR: _maxHeartRate → _maxHrLabel (미표출)\n필드 5개 + onTimerReset + compute 누적 블록 2개. 매 compute .format() 할당 제거로\n힙·코드 회수(fr55 32KB 예산). 표출 라벨(_paceLabel/_hrLabel/_speedLabel 등) 불변.\nfr55/fr165 빌드 + 테스트모드 컴파일 통과(테스트 실행은 맥).\n\nCo-Authored-By: Claude Opus 4.7 <<REDACTED_EMAIL>>\"\necho \"=== 커밋됨. 로컬 HEAD ===\"\ngit log --oneline -7\necho \"\"\necho \"=== 푸시 전 리모트 재확인 (95a1b45에서 안 움직였나) ===\"\ngit fetch gopeace88/RunVision-IQ 2>&1 | tail -1\necho \"리모트 main: $(git rev-parse --short gopeace88/RunVision-IQ/main)\"\necho \"내 HEAD가 리모트를 fast-forward 하나: $(git merge-base --is-ancestor gopeace88/RunVision-IQ/main HEAD && echo YES-clean-ff || echo NO-리모트가-앞섬)\"",
   "description": "Commit Step-2 and verify remote unchanged before push"
 }
 ```
@@ -16570,7 +16570,7 @@ fdcdd7d docs(garmin): HANDOFF에 fr55 디버깅 3건 근본원인 기록 (맥 �
 커밋은 나한테 컨펌받고 해라. 맥의 검토를 봐라. 5초 데이터 송신이 저전력 문제로 필요하다. Linux 세션이 회귀를 해결하고 맥 검토를 요청했네요. 검토자로서 고무도장 찍지 않고 비판적으로 보겠습니다. 먼저 그들이 요청한 "Tests.mc 회귀 재확인"
   — 근본 원인보다 먼저, 전송 주기를 5→1로 바꾸면 깨지는 테스트가 있을 것 같습니다. 확인합니다.
 
-⏺ Bash(cd /Users/jhkim/00.Projects/00.RunVision/runvision-iq
+⏺ Bash(cd /home/<USER>/00.Projects/00.RunVision/runvision-iq
       echo "=== 전송 주기 관련 테스트 (running=5 단언?) ==="…)
   ⎿  === 전송 주기 관련 테스트 (running=5 단언?) ===
      461:function testRunningStrategy_TransmitInterval_Is5(logger as Logger) as Boolean {
@@ -16615,7 +16615,7 @@ tool_use Bash
 id: toolu_01CLqTSrpPKXJyrrZtzhdg2o
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== 전송 주기 이력: % 1 (매 compute) 였던 적 있나? (b 글래스-timeout 방증) ===\"\ngit log -p --all -S \"% 1 ==\" -- source/RunVisionIQView.mc 2>/dev/null | grep -E \"^commit|Date:|_computeCount % 1 ==\" | head -8\necho \"--- '% 5' 가 처음 등장한 커밋(=주기를 5초로 만든 시점) ---\"\ngit log --oneline --reverse -S \"_computeCount % 5 ==\" -- source/RunVisionIQView.mc | head -3\necho \"\"\necho \"=== 내 커밋을 컨펌 전 상태로: reset --soft 95a1b45 (Mac 작업 베이스 + 내 변경 전부 미커밋 staged) ===\"\ngit reset --soft 95a1b45\necho \"HEAD 이제: $(git rev-parse --short HEAD) $(git log -1 --format='%s')\"\necho \"staged 변경 파일:\"; git diff --cached --name-only\necho \">>> 커밋 0개(미커밋), 작업 보존 확인\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== 전송 주기 이력: % 1 (매 compute) 였던 적 있나? (b 글래스-timeout 방증) ===\"\ngit log -p --all -S \"% 1 ==\" -- source/RunVisionIQView.mc 2>/dev/null | grep -E \"^commit|Date:|_computeCount % 1 ==\" | head -8\necho \"--- '% 5' 가 처음 등장한 커밋(=주기를 5초로 만든 시점) ---\"\ngit log --oneline --reverse -S \"_computeCount % 5 ==\" -- source/RunVisionIQView.mc | head -3\necho \"\"\necho \"=== 내 커밋을 컨펌 전 상태로: reset --soft 95a1b45 (Mac 작업 베이스 + 내 변경 전부 미커밋 staged) ===\"\ngit reset --soft 95a1b45\necho \"HEAD 이제: $(git rev-parse --short HEAD) $(git log -1 --format='%s')\"\necho \"staged 변경 파일:\"; git diff --cached --name-only\necho \">>> 커밋 0개(미커밋), 작업 보존 확인\"",
   "description": "Check interval history and soft-reset to uncommit while preserving work"
 }
 ```
@@ -16764,7 +16764,7 @@ tool_use Read
 id: toolu_019dnvDDc71m5NJdWNve6DSe
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc"
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc"
 }
 ```
 
@@ -16808,7 +16808,7 @@ id: toolu_0149rP1Sz5UoCw8LQMe8gYC5
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc",
   "old_string": "    function initialize() {\n        MetricStrategy.initialize();\n    }\n\n    //! 러닝 전송 주기 1초 (5초 아님). 회귀 수정 2026-05-25 (fr55 실기기 검증).\n    //! 증상: 글래스에서 HR·cadence만 0, 시간·페이스·거리는 정상.\n    //! 원인: buildPackets 가 valid-skip(50844a5)으로 invalid 메트릭 패킷을 안 만드는데,\n    //!   전송이 5초마다(=5번째 compute)만 일어나 그 샘플링 시점이 HR/cadence 센서 갱신 위상과\n    //!   어긋나면 전송 시점마다 null/0 으로 읽혀 영구 skip → 글래스 0 고착.\n    //!   (워치 표시는 매 compute 갱신이라 5번 중 4번 valid면 안정돼 보여 증상이 가려졌음.)\n    //! 수정: 매 compute(1초) 전송 → valid 한 compute 에서 반드시 전송됨(위상 무관). 실기기 확인됨.\n    //!   valid-skip 자체는 유지(재연결 직후 stale 0 미전송 보호 = 50844a5 의도 보존).\n    //!   느린 fr55 도 processWriteQueue 의 !_isWriting 가드가 드레인 중 리필을 막아 자가 스로틀.\n    function getTransmitIntervalSeconds() as Lang.Number {\n        return 1;\n    }\n\n    //! 메트릭 패킷을 순서대로 생성.",
   "new_string": "    function initialize() {\n        MetricStrategy.initialize();\n    }\n\n    //! 전송 주기는 base(5초) 상속 — 저전력(1초는 배터리 과소진). HR/cadence 0 이슈는 주기로 풀지 않음.\n\n    //! 메트릭 패킷을 순서대로 생성."
 }
@@ -16819,7 +16819,7 @@ id: toolu_0149rP1Sz5UoCw8LQMe8gYC5
 tool_result
 id: toolu_0149rP1Sz5UoCw8LQMe8gYC5
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -16832,7 +16832,7 @@ tool_use Bash
 id: toolu_01TtcHJq6Vg3iREGZVrJVvb6
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== RunningStrategy에 override 제거 확인 (getTransmitIntervalSeconds 없어야 = base 5 상속) ===\"\ngrep -n \"getTransmitIntervalSeconds\\|return 1\\|return 5\" source/RunningStrategy.mc source/MetricStrategy.mc\necho \"\"\necho \"=== 빌드 ===\"\nfor DEV in fr55 fr165; do echo -n \"$DEV: \"; ./build.sh $DEV 2>&1 | grep -aoE \"BUILD SUCCESSFUL|ERROR|error:\" | tail -1; done\nSDK=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\\\\monkeyc.bat\"\nW=$(wslpath -w \"$(pwd)\")\necho -n \"테스트컴파일(fr165 -t): \"; powershell.exe -NoProfile -Command \"& '$SDK' -o '$W\\\\bin\\\\t.prg' -f '$W\\\\monkey.jungle' -y '$W\\\\developer_key.der' -d fr165 -t\" 2>&1 | grep -aoE \"BUILD SUCCESSFUL|ERROR|error:\" | tail -1\nrm -f bin/t.prg\necho \"\"\necho \"=== 현재 미커밋 상태 (커밋 안 함) ===\"\ngit status --short",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== RunningStrategy에 override 제거 확인 (getTransmitIntervalSeconds 없어야 = base 5 상속) ===\"\ngrep -n \"getTransmitIntervalSeconds\\|return 1\\|return 5\" source/RunningStrategy.mc source/MetricStrategy.mc\necho \"\"\necho \"=== 빌드 ===\"\nfor DEV in fr55 fr165; do echo -n \"$DEV: \"; ./build.sh $DEV 2>&1 | grep -aoE \"BUILD SUCCESSFUL|ERROR|error:\" | tail -1; done\nSDK=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\\\\monkeyc.bat\"\nW=$(wslpath -w \"$(pwd)\")\necho -n \"테스트컴파일(fr165 -t): \"; powershell.exe -NoProfile -Command \"& '$SDK' -o '$W\\\\bin\\\\t.prg' -f '$W\\\\monkey.jungle' -y '$W\\\\developer_key.der' -d fr165 -t\" 2>&1 | grep -aoE \"BUILD SUCCESSFUL|ERROR|error:\" | tail -1\nrm -f bin/t.prg\necho \"\"\necho \"=== 현재 미커밋 상태 (커밋 안 함) ===\"\ngit status --short",
   "description": "Verify 5s restored and builds pass"
 }
 ```
@@ -16896,7 +16896,7 @@ id: toolu_0112Ps8JLbVDWbbWU7C8nF6D
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc",
   "old_string": "        if (values.hrValid) {\n            packets.add(ILensProtocol.createHeartRatePacket(values.hr));\n        }\n        if (values.cadenceValid) {\n            packets.add(ILensProtocol.createCadencePacket(values.cadence));\n        }",
   "new_string": "        // [임시 진단 2026-05-25] HR/cadence valid-skip 제거 — 무조건 전송(옛 동작).\n        // 5초 유지하면서 글래스에 HR/cadence가 다시 뜨면 → valid-skip이 원인(a).\n        // 그래도 0이면 → 글래스 hold-timeout(b). 검증 후 정식 픽스로 교체.\n        packets.add(ILensProtocol.createHeartRatePacket(values.hr));\n        packets.add(ILensProtocol.createCadencePacket(values.cadence));"
 }
@@ -16907,7 +16907,7 @@ id: toolu_0112Ps8JLbVDWbbWU7C8nF6D
 tool_result
 id: toolu_0112Ps8JLbVDWbbWU7C8nF6D
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -16916,7 +16916,7 @@ tool_use Bash
 id: toolu_01CWxXKHCJzaAqu9P3SjyCJB
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho -n \"fr55: \"; ./build.sh fr55 2>&1 | grep -aoE \"BUILD SUCCESSFUL|ERROR|error:\" | tail -1\necho \">>> prg: $(date -r bin/RunVisionIQ-fr55.prg '+%H:%M:%S')\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho -n \"fr55: \"; ./build.sh fr55 2>&1 | grep -aoE \"BUILD SUCCESSFUL|ERROR|error:\" | tail -1\necho \">>> prg: $(date -r bin/RunVisionIQ-fr55.prg '+%H:%M:%S')\"",
   "description": "Build fr55 with valid-skip removed for HR/cadence"
 }
 ```
@@ -16958,7 +16958,7 @@ tool_use Bash
 id: toolu_01SbMTD1WsD63fidmBbALZXS
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== 현재 RunningStrategy.buildPackets (HR/cadence 가드 제거 확인) ===\"\nsed -n '/function buildPackets/,/^    }/p' source/RunningStrategy.mc\necho \"\"\necho \"=== fr55 .prg 빌드 시각 (이 시각 이후 sideload 했는지 확인 필요) ===\"\ndate -r bin/RunVisionIQ-fr55.prg '+%Y-%m-%d %H:%M:%S'\necho \"\"\necho \"=== 혹시 CyclingStrategy가 쓰이나? detectStrategy 분기 ===\"\ngrep -nE \"detectStrategy|SPORT_CYCLING|new CyclingStrategy|new RunningStrategy\" source/MetricStrategy.mc",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== 현재 RunningStrategy.buildPackets (HR/cadence 가드 제거 확인) ===\"\nsed -n '/function buildPackets/,/^    }/p' source/RunningStrategy.mc\necho \"\"\necho \"=== fr55 .prg 빌드 시각 (이 시각 이후 sideload 했는지 확인 필요) ===\"\ndate -r bin/RunVisionIQ-fr55.prg '+%Y-%m-%d %H:%M:%S'\necho \"\"\necho \"=== 혹시 CyclingStrategy가 쓰이나? detectStrategy 분기 ===\"\ngrep -nE \"detectStrategy|SPORT_CYCLING|new CyclingStrategy|new RunningStrategy\" source/MetricStrategy.mc",
   "description": "Show current buildPackets to confirm guard removal and check strategy"
 }
 ```
@@ -17040,7 +17040,7 @@ id: toolu_01EWYYMiaKoh34KqVbDe5KsT
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc",
   "old_string": "        // [임시 진단 2026-05-25] HR/cadence valid-skip 제거 — 무조건 전송(옛 동작).\n        // 5초 유지하면서 글래스에 HR/cadence가 다시 뜨면 → valid-skip이 원인(a).\n        // 그래도 0이면 → 글래스 hold-timeout(b). 검증 후 정식 픽스로 교체.\n        packets.add(ILensProtocol.createHeartRatePacket(values.hr));\n        packets.add(ILensProtocol.createCadencePacket(values.cadence));",
   "new_string": "        if (values.hrValid) {\n            packets.add(ILensProtocol.createHeartRatePacket(values.hr));\n        }\n        if (values.cadenceValid) {\n            packets.add(ILensProtocol.createCadencePacket(values.cadence));\n        }"
 }
@@ -17051,7 +17051,7 @@ id: toolu_01EWYYMiaKoh34KqVbDe5KsT
 tool_result
 id: toolu_01EWYYMiaKoh34KqVbDe5KsT
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -17064,7 +17064,7 @@ tool_use Bash
 id: toolu_01Syg2nECHpsuJsri6aKFt9a
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== RunningStrategy.mc 가 원본(95a1b45)과 차이 있나? ===\"\ngit diff HEAD -- source/RunningStrategy.mc",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== RunningStrategy.mc 가 원본(95a1b45)과 차이 있나? ===\"\ngit diff HEAD -- source/RunningStrategy.mc",
   "description": "Check if RunningStrategy differs from original"
 }
 ```
@@ -17101,7 +17101,7 @@ id: toolu_01NJu9e4NHHkh9YBU6kgEGTL
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc",
   "old_string": "        MetricStrategy.initialize();\n    }\n\n    //! 전송 주기는 base(5초) 상속 — 저전력(1초는 배터리 과소진). HR/cadence 0 이슈는 주기로 풀지 않음.\n\n    //! 메트릭 패킷을 순서대로 생성.",
   "new_string": "        MetricStrategy.initialize();\n    }\n\n    //! 메트릭 패킷을 순서대로 생성."
 }
@@ -17112,7 +17112,7 @@ id: toolu_01NJu9e4NHHkh9YBU6kgEGTL
 tool_result
 id: toolu_01NJu9e4NHHkh9YBU6kgEGTL
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -17121,7 +17121,7 @@ tool_use Bash
 id: toolu_01DEEffncCn414tpnfufWB5c
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== RunningStrategy 원본과 동일? (diff 없어야) ===\"\ngit diff HEAD -- source/RunningStrategy.mc | head -5 || true\ntest -z \"$(git diff HEAD -- source/RunningStrategy.mc)\" && echo \"✅ RunningStrategy = 95a1b45 원본 (차이 0)\" || echo \"⚠️ 아직 차이 있음\"\necho \"\"\necho \"=== 현재 전체 미커밋 변경 (RunningStrategy 빠졌는지 확인) ===\"\ngit status --short\necho \"\"\necho \"=== 빌드 확인 ===\"\necho -n \"fr55: \"; ./build.sh fr55 2>&1 | grep -aoE \"BUILD SUCCESSFUL|ERROR|error:\" | tail -1",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== RunningStrategy 원본과 동일? (diff 없어야) ===\"\ngit diff HEAD -- source/RunningStrategy.mc | head -5 || true\ntest -z \"$(git diff HEAD -- source/RunningStrategy.mc)\" && echo \"✅ RunningStrategy = 95a1b45 원본 (차이 0)\" || echo \"⚠️ 아직 차이 있음\"\necho \"\"\necho \"=== 현재 전체 미커밋 변경 (RunningStrategy 빠졌는지 확인) ===\"\ngit status --short\necho \"\"\necho \"=== 빌드 확인 ===\"\necho -n \"fr55: \"; ./build.sh fr55 2>&1 | grep -aoE \"BUILD SUCCESSFUL|ERROR|error:\" | tail -1",
   "description": "Confirm RunningStrategy restored to original and build passes"
 }
 ```
@@ -17155,7 +17155,7 @@ tool_use Bash
 id: toolu_01PsCkvnr4QdK7pEEMtvUXum
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\ngit add source/RunningStrategy.mc\necho \"=== 정리 후 미커밋 (RunningStrategy 빠져야) ===\"\ngit status --short\necho \"\"\necho \"=== 확인: RunningStrategy 완전히 원복(인덱스+워킹트리 모두 HEAD와 동일) ===\"\ntest -z \"$(git diff HEAD -- source/RunningStrategy.mc)\" && test -z \"$(git diff --cached HEAD -- source/RunningStrategy.mc)\" && echo \"✅ RunningStrategy 완전 원복\" || echo \"⚠️ 차이 남음\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\ngit add source/RunningStrategy.mc\necho \"=== 정리 후 미커밋 (RunningStrategy 빠져야) ===\"\ngit status --short\necho \"\"\necho \"=== 확인: RunningStrategy 완전히 원복(인덱스+워킹트리 모두 HEAD와 동일) ===\"\ntest -z \"$(git diff HEAD -- source/RunningStrategy.mc)\" && test -z \"$(git diff --cached HEAD -- source/RunningStrategy.mc)\" && echo \"✅ RunningStrategy 완전 원복\" || echo \"⚠️ 차이 남음\"",
   "description": "Re-stage RunningStrategy to clear stale index, confirm clean"
 }
 ```
@@ -17232,7 +17232,7 @@ tool_use Bash
 id: toolu_01TFTq86ztmwmxjkq1ybDy3v
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== compute() 내 실행 순서: HR/cadence 읽기 vs _metricValues 채우기 vs 전송 ===\"\ngrep -nE \"function compute|var hr =|var cadence =|hrValid =|cadenceValid =|_metricValues\\.hr =|_metricValues\\.cadence =|_metricValues\\.hrValid|_metricValues\\.cadenceValid|_computeCount\\+\\+|% transmitInterval|buildPackets|processWriteQueue\\(\\)\" source/RunVisionIQView.mc | head -30",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== compute() 내 실행 순서: HR/cadence 읽기 vs _metricValues 채우기 vs 전송 ===\"\ngrep -nE \"function compute|var hr =|var cadence =|hrValid =|cadenceValid =|_metricValues\\.hr =|_metricValues\\.cadence =|_metricValues\\.hrValid|_metricValues\\.cadenceValid|_computeCount\\+\\+|% transmitInterval|buildPackets|processWriteQueue\\(\\)\" source/RunVisionIQView.mc | head -30",
   "description": "Verify execution order of HR/cadence reads vs transmit in compute"
 }
 ```
@@ -17278,7 +17278,7 @@ tool_use Read
 id: toolu_01QzA8oNxBWQmg335ncYeQCH
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "offset": 560,
   "limit": 48
 }
@@ -17335,7 +17335,7 @@ tool_use Bash
 id: toolu_01AtVCHFwNLaueuSTuADwvip
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\ngrep -nE \"private var _metricValues|private var _strategy|private var _computeCount\" source/RunVisionIQView.mc",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\ngrep -nE \"private var _metricValues|private var _strategy|private var _computeCount\" source/RunVisionIQView.mc",
   "description": "Find member declaration location"
 }
 ```
@@ -17357,7 +17357,7 @@ id: toolu_01TrsD5rXczWPXzLJ1aN47Xu
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "    private var _metricValues as MetricValues or Null = null;",
   "new_string": "    private var _metricValues as MetricValues or Null = null;\n\n    // [실험 2026-05-25] HR/cadence는 직전 compute 값을 전송(사용자 가설: 느린 fr55에서 전송 compute가\n    // 순간값을 stale/0으로 읽을 수 있음 → 1초 전 확정값 사용). 매 compute 끝에서 갱신.\n    private var _prevHr as Lang.Number = 0;\n    private var _prevHrValid as Lang.Boolean = false;\n    private var _prevCadence as Lang.Number = 0;\n    private var _prevCadenceValid as Lang.Boolean = false;"
 }
@@ -17368,7 +17368,7 @@ id: toolu_01TrsD5rXczWPXzLJ1aN47Xu
 tool_result
 id: toolu_01TrsD5rXczWPXzLJ1aN47Xu
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -17378,7 +17378,7 @@ id: toolu_019xTPxZHntRyGtnwiRzSFsV
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "                    _metricValues.hr = (hr != null) ? hr : 0;\n                    _metricValues.cadence = cadence;",
   "new_string": "                    _metricValues.hr = _prevHr;            // 직전 compute 값(실험)\n                    _metricValues.cadence = _prevCadence;  // 직전 compute 값(실험)"
 }
@@ -17389,7 +17389,7 @@ id: toolu_019xTPxZHntRyGtnwiRzSFsV
 tool_result
 id: toolu_019xTPxZHntRyGtnwiRzSFsV
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -17399,7 +17399,7 @@ id: toolu_01JSCwpr6jK5Ty2AzoQdToV3
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "                    _metricValues.hrValid = hrValid;\n                    _metricValues.cadenceValid = cadenceValid;",
   "new_string": "                    _metricValues.hrValid = _prevHrValid;            // 직전 compute valid(실험)\n                    _metricValues.cadenceValid = _prevCadenceValid;  // 직전 compute valid(실험)"
 }
@@ -17410,7 +17410,7 @@ id: toolu_01JSCwpr6jK5Ty2AzoQdToV3
 tool_result
 id: toolu_01JSCwpr6jK5Ty2AzoQdToV3
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -17424,7 +17424,7 @@ id: toolu_01YXETHszdn27nLFBrqeGi1g
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "            } catch (ex) {\n                // DFLogger.logError(\"QUEUE\", \"Queue error\");\n            }\n        }\n    }\n\n    //! Draw the data field",
   "new_string": "            } catch (ex) {\n                // DFLogger.logError(\"QUEUE\", \"Queue error\");\n            }\n        }\n\n        // [실험] 다음 전송이 쓸 '직전 compute 값' 갱신 (매 compute). 전송 시점엔 이 값이 1초 전 확정값.\n        _prevHr = (hr != null) ? hr : 0;\n        _prevHrValid = hrValid;\n        _prevCadence = cadence;\n        _prevCadenceValid = cadenceValid;\n    }\n\n    //! Draw the data field"
 }
@@ -17435,7 +17435,7 @@ id: toolu_01YXETHszdn27nLFBrqeGi1g
 tool_result
 id: toolu_01YXETHszdn27nLFBrqeGi1g
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -17444,7 +17444,7 @@ tool_use Bash
 id: toolu_01LqYWQ6rpzk2d6LVnvfGkPk
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho -n \"fr55 빌드: \"; ./build.sh fr55 2>&1 | grep -aoE \"BUILD SUCCESSFUL|ERROR|error:\" | tail -1\necho \">>> prg: $(date -r bin/RunVisionIQ-fr55.prg '+%H:%M:%S')\"\necho \"\"\necho \"=== 변경 요약 (실험: 직전 compute 값 전송) ===\"\ngit diff --stat source/RunVisionIQView.mc",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho -n \"fr55 빌드: \"; ./build.sh fr55 2>&1 | grep -aoE \"BUILD SUCCESSFUL|ERROR|error:\" | tail -1\necho \">>> prg: $(date -r bin/RunVisionIQ-fr55.prg '+%H:%M:%S')\"\necho \"\"\necho \"=== 변경 요약 (실험: 직전 compute 값 전송) ===\"\ngit diff --stat source/RunVisionIQView.mc",
   "description": "Build fr55 with previous-compute HR/cadence experiment"
 }
 ```
@@ -17517,7 +17517,7 @@ tool_use Bash
 id: toolu_01Dq4KuZE2vZjSZMgneRHA94
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== 전송 경로 관련 커밋 이력 (최근 3개월, write type/queue/send) ===\"\ngit log --format=\"%h %ci %s\" --since=\"2026-02-25\" -- source/RunVisionIQView.mc | grep -iE \"write|queue|send|ble|transmit|속도|전송|default|response|metric|strategy\" | head -25\necho \"\"\necho \"=== _useDefaultWrite / WRITE_TYPE_DEFAULT 도입·변경 이력 ===\"\ngit log --format=\"%h %ci %s\" -S \"WRITE_TYPE_DEFAULT\" -- source/RunVisionIQView.mc | head\necho \"\"\necho \"=== SLOW_DEVICE_THRESHOLD_MS 값 변경 이력 ===\"\ngit log --format=\"%h %ci %s\" -S \"SLOW_DEVICE_THRESHOLD_MS\" -- source/RunVisionIQView.mc | head",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== 전송 경로 관련 커밋 이력 (최근 3개월, write type/queue/send) ===\"\ngit log --format=\"%h %ci %s\" --since=\"2026-02-25\" -- source/RunVisionIQView.mc | grep -iE \"write|queue|send|ble|transmit|속도|전송|default|response|metric|strategy\" | head -25\necho \"\"\necho \"=== _useDefaultWrite / WRITE_TYPE_DEFAULT 도입·변경 이력 ===\"\ngit log --format=\"%h %ci %s\" -S \"WRITE_TYPE_DEFAULT\" -- source/RunVisionIQView.mc | head\necho \"\"\necho \"=== SLOW_DEVICE_THRESHOLD_MS 값 변경 이력 ===\"\ngit log --format=\"%h %ci %s\" -S \"SLOW_DEVICE_THRESHOLD_MS\" -- source/RunVisionIQView.mc | head",
   "description": "Investigate transmit-path history to find what regressed"
 }
 ```
@@ -17582,7 +17582,7 @@ tool_use Bash
 id: toolu_01Q1ahbJpoGQrVgiC6eP3nCu
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== 인덱스(staged)에 prev-compute가 있나? (_prevHr 검색) ===\"\necho \"staged(index)에 _prevHr: $(git show :source/RunVisionIQView.mc | grep -c _prevHr)\"\necho \"working tree에 _prevHr: $(grep -c _prevHr source/RunVisionIQView.mc)\"\necho \"→ index=0, working>0 이면 checkout으로 prev-compute만 제거 가능\"\necho \"\"\necho \"=== working tree를 index로 되돌림(prev-compute 제거, debug+writeonly 유지) ===\"\ngit checkout -- source/RunVisionIQView.mc\necho \"되돌린 후 _prevHr: $(grep -c _prevHr source/RunVisionIQView.mc)건 (0이어야)\"\necho \"debug 제거 유지(addBleLog): $(grep -c addBleLog source/RunVisionIQView.mc)건 (0이어야)\"\necho \"write-only 제거 유지(_avgSpeedLabel): $(grep -c _avgSpeedLabel source/RunVisionIQView.mc)건 (0이어야)\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== 인덱스(staged)에 prev-compute가 있나? (_prevHr 검색) ===\"\necho \"staged(index)에 _prevHr: $(git show :source/RunVisionIQView.mc | grep -c _prevHr)\"\necho \"working tree에 _prevHr: $(grep -c _prevHr source/RunVisionIQView.mc)\"\necho \"→ index=0, working>0 이면 checkout으로 prev-compute만 제거 가능\"\necho \"\"\necho \"=== working tree를 index로 되돌림(prev-compute 제거, debug+writeonly 유지) ===\"\ngit checkout -- source/RunVisionIQView.mc\necho \"되돌린 후 _prevHr: $(grep -c _prevHr source/RunVisionIQView.mc)건 (0이어야)\"\necho \"debug 제거 유지(addBleLog): $(grep -c addBleLog source/RunVisionIQView.mc)건 (0이어야)\"\necho \"write-only 제거 유지(_avgSpeedLabel): $(grep -c _avgSpeedLabel source/RunVisionIQView.mc)건 (0이어야)\"",
   "description": "Revert prev-compute experiment via git checkout, keep debug+writeonly removals"
 }
 ```
@@ -17613,7 +17613,7 @@ tool_use Bash
 id: toolu_016naJMsU7o57VqUDS6tzAGk
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\ngrep -nE \"_useDefaultWrite|writeType|WRITE_TYPE_DEFAULT|WRITE_TYPE_WITH_RESPONSE|SLOW_DEVICE_THRESHOLD\" source/RunVisionIQView.mc",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\ngrep -nE \"_useDefaultWrite|writeType|WRITE_TYPE_DEFAULT|WRITE_TYPE_WITH_RESPONSE|SLOW_DEVICE_THRESHOLD\" source/RunVisionIQView.mc",
   "description": "Locate write type selection logic"
 }
 ```
@@ -17642,7 +17642,7 @@ tool_use Read
 id: toolu_016fqo8QYJSyYpWt1yciTrNh
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "offset": 884,
   "limit": 9
 }
@@ -17671,7 +17671,7 @@ id: toolu_017HSnrP6QSBWHvVrmMSSsfD
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "            // Write Type 선택\n            var writeType = BluetoothLowEnergy.WRITE_TYPE_WITH_RESPONSE;\n            if (_useDefaultWrite) {\n                writeType = BluetoothLowEnergy.WRITE_TYPE_DEFAULT;\n            }\n\n            _exerciseCharacteristic.requestWrite(packet, {:writeType => writeType});",
   "new_string": "            // [실험 2026-05-25] WITH_RESPONSE 강제 — _useDefaultWrite(무응답) 무시.\n            // 가설: 느린 fr55가 무응답 write로 보낸 HR/cadence를 글래스가 놓침(5초마다 1번뿐→0 고착).\n            // WITH_RESPONSE면 ack로 확실히 전달. fr165(이미 WITH_RESPONSE)는 무변화. 5초 유지(저전력).\n            var writeType = BluetoothLowEnergy.WRITE_TYPE_WITH_RESPONSE;\n\n            _exerciseCharacteristic.requestWrite(packet, {:writeType => writeType});"
 }
@@ -17682,7 +17682,7 @@ id: toolu_017HSnrP6QSBWHvVrmMSSsfD
 tool_result
 id: toolu_017HSnrP6QSBWHvVrmMSSsfD
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -17691,7 +17691,7 @@ tool_use Bash
 id: toolu_01UzenaXC95RTQYbsvD8qMbA
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho -n \"fr55 빌드: \"; ./build.sh fr55 2>&1 | grep -aoE \"BUILD SUCCESSFUL|ERROR|error:|WARNING.*not used\" | tail -3\necho \">>> prg: $(date -r bin/RunVisionIQ-fr55.prg '+%H:%M:%S')\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho -n \"fr55 빌드: \"; ./build.sh fr55 2>&1 | grep -aoE \"BUILD SUCCESSFUL|ERROR|error:|WARNING.*not used\" | tail -3\necho \">>> prg: $(date -r bin/RunVisionIQ-fr55.prg '+%H:%M:%S')\"",
   "description": "Build fr55 with WITH_RESPONSE forced"
 }
 ```
@@ -17823,7 +17823,7 @@ tool_use Read
 id: toolu_01Ux5cBaU7FjzL44dvFqTrzu
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "offset": 540,
   "limit": 60
 }
@@ -17845,7 +17845,7 @@ tool_use Bash
 id: toolu_01XudxjHszTZzEPgd54pFfUn
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== 현재 브랜치/상태 (stash 전 확인) ===\"\ngit branch --show-current; git rev-parse --short HEAD\necho \"미커밋 파일: $(git status --porcelain | wc -l)건\"\necho \"\"\necho \"=== 미커밋 작업 stash로 보존 ===\"\ngit stash push -m \"fr55-fixes: debug제거+writeonly제거+네이밍+WITH_RESPONSE실험 (v1.1.7 테스트 위해 임시 보관)\" 2>&1 | tail -2\necho \"stash 후 미커밋: $(git status --porcelain | wc -l)건 (0이어야)\"\necho \"\"\necho \"=== ef8b4e6 체크아웃 (v1.1.7, 마지막 동작 추정) ===\"\ngit checkout ef8b4e6 2>&1 | tail -3\necho \"현재 HEAD: $(git rev-parse --short HEAD) / $(git log -1 --format='%s')\"\necho \"\"\necho \"=== ef8b4e6에 build.sh 있나? manifest 버전? ===\"\nls build.sh 2>/dev/null && echo \"(build.sh 존재)\" || echo \"(build.sh 없음 → 직접 monkeyc)\"\ngrep -oE 'version=\"[0-9]+\\.[0-9]+\\.[0-9]+\"' manifest.xml | head -1",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== 현재 브랜치/상태 (stash 전 확인) ===\"\ngit branch --show-current; git rev-parse --short HEAD\necho \"미커밋 파일: $(git status --porcelain | wc -l)건\"\necho \"\"\necho \"=== 미커밋 작업 stash로 보존 ===\"\ngit stash push -m \"fr55-fixes: debug제거+writeonly제거+네이밍+WITH_RESPONSE실험 (v1.1.7 테스트 위해 임시 보관)\" 2>&1 | tail -2\necho \"stash 후 미커밋: $(git status --porcelain | wc -l)건 (0이어야)\"\necho \"\"\necho \"=== ef8b4e6 체크아웃 (v1.1.7, 마지막 동작 추정) ===\"\ngit checkout ef8b4e6 2>&1 | tail -3\necho \"현재 HEAD: $(git rev-parse --short HEAD) / $(git log -1 --format='%s')\"\necho \"\"\necho \"=== ef8b4e6에 build.sh 있나? manifest 버전? ===\"\nls build.sh 2>/dev/null && echo \"(build.sh 존재)\" || echo \"(build.sh 없음 → 직접 monkeyc)\"\ngrep -oE 'version=\"[0-9]+\\.[0-9]+\\.[0-9]+\"' manifest.xml | head -1",
   "description": "Stash current work and checkout v1.1.7"
 }
 ```
@@ -17885,7 +17885,7 @@ tool_use Bash
 id: toolu_01LjzC17yA8VGZ4uEbCgJ8Ee
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\nSDK=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\\\\monkeyc.bat\"\nW=$(wslpath -w \"$(pwd)\")\necho \"=== v1.1.7 fr55 빌드 (직접 monkeyc) ===\"\nls monkey.jungle developer_key.der 2>&1 | head\npowershell.exe -NoProfile -Command \"& '$SDK' -o '$W\\\\bin\\\\RunVisionIQ-fr55-v117.prg' -f '$W\\\\monkey.jungle' -y '$W\\\\developer_key.der' -d fr55 -w\" 2>&1 | grep -aoE \"BUILD SUCCESSFUL|ERROR|error:|Cannot|Exception\" | head -5\necho \">>> exit=${PIPESTATUS[0]}\"\nls -la --time-style='+%H:%M:%S' bin/RunVisionIQ-fr55-v117.prg 2>/dev/null",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\nSDK=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\\\\monkeyc.bat\"\nW=$(wslpath -w \"$(pwd)\")\necho \"=== v1.1.7 fr55 빌드 (직접 monkeyc) ===\"\nls monkey.jungle developer_key.der 2>&1 | head\npowershell.exe -NoProfile -Command \"& '$SDK' -o '$W\\\\bin\\\\RunVisionIQ-fr55-v117.prg' -f '$W\\\\monkey.jungle' -y '$W\\\\developer_key.der' -d fr55 -w\" 2>&1 | grep -aoE \"BUILD SUCCESSFUL|ERROR|error:|Cannot|Exception\" | head -5\necho \">>> exit=${PIPESTATUS[0]}\"\nls -la --time-style='+%H:%M:%S' bin/RunVisionIQ-fr55-v117.prg 2>/dev/null",
   "description": "Build v1.1.7 for fr55 directly with monkeyc"
 }
 ```
@@ -17939,7 +17939,7 @@ tool_use Bash
 id: toolu_018QNKcFuYn7yiFyovWLuujc
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== v1.1.7(ef8b4e6) compute()의 전송/큐 로직 ===\"\ngit show ef8b4e6:source/RunVisionIQView.mc | grep -nE \"_computeCount|% [0-9]|transmitInterval|_writeQueue.add|createHeartRate|createCadence|buildPackets|onUpdate|drawMetric|drawStatus|sendToILens|requestUpdate|function compute|function onUpdate\" | head -40",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== v1.1.7(ef8b4e6) compute()의 전송/큐 로직 ===\"\ngit show ef8b4e6:source/RunVisionIQView.mc | grep -nE \"_computeCount|% [0-9]|transmitInterval|_writeQueue.add|createHeartRate|createCadence|buildPackets|onUpdate|drawMetric|drawStatus|sendToILens|requestUpdate|function compute|function onUpdate\" | head -40",
   "description": "Examine v1.1.7 transmit logic and onUpdate structure"
 }
 ```
@@ -17988,7 +17988,7 @@ tool_use Bash
 id: toolu_01JXqwemvQik5Rm3KzH1yzqv
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== 7b989be 체크아웃 (Strategy+valid-skip 有, 그리드 無, 상태화면) ===\"\ngit checkout 7b989be 2>&1 | tail -2\necho \"HEAD: $(git rev-parse --short HEAD) / $(git log -1 --format='%s')\"\necho \"\"\necho \"=== 그리드 커밋(9d3777e)이 compute()/BLE를 건드렸나? (onUpdate 외) ===\"\ngit show 9d3777e --stat | grep -E \"RunVisionIQView|MetricStrategy|\\.mc\" | head\necho \"--- 9d3777e가 compute/buildPackets/sendToILens/_writeQueue를 바꿨나 ---\"\ngit show 9d3777e -- source/RunVisionIQView.mc | grep -E \"^[+-].*(function compute|buildPackets|sendToILens|_writeQueue|requestWrite|onCharacteristicWrite)\" | head\necho \"\"\necho \"=== 7b989be fr55 빌드 ===\"\nSDK=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\\\\monkeyc.bat\"\nW=$(wslpath -w \"$(pwd)\")\npowershell.exe -NoProfile -Command \"& '$SDK' -o '$W\\\\bin\\\\RunVisionIQ-fr55-pregrid.prg' -f '$W\\\\monkey.jungle' -y '$W\\\\developer_key.der' -d fr55 -w\" 2>&1 | grep -aoE \"BUILD SUCCESSFUL|ERROR|error:\" | tail -1\nls -la --time-style='+%H:%M:%S' bin/RunVisionIQ-fr55-pregrid.prg 2>/dev/null",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== 7b989be 체크아웃 (Strategy+valid-skip 有, 그리드 無, 상태화면) ===\"\ngit checkout 7b989be 2>&1 | tail -2\necho \"HEAD: $(git rev-parse --short HEAD) / $(git log -1 --format='%s')\"\necho \"\"\necho \"=== 그리드 커밋(9d3777e)이 compute()/BLE를 건드렸나? (onUpdate 외) ===\"\ngit show 9d3777e --stat | grep -E \"RunVisionIQView|MetricStrategy|\\.mc\" | head\necho \"--- 9d3777e가 compute/buildPackets/sendToILens/_writeQueue를 바꿨나 ---\"\ngit show 9d3777e -- source/RunVisionIQView.mc | grep -E \"^[+-].*(function compute|buildPackets|sendToILens|_writeQueue|requestWrite|onCharacteristicWrite)\" | head\necho \"\"\necho \"=== 7b989be fr55 빌드 ===\"\nSDK=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\\\\monkeyc.bat\"\nW=$(wslpath -w \"$(pwd)\")\npowershell.exe -NoProfile -Command \"& '$SDK' -o '$W\\\\bin\\\\RunVisionIQ-fr55-pregrid.prg' -f '$W\\\\monkey.jungle' -y '$W\\\\developer_key.der' -d fr55 -w\" 2>&1 | grep -aoE \"BUILD SUCCESSFUL|ERROR|error:\" | tail -1\nls -la --time-style='+%H:%M:%S' bin/RunVisionIQ-fr55-pregrid.prg 2>/dev/null",
   "description": "Checkout pre-grid commit, check grid commit scope, build fr55"
 }
 ```
@@ -18051,7 +18051,7 @@ tool_use Bash
 id: toolu_01Duik4osjxRdo3KnoSQryDL
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== main 복귀 + stash 복원 ===\"\ngit checkout main 2>&1 | tail -2\ngit stash pop 2>&1 | tail -3\necho \"\"\necho \"=== 복원 확인: 내 변경 4파일 + OOM제거(addBleLog 0) ===\"\ngit status --short\necho \"addBleLog 잔존: $(grep -c addBleLog source/RunVisionIQView.mc)건 (0=OOM수정 복원됨)\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== main 복귀 + stash 복원 ===\"\ngit checkout main 2>&1 | tail -2\ngit stash pop 2>&1 | tail -3\necho \"\"\necho \"=== 복원 확인: 내 변경 4파일 + OOM제거(addBleLog 0) ===\"\ngit status --short\necho \"addBleLog 잔존: $(grep -c addBleLog source/RunVisionIQView.mc)건 (0=OOM수정 복원됨)\"",
   "description": "Return to main and restore stashed work"
 }
 ```
@@ -18089,7 +18089,7 @@ id: toolu_01RVa9RSzRAUVgv7JgmXQa6X
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "            // [실험 2026-05-25] WITH_RESPONSE 강제 — _useDefaultWrite(무응답) 무시.\n            // 가설: 느린 fr55가 무응답 write로 보낸 HR/cadence를 글래스가 놓침(5초마다 1번뿐→0 고착).\n            // WITH_RESPONSE면 ack로 확실히 전달. fr165(이미 WITH_RESPONSE)는 무변화. 5초 유지(저전력).\n            var writeType = BluetoothLowEnergy.WRITE_TYPE_WITH_RESPONSE;\n\n            _exerciseCharacteristic.requestWrite(packet, {:writeType => writeType});",
   "new_string": "            // Write Type 선택\n            var writeType = BluetoothLowEnergy.WRITE_TYPE_WITH_RESPONSE;\n            if (_useDefaultWrite) {\n                writeType = BluetoothLowEnergy.WRITE_TYPE_DEFAULT;\n            }\n\n            _exerciseCharacteristic.requestWrite(packet, {:writeType => writeType});"
 }
@@ -18109,7 +18109,7 @@ tool_use Bash
 id: toolu_01Eb8bBy1ahcmbcRDAysJsoY
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\ngrep -nE \"WITH_RESPONSE 강제|writeType|_useDefaultWrite|requestWrite\" source/RunVisionIQView.mc | head",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\ngrep -nE \"WITH_RESPONSE 강제|writeType|_useDefaultWrite|requestWrite\" source/RunVisionIQView.mc | head",
   "description": "Re-locate writeType experiment after file state change"
 }
 ```
@@ -18133,7 +18133,7 @@ tool_use Read
 id: toolu_01KnZ5LjJo5gTaha923aoUeZ
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "offset": 884,
   "limit": 8
 }
@@ -18161,7 +18161,7 @@ id: toolu_014XGLF4nQn217rWsK4abRD3
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "            // [실험 2026-05-25] WITH_RESPONSE 강제 — _useDefaultWrite(무응답) 무시.\n            // 가설: 느린 fr55가 무응답 write로 보낸 HR/cadence를 글래스가 놓침(5초마다 1번뿐→0 고착).\n            // WITH_RESPONSE면 ack로 확실히 전달. fr165(이미 WITH_RESPONSE)는 무변화. 5초 유지(저전력).\n            var writeType = BluetoothLowEnergy.WRITE_TYPE_WITH_RESPONSE;\n\n            _exerciseCharacteristic.requestWrite(packet, {:writeType => writeType});",
   "new_string": "            // Write Type 선택\n            var writeType = BluetoothLowEnergy.WRITE_TYPE_WITH_RESPONSE;\n            if (_useDefaultWrite) {\n                writeType = BluetoothLowEnergy.WRITE_TYPE_DEFAULT;\n            }\n\n            _exerciseCharacteristic.requestWrite(packet, {:writeType => writeType});"
 }
@@ -18172,7 +18172,7 @@ id: toolu_014XGLF4nQn217rWsK4abRD3
 tool_result
 id: toolu_014XGLF4nQn217rWsK4abRD3
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -18185,7 +18185,7 @@ tool_use Bash
 id: toolu_016Fs6XNAWvGQ5mHyoJmya6w
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\ngrep -n \"function onUpdate\" source/RunVisionIQView.mc\nsed -n '/function onUpdate/,/^    }/p' source/RunVisionIQView.mc | head -20",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\ngrep -n \"function onUpdate\" source/RunVisionIQView.mc\nsed -n '/function onUpdate/,/^    }/p' source/RunVisionIQView.mc | head -20",
   "description": "Read onUpdate to disable grid"
 }
 ```
@@ -18219,7 +18219,7 @@ id: toolu_018BYYNhSZty5a4f9p47eq2L
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "            // 연결됨 + 화면이 그리드를 수용할 폭이면 그리드, 아니면 status-only(작은 기기는\n            // 메트릭을 글래스로 — 워치엔 상태만). gridFitsScreen 으로 런타임 분기(빌드 1개 전 기기 적응).\n            if (_isConnected && gridFitsScreen(dc.getWidth())) {\n                drawMetricGrid(dc);\n            } else {\n                drawStatusScreen(dc);\n            }",
   "new_string": "            // [실험 2026-05-25] 그리드 OFF — 항상 상태화면(v1.1.7 동작). 그리드 렌더링이 fr55 BLE를\n            // 방해하는지(사용자 가설) 테스트. HR/cad가 돌아오면 → 그리드가 원인. 검증 후 정식 분기 복원.\n            drawStatusScreen(dc);"
 }
@@ -18230,7 +18230,7 @@ id: toolu_018BYYNhSZty5a4f9p47eq2L
 tool_result
 id: toolu_018BYYNhSZty5a4f9p47eq2L
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -18243,7 +18243,7 @@ tool_use Bash
 id: toolu_01Q26MWr59wFiGHyAHSNbdCB
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\nSDK=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\\\\monkeyc.bat\"\nW=$(wslpath -w \"$(pwd)\")\npowershell.exe -NoProfile -Command \"& '$SDK' -o '$W\\\\bin\\\\RunVisionIQ-fr55-nogrid.prg' -f '$W\\\\monkey.jungle' -y '$W\\\\developer_key.der' -d fr55 -w\" 2>&1 | grep -aoE \"BUILD SUCCESSFUL|ERROR|error:\" | tail -1\nls -la --time-style='+%H:%M:%S' bin/RunVisionIQ-fr55-nogrid.prg 2>/dev/null",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\nSDK=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\\\\monkeyc.bat\"\nW=$(wslpath -w \"$(pwd)\")\npowershell.exe -NoProfile -Command \"& '$SDK' -o '$W\\\\bin\\\\RunVisionIQ-fr55-nogrid.prg' -f '$W\\\\monkey.jungle' -y '$W\\\\developer_key.der' -d fr55 -w\" 2>&1 | grep -aoE \"BUILD SUCCESSFUL|ERROR|error:\" | tail -1\nls -la --time-style='+%H:%M:%S' bin/RunVisionIQ-fr55-nogrid.prg 2>/dev/null",
   "description": "Build current+OOMfix with grid disabled"
 }
 ```
@@ -18293,7 +18293,7 @@ tool_use Read
 id: toolu_01B9WV7j2ShyBcZ5rp9FD88Z
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc",
   "offset": 26,
   "limit": 22
 }
@@ -18321,7 +18321,7 @@ tool_use Read
 id: toolu_01DkpHxrjcySRbKDGxn6LnGm
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc",
   "offset": 13,
   "limit": 20
 }
@@ -18365,7 +18365,7 @@ id: toolu_01A5ntdWXDxiFk5yjJwe5qX3
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc",
   "old_string": "        var packets = [] as Lang.Array<Lang.ByteArray>;\n        packets.add(ILensProtocol.createExerciseTimePacket(values.elapsedSeconds));\n        if (values.speedValid) {\n            packets.add(ILensProtocol.createVelocityPacket(values.paceSeconds));\n        }\n        if (values.hrValid) {\n            packets.add(ILensProtocol.createHeartRatePacket(values.hr));\n        }\n        if (values.cadenceValid) {\n            packets.add(ILensProtocol.createCadencePacket(values.cadence));\n        }\n        if (values.distanceValid) {\n            packets.add(ILensProtocol.createDistancePacket(values.distance));\n        }\n        return packets;",
   "new_string": "        // [실험 2026-05-25] v1.1.7과 동일하게 valid-skip 없이 무조건 전송.\n        // 가설: valid-skip이 HR/cad를 frozen(직전값 고착)시킴. 무조건이면 매 사이클 갱신(v1.1.7 동작).\n        var packets = [] as Lang.Array<Lang.ByteArray>;\n        packets.add(ILensProtocol.createExerciseTimePacket(values.elapsedSeconds));\n        packets.add(ILensProtocol.createVelocityPacket(values.paceSeconds));\n        packets.add(ILensProtocol.createHeartRatePacket(values.hr));\n        packets.add(ILensProtocol.createCadencePacket(values.cadence));\n        packets.add(ILensProtocol.createDistancePacket(values.distance));\n        return packets;"
 }
@@ -18376,7 +18376,7 @@ id: toolu_01A5ntdWXDxiFk5yjJwe5qX3
 tool_result
 id: toolu_01A5ntdWXDxiFk5yjJwe5qX3
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -18385,7 +18385,7 @@ tool_use Bash
 id: toolu_01UEnfNAqhWHPHWS5B5XhXHp
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\nSDK=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\\\\monkeyc.bat\"\nW=$(wslpath -w \"$(pwd)\")\npowershell.exe -NoProfile -Command \"& '$SDK' -o '$W\\\\bin\\\\RunVisionIQ-fr55-uncond.prg' -f '$W\\\\monkey.jungle' -y '$W\\\\developer_key.der' -d fr55 -w\" 2>&1 | grep -aoE \"BUILD SUCCESSFUL|ERROR|error:\" | tail -1\nls -la --time-style='+%H:%M:%S' bin/RunVisionIQ-fr55-uncond.prg 2>/dev/null",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\nSDK=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\\\\monkeyc.bat\"\nW=$(wslpath -w \"$(pwd)\")\npowershell.exe -NoProfile -Command \"& '$SDK' -o '$W\\\\bin\\\\RunVisionIQ-fr55-uncond.prg' -f '$W\\\\monkey.jungle' -y '$W\\\\developer_key.der' -d fr55 -w\" 2>&1 | grep -aoE \"BUILD SUCCESSFUL|ERROR|error:\" | tail -1\nls -la --time-style='+%H:%M:%S' bin/RunVisionIQ-fr55-uncond.prg 2>/dev/null",
   "description": "Build unconditional-send + grid-off for fr55"
 }
 ```
@@ -18433,7 +18433,7 @@ tool_use Bash
 id: toolu_01FWaC7wRsdek1S7rR7exA5s
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== v1.1.7(ef8b4e6) onCharacteristicWrite + processWriteQueue ===\"\ngit show ef8b4e6:source/RunVisionIQView.mc | awk '/function onCharacteristicWrite/{p=1} p{print NR\": \"$0} /^    private function processWriteQueue|function sendToILens/{if(p)c++} p&&/^    }/{b++; if(b>=1 && /^    }$/ && c>=1){}}' | sed -n '1,40p'\necho \"--- v1.1.7 onCharacteristicWrite 본문 ---\"\ngit show ef8b4e6:source/RunVisionIQView.mc | sed -n '/function onCharacteristicWrite/,/^    }/p' | head -30",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== v1.1.7(ef8b4e6) onCharacteristicWrite + processWriteQueue ===\"\ngit show ef8b4e6:source/RunVisionIQView.mc | awk '/function onCharacteristicWrite/{p=1} p{print NR\": \"$0} /^    private function processWriteQueue|function sendToILens/{if(p)c++} p&&/^    }/{b++; if(b>=1 && /^    }$/ && c>=1){}}' | sed -n '1,40p'\necho \"--- v1.1.7 onCharacteristicWrite 본문 ---\"\ngit show ef8b4e6:source/RunVisionIQView.mc | sed -n '/function onCharacteristicWrite/,/^    }/p' | head -30",
   "description": "Extract v1.1.7 onCharacteristicWrite for comparison"
 }
 ```
@@ -18500,7 +18500,7 @@ tool_use Bash
 id: toolu_013kiThy6JUBcbB6vJyn1CqZ
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== v1.1.7 전송 블록 (큐 빌드 전후 + 게이팅) ===\"\ngit show ef8b4e6:source/RunVisionIQView.mc | sed -n '548,575p'",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== v1.1.7 전송 블록 (큐 빌드 전후 + 게이팅) ===\"\ngit show ef8b4e6:source/RunVisionIQView.mc | sed -n '548,575p'",
   "description": "Extract v1.1.7 transmit block gating and queue build"
 }
 ```
@@ -18587,7 +18587,7 @@ tool_use Bash
 id: toolu_01N8b4DFCzA2pLT814S4qKLe
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== ① RunningStrategy 원복 (무조건전송 실험 → 원래 valid-skip) ===\"\ngit checkout HEAD -- source/RunningStrategy.mc\ntest -z \"$(git diff HEAD -- source/RunningStrategy.mc)\" && echo \"✅ RunningStrategy = 원본\" || echo \"⚠️ 차이\"\necho \"\"\necho \"=== 현재 RunVisionIQView 실험 잔재 확인 (그리드 OFF) ===\"\ngrep -n \"그리드 OFF\\|drawMetricGrid\\|drawStatusScreen\" source/RunVisionIQView.mc | head",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== ① RunningStrategy 원복 (무조건전송 실험 → 원래 valid-skip) ===\"\ngit checkout HEAD -- source/RunningStrategy.mc\ntest -z \"$(git diff HEAD -- source/RunningStrategy.mc)\" && echo \"✅ RunningStrategy = 원본\" || echo \"⚠️ 차이\"\necho \"\"\necho \"=== 현재 RunVisionIQView 실험 잔재 확인 (그리드 OFF) ===\"\ngrep -n \"그리드 OFF\\|drawMetricGrid\\|drawStatusScreen\" source/RunVisionIQView.mc | head",
   "description": "Revert RunningStrategy experiment, locate grid-off to revert"
 }
 ```
@@ -18617,7 +18617,7 @@ tool_use Read
 id: toolu_018wueP41kNVrdMEQMVDSgZM
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "offset": 601,
   "limit": 12
 }
@@ -18649,7 +18649,7 @@ id: toolu_01VChjooy4m2QqHoCxmxu9tP
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc",
   "old_string": "            // [실험 2026-05-25] 그리드 OFF — 항상 상태화면(v1.1.7 동작). 그리드 렌더링이 fr55 BLE를\n            // 방해하는지(사용자 가설) 테스트. HR/cad가 돌아오면 → 그리드가 원인. 검증 후 정식 분기 복원.\n            drawStatusScreen(dc);",
   "new_string": "            // 연결됨 + 화면이 그리드를 수용할 폭이면 그리드, 아니면 status-only(작은 기기는\n            // 메트릭을 글래스로 — 워치엔 상태만). gridFitsScreen 으로 런타임 분기(빌드 1개 전 기기 적응).\n            if (_isConnected && gridFitsScreen(dc.getWidth())) {\n                drawMetricGrid(dc);\n            } else {\n                drawStatusScreen(dc);\n            }"
 }
@@ -18660,7 +18660,7 @@ id: toolu_01VChjooy4m2QqHoCxmxu9tP
 tool_result
 id: toolu_01VChjooy4m2QqHoCxmxu9tP
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunVisionIQView.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -18673,7 +18673,7 @@ tool_use Bash
 id: toolu_01VnGuJvpfbLViME3qsqq55R
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== RunVisionIQView 변경이 메모리 수정만인가? (삭제=디버그/writeonly, 추가 없어야) ===\"\ngit diff HEAD -- source/RunVisionIQView.mc | grep '^+' | grep -v '^+++' | grep -vE '^\\+\\s*$' | head\necho \"→ 위가 비어있으면(추가 라인 없음) = 순수 제거(메모리)만\"\necho \"\"\necho \"=== 실험 잔재 전무 확인 ===\"\necho \"그리드 분기 복원: $(grep -c 'drawMetricGrid(dc)' source/RunVisionIQView.mc)건(1=복원)\"\necho \"_prevHr: $(grep -c _prevHr source/RunVisionIQView.mc)건(0)  WITH_RESPONSE강제주석: $(grep -c 'WITH_RESPONSE 강제' source/RunVisionIQView.mc)건(0)\"\necho \"_useDefaultWrite 분기: $(grep -c 'if (_useDefaultWrite)' source/RunVisionIQView.mc)건(1=원래대로)\"\necho \"\"\necho \"=== 전체 미커밋 파일 ===\"\ngit status --short",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== RunVisionIQView 변경이 메모리 수정만인가? (삭제=디버그/writeonly, 추가 없어야) ===\"\ngit diff HEAD -- source/RunVisionIQView.mc | grep '^+' | grep -v '^+++' | grep -vE '^\\+\\s*$' | head\necho \"→ 위가 비어있으면(추가 라인 없음) = 순수 제거(메모리)만\"\necho \"\"\necho \"=== 실험 잔재 전무 확인 ===\"\necho \"그리드 분기 복원: $(grep -c 'drawMetricGrid(dc)' source/RunVisionIQView.mc)건(1=복원)\"\necho \"_prevHr: $(grep -c _prevHr source/RunVisionIQView.mc)건(0)  WITH_RESPONSE강제주석: $(grep -c 'WITH_RESPONSE 강제' source/RunVisionIQView.mc)건(0)\"\necho \"_useDefaultWrite 분기: $(grep -c 'if (_useDefaultWrite)' source/RunVisionIQView.mc)건(1=원래대로)\"\necho \"\"\necho \"=== 전체 미커밋 파일 ===\"\ngit status --short",
   "description": "Verify RunVisionIQView has only memory fixes, no experiment residue"
 }
 ```
@@ -18711,7 +18711,7 @@ id: toolu_01ExE6eNjuFHMdjQ6FNLBLRw
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc",
   "old_string": "    function initialize() {\n        MetricStrategy.initialize();\n    }\n\n    //! 메트릭 패킷을 순서대로 생성.",
   "new_string": "    function initialize() {\n        MetricStrategy.initialize();\n    }\n\n    //! 러닝 전송 주기 3초 (기본 5초에서 단축). 회귀 수정 2026-05-25.\n    //! 원인: 글래스가 HR/cadence(순간값)를 5초보다 짧게 hold → 5초 전송 시 사이에 timeout되어\n    //!   0/frozen. 시간·페이스·거리(누적/지속값)는 5초에도 유지돼 그것만 정상이었음.\n    //!   v1.1.7은 1초 전송이라 정상 → 1→5초 변경이 회귀였음(실기기 bisect로 확정).\n    //! 3초로 단축해 글래스 timeout 회피. 배터리: 5패킷/3초≈1.67/초 (1초 전송의 1/3, 5초의 1.67배).\n    function getTransmitIntervalSeconds() as Lang.Number {\n        return 3;\n    }\n\n    //! 메트릭 패킷을 순서대로 생성."
 }
@@ -18722,7 +18722,7 @@ id: toolu_01ExE6eNjuFHMdjQ6FNLBLRw
 tool_result
 id: toolu_01ExE6eNjuFHMdjQ6FNLBLRw
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -18735,7 +18735,7 @@ tool_use Bash
 id: toolu_01EeBHVXy296n9GSTPXTiykd
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho -n \"fr55: \"; ./build.sh fr55 2>&1 | grep -aoE \"BUILD SUCCESSFUL|ERROR|error:\" | tail -1\necho \">>> $(ls -la --time-style='+%H:%M:%S' bin/RunVisionIQ-fr55.prg | awk '{print $6,$7}')\"\necho \"\"\necho \"⚠️ 참고: testRunningStrategy_TransmitInterval_Is5 는 이제 실패함(3≠5) — 동작 확정 후 테스트를 3으로 갱신 예정\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho -n \"fr55: \"; ./build.sh fr55 2>&1 | grep -aoE \"BUILD SUCCESSFUL|ERROR|error:\" | tail -1\necho \">>> $(ls -la --time-style='+%H:%M:%S' bin/RunVisionIQ-fr55.prg | awk '{print $6,$7}')\"\necho \"\"\necho \"⚠️ 참고: testRunningStrategy_TransmitInterval_Is5 는 이제 실패함(3≠5) — 동작 확정 후 테스트를 3으로 갱신 예정\"",
   "description": "Build fr55 with 3-second transmit interval"
 }
 ```
@@ -18783,7 +18783,7 @@ id: toolu_0171VLqsdt9iyenWxGQNeP5g
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc",
   "old_string": "    //! 러닝 전송 주기 3초 (기본 5초에서 단축). 회귀 수정 2026-05-25.\n    //! 원인: 글래스가 HR/cadence(순간값)를 5초보다 짧게 hold → 5초 전송 시 사이에 timeout되어\n    //!   0/frozen. 시간·페이스·거리(누적/지속값)는 5초에도 유지돼 그것만 정상이었음.\n    //!   v1.1.7은 1초 전송이라 정상 → 1→5초 변경이 회귀였음(실기기 bisect로 확정).\n    //! 3초로 단축해 글래스 timeout 회피. 배터리: 5패킷/3초≈1.67/초 (1초 전송의 1/3, 5초의 1.67배).\n    function getTransmitIntervalSeconds() as Lang.Number {\n        return 3;\n    }",
   "new_string": "    //! 러닝 전송 주기 2초 (기본 5초에서 단축). 회귀 수정 2026-05-25.\n    //! 원인: 글래스가 HR/cadence(순간값)를 5초보다 짧게 hold → 5초 전송 시 사이에 timeout되어\n    //!   0/frozen. 시간·페이스·거리(누적/지속값)는 5초에도 유지돼 그것만 정상이었음.\n    //!   v1.1.7은 1초 전송이라 정상 → 1→5초 변경이 회귀였음(실기기 bisect로 확정).\n    //! 2초로 단축해 글래스 timeout 회피(3초는 부족). 배터리: 5패킷/2초≈2.5/초 (1초 전송의 1/2).\n    function getTransmitIntervalSeconds() as Lang.Number {\n        return 2;\n    }"
 }
@@ -18794,7 +18794,7 @@ id: toolu_0171VLqsdt9iyenWxGQNeP5g
 tool_result
 id: toolu_0171VLqsdt9iyenWxGQNeP5g
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/RunningStrategy.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -18803,7 +18803,7 @@ tool_use Bash
 id: toolu_011PqvgWZTNPEscvC6iezGFB
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho -n \"fr55: \"; ./build.sh fr55 2>&1 | grep -aoE \"BUILD SUCCESSFUL|ERROR|error:\" | tail -1\necho \">>> $(ls -la --time-style='+%H:%M:%S' bin/RunVisionIQ-fr55.prg | awk '{print $6,$7}')\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho -n \"fr55: \"; ./build.sh fr55 2>&1 | grep -aoE \"BUILD SUCCESSFUL|ERROR|error:\" | tail -1\necho \">>> $(ls -la --time-style='+%H:%M:%S' bin/RunVisionIQ-fr55.prg | awk '{print $6,$7}')\"",
   "description": "Build fr55 with 2-second transmit interval"
 }
 ```
@@ -18862,7 +18862,7 @@ tool_use Bash
 id: toolu_01SA7RRbWCX8bqTLRNCTnH2o
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== 전송 주기 테스트 (Tests.mc) ===\"\ngrep -n \"TransmitInterval\\|getTransmitIntervalSeconds\\|== 5\\|== 2\" source/Tests.mc\necho \"\"\necho \"=== 해당 테스트 본문 ===\"\nsed -n '/function testRunningStrategy_TransmitInterval/,/^}/p' source/Tests.mc | head -12",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== 전송 주기 테스트 (Tests.mc) ===\"\ngrep -n \"TransmitInterval\\|getTransmitIntervalSeconds\\|== 5\\|== 2\" source/Tests.mc\necho \"\"\necho \"=== 해당 테스트 본문 ===\"\nsed -n '/function testRunningStrategy_TransmitInterval/,/^}/p' source/Tests.mc | head -12",
   "description": "Locate the transmit interval test to update"
 }
 ```
@@ -18893,7 +18893,7 @@ tool_use Read
 id: toolu_01HJPkNMR3BuzY3jKDCGcRDm
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/Tests.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/Tests.mc",
   "offset": 459,
   "limit": 7
 }
@@ -18920,7 +18920,7 @@ id: toolu_011ioHKbsQM1GwYnQ3QZ4V72
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/source/Tests.mc",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/source/Tests.mc",
   "old_string": "(:test)\nfunction testRunningStrategy_TransmitInterval_Is5(logger as Logger) as Boolean {\n    var strategy = new RunningStrategy();\n    return strategy.getTransmitIntervalSeconds() == 5;\n}",
   "new_string": "(:test)\nfunction testRunningStrategy_TransmitInterval_Is2(logger as Logger) as Boolean {\n    // 2026-05-25: 5→2초. 글래스가 HR/cadence를 5초보다 짧게 hold(timeout→0). fr55 실기기 검증.\n    var strategy = new RunningStrategy();\n    return strategy.getTransmitIntervalSeconds() == 2;\n}"
 }
@@ -18931,7 +18931,7 @@ id: toolu_011ioHKbsQM1GwYnQ3QZ4V72
 tool_result
 id: toolu_011ioHKbsQM1GwYnQ3QZ4V72
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/source/Tests.mc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/source/Tests.mc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -18944,7 +18944,7 @@ tool_use Bash
 id: toolu_01E6phmaw8zKRYLDHjwcVKDt
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\nfor DEV in fr55 fr165; do echo -n \"$DEV: \"; ./build.sh $DEV 2>&1 | grep -aoE \"BUILD SUCCESSFUL|ERROR|error:\" | tail -1; done\nSDK=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\\\\monkeyc.bat\"\nW=$(wslpath -w \"$(pwd)\")\necho -n \"테스트컴파일: \"; powershell.exe -NoProfile -Command \"& '$SDK' -o '$W\\\\bin\\\\t.prg' -f '$W\\\\monkey.jungle' -y '$W\\\\developer_key.der' -d fr165 -t\" 2>&1 | grep -aoE \"BUILD SUCCESSFUL|ERROR|error:\" | tail -1\nrm -f bin/t.prg bin/RunVisionIQ-fr55-v117.prg bin/RunVisionIQ-fr55-pregrid.prg bin/RunVisionIQ-fr55-nogrid.prg bin/RunVisionIQ-fr55-uncond.prg\necho \"\"\necho \"=== 실험 .prg 정리 후 bin/ ===\"\nls --time-style='+%H:%M:%S' -la bin/*.prg\necho \"\"\necho \"=== 최종 미커밋 변경 ===\"\ngit status --short",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\nfor DEV in fr55 fr165; do echo -n \"$DEV: \"; ./build.sh $DEV 2>&1 | grep -aoE \"BUILD SUCCESSFUL|ERROR|error:\" | tail -1; done\nSDK=\"C:\\\\Users\\\\jinhee\\\\AppData\\\\Roaming\\\\Garmin\\\\ConnectIQ\\\\Sdks\\\\connectiq-sdk-win-8.4.0-2025-12-03-5122605dc\\\\bin\\\\monkeyc.bat\"\nW=$(wslpath -w \"$(pwd)\")\necho -n \"테스트컴파일: \"; powershell.exe -NoProfile -Command \"& '$SDK' -o '$W\\\\bin\\\\t.prg' -f '$W\\\\monkey.jungle' -y '$W\\\\developer_key.der' -d fr165 -t\" 2>&1 | grep -aoE \"BUILD SUCCESSFUL|ERROR|error:\" | tail -1\nrm -f bin/t.prg bin/RunVisionIQ-fr55-v117.prg bin/RunVisionIQ-fr55-pregrid.prg bin/RunVisionIQ-fr55-nogrid.prg bin/RunVisionIQ-fr55-uncond.prg\necho \"\"\necho \"=== 실험 .prg 정리 후 bin/ ===\"\nls --time-style='+%H:%M:%S' -la bin/*.prg\necho \"\"\necho \"=== 최종 미커밋 변경 ===\"\ngit status --short",
   "description": "Final build both devices, test-compile, clean experiment artifacts"
 }
 ```
@@ -18983,7 +18983,7 @@ tool_use Read
 id: toolu_01Cv1cdEEtDadZSceDGJ1Tb7
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/Docs/HANDOFF-garmin-watch-ui.md",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/Docs/HANDOFF-garmin-watch-ui.md",
   "offset": 6,
   "limit": 16
 }
@@ -19015,7 +19015,7 @@ id: toolu_01D7KcwmnLEqYQ791DZn8c3H
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/Docs/HANDOFF-garmin-watch-ui.md",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/Docs/HANDOFF-garmin-watch-ui.md",
   "old_string": "3. **글래스 HR·cadence만 0 (페이스·거리 정상) → 러닝 전송 1초** (`RunningStrategy.mc`): 회귀. `buildPackets` valid-skip(50844a5)이 invalid 메트릭 패킷 미생성 + 전송이 5초마다(=5번째 compute)만 → 그 샘플링 시점이 HR/cadence 센서 갱신 위상과 어긋나 매번 null/0 으로 읽혀 영구 skip → 글래스 0. (워치 표시는 매 compute라 4/5 valid면 안정돼 보여 가려짐.) 수정: 러닝 주기 5→1초(매 compute 전송, 위상 무관). valid-skip 자체는 유지(재연결 stale-0 보호). 실기기 확인됨.\n   - 💡 맥 검토 포인트: ① 1초 = BLE 트래픽 5배. 대안 = \"마지막 valid 값 캐시 후 5초마다 전송\"(저전력)인데 1초가 단순·검증됨. ② **사이클(`CyclingStrategy`, 2초)도 같은 위상 이슈 가능성** — 미검증(사용자는 러닝 테스트). 필요 시 동일 적용 검토.",
   "new_string": "3. **글래스 HR·cadence 0/frozen (페이스·거리 정상) → 러닝 전송 5→2초** (`RunningStrategy.mc` + `Tests.mc`): 회귀. **근본원인 = 전송 주기**. v1.1.7(ef8b4e6, 마지막 동작 버전)을 실기기에 돌려보니 **정상** → 그 버전은 `if(_isConnected && char)` 로 **매 compute(1초) 전송**. 현재는 `_computeCount % transmitInterval(5) == 0` 으로 **5초마다**. **글래스는 HR·cadence(순간값)를 5초보다 짧게 hold → 5초 전송 시 사이에 timeout되어 0/frozen.** 시간·페이스·거리(누적/지속값)는 5초에도 글래스가 유지 → 그것만 정상이었음. 실기기로 임계값 측정: **5초=HR·cad 죽음, 3초=cadence 살고 HR 죽음(HR이 가장 짧게 hold), 2초=둘 다 정상.** → 러닝 주기 **2초**(`getTransmitIntervalSeconds` override). 배터리 1초의 1/2. fr55 […]
 
@@ -19024,7 +19024,7 @@ id: toolu_01D7KcwmnLEqYQ791DZn8c3H
 tool_result
 id: toolu_01D7KcwmnLEqYQ791DZn8c3H
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/Docs/HANDOFF-garmin-watch-ui.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/Docs/HANDOFF-garmin-watch-ui.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -19038,7 +19038,7 @@ id: toolu_01CLp9AJzK1ZV4pr37V1AMrb
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/Docs/HANDOFF-garmin-watch-ui.md",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/Docs/HANDOFF-garmin-watch-ui.md",
   "old_string": "fr55 실기기 테스트에서 3개 이슈를 순차 해결. **맥에서 시뮬레이터 + Tests.mc 회귀(42개) 재확인 요망**(WSL은 sim·테스트 실행 불가).",
   "new_string": "fr55 실기기 테스트에서 3개 이슈를 순차 해결. **맥에서 시뮬레이터 + Tests.mc 전체 회귀 재확인 요망**(WSL은 sim·테스트 실행 불가). 참고: `testRunningStrategy_TransmitInterval_Is5`→`_Is2`로 갱신함(2초 fix 반영)."
 }
@@ -19049,7 +19049,7 @@ id: toolu_01CLp9AJzK1ZV4pr37V1AMrb
 tool_result
 id: toolu_01CLp9AJzK1ZV4pr37V1AMrb
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/Docs/HANDOFF-garmin-watch-ui.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/Docs/HANDOFF-garmin-watch-ui.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -19062,7 +19062,7 @@ tool_use Write
 id: toolu_01KJYoB6RScG56tEiLQeEde4
 ```json
 {
-  "file_path": "/home/jhkim/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/project_glass_metric_transmit_interval.md",
+  "file_path": "/home/<USER>/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/project_glass_metric_transmit_interval.md",
   "content": "---\nname: project-glass-metric-transmit-interval\ndescription: rLens 글래스는 HR/cadence(순간값)를 5초보다 짧게 hold → Garmin 전송 주기 ≤2초 필요. 5초면 글래스에 0/frozen.\nmetadata:\n  type: project\n---\n\nrLens 글래스는 **순간값 메트릭(HR, cadence)을 일정 시간 후 화면에서 timeout(0/frozen)** 시킨다. 그 hold 시간이 5초보다 짧다. **HR이 가장 짧게 hold**(cadence보다 까다로움).\n\n**실기기 측정(fr55, 2026-05-25):** 5초 전송=HR·cad 둘 다 죽음 / 3초=cadence 살고 HR 죽음 / **2초=둘 다 정상**. → `RunningStrategy.getTransmitIntervalSeconds()` = **2초**. (CyclingStrategy도 2초.)\n\n**Why:** 시간·페이스·거리(누적/지속값)는 글래스가 5초에도 유지하지만 HR·cadence(순간값)는 timeout → 5초 전송 시 사이에 0이 됨.\n\n**회귀 경위:** v1.1.7(ef8b4e6, 2026-04-03)은 **매 compute=1초 전송**(`if(_isConnected && char)`)이라 정상. 이후 `_computeCount % transmitInterval(5)` 게이팅으로 **5초**가 되며 회귀(c6fbac8 Strategy 리팩토링 05-15 근처 추정, 정확 커밋 미특정). **마지막 동작 버전을 실기기에 직접 빌드·테스트(time-travel bisect)** 해서 확정함 — forward 추측보다 강력.\n\n**배제된 곁가지(전부 원인 아님 — 시간 낭비 주의):** valid-skip(50844a5, 무조건 전송해도 동일), 그리드 렌더링 부하(OFF해도 동일), write-type DEFAULT/무응답(v1.1.7도 DEFAULT인데 정상), prev-compute/last-valid 캐시. **순수하게 전송 빈도** 문제였음.\n\n**트레이드오프:** 1초=가장 신선하지만 배터리 과소진(5패킷/초). 2초=균형점(HR 살리는 최소 빈도, 1초의 1/2 배터리). 사용자가 1초 배터리 소모 거부 → 2초 채택.\n\n관련: [[project_ble_debug]], [[feedback_garmin_datafield_memory]](별개로 fr55 32KB OOM은 디버그로깅 제거로 해결).\n"
 }
 ```
@@ -19072,7 +19072,7 @@ id: toolu_01KJYoB6RScG56tEiLQeEde4
 tool_result
 id: toolu_01KJYoB6RScG56tEiLQeEde4
 ```
-File created successfully at: /home/jhkim/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/project_glass_metric_transmit_interval.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/project_glass_metric_transmit_interval.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -19081,7 +19081,7 @@ tool_use Read
 id: toolu_01Atsmw7gR39xtDYx6z7Xggj
 ```json
 {
-  "file_path": "/home/jhkim/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/MEMORY.md",
   "offset": 66,
   "limit": 12
 }
@@ -19174,7 +19174,7 @@ tool_use Bash
 id: toolu_01AFQn5Ut8oHoW4otStMq6io
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== git status (Codex 수정 후) ===\"\ngit status --short\necho \"\"\necho \"=== HEAD ===\"\ngit log -1 --format='%h %s'\necho \"\"\necho \"=== 전송 주기 / 저성능 기기 판별 관련 코드 ===\"\ngrep -rnE \"transmitInterval|getTransmitIntervalSeconds|_useDefaultWrite|% [0-9]|slow|Slow|저성능|1초|5초|partNumber|fr55|deviceTier\" source/RunningStrategy.mc source/MetricStrategy.mc source/CyclingStrategy.mc | head -30",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== git status (Codex 수정 후) ===\"\ngit status --short\necho \"\"\necho \"=== HEAD ===\"\ngit log -1 --format='%h %s'\necho \"\"\necho \"=== 전송 주기 / 저성능 기기 판별 관련 코드 ===\"\ngrep -rnE \"transmitInterval|getTransmitIntervalSeconds|_useDefaultWrite|% [0-9]|slow|Slow|저성능|1초|5초|partNumber|fr55|deviceTier\" source/RunningStrategy.mc source/MetricStrategy.mc source/CyclingStrategy.mc | head -30",
   "description": "Check current source state after Codex modifications"
 }
 ```
@@ -19193,7 +19193,7 @@ tool_use Bash
 id: toolu_019DD58wufoEH85xHeHo69BZ
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== git status ===\"; git status --short\necho \"=== HEAD ===\"; git log -1 --format='%h %s'",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== git status ===\"; git status --short\necho \"=== HEAD ===\"; git log -1 --format='%h %s'",
   "description": "Check git status and HEAD after Codex changes"
 }
 ```
@@ -19220,7 +19220,7 @@ tool_use Bash
 id: toolu_01T8J4jDNjc1rQcxma2A6sNB
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== 95a1b45(Mac) 이후 커밋들 ===\"\ngit log --oneline 95a1b45..HEAD\necho \"\"\necho \"=== 내 메모리 수정(OOM 디버그 제거)이 살아있나? (addBleLog 0이어야) ===\"\necho \"addBleLog: $(grep -c addBleLog source/RunVisionIQView.mc)건 / _avgSpeedLabel(writeonly): $(grep -c _avgSpeedLabel source/RunVisionIQView.mc)건\"\necho \"\"\necho \"=== Codex 커밋(7a4d1c1) 변경 파일 + 핵심 diff ===\"\ngit show 7a4d1c1 --stat | tail -15",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== 95a1b45(Mac) 이후 커밋들 ===\"\ngit log --oneline 95a1b45..HEAD\necho \"\"\necho \"=== 내 메모리 수정(OOM 디버그 제거)이 살아있나? (addBleLog 0이어야) ===\"\necho \"addBleLog: $(grep -c addBleLog source/RunVisionIQView.mc)건 / _avgSpeedLabel(writeonly): $(grep -c _avgSpeedLabel source/RunVisionIQView.mc)건\"\necho \"\"\necho \"=== Codex 커밋(7a4d1c1) 변경 파일 + 핵심 diff ===\"\ngit show 7a4d1c1 --stat | tail -15",
   "description": "Check commits since Mac base and whether memory fixes survived"
 }
 ```
@@ -19238,7 +19238,7 @@ addBleLog: 0건 / _avgSpeedLabel(writeonly): 0건
 
 === Codex 커밋(7a4d1c1) 변경 파일 + 핵심 diff ===
 commit 7a4d1c1f783b431fdf26c92f842fcc2de7d398b3
-Author: Jin-Hee Kim <gopeace88@gmail.com>
+Author: Jin-Hee Kim <<REDACTED_EMAIL>>
 Date:   Mon May 25 18:49:32 2026 +0900
 
     Set slow Garmin devices to 1s transmit interval
@@ -19262,7 +19262,7 @@ tool_use Bash
 id: toolu_01757fxmhBWTBXWD6p5KQZLh
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== RunningStrategy 변경(+5) ===\"\ngit show 7a4d1c1 -- source/RunningStrategy.mc | grep -E \"^[+-]\" | grep -v \"^[+-][+-]\"\necho \"\"\necho \"=== 저성능 기기 판별 + 주기 로직 (전체 소스에서) ===\"\ngrep -rnE \"transmitInterval|getTransmitIntervalSeconds|slow|Slow|1000|partNumber|memoryLimit|isSlow|deviceTier|% interval|return 1|return 5\" source/*.mc | head -30",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== RunningStrategy 변경(+5) ===\"\ngit show 7a4d1c1 -- source/RunningStrategy.mc | grep -E \"^[+-]\" | grep -v \"^[+-][+-]\"\necho \"\"\necho \"=== 저성능 기기 판별 + 주기 로직 (전체 소스에서) ===\"\ngrep -rnE \"transmitInterval|getTransmitIntervalSeconds|slow|Slow|1000|partNumber|memoryLimit|isSlow|deviceTier|% interval|return 1|return 5\" source/*.mc | head -30",
   "description": "Examine Codex's slow-device detection and interval logic"
 }
 ```
@@ -19315,7 +19315,7 @@ tool_use Bash
 id: toolu_01Fh2juJsXavBzVEf5FLHcBv
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== 전송 게이팅 (549-556) ===\"\nsed -n '549,556p' source/RunVisionIQView.mc\necho \"\"\necho \"=== isSlowBleAllowlistDevice (899-918) ===\"\nsed -n '899,918p' source/RunVisionIQView.mc\necho \"\"\necho \"=== 빌드 검증 (Codex 커밋이 컴파일되나) ===\"\nfor DEV in fr55 fr165; do echo -n \"$DEV: \"; ./build.sh $DEV 2>&1 | grep -aoE \"BUILD SUCCESSFUL|ERROR|error:\" | tail -1; done",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== 전송 게이팅 (549-556) ===\"\nsed -n '549,556p' source/RunVisionIQView.mc\necho \"\"\necho \"=== isSlowBleAllowlistDevice (899-918) ===\"\nsed -n '899,918p' source/RunVisionIQView.mc\necho \"\"\necho \"=== 빌드 검증 (Codex 커밋이 컴파일되나) ===\"\nfor DEV in fr55 fr165; do echo -n \"$DEV: \"; ./build.sh $DEV 2>&1 | grep -aoE \"BUILD SUCCESSFUL|ERROR|error:\" | tail -1; done",
   "description": "Read transmit gating and allowlist, verify build"
 }
 ```
@@ -19410,7 +19410,7 @@ tool_use Bash
 id: toolu_01JDBSKDotQqnRAvQjiqZJ6H
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\nPS='powershell.exe -NoProfile -Command'\nDEVROOT='C:\\Users\\jinhee\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices'\necho \"기기 | DataField메모리 | CIQ버전\"\necho \"----------------------------------------\"\nfor DEV in fr45 garminswim2 instinct2s fr55 fr165 fr245 vivoactive3 vivoactive4 fr945 fenix7; do\n  raw=$($PS \"if(Test-Path '$DEVROOT\\\\$DEV\\\\compiler.json'){Get-Content '$DEVROOT\\\\$DEV\\\\compiler.json' -Raw}else{'NONE'}\" 2>/dev/null)\n  if echo \"$raw\" | grep -q NONE; then echo \"$DEV | (SDK에 없음)\"; continue; fi\n  # datafield 메모리: datafield 섹션의 memoryLimit. ciq 버전.\n  df=$(echo \"$raw\" | grep -oiE '\"datafield\"[^}]*\"memoryLimit\"[^,}]*' | grep -oE '[0-9]+' | tail -1)\n  ciq=$(echo \"$raw\" | grep -oiE '\"connectIQVersion\"[^,]*' | head -1 | grep -oE '[0-9.]+')\n  echo \"$DEV | ${df:-?} | ${ciq:-?}\"\ndone",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\nPS='powershell.exe -NoProfile -Command'\nDEVROOT='C:\\Users\\jinhee\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices'\necho \"기기 | DataField메모리 | CIQ버전\"\necho \"----------------------------------------\"\nfor DEV in fr45 garminswim2 instinct2s fr55 fr165 fr245 vivoactive3 vivoactive4 fr945 fenix7; do\n  raw=$($PS \"if(Test-Path '$DEVROOT\\\\$DEV\\\\compiler.json'){Get-Content '$DEVROOT\\\\$DEV\\\\compiler.json' -Raw}else{'NONE'}\" 2>/dev/null)\n  if echo \"$raw\" | grep -q NONE; then echo \"$DEV | (SDK에 없음)\"; continue; fi\n  # datafield 메모리: datafield 섹션의 memoryLimit. ciq 버전.\n  df=$(echo \"$raw\" | grep -oiE '\"datafield\"[^}]*\"memoryLimit\"[^,}]*' | grep -oE '[0-9]+' | tail -1)\n  ciq=$(echo \"$raw\" | grep -oiE '\"connectIQVersion\"[^,]*' | head -1 | grep -oE '[0-9.]+')\n  echo \"$DEV | ${df:-?} | ${ciq:-?}\"\ndone",
   "description": "Query SDK for DataField memory and CIQ version per device to find low-perf criterion"
 }
 ```
@@ -19444,7 +19444,7 @@ tool_use Bash
 id: toolu_011N7HKeAqgrK1RrLZqzqfJG
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\nPS='powershell.exe -NoProfile -Command'\nDEVROOT='C:\\Users\\jinhee\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices'\necho \"기기 | DataField 메모리(B)\"\nfor DEV in fr45 garminswim2 instinct2s fr55 fr245 vivoactive3 vivoactive4 fr945 fr165 fenix7; do\n  raw=$($PS \"Get-Content '$DEVROOT\\\\$DEV\\\\compiler.json' -Raw\" 2>/dev/null | tr -d '\\r\\n ')\n  # datafield 객체 안의 첫 memoryLimit\n  df=$(echo \"$raw\" | grep -oiE '\"datafield\":\\{[^}]*' | grep -oiE 'memoryLimit\":[0-9]+' | grep -oE '[0-9]+' | head -1)\n  echo \"$DEV | ${df:-(추출실패)}\"\ndone",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\nPS='powershell.exe -NoProfile -Command'\nDEVROOT='C:\\Users\\jinhee\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices'\necho \"기기 | DataField 메모리(B)\"\nfor DEV in fr45 garminswim2 instinct2s fr55 fr245 vivoactive3 vivoactive4 fr945 fr165 fenix7; do\n  raw=$($PS \"Get-Content '$DEVROOT\\\\$DEV\\\\compiler.json' -Raw\" 2>/dev/null | tr -d '\\r\\n ')\n  # datafield 객체 안의 첫 memoryLimit\n  df=$(echo \"$raw\" | grep -oiE '\"datafield\":\\{[^}]*' | grep -oiE 'memoryLimit\":[0-9]+' | grep -oE '[0-9]+' | head -1)\n  echo \"$DEV | ${df:-(추출실패)}\"\ndone",
   "description": "Extract DataField memory limits cleanly per device"
 }
 ```

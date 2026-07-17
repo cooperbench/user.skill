@@ -109,7 +109,7 @@ tool_result
 id: toolu_01LEQQmz2UyjAMQmAjEK5ort
 ```
 <persisted-output>
-Output too large (50.9KB). Full output saved to: /Users/anton/.claude/projects/-Users-anton-src-drain-cycle/75418cc5-ca2f-42e9-9cbf-74ba261dd2d7/tool-results/b54bipw77.txt
+Output too large (50.9KB). Full output saved to: /home/<USER>/.claude/projects/-Users-anton-src-drain-cycle/75418cc5-ca2f-42e9-9cbf-74ba261dd2d7/tool-results/b54bipw77.txt
 
 Preview (first 2KB):
 Binary file ./drain_cycle/__pycache__/orchestrator.cpython-312.pyc matches
@@ -134,7 +134,7 @@ tool_use Read
 id: toolu_01DVBt3KZbbzzaLntYenKqgT
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/orchestrator.py",
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/orchestrator.py",
   "offset": 680,
   "limit": 160
 }

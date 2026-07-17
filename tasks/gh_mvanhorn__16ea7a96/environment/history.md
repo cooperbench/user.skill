@@ -62,8 +62,8 @@ id: toolu_01WPq8jKGyPxrbm2Zd1PT6Tp
 tool_result
 id: toolu_01BZr8SayDiSqtFo9mRCkhs1
 ```
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/auto_commit.go
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/auto_commit_test.go
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/auto_commit.go
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/auto_commit_test.go
 ```
 
 > TOOL
@@ -72,7 +72,7 @@ tool_use Read
 id: toolu_01JcsgUPX2UQjctydSApNZeE
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/registry.go"
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/registry.go"
 }
 ```
 
@@ -147,7 +147,7 @@ id: toolu_01JcsgUPX2UQjctydSApNZeE
 tool_result
 id: toolu_01WPq8jKGyPxrbm2Zd1PT6Tp
 ```
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/auto_commit_checkpoint_fix_test.go
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/auto_commit_checkpoint_fix_test.go
 ```
 
 > AGENT
@@ -160,7 +160,7 @@ tool_use Read
 id: toolu_01FaA5r5f2sEmHow5brYUuMS
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go"
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go"
 }
 ```
 
@@ -244,7 +244,7 @@ tool_use Bash
 id: toolu_01CgB7iBU23X52TpxrL2NA8R
 ```json
 {
-  "command": "rm /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/auto_commit.go /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/auto_commit_test.go /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/auto_commit_checkpoint_fix_test.go && echo \"Files deleted successfully\"",
+  "command": "rm /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/auto_commit.go /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/auto_commit_test.go /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/auto_commit_checkpoint_fix_test.go && echo \"Files deleted successfully\"",
   "description": "Delete the 3 auto-commit core files"
 }
 ```
@@ -268,7 +268,7 @@ id: toolu_01YSGHT24XQmcCp7Zvri5Etr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go",
   "old_string": "\tapplyDefaults(settings)\n\n\treturn settings, nil\n}",
   "new_string": "\tapplyDefaults(settings)\n\n\t// Migrate deprecated auto-commit strategy\n\tif migrated, err := migrateDeprecatedStrategy(settings, settingsFileAbs, localSettingsFileAbs); err != nil {\n\t\t// Log migration error but don't fail - continue with migrated settings\n\t\tfmt.Fprintf(os.Stderr, \"Warning: could not migrate deprecated strategy setting: %v\\n\", err)\n\t} else if migrated {\n\t\t// Print migration warning\n\t\tfmt.Fprintln(os.Stderr, \"⚠️  Auto-commit strategy has been removed and is no longer supported.\")\n\t\tfmt.Fprintln(os.Stderr, \"   Your settings have been automatically updated to use 'manual-commit' strategy.\")\n\t\tfmt.Fprintln(os.Stderr, \"\")\n\t\tfmt.Fprintln(os.Stderr, \"   Manual-commit provides similar session management without creating commits\")\n\t\tfmt.Fprintln(os.Stderr, \"   on your active branch. See 'entire help' for more details.\")\n\t}\n\n\treturn settings, nil\n}"
 }
@@ -293,7 +293,7 @@ id: toolu_016d7BSxUCESeY5sCQqZiWb6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go",
   "old_string": "\t}\n\n\tapplyDefaults(settings)\n\n\treturn settings, nil\n}\n\n// LoadFromFile loads settings from a specific file path without merging local overrides.",
   "new_string": "\t}\n\n\tapplyDefaults(settings)\n\n\t// Migrate deprecated auto-commit strategy\n\tif migrated, err := migrateDeprecatedStrategy(settings, settingsFileAbs, localSettingsFileAbs); err != nil {\n\t\t// Log migration error but don't fail - continue with migrated settings\n\t\tfmt.Fprintf(os.Stderr, \"Warning: could not migrate deprecated strategy setting: %v\\n\", err)\n\t} else if migrated {\n\t\t// Print migration warning\n\t\tfmt.Fprintln(os.Stderr, \"⚠️  Auto-commit strategy has been removed and is no longer supported.\")\n\t\tfmt.Fprintln(os.Stderr, \"   Your settings have been automatically updated to use 'manual-commit' strategy.\")\n\t\tfmt.Fprintln(os.Stderr, \"\")\n\t\tfmt.Fprintln(os.Stderr, \"   Manual-commit provides similar session management without creating commits\")\n\t\tfmt.Fprintln(os.Stderr, \"   on your active branch. See 'entire help' for more details.\")\n\t}\n\n\treturn settings, nil\n}\n\n// LoadFromFile loads settings from a specific file path without merging local overrides."
 }
@@ -304,7 +304,7 @@ id: toolu_016d7BSxUCESeY5sCQqZiWb6
 tool_result
 id: toolu_016d7BSxUCESeY5sCQqZiWb6
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go has been updated successfully.
 ```
 
 > AGENT
@@ -318,7 +318,7 @@ id: toolu_01U1pDp6tu4yfwbAajvPg2d8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go",
   "old_string": "\t}\n\n\treturn nil\n}",
   "new_string": "\t}\n\n\treturn nil\n}\n\n// migrateDeprecatedStrategy handles migration from removed \"auto-commit\" strategy to \"manual-commit\".\n// Returns true if migration occurred, false if no migration was needed.\nfunc migrateDeprecatedStrategy(settings *EntireSettings, settingsFileAbs string, localSettingsFileAbs string) (bool, error) {\n\t// Check if auto-commit strategy is configured\n\tif settings.Strategy != \"auto-commit\" {\n\t\treturn false, nil // No migration needed\n\t}\n\n\t// Update strategy to manual-commit\n\tsettings.Strategy = \"manual-commit\"\n\n\t// Try to update settings files where auto-commit was configured\n\t// Check which file(s) contain the auto-commit setting\n\tbaseSettings, err := loadFromFile(settingsFileAbs)\n\tif err != nil {\n\t\treturn true, fmt.Errorf(\"reading base settings file for migration: %w\", err)\n\t}\n\n\t// Save to base settings file if it had auto-commit\n\tif baseSettings.Strategy == \"auto-commit\" {\n\t\tbaseSettings.Strategy = \"manual-commit\"\n\t\tif err := saveToFile(baseSettings, settingsFileAbs); err != nil {\n\t\t\t// Don't fail the whole migration if one file can't be saved\n\t\t\tfmt.Fprintf(os.Stderr, \"Warning: could not save migrated base settings: %v\\n\", err)\n\t\t}\n\t}\n\n\t// Check and update local settings if it exists and has auto-commit\n\tlocalSettings, err := LoadFromFile(localSettingsFileAbs)\n\tif err == nil && localSettings != nil && localSettings.Strategy == \"auto-commit\" {\n\t\tlocalSettings.Strategy = \"manual-commit\"\n\t\tif err := saveToFile(localSettings, localSettingsFileAbs); err != nil {\n\t\t\t// Don't fail the whole migration if local file can't be saved\n\t\t\tfmt.Fprintf(os.Stderr, \"Warning: could not save migrated local settings: %v\\n\", err)\n\t\t}\n\t}\n\n\treturn true, nil\n}" […]
 
@@ -327,7 +327,7 @@ id: toolu_01U1pDp6tu4yfwbAajvPg2d8
 tool_result
 id: toolu_01U1pDp6tu4yfwbAajvPg2d8
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go has been updated successfully.
 ```
 
 > TOOL
@@ -336,7 +336,7 @@ tool_use Read
 id: toolu_01RqzeDkX3uv7ndjPRM8BVVS
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go",
   "offset": 320,
   "limit": 50
 }
@@ -387,7 +387,7 @@ tool_use Read
 id: toolu_01RxVcddQQRzco7CJRKgdw3K
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go",
   "offset": 340
 }
 ```
@@ -418,7 +418,7 @@ id: toolu_011tcH6dwMZmc4mozCmkm3BB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go",
   "old_string": "\t//nolint:gosec // G306: settings file is config, not secrets; 0o644 is appropriate\n\tif err := os.WriteFile(filePathAbs, data, 0o644); err != nil {\n\t\treturn fmt.Errorf(\"writing settings file: %w\", err)\n\t}\n\treturn nil\n}",
   "new_string": "\t//nolint:gosec // G306: settings file is config, not secrets; 0o644 is appropriate\n\tif err := os.WriteFile(filePathAbs, data, 0o644); err != nil {\n\t\treturn fmt.Errorf(\"writing settings file: %w\", err)\n\t}\n\treturn nil\n}\n\n// migrateDeprecatedStrategy handles migration from removed \"auto-commit\" strategy to \"manual-commit\".\n// Returns true if migration occurred, false if no migration was needed.\nfunc migrateDeprecatedStrategy(settings *EntireSettings, settingsFileAbs string, localSettingsFileAbs string) (bool, error) {\n\t// Check if auto-commit strategy is configured\n\tif settings.Strategy != \"auto-commit\" {\n\t\treturn false, nil // No migration needed\n\t}\n\n\t// Update strategy to manual-commit\n\tsettings.Strategy = \"manual-commit\"\n\n\t// Try to update settings files where auto-commit was configured\n\t// Check which file(s) contain the auto-commit setting\n\tbaseSettings, err := loadFromFile(settingsFileAbs)\n\tif err != nil {\n\t\treturn true, fmt.Errorf(\"reading base settings file for migration: %w\", err)\n\t}\n\n\t// Save to base settings file if it had auto-commit\n\tif baseSettings.Strategy == \"auto-commit\" {\n\t\tbaseSettings.Strategy = \"manual-commit\"\n\t\tif err := saveToFile(baseSettings, settingsFileAbs); err != nil {\n\t\t\t// Don't fail the whole migration if one file can't be saved\n\t\t\tfmt.Fprintf(os.Stderr, \"Warning: could not save migrated base settings: %v\\n\", err)\n\t\t}\n\t}\n\n\t// Check and update local settings if it exists […]
 
@@ -427,7 +427,7 @@ id: toolu_011tcH6dwMZmc4mozCmkm3BB
 tool_result
 id: toolu_011tcH6dwMZmc4mozCmkm3BB
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go has been updated successfully.
 ```
 
 > AGENT
@@ -441,7 +441,7 @@ id: toolu_01M4ZzqvpcG8s78nMHz7ESSg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/registry.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/registry.go",
   "old_string": "// Strategy name constants\nconst (\n\tStrategyNameManualCommit = \"manual-commit\"\n\tStrategyNameAutoCommit   = \"auto-commit\"\n)",
   "new_string": "// Strategy name constants\nconst (\n\tStrategyNameManualCommit = \"manual-commit\"\n)"
 }
@@ -452,7 +452,7 @@ id: toolu_01M4ZzqvpcG8s78nMHz7ESSg
 tool_result
 id: toolu_01M4ZzqvpcG8s78nMHz7ESSg
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/registry.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/registry.go has been updated successfully.
 ```
 
 > TOOL
@@ -461,7 +461,7 @@ tool_use Read
 id: toolu_01M3ycXpDGhWxkbhHocTweu3
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go",
   "offset": 215,
   "limit": 70
 }
@@ -550,7 +550,7 @@ tool_use Read
 id: toolu_01X8GsEN8o2hggoufyqz8pwp
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/setup.go"
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/setup.go"
 }
 ```
 
@@ -635,7 +635,7 @@ id: toolu_01QXzM5y7QJnKys35vYgwZxm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/setup.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/setup.go",
   "old_string": "// Strategy display names for user-friendly selection\nconst (\n\tstrategyDisplayManualCommit = \"manual-commit\"\n\tstrategyDisplayAutoCommit   = \"auto-commit\"\n)\n\n// Config path display strings\nconst (\n\tconfigDisplayProject = \".entire/settings.json\"\n\tconfigDisplayLocal   = \".entire/settings.local.json\"\n)\n\n// strategyDisplayToInternal maps user-friendly names to internal strategy names\nvar strategyDisplayToInternal = map[string]string{\n\tstrategyDisplayManualCommit: strategy.StrategyNameManualCommit,\n\tstrategyDisplayAutoCommit:   strategy.StrategyNameAutoCommit,\n}\n\n// strategyInternalToDisplay maps internal strategy names to user-friendly names\nvar strategyInternalToDisplay = map[string]string{\n\tstrategy.StrategyNameManualCommit: strategyDisplayManualCommit,\n\tstrategy.StrategyNameAutoCommit:   strategyDisplayAutoCommit,\n}",
   "new_string": "// Config path display strings\nconst (\n\tconfigDisplayProject = \".entire/settings.json\"\n\tconfigDisplayLocal   = \".entire/settings.local.json\"\n)"
 }
@@ -646,7 +646,7 @@ id: toolu_01QXzM5y7QJnKys35vYgwZxm
 tool_result
 id: toolu_01QXzM5y7QJnKys35vYgwZxm
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/setup.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/setup.go has been updated successfully.
 ```
 
 > TOOL
@@ -656,7 +656,7 @@ id: toolu_011YbrLMmRUJExHTTDfVTj1F
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/setup.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/setup.go",
   "old_string": "\tcmd := &cobra.Command{\n\t\tUse:   \"enable\",\n\t\tShort: \"Enable Entire in current project\",\n\t\tLong: `Enable Entire with session tracking for your AI agent workflows.\n\nUses the manual-commit strategy by default. To use a different strategy:\n\n  entire enable --strategy auto-commit\n\nStrategies: manual-commit (default), auto-commit`,",
   "new_string": "\tcmd := &cobra.Command{\n\t\tUse:   \"enable\",\n\t\tShort: \"Enable Entire in current project\",\n\t\tLong: `Enable Entire with session tracking for your AI agent workflows.\n\nUses the manual-commit strategy, which creates session checkpoints without\nmodifying your active branch.`,"
 }
@@ -667,7 +667,7 @@ id: toolu_011YbrLMmRUJExHTTDfVTj1F
 tool_result
 id: toolu_011YbrLMmRUJExHTTDfVTj1F
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/setup.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/setup.go has been updated successfully.
 ```
 
 > TOOL
@@ -677,7 +677,7 @@ id: toolu_01EinFQ2uPamsVUurh5G7msP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/setup.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/setup.go",
   "old_string": "\tcmd.Flags().BoolVar(&localDev, \"local-dev\", false, \"Use go run instead of entire binary for hooks\")\n\tcmd.Flags().MarkHidden(\"local-dev\") //nolint:errcheck,gosec // flag is defined above\n\tcmd.Flags().BoolVar(&ignoreUntracked, \"ignore-untracked\", false, \"Commit all new files without tracking pre-existing untracked files\")\n\tcmd.Flags().MarkHidden(\"ignore-untracked\") //nolint:errcheck,gosec // flag is defined above\n\tcmd.Flags().BoolVar(&useLocalSettings, \"local\", false, \"Write settings to .entire/settings.local.json instead of .entire/settings.json\")\n\tcmd.Flags().BoolVar(&useProjectSettings, \"project\", false, \"Write settings to .entire/settings.json even if it already exists\")\n\tcmd.Flags().StringVar(&agentName, \"agent\", \"\", \"Agent to setup hooks for (e.g., claude-code). Enables non-interactive mode.\")\n\tcmd.Flags().StringVar(&strategyFlag, \"strategy\", \"\", \"Strategy to use (manual-commit or auto-commit)\")\n\tcmd.Flags().BoolVarP(&forceHooks, \"force\", \"f\", false, \"Force reinstall hooks (removes existing Entire hooks first)\")\n\tcmd.Flags().BoolVar(&skipPushSessions, \"skip-push-sessions\", false, \"Disable automatic pushing of session logs on git push\")\n\tcmd.Flags().BoolVar(&telemetry, \"telemetry\", true, \"Enable anonymous usage analytics\")\n\t//nolint:errcheck,gosec // completion is optional, flag is defined above\n\tcmd.RegisterFlagCompletionFunc(\"strategy\", func(_ *cobra.Command, _ []string, _ string) ([]string, cobra.ShellCompDirective) {\n\t\treturn []string{strategyDisplayManualCommit, strategyDisplayAutoCommit}, cobra.ShellCompDirectiveNoFileComp\n\t})",
   "new_string": "\tcmd.Flags().BoolVar(&localDev, \"local-dev\", false, \"Use go run instead of entire binary for hooks\")\n\tcmd.Flags().MarkHidden(\"local-dev\") //nolint:errcheck,gosec // flag is defined above\n\tcmd.Flags().BoolVar(&ignoreUntracked, \"ignore-untracked\", false, \"Commit all new files without tracking pre-existing untracked files\")\n\tcmd.Flags().MarkHidden(\"ignore-untracked\") //nolint:errcheck,gosec // flag is defined above\n\tcmd.Flags().BoolVar(&useLocalSettings, \"local\", false, \"Write settings to .entire/settings.local.json instead of .entire/settings.json\")\n\tcmd.Flags().BoolVar(&useProjectSettings, \"project\", false, \"Write settings to .entire/settings.json even if it already exists\")\n\tcmd.Flags().StringVar(&agentName, \"agent\", \"\", \"Agent to setup hooks for (e.g., claude-code). Enables […]
 
@@ -686,7 +686,7 @@ id: toolu_01EinFQ2uPamsVUurh5G7msP
 tool_result
 id: toolu_01EinFQ2uPamsVUurh5G7msP
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/setup.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/setup.go has been updated successfully.
 ```
 
 > TOOL
@@ -695,7 +695,7 @@ tool_use Read
 id: toolu_01VhDzdSApKhesKGbpYnxBer
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/setup.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/setup.go",
   "offset": "195, 220"
 }
 ```
@@ -715,7 +715,7 @@ tool_use Read
 id: toolu_01CzhJNxWYRPAdCpRLHXdyC8
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/setup.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/setup.go",
   "offset": 200,
   "limit": 30
 }
@@ -767,7 +767,7 @@ id: toolu_01XhHWdM5xzUXws1vzTp9Kse
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/setup.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/setup.go",
   "old_string": "// runEnableWithStrategy enables Entire with a specified strategy (non-interactive).\n// The selectedStrategy can be either a display name (manual-commit, auto-commit)\n// or an internal name (manual-commit, auto-commit).\nfunc runEnableWithStrategy(w io.Writer, selectedStrategy string, localDev, _, useLocalSettings, useProjectSettings, forceHooks, skipPushSessions, telemetry bool) error {\n\t// Map the strategy to internal name if it's a display name\n\tinternalStrategy := selectedStrategy\n\tif mapped, ok := strategyDisplayToInternal[selectedStrategy]; ok {\n\t\tinternalStrategy = mapped\n\t}\n\n\t// Validate the strategy exists\n\tstrat, err := strategy.Get(internalStrategy)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"unknown strategy: %s (use manual-commit or auto-commit)\", selectedStrategy)\n\t}",
   "new_string": "// runEnableWithStrategy enables Entire with a specified strategy (non-interactive).\nfunc runEnableWithStrategy(w io.Writer, selectedStrategy string, localDev, _, useLocalSettings, useProjectSettings, forceHooks, skipPushSessions, telemetry bool) error {\n\t// Validate the strategy exists\n\tstrat, err := strategy.Get(selectedStrategy)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"unknown strategy: %s\", selectedStrategy)\n\t}"
 }
@@ -778,7 +778,7 @@ id: toolu_01XhHWdM5xzUXws1vzTp9Kse
 tool_result
 id: toolu_01XhHWdM5xzUXws1vzTp9Kse
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/setup.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/setup.go has been updated successfully.
 ```
 
 > TOOL
@@ -788,7 +788,7 @@ id: toolu_01BB7rktubPyuRFzFANPyqXs
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/setup.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/setup.go",
   "old_string": "\t// Update the specific fields\n\tsettings.Strategy = internalStrategy\n\tsettings.LocalDev = localDev\n\tsettings.Enabled = true",
   "new_string": "\t// Update the specific fields\n\tsettings.Strategy = selectedStrategy\n\tsettings.LocalDev = localDev\n\tsettings.Enabled = true"
 }
@@ -812,7 +812,7 @@ tool_use Read
 id: toolu_01ST4gxokxCEmNuke4vWZ2Sk
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/setup.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/setup.go",
   "offset": 225,
   "limit": 20
 }
@@ -857,7 +857,7 @@ id: toolu_017jp4rH9xhPBaKdX6ohxY3i
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/setup.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/setup.go",
   "old_string": "\t// Load existing settings to preserve other options (like strategy_options.push)\n\tsettings, err := LoadEntireSettings()\n\tif err != nil {\n\t\t// If we can't load, start with defaults\n\t\tsettings = &EntireSettings{}\n\t}\n\t// Update the specific fields\n\tsettings.Strategy = internalStrategy\n\tsettings.LocalDev = localDev\n\tsettings.Enabled = true\n\n\t// Set push_sessions option if --skip-push-sessions flag was provided\n\tif skipPushSessions {\n\t\tif settings.StrategyOptions == nil {\n\t\t\tsettings.StrategyOptions = make(map[string]interface{})\n\t\t}\n\t\tsettings.StrategyOptions[\"push_sessions\"] = false\n\t}\n\n\t// Handle telemetry for non-interactive mode\n\t// Note: if telemetry is nil (not configured), it defaults to disabled\n\tif !telemetry || os.Getenv(\"ENTIRE_TELEMETRY_OPTOUT\") != \"\" {\n\t\tf := false\n\t\tsettings.Telemetry = &f\n\t}\n\n\t// Determine which settings file to write to\n\tentireDirAbs, err := paths.AbsPath(paths.EntireDir)\n\tif err != nil {\n\t\tentireDirAbs = paths.EntireDir // Fallback to relative\n\t}\n\tshouldUseLocal, showNotification := determineSettingsTarget(entireDirAbs, useLocalSettings, useProjectSettings)\n\n\tif showNotification {\n\t\tfmt.Fprintln(w, \"Info: Project settings exist. Saving to settings.local.json instead.\")\n\t\tfmt.Fprintln(w, \"  Use --project to update the project settings file.\")\n\t}\n\n\tconfigDisplay := configDisplayProject\n\tif shouldUseLocal {\n\t\tif err := SaveEntireSettingsLocal(settings); err != nil {\n\t\t\treturn fmt.Errorf(\"failed to save local settings: %w\", err)\n\t\t}\n\t\tconfigDisplay = configDisplayLocal\n\t} else {\n\t\tif err := SaveEntireSettings(settings); err != nil {\n\t\t\treturn fmt.Errorf(\"failed to save settings: %w\", err)\n\t\t}\n\t}\n\n\t// Install git hooks AFTER saving settings (InstallGitHook reads local_dev from settings)\n\tif _, err := strategy.InstallGitHook(true); err != nil {\n\t\treturn fmt.Errorf(\"failed to install git hooks: %w\", err)\n\t}\n\tstrategy.CheckAndWarnHookManagers(w)\n\tfmt.Fprintln(w, \"✓ Hooks installed\")\n\tfmt.Fprintf(w, \"✓ […]
 
 > TOOL
@@ -865,7 +865,7 @@ id: toolu_017jp4rH9xhPBaKdX6ohxY3i
 tool_result
 id: toolu_017jp4rH9xhPBaKdX6ohxY3i
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/setup.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/setup.go has been updated successfully.
 ```
 
 > TOOL
@@ -874,7 +874,7 @@ tool_use Read
 id: toolu_016NQzGFZha5Mzc5Cn11wEhu
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/setup.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/setup.go",
   "offset": 550,
   "limit": 30
 }
@@ -926,7 +926,7 @@ id: toolu_01T6nV4FgBhciiZASmAYBbmZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/setup.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/setup.go",
   "old_string": "\t// Set strategy if provided\n\tif strategyName != \"\" {\n\t\t// Map display name to internal name if needed\n\t\tinternalStrategy := strategyName\n\t\tif mapped, ok := strategyDisplayToInternal[strategyName]; ok {\n\t\t\tinternalStrategy = mapped\n\t\t}\n\t\t// Validate the strategy exists\n\t\tif _, err := strategy.Get(internalStrategy); err != nil {\n\t\t\treturn fmt.Errorf(\"unknown strategy: %s (use manual-commit or auto-commit)\", strategyName)\n\t\t}\n\t\tsettings.Strategy = internalStrategy\n\t}",
   "new_string": "\t// Set strategy if provided\n\tif strategyName != \"\" {\n\t\t// Validate the strategy exists\n\t\tif _, err := strategy.Get(strategyName); err != nil {\n\t\t\treturn fmt.Errorf(\"unknown strategy: %s\", strategyName)\n\t\t}\n\t\tsettings.Strategy = strategyName\n\t}"
 }
@@ -937,7 +937,7 @@ id: toolu_01T6nV4FgBhciiZASmAYBbmZ
 tool_result
 id: toolu_01T6nV4FgBhciiZASmAYBbmZ
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/setup.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/setup.go has been updated successfully.
 ```
 
 > AGENT
@@ -970,7 +970,7 @@ tool_use Read
 id: toolu_01PdgbFL5WP2EwqjEq2PpXNP
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/status.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/status.go",
   "offset": 120,
   "limit": 40
 }
@@ -1032,7 +1032,7 @@ id: toolu_01GpqVG6H7inZGvucudUYNVW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/status.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/status.go",
   "old_string": "// formatSettingsStatusShort formats a short settings status line.\n// Output format: \"Enabled (manual-commit)\" or \"Disabled (auto-commit)\"\nfunc formatSettingsStatusShort(settings *EntireSettings) string {\n\tdisplayName := settings.Strategy\n\tif dn, ok := strategyInternalToDisplay[settings.Strategy]; ok {\n\t\tdisplayName = dn\n\t}\n\n\tif settings.Enabled {\n\t\treturn fmt.Sprintf(\"Enabled (%s)\", displayName)\n\t}\n\treturn fmt.Sprintf(\"Disabled (%s)\", displayName)\n}\n\n// formatSettingsStatus formats a settings status line with source prefix.\n// Output format: \"Project, enabled (manual-commit)\" or \"Local, disabled (auto-commit)\"\nfunc formatSettingsStatus(prefix string, settings *EntireSettings) string {\n\tdisplayName := settings.Strategy\n\tif dn, ok := strategyInternalToDisplay[settings.Strategy]; ok {\n\t\tdisplayName = dn\n\t}\n\n\tif settings.Enabled {\n\t\treturn fmt.Sprintf(\"%s, enabled (%s)\", prefix, displayName)\n\t}\n\treturn fmt.Sprintf(\"%s, disabled (%s)\", prefix, displayName)\n}",
   "new_string": "// formatSettingsStatusShort formats a short settings status line.\n// Output format: \"Enabled (manual-commit)\" or \"Disabled (manual-commit)\"\nfunc formatSettingsStatusShort(settings *EntireSettings) string {\n\tif settings.Enabled {\n\t\treturn fmt.Sprintf(\"Enabled (%s)\", settings.Strategy)\n\t}\n\treturn fmt.Sprintf(\"Disabled (%s)\", settings.Strategy)\n}\n\n// formatSettingsStatus formats a settings status line with source prefix.\n// Output format: \"Project, enabled (manual-commit)\" or \"Local, disabled (manual-commit)\"\nfunc formatSettingsStatus(prefix string, settings *EntireSettings) string {\n\tif settings.Enabled {\n\t\treturn fmt.Sprintf(\"%s, enabled (%s)\", prefix, settings.Strategy)\n\t}\n\treturn fmt.Sprintf(\"%s, disabled (%s)\", prefix, settings.Strategy)\n}"
 }
@@ -1043,7 +1043,7 @@ id: toolu_01GpqVG6H7inZGvucudUYNVW
 tool_result
 id: toolu_01GpqVG6H7inZGvucudUYNVW
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/status.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/status.go has been updated successfully.
 ```
 
 > TOOL
@@ -1052,7 +1052,7 @@ tool_use Read
 id: toolu_01EUs3Rk3xcvaUcKLKmJSJw9
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/config_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/config_test.go",
   "offset": 160,
   "limit": 30
 }
@@ -1107,7 +1107,7 @@ id: toolu_0125T8h9UxjhEcE3UV5rfczs
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/config_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/config_test.go",
   "old_string": "func TestLoadEntireSettings_LocalOverridesStrategy(t *testing.T) {\n\tsetupLocalOverrideTestDir(t)\n\n\tbaseSettings := testSettingsEnabled\n\tif err := os.WriteFile(EntireSettingsFile, []byte(baseSettings), 0o644); err != nil {\n\t\tt.Fatalf(\"Failed to write settings file: %v\", err)\n\t}\n\n\tlocalSettings := `{\"strategy\": \"` + strategy.StrategyNameAutoCommit + `\"}`\n\tif err := os.WriteFile(EntireSettingsLocalFile, []byte(localSettings), 0o644); err != nil {\n\t\tt.Fatalf(\"Failed to write local settings file: %v\", err)\n\t}\n\n\tsettings, err := LoadEntireSettings()\n\tif err != nil {\n\t\tt.Fatalf(\"LoadEntireSettings() error = %v\", err)\n\t}\n\tif settings.Strategy != strategy.StrategyNameAutoCommit {\n\t\tt.Errorf(\"Strategy should be 'auto-commit' from local override, got %q\", settings.Strategy)\n\t}\n\tif !settings.Enabled {\n\t\tt.Error(\"Enabled should remain true from base settings\")\n\t}\n}",
   "new_string": "func TestLoadEntireSettings_LocalOverridesStrategy(t *testing.T) {\n\tsetupLocalOverrideTestDir(t)\n\n\tbaseSettings := testSettingsEnabled\n\tif err := os.WriteFile(EntireSettingsFile, []byte(baseSettings), 0o644); err != nil {\n\t\tt.Fatalf(\"Failed to write settings file: %v\", err)\n\t}\n\n\tlocalSettings := `{\"strategy\": \"` + strategy.StrategyNameManualCommit + `\"}`\n\tif err := os.WriteFile(EntireSettingsLocalFile, []byte(localSettings), 0o644); err != nil {\n\t\tt.Fatalf(\"Failed to write local settings file: %v\", err)\n\t}\n\n\tsettings, err := LoadEntireSettings()\n\tif err != nil {\n\t\tt.Fatalf(\"LoadEntireSettings() error = %v\", err)\n\t}\n\tif settings.Strategy != strategy.StrategyNameManualCommit {\n\t\tt.Errorf(\"Strategy should be 'manual-commit' from local override, got %q\", settings.Strategy)\n\t}\n\tif !settings.Enabled {\n\t\tt.Error(\"Enabled should remain true from base settings\")\n\t}\n}"
 }
@@ -1118,7 +1118,7 @@ id: toolu_0125T8h9UxjhEcE3UV5rfczs
 tool_result
 id: toolu_0125T8h9UxjhEcE3UV5rfczs
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/config_test.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/config_test.go has been updated successfully.
 ```
 
 > AGENT
@@ -1142,48 +1142,48 @@ id: toolu_0154KNtxTZqp2SFSbLXt9rCU
 tool_result
 id: toolu_0154KNtxTZqp2SFSbLXt9rCU
 ```
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/testenv.go-188-// AllStrategies returns all strategy names for parameterized tests.
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/testenv.go-189-func AllStrategies() []string {
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/testenv.go-190-	return []string{
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/testenv.go-188-// AllStrategies returns all strategy names for parameterized tests.
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/testenv.go-189-func AllStrategies() []string {
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/testenv.go-190-	return []string{
 cmd/entire/cli/integration_test/testenv.go:191:		strategy.StrategyNameAutoCommit,
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/testenv.go-192-		strategy.StrategyNameManualCommit,
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/testenv.go-193-	}
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/testenv.go-194-}
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/testenv.go-192-		strategy.StrategyNameManualCommit,
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/testenv.go-193-	}
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/testenv.go-194-}
 --
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/subagent_checkpoints_test.go-296-		// We need to verify that checkpoint data exists in the shadow branch tree
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/subagent_checkpoints_test.go-297-		verifyShadowCheckpointStorage(t, env, sessionID, taskToolUseID)
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/subagent_checkpoints_test.go-298-
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/subagent_checkpoints_test.go-296-		// We need to verify that checkpoint data exists in the shadow branch tree
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/subagent_checkpoints_test.go-297-		verifyShadowCheckpointStorage(t, env, sessionID, taskToolUseID)
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/subagent_checkpoints_test.go-298-
 cmd/entire/cli/integration_test/subagent_checkpoints_test.go:299:	case strategy.StrategyNameAutoCommit:
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/subagent_checkpoints_test.go-300-		// Dual strategy stores metadata on orphan entire/checkpoints/v1 branch
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/subagent_checkpoints_test.go-301-		// Verify that commits were created (incremental + final)
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/subagent_checkpoints_test.go-300-		// Dual strategy stores metadata on orphan entire/checkpoints/v1 branch
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/subagent_checkpoints_test.go-301-		// Verify that commits were created (incremental + final)
 cmd/entire/cli/integration_test/subagent_checkpoints_test.go-302-		t.Logf("Note: auto-commit strategy stores checkpoints in entire/checkpoints/v1 branch")
 --
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/worktree_test.go-24-func TestWorktreeCommitPersistence(t *testing.T) {
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/worktree_test.go-25-	// Only test auto-commit strategy - it creates commits on the working branch
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/worktree_test.go-24-func TestWorktreeCommitPersistence(t *testing.T) {
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/worktree_test.go-25-	// Only test auto-commit strategy - it creates commits on the working branch
 cmd/entire/cli/integration_test/worktree_test.go-26-	worktreeStrategies := []string{
 cmd/entire/cli/integration_test/worktree_test.go:27:		strategy.StrategyNameAutoCommit,
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/worktree_test.go-28-	}
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/worktree_test.go-29-
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/worktree_test.go-30-	RunForStrategiesSequential(t, worktreeStrategies, func(t *testing.T, strat string) {
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/worktree_test.go-28-	}
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/worktree_test.go-29-
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/worktree_test.go-30-	RunForStrategiesSequential(t, worktreeStrategies, func(t *testing.T, strat string) {
 --
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/resume_test.go-31-// that has a commit with an Entire-Checkpoint trailer.
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/resume_test.go-32-func TestResume_SwitchBranchWithSession(t *testing.T) {
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/resume_test.go-33-	t.Parallel()
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/resume_test.go-31-// that has a commit with an Entire-Checkpoint trailer.
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/resume_test.go-32-func TestResume_SwitchBranchWithSession(t *testing.T) {
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/resume_test.go-33-	t.Parallel()
 cmd/entire/cli/integration_test/resume_test.go:34:	env := NewFeatureBranchEnv(t, strategy.StrategyNameAutoCommit)
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/resume_test.go-35-
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/resume_test.go-36-	// Create a session on the feature branch
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/resume_test.go-35-
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/resume_test.go-36-	// Create a session on the feature branch
 cmd/entire/cli/integration_test/resume_test.go-37-	session := env.NewSession()
 --
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/resume_test.go-93-// TestResume_AlreadyOnBranch tests that resume works when already on the target branch.
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/resume_test.go-94-func TestResume_AlreadyOnBranch(t *testing.T) {
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/resume_test.go-95-	t.Parallel()
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/resume_test.go-93-// TestResume_AlreadyOnBranch tests that resume works when already on the target branch.
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/resume_test.go-94-func TestResume_AlreadyOnBranch(t *testing.T) {
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/resume_test.go-95-	t.Parallel()
 cmd/entire/cli/integration_test/resume_test.go:96:	env := NewFeatureBranchEnv(t, strategy.StrategyNameAutoCommit)
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/resume_test.go-97-
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/resume_test.go-98-	// Create a session on the feature branch
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/resume_test.go-97-
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/resume_test.go-98-	// Create a session on the feature branch
 cmd/entire/cli/integration_test/resume_test.go-99-	session := env.NewSession()
 --
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/resume_test.go-130-// any Entire-Checkpoint trailer in their history gracefully.
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/resume_test.go-131-func […]
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/resume_test.go-130-// any Entire-Checkpoint trailer in their history gracefully.
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/resume_test.go-131-func […]
 
 > AGENT
 
@@ -1195,7 +1195,7 @@ tool_use Read
 id: toolu_019K17Q5fL35Ba6qdpGUHycn
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/testenv.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/testenv.go",
   "offset": 188,
   "limit": 10
 }
@@ -1230,7 +1230,7 @@ id: toolu_01TZgP41ZkP7WBbsdDBijPAL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/testenv.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/testenv.go",
   "old_string": "// AllStrategies returns all strategy names for parameterized tests.\nfunc AllStrategies() []string {\n\treturn []string{\n\t\tstrategy.StrategyNameAutoCommit,\n\t\tstrategy.StrategyNameManualCommit,\n\t}\n}",
   "new_string": "// AllStrategies returns all strategy names for parameterized tests.\nfunc AllStrategies() []string {\n\treturn []string{\n\t\tstrategy.StrategyNameManualCommit,\n\t}\n}"
 }
@@ -1241,7 +1241,7 @@ id: toolu_01TZgP41ZkP7WBbsdDBijPAL
 tool_result
 id: toolu_01TZgP41ZkP7WBbsdDBijPAL
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/testenv.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/testenv.go has been updated successfully.
 ```
 
 > AGENT
@@ -1255,7 +1255,7 @@ id: toolu_01Bm3UxP7PpyzN1HR1Vw6PFM
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/resume_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/resume_test.go",
   "old_string": "\tenv := NewFeatureBranchEnv(t, strategy.StrategyNameAutoCommit)",
   "new_string": "\tenv := NewFeatureBranchEnv(t, strategy.StrategyNameManualCommit)"
 }
@@ -1279,7 +1279,7 @@ tool_use Bash
 id: toolu_019my9Hx2EAeF4JWM7dhHEdR
 ```json
 {
-  "command": "\n# Replace all occurrences of StrategyNameAutoCommit with StrategyNameManualCommit in integration tests\nsed -i '' 's/strategy\\.StrategyNameAutoCommit/strategy.StrategyNameManualCommit/g' /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/resume_test.go\n\n# Also update worktree_test.go\nsed -i '' 's/strategy\\.StrategyNameAutoCommit/strategy.StrategyNameManualCommit/g' /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/worktree_test.go\n\necho \"Updated resume and worktree tests\"\n",
+  "command": "\n# Replace all occurrences of StrategyNameAutoCommit with StrategyNameManualCommit in integration tests\nsed -i '' 's/strategy\\.StrategyNameAutoCommit/strategy.StrategyNameManualCommit/g' /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/resume_test.go\n\n# Also update worktree_test.go\nsed -i '' 's/strategy\\.StrategyNameAutoCommit/strategy.StrategyNameManualCommit/g' /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/worktree_test.go\n\necho \"Updated resume and worktree tests\"\n",
   "description": "Replace auto-commit with manual-commit in integration tests"
 }
 ```
@@ -1302,7 +1302,7 @@ tool_use Read
 id: toolu_01AT6hTebSSMb97uoKNjwZWn
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/worktree_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/worktree_test.go",
   "offset": 20,
   "limit": 15
 }
@@ -1342,7 +1342,7 @@ id: toolu_019zutKcx4AwoN8eyf4A8KD4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/worktree_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/worktree_test.go",
   "old_string": "func TestWorktreeCommitPersistence(t *testing.T) {\n\t// Only test auto-commit strategy - it creates commits on the working branch\n\tworktreeStrategies := []string{\n\t\tstrategy.StrategyNameManualCommit,\n\t}",
   "new_string": "func TestWorktreeCommitPersistence(t *testing.T) {\n\t// Test worktree commit persistence with manual-commit strategy\n\tworktreeStrategies := []string{\n\t\tstrategy.StrategyNameManualCommit,\n\t}"
 }
@@ -1353,7 +1353,7 @@ id: toolu_019zutKcx4AwoN8eyf4A8KD4
 tool_result
 id: toolu_019zutKcx4AwoN8eyf4A8KD4
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/worktree_test.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/worktree_test.go has been updated successfully.
 ```
 
 > AGENT
@@ -1366,7 +1366,7 @@ tool_use Read
 id: toolu_013RQNeC4KYufBNkEjft5ozi
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/hooks_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/hooks_test.go",
   "offset": 190,
   "limit": 35
 }
@@ -1423,7 +1423,7 @@ id: toolu_01JtrKnx7JeqpkbNGxCeEN2h
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/hooks_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/hooks_test.go",
   "old_string": "\t\t// Verify checkpoint was created based on strategy type\n\t\tswitch strategyName {\n\t\tcase strategy.StrategyNameAutoCommit:\n\t\t\t// Auto-commit creates a new commit on the active branch\n\t\t\tcommitsAfter := env.GetGitLog()\n\t\t\tif len(commitsAfter) <= len(commitsBefore) {\n\t\t\t\tt.Errorf(\"auto-commit: expected new commit to be created; commits before=%d, after=%d\",\n\t\t\t\t\tlen(commitsBefore), len(commitsAfter))\n\t\t\t}\n\n\t\tcase strategy.StrategyNameManualCommit:\n\t\t\t// Manual-commit stores checkpoint data on the shadow branch\n\t\t\tshadowBranch := env.GetShadowBranchName()\n\t\t\tif !env.BranchExists(shadowBranch) {\n\t\t\t\tt.Errorf(\"manual-commit: shadow branch %s should exist after checkpoint\", shadowBranch)\n\t\t\t}\n\n\t\t\t// Verify session state was updated with checkpoint count\n\t\t\tstate, stateErr := env.GetSessionState(session.ID)\n\t\t\tif stateErr != nil {\n\t\t\t\tt.Fatalf(\"failed to get session state: %v\", stateErr)\n\t\t\t}\n\t\t\tif state == nil {\n\t\t\t\tt.Fatal(\"manual-commit: session state should exist after checkpoint\")\n\t\t\t}\n\t\t\tif state.StepCount == 0 {\n\t\t\t\tt.Error(\"manual-commit: session state should have non-zero step count\")\n\t\t\t}\n\t\t}",
   "new_string": "\t\t// Verify checkpoint was created (manual-commit stores checkpoint data on the shadow branch)\n\t\tshadowBranch := env.GetShadowBranchName()\n\t\tif !env.BranchExists(shadowBranch) {\n\t\t\tt.Errorf(\"shadow branch %s should exist after checkpoint\", shadowBranch)\n\t\t}\n\n\t\t// Verify session state was updated with checkpoint count\n\t\tstate, stateErr := env.GetSessionState(session.ID)\n\t\tif stateErr != nil {\n\t\t\tt.Fatalf(\"failed to get session state: %v\", stateErr)\n\t\t}\n\t\tif state == nil {\n\t\t\tt.Fatal(\"session state should exist after checkpoint\")\n\t\t}\n\t\tif state.StepCount == 0 {\n\t\t\tt.Error(\"session state should have non-zero step count\")\n\t\t}"
 }
@@ -1434,7 +1434,7 @@ id: toolu_01JtrKnx7JeqpkbNGxCeEN2h
 tool_result
 id: toolu_01JtrKnx7JeqpkbNGxCeEN2h
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/hooks_test.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/hooks_test.go has been updated successfully.
 ```
 
 > TOOL
@@ -1443,7 +1443,7 @@ tool_use Read
 id: toolu_018bv7vtfNoEiujzcAEVNkrL
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/subagent_checkpoints_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/subagent_checkpoints_test.go",
   "offset": 290,
   "limit": 25
 }
@@ -1493,7 +1493,7 @@ id: toolu_01L8tCvoHCQafN9znKXanGkr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/subagent_checkpoints_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/subagent_checkpoints_test.go",
   "old_string": "func verifyCheckpointStorage(t *testing.T, env *TestEnv, strategyName, sessionID, taskToolUseID string) {\n\tt.Helper()\n\n\tswitch strategyName {\n\tcase strategy.StrategyNameManualCommit:\n\t\t// Shadow strategy stores checkpoints in git tree on shadow branch (entire/<head-hash>)\n\t\t// We need to verify that checkpoint data exists in the shadow branch tree\n\t\tverifyShadowCheckpointStorage(t, env, sessionID, taskToolUseID)\n\n\tcase strategy.StrategyNameAutoCommit:\n\t\t// Dual strategy stores metadata on orphan entire/checkpoints/v1 branch\n\t\t// Verify that commits were created (incremental + final)\n\t\tt.Logf(\"Note: auto-commit strategy stores checkpoints in entire/checkpoints/v1 branch\")\n\t}\n}",
   "new_string": "func verifyCheckpointStorage(t *testing.T, env *TestEnv, strategyName, sessionID, taskToolUseID string) {\n\tt.Helper()\n\n\t// Manual-commit stores checkpoints in git tree on shadow branch (entire/<head-hash>)\n\t// We need to verify that checkpoint data exists in the shadow branch tree\n\tverifyShadowCheckpointStorage(t, env, sessionID, taskToolUseID)\n}"
 }
@@ -1504,7 +1504,7 @@ id: toolu_01L8tCvoHCQafN9znKXanGkr
 tool_result
 id: toolu_01L8tCvoHCQafN9znKXanGkr
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/subagent_checkpoints_test.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/subagent_checkpoints_test.go has been updated successfully.
 ```
 
 > AGENT
@@ -1517,7 +1517,7 @@ tool_use Read
 id: toolu_01Lkp6rdWX8zqinTH9NkyMfH
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/lifecycle.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/lifecycle.go",
   "offset": 395,
   "limit": 15
 }
@@ -1557,7 +1557,7 @@ id: toolu_01SNS1UDLBMpGBnvgvGacgZW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/lifecycle.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/lifecycle.go",
   "old_string": "\tif err := strat.SaveStep(ctx); err != nil {\n\t\treturn fmt.Errorf(\"failed to save step: %w\", err)\n\t}\n\n\t// Update session state transcript position for auto-commit strategy\n\tif strat.Name() == strategy.StrategyNameAutoCommit && newTranscriptPosition > 0 {\n\t\tupdateAutoCommitTranscriptPosition(sessionID, newTranscriptPosition)\n\t}\n\n\t// Transition session phase and cleanup\n\ttransitionSessionTurnEnd(sessionID)",
   "new_string": "\tif err := strat.SaveStep(ctx); err != nil {\n\t\treturn fmt.Errorf(\"failed to save step: %w\", err)\n\t}\n\n\t// Transition session phase and cleanup\n\ttransitionSessionTurnEnd(sessionID)"
 }
@@ -1568,7 +1568,7 @@ id: toolu_01SNS1UDLBMpGBnvgvGacgZW
 tool_result
 id: toolu_01SNS1UDLBMpGBnvgvGacgZW
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/lifecycle.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/lifecycle.go has been updated successfully.
 ```
 
 > TOOL
@@ -1577,7 +1577,7 @@ tool_use Bash
 id: toolu_011tVczzRHSD9A6QRhazAXAT
 ```json
 {
-  "command": "grep -n \"updateAutoCommitTranscriptPosition\" /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/lifecycle.go",
+  "command": "grep -n \"updateAutoCommitTranscriptPosition\" /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/lifecycle.go",
   "description": "Check for updateAutoCommitTranscriptPosition function"
 }
 ```
@@ -1597,7 +1597,7 @@ tool_use Read
 id: toolu_01XJwKWQ6LuYvR2GW1VidiXV
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/lifecycle.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/lifecycle.go",
   "offset": 630,
   "limit": 20
 }
@@ -1641,7 +1641,7 @@ tool_use Read
 id: toolu_01Gvk87w6kc721WCwBP1KPWc
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/lifecycle.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/lifecycle.go",
   "offset": 630,
   "limit": 30
 }
@@ -1693,7 +1693,7 @@ id: toolu_01B16amD3A5ELkoKk232kr2L
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/lifecycle.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/lifecycle.go",
   "old_string": "\treturn 0\n}\n\n// updateAutoCommitTranscriptPosition updates the session state with the new transcript position\n// for the auto-commit strategy.\nfunc updateAutoCommitTranscriptPosition(sessionID string, newPosition int) {\n\tsessionState, loadErr := strategy.LoadSessionState(sessionID)\n\tif loadErr != nil {\n\t\tfmt.Fprintf(os.Stderr, \"Warning: failed to load session state: %v\\n\", loadErr)\n\t\treturn\n\t}\n\tif sessionState == nil {\n\t\tsessionState = &strategy.SessionState{\n\t\t\tSessionID: sessionID,\n\t\t}\n\t}\n\tsessionState.CheckpointTranscriptStart = newPosition\n\tsessionState.StepCount++\n\tif updateErr := strategy.SaveSessionState(sessionState); updateErr != nil {\n\t\tfmt.Fprintf(os.Stderr, \"Warning: failed to update session state: %v\\n\", updateErr)\n\t} else {\n\t\tfmt.Fprintf(os.Stderr, \"Updated session state: transcript position=%d, checkpoint=%d\\n\",\n\t\t\tnewPosition, sessionState.StepCount)\n\t}\n}\n\n// createContextFile creates a context.md file for the session checkpoint.",
   "new_string": "\treturn 0\n}\n\n// createContextFile creates a context.md file for the session checkpoint."
 }
@@ -1704,7 +1704,7 @@ id: toolu_01B16amD3A5ELkoKk232kr2L
 tool_result
 id: toolu_01B16amD3A5ELkoKk232kr2L
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/lifecycle.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/lifecycle.go has been updated successfully.
 ```
 
 > TOOL
@@ -1713,7 +1713,7 @@ tool_use Read
 id: toolu_01VBSHefXmLR6yxNeN2g28TJ
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/lifecycle.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/lifecycle.go",
   "offset": 215,
   "limit": 30
 }
@@ -1764,7 +1764,7 @@ tool_use Bash
 id: toolu_01RXdqqXbb4QQrqp34xrFMVk
 ```json
 {
-  "command": "grep -n \"newTranscriptPosition\" /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/lifecycle.go",
+  "command": "grep -n \"newTranscriptPosition\" /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/lifecycle.go",
   "description": "Find all uses of newTranscriptPosition"
 }
 ```
@@ -1785,7 +1785,7 @@ tool_use Read
 id: toolu_01NUgFrzdSN3b2yXyWHnjGPw
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/lifecycle.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/lifecycle.go",
   "offset": 245,
   "limit": 25
 }
@@ -1832,7 +1832,7 @@ id: toolu_017oVVKenGwzyEwqaFsxE1cF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/lifecycle.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/lifecycle.go",
   "old_string": "\t// Extract metadata via agent interface (prompts, summary, modified files)\n\tvar allPrompts []string\n\tvar summary string\n\tvar modifiedFiles []string\n\tvar newTranscriptPosition int\n\n\t// Compute subagents directory for agents that support subagent extraction.",
   "new_string": "\t// Extract metadata via agent interface (prompts, summary, modified files)\n\tvar allPrompts []string\n\tvar summary string\n\tvar modifiedFiles []string\n\n\t// Compute subagents directory for agents that support subagent extraction."
 }
@@ -1843,7 +1843,7 @@ id: toolu_017oVVKenGwzyEwqaFsxE1cF
 tool_result
 id: toolu_017oVVKenGwzyEwqaFsxE1cF
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/lifecycle.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/lifecycle.go has been updated successfully.
 ```
 
 > TOOL
@@ -1853,7 +1853,7 @@ id: toolu_01DxToYoVChfGFBw6HLLfMqe
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/lifecycle.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/lifecycle.go",
   "old_string": "\t\t// Get position from basic analyzer\n\t\t\tif _, pos, posErr := analyzer.ExtractModifiedFilesFromOffset(transcriptRef, transcriptOffset); posErr == nil {\n\t\t\t\tnewTranscriptPosition = pos\n\t\t\t}\n\t\t} else {\n\t\t\t// Fall back to basic extraction (main transcript only)\n\t\t\tif files, pos, fileErr := analyzer.ExtractModifiedFilesFromOffset(transcriptRef, transcriptOffset); fileErr != nil {\n\t\t\t\tfmt.Fprintf(os.Stderr, \"Warning: failed to extract modified files: %v\\n\", fileErr)\n\t\t\t} else {\n\t\t\t\tmodifiedFiles = files\n\t\t\t\tnewTranscriptPosition = pos\n\t\t\t}",
   "new_string": "\t\t} else {\n\t\t\t// Fall back to basic extraction (main transcript only)\n\t\t\tif files, _, fileErr := analyzer.ExtractModifiedFilesFromOffset(transcriptRef, transcriptOffset); fileErr != nil {\n\t\t\t\tfmt.Fprintf(os.Stderr, \"Warning: failed to extract modified files: %v\\n\", fileErr)\n\t\t\t} else {\n\t\t\t\tmodifiedFiles = files\n\t\t\t}"
 }
@@ -1864,7 +1864,7 @@ id: toolu_01DxToYoVChfGFBw6HLLfMqe
 tool_result
 id: toolu_01DxToYoVChfGFBw6HLLfMqe
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/lifecycle.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/lifecycle.go has been updated successfully.
 ```
 
 > TOOL
@@ -1873,7 +1873,7 @@ tool_use Read
 id: toolu_01RpQjyHQ9Vi9SeyKf2e1ss2
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/lifecycle.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/lifecycle.go",
   "offset": 243,
   "limit": 20
 }
@@ -1917,7 +1917,7 @@ tool_use Read
 id: toolu_015npxkQN6JvvjKWJzQucXva
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/lifecycle.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/lifecycle.go",
   "offset": 240,
   "limit": 25
 }
@@ -1964,7 +1964,7 @@ id: toolu_01JNn9ZyuaNYhtBwHEPhdpcw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/lifecycle.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/lifecycle.go",
   "old_string": "\t\t// Extract modified files - prefer SubagentAwareExtractor if available to include subagent files\n\t\tif subagentExtractor, subOk := ag.(agent.SubagentAwareExtractor); subOk {\n\t\t\tif files, fileErr := subagentExtractor.ExtractAllModifiedFiles(transcriptRef, transcriptOffset, subagentsDir); fileErr != nil {\n\t\t\t\tfmt.Fprintf(os.Stderr, \"Warning: failed to extract modified files (with subagents): %v\\n\", fileErr)\n\t\t\t} else {\n\t\t\t\tmodifiedFiles = files\n\t\t\t}\n\t\t\t} else {\n\t\t\t// Fall back to basic extraction (main transcript only)\n\t\t\tif files, _, fileErr := analyzer.ExtractModifiedFilesFromOffset(transcriptRef, transcriptOffset); fileErr != nil {\n\t\t\t\tfmt.Fprintf(os.Stderr, \"Warning: failed to extract modified files: %v\\n\", fileErr)\n\t\t\t} else {\n\t\t\t\tmodifiedFiles = files\n\t\t\t}\n\t\t}",
   "new_string": "\t\t// Extract modified files - prefer SubagentAwareExtractor if available to include subagent files\n\t\tif subagentExtractor, subOk := ag.(agent.SubagentAwareExtractor); subOk {\n\t\t\tif files, fileErr := subagentExtractor.ExtractAllModifiedFiles(transcriptRef, transcriptOffset, subagentsDir); fileErr != nil {\n\t\t\t\tfmt.Fprintf(os.Stderr, \"Warning: failed to extract modified files (with subagents): %v\\n\", fileErr)\n\t\t\t} else {\n\t\t\t\tmodifiedFiles = files\n\t\t\t}\n\t\t} else {\n\t\t\t// Fall back to basic extraction (main transcript only)\n\t\t\tif files, _, fileErr := analyzer.ExtractModifiedFilesFromOffset(transcriptRef, transcriptOffset); fileErr != nil {\n\t\t\t\tfmt.Fprintf(os.Stderr, \"Warning: failed to extract modified files: %v\\n\", fileErr)\n\t\t\t} else {\n\t\t\t\tmodifiedFiles = files\n\t\t\t}\n\t\t}"
 }
@@ -1975,7 +1975,7 @@ id: toolu_01JNn9ZyuaNYhtBwHEPhdpcw
 tool_result
 id: toolu_01JNn9ZyuaNYhtBwHEPhdpcw
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/lifecycle.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/lifecycle.go has been updated successfully.
 ```
 
 > AGENT
@@ -1988,7 +1988,7 @@ tool_use Read
 id: toolu_01PWfgCfVsmbo2MKGiXsA5KH
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go",
   "offset": 60,
   "limit": 25
 }
@@ -2037,7 +2037,7 @@ tool_use Bash
 id: toolu_01PEThnFp2jb8e83PvHcqx4a
 ```json
 {
-  "command": "grep -n \"func printStrategyInfo\" /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go",
+  "command": "grep -n \"func printStrategyInfo\" /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go",
   "description": "Find printStrategyInfo function"
 }
 ```
@@ -2056,7 +2056,7 @@ tool_use Read
 id: toolu_01NtSh9LtN83Ttd5o1mXLKYL
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go",
   "offset": 111,
   "limit": 40
 }
@@ -2118,7 +2118,7 @@ id: toolu_01LhU5Y4zQ1WYaHxZeC5E4rp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go",
   "old_string": "\t// Print strategy info\n\tstrat := GetStrategy()\n\tisAutoCommit := strat.Name() == strategy.StrategyNameAutoCommit\n\tprintStrategyInfo(w, strat, isAutoCommit)",
   "new_string": "\t// Print strategy info\n\tstrat := GetStrategy()\n\tprintStrategyInfo(w, strat)"
 }
@@ -2129,7 +2129,7 @@ id: toolu_01LhU5Y4zQ1WYaHxZeC5E4rp
 tool_result
 id: toolu_01LhU5Y4zQ1WYaHxZeC5E4rp
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go has been updated successfully.
 ```
 
 > TOOL
@@ -2139,7 +2139,7 @@ id: toolu_01EjtHnJiwnb2nBXvnm53pLH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go",
   "old_string": "func printStrategyInfo(w io.Writer, strat strategy.Strategy, isAutoCommit bool) {\n\tfmt.Fprintf(w, \"Strategy: %s\\n\", strat.Name())\n\tfmt.Fprintf(w, \"Auto-commit strategy: %v\\n\", isAutoCommit)\n\n\t_, branchName, err := IsOnDefaultBranch()\n\tif err != nil {\n\t\tfmt.Fprintf(w, \"Branch: (unable to determine: %v)\\n\\n\", err)\n\t} else {\n\t\tfmt.Fprintf(w, \"Branch: %s\\n\\n\", branchName)\n\t}\n}",
   "new_string": "func printStrategyInfo(w io.Writer, strat strategy.Strategy) {\n\tfmt.Fprintf(w, \"Strategy: %s\\n\", strat.Name())\n\n\t_, branchName, err := IsOnDefaultBranch()\n\tif err != nil {\n\t\tfmt.Fprintf(w, \"Branch: (unable to determine: %v)\\n\\n\", err)\n\t} else {\n\t\tfmt.Fprintf(w, \"Branch: %s\\n\\n\", branchName)\n\t}\n}"
 }
@@ -2150,7 +2150,7 @@ id: toolu_01EjtHnJiwnb2nBXvnm53pLH
 tool_result
 id: toolu_01EjtHnJiwnb2nBXvnm53pLH
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go has been updated successfully.
 ```
 
 > TOOL
@@ -2159,7 +2159,7 @@ tool_use Read
 id: toolu_01RqmWdpPDbh1op3pK81vCXk
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go",
   "offset": 95,
   "limit": 15
 }
@@ -2198,7 +2198,7 @@ tool_use Bash
 id: toolu_01DcB688UhDcL276chfYruMC
 ```json
 {
-  "command": "grep -n \"func printDecision\" /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go",
+  "command": "grep -n \"func printDecision\" /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go",
   "description": "Find printDecision function"
 }
 ```
@@ -2217,7 +2217,7 @@ tool_use Read
 id: toolu_01VBFJMjgQwrqhFTxEKvHgXf
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go",
   "offset": 248,
   "limit": 35
 }
@@ -2274,7 +2274,7 @@ id: toolu_01LY8ujXa4wKvF9EU3ZoumUy
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go",
   "old_string": "\t// Print decision\n\tprintDecision(w, isAutoCommit, strat.Name(), totalChanges)",
   "new_string": "\t// Print decision\n\tprintDecision(w, strat.Name(), totalChanges)"
 }
@@ -2285,7 +2285,7 @@ id: toolu_01LY8ujXa4wKvF9EU3ZoumUy
 tool_result
 id: toolu_01LY8ujXa4wKvF9EU3ZoumUy
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go has been updated successfully.
 ```
 
 > TOOL
@@ -2295,7 +2295,7 @@ id: toolu_01GEKShvekHTvD1GnfhrLpFA
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go",
   "old_string": "func printDecision(w io.Writer, isAutoCommit bool, stratName string, totalChanges int) {\n\tfmt.Fprintln(w, \"\\n=== Auto-Commit Decision ===\")\n\n\twouldCommit := isAutoCommit && totalChanges > 0\n\n\tif wouldCommit {\n\t\tfmt.Fprintln(w, \"Result: YES - Auto-commit would be triggered\")\n\t\tfmt.Fprintf(w, \"  %d file(s) would be committed\\n\", totalChanges)\n\t\treturn\n\t}\n\n\tfmt.Fprintln(w, \"Result: NO - Auto-commit would NOT be triggered\")\n\tfmt.Fprintln(w, \"Reasons:\")\n\tif !isAutoCommit {\n\t\tfmt.Fprintf(w, \"  - Strategy is not auto-commit (using %s)\\n\", stratName)\n\t}\n\tif totalChanges == 0 {\n\t\tfmt.Fprintln(w, \"  - No file changes to commit\")\n\t}\n}",
   "new_string": "func printDecision(w io.Writer, stratName string, totalChanges int) {\n\tfmt.Fprintln(w, \"\\n=== File Changes Summary ===\")\n\tfmt.Fprintf(w, \"Strategy: %s\\n\", stratName)\n\tfmt.Fprintf(w, \"Modified files to commit: %d\\n\", totalChanges)\n}"
 }
@@ -2306,7 +2306,7 @@ id: toolu_01GEKShvekHTvD1GnfhrLpFA
 tool_result
 id: toolu_01GEKShvekHTvD1GnfhrLpFA
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go has been updated successfully.
 ```
 
 > AGENT
@@ -2340,7 +2340,7 @@ tool_use Bash
 id: toolu_01JGedxp6khhzmouwKATZ5sC
 ```json
 {
-  "command": "grep -n \"func migrateDeprecatedStrategy\" /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go",
+  "command": "grep -n \"func migrateDeprecatedStrategy\" /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go",
   "description": "Find all migrateDeprecatedStrategy declarations"
 }
 ```
@@ -2360,7 +2360,7 @@ tool_use Read
 id: toolu_016qH5Hakt1h4bZ2vZAVpikp
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go",
   "offset": 345,
   "limit": 60
 }
@@ -2411,7 +2411,7 @@ id: toolu_01AFmTBMokn4YsZfXXKpRDcv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go",
   "old_string": "}\n\n// migrateDeprecatedStrategy handles migration from removed \"auto-commit\" strategy to \"manual-commit\".\n// Returns true if migration occurred, false if no migration was needed.\nfunc migrateDeprecatedStrategy(settings *EntireSettings, settingsFileAbs string, localSettingsFileAbs string) (bool, error) {\n\t// Check if auto-commit strategy is configured\n\tif settings.Strategy != \"auto-commit\" {\n\t\treturn false, nil // No migration needed\n\t}\n\n\t// Update strategy to manual-commit\n\tsettings.Strategy = \"manual-commit\"\n\n\t// Try to update settings files where auto-commit was configured\n\t// Check which file(s) contain the auto-commit setting\n\tbaseSettings, err := loadFromFile(settingsFileAbs)\n\tif err != nil {\n\t\treturn true, fmt.Errorf(\"reading base settings file for migration: %w\", err)\n\t}\n\n\t// Save to base settings file if it had auto-commit\n\tif baseSettings.Strategy == \"auto-commit\" {\n\t\tbaseSettings.Strategy = \"manual-commit\"\n\t\tif err := saveToFile(baseSettings, settingsFileAbs); err != nil {\n\t\t\t// Don't fail the whole migration if one file can't be saved\n\t\t\tfmt.Fprintf(os.Stderr, \"Warning: could not save migrated base settings: %v\\n\", err)\n\t\t}\n\t}\n\n\t// Check and update local settings if it exists and has auto-commit\n\tlocalSettings, err := LoadFromFile(localSettingsFileAbs)\n\tif err == nil && localSettings != nil && localSettings.Strategy == \"auto-commit\" {\n\t\tlocalSettings.Strategy = \"manual-commit\"\n\t\tif err := saveToFile(localSettings, localSettingsFileAbs); err != nil {\n\t\t\t// Don't fail the whole migration if local file can't be saved\n\t\t\tfmt.Fprintf(os.Stderr, \"Warning: could not save migrated local settings: %v\\n\", err)\n\t\t}\n\t}\n\n\treturn true, nil\n}",
   "new_string": "}"
 }
@@ -2460,7 +2460,7 @@ tool_use Read
 id: toolu_01GHtfyUHmHQWo3FLZKkHQhP
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go",
   "offset": 340,
   "limit": 50
 }
@@ -2510,7 +2510,7 @@ id: toolu_01XTiLedb9s5RyiGo6VfKLzn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go",
   "old_string": "\t//nolint:gosec // G306: settings file is config, not secrets; 0o644 is appropriate\n\tif err := os.WriteFile(filePathAbs, data, 0o644); err != nil {\n\t\treturn fmt.Errorf(\"writing settings file: %w\", err)\n\t}\n\treturn nil\n}\n\n// migrateDeprecatedStrategy handles migration from removed \"auto-commit\" strategy to \"manual-commit\".\n// Returns true if migration occurred, false if no migration was needed.\nfunc migrateDeprecatedStrategy(settings *EntireSettings, settingsFileAbs string, localSettingsFileAbs string) (bool, error) {\n\t// Check if auto-commit strategy is configured\n\tif settings.Strategy != \"auto-commit\" {\n\t\treturn false, nil // No migration needed\n\t}\n\n\t// Update strategy to manual-commit\n\tsettings.Strategy = \"manual-commit\"\n\n\t// Try to update settings files where auto-commit was configured\n\t// Check which file(s) contain the auto-commit setting\n\tbaseSettings, err := loadFromFile(settingsFileAbs)\n\tif err != nil {\n\t\treturn true, fmt.Errorf(\"reading base settings file for migration: %w\", err)\n\t}\n\n\t// Save to base settings file if it had auto-commit\n\tif baseSettings.Strategy == \"auto-commit\" {\n\t\tbaseSettings.Strategy = \"manual-commit\"\n\t\tif err := saveToFile(baseSettings, settingsFileAbs); err != nil {\n\t\t\t// Don't fail the whole migration if one file can't be saved\n\t\t\tfmt.Fprintf(os.Stderr, \"Warning: could not save migrated base settings: %v\\n\", err)\n\t\t}\n\t}\n\n\t// Check and update local settings if it exists and has auto-commit\n\tlocalSettings, err := LoadFromFile(localSettingsFileAbs)\n\tif err == nil && localSettings != nil && localSettings.Strategy == \"auto-commit\" {\n\t\tlocalSettings.Strategy = \"manual-commit\"\n\t\tif err := saveToFile(localSettings, localSettingsFileAbs); err != nil {\n\t\t\t// […]
 
 > TOOL
@@ -2518,7 +2518,7 @@ id: toolu_01XTiLedb9s5RyiGo6VfKLzn
 tool_result
 id: toolu_01XTiLedb9s5RyiGo6VfKLzn
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go has been updated successfully.
 ```
 
 > TOOL
@@ -2614,7 +2614,7 @@ tool_use Bash
 id: toolu_01TuHZpgR1VMyPQy32jg31mx
 ```json
 {
-  "command": "grep -n \"strategyDisplayAutoCommit\" /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/config_test.go",
+  "command": "grep -n \"strategyDisplayAutoCommit\" /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/config_test.go",
   "description": "Find config_test.go references"
 }
 ```
@@ -2633,7 +2633,7 @@ tool_use Read
 id: toolu_01G2mj7X9SLSpLQV8t3cXxUW
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/config_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/config_test.go",
   "offset": 265,
   "limit": 20
 }
@@ -2673,7 +2673,7 @@ id: toolu_018Dr3qh4tyRazRod84LGAgt
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/config_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/config_test.go",
   "old_string": "\tlocalSettings := `{\"strategy\": \"auto-commit\"}`\n\tif err := os.WriteFile(EntireSettingsLocalFile, []byte(localSettings), 0o644); err != nil {\n\t\tt.Fatalf(\"Failed to write local settings file: %v\", err)\n\t}\n\n\tsettings, err := LoadEntireSettings()\n\tif err != nil {\n\t\tt.Fatalf(\"LoadEntireSettings() error = %v\", err)\n\t}\n\tif settings.Strategy != strategyDisplayAutoCommit {\n\t\tt.Errorf(\"Strategy should be 'auto-commit' from local file, got %q\", settings.Strategy)\n\t}\n\tif !settings.Enabled {\n\t\tt.Error(\"Enabled should default to true\")\n\t}",
   "new_string": "\tlocalSettings := `{\"strategy\": \"auto-commit\"}`\n\tif err := os.WriteFile(EntireSettingsLocalFile, []byte(localSettings), 0o644); err != nil {\n\t\tt.Fatalf(\"Failed to write local settings file: %v\", err)\n\t}\n\n\tsettings, err := LoadEntireSettings()\n\tif err != nil {\n\t\tt.Fatalf(\"LoadEntireSettings() error = %v\", err)\n\t}\n\t// Auto-commit strategy is automatically migrated to manual-commit\n\tif settings.Strategy != strategy.StrategyNameManualCommit {\n\t\tt.Errorf(\"Strategy should be migrated to 'manual-commit' from auto-commit, got %q\", settings.Strategy)\n\t}\n\tif !settings.Enabled {\n\t\tt.Error(\"Enabled should default to true\")\n\t}"
 }
@@ -2684,7 +2684,7 @@ id: toolu_018Dr3qh4tyRazRod84LGAgt
 tool_result
 id: toolu_018Dr3qh4tyRazRod84LGAgt
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/config_test.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/config_test.go has been updated successfully.
 ```
 
 > TOOL
@@ -2693,7 +2693,7 @@ tool_use Bash
 id: toolu_01SziGqZonBHXXP14UzWdWKA
 ```json
 {
-  "command": "grep -n \"NewAutoCommitStrategy\" /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/resume_test.go",
+  "command": "grep -n \"NewAutoCommitStrategy\" /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/resume_test.go",
   "description": "Find NewAutoCommitStrategy references"
 }
 ```
@@ -2712,7 +2712,7 @@ tool_use Read
 id: toolu_017LRj3sURNPyTyefVHvhBcr
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/resume_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/resume_test.go",
   "offset": 185,
   "limit": 20
 }
@@ -2751,7 +2751,7 @@ tool_use Bash
 id: toolu_01DjJsX9RtjhQgDdUY6PMTay
 ```json
 {
-  "command": "grep -n \"func New.*Strategy\" /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/*.go | grep -v test | grep -v \"func New\"",
+  "command": "grep -n \"func New.*Strategy\" /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/*.go | grep -v test | grep -v \"func New\"",
   "description": "Find strategy factory functions"
 }
 ```
@@ -2770,7 +2770,7 @@ tool_use Bash
 id: toolu_01CE5YDa6knwWt3zefC6u9vQ
 ```json
 {
-  "command": "grep \"func.*Strategy()\" /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/*.go | grep -v test",
+  "command": "grep \"func.*Strategy()\" /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/*.go | grep -v test",
   "description": "Find Strategy creation functions"
 }
 ```
@@ -2780,8 +2780,8 @@ id: toolu_01CE5YDa6knwWt3zefC6u9vQ
 tool_result
 id: toolu_01CE5YDa6knwWt3zefC6u9vQ
 ```
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/manual_commit.go:func NewManualCommitStrategy() Strategy {
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/manual_commit.go:func NewShadowStrategy() Strategy {
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/manual_commit.go:func NewManualCommitStrategy() Strategy {
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/manual_commit.go:func NewShadowStrategy() Strategy {
 ```
 
 > TOOL
@@ -2791,7 +2791,7 @@ id: toolu_011zMUw9jarZyArbrfQCR2pD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/resume_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/resume_test.go",
   "old_string": "\t// Set up the auto-commit strategy and create checkpoint metadata on entire/checkpoints/v1 branch\n\tstrat := strategy.NewAutoCommitStrategy()",
   "new_string": "\t// Set up the manual-commit strategy and create checkpoint metadata on entire/checkpoints/v1 branch\n\tstrat := strategy.NewManualCommitStrategy()"
 }
@@ -2802,7 +2802,7 @@ id: toolu_011zMUw9jarZyArbrfQCR2pD
 tool_result
 id: toolu_011zMUw9jarZyArbrfQCR2pD
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/resume_test.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/resume_test.go has been updated successfully.
 ```
 
 > TOOL
@@ -2811,7 +2811,7 @@ tool_use Bash
 id: toolu_01N17a3T1LS1sNjkz4nSFPBD
 ```json
 {
-  "command": "grep -n \"undefined: AutoCommitStrategy\" /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/rewind_test.go",
+  "command": "grep -n \"undefined: AutoCommitStrategy\" /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/rewind_test.go",
   "description": "Find AutoCommitStrategy references"
 }
 ```
@@ -2830,7 +2830,7 @@ tool_use Bash
 id: toolu_017U1FhVcT3Zn7xmpE9eSJYY
 ```json
 {
-  "command": "grep -n \"AutoCommitStrategy\" /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/rewind_test.go",
+  "command": "grep -n \"AutoCommitStrategy\" /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/rewind_test.go",
   "description": "Find AutoCommitStrategy in rewind_test.go"
 }
 ```
@@ -2849,7 +2849,7 @@ tool_use Read
 id: toolu_01UFQ7vi7c6mnfA3E6LzmS3p
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/rewind_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/rewind_test.go",
   "offset": 250,
   "limit": 25
 }
@@ -2893,7 +2893,7 @@ tool_use Bash
 id: toolu_0165zvhAAPTTNHYkeUKmEjxy
 ```json
 {
-  "command": "grep \"type ManualCommitStrategy\" /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/manual_commit.go",
+  "command": "grep \"type ManualCommitStrategy\" /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/manual_commit.go",
   "description": "Check ManualCommitStrategy type"
 }
 ```
@@ -2913,7 +2913,7 @@ id: toolu_01Fnaj92XJHGZpLzdpSdqhyh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/rewind_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/rewind_test.go",
   "old_string": "func TestDualStrategy_PreviewRewind(t *testing.T) {\n\tdir := t.TempDir()\n\t_, err := git.PlainInit(dir, false)\n\tif err != nil {\n\t\tt.Fatalf(\"failed to init git repo: %v\", err)\n\t}\n\n\tt.Chdir(dir)\n\n\ts := &AutoCommitStrategy{}\n\n\t// Dual strategy uses git reset which doesn't delete untracked files\n\tpoint := RewindPoint{\n\t\tID:      \"abc123\",\n\t\tMessage: \"Checkpoint\",\n\t\tDate:    time.Now(),\n\t}\n\n\tpreview, err := s.PreviewRewind(point)\n\tif err != nil {\n\t\tt.Fatalf(\"PreviewRewind() error = %v\", err)\n\t}\n\n\tif preview == nil {",
   "new_string": "func TestDualStrategy_PreviewRewind(t *testing.T) {\n\tdir := t.TempDir()\n\t_, err := git.PlainInit(dir, false)\n\tif err != nil {\n\t\tt.Fatalf(\"failed to init git repo: %v\", err)\n\t}\n\n\tt.Chdir(dir)\n\n\ts := &ManualCommitStrategy{}\n\n\t// Manual-commit strategy uses git trees which safely handles all file states\n\tpoint := RewindPoint{\n\t\tID:      \"abc123\",\n\t\tMessage: \"Checkpoint\",\n\t\tDate:    time.Now(),\n\t}\n\n\tpreview, err := s.PreviewRewind(point)\n\tif err != nil {\n\t\tt.Fatalf(\"PreviewRewind() error = %v\", err)\n\t}\n\n\tif preview == nil {"
 }
@@ -2924,7 +2924,7 @@ id: toolu_01Fnaj92XJHGZpLzdpSdqhyh
 tool_result
 id: toolu_01Fnaj92XJHGZpLzdpSdqhyh
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/rewind_test.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/rewind_test.go has been updated successfully.
 ```
 
 > TOOL
@@ -2933,7 +2933,7 @@ tool_use Bash
 id: toolu_01SJL8Dbhgkuhi6Kddnph1d5
 ```json
 {
-  "command": "grep -n \"expected strategy 'auto-commit'\" /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/settings_test.go",
+  "command": "grep -n \"expected strategy 'auto-commit'\" /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/settings_test.go",
   "description": "Find settings test auto-commit reference"
 }
 ```
@@ -2944,7 +2944,7 @@ tool_result ERROR
 id: toolu_01SJL8Dbhgkuhi6Kddnph1d5
 ```
 Exit code 2
-grep: /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/settings_test.go: No such file or directory
+grep: /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/settings_test.go: No such file or directory
 ```
 
 > TOOL
@@ -2953,7 +2953,7 @@ tool_use Bash
 id: toolu_01EidSLcBYooCnUGig5PSR76
 ```json
 {
-  "command": "grep -rn \"expected strategy 'auto-commit'\" /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/settings/",
+  "command": "grep -rn \"expected strategy 'auto-commit'\" /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/settings/",
   "description": "Find settings test auto-commit reference"
 }
 ```
@@ -2963,7 +2963,7 @@ id: toolu_01EidSLcBYooCnUGig5PSR76
 tool_result
 id: toolu_01EidSLcBYooCnUGig5PSR76
 ```
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings_test.go:84:		t.Errorf("expected strategy 'auto-commit', got %q", settings.Strategy)
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings_test.go:84:		t.Errorf("expected strategy 'auto-commit', got %q", settings.Strategy)
 ```
 
 > TOOL
@@ -2972,7 +2972,7 @@ tool_use Read
 id: toolu_01NMFUEpvjPMXwBumtxCGqZY
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings_test.go",
   "offset": 70,
   "limit": 30
 }
@@ -3021,7 +3021,7 @@ tool_use Read
 id: toolu_01NT9KQ4EkxBSiVYzbH7Vioa
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings_test.go",
   "offset": 50,
   "limit": 45
 }
@@ -3082,7 +3082,7 @@ tool_use Read
 id: toolu_01VGwR5A5FCdwbFFpqRQms21
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings_test.go",
   "offset": 40,
   "limit": 55
 }
@@ -3146,7 +3146,7 @@ id: toolu_01Y5MKEAmmAqrTxK6bji3cuZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings_test.go",
   "old_string": "\t// Verify values\n\tif settings.Strategy != \"auto-commit\" {\n\t\tt.Errorf(\"expected strategy 'auto-commit', got %q\", settings.Strategy)\n\t}",
   "new_string": "\t// Verify values\n\t// Note: auto-commit strategy is automatically migrated to manual-commit\n\tif settings.Strategy != \"manual-commit\" {\n\t\tt.Errorf(\"expected strategy to be migrated to 'manual-commit' (from auto-commit), got %q\", settings.Strategy)\n\t}"
 }
@@ -3157,7 +3157,7 @@ id: toolu_01Y5MKEAmmAqrTxK6bji3cuZ
 tool_result
 id: toolu_01Y5MKEAmmAqrTxK6bji3cuZ
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings_test.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings_test.go has been updated successfully.
 ```
 
 > AGENT
@@ -3214,7 +3214,7 @@ tool_use Read
 id: toolu_016mFz44FifA81fyZP7TuZa5
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/rewind_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/rewind_test.go",
   "offset": 251,
   "limit": 40
 }
@@ -3278,7 +3278,7 @@ id: toolu_018MbNq11ux78keRkAcR8fvP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/rewind_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/rewind_test.go",
   "old_string": "func TestDualStrategy_PreviewRewind(t *testing.T) {\n\tdir := t.TempDir()\n\t_, err := git.PlainInit(dir, false)\n\tif err != nil {\n\t\tt.Fatalf(\"failed to init git repo: %v\", err)\n\t}\n\n\tt.Chdir(dir)\n\n\ts := &ManualCommitStrategy{}\n\n\t// Manual-commit strategy uses git trees which safely handles all file states\n\tpoint := RewindPoint{\n\t\tID:      \"abc123\",\n\t\tMessage: \"Checkpoint\",\n\t\tDate:    time.Now(),\n\t}\n\n\tpreview, err := s.PreviewRewind(point)\n\tif err != nil {\n\t\tt.Fatalf(\"PreviewRewind() error = %v\", err)\n\t}\n\n\tif preview == nil {\n\t\tt.Fatal(\"PreviewRewind() returned nil preview\")\n\t}\n\n\t// Should be empty since git reset doesn't delete untracked files\n\tif len(preview.FilesToDelete) > 0 {\n\t\tt.Errorf(\"Dual strategy preview should have no files to delete, got: %v\", preview.FilesToDelete)\n\t}\n}\n\nfunc TestResolveAgentForRewind(t *testing.T) {",
   "new_string": "func TestResolveAgentForRewind(t *testing.T) {"
 }
@@ -3289,7 +3289,7 @@ id: toolu_018MbNq11ux78keRkAcR8fvP
 tool_result
 id: toolu_018MbNq11ux78keRkAcR8fvP
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/rewind_test.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/rewind_test.go has been updated successfully.
 ```
 
 > TOOL
@@ -3359,7 +3359,7 @@ tool_use Bash
 id: toolu_01Qwt2fYxBV6YuTKb8aBEt6A
 ```json
 {
-  "command": "grep -n \"auto-commit\" /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/status_test.go",
+  "command": "grep -n \"auto-commit\" /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/status_test.go",
   "description": "Find status_test.go auto-commit references"
 }
 ```
@@ -3393,7 +3393,7 @@ tool_use Bash
 id: toolu_01CnmMchnmQEJzqBJCHMgKGW
 ```json
 {
-  "command": "\nsed -i '' 's/\"auto-commit\"/\"manual-commit\"/g' /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/status_test.go\nsed -i '' 's/Enabled (auto-commit)/Enabled (manual-commit)/g' /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/status_test.go\nsed -i '' 's/Disabled (auto-commit)/Disabled (manual-commit)/g' /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/status_test.go\nsed -i '' 's/Local, disabled (auto-commit)/Local, disabled (manual-commit)/g' /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/status_test.go\nsed -i '' 's/(auto-commit)/(manual-commit)/g' /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/status_test.go\necho \"Updated status_test.go\"\n",
+  "command": "\nsed -i '' 's/\"auto-commit\"/\"manual-commit\"/g' /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/status_test.go\nsed -i '' 's/Enabled (auto-commit)/Enabled (manual-commit)/g' /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/status_test.go\nsed -i '' 's/Disabled (auto-commit)/Disabled (manual-commit)/g' /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/status_test.go\nsed -i '' 's/Local, disabled (auto-commit)/Local, disabled (manual-commit)/g' /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/status_test.go\nsed -i '' 's/(auto-commit)/(manual-commit)/g' /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/status_test.go\necho \"Updated status_test.go\"\n",
   "description": "Update status_test.go to use manual-commit instead of auto-commit"
 }
 ```
@@ -3434,7 +3434,7 @@ tool_use Read
 id: toolu_011wkhyrg2H5X5M3FSuH7Ykr
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/hooks_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/hooks_test.go",
   "offset": 140,
   "limit": 25
 }
@@ -3479,7 +3479,7 @@ id: toolu_01LfSmip8VAv6wwbMuoteJmK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/hooks_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/hooks_test.go",
   "old_string": "\t// Record initial state for comparison\n\tcommitsBefore := env.GetGitLog()\n\n\t// Create a file on disk (simulating what a subagent would write)",
   "new_string": "\t// Create a file on disk (simulating what a subagent would write)"
 }
@@ -3504,7 +3504,7 @@ id: toolu_01MZQcBbtKPQ4nK7wMDrebht
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/hooks_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/hooks_test.go",
   "old_string": "\t\tt.Fatalf(\"SimulateUserPromptSubmit failed: %v\", err)\n\t}\n\n\t// Record initial state for comparison\n\tcommitsBefore := env.GetGitLog()\n\n\t// Create a file on disk (simulating what a subagent would write)\n\tenv.WriteFile(\"subagent_output.go\", \"package main\\n\\nfunc SubagentWork() {}\\n\")",
   "new_string": "\t\tt.Fatalf(\"SimulateUserPromptSubmit failed: %v\", err)\n\t}\n\n\t// Create a file on disk (simulating what a subagent would write)\n\tenv.WriteFile(\"subagent_output.go\", \"package main\\n\\nfunc SubagentWork() {}\\n\")"
 }
@@ -3532,7 +3532,7 @@ tool_use Bash
 id: toolu_01RB2yvSLLwcbw4vrgeDgPTX
 ```json
 {
-  "command": "\nsed -i '' '/commitsBefore := env.GetGitLog()/d' /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/hooks_test.go\necho \"Removed commitsBefore variable\"\n",
+  "command": "\nsed -i '' '/commitsBefore := env.GetGitLog()/d' /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/hooks_test.go\necho \"Removed commitsBefore variable\"\n",
   "description": "Remove unused commitsBefore variable"
 }
 ```
@@ -3551,7 +3551,7 @@ tool_use Bash
 id: toolu_012K7EGgrgdHZSwjceuLdhxy
 ```json
 {
-  "command": "\nsed -i '' '/Record initial state for comparison/d' /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/hooks_test.go\necho \"Removed comment\"\n",
+  "command": "\nsed -i '' '/Record initial state for comparison/d' /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/hooks_test.go\necho \"Removed comment\"\n",
   "description": "Remove comment about recording initial state"
 }
 ```
@@ -3805,7 +3805,7 @@ tool_use Read
 id: toolu_01XtW93znYXjCDHywTZNqtcZ
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/reset_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/reset_test.go",
   "offset": 245,
   "limit": 25
 }
@@ -3849,7 +3849,7 @@ tool_use Read
 id: toolu_01SgAsuvfodc3ErEkCx9LYTX
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/reset_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/reset_test.go",
   "offset": 230,
   "limit": 30
 }
@@ -3899,7 +3899,7 @@ id: toolu_01V5jx9AyJ3krDcxhsVSP9b4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/reset_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/reset_test.go",
   "old_string": "func TestResetCmd_AutoCommitStrategy(t *testing.T) {\n\tsetupResetTestRepo(t)\n\n\t// Write auto-commit strategy settings\n\twriteSettings(t, `{\"strategy\": \"auto-commit\", \"enabled\": true}`)\n\n\t// Run reset\n\tcmd := newResetCmd()\n\tvar stdout, stderr bytes.Buffer\n\tcmd.SetOut(&stdout)\n\tcmd.SetErr(&stderr)\n\n\terr := cmd.Execute()\n\tif err == nil {\n\t\tt.Fatal(\"reset command should return error for auto-commit strategy\")\n\t}\n\n\t// Verify helpful error message\n\toutput := stderr.String()\n\tif !strings.Contains(output, \"strategy auto-commit does not support reset\") {\n\t\tt.Errorf(\"Expected message about auto-commit strategy, got: %s\", output)\n\t}\n}\n\nfunc TestResetCmd_MultipleSessions(t *testing.T) {",
   "new_string": "func TestResetCmd_MultipleSessions(t *testing.T) {"
 }
@@ -3910,7 +3910,7 @@ id: toolu_01V5jx9AyJ3krDcxhsVSP9b4
 tool_result
 id: toolu_01V5jx9AyJ3krDcxhsVSP9b4
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/reset_test.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/reset_test.go has been updated successfully.
 ```
 
 > TOOL
@@ -3959,7 +3959,7 @@ tool_use Bash
 id: toolu_01GVGwTfiv6JPnTB8j9Sm2ni
 ```json
 {
-  "command": "grep -n \"TestResumeFromCurrentBranch_WithEntireCheckpointTrailer\" /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/resume_test.go",
+  "command": "grep -n \"TestResumeFromCurrentBranch_WithEntireCheckpointTrailer\" /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/resume_test.go",
   "description": "Find test location"
 }
 ```
@@ -3978,7 +3978,7 @@ tool_use Read
 id: toolu_01MD9cFsGdvg1FggWSsBasf3
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/resume_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/resume_test.go",
   "offset": 182,
   "limit": 85
 }
@@ -4123,7 +4123,7 @@ tool_use Bash
 id: toolu_01KvVGbXYUzMZ6gHCuS4TEH6
 ```json
 {
-  "command": "grep -n \"checkCanRewind\" /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/common.go",
+  "command": "grep -n \"checkCanRewind\" /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/common.go",
   "description": "Find checkCanRewind function"
 }
 ```
@@ -4146,7 +4146,7 @@ tool_use Bash
 id: toolu_01NAKbtAxtgjccAEN5uMTYwU
 ```json
 {
-  "command": "grep -r \"checkCanRewind\" /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/ --include=\"*.go\" | grep -v \"checkCanRewindWithWarning\" | grep -v \"^.*:.*func checkCanRewind\"",
+  "command": "grep -r \"checkCanRewind\" /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/ --include=\"*.go\" | grep -v \"checkCanRewindWithWarning\" | grep -v \"^.*:.*func checkCanRewind\"",
   "description": "Find checkCanRewind usage"
 }
 ```
@@ -4156,8 +4156,8 @@ id: toolu_01NAKbtAxtgjccAEN5uMTYwU
 tool_result
 id: toolu_01NAKbtAxtgjccAEN5uMTYwU
 ```
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/common.go:// checkCanRewind checks if working directory is clean enough for rewind.
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/common.go:// Unlike checkCanRewind, this always returns canRewind=true but includes a warning message
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/common.go:// checkCanRewind checks if working directory is clean enough for rewind.
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/common.go:// Unlike checkCanRewind, this always returns canRewind=true but includes a warning message
 ```
 
 > TOOL
@@ -4166,7 +4166,7 @@ tool_use Read
 id: toolu_017hTUR3jR1xwb6PNEifBpv9
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/common.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/common.go",
   "offset": 760,
   "limit": 70
 }
@@ -4227,7 +4227,7 @@ id: toolu_01WPpPirwX4Unevc1bqkmWMe
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/common.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/common.go",
   "old_string": "}\n\n// checkCanRewind checks if working directory is clean enough for rewind.\n// Returns (canRewind, reason, error). Shared by shadow and linear-shadow strategies.\nfunc checkCanRewind() (bool, string, error) {\n\trepo, err := OpenRepository()\n\tif err != nil {\n\t\treturn false, \"\", fmt.Errorf(\"failed to open git repository: %w\", err)\n\t}\n\n\tworktree, err := repo.Worktree()\n\tif err != nil {\n\t\treturn false, \"\", fmt.Errorf(\"failed to get worktree: %w\", err)\n\t}\n\n\tstatus, err := worktree.Status()\n\tif err != nil {\n\t\treturn false, \"\", fmt.Errorf(\"failed to get status: %w\", err)\n\t}\n\n\tif status.IsClean() {\n\t\treturn true, \"\", nil\n\t}\n\n\tvar modified, added, deleted []string\n\tfor file, st := range status {\n\t\t// Skip .entire directory\n\t\tif paths.IsInfrastructurePath(file) {\n\t\t\tcontinue\n\t\t}\n\n\t\t// Skip untracked files\n\t\tif st.Worktree == git.Untracked {\n\t\t\tcontinue\n\t\t}\n\n\t\tswitch {\n\t\tcase st.Staging == git.Added || st.Worktree == git.Added:\n\t\t\tadded = append(added, file)\n\t\tcase st.Staging == git.Deleted || st.Worktree == git.Deleted:\n\t\t\tdeleted = append(deleted, file)\n\t\tcase st.Staging == git.Modified || st.Worktree == git.Modified:\n\t\t\tmodified = append(modified, file)\n\t\t}\n\t}\n\n\tif len(modified) == 0 && len(added) == 0 && len(deleted) == 0 {\n\t\treturn true, \"\", nil\n\t}\n\n\tvar msg strings.Builder\n\tmsg.WriteString(\"You have uncommitted changes:\\n\")\n\tfor _, f := range modified {\n\t\tmsg.WriteString(fmt.Sprintf(\"  modified:   %s\\n\", f))\n\t}\n\tfor _, f := range added {\n\t\tmsg.WriteString(fmt.Sprintf(\"  added:      %s\\n\", f))\n\t}\n\tfor _, f := range deleted {\n\t\tmsg.WriteString(fmt.Sprintf(\"  deleted:    %s\\n\", f))\n\t}\n\tmsg.WriteString(\"\\nPlease commit or stash your changes before rewinding.\")\n\n\treturn false, msg.String(), nil\n}\n\n// checkCanRewindWithWarning checks […]
 
 > TOOL
@@ -4235,7 +4235,7 @@ id: toolu_01WPpPirwX4Unevc1bqkmWMe
 tool_result
 id: toolu_01WPpPirwX4Unevc1bqkmWMe
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/common.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/common.go has been updated successfully.
 ```
 
 > TOOL
@@ -4245,7 +4245,7 @@ id: toolu_01KkCxzQxVvWjDbBB1G5Rwqp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go",
   "old_string": "// migrateDeprecatedStrategy handles migration from removed \"auto-commit\" strategy to \"manual-commit\".\n// Returns true if migration occurred, false if no migration was needed.\nfunc migrateDeprecatedStrategy(settings *EntireSettings, settingsFileAbs string, localSettingsFileAbs string) (bool, error) {\n\t// Check if auto-commit strategy is configured\n\tif settings.Strategy != \"auto-commit\" {\n\t\treturn false, nil // No migration needed\n\t}\n\n\t// Update strategy to manual-commit\n\tsettings.Strategy = \"manual-commit\"\n\n\t// Try to update settings files where auto-commit was configured\n\t// Check which file(s) contain the auto-commit setting\n\tbaseSettings, err := loadFromFile(settingsFileAbs)\n\tif err != nil {\n\t\treturn true, fmt.Errorf(\"reading base settings file for migration: %w\", err)\n\t}\n\n\t// Save to base settings file if it had auto-commit\n\tif baseSettings.Strategy == \"auto-commit\" {\n\t\tbaseSettings.Strategy = \"manual-commit\"\n\t\tif err := saveToFile(baseSettings, settingsFileAbs); err != nil {\n\t\t\t// Don't fail the whole migration if one file can't be saved\n\t\t\tfmt.Fprintf(os.Stderr, \"Warning: could not save migrated base settings: %v\\n\", err)\n\t\t}\n\t}\n\n\t// Check and update local settings if it exists and has auto-commit\n\tlocalSettings, err := LoadFromFile(localSettingsFileAbs)\n\tif err == nil && localSettings != nil && localSettings.Strategy == \"auto-commit\" {\n\t\tlocalSettings.Strategy = \"manual-commit\"\n\t\tif err := saveToFile(localSettings, localSettingsFileAbs); err != nil {\n\t\t\t// Don't fail the whole migration if local file can't be saved\n\t\t\tfmt.Fprintf(os.Stderr, \"Warning: could not save migrated local settings: %v\\n\", err)\n\t\t}\n\t}\n\n\treturn true, nil\n}",
   "new_string": "// migrateDeprecatedStrategy handles […]
 
@@ -4254,7 +4254,7 @@ id: toolu_01KkCxzQxVvWjDbBB1G5Rwqp
 tool_result
 id: toolu_01KkCxzQxVvWjDbBB1G5Rwqp
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go has been updated successfully.
 ```
 
 > TOOL
@@ -4263,7 +4263,7 @@ tool_use Bash
 id: toolu_0192wfkwdQHpn3n39YLSpj3x
 ```json
 {
-  "command": "ls -la /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/auto_commit.go 2>&1",
+  "command": "ls -la /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/auto_commit.go 2>&1",
   "description": "Check if auto_commit.go exists"
 }
 ```
@@ -4274,7 +4274,7 @@ tool_result ERROR
 id: toolu_0192wfkwdQHpn3n39YLSpj3x
 ```
 Exit code 1
-ls: /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/auto_commit.go: No such file or directory
+ls: /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/auto_commit.go: No such file or directory
 ```
 
 > TOOL
@@ -4284,7 +4284,7 @@ id: toolu_014WE8Ni9fPbN9sSMQDaeEXD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings_test.go",
   "old_string": "\t// Verify values\n\t// Note: auto-commit strategy is automatically migrated to manual-commit\n\tif settings.Strategy != \"manual-commit\" {\n\t\tt.Errorf(\"expected strategy to be migrated to 'manual-commit' (from auto-commit), got %q\", settings.Strategy)\n\t}",
   "new_string": "\t// Verify values\n\t// Note: auto-commit strategy is automatically migrated to manual-commit\n\tif settings.Strategy != DefaultStrategyName {\n\t\tt.Errorf(\"expected strategy to be migrated to %q (from auto-commit), got %q\", DefaultStrategyName, settings.Strategy)\n\t}"
 }
@@ -4295,7 +4295,7 @@ id: toolu_014WE8Ni9fPbN9sSMQDaeEXD
 tool_result
 id: toolu_014WE8Ni9fPbN9sSMQDaeEXD
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings_test.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings_test.go has been updated successfully.
 ```
 
 > TOOL
@@ -4509,7 +4509,7 @@ tool_use Bash
 id: toolu_018dAj1ZNYTgak95cZzS7non
 ```json
 {
-  "command": "grep -n \"TestE2E_AutoCommitStrategy\" /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/e2e_test/*.go",
+  "command": "grep -n \"TestE2E_AutoCommitStrategy\" /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/e2e_test/*.go",
   "description": "Find TestE2E_AutoCommitStrategy test"
 }
 ```
@@ -4519,8 +4519,8 @@ id: toolu_018dAj1ZNYTgak95cZzS7non
 tool_result
 id: toolu_018dAj1ZNYTgak95cZzS7non
 ```
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/e2e_test/scenario_checkpoint_test.go:90:// TestE2E_AutoCommitStrategy tests the auto-commit strategy creates clean commits.
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/e2e_test/scenario_checkpoint_test.go:91:func TestE2E_AutoCommitStrategy(t *testing.T) {
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/e2e_test/scenario_checkpoint_test.go:90:// TestE2E_AutoCommitStrategy tests the auto-commit strategy creates clean commits.
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/e2e_test/scenario_checkpoint_test.go:91:func TestE2E_AutoCommitStrategy(t *testing.T) {
 ```
 
 > TOOL
@@ -4529,7 +4529,7 @@ tool_use Read
 id: toolu_01PZm4LfSpLZArWVdffYiveF
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/e2e_test/scenario_checkpoint_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/e2e_test/scenario_checkpoint_test.go",
   "offset": 85,
   "limit": 50
 }
@@ -4585,7 +4585,7 @@ tool_use Read
 id: toolu_01NEfmHXZjNbTAaGNbRFU2fW
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/e2e_test/scenario_checkpoint_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/e2e_test/scenario_checkpoint_test.go",
   "offset": 130,
   "limit": 30
 }
@@ -4617,7 +4617,7 @@ id: toolu_01R3C7aW8kLS5newy1UWuGci
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/e2e_test/scenario_checkpoint_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/e2e_test/scenario_checkpoint_test.go",
   "old_string": "}\n\n// TestE2E_AutoCommitStrategy tests the auto-commit strategy creates clean commits.\nfunc TestE2E_AutoCommitStrategy(t *testing.T) {\n\tt.Parallel()\n\n\tenv := NewFeatureBranchEnv(t, \"auto-commit\")\n\n\t// Count commits before agent action\n\tcommitsBefore := env.GetCommitCount()\n\tt.Logf(\"Commits before: %d\", commitsBefore)\n\n\t// 1. Agent creates a file\n\tt.Log(\"Step 1: Agent creating file with auto-commit strategy\")\n\tresult, err := env.RunAgent(PromptCreateHelloGo.Prompt)\n\trequire.NoError(t, err)\n\tAssertAgentSuccess(t, result, err)\n\n\t// 2. Verify file exists\n\trequire.True(t, env.FileExists(\"hello.go\"), \"hello.go should exist\")\n\tAssertHelloWorldProgram(t, env, \"hello.go\")\n\n\t// 3. With auto-commit, commits are created automatically\n\tcommitsAfter := env.GetCommitCount()\n\tt.Logf(\"Commits after: %d\", commitsAfter)\n\tassert.Greater(t, commitsAfter, commitsBefore, \"Auto-commit should create at least one commit\")\n\n\t// 4. Verify checkpoint trailer in commit history\n\tcheckpointID, err := env.GetLatestCheckpointIDFromHistory()\n\trequire.NoError(t, err, \"Should find checkpoint ID in commit history\")\n\trequire.NotEmpty(t, checkpointID, \"Commit should have Entire-Checkpoint trailer\")\n\tt.Logf(\"Checkpoint ID: %s\", checkpointID)\n\n\t// Verify checkpoint ID format (12 hex characters)\n\tassert.Len(t, checkpointID, 12, \"Checkpoint ID should be 12 characters\")\n\n\t// 5. Verify metadata branch exists\n\tassert.True(t, env.BranchExists(\"entire/checkpoints/v1\"),\n\t\t\"entire/checkpoints/v1 branch should exist\")\n\n\t// 6. Check for rewind points\n\tpoints := env.GetRewindPoints()\n\tassert.GreaterOrEqual(t, len(points), 1, \"Should have at least 1 rewind point\")\n\tt.Logf(\"Found %d rewind points\", len(points))\n\n\t// 7. Validate checkpoint has proper metadata on entire/checkpoints/v1\n\tenv.ValidateCheckpoint(CheckpointValidation{\n\t\tCheckpointID:              checkpointID,\n\t\tStrategy:                  \"auto-commit\",\n\t\tFilesTouched:              []string{\"hello.go\"},\n\t\tExpectedTranscriptContent: []string{\"hello.go\"},\n\t})\n}",
   "new_string": "}"
 }
@@ -4628,7 +4628,7 @@ id: toolu_01R3C7aW8kLS5newy1UWuGci
 tool_result
 id: toolu_01R3C7aW8kLS5newy1UWuGci
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/e2e_test/scenario_checkpoint_test.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/e2e_test/scenario_checkpoint_test.go has been updated successfully.
 ```
 
 > TOOL
@@ -4764,7 +4764,7 @@ tool_use Bash
 id: toolu_01W9QXsSmguJPWBEcATwTCGU
 ```json
 {
-  "command": "grep -n \"TestRunEnableWithStrategy_PreservesExistingSettings\\|TestRunEnableWithStrategy_PreservesLocalSettings\" /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/setup_test.go",
+  "command": "grep -n \"TestRunEnableWithStrategy_PreservesExistingSettings\\|TestRunEnableWithStrategy_PreservesLocalSettings\" /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/setup_test.go",
   "description": "Find enable strategy test locations"
 }
 ```
@@ -4784,7 +4784,7 @@ tool_use Read
 id: toolu_01HpR15SEHSMp5J1BSG4Sq1T
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/setup_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/setup_test.go",
   "offset": 346,
   "limit": 50
 }
@@ -4848,7 +4848,7 @@ id: toolu_01DjUhunXp4XdjVCbDUF9dYZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/setup_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/setup_test.go",
   "old_string": "\t// Run enable with a different strategy\n\tvar stdout bytes.Buffer\n\terr := runEnableWithStrategy(&stdout, \"auto-commit\", false, false, false, true, false, false, false)\n\tif err != nil {\n\t\tt.Fatalf(\"runEnableWithStrategy() error = %v\", err)\n\t}\n\n\t// Load the saved settings and verify strategy_options were preserved\n\tsettings, err := LoadEntireSettings()\n\tif err != nil {\n\t\tt.Fatalf(\"LoadEntireSettings() error = %v\", err)\n\t}\n\n\t// Strategy should be updated\n\tif settings.Strategy != \"auto-commit\" {\n\t\tt.Errorf(\"Strategy should be 'auto-commit', got %q\", settings.Strategy)\n\t}",
   "new_string": "\t// Run enable with the same strategy\n\tvar stdout bytes.Buffer\n\terr := runEnableWithStrategy(&stdout, \"manual-commit\", false, false, false, true, false, false, false)\n\tif err != nil {\n\t\tt.Fatalf(\"runEnableWithStrategy() error = %v\", err)\n\t}\n\n\t// Load the saved settings and verify strategy_options were preserved\n\tsettings, err := LoadEntireSettings()\n\tif err != nil {\n\t\tt.Fatalf(\"LoadEntireSettings() error = %v\", err)\n\t}\n\n\t// Strategy should be updated\n\tif settings.Strategy != \"manual-commit\" {\n\t\tt.Errorf(\"Strategy should be 'manual-commit', got %q\", settings.Strategy)\n\t}"
 }
@@ -4859,7 +4859,7 @@ id: toolu_01DjUhunXp4XdjVCbDUF9dYZ
 tool_result
 id: toolu_01DjUhunXp4XdjVCbDUF9dYZ
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/setup_test.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/setup_test.go has been updated successfully.
 ```
 
 > TOOL
@@ -4868,7 +4868,7 @@ tool_use Read
 id: toolu_01SW939esTXPnC95E3s2qphC
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/setup_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/setup_test.go",
   "offset": 390,
   "limit": 60
 }
@@ -4934,7 +4934,7 @@ id: toolu_01HpAgK7MDeYvaHsgF5TzoSQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/setup_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/setup_test.go",
   "old_string": "\t// Run enable with --local flag\n\tvar stdout bytes.Buffer\n\terr := runEnableWithStrategy(&stdout, \"auto-commit\", false, false, true, false, false, false, false)\n\tif err != nil {\n\t\tt.Fatalf(\"runEnableWithStrategy() error = %v\", err)\n\t}\n\n\t// Load the merged settings (project + local)\n\tsettings, err := LoadEntireSettings()\n\tif err != nil {\n\t\tt.Fatalf(\"LoadEntireSettings() error = %v\", err)\n\t}\n\n\t// Strategy should be updated (from local)\n\tif settings.Strategy != \"auto-commit\" {\n\t\tt.Errorf(\"Strategy should be 'auto-commit', got %q\", settings.Strategy)\n\t}",
   "new_string": "\t// Run enable with --local flag\n\tvar stdout bytes.Buffer\n\terr := runEnableWithStrategy(&stdout, \"manual-commit\", false, false, true, false, false, false, false)\n\tif err != nil {\n\t\tt.Fatalf(\"runEnableWithStrategy() error = %v\", err)\n\t}\n\n\t// Load the merged settings (project + local)\n\tsettings, err := LoadEntireSettings()\n\tif err != nil {\n\t\tt.Fatalf(\"LoadEntireSettings() error = %v\", err)\n\t}\n\n\t// Strategy should be updated (from local)\n\tif settings.Strategy != \"manual-commit\" {\n\t\tt.Errorf(\"Strategy should be 'manual-commit', got %q\", settings.Strategy)\n\t}"
 }
@@ -4945,7 +4945,7 @@ id: toolu_01HpAgK7MDeYvaHsgF5TzoSQ
 tool_result
 id: toolu_01HpAgK7MDeYvaHsgF5TzoSQ
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/setup_test.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/setup_test.go has been updated successfully.
 ```
 
 > TOOL
@@ -4955,15 +4955,15 @@ id: toolu_01PDg1jEYTLJwZDaW8uboqef
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/resume_test.go",
-  "old_string": "func TestResumeFromCurrentBranch_WithEntireCheckpointTrailer(t *testing.T) {\n\ttmpDir := t.TempDir()\n\tt.Chdir(tmpDir)\n\n\t// Set up a fake Claude project directory for testing\n\tclaudeDir := filepath.Join(tmpDir, \"claude-projects\")\n\tt.Setenv(\"ENTIRE_TEST_CLAUDE_PROJECT_DIR\", claudeDir)\n\n\t_, _, _ = setupResumeTestRepo(t, tmpDir, false)\n\n\t// Set up the manual-commit strategy and create checkpoint metadata on entire/checkpoints/v1 branch\n\tstrat := strategy.NewManualCommitStrategy()\n\tif err := strat.EnsureSetup(); err != nil {\n\t\tt.Fatalf(\"Failed to ensure setup: %v\", err)\n\t}\n\n\t// Create metadata directory with session log (required for SaveStep)\n\tsessionID := \"4f8c1176-7025-4530-a860-c6fc4c63a150\"\n\tsessionLogContent := `{\"type\":\"test\"}`\n\tmetadataDir := filepath.Join(tmpDir, paths.EntireMetadataDir, sessionID)\n\tif err := os.MkdirAll(metadataDir, 0o755); err != nil {\n\t\tt.Fatalf(\"Failed to create metadata dir: %v\", err)\n\t}\n\tlogFile := filepath.Join(metadataDir, paths.TranscriptFileName)\n\tif err := os.WriteFile(logFile, []byte(sessionLogContent), 0o644); err != nil {\n\t\tt.Fatalf(\"Failed to write log file: %v\", err)\n\t}\n\n\t// Create a file change to commit\n\ttestFile := filepath.Join(tmpDir, \"test.txt\")\n\tif err := os.WriteFile(testFile, []byte(\"metadata content\"), 0o644); err != nil {\n\t\tt.Fatalf(\"Failed to write test file: %v\", err)\n\t}\n\n\t// Use SaveStep to create a commit with checkpoint metadata on entire/checkpoints/v1 branch\n\tctx := strategy.StepContext{\n\t\tCommitMessage:  \"test commit with checkpoint\",\n\t\tMetadataDir:    filepath.Join(paths.EntireMetadataDir, sessionID),\n\t\tMetadataDirAbs: metadataDir,\n\t\tNewFiles:       []string{},\n\t\tModifiedFiles:  []string{\"test.txt\"},\n\t\tDeletedFiles:   []string{},\n\t\tAuthorName:     \"Test User\",\n\t\tAuthorEmail:    \"test@example.com\",\n\t}\n\tif err := strat.SaveStep(ctx); err != nil {\n\t\tt.Fatalf(\"Failed to save changes: %v\", err)\n\t}\n\n\t// Run resumeFromCurrentBranch\n\terr := resumeFromCurrentBranch(\"master\", false)\n\tif err != nil {\n\t\tt.Errorf(\"resumeFromCurrentBranch() returned error: %v\", err)\n\t}\n\n\t// Verify that the session log was written to the Claude project directory\n\texpectedLogPath […]
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/resume_test.go",
+  "old_string": "func TestResumeFromCurrentBranch_WithEntireCheckpointTrailer(t *testing.T) {\n\ttmpDir := t.TempDir()\n\tt.Chdir(tmpDir)\n\n\t// Set up a fake Claude project directory for testing\n\tclaudeDir := filepath.Join(tmpDir, \"claude-projects\")\n\tt.Setenv(\"ENTIRE_TEST_CLAUDE_PROJECT_DIR\", claudeDir)\n\n\t_, _, _ = setupResumeTestRepo(t, tmpDir, false)\n\n\t// Set up the manual-commit strategy and create checkpoint metadata on entire/checkpoints/v1 branch\n\tstrat := strategy.NewManualCommitStrategy()\n\tif err := strat.EnsureSetup(); err != nil {\n\t\tt.Fatalf(\"Failed to ensure setup: %v\", err)\n\t}\n\n\t// Create metadata directory with session log (required for SaveStep)\n\tsessionID := \"4f8c1176-7025-4530-a860-c6fc4c63a150\"\n\tsessionLogContent := `{\"type\":\"test\"}`\n\tmetadataDir := filepath.Join(tmpDir, paths.EntireMetadataDir, sessionID)\n\tif err := os.MkdirAll(metadataDir, 0o755); err != nil {\n\t\tt.Fatalf(\"Failed to create metadata dir: %v\", err)\n\t}\n\tlogFile := filepath.Join(metadataDir, paths.TranscriptFileName)\n\tif err := os.WriteFile(logFile, []byte(sessionLogContent), 0o644); err != nil {\n\t\tt.Fatalf(\"Failed to write log file: %v\", err)\n\t}\n\n\t// Create a file change to commit\n\ttestFile := filepath.Join(tmpDir, \"test.txt\")\n\tif err := os.WriteFile(testFile, []byte(\"metadata content\"), 0o644); err != nil {\n\t\tt.Fatalf(\"Failed to write test file: %v\", err)\n\t}\n\n\t// Use SaveStep to create a commit with checkpoint metadata on entire/checkpoints/v1 branch\n\tctx := strategy.StepContext{\n\t\tCommitMessage:  \"test commit with checkpoint\",\n\t\tMetadataDir:    filepath.Join(paths.EntireMetadataDir, sessionID),\n\t\tMetadataDirAbs: metadataDir,\n\t\tNewFiles:       []string{},\n\t\tModifiedFiles:  []string{\"test.txt\"},\n\t\tDeletedFiles:   []string{},\n\t\tAuthorName:     \"Test User\",\n\t\tAuthorEmail:    \"<REDACTED_EMAIL>\",\n\t}\n\tif err := strat.SaveStep(ctx); err != nil {\n\t\tt.Fatalf(\"Failed to save changes: %v\", err)\n\t}\n\n\t// Run resumeFromCurrentBranch\n\terr := resumeFromCurrentBranch(\"master\", false)\n\tif err != nil {\n\t\tt.Errorf(\"resumeFromCurrentBranch() returned error: %v\", err)\n\t}\n\n\t// Verify that the session log was written to the Claude project directory\n\texpectedLogPath […]
 
 > TOOL
 
 tool_result
 id: toolu_01PDg1jEYTLJwZDaW8uboqef
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/resume_test.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/resume_test.go has been updated successfully.
 ```
 
 > TOOL
@@ -5179,7 +5179,7 @@ tool_use Bash
 id: toolu_01LJSJTJ15jmv94M7mNpuvTW
 ```json
 {
-  "command": "grep -r \"auto-commit\\|AutoCommit\\|auto_commit\" /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/ --include=\"*.go\" | grep -v \"test\\|Test\" | grep -v \"Binary file\"",
+  "command": "grep -r \"auto-commit\\|AutoCommit\\|auto_commit\" /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/ --include=\"*.go\" | grep -v \"test\\|Test\" | grep -v \"Binary file\"",
   "description": "Find all remaining auto-commit references in non-test files"
 }
 ```
@@ -5189,29 +5189,29 @@ id: toolu_01LJSJTJ15jmv94M7mNpuvTW
 tool_result
 id: toolu_01LJSJTJ15jmv94M7mNpuvTW
 ```
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go:	// Migrate deprecated auto-commit strategy
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go:// migrateDeprecatedStrategy handles migration from removed "auto-commit" strategy to "manual-commit".
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go:	const deprecatedStrategy = "auto-commit"
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go:	// Check if auto-commit strategy is configured
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go:	// Try to update settings files where auto-commit was configured
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go:	// Check which file(s) contain the auto-commit setting
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go:	// Save to base settings file if it had auto-commit
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go:	// Check and update local settings if it exists and has auto-commit
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/clean.go:    For auto-commit checkpoints: orphaned when commits are rebased/squashed
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/checkpoint.go:	// Task checkpoint fields (for auto-commit strategy task checkpoints)
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/reset.go:Only works with the manual-commit strategy. For auto-commit strategy,
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/paths/paths.go:// MetadataBranchName is the orphan branch used by auto-commit and manual-commit strategies to store metadata
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go:	cmd.AddCommand(newDebugAutoCommitCmd())
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go:func newDebugAutoCommitCmd() *cobra.Command {
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go:		Use:   "auto-commit",
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go:		Short: "Show whether current state would trigger an auto-commit",
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go:if the Stop hook would create an auto-commit.
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go:			return runDebugAutoCommit(cmd.OutOrStdout(), transcriptPath)
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go:func runDebugAutoCommit(w io.Writer, transcriptPath string) error {
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/lifecycle.go:	// Fall back to session state (e.g., auto-commit strategy updates it after each save)
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/push_common.go:// Used by both manual-commit and auto-commit strategies.
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/strategy.go:	// Returns nil if preview is not supported (e.g., auto-commit strategy).
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/strategy.go:	// For strategies that store checkpoints […]
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go:	// Migrate deprecated auto-commit strategy
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go:// migrateDeprecatedStrategy handles migration from removed "auto-commit" strategy to "manual-commit".
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go:	const deprecatedStrategy = "auto-commit"
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go:	// Check if auto-commit strategy is configured
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go:	// Try to update settings files where auto-commit was configured
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go:	// Check which file(s) contain the auto-commit setting
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go:	// Save to base settings file if it had auto-commit
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go:	// Check and update local settings if it exists and has auto-commit
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/clean.go:    For auto-commit checkpoints: orphaned when commits are rebased/squashed
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/checkpoint.go:	// Task checkpoint fields (for auto-commit strategy task checkpoints)
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/reset.go:Only works with the manual-commit strategy. For auto-commit strategy,
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/paths/paths.go:// MetadataBranchName is the orphan branch used by auto-commit and manual-commit strategies to store metadata
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go:	cmd.AddCommand(newDebugAutoCommitCmd())
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go:func newDebugAutoCommitCmd() *cobra.Command {
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go:		Use:   "auto-commit",
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go:		Short: "Show whether current state would trigger an auto-commit",
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go:if the Stop hook would create an auto-commit.
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go:			return runDebugAutoCommit(cmd.OutOrStdout(), transcriptPath)
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go:func runDebugAutoCommit(w io.Writer, transcriptPath string) error {
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/lifecycle.go:	// Fall back to session state (e.g., auto-commit strategy updates it after each save)
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/push_common.go:// Used by both manual-commit and auto-commit strategies.
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/strategy.go:	// Returns nil if preview is not supported (e.g., auto-commit strategy).
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/strategy.go:	// For strategies that store checkpoints […]
 
 > AGENT
 
@@ -5223,7 +5223,7 @@ tool_use Read
 id: toolu_018quw9KeKHsrFTv2K9Aj4E5
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go"
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go"
 }
 ```
 
@@ -5350,7 +5350,7 @@ id: toolu_01MLt7ZCBL6XVdNJm6t4tqmu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go",
   "old_string": "func newDebugCmd() *cobra.Command {\n\tcmd := &cobra.Command{\n\t\tUse:    \"debug\",\n\t\tShort:  \"Debug commands for troubleshooting\",\n\t\tHidden: true, // Hidden from help output\n\t\tRunE: func(cmd *cobra.Command, _ []string) error {\n\t\t\treturn cmd.Help()\n\t\t},\n\t}\n\n\tcmd.AddCommand(newDebugAutoCommitCmd())\n\n\treturn cmd\n}\n\nfunc newDebugAutoCommitCmd() *cobra.Command {\n\tvar transcriptPath string\n\n\tcmd := &cobra.Command{\n\t\tUse:   \"auto-commit\",\n\t\tShort: \"Show whether current state would trigger an auto-commit\",\n\t\tLong: `Analyzes the current session state and configuration to determine\nif the Stop hook would create an auto-commit.\n\nThis simulates what the Stop hook checks:\n- Current session and pre-prompt state\n- Modified files from transcript (if --transcript provided)\n- New files (current untracked - pre-prompt untracked)\n- Deleted files (tracked files that were removed)\n\nWithout --transcript, shows git status changes instead.`,\n\t\tRunE: func(cmd *cobra.Command, _ []string) error {\n\t\t\treturn runDebugAutoCommit(cmd.OutOrStdout(), transcriptPath)\n\t\t},\n\t}\n\n\tcmd.Flags().StringVarP(&transcriptPath, \"transcript\", \"t\", \"\", \"Path to transcript file (.jsonl) to parse for modified files\")\n\n\treturn cmd\n}\n\nfunc runDebugAutoCommit(w io.Writer, transcriptPath string) error {",
   "new_string": "func newDebugCmd() *cobra.Command {\n\tcmd := &cobra.Command{\n\t\tUse:    \"debug\",\n\t\tShort:  \"Debug commands for troubleshooting\",\n\t\tHidden: true, // Hidden from help output\n\t\tRunE: func(cmd *cobra.Command, _ []string) error {\n\t\t\treturn cmd.Help()\n\t\t},\n\t}\n\n\treturn cmd\n}\n\nfunc runDebugAutoCommit(w io.Writer, transcriptPath string) error {"
 }
@@ -5361,7 +5361,7 @@ id: toolu_01MLt7ZCBL6XVdNJm6t4tqmu
 tool_result
 id: toolu_01MLt7ZCBL6XVdNJm6t4tqmu
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go has been updated successfully.
 ```
 
 > AGENT
@@ -5375,7 +5375,7 @@ id: toolu_013spki8bQx2NyJkN9pgGtCE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go",
   "old_string": "func runDebugAutoCommit(w io.Writer, transcriptPath string) error {\n\t// Check if we're in a git repository\n\trepoRoot, err := paths.RepoRoot()\n\tif err != nil {\n\t\tfmt.Fprintln(w, \"Not in a git repository\")\n\t\treturn nil //nolint:nilerr // not being in a git repo is expected, not an error for status check\n\t}\n\tfmt.Fprintf(w, \"Repository: %s\\n\\n\", repoRoot)\n\n\t// Print strategy info\n\tstrat := GetStrategy()\n\tprintStrategyInfo(w, strat)\n\n\t// Print session state\n\tcurrentSession := printSessionState(w)\n\n\t// Auto-detect transcript if not provided\n\tif transcriptPath == \"\" && currentSession != \"\" {\n\t\tdetected, detectErr := findTranscriptForSession(currentSession)\n\t\tif detectErr != nil {\n\t\t\tfmt.Fprintf(w, \"\\nCould not auto-detect transcript: %v\\n\", detectErr)\n\t\t} else if detected != \"\" {\n\t\t\ttranscriptPath = detected\n\t\t\tfmt.Fprintf(w, \"\\nAuto-detected transcript: %s\\n\", transcriptPath)\n\t\t}\n\t}\n\n\t// Print file changes and get total\n\tfmt.Fprintln(w, \"\\n=== File Changes ===\")\n\tvar totalChanges int\n\tif transcriptPath != \"\" {\n\t\ttotalChanges = printTranscriptChanges(w, transcriptPath, currentSession, repoRoot)\n\t} else {\n\t\tvar err error\n\t\ttotalChanges, err = printGitStatusChanges(w)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\n\t// Print decision\n\tprintDecision(w, strat.Name(), totalChanges)\n\n\t// Print transcript location help if we couldn't find one\n\tif transcriptPath == \"\" {\n\t\tprintTranscriptHelp(w)\n\t}\n\n\treturn nil\n}",
   "new_string": ""
 }
@@ -5386,7 +5386,7 @@ id: toolu_013spki8bQx2NyJkN9pgGtCE
 tool_result
 id: toolu_013spki8bQx2NyJkN9pgGtCE
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go has been updated successfully.
 ```
 
 > TOOL
@@ -5395,7 +5395,7 @@ tool_use Bash
 id: toolu_01VzxbDiqnaCdGKphT5MhMA1
 ```json
 {
-  "command": "grep -n \"printStrategyInfo\\|printSessionState\\|printTranscriptChanges\\|printGitStatusChanges\\|printDecision\\|printTranscriptHelp\" /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go | grep -v \"^[0-9]*:func\""
+  "command": "grep -n \"printStrategyInfo\\|printSessionState\\|printTranscriptChanges\\|printGitStatusChanges\\|printDecision\\|printTranscriptHelp\" /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go | grep -v \"^[0-9]*:func\""
 }
 ```
 
@@ -5417,7 +5417,7 @@ tool_use Read
 id: toolu_017EvCrJqrMRpGTiTqRDNaFA
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go"
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go"
 }
 ```
 
@@ -5498,7 +5498,7 @@ tool_use Bash
 id: toolu_01S3X9d6W6ZBr5d3LiHyjwkJ
 ```json
 {
-  "command": "grep -r \"resolveTranscriptPath\\|extractModifiedFiles\\|printPrePromptState\\|printUntrackedFilesSummary\" --include=\"*.go\" /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/ | grep -v test | grep -v \"^.*debug.go:\""
+  "command": "grep -r \"resolveTranscriptPath\\|extractModifiedFiles\\|printPrePromptState\\|printUntrackedFilesSummary\" --include=\"*.go\" /home/<USER>/wks/cli/remove-auto-commit/cmd/ | grep -v test | grep -v \"^.*debug.go:\""
 }
 ```
 
@@ -5507,26 +5507,26 @@ id: toolu_01S3X9d6W6ZBr5d3LiHyjwkJ
 tool_result
 id: toolu_01S3X9d6W6ZBr5d3LiHyjwkJ
 ```
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/transcript.go:		files := extractModifiedFiles(slice)
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/transcript.go:// extractModifiedFiles extracts the list of files modified by tool calls
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/transcript.go:func extractModifiedFiles(transcript []transcriptLine) []string {
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/resume.go:	sessionLogPath, err := resolveTranscriptPath(sessionID, ag)
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/rewind.go:	sessionFile, err := resolveTranscriptPath(sessionID, agent)
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/rewind.go:	sessionFile, err := resolveTranscriptPath(sessionID, agent)
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/rewind.go:// resolveTranscriptPath determines the correct file path for an agent's session transcript.
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/rewind.go:func resolveTranscriptPath(sessionID string, agent agentpkg.Agent) (string, error) {
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/rewind.go:	sessionFile, err := resolveTranscriptPath(sessionID, agent)
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/manual_commit_rewind.go:		if resolved := resolveTranscriptPathFromMetadata(content.Metadata.TranscriptPath); resolved != "" {
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/manual_commit_rewind.go:// resolveTranscriptPathFromMetadata expands a home-relative transcript path
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/manual_commit_rewind.go:func resolveTranscriptPathFromMetadata(homeRelPath string) string {
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/manual_commit_rewind.go:		if resolved := resolveTranscriptPathFromMetadata(content.Metadata.TranscriptPath); resolved != "" {
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/manual_commit_hooks.go:	return s.extractModifiedFilesFromLiveTranscript(state, state.CheckpointTranscriptStart)
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/manual_commit_hooks.go:	return s.extractModifiedFilesFromLiveTranscript(state, state.CheckpointTranscriptStart), true
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/manual_commit_hooks.go:// extractModifiedFilesFromLiveTranscript extracts modified files from the live transcript
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/manual_commit_hooks.go:func (s *ManualCommitStrategy) extractModifiedFilesFromLiveTranscript(state *SessionState, offset int) []string {
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/manual_commit_hooks.go:			logging.Debug(logCtx, "extractModifiedFilesFromLiveTranscript: extraction failed",
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/manual_commit_hooks.go:			logging.Debug(logCtx, "extractModifiedFilesFromLiveTranscript: main transcript extraction failed",
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/manual_commit_condensation.go:		data.FilesTouched = s.extractModifiedFilesFromLiveTranscript(state, state.CheckpointTranscriptStart)
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/transcript.go:		files := extractModifiedFiles(slice)
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/transcript.go:// extractModifiedFiles extracts the list of files modified by tool calls
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/transcript.go:func extractModifiedFiles(transcript []transcriptLine) []string {
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/resume.go:	sessionLogPath, err := resolveTranscriptPath(sessionID, ag)
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/rewind.go:	sessionFile, err := resolveTranscriptPath(sessionID, agent)
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/rewind.go:	sessionFile, err := resolveTranscriptPath(sessionID, agent)
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/rewind.go:// resolveTranscriptPath determines the correct file path for an agent's session transcript.
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/rewind.go:func resolveTranscriptPath(sessionID string, agent agentpkg.Agent) (string, error) {
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/rewind.go:	sessionFile, err := resolveTranscriptPath(sessionID, agent)
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/manual_commit_rewind.go:		if resolved := resolveTranscriptPathFromMetadata(content.Metadata.TranscriptPath); resolved != "" {
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/manual_commit_rewind.go:// resolveTranscriptPathFromMetadata expands a home-relative transcript path
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/manual_commit_rewind.go:func resolveTranscriptPathFromMetadata(homeRelPath string) string {
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/manual_commit_rewind.go:		if resolved := resolveTranscriptPathFromMetadata(content.Metadata.TranscriptPath); resolved != "" {
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/manual_commit_hooks.go:	return s.extractModifiedFilesFromLiveTranscript(state, state.CheckpointTranscriptStart)
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/manual_commit_hooks.go:	return s.extractModifiedFilesFromLiveTranscript(state, state.CheckpointTranscriptStart), true
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/manual_commit_hooks.go:// extractModifiedFilesFromLiveTranscript extracts modified files from the live transcript
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/manual_commit_hooks.go:func (s *ManualCommitStrategy) extractModifiedFilesFromLiveTranscript(state *SessionState, offset int) []string {
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/manual_commit_hooks.go:			logging.Debug(logCtx, "extractModifiedFilesFromLiveTranscript: extraction failed",
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/manual_commit_hooks.go:			logging.Debug(logCtx, "extractModifiedFilesFromLiveTranscript: main transcript extraction failed",
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/manual_commit_condensation.go:		data.FilesTouched = s.extractModifiedFilesFromLiveTranscript(state, state.CheckpointTranscriptStart)
 ```
 
 > AGENT
@@ -5540,7 +5540,7 @@ id: toolu_019mzYMe9paJtodKTgPjDyEa
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go",
   "old_string": "\nfunc printStrategyInfo(w io.Writer, strat strategy.Strategy) {\n\tfmt.Fprintf(w, \"Strategy: %s\\n\", strat.Name())\n\n\t_, branchName, err := IsOnDefaultBranch()\n\tif err != nil {\n\t\tfmt.Fprintf(w, \"Branch: (unable to determine: %v)\\n\\n\", err)\n\t} else {\n\t\tfmt.Fprintf(w, \"Branch: %s\\n\\n\", branchName)\n\t}\n}\n\nfunc printSessionState(w io.Writer) string {\n\tfmt.Fprintln(w, \"=== Session State ===\")\n\n\tcurrentSession := strategy.FindMostRecentSession()\n\tif currentSession == \"\" {\n\t\tfmt.Fprintln(w, \"Current session: (none - no active session)\")\n\t\treturn \"\"\n\t}\n\n\tfmt.Fprintf(w, \"Current session: %s\\n\", currentSession)\n\tprintPrePromptState(w, currentSession)\n\treturn currentSession\n}\n\nfunc printPrePromptState(w io.Writer, sessionID string) {\n\tpreState, err := LoadPrePromptState(sessionID)\n\tswitch {\n\tcase err != nil:\n\t\tfmt.Fprintf(w, \"Pre-prompt state: (error: %v)\\n\", err)\n\tcase preState != nil:\n\t\tfmt.Fprintf(w, \"Pre-prompt state: captured at %s\\n\", preState.Timestamp)\n\t\tfmt.Fprintf(w, \"  Pre-existing untracked files: %d\\n\", len(preState.UntrackedFiles))\n\t\tprintUntrackedFilesSummary(w, preState.UntrackedFiles)\n\tdefault:\n\t\tfmt.Fprintln(w, \"Pre-prompt state: (none captured)\")\n\t}\n}\n\nfunc printUntrackedFilesSummary(w io.Writer, files []string) {\n\tif len(files) == 0 {\n\t\treturn\n\t}\n\tif len(files) <= 10 {\n\t\tfor _, f := range files {\n\t\t\tfmt.Fprintf(w, \"    - %s\\n\", f)\n\t\t}\n\t} else {\n\t\tfor _, f := range files[:5] {\n\t\t\tfmt.Fprintf(w, \"    - %s\\n\", f)\n\t\t}\n\t\tfmt.Fprintf(w, \"    ... and %d more\\n\", len(files)-5)\n\t}\n}\n\nfunc printTranscriptChanges(w io.Writer, transcriptPath, currentSession, repoRoot string) int {\n\tfmt.Fprintf(w, \"\\nParsing transcript: %s\\n\", transcriptPath)\n\n\tvar modifiedFromTranscript, newFiles, deletedFiles []string\n\n\t// Parse transcript\n\tparsed, _, parseErr := transcript.ParseFromFileAtLine(transcriptPath, 0)\n\tif parseErr != nil {\n\t\tfmt.Fprintf(w, \"  Error parsing transcript: %v\\n\", parseErr)\n\t} else {\n\t\tmodifiedFromTranscript = extractModifiedFiles(parsed)\n\t\tfmt.Fprintf(w, \"  Found %d modified files in transcript\\n\", len(modifiedFromTranscript))\n\t}\n\t// Compute new and deleted files (single git status call)\n\t// Load […]
 
 > TOOL
@@ -5548,7 +5548,7 @@ id: toolu_019mzYMe9paJtodKTgPjDyEa
 tool_result
 id: toolu_019mzYMe9paJtodKTgPjDyEa
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go has been updated successfully.
 ```
 
 > AGENT
@@ -5562,7 +5562,7 @@ id: toolu_0192ahrtKZPAPYe6Tfb8Qff5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go",
   "old_string": "import (\n\t\"fmt\"\n\t\"io\"\n\t\"os\"\n\t\"sort\"\n\n\t\"github.com/entireio/cli/cmd/entire/cli/agent\"\n\t\"github.com/entireio/cli/cmd/entire/cli/paths\"\n\t\"github.com/entireio/cli/cmd/entire/cli/strategy\"\n\t\"github.com/entireio/cli/cmd/entire/cli/transcript\"\n\n\t\"github.com/go-git/go-git/v5\"\n\t\"github.com/spf13/cobra\"\n)",
   "new_string": "import \"github.com/spf13/cobra\""
 }
@@ -5573,7 +5573,7 @@ id: toolu_0192ahrtKZPAPYe6Tfb8Qff5
 tool_result
 id: toolu_0192ahrtKZPAPYe6Tfb8Qff5
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go has been updated successfully.
 ```
 
 > AGENT
@@ -5586,7 +5586,7 @@ tool_use Read
 id: toolu_013Bf47jASMgeBXgCitCmSdc
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go"
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/debug.go"
 }
 ```
 
@@ -5657,7 +5657,7 @@ tool_use Read
 id: toolu_01FxANHGDdsZH8cFgbQBxRZL
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/config_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/config_test.go",
   "offset": 290,
   "limit": 20
 }
@@ -5696,7 +5696,7 @@ tool_use Bash
 id: toolu_01VNev18AbTKPKhmBUha7YBX
 ```json
 {
-  "command": "grep -n \"\\\"manual-commit\\\"\" /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/config_test.go"
+  "command": "grep -n \"\\\"manual-commit\\\"\" /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/config_test.go"
 }
 ```
 
@@ -5723,7 +5723,7 @@ tool_use Read
 id: toolu_01R2582doXrBJRyTvHDEoANE
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/config_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/config_test.go",
   "offset": 1,
   "limit": 30
 }
@@ -5772,7 +5772,7 @@ tool_use Bash
 id: toolu_012pgzjQsCZBFrVEL9JD8c4J
 ```json
 {
-  "command": "grep -n \"DefaultStrategyName\" /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go | head -5"
+  "command": "grep -n \"DefaultStrategyName\" /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/settings/settings.go | head -5"
 }
 ```
 
@@ -5795,7 +5795,7 @@ id: toolu_01A82NgpgVByPDvHaSM1UWdX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/config_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/config_test.go",
   "old_string": "import (\n\t\"os\"\n\t\"path/filepath\"\n\t\"strings\"\n\t\"testing\"\n\n\t\"github.com/entireio/cli/cmd/entire/cli/strategy\"\n)",
   "new_string": "import (\n\t\"os\"\n\t\"path/filepath\"\n\t\"strings\"\n\t\"testing\"\n\n\t\"github.com/entireio/cli/cmd/entire/cli/settings\"\n\t\"github.com/entireio/cli/cmd/entire/cli/strategy\"\n)"
 }
@@ -5806,7 +5806,7 @@ id: toolu_01A82NgpgVByPDvHaSM1UWdX
 tool_result
 id: toolu_01A82NgpgVByPDvHaSM1UWdX
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/config_test.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/config_test.go has been updated successfully.
 ```
 
 > TOOL
@@ -5816,7 +5816,7 @@ id: toolu_01XzwAbN1vLMV1E4fbNYyj74
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/config_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/config_test.go",
   "old_string": "\tif settings.Strategy != \"manual-commit\" {",
   "new_string": "\tif settings.Strategy != settings.DefaultStrategyName {"
 }
@@ -5827,7 +5827,7 @@ id: toolu_01XzwAbN1vLMV1E4fbNYyj74
 tool_result
 id: toolu_01XzwAbN1vLMV1E4fbNYyj74
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/config_test.go has been updated. All occurrences of '	if settings.Strategy != "manual-commit" {' were successfully replaced with '	if settings.Strategy != settings.DefaultStrategyName {'.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/config_test.go has been updated. All occurrences of '	if settings.Strategy != "manual-commit" {' were successfully replaced with '	if settings.Strategy != settings.DefaultStrategyName {'.
 ```
 
 > TOOL
@@ -5837,7 +5837,7 @@ id: toolu_01WE9K9MpCpTrx1QsxLkRtSY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/config_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/config_test.go",
   "old_string": "import (\n\t\"os\"\n\t\"path/filepath\"\n\t\"strings\"\n\t\"testing\"\n\n\t\"github.com/entireio/cli/cmd/entire/cli/settings\"\n\t\"github.com/entireio/cli/cmd/entire/cli/strategy\"\n)",
   "new_string": "import (\n\t\"os\"\n\t\"path/filepath\"\n\t\"strings\"\n\t\"testing\"\n\n\tsettingspkg \"github.com/entireio/cli/cmd/entire/cli/settings\"\n\t\"github.com/entireio/cli/cmd/entire/cli/strategy\"\n)"
 }
@@ -5848,7 +5848,7 @@ id: toolu_01WE9K9MpCpTrx1QsxLkRtSY
 tool_result
 id: toolu_01WE9K9MpCpTrx1QsxLkRtSY
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/config_test.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/config_test.go has been updated successfully.
 ```
 
 > TOOL
@@ -5858,7 +5858,7 @@ id: toolu_01MJTiu2u2HAZ6cgAAsQUeZc
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/config_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/config_test.go",
   "old_string": "\tif settings.Strategy != settings.DefaultStrategyName {",
   "new_string": "\tif settings.Strategy != settingspkg.DefaultStrategyName {"
 }
@@ -5869,7 +5869,7 @@ id: toolu_01MJTiu2u2HAZ6cgAAsQUeZc
 tool_result
 id: toolu_01MJTiu2u2HAZ6cgAAsQUeZc
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/config_test.go has been updated. All occurrences of '	if settings.Strategy != settings.DefaultStrategyName {' were successfully replaced with '	if settings.Strategy != settingspkg.DefaultStrategyName {'.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/config_test.go has been updated. All occurrences of '	if settings.Strategy != settings.DefaultStrategyName {' were successfully replaced with '	if settings.Strategy != settingspkg.DefaultStrategyName {'.
 ```
 
 > TOOL
@@ -5878,7 +5878,7 @@ tool_use Bash
 id: toolu_01En6EwJzGhLYTA4GygLjJBG
 ```json
 {
-  "command": "grep -n \"settingspkg.DefaultStrategyName\\|\\\"manual-commit\\\"\" /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/config_test.go"
+  "command": "grep -n \"settingspkg.DefaultStrategyName\\|\\\"manual-commit\\\"\" /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/config_test.go"
 }
 ```
 
@@ -6083,7 +6083,7 @@ tool_use Read
 id: toolu_01Mst5r6UY4bQ9rj8BAjZH1L
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/docs/architecture/claude-hooks-integration.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/docs/architecture/claude-hooks-integration.md",
   "offset": 115,
   "limit": 20
 }
@@ -6127,7 +6127,7 @@ id: toolu_01EPYEpX5hhPbbBaPWWJcBMm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/docs/architecture/claude-hooks-integration.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/docs/architecture/claude-hooks-integration.md",
   "old_string": "6.  **Invoke Strategy**:\n\n    - Builds a `SaveContext` with session ID, file lists, metadata paths, git author info, and token usage.\n    - Calls `strategy.SaveChanges(ctx)` to create the checkpoint.\n    - **Manual-commit**: Builds a git tree in-memory and commits to the shadow branch.\n    - **Auto-commit**: Creates a commit on the active branch with the `Entire-Checkpoint` trailer.\n    - Token usage is stored in `metadata.json` for later analysis and reporting.\n\n7.  **Update Session State**: Updates `CheckpointTranscriptStart` to track transcript position for detecting new content in future checkpoints (auto-commit strategy only).",
   "new_string": "6.  **Invoke Strategy**:\n\n    - Builds a `SaveContext` with session ID, file lists, metadata paths, git author info, and token usage.\n    - Calls `strategy.SaveChanges(ctx)` to create the checkpoint.\n    - **Manual-commit**: Builds a git tree in-memory and commits to the shadow branch.\n    - Token usage is stored in `metadata.json` for later analysis and reporting.\n\n7.  **Update Session State**: Updates `CheckpointTranscriptStart` to track transcript position for detecting new content in future checkpoints."
 }
@@ -6138,7 +6138,7 @@ id: toolu_01EPYEpX5hhPbbBaPWWJcBMm
 tool_result
 id: toolu_01EPYEpX5hhPbbBaPWWJcBMm
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/docs/architecture/claude-hooks-integration.md has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/docs/architecture/claude-hooks-integration.md has been updated successfully.
 ```
 
 > AGENT
@@ -6151,7 +6151,7 @@ tool_use Bash
 id: toolu_016LyC9hkYiZABmkjahVoMUc
 ```json
 {
-  "command": "grep -r \"auto.commit\\|auto_commit\\|AutoCommit\" --include=\"*.md\" /Users/gtrrz-victor/wks/cli/remove-auto-commit/ 2>/dev/null | grep -v \".git\""
+  "command": "grep -r \"auto.commit\\|auto_commit\\|AutoCommit\" --include=\"*.md\" /home/<USER>/wks/cli/remove-auto-commit/ 2>/dev/null | grep -v \".git\""
 }
 ```
 
@@ -6160,27 +6160,27 @@ id: toolu_016LyC9hkYiZABmkjahVoMUc
 tool_result
 id: toolu_016LyC9hkYiZABmkjahVoMUc
 ```
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/.claude/skills/test-repo/SKILL.md:- User wants to validate strategy changes (manual-commit, auto-commit, shadow, dual)
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/.claude/skills/test-repo/SKILL.md:export STRATEGY=manual-commit  # or auto-commit, shadow, dual
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/.claude/skills/test-repo/SKILL.md:| Check | manual-commit/shadow | auto-commit/dual |
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/docs/architecture/logging.md:| `cmd/entire/cli/strategy/auto_commit.go` | Auto-commit checkpoint logging |
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/docs/architecture/sessions-and-checkpoints.md:func (s *AutoCommitStrategy) SaveChanges(ctx SaveContext) error
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/README.md:| `--strategy <name>`    | Strategy to use: `manual-commit` (default) or `auto-commit`        |
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/README.md:# Use auto-commit strategy
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/README.md:entire enable --strategy auto-commit
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/README.md:| `strategy`                           | `manual-commit`, `auto-commit`   | Session capture strategy                             |
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/README.md:| "No rewind points found" | Work with Claude Code and commit (manual-commit) or wait for agent response (auto-commit) |
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/GEMINI.md:| **auto-commit** | Creates clean commits | Orphan `entire/checkpoints/v1` branch | Teams that want code commits from sessions |
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/GEMINI.md:**Auto-Commit Strategy** (`auto_commit.go`)
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/GEMINI.md:- `auto_commit.go` - Auto-commit strategy implementation
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/GEMINI.md:**On active branch commits (auto-commit strategy only):**
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/CLAUDE.md:| **auto-commit** | Creates clean commits | Orphan `entire/checkpoints/v1` branch | Teams that want code commits from sessions |
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/CLAUDE.md:**Auto-Commit Strategy** (`auto_commit.go`)
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/CLAUDE.md:- `auto_commit.go` - Auto-commit strategy implementation
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/CLAUDE.md:1. **Generated once per checkpoint**: Either when saving (auto-commit) or when condensing (manual-commit)
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/CLAUDE.md:- `Entire-Strategy: <strategy>` - Strategy name (manual-commit or auto-commit)
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/.entire/metadata/42a7f757-4cbd-4dcf-9d16-8580371b77d3/context.md:find anywhere we are still using auto-commit in the code, and why ?
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/.entire/metadata/42a7f757-4cbd-4dcf-9d16-8580371b77d3/context.md:This conversation involved a comprehensive removal of the auto-commit strategy […]
+/home/<USER>/wks/cli/remove-auto-commit/.claude/skills/test-repo/SKILL.md:- User wants to validate strategy changes (manual-commit, auto-commit, shadow, dual)
+/home/<USER>/wks/cli/remove-auto-commit/.claude/skills/test-repo/SKILL.md:export STRATEGY=manual-commit  # or auto-commit, shadow, dual
+/home/<USER>/wks/cli/remove-auto-commit/.claude/skills/test-repo/SKILL.md:| Check | manual-commit/shadow | auto-commit/dual |
+/home/<USER>/wks/cli/remove-auto-commit/docs/architecture/logging.md:| `cmd/entire/cli/strategy/auto_commit.go` | Auto-commit checkpoint logging |
+/home/<USER>/wks/cli/remove-auto-commit/docs/architecture/sessions-and-checkpoints.md:func (s *AutoCommitStrategy) SaveChanges(ctx SaveContext) error
+/home/<USER>/wks/cli/remove-auto-commit/README.md:| `--strategy <name>`    | Strategy to use: `manual-commit` (default) or `auto-commit`        |
+/home/<USER>/wks/cli/remove-auto-commit/README.md:# Use auto-commit strategy
+/home/<USER>/wks/cli/remove-auto-commit/README.md:entire enable --strategy auto-commit
+/home/<USER>/wks/cli/remove-auto-commit/README.md:| `strategy`                           | `manual-commit`, `auto-commit`   | Session capture strategy                             |
+/home/<USER>/wks/cli/remove-auto-commit/README.md:| "No rewind points found" | Work with Claude Code and commit (manual-commit) or wait for agent response (auto-commit) |
+/home/<USER>/wks/cli/remove-auto-commit/GEMINI.md:| **auto-commit** | Creates clean commits | Orphan `entire/checkpoints/v1` branch | Teams that want code commits from sessions |
+/home/<USER>/wks/cli/remove-auto-commit/GEMINI.md:**Auto-Commit Strategy** (`auto_commit.go`)
+/home/<USER>/wks/cli/remove-auto-commit/GEMINI.md:- `auto_commit.go` - Auto-commit strategy implementation
+/home/<USER>/wks/cli/remove-auto-commit/GEMINI.md:**On active branch commits (auto-commit strategy only):**
+/home/<USER>/wks/cli/remove-auto-commit/CLAUDE.md:| **auto-commit** | Creates clean commits | Orphan `entire/checkpoints/v1` branch | Teams that want code commits from sessions |
+/home/<USER>/wks/cli/remove-auto-commit/CLAUDE.md:**Auto-Commit Strategy** (`auto_commit.go`)
+/home/<USER>/wks/cli/remove-auto-commit/CLAUDE.md:- `auto_commit.go` - Auto-commit strategy implementation
+/home/<USER>/wks/cli/remove-auto-commit/CLAUDE.md:1. **Generated once per checkpoint**: Either when saving (auto-commit) or when condensing (manual-commit)
+/home/<USER>/wks/cli/remove-auto-commit/CLAUDE.md:- `Entire-Strategy: <strategy>` - Strategy name (manual-commit or auto-commit)
+/home/<USER>/wks/cli/remove-auto-commit/.entire/metadata/42a7f757-4cbd-4dcf-9d16-8580371b77d3/context.md:find anywhere we are still using auto-commit in the code, and why ?
+/home/<USER>/wks/cli/remove-auto-commit/.entire/metadata/42a7f757-4cbd-4dcf-9d16-8580371b77d3/context.md:This conversation involved a comprehensive removal of the auto-commit strategy […]
 
 > AGENT
 
@@ -6200,7 +6200,7 @@ tool_use Bash
 id: toolu_01FDupXMBH4pf1sGRRxNphbq
 ```json
 {
-  "command": "grep -n \"^\\*\\*Auto-Commit Strategy\\*\\*\\|^#### Auto-Commit Strategy\\|^| \\*\\*auto-commit\\*\\*\" /Users/gtrrz-victor/wks/cli/remove-auto-commit/CLAUDE.md | head -10"
+  "command": "grep -n \"^\\*\\*Auto-Commit Strategy\\*\\*\\|^#### Auto-Commit Strategy\\|^| \\*\\*auto-commit\\*\\*\" /home/<USER>/wks/cli/remove-auto-commit/CLAUDE.md | head -10"
 }
 ```
 
@@ -6219,7 +6219,7 @@ tool_use Read
 id: toolu_018SMcaqw5jbNx5UHQUfmRhu
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/CLAUDE.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/CLAUDE.md",
   "offset": 286,
   "limit": 100
 }
@@ -6259,7 +6259,7 @@ id: toolu_01HCnB8rWSAMrMMdsbrT64JX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/CLAUDE.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/CLAUDE.md",
   "old_string": "| Strategy | Main Branch | Metadata Storage | Use Case |\n|----------|-------------|------------------|----------|\n| **manual-commit** (default) | Unchanged (no commits) | `entire/<HEAD-hash>-<worktreeHash>` branches + `entire/checkpoints/v1` | Recommended for most workflows |\n| **auto-commit** | Creates clean commits | Orphan `entire/checkpoints/v1` branch | Teams that want code commits from sessions |",
   "new_string": "| Strategy | Main Branch | Metadata Storage | Use Case |\n|----------|-------------|------------------|----------|\n| **manual-commit** (default) | Unchanged (no commits) | `entire/<HEAD-hash>-<worktreeHash>` branches + `entire/checkpoints/v1` | Session management without modifying active branch |"
 }
@@ -6270,7 +6270,7 @@ id: toolu_01HCnB8rWSAMrMMdsbrT64JX
 tool_result
 id: toolu_01HCnB8rWSAMrMMdsbrT64JX
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/CLAUDE.md has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/CLAUDE.md has been updated successfully.
 ```
 
 > TOOL
@@ -6280,7 +6280,7 @@ id: toolu_01Qm61BAqaNuPfHP1SiaHepF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/CLAUDE.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/CLAUDE.md",
   "old_string": "- PrePush hook can push `entire/checkpoints/v1` branch alongside user pushes\n- `AllowsMainBranch() = true` - safe to use on main/master since it never modifies commit history\n\n**Auto-Commit Strategy** (`auto_commit.go`)\n- Code commits to active branch with **clean history** (commits have `Entire-Checkpoint` trailer only)\n- Metadata stored on orphan `entire/checkpoints/v1` branch at sharded paths: `<id[:2]>/<id[2:]>/`\n- Uses `checkpoint.WriteCommitted()` for metadata storage\n- Checkpoint ID (12-hex-char) links code commits to metadata on `entire/checkpoints/v1`\n- Full rewind allowed if commit is only on current branch (not in main); otherwise logs-only\n- Rewind via `git reset --hard`\n- PrePush hook can push `entire/checkpoints/v1` branch alongside user pushes\n- `AllowsMainBranch() = true` - creates commits on active branch, safe to use on main/master\n\n#### Key Files",
   "new_string": "- PrePush hook can push `entire/checkpoints/v1` branch alongside user pushes\n- `AllowsMainBranch() = true` - safe to use on main/master since it never modifies commit history\n\n#### Key Files"
 }
@@ -6291,7 +6291,7 @@ id: toolu_01Qm61BAqaNuPfHP1SiaHepF
 tool_result
 id: toolu_01Qm61BAqaNuPfHP1SiaHepF
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/CLAUDE.md has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/CLAUDE.md has been updated successfully.
 ```
 
 > TOOL
@@ -6301,7 +6301,7 @@ id: toolu_01GA3uFEEvTGnx3xTJcgCppR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/CLAUDE.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/CLAUDE.md",
   "old_string": "- `session_state.go` - Package-level session state functions (`LoadSessionState`, `SaveSessionState`, `ListSessionStates`, `FindMostRecentSession`)\n- `auto_commit.go` - Auto-commit strategy implementation\n- `hooks.go` - Git hook installation",
   "new_string": "- `session_state.go` - Package-level session state functions (`LoadSessionState`, `SaveSessionState`, `ListSessionStates`, `FindMostRecentSession`)\n- `hooks.go` - Git hook installation"
 }
@@ -6312,7 +6312,7 @@ id: toolu_01GA3uFEEvTGnx3xTJcgCppR
 tool_result
 id: toolu_01GA3uFEEvTGnx3xTJcgCppR
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/CLAUDE.md has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/CLAUDE.md has been updated successfully.
 ```
 
 > TOOL
@@ -6321,7 +6321,7 @@ tool_use Bash
 id: toolu_01YJEFJscWfTdiF37e2UjvmL
 ```json
 {
-  "command": "grep -n \"auto-commit\\|auto_commit\" /Users/gtrrz-victor/wks/cli/remove-auto-commit/CLAUDE.md"
+  "command": "grep -n \"auto-commit\\|auto_commit\" /home/<USER>/wks/cli/remove-auto-commit/CLAUDE.md"
 }
 ```
 
@@ -6340,7 +6340,7 @@ tool_use Read
 id: toolu_01KSWJDMh1QtMZJRBRgQNaqp
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/CLAUDE.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/CLAUDE.md",
   "offset": 420,
   "limit": 10
 }
@@ -6370,7 +6370,7 @@ id: toolu_01NqN9sp7hq6JB9uknSxZHmX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/CLAUDE.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/CLAUDE.md",
   "old_string": "**How checkpoint IDs work:**\n\n1. **Generated once per checkpoint**: Either when saving (auto-commit) or when condensing (manual-commit)\n\n2. **Added to user commits** via `Entire-Checkpoint` trailer:\n   - **Auto-commit**: Added programmatically when creating the commit\n   - **Manual-commit**: Added via `prepare-commit-msg` hook (user can remove it before committing)",
   "new_string": "**How checkpoint IDs work:**\n\n1. **Generated once per checkpoint**: When condensing session metadata to the metadata branch\n\n2. **Added to user commits** via `Entire-Checkpoint` trailer:\n   - **Manual-commit**: Added via `prepare-commit-msg` hook (user can remove it before committing)"
 }
@@ -6381,7 +6381,7 @@ id: toolu_01NqN9sp7hq6JB9uknSxZHmX
 tool_result
 id: toolu_01NqN9sp7hq6JB9uknSxZHmX
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/CLAUDE.md has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/CLAUDE.md has been updated successfully.
 ```
 
 > TOOL
@@ -6390,7 +6390,7 @@ tool_use Read
 id: toolu_01CGN1uSe3L5C8u4WiKvqB2u
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/CLAUDE.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/CLAUDE.md",
   "offset": 485,
   "limit": 15
 }
@@ -6425,7 +6425,7 @@ id: toolu_0115HDRuPP6FLgfEyJbGCi4m
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/CLAUDE.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/CLAUDE.md",
   "old_string": "Trailers:\n- `Entire-Session: <session-id>` - Session identifier\n- `Entire-Strategy: <strategy>` - Strategy name (manual-commit or auto-commit)\n- `Entire-Agent: <agent-name>` - Agent name (optional, e.g., \"Claude Code\")\n- `Ephemeral-branch: <branch>` - Shadow branch name (optional, manual-commit only)\n- `Entire-Metadata-Task: <path>` - Task metadata path (optional, for task checkpoints)\n\n**Note:** Both strategies keep active branch history **clean** - the only addition to user commits is the single `Entire-Checkpoint` trailer. Manual-commit never creates commits on the active branch (user creates them manually). Auto-commit creates commits but only adds the checkpoint trailer. All detailed session data (transcripts, prompts, context) is stored on the `entire/checkpoints/v1` orphan branch or shadow branches.",
   "new_string": "Trailers:\n- `Entire-Session: <session-id>` - Session identifier\n- `Entire-Strategy: <strategy>` - Strategy name (manual-commit)\n- `Entire-Agent: <agent-name>` - Agent name (optional, e.g., \"Claude Code\")\n- `Ephemeral-branch: <branch>` - Shadow branch name (optional)\n- `Entire-Metadata-Task: <path>` - Task metadata path (optional, for task checkpoints)\n\n**Note:** Manual-commit keeps active branch history clean - the only addition to user commits is the single `Entire-Checkpoint` trailer. Manual-commit never creates commits on the active branch (user creates them manually). All detailed session data (transcripts, prompts, context) is stored on the `entire/checkpoints/v1` orphan branch or shadow branches."
 }
@@ -6436,7 +6436,7 @@ id: toolu_0115HDRuPP6FLgfEyJbGCi4m
 tool_result
 id: toolu_0115HDRuPP6FLgfEyJbGCi4m
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/CLAUDE.md has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/CLAUDE.md has been updated successfully.
 ```
 
 > AGENT
@@ -6449,7 +6449,7 @@ tool_use Bash
 id: toolu_01DMUo9DXPPdJ3FcKjxK8f1Q
 ```json
 {
-  "command": "grep -n \"auto.commit\\|auto_commit\" /Users/gtrrz-victor/wks/cli/remove-auto-commit/GEMINI.md | head -20"
+  "command": "grep -n \"auto.commit\\|auto_commit\" /home/<USER>/wks/cli/remove-auto-commit/GEMINI.md | head -20"
 }
 ```
 
@@ -6471,7 +6471,7 @@ id: toolu_01YbitgrkrSmTwsEVKgWWqWt
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/GEMINI.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/GEMINI.md",
   "old_string": "| Strategy | Main Branch | Metadata Storage | Use Case |\n|----------|-------------|------------------|----------|\n| **manual-commit** (default) | Unchanged (no commits) | `entire/<HEAD-hash>-<worktreeHash>` branches + `entire/checkpoints/v1` | Recommended for most workflows |\n| **auto-commit** | Creates clean commits | Orphan `entire/checkpoints/v1` branch | Teams that want code commits from sessions |",
   "new_string": "| Strategy | Main Branch | Metadata Storage | Use Case |\n|----------|-------------|------------------|----------|\n| **manual-commit** (default) | Unchanged (no commits) | `entire/<HEAD-hash>-<worktreeHash>` branches + `entire/checkpoints/v1` | Session management without modifying active branch |"
 }
@@ -6495,7 +6495,7 @@ tool_use Read
 id: toolu_01CvytVFsDNvCXazZLsUHjA6
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/GEMINI.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/GEMINI.md",
   "offset": 158,
   "limit": 55
 }
@@ -6538,7 +6538,7 @@ id: toolu_011jXfEcYkGFBe5BCzeKzcuq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/GEMINI.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/GEMINI.md",
   "old_string": "| **manual-commit** (default) | Unchanged (no commits) | `entire/<HEAD-hash>` branches + `entire/checkpoints/v1` | Recommended for most workflows |\n| **auto-commit** | Creates clean commits | Orphan `entire/checkpoints/v1` branch | Teams that want code commits from sessions |\n\nLegacy names `shadow` and `dual` are only recognized when reading settings or checkpoint metadata.",
   "new_string": "| **manual-commit** (default) | Unchanged (no commits) | `entire/<HEAD-hash>` branches + `entire/checkpoints/v1` | Session management without modifying active branch |"
 }
@@ -6549,7 +6549,7 @@ id: toolu_011jXfEcYkGFBe5BCzeKzcuq
 tool_result
 id: toolu_011jXfEcYkGFBe5BCzeKzcuq
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/GEMINI.md has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/GEMINI.md has been updated successfully.
 ```
 
 > TOOL
@@ -6559,7 +6559,7 @@ id: toolu_01Xoj7HHQoZrfFZvEPiAebi7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/GEMINI.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/GEMINI.md",
   "old_string": "- PrePush hook can push `entire/checkpoints/v1` branch alongside user pushes\n- `AllowsMainBranch() = true` - safe to use on main/master since it never modifies commit history\n\n**Auto-Commit Strategy** (`auto_commit.go`)\n- Code commits to active branch with **clean history** (commits have `Entire-Checkpoint` trailer only)\n- Metadata stored on orphan `entire/checkpoints/v1` branch at sharded paths: `<id[:2]>/<id[2:]>/`\n- Uses `checkpoint.WriteCommitted()` for metadata storage\n- Checkpoint ID (12-hex-char) links code commits to metadata on `entire/checkpoints/v1`\n- Full rewind allowed if commit is only on current branch (not in main); otherwise logs-only\n- Rewind via `git reset --hard`\n- PrePush hook can push `entire/checkpoints/v1` branch alongside user pushes\n- `AllowsMainBranch() = false` - creates commits, so not recommended on main branch\n\n#### Key Files",
   "new_string": "- PrePush hook can push `entire/checkpoints/v1` branch alongside user pushes\n- `AllowsMainBranch() = true` - safe to use on main/master since it never modifies commit history\n\n#### Key Files"
 }
@@ -6570,7 +6570,7 @@ id: toolu_01Xoj7HHQoZrfFZvEPiAebi7
 tool_result
 id: toolu_01Xoj7HHQoZrfFZvEPiAebi7
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/GEMINI.md has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/GEMINI.md has been updated successfully.
 ```
 
 > TOOL
@@ -6580,7 +6580,7 @@ id: toolu_01AG7KbXPk6K9G6ifQ4kDLBA
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/GEMINI.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/GEMINI.md",
   "old_string": "- `manual_commit_reset.go` - Shadow branch reset/cleanup functionality\n- `auto_commit.go` - Auto-commit strategy implementation\n- `hooks.go` - Git hook installation",
   "new_string": "- `manual_commit_reset.go` - Shadow branch reset/cleanup functionality\n- `hooks.go` - Git hook installation"
 }
@@ -6591,7 +6591,7 @@ id: toolu_01AG7KbXPk6K9G6ifQ4kDLBA
 tool_result
 id: toolu_01AG7KbXPk6K9G6ifQ4kDLBA
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/GEMINI.md has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/GEMINI.md has been updated successfully.
 ```
 
 > AGENT
@@ -6604,7 +6604,7 @@ tool_use Bash
 id: toolu_01EVqATR1UtzznmxiboNpFTB
 ```json
 {
-  "command": "grep -n \"auto.commit\\|auto_commit\" /Users/gtrrz-victor/wks/cli/remove-auto-commit/README.md"
+  "command": "grep -n \"auto.commit\\|auto_commit\" /home/<USER>/wks/cli/remove-auto-commit/README.md"
 }
 ```
 
@@ -6626,7 +6626,7 @@ tool_use Read
 id: toolu_01THgv1KctmN7QqPdgeWT413
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/README.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/README.md",
   "offset": 183,
   "limit": 20
 }
@@ -6666,7 +6666,7 @@ id: toolu_018ajm5Z599KWPJ81cRcRdWa
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/README.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/README.md",
   "old_string": "| `--skip-push-sessions` | Disable automatic pushing of session logs on git push              |\n| `--strategy <name>`    | Strategy to use: `manual-commit` (default) or `auto-commit`        |\n| `--telemetry=false`    | Disable anonymous usage analytics                                  |\n\n**Examples:**\n\n```\n# Use auto-commit strategy\nentire enable --strategy auto-commit\n\n# Force reinstall hooks\nentire enable --force",
   "new_string": "| `--skip-push-sessions` | Disable automatic pushing of session logs on git push              |\n| `--telemetry=false`    | Disable anonymous usage analytics                                  |\n\n**Examples:**\n\n```\n# Force reinstall hooks\nentire enable --force"
 }
@@ -6677,7 +6677,7 @@ id: toolu_018ajm5Z599KWPJ81cRcRdWa
 tool_result
 id: toolu_018ajm5Z599KWPJ81cRcRdWa
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/README.md has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/README.md has been updated successfully.
 ```
 
 > TOOL
@@ -6686,7 +6686,7 @@ tool_use Read
 id: toolu_01V53fVcJrqK9YrkaxhzjYNd
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/README.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/README.md",
   "offset": 230,
   "limit": 15
 }
@@ -6721,7 +6721,7 @@ id: toolu_011wYdHQpExbSuyssjvQn3PF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/README.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/README.md",
   "old_string": "| `enabled`                            | `true`, `false`                  | Enable/disable Entire                                |\n| `log_level`                          | `debug`, `info`, `warn`, `error` | Logging verbosity                                    |\n| `strategy`                           | `manual-commit`, `auto-commit`   | Session capture strategy                             |\n| `strategy_options.push_sessions`     | `true`, `false`                  | Auto-push `entire/checkpoints/v1` branch on git push |",
   "new_string": "| `enabled`                            | `true`, `false`                  | Enable/disable Entire                                |\n| `log_level`                          | `debug`, `info`, `warn`, `error` | Logging verbosity                                    |\n| `strategy`                           | `manual-commit`                  | Session capture strategy                             |\n| `strategy_options.push_sessions`     | `true`, `false`                  | Auto-push `entire/checkpoints/v1` branch on git push |"
 }
@@ -6732,7 +6732,7 @@ id: toolu_011wYdHQpExbSuyssjvQn3PF
 tool_result
 id: toolu_011wYdHQpExbSuyssjvQn3PF
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/README.md has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/README.md has been updated successfully.
 ```
 
 > TOOL
@@ -6741,7 +6741,7 @@ tool_use Read
 id: toolu_01H771abSFm62j2mPev2XGDY
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/README.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/README.md",
   "offset": 280,
   "limit": 15
 }
@@ -6776,7 +6776,7 @@ id: toolu_01VEU9ojnA47Zj2mvsX9myRL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/README.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/README.md",
   "old_string": "| \"No rewind points found\" | Work with Claude Code and commit (manual-commit) or wait for agent response (auto-commit) |",
   "new_string": "| \"No rewind points found\" | Work with Claude Code and commit your changes                                             |"
 }
@@ -6787,7 +6787,7 @@ id: toolu_01VEU9ojnA47Zj2mvsX9myRL
 tool_result
 id: toolu_01VEU9ojnA47Zj2mvsX9myRL
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/README.md has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/README.md has been updated successfully.
 ```
 
 > AGENT
@@ -6800,7 +6800,7 @@ tool_use Bash
 id: toolu_01P9ysJUq8irvju22JfvwVL1
 ```json
 {
-  "command": "grep -n \"auto_commit\\|auto-commit\" /Users/gtrrz-victor/wks/cli/remove-auto-commit/docs/architecture/logging.md"
+  "command": "grep -n \"auto_commit\\|auto-commit\" /home/<USER>/wks/cli/remove-auto-commit/docs/architecture/logging.md"
 }
 ```
 
@@ -6818,7 +6818,7 @@ tool_use Read
 id: toolu_011m8uz3eAZMAhmYB8oPX4h8
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/docs/architecture/logging.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/docs/architecture/logging.md",
   "offset": 148,
   "limit": 10
 }
@@ -6848,7 +6848,7 @@ id: toolu_011qEbMu8tJ1oqL3vjWUXd9f
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/docs/architecture/logging.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/docs/architecture/logging.md",
   "old_string": "| `cmd/entire/cli/strategy/manual_commit_git.go` | Manual-commit checkpoint logging |\n| `cmd/entire/cli/strategy/manual_commit_hooks.go` | Condensation and branch cleanup logging |\n| `cmd/entire/cli/strategy/auto_commit.go` | Auto-commit checkpoint logging |",
   "new_string": "| `cmd/entire/cli/strategy/manual_commit_git.go` | Manual-commit checkpoint logging |\n| `cmd/entire/cli/strategy/manual_commit_hooks.go` | Condensation and branch cleanup logging |"
 }
@@ -6859,7 +6859,7 @@ id: toolu_011qEbMu8tJ1oqL3vjWUXd9f
 tool_result
 id: toolu_011qEbMu8tJ1oqL3vjWUXd9f
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/docs/architecture/logging.md has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/docs/architecture/logging.md has been updated successfully.
 ```
 
 > TOOL
@@ -6868,7 +6868,7 @@ tool_use Bash
 id: toolu_01T1jHfHUniCgQdqcnnUPFmW
 ```json
 {
-  "command": "grep -n \"AutoCommit\\|auto_commit\\|auto-commit\" /Users/gtrrz-victor/wks/cli/remove-auto-commit/docs/architecture/sessions-and-checkpoints.md"
+  "command": "grep -n \"AutoCommit\\|auto_commit\\|auto-commit\" /home/<USER>/wks/cli/remove-auto-commit/docs/architecture/sessions-and-checkpoints.md"
 }
 ```
 
@@ -6886,7 +6886,7 @@ tool_use Read
 id: toolu_01MsZgSTCEjNcF8Q3ScdDZzD
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/docs/architecture/sessions-and-checkpoints.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/docs/architecture/sessions-and-checkpoints.md",
   "offset": 148,
   "limit": 10
 }
@@ -6915,7 +6915,7 @@ tool_use Read
 id: toolu_012qRVruSfCNjt6K2P9v8Eqi
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/docs/architecture/sessions-and-checkpoints.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/docs/architecture/sessions-and-checkpoints.md",
   "offset": 140,
   "limit": 25
 }
@@ -6960,7 +6960,7 @@ id: toolu_01G5viZSD1Qaia585gLFSQ9L
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/docs/architecture/sessions-and-checkpoints.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/docs/architecture/sessions-and-checkpoints.md",
   "old_string": "```\n\n**Auto-commit** writes committed checkpoints directly:\n\n```go\n// SaveChanges creates a commit on the active branch and writes metadata.\nfunc (s *AutoCommitStrategy) SaveChanges(ctx SaveContext) error\n```\n\n## Storage",
   "new_string": "```\n\n## Storage"
 }
@@ -6971,7 +6971,7 @@ id: toolu_01G5viZSD1Qaia585gLFSQ9L
 tool_result
 id: toolu_01G5viZSD1Qaia585gLFSQ9L
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/docs/architecture/sessions-and-checkpoints.md has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/docs/architecture/sessions-and-checkpoints.md has been updated successfully.
 ```
 
 > TOOL
@@ -6980,7 +6980,7 @@ tool_use Read
 id: toolu_01MDDjV8K8inhobx4jH9wvTc
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/.claude/skills/test-repo/SKILL.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/.claude/skills/test-repo/SKILL.md",
   "offset": 1,
   "limit": 50
 }
@@ -7038,7 +7038,7 @@ tool_use Bash
 id: toolu_019jXhhFs7gth5sZuxzcShJq
 ```json
 {
-  "command": "grep -n \"auto-commit\\|auto_commit\\|shadow\\|dual\" /Users/gtrrz-victor/wks/cli/remove-auto-commit/.claude/skills/test-repo/SKILL.md"
+  "command": "grep -n \"auto-commit\\|auto_commit\\|shadow\\|dual\" /home/<USER>/wks/cli/remove-auto-commit/.claude/skills/test-repo/SKILL.md"
 }
 ```
 
@@ -7067,7 +7067,7 @@ id: toolu_01KKH6b2qr12Y74WdcJsS8yR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/.claude/skills/test-repo/SKILL.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/.claude/skills/test-repo/SKILL.md",
   "old_string": "- User wants to validate strategy changes (manual-commit, auto-commit, shadow, dual)",
   "new_string": "- User wants to validate strategy changes (manual-commit)"
 }
@@ -7078,7 +7078,7 @@ id: toolu_01KKH6b2qr12Y74WdcJsS8yR
 tool_result
 id: toolu_01KKH6b2qr12Y74WdcJsS8yR
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/.claude/skills/test-repo/SKILL.md has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/.claude/skills/test-repo/SKILL.md has been updated successfully.
 ```
 
 > TOOL
@@ -7088,7 +7088,7 @@ id: toolu_01NDa5qmLEAwFrV2jGgqh8Vy
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/.claude/skills/test-repo/SKILL.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/.claude/skills/test-repo/SKILL.md",
   "old_string": "export STRATEGY=manual-commit  # or auto-commit, shadow, dual",
   "new_string": "export STRATEGY=manual-commit"
 }
@@ -7099,7 +7099,7 @@ id: toolu_01NDa5qmLEAwFrV2jGgqh8Vy
 tool_result
 id: toolu_01NDa5qmLEAwFrV2jGgqh8Vy
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/.claude/skills/test-repo/SKILL.md has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/.claude/skills/test-repo/SKILL.md has been updated successfully.
 ```
 
 > TOOL
@@ -7108,7 +7108,7 @@ tool_use Read
 id: toolu_016rsr9PE694ghYcbdna1wfb
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/.claude/skills/test-repo/SKILL.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/.claude/skills/test-repo/SKILL.md",
   "offset": 80,
   "limit": 40
 }
@@ -7168,7 +7168,7 @@ id: toolu_01Crac9vJeXRaiTFpQC8bzfT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/.claude/skills/test-repo/SKILL.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/.claude/skills/test-repo/SKILL.md",
   "old_string": "Expected results by strategy:\n\n| Check | manual-commit/shadow | auto-commit/dual |\n|-------|---------------------|------------------|\n| Active branch | No Entire-* trailers | Entire-Checkpoint: trailer only |\n| Session state | ✓ Exists | ✗ Not used |\n| Shadow branch | ✓ entire/{hash} | ✗ None |\n| Metadata branch | ✓ entire/checkpoints/v1 | ✓ entire/checkpoints/v1 |\n| Rewind points | ✓ At least 1 | ✓ At least 1 |\n\n#### 4. Test Rewind\n\n```bash\n.claude/skills/test-repo/test-harness.sh create-changes\n.claude/skills/test-repo/test-harness.sh list-rewind-points  # Get checkpoint ID from output\n.claude/skills/test-repo/test-harness.sh rewind <checkpoint-id>\n.claude/skills/test-repo/test-harness.sh verify-rewind\n```\n\n**Expected Behavior:**\n- **Manual-commit/shadow**: Shows warning listing untracked files that will be deleted (files created after the checkpoint that weren't present at session start)\n- **Auto-commit/dual**: No warning (git reset doesn't delete untracked files)",
   "new_string": "Expected results:\n\n| Check | Result |\n|-------|--------|\n| Active branch | Optional Entire-Checkpoint: trailer |\n| Session state | ✓ Exists |\n| Shadow branch | ✓ entire/{hash} |\n| Metadata branch | ✓ entire/checkpoints/v1 |\n| Rewind points | ✓ At least 1 |\n\n#### 4. Test Rewind\n\n```bash\n.claude/skills/test-repo/test-harness.sh create-changes\n.claude/skills/test-repo/test-harness.sh list-rewind-points  # Get checkpoint ID from output\n.claude/skills/test-repo/test-harness.sh rewind <checkpoint-id>\n.claude/skills/test-repo/test-harness.sh verify-rewind\n```\n\n**Expected Behavior:**\n- Shows warning listing untracked files that will be deleted (files created after the checkpoint that weren't present at session start)"
 }
@@ -7179,7 +7179,7 @@ id: toolu_01Crac9vJeXRaiTFpQC8bzfT
 tool_result
 id: toolu_01Crac9vJeXRaiTFpQC8bzfT
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/.claude/skills/test-repo/SKILL.md has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/.claude/skills/test-repo/SKILL.md has been updated successfully.
 ```
 
 > TOOL
@@ -7188,7 +7188,7 @@ tool_use Read
 id: toolu_013TZvRhsLgs36ULgFgWRjm2
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/.claude/skills/test-repo/SKILL.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/.claude/skills/test-repo/SKILL.md",
   "offset": 135,
   "limit": 40
 }
@@ -7241,7 +7241,7 @@ id: toolu_01RpMpTH2UKk2Fx7G6GG9KSH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/.claude/skills/test-repo/SKILL.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/.claude/skills/test-repo/SKILL.md",
   "old_string": "### Manual-Commit Strategy (default, alias: shadow)\n- Active branch commits: **NO modifications** (no commits created by Entire)\n- Shadow branches: `entire/<commit-hash[:7]>` created for checkpoints\n- Metadata: stored on both shadow branches and `entire/checkpoints/v1` branch (condensed on user commits)\n- Rewind: restores files from shadow branch commit tree (no git reset)\n  - **Shows preview warning** listing untracked files that will be deleted\n  - Preserves untracked files that existed at session start\n- AllowsMainBranch: **true** (safe on main/master)\n\n### Auto-Commit Strategy (alias: dual)\n- Active branch commits: **clean commits** with only `Entire-Checkpoint: <12-hex-char>` trailer\n- Shadow branches: none\n- Metadata: stored on orphan `entire/checkpoints/v1` branch at sharded paths\n- Rewind: full reset allowed if commit is only on current branch\n  - Uses `git reset --hard` which doesn't delete untracked files\n  - **No preview warnings** (untracked files are safe)\n- AllowsMainBranch: **false** (creates commits on active branch)",
   "new_string": "### Manual-Commit Strategy (default)\n- Active branch commits: **NO modifications** (no commits created by Entire)\n- Shadow branches: `entire/<commit-hash[:7]>` created for checkpoints\n- Metadata: stored on both shadow branches and `entire/checkpoints/v1` branch (condensed on user commits)\n- Rewind: restores files from shadow branch commit tree (no git reset)\n  - **Shows preview warning** listing untracked files that will be deleted\n […]
 
@@ -7250,7 +7250,7 @@ id: toolu_01RpMpTH2UKk2Fx7G6GG9KSH
 tool_result
 id: toolu_01RpMpTH2UKk2Fx7G6GG9KSH
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/.claude/skills/test-repo/SKILL.md has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/.claude/skills/test-repo/SKILL.md has been updated successfully.
 ```
 
 > AGENT
@@ -7341,7 +7341,7 @@ tool_use Read
 id: toolu_01SQDoB6YtgRV7tAWihnmDVo
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/resume_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/resume_test.go",
   "offset": 1,
   "limit": 40
 }
@@ -7405,7 +7405,7 @@ id: toolu_01DP1u4A6xFgAxiZn4cCfmYm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/resume_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/resume_test.go",
   "old_string": "const masterBranch = \"master\"\n\n// Note: Resume tests only run with auto-commit strategy because:\n// - Auto-commit strategy creates commits with Entire-Checkpoint trailers and metadata on entire/checkpoints/v1\n//   immediately during SimulateStop\n// - Manual-commit strategy only creates this structure after user commits (via prepare-commit-msg\n//   and post-commit hooks), which requires the full workflow tested in manual_commit_workflow_test.go\n// Both strategies share the same resume code path once the structure exists.\n\n// TestResume_SwitchBranchWithSession tests the resume command when switching to a branch",
   "new_string": "const masterBranch = \"master\"\n\n// TestResume_SwitchBranchWithSession tests the resume command when switching to a branch"
 }
@@ -7416,7 +7416,7 @@ id: toolu_01DP1u4A6xFgAxiZn4cCfmYm
 tool_result
 id: toolu_01DP1u4A6xFgAxiZn4cCfmYm
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/resume_test.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/resume_test.go has been updated successfully.
 ```
 
 > AGENT
@@ -7509,7 +7509,7 @@ tool_use Bash
 id: toolu_01LroxbKFx3rbJ5E5ryguZDo
 ```json
 {
-  "command": "grep -r \"IsTask\\|ToolUseID\" --include=\"*.go\" /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/ | grep -v test | grep -v \"\\.go:\" | head -30"
+  "command": "grep -r \"IsTask\\|ToolUseID\" --include=\"*.go\" /home/<USER>/wks/cli/remove-auto-commit/cmd/ | grep -v test | grep -v \"\\.go:\" | head -30"
 }
 ```
 
@@ -7527,7 +7527,7 @@ tool_use Bash
 id: toolu_01BJVJjW51kxps6HWdQ84reg
 ```json
 {
-  "command": "grep -r \"IsTask\\|ToolUseID\" --include=\"*.go\" /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/ | grep -v test"
+  "command": "grep -r \"IsTask\\|ToolUseID\" --include=\"*.go\" /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/ | grep -v test"
 }
 ```
 
@@ -7536,35 +7536,35 @@ id: toolu_01BJVJjW51kxps6HWdQ84reg
 tool_result
 id: toolu_01BJVJjW51kxps6HWdQ84reg
 ```
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/transcript.go:	ToolUseID string `json:"tool_use_id"`
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/transcript.go:			if block.Type == "tool_result" && block.ToolUseID == toolUseID {
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/metadata.go:	ToolUseID      string `json:"tool_use_id"`
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/hooks.go:	ToolUseID      string          `json:"tool_use_id"`
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/hooks.go:	ToolUseID      string          `json:"tool_use_id"`
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/hooks.go:			ToolUseID:      raw.ToolUseID,
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/hooks.go:	_, _ = fmt.Fprintf(w, "  Tool Use ID: %s\n", input.ToolUseID)
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/hooks.go:	ToolUseID      string          `json:"tool_use_id"`
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/hooks.go:	_, _ = fmt.Fprintf(w, "  Tool Use ID: %s\n", input.ToolUseID)
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/checkpoint.go:	IsTask    bool   // Whether this is a task checkpoint
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/checkpoint.go:	ToolUseID string // Tool use ID for task checkpoints
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/checkpoint.go:	// IsTask indicates if this is a task checkpoint
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/checkpoint.go:	IsTask bool
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/checkpoint.go:	// ToolUseID is the tool use ID for task checkpoints
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/checkpoint.go:	ToolUseID string
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/checkpoint.go:	IsTask    bool   `json:"is_task,omitempty"`
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/checkpoint.go:	ToolUseID string `json:"tool_use_id,omitempty"`
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/checkpoint.go:	// ToolUseID is the unique identifier for this Task tool invocation
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/checkpoint.go:	ToolUseID string
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/checkpoint.go:	// IsTaskCheckpoint indicates if this is a task checkpoint
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/checkpoint.go:	IsTaskCheckpoint bool
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/checkpoint.go:	// ToolUseID is the tool use ID for task checkpoints
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/checkpoint.go:	ToolUseID string
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/committed.go:// For task checkpoints (IsTask=true), additional files are written under tasks/<tool-use-id>/:
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/committed.go:	if err := validation.ValidateToolUseID(opts.ToolUseID); err != nil {
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/committed.go:	if opts.IsTask && opts.ToolUseID != "" {
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/committed.go:	taskPath := basePath + "tasks/" + opts.ToolUseID + "/"
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/committed.go:		ToolUseID: opts.ToolUseID,
-/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/committed.go:	cpFilename := […]
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/transcript.go:	ToolUseID string `json:"tool_use_id"`
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/transcript.go:			if block.Type == "tool_result" && block.ToolUseID == toolUseID {
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/metadata.go:	ToolUseID      string `json:"tool_use_id"`
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/hooks.go:	ToolUseID      string          `json:"tool_use_id"`
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/hooks.go:	ToolUseID      string          `json:"tool_use_id"`
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/hooks.go:			ToolUseID:      raw.ToolUseID,
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/hooks.go:	_, _ = fmt.Fprintf(w, "  Tool Use ID: %s\n", input.ToolUseID)
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/hooks.go:	ToolUseID      string          `json:"tool_use_id"`
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/hooks.go:	_, _ = fmt.Fprintf(w, "  Tool Use ID: %s\n", input.ToolUseID)
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/checkpoint.go:	IsTask    bool   // Whether this is a task checkpoint
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/checkpoint.go:	ToolUseID string // Tool use ID for task checkpoints
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/checkpoint.go:	// IsTask indicates if this is a task checkpoint
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/checkpoint.go:	IsTask bool
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/checkpoint.go:	// ToolUseID is the tool use ID for task checkpoints
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/checkpoint.go:	ToolUseID string
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/checkpoint.go:	IsTask    bool   `json:"is_task,omitempty"`
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/checkpoint.go:	ToolUseID string `json:"tool_use_id,omitempty"`
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/checkpoint.go:	// ToolUseID is the unique identifier for this Task tool invocation
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/checkpoint.go:	ToolUseID string
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/checkpoint.go:	// IsTaskCheckpoint indicates if this is a task checkpoint
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/checkpoint.go:	IsTaskCheckpoint bool
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/checkpoint.go:	// ToolUseID is the tool use ID for task checkpoints
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/checkpoint.go:	ToolUseID string
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/committed.go:// For task checkpoints (IsTask=true), additional files are written under tasks/<tool-use-id>/:
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/committed.go:	if err := validation.ValidateToolUseID(opts.ToolUseID); err != nil {
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/committed.go:	if opts.IsTask && opts.ToolUseID != "" {
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/committed.go:	taskPath := basePath + "tasks/" + opts.ToolUseID + "/"
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/committed.go:		ToolUseID: opts.ToolUseID,
+/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/committed.go:	cpFilename := […]
 
 > AGENT
 
@@ -7576,7 +7576,7 @@ tool_use Read
 id: toolu_019vKhNJWowPHd83CLQsBJkK
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/checkpoint.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/checkpoint.go",
   "offset": "[235, 250]",
   "limit": 30
 }
@@ -7597,7 +7597,7 @@ tool_use Read
 id: toolu_017SXD3z1CUSHJSwKGWbcL7C
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/checkpoint.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/checkpoint.go",
   "offset": 235,
   "limit": 30
 }
@@ -7643,7 +7643,7 @@ id: toolu_01P9RskczhgxvbsL1NUyUUZL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/checkpoint.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/checkpoint.go",
   "old_string": "\t// Task checkpoint fields (for auto-commit strategy task checkpoints)\n\tIsTask    bool   // Whether this is a task checkpoint\n\tToolUseID string // Tool use ID for task checkpoints",
   "new_string": "\t// Task checkpoint fields (for task/subagent checkpoints)\n\tIsTask    bool   // Whether this is a task checkpoint\n\tToolUseID string // Tool use ID for task checkpoints"
 }
@@ -7654,7 +7654,7 @@ id: toolu_01P9RskczhgxvbsL1NUyUUZL
 tool_result
 id: toolu_01P9RskczhgxvbsL1NUyUUZL
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/checkpoint.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/checkpoint/checkpoint.go has been updated successfully.
 ```
 
 > AGENT

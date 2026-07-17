@@ -2,13 +2,13 @@
 
 ### Relevant File Paths
 
-- `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/recovery.rs` -- untested recovery logic (gap 2a)
-- `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/task_manager.rs` -- untested completion lifecycle (gap 2b)
-- `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/run_orchestrator.rs` -- untested state machine guards (gaps 2c, 3a, 3b)
-- `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/server.rs` -- untested stop_run with TaskManager, pagination, workspace validation (gaps 3c, 3e, 3f)
-- `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/tests/event_streaming.rs` -- strongest test file with ManagedRuntimeServer
-- `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/tests/approval_rpcs.rs` -- exemplary approval lifecycle coverage
-- `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/scheduler.rs` -- well-tested inline unit tests</result>
+- `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/recovery.rs` -- untested recovery logic (gap 2a)
+- `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/task_manager.rs` -- untested completion lifecycle (gap 2b)
+- `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/run_orchestrator.rs` -- untested state machine guards (gaps 2c, 3a, 3b)
+- `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/server.rs` -- untested stop_run with TaskManager, pagination, workspace validation (gaps 3c, 3e, 3f)
+- `/home/<USER>/Projects/AI/forge/crates/forge-runtime/tests/event_streaming.rs` -- strongest test file with ManagedRuntimeServer
+- `/home/<USER>/Projects/AI/forge/crates/forge-runtime/tests/approval_rpcs.rs` -- exemplary approval lifecycle coverage
+- `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/scheduler.rs` -- well-tested inline unit tests</result>
 <usage><total_tokens>127144</total_tokens><tool_uses>28</tool_uses><duration_ms>117742</duration_ms></usage>
 </task-notification>
 Full transcript available at: /private/tmp/claude-501/-Users-jdsingh-Projects-AI-forge/206d870e-7f6f-4e92-9b7a-035603905453/tasks/a846f7e84af7184e0.output
@@ -135,7 +135,7 @@ While the issues above are concerning, several patterns in this codebase demonst
 
 ### Issue 13: Approval state fallback parsing silently invents approval IDs
 
-**Location:** `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/recovery.rs`, lines 573-611
+**Location:** `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/recovery.rs`, lines 573-611
 
 **Severity:** MEDIUM
 
@@ -159,7 +159,7 @@ While the issues above are concerning, several patterns in this codebase demonst
 
 ### Issue 12: `send_signal` treats ESRCH as success
 
-**Location:** `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/runtime/host.rs`, lines 203-215 (duplicated in `bwrap.rs`)
+**Location:** `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/runtime/host.rs`, lines 203-215 (duplicated in `bwrap.rs`)
 
 **Severity:** MEDIUM
 
@@ -171,7 +171,7 @@ While the issues above are concerning, several patterns in this codebase demonst
 
 ### Issue 11: `RuntimeService` defaults to `Host` backend and `insecure=true` when task_manager is None
 
-**Location:** `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/server.rs`, lines 122-136
+**Location:** `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/server.rs`, lines 122-136
 
 **Severity:** MEDIUM
 
@@ -202,7 +202,7 @@ This silently falls back to reporting the daemon as running in insecure host mod
 
 ### Issue 10: `best_effort_remove_container` logs at `debug` and suppresses cleanup failures
 
-**Location:** `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/runtime/docker.rs`, lines 174-189
+**Location:** `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/runtime/docker.rs`, lines 174-189
 
 **Severity:** MEDIUM
 
@@ -230,7 +230,7 @@ This is called when a container fails to start (line 321). A leaked container co
 
 ### Issue 9: `agent_id` defaults to empty string on missing agent_id in task-output events
 
-**Location:** `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/state/events.rs`, line 291
+**Location:** `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/state/events.rs`, line 291
 
 **Severity:** MEDIUM
 
@@ -256,7 +256,7 @@ agent_id: runtime_event.agent_id.ok_or_else(||
 
 ### Issue 8: `pid as i32` cast in `send_signal` can overflow
 
-**Location:** `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/runtime/host.rs`, line 204 (duplicated in `bwrap.rs` line 367)
+**Location:** `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/runtime/host.rs`, line 204 (duplicated in `bwrap.rs` line 367)
 
 **Severity:** MEDIUM
 
@@ -277,7 +277,7 @@ let pid_i32 = i32::try_from(pid)
 
 ### Issue 7: `process_exists` returns `true` for EPERM -- incorrect when PID recycling occurs
 
-**Location:** `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/runtime/host.rs`, lines 217-225 (duplicated in `bwrap.rs` lines 380-388)
+**Location:** `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/runtime/host.rs`, lines 217-225 (duplicated in `bwrap.rs` lines 380-388)
 
 **Severity:** MEDIUM
 
@@ -302,7 +302,7 @@ When `HostRuntime::status` calls this function (line 195-199), it returns `Agent
 
 ### Issue 6: `force_stop` delegates to `graceful_stop` with no escalation
 
-**Location:** `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/task_manager.rs`, lines 610-613
+**Location:** `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/task_manager.rs`, lines 610-613
 
 **Severity:** HIGH
 
@@ -324,7 +324,7 @@ The shutdown coordinator calls `force_stop` specifically when `graceful_stop` ha
 
 ### Issue 5: Scheduler swallows ready-task computation errors and continues
 
-**Location:** `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/scheduler.rs`, lines 57-66
+**Location:** `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/scheduler.rs`, lines 57-66
 
 **Severity:** HIGH
 
@@ -355,7 +355,7 @@ This means a structurally invalid run graph (e.g., circular dependencies, missin
 
 ### Issue 4: Lifecycle loop errors are logged but never surfaced to users or trigger backoff
 
-**Location:** `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/main.rs`, lines 137-155
+**Location:** `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/main.rs`, lines 137-155
 
 **Severity:** HIGH
 
@@ -385,7 +385,7 @@ If the SQLite database becomes corrupted, or the disk is full, or the mutex is p
 
 ### Issue 3: `NoopAgentSupervisor` used in production `run_server` path
 
-**Location:** `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/server.rs`, lines 150, 64-72 and `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/shutdown.rs`, lines 40-56
+**Location:** `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/server.rs`, lines 150, 64-72 and `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/shutdown.rs`, lines 40-56
 
 **Severity:** CRITICAL
 
@@ -404,7 +404,7 @@ The `NoopAgentSupervisor` is documented as "Default supervisor used until real r
 
 ### Issue 2: Spawned task dispatch continues after spawn failure without marking task as failed
 
-**Location:** `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/task_manager.rs`, lines 222-233
+**Location:** `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/task_manager.rs`, lines 222-233
 
 **Severity:** CRITICAL
 
@@ -436,7 +436,7 @@ If `spawn_prepared` fails after already transitioning the task to `Materializing
 
 ### Issue 1: Silent fire-and-forget of runtime output channel sends
 
-**Location:** `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/runtime/io.rs`, line 48
+**Location:** `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/runtime/io.rs`, line 48
 
 **Severity:** CRITICAL
 
@@ -483,7 +483,7 @@ Full transcript available at: /private/tmp/claude-501/-Users-jdsingh-Projects-AI
 
 **2. Pagination next_page_token uses wrong index -- returns second-to-last page item when exactly one more page remains** (Confidence: 82)
 
-File: `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/server.rs`, lines 418-421 and 497-502
+File: `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/server.rs`, lines 418-421 and 497-502
 
 The `next_page_token` is set to `runs.get(end_index - 1)` (the last item of the current page). When the client sends this back, `page_start_index_for_runs` finds that item and returns `position + 1`. This works correctly for cursor-based pagination **but only if item IDs are stable and unique across calls**. Since the runs list is filtered and sorted in-memory from the `RunOrchestrator`'s `HashMap`, and new runs can be inserted between calls, the page token could point to an item that has shifted position or disappeared, causing `invalid run page token` errors. This is a known limitation of cursor-based pagination over in-memory collections rather than database-backed cursors.
 
@@ -495,7 +495,7 @@ However, the more concerning issue is that the same pattern is applied for `list
 
 **1. Blocking synchronous database call inside async gRPC handler violates CLAUDE.md** (Confidence: 95)
 
-File: `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/server.rs`, line 657
+File: `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/server.rs`, line 657
 
 CLAUDE.md rule: "Use tokio for all async -- never block in async code"
 
@@ -523,26 +523,26 @@ let fence = tokio::task::spawn_blocking(move || state_store.latest_seq())
 ## Code Review: `runtime-daemon-dispatch` PR
 
 **Reviewing files across:**
-- `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/` (server.rs, run_orchestrator.rs, task_manager.rs, event_stream.rs, scheduler.rs, main.rs, lib.rs, shutdown.rs, recovery.rs, profile_compiler.rs)
-- `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/state/` (mod.rs, schema.rs, events.rs, runs.rs, tasks.rs, agent_instances.rs)
-- `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/runtime/` (mod.rs, io.rs, host.rs, docker.rs, bwrap.rs)
-- `/Users/jdsingh/Projects/AI/forge/crates/forge-common/src/events.rs`
+- `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/` (server.rs, run_orchestrator.rs, task_manager.rs, event_stream.rs, scheduler.rs, main.rs, lib.rs, shutdown.rs, recovery.rs, profile_compiler.rs)
+- `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/state/` (mod.rs, schema.rs, events.rs, runs.rs, tasks.rs, agent_instances.rs)
+- `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/runtime/` (mod.rs, io.rs, host.rs, docker.rs, bwrap.rs)
+- `/home/<USER>/Projects/AI/forge/crates/forge-common/src/events.rs`
 
 > DEVELOPER
 
 **Positive Findings**
 
-- `/Users/jdsingh/Projects/AI/forge/crates/forge-common/src/events.rs:1-8`: The module-level doc comment excellently explains the purpose of runtime events and lists four concrete use cases (CLI attach/detach, Factory UI, audit trail, daemon restart recovery). This provides high-value context for future maintainers.
+- `/home/<USER>/Projects/AI/forge/crates/forge-common/src/events.rs:1-8`: The module-level doc comment excellently explains the purpose of runtime events and lists four concrete use cases (CLI attach/detach, Factory UI, audit trail, daemon restart recovery). This provides high-value context for future maintainers.
 
-- `/Users/jdsingh/Projects/AI/forge/crates/forge-common/src/runtime.rs:1-9`: The module doc on `AgentRuntime` trait clearly explains what the trait abstracts over, why it exists, and what each backend is responsible for. The numbered contract in `spawn()`'s doc comment (lines 126-135) is a strong example of documenting behavioral requirements.
+- `/home/<USER>/Projects/AI/forge/crates/forge-common/src/runtime.rs:1-9`: The module doc on `AgentRuntime` trait clearly explains what the trait abstracts over, why it exists, and what each backend is responsible for. The numbered contract in `spawn()`'s doc comment (lines 126-135) is a strong example of documenting behavioral requirements.
 
-- `/Users/jdsingh/Projects/AI/forge/crates/forge-common/src/runtime.rs:113-121`: The trait-level doc listing all three implementations (`BwrapRuntime`, `DockerRuntime`, `HostRuntime`) with their platform context and the daemon's selection mechanism is valuable navigational documentation.
+- `/home/<USER>/Projects/AI/forge/crates/forge-common/src/runtime.rs:113-121`: The trait-level doc listing all three implementations (`BwrapRuntime`, `DockerRuntime`, `HostRuntime`) with their platform context and the daemon's selection mechanism is valuable navigational documentation.
 
-- `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/state/mod.rs:32-35`: The `StateStore::open` doc comment accurately describes the three initialization steps (WAL mode, foreign keys, schema creation) and matches the implementation exactly.
+- `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/state/mod.rs:32-35`: The `StateStore::open` doc comment accurately describes the three initialization steps (WAL mode, foreign keys, schema creation) and matches the implementation exactly.
 
-- `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/recovery.rs:44`: The doc on `recover_orphans` accurately describes its role: "Reconcile stale non-terminal tasks and runs before the daemon starts serving."
+- `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/recovery.rs:44`: The doc on `recover_orphans` accurately describes its role: "Reconcile stale non-terminal tasks and runs before the daemon starts serving."
 
-- `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/shutdown.rs:66`: The doc on `ShutdownCoordinator` ("Coordinates daemon shutdown against scheduler and runtime-owned agents") is concise and accurately reflects the implementation.
+- `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/shutdown.rs:66`: The doc on `ShutdownCoordinator` ("Coordinates daemon shutdown against scheduler and runtime-owned agents") is concise and accurately reflects the implementation.
 
 - The field-level documentation throughout `RuntimeEventKind` in `events.rs` is thorough and accurate. Every variant has a clear, non-redundant comment explaining its purpose, and the field comments provide useful context about the […]
 
@@ -550,39 +550,39 @@ let fence = tokio::task::spawn_blocking(move || state_store.latest_seq())
 
 **Recommended Removals**
 
-13. **Location**: `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/run_orchestrator.rs:74`
+13. **Location**: `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/run_orchestrator.rs:74`
     - **Rationale**: `/// Create a new empty orchestrator.` on `RunOrchestrator::new` restates what the constructor name already conveys. The method signature (`state_store`, `event_stream`) makes the inputs obvious. This comment adds no value.
 
-14. **Location**: `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/task_manager.rs:45-46`
+14. **Location**: `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/task_manager.rs:45-46`
     - **Rationale**: `/// Create an empty agent tracker.` on `AgentTracker::new()` restates what `new()` and `Default` already convey. This is trivially obvious.
 
-15. **Location**: `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/event_stream.rs:46`
+15. **Location**: `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/event_stream.rs:46`
     - **Rationale**: `/// Create a new coordinator backed by the shared runtime state store.` on `EventStreamCoordinator::new(state_store)` restates what the constructor signature already conveys perfectly.
 
 > DEVELOPER
 
 **Improvement Opportunities**
 
-4. **Location**: `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/recovery.rs:28`
+4. **Location**: `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/recovery.rs:28`
    - **Current state**: `RecoveryResult` has a field `stale_sockets_cleaned` which is always set to `0` at line 78 (`result.stale_sockets_cleaned = 0;`). The struct exposes this field publicly but no code ever populates it with a meaningful value. The doc comment on `RecoveryResult` at line 28 says "Aggregate result of reconciling durable task/run state on daemon startup" -- which is accurate, but the struct contains dead data.
    - **Suggestion**: Either remove the `stale_sockets_cleaned` field since it is unused, or add a `// TODO: implement socket cleanup during recovery` comment next to the hardcoded `0` assignment so future maintainers know this is a planned feature, not a bug.
 
-5. **Location**: `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/recovery.rs:33`
+5. **Location**: `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/recovery.rs:33`
    - **Current state**: The field `tasks_left_pending` is populated from `queued.len()` where `queued` is `query_tasks_by_status(&["Pending", "Enqueued"])`. The field name says "pending" but it actually counts both Pending and Enqueued tasks. This is mildly misleading.
    - **Suggestion**: Rename to `tasks_left_schedulable` or update the doc comment with `/// Number of tasks left in Pending or Enqueued state (not needing recovery action).`
 
-6. **Location**: `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/runtime/mod.rs:3-4`
+6. **Location**: `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/runtime/mod.rs:3-4`
    - **Current state**: The module doc says "Plan 4 freezes the backend-facing launch contract, then layers secure runtime backends and fail-closed backend selection on top." This […]
 
 > DEVELOPER
 
 **Critical Issues**
 
-1. **Location**: `/Users/jdsingh/Projects/AI/forge/crates/forge-common/src/runtime.rs:89`
+1. **Location**: `/home/<USER>/Projects/AI/forge/crates/forge-common/src/runtime.rs:89`
    - **Issue**: The doc comment on `AgentStatus::Exited` says "The agent exited successfully (exit code 0)." However, the `exit_code` field is `i32` and the `status_from_exit_status` function in `crates/forge-runtime/src/runtime/io.rs:257-261` maps any `exit_status.success()` to `Exited`, which on most systems means exit code 0 -- but the struct carries an arbitrary `i32`. The comment misleadingly implies exit code is always 0, when the variant is capable of carrying any code. More importantly, the Docker runtime (`docker.rs:500`) explicitly constructs `Exited { exit_code: 0 }` only for zero, but the data type does not enforce this constraint. The comment should say "The agent exited with a successful status" rather than hardcoding "exit code 0," since the field exists to carry the actual exit code.
    - **Suggestion**: Change to `/// The agent exited with a successful exit status.`
 
-2. **Location**: `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/run_orchestrator.rs:1`
+2. **Location**: `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/run_orchestrator.rs:1`
    - **Issue**: The module-level doc comment says `//! Minimal SubmitRun orchestration over the durable state store.` This is inaccurate. The module is 2,604 lines containing 22+ public methods spanning run submission, task lifecycle transitions, child task creation, approval resolution, task killing, run cancellation, run failure, event emission, result summary updates, and multi-agent event recording. Calling this "minimal SubmitRun orchestration" significantly understates […]
 
 > DEVELOPER
@@ -642,7 +642,7 @@ The `forge-proto/src/convert` module is the best-designed component in the PR. I
 
 ## Type: Proto/Domain Conversion Layer
 
-**Files**: `/Users/jdsingh/Projects/AI/forge/crates/forge-proto/src/convert/`
+**Files**: `/home/<USER>/Projects/AI/forge/crates/forge-proto/src/convert/`
 
 ### Invariants Identified
 - Proto `*_UNSPECIFIED` (value 0) is always rejected on decode
@@ -669,7 +669,7 @@ The `forge-proto/src/convert` module is the best-designed component in the PR. I
 
 ## Type: RunGraph
 
-**File**: `/Users/jdsingh/Projects/AI/forge/crates/forge-common/src/run_graph.rs` (lines 20-49)
+**File**: `/home/<USER>/Projects/AI/forge/crates/forge-common/src/run_graph.rs` (lines 20-49)
 
 ### Invariants Identified
 - `runs` HashMap keys must equal `RunState::id` for each entry
@@ -695,7 +695,7 @@ The `forge-proto/src/convert` module is the best-designed component in the PR. I
 
 ## Type: AgentRuntime trait + AgentLaunchSpec + PreparedAgentLaunch
 
-**File**: `/Users/jdsingh/Projects/AI/forge/crates/forge-common/src/runtime.rs`
+**File**: `/home/<USER>/Projects/AI/forge/crates/forge-common/src/runtime.rs`
 
 ### Invariants Identified
 - `spawn()` takes ownership of the launch contract and returns an `AgentHandle`
@@ -721,7 +721,7 @@ The `forge-proto/src/convert` module is the best-designed component in the PR. I
 
 ## Type: State Store Row Types (RunRow, TaskNodeRow, AgentInstanceRow, EventRow)
 
-**Files**: `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/state/runs.rs`, `tasks.rs`, `agent_instances.rs`, `events.rs`
+**Files**: `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/state/runs.rs`, `tasks.rs`, `agent_instances.rs`, `events.rs`
 
 ### Invariants Identified
 - Row types use `String` for fields that are enums or JSON in the domain types (status, profile, budget, approval_state, etc.)
@@ -745,7 +745,7 @@ The `forge-proto/src/convert` module is the best-designed component in the PR. I
 
 ## Type: Policy hierarchy (Policy, LimitsPolicy, CredentialPolicy, NetworkPolicy, etc.)
 
-**File**: `/Users/jdsingh/Projects/AI/forge/crates/forge-common/src/policy.rs`
+**File**: `/home/<USER>/Projects/AI/forge/crates/forge-common/src/policy.rs`
 
 ### Invariants Identified
 - `CredentialPolicy`: `denied` takes precedence over `allowed`
@@ -779,7 +779,7 @@ The `forge-proto/src/convert` module is the best-designed component in the PR. I
 
 ## Type: AgentHandle
 
-**File**: `/Users/jdsingh/Projects/AI/forge/crates/forge-common/src/run_graph.rs` (lines 546-562)
+**File**: `/home/<USER>/Projects/AI/forge/crates/forge-common/src/run_graph.rs` (lines 546-562)
 
 ### Invariants Identified
 - Either `pid` or `container_id` should be set, depending on `backend`
@@ -812,7 +812,7 @@ The `forge-proto/src/convert` module is the best-designed component in the PR. I
 
 ## Type: BusMessage
 
-**File**: `/Users/jdsingh/Projects/AI/forge/crates/forge-common/src/events.rs` (lines 393-521)
+**File**: `/home/<USER>/Projects/AI/forge/crates/forge-common/src/events.rs` (lines 393-521)
 
 ### Invariants Identified
 - Request/Reply pattern requires matching `ChannelId` for correlation
@@ -844,7 +844,7 @@ The `forge-proto/src/convert` module is the best-designed component in the PR. I
 
 ## Type: RuntimeEvent + RuntimeEventKind
 
-**File**: `/Users/jdsingh/Projects/AI/forge/crates/forge-common/src/events.rs`
+**File**: `/home/<USER>/Projects/AI/forge/crates/forge-common/src/events.rs`
 
 ### Invariants Identified
 - `seq` is monotonically increasing (assigned by the SQLite event log)
@@ -870,7 +870,7 @@ The `forge-proto/src/convert` module is the best-designed component in the PR. I
 
 ## Type: RunState
 
-**File**: `/Users/jdsingh/Projects/AI/forge/crates/forge-common/src/run_graph.rs` (lines 94-253)
+**File**: `/home/<USER>/Projects/AI/forge/crates/forge-common/src/run_graph.rs` (lines 94-253)
 
 ### Invariants Identified
 - `tasks` HashMap keys must match `TaskNode::id` values
@@ -895,7 +895,7 @@ The `forge-proto/src/convert` module is the best-designed component in the PR. I
 
 ## Type: TaskStatus (enum)
 
-**File**: `/Users/jdsingh/Projects/AI/forge/crates/forge-common/src/run_graph.rs` (lines 345-389)
+**File**: `/home/<USER>/Projects/AI/forge/crates/forge-common/src/run_graph.rs` (lines 345-389)
 
 ### Invariants Identified
 - Lifecycle follows: Pending -> (AwaitingApproval | Enqueued) -> Materializing -> Running -> (Completed | Failed | Killed)
@@ -921,7 +921,7 @@ The `forge-proto/src/convert` module is the best-designed component in the PR. I
 
 ## Type: BudgetEnvelope
 
-**File**: `/Users/jdsingh/Projects/AI/forge/crates/forge-common/src/manifest.rs` (lines 250-313)
+**File**: `/home/<USER>/Projects/AI/forge/crates/forge-common/src/manifest.rs` (lines 250-313)
 
 ### Invariants Identified
 - `remaining == allocated - consumed` (derived/computed field)
@@ -946,7 +946,7 @@ The `forge-proto/src/convert` module is the best-designed component in the PR. I
 
 ## Type: Newtype ID Family (RunId, TaskNodeId, AgentId, MilestoneId, ApprovalId, SpawnId, ChannelId)
 
-**File**: `/Users/jdsingh/Projects/AI/forge/crates/forge-common/src/ids.rs`
+**File**: `/home/<USER>/Projects/AI/forge/crates/forge-common/src/ids.rs`
 
 ### Invariants Identified
 - Each ID kind is a distinct type at the type level -- prevents passing a `RunId` where a `TaskNodeId` is expected
@@ -978,8 +978,8 @@ This analysis covers the type system introduced across `forge-common`, `forge-pr
 
 | Fix | File | Verdict |
 |-----|------|---------|
-| C1 -- Silent output channel discard | `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/runtime/io.rs` | **VERIFIED** -- Error is logged at error level with full context, deduplication prevents log flooding, unit test covers the behavior. |
-| C2 -- Failed dispatch leaves task stuck in infinite retry | `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/task_manager.rs` | **VERIFIED** -- Task is transitioned to `Failed` via `finalize_dispatch_failure`, meta-failures are logged at error level, the original spawn error is always logged, and a dedicated test validates the state transition. |
+| C1 -- Silent output channel discard | `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/runtime/io.rs` | **VERIFIED** -- Error is logged at error level with full context, deduplication prevents log flooding, unit test covers the behavior. |
+| C2 -- Failed dispatch leaves task stuck in infinite retry | `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/task_manager.rs` | **VERIFIED** -- Task is transitioned to `Failed` via `finalize_dispatch_failure`, meta-failures are logged at error level, the original spawn error is always logged, and a dedicated test validates the state transition. |
 
 Both fixes are well-implemented, follow the project's error handling conventions (structured tracing with contextual fields, appropriate severity levels), and include test coverage.</result>
 <usage><total_tokens>22367</total_tokens><tool_uses>8</tool_uses><duration_ms>56898</duration_ms></usage>
@@ -990,7 +990,7 @@ Full transcript available at: /private/tmp/claude-501/-Users-jdsingh-Projects-AI
 
 ## Fix C2 -- Failed dispatch leaves task stuck in infinite retry
 
-**File:** `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/task_manager.rs`
+**File:** `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/task_manager.rs`
 
 **Relevant code (lines 223-244):**
 
@@ -1031,7 +1031,7 @@ The fix is correct and thorough. The original code only logged the `spawn_prepar
 
 ## Fix C1 -- Silent output channel discard
 
-**File:** `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/runtime/io.rs`
+**File:** `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/runtime/io.rs`
 
 **Relevant code (lines 64-78):**
 
@@ -1074,7 +1074,7 @@ Full transcript available at: /private/tmp/claude-501/-Users-jdsingh-Projects-AI
 
 **M6 -- Insecure defaults when task_manager is None: VERIFIED**
 
-In `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/server.rs`:
+In `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/server.rs`:
 
 - `runtime_backend_proto()` (lines 122-127): When `task_manager` is `None`, defaults to `proto::RuntimeBackend::Unspecified as i32` instead of `Host`.
 - `insecure_host_runtime()` (lines 129-134): When `task_manager` is `None`, defaults to `false` instead of `true`.
@@ -1085,13 +1085,13 @@ Both are the expected safe defaults.
 
 **M4 -- Docker container cleanup logged at debug: VERIFIED**
 
-The `best_effort_remove_container` method in `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/runtime/docker.rs` line 183 now uses `tracing::warn!` instead of `tracing::debug!`, with a clear message: `"best-effort Docker container cleanup failed; container may leak"`.
+The `best_effort_remove_container` method in `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/runtime/docker.rs` line 183 now uses `tracing::warn!` instead of `tracing::debug!`, with a clear message: `"best-effort Docker container cleanup failed; container may leak"`.
 
 > DEVELOPER
 
 **M2 -- Missing agent_id defaults to empty string: VERIFIED**
 
-The original `unwrap_or_else(|| AgentId::new(""))` pattern is completely gone. The current code at `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/state/events.rs` lines 291-293 now uses:
+The original `unwrap_or_else(|| AgentId::new(""))` pattern is completely gone. The current code at `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/state/events.rs` lines 291-293 now uses:
 
 ```rust
 agent_id: runtime_event
@@ -1107,8 +1107,8 @@ This correctly returns an error instead of silently defaulting. There is also a 
 
 Both files now use a dedicated `pid_t_from_u32` helper that calls `i32::try_from(pid)` with `.context("pid exceeds libc::pid_t range")`, returning a `Result` instead of using a bare `as i32` cast.
 
-- `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/runtime/host.rs` lines 251-255
-- `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/runtime/bwrap.rs` lines 410-414
+- `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/runtime/host.rs` lines 251-255
+- `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/runtime/bwrap.rs` lines 410-414
 
 > DEVELOPER
 
@@ -1132,7 +1132,7 @@ Full transcript available at: /private/tmp/claude-501/-Users-jdsingh-Projects-AI
 
 The `pending_approvals` handler at line 660 now calls `self.state_store.latest_event_seq().await` (line 673) instead of the synchronous `self.state_store.latest_seq()`.
 
-The `latest_event_seq` method in `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/state/mod.rs` (lines 107-112) wraps the synchronous `latest_seq()` call inside `tokio::task::spawn_blocking`, which moves the blocking SQLite I/O off the tokio worker thread:
+The `latest_event_seq` method in `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/state/mod.rs` (lines 107-112) wraps the synchronous `latest_seq()` call inside `tokio::task::spawn_blocking`, which moves the blocking SQLite I/O off the tokio worker thread:
 
 ```rust
 pub async fn latest_event_seq(&self) -> Result<i64> {
@@ -1158,7 +1158,7 @@ No new issues were introduced by these fixes. The `ensure_quiescent_runtime_stat
 The fix addresses all three aspects of the original bug:
 
 **1. Bootstrap rejection for active runtime state:**
-`/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/server.rs`, line 151 -- `run_server` now calls `ensure_quiescent_runtime_state()` (lines 190-207) before doing anything else. This function uses `spawn_blocking` to check both active tasks (Materializing/Running) and active agent instances. If either exist, it bails with a clear error message: `"run_server cannot bootstrap over active runtime state"`. This prevents the dangerous scenario where `NoopAgentSupervisor` would run recovery against live agents.
+`/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/server.rs`, line 151 -- `run_server` now calls `ensure_quiescent_runtime_state()` (lines 190-207) before doing anything else. This function uses `spawn_blocking` to check both active tasks (Materializing/Running) and active agent instances. If either exist, it bails with a clear error message: `"run_server cannot bootstrap over active runtime state"`. This prevents the dangerous scenario where `NoopAgentSupervisor` would run recovery against live agents.
 
 **2. NoopAgentSupervisor is safe given the guard:**
 `run_server` still uses `NoopAgentSupervisor` (line 153), but this is now safe because the `ensure_quiescent_runtime_state` guard on line 151 guarantees there are no active tasks or agents. The noop supervisor will never encounter live agents to recover or terminate, making it a correct choice for this code path. Recovery at line 154 will only process already-finished or crashed state.
@@ -1185,7 +1185,7 @@ Full transcript available at: /private/tmp/claude-501/-Users-jdsingh-Projects-AI
 
 ## 3. AgentHandle Structure
 
-**File:** `/Users/jdsingh/Projects/AI/forge/crates/forge-common/src/run_graph.rs` (lines 996-1096)
+**File:** `/home/<USER>/Projects/AI/forge/crates/forge-common/src/run_graph.rs` (lines 996-1096)
 
 **Status: VERIFIED**
 
@@ -1219,7 +1219,7 @@ A companion `RuntimeBackend` enum (line 1099) provides a lightweight discriminan
 
 ## 2. RunState Encapsulation
 
-**File:** `/Users/jdsingh/Projects/AI/forge/crates/forge-common/src/run_graph.rs` (lines 109-655)
+**File:** `/home/<USER>/Projects/AI/forge/crates/forge-common/src/run_graph.rs` (lines 109-655)
 
 **Status: VERIFIED**
 
@@ -1252,7 +1252,7 @@ Running -> Paused | Completed | Failed | […]
 
 ## 1. BudgetEnvelope Encapsulation
 
-**File:** `/Users/jdsingh/Projects/AI/forge/crates/forge-common/src/manifest.rs` (lines 250-312)
+**File:** `/home/<USER>/Projects/AI/forge/crates/forge-common/src/manifest.rs` (lines 250-312)
 
 **Status: PARTIALLY FIXED**
 
@@ -1290,7 +1290,7 @@ Full transcript available at: /private/tmp/claude-501/-Users-jdsingh-Projects-AI
 
 ## Fix I6 -- RunState all-pub fields
 
-**File:** `/Users/jdsingh/Projects/AI/forge/crates/forge-common/src/run_graph.rs`
+**File:** `/home/<USER>/Projects/AI/forge/crates/forge-common/src/run_graph.rs`
 
 **Rating: VERIFIED**
 
@@ -1326,7 +1326,7 @@ The mutation methods include proper validation -- for example, `update_task_stat
 
 ## Fix I5 -- BudgetEnvelope.remaining desync
 
-**File:** `/Users/jdsingh/Projects/AI/forge/crates/forge-common/src/manifest.rs`
+**File:** `/home/<USER>/Projects/AI/forge/crates/forge-common/src/manifest.rs`
 
 **Rating: PARTIALLY FIXED**
 
@@ -1352,7 +1352,7 @@ Additionally, `allocated` is also still `pub` (line 253), which means external c
 
 ## Fix I3 -- force_stop delegates to graceful_stop
 
-**File:** `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/task_manager.rs`
+**File:** `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/task_manager.rs`
 
 **Rating: VERIFIED**
 
@@ -1374,7 +1374,7 @@ A dedicated test `supervisor_force_stop_uses_runtime_force_kill` (line 1272) ver
 
 ## Fix I2 -- Scheduler permanently skips runs
 
-**File:** `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/scheduler.rs`
+**File:** `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/scheduler.rs`
 
 **Rating: VERIFIED**
 
@@ -1394,7 +1394,7 @@ The error handling chain is complete: the failure is logged, the run transitions
 
 ## Fix I1 -- Lifecycle loop circuit breaker
 
-**File:** `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/main.rs`
+**File:** `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/main.rs`
 
 **Rating: VERIFIED**
 

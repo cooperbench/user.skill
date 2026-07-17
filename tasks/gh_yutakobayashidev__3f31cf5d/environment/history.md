@@ -42,7 +42,7 @@ tool_use Read
 id: toolu_01JBKDpramaL7ZkE5MsvLCpv
 ```json
 {
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix"
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix"
 }
 ```
 
@@ -193,7 +193,7 @@ id: toolu_01Y83XcDrvRs4LJpKPAc8ve5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix",
   "old_string": "      \"ideviceinstaller\"",
   "new_string": "      \"ideviceinstaller\"\n      \"libimobiledevice\"\n      \"libplist\"\n      \"libimobiledevice-glue\"\n      \"libtasn1\"\n      \"libtatsu\"\n      \"libusbmuxd\"\n      \"ca-certificates\""
 }
@@ -204,7 +204,7 @@ id: toolu_01Y83XcDrvRs4LJpKPAc8ve5
 tool_result
 id: toolu_01Y83XcDrvRs4LJpKPAc8ve5
 ```
-The file /Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix has been updated successfully.
+The file /home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix has been updated successfully.
 ```
 
 > AGENT
@@ -324,7 +324,7 @@ tool_use Bash
 id: toolu_01AkkCu9u8oum6zvBPL1AzGN
 ```json
 {
-  "command": "git add nix/modules/darwin/homebrew.nix nvim/lazy-lock.json && git commit -m \"$(cat <<'EOF'\nfix: add ideviceinstaller dependencies to Homebrew brews list\n\nExplicitly list transitive dependencies (libimobiledevice, libplist,\nlibimobiledevice-glue, libtasn1, libtatsu, libusbmuxd, ca-certificates)\nto prevent cleanup = \"uninstall\" from attempting to remove them.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add nix/modules/darwin/homebrew.nix nvim/lazy-lock.json && git commit -m \"$(cat <<'EOF'\nfix: add ideviceinstaller dependencies to Homebrew brews list\n\nExplicitly list transitive dependencies (libimobiledevice, libplist,\nlibimobiledevice-glue, libtasn1, libtatsu, libusbmuxd, ca-certificates)\nto prevent cleanup = \"uninstall\" from attempting to remove them.\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Stage and commit homebrew.nix and lazy-lock.json changes"
 }
 ```

@@ -67,7 +67,7 @@ tool_use Read
 id: toolu_01RjTHBGaS6DppzZywNzH5Pg
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 420,
   "limit": 160
 }
@@ -152,7 +152,7 @@ tool_use Read
 id: toolu_01WYTmx62NdMF5bfaoLxJU6q
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 2620,
   "limit": 130
 }

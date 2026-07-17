@@ -8,7 +8,7 @@ tool_use Bash
 id: toolu_019KUyGZEgSPTrLSHAa3qpqh
 ```json
 {
-  "command": "grep -ril \"drive upload\" /Users/ben/git/paper-scan-processor --include=\"*.md\" 2>/dev/null; echo \"---\"; find /Users/ben/git/paper-scan-processor -iname \"*checklist*\" -o -iname \"*plan*\" 2>/dev/null | grep -v node_modules",
+  "command": "grep -ril \"drive upload\" /home/<USER>/git/paper-scan-processor --include=\"*.md\" 2>/dev/null; echo \"---\"; find /home/<USER>/git/paper-scan-processor -iname \"*checklist*\" -o -iname \"*plan*\" 2>/dev/null | grep -v node_modules",
   "description": "Search repo for Drive Upload Mode documentation"
 }
 ```
@@ -18,7 +18,7 @@ id: toolu_019KUyGZEgSPTrLSHAa3qpqh
 tool_result
 id: toolu_019KUyGZEgSPTrLSHAa3qpqh
 ```
-/Users/ben/git/paper-scan-processor/spec.md
+/home/<USER>/git/paper-scan-processor/spec.md
 ---
 ```
 
@@ -28,7 +28,7 @@ tool_use Bash
 id: toolu_01WnBNm24GmkKqazHWoNZKsf
 ```json
 {
-  "command": "grep -n -i \"drive upload\\|^#\\|^-\\s*\\[\" /Users/ben/git/paper-scan-processor/spec.md | head -200",
+  "command": "grep -n -i \"drive upload\\|^#\\|^-\\s*\\[\" /home/<USER>/git/paper-scan-processor/spec.md | head -200",
   "description": "Find headings and checklist items in spec.md"
 }
 ```
@@ -69,7 +69,7 @@ tool_use Read
 id: toolu_01CHbBUWsoJ4ev28tkHV5Ldr
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/spec.md",
+  "file_path": "/home/<USER>/git/paper-scan-processor/spec.md",
   "offset": 166,
   "limit": 80
 }
@@ -168,7 +168,7 @@ tool_use Read
 id: toolu_01BsbtCDcRRfuieDnNUCY1Zk
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/app.go"
+  "file_path": "/home/<USER>/git/paper-scan-processor/app.go"
 }
 ```
 
@@ -269,7 +269,7 @@ tool_use Read
 id: toolu_019Bcg34UKvQrZog6LBgnpBq
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/App.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/App.tsx"
 }
 ```
 
@@ -439,24 +439,24 @@ tool_result
 id: toolu_01K43tmAbxCZ42DPFa5vxbQn
 ```
 commit a239bbdf4f775545f0e531d9448aa6fc2713d929
-Author: Benjamin Arbogast <benjamin.arbogast@gmail.com>
+Author: Benjamin Arbogast <<REDACTED_EMAIL>>
 Date:   Wed Jul 1 16:39:08 2026 +0200
 
     Add Drive Upload mode to spec; remove Drive from Split mode
     
-    Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+    Co-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>
     Entire-Checkpoint: a983d9bfc270
 
  spec.md | 122 ++++++++++++++++++++++++++++++++++++++++++++++++----------------
  1 file changed, 92 insertions(+), 30 deletions(-)
 ---
 commit a239bbdf4f775545f0e531d9448aa6fc2713d929
-Author: Benjamin Arbogast <benjamin.arbogast@gmail.com>
+Author: Benjamin Arbogast <<REDACTED_EMAIL>>
 Date:   Wed Jul 1 16:39:08 2026 +0200
 
     Add Drive Upload mode to spec; remove Drive from Split mode
     
-    Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+    Co-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>
     Entire-Checkpoint: a983d9bfc270
 
 diff --git a/spec.md b/spec.md

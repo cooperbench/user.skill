@@ -53,7 +53,7 @@ Launching skill: dataclaw
 
 > SYSTEM
 
-Base directory for this skill: /Users/user_0a329be7/.claude/skills/dataclaw
+Base directory for this skill: /home/<USER>/.claude/skills/dataclaw
 
 <!-- dataclaw-begin -->
 
@@ -174,7 +174,7 @@ tool_use Bash
 tool_result Bash
 ```
 Downloading skill from https://raw.githubusercontent.com/peteromallet/dataclaw/main/.claude/skills/dataclaw/SKILL.md...
-Skill installed to /Users/user_0a329be7/.claude/skills/dataclaw/SKILL.md
+Skill installed to /home/<USER>/.claude/skills/dataclaw/SKILL.md
 {
   "installed": [REDACTED],
   "next_steps": [
@@ -460,7 +460,7 @@ tool_result Bash
 tool_use Bash
 ```json
 {
-  "command": "dataclaw export --no-push --output /Users/user_0a329be7/dataclaw_export.jsonl 2>&1 | tail -80",
+  "command": "dataclaw export --no-push --output /home/<USER>/dataclaw_export.jsonl 2>&1 | tail -80",
   "description": "Export locally without push",
   "timeout": 300000
 }
@@ -497,7 +497,7 @@ Parsing codex:nvidia-nemotron-model-reasoning-challenge... 3 sessions in 0.18s (
 tool_use Bash
 ```json
 {
-  "command": "echo \"=== EMAILS (non-noreply) ===\" && grep -oE '[a-zA-Z0-9.+-]+@[a-zA-Z0-9.-]+\\.[a-z]{2,}' /Users/user_0a329be7/dataclaw_export.jsonl | grep -v noreply | sort -u | head -30\necho \"\"\necho \"=== JWT-like ===\"\ngrep -oE 'eyJ[A-Za-z0-9_-]{20,}' /Users/user_0a329be7/dataclaw_export.jsonl | head -5\necho \"\"\necho \"=== API token prefixes ===\"\ngrep -oE '(ghp_|sk-|hf_)[A-Za-z0-9_-]{10,}' /Users/user_0a329be7/dataclaw_export.jsonl | sort -u | head -10\necho \"\"\necho \"=== IPs (sample) ===\"\ngrep -oE '[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}' /Users/user_0a329be7/dataclaw_export.jsonl | sort -u | head -30",
+  "command": "echo \"=== EMAILS (non-noreply) ===\" && grep -oE '[a-zA-Z0-9.+-]+@[a-zA-Z0-9.-]+\\.[a-z]{2,}' /home/<USER>/dataclaw_export.jsonl | grep -v noreply | sort -u | head -30\necho \"\"\necho \"=== JWT-like ===\"\ngrep -oE 'eyJ[A-Za-z0-9_-]{20,}' /home/<USER>/dataclaw_export.jsonl | head -5\necho \"\"\necho \"=== API token prefixes ===\"\ngrep -oE '(ghp_|sk-|hf_)[A-Za-z0-9_-]{10,}' /home/<USER>/dataclaw_export.jsonl | sort -u | head -10\necho \"\"\necho \"=== IPs (sample) ===\"\ngrep -oE '[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}' /home/<USER>/dataclaw_export.jsonl | sort -u | head -30",
   "description": "Run PII scan commands"
 }
 ```
@@ -507,26 +507,26 @@ tool_use Bash
 tool_result Bash
 ```
 === EMAILS (non-noreply) ===
-git@github.com
-H@kf.covariance
-n@app.api
-n@app.post
-n@dataclasses.dataclass
-n@functools.lru
-n@torch.compile
-n@torch.compiler.disable
-n@torch.no
-n@triton.jit
-nn@app.api
-nn@app.post
+<REDACTED_EMAIL>
+<REDACTED_EMAIL>
+<REDACTED_EMAIL>
+<REDACTED_EMAIL>
+<REDACTED_EMAIL>
+<REDACTED_EMAIL>
+<REDACTED_EMAIL>
+<REDACTED_EMAIL>
+<REDACTED_EMAIL>
+<REDACTED_EMAIL>
+<REDACTED_EMAIL>
+<REDACTED_EMAIL>
 [REDACTED]
 [REDACTED]
 [REDACTED]
 [REDACTED]
-npm-oidc-no-reply@github.com
-nyou@example.com
-security@anthropic.com
-you@example.com
+<REDACTED_EMAIL>
+<REDACTED_EMAIL>
+<REDACTED_EMAIL>
+<REDACTED_EMAIL>
 
 === JWT-like ===
 [REDACTED]
@@ -583,7 +583,7 @@ sk-notification
 > AGENT
 
 PII 扫描结果基本干净：
-- 邮箱：只有 `git@github.com`、`security@anthropic.com`、`you@example.com`（占位）和 Python 装饰器误识别（`@app.api` 等），无第三方真实邮箱
+- 邮箱：只有 `<REDACTED_EMAIL>`、`<REDACTED_EMAIL>`、`<REDACTED_EMAIL>`（占位）和 Python 装饰器误识别（`@app.api` 等），无第三方真实邮箱
 - "JWT" 和 "API token"：全是误检（Python 关键字 `hf_checkpoint`、`sk-for-approval` 等，或者已 redact 后的乱码 `eyJ...`）
 - IP：基本是私网或被 redact 过的乱码
 
@@ -594,7 +594,7 @@ PII 扫描结果基本干净：
 tool_use Bash
 ```json
 {
-  "command": "echo \"=== 'wangzhiyao' (should be redacted) ===\"\ngrep -ciE 'wangzhiyao|user_71812209|wang.?zhi.?yao' /Users/user_0a329be7/dataclaw_export.jsonl\necho \"\"\necho \"=== 'wzy' literal occurrences ===\"\ngrep -oE 'wzy' /Users/user_0a329be7/dataclaw_export.jsonl | wc -l\necho \"\"\necho \"=== HUST / 华中科技 references ===\"\ngrep -ioE 'hust\\.edu\\.cn|华中科技|HUST' /Users/user_0a329be7/dataclaw_export.jsonl | sort -u | head -10\necho \"\"\necho \"=== Real hf_ tokens (hex/base64-ish, not python keywords) ===\"\ngrep -oE 'hf_[A-Za-z0-9]{30,}' /Users/user_0a329be7/dataclaw_export.jsonl | sort -u | head -5\necho \"\"\necho \"=== Real sk- tokens (long alphanumeric) ===\"\ngrep -oE 'sk-[A-Za-z0-9_-]{40,}' /Users/user_0a329be7/dataclaw_export.jsonl | sort -u | head -5\necho \"\"\necho \"=== Phone numbers (Chinese mobile) ===\"\ngrep -oE '1[3-9][0-9]{9}' /Users/user_0a329be7/dataclaw_export.jsonl | sort -u | head -10\necho \"\"\necho \"=== File size ===\"\nls -lh /Users/user_0a329be7/dataclaw_export.jsonl\nwc -l /Users/user_0a329be7/dataclaw_export.jsonl",
+  "command": "echo \"=== 'wangzhiyao' (should be redacted) ===\"\ngrep -ciE 'wangzhiyao|user_71812209|wang.?zhi.?yao' /home/<USER>/dataclaw_export.jsonl\necho \"\"\necho \"=== 'wzy' literal occurrences ===\"\ngrep -oE 'wzy' /home/<USER>/dataclaw_export.jsonl | wc -l\necho \"\"\necho \"=== HUST / 华中科技 references ===\"\ngrep -ioE 'hust\\.edu\\.cn|华中科技|HUST' /home/<USER>/dataclaw_export.jsonl | sort -u | head -10\necho \"\"\necho \"=== Real hf_ tokens (hex/base64-ish, not python keywords) ===\"\ngrep -oE 'hf_[A-Za-z0-9]{30,}' /home/<USER>/dataclaw_export.jsonl | sort -u | head -5\necho \"\"\necho \"=== Real sk- tokens (long alphanumeric) ===\"\ngrep -oE 'sk-[A-Za-z0-9_-]{40,}' /home/<USER>/dataclaw_export.jsonl | sort -u | head -5\necho \"\"\necho \"=== Phone numbers (Chinese mobile) ===\"\ngrep -oE '1[3-9][0-9]{9}' /home/<USER>/dataclaw_export.jsonl | sort -u | head -10\necho \"\"\necho \"=== File size ===\"\nls -lh /home/<USER>/dataclaw_export.jsonl\nwc -l /home/<USER>/dataclaw_export.jsonl",
   "description": "Targeted PII scans"
 }
 ```
@@ -642,8 +642,8 @@ HusT
 13019561767
 
 === File size ===
--rw-r--r--@ 1 wzy  staff   185M May 28 17:57 /Users/user_0a329be7/dataclaw_export.jsonl
-     374 /Users/user_0a329be7/dataclaw_export.jsonl
+-rw-r--r--@ 1 wzy  staff   185M May 28 17:57 /home/<USER>/dataclaw_export.jsonl
+     374 /home/<USER>/dataclaw_export.jsonl
 ```
 
 > AGENT

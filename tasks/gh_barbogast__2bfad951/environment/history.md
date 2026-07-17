@@ -36,7 +36,7 @@ tool_use Read
 id: toolu_01QUqQ6m8pjuMfkRv3J9UnN6
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx"
 }
 ```
 
@@ -87,7 +87,7 @@ tool_use Read
 id: toolu_01Y7omVHg1YCqxrWxvPGpES7
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/constants.ts"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/constants.ts"
 }
 ```
 
@@ -112,7 +112,7 @@ tool_use Read
 id: toolu_018UjqZyJxKtzvEzF5J2A3u3
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/SplitMode/ThumbnailPanel.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/SplitMode/ThumbnailPanel.tsx",
   "limit": 60
 }
 ```
@@ -158,7 +158,7 @@ tool_use Read
 id: toolu_01QiUmdm5Esp3hxqWiQoam7Y
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/SplitMode/ThumbnailPanel.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/SplitMode/ThumbnailPanel.tsx",
   "offset": 125,
   "limit": 45
 }
@@ -219,7 +219,7 @@ tool_use Read
 id: toolu_01Fp8RC6Y9RD4ucNxNgZCuy2
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/SplitMode/ThumbnailPanel.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/SplitMode/ThumbnailPanel.tsx",
   "offset": 255,
   "limit": 35
 }
@@ -273,7 +273,7 @@ tool_use Read
 id: toolu_01Li4cNTbFSrbLVxkwqyRhm2
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.test.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.test.tsx"
 }
 ```
 
@@ -340,7 +340,7 @@ id: toolu_01SHW2DXvi86RsMH6JygNVjL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
   "old_string": "import { useState } from 'react'\nimport { Box, Button, Loader, Stack, Text } from '@mantine/core'\nimport ClippedPath from '../ClippedPath'\nimport DriveFolderPickerModal from './DriveFolderPickerModal'\nimport GroupNode from './GroupNode'\nimport FileList from './FileList'\nimport { useFileTree } from './useFileTree'\nimport { useDriveAssignments, DriveAssignment, PickerTarget } from './useDriveAssignments'\n\nconst LEFT_PANEL_WIDTH = 300",
   "new_string": "import { useState } from 'react'\nimport { Box, Button, Loader, Stack, Text } from '@mantine/core'\nimport ClippedPath from '../ClippedPath'\nimport DriveFolderPickerModal from './DriveFolderPickerModal'\nimport GroupNode from './GroupNode'\nimport FileList from './FileList'\nimport { useFileTree } from './useFileTree'\nimport { useDriveAssignments, DriveAssignment, PickerTarget } from './useDriveAssignments'\nimport { DRAG_HANDLE_WIDTH } from '../../constants'\n\nconst DEFAULT_LEFT_PANEL_WIDTH = 300\nconst MIN_LEFT_PANEL_WIDTH = 180\nconst MAX_LEFT_PANEL_WIDTH = 600"
 }
@@ -351,7 +351,7 @@ id: toolu_01SHW2DXvi86RsMH6JygNVjL
 tool_result
 id: toolu_01SHW2DXvi86RsMH6JygNVjL
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -361,7 +361,7 @@ id: toolu_01MNoGdVxjXQ1ZSSgyay3Uy8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
   "old_string": "  const assignments = useDriveAssignments()\n  const [pickerTarget, setPickerTarget] = useState<PickerTarget | null>(null)\n  const handlePicked = (folder: DriveAssignment) => {\n    if (pickerTarget?.type === 'group') assignments.setGroupAssignment(pickerTarget.key, folder)\n    else if (pickerTarget?.type === 'file') assignments.setFileOverride(pickerTarget.path, folder)\n    setPickerTarget(null)\n  }\n\n  return (\n    <Box style={{ display: 'flex', height: '100%' }}>\n      <Box\n        style={{\n          width: LEFT_PANEL_WIDTH,\n          flexShrink: 0,\n          height: '100%',\n          overflowY: 'auto',\n          borderRight: '1px solid var(--mantine-color-gray-3)',\n          padding: 12,\n        }}\n      >",
   "new_string": "  const assignments = useDriveAssignments()\n  const [pickerTarget, setPickerTarget] = useState<PickerTarget | null>(null)\n  const handlePicked = (folder: DriveAssignment) => {\n    if (pickerTarget?.type === 'group') assignments.setGroupAssignment(pickerTarget.key, folder)\n    else if (pickerTarget?.type === 'file') assignments.setFileOverride(pickerTarget.path, folder)\n    setPickerTarget(null)\n  }\n\n  const [leftWidth, setLeftWidth] = useState(DEFAULT_LEFT_PANEL_WIDTH)\n  const startDrag = (e: React.MouseEvent) => {\n    const startX = e.clientX\n    const startWidth = leftWidth\n    const clamp = (w: number) => Math.max(MIN_LEFT_PANEL_WIDTH, Math.min(MAX_LEFT_PANEL_WIDTH, w))\n    const onMove = (ev: MouseEvent) => setLeftWidth(clamp(startWidth + ev.clientX - startX))\n    const onUp = (ev: MouseEvent) => {\n      setLeftWidth(clamp(startWidth + ev.clientX - startX))\n      document.removeEventListener('mousemove', onMove)\n      document.removeEventListener('mouseup', onUp)\n    }\n    document.addEventListener('mousemove', onMove)\n    document.addEventListener('mouseup', onUp)\n    e.preventDefault()\n  }\n\n  return (\n    <Box style={{ display: 'flex', height: '100%' }}>\n      <Box\n        style={{\n          width: leftWidth,\n          flexShrink: 0,\n          height: '100%',\n          overflowY: 'auto',\n          padding: 12,\n        }}\n      >"
 }
@@ -372,7 +372,7 @@ id: toolu_01MNoGdVxjXQ1ZSSgyay3Uy8
 tool_result
 id: toolu_01MNoGdVxjXQ1ZSSgyay3Uy8
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -386,7 +386,7 @@ id: toolu_01GQKgWM4r4G1igqXmGG2V7p
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
   "old_string": "      </Box>\n\n      <Box\n        style={{\n          flex: '0 0 auto', width: 220, height: '100%',\n          display: 'flex', alignItems: 'center', justifyContent: 'center',\n          background: 'var(--mantine-color-gray-1)',\n          borderRight: '1px solid var(--mantine-color-gray-3)',\n        }}\n      >\n        <Text size=\"sm\" c=\"dimmed\">Select a file to preview</Text>\n      </Box>\n\n      <Box style={{ flex: 1, height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} />\n    </Box>\n  )\n}",
   "new_string": "      </Box>\n\n      <Box\n        onMouseDown={startDrag}\n        style={{\n          width: DRAG_HANDLE_WIDTH,\n          height: '100%',\n          cursor: 'col-resize',\n          flexShrink: 0,\n          background: 'var(--mantine-color-gray-3)',\n        }}\n      />\n\n      <Box style={{ display: 'flex', flex: 1, minWidth: 0, height: '100%' }}>\n        <Box\n          style={{\n            flex: '0 1 220px', minWidth: 0, height: '100%',\n            display: 'flex', alignItems: 'center', justifyContent: 'center',\n            background: 'var(--mantine-color-gray-1)',\n            borderRight: '1px solid var(--mantine-color-gray-3)',\n          }}\n        >\n          <Text size=\"sm\" c=\"dimmed\">Select a file to preview</Text>\n        </Box>\n\n        <Box style={{ flex: 1, minWidth: 0, height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} />\n      </Box>\n    </Box>\n  )\n}"
 }
@@ -397,7 +397,7 @@ id: toolu_01GQKgWM4r4G1igqXmGG2V7p
 tool_result
 id: toolu_01GQKgWM4r4G1igqXmGG2V7p
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -464,7 +464,7 @@ id: toolu_01F5Tj3PZB7fxhGZFq9EHEPM
 tool_result
 id: toolu_01F5Tj3PZB7fxhGZFq9EHEPM
 ```
- RUN  v0.34.6 /Users/ben/git/paper-scan-processor/frontend
+ RUN  v0.34.6 /home/<USER>/git/paper-scan-processor/frontend
 
  ✓ src/components/DriveUploadMode/index.test.tsx  (3 tests) 330ms
 

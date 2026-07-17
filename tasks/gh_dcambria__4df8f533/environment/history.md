@@ -36,7 +36,7 @@ id: toolu_01E3ZACqyUTGHwTqgG9pKp5M
 {
   "description": "Find font configuration in project",
   "subagent_type": "Explore",
-  "prompt": "Investigate how web fonts are configured/loaded in this WordPress project at /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao.\n\nI need to know:\n1. Which font families are used in the project (look in child theme CSS, Elementor global fonts, @font-face declarations, Google Fonts imports, etc.)\n2. How fonts are loaded — are they self-hosted (look for .woff, .woff2, .ttf, .otf files), loaded via Google Fonts, via Elementor's font manager, or via WP Rocket/plugin font hosting?\n3. Specifically look for whether italic font variants/weights are being loaded. The user says \"the fonts we're using in the project are without italic, can you incorporate italic?\" — so I need to find where the non-italic fonts are declared and whether italic faces are missing.\n\nSearch thoroughly:\n- The child theme directory: wordpress/wp-content/themes/hello-elementor-child/ (style.css, functions.php, any css/ folder, any fonts/ folder)\n- Any @font-face declarations across the theme and mu-plugins\n- Any references to \"italic\", \"font-style\", font weights like 400, 700, \"normal\"\n- Any self-hosted font files (find .woff2, .woff, .ttf, .otf)\n- Any Google Fonts URLs (fonts.googleapis.com) and check if they include italic variants (e.g. \"ital,wght@\" or \":ital\")\n- Elementor font settings if stored in DB dump or kit files\n\nReport back:\n- The exact font family […]
+  "prompt": "Investigate how web fonts are configured/loaded in this WordPress project at /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao.\n\nI need to know:\n1. Which font families are used in the project (look in child theme CSS, Elementor global fonts, @font-face declarations, Google Fonts imports, etc.)\n2. How fonts are loaded — are they self-hosted (look for .woff, .woff2, .ttf, .otf files), loaded via Google Fonts, via Elementor's font manager, or via WP Rocket/plugin font hosting?\n3. Specifically look for whether italic font variants/weights are being loaded. The user says \"the fonts we're using in the project are without italic, can you incorporate italic?\" — so I need to find where the non-italic fonts are declared and whether italic faces are missing.\n\nSearch thoroughly:\n- The child theme directory: wordpress/wp-content/themes/hello-elementor-child/ (style.css, functions.php, any css/ folder, any fonts/ folder)\n- Any @font-face declarations across the theme and mu-plugins\n- Any references to \"italic\", \"font-style\", font weights like 400, 700, \"normal\"\n- Any self-hosted font files (find .woff2, .woff, .ttf, .otf)\n- Any Google Fonts URLs (fonts.googleapis.com) and check if they include italic variants (e.g. \"ital,wght@\" or \":ital\")\n- Elementor font settings if stored in DB dump or kit files\n\nReport back:\n- The exact font family […]
 
 > TOOL
 
@@ -47,7 +47,7 @@ Perfect! Now I have all the information I need. Let me compile a comprehensive r
 
 ## Font Configuration Investigation Report
 
-Based on my thorough search of the WordPress project at `/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao`, here's the complete font configuration:
+Based on my thorough search of the WordPress project at `/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao`, here's the complete font configuration:
 
 ---
 
@@ -94,7 +94,7 @@ tool_use Read
 id: toolu_01UehH3GTq1pUUz4rpfnmL3a
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/functions.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/functions.php",
   "offset": 169,
   "limit": 100
 }
@@ -172,7 +172,7 @@ tool_use Bash
 id: toolu_01LK2JA98RqUaQachkKK9E9Y
 ```json
 {
-  "command": "ls -la /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/fonts/woff2/",
+  "command": "ls -la /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/fonts/woff2/",
   "description": "List font files in child theme"
 }
 ```
@@ -510,7 +510,7 @@ tool_use Read
 id: toolu_01Vorz4v9hGHHkQ5PBhnGtpc
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/base.css"
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/base.css"
 }
 ```
 
@@ -569,7 +569,7 @@ tool_use Bash
 id: toolu_01RESkQXg9YTFMSD8uyU9Qqv
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao\necho \"=== Onde 'Just Sans' aparece no child theme ===\"\ngrep -rn \"Just Sans\" wordpress/wp-content/themes/hello-elementor-child/ 2>/dev/null | grep -v \"/fonts/\" | head -40\necho\necho \"=== Global typography do kit no DB (qual var usa Just Sans) ===\"\n/Users/dcambria/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh wp option get elementor_active_kit 2>/dev/null"
+  "command": "cd /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao\necho \"=== Onde 'Just Sans' aparece no child theme ===\"\ngrep -rn \"Just Sans\" wordpress/wp-content/themes/hello-elementor-child/ 2>/dev/null | grep -v \"/fonts/\" | head -40\necho\necho \"=== Global typography do kit no DB (qual var usa Just Sans) ===\"\n/home/<USER>/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh wp option get elementor_active_kit 2>/dev/null"
 }
 ```
 
@@ -615,7 +615,7 @@ tool_use Bash
 id: toolu_01CZ56TnwFzxffvm74tU73YR
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao\necho \"=== Quais containers estão de pé? ===\"\ndocker ps --format '{{.Names}}' 2>/dev/null | grep -i concertacao\necho\necho \"=== Como 'Just Sans' aparece no CSS gerado do Elementor (kit + post css) ===\"\ndocker exec -u www-data concertacao-dev-wordpress sh -c 'grep -rl \"Just Sans\" /var/www/html/wp-content/uploads/elementor/css/ 2>/dev/null | head -5'\necho \"---- amostra de ocorrências ----\"\ndocker exec -u www-data concertacao-dev-wordpress sh -c 'grep -rho \"font-family:[^;}]*Just Sans[^;}]*\" /var/www/html/wp-content/uploads/elementor/css/ 2>/dev/null | sort -u | head -20'"
+  "command": "cd /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao\necho \"=== Quais containers estão de pé? ===\"\ndocker ps --format '{{.Names}}' 2>/dev/null | grep -i concertacao\necho\necho \"=== Como 'Just Sans' aparece no CSS gerado do Elementor (kit + post css) ===\"\ndocker exec -u www-data concertacao-dev-wordpress sh -c 'grep -rl \"Just Sans\" /var/www/html/wp-content/uploads/elementor/css/ 2>/dev/null | head -5'\necho \"---- amostra de ocorrências ----\"\ndocker exec -u www-data concertacao-dev-wordpress sh -c 'grep -rho \"font-family:[^;}]*Just Sans[^;}]*\" /var/www/html/wp-content/uploads/elementor/css/ 2>/dev/null | sort -u | head -20'"
 }
 ```
 
@@ -654,7 +654,7 @@ tool_use Bash
 id: toolu_01NbZ76Kb64FwUrsyqvPmhie
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao\necho \"=== Definição das vars de typography global no kit ===\"\ndocker exec -u www-data concertacao-dev-wordpress sh -c 'grep -rho \"\\-\\-e-global-typography-[a-z0-9_]*-font-family:[^;]*\" /var/www/html/wp-content/uploads/elementor/css/ 2>/dev/null | sort -u'\necho\necho \"=== body / global font-family no kit gerado ===\"\ndocker exec -u www-data concertacao-dev-wordpress sh -c 'grep -rho \"font-family:[^;}]*\" /var/www/html/wp-content/uploads/elementor/css/post-2553.css 2>/dev/null | sort -u | head -30'\necho\necho \"=== arquivos css do elementor existentes ===\"\ndocker exec -u www-data concertacao-dev-wordpress sh -c 'ls /var/www/html/wp-content/uploads/elementor/css/ 2>/dev/null | head'"
+  "command": "cd /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao\necho \"=== Definição das vars de typography global no kit ===\"\ndocker exec -u www-data concertacao-dev-wordpress sh -c 'grep -rho \"\\-\\-e-global-typography-[a-z0-9_]*-font-family:[^;]*\" /var/www/html/wp-content/uploads/elementor/css/ 2>/dev/null | sort -u'\necho\necho \"=== body / global font-family no kit gerado ===\"\ndocker exec -u www-data concertacao-dev-wordpress sh -c 'grep -rho \"font-family:[^;}]*\" /var/www/html/wp-content/uploads/elementor/css/post-2553.css 2>/dev/null | sort -u | head -30'\necho\necho \"=== arquivos css do elementor existentes ===\"\ndocker exec -u www-data concertacao-dev-wordpress sh -c 'ls /var/www/html/wp-content/uploads/elementor/css/ 2>/dev/null | head'"
 }
 ```
 
@@ -680,7 +680,7 @@ tool_use Bash
 id: toolu_012ULzipzoL5th1Mh7Lg8DAN
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao\necho \"=== Método de print de CSS do Elementor ===\"\ndocker exec -u www-data concertacao-dev-wordpress wp option get elementor_css_print_method --path=/var/www/html 2>/dev/null\necho\necho \"=== Onde está o CSS do Elementor (procura no FS todo) ===\"\ndocker exec -u www-data concertacao-dev-wordpress sh -c 'find /var/www/html/wp-content -type d -name css -path \"*elementor*\" 2>/dev/null'\ndocker exec -u www-data concertacao-dev-wordpress sh -c 'find /var/www/html/wp-content/uploads -name \"post-2553.css\" 2>/dev/null'\necho\necho \"=== Typography global do kit 2553 (system_typography no _elementor_page_settings) ===\"\ndocker exec -u www-data concertacao-dev-wordpress wp eval '\n$kit_id = 2553;\n$s = get_post_meta($kit_id, \"_elementor_page_settings\", true);\nif (is_array($s) && !empty($s[\"system_typography\"])) {\n  foreach ($s[\"system_typography\"] as $t) {\n    $fam = isset($t[\"typography_font_family\"]) ? $t[\"typography_font_family\"] : \"(herda)\";\n    printf(\"%-12s => %s\\n\", $t[\"_id\"], $fam);\n  }\n} else { echo \"system_typography vazio ou formato inesperado\\n\"; }\necho \"----- custom_typography -----\\n\";\nif (is_array($s) && !empty($s[\"custom_typography\"])) {\n  foreach ($s[\"custom_typography\"] as $t) {\n    $fam = isset($t[\"typography_font_family\"]) ? $t[\"typography_font_family\"] : \"(herda)\";\n    printf(\"%-24s => %s\\n\", $t[\"title\"] ?? $t[\"_id\"], $fam);\n  }\n}\n' --path=/var/www/html 2>/dev/null"
+  "command": "cd /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao\necho \"=== Método de print de CSS do Elementor ===\"\ndocker exec -u www-data concertacao-dev-wordpress wp option get elementor_css_print_method --path=/var/www/html 2>/dev/null\necho\necho \"=== Onde está o CSS do Elementor (procura no FS todo) ===\"\ndocker exec -u www-data concertacao-dev-wordpress sh -c 'find /var/www/html/wp-content -type d -name css -path \"*elementor*\" 2>/dev/null'\ndocker exec -u www-data concertacao-dev-wordpress sh -c 'find /var/www/html/wp-content/uploads -name \"post-2553.css\" 2>/dev/null'\necho\necho \"=== Typography global do kit 2553 (system_typography no _elementor_page_settings) ===\"\ndocker exec -u www-data concertacao-dev-wordpress wp eval '\n$kit_id = 2553;\n$s = get_post_meta($kit_id, \"_elementor_page_settings\", true);\nif (is_array($s) && !empty($s[\"system_typography\"])) {\n  foreach ($s[\"system_typography\"] as $t) {\n    $fam = isset($t[\"typography_font_family\"]) ? $t[\"typography_font_family\"] : \"(herda)\";\n    printf(\"%-12s => %s\\n\", $t[\"_id\"], $fam);\n  }\n} else { echo \"system_typography vazio ou formato inesperado\\n\"; }\necho \"----- custom_typography -----\\n\";\nif (is_array($s) && !empty($s[\"custom_typography\"])) {\n  foreach ($s[\"custom_typography\"] as $t) {\n    $fam = isset($t[\"typography_font_family\"]) ? $t[\"typography_font_family\"] : \"(herda)\";\n    printf(\"%-24s => %s\\n\", $t[\"title\"] ?? $t[\"_id\"], $fam);\n  }\n}\n' --path=/var/www/html 2>/dev/null"
 }
 ```
 
@@ -762,7 +762,7 @@ tool_use Bash
 id: toolu_017epEKTtDcMYbkG6SQEh9CY
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao\necho \"=== Valor das typography vars no CSS gerado (cache/min) ===\"\ndocker exec -u www-data concertacao-dev-wordpress sh -c 'grep -rho \"\\-\\-e-global-typography-text-font-family:[^;]*\" /var/www/html/wp-content/cache/min/ 2>/dev/null | sort -u'\necho\necho \"=== Onde a var text-font-family é APLICADA (quais seletores usam) ===\"\ndocker exec -u www-data concertacao-dev-wordpress sh -c 'grep -rho \"font-family:var(\\-\\-e-global-typography-text-font-family[^;)]*)\" /var/www/html/wp-content/cache/min/ 2>/dev/null | sort -u | head'\necho\necho \"=== O kit aplica a text font ao body? (busca no post-2553 / global) ===\"\ndocker exec -u www-data concertacao-dev-wordpress sh -c 'grep -rl \"e-global-typography-text-font-family\" /var/www/html/wp-content/cache/min/ 2>/dev/null | head -5'"
+  "command": "cd /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao\necho \"=== Valor das typography vars no CSS gerado (cache/min) ===\"\ndocker exec -u www-data concertacao-dev-wordpress sh -c 'grep -rho \"\\-\\-e-global-typography-text-font-family:[^;]*\" /var/www/html/wp-content/cache/min/ 2>/dev/null | sort -u'\necho\necho \"=== Onde a var text-font-family é APLICADA (quais seletores usam) ===\"\ndocker exec -u www-data concertacao-dev-wordpress sh -c 'grep -rho \"font-family:var(\\-\\-e-global-typography-text-font-family[^;)]*)\" /var/www/html/wp-content/cache/min/ 2>/dev/null | sort -u | head'\necho\necho \"=== O kit aplica a text font ao body? (busca no post-2553 / global) ===\"\ndocker exec -u www-data concertacao-dev-wordpress sh -c 'grep -rl \"e-global-typography-text-font-family\" /var/www/html/wp-content/cache/min/ 2>/dev/null | head -5'"
 }
 ```
 
@@ -876,7 +876,7 @@ tool_use Write
 id: toolu_01Lcs1HBSfwiztsKtBGNgHQN
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/docs/superpowers/specs/2026-06-09-incorporar-italico-fontes-design.md",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/docs/superpowers/specs/2026-06-09-incorporar-italico-fontes-design.md",
   "content": "# Incorporar itálico às fontes do site — Design\n\n- **Data:** 2026-06-09\n- **Autor:** Daniel Cambría\n- **Site:** Concertação Amazônica (concertacaoamazonia.com.br)\n- **Ambiente de aplicação inicial:** DEV (`cambrasmax.local:8484`) — **prod só após validação**\n- **Tema:** `hello-elementor-child`\n\n## Problema\n\nTextos que pedem itálico (`<em>`, `<i>`, `<cite>`, itálico configurado no\neditor) aparecem **retos** no corpo do site. A causa é a combinação de dois\nfatores:\n\n1. O child theme declara `font-synthesis: none` em `css/base.css` (regra `* {}`,\n   linhas 19–21). Isso impede o navegador de **fabricar** itálico/oblíquo e\n   negrito. A regra foi posta deliberadamente para impedir **fake-bold** de\n   pesos inexistentes da Just Sans (300/500/600/700/900) — ver comentário\n   2.0 no `base.css`.\n2. A fonte do corpo — **Just Sans** — **não possui itálico desenhado**. A\n   fundição Just Creative oferece 8 estilos da família, **todos verticais**\n   (confirmado em MyFonts, 2026-06-09). Não existe `JustSans-Italic` para\n   comprar ou baixar.\n\nResultado: `font-style: italic` no corpo é silenciosamente ignorado.\n\n### Estado atual das famílias\n\n| Família | Papel | Aplicada via | Itálico desenhado |\n|---------|-------|--------------|:---:|\n| **Franie** | Títulos/display (`primary`) | `--e-global-typography-primary-font-family` | ✓ sim (Regular/Bold + Italic/BoldItalic, arquivos já no tema) |\n| **Just Sans** | Corpo do texto (`text`) | `--e-global-typography-text-font-family` (vale `\"Just Sans\"`) | ✗ **não existe** |\n| **Roboto** | Labels do SVG […]
 
 > TOOL
@@ -884,7 +884,7 @@ id: toolu_01Lcs1HBSfwiztsKtBGNgHQN
 tool_result
 id: toolu_01Lcs1HBSfwiztsKtBGNgHQN
 ```
-File created successfully at: /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/docs/superpowers/specs/2026-06-09-incorporar-italico-fontes-design.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/docs/superpowers/specs/2026-06-09-incorporar-italico-fontes-design.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -897,7 +897,7 @@ tool_use Bash
 id: toolu_01LC9HUrpkjrr85x5uDn2C2k
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao\ngit add docs/superpowers/specs/2026-06-09-incorporar-italico-fontes-design.md\ngit commit -q -m \"docs(spec): incorporar itálico às fontes (Just Sans oblíquo + Franie ênfase)\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\" && echo \"commitado: $(git rev-parse --short HEAD)\""
+  "command": "cd /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao\ngit add docs/superpowers/specs/2026-06-09-incorporar-italico-fontes-design.md\ngit commit -q -m \"docs(spec): incorporar itálico às fontes (Just Sans oblíquo + Franie ênfase)\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\" && echo \"commitado: $(git rev-parse --short HEAD)\""
 }
 ```
 
@@ -957,7 +957,7 @@ tool_use Bash
 id: toolu_012ZW24yxUht4JECqpqcKw3M
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao\ngit log --oneline -3\necho \"--- status do spec ---\"\ngit status --short docs/superpowers/specs/2026-06-09-incorporar-italico-fontes-design.md"
+  "command": "cd /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao\ngit log --oneline -3\necho \"--- status do spec ---\"\ngit status --short docs/superpowers/specs/2026-06-09-incorporar-italico-fontes-design.md"
 }
 ```
 
@@ -983,7 +983,7 @@ tool_use Bash
 id: toolu_01Fyo9BJhketsDi49fUsWG4o
 ```json
 {
-  "command": "git commit -q -m \"docs(spec): incorporar itálico às fontes (Just Sans oblíquo + Franie ênfase)\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\" -- docs/superpowers/specs/2026-06-09-incorporar-italico-fontes-design.md; git log --oneline -1"
+  "command": "git commit -q -m \"docs(spec): incorporar itálico às fontes (Just Sans oblíquo + Franie ênfase)\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\" -- docs/superpowers/specs/2026-06-09-incorporar-italico-fontes-design.md; git log --oneline -1"
 }
 ```
 
@@ -1005,7 +1005,7 @@ tool_use Bash
 id: toolu_01XVQ67QgA4LhngNRRcx5tc3
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao\ngit log --oneline -2\necho \"--- spec ainda staged? ---\"\ngit status --short docs/superpowers/specs/2026-06-09-incorporar-italico-fontes-design.md || echo \"(limpo)\""
+  "command": "cd /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao\ngit log --oneline -2\necho \"--- spec ainda staged? ---\"\ngit status --short docs/superpowers/specs/2026-06-09-incorporar-italico-fontes-design.md || echo \"(limpo)\""
 }
 ```
 
@@ -1076,7 +1076,7 @@ tool_use Bash
 id: toolu_01Gg3Nr4KeGJLnVWSp3oMSB1
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao\necho \"=== Container WP up? ===\"\ndocker ps --format '{{.Names}} {{.Status}}' | grep '^concertacao-dev-wordpress'\necho\necho \"=== Site responde em dev? ===\"\ncurl -sk -o /dev/null -w \"HTTP %{http_code} em %{time_total}s\\n\" https://cambrasmax.local:8484/ 2>&1 | head -1"
+  "command": "cd /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao\necho \"=== Container WP up? ===\"\ndocker ps --format '{{.Names}} {{.Status}}' | grep '^concertacao-dev-wordpress'\necho\necho \"=== Site responde em dev? ===\"\ncurl -sk -o /dev/null -w \"HTTP %{http_code} em %{time_total}s\\n\" https://cambrasmax.local:8484/ 2>&1 | head -1"
 }
 ```
 
@@ -1249,7 +1249,7 @@ tool_use Read
 id: toolu_01NRerdv2jY6xLBbFcZHG84i
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.playwright-mcp/italico-antes.png"
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.playwright-mcp/italico-antes.png"
 }
 ```
 
@@ -1258,7 +1258,7 @@ id: toolu_01NRerdv2jY6xLBbFcZHG84i
 tool_result ERROR
 id: toolu_01NRerdv2jY6xLBbFcZHG84i
 ```
-File does not exist. Note: your current working directory is /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao.
+File does not exist. Note: your current working directory is /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao.
 ```
 
 > TOOL
@@ -1267,7 +1267,7 @@ tool_use Bash
 id: toolu_013zz22Dcp4Ghqgxvn1C66dA
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao\nfind . -name \"italico-antes.png\" 2>/dev/null; ls -la .playwright-mcp/ 2>/dev/null | tail -5"
+  "command": "cd /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao\nfind . -name \"italico-antes.png\" 2>/dev/null; ls -la .playwright-mcp/ 2>/dev/null | tail -5"
 }
 ```
 
@@ -1290,7 +1290,7 @@ tool_use Read
 id: toolu_01DLwxGkiARgxSfCr8WgJX2E
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/italico-antes.png"
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/italico-antes.png"
 }
 ```
 
@@ -1389,7 +1389,7 @@ tool_use Read
 id: toolu_01L9fxsS1E173te9nVDw5mtW
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/italico-antes-completo.png"
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/italico-antes-completo.png"
 }
 ```
 
@@ -1463,7 +1463,7 @@ id: toolu_01WGxoh5FcRrujBaw1gHDyXt
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/base.css",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/base.css",
   "old_string": "* {\n    font-synthesis: none;\n}\n\n/* --- 2.1 HTML & Body --- */",
   "new_string": "* {\n    font-synthesis: none;\n}\n\n/* --- 2.0.1 Itálico (oblíquo sintético) só para a Just Sans ---\n * A Just Sans NÃO tem itálico desenhado pela fundição (Just Creative oferece\n * 8 estilos, todos verticais). Como a regra 2.0 acima desliga font-synthesis,\n * `font-style: italic` no corpo era silenciosamente ignorado (texto saía reto).\n *\n * Aqui reabilitamos APENAS a síntese de itálico (`style`, NUNCA `weight`) e\n * APENAS para a família do corpo. Assim:\n *   - Just Sans em itálico → browser inclina (~12°) os pesos reais 400 e 800;\n *   - fake-bold continua proibido (não habilitamos `weight`);\n *   - Franie segue intacta, usando seus arquivos itálicos VERDADEIROS (a regra\n *     2.0 não a afeta porque a Franie nunca dependeu de síntese).\n *\n * Âncoras: elementos que herdam a fonte global de texto do Elementor\n * (var --e-global-typography-text-font-family == \"Just Sans\") e a marcação\n * semântica de ênfase no conteúdo (em/i/cite). Para itálico VERDADEIRO em\n * ênfases editoriais escolhidas a dedo, usar a classe .bit-emphasis-serif\n * (Franie) — ver seção 2.2.\n */\n.elementor-widget-text-editor,\n.elementor-widget-theme-post-content,\n.entry-content,\n.elementor-widget-text-editor em,\n.elementor-widget-text-editor i,\n.elementor-widget-text-editor cite,\n.elementor-widget-theme-post-content em,\n.elementor-widget-theme-post-content i,\n.elementor-widget-theme-post-content cite,\n.entry-content em,\n.entry-content […]
 
@@ -1472,7 +1472,7 @@ id: toolu_01WGxoh5FcRrujBaw1gHDyXt
 tool_result
 id: toolu_01WGxoh5FcRrujBaw1gHDyXt
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/base.css has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/base.css has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1486,7 +1486,7 @@ id: toolu_01FF54WSgzBtht7eqsENFrst
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/base.css",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/base.css",
   "old_string": "#content .tituloPagina {\n    margin-top: 5rem;\n}",
   "new_string": "#content .tituloPagina {\n    margin-top: 5rem;\n}\n\n/* Ênfase editorial em itálico VERDADEIRO (Franie Italic, cursivo desenhado).\n * Uso opt-in por classe num widget/trecho específico (citações de obras,\n * epígrafes) onde o oblíquo sintético da Just Sans não basta. Não afeta o\n * corpo geral. Franie tem arquivos Italic/BoldItalic reais → font-synthesis\n * herdado (none) é irrelevante aqui. */\n.bit-emphasis-serif,\n.bit-emphasis-serif em,\n.bit-emphasis-serif i {\n    font-family: 'Franie', serif;\n    font-style : italic;\n}"
 }
@@ -1497,7 +1497,7 @@ id: toolu_01FF54WSgzBtht7eqsENFrst
 tool_result
 id: toolu_01FF54WSgzBtht7eqsENFrst
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/base.css has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/base.css has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1510,7 +1510,7 @@ tool_use Bash
 id: toolu_017cGkjQvu4P27AMPG93nw5E
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child\necho \"=== Version no style.css ===\"\ngrep -n -i \"version\" style.css | head -5\necho\necho \"=== Como base.css é enfileirado (versão usada no enqueue) ===\"\ngrep -rn \"base.css\\|wp_enqueue_style\\|filemtime\\|CHILD_THEME_VERSION\\|get_stylesheet\" functions.php | grep -i \"css\\|version\\|enqueue\" | head -20"
+  "command": "cd /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child\necho \"=== Version no style.css ===\"\ngrep -n -i \"version\" style.css | head -5\necho\necho \"=== Como base.css é enfileirado (versão usada no enqueue) ===\"\ngrep -rn \"base.css\\|wp_enqueue_style\\|filemtime\\|CHILD_THEME_VERSION\\|get_stylesheet\" functions.php | grep -i \"css\\|version\\|enqueue\" | head -20"
 }
 ```
 
@@ -1555,7 +1555,7 @@ tool_use Read
 id: toolu_013kKZB8xG5wp8fo86h8bgPm
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/style.css",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/style.css",
   "limit": 12
 }
 ```
@@ -1586,7 +1586,7 @@ id: toolu_01TXLTZWYEVHXR22z5XuJYNB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/style.css",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/style.css",
   "old_string": "Version: 2.2.39",
   "new_string": "Version: 2.2.40"
 }
@@ -1597,7 +1597,7 @@ id: toolu_01TXLTZWYEVHXR22z5XuJYNB
 tool_result
 id: toolu_01TXLTZWYEVHXR22z5XuJYNB
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/style.css has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/style.css has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1610,7 +1610,7 @@ tool_use Bash
 id: toolu_0199oUNacr8DEPHqeVd7xoKH
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao\necho \"=== Remove minify físico do base.css (dev) ===\"\ndocker exec -u www-data concertacao-dev-wordpress sh -c 'find /var/www/html/wp-content/cache/min -path \"*hello-elementor-child*base*.css\" -delete 2>/dev/null; echo \"minify base.css removido\"'\necho\necho \"=== Flush WP Rocket minify + cache geral ===\"\ndocker exec -u www-data concertacao-dev-wordpress wp eval 'if(function_exists(\"rocket_clean_minify\")){rocket_clean_minify(\"css\");} if(function_exists(\"rocket_clean_domain\")){rocket_clean_domain();} echo \"rocket flushed\\n\";' --path=/var/www/html 2>/dev/null\ndocker exec -u www-data concertacao-dev-wordpress wp cache flush --path=/var/www/html 2>/dev/null\necho\necho \"=== Confirma que o filemtime do base.css mudou (cache-buster) ===\"\ndocker exec -u www-data concertacao-dev-wordpress sh -c 'stat -c \"%y\" /var/www/html/wp-content/themes/hello-elementor-child/css/base.css 2>/dev/null'"
+  "command": "cd /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao\necho \"=== Remove minify físico do base.css (dev) ===\"\ndocker exec -u www-data concertacao-dev-wordpress sh -c 'find /var/www/html/wp-content/cache/min -path \"*hello-elementor-child*base*.css\" -delete 2>/dev/null; echo \"minify base.css removido\"'\necho\necho \"=== Flush WP Rocket minify + cache geral ===\"\ndocker exec -u www-data concertacao-dev-wordpress wp eval 'if(function_exists(\"rocket_clean_minify\")){rocket_clean_minify(\"css\");} if(function_exists(\"rocket_clean_domain\")){rocket_clean_domain();} echo \"rocket flushed\\n\";' --path=/var/www/html 2>/dev/null\ndocker exec -u www-data concertacao-dev-wordpress wp cache flush --path=/var/www/html 2>/dev/null\necho\necho \"=== Confirma que o filemtime do base.css mudou (cache-buster) ===\"\ndocker exec -u www-data concertacao-dev-wordpress sh -c 'stat -c \"%y\" /var/www/html/wp-content/themes/hello-elementor-child/css/base.css 2>/dev/null'"
 }
 ```
 
@@ -1796,7 +1796,7 @@ tool_use Read
 id: toolu_019xDxY3QyAGtzFZtrTbZH6p
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/italico-depois.png"
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/italico-depois.png"
 }
 ```
 
@@ -1904,7 +1904,7 @@ tool_use Read
 id: toolu_014aAkUc8xCfBUFTCUgsjkWh
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/italico-comparativo.png"
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/italico-comparativo.png"
 }
 ```
 

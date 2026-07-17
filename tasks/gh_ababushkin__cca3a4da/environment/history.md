@@ -109,7 +109,7 @@ tool_result
 id: toolu_01LEQQmz2UyjAMQmAjEK5ort
 ```
 <persisted-output>
-Output too large (50.9KB). Full output saved to: /Users/anton/.claude/projects/-Users-anton-src-drain-cycle/75418cc5-ca2f-42e9-9cbf-74ba261dd2d7/tool-results/b54bipw77.txt
+Output too large (50.9KB). Full output saved to: /home/<USER>/.claude/projects/-Users-anton-src-drain-cycle/75418cc5-ca2f-42e9-9cbf-74ba261dd2d7/tool-results/b54bipw77.txt
 
 Preview (first 2KB):
 Binary file ./drain_cycle/__pycache__/orchestrator.cpython-312.pyc matches
@@ -134,7 +134,7 @@ tool_use Read
 id: toolu_01DVBt3KZbbzzaLntYenKqgT
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/orchestrator.py",
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/orchestrator.py",
   "offset": 680,
   "limit": 160
 }
@@ -308,7 +308,7 @@ tool_use Read
 id: toolu_01Vox4sZywnbGiNQtDRYVFif
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/stop_guard.py"
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/stop_guard.py"
 }
 ```
 
@@ -370,7 +370,7 @@ tool_use Read
 id: toolu_01Q5FgBeDU9zFbJdA22c1jkW
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/prompt.py",
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/prompt.py",
   "offset": 76,
   "limit": 70
 }
@@ -494,7 +494,7 @@ tool_use Read
 id: toolu_01M4ashdAjCa9urfkXwGwJqy
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/console.py",
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/console.py",
   "offset": 110,
   "limit": 60
 }
@@ -592,7 +592,7 @@ tool_use Read
 id: toolu_01Drn7DeTEmB6brhrECHWJjb
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/worker.py",
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/worker.py",
   "offset": 200,
   "limit": 140
 }
@@ -726,7 +726,7 @@ tool_use Read
 id: toolu_013X8MXGjUzRahqrfXjP8QQu
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/worker.py",
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/worker.py",
   "offset": 395,
   "limit": 60
 }
@@ -805,20 +805,20 @@ id: toolu_01SgSrmDMD9i4NVxUDyLDDtt
 644  repos.yml  377B
 644  limits.yml  135B
 644  .env  268B
-/Users/anton/.drain-cycle/runs/52563a03-080e-4db7-b003-ebd27759cf29-20260601T054139473320Z.json
-/Users/anton/.drain-cycle/runs/52563a03-080e-4db7-b003-ebd27759cf29-20260526T100729016200Z.json
-/Users/anton/.drain-cycle/runs/793fc9ea-08c7-40c1-8c1b-417efb20adbf-20260610T140220454364Z.json
-/Users/anton/.drain-cycle/runs/52563a03-080e-4db7-b003-ebd27759cf29-20260526T100700541279Z.json
-/Users/anton/.drain-cycle/runs/52563a03-080e-4db7-b003-ebd27759cf29-20260528T130032809057Z.json
-/Users/anton/.drain-cycle/runs/793fc9ea-08c7-40c1-8c1b-417efb20adbf-20260614T081115904202Z.json
-/Users/anton/.drain-cycle/runs/9e17380f-9527-40ef-8523-4e4358f12809-20260615T141442258554Z.json
-/Users/anton/.drain-cycle/runs/793fc9ea-08c7-40c1-8c1b-417efb20adbf-20260611T111842249473Z.json
-/Users/anton/.drain-cycle/runs/52563a03-080e-4db7-b003-ebd27759cf29-20260526T094355176586Z.json
-/Users/anton/.drain-cycle/runs/52563a03-080e-4db7-b003-ebd27759cf29-20260526T111721271333Z.json
+/home/<USER>/.drain-cycle/runs/52563a03-080e-4db7-b003-ebd27759cf29-20260601T054139473320Z.json
+/home/<USER>/.drain-cycle/runs/52563a03-080e-4db7-b003-ebd27759cf29-20260526T100729016200Z.json
+/home/<USER>/.drain-cycle/runs/793fc9ea-08c7-40c1-8c1b-417efb20adbf-20260610T140220454364Z.json
+/home/<USER>/.drain-cycle/runs/52563a03-080e-4db7-b003-ebd27759cf29-20260526T100700541279Z.json
+/home/<USER>/.drain-cycle/runs/52563a03-080e-4db7-b003-ebd27759cf29-20260528T130032809057Z.json
+/home/<USER>/.drain-cycle/runs/793fc9ea-08c7-40c1-8c1b-417efb20adbf-20260614T081115904202Z.json
+/home/<USER>/.drain-cycle/runs/9e17380f-9527-40ef-8523-4e4358f12809-20260615T141442258554Z.json
+/home/<USER>/.drain-cycle/runs/793fc9ea-08c7-40c1-8c1b-417efb20adbf-20260611T111842249473Z.json
+/home/<USER>/.drain-cycle/runs/52563a03-080e-4db7-b003-ebd27759cf29-20260526T094355176586Z.json
+/home/<USER>/.drain-cycle/runs/52563a03-080e-4db7-b003-ebd27759cf29-20260526T111721271333Z.json
 === limits config ===
 per_issue_tokens: 16000000 # 16 million, double the default
 per_issue_seconds: 1800 # 30 minutes, complex tasks can take 20-25 minutes
-(eval):1: no matches found: /Users/anton/.drain-cycle/config.*
+(eval):1: no matches found: /home/<USER>/.drain-cycle/config.*
 ./pyproject.toml
 ./mise.toml
 ./docs/limits.example.yml
@@ -916,7 +916,7 @@ started: None finished: None
 outcome/verdict: None
 -- entries --
   {'final_linear_state': 'Done', 'halt_reason': None, 'exit_code': 0, 'finishing_runs': [{'trigger': 'err-issue-not-done', 'started_at': '2026-06-18T06:43:10.245774+00:00', 'finished_at': '2026-06-18T06:50:35.392445+00:00', 'duration_seconds': 445.14038400002755, 'model': 'claude-sonnet-4-6', 'usage': {'input_tokens': 390, 'output_tokens': 1319, 'cache_creation_input_tokens': 64480, 'cache_read_input_tokens': 2644532, 'cumulative': 2710721, 'peak_context': 81343}, 'cost_usd': 1.4781996, 'num_turns': 57, 'session_id': '1ba3bb9a-30ae-4ddb-89a5-da1c748c70f7', 'is_error': False}]}
-Shell cwd was reset to /Users/anton/src/drain-cycle
+Shell cwd was reset to /home/<USER>/src/drain-cycle
 ```
 
 > AGENT
@@ -975,7 +975,7 @@ tool_use Read
 id: toolu_01Xb1YimpYbDCqcCKZfs3gro
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/orchestrator.py",
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/orchestrator.py",
   "offset": 660,
   "limit": 220
 }
@@ -1034,7 +1034,7 @@ tool_use Read
 id: toolu_01ARg1kMprrRvTuTXuK2qaN7
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/handoff.py"
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/handoff.py"
 }
 ```
 
@@ -1075,7 +1075,7 @@ tool_use Read
 id: toolu_0111bpaMCzqeuhiwvLGyFLbM
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/orchestrator.py",
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/orchestrator.py",
   "offset": 880,
   "limit": 160
 }
@@ -1251,7 +1251,7 @@ tool_use Read
 id: toolu_014nMGg9uQYbjnWeAZzRgtKA
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/tests/test_orchestrator_finishing.py"
+  "file_path": "/home/<USER>/src/drain-cycle/tests/test_orchestrator_finishing.py"
 }
 ```
 
@@ -1318,7 +1318,7 @@ tool_use Read
 id: toolu_01PjpH7Vo1vnKouURfA9WABM
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/tests/test_prompt.py"
+  "file_path": "/home/<USER>/src/drain-cycle/tests/test_prompt.py"
 }
 ```
 
@@ -1419,7 +1419,7 @@ id: toolu_017y7cB4jMwS7DqqAp9Y7xFp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/orchestrator.py",
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/orchestrator.py",
   "old_string": "        finishing_runs: list[dict] = []\n        finishing_attempted = False\n\n        # Recovery: committed-but-unfinished → spawn a sonnet finishing sub-agent\n        # before halting. Fires only when the branch has commits beyond base (an\n        # empty or uncommitted-only branch is a genuine failure), the verifier did\n        # not explicitly reject the work (a FAIL verdict must stay halted to\n        # satisfy KR2), and a cap breach did not already stop the session (that\n        # path returned above). At most one finishing attempt per issue per run.\n        if not is_done and _commits_beyond_base(worktree_path, base):",
   "new_string": "        finishing_runs: list[dict] = []\n        finishing_attempted = False\n\n        # The submission signal is ``pr_urls`` in exec-state.json, not the Linear\n        # Done state. A stack worker that submitted its PR(s) and deliberately\n        # left the issue In Progress (governance: stay In Progress until the PR\n        # merges) is complete — read that signal up front so both the recovery\n        # condition and the success gate below key on submission rather than on\n        # Done. Push mode has no handoff, so this is always ``None`` there.\n        submitted = handoff.read(worktree_path) if stack else None\n\n        # Recovery: committed-but-unsubmitted → spawn a sonnet finishing sub-agent\n […]
 
@@ -1428,7 +1428,7 @@ id: toolu_017y7cB4jMwS7DqqAp9Y7xFp
 tool_result
 id: toolu_017y7cB4jMwS7DqqAp9Y7xFp
 ```
-The file /Users/anton/src/drain-cycle/drain_cycle/orchestrator.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/drain_cycle/orchestrator.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1438,7 +1438,7 @@ id: toolu_019PZy33C6uMV7VNe4ypWoDp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/orchestrator.py",
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/orchestrator.py",
   "old_string": "                _finishing_result = worker.run_issue(\n                    claude_cmd=_CLAUDE_CMD,\n                    model=_FINISHING_MODEL,\n                    prompt=prompt.build_finishing(identifier, worktree_path, base),\n                    cwd=worktree_path,\n                    token_limit=limits.per_issue_tokens,\n                    time_limit_seconds=limits.per_issue_seconds,\n                    cost_limit_usd=limits.per_issue_cost_usd,\n                    passthrough=console.AgentSink(),\n                )\n                _finishing_finished = _now_iso()\n                finishing_runs.append({\n                    \"trigger\": \"err-issue-not-done\",",
   "new_string": "                _finishing_result = worker.run_issue(\n                    claude_cmd=_CLAUDE_CMD,\n                    model=_FINISHING_MODEL,\n                    prompt=prompt.build_finishing(\n                        identifier, worktree_path, base, stack=stack\n                    ),\n                    cwd=worktree_path,\n                    token_limit=limits.per_issue_tokens,\n                    time_limit_seconds=limits.per_issue_seconds,\n                    cost_limit_usd=limits.per_issue_cost_usd,\n                    passthrough=console.AgentSink(),\n                )\n                _finishing_finished = _now_iso()\n                finishing_runs.append({\n                    \"trigger\": \"err-issue-not-done\","
 }
@@ -1449,7 +1449,7 @@ id: toolu_019PZy33C6uMV7VNe4ypWoDp
 tool_result
 id: toolu_019PZy33C6uMV7VNe4ypWoDp
 ```
-The file /Users/anton/src/drain-cycle/drain_cycle/orchestrator.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/drain_cycle/orchestrator.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1459,7 +1459,7 @@ id: toolu_01QcDvJ2kJuhZr1sUvETQA8K
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/orchestrator.py",
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/orchestrator.py",
   "old_string": "                # Re-read to see whether finishing succeeded\n                refreshed = linear.get_issue(issue[\"id\"])\n                post_spawn_state = refreshed[\"state\"][\"name\"]\n                is_done = refreshed[\"state\"][\"type\"] == _DONE_STATE_TYPE\n                issue_span.set_attribute(\"issue.is_done\", is_done)",
   "new_string": "                # Re-read to see whether finishing succeeded. In stack mode the\n                # finishing agent records ``pr_urls`` and (per governance) leaves\n                # the issue In Progress, so re-read the submission signal too —\n                # the success gate below accepts it whether or not Done was set.\n                refreshed = linear.get_issue(issue[\"id\"])\n                post_spawn_state = refreshed[\"state\"][\"name\"]\n                is_done = refreshed[\"state\"][\"type\"] == _DONE_STATE_TYPE\n                issue_span.set_attribute(\"issue.is_done\", is_done)\n                submitted = handoff.read(worktree_path) if stack else None"
 }
@@ -1470,7 +1470,7 @@ id: toolu_01QcDvJ2kJuhZr1sUvETQA8K
 tool_result
 id: toolu_01QcDvJ2kJuhZr1sUvETQA8K
 ```
-The file /Users/anton/src/drain-cycle/drain_cycle/orchestrator.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/drain_cycle/orchestrator.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1484,7 +1484,7 @@ id: toolu_016sUMdV76nDUjQ1gM8Mb6PE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/orchestrator.py",
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/orchestrator.py",
   "old_string": "        if is_done:\n            # Stack-mode confirmation gate, read before teardown removes the\n            # worktree. A Done issue in stack mode must have left a non-empty\n            # ``pr_urls`` — that is the orchestrator's proof submission ran.\n            # If it's missing, the worker marked Done without opening a PR:\n            # revert + halt, preserve the worktree for inspection, and do NOT\n            # extend the baton — the next same-repo issue must not stack onto a\n            # branch that was never pushed. Push-mode issues have no stack to\n            # extend and no handoff, so they bypass the gate entirely.\n            submitted = handoff.read(worktree_path) if stack else None\n            if stack and submitted is None:",
   "new_string": "        if is_done or submitted is not None:\n            # Success gate. The cycle completes when the worker either marked the\n            # issue Done (push mode: the push to main is the completion proof) or\n            # left a non-empty ``pr_urls`` (stack mode: the submitted PR is the\n            # proof, and the issue stays In Progress until that PR merges).\n            #\n            # Stack-mode confirmation, read before teardown removes the worktree:\n            # a stack issue that reached here on Done alone but […]
 
@@ -1493,7 +1493,7 @@ id: toolu_016sUMdV76nDUjQ1gM8Mb6PE
 tool_result
 id: toolu_016sUMdV76nDUjQ1gM8Mb6PE
 ```
-The file /Users/anton/src/drain-cycle/drain_cycle/orchestrator.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/drain_cycle/orchestrator.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1507,7 +1507,7 @@ id: toolu_01DfNmVAGPYwj7v3iQpkWsN1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/orchestrator.py",
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/orchestrator.py",
   "old_string": "                    _finishing_result = worker.run_issue(\n                        claude_cmd=_CLAUDE_CMD,\n                        model=_FINISHING_MODEL,\n                        prompt=prompt.build_finishing(identifier, worktree_path, base),\n                        cwd=worktree_path,\n                        token_limit=limits.per_issue_tokens,\n                        time_limit_seconds=limits.per_issue_seconds,\n                        cost_limit_usd=limits.per_issue_cost_usd,\n                        passthrough=console.AgentSink(),\n                    )\n                    _finishing_finished = _now_iso()\n                    finishing_runs.append({\n                        \"trigger\": \"err-stack-no-prs\",",
   "new_string": "                    _finishing_result = worker.run_issue(\n                        claude_cmd=_CLAUDE_CMD,\n                        model=_FINISHING_MODEL,\n                        prompt=prompt.build_finishing(\n                            identifier, worktree_path, base, stack=stack\n                        ),\n                        cwd=worktree_path,\n                        token_limit=limits.per_issue_tokens,\n                        time_limit_seconds=limits.per_issue_seconds,\n                        cost_limit_usd=limits.per_issue_cost_usd,\n                        passthrough=console.AgentSink(),\n                    )\n                    _finishing_finished = _now_iso()\n                    finishing_runs.append({\n                        \"trigger\": \"err-stack-no-prs\","
 }
@@ -1518,7 +1518,7 @@ id: toolu_01DfNmVAGPYwj7v3iQpkWsN1
 tool_result
 id: toolu_01DfNmVAGPYwj7v3iQpkWsN1
 ```
-The file /Users/anton/src/drain-cycle/drain_cycle/orchestrator.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/drain_cycle/orchestrator.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1532,7 +1532,7 @@ id: toolu_01MF4HNUg4XQyxiRVgYeQNMU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/prompt.py",
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/prompt.py",
   "old_string": "def build_finishing(identifier: str, worktree: Path, base: str) -> str:\n    \"\"\"Build a finishing-only prompt for a committed-but-unfinished issue.\n\n    The implementation is already committed. The agent runs review → fix →\n    pr-finishing → Done. It must not re-implement or add commits beyond those\n    needed to fix Critical/Required review findings.\n    Critical/Required fixes are delegated to ``_FINISHING_OPUS_MODEL`` sub-agents.\n    \"\"\"\n    if base == \"main\":\n        base_clause = \"\"\n    else:\n        base_clause = (\n            f\" These commits are stacked on `{base}`, not `main`, so pass \"\n            f\"`{base}` to the skill as its base branch (it slices `{base}..HEAD`).\"\n        )\n    return (\n        f\"# Finishing incomplete issue {identifier}\\n\\n\"\n        f\"The implementation for this issue is already committed on this branch. \"\n        f\"Run `git log --oneline {base}..HEAD` to see the committed work.\\n\\n\"\n        \"Your only task is to run the finishing protocol below. Do not \"\n        \"re-implement, redesign, or add commits beyond those needed to fix \"\n        \"Critical/Required review findings.\\n\\n\"\n        \"---\\n\\n\"\n        f\"Finishing instructions for issue {identifier}:\\n\"\n        f\"- Working directory: {worktree}\\n\"\n        f\"- Base branch: {base}\\n\"\n        \"- Steps (run in order, before marking Done):\\n\"\n        \"  1. Review the committed changes for correctness and quality.\\n\"\n        \"  2. Fix any Critical or Required findings. For each fix […]
 
 > TOOL
@@ -1540,7 +1540,7 @@ id: toolu_01MF4HNUg4XQyxiRVgYeQNMU
 tool_result
 id: toolu_01MF4HNUg4XQyxiRVgYeQNMU
 ```
-The file /Users/anton/src/drain-cycle/drain_cycle/prompt.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/drain_cycle/prompt.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1554,7 +1554,7 @@ id: toolu_015xuWW8ruu5CrYr5cPCfKdz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/stop_guard.py",
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/stop_guard.py",
   "old_string": "_BLOCK_PROMPT_STACK = (\n    \"drain-cycle stop-guard: the issue is not finished — the worktree has \"\n    \"uncommitted changes or no submitted PRs in exec-state.json yet. \"\n    \"Complete the remaining steps now: commit any pending changes to the \"\n    \"issue branch as reviewable slices (do not push by hand), run \"\n    \"`/shape:pr-finishing` to submit the stacked PR(s) — it writes the \"\n    \"pr_urls into exec-state.json and posts the review-summary comment \"\n    \"— then transition the issue to Done. If you are genuinely blocked, \"\n    \"leave the issue In Progress and post a comment naming the blocker — \"\n    \"do not stop silently.\"\n)",
   "new_string": "_BLOCK_PROMPT_STACK = (\n    \"drain-cycle stop-guard: the issue is not finished — the worktree has \"\n    \"uncommitted changes or no submitted PRs in exec-state.json yet. \"\n    \"Complete the remaining steps now: commit any pending changes to the \"\n    \"issue branch as reviewable slices (do not push by hand), run \"\n    \"`/shape:pr-finishing` to submit the stacked PR(s) — it writes the \"\n    \"pr_urls into exec-state.json and posts the review-summary comment. \"\n    \"Leave the issue In Progress: the submitted PR is the completion signal \"\n    \"and the issue stays In Progress […]
 
@@ -1563,7 +1563,7 @@ id: toolu_015xuWW8ruu5CrYr5cPCfKdz
 tool_result
 id: toolu_015xuWW8ruu5CrYr5cPCfKdz
 ```
-The file /Users/anton/src/drain-cycle/drain_cycle/stop_guard.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/drain_cycle/stop_guard.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1577,7 +1577,7 @@ id: toolu_01XaQV3AesYnQZU53Lp3M3Yz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/tests/test_prompt.py",
+  "file_path": "/home/<USER>/src/drain-cycle/tests/test_prompt.py",
   "old_string": "def test_build_finishing_contains_identifier_base_and_worktree(tmp_path: Path) -> None:\n    \"\"\"build_finishing names the identifier, worktree, and base in the output.\"\"\"\n    worktree = tmp_path / \".worktrees\" / \"ABA-383\"\n    rendered = build_finishing(\"ABA-383\", worktree, \"main\")\n\n    assert \"ABA-383\" in rendered\n    assert str(worktree) in rendered\n    assert \"main..HEAD\" in rendered\n    assert \"/shape:pr-finishing\" in rendered\n    assert \"exec-state.json\" in rendered\n    assert \".drain-handoff.json\" not in rendered\n    # Tail line last\n    non_empty = [line for line in rendered.splitlines() if line.strip()]\n    assert \"Done\" in non_empty[-1]",
   "new_string": "def test_build_finishing_contains_identifier_base_and_worktree(tmp_path: Path) -> None:\n    \"\"\"build_finishing names the identifier, worktree, and base in the output.\"\"\"\n    worktree = tmp_path / \".worktrees\" / \"ABA-383\"\n    rendered = build_finishing(\"ABA-383\", worktree, \"main\")\n\n    assert \"ABA-383\" in rendered\n    assert str(worktree) in rendered\n    assert \"main..HEAD\" in rendered\n    assert \"/shape:pr-finishing\" in rendered\n    assert \"exec-state.json\" in rendered\n    assert \".drain-handoff.json\" not in rendered\n\n\ndef test_build_finishing_stack_leaves_in_progress(tmp_path: Path) -> None:\n    \"\"\"Stack mode (the default): the submitted PR is the completion signal, so\n    the agent leaves the issue In Progress and must not transition to Done.\"\"\"\n    worktree = tmp_path / \".worktrees\" / \"ABA-383\"\n    rendered = build_finishing(\"ABA-383\", worktree, \"main\", stack=True)\n\n    non_empty = [line for line in rendered.splitlines() if line.strip()]\n    assert \"In Progress\" in non_empty[-1]\n    assert \"do not transition it to Done\" in rendered\n    # No […]
 
@@ -1586,7 +1586,7 @@ id: toolu_01XaQV3AesYnQZU53Lp3M3Yz
 tool_result
 id: toolu_01XaQV3AesYnQZU53Lp3M3Yz
 ```
-The file /Users/anton/src/drain-cycle/tests/test_prompt.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/tests/test_prompt.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1643,16 +1643,16 @@ id: toolu_01SsVLnW7Qwa6aktfxRqWYeA
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/tests/test_orchestrator_finishing.py",
+  "file_path": "/home/<USER>/src/drain-cycle/tests/test_orchestrator_finishing.py",
   "old_string": "# ---------------------------------------------------------------------------\n# not-Done recovery: finishing sub-agent fails to mark Done\n# ---------------------------------------------------------------------------",
-  "new_string": "# ---------------------------------------------------------------------------\n# not-Done but submitted: pr_urls present + In Progress → complete, no finishing\n# ---------------------------------------------------------------------------\n\n\ndef test_stack_worker_in_progress_with_pr_urls_is_complete(\n    tmp_path: Path, monkeypatch: pytest.MonkeyPatch\n) -> None:\n    \"\"\"Stack worker that submits its PR(s) and leaves the issue In Progress is\n    complete: no finishing sub-agent spawns, the run continues, and the\n    submission — not a Done transition — is the completion signal.\"\"\"\n    repo = tmp_path / \"repo\"\n    repo.mkdir()\n    _init_repo(repo)\n    monkeypatch.chdir(repo)\n    monkeypatch.setenv(\"HOME\", str(tmp_path))\n\n    issue = _issue(\"ABA-INPROG\")\n    issues_by_id = {issue[\"id\"]: issue}\n    counter_file = tmp_path / \"invocation_count.txt\"\n\n    def fake_get_issue(issue_id: str) -> dict:\n        # The worker leaves the issue In Progress (started) — never Done.\n        base = issues_by_id[issue_id]\n        return {**base, \"state\": {\"type\": \"started\", \"name\": \"In Progress\"}}\n\n    monkeypatch.setattr(linear, \"current_cycle_id\", lambda: \"stub-cycle\")\n    monkeypatch.setattr(linear, \"pending_issues\", lambda c: linear._plan([issue]))\n    monkeypatch.setattr(linear, \"get_issue\", fake_get_issue)\n    monkeypatch.setattr(linear, \"set_state\", lambda iid, s: None)\n\n    # Single invocation: commit, write finish.pr_urls, leave In Progress (no Done).\n    script = tmp_path / \"fake-claude.sh\"\n    script.write_text(\n        \"#!/bin/sh\\n\"\n        f'count=$(cat \"{counter_file}\" 2>/dev/null || echo 0)\\n'\n        'count=$((count + 1))\\n'\n        f'printf \"%s\" \"$count\" > \"{counter_file}\"\\n'\n        'git config user.email \"test@test.com\" 2>/dev/null\\n'\n        'git config user.name \"Test\" 2>/dev/null\\n'\n        'touch work.txt\\n'\n        \"git add work.txt 2>/dev/null\\n\"\n        'git commit -m \"work\" 2>/dev/null\\n'\n […]
+  "new_string": "# ---------------------------------------------------------------------------\n# not-Done but submitted: pr_urls present + In Progress → complete, no finishing\n# ---------------------------------------------------------------------------\n\n\ndef test_stack_worker_in_progress_with_pr_urls_is_complete(\n    tmp_path: Path, monkeypatch: pytest.MonkeyPatch\n) -> None:\n    \"\"\"Stack worker that submits its PR(s) and leaves the issue In Progress is\n    complete: no finishing sub-agent spawns, the run continues, and the\n    submission — not a Done transition — is the completion signal.\"\"\"\n    repo = tmp_path / \"repo\"\n    repo.mkdir()\n    _init_repo(repo)\n    monkeypatch.chdir(repo)\n    monkeypatch.setenv(\"HOME\", str(tmp_path))\n\n    issue = _issue(\"ABA-INPROG\")\n    issues_by_id = {issue[\"id\"]: issue}\n    counter_file = tmp_path / \"invocation_count.txt\"\n\n    def fake_get_issue(issue_id: str) -> dict:\n        # The worker leaves the issue In Progress (started) — never Done.\n        base = issues_by_id[issue_id]\n        return {**base, \"state\": {\"type\": \"started\", \"name\": \"In Progress\"}}\n\n    monkeypatch.setattr(linear, \"current_cycle_id\", lambda: \"stub-cycle\")\n    monkeypatch.setattr(linear, \"pending_issues\", lambda c: linear._plan([issue]))\n    monkeypatch.setattr(linear, \"get_issue\", fake_get_issue)\n    monkeypatch.setattr(linear, \"set_state\", lambda iid, s: None)\n\n    # Single invocation: commit, write finish.pr_urls, leave In Progress (no Done).\n    script = tmp_path / \"fake-claude.sh\"\n    script.write_text(\n        \"#!/bin/sh\\n\"\n        f'count=$(cat \"{counter_file}\" 2>/dev/null || echo 0)\\n'\n        'count=$((count + 1))\\n'\n        f'printf \"%s\" \"$count\" > \"{counter_file}\"\\n'\n        'git config user.email \"<REDACTED_EMAIL>\" 2>/dev/null\\n'\n        'git config user.name \"Test\" 2>/dev/null\\n'\n        'touch work.txt\\n'\n        \"git add work.txt 2>/dev/null\\n\"\n        'git commit -m \"work\" 2>/dev/null\\n'\n […]
 
 > TOOL
 
 tool_result
 id: toolu_01SsVLnW7Qwa6aktfxRqWYeA
 ```
-The file /Users/anton/src/drain-cycle/tests/test_orchestrator_finishing.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/tests/test_orchestrator_finishing.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1700,7 +1700,7 @@ drain_cycle/telemetry.py:32: in <module>
     from opentelemetry import trace
 E   ModuleNotFoundError: No module named 'opentelemetry'
 _________ ERROR collecting tests/test_orchestrator_handoff_verdicts.py _________
-ImportError while importing test module '/Users/anton/src/drain-cycle/tests/test_orchestrator_handoff_verdicts.py'.
+ImportError while importing test module '/home/<USER>/src/drain-cycle/tests/test_orchestrator_handoff_verdicts.py'.
 Hint: make sure your test modules/packages have valid Python names.
 Traceback:
 ../../.local/share/mise/installs/python/3.12.13/lib/python3.12/importlib/__init__.py:90: in import_module
@@ -1712,7 +1712,7 @@ drain_cycle/linear.py:14: in <module>
     import httpx
 E   ModuleNotFoundError: No module named 'httpx'
 _______________ ERROR collecting tests/test_orchestrator_halt.py _______________
-ImportError while importing test module '/Users/anton/src/drain-cycle/tests/test_orchestrator_halt.py'.
+ImportError while importing test module '/home/<USER>/src/drain-cycle/tests/test_orchestrator_halt.py'.
 Hint: make sure your test modules/packages have valid Python names.
 Traceback:
 ../../.local/share/mise/installs/python/3.12.13/lib/python3.12/importlib/__init__.py:90: in import_module
@@ -1736,7 +1736,7 @@ drain_cycle/linear.py:14: in <module>
     import httpx
 E   ModuleNotFoundError: No module named 'httpx'
 __________________ ERROR collecting tests/test_stop_guard.py ___________________
-ImportError while importing test module '/Users/anton/src/drain-cycle/tests/test_stop_guard.py'.
+ImportError while importing test module '/home/<USER>/src/drain-cycle/tests/test_stop_guard.py'.
 Hint: make sure your test modules/packages have valid Python names.
 Traceback:
 ../../.local/share/mise/installs/python/3.12.13/lib/python3.12/importlib/__init__.py:90: in import_module
@@ -1839,7 +1839,7 @@ tool_use Read
 id: toolu_01DznZSPpyj8owtvUkAPK97X
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/console.py"
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/console.py"
 }
 ```
 
@@ -1937,7 +1937,7 @@ tool_use Read
 id: toolu_01JaxnWMswz4xtZTNn6WQncd
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/orchestrator.py",
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/orchestrator.py",
   "offset": 570,
   "limit": 95
 }
@@ -2095,7 +2095,7 @@ tool_use Read
 id: toolu_01BM2UQ8MQi8TfPukiK3HLaN
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/orchestrator.py",
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/orchestrator.py",
   "offset": 740,
   "limit": 40
 }
@@ -2155,7 +2155,7 @@ id: toolu_01UuWduQr5HemURVr3Dr28vz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/orchestrator.py",
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/orchestrator.py",
   "old_string": "                _finishing_started = _now_iso()\n                _finishing_result = worker.run_issue(\n                    claude_cmd=_CLAUDE_CMD,\n                    model=_FINISHING_MODEL,\n                    prompt=prompt.build_finishing(\n                        identifier, worktree_path, base, stack=stack\n                    ),\n                    cwd=worktree_path,\n                    token_limit=limits.per_issue_tokens,\n                    time_limit_seconds=limits.per_issue_seconds,\n                    cost_limit_usd=limits.per_issue_cost_usd,\n                    passthrough=console.AgentSink(),\n                )\n                _finishing_finished = _now_iso()\n                finishing_runs.append({\n                    \"trigger\": \"err-issue-not-done\",\n                    \"started_at\": _finishing_started,\n                    \"finished_at\": _finishing_finished,\n                    **_worker_log_fields(_finishing_result),\n                })\n                finished_at = _finishing_finished",
   "new_string": "                _finishing_started = _now_iso()\n                # The finishing agent runs on the spawned (non-pane) path, so the\n                # watch split-pane can't mirror it. Route its per-turn progress\n                # through ``on_progress`` so the orchestrator pane keeps ticking —\n                # otherwise a normal multi-minute finishing run reads as a hang.\n                _finishing_result = worker.run_issue(\n                    claude_cmd=_CLAUDE_CMD,\n                    model=_FINISHING_MODEL,\n                    prompt=prompt.build_finishing(\n                        identifier, worktree_path, base, stack=stack\n                    ),\n                    cwd=worktree_path,\n                    token_limit=limits.per_issue_tokens,\n                    time_limit_seconds=limits.per_issue_seconds,\n                    cost_limit_usd=limits.per_issue_cost_usd,\n                    on_progress=_make_on_progress(marker, identifier),\n                    passthrough=console.AgentSink(),\n                )\n                _finishing_finished = _now_iso()\n                _log_finishing_done(identifier, _finishing_result)\n                finishing_runs.append({\n                    \"trigger\": \"err-issue-not-done\",\n                    \"started_at\": _finishing_started,\n                    \"finished_at\": _finishing_finished,\n                    **_worker_log_fields(_finishing_result),\n                })\n                finished_at = _finishing_finished"
 }
@@ -2166,7 +2166,7 @@ id: toolu_01UuWduQr5HemURVr3Dr28vz
 tool_result
 id: toolu_01UuWduQr5HemURVr3Dr28vz
 ```
-The file /Users/anton/src/drain-cycle/drain_cycle/orchestrator.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/drain_cycle/orchestrator.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2180,7 +2180,7 @@ id: toolu_014LEgeYwWjRyiZJqNJVFie3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/orchestrator.py",
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/orchestrator.py",
   "old_string": "                    _finishing_started = _now_iso()\n                    _finishing_result = worker.run_issue(\n                        claude_cmd=_CLAUDE_CMD,\n                        model=_FINISHING_MODEL,\n                        prompt=prompt.build_finishing(\n                            identifier, worktree_path, base, stack=stack\n                        ),\n                        cwd=worktree_path,\n                        token_limit=limits.per_issue_tokens,\n                        time_limit_seconds=limits.per_issue_seconds,\n                        cost_limit_usd=limits.per_issue_cost_usd,\n                        passthrough=console.AgentSink(),\n                    )\n                    _finishing_finished = _now_iso()\n                    finishing_runs.append({\n                        \"trigger\": \"err-stack-no-prs\",\n                        \"started_at\": _finishing_started,\n                        \"finished_at\": _finishing_finished,\n                        **_worker_log_fields(_finishing_result),\n                    })\n                    finished_at = _finishing_finished",
   "new_string": "                    _finishing_started = _now_iso()\n                    _finishing_result = worker.run_issue(\n                        claude_cmd=_CLAUDE_CMD,\n                        model=_FINISHING_MODEL,\n                        prompt=prompt.build_finishing(\n                            identifier, worktree_path, base, stack=stack\n                        ),\n                        cwd=worktree_path,\n                        token_limit=limits.per_issue_tokens,\n                        time_limit_seconds=limits.per_issue_seconds,\n                        cost_limit_usd=limits.per_issue_cost_usd,\n                        on_progress=_make_on_progress(marker, identifier),\n                        passthrough=console.AgentSink(),\n                    )\n                    _finishing_finished = _now_iso()\n                    _log_finishing_done(identifier, _finishing_result)\n                    finishing_runs.append({\n                        \"trigger\": \"err-stack-no-prs\",\n                        \"started_at\": _finishing_started,\n                        \"finished_at\": _finishing_finished,\n                        **_worker_log_fields(_finishing_result),\n                    })\n                    finished_at = _finishing_finished"
 }
@@ -2191,7 +2191,7 @@ id: toolu_014LEgeYwWjRyiZJqNJVFie3
 tool_result
 id: toolu_014LEgeYwWjRyiZJqNJVFie3
 ```
-The file /Users/anton/src/drain-cycle/drain_cycle/orchestrator.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/drain_cycle/orchestrator.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2205,7 +2205,7 @@ id: toolu_01T9gpMMZGnroRBZAWJzy5eL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/orchestrator.py",
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/orchestrator.py",
   "old_string": "@dataclass(frozen=True)\nclass _WorkerOutcome:",
   "new_string": "def _log_finishing_done(identifier: str, result: worker.WorkerResult) -> None:\n    \"\"\"Emit a completion line for a finishing sub-agent.\n\n    The finishing agent runs off the watch pane, so without an explicit\n    end-of-run line the orchestrator pane would fall silent when it exits —\n    the same blind spot that makes an in-flight finishing run look hung. The\n    line mirrors the worker's ``=== done ===`` frame: turns and cost, flagged\n    if the session errored.\n    \"\"\"\n    cost = \"n/a\" if result.cost_usd is None else f\"${result.cost_usd:.2f}\"\n    suffix = \" (error)\" if result.is_error else \"\"\n    console.worker_event(\n        identifier,\n        f\"finishing sub-agent done: {result.num_turns} turns, {cost}{suffix}\",\n    )\n\n\n@dataclass(frozen=True)\nclass _WorkerOutcome:"
 }
@@ -2216,7 +2216,7 @@ id: toolu_01T9gpMMZGnroRBZAWJzy5eL
 tool_result
 id: toolu_01T9gpMMZGnroRBZAWJzy5eL
 ```
-The file /Users/anton/src/drain-cycle/drain_cycle/orchestrator.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/drain_cycle/orchestrator.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2250,7 +2250,7 @@ id: toolu_01WjgJuth2xMi1c9RCzhCaoQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/tests/test_orchestrator_finishing.py",
+  "file_path": "/home/<USER>/src/drain-cycle/tests/test_orchestrator_finishing.py",
   "old_string": "def test_finishing_sub_agent_recovers_not_done_with_commits(\n    tmp_path: Path, monkeypatch: pytest.MonkeyPatch\n) -> None:\n    \"\"\"Not-Done + commits → finishing sub-agent runs and marks Done → run continues.\"\"\"",
   "new_string": "def test_finishing_sub_agent_recovers_not_done_with_commits(\n    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]\n) -> None:\n    \"\"\"Not-Done + commits → finishing sub-agent runs and marks Done → run continues.\"\"\""
 }
@@ -2261,7 +2261,7 @@ id: toolu_01WjgJuth2xMi1c9RCzhCaoQ
 tool_result
 id: toolu_01WjgJuth2xMi1c9RCzhCaoQ
 ```
-The file /Users/anton/src/drain-cycle/tests/test_orchestrator_finishing.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/tests/test_orchestrator_finishing.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2271,7 +2271,7 @@ id: toolu_01AK97sDTjvzda6zm2QfwsPe
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/tests/test_orchestrator_finishing.py",
+  "file_path": "/home/<USER>/src/drain-cycle/tests/test_orchestrator_finishing.py",
   "old_string": "    # finishing_runs records the sub-agent spawn\n    assert len(entry[\"finishing_runs\"]) == 1\n    assert entry[\"finishing_runs\"][0][\"trigger\"] == \"err-issue-not-done\"",
   "new_string": "    # finishing_runs records the sub-agent spawn\n    assert len(entry[\"finishing_runs\"]) == 1\n    assert entry[\"finishing_runs\"][0][\"trigger\"] == \"err-issue-not-done\"\n    # The finishing run emits a completion line so its exit is visible off the\n    # watch pane (the blind spot that makes an in-flight finishing run look hung).\n    stderr = capsys.readouterr().err\n    assert \"finishing sub-agent done\" in stderr"
 }
@@ -2282,7 +2282,7 @@ id: toolu_01AK97sDTjvzda6zm2QfwsPe
 tool_result
 id: toolu_01AK97sDTjvzda6zm2QfwsPe
 ```
-The file /Users/anton/src/drain-cycle/tests/test_orchestrator_finishing.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/tests/test_orchestrator_finishing.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2403,7 +2403,7 @@ tool_use Read
 id: toolu_01NDyrZPuai14kfZDfV5sHPV
 ```json
 {
-  "file_path": "/Users/anton/.claude/projects/-Users-anton-src-drain-cycle/memory/orchestrator-enforced-completion.md"
+  "file_path": "/home/<USER>/.claude/projects/-Users-anton-src-drain-cycle/memory/orchestrator-enforced-completion.md"
 }
 ```
 
@@ -2441,7 +2441,7 @@ id: toolu_016jK6ujkAc6BWXgMvRCUTHq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/.claude/projects/-Users-anton-src-drain-cycle/memory/orchestrator-enforced-completion.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-anton-src-drain-cycle/memory/orchestrator-enforced-completion.md",
   "old_string": "Fix shaped into **ABA-393** (Autonomous cycle drain project): orchestrator post-check at both halt\nsites (not-Done `:781` and stack-no-PRs `:706`) — if there are commits beyond base and the issue\nisn't properly closed, spawn a **sonnet** finishing sub-agent (reusing `worker.run_issue` + new\n`prompt.build_finishing`) that delegates any Critical/Required **fix to opus**, then re-check and\nrecover or fall through to halt. Uncommitted-only / empty branch = genuine failure, never trusted.\nDelivery plan: `docs/delivery-plans/orchestrator-enforced-completion/`. Relates to\n[[stack-pr-submission-regression]] Inc2.",
   "new_string": "Fix shaped into **ABA-393** (Autonomous cycle drain project): orchestrator post-check at both halt\nsites (not-Done and stack-no-PRs) — if there are commits beyond base and the issue\nisn't properly closed, spawn a **sonnet** finishing sub-agent (reusing `worker.run_issue` + new\n`prompt.build_finishing`) that delegates any Critical/Required **fix to opus**, then re-check and\nrecover or fall through to halt. Uncommitted-only / empty branch = genuine failure, never trusted.\nDelivery plan: `docs/delivery-plans/orchestrator-enforced-completion/`. Relates to\n[[stack-pr-submission-regression]] Inc2.\n\n**SUPERSEDED governance (2026-06-18, ABA-394 post-mortem):** the orchestrator success gate no\nlonger keys on the Linear **Done** state — it keys on the **submission signal** (`pr_urls` in\nexec-state.json). In **stack mode**, a worker (or finishing sub-agent) that submits its PR and\nleaves the issue **In Progress** is complete; the issue stays In Progress until the PR *merges* —\nnothing transitions […]
 
@@ -2450,7 +2450,7 @@ id: toolu_016jK6ujkAc6BWXgMvRCUTHq
 tool_result
 id: toolu_016jK6ujkAc6BWXgMvRCUTHq
 ```
-The file /Users/anton/.claude/projects/-Users-anton-src-drain-cycle/memory/orchestrator-enforced-completion.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-anton-src-drain-cycle/memory/orchestrator-enforced-completion.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

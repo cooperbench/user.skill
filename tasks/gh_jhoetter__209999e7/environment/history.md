@@ -42,7 +42,7 @@ The project has solid foundations: strict TypeScript config, ruff/pytest, Pretti
 - frontend tests passed: `669` files / `5462` tests
 - sampled backend route assertions passed
 
-The main reason I would not rate it higher is that **the frontend does not currently typecheck**. `pnpm --filter @bim-ai/web typecheck` fails with real source errors, for example nonexistent core exports in [terraceFromFloor.ts](/Users/jhoetter/repos/bim-ai/packages/web/src/plan/terraceFromFloor.ts:1), invalid `PlanTool` usage in [PlanCanvas.tsx](/Users/jhoetter/repos/bim-ai/packages/web/src/plan/PlanCanvas.tsx:5966), missing `onSemanticCommand` references in [InspectorContent.tsx](/Users/jhoetter/repos/bim-ai/packages/web/src/workspace/inspector/InspectorContent.tsx:1673), and stale discriminated-union handling around `family_extrusion`.
+The main reason I would not rate it higher is that **the frontend does not currently typecheck**. `pnpm --filter @bim-ai/web typecheck` fails with real source errors, for example nonexistent core exports in [terraceFromFloor.ts](/home/<USER>/repos/bim-ai/packages/web/src/plan/terraceFromFloor.ts:1), invalid `PlanTool` usage in [PlanCanvas.tsx](/home/<USER>/repos/bim-ai/packages/web/src/plan/PlanCanvas.tsx:5966), missing `onSemanticCommand` references in [InspectorContent.tsx](/home/<USER>/repos/bim-ai/packages/web/src/workspace/inspector/InspectorContent.tsx:1673), and stale discriminated-union handling around `family_extrusion`.
 
 Biggest quality risks:
 

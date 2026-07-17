@@ -8,7 +8,7 @@ tool_use Read
 id: toolu_01PXm4AceEz9cgQu9JCNtPh2
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/workflows/plan-phase.md"
+  "file_path": "/home/<USER>/Code/random/cipher-box/.claude/gsd-core/workflows/plan-phase.md"
 }
 ```
 
@@ -33,11 +33,11 @@ id: toolu_01PXm4AceEz9cgQu9JCNtPh2
 12	<required_reading>
 13	Read all files referenced by the invoking prompt's execution_context before starting.
 14	
-15	@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/ui-brand.md
-16	@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/revision-loop.md
-17	@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/gate-prompts.md
-18	@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/agent-contracts.md
-19	@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/gates.md
+15	@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/ui-brand.md
+16	@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/revision-loop.md
+17	@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/gate-prompts.md
+18	@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/agent-contracts.md
+19	@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/gates.md
 20	</required_reading>
 21	
 22	<available_agent_types>
@@ -171,7 +171,7 @@ tool_use Read
 id: toolu_01MMRduvHPZeMW2K4wjJ4kw9
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/workflows/plan-phase.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.claude/gsd-core/workflows/plan-phase.md",
   "offset": 915,
   "limit": 914
 }
@@ -202,7 +202,7 @@ tool_use Bash
 id: toolu_018rELFFxmxt2b6AUnyFo6u2
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\n_GSD_RUNTIME_ROOT=\"$(git rev-parse --show-toplevel 2>/dev/null || pwd)\"\nGSD_TOOLS=\"${_GSD_RUNTIME_ROOT}/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nINIT=$(gsd_run query init.plan-phase \"68.2\")\nif [[ \"$INIT\" == @file:* ]]; then INIT=$(cat \"${INIT#@file:}\"); fi\necho \"$INIT\" | node -e \"const o=JSON.parse(require('fs').readFileSync(0,'utf8')); const keys=['researcher_model','planner_model','checker_model','research_enabled','plan_checker_enabled','nyquist_validation_enabled','commit_docs','text_mode','phase_found','phase_dir','phase_number','phase_name','phase_slug','padded_phase','has_research','has_context','has_reviews','has_plans','plan_count','phase_status','planning_exists','roadmap_exists','phase_req_ids','response_language','granularity','state_path','roadmap_path','requirements_path','context_path','research_path','verification_path','uat_path','reviews_path','patterns_path']; for (const k of keys) console.log(k+': '+JSON.stringify(o[k]));\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\n_GSD_RUNTIME_ROOT=\"$(git rev-parse --show-toplevel 2>/dev/null || pwd)\"\nGSD_TOOLS=\"${_GSD_RUNTIME_ROOT}/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nINIT=$(gsd_run query init.plan-phase \"68.2\")\nif [[ \"$INIT\" == @file:* ]]; then INIT=$(cat \"${INIT#@file:}\"); fi\necho \"$INIT\" | node -e \"const o=JSON.parse(require('fs').readFileSync(0,'utf8')); const keys=['researcher_model','planner_model','checker_model','research_enabled','plan_checker_enabled','nyquist_validation_enabled','commit_docs','text_mode','phase_found','phase_dir','phase_number','phase_name','phase_slug','padded_phase','has_research','has_context','has_reviews','has_plans','plan_count','phase_status','planning_exists','roadmap_exists','phase_req_ids','response_language','granularity','state_path','roadmap_path','requirements_path','context_path','research_path','verification_path','uat_path','reviews_path','patterns_path']; for (const k of keys) console.log(k+': '+JSON.stringify(o[k]));\"",
   "description": "Run plan-phase init query for phase 68.2"
 }
 ```
@@ -255,7 +255,7 @@ tool_use Read
 id: toolu_018pFws7akR9dqVHyCgmBU35
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-CONTEXT.md"
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-CONTEXT.md"
 }
 ```
 
@@ -284,7 +284,7 @@ tool_use Read
 id: toolu_01NSBtJpV1wTe1R32dueADTA
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-DISCUSSION-LOG.md"
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-DISCUSSION-LOG.md"
 }
 ```
 
@@ -328,7 +328,7 @@ tool_use Bash
 id: toolu_01D2H8Va7tyLEERo6as61G7v
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\necho \"===ROADMAP PHASE 68.2 SECTION===\"\ngsd_run query roadmap.get-phase \"68.2\" --pick section 2>/dev/null || gsd_run query roadmap.get-phase \"68.2\"\necho \"\"\necho \"===MVP MODE===\"\ngsd_run query phase.mvp-mode \"68.2\" --pick active 2>/dev/null || echo \"n/a\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\necho \"===ROADMAP PHASE 68.2 SECTION===\"\ngsd_run query roadmap.get-phase \"68.2\" --pick section 2>/dev/null || gsd_run query roadmap.get-phase \"68.2\"\necho \"\"\necho \"===MVP MODE===\"\ngsd_run query phase.mvp-mode \"68.2\" --pick active 2>/dev/null || echo \"n/a\"",
   "description": "Get ROADMAP phase 68.2 section and MVP mode"
 }
 ```
@@ -355,7 +355,7 @@ tool_use Bash
 id: toolu_01WcY7wT1QyStGWjPF7WJQqM
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\necho \"===PLAN:PRE HOOKS===\"\ngsd_run loop render-hooks plan:pre --raw 2>/dev/null | node -e \"\nconst o=JSON.parse(require('fs').readFileSync(0,'utf8'));\nconst hooks=o.activeHooks||o.hooks||[];\nconsole.log('activeHooks count:', hooks.length);\nfor (const h of hooks) {\n  console.log('---');\n  console.log('kind:', h.kind, '| capId:', h.capId, '| into:', h.into||'', '| blocking:', h.blocking);\n  if (h.ref) console.log('ref:', JSON.stringify(h.ref));\n  if (h.check) console.log('check:', JSON.stringify(h.check));\n  if (h.configValues) console.log('configValues:', JSON.stringify(h.configValues));\n}\n\" 2>&1 | head -60\necho \"\"\necho \"===UI PLAN GATE===\"\ngsd_run check ui-plan-gate \"68.2\" --raw 2>/dev/null || echo \"gate check failed\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\necho \"===PLAN:PRE HOOKS===\"\ngsd_run loop render-hooks plan:pre --raw 2>/dev/null | node -e \"\nconst o=JSON.parse(require('fs').readFileSync(0,'utf8'));\nconst hooks=o.activeHooks||o.hooks||[];\nconsole.log('activeHooks count:', hooks.length);\nfor (const h of hooks) {\n  console.log('---');\n  console.log('kind:', h.kind, '| capId:', h.capId, '| into:', h.into||'', '| blocking:', h.blocking);\n  if (h.ref) console.log('ref:', JSON.stringify(h.ref));\n  if (h.check) console.log('check:', JSON.stringify(h.check));\n  if (h.configValues) console.log('configValues:', JSON.stringify(h.configValues));\n}\n\" 2>&1 | head -60\necho \"\"\necho \"===UI PLAN GATE===\"\ngsd_run check ui-plan-gate \"68.2\" --raw 2>/dev/null || echo \"gate check failed\"",
   "description": "Resolve plan:pre hooks and UI gate"
 }
 ```
@@ -403,7 +403,7 @@ tool_use Bash
 id: toolu_015m2JattD9z1vEVyTyH4XhF
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\necho \"===FULL RAW plan:pre JSON (top-level keys + any ui capId)===\"\ngsd_run loop render-hooks plan:pre --raw 2>/dev/null | node -e \"\nconst o=JSON.parse(require('fs').readFileSync(0,'utf8'));\nconsole.log('top-level keys:', Object.keys(o).join(', '));\nconst hooks=o.activeHooks||o.hooks||[];\n// Show every hook fully\nconst uiHooks = hooks.filter(h => (h.capId||'').includes('ui') || JSON.stringify(h).includes('ui.plan-gate') || JSON.stringify(h).includes('ui-plan-gate'));\nconsole.log('UI-related hooks in activeHooks:', uiHooks.length);\nconsole.log(JSON.stringify(uiHooks, null, 2));\n// Also check if there is an inactiveHooks or allHooks\nif (o.inactiveHooks) console.log('inactiveHooks capIds:', o.inactiveHooks.map(h=>h.capId).join(', '));\n\"\necho \"\"\necho \"===Config UI keys===\"\ngsd_run query config-get workflow.ui_phase 2>/dev/null\ngsd_run query config-get workflow.ui_safety_gate 2>/dev/null\necho \"\"\necho \"===AUTO CHAIN===\"\ngsd_run query check auto-mode --pick auto_chain_active 2>/dev/null || echo \"false\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\necho \"===FULL RAW plan:pre JSON (top-level keys + any ui capId)===\"\ngsd_run loop render-hooks plan:pre --raw 2>/dev/null | node -e \"\nconst o=JSON.parse(require('fs').readFileSync(0,'utf8'));\nconsole.log('top-level keys:', Object.keys(o).join(', '));\nconst hooks=o.activeHooks||o.hooks||[];\n// Show every hook fully\nconst uiHooks = hooks.filter(h => (h.capId||'').includes('ui') || JSON.stringify(h).includes('ui.plan-gate') || JSON.stringify(h).includes('ui-plan-gate'));\nconsole.log('UI-related hooks in activeHooks:', uiHooks.length);\nconsole.log(JSON.stringify(uiHooks, null, 2));\n// Also check if there is an inactiveHooks or allHooks\nif (o.inactiveHooks) console.log('inactiveHooks capIds:', o.inactiveHooks.map(h=>h.capId).join(', '));\n\"\necho \"\"\necho \"===Config UI keys===\"\ngsd_run query config-get workflow.ui_phase 2>/dev/null\ngsd_run query config-get workflow.ui_safety_gate 2>/dev/null\necho \"\"\necho \"===AUTO CHAIN===\"\ngsd_run query check auto-mode --pick auto_chain_active 2>/dev/null || echo \"false\"",
   "description": "Inspect raw plan:pre JSON for UI hooks"
 }
 ```
@@ -474,7 +474,7 @@ tool_use Bash
 id: toolu_01QXQuGyVfDzxvfj42ews6uw
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\necho \"===RESEARCH HOOK FRAGMENT===\"\ngsd_run loop render-hooks plan:pre --raw 2>/dev/null | node -e \"\nconst o=JSON.parse(require('fs').readFileSync(0,'utf8'));\nconst hooks=o.activeHooks||[];\nconst rh=hooks.find(h=>h.capId==='research');\nif (rh && rh.fragment && rh.fragment.inline) { console.log(rh.fragment.inline); }\nelse { console.log('NO_INLINE_FRAGMENT'); console.log(JSON.stringify(rh,null,2)); }\n\"\necho \"\"\necho \"======END FRAGMENT======\"\necho \"\"\necho \"===RESEARCHER AGENT SKILLS===\"\ngsd_run query agent-skills gsd-phase-researcher 2>/dev/null | head -40",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\necho \"===RESEARCH HOOK FRAGMENT===\"\ngsd_run loop render-hooks plan:pre --raw 2>/dev/null | node -e \"\nconst o=JSON.parse(require('fs').readFileSync(0,'utf8'));\nconst hooks=o.activeHooks||[];\nconst rh=hooks.find(h=>h.capId==='research');\nif (rh && rh.fragment && rh.fragment.inline) { console.log(rh.fragment.inline); }\nelse { console.log('NO_INLINE_FRAGMENT'); console.log(JSON.stringify(rh,null,2)); }\n\"\necho \"\"\necho \"======END FRAGMENT======\"\necho \"\"\necho \"===RESEARCHER AGENT SKILLS===\"\ngsd_run query agent-skills gsd-phase-researcher 2>/dev/null | head -40",
   "description": "Extract research hook fragment and agent skills"
 }
 ```
@@ -564,7 +564,7 @@ tool_use Bash
 id: toolu_01JVQe6hSgm8Su1yqhRXqkC8
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nPHASE_DIR=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings\"\necho \"===Validation Architecture heading present?===\"\ngrep -n \"## Validation Architecture\" \"${PHASE_DIR}\"/*-RESEARCH.md 2>/dev/null && echo \"FOUND\" || echo \"NOT FOUND\"\necho \"\"\necho \"===RESEARCH.md heading outline===\"\ngrep -nE \"^#{1,3} \" \"${PHASE_DIR}\"/*-RESEARCH.md 2>/dev/null\necho \"\"\necho \"===VALIDATION template exists?===\"\nls -la .claude/gsd-core/templates/VALIDATION.md 2>/dev/null && echo \"---TEMPLATE---\" && cat .claude/gsd-core/templates/VALIDATION.md 2>/dev/null | head -60",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nPHASE_DIR=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings\"\necho \"===Validation Architecture heading present?===\"\ngrep -n \"## Validation Architecture\" \"${PHASE_DIR}\"/*-RESEARCH.md 2>/dev/null && echo \"FOUND\" || echo \"NOT FOUND\"\necho \"\"\necho \"===RESEARCH.md heading outline===\"\ngrep -nE \"^#{1,3} \" \"${PHASE_DIR}\"/*-RESEARCH.md 2>/dev/null\necho \"\"\necho \"===VALIDATION template exists?===\"\nls -la .claude/gsd-core/templates/VALIDATION.md 2>/dev/null && echo \"---TEMPLATE---\" && cat .claude/gsd-core/templates/VALIDATION.md 2>/dev/null | head -60",
   "description": "Check Validation Architecture section and template"
 }
 ```
@@ -614,7 +614,7 @@ tool_use Read
 id: toolu_01APqWcFVTy48bsGft7Xf45E
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-RESEARCH.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-RESEARCH.md",
   "offset": 326,
   "limit": 75
 }
@@ -643,7 +643,7 @@ tool_use Read
 id: toolu_01KLgo61kFEtCJmvik5TYYmi
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/templates/VALIDATION.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.claude/gsd-core/templates/VALIDATION.md",
   "offset": 60,
   "limit": 40
 }
@@ -684,7 +684,7 @@ tool_use Write
 id: toolu_01VCFtY4Q1rCPAQQsnnSntmB
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-VALIDATION.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-VALIDATION.md",
   "content": "---\nphase: 68.2\nslug: sdk-owned-read-chain-and-resolved-folder-listings\nstatus: draft\nnyquist_compliant: false\nwave_0_complete: false\ncreated: 2026-07-06\n---\n\n# Phase 68.2 — Validation Strategy\n\n> Per-phase validation contract for feedback sampling during execution.\n> Derived from `68.2-RESEARCH.md` § Validation Architecture. Per-task IDs are\n> filled once PLAN.md task breakdown exists.\n\n---\n\n## Test Infrastructure\n\n| Property | Value |\n|----------|-------|\n| **Framework** | Vitest (`packages/sdk`, `packages/sdk-core`, `packages/core`); Playwright (`tests/web-e2e`) |\n| **Config file** | `packages/sdk/vitest.config.ts` (implicit via package.json); `tests/web-e2e/playwright.config.ts` |\n| **Quick run command** | `pnpm --filter @cipherbox/sdk test -- --run <pattern>` (targeted; e.g. `client-rotation`) |\n| **Full suite command** | `pnpm --filter @cipherbox/sdk test && pnpm --filter @cipherbox/sdk-core test && pnpm --filter @cipherbox/core test` (unit); `pnpm --filter @cipherbox/web-e2e test` (e2e) |\n| **Estimated runtime** | ~30s targeted unit; web-e2e up to 20-minute CI budget (`.github/workflows/web-e2e.yml`) |\n\n---\n\n## Sampling Rate\n\n- **After every task commit:** Run the targeted vitest pattern for the package touched (`pnpm --filter @cipherbox/sdk test -- --run <pattern>`), plus the D-07 grep-gate command as a fast static check.\n- **After every plan wave:** Full `packages/sdk` / `packages/sdk-core` / `packages/core` vitest suites, plus `pnpm --filter @cipherbox/web typecheck` (rebuild `sdk-core`/`sdk` dist first — cross-package dist staleness).\n- **Before `/gsd-verify-work` (phase gate):** Full `pnpm --filter @cipherbox/web-e2e test` green (SC#5), plus the D-07 grep gate returning zero violations — run […]
 
 > TOOL
@@ -692,7 +692,7 @@ id: toolu_01VCFtY4Q1rCPAQQsnnSntmB
 tool_result
 id: toolu_01VCFtY4Q1rCPAQQsnnSntmB
 ```
-File created successfully at: /Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-VALIDATION.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-VALIDATION.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -705,7 +705,7 @@ tool_use Bash
 id: toolu_01NRcgpKzE9FFpTKPCKfuw7Z
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nPHASE_DIR=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings\"\necho \"===COMMIT VALIDATION.md===\"\ngsd_run query commit \"docs(68.2): add validation strategy\" --files \"${PHASE_DIR}/68.2-VALIDATION.md\" 2>&1 | tail -5\necho \"\"\necho \"===DRIFT PRE-CHECK (non-blocking)===\"\ngsd_run verify codebase-drift 2>/dev/null | node -e \"\nconst raw=require('fs').readFileSync(0,'utf8');\ntry { const o=JSON.parse(raw); console.log('skipped:', o.skipped, '| action_required:', o.action_required); if(o.action_required && o.message) console.log('MESSAGE:', o.message); }\ncatch(e){ console.log('drift check output (non-JSON):', raw.slice(0,300)); }\n\" 2>&1 || echo \"drift skipped\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nPHASE_DIR=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings\"\necho \"===COMMIT VALIDATION.md===\"\ngsd_run query commit \"docs(68.2): add validation strategy\" --files \"${PHASE_DIR}/68.2-VALIDATION.md\" 2>&1 | tail -5\necho \"\"\necho \"===DRIFT PRE-CHECK (non-blocking)===\"\ngsd_run verify codebase-drift 2>/dev/null | node -e \"\nconst raw=require('fs').readFileSync(0,'utf8');\ntry { const o=JSON.parse(raw); console.log('skipped:', o.skipped, '| action_required:', o.action_required); if(o.action_required && o.message) console.log('MESSAGE:', o.message); }\ncatch(e){ console.log('drift check output (non-JSON):', raw.slice(0,300)); }\n\" 2>&1 || echo \"drift skipped\"",
   "description": "Commit VALIDATION.md and run drift pre-check"
 }
 ```
@@ -731,7 +731,7 @@ tool_use Bash
 id: toolu_01Q4iAhu66LHQ7iSaB4WPsYT
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===Recent commits===\"\ngit log --oneline -6\necho \"\"\necho \"===Is VALIDATION.md tracked/committed?===\"\ngit ls-files \".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-VALIDATION.md\"\necho \"\"\necho \"===Working tree status===\"\ngit status --short",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===Recent commits===\"\ngit log --oneline -6\necho \"\"\necho \"===Is VALIDATION.md tracked/committed?===\"\ngit ls-files \".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-VALIDATION.md\"\necho \"\"\necho \"===Working tree status===\"\ngit status --short",
   "description": "Verify VALIDATION.md commit landed"
 }
 ```
@@ -810,7 +810,7 @@ id: toolu_017fYuh9xyQHvmgLHtPtbf8W
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-CONTEXT.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-CONTEXT.md",
   "old_string": "- **D-07 (boundary — read + write):** `apps/web/src` performs **no runtime calls into `@cipherbox/sdk-core` or `@cipherbox/core`, and no raw IPFS/IPNS access, on either the read or the write path** — everything is mediated by `@cipherbox/sdk` (`CipherBoxClient`). Acceptance is a `grep` gate. **Type-only imports** (`import type { ... }`) from `@cipherbox/core`/`@cipherbox/sdk-core` remain allowed (the SDK MAY re-export the needed types for convenience); the boundary is about runtime I/O and crypto, not type definitions. Forbidding type imports would be a ~54-file no-op churn and is explicitly NOT intended.",
   "new_string": "- **D-07 (boundary — read + write):** `apps/web/src` performs **no runtime calls into `@cipherbox/sdk-core` or `@cipherbox/core`, and no raw IPFS/IPNS access, on either the read or the write path** — everything is mediated by `@cipherbox/sdk` (`CipherBoxClient`). Acceptance is a `grep` gate. **Type-only imports** (`import type { ... }`) from `@cipherbox/core`/`@cipherbox/sdk-core` remain allowed (the SDK MAY re-export the needed types for convenience); the boundary is about runtime I/O and crypto, not type definitions. Forbidding type imports would be a ~54-file no-op churn and is explicitly NOT intended.\n  - **D-07 scope resolution (2026-07-06, plan-phase — resolves RESEARCH.md Open Question 3):** **Full boundary.** The grep […]
 
@@ -819,7 +819,7 @@ id: toolu_017fYuh9xyQHvmgLHtPtbf8W
 tool_result
 id: toolu_017fYuh9xyQHvmgLHtPtbf8W
 ```
-The file /Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-CONTEXT.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-CONTEXT.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -832,7 +832,7 @@ tool_use Bash
 id: toolu_01Dci2tZ18nRtfPBG4k7df89
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nPHASE_DIR=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings\"\necho \"===COMMIT CONTEXT.md scope resolution===\"\ngsd_run query commit \"docs(68.2): lock D-07 full-boundary scope resolution\" --files \"${PHASE_DIR}/68.2-CONTEXT.md\" >/dev/null 2>&1\ngit log --oneline -1\necho \"\"\necho \"===INTEL API-SURFACE regenerate===\"\ngsd_run intel api-surface 2>&1 | tail -3\nls -la .planning/intel/API-SURFACE.md 2>/dev/null && echo \"API_SURFACE_PATH=.planning/intel/API-SURFACE.md\"\necho \"\"\necho \"===PATTERN-MAPPER HOOK FRAGMENT===\"\ngsd_run loop render-hooks plan:pre --raw 2>/dev/null | node -e \"\nconst o=JSON.parse(require('fs').readFileSync(0,'utf8'));\nconst hooks=o.activeHooks||[];\nconst pm=hooks.find(h=>h.capId==='pattern-mapper');\nif (pm && pm.fragment && pm.fragment.inline) { console.log(pm.fragment.inline); }\nelse { console.log('NO_INLINE_FRAGMENT — full hook:'); console.log(JSON.stringify(pm,null,2)); }\n\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nPHASE_DIR=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings\"\necho \"===COMMIT CONTEXT.md scope resolution===\"\ngsd_run query commit \"docs(68.2): lock D-07 full-boundary scope resolution\" --files \"${PHASE_DIR}/68.2-CONTEXT.md\" >/dev/null 2>&1\ngit log --oneline -1\necho \"\"\necho \"===INTEL API-SURFACE regenerate===\"\ngsd_run intel api-surface 2>&1 | tail -3\nls -la .planning/intel/API-SURFACE.md 2>/dev/null && echo \"API_SURFACE_PATH=.planning/intel/API-SURFACE.md\"\necho \"\"\necho \"===PATTERN-MAPPER HOOK FRAGMENT===\"\ngsd_run loop render-hooks plan:pre --raw 2>/dev/null | node -e \"\nconst o=JSON.parse(require('fs').readFileSync(0,'utf8'));\nconst hooks=o.activeHooks||[];\nconst pm=hooks.find(h=>h.capId==='pattern-mapper');\nif (pm && pm.fragment && pm.fragment.inline) { console.log(pm.fragment.inline); }\nelse { console.log('NO_INLINE_FRAGMENT — full hook:'); console.log(JSON.stringify(pm,null,2)); }\n\"",
   "description": "Commit CONTEXT, regen intel, get pattern-mapper fragment"
 }
 ```
@@ -925,7 +925,7 @@ tool_use Bash
 id: toolu_014THUiLunpX3kk9uo9hBhso
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nPHASE_DIR=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings\"\necho \"===COMMIT PATTERNS.md===\"\ngsd_run query commit \"docs(68.2): add pattern map\" --files \"${PHASE_DIR}/68.2-PATTERNS.md\" >/dev/null 2>&1\ngit ls-files \"${PHASE_DIR}/68.2-PATTERNS.md\" && git log --oneline -1\necho \"\"\necho \"===CONTEXT_WINDOW===\"\ngsd_run query config-get context_window 2>/dev/null || echo \"200000\"\necho \"\"\necho \"===PLANNER AGENT SKILLS (first 30 lines)===\"\ngsd_run query agent-skills gsd-planner 2>/dev/null | head -30\necho \"===END SKILLS===\"\necho \"\"\necho \"===PLANNER CONTRIBUTIONS (schema-gate + tdd)===\"\ngsd_run loop render-hooks plan:pre --raw 2>/dev/null | node -e \"\nconst o=JSON.parse(require('fs').readFileSync(0,'utf8'));\nconst hooks=o.activeHooks||[];\nconst contribs=hooks.filter(h=>h.kind==='contribution' && h.into==='planner');\nfor (const c of contribs) {\n  console.log('=====CONTRIB capId='+c.capId+'=====');\n  if (c.fragment && c.fragment.inline) console.log(c.fragment.inline);\n  else console.log('(no inline fragment)', JSON.stringify(c));\n  console.log('');\n}\n\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nPHASE_DIR=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings\"\necho \"===COMMIT PATTERNS.md===\"\ngsd_run query commit \"docs(68.2): add pattern map\" --files \"${PHASE_DIR}/68.2-PATTERNS.md\" >/dev/null 2>&1\ngit ls-files \"${PHASE_DIR}/68.2-PATTERNS.md\" && git log --oneline -1\necho \"\"\necho \"===CONTEXT_WINDOW===\"\ngsd_run query config-get context_window 2>/dev/null || echo \"200000\"\necho \"\"\necho \"===PLANNER AGENT SKILLS (first 30 lines)===\"\ngsd_run query agent-skills gsd-planner 2>/dev/null | head -30\necho \"===END SKILLS===\"\necho \"\"\necho \"===PLANNER CONTRIBUTIONS (schema-gate + tdd)===\"\ngsd_run loop render-hooks plan:pre --raw 2>/dev/null | node -e \"\nconst o=JSON.parse(require('fs').readFileSync(0,'utf8'));\nconst hooks=o.activeHooks||[];\nconst contribs=hooks.filter(h=>h.kind==='contribution' && h.into==='planner');\nfor (const c of contribs) {\n  console.log('=====CONTRIB capId='+c.capId+'=====');\n  if (c.fragment && c.fragment.inline) console.log(c.fragment.inline);\n  else console.log('(no inline fragment)', JSON.stringify(c));\n  console.log('');\n}\n\"",
   "description": "Commit PATTERNS, get planner skills/contributions/context window"
 }
 ```
@@ -990,7 +990,7 @@ tool_use Bash
 id: toolu_01AfFzEUXEhNFhUg8qgsj2rg
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===SDK-READ already present?===\"\ngrep -n \"SDK-READ\" .planning/REQUIREMENTS.md || echo \"NOT PRESENT — needs registration\"\necho \"\"\necho \"===REQUIREMENTS.md structure (headings + last ~40 lines)===\"\ngrep -nE \"^#{1,4} |^\\| ?(REQ|[A-Z]+-[0-9])\" .planning/REQUIREMENTS.md | head -40\necho \"\"\necho \"===TAIL of REQUIREMENTS.md===\"\ntail -35 .planning/REQUIREMENTS.md\necho \"\"\necho \"===Sample of an existing requirement entry format (look for a recent phase block)===\"\ngrep -nE \"6[0-9]-|Phase 6[0-9]|WRITE-|ROT-|NODE-\" .planning/REQUIREMENTS.md | head -20",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===SDK-READ already present?===\"\ngrep -n \"SDK-READ\" .planning/REQUIREMENTS.md || echo \"NOT PRESENT — needs registration\"\necho \"\"\necho \"===REQUIREMENTS.md structure (headings + last ~40 lines)===\"\ngrep -nE \"^#{1,4} |^\\| ?(REQ|[A-Z]+-[0-9])\" .planning/REQUIREMENTS.md | head -40\necho \"\"\necho \"===TAIL of REQUIREMENTS.md===\"\ntail -35 .planning/REQUIREMENTS.md\necho \"\"\necho \"===Sample of an existing requirement entry format (look for a recent phase block)===\"\ngrep -nE \"6[0-9]-|Phase 6[0-9]|WRITE-|ROT-|NODE-\" .planning/REQUIREMENTS.md | head -20",
   "description": "Inspect REQUIREMENTS.md format and SDK-READ presence"
 }
 ```
@@ -1041,7 +1041,7 @@ tool_use Read
 id: toolu_01QEeyHFFFRvcbNpoSLNuyTd
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/REQUIREMENTS.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/REQUIREMENTS.md",
   "offset": 75,
   "limit": 45
 }
@@ -1072,7 +1072,7 @@ id: toolu_015kLSMyPJzNukwgXVuKkiNw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/REQUIREMENTS.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/REQUIREMENTS.md",
   "old_string": "- [ ] **WEB-04**: The full `tests/web-e2e` Playwright suite passes end-to-end against the standard local/CI stack (login→browse→upload→download→share→delete→versions→rotation UX), validating Phases 62–68 at runtime; `apps/web/src` adds zero `*.spec.ts` files (SC#5 doctrine — logic in SDK, UI via web-e2e) — **NOT YET MET**: 68.1-13 fixed 5 real bugs (see 68.1-13-SUMMARY.md) but the full suite was not re-confirmed green; two new gaps (GAP-1 resolveFileMetadata AEAD failure, GAP-2 cold-reload IPNS DFS timeout) plus pre-existing known gaps (SHARE-WRITE-KEY, fetchShareKeys stub) remain. SC#1 (no reachable stub throw) and SC#5 (zero web unit specs) both hold.\n\n## Future Requirements (deferred)",
   "new_string": "- [ ] **WEB-04**: The full `tests/web-e2e` Playwright suite passes end-to-end against the standard local/CI stack (login→browse→upload→download→share→delete→versions→rotation UX), validating Phases 62–68 at runtime; `apps/web/src` adds zero `*.spec.ts` files (SC#5 doctrine — logic in SDK, UI via web-e2e) — **NOT YET MET**: 68.1-13 fixed 5 real bugs (see 68.1-13-SUMMARY.md) but the full suite was not re-confirmed green; two new gaps (GAP-1 resolveFileMetadata AEAD failure, GAP-2 cold-reload IPNS DFS timeout) plus pre-existing known gaps (SHARE-WRITE-KEY, fetchShareKeys stub) remain. SC#1 (no reachable stub throw) and SC#5 (zero web unit specs) both hold.\n\n### SDK-READ — SDK-owned read chain and resolved […]
 
@@ -1081,7 +1081,7 @@ id: toolu_015kLSMyPJzNukwgXVuKkiNw
 tool_result
 id: toolu_015kLSMyPJzNukwgXVuKkiNw
 ```
-The file /Users/myankelev/Code/random/cipher-box/.planning/REQUIREMENTS.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/.planning/REQUIREMENTS.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1091,7 +1091,7 @@ id: toolu_01MPwieTcM95yxwinFkePb6m
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/REQUIREMENTS.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/REQUIREMENTS.md",
   "old_string": "| WEB-04 | Phase 68.1 | Gaps remain — see 68.1-13-SUMMARY.md |\n| TEST-03 | Phase 69 | Pending |\n\n**Coverage:**\n\n- v1 requirements: 39 total (CRYPTO ×3, NODE ×6, READ ×5, ROT ×7, WRITE ×4, TEE ×7, DATA ×4, TEST ×3)\n- Mapped to phases: 39\n- Unmapped: 0 ✓\n\n---\n\n_Requirements defined: 2026-06-27_\n_Last updated: 2026-06-27 — traceability table populated, coverage 39/39_",
   "new_string": "| WEB-04 | Phase 68.1 | Gaps remain — see 68.1-13-SUMMARY.md |\n| SDK-READ-01 | Phase 68.2 | Pending |\n| SDK-READ-02 | Phase 68.2 | Pending |\n| SDK-READ-03 | Phase 68.2 | Pending |\n| SDK-READ-04 | Phase 68.2 | Pending |\n| TEST-03 | Phase 69 | Pending |\n\n**Coverage:**\n\n- v1 requirements: 47 total (CRYPTO ×3, NODE ×6, READ ×5, ROT ×7, WRITE ×4, TEE ×7, DATA ×4, TEST ×3, WEB ×4, SDK-READ ×4)\n- Mapped to phases: 47\n- Unmapped: 0 ✓\n\n---\n\n_Requirements defined: 2026-06-27_\n_Last updated: 2026-07-06 — registered SDK-READ-01..04 (Phase 68.2, D-07 full-boundary read+write); coverage 47/47_"
 }
@@ -1102,7 +1102,7 @@ id: toolu_01MPwieTcM95yxwinFkePb6m
 tool_result
 id: toolu_01MPwieTcM95yxwinFkePb6m
 ```
-The file /Users/myankelev/Code/random/cipher-box/.planning/REQUIREMENTS.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/.planning/REQUIREMENTS.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1115,7 +1115,7 @@ tool_use Bash
 id: toolu_015pQtFaBTamRrQumh2R33oG
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\ngsd_run query commit \"docs(68.2): register SDK-READ-01..04 requirements\" --files \".planning/REQUIREMENTS.md\" >/dev/null 2>&1\ngit log --oneline -1\ngit status --short\necho \"---verify SDK-READ registered---\"\ngrep -c \"SDK-READ\" .planning/REQUIREMENTS.md",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\ngsd_run query commit \"docs(68.2): register SDK-READ-01..04 requirements\" --files \".planning/REQUIREMENTS.md\" >/dev/null 2>&1\ngit log --oneline -1\ngit status --short\necho \"---verify SDK-READ registered---\"\ngrep -c \"SDK-READ\" .planning/REQUIREMENTS.md",
   "description": "Commit REQUIREMENTS.md registration"
 }
 ```
@@ -1186,7 +1186,7 @@ tool_use Bash
 id: toolu_018W3mxVzvTgDW33qws7Zk3Z
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nPHASE_DIR=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings\"\necho \"===PLANS ON DISK===\"\nls -1 \"${PHASE_DIR}\"/*-PLAN.md 2>/dev/null | wc -l | tr -d ' ' | xargs echo \"plan count:\"\nls -1 \"${PHASE_DIR}\"/*-PLAN.md 2>/dev/null | xargs -n1 basename\necho \"\"\necho \"===GIT STATE===\"\ngit log --oneline -1\ngit status --short | head\necho \"\"\necho \"===requirements coverage in plan frontmatter (quick check)===\"\ngrep -h \"requirements:\" \"${PHASE_DIR}\"/*-PLAN.md 2>/dev/null | tr -d '[]' | tr ',' '\\n' | grep -oE \"SDK-READ-0[1-4]\" | sort -u\necho \"\"\necho \"===CHECKER AGENT SKILLS===\"\ngsd_run query agent-skills gsd-plan-checker 2>/dev/null | head -20\necho \"===END===\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nPHASE_DIR=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings\"\necho \"===PLANS ON DISK===\"\nls -1 \"${PHASE_DIR}\"/*-PLAN.md 2>/dev/null | wc -l | tr -d ' ' | xargs echo \"plan count:\"\nls -1 \"${PHASE_DIR}\"/*-PLAN.md 2>/dev/null | xargs -n1 basename\necho \"\"\necho \"===GIT STATE===\"\ngit log --oneline -1\ngit status --short | head\necho \"\"\necho \"===requirements coverage in plan frontmatter (quick check)===\"\ngrep -h \"requirements:\" \"${PHASE_DIR}\"/*-PLAN.md 2>/dev/null | tr -d '[]' | tr ',' '\\n' | grep -oE \"SDK-READ-0[1-4]\" | sort -u\necho \"\"\necho \"===CHECKER AGENT SKILLS===\"\ngsd_run query agent-skills gsd-plan-checker 2>/dev/null | head -20\necho \"===END===\"",
   "description": "Verify plans on disk and get checker skills"
 }
 ```
@@ -1284,7 +1284,7 @@ tool_use Bash
 id: toolu_01MuZxtVNmYx6H4qrC4UwXgR
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nPHASE_DIR=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings\"\nCONTEXT_PATH=\"${PHASE_DIR}/68.2-CONTEXT.md\"\n\necho \"===§13 REQUIREMENTS COVERAGE===\"\nPLAN_REQS=$(grep -h \"requirements:\" \"${PHASE_DIR}\"/*-PLAN.md 2>/dev/null | tr -d '[]' | tr ',' '\\n' | sed 's/^[[:space:]]*//' | grep -oE \"SDK-READ-0[1-4]\" | sort -u)\nfor id in SDK-READ-01 SDK-READ-02 SDK-READ-03 SDK-READ-04; do\n  if echo \"$PLAN_REQS\" | grep -q \"$id\"; then echo \"  ✓ $id covered\"; else echo \"  ✗ $id UNCOVERED\"; fi\ndone\n\necho \"\"\necho \"===§13a DECISION COVERAGE GATE (blocking)===\"\nGATE_RESULT=$(gsd_run query check.decision-coverage-plan \"${PHASE_DIR}\" \"${CONTEXT_PATH}\" 2>/dev/null)\necho \"$GATE_RESULT\" | node -e \"\nconst raw=require('fs').readFileSync(0,'utf8');\ntry { const o=JSON.parse(raw); const d=o.data||o;\n  console.log('passed:', d.passed, '| skipped:', d.skipped, '| covered:', d.covered, '/', d.total);\n  if (d.uncovered && d.uncovered.length) { console.log('UNCOVERED:'); for (const u of d.uncovered) console.log('  -', u.id, '|', u.category, '|', (u.text||'').slice(0,80)); }\n  if (d.message && !(d.passed)) console.log('MESSAGE:', d.message);\n} catch(e){ console.log('raw:', raw.slice(0,500)); }\n\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nPHASE_DIR=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings\"\nCONTEXT_PATH=\"${PHASE_DIR}/68.2-CONTEXT.md\"\n\necho \"===§13 REQUIREMENTS COVERAGE===\"\nPLAN_REQS=$(grep -h \"requirements:\" \"${PHASE_DIR}\"/*-PLAN.md 2>/dev/null | tr -d '[]' | tr ',' '\\n' | sed 's/^[[:space:]]*//' | grep -oE \"SDK-READ-0[1-4]\" | sort -u)\nfor id in SDK-READ-01 SDK-READ-02 SDK-READ-03 SDK-READ-04; do\n  if echo \"$PLAN_REQS\" | grep -q \"$id\"; then echo \"  ✓ $id covered\"; else echo \"  ✗ $id UNCOVERED\"; fi\ndone\n\necho \"\"\necho \"===§13a DECISION COVERAGE GATE (blocking)===\"\nGATE_RESULT=$(gsd_run query check.decision-coverage-plan \"${PHASE_DIR}\" \"${CONTEXT_PATH}\" 2>/dev/null)\necho \"$GATE_RESULT\" | node -e \"\nconst raw=require('fs').readFileSync(0,'utf8');\ntry { const o=JSON.parse(raw); const d=o.data||o;\n  console.log('passed:', d.passed, '| skipped:', d.skipped, '| covered:', d.covered, '/', d.total);\n  if (d.uncovered && d.uncovered.length) { console.log('UNCOVERED:'); for (const u of d.uncovered) console.log('  -', u.id, '|', u.category, '|', (u.text||'').slice(0,80)); }\n  if (d.message && !(d.passed)) console.log('MESSAGE:', d.message);\n} catch(e){ console.log('raw:', raw.slice(0,500)); }\n\"",
   "description": "Run requirements + decision coverage gates"
 }
 ```
@@ -1314,7 +1314,7 @@ tool_use Bash
 id: toolu_0118bcm7VXYcB4bhuUupPYRi
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nPHASE_DIR=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings\"\n\necho \"===§13b RECORD PLANNING COMPLETION IN STATE.md===\"\ngsd_run query state.planned-phase --phase \"68.2\" --name \"sdk-owned-read-chain-and-resolved-folder-listings\" --plans \"12\" 2>&1 | tail -3\n\necho \"\"\necho \"===§13c ANNOTATE ROADMAP WAVE DEPENDENCIES===\"\ngsd_run query roadmap.annotate-dependencies \"68.2\" 2>&1 | tail -3\n\necho \"\"\necho \"===§13d COMMIT STATE.md + ROADMAP.md===\"\ngsd_run query commit \"docs(68.2): record planning completion and roadmap wave annotations\" --files \".planning/STATE.md\" \".planning/ROADMAP.md\" >/dev/null 2>&1\ngit log --oneline -1\necho \"--- tree status ---\"\ngit status --short",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nPHASE_DIR=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings\"\n\necho \"===§13b RECORD PLANNING COMPLETION IN STATE.md===\"\ngsd_run query state.planned-phase --phase \"68.2\" --name \"sdk-owned-read-chain-and-resolved-folder-listings\" --plans \"12\" 2>&1 | tail -3\n\necho \"\"\necho \"===§13c ANNOTATE ROADMAP WAVE DEPENDENCIES===\"\ngsd_run query roadmap.annotate-dependencies \"68.2\" 2>&1 | tail -3\n\necho \"\"\necho \"===§13d COMMIT STATE.md + ROADMAP.md===\"\ngsd_run query commit \"docs(68.2): record planning completion and roadmap wave annotations\" --files \".planning/STATE.md\" \".planning/ROADMAP.md\" >/dev/null 2>&1\ngit log --oneline -1\necho \"--- tree status ---\"\ngit status --short",
   "description": "Record STATE, annotate ROADMAP, commit"
 }
 ```
@@ -1347,7 +1347,7 @@ tool_use Bash
 id: toolu_01BZC8Q18AN7d2GBVdmccMLm
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nPHASE_DIR=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings\"\n\necho \"===§13e POST-PLANNING GAP ANALYSIS (advisory)===\"\nPLAN_POST=$(gsd_run loop render-hooks plan:post --raw 2>/dev/null)\nGAP_HOOK=$(echo \"$PLAN_POST\" | node -e \"\nconst o=JSON.parse(require('fs').readFileSync(0,'utf8'));\nconst hooks=o.activeHooks||[];\nconst g=hooks.find(h=>h.kind==='gate' && h.capId==='gap-analysis');\nif (g && g.check && g.check.query) console.log(g.check.query); else console.log('NONE');\n\")\necho \"gap-analysis gate query: $GAP_HOOK\"\nif [ \"$GAP_HOOK\" != \"NONE\" ]; then\n  gsd_run check ${GAP_HOOK} \"${PHASE_DIR}\" \"SDK-READ-01, SDK-READ-02, SDK-READ-03, SDK-READ-04\" --raw 2>/dev/null | node -e \"\n  const raw=require('fs').readFileSync(0,'utf8');\n  try { const o=JSON.parse(raw); const d=o.data||o;\n    console.log('block:', d.block);\n    if (d.summary) console.log('summary:', d.summary);\n    if (d.table) console.log('table:\\n'+d.table);\n    if (!d.table && !d.summary && !d.block) console.log('✓ No gaps — all REQ/decision IDs covered by plans');\n  } catch(e){ console.log('(gap check output):', raw.slice(0,400)); }\n  \"\nelse\n  echo \"gap-analysis capability inactive — skip\"\nfi\necho \"\"\necho \"===Final plan inventory===\"\nls -1 \"${PHASE_DIR}\"/*.md | xargs -n1 basename",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nPHASE_DIR=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings\"\n\necho \"===§13e POST-PLANNING GAP ANALYSIS (advisory)===\"\nPLAN_POST=$(gsd_run loop render-hooks plan:post --raw 2>/dev/null)\nGAP_HOOK=$(echo \"$PLAN_POST\" | node -e \"\nconst o=JSON.parse(require('fs').readFileSync(0,'utf8'));\nconst hooks=o.activeHooks||[];\nconst g=hooks.find(h=>h.kind==='gate' && h.capId==='gap-analysis');\nif (g && g.check && g.check.query) console.log(g.check.query); else console.log('NONE');\n\")\necho \"gap-analysis gate query: $GAP_HOOK\"\nif [ \"$GAP_HOOK\" != \"NONE\" ]; then\n  gsd_run check ${GAP_HOOK} \"${PHASE_DIR}\" \"SDK-READ-01, SDK-READ-02, SDK-READ-03, SDK-READ-04\" --raw 2>/dev/null | node -e \"\n  const raw=require('fs').readFileSync(0,'utf8');\n  try { const o=JSON.parse(raw); const d=o.data||o;\n    console.log('block:', d.block);\n    if (d.summary) console.log('summary:', d.summary);\n    if (d.table) console.log('table:\\n'+d.table);\n    if (!d.table && !d.summary && !d.block) console.log('✓ No gaps — all REQ/decision IDs covered by plans');\n  } catch(e){ console.log('(gap check output):', raw.slice(0,400)); }\n  \"\nelse\n  echo \"gap-analysis capability inactive — skip\"\nfi\necho \"\"\necho \"===Final plan inventory===\"\nls -1 \"${PHASE_DIR}\"/*.md | xargs -n1 basename",
   "description": "Run post-planning gap analysis"
 }
 ```
@@ -1406,7 +1406,7 @@ tool_use Bash
 id: toolu_0127ritZzJJm4pMuhW5GiGn4
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nPHASE_DIR=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings\"\n\ngsd_run check gap-analysis.plan-post \"${PHASE_DIR}\" \"SDK-READ-01, SDK-READ-02, SDK-READ-03, SDK-READ-04\" --raw 2>/dev/null > \"$CLAUDE_JOB_DIR/tmp/gap.json\"\nnode -e \"\nconst raw=require('fs').readFileSync(process.env.CLAUDE_JOB_DIR+'/tmp/gap.json','utf8');\ntry { const o=JSON.parse(raw); const d=o.data||o;\n  console.log('block:', d.block);\n  console.log('summary:', d.summary || '(none)');\n  if (d.table) console.log('table:\\n'+d.table); else console.log('table: (none — no gaps)');\n} catch(e){ console.log('parse err; raw head:', raw.slice(0,300)); }\n\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nPHASE_DIR=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings\"\n\ngsd_run check gap-analysis.plan-post \"${PHASE_DIR}\" \"SDK-READ-01, SDK-READ-02, SDK-READ-03, SDK-READ-04\" --raw 2>/dev/null > \"$CLAUDE_JOB_DIR/tmp/gap.json\"\nnode -e \"\nconst raw=require('fs').readFileSync(process.env.CLAUDE_JOB_DIR+'/tmp/gap.json','utf8');\ntry { const o=JSON.parse(raw); const d=o.data||o;\n  console.log('block:', d.block);\n  console.log('summary:', d.summary || '(none)');\n  if (d.table) console.log('table:\\n'+d.table); else console.log('table: (none — no gaps)');\n} catch(e){ console.log('parse err; raw head:', raw.slice(0,300)); }\n\"",
   "description": "Run gap-analysis.plan-post check directly"
 }
 ```
@@ -1450,7 +1450,7 @@ tool_use Bash
 id: toolu_01GgH6qStHwZ7r6HJ5eMQzHG
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\n# §15 step 3: manual invocation (no --auto/--chain) → clear ephemeral chain flag (does NOT touch persistent auto_advance)\ngsd_run query config-set workflow._auto_chain_active false >/dev/null 2>&1 && echo \"ephemeral chain flag cleared\"\necho \"\"\necho \"auto_advance (persistent config): $(gsd_run query config-get workflow.auto_advance 2>/dev/null)\"\necho \"mode: $(gsd_run query config-get mode 2>/dev/null)\"\necho \"\"\necho \"===Phase 68.2 planning artifacts committed===\"\ngit log --oneline -8 | cat",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\n# §15 step 3: manual invocation (no --auto/--chain) → clear ephemeral chain flag (does NOT touch persistent auto_advance)\ngsd_run query config-set workflow._auto_chain_active false >/dev/null 2>&1 && echo \"ephemeral chain flag cleared\"\necho \"\"\necho \"auto_advance (persistent config): $(gsd_run query config-get workflow.auto_advance 2>/dev/null)\"\necho \"mode: $(gsd_run query config-get mode 2>/dev/null)\"\necho \"\"\necho \"===Phase 68.2 planning artifacts committed===\"\ngit log --oneline -8 | cat",
   "description": "Clear ephemeral chain flag, show config"
 }
 ```
@@ -1544,7 +1544,7 @@ tool_use Bash
 id: toolu_01KVvoy3tA2zfGKaPxHGLcx5
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===todos dir structure===\"\nls -la .planning/todos/ 2>/dev/null | head\necho \"\"\necho \"===example todo (the folded owner-stale one)===\"\nfind .planning/todos -name \"*owner-stale*\" -o -name \"*shared-nav-stack*\" 2>/dev/null | head -1 | xargs cat 2>/dev/null | head -40",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===todos dir structure===\"\nls -la .planning/todos/ 2>/dev/null | head\necho \"\"\necho \"===example todo (the folded owner-stale one)===\"\nfind .planning/todos -name \"*owner-stale*\" -o -name \"*shared-nav-stack*\" 2>/dev/null | head -1 | xargs cat 2>/dev/null | head -40",
   "description": "Inspect todo file convention"
 }
 ```
@@ -1599,7 +1599,7 @@ tool_use Write
 id: toolu_017oqMtrD1XhhSUJJtQwuKw1
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/todos/pending/2026-07-06-d03-poll-invalidation-lacks-automated-coverage.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/todos/pending/2026-07-06-d03-poll-invalidation-lacks-automated-coverage.md",
   "content": "---\ncreated: 2026-07-06T00:00:00Z\ntitle: D-03 poll-invalidation freshness leg lacks dedicated automated coverage (Phase 68.2 Plan 09)\narea: web\nfiles:\n  - apps/web/src/hooks/useSyncPolling.ts\n  - apps/web/src/stores/folder.store.ts\n  - .planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-09-PLAN.md\n  - .planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-05-PLAN.md\nsource: Phase 68.2 plan-checker WARNING (non-blocking; checker recommended proceed + log follow-up)\ntype: research\nresolves_phase: null\n---\n\n## Problem\n\nD-03 (locked) requires **belt-and-suspenders** freshness: (1) re-resolve on every\nfolder open/navigation AND (2) poll-driven invalidation for the currently-open\nfolder. Leg (1) — the deterministic nav-resolve — is the primary SC#5 fix and is\ncovered behaviorally by the Plan 05 desync web-e2e (exercised as the Plan 12 phase\ngate). Leg (2) — the **poll-driven invalidation** — has no dedicated automated\nproof in the 12-plan set:\n\n- Plan 05's e2e explicitly drives \"the deterministic nav-triggered re-resolve …\n  not the 30s poll timing.\"\n- Plan 09 Task 2's acceptance for the poll leg is **grep-only**\n  (`grep -rn \"listFolder\" …useSyncPolling.ts`) — it asserts the call site exists,\n  not that invalidation actually fires on a poll tick when the open folder's IPNS\n  `sequenceNumber` bumps.\n\nThis matches the known project landmine \"grep-based ACs can force runtime-broken\nimpls\" — a poll leg that greps clean can still fail to invalidate at runtime.\n\n## Why it's non-blocking\n\nThe poll leg is a redundancy mechanism layered on top of the deterministic\nnav-resolve fix, which IS tested. […]
 
 > TOOL
@@ -1607,7 +1607,7 @@ id: toolu_017oqMtrD1XhhSUJJtQwuKw1
 tool_result
 id: toolu_017oqMtrD1XhhSUJJtQwuKw1
 ```
-File created successfully at: /Users/myankelev/Code/random/cipher-box/.planning/todos/pending/2026-07-06-d03-poll-invalidation-lacks-automated-coverage.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Code/random/cipher-box/.planning/todos/pending/2026-07-06-d03-poll-invalidation-lacks-automated-coverage.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1620,7 +1620,7 @@ tool_use Bash
 id: toolu_01N8vBktXWL3MR2f7fmjbr2f
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\ngsd_run query commit \"docs(68.2): log D-03 poll-invalidation coverage gap todo\" --files \".planning/todos/pending/2026-07-06-d03-poll-invalidation-lacks-automated-coverage.md\" >/dev/null 2>&1\ngit log --oneline -1\ngit status --short\necho \"--- confirm clean tree before execution ---\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\ngsd_run query commit \"docs(68.2): log D-03 poll-invalidation coverage gap todo\" --files \".planning/todos/pending/2026-07-06-d03-poll-invalidation-lacks-automated-coverage.md\" >/dev/null 2>&1\ngit log --oneline -1\ngit status --short\necho \"--- confirm clean tree before execution ---\"",
   "description": "Commit poll-coverage todo"
 }
 ```
@@ -1673,7 +1673,7 @@ tool_use Read
 id: toolu_014EX8XSyqeJ94B7mVKuSzMn
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/workflows/execute-phase.md"
+  "file_path": "/home/<USER>/Code/random/cipher-box/.claude/gsd-core/workflows/execute-phase.md"
 }
 ```
 
@@ -1717,7 +1717,7 @@ tool_use Bash
 id: toolu_01BkmE9FTQnDKF4aQopA15fi
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nINIT=$(gsd_run query init.execute-phase \"68.2\")\nif [[ \"$INIT\" == @file:* ]]; then INIT=$(cat \"${INIT#@file:}\"); fi\necho \"$INIT\" | node -e \"const o=JSON.parse(require('fs').readFileSync(0,'utf8')); const keys=['executor_model','verifier_model','commit_docs','parallelization','branching_strategy','branch_name','phase_found','phase_dir','phase_number','phase_name','phase_slug','plan_count','incomplete_count','state_exists','roadmap_exists','phase_req_ids','response_language']; for (const k of keys) console.log(k+': '+JSON.stringify(o[k]));\"\necho \"\"\necho \"===runtime/worktree config===\"\necho \"runtime: $(gsd_run query config-get runtime --default claude --raw 2>/dev/null || echo claude)\"\necho \"use_worktrees: $(gsd_run query config-get workflow.use_worktrees --raw 2>/dev/null || echo true)\"\necho \"context_window: $(gsd_run query config-get context_window 2>/dev/null || echo 200000)\"\necho \"\"\necho \"===current branch + HEAD===\"\ngit rev-parse --abbrev-ref HEAD\ngit rev-parse --short HEAD",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nINIT=$(gsd_run query init.execute-phase \"68.2\")\nif [[ \"$INIT\" == @file:* ]]; then INIT=$(cat \"${INIT#@file:}\"); fi\necho \"$INIT\" | node -e \"const o=JSON.parse(require('fs').readFileSync(0,'utf8')); const keys=['executor_model','verifier_model','commit_docs','parallelization','branching_strategy','branch_name','phase_found','phase_dir','phase_number','phase_name','phase_slug','plan_count','incomplete_count','state_exists','roadmap_exists','phase_req_ids','response_language']; for (const k of keys) console.log(k+': '+JSON.stringify(o[k]));\"\necho \"\"\necho \"===runtime/worktree config===\"\necho \"runtime: $(gsd_run query config-get runtime --default claude --raw 2>/dev/null || echo claude)\"\necho \"use_worktrees: $(gsd_run query config-get workflow.use_worktrees --raw 2>/dev/null || echo true)\"\necho \"context_window: $(gsd_run query config-get context_window 2>/dev/null || echo 200000)\"\necho \"\"\necho \"===current branch + HEAD===\"\ngit rev-parse --abbrev-ref HEAD\ngit rev-parse --short HEAD",
   "description": "Initialize execute-phase for 68.2"
 }
 ```
@@ -1762,7 +1762,7 @@ tool_use Read
 id: toolu_01USsGdb6GHSFtJViZoJzGUY
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/workflows/execute-phase.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.claude/gsd-core/workflows/execute-phase.md",
   "offset": 614,
   "limit": 560
 }
@@ -1804,7 +1804,7 @@ tool_use Bash
 id: toolu_01QHJe7mPgNzXKwj6iRgatYs
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\necho \"===WORKTREE BASE-CHECK (#683 auto-degrade decision)===\"\ngsd_run query worktree.base-check 2>/dev/null | node -e \"\nconst raw=require('fs').readFileSync(0,'utf8');\ntry{const o=JSON.parse(raw); const d=o.data||o;\n  console.log('shouldDegrade:', d.shouldDegrade);\n  console.log('message:', d.message||'(none)');\n  if(d.baseRef) console.log('baseRef:', d.baseRef);\n} catch(e){ console.log('raw:', raw.slice(0,400)); }\n\"\necho \"\"\necho \"===How far ahead of origin/main?===\"\ngit rev-list --count origin/main..HEAD 2>/dev/null || echo \"origin/main not available\"\necho \"\"\necho \"===reap orphaned worktrees (pre-dispatch hygiene)===\"\ngsd_run query worktree.reap-orphans 2>/dev/null | head -3 || echo \"(none)\"\necho \"\"\necho \"===existing worktrees===\"\ngit worktree list 2>/dev/null",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\necho \"===WORKTREE BASE-CHECK (#683 auto-degrade decision)===\"\ngsd_run query worktree.base-check 2>/dev/null | node -e \"\nconst raw=require('fs').readFileSync(0,'utf8');\ntry{const o=JSON.parse(raw); const d=o.data||o;\n  console.log('shouldDegrade:', d.shouldDegrade);\n  console.log('message:', d.message||'(none)');\n  if(d.baseRef) console.log('baseRef:', d.baseRef);\n} catch(e){ console.log('raw:', raw.slice(0,400)); }\n\"\necho \"\"\necho \"===How far ahead of origin/main?===\"\ngit rev-list --count origin/main..HEAD 2>/dev/null || echo \"origin/main not available\"\necho \"\"\necho \"===reap orphaned worktrees (pre-dispatch hygiene)===\"\ngsd_run query worktree.reap-orphans 2>/dev/null | head -3 || echo \"(none)\"\necho \"\"\necho \"===existing worktrees===\"\ngit worktree list 2>/dev/null",
   "description": "Check worktree base-check degradation decision"
 }
 ```
@@ -1827,7 +1827,7 @@ message: (none)
   "reaped": 0,
 
 ===existing worktrees===
-/Users/myankelev/Code/random/cipher-box  dbf2a419b [feat/sdk-owned-read-chain-and-resolved-folder-listings]
+/home/<USER>/Code/random/cipher-box  dbf2a419b [feat/sdk-owned-read-chain-and-resolved-folder-listings]
 ```
 
 > TOOL
@@ -1836,7 +1836,7 @@ tool_use Read
 id: toolu_01WoE3r7BfKhmfQVzkJYSz6v
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/workflows/execute-phase.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.claude/gsd-core/workflows/execute-phase.md",
   "offset": 1174,
   "limit": 535
 }
@@ -1892,7 +1892,7 @@ tool_use Bash
 id: toolu_015wqn4BdB5F6vYF3YTpxPzZ
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===worktree.baseRef in settings===\"\nfor f in .claude/settings.json .claude/settings.local.json; do\n  if [ -f \"$f\" ]; then\n    echo \"--- $f ---\"\n    node -e \"try{const o=require('./$f'); console.log('worktree:', JSON.stringify(o.worktree||'(unset)')); }catch(e){console.log('parse err', e.message)}\" 2>/dev/null\n  else\n    echo \"--- $f: does not exist ---\"\n  fi\ndone\necho \"\"\necho \"===GSD resolved baseRef (if queryable)===\"\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\ngsd_run query worktree.base-check 2>/dev/null | node -e \"const r=require('fs').readFileSync(0,'utf8'); try{const o=JSON.parse(r); const d=o.data||o; console.log(JSON.stringify(d,null,2));}catch(e){console.log(r.slice(0,600))}\"\necho \"\"\necho \"===origin/main vs HEAD: are the 10 commits planning-only?===\"\ngit log --oneline origin/main..HEAD 2>/dev/null | cat",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===worktree.baseRef in settings===\"\nfor f in .claude/settings.json .claude/settings.local.json; do\n  if [ -f \"$f\" ]; then\n    echo \"--- $f ---\"\n    node -e \"try{const o=require('./$f'); console.log('worktree:', JSON.stringify(o.worktree||'(unset)')); }catch(e){console.log('parse err', e.message)}\" 2>/dev/null\n  else\n    echo \"--- $f: does not exist ---\"\n  fi\ndone\necho \"\"\necho \"===GSD resolved baseRef (if queryable)===\"\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\ngsd_run query worktree.base-check 2>/dev/null | node -e \"const r=require('fs').readFileSync(0,'utf8'); try{const o=JSON.parse(r); const d=o.data||o; console.log(JSON.stringify(d,null,2));}catch(e){console.log(r.slice(0,600))}\"\necho \"\"\necho \"===origin/main vs HEAD: are the 10 commits planning-only?===\"\ngit log --oneline origin/main..HEAD 2>/dev/null | cat",
   "description": "Verify worktree baseRef and the 10 HEAD commits"
 }
 ```
@@ -1943,7 +1943,7 @@ tool_use Bash
 id: toolu_01E7tH53SJ3T7FmtenQozkSa
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\n\necho \"===no submodules?===\"\n[ -f .gitmodules ] && echo \".gitmodules EXISTS\" || echo \"no .gitmodules ✓\"\necho \"\"\necho \"===STATE begin-phase===\"\ngsd_run query state.begin-phase --phase \"68.2\" --name \"sdk-owned-read-chain-and-resolved-folder-listings\" --plans \"12\" 2>&1 | tail -2\necho \"\"\necho \"===PLAN INDEX (wave grouping + deps)===\"\ngsd_run query phase-plan-index \"68.2\" 2>/dev/null > \"$CLAUDE_JOB_DIR/tmp/plan-index.json\"\nnode -e \"\nconst o=JSON.parse(require('fs').readFileSync(process.env.CLAUDE_JOB_DIR+'/tmp/plan-index.json','utf8'));\nconst d=o.data||o;\nconsole.log('phase:', d.phase, '| has_checkpoints:', d.has_checkpoints);\nconsole.log('waves:', JSON.stringify(d.waves));\nconsole.log('');\nconsole.log('PLANS (id | wave | autonomous | has_summary | tasks | files):');\nfor (const p of (d.plans||[])) {\n  console.log('  '+p.id+' | w'+p.wave+' | auto='+p.autonomous+' | summary='+p.has_summary+' | tasks='+p.task_count);\n  console.log('      files_modified:', JSON.stringify(p.files_modified||[]).slice(0,220));\n}\n\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\n\necho \"===no submodules?===\"\n[ -f .gitmodules ] && echo \".gitmodules EXISTS\" || echo \"no .gitmodules ✓\"\necho \"\"\necho \"===STATE begin-phase===\"\ngsd_run query state.begin-phase --phase \"68.2\" --name \"sdk-owned-read-chain-and-resolved-folder-listings\" --plans \"12\" 2>&1 | tail -2\necho \"\"\necho \"===PLAN INDEX (wave grouping + deps)===\"\ngsd_run query phase-plan-index \"68.2\" 2>/dev/null > \"$CLAUDE_JOB_DIR/tmp/plan-index.json\"\nnode -e \"\nconst o=JSON.parse(require('fs').readFileSync(process.env.CLAUDE_JOB_DIR+'/tmp/plan-index.json','utf8'));\nconst d=o.data||o;\nconsole.log('phase:', d.phase, '| has_checkpoints:', d.has_checkpoints);\nconsole.log('waves:', JSON.stringify(d.waves));\nconsole.log('');\nconsole.log('PLANS (id | wave | autonomous | has_summary | tasks | files):');\nfor (const p of (d.plans||[])) {\n  console.log('  '+p.id+' | w'+p.wave+' | auto='+p.autonomous+' | summary='+p.has_summary+' | tasks='+p.task_count);\n  console.log('      files_modified:', JSON.stringify(p.files_modified||[]).slice(0,220));\n}\n\"",
   "description": "STATE begin-phase, plan index, submodule check"
 }
 ```
@@ -2002,7 +2002,7 @@ tool_use Bash
 id: toolu_017pBLLexThm7kiTYMrkLyHn
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\necho \"===EXECUTOR AGENT SKILLS (len)===\"\ngsd_run query agent-skills gsd-executor 2>/dev/null | wc -l\necho \"\"\necho \"===PROJECT.md exists?===\"\nls -la .planning/PROJECT.md 2>/dev/null | awk '{print $NF}'\necho \"\"\necho \"===AGENTS.md / CLAUDE.md for executor===\"\nls .claude/skills/ 2>/dev/null | head; echo \"(skills above)\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\necho \"===EXECUTOR AGENT SKILLS (len)===\"\ngsd_run query agent-skills gsd-executor 2>/dev/null | wc -l\necho \"\"\necho \"===PROJECT.md exists?===\"\nls -la .planning/PROJECT.md 2>/dev/null | awk '{print $NF}'\necho \"\"\necho \"===AGENTS.md / CLAUDE.md for executor===\"\nls .claude/skills/ 2>/dev/null | head; echo \"(skills above)\"",
   "description": "Get executor skills and confirm context files"
 }
 ```
@@ -2028,7 +2028,7 @@ tool_use Read
 id: toolu_01AtTexTdfyxqqyFeBR7EqDm
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-01-PLAN.md"
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-01-PLAN.md"
 }
 ```
 
@@ -2090,7 +2090,7 @@ id: toolu_01NdJgBCfkKcV6cwbqQnxN82
   "subagent_type": "gsd-executor",
   "model": "sonnet",
   "run_in_background": false,
-  "prompt": "<objective>\nExecute plan 01 of phase 68.2-sdk-owned-read-chain-and-resolved-folder-listings.\nCommit each task atomically. Create SUMMARY.md.\n</objective>\n\n<sequential_execution>\nYou are running as a SEQUENTIAL executor agent on the main working tree (branch feat/sdk-owned-read-chain-and-resolved-folder-listings). NOT a worktree — `.git` is a directory here.\nUse normal git commits (hooks run by default). Do NOT pass --no-verify.\nREQUIRED ORDER at the end: Write SUMMARY.md → commit it → only then any narration. No prose between the Write and the commit (truncation risk).\nThis is a TDD plan (type: tdd): land Task 1 as a RED commit (failing test) FIRST, then Task 2 as the GREEN commit. Do not collapse them into one commit.\n</sequential_execution>\n\n<execution_context>\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/workflows/execute-plan.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/templates/summary.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/checkpoints.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/tdd.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/executor-examples.md\n</execution_context>\n\n<files_to_read>\nRead these at execution start. First: `PROJECT_ROOT=$(git rev-parse --show-toplevel)`\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-01-PLAN.md (THE PLAN — read fully; it carries its own <context> @-refs: PROJECT.md, RESEARCH.md, PATTERNS.md, ADR 0002)\n- ${PROJECT_ROOT}/.planning/PROJECT.md (Project context)\n- ${PROJECT_ROOT}/.planning/STATE.md (State)\n- ${PROJECT_ROOT}/.planning/config.json (Config)\n- ${PROJECT_ROOT}/CLAUDE.md (Project instructions — terminology, string-literals-over-enums, Uint8Array, camelCase, crypto rules; FOLLOW these)\n- ${PROJECT_ROOT}/.claude/skills/ (Project skills, if present — read SKILL.md files)\n</files_to_read>\n\n<critical_constraints>\n- **Security-critical plan (RESEARCH Pitfall 2):** you are ADDING the ROT-07 read-path gate to the SDK BEFORE any web service is deleted. Follow the plan's <action> precisely — especially: […]
+  "prompt": "<objective>\nExecute plan 01 of phase 68.2-sdk-owned-read-chain-and-resolved-folder-listings.\nCommit each task atomically. Create SUMMARY.md.\n</objective>\n\n<sequential_execution>\nYou are running as a SEQUENTIAL executor agent on the main working tree (branch feat/sdk-owned-read-chain-and-resolved-folder-listings). NOT a worktree — `.git` is a directory here.\nUse normal git commits (hooks run by default). Do NOT pass --no-verify.\nREQUIRED ORDER at the end: Write SUMMARY.md → commit it → only then any narration. No prose between the Write and the commit (truncation risk).\nThis is a TDD plan (type: tdd): land Task 1 as a RED commit (failing test) FIRST, then Task 2 as the GREEN commit. Do not collapse them into one commit.\n</sequential_execution>\n\n<execution_context>\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/workflows/execute-plan.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/templates/summary.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/checkpoints.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/tdd.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/executor-examples.md\n</execution_context>\n\n<files_to_read>\nRead these at execution start. First: `PROJECT_ROOT=$(git rev-parse --show-toplevel)`\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-01-PLAN.md (THE PLAN — read fully; it carries its own <context> @-refs: PROJECT.md, RESEARCH.md, PATTERNS.md, ADR 0002)\n- ${PROJECT_ROOT}/.planning/PROJECT.md (Project context)\n- ${PROJECT_ROOT}/.planning/STATE.md (State)\n- ${PROJECT_ROOT}/.planning/config.json (Config)\n- ${PROJECT_ROOT}/CLAUDE.md (Project instructions — terminology, string-literals-over-enums, Uint8Array, camelCase, crypto rules; FOLLOW these)\n- ${PROJECT_ROOT}/.claude/skills/ (Project skills, if present — read SKILL.md files)\n</files_to_read>\n\n<critical_constraints>\n- **Security-critical plan (RESEARCH Pitfall 2):** you are ADDING the ROT-07 read-path gate to the SDK BEFORE any web service is deleted. Follow the plan's <action> precisely — especially: […]
 
 > TOOL
 
@@ -2135,7 +2135,7 @@ tool_use Bash
 id: toolu_013b4Jm5gQgRcwVZ9RyfZek2
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===fetch latest origin/main===\"\ngit fetch origin main 2>&1 | tail -3\necho \"\"\necho \"===origin/main HEAD===\"\ngit log --oneline -1 origin/main\necho \"\"\necho \"===Does origin/main have phase 69 in ROADMAP? What's its slug/name?===\"\ngit show origin/main:.planning/ROADMAP.md 2>/dev/null | grep -nE \"Phase 69|### Phase 69\" | head -5\necho \"\"\necho \"===phase 69 section (from origin/main ROADMAP)===\"\ngit show origin/main:.planning/ROADMAP.md 2>/dev/null | awk '/### Phase 69/{f=1} f{print} /^### Phase 7[0-9]/{if(f && !/Phase 69/)exit}' | head -25\necho \"\"\necho \"===is there already a phases/69* dir on origin/main?===\"\ngit show origin/main:.planning/phases 2>/dev/null | grep -i \"69\" || echo \"(no 69 phase dir on origin/main)\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===fetch latest origin/main===\"\ngit fetch origin main 2>&1 | tail -3\necho \"\"\necho \"===origin/main HEAD===\"\ngit log --oneline -1 origin/main\necho \"\"\necho \"===Does origin/main have phase 69 in ROADMAP? What's its slug/name?===\"\ngit show origin/main:.planning/ROADMAP.md 2>/dev/null | grep -nE \"Phase 69|### Phase 69\" | head -5\necho \"\"\necho \"===phase 69 section (from origin/main ROADMAP)===\"\ngit show origin/main:.planning/ROADMAP.md 2>/dev/null | awk '/### Phase 69/{f=1} f{print} /^### Phase 7[0-9]/{if(f && !/Phase 69/)exit}' | head -25\necho \"\"\necho \"===is there already a phases/69* dir on origin/main?===\"\ngit show origin/main:.planning/phases 2>/dev/null | grep -i \"69\" || echo \"(no 69 phase dir on origin/main)\"",
   "description": "Fetch origin/main and inspect phase 69"
 }
 ```
@@ -2174,7 +2174,7 @@ tool_use Bash
 id: toolu_01WbbpC79LaontFBcYiQxnye
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===local origin/main ref===\"\ngit rev-parse --short origin/main\necho \"\"\necho \"===branch name collision check===\"\ngit show-ref --verify --quiet refs/heads/feat/phase-69-fuse-winfsp && echo \"EXISTS (will pick another)\" || echo \"free ✓\"\necho \"\"\necho \"===create worktree off origin/main (sibling dir, new branch)===\"\ngit worktree add -b feat/phase-69-fuse-winfsp ../cipher-box-phase69 origin/main 2>&1 | tail -6\necho \"\"\necho \"===verify worktree list===\"\ngit worktree list\necho \"\"\necho \"===confirm the new worktree is at origin/main HEAD on its own branch===\"\ngit -C ../cipher-box-phase69 log --oneline -1\ngit -C ../cipher-box-phase69 rev-parse --abbrev-ref HEAD\necho \"\"\necho \"===sanity: phase 69 present in that worktree's roadmap, no 68.2 planning docs===\"\ngit -C ../cipher-box-phase69 log --oneline -3 | cat\nls ../cipher-box-phase69/.planning/phases/ | grep -E \"68.2|69\" || echo \"(no 68.2/69 phase dirs — clean origin/main base as requested)\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===local origin/main ref===\"\ngit rev-parse --short origin/main\necho \"\"\necho \"===branch name collision check===\"\ngit show-ref --verify --quiet refs/heads/feat/phase-69-fuse-winfsp && echo \"EXISTS (will pick another)\" || echo \"free ✓\"\necho \"\"\necho \"===create worktree off origin/main (sibling dir, new branch)===\"\ngit worktree add -b feat/phase-69-fuse-winfsp ../cipher-box-phase69 origin/main 2>&1 | tail -6\necho \"\"\necho \"===verify worktree list===\"\ngit worktree list\necho \"\"\necho \"===confirm the new worktree is at origin/main HEAD on its own branch===\"\ngit -C ../cipher-box-phase69 log --oneline -1\ngit -C ../cipher-box-phase69 rev-parse --abbrev-ref HEAD\necho \"\"\necho \"===sanity: phase 69 present in that worktree's roadmap, no 68.2 planning docs===\"\ngit -C ../cipher-box-phase69 log --oneline -3 | cat\nls ../cipher-box-phase69/.planning/phases/ | grep -E \"68.2|69\" || echo \"(no 68.2/69 phase dirs — clean origin/main base as requested)\"",
   "description": "Create phase-69 worktree off origin/main"
 }
 ```
@@ -2196,8 +2196,8 @@ branch 'feat/phase-69-fuse-winfsp' set up to track 'origin/main'.
 HEAD is now at 1fb8996a2 feat: integrate web client with node/v3 read and write runtime (#588)
 
 ===verify worktree list===
-/Users/myankelev/Code/random/cipher-box          9cb17ac4b [feat/sdk-owned-read-chain-and-resolved-folder-listings]
-/Users/myankelev/Code/random/cipher-box-phase69  1fb8996a2 [feat/phase-69-fuse-winfsp]
+/home/<USER>/Code/random/cipher-box          9cb17ac4b [feat/sdk-owned-read-chain-and-resolved-folder-listings]
+/home/<USER>/Code/random/cipher-box-phase69  1fb8996a2 [feat/phase-69-fuse-winfsp]
 
 ===confirm the new worktree is at origin/main HEAD on its own branch===
 1fb8996a2 feat: integrate web client with node/v3 read and write runtime (#588)
@@ -2212,7 +2212,7 @@ feat/phase-69-fuse-winfsp
 
 > AGENT
 
-Worktree created at `/Users/myankelev/Code/random/cipher-box-phase69` on branch `feat/phase-69-fuse-winfsp` (off `origin/main` @ `1fb8996a2`). One thing to verify — the `ls` showed a `68.2` dir in that worktree, which shouldn't exist on origin/main. Let me confirm the worktree is a faithful, uncontaminated origin/main checkout.
+Worktree created at `/home/<USER>/Code/random/cipher-box-phase69` on branch `feat/phase-69-fuse-winfsp` (off `origin/main` @ `1fb8996a2`). One thing to verify — the `ls` showed a `68.2` dir in that worktree, which shouldn't exist on origin/main. Let me confirm the worktree is a faithful, uncontaminated origin/main checkout.
 
 > TOOL
 
@@ -2220,7 +2220,7 @@ tool_use Bash
 id: toolu_01XNccca9h8RUGVcZwZb9eHV
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===what does the worktree ACTUALLY have in .planning/phases/68.2*? ===\"\nls -la ../cipher-box-phase69/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/ 2>/dev/null || echo \"(no such dir)\"\necho \"\"\necho \"===does origin/main track a 68.2 dir? (git ls-tree)===\"\ngit ls-tree -r origin/main --name-only | grep \"phases/68.2\" || echo \"origin/main tracks NO 68.2 files\"\necho \"\"\necho \"===is the worktree clean (no stray/uncommitted)?===\"\ngit -C ../cipher-box-phase69 status --short | head\ngit -C ../cipher-box-phase69 status --short | wc -l | xargs echo \"changed-file count:\"\necho \"\"\necho \"===phase 69 IS in the worktree roadmap?===\"\ngrep -c \"Phase 69\" ../cipher-box-phase69/.planning/ROADMAP.md\necho \"\"\necho \"===does the worktree share .git (so branches/refs are visible)?===\"\nhead -1 ../cipher-box-phase69/.git 2>/dev/null || echo \"(.git is a dir)\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===what does the worktree ACTUALLY have in .planning/phases/68.2*? ===\"\nls -la ../cipher-box-phase69/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/ 2>/dev/null || echo \"(no such dir)\"\necho \"\"\necho \"===does origin/main track a 68.2 dir? (git ls-tree)===\"\ngit ls-tree -r origin/main --name-only | grep \"phases/68.2\" || echo \"origin/main tracks NO 68.2 files\"\necho \"\"\necho \"===is the worktree clean (no stray/uncommitted)?===\"\ngit -C ../cipher-box-phase69 status --short | head\ngit -C ../cipher-box-phase69 status --short | wc -l | xargs echo \"changed-file count:\"\necho \"\"\necho \"===phase 69 IS in the worktree roadmap?===\"\ngrep -c \"Phase 69\" ../cipher-box-phase69/.planning/ROADMAP.md\necho \"\"\necho \"===does the worktree share .git (so branches/refs are visible)?===\"\nhead -1 ../cipher-box-phase69/.git 2>/dev/null || echo \"(.git is a dir)\"",
   "description": "Verify worktree is clean origin/main checkout"
 }
 ```
@@ -2246,7 +2246,7 @@ changed-file count: 0
 2
 
 ===does the worktree share .git (so branches/refs are visible)?===
-gitdir: /Users/myankelev/Code/random/cipher-box/.git/worktrees/cipher-box-phase69
+gitdir: /home/<USER>/Code/random/cipher-box/.git/worktrees/cipher-box-phase69
 ```
 
 > AGENT
@@ -2257,14 +2257,14 @@ The worktree is a clean, faithful `origin/main` checkout — the `68.2` entry th
 
 | | |
 |---|---|
-| **Path** | `/Users/myankelev/Code/random/cipher-box-phase69` |
+| **Path** | `/home/<USER>/Code/random/cipher-box-phase69` |
 | **Branch** | `feat/phase-69-fuse-winfsp` (new, tracks `origin/main`) |
 | **Base** | `origin/main` @ `1fb8996a2` — no 68.2 planning docs, clean slate |
 | **Phase 69** | FUSE + WinFsp Rust integration, grant-root awareness, `Node` enum, Windows CI (TEST-03) |
 
 **To kick it off** — in a *new* Claude Code session/terminal (keep this one on 68.2):
 ```
-cd /Users/myankelev/Code/random/cipher-box-phase69
+cd /home/<USER>/Code/random/cipher-box-phase69
 /gsd-discuss-phase 69      # recommended first — the roadmap flags a required plan-time
                            # design pass (grant-root scope algo) + open Q3 (FUSE delete authority model)
 # then: /gsd-plan-phase 69  →  /gsd-execute-phase 69
@@ -2283,7 +2283,7 @@ tool_use Bash
 id: toolu_01JoXgzaibi2jNZ3tFZsgdQR
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===commits present?===\"\ngit log --oneline --grep=\"68.2-01\" | cat\necho \"\"\necho \"===SUMMARY exists + no FAILED self-check?===\"\nSUMMARY=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-01-SUMMARY.md\"\ntest -f \"$SUMMARY\" && echo \"SUMMARY exists ✓\" || echo \"SUMMARY MISSING ✗\"\ngrep -q \"## Self-Check: FAILED\" \"$SUMMARY\" && echo \"⚠ SELF-CHECK FAILED marker present\" || echo \"no FAILED marker ✓\"\necho \"\"\necho \"===key files present + modified?===\"\ntest -f packages/sdk/src/__tests__/folder-listing-gate.test.ts && echo \"gate test file ✓\" || echo \"gate test MISSING ✗\"\ngit log --oneline -1 -- packages/sdk/src/client.ts | cat\necho \"\"\necho \"===the actual gate wiring landed in client.ts? (enforceResolved on read path)===\"\ngrep -n \"enforceResolved\" packages/sdk/src/client.ts | head\necho \"\"\necho \"===tree clean + HEAD===\"\ngit status --short | head -3\ngit rev-parse --short HEAD",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===commits present?===\"\ngit log --oneline --grep=\"68.2-01\" | cat\necho \"\"\necho \"===SUMMARY exists + no FAILED self-check?===\"\nSUMMARY=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-01-SUMMARY.md\"\ntest -f \"$SUMMARY\" && echo \"SUMMARY exists ✓\" || echo \"SUMMARY MISSING ✗\"\ngrep -q \"## Self-Check: FAILED\" \"$SUMMARY\" && echo \"⚠ SELF-CHECK FAILED marker present\" || echo \"no FAILED marker ✓\"\necho \"\"\necho \"===key files present + modified?===\"\ntest -f packages/sdk/src/__tests__/folder-listing-gate.test.ts && echo \"gate test file ✓\" || echo \"gate test MISSING ✗\"\ngit log --oneline -1 -- packages/sdk/src/client.ts | cat\necho \"\"\necho \"===the actual gate wiring landed in client.ts? (enforceResolved on read path)===\"\ngrep -n \"enforceResolved\" packages/sdk/src/client.ts | head\necho \"\"\necho \"===tree clean + HEAD===\"\ngit status --short | head -3\ngit rev-parse --short HEAD",
   "description": "Spot-check Wave 1 output (commits, summary, gate wiring)"
 }
 ```
@@ -2328,7 +2328,7 @@ tool_use Bash
 id: toolu_016ztu21RiVWmieYFDTJtgMY
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===independent re-run: folder-listing-gate (the new ROT-07 read gate)===\"\ntimeout 240 pnpm --filter @cipherbox/sdk test -- --run folder-listing-gate 2>&1 | tail -12\necho \"EXIT: ${PIPESTATUS[0]}\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===independent re-run: folder-listing-gate (the new ROT-07 read gate)===\"\ntimeout 240 pnpm --filter @cipherbox/sdk test -- --run folder-listing-gate 2>&1 | tail -12\necho \"EXIT: ${PIPESTATUS[0]}\"",
   "description": "Independently re-run the gate acceptance test"
 }
 ```
@@ -2383,7 +2383,7 @@ id: toolu_016tooPBrd7Yrgt4FF94bMW4
   "subagent_type": "gsd-executor",
   "model": "sonnet",
   "run_in_background": false,
-  "prompt": "<objective>\nExecute plan 02 of phase 68.2-sdk-owned-read-chain-and-resolved-folder-listings.\nCommit each task atomically. Create SUMMARY.md.\n</objective>\n\n<sequential_execution>\nYou are running as a SEQUENTIAL executor agent on the main working tree (branch feat/sdk-owned-read-chain-and-resolved-folder-listings). NOT a worktree — `.git` is a directory here.\nUse normal git commits (hooks run by default). Do NOT pass --no-verify.\nREQUIRED ORDER at the end: Write SUMMARY.md → commit it → only then any narration. No prose between the Write and the commit.\nThis is a TDD plan: land RED (failing test) commits before their GREEN implementation per the plan's task types. Do not collapse RED+GREEN into one commit.\n</sequential_execution>\n\n<execution_context>\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/workflows/execute-plan.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/templates/summary.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/checkpoints.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/tdd.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/executor-examples.md\n</execution_context>\n\n<files_to_read>\nFirst: `PROJECT_ROOT=$(git rev-parse --show-toplevel)`\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-02-PLAN.md (THE PLAN — read fully; follow its <context> @-refs, tasks, acceptance criteria, and must_haves exactly)\n- ${PROJECT_ROOT}/.planning/PROJECT.md\n- ${PROJECT_ROOT}/.planning/STATE.md\n- ${PROJECT_ROOT}/.planning/config.json\n- ${PROJECT_ROOT}/CLAUDE.md (terminology, string-literals-over-enums, Uint8Array, camelCase, crypto rules — FOLLOW)\n- ${PROJECT_ROOT}/.claude/skills/ (if present)\n</files_to_read>\n\n<wave1_dependency_context>\nWave 1 (plan 68.2-01, commit 9cb17ac4b) already landed the SDK-internal ROT-07 read gate: `resolvePublishedNode` now returns `signatureVerified`, and `RotationHighWater.enforceResolved` is called on the read path in `dfsFindFolder` (client.ts ~L913) and the root resolve (~L781). Your `listFolder`/`listSharedFolder` MUST route through this already-gated read path — do NOT bypass the gate or re-resolve raw. The gate is […]
+  "prompt": "<objective>\nExecute plan 02 of phase 68.2-sdk-owned-read-chain-and-resolved-folder-listings.\nCommit each task atomically. Create SUMMARY.md.\n</objective>\n\n<sequential_execution>\nYou are running as a SEQUENTIAL executor agent on the main working tree (branch feat/sdk-owned-read-chain-and-resolved-folder-listings). NOT a worktree — `.git` is a directory here.\nUse normal git commits (hooks run by default). Do NOT pass --no-verify.\nREQUIRED ORDER at the end: Write SUMMARY.md → commit it → only then any narration. No prose between the Write and the commit.\nThis is a TDD plan: land RED (failing test) commits before their GREEN implementation per the plan's task types. Do not collapse RED+GREEN into one commit.\n</sequential_execution>\n\n<execution_context>\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/workflows/execute-plan.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/templates/summary.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/checkpoints.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/tdd.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/executor-examples.md\n</execution_context>\n\n<files_to_read>\nFirst: `PROJECT_ROOT=$(git rev-parse --show-toplevel)`\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-02-PLAN.md (THE PLAN — read fully; follow its <context> @-refs, tasks, acceptance criteria, and must_haves exactly)\n- ${PROJECT_ROOT}/.planning/PROJECT.md\n- ${PROJECT_ROOT}/.planning/STATE.md\n- ${PROJECT_ROOT}/.planning/config.json\n- ${PROJECT_ROOT}/CLAUDE.md (terminology, string-literals-over-enums, Uint8Array, camelCase, crypto rules — FOLLOW)\n- ${PROJECT_ROOT}/.claude/skills/ (if present)\n</files_to_read>\n\n<wave1_dependency_context>\nWave 1 (plan 68.2-01, commit 9cb17ac4b) already landed the SDK-internal ROT-07 read gate: `resolvePublishedNode` now returns `signatureVerified`, and `RotationHighWater.enforceResolved` is called on the read path in `dfsFindFolder` (client.ts ~L913) and the root resolve (~L781). Your `listFolder`/`listSharedFolder` MUST route through this already-gated read path — do NOT bypass the gate or re-resolve raw. The gate is […]
 
 > TOOL
 
@@ -2396,7 +2396,7 @@ All green, working tree clean.
 
 **Plan:** 68.2-02
 **Tasks:** 3/3 (TDD RED/GREEN) + 1 follow-up
-**SUMMARY:** `/Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-02-SUMMARY.md`
+**SUMMARY:** `/home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-02-SUMMARY.md`
 
 **Test results:**
 - `pnpm --filter @cipherbox/sdk test -- --run folder-listing.test` — 4/4 pass
@@ -2415,11 +2415,11 @@ All green, working tree clean.
 - `1f6c675c5`: docs(68.2-02): complete SDK-owned resolved folder listings plan
 
 **Key files:**
-- `/Users/myankelev/Code/random/cipher-box/packages/sdk/src/folder-listing.ts` (new)
-- `/Users/myankelev/Code/random/cipher-box/packages/sdk/src/__tests__/folder-listing.test.ts` (new)
-- `/Users/myankelev/Code/random/cipher-box/packages/sdk/src/client.ts`
-- `/Users/myankelev/Code/random/cipher-box/packages/sdk/src/events.ts`
-- `/Users/myankelev/Code/random/cipher-box/packages/sdk/src/index.ts`
+- `/home/<USER>/Code/random/cipher-box/packages/sdk/src/folder-listing.ts` (new)
+- `/home/<USER>/Code/random/cipher-box/packages/sdk/src/__tests__/folder-listing.test.ts` (new)
+- `/home/<USER>/Code/random/cipher-box/packages/sdk/src/client.ts`
+- `/home/<USER>/Code/random/cipher-box/packages/sdk/src/events.ts`
+- `/home/<USER>/Code/random/cipher-box/packages/sdk/src/index.ts`
 
 **Notable deviation (documented in SUMMARY):** `resolveChildren`'s per-child failure handling was widened mid-implementation from "skip only on absent record, throw on crypto failure" to "skip on any resolve/unseal failure" — retyping all […]
 
@@ -2435,7 +2435,7 @@ tool_use Bash
 id: toolu_01Gj4KDLTh9Avwy5gyRjqfvh
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===commits + SUMMARY + key files===\"\ngit log --oneline --grep=\"68.2-02\" | cat\nSUMMARY=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-02-SUMMARY.md\"\ngrep -q \"## Self-Check: FAILED\" \"$SUMMARY\" && echo \"⚠ FAILED marker\" || echo \"no FAILED marker ✓\"\ntest -f packages/sdk/src/folder-listing.ts && echo \"folder-listing.ts ✓\"\necho \"\"\necho \"===CRITICAL: does per-child degradation swallow the gate's SequenceRegressionError?===\"\necho \"--- resolveChildren error handling (folder-listing.ts) ---\"\ngrep -nE \"catch|SequenceRegression|enforceResolved|continue|skip|try \\{|throw\" packages/sdk/src/folder-listing.ts | head -40",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===commits + SUMMARY + key files===\"\ngit log --oneline --grep=\"68.2-02\" | cat\nSUMMARY=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-02-SUMMARY.md\"\ngrep -q \"## Self-Check: FAILED\" \"$SUMMARY\" && echo \"⚠ FAILED marker\" || echo \"no FAILED marker ✓\"\ntest -f packages/sdk/src/folder-listing.ts && echo \"folder-listing.ts ✓\"\necho \"\"\necho \"===CRITICAL: does per-child degradation swallow the gate's SequenceRegressionError?===\"\necho \"--- resolveChildren error handling (folder-listing.ts) ---\"\ngrep -nE \"catch|SequenceRegression|enforceResolved|continue|skip|try \\{|throw\" packages/sdk/src/folder-listing.ts | head -40",
   "description": "Spot-check Wave 2 + inspect resolveChildren error handling"
 }
 ```
@@ -2480,7 +2480,7 @@ tool_use Read
 id: toolu_01MJDfnV1zAvoSgW6fyWTAcM
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/packages/sdk/src/folder-listing.ts",
+  "file_path": "/home/<USER>/Code/random/cipher-box/packages/sdk/src/folder-listing.ts",
   "offset": 40,
   "limit": 85
 }
@@ -2528,7 +2528,7 @@ tool_use Bash
 id: toolu_01L2BVQttSj8E7WHpxYSdcYC
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===re-run the security tests independently (gate + rotation)===\"\ntimeout 240 pnpm --filter @cipherbox/sdk test -- --run client-rotation folder-listing-gate 2>&1 | grep -E \"Test Files|Tests |FAIL|✗|failed\" | head\necho \"\"\necho \"===what did the 4 changed test assertions touch? (git diff on test files in the GREEN commits)===\"\ngit show 786aad0c5 --stat | grep -E \"test|spec\" | head",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===re-run the security tests independently (gate + rotation)===\"\ntimeout 240 pnpm --filter @cipherbox/sdk test -- --run client-rotation folder-listing-gate 2>&1 | grep -E \"Test Files|Tests |FAIL|✗|failed\" | head\necho \"\"\necho \"===what did the 4 changed test assertions touch? (git diff on test files in the GREEN commits)===\"\ngit show 786aad0c5 --stat | grep -E \"test|spec\" | head",
   "description": "Read resolveChildren + re-run security tests"
 }
 ```
@@ -2577,7 +2577,7 @@ id: toolu_01PRv1THP8zez87XNUzVnDuF
   "subagent_type": "gsd-executor",
   "model": "sonnet",
   "run_in_background": false,
-  "prompt": "<objective>\nExecute plan 03 of phase 68.2-sdk-owned-read-chain-and-resolved-folder-listings.\nCommit each task atomically. Create SUMMARY.md.\n</objective>\n\n<sequential_execution>\nYou are running as a SEQUENTIAL executor agent on the main working tree (branch feat/sdk-owned-read-chain-and-resolved-folder-listings). NOT a worktree — `.git` is a directory.\nUse normal git commits (hooks run by default). Do NOT pass --no-verify.\nREQUIRED ORDER at the end: Write SUMMARY.md → commit it → only then any narration. No prose between Write and commit.\nIf the plan marks tasks type=tdd, land RED before GREEN. If type=execute, commit per task.\n</sequential_execution>\n\n<execution_context>\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/workflows/execute-plan.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/templates/summary.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/checkpoints.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/tdd.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/executor-examples.md\n</execution_context>\n\n<files_to_read>\nFirst: `PROJECT_ROOT=$(git rev-parse --show-toplevel)`\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-03-PLAN.md (THE PLAN — source of truth; follow its <context> @-refs, tasks, acceptance criteria, must_haves exactly)\n- ${PROJECT_ROOT}/.planning/PROJECT.md\n- ${PROJECT_ROOT}/.planning/STATE.md\n- ${PROJECT_ROOT}/.planning/config.json\n- ${PROJECT_ROOT}/CLAUDE.md (terminology, string-literals-over-enums, Uint8Array, camelCase, crypto rules — FOLLOW)\n- ${PROJECT_ROOT}/.claude/skills/ (if present)\n</files_to_read>\n\n<prior_wave_context>\nWaves 1–2 already landed on this branch: (a) the SDK-internal ROT-07 read gate (`enforceResolved` on the read path in client.ts), and (b) `ResolvedChild` + `listFolder`/`listSharedFolder` + the `folder:updated` event (packages/sdk/src/folder-listing.ts, events.ts, index.ts). Build on these — do not re-implement or bypass them. The read path is the single gated entrypoint (D-05).\n</prior_wave_context>\n\n<critical_constraints>\n- Plan 03 adds SDK facade methods for the WRITE path + IPFS transport so the web has a […]
+  "prompt": "<objective>\nExecute plan 03 of phase 68.2-sdk-owned-read-chain-and-resolved-folder-listings.\nCommit each task atomically. Create SUMMARY.md.\n</objective>\n\n<sequential_execution>\nYou are running as a SEQUENTIAL executor agent on the main working tree (branch feat/sdk-owned-read-chain-and-resolved-folder-listings). NOT a worktree — `.git` is a directory.\nUse normal git commits (hooks run by default). Do NOT pass --no-verify.\nREQUIRED ORDER at the end: Write SUMMARY.md → commit it → only then any narration. No prose between Write and commit.\nIf the plan marks tasks type=tdd, land RED before GREEN. If type=execute, commit per task.\n</sequential_execution>\n\n<execution_context>\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/workflows/execute-plan.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/templates/summary.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/checkpoints.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/tdd.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/executor-examples.md\n</execution_context>\n\n<files_to_read>\nFirst: `PROJECT_ROOT=$(git rev-parse --show-toplevel)`\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-03-PLAN.md (THE PLAN — source of truth; follow its <context> @-refs, tasks, acceptance criteria, must_haves exactly)\n- ${PROJECT_ROOT}/.planning/PROJECT.md\n- ${PROJECT_ROOT}/.planning/STATE.md\n- ${PROJECT_ROOT}/.planning/config.json\n- ${PROJECT_ROOT}/CLAUDE.md (terminology, string-literals-over-enums, Uint8Array, camelCase, crypto rules — FOLLOW)\n- ${PROJECT_ROOT}/.claude/skills/ (if present)\n</files_to_read>\n\n<prior_wave_context>\nWaves 1–2 already landed on this branch: (a) the SDK-internal ROT-07 read gate (`enforceResolved` on the read path in client.ts), and (b) `ResolvedChild` + `listFolder`/`listSharedFolder` + the `folder:updated` event (packages/sdk/src/folder-listing.ts, events.ts, index.ts). Build on these — do not re-implement or bypass them. The read path is the single gated entrypoint (D-05).\n</prior_wave_context>\n\n<critical_constraints>\n- Plan 03 adds SDK facade methods for the WRITE path + IPFS transport so the web has a […]
 
 > TOOL
 
@@ -2590,7 +2590,7 @@ All green: 307/307 passing, 49 skipped (pre-existing quarantined tests).
 
 **Plan:** 68.2-03
 **Tasks:** 2/2
-**SUMMARY:** `/Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-03-SUMMARY.md`
+**SUMMARY:** `/home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-03-SUMMARY.md`
 
 **Commits:**
 - `090c8ebea`: feat(68.2-03): add IPFS-transport facade methods with progress callbacks (`uploadBytes`/`downloadBytes`/`unpin` on `CipherBoxClient`)
@@ -2620,7 +2620,7 @@ tool_use Bash
 id: toolu_01WZMwZYWmtoThgzLCgAuLqv
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===plan 03 commits + summary===\"\ngit log --oneline --grep=\"68.2-03\" | cat\nSUMMARY=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-03-SUMMARY.md\"\ntest -f \"$SUMMARY\" && grep -q \"## Self-Check: FAILED\" \"$SUMMARY\" && echo \"⚠ FAILED\" || echo \"summary ok, no FAILED ✓\"\necho \"\"\necho \"===verify SDK-READ-04 checkbox correctly still [ ] (not prematurely completed)===\"\ngrep -E \"SDK-READ-04\\*\\*|SDK-READ-0[1-4] \\|\" .planning/REQUIREMENTS.md | head\ngrep -E \"^\\- \\[[ x]\\] \\*\\*SDK-READ\" .planning/REQUIREMENTS.md\necho \"\"\necho \"===tree clean + HEAD===\"\ngit status --short | head -3\ngit rev-parse --short HEAD",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===plan 03 commits + summary===\"\ngit log --oneline --grep=\"68.2-03\" | cat\nSUMMARY=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-03-SUMMARY.md\"\ntest -f \"$SUMMARY\" && grep -q \"## Self-Check: FAILED\" \"$SUMMARY\" && echo \"⚠ FAILED\" || echo \"summary ok, no FAILED ✓\"\necho \"\"\necho \"===verify SDK-READ-04 checkbox correctly still [ ] (not prematurely completed)===\"\ngrep -E \"SDK-READ-04\\*\\*|SDK-READ-0[1-4] \\|\" .planning/REQUIREMENTS.md | head\ngrep -E \"^\\- \\[[ x]\\] \\*\\*SDK-READ\" .planning/REQUIREMENTS.md\necho \"\"\necho \"===tree clean + HEAD===\"\ngit status --short | head -3\ngit rev-parse --short HEAD",
   "description": "Spot-check plan 03 + verify REQUIREMENTS checkbox"
 }
 ```
@@ -2657,7 +2657,7 @@ id: toolu_01WWd4i5iGmW33hUgVVx9qhS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/REQUIREMENTS.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/REQUIREMENTS.md",
   "old_string": "- [x] **SDK-READ-01**: The gated read chain lives entirely in `packages/sdk`/`packages/sdk-core`",
   "new_string": "- [ ] **SDK-READ-01**: The gated read chain lives entirely in `packages/sdk`/`packages/sdk-core`"
 }
@@ -2677,7 +2677,7 @@ tool_use Bash
 id: toolu_016jx5rQNKfHVhErJe4kVQi9
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\ngrep -nE \"^\\- \\[[ x]\\] \\*\\*SDK-READ-0[12]\\*\\*\" .planning/REQUIREMENTS.md",
+  "command": "cd /home/<USER>/Code/random/cipher-box\ngrep -nE \"^\\- \\[[ x]\\] \\*\\*SDK-READ-0[12]\\*\\*\" .planning/REQUIREMENTS.md",
   "description": "Re-read current SDK-READ checkbox lines"
 }
 ```
@@ -2697,7 +2697,7 @@ tool_use Read
 id: toolu_01CLmsKh8b4DHwWeq3XQjTzo
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/REQUIREMENTS.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/REQUIREMENTS.md",
   "offset": 88,
   "limit": 2
 }
@@ -2719,7 +2719,7 @@ id: toolu_011UWxYG4rN95LJT1wpVPnNL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/REQUIREMENTS.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/REQUIREMENTS.md",
   "old_string": "- [x] **SDK-READ-01**: The gated read chain lives entirely in `packages/sdk`/`packages/sdk-core` — IPNS resolve,",
   "new_string": "- [ ] **SDK-READ-01**: The gated read chain lives entirely in `packages/sdk`/`packages/sdk-core` — IPNS resolve,"
 }
@@ -2730,7 +2730,7 @@ id: toolu_011UWxYG4rN95LJT1wpVPnNL
 tool_result
 id: toolu_011UWxYG4rN95LJT1wpVPnNL
 ```
-The file /Users/myankelev/Code/random/cipher-box/.planning/REQUIREMENTS.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/.planning/REQUIREMENTS.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2740,7 +2740,7 @@ id: toolu_014TFCwXFEXnAFLJPxkB7uQB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/REQUIREMENTS.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/REQUIREMENTS.md",
   "old_string": "- [x] **SDK-READ-02**: The SDK exposes resolved folder listings — `listFolder(ipnsName)` / `listSharedFolder(...)` returning `ResolvedChild[]`",
   "new_string": "- [ ] **SDK-READ-02**: The SDK exposes resolved folder listings — `listFolder(ipnsName)` / `listSharedFolder(...)` returning `ResolvedChild[]`"
 }
@@ -2751,7 +2751,7 @@ id: toolu_014TFCwXFEXnAFLJPxkB7uQB
 tool_result
 id: toolu_014TFCwXFEXnAFLJPxkB7uQB
 ```
-The file /Users/myankelev/Code/random/cipher-box/.planning/REQUIREMENTS.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/.planning/REQUIREMENTS.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2764,7 +2764,7 @@ tool_use Bash
 id: toolu_01H1EjfWkXrqaQJqe7iofRbD
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\ngsd_run query commit \"docs(68.2): revert premature SDK-READ-01/02 completion (web deletions pending plan 11)\" --files \".planning/REQUIREMENTS.md\" >/dev/null 2>&1\ngit log --oneline -1 | cat\ngrep -nE \"^\\- \\[[ x]\\] \\*\\*SDK-READ\" .planning/REQUIREMENTS.md\ngit status --short | head -2",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\ngsd_run query commit \"docs(68.2): revert premature SDK-READ-01/02 completion (web deletions pending plan 11)\" --files \".planning/REQUIREMENTS.md\" >/dev/null 2>&1\ngit log --oneline -1 | cat\ngrep -nE \"^\\- \\[[ x]\\] \\*\\*SDK-READ\" .planning/REQUIREMENTS.md\ngit status --short | head -2",
   "description": "Commit REQUIREMENTS tracking correction"
 }
 ```
@@ -2800,7 +2800,7 @@ id: toolu_01QXDWZ3GfBeGTMxRUq1N4Am
   "subagent_type": "gsd-executor",
   "model": "sonnet",
   "run_in_background": false,
-  "prompt": "<objective>\nExecute plan 05 of phase 68.2-sdk-owned-read-chain-and-resolved-folder-listings.\nCommit each task atomically. Create SUMMARY.md.\n</objective>\n\n<sequential_execution>\nYou are running as a SEQUENTIAL executor agent on the main working tree (branch feat/sdk-owned-read-chain-and-resolved-folder-listings). NOT a worktree.\nUse normal git commits (hooks run by default). Do NOT pass --no-verify.\nREQUIRED ORDER at the end: Write SUMMARY.md → commit it → only then any narration.\n</sequential_execution>\n\n<execution_context>\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/workflows/execute-plan.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/templates/summary.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/checkpoints.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/tdd.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/executor-examples.md\n</execution_context>\n\n<files_to_read>\nFirst: `PROJECT_ROOT=$(git rev-parse --show-toplevel)`\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-05-PLAN.md (THE PLAN — source of truth)\n- ${PROJECT_ROOT}/.planning/PROJECT.md\n- ${PROJECT_ROOT}/.planning/STATE.md\n- ${PROJECT_ROOT}/.planning/config.json\n- ${PROJECT_ROOT}/CLAUDE.md\n- ${PROJECT_ROOT}/.claude/skills/ (if present)\n</files_to_read>\n\n<critical_constraints>\n- Plan 05 AUTHORS the SC#5 regression e2e (`tests/web-e2e/tests/shared-folder-desync.spec.ts`): an owner (or second client) sees a grantee's upload into a shared folder WITHOUT the owner writing first, with size/modifiedAt rendered from the resolved listing. Model on `tests/web-e2e/utils/multi-account-wallet.ts` (used by `sharing-workflow.spec.ts`).\n- **This spec is EXPECTED to be RED right now** — the desync fix (folder.store projection + nav re-resolve) doesn't land until Wave 4 (plan 09), and the full web-e2e runs for real as plan 12's phase gate. Your job is to AUTHOR the spec correctly per the plan, NOT to make it pass. Do NOT stand up the full local web-e2e stack (API/Postgres/Redis/Kubo/vite) to run it — follow the plan's acceptance […]
+  "prompt": "<objective>\nExecute plan 05 of phase 68.2-sdk-owned-read-chain-and-resolved-folder-listings.\nCommit each task atomically. Create SUMMARY.md.\n</objective>\n\n<sequential_execution>\nYou are running as a SEQUENTIAL executor agent on the main working tree (branch feat/sdk-owned-read-chain-and-resolved-folder-listings). NOT a worktree.\nUse normal git commits (hooks run by default). Do NOT pass --no-verify.\nREQUIRED ORDER at the end: Write SUMMARY.md → commit it → only then any narration.\n</sequential_execution>\n\n<execution_context>\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/workflows/execute-plan.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/templates/summary.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/checkpoints.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/tdd.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/executor-examples.md\n</execution_context>\n\n<files_to_read>\nFirst: `PROJECT_ROOT=$(git rev-parse --show-toplevel)`\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-05-PLAN.md (THE PLAN — source of truth)\n- ${PROJECT_ROOT}/.planning/PROJECT.md\n- ${PROJECT_ROOT}/.planning/STATE.md\n- ${PROJECT_ROOT}/.planning/config.json\n- ${PROJECT_ROOT}/CLAUDE.md\n- ${PROJECT_ROOT}/.claude/skills/ (if present)\n</files_to_read>\n\n<critical_constraints>\n- Plan 05 AUTHORS the SC#5 regression e2e (`tests/web-e2e/tests/shared-folder-desync.spec.ts`): an owner (or second client) sees a grantee's upload into a shared folder WITHOUT the owner writing first, with size/modifiedAt rendered from the resolved listing. Model on `tests/web-e2e/utils/multi-account-wallet.ts` (used by `sharing-workflow.spec.ts`).\n- **This spec is EXPECTED to be RED right now** — the desync fix (folder.store projection + nav re-resolve) doesn't land until Wave 4 (plan 09), and the full web-e2e runs for real as plan 12's phase gate. Your job is to AUTHOR the spec correctly per the plan, NOT to make it pass. Do NOT stand up the full local web-e2e stack (API/Postgres/Redis/Kubo/vite) to run it — follow the plan's acceptance […]
 
 > TOOL
 
@@ -2813,7 +2813,7 @@ Both commits are in place and the working tree is clean.
 
 **Plan:** 68.2-05
 **Tasks:** 1/1
-**SUMMARY:** `/Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-05-SUMMARY.md`
+**SUMMARY:** `/home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-05-SUMMARY.md`
 
 **Commits:**
 - `e1c88628d`: test(68.2-05): add shared-folder desync regression spec (SC#5)
@@ -2826,7 +2826,7 @@ Both commits are in place and the working tree is clean.
 - `npx playwright test --list tests/shared-folder-desync.spec.ts` → 4 tests discovered, no `webServer` startup required for `--list`
 - No `test.skip`/`test.fixme` in the file — genuine permanent regression spec, expected-red until Plans 06-11 land, green is the Plan 12 phase gate
 
-**Key file:** `/Users/myankelev/Code/random/cipher-box/tests/web-e2e/tests/shared-folder-desync.spec.ts` — owner+grantee multi-account spec (modeled on `sharing-workflow.spec.ts`/`writable-shares.spec.ts` scaffolding); grantee write-shares upload without owner writing, owner navigates in via nav-triggered re-resolve (no poll wait), asserts `.file-list-item-size`/`.file-list-item-date` render real values (not `'—'` / not containing `'1970'`) rather than `FileListItem.tsx`'s current em-dash/epoch mirror-fallback.
+**Key file:** `/home/<USER>/Code/random/cipher-box/tests/web-e2e/tests/shared-folder-desync.spec.ts` — owner+grantee multi-account spec (modeled on `sharing-workflow.spec.ts`/`writable-shares.spec.ts` scaffolding); grantee write-shares upload without owner writing, owner navigates in via nav-triggered re-resolve (no poll wait), asserts `.file-list-item-size`/`.file-list-item-date` render real values (not `'—'` / not containing `'1970'`) rather than `FileListItem.tsx`'s current em-dash/epoch mirror-fallback.
 
 **Notable correction during execution:** `requirements.mark-complete SDK-READ-03` was initially run per the standard state-update step, but SDK-READ-03's full requirement text (thin `folder.store.ts` projection + belt-and-suspenders freshness) isn't satisfied until Plans 06-11 land — this plan […]
 
@@ -2845,7 +2845,7 @@ tool_use Bash
 id: toolu_011GqVq8r441hwSoXFhjKgjB
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===Wave 3 commits present + tree clean===\"\ngit log --oneline --grep=\"68.2-05\" | cat\ngit status --short | head -3\necho \"HEAD: $(git rev-parse --short HEAD)\"\necho \"\"\necho \"===REQUIREMENTS SDK-READ all [ ] (net-zero from executors)?===\"\ngrep -cE \"^\\- \\[ \\] \\*\\*SDK-READ\" .planning/REQUIREMENTS.md | xargs echo \"unchecked SDK-READ count (expect 4):\"\necho \"\"\necho \"===confirm current sdk dist has the new exports (listFolder / ResolvedChild)===\"\ngrep -rl \"ResolvedChild\\|listFolder\" packages/sdk/dist/ 2>/dev/null | head -2 || echo \"(dist not checked / will rebuild in web plans)\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===Wave 3 commits present + tree clean===\"\ngit log --oneline --grep=\"68.2-05\" | cat\ngit status --short | head -3\necho \"HEAD: $(git rev-parse --short HEAD)\"\necho \"\"\necho \"===REQUIREMENTS SDK-READ all [ ] (net-zero from executors)?===\"\ngrep -cE \"^\\- \\[ \\] \\*\\*SDK-READ\" .planning/REQUIREMENTS.md | xargs echo \"unchecked SDK-READ count (expect 4):\"\necho \"\"\necho \"===confirm current sdk dist has the new exports (listFolder / ResolvedChild)===\"\ngrep -rl \"ResolvedChild\\|listFolder\" packages/sdk/dist/ 2>/dev/null | head -2 || echo \"(dist not checked / will rebuild in web plans)\"",
   "description": "Spot-check Wave 3 completion"
 }
 ```
@@ -2892,7 +2892,7 @@ id: toolu_01KTP97xN3eYmedy1w3Enr7X
   "subagent_type": "gsd-executor",
   "model": "sonnet",
   "run_in_background": false,
-  "prompt": "<objective>\nExecute plan 04 of phase 68.2-sdk-owned-read-chain-and-resolved-folder-listings.\nCommit each task atomically. Create SUMMARY.md.\n</objective>\n\n<sequential_execution>\nYou are running as a SEQUENTIAL executor agent on the main working tree (branch feat/sdk-owned-read-chain-and-resolved-folder-listings). NOT a worktree.\nUse normal git commits (hooks run by default). Do NOT pass --no-verify.\nREQUIRED ORDER at the end: Write SUMMARY.md → commit it → only then any narration.\nIf tasks are type=tdd, RED before GREEN; else commit per task.\n</sequential_execution>\n\n<execution_context>\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/workflows/execute-plan.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/templates/summary.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/checkpoints.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/tdd.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/executor-examples.md\n</execution_context>\n\n<files_to_read>\nFirst: `PROJECT_ROOT=$(git rev-parse --show-toplevel)`\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-04-PLAN.md (THE PLAN — source of truth)\n- ${PROJECT_ROOT}/.planning/PROJECT.md\n- ${PROJECT_ROOT}/.planning/STATE.md\n- ${PROJECT_ROOT}/.planning/config.json\n- ${PROJECT_ROOT}/CLAUDE.md\n- ${PROJECT_ROOT}/.claude/skills/ (if present)\n</files_to_read>\n\n<prior_wave_context>\nWaves 1–3 landed: SDK-internal ROT-07 read gate; `ResolvedChild`/`listFolder`/`listSharedFolder`/`folder:updated`; and the write-path + IPFS-transport facade (`uploadBytes`/`downloadBytes`/`unpin`, `getFolderMetadata`, pure-util re-exports). Build on these.\n</prior_wave_context>\n\n<critical_constraints>\n- Plan 04 adds the SDK facade for the off-path pockets (vault-bootstrap, device-registry, BYO-pinning) so the web plan 10 can route those runtime `@cipherbox/core`/sdk-core/raw-IPFS calls through `CipherBoxClient` (D-07 full boundary). SDK-side only in this plan.\n- After modifying `packages/sdk`, **rebuild the sdk dist** (`pnpm --filter @cipherbox/sdk build`) so downstream consumers typecheck against fresh output (cross-package dist-staleness landmine).\n- Run the plan's `<verify>` commands (behavioral/tsc), not grep. Do NOT regress prior waves: `pnpm --filter @cipherbox/sdk test` stays green.\n- Do NOT prematurely mark SDK-READ-04 complete […]
+  "prompt": "<objective>\nExecute plan 04 of phase 68.2-sdk-owned-read-chain-and-resolved-folder-listings.\nCommit each task atomically. Create SUMMARY.md.\n</objective>\n\n<sequential_execution>\nYou are running as a SEQUENTIAL executor agent on the main working tree (branch feat/sdk-owned-read-chain-and-resolved-folder-listings). NOT a worktree.\nUse normal git commits (hooks run by default). Do NOT pass --no-verify.\nREQUIRED ORDER at the end: Write SUMMARY.md → commit it → only then any narration.\nIf tasks are type=tdd, RED before GREEN; else commit per task.\n</sequential_execution>\n\n<execution_context>\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/workflows/execute-plan.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/templates/summary.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/checkpoints.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/tdd.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/executor-examples.md\n</execution_context>\n\n<files_to_read>\nFirst: `PROJECT_ROOT=$(git rev-parse --show-toplevel)`\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-04-PLAN.md (THE PLAN — source of truth)\n- ${PROJECT_ROOT}/.planning/PROJECT.md\n- ${PROJECT_ROOT}/.planning/STATE.md\n- ${PROJECT_ROOT}/.planning/config.json\n- ${PROJECT_ROOT}/CLAUDE.md\n- ${PROJECT_ROOT}/.claude/skills/ (if present)\n</files_to_read>\n\n<prior_wave_context>\nWaves 1–3 landed: SDK-internal ROT-07 read gate; `ResolvedChild`/`listFolder`/`listSharedFolder`/`folder:updated`; and the write-path + IPFS-transport facade (`uploadBytes`/`downloadBytes`/`unpin`, `getFolderMetadata`, pure-util re-exports). Build on these.\n</prior_wave_context>\n\n<critical_constraints>\n- Plan 04 adds the SDK facade for the off-path pockets (vault-bootstrap, device-registry, BYO-pinning) so the web plan 10 can route those runtime `@cipherbox/core`/sdk-core/raw-IPFS calls through `CipherBoxClient` (D-07 full boundary). SDK-side only in this plan.\n- After modifying `packages/sdk`, **rebuild the sdk dist** (`pnpm --filter @cipherbox/sdk build`) so downstream consumers typecheck against fresh output (cross-package dist-staleness landmine).\n- Run the plan's `<verify>` commands (behavioral/tsc), not grep. Do NOT regress prior waves: `pnpm --filter @cipherbox/sdk test` stays green.\n- Do NOT prematurely mark SDK-READ-04 complete […]
 
 > TOOL
 
@@ -2961,7 +2961,7 @@ tool_use Bash
 id: toolu_01GunCHqJ9KGHYrag4pVUvax
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===plan 04 verify===\"\ngit log --oneline --grep=\"68.2-04\" | head -3 | cat\nSUMMARY=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-04-SUMMARY.md\"\ntest -f \"$SUMMARY\" && grep -q \"## Self-Check: FAILED\" \"$SUMMARY\" && echo \"⚠ FAILED\" || echo \"summary ok ✓\"\necho \"tree status:\"; git status --short | head -3\necho \"HEAD: $(git rev-parse --short HEAD)\"\necho \"\"\necho \"===SDK-READ checkboxes still all [ ]? (no premature marks)===\"\ngrep -cE \"^\\- \\[ \\] \\*\\*SDK-READ\" .planning/REQUIREMENTS.md | xargs echo \"unchecked (expect 4):\"\necho \"\"\necho \"===current time + seconds to 4:10am===\"\ndate \"+%H:%M:%S %Z\"\nnode -e \"const n=new Date();const t=new Date(n);t.setHours(4,10,0,0);if(t<=n)t.setDate(t.getDate()+1);console.log(Math.round((t-n)/1000)+'s until '+t.toLocaleTimeString());\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===plan 04 verify===\"\ngit log --oneline --grep=\"68.2-04\" | head -3 | cat\nSUMMARY=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-04-SUMMARY.md\"\ntest -f \"$SUMMARY\" && grep -q \"## Self-Check: FAILED\" \"$SUMMARY\" && echo \"⚠ FAILED\" || echo \"summary ok ✓\"\necho \"tree status:\"; git status --short | head -3\necho \"HEAD: $(git rev-parse --short HEAD)\"\necho \"\"\necho \"===SDK-READ checkboxes still all [ ]? (no premature marks)===\"\ngrep -cE \"^\\- \\[ \\] \\*\\*SDK-READ\" .planning/REQUIREMENTS.md | xargs echo \"unchecked (expect 4):\"\necho \"\"\necho \"===current time + seconds to 4:10am===\"\ndate \"+%H:%M:%S %Z\"\nnode -e \"const n=new Date();const t=new Date(n);t.setHours(4,10,0,0);if(t<=n)t.setDate(t.getDate()+1);console.log(Math.round((t-n)/1000)+'s until '+t.toLocaleTimeString());\"",
   "description": "Verify plan 04 and compute wake delay"
 }
 ```

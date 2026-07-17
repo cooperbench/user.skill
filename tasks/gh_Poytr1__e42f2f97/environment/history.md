@@ -31,7 +31,7 @@ I've completed a thorough analysis of the filter ribbon implementation across th
 
 ### 1. **Filter Components & Architecture**
 
-**Filter Bar Component** (`/Users/pc/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx`, lines 1-289)
+**Filter Bar Component** (`/home/<USER>/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx`, lines 1-289)
 - Shared reusable `FilterBar` component used across multiple pages
 - Supports three filter types: `"select"`, `"boolean"`, and `"date-range"`
 - Features:
@@ -42,7 +42,7 @@ I've completed a thorough analysis of the filter ribbon implementation across th
   - "Clear all" button for bulk removal
   - Dynamic UI that shows available vs active filters
 
-**Filter Params Hook** (`/Users/pc/web3/ReleaseBeacon/web/components/filters/use-filter-params.ts`, lines 1-71)
+**Filter Params Hook** (`/home/<USER>/web3/ReleaseBeacon/web/components/filters/use-filter-params.ts`, lines 1-71)
 - Syncs filter state with URL query parameters
 - Only allows whitelisted keys to prevent cross-page filter leakage
 - Handles pagination reset when navigating between pages
@@ -50,7 +50,7 @@ I've completed a thorough analysis of the filter ribbon implementation across th
 
 ### 2. **Releases Page Implementation**
 
-**File**: `/Users/pc/web3/ReleaseBeacon/web/app/releases/page.tsx` (lines 1-509)
+**File**: `/home/<USER>/web3/ReleaseBeacon/web/app/releases/page.tsx` (lines 1-509)
 
 **Filter Configuration** (lines 59-103):
 - Allowed filter keys: `["project", "provider", "urgency", "date", "excluded"]`
@@ -67,7 +67,7 @@ tool_use Read
 id: toolu_vrtx_01P7V4MBbBiu7uoeztA3DZk3
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/app/subscriptions/page.tsx"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/app/subscriptions/page.tsx"
 }
 ```
 
@@ -77,7 +77,7 @@ tool_use Read
 id: toolu_vrtx_012o6dVHcts1tmFYxMxtvKo9
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/app/releases/page.tsx"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/app/releases/page.tsx"
 }
 ```
 
@@ -87,7 +87,7 @@ tool_use Read
 id: toolu_vrtx_01C1kBR55ydFmxMhimxrZ5Mr
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx"
 }
 ```
 
@@ -251,7 +251,7 @@ tool_use Read
 id: toolu_vrtx_017aP5bFTUT61WYccVdBVYeT
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/api/types.ts"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/api/types.ts"
 }
 ```
 
@@ -261,7 +261,7 @@ tool_use Read
 id: toolu_vrtx_01BD4pZyA4kXLxSBwBj4AySX
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/filters/use-filter-params.ts"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/filters/use-filter-params.ts"
 }
 ```
 
@@ -393,7 +393,7 @@ id: toolu_vrtx_015tNzpA37n29ZdhrHSSwSS7
 ```json
 {
   "pattern": "subscriptions.*list|subs.*list",
-  "path": "/Users/pc/web3/ReleaseBeacon/web/lib/api/client.ts",
+  "path": "/home/<USER>/web3/ReleaseBeacon/web/lib/api/client.ts",
   "output_mode": "content",
   "-C": 3
 }
@@ -414,7 +414,7 @@ id: toolu_vrtx_015MAfNS5H5v4UENkU8GnwuW
 ```json
 {
   "pattern": "subscriptions",
-  "path": "/Users/pc/web3/ReleaseBeacon/web/lib/api/client.ts",
+  "path": "/home/<USER>/web3/ReleaseBeacon/web/lib/api/client.ts",
   "output_mode": "content",
   "-C": 3
 }
@@ -467,7 +467,7 @@ id: toolu_vrtx_01PjqsLwaFE1RcLRKVs41PTR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/app/subscriptions/page.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/app/subscriptions/page.tsx",
   "old_string": "import { useState, useMemo } from \"react\";\nimport useSWR, { mutate } from \"swr\";\nimport {\n  subscriptions as subsApi,\n  channels as channelsApi,\n  projects as projectsApi,\n  sources as sourcesApi,\n} from \"@/lib/api/client\";\nimport type { Source, Subscription } from \"@/lib/api/types\";\nimport { Plus, Pencil, Trash2, ChevronRight } from \"lucide-react\";",
   "new_string": "import { useState, useMemo, Suspense } from \"react\";\nimport useSWR, { mutate } from \"swr\";\nimport {\n  subscriptions as subsApi,\n  channels as channelsApi,\n  projects as projectsApi,\n  sources as sourcesApi,\n} from \"@/lib/api/client\";\nimport type { Source, Subscription } from \"@/lib/api/types\";\nimport { Plus, Pencil, Trash2, ChevronRight } from \"lucide-react\";\nimport { FilterBar, FilterConfig } from \"@/components/filters/filter-bar\";\nimport { useFilterParams } from \"@/components/filters/use-filter-params\";"
 }
@@ -478,7 +478,7 @@ id: toolu_vrtx_01PjqsLwaFE1RcLRKVs41PTR
 tool_result
 id: toolu_vrtx_01PjqsLwaFE1RcLRKVs41PTR
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/app/subscriptions/page.tsx has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/app/subscriptions/page.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -492,7 +492,7 @@ id: toolu_vrtx_01QXCf6GJPt3jdeRFKtX5rh4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/app/subscriptions/page.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/app/subscriptions/page.tsx",
   "old_string": "export default function SubscriptionsPage() {\n  const { t } = useTranslation();\n  const { data, isLoading } = useSWR(\"subscriptions\", () => subsApi.list());\n  const { data: channelsData } = useSWR(\"channels-for-sub-list\", () =>\n    channelsApi.list()\n  );\n  const { data: projectsData } = useSWR(\"projects-for-sub-list\", () =>\n    projectsApi.list(1, 100)\n  );",
   "new_string": "export default function SubscriptionsPage() {\n  return (\n    <Suspense>\n      <SubscriptionsPageInner />\n    </Suspense>\n  );\n}\n\nfunction SubscriptionsPageInner() {\n  const { t } = useTranslation();\n  const FILTER_KEYS = [\"channel\", \"type\"];\n  const { filters, setFilters } = useFilterParams(FILTER_KEYS);\n  const { data, isLoading } = useSWR(\"subscriptions\", () => subsApi.list());\n  const { data: channelsData } = useSWR(\"channels-for-sub-list\", () =>\n    channelsApi.list()\n  );\n  const { data: projectsData } = useSWR(\"projects-for-sub-list\", () =>\n    projectsApi.list(1, 100)\n  );"
 }
@@ -503,7 +503,7 @@ id: toolu_vrtx_01QXCf6GJPt3jdeRFKtX5rh4
 tool_result
 id: toolu_vrtx_01QXCf6GJPt3jdeRFKtX5rh4
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/app/subscriptions/page.tsx has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/app/subscriptions/page.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -517,7 +517,7 @@ id: toolu_vrtx_01VBG2zY3uPA1b6xyfbqjWaN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/app/subscriptions/page.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/app/subscriptions/page.tsx",
   "old_string": "  const [createOpen, setCreateOpen] = useState(false);\n  const [editingSub, setEditingSub] = useState<Subscription | null>(null);\n  const [deletingId, setDeletingId] = useState<string | null>(null);\n  const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());\n  const [batchDeleteOpen, setBatchDeleteOpen] = useState(false);\n  const [collapsedChannels, setCollapsedChannels] = useState<Set<string>>(new Set());\n\n  const getChannelName = (id: string) =>\n    channelsData?.data.find((c) => c.id === id)?.name ?? id;\n\n  const getChannelType = (id: string) =>\n    channelsData?.data.find((c) => c.id === id)?.type ?? \"\";\n\n  const getProjectName = (id: string) =>\n    projectsData?.data.find((p) => p.id === id)?.name ?? id;\n\n  const getSourceLabel = (id: string) => {\n    const source = sourcesMap?.[id];\n    return source ? `${source.provider}: ${source.repository}` : id;\n  };\n\n  const subscriptions = data?.data ?? [];",
   "new_string": "  const [createOpen, setCreateOpen] = useState(false);\n  const [editingSub, setEditingSub] = useState<Subscription | null>(null);\n  const [deletingId, setDeletingId] = useState<string | null>(null);\n  const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());\n  const [batchDeleteOpen, setBatchDeleteOpen] = useState(false);\n  const [collapsedChannels, setCollapsedChannels] = useState<Set<string>>(new Set());\n\n  const getChannelName = (id: string) =>\n    channelsData?.data.find((c) => c.id === id)?.name ?? id;\n\n  const getChannelType = (id: string) =>\n    channelsData?.data.find((c) => c.id === id)?.type ?? \"\";\n\n  const getProjectName = (id: string) =>\n    projectsData?.data.find((p) => p.id === id)?.name ?? id;\n\n  const getSourceLabel = (id: string) => {\n    const source = sourcesMap?.[id];\n […]
 
@@ -526,7 +526,7 @@ id: toolu_vrtx_01VBG2zY3uPA1b6xyfbqjWaN
 tool_result
 id: toolu_vrtx_01VBG2zY3uPA1b6xyfbqjWaN
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/app/subscriptions/page.tsx has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/app/subscriptions/page.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -540,7 +540,7 @@ id: toolu_vrtx_018P1xrga3Gvb2okR6jXhkHg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/app/subscriptions/page.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/app/subscriptions/page.tsx",
   "old_string": "      </div>\n\n      {isLoading ? (",
   "new_string": "      </div>\n\n      {/* Filters */}\n      <FilterBar filters={filterConfig} value={filters} onChange={setFilters} />\n\n      {isLoading ? ("
 }
@@ -551,7 +551,7 @@ id: toolu_vrtx_018P1xrga3Gvb2okR6jXhkHg
 tool_result
 id: toolu_vrtx_018P1xrga3Gvb2okR6jXhkHg
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/app/subscriptions/page.tsx has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/app/subscriptions/page.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -564,7 +564,7 @@ tool_use Read
 id: toolu_vrtx_01PqB3xBbBsxq1yRHJqujFt4
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/app/subscriptions/page.tsx"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/app/subscriptions/page.tsx"
 }
 ```
 
@@ -638,7 +638,7 @@ tool_use Bash
 id: toolu_vrtx_01Qtk9GVizeJWzrbh29pmkGn
 ```json
 {
-  "command": "bash /Users/pc/.claude/skills/nextjs-typecheck/scripts/nextjs-typecheck.sh ./web",
+  "command": "bash /home/<USER>/.claude/skills/nextjs-typecheck/scripts/nextjs-typecheck.sh ./web",
   "description": "Run TypeScript type check on Next.js frontend",
   "timeout": 60000
 }

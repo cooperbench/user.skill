@@ -12,7 +12,7 @@ tool_use Bash
 id: toolu_01XjcQGowcQ9GaXuKMvGFHAR
 ```json
 {
-  "command": "grep -rn \"platform_fee\\|platformFee\" /home/veerendra/farmer/yourfamilyfarmer --include=\"*.ts\" --include=\"*.tsx\" --include=\"*.sql\" -l | head -30",
+  "command": "grep -rn \"platform_fee\\|platformFee\" /home/<USER>/farmer/yourfamilyfarmer --include=\"*.ts\" --include=\"*.tsx\" --include=\"*.sql\" -l | head -30",
   "description": "Find files referencing platform fee"
 }
 ```
@@ -23,7 +23,7 @@ tool_use Bash
 id: toolu_01LfkVhpgbysHAiGeoXvLoiV
 ```json
 {
-  "command": "ls /home/veerendra/farmer/yourfamilyfarmer/scripts/ 2>/dev/null; ls /home/veerendra/farmer/yourfamilyfarmer/*.sql 2>/dev/null",
+  "command": "ls /home/<USER>/farmer/yourfamilyfarmer/scripts/ 2>/dev/null; ls /home/<USER>/farmer/yourfamilyfarmer/*.sql 2>/dev/null",
   "description": "List SQL migration scripts"
 }
 ```
@@ -33,23 +33,23 @@ id: toolu_01LfkVhpgbysHAiGeoXvLoiV
 tool_result
 id: toolu_01XjcQGowcQ9GaXuKMvGFHAR
 ```
-/home/veerendra/farmer/yourfamilyfarmer/src/lib/orderReport.ts
-/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/page.tsx
-/home/veerendra/farmer/yourfamilyfarmer/src/app/farmer/dashboard/orders/page.tsx
-/home/veerendra/farmer/yourfamilyfarmer/src/app/api/farmer/orders/[id]/decline/route.ts
-/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx
-/home/veerendra/farmer/yourfamilyfarmer/src/app/api/consumer/orders/[id]/route.ts
-/home/veerendra/farmer/yourfamilyfarmer/src/lib/platform-fee.ts
-/home/veerendra/farmer/yourfamilyfarmer/src/app/api/orders/place/route.ts
-/home/veerendra/farmer/yourfamilyfarmer/src/components/farmer/OrderCard.tsx
-/home/veerendra/farmer/yourfamilyfarmer/src/app/api/consumer/orders/route.ts
-/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/CancelOrderModal.tsx
-/home/veerendra/farmer/yourfamilyfarmer/src/app/api/consumer/orders/[id]/cancel/route.ts
-/home/veerendra/farmer/yourfamilyfarmer/src/app/api/orders/razorpay/create/route.ts
-/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx
-/home/veerendra/farmer/yourfamilyfarmer/src/components/farmer/DeclineSheets.tsx
-/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/OrderCard.tsx
-/home/veerendra/farmer/yourfamilyfarmer/scripts/platform-fee-migration.sql
+/home/<USER>/farmer/yourfamilyfarmer/src/lib/orderReport.ts
+/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/page.tsx
+/home/<USER>/farmer/yourfamilyfarmer/src/app/farmer/dashboard/orders/page.tsx
+/home/<USER>/farmer/yourfamilyfarmer/src/app/api/farmer/orders/[id]/decline/route.ts
+/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx
+/home/<USER>/farmer/yourfamilyfarmer/src/app/api/consumer/orders/[id]/route.ts
+/home/<USER>/farmer/yourfamilyfarmer/src/lib/platform-fee.ts
+/home/<USER>/farmer/yourfamilyfarmer/src/app/api/orders/place/route.ts
+/home/<USER>/farmer/yourfamilyfarmer/src/components/farmer/OrderCard.tsx
+/home/<USER>/farmer/yourfamilyfarmer/src/app/api/consumer/orders/route.ts
+/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/CancelOrderModal.tsx
+/home/<USER>/farmer/yourfamilyfarmer/src/app/api/consumer/orders/[id]/cancel/route.ts
+/home/<USER>/farmer/yourfamilyfarmer/src/app/api/orders/razorpay/create/route.ts
+/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx
+/home/<USER>/farmer/yourfamilyfarmer/src/components/farmer/DeclineSheets.tsx
+/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/OrderCard.tsx
+/home/<USER>/farmer/yourfamilyfarmer/scripts/platform-fee-migration.sql
 ```
 
 > TOOL
@@ -117,7 +117,7 @@ tool_use Read
 id: toolu_018T6qFdbEXJitkgWjRFmS2B
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/lib/platform-fee.ts"
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/lib/platform-fee.ts"
 }
 ```
 
@@ -160,7 +160,7 @@ tool_use Read
 id: toolu_01PtCzy7immtX43yZnDLBivK
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/scripts/platform-fee-migration.sql"
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/scripts/platform-fee-migration.sql"
 }
 ```
 
@@ -194,7 +194,7 @@ tool_use Bash
 id: toolu_01AKkw85bFyHtMLziYWPbt1V
 ```json
 {
-  "command": "grep -n \"platform_fee\\|platformFee\" /home/veerendra/farmer/yourfamilyfarmer/src/app/api/orders/place/route.ts | head -20; echo ---; grep -n \"platform_fee\\|platformFee\" /home/veerendra/farmer/yourfamilyfarmer/src/components/farmer/OrderCard.tsx /home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/OrderCard.tsx /home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/\\[id\\]/page.tsx | head -40",
+  "command": "grep -n \"platform_fee\\|platformFee\" /home/<USER>/farmer/yourfamilyfarmer/src/app/api/orders/place/route.ts | head -20; echo ---; grep -n \"platform_fee\\|platformFee\" /home/<USER>/farmer/yourfamilyfarmer/src/components/farmer/OrderCard.tsx /home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/OrderCard.tsx /home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/\\[id\\]/page.tsx | head -40",
   "description": "See where platform_fee is stamped and displayed"
 }
 ```
@@ -210,18 +210,18 @@ id: toolu_01AKkw85bFyHtMLziYWPbt1V
 362:    platformFee,
 363:    grandTotal: total + deliveryFee + platformFee,
 ---
-/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/OrderCard.tsx:21:  platform_fee?: number | null
-/home/veerendra/farmer/yourfamilyfarmer/src/components/farmer/OrderCard.tsx:26:  platform_fee?: number | null
-/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx:26:  platform_fee: number | null
-/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx:548:  const platformFeeWithheld = Math.max(0, Number(order.platform_fee) || 0)
-/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx:574:            {platformFeeWithheld > 0 && (
-/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx:578:                  <span className="font-bold text-red-600">₹{platformFeeWithheld}</span>
-/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx:649:  const platformFeePaid = Math.max(0, Number(order.platform_fee) || 0)
-/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx:650:  const totalPaid = (Number(order.total_price) || 0) + platformFeePaid
-/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx:681:          {platformFeePaid > 0 && (
-/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx:684:              <span className="font-semibold text-gray-900">₹{platformFeePaid}</span>
-/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx:1005:      {order.status === 'cancelled' && (order.platform_fee ?? 0) > 0 && (
-/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx:1008:          <span className="font-bold text-red-600">₹{order.platform_fee}</span>
+/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/OrderCard.tsx:21:  platform_fee?: number | null
+/home/<USER>/farmer/yourfamilyfarmer/src/components/farmer/OrderCard.tsx:26:  platform_fee?: number | null
+/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx:26:  platform_fee: number | null
+/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx:548:  const platformFeeWithheld = Math.max(0, Number(order.platform_fee) || 0)
+/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx:574:            {platformFeeWithheld > 0 && (
+/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx:578:                  <span className="font-bold text-red-600">₹{platformFeeWithheld}</span>
+/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx:649:  const platformFeePaid = Math.max(0, Number(order.platform_fee) || 0)
+/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx:650:  const totalPaid = (Number(order.total_price) || 0) + platformFeePaid
+/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx:681:          {platformFeePaid > 0 && (
+/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx:684:              <span className="font-semibold text-gray-900">₹{platformFeePaid}</span>
+/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx:1005:      {order.status === 'cancelled' && (order.platform_fee ?? 0) > 0 && (
+/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx:1008:          <span className="font-bold text-red-600">₹{order.platform_fee}</span>
 ```
 
 > TOOL
@@ -230,7 +230,7 @@ tool_use Read
 id: toolu_0113gLBmbfyJAgDpGB7uSaKo
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/api/orders/place/route.ts",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/api/orders/place/route.ts",
   "offset": 270,
   "limit": 100
 }
@@ -278,7 +278,7 @@ tool_use Bash
 id: toolu_019ZH13kYFZoLfBGq2xCyyyG
 ```json
 {
-  "command": "grep -n \"platform_fee\\|platformFee\\|Platform fee\\|Platform Fee\" /home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/OrderCard.tsx /home/veerendra/farmer/yourfamilyfarmer/src/components/farmer/OrderCard.tsx /home/veerendra/farmer/yourfamilyfarmer/src/app/farmer/dashboard/orders/page.tsx /home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/page.tsx /home/veerendra/farmer/yourfamilyfarmer/src/lib/orderReport.ts; echo ---MOD---; grep -rn \"platform_fee\" /home/veerendra/farmer/yourfamilyfarmer/src/app/moderator 2>/dev/null | head",
+  "command": "grep -n \"platform_fee\\|platformFee\\|Platform fee\\|Platform Fee\" /home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/OrderCard.tsx /home/<USER>/farmer/yourfamilyfarmer/src/components/farmer/OrderCard.tsx /home/<USER>/farmer/yourfamilyfarmer/src/app/farmer/dashboard/orders/page.tsx /home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/page.tsx /home/<USER>/farmer/yourfamilyfarmer/src/lib/orderReport.ts; echo ---MOD---; grep -rn \"platform_fee\" /home/<USER>/farmer/yourfamilyfarmer/src/app/moderator 2>/dev/null | head",
   "description": "Check where platform fee is displayed in UI"
 }
 ```
@@ -288,14 +288,14 @@ id: toolu_019ZH13kYFZoLfBGq2xCyyyG
 tool_result
 id: toolu_019ZH13kYFZoLfBGq2xCyyyG
 ```
-/home/veerendra/farmer/yourfamilyfarmer/src/app/farmer/dashboard/orders/page.tsx:82:      .select('id, farmer_id, order_code, produce_listing_id, produce_name, quantity, unit, total_price, delivery_fee, platform_fee, buyer_name, buyer_phone, pickup_location, status, payment_method, payment_status, utr_number, decline_reason, refund_status, refund_amount, refunded_at, delivery_type, delivery_status, delivery_boy_id, collected_at, shipped_at, received_at, fulfillment_date, created_at, acknowledged_at')
-/home/veerendra/farmer/yourfamilyfarmer/src/components/farmer/OrderCard.tsx:26:  platform_fee?: number | null
-/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/OrderCard.tsx:18:  // Platform fee stamped on this row (cart's first row carries it, 0 on the
-/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/OrderCard.tsx:21:  platform_fee?: number | null
-/home/veerendra/farmer/yourfamilyfarmer/src/lib/orderReport.ts:112:  return (Number(o.total_price) || 0) + (Number(o.delivery_fee) || 0) + (Number(o.platform_fee) || 0)
-/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/page.tsx:31:  const [cancelledInfo, setCancelledInfo] = useState<{ wasPaid: boolean; refundAmount?: number; platformFeeWithheld?: number } | null>(null)
-/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/page.tsx:99:        platformFeeWithheld: typeof json?.platformFeeWithheld === 'number' ? json.platformFeeWithheld : undefined,
-/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/page.tsx:260:          platformFeeWithheld={cancelledInfo.platformFeeWithheld}
+/home/<USER>/farmer/yourfamilyfarmer/src/app/farmer/dashboard/orders/page.tsx:82:      .select('id, farmer_id, order_code, produce_listing_id, produce_name, quantity, unit, total_price, delivery_fee, platform_fee, buyer_name, buyer_phone, pickup_location, status, payment_method, payment_status, utr_number, decline_reason, refund_status, refund_amount, refunded_at, delivery_type, delivery_status, delivery_boy_id, collected_at, shipped_at, received_at, fulfillment_date, created_at, acknowledged_at')
+/home/<USER>/farmer/yourfamilyfarmer/src/components/farmer/OrderCard.tsx:26:  platform_fee?: number | null
+/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/OrderCard.tsx:18:  // Platform fee stamped on this row (cart's first row carries it, 0 on the
+/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/OrderCard.tsx:21:  platform_fee?: number | null
+/home/<USER>/farmer/yourfamilyfarmer/src/lib/orderReport.ts:112:  return (Number(o.total_price) || 0) + (Number(o.delivery_fee) || 0) + (Number(o.platform_fee) || 0)
+/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/page.tsx:31:  const [cancelledInfo, setCancelledInfo] = useState<{ wasPaid: boolean; refundAmount?: number; platformFeeWithheld?: number } | null>(null)
+/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/page.tsx:99:        platformFeeWithheld: typeof json?.platformFeeWithheld === 'number' ? json.platformFeeWithheld : undefined,
+/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/page.tsx:260:          platformFeeWithheld={cancelledInfo.platformFeeWithheld}
 ---MOD---
 ```
 
@@ -305,7 +305,7 @@ tool_use Bash
 id: toolu_01PtQxuwnLDJrXZ55KQN3rmf
 ```json
 {
-  "command": "ls /home/veerendra/farmer/yourfamilyfarmer/src/app/moderator/ 2>/dev/null; grep -rln \"total_price\" /home/veerendra/farmer/yourfamilyfarmer/src/app/moderator --include=\"*.tsx\" | head",
+  "command": "ls /home/<USER>/farmer/yourfamilyfarmer/src/app/moderator/ 2>/dev/null; grep -rln \"total_price\" /home/<USER>/farmer/yourfamilyfarmer/src/app/moderator --include=\"*.tsx\" | head",
   "description": "Locate moderator order views"
 }
 ```
@@ -368,7 +368,7 @@ tool_use Bash
 id: toolu_01Gdzwy1bpADM3Dit11pD3m2
 ```json
 {
-  "command": "grep -n \"select(\" /home/veerendra/farmer/yourfamilyfarmer/src/app/api/consumer/orders/\\[id\\]/route.ts /home/veerendra/farmer/yourfamilyfarmer/src/app/api/consumer/orders/route.ts | head",
+  "command": "grep -n \"select(\" /home/<USER>/farmer/yourfamilyfarmer/src/app/api/consumer/orders/\\[id\\]/route.ts /home/<USER>/farmer/yourfamilyfarmer/src/app/api/consumer/orders/route.ts | head",
   "description": "Check which columns the consumer order APIs select"
 }
 ```
@@ -378,15 +378,15 @@ id: toolu_01Gdzwy1bpADM3Dit11pD3m2
 tool_result
 id: toolu_01Gdzwy1bpADM3Dit11pD3m2
 ```
-/home/veerendra/farmer/yourfamilyfarmer/src/app/api/consumer/orders/route.ts:19:    .select(
-/home/veerendra/farmer/yourfamilyfarmer/src/app/api/consumer/orders/route.ts:37:      .select('id, name, slug, village, phone, upi_id')
-/home/veerendra/farmer/yourfamilyfarmer/src/app/api/consumer/orders/route.ts:58:      .select('id, name, phone')
-/home/veerendra/farmer/yourfamilyfarmer/src/app/api/consumer/orders/route.ts:74:      .select('id, order_id, star_rating, review_text, created_at')
-/home/veerendra/farmer/yourfamilyfarmer/src/app/api/consumer/orders/[id]/route.ts:24:    .select(
-/home/veerendra/farmer/yourfamilyfarmer/src/app/api/consumer/orders/[id]/route.ts:41:      .select('id, name, slug, village, phone, upi_id')
-/home/veerendra/farmer/yourfamilyfarmer/src/app/api/consumer/orders/[id]/route.ts:62:      .select('id, name, phone')
-/home/veerendra/farmer/yourfamilyfarmer/src/app/api/consumer/orders/[id]/route.ts:73:    .select('id, star_rating, review_text, created_at')
-/home/veerendra/farmer/yourfamilyfarmer/src/app/api/consumer/orders/[id]/route.ts:87:    .select('reschedule_reason, rescheduled_at')
+/home/<USER>/farmer/yourfamilyfarmer/src/app/api/consumer/orders/route.ts:19:    .select(
+/home/<USER>/farmer/yourfamilyfarmer/src/app/api/consumer/orders/route.ts:37:      .select('id, name, slug, village, phone, upi_id')
+/home/<USER>/farmer/yourfamilyfarmer/src/app/api/consumer/orders/route.ts:58:      .select('id, name, phone')
+/home/<USER>/farmer/yourfamilyfarmer/src/app/api/consumer/orders/route.ts:74:      .select('id, order_id, star_rating, review_text, created_at')
+/home/<USER>/farmer/yourfamilyfarmer/src/app/api/consumer/orders/[id]/route.ts:24:    .select(
+/home/<USER>/farmer/yourfamilyfarmer/src/app/api/consumer/orders/[id]/route.ts:41:      .select('id, name, slug, village, phone, upi_id')
+/home/<USER>/farmer/yourfamilyfarmer/src/app/api/consumer/orders/[id]/route.ts:62:      .select('id, name, phone')
+/home/<USER>/farmer/yourfamilyfarmer/src/app/api/consumer/orders/[id]/route.ts:73:    .select('id, star_rating, review_text, created_at')
+/home/<USER>/farmer/yourfamilyfarmer/src/app/api/consumer/orders/[id]/route.ts:87:    .select('reschedule_reason, rescheduled_at')
 ```
 
 > TOOL
@@ -395,7 +395,7 @@ tool_use Read
 id: toolu_01VRioeBtwWANZPircomgLJb
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx",
   "offset": 540,
   "limit": 170
 }
@@ -439,7 +439,7 @@ tool_use Read
 id: toolu_014fPebtGP9am2Mjps4yvXZs
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/api/consumer/orders/[id]/route.ts",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/api/consumer/orders/[id]/route.ts",
   "offset": 15,
   "limit": 30
 }
@@ -484,7 +484,7 @@ tool_use Bash
 id: toolu_01Nia6Ds5svED1JqdHxmLZm7
 ```json
 {
-  "command": "grep -n \"total_price\\|Total\\|delivery_fee\" /home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/\\[id\\]/page.tsx | head -40",
+  "command": "grep -n \"total_price\\|Total\\|delivery_fee\" /home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/\\[id\\]/page.tsx | head -40",
   "description": "Find where order total is rendered in detail page body"
 }
 ```
@@ -510,7 +510,7 @@ tool_use Read
 id: toolu_01NEyNej1NmJkfvD3zPmK1Gj
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx",
   "offset": 240,
   "limit": 130
 }
@@ -572,7 +572,7 @@ tool_use Read
 id: toolu_01BGisqTaDX4xrvWY3XAN9yG
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/OrderCard.tsx"
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/OrderCard.tsx"
 }
 ```
 
@@ -625,7 +625,7 @@ tool_use Read
 id: toolu_01LA3oANCDB6G4gpLHn8tNC9
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/farmer/OrderCard.tsx"
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/farmer/OrderCard.tsx"
 }
 ```
 
@@ -670,7 +670,7 @@ tool_use Read
 id: toolu_01P6gSWdv1vejH2p38dcvxcJ
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/api/consumer/orders/route.ts",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/api/consumer/orders/route.ts",
   "offset": 15,
   "limit": 15
 }
@@ -704,7 +704,7 @@ tool_use Bash
 id: toolu_011C4ATTg5EdDHDsjYY9DYDp
 ```json
 {
-  "command": "ls /home/veerendra/farmer/yourfamilyfarmer/src/app/farmer/dashboard/orders/; grep -n \"platform_fee\\|total_price\" /home/veerendra/farmer/yourfamilyfarmer/src/app/farmer/dashboard/orders/\\[id\\]/page.tsx 2>/dev/null | head",
+  "command": "ls /home/<USER>/farmer/yourfamilyfarmer/src/app/farmer/dashboard/orders/; grep -n \"platform_fee\\|total_price\" /home/<USER>/farmer/yourfamilyfarmer/src/app/farmer/dashboard/orders/\\[id\\]/page.tsx 2>/dev/null | head",
   "description": "Check farmer order detail page for fee display"
 }
 ```
@@ -729,7 +729,7 @@ id: toolu_01L4kKY2QRoMhBzx2GatPERo
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx",
   "old_string": "              <div className=\"grid grid-cols-2 gap-3 pt-1 border-t border-gray-100 mt-3\">\n                <div>\n                  <p className=\"text-[10px] font-bold text-gray-400 uppercase\">Placed</p>\n                  <p className=\"text-xs font-semibold text-gray-700\">{orderDate}</p>\n                  <p className=\"text-[11px] text-gray-500\">{orderTime}</p>\n                </div>\n                <div>\n                  <p className=\"text-[10px] font-bold text-gray-400 uppercase\">Payment</p>\n                  <p className=\"text-xs font-semibold text-gray-700\">{paymentLabel(order)}</p>\n                </div>\n              </div>",
   "new_string": "              <div className=\"grid grid-cols-2 gap-3 pt-1 border-t border-gray-100 mt-3\">\n                <div>\n                  <p className=\"text-[10px] font-bold text-gray-400 uppercase\">Placed</p>\n                  <p className=\"text-xs font-semibold text-gray-700\">{orderDate}</p>\n                  <p className=\"text-[11px] text-gray-500\">{orderTime}</p>\n                </div>\n                <div>\n                  <p className=\"text-[10px] font-bold text-gray-400 uppercase\">Payment</p>\n                  <p className=\"text-xs font-semibold text-gray-700\">{paymentLabel(order)}</p>\n                </div>\n              </div>\n\n              {/* Price breakdown — the platform fee collected on this order, from\n                  the per-order stamp (orders.platform_fee). Only shown when a fee\n                  was actually charged. */}\n              {(Number(order.platform_fee) || 0) > 0 && (\n                <div className=\"pt-2 border-t border-gray-100 mt-1 space-y-1\">\n                  <div className=\"flex items-center justify-between text-xs\">\n                    <span className=\"text-gray-500\">{L('Item total', 'వస్తువుల ధర')}</span>\n                    <span className=\"font-semibold text-gray-900\">₹{order.total_price ?? 0}</span>\n                  </div>\n                  <div className=\"flex items-center justify-between text-xs\">\n                    <span className=\"text-gray-500\">{L('Platform fee', 'ప్లాట్‌ఫామ్ ఫీజు')}</span>\n                    <span className=\"font-semibold text-gray-900\">₹{Number(order.platform_fee) || 0}</span>\n                  </div>\n                  <div className=\"flex items-center justify-between pt-1 border-t border-gray-100\">\n                    <span className=\"text-sm font-bold text-gray-900\">\n                      {isOrderPaid(order.payment_status) ? L('Total paid', 'మొత్తం చెల్లించారు') : L('Total', 'మొత్తం')}\n                    </span>\n                    <span className=\"text-sm font-extrabold text-green-700\">\n                      ₹{(Number(order.total_price) || 0) + (Number(order.platform_fee) || 0)}\n                    </span>\n                  </div>\n                </div>\n              )}"
 }
@@ -740,7 +740,7 @@ id: toolu_01L4kKY2QRoMhBzx2GatPERo
 tool_result
 id: toolu_01L4kKY2QRoMhBzx2GatPERo
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -754,7 +754,7 @@ id: toolu_016r3TkGpFPwrN99yKQ41mtP
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/OrderCard.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/OrderCard.tsx",
   "old_string": "  // Platform fee stamped on this row (cart's first row carries it, 0 on the\n  // rest). Withheld — not refunded — when the BUYER cancels, so the cancel modal\n  // can preview the deduction.\n  platform_fee?: number | null",
   "new_string": "  // Platform fee stamped on this row (per item — each row carries its own\n  // fee). Withheld — not refunded — when the BUYER cancels, so the cancel modal\n  // can preview the deduction.\n  platform_fee?: number | null"
 }
@@ -767,7 +767,7 @@ id: toolu_018FV1hvmzz3jwx9gCr7Tndr
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/OrderCard.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/OrderCard.tsx",
   "old_string": "              <p className=\"text-xs text-gray-500 mt-0.5\">\n                {order.quantity} {order.unit || 'kg'}\n                {order.total_price ? ` · ₹${order.total_price}` : ''}\n              </p>\n            </div>",
   "new_string": "              <p className=\"text-xs text-gray-500 mt-0.5\">\n                {order.quantity} {order.unit || 'kg'}\n                {order.total_price ? ` · ₹${order.total_price}` : ''}\n              </p>\n              {/* Platform fee collected on this order + the true total the\n                  buyer paid (item price + fee). */}\n              {(order.platform_fee ?? 0) > 0 && (\n                <p className=\"text-[11px] text-gray-500 mt-0.5\">\n                  {L('Platform fee', 'ప్లాట్‌ఫామ్ ఫీజు')} ₹{order.platform_fee}\n                  {' · '}\n                  {L('Total', 'మొత్తం')} ₹{(order.total_price ?? 0) + (order.platform_fee ?? 0)}\n                </p>\n              )}\n            </div>"
 }
@@ -778,7 +778,7 @@ id: toolu_018FV1hvmzz3jwx9gCr7Tndr
 tool_result
 id: toolu_016r3TkGpFPwrN99yKQ41mtP
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/OrderCard.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/OrderCard.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -786,7 +786,7 @@ The file /home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/OrderCa
 tool_result
 id: toolu_018FV1hvmzz3jwx9gCr7Tndr
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/OrderCard.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/OrderCard.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -796,7 +796,7 @@ id: toolu_012gL873A1KukpHgLjCmdsTY
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/farmer/OrderCard.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/farmer/OrderCard.tsx",
   "old_string": "          <div className=\"flex flex-wrap items-center gap-1.5 text-sm\">\n            <span className=\"font-semibold text-gray-800\">{order.produce_name || '—'}</span>\n            <span className=\"text-gray-300\">·</span>\n            <span className=\"text-gray-600\">{order.quantity} {order.unit || 'kg'}</span>\n            {order.total_price != null && order.total_price > 0 && (\n              <>\n                <span className=\"text-gray-300\">·</span>\n                <span className=\"font-bold text-green-700\">₹{order.total_price}</span>\n              </>\n            )}\n          </div>\n\n          {order.pickup_location && (",
   "new_string": "          <div className=\"flex flex-wrap items-center gap-1.5 text-sm\">\n            <span className=\"font-semibold text-gray-800\">{order.produce_name || '—'}</span>\n            <span className=\"text-gray-300\">·</span>\n            <span className=\"text-gray-600\">{order.quantity} {order.unit || 'kg'}</span>\n            {order.total_price != null && order.total_price > 0 && (\n              <>\n                <span className=\"text-gray-300\">·</span>\n                <span className=\"font-bold text-green-700\">₹{order.total_price}</span>\n              </>\n            )}\n          </div>\n\n          {/* Platform fee collected on this order (goes to the platform, not\n              the farmer) + the total the buyer paid. */}\n          {(order.platform_fee ?? 0) > 0 && (\n            <p className=\"text-[11px] text-gray-500\">\n              {L('Platform fee', 'ప్లాట్‌ఫామ్ ఫీజు')} ₹{order.platform_fee}\n              {' · '}\n              {L('Buyer paid', 'కొనుగోలుదారు చెల్లించింది')} ₹{(order.total_price ?? 0) + (order.platform_fee ?? 0)}\n            </p>\n          )}\n\n          {order.pickup_location && ("
 }
@@ -807,7 +807,7 @@ id: toolu_012gL873A1KukpHgLjCmdsTY
 tool_result
 id: toolu_012gL873A1KukpHgLjCmdsTY
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/components/farmer/OrderCard.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/components/farmer/OrderCard.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -817,7 +817,7 @@ id: toolu_01NRP75YVZzwRUNK9UWZuXqm
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/farmer/OrderCard.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/farmer/OrderCard.tsx",
   "old_string": "  // Delivery + platform fees stamped on this row (cart's first row carries them,\n  // 0 on the rest). Refunded IN FULL along with the produce price when the FARMER\n  // declines, so the decline sheet can preview the buyer's total refund.",
   "new_string": "  // Fees stamped on this row: delivery_fee is one-per-cart (first row carries\n  // it, 0 on the rest); platform_fee is per item (each row carries its own).\n  // Refunded IN FULL along with the produce price when the FARMER declines, so\n  // the decline sheet can preview the buyer's total refund."
 }
@@ -927,7 +927,7 @@ tool_use Read
 id: toolu_01C8HbMbU88n4PXqDLC8vp6u
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx",
   "offset": 920,
   "limit": 130
 }
@@ -985,7 +985,7 @@ id: toolu_01JTRvG9wvWnQkFJUBg8ZaBi
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx",
   "old_string": "              {/* Price breakdown — item price + the platform fee collected on this\n                  order, from the per-order stamp (orders.platform_fee). Only shown when a fee\n                  was actually charged. */}\n              {(Number(order.platform_fee) || 0) > 0 && (\n                <div className=\"pt-2 border-t border-gray-100 mt-1 space-y-1\">\n                  <div className=\"flex items-center justify-between text-xs\">\n                    <span className=\"text-gray-500\">{L('Item total', 'వస్తువుల ధర')}</span>\n                    <span className=\"font-semibold text-gray-900\">₹{order.total_price ?? 0}</span>\n                  </div>\n                  <div className=\"flex items-center justify-between text-xs\">\n                    <span className=\"text-gray-500\">{L('Platform fee', 'ప్లాట్‌ఫామ్ ఫీజు')}</span>\n                    <span className=\"font-semibold text-gray-900\">₹{Number(order.platform_fee) || 0}</span>\n                  </div>\n                  <div className=\"flex items-center justify-between pt-1 border-t border-gray-100\">\n                    <span className=\"text-sm font-bold text-gray-900\">\n                      {isOrderPaid(order.payment_status) ? L('Total paid', 'మొత్తం చెల్లించారు') : L('Total', 'మొత్తం')}\n                    </span>\n                    <span className=\"text-sm font-extrabold text-green-700\">\n                      ₹{(Number(order.total_price) || 0) + (Number(order.platform_fee) || 0)}\n                    </span>\n                  </div>\n                </div>\n              )}",
   "new_string": "              {/* Price breakdown — shown on EVERY order: item amount, platform\n                  fee collected (from the per-order orders.platform_fee stamp;\n                  ₹0 when no fee applied), the total, and a one-line refund\n                  summary (the full refund timeline lives in RefundPanel). */}\n              <div className=\"pt-2 border-t border-gray-100 mt-1 space-y-1\">\n                <div className=\"flex items-center justify-between text-xs\">\n                  <span className=\"text-gray-500\">{L('Item total', 'వస్తువుల ధర')}</span>\n                  <span className=\"font-semibold text-gray-900\">₹{order.total_price ?? 0}</span>\n                </div>\n                <div className=\"flex items-center justify-between text-xs\">\n                  <span className=\"text-gray-500\">{L('Platform fee collected', 'వసూలు చేసిన ప్లాట్‌ఫామ్ ఫీజు')}</span>\n                  <span className=\"font-semibold text-gray-900\">₹{Number(order.platform_fee) || […]
 
@@ -1027,7 +1027,7 @@ tool_use Read
 id: toolu_01DwtB9EGffo24GW63MPowDu
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx",
   "offset": 330,
   "limit": 30
 }
@@ -1077,7 +1077,7 @@ id: toolu_01T1hLL8T3mV6RDk3g9FpEK5
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx",
   "old_string": "              {/* Price breakdown — the platform fee collected on this order, from\n                  the per-order stamp (orders.platform_fee). Only shown when a fee\n                  was actually charged. */}\n              {(Number(order.platform_fee) || 0) > 0 && (\n                <div className=\"pt-2 border-t border-gray-100 mt-1 space-y-1\">\n                  <div className=\"flex items-center justify-between text-xs\">\n                    <span className=\"text-gray-500\">{L('Item total', 'వస్తువుల ధర')}</span>\n                    <span className=\"font-semibold text-gray-900\">₹{order.total_price ?? 0}</span>\n                  </div>\n                  <div className=\"flex items-center justify-between text-xs\">\n                    <span className=\"text-gray-500\">{L('Platform fee', 'ప్లాట్‌ఫామ్ ఫీజు')}</span>\n                    <span className=\"font-semibold text-gray-900\">₹{Number(order.platform_fee) || 0}</span>\n                  </div>\n                  <div className=\"flex items-center justify-between pt-1 border-t border-gray-100\">\n                    <span className=\"text-sm font-bold text-gray-900\">\n                      {isOrderPaid(order.payment_status) ? L('Total paid', 'మొత్తం చెల్లించారు') : L('Total', 'మొత్తం')}\n                    </span>\n                    <span className=\"text-sm font-extrabold text-green-700\">\n                      ₹{(Number(order.total_price) || 0) + (Number(order.platform_fee) || 0)}\n                    </span>\n                  </div>\n                </div>\n              )}",
   "new_string": "              {/* Price breakdown — shown on EVERY order: item amount, platform\n                  fee collected (per-order orders.platform_fee stamp; ₹0 when no\n                  fee applied), the total, and a one-line refund summary (the\n                  full refund timeline lives in RefundPanel). */}\n              <div className=\"pt-2 border-t border-gray-100 mt-1 space-y-1\">\n                <div className=\"flex items-center justify-between text-xs\">\n                  <span className=\"text-gray-500\">{L('Item total', 'వస్తువుల ధర')}</span>\n                  <span className=\"font-semibold text-gray-900\">₹{order.total_price ?? 0}</span>\n                </div>\n                <div className=\"flex items-center justify-between text-xs\">\n                  <span className=\"text-gray-500\">{L('Platform fee collected', 'వసూలు చేసిన ప్లాట్‌ఫామ్ ఫీజు')}</span>\n                  <span className=\"font-semibold text-gray-900\">₹{Number(order.platform_fee) || 0}</span>\n                </div>\n                <div className=\"flex items-center […]
 
@@ -1086,7 +1086,7 @@ id: toolu_01T1hLL8T3mV6RDk3g9FpEK5
 tool_result
 id: toolu_01T1hLL8T3mV6RDk3g9FpEK5
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/[id]/page.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1096,7 +1096,7 @@ id: toolu_01Q4t8m5EHkL4Yc6sB1LWNFV
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/OrderCard.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/OrderCard.tsx",
   "old_string": "              {/* Platform fee collected on this order + the true total the\n                  buyer paid (item price + fee). */}\n              {(order.platform_fee ?? 0) > 0 && (\n                <p className=\"text-[11px] text-gray-500 mt-0.5\">\n                  {L('Platform fee', 'ప్లాట్‌ఫామ్ ఫీజు')} ₹{order.platform_fee}\n                  {' · '}\n                  {L('Total', 'మొత్తం')} ₹{(order.total_price ?? 0) + (order.platform_fee ?? 0)}\n                </p>\n              )}",
   "new_string": "              {/* Platform fee collected on this order (₹0 when none applied)\n                  + the true total the buyer pays (item price + fee). */}\n              <p className=\"text-[11px] text-gray-500 mt-0.5\">\n                {L('Platform fee', 'ప్లాట్‌ఫామ్ ఫీజు')} ₹{order.platform_fee ?? 0}\n                {' · '}\n                {L('Total', 'మొత్తం')} ₹{(order.total_price ?? 0) + (order.platform_fee ?? 0)}\n              </p>"
 }
@@ -1108,7 +1108,7 @@ tool_use Read
 id: toolu_012AtcG641cjDEvRm17exM21
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/farmer/dashboard/orders/[id]/page.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/farmer/dashboard/orders/[id]/page.tsx",
   "offset": 15,
   "limit": 75
 }
@@ -1119,7 +1119,7 @@ id: toolu_012AtcG641cjDEvRm17exM21
 tool_result
 id: toolu_01Q4t8m5EHkL4Yc6sB1LWNFV
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/OrderCard.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/OrderCard.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1170,7 +1170,7 @@ id: toolu_01FpxcNysn2pbCa71Q5p2tv2
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/farmer/dashboard/orders/[id]/page.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/farmer/dashboard/orders/[id]/page.tsx",
   "old_string": "  total_price: number | null\n  buyer_name: string | null",
   "new_string": "  total_price: number | null\n  // Platform fee collected on this order (₹0 when none applied). Goes to the\n  // platform, not the farmer.\n  platform_fee: number | null\n  buyer_name: string | null"
 }
@@ -1183,7 +1183,7 @@ id: toolu_01FfWUHtmegfuKFsJLfGii52
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/farmer/dashboard/orders/[id]/page.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/farmer/dashboard/orders/[id]/page.tsx",
   "old_string": "  'id, farmer_id, order_code, produce_name, quantity, unit, total_price, buyer_name,",
   "new_string": "  'id, farmer_id, order_code, produce_name, quantity, unit, total_price, platform_fee, buyer_name,"
 }
@@ -1194,7 +1194,7 @@ id: toolu_01FfWUHtmegfuKFsJLfGii52
 tool_result
 id: toolu_01FpxcNysn2pbCa71Q5p2tv2
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/app/farmer/dashboard/orders/[id]/page.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/app/farmer/dashboard/orders/[id]/page.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1202,7 +1202,7 @@ The file /home/veerendra/farmer/yourfamilyfarmer/src/app/farmer/dashboard/orders
 tool_result
 id: toolu_01FfWUHtmegfuKFsJLfGii52
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/app/farmer/dashboard/orders/[id]/page.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/app/farmer/dashboard/orders/[id]/page.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1215,7 +1215,7 @@ tool_use Read
 id: toolu_01RDHXNxirqQeeMW3Dj3VA5w
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/farmer/dashboard/orders/[id]/page.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/farmer/dashboard/orders/[id]/page.tsx",
   "offset": 210,
   "limit": 80
 }
@@ -1278,7 +1278,7 @@ id: toolu_01Rp6K9ivS4GDpF57yKr3DJB
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/farmer/dashboard/orders/[id]/page.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/farmer/dashboard/orders/[id]/page.tsx",
   "old_string": "              <div className=\"grid grid-cols-2 gap-3 pt-3 border-t border-gray-100\">\n                <div>\n                  <p className=\"text-[10px] font-bold text-gray-400 uppercase\">{L('Placed', 'పెట్టారు')}</p>\n                  <p className=\"text-xs font-semibold text-gray-700\">{fmt(order.created_at)}</p>\n                </div>",
   "new_string": "              {/* Price breakdown — item amount, the platform fee collected on\n                  this order (goes to the platform, not the farmer; ₹0 when no\n                  fee applied) and the total the buyer pays. */}\n              <div className=\"pt-2 border-t border-gray-100 space-y-1\">\n                <div className=\"flex items-center justify-between text-xs\">\n                  <span className=\"text-gray-500\">{L('Item total', 'వస్తువుల ధర')}</span>\n                  <span className=\"font-semibold text-gray-900\">₹{order.total_price ?? 0}</span>\n                </div>\n                <div className=\"flex items-center justify-between text-xs\">\n                  <span className=\"text-gray-500\">{L('Platform fee collected', 'వసూలు చేసిన ప్లాట్‌ఫామ్ ఫీజు')}</span>\n                  <span className=\"font-semibold text-gray-900\">₹{order.platform_fee ?? 0}</span>\n                </div>\n                <div className=\"flex items-center justify-between pt-1 border-t border-gray-100\">\n                  <span className=\"text-sm font-bold text-gray-900\">{L('Buyer pays', 'కొనుగోలుదారు చెల్లించేది')}</span>\n                  <span className=\"text-sm font-extrabold text-green-700\">\n                    ₹{(order.total_price ?? 0) + (order.platform_fee ?? 0)}\n                  </span>\n                </div>\n                {order.refund_status && order.refund_status !== 'failed' && (\n                  <div className=\"flex items-center justify-between text-xs pt-1 border-t border-gray-100\">\n                    <span className=\"text-gray-500\">\n                      {order.refund_status === 'processed' ? L('Refunded to buyer', 'కొనుగోలుదారుకు రీఫండ్ అయింది') : L('Refund initiated', 'రీఫండ్ ప్రారంభమైంది')}\n                    </span>\n                    <span className=\"font-semibold text-purple-700\">₹{order.refund_amount ?? order.total_price ?? 0}</span>\n                  </div>\n                )}\n              </div>\n\n              <div className=\"grid grid-cols-2 gap-3 pt-3 border-t border-gray-100\">\n                <div>\n                  <p className=\"text-[10px] font-bold text-gray-400 uppercase\">{L('Placed', 'పెట్టారు')}</p>\n                  <p className=\"text-xs font-semibold text-gray-700\">{fmt(order.created_at)}</p>\n                </div>"
 }
@@ -1289,7 +1289,7 @@ id: toolu_01Rp6K9ivS4GDpF57yKr3DJB
 tool_result
 id: toolu_01Rp6K9ivS4GDpF57yKr3DJB
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/app/farmer/dashboard/orders/[id]/page.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/app/farmer/dashboard/orders/[id]/page.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1303,7 +1303,7 @@ id: toolu_01LsaTkGbixwUm34ahpBVW9q
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/farmer/OrderCard.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/farmer/OrderCard.tsx",
   "old_string": "          {/* Platform fee collected on this order (goes to the platform, not\n              the farmer) + the total the buyer paid. */}\n          {(order.platform_fee ?? 0) > 0 && (\n            <p className=\"text-[11px] text-gray-500\">\n              {L('Platform fee', 'ప్లాట్‌ఫామ్ ఫీజు')} ₹{order.platform_fee}\n              {' · '}\n              {L('Buyer paid', 'కొనుగోలుదారు చెల్లించింది')} ₹{(order.total_price ?? 0) + (order.platform_fee ?? 0)}\n            </p>\n          )}",
   "new_string": "          {/* Platform fee collected on this order (goes to the platform, not\n              the farmer; ₹0 when none applied) + the total the buyer pays. */}\n          <p className=\"text-[11px] text-gray-500\">\n            {L('Platform fee', 'ప్లాట్‌ఫామ్ ఫీజు')} ₹{order.platform_fee ?? 0}\n            {' · '}\n            {L('Buyer pays', 'కొనుగోలుదారు చెల్లించేది')} ₹{(order.total_price ?? 0) + (order.platform_fee ?? 0)}\n          </p>)"
 }
@@ -1314,7 +1314,7 @@ id: toolu_01LsaTkGbixwUm34ahpBVW9q
 tool_result
 id: toolu_01LsaTkGbixwUm34ahpBVW9q
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/components/farmer/OrderCard.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/components/farmer/OrderCard.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1324,7 +1324,7 @@ id: toolu_01K756YQJwDudnZmDHiFgUCG
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/farmer/OrderCard.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/farmer/OrderCard.tsx",
   "old_string": "            {L('Buyer pays', 'కొనుగోలుదారు చెల్లించేది')} ₹{(order.total_price ?? 0) + (order.platform_fee ?? 0)}\n          </p>)",
   "new_string": "            {L('Buyer pays', 'కొనుగోలుదారు చెల్లించేది')} ₹{(order.total_price ?? 0) + (order.platform_fee ?? 0)}\n          </p>"
 }
@@ -1335,7 +1335,7 @@ id: toolu_01K756YQJwDudnZmDHiFgUCG
 tool_result
 id: toolu_01K756YQJwDudnZmDHiFgUCG
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/components/farmer/OrderCard.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/components/farmer/OrderCard.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1412,7 +1412,7 @@ tool_use Bash
 id: toolu_01DaWNgU8oicg8uXjrxYC4Dr
 ```json
 {
-  "command": "grep -rln \"Search Harvests\\|Today's Harvest\\|harvests\" /home/veerendra/farmer/yourfamilyfarmer/src/app --include=\"*.tsx\" | head; echo ---; cat /home/veerendra/farmer/yourfamilyfarmer/scripts/harvests-migration.sql 2>/dev/null",
+  "command": "grep -rln \"Search Harvests\\|Today's Harvest\\|harvests\" /home/<USER>/farmer/yourfamilyfarmer/src/app --include=\"*.tsx\" | head; echo ---; cat /home/<USER>/farmer/yourfamilyfarmer/scripts/harvests-migration.sql 2>/dev/null",
   "description": "Find harvest pages and migration schema"
 }
 ```
@@ -1422,15 +1422,15 @@ id: toolu_01DaWNgU8oicg8uXjrxYC4Dr
 tool_result
 id: toolu_01DaWNgU8oicg8uXjrxYC4Dr
 ```
-/home/veerendra/farmer/yourfamilyfarmer/src/app/layout.tsx
-/home/veerendra/farmer/yourfamilyfarmer/src/app/moderator/agents/page.tsx
-/home/veerendra/farmer/yourfamilyfarmer/src/app/farmer/signup/page.tsx
-/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/page.tsx
-/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/produce/[id]/page.tsx
-/home/veerendra/farmer/yourfamilyfarmer/src/app/farmer/login/page.tsx
-/home/veerendra/farmer/yourfamilyfarmer/src/app/moderator/supply/page.tsx
-/home/veerendra/farmer/yourfamilyfarmer/src/app/farmer/dashboard/page.tsx
-/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/orders/page.tsx
+/home/<USER>/farmer/yourfamilyfarmer/src/app/layout.tsx
+/home/<USER>/farmer/yourfamilyfarmer/src/app/moderator/agents/page.tsx
+/home/<USER>/farmer/yourfamilyfarmer/src/app/farmer/signup/page.tsx
+/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/page.tsx
+/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/produce/[id]/page.tsx
+/home/<USER>/farmer/yourfamilyfarmer/src/app/farmer/login/page.tsx
+/home/<USER>/farmer/yourfamilyfarmer/src/app/moderator/supply/page.tsx
+/home/<USER>/farmer/yourfamilyfarmer/src/app/farmer/dashboard/page.tsx
+/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/orders/page.tsx
 ---
 -- ================================================================
 -- YFF — Harvests model (USP: "farmer adds a Harvest, not a produce")
@@ -1466,7 +1466,7 @@ tool_use Bash
 id: toolu_01B8JmouuQubvJ4bjU7tgt92
 ```json
 {
-  "command": "grep -rln \"Search Harvests\\|searchHarvest\\|Search harvest\" /home/veerendra/farmer/yourfamilyfarmer/src --include=\"*.tsx\" --include=\"*.ts\"; echo \"---consumer page harvest refs---\"; grep -n \"arvest\\|Search\" /home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/page.tsx | head -40",
+  "command": "grep -rln \"Search Harvests\\|searchHarvest\\|Search harvest\" /home/<USER>/farmer/yourfamilyfarmer/src --include=\"*.tsx\" --include=\"*.ts\"; echo \"---consumer page harvest refs---\"; grep -n \"arvest\\|Search\" /home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/page.tsx | head -40",
   "description": "Locate Search Harvests UI"
 }
 ```
@@ -1476,8 +1476,8 @@ id: toolu_01B8JmouuQubvJ4bjU7tgt92
 tool_result
 id: toolu_01B8JmouuQubvJ4bjU7tgt92
 ```
-/home/veerendra/farmer/yourfamilyfarmer/src/lib/translations.ts
-/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/page.tsx
+/home/<USER>/farmer/yourfamilyfarmer/src/lib/translations.ts
+/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/page.tsx
 ---consumer page harvest refs---
 11:import TodaysHarvest from '@/components/consumer/TodaysHarvest'
 14:import LocationSearch from '@/components/LocationSearch'
@@ -1507,7 +1507,7 @@ tool_use Read
 id: toolu_01BGwc6W9RJuSUWPXXU1racY
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/page.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/page.tsx",
   "offset": 300,
   "limit": 130
 }
@@ -1567,7 +1567,7 @@ tool_use Read
 id: toolu_016En2xXrB8KEboWgVT2qZy6
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/TodaysHarvest.tsx"
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/TodaysHarvest.tsx"
 }
 ```
 
@@ -1618,7 +1618,7 @@ tool_use Bash
 id: toolu_013E3eEHTLWQd6u1wTtxXehy
 ```json
 {
-  "command": "cat /home/veerendra/farmer/yourfamilyfarmer/src/lib/harvest.ts; echo \"=== produce detail harvest refs ===\"; grep -n \"arvest\\|harvestClock\\|latest_harvested\\|harvests\" /home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/produce/\\[id\\]/page.tsx | head -30; echo \"=== harvest detail route? ===\"; find /home/veerendra/farmer/yourfamilyfarmer/src/app -type d -iname \"*harvest*\"",
+  "command": "cat /home/<USER>/farmer/yourfamilyfarmer/src/lib/harvest.ts; echo \"=== produce detail harvest refs ===\"; grep -n \"arvest\\|harvestClock\\|latest_harvested\\|harvests\" /home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/produce/\\[id\\]/page.tsx | head -30; echo \"=== harvest detail route? ===\"; find /home/<USER>/farmer/yourfamilyfarmer/src/app -type d -iname \"*harvest*\"",
   "description": "Read harvest lib and check produce detail page + harvest routes"
 }
 ```
@@ -1670,7 +1670,7 @@ tool_use Read
 id: toolu_014jYphzS66zfYwraipYGDrk
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/page.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/page.tsx",
   "offset": 270,
   "limit": 50
 }
@@ -1733,7 +1733,7 @@ tool_use Write
 id: toolu_0142TGMaHZD7nRBasFxu6yqU
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/FreshHarvestsTable.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/FreshHarvestsTable.tsx",
   "content": "'use client'\n\nimport { useEffect, useState } from 'react'\nimport { useRouter } from 'next/navigation'\nimport { supabase } from '@/lib/supabase'\nimport { useLang } from '@/lib/LanguageContext'\nimport { localizeName } from '@/lib/localizeName'\nimport { harvestClock } from '@/lib/harvest'\n\n// \"Fresh Harvests near you\" — a compact table of the most recent harvests,\n// newest pick first (descending harvested_at). Each row shows the harvest name\n// and its \"Harvested 2h ago\" clock; tapping a row opens the complete harvest\n// details (the produce page). Reads the `harvests` table (see\n// scripts/harvests-migration.sql) and silently renders nothing when the table /\n// migration isn't present yet, or when there are no fresh harvests.\n\ntype Listing = {\n  id: string\n  name: string\n  emoji?: string | null\n  status?: string | null\n}\n\ntype HarvestRow = {\n  id: string\n  harvested_at: string\n  produce_listing_id: string\n  // PostgREST embeds the parent listing as an object (many-to-one).\n  produce_listings?: Listing | Listing[] | null\n}\n\nconst DAY = 86_400_000\n\nexport default function FreshHarvestsTable() {\n  const { lang, L } = useLang()\n  const router = useRouter()\n  const [rows, setRows] = useState<HarvestRow[]>([])\n  const [loaded, setLoaded] = useState(false)\n\n  useEffect(() => {\n    let cancelled = false\n    // Same window as the Today's Harvest feed: recently picked (buyable now) plus\n    // a few days […]
 
 > TOOL
@@ -1741,7 +1741,7 @@ id: toolu_0142TGMaHZD7nRBasFxu6yqU
 tool_result
 id: toolu_0142TGMaHZD7nRBasFxu6yqU
 ```
-File created successfully at: /home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/FreshHarvestsTable.tsx (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/FreshHarvestsTable.tsx (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1755,7 +1755,7 @@ id: toolu_01TxB8LMd1SvjYKU67UXFJG2
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/page.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/page.tsx",
   "old_string": "      {/* ── Search card (floats over hero) ────── */}\n      <div className=\"max-w-3xl mx-auto px-4 -mt-7\">\n        <div className=\"bg-white rounded-2xl shadow-xl p-4 space-y-3\">\n          <div className=\"relative\">",
   "new_string": "      {/* ── Fresh Harvests table + Search card (float over hero) ────── */}\n      <div className=\"max-w-3xl mx-auto px-4 -mt-7 space-y-3\">\n        {/* Newest harvests near you, above the search box. Renders nothing when\n            there are no fresh harvests / the harvests table isn't present yet. */}\n        <FreshHarvestsTable />\n        <div className=\"bg-white rounded-2xl shadow-xl p-4 space-y-3\">\n          <div className=\"relative\">"
 }
@@ -1766,7 +1766,7 @@ id: toolu_01TxB8LMd1SvjYKU67UXFJG2
 tool_result
 id: toolu_01TxB8LMd1SvjYKU67UXFJG2
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/page.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/page.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1776,7 +1776,7 @@ id: toolu_01M2t1ZqdxKWkgPdMLd8fTj5
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/page.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/page.tsx",
   "old_string": "import TodaysHarvest from '@/components/consumer/TodaysHarvest'",
   "new_string": "import TodaysHarvest from '@/components/consumer/TodaysHarvest'\nimport FreshHarvestsTable from '@/components/consumer/FreshHarvestsTable'"
 }
@@ -1787,7 +1787,7 @@ id: toolu_01M2t1ZqdxKWkgPdMLd8fTj5
 tool_result
 id: toolu_01M2t1ZqdxKWkgPdMLd8fTj5
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/page.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/page.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1820,7 +1820,7 @@ tool_use Read
 id: toolu_01CrLL5jxifBqvWTVAr2kvoz
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/page.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/page.tsx",
   "offset": 316,
   "limit": 32
 }
@@ -1894,7 +1894,7 @@ id: toolu_01AYfbrUEkzPquaqL7JA5zwi
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/FreshHarvestsTable.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/FreshHarvestsTable.tsx",
   "old_string": "      <table className=\"w-full text-left border-collapse\">\n        <thead>\n          <tr className=\"text-[10px] uppercase tracking-wide text-gray-400 border-b border-gray-100\">\n            <th className=\"font-bold px-4 py-2\">{L('Harvest', 'కోత')}</th>\n            <th className=\"font-bold px-4 py-2 text-right\">{L('When', 'ఎప్పుడు')}</th>\n          </tr>\n        </thead>\n        <tbody>\n          {rows.map((r) => {\n            const item = listingOf(r)\n            if (!item) return null\n            return (\n              <tr\n                key={r.id}\n                onClick={() => router.push(`/consumer/produce/${item.id}`)}\n                className=\"border-b border-gray-50 last:border-0 cursor-pointer active:bg-green-50\"\n              >\n                <td className=\"px-4 py-3\">\n                  <span className=\"flex items-center gap-1.5 min-w-0\">\n                    <span className=\"text-lg shrink-0\">{item.emoji || '🌿'}</span>\n                    <span className=\"text-sm font-bold text-gray-900 truncate\">\n                      {localizeName(item.name, lang)}\n                    </span>\n                  </span>\n                </td>\n                <td className=\"px-4 py-3 text-right align-middle\">\n                  <span className=\"text-[11px] font-semibold text-green-700 whitespace-nowrap\">\n                    ⏱ {harvestClock(r.harvested_at, L)}\n                  </span>\n                </td>\n              </tr>\n            )\n          })}\n        </tbody>\n      </table>",
   "new_string": "      <table className=\"w-full text-left border-collapse\">\n        <thead>\n          <tr className=\"text-[10px] uppercase tracking-wide text-gray-400 border-b border-gray-100\">\n            <th className=\"font-bold px-4 py-2\">{L('Harvest', 'కోత')}</th>\n            <th className=\"font-bold px-4 py-2 text-right\">{L('When', 'ఎప్పుడు')}</th>\n            <th className=\"w-6\" aria-hidden=\"true\"></th>\n          </tr>\n        </thead>\n        <tbody>\n          {rows.map((r) => {\n            const item = listingOf(r)\n            if (!item) return null\n            return (\n              <tr\n                key={r.id}\n                onClick={() => router.push(`/consumer/produce/${item.id}`)}\n                className=\"border-b border-gray-50 last:border-0 cursor-pointer active:bg-green-50\"\n              >\n                <td className=\"pl-4 pr-2 py-3\">\n                  <span className=\"flex items-center gap-1.5 min-w-0\">\n                    <span className=\"text-lg shrink-0\">{item.emoji || '🌿'}</span>\n                    <span className=\"text-sm font-bold text-gray-900 truncate\">\n                      {localizeName(item.name, lang)}\n                    </span>\n                  </span>\n                </td>\n                <td className=\"px-2 py-3 text-right align-middle\">\n                  <span className=\"text-[11px] font-semibold text-green-700 whitespace-nowrap\">\n                    ⏱ {harvestClock(r.harvested_at, L)}\n                  </span>\n                </td>\n                {/* […]
 
@@ -1903,7 +1903,7 @@ id: toolu_01AYfbrUEkzPquaqL7JA5zwi
 tool_result
 id: toolu_01AYfbrUEkzPquaqL7JA5zwi
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/FreshHarvestsTable.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/FreshHarvestsTable.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1990,7 +1990,7 @@ tool_use Read
 id: toolu_01BXwbMHvKtzsqgEBDRnnM8g
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/SplashScreen.tsx"
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/SplashScreen.tsx"
 }
 ```
 
@@ -2122,7 +2122,7 @@ tool_use Bash
 id: toolu_016kGwmBKVZC78UqFcbB5Vmc
 ```json
 {
-  "command": "cd /home/veerendra/farmer/yourfamilyfarmer; echo \"=== moderator supply page (harvest list?) ===\"; grep -n \"harvest\\|Harvest\\|method\\|farmer\\|sort\\|filter\\|rating\\|purchase\" src/app/moderator/supply/page.tsx | head -40",
+  "command": "cd /home/<USER>/farmer/yourfamilyfarmer; echo \"=== moderator supply page (harvest list?) ===\"; grep -n \"harvest\\|Harvest\\|method\\|farmer\\|sort\\|filter\\|rating\\|purchase\" src/app/moderator/supply/page.tsx | head -40",
   "description": "Inspect moderator supply page for harvest listing"
 }
 ```
@@ -2152,7 +2152,7 @@ tool_use Bash
 id: toolu_01JDdQcaTN718cwosZDyYSdB
 ```json
 {
-  "command": "cd /home/veerendra/farmer/yourfamilyfarmer; echo \"=== moderator listings page ===\"; grep -n \"harvest\\|Harvest\\|method\\|farmer\\|sort\\|filter\\|rating\\|Rating\\|purchase\\|order\" src/app/moderator/listings/page.tsx | head -40; echo; echo \"=== files mentioning harvests + rating/method ===\"; grep -rln \"star_rating\\|avg_rating\\|rating\" src/app/consumer src/components/consumer --include=\"*.tsx\" | head",
+  "command": "cd /home/<USER>/farmer/yourfamilyfarmer; echo \"=== moderator listings page ===\"; grep -n \"harvest\\|Harvest\\|method\\|farmer\\|sort\\|filter\\|rating\\|Rating\\|purchase\\|order\" src/app/moderator/listings/page.tsx | head -40; echo; echo \"=== files mentioning harvests + rating/method ===\"; grep -rln \"star_rating\\|avg_rating\\|rating\" src/app/consumer src/components/consumer --include=\"*.tsx\" | head",
   "description": "Inspect moderator listings + consumer rating usage"
 }
 ```
@@ -2196,7 +2196,7 @@ tool_use Bash
 id: toolu_01PTem7EF9kgPdALAS27rZW6
 ```json
 {
-  "command": "cd /home/veerendra/farmer/yourfamilyfarmer; echo \"=== consumer page: existing filters/sort + produce query ===\"; grep -n \"method\\|category\\|distance\\|sort\\|filter\\|order(\\|avg_rating\\|rating\\|purchase\\|orders_count\\|from('produce\" src/app/consumer/page.tsx | head -40",
+  "command": "cd /home/<USER>/farmer/yourfamilyfarmer; echo \"=== consumer page: existing filters/sort + produce query ===\"; grep -n \"method\\|category\\|distance\\|sort\\|filter\\|order(\\|avg_rating\\|rating\\|purchase\\|orders_count\\|from('produce\" src/app/consumer/page.tsx | head -40",
   "description": "Check consumer page existing filters and produce data"
 }
 ```

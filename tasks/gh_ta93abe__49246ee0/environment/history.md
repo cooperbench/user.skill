@@ -12,8 +12,8 @@ tool_use exec_command
 id: call_OxD87pY8nH4slKU2fGnza6mj
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/ta93abe/.codex/skills/web-design-guidelines/SKILL.md",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/skills/web-design-guidelines/SKILL.md",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 20000
 }
 ```
@@ -24,8 +24,8 @@ tool_use exec_command
 id: call_HapyUpkNclrp72L7NcTKXR2X
 ```json
 {
-  "cmd": "rg -n \"ta93abe/me|Developer/github.com/ta93abe/me|site|portfolio|frontend|web\" /Users/ta93abe/.codex/memories/MEMORY.md",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "cmd": "rg -n \"ta93abe/me|Developer/github.com/ta93abe/me|site|portfolio|frontend|web\" /home/<USER>/.codex/memories/MEMORY.md",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 12000
 }
 ```
@@ -37,7 +37,7 @@ id: call_I0KtZCiFY0lDSIlK3jGyAOZP
 ```json
 {
   "cmd": "pwd",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 2000
 }
 ```
@@ -49,7 +49,7 @@ id: call_c3G5W4O8Gc9CfXsgvR7YoVMx
 ```json
 {
   "cmd": "rg --files -g '!*node_modules*' -g '!*.png' -g '!*.jpg' -g '!*.jpeg' -g '!*.gif' -g '!*.webp' -g '!*.ico'",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 20000
 }
 ```
@@ -126,7 +126,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 12
 Output:
-/Users/ta93abe/Developer/github.com/ta93abe/me
+/home/<USER>/Developer/github.com/ta93abe/me
 
 ```
 
@@ -248,7 +248,7 @@ id: call_m2HNgJQSznc5WChoswEQCME3
 ```json
 {
   "cmd": "sed -n '1,220p' package.json",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 20000
 }
 ```
@@ -260,7 +260,7 @@ id: call_bLtWYDko4sR98vAnQA7ent1G
 ```json
 {
   "cmd": "sed -n '1,260p' src/pages/index.astro",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 30000
 }
 ```
@@ -272,7 +272,7 @@ id: call_waLBf0UAKQ0vZXf36eS4n7QW
 ```json
 {
   "cmd": "sed -n '1,280p' src/layouts/Layout.astro",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 30000
 }
 ```
@@ -284,7 +284,7 @@ id: call_iRHeMBA8IdxV2mqgjP99tDeX
 ```json
 {
   "cmd": "sed -n '1,320p' src/styles/global.css",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 40000
 }
 ```
@@ -296,7 +296,7 @@ id: call_RY9YARAreBqff1m9sobpbDWG
 ```json
 {
   "cmd": "sed -n '1,220p' src/config/site.ts",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 20000
 }
 ```
@@ -308,7 +308,7 @@ id: call_UwKrqsYXwsqoXeEirvygwyzg
 ```json
 {
   "cmd": "sed -n '1,220p' src/config/navigation.ts",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 20000
 }
 ```
@@ -652,7 +652,7 @@ id: call_0OrVm6DhqZNvkBtYa7uqWzcH
 ```json
 {
   "cmd": "sed -n '1,320p' src/components/landing/HeroSection.astro",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 40000
 }
 ```
@@ -664,7 +664,7 @@ id: call_WHu5grDAOuyEdR2dhppGYDHI
 ```json
 {
   "cmd": "sed -n '1,260p' src/components/Header.astro",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 30000
 }
 ```
@@ -676,7 +676,7 @@ id: call_60z3gxUtHgIR8K1Lp0Cnlh67
 ```json
 {
   "cmd": "sed -n '1,260p' src/components/Footer.astro",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 30000
 }
 ```
@@ -688,7 +688,7 @@ id: call_Ho2fx2XVNMM8Nj69Fy2pdQj7
 ```json
 {
   "cmd": "sed -n '1,320p' src/pages/works/index.astro",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 40000
 }
 ```
@@ -700,7 +700,7 @@ id: call_Yhkq9aERRqFYRkJ75GhOiuFL
 ```json
 {
   "cmd": "sed -n '1,320p' src/pages/blog/index.astro",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 40000
 }
 ```
@@ -712,7 +712,7 @@ id: call_R8MX0mhnuSy102aRhaN9maN6
 ```json
 {
   "cmd": "sed -n '1,320p' src/pages/links.astro",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 40000
 }
 ```
@@ -1140,7 +1140,7 @@ id: call_8mx04rzc4BaMqcBdgMsEgDsl
 ```json
 {
   "cmd": "sed -n '1,340p' src/components/FilterSort.astro",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 40000
 }
 ```
@@ -1152,7 +1152,7 @@ id: call_KDwy7Ikb7aQIBTduxb1Xnnqm
 ```json
 {
   "cmd": "sed -n '1,240p' src/components/ui/Button.astro",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 26000
 }
 ```
@@ -1164,7 +1164,7 @@ id: call_ffc3nH9z5rPNo7nVhz6Eou4F
 ```json
 {
   "cmd": "sed -n '1,240p' src/components/ui/NavLink.astro",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 26000
 }
 ```
@@ -1176,7 +1176,7 @@ id: call_KsCZplR3qLQR064Rnp0LfYS4
 ```json
 {
   "cmd": "sed -n '1,260p' src/components/SnsLinks.astro",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 30000
 }
 ```
@@ -1188,7 +1188,7 @@ id: call_jATappGFYfYCNsZSsPdWtJzX
 ```json
 {
   "cmd": "sed -n '1,320p' src/pages/works/[id].astro",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 40000
 }
 ```
@@ -1200,7 +1200,7 @@ id: call_1ZsbbUleMLC1XLyGdS2e9Gxw
 ```json
 {
   "cmd": "sed -n '1,360p' src/pages/blog/[id].astro",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 40000
 }
 ```
@@ -1519,7 +1519,7 @@ id: call_7c6wlLNFoxcSKqBkOeLp1K8B
 ```json
 {
   "cmd": "sed -n '1,360p' 'src/pages/works/[id].astro'",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 40000
 }
 ```
@@ -1531,7 +1531,7 @@ id: call_nK7BPUfV0QYYSzpu7YZTzgKO
 ```json
 {
   "cmd": "sed -n '1,420p' 'src/pages/blog/[id].astro'",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 50000
 }
 ```
@@ -1543,7 +1543,7 @@ id: call_Yo3YkTWNExwOlQKrdfJrVlrL
 ```json
 {
   "cmd": "sed -n '260,620p' src/components/SnsLinks.astro",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 40000
 }
 ```
@@ -1555,7 +1555,7 @@ id: call_AjgPuFlrllQJO1UTmLliOnKh
 ```json
 {
   "cmd": "sed -n '1,260p' src/pages/bookshelf/index.astro",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 30000
 }
 ```
@@ -1567,7 +1567,7 @@ id: call_Scc2aWjkaL3QrtQvpLnSm2ix
 ```json
 {
   "cmd": "sed -n '1,240p' src/pages/slides.astro",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 28000
 }
 ```
@@ -1579,7 +1579,7 @@ id: call_DiyLpbIgcN7iheyMffN2xlbV
 ```json
 {
   "cmd": "sed -n '1,240p' src/pages/tools.astro",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 28000
 }
 ```
@@ -2027,7 +2027,7 @@ id: call_TP1OfajbLGOAic1o3XRbOGob
 ```json
 {
   "cmd": "pnpm build",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "yield_time_ms": 30000,
   "max_output_tokens": 60000
 }
@@ -2075,7 +2075,7 @@ id: call_U5bZuYnHvTFwwGxkV0cTbSx3
 ```json
 {
   "cmd": "ls -ld node_modules",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 4000
 }
 ```
@@ -2087,7 +2087,7 @@ id: call_XG02wUQ9cH1XvIAyfMuLQsMu
 ```json
 {
   "cmd": "ls -l node_modules/.bin/astro",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 4000
 }
 ```
@@ -2099,7 +2099,7 @@ id: call_XkKucF4uAQRDsTxhGuyiNOHF
 ```json
 {
   "cmd": "ls -l node_modules/.bin/vitest",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 4000
 }
 ```
@@ -2111,7 +2111,7 @@ id: call_hoj261gAsC0yYMgFaf9FbU8X
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 12000
 }
 ```
@@ -2183,7 +2183,7 @@ id: call_YjM3s7wo7kBbaC3HRrnhEiHC
 ```json
 {
   "cmd": "./node_modules/.bin/astro build",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "yield_time_ms": 30000,
   "max_output_tokens": 60000
 }
@@ -2226,7 +2226,7 @@ Error fetching Podcast RSS feed: Error: getaddrinfo ENOTFOUND anchor.fm
 17:36:56 [types] Generated 389ms
 17:36:56 [build] output: "static"
 17:36:56 [build] mode: "static"
-17:36:56 [build] directory: /Users/ta93abe/Developer/github.com/ta93abe/me/dist/
+17:36:56 [build] directory: /home/<USER>/Developer/github.com/ta93abe/me/dist/
 17:36:56 [build] Collecting build info...
 17:36:56 [build] ✓ Completed in 414ms.
 17:36:56 [build] Building static entrypoints...
@@ -2251,7 +2251,7 @@ id: call_GkzIGJTbkFN0zKZBQiFbYyST
 ```json
 {
   "cmd": "./node_modules/.bin/astro build",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "yield_time_ms": 30000,
   "max_output_tokens": 60000,
   "sandbox_permissions": "require_escalated",
@@ -2279,7 +2279,7 @@ Output:
 17:39:22 [types] Generated 516ms
 17:39:22 [build] output: "static"
 17:39:22 [build] mode: "static"
-17:39:22 [build] directory: /Users/ta93abe/Developer/github.com/ta93abe/me/dist/
+17:39:22 [build] directory: /home/<USER>/Developer/github.com/ta93abe/me/dist/
 17:39:22 [build] Collecting build info...
 17:39:22 [build] ✓ Completed in 558ms.
 17:39:22 [build] Building static entrypoints...
@@ -2325,7 +2325,7 @@ id: call_ouSAFGXwvmNcDbpCNvRK3do7
 ```json
 {
   "cmd": "./node_modules/.bin/astro preview --host 127.0.0.1 --port 4321",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "tty": true,
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
@@ -2362,7 +2362,7 @@ id: call_PpKZWC6Sck49HRhLbOFCnQuK
 ```json
 {
   "cmd": "./node_modules/.bin/astro preview --host 127.0.0.1 --port 4321",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "tty": true,
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
@@ -2402,7 +2402,7 @@ id: call_waUYUoh30IgHgAnvFAZRyOYk
 ```json
 {
   "cmd": "node -e 'const { chromium } = require(\"playwright\"); (async()=>{ const browser=await chromium.launch({headless:true}); const pages=[\"/\",\"/works\",\"/blog\",\"/links\",\"/slides\",\"/tools\",\"/works/dbt-jobs\",\"/blog/first-post\"]; const results=[]; for (const path of pages){ const page=await browser.newPage({viewport:{width:1440,height:1000}}); const logs=[]; page.on(\"console\", msg => { if([\"error\",\"warning\"].includes(msg.type())) logs.push(`${msg.type()}: ${msg.text()}`); }); const res=await page.goto(`http://127.0.0.1:4321${path}`, {waitUntil:\"networkidle\"}); const data=await page.evaluate(()=>{ const main=document.querySelector(\"main\"); const h1=[...document.querySelectorAll(\"h1\")].map(h=>h.textContent.trim()); const nav=[...document.querySelectorAll(\"nav a\")].map(a=>a.textContent.trim()).filter(Boolean); const links=[...document.querySelectorAll(\"a\")].length; const buttons=[...document.querySelectorAll(\"button\")].length; const overflowX=document.documentElement.scrollWidth>document.documentElement.clientWidth; const bodyText=document.body.innerText.replace(/\\s+/g,\" \").trim().slice(0,220); return {title:document.title,h1,nav,links,buttons,overflowX,bodyText,mainExists:!!main}; }); results.push({path,status:res && res.status(),logs,data}); await page.screenshot({path:`/tmp/me-site-${path.replace(/\\//g,\"_\") || \"home\"}.png`, fullPage:true}); await page.close(); } await browser.close(); console.log(JSON.stringify(results,null,2)); })().catch(e=>{ console.error(e); process.exit(1); })'",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "yield_time_ms": 30000,
   "max_output_tokens": 60000
 }
@@ -2424,7 +2424,7 @@ node:internal/modules/cjs/loader:1479
 
 Error: Cannot find module 'playwright'
 Require stack:
-- /Users/ta93abe/Developer/github.com/ta93abe/me/[eval]
+- /home/<USER>/Developer/github.com/ta93abe/me/[eval]
     at Module._resolveFilename (node:internal/modules/cjs/loader:1476:15)
     at wrapResolveFilename (node:internal/modules/cjs/loader:1049:27)
     at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1073:10)
@@ -2436,7 +2436,7 @@ Require stack:
     at [eval]:1:22
     at runScriptInThisContext (node:internal/vm:219:10) {
   code: 'MODULE_NOT_FOUND',
-  requireStack: [ '/Users/ta93abe/Developer/github.com/ta93abe/me/[eval]' ]
+  requireStack: [ '/home/<USER>/Developer/github.com/ta93abe/me/[eval]' ]
 }
 
 Node.js v24.15.0
@@ -2454,7 +2454,7 @@ id: call_53tjfdhMSWyqVFi7aSnvUlL7
 ```json
 {
   "cmd": "node -e 'const { chromium } = require(\"@playwright/test\"); (async()=>{ const browser=await chromium.launch({headless:true}); const paths=[\"/\",\"/works\",\"/blog\",\"/links\",\"/slides\",\"/tools\",\"/works/dbt-jobs\",\"/blog/first-post\"]; const results=[]; for (const path of paths){ const page=await browser.newPage({viewport:{width:1440,height:1000}}); const logs=[]; page.on(\"console\", msg => { if([\"error\",\"warning\"].includes(msg.type())) logs.push(`${msg.type()}: ${msg.text()}`); }); const res=await page.goto(`http://127.0.0.1:4321${path}`, {waitUntil:\"networkidle\"}); const data=await page.evaluate(()=>{ const h1=[...document.querySelectorAll(\"h1\")].map(h=>h.textContent.trim()); const nav=[...document.querySelectorAll(\"nav a\")].map(a=>a.textContent.trim()).filter(Boolean); const links=[...document.querySelectorAll(\"a\")].length; const buttons=[...document.querySelectorAll(\"button\")].length; const overflowX=document.documentElement.scrollWidth>document.documentElement.clientWidth; const bodyText=document.body.innerText.replace(/\\s+/g,\" \").trim().slice(0,220); return {title:document.title,h1,nav,links,buttons,overflowX,bodyText,mainExists:!!document.querySelector(\"main\")}; }); results.push({path,status:res && res.status(),logs,data}); await page.screenshot({path:`/tmp/me-site-${path.replace(/\\//g,\"_\") || \"home\"}.png`, fullPage:true}); await page.close(); } await browser.close(); console.log(JSON.stringify(results,null,2)); })().catch(e=>{ console.error(e); process.exit(1); })'",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "yield_time_ms": 30000,
   "max_output_tokens": 60000
 }
@@ -2470,7 +2470,7 @@ Wall time: 0.1641 seconds
 Process exited with code 1
 Original token count: 260
 Output:
-browserType.launch: Executable doesn't exist at /Users/ta93abe/Library/Caches/ms-playwright/chromium_headless_shell-1223/chrome-headless-shell-mac-arm64/chrome-headless-shell
+browserType.launch: Executable doesn't exist at /home/<USER>/Library/Caches/ms-playwright/chromium_headless_shell-1223/chrome-headless-shell-mac-arm64/chrome-headless-shell
 ╔════════════════════════════════════════════════════════════╗
 ║ Looks like Playwright was just installed or updated.       ║
 ║ Please run the following command to download new browsers: ║
@@ -2501,8 +2501,8 @@ tool_use exec_command
 id: call_aSUa4BMPcaley2T5NoyZotbj
 ```json
 {
-  "cmd": "sed -n '1,240p' /Users/ta93abe/.codex/plugins/cache/openai-bundled/browser/26.609.41114/skills/control-in-app-browser/SKILL.md",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "cmd": "sed -n '1,240p' /home/<USER>/.codex/plugins/cache/openai-bundled/browser/26.609.41114/skills/control-in-app-browser/SKILL.md",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 20000
 }
 ```
@@ -2542,7 +2542,7 @@ id: call_c8lHubWcoNXbbVW9ncf5jcFW
 ```json
 {
   "title": "Connect browser",
-  "code": "const { setupBrowserRuntime } = await import(\"/Users/ta93abe/.codex/plugins/cache/openai-bundled/browser/26.609.41114/scripts/browser-client.mjs\");\nawait setupBrowserRuntime({ globals: globalThis });\nglobalThis.browser = await agent.browsers.get(\"iab\");\nnodeRepl.write(await browser.documentation());",
+  "code": "const { setupBrowserRuntime } = await import(\"/home/<USER>/.codex/plugins/cache/openai-bundled/browser/26.609.41114/scripts/browser-client.mjs\");\nawait setupBrowserRuntime({ globals: globalThis });\nglobalThis.browser = await agent.browsers.get(\"iab\");\nnodeRepl.write(await browser.documentation());",
   "timeout_ms": 30000
 }
 ```
@@ -2741,7 +2741,7 @@ id: call_2RjfiecmtpCQWLxhLDqeB29L
 ```json
 {
   "cmd": "rg -n \"Pagefind|pagefind|search|Search|検索\" src/pages src/components src/styles",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 20000
 }
 ```
@@ -2753,7 +2753,7 @@ id: call_dhQGRE5C1MvbQdaNVlbo0d7w
 ```json
 {
   "cmd": "sed -n '240,520p' src/pages/tools.astro",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 30000
 }
 ```
@@ -2765,7 +2765,7 @@ id: call_7kVEwrCAXZgfxQKGbwaguSbU
 ```json
 {
   "cmd": "sed -n '1,220p' astro.config.mjs",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 20000
 }
 ```
@@ -2777,7 +2777,7 @@ id: call_GShZVmaskBMejVlVuM33VZkT
 ```json
 {
   "cmd": "sed -n '1,220p' tests/links.spec.ts",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 22000
 }
 ```
@@ -3053,7 +3053,7 @@ id: call_rFhUeqNfaji7LNR98pCuOM92
 ```json
 {
   "cmd": "sed -n '880,1095p' src/pages/tools.astro",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 40000
 }
 ```
@@ -3065,7 +3065,7 @@ id: call_VxctjwbhktD8EjLnwUUtkJJ6
 ```json
 {
   "cmd": "sed -n '1,220p' src/content/blog/first-post.md",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 20000
 }
 ```
@@ -3077,7 +3077,7 @@ id: call_TaKFr0u63nBHXjK9lxdymZdl
 ```json
 {
   "cmd": "sed -n '1,260p' src/components/blog/ShareButtons.astro",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 30000
 }
 ```
@@ -3089,7 +3089,7 @@ id: call_Hcg7Z5U4YF5yYdUFkrWwtQvO
 ```json
 {
   "cmd": "sed -n '1,260p' src/components/ui/BackToTop.astro",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 30000
 }
 ```
@@ -3333,7 +3333,7 @@ id: call_mR6KmFkZUTSUybAPFub6Nt60
 ```json
 {
   "cmd": "ls dist",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 4000
 }
 ```
@@ -3345,7 +3345,7 @@ id: call_paZEKDM8nnInUNtnSNMYxSYz
 ```json
 {
   "cmd": "ls dist/pagefind",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 4000
 }
 ```
@@ -3357,7 +3357,7 @@ id: call_kfuicKRwD17dvu7EbgHUJV64
 ```json
 {
   "cmd": "rg -n \"pagefind\" package.json pnpm-lock.yaml README.md docs",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 20000
 }
 ```
@@ -3369,7 +3369,7 @@ id: call_pNw7UTCbcawDLIhKNv8Zn6jq
 ```json
 {
   "cmd": "rg -n \"<h1|^# \" src/content/blog src/content/works src/content/books",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 20000
 }
 ```
@@ -3454,7 +3454,7 @@ id: call_8b9IYGvozh3jplHHu3GNJpkn
 ```json
 {
   "cmd": "sed -n '1,280p' src/content.config.ts",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 30000
 }
 ```
@@ -3466,7 +3466,7 @@ id: call_s8tqlbWmSJOn2chpQrdEvHWd
 ```json
 {
   "cmd": "sed -n '1,240p' src/content/works/dbt-jobs.mdx",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 26000
 }
 ```
@@ -3478,7 +3478,7 @@ id: call_EIQK3sUrIVxHbfJjvQiPaVVA
 ```json
 {
   "cmd": "sed -n '1,220p' src/content/books/sample-book.md",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 22000
 }
 ```
@@ -3490,7 +3490,7 @@ id: call_SteUdlBQou8iYdkwWClW0bZD
 ```json
 {
   "cmd": "sed -n '1,260p' src/utils/rss-loader.ts",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 30000
 }
 ```
@@ -3502,7 +3502,7 @@ id: call_sgr0VDIRt65wIkEPofmxFBC9
 ```json
 {
   "cmd": "sed -n '1,220p' src/utils/date.ts",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 22000
 }
 ```
@@ -3514,7 +3514,7 @@ id: call_5jshkRl3SylSb97qbBhaT4g7
 ```json
 {
   "cmd": "sed -n '1,220p' src/utils/schema.ts",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 22000
 }
 ```
@@ -3873,7 +3873,7 @@ id: call_aMVSkb3tka1aXO9IVqpDCCtq
 ```json
 {
   "cmd": "nl -ba src/components/landing/HeroSection.astro | sed -n '1,140p'",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 20000
 }
 ```
@@ -3885,7 +3885,7 @@ id: call_rDskuuSTw9z4mYBcNbkDLH5J
 ```json
 {
   "cmd": "nl -ba src/pages/tools.astro | sed -n '910,1090p'",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 30000
 }
 ```
@@ -3897,7 +3897,7 @@ id: call_ewGieVdBIt8OQmNL8itb2zYR
 ```json
 {
   "cmd": "nl -ba src/pages/blog/[id].astro | sed -n '85,190p'",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 22000
 }
 ```
@@ -3909,7 +3909,7 @@ id: call_Nz0cEQ39i4RaSZxRw3rRHsIW
 ```json
 {
   "cmd": "nl -ba src/content/blog/first-post.md | sed -n '1,80p'",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 12000
 }
 ```
@@ -3921,7 +3921,7 @@ id: call_BVgjBu8TMgGPkEbzq7Irn8qL
 ```json
 {
   "cmd": "nl -ba src/components/FilterSort.astro | sed -n '1,260p'",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 34000
 }
 ```
@@ -3933,7 +3933,7 @@ id: call_oBxnT4dNcohHBrAyX3AYoFxp
 ```json
 {
   "cmd": "nl -ba src/layouts/Layout.astro | sed -n '1,140p'",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 22000
 }
 ```
@@ -4252,7 +4252,7 @@ id: call_FR6DzN04CZbA53dIxUK2jguD
 ```json
 {
   "cmd": "nl -ba 'src/pages/blog/[id].astro' | sed -n '85,210p'",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 24000
 }
 ```
@@ -4366,7 +4366,7 @@ id: call_I3FMPXuegoWZMiWaRP8duQwV
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 12000
 }
 ```
@@ -4378,7 +4378,7 @@ id: call_2Vj2l98VfQPFpUIWdCaLZSAr
 ```json
 {
   "cmd": "git ls-files --others --exclude-standard",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 20000
 }
 ```
@@ -4390,7 +4390,7 @@ id: call_zUobszf6sQcs7pE8rv9Iq7hL
 ```json
 {
   "cmd": "git diff --stat",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 12000
 }
 ```
@@ -4447,7 +4447,7 @@ id: call_wCAx3OR1Q8UeIynjpk4P3dSr
 ```json
 {
   "cmd": "rm -rf .pnpm-store",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "sandbox_permissions": "require_escalated",
   "justification": "こちらの確認作業で生成された未追跡の .pnpm-store/ を削除して、作業ツリーを元の状態に戻してよいですか？",
   "yield_time_ms": 1000,
@@ -4475,7 +4475,7 @@ id: call_MEygZAqXhyNQgOsufop2Ghda
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 12000
 }
 ```
@@ -4487,7 +4487,7 @@ id: call_zsSZ6maamFTkxcTjHkkPGmHm
 ```json
 {
   "cmd": "git diff --stat",
-  "workdir": "/Users/ta93abe/Developer/github.com/ta93abe/me",
+  "workdir": "/home/<USER>/Developer/github.com/ta93abe/me",
   "max_output_tokens": 12000
 }
 ```
@@ -4524,16 +4524,16 @@ Output:
 
 **優先度 高**
 1. `/tools` の検索を直す  
-   ビルド後プレビューで `Pagefind UIの読み込みに失敗しました` が出ています。`dist/pagefind` も生成されていないので、Pagefindの導入か生成コマンド追加が必要です。該当: [src/pages/tools.astro](/Users/ta93abe/Developer/github.com/ta93abe/me/src/pages/tools.astro:913), [src/pages/tools.astro](/Users/ta93abe/Developer/github.com/ta93abe/me/src/pages/tools.astro:1064)
+   ビルド後プレビューで `Pagefind UIの読み込みに失敗しました` が出ています。`dist/pagefind` も生成されていないので、Pagefindの導入か生成コマンド追加が必要です。該当: [src/pages/tools.astro](/home/<USER>/Developer/github.com/ta93abe/me/src/pages/tools.astro:913), [src/pages/tools.astro](/home/<USER>/Developer/github.com/ta93abe/me/src/pages/tools.astro:1064)
 
 2. トップページに「最近の実績・記事・登壇」を出す  
-   現状のファーストビューは `ta93abe`、肩書き、`View Works` / `Links` のみで、何を見ればよいかの文脈が薄いです。最新Works、最新Blog、最新Slidesを3つ並べるだけでも回遊がかなり改善します。該当: [src/components/landing/HeroSection.astro](/Users/ta93abe/Developer/github.com/ta93abe/me/src/components/landing/HeroSection.astro:6)
+   現状のファーストビューは `ta93abe`、肩書き、`View Works` / `Links` のみで、何を見ればよいかの文脈が薄いです。最新Works、最新Blog、最新Slidesを3つ並べるだけでも回遊がかなり改善します。該当: [src/components/landing/HeroSection.astro](/home/<USER>/Developer/github.com/ta93abe/me/src/components/landing/HeroSection.astro:6)
 
 3. Blog/Book本文内のH1重複を避ける  
-   Blog詳細側でタイトルH1を出しているのに、Markdown本文にも `# 最初のブログ投稿` があり、実表示でH1が2つになっています。本文はH2始まりにするか、render時に最初のH1を除去するのがよいです。該当: [src/pages/blog/[id].astro](/Users/ta93abe/Developer/github.com/ta93abe/me/src/pages/blog/[id].astro:118), [src/content/blog/first-post.md](/Users/ta93abe/Developer/github.com/ta93abe/me/src/content/blog/first-post.md:7)
+   Blog詳細側でタイトルH1を出しているのに、Markdown本文にも `# 最初のブログ投稿` があり、実表示でH1が2つになっています。本文はH2始まりにするか、render時に最初のH1を除去するのがよいです。該当: [src/pages/blog/[id].astro](/home/<USER>/Developer/github.com/ta93abe/me/src/pages/blog/[id].astro:118), [src/content/blog/first-post.md](/home/<USER>/Developer/github.com/ta93abe/me/src/content/blog/first-post.md:7)
 
 4. `FilterSort` の状態をURLに同期する  
-   タグ選択・並び替えがURLに残らないので、共有・戻る操作・再訪問に弱いです。`?tag=Astro&sort=date-desc` のように反映すると一覧ページのUXが上がります。該当: [src/components/FilterSort.astro](/Users/ta93abe/Developer/github.com/ta93abe/me/src/components/FilterSort.astro:188)
+   タグ選択・並び替えがURLに残らないので、共有・戻る操作・再訪問に弱いです。`?tag=Astro&sort=date-desc` のように反映すると一覧ページのUXが上がります。該当: [src/components/FilterSort.astro](/home/<USER>/Developer/github.com/ta93abe/me/src/components/FilterSort.astro:188)
 
 **優先度 中**
 5. Works詳細に成果指標を追加する  
@@ -4546,14 +4546,14 @@ Output:
    検索修正に加えて、上部にカテゴリジャンプかstickyな目次があると長大ページでも迷いにくいです。
 
 8. ページタイトルのブランド名を統一する  
-   トップは `ta93abe | Software Engineer` ですが、他ページは `Works | Portfolio` です。`SITE.name` が `"Portfolio"` なので、`ta93abe` に寄せた方がOGや検索結果で自然です。該当: [src/config/site.ts](/Users/ta93abe/Developer/github.com/ta93abe/me/src/config/site.ts:1)
+   トップは `ta93abe | Software Engineer` ですが、他ページは `Works | Portfolio` です。`SITE.name` が `"Portfolio"` なので、`ta93abe` に寄せた方がOGや検索結果で自然です。該当: [src/config/site.ts](/home/<USER>/Developer/github.com/ta93abe/me/src/config/site.ts:1)
 
 9. WebSite schema のSearchActionを実機能に合わせる  
-   JSON-LDでは `/tools?q=...` を検索先にしていますが、現状Pagefind未生成かつURLクエリ連動も未確認です。検索を直すか、SearchActionを一旦外すのが安全です。該当: [src/utils/schema.ts](/Users/ta93abe/Developer/github.com/ta93abe/me/src/utils/schema.ts:73)
+   JSON-LDでは `/tools?q=...` を検索先にしていますが、現状Pagefind未生成かつURLクエリ連動も未確認です。検索を直すか、SearchActionを一旦外すのが安全です。該当: [src/utils/schema.ts](/home/<USER>/Developer/github.com/ta93abe/me/src/utils/schema.ts:73)
 
 **優先度 低**
 10. `transition: all` を避ける  
-   UIガイドライン上は避けたい指定です。`FilterSort` のチップなどは `transition: color, background-color, border-color` に絞れます。該当: [src/components/FilterSort.astro](/Users/ta93abe/Developer/github.com/ta93abe/me/src/components/FilterSort.astro:129)
+   UIガイドライン上は避けたい指定です。`FilterSort` のチップなどは `transition: color, background-color, border-color` に絞れます。該当: [src/components/FilterSort.astro](/home/<USER>/Developer/github.com/ta93abe/me/src/components/FilterSort.astro:129)
 
 11. 記事/Worksのコードブロックコピーボタンを共通化する  
    Blog詳細とWorks詳細で同じコピー処理が重複しています。小さなクライアントスクリプトか共通コンポーネントに寄せると保守しやすいです。

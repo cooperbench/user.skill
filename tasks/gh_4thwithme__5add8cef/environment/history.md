@@ -8,7 +8,7 @@ tool_use Read
 id: toolu_019DhPdwdYgiJPnLZE6YP2G5
 ```json
 {
-  "file_path": "/Users/4thwithme/.claude/projects/-Users-4thwithme-Documents-repo-no-name-proj/memory/project_product.md"
+  "file_path": "/home/<USER>/.claude/projects/-Users-4thwithme-Documents-repo-no-name-proj/memory/project_product.md"
 }
 ```
 
@@ -41,7 +41,7 @@ id: toolu_018JmhUfqniExNrQaFZbxf6P
 ```json
 {
   "pattern": "docs/**/*.md",
-  "path": "/Users/4thwithme/Documents/repo/no-name-proj"
+  "path": "/home/<USER>/Documents/repo/no-name-proj"
 }
 ```
 
@@ -74,7 +74,7 @@ tool_use Read
 id: toolu_01YPiGgrZRvkDNPMNEAcxSN4
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/docs/features/roadmap.md"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/docs/features/roadmap.md"
 }
 ```
 
@@ -121,7 +121,7 @@ tool_use Read
 id: toolu_01XoUwYDPyJFFqzgTDcvZbGp
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-17-phase2-completion.md"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-17-phase2-completion.md"
 }
 ```
 
@@ -210,7 +210,7 @@ tool_use Bash
 id: toolu_01Ewwu1BWmtcCDEh3cgbjVCH
 ```json
 {
-  "command": "cd /Users/4thwithme/Documents/repo/no-name-proj/backend && npm run code-quality-check 2>&1",
+  "command": "cd /home/<USER>/Documents/repo/no-name-proj/backend && npm run code-quality-check 2>&1",
   "description": "Run code quality check",
   "timeout": 120000
 }
@@ -229,31 +229,31 @@ id: toolu_01Ewwu1BWmtcCDEh3cgbjVCH
 > eslint "{src,apps,libs,test}/**/*.ts"
 
 
-/Users/4thwithme/Documents/repo/no-name-proj/backend/src/migrations/20260322120000_create_users_table.ts
+/home/<USER>/Documents/repo/no-name-proj/backend/src/migrations/20260322120000_create_users_table.ts
    9:8  warning  Custom functions must use a single object destructuring parameter  custom-rules/require-object-params
   42:8  warning  Custom functions must use a single object destructuring parameter  custom-rules/require-object-params
 
-/Users/4thwithme/Documents/repo/no-name-proj/backend/src/migrations/20260322120001_create_companies_table.ts
+/home/<USER>/Documents/repo/no-name-proj/backend/src/migrations/20260322120001_create_companies_table.ts
    9:8  warning  Custom functions must use a single object destructuring parameter  custom-rules/require-object-params
   37:8  warning  Custom functions must use a single object destructuring parameter  custom-rules/require-object-params
 
-/Users/4thwithme/Documents/repo/no-name-proj/backend/src/migrations/20260322120002_create_company_members_table.ts
+/home/<USER>/Documents/repo/no-name-proj/backend/src/migrations/20260322120002_create_company_members_table.ts
   13:8  warning  Custom functions must use a single object destructuring parameter  custom-rules/require-object-params
   64:8  warning  Custom functions must use a single object destructuring parameter  custom-rules/require-object-params
 
-/Users/4thwithme/Documents/repo/no-name-proj/backend/src/migrations/20260322120003_create_oauth_accounts_table.ts
+/home/<USER>/Documents/repo/no-name-proj/backend/src/migrations/20260322120003_create_oauth_accounts_table.ts
    9:8  warning  Custom functions must use a single object destructuring parameter  custom-rules/require-object-params
   55:8  warning  Custom functions must use a single object destructuring parameter  custom-rules/require-object-params
 
-/Users/4thwithme/Documents/repo/no-name-proj/backend/src/migrations/20260322120004_create_invitations_table.ts
+/home/<USER>/Documents/repo/no-name-proj/backend/src/migrations/20260322120004_create_invitations_table.ts
   13:8  warning  Custom functions must use a single object destructuring parameter  custom-rules/require-object-params
   68:8  warning  Custom functions must use a single object destructuring parameter  custom-rules/require-object-params
 
-/Users/4thwithme/Documents/repo/no-name-proj/backend/src/migrations/20260414120000_create_github_installations_table.ts
+/home/<USER>/Documents/repo/no-name-proj/backend/src/migrations/20260414120000_create_github_installations_table.ts
    9:8  warning  Custom functions must use a single object destructuring parameter  custom-rules/require-object-params
   48:8  warning  Custom functions must use a single object destructuring parameter  custom-rules/require-object-params
 
-/Users/4thwithme/Documents/repo/no-name-proj/backend/src/migrations/20260414120001_create_github_repos_table.ts
+/home/<USER>/Documents/repo/no-name-proj/backend/src/migrations/20260414120001_create_github_repos_table.ts
   12:8  warning  Custom functions must use a single object destructuring parameter  custom-rules/require-object-params
   51:8  warning  Custom functions must use a single object destructuring parameter  custom-rules/require-object-params […]
 
@@ -283,42 +283,42 @@ id: toolu_01TGbCpmvcz4KGRVcDnWaEfe
 
 [31m[Nest] 16472  - [39m04/18/2026, 1:41:30 AM [31m  ERROR[39m [38;5;3m[AuthController.refresh] [39m[31mFailed after 0.18ms: No refresh token[39m
 UnauthorizedException: No refresh token
-    at AuthController.refresh (/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/auth/auth.controller.ts:196:28)
-    at AuthController.apply (/Users/4thwithme/Documents/repo/no-name-proj/backend/src/decorators/log-execution.decorator.ts:153:41)
-    at Object.<anonymous> (/Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/auth.controller.unit-spec.ts:260:16)
-    at Promise.finally.completed (/Users/4thwithme/Documents/repo/no-name-proj/backend/node_modules/jest-circus/build/jestAdapterInit.js:1557:28)
+    at AuthController.refresh (/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/auth/auth.controller.ts:196:28)
+    at AuthController.apply (/home/<USER>/Documents/repo/no-name-proj/backend/src/decorators/log-execution.decorator.ts:153:41)
+    at Object.<anonymous> (/home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/auth.controller.unit-spec.ts:260:16)
+    at Promise.finally.completed (/home/<USER>/Documents/repo/no-name-proj/backend/node_modules/jest-circus/build/jestAdapterInit.js:1557:28)
     at new Promise (<anonymous>)
-    at callAsyncCircusFn (/Users/4thwithme/Documents/repo/no-name-proj/backend/node_modules/jest-circus/build/jestAdapterInit.js:1497:10)
-    at _callCircusTest (/Users/4thwithme/Documents/repo/no-name-proj/backend/node_modules/jest-circus/build/jestAdapterInit.js:1007:40)
+    at callAsyncCircusFn (/home/<USER>/Documents/repo/no-name-proj/backend/node_modules/jest-circus/build/jestAdapterInit.js:1497:10)
+    at _callCircusTest (/home/<USER>/Documents/repo/no-name-proj/backend/node_modules/jest-circus/build/jestAdapterInit.js:1007:40)
     at processTicksAndRejections (node:internal/process/task_queues:103:5)
-    at _runTest (/Users/4thwithme/Documents/repo/no-name-proj/backend/node_modules/jest-circus/build/jestAdapterInit.js:947:3)
-    at /Users/4thwithme/Documents/repo/no-name-proj/backend/node_modules/jest-circus/build/jestAdapterInit.js:849:7
-    at _runTestsForDescribeBlock (/Users/4thwithme/Documents/repo/no-name-proj/backend/node_modules/jest-circus/build/jestAdapterInit.js:862:11)
-    at _runTestsForDescribeBlock (/Users/4thwithme/Documents/repo/no-name-proj/backend/node_modules/jest-circus/build/jestAdapterInit.js:857:11)
-    at _runTestsForDescribeBlock (/Users/4thwithme/Documents/repo/no-name-proj/backend/node_modules/jest-circus/build/jestAdapterInit.js:857:11)
-    at run (/Users/4thwithme/Documents/repo/no-name-proj/backend/node_modules/jest-circus/build/jestAdapterInit.js:761:3)
-    at runAndTransformResultsToJestFormat (/Users/4thwithme/Documents/repo/no-name-proj/backend/node_modules/jest-circus/build/jestAdapterInit.js:1918:21)
-    at jestAdapter (/Users/4thwithme/Documents/repo/no-name-proj/backend/node_modules/jest-circus/build/runner.js:101:19)
-    at runTestInternal (/Users/4thwithme/Documents/repo/no-name-proj/backend/node_modules/jest-runner/build/testWorker.js:275:16)
-    at runTest (/Users/4thwithme/Documents/repo/no-name-proj/backend/node_modules/jest-runner/build/testWorker.js:343:7)
-    at Object.worker (/Users/4thwithme/Documents/repo/no-name-proj/backend/node_modules/jest-runner/build/testWorker.js:497:12)
+    at _runTest (/home/<USER>/Documents/repo/no-name-proj/backend/node_modules/jest-circus/build/jestAdapterInit.js:947:3)
+    at /home/<USER>/Documents/repo/no-name-proj/backend/node_modules/jest-circus/build/jestAdapterInit.js:849:7
+    at _runTestsForDescribeBlock (/home/<USER>/Documents/repo/no-name-proj/backend/node_modules/jest-circus/build/jestAdapterInit.js:862:11)
+    at _runTestsForDescribeBlock (/home/<USER>/Documents/repo/no-name-proj/backend/node_modules/jest-circus/build/jestAdapterInit.js:857:11)
+    at _runTestsForDescribeBlock (/home/<USER>/Documents/repo/no-name-proj/backend/node_modules/jest-circus/build/jestAdapterInit.js:857:11)
+    at run (/home/<USER>/Documents/repo/no-name-proj/backend/node_modules/jest-circus/build/jestAdapterInit.js:761:3)
+    at runAndTransformResultsToJestFormat (/home/<USER>/Documents/repo/no-name-proj/backend/node_modules/jest-circus/build/jestAdapterInit.js:1918:21)
+    at jestAdapter (/home/<USER>/Documents/repo/no-name-proj/backend/node_modules/jest-circus/build/runner.js:101:19)
+    at runTestInternal (/home/<USER>/Documents/repo/no-name-proj/backend/node_modules/jest-runner/build/testWorker.js:275:16)
+    at runTest (/home/<USER>/Documents/repo/no-name-proj/backend/node_modules/jest-runner/build/testWorker.js:343:7)
+    at Object.worker (/home/<USER>/Documents/repo/no-name-proj/backend/node_modules/jest-runner/build/testWorker.js:497:12)
 [31m[Nest] 16477  - [39m04/18/2026, 1:41:30 AM [31m  ERROR[39m [38;5;3m[CompanyController.getById] [39m[31mFailed after 0.10ms: User is not a member of this company[39m
 ForbiddenException: User is not a member of this company
-    at CompanyController.getById (/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/company/company.controller.ts:42:26)
+    at CompanyController.getById (/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/company/company.controller.ts:42:26)
     at processTicksAndRejections (node:internal/process/task_queues:103:5)
-    at CompanyController.descriptor.value (/Users/4thwithme/Documents/repo/no-name-proj/backend/src/decorators/log-execution.decorator.ts:153:20)
-    at Object.<anonymous> (/Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/company.controller.unit-spec.ts:86:4)
+    at CompanyController.descriptor.value (/home/<USER>/Documents/repo/no-name-proj/backend/src/decorators/log-execution.decorator.ts:153:20)
+    at Object.<anonymous> (/home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/company.controller.unit-spec.ts:86:4)
 [31m[Nest] 16477  - [39m04/18/2026, 1:41:30 AM [31m  ERROR[39m [38;5;3m[CompanyController.getById] [39m[31mFailed after 0.10ms: Company not found[39m
 NotFoundException: Company not found
-    at CompanyController.getById (/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/company/company.controller.ts:46:23)
+    at CompanyController.getById (/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/company/company.controller.ts:46:23)
     at processTicksAndRejections (node:internal/process/task_queues:103:5)
-    at CompanyController.descriptor.value (/Users/4thwithme/Documents/repo/no-name-proj/backend/src/decorators/log-execution.decorator.ts:153:20)
-    at Object.<anonymous> (/Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/company.controller.unit-spec.ts:97:4)
+    at CompanyController.descriptor.value (/home/<USER>/Documents/repo/no-name-proj/backend/src/decorators/log-execution.decorator.ts:153:20)
+    at Object.<anonymous> (/home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/company.controller.unit-spec.ts:97:4)
 [31m[Nest] 16478  - [39m04/18/2026, 1:41:31 AM [31m  ERROR[39m [38;5;3m[UserController.switchCompany] [39m[31mFailed after 0.13ms: Not a member of this company[39m
 ForbiddenException: Not a member of this company
-    at UserController.switchCompany (/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/user/user.controller.ts:72:10)
+    at UserController.switchCompany (/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/user/user.controller.ts:72:10)
     at processTicksAndRejections (node:internal/process/task_queues:103:5)
-    at UserController.descriptor.value (/Users/4thwithme/Documents/repo/no-name-proj/backend/src/decorators/log-execution.decorator.ts:153:20)
+    at UserController.descriptor.value (/home/<USER>/Documents/repo/no-name-proj/backend/src/decorators/log-execution.decorator.ts:153:20)
     at Object.<anonymous> […]
 
 > AGENT
@@ -427,7 +427,7 @@ tool_use Bash
 id: toolu_01TZs7soBCR17H7Cbgahbg5N
 ```json
 {
-  "command": "cd /Users/4thwithme/Documents/repo/no-name-proj && docker ps --format \"{{.Names}}: {{.Status}}\" 2>&1 | head -20",
+  "command": "cd /home/<USER>/Documents/repo/no-name-proj && docker ps --format \"{{.Names}}: {{.Status}}\" 2>&1 | head -20",
   "description": "Check running Docker containers"
 }
 ```
@@ -586,7 +586,7 @@ tool_use Bash
 id: toolu_01P8q5KgXzQeC3PaCBvzbCrB
 ```json
 {
-  "command": "cd /Users/4thwithme/Documents/repo/no-name-proj/backend && npm run test:e2e 2>&1 | tail -60",
+  "command": "cd /home/<USER>/Documents/repo/no-name-proj/backend && npm run test:e2e 2>&1 | tail -60",
   "description": "Run e2e tests",
   "timeout": 300000
 }
@@ -597,15 +597,15 @@ id: toolu_01P8q5KgXzQeC3PaCBvzbCrB
 tool_result
 id: toolu_01P8q5KgXzQeC3PaCBvzbCrB
 ```
-    at [90m/Users/4thwithme/Documents/repo/no-name-proj/backend/[39mnode_modules/[4mjest-circus[24m/build/jestAdapterInit.js:849:7
-    at _runTestsForDescribeBlock [90m(/Users/4thwithme/Documents/repo/no-name-proj/backend/[39mnode_modules/[4mjest-circus[24m/build/jestAdapterInit.js:862:11[90m)[39m
-    at _runTestsForDescribeBlock [90m(/Users/4thwithme/Documents/repo/no-name-proj/backend/[39mnode_modules/[4mjest-circus[24m/build/jestAdapterInit.js:857:11[90m)[39m
-    at _runTestsForDescribeBlock [90m(/Users/4thwithme/Documents/repo/no-name-proj/backend/[39mnode_modules/[4mjest-circus[24m/build/jestAdapterInit.js:857:11[90m)[39m
-    at run [90m(/Users/4thwithme/Documents/repo/no-name-proj/backend/[39mnode_modules/[4mjest-circus[24m/build/jestAdapterInit.js:761:3[90m)[39m
-    at runAndTransformResultsToJestFormat [90m(/Users/4thwithme/Documents/repo/no-name-proj/backend/[39mnode_modules/[4mjest-circus[24m/build/jestAdapterInit.js:1918:21[90m)[39m
-    at jestAdapter [90m(/Users/4thwithme/Documents/repo/no-name-proj/backend/[39mnode_modules/[4mjest-circus[24m/build/runner.js:101:19[90m)[39m
-    at runTestInternal [90m(/Users/4thwithme/Documents/repo/no-name-proj/backend/[39mnode_modules/[4mjest-runner[24m/build/index.js:275:16[90m)[39m
-    at runTest [90m(/Users/4thwithme/Documents/repo/no-name-proj/backend/[39mnode_modules/[4mjest-runner[24m/build/index.js:343:7[90m)[39m
+    at [90m/home/<USER>/Documents/repo/no-name-proj/backend/[39mnode_modules/[4mjest-circus[24m/build/jestAdapterInit.js:849:7
+    at _runTestsForDescribeBlock [90m(/home/<USER>/Documents/repo/no-name-proj/backend/[39mnode_modules/[4mjest-circus[24m/build/jestAdapterInit.js:862:11[90m)[39m
+    at _runTestsForDescribeBlock [90m(/home/<USER>/Documents/repo/no-name-proj/backend/[39mnode_modules/[4mjest-circus[24m/build/jestAdapterInit.js:857:11[90m)[39m
+    at _runTestsForDescribeBlock [90m(/home/<USER>/Documents/repo/no-name-proj/backend/[39mnode_modules/[4mjest-circus[24m/build/jestAdapterInit.js:857:11[90m)[39m
+    at run [90m(/home/<USER>/Documents/repo/no-name-proj/backend/[39mnode_modules/[4mjest-circus[24m/build/jestAdapterInit.js:761:3[90m)[39m
+    at runAndTransformResultsToJestFormat [90m(/home/<USER>/Documents/repo/no-name-proj/backend/[39mnode_modules/[4mjest-circus[24m/build/jestAdapterInit.js:1918:21[90m)[39m
+    at jestAdapter [90m(/home/<USER>/Documents/repo/no-name-proj/backend/[39mnode_modules/[4mjest-circus[24m/build/runner.js:101:19[90m)[39m
+    at runTestInternal [90m(/home/<USER>/Documents/repo/no-name-proj/backend/[39mnode_modules/[4mjest-runner[24m/build/index.js:275:16[90m)[39m
+    at runTest [90m(/home/<USER>/Documents/repo/no-name-proj/backend/[39mnode_modules/[4mjest-runner[24m/build/index.js:343:7[90m)[39m
 -------------------------------|---------|----------|---------|---------|---------------------------------------
 File                           | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                     
 -------------------------------|---------|----------|---------|---------|---------------------------------------
@@ -635,7 +635,7 @@ tool_use Bash
 id: toolu_01WtGxBoA6J9HUqHXuVmJXea
 ```json
 {
-  "command": "cd /Users/4thwithme/Documents/repo/no-name-proj && git status 2>&1",
+  "command": "cd /home/<USER>/Documents/repo/no-name-proj && git status 2>&1",
   "description": "Check git status"
 }
 ```
@@ -663,7 +663,7 @@ id: toolu_017ptS4mekAmeKSzqc3XYwsC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/docs/features/roadmap.md",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/docs/features/roadmap.md",
   "old_string": "## Phase 2 — Data Ingestion\n\nConnect to external data sources and store raw developer activity.\n\n### GitHub Integration\n- [ ] GitHub OAuth app setup (org-level access)\n- [ ] Webhook ingestion — push events, PR events, review events\n- [ ] Polling fallback for historical data\n- [ ] Store: commits, PRs, reviews, comments, diffs\n- [ ] Contributor identity mapping (GitHub user → platform user)\n\n### Jira Integration\n- [ ] Jira OAuth 2.0 / API token setup\n- [ ] Webhook ingestion — issue events, sprint events\n- [ ] Historical data backfill\n- [ ] Store: issues, sprints, worklogs, transitions, story points\n- [ ] Jira user → platform user mapping\n\n### Data Pipeline\n- [ ] Queue system for ingestion jobs (BullMQ or similar)\n- [ ] Idempotent event processing\n- [ ] Raw event storage (append-only log)\n- [ ] Normalized data layer on top of raw events",
   "new_string": "## Phase 2 — Data Ingestion ✓\n\nConnect to external data sources and store raw developer activity.\n\n### GitHub Integration\n- [x] GitHub App setup (org-level access, webhook + OAuth)\n- [x] Webhook ingestion — push events, PR events, review events\n- [x] Polling fallback for historical data (backfill service)\n- [x] Store: commits, PRs, reviews, review […]
 
@@ -672,7 +672,7 @@ id: toolu_017ptS4mekAmeKSzqc3XYwsC
 tool_result
 id: toolu_017ptS4mekAmeKSzqc3XYwsC
 ```
-The file /Users/4thwithme/Documents/repo/no-name-proj/docs/features/roadmap.md has been updated successfully.
+The file /home/<USER>/Documents/repo/no-name-proj/docs/features/roadmap.md has been updated successfully.
 ```
 
 > TOOL
@@ -681,7 +681,7 @@ tool_use Bash
 id: toolu_018Z3hdFpvXyNq7b68NJKE3N
 ```json
 {
-  "command": "git add docs/features/roadmap.md && git commit -m \"$(cat <<'EOF'\nchore: mark Phase 2 complete in roadmap\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add docs/features/roadmap.md && git commit -m \"$(cat <<'EOF'\nchore: mark Phase 2 complete in roadmap\n\nCo-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit roadmap update"
 }
 ```
@@ -733,7 +733,7 @@ tool_use Read
 id: toolu_01MrBKeG2vpn8nB94vcxDSA2
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/docs/features/metrics-catalog.md"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/docs/features/metrics-catalog.md"
 }
 ```
 
@@ -777,7 +777,7 @@ tool_use Read
 id: toolu_01SAUTz1p9ZCX394murrRFPZ
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/docs/architecture/overview.md"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/docs/architecture/overview.md"
 }
 ```
 
@@ -850,7 +850,7 @@ tool_use Read
 id: toolu_01T2r5Nb7Le13yUdLQ6NrhKx
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/specs/2026-04-14-github-app-integration-design.md",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/docs/superpowers/specs/2026-04-14-github-app-integration-design.md",
   "limit": 20
 }
 ```
@@ -888,7 +888,7 @@ tool_use Write
 id: toolu_01T3STWDRZSgYBBXK3EGLRJ6
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/specs/2026-04-18-phase3-metrics-engine-design.md",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/docs/superpowers/specs/2026-04-18-phase3-metrics-engine-design.md",
   "content": "# Phase 3 — Metrics Engine Design Spec\n\n**Date:** 2026-04-18\n**Phase:** 3 — Metrics Engine\n**Scope:** Calculating, storing, and serving developer and team metrics from ingested GitHub + Jira data\n\n---\n\n## Overview\n\nPhase 3 transforms raw ingested data (commits, PRs, reviews, Jira issues, changelogs, sprints) into meaningful developer and team metrics. Metrics are computed on-demand or via scheduled jobs, cached in PostgreSQL, and served via a metrics API.\n\nAll raw data is already in the DB from Phase 2. This phase adds:\n1. A `metrics` module with computation services per domain\n2. A metrics cache/materialized table layer\n3. API endpoints to query metrics per developer, team, or company\n\n---\n\n## Metric Tier Classification\n\nMetrics are grouped into four implementation tiers based on complexity.\n\n### Tier 1 — Pure SQL Aggregations\n> Data is in the DB. Just aggregate with GROUP BY + time window.\n\n**GitHub:**\n- Commits per day/week/month (per developer)\n- Lines added / deleted / net per period\n- PRs opened, merged, abandoned per period\n- PR draft rate\n- PR size (lines, files, commits)\n- Reviews given per period\n- Review state distribution (APPROVED / CHANGES_REQUESTED / COMMENTED)\n- Inline comments left per review\n\n**Jira:**\n- Tickets created / resolved per period\n- Tickets assigned per developer\n- Ticket type distribution (Story / Bug / […]
 
 > TOOL
@@ -896,7 +896,7 @@ id: toolu_01T3STWDRZSgYBBXK3EGLRJ6
 tool_result
 id: toolu_01T3STWDRZSgYBBXK3EGLRJ6
 ```
-File created successfully at: /Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/specs/2026-04-18-phase3-metrics-engine-design.md
+File created successfully at: /home/<USER>/Documents/repo/no-name-proj/docs/superpowers/specs/2026-04-18-phase3-metrics-engine-design.md
 ```
 
 > TOOL
@@ -905,7 +905,7 @@ tool_use Bash
 id: toolu_01BbStfiBPCMkeA2is4yaUUj
 ```json
 {
-  "command": "git add docs/superpowers/specs/2026-04-18-phase3-metrics-engine-design.md && git commit -m \"$(cat <<'EOF'\ndocs: add Phase 3 metrics engine design spec with tier classification\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add docs/superpowers/specs/2026-04-18-phase3-metrics-engine-design.md && git commit -m \"$(cat <<'EOF'\ndocs: add Phase 3 metrics engine design spec with tier classification\n\nCo-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit Phase 3 design spec"
 }
 ```
@@ -1271,7 +1271,7 @@ tool_use Write
 id: toolu_01LfdWmzoDKEmxsU5HHWe5Li
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/specs/2026-04-18-phase3-metrics-engine-design.md",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/docs/superpowers/specs/2026-04-18-phase3-metrics-engine-design.md",
   "content": "# Phase 3 — Metrics Engine Design Spec\n\n**Date:** 2026-04-18\n**Phase:** 3 — Metrics Engine\n**Scope:** Calculating, storing, and serving developer and team metrics from ingested GitHub + Jira data\n\n---\n\n## Overview\n\nPhase 3 transforms raw ingested data (commits, PRs, reviews, Jira issues, changelogs, sprints) into meaningful developer and team metrics. Metrics are pre-materialized into a snapshot table, refreshed via a hybrid trigger + nightly schedule, and served via a typed query API.\n\nWe start with Tier 1 (pure SQL aggregations). Tiers 2–4 are defined in the tier classification below and will each get their own spec.\n\n---\n\n## Metric Tier Classification\n\n### Tier 1 — Pure SQL Aggregations\n> Data is in the DB. Aggregate with GROUP BY + time window. Implemented first.\n\n**GitHub:**\n- Commits per period, lines added / deleted / net\n- PRs opened, merged, abandoned, draft rate\n- PR size (lines avg, files avg)\n- Reviews given, review state distribution, inline comments\n\n**Jira:**\n- Tickets created / resolved / assigned\n- Bug rate, ticket type distribution\n- Story points committed vs. completed per sprint\n- Sprint completion rate, velocity (rolling 3-sprint avg)\n- Comment volume avg, worklog time logged\n\n### Tier 2 — Multi-Step / Time-Window Calculations\n> Require changelog traversal or interval math per row.\n\n**GitHub:** PR cycle time, […]
 
 > TOOL
@@ -1279,7 +1279,7 @@ id: toolu_01LfdWmzoDKEmxsU5HHWe5Li
 tool_result
 id: toolu_01LfdWmzoDKEmxsU5HHWe5Li
 ```
-The file /Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/specs/2026-04-18-phase3-metrics-engine-design.md has been updated successfully.
+The file /home/<USER>/Documents/repo/no-name-proj/docs/superpowers/specs/2026-04-18-phase3-metrics-engine-design.md has been updated successfully.
 ```
 
 > AGENT
@@ -1295,7 +1295,7 @@ id: toolu_01RZmUNtKgR4JRhoUrsgUQH4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/specs/2026-04-18-phase3-metrics-engine-design.md",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/docs/superpowers/specs/2026-04-18-phase3-metrics-engine-design.md",
   "old_string": "| `jira_velocity` | rolling 3-sprint avg of completed story points |",
   "new_string": "| `jira_velocity` | rolling 3-sprint avg of completed story points (stored at monthly granularity only — sprint-based, not time-window-based) |"
 }
@@ -1306,7 +1306,7 @@ id: toolu_01RZmUNtKgR4JRhoUrsgUQH4
 tool_result
 id: toolu_01RZmUNtKgR4JRhoUrsgUQH4
 ```
-The file /Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/specs/2026-04-18-phase3-metrics-engine-design.md has been updated successfully.
+The file /home/<USER>/Documents/repo/no-name-proj/docs/superpowers/specs/2026-04-18-phase3-metrics-engine-design.md has been updated successfully.
 ```
 
 > TOOL
@@ -1316,7 +1316,7 @@ id: toolu_013RkUPDxox4jLHesTDstP84
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/specs/2026-04-18-phase3-metrics-engine-design.md",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/docs/superpowers/specs/2026-04-18-phase3-metrics-engine-design.md",
   "old_string": "| `jira_sprint_completion_rate` | completed / committed (per sprint, then averaged) |",
   "new_string": "| `jira_sprint_completion_rate` | completed / committed (avg across sprints that ended in period) |"
 }
@@ -1327,7 +1327,7 @@ id: toolu_013RkUPDxox4jLHesTDstP84
 tool_result
 id: toolu_013RkUPDxox4jLHesTDstP84
 ```
-The file /Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/specs/2026-04-18-phase3-metrics-engine-design.md has been updated successfully.
+The file /home/<USER>/Documents/repo/no-name-proj/docs/superpowers/specs/2026-04-18-phase3-metrics-engine-design.md has been updated successfully.
 ```
 
 > TOOL
@@ -1337,7 +1337,7 @@ id: toolu_0124xREWUoRELZwCSTBPdCzc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/specs/2026-04-18-phase3-metrics-engine-design.md",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/docs/superpowers/specs/2026-04-18-phase3-metrics-engine-design.md",
   "old_string": "- Design is intentionally flexible — metric keys, aggregation rules, and API shape may be adjusted as Tier 2–4 are designed.",
   "new_string": "- Soft-deleting a team does not delete `team_members` rows — they become inert when the team is soft-deleted. No cascade needed.\n- `jira_velocity` and `jira_sprint_completion_rate` are only meaningful at monthly granularity. Daily/weekly snapshots for these keys are not computed.\n- Design is intentionally flexible — metric keys, aggregation rules, and API shape may be adjusted as Tier 2–4 are designed."
 }
@@ -1348,7 +1348,7 @@ id: toolu_0124xREWUoRELZwCSTBPdCzc
 tool_result
 id: toolu_0124xREWUoRELZwCSTBPdCzc
 ```
-The file /Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/specs/2026-04-18-phase3-metrics-engine-design.md has been updated successfully.
+The file /home/<USER>/Documents/repo/no-name-proj/docs/superpowers/specs/2026-04-18-phase3-metrics-engine-design.md has been updated successfully.
 ```
 
 > TOOL
@@ -1357,7 +1357,7 @@ tool_use Bash
 id: toolu_0148yt3mdoTELJ51xr6yQb2f
 ```json
 {
-  "command": "git add docs/superpowers/specs/2026-04-18-phase3-metrics-engine-design.md && git commit -m \"$(cat <<'EOF'\ndocs: complete Phase 3 Tier 1 metrics engine design spec\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add docs/superpowers/specs/2026-04-18-phase3-metrics-engine-design.md && git commit -m \"$(cat <<'EOF'\ndocs: complete Phase 3 Tier 1 metrics engine design spec\n\nCo-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit updated spec"
 }
 ```
@@ -1411,7 +1411,7 @@ tool_use Bash
 id: toolu_01JGAa5NU8pC1nNSvvW5NiYz
 ```json
 {
-  "command": "cat /Users/4thwithme/Documents/repo/no-name-proj/backend/src/migrations/20260416000001_create_github_commits_table.ts && echo \"---\" && cat /Users/4thwithme/Documents/repo/no-name-proj/backend/src/migrations/20260416000002_create_github_pull_requests_table.ts",
+  "command": "cat /home/<USER>/Documents/repo/no-name-proj/backend/src/migrations/20260416000001_create_github_commits_table.ts && echo \"---\" && cat /home/<USER>/Documents/repo/no-name-proj/backend/src/migrations/20260416000002_create_github_pull_requests_table.ts",
   "description": "Read GitHub commit and PR migration files"
 }
 ```
@@ -1521,7 +1521,7 @@ tool_use Bash
 id: toolu_01EgRVkYjoJ7FnL92D3UXmwk
 ```json
 {
-  "command": "cat /Users/4thwithme/Documents/repo/no-name-proj/backend/src/migrations/20260416000003_create_github_reviews_table.ts && echo \"---\" && cat /Users/4thwithme/Documents/repo/no-name-proj/backend/src/migrations/20260416100002_create_jira_issues_table.ts && echo \"---\" && cat /Users/4thwithme/Documents/repo/no-name-proj/backend/src/migrations/20260416100004_create_jira_worklogs_table.ts",
+  "command": "cat /home/<USER>/Documents/repo/no-name-proj/backend/src/migrations/20260416000003_create_github_reviews_table.ts && echo \"---\" && cat /home/<USER>/Documents/repo/no-name-proj/backend/src/migrations/20260416100002_create_jira_issues_table.ts && echo \"---\" && cat /home/<USER>/Documents/repo/no-name-proj/backend/src/migrations/20260416100004_create_jira_worklogs_table.ts",
   "description": "Read reviews, jira issues, jira worklogs migrations"
 }
 ```
@@ -1630,7 +1630,7 @@ tool_use Bash
 id: toolu_01QpV9ZSGQCtYUbfwmrC3d2E
 ```json
 {
-  "command": "cat /Users/4thwithme/Documents/repo/no-name-proj/backend/src/migrations/20260416100005_create_jira_sprints_table.ts && echo \"---\" && cat /Users/4thwithme/Documents/repo/no-name-proj/backend/src/migrations/20260416000004_create_github_review_comments_table.ts",
+  "command": "cat /home/<USER>/Documents/repo/no-name-proj/backend/src/migrations/20260416100005_create_jira_sprints_table.ts && echo \"---\" && cat /home/<USER>/Documents/repo/no-name-proj/backend/src/migrations/20260416000004_create_github_review_comments_table.ts",
   "description": "Read jira sprints and github review comments migrations"
 }
 ```
@@ -1732,7 +1732,7 @@ tool_use Bash
 id: toolu_01GXXebzsFBiufN44z3h9CqQ
 ```json
 {
-  "command": "cd /Users/4thwithme/Documents/repo/no-name-proj/backend && cat package.json | grep -E '\"@nestjs|schedule|bullmq\"'",
+  "command": "cd /home/<USER>/Documents/repo/no-name-proj/backend && cat package.json | grep -E '\"@nestjs|schedule|bullmq\"'",
   "description": "Check installed NestJS packages"
 }
 ```
@@ -1860,7 +1860,7 @@ id: toolu_01NVURqvgbHUwmpmySoxqwU3
 ```json
 {
   "pattern": "docs/superpowers/plans/2026-04-18*.md",
-  "path": "/Users/4thwithme/Documents/repo/no-name-proj"
+  "path": "/home/<USER>/Documents/repo/no-name-proj"
 }
 ```
 
@@ -1892,7 +1892,7 @@ tool_use Bash
 id: toolu_017KzahdFx7BD22E9uEcv875
 ```json
 {
-  "command": "ls /Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/plans/ && echo \"---\" && grep -n \"tier\\|Tier\\|phase\\|Phase\" /Users/4thwithme/Documents/repo/no-name-proj/docs/features/roadmap.md | head -30",
+  "command": "ls /home/<USER>/Documents/repo/no-name-proj/docs/superpowers/plans/ && echo \"---\" && grep -n \"tier\\|Tier\\|phase\\|Phase\" /home/<USER>/Documents/repo/no-name-proj/docs/features/roadmap.md | head -30",
   "description": "Check existing plan files and roadmap for tier content"
 }
 ```
@@ -1932,7 +1932,7 @@ tool_use Read
 id: toolu_01MLzuFU2kDBkCCnNjFq3tQG
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/docs/features/roadmap.md",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/docs/features/roadmap.md",
   "offset": 42,
   "limit": 46
 }
@@ -1981,7 +1981,7 @@ id: toolu_013VCUF1psmmy5mcBhGeLj4G
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/docs/features/roadmap.md",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/docs/features/roadmap.md",
   "old_string": "## Phase 3 — Metrics Engine\n\nCalculate raw stats and derived complex metrics from ingested data.\n\nFull metrics catalog: [`docs/features/metrics-catalog.md`](metrics-catalog.md)\nGitHub API data reference: [`docs/integrations/github-api.md`](../integrations/github-api.md)\nJira API data reference: [`docs/integrations/jira-api.md`](../integrations/jira-api.md)\n\n### GitHub Raw Metrics (selected)\n- [ ] Commit frequency, additions/deletions, after-hours rate, punch card patterns\n- [ ] PR cycle time, size, draft rate, merge method distribution\n- [ ] Review response time, review state distribution, thread resolution rate\n- [ ] CI build success rate, build duration, flaky test rate\n- [ ] Deployment frequency, lead time to production\n- [ ] Security alert severity distribution, push_protection bypass tracking\n\n### Jira Raw Metrics (selected)\n- [ ] Lead time, cycle time, time-in-status per ticket (from changelog)\n- [ ] Story points committed vs. completed per sprint\n- [ ] Estimation accuracy (`workratio`), re-pointing frequency\n- [ ] Blocked time (Flagged/Impediment), handoff count, rework rate\n- [ ] Sprint scope change, spillover, velocity trend\n- [ ] WIP violations vs. board limits\n\n### Derived / Complex Metrics\n- [ ] **Collaboration Score** — reviews + comments + cross-team participation\n- [ ] **Mean Time to Development (MTTD)** — Jira created → first commit\n- [ ] **Mean Time to Review (MTTR)** — PR opened → first review\n- [ ] **Code […]
 
 > TOOL
@@ -1989,7 +1989,7 @@ id: toolu_013VCUF1psmmy5mcBhGeLj4G
 tool_result
 id: toolu_013VCUF1psmmy5mcBhGeLj4G
 ```
-The file /Users/4thwithme/Documents/repo/no-name-proj/docs/features/roadmap.md has been updated successfully.
+The file /home/<USER>/Documents/repo/no-name-proj/docs/features/roadmap.md has been updated successfully.
 ```
 
 > AGENT

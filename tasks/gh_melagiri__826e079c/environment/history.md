@@ -51,7 +51,7 @@ tool_use Bash
 id: toolu_011tSXkCJK5r7mDy1Wqb5wV3
 ```json
 {
-  "command": "cat /Users/melagiri/Workspace/codeInsights/code-insights/docs/VISION.md && echo \"---ROADMAP---\" && cat /Users/melagiri/Workspace/codeInsights/code-insights/docs/ROADMAP.md",
+  "command": "cat /home/<USER>/Workspace/codeInsights/code-insights/docs/VISION.md && echo \"---ROADMAP---\" && cat /home/<USER>/Workspace/codeInsights/code-insights/docs/ROADMAP.md",
   "description": "Read VISION.md and ROADMAP.md for current project direction"
 }
 ```
@@ -131,7 +131,7 @@ tool_use Write
 id: toolu_01PoKfGSGmxBqpejpaRGdkEM
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md",
   "content": "# Codebase-Attached Knowledge — Design Spec\n\n**Feature:** `.code-insights.md` + `code-insights context` + Team Knowledge Sync  \n**Status:** Phase 1 approved for implementation · Phases 3–6 pending founder decision  \n**Date:** 2026-05-05 (consolidated from 2026-04-20 + 2026-04-22 brainstorm)  \n**Author:** Srikanth Rao M  \n**Reviewed by:** devtools-cofounder, technical-architect, ux-engineer\n\n---\n\n## 1. Problem Statement\n\ncode-insights extracts structured knowledge from AI coding sessions: architectural decisions (with reasoning and alternatives), learnings (root cause + takeaway), friction patterns (9 categories, with attribution), and effective patterns (8 categories, with driver). All of this lives in `~/.code-insights/data.db` — a personal database tied to the developer, not the codebase.\n\nWhen a new AI session starts on the same codebase, the agent knows nothing about past decisions. When a new developer joins the project, they start from zero. The knowledge built *from* working on a codebase never sticks *to* the codebase.\n\n**The compound problem:**\n- AI agents reload context fresh every session — they can't benefit from 400 sessions of accumulated codebase wisdom\n- New developers inherit no structured history of the \"why\" behind decisions\n- In teams, each developer's session knowledge is invisible to teammates\n\n---\n\n## 2. Goals\n\n- Take accumulated knowledge from AI session analysis and surface it as a file that […]
 
 > TOOL
@@ -139,7 +139,7 @@ id: toolu_01PoKfGSGmxBqpejpaRGdkEM
 tool_result
 id: toolu_01PoKfGSGmxBqpejpaRGdkEM
 ```
-File created successfully at: /Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md
+File created successfully at: /home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md
 ```
 
 > AGENT
@@ -152,7 +152,7 @@ tool_use Bash
 id: toolu_014WNPy6cAzvaG28eDqzfHCY
 ```json
 {
-  "command": "rm /Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-04-20-codebase-knowledge-design.md /Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-04-22-codebase-knowledge-redesign-brainstorm.md && ls /Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/",
+  "command": "rm /home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-04-20-codebase-knowledge-design.md /home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-04-22-codebase-knowledge-redesign-brainstorm.md && ls /home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/",
   "description": "Delete the two old spec files and verify"
 }
 ```
@@ -195,7 +195,7 @@ tool_use Bash
 id: toolu_01Nj8zVcVF8T4xsPRkqGrjQk
 ```json
 {
-  "command": "git add docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md && git commit -m \"$(cat <<'EOF'\ndocs: consolidate codebase knowledge spec into single authoritative file\n\nMerges 2026-04-20-codebase-knowledge-design.md and 2026-04-22-codebase-knowledge-redesign-brainstorm.md\ninto one living spec. Integrates TA + UX review findings inline (not as appendices), adds\n6-phase implementation sequence, and adds Section 9 with four proposed extensions for discussion:\npath-scoped rules, confidence decay, inline changelog, and --check CI gate.\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md && git commit -m \"$(cat <<'EOF'\ndocs: consolidate codebase knowledge spec into single authoritative file\n\nMerges 2026-04-20-codebase-knowledge-design.md and 2026-04-22-codebase-knowledge-redesign-brainstorm.md\ninto one living spec. Integrates TA + UX review findings inline (not as appendices), adds\n6-phase implementation sequence, and adds Section 9 with four proposed extensions for discussion:\npath-scoped rules, confidence decay, inline changelog, and --check CI gate.\n\nCo-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Stage new spec and commit with both old files removed"
 }
 ```
@@ -251,7 +251,7 @@ id: toolu_01UJZ33ToxSFfumiVkcJF2z8
   "description": "Developer persona review of proposed extensions",
   "subagent_type": "general-purpose",
   "name": "dev-persona-reviewer",
-  "prompt": "You are a senior developer who uses AI coding tools daily (Claude Code, Cursor) and has been using \"Code Insights\" — a local CLI tool that analyzes your AI coding sessions and stores extracted knowledge (decisions, learnings, friction patterns) in a local SQLite database.\n\nYou've just read a new consolidated spec for a feature called `.code-insights.md` — a file that would be generated at your project's git root, containing YAML-structured rules for AI agents + markdown narrative for humans, both extracted from your session history.\n\n**The spec is at:** `/Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md`\n\nPlease read the full spec file. Then focus your review on **Section 9: Proposed Extensions** (the 4 new ideas). Review each from the perspective of a developer who would actually use this tool daily.\n\nFor each extension, answer:\n1. **Would I actually use this?** (honest gut-check)\n2. **What's the friction cost?** (setup, maintenance, cognitive load)\n3. **What's the payoff?** (concrete, not theoretical)\n4. **Your verdict:** Include / Skip / Defer\n\nBe direct. Don't be polite about ideas that add complexity without clear payoff. Also flag any part of the core Phase 1 spec (Sections 4–5) that feels awkward or confusing from […]
+  "prompt": "You are a senior developer who uses AI coding tools daily (Claude Code, Cursor) and has been using \"Code Insights\" — a local CLI tool that analyzes your AI coding sessions and stores extracted knowledge (decisions, learnings, friction patterns) in a local SQLite database.\n\nYou've just read a new consolidated spec for a feature called `.code-insights.md` — a file that would be generated at your project's git root, containing YAML-structured rules for AI agents + markdown narrative for humans, both extracted from your session history.\n\n**The spec is at:** `/home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md`\n\nPlease read the full spec file. Then focus your review on **Section 9: Proposed Extensions** (the 4 new ideas). Review each from the perspective of a developer who would actually use this tool daily.\n\nFor each extension, answer:\n1. **Would I actually use this?** (honest gut-check)\n2. **What's the friction cost?** (setup, maintenance, cognitive load)\n3. **What's the payoff?** (concrete, not theoretical)\n4. **Your verdict:** Include / Skip / Defer\n\nBe direct. Don't be polite about ideas that add complexity without clear payoff. Also flag any part of the core Phase 1 spec (Sections 4–5) that feels awkward or confusing from […]
 
 > TOOL
 
@@ -262,7 +262,7 @@ id: toolu_01WFDZrcriW5NUCpobuCmYvi
   "description": "Technical architect review of proposed extensions",
   "subagent_type": "general-purpose",
   "name": "ta-persona-reviewer",
-  "prompt": "You are a technical architect reviewing an implementation spec for a developer tool feature. The codebase is a TypeScript/Node.js pnpm monorepo with: CLI (Commander.js), server (Hono), dashboard (Vite + React), and SQLite database (better-sqlite3).\n\n**The spec is at:** `/Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md`\n\nPlease read the full spec file. Then focus your review on two things:\n\n**1. Section 9: Proposed Extensions — technical feasibility**\n\nFor each of the 4 proposed extensions (9.1 path-scoped rules, 9.2 confidence decay, 9.3 inline changelog, 9.4 --check CI gate), answer:\n- Implementation complexity (low/medium/high)\n- Key technical risks or gotchas not mentioned in the spec\n- Whether the spec's stated trade-offs are accurate\n- Phase recommendation: Phase 1 / Phase 2 / Defer\n\n**2. Core Phase 1 architecture (Sections 5.1–5.6) — any gaps?**\n\nThe spec says \"full regeneration + YAML frontmatter built deterministically by code + markdown body from LLM.\" Does the pipeline have any edge cases or integration risks not addressed? Specific areas to check:\n- The `applyV10` schema change (topic_tags as JSON text column in SQLite — no native GIN index)\n- The transient server start model (same as `reflect`)\n- The scrubbing pipeline (3 layers)\n\nReturn your findings in under 500 words. […]
+  "prompt": "You are a technical architect reviewing an implementation spec for a developer tool feature. The codebase is a TypeScript/Node.js pnpm monorepo with: CLI (Commander.js), server (Hono), dashboard (Vite + React), and SQLite database (better-sqlite3).\n\n**The spec is at:** `/home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md`\n\nPlease read the full spec file. Then focus your review on two things:\n\n**1. Section 9: Proposed Extensions — technical feasibility**\n\nFor each of the 4 proposed extensions (9.1 path-scoped rules, 9.2 confidence decay, 9.3 inline changelog, 9.4 --check CI gate), answer:\n- Implementation complexity (low/medium/high)\n- Key technical risks or gotchas not mentioned in the spec\n- Whether the spec's stated trade-offs are accurate\n- Phase recommendation: Phase 1 / Phase 2 / Defer\n\n**2. Core Phase 1 architecture (Sections 5.1–5.6) — any gaps?**\n\nThe spec says \"full regeneration + YAML frontmatter built deterministically by code + markdown body from LLM.\" Does the pipeline have any edge cases or integration risks not addressed? Specific areas to check:\n- The `applyV10` schema change (topic_tags as JSON text column in SQLite — no native GIN index)\n- The transient server start model (same as `reflect`)\n- The scrubbing pipeline (3 layers)\n\nReturn your findings in under 500 words. […]
 
 > TOOL
 
@@ -273,7 +273,7 @@ id: toolu_01BiW3GRUFh7iduqQkdmYaLh
   "description": "Product strategist review of proposed extensions",
   "subagent_type": "devtools-cofounder",
   "name": "product-persona-reviewer",
-  "prompt": "You are a devtools product strategist reviewing a spec for a feature called `.code-insights.md` in an open-source developer tool called Code Insights (local-first, free, privacy-first, no cloud).\n\n**The spec is at:** `/Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md`\n\nPlease read the full spec file — especially Section 3 (Killer Use Case), Section 4 (Feature Design), and Section 9 (Proposed Extensions).\n\n**Your job: evaluate the 4 proposed extensions in Section 9 through a product strategy lens.**\n\nFor each extension (9.1 path-scoped rules, 9.2 confidence decay, 9.3 inline changelog, 9.4 --check CI gate), answer:\n1. **Does this strengthen the product narrative** — or is it complexity for its own sake?\n2. **Does this improve PLG (product-led growth) potential** — is it something a user would mention to a colleague?\n3. **Does this create differentiation** vs. other tools (CLAUDE.md, entire.io, Cursor rules)?\n4. **Your verdict:** Include / Skip / Defer + one-sentence reason\n\nAlso: does the core Phase 1 feature (the `.code-insights.md` file itself) have a strong enough story? Is there a sharper hook or a missing angle?\n\nReturn your findings in under 400 words. Opinions, not hedges."
+  "prompt": "You are a devtools product strategist reviewing a spec for a feature called `.code-insights.md` in an open-source developer tool called Code Insights (local-first, free, privacy-first, no cloud).\n\n**The spec is at:** `/home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md`\n\nPlease read the full spec file — especially Section 3 (Killer Use Case), Section 4 (Feature Design), and Section 9 (Proposed Extensions).\n\n**Your job: evaluate the 4 proposed extensions in Section 9 through a product strategy lens.**\n\nFor each extension (9.1 path-scoped rules, 9.2 confidence decay, 9.3 inline changelog, 9.4 --check CI gate), answer:\n1. **Does this strengthen the product narrative** — or is it complexity for its own sake?\n2. **Does this improve PLG (product-led growth) potential** — is it something a user would mention to a colleague?\n3. **Does this create differentiation** vs. other tools (CLAUDE.md, entire.io, Cursor rules)?\n4. **Your verdict:** Include / Skip / Defer + one-sentence reason\n\nAlso: does the core Phase 1 feature (the `.code-insights.md` file itself) have a strong enough story? Is there a sharper hook or a missing angle?\n\nReturn your findings in under 400 words. Opinions, not hedges."
 }
 ```
 

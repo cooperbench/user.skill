@@ -18,7 +18,7 @@ id: toolu_01M6LnENTeViJ81E3e9yspi3
 tool_result
 id: toolu_01M6LnENTeViJ81E3e9yspi3
 ```
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-article-toc-scrolling
+/home/<USER>/fediverse/hackerspub-android-worktrees/fix-article-toc-scrolling
 231c0a7 Merge pull request #130 from malkoG/fix/search-ux
 ef85a5e Merge pull request #129 from malkoG/fix/bottom-padding-for-post-detail
 e4d1ae0 pass locales to searchPost
@@ -273,7 +273,7 @@ tool_use Read
 id: toolu_01TYTBJxKmXUg7wYXkqCv3sV
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-article-toc-scrolling/app/src/main/java/pub/hackers/android/ui/components/ArticleCard.kt"
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-article-toc-scrolling/app/src/main/java/pub/hackers/android/ui/components/ArticleCard.kt"
 }
 ```
 
@@ -348,7 +348,7 @@ tool_use Read
 id: toolu_01NBkp7EFLF4TMWoKt884NSk
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-article-toc-scrolling/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt"
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-article-toc-scrolling/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt"
 }
 ```
 

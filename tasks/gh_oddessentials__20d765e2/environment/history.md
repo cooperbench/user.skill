@@ -112,8 +112,8 @@ id: toolu_01M81gVjAFpZyUbfSNNdaLKU
 25	
 26	  // NEW: mounts block for the gh + entire auth named volumes (FR-005)
 27	  "mounts": [
-28	    "source=ado-git-repo-insights-gh-config,target=/home/vscode/.config/gh,type=volume",
-29	    "source=ado-git-repo-insights-entire-config,target=/home/vscode/.entire,type=volume"
+28	    "source=ado-git-repo-insights-gh-config,target=/home/<USER>/.config/gh,type=volume",
+29	    "source=ado-git-repo-insights-entire-config,target=/home/<USER>/.entire,type=volume"
 30	  ],
 31	
 32	  // NEW: onCreateCommand runs as containerUser (= remoteUser "vscode"), NOT as
@@ -720,10 +720,10 @@ id: toolu_01Rq1BsE7Jqoc6A9BKmEDy6r
 148:# mounts: two named volumes (gh + entire) per FR-005
 149:assert "mounts" in d, "mounts block is required for gh + entire auth named volumes"
 160:    "ado-git-repo-insights-entire-config" in m
-161:    and "/home/vscode/.entire" in m
+161:    and "/home/<USER>/.entire" in m
 165:    "mounts must declare source=ado-git-repo-insights-entire-config "
-166:    "target=/home/vscode/.entire type=volume (FR-005, FR-020)"
-186:assert "/home/vscode/.entire" in oncreate, (
+166:    "target=/home/<USER>/.entire type=volume (FR-005, FR-020)"
+186:assert "/home/<USER>/.entire" in oncreate, (
 187:    "onCreateCommand chown must target the entire config mount path (FR-020)"
 193:# postCreateCommand: per FR-021, must begin with Corepack activation + pinned
 194:# pnpm + fail-closed validation. Agent-specific entire wiring is contributor-
@@ -744,7 +744,7 @@ tool_use Bash
 id: toolu_013iLfx7u2BxPcXeSMnnGGPz
 ```json
 {
-  "command": "MEM=/home/vscode/.claude/projects/-workspaces-ado-git-repo-insights/memory; echo \"=== memory dir ===\" && ls -la \"$MEM\" 2>/dev/null && echo \"\" && echo \"=== MEMORY.md ===\" && cat \"$MEM/MEMORY.md\" 2>/dev/null || echo \"(no MEMORY.md yet)\""
+  "command": "MEM=/home/<USER>/.claude/projects/-workspaces-ado-git-repo-insights/memory; echo \"=== memory dir ===\" && ls -la \"$MEM\" 2>/dev/null && echo \"\" && echo \"=== MEMORY.md ===\" && cat \"$MEM/MEMORY.md\" 2>/dev/null || echo \"(no MEMORY.md yet)\""
 }
 ```
 
@@ -772,7 +772,7 @@ tool_use Write
 id: toolu_01TpXLDWxgYPdhtgfYDohb7g
 ```json
 {
-  "file_path": "/home/vscode/.claude/projects/-workspaces-ado-git-repo-insights/memory/specs-364-stale-vs-shipped.md",
+  "file_path": "/home/<USER>/.claude/projects/-workspaces-ado-git-repo-insights/memory/specs-364-stale-vs-shipped.md",
   "content": "---\nname: specs-364-stale-vs-shipped\ndescription: CLAUDE.md points at specs/364 as source-of-truth, but specs/ is gitignored and Contract 1 is now stale vs shipped devcontainer\nmetadata:\n  type: project\n---\n\n`CLAUDE.md` instructs reading `specs/364-devcontainer-refactor/plan.md` (+ research.md, contracts/, quickstart.md) as project context — but `specs/` is **gitignored** (local-only working docs, per docs/specs-retirement.md), and the contracts are **partly stale vs. what actually shipped to `main`**.\n\nVerified shipped state (as of 2026-06-06, commits #416 atomic refactor → #417 → #418):\n- **entire agent wiring was REMOVED from `postCreateCommand` in #418.** Contract 1 in `devcontainer.contract.md` still prescribes ending postCreateCommand with `entire enable --agent claude-code && entire agent add codex` and says the verifier asserts that sequence — the OPPOSITE of shipped. The tracked `.devcontainer/verify-contract.py` now **rejects** any `entire enable`/`entire agent` in postCreateCommand. Rationale: CI's publish-devcontainer runs `docker build` only, so postCreateCommand never executes in CI; pre-wiring agents not installed in the image (Claude/Codex excluded per FR-008) stayed broken until contributor rebuild.\n- **`pnpmVersion: \"none\"` was ADDED to the Node Feature** (Codex review, #416) to stop the Feature installing an unpinned global pnpm before Corepack activates pnpm@9.15.0. Not in the original contract; verifier now asserts it.\n\nWhen doing devcontainer work: **trust the tracked files** (`.devcontainer/devcontainer.json`, `Dockerfile`, `verify-contract.py`) and […]
 
 > TOOL
@@ -780,7 +780,7 @@ id: toolu_01TpXLDWxgYPdhtgfYDohb7g
 tool_result
 id: toolu_01TpXLDWxgYPdhtgfYDohb7g
 ```
-File created successfully at: /home/vscode/.claude/projects/-workspaces-ado-git-repo-insights/memory/specs-364-stale-vs-shipped.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-workspaces-ado-git-repo-insights/memory/specs-364-stale-vs-shipped.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -794,7 +794,7 @@ id: toolu_01RtTGKHVrB7HtSUf7btqhSf
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/vscode/.claude/projects/-workspaces-ado-git-repo-insights/memory/specs-364-stale-vs-shipped.md",
+  "file_path": "/home/<USER>/.claude/projects/-workspaces-ado-git-repo-insights/memory/specs-364-stale-vs-shipped.md",
   "old_string": "When doing devcontainer work: **trust the tracked files** (`.devcontainer/devcontainer.json`, `Dockerfile`, `verify-contract.py`) and `git log`, not the spec prose. Confirm with `python3 .devcontainer/verify-contract.py` (exits 0 on the shipped config). See [[entire-postcreate-asymmetry]] for the husky/commit-msg parity nuance.",
   "new_string": "When doing devcontainer work: **trust the tracked files** (`.devcontainer/devcontainer.json`, `Dockerfile`, `verify-contract.py`) and `git log`, not the spec prose. Confirm with `python3 .devcontainer/verify-contract.py` (exits 0 on the shipped config). The husky `commit-msg`/`pre-push` hooks defensively call `entire hooks git <stage>` — the accepted dispatcher-overwrite asymmetry is documented in-repo at `LOCAL_CI_PARITY_INVARIANTS.md` row 7f (CI commitlint is authoritative)."
 }
@@ -805,7 +805,7 @@ id: toolu_01RtTGKHVrB7HtSUf7btqhSf
 tool_result
 id: toolu_01RtTGKHVrB7HtSUf7btqhSf
 ```
-The file /home/vscode/.claude/projects/-workspaces-ado-git-repo-insights/memory/specs-364-stale-vs-shipped.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-workspaces-ado-git-repo-insights/memory/specs-364-stale-vs-shipped.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -814,7 +814,7 @@ tool_use Write
 id: toolu_017SYfHjiPorrVFKgErJx8bP
 ```json
 {
-  "file_path": "/home/vscode/.claude/projects/-workspaces-ado-git-repo-insights/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-workspaces-ado-git-repo-insights/memory/MEMORY.md",
   "content": "# Memory Index\n\n- [specs/364 stale vs shipped](specs-364-stale-vs-shipped.md) — CLAUDE.md points at a gitignored, now-partly-stale spec; trust tracked devcontainer files + git log, not the contract prose.\n"
 }
 ```
@@ -824,7 +824,7 @@ id: toolu_017SYfHjiPorrVFKgErJx8bP
 tool_result
 id: toolu_017SYfHjiPorrVFKgErJx8bP
 ```
-File created successfully at: /home/vscode/.claude/projects/-workspaces-ado-git-repo-insights/memory/MEMORY.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-workspaces-ado-git-repo-insights/memory/MEMORY.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1405,7 +1405,7 @@ id: toolu_01K1txEB8GQrPyGq3Fuvz2Dt
 ```json
 {
   "file_path": "/tmp/specs-cleanup-commit-msg.txt",
-  "content": "chore(specs): remove retired specs/ tree and its tracking scaffolding\n\nThe only spec left under specs/ (364-devcontainer-refactor) was a\nlocal-only, gitignored planning artifact that had gone stale versus the\nshipped dev container after #416/#417/#418; its contract prose no longer\nmatched the tracked .devcontainer files. Remove it and the scaffolding\nthat pointed at it:\n\n- .gitignore: drop the `specs/` ignore rule and its retirement comment so\n  the path is tracked normally again.\n- docs/specs-retirement.md: deleted. The 2026-05-04 retirement of specs\n  001-363 stays recoverable from tag pre-specs-retirement-2026-05-04; a\n  standing policy doc for it was overkill.\n- .devcontainer/README.md: drop the three dead links to the removed spec\n  and contract; point readers at the tracked .devcontainer files as the\n  authoritative source.\n- .entire/.gitignore: ignore redactors/local/ (entire CLI local redactors).\n\nspecs/364 was never committed to any ref, so its removal carries no diff.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\n"
+  "content": "chore(specs): remove retired specs/ tree and its tracking scaffolding\n\nThe only spec left under specs/ (364-devcontainer-refactor) was a\nlocal-only, gitignored planning artifact that had gone stale versus the\nshipped dev container after #416/#417/#418; its contract prose no longer\nmatched the tracked .devcontainer files. Remove it and the scaffolding\nthat pointed at it:\n\n- .gitignore: drop the `specs/` ignore rule and its retirement comment so\n  the path is tracked normally again.\n- docs/specs-retirement.md: deleted. The 2026-05-04 retirement of specs\n  001-363 stays recoverable from tag pre-specs-retirement-2026-05-04; a\n  standing policy doc for it was overkill.\n- .devcontainer/README.md: drop the three dead links to the removed spec\n  and contract; point readers at the tracked .devcontainer files as the\n  authoritative source.\n- .entire/.gitignore: ignore redactors/local/ (entire CLI local redactors).\n\nspecs/364 was never committed to any ref, so its removal carries no diff.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\n"
 }
 ```
 
@@ -1521,7 +1521,7 @@ tool_use Write
 id: toolu_01Cm1kftsgYnoQ21f5f8sbat
 ```json
 {
-  "file_path": "/home/vscode/.claude/projects/-workspaces-ado-git-repo-insights/memory/specs-364-stale-vs-shipped.md",
+  "file_path": "/home/<USER>/.claude/projects/-workspaces-ado-git-repo-insights/memory/specs-364-stale-vs-shipped.md",
   "content": "---\nname: specs-364-stale-vs-shipped\ndescription: The specs/364 dev-container spec was DELETED (2026-06-06); CLAUDE.md still points at the dead plan.md — trust tracked .devcontainer files, not the spec\nmetadata:\n  type: project\n---\n\nThe `specs/364-devcontainer-refactor/` Speckit spec (plan/research/contracts/quickstart) was a **local-only, gitignored, never-committed** planning artifact that had gone stale vs. the shipped dev container (entire wiring removed from `postCreateCommand` in #418; `pnpmVersion:\"none\"` added in #416 — the contract prose described neither).\n\n**Removed on 2026-06-06** on branch `chore/remove-stale-specs`, commit `83444de2` (\"chore(specs): remove retired specs/ tree and its tracking scaffolding\"):\n- `specs/364…` deleted from disk (permanent — was never in any ref, NOT in tag `pre-specs-retirement-2026-05-04` which only holds specs 001–363).\n- `specs/` ignore rule dropped from `.gitignore` (path is tracked normally again).\n- `docs/specs-retirement.md` deleted.\n- 3 dead `../specs/…` links in `.devcontainer/README.md` repointed to the tracked `.devcontainer/` files.\n\n**Gotcha for future sessions:** `CLAUDE.md` (gitignored, local-only, NOT updated by that commit) still says at line 4 to \"read the current plan at `specs/364-devcontainer-refactor/plan.md`\" — **that file no longer exists**. Do not chase it. The authoritative source for dev-container behavior is the tracked `.devcontainer/devcontainer.json`, `Dockerfile`, and `verify-contract.py` (run `python3 .devcontainer/verify-contract.py` → exits 0 on the shipped config), plus `git log`. The husky `commit-msg`/`pre-push` hooks defensively call `entire hooks […]
 
 > TOOL
@@ -1529,7 +1529,7 @@ id: toolu_01Cm1kftsgYnoQ21f5f8sbat
 tool_result
 id: toolu_01Cm1kftsgYnoQ21f5f8sbat
 ```
-The file /home/vscode/.claude/projects/-workspaces-ado-git-repo-insights/memory/specs-364-stale-vs-shipped.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-workspaces-ado-git-repo-insights/memory/specs-364-stale-vs-shipped.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1538,7 +1538,7 @@ tool_use Write
 id: toolu_01MVSMRKZxUhwo8pbXJMzW32
 ```json
 {
-  "file_path": "/home/vscode/.claude/projects/-workspaces-ado-git-repo-insights/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-workspaces-ado-git-repo-insights/memory/MEMORY.md",
   "content": "# Memory Index\n\n- [specs/364 deleted; CLAUDE.md pointer is dead](specs-364-stale-vs-shipped.md) — the stale dev-container spec was removed 2026-06-06 (commit 83444de2); CLAUDE.md still points at the now-missing plan.md. Trust tracked .devcontainer files + git log.\n"
 }
 ```
@@ -1548,7 +1548,7 @@ id: toolu_01MVSMRKZxUhwo8pbXJMzW32
 tool_result
 id: toolu_01MVSMRKZxUhwo8pbXJMzW32
 ```
-The file /home/vscode/.claude/projects/-workspaces-ado-git-repo-insights/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-workspaces-ado-git-repo-insights/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2310,17 +2310,17 @@ id: toolu_01QaFdqLXuwyv41jM2ktU9Li
 tool_result
 id: toolu_01QaFdqLXuwyv41jM2ktU9Li
 ```
-1	{"time":"2026-06-06T16:23:11.103376597Z","level":"INFO","msg":"session-start","component":"lifecycle","agent":"claude-code","event":"SessionStart","session_id":"663794f5-85c3-463f-ba31-be4355faf834","session_ref":"/home/vscode/.claude/projects/-workspaces-ado-git-repo-insights/663794f5-85c3-463f-ba31-be4355faf834.jsonl","model":"claude-opus-4-8[1m]"}
+1	{"time":"2026-06-06T16:23:11.103376597Z","level":"INFO","msg":"session-start","component":"lifecycle","agent":"claude-code","event":"SessionStart","session_id":"663794f5-85c3-463f-ba31-be4355faf834","session_ref":"/home/<USER>/.claude/projects/-workspaces-ado-git-repo-insights/663794f5-85c3-463f-ba31-be4355faf834.jsonl","model":"claude-opus-4-8[1m]"}
 2	{"time":"2026-06-06T16:25:25.729676381Z","level":"INFO","msg":"session-end","component":"lifecycle","agent":"claude-code","event":"SessionEnd","session_id":"663794f5-85c3-463f-ba31-be4355faf834"}
-3	{"time":"2026-06-06T16:25:31.1092418Z","level":"INFO","msg":"session-start","component":"lifecycle","agent":"claude-code","event":"SessionStart","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","session_ref":"/home/vscode/.claude/projects/-workspaces-ado-git-repo-insights/c083831d-20d9-4525-a0ca-d78bb64dd765.jsonl","model":"claude-opus-4-8[1m]"}
-4	{"time":"2026-06-06T16:26:48.464948169Z","level":"INFO","msg":"turn-start","component":"lifecycle","agent":"claude-code","event":"TurnStart","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","session_ref":"/home/vscode/.claude/projects/-workspaces-ado-git-repo-insights/c083831d-20d9-4525-a0ca-d78bb64dd765.jsonl","model":""}
+3	{"time":"2026-06-06T16:25:31.1092418Z","level":"INFO","msg":"session-start","component":"lifecycle","agent":"claude-code","event":"SessionStart","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","session_ref":"/home/<USER>/.claude/projects/-workspaces-ado-git-repo-insights/c083831d-20d9-4525-a0ca-d78bb64dd765.jsonl","model":"claude-opus-4-8[1m]"}
+4	{"time":"2026-06-06T16:26:48.464948169Z","level":"INFO","msg":"turn-start","component":"lifecycle","agent":"claude-code","event":"TurnStart","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","session_ref":"/home/<USER>/.claude/projects/-workspaces-ado-git-repo-insights/c083831d-20d9-4525-a0ca-d78bb64dd765.jsonl","model":""}
 5	{"time":"2026-06-06T16:26:53.751761089Z","level":"INFO","msg":"phase transition","component":"session","agent":"claude-code","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","event":"TurnStart","from":"idle","to":"active"}
 6	{"time":"2026-06-06T16:26:57.821772257Z","level":"INFO","msg":"initialized shadow session","component":"hooks","agent":"claude-code","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765"}
-7	{"time":"2026-06-06T16:32:33.615126177Z","level":"INFO","msg":"turn-end","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","component":"lifecycle","agent":"claude-code","event":"TurnEnd","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","session_ref":"/home/vscode/.claude/projects/-workspaces-ado-git-repo-insights/c083831d-20d9-4525-a0ca-d78bb64dd765.jsonl","model":""}
+7	{"time":"2026-06-06T16:32:33.615126177Z","level":"INFO","msg":"turn-end","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","component":"lifecycle","agent":"claude-code","event":"TurnEnd","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","session_ref":"/home/<USER>/.claude/projects/-workspaces-ado-git-repo-insights/c083831d-20d9-4525-a0ca-d78bb64dd765.jsonl","model":""}
 8	{"time":"2026-06-06T16:32:36.637728386Z","level":"WARN","msg":"transcript flush sentinel not found within timeout, proceeding","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","component":"agent.claudecode","agent":"claude-code","timeout":3000000000}
 9	{"time":"2026-06-06T16:32:41.904022125Z","level":"INFO","msg":"no files modified during session, skipping checkpoint","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","component":"lifecycle","agent":"claude-code"}
 10	{"time":"2026-06-06T16:32:41.90539225Z","level":"INFO","msg":"phase transition","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","component":"session","agent":"claude-code","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","event":"TurnEnd","from":"active","to":"idle"}
-11	{"time":"2026-06-06T16:36:14.925008126Z","level":"INFO","msg":"turn-start","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","component":"lifecycle","agent":"claude-code","event":"TurnStart","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","session_ref":"/home/vscode/.claude/projects/-workspaces-ado-git-repo-insights/c083831d-20d9-4525-a0ca-d78bb64dd765.jsonl","model":""}
+11	{"time":"2026-06-06T16:36:14.925008126Z","level":"INFO","msg":"turn-start","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","component":"lifecycle","agent":"claude-code","event":"TurnStart","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","session_ref":"/home/<USER>/.claude/projects/-workspaces-ado-git-repo-insights/c083831d-20d9-4525-a0ca-d78bb64dd765.jsonl","model":""}
 12	{"time":"2026-06-06T16:36:18.74699542Z","level":"INFO","msg":"phase transition","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","component":"session","agent":"claude-code","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","event":"TurnStart","from":"idle","to":"active"}
 13	{"time":"2026-06-06T17:06:07.297051137Z","level":"INFO","msg":"prepare-commit-msg: agent commit trailer added","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","component":"checkpoint","strategy":"manual-commit","source":"message","checkpoint_id":"ce552623567f","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765"}
 14	{"time":"2026-06-06T17:06:10.388658805Z","level":"WARN","msg":"transcript flush sentinel not found within timeout, proceeding","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","component":"agent.claudecode","timeout":3000000000}
@@ -2329,13 +2329,13 @@ id: toolu_01QaFdqLXuwyv41jM2ktU9Li
 17	{"time":"2026-06-06T17:06:17.037513585Z","level":"INFO","msg":"attribution calculated","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","component":"attribution","agent_lines":2,"human_added":0,"human_modified":0,"human_removed":0,"total_committed":2,"agent_percentage":15.517241379310345,"accumulated_user_added":0,"accumulated_user_removed":0,"files_touched":2}
 18	{"time":"2026-06-06T17:06:17.08908471Z","level":"INFO","msg":"session condensed","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","component":"checkpoint","strategy":"manual-commit","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","checkpoint_id":"ce552623567f","checkpoints_condensed":0,"transcript_lines":223}
 19	{"time":"2026-06-06T17:06:17.092546585Z","level":"INFO","msg":"shadow branch deleted","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","component":"checkpoint","strategy":"manual-commit","shadow_branch":"entire/e67b3a0-e3b0c4"}
-20	{"time":"2026-06-06T17:10:37.053266595Z","level":"INFO","msg":"turn-end","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","component":"lifecycle","agent":"claude-code","event":"TurnEnd","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","session_ref":"/home/vscode/.claude/projects/-workspaces-ado-git-repo-insights/c083831d-20d9-4525-a0ca-d78bb64dd765.jsonl","model":""}
+20	{"time":"2026-06-06T17:10:37.053266595Z","level":"INFO","msg":"turn-end","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","component":"lifecycle","agent":"claude-code","event":"TurnEnd","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","session_ref":"/home/<USER>/.claude/projects/-workspaces-ado-git-repo-insights/c083831d-20d9-4525-a0ca-d78bb64dd765.jsonl","model":""}
 21	{"time":"2026-06-06T17:10:40.082973596Z","level":"WARN","msg":"transcript flush sentinel not found within timeout, proceeding","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","component":"agent.claudecode","agent":"claude-code","timeout":3000000000}
 22	{"time":"2026-06-06T17:10:45.369509168Z","level":"INFO","msg":"no files modified during session, skipping checkpoint","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","component":"lifecycle","agent":"claude-code"}
 23	{"time":"2026-06-06T17:10:45.370708376Z","level":"INFO","msg":"phase transition","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","component":"session","agent":"claude-code","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","event":"TurnEnd","from":"active","to":"idle"}
 24	{"time":"2026-06-06T17:10:45.370716668Z","level":"INFO","msg":"finalizing turn checkpoints with full transcript","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","component":"checkpoint","agent":"claude-code","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","checkpoint_count":1}
 25	{"time":"2026-06-06T17:10:45.970163251Z","level":"INFO","msg":"finalize: checkpoint updated with full transcript","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","component":"checkpoint","agent":"claude-code","checkpoint_id":"ce552623567f","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765"}
-26	{"time":"2026-06-06T17:19:42.879360833Z","level":"INFO","msg":"turn-start","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","component":"lifecycle","agent":"claude-code","event":"TurnStart","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","session_ref":"/home/vscode/.claude/projects/-workspaces-ado-git-repo-insights/c083831d-20d9-4525-a0ca-d78bb64dd765.jsonl","model":""}
+26	{"time":"2026-06-06T17:19:42.879360833Z","level":"INFO","msg":"turn-start","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","component":"lifecycle","agent":"claude-code","event":"TurnStart","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","session_ref":"/home/<USER>/.claude/projects/-workspaces-ado-git-repo-insights/c083831d-20d9-4525-a0ca-d78bb64dd765.jsonl","model":""}
 27	{"time":"2026-06-06T17:19:47.961582544Z","level":"INFO","msg":"phase transition","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","component":"session","agent":"claude-code","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","event":"TurnStart","from":"idle","to":"active"}
 28	{"time":"2026-06-06T17:50:42.951366Z","level":"WARN","msg":"transcript flush sentinel not found within timeout, proceeding","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","component":"agent.claudecode","timeout":3000000000}
 29	{"time":"2026-06-06T17:50:45.985366085Z","level":"WARN","msg":"transcript flush sentinel not found within timeout, proceeding","session_id":"c083831d-20d9-4525-a0ca-d78bb64dd765","component":"agent.claudecode","timeout":3000000000}

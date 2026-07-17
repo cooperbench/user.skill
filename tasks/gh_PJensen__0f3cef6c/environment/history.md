@@ -1,9 +1,9 @@
 > SYSTEM
 
-# AGENTS.md instructions for /home/pjensen/Repos/JSHack
+# AGENTS.md instructions for /home/<USER>/Repos/JSHack
 
 <INSTRUCTIONS>
-@/home/pjensen/.codex/RTK.md
+@/home/<USER>/.codex/RTK.md
 
 --- project-doc ---
 
@@ -152,7 +152,7 @@ id: call_Y6x6VLoBbdNNflgzYgDgq85m
 ```json
 {
   "cmd": "rg -n \"Settings|settings|localStorage|storage|character sheet|Character\" src tests --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -165,7 +165,7 @@ id: call_Q2Zqad4kAozEVcFcSROn2KHN
 ```json
 {
   "cmd": "rg -n \"dialog|dialogue|speech|say|talk|npc|NPC\" src tests --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -178,7 +178,7 @@ id: call_sLTVbsbxRDtDtPn7g6ZQ18G4
 ```json
 {
   "cmd": "rg --files src tests | rg \"settings|character|dialog|speech|npc|storage\"",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -299,8 +299,8 @@ tool_use exec_command
 id: call_KZm13GDRTYEcWOgIL8C1vnaL
 ```json
 {
-  "cmd": "sed -n '1,220p' /home/pjensen/.codex/RTK.md",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/RTK.md",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -313,7 +313,7 @@ id: call_xaL1TYUTdXUlJC9hoE07w6x7
 ```json
 {
   "cmd": "sed -n '1,220p' src/cloud/AGENTS.md",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -326,7 +326,7 @@ id: call_ZIDnt19vnADvWfnWb7KT8Ueb
 ```json
 {
   "cmd": "sed -n '727,1010p' src/main/ui/inventoryDataProvider.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -339,7 +339,7 @@ id: call_oISxtTHZbcVWzwhyUXYYNArF
 ```json
 {
   "cmd": "rg -n \"function renderSettings|renderSettings|ui:update|settings\" src/display/ui/characterOverlay.js src/display/ui/overlay.js src/display/ui/*.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -523,7 +523,7 @@ id: call_FrD9mzG5wvjDtfEl1McpMarr
 ```json
 {
   "cmd": "rtk sed -n '1,380p' src/display/ui/overlayRenders.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -536,7 +536,7 @@ id: call_s4JdaCNmkOMeii9cwPPZLtcg
 ```json
 {
   "cmd": "rtk sed -n '1,260p' src/display/input/inputSettings.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -549,7 +549,7 @@ id: call_O91bAxIJgwYwyt2fKLk3zX17
 ```json
 {
   "cmd": "rtk find src/cloud -maxdepth 3 -type f -print",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -562,7 +562,7 @@ id: call_IA0Ea56HeCyeEm3iPHTmaYW6
 ```json
 {
   "cmd": "rtk sed -n '1,260p' src/main/wiring/speechBubbleWiring.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -763,7 +763,7 @@ id: call_Nc12wqYDUsmIMbccEQsw9jx3
 ```json
 {
   "cmd": "rtk rg -n \"function makeCheckbox|makeCheckbox\\(\" src/display/ui/overlayRenders.js src/display/ui/overlayUtils.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -776,7 +776,7 @@ id: call_PUJzaYixowTeoQFG1VoPg06h
 ```json
 {
   "cmd": "rtk sed -n '1,220p' src/cloud/tombstones/client.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -789,7 +789,7 @@ id: call_bScfm7aqCPWges8bZIUwocQj
 ```json
 {
   "cmd": "rtk rg -n \"class .*Resource|Resource|resources|complete\\(\" src/main src/rules src/shared --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -802,7 +802,7 @@ id: call_g8crI6GPuy1c9fdRkE3wheUH
 ```json
 {
   "cmd": "rtk sed -n '180,230p' src/rules/systems/townfolkAmbientDialogueSystem.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -974,7 +974,7 @@ id: call_yRqkZhajuaqQTute2KUdLAMW
 ```json
 {
   "cmd": "rtk sed -n '430,485p' src/display/ui/overlayRenders.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -987,7 +987,7 @@ id: call_UQdUOksTaFHCQVabKTWfDSbA
 ```json
 {
   "cmd": "rtk sed -n '1,80p' src/rules/resources/trapStepQueue.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -1000,7 +1000,7 @@ id: call_ohLDbPujYxmfbECoKRfg6j7h
 ```json
 {
   "cmd": "rtk rg -n \"defineWorldResource\" src/lib/ecs-js src --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -1013,7 +1013,7 @@ id: call_ekPZkM7jtkbygzGv723r596f
 ```json
 {
   "cmd": "rtk sed -n '1,220p' src/lib/ecs-js/index.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -1172,7 +1172,7 @@ id: call_Hi3unn5S2tTv3YP5VKJQ5ZDu
 ```json
 {
   "cmd": "rtk sed -n '1,220p' src/lib/ecs-js/resources.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -1185,7 +1185,7 @@ id: call_deVPYKZhKWC9Yp6x9Ly6h5OL
 ```json
 {
   "cmd": "rtk rg -n \"installSpeechBubbleWiring|configureWorld|world\\.resource|new World|createWorld\" src/main.js src/main src/main/runtime src/main/scheduler.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -1198,7 +1198,7 @@ id: call_inPHvrLso1IkROQTx1GL1lya
 ```json
 {
   "cmd": "rtk sed -n '120,190p' src/main/scheduler.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -1211,7 +1211,7 @@ id: call_MlWCNaksakjVklyIhwZHAoAU
 ```json
 {
   "cmd": "rtk sed -n '2730,2775p' src/main.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -1406,7 +1406,7 @@ id: call_Cm5w5KCttsvcQYVZEFM8SgLd
 ```json
 {
   "cmd": "rtk sed -n '1,140p' src/lib/ecs-js/extensions.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -1419,7 +1419,7 @@ id: call_d94HPZbLo4aLzzklFVa0nGPa
 ```json
 {
   "cmd": "rtk sed -n '1,135p' src/main/scheduler.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -1432,7 +1432,7 @@ id: call_562C9IZgztiFlsnb3P0Qk8yP
 ```json
 {
   "cmd": "rtk sed -n '1,55p' src/main/ui/inventoryDataProvider.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -1588,7 +1588,7 @@ id: call_vrQdNUGasClMffpMFvAfGIjq
 ```json
 {
   "cmd": "rtk deno test --allow-read tests/aiSettings.test.mjs tests/openAICompatible.test.mjs tests/aiResource.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -1601,7 +1601,7 @@ id: call_dB9tq3sN1qlRJNxm7fbeTJ0t
 ```json
 {
   "cmd": "rtk git diff -- src/shared/aiSettings.js src/cloud/llm/openAICompatible.js src/main/resources/AI.js src/main/scheduler.js src/main/ui/inventoryDataProvider.js src/display/ui/overlayRenders.js tests/aiSettings.test.mjs tests/openAICompatible.test.mjs tests/aiResource.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -1681,7 +1681,7 @@ id: call_ORWFpsGkxEKoXhlHBHdXyjWD
 ```json
 {
   "cmd": "rtk deno test --allow-read tests/aiSettings.test.mjs tests/openAICompatible.test.mjs tests/aiResource.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -1694,7 +1694,7 @@ id: call_Ik8oisxjsOdwsyweGzK98G2U
 ```json
 {
   "cmd": "rtk deno task guard:architecture",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -1773,7 +1773,7 @@ id: call_O5XqaFd5GIjpPWBIWY09jqiq
 ```json
 {
   "cmd": "rtk git status --short",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -1786,7 +1786,7 @@ id: call_BL3tHaAI22CGlmScIlkEdweN
 ```json
 {
   "cmd": "rtk git diff --stat",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -1799,7 +1799,7 @@ id: call_Q7geRC5aipc7If1GbBVsdACp
 ```json
 {
   "cmd": "rtk git diff -- src/main/resources/AI.js src/rules/resources/AI.js src/cloud/llm/openAICompatible.js src/shared/aiSettings.js tests/aiResource.test.mjs tests/openAICompatible.test.mjs tests/aiSettings.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000
 }
@@ -1872,7 +1872,7 @@ id: call_Fha8xRTARe9fHxpAbJjPsFED
 ```json
 {
   "cmd": "rtk deno task check",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -1927,7 +1927,7 @@ id: call_lCAPqsrZza14ge8vyTOCFiWE
 ```json
 {
   "cmd": "rtk sed -n '1,220p' src/shared/aiSettings.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -1940,7 +1940,7 @@ id: call_VGUFg9MX5uFaSCcOP0G4FddK
 ```json
 {
   "cmd": "rtk sed -n '1,240p' src/cloud/llm/openAICompatible.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -1953,7 +1953,7 @@ id: call_szWVFcH17kVDy4zgCISrdVX9
 ```json
 {
   "cmd": "rtk sed -n '1,180p' src/rules/resources/AI.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -1966,7 +1966,7 @@ id: call_74QxeKkp96aSJYOO2kZcSamc
 ```json
 {
   "cmd": "rtk sed -n '1,180p' src/main/resources/AI.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -2183,7 +2183,7 @@ id: call_L3ByN2lkSCIQmSrJOyz2jB2o
 ```json
 {
   "cmd": "rtk deno test --allow-read tests/aiSettings.test.mjs tests/openAICompatible.test.mjs tests/aiResource.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -2196,7 +2196,7 @@ id: call_dZOV8y3J9p43euPxv3Zvprrt
 ```json
 {
   "cmd": "rtk deno task check",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -2276,7 +2276,7 @@ id: call_2SPfyL8mh302jeLsXINIn5NZ
 ```json
 {
   "cmd": "rtk git status --short",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -2289,7 +2289,7 @@ id: call_anbP9n7N7Lc7YEmPT3z27T6z
 ```json
 {
   "cmd": "rtk nl -ba src/rules/resources/AI.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -2302,7 +2302,7 @@ id: call_tb6HogNe0PY6yDs7prSLNLte
 ```json
 {
   "cmd": "rtk nl -ba src/main/resources/AI.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -2315,7 +2315,7 @@ id: call_cBwQmGH8lgoW8t30nDSaJ5cv
 ```json
 {
   "cmd": "rtk nl -ba src/display/ui/overlayRenders.js | sed -n '195,250p'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -2489,7 +2489,7 @@ id: call_WOiQWaCc4rmBfc6tJ5vF7nvH
 ```json
 {
   "cmd": "rtk nl -ba src/shared/aiSettings.js | sed -n '1,80p'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -2502,7 +2502,7 @@ id: call_G1cSDb4B0BsRykgYk5qVGIjR
 ```json
 {
   "cmd": "rtk nl -ba src/cloud/llm/openAICompatible.js | sed -n '20,75p'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -2515,7 +2515,7 @@ id: call_MAGT78U5AVHU5iyGJ72DZGjL
 ```json
 {
   "cmd": "rtk nl -ba src/main/ui/inventoryDataProvider.js | sed -n '884,956p'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -2528,7 +2528,7 @@ id: call_yLmkBpWIHrZJr5HAJiponDTC
 ```json
 {
   "cmd": "rtk nl -ba src/main/scheduler.js | sed -n '120,137p'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -2735,7 +2735,7 @@ id: call_fzUHm6ZCQMBDkU9ra3NJgv9B
 ```json
 {
   "cmd": "rtk deno test --allow-read tests/aiSettings.test.mjs tests/openAICompatible.test.mjs tests/aiResource.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -2748,7 +2748,7 @@ id: call_hHTjaAgz6XKUSlcDyuAzH8EC
 ```json
 {
   "cmd": "rtk deno task check",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -2822,12 +2822,12 @@ generation async allowances:
 Implemented the experimental AI seam.
 
 Key changes:
-- Added persisted AI settings with default endpoint `http://10.0.0.69:8080/v1/chat/completions` in [aiSettings.js](/home/pjensen/Repos/JSHack/src/shared/aiSettings.js:1).
-- Added OpenAI-compatible chat completions client in [openAICompatible.js](/home/pjensen/Repos/JSHack/src/cloud/llm/openAICompatible.js:37).
-- Added stable `AIResource` token with disabled/null fallback in [AI.js](/home/pjensen/Repos/JSHack/src/rules/resources/AI.js:16).
-- Installed the cloud-backed experimental implementation from [AI.js](/home/pjensen/Repos/JSHack/src/main/resources/AI.js:32) via [scheduler.js](/home/pjensen/Repos/JSHack/src/main/scheduler.js:134).
-- Added Settings tab fields for `Enabled`, `Endpoint URL`, `API Key`, and `Model name` in [overlayRenders.js](/home/pjensen/Repos/JSHack/src/display/ui/overlayRenders.js:206).
-- Wired settings persistence through [inventoryDataProvider.js](/home/pjensen/Repos/JSHack/src/main/ui/inventoryDataProvider.js:895).
+- Added persisted AI settings with default endpoint `http://10.0.0.69:8080/v1/chat/completions` in [aiSettings.js](/home/<USER>/Repos/JSHack/src/shared/aiSettings.js:1).
+- Added OpenAI-compatible chat completions client in [openAICompatible.js](/home/<USER>/Repos/JSHack/src/cloud/llm/openAICompatible.js:37).
+- Added stable `AIResource` token with disabled/null fallback in [AI.js](/home/<USER>/Repos/JSHack/src/rules/resources/AI.js:16).
+- Installed the cloud-backed experimental implementation from [AI.js](/home/<USER>/Repos/JSHack/src/main/resources/AI.js:32) via [scheduler.js](/home/<USER>/Repos/JSHack/src/main/scheduler.js:134).
+- Added Settings tab fields for `Enabled`, `Endpoint URL`, `API Key`, and `Model name` in [overlayRenders.js](/home/<USER>/Repos/JSHack/src/display/ui/overlayRenders.js:206).
+- Wired settings persistence through [inventoryDataProvider.js](/home/<USER>/Repos/JSHack/src/main/ui/inventoryDataProvider.js:895).
 
 Usage shape is:
 
@@ -2854,8 +2854,8 @@ Yes, rules systems can access it. That is exactly why I split it.
 
 The distinction is:
 
-- [src/rules/resources/AI.js](/home/pjensen/Repos/JSHack/src/rules/resources/AI.js:16) defines the stable `AIResource` token that rules systems can import and call with `world.resource(AIResource)`.
-- [src/main/resources/AI.js](/home/pjensen/Repos/JSHack/src/main/resources/AI.js:32) installs the browser/cloud-backed implementation for that token at world setup time.
+- [src/rules/resources/AI.js](/home/<USER>/Repos/JSHack/src/rules/resources/AI.js:16) defines the stable `AIResource` token that rules systems can import and call with `world.resource(AIResource)`.
+- [src/main/resources/AI.js](/home/<USER>/Repos/JSHack/src/main/resources/AI.js:32) installs the browser/cloud-backed implementation for that token at world setup time.
 
 So an NPC speech system can do:
 

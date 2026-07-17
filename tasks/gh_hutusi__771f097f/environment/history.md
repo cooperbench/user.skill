@@ -13,7 +13,7 @@ id: toolu_01N2ATDY6TtX9Fdkqo7XJMs2
 ```json
 {
   "description": "Inventory current game features",
-  "prompt": "You are exploring a Minecraft-inspired voxel game repo at /Users/hutusi/workspace/ai/david/monecraft (Next.js 16, React 19, TypeScript, Three.js, Bun; client-only, saves to localStorage, zero binary assets).\n\nI need a concise inventory of what gameplay features ALREADY exist, so I can recommend what to build next. Please read:\n- CHANGELOG.md (full history of releases; note the latest version and recent additions)\n- docs/manual.md and docs/reference.md (player-facing features: blocks, items, mobs, recipes, mechanics, enchantments, potions, farming, vehicles, etc.)\n- docs/architecture.md (major engine systems: worldgen, lighting, weather, day/night, biomes, dimensions?, redstone-like systems?, multiplayer?)\n- docs/tuning.md skim for what systems have tunables\n- Any TODO/ROADMAP/ideas files if they exist (search for them)\n\nReport back (be specific, structured):\n1. Latest released version + save format version\n2. Full list of major gameplay systems present (one line each): e.g. crafting, smelting, farming, mobs (which ones, hostile/passive), combat, armor, enchanting, potions, anvil/grindstone, vehicles (boats?), weather, day/night, biomes (which), structures (villages? dungeons?), caves/ores, water/lava physics, hunger, XP, beds/spawn, maps, fishing, trading, redstone, nether/end dimensions, etc.\n3. Notable ABSENT features (things a Minecraft-like usually has that this repo clearly lacks)\n4. Any explicit roadmap/TODO notes found in the repo\nSearch breadth: medium.",
+  "prompt": "You are exploring a Minecraft-inspired voxel game repo at /home/<USER>/workspace/ai/david/monecraft (Next.js 16, React 19, TypeScript, Three.js, Bun; client-only, saves to localStorage, zero binary assets).\n\nI need a concise inventory of what gameplay features ALREADY exist, so I can recommend what to build next. Please read:\n- CHANGELOG.md (full history of releases; note the latest version and recent additions)\n- docs/manual.md and docs/reference.md (player-facing features: blocks, items, mobs, recipes, mechanics, enchantments, potions, farming, vehicles, etc.)\n- docs/architecture.md (major engine systems: worldgen, lighting, weather, day/night, biomes, dimensions?, redstone-like systems?, multiplayer?)\n- docs/tuning.md skim for what systems have tunables\n- Any TODO/ROADMAP/ideas files if they exist (search for them)\n\nReport back (be specific, structured):\n1. Latest released version + save format version\n2. Full list of major gameplay systems present (one line each): e.g. crafting, smelting, farming, mobs (which ones, hostile/passive), combat, armor, enchanting, potions, anvil/grindstone, vehicles (boats?), weather, day/night, biomes (which), structures (villages? dungeons?), caves/ores, water/lava physics, hunger, XP, beds/spawn, maps, fishing, trading, redstone, nether/end dimensions, etc.\n3. Notable ABSENT features (things a Minecraft-like usually has that this repo clearly lacks)\n4. Any explicit roadmap/TODO notes found in the repo\nSearch breadth: medium.",
   "subagent_type": "Explore"
 }
 ```
@@ -38,7 +38,7 @@ id: toolu_01KqhgLm4nuncsmY6Md2MUH2
 ```json
 {
   "description": "Check issues, PRs, recent history",
-  "prompt": "You are in the git repo /Users/hutusi/workspace/ai/david/monecraft (a fork; origin is hutusi/monecraft, upstream is likely davidhu0527/monecraft — check `git remote -v`). I want to know what feature work is planned, requested, or in flight.\n\nRead-only investigation:\n1. `git log --oneline -30` — summarize the recent themes of work\n2. `gh issue list --repo hutusi/monecraft --state open --limit 30` and also closed issues from the last month or two if quick (`--state closed --limit 15`)\n3. `gh pr list --repo hutusi/monecraft --state open --limit 15`\n4. If an upstream remote exists, also `gh issue list` and `gh pr list` on the upstream repo (open state)\n5. Look for any labels like \"enhancement\"/\"feature\" and note titles\n\nReport: recent work themes from git log, all open issues/PRs with titles and numbers (fork and upstream), and any closed-but-unimplemented feature requests you notice. Keep it structured and concise.",
+  "prompt": "You are in the git repo /home/<USER>/workspace/ai/david/monecraft (a fork; origin is hutusi/monecraft, upstream is likely davidhu0527/monecraft — check `git remote -v`). I want to know what feature work is planned, requested, or in flight.\n\nRead-only investigation:\n1. `git log --oneline -30` — summarize the recent themes of work\n2. `gh issue list --repo hutusi/monecraft --state open --limit 30` and also closed issues from the last month or two if quick (`--state closed --limit 15`)\n3. `gh pr list --repo hutusi/monecraft --state open --limit 15`\n4. If an upstream remote exists, also `gh issue list` and `gh pr list` on the upstream repo (open state)\n5. Look for any labels like \"enhancement\"/\"feature\" and note titles\n\nReport: recent work themes from git log, all open issues/PRs with titles and numbers (fork and upstream), and any closed-but-unimplemented feature requests you notice. Keep it structured and concise.",
   "subagent_type": "Explore"
 }
 ```
@@ -125,7 +125,7 @@ id: toolu_01BFgQXLpwNmxMoGXLfC3xtC
 ```json
 {
   "description": "Design aquatic update plan",
-  "prompt": "You are a software architect designing an implementation plan for a new feature arc in the repo /Users/hutusi/workspace/ai/david/monecraft — a Minecraft-inspired browser voxel game (Next.js 16, React 19, TypeScript strict, Three.js, Bun; single-player, client-only, localStorage saves; ZERO binary assets — all textures/sprites are pixel code, all audio is ZZFX/WebAudio procedural).\n\n## Feature to plan: \"Aquatic update\" — give the ocean content, right after water vehicles (rafts/ships) just shipped\n\nTarget scope (you should refine/slice it, and may trim if something is disproportionately hard):\n1. **Fish mobs** — small passive water mobs (e.g. cod/salmon-like, maybe 2 variants) that swim in ocean water, flee the player, drop raw fish when killed (a `raw fish` item already exists — used for fishing catches and taming cats). Needs water-confined movement AI.\n2. **Underwater flora** — kelp (grows upward via the existing random-tick system, harvestable, maybe smeltable/edible) and optionally coral (decorative). NOTE: the renderer may assume full-cube blocks — check how crops/saplings are rendered (docs say \"crops/saplings are painted full cubes\") and follow that pattern.\n3. **Shipwreck structures** — generated on/under ocean water with tiered loot chests (a dungeon loot-chest system with lazy-filled chests + a village structure-generation seam […]
+  "prompt": "You are a software architect designing an implementation plan for a new feature arc in the repo /home/<USER>/workspace/ai/david/monecraft — a Minecraft-inspired browser voxel game (Next.js 16, React 19, TypeScript strict, Three.js, Bun; single-player, client-only, localStorage saves; ZERO binary assets — all textures/sprites are pixel code, all audio is ZZFX/WebAudio procedural).\n\n## Feature to plan: \"Aquatic update\" — give the ocean content, right after water vehicles (rafts/ships) just shipped\n\nTarget scope (you should refine/slice it, and may trim if something is disproportionately hard):\n1. **Fish mobs** — small passive water mobs (e.g. cod/salmon-like, maybe 2 variants) that swim in ocean water, flee the player, drop raw fish when killed (a `raw fish` item already exists — used for fishing catches and taming cats). Needs water-confined movement AI.\n2. **Underwater flora** — kelp (grows upward via the existing random-tick system, harvestable, maybe smeltable/edible) and optionally coral (decorative). NOTE: the renderer may assume full-cube blocks — check how crops/saplings are rendered (docs say \"crops/saplings are painted full cubes\") and follow that pattern.\n3. **Shipwreck structures** — generated on/under ocean water with tiered loot chests (a dungeon loot-chest system with lazy-filled chests + a village structure-generation seam […]
 
 > TOOL
 
@@ -154,7 +154,7 @@ tool_use Bash
 id: toolu_019Vk4tLb4jTuF5asDbnJWGG
 ```json
 {
-  "command": "grep -rn \"WORLDGEN_VERSION\" /Users/hutusi/workspace/ai/david/monecraft/lib --include=\"*.ts\" | grep -v test | head -10",
+  "command": "grep -rn \"WORLDGEN_VERSION\" /home/<USER>/workspace/ai/david/monecraft/lib --include=\"*.ts\" | grep -v test | head -10",
   "description": "Find where WORLDGEN_VERSION is defined"
 }
 ```
@@ -164,12 +164,12 @@ id: toolu_019Vk4tLb4jTuF5asDbnJWGG
 tool_result
 id: toolu_019Vk4tLb4jTuF5asDbnJWGG
 ```
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/worlds.ts:10: * regeneration; `worldgenVersion` records the WORLDGEN_VERSION it was generated
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/worlds.ts:17:import { WORLDGEN_VERSION } from "./config";
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/worlds.ts:107:    worldgenVersion: num(entry.worldgenVersion, WORLDGEN_VERSION),
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/worlds.ts:155:    worldgenVersion: WORLDGEN_VERSION,
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/config.ts:332:// records the WORLDGEN_VERSION it was generated under; a world whose recorded
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/config.ts:337:export const WORLDGEN_VERSION = 9;
+/home/<USER>/workspace/ai/david/monecraft/lib/game/worlds.ts:10: * regeneration; `worldgenVersion` records the WORLDGEN_VERSION it was generated
+/home/<USER>/workspace/ai/david/monecraft/lib/game/worlds.ts:17:import { WORLDGEN_VERSION } from "./config";
+/home/<USER>/workspace/ai/david/monecraft/lib/game/worlds.ts:107:    worldgenVersion: num(entry.worldgenVersion, WORLDGEN_VERSION),
+/home/<USER>/workspace/ai/david/monecraft/lib/game/worlds.ts:155:    worldgenVersion: WORLDGEN_VERSION,
+/home/<USER>/workspace/ai/david/monecraft/lib/game/config.ts:332:// records the WORLDGEN_VERSION it was generated under; a world whose recorded
+/home/<USER>/workspace/ai/david/monecraft/lib/game/config.ts:337:export const WORLDGEN_VERSION = 9;
 ```
 
 > TOOL
@@ -178,7 +178,7 @@ tool_use Bash
 id: toolu_01Mj4QvD6kfavzaF9AonD7Va
 ```json
 {
-  "command": "ls /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/ && grep -n \"surfaceYAt\\|halfHeight\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.ts | head -8 && grep -n \"lootedChests\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts | head -3",
+  "command": "ls /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/ && grep -n \"surfaceYAt\\|halfHeight\" /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.ts | head -8 && grep -n \"lootedChests\" /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts | head -3",
   "description": "Verify mobAI clamp and lootedChests claims"
 }
 ```
@@ -243,7 +243,7 @@ tool_use Bash
 id: toolu_0143KxBiTnZ7yTM9jyCCFQPE
 ```json
 {
-  "command": "find /Users/hutusi/workspace/ai/david/monecraft/lib /Users/hutusi/workspace/ai/david/monecraft/components -name \"*bossTrack*\" -o -name \"*BossHealth*\" | head; grep -rn \"bearingDegrees\\|bossTracking\" /Users/hutusi/workspace/ai/david/monecraft/lib/game --include=\"*.ts\" -l | head -5",
+  "command": "find /home/<USER>/workspace/ai/david/monecraft/lib /home/<USER>/workspace/ai/david/monecraft/components -name \"*bossTrack*\" -o -name \"*BossHealth*\" | head; grep -rn \"bearingDegrees\\|bossTracking\" /home/<USER>/workspace/ai/david/monecraft/lib/game --include=\"*.ts\" -l | head -5",
   "description": "Locate boss tracking bearing/distance code"
 }
 ```
@@ -253,15 +253,15 @@ id: toolu_0143KxBiTnZ7yTM9jyCCFQPE
 tool_result
 id: toolu_0143KxBiTnZ7yTM9jyCCFQPE
 ```
-/Users/hutusi/workspace/ai/david/monecraft/components/game/BossHealthBar.tsx
-/Users/hutusi/workspace/ai/david/monecraft/components/game/BossHealthBar.test.tsx
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/bossTracking.ts
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/bossTracking.test.ts
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/bossTracking.ts
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/bossTracking.test.ts
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts
+/home/<USER>/workspace/ai/david/monecraft/components/game/BossHealthBar.tsx
+/home/<USER>/workspace/ai/david/monecraft/components/game/BossHealthBar.test.tsx
+/home/<USER>/workspace/ai/david/monecraft/lib/game/bossTracking.ts
+/home/<USER>/workspace/ai/david/monecraft/lib/game/bossTracking.test.ts
+/home/<USER>/workspace/ai/david/monecraft/lib/game/bossTracking.ts
+/home/<USER>/workspace/ai/david/monecraft/lib/game/bossTracking.test.ts
+/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts
+/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts
+/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts
 ```
 
 > AGENT
@@ -274,7 +274,7 @@ tool_use Write
 id: toolu_01HzyGtNqeiTLy8RY4bjbpQM
 ```json
 {
-  "file_path": "/Users/hutusi/.claude/plans/what-s-next-features-do-zesty-giraffe.md",
+  "file_path": "/home/<USER>/.claude/plans/what-s-next-features-do-zesty-giraffe.md",
   "content": "# Aquatic Update — `feat/aquatic-update`\n\n## Context\n\nThe user asked what feature to build next. Exploration showed no backlog exists (issues disabled on the fork, upstream empty, all doc \"future\" hints already built), and the pending `[Unreleased]` release (advancements, companions, villages/raids, water vehicles) leaves the ocean as the obvious gap: rafts and ships just shipped, but there's nothing to sail to — no fish, no underwater flora, no ocean structures. This update gives the ocean content while reusing seams that just landed: the dungeon lazy-loot-chest system, the village structure-generation pattern, the fishing treasure table, and the boss-tracking HUD bearing math.\n\nCandidate directions considered and set aside: deferred-mechanics batch (Fire Aspect/Thorns/Night Vision/splash potions — good quick follow-up), Nether-style dimension (too big; wants buckets/portals first), redstone-lite, slabs/stairs (breaks the full-cube renderer assumption).\n\n**In scope:** 2 fish mobs (cod + salmon), kelp with random-tick growth + dried-kelp food, 2 decorative coral blocks, sunken shipwrecks with loot chests, buried beach treasure + `treasure_map` item with compass HUD + minimap X.\n**Explicitly deferred:** drowned-like hostile (needs 3D water pursuit, water-aware hostile spawn director, underwater LOS — not cheap), full cartographic map rendering, fish buckets/breeding.\n\n## Verified facts the plan builds on\n\n- Mob […]
 
 > TOOL
@@ -282,7 +282,7 @@ id: toolu_01HzyGtNqeiTLy8RY4bjbpQM
 tool_result
 id: toolu_01HzyGtNqeiTLy8RY4bjbpQM
 ```
-File created successfully at: /Users/hutusi/.claude/plans/what-s-next-features-do-zesty-giraffe.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/plans/what-s-next-features-do-zesty-giraffe.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -332,7 +332,7 @@ id: toolu_01QEsC4nV5bH3CRS73yGSBsK
 ```
 User has approved your plan. You can now start coding. Start with updating your todo list if applicable
 
-Your plan has been saved to: /Users/hutusi/.claude/plans/what-s-next-features-do-zesty-giraffe.md
+Your plan has been saved to: /home/<USER>/.claude/plans/what-s-next-features-do-zesty-giraffe.md
 You can refer back to it if needed during implementation.
 
 ## Approved Plan (edited by user):
@@ -525,7 +525,7 @@ tool_use Read
 id: toolu_01Y67pKDf22s8fzG2Yo6UbSK
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/blocks.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/blocks.ts"
 }
 ```
 
@@ -580,7 +580,7 @@ tool_use Read
 id: toolu_01FgjPbHQEcaWjQrcBrJTvRn
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/atlas.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/atlas.ts"
 }
 ```
 
@@ -623,7 +623,7 @@ tool_use Bash
 id: toolu_01LXTA4h6BxPER57ByAikNzq
 ```json
 {
-  "command": "wc -l /Users/hutusi/workspace/ai/david/monecraft/lib/world/generation.ts /Users/hutusi/workspace/ai/david/monecraft/lib/world/lighting.ts /Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/materials.ts /Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts /Users/hutusi/workspace/ai/david/monecraft/lib/game/recipes.ts /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/randomTicks.ts /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts /Users/hutusi/workspace/ai/david/monecraft/lib/ui/spritePixels.ts",
+  "command": "wc -l /home/<USER>/workspace/ai/david/monecraft/lib/world/generation.ts /home/<USER>/workspace/ai/david/monecraft/lib/world/lighting.ts /home/<USER>/workspace/ai/david/monecraft/lib/game/audio/materials.ts /home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts /home/<USER>/workspace/ai/david/monecraft/lib/game/recipes.ts /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/randomTicks.ts /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts /home/<USER>/workspace/ai/david/monecraft/lib/ui/spritePixels.ts",
   "description": "Get line counts of slice-1 files"
 }
 ```
@@ -633,14 +633,14 @@ id: toolu_01LXTA4h6BxPER57ByAikNzq
 tool_result
 id: toolu_01LXTA4h6BxPER57ByAikNzq
 ```
-     750 /Users/hutusi/workspace/ai/david/monecraft/lib/world/generation.ts
-     310 /Users/hutusi/workspace/ai/david/monecraft/lib/world/lighting.ts
-      69 /Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/materials.ts
-     427 /Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts
-     704 /Users/hutusi/workspace/ai/david/monecraft/lib/game/recipes.ts
-      84 /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/randomTicks.ts
-     220 /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts
-     926 /Users/hutusi/workspace/ai/david/monecraft/lib/ui/spritePixels.ts
+     750 /home/<USER>/workspace/ai/david/monecraft/lib/world/generation.ts
+     310 /home/<USER>/workspace/ai/david/monecraft/lib/world/lighting.ts
+      69 /home/<USER>/workspace/ai/david/monecraft/lib/game/audio/materials.ts
+     427 /home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts
+     704 /home/<USER>/workspace/ai/david/monecraft/lib/game/recipes.ts
+      84 /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/randomTicks.ts
+     220 /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts
+     926 /home/<USER>/workspace/ai/david/monecraft/lib/ui/spritePixels.ts
     3490 total
 ```
 
@@ -650,7 +650,7 @@ tool_use Read
 id: toolu_015QfCr3pLQhBi2uEwCmXu8f
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/generation.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/generation.ts"
 }
 ```
 
@@ -697,7 +697,7 @@ tool_use Read
 id: toolu_01NyQAhunJFaFbHfC6Q3xpSH
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/lighting.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/lighting.ts"
 }
 ```
 
@@ -737,7 +737,7 @@ tool_use Read
 id: toolu_01AGXRtHU2CXHe5dgasnWbfE
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/materials.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/audio/materials.ts"
 }
 ```
 
@@ -800,7 +800,7 @@ tool_use Read
 id: toolu_01PgWjPV1meVVpNpS6yJJC5U
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/randomTicks.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/randomTicks.ts"
 }
 ```
 
@@ -843,7 +843,7 @@ tool_use Read
 id: toolu_01AdQXgbDxxUd6qFf4XfUAmd
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts"
 }
 ```
 
@@ -888,7 +888,7 @@ tool_use Read
 id: toolu_01YG2TT59xkGc3UKwGpfdwjd
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts"
 }
 ```
 
@@ -964,7 +964,7 @@ tool_use Bash
 id: toolu_01GuogUB3sMP8xKfUGAeePAC
 ```json
 {
-  "command": "grep -n \"station\\|category\\|cooked_fish\\|charcoal\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/recipes.ts | head -40",
+  "command": "grep -n \"station\\|category\\|cooked_fish\\|charcoal\" /home/<USER>/workspace/ai/david/monecraft/lib/game/recipes.ts | head -40",
   "description": "Find furnace recipe and category patterns in recipes.ts"
 }
 ```
@@ -1015,7 +1015,7 @@ tool_use Bash
 id: toolu_013ud2vFzxo9BCdiKEGMarC2
 ```json
 {
-  "command": "grep -n \"GRASS_SPREAD_CHANCE\\|SAPLING_GROWTH_CHANCE\\|CROP_GROWTH_CHANCE\\|RANDOM_TICK\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/config.ts",
+  "command": "grep -n \"GRASS_SPREAD_CHANCE\\|SAPLING_GROWTH_CHANCE\\|CROP_GROWTH_CHANCE\\|RANDOM_TICK\" /home/<USER>/workspace/ai/david/monecraft/lib/game/config.ts",
   "description": "Find random-tick tunables in config.ts"
 }
 ```
@@ -1040,7 +1040,7 @@ tool_use Read
 id: toolu_01HUMahVzP9zzJSSCmjfzYkb
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/recipes.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/recipes.ts",
   "offset": 75,
   "limit": 130
 }
@@ -1085,7 +1085,7 @@ tool_use Read
 id: toolu_01SFu6KRgVCidjLnHQCbGCr4
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/config.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/config.ts",
   "offset": 240,
   "limit": 60
 }
@@ -1129,7 +1129,7 @@ tool_use Read
 id: toolu_016HyFT9pgQw4Hhge6mEJu6W
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/adding-content.md"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/adding-content.md"
 }
 ```
 
@@ -1162,7 +1162,7 @@ tool_use Bash
 id: toolu_01WbdDmgeNvEogepxy9jUQUQ
 ```json
 {
-  "command": "grep -n \"raw_fish\\|ITEM_SPRITE_GRIDS\\|ORE_ACCENTS\" /Users/hutusi/workspace/ai/david/monecraft/lib/ui/spritePixels.ts | head -20",
+  "command": "grep -n \"raw_fish\\|ITEM_SPRITE_GRIDS\\|ORE_ACCENTS\" /home/<USER>/workspace/ai/david/monecraft/lib/ui/spritePixels.ts | head -20",
   "description": "Locate sprite grid definitions"
 }
 ```
@@ -1185,7 +1185,7 @@ tool_use Read
 id: toolu_012VwNcj68vcPLapouRf8oHd
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/ui/spritePixels.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/ui/spritePixels.ts",
   "offset": 560,
   "limit": 290
 }
@@ -1293,7 +1293,7 @@ tool_use Read
 id: toolu_01HSAkDZZLN8mdXm9bCcFPRX
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/generation.test.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/generation.test.ts"
 }
 ```
 
@@ -1345,7 +1345,7 @@ tool_use Bash
 id: toolu_01EFrqTZSCcJzUqP1kz7B4Ps
 ```json
 {
-  "command": "grep -n \"re-baseline\\|rebaseline\\|hash\" /Users/hutusi/workspace/ai/david/monecraft/docs/testing.md | head",
+  "command": "grep -n \"re-baseline\\|rebaseline\\|hash\" /home/<USER>/workspace/ai/david/monecraft/docs/testing.md | head",
   "description": "Find hash re-baseline policy in testing.md"
 }
 ```
@@ -1372,7 +1372,7 @@ tool_use Bash
 id: toolu_01E1BNRySs7ZD3Mxpsss2rx2
 ```json
 {
-  "command": "grep -n \"worldgenVersion\\|WORLDGEN_VERSION\" /Users/hutusi/workspace/ai/david/monecraft/docs/save-format.md | head -8 && sed -n 325,345p /Users/hutusi/workspace/ai/david/monecraft/lib/game/config.ts",
+  "command": "grep -n \"worldgenVersion\\|WORLDGEN_VERSION\" /home/<USER>/workspace/ai/david/monecraft/docs/save-format.md | head -8 && sed -n 325,345p /home/<USER>/workspace/ai/david/monecraft/lib/game/config.ts",
   "description": "Check worldgen version policy in save-format docs and config"
 }
 ```
@@ -1397,7 +1397,7 @@ id: toolu_012GguqNufHGYPttvWjCPJuW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/blocks.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/blocks.ts",
   "old_string": "  // A crafted station: right-click to open the grindstone panel, which strips a\n  // held item's enchantments and refunds some XP (see interact.ts).\n  Grindstone = 54\n}",
   "new_string": "  // A crafted station: right-click to open the grindstone panel, which strips a\n  // held item's enchantments and refunds some XP (see interact.ts).\n  Grindstone = 54,\n  // Ocean flora. Kelp is a solid cube painted to read as a plant (like wheat)\n  // that generates in stalks on the ocean floor and grows upward through water\n  // via random ticks; breaking one cell breaks the stalk above it (mining.ts).\n  Kelp = 55,\n  // Decorative reef blocks scattered on the ocean floor (worldgen only).\n  CoralPink = 56,\n  CoralBlue = 57\n}"
 }
@@ -1408,7 +1408,7 @@ id: toolu_012GguqNufHGYPttvWjCPJuW
 tool_result
 id: toolu_012GguqNufHGYPttvWjCPJuW
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/blocks.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/blocks.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1418,7 +1418,7 @@ id: toolu_01HjoNTBmJAHeMrC7A7YYhSh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/blocks.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/blocks.ts",
   "old_string": "  [BlockId.Anvil]: 0x4a4a52,\n  [BlockId.Grindstone]: 0x8a7a5c\n};",
   "new_string": "  [BlockId.Anvil]: 0x4a4a52,\n  [BlockId.Grindstone]: 0x8a7a5c,\n  [BlockId.Kelp]: 0x3f7a4a,\n  [BlockId.CoralPink]: 0xd9739c,\n  [BlockId.CoralBlue]: 0x4f86c8\n};"
 }
@@ -1429,7 +1429,7 @@ id: toolu_01HjoNTBmJAHeMrC7A7YYhSh
 tool_result
 id: toolu_01HjoNTBmJAHeMrC7A7YYhSh
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/blocks.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/blocks.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1439,7 +1439,7 @@ id: toolu_01WQYF5QeismSRMurvisZMNT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/blocks.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/blocks.ts",
   "old_string": "  // A stone wheel on a wooden frame (painted in atlas.ts).\n  [BlockId.Grindstone]: [0.5, 0.43, 0.32]\n};",
   "new_string": "  // A stone wheel on a wooden frame (painted in atlas.ts).\n  [BlockId.Grindstone]: [0.5, 0.43, 0.32],\n  // A dark sea-green stalk with paler fronds (painted in atlas.ts).\n  [BlockId.Kelp]: [0.16, 0.4, 0.24],\n  // Reef corals: a branching pattern over the base color (painted in atlas.ts).\n  [BlockId.CoralPink]: [0.8, 0.42, 0.58],\n  [BlockId.CoralBlue]: [0.28, 0.5, 0.76]\n};"
 }
@@ -1450,7 +1450,7 @@ id: toolu_01WQYF5QeismSRMurvisZMNT
 tool_result
 id: toolu_01WQYF5QeismSRMurvisZMNT
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/blocks.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/blocks.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1464,7 +1464,7 @@ id: toolu_01QZCWoQUdov4ARYNdHRPmQL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/atlas.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/atlas.ts",
   "old_string": "        if (isDoorBlock(block)) {",
   "new_string": "        if (block === BlockId.Kelp) {\n          // A swaying sea plant: a dark central stalk with paler fronds fanning\n          // out to the sides. Like wheat, a full cube painted to read as a plant.\n          const stalk = x >= 7 && x <= 8;\n          const frond = (x + y * 2) % 5 === 0 || (ATLAS_TILE_SIZE - 1 - x + y * 2) % 5 === 0;\n          c = stalk ? tone([0.13, 0.34, 0.2], 0.85 + n * 0.25) : frond ? tone([0.3, 0.58, 0.32], 0.8 + n * 0.35) : tone([0.1, 0.26, 0.18], 0.85 + n * 0.25);\n        }\n        if (block === BlockId.CoralPink || block === BlockId.CoralBlue) {\n          // Reef coral: bright branching arms over a darker base, with pale polyp\n          // flecks where the hash noise peaks.\n          const branch = (x * 3 + y * 5 + block * 7) % 9 < 3;\n          c = branch ? tone(base, 1.1 + n * 0.15) : tone(base, 0.6 + n * 0.2);\n          if (n > 0.88) c = tone([0.95, 0.93, 0.88], 0.95);\n        }\n        if (isDoorBlock(block)) {"
 }
@@ -1475,7 +1475,7 @@ id: toolu_01QZCWoQUdov4ARYNdHRPmQL
 tool_result
 id: toolu_01QZCWoQUdov4ARYNdHRPmQL
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/atlas.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/atlas.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1485,7 +1485,7 @@ id: toolu_01TznU8GKWW554UAVVP11SxY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/lighting.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/lighting.ts",
   "old_string": "    case BlockId.Leaves:\n    case BlockId.Water:\n      return 1;",
   "new_string": "    case BlockId.Leaves:\n    case BlockId.Water:\n    case BlockId.Kelp:\n      return 1;"
 }
@@ -1496,7 +1496,7 @@ id: toolu_01TznU8GKWW554UAVVP11SxY
 tool_result
 id: toolu_01TznU8GKWW554UAVVP11SxY
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/lighting.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/lighting.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1506,7 +1506,7 @@ id: toolu_013eukncRu9UvZR6bcgxV2Up
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/materials.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/audio/materials.ts",
   "old_string": "  [BlockId.Anvil]: \"stone\",\n  [BlockId.Grindstone]: \"stone\"\n};",
   "new_string": "  [BlockId.Anvil]: \"stone\",\n  [BlockId.Grindstone]: \"stone\",\n  [BlockId.Kelp]: \"grass\",\n  [BlockId.CoralPink]: \"stone\",\n  [BlockId.CoralBlue]: \"stone\"\n};"
 }
@@ -1517,7 +1517,7 @@ id: toolu_013eukncRu9UvZR6bcgxV2Up
 tool_result
 id: toolu_013eukncRu9UvZR6bcgxV2Up
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/materials.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/audio/materials.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1527,7 +1527,7 @@ id: toolu_01FaWuRAwVD1QtADkmy8iGMv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/generation.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/generation.ts",
   "old_string": "  // Coal is placed in its own pass on a dedicated PRNG (see placeCoal) so it never\n  // shifts the shared `rand` stream — existing ores, trees, and structures stay\n  // byte-identical to before coal, exactly as deep-cave lava did. It is the\n  // shallowest, most common ore: large veins reaching near the surface.\n  coalConfig: Object.freeze({ attempts: 160000, minY: 4, maxYOffset: 8, minSize: 4, maxSize: 12 })\n});",
   "new_string": "  // Coal is placed in its own pass on a dedicated PRNG (see placeCoal) so it never\n  // shifts the shared `rand` stream — existing ores, trees, and structures stay\n  // byte-identical to before coal, exactly as deep-cave lava did. It is the\n  // shallowest, most common ore: large veins reaching near the surface.\n  coalConfig: Object.freeze({ attempts: 160000, minY: 4, maxYOffset: 8, minSize: 4, maxSize: 12 }),\n  // Ocean flora (kelp stalks and reef coral), hash-gated per ocean-floor column\n  // like cacti so density follows the actual ocean area. kelpSurfaceClearance is\n  // the water that must remain above a stalk's top — kelp is a solid block, so\n  // the clearance keeps boats, fishing casts, and the water surface […]
 
@@ -1536,7 +1536,7 @@ id: toolu_01FaWuRAwVD1QtADkmy8iGMv
 tool_result
 id: toolu_01FaWuRAwVD1QtADkmy8iGMv
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/generation.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/generation.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1546,7 +1546,7 @@ id: toolu_014ptXavDSM33y1eLm6Bbdw4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/generation.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/generation.ts",
   "old_string": "  // Villages run LAST on their own decoupled PRNG (villageRand), so they add\n  // structures without shifting any other stream — every pass above stays\n  // byte-identical to a village-less world of the same seed.\n  placeVillages(world, cfg);\n}",
   "new_string": "  // Villages run on their own decoupled PRNG (villageRand), so they add\n  // structures without shifting any other stream — every pass above stays\n  // byte-identical to a village-less world of the same seed.\n  placeVillages(world, cfg);\n  // Ocean flora runs last: hash-gated like cacti (consumes no shared PRNG), so\n  // every earlier pass stays byte-identical to a kelp-less world of the same seed.\n  placeOceanFlora(world, cfg);\n}"
 }
@@ -1557,7 +1557,7 @@ id: toolu_014ptXavDSM33y1eLm6Bbdw4
 tool_result
 id: toolu_014ptXavDSM33y1eLm6Bbdw4
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/generation.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/generation.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1567,7 +1567,7 @@ id: toolu_01KEhj9vdjekMnUXW6UA2EUF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/generation.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/generation.ts",
   "old_string": "function placeStructures(world: VoxelWorld, rand: () => number): void {",
   "new_string": "/**\n * Kelp stalks and reef coral on the ocean floor. Hash-gated column scan like\n * placeCacti (no shared-PRNG draws): each sandy ocean-floor column deep enough\n * under the sea rolls for a kelp stalk or a lone coral block. Stalk heights cap\n * so at least kelpSurfaceClearance water remains above the top — kelp is solid,\n * and the clearance keeps the water surface (boats, fishing) clear of it.\n */\nfunction placeOceanFlora(world: VoxelWorld, cfg: TerrainConfig): void {\n  const { kelpChance, coralChance, kelpMaxHeight, kelpSurfaceClearance } = GEN.oceanFlora;\n  for (let x = 4; x < world.sizeX - 4; x += 1) {\n    for (let z = 4; z < world.sizeZ - 4; z += 1) {\n      if (world.getBiome(x, z) !== BiomeId.Ocean) continue;\n\n      const topY = world.highestSolidY(x, z);\n      if (world.get(x, topY, z) !== BlockId.Sand) continue;\n      // Need room for at least one flora block plus the clearance band above it.\n      const depth = cfg.seaLevel - topY;\n      if (depth < kelpSurfaceClearance + 1) continue;\n\n      const roll = hash2D(x * 2.9 + 5.7, z * 1.9 - 3.3);\n      if (roll < kelpChance) {\n        const […]
 
@@ -1576,7 +1576,7 @@ id: toolu_01KEhj9vdjekMnUXW6UA2EUF
 tool_result
 id: toolu_01KEhj9vdjekMnUXW6UA2EUF
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/generation.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/generation.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1590,7 +1590,7 @@ id: toolu_014PCnos6ReRk35nUt1KYSNw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/config.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/config.ts",
   "old_string": "// The deterministic world-generation baseline. Bumped whenever worldgen\n// changes, so old block-diffs (which index against generated terrain) can't be\n// applied to a different baseline: v6 added dungeons; v7 added deep-cave lava\n// lakes; v8 added shallow coal ore; v9 added generated villages. Each world\n// records the WORLDGEN_VERSION it was generated under; a world whose recorded\n// version differs from this constant has its block-diffs discarded and is\n// rebooted from its stored seed (lib/game/worlds.ts). The save *schema* (SaveData)\n// is independent of this — lighting is a derived cache and lava is worldgen, so\n// neither is persisted, and additive schema bumps don't touch it.\nexport const WORLDGEN_VERSION = 9;",
   "new_string": "// The deterministic world-generation baseline. Bumped whenever worldgen\n// changes, so old block-diffs (which index against generated terrain) can't be\n// applied to a different baseline: v6 added dungeons; v7 added deep-cave lava\n// lakes; v8 added shallow coal ore; v9 added generated villages; v10 added\n// ocean flora (kelp/coral) and the aquatic-update structures. Each world\n// records the WORLDGEN_VERSION it was generated under; a world whose recorded\n// version differs from this constant has its block-diffs discarded and is\n// rebooted from its stored seed (lib/game/worlds.ts). The save *schema* (SaveData)\n// […]
 
@@ -1599,7 +1599,7 @@ id: toolu_014PCnos6ReRk35nUt1KYSNw
 tool_result
 id: toolu_014PCnos6ReRk35nUt1KYSNw
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1609,7 +1609,7 @@ id: toolu_01TY7Kpa6zLjnh2N8J3vS6z1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/config.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/config.ts",
   "old_string": "export const SAPLING_GROWTH_CHANCE = 0.12;\nexport const LEAVES_SAPLING_DROP_CHANCE = 0.08;\nexport const GRASS_SPREAD_CHANCE = 0.18;",
   "new_string": "export const SAPLING_GROWTH_CHANCE = 0.12;\nexport const LEAVES_SAPLING_DROP_CHANCE = 0.08;\nexport const GRASS_SPREAD_CHANCE = 0.18;\n// Kelp regrowth: the per-sampled-tick odds a kelp stalk's top grows one block\n// up into the water above. Height and surface clearance reuse the worldgen\n// invariants in GEN.oceanFlora (generation.ts) so grown and generated stalks\n// obey the same caps.\nexport const KELP_GROWTH_CHANCE = 0.2;"
 }
@@ -1620,7 +1620,7 @@ id: toolu_01TY7Kpa6zLjnh2N8J3vS6z1
 tool_result
 id: toolu_01TY7Kpa6zLjnh2N8J3vS6z1
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1634,7 +1634,7 @@ id: toolu_01EmXwLZw4dNc3uEsEZSK2t6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts",
   "old_string": "  [BlockId.Torch]: 1,\n  [BlockId.Tnt]: 1,\n  [BlockId.Sapling]: 1\n};",
   "new_string": "  [BlockId.Torch]: 1,\n  [BlockId.Tnt]: 1,\n  [BlockId.Sapling]: 1,\n  [BlockId.Kelp]: 1,\n  [BlockId.CoralPink]: 2,\n  [BlockId.CoralBlue]: 2\n};"
 }
@@ -1645,7 +1645,7 @@ id: toolu_01EmXwLZw4dNc3uEsEZSK2t6
 tool_result
 id: toolu_01EmXwLZw4dNc3uEsEZSK2t6
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1655,7 +1655,7 @@ id: toolu_01TyzDKuutWRy3uUGVUpP7Az
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts",
   "old_string": "  { id: \"wood_hoe\", label: \"Wood Hoe\", kind: \"tool\", minePower: 1.0, mineTier: 0, maxDurability: 90 },\n  { id: \"sapling\", label: \"Sapling\", kind: \"block\", blockId: BlockId.Sapling },",
   "new_string": "  { id: \"wood_hoe\", label: \"Wood Hoe\", kind: \"tool\", minePower: 1.0, mineTier: 0, maxDurability: 90 },\n  { id: \"sapling\", label: \"Sapling\", kind: \"block\", blockId: BlockId.Sapling },\n  // Ocean flora — kelp is harvested from ocean-floor stalks and dries into a\n  // light snack at a furnace; corals are decorative reef blocks.\n  { id: \"kelp\", label: \"Kelp\", kind: \"block\", blockId: BlockId.Kelp },\n  { id: \"coral_pink\", label: \"Pink Coral\", kind: \"block\", blockId: BlockId.CoralPink },\n  { id: \"coral_blue\", label: \"Blue Coral\", kind: \"block\", blockId: BlockId.CoralBlue },\n  { id: \"dried_kelp\", label: \"Dried Kelp\", kind: \"food\", hunger: 2 },"
 }
@@ -1666,7 +1666,7 @@ id: toolu_01TyzDKuutWRy3uUGVUpP7Az
 tool_result
 id: toolu_01TyzDKuutWRy3uUGVUpP7Az
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1676,7 +1676,7 @@ id: toolu_016JjHWz4BkngLCd6Y5SWzU2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts",
   "old_string": "  [BlockId.Tnt]: \"tnt\",\n  [BlockId.Sapling]: \"sapling\",\n  [BlockId.DoorNorthLower]: \"door\",",
   "new_string": "  [BlockId.Tnt]: \"tnt\",\n  [BlockId.Sapling]: \"sapling\",\n  [BlockId.Kelp]: \"kelp\",\n  [BlockId.CoralPink]: \"coral_pink\",\n  [BlockId.CoralBlue]: \"coral_blue\",\n  [BlockId.DoorNorthLower]: \"door\","
 }
@@ -1687,7 +1687,7 @@ id: toolu_016JjHWz4BkngLCd6Y5SWzU2
 tool_result
 id: toolu_016JjHWz4BkngLCd6Y5SWzU2
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1697,7 +1697,7 @@ id: toolu_01C6muRgvBjScTbUioRbrV9Y
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/recipes.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/recipes.ts",
   "old_string": "  {\n    id: \"cook_fish_charcoal\",\n    label: \"Raw Fish + Charcoal -> Cooked Fish\",\n    cost: [\n      { slotId: \"raw_fish\", count: 1 },\n      { slotId: \"charcoal\", count: 1 }\n    ],\n    result: { slotId: \"cooked_fish\", count: 1 },\n    station: \"furnace\"\n  },",
   "new_string": "  {\n    id: \"cook_fish_charcoal\",\n    label: \"Raw Fish + Charcoal -> Cooked Fish\",\n    cost: [\n      { slotId: \"raw_fish\", count: 1 },\n      { slotId: \"charcoal\", count: 1 }\n    ],\n    result: { slotId: \"cooked_fish\", count: 1 },\n    station: \"furnace\"\n  },\n  // Kelp is abundant on the ocean floor, so one fuel dries a whole bundle —\n  // a cheap light snack rather than a meal.\n  {\n    id: \"dry_kelp\",\n    label: \"3 Kelp + Coal -> 3 Dried Kelp\",\n    cost: [\n      { slotId: \"kelp\", count: 3 },\n      { slotId: \"coal\", count: 1 }\n    ],\n    result: { slotId: \"dried_kelp\", count: 3 },\n    station: \"furnace\"\n  },\n  {\n    id: \"dry_kelp_charcoal\",\n    label: \"3 Kelp + Charcoal -> 3 Dried Kelp\",\n    cost: [\n      { slotId: \"kelp\", count: 3 },\n      { slotId: \"charcoal\", count: 1 }\n    ],\n    result: { slotId: \"dried_kelp\", count: 3 },\n    station: \"furnace\"\n  },"
 }
@@ -1708,7 +1708,7 @@ id: toolu_01C6muRgvBjScTbUioRbrV9Y
 tool_result
 id: toolu_01C6muRgvBjScTbUioRbrV9Y
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/recipes.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/recipes.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1717,7 +1717,7 @@ tool_use Bash
 id: toolu_015j5nZJbUC7KJDGvs7ncwv4
 ```json
 {
-  "command": "grep -n \"const WHEAT_GRID\" -A 18 /Users/hutusi/workspace/ai/david/monecraft/lib/ui/spritePixels.ts",
+  "command": "grep -n \"const WHEAT_GRID\" -A 18 /home/<USER>/workspace/ai/david/monecraft/lib/ui/spritePixels.ts",
   "description": "Look at the wheat sprite grid shape"
 }
 ```
@@ -1759,7 +1759,7 @@ id: toolu_01WkxdME77YjMkgQXUHsmNsf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/ui/spritePixels.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/ui/spritePixels.ts",
   "old_string": "const SEEDS_PALETTE: PixelPalette = { s: [201, 178, 110], d: [150, 128, 70] };",
   "new_string": "const SEEDS_PALETTE: PixelPalette = { s: [201, 178, 110], d: [150, 128, 70] };\n// A folded sheet of dried kelp: dark seaweed-green with a fold seam and highlights.\nconst DRIED_KELP_PALETTE: PixelPalette = { K: [34, 58, 38], k: [58, 102, 62], l: [110, 160, 104] };\nconst DRIED_KELP_GRID = [\n  \"................\",\n  \"................\",\n  \"................\",\n  \"...KKKKKKKKKK...\",\n  \"..KkkkkkkkkkkK..\",\n  \"..KklkkkkklkkK..\",\n  \"..KkkkkkkkkkkK..\",\n  \"..KKKKKKKKKKKK..\",\n  \"..KkkkkkkkkkkK..\",\n  \"..KklkkkkklkkK..\",\n  \"..KkkkkkkkkkkK..\",\n  \"...KKKKKKKKKK...\",\n  \"................\",\n  \"................\",\n  \"................\",\n  \"................\"\n];"
 }
@@ -1770,7 +1770,7 @@ id: toolu_01WkxdME77YjMkgQXUHsmNsf
 tool_result
 id: toolu_01WkxdME77YjMkgQXUHsmNsf
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/ui/spritePixels.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/ui/spritePixels.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1780,7 +1780,7 @@ id: toolu_013cus2WDwZPo21Vh5WXPSnA
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/ui/spritePixels.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/ui/spritePixels.ts",
   "old_string": "  seeds: { grid: SEEDS_GRID, palette: SEEDS_PALETTE },\n  wheat: { grid: WHEAT_GRID, palette: WHEAT_PALETTE },",
   "new_string": "  seeds: { grid: SEEDS_GRID, palette: SEEDS_PALETTE },\n  dried_kelp: { grid: DRIED_KELP_GRID, palette: DRIED_KELP_PALETTE },\n  wheat: { grid: WHEAT_GRID, palette: WHEAT_PALETTE },"
 }
@@ -1791,7 +1791,7 @@ id: toolu_013cus2WDwZPo21Vh5WXPSnA
 tool_result
 id: toolu_013cus2WDwZPo21Vh5WXPSnA
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/ui/spritePixels.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/ui/spritePixels.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1801,7 +1801,7 @@ id: toolu_01TtX4YQbUyPH94zaeZ8SmBC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/randomTicks.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/randomTicks.ts",
   "old_string": "import { BlockId } from \"@/lib/world\";\nimport {\n  CROP_GROWTH_CHANCE,\n  GRASS_SPREAD_CHANCE,\n  RANDOM_TICK_INTERVAL_SECONDS,\n  RANDOM_TICK_RADIUS,\n  RANDOM_TICK_SAMPLES,\n  SAPLING_GROWTH_CHANCE\n} from \"@/lib/game/config\";",
   "new_string": "import { BlockId } from \"@/lib/world\";\nimport { GEN } from \"@/lib/world/generation\";\nimport {\n  CROP_GROWTH_CHANCE,\n  GRASS_SPREAD_CHANCE,\n  KELP_GROWTH_CHANCE,\n  RANDOM_TICK_INTERVAL_SECONDS,\n  RANDOM_TICK_RADIUS,\n  RANDOM_TICK_SAMPLES,\n  SAPLING_GROWTH_CHANCE\n} from \"@/lib/game/config\";"
 }
@@ -1812,7 +1812,7 @@ id: toolu_01TtX4YQbUyPH94zaeZ8SmBC
 tool_result
 id: toolu_01TtX4YQbUyPH94zaeZ8SmBC
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/randomTicks.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/randomTicks.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1822,7 +1822,7 @@ id: toolu_016z4Tggt8KASp2VBrtv1bYd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/randomTicks.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/randomTicks.ts",
   "old_string": "const RANDOM_TICK_HANDLERS: Partial<Record<BlockId, RandomTickHandler>> = {\n  [BlockId.WheatStage0]: growCrop,\n  [BlockId.WheatStage1]: growCrop,\n  [BlockId.WheatStage2]: growCrop,\n  // WheatStage3 has no handler — mature crops stop growing.\n  [BlockId.Sapling]: growSapling,\n  [BlockId.Dirt]: spreadGrass\n};",
   "new_string": "/**\n * A kelp stalk's top grows one block up into the water above. Growth keeps the\n * worldgen invariants (GEN.oceanFlora): the stalk caps at kelpMaxHeight, and\n * kelpSurfaceClearance water blocks must remain above the new top — kelp is a\n * solid block, so the clearance keeps boats and fishing casts clear of it.\n */\nfunction growKelp(state: GameState, x: number, y: number, z: number, rng: () => number): void {\n  if (rng() >= KELP_GROWTH_CHANCE) return;\n  const { world } = state;\n  const { kelpMaxHeight, kelpSurfaceClearance } = GEN.oceanFlora;\n\n  let height = 1;\n  while (world.get(x, y - height, z) === BlockId.Kelp) height += 1;\n  if (height >= kelpMaxHeight) return;\n\n  // The growth target plus the clearance band above it must all be water.\n  for (let dy = 1; dy <= kelpSurfaceClearance + 1; dy += 1) {\n    if (world.get(x, y + dy, z) !== BlockId.Water) return;\n  }\n  state.blockChanges.set(x, y + 1, z, BlockId.Kelp);\n  state.worldMeshDirty = true;\n}\n\nconst RANDOM_TICK_HANDLERS: Partial<Record<BlockId, RandomTickHandler>> = {\n  [BlockId.WheatStage0]: growCrop,\n […]
 
@@ -1831,7 +1831,7 @@ id: toolu_016z4Tggt8KASp2VBrtv1bYd
 tool_result
 id: toolu_016z4Tggt8KASp2VBrtv1bYd
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/randomTicks.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/randomTicks.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1845,7 +1845,7 @@ id: toolu_01T1i6asq7TurSrbujV73ffq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts",
   "old_string": "  if (isDoorBlock(targetBlock)) {\n    const door = doorState(targetBlock)!;\n    const other = doorState(world.get(bx, door.upper ? by - 1 : by + 1, bz));\n    state.blockChanges.set(bx, by, bz, BlockId.Air);\n    if (other && other.upper !== door.upper) {\n      state.blockChanges.set(bx, door.upper ? by - 1 : by + 1, bz, BlockId.Air);\n    }\n  } else {\n    state.blockChanges.set(bx, by, bz, BlockId.Air);\n  }",
   "new_string": "  if (isDoorBlock(targetBlock)) {\n    const door = doorState(targetBlock)!;\n    const other = doorState(world.get(bx, door.upper ? by - 1 : by + 1, bz));\n    state.blockChanges.set(bx, by, bz, BlockId.Air);\n    if (other && other.upper !== door.upper) {\n      state.blockChanges.set(bx, door.upper ? by - 1 : by + 1, bz, BlockId.Air);\n    }\n  } else if (targetBlock === BlockId.Kelp) {\n    // Breaking a kelp cell breaks the whole stalk above it (each cell drops),\n    // and a submerged stalk refills with water — never air — so harvesting\n    // doesn't leave air pockets in the ocean. The targeted cell's own drop\n    // rides the shared addBlockDrop call below.\n    let top = by;\n    while (world.get(bx, top + 1, bz) === BlockId.Kelp) top += 1;\n    const fill = world.get(bx, top + 1, bz) === BlockId.Water ? BlockId.Water : BlockId.Air;\n    for (let y = […]
 
@@ -1854,7 +1854,7 @@ id: toolu_01T1i6asq7TurSrbujV73ffq
 tool_result
 id: toolu_01T1i6asq7TurSrbujV73ffq
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2033,7 +2033,7 @@ tool_use Bash
 id: toolu_01Hkh2JXBo5jTzuNRGfEm4bY
 ```json
 {
-  "command": "sed 's|./lib/world|/Users/hutusi/workspace/ai/david/monecraft/lib/world|' /private/tmp/claude-501/-Users-hutusi-workspace-ai-david-monecraft/0bbf36a0-b366-42d5-b782-1e8fcd71b3a9/scratchpad/kelp-probe2.ts > /private/tmp/claude-501/-Users-hutusi-workspace-ai-david-monecraft/0bbf36a0-b366-42d5-b782-1e8fcd71b3a9/scratchpad/kelp-probe3.ts && bun run /private/tmp/claude-501/-Users-hutusi-workspace-ai-david-monecraft/0bbf36a0-b366-42d5-b782-1e8fcd71b3a9/scratchpad/kelp-probe3.ts",
+  "command": "sed 's|./lib/world|/home/<USER>/workspace/ai/david/monecraft/lib/world|' /private/tmp/claude-501/-Users-hutusi-workspace-ai-david-monecraft/0bbf36a0-b366-42d5-b782-1e8fcd71b3a9/scratchpad/kelp-probe2.ts > /private/tmp/claude-501/-Users-hutusi-workspace-ai-david-monecraft/0bbf36a0-b366-42d5-b782-1e8fcd71b3a9/scratchpad/kelp-probe3.ts && bun run /private/tmp/claude-501/-Users-hutusi-workspace-ai-david-monecraft/0bbf36a0-b366-42d5-b782-1e8fcd71b3a9/scratchpad/kelp-probe3.ts",
   "description": "Run kelp probe with absolute import",
   "timeout": 120000
 }
@@ -2085,7 +2085,7 @@ id: toolu_014WTUPw8bXEurqDVrAU9DVw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/generation.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/generation.test.ts",
   "old_string": "  test.each([\n    [1337, \"b68e443c2baf43ddb0d522e595a2c66dc5b23f5fc06c25ebae2af07812525f25\"],\n    [1, \"9af01515475054435df4789163f088c3362f594789629f6c326bed53576961f8\"],\n    [999999937, \"a17c2e5610b7eb9dbfd6c5952d15e81b968b07e9a22adb9667b6fe5249004852\"]\n  ])(\"128x150x128 world for seed %d is byte-identical\", (seed, expected) => {\n    expect(hashBytes(makeWorld(128, 150, 128, seed).blocks)).toBe(expected);\n  });\n\n  test(\n    \"full-size 512x150x512 world for seed 1337 is byte-identical (the real save-compat surface)\",\n    () => {\n      expect(hashBytes(fullWorld().blocks)).toBe(\"48bf16c8019ef76bb9b034942f88542a88785538d29c09bf6100f8a30d0831f2\");\n    },\n    { timeout: 60000 }\n  );",
   "new_string": "  // Ocean flora (worldgen v10) re-baselined the seed-999999937 and full-size\n  // digests; the seed-1337/1 128-block maps have no Ocean biome columns, so\n  // their bytes (and the world-type/meshing snapshots below) are unchanged.\n  test.each([\n    [1337, \"b68e443c2baf43ddb0d522e595a2c66dc5b23f5fc06c25ebae2af07812525f25\"],\n    [1, \"9af01515475054435df4789163f088c3362f594789629f6c326bed53576961f8\"],\n    [999999937, \"39cec267e6f440af669b82e14235752f214d7b5b371fabcf9c7316a03d837a7d\"]\n  ])(\"128x150x128 world for seed %d is byte-identical\", (seed, expected) => {\n    expect(hashBytes(makeWorld(128, 150, 128, seed).blocks)).toBe(expected);\n  });\n\n  test(\n    \"full-size 512x150x512 world for seed 1337 is byte-identical (the real save-compat surface)\",\n    () => {\n      expect(hashBytes(fullWorld().blocks)).toBe(\"dbbf3d129e59ecba5fb13a1b9cf4b16749c1467e730339cd090271acc5f6553c\");\n    },\n    { timeout: 60000 }\n  );"
 }
@@ -2096,7 +2096,7 @@ id: toolu_014WTUPw8bXEurqDVrAU9DVw
 tool_result
 id: toolu_014WTUPw8bXEurqDVrAU9DVw
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/generation.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/generation.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2106,7 +2106,7 @@ id: toolu_01TUE4c6HQ2BmUT5ScLNRYbC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/generation.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/generation.test.ts",
   "old_string": "describe(\"dungeons\", () => {",
   "new_string": "describe(\"ocean flora\", () => {\n  test(\n    \"kelp and coral grow on the sandy ocean floor, capped below the surface clearance band\",\n    () => {\n      const world = fullWorld();\n      const seaLevel = GEN.seaLevel;\n      const clearance = GEN.oceanFlora.kelpSurfaceClearance;\n\n      let kelp = 0;\n      let coral = 0;\n      for (let x = 0; x < world.sizeX; x += 1) {\n        for (let z = 0; z < world.sizeZ; z += 1) {\n          for (let y = 0; y < world.sizeY; y += 1) {\n            const block = world.get(x, y, z);\n            if (block === BlockId.Kelp) {\n              kelp += 1;\n              // Every kelp cell keeps the clearance band: its top can reach at\n              // most seaLevel - clearance, so boats and casts stay clear.\n              expect(y).toBeLessThanOrEqual(seaLevel - clearance);\n              // A stalk stands on sand or on more kelp, never floats.\n              const below = world.get(x, y - 1, z);\n              expect(below === BlockId.Kelp || below === BlockId.Sand).toBe(true);\n              // Water (or more stalk) above — kelp never breaches into air.\n              const above = world.get(x, y + 1, z);\n              expect(above === BlockId.Kelp || above === BlockId.Water).toBe(true);\n            } else if (block === BlockId.CoralPink || block === […]
 
@@ -2115,7 +2115,7 @@ id: toolu_01TUE4c6HQ2BmUT5ScLNRYbC
 tool_result
 id: toolu_01TUE4c6HQ2BmUT5ScLNRYbC
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/generation.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/generation.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2128,7 +2128,7 @@ tool_use Read
 id: toolu_01NYTtwph17nMaiuYH4vtez8
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/randomTicks.test.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/randomTicks.test.ts"
 }
 ```
 
@@ -2171,7 +2171,7 @@ tool_use Read
 id: toolu_01MJyNkRPiveYyfMWXrxw9EF
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mining.test.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mining.test.ts"
 }
 ```
 
@@ -2214,7 +2214,7 @@ tool_use Bash
 id: toolu_01XCf6VfL9NGAYb4EPVCM8wr
 ```json
 {
-  "command": "grep -n \"tickMining\\|leftMouseHeld\\|mining\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts | head -15",
+  "command": "grep -n \"tickMining\\|leftMouseHeld\\|mining\" /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts | head -15",
   "description": "Find mining flow tests in GameEngine tests"
 }
 ```
@@ -2247,7 +2247,7 @@ tool_use Read
 id: toolu_011uTDzKFpivmBbB3MwHnfHo
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts",
   "offset": 380,
   "limit": 100
 }
@@ -2301,7 +2301,7 @@ tool_use Bash
 id: toolu_011fRY4KJKyB8W6PVK2oNMUh
 ```json
 {
-  "command": "grep -n \"yaw = \\|yaw=\\|player.yaw\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts | head -10 && grep -rn \"lookDirection\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/playerMotion.ts | head -3",
+  "command": "grep -n \"yaw = \\|yaw=\\|player.yaw\" /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts | head -10 && grep -rn \"lookDirection\" /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/playerMotion.ts | head -3",
   "description": "Find horizontal aiming patterns in engine tests"
 }
 ```
@@ -2321,7 +2321,7 @@ id: toolu_011fRY4KJKyB8W6PVK2oNMUh
 1287:    state.player.yaw = 0;
 1302:    state.player.yaw = 0;
 1332:    state.player.yaw = 0;
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/playerMotion.ts:44:export function lookDirection(yaw: number, pitch: number, out: THREE.Vector3): THREE.Vector3 {
+/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/playerMotion.ts:44:export function lookDirection(yaw: number, pitch: number, out: THREE.Vector3): THREE.Vector3 {
 ```
 
 > TOOL
@@ -2330,7 +2330,7 @@ tool_use Read
 id: toolu_01K2YvG3q4fR3TEEk7GYVMTn
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts",
   "offset": 1110,
   "limit": 70
 }
@@ -2383,7 +2383,7 @@ id: toolu_01189noSC5Cnhzx7BmaQpGmm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/randomTicks.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/randomTicks.test.ts",
   "old_string": "  test(\"dirt does not re-grass when the spread roll fails\", () => {\n    const state = makeState();\n    state.blockChanges.set(8, 5, 8, BlockId.Dirt);\n    state.blockChanges.set(9, 5, 8, BlockId.Grass);\n    // 0.99 is at/above GRASS_SPREAD_CHANCE, so every roll fails.\n    tickRandomBlocks(state, RANDOM_TICK_INTERVAL_SECONDS, scriptedRng(0.99));\n    expect(state.world.get(8, 5, 8)).toBe(BlockId.Dirt);\n  });\n});",
   "new_string": "  test(\"dirt does not re-grass when the spread roll fails\", () => {\n    const state = makeState();\n    state.blockChanges.set(8, 5, 8, BlockId.Dirt);\n    state.blockChanges.set(9, 5, 8, BlockId.Grass);\n    // 0.99 is at/above GRASS_SPREAD_CHANCE, so every roll fails.\n    tickRandomBlocks(state, RANDOM_TICK_INTERVAL_SECONDS, scriptedRng(0.99));\n    expect(state.world.get(8, 5, 8)).toBe(BlockId.Dirt);\n  });\n\n  /** Sand floor at y=4 with a 1-tall kelp stalk at y=5 under a water column up to `waterTop`. */\n  function plantKelp(state: GameState, waterTop: number): void {\n    state.blockChanges.set(8, 4, 8, BlockId.Sand);\n    state.blockChanges.set(8, 5, 8, BlockId.Kelp);\n    for (let y = 6; y <= waterTop; y += 1) state.blockChanges.set(8, y, 8, BlockId.Water);\n  }\n\n  test(\"kelp grows up through water until the surface clearance band stops it\", () => {\n    const state = makeState();\n    plantKelp(state, 12); // water at 6..12; air above\n    // Every sample lands on the stalk top and passes the grow roll, so it climbs\n    // until growing further would eat into the 3-block clearance below the […]
 
@@ -2392,7 +2392,7 @@ id: toolu_01189noSC5Cnhzx7BmaQpGmm
 tool_result
 id: toolu_01189noSC5Cnhzx7BmaQpGmm
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/randomTicks.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/randomTicks.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2402,7 +2402,7 @@ id: toolu_01YUyyZnjpRmkbXi2V1315sS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts",
   "old_string": "  test(\"mining is gated on pointer lock and the inventory being closed\", () => {\n    const engine = makeEngine();\n    calmDaytime(engine);\n    run(engine, 1);\n    engine.state.player.pitch = -Math.PI / 2 + 0.02;\n    run(engine, 4, input({ leftMouseHeld: true, pointerLocked: false }));\n    expect(engine.state.blockChanges.changes().length).toBe(0);\n  });\n});",
   "new_string": "  test(\"mining is gated on pointer lock and the inventory being closed\", () => {\n    const engine = makeEngine();\n    calmDaytime(engine);\n    run(engine, 1);\n    engine.state.player.pitch = -Math.PI / 2 + 0.02;\n    run(engine, 4, input({ leftMouseHeld: true, pointerLocked: false }));\n    expect(engine.state.blockChanges.changes().length).toBe(0);\n  });\n\n  test(\"breaking a submerged kelp cell breaks the stalk above it and refills with water\", () => {\n    const engine = makeEngine();\n    calmDaytime(engine);\n    run(engine, 1);\n    const { state } = engine;\n    const ex = Math.floor(state.player.position.x);\n    const ez = Math.floor(state.player.position.z);\n    state.player.position.x = ex + 0.5;\n    state.player.position.z = ez + 0.5;\n    state.player.yaw = 0; // looking -Z\n    state.player.pitch = 0;\n    const ey = Math.floor(state.player.position.y + EYE_HEIGHT);\n    // A clear lane at eye height into a 3-tall kelp stalk topped with water; the\n    // ray hits the stalk's MIDDLE cell (ey), so the cascade must take ey+1 too.\n    state.blockChanges.set(ex, ey, ez - 1, BlockId.Air);\n    state.blockChanges.set(ex, ey - 1, ez - 2, BlockId.Kelp);\n    state.blockChanges.set(ex, ey, […]
 
@@ -2411,7 +2411,7 @@ id: toolu_01YUyyZnjpRmkbXi2V1315sS
 tool_result
 id: toolu_01YUyyZnjpRmkbXi2V1315sS
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2546,7 +2546,7 @@ tool_use Read
 id: toolu_016x11ekMhyYK43Ek7n6iLrn
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/mobs.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/mobs.ts"
 }
 ```
 
@@ -2609,7 +2609,7 @@ tool_use Read
 id: toolu_012rB1mqMkYeCANcY9KpQuqm
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.ts"
 }
 ```
 
@@ -2678,7 +2678,7 @@ tool_use Read
 id: toolu_01Sj7D56MkUNB153mn2MsNf7
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/mobModel.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/mobModel.ts"
 }
 ```
 
@@ -2725,7 +2725,7 @@ tool_use Read
 id: toolu_01JctqHLcEtgyoZ9iYtmWNZX
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/spawn.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/spawn.ts"
 }
 ```
 
@@ -2767,7 +2767,7 @@ tool_use Read
 id: toolu_011tiJ3WQ1QuGZzuu4sXh6ZJ
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.ts"
 }
 ```
 
@@ -2820,7 +2820,7 @@ tool_use Bash
 id: toolu_01HbVJmkukpfGgEQkWX9wmBB
 ```json
 {
-  "command": "grep -n \"MobKind\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/types.ts | head -3 && grep -n \"wolf\\|cat\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/mobLoot.ts /Users/hutusi/workspace/ai/david/monecraft/lib/game/mobXp.ts /Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/mobAmbience.ts | head -12",
+  "command": "grep -n \"MobKind\" /home/<USER>/workspace/ai/david/monecraft/lib/game/types.ts | head -3 && grep -n \"wolf\\|cat\" /home/<USER>/workspace/ai/david/monecraft/lib/game/mobLoot.ts /home/<USER>/workspace/ai/david/monecraft/lib/game/mobXp.ts /home/<USER>/workspace/ai/david/monecraft/lib/game/audio/mobAmbience.ts | head -12",
   "description": "Locate MobKind union and per-kind table entries"
 }
 ```
@@ -2832,14 +2832,14 @@ id: toolu_01HbVJmkukpfGgEQkWX9wmBB
 ```
 89:export type MobKind =
 299:  kind: MobKind;
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/mobAmbience.ts:13:  wolf: [5, 12],
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/mobAmbience.ts:14:  cat: [6, 14],
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/mobAmbience.ts:58:      // the population instead of allocating an id set every frame.
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/mobLoot.ts:37:  wolf: [],
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/mobLoot.ts:38:  cat: [],
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/mobXp.ts:15:  // (or a wild wolf/cat) is never rewarded, so they can't be farmed.
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/mobXp.ts:16:  wolf: 0,
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/mobXp.ts:17:  cat: 0,
+/home/<USER>/workspace/ai/david/monecraft/lib/game/audio/mobAmbience.ts:13:  wolf: [5, 12],
+/home/<USER>/workspace/ai/david/monecraft/lib/game/audio/mobAmbience.ts:14:  cat: [6, 14],
+/home/<USER>/workspace/ai/david/monecraft/lib/game/audio/mobAmbience.ts:58:      // the population instead of allocating an id set every frame.
+/home/<USER>/workspace/ai/david/monecraft/lib/game/mobLoot.ts:37:  wolf: [],
+/home/<USER>/workspace/ai/david/monecraft/lib/game/mobLoot.ts:38:  cat: [],
+/home/<USER>/workspace/ai/david/monecraft/lib/game/mobXp.ts:15:  // (or a wild wolf/cat) is never rewarded, so they can't be farmed.
+/home/<USER>/workspace/ai/david/monecraft/lib/game/mobXp.ts:16:  wolf: 0,
+/home/<USER>/workspace/ai/david/monecraft/lib/game/mobXp.ts:17:  cat: 0,
 ```
 
 > TOOL
@@ -2848,7 +2848,7 @@ tool_use Read
 id: toolu_01TKdT1sL9GP5j2UfDgF93FV
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/types.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/types.ts",
   "offset": 85,
   "limit": 30
 }
@@ -2897,7 +2897,7 @@ tool_use Read
 id: toolu_01YPPtMye7zieubmktM6ocrS
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/mobLoot.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/mobLoot.ts"
 }
 ```
 
@@ -2945,7 +2945,7 @@ tool_use Read
 id: toolu_017chsdJy1FSykPDfE7Raffz
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/mobXp.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/mobXp.ts"
 }
 ```
 
@@ -2993,7 +2993,7 @@ tool_use Read
 id: toolu_013bv9n2QVGT3uSJ8gsBXFCy
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/mobAmbience.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/audio/mobAmbience.ts"
 }
 ```
 
@@ -3049,7 +3049,7 @@ tool_use Bash
 id: toolu_01Hocuqw1oF6y3tuF7pMN37G
 ```json
 {
-  "command": "grep -n \"MOB_AMBIENT_SOUNDS\\|MOB_ATTACK_SOUNDS\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts | head -4",
+  "command": "grep -n \"MOB_AMBIENT_SOUNDS\\|MOB_ATTACK_SOUNDS\" /home/<USER>/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts | head -4",
   "description": "Locate mob sound tables"
 }
 ```
@@ -3069,7 +3069,7 @@ tool_use Read
 id: toolu_01Ls11CL5NMpjLNGMZqC2NRU
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts",
   "offset": 420,
   "limit": 140
 }
@@ -3143,7 +3143,7 @@ tool_use Bash
 id: toolu_012zynnv4HtqgRQvsgT2QMBP
 ```json
 {
-  "command": "grep -n \"wolf:\\|cat:\\|villager:\\|boss:\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts && sed -n '688,720p' /Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts",
+  "command": "grep -n \"wolf:\\|cat:\\|villager:\\|boss:\" /home/<USER>/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts && sed -n '688,720p' /home/<USER>/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts",
   "description": "Locate per-kind sound entries and attack table shape"
 }
 ```
@@ -3202,7 +3202,7 @@ tool_use Read
 id: toolu_01SGgJQPQGLpJ9CVHxftpucS
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts",
   "offset": 631,
   "limit": 60
 }
@@ -3281,7 +3281,7 @@ tool_use Read
 id: toolu_01Sg9scnQ5DqBHUPHPvrMApm
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts",
   "offset": 845,
   "limit": 50
 }
@@ -3350,7 +3350,7 @@ tool_use Bash
 id: toolu_01PrjYaqULKkjWjbXbe3BjzS
 ```json
 {
-  "command": "grep -n \"legs\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/render/mobVisuals.ts | head -8 && grep -n \"aquaticSpawnTimer\\|hostileSpawnTimer\\|createTimers\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts | head -5",
+  "command": "grep -n \"legs\" /home/<USER>/workspace/ai/david/monecraft/lib/game/render/mobVisuals.ts | head -8 && grep -n \"aquaticSpawnTimer\\|hostileSpawnTimer\\|createTimers\" /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts | head -5",
   "description": "Check gait guard and timers shape"
 }
 ```
@@ -3377,7 +3377,7 @@ tool_use Read
 id: toolu_012hGkW4XidraaH4BR2s2J6d
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.test.ts",
   "limit": 120
 }
 ```
@@ -3439,7 +3439,7 @@ id: toolu_01H5yoWsDD6su7i4JW1jnnf9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/types.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/types.ts",
   "old_string": "export type MobKind =\n  | \"sheep\"\n  | \"chicken\"\n  | \"horse\"\n  | \"cow\"\n  | \"pig\"\n  | \"wolf\"\n  | \"cat\"\n  | \"zombie\"\n  | \"skeleton\"\n  | \"spider\"\n  | \"creeper\"\n  | \"raider\"\n  | \"villager\"\n  | \"boss\";",
   "new_string": "export type MobKind =\n  | \"sheep\"\n  | \"chicken\"\n  | \"horse\"\n  | \"cow\"\n  | \"pig\"\n  | \"wolf\"\n  | \"cat\"\n  | \"cod\"\n  | \"salmon\"\n  | \"zombie\"\n  | \"skeleton\"\n  | \"spider\"\n  | \"creeper\"\n  | \"raider\"\n  | \"villager\"\n  | \"boss\";"
 }
@@ -3450,7 +3450,7 @@ id: toolu_01H5yoWsDD6su7i4JW1jnnf9
 tool_result
 id: toolu_01H5yoWsDD6su7i4JW1jnnf9
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/types.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/types.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3460,7 +3460,7 @@ id: toolu_01TJEUSByPB7k1gCgknTdknf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/mobModel.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/mobModel.ts",
   "old_string": "export function createMobModel(\n  bodyColor: number,\n  headColor: number,\n  legColor: number,\n  eyeColor: number,\n  detailColor: number,\n  bodySize: [number, number, number],\n  headSize: [number, number, number]\n): MobModel {\n  const group = new THREE.Group();\n  const materials = [\n    new THREE.MeshStandardMaterial({ color: bodyColor, roughness: 0.86, metalness: 0.02 }),\n    new THREE.MeshStandardMaterial({ color: headColor, roughness: 0.84, metalness: 0.02 }),\n    new THREE.MeshStandardMaterial({ color: legColor, roughness: 0.9, metalness: 0.02 }),\n    new THREE.MeshStandardMaterial({ color: eyeColor, roughness: 0.3, metalness: 0.05, emissive: new THREE.Color(eyeColor).multiplyScalar(0.15) }),\n    new THREE.MeshStandardMaterial({ color: detailColor, roughness: 0.82, metalness: 0.02 })\n  ];",
   "new_string": "export function createMobModel(\n  bodyColor: number,\n  headColor: number,\n  legColor: number,\n  eyeColor: number,\n  detailColor: number,\n  bodySize: [number, number, number],\n  headSize: [number, number, number],\n  variant: \"quadruped\" | \"fish\" = \"quadruped\"\n): MobModel {\n  const group = new THREE.Group();\n  const materials = [\n    new THREE.MeshStandardMaterial({ color: bodyColor, roughness: 0.86, metalness: 0.02 }),\n    new THREE.MeshStandardMaterial({ color: headColor, roughness: 0.84, metalness: 0.02 }),\n    new THREE.MeshStandardMaterial({ color: legColor, roughness: 0.9, metalness: 0.02 }),\n    new THREE.MeshStandardMaterial({ color: eyeColor, roughness: 0.3, metalness: 0.05, emissive: new THREE.Color(eyeColor).multiplyScalar(0.15) }),\n    new THREE.MeshStandardMaterial({ color: detailColor, roughness: 0.82, metalness: 0.02 })\n  ];\n\n  if (variant === \"fish\") return createFishModel(group, materials, bodySize, headSize);"
 }
@@ -3471,7 +3471,7 @@ id: toolu_01TJEUSByPB7k1gCgknTdknf
 tool_result
 id: toolu_01TJEUSByPB7k1gCgknTdknf
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/mobModel.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/mobModel.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3481,7 +3481,7 @@ id: toolu_01UWehQ3968RqEBGxr1D7omX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/mobModel.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/mobModel.ts",
   "old_string": "  return {\n    group,\n    legs,\n    halfHeight: Math.max(bodySize[1], legGeo.parameters.height) * 0.5 + 0.2,\n    materials,\n    geometries: [bodyGeo, headGeo, legGeo, eyeGeo, snoutGeo, stripeGeo]\n  };\n}",
   "new_string": "  return {\n    group,\n    legs,\n    halfHeight: Math.max(bodySize[1], legGeo.parameters.height) * 0.5 + 0.2,\n    materials,\n    geometries: [bodyGeo, headGeo, legGeo, eyeGeo, snoutGeo, stripeGeo]\n  };\n}\n\n/**\n * A legless swimmer: a flat elongated body centered on the group origin (fish\n * hover at their body center, not on legs), a vertical tail fin behind, a small\n * dorsal fin on top, and side eyes near the front. `headSize` sizes the fins.\n * No legs, so the gait animation in mobVisuals leaves it rigid, and its\n * halfHeight mirrors mobHalfHeight's fish branch (body only, no leg clearance).\n */\nfunction createFishModel(group: THREE.Group, materials: THREE.MeshStandardMaterial[], bodySize: [number, number, number], headSize: [number, number, number]): MobModel {\n  const bodyGeo = new THREE.BoxGeometry(bodySize[0], bodySize[1], bodySize[2]);\n  const body = new THREE.Mesh(bodyGeo, materials[0]);\n\n  const tailGeo = new THREE.BoxGeometry(Math.max(0.04, bodySize[0] * 0.18), headSize[1], headSize[2]);\n  const tail = new THREE.Mesh(tailGeo, materials[4]);\n  tail.position.set(0, 0, -bodySize[2] * 0.5 - headSize[2] * 0.4);\n\n  const finGeo = new THREE.BoxGeometry(Math.max(0.04, bodySize[0] * 0.18), headSize[1] * 0.6, headSize[2] * 0.7);\n  const fin = new THREE.Mesh(finGeo, materials[2]);\n  fin.position.set(0, bodySize[1] * […]
 
@@ -3490,7 +3490,7 @@ id: toolu_01UWehQ3968RqEBGxr1D7omX
 tool_result
 id: toolu_01UWehQ3968RqEBGxr1D7omX
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/mobModel.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/mobModel.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3503,7 +3503,7 @@ tool_use Read
 id: toolu_01VzsmfmNZGjYDiNfxX1Jdww
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/render/mobVisuals.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/render/mobVisuals.ts"
 }
 ```
 
@@ -3562,7 +3562,7 @@ id: toolu_01QvVRa7U5r56S23oimHY8Pa
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/mobs.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/mobs.ts",
   "old_string": "export type MobTemplate = {\n  speed: number;\n  hp: number;\n  detectRange: number;\n  attackDamage: number;\n  attackCooldown: number;\n  /** Fires arrows and kites instead of meleeing (skeletons, boss). */\n  ranged?: boolean;\n  modelArgs: Parameters<typeof createMobModel>;\n};",
   "new_string": "export type MobTemplate = {\n  speed: number;\n  hp: number;\n  detectRange: number;\n  attackDamage: number;\n  attackCooldown: number;\n  /** Fires arrows and kites instead of meleeing (skeletons, boss). */\n  ranged?: boolean;\n  /** Lives in water: swims in 3D via the aquatic branch in mobAI, suffocates on land. */\n  aquatic?: boolean;\n  modelArgs: Parameters<typeof createMobModel>;\n};"
 }
@@ -3573,7 +3573,7 @@ id: toolu_01QvVRa7U5r56S23oimHY8Pa
 tool_result
 id: toolu_01QvVRa7U5r56S23oimHY8Pa
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/mobs.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/mobs.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3583,7 +3583,7 @@ id: toolu_01HuDdVG9JQHLCFAYVf8q8VC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/mobs.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/mobs.ts",
   "old_string": "  zombie: {\n    speed: 1.05,\n    hp: HOSTILE_MOB_HP,",
   "new_string": "  cod: {\n    // A small schooling fish: passive, flees the player in 3D (see the aquatic\n    // branch in mobAI). detectRange 0 like the land passives.\n    speed: 1.1,\n    hp: 3,\n    detectRange: 0,\n    attackDamage: 0,\n    attackCooldown: 0,\n    aquatic: true,\n    // Grey-brown body, sandy belly fins, pale tail; flat and small.\n    modelArgs: [0x8a8a72, 0xa0a088, 0x6f6f5c, 0x101010, 0xb8b8a4, [0.32, 0.3, 0.7], [0.3, 0.34, 0.38], \"fish\"]\n  },\n  salmon: {\n    speed: 1.25,\n    hp: 4,\n    detectRange: 0,\n    attackDamage: 0,\n    attackCooldown: 0,\n    aquatic: true,\n    // Red-pink body with darker back fins; longer than the cod.\n    modelArgs: [0xb35a4a, 0xc06a56, 0x7a3a30, 0x101010, 0x8f4438, [0.38, 0.34, 0.92], [0.32, 0.4, 0.44], \"fish\"]\n  },\n  zombie: {\n    speed: 1.05,\n    hp: HOSTILE_MOB_HP,"
 }
@@ -3594,7 +3594,7 @@ id: toolu_01HuDdVG9JQHLCFAYVf8q8VC
 tool_result
 id: toolu_01HuDdVG9JQHLCFAYVf8q8VC
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/mobs.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/mobs.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3604,7 +3604,7 @@ id: toolu_01NUt29tqPvE3hSmnJ9wYrLi
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/mobs.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/mobs.ts",
   "old_string": "  wolf: \"wild\",\n  cat: \"wild\",\n  villager: \"villager\",",
   "new_string": "  wolf: \"wild\",\n  cat: \"wild\",\n  cod: \"wild\",\n  salmon: \"wild\",\n  villager: \"villager\","
 }
@@ -3615,7 +3615,7 @@ id: toolu_01NUt29tqPvE3hSmnJ9wYrLi
 tool_result
 id: toolu_01NUt29tqPvE3hSmnJ9wYrLi
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/mobs.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/mobs.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3625,7 +3625,7 @@ id: toolu_011YtosADZGHvmCDpDKTZx75
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/mobs.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/mobs.ts",
   "old_string": "export function mobHalfHeight(kind: MobKind): number {\n  const bodyHeight = MOB_TEMPLATES[kind].modelArgs[5][1];\n  const legHeight = Math.max(0.3, bodyHeight * 0.56);\n  return Math.max(bodyHeight, legHeight) * 0.5 + 0.2;\n}",
   "new_string": "export function mobHalfHeight(kind: MobKind): number {\n  const bodyHeight = MOB_TEMPLATES[kind].modelArgs[5][1];\n  // Fish have no legs — their model is centered on the body (createFishModel).\n  if (MOB_TEMPLATES[kind].aquatic) return bodyHeight * 0.5 + 0.05;\n  const legHeight = Math.max(0.3, bodyHeight * 0.56);\n  return Math.max(bodyHeight, legHeight) * 0.5 + 0.2;\n}"
 }
@@ -3636,7 +3636,7 @@ id: toolu_011YtosADZGHvmCDpDKTZx75
 tool_result
 id: toolu_011YtosADZGHvmCDpDKTZx75
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/mobs.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/mobs.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3650,7 +3650,7 @@ id: toolu_01VvYn6jFik9haFz3s4noNCi
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/config.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/config.ts",
   "old_string": "// Fishing. Cast a bobber at water within FISHING_REACH; after a random wait in",
   "new_string": "// Fish mobs (cod/salmon). Passive swimmers confined to water (the aquatic\n// branch in mobAI): they flee the player in 3D within FISH_FLEE_RANGE and\n// suffocate out of water at FISH_SUFFOCATION_HP_PER_SECOND. The aquatic spawn\n// director trickles schools in around the player (up to AQUATIC_CAP within\n// range) so sailed-to oceans are populated, not just the spawn area.\nexport const FISH_FLEE_RANGE = 5;\nexport const FISH_SUFFOCATION_HP_PER_SECOND = 2;\nexport const AQUATIC_CAP = 24;\nexport const AQUATIC_SPAWN_INTERVAL_SECONDS = 8;\n\n// Fishing. Cast a bobber at water within FISHING_REACH; after a random wait in"
 }
@@ -3661,7 +3661,7 @@ id: toolu_01VvYn6jFik9haFz3s4noNCi
 tool_result
 id: toolu_01VvYn6jFik9haFz3s4noNCi
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3671,7 +3671,7 @@ id: toolu_01Ru7o1AJTSvyHWu7UkZa6i9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.ts",
   "old_string": "import * as THREE from \"three\";\nimport { collidesAt, voxelRaycast } from \"@/lib/world\";\nimport {\n  ARROW_TTL,",
   "new_string": "import * as THREE from \"three\";\nimport { BlockId, collidesAt, voxelRaycast } from \"@/lib/world\";\nimport {\n  ARROW_TTL,\n  FISH_FLEE_RANGE,\n  FISH_SUFFOCATION_HP_PER_SECOND,"
 }
@@ -3682,7 +3682,7 @@ id: toolu_01Ru7o1AJTSvyHWu7UkZa6i9
 tool_result
 id: toolu_01Ru7o1AJTSvyHWu7UkZa6i9
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3692,7 +3692,7 @@ id: toolu_01RYpCzbWrMCGPchASVUXGRr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.ts",
   "old_string": "export type MobTickDeps = {\n  surfaceYAt: SurfaceYAtFn;\n  applyDamage: (amount: number) => void;\n  /** Removes the mob (post-loop sweep). `credit` (default true) gates loot + XP to the player. */\n  removeMobAt: (index: number, lootingLevel?: number, credit?: boolean) => void;\n  rng: () => number;\n  emit: EmitGameEvent;\n};",
   "new_string": "export type MobTickDeps = {\n  surfaceYAt: SurfaceYAtFn;\n  applyDamage: (amount: number) => void;\n  /** Removes the mob (post-loop sweep). `credit` (default true) gates loot + XP to the player. */\n  removeMobAt: (index: number, lootingLevel?: number, credit?: boolean) => void;\n  rng: () => number;\n  emit: EmitGameEvent;\n};\n\n/**\n * An aquatic mob's whole tick — it swims in 3D and bypasses every land\n * assumption in the main loop (the surfaceYAt ground clamp, border bounce, and\n * the collidesAt foot test): each move is instead gated on the destination cell\n * being water, so a fish can never swim into land, air, or out of bounds. It\n * flees the player in 3D within FISH_FLEE_RANGE, wanders with a gentle pitch\n * otherwise, and out of water it lies beached, suffocating until it dies (or a\n * knockback returns it to water).\n */\nfunction tickAquaticMob(state: GameState, mob: MobState, dt: number, […]
 
@@ -3701,7 +3701,7 @@ id: toolu_01RYpCzbWrMCGPchASVUXGRr
 tool_result
 id: toolu_01RYpCzbWrMCGPchASVUXGRr
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3711,7 +3711,7 @@ id: toolu_01QNEd13mxgq1kxU5RqkDBBr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.ts",
   "old_string": "    if (mob.hp <= 0) continue;\n    mob.attackTimer -= dt;\n    mob.turnTimer -= dt;\n    mob.retargetTimer -= dt;\n    const activeHostile = threatened && mob.hostile && (mob.kind !== \"spider\" || daylight < SPIDER_AGGRO_BELOW_DAYLIGHT);",
   "new_string": "    if (mob.hp <= 0) continue;\n    mob.attackTimer -= dt;\n    mob.turnTimer -= dt;\n    mob.retargetTimer -= dt;\n\n    // Aquatic mobs swim on their own dedicated tick — before any land logic\n    // (ground clamp, wander, flee) can leak in.\n    if (MOB_TEMPLATES[mob.kind].aquatic === true) {\n      tickAquaticMob(state, mob, dt, deps);\n      continue;\n    }\n\n    const activeHostile = threatened && mob.hostile && (mob.kind !== \"spider\" || daylight < SPIDER_AGGRO_BELOW_DAYLIGHT);"
 }
@@ -3722,7 +3722,7 @@ id: toolu_01QNEd13mxgq1kxU5RqkDBBr
 tool_result
 id: toolu_01QNEd13mxgq1kxU5RqkDBBr
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3732,7 +3732,7 @@ id: toolu_01EJCT3ZqkTvTgMmswWSPzjk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/spawn.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/spawn.ts",
   "old_string": "export function randomLandPointNear(",
   "new_string": "/**\n * A random swim point in open water near (centerX, centerZ): a column whose\n * floor holds at least `minDepth` water above it, at mid-depth so the fish\n * starts fully submerged. Returns null when no water is found (a dry world or\n * an inland center) — callers must fail closed rather than spawn on land.\n */\nexport function randomWaterPointNear(\n  world: VoxelWorld,\n  centerX: number,\n  centerZ: number,\n  radius: number,\n  rng: () => number = Math.random,\n  minDepth = 2\n): THREE.Vector3 | null {\n  for (let i = 0; i < 50; i += 1) {\n    const x = Math.max(10, Math.min(world.sizeX - 10, centerX + (rng() * 2 - 1) * radius));\n    const z = Math.max(10, Math.min(world.sizeZ - 10, centerZ + (rng() * 2 - 1) * radius));\n    const ix = Math.floor(x);\n    const iz = Math.floor(z);\n    const floor = world.highestSolidY(ix, iz);\n    let depth = 0;\n    while (world.get(ix, floor + 1 + depth, iz) === BlockId.Water) depth += 1;\n    if (depth < minDepth) continue;\n    const y = floor + 1 + Math.floor(depth / 2) + 0.5;\n    return new THREE.Vector3(x, y, z);\n  }\n  return null;\n}\n\nexport function randomLandPointNear("
 }
@@ -3743,7 +3743,7 @@ id: toolu_01EJCT3ZqkTvTgMmswWSPzjk
 tool_result
 id: toolu_01EJCT3ZqkTvTgMmswWSPzjk
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/spawn.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/spawn.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3753,7 +3753,7 @@ id: toolu_01X6MiWxs4wdxsvpGEm5g1LH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.ts",
   "old_string": "import {\n  BOSS_SUMMON_INTERVAL_SECONDS,\n  HOSTILE_CAP,\n  HOSTILE_SPAWN_BELOW_DAYLIGHT,\n  HOSTILE_SPAWN_INTERVAL_SECONDS,\n  HOSTILE_SPAWN_MIN_RADIUS,\n  RENDER_RADIUS,\n  SPAWNER_ACTIVATION_RADIUS,\n  SPAWNER_INTERVAL_SECONDS,\n  SPAWNER_LOCAL_CAP\n} from \"@/lib/game/config\";\nimport { FACTION_BY_KIND, MOB_TEMPLATES, mobHalfHeight } from \"@/lib/game/mobs\";\nimport { PROFESSIONS } from \"@/lib/game/trades\";\nimport { hostileCapScale, hostileSpawnIntervalScale, hostilesSpawn } from \"@/lib/game/difficulties\";\nimport { randomLandPointNear, type SurfaceYAtFn } from \"@/lib/game/spawn\";",
   "new_string": "import {\n  AQUATIC_CAP,\n  AQUATIC_SPAWN_INTERVAL_SECONDS,\n  BOSS_SUMMON_INTERVAL_SECONDS,\n  HOSTILE_CAP,\n  HOSTILE_SPAWN_BELOW_DAYLIGHT,\n  HOSTILE_SPAWN_INTERVAL_SECONDS,\n  HOSTILE_SPAWN_MIN_RADIUS,\n  RENDER_RADIUS,\n  SPAWNER_ACTIVATION_RADIUS,\n  SPAWNER_INTERVAL_SECONDS,\n  SPAWNER_LOCAL_CAP\n} from \"@/lib/game/config\";\nimport { FACTION_BY_KIND, MOB_TEMPLATES, mobHalfHeight } from \"@/lib/game/mobs\";\nimport { PROFESSIONS } from \"@/lib/game/trades\";\nimport { hostileCapScale, hostileSpawnIntervalScale, hostilesSpawn } from \"@/lib/game/difficulties\";\nimport { randomLandPointNear, randomWaterPointNear, type SurfaceYAtFn } from \"@/lib/game/spawn\";"
 }
@@ -3764,7 +3764,7 @@ id: toolu_01X6MiWxs4wdxsvpGEm5g1LH
 tool_result
 id: toolu_01X6MiWxs4wdxsvpGEm5g1LH
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3774,7 +3774,7 @@ id: toolu_014qm3QCrViXLL3qNkXB3sGF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.ts",
   "old_string": "export function spawnMobGroup(state: GameState, args: SpawnGroupArgs, rng: () => number, surfaceYAt: SurfaceYAtFn): void {\n  for (let i = 0; i < args.count; i += 1) {\n    const spawnPos = randomLandPointNear(state.world, surfaceYAt, args.centerX, args.centerZ, args.radius, rng, args.minRadius ?? 0);\n    pushMob(state, args.kind, args.hostile, spawnPos.x, spawnPos.y, spawnPos.z, rng);\n  }\n}",
   "new_string": "export function spawnMobGroup(state: GameState, args: SpawnGroupArgs, rng: () => number, surfaceYAt: SurfaceYAtFn): void {\n  for (let i = 0; i < args.count; i += 1) {\n    const spawnPos = randomLandPointNear(state.world, surfaceYAt, args.centerX, args.centerZ, args.radius, rng, args.minRadius ?? 0);\n    pushMob(state, args.kind, args.hostile, spawnPos.x, spawnPos.y, spawnPos.z, rng);\n  }\n}\n\n/**\n * Spawns fish submerged in open water near the center. Each fish needs a water\n * column at least 2 deep; a dry world (Superflat) or an inland center simply\n * yields fewer or zero fish — the sampler fails closed, never onto land.\n * pushMob expects ground-level feet, so the swim point converts to feet-y.\n */\nexport function spawnAquaticGroup(state: GameState, kind: MobKind, count: number, centerX: number, centerZ: number, radius: number, rng: () => number): void {\n  for (let i = 0; i < count; i += 1) {\n    const pos = randomWaterPointNear(state.world, centerX, centerZ, radius, rng);\n […]
 
@@ -3783,7 +3783,7 @@ id: toolu_014qm3QCrViXLL3qNkXB3sGF
 tool_result
 id: toolu_014qm3QCrViXLL3qNkXB3sGF
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3793,7 +3793,7 @@ id: toolu_014ghhJ71AmsdU5HuV2kcnFz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.ts",
   "old_string": "  // Peaceful spawns no hostiles at all — only the passive groups populate the world.\n  const spawnHostiles = hostilesSpawn(state.difficulty);\n  for (const [kind, hostile, count, radius] of groups) {\n    if (hostile && !spawnHostiles) continue;\n    // Hostiles keep a minimum standoff so nothing (notably a creeper) starts the\n    // game point-blank; passives may roam right up to the spawn area.\n    spawnMobGroup(state, { kind, hostile, count, centerX, centerZ, radius, minRadius: hostile ? HOSTILE_SPAWN_MIN_RADIUS : 0 }, rng, surfaceYAt);\n  }\n}",
   "new_string": "  // Peaceful spawns no hostiles at all — only the passive groups populate the world.\n  const spawnHostiles = hostilesSpawn(state.difficulty);\n  for (const [kind, hostile, count, radius] of groups) {\n    if (hostile && !spawnHostiles) continue;\n    // Hostiles keep a minimum standoff so nothing (notably a creeper) starts the\n    // game point-blank; passives may roam right up to the spawn area.\n    spawnMobGroup(state, { kind, hostile, count, centerX, centerZ, radius, minRadius: hostile ? HOSTILE_SPAWN_MIN_RADIUS : 0 }, rng, surfaceYAt);\n  }\n  // Fish school in whatever water lies near spawn; a landlocked spawn gets none\n  // (the aquatic director repopulates oceans the player sails to later).\n  spawnAquaticGroup(state, \"cod\", 6, centerX, centerZ, passiveRadius, rng);\n  spawnAquaticGroup(state, \"salmon\", […]
 
@@ -3802,7 +3802,7 @@ id: toolu_014ghhJ71AmsdU5HuV2kcnFz
 tool_result
 id: toolu_014ghhJ71AmsdU5HuV2kcnFz
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3811,7 +3811,7 @@ tool_use Read
 id: toolu_01FFWLypZNbqzpJxfCvgKvY1
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts",
   "offset": 145,
   "limit": 40
 }
@@ -3863,7 +3863,7 @@ tool_use Bash
 id: toolu_01LY3LwyYW79PzJWaSqYiTVK
 ```json
 {
-  "command": "grep -n \"tickHostileSpawnDirector\\|tickSpawnerDirector\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "command": "grep -n \"tickHostileSpawnDirector\\|tickSpawnerDirector\" /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "description": "Find director call sites in GameEngine.step"
 }
 ```
@@ -3886,7 +3886,7 @@ id: toolu_01V2U5zGvz37ffSpnTL1GGkw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts",
   "old_string": "  stuckTimer: number;\n  hostileSpawnTimer: number;\n  spawnerTimer: number;",
   "new_string": "  stuckTimer: number;\n  hostileSpawnTimer: number;\n  aquaticSpawnTimer: number;\n  spawnerTimer: number;"
 }
@@ -3897,7 +3897,7 @@ id: toolu_01V2U5zGvz37ffSpnTL1GGkw
 tool_result
 id: toolu_01V2U5zGvz37ffSpnTL1GGkw
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3906,7 +3906,7 @@ tool_use Read
 id: toolu_01SaktevXWHqyYQbGGvNXCFV
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts",
   "offset": 271,
   "limit": 35
 }
@@ -3961,7 +3961,7 @@ id: toolu_01AvqsY7NEvfguEmAndZZsjV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts",
   "old_string": "    stuckTimer: 0,\n    hostileSpawnTimer: 0,\n    spawnerTimer: 0,",
   "new_string": "    stuckTimer: 0,\n    hostileSpawnTimer: 0,\n    aquaticSpawnTimer: 0,\n    spawnerTimer: 0,"
 }
@@ -3972,7 +3972,7 @@ id: toolu_01AvqsY7NEvfguEmAndZZsjV
 tool_result
 id: toolu_01AvqsY7NEvfguEmAndZZsjV
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3981,7 +3981,7 @@ tool_use Read
 id: toolu_01TF1XyYYjdpN5qQ6qTAdkiN
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "offset": 115,
   "limit": 15
 }
@@ -4016,7 +4016,7 @@ id: toolu_01Eykbq22oLy2bQNmCJ2A4S2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "old_string": "import {\n  assignVillagerProfessions,\n  pushMob,\n  spawnBoss,\n  spawnInitialMobs,\n  spawnMobGroup,\n  spawnVillageResidents,\n  tickHostileSpawnDirector,\n  tickSpawnerDirector\n} from \"./systems/spawnDirector\";",
   "new_string": "import {\n  assignVillagerProfessions,\n  pushMob,\n  spawnBoss,\n  spawnInitialMobs,\n  spawnMobGroup,\n  spawnVillageResidents,\n  tickAquaticSpawnDirector,\n  tickHostileSpawnDirector,\n  tickSpawnerDirector\n} from \"./systems/spawnDirector\";"
 }
@@ -4027,7 +4027,7 @@ id: toolu_01Eykbq22oLy2bQNmCJ2A4S2
 tool_result
 id: toolu_01Eykbq22oLy2bQNmCJ2A4S2
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4037,7 +4037,7 @@ id: toolu_01GuNPeNMrWf6R22bVy71uKD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "old_string": "    tickHostileSpawnDirector(state, dt, this.rng, this.surfaceYAt);\n    tickSpawnerDirector(state, dt, this.rng, this.emit);",
   "new_string": "    tickHostileSpawnDirector(state, dt, this.rng, this.surfaceYAt);\n    tickAquaticSpawnDirector(state, dt, this.rng);\n    tickSpawnerDirector(state, dt, this.rng, this.emit);"
 }
@@ -4048,7 +4048,7 @@ id: toolu_01GuNPeNMrWf6R22bVy71uKD
 tool_result
 id: toolu_01GuNPeNMrWf6R22bVy71uKD
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4062,7 +4062,7 @@ id: toolu_01BDJvifJzFBksnrBva2h3b3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/mobLoot.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/mobLoot.ts",
   "old_string": "  // Pets drop nothing — you don't harvest your companions. Empty tables are allowed.\n  wolf: [],\n  cat: [],",
   "new_string": "  // Pets drop nothing — you don't harvest your companions. Empty tables are allowed.\n  wolf: [],\n  cat: [],\n  // Fish yield the same raw fish the rod reels in — hunting them by hand or\n  // sword is just a wetter way to fill the cat-taming/cooking pipeline.\n  cod: [{ itemId: \"raw_fish\", min: 1, max: 1 }],\n  salmon: [{ itemId: \"raw_fish\", min: 1, max: 2 }],"
 }
@@ -4073,7 +4073,7 @@ id: toolu_01BDJvifJzFBksnrBva2h3b3
 tool_result
 id: toolu_01BDJvifJzFBksnrBva2h3b3
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/mobLoot.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/mobLoot.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4083,7 +4083,7 @@ id: toolu_01Xgnd84SRCAy8hY69yPJDmh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/mobXp.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/mobXp.ts",
   "old_string": "  wolf: 0,\n  cat: 0,",
   "new_string": "  wolf: 0,\n  cat: 0,\n  cod: 1,\n  salmon: 1,"
 }
@@ -4094,7 +4094,7 @@ id: toolu_01Xgnd84SRCAy8hY69yPJDmh
 tool_result
 id: toolu_01Xgnd84SRCAy8hY69yPJDmh
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/mobXp.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/mobXp.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4104,7 +4104,7 @@ id: toolu_01JaeqY2hmne4NCuEpc12m6u
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/mobAmbience.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/audio/mobAmbience.ts",
   "old_string": "  wolf: [5, 12],\n  cat: [6, 14],",
   "new_string": "  wolf: [5, 12],\n  cat: [6, 14],\n  // Fish are nearly silent — sparse bubble blips when close.\n  cod: [9, 18],\n  salmon: [9, 18],"
 }
@@ -4115,7 +4115,7 @@ id: toolu_01JaeqY2hmne4NCuEpc12m6u
 tool_result
 id: toolu_01JaeqY2hmne4NCuEpc12m6u
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/mobAmbience.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/audio/mobAmbience.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4125,7 +4125,7 @@ id: toolu_01H5QWANPEuhfEWYQhytJe7z
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts",
   "old_string": "  cat: {\n    // A rising-then-falling meow.\n    params: zz({\n      volume: 0.45,\n      randomness: 0.2,\n      frequency: 480,\n      attack: 0.03,\n      sustain: 0.12,\n      release: 0.18,\n      shape: 2,\n      shapeCurve: 1.1,\n      pitchJump: 90,\n      pitchJumpTime: 0.07,\n      sustainVolume: 0.7,\n      decay: 0.08,\n      tremolo: 0.25\n    })\n  },\n  raider: {\n    // A low, menacing grunt.",
   "new_string": "  cat: {\n    // A rising-then-falling meow.\n    params: zz({\n      volume: 0.45,\n      randomness: 0.2,\n      frequency: 480,\n      attack: 0.03,\n      sustain: 0.12,\n      release: 0.18,\n      shape: 2,\n      shapeCurve: 1.1,\n      pitchJump: 90,\n      pitchJumpTime: 0.07,\n      sustainVolume: 0.7,\n      decay: 0.08,\n      tremolo: 0.25\n    })\n  },\n  cod: {\n    // A soft underwater bubble blip.\n    params: zz({\n      volume: 0.3,\n      randomness: 0.25,\n      frequency: 320,\n      sustain: 0.02,\n      release: 0.08,\n      shape: 0,\n      shapeCurve: 1.2,\n      slide: 2,\n      sustainVolume: 0.5,\n      decay: 0.03,\n      filter: -400\n    })\n  },\n  salmon: {\n    // A slightly deeper bubble blip than the cod's.\n    params: zz({\n      volume: 0.3,\n      randomness: 0.25,\n      frequency: 240,\n      sustain: 0.02,\n      release: 0.09,\n      shape: 0,\n      shapeCurve: 1.2,\n      slide: 2,\n      sustainVolume: 0.5,\n      decay: 0.03,\n      filter: -400\n    })\n  },\n  raider: {\n    // A low, menacing grunt."
 }
@@ -4136,7 +4136,7 @@ id: toolu_01H5QWANPEuhfEWYQhytJe7z
 tool_result
 id: toolu_01H5QWANPEuhfEWYQhytJe7z
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4146,7 +4146,7 @@ id: toolu_016LbLGUYfxLtxFps343ym6N
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts",
   "old_string": "  cat: {\n    // A sharp hiss/scratch.\n    params: zz({\n      volume: 0.55,\n      randomness: 0.15,\n      frequency: 600,\n      sustain: 0.03,\n      release: 0.08,\n      shape: 4,\n      shapeCurve: 0.9,\n      slide: 1,\n      noise: 1,\n      sustainVolume: 0.7,\n      decay: 0.03,\n      filter: 700\n    }),\n    minRetriggerMs: 120\n  },\n  raider: {\n    // A brutish thwack.",
   "new_string": "  cat: {\n    // A sharp hiss/scratch.\n    params: zz({\n      volume: 0.55,\n      randomness: 0.15,\n      frequency: 600,\n      sustain: 0.03,\n      release: 0.08,\n      shape: 4,\n      shapeCurve: 0.9,\n      slide: 1,\n      noise: 1,\n      sustainVolume: 0.7,\n      decay: 0.03,\n      filter: 700\n    }),\n    minRetriggerMs: 120\n  },\n  // Fish never attack (attackDamage 0) — a splash, mapped only for exhaustiveness.\n  cod: {\n    params: zz({ volume: 0.35, randomness: 0.2, frequency: 220, sustain: 0.02, release: 0.08, shape: 4, noise: 0.7, sustainVolume: 0.6, decay: 0.03, filter: -400 }),\n    minRetriggerMs: 120\n  },\n  salmon: {\n    params: zz({ volume: 0.35, randomness: 0.2, frequency: 180, sustain: 0.02, release: 0.08, shape: 4, noise: 0.7, sustainVolume: 0.6, decay: 0.03, filter: -400 }),\n    minRetriggerMs: 120\n  },\n  raider: {\n    // A brutish thwack."
 }
@@ -4157,7 +4157,7 @@ id: toolu_016LbLGUYfxLtxFps343ym6N
 tool_result
 id: toolu_016LbLGUYfxLtxFps343ym6N
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4193,7 +4193,7 @@ tool_use Read
 id: toolu_01REHUsEokYh8YfMzqe9utD3
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/itemSources.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/itemSources.ts",
   "offset": 15,
   "limit": 35
 }
@@ -4248,7 +4248,7 @@ id: toolu_013MRZd7EiEhmHqYZJKNASmb
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/itemSources.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/itemSources.ts",
   "old_string": "  wolf: \"a wolf\",\n  cat: \"a cat\",\n  zombie: \"a zombie\",",
   "new_string": "  wolf: \"a wolf\",\n  cat: \"a cat\",\n  cod: \"a cod\",\n  salmon: \"a salmon\",\n  zombie: \"a zombie\","
 }
@@ -4259,7 +4259,7 @@ id: toolu_013MRZd7EiEhmHqYZJKNASmb
 tool_result
 id: toolu_013MRZd7EiEhmHqYZJKNASmb
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/itemSources.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/itemSources.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4294,7 +4294,7 @@ tool_use Read
 id: toolu_014zcQf3yyfEpzwXHhfhswH4
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.test.ts",
   "limit": 80
 }
 ```
@@ -4349,7 +4349,7 @@ tool_use Bash
 id: toolu_01MfxAhbgUyUGPG9GXbSMxds
 ```json
 {
-  "command": "tail -30 /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.test.ts",
+  "command": "tail -30 /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.test.ts",
   "description": "See end of mobAI test file"
 }
 ```
@@ -4396,7 +4396,7 @@ tool_use Bash
 id: toolu_01C9KghRUuv68W5iw2iC5uCo
 ```json
 {
-  "command": "cat >> /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.test.ts << 'EOF'\n\ndescribe(\"aquatic fish\", () => {\n  /** Fills a water pool (x,z in 20..28, y in 18..22) into the state's empty world. */\n  function fillPool(state: GameState): void {\n    for (let x = 20; x <= 28; x += 1) {\n      for (let z = 20; z <= 28; z += 1) {\n        for (let y = 18; y <= 22; y += 1) state.world.set(x, y, z, BlockId.Water);\n      }\n    }\n  }\n\n  function makeFish(x: number, y: number, z: number): MobState {\n    const fish = makeMob(\"cod\", x, y, z);\n    fish.hostile = false;\n    return fish;\n  }\n\n  test(\"a swimming fish stays confined to water cells\", () => {\n    const fish = makeFish(24.5, 20.5, 24.5);\n    const state = makeState([fish]);\n    fillPool(state);\n    const { deps } = makeDeps();\n\n    // Long run with wandering turns: wherever it ends up each tick, the cell\n    // holding its body center is always water (it bounces off the pool walls).\n    for (let i = 0; i < 200; i += 1) {\n      tickMobs(state, 0.1, deps);\n      const cell = state.world.get(Math.floor(fish.position.x), Math.floor(fish.position.y), Math.floor(fish.position.z));\n      expect(cell).toBe(BlockId.Water);\n    }\n  });\n\n  test(\"a fish flees the player in 3D when approached\", () => {\n    const fish = makeFish(24.5, 20.5, 24.5);\n […]
+  "command": "cat >> /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.test.ts << 'EOF'\n\ndescribe(\"aquatic fish\", () => {\n  /** Fills a water pool (x,z in 20..28, y in 18..22) into the state's empty world. */\n  function fillPool(state: GameState): void {\n    for (let x = 20; x <= 28; x += 1) {\n      for (let z = 20; z <= 28; z += 1) {\n        for (let y = 18; y <= 22; y += 1) state.world.set(x, y, z, BlockId.Water);\n      }\n    }\n  }\n\n  function makeFish(x: number, y: number, z: number): MobState {\n    const fish = makeMob(\"cod\", x, y, z);\n    fish.hostile = false;\n    return fish;\n  }\n\n  test(\"a swimming fish stays confined to water cells\", () => {\n    const fish = makeFish(24.5, 20.5, 24.5);\n    const state = makeState([fish]);\n    fillPool(state);\n    const { deps } = makeDeps();\n\n    // Long run with wandering turns: wherever it ends up each tick, the cell\n    // holding its body center is always water (it bounces off the pool walls).\n    for (let i = 0; i < 200; i += 1) {\n      tickMobs(state, 0.1, deps);\n      const cell = state.world.get(Math.floor(fish.position.x), Math.floor(fish.position.y), Math.floor(fish.position.z));\n      expect(cell).toBe(BlockId.Water);\n    }\n  });\n\n  test(\"a fish flees the player in 3D when approached\", () => {\n    const fish = makeFish(24.5, 20.5, 24.5);\n […]
 
 > TOOL
 
@@ -4412,7 +4412,7 @@ tool_use Bash
 id: toolu_01Brt35eizpdZui6T6mJ9uaH
 ```json
 {
-  "command": "cat >> /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.test.ts << 'EOF'\n\ndescribe(\"spawnAquaticGroup\", () => {\n  test(\"spawns fish fully submerged in a water pool\", () => {\n    const world = new VoxelWorld(64, 64, 64, 1);\n    // A sand basin (floor y=10) holding 4 blocks of water (y 11..14).\n    for (let x = 20; x <= 44; x += 1) {\n      for (let z = 20; z <= 44; z += 1) {\n        world.set(x, 10, z, BlockId.Sand);\n        for (let y = 11; y <= 14; y += 1) world.set(x, y, z, BlockId.Water);\n      }\n    }\n    const state = { world, mobs: [], nextMobId: 1 } as unknown as GameState;\n\n    spawnAquaticGroup(state, \"cod\", 5, 32, 32, 10, mulberry32(7));\n\n    expect(state.mobs).toHaveLength(5);\n    for (const mob of state.mobs) {\n      expect(mob.kind).toBe(\"cod\");\n      expect(mob.hostile).toBe(false);\n      const cell = world.get(Math.floor(mob.position.x), Math.floor(mob.position.y), Math.floor(mob.position.z));\n      expect(cell).toBe(BlockId.Water);\n    }\n  });\n\n  test(\"fails closed on a dry world: zero fish, no land spawns\", () => {\n    const world = new VoxelWorld(64, 64, 64, 1);\n    for (let x = 0; x < 64; x += 1) for (let z = 0; z < 64; z += 1) world.set(x, 10, z, BlockId.Grass);\n    const state = { world, mobs: [], nextMobId: 1 } as unknown as GameState;\n\n    spawnAquaticGroup(state, \"salmon\", 5, 32, 32, 10, mulberry32(7));\n\n […]
+  "command": "cat >> /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.test.ts << 'EOF'\n\ndescribe(\"spawnAquaticGroup\", () => {\n  test(\"spawns fish fully submerged in a water pool\", () => {\n    const world = new VoxelWorld(64, 64, 64, 1);\n    // A sand basin (floor y=10) holding 4 blocks of water (y 11..14).\n    for (let x = 20; x <= 44; x += 1) {\n      for (let z = 20; z <= 44; z += 1) {\n        world.set(x, 10, z, BlockId.Sand);\n        for (let y = 11; y <= 14; y += 1) world.set(x, y, z, BlockId.Water);\n      }\n    }\n    const state = { world, mobs: [], nextMobId: 1 } as unknown as GameState;\n\n    spawnAquaticGroup(state, \"cod\", 5, 32, 32, 10, mulberry32(7));\n\n    expect(state.mobs).toHaveLength(5);\n    for (const mob of state.mobs) {\n      expect(mob.kind).toBe(\"cod\");\n      expect(mob.hostile).toBe(false);\n      const cell = world.get(Math.floor(mob.position.x), Math.floor(mob.position.y), Math.floor(mob.position.z));\n      expect(cell).toBe(BlockId.Water);\n    }\n  });\n\n  test(\"fails closed on a dry world: zero fish, no land spawns\", () => {\n    const world = new VoxelWorld(64, 64, 64, 1);\n    for (let x = 0; x < 64; x += 1) for (let z = 0; z < 64; z += 1) world.set(x, 10, z, BlockId.Grass);\n    const state = { world, mobs: [], nextMobId: 1 } as unknown as GameState;\n\n    spawnAquaticGroup(state, \"salmon\", 5, 32, 32, 10, mulberry32(7));\n\n […]
 
 > TOOL
 
@@ -4433,7 +4433,7 @@ id: toolu_01DQgo9GdfXy6hgxtUn7KDqN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.test.ts",
   "old_string": "import { VoxelWorld, generateWorld } from \"@/lib/world\";\nimport { GEN } from \"@/lib/world/generation\";\nimport { GameEngine } from \"@/lib/game/engine/GameEngine\";\nimport { createSurfaceYAt } from \"@/lib/game/spawn\";\nimport {\n  assignVillagerProfessions,\n  pushMob,\n  spawnVillageResidents,\n  tickHostileSpawnDirector,\n  tickSpawnerDirector\n} from \"@/lib/game/engine/systems/spawnDirector\";",
   "new_string": "import { BlockId, VoxelWorld, generateWorld } from \"@/lib/world\";\nimport { GEN } from \"@/lib/world/generation\";\nimport { GameEngine } from \"@/lib/game/engine/GameEngine\";\nimport { createSurfaceYAt } from \"@/lib/game/spawn\";\nimport {\n  assignVillagerProfessions,\n  pushMob,\n  spawnAquaticGroup,\n  spawnVillageResidents,\n  tickHostileSpawnDirector,\n  tickSpawnerDirector\n} from \"@/lib/game/engine/systems/spawnDirector\";"
 }
@@ -4453,7 +4453,7 @@ tool_use Bash
 id: toolu_01Y7bp8ni4sC3vxcosMUsNgH
 ```json
 {
-  "command": "head -20 /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.test.ts",
+  "command": "head -20 /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.test.ts",
   "description": "Re-read test file imports"
 }
 ```
@@ -4578,7 +4578,7 @@ error: expect(received).toBe(expected)
 Expected: "Catch it while fishing"
 Received: "Hunt a cod"
 
-      at <anonymous> (/Users/hutusi/workspace/ai/david/monecraft/lib/game/itemSources.test.ts:24:40)
+      at <anonymous> (/home/<USER>/workspace/ai/david/monecraft/lib/game/itemSources.test.ts:24:40)
 (fail) itemSourceHint > fishing-only loot points at the rod [0.15ms]
 126 |     expect(state.player.position.y).toBeGreaterThan(2);
 127 |     // sheep/chicken/horse/cow/pig + wolf/cat + 3 fallback villagers (64³ has no village) + zombie/skeleton/spider/creeper
@@ -4589,7 +4589,7 @@ error: expect(received).toBe(expected)
 Expected: 56
 Received: 66
 
-      at <anonymous> (/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts:128:31)
+      at <anonymous> (/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts:128:31)
 (fail) boot > fresh engine spawns the player on safe ground with starter gear and mobs [114.89ms]
 ```
 
@@ -4599,7 +4599,7 @@ tool_use Read
 id: toolu_01FqEQAZLZxd12ojxa7aWfUT
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/itemSources.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/itemSources.ts",
   "offset": 50,
   "limit": 60
 }
@@ -4641,7 +4641,7 @@ tool_use Read
 id: toolu_01MkhNrdrQqNdmK2rmjVtnG8
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/itemSources.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/itemSources.test.ts",
   "offset": 1,
   "limit": 45
 }
@@ -4695,7 +4695,7 @@ tool_use Bash
 id: toolu_017JjeAs8bprVgSF8hsrCR5q
 ```json
 {
-  "command": "grep -n \"FISHING_LOOT\" -A 20 /Users/hutusi/workspace/ai/david/monecraft/lib/game/fishingLoot.ts 2>/dev/null || grep -rn \"FISHING_LOOT =\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/ | head -3",
+  "command": "grep -n \"FISHING_LOOT\" -A 20 /home/<USER>/workspace/ai/david/monecraft/lib/game/fishingLoot.ts 2>/dev/null || grep -rn \"FISHING_LOOT =\" /home/<USER>/workspace/ai/david/monecraft/lib/game/ | head -3",
   "description": "Find the fishing loot table"
 }
 ```
@@ -4740,7 +4740,7 @@ id: toolu_01HmA4hpbB4ZFxkqRptkj5cC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/itemSources.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/itemSources.test.ts",
   "old_string": "  test(\"fishing-only loot points at the rod\", () => {\n    expect(itemSourceHint(\"raw_fish\")).toBe(\"Catch it while fishing\");\n  });",
   "new_string": "  test(\"raw fish points at hunting cod now that fish mobs swim the oceans\", () => {\n    // Hunt-first priority: cod drop raw fish, which beats the fishing fallback\n    // (every FISHING_LOOT item now has an earlier-priority source).\n    expect(itemSourceHint(\"raw_fish\")).toBe(\"Hunt a cod\");\n  });"
 }
@@ -4751,7 +4751,7 @@ id: toolu_01HmA4hpbB4ZFxkqRptkj5cC
 tool_result
 id: toolu_01HmA4hpbB4ZFxkqRptkj5cC
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/itemSources.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/itemSources.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4761,7 +4761,7 @@ id: toolu_016VMorwQRM49aqxUSFYuxCh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts",
   "old_string": "    // sheep/chicken/horse/cow/pig + wolf/cat + 3 fallback villagers (64³ has no village) + zombie/skeleton/spider/creeper\n    expect(state.mobs.length).toBe(6 + 5 + 3 + 4 + 4 + 4 + 3 + 3 + 8 + 6 + 6 + 4);",
   "new_string": "    // sheep/chicken/horse/cow/pig + wolf/cat + 3 fallback villagers (64³ has no village) + zombie/skeleton/spider/creeper + cod/salmon\n    expect(state.mobs.length).toBe(6 + 5 + 3 + 4 + 4 + 4 + 3 + 3 + 8 + 6 + 6 + 4 + 6 + 4);"
 }
@@ -4772,7 +4772,7 @@ id: toolu_016VMorwQRM49aqxUSFYuxCh
 tool_result
 id: toolu_016VMorwQRM49aqxUSFYuxCh
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4841,7 +4841,7 @@ tool_use Read
 id: toolu_01BAQWaWhiLUuh5ZrhqX7yUq
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts",
   "offset": 124,
   "limit": 12
 }
@@ -4873,7 +4873,7 @@ id: toolu_01MhnNwL2u7XzEjgGGexqjZk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts",
   "old_string": "    expect(engine.getSnapshot().passiveCount).toBe(32);",
   "new_string": "    expect(engine.getSnapshot().passiveCount).toBe(42); // land passives + villagers + 10 fish"
 }
@@ -4884,7 +4884,7 @@ id: toolu_01MhnNwL2u7XzEjgGGexqjZk
 tool_result
 id: toolu_01MhnNwL2u7XzEjgGGexqjZk
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4976,7 +4976,7 @@ tool_use Read
 id: toolu_01XatMnLh4GwzhT1stbsnmNj
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/dungeon.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/dungeon.ts"
 }
 ```
 
@@ -5015,7 +5015,7 @@ tool_use Read
 id: toolu_01MDxwWTgqKqk6GPqbLjcUwK
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/dungeonLoot.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/dungeonLoot.ts"
 }
 ```
 
@@ -5055,7 +5055,7 @@ tool_use Bash
 id: toolu_01DE8ZHxm2qs3UAGidJqMnLs
 ```json
 {
-  "command": "grep -n \"lootedDungeonChests\\|dungeonChestIndices\\|collectDungeonSites\\|collectVillageSites\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts /Users/hutusi/workspace/ai/david/monecraft/lib/game/save.ts /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts",
+  "command": "grep -n \"lootedDungeonChests\\|dungeonChestIndices\\|collectDungeonSites\\|collectVillageSites\" /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts /home/<USER>/workspace/ai/david/monecraft/lib/game/save.ts /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts",
   "description": "Find all dungeon chest set references"
 }
 ```
@@ -5065,16 +5065,16 @@ id: toolu_01DE8ZHxm2qs3UAGidJqMnLs
 tool_result
 id: toolu_01DE8ZHxm2qs3UAGidJqMnLs
 ```
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts:227:  dungeonChestIndices: Set<number>;
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts:231:  lootedDungeonChests: Set<number>;
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts:4:  collectDungeonSites,
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts:5:  collectVillageSites,
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts:185:    const dungeonSites = collectDungeonSites(world, this.worldType);
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts:187:    const villageSites = collectVillageSites(world, this.worldType);
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts:244:      dungeonChestIndices: new Set(dungeonSites.chestIndices),
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts:246:      lootedDungeonChests: new Set(),
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts:283:      this.state.lootedDungeonChests = new Set(readLootedChests(save));
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts:759:      lootedChests: serializeLootedChests(state.lootedDungeonChests),
+/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts:227:  dungeonChestIndices: Set<number>;
+/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts:231:  lootedDungeonChests: Set<number>;
+/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts:4:  collectDungeonSites,
+/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts:5:  collectVillageSites,
+/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts:185:    const dungeonSites = collectDungeonSites(world, this.worldType);
+/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts:187:    const villageSites = collectVillageSites(world, this.worldType);
+/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts:244:      dungeonChestIndices: new Set(dungeonSites.chestIndices),
+/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts:246:      lootedDungeonChests: new Set(),
+/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts:283:      this.state.lootedDungeonChests = new Set(readLootedChests(save));
+/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts:759:      lootedChests: serializeLootedChests(state.lootedDungeonChests),
 ```
 
 > TOOL
@@ -5083,7 +5083,7 @@ tool_use Read
 id: toolu_012hKgoFWbRbctfau4gRyiRj
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "offset": 175,
   "limit": 120
 }
@@ -5128,7 +5128,7 @@ id: toolu_012rGz1hLHnUZ9Dcep6EHxZK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/generation.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/generation.ts",
   "old_string": "  // Ocean flora (kelp stalks and reef coral), hash-gated per ocean-floor column\n  // like cacti so density follows the actual ocean area. kelpSurfaceClearance is\n  // the water that must remain above a stalk's top — kelp is a solid block, so\n  // the clearance keeps boats, fishing casts, and the water surface clear of it\n  // (random-tick growth enforces the same invariant, see randomTicks.ts).\n  oceanFlora: Object.freeze({ kelpChance: 0.03, coralChance: 0.006, kelpMaxHeight: 6, kelpSurfaceClearance: 3 })\n});",
   "new_string": "  // Ocean flora (kelp stalks and reef coral), hash-gated per ocean-floor column\n  // like cacti so density follows the actual ocean area. kelpSurfaceClearance is\n  // the water that must remain above a stalk's top — kelp is a solid block, so\n  // the clearance keeps boats, fishing casts, and the water surface clear of it\n  // (random-tick growth enforces the same invariant, see randomTicks.ts).\n  oceanFlora: Object.freeze({ kelpChance: 0.03, coralChance: 0.006, kelpMaxHeight: 6, kelpSurfaceClearance: 3 }),\n  // Sunken shipwrecks: flooded plank hulls with lazily-filled loot chests on the\n  // deep ocean floor, on their own decoupled PRNG (shipwreckRand) like dungeons.\n  shipwreckCount: 10\n});"
 }
@@ -5139,7 +5139,7 @@ id: toolu_012rGz1hLHnUZ9Dcep6EHxZK
 tool_result
 id: toolu_012rGz1hLHnUZ9Dcep6EHxZK
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/generation.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/generation.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5149,7 +5149,7 @@ id: toolu_013cDSMHqCW3FJVATjk9sTo9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/generation.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/generation.ts",
   "old_string": "  // Villages run on their own decoupled PRNG (villageRand), so they add\n  // structures without shifting any other stream — every pass above stays\n  // byte-identical to a village-less world of the same seed.\n  placeVillages(world, cfg);\n  // Ocean flora runs last: hash-gated like cacti (consumes no shared PRNG), so\n  // every earlier pass stays byte-identical to a kelp-less world of the same seed.\n  placeOceanFlora(world, cfg);\n}",
   "new_string": "  // Villages run on their own decoupled PRNG (villageRand), so they add\n  // structures without shifting any other stream — every pass above stays\n  // byte-identical to a village-less world of the same seed.\n  placeVillages(world, cfg);\n  // Shipwrecks likewise run on their own PRNG (shipwreckRand), before ocean\n  // flora so kelp can't occupy a hull cell the wreck is about to overwrite.\n  placeShipwrecks(world, cfg);\n  // Ocean flora runs last: hash-gated like cacti (consumes no shared PRNG), so\n  // every earlier pass stays byte-identical to a kelp-less world of the same seed.\n  placeOceanFlora(world, cfg);\n}"
 }
@@ -5160,7 +5160,7 @@ id: toolu_013cDSMHqCW3FJVATjk9sTo9
 tool_result
 id: toolu_013cDSMHqCW3FJVATjk9sTo9
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/generation.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/generation.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5174,7 +5174,7 @@ id: toolu_012pshmL3r7Lkq1CNzvWyFKu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/generation.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/generation.ts",
   "old_string": "export type VillageSites = { centers: Array<{ x: number; z: number }> };\n\n/**\n * Re-derives every village's center WITHOUT writing blocks, by replaying\n * buildVillages' placement math. The engine calls this once after regenerating\n * the world on load to rebuild the session-only village sites that seed resident\n * villagers. Must be passed the same worldType the world was generated with.\n */\nexport function collectVillageSites(world: VoxelWorld, worldType: WorldType = \"default\"): VillageSites {\n  const centers: Array<{ x: number; z: number }> = [];\n  buildVillages(world, false, (x, z) => centers.push({ x, z }), terrainConfigFor(worldType));\n  return { centers };\n}",
   "new_string": "export type VillageSites = { centers: Array<{ x: number; z: number }> };\n\n/**\n * Re-derives every village's center WITHOUT writing blocks, by replaying\n * buildVillages' placement math. The engine calls this once after regenerating\n * the world on load to rebuild the session-only village sites that seed resident\n * villagers. Must be passed the same worldType the world was generated with.\n */\nexport function collectVillageSites(world: VoxelWorld, worldType: WorldType = \"default\"): VillageSites {\n  const centers: Array<{ x: number; z: number }> = [];\n  buildVillages(world, false, (x, z) => centers.push({ x, z }), terrainConfigFor(worldType));\n  return { […]
 
@@ -5183,7 +5183,7 @@ id: toolu_012pshmL3r7Lkq1CNzvWyFKu
 tool_result
 id: toolu_012pshmL3r7Lkq1CNzvWyFKu
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/generation.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/generation.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5196,7 +5196,7 @@ tool_use Bash
 id: toolu_01PWVQ1tBetdCGQCHeV1ynrS
 ```json
 {
-  "command": "grep -n \"collect\\|generation\" /Users/hutusi/workspace/ai/david/monecraft/lib/world/index.ts",
+  "command": "grep -n \"collect\\|generation\" /home/<USER>/workspace/ai/david/monecraft/lib/world/index.ts",
   "description": "Check world barrel exports"
 }
 ```
@@ -5217,7 +5217,7 @@ tool_use Read
 id: toolu_01SwbEEJgsPGAvatdtcED8nm
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/index.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/index.ts"
 }
 ```
 
@@ -5254,7 +5254,7 @@ id: toolu_01S2Lv7AetUqDHZz2N7mW1tG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/index.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/index.ts",
   "old_string": "export {\n  generateWorld,\n  collectDungeonSites,\n  collectVillageSites,\n  terrainConfigFor,\n  type DungeonSites,\n  type TerrainConfig,\n  type VillageSites\n} from \"./generation\";",
   "new_string": "export {\n  generateWorld,\n  collectDungeonSites,\n  collectShipwreckSites,\n  collectVillageSites,\n  terrainConfigFor,\n  type DungeonSites,\n  type ShipwreckSites,\n  type TerrainConfig,\n  type VillageSites\n} from \"./generation\";"
 }
@@ -5265,7 +5265,7 @@ id: toolu_01S2Lv7AetUqDHZz2N7mW1tG
 tool_result
 id: toolu_01S2Lv7AetUqDHZz2N7mW1tG
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/index.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/index.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5279,7 +5279,7 @@ id: toolu_01SF78vcWdjcaL1E9iTDNxnN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/dungeonLoot.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/dungeonLoot.ts",
   "old_string": "/**\n * Rolls one dungeon chest. Consumes one rng sample for the tier, then rolls the\n * common table (always) plus the rare table when the chest is rare. `rng` is\n * injectable so tests get deterministic loot (and the engine seeds it per chest).\n */\nexport function rollDungeonLoot(rng: () => number): Array<{ itemId: string; count: number }> {\n  const rare = clampUnit(rng()) < RARE_CHEST_CHANCE;\n  const drops = rare ? rollEntries(DUNGEON_LOOT.rare, rng) : [];\n  drops.push(...rollEntries(DUNGEON_LOOT.common, rng));\n  return drops;\n}",
   "new_string": "/**\n * Rolls one tiered worldgen chest. Consumes one rng sample for the tier, then\n * rolls the common table (always) plus the rare table when the chest is rare —\n * the shared shape for dungeon, shipwreck, and buried-treasure chests. `rng` is\n * injectable so tests get deterministic loot (and the engine seeds it per chest).\n */\nexport function rollTieredLoot(tables: Record<LootTier, LootEntry[]>, rng: () => number): Array<{ itemId: string; count: number }> {\n  const rare = clampUnit(rng()) < RARE_CHEST_CHANCE;\n  const drops = rare ? rollEntries(tables.rare, rng) : [];\n  drops.push(...rollEntries(tables.common, rng));\n  return drops;\n}\n\n/** Rolls one dungeon chest (see rollTieredLoot). */\nexport function rollDungeonLoot(rng: () => number): Array<{ itemId: string; count: number }> {\n […]
 
@@ -5288,7 +5288,7 @@ id: toolu_01SF78vcWdjcaL1E9iTDNxnN
 tool_result
 id: toolu_01SF78vcWdjcaL1E9iTDNxnN
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/dungeonLoot.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/dungeonLoot.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5297,7 +5297,7 @@ tool_use Write
 id: toolu_012bWTPZKFt8abBV31stbp3x
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/shipwreckLoot.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/shipwreckLoot.ts",
   "content": "import { rollTieredLoot, type LootEntry, type LootTier } from \"@/lib/game/dungeonLoot\";\n\n/**\n * Shipwreck chest loot — the same tiered shape as dungeon chests (see\n * dungeonLoot.ts), themed nautical: trade goods, sailcloth materials, and the\n * treasure map that starts the buried-treasure hunt. Wrecks are the map's main\n * source, so it sits in the common table. Item ids must exist in ITEM_DEFS —\n * shipwreckLoot.test.ts enforces that.\n */\nexport const SHIPWRECK_LOOT: Record<LootTier, LootEntry[]> = {\n  common: [\n    // Planks always drop — salvage from the hull, so no chest is ever empty.\n    { itemId: \"planks\", min: 2, max: 6 },\n    { itemId: \"treasure_map\", min: 1, max: 1, chance: 0.4 },\n    { itemId: \"emerald\", min: 1, max: 3, chance: 0.55 },\n    { itemId: \"string\", min: 1, max: 3, chance: 0.7 },\n    { itemId: \"leather\", min: 1, max: 2, chance: 0.5 },\n    { itemId: \"raw_fish\", min: 1, max: 3, chance: 0.6 },\n    { itemId: \"dried_kelp\", min: 1, max: 4, chance: 0.45 },\n    { itemId: \"gold_ore\", min: 1, max: 3, chance: 0.3 }\n  ],\n  rare: [\n    { itemId: \"diamond_ore\", min: 1, max: 2, chance: 0.25 },\n    { itemId: \"sapphire_ore\", min: 1, max: 2, chance: 0.35 },\n […]
 
 > TOOL
@@ -5305,7 +5305,7 @@ id: toolu_012bWTPZKFt8abBV31stbp3x
 tool_result
 id: toolu_012bWTPZKFt8abBV31stbp3x
 ```
-File created successfully at: /Users/hutusi/workspace/ai/david/monecraft/lib/game/shipwreckLoot.ts (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/ai/david/monecraft/lib/game/shipwreckLoot.ts (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5319,7 +5319,7 @@ id: toolu_01KZmHqXvMsbFwf3som7SDXX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts",
   "old_string": "  { id: \"raft\", label: \"Raft\", kind: \"vehicle\" },\n  { id: \"ship\", label: \"Ship\", kind: \"vehicle\" },",
   "new_string": "  { id: \"raft\", label: \"Raft\", kind: \"vehicle\" },\n  { id: \"ship\", label: \"Ship\", kind: \"vehicle\" },\n  // Looted from shipwrecks (and rarely fished up): while held, a compass HUD\n  // points to the nearest unearthed buried-treasure chest (see bossTracking.ts).\n  { id: \"treasure_map\", label: \"Treasure Map\", kind: \"material\" },"
 }
@@ -5330,7 +5330,7 @@ id: toolu_01KZmHqXvMsbFwf3som7SDXX
 tool_result
 id: toolu_01KZmHqXvMsbFwf3som7SDXX
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5340,7 +5340,7 @@ id: toolu_01YEJwtvVW3CcT5sfnq5nNLK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/ui/spritePixels.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/ui/spritePixels.ts",
   "old_string": "const SEEDS_PALETTE: PixelPalette = { s: [201, 178, 110], d: [150, 128, 70] };\n// A folded sheet of dried kelp: dark seaweed-green with a fold seam and highlights.",
   "new_string": "const SEEDS_PALETTE: PixelPalette = { s: [201, 178, 110], d: [150, 128, 70] };\n// A weathered parchment chart with a red X where the treasure lies.\nconst TREASURE_MAP_PALETTE: PixelPalette = { o: [110, 88, 55], p: [222, 205, 160], P: [186, 166, 122], x: [190, 50, 40] };\nconst TREASURE_MAP_GRID = [\n  \"................\",\n  \".oooooooooooooo.\",\n  \".oppppppppppppo.\",\n  \".opPPpppppppppo.\",\n  \".opppppppPPpppo.\",\n  \".opppxppxpppppo.\",\n  \".oppppxxppppppo.\",\n  \".oppppxxppppppo.\",\n  \".opppxppxpppppo.\",\n  \".oppPpppppppppo.\",\n  \".opppppppppPPpo.\",\n  \".oppppPPppppppo.\",\n  \".oppppppppppppo.\",\n  \".oooooooooooooo.\",\n  \"................\",\n  \"................\"\n];\n// A folded sheet of dried kelp: dark seaweed-green with a fold seam and highlights."
 }
@@ -5351,7 +5351,7 @@ id: toolu_01YEJwtvVW3CcT5sfnq5nNLK
 tool_result
 id: toolu_01YEJwtvVW3CcT5sfnq5nNLK
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/ui/spritePixels.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/ui/spritePixels.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5361,7 +5361,7 @@ id: toolu_01BYvWqyRoxAf8h8NG8UNriC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/ui/spritePixels.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/ui/spritePixels.ts",
   "old_string": "  seeds: { grid: SEEDS_GRID, palette: SEEDS_PALETTE },\n  dried_kelp: { grid: DRIED_KELP_GRID, palette: DRIED_KELP_PALETTE },",
   "new_string": "  seeds: { grid: SEEDS_GRID, palette: SEEDS_PALETTE },\n  dried_kelp: { grid: DRIED_KELP_GRID, palette: DRIED_KELP_PALETTE },\n  treasure_map: { grid: TREASURE_MAP_GRID, palette: TREASURE_MAP_PALETTE },"
 }
@@ -5372,7 +5372,7 @@ id: toolu_01BYvWqyRoxAf8h8NG8UNriC
 tool_result
 id: toolu_01BYvWqyRoxAf8h8NG8UNriC
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/ui/spritePixels.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/ui/spritePixels.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5381,7 +5381,7 @@ tool_use Write
 id: toolu_01Rp4MQe8DTBRd1jjnDgnYPR
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/dungeon.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/dungeon.ts",
   "content": "import { CHEST_SLOTS } from \"@/lib/game/config\";\nimport { rollDungeonLoot, seededRng } from \"@/lib/game/dungeonLoot\";\nimport { rollShipwreckLoot } from \"@/lib/game/shipwreckLoot\";\nimport { createEmptySlot, createSlot } from \"@/lib/game/items\";\nimport { tryInsertSlots } from \"@/lib/game/inventory\";\nimport type { GameState } from \"../state\";\n\n/**\n * Fills a worldgen loot chest (dungeon or shipwreck) on its FIRST access (open\n * or break) and marks it looted. The chest's family — which site set holds its\n * voxel index — picks the loot table, and each family mixes a distinct constant\n * into the seed so a dungeon chest and a shipwreck chest at a colliding index\n * could never share a roll. The loot is seeded from the world seed + the\n * chest's voxel index, so it is reproducible until the chest is accessed.\n *\n * Marking the index in the persisted `lootedWorldgenChests` set (the save's\n * `lootedChests` field) — rather than relying on the chest being non-empty — is\n * what closes the re-roll exploit: an emptied chest is dropped from the save's\n * `blockEntities`, so without this marker the lazy fill would run again on\n * reload and hand out fresh loot.\n *\n * A no-op for player-placed chests […]
 
 > TOOL
@@ -5389,7 +5389,7 @@ id: toolu_01Rp4MQe8DTBRd1jjnDgnYPR
 tool_result
 id: toolu_01Rp4MQe8DTBRd1jjnDgnYPR
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/dungeon.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/dungeon.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5398,7 +5398,7 @@ tool_use Bash
 id: toolu_01B4ZkyQjGppV4HqgifNutsF
 ```json
 {
-  "command": "grep -rln \"fillDungeonChestIfUnlooted\\|lootedDungeonChests\" /Users/hutusi/workspace/ai/david/monecraft/lib /Users/hutusi/workspace/ai/david/monecraft/components 2>/dev/null",
+  "command": "grep -rln \"fillDungeonChestIfUnlooted\\|lootedDungeonChests\" /home/<USER>/workspace/ai/david/monecraft/lib /home/<USER>/workspace/ai/david/monecraft/components 2>/dev/null",
   "description": "Find all references to the old names"
 }
 ```
@@ -5408,12 +5408,12 @@ id: toolu_01B4ZkyQjGppV4HqgifNutsF
 tool_result
 id: toolu_01B4ZkyQjGppV4HqgifNutsF
 ```
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/dungeonLoot.test.ts
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts
+/home/<USER>/workspace/ai/david/monecraft/lib/game/dungeonLoot.test.ts
+/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts
+/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts
+/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts
+/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts
+/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts
 ```
 
 > TOOL
@@ -5451,7 +5451,7 @@ id: toolu_01TH7Tz2HKnA4oPXNgKtSR7E
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "old_string": "    // Re-derive the dungeon chest/spawner positions from the seed (the world is\n    // regenerated deterministically each load, so these match generation).\n    const dungeonSites = collectDungeonSites(world, this.worldType);\n    // Likewise re-derive village centers, so resident villagers can be seeded there.\n    const villageSites = collectVillageSites(world, this.worldType);",
   "new_string": "    // Re-derive the dungeon chest/spawner positions from the seed (the world is\n    // regenerated deterministically each load, so these match generation).\n    const dungeonSites = collectDungeonSites(world, this.worldType);\n    // Likewise re-derive shipwreck chests (they share the lazy loot fill) and\n    // village centers, so resident villagers can be seeded there.\n    const shipwreckSites = collectShipwreckSites(world, this.worldType);\n    const villageSites = collectVillageSites(world, this.worldType);"
 }
@@ -5472,7 +5472,7 @@ id: toolu_01SXAgTEurE8XwaWR9HgtXrA
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "old_string": "      dungeonChestIndices: new Set(dungeonSites.chestIndices),\n      dungeonSpawnerIndices: new Set(dungeonSites.spawnerIndices),\n      lootedWorldgenChests: new Set(),",
   "new_string": "      dungeonChestIndices: new Set(dungeonSites.chestIndices),\n      dungeonSpawnerIndices: new Set(dungeonSites.spawnerIndices),\n      shipwreckChestIndices: new Set(shipwreckSites.chestIndices),\n      lootedWorldgenChests: new Set(),"
 }
@@ -5492,7 +5492,7 @@ tool_use Read
 id: toolu_01EMTNdhFhqpgQUdaiSWcV5G
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "offset": 1,
   "limit": 60
 }
@@ -5572,7 +5572,7 @@ id: toolu_01HY6zLmetoEW9H281rLZUDP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "old_string": "import {\n  BlockId,\n  collectDungeonSites,\n  collectVillageSites,\n  collidesAt,",
   "new_string": "import {\n  BlockId,\n  collectDungeonSites,\n  collectShipwreckSites,\n  collectVillageSites,\n  collidesAt,"
 }
@@ -5583,7 +5583,7 @@ id: toolu_01HY6zLmetoEW9H281rLZUDP
 tool_result
 id: toolu_01HY6zLmetoEW9H281rLZUDP
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5593,7 +5593,7 @@ id: toolu_01Du4m1iydgvEsvHfLFfreaP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "old_string": "    const dungeonSites = collectDungeonSites(world, this.worldType);\n    // Likewise re-derive village centers, so resident villagers can be seeded there.\n    const villageSites = collectVillageSites(world, this.worldType);",
   "new_string": "    const dungeonSites = collectDungeonSites(world, this.worldType);\n    // Likewise re-derive shipwreck chests (they share the lazy loot fill) and\n    // village centers, so resident villagers can be seeded there.\n    const shipwreckSites = collectShipwreckSites(world, this.worldType);\n    const villageSites = collectVillageSites(world, this.worldType);"
 }
@@ -5604,7 +5604,7 @@ id: toolu_01Du4m1iydgvEsvHfLFfreaP
 tool_result
 id: toolu_01Du4m1iydgvEsvHfLFfreaP
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5614,7 +5614,7 @@ id: toolu_016fFtLfjQMwH9VSPiFowecy
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "old_string": "      dungeonChestIndices: new Set(dungeonSites.chestIndices),\n      dungeonSpawnerIndices: new Set(dungeonSites.spawnerIndices),\n      lootedWorldgenChests: new Set(),",
   "new_string": "      dungeonChestIndices: new Set(dungeonSites.chestIndices),\n      dungeonSpawnerIndices: new Set(dungeonSites.spawnerIndices),\n      shipwreckChestIndices: new Set(shipwreckSites.chestIndices),\n      lootedWorldgenChests: new Set(),"
 }
@@ -5625,7 +5625,7 @@ id: toolu_016fFtLfjQMwH9VSPiFowecy
 tool_result
 id: toolu_016fFtLfjQMwH9VSPiFowecy
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5634,7 +5634,7 @@ tool_use Read
 id: toolu_01YW62PfYn4CsADnEGNdvXaJ
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts",
   "offset": 222,
   "limit": 20
 }
@@ -5674,7 +5674,7 @@ id: toolu_0113xT4eLsLKcdZRBfoCHxod
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts",
   "old_string": "  /** Worldgen dungeon chest voxel indices (session; re-derived from the seed each load). */\n  dungeonChestIndices: Set<number>;\n  /** Worldgen dungeon spawner voxel indices (session; re-derived from the seed each load). */\n  dungeonSpawnerIndices: Set<number>;\n  /** Dungeon chests already opened/broken (persisted) — gates one-time lazy loot fill. */\n  lootedWorldgenChests: Set<number>;",
   "new_string": "  /** Worldgen dungeon chest voxel indices (session; re-derived from the seed each load). */\n  dungeonChestIndices: Set<number>;\n  /** Worldgen dungeon spawner voxel indices (session; re-derived from the seed each load). */\n  dungeonSpawnerIndices: Set<number>;\n  /** Worldgen shipwreck chest voxel indices (session; re-derived from the seed each load). */\n  shipwreckChestIndices: Set<number>;\n  /** Worldgen chests (dungeon/shipwreck) already opened/broken (persisted as `lootedChests`) — gates one-time lazy loot fill. */\n  lootedWorldgenChests: Set<number>;"
 }
@@ -5685,7 +5685,7 @@ id: toolu_0113xT4eLsLKcdZRBfoCHxod
 tool_result
 id: toolu_0113xT4eLsLKcdZRBfoCHxod
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5720,7 +5720,7 @@ tool_use Read
 id: toolu_01WBj7eeJNi3uqVjspV7rUvu
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/dungeonLoot.test.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/dungeonLoot.test.ts"
 }
 ```
 
@@ -5776,7 +5776,7 @@ tool_use Write
 id: toolu_015VRBio5bR57fAnN733Gd36
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/shipwreckLoot.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/shipwreckLoot.test.ts",
   "content": "import { describe, expect, test } from \"bun:test\";\nimport { CHEST_SLOTS } from \"@/lib/game/config\";\nimport { createEmptySlot, createSlot, ITEM_DEF_BY_ID } from \"@/lib/game/items\";\nimport { tryInsertSlots } from \"@/lib/game/inventory\";\nimport { seededRng, type LootTier } from \"@/lib/game/dungeonLoot\";\nimport { SHIPWRECK_LOOT, rollShipwreckLoot } from \"@/lib/game/shipwreckLoot\";\n\nconst ALL_TIERS = Object.keys(SHIPWRECK_LOOT) as LootTier[];\n\ndescribe(\"shipwreck loot tables\", () => {\n  test(\"every loot entry references an existing item with a sane range\", () => {\n    for (const tier of ALL_TIERS) {\n      for (const entry of SHIPWRECK_LOOT[tier]) {\n        expect(ITEM_DEF_BY_ID[entry.itemId]).toBeDefined();\n        expect(entry.min).toBeLessThanOrEqual(entry.max);\n        expect(entry.min).toBeGreaterThanOrEqual(0);\n        if (entry.chance !== undefined) {\n          expect(entry.chance).toBeGreaterThan(0);\n          expect(entry.chance).toBeLessThanOrEqual(1);\n        }\n      }\n    }\n  });\n\n  test(\"rolling the same seed yields identical loot (reproducible until opened)\", () => {\n    const loot1 = rollShipwreckLoot(seededRng(0x1234));\n    const loot2 = rollShipwreckLoot(seededRng(0x1234));\n    expect(loot1).toEqual(loot2);\n  });\n\n  test(\"a low roll opens the rare tier and yields minimum counts\", () => {\n    const loot = rollShipwreckLoot(() => 0);\n    const byId = new Map(loot.map((d) => [d.itemId, d.count]));\n    expect(byId.get(\"diamond_ore\")).toBe(1); // rare entry, min 1\n    expect(byId.get(\"planks\")).toBe(2); // common guaranteed entry, min 2\n    expect(byId.get(\"treasure_map\")).toBe(1); // the map hunt starts here\n  });\n\n  test(\"a high roll stays common and drops only the guaranteed salvage\", () => {\n    const loot = rollShipwreckLoot(() => 0.999);\n    expect(loot.some((d) => d.itemId === \"treasure_map\")).toBe(false); // chance-gated, skipped\n    expect(loot.some((d) => d.itemId […]
 
 > TOOL
@@ -5784,7 +5784,7 @@ id: toolu_015VRBio5bR57fAnN733Gd36
 tool_result
 id: toolu_015VRBio5bR57fAnN733Gd36
 ```
-File created successfully at: /Users/hutusi/workspace/ai/david/monecraft/lib/game/shipwreckLoot.test.ts (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/ai/david/monecraft/lib/game/shipwreckLoot.test.ts (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5794,7 +5794,7 @@ id: toolu_01CGZJrijckqmoYNrk76hqyH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/generation.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/generation.test.ts",
   "old_string": "import {\n  BiomeId,\n  BlockId,\n  VoxelWorld,\n  buildGeometryLayersRegion,\n  buildGeometryRegion,\n  collectDungeonSites,\n  collectVillageSites,\n  computeFullLight,\n  generateWorld,\n  type WorldType\n} from \"@/lib/world\";",
   "new_string": "import {\n  BiomeId,\n  BlockId,\n  VoxelWorld,\n  buildGeometryLayersRegion,\n  buildGeometryRegion,\n  collectDungeonSites,\n  collectShipwreckSites,\n  collectVillageSites,\n  computeFullLight,\n  generateWorld,\n  type WorldType\n} from \"@/lib/world\";"
 }
@@ -5805,7 +5805,7 @@ id: toolu_01CGZJrijckqmoYNrk76hqyH
 tool_result
 id: toolu_01CGZJrijckqmoYNrk76hqyH
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/generation.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/generation.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5815,7 +5815,7 @@ id: toolu_01CdqzbMDQQxEKmueDBTz9t5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/generation.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/generation.test.ts",
   "old_string": "  test(\n    \"dungeons generate underground with chests, spawners, and mossy cobble, clear of spawn\",\n    () => {\n      const world = fullWorld();\n      const sites = collectDungeonSites(world);\n      expect(sites.chestIndices.length).toBeGreaterThan(0);\n      expect(sites.spawnerIndices.length).toBeGreaterThan(0);\n\n      const chestSet = new Set(sites.chestIndices);\n      const spawnerSet = new Set(sites.spawnerIndices);\n      const cx = world.sizeX / 2;\n      const cz = world.sizeZ / 2;\n\n      let chests = 0;\n      let spawners = 0;\n      let mossy = 0;\n      for (let x = 0; x < world.sizeX; x += 1) {\n        for (let z = 0; z < world.sizeZ; z += 1) {\n          for (let y = 0; y < world.sizeY; y += 1) {\n            const block = world.get(x, y, z);\n            if (block === BlockId.Chest) {\n              chests += 1;\n              // Every generated chest must be a known dungeon site — this is what\n              // gates lazy loot fill, so a mismatch would mean re-rollable loot.\n              expect(chestSet.has(world.index(x, y, z))).toBe(true);\n              // No dungeon loot in the immediate spawn area.\n              expect(Math.hypot(x - cx, z - cz)).toBeGreaterThanOrEqual(30);\n            } else if (block === BlockId.Spawner) {\n              spawners += 1;\n              expect(spawnerSet.has(world.index(x, y, z))).toBe(true);\n            } else if (block === BlockId.MossyCobblestone) {\n              mossy += 1;\n            }\n          }\n        }\n      }\n      expect(chests).toBeGreaterThan(0);\n      expect(spawners).toBeGreaterThan(0);\n      expect(mossy).toBeGreaterThan(0);\n    },\n    { timeout: 60000 […]
 
 > TOOL
@@ -5823,7 +5823,7 @@ id: toolu_01CdqzbMDQQxEKmueDBTz9t5
 tool_result
 id: toolu_01CdqzbMDQQxEKmueDBTz9t5
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/generation.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/generation.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5856,7 +5856,7 @@ id: toolu_013SHAsPGEebq57Pp5BghiaV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/generation.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/generation.ts",
   "old_string": "  // Sunken shipwrecks: flooded plank hulls with lazily-filled loot chests on the\n  // deep ocean floor, on their own decoupled PRNG (shipwreckRand) like dungeons.\n  shipwreckCount: 10\n});",
   "new_string": "  // Sunken shipwrecks: flooded plank hulls with lazily-filled loot chests on the\n  // deep ocean floor, on their own decoupled PRNG (shipwreckRand) like dungeons.\n  // Placement attempts, not a guaranteed count: only draws landing in deep ocean\n  // build a wreck (~15% of the map), so ~45 attempts yield a handful of wrecks.\n  shipwreckCount: 45\n});"
 }
@@ -5867,7 +5867,7 @@ id: toolu_013SHAsPGEebq57Pp5BghiaV
 tool_result
 id: toolu_013SHAsPGEebq57Pp5BghiaV
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/generation.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/generation.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5905,7 +5905,7 @@ id: toolu_01QPc3Qg37B5nfGvwBpCSP9t
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/generation.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/generation.test.ts",
   "old_string": "      expect(hashBytes(fullWorld().blocks)).toBe(\"dbbf3d129e59ecba5fb13a1b9cf4b16749c1467e730339cd090271acc5f6553c\");",
   "new_string": "      expect(hashBytes(fullWorld().blocks)).toBe(\"0b1dc4631e07fb0eff82c82ecd733f5affbfecf120d5f98dfb822b696060e505\");"
 }
@@ -5916,7 +5916,7 @@ id: toolu_01QPc3Qg37B5nfGvwBpCSP9t
 tool_result
 id: toolu_01QPc3Qg37B5nfGvwBpCSP9t
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/generation.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/generation.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5925,7 +5925,7 @@ tool_use Bash
 id: toolu_01MPuk9TjKYstZmavioR8eSM
 ```json
 {
-  "command": "grep -n \"exploit\\|fillWorldgenChest\\|dungeonChestIndices\\|shipwreck\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts | head",
+  "command": "grep -n \"exploit\\|fillWorldgenChest\\|dungeonChestIndices\\|shipwreck\" /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts | head",
   "description": "Find the exploit-guard test"
 }
 ```
@@ -5953,7 +5953,7 @@ tool_use Read
 id: toolu_01QASvvpJ2meM9dGPBcMG2Gk
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts",
   "offset": 680,
   "limit": 75
 }
@@ -6010,7 +6010,7 @@ id: toolu_01XFBF9TLDufbcRaTkz9di1m
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts",
   "old_string": "    run(engine, 4, input({ leftMouseHeld: true, pointerLocked: true }));\n\n    expect(state.world.blocks[idx]).toBe(BlockId.Air);\n    expect(state.lootedWorldgenChests.has(idx)).toBe(true);\n    expect(countsById(state.inventory).get(\"chest\")).toBe(1); // the chest item itself\n    expect(countsById(state.inventory).get(\"bone\") ?? 0).toBeGreaterThan(0); // bone always drops\n  });\n});",
   "new_string": "    run(engine, 4, input({ leftMouseHeld: true, pointerLocked: true }));\n\n    expect(state.world.blocks[idx]).toBe(BlockId.Air);\n    expect(state.lootedWorldgenChests.has(idx)).toBe(true);\n    expect(countsById(state.inventory).get(\"chest\")).toBe(1); // the chest item itself\n    expect(countsById(state.inventory).get(\"bone\") ?? 0).toBeGreaterThan(0); // bone always drops\n  });\n\n  test(\"a shipwreck chest fills from the shipwreck table, once, from its own seed family\", () => {\n    const engine = makeEngine();\n    const idx = engine.state.world.index(24, 40, 24);\n    engine.state.shipwreckChestIndices.add(idx);\n\n    fillWorldgenChestIfUnlooted(engine.state, idx);\n    expect(engine.state.lootedWorldgenChests.has(idx)).toBe(true);\n    const slots = engine.state.containers.get(idx)!;\n    // Planks are the shipwreck table's guaranteed salvage (bone is the dungeon one).\n    expect(slots.some((slot) => slot.id === \"planks\" && slot.count > 0)).toBe(true);\n\n    // The same index registered as a dungeon chest instead rolls different loot —\n    // the family picks both the table and the seed constant.\n    const other = makeEngine();\n    other.state.dungeonChestIndices.add(idx);\n    fillWorldgenChestIfUnlooted(other.state, idx);\n    expect(other.state.containers.get(idx)!.some((slot) => slot.id === \"bone\" && slot.count > 0)).toBe(true);\n\n    // Re-access after emptying never re-rolls (the shared looted set gates it).\n    engine.state.containers.set(\n      idx,\n      Array.from({ length: CHEST_SLOTS }, () => createEmptySlot())\n    );\n    fillWorldgenChestIfUnlooted(engine.state, idx);\n    expect(engine.state.containers.get(idx)!.some((slot) => slot.id && slot.count > 0)).toBe(false);\n  });\n});"
 }
@@ -6021,7 +6021,7 @@ id: toolu_01XFBF9TLDufbcRaTkz9di1m
 tool_result
 id: toolu_01XFBF9TLDufbcRaTkz9di1m
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6115,7 +6115,7 @@ tool_use Read
 id: toolu_01HWuDj3p9XzomuRet8xPo8x
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/bossTracking.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/bossTracking.ts"
 }
 ```
 
@@ -6155,7 +6155,7 @@ tool_use Bash
 id: toolu_01VTva47DacgfRCGUUDWWxf2
 ```json
 {
-  "command": "grep -n \"bossTracking\\|BossTracking\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts | head && grep -n \"boss\" /Users/hutusi/workspace/ai/david/monecraft/components/game/BossHealthBar.tsx | head -8",
+  "command": "grep -n \"bossTracking\\|BossTracking\" /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts | head && grep -n \"boss\" /home/<USER>/workspace/ai/david/monecraft/components/game/BossHealthBar.tsx | head -8",
   "description": "Find boss tracking usage in engine and HUD"
 }
 ```
@@ -6165,12 +6165,12 @@ id: toolu_01VTva47DacgfRCGUUDWWxf2
 tool_result
 id: toolu_01VTva47DacgfRCGUUDWWxf2
 ```
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts:42:import { bossTracking, type BossTracking } from "@/lib/game/bossTracking";
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts:166:  private lastBoss: ({ hpPercent: number } & BossTracking) | null = null;
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts:1159:  private bossSnapshot(): ({ hpPercent: number } & BossTracking) | null {
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts:1166:    const tracking = bossTracking(this.state.player, bossMob);
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts:3:import type { BossTracking } from "@/lib/game/bossTracking";
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts:371:  boss: ({ hpPercent: number } & BossTracking) | null;
+/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts:42:import { bossTracking, type BossTracking } from "@/lib/game/bossTracking";
+/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts:166:  private lastBoss: ({ hpPercent: number } & BossTracking) | null = null;
+/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts:1159:  private bossSnapshot(): ({ hpPercent: number } & BossTracking) | null {
+/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts:1166:    const tracking = bossTracking(this.state.player, bossMob);
+/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts:3:import type { BossTracking } from "@/lib/game/bossTracking";
+/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts:371:  boss: ({ hpPercent: number } & BossTracking) | null;
 2:  /** Boss HP and player-relative navigation, or null when no boss is alive. */
 3:  boss: { hpPercent: number; bearingDegrees: number; distanceBlocks: number } | null;
 6:/** Top-center boss health and navigation HUD shown while the Dragon Lord lives. */
@@ -6187,7 +6187,7 @@ tool_use Read
 id: toolu_01GcTi1G4JqZHJjtvhWKV2Aa
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "offset": 1140,
   "limit": 70
 }
@@ -6245,7 +6245,7 @@ tool_use Read
 id: toolu_01XyjZR7eSeuzNoioKfkJigd
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/game/BossHealthBar.tsx"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/game/BossHealthBar.tsx"
 }
 ```
 
@@ -6291,7 +6291,7 @@ tool_use Read
 id: toolu_01VzCdYh9pg7KepkFBCikTKB
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts",
   "offset": 340,
   "limit": 75
 }
@@ -6337,7 +6337,7 @@ tool_use Bash
 id: toolu_0193Kic69vdXcUiNKcnzjy8L
 ```json
 {
-  "command": "grep -n \"BossHealthBar\\|boss=\" /Users/hutusi/workspace/ai/david/monecraft/components/game/MinecraftGame.tsx | head -5 && wc -l /Users/hutusi/workspace/ai/david/monecraft/lib/game/render/minimap.ts && grep -n \"export\\|function\\|marker\\|player\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/render/minimap.ts | head -20",
+  "command": "grep -n \"BossHealthBar\\|boss=\" /home/<USER>/workspace/ai/david/monecraft/components/game/MinecraftGame.tsx | head -5 && wc -l /home/<USER>/workspace/ai/david/monecraft/lib/game/render/minimap.ts && grep -n \"export\\|function\\|marker\\|player\" /home/<USER>/workspace/ai/david/monecraft/lib/game/render/minimap.ts | head -20",
   "description": "Find HUD mount point and minimap structure"
 }
 ```
@@ -6347,8 +6347,8 @@ id: toolu_0193Kic69vdXcUiNKcnzjy8L
 tool_result
 id: toolu_0193Kic69vdXcUiNKcnzjy8L
 ```
-ugrep: warning: /Users/hutusi/workspace/ai/david/monecraft/components/game/MinecraftGame.tsx: No such file or directory
-     114 /Users/hutusi/workspace/ai/david/monecraft/lib/game/render/minimap.ts
+ugrep: warning: /home/<USER>/workspace/ai/david/monecraft/components/game/MinecraftGame.tsx: No such file or directory
+     114 /home/<USER>/workspace/ai/david/monecraft/lib/game/render/minimap.ts
 6: * player, rebuilt only when the player crosses a sampling-grid boundary or
 12:const SAMPLE_GRID = 16; // rebuild when the player crosses this boundary
 16:export type MinimapRenderer = {
@@ -6365,7 +6365,7 @@ tool_use Bash
 id: toolu_01JPc8XxzEZy4ci6ECxp11Uu
 ```json
 {
-  "command": "grep -rn \"BossHealthBar\" /Users/hutusi/workspace/ai/david/monecraft/components /Users/hutusi/workspace/ai/david/monecraft/app | grep -v test | head -4",
+  "command": "grep -rn \"BossHealthBar\" /home/<USER>/workspace/ai/david/monecraft/components /home/<USER>/workspace/ai/david/monecraft/app | grep -v test | head -4",
   "description": "Find where BossHealthBar is mounted"
 }
 ```
@@ -6375,10 +6375,10 @@ id: toolu_01JPc8XxzEZy4ci6ECxp11Uu
 tool_result
 id: toolu_01JPc8XxzEZy4ci6ECxp11Uu
 ```
-/Users/hutusi/workspace/ai/david/monecraft/components/MinecraftGame.tsx:5:import BossHealthBar from "@/components/game/BossHealthBar";
-/Users/hutusi/workspace/ai/david/monecraft/components/MinecraftGame.tsx:143:      <BossHealthBar boss={boss} />
-/Users/hutusi/workspace/ai/david/monecraft/components/game/BossHealthBar.tsx:1:type BossHealthBarProps = {
-/Users/hutusi/workspace/ai/david/monecraft/components/game/BossHealthBar.tsx:7:export default function BossHealthBar({ boss }: BossHealthBarProps) {
+/home/<USER>/workspace/ai/david/monecraft/components/MinecraftGame.tsx:5:import BossHealthBar from "@/components/game/BossHealthBar";
+/home/<USER>/workspace/ai/david/monecraft/components/MinecraftGame.tsx:143:      <BossHealthBar boss={boss} />
+/home/<USER>/workspace/ai/david/monecraft/components/game/BossHealthBar.tsx:1:type BossHealthBarProps = {
+/home/<USER>/workspace/ai/david/monecraft/components/game/BossHealthBar.tsx:7:export default function BossHealthBar({ boss }: BossHealthBarProps) {
 ```
 
 > TOOL
@@ -6387,7 +6387,7 @@ tool_use Read
 id: toolu_01XMeJPg7cz2nE1Gu5pB1eq1
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/render/minimap.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/render/minimap.ts"
 }
 ```
 
@@ -6443,7 +6443,7 @@ tool_use Bash
 id: toolu_01WvM6BZywmPizRvsFB6HWsa
 ```json
 {
-  "command": "grep -n \"ADVANCEMENTS\\|recordEvent\\|bump(state\\|category:\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.ts | head -40",
+  "command": "grep -n \"ADVANCEMENTS\\|recordEvent\\|bump(state\\|category:\" /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.ts | head -40",
   "description": "See advancements registry structure"
 }
 ```
@@ -6489,7 +6489,7 @@ tool_use Read
 id: toolu_012ZG2Bmr4gcPmJ1qSWnkQit
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/MinecraftGame.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/MinecraftGame.tsx",
   "offset": 120,
   "limit": 40
 }
@@ -6548,7 +6548,7 @@ tool_use Bash
 id: toolu_01EAp24vVeDBEuCzgZXKr5TX
 ```json
 {
-  "command": "grep -n \"AdvancementCategory\\|ADVANCEMENT_CATEGORY_ORDER\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.ts | head -4 && grep -n \"const { \\|boss\\b\" /Users/hutusi/workspace/ai/david/monecraft/components/MinecraftGame.tsx | head -8 && sed -n '20,60p' /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.ts",
+  "command": "grep -n \"AdvancementCategory\\|ADVANCEMENT_CATEGORY_ORDER\" /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.ts | head -4 && grep -n \"const { \\|boss\\b\" /home/<USER>/workspace/ai/david/monecraft/components/MinecraftGame.tsx | head -8 && sed -n '20,60p' /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.ts",
   "description": "Check categories, snapshot destructure, stats registry"
 }
 ```
@@ -6594,7 +6594,7 @@ tool_use Bash
 id: toolu_01UrAmmRTac62ry2uyyfLm4U
 ```json
 {
-  "command": "tail -30 /Users/hutusi/workspace/ai/david/monecraft/lib/world/generation.ts && grep -n \"placeShipwrecks(world, cfg);\" /Users/hutusi/workspace/ai/david/monecraft/lib/world/generation.ts",
+  "command": "tail -30 /home/<USER>/workspace/ai/david/monecraft/lib/world/generation.ts && grep -n \"placeShipwrecks(world, cfg);\" /home/<USER>/workspace/ai/david/monecraft/lib/world/generation.ts",
   "description": "See current end of generation.ts"
 }
 ```
@@ -6643,7 +6643,7 @@ tool_use Bash
 id: toolu_0147rXViV2zVmDFYojHLNPyp
 ```json
 {
-  "command": "cat >> /Users/hutusi/workspace/ai/david/monecraft/lib/world/generation.ts << 'EOF'\n\n// ── Buried treasure ─────────────────────────────────────────────────────────\n// A lone chest buried two blocks under a beach, found by following a treasure\n// map (looted from shipwrecks, rarely fished up). Same build/derive discipline\n// as dungeons/shipwrecks; the beach test is a seed-pure PROXY — the terrain\n// height band around sea level plus a nearby below-sea column — never\n// placeBeaches' block reads, which caves or player edits could shift.\n\ntype TreasureSink = (x: number, y: number, z: number, chestIdx: number) => void;\nconst NOOP_TREASURE_SINK: TreasureSink = () => {};\n\n/** A PRNG seeded only from the world seed, decoupled from every other gen stream. */\nfunction treasureRand(seed: number): () => number {\n  let t = (seed ^ 0x27d4eb2f) >>> 0;\n  return () => {\n    t += 0x6d2b79f5;\n    let r = Math.imul(t ^ (t >>> 15), 1 | t);\n    r ^= r + Math.imul(r ^ (r >>> 7), 61 | r);\n    return ((r ^ (r >>> 14)) >>> 0) / 4294967296;\n  };\n}\n\n/** Seed-pure water proxy: some column within `radius` has its terrain below sea level. */\nfunction nearSeaColumn(world: VoxelWorld, cx: number, cz: number, radius: number, cfg: TerrainConfig): boolean {\n  for (let dx = -radius; dx <= radius; dx += 2) {\n […]
+  "command": "cat >> /home/<USER>/workspace/ai/david/monecraft/lib/world/generation.ts << 'EOF'\n\n// ── Buried treasure ─────────────────────────────────────────────────────────\n// A lone chest buried two blocks under a beach, found by following a treasure\n// map (looted from shipwrecks, rarely fished up). Same build/derive discipline\n// as dungeons/shipwrecks; the beach test is a seed-pure PROXY — the terrain\n// height band around sea level plus a nearby below-sea column — never\n// placeBeaches' block reads, which caves or player edits could shift.\n\ntype TreasureSink = (x: number, y: number, z: number, chestIdx: number) => void;\nconst NOOP_TREASURE_SINK: TreasureSink = () => {};\n\n/** A PRNG seeded only from the world seed, decoupled from every other gen stream. */\nfunction treasureRand(seed: number): () => number {\n  let t = (seed ^ 0x27d4eb2f) >>> 0;\n  return () => {\n    t += 0x6d2b79f5;\n    let r = Math.imul(t ^ (t >>> 15), 1 | t);\n    r ^= r + Math.imul(r ^ (r >>> 7), 61 | r);\n    return ((r ^ (r >>> 14)) >>> 0) / 4294967296;\n  };\n}\n\n/** Seed-pure water proxy: some column within `radius` has its terrain below sea level. */\nfunction nearSeaColumn(world: VoxelWorld, cx: number, cz: number, radius: number, cfg: TerrainConfig): boolean {\n  for (let dx = -radius; dx <= radius; dx += 2) {\n […]
 
 > TOOL
 
@@ -6676,7 +6676,7 @@ id: toolu_01Kn92d1ra3EdJkk16bgRzWp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/index.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/index.ts",
   "old_string": "export {\n  generateWorld,\n  collectDungeonSites,\n  collectShipwreckSites,\n  collectVillageSites,\n  terrainConfigFor,\n  type DungeonSites,\n  type ShipwreckSites,\n  type TerrainConfig,\n  type VillageSites\n} from \"./generation\";",
   "new_string": "export {\n  generateWorld,\n  collectDungeonSites,\n  collectShipwreckSites,\n  collectTreasureSites,\n  collectVillageSites,\n  terrainConfigFor,\n  type DungeonSites,\n  type ShipwreckSites,\n  type TerrainConfig,\n  type TreasureSites,\n  type VillageSites\n} from \"./generation\";"
 }
@@ -6687,7 +6687,7 @@ id: toolu_01Kn92d1ra3EdJkk16bgRzWp
 tool_result
 id: toolu_01Kn92d1ra3EdJkk16bgRzWp
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/index.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/index.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6700,7 +6700,7 @@ tool_use Write
 id: toolu_015BE19KwL4xy8uRi1jNod1b
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/buriedTreasureLoot.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/buriedTreasureLoot.ts",
   "content": "import { rollTieredLoot, type LootEntry, type LootTier } from \"@/lib/game/dungeonLoot\";\n\n/**\n * Buried-treasure chest loot — the payoff at the end of a treasure-map hunt,\n * so the richest of the tiered worldgen tables (see dungeonLoot.ts): emeralds\n * always, high ores often, and a rare-tier shot at end-game gear. Item ids\n * must exist in ITEM_DEFS — buriedTreasureLoot.test.ts enforces that.\n */\nexport const BURIED_TREASURE_LOOT: Record<LootTier, LootEntry[]> = {\n  common: [\n    // Emeralds always drop — a dug-up hoard is never empty-handed.\n    { itemId: \"emerald\", min: 2, max: 5 },\n    { itemId: \"gold_ore\", min: 1, max: 4, chance: 0.6 },\n    { itemId: \"diamond_ore\", min: 1, max: 2, chance: 0.4 },\n    { itemId: \"sapphire_ore\", min: 1, max: 3, chance: 0.45 },\n    { itemId: \"cooked_fish\", min: 1, max: 3, chance: 0.4 },\n    { itemId: \"arrow\", min: 4, max: 10, chance: 0.4 }\n  ],\n  rare: [\n    { itemId: \"diamond_ore\", min: 2, max: 4, chance: 0.6 },\n    { itemId: \"gold_sword\", min: 1, max: 1, chance: 0.2 },\n    { itemId: \"chestplate\", min: 1, max: 1, chance: 0.25 },\n    { itemId: \"diamond_pickaxe\", min: 1, max: 1, chance: 0.12 }\n  ]\n};\n\n/** Rolls one buried-treasure chest (see dungeonLoot.rollTieredLoot). */\nexport function rollBuriedTreasureLoot(rng: () […]
 
 > TOOL
@@ -6708,7 +6708,7 @@ id: toolu_015BE19KwL4xy8uRi1jNod1b
 tool_result
 id: toolu_015BE19KwL4xy8uRi1jNod1b
 ```
-File created successfully at: /Users/hutusi/workspace/ai/david/monecraft/lib/game/buriedTreasureLoot.ts (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/ai/david/monecraft/lib/game/buriedTreasureLoot.ts (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6718,7 +6718,7 @@ id: toolu_01SXMDSnCDgWeJ2kkvnzScQv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/dungeon.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/dungeon.ts",
   "old_string": "import { CHEST_SLOTS } from \"@/lib/game/config\";\nimport { rollDungeonLoot, seededRng } from \"@/lib/game/dungeonLoot\";\nimport { rollShipwreckLoot } from \"@/lib/game/shipwreckLoot\";\nimport { createEmptySlot, createSlot } from \"@/lib/game/items\";\nimport { tryInsertSlots } from \"@/lib/game/inventory\";\nimport type { GameState } from \"../state\";",
   "new_string": "import { CHEST_SLOTS } from \"@/lib/game/config\";\nimport { rollDungeonLoot, seededRng } from \"@/lib/game/dungeonLoot\";\nimport { rollShipwreckLoot } from \"@/lib/game/shipwreckLoot\";\nimport { rollBuriedTreasureLoot } from \"@/lib/game/buriedTreasureLoot\";\nimport { createEmptySlot, createSlot } from \"@/lib/game/items\";\nimport { tryInsertSlots } from \"@/lib/game/inventory\";\nimport type { EmitGameEvent, GameState } from \"../state\";"
 }
@@ -6729,7 +6729,7 @@ id: toolu_01SXMDSnCDgWeJ2kkvnzScQv
 tool_result
 id: toolu_01SXMDSnCDgWeJ2kkvnzScQv
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/dungeon.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/dungeon.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6739,7 +6739,7 @@ id: toolu_01RAbPtUtyy5zmynPWMWFfHD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/dungeon.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/dungeon.ts",
   "old_string": "export function fillWorldgenChestIfUnlooted(state: GameState, idx: number): void {\n  if (state.lootedWorldgenChests.has(idx)) return;\n  let loot: Array<{ itemId: string; count: number }>;\n  if (state.dungeonChestIndices.has(idx)) {\n    loot = rollDungeonLoot(seededRng((state.world.seed ^ idx ^ 0x9e3779b1) >>> 0));\n  } else if (state.shipwreckChestIndices.has(idx)) {\n    loot = rollShipwreckLoot(seededRng((state.world.seed ^ idx ^ 0x68e31da4) >>> 0));\n  } else {\n    return;\n  }\n  const slots = state.containers.get(idx) ?? Array.from({ length: CHEST_SLOTS }, () => createEmptySlot());\n  const incoming = loot.map((drop) => createSlot(drop.itemId, drop.count));\n  // The loot tables have far fewer entries than CHEST_SLOTS (each yields one\n  // slot), so the insert always fits and the `?? slots` fallback is unreachable —\n  // the loot-table tests pin that invariant so growing the tables can't silently\n  // drop loot here.\n  state.containers.set(idx, tryInsertSlots(slots, incoming) ?? slots);\n  state.lootedWorldgenChests.add(idx);\n}",
   "new_string": "export function fillWorldgenChestIfUnlooted(state: GameState, idx: number, emit?: EmitGameEvent): void {\n  if (state.lootedWorldgenChests.has(idx)) return;\n  let loot: Array<{ itemId: string; count: number }>;\n  let unearthedTreasure = false;\n  if (state.dungeonChestIndices.has(idx)) {\n    loot = rollDungeonLoot(seededRng((state.world.seed ^ idx ^ 0x9e3779b1) >>> 0));\n  } else if (state.shipwreckChestIndices.has(idx)) {\n    loot = rollShipwreckLoot(seededRng((state.world.seed ^ idx ^ 0x68e31da4) >>> 0));\n  } else if (state.buriedTreasureChestIndices.has(idx)) {\n    loot = rollBuriedTreasureLoot(seededRng((state.world.seed ^ idx ^ 0x94d049bb) >>> 0));\n    unearthedTreasure = true;\n […]
 
@@ -6748,7 +6748,7 @@ id: toolu_01RAbPtUtyy5zmynPWMWFfHD
 tool_result
 id: toolu_01RAbPtUtyy5zmynPWMWFfHD
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/dungeon.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/dungeon.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6761,7 +6761,7 @@ tool_use Bash
 id: toolu_01YaRRsqVSq7DX6Q5HTzNHvG
 ```json
 {
-  "command": "grep -n \"fillWorldgenChestIfUnlooted\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts && sed -n '100,120p' /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts",
+  "command": "grep -n \"fillWorldgenChestIfUnlooted\" /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts && sed -n '100,120p' /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts",
   "description": "Locate fill call sites and their emit availability"
 }
 ```
@@ -6771,10 +6771,10 @@ id: toolu_01YaRRsqVSq7DX6Q5HTzNHvG
 tool_result
 id: toolu_01YaRRsqVSq7DX6Q5HTzNHvG
 ```
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts:9:import { fillWorldgenChestIfUnlooted } from "./dungeon";
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts:62:  fillWorldgenChestIfUnlooted(state, idx);
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts:21:import { fillWorldgenChestIfUnlooted } from "./dungeon";
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts:112:  fillWorldgenChestIfUnlooted(state, idx);
+/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts:9:import { fillWorldgenChestIfUnlooted } from "./dungeon";
+/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts:62:  fillWorldgenChestIfUnlooted(state, idx);
+/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts:21:import { fillWorldgenChestIfUnlooted } from "./dungeon";
+/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts:112:  fillWorldgenChestIfUnlooted(state, idx);
 }
 
 /** Opens the chest at (x,y,z) in the inventory panel, creating its (lazy) empty store. */
@@ -6805,7 +6805,7 @@ id: toolu_013CMQjFS9t2Sui7uVhLvVJU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts",
   "old_string": "  // A worldgen dungeon chest rolls its loot here, on first open (then never again).\n  fillWorldgenChestIfUnlooted(state, idx);",
   "new_string": "  // A worldgen chest (dungeon/shipwreck/buried) rolls its loot here, on first open (then never again).\n  fillWorldgenChestIfUnlooted(state, idx, emit);"
 }
@@ -6826,7 +6826,7 @@ id: toolu_01B9RXueQzBiNtS5RJ1ajweE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts",
   "old_string": "  // Breaking an unopened dungeon chest still pays out its loot.\n  fillWorldgenChestIfUnlooted(state, idx);",
   "new_string": "  // Breaking an unopened worldgen chest still pays out its loot.\n  fillWorldgenChestIfUnlooted(state, idx, emit);"
 }
@@ -6837,7 +6837,7 @@ id: toolu_01B9RXueQzBiNtS5RJ1ajweE
 tool_result
 id: toolu_01B9RXueQzBiNtS5RJ1ajweE
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6870,7 +6870,7 @@ id: toolu_01TFFKck5Sa7XjmZ8k1Veny7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts",
   "old_string": "  /** Worldgen shipwreck chest voxel indices (session; re-derived from the seed each load). */\n  shipwreckChestIndices: Set<number>;\n  /** Worldgen chests (dungeon/shipwreck) already opened/broken (persisted as `lootedChests`) — gates one-time lazy loot fill. */\n  lootedWorldgenChests: Set<number>;",
   "new_string": "  /** Worldgen shipwreck chest voxel indices (session; re-derived from the seed each load). */\n  shipwreckChestIndices: Set<number>;\n  /** Worldgen buried-treasure chest voxel indices (session; re-derived from the seed each load). */\n  buriedTreasureChestIndices: Set<number>;\n  /** Buried-treasure chest positions (session; re-derived) — the treasure-map compass targets the nearest unlooted one. */\n  treasureSites: Array<{ x: number; y: number; z: number; index: number }>;\n  /** Worldgen chests (dungeon/shipwreck/buried) already opened/broken (persisted as `lootedChests`) — gates one-time lazy loot fill. */\n  lootedWorldgenChests: Set<number>;"
 }
@@ -6881,7 +6881,7 @@ id: toolu_01TFFKck5Sa7XjmZ8k1Veny7
 tool_result
 id: toolu_01TFFKck5Sa7XjmZ8k1Veny7
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6891,7 +6891,7 @@ id: toolu_01JtH7S3XG55M5mdFZ3sEyuK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts",
   "old_string": "  /** Live boss health and navigation data, or null when no boss is alive — drives the boss HUD. */\n  boss: ({ hpPercent: number } & BossTracking) | null;",
   "new_string": "  /** Live boss health and navigation data, or null when no boss is alive — drives the boss HUD. */\n  boss: ({ hpPercent: number } & BossTracking) | null;\n  /** Bearing/distance to the nearest unlooted buried treasure while a treasure map is held, or null — drives the compass HUD. */\n  treasure: BossTracking | null;"
 }
@@ -6902,7 +6902,7 @@ id: toolu_01JtH7S3XG55M5mdFZ3sEyuK
 tool_result
 id: toolu_01JtH7S3XG55M5mdFZ3sEyuK
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6912,7 +6912,7 @@ id: toolu_01BKPZDnxhGCZyJizX5CDcL1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts",
   "old_string": "  | { type: \"bossSummoned\"; x: number; y: number; z: number }\n  | { type: \"bossDefeated\"; x: number; y: number; z: number }",
   "new_string": "  | { type: \"bossSummoned\"; x: number; y: number; z: number }\n  | { type: \"bossDefeated\"; x: number; y: number; z: number }\n  | { type: \"treasureUnearthed\" }"
 }
@@ -6923,7 +6923,7 @@ id: toolu_01BKPZDnxhGCZyJizX5CDcL1
 tool_result
 id: toolu_01BKPZDnxhGCZyJizX5CDcL1
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6933,7 +6933,7 @@ id: toolu_01Q3ACT41oDw5W9oMzmjwBuD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/bossTracking.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/bossTracking.ts",
   "old_string": "/** Derives a compass-style bearing and ground distance from the player to the boss. */\nexport function bossTracking(player: PlayerState, boss: MobState): BossTracking {\n  const dx = boss.position.x - player.position.x;\n  const dz = boss.position.z - player.position.z;\n  const forward = -dx * Math.sin(player.yaw) - dz * Math.cos(player.yaw);\n  const right = dx * Math.cos(player.yaw) - dz * Math.sin(player.yaw);\n  const bearing = Math.atan2(right, forward) * (180 / Math.PI);\n\n  return {\n    bearingDegrees: Math.round((bearing + 360) % 360),\n    distanceBlocks: Math.round(Math.hypot(dx, dz))\n  };\n}",
   "new_string": "/** Derives a compass-style bearing and ground distance from the player to any world point. */\nexport function trackTarget(player: PlayerState, x: number, z: number): BossTracking {\n  const dx = x - player.position.x;\n  const dz = z - player.position.z;\n  const forward = -dx * Math.sin(player.yaw) - dz * Math.cos(player.yaw);\n  const right = dx * Math.cos(player.yaw) - dz * Math.sin(player.yaw);\n  const bearing = Math.atan2(right, forward) * (180 / Math.PI);\n\n  return {\n    bearingDegrees: Math.round((bearing + 360) % 360),\n    distanceBlocks: Math.round(Math.hypot(dx, dz))\n  };\n}\n\n/** Bearing/distance from the player to the boss (see trackTarget — the treasure compass shares it). */\nexport function bossTracking(player: PlayerState, boss: MobState): BossTracking {\n  return trackTarget(player, boss.position.x, boss.position.z);\n}"
 }
@@ -6944,7 +6944,7 @@ id: toolu_01Q3ACT41oDw5W9oMzmjwBuD
 tool_result
 id: toolu_01Q3ACT41oDw5W9oMzmjwBuD
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/bossTracking.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/bossTracking.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6994,7 +6994,7 @@ tool_use Read
 id: toolu_01Xh3aaL6719WAMu7mkqjCJJ
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.ts",
   "offset": 85,
   "limit": 45
 }
@@ -7055,7 +7055,7 @@ tool_use Bash
 id: toolu_01BP6Tvk5H3gRQAP1ri2URar
 ```json
 {
-  "command": "sed -n '200,235p' /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.ts",
+  "command": "sed -n '200,235p' /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.ts",
   "description": "See Adventure-category advancement rows"
 }
 ```
@@ -7126,7 +7126,7 @@ tool_use Bash
 id: toolu_0136eTvvfjt27wJUejH3g2SQ
 ```json
 {
-  "command": "python3 - << 'EOF'\np = \"lib/game/fishingLoot.ts\"\ns = open(p).read()\ns = s.replace(\"\"\"  // Treasure (rare).\n  { itemId: \"emerald\", weight: 3 },\n  { itemId: \"leather\", weight: 3 }\"\"\", \"\"\"  // Treasure (rare).\n  { itemId: \"emerald\", weight: 3 },\n  { itemId: \"leather\", weight: 3 },\n  { itemId: \"treasure_map\", weight: 2 }\"\"\")\nopen(p, \"w\").write(s)\nprint(\"patched\")\nEOF\ngrep -rn \"weight\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/fishing*.test.ts | head -6",
+  "command": "python3 - << 'EOF'\np = \"lib/game/fishingLoot.ts\"\ns = open(p).read()\ns = s.replace(\"\"\"  // Treasure (rare).\n  { itemId: \"emerald\", weight: 3 },\n  { itemId: \"leather\", weight: 3 }\"\"\", \"\"\"  // Treasure (rare).\n  { itemId: \"emerald\", weight: 3 },\n  { itemId: \"leather\", weight: 3 },\n  { itemId: \"treasure_map\", weight: 2 }\"\"\")\nopen(p, \"w\").write(s)\nprint(\"patched\")\nEOF\ngrep -rn \"weight\" /home/<USER>/workspace/ai/david/monecraft/lib/game/fishing*.test.ts | head -6",
   "description": "Add treasure map to fishing loot; check weight-pinned tests"
 }
 ```
@@ -7149,7 +7149,7 @@ tool_use Bash
 id: toolu_011YGyVsdNepsqpdc7vWuG4w
 ```json
 {
-  "command": "grep -rn \"boss-pointer\\|boss-tracker\\|boss-bar {\" /Users/hutusi/workspace/ai/david/monecraft/app/globals.css | head && sed -n \"$(grep -n 'boss-tracker' /Users/hutusi/workspace/ai/david/monecraft/app/globals.css | head -1 | cut -d: -f1),+30p\" /Users/hutusi/workspace/ai/david/monecraft/app/globals.css",
+  "command": "grep -rn \"boss-pointer\\|boss-tracker\\|boss-bar {\" /home/<USER>/workspace/ai/david/monecraft/app/globals.css | head && sed -n \"$(grep -n 'boss-tracker' /home/<USER>/workspace/ai/david/monecraft/app/globals.css | head -1 | cut -d: -f1),+30p\" /home/<USER>/workspace/ai/david/monecraft/app/globals.css",
   "description": "Find boss tracker CSS styles"
 }
 ```
@@ -7160,8 +7160,8 @@ tool_result ERROR
 id: toolu_011YGyVsdNepsqpdc7vWuG4w
 ```
 Exit code 1
-ugrep: warning: /Users/hutusi/workspace/ai/david/monecraft/app/globals.css: No such file or directory
-ugrep: warning: /Users/hutusi/workspace/ai/david/monecraft/app/globals.css: No such file or directory
+ugrep: warning: /home/<USER>/workspace/ai/david/monecraft/app/globals.css: No such file or directory
+ugrep: warning: /home/<USER>/workspace/ai/david/monecraft/app/globals.css: No such file or directory
 sed: 1: ",+30p
 ": invalid command code ,
 ```
@@ -7172,7 +7172,7 @@ tool_use Bash
 id: toolu_01LJmM4zY5i6DuY9dFVzL89K
 ```json
 {
-  "command": "grep -rln \"boss-pointer\" /Users/hutusi/workspace/ai/david/monecraft/app /Users/hutusi/workspace/ai/david/monecraft/styles 2>/dev/null; find /Users/hutusi/workspace/ai/david/monecraft/app -name \"*.css\" | head",
+  "command": "grep -rln \"boss-pointer\" /home/<USER>/workspace/ai/david/monecraft/app /home/<USER>/workspace/ai/david/monecraft/styles 2>/dev/null; find /home/<USER>/workspace/ai/david/monecraft/app -name \"*.css\" | head",
   "description": "Locate the CSS file with boss styles"
 }
 ```
@@ -7182,11 +7182,11 @@ id: toolu_01LJmM4zY5i6DuY9dFVzL89K
 tool_result
 id: toolu_01LJmM4zY5i6DuY9dFVzL89K
 ```
-/Users/hutusi/workspace/ai/david/monecraft/app/ui.css
-/Users/hutusi/workspace/ai/david/monecraft/app/hud.css
-/Users/hutusi/workspace/ai/david/monecraft/app/ui.css
-/Users/hutusi/workspace/ai/david/monecraft/app/menu.css
-/Users/hutusi/workspace/ai/david/monecraft/app/base.css
+/home/<USER>/workspace/ai/david/monecraft/app/ui.css
+/home/<USER>/workspace/ai/david/monecraft/app/hud.css
+/home/<USER>/workspace/ai/david/monecraft/app/ui.css
+/home/<USER>/workspace/ai/david/monecraft/app/menu.css
+/home/<USER>/workspace/ai/david/monecraft/app/base.css
 ```
 
 > TOOL
@@ -7195,7 +7195,7 @@ tool_use Bash
 id: toolu_01BvuwDx6XwEKgXH1Ciwv1vw
 ```json
 {
-  "command": "grep -n \"boss-bar\\|boss-tracker\\|boss-pointer\" /Users/hutusi/workspace/ai/david/monecraft/app/ui.css | head && awk '/\\.boss-tracker/,/^$/' /Users/hutusi/workspace/ai/david/monecraft/app/ui.css | head -40",
+  "command": "grep -n \"boss-bar\\|boss-tracker\\|boss-pointer\" /home/<USER>/workspace/ai/david/monecraft/app/ui.css | head && awk '/\\.boss-tracker/,/^$/' /home/<USER>/workspace/ai/david/monecraft/app/ui.css | head -40",
   "description": "Read boss tracker CSS block"
 }
 ```
@@ -7230,7 +7230,7 @@ tool_use Bash
 id: toolu_01Q6KcGENswb7T2uzvqj2JkH
 ```json
 {
-  "command": "sed -n '754,820p' /Users/hutusi/workspace/ai/david/monecraft/app/ui.css",
+  "command": "sed -n '754,820p' /home/<USER>/workspace/ai/david/monecraft/app/ui.css",
   "description": "Read the full boss-bar CSS section"
 }
 ```
@@ -7315,7 +7315,7 @@ tool_use Read
 id: toolu_01EBZwWFpKGb9p3aXLFENTKg
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/MinecraftGame.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/MinecraftGame.tsx",
   "offset": 40,
   "limit": 60
 }
@@ -7394,7 +7394,7 @@ tool_use Bash
 id: toolu_01XTjMz4vCwKpBhLHYHxb9BW
 ```json
 {
-  "command": "grep -rn \"boss\" /Users/hutusi/workspace/ai/david/monecraft/hooks/useMinecraftGame.ts 2>/dev/null | head -5 || grep -rln \"useMinecraftGame\" /Users/hutusi/workspace/ai/david/monecraft/hooks /Users/hutusi/workspace/ai/david/monecraft/lib 2>/dev/null | head",
+  "command": "grep -rn \"boss\" /home/<USER>/workspace/ai/david/monecraft/hooks/useMinecraftGame.ts 2>/dev/null | head -5 || grep -rln \"useMinecraftGame\" /home/<USER>/workspace/ai/david/monecraft/hooks /home/<USER>/workspace/ai/david/monecraft/lib 2>/dev/null | head",
   "description": "Find the useMinecraftGame hook"
 }
 ```
@@ -7413,7 +7413,7 @@ tool_use Bash
 id: toolu_01KF5rjZPpe4AGruMSwqHLuV
 ```json
 {
-  "command": "grep -rn \"boss,\" /Users/hutusi/workspace/ai/david/monecraft/components/MinecraftGame.tsx | head -3 && grep -n \"useMinecraftGame\\|from \\\"\" /Users/hutusi/workspace/ai/david/monecraft/components/MinecraftGame.tsx | head -20",
+  "command": "grep -rn \"boss,\" /home/<USER>/workspace/ai/david/monecraft/components/MinecraftGame.tsx | head -3 && grep -n \"useMinecraftGame\\|from \\\"\" /home/<USER>/workspace/ai/david/monecraft/components/MinecraftGame.tsx | head -20",
   "description": "Find the hook import in MinecraftGame"
 }
 ```
@@ -7423,7 +7423,7 @@ id: toolu_01KF5rjZPpe4AGruMSwqHLuV
 tool_result
 id: toolu_01KF5rjZPpe4AGruMSwqHLuV
 ```
-/Users/hutusi/workspace/ai/david/monecraft/components/MinecraftGame.tsx:68:    boss,
+/home/<USER>/workspace/ai/david/monecraft/components/MinecraftGame.tsx:68:    boss,
 3:import { useEffect, useReducer } from "react";
 4:import ActiveEffects from "@/components/game/ActiveEffects";
 5:import BossHealthBar from "@/components/game/BossHealthBar";
@@ -7452,7 +7452,7 @@ tool_use Bash
 id: toolu_01XwuDRY5b48xbKr6do44i8o
 ```json
 {
-  "command": "grep -n \"boss\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts | head -5",
+  "command": "grep -n \"boss\" /home/<USER>/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts | head -5",
   "description": "See how the hook exposes boss"
 }
 ```
@@ -7473,7 +7473,7 @@ tool_use Read
 id: toolu_014LcK7639bwocM8M6XjRPeo
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts",
   "offset": 55,
   "limit": 20
 }
@@ -7512,7 +7512,7 @@ tool_use Read
 id: toolu_01Mvkd2WyZW6xH8aHXnE6sxm
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts",
   "offset": 435,
   "limit": 20
 }
@@ -7570,7 +7570,7 @@ tool_use Write
 id: toolu_01SuTZ3yT8eXK4YmgjmqkCGi
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/game/TreasureCompass.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/game/TreasureCompass.tsx",
   "content": "type TreasureCompassProps = {\n  /** Bearing/distance to the nearest unlooted buried treasure, or null when no map is held (or none remain). */\n  treasure: { bearingDegrees: number; distanceBlocks: number } | null;\n};\n\n/** Top-center compass pill shown while a treasure map is held — points at the buried hoard. */\nexport default function TreasureCompass({ treasure }: TreasureCompassProps) {\n  if (!treasure) return null;\n\n  return (\n    <div className=\"treasure-compass\" role=\"status\" aria-label={`Buried treasure: ${treasure.distanceBlocks} blocks away, bearing ${treasure.bearingDegrees} degrees`}>\n      <span className=\"treasure-pointer\" style={{ transform: `rotate(${treasure.bearingDegrees}deg)` }} aria-hidden=\"true\" />\n      <span>Buried treasure: {treasure.distanceBlocks} blocks</span>\n    </div>\n  );\n}\n"
 }
 ```
@@ -7580,7 +7580,7 @@ id: toolu_01SuTZ3yT8eXK4YmgjmqkCGi
 tool_result
 id: toolu_01SuTZ3yT8eXK4YmgjmqkCGi
 ```
-File created successfully at: /Users/hutusi/workspace/ai/david/monecraft/components/game/TreasureCompass.tsx (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/ai/david/monecraft/components/game/TreasureCompass.tsx (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7609,7 +7609,7 @@ id: toolu_01F73DG5ygZQLapD3Up9gE8g
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/render/minimap.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/render/minimap.ts",
   "old_string": "      // Player arrow (yaw 0 looks toward -Z, i.e. up/north on the map).\n      const cx = SAMPLE_SIZE / 2;\n      ctx.save();\n      ctx.translate(cx, cx);\n      ctx.rotate(-state.player.yaw);",
   "new_string": "      // Red X markers for unlooted buried treasure while a treasure map is held.\n      if (state.inventory[state.selectedSlot]?.id === \"treasure_map\") {\n        ctx.strokeStyle = \"#e23b2e\";\n        ctx.lineWidth = 1.5;\n        for (const site of state.treasureSites) {\n          if (state.lootedWorldgenChests.has(site.index)) continue;\n          const mx = site.x + 0.5 - px + SAMPLE_SIZE / 2;\n          const mz = site.z + 0.5 - pz + SAMPLE_SIZE / 2;\n          if (mx < 3 || mz < 3 || mx > SAMPLE_SIZE - 3 || mz > SAMPLE_SIZE - 3) continue;\n          ctx.beginPath();\n          ctx.moveTo(mx - 3, mz - 3);\n          ctx.lineTo(mx + 3, mz + 3);\n          ctx.moveTo(mx + 3, mz - 3);\n          ctx.lineTo(mx - 3, mz + 3);\n          ctx.stroke();\n        }\n      }\n\n      // Player arrow (yaw 0 looks toward -Z, i.e. up/north on the map).\n      const cx = SAMPLE_SIZE / 2;\n      ctx.save();\n      ctx.translate(cx, cx);\n      ctx.rotate(-state.player.yaw);"
 }
@@ -7620,7 +7620,7 @@ id: toolu_01F73DG5ygZQLapD3Up9gE8g
 tool_result
 id: toolu_01F73DG5ygZQLapD3Up9gE8g
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/render/minimap.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/render/minimap.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7651,7 +7651,7 @@ tool_use Read
 id: toolu_01Hwu7nNGwCXk9Nr9MH2NHfq
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/itemSources.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/itemSources.ts",
   "offset": 1,
   "limit": 14
 }
@@ -7704,7 +7704,7 @@ tool_use Write
 id: toolu_01D5ZSacVxW58ycoWstuV58u
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/buriedTreasureLoot.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/buriedTreasureLoot.test.ts",
   "content": "import { describe, expect, test } from \"bun:test\";\nimport { CHEST_SLOTS } from \"@/lib/game/config\";\nimport { createEmptySlot, createSlot, ITEM_DEF_BY_ID } from \"@/lib/game/items\";\nimport { tryInsertSlots } from \"@/lib/game/inventory\";\nimport { seededRng, type LootTier } from \"@/lib/game/dungeonLoot\";\nimport { BURIED_TREASURE_LOOT, rollBuriedTreasureLoot } from \"@/lib/game/buriedTreasureLoot\";\n\nconst ALL_TIERS = Object.keys(BURIED_TREASURE_LOOT) as LootTier[];\n\ndescribe(\"buried treasure loot tables\", () => {\n  test(\"every loot entry references an existing item with a sane range\", () => {\n    for (const tier of ALL_TIERS) {\n      for (const entry of BURIED_TREASURE_LOOT[tier]) {\n        expect(ITEM_DEF_BY_ID[entry.itemId]).toBeDefined();\n        expect(entry.min).toBeLessThanOrEqual(entry.max);\n        expect(entry.min).toBeGreaterThanOrEqual(0);\n        if (entry.chance !== undefined) {\n          expect(entry.chance).toBeGreaterThan(0);\n          expect(entry.chance).toBeLessThanOrEqual(1);\n        }\n      }\n    }\n  });\n\n  test(\"rolling the same seed yields identical loot (reproducible until dug up)\", () => {\n    const loot1 = rollBuriedTreasureLoot(seededRng(0x1234));\n    const loot2 = rollBuriedTreasureLoot(seededRng(0x1234));\n    expect(loot1).toEqual(loot2);\n  });\n\n  test(\"emeralds always drop — a dug-up hoard is never empty\", () => {\n    const highRoll = rollBuriedTreasureLoot(() => 0.999);\n    expect(highRoll.some((d) => d.itemId === \"emerald\")).toBe(true);\n    const lowRoll = rollBuriedTreasureLoot(() => 0);\n    expect(lowRoll.some((d) => d.itemId === \"emerald\")).toBe(true);\n    expect(lowRoll.some((d) => d.itemId === \"diamond_ore\")).toBe(true); // rare tier opened\n  });\n\n  test(\"a roll can never overflow a chest, so loot is never silently dropped\", () => {\n    const maxEntries = BURIED_TREASURE_LOOT.common.length + BURIED_TREASURE_LOOT.rare.length;\n    expect(maxEntries).toBeLessThanOrEqual(CHEST_SLOTS);\n\n    const rng = seededRng(0xfeed);\n    for (let i = 0; i […]
 
 > TOOL
@@ -7712,7 +7712,7 @@ id: toolu_01D5ZSacVxW58ycoWstuV58u
 tool_result
 id: toolu_01D5ZSacVxW58ycoWstuV58u
 ```
-File created successfully at: /Users/hutusi/workspace/ai/david/monecraft/lib/game/buriedTreasureLoot.test.ts (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/ai/david/monecraft/lib/game/buriedTreasureLoot.test.ts (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7722,7 +7722,7 @@ id: toolu_01KNamZZyzNCwFhwG5TH5XtB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/itemSources.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/itemSources.test.ts",
   "old_string": "  test(\"the boss is a last resort, only for its trophy drops\", () => {\n    expect(itemSourceHint(\"dragon_heart\")).toBe(\"Defeat the boss\");\n  });",
   "new_string": "  test(\"the treasure map points at diving shipwrecks, its main source\", () => {\n    // Shipwreck chests outrank the fishing fallback (the map is also a rare catch).\n    expect(itemSourceHint(\"treasure_map\")).toBe(\"Find it in a shipwreck\");\n  });\n\n  test(\"the boss is a last resort, only for its trophy drops\", () => {\n    expect(itemSourceHint(\"dragon_heart\")).toBe(\"Defeat the boss\");\n  });"
 }
@@ -7733,7 +7733,7 @@ id: toolu_01KNamZZyzNCwFhwG5TH5XtB
 tool_result
 id: toolu_01KNamZZyzNCwFhwG5TH5XtB
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/itemSources.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/itemSources.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7747,7 +7747,7 @@ id: toolu_01GjgWzYbRaQVFeYk9kTpFaE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/generation.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/generation.test.ts",
   "old_string": "import {\n  BiomeId,\n  BlockId,\n  VoxelWorld,\n  buildGeometryLayersRegion,\n  buildGeometryRegion,\n  collectDungeonSites,\n  collectShipwreckSites,\n  collectVillageSites,\n  computeFullLight,\n  generateWorld,\n  type WorldType\n} from \"@/lib/world\";",
   "new_string": "import {\n  BiomeId,\n  BlockId,\n  VoxelWorld,\n  buildGeometryLayersRegion,\n  buildGeometryRegion,\n  collectDungeonSites,\n  collectShipwreckSites,\n  collectTreasureSites,\n  collectVillageSites,\n  computeFullLight,\n  generateWorld,\n  type WorldType\n} from \"@/lib/world\";"
 }
@@ -7758,7 +7758,7 @@ id: toolu_01GjgWzYbRaQVFeYk9kTpFaE
 tool_result
 id: toolu_01GjgWzYbRaQVFeYk9kTpFaE
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/generation.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/generation.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7768,7 +7768,7 @@ id: toolu_014H2SAW7qyAYYHtRNud7wZ6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/generation.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/generation.test.ts",
   "old_string": "describe(\"dungeons\", () => {",
   "new_string": "describe(\"buried treasure\", () => {\n  test(\n    \"chests bury two blocks under sand in the beach band, at every derived site\",\n    () => {\n      const world = fullWorld();\n      const { sites } = collectTreasureSites(world);\n      expect(sites.length).toBeGreaterThan(0); // seed 1337 yields buried hoards\n\n      // The derive is deterministic — a second pass produces identical sites.\n      expect(collectTreasureSites(world)).toEqual({ sites });\n\n      for (const site of sites) {\n        // A chest actually sits at each derived site (build/derive lockstep),\n        // buried under the sand cap the write pass placed.\n        expect(world.get(site.x, site.y, site.z)).toBe(BlockId.Chest);\n        expect(world.index(site.x, site.y, site.z)).toBe(site.index);\n        expect(world.get(site.x, site.y + 1, site.z)).toBe(BlockId.Sand);\n        expect(world.get(site.x, site.y + 2, site.z)).toBe(BlockId.Sand);\n        // Shoreline: the chest hides just under the surface near sea level,\n        // never in open ocean.\n        expect(world.getBiome(site.x, site.z)).not.toBe(BiomeId.Ocean);\n        expect(site.y).toBeGreaterThanOrEqual(GEN.seaLevel - GEN.beachDepthBelowSea - 2);\n        expect(site.y).toBeLessThanOrEqual(GEN.seaLevel + GEN.beachMaxAboveSea - 2);\n      }\n    },\n    { timeout: 60000 }\n  );\n});\n\ndescribe(\"dungeons\", () => {"
 }
@@ -7779,7 +7779,7 @@ id: toolu_014H2SAW7qyAYYHtRNud7wZ6
 tool_result
 id: toolu_014H2SAW7qyAYYHtRNud7wZ6
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/generation.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/generation.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7793,7 +7793,7 @@ id: toolu_01RJjoZcEBhdACegG6z2rQw9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/generation.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/generation.test.ts",
   "old_string": "      const dungeonChests = new Set(sites.chestIndices);\n      const wreckChests = new Set(collectShipwreckSites(world).chestIndices);\n      const spawnerSet = new Set(sites.spawnerIndices);",
   "new_string": "      const dungeonChests = new Set(sites.chestIndices);\n      const wreckChests = new Set(collectShipwreckSites(world).chestIndices);\n      const buriedChests = new Set(collectTreasureSites(world).sites.map((site) => site.index));\n      const spawnerSet = new Set(sites.spawnerIndices);"
 }
@@ -7804,7 +7804,7 @@ id: toolu_01RJjoZcEBhdACegG6z2rQw9
 tool_result
 id: toolu_01RJjoZcEBhdACegG6z2rQw9
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/generation.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/generation.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7814,7 +7814,7 @@ id: toolu_01SSQFpvU4jNitnCjwQe6Evu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/generation.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/generation.test.ts",
   "old_string": "              // Every generated chest must be a known dungeon or shipwreck site —\n              // this is what gates lazy loot fill, so a mismatch would mean\n              // re-rollable (or never-filled) loot.\n              const idx = world.index(x, y, z);\n              expect(dungeonChests.has(idx) || wreckChests.has(idx)).toBe(true);",
   "new_string": "              // Every generated chest must be a known dungeon, shipwreck, or\n              // buried-treasure site — this is what gates lazy loot fill, so a\n              // mismatch would mean re-rollable (or never-filled) loot.\n              const idx = world.index(x, y, z);\n              expect(dungeonChests.has(idx) || wreckChests.has(idx) || buriedChests.has(idx)).toBe(true);"
 }
@@ -7825,7 +7825,7 @@ id: toolu_01SSQFpvU4jNitnCjwQe6Evu
 tool_result
 id: toolu_01SSQFpvU4jNitnCjwQe6Evu
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/generation.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/generation.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7835,7 +7835,7 @@ id: toolu_01Em3zLEEVxUBUnJWBJVwDDK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts",
   "old_string": "  test(\"a shipwreck chest fills from the shipwreck table, once, from its own seed family\", () => {",
   "new_string": "  test(\"the treasure-map compass targets the nearest unlooted buried chest and retargets after digging\", () => {\n    const engine = makeEngine();\n    const { state } = engine;\n    state.mobs = [];\n    // Two hand-injected buried sites (the 64³ test world derives none — all\n    // candidates fall inside the spawn-clearance radius, like dungeons).\n    const near = { x: Math.floor(state.player.position.x) + 10, y: 20, z: Math.floor(state.player.position.z), index: 0 };\n    near.index = state.world.index(near.x, near.y, near.z);\n    const far = { x: near.x + 20, y: 20, z: near.z, index: 0 };\n    far.index = state.world.index(far.x, far.y, far.z);\n    state.treasureSites = [far, near];\n    state.buriedTreasureChestIndices.add(near.index).add(far.index);\n\n    // No map held → no compass.\n    expect(engine.getSnapshot().treasure).toBeNull();\n\n    // Holding the map targets the NEAREST unlooted site.\n    state.inventory[state.selectedSlot] = createSlot(\"treasure_map\", 1);\n    engine.step(0.01, input());\n    const first = engine.getSnapshot().treasure;\n    expect(first).not.toBeNull();\n    expect(Math.abs(first!.distanceBlocks - 10)).toBeLessThanOrEqual(1);\n\n    // Digging up the near chest (first fill) emits the unearthed event and\n    // retargets the compass to the remaining site.\n    const events: GameEvent[] = [];\n    fillWorldgenChestIfUnlooted(state, near.index, (e) => events.push(e));\n    expect(events.some((e) => e.type === \"treasureUnearthed\")).toBe(true);\n    engine.step(0.01, input());\n    const second = engine.getSnapshot().treasure;\n […]
 
@@ -7844,7 +7844,7 @@ id: toolu_01Em3zLEEVxUBUnJWBJVwDDK
 tool_result
 id: toolu_01Em3zLEEVxUBUnJWBJVwDDK
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7853,7 +7853,7 @@ tool_use Bash
 id: toolu_01JcJgtGD25xPXw1aTi1H9Rg
 ```json
 {
-  "command": "grep -n \"getSnapshot\\|function run(\\|import type { GameEvent\\|import { .*GameEvent\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts | head -6 && grep -n \"getSnapshot()\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts | head -3",
+  "command": "grep -n \"getSnapshot\\|function run(\\|import type { GameEvent\\|import { .*GameEvent\" /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts | head -6 && grep -n \"getSnapshot()\" /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts | head -3",
   "description": "Check test helpers and snapshot API"
 }
 ```
@@ -7878,7 +7878,7 @@ tool_use Bash
 id: toolu_01U3oR6gMU4FNPTGewY9pbHn
 ```json
 {
-  "command": "sed -n '70,85p' /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts && grep -n \"getSnapshot(\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts | head -3 && grep -n \"^import\\|GameEvent\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts | head -12",
+  "command": "sed -n '70,85p' /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts && grep -n \"getSnapshot(\" /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts | head -3 && grep -n \"^import\\|GameEvent\" /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts | head -12",
   "description": "Check run helper, getSnapshot, and GameEvent import"
 }
 ```
@@ -7925,7 +7925,7 @@ tool_use Bash
 id: toolu_01S4e2V9YUtanXGedERhZ982
 ```json
 {
-  "command": "sed -n '25,32p' /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts",
+  "command": "sed -n '25,32p' /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts",
   "description": "Check state import line for GameEvent"
 }
 ```
@@ -7951,7 +7951,7 @@ tool_use Bash
 id: toolu_019FCyHvdLjUoFCDNatSQR89
 ```json
 {
-  "command": "grep -n \"from \\\"@/lib/game/engine/state\\\"\\|FrameInput\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts | head -4",
+  "command": "grep -n \"from \\\"@/lib/game/engine/state\\\"\\|FrameInput\" /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts | head -4",
   "description": "Find state type imports in test"
 }
 ```
@@ -8102,7 +8102,7 @@ id: toolu_012dkGtRNxAXEPj4S9XhZKfE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/generation.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/generation.test.ts",
   "old_string": "      expect(hashBytes(new Uint8Array((positions.array as Float32Array).buffer))).toBe(\"b63ca724cc91653c76a01c45980f56cf3bfd2987ab61bc6e0f4fe2de6b7e529b\");",
   "new_string": "      expect(hashBytes(new Uint8Array((positions.array as Float32Array).buffer))).toBe(\"c3b761dcf72419627068b090c78bc0357eeb06eacee35c1af77809356b70aefb\");"
 }
@@ -8113,7 +8113,7 @@ id: toolu_012dkGtRNxAXEPj4S9XhZKfE
 tool_result
 id: toolu_012dkGtRNxAXEPj4S9XhZKfE
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/generation.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/generation.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8167,7 +8167,7 @@ error: expect(received).toContain(expected)
 Expected to contain: "treasure_map"
 Received: [ "emerald", "leather" ]
 
-      at <anonymous> (/Users/hutusi/workspace/ai/david/monecraft/lib/game/fishingLoot.test.ts:34:36)
+      at <anonymous> (/home/<USER>/workspace/ai/david/monecraft/lib/game/fishingLoot.test.ts:34:36)
 (fail) fishing loot > a high roll reaches the rare treasure tier [0.14ms]
 --
 232 |     );
@@ -8179,7 +8179,7 @@ error: expect(received).toBe(expected)
 Expected: true
 Received: false
 
-      at <anonymous> (/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.test.ts:234:82)
+      at <anonymous> (/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.test.ts:234:82)
 (fail) evaluateAdvancements > every advancement is reachable by some tracked counter [0.23ms]
 ```
 
@@ -8189,7 +8189,7 @@ tool_use Read
 id: toolu_01U1JGHUz6g88Arv1G4pqFvT
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/fishingLoot.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/fishingLoot.test.ts",
   "offset": 20,
   "limit": 25
 }
@@ -8226,7 +8226,7 @@ tool_use Read
 id: toolu_01MBn8TWmFe8Wnv6GEVm4Dvd
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.test.ts",
   "offset": 205,
   "limit": 35
 }
@@ -8270,7 +8270,7 @@ id: toolu_01HfyKbr4pWQ58vgTby1EMDm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/fishingLoot.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/fishingLoot.test.ts",
   "old_string": "  test(\"a high roll reaches the rare treasure tier\", () => {\n    // Weights sum to 100; the treasure entries sit at the top of the range.\n    const result = rollFishingCatch(seq(0.99, 0));\n    expect([\"emerald\", \"leather\"]).toContain(result[0].itemId);\n  });",
   "new_string": "  test(\"a high roll reaches the rare treasure tier\", () => {\n    // The treasure entries (emerald/leather/treasure map) sit at the top of the range.\n    const result = rollFishingCatch(seq(0.99, 0));\n    expect([\"emerald\", \"leather\", \"treasure_map\"]).toContain(result[0].itemId);\n  });"
 }
@@ -8281,7 +8281,7 @@ id: toolu_01HfyKbr4pWQ58vgTby1EMDm
 tool_result
 id: toolu_01HfyKbr4pWQ58vgTby1EMDm
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/fishingLoot.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/fishingLoot.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8291,7 +8291,7 @@ id: toolu_01381DBXHevhwR1aztfXhdr6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.test.ts",
   "old_string": "      { type: \"enchanted\", enchant: \"sharpness\" },\n      { type: \"drankPotion\" },\n      { type: \"sleepStarted\" }\n    );",
   "new_string": "      { type: \"enchanted\", enchant: \"sharpness\" },\n      { type: \"drankPotion\" },\n      { type: \"sleepStarted\" },\n      { type: \"treasureUnearthed\" }\n    );"
 }
@@ -8302,7 +8302,7 @@ id: toolu_01381DBXHevhwR1aztfXhdr6
 tool_result
 id: toolu_01381DBXHevhwR1aztfXhdr6
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8402,7 +8402,7 @@ tool_use Bash
 id: toolu_01ErVSf2Qu7XdT5P5wSGJHas
 ```json
 {
-  "command": "head -60 /Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md",
+  "command": "head -60 /home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md",
   "description": "Read CHANGELOG unreleased section"
 }
 ```
@@ -8429,7 +8429,7 @@ tool_use Bash
 id: toolu_019N9uKvkGwbFyr9mtArBxGi
 ```json
 {
-  "command": "grep -n \"^#\" /Users/hutusi/workspace/ai/david/monecraft/docs/manual.md | head -40 && echo ---- && grep -n \"^#\\|^##\" /Users/hutusi/workspace/ai/david/monecraft/docs/reference.md | head -30",
+  "command": "grep -n \"^#\" /home/<USER>/workspace/ai/david/monecraft/docs/manual.md | head -40 && echo ---- && grep -n \"^#\\|^##\" /home/<USER>/workspace/ai/david/monecraft/docs/reference.md | head -30",
   "description": "Survey manual and reference doc structure"
 }
 ```
@@ -8509,7 +8509,7 @@ tool_use Bash
 id: toolu_01Vnfb3H9kKxAFeymGFnBbJK
 ```json
 {
-  "command": "sed -n '552,600p' /Users/hutusi/workspace/ai/david/monecraft/docs/manual.md && sed -n '467,520p' /Users/hutusi/workspace/ai/david/monecraft/docs/reference.md",
+  "command": "sed -n '552,600p' /home/<USER>/workspace/ai/david/monecraft/docs/manual.md && sed -n '467,520p' /home/<USER>/workspace/ai/david/monecraft/docs/reference.md",
   "description": "Read farming/fishing manual sections and dungeons reference"
 }
 ```
@@ -8551,7 +8551,7 @@ tool_use Bash
 id: toolu_01KGeqc7hZRPNf3eigRMVBia
 ```json
 {
-  "command": "sed -n '239,310p' /Users/hutusi/workspace/ai/david/monecraft/docs/reference.md",
+  "command": "sed -n '239,310p' /home/<USER>/workspace/ai/david/monecraft/docs/reference.md",
   "description": "Read blocks and mobs tables in reference"
 }
 ```
@@ -8591,7 +8591,7 @@ tool_use Bash
 id: toolu_01ADdYAehYBvkaHkFw4ohKbg
 ```json
 {
-  "command": "sed -n '155,190p;433,466p;519,545p' /Users/hutusi/workspace/ai/david/monecraft/docs/reference.md",
+  "command": "sed -n '155,190p;433,466p;519,545p' /home/<USER>/workspace/ai/david/monecraft/docs/reference.md",
   "description": "Read smelting, food, materials, advancement tables"
 }
 ```
@@ -8686,7 +8686,7 @@ tool_use Bash
 id: toolu_01ET56oz5oW3u9jfFPbUEhqc
 ```json
 {
-  "command": "grep -n \"^#\\|^##\" /Users/hutusi/workspace/ai/david/monecraft/docs/tuning.md && grep -n \"GRASS_SPREAD\\|RANDOM_TICK\\|FISHING_REACH\\|TAME_CHANCE\" /Users/hutusi/workspace/ai/david/monecraft/docs/tuning.md | head",
+  "command": "grep -n \"^#\\|^##\" /home/<USER>/workspace/ai/david/monecraft/docs/tuning.md && grep -n \"GRASS_SPREAD\\|RANDOM_TICK\\|FISHING_REACH\\|TAME_CHANCE\" /home/<USER>/workspace/ai/david/monecraft/docs/tuning.md | head",
   "description": "Survey tuning doc structure"
 }
 ```
@@ -8736,7 +8736,7 @@ tool_use Bash
 id: toolu_01ThtMSAV6Spo5yth9Rq2rcN
 ```json
 {
-  "command": "sed -n '388,406p;437,470p' /Users/hutusi/workspace/ai/david/monecraft/docs/tuning.md",
+  "command": "sed -n '388,406p;437,470p' /home/<USER>/workspace/ai/david/monecraft/docs/tuning.md",
   "description": "Read fishing section and worldgen-sensitive section"
 }
 ```
@@ -8795,7 +8795,7 @@ tool_use Bash
 id: toolu_01HCpezLtRiEmtBLajXCjncY
 ```json
 {
-  "command": "grep -n \"lootedChests\\|lootedDungeonChests\\|Unreleased\" /Users/hutusi/workspace/ai/david/monecraft/docs/save-format.md | head && sed -n '38,48p' /Users/hutusi/workspace/ai/david/monecraft/docs/save-format.md",
+  "command": "grep -n \"lootedChests\\|lootedDungeonChests\\|Unreleased\" /home/<USER>/workspace/ai/david/monecraft/docs/save-format.md | head && sed -n '38,48p' /home/<USER>/workspace/ai/david/monecraft/docs/save-format.md",
   "description": "Find save-format sections to update"
 }
 ```
@@ -8831,7 +8831,7 @@ tool_use Bash
 id: toolu_01PUEtwufJZhqxWcY44ouwc7
 ```json
 {
-  "command": "grep -n \"dungeonLoot\\|mobAI\\|spawnDirector\\|randomTicks\\|Worldgen determinism\" /Users/hutusi/workspace/ai/david/monecraft/docs/testing.md | head",
+  "command": "grep -n \"dungeonLoot\\|mobAI\\|spawnDirector\\|randomTicks\\|Worldgen determinism\" /home/<USER>/workspace/ai/david/monecraft/docs/testing.md | head",
   "description": "Find testing coverage rows to update"
 }
 ```
@@ -8886,7 +8886,7 @@ id: toolu_01VdxNkxE3semBJyBi3gEwDu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md",
   "old_string": "## [Unreleased]\n\n### Added\n\n- **Rafts and ships**: craftable water vehicles on **zero binary assets**.",
   "new_string": "## [Unreleased]\n\n### Added\n\n- **The aquatic update**: the ocean the new rafts and ships sail is now worth sailing — fish, flora, wrecks to dive, and treasure to hunt, all on **zero binary assets**. Bumps **`WORLDGEN_VERSION` 9→10** (kelp/coral/wrecks/buried chests write generated blocks, so existing worlds reboot from their seed and every worldgen/world-type/meshing digest except flat was re-baselined per docs/testing.md) with **no save-schema change** — the schema stays **v16**.\n  - **Kelp & coral**: the sandy ocean floor grows swaying **kelp stalks** and pink/blue **reef coral** (a new hash-gated `placeOceanFlora` pass that consumes no shared PRNG). Kelp is a solid cube painted to read as a plant (the wheat trick — no new geometry): stalks always keep a **3-block clear-water band** below the surface so boats and fishing casts never snag, growth via the existing random-tick sampler enforces the same cap, and **breaking a cell breaks the stalk above it, refilling submerged cells with water — never air**. Kelp smelts **3-at-a-time into dried kelp** (a 2-hunger snack); corals are decorative salvage. New `BlockId`s **appended** (55–57)\n  - **Cod & […]
 
@@ -8895,7 +8895,7 @@ id: toolu_01VdxNkxE3semBJyBi3gEwDu
 tool_result
 id: toolu_01VdxNkxE3semBJyBi3gEwDu
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8904,7 +8904,7 @@ tool_use Bash
 id: toolu_01Eck3hhdtvg8UM6RHNn2Z91
 ```json
 {
-  "command": "grep -n \"village\\|fishing\\|vehicle\\|raft\\|ocean\" /Users/hutusi/workspace/ai/david/monecraft/README.md | head",
+  "command": "grep -n \"village\\|fishing\\|vehicle\\|raft\\|ocean\" /home/<USER>/workspace/ai/david/monecraft/README.md | head",
   "description": "Check README feature mentions"
 }
 ```
@@ -9057,7 +9057,7 @@ tool_use Read
 id: toolu_01JJunmf8kpTtn5r7A4doBBs
 ```json
 {
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/roadmap-candidates.md"
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/roadmap-candidates.md"
 }
 ```
 
@@ -9087,16 +9087,16 @@ id: toolu_01QEAu37Y9YBKqJKAEBaxXwt
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/roadmap-candidates.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/roadmap-candidates.md",
   "old_string": "---\nname: roadmap-candidates\ndescription: \"Candidate next-feature directions for the voxel game — current: advancements & statistics hutusi#38 MERGED 2026-06-29 (save v12→v13, in [Unreleased], NOT tagged); its upstream sync davidhu0527#13 OPEN (6 commits hutusi:main→davidhu0527:main). v0.11.0 RELEASED 2026-06-28 (deepen-progression #37, armor #36, anvil/grindstone/mending #35, save v12); its sync davidhu0527#12 MERGED. Deferred mechanics: Fire Aspect/Thorns/Night Vision/Invisibility/splash potions + negative effects. Horse riding/mounts NOT implemented (obvious gap).\"\nmetadata: \n  node_type: memory\n  type: project\n  originSessionId: e2fc6b63-8357-4ed9-b4cc-94b55fc71192\n---\n",
-  "new_string": "---\nname: roadmap-candidates\ndescription: \"Next-feature directions for the voxel game — current: AQUATIC UPDATE built 2026-07-03 on local branch feat/aquatic-update (5 commits, NOT pushed, awaiting user review; worldgen 9→10, schema stays v16). Before it: water vehicles #41 + Living World #39/#40 + advancements #38 all merged to hutusi/main, in [Unreleased], NOT tagged (0.12.0 pending). Upstream sync davidhu0527#13 OPEN. Deferred: drowned-like hostile, Fire Aspect/Thorns/Night Vision/Invisibility/splash potions, horse riding, Nether-like dimension, redstone-lite, slabs/stairs.\"\nmetadata: \n  node_type: memory\n  type: project\n  originSessionId: e2fc6b63-8357-4ed9-b4cc-94b55fc71192\n---\n\n## Status: AQUATIC UPDATE — BUILT on `feat/aquatic-update`, 5 local commits, NOT pushed (2026-07-03)\n\nUser asked \"what next features do you recommend?\"; plan-mode question timed out (AFK) so the recommended **aquatic update** was picked and built per the approved plan (`/Users/hutusi/.claude/plans/what-s-next-features-do-zesty-giraffe.md`). **Awaiting user review before push/PR** […]
+  "new_string": "---\nname: roadmap-candidates\ndescription: \"Next-feature directions for the voxel game — current: AQUATIC UPDATE built 2026-07-03 on local branch feat/aquatic-update (5 commits, NOT pushed, awaiting user review; worldgen 9→10, schema stays v16). Before it: water vehicles #41 + Living World #39/#40 + advancements #38 all merged to hutusi/main, in [Unreleased], NOT tagged (0.12.0 pending). Upstream sync davidhu0527#13 OPEN. Deferred: drowned-like hostile, Fire Aspect/Thorns/Night Vision/Invisibility/splash potions, horse riding, Nether-like dimension, redstone-lite, slabs/stairs.\"\nmetadata: \n  node_type: memory\n  type: project\n  originSessionId: e2fc6b63-8357-4ed9-b4cc-94b55fc71192\n---\n\n## Status: AQUATIC UPDATE — BUILT on `feat/aquatic-update`, 5 local commits, NOT pushed (2026-07-03)\n\nUser asked \"what next features do you recommend?\"; plan-mode question timed out (AFK) so the recommended **aquatic update** was picked and built per the approved plan (`/home/<USER>/.claude/plans/what-s-next-features-do-zesty-giraffe.md`). **Awaiting user review before push/PR** […]
 
 > TOOL
 
 tool_result
 id: toolu_01QEAu37Y9YBKqJKAEBaxXwt
 ```
-The file /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/roadmap-candidates.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/roadmap-candidates.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9106,7 +9106,7 @@ id: toolu_01YLzVVe57EyNn6XTV53aN76
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md",
   "old_string": "- [Roadmap candidates](roadmap-candidates.md) — **v0.11.0 RELEASED 2026-06-28** (save v12): deepen-progression #37 (6 enchants + 3 potions), armor #36, anvil/grindstone/mending #35 all merged to `hutusi/main`; **upstream sync davidhu0527#12 OPEN** (#11 merged, #10 closed). Deferred mechanics: Fire Aspect/Thorns/Night Vision/Invisibility/splash potions. PARKED: dev inventory-loss-on-reload (no load-time drop found; awaiting console dump)",
   "new_string": "- [Roadmap candidates](roadmap-candidates.md) — **AQUATIC UPDATE built 2026-07-03** on local `feat/aquatic-update` (5 commits, NOT pushed, awaiting review; worldgen 9→10, schema stays v16; manual gameplay pass pending). Prior: vehicles #41 + Living World #39/#40 + advancements #38 merged, unreleased (0.12.0 pending); upstream sync davidhu0527#13 OPEN. Deferred: drowned hostile, Fire Aspect/Thorns/Night Vision/splash potions. PARKED: dev inventory-loss-on-reload (awaiting console dump)"
 }
@@ -9126,7 +9126,7 @@ tool_use Read
 id: toolu_01YbghwwX3ReLPhXVoxVTMok
 ```json
 {
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md"
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md"
 }
 ```
 
@@ -9150,7 +9150,7 @@ id: toolu_01XAKV1jJs5qTVuBZrred8VH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md",
   "old_string": "- [Roadmap candidates](roadmap-candidates.md) — **v0.11.0 RELEASED 2026-06-28** (save v12): deepen-progression #37 (6 enchants + 3 potions), armor #36, anvil/grindstone/mending #35 all merged to `hutusi/main`; **upstream sync davidhu0527#12 OPEN** (#11 merged, #10 closed). Deferred mechanics: Fire Aspect/Thorns/Night Vision/Invisibility/splash potions. PARKED: dev inventory-loss-on-reload (no load-time drop found; awaiting console dump)",
   "new_string": "- [Roadmap candidates](roadmap-candidates.md) — **AQUATIC UPDATE built 2026-07-03** on local `feat/aquatic-update` (5 commits, NOT pushed, awaiting review; worldgen 9→10, schema stays v16; manual gameplay pass pending). Prior: vehicles #41 + Living World #39/#40 + advancements #38 merged, unreleased (0.12.0 pending); upstream sync davidhu0527#13 OPEN. Deferred: drowned hostile, Fire Aspect/Thorns/Night Vision/splash potions. PARKED: dev inventory-loss-on-reload (awaiting console dump)"
 }
@@ -9161,7 +9161,7 @@ id: toolu_01XAKV1jJs5qTVuBZrred8VH
 tool_result
 id: toolu_01XAKV1jJs5qTVuBZrred8VH
 ```
-The file /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

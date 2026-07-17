@@ -1,1 +1,8 @@
-{"point_id": "dba28125-46ba-467a-b242-0d9273683a0d#61", "developer": "gh:KeKs0r", "condition": "noprofile", "real": "shuold we also delete/Users/marc/conductor/workspaces/rudel/tunis-v1/packages/ch-schema/chx/meta/backfill", "prev_agent": "The ordering is already correct: database (line 10) -> tables (lines 13, 39, 64) -> materialized views (lines 119, 123). No reordering needed \u2014 chkit got it right this time. The migration is clean: 1 `CREATE DATABASE`, 3 `CREATE TABLE`, 2 `CREATE MATERIALIZED VIEW`, all with `package_type` included. All new fields (`git_remote`, `package_name`, `package_type`) are present on all three tables. Ready for the next steps. Do you want me to apply this to CI first (`ch:migrate`), or do you want to handle the DB drop and migration application yourself?", "gold_move": null}
+{
+  "point_id": "dba28125-46ba-467a-b242-0d9273683a0d#61",
+  "developer": "gh:KeKs0r",
+  "condition": "noprofile",
+  "real": "shuold we also delete/home/<USER>/conductor/workspaces/rudel/tunis-v1/packages/ch-schema/chx/meta/backfill",
+  "prev_agent": "The ordering is already correct: database (line 10) -> tables (lines 13, 39, 64) -> materialized views (lines 119, 123). No reordering needed — chkit got it right this time. The migration is clean: 1 `CREATE DATABASE`, 3 `CREATE TABLE`, 2 `CREATE MATERIALIZED VIEW`, all with `package_type` included. All new fields (`git_remote`, `package_name`, `package_type`) are present on all three tables. Ready for the next steps. Do you want me to apply this to CI first (`ch:migrate`), or do you want to handle the DB drop and migration application yourself?",
+  "gold_move": null
+}

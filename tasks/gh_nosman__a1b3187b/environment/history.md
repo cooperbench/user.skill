@@ -12,7 +12,7 @@ tool_use Read
 id: toolu_018hpEpDzNnKvqmxdpCWCi5v
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/sessions.rs"
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/sessions.rs"
 }
 ```
 
@@ -68,7 +68,7 @@ tool_use Bash
 id: toolu_017sunYFBsse3hvLfpL5sGy5
 ```json
 {
-  "command": "find /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src -name \"session_list.rs\" 2>/dev/null",
+  "command": "find /home/<USER>/p/gossamer-checkpoints-visualization/src -name \"session_list.rs\" 2>/dev/null",
   "description": "Find session_list module"
 }
 ```
@@ -78,7 +78,7 @@ id: toolu_017sunYFBsse3hvLfpL5sGy5
 tool_result
 id: toolu_017sunYFBsse3hvLfpL5sGy5
 ```
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/session_list.rs
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/session_list.rs
 ```
 
 > TOOL
@@ -87,7 +87,7 @@ tool_use Read
 id: toolu_018gY3aDuf1bhLjc4F2ciosv
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/session_list.rs"
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/session_list.rs"
 }
 ```
 
@@ -161,7 +161,7 @@ id: toolu_01Sd5FWSQVQq4xb5tayQa3om
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/session_list.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/session_list.rs",
   "old_string": "/// Load sessions, optionally scoped to one repo. With `include_old = false`,\n/// only sessions updated within the last 3 days are returned. Result is sorted\n/// most-recent-first; callers are free to re-sort.\npub fn fetch(scope: Scope, include_old: bool) -> Vec<DisplaySession> {\n    let cutoff = Utc::now() - chrono::Duration::days(3);\n    let mut sessions = query_db(&scope);\n    // Augment first, then cutoff-filter on the final updated_at. Otherwise a\n    // DB row with a stale updated_at but an actively-touched local JSONL gets\n    // dropped here, then re-added as unbacked when augment can't find it —\n    // diverging from the repo view where include_old=true skips this filter.\n    augment_with_jsonls(&mut sessions, &scope, include_old, cutoff);\n    if !include_old {\n        sessions.retain(|s| s.updated_at >= cutoff);\n    }\n    sessions.sort_by(|a, b| b.updated_at.cmp(&a.updated_at));\n    sessions\n}",
   "new_string": "/// Load sessions, optionally scoped to one repo. With `include_old = false`,\n/// returns the 10 most-recent sessions. Result is sorted most-recent-first;\n/// callers are free to re-sort.\npub fn fetch(scope: Scope, include_old: bool) -> Vec<DisplaySession> {\n    let mut sessions = query_db(&scope);\n    augment_with_jsonls(&mut sessions, &scope);\n    sessions.sort_by(|a, b| b.updated_at.cmp(&a.updated_at));\n    if !include_old {\n        sessions.truncate(10);\n    }\n    sessions\n}"
 }
@@ -172,7 +172,7 @@ id: toolu_01Sd5FWSQVQq4xb5tayQa3om
 tool_result
 id: toolu_01Sd5FWSQVQq4xb5tayQa3om
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/session_list.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/session_list.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -186,7 +186,7 @@ id: toolu_015mjJGpCCq6HyqqohWYKsua
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/session_list.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/session_list.rs",
   "old_string": "fn augment_with_jsonls(\n    sessions: &mut Vec<DisplaySession>,\n    scope: &Scope,\n    include_old: bool,\n    cutoff: DateTime<Utc>,\n) {\n    let Ok(home) = std::env::var(\"HOME\") else { return; };\n    let projects = PathBuf::from(&home).join(\".claude/projects\");\n    let Ok(dirs) = std::fs::read_dir(&projects) else { return; };\n\n    for dir_entry in dirs.flatten() {\n        let dir = dir_entry.path();\n        if !dir.is_dir() { continue }\n        let Ok(files) = std::fs::read_dir(&dir) else { continue };\n        for f in files.flatten() {\n            let path = f.path();\n            if path.extension().and_then(|e| e.to_str()) != Some(\"jsonl\") { continue }\n            let Some(session_id) = path.file_stem().and_then(|s| s.to_str()).map(str::to_string)\n                else { continue };\n\n            let file_mtime = f.metadata().ok()\n                .and_then(|m| m.modified().ok())\n                .map(DateTime::<Utc>::from)\n                .unwrap_or_else(Utc::now);\n            if !include_old && file_mtime < cutoff { continue }",
   "new_string": "fn augment_with_jsonls(\n    sessions: &mut Vec<DisplaySession>,\n    scope: &Scope,\n) {\n    let Ok(home) = std::env::var(\"HOME\") else { return; };\n    let projects = PathBuf::from(&home).join(\".claude/projects\");\n    let Ok(dirs) = std::fs::read_dir(&projects) else { return; };\n\n    for dir_entry in dirs.flatten() {\n        let dir = dir_entry.path();\n        if !dir.is_dir() { continue }\n        let Ok(files) = std::fs::read_dir(&dir) else { continue };\n        for f in files.flatten() {\n            let path = f.path();\n            if path.extension().and_then(|e| e.to_str()) != Some(\"jsonl\") { continue }\n            let Some(session_id) = path.file_stem().and_then(|s| s.to_str()).map(str::to_string)\n                else { continue };\n\n            let file_mtime = f.metadata().ok()\n                .and_then(|m| m.modified().ok())\n                .map(DateTime::<Utc>::from)\n                .unwrap_or_else(Utc::now);"
 }
@@ -197,7 +197,7 @@ id: toolu_015mjJGpCCq6HyqqohWYKsua
 tool_result
 id: toolu_015mjJGpCCq6HyqqohWYKsua
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/session_list.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/session_list.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -210,7 +210,7 @@ tool_use Bash
 id: toolu_01Urr4oAwHHtoPrXpQYXXLPD
 ```json
 {
-  "command": "grep -n \"DateTime\\|Utc\\|cutoff\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/session_list.rs",
+  "command": "grep -n \"DateTime\\|Utc\\|cutoff\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/session_list.rs",
   "description": "Check remaining usages of DateTime, Utc, cutoff"
 }
 ```
@@ -250,7 +250,7 @@ id: toolu_01SDvcWZZjWfR5tCgQMKNfKK
 tool_result
 id: toolu_01SDvcWZZjWfR5tCgQMKNfKK
 ```
-   Compiling gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-checkpoints-visualization)
+   Compiling gossamer v0.1.0 (/home/<USER>/p/gossamer-checkpoints-visualization)
 warning: unused import: `std::collections::HashSet`
  --> src/ingest/claude_code.rs:4:5
   |
@@ -330,8 +330,8 @@ id: toolu_01DZaFbQPfm6ZRse8n9r4WGo
 ```
 warning: `gossamer` (bin "gossamer") generated 8 warnings (run `cargo fix --bin "gossamer" -p gossamer` to apply 2 suggestions)
     Finished `release` profile [optimized] target(s) in 54.14s
-   Replacing /Users/stephanostsoucas/.cargo/bin/gossamer
-    Replaced package `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer)` with `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
+   Replacing /home/<USER>/.cargo/bin/gossamer
+    Replaced package `gossamer v0.1.0 (/home/<USER>/p/gossamer)` with `gossamer v0.1.0 (/home/<USER>/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
 ```
 
 > AGENT
@@ -348,7 +348,7 @@ tool_use Bash
 id: toolu_01YQyNe27887h44jTnBnxHs4
 ```json
 {
-  "command": "grep -rn \"entire.*attach\\|attach.*entire\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/",
+  "command": "grep -rn \"entire.*attach\\|attach.*entire\" /home/<USER>/p/gossamer-checkpoints-visualization/src/",
   "description": "Search for entire attach calls"
 }
 ```
@@ -358,10 +358,10 @@ id: toolu_01YQyNe27887h44jTnBnxHs4
 tool_result
 id: toolu_01YQyNe27887h44jTnBnxHs4
 ```
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/main.rs:106:        /// Agent name passed to `entire attach`
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/main.rs:109:        /// Pass --force to `entire attach`
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/attach.rs:16:    let status = cmd.status().context("failed to run `entire attach`")?;
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/attach.rs:18:        anyhow::bail!("`entire attach` exited with status {}", status);
+/home/<USER>/p/gossamer-checkpoints-visualization/src/main.rs:106:        /// Agent name passed to `entire attach`
+/home/<USER>/p/gossamer-checkpoints-visualization/src/main.rs:109:        /// Pass --force to `entire attach`
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/attach.rs:16:    let status = cmd.status().context("failed to run `entire attach`")?;
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/attach.rs:18:        anyhow::bail!("`entire attach` exited with status {}", status);
 ```
 
 > AGENT
@@ -382,7 +382,7 @@ tool_use Bash
 id: toolu_01PgjK6MvpX7Pxhm7Pi2gA2b
 ```json
 {
-  "command": "grep -rn \"\\[.*\\]\\|checkpoint.*row\\|draw.*checkpoint\\|checkpoint.*draw\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/ | grep -v \"target/\" | head -40",
+  "command": "grep -rn \"\\[.*\\]\\|checkpoint.*row\\|draw.*checkpoint\\|checkpoint.*draw\" /home/<USER>/p/gossamer-checkpoints-visualization/src/ | grep -v \"target/\" | head -40",
   "description": "Search for checkpoint row rendering and bracket key handling"
 }
 ```
@@ -392,24 +392,24 @@ id: toolu_01PgjK6MvpX7Pxhm7Pi2gA2b
 tool_result
 id: toolu_01PgjK6MvpX7Pxhm7Pi2gA2b
 ```
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs:87:    /// Full-width background for checkpoint rows
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/db.rs:26:    let _ = conn.execute("ALTER TABLE repositories ADD COLUMN last_indexed_commit TEXT", []);
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/db.rs:27:    let _ = conn.execute("ALTER TABLE repositories ADD COLUMN last_search_commit TEXT", []);
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/db.rs:28:    let _ = conn.execute("ALTER TABLE checkpoints ADD COLUMN jsonl_path TEXT", []);
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/db.rs:29:    let _ = conn.execute("ALTER TABLE checkpoints ADD COLUMN repo_dir TEXT", []);
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/db.rs:30:    let _ = conn.execute("ALTER TABLE checkpoints ADD COLUMN os_user TEXT", []);
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/db.rs:31:    let _ = conn.execute("ALTER TABLE checkpoints ADD COLUMN commit_message TEXT", []);
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/db.rs:32:    let _ = conn.execute("ALTER TABLE checkpoints ADD COLUMN turn_id TEXT", []);
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/db.rs:33:    let _ = conn.execute("ALTER TABLE checkpoints ADD COLUMN checkpoint_id TEXT", []);
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/db.rs:34:    let _ = conn.execute("ALTER TABLE checkpoints ADD COLUMN files_touched TEXT", []);
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/db.rs:35:    let _ = conn.execute("ALTER TABLE checkpoints ADD COLUMN token_usage TEXT", []);
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/db.rs:36:    let _ = conn.execute("ALTER TABLE checkpoints ADD COLUMN initial_attribution TEXT", []);
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/db.rs:37:    let _ = conn.execute("ALTER TABLE checkpoints ADD COLUMN model TEXT", []);
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/db.rs:43:    let _ = conn.execute("ALTER TABLE sessions ADD COLUMN branch TEXT", []);
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/db.rs:44:    let _ = conn.execute("ALTER TABLE sessions ADD COLUMN repo_id INTEGER", []);
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/db.rs:45:    let _ = conn.execute("ALTER TABLE sessions ADD COLUMN name_is_explicit INTEGER NOT NULL DEFAULT 0", []);
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/db.rs:107:        [], |r| r.get(0),
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/db.rs:156: […]
+/home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs:87:    /// Full-width background for checkpoint rows
+/home/<USER>/p/gossamer-checkpoints-visualization/src/db.rs:26:    let _ = conn.execute("ALTER TABLE repositories ADD COLUMN last_indexed_commit TEXT", []);
+/home/<USER>/p/gossamer-checkpoints-visualization/src/db.rs:27:    let _ = conn.execute("ALTER TABLE repositories ADD COLUMN last_search_commit TEXT", []);
+/home/<USER>/p/gossamer-checkpoints-visualization/src/db.rs:28:    let _ = conn.execute("ALTER TABLE checkpoints ADD COLUMN jsonl_path TEXT", []);
+/home/<USER>/p/gossamer-checkpoints-visualization/src/db.rs:29:    let _ = conn.execute("ALTER TABLE checkpoints ADD COLUMN repo_dir TEXT", []);
+/home/<USER>/p/gossamer-checkpoints-visualization/src/db.rs:30:    let _ = conn.execute("ALTER TABLE checkpoints ADD COLUMN os_user TEXT", []);
+/home/<USER>/p/gossamer-checkpoints-visualization/src/db.rs:31:    let _ = conn.execute("ALTER TABLE checkpoints ADD COLUMN commit_message TEXT", []);
+/home/<USER>/p/gossamer-checkpoints-visualization/src/db.rs:32:    let _ = conn.execute("ALTER TABLE checkpoints ADD COLUMN turn_id TEXT", []);
+/home/<USER>/p/gossamer-checkpoints-visualization/src/db.rs:33:    let _ = conn.execute("ALTER TABLE checkpoints ADD COLUMN checkpoint_id TEXT", []);
+/home/<USER>/p/gossamer-checkpoints-visualization/src/db.rs:34:    let _ = conn.execute("ALTER TABLE checkpoints ADD COLUMN files_touched TEXT", []);
+/home/<USER>/p/gossamer-checkpoints-visualization/src/db.rs:35:    let _ = conn.execute("ALTER TABLE checkpoints ADD COLUMN token_usage TEXT", []);
+/home/<USER>/p/gossamer-checkpoints-visualization/src/db.rs:36:    let _ = conn.execute("ALTER TABLE checkpoints ADD COLUMN initial_attribution TEXT", []);
+/home/<USER>/p/gossamer-checkpoints-visualization/src/db.rs:37:    let _ = conn.execute("ALTER TABLE checkpoints ADD COLUMN model TEXT", []);
+/home/<USER>/p/gossamer-checkpoints-visualization/src/db.rs:43:    let _ = conn.execute("ALTER TABLE sessions ADD COLUMN branch TEXT", []);
+/home/<USER>/p/gossamer-checkpoints-visualization/src/db.rs:44:    let _ = conn.execute("ALTER TABLE sessions ADD COLUMN repo_id INTEGER", []);
+/home/<USER>/p/gossamer-checkpoints-visualization/src/db.rs:45:    let _ = conn.execute("ALTER TABLE sessions ADD COLUMN name_is_explicit INTEGER NOT NULL DEFAULT 0", []);
+/home/<USER>/p/gossamer-checkpoints-visualization/src/db.rs:107:        [], |r| r.get(0),
+/home/<USER>/p/gossamer-checkpoints-visualization/src/db.rs:156: […]
 
 > TOOL
 
@@ -417,7 +417,7 @@ tool_use Bash
 id: toolu_01Euxvis8uhTuZ95WxYGRqSK
 ```json
 {
-  "command": "grep -rn \"Char('\\['\\|Char('\\]'\\|BracketLeft\\|BracketRight\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/ | grep -v target/",
+  "command": "grep -rn \"Char('\\['\\|Char('\\]'\\|BracketLeft\\|BracketRight\" /home/<USER>/p/gossamer-checkpoints-visualization/src/ | grep -v target/",
   "description": "Find bracket key handlers"
 }
 ```
@@ -427,8 +427,8 @@ id: toolu_01Euxvis8uhTuZ95WxYGRqSK
 tool_result
 id: toolu_01Euxvis8uhTuZ95WxYGRqSK
 ```
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs:1603:                    (KeyCode::Char(']'), _) => {
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs:1613:                    (KeyCode::Char('['), _) => {
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs:1603:                    (KeyCode::Char(']'), _) => {
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs:1613:                    (KeyCode::Char('['), _) => {
 ```
 
 > TOOL
@@ -437,7 +437,7 @@ tool_use Read
 id: toolu_01SH2wp1BhXvP4MuWmUtv33e
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "offset": 1580,
   "limit": 80
 }
@@ -494,7 +494,7 @@ tool_use Read
 id: toolu_013sZfpGzyDJPAX9kdSqfFdm
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "offset": 1660,
   "limit": 120
 }
@@ -552,7 +552,7 @@ tool_use Read
 id: toolu_013JhcteyygratQJMVoGoZNz
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "offset": 1740,
   "limit": 60
 }
@@ -616,7 +616,7 @@ tool_use Read
 id: toolu_01GN5XQ14NuePB6UmoK8W9LG
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "offset": 1540,
   "limit": 45
 }
@@ -671,7 +671,7 @@ tool_use Bash
 id: toolu_011KNcUo3chM8QJVaadSkQgd
 ```json
 {
-  "command": "grep -n \"fn build_flat\\|starts\\b\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs | head -50",
+  "command": "grep -n \"fn build_flat\\|starts\\b\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs | head -50",
   "description": "Find build_flat definition and starts usage"
 }
 ```
@@ -709,7 +709,7 @@ tool_use Read
 id: toolu_013Bdga24xtyJ4dFwbUtMJdZ
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "offset": 1393,
   "limit": 90
 }
@@ -770,7 +770,7 @@ tool_use Bash
 id: toolu_01VP6qN5GfSw8Aje164rpduT
 ```json
 {
-  "command": "grep -n \"fn render_checkpoint\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "command": "grep -n \"fn render_checkpoint\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "description": "Find checkpoint render functions"
 }
 ```
@@ -791,7 +791,7 @@ tool_use Read
 id: toolu_015E2ESYwWZHrxF63LugDaLk
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "offset": 851,
   "limit": 80
 }
@@ -851,7 +851,7 @@ tool_use Bash
 id: toolu_01VTS1ViMoPKMV8VWhyMNLaM
 ```json
 {
-  "command": "grep -n \"fn with_bg\\|fn visible_width\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/mod.rs",
+  "command": "grep -n \"fn with_bg\\|fn visible_width\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/mod.rs",
   "description": "Find with_bg and visible_width definitions"
 }
 ```
@@ -871,7 +871,7 @@ tool_use Read
 id: toolu_01RrD6NEdVceMAu1w6Zek5eX
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/mod.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/mod.rs",
   "offset": 26,
   "limit": 60
 }
@@ -927,7 +927,7 @@ tool_use Read
 id: toolu_01HB82AZq1JF8r4CXjp9D1kR
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "offset": 1481,
   "limit": 60
 }
@@ -984,7 +984,7 @@ tool_use Read
 id: toolu_01TZXffigW2KnhPKAHSWpo4W
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "offset": 1793,
   "limit": 40
 }
@@ -1039,7 +1039,7 @@ id: toolu_01UmNbWBHnyVgWQ82DAptAqH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "        let s = starts[sel];\n        let e = starts.get(sel + 1).copied().unwrap_or(flat.len());\n        if s < scroll          { scroll = s; }\n        else if e > scroll + h { scroll = e.saturating_sub(h); }",
   "new_string": "        let s = starts[sel];\n        let e = starts.get(sel + 1).copied().unwrap_or(flat.len());\n        if s < scroll {\n            scroll = s;\n        } else if e > scroll + h {\n            scroll = e.saturating_sub(h);\n            // For items taller than the screen, prefer showing the start so the\n            // header is always visible rather than scrolling into the body.\n            if scroll > s { scroll = s; }\n        }"
 }
@@ -1050,7 +1050,7 @@ id: toolu_01UmNbWBHnyVgWQ82DAptAqH
 tool_result
 id: toolu_01UmNbWBHnyVgWQ82DAptAqH
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1091,8 +1091,8 @@ tool_result
 id: toolu_01QqqbVR7tnQqG36XGrs2hyP
 ```
     Finished `release` profile [optimized] target(s) in 1m 09s
-   Replacing /Users/stephanostsoucas/.cargo/bin/gossamer
-    Replaced package `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer)` with `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
+   Replacing /home/<USER>/.cargo/bin/gossamer
+    Replaced package `gossamer v0.1.0 (/home/<USER>/p/gossamer)` with `gossamer v0.1.0 (/home/<USER>/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
 ```
 
 > AGENT

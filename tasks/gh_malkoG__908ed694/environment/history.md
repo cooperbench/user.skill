@@ -8,7 +8,7 @@ tool_use Bash
 id: toolu_01F45pjEvgN97fLcQeQ1fX46
 ```json
 {
-  "command": "ls /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-profile-edit/../",
+  "command": "ls /home/<USER>/fediverse/hackerspub-android-worktrees/feature-profile-edit/../",
   "description": "List parent directory"
 }
 ```
@@ -32,7 +32,7 @@ tool_use Bash
 id: toolu_01MC6VAaEpMJENnA1aBg5QA9
 ```json
 {
-  "command": "ls /Users/kodingwarrior/fediverse/",
+  "command": "ls /home/<USER>/fediverse/",
   "description": "List fediverse directory"
 }
 ```
@@ -67,7 +67,7 @@ id: toolu_01CJfHug6Gmh1e3FRK4t6R4K
 {
   "description": "Find profile edit mutation in hackerspub",
   "subagent_type": "Explore",
-  "prompt": "Search the codebase at /Users/kodingwarrior/fediverse/hackerspub for a profile edit mutation (GraphQL mutation for editing the user's own actor/profile — fields like name, bio/summary, avatar, header, aliases, etc.).\n\nReport:\n1. Whether such a mutation exists, and if so, its exact name and location (file path + line number).\n2. Its full GraphQL schema signature (input types, arguments, return type).\n3. The input type fields (all editable profile fields).\n4. Any related mutations (e.g. separate upload for avatar/header).\n\nIf no profile edit mutation exists, state that clearly and mention whether REST endpoints or other mechanisms exist for profile editing.\n\nThoroughness: medium. Report under 300 words."
+  "prompt": "Search the codebase at /home/<USER>/fediverse/hackerspub for a profile edit mutation (GraphQL mutation for editing the user's own actor/profile — fields like name, bio/summary, avatar, header, aliases, etc.).\n\nReport:\n1. Whether such a mutation exists, and if so, its exact name and location (file path + line number).\n2. Its full GraphQL schema signature (input types, arguments, return type).\n3. The input type fields (all editable profile fields).\n4. Any related mutations (e.g. separate upload for avatar/header).\n\nIf no profile edit mutation exists, state that clearly and mention whether REST endpoints or other mechanisms exist for profile editing.\n\nThoroughness: medium. Report under 300 words."
 }
 ```
 
@@ -83,8 +83,8 @@ Perfect! I have all the information needed. Let me compile the report.
 **1. Mutation Exists: YES**
 
 - **Mutation Name:** `updateAccount`
-- **Location:** `/Users/kodingwarrior/fediverse/hackerspub/graphql/account.ts` (lines 496-602)
-- **Schema Definition:** `/Users/kodingwarrior/fediverse/hackerspub/graphql/schema.graphql` (lines 1424-1443)
+- **Location:** `/home/<USER>/fediverse/hackerspub/graphql/account.ts` (lines 496-602)
+- **Schema Definition:** `/home/<USER>/fediverse/hackerspub/graphql/schema.graphql` (lines 1424-1443)
 
 **2. GraphQL Schema Signature:**
 
@@ -154,7 +154,7 @@ id: toolu_01Bbeag34gxdiLyv74kJqEXD
 {
   "description": "Find avatar upload mechanism",
   "subagent_type": "Explore",
-  "prompt": "In /Users/kodingwarrior/fediverse/hackerspub, I need to understand how avatar image upload works end-to-end.\n\nContext: the `updateAccount` GraphQL mutation (graphql/account.ts:496-602) accepts an `avatarUrl: URL` field — it fetches the image from a URL rather than accepting a file upload directly. So clients must first upload the image somewhere to get a URL, then pass that URL.\n\nFind:\n1. Is there a REST endpoint or upload mutation where a client can POST/PUT an image file and get back a URL? (Check the web frontend, API routes, and any `/uploads`, `/media`, `/images` endpoints.)\n2. How does the official web client (if there is one in this repo) upload a user-selected avatar image? Trace the flow from file picker → server → updateAccount mutation.\n3. Is there a presigned-URL flow (e.g., S3), a direct multipart upload endpoint, or does the web UI just use a data: URL / blob URL?\n4. Any size/mime validation on the upload side.\n\nReport file paths + line numbers. Under 300 words."
+  "prompt": "In /home/<USER>/fediverse/hackerspub, I need to understand how avatar image upload works end-to-end.\n\nContext: the `updateAccount` GraphQL mutation (graphql/account.ts:496-602) accepts an `avatarUrl: URL` field — it fetches the image from a URL rather than accepting a file upload directly. So clients must first upload the image somewhere to get a URL, then pass that URL.\n\nFind:\n1. Is there a REST endpoint or upload mutation where a client can POST/PUT an image file and get back a URL? (Check the web frontend, API routes, and any `/uploads`, `/media`, `/images` endpoints.)\n2. How does the official web client (if there is one in this repo) upload a user-selected avatar image? Trace the flow from file picker → server → updateAccount mutation.\n3. Is there a presigned-URL flow (e.g., S3), a direct multipart upload endpoint, or does the web UI just use a data: URL / blob URL?\n4. Any size/mime validation on the upload side.\n\nReport file paths + line numbers. Under 300 words."
 }
 ```
 

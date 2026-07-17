@@ -8,7 +8,7 @@ tool_use Read
 id: toolu_01MKsdzsLq8jSe6YTG76SSpd
 ```json
 {
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/.agents/backlog.md"
+  "file_path": "/home/<USER>/workspace/addi/crap4py/.agents/backlog.md"
 }
 ```
 
@@ -56,7 +56,7 @@ tool_use Bash
 id: toolu_019yR8UiVkSuZdCszgNJRFoa
 ```json
 {
-  "command": "ls -la /Users/gabadi/workspace/addi/ && echo \"---swarm-forge---\" && ls -la /Users/gabadi/workspace/addi/swarm-forge 2>/dev/null || ls -la /Users/gabadi/workspace/addi/swarmforge 2>/dev/null",
+  "command": "ls -la /home/<USER>/workspace/addi/ && echo \"---swarm-forge---\" && ls -la /home/<USER>/workspace/addi/swarm-forge 2>/dev/null || ls -la /home/<USER>/workspace/addi/swarmforge 2>/dev/null",
   "description": "Locate swarm-forge directory"
 }
 ```
@@ -96,7 +96,7 @@ tool_use Bash
 id: toolu_01LcgfL6oGxWrez4waa3QXmo
 ```json
 {
-  "command": "echo \"=== crap4py .claude ===\" && ls -la /Users/gabadi/workspace/addi/crap4py/.claude/ 2>/dev/null\necho \"=== crap4py settings files ===\" && find /Users/gabadi/workspace/addi/crap4py/.claude -name 'settings*.json' 2>/dev/null\necho \"=== swarm-forge tree ===\" && find /Users/gabadi/workspace/addi/swarm-forge -name 'settings*.json' -not -path '*/.worktrees/*' 2>/dev/null\necho \"=== swarm-forge swarmforge dir ===\" && ls -R /Users/gabadi/workspace/addi/swarm-forge/swarmforge 2>/dev/null | head -50",
+  "command": "echo \"=== crap4py .claude ===\" && ls -la /home/<USER>/workspace/addi/crap4py/.claude/ 2>/dev/null\necho \"=== crap4py settings files ===\" && find /home/<USER>/workspace/addi/crap4py/.claude -name 'settings*.json' 2>/dev/null\necho \"=== swarm-forge tree ===\" && find /home/<USER>/workspace/addi/swarm-forge -name 'settings*.json' -not -path '*/.worktrees/*' 2>/dev/null\necho \"=== swarm-forge swarmforge dir ===\" && ls -R /home/<USER>/workspace/addi/swarm-forge/swarmforge 2>/dev/null | head -50",
   "description": "Find settings.json in both repos"
 }
 ```
@@ -114,13 +114,13 @@ drwxr-x---@  3 gabadi  staff    96 Jun 22 00:08 agents
 -rw-------@  1 gabadi  staff  2300 Jun 23 03:29 settings.json
 drwxr-xr-x@ 18 gabadi  staff   576 Jun 22 00:06 skills
 === crap4py settings files ===
-/Users/gabadi/workspace/addi/crap4py/.claude/settings.json
+/home/<USER>/workspace/addi/crap4py/.claude/settings.json
 === swarm-forge tree ===
-/Users/gabadi/workspace/addi/swarm-forge/.claude/settings.local.json
+/home/<USER>/workspace/addi/swarm-forge/.claude/settings.local.json
 === swarm-forge swarmforge dir ===
 scripts
 
-/Users/gabadi/workspace/addi/swarm-forge/swarmforge/scripts:
+/home/<USER>/workspace/addi/swarm-forge/swarmforge/scripts:
 swarm-cleanup.sh
 swarm-stop.sh
 swarm-terminal-adapter.sh
@@ -129,7 +129,7 @@ swarmforge.sh
 swarmlog.sh
 terminal-adapters
 
-/Users/gabadi/workspace/addi/swarm-forge/swarmforge/scripts/terminal-adapters:
+/home/<USER>/workspace/addi/swarm-forge/swarmforge/scripts/terminal-adapters:
 cmux.sh
 ghostty.sh
 none.sh
@@ -143,7 +143,7 @@ tool_use Read
 id: toolu_01SPrw2RKunyuVvP72FUkqTX
 ```json
 {
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/.claude/settings.json"
+  "file_path": "/home/<USER>/workspace/addi/crap4py/.claude/settings.json"
 }
 ```
 
@@ -210,7 +210,7 @@ tool_use Bash
 id: toolu_011rpxhfWYFRuhwdN1wLFnyF
 ```json
 {
-  "command": "echo \"=== is settings.json tracked / diff ===\" && git status --short .claude/settings.json && git log --oneline -3 -- .claude/settings.json 2>/dev/null\necho \"=== git diff of settings.json (committed vs working) ===\"\ngit diff .claude/settings.json\necho \"=== grep permissions/allow across swarm-forge ===\"\ngrep -rln \"permissions\\|pr merge\\|reset --hard\\|settings.local\\|settings.json\" /Users/gabadi/workspace/addi/swarm-forge --include='*.md' --include='*.sh' --include='*.prompt' --include='*.json' -i 2>/dev/null | grep -v '.worktrees' | head -40",
+  "command": "echo \"=== is settings.json tracked / diff ===\" && git status --short .claude/settings.json && git log --oneline -3 -- .claude/settings.json 2>/dev/null\necho \"=== git diff of settings.json (committed vs working) ===\"\ngit diff .claude/settings.json\necho \"=== grep permissions/allow across swarm-forge ===\"\ngrep -rln \"permissions\\|pr merge\\|reset --hard\\|settings.local\\|settings.json\" /home/<USER>/workspace/addi/swarm-forge --include='*.md' --include='*.sh' --include='*.prompt' --include='*.json' -i 2>/dev/null | grep -v '.worktrees' | head -40",
   "description": "Check settings.json tracking and swarm-forge permission templates"
 }
 ```
@@ -231,7 +231,7 @@ tool_use Bash
 id: toolu_01BHaQ4fZFgQDMfoYi3YSzrj
 ```json
 {
-  "command": "echo \"=== is settings.json gitignored in crap4py ===\" && git check-ignore -v .claude/settings.json\necho \"=== full swarm-forge file list (no worktrees/.git) ===\"\nfind /Users/gabadi/workspace/addi/swarm-forge -type f -not -path '*/.git/*' -not -path '*/.worktrees/*' -not -path '*/logs/*' 2>/dev/null\necho \"=== setup-swarm skill location ===\"\nfind /Users/gabadi/workspace/addi -name 'SKILL.md' -path '*setup-swarm*' -not -path '*/.worktrees/*' 2>/dev/null",
+  "command": "echo \"=== is settings.json gitignored in crap4py ===\" && git check-ignore -v .claude/settings.json\necho \"=== full swarm-forge file list (no worktrees/.git) ===\"\nfind /home/<USER>/workspace/addi/swarm-forge -type f -not -path '*/.git/*' -not -path '*/.worktrees/*' -not -path '*/logs/*' 2>/dev/null\necho \"=== setup-swarm skill location ===\"\nfind /home/<USER>/workspace/addi -name 'SKILL.md' -path '*setup-swarm*' -not -path '*/.worktrees/*' 2>/dev/null",
   "description": "Check gitignore and list swarm-forge files"
 }
 ```
@@ -254,7 +254,7 @@ tool_use Bash
 id: toolu_01UokBWdef4Hs9vnxXL3HAE7
 ```json
 {
-  "command": "find /Users/gabadi/workspace/addi/swarm-forge -type f -not -path '*/.git/*' -not -path '*/.worktrees/*' -not -path '*/logs/*' -not -path '*/examples/*' 2>/dev/null",
+  "command": "find /home/<USER>/workspace/addi/swarm-forge -type f -not -path '*/.git/*' -not -path '*/.worktrees/*' -not -path '*/logs/*' -not -path '*/examples/*' 2>/dev/null",
   "description": "List swarm-forge engine files excluding examples"
 }
 ```
@@ -264,29 +264,29 @@ id: toolu_01UokBWdef4Hs9vnxXL3HAE7
 tool_result
 id: toolu_01UokBWdef4Hs9vnxXL3HAE7
 ```
-/Users/gabadi/workspace/addi/swarm-forge/README.md
-/Users/gabadi/workspace/addi/swarm-forge/.gitignore
-/Users/gabadi/workspace/addi/swarm-forge/swarmtools/notify-agent.sh
-/Users/gabadi/workspace/addi/swarm-forge/.swarmforge/sessions.tsv
-/Users/gabadi/workspace/addi/swarm-forge/.claude/settings.local.json
-/Users/gabadi/workspace/addi/swarm-forge/.swarmforge/prompts/hardender.md
-/Users/gabadi/workspace/addi/swarm-forge/.swarmforge/prompts/cleaner.md
-/Users/gabadi/workspace/addi/swarm-forge/.swarmforge/prompts/architect.md
-/Users/gabadi/workspace/addi/swarm-forge/.swarmforge/prompts/QA.md
-/Users/gabadi/workspace/addi/swarm-forge/.swarmforge/prompts/specifier.md
-/Users/gabadi/workspace/addi/swarm-forge/.swarmforge/prompts/refactorer.md
-/Users/gabadi/workspace/addi/swarm-forge/.swarmforge/prompts/coder.md
-/Users/gabadi/workspace/addi/swarm-forge/swarmforge/scripts/swarmforge.sh
-/Users/gabadi/workspace/addi/swarm-forge/swarmforge/scripts/swarm-cleanup.sh
-/Users/gabadi/workspace/addi/swarm-forge/swarmforge/scripts/swarmlog.sh
-/Users/gabadi/workspace/addi/swarm-forge/swarmforge/scripts/swarm-terminal-adapter.sh
-/Users/gabadi/workspace/addi/swarm-forge/swarmforge/scripts/swarm-window-watchdog.sh
-/Users/gabadi/workspace/addi/swarm-forge/swarmforge/scripts/swarm-stop.sh
-/Users/gabadi/workspace/addi/swarm-forge/swarmforge/scripts/terminal-adapters/cmux.sh
-/Users/gabadi/workspace/addi/swarm-forge/swarmforge/scripts/terminal-adapters/terminal-app.sh
-/Users/gabadi/workspace/addi/swarm-forge/swarmforge/scripts/terminal-adapters/ghostty.sh
-/Users/gabadi/workspace/addi/swarm-forge/swarmforge/scripts/terminal-adapters/none.sh
-/Users/gabadi/workspace/addi/swarm-forge/swarmforge/scripts/terminal-adapters/windows-terminal.sh
+/home/<USER>/workspace/addi/swarm-forge/README.md
+/home/<USER>/workspace/addi/swarm-forge/.gitignore
+/home/<USER>/workspace/addi/swarm-forge/swarmtools/notify-agent.sh
+/home/<USER>/workspace/addi/swarm-forge/.swarmforge/sessions.tsv
+/home/<USER>/workspace/addi/swarm-forge/.claude/settings.local.json
+/home/<USER>/workspace/addi/swarm-forge/.swarmforge/prompts/hardender.md
+/home/<USER>/workspace/addi/swarm-forge/.swarmforge/prompts/cleaner.md
+/home/<USER>/workspace/addi/swarm-forge/.swarmforge/prompts/architect.md
+/home/<USER>/workspace/addi/swarm-forge/.swarmforge/prompts/QA.md
+/home/<USER>/workspace/addi/swarm-forge/.swarmforge/prompts/specifier.md
+/home/<USER>/workspace/addi/swarm-forge/.swarmforge/prompts/refactorer.md
+/home/<USER>/workspace/addi/swarm-forge/.swarmforge/prompts/coder.md
+/home/<USER>/workspace/addi/swarm-forge/swarmforge/scripts/swarmforge.sh
+/home/<USER>/workspace/addi/swarm-forge/swarmforge/scripts/swarm-cleanup.sh
+/home/<USER>/workspace/addi/swarm-forge/swarmforge/scripts/swarmlog.sh
+/home/<USER>/workspace/addi/swarm-forge/swarmforge/scripts/swarm-terminal-adapter.sh
+/home/<USER>/workspace/addi/swarm-forge/swarmforge/scripts/swarm-window-watchdog.sh
+/home/<USER>/workspace/addi/swarm-forge/swarmforge/scripts/swarm-stop.sh
+/home/<USER>/workspace/addi/swarm-forge/swarmforge/scripts/terminal-adapters/cmux.sh
+/home/<USER>/workspace/addi/swarm-forge/swarmforge/scripts/terminal-adapters/terminal-app.sh
+/home/<USER>/workspace/addi/swarm-forge/swarmforge/scripts/terminal-adapters/ghostty.sh
+/home/<USER>/workspace/addi/swarm-forge/swarmforge/scripts/terminal-adapters/none.sh
+/home/<USER>/workspace/addi/swarm-forge/swarmforge/scripts/terminal-adapters/windows-terminal.sh
 ```
 
 > TOOL
@@ -295,7 +295,7 @@ tool_use Bash
 id: toolu_014W97Dv2PwKaS4gdxVTbDia
 ```json
 {
-  "command": "cd /Users/gabadi/workspace/addi/swarm-forge\necho \"=== grep for settings / permission / permission-mode / claude launch ===\"\ngrep -rn \"settings\\|permission\\|--allowedTools\\|dangerously\\|reset --hard\\|pr merge\\|claude \" swarmforge/scripts/ swarmtools/ .swarmforge/prompts/ 2>/dev/null | head -50",
+  "command": "cd /home/<USER>/workspace/addi/swarm-forge\necho \"=== grep for settings / permission / permission-mode / claude launch ===\"\ngrep -rn \"settings\\|permission\\|--allowedTools\\|dangerously\\|reset --hard\\|pr merge\\|claude \" swarmforge/scripts/ swarmtools/ .swarmforge/prompts/ 2>/dev/null | head -50",
   "description": "Search engine for settings/permission/claude launch"
 }
 ```
@@ -309,7 +309,7 @@ id: toolu_014W97Dv2PwKaS4gdxVTbDia
 swarmforge/scripts/swarmforge.sh:466:      claude) check_dependency claude ;;
 swarmforge/scripts/swarmforge.sh:522:      launch_cmd="export PATH='$SWARM_TOOLS_DIR:$SCRIPT_DIR':\$PATH && cd '$role_worktree' && claude --append-system-prompt-file '$prompt_file' --permission-mode acceptEdits -n 'SwarmForge ${display}' \"\$(cat '$prompt_file')\""
 swarmforge/scripts/swarmforge.sh:531:      launch_cmd="export PATH='$SWARM_TOOLS_DIR:$SCRIPT_DIR':\$PATH && cd '$role_worktree' && grok --cwd '$role_worktree' --permission-mode acceptEdits --rules \"\$(cat '$prompt_file')\""
-Shell cwd was reset to /Users/gabadi/workspace/addi/crap4py
+Shell cwd was reset to /home/<USER>/workspace/addi/crap4py
 ```
 
 > TOOL
@@ -318,7 +318,7 @@ tool_use Bash
 id: toolu_018kZn9w8bqVCVqBErkdCNnc
 ```json
 {
-  "command": "cd /Users/gabadi/workspace/addi/crap4py\necho \"=== tracked? ===\" && git ls-files .claude/settings.json | grep . && echo \"TRACKED\" || echo \"NOT TRACKED\"\necho \"=== ignored? ===\" && git check-ignore -v .claude/settings.json || echo \"not ignored\"\necho \"=== settings.local in swarm-forge engine (what it allows) ===\"\ncat /Users/gabadi/workspace/addi/swarm-forge/.claude/settings.local.json",
+  "command": "cd /home/<USER>/workspace/addi/crap4py\necho \"=== tracked? ===\" && git ls-files .claude/settings.json | grep . && echo \"TRACKED\" || echo \"NOT TRACKED\"\necho \"=== ignored? ===\" && git check-ignore -v .claude/settings.json || echo \"not ignored\"\necho \"=== settings.local in swarm-forge engine (what it allows) ===\"\ncat /home/<USER>/workspace/addi/swarm-forge/.claude/settings.local.json",
   "description": "Check crap4py settings tracking and swarm-forge local settings"
 }
 ```
@@ -338,7 +338,7 @@ NOT TRACKED
     "allow": [
       "Bash(rtk git *)",
       "Bash(cmux *)",
-      "Bash(/Users/gabadi/workspace/addi/swarm-forge/swarmtools/notify-agent.sh coder *)"
+      "Bash(/home/<USER>/workspace/addi/swarm-forge/swarmtools/notify-agent.sh coder *)"
     ]
   }
 }
@@ -373,7 +373,7 @@ tool_use Bash
 id: toolu_014xso9kEkQhyvxvqXyh6YF8
 ```json
 {
-  "command": "cd /Users/gabadi/workspace/addi/swarm-forge\necho \"=== branch ===\" && git rev-parse --abbrev-ref HEAD\necho \"=== tracked settings.local.json? ===\" && git ls-files .claude/ ; echo \"---\"\necho \"=== ignored? ===\" && git check-ignore -v .claude/settings.local.json || echo \"not ignored\"\necho \"=== gitignore ===\" && cat .gitignore\necho \"=== status ===\" && git status --short",
+  "command": "cd /home/<USER>/workspace/addi/swarm-forge\necho \"=== branch ===\" && git rev-parse --abbrev-ref HEAD\necho \"=== tracked settings.local.json? ===\" && git ls-files .claude/ ; echo \"---\"\necho \"=== ignored? ===\" && git check-ignore -v .claude/settings.local.json || echo \"not ignored\"\necho \"=== gitignore ===\" && cat .gitignore\necho \"=== status ===\" && git status --short",
   "description": "Check swarm-forge settings tracking and git state"
 }
 ```
@@ -400,7 +400,7 @@ logs/
 agent_context/
 logbook.json
 === status ===
-Shell cwd was reset to /Users/gabadi/workspace/addi/crap4py
+Shell cwd was reset to /home/<USER>/workspace/addi/crap4py
 ```
 
 > TOOL
@@ -409,7 +409,7 @@ tool_use Read
 id: toolu_01JRRi7o7WYYuzXz4SzWZqS7
 ```json
 {
-  "file_path": "/Users/gabadi/workspace/addi/swarm-forge/.claude/settings.local.json"
+  "file_path": "/home/<USER>/workspace/addi/swarm-forge/.claude/settings.local.json"
 }
 ```
 
@@ -423,7 +423,7 @@ id: toolu_01JRRi7o7WYYuzXz4SzWZqS7
 3	    "allow": [
 4	      "Bash(rtk git *)",
 5	      "Bash(cmux *)",
-6	      "Bash(/Users/gabadi/workspace/addi/swarm-forge/swarmtools/notify-agent.sh coder *)"
+6	      "Bash(/home/<USER>/workspace/addi/swarm-forge/swarmtools/notify-agent.sh coder *)"
 7	    ]
 8	  }
 9	}
@@ -444,7 +444,7 @@ tool_use Bash
 id: toolu_01QuhsAXh9bJrG35bVXUGVuF
 ```json
 {
-  "command": "cd /Users/gabadi/workspace/addi/swarm-forge\ngrep -rn \"settings\\|\\.claude\\|permission\\|allow\\|jq\\|cat >\\|cat >>\\|tee\\|cp \\|>>\" swarmforge/scripts/ 2>/dev/null | grep -iv \"^.*#\" | head -60",
+  "command": "cd /home/<USER>/workspace/addi/swarm-forge\ngrep -rn \"settings\\|\\.claude\\|permission\\|allow\\|jq\\|cat >\\|cat >>\\|tee\\|cp \\|>>\" swarmforge/scripts/ 2>/dev/null | grep -iv \"^.*#\" | head -60",
   "description": "Search engine scripts for settings file writes"
 }
 ```
@@ -474,7 +474,7 @@ swarmforge/scripts/terminal-adapters/cmux.sh:26:    window_count="$(cmux list-wi
 swarmforge/scripts/terminal-adapters/cmux.sh:33:        | jq -e ".workspaces[] | select(.ref == \"$ws_ref\")" >/dev/null 2>&1; then
 swarmforge/scripts/terminal-adapters/cmux.sh:45:    | jq -r ".groups[] | select(.member_workspace_refs[] == \"$ws_ref\") | .ref" 2>/dev/null \
 swarmforge/scripts/swarm-window-watchdog.sh:52:    printf '%s\t%s\t%s\t%s\n' "$index" "$window_id" "$session" "$title" >> "$tmp_file"
-Shell cwd was reset to /Users/gabadi/workspace/addi/crap4py
+Shell cwd was reset to /home/<USER>/workspace/addi/crap4py
 ```
 
 > AGENT
@@ -487,7 +487,7 @@ tool_use Read
 id: toolu_014i2vTiHFgV3s5t2YMLtbd2
 ```json
 {
-  "file_path": "/Users/gabadi/workspace/addi/swarm-forge/swarmforge/scripts/swarmforge.sh",
+  "file_path": "/home/<USER>/workspace/addi/swarm-forge/swarmforge/scripts/swarmforge.sh",
   "offset": 90,
   "limit": 160
 }
@@ -561,7 +561,7 @@ tool_use Bash
 id: toolu_013Hshw6W56GVtrX2iAwpCaJ
 ```json
 {
-  "command": "cd /Users/gabadi/workspace/addi/swarm-forge\ngrep -n \"ensure_runtime_git_excludes\\|ensure_initial_gitignore\\|remove_nonessential_clone_files\\|jq \" swarmforge/scripts/swarmforge.sh\necho \"=== check jq availability assumption (cmux adapter uses jq) ===\"\ngrep -rn \"check_dependency\\|has_command jq\\|command -v jq\" swarmforge/scripts/swarmforge.sh | head",
+  "command": "cd /home/<USER>/workspace/addi/swarm-forge\ngrep -n \"ensure_runtime_git_excludes\\|ensure_initial_gitignore\\|remove_nonessential_clone_files\\|jq \" swarmforge/scripts/swarmforge.sh\necho \"=== check jq availability assumption (cmux adapter uses jq) ===\"\ngrep -rn \"check_dependency\\|has_command jq\\|command -v jq\" swarmforge/scripts/swarmforge.sh | head",
   "description": "Find call sites of ensure functions"
 }
 ```
@@ -585,7 +585,7 @@ swarmforge/scripts/swarmforge.sh:468:      copilot) check_dependency copilot ;;
 swarmforge/scripts/swarmforge.sh:469:      grok) check_dependency grok ;;
 swarmforge/scripts/swarmforge.sh:556:check_dependency tmux
 swarmforge/scripts/swarmforge.sh:557:check_dependency git
-Shell cwd was reset to /Users/gabadi/workspace/addi/crap4py
+Shell cwd was reset to /home/<USER>/workspace/addi/crap4py
 ```
 
 > TOOL
@@ -594,7 +594,7 @@ tool_use Read
 id: toolu_01PUQGLAQRzAm9kEGwfeCbx6
 ```json
 {
-  "file_path": "/Users/gabadi/workspace/addi/swarm-forge/swarmforge/scripts/swarmforge.sh",
+  "file_path": "/home/<USER>/workspace/addi/swarm-forge/swarmforge/scripts/swarmforge.sh",
   "offset": 540,
   "limit": 30
 }
@@ -643,7 +643,7 @@ tool_use Bash
 id: toolu_01Mr1cMq1jdFMpsZCmE3wtfA
 ```json
 {
-  "command": "cd /Users/gabadi/workspace/addi/swarm-forge\ngrep -n \"YELLOW=\\|RED=\\|RESET=\\|CYAN=\\|GREEN=\\|has_command\\b\" swarmforge/scripts/swarmforge.sh | head",
+  "command": "cd /home/<USER>/workspace/addi/swarm-forge\ngrep -n \"YELLOW=\\|RED=\\|RESET=\\|CYAN=\\|GREEN=\\|has_command\\b\" swarmforge/scripts/swarmforge.sh | head",
   "description": "Check color vars and has_command"
 }
 ```
@@ -659,7 +659,7 @@ id: toolu_01Mr1cMq1jdFMpsZCmE3wtfA
 9:CYAN='\033[0;36m'
 11:RESET='\033[0m'
 162:has_command() {
-Shell cwd was reset to /Users/gabadi/workspace/addi/crap4py
+Shell cwd was reset to /home/<USER>/workspace/addi/crap4py
 ```
 
 > AGENT
@@ -672,7 +672,7 @@ tool_use Bash
 id: toolu_01HmF6dSWvwhsS3hZzmSidtt
 ```json
 {
-  "command": "cd /Users/gabadi/workspace/addi/swarm-forge && rtk git checkout -b feat/provision-claude-permission-allowlist && rtk git status --short",
+  "command": "cd /home/<USER>/workspace/addi/swarm-forge && rtk git checkout -b feat/provision-claude-permission-allowlist && rtk git status --short",
   "description": "Create branch in swarm-forge"
 }
 ```
@@ -684,7 +684,7 @@ id: toolu_01HmF6dSWvwhsS3hZzmSidtt
 ```
 Switched to a new branch 'feat/provision-claude-permission-allowlist'
 ok
-Shell cwd was reset to /Users/gabadi/workspace/addi/crap4py
+Shell cwd was reset to /home/<USER>/workspace/addi/crap4py
 ```
 
 > AGENT
@@ -697,7 +697,7 @@ tool_use Bash
 id: toolu_01FakcAPTbBNWiPjpjNBBmaX
 ```json
 {
-  "command": "find /Users/gabadi/workspace/addi /Users/gabadi/.claude /Users/gabadi/.claude-gabadi -name 'SKILL.md' -path '*setup-swarm*' 2>/dev/null; echo \"---also check engine repo---\"; find /Users/gabadi/workspace/addi/swarm-forge -name 'SKILL.md' 2>/dev/null | grep -v worktrees",
+  "command": "find /home/<USER>/workspace/addi /home/<USER>/.claude /home/<USER>/.claude-gabadi -name 'SKILL.md' -path '*setup-swarm*' 2>/dev/null; echo \"---also check engine repo---\"; find /home/<USER>/workspace/addi/swarm-forge -name 'SKILL.md' 2>/dev/null | grep -v worktrees",
   "description": "Locate setup-swarm SKILL.md"
 }
 ```
@@ -747,7 +747,7 @@ tool_use Bash
 id: toolu_01Khz2XibDsZXAsW3ACfDPiw
 ```json
 {
-  "command": "find /Users/gabadi/workspace/addi /Users/gabadi/.claude /Users/gabadi/.claude-gabadi -name 'SKILL.md' -path '*setup-swarm*' 2>/dev/null | grep -v worktrees",
+  "command": "find /home/<USER>/workspace/addi /home/<USER>/.claude /home/<USER>/.claude-gabadi -name 'SKILL.md' -path '*setup-swarm*' 2>/dev/null | grep -v worktrees",
   "description": "Locate setup-swarm SKILL.md"
 }
 ```
@@ -757,11 +757,11 @@ id: toolu_01Khz2XibDsZXAsW3ACfDPiw
 tool_result
 id: toolu_01Khz2XibDsZXAsW3ACfDPiw
 ```
-/Users/gabadi/workspace/addi/gabadi-swarm-forge/swarmforge/skills/setup-swarm/SKILL.md
-/Users/gabadi/workspace/addi/crap4py/.claude/skills/setup-swarm/SKILL.md
-/Users/gabadi/workspace/addi/crap4py/swarmforge/skills/setup-swarm/SKILL.md
-/Users/gabadi/workspace/addi/drywall/swarmforge/skills/setup-swarm/SKILL.md
-/Users/gabadi/workspace/addi/drywall/.claude/skills/setup-swarm/SKILL.md
+/home/<USER>/workspace/addi/gabadi-swarm-forge/swarmforge/skills/setup-swarm/SKILL.md
+/home/<USER>/workspace/addi/crap4py/.claude/skills/setup-swarm/SKILL.md
+/home/<USER>/workspace/addi/crap4py/swarmforge/skills/setup-swarm/SKILL.md
+/home/<USER>/workspace/addi/drywall/swarmforge/skills/setup-swarm/SKILL.md
+/home/<USER>/workspace/addi/drywall/.claude/skills/setup-swarm/SKILL.md
 ```
 
 > AGENT
@@ -774,7 +774,7 @@ tool_use Bash
 id: toolu_014x6jfeZXj6L3zgFBrVhuKF
 ```json
 {
-  "command": "cd /Users/gabadi/workspace/addi/gabadi-swarm-forge && echo \"=== remote ===\" && rtk git remote -v | head -2 && echo \"=== branch ===\" && rtk git rev-parse --abbrev-ref HEAD\necho \"=== diff canonical vs crap4py copy ===\"\ndiff /Users/gabadi/workspace/addi/gabadi-swarm-forge/swarmforge/skills/setup-swarm/SKILL.md /Users/gabadi/workspace/addi/crap4py/swarmforge/skills/setup-swarm/SKILL.md && echo \"IDENTICAL (canonical == crap4py/swarmforge)\"\necho \"=== diff crap4py swarmforge vs .claude copy ===\"\ndiff /Users/gabadi/workspace/addi/crap4py/swarmforge/skills/setup-swarm/SKILL.md /Users/gabadi/workspace/addi/crap4py/.claude/skills/setup-swarm/SKILL.md && echo \"IDENTICAL (crap4py swarmforge == .claude)\"",
+  "command": "cd /home/<USER>/workspace/addi/gabadi-swarm-forge && echo \"=== remote ===\" && rtk git remote -v | head -2 && echo \"=== branch ===\" && rtk git rev-parse --abbrev-ref HEAD\necho \"=== diff canonical vs crap4py copy ===\"\ndiff /home/<USER>/workspace/addi/gabadi-swarm-forge/swarmforge/skills/setup-swarm/SKILL.md /home/<USER>/workspace/addi/crap4py/swarmforge/skills/setup-swarm/SKILL.md && echo \"IDENTICAL (canonical == crap4py/swarmforge)\"\necho \"=== diff crap4py swarmforge vs .claude copy ===\"\ndiff /home/<USER>/workspace/addi/crap4py/swarmforge/skills/setup-swarm/SKILL.md /home/<USER>/workspace/addi/crap4py/.claude/skills/setup-swarm/SKILL.md && echo \"IDENTICAL (crap4py swarmforge == .claude)\"",
   "description": "Compare setup-swarm skill copies"
 }
 ```
@@ -785,15 +785,15 @@ tool_result
 id: toolu_014x6jfeZXj6L3zgFBrVhuKF
 ```
 === remote ===
-origin	git@github.com:gabadi/swarm-forge.git (fetch)
-origin	git@github.com:gabadi/swarm-forge.git (push)
+origin	<REDACTED_EMAIL>:gabadi/swarm-forge.git (fetch)
+origin	<REDACTED_EMAIL>:gabadi/swarm-forge.git (push)
 === branch ===
 main
 === diff canonical vs crap4py copy ===
 IDENTICAL (canonical == crap4py/swarmforge)
 === diff crap4py swarmforge vs .claude copy ===
 IDENTICAL (crap4py swarmforge == .claude)
-Shell cwd was reset to /Users/gabadi/workspace/addi/crap4py
+Shell cwd was reset to /home/<USER>/workspace/addi/crap4py
 ```
 
 > DEVELOPER
@@ -806,7 +806,7 @@ tool_use Read
 id: toolu_01Rvh2eaEhr88amUGpTuw7wC
 ```json
 {
-  "file_path": "/Users/gabadi/workspace/addi/gabadi-swarm-forge/swarmforge/skills/setup-swarm/SKILL.md"
+  "file_path": "/home/<USER>/workspace/addi/gabadi-swarm-forge/swarmforge/skills/setup-swarm/SKILL.md"
 }
 ```
 
@@ -853,7 +853,7 @@ tool_use Bash
 id: toolu_01BGWKfar9VYJiSLuwjbVt9y
 ```json
 {
-  "command": "cd /Users/gabadi/workspace/addi/gabadi-swarm-forge && rtk git rev-parse --abbrev-ref HEAD && rtk git status --short | head",
+  "command": "cd /home/<USER>/workspace/addi/gabadi-swarm-forge && rtk git rev-parse --abbrev-ref HEAD && rtk git status --short | head",
   "description": "Check gabadi-swarm-forge git state"
 }
 ```
@@ -865,7 +865,7 @@ id: toolu_01BGWKfar9VYJiSLuwjbVt9y
 ```
 main
 ok
-Shell cwd was reset to /Users/gabadi/workspace/addi/crap4py
+Shell cwd was reset to /home/<USER>/workspace/addi/crap4py
 ```
 
 > TOOL
@@ -874,7 +874,7 @@ tool_use Bash
 id: toolu_01VyJ3FqcBbMJ4VAuhZ2MMa5
 ```json
 {
-  "command": "cd /Users/gabadi/workspace/addi/gabadi-swarm-forge && rtk git checkout -b feat/broaden-git-reset-allow-rule",
+  "command": "cd /home/<USER>/workspace/addi/gabadi-swarm-forge && rtk git checkout -b feat/broaden-git-reset-allow-rule",
   "description": "Create branch in canonical repo"
 }
 ```
@@ -885,7 +885,7 @@ tool_result
 id: toolu_01VyJ3FqcBbMJ4VAuhZ2MMa5
 ```
 Switched to a new branch 'feat/broaden-git-reset-allow-rule'
-Shell cwd was reset to /Users/gabadi/workspace/addi/crap4py
+Shell cwd was reset to /home/<USER>/workspace/addi/crap4py
 ```
 
 > TOOL
@@ -895,7 +895,7 @@ id: toolu_01W3aUGgAetmvkY7qqcuYxis
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gabadi/workspace/addi/gabadi-swarm-forge/swarmforge/skills/setup-swarm/SKILL.md",
+  "file_path": "/home/<USER>/workspace/addi/gabadi-swarm-forge/swarmforge/skills/setup-swarm/SKILL.md",
   "old_string": "      \"Bash(gh pr merge*)\",\n      \"Bash(git reset --hard origin/*)\"",
   "new_string": "      \"Bash(gh pr merge*)\",\n      \"Bash(git reset --hard*)\""
 }
@@ -906,7 +906,7 @@ id: toolu_01W3aUGgAetmvkY7qqcuYxis
 tool_result
 id: toolu_01W3aUGgAetmvkY7qqcuYxis
 ```
-The file /Users/gabadi/workspace/addi/gabadi-swarm-forge/swarmforge/skills/setup-swarm/SKILL.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/addi/gabadi-swarm-forge/swarmforge/skills/setup-swarm/SKILL.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -916,7 +916,7 @@ id: toolu_01TxpR9tZyRvVD1wWfa8WAMu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gabadi/workspace/addi/gabadi-swarm-forge/swarmforge/skills/setup-swarm/SKILL.md",
+  "file_path": "/home/<USER>/workspace/addi/gabadi-swarm-forge/swarmforge/skills/setup-swarm/SKILL.md",
   "old_string": "for rule in ['Bash(gh pr merge*)', 'Bash(git reset --hard origin/*)']:",
   "new_string": "for rule in ['Bash(gh pr merge*)', 'Bash(git reset --hard*)']:"
 }
@@ -927,7 +927,7 @@ id: toolu_01TxpR9tZyRvVD1wWfa8WAMu
 tool_result
 id: toolu_01TxpR9tZyRvVD1wWfa8WAMu
 ```
-The file /Users/gabadi/workspace/addi/gabadi-swarm-forge/swarmforge/skills/setup-swarm/SKILL.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/addi/gabadi-swarm-forge/swarmforge/skills/setup-swarm/SKILL.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -940,7 +940,7 @@ tool_use Bash
 id: toolu_01NLT9X3k2Pd7WjQSDYieiZa
 ```json
 {
-  "command": "cd /Users/gabadi/workspace/addi/gabadi-swarm-forge && rtk git add swarmforge/skills/setup-swarm/SKILL.md && rtk git commit --no-gpg-sign -m \"$(cat <<'EOF'\nfeat(setup-swarm): broaden git reset allow-rule to all forms\n\nThe integrator/specifier auto-mode classifier blocks `git reset --hard`\nwhen the target is not a remote ref (e.g. HEAD or a sha). Broaden the\npre-authorized allow-rule from `git reset --hard origin/*` to\n`git reset --hard*` so unattended in-role resets never prompt.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "cd /home/<USER>/workspace/addi/gabadi-swarm-forge && rtk git add swarmforge/skills/setup-swarm/SKILL.md && rtk git commit --no-gpg-sign -m \"$(cat <<'EOF'\nfeat(setup-swarm): broaden git reset allow-rule to all forms\n\nThe integrator/specifier auto-mode classifier blocks `git reset --hard`\nwhen the target is not a remote ref (e.g. HEAD or a sha). Broaden the\npre-authorized allow-rule from `git reset --hard origin/*` to\n`git reset --hard*` so unattended in-role resets never prompt.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit skill change"
 }
 ```
@@ -952,7 +952,7 @@ id: toolu_01NLT9X3k2Pd7WjQSDYieiZa
 ```
 ok 1 file changed, 2 insertions(+), 2 deletions(-)
 ok b34cc4f
-Shell cwd was reset to /Users/gabadi/workspace/addi/crap4py
+Shell cwd was reset to /home/<USER>/workspace/addi/crap4py
 ```
 
 > TOOL
@@ -961,7 +961,7 @@ tool_use Bash
 id: toolu_01MWiCtkKLwFAGwNAzgH2byy
 ```json
 {
-  "command": "cd /Users/gabadi/workspace/addi/gabadi-swarm-forge && rtk git push -u origin feat/broaden-git-reset-allow-rule 2>&1 | tail -5 && rtk gh pr create --title \"feat(setup-swarm): broaden git reset allow-rule to all forms\" --body \"$(cat <<'EOF'\n## What\n\nStep 4 of `setup-swarm` pre-authorizes git/gh commands so the integrator and specifier run unattended. The reset rule was scoped to remote refs only (`git reset --hard origin/*`), so resets to `HEAD` or a sha still tripped the auto-mode permission classifier.\n\nBroadens it to `git reset --hard*` in both the JSON example and the Python merge list.\n\n## Why\n\nFrom the crap4py enforcement-gate backlog (2026-06-22): the auto-mode classifier blocked in-role autonomous `git reset --hard` / `gh pr merge` across specifier+integrator in the same pipeline run. `gh pr merge*` was already covered; this closes the reset gap.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\nEOF\n)\" 2>&1 | tail -5",
+  "command": "cd /home/<USER>/workspace/addi/gabadi-swarm-forge && rtk git push -u origin feat/broaden-git-reset-allow-rule 2>&1 | tail -5 && rtk gh pr create --title \"feat(setup-swarm): broaden git reset allow-rule to all forms\" --body \"$(cat <<'EOF'\n## What\n\nStep 4 of `setup-swarm` pre-authorizes git/gh commands so the integrator and specifier run unattended. The reset rule was scoped to remote refs only (`git reset --hard origin/*`), so resets to `HEAD` or a sha still tripped the auto-mode permission classifier.\n\nBroadens it to `git reset --hard*` in both the JSON example and the Python merge list.\n\n## Why\n\nFrom the crap4py enforcement-gate backlog (2026-06-22): the auto-mode classifier blocked in-role autonomous `git reset --hard` / `gh pr merge` across specifier+integrator in the same pipeline run. `gh pr merge*` was already covered; this closes the reset gap.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\nEOF\n)\" 2>&1 | tail -5",
   "description": "Push and open PR"
 }
 ```
@@ -977,7 +977,7 @@ To github.com:gabadi/swarm-forge.git
 branch 'feat/broaden-git-reset-allow-rule' set up to track 'origin/feat/broaden-git-reset-allow-rule'.
 ok feat/broaden-git-reset-allow-rule
 ok created #25 https://github.com/unclebob/swarm-forge/pull/25
-Shell cwd was reset to /Users/gabadi/workspace/addi/crap4py
+Shell cwd was reset to /home/<USER>/workspace/addi/crap4py
 ```
 
 > AGENT
@@ -990,7 +990,7 @@ tool_use Bash
 id: toolu_011VZPwVGE7PnTSdUVb2hpUL
 ```json
 {
-  "command": "cd /Users/gabadi/workspace/addi/swarm-forge && rtk git checkout main 2>&1 | tail -1 && rtk git branch -D feat/provision-claude-permission-allowlist 2>&1 | tail -1",
+  "command": "cd /home/<USER>/workspace/addi/swarm-forge && rtk git checkout main 2>&1 | tail -1 && rtk git branch -D feat/provision-claude-permission-allowlist 2>&1 | tail -1",
   "description": "Delete unused engine branch"
 }
 ```
@@ -1002,7 +1002,7 @@ id: toolu_011VZPwVGE7PnTSdUVb2hpUL
 ```
   (use "git push" to publish your local commits)
 ok
-Shell cwd was reset to /Users/gabadi/workspace/addi/crap4py
+Shell cwd was reset to /home/<USER>/workspace/addi/crap4py
 ```
 
 > TOOL
@@ -1012,7 +1012,7 @@ id: toolu_01B6uPnoqSFLA6LLPQVZdeLB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/swarmforge/skills/setup-swarm/SKILL.md",
+  "file_path": "/home/<USER>/workspace/addi/crap4py/swarmforge/skills/setup-swarm/SKILL.md",
   "old_string": "      \"Bash(gh pr merge*)\",\n      \"Bash(git reset --hard origin/*)\"",
   "new_string": "      \"Bash(gh pr merge*)\",\n      \"Bash(git reset --hard*)\""
 }
@@ -1032,7 +1032,7 @@ tool_use Read
 id: toolu_01T1VyuZr3kx2Mf5m3swdbET
 ```json
 {
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/swarmforge/skills/setup-swarm/SKILL.md",
+  "file_path": "/home/<USER>/workspace/addi/crap4py/swarmforge/skills/setup-swarm/SKILL.md",
   "offset": 64,
   "limit": 28
 }
@@ -1079,7 +1079,7 @@ tool_use Bash
 id: toolu_01CAHbaWr7hT4YuBsRaRysAp
 ```json
 {
-  "command": "cd /Users/gabadi/workspace/addi/crap4py\nfor f in swarmforge/skills/setup-swarm/SKILL.md .claude/skills/setup-swarm/SKILL.md; do\n  sed -i '' 's#Bash(git reset --hard origin/\\*)#Bash(git reset --hard*)#g' \"$f\"\ndone\necho \"=== verify both copies ===\" && grep -rn \"git reset --hard\" swarmforge/skills/setup-swarm/SKILL.md .claude/skills/setup-swarm/SKILL.md",
+  "command": "cd /home/<USER>/workspace/addi/crap4py\nfor f in swarmforge/skills/setup-swarm/SKILL.md .claude/skills/setup-swarm/SKILL.md; do\n  sed -i '' 's#Bash(git reset --hard origin/\\*)#Bash(git reset --hard*)#g' \"$f\"\ndone\necho \"=== verify both copies ===\" && grep -rn \"git reset --hard\" swarmforge/skills/setup-swarm/SKILL.md .claude/skills/setup-swarm/SKILL.md",
   "description": "Broaden rule in both crap4py skill copies"
 }
 ```
@@ -1107,7 +1107,7 @@ id: toolu_01BGU3fQnFbUt29ZZbqfcoy1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/.claude/settings.json",
+  "file_path": "/home/<USER>/workspace/addi/crap4py/.claude/settings.json",
   "old_string": "      \"Bash(git reset --hard origin/*)\"",
   "new_string": "      \"Bash(git reset --hard*)\""
 }
@@ -1118,7 +1118,7 @@ id: toolu_01BGU3fQnFbUt29ZZbqfcoy1
 tool_result
 id: toolu_01BGU3fQnFbUt29ZZbqfcoy1
 ```
-The file /Users/gabadi/workspace/addi/crap4py/.claude/settings.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/addi/crap4py/.claude/settings.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1131,7 +1131,7 @@ tool_use Bash
 id: toolu_01H1r6D2ApoNXuznZQ5znDF1
 ```json
 {
-  "command": "cd /Users/gabadi/workspace/addi/crap4py\necho \"=== backlog item line 14 (the one we addressed) ===\"\ngrep -n \"Auto-mode classifier\" .agents/backlog.md\necho \"=== ledger files: search for relevant references ===\"\ngrep -ln \"Auto-mode\\|pr merge\\|reset --hard\\|permission allow\\|settings.json\" .agents/ledger-project.md .agents/ledger-swarmforge.md 2>/dev/null",
+  "command": "cd /home/<USER>/workspace/addi/crap4py\necho \"=== backlog item line 14 (the one we addressed) ===\"\ngrep -n \"Auto-mode classifier\" .agents/backlog.md\necho \"=== ledger files: search for relevant references ===\"\ngrep -ln \"Auto-mode\\|pr merge\\|reset --hard\\|permission allow\\|settings.json\" .agents/ledger-project.md .agents/ledger-swarmforge.md 2>/dev/null",
   "description": "Find backlog item and ledger references"
 }
 ```
@@ -1154,7 +1154,7 @@ id: toolu_019z48w2xC5T7huFESRx54ed
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/.agents/backlog.md",
+  "file_path": "/home/<USER>/workspace/addi/crap4py/.agents/backlog.md",
   "old_string": "2026-06-22 | swarmforge-pattern | tool-error | specifier,integrator | pending | Auto-mode classifier blocks in-role autonomous actions (git reset --hard, gh pr merge) when no explicit per-invocation user direction — both roles blocked in same pipeline run; consider permission pre-authorization or role prompt phrasing adjustment",
   "new_string": "2026-06-22 | swarmforge-pattern | tool-error | specifier,integrator | applied | Auto-mode classifier blocks in-role autonomous actions (git reset --hard, gh pr merge) when no explicit per-invocation user direction — both roles blocked in same pipeline run; consider permission pre-authorization or role prompt phrasing adjustment | RESOLVED 2026-06-23: setup-swarm Step 4 already pre-authorizes `gh pr merge*`; broadened reset rule `git reset --hard origin/*`→`git reset --hard*` (canonical PR gabadi/swarm-forge#25; applied to crap4py skill copies + .claude/settings.json)"
 }
@@ -1165,7 +1165,7 @@ id: toolu_019z48w2xC5T7huFESRx54ed
 tool_result
 id: toolu_019z48w2xC5T7huFESRx54ed
 ```
-The file /Users/gabadi/workspace/addi/crap4py/.agents/backlog.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/addi/crap4py/.agents/backlog.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1234,7 +1234,7 @@ id: toolu_016FovSwC1e37b2aMf5GsbCe
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/.agents/ledger-swarmforge.md",
+  "file_path": "/home/<USER>/workspace/addi/crap4py/.agents/ledger-swarmforge.md",
   "old_string": "2026-06-22 | 633ecaab | integrator | tool-error | swarmforge | pending | Investigate: gh pr merge blocked by auto-mode classifier when CI absent — determine if permission rule can pre-authorize for integrator worktree",
   "new_string": "2026-06-22 | 633ecaab | integrator | tool-error | swarmforge | applied | Investigate: gh pr merge blocked by auto-mode classifier when CI absent — determine if permission rule can pre-authorize for integrator worktree [2026-06-23: pre-authorized via setup-swarm Step 4 `Bash(gh pr merge*)`; canonical PR gabadi/swarm-forge#25]"
 }
@@ -1254,7 +1254,7 @@ tool_use Bash
 id: toolu_018SMzJXwhLWFcbX3N1Fvp6R
 ```json
 {
-  "command": "cd /Users/gabadi/workspace/addi/crap4py\nNOTE='[2026-06-23: pre-authorized via setup-swarm Step 4 — gh pr merge* + git reset --hard*; canonical PR gabadi/swarm-forge#25]'\nfor sid in 633ecaab 3a08e3a5 f2c50b01; do\n  python3 - \"$sid\" \"$NOTE\" <<'PY'\nimport sys,re,pathlib\nsid,note=sys.argv[1],sys.argv[2]\np=pathlib.Path('.agents/ledger-swarmforge.md')\nlines=p.read_text().splitlines()\nfor i,l in enumerate(lines):\n    if f'| {sid} |' in l and '| pending |' in l:\n        lines[i]=l.replace('| pending |','| applied |',1)+' '+note\np.write_text('\\n'.join(lines)+'\\n')\nPY\ndone\ngrep -n \"633ecaab\\|3a08e3a5\\|f2c50b01\" .agents/ledger-swarmforge.md",
+  "command": "cd /home/<USER>/workspace/addi/crap4py\nNOTE='[2026-06-23: pre-authorized via setup-swarm Step 4 — gh pr merge* + git reset --hard*; canonical PR gabadi/swarm-forge#25]'\nfor sid in 633ecaab 3a08e3a5 f2c50b01; do\n  python3 - \"$sid\" \"$NOTE\" <<'PY'\nimport sys,re,pathlib\nsid,note=sys.argv[1],sys.argv[2]\np=pathlib.Path('.agents/ledger-swarmforge.md')\nlines=p.read_text().splitlines()\nfor i,l in enumerate(lines):\n    if f'| {sid} |' in l and '| pending |' in l:\n        lines[i]=l.replace('| pending |','| applied |',1)+' '+note\np.write_text('\\n'.join(lines)+'\\n')\nPY\ndone\ngrep -n \"633ecaab\\|3a08e3a5\\|f2c50b01\" .agents/ledger-swarmforge.md",
   "description": "Mark three ledger entries applied with note"
 }
 ```
@@ -1280,7 +1280,7 @@ tool_use Bash
 id: toolu_01VbKSboLus2krbjZqQsFtCL
 ```json
 {
-  "command": "cd /Users/gabadi/workspace/addi/crap4py\npython3 - <<'PY'\nimport pathlib\np=pathlib.Path('.agents/ledger-swarmforge.md')\nnote=' [2026-06-23: pre-authorized via setup-swarm Step 4 — gh pr merge* + git reset --hard*; canonical PR gabadi/swarm-forge#25]'\n# Keep these summaries as applied; revert all other note-bearing lines to pending.\nkeep_markers=[\n  'gh pr merge blocked by auto-mode classifier when CI absent',\n  'git reset --hard startup blocked by classifier SECOND time',\n  'git reset --hard startup blocked by classifier THIRD time',\n]\nlines=p.read_text().splitlines()\nfor i,l in enumerate(lines):\n    if l.endswith(note):\n        if any(m in l for m in keep_markers):\n            continue\n        # revert\n        lines[i]=l[:-len(note)].replace('| applied |','| pending |',1)\np.write_text('\\n'.join(lines)+'\\n')\nPY\necho \"=== rows still applied with our note ===\" && grep -n \"canonical PR gabadi/swarm-forge#25\" .agents/ledger-swarmforge.md",
+  "command": "cd /home/<USER>/workspace/addi/crap4py\npython3 - <<'PY'\nimport pathlib\np=pathlib.Path('.agents/ledger-swarmforge.md')\nnote=' [2026-06-23: pre-authorized via setup-swarm Step 4 — gh pr merge* + git reset --hard*; canonical PR gabadi/swarm-forge#25]'\n# Keep these summaries as applied; revert all other note-bearing lines to pending.\nkeep_markers=[\n  'gh pr merge blocked by auto-mode classifier when CI absent',\n  'git reset --hard startup blocked by classifier SECOND time',\n  'git reset --hard startup blocked by classifier THIRD time',\n]\nlines=p.read_text().splitlines()\nfor i,l in enumerate(lines):\n    if l.endswith(note):\n        if any(m in l for m in keep_markers):\n            continue\n        # revert\n        lines[i]=l[:-len(note)].replace('| applied |','| pending |',1)\np.write_text('\\n'.join(lines)+'\\n')\nPY\necho \"=== rows still applied with our note ===\" && grep -n \"canonical PR gabadi/swarm-forge#25\" .agents/ledger-swarmforge.md",
   "description": "Revert over-matched ledger rows"
 }
 ```
@@ -1302,7 +1302,7 @@ tool_use Bash
 id: toolu_01Hd87wrqmqmyZHVoqD9Vygk
 ```json
 {
-  "command": "cd /Users/gabadi/workspace/addi/crap4py\necho \"=== verify reverted rows back to pending, no note ===\" && sed -n '33p;34p;36p;55p;56p;91p' .agents/ledger-swarmforge.md\necho \"\"\necho \"=== confirm no stray note remnants ===\" && grep -c \"canonical PR gabadi/swarm-forge#25\" .agents/ledger-swarmforge.md",
+  "command": "cd /home/<USER>/workspace/addi/crap4py\necho \"=== verify reverted rows back to pending, no note ===\" && sed -n '33p;34p;36p;55p;56p;91p' .agents/ledger-swarmforge.md\necho \"\"\necho \"=== confirm no stray note remnants ===\" && grep -c \"canonical PR gabadi/swarm-forge#25\" .agents/ledger-swarmforge.md",
   "description": "Verify reverted rows"
 }
 ```
@@ -1370,7 +1370,7 @@ tool_use Bash
 id: toolu_019FD2z4RZcz7DQz1tUDcUGN
 ```json
 {
-  "command": "cd /Users/gabadi/workspace/addi/crap4py\necho \"=== constitution articles ===\" && ls swarmforge/constitution/articles/ 2>/dev/null\necho \"=== grep handoff hash references ===\"\ngrep -rln \"rev-parse\\|short=\\|handoff\\|10-char\\|git log\" swarmforge/constitution/ swarmforge/roles/ 2>/dev/null | head -20",
+  "command": "cd /home/<USER>/workspace/addi/crap4py\necho \"=== constitution articles ===\" && ls swarmforge/constitution/articles/ 2>/dev/null\necho \"=== grep handoff hash references ===\"\ngrep -rln \"rev-parse\\|short=\\|handoff\\|10-char\\|git log\" swarmforge/constitution/ swarmforge/roles/ 2>/dev/null | head -20",
   "description": "Find handoff/hash references in constitution and roles"
 }
 ```
@@ -1393,7 +1393,7 @@ tool_use Bash
 id: toolu_01Joj3itSFWpFnpwXtP5qGyZ
 ```json
 {
-  "command": "cd /Users/gabadi/workspace/addi/crap4py\necho \"=== constitution articles in crap4py ===\" && ls swarmforge/constitution/articles/ 2>/dev/null\necho \"=== handoff template / handoffs article ===\" && grep -rln \"handoff\\|rev-parse\\|--short\\|10-char\\|HEAD\" swarmforge/constitution/ 2>/dev/null | head\necho \"=== CRAP bootstrap invocation references ===\" && grep -rn \"python -m crap4py\\|crap4py\" swarmforge/constitution/articles/ 2>/dev/null | head",
+  "command": "cd /home/<USER>/workspace/addi/crap4py\necho \"=== constitution articles in crap4py ===\" && ls swarmforge/constitution/articles/ 2>/dev/null\necho \"=== handoff template / handoffs article ===\" && grep -rln \"handoff\\|rev-parse\\|--short\\|10-char\\|HEAD\" swarmforge/constitution/ 2>/dev/null | head\necho \"=== CRAP bootstrap invocation references ===\" && grep -rn \"python -m crap4py\\|crap4py\" swarmforge/constitution/articles/ 2>/dev/null | head",
   "description": "Locate constitution articles for handoffs and CRAP"
 }
 ```
@@ -1428,7 +1428,7 @@ tool_use Read
 id: toolu_01WsfE5ikg96cABFQWazskry
 ```json
 {
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/swarmforge/constitution/articles/handoffs.prompt"
+  "file_path": "/home/<USER>/workspace/addi/crap4py/swarmforge/constitution/articles/handoffs.prompt"
 }
 ```
 
@@ -1483,7 +1483,7 @@ tool_use Bash
 id: toolu_01BMd4U9cNyVVP4fwS8rQ56X
 ```json
 {
-  "command": "cd /Users/gabadi/workspace/addi\necho \"=== handoffs.prompt: canonical vs crap4py ===\" \ndiff gabadi-swarm-forge/swarmforge/constitution/articles/handoffs.prompt crap4py/swarmforge/constitution/articles/handoffs.prompt && echo \"IDENTICAL\"\necho \"=== where is .claude copy of constitution in crap4py? ===\"\nls crap4py/.claude/skills/ | head -30\nfind crap4py/.claude -path '*constitution*handoffs*' 2>/dev/null\necho \"=== local-engineering canonical? (project-specific, likely differs) ===\"\ndiff gabadi-swarm-forge/swarmforge/constitution/articles/local-engineering.prompt crap4py/swarmforge/constitution/articles/local-engineering.prompt && echo \"IDENTICAL\" || echo \"DIFFERS (expected: project-specific)\"",
+  "command": "cd /home/<USER>/workspace/addi\necho \"=== handoffs.prompt: canonical vs crap4py ===\" \ndiff gabadi-swarm-forge/swarmforge/constitution/articles/handoffs.prompt crap4py/swarmforge/constitution/articles/handoffs.prompt && echo \"IDENTICAL\"\necho \"=== where is .claude copy of constitution in crap4py? ===\"\nls crap4py/.claude/skills/ | head -30\nfind crap4py/.claude -path '*constitution*handoffs*' 2>/dev/null\necho \"=== local-engineering canonical? (project-specific, likely differs) ===\"\ndiff gabadi-swarm-forge/swarmforge/constitution/articles/local-engineering.prompt crap4py/swarmforge/constitution/articles/local-engineering.prompt && echo \"IDENTICAL\" || echo \"DIFFERS (expected: project-specific)\"",
   "description": "Compare canonical vs crap4py for both articles"
 }
 ```
@@ -1515,7 +1515,7 @@ what-happened
 === local-engineering canonical? (project-specific, likely differs) ===
 diff: gabadi-swarm-forge/swarmforge/constitution/articles/local-engineering.prompt: No such file or directory
 DIFFERS (expected: project-specific)
-Shell cwd was reset to /Users/gabadi/workspace/addi/crap4py
+Shell cwd was reset to /home/<USER>/workspace/addi/crap4py
 ```
 
 > AGENT
@@ -1530,7 +1530,7 @@ tool_use Bash
 id: toolu_01A3UY3GQjn7X6NEZcHifwMd
 ```json
 {
-  "command": "cd /Users/gabadi/workspace/addi/gabadi-swarm-forge && rtk git checkout main 2>&1 | tail -1 && rtk git checkout -b feat/handoff-commit-hash-mandate 2>&1 | tail -1",
+  "command": "cd /home/<USER>/workspace/addi/gabadi-swarm-forge && rtk git checkout main 2>&1 | tail -1 && rtk git checkout -b feat/handoff-commit-hash-mandate 2>&1 | tail -1",
   "description": "New canonical branch for handoff hash mandate"
 }
 ```
@@ -1542,7 +1542,7 @@ id: toolu_01A3UY3GQjn7X6NEZcHifwMd
 ```
 Your branch is up to date with 'origin/main'.
 Switched to a new branch 'feat/handoff-commit-hash-mandate'
-Shell cwd was reset to /Users/gabadi/workspace/addi/crap4py
+Shell cwd was reset to /home/<USER>/workspace/addi/crap4py
 ```
 
 > DEVELOPER
@@ -1559,7 +1559,7 @@ tool_use Bash
 id: toolu_01HXTtNfmf7E5QbGQB7XZAsg
 ```json
 {
-  "command": "cd /Users/gabadi/workspace/addi/gabadi-swarm-forge && rtk git checkout . 2>&1 | tail -1; rtk git checkout main 2>&1 | tail -1 && rtk git branch -D feat/handoff-commit-hash-mandate 2>&1 | tail -1",
+  "command": "cd /home/<USER>/workspace/addi/gabadi-swarm-forge && rtk git checkout . 2>&1 | tail -1; rtk git checkout main 2>&1 | tail -1 && rtk git branch -D feat/handoff-commit-hash-mandate 2>&1 | tail -1",
   "description": "Abandon empty canonical branch"
 }
 ```
@@ -1572,7 +1572,7 @@ id: toolu_01HXTtNfmf7E5QbGQB7XZAsg
 Updated 0 paths from the index
 Your branch is up to date with 'origin/main'.
 ok
-Shell cwd was reset to /Users/gabadi/workspace/addi/crap4py
+Shell cwd was reset to /home/<USER>/workspace/addi/crap4py
 ```
 
 > DEVELOPER
@@ -1592,7 +1592,7 @@ id: toolu_01FYGLQ5fokgZr7ytP21QSDk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/swarmforge/constitution/articles/handoffs.prompt",
+  "file_path": "/home/<USER>/workspace/addi/crap4py/swarmforge/constitution/articles/handoffs.prompt",
   "old_string": "task: <short-stable-task-name>\ncommit: $(git rev-parse --short=10 HEAD)\n```\n",
   "new_string": "task: <short-stable-task-name>\ncommit: $(git rev-parse --short=10 HEAD)\n```\n\n- The `commit:` value MUST be the literal output of `git rev-parse --short=10 HEAD`\n  (exactly 10 hex characters). Run that command — never copy a hash from `git log`\n  or `git show`, whose default short form is 7 characters and will be rejected.\n"
 }
@@ -1603,7 +1603,7 @@ id: toolu_01FYGLQ5fokgZr7ytP21QSDk
 tool_result
 id: toolu_01FYGLQ5fokgZr7ytP21QSDk
 ```
-The file /Users/gabadi/workspace/addi/crap4py/swarmforge/constitution/articles/handoffs.prompt has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/addi/crap4py/swarmforge/constitution/articles/handoffs.prompt has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1616,7 +1616,7 @@ tool_use Read
 id: toolu_01Xo7TE9FULiLuBU1jxJwq5Y
 ```json
 {
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/swarmforge/constitution/articles/local-engineering.prompt"
+  "file_path": "/home/<USER>/workspace/addi/crap4py/swarmforge/constitution/articles/local-engineering.prompt"
 }
 ```
 
@@ -1645,7 +1645,7 @@ id: toolu_019qRhrDWhvjNv5SWF16S5mb
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/swarmforge/constitution/articles/local-engineering.prompt",
+  "file_path": "/home/<USER>/workspace/addi/crap4py/swarmforge/constitution/articles/local-engineering.prompt",
   "old_string": "- CRAP: crap4py uses itself. Generate LCOV first with `pytest --cov=crap4py --cov-branch --cov-report=lcov:coverage.lcov`, then run `python -m crap4py --lcov coverage.lcov src/`. Until the first working implementation lands, skip and note the omission in the handoff.",
   "new_string": "- CRAP: crap4py uses itself. Generate LCOV first with `pytest --cov=crap4py --cov-branch --cov-report=lcov:coverage.lcov`, then run `uv run python -m crap4py --lcov coverage.lcov src/` (bare `python` is not on PATH; `uv run python` is required). Do NOT prefix this command with `rtk` — the rtk wrapper breaks the `-m crap4py` module invocation. Until the first working implementation lands, skip and note the omission in the handoff."
 }
@@ -1656,7 +1656,7 @@ id: toolu_019qRhrDWhvjNv5SWF16S5mb
 tool_result
 id: toolu_019qRhrDWhvjNv5SWF16S5mb
 ```
-The file /Users/gabadi/workspace/addi/crap4py/swarmforge/constitution/articles/local-engineering.prompt has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/addi/crap4py/swarmforge/constitution/articles/local-engineering.prompt has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1669,7 +1669,7 @@ tool_use Read
 id: toolu_014nP69E7RdRkQqy164k7vkr
 ```json
 {
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/.agents/backlog.md",
+  "file_path": "/home/<USER>/workspace/addi/crap4py/.agents/backlog.md",
   "offset": 15,
   "limit": 3
 }
@@ -1692,7 +1692,7 @@ id: toolu_01DrZ3AokkVeWAawgM8guDKW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/.agents/backlog.md",
+  "file_path": "/home/<USER>/workspace/addi/crap4py/.agents/backlog.md",
   "old_string": "2026-06-22 | swarmforge-pattern | convention-gap | architect,hardender,ux-engineer,QA | pending | 4 roles used 7-char git log hash instead of required 10-char in handoff drafts — add `git rev-parse --short=10 HEAD` as a mandatory line in the handoff draft template or constitution handoffs article",
   "new_string": "2026-06-22 | swarmforge-pattern | convention-gap | architect,hardender,ux-engineer,QA | applied | 4 roles used 7-char git log hash instead of required 10-char in handoff drafts — add `git rev-parse --short=10 HEAD` as a mandatory line in the handoff draft template or constitution handoffs article | RESOLVED 2026-06-23: handoffs.prompt git_handoff template already carried the `$(git rev-parse --short=10 HEAD)` token; added explicit mandate that `commit:` MUST be that command's literal output, never a copied 7-char git log/show hash (crap4py-local)"
 }
@@ -1703,7 +1703,7 @@ id: toolu_01DrZ3AokkVeWAawgM8guDKW
 tool_result
 id: toolu_01DrZ3AokkVeWAawgM8guDKW
 ```
-The file /Users/gabadi/workspace/addi/crap4py/.agents/backlog.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/addi/crap4py/.agents/backlog.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1713,7 +1713,7 @@ id: toolu_01Bqjr5HZXawhMkSRukLAX1Q
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/.agents/backlog.md",
+  "file_path": "/home/<USER>/workspace/addi/crap4py/.agents/backlog.md",
   "old_string": "2026-06-22 | swarmforge-pattern | convention-gap | cleaner,QA | pending | CRAP bootstrap invocation unclear: local-engineering.prompt says `python -m crap4py` but correct form is `uv run python -m crap4py`; update CRAP section to clarify and note rtk prefix breaks the invocation",
   "new_string": "2026-06-22 | swarmforge-pattern | convention-gap | cleaner,QA | applied | CRAP bootstrap invocation unclear: local-engineering.prompt says `python -m crap4py` but correct form is `uv run python -m crap4py`; update CRAP section to clarify and note rtk prefix breaks the invocation | RESOLVED 2026-06-23: local-engineering.prompt CRAP line now uses `uv run python -m crap4py` and warns rtk prefix breaks `-m crap4py` (crap4py-local)"
 }
@@ -1724,7 +1724,7 @@ id: toolu_01Bqjr5HZXawhMkSRukLAX1Q
 tool_result
 id: toolu_01Bqjr5HZXawhMkSRukLAX1Q
 ```
-The file /Users/gabadi/workspace/addi/crap4py/.agents/backlog.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/addi/crap4py/.agents/backlog.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1737,7 +1737,7 @@ tool_use Bash
 id: toolu_01QhfcWWRCxQmHX4iQN19Y2W
 ```json
 {
-  "command": "cd /Users/gabadi/workspace/addi/crap4py\necho \"=== 10-char hash related ===\" && grep -n \"short=10\\|7-char\\|10-char\\|git log hash\\|rev-parse\" .agents/ledger-swarmforge.md\necho \"=== CRAP invocation related ===\" && grep -n \"python -m crap4py\\|uv run python\\|CRAP bootstrap\\|bootstrap\" .agents/ledger-swarmforge.md",
+  "command": "cd /home/<USER>/workspace/addi/crap4py\necho \"=== 10-char hash related ===\" && grep -n \"short=10\\|7-char\\|10-char\\|git log hash\\|rev-parse\" .agents/ledger-swarmforge.md\necho \"=== CRAP invocation related ===\" && grep -n \"python -m crap4py\\|uv run python\\|CRAP bootstrap\\|bootstrap\" .agents/ledger-swarmforge.md",
   "description": "Find ledger entries for items 1 and 2"
 }
 ```
@@ -1765,7 +1765,7 @@ tool_use Bash
 id: toolu_01QDQrrXZJAeDay4HhLiJb3Q
 ```json
 {
-  "command": "cd /Users/gabadi/workspace/addi/gabadi-swarm-forge\necho \"=== current branch ===\" && rtk git rev-parse --abbrev-ref HEAD\necho \"=== working tree SKILL.md reset rule ===\" && grep -n \"git reset --hard\" swarmforge/skills/setup-swarm/SKILL.md\necho \"=== status ===\" && rtk git status --short\necho \"=== PR branch content ===\" && rtk git show feat/broaden-git-reset-allow-rule:swarmforge/skills/setup-swarm/SKILL.md | grep -n \"git reset --hard\"",
+  "command": "cd /home/<USER>/workspace/addi/gabadi-swarm-forge\necho \"=== current branch ===\" && rtk git rev-parse --abbrev-ref HEAD\necho \"=== working tree SKILL.md reset rule ===\" && grep -n \"git reset --hard\" swarmforge/skills/setup-swarm/SKILL.md\necho \"=== status ===\" && rtk git status --short\necho \"=== PR branch content ===\" && rtk git show feat/broaden-git-reset-allow-rule:swarmforge/skills/setup-swarm/SKILL.md | grep -n \"git reset --hard\"",
   "description": "Inspect canonical SKILL.md state across branches"
 }
 ```
@@ -1784,7 +1784,7 @@ main
 ok=== PR branch content ===
 73:      "Bash(git reset --hard*)"
 85:for rule in ['Bash(gh pr merge*)', 'Bash(git reset --hard*)']:
-Shell cwd was reset to /Users/gabadi/workspace/addi/crap4py
+Shell cwd was reset to /home/<USER>/workspace/addi/crap4py
 ```
 
 > AGENT
@@ -1799,7 +1799,7 @@ tool_use Bash
 id: toolu_015ZubKaqV5WJCEMo9M1ABVX
 ```json
 {
-  "command": "cd /Users/gabadi/workspace/addi/crap4py\npython3 - <<'PY'\nimport pathlib\np=pathlib.Path('.agents/ledger-swarmforge.md')\nlines=p.read_text().splitlines()\n\nnote1=' [2026-06-23: handoffs.prompt now mandates `commit:` = literal `git rev-parse --short=10 HEAD` output, never a copied 7-char git log/show hash]'\nnote2=' [2026-06-23: local-engineering.prompt CRAP line fixed to `uv run python -m crap4py` + rtk-breaks-`-m` warning]'\n\nitem1=[\n 'Handoff draft: remind to use git rev-parse --short=10 HEAD and verify',\n 'Always use git rev-parse --short=10 HEAD for handoff draft commit field — never copy from git log',\n 'Always use git rev-parse --short=10 HEAD for handoff draft commit field (QA confirmation',\n 'When preparing git_handoff draft, run git rev-parse --short=10 HEAD explicitly',\n 'Always use git rev-parse --short=10 HEAD for handoff draft commit field (architect confirmation',\n]\nitem2=[\n 'CRAP bootstrap pattern: use uv run python -c',\n 'CRAP invocation post-C4 must be uv run python -m crap4py',\n]\n\ndef flip(line, note):\n    return line.replace('| pending |','| applied |',1)+note\n\nfor i,l in enumerate(lines):\n    if '| pending |' not in l: continue\n    if any(m in l for m in item1):\n        lines[i]=flip(l,note1)\n    elif any(m in l for m in item2):\n        lines[i]=flip(l,note2)\n\np.write_text('\\n'.join(lines)+'\\n')\nPY\necho \"=== applied item1/item2 rows ===\" && grep -n \"2026-06-23: handoffs.prompt now mandates\\|2026-06-23: local-engineering.prompt CRAP\" .agents/ledger-swarmforge.md\necho \"=== still-pending hash rows (integrator ref nuance, intentionally left) ===\" && grep -n \"short=10\" .agents/ledger-swarmforge.md | grep pending",
+  "command": "cd /home/<USER>/workspace/addi/crap4py\npython3 - <<'PY'\nimport pathlib\np=pathlib.Path('.agents/ledger-swarmforge.md')\nlines=p.read_text().splitlines()\n\nnote1=' [2026-06-23: handoffs.prompt now mandates `commit:` = literal `git rev-parse --short=10 HEAD` output, never a copied 7-char git log/show hash]'\nnote2=' [2026-06-23: local-engineering.prompt CRAP line fixed to `uv run python -m crap4py` + rtk-breaks-`-m` warning]'\n\nitem1=[\n 'Handoff draft: remind to use git rev-parse --short=10 HEAD and verify',\n 'Always use git rev-parse --short=10 HEAD for handoff draft commit field — never copy from git log',\n 'Always use git rev-parse --short=10 HEAD for handoff draft commit field (QA confirmation',\n 'When preparing git_handoff draft, run git rev-parse --short=10 HEAD explicitly',\n 'Always use git rev-parse --short=10 HEAD for handoff draft commit field (architect confirmation',\n]\nitem2=[\n 'CRAP bootstrap pattern: use uv run python -c',\n 'CRAP invocation post-C4 must be uv run python -m crap4py',\n]\n\ndef flip(line, note):\n    return line.replace('| pending |','| applied |',1)+note\n\nfor i,l in enumerate(lines):\n    if '| pending |' not in l: continue\n    if any(m in l for m in item1):\n        lines[i]=flip(l,note1)\n    elif any(m in l for m in item2):\n        lines[i]=flip(l,note2)\n\np.write_text('\\n'.join(lines)+'\\n')\nPY\necho \"=== applied item1/item2 rows ===\" && grep -n \"2026-06-23: handoffs.prompt now mandates\\|2026-06-23: local-engineering.prompt CRAP\" .agents/ledger-swarmforge.md\necho \"=== still-pending hash rows (integrator ref nuance, intentionally left) ===\" && grep -n \"short=10\" .agents/ledger-swarmforge.md | grep pending",
   "description": "Mark item […]
 
 > TOOL

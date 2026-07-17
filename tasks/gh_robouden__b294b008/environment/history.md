@@ -8,7 +8,7 @@ tool_use Bash
 id: toolu_017jB9sdTmUv1yCP6zJcEtDE
 ```json
 {
-  "command": "ls /home/rob/Documents/openclaw-workspace/ && cat /home/rob/Documents/openclaw-workspace/DAILY-VPS-REPORT-SETUP.md | head -60",
+  "command": "ls /home/<USER>/Documents/openclaw-workspace/ && cat /home/<USER>/Documents/openclaw-workspace/DAILY-VPS-REPORT-SETUP.md | head -60",
   "description": "Check workspace files for VPS connection info"
 }
 ```
@@ -145,7 +145,7 @@ tool_use Bash
 id: toolu_01WC4BzToxoLUAsJ6Dio5Aa8
 ```json
 {
-  "command": "cat /home/rob/.ssh/config 2>/dev/null | head -40",
+  "command": "cat /home/<USER>/.ssh/config 2>/dev/null | head -40",
   "description": "Check SSH config for VPS host"
 }
 ```

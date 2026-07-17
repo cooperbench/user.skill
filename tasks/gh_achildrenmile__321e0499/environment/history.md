@@ -155,7 +155,7 @@ tool_use Read
 id: toolu_01QQw9ESEH7r2bThwyMLtqdL
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/_data/termine.json"
+  "file_path": "/home/<USER>/bosarsa/src/_data/termine.json"
 }
 ```
 
@@ -204,7 +204,7 @@ tool_use Read
 id: toolu_0195AEH6RPvmWvuHxYS18pCV
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/_includes/nav.njk"
+  "file_path": "/home/<USER>/bosarsa/src/_includes/nav.njk"
 }
 ```
 
@@ -253,7 +253,7 @@ tool_use Read
 id: toolu_0125YBqeqrZeVPkFVrzScjUb
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/_includes/footer.njk"
+  "file_path": "/home/<USER>/bosarsa/src/_includes/footer.njk"
 }
 ```
 
@@ -320,7 +320,7 @@ tool_use Read
 id: toolu_01FBqvjmVBxR1cFok9LFHuTg
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/sitemap.njk"
+  "file_path": "/home/<USER>/bosarsa/src/sitemap.njk"
 }
 ```
 
@@ -385,7 +385,7 @@ tool_use Read
 id: toolu_01Eu6U3U554yxoXfhfk1zdKq
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/llms.njk"
+  "file_path": "/home/<USER>/bosarsa/src/llms.njk"
 }
 ```
 
@@ -433,7 +433,7 @@ tool_use Read
 id: toolu_01MVfjo8KmrwfyCc3mVkpsgF
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/css/termine.css"
+  "file_path": "/home/<USER>/bosarsa/src/css/termine.css"
 }
 ```
 
@@ -524,7 +524,7 @@ tool_use Read
 id: toolu_017hEcydFMh4xoYLPkNFn8WM
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/css/base.css"
+  "file_path": "/home/<USER>/bosarsa/src/css/base.css"
 }
 ```
 
@@ -582,7 +582,7 @@ tool_use Read
 id: toolu_01XMgXPwkbauZ2j1UWS3dXXK
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/termine/index.njk"
+  "file_path": "/home/<USER>/bosarsa/src/termine/index.njk"
 }
 ```
 
@@ -600,7 +600,7 @@ tool_use Read
 id: toolu_019e3D9dgvcgzaYzb7xS4VPX
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/_includes/base.njk"
+  "file_path": "/home/<USER>/bosarsa/src/_includes/base.njk"
 }
 ```
 
@@ -618,7 +618,7 @@ tool_use Read
 id: toolu_01USL23Y8FUbFwyp9ufWdT7M
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/_includes/base.njk"
+  "file_path": "/home/<USER>/bosarsa/src/_includes/base.njk"
 }
 ```
 
@@ -701,9 +701,9 @@ id: toolu_015XLuP4VYZD9PKcPKgfFgUY
 tool_result
 id: toolu_015XLuP4VYZD9PKcPKgfFgUY
 ```
-/home/achildrenmile/bosarsa/src/termine.njk
-/home/achildrenmile/bosarsa/src/css/termine.css
-/home/achildrenmile/bosarsa/src/_data/termine.json
+/home/<USER>/bosarsa/src/termine.njk
+/home/<USER>/bosarsa/src/css/termine.css
+/home/<USER>/bosarsa/src/_data/termine.json
 ```
 
 > TOOL
@@ -712,7 +712,7 @@ tool_use Read
 id: toolu_01VpRtZ1LpsLD1gcF2WBYoHQ
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/termine.njk"
+  "file_path": "/home/<USER>/bosarsa/src/termine.njk"
 }
 ```
 
@@ -804,7 +804,7 @@ tool_use Bash
 id: toolu_012YNMQs8FJGmSvYnx6yG4uE
 ```json
 {
-  "command": "ls /home/achildrenmile/bosarsa/src/aktuelles 2>/dev/null || echo \"directory does not exist\"",
+  "command": "ls /home/<USER>/bosarsa/src/aktuelles 2>/dev/null || echo \"directory does not exist\"",
   "description": "Check if aktuelles directory exists"
 }
 ```
@@ -823,7 +823,7 @@ tool_use Bash
 id: toolu_019SSVPTZRugCHYf5ZQ7f4z4
 ```json
 {
-  "command": "mkdir -p /home/achildrenmile/bosarsa/src/aktuelles",
+  "command": "mkdir -p /home/<USER>/bosarsa/src/aktuelles",
   "description": "Create aktuelles directory"
 }
 ```
@@ -842,7 +842,7 @@ tool_use Write
 id: toolu_01SvwzaUArUtKTfpK6HupZu7
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/_data/aktuelles.json",
+  "file_path": "/home/<USER>/bosarsa/src/_data/aktuelles.json",
   "content": "[\n  {\n    \"slug\": \"sicherheitstage-2026\",\n    \"date\": \"2026-03-09\",\n    \"dateDisplay\": \"9. März 2026\",\n    \"tag\": \"veranstaltung\",\n    \"tagLabel\": \"Sicherheitstage\",\n    \"title\": \"Sicherheitstage 2026 in Kärnten mit BOS-ARSA und ÖVSV-Notfunk-Beteiligung\",\n    \"image\": \"/sicherheitstage-2026.webp\",\n    \"imageAlt\": \"Sicherheitstage 2026 – Terminkalender Kärnten\",\n    \"intro\": \"Der Kärntner Zivilschutzverband organisiert auch 2026 wieder Sicherheitstage in ganz Kärnten. BOS-ARSA ist als Partnerorganisation mit dabei. Hier alle Termine auf einen Blick.\",\n    \"sections\": [\n      {\n        \"heading\": \"Die Termine\",\n        \"type\": \"table\",\n        \"columns\": [\"Datum\", \"Ort\"],\n        \"rows\": [\n          [\"Samstag, 25. April 2026\", \"Bleiburg\"],\n          [\"Samstag, 23. Mai 2026\", \"Glanhofen\"],\n          [\"Samstag, 13. Juni 2026\", \"Preitenegg\"],\n          [\"Samstag, 20. Juni 2026\", \"Kötschach-Mauthen\"],\n          [\"Mittwoch, 1. Juli 2026\", \"Strandbad Greifenburg (Jugend-Wasser-Sicherheitstag)\"],\n          [\"Donnerstag, 2. Juli 2026\", \"Maltschacher See (Jugend-Wasser-Sicherheitstag)\"],\n          [\"Dienstag, 7. Juli 2026\", \"Freizeitanlage St. Andräer See (Jugend-Wasser-Sicherheitstag)\"],\n          [\"Samstag, 5. September 2026\", \"Lendorf\"],\n          [\"Samstag, 12. September 2026\", \"Nötsch im Gailtal\"],\n          [\"Samstag, 19. September 2026\", \"Mölbling\"],\n          [\"Samstag, 26. September 2026\", \"Villach\"],\n          [\"Samstag, 3. Oktober 2026\", \"Magdalensberg\"]\n        ]\n      },\n      {\n        \"heading\": \"Was sind Sicherheitstage?\",\n        \"type\": \"text\",\n        \"content\": \"Sicherheitstage sind Veranstaltungen des Kärntner Zivilschutzverbandes, bei denen Einsatzorganisationen und Sicherheitseinrichtungen ihre Arbeit präsentieren. Besucher können Ausrüstung hautnah erleben, Vorführungen sehen und sich über Sicherheitsthemen informieren.\"\n      },\n      {\n        \"heading\": \"Hinweis\",\n        \"type\": \"text\",\n        \"content\": \"Änderungen und Ergänzungen sind möglich. Kontakt: Kärntner Zivilschutzverband, Tel. 050536-57080, […]
 
 > TOOL
@@ -850,7 +850,7 @@ id: toolu_01SvwzaUArUtKTfpK6HupZu7
 tool_result
 id: toolu_01SvwzaUArUtKTfpK6HupZu7
 ```
-File created successfully at: /home/achildrenmile/bosarsa/src/_data/aktuelles.json
+File created successfully at: /home/<USER>/bosarsa/src/_data/aktuelles.json
 ```
 
 > TOOL
@@ -901,7 +901,7 @@ tool_use Write
 id: toolu_016ztFccEcb68WYGoMsaNR8N
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/css/aktuelles.css",
+  "file_path": "/home/<USER>/bosarsa/src/css/aktuelles.css",
   "content": "/* ===== Aktuelles Listing ===== */\n.aktuelles-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));\n  gap: 28px;\n}\n.aktuelles-card {\n  display: flex;\n  flex-direction: column;\n  background: var(--white);\n  border: 1px solid var(--gray-100);\n  border-radius: var(--radius);\n  overflow: hidden;\n  transition: border-color .2s, box-shadow .2s;\n  text-decoration: none;\n  color: inherit;\n}\n.aktuelles-card:hover {\n  border-color: var(--polizei-mid);\n  box-shadow: 0 4px 20px rgba(15,26,46,.08);\n}\n.aktuelles-card__image {\n  width: 100%;\n  aspect-ratio: 16 / 9;\n  overflow: hidden;\n}\n.aktuelles-card__image img {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  display: block;\n}\n.aktuelles-card__body {\n  padding: 22px 24px 26px;\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\n.aktuelles-card__meta {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  margin-bottom: 8px;\n}\n.aktuelles-card__date {\n  font-size: .75rem;\n  font-weight: 600;\n  color: var(--polizei-mid);\n  text-transform: uppercase;\n  letter-spacing: .5px;\n}\n.aktuelles-card__title {\n  font-size: 1.05rem;\n  font-weight: 700;\n  color: var(--gray-900);\n  line-height: 1.35;\n  margin-bottom: 10px;\n}\n.aktuelles-card:hover .aktuelles-card__title {\n  color: var(--polizei-mid);\n}\n.aktuelles-card__teaser {\n  font-size: .85rem;\n  color: var(--gray-700);\n  line-height: 1.65;\n  margin-bottom: 16px;\n  flex: 1;\n}\n.aktuelles-card__link {\n  font-size: .82rem;\n  font-weight: 600;\n  color: var(--polizei-light);\n  transition: color .2s;\n}\n.aktuelles-card:hover .aktuelles-card__link {\n  color: var(--polizei-pale);\n}\n\n/* ===== Article Detail ===== */\n.aktuelles-back {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  font-size: .82rem;\n  font-weight: 600;\n  color: var(--polizei-light);\n  margin-bottom: 24px;\n  transition: color .2s;\n}\n.aktuelles-back:hover {\n  color: var(--polizei-pale);\n}\n\n.aktuelles-article__hero {\n  width: 100%;\n  border-radius: var(--radius);\n  overflow: hidden;\n  margin-bottom: 28px;\n}\n.aktuelles-article__hero img {\n  width: 100%;\n  height: auto;\n  display: block;\n}\n\n.aktuelles-article__meta {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  margin-bottom: 10px;\n}\n.aktuelles-article__date {\n  font-size: […]
 
 > TOOL
@@ -909,7 +909,7 @@ id: toolu_016ztFccEcb68WYGoMsaNR8N
 tool_result
 id: toolu_016ztFccEcb68WYGoMsaNR8N
 ```
-File created successfully at: /home/achildrenmile/bosarsa/src/css/aktuelles.css
+File created successfully at: /home/<USER>/bosarsa/src/css/aktuelles.css
 ```
 
 > TOOL
@@ -960,7 +960,7 @@ tool_use Write
 id: toolu_01D3qtLT2iHwcY7nM9JCHk79
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/aktuelles/index.njk",
+  "file_path": "/home/<USER>/bosarsa/src/aktuelles/index.njk",
   "content": "---\nlayout: base.njk\ntitle: \"Aktuelles — BOS-ARSA\"\ndescription: \"Neuigkeiten, Veranstaltungsberichte und Wissensartikel von BOS-ARSA – Amateurfunk im Sinne der Sicherheit\"\ncanonical: \"https://bosarsa.oeradio.at/aktuelles/\"\nactiveNav: aktuelles\npageCSSFile: \"/css/aktuelles.css\"\npermalink: /aktuelles/\n---\n\n<div class=\"page-content page-content--wide\">\n  <h1>Aktuelles</h1>\n  <p class=\"subtitle\">Neuigkeiten, Berichte und Wissensartikel von BOS-ARSA</p>\n\n  <div class=\"aktuelles-grid\">\n    {% for article in aktuelles %}\n    <a href=\"/aktuelles/{{ article.slug }}/\" class=\"aktuelles-card\">\n      {% if article.image %}\n      <div class=\"aktuelles-card__image\">\n        <img src=\"{{ article.image }}\" alt=\"{{ article.imageAlt }}\" loading=\"lazy\">\n      </div>\n      {% endif %}\n      <div class=\"aktuelles-card__body\">\n        <div class=\"aktuelles-card__meta\">\n          <span class=\"aktuelles-card__date\">{{ article.dateDisplay }}</span>\n          <span class=\"aktuelles-tag aktuelles-tag--{{ article.tag }}\">{{ article.tagLabel }}</span>\n        </div>\n        <h2 class=\"aktuelles-card__title\">{{ article.title }}</h2>\n        <p class=\"aktuelles-card__teaser\">{{ article.intro }}</p>\n        <span class=\"aktuelles-card__link\">Weiterlesen →</span>\n      </div>\n    </a>\n    {% endfor %}\n  </div>\n</div>\n"
 }
 ```
@@ -970,7 +970,7 @@ id: toolu_01D3qtLT2iHwcY7nM9JCHk79
 tool_result
 id: toolu_01D3qtLT2iHwcY7nM9JCHk79
 ```
-File created successfully at: /home/achildrenmile/bosarsa/src/aktuelles/index.njk
+File created successfully at: /home/<USER>/bosarsa/src/aktuelles/index.njk
 ```
 
 > TOOL
@@ -979,7 +979,7 @@ tool_use Write
 id: toolu_01RmhrgHRwXWFnJCJ42TgcLw
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/aktuelles/artikel.njk",
+  "file_path": "/home/<USER>/bosarsa/src/aktuelles/artikel.njk",
   "content": "---\nlayout: base.njk\npageCSSFile: \"/css/aktuelles.css\"\nactiveNav: aktuelles\npagination:\n  data: aktuelles\n  size: 1\n  alias: article\npermalink: /aktuelles/{{ article.slug }}/\neleventyComputed:\n  title: \"{{ article.title }} — BOS-ARSA\"\n  description: \"{{ article.intro }}\"\n  canonical: \"https://bosarsa.oeradio.at/aktuelles/{{ article.slug }}/\"\n---\n\n<div class=\"page-content page-content--wide\">\n  <a href=\"/aktuelles/\" class=\"aktuelles-back\">← Zurück zu Aktuelles</a>\n\n  {% if article.image %}\n  <div class=\"aktuelles-article__hero\">\n    <img src=\"{{ article.image }}\" alt=\"{{ article.imageAlt }}\">\n  </div>\n  {% endif %}\n\n  <div class=\"aktuelles-article__meta\">\n    <span class=\"aktuelles-article__date\">{{ article.dateDisplay }}</span>\n    <span class=\"aktuelles-tag aktuelles-tag--{{ article.tag }}\">{{ article.tagLabel }}</span>\n  </div>\n\n  <h1 class=\"aktuelles-article__title\">{{ article.title }}</h1>\n  <p class=\"aktuelles-article__intro\">{{ article.intro }}</p>\n\n  {% for section in article.sections %}\n  <h2 class=\"aktuelles-article__heading\">{{ section.heading }}</h2>\n\n  {% if section.type == \"table\" %}\n  <div class=\"aktuelles-article__table-wrap\">\n    <table class=\"aktuelles-article__table\">\n      <thead>\n        <tr>\n          {% for col in section.columns %}\n          <th>{{ col }}</th>\n          {% endfor %}\n        </tr>\n      </thead>\n      <tbody>\n        {% for row in section.rows %}\n        <tr>\n          {% for cell in row %}\n          <td>{{ cell }}</td>\n          {% endfor %}\n        </tr>\n        {% endfor %}\n      </tbody>\n    </table>\n  </div>\n\n  {% elif section.type == \"text\" %}\n  <p class=\"aktuelles-article__text\">{{ section.content }}</p>\n\n  {% elif section.type == \"image\" %}\n  <figure class=\"aktuelles-article__figure\">\n    <img src=\"{{ section.src }}\" alt=\"{{ section.alt }}\" loading=\"lazy\">\n    {% if section.caption %}\n    <figcaption>{{ section.caption }}</figcaption>\n    {% endif %}\n  </figure>\n\n  {% elif section.type == \"list\" %}\n  <ul class=\"aktuelles-article__list\">\n    {% for item in section.items %}\n    <li>{{ item }}</li>\n […]
 
 > TOOL
@@ -987,7 +987,7 @@ id: toolu_01RmhrgHRwXWFnJCJ42TgcLw
 tool_result
 id: toolu_01RmhrgHRwXWFnJCJ42TgcLw
 ```
-File created successfully at: /home/achildrenmile/bosarsa/src/aktuelles/artikel.njk
+File created successfully at: /home/<USER>/bosarsa/src/aktuelles/artikel.njk
 ```
 
 > TOOL
@@ -1039,7 +1039,7 @@ id: toolu_01S3TEdQADrDHkJwkSTMAs2m
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/_includes/nav.njk",
+  "file_path": "/home/<USER>/bosarsa/src/_includes/nav.njk",
   "old_string": "      <li><a href=\"{{ prefix }}mitglied\">Mitglied werden</a></li>\n      <li><a href=\"/termine/\"{% if activeNav == \"termine\" %} class=\"active\"{% endif %}>Termine</a></li>",
   "new_string": "      <li><a href=\"{{ prefix }}mitglied\">Mitglied werden</a></li>\n      <li><a href=\"/aktuelles/\"{% if activeNav == \"aktuelles\" %} class=\"active\"{% endif %}>Aktuelles</a></li>\n      <li><a href=\"/termine/\"{% if activeNav == \"termine\" %} class=\"active\"{% endif %}>Termine</a></li>"
 }
@@ -1050,7 +1050,7 @@ id: toolu_01S3TEdQADrDHkJwkSTMAs2m
 tool_result
 id: toolu_01S3TEdQADrDHkJwkSTMAs2m
 ```
-The file /home/achildrenmile/bosarsa/src/_includes/nav.njk has been updated successfully.
+The file /home/<USER>/bosarsa/src/_includes/nav.njk has been updated successfully.
 ```
 
 > AGENT
@@ -1064,7 +1064,7 @@ id: toolu_01ReGZkeGeGF9oQRwxH4JDFC
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/_includes/footer.njk",
+  "file_path": "/home/<USER>/bosarsa/src/_includes/footer.njk",
   "old_string": "          <li><a href=\"/#mitglied\">Mitglied werden</a></li>\n          <li><a href=\"/termine/\">Termine</a></li>",
   "new_string": "          <li><a href=\"/#mitglied\">Mitglied werden</a></li>\n          <li><a href=\"/aktuelles/\">Aktuelles</a></li>\n          <li><a href=\"/termine/\">Termine</a></li>"
 }
@@ -1075,7 +1075,7 @@ id: toolu_01ReGZkeGeGF9oQRwxH4JDFC
 tool_result
 id: toolu_01ReGZkeGeGF9oQRwxH4JDFC
 ```
-The file /home/achildrenmile/bosarsa/src/_includes/footer.njk has been updated successfully.
+The file /home/<USER>/bosarsa/src/_includes/footer.njk has been updated successfully.
 ```
 
 > AGENT
@@ -1089,7 +1089,7 @@ id: toolu_013GkYKPYhHzHAk1dP47FDvu
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/sitemap.njk",
+  "file_path": "/home/<USER>/bosarsa/src/sitemap.njk",
   "old_string": "  <url>\n    <loc>{{ site.url }}/termine/</loc>\n    <lastmod>2026-03-06</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.7</priority>\n  </url>",
   "new_string": "  <url>\n    <loc>{{ site.url }}/aktuelles/</loc>\n    <lastmod>2026-03-12</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.7</priority>\n  </url>\n  {% for article in aktuelles %}\n  <url>\n    <loc>{{ site.url }}/aktuelles/{{ article.slug }}/</loc>\n    <lastmod>{{ article.date }}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>\n  {% endfor %}\n  <url>\n    <loc>{{ site.url }}/termine/</loc>\n    <lastmod>2026-03-06</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.7</priority>\n  </url>"
 }
@@ -1100,7 +1100,7 @@ id: toolu_013GkYKPYhHzHAk1dP47FDvu
 tool_result
 id: toolu_013GkYKPYhHzHAk1dP47FDvu
 ```
-The file /home/achildrenmile/bosarsa/src/sitemap.njk has been updated successfully.
+The file /home/<USER>/bosarsa/src/sitemap.njk has been updated successfully.
 ```
 
 > AGENT
@@ -1122,7 +1122,7 @@ id: toolu_01AsM2AY3BV5GEoy9ht1iwbM
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/llms.njk",
+  "file_path": "/home/<USER>/bosarsa/src/llms.njk",
   "old_string": "## Krisenkommunikation",
   "new_string": "## Aktuelles\n\nBOS-ARSA veröffentlicht regelmäßig Neuigkeiten, Veranstaltungsberichte und Wissensartikel unter {{ site.url }}/aktuelles/. Aktuelle Beiträge:\n\n{% for article in aktuelles %}- {{ article.title }} ({{ article.dateDisplay }}): {{ site.url }}/aktuelles/{{ article.slug }}/\n{% endfor %}\n\n## Krisenkommunikation"
 }
@@ -1133,7 +1133,7 @@ id: toolu_01AsM2AY3BV5GEoy9ht1iwbM
 tool_result
 id: toolu_01AsM2AY3BV5GEoy9ht1iwbM
 ```
-The file /home/achildrenmile/bosarsa/src/llms.njk has been updated successfully.
+The file /home/<USER>/bosarsa/src/llms.njk has been updated successfully.
 ```
 
 > TOOL
@@ -1219,7 +1219,7 @@ tool_use Read
 id: toolu_01Xb2fU7fRsNprbEHih1xVyC
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/_site/aktuelles/index.html",
+  "file_path": "/home/<USER>/bosarsa/_site/aktuelles/index.html",
   "limit": 50
 }
 ```
@@ -1278,7 +1278,7 @@ tool_use Read
 id: toolu_01YQvEMVM2jvGMzVARik3x5b
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/_site/aktuelles/sicherheitstage-2026/index.html",
+  "file_path": "/home/<USER>/bosarsa/_site/aktuelles/sicherheitstage-2026/index.html",
   "limit": 60
 }
 ```

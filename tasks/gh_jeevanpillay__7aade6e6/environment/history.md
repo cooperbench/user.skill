@@ -44,13 +44,13 @@ Perfect. I have all the information I need. Let me compile the findings.
 **Current Settings Implementation Pattern:**
 
 **1. Settings Page Location:**
-- `/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/settings.ts` (lines 122-221)
-- HTML anchor: `/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/index.html:175-178`
+- `/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/settings.ts` (lines 122-221)
+- HTML anchor: `/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/index.html:175-178`
 
 **2. Current Pattern: Full-Page Route (NOT Modal, NOT Separate Window)**
 - Settings is a hash-based route (`#/settings`)
 - Rendered as a full-page section within the primary window
-- Router defined in `/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/router.ts:1-6`
+- Router defined in `/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/router.ts:1-6`
 - Lazy-rendered vanilla DOM on navigation (lines 68-74 in `main.ts`)
 
 **3. Renderer Surfaces:**
@@ -62,7 +62,7 @@ Perfect. I have all the information I need. Let me compile the findings.
 **4. IPC/Window Management:**
 - No separate window for settings (unlike auth-flow which opens BrowserWindows)
 - Settings broadcast via `ipcMain.send(IpcChannels.settingsChanged)` to all windows
-- Main process: `/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/index.ts` handles settings sync
+- Main process: `/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/index.ts` handles settings sync
 - No dedicated settings window code exists
 
 **5. Plans/Thoughts References:**
@@ -135,7 +135,7 @@ tool_use Read
 id: toolu_01P7LbXasQ8F6NLUByRHPoBJ
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/settings.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/settings.ts"
 }
 ```
 
@@ -198,7 +198,7 @@ tool_use Read
 id: toolu_01TJjLPiwTCqGmYBizfBgWRo
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/index.html"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/index.html"
 }
 ```
 
@@ -279,7 +279,7 @@ tool_use Read
 id: toolu_01YWzChn8M4STKk9bfYVJGw3
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/router.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/router.ts"
 }
 ```
 
@@ -354,7 +354,7 @@ tool_use Read
 id: toolu_013PFaV56HaspcQAamSy3ze9
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/main.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/main.ts"
 }
 ```
 
@@ -422,7 +422,7 @@ tool_use Read
 id: toolu_01EQCjhYifoKppMdoHEYz8M7
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/user-menu.tsx"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/user-menu.tsx"
 }
 ```
 
@@ -498,7 +498,7 @@ tool_use Read
 id: toolu_01HRtKLx241ENykhBAmb71xe
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/app-shell.tsx"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/app-shell.tsx"
 }
 ```
 
@@ -559,7 +559,7 @@ tool_use Read
 id: toolu_01MXwJB9Cxt358J3yBiZbTh6
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/entry.tsx"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/entry.tsx"
 }
 ```
 
@@ -610,7 +610,7 @@ tool_use Read
 id: toolu_018Wa9s2ZWWH1VqKjiastiAL
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/auth-flow.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/auth-flow.ts"
 }
 ```
 
@@ -669,7 +669,7 @@ tool_use Read
 id: toolu_01FD55WUzJDVcuUEqxcC1b7U
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/index.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/index.ts"
 }
 ```
 
@@ -735,7 +735,7 @@ tool_use Read
 id: toolu_017tAPM4xpjkDcQpavYYy2uP
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/shared/ipc.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/shared/ipc.ts"
 }
 ```
 
@@ -838,7 +838,7 @@ tool_use Bash
 id: toolu_01EmzhygT1nGbALeygSFfqfG
 ```json
 {
-  "command": "ls /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/windows/ /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/ /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/ /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/preload/",
+  "command": "ls /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/windows/ /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/ /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/ /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/preload/",
   "description": "List relevant desktop source dirs"
 }
 ```
@@ -848,7 +848,7 @@ id: toolu_01EmzhygT1nGbALeygSFfqfG
 tool_result
 id: toolu_01EmzhygT1nGbALeygSFfqfG
 ```
-/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/:
+/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/:
 app-origin.ts
 assets
 auth-flow.ts
@@ -867,13 +867,13 @@ updater.ts
 window-state.ts
 windows
 
-/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/windows/:
+/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/windows/:
 factory.ts
 
-/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/preload/:
+/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/preload/:
 preload.ts
 
-/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/:
+/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/:
 error-boundary.ts
 hotkey.ts
 main.ts
@@ -970,7 +970,7 @@ tool_use Read
 id: toolu_015tgTtZJVjWftTxQxGhjBUM
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/windows/factory.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/windows/factory.ts"
 }
 ```
 
@@ -1037,7 +1037,7 @@ tool_use Read
 id: toolu_01WHqTNbL9DxHsbcZc9U8Sps
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/preload/preload.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/preload/preload.ts"
 }
 ```
 
@@ -1107,7 +1107,7 @@ tool_use Read
 id: toolu_01PnmbZLN4Lhj4KLF5YJgiDn
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/settings-store.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/settings-store.ts"
 }
 ```
 
@@ -1172,7 +1172,7 @@ tool_use Read
 id: toolu_01HkS5eGXS6Jc1HDyHaid5iE
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/menu.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/menu.ts"
 }
 ```
 
@@ -1240,7 +1240,7 @@ tool_use Read
 id: toolu_011c1XLr7wvcQw8xnktHhNdY
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/shortcuts.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/shortcuts.ts"
 }
 ```
 
@@ -1297,7 +1297,7 @@ tool_use Read
 id: toolu_01DmRBgiU6jiUT9hcB1Vw5MC
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/vite.renderer.config.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/vite.renderer.config.ts"
 }
 ```
 

@@ -1,1 +1,8 @@
-{"point_id": "019ee1c8-108d-7121-b530-fe18eceebdcf#74", "developer": "gh:blackgirlbytes", "condition": "noprofile", "real": "we should add a button too that forces a refresh i think", "prev_agent": "Done. The shared leaderboard panel now auto-refreshes every 15 seconds while the board is visible, including both the title `/leaderboard` view and the post-save leaderboard screen. It stops polling when the panel closes or returns to username entry, and failed refreshes won\u2019t blank out the current rows.\n\nChanged [src/leaderboardPanel.js](/Users/goose-guest/Documents/work/planetfall-seed-signalkit/src/leaderboardPanel.js:1).\n\nVerified with `npm test` and `npm run build`.", "gold_move": null}
+{
+  "point_id": "019ee1c8-108d-7121-b530-fe18eceebdcf#74",
+  "developer": "gh:blackgirlbytes",
+  "condition": "noprofile",
+  "real": "we should add a button too that forces a refresh i think",
+  "prev_agent": "Done. The shared leaderboard panel now auto-refreshes every 15 seconds while the board is visible, including both the title `/leaderboard` view and the post-save leaderboard screen. It stops polling when the panel closes or returns to username entry, and failed refreshes won’t blank out the current rows.\n\nChanged [src/leaderboardPanel.js](/home/<USER>/Documents/work/planetfall-seed-signalkit/src/leaderboardPanel.js:1).\n\nVerified with `npm test` and `npm run build`.",
+  "gold_move": null
+}

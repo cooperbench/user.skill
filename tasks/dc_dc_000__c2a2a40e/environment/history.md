@@ -16,7 +16,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git rev-parse --is-inside-work-tree && git symbolic-ref refs/remotes/origin/HEAD 2>/dev/null | sed 's@^refs/remotes/origin/@@' || true",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -35,7 +35,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git status --porcelain=v1 && git diff --stat && git diff --stat --cached",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -54,7 +54,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git worktree list --porcelain",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -77,7 +77,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git fetch --all --prune --quiet",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -96,7 +96,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git symbolic-ref refs/remotes/origin/HEAD 2>/dev/null | sed 's@^refs/remotes/origin/@@'",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 1000
 }
@@ -115,7 +115,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "ls -d .megaplan-worktrees/* 2>/dev/null",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -134,7 +134,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "find . -maxdepth 3 -type d -name '.worktrees' 2>/dev/null",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -153,7 +153,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "ls -d ../*/.megaplan-worktrees/* 2>/dev/null",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -176,7 +176,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git branch --format='%(refname:short)'",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -195,7 +195,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git branch -r --format='%(refname:short)|%(committerdate:iso8601)|%(committerdate:relative)'",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -214,7 +214,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git -C ../banodoco-workspace/.megaplan-worktrees/kimi-2-6-vs-standard-homepage rev-parse --show-toplevel",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -233,7 +233,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git for-each-ref --format='%(refname:short)|%(committerdate:iso8601)|%(committerdate:relative)|%(upstream:short)|%(upstream:track)|%(objectname:short)|%(contents:subject)' refs/heads/",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -252,7 +252,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git stash list --format='%gd|%cr|%s'",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -271,7 +271,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "gh repo view --json nameWithOwner -q .nameWithOwner",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -294,7 +294,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "gh pr list --state all --limit 200 --json number,state,headRefName,baseRefName,title,updatedAt,isDraft,mergedAt,author,url",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -313,7 +313,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "for b in megaplan/cloud-runtime-correctness-sprint megaplan/per-milestone-robustness-20260503 sandbox-fingerprint tiebreaker-tests; do printf '%s|' \"$b\"; git rev-list --left-right --count main...\"$b\"; done",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -332,7 +332,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "for b in megaplan/cloud-runtime-correctness-sprint megaplan/per-milestone-robustness-20260503 sandbox-fingerprint tiebreaker-tests; do n=$(git cherry main \"$b\" | grep -c '^+'); printf '%s|cherry_plus=%s\\n' \"$b\" \"$n\"; done",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -351,7 +351,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "for b in megaplan/cloud-runtime-correctness-sprint megaplan/per-milestone-robustness-20260503 sandbox-fingerprint tiebreaker-tests; do if git merge-base --is-ancestor \"$b\" main; then m=yes; else m=no; fi; printf '%s|merged_ancestor=%s\\n' \"$b\" \"$m\"; done",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -370,7 +370,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git reflog --all | head -50",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -389,7 +389,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git fsck --unreachable --no-reflogs 2>/dev/null | grep '^unreachable commit' | wc -l | tr -d ' '",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 1000
 }
@@ -412,7 +412,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git log --oneline --decorate --max-count=20 main..megaplan/cloud-runtime-correctness-sprint",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -431,7 +431,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git log --oneline --decorate --max-count=30 main..megaplan/per-milestone-robustness-20260503",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -450,7 +450,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git log --oneline --decorate --max-count=20 main..sandbox-fingerprint",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -469,7 +469,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git log --oneline --decorate --max-count=20 main..tiebreaker-tests",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -488,7 +488,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "for b in megaplan/cloud-runtime-correctness-sprint megaplan/per-milestone-robustness-20260503 sandbox-fingerprint tiebreaker-tests; do printf '\\n%s\\n' \"$b\"; git diff --stat main...\"$b\"; done",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -507,7 +507,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "for b in megaplan/cloud-runtime-correctness-sprint megaplan/per-milestone-robustness-20260503 sandbox-fingerprint tiebreaker-tests; do printf '%s|' \"$b\"; git merge-tree $(git merge-base main \"$b\") main \"$b\" 2>/dev/null | grep -c '<<<<<<<'; done",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -549,7 +549,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git log --all --oneline --grep='files_missing\\|project_dir sandbox\\|Fireworks calls\\|doc-mode output_path\\|per-batch status overlay\\|per-milestone robustness'",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -568,7 +568,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git log --oneline --decorate --max-count=20 main -- megaplan/sandbox.py tests/test_sandbox.py megaplan/hermes_worker.py tests/test_hermes_worker_fireworks_streaming.py megaplan/execute/core.py tests/test_scope_drift_doc_mode.py megaplan/receipts/drift.py",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -587,7 +587,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git show --stat --oneline --decorate 2a60d147 a0ed9f51 c2bbc729 9d6b981b 6ebbe279 20681671",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -606,7 +606,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git branch -a --contains per-milestone-robustness-rebase 2>/dev/null || true",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -625,7 +625,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git log --all --oneline --decorate --max-count=20 --branches='*per-milestone*' --remotes='*per-milestone*'",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -673,7 +673,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git status --porcelain=v1",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -692,7 +692,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git for-each-ref --format='%(refname:short)|%(committerdate:iso8601)|%(committerdate:relative)|%(upstream:short)|%(upstream:track)|%(objectname:short)|%(contents:subject)' refs/heads/",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -711,7 +711,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "for b in megaplan/cloud-runtime-correctness-sprint megaplan/per-milestone-robustness-20260503 sandbox-fingerprint tiebreaker-tests; do printf '%s|' \"$b\"; git rev-list --left-right --count main...\"$b\"; done",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -730,7 +730,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "for b in megaplan/cloud-runtime-correctness-sprint megaplan/per-milestone-robustness-20260503 sandbox-fingerprint tiebreaker-tests; do n=$(git cherry main \"$b\" | grep -c '^+'); printf '%s|cherry_plus=%s\\n' \"$b\" \"$n\"; done",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -749,7 +749,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "for b in megaplan/cloud-runtime-correctness-sprint megaplan/per-milestone-robustness-20260503 sandbox-fingerprint tiebreaker-tests; do printf '\\n%s\\n' \"$b\"; git log --oneline --max-count=10 main..\"$b\"; done",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -768,7 +768,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "for b in megaplan/cloud-runtime-correctness-sprint megaplan/per-milestone-robustness-20260503 sandbox-fingerprint tiebreaker-tests; do printf '%s|' \"$b\"; git merge-tree $(git merge-base main \"$b\") main \"$b\" 2>/dev/null | grep -c '<<<<<<<'; done",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -787,7 +787,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git rev-parse megaplan/cloud-runtime-correctness-sprint origin/megaplan/cloud-runtime-correctness-sprint",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 1000
 }
@@ -806,7 +806,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git status -sb",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -825,7 +825,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git branch -vv",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -844,7 +844,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git remote -v",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -884,7 +884,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git diff --name-status main...megaplan/per-milestone-robustness-20260503",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -903,7 +903,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git show --stat --oneline a16ebfbb && git show --stat --oneline 20681671",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -922,7 +922,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "rg -n \"per[-_ ]milestone|milestone.*robustness|robustness\" megaplan tests docs pyproject.toml README.md",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -941,7 +941,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git diff --stat megaplan/per-milestone-robustness-20260503..main -- megaplan/chain.py tests/test_chain.py megaplan/sandbox.py tests/test_sandbox.py megaplan/hermes_worker.py tests/test_hermes_worker_fireworks_streaming.py megaplan/receipts/drift.py megaplan/execute/core.py",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -981,7 +981,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git fetch --all --prune --quiet && git branch -r --format='%(refname:short)|%(committerdate:relative)|%(objectname:short)|%(contents:subject)'",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -1000,7 +1000,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "gh pr list --state open --limit 100 --json number,state,headRefName,baseRefName,title,isDraft,updatedAt,url",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -1019,7 +1019,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "gh pr list --state all --limit 20 --json number,state,headRefName,baseRefName,title,isDraft,mergedAt,updatedAt,url",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -1046,7 +1046,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git log --oneline --decorate main..megaplan/cloud-runtime-correctness-sprint",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -1065,7 +1065,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git log --oneline --decorate main..sandbox-fingerprint",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -1084,7 +1084,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git log --oneline --decorate main..tiebreaker-tests",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -1103,7 +1103,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git diff --stat main...megaplan/cloud-runtime-correctness-sprint && git diff --stat main...sandbox-fingerprint && git diff --stat main...tiebreaker-tests",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -1122,7 +1122,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "for b in megaplan/cloud-runtime-correctness-sprint sandbox-fingerprint tiebreaker-tests; do printf '%s|' \"$b\"; git merge-tree $(git merge-base main \"$b\") main \"$b\" 2>/dev/null | grep -c '<<<<<<<'; done",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -1152,8 +1152,8 @@ I’m editing the skill to add a “landing decision” pass, replace the vague 
 tool_use exec_command
 ```json
 {
-  "cmd": "sed -n '1,260p' /Users/user_c042661f/Documents/poms_skills/cleanup-loose-branches/SKILL.md",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "cmd": "sed -n '1,260p' /home/<USER>/Documents/poms_skills/cleanup-loose-branches/SKILL.md",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -1171,8 +1171,8 @@ null
 tool_use exec_command
 ```json
 {
-  "cmd": "sed -n '260,560p' /Users/user_c042661f/Documents/poms_skills/cleanup-loose-branches/SKILL.md",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "cmd": "sed -n '260,560p' /home/<USER>/Documents/poms_skills/cleanup-loose-branches/SKILL.md",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -1194,7 +1194,7 @@ The first patch missed exact wording in one section, so I’m applying this in s
 tool_use apply_patch
 ```json
 {
-  "patch": "*** Begin Patch\n*** Update File: /Users/user_c042661f/Documents/poms_skills/cleanup-loose-branches/SKILL.md\n@@\n-**Make a strong recommendation for every item.** \"Inspect\" is not a\n-recommendation — it's an admission you didn't do the work. The user\n-wants a clear call (delete / keep / merge-then-delete / rebase-and-PR),\n-backed by enough investigation that you're prepared to defend it.\n-Hedging (\"might be worth keeping, your call\") is a failure mode of\n-this skill. The goal is: user reads your rec, scans your reasoning,\n-and answers \"yes\" or \"no\" — they should never have to do the analysis\n-themselves.\n+**Make a strong recommendation for every item.** \"Inspect\" is not a\n+recommendation — it's an admission you didn't do the work. The user\n+wants a clear call (delete / merge-then-delete / rebase-and-PR /\n+cherry-pick-then-delete / keep), backed by enough investigation that\n+you're prepared to defend it. Hedging (\"might be worth keeping, your\n+call\") is a failure mode of this skill. The goal is: user reads your\n+rec, scans your reasoning, and answers \"yes\" or \"no\" — they should\n+never have to do the analysis themselves.\n+\n+**Answer the landing question, not just the cleanup question.** For any\n+branch with unique commits, the recommendation must say whether the\n+work should land on main, be preserved as active work, or be discarded.\n+`keep` means \"do not merge or delete […]
+  "patch": "*** Begin Patch\n*** Update File: /home/<USER>/Documents/poms_skills/cleanup-loose-branches/SKILL.md\n@@\n-**Make a strong recommendation for every item.** \"Inspect\" is not a\n-recommendation — it's an admission you didn't do the work. The user\n-wants a clear call (delete / keep / merge-then-delete / rebase-and-PR),\n-backed by enough investigation that you're prepared to defend it.\n-Hedging (\"might be worth keeping, your call\") is a failure mode of\n-this skill. The goal is: user reads your rec, scans your reasoning,\n-and answers \"yes\" or \"no\" — they should never have to do the analysis\n-themselves.\n+**Make a strong recommendation for every item.** \"Inspect\" is not a\n+recommendation — it's an admission you didn't do the work. The user\n+wants a clear call (delete / merge-then-delete / rebase-and-PR /\n+cherry-pick-then-delete / keep), backed by enough investigation that\n+you're prepared to defend it. Hedging (\"might be worth keeping, your\n+call\") is a failure mode of this skill. The goal is: user reads your\n+rec, scans your reasoning, and answers \"yes\" or \"no\" — they should\n+never have to do the analysis themselves.\n+\n+**Answer the landing question, not just the cleanup question.** For any\n+branch with unique commits, the recommendation must say whether the\n+work should land on main, be preserved as active work, or be discarded.\n+`keep` means \"do not merge or delete […]
 
 > TOOL
 
@@ -1208,7 +1208,7 @@ null
 tool_use apply_patch
 ```json
 {
-  "patch": "*** Begin Patch\n*** Update File: /Users/user_c042661f/Documents/poms_skills/cleanup-loose-branches/SKILL.md\n@@\n-**Make a strong recommendation for every item.** \"Inspect\" is not a\n-recommendation — it's an admission you didn't do the work. The user\n-wants a clear call (delete / keep / merge-then-delete / rebase-and-PR),\n-backed by enough investigation that you're prepared to defend it.\n-Hedging (\"might be worth keeping, your call\") is a failure mode of\n-this skill. The goal is: user reads your rec, scans your reasoning,\n-and answers \"yes\" or \"no\" — they should never have to do the analysis\n-themselves.\n+**Make a strong recommendation for every item.** \"Inspect\" is not a\n+recommendation — it's an admission you didn't do the work. The user\n+wants a clear call (delete / merge-then-delete / rebase-and-PR /\n+cherry-pick-then-delete / keep), backed by enough investigation that\n+you're prepared to defend it. Hedging (\"might be worth keeping, your\n+call\") is a failure mode of this skill. The goal is: user reads your\n+rec, scans your reasoning, and answers \"yes\" or \"no\" — they should\n+never have to do the analysis themselves.\n+\n+**Answer the landing question, not just the cleanup question.** For any\n+branch with unique commits, the recommendation must say whether the\n+work should land on main, be preserved as active work, or be discarded.\n+`keep` means \"do not merge or delete […]
+  "patch": "*** Begin Patch\n*** Update File: /home/<USER>/Documents/poms_skills/cleanup-loose-branches/SKILL.md\n@@\n-**Make a strong recommendation for every item.** \"Inspect\" is not a\n-recommendation — it's an admission you didn't do the work. The user\n-wants a clear call (delete / keep / merge-then-delete / rebase-and-PR),\n-backed by enough investigation that you're prepared to defend it.\n-Hedging (\"might be worth keeping, your call\") is a failure mode of\n-this skill. The goal is: user reads your rec, scans your reasoning,\n-and answers \"yes\" or \"no\" — they should never have to do the analysis\n-themselves.\n+**Make a strong recommendation for every item.** \"Inspect\" is not a\n+recommendation — it's an admission you didn't do the work. The user\n+wants a clear call (delete / merge-then-delete / rebase-and-PR /\n+cherry-pick-then-delete / keep), backed by enough investigation that\n+you're prepared to defend it. Hedging (\"might be worth keeping, your\n+call\") is a failure mode of this skill. The goal is: user reads your\n+rec, scans your reasoning, and answers \"yes\" or \"no\" — they should\n+never have to do the analysis themselves.\n+\n+**Answer the landing question, not just the cleanup question.** For any\n+branch with unique commits, the recommendation must say whether the\n+work should land on main, be preserved as active work, or be discarded.\n+`keep` means \"do not merge or delete […]
 
 > TOOL
 
@@ -1222,7 +1222,7 @@ null
 tool_use apply_patch
 ```json
 {
-  "patch": "*** Begin Patch\n*** Update File: /Users/user_c042661f/Documents/poms_skills/cleanup-loose-branches/SKILL.md\n@@\n-1. **Loose ≠ deletable.** A branch with unmerged commits may be the\n-   user's in-progress feature. Recommend, don't reflex-delete. Default\n-   to *inspect* over *delete* when signals conflict.\n+1. **Loose ≠ deletable.** A branch with unmerged commits may be the\n+   user's in-progress feature. Recommend, don't reflex-delete. But\n+   still answer whether it should land: `merge-then-delete`,\n+   `rebase-and-PR`, `cherry-pick-then-delete`, `keep`, or `delete`.\n+   Default to a conservative landing route over delete when signals\n+   conflict.\n@@\n 7. **Show ahead/behind, not just \"unmerged.\"** \"5 ahead, 0 behind, last\n    commit 4 months ago, no PR\" tells the user what to do. \"Unmerged\"\n    doesn't.\n+8. **Do not confuse \"keep\" with \"merge later.\"** If the branch contains\n+   valuable work and has no open PR, the recommendation should normally\n+   be a landing action (`merge-then-delete`, `rebase-and-PR`, or\n+   `cherry-pick-then-delete`). Reserve `keep` for open/draft PRs,\n+   protected branches, current active work that is not yet ready to\n+   land, or branches the user explicitly wants parked.\n*** End Patch\n"
+  "patch": "*** Begin Patch\n*** Update File: /home/<USER>/Documents/poms_skills/cleanup-loose-branches/SKILL.md\n@@\n-1. **Loose ≠ deletable.** A branch with unmerged commits may be the\n-   user's in-progress feature. Recommend, don't reflex-delete. Default\n-   to *inspect* over *delete* when signals conflict.\n+1. **Loose ≠ deletable.** A branch with unmerged commits may be the\n+   user's in-progress feature. Recommend, don't reflex-delete. But\n+   still answer whether it should land: `merge-then-delete`,\n+   `rebase-and-PR`, `cherry-pick-then-delete`, `keep`, or `delete`.\n+   Default to a conservative landing route over delete when signals\n+   conflict.\n@@\n 7. **Show ahead/behind, not just \"unmerged.\"** \"5 ahead, 0 behind, last\n    commit 4 months ago, no PR\" tells the user what to do. \"Unmerged\"\n    doesn't.\n+8. **Do not confuse \"keep\" with \"merge later.\"** If the branch contains\n+   valuable work and has no open PR, the recommendation should normally\n+   be a landing action (`merge-then-delete`, `rebase-and-PR`, or\n+   `cherry-pick-then-delete`). Reserve `keep` for open/draft PRs,\n+   protected branches, current active work that is not yet ready to\n+   land, or branches the user explicitly wants parked.\n*** End Patch\n"
 }
 ```
 
@@ -1238,7 +1238,7 @@ null
 tool_use apply_patch
 ```json
 {
-  "patch": "*** Begin Patch\n*** Update File: /Users/user_c042661f/Documents/poms_skills/cleanup-loose-branches/SKILL.md\n@@\n - `pinned`: from the worktree map above\n - `upstream gone?`: `[gone]` in `%(upstream:track)` means the remote\n   branch was deleted (usually because the PR was merged + auto-deleted)\n+- `conflicts?` for branches with unique commits:\n+  `git merge-tree $(git merge-base $MAIN <br>) $MAIN <br> | grep -c '<<<<<<<'`\n+- `diff shape`: `git diff --stat $MAIN...<br>`\n+- `landing rec`: one of `merge-then-delete`, `rebase-and-PR`,\n+  `cherry-pick-then-delete`, `delete`, or `keep`.\n*** End Patch\n"
+  "patch": "*** Begin Patch\n*** Update File: /home/<USER>/Documents/poms_skills/cleanup-loose-branches/SKILL.md\n@@\n - `pinned`: from the worktree map above\n - `upstream gone?`: `[gone]` in `%(upstream:track)` means the remote\n   branch was deleted (usually because the PR was merged + auto-deleted)\n+- `conflicts?` for branches with unique commits:\n+  `git merge-tree $(git merge-base $MAIN <br>) $MAIN <br> | grep -c '<<<<<<<'`\n+- `diff shape`: `git diff --stat $MAIN...<br>`\n+- `landing rec`: one of `merge-then-delete`, `rebase-and-PR`,\n+  `cherry-pick-then-delete`, `delete`, or `keep`.\n*** End Patch\n"
 }
 ```
 
@@ -1254,7 +1254,7 @@ null
 tool_use apply_patch
 ```json
 {
-  "patch": "*** Begin Patch\n*** Update File: /Users/user_c042661f/Documents/poms_skills/cleanup-loose-branches/SKILL.md\n@@\n-For each row, pick exactly one recommendation. Order matters — first\n-matching rule wins:\n+For each row, pick exactly one recommendation. Recommendations are\n+action-oriented:\n+\n+- **delete**: no valuable unique work remains, or the branch is\n+  superseded/abandoned and dropping it is the right call.\n+- **merge-then-delete**: valuable unique work should land directly, and\n+  the branch is small/low-risk enough for the repo's normal direct merge\n+  path.\n+- **rebase-and-PR**: valuable unique work should land, but review/CI or\n+  conflict resolution is warranted before merging.\n+- **cherry-pick-then-delete**: only some commits are valuable; land\n+  those explicitly and drop the branch afterward.\n+- **keep**: branch should remain unmerged for now because it has an\n+  open/draft PR, is protected/release-like, is the current active work\n+  not ready to land, or has uncommitted work in a worktree.\n+\n+Order matters — first matching rule wins:\n@@\n-| Worktree has uncommitted changes | **inspect** | \"uncommitted work in worktree at <path>\" |\n+| Worktree has uncommitted changes | **keep** | \"uncommitted work in worktree at <path>; preserve until diff is reviewed\" |\n | Open PR (not draft) | **keep** | \"open PR #N: <title>\" |\n | Draft PR | **keep** | \"draft PR #N — still in progress\" |\n | Merged PR **AND** `cherry […]
+  "patch": "*** Begin Patch\n*** Update File: /home/<USER>/Documents/poms_skills/cleanup-loose-branches/SKILL.md\n@@\n-For each row, pick exactly one recommendation. Order matters — first\n-matching rule wins:\n+For each row, pick exactly one recommendation. Recommendations are\n+action-oriented:\n+\n+- **delete**: no valuable unique work remains, or the branch is\n+  superseded/abandoned and dropping it is the right call.\n+- **merge-then-delete**: valuable unique work should land directly, and\n+  the branch is small/low-risk enough for the repo's normal direct merge\n+  path.\n+- **rebase-and-PR**: valuable unique work should land, but review/CI or\n+  conflict resolution is warranted before merging.\n+- **cherry-pick-then-delete**: only some commits are valuable; land\n+  those explicitly and drop the branch afterward.\n+- **keep**: branch should remain unmerged for now because it has an\n+  open/draft PR, is protected/release-like, is the current active work\n+  not ready to land, or has uncommitted work in a worktree.\n+\n+Order matters — first matching rule wins:\n@@\n-| Worktree has uncommitted changes | **inspect** | \"uncommitted work in worktree at <path>\" |\n+| Worktree has uncommitted changes | **keep** | \"uncommitted work in worktree at <path>; preserve until diff is reviewed\" |\n | Open PR (not draft) | **keep** | \"open PR #N: <title>\" |\n | Draft PR | **keep** | \"draft PR #N — still in progress\" |\n | Merged PR **AND** `cherry […]
 
 > TOOL
 
@@ -1268,7 +1268,7 @@ null
 tool_use apply_patch
 ```json
 {
-  "patch": "*** Begin Patch\n*** Update File: /Users/user_c042661f/Documents/poms_skills/cleanup-loose-branches/SKILL.md\n@@\n-For an *inspect*-tier branch, gauge how well it would land today:\n+For branches with unique work, gauge how well they would land today:\n@@\n-Newer git (2.38+) supports `git merge-tree --name-only` for a conflict\n-file list without creating an actual merge. If a branch would have\n-zero conflicts and its diff is small, upgrade the recommendation note\n-to \"would merge cleanly\". If it's 20+ conflicting files, note\n-\"heavy conflicts — likely superseded\".\n+Newer git (2.38+) supports `git merge-tree --name-only` for a conflict\n+file list without creating an actual merge. If a branch would have zero\n+conflicts and its diff is small, prefer `merge-then-delete` or\n+`rebase-and-PR` depending on repo convention. If it has conflicts,\n+prefer `rebase-and-PR` when the work is valuable, or `delete` when the\n+conflicts are evidence that the branch was superseded.\n \n-Don't run this for every branch by default — it's `O(branches)` real\n-work. Only run it for the *inspect* tier, or when the user asks\n-\"which of these would still merge.\"\n+Don't run this for trivially delete-able branches (`cherry +0`, fully\n+merged, remote gone with no local work). Do run it before recommending\n+that unique branch work should land.\n*** End Patch\n"
+  "patch": "*** Begin Patch\n*** Update File: /home/<USER>/Documents/poms_skills/cleanup-loose-branches/SKILL.md\n@@\n-For an *inspect*-tier branch, gauge how well it would land today:\n+For branches with unique work, gauge how well they would land today:\n@@\n-Newer git (2.38+) supports `git merge-tree --name-only` for a conflict\n-file list without creating an actual merge. If a branch would have\n-zero conflicts and its diff is small, upgrade the recommendation note\n-to \"would merge cleanly\". If it's 20+ conflicting files, note\n-\"heavy conflicts — likely superseded\".\n+Newer git (2.38+) supports `git merge-tree --name-only` for a conflict\n+file list without creating an actual merge. If a branch would have zero\n+conflicts and its diff is small, prefer `merge-then-delete` or\n+`rebase-and-PR` depending on repo convention. If it has conflicts,\n+prefer `rebase-and-PR` when the work is valuable, or `delete` when the\n+conflicts are evidence that the branch was superseded.\n \n-Don't run this for every branch by default — it's `O(branches)` real\n-work. Only run it for the *inspect* tier, or when the user asks\n-\"which of these would still merge.\"\n+Don't run this for trivially delete-able branches (`cherry +0`, fully\n+merged, remote gone with no local work). Do run it before recommending\n+that unique branch work should land.\n*** End Patch\n"
 }
 ```
 
@@ -1284,7 +1284,7 @@ null
 tool_use apply_patch
 ```json
 {
-  "patch": "*** Begin Patch\n*** Update File: /Users/user_c042661f/Documents/poms_skills/cleanup-loose-branches/SKILL.md\n@@\n-One table, sorted by recommendation (delete → inspect → keep), then by\n-age descending. Columns:\n+One table, sorted by recommendation (delete → cherry-pick-then-delete →\n+merge-then-delete → rebase-and-PR → keep), then by age descending.\n+Columns:\n@@\n-REC      WHERE           BRANCH                   AHEAD/BEHIND  AGE     PR        REASON\n-delete   local+remote    fix/typo-in-readme       0/0           merged  #412 ✓   PR merged 2026-03-02, safe to drop\n-delete   local           experiment/old-idea      8/142         11mo    none     stale, no PR, far behind main\n-inspect  worktree:.mp.../wt-42  feat/payments     23/4          3d      none     uncommitted work in worktree\n-inspect  local           refactor/auth            5/0           45d     #501 ✗   PR closed unmerged 2026-04-01\n-keep     local+remote    feat/new-dashboard       12/2          2d      #530 ◐   open PR\n+REC                 WHERE           BRANCH                  AHEAD/BEHIND  AGE     PR        REASON\n+delete              local+remote    fix/typo-in-readme      0/0           merged  #412 ✓   PR merged 2026-03-02, safe to drop\n+delete              local           experiment/old-idea     8/142         11mo    none     stale, superseded by main\n+cherry-pick-delete  local           old/recovery            6/61          10d     #501 ✓   5 fixes landed in #501; cherry-pick 1 missing fix then drop\n+merge-then-delete   local+remote    fix/cli-null-check      1/0           2d      none     small valuable fix, merge-tree clean\n+rebase-and-PR       local+remote    feat/payments           23/4          3d      none     valuable larger work, needs PR/CI before merge\n+keep                local+remote    feat/new-dashboard      12/2          2d      #530 ◐   open PR\n ```\n \n Symbols: `✓` merged, `✗` closed, `◐` open, `◌` draft. Keep the table\n narrow enough to read in a normal terminal — truncate branch names with\n ellipsis if needed, […]
+  "patch": "*** Begin Patch\n*** Update File: /home/<USER>/Documents/poms_skills/cleanup-loose-branches/SKILL.md\n@@\n-One table, sorted by recommendation (delete → inspect → keep), then by\n-age descending. Columns:\n+One table, sorted by recommendation (delete → cherry-pick-then-delete →\n+merge-then-delete → rebase-and-PR → keep), then by age descending.\n+Columns:\n@@\n-REC      WHERE           BRANCH                   AHEAD/BEHIND  AGE     PR        REASON\n-delete   local+remote    fix/typo-in-readme       0/0           merged  #412 ✓   PR merged 2026-03-02, safe to drop\n-delete   local           experiment/old-idea      8/142         11mo    none     stale, no PR, far behind main\n-inspect  worktree:.mp.../wt-42  feat/payments     23/4          3d      none     uncommitted work in worktree\n-inspect  local           refactor/auth            5/0           45d     #501 ✗   PR closed unmerged 2026-04-01\n-keep     local+remote    feat/new-dashboard       12/2          2d      #530 ◐   open PR\n+REC                 WHERE           BRANCH                  AHEAD/BEHIND  AGE     PR        REASON\n+delete              local+remote    fix/typo-in-readme      0/0           merged  #412 ✓   PR merged 2026-03-02, safe to drop\n+delete              local           experiment/old-idea     8/142         11mo    none     stale, superseded by main\n+cherry-pick-delete  local           old/recovery            6/61          10d     #501 ✓   5 fixes landed in #501; cherry-pick 1 missing fix then drop\n+merge-then-delete   local+remote    fix/cli-null-check      1/0           2d      none     small valuable fix, merge-tree clean\n+rebase-and-PR       local+remote    feat/payments           23/4          3d      none     valuable larger work, needs PR/CI before merge\n+keep                local+remote    feat/new-dashboard      12/2          2d      #530 ◐   open PR\n ```\n \n Symbols: `✓` merged, `✗` closed, `◐` open, `◌` draft. Keep the table\n narrow enough to read in a normal terminal — truncate branch names with\n ellipsis if needed, […]
 
 > TOOL
 
@@ -1310,8 +1310,8 @@ The new classification section is much better, but the walk-through and reportin
 tool_use exec_command
 ```json
 {
-  "cmd": "sed -n '1,140p' /Users/user_c042661f/Documents/poms_skills/cleanup-loose-branches/SKILL.md",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "cmd": "sed -n '1,140p' /home/<USER>/Documents/poms_skills/cleanup-loose-branches/SKILL.md",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -1329,8 +1329,8 @@ null
 tool_use exec_command
 ```json
 {
-  "cmd": "sed -n '190,380p' /Users/user_c042661f/Documents/poms_skills/cleanup-loose-branches/SKILL.md",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "cmd": "sed -n '190,380p' /home/<USER>/Documents/poms_skills/cleanup-loose-branches/SKILL.md",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -1348,8 +1348,8 @@ null
 tool_use exec_command
 ```json
 {
-  "cmd": "sed -n '380,520p' /Users/user_c042661f/Documents/poms_skills/cleanup-loose-branches/SKILL.md",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "cmd": "sed -n '380,520p' /home/<USER>/Documents/poms_skills/cleanup-loose-branches/SKILL.md",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -1371,7 +1371,7 @@ There are a couple of leftover old terms in stash cross-reference and an abbrevi
 tool_use apply_patch
 ```json
 {
-  "patch": "*** Begin Patch\n*** Update File: /Users/user_c042661f/Documents/poms_skills/cleanup-loose-branches/SKILL.md\n@@\n-  setups), stashes, detached HEADs, and remote branches on GitHub — then\n-  classify each as merge / delete / inspect / keep with reasoning, and act\n-  only on what the user approves. Use when the user says \"clean up loose\n+  setups), stashes, detached HEADs, and remote branches on GitHub — then\n+  classify each as land-on-main / delete / deliberately-park with reasoning,\n+  and act only on what the user approves. Use when the user says \"clean up loose\n@@\n # cleanup-loose-branches\n+\n+Core goal: **get every loose piece of work onto `main` or ditch it**.\n+The only exception is an explicit `keep` recommendation for work that is\n+actively in progress, protected/release-like, blocked by uncommitted\n+work, or already represented by an open/draft PR. A survey that merely\n+says \"this branch has work, keep it\" has not done its job.\n \n Two phases: **survey** (read-only, every hiding place, classified) →\n*** End Patch\n"
+  "patch": "*** Begin Patch\n*** Update File: /home/<USER>/Documents/poms_skills/cleanup-loose-branches/SKILL.md\n@@\n-  setups), stashes, detached HEADs, and remote branches on GitHub — then\n-  classify each as merge / delete / inspect / keep with reasoning, and act\n-  only on what the user approves. Use when the user says \"clean up loose\n+  setups), stashes, detached HEADs, and remote branches on GitHub — then\n+  classify each as land-on-main / delete / deliberately-park with reasoning,\n+  and act only on what the user approves. Use when the user says \"clean up loose\n@@\n # cleanup-loose-branches\n+\n+Core goal: **get every loose piece of work onto `main` or ditch it**.\n+The only exception is an explicit `keep` recommendation for work that is\n+actively in progress, protected/release-like, blocked by uncommitted\n+work, or already represented by an open/draft PR. A survey that merely\n+says \"this branch has work, keep it\" has not done its job.\n \n Two phases: **survey** (read-only, every hiding place, classified) →\n*** End Patch\n"
 }
 ```
 
@@ -1387,7 +1387,7 @@ null
 tool_use apply_patch
 ```json
 {
-  "patch": "*** Begin Patch\n*** Update File: /Users/user_c042661f/Documents/poms_skills/cleanup-loose-branches/SKILL.md\n@@\n - **What it is.** Branch name, last commit subject, age, the one-line\n   context the user needs to remember what this was.\n - **Signals.** ahead/behind, PR state (link if relevant), `cherry +N`,\n   any linked stashes or worktrees, \"would-merge-cleanly\" if computed.\n-- **Recommendation.** keep / delete / merge-then-delete / inspect — one\n-  word, plus a one-sentence \"why this and not the alternative.\"\n+- **Recommendation.** `delete`, `merge-then-delete`, `rebase-and-PR`,\n+  `cherry-pick-then-delete`, or `keep` — one action, plus a\n+  one-sentence \"why this and not the alternative.\"\n+- **Landing decision.** If there are unique commits, say explicitly:\n+  \"merge it\", \"open/reopen PR\", \"cherry-pick these commits\", \"do not\n+  merge; delete\", or \"keep parked.\"\n - **What's lost if we drop it.** \"Nothing — every commit is on main\"\n   vs \"these 3 commit subjects would be unreachable\" (list them) vs\n   \"the stash@{N} on this branch stays put either way.\"\n \n Then wait for the user's call on **that single item** before moving\n-to the next. The user may say \"delete,\" \"keep,\" \"skip for now,\"\n-\"show me the diff first,\" or \"go through the rest as a batch with\n-your recs as defaults\" — only the last form authorises bulk action,\n-and even then, stop on the first […]
+  "patch": "*** Begin Patch\n*** Update File: /home/<USER>/Documents/poms_skills/cleanup-loose-branches/SKILL.md\n@@\n - **What it is.** Branch name, last commit subject, age, the one-line\n   context the user needs to remember what this was.\n - **Signals.** ahead/behind, PR state (link if relevant), `cherry +N`,\n   any linked stashes or worktrees, \"would-merge-cleanly\" if computed.\n-- **Recommendation.** keep / delete / merge-then-delete / inspect — one\n-  word, plus a one-sentence \"why this and not the alternative.\"\n+- **Recommendation.** `delete`, `merge-then-delete`, `rebase-and-PR`,\n+  `cherry-pick-then-delete`, or `keep` — one action, plus a\n+  one-sentence \"why this and not the alternative.\"\n+- **Landing decision.** If there are unique commits, say explicitly:\n+  \"merge it\", \"open/reopen PR\", \"cherry-pick these commits\", \"do not\n+  merge; delete\", or \"keep parked.\"\n - **What's lost if we drop it.** \"Nothing — every commit is on main\"\n   vs \"these 3 commit subjects would be unreachable\" (list them) vs\n   \"the stash@{N} on this branch stays put either way.\"\n \n Then wait for the user's call on **that single item** before moving\n-to the next. The user may say \"delete,\" \"keep,\" \"skip for now,\"\n-\"show me the diff first,\" or \"go through the rest as a batch with\n-your recs as defaults\" — only the last form authorises bulk action,\n-and even then, stop on the first […]
 
 > TOOL
 
@@ -1401,7 +1401,7 @@ null
 tool_use apply_patch
 ```json
 {
-  "patch": "*** Begin Patch\n*** Update File: /Users/user_c042661f/Documents/poms_skills/cleanup-loose-branches/SKILL.md\n@@\n ### Delete remote branches\n \n ```bash\n git push origin --delete <branch>\n@@\n in future runs.\n \n+### Merge approved branches, then delete\n+\n+Only after explicit approval for that branch:\n+\n+```bash\n+git switch $MAIN\n+git pull --ff-only origin $MAIN\n+git merge --ff-only <branch>  # use the repo's normal merge policy\n+git push origin $MAIN\n+git branch -d <branch>\n+git push origin --delete <branch>\n+```\n+\n+If `--ff-only` is not the repo convention, use the repo's normal\n+review/merge path instead. Do not invent a merge style silently.\n+\n+### Rebase and PR approved branches\n+\n+Only after explicit approval for that branch:\n+\n+```bash\n+git switch <branch>\n+git rebase $MAIN\n+git push --force-with-lease origin <branch>\n+gh pr create --base $MAIN --head <branch>\n+```\n+\n+This is the default for valuable larger/riskier work, branches with\n+conflicts, and anything that should see CI/review before reaching\n+`main`.\n+\n+### Cherry-pick approved commits, then delete\n+\n+Only after explicit approval for the exact commits:\n+\n+```bash\n+git switch $MAIN\n+git pull --ff-only origin $MAIN\n+git cherry-pick <sha1> <sha2>\n+git push origin $MAIN\n+git branch -d <branch> || git branch -D <branch>\n+git push origin --delete <branch>\n+```\n+\n+Use this when the branch as a whole is stale but one or two commits are\n+still valuable. Show the selected commit subjects before asking for\n+approval.\n+\n ### Worktrees with no uncommitted changes\n \n ```bash\n git worktree remove <path>\n*** End Patch\n"
+  "patch": "*** Begin Patch\n*** Update File: /home/<USER>/Documents/poms_skills/cleanup-loose-branches/SKILL.md\n@@\n ### Delete remote branches\n \n ```bash\n git push origin --delete <branch>\n@@\n in future runs.\n \n+### Merge approved branches, then delete\n+\n+Only after explicit approval for that branch:\n+\n+```bash\n+git switch $MAIN\n+git pull --ff-only origin $MAIN\n+git merge --ff-only <branch>  # use the repo's normal merge policy\n+git push origin $MAIN\n+git branch -d <branch>\n+git push origin --delete <branch>\n+```\n+\n+If `--ff-only` is not the repo convention, use the repo's normal\n+review/merge path instead. Do not invent a merge style silently.\n+\n+### Rebase and PR approved branches\n+\n+Only after explicit approval for that branch:\n+\n+```bash\n+git switch <branch>\n+git rebase $MAIN\n+git push --force-with-lease origin <branch>\n+gh pr create --base $MAIN --head <branch>\n+```\n+\n+This is the default for valuable larger/riskier work, branches with\n+conflicts, and anything that should see CI/review before reaching\n+`main`.\n+\n+### Cherry-pick approved commits, then delete\n+\n+Only after explicit approval for the exact commits:\n+\n+```bash\n+git switch $MAIN\n+git pull --ff-only origin $MAIN\n+git cherry-pick <sha1> <sha2>\n+git push origin $MAIN\n+git branch -d <branch> || git branch -D <branch>\n+git push origin --delete <branch>\n+```\n+\n+Use this when the branch as a whole is stale but one or two commits are\n+still valuable. Show the selected commit subjects before asking for\n+approval.\n+\n ### Worktrees with no uncommitted changes\n \n ```bash\n git worktree remove <path>\n*** End Patch\n"
 }
 ```
 
@@ -1417,7 +1417,7 @@ null
 tool_use apply_patch
 ```json
 {
-  "patch": "*** Begin Patch\n*** Update File: /Users/user_c042661f/Documents/poms_skills/cleanup-loose-branches/SKILL.md\n@@\n Cleaned up:\n   - Local branches deleted:   <N>   (<list or \"+ N more\">)\n   - Remote branches deleted:  <N>\n   - Worktrees removed:        <N>\n   - Stashes dropped:          <N>\n   - Worktree metadata pruned: <N>\n+  - Branches merged to main:  <N>\n+  - PRs opened/reopened:      <N>\n+  - Commits cherry-picked:    <N>\n \n Kept:\n   - <N> branches with open/draft PRs\n-  - <N> branches flagged inspect (not yet decided)\n+  - <N> branches deliberately parked\n \n Still to decide:\n-  - <bucket>: <count>  — <one-line why it was held back>\n+  - <bucket>: <count>  — <one-line landing/delete decision still pending>\n ```\n*** End Patch\n"
+  "patch": "*** Begin Patch\n*** Update File: /home/<USER>/Documents/poms_skills/cleanup-loose-branches/SKILL.md\n@@\n Cleaned up:\n   - Local branches deleted:   <N>   (<list or \"+ N more\">)\n   - Remote branches deleted:  <N>\n   - Worktrees removed:        <N>\n   - Stashes dropped:          <N>\n   - Worktree metadata pruned: <N>\n+  - Branches merged to main:  <N>\n+  - PRs opened/reopened:      <N>\n+  - Commits cherry-picked:    <N>\n \n Kept:\n   - <N> branches with open/draft PRs\n-  - <N> branches flagged inspect (not yet decided)\n+  - <N> branches deliberately parked\n \n Still to decide:\n-  - <bucket>: <count>  — <one-line why it was held back>\n+  - <bucket>: <count>  — <one-line landing/delete decision still pending>\n ```\n*** End Patch\n"
 }
 ```
 
@@ -1433,8 +1433,8 @@ null
 tool_use exec_command
 ```json
 {
-  "cmd": "rg -n \"inspect|keep it|merge later|land-on-main|Core goal|merge-then-delete|rebase-and-PR|cherry-pick\" /Users/user_c042661f/Documents/poms_skills/cleanup-loose-branches/SKILL.md",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "cmd": "rg -n \"inspect|keep it|merge later|land-on-main|Core goal|merge-then-delete|rebase-and-PR|cherry-pick\" /home/<USER>/Documents/poms_skills/cleanup-loose-branches/SKILL.md",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -1452,8 +1452,8 @@ null
 tool_use exec_command
 ```json
 {
-  "cmd": "git diff -- /Users/user_c042661f/Documents/poms_skills/cleanup-loose-branches/SKILL.md",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "cmd": "git diff -- /home/<USER>/Documents/poms_skills/cleanup-loose-branches/SKILL.md",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -1470,7 +1470,7 @@ null
 
 Yes, it’s now clear and action-oriented.
 
-I updated [SKILL.md](/Users/user_c042661f/Documents/poms_skills/cleanup-loose-branches/SKILL.md:16) so the core goal is explicit: **get every loose piece of work onto `main` or ditch it**. The rubric now requires one of these outcomes per branch:
+I updated [SKILL.md](/home/<USER>/Documents/poms_skills/cleanup-loose-branches/SKILL.md:16) so the core goal is explicit: **get every loose piece of work onto `main` or ditch it**. The rubric now requires one of these outcomes per branch:
 
 `delete`, `merge-then-delete`, `rebase-and-PR`, `cherry-pick-then-delete`, or `keep`.
 
@@ -1483,7 +1483,7 @@ The old “inspect” escape hatch is mostly removed from final recommendations.
 tool_use apply_patch
 ```json
 {
-  "patch": "*** Begin Patch\n*** Update File: /Users/user_c042661f/Documents/poms_skills/cleanup-loose-branches/SKILL.md\n@@\n Same applies to stashes whose base is in the *inspect* bucket — show\n-the linkage so the user can decide them as a pair. Never let a\n+Same applies to stashes whose base is in the *uncertain* bucket or any\n+landing bucket — show the linkage so the user can decide them as a pair.\n+Never let a\n \"delete branch foo\" approval cascade into dropping a stash that\n references foo; stashes are always per-stash explicit approvals.\n@@\n-cherry-pick-delete  local           old/recovery            6/61          10d     #501 ✓   5 fixes landed in #501; cherry-pick 1 missing fix then drop\n+cherry-pick-then-delete local       old/recovery            6/61          10d     #501 ✓   5 fixes landed in #501; cherry-pick 1 missing fix then drop\n*** End Patch\n"
+  "patch": "*** Begin Patch\n*** Update File: /home/<USER>/Documents/poms_skills/cleanup-loose-branches/SKILL.md\n@@\n Same applies to stashes whose base is in the *inspect* bucket — show\n-the linkage so the user can decide them as a pair. Never let a\n+Same applies to stashes whose base is in the *uncertain* bucket or any\n+landing bucket — show the linkage so the user can decide them as a pair.\n+Never let a\n \"delete branch foo\" approval cascade into dropping a stash that\n references foo; stashes are always per-stash explicit approvals.\n@@\n-cherry-pick-delete  local           old/recovery            6/61          10d     #501 ✓   5 fixes landed in #501; cherry-pick 1 missing fix then drop\n+cherry-pick-then-delete local       old/recovery            6/61          10d     #501 ✓   5 fixes landed in #501; cherry-pick 1 missing fix then drop\n*** End Patch\n"
 }
 ```
 
@@ -1499,8 +1499,8 @@ null
 tool_use exec_command
 ```json
 {
-  "cmd": "rg -n \"inspect bucket|flagged inspect|keep it|merge later|REC                 |Core goal|Recommendation\\.\" /Users/user_c042661f/Documents/poms_skills/cleanup-loose-branches/SKILL.md",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "cmd": "rg -n \"inspect bucket|flagged inspect|keep it|merge later|REC                 |Core goal|Recommendation\\.\" /home/<USER>/Documents/poms_skills/cleanup-loose-branches/SKILL.md",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -1531,7 +1531,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git fetch --all --prune --quiet",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -1550,7 +1550,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git worktree list --porcelain",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -1569,7 +1569,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git status --porcelain=v1 && git diff --stat && git diff --stat --cached",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -1588,7 +1588,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git stash list --format='%gd|%cr|%s'",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -1607,7 +1607,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "gh pr list --state all --limit 200 --json number,state,headRefName,baseRefName,title,updatedAt,isDraft,mergedAt,author,url",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -1630,7 +1630,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git for-each-ref --format='%(refname:short)|%(committerdate:iso8601)|%(committerdate:relative)|%(upstream:short)|%(upstream:track)|%(objectname:short)|%(contents:subject)' refs/heads/",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -1649,7 +1649,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git branch -r --format='%(refname:short)|%(committerdate:iso8601)|%(committerdate:relative)|%(objectname:short)|%(contents:subject)'",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -1668,7 +1668,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "for b in megaplan/cloud-runtime-correctness-sprint megaplan/per-milestone-robustness-20260503 sandbox-fingerprint tiebreaker-tests; do printf '%s|' \"$b\"; git rev-list --left-right --count main...\"$b\"; done",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -1687,7 +1687,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "for b in megaplan/cloud-runtime-correctness-sprint megaplan/per-milestone-robustness-20260503 sandbox-fingerprint tiebreaker-tests; do n=$(git cherry main \"$b\" | grep -c '^+'); printf '%s|cherry_plus=%s\\n' \"$b\" \"$n\"; done",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -1706,7 +1706,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "for b in megaplan/cloud-runtime-correctness-sprint megaplan/per-milestone-robustness-20260503 sandbox-fingerprint tiebreaker-tests; do printf '%s|' \"$b\"; git merge-tree $(git merge-base main \"$b\") main \"$b\" 2>/dev/null | grep -c '<<<<<<<'; done",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -1725,7 +1725,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "for b in megaplan/cloud-runtime-correctness-sprint megaplan/per-milestone-robustness-20260503 sandbox-fingerprint tiebreaker-tests; do printf '\\n%s\\n' \"$b\"; git diff --stat main...\"$b\"; done",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -1748,7 +1748,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "for b in megaplan/cloud-runtime-correctness-sprint megaplan/per-milestone-robustness-20260503 sandbox-fingerprint tiebreaker-tests; do printf '\\n%s\\n' \"$b\"; git log --oneline main..\"$b\"; done",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -1767,7 +1767,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git log --all --oneline --grep='sandbox-fingerprint\\|MEGAPLAN_TRUSTED_CONTAINER\\|work_dir drift\\|tiebreaker_trigger\\|recovered from stash\\|Railway cloud\\|Shannon readiness\\|per-milestone robustness'",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -1786,7 +1786,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git log --all --oneline -- megaplan/profiles/__init__.py megaplan/profiles/standard.toml megaplan/types.py megaplan/workers.py tests/test_tiebreaker_trigger.py | head -80",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -1805,7 +1805,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git log --all --oneline -- megaplan/chain.py tests/test_chain.py megaplan/sandbox.py tests/test_sandbox.py megaplan/hermes_worker.py tests/test_hermes_worker_fireworks_streaming.py megaplan/execute/core.py megaplan/receipts/drift.py | head -100",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -1824,7 +1824,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git diff --name-only main...megaplan/cloud-runtime-correctness-sprint | wc -l | tr -d ' ' && git diff --name-only main...sandbox-fingerprint | wc -l | tr -d ' ' && git diff --name-only main...tiebreaker-tests | wc -l | tr -d ' '",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 1000
 }
@@ -1843,7 +1843,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "gh pr list --state open --limit 100 --json number,state,headRefName,title,isDraft,url",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -1902,7 +1902,7 @@ I also want the phase output to force those hidden-code checks into the report i
 tool_use apply_patch
 ```json
 {
-  "patch": "*** Begin Patch\n*** Update File: /Users/user_c042661f/Documents/poms_skills/cleanup-loose-branches/SKILL.md\n@@\n-- **Worth a subagent** (deploy via the `subagent-launcher` skill or\n-  the Agent tool with a focused brief): branches with 5+ unique\n-  commits where you need to compare each against main's history;\n-  cases where the branch name diverges from any PR's headRefName so\n-  the PR-state join missed; \"no PR ever opened but commits look\n-  load-bearing\" cases — exactly the situations where mis-classifying\n-  costs real work. Brief the subagent with: the branch, the unique\n-  commits, what \"already on main\" would look like (different SHA but\n-  equivalent patch / similar commit message / file overlap), and ask\n-  for a per-commit verdict plus an overall rec.\n+- **Deploy a subagent for meaningful ambiguity.** Use the\n+  `subagent-launcher` skill or the Agent tool with a focused brief for\n+  branches with 5+ unique commits, large/risky diffs, merge conflicts,\n+  no PR but load-bearing-looking commits, or cases where the branch name\n+  diverges from PR `headRefName` and the PR-state join may have missed\n+  context. This is not optional for ambiguous branches where a wrong call\n+  could lose real work. Brief the subagent with: the branch, the unique\n+  commits, what \"already on main\" would look like (different SHA but\n+  equivalent patch / […]
+  "patch": "*** Begin Patch\n*** Update File: /home/<USER>/Documents/poms_skills/cleanup-loose-branches/SKILL.md\n@@\n-- **Worth a subagent** (deploy via the `subagent-launcher` skill or\n-  the Agent tool with a focused brief): branches with 5+ unique\n-  commits where you need to compare each against main's history;\n-  cases where the branch name diverges from any PR's headRefName so\n-  the PR-state join missed; \"no PR ever opened but commits look\n-  load-bearing\" cases — exactly the situations where mis-classifying\n-  costs real work. Brief the subagent with: the branch, the unique\n-  commits, what \"already on main\" would look like (different SHA but\n-  equivalent patch / similar commit message / file overlap), and ask\n-  for a per-commit verdict plus an overall rec.\n+- **Deploy a subagent for meaningful ambiguity.** Use the\n+  `subagent-launcher` skill or the Agent tool with a focused brief for\n+  branches with 5+ unique commits, large/risky diffs, merge conflicts,\n+  no PR but load-bearing-looking commits, or cases where the branch name\n+  diverges from PR `headRefName` and the PR-state join may have missed\n+  context. This is not optional for ambiguous branches where a wrong call\n+  could lose real work. Brief the subagent with: the branch, the unique\n+  commits, what \"already on main\" would look like (different SHA but\n+  equivalent patch / […]
 
 > TOOL
 
@@ -1934,7 +1934,7 @@ And I added an output bucket so future surveys must report those hidden-work che
 tool_use apply_patch
 ```json
 {
-  "patch": "*** Begin Patch\n*** Update File: /Users/user_c042661f/Documents/poms_skills/cleanup-loose-branches/SKILL.md\n@@\n Below the table, list:\n \n - **Stashes**: numbered list with age, base branch, files touched, line delta\n - **Prunable worktrees**: just paths (one-line `git worktree prune` fix)\n - **Uncommitted work in current checkout** (one-line summary, if any)\n+- **Other hidden work checked**: untracked files, plausible ignored\n+  source/patch files, tags/odd refs, and fork PRs; list any non-empty\n+  findings separately from branch recommendations.\n - **Counts**: \"12 delete-able / 2 merge / 4 PR-needed / 1 cherry-pick / 8 keep / 3 stashes / 2 prunable worktrees\"\n*** End Patch\n"
+  "patch": "*** Begin Patch\n*** Update File: /home/<USER>/Documents/poms_skills/cleanup-loose-branches/SKILL.md\n@@\n Below the table, list:\n \n - **Stashes**: numbered list with age, base branch, files touched, line delta\n - **Prunable worktrees**: just paths (one-line `git worktree prune` fix)\n - **Uncommitted work in current checkout** (one-line summary, if any)\n+- **Other hidden work checked**: untracked files, plausible ignored\n+  source/patch files, tags/odd refs, and fork PRs; list any non-empty\n+  findings separately from branch recommendations.\n - **Counts**: \"12 delete-able / 2 merge / 4 PR-needed / 1 cherry-pick / 8 keep / 3 stashes / 2 prunable worktrees\"\n*** End Patch\n"
 }
 ```
 
@@ -1968,7 +1968,7 @@ The output format is now a readable compact table header plus wrapped detail lin
 tool_use apply_patch
 ```json
 {
-  "patch": "*** Begin Patch\n*** Update File: /Users/user_c042661f/Documents/poms_skills/cleanup-loose-branches/SKILL.md\n@@\n - **Landing evidence:** for every branch with `cherry +N`, inspect the\n   diff shape (`git diff --stat main...<branch>`), commit subjects, PR\n   state, conflict count, and same-file history. Decide if it is:\n   already superseded, small and merge-ready, large enough to require a\n   PR/review, or active work that should remain parked.\n+- **Change description:** summarize what the branch changes in plain\n+  language beside the recommendation. Do not make the user infer intent\n+  from branch names or file counts. Use commit subjects, touched areas,\n+  and key diff files to write one concise sentence such as \"adds\n+  recovered tiebreaker trigger coverage only\" or \"hardens Railway cloud\n+  chain startup, preflight, and Shannon readiness checks.\"\n@@\n-One table, sorted by recommendation (delete → cherry-pick-then-delete →\n-merge-then-delete → rebase-and-PR → keep), then by age descending.\n-Columns:\n+One table, sorted by recommendation (delete → cherry-pick-then-delete →\n+merge-then-delete → rebase-and-PR → keep), then by age descending.\n+Columns:\n \n ```\n-REC                 WHERE           BRANCH                  AHEAD/BEHIND  AGE     PR        REASON\n-delete              local+remote    fix/typo-in-readme      0/0           merged  #412 ✓   PR merged 2026-03-02, safe to drop\n-delete              local           experiment/old-idea     8/142         11mo    none     stale, superseded by main\n-cherry-pick-then-delete local       old/recovery            6/61          10d     #501 ✓   5 fixes landed in #501; cherry-pick 1 missing fix then drop\n-merge-then-delete   local+remote    fix/cli-null-check      1/0           2d […]
+  "patch": "*** Begin Patch\n*** Update File: /home/<USER>/Documents/poms_skills/cleanup-loose-branches/SKILL.md\n@@\n - **Landing evidence:** for every branch with `cherry +N`, inspect the\n   diff shape (`git diff --stat main...<branch>`), commit subjects, PR\n   state, conflict count, and same-file history. Decide if it is:\n   already superseded, small and merge-ready, large enough to require a\n   PR/review, or active work that should remain parked.\n+- **Change description:** summarize what the branch changes in plain\n+  language beside the recommendation. Do not make the user infer intent\n+  from branch names or file counts. Use commit subjects, touched areas,\n+  and key diff files to write one concise sentence such as \"adds\n+  recovered tiebreaker trigger coverage only\" or \"hardens Railway cloud\n+  chain startup, preflight, and Shannon readiness checks.\"\n@@\n-One table, sorted by recommendation (delete → cherry-pick-then-delete →\n-merge-then-delete → rebase-and-PR → keep), then by age descending.\n-Columns:\n+One table, sorted by recommendation (delete → cherry-pick-then-delete →\n+merge-then-delete → rebase-and-PR → keep), then by age descending.\n+Columns:\n \n ```\n-REC                 WHERE           BRANCH                  AHEAD/BEHIND  AGE     PR        REASON\n-delete              local+remote    fix/typo-in-readme      0/0           merged  #412 ✓   PR merged 2026-03-02, safe to drop\n-delete              local           experiment/old-idea     8/142         11mo    none     stale, superseded by main\n-cherry-pick-then-delete local       old/recovery            6/61          10d     #501 ✓   5 fixes landed in #501; cherry-pick 1 missing fix then drop\n-merge-then-delete   local+remote    fix/cli-null-check      1/0           2d […]
 
 > TOOL
 
@@ -1995,7 +1995,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git status -sb",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -2014,7 +2014,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "gh pr list --state open --limit 100 --json number,headRefName,title,url",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -2033,7 +2033,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git branch -vv",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -2056,7 +2056,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git switch sandbox-fingerprint && git rebase main",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -2075,7 +2075,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "uv run pytest tests/test_workers.py tests/test_profiles.py",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -2117,7 +2117,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git switch main && git merge --ff-only sandbox-fingerprint && git push origin main",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -2159,7 +2159,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git status -sb",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -2178,7 +2178,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git diff --stat -- uv.lock && git diff -- uv.lock | head -120",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -2200,7 +2200,7 @@ The worktree is clean again. I’m deleting the landed sandbox branch and the su
 tool_use apply_patch
 ```json
 {
-  "patch": "*** Begin Patch\n*** Update File: /Users/user_c042661f/Documents/megaplan/uv.lock\n@@\n dependencies = [\n     { name = \"pydantic\" },\n-    { name = \"python-ulid\" },\n     { name = \"pyyaml\" },\n ]\n@@\n     { name = \"pydantic\", specifier = \">=2.0\" },\n     { name = \"pyjwt\", extras = [\"crypto\"], marker = \"extra == 'agent'\" },\n     { name = \"python-dotenv\", marker = \"extra == 'agent'\" },\n-    { name = \"python-ulid\", specifier = \">=3.0\" },\n     { name = \"pyyaml\", specifier = \">=6.0\" },\n     { name = \"requests\", marker = \"extra == 'agent'\" },\n     { name = \"rich\", marker = \"extra == 'agent'\" },\n@@\n-[[package]]\n-name = \"python-ulid\"\n-version = \"3.1.0\"\n-source = { registry = \"https://pypi.org/simple\" }\n-sdist = { url = \"https://files.pythonhosted.org/packages/40/7e/0d6c82b5ccc71e7c833aed43d9e8468e1f2ff0be1b3f657a6fcafbb8433d/python_ulid-3.1.0.tar.gz\", hash = \"sha256:ff0410a598bc5f6b01b602851a3296ede6f91389f913a5d5f8c496003836f636\", size = 93175, upload-time = \"2025-08-18T16:09:26.305Z\" }\n-wheels = [\n-    { url = \"https://files.pythonhosted.org/packages/6c/a0/4ed6632b70a52de845df056654162acdebaf97c20e3212c559ac43e7216e/python_ulid-3.1.0-py3-none-any.whl\", hash = \"sha256:e2cdc979c8c877029b4b7a38a6fba3bc4578e4f109a308419ff4d3ccf0a46619\", size = 11577, upload-time = \"2025-08-18T16:09:25.047Z\" },\n-]\n-\n [[package]]\n name = \"pyyaml\"\n version = \"6.0.3\"\n*** End Patch\n"
+  "patch": "*** Begin Patch\n*** Update File: /home/<USER>/Documents/megaplan/uv.lock\n@@\n dependencies = [\n     { name = \"pydantic\" },\n-    { name = \"python-ulid\" },\n     { name = \"pyyaml\" },\n ]\n@@\n     { name = \"pydantic\", specifier = \">=2.0\" },\n     { name = \"pyjwt\", extras = [\"crypto\"], marker = \"extra == 'agent'\" },\n     { name = \"python-dotenv\", marker = \"extra == 'agent'\" },\n-    { name = \"python-ulid\", specifier = \">=3.0\" },\n     { name = \"pyyaml\", specifier = \">=6.0\" },\n     { name = \"requests\", marker = \"extra == 'agent'\" },\n     { name = \"rich\", marker = \"extra == 'agent'\" },\n@@\n-[[package]]\n-name = \"python-ulid\"\n-version = \"3.1.0\"\n-source = { registry = \"https://pypi.org/simple\" }\n-sdist = { url = \"https://files.pythonhosted.org/packages/40/7e/0d6c82b5ccc71e7c833aed43d9e8468e1f2ff0be1b3f657a6fcafbb8433d/python_ulid-3.1.0.tar.gz\", hash = \"sha256:ff0410a598bc5f6b01b602851a3296ede6f91389f913a5d5f8c496003836f636\", size = 93175, upload-time = \"2025-08-18T16:09:26.305Z\" }\n-wheels = [\n-    { url = \"https://files.pythonhosted.org/packages/6c/a0/4ed6632b70a52de845df056654162acdebaf97c20e3212c559ac43e7216e/python_ulid-3.1.0-py3-none-any.whl\", hash = \"sha256:e2cdc979c8c877029b4b7a38a6fba3bc4578e4f109a308419ff4d3ccf0a46619\", size = 11577, upload-time = \"2025-08-18T16:09:25.047Z\" },\n-]\n-\n [[package]]\n name = \"pyyaml\"\n version = \"6.0.3\"\n*** End Patch\n"
 }
 ```
 
@@ -2217,7 +2217,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git status -sb",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -2240,7 +2240,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git branch -d sandbox-fingerprint && git branch -D megaplan/per-milestone-robustness-20260503 && git push origin --delete sandbox-fingerprint megaplan/per-milestone-robustness-20260503",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -2263,7 +2263,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git branch -D sandbox-fingerprint && git branch -D megaplan/per-milestone-robustness-20260503 && git push origin --delete sandbox-fingerprint megaplan/per-milestone-robustness-20260503",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -2305,7 +2305,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git switch tiebreaker-tests && git rebase main",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -2324,7 +2324,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "uv run pytest tests/test_tiebreaker_trigger.py",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -2343,7 +2343,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git status -sb",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -2362,7 +2362,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git diff --stat -- uv.lock",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -2384,7 +2384,7 @@ PR #29 is open for `tiebreaker-tests`. I’m rebasing the cloud/runtime branch o
 tool_use apply_patch
 ```json
 {
-  "patch": "*** Begin Patch\n*** Update File: /Users/user_c042661f/Documents/megaplan/uv.lock\n@@\n dependencies = [\n     { name = \"pydantic\" },\n-    { name = \"python-ulid\" },\n     { name = \"pyyaml\" },\n ]\n@@\n     { name = \"pydantic\", specifier = \">=2.0\" },\n     { name = \"pyjwt\", extras = [\"crypto\"], marker = \"extra == 'agent'\" },\n     { name = \"python-dotenv\", marker = \"extra == 'agent'\" },\n-    { name = \"python-ulid\", specifier = \">=3.0\" },\n     { name = \"pyyaml\", specifier = \">=6.0\" },\n     { name = \"requests\", marker = \"extra == 'agent'\" },\n     { name = \"rich\", marker = \"extra == 'agent'\" },\n@@\n-[[package]]\n-name = \"python-ulid\"\n-version = \"3.1.0\"\n-source = { registry = \"https://pypi.org/simple\" }\n-sdist = { url = \"https://files.pythonhosted.org/packages/40/7e/0d6c82b5ccc71e7c833aed43d9e8468e1f2ff0be1b3f657a6fcafbb8433d/python_ulid-3.1.0.tar.gz\", hash = \"sha256:ff0410a598bc5f6b01b602851a3296ede6f91389f913a5d5f8c496003836f636\", size = 93175, upload-time = \"2025-08-18T16:09:26.305Z\" }\n-wheels = [\n-    { url = \"https://files.pythonhosted.org/packages/6c/a0/4ed6632b70a52de845df056654162acdebaf97c20e3212c559ac43e7216e/python_ulid-3.1.0-py3-none-any.whl\", hash = \"sha256:e2cdc979c8c877029b4b7a38a6fba3bc4578e4f109a308419ff4d3ccf0a46619\", size = 11577, upload-time = \"2025-08-18T16:09:25.047Z\" },\n-]\n-\n [[package]]\n name = \"pyyaml\"\n version = \"6.0.3\"\n*** End Patch\n"
+  "patch": "*** Begin Patch\n*** Update File: /home/<USER>/Documents/megaplan/uv.lock\n@@\n dependencies = [\n     { name = \"pydantic\" },\n-    { name = \"python-ulid\" },\n     { name = \"pyyaml\" },\n ]\n@@\n     { name = \"pydantic\", specifier = \">=2.0\" },\n     { name = \"pyjwt\", extras = [\"crypto\"], marker = \"extra == 'agent'\" },\n     { name = \"python-dotenv\", marker = \"extra == 'agent'\" },\n-    { name = \"python-ulid\", specifier = \">=3.0\" },\n     { name = \"pyyaml\", specifier = \">=6.0\" },\n     { name = \"requests\", marker = \"extra == 'agent'\" },\n     { name = \"rich\", marker = \"extra == 'agent'\" },\n@@\n-[[package]]\n-name = \"python-ulid\"\n-version = \"3.1.0\"\n-source = { registry = \"https://pypi.org/simple\" }\n-sdist = { url = \"https://files.pythonhosted.org/packages/40/7e/0d6c82b5ccc71e7c833aed43d9e8468e1f2ff0be1b3f657a6fcafbb8433d/python_ulid-3.1.0.tar.gz\", hash = \"sha256:ff0410a598bc5f6b01b602851a3296ede6f91389f913a5d5f8c496003836f636\", size = 93175, upload-time = \"2025-08-18T16:09:26.305Z\" }\n-wheels = [\n-    { url = \"https://files.pythonhosted.org/packages/6c/a0/4ed6632b70a52de845df056654162acdebaf97c20e3212c559ac43e7216e/python_ulid-3.1.0-py3-none-any.whl\", hash = \"sha256:e2cdc979c8c877029b4b7a38a6fba3bc4578e4f109a308419ff4d3ccf0a46619\", size = 11577, upload-time = \"2025-08-18T16:09:25.047Z\" },\n-]\n-\n [[package]]\n name = \"pyyaml\"\n version = \"6.0.3\"\n*** End Patch\n"
 }
 ```
 
@@ -2401,7 +2401,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git status -sb && git push --force-with-lease origin tiebreaker-tests",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -2439,7 +2439,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "gh pr create --base main --head tiebreaker-tests --title \"tests: recover tiebreaker trigger coverage\" --body \"## Summary\n- recover tiebreaker trigger regression coverage from the branch\n- rebase onto current main after sandbox-fingerprint landed\n\n## Verification\n- uv run pytest tests/test_tiebreaker_trigger.py\"",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -2481,7 +2481,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git switch megaplan/cloud-runtime-correctness-sprint && git rebase main",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -2504,7 +2504,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "uv run pytest tests/test_cloud_chain_wrapper.py tests/test_cloud_preflight.py tests/test_cloud_railway.py tests/test_cloud_template.py tests/test_chain.py tests/test_profiles.py",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -2546,7 +2546,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "sed -n '1,240p' tests/test_cloud_template.py",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -2565,7 +2565,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "sed -n '1,240p' megaplan/cloud/template.py",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -2584,7 +2584,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "sed -n '1,220p' tests/fixtures/cloud/Dockerfile.v0.19.0",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -2603,7 +2603,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git diff main...HEAD -- megaplan/cloud/template.py tests/test_cloud_template.py tests/fixtures/cloud/Dockerfile.v0.19.0",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -2626,7 +2626,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "uv run pytest tests/test_cloud_template.py::test_render_dockerfile_matches_v0190_baseline_when_toolchains_omitted -vv",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -2649,7 +2649,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "sed -n '1,180p' megaplan/cloud/templates/Dockerfile",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -2667,7 +2667,7 @@ null
 tool_use apply_patch
 ```json
 {
-  "patch": "*** Begin Patch\n*** Update File: /Users/user_c042661f/Documents/megaplan/tests/fixtures/cloud/Dockerfile.v0.19.0\n@@\n-# Codex CLI + Claude Code + Shannon, symlinked into /usr/local/bin so non-interactive shells see them.\n-RUN . \"$NVM_DIR/nvm.sh\" \\\n-    && npm i -g @openai/codex @anthropic-ai/claude-code @dexh/shannon@0.0.2 \\\n-    && NVBIN=$(ls -d /root/.nvm/versions/node/*/bin | head -1) \\\n-    && ln -sf \"$NVBIN/codex\"  /usr/local/bin/codex \\\n-    && ln -sf \"$NVBIN/claude\" /usr/local/bin/claude \\\n-    && ln -sf \"$NVBIN/shannon\" /usr/local/bin/shannon \\\n-    && codex --version \\\n-    && claude --version \\\n-    && shannon --version\n-\n # Bun runtime used by Shannon.\n RUN curl -fsSL https://bun.sh/install | bash \\\n     && ln -sf /root/.bun/bin/bun /usr/local/bin/bun \\\n     && bun --version\n \n+# Codex CLI + Claude Code + Shannon, symlinked into /usr/local/bin so non-interactive shells see them.\n+RUN . \"$NVM_DIR/nvm.sh\" \\\n+    && npm i -g @openai/codex @anthropic-ai/claude-code @dexh/shannon@0.0.2 \\\n+    && NVBIN=$(ls -d /root/.nvm/versions/node/*/bin | head -1) \\\n+    && ln -sf \"$NVBIN/codex\"  /usr/local/bin/codex \\\n+    && ln -sf \"$NVBIN/claude\" /usr/local/bin/claude \\\n+    && ln -sf \"$NVBIN/shannon\" /usr/local/bin/shannon \\\n+    && codex --version \\\n+    && claude --version \\\n+    && command -v shannon\n+\n # Megaplan from source\n-RUN pip install --no-cache-dir git+https://github.com/peteromallet/megaplan.git \\\n+RUN pip install --no-cache-dir \"megaplan-harness[agent] @ git+https://github.com/peteromallet/megaplan.git\" \\\n     && megaplan --help > /dev/null\n*** End Patch\n"
+  "patch": "*** Begin Patch\n*** Update File: /home/<USER>/Documents/megaplan/tests/fixtures/cloud/Dockerfile.v0.19.0\n@@\n-# Codex CLI + Claude Code + Shannon, symlinked into /usr/local/bin so non-interactive shells see them.\n-RUN . \"$NVM_DIR/nvm.sh\" \\\n-    && npm i -g @openai/codex @anthropic-ai/claude-code @dexh/shannon@0.0.2 \\\n-    && NVBIN=$(ls -d /root/.nvm/versions/node/*/bin | head -1) \\\n-    && ln -sf \"$NVBIN/codex\"  /usr/local/bin/codex \\\n-    && ln -sf \"$NVBIN/claude\" /usr/local/bin/claude \\\n-    && ln -sf \"$NVBIN/shannon\" /usr/local/bin/shannon \\\n-    && codex --version \\\n-    && claude --version \\\n-    && shannon --version\n-\n # Bun runtime used by Shannon.\n RUN curl -fsSL https://bun.sh/install | bash \\\n     && ln -sf /root/.bun/bin/bun /usr/local/bin/bun \\\n     && bun --version\n \n+# Codex CLI + Claude Code + Shannon, symlinked into /usr/local/bin so non-interactive shells see them.\n+RUN . \"$NVM_DIR/nvm.sh\" \\\n+    && npm i -g @openai/codex @anthropic-ai/claude-code @dexh/shannon@0.0.2 \\\n+    && NVBIN=$(ls -d /root/.nvm/versions/node/*/bin | head -1) \\\n+    && ln -sf \"$NVBIN/codex\"  /usr/local/bin/codex \\\n+    && ln -sf \"$NVBIN/claude\" /usr/local/bin/claude \\\n+    && ln -sf \"$NVBIN/shannon\" /usr/local/bin/shannon \\\n+    && codex --version \\\n+    && claude --version \\\n+    && command -v shannon\n+\n # Megaplan from source\n-RUN pip install --no-cache-dir git+https://github.com/peteromallet/megaplan.git \\\n+RUN pip install --no-cache-dir \"megaplan-harness[agent] @ git+https://github.com/peteromallet/megaplan.git\" \\\n     && megaplan --help > /dev/null\n*** End Patch\n"
 }
 ```
 
@@ -2684,7 +2684,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "uv run pytest tests/test_cloud_chain_wrapper.py tests/test_cloud_preflight.py tests/test_cloud_railway.py tests/test_cloud_template.py tests/test_chain.py tests/test_profiles.py",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -2722,7 +2722,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git status -sb",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -2741,7 +2741,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git diff --stat",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -2764,7 +2764,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git add tests/fixtures/cloud/Dockerfile.v0.19.0 && git commit -m \"test(cloud): refresh Dockerfile golden for cloud runner\" && git push --force-with-lease origin megaplan/cloud-runtime-correctness-sprint",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -2802,7 +2802,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "gh pr create --base main --head megaplan/cloud-runtime-correctness-sprint --title \"cloud: harden chain runtime and runner image\" --body \"## Summary\n- harden cloud chain runtime and Railway command handling\n- add Shannon readiness/preflight coverage and cloud runner runtime dependencies\n- refresh Dockerfile golden fixture after runner image changes\n\n## Verification\n- uv run pytest tests/test_cloud_chain_wrapper.py tests/test_cloud_preflight.py tests/test_cloud_railway.py tests/test_cloud_template.py tests/test_chain.py tests/test_profiles.py\"",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -2866,7 +2866,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git status -sb",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -2885,7 +2885,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "gh pr list --state open --limit 20 --json number,headRefName,title,url,isDraft",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -2904,7 +2904,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git branch -r --format='%(refname:short)'",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -2923,7 +2923,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git log --oneline --decorate --max-count=5 origin/main",
-  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "workdir": "/home/<USER>/Documents/megaplan",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }

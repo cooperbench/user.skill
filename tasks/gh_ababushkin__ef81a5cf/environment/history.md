@@ -615,7 +615,7 @@ tool_use Bash
 id: toolu_011m3VQMFSAwQV91kHeXnEoy
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle\nfor b in ABA-373-handoff-schema ABA-373 ABA-328; do\n  echo \"=== $b ===\"\n  git show $b:drain_cycle/handoff.py 2>/dev/null | grep -c read_partial || echo \"no handoff.py\"\ndone\necho \"--- when did handoff.py / read_partial first appear ---\"\ngit log --oneline main..ABA-393 -- drain_cycle/handoff.py tests/test_handoff.py",
+  "command": "cd /home/<USER>/src/drain-cycle\nfor b in ABA-373-handoff-schema ABA-373 ABA-328; do\n  echo \"=== $b ===\"\n  git show $b:drain_cycle/handoff.py 2>/dev/null | grep -c read_partial || echo \"no handoff.py\"\ndone\necho \"--- when did handoff.py / read_partial first appear ---\"\ngit log --oneline main..ABA-393 -- drain_cycle/handoff.py tests/test_handoff.py",
   "description": "Determine which PR introduced handoff + read_partial"
 }
 ```
@@ -645,7 +645,7 @@ tool_use Bash
 id: toolu_0122R5Gd3gwWr4ksTjqNbxzQ
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle\ngh pr comment 22 --body \"$(cat <<'EOF'\n## Handoff test suite — failure modes worth adding\n\nReviewing `tests/test_handoff.py` against `read`/`read_partial` branch-by-branch. A few gaps — two of which look like latent bugs, not just missing coverage. Flagging here so we can walk through and decide the contract, then do one sweep.\n\n### Possible bugs (not just missing tests)\n\n**1. Empty `title` is silently accepted (asymmetric with `url`)**\nThe validity check is:\n```python\nif not isinstance(title, str) or not isinstance(url, str) or not url:\n```\n`not url` rejects an empty URL, but there is no `not title` — so `{\"title\": \"\", \"url\": \".../pull/1\"}` passes and yields `PullRequest(title=\"\", ...)`. No test pins this either way. Decide: is empty title intentional (informational field, url is the real signal) or should we add `not title`? Right now the behaviour is accidental.\n\n**2. A verdict that is a dict but missing `\"result\"` passes the gate**\n`_parse_dict` only checks `isinstance(raw, dict)` — it doesn't look inside. But the orchestrator's `_set_verdict_span_attrs` does `outcome.outcome_verdict[\"result\"]` (subscript), which `KeyError`s on a result-less verdict. The recovery path uses `.get(\"result\")` and is safe — so the two readers disagree. `handoff.read` lets `{\"outcome_verdict\": {\"foo\": 1}}` straight through. Either handoff validates `result`, or the span-attr code switches […]
+  "command": "cd /home/<USER>/src/drain-cycle\ngh pr comment 22 --body \"$(cat <<'EOF'\n## Handoff test suite — failure modes worth adding\n\nReviewing `tests/test_handoff.py` against `read`/`read_partial` branch-by-branch. A few gaps — two of which look like latent bugs, not just missing coverage. Flagging here so we can walk through and decide the contract, then do one sweep.\n\n### Possible bugs (not just missing tests)\n\n**1. Empty `title` is silently accepted (asymmetric with `url`)**\nThe validity check is:\n```python\nif not isinstance(title, str) or not isinstance(url, str) or not url:\n```\n`not url` rejects an empty URL, but there is no `not title` — so `{\"title\": \"\", \"url\": \".../pull/1\"}` passes and yields `PullRequest(title=\"\", ...)`. No test pins this either way. Decide: is empty title intentional (informational field, url is the real signal) or should we add `not title`? Right now the behaviour is accidental.\n\n**2. A verdict that is a dict but missing `\"result\"` passes the gate**\n`_parse_dict` only checks `isinstance(raw, dict)` — it doesn't look inside. But the orchestrator's `_set_verdict_span_attrs` does `outcome.outcome_verdict[\"result\"]` (subscript), which `KeyError`s on a result-less verdict. The recovery path uses `.get(\"result\")` and is safe — so the two readers disagree. `handoff.read` lets `{\"outcome_verdict\": {\"foo\": 1}}` straight through. Either handoff validates `result`, or the span-attr code switches […]
 
 > TOOL
 
@@ -681,7 +681,7 @@ tool_use Bash
 id: toolu_012jhfocViHmfv4riedVMT5S
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle\necho \"=== files changed in #27 (ABA-393-03-tests vs its base ABA-393-02-orchestrator) ===\"\ngit diff --stat ABA-393-02-orchestrator..ABA-393-03-tests\necho\necho \"=== files changed in #28 (ABA-393 vs its base ABA-393-03-tests) ===\"\ngit diff --stat ABA-393-03-tests..ABA-393",
+  "command": "cd /home/<USER>/src/drain-cycle\necho \"=== files changed in #27 (ABA-393-03-tests vs its base ABA-393-02-orchestrator) ===\"\ngit diff --stat ABA-393-02-orchestrator..ABA-393-03-tests\necho\necho \"=== files changed in #28 (ABA-393 vs its base ABA-393-03-tests) ===\"\ngit diff --stat ABA-393-03-tests..ABA-393",
   "description": "Show files changed in PRs 27 and 28"
 }
 ```
@@ -709,7 +709,7 @@ tool_use Bash
 id: toolu_01AC4wgUuRhL2DbhPNRP1vYc
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle\ngit show ABA-393-03-tests:tests/test_orchestrator_finishing.py",
+  "command": "cd /home/<USER>/src/drain-cycle\ngit show ABA-393-03-tests:tests/test_orchestrator_finishing.py",
   "description": "Show finishing recovery test file from PR 27"
 }
 ```
@@ -777,7 +777,7 @@ tool_use Bash
 id: toolu_01Y62tUYpsQeEpfTjTWfXiLt
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle\ngit diff ABA-393-03-tests..ABA-393 -- drain_cycle/orchestrator.py",
+  "command": "cd /home/<USER>/src/drain-cycle\ngit diff ABA-393-03-tests..ABA-393 -- drain_cycle/orchestrator.py",
   "description": "Show the #28 hardening diff"
 }
 ```
@@ -867,7 +867,7 @@ tool_use Bash
 id: toolu_01MJKgkNxxA2eyyb7a48YDbv
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle\ngit worktree add -q /tmp/dc-pr27 ABA-393-03-tests 2>&1 | tail -2\necho \"=== worktree HEAD ===\"\ngit -C /tmp/dc-pr27 log --oneline -1\necho \"=== confirm orchestrator at #27 does NOT pass finishing_runs at stack-no-prs record() ===\"\ngit -C /tmp/dc-pr27 grep -n 'finishing_runs=finishing_runs' -- drain_cycle/orchestrator.py",
+  "command": "cd /home/<USER>/src/drain-cycle\ngit worktree add -q /tmp/dc-pr27 ABA-393-03-tests 2>&1 | tail -2\necho \"=== worktree HEAD ===\"\ngit -C /tmp/dc-pr27 log --oneline -1\necho \"=== confirm orchestrator at #27 does NOT pass finishing_runs at stack-no-prs record() ===\"\ngit -C /tmp/dc-pr27 grep -n 'finishing_runs=finishing_runs' -- drain_cycle/orchestrator.py",
   "description": "Create worktree at PR27 tip and check orchestrator"
 }
 ```
@@ -911,7 +911,7 @@ Creating virtual environment at: .venv
 Installed 33 packages in 44ms
 .........                                                                [100%]
 9 passed in 5.68s
-Shell cwd was reset to /Users/anton/src/drain-cycle
+Shell cwd was reset to /home/<USER>/src/drain-cycle
 ```
 
 > AGENT
@@ -924,7 +924,7 @@ tool_use Bash
 id: toolu_01XiefELoEXomD9LjT5CP82H
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle\necho \"=== occurrences at #27 ===\"\ngit grep -c 'finishing_runs=finishing_runs' ABA-393-03-tests -- drain_cycle/orchestrator.py\necho \"=== occurrences at #28 tip ===\"\ngit grep -c 'finishing_runs=finishing_runs' ABA-393 -- drain_cycle/orchestrator.py\necho \"=== the record() call context #28 added it to (line ~913 region) ===\"\ngit show ABA-393:drain_cycle/orchestrator.py | sed -n '900,945p'",
+  "command": "cd /home/<USER>/src/drain-cycle\necho \"=== occurrences at #27 ===\"\ngit grep -c 'finishing_runs=finishing_runs' ABA-393-03-tests -- drain_cycle/orchestrator.py\necho \"=== occurrences at #28 tip ===\"\ngit grep -c 'finishing_runs=finishing_runs' ABA-393 -- drain_cycle/orchestrator.py\necho \"=== the record() call context #28 added it to (line ~913 region) ===\"\ngit show ABA-393:drain_cycle/orchestrator.py | sed -n '900,945p'",
   "description": "Compare finishing_runs occurrences and show context"
 }
 ```
@@ -997,7 +997,7 @@ tool_use Bash
 id: toolu_0144uCbEUrqmiBMk9FqKKPjF
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle\ngit worktree add -q /tmp/dc-pr28 ABA-393 2>&1 | tail -1\necho \"=== tests referencing #28 behaviours ===\"\necho \"-- TimeoutExpired / timeout --\"; git grep -in 'timeout\\|TimeoutExpired' ABA-393 -- 'tests/*.py' | grep -i finish\necho \"-- post_spawn_state / revert-after-finishing --\"; git grep -in 'post_spawn_state\\|err-outcome-verifier-fail' ABA-393 -- 'tests/*.py'\necho \"-- verdict propagation after finishing at stack site --\"; git grep -in 'read_partial\\|outcome_verdict' ABA-393 -- 'tests/test_orchestrator_finishing.py' | head\necho \"=== full suite at #28 tip ===\"\ncd /tmp/dc-pr28 && uv run pytest -q 2>&1 | tail -8",
+  "command": "cd /home/<USER>/src/drain-cycle\ngit worktree add -q /tmp/dc-pr28 ABA-393 2>&1 | tail -1\necho \"=== tests referencing #28 behaviours ===\"\necho \"-- TimeoutExpired / timeout --\"; git grep -in 'timeout\\|TimeoutExpired' ABA-393 -- 'tests/*.py' | grep -i finish\necho \"-- post_spawn_state / revert-after-finishing --\"; git grep -in 'post_spawn_state\\|err-outcome-verifier-fail' ABA-393 -- 'tests/*.py'\necho \"-- verdict propagation after finishing at stack site --\"; git grep -in 'read_partial\\|outcome_verdict' ABA-393 -- 'tests/test_orchestrator_finishing.py' | head\necho \"=== full suite at #28 tip ===\"\ncd /tmp/dc-pr28 && uv run pytest -q 2>&1 | tail -8",
   "description": "Check #28 behaviour test coverage and run full suite"
 }
 ```
@@ -1022,7 +1022,7 @@ Installed 33 packages in 27ms
 ........................................................................ [ 98%]
 .....                                                                    [100%]
 365 passed in 43.69s
-Shell cwd was reset to /Users/anton/src/drain-cycle
+Shell cwd was reset to /home/<USER>/src/drain-cycle
 ```
 
 > TOOL
@@ -1031,7 +1031,7 @@ tool_use Bash
 id: toolu_01Cf2mKoi3GHhp4pJR6icRYo
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle\ngit worktree remove /tmp/dc-pr27 --force 2>/dev/null; git worktree remove /tmp/dc-pr28 --force 2>/dev/null\ngit worktree list | tail -3; echo \"cleaned\"",
+  "command": "cd /home/<USER>/src/drain-cycle\ngit worktree remove /tmp/dc-pr27 --force 2>/dev/null; git worktree remove /tmp/dc-pr28 --force 2>/dev/null\ngit worktree list | tail -3; echo \"cleaned\"",
   "description": "Remove temporary worktrees"
 }
 ```
@@ -1042,7 +1042,7 @@ tool_result
 id: toolu_01Cf2mKoi3GHhp4pJR6icRYo
 ```
 ok
-/Users/anton/src/drain-cycle c7addcf [main]
+/home/<USER>/src/drain-cycle c7addcf [main]
 cleaned
 ```
 

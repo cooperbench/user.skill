@@ -31,7 +31,7 @@ I've completed a thorough analysis of the filter ribbon implementation across th
 
 ### 1. **Filter Components & Architecture**
 
-**Filter Bar Component** (`/Users/pc/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx`, lines 1-289)
+**Filter Bar Component** (`/home/<USER>/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx`, lines 1-289)
 - Shared reusable `FilterBar` component used across multiple pages
 - Supports three filter types: `"select"`, `"boolean"`, and `"date-range"`
 - Features:
@@ -42,7 +42,7 @@ I've completed a thorough analysis of the filter ribbon implementation across th
   - "Clear all" button for bulk removal
   - Dynamic UI that shows available vs active filters
 
-**Filter Params Hook** (`/Users/pc/web3/ReleaseBeacon/web/components/filters/use-filter-params.ts`, lines 1-71)
+**Filter Params Hook** (`/home/<USER>/web3/ReleaseBeacon/web/components/filters/use-filter-params.ts`, lines 1-71)
 - Syncs filter state with URL query parameters
 - Only allows whitelisted keys to prevent cross-page filter leakage
 - Handles pagination reset when navigating between pages
@@ -50,7 +50,7 @@ I've completed a thorough analysis of the filter ribbon implementation across th
 
 ### 2. **Releases Page Implementation**
 
-**File**: `/Users/pc/web3/ReleaseBeacon/web/app/releases/page.tsx` (lines 1-509)
+**File**: `/home/<USER>/web3/ReleaseBeacon/web/app/releases/page.tsx` (lines 1-509)
 
 **Filter Configuration** (lines 59-103):
 - Allowed filter keys: `["project", "provider", "urgency", "date", "excluded"]`
@@ -67,7 +67,7 @@ tool_use Read
 id: toolu_vrtx_01P7V4MBbBiu7uoeztA3DZk3
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/app/subscriptions/page.tsx"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/app/subscriptions/page.tsx"
 }
 ```
 
@@ -77,7 +77,7 @@ tool_use Read
 id: toolu_vrtx_012o6dVHcts1tmFYxMxtvKo9
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/app/releases/page.tsx"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/app/releases/page.tsx"
 }
 ```
 
@@ -87,7 +87,7 @@ tool_use Read
 id: toolu_vrtx_01C1kBR55ydFmxMhimxrZ5Mr
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx"
 }
 ```
 
@@ -251,7 +251,7 @@ tool_use Read
 id: toolu_vrtx_017aP5bFTUT61WYccVdBVYeT
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/api/types.ts"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/api/types.ts"
 }
 ```
 
@@ -261,7 +261,7 @@ tool_use Read
 id: toolu_vrtx_01BD4pZyA4kXLxSBwBj4AySX
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/filters/use-filter-params.ts"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/filters/use-filter-params.ts"
 }
 ```
 
@@ -393,7 +393,7 @@ id: toolu_vrtx_015tNzpA37n29ZdhrHSSwSS7
 ```json
 {
   "pattern": "subscriptions.*list|subs.*list",
-  "path": "/Users/pc/web3/ReleaseBeacon/web/lib/api/client.ts",
+  "path": "/home/<USER>/web3/ReleaseBeacon/web/lib/api/client.ts",
   "output_mode": "content",
   "-C": 3
 }
@@ -414,7 +414,7 @@ id: toolu_vrtx_015MAfNS5H5v4UENkU8GnwuW
 ```json
 {
   "pattern": "subscriptions",
-  "path": "/Users/pc/web3/ReleaseBeacon/web/lib/api/client.ts",
+  "path": "/home/<USER>/web3/ReleaseBeacon/web/lib/api/client.ts",
   "output_mode": "content",
   "-C": 3
 }
@@ -467,7 +467,7 @@ id: toolu_vrtx_01PjqsLwaFE1RcLRKVs41PTR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/app/subscriptions/page.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/app/subscriptions/page.tsx",
   "old_string": "import { useState, useMemo } from \"react\";\nimport useSWR, { mutate } from \"swr\";\nimport {\n  subscriptions as subsApi,\n  channels as channelsApi,\n  projects as projectsApi,\n  sources as sourcesApi,\n} from \"@/lib/api/client\";\nimport type { Source, Subscription } from \"@/lib/api/types\";\nimport { Plus, Pencil, Trash2, ChevronRight } from \"lucide-react\";",
   "new_string": "import { useState, useMemo, Suspense } from \"react\";\nimport useSWR, { mutate } from \"swr\";\nimport {\n  subscriptions as subsApi,\n  channels as channelsApi,\n  projects as projectsApi,\n  sources as sourcesApi,\n} from \"@/lib/api/client\";\nimport type { Source, Subscription } from \"@/lib/api/types\";\nimport { Plus, Pencil, Trash2, ChevronRight } from \"lucide-react\";\nimport { FilterBar, FilterConfig } from \"@/components/filters/filter-bar\";\nimport { useFilterParams } from \"@/components/filters/use-filter-params\";"
 }
@@ -478,7 +478,7 @@ id: toolu_vrtx_01PjqsLwaFE1RcLRKVs41PTR
 tool_result
 id: toolu_vrtx_01PjqsLwaFE1RcLRKVs41PTR
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/app/subscriptions/page.tsx has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/app/subscriptions/page.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -492,7 +492,7 @@ id: toolu_vrtx_01QXCf6GJPt3jdeRFKtX5rh4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/app/subscriptions/page.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/app/subscriptions/page.tsx",
   "old_string": "export default function SubscriptionsPage() {\n  const { t } = useTranslation();\n  const { data, isLoading } = useSWR(\"subscriptions\", () => subsApi.list());\n  const { data: channelsData } = useSWR(\"channels-for-sub-list\", () =>\n    channelsApi.list()\n  );\n  const { data: projectsData } = useSWR(\"projects-for-sub-list\", () =>\n    projectsApi.list(1, 100)\n  );",
   "new_string": "export default function SubscriptionsPage() {\n  return (\n    <Suspense>\n      <SubscriptionsPageInner />\n    </Suspense>\n  );\n}\n\nfunction SubscriptionsPageInner() {\n  const { t } = useTranslation();\n  const FILTER_KEYS = [\"channel\", \"type\"];\n  const { filters, setFilters } = useFilterParams(FILTER_KEYS);\n  const { data, isLoading } = useSWR(\"subscriptions\", () => subsApi.list());\n  const { data: channelsData } = useSWR(\"channels-for-sub-list\", () =>\n    channelsApi.list()\n  );\n  const { data: projectsData } = useSWR(\"projects-for-sub-list\", () =>\n    projectsApi.list(1, 100)\n  );"
 }
@@ -503,7 +503,7 @@ id: toolu_vrtx_01QXCf6GJPt3jdeRFKtX5rh4
 tool_result
 id: toolu_vrtx_01QXCf6GJPt3jdeRFKtX5rh4
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/app/subscriptions/page.tsx has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/app/subscriptions/page.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -517,7 +517,7 @@ id: toolu_vrtx_01VBG2zY3uPA1b6xyfbqjWaN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/app/subscriptions/page.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/app/subscriptions/page.tsx",
   "old_string": "  const [createOpen, setCreateOpen] = useState(false);\n  const [editingSub, setEditingSub] = useState<Subscription | null>(null);\n  const [deletingId, setDeletingId] = useState<string | null>(null);\n  const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());\n  const [batchDeleteOpen, setBatchDeleteOpen] = useState(false);\n  const [collapsedChannels, setCollapsedChannels] = useState<Set<string>>(new Set());\n\n  const getChannelName = (id: string) =>\n    channelsData?.data.find((c) => c.id === id)?.name ?? id;\n\n  const getChannelType = (id: string) =>\n    channelsData?.data.find((c) => c.id === id)?.type ?? \"\";\n\n  const getProjectName = (id: string) =>\n    projectsData?.data.find((p) => p.id === id)?.name ?? id;\n\n  const getSourceLabel = (id: string) => {\n    const source = sourcesMap?.[id];\n    return source ? `${source.provider}: ${source.repository}` : id;\n  };\n\n  const subscriptions = data?.data ?? [];",
   "new_string": "  const [createOpen, setCreateOpen] = useState(false);\n  const [editingSub, setEditingSub] = useState<Subscription | null>(null);\n  const [deletingId, setDeletingId] = useState<string | null>(null);\n  const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());\n  const [batchDeleteOpen, setBatchDeleteOpen] = useState(false);\n  const [collapsedChannels, setCollapsedChannels] = useState<Set<string>>(new Set());\n\n  const getChannelName = (id: string) =>\n    channelsData?.data.find((c) => c.id === id)?.name ?? id;\n\n  const getChannelType = (id: string) =>\n    channelsData?.data.find((c) => c.id === id)?.type ?? \"\";\n\n  const getProjectName = (id: string) =>\n    projectsData?.data.find((p) => p.id === id)?.name ?? id;\n\n  const getSourceLabel = (id: string) => {\n    const source = sourcesMap?.[id];\n […]
 
@@ -526,7 +526,7 @@ id: toolu_vrtx_01VBG2zY3uPA1b6xyfbqjWaN
 tool_result
 id: toolu_vrtx_01VBG2zY3uPA1b6xyfbqjWaN
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/app/subscriptions/page.tsx has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/app/subscriptions/page.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -540,7 +540,7 @@ id: toolu_vrtx_018P1xrga3Gvb2okR6jXhkHg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/app/subscriptions/page.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/app/subscriptions/page.tsx",
   "old_string": "      </div>\n\n      {isLoading ? (",
   "new_string": "      </div>\n\n      {/* Filters */}\n      <FilterBar filters={filterConfig} value={filters} onChange={setFilters} />\n\n      {isLoading ? ("
 }
@@ -551,7 +551,7 @@ id: toolu_vrtx_018P1xrga3Gvb2okR6jXhkHg
 tool_result
 id: toolu_vrtx_018P1xrga3Gvb2okR6jXhkHg
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/app/subscriptions/page.tsx has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/app/subscriptions/page.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -564,7 +564,7 @@ tool_use Read
 id: toolu_vrtx_01PqB3xBbBsxq1yRHJqujFt4
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/app/subscriptions/page.tsx"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/app/subscriptions/page.tsx"
 }
 ```
 
@@ -638,7 +638,7 @@ tool_use Bash
 id: toolu_vrtx_01Qtk9GVizeJWzrbh29pmkGn
 ```json
 {
-  "command": "bash /Users/pc/.claude/skills/nextjs-typecheck/scripts/nextjs-typecheck.sh ./web",
+  "command": "bash /home/<USER>/.claude/skills/nextjs-typecheck/scripts/nextjs-typecheck.sh ./web",
   "description": "Run TypeScript type check on Next.js frontend",
   "timeout": 60000
 }
@@ -685,7 +685,7 @@ tool_use Read
 id: toolu_vrtx_013anJVXd1By3eqxjK8xg3bR
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/app/subscriptions/page.tsx"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/app/subscriptions/page.tsx"
 }
 ```
 
@@ -710,7 +710,7 @@ id: toolu_vrtx_01WoruuCRutdPjxyFK3uhSTx
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/app/subscriptions/page.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/app/subscriptions/page.tsx",
   "old_string": "      {/* Filters */}\n      <FilterBar filters={filterConfig} value={filters} onChange={setFilters} />\n\n      {isLoading ? (\n        <div\n          className=\"overflow-hidden rounded-lg bg-surface py-16 text-center border-border\"\n          style={{ border: \"1px solid var(--border)\", fontFamily: \"var(--font-dm-sans)\", fontSize: \"13px\", color: \"var(--text-secondary)\" }}\n        >\n          {t(\"subscriptions.loading\")}\n        </div>\n      ) : subscriptions.length === 0 ? (\n        <div\n          className=\"overflow-hidden rounded-lg bg-surface py-16 text-center border-border\"\n          style={{ border: \"1px solid var(--border)\" }}\n        >\n          <p\n            className=\"text-text-muted\"\n            style={{\n              fontFamily: \"var(--font-raleway)\",\n              fontStyle: \"italic\",\n              fontSize: \"15px\",\n            }}\n          >\n            {t(\"subscriptions.empty\")}\n          </p>\n        </div>\n      ) : (\n        <>\n          {/* Select all / batch bar */}\n          <div\n            className=\"flex items-center gap-3 rounded-lg bg-surface px-5 py-2.5\"\n            style={{ border: \"1px solid var(--border)\" }}\n          >\n            <Checkbox\n              checked={isAllSelected ? true : isSomeSelected ? \"indeterminate\" : false}\n              onCheckedChange={toggleSelectAll}\n            />\n            <span\n              className=\"text-text-secondary\"\n              style={{\n                fontFamily: \"var(--font-dm-sans)\",\n                fontSize: \"13px\",\n              }}\n            >\n              {selectedIds.size > 0\n                ? t(\"subscriptions.selected\").replace(\"{count}\", String(selectedIds.size)).replace(\"{total}\", String(subscriptions.length))\n                : subscriptions.length === 1\n                  ? t(\"subscriptions.countLabel\").replace(\"{count}\", String(subscriptions.length))\n                  : t(\"subscriptions.countLabelPlural\").replace(\"{count}\", String(subscriptions.length))}\n            </span>\n            {selectedIds.size > 0 && (\n              <button\n                onClick={() => setBatchDeleteOpen(true)}\n                className=\"ml-auto inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 transition-colors hover:opacity-90\"\n                style={{\n                  backgroundColor: \"#dc2626\",\n                  color: \"#ffffff\",\n                  fontFamily: \"var(--font-dm-sans)\",\n                  fontSize: \"13px\",\n                  fontWeight: 500,\n                }}\n              >\n                <Trash2 className=\"h-3.5 w-3.5\" />\n                {t(\"subscriptions.deleteSelected\")}\n              </button>\n            )}\n          </div>\n\n          {/* Grouped by channel */}",
   "new_string": "      {/* Combined filter + selection ribbon */}\n      <div\n        className=\"flex […]
 
@@ -719,7 +719,7 @@ id: toolu_vrtx_01WoruuCRutdPjxyFK3uhSTx
 tool_result
 id: toolu_vrtx_01WoruuCRutdPjxyFK3uhSTx
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/app/subscriptions/page.tsx has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/app/subscriptions/page.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -732,7 +732,7 @@ tool_use Read
 id: toolu_vrtx_017mHZJo3AQnDrb6adgS2LaB
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx",
   "offset": 20,
   "limit": 10
 }
@@ -767,7 +767,7 @@ id: toolu_vrtx_01X5AF6EU5yvU4jJndkCQoeE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx",
   "old_string": "export interface FilterBarProps {\n  filters: FilterConfig[];\n  value: Record<string, string>;\n  onChange: (value: Record<string, string>) => void;\n}",
   "new_string": "export interface FilterBarProps {\n  filters: FilterConfig[];\n  value: Record<string, string>;\n  onChange: (value: Record<string, string>) => void;\n  /** When true, renders chips/buttons without an outer wrapper div (for embedding in a custom container). */\n  inline?: boolean;\n}"
 }
@@ -778,7 +778,7 @@ id: toolu_vrtx_01X5AF6EU5yvU4jJndkCQoeE
 tool_result
 id: toolu_vrtx_01X5AF6EU5yvU4jJndkCQoeE
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -792,7 +792,7 @@ id: toolu_vrtx_017NMNfqxCkMKQfUDUWy3wnK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx",
   "old_string": "export function FilterBar({ filters, value, onChange }: FilterBarProps) {",
   "new_string": "export function FilterBar({ filters, value, onChange, inline }: FilterBarProps) {"
 }
@@ -803,7 +803,7 @@ id: toolu_vrtx_017NMNfqxCkMKQfUDUWy3wnK
 tool_result
 id: toolu_vrtx_017NMNfqxCkMKQfUDUWy3wnK
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -816,7 +816,7 @@ tool_use Read
 id: toolu_vrtx_01MBzBBapGxpBDT4HF6ZNM43
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx",
   "offset": 163,
   "limit": 8
 }
@@ -848,7 +848,7 @@ tool_use Read
 id: toolu_vrtx_01TEu1s2hmeyCv4AA1ShB2Hd
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx",
   "limit": 10,
   "offset": 275
 }
@@ -882,7 +882,7 @@ tool_use Read
 id: toolu_vrtx_016NG2mhxAR34Rq21ZAPdADM
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx",
   "limit": 5,
   "offset": 285
 }
@@ -915,7 +915,7 @@ tool_use Read
 id: toolu_vrtx_01NQd7wc8AooZR48FM81tHdN
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx",
   "offset": 166
 }
 ```
@@ -984,7 +984,7 @@ id: toolu_vrtx_013ngFszYwpA49DFMqGVhm6d
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx",
   "old_string": "  return (\n    <div className=\"flex flex-wrap items-center gap-2 rounded-lg border border-border bg-surface px-3 py-2\">\n      {activeFilters.map((config) => (\n        <Chip\n          key={config.key}\n          label={config.label}\n          displayValue={getDisplayValue(config, value[config.key])}\n          onRemove={() => removeFilter(config.key)}\n          onClick={() => openFilterEdit(config.key)}\n        />\n      ))}\n\n      {availableFilters.length > 0 && (\n        <div className=\"relative\" ref={popoverRef}>\n          <button\n            type=\"button\"\n            onClick={() => { setPopoverOpen(!popoverOpen); setSelectedType(null); setSearch(\"\"); }}\n            className=\"inline-flex items-center gap-1 rounded-full border border-dashed border-border px-2.5 py-1 text-xs text-text-muted transition-colors hover:border-border-strong hover:text-text-secondary\"\n            style={{ fontFamily: \"var(--font-dm-sans)\" }}\n          >\n            <Plus size={12} />\n            Add filter\n          </button>\n\n          {popoverOpen && (\n            <div className=\"absolute left-0 top-full z-50 mt-1 flex overflow-hidden rounded-lg border border-border bg-surface shadow-lg\">\n              {!selectedType && (\n                <div className=\"w-44 py-1\">\n                  <div className=\"px-3 py-1.5 text-[10px] uppercase tracking-wider text-text-muted\">\n                    Filter by\n                  </div>\n                  {availableFilters.map((config) => (\n                    <button\n                      key={config.key}\n                      type=\"button\"\n                      onClick={() => {\n                        if (config.type === \"boolean\") {\n                          setFilter(config.key, \"true\");\n                        } else {\n                          setSelectedType(config.key);\n                        }\n                      }}\n                      className=\"flex w-full items-center px-3 py-1.5 text-left text-xs text-text-secondary transition-colors hover:bg-surface-secondary\"\n                      style={{ fontFamily: \"var(--font-dm-sans)\" }}\n                    >\n                      {config.label}\n                    </button>\n                  ))}\n                </div>\n              )}\n\n              {selectedConfig && selectedConfig.type === \"select\" && (\n                <div className=\"w-52 py-1\">\n                  <div className=\"px-2 pb-1\">\n                    <div className=\"flex items-center gap-1.5 rounded border border-border bg-background px-2 py-1\">\n                      <Search size={12} className=\"text-text-muted\" />\n                      <input\n                        type=\"text\"\n                        value={search}\n                        onChange={(e) => setSearch(e.target.value)}\n                        placeholder={`Search ${selectedConfig.label.toLowerCase()}...`}\n                        className=\"w-full bg-transparent text-xs text-text-primary outline-none placeholder:text-text-muted\"\n                        autoFocus\n                      />\n […]
 
 > TOOL
@@ -992,7 +992,7 @@ id: toolu_vrtx_013ngFszYwpA49DFMqGVhm6d
 tool_result
 id: toolu_vrtx_013ngFszYwpA49DFMqGVhm6d
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -1047,7 +1047,7 @@ tool_use Read
 id: toolu_vrtx_01D1mRUsFMbmATq3WYWD9VBb
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/app/subscriptions/page.tsx"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/app/subscriptions/page.tsx"
 }
 ```
 
@@ -1062,7 +1062,7 @@ id: toolu_vrtx_01AuEsoUG35yWfPjA8e7nKDC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/app/subscriptions/page.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/app/subscriptions/page.tsx",
   "old_string": "import { useState, useMemo, Suspense } from \"react\";\nimport useSWR, { mutate } from \"swr\";\nimport {\n  subscriptions as subsApi,\n  channels as channelsApi,\n  projects as projectsApi,\n  sources as sourcesApi,\n} from \"@/lib/api/client\";\nimport type { Source, Subscription } from \"@/lib/api/types\";\nimport { Plus, Pencil, Trash2, ChevronRight } from \"lucide-react\";\nimport { FilterBar, FilterConfig } from \"@/components/filters/filter-bar\";\nimport { useFilterParams } from \"@/components/filters/use-filter-params\";",
   "new_string": "import { useState, useMemo, Suspense } from \"react\";\nimport useSWR, { mutate } from \"swr\";\nimport {\n  subscriptions as subsApi,\n  channels as channelsApi,\n  projects as projectsApi,\n  sources as sourcesApi,\n} from \"@/lib/api/client\";\nimport type { Source, Subscription } from \"@/lib/api/types\";\nimport { Plus, Pencil, Trash2 } from \"lucide-react\";\nimport { FilterBar, FilterConfig } from \"@/components/filters/filter-bar\";\nimport { useFilterParams } from \"@/components/filters/use-filter-params\";"
 }
@@ -1073,7 +1073,7 @@ id: toolu_vrtx_01AuEsoUG35yWfPjA8e7nKDC
 tool_result
 id: toolu_vrtx_01AuEsoUG35yWfPjA8e7nKDC
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/app/subscriptions/page.tsx has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/app/subscriptions/page.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -1087,7 +1087,7 @@ id: toolu_vrtx_01DVQ1cPVLEEGxXALYKYjj25
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/app/subscriptions/page.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/app/subscriptions/page.tsx",
   "old_string": "  const [createOpen, setCreateOpen] = useState(false);\n  const [editingSub, setEditingSub] = useState<Subscription | null>(null);\n  const [deletingId, setDeletingId] = useState<string | null>(null);\n  const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());\n  const [batchDeleteOpen, setBatchDeleteOpen] = useState(false);\n  const [collapsedChannels, setCollapsedChannels] = useState<Set<string>>(new Set());\n\n  const getChannelName = (id: string) =>\n    channelsData?.data.find((c) => c.id === id)?.name ?? id;\n\n  const getChannelType = (id: string) =>\n    channelsData?.data.find((c) => c.id === id)?.type ?? \"\";\n\n  const getProjectName = (id: string) =>\n    projectsData?.data.find((p) => p.id === id)?.name ?? id;\n\n  const getSourceLabel = (id: string) => {\n    const source = sourcesMap?.[id];\n    return source ? `${source.provider}: ${source.repository}` : id;\n  };",
   "new_string": "  const [createOpen, setCreateOpen] = useState(false);\n  const [editingSub, setEditingSub] = useState<Subscription | null>(null);\n  const [deletingId, setDeletingId] = useState<string | null>(null);\n  const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());\n  const [batchDeleteOpen, setBatchDeleteOpen] = useState(false);\n\n  const getChannelName = (id: string) =>\n    channelsData?.data.find((c) => c.id === id)?.name ?? id;\n\n  const getProjectName = (id: string) =>\n    projectsData?.data.find((p) => p.id === id)?.name ?? id;\n\n  const getSourceLabel = (id: string) => {\n    const source = sourcesMap?.[id];\n    return source ? `${source.provider}: ${source.repository}` : id;\n  };"
 }
@@ -1098,7 +1098,7 @@ id: toolu_vrtx_01DVQ1cPVLEEGxXALYKYjj25
 tool_result
 id: toolu_vrtx_01DVQ1cPVLEEGxXALYKYjj25
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/app/subscriptions/page.tsx has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/app/subscriptions/page.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -1112,7 +1112,7 @@ id: toolu_vrtx_01KSgzsR6ChhbGxHDo6ySZsy
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/app/subscriptions/page.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/app/subscriptions/page.tsx",
   "old_string": "  // Group subscriptions by channel_id\n  const grouped = useMemo(() => {\n    const map = new Map<string, Subscription[]>();\n    for (const sub of subscriptions) {\n      const list = map.get(sub.channel_id) ?? [];\n      list.push(sub);\n      map.set(sub.channel_id, list);\n    }\n    return map;\n  }, [subscriptions]);\n\n  const isAllSelected = subscriptions.length > 0 && selectedIds.size === subscriptions.length;\n  const isSomeSelected = selectedIds.size > 0 && !isAllSelected;\n\n  const toggleSelect = (id: string) => {\n    setSelectedIds((prev) => {\n      const next = new Set(prev);\n      if (next.has(id)) next.delete(id);\n      else next.add(id);\n      return next;\n    });\n  };\n\n  const toggleSelectAll = () => {\n    if (isAllSelected) {\n      setSelectedIds(new Set());\n    } else {\n      setSelectedIds(new Set(subscriptions.map((s) => s.id)));\n    }\n  };\n\n  const toggleChannel = (channelId: string) => {\n    setCollapsedChannels((prev) => {\n      const next = new Set(prev);\n      if (next.has(channelId)) next.delete(channelId);\n      else next.add(channelId);\n      return next;\n    });\n  };\n\n  const toggleSelectChannel = (channelId: string) => {\n    const channelSubs = grouped.get(channelId) ?? [];\n    const channelSubIds = channelSubs.map((s) => s.id);\n    const allSelected = channelSubIds.every((id) => selectedIds.has(id));\n    setSelectedIds((prev) => {\n      const next = new Set(prev);\n      if (allSelected) {\n        channelSubIds.forEach((id) => next.delete(id));\n      } else {\n        channelSubIds.forEach((id) => next.add(id));\n      }\n      return next;\n    });\n  };\n\n  const clearSelection = () => setSelectedIds(new Set());",
   "new_string": "  const isAllSelected = subscriptions.length > 0 […]
 
@@ -1121,7 +1121,7 @@ id: toolu_vrtx_01KSgzsR6ChhbGxHDo6ySZsy
 tool_result
 id: toolu_vrtx_01KSgzsR6ChhbGxHDo6ySZsy
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/app/subscriptions/page.tsx has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/app/subscriptions/page.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -1135,7 +1135,7 @@ id: toolu_vrtx_017JCNgZouRRQHJUDY7uAGNa
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/app/subscriptions/page.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/app/subscriptions/page.tsx",
   "old_string": "      ) : (\n        <>\n          {/* Grouped by channel */}\n          <div className=\"space-y-3\">\n            {Array.from(grouped.entries()).map(([channelId, channelSubs]) => {\n              const isCollapsed = collapsedChannels.has(channelId);\n              const channelSubIds = channelSubs.map((s) => s.id);\n              const allChannelSelected = channelSubIds.every((id) => selectedIds.has(id));\n              const someChannelSelected = channelSubIds.some((id) => selectedIds.has(id)) && !allChannelSelected;\n              const channelType = getChannelType(channelId);\n\n              return (\n                <div\n                  key={channelId}\n                  className=\"overflow-hidden rounded-lg bg-surface\"\n                  style={{ border: \"1px solid var(--border)\" }}\n                >\n                  {/* Channel header */}\n                  <div\n                    className=\"flex items-center gap-3 px-5 py-3 cursor-pointer select-none bg-background\"\n                    style={{ borderBottom: isCollapsed ? \"none\" : \"1px solid var(--border)\" }}\n                    onClick={() => toggleChannel(channelId)}\n                  >\n                    <div onClick={(e) => e.stopPropagation()}>\n                      <Checkbox\n                        checked={allChannelSelected ? true : someChannelSelected ? \"indeterminate\" : false}\n                        onCheckedChange={() => toggleSelectChannel(channelId)}\n                      />\n                    </div>\n                    <ChevronRight\n                      className=\"h-4 w-4 transition-transform text-text-muted\"\n                      style={{\n                        transform: isCollapsed ? \"rotate(0deg)\" : \"rotate(90deg)\",\n                      }}\n                    />\n                    <span\n                      className=\"text-foreground\"\n                      style={{\n                        fontFamily: \"var(--font-dm-sans)\",\n                        fontSize: \"14px\",\n                        fontWeight: 600,\n                      }}\n                    >\n                      {getChannelName(channelId)}\n                    </span>\n                    {channelType && (\n                      <span\n                        className=\"rounded-full px-2 py-0.5 text-text-secondary bg-mono-bg\"\n                        style={{\n                          fontFamily: \"var(--font-dm-sans)\",\n                          fontSize: \"11px\",\n                          fontWeight: 500,\n                        }}\n                      >\n                        {channelType}\n                      </span>\n                    )}\n                    <span\n                      className=\"text-text-muted\"\n                      style={{\n                        fontFamily: \"var(--font-dm-sans)\",\n                        fontSize: \"12px\",\n                        marginLeft: \"auto\",\n                      }}\n                    >\n                      {channelSubs.length === 1\n                        ? t(\"subscriptions.channelSubscription\").replace(\"{count}\", String(channelSubs.length))\n                        : t(\"subscriptions.channelSubscriptionPlural\").replace(\"{count}\", String(channelSubs.length))}\n                    </span>\n                  </div>\n\n                  {/* Subscription rows */}\n                  {!isCollapsed && (\n                    <table className=\"w-full\">\n                      <thead>\n                        <tr>\n                          {[\"\", t(\"subscriptions.thType\"), t(\"subscriptions.thTarget\"), t(\"subscriptions.thVersionFilter\"), […]
 
 > TOOL
@@ -1143,7 +1143,7 @@ id: toolu_vrtx_017JCNgZouRRQHJUDY7uAGNa
 tool_result
 id: toolu_vrtx_017JCNgZouRRQHJUDY7uAGNa
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/app/subscriptions/page.tsx has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/app/subscriptions/page.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -1156,7 +1156,7 @@ tool_use Bash
 id: toolu_vrtx_01TS4DQnjodVRHVVs1agNtAG
 ```json
 {
-  "command": "bash /Users/pc/.claude/skills/nextjs-typecheck/scripts/nextjs-typecheck.sh ./web",
+  "command": "bash /home/<USER>/.claude/skills/nextjs-typecheck/scripts/nextjs-typecheck.sh ./web",
   "description": "Run TypeScript type check",
   "timeout": 60000
 }
@@ -1224,7 +1224,7 @@ tool_use Read
 id: toolu_vrtx_01A58enrDgx9hnWskkeAvv3y
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/app/subscriptions/page.tsx"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/app/subscriptions/page.tsx"
 }
 ```
 
@@ -1249,7 +1249,7 @@ id: toolu_vrtx_01GT6WanTcF4y1vYmJ2wZyWs
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/app/subscriptions/page.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/app/subscriptions/page.tsx",
   "old_string": "      {/* Combined filter + selection ribbon */}\n      <div\n        className=\"flex flex-wrap items-center gap-2 rounded-lg border border-border bg-surface px-3 py-2\"\n      >\n        {!isLoading && subscriptions.length > 0 && (\n          <Checkbox\n            checked={isAllSelected ? true : isSomeSelected ? \"indeterminate\" : false}\n            onCheckedChange={toggleSelectAll}\n          />\n        )}\n        {!isLoading && (\n          <span\n            className=\"text-text-secondary\"\n            style={{\n              fontFamily: \"var(--font-dm-sans)\",\n              fontSize: \"13px\",\n            }}\n          >\n            {selectedIds.size > 0\n              ? t(\"subscriptions.selected\").replace(\"{count}\", String(selectedIds.size)).replace(\"{total}\", String(subscriptions.length))\n              : subscriptions.length === 1\n                ? t(\"subscriptions.countLabel\").replace(\"{count}\", String(subscriptions.length))\n                : t(\"subscriptions.countLabelPlural\").replace(\"{count}\", String(subscriptions.length))}\n          </span>\n        )}\n        <span className=\"mx-1 h-4 w-px bg-border\" />\n        <FilterBar filters={filterConfig} value={filters} onChange={setFilters} inline />\n        {selectedIds.size > 0 && (\n          <button\n            onClick={() => setBatchDeleteOpen(true)}\n            className=\"ml-auto inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 transition-colors hover:opacity-90\"\n            style={{\n              backgroundColor: \"#dc2626\",\n              color: \"#ffffff\",\n              fontFamily: \"var(--font-dm-sans)\",\n              fontSize: \"13px\",\n              fontWeight: 500,\n            }}\n          >\n            <Trash2 className=\"h-3.5 w-3.5\" />\n            {t(\"subscriptions.deleteSelected\")}\n          </button>\n        )}\n      </div>\n\n      {isLoading ? (",
   "new_string": "      {/* Filter ribbon */}\n      <FilterBar filters={filterConfig} value={filters} onChange={setFilters} />\n\n      {isLoading ? ("
 }
@@ -1260,7 +1260,7 @@ id: toolu_vrtx_01GT6WanTcF4y1vYmJ2wZyWs
 tool_result
 id: toolu_vrtx_01GT6WanTcF4y1vYmJ2wZyWs
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/app/subscriptions/page.tsx has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/app/subscriptions/page.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -1274,7 +1274,7 @@ id: toolu_vrtx_01LsqPd8s6sei826K4nBwsrV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/app/subscriptions/page.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/app/subscriptions/page.tsx",
   "old_string": "          <table className=\"w-full\">\n            <thead>\n              <tr style={{ borderBottom: \"1px solid var(--border)\", backgroundColor: \"var(--background)\" }}>\n                {[\"\", t(\"subscriptions.thType\"), \"Channel\", t(\"subscriptions.thTarget\"), t(\"subscriptions.thVersionFilter\"), \"\"].map(\n                  (heading, i) => (\n                    <th\n                      key={i}\n                      className={`py-2 text-left ${i === 0 ? \"w-10 px-5\" : i === 5 ? \"w-20 px-5\" : \"px-5\"}`}\n                      style={{\n                        fontFamily: \"var(--font-dm-sans)\",\n                        fontSize: \"11px\",\n                        fontWeight: 500,\n                        textTransform: \"uppercase\",\n                        letterSpacing: \"0.08em\",\n                        color: \"var(--text-muted)\",\n                      }}\n                    >\n                      {heading}\n                    </th>\n                  )\n                )}\n              </tr>\n            </thead>",
   "new_string": "          <table className=\"w-full\">\n            <thead>\n              <tr style={{ borderBottom: \"1px solid var(--border)\", backgroundColor: \"var(--background)\" }}>\n                <th className=\"w-10 px-5 py-2 text-left\">\n                  <Checkbox\n                    checked={isAllSelected ? true : isSomeSelected ? \"indeterminate\" : false}\n                    onCheckedChange={toggleSelectAll}\n                  />\n                </th>\n                {selectedIds.size > 0 ? (\n                  <th colSpan={5} className=\"px-5 py-2 text-left\">\n                    <div className=\"flex items-center gap-3\">\n                      <span\n                        className=\"text-text-secondary\"\n                        style={{\n                          fontFamily: \"var(--font-dm-sans)\",\n                          fontSize: \"13px\",\n                        }}\n                      >\n                        {t(\"subscriptions.selected\").replace(\"{count}\", String(selectedIds.size)).replace(\"{total}\", String(subscriptions.length))}\n                      </span>\n                      <button\n                        onClick={() => setBatchDeleteOpen(true)}\n                        className=\"inline-flex items-center gap-1.5 rounded-md px-3 py-1 transition-colors hover:opacity-90\"\n                        style={{\n                          backgroundColor: \"#dc2626\",\n                          color: \"#ffffff\",\n                          fontFamily: \"var(--font-dm-sans)\",\n                          fontSize: \"13px\",\n                          fontWeight: 500,\n                        }}\n                      >\n                        <Trash2 className=\"h-3.5 w-3.5\" />\n                        {t(\"subscriptions.deleteSelected\")}\n                      </button>\n                    </div>\n                  </th>\n                ) : (\n                  [t(\"subscriptions.thType\"), \"Channel\", t(\"subscriptions.thTarget\"), t(\"subscriptions.thVersionFilter\"), \"\"].map(\n                    (heading, i) => (\n                      <th\n                        key={i}\n                        className={`py-2 text-left ${i === 4 ? \"w-20 px-5\" : \"px-5\"}`}\n                        style={{\n                          fontFamily: \"var(--font-dm-sans)\",\n                          fontSize: \"11px\",\n                          fontWeight: 500,\n                          textTransform: \"uppercase\",\n                          letterSpacing: […]
 
@@ -1283,7 +1283,7 @@ id: toolu_vrtx_01LsqPd8s6sei826K4nBwsrV
 tool_result
 id: toolu_vrtx_01LsqPd8s6sei826K4nBwsrV
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/app/subscriptions/page.tsx has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/app/subscriptions/page.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -1318,7 +1318,7 @@ tool_use Read
 id: toolu_vrtx_01JAE6ryV1JoizuD7dLeWi13
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx",
   "limit": 10,
   "offset": 21
 }
@@ -1331,7 +1331,7 @@ id: toolu_vrtx_01FjKnED1YkQpDmRpEJSx5PR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx",
   "old_string": "export interface FilterBarProps {\n  filters: FilterConfig[];\n  value: Record<string, string>;\n  onChange: (value: Record<string, string>) => void;\n  /** When true, renders chips/buttons without an outer wrapper div (for embedding in a custom container). */\n  inline?: boolean;\n}",
   "new_string": "export interface FilterBarProps {\n  filters: FilterConfig[];\n  value: Record<string, string>;\n  onChange: (value: Record<string, string>) => void;\n}"
 }
@@ -1342,7 +1342,7 @@ id: toolu_vrtx_01FjKnED1YkQpDmRpEJSx5PR
 tool_result
 id: toolu_vrtx_01FjKnED1YkQpDmRpEJSx5PR
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx has been updated successfully.
 ```
 
 > TOOL
@@ -1352,7 +1352,7 @@ id: toolu_vrtx_01GrhTALHyV7xf2kcTsuBT5K
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx",
   "old_string": "export function FilterBar({ filters, value, onChange, inline }: FilterBarProps) {",
   "new_string": "export function FilterBar({ filters, value, onChange }: FilterBarProps) {"
 }
@@ -1363,7 +1363,7 @@ id: toolu_vrtx_01GrhTALHyV7xf2kcTsuBT5K
 tool_result
 id: toolu_vrtx_01GrhTALHyV7xf2kcTsuBT5K
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -1376,7 +1376,7 @@ tool_use Read
 id: toolu_vrtx_01MiMWToPuaReL9WJytBR15r
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx",
   "offset": 270
 }
 ```
@@ -1439,7 +1439,7 @@ id: toolu_vrtx_01SmcuTEP5FDYzr7Hemmtuwh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx",
   "old_string": "      {hasActiveFilters && !inline && (\n        <button\n          type=\"button\"\n          onClick={clearAll}\n          className=\"ml-auto text-[11px] text-text-muted transition-colors hover:text-text-secondary\"\n          style={{ fontFamily: \"var(--font-dm-sans)\" }}\n        >\n          Clear all\n        </button>\n      )}\n      {hasActiveFilters && inline && (\n        <button\n          type=\"button\"\n          onClick={clearAll}\n          className=\"text-[11px] text-text-muted transition-colors hover:text-text-secondary\"\n          style={{ fontFamily: \"var(--font-dm-sans)\" }}\n        >\n          Clear\n        </button>\n      )}\n    </>\n  );\n\n  if (inline) return content;\n\n  return (\n    <div className=\"flex flex-wrap items-center gap-2 rounded-lg border border-border bg-surface px-3 py-2\">\n      {content}\n    </div>\n  );\n}",
   "new_string": "      {hasActiveFilters && (\n        <button\n          type=\"button\"\n          onClick={clearAll}\n          className=\"ml-auto text-[11px] text-text-muted transition-colors hover:text-text-secondary\"\n          style={{ fontFamily: \"var(--font-dm-sans)\" }}\n        >\n          Clear all\n        </button>\n      )}\n    </div>\n  );\n}"
 }
@@ -1450,7 +1450,7 @@ id: toolu_vrtx_01SmcuTEP5FDYzr7Hemmtuwh
 tool_result
 id: toolu_vrtx_01SmcuTEP5FDYzr7Hemmtuwh
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -1485,7 +1485,7 @@ tool_use Read
 id: toolu_vrtx_01MXvbQSyDBJzycu4Bcgag3L
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx",
   "offset": 163,
   "limit": 10
 }
@@ -1498,7 +1498,7 @@ id: toolu_vrtx_01E6thAAxJQFChQhMeHWA6Di
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx",
   "old_string": "  const content = (\n    <>\n      {activeFilters.map((config) => (",
   "new_string": "  return (\n    <div className=\"flex flex-wrap items-center gap-2 rounded-lg border border-border bg-surface px-3 py-2\">\n      {activeFilters.map((config) => ("
 }
@@ -1509,7 +1509,7 @@ id: toolu_vrtx_01E6thAAxJQFChQhMeHWA6Di
 tool_result
 id: toolu_vrtx_01E6thAAxJQFChQhMeHWA6Di
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/components/filters/filter-bar.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -1522,7 +1522,7 @@ tool_use Bash
 id: toolu_vrtx_0183jzJf4Q8GFfR3PwsH9rXF
 ```json
 {
-  "command": "bash /Users/pc/.claude/skills/nextjs-typecheck/scripts/nextjs-typecheck.sh ./web",
+  "command": "bash /home/<USER>/.claude/skills/nextjs-typecheck/scripts/nextjs-typecheck.sh ./web",
   "description": "Run TypeScript type check",
   "timeout": 60000
 }

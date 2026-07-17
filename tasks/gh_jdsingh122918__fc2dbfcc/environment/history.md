@@ -33,7 +33,7 @@ Several patterns deserve recognition as good error handling:
 
 ## ISSUE 10: `RuntimeService` Defaults to `Host` Backend and `insecure=true` When No TaskManager Is Set
 
-**Location:** `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/server.rs`, lines 122-136
+**Location:** `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/server.rs`, lines 122-136
 
 **Severity:** MEDIUM
 
@@ -67,7 +67,7 @@ When `task_manager` is `None` (which happens in the `run_server` code path witho
 
 ## ISSUE 9: Docker Container Not Cleaned Up on Detach After Start
 
-**Location:** `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/runtime/docker.rs`, lines 323-328
+**Location:** `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/runtime/docker.rs`, lines 323-328
 
 **Severity:** MEDIUM
 
@@ -94,7 +94,7 @@ The container continues running but never receives its stdin payload. Depending 
 
 ## ISSUE 8: `send_signal` Returns `Ok(())` for `ESRCH` Without Logging
 
-**Location:** `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/runtime/bwrap.rs`, lines 364-376. `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/runtime/host.rs`, lines 201-213.
+**Location:** `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/runtime/bwrap.rs`, lines 364-376. `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/runtime/host.rs`, lines 201-213.
 
 **Severity:** MEDIUM
 
@@ -122,7 +122,7 @@ fn send_signal(pid: u32, signal: i32) -> Result<()> {
 
 ## ISSUE 7: `kill` Method Returns `Ok(())` When TrackedChild Is Missing
 
-**Location:** `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/runtime/bwrap.rs`, lines 271-303. `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/runtime/host.rs`, lines 145-174.
+**Location:** `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/runtime/bwrap.rs`, lines 271-303. `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/runtime/host.rs`, lines 145-174.
 
 **Severity:** MEDIUM
 
@@ -151,7 +151,7 @@ If the `tracked_child` lookup fails on the second check (line 284/156), after th
 
 ## ISSUE 6: `force_stop` Delegates to `graceful_stop` with No Escalation
 
-**Location:** `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/task_manager.rs`, lines 527-529
+**Location:** `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/task_manager.rs`, lines 527-529
 
 **Severity:** MEDIUM
 
@@ -173,7 +173,7 @@ The `AgentSupervisor` trait defines `force_stop` as a separate method from `grac
 
 ## ISSUE 5: `AgentStatus::Unknown` is a Silent Ambiguity Sink
 
-**Location:** `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/runtime/bwrap.rs`, lines 322-327. `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/runtime/host.rs`, lines 193-197.
+**Location:** `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/runtime/bwrap.rs`, lines 322-327. `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/runtime/host.rs`, lines 193-197.
 
 **Severity:** MEDIUM
 
@@ -201,7 +201,7 @@ No log is emitted when this happens. In `check_agent_status` (task_manager.rs li
 
 ## ISSUE 4: `pid as i32` Truncation in Signal Functions
 
-**Location:** `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/runtime/bwrap.rs`, lines 365, 379. `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/runtime/host.rs`, lines 202, 216.
+**Location:** `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/runtime/bwrap.rs`, lines 365, 379. `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/runtime/host.rs`, lines 202, 216.
 
 **Severity:** HIGH
 
@@ -221,7 +221,7 @@ A PID greater than `i32::MAX` (2,147,483,647) will silently wrap to a negative n
 
 ## ISSUE 3: `dispatch_enqueued_tasks` Swallows Spawn Failures and Continues
 
-**Location:** `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/task_manager.rs`, lines 185-196
+**Location:** `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/task_manager.rs`, lines 185-196
 
 **Severity:** HIGH
 
@@ -259,7 +259,7 @@ This creates a double-swallow pattern where both levels silently continue.
 
 ## ISSUE 2: Silent Drop of Channel Send in RuntimeOutputSink
 
-**Location:** `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/runtime/io.rs`, line 48
+**Location:** `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/runtime/io.rs`, line 48
 
 **Severity:** HIGH
 
@@ -285,7 +285,7 @@ An unbounded channel's `send` only fails when the receiver is dropped. If the re
 
 ## ISSUE 1: Silent Drops of Runtime Kill Results During Spawn Rollback
 
-**Location:** `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/task_manager.rs`, lines 248-290
+**Location:** `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/task_manager.rs`, lines 248-290
 
 **Severity:** CRITICAL
 
@@ -887,7 +887,7 @@ Several patterns in this commit deserve acknowledgment:
 
 ## Issue 11: `TrackedChild` stdout/stderr pipes silently detach on `take()`
 
-**Location:** `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/runtime/io.rs`, lines 116-121
+**Location:** `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/runtime/io.rs`, lines 116-121
 
 **Severity:** MEDIUM
 
@@ -920,7 +920,7 @@ if let Some(stdout) = child.stdout.take() {
 
 ## Issue 10: `let _ = self.transition_task(...)` discards state persistence error
 
-**Location:** `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/task_manager.rs`, lines 309-311
+**Location:** `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/task_manager.rs`, lines 309-311
 
 **Severity:** MEDIUM
 
@@ -955,7 +955,7 @@ if let Err(transition_error) = self
 
 ## Issue 9: `kill_reason` mutex uses `expect` -- will panic on poisoning
 
-**Location:** `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/runtime/io.rs`, lines 158 and 165
+**Location:** `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/runtime/io.rs`, lines 158 and 165
 
 **Severity:** MEDIUM
 
@@ -985,7 +985,7 @@ Using `.expect()` on a `StdMutex::lock()` means the daemon will panic if another
 
 ## Issue 8: Unrecognized JSON event types are silently ignored
 
-**Location:** `/Users/jdsingh/Projects/AI/forge/crates/forge-common/src/output_parser.rs`, line 79
+**Location:** `/home/<USER>/Projects/AI/forge/crates/forge-common/src/output_parser.rs`, line 79
 
 **Severity:** MEDIUM
 
@@ -1020,7 +1020,7 @@ _ => {
 
 ## Issue 7: `from_utf8_lossy` silently corrupts binary data in Docker output
 
-**Location:** `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/runtime/io.rs`, line 313
+**Location:** `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/runtime/io.rs`, line 313
 
 **Severity:** MEDIUM
 
@@ -1055,7 +1055,7 @@ match std::str::from_utf8(chunk) {
 
 ## Issue 6: `emit_stdout_line` silently drops non-TaskOutput parsed events
 
-**Location:** `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/runtime/io.rs`, lines 82-88
+**Location:** `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/runtime/io.rs`, lines 82-88
 
 **Severity:** HIGH
 
@@ -1088,7 +1088,7 @@ This means the runtime streaming pipeline delivers a subset of what `DirectExecu
 
 ## Issue 5: `let _ = self.runtime.kill(&handle).await` discards kill errors
 
-**Location:** `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/task_manager.rs`, line 283 and line 304
+**Location:** `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/task_manager.rs`, line 283 and line 304
 
 **Severity:** MEDIUM
 
@@ -1125,7 +1125,7 @@ if let Err(kill_error) = self.runtime.kill(&handle).await {
 
 ## Issue 4: `dispatch_enqueued_tasks` silently skips failed spawns
 
-**Location:** `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/task_manager.rs`, lines 220-230
+**Location:** `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/task_manager.rs`, lines 220-230
 
 **Severity:** HIGH
 
@@ -1161,7 +1161,7 @@ The task could be stuck in `Materializing` or `Running` forever with no agent ac
 
 ## Issue 3: Spawned I/O tasks silently swallow panics and join errors
 
-**Location:** `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/runtime/io.rs`, lines 269-289 (`spawn_stdout_task`) and 291-309 (`spawn_stderr_task`)
+**Location:** `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/runtime/io.rs`, lines 269-289 (`spawn_stdout_task`) and 291-309 (`spawn_stderr_task`)
 
 **Severity:** HIGH
 
@@ -1193,7 +1193,7 @@ fn spawn_stdout_task<R>(reader: R, emitter: RuntimeOutputEmitter) […]
 
 ## Issue 2: JSON parse failure silently demotes structured events to raw text
 
-**Location:** `/Users/jdsingh/Projects/AI/forge/crates/forge-common/src/output_parser.rs`, lines 36-38
+**Location:** `/home/<USER>/Projects/AI/forge/crates/forge-common/src/output_parser.rs`, lines 36-38
 
 **Severity:** HIGH
 
@@ -1219,7 +1219,7 @@ When the output mode is `StreamJson`, any line that fails JSON parsing is silent
 
 ## Issue 1: Silent channel send failure -- events permanently lost
 
-**Location:** `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/runtime/io.rs`, line 48
+**Location:** `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/runtime/io.rs`, line 48
 
 **Severity:** CRITICAL
 
@@ -1326,7 +1326,7 @@ I do not rate it CRITICAL (i.e., "stop everything, revert") because the feature 
 
 **Verdict: CONFIRMED -- severity accurate (MEDIUM)**
 
-At `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/runtime/io.rs` lines 312-313:
+At `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/runtime/io.rs` lines 312-313:
 
 ```rust
 fn emit_chunk_lines(buffer: &mut String, chunk: &[u8], mut emit: impl FnMut(String)) {
@@ -1341,7 +1341,7 @@ This function is used exclusively in `spawn_docker_attach_task` (line 211-217) f
 
 **Verdict: CONFIRMED -- severity LOW (not MEDIUM)**
 
-At `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/runtime/io.rs` lines 158 and 165:
+At `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/runtime/io.rs` lines 158 and 165:
 
 ```rust
 pub fn remember_kill_reason(&self, reason: impl Into<String>) {
@@ -1365,7 +1365,7 @@ This uses `std::sync::Mutex` (not tokio), and `.expect()` will indeed panic if t
 
 **Verdict: CONFIRMED -- severity accurate (MEDIUM)**
 
-At `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/task_manager.rs` lines 283 and 304:
+At `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/task_manager.rs` lines 283 and 304:
 
 ```rust
 // Line 283:
@@ -1383,7 +1383,7 @@ These are rollback paths during spawn failure cleanup. If `kill` fails, the spaw
 
 **Verdict: FALSE POSITIVE**
 
-At `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/task_manager.rs` lines 220-230:
+At `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/task_manager.rs` lines 220-230:
 
 ```rust
 match self.spawn_prepared(prepared).await {
@@ -1413,7 +1413,7 @@ The only edge case is path 2 where `transition_task` itself fails, leaving the t
 
 **Verdict: CONFIRMED -- severity PARTIALLY OVERSTATED (LOW/MEDIUM, not HIGH)**
 
-At `/Users/jdsingh/Projects/AI/forge/crates/forge-common/src/output_parser.rs` lines 36-38:
+At `/home/<USER>/Projects/AI/forge/crates/forge-common/src/output_parser.rs` lines 36-38:
 
 ```rust
 ParsedOutputMode::StreamJson => serde_json::from_str::<Value>(&line)
@@ -1429,7 +1429,7 @@ A JSON parse failure falls back to emitting the raw line as `TaskOutput::Stdout`
 
 **Verdict: CONFIRMED -- severity PARTIALLY OVERSTATED (MEDIUM, not HIGH)**
 
-At `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/runtime/io.rs` lines 269-289 and 291-309:
+At `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/runtime/io.rs` lines 269-289 and 291-309:
 
 ```rust
 fn spawn_stdout_task<R>(reader: R, emitter: RuntimeOutputEmitter)
@@ -1458,7 +1458,7 @@ The `JoinHandle` from `tokio::spawn` is indeed discarded. The functions return n
 
 **Verdict: CONFIRMED -- severity accurate (MEDIUM/HIGH)**
 
-At `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/runtime/io.rs` lines 82-88:
+At `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/runtime/io.rs` lines 82-88:
 
 ```rust
 pub fn emit_stdout_line(&self, state: &mut ParsedOutputState, line: String) {
@@ -1495,7 +1495,7 @@ The runtime path drops `AssistantText`, `Thinking`, `ToolCall`, `SessionCaptured
 
 **Verdict: CONFIRMED -- severity accurate (MEDIUM)**
 
-At `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/task_manager.rs` line 344:
+At `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/task_manager.rs` line 344:
 
 ```rust
 if matches!(
@@ -1515,7 +1515,7 @@ if matches!(
 
 **Verdict: CONFIRMED -- severity accurate (HIGH)**
 
-At `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/task_manager.rs` lines 173-193:
+At `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/task_manager.rs` lines 173-193:
 
 ```rust
 pub async fn drain_runtime_output(&self) -> Result<usize> {
@@ -1560,7 +1560,7 @@ And `record_runtime_event_for_agent` (run_orchestrator.rs lines 1124-1159) acqui
 
 **Verdict: CONFIRMED -- severity PARTIALLY OVERSTATED (MEDIUM, not CRITICAL)**
 
-The code at `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/runtime/io.rs` lines 31-51:
+The code at `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/runtime/io.rs` lines 31-51:
 
 ```rust
 pub fn channel() -> (Self, mpsc::UnboundedReceiver<RuntimeOutputEnvelope>) {
@@ -1746,7 +1746,7 @@ This commit adds approximately 5,500 lines across 28 files implementing runtime 
 
 ## ISSUE 1: Silent Drops of Runtime Kill Results During Spawn Rollback
 
-**Location:** `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/task_manager.rs`, lines 248-290
+**Location:** `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/task_manager.rs`, lines 248-290
 
 **Severity:** CRITICAL
 
@@ -1984,7 +1984,7 @@ This commit adds a streaming output pipeline that captures agent stdout/stderr, 
 
 ## Issue 1: Silent channel send failure -- events permanently lost
 
-**Location:** `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/runtime/io.rs`, line 48
+**Location:** `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/runtime/io.rs`, line 48
 
 **Severity:** CRITICAL
 
@@ -2055,7 +2055,7 @@ Supervisor has ruled. Waiting for the Validator to finish confirming findings ag
 
 **Verdict: CONFIRMED -- severity PARTIALLY OVERSTATED (MEDIUM, not CRITICAL)**
 
-The code at `/Users/jdsingh/Projects/AI/forge/crates/forge-runtime/src/runtime/io.rs` lines 31-51:
+The code at `/home/<USER>/Projects/AI/forge/crates/forge-runtime/src/runtime/io.rs` lines 31-51:
 
 ```rust
 pub fn channel() -> (Self, mpsc::UnboundedReceiver<RuntimeOutputEnvelope>) {

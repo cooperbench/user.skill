@@ -121,9 +121,9 @@ flake.lock:756:        "repo": "llm-agents.nix",
 flake.lock:762:        "repo": "llm-agents.nix",
 flake.lock:1403:        "llm-agents": "llm-agents",
 flake.lock:1586:          "llm-agents",
-nix/modules/home/programs/codex.nix:21:  home.packages = [ pkgs.llm-agents.codex ];
-nix/modules/home/programs/claude-code.nix:15:  rtk = lib.getExe pkgs.llm-agents.rtk;
-nix/modules/home/programs/ai-tools.nix:4:    (with pkgs.llm-agents; [
+nix/modules/home/<USER>/codex.nix:21:  home.packages = [ pkgs.llm-agents.codex ];
+nix/modules/home/<USER>/claude-code.nix:15:  rtk = lib.getExe pkgs.llm-agents.rtk;
+nix/modules/home/<USER>/ai-tools.nix:4:    (with pkgs.llm-agents; [
 ```
 
 > TOOL
@@ -154,7 +154,7 @@ tool_use Read
 id: toolu_01JPKcbW5ufZDWLqZumgE3A1
 ```json
 {
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/programs/ai-tools.nix"
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/<USER>/ai-tools.nix"
 }
 ```
 
@@ -286,7 +286,7 @@ id: toolu_016nsfwNH1zBbvVMLq71TCeU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/programs/ai-tools.nix",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/<USER>/ai-tools.nix",
   "old_string": "    (with pkgs.llm-agents; [\n      claude-code\n      ccusage\n      opencode\n      rtk\n      vibe-kanban\n      cursor-agent\n      agent-browser\n      entire\n    ])",
   "new_string": "    (with pkgs.llm-agents; [\n      claude-code\n      ccusage\n      copilot-cli\n      opencode\n      rtk\n      vibe-kanban\n      cursor-agent\n      agent-browser\n      entire\n    ])"
 }
@@ -297,7 +297,7 @@ id: toolu_016nsfwNH1zBbvVMLq71TCeU
 tool_result
 id: toolu_016nsfwNH1zBbvVMLq71TCeU
 ```
-The file /Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/programs/ai-tools.nix has been updated successfully.
+The file /home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/<USER>/ai-tools.nix has been updated successfully.
 ```
 
 > AGENT

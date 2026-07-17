@@ -148,7 +148,7 @@ tool_use Read
 id: toolu_01MfH312HXZsP2uQzMJhDgJy
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/.eleventy.js"
+  "file_path": "/home/<USER>/bosarsa/.eleventy.js"
 }
 ```
 
@@ -192,7 +192,7 @@ tool_use Read
 id: toolu_01RRpDeTw6DTNCSnmfR371Lv
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/_includes/footer.njk"
+  "file_path": "/home/<USER>/bosarsa/src/_includes/footer.njk"
 }
 ```
 
@@ -258,7 +258,7 @@ tool_use Read
 id: toolu_017MXLzCxbAz27c1uiwExZ7q
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/sitemap.njk"
+  "file_path": "/home/<USER>/bosarsa/src/sitemap.njk"
 }
 ```
 
@@ -317,7 +317,7 @@ tool_use Read
 id: toolu_01ELGhHvBVNEVr8Hp7jxfcJN
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/llms.njk"
+  "file_path": "/home/<USER>/bosarsa/src/llms.njk"
 }
 ```
 
@@ -369,7 +369,7 @@ tool_use Read
 id: toolu_01Ur8pY7kq86t3v36RVkKTHe
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/css/base.css"
+  "file_path": "/home/<USER>/bosarsa/src/css/base.css"
 }
 ```
 
@@ -427,7 +427,7 @@ tool_use Read
 id: toolu_01JLTWBfEGa8PLYisq9rqJZ6
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/presse.njk"
+  "file_path": "/home/<USER>/bosarsa/src/presse.njk"
 }
 ```
 
@@ -472,7 +472,7 @@ id: toolu_015AAB9Mc45ofSj8MVenyXt5
 ```json
 {
   "pattern": "*.jpeg",
-  "path": "/home/achildrenmile/bosarsa"
+  "path": "/home/<USER>/bosarsa"
 }
 ```
 
@@ -491,7 +491,7 @@ id: toolu_01KTRwGmMjTmMFpNgwB11vMZ
 ```json
 {
   "pattern": "bosarsa.*",
-  "path": "/home/achildrenmile/bosarsa"
+  "path": "/home/<USER>/bosarsa"
 }
 ```
 
@@ -510,7 +510,7 @@ id: toolu_019ZKx749JsMbuxACQbgygjZ
 ```json
 {
   "pattern": "*.{jpeg,jpg,webp,png}",
-  "path": "/home/achildrenmile/bosarsa"
+  "path": "/home/<USER>/bosarsa"
 }
 ```
 
@@ -519,26 +519,26 @@ id: toolu_019ZKx749JsMbuxACQbgygjZ
 tool_result
 id: toolu_019ZKx749JsMbuxACQbgygjZ
 ```
-/home/achildrenmile/bosarsa/favicon/web-app-manifest-512x512.png
-/home/achildrenmile/bosarsa/favicon/web-app-manifest-192x192.png
-/home/achildrenmile/bosarsa/favicon/favicon-96x96.png
-/home/achildrenmile/bosarsa/favicon/apple-touch-icon.png
-/home/achildrenmile/bosarsa/_site/web-app-manifest-512x512.png
-/home/achildrenmile/bosarsa/_site/web-app-manifest-192x192.png
-/home/achildrenmile/bosarsa/_site/favicon-96x96.png
-/home/achildrenmile/bosarsa/_site/apple-touch-icon.png
-/home/achildrenmile/bosarsa/_site/logo-web.png
-/home/achildrenmile/bosarsa/logo-web.png
-/home/achildrenmile/bosarsa/logo.webp
-/home/achildrenmile/bosarsa/_site/logo.webp
-/home/achildrenmile/bosarsa/_site/og-image.png
-/home/achildrenmile/bosarsa/og-image.png
-/home/achildrenmile/bosarsa/ueber-uns.webp
-/home/achildrenmile/bosarsa/_site/ueber-uns.webp
-/home/achildrenmile/bosarsa/notfunk-header.webp
-/home/achildrenmile/bosarsa/_site/notfunk-header.webp
-/home/achildrenmile/bosarsa/sicherheitstage-2026.webp
-/home/achildrenmile/bosarsa/_site/sicherheitstage-2026.webp
+/home/<USER>/bosarsa/favicon/web-app-manifest-512x512.png
+/home/<USER>/bosarsa/favicon/web-app-manifest-192x192.png
+/home/<USER>/bosarsa/favicon/favicon-96x96.png
+/home/<USER>/bosarsa/favicon/apple-touch-icon.png
+/home/<USER>/bosarsa/_site/web-app-manifest-512x512.png
+/home/<USER>/bosarsa/_site/web-app-manifest-192x192.png
+/home/<USER>/bosarsa/_site/favicon-96x96.png
+/home/<USER>/bosarsa/_site/apple-touch-icon.png
+/home/<USER>/bosarsa/_site/logo-web.png
+/home/<USER>/bosarsa/logo-web.png
+/home/<USER>/bosarsa/logo.webp
+/home/<USER>/bosarsa/_site/logo.webp
+/home/<USER>/bosarsa/_site/og-image.png
+/home/<USER>/bosarsa/og-image.png
+/home/<USER>/bosarsa/ueber-uns.webp
+/home/<USER>/bosarsa/_site/ueber-uns.webp
+/home/<USER>/bosarsa/notfunk-header.webp
+/home/<USER>/bosarsa/_site/notfunk-header.webp
+/home/<USER>/bosarsa/sicherheitstage-2026.webp
+/home/<USER>/bosarsa/_site/sicherheitstage-2026.webp
 ```
 
 > TOOL
@@ -548,7 +548,7 @@ id: toolu_018knFpdZP9BQjVTE9JdUpSF
 ```json
 {
   "pattern": "js/**",
-  "path": "/home/achildrenmile/bosarsa"
+  "path": "/home/<USER>/bosarsa"
 }
 ```
 
@@ -557,7 +557,7 @@ id: toolu_018knFpdZP9BQjVTE9JdUpSF
 tool_result
 id: toolu_018knFpdZP9BQjVTE9JdUpSF
 ```
-/home/achildrenmile/bosarsa/js/lucide.min.js
+/home/<USER>/bosarsa/js/lucide.min.js
 ```
 
 > TOOL
@@ -567,7 +567,7 @@ id: toolu_01ACz1MYZTY9SpjjVcmJG6U5
 ```json
 {
   "pattern": "*.pdf",
-  "path": "/home/achildrenmile/bosarsa"
+  "path": "/home/<USER>/bosarsa"
 }
 ```
 
@@ -589,7 +589,7 @@ tool_use Read
 id: toolu_01JXy7J3v6KB4JgKqL9EjSuH
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/_includes/base.njk"
+  "file_path": "/home/<USER>/bosarsa/src/_includes/base.njk"
 }
 ```
 
@@ -650,7 +650,7 @@ id: toolu_01RMynmPteDYWU969JemnFeF
 ```json
 {
   "description": "Read plan transcript for details",
-  "prompt": "Read the file /home/achildrenmile/.REDACTED.jsonl and extract the detailed information about:\n1. The Krisenkommunikation form fields and structure (the 7 W-Fragen, the Weitergabe table organizations, etc.)\n2. Any specific details about how the PDF generation should work\n3. Any details about the static PDF that needs to be created\n4. Any specific CSS design details\n\nReturn ALL the details you find about the form structure, field names, organizations for the Weitergabe table, and PDF layout.",
+  "prompt": "Read the file /home/<USER>/.REDACTED.jsonl and extract the detailed information about:\n1. The Krisenkommunikation form fields and structure (the 7 W-Fragen, the Weitergabe table organizations, etc.)\n2. Any specific details about how the PDF generation should work\n3. Any details about the static PDF that needs to be created\n4. Any specific CSS design details\n\nReturn ALL the details you find about the form structure, field names, organizations for the Weitergabe table, and PDF layout.",
   "subagent_type": "Explore"
 }
 ```
@@ -664,7 +664,7 @@ Good. I have the main information. Now let me compile a comprehensive report. Ba
 
 ## COMPREHENSIVE EXTRACTION: Krisenkommunikation Form Structure and PDF Generation Details
 
-Based on my analysis of `/home/achildrenmile/.REDACTED.jsonl`, here are ALL the detailed specifications for the Krisenkommunikation form:
+Based on my analysis of `/home/<USER>/.REDACTED.jsonl`, here are ALL the detailed specifications for the Krisenkommunikation form:
 
 ### 1. FORM FIELDS STRUCTURE (7 W-Fragen and other fields)
 
@@ -723,7 +723,7 @@ tool_use Bash
 id: toolu_01Scb7ifiysnmvTP5jVyJnYK
 ```json
 {
-  "command": "ls -la /home/achildrenmile/Downloads/Krisenkommunikation-Aufnahmeformular.pdf 2>/dev/null || echo \"PDF not found in Downloads\"",
+  "command": "ls -la /home/<USER>/Downloads/Krisenkommunikation-Aufnahmeformular.pdf 2>/dev/null || echo \"PDF not found in Downloads\"",
   "description": "Check for static PDF in Downloads"
 }
 ```
@@ -733,7 +733,7 @@ id: toolu_01Scb7ifiysnmvTP5jVyJnYK
 tool_result
 id: toolu_01Scb7ifiysnmvTP5jVyJnYK
 ```
--rw-r--r-- 1 achildrenmile users 586213 Mar  8 00:11 /home/achildrenmile/Downloads/Krisenkommunikation-Aufnahmeformular.pdf
+-rw-r--r-- 1 achildrenmile users 586213 Mar  8 00:11 /home/<USER>/Downloads/Krisenkommunikation-Aufnahmeformular.pdf
 ```
 
 > TOOL
@@ -742,7 +742,7 @@ tool_use Bash
 id: toolu_01KKaSLE9R3pAn5QyqJCHuXZ
 ```json
 {
-  "command": "cp /home/achildrenmile/Downloads/Krisenkommunikation-Aufnahmeformular.pdf /home/achildrenmile/bosarsa/Krisenkommunikation-Aufnahmeformular.pdf",
+  "command": "cp /home/<USER>/Downloads/Krisenkommunikation-Aufnahmeformular.pdf /home/<USER>/bosarsa/Krisenkommunikation-Aufnahmeformular.pdf",
   "description": "Copy static PDF to project root"
 }
 ```
@@ -765,7 +765,7 @@ tool_use Bash
 id: toolu_0188uiVKD83bKrn8HebUTddd
 ```json
 {
-  "command": "curl -sL \"https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js\" -o /home/achildrenmile/bosarsa/js/jspdf.umd.min.js && wc -c /home/achildrenmile/bosarsa/js/jspdf.umd.min.js",
+  "command": "curl -sL \"https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js\" -o /home/<USER>/bosarsa/js/jspdf.umd.min.js && wc -c /home/<USER>/bosarsa/js/jspdf.umd.min.js",
   "description": "Download jsPDF UMD bundle from cdnjs",
   "timeout": 30000
 }
@@ -776,7 +776,7 @@ id: toolu_0188uiVKD83bKrn8HebUTddd
 tool_result
 id: toolu_0188uiVKD83bKrn8HebUTddd
 ```
-548 /home/achildrenmile/bosarsa/js/jspdf.umd.min.js
+548 /home/<USER>/bosarsa/js/jspdf.umd.min.js
 ```
 
 > AGENT
@@ -789,7 +789,7 @@ tool_use Bash
 id: toolu_014GF5hkQkDzqYY5SvGkxFv6
 ```json
 {
-  "command": "head -c 200 /home/achildrenmile/bosarsa/js/jspdf.umd.min.js",
+  "command": "head -c 200 /home/<USER>/bosarsa/js/jspdf.umd.min.js",
   "description": "Check what was downloaded"
 }
 ```
@@ -856,7 +856,7 @@ tool_use Bash
 id: toolu_01C8GSpRGGaP9ojQuzHEGtiR
 ```json
 {
-  "command": "curl -sL \"https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js\" -o /home/achildrenmile/bosarsa/js/jspdf.umd.min.js && wc -c /home/achildrenmile/bosarsa/js/jspdf.umd.min.js",
+  "command": "curl -sL \"https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js\" -o /home/<USER>/bosarsa/js/jspdf.umd.min.js && wc -c /home/<USER>/bosarsa/js/jspdf.umd.min.js",
   "description": "Download jsPDF 2.5.1 from cdnjs",
   "timeout": 30000
 }
@@ -867,7 +867,7 @@ id: toolu_01C8GSpRGGaP9ojQuzHEGtiR
 tool_result
 id: toolu_01C8GSpRGGaP9ojQuzHEGtiR
 ```
-364463 /home/achildrenmile/bosarsa/js/jspdf.umd.min.js
+364463 /home/<USER>/bosarsa/js/jspdf.umd.min.js
 ```
 
 > AGENT
@@ -880,7 +880,7 @@ tool_use Bash
 id: toolu_01HAq2aNGG2rceDBHLobEQJy
 ```json
 {
-  "command": "head -c 100 /home/achildrenmile/bosarsa/js/jspdf.umd.min.js",
+  "command": "head -c 100 /home/<USER>/bosarsa/js/jspdf.umd.min.js",
   "description": "Verify jsPDF is valid JS"
 }
 ```
@@ -949,7 +949,7 @@ id: toolu_016QKDdJpLzZzESJTQrM3bds
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/.eleventy.js",
+  "file_path": "/home/<USER>/bosarsa/.eleventy.js",
   "old_string": "  eleventyConfig.addPassthroughCopy({ \"*.webp\": \"/\" });\n  eleventyConfig.addPassthroughCopy(\"src/css\");",
   "new_string": "  eleventyConfig.addPassthroughCopy({ \"*.webp\": \"/\" });\n  eleventyConfig.addPassthroughCopy({ \"*.pdf\": \"/\" });\n  eleventyConfig.addPassthroughCopy({ \"js\": \"js\" });\n  eleventyConfig.addPassthroughCopy(\"src/css\");"
 }
@@ -960,7 +960,7 @@ id: toolu_016QKDdJpLzZzESJTQrM3bds
 tool_result
 id: toolu_016QKDdJpLzZzESJTQrM3bds
 ```
-The file /home/achildrenmile/bosarsa/.eleventy.js has been updated successfully.
+The file /home/<USER>/bosarsa/.eleventy.js has been updated successfully.
 ```
 
 > TOOL
@@ -1011,7 +1011,7 @@ tool_use Write
 id: toolu_01DjkaqZKyFB77z3FygycKHB
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/css/krisenkommunikation.css",
+  "file_path": "/home/<USER>/bosarsa/src/css/krisenkommunikation.css",
   "content": "/* ===== Krisenkommunikation Page ===== */\n\n.krisen-page {\n  max-width: 860px;\n  margin: 0 auto;\n  padding: calc(var(--nav-h) + 48px) 24px 80px;\n}\n\n.krisen-page h1 {\n  font-size: 1.6rem;\n  font-weight: 800;\n  color: var(--gray-900);\n  margin-bottom: 8px;\n}\n\n.krisen-page .subtitle {\n  font-size: .85rem;\n  color: var(--gray-500);\n  margin-bottom: 40px;\n}\n\n/* ===== Download Card ===== */\n.download-card {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 24px;\n  padding: 28px 32px;\n  background: var(--white);\n  border: 1px solid var(--gray-100);\n  border-radius: var(--radius);\n  transition: border-color .2s, box-shadow .2s;\n}\n\n.download-card:hover {\n  border-color: var(--polizei-mid);\n  box-shadow: 0 2px 12px rgba(59,90,140,.08);\n}\n\n.download-card__info h2 {\n  font-size: 1.05rem;\n  font-weight: 700;\n  color: var(--gray-900);\n  margin-bottom: 4px;\n}\n\n.download-card__info p {\n  font-size: .85rem;\n  color: var(--gray-500);\n}\n\n.download-card .btn i {\n  width: 18px;\n  height: 18px;\n}\n\n/* ===== Divider ===== */\n.form-divider {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  margin: 40px 0;\n  color: var(--gray-300);\n  font-size: .82rem;\n  font-weight: 600;\n  letter-spacing: .5px;\n  text-transform: uppercase;\n}\n\n.form-divider::before,\n.form-divider::after {\n  content: '';\n  flex: 1;\n  height: 1px;\n  background: var(--gray-200);\n}\n\n/* ===== Form ===== */\n.krisen-form {\n  background: var(--white);\n  border: 1px solid var(--gray-100);\n  border-radius: var(--radius);\n  padding: 32px;\n}\n\n.krisen-form__section {\n  margin-bottom: 32px;\n}\n\n.krisen-form__section-title {\n  font-size: .72rem;\n  font-family: var(--font-mono);\n  letter-spacing: 3px;\n  text-transform: uppercase;\n  color: var(--bos-gold);\n  margin-bottom: 16px;\n  padding-bottom: 8px;\n  border-bottom: 1px solid var(--gray-100);\n}\n\n.krisen-form__row {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  gap: 16px;\n  margin-bottom: 16px;\n}\n\n.krisen-form__row--2 {\n  grid-template-columns: repeat(2, 1fr);\n}\n\n.krisen-form__row--3 {\n  grid-template-columns: repeat(3, 1fr);\n}\n\n.krisen-form__group {\n  display: flex;\n  flex-direction: column;\n  gap: […]
 
 > TOOL
@@ -1019,7 +1019,7 @@ id: toolu_01DjkaqZKyFB77z3FygycKHB
 tool_result
 id: toolu_01DjkaqZKyFB77z3FygycKHB
 ```
-File created successfully at: /home/achildrenmile/bosarsa/src/css/krisenkommunikation.css
+File created successfully at: /home/<USER>/bosarsa/src/css/krisenkommunikation.css
 ```
 
 > AGENT
@@ -1032,7 +1032,7 @@ tool_use Write
 id: toolu_01G5eFfv8LvjEEVxQLS3T5BX
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/js/krisenkommunikation-pdf.js",
+  "file_path": "/home/<USER>/bosarsa/js/krisenkommunikation-pdf.js",
   "content": "/* Krisenkommunikation — PDF-Generator (jsPDF) */\n(function () {\n  'use strict';\n\n  var logoBase64 = null;\n\n  // Preload logo as Base64\n  function preloadLogo() {\n    var img = new Image();\n    img.crossOrigin = 'anonymous';\n    img.onload = function () {\n      var canvas = document.createElement('canvas');\n      canvas.width = img.naturalWidth;\n      canvas.height = img.naturalHeight;\n      canvas.getContext('2d').drawImage(img, 0, 0);\n      logoBase64 = canvas.toDataURL('image/png');\n    };\n    img.src = '/logo-web.png';\n  }\n\n  function val(id) {\n    var el = document.getElementById(id);\n    return el ? el.value.trim() : '';\n  }\n\n  function checked(id) {\n    var el = document.getElementById(id);\n    return el ? el.checked : false;\n  }\n\n  function generatePDF() {\n    var jsPDF = window.jspdf.jsPDF;\n    var doc = new jsPDF({ unit: 'mm', format: 'a4' });\n    var pw = 210;\n    var ml = 15;          // margin left\n    var mr = 15;          // margin right\n    var cw = pw - ml - mr; // content width\n    var y = 15;\n\n    // Colors\n    var navy = [15, 26, 46];\n    var gold = [212, 168, 67];\n    var gray = [100, 110, 130];\n    var lightGray = [200, 207, 215];\n    var black = [17, 24, 39];\n\n    // ===== Header =====\n    if (logoBase64) {\n      doc.addImage(logoBase64, 'PNG', ml, y, 18, 18);\n    }\n    doc.setFont('helvetica', 'bold');\n    doc.setFontSize(16);\n    doc.setTextColor.apply(doc, navy);\n    doc.text('Krisenkommunikation', ml + 22, y + […]
 
 > TOOL
@@ -1040,7 +1040,7 @@ id: toolu_01G5eFfv8LvjEEVxQLS3T5BX
 tool_result
 id: toolu_01G5eFfv8LvjEEVxQLS3T5BX
 ```
-File created successfully at: /home/achildrenmile/bosarsa/js/krisenkommunikation-pdf.js
+File created successfully at: /home/<USER>/bosarsa/js/krisenkommunikation-pdf.js
 ```
 
 > AGENT
@@ -1053,7 +1053,7 @@ tool_use Write
 id: toolu_019yp1rBRuyopq7ZAQF7cg6D
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/krisenkommunikation.njk",
+  "file_path": "/home/<USER>/bosarsa/src/krisenkommunikation.njk",
   "content": "---\nlayout: base.njk\ntitle: \"Krisenkommunikation — BOS-ARSA\"\ndescription: \"Krisenkommunikation-Aufnahmeformular zum Download und Online-Ausfüllen. Strukturierte Erfassung von Notrufen für den BOS-Funkbetrieb.\"\ncanonical: \"https://bosarsa.oeradio.at/krisenkommunikation/\"\nactiveNav: krisenkommunikation\npageCSSFile: \"/css/krisenkommunikation.css\"\npermalink: /krisenkommunikation/\n---\n\n<div class=\"krisen-page\">\n  <h1>Krisenkommunikation</h1>\n  <p class=\"subtitle\">Aufnahmeformular für strukturierte Notfallmeldungen im BOS-Funkbetrieb</p>\n\n  {# ===== Download Card ===== #}\n  <div class=\"download-card\">\n    <div class=\"download-card__info\">\n      <h2>Aufnahmeformular als PDF</h2>\n      <p>Druckfertige Version zum Ausfüllen per Hand — ideal für den Einsatz im Feld.</p>\n    </div>\n    <a href=\"/Krisenkommunikation-Aufnahmeformular.pdf\" download class=\"btn btn--gold\">\n      <i data-lucide=\"download\"></i> PDF herunterladen\n    </a>\n  </div>\n\n  {# ===== Divider ===== #}\n  <div class=\"form-divider\">oder online ausfüllen</div>\n\n  {# ===== Online Form ===== #}\n  <form id=\"krisenForm\" class=\"krisen-form\" autocomplete=\"off\">\n\n    {# --- Lfd. Nr. --- #}\n    <div class=\"krisen-form__section\">\n      <div class=\"krisen-form__row--2\">\n        <div class=\"krisen-form__group\">\n          <label for=\"lfdnr\">Lfd. Nr.</label>\n          <input type=\"text\" id=\"lfdnr\" placeholder=\"z.B. 001\">\n        </div>\n      </div>\n    </div>\n\n    {# --- Entgegennahme --- #}\n    <div class=\"krisen-form__section\">\n      <div class=\"krisen-form__section-title\">Entgegennahme durch</div>\n      <div class=\"krisen-form__row\">\n        <div class=\"krisen-form__group\">\n          <label for=\"rufzeichen\">Mein Rufzeichen</label>\n          <input type=\"text\" id=\"rufzeichen\" placeholder=\"z.B. OE8ABC\">\n        </div>\n        <div class=\"krisen-form__group\">\n          <label for=\"qth\">Mein QTH</label>\n          <input type=\"text\" id=\"qth\" placeholder=\"z.B. Klagenfurt\">\n        </div>\n        <div class=\"krisen-form__group\">\n          <label for=\"qrg\">QRG</label>\n          <input type=\"text\" id=\"qrg\" placeholder=\"z.B. 145.7625 MHz\">\n        </div>\n        <div class=\"krisen-form__group\">\n          <label for=\"telefon\">Telefon</label>\n          <input type=\"tel\" id=\"telefon\" placeholder=\"z.B. +43 664 ...\">\n        </div>\n      </div>\n    </div>\n\n    {# --- Datum / Uhrzeit --- #}\n    <div class=\"krisen-form__section\">\n      <div class=\"krisen-form__row--2\">\n        <div class=\"krisen-form__group\">\n          <label for=\"datum\">Aufnahmedatum</label>\n          <input type=\"date\" id=\"datum\">\n        </div>\n        <div class=\"krisen-form__group\">\n          <label […]
 
 > TOOL
@@ -1061,7 +1061,7 @@ id: toolu_019yp1rBRuyopq7ZAQF7cg6D
 tool_result
 id: toolu_019yp1rBRuyopq7ZAQF7cg6D
 ```
-File created successfully at: /home/achildrenmile/bosarsa/src/krisenkommunikation.njk
+File created successfully at: /home/<USER>/bosarsa/src/krisenkommunikation.njk
 ```
 
 > TOOL
@@ -1113,7 +1113,7 @@ id: toolu_01GUy5FRg96NSUkAG66Y7CCs
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/_includes/footer.njk",
+  "file_path": "/home/<USER>/bosarsa/src/_includes/footer.njk",
   "old_string": "          <li><a href=\"/presse/\">Presse</a></li>\n          <li><a href=\"mailto:{{ site.email }}\">Kontakt</a></li>",
   "new_string": "          <li><a href=\"/presse/\">Presse</a></li>\n          <li><a href=\"/krisenkommunikation/\">Krisenkommunikation</a></li>\n          <li><a href=\"mailto:{{ site.email }}\">Kontakt</a></li>"
 }
@@ -1124,7 +1124,7 @@ id: toolu_01GUy5FRg96NSUkAG66Y7CCs
 tool_result
 id: toolu_01GUy5FRg96NSUkAG66Y7CCs
 ```
-The file /home/achildrenmile/bosarsa/src/_includes/footer.njk has been updated successfully.
+The file /home/<USER>/bosarsa/src/_includes/footer.njk has been updated successfully.
 ```
 
 > TOOL
@@ -1134,7 +1134,7 @@ id: toolu_01555Qzzegj8XFypXqPDXYWA
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/sitemap.njk",
+  "file_path": "/home/<USER>/bosarsa/src/sitemap.njk",
   "old_string": "  <url>\n    <loc>{{ site.url }}/impressum/</loc>",
   "new_string": "  <url>\n    <loc>{{ site.url }}/krisenkommunikation/</loc>\n    <lastmod>2026-03-08</lastmod>\n    <changefreq>yearly</changefreq>\n    <priority>0.6</priority>\n  </url>\n  <url>\n    <loc>{{ site.url }}/impressum/</loc>"
 }
@@ -1145,7 +1145,7 @@ id: toolu_01555Qzzegj8XFypXqPDXYWA
 tool_result
 id: toolu_01555Qzzegj8XFypXqPDXYWA
 ```
-The file /home/achildrenmile/bosarsa/src/sitemap.njk has been updated successfully.
+The file /home/<USER>/bosarsa/src/sitemap.njk has been updated successfully.
 ```
 
 > TOOL
@@ -1155,7 +1155,7 @@ id: toolu_018ZhAJydHK82oFD2fvzCtHq
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/llms.njk",
+  "file_path": "/home/<USER>/bosarsa/src/llms.njk",
   "old_string": "## Kontakt",
   "new_string": "## Krisenkommunikation\n\nBOS-ARSA stellt ein Krisenkommunikation-Aufnahmeformular bereit, das im Notfunkbetrieb zur strukturierten Erfassung von Notrufen verwendet wird. Das Formular enthält Felder für die Entgegennahme (Rufzeichen, QTH, QRG), Datum/Uhrzeit, die 7 W-Fragen (WER, WAS, WANN, WO, WIE, WOMIT, WARUM) sowie eine Weitergabe-Tabelle für Organisationen wie ÖRK-LZ, LAWZ und Polizei-LLZ. Es ist als druckbare PDF und als interaktives Online-Formular verfügbar unter: {{ site.url }}/krisenkommunikation/\n\n## Kontakt"
 }
@@ -1166,7 +1166,7 @@ id: toolu_018ZhAJydHK82oFD2fvzCtHq
 tool_result
 id: toolu_018ZhAJydHK82oFD2fvzCtHq
 ```
-The file /home/achildrenmile/bosarsa/src/llms.njk has been updated successfully.
+The file /home/<USER>/bosarsa/src/llms.njk has been updated successfully.
 ```
 
 > TOOL
@@ -1250,7 +1250,7 @@ tool_use Bash
 id: toolu_01AwxE9BdCuQobXTnRSJCAjy
 ```json
 {
-  "command": "ls -la /home/achildrenmile/bosarsa/_site/krisenkommunikation/index.html /home/achildrenmile/bosarsa/_site/js/jspdf.umd.min.js /home/achildrenmile/bosarsa/_site/js/krisenkommunikation-pdf.js /home/achildrenmile/bosarsa/_site/Krisenkommunikation-Aufnahmeformular.pdf /home/achildrenmile/bosarsa/_site/css/krisenkommunikation.css /home/achildrenmile/bosarsa/_site/js/lucide.min.js",
+  "command": "ls -la /home/<USER>/bosarsa/_site/krisenkommunikation/index.html /home/<USER>/bosarsa/_site/js/jspdf.umd.min.js /home/<USER>/bosarsa/_site/js/krisenkommunikation-pdf.js /home/<USER>/bosarsa/_site/Krisenkommunikation-Aufnahmeformular.pdf /home/<USER>/bosarsa/_site/css/krisenkommunikation.css /home/<USER>/bosarsa/_site/js/lucide.min.js",
   "description": "Verify all output files exist"
 }
 ```
@@ -1260,12 +1260,12 @@ id: toolu_01AwxE9BdCuQobXTnRSJCAjy
 tool_result
 id: toolu_01AwxE9BdCuQobXTnRSJCAjy
 ```
--rw-r--r-- 1 achildrenmile users   5468 Mar  8 00:32 /home/achildrenmile/bosarsa/_site/css/krisenkommunikation.css
--rw-r--r-- 1 achildrenmile users 364463 Mar  8 00:31 /home/achildrenmile/bosarsa/_site/js/jspdf.umd.min.js
--rw-r--r-- 1 achildrenmile users   8024 Mar  8 00:33 /home/achildrenmile/bosarsa/_site/js/krisenkommunikation-pdf.js
--rw-r--r-- 1 achildrenmile users 392129 Feb 22 14:35 /home/achildrenmile/bosarsa/_site/js/lucide.min.js
--rw-r--r-- 1 achildrenmile users 586213 Mar  8 00:31 /home/achildrenmile/bosarsa/_site/Krisenkommunikation-Aufnahmeformular.pdf
--rw-r--r-- 1 achildrenmile users  14497 Mar  8 00:34 /home/achildrenmile/bosarsa/_site/krisenkommunikation/index.html
+-rw-r--r-- 1 achildrenmile users   5468 Mar  8 00:32 /home/<USER>/bosarsa/_site/css/krisenkommunikation.css
+-rw-r--r-- 1 achildrenmile users 364463 Mar  8 00:31 /home/<USER>/bosarsa/_site/js/jspdf.umd.min.js
+-rw-r--r-- 1 achildrenmile users   8024 Mar  8 00:33 /home/<USER>/bosarsa/_site/js/krisenkommunikation-pdf.js
+-rw-r--r-- 1 achildrenmile users 392129 Feb 22 14:35 /home/<USER>/bosarsa/_site/js/lucide.min.js
+-rw-r--r-- 1 achildrenmile users 586213 Mar  8 00:31 /home/<USER>/bosarsa/_site/Krisenkommunikation-Aufnahmeformular.pdf
+-rw-r--r-- 1 achildrenmile users  14497 Mar  8 00:34 /home/<USER>/bosarsa/_site/krisenkommunikation/index.html
 ```
 
 > AGENT

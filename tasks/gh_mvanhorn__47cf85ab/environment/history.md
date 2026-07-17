@@ -82,7 +82,7 @@ tool_use Read
 id: toolu_01DLVWh1oeFTnaF1JjLJbk1B
 ```json
 {
-  "file_path": "/Users/dvydra/src/cli/e2e/agents/claude.go"
+  "file_path": "/home/<USER>/src/cli/e2e/agents/claude.go"
 }
 ```
 
@@ -147,7 +147,7 @@ tool_use Read
 id: toolu_01SNrmFY6ho4Pgeb9LroJQdK
 ```json
 {
-  "file_path": "/Users/dvydra/src/cli/e2e/agents/agent.go"
+  "file_path": "/home/<USER>/src/cli/e2e/agents/agent.go"
 }
 ```
 
@@ -234,7 +234,7 @@ id: toolu_01GG7J5EGSEBRH6GybSZz2dV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dvydra/src/cli/e2e/agents/claude.go",
+  "file_path": "/home/<USER>/src/cli/e2e/agents/claude.go",
   "old_string": "func (c *Claude) RunPrompt(ctx context.Context, dir string, prompt string, opts ...Option) (Output, error) {\n\tcfg := &runConfig{Model: \"haiku\"}\n\tfor _, o := range opts {\n\t\to(cfg)\n\t}\n\n\tconfigDir, err := isolatedConfigDir()\n\tif err != nil {\n\t\treturn Output{}, fmt.Errorf(\"create isolated config dir: %w\", err)\n\t}\n\tdefer os.RemoveAll(configDir)\n\n\targs := []string{\"-p\", prompt, \"--model\", cfg.Model, \"--dangerously-skip-permissions\"}\n\tdisplayArgs := []string{\"-p\", fmt.Sprintf(\"%q\", prompt), \"--model\", cfg.Model, \"--dangerously-skip-permissions\"}\n\tcmd := exec.CommandContext(ctx, \"claude\", args...)\n\tcmd.Dir = dir\n\tcmd.Stdin = nil\n\tcmd.Env = append(cleanEnv(), \"ACCESSIBLE=1\", \"ENTIRE_TEST_TTY=0\", \"CLAUDE_CONFIG_DIR=\"+configDir)",
   "new_string": "func (c *Claude) RunPrompt(ctx context.Context, dir string, prompt string, opts ...Option) (Output, error) {\n\tcfg := &runConfig{Model: \"haiku\"}\n\tfor _, o := range opts {\n\t\to(cfg)\n\t}\n\n\tenv := append(cleanEnv(), \"ACCESSIBLE=1\", \"ENTIRE_TEST_TTY=0\")\n\n\t// On CI (no macOS Keychain), use an isolated config dir so Claude Code\n\t// picks up ANTHROPIC_API_KEY from the environment instead of trying OAuth.\n\t// Locally, we skip CLAUDE_CONFIG_DIR so the Keychain-based auth works.\n\tif os.Getenv(\"CI\") != \"\" {\n\t\tconfigDir, err := isolatedConfigDir()\n\t\tif err != nil {\n\t\t\treturn Output{}, fmt.Errorf(\"create isolated config dir: %w\", err)\n\t\t}\n\t\tdefer os.RemoveAll(configDir)\n\t\tenv = append(env, \"CLAUDE_CONFIG_DIR=\"+configDir)\n\t\tfmt.Fprintf(os.Stderr, \"[e2e] claude: using isolated config dir %s\\n\", configDir)\n\t} else {\n\t\tfmt.Fprintf(os.Stderr, \"[e2e] claude: using default auth (no CLAUDE_CONFIG_DIR override)\\n\")\n\t}\n\n\targs := []string{\"-p\", prompt, \"--model\", cfg.Model, \"--dangerously-skip-permissions\"}\n\tdisplayArgs := []string{\"-p\", fmt.Sprintf(\"%q\", prompt), \"--model\", cfg.Model, \"--dangerously-skip-permissions\"}\n\tcmd := exec.CommandContext(ctx, \"claude\", args...)\n\tcmd.Dir = dir\n\tcmd.Stdin = nil\n\tcmd.Env = env"
 }

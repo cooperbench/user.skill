@@ -19,7 +19,7 @@ tool_use Read
 id: toolu_01DqQjiaHQiNFhaJR9KAZu9S
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/cli/package.json",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/cli/package.json",
   "limit": 10
 }
 ```
@@ -206,7 +206,7 @@ tool_use Read
 id: toolu_01JLjFP5PXDDWuMqr1d6c4v7
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/cli/CHANGELOG.md",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/cli/CHANGELOG.md",
   "limit": 50
 }
 ```

@@ -88,7 +88,7 @@ id: toolu_01Uy7ZgkJqu9KFQcuXZDW78T
 tool_result
 id: toolu_01Uy7ZgkJqu9KFQcuXZDW78T
 ```
-PWD=/home/veerendra/farmer/yourfamilyfarmer
+PWD=/home/<USER>/farmer/yourfamilyfarmer
 === top dirs ===
 AGENTS.md
 CLAUDE.md

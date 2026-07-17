@@ -132,7 +132,7 @@ drwxr-xr-x@  3 arijit  staff      96 Jul  4 12:34 scripts
 -rw-------@  1 arijit  staff    2369 Jul  2 15:35 secrets.sh
 drwxr-xr-x@ 27 arijit  staff     864 Jul  2 16:14 terraform
 ---HARNESS_TODO---
-cat: /Users/arijit/Coding/Python/DataQ-harness/HARNESS_TODO.md: No such file or directory
+cat: /home/<USER>/Coding/Python/DataQ-harness/HARNESS_TODO.md: No such file or directory
 ```
 
 > AGENT
@@ -325,7 +325,7 @@ eventgrid_receiver/app.py
 mockdata/emit.py
 eventgrid_receiver/test_local.py
 scripts/harness_window.sh
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > TOOL
@@ -450,7 +450,7 @@ variable "snowflake_loader_role" {
   type        = string
   default     = "DATAQ_LOADER"
 }
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > TOOL
@@ -558,7 +558,7 @@ id: toolu_01MMFRmVa3FpvGEfKukRyXJt
 124:        server_hostname=os.environ["DATABRICKS_HOST"]
 127:        http_path=os.environ["DATABRICKS_HTTP_PATH"],  # SQL warehouse path
 128:        access_token=os.environ["DATABRICKS_TOKEN"],
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > TOOL
@@ -600,7 +600,7 @@ SNOWFLAKE_WAREHOUSE
 WORKSPACE_ADMIN_EMAILS
 === how harness_window sources snowflake ===
 29:#  SNOWFLAKE — after the Snowflake subscription lapses (v1.1 W1, #588) these runs
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -867,7 +867,7 @@ terraform/eventgrid.tf:24:resource "azurerm_container_app" "airflow_trigger" {
 terraform/redis.tf:5:resource "azurerm_container_app" "redis" {
 === local.common_tags ===
 terraform/main.tf:18:  common_tags = {
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > TOOL
@@ -983,7 +983,7 @@ id: toolu_014cWvbmWqrYNobabPTrkHb1
 407:            unit_price = round(price_by_sku[sku], 2)
 408:            line_total = round(qty * unit_price, 2)
 409:            subtotal += line_total
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > TOOL
@@ -1034,7 +1034,7 @@ id: toolu_018jLj4atuSdWb6pNQFnzyHx
             }
         )
     return pd.DataFrame(rows)
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > TOOL
@@ -1095,7 +1095,7 @@ def load_to_uc(df: pd.DataFrame, catalog: str, schema: str, table: str) -> int:
     )
     rows = [
         tuple(None if pd.isna(v) else v for v in record)
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -1127,7 +1127,7 @@ tool_use Write
 id: toolu_01Bk4RqMsmeDgoH32WytNvFN
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/dbt_project.yml",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/dbt_project.yml",
   "content": "name: \"dataq_lineage\"\nversion: \"1.0.0\"\nconfig-version: 2\n\n# The profile lives in this same dir (profiles.yml) — invoke with\n# `dbt build --profiles-dir .` or export DBT_PROFILES_DIR=. (the Dockerfile does).\nprofile: \"dataq_lineage\"\n\nmodel-paths: [\"models\"]\nmacro-paths: [\"macros\"]\ntarget-path: \"target\"\nclean-targets: [\"target\", \"dbt_packages\", \"logs\"]\n\n# Pin the dbt-core major the same way we pin GX (CONTRIBUTING rule): the dbt\n# metadata contract (manifest/run_results schema #611/#596 consume) is stable\n# within a major.\nrequire-dbt-version: [\">=1.9.0\", \"<2.0.0\"]\n\n# base (RETAIL) -> staging (ANALYTICS_STG views) -> marts (ANALYTICS dynamic tables).\n# Two schemas so the dbt-produced objects never collide with the harness base\n# tables, and the lineage layer is obvious from the object's schema alone.\nmodels:\n  dataq_lineage:\n    staging:\n      +materialized: view\n      +schema: analytics_stg\n    marts:\n      +materialized: dynamic_table\n      +schema: analytics\n      +snowflake_warehouse: \"DATAQ_WH\"\n      +target_lag: \"1 hour\"\n      +on_configuration_change: apply\n\n# DataQ runs its checks as the least-privilege DATAQ_READER role (snowflake.tf),\n# which only has grants on RETAIL. Open up the two dbt-owned schemas + their\n# objects to it so a suite can point at a dynamic table. Idempotent; runs after\n# every successful build. (dbt is run as ACCOUNTADMIN in the harness, so these\n# grants always succeed.)\non-run-end:\n  - \"grant usage on schema {{ target.database }}.ANALYTICS_STG to role DATAQ_READER\"\n  - \"grant usage on schema {{ target.database }}.ANALYTICS to role DATAQ_READER\"\n  - \"grant […]
 
 > TOOL
@@ -1135,7 +1135,7 @@ id: toolu_01Bk4RqMsmeDgoH32WytNvFN
 tool_result
 id: toolu_01Bk4RqMsmeDgoH32WytNvFN
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ-harness/dbt/dbt_project.yml (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ-harness/dbt/dbt_project.yml (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1144,7 +1144,7 @@ tool_use Write
 id: toolu_01BYnX4VbQdoFciuH1D9kuns
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/profiles.yml",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/profiles.yml",
   "content": "# dbt profile — fully env-var driven so the same file works for local `dbt build`\n# (source ../secrets.sh) and the container host (env injected by the ACA job / compose).\n# No secrets in this file. The vars are the same ones the Airflow loader uses\n# (_harness.py load_to_snowflake) — SNOWFLAKE_ACCOUNT/USER/PASSWORD/WAREHOUSE/DATABASE/ROLE.\n#\n# ROLE defaults to ACCOUNTADMIN (the harness account default) — needs CREATE SCHEMA\n# + CREATE DYNAMIC TABLE + the ability to grant to DATAQ_READER (on-run-end hooks).\n# target.schema is the marts default; staging overrides to ANALYTICS_STG in dbt_project.yml.\ndataq_lineage:\n  target: dev\n  outputs:\n    dev:\n      type: snowflake\n      account: \"{{ env_var('SNOWFLAKE_ACCOUNT') }}\"\n      user: \"{{ env_var('SNOWFLAKE_USER') }}\"\n      password: \"{{ env_var('SNOWFLAKE_PASSWORD') }}\"\n      role: \"{{ env_var('SNOWFLAKE_ROLE', 'ACCOUNTADMIN') }}\"\n      warehouse: \"{{ env_var('SNOWFLAKE_WAREHOUSE', 'DATAQ_WH') }}\"\n      database: \"{{ env_var('SNOWFLAKE_DATABASE', 'DATAQ_DB') }}\"\n      schema: \"ANALYTICS\"\n      threads: 4\n      client_session_keep_alive: false\n"
 }
 ```
@@ -1154,7 +1154,7 @@ id: toolu_01BYnX4VbQdoFciuH1D9kuns
 tool_result
 id: toolu_01BYnX4VbQdoFciuH1D9kuns
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ-harness/dbt/profiles.yml (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ-harness/dbt/profiles.yml (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1163,7 +1163,7 @@ tool_use Write
 id: toolu_01USNZhGd33eV3CspGZWHU7A
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/macros/generate_schema_name.sql",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/macros/generate_schema_name.sql",
   "content": "{#\n  Use the +schema config value verbatim (upper-cased) instead of dbt's default\n  behaviour of prefixing it with target.schema. Without this, a model configured\n  with +schema: analytics_stg would land in \"ANALYTICS_analytics_stg\". We want the\n  two clean lineage schemas — ANALYTICS_STG (staging views) and ANALYTICS (marts) —\n  so the on-run-end reader grants and #611/#596 lineage ingestion have stable names.\n#}\n{% macro generate_schema_name(custom_schema_name, node) -%}\n    {%- if custom_schema_name is none -%}\n        {{ target.schema | trim | upper }}\n    {%- else -%}\n        {{ custom_schema_name | trim | upper }}\n    {%- endif -%}\n{%- endmacro %}\n"
 }
 ```
@@ -1173,7 +1173,7 @@ id: toolu_01USNZhGd33eV3CspGZWHU7A
 tool_result
 id: toolu_01USNZhGd33eV3CspGZWHU7A
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ-harness/dbt/macros/generate_schema_name.sql (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ-harness/dbt/macros/generate_schema_name.sql (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1186,7 +1186,7 @@ tool_use Write
 id: toolu_013nEcgvFH4awEYtTd1XT18N
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/models/staging/_retail__sources.yml",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/models/staging/_retail__sources.yml",
   "content": "version: 2\n\n# The harness base tables (Flow A) that Airflow/ADF load into DATAQ_DB.RETAIL.\n# Columns are UPPERCASE: ADF-loaded tables (ORDERS_HEADER, CUSTOMERS) are pre-created\n# uppercase in snowflake.tf; write_pandas-loaded tables are uppercased in\n# _harness.load_to_snowflake. dbt selects `source('retail', 'orders_header')` etc.,\n# which is the base layer of the base -> staging -> mart lineage graph.\nsources:\n  - name: retail\n    database: \"{{ env_var('SNOWFLAKE_DATABASE', 'DATAQ_DB') }}\"\n    schema: RETAIL\n    description: \"Harness Flow-A retail warehouse tables loaded by Airflow/ADF.\"\n    tables:\n      - name: orders_header\n        description: \"Order headers (ADF event pipeline). Grain: one row per ORDER_NUMBER.\"\n      - name: order_lines\n        description: \"Order line items (Airflow schedule load). Grain: one row per LINE_ID.\"\n      - name: customers\n        description: \"Customer dimension (ADF timer pipeline).\"\n      - name: products\n        description: \"Product/SKU dimension (Airflow schedule load).\"\n"
 }
 ```
@@ -1196,7 +1196,7 @@ id: toolu_013nEcgvFH4awEYtTd1XT18N
 tool_result
 id: toolu_013nEcgvFH4awEYtTd1XT18N
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ-harness/dbt/models/staging/_retail__sources.yml (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ-harness/dbt/models/staging/_retail__sources.yml (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1205,7 +1205,7 @@ tool_use Write
 id: toolu_01RDTE1WyY3vY2mmRc6wvDpF
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/models/staging/stg_orders.sql",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/models/staging/stg_orders.sql",
   "content": "-- Staging view over RETAIL.ORDERS_HEADER: light typing/renaming, one row per order.\n-- Base -> staging edge of the lineage graph.\nwith source as (\n    select * from {{ source('retail', 'orders_header') }}\n)\n\nselect\n    order_number,\n    customer_id,\n    channel,\n    store_id,\n    promo_id,\n    order_ts,\n    status,\n    subtotal,\n    tax,\n    order_total,\n    currency\nfrom source\n"
 }
 ```
@@ -1215,7 +1215,7 @@ id: toolu_01RDTE1WyY3vY2mmRc6wvDpF
 tool_result
 id: toolu_01RDTE1WyY3vY2mmRc6wvDpF
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ-harness/dbt/models/staging/stg_orders.sql (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ-harness/dbt/models/staging/stg_orders.sql (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1224,7 +1224,7 @@ tool_use Write
 id: toolu_01PCt8K1N7SBEZjKvrMGHhSn
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/models/staging/stg_order_lines.sql",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/models/staging/stg_order_lines.sql",
   "content": "-- Staging view over RETAIL.ORDER_LINES: one row per order line item.\nwith source as (\n    select * from {{ source('retail', 'order_lines') }}\n)\n\nselect\n    line_id,\n    order_number,\n    sku_id,\n    qty,\n    unit_price,\n    line_total\nfrom source\n"
 }
 ```
@@ -1234,7 +1234,7 @@ id: toolu_01PCt8K1N7SBEZjKvrMGHhSn
 tool_result
 id: toolu_01PCt8K1N7SBEZjKvrMGHhSn
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ-harness/dbt/models/staging/stg_order_lines.sql (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ-harness/dbt/models/staging/stg_order_lines.sql (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1243,7 +1243,7 @@ tool_use Write
 id: toolu_01MDBUphsiRbTq7AYndWEREs
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/models/staging/stg_customers.sql",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/models/staging/stg_customers.sql",
   "content": "-- Staging view over RETAIL.CUSTOMERS: customer dimension, one row per customer.\nwith source as (\n    select * from {{ source('retail', 'customers') }}\n)\n\nselect\n    customer_id,\n    first_name,\n    last_name,\n    email,\n    city,\n    state,\n    signup_date,\n    marketing_opt_in\nfrom source\n"
 }
 ```
@@ -1253,7 +1253,7 @@ id: toolu_01MDBUphsiRbTq7AYndWEREs
 tool_result
 id: toolu_01MDBUphsiRbTq7AYndWEREs
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ-harness/dbt/models/staging/stg_customers.sql (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ-harness/dbt/models/staging/stg_customers.sql (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1262,7 +1262,7 @@ tool_use Write
 id: toolu_01QtVbXMeBA3pDywnT3UyR5h
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/models/staging/stg_products.sql",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/models/staging/stg_products.sql",
   "content": "-- Staging view over RETAIL.PRODUCTS: product/SKU dimension, one row per SKU.\nwith source as (\n    select * from {{ source('retail', 'products') }}\n)\n\nselect\n    sku_id,\n    category,\n    unit_price,\n    active,\n    created_at\nfrom source\n"
 }
 ```
@@ -1272,7 +1272,7 @@ id: toolu_01QtVbXMeBA3pDywnT3UyR5h
 tool_result
 id: toolu_01QtVbXMeBA3pDywnT3UyR5h
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ-harness/dbt/models/staging/stg_products.sql (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ-harness/dbt/models/staging/stg_products.sql (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1335,7 +1335,7 @@ tool_use Write
 id: toolu_01XcpVLsYHjbxwQ8qo4Gzx5J
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/models/marts/mart_order_revenue.sql",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/models/marts/mart_order_revenue.sql",
   "content": "-- Mart dynamic table: one row per order with its line-item roll-up.\n-- Multi-hop lineage: RETAIL.ORDERS_HEADER + RETAIL.ORDER_LINES (base)\n--   -> stg_orders + stg_order_lines (staging views) -> this dynamic table.\n-- ORDER_TS carries through so a DataQ freshness monitor can measure refresh lag,\n-- and RECONCILED_SUBTOTAL vs SUBTOTAL exposes the intra-order tie-out for value checks.\nwith orders as (\n    select * from {{ ref('stg_orders') }}\n),\n\nlines as (\n    select\n        order_number,\n        count(*) as line_count,\n        sum(qty) as total_qty,\n        sum(line_total) as reconciled_subtotal\n    from {{ ref('stg_order_lines') }}\n    group by order_number\n)\n\nselect\n    o.order_number,\n    o.customer_id,\n    o.channel,\n    o.store_id,\n    o.order_ts,\n    o.status,\n    o.currency,\n    coalesce(l.line_count, 0) as line_count,\n    coalesce(l.total_qty, 0) as total_qty,\n    coalesce(l.reconciled_subtotal, 0) as reconciled_subtotal,\n    o.subtotal,\n    o.tax,\n    o.order_total\nfrom orders o\nleft join lines l on o.order_number = l.order_number\n"
 }
 ```
@@ -1345,7 +1345,7 @@ id: toolu_01XcpVLsYHjbxwQ8qo4Gzx5J
 tool_result
 id: toolu_01XcpVLsYHjbxwQ8qo4Gzx5J
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ-harness/dbt/models/marts/mart_order_revenue.sql (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ-harness/dbt/models/marts/mart_order_revenue.sql (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1354,7 +1354,7 @@ tool_use Write
 id: toolu_016wZMvzAzus1TGR3iJdV4XH
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/models/marts/mart_customer_orders.sql",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/models/marts/mart_customer_orders.sql",
   "content": "-- Mart dynamic table: one row per customer with lifetime order stats.\n-- Multi-hop lineage: RETAIL.CUSTOMERS + RETAIL.ORDERS_HEADER (base)\n--   -> stg_customers + stg_orders (staging views) -> this dynamic table.\nwith customers as (\n    select * from {{ ref('stg_customers') }}\n),\n\norders as (\n    select\n        customer_id,\n        count(*) as order_count,\n        sum(order_total) as lifetime_value,\n        min(order_ts) as first_order_ts,\n        max(order_ts) as last_order_ts\n    from {{ ref('stg_orders') }}\n    group by customer_id\n)\n\nselect\n    c.customer_id,\n    c.first_name,\n    c.last_name,\n    c.city,\n    c.state,\n    c.signup_date,\n    coalesce(o.order_count, 0) as order_count,\n    coalesce(o.lifetime_value, 0) as lifetime_value,\n    o.first_order_ts,\n    o.last_order_ts\nfrom customers c\nleft join orders o on c.customer_id = o.customer_id\n"
 }
 ```
@@ -1364,7 +1364,7 @@ id: toolu_016wZMvzAzus1TGR3iJdV4XH
 tool_result
 id: toolu_016wZMvzAzus1TGR3iJdV4XH
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ-harness/dbt/models/marts/mart_customer_orders.sql (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ-harness/dbt/models/marts/mart_customer_orders.sql (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1373,7 +1373,7 @@ tool_use Write
 id: toolu_01K2pWZsugSKFP1QpC5y3UEb
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/models/marts/_marts__models.yml",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/models/marts/_marts__models.yml",
   "content": "version: 2\n\n# Mart models + a handful of dbt tests. These run in `dbt build` (build = run + test),\n# so a green build also proves the lineage objects hold their basic contracts — and\n# the run_results.json captures the test outcomes for the #611 provider poll.\nmodels:\n  - name: mart_order_revenue\n    description: \"Per-order line-item roll-up (dynamic table, target_lag 1h). One row per ORDER_NUMBER.\"\n    columns:\n      - name: order_number\n        description: \"Order grain — unique, not null.\"\n        data_tests:\n          - not_null\n          - unique\n      - name: order_ts\n        description: \"Order timestamp — freshness anchor for the DataQ freshness monitor.\"\n        data_tests:\n          - not_null\n      - name: line_count\n        description: \"Number of order lines rolled into the order.\"\n\n  - name: mart_customer_orders\n    description: \"Per-customer lifetime order stats (dynamic table, target_lag 1h). One row per CUSTOMER_ID.\"\n    columns:\n      - name: customer_id\n        description: \"Customer grain — unique, not null.\"\n        data_tests:\n          - not_null\n          - unique\n"
 }
 ```
@@ -1383,7 +1383,7 @@ id: toolu_01K2pWZsugSKFP1QpC5y3UEb
 tool_result
 id: toolu_01K2pWZsugSKFP1QpC5y3UEb
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ-harness/dbt/models/marts/_marts__models.yml (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ-harness/dbt/models/marts/_marts__models.yml (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1396,7 +1396,7 @@ tool_use Write
 id: toolu_01C8S44BqHFwRfHbRXm9GVf6
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/requirements.txt",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/requirements.txt",
   "content": "# dbt Core + the Snowflake adapter. Pin the minor the same way we pin GX — the\n# manifest/run_results contract that #611 (dbt OrchestrationProvider) and #596\n# (lineage ingestion) consume is stable within a dbt minor. dbt-core is pulled in\n# transitively by dbt-snowflake at a matching version.\ndbt-snowflake>=1.9,<1.10\n\n# ADLS upload for the artifact-capture step (run.sh -> upload_artifacts.py). Only\n# used when DBT_ARTIFACTS_URI + AZURE_STORAGE_CONNECTION_STRING are set (container\n# host); local `dbt build` leaves artifacts in ./target and skips the upload.\nazure-storage-file-datalake>=12.14,<13\n"
 }
 ```
@@ -1406,7 +1406,7 @@ id: toolu_01C8S44BqHFwRfHbRXm9GVf6
 tool_result
 id: toolu_01C8S44BqHFwRfHbRXm9GVf6
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ-harness/dbt/requirements.txt (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ-harness/dbt/requirements.txt (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1415,7 +1415,7 @@ tool_use Write
 id: toolu_01D9z8xD8rhUEjRvFUQCJ5sm
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/upload_artifacts.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/upload_artifacts.py",
   "content": "\"\"\"Upload dbt run artifacts (manifest.json, run_results.json) to ADLS.\n\nProvider-poll input for #611 (dbt OrchestrationProvider reads run_results.json to\nobserve run outcome) AND lineage-ingestion input for #596 (manifest.json holds the\nnode graph). No-op when DBT_ARTIFACTS_URI is unset — local `dbt build` just leaves\nthe files in ./target.\n\n  DBT_ARTIFACTS_URI               adls://<account>/<filesystem>/<prefix>  (e.g. adls://dataqharnessX/raw/dbt)\n  AZURE_STORAGE_CONNECTION_STRING storage account connection string (same seam as mockdata AdlsStore)\n\nEach run lands under <prefix>/runs/<UTC-timestamp>/ and is also overwritten to\n<prefix>/latest/ so the poller has a stable pointer.\n\"\"\"\n\nfrom __future__ import annotations\n\nimport datetime as dt\nimport os\nimport sys\nfrom pathlib import Path\n\nARTIFACTS = (\"manifest.json\", \"run_results.json\")\n\n\ndef main() -> int:\n    uri = os.environ.get(\"DBT_ARTIFACTS_URI\")\n    if not uri:\n        print(\"DBT_ARTIFACTS_URI unset — skipping artifact upload (local run).\")\n        return 0\n    if not uri.startswith(\"adls://\"):\n        print(f\"DBT_ARTIFACTS_URI {uri!r} not an adls:// uri — skipping.\", file=sys.stderr)\n        return 0\n\n    conn = os.environ.get(\"AZURE_STORAGE_CONNECTION_STRING\")\n    if not conn:\n        print(\"AZURE_STORAGE_CONNECTION_STRING unset — cannot upload.\", file=sys.stderr)\n        return 1\n\n    from azure.storage.filedatalake import DataLakeServiceClient\n\n    parts = uri[len(\"adls://\") :].split(\"/\", 2)\n    if len(parts) < 2:\n        print(f\"bad adls uri {uri!r}; expected adls://<account>/<fs>[/<prefix>]\", file=sys.stderr)\n        return 1\n    _account, filesystem = parts[0], parts[1]\n    prefix = (parts[2] if len(parts) == 3 else \"\").strip(\"/\")\n\n    fs = DataLakeServiceClient.from_connection_string(conn).get_file_system_client(filesystem)\n    stamp = dt.datetime.now(dt.timezone.utc).strftime(\"%Y%m%dT%H%M%SZ\")\n    target_dir = Path(os.environ.get(\"DBT_TARGET_DIR\", \"target\"))\n\n    uploaded = 0\n    for name in ARTIFACTS:\n        local = target_dir / name\n        if […]
 
 > TOOL
@@ -1423,7 +1423,7 @@ id: toolu_01D9z8xD8rhUEjRvFUQCJ5sm
 tool_result
 id: toolu_01D9z8xD8rhUEjRvFUQCJ5sm
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ-harness/dbt/upload_artifacts.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ-harness/dbt/upload_artifacts.py (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1436,7 +1436,7 @@ tool_use Write
 id: toolu_01Mx9HUak6dcc3NWQZCcsPHC
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/run.sh",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/run.sh",
   "content": "#!/usr/bin/env bash\n# dbt container entrypoint: build the lineage models, then publish the artifacts.\n#\n# `dbt build` = run (create/refresh the views + dynamic tables) + test (the\n# not_null/unique data tests). A non-zero dbt exit is preserved so the ACA job\n# execution (and later the #611 provider poll of run_results.json) sees the failure.\n# Artifacts are uploaded even on dbt failure — run_results.json is exactly what a\n# failure-observing provider needs — then the original dbt exit code is returned.\nset -uo pipefail\n\nexport DBT_PROFILES_DIR=\"${DBT_PROFILES_DIR:-/app/dbt}\"\n\ncd /app/dbt\n\necho \">> dbt build (target_lag dynamic tables + data tests)\"\ndbt build \"$@\"\ndbt_rc=$?\n\necho \">> publishing artifacts (no-op unless DBT_ARTIFACTS_URI is set)\"\npython /app/dbt/upload_artifacts.py || echo \"artifact upload failed (non-fatal)\"\n\necho \">> dbt build exit code: ${dbt_rc}\"\nexit \"${dbt_rc}\"\n"
 }
 ```
@@ -1446,7 +1446,7 @@ id: toolu_01Mx9HUak6dcc3NWQZCcsPHC
 tool_result
 id: toolu_01Mx9HUak6dcc3NWQZCcsPHC
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ-harness/dbt/run.sh (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ-harness/dbt/run.sh (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1489,7 +1489,7 @@ id: toolu_01H4BLP1PgHHh4jURiGbgWbY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/profiles.yml",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/profiles.yml",
   "old_string": "# ROLE defaults to ACCOUNTADMIN (the harness account default) — needs CREATE SCHEMA\n# + CREATE DYNAMIC TABLE + the ability to grant to DATAQ_READER (on-run-end hooks).\n# target.schema is the marts default; staging overrides to ANALYTICS_STG in dbt_project.yml.\ndataq_lineage:\n  target: dev\n  outputs:\n    dev:\n      type: snowflake\n      account: \"{{ env_var('SNOWFLAKE_ACCOUNT') }}\"\n      user: \"{{ env_var('SNOWFLAKE_USER') }}\"\n      password: \"{{ env_var('SNOWFLAKE_PASSWORD') }}\"\n      role: \"{{ env_var('SNOWFLAKE_ROLE', 'ACCOUNTADMIN') }}\"",
   "new_string": "# ROLE is the least-privilege DATAQ_LOADER (snowflake.tf) — NOT ACCOUNTADMIN. It\n# owns the two dbt-created schemas (needs CREATE SCHEMA on the database), so it can\n# create the views + dynamic tables and grant SELECT/USAGE to DATAQ_READER\n# (on-run-end hooks). Dynamic tables also require change tracking on the RETAIL base\n# tables — pre-enabled in snowflake.tf + bootstrap_change_tracking.sql because the\n# loader doesn't own them. We override SNOWFLAKE_ROLE here (it's ACCOUNTADMIN in\n# secrets.sh for the Airflow/ADF loads) so a stray env doesn't silently re-escalate.\n# target.schema is the marts default; staging overrides to ANALYTICS_STG in dbt_project.yml.\ndataq_lineage:\n  target: dev\n  outputs:\n    dev:\n      type: snowflake\n      account: \"{{ env_var('SNOWFLAKE_ACCOUNT') }}\"\n      user: \"{{ env_var('SNOWFLAKE_USER') }}\"\n      password: \"{{ env_var('SNOWFLAKE_PASSWORD') }}\"\n      role: \"{{ env_var('DBT_SNOWFLAKE_ROLE', 'DATAQ_LOADER') }}\""
 }
@@ -1500,7 +1500,7 @@ id: toolu_01H4BLP1PgHHh4jURiGbgWbY
 tool_result
 id: toolu_01H4BLP1PgHHh4jURiGbgWbY
 ```
-The file /Users/arijit/Coding/Python/DataQ-harness/dbt/profiles.yml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ-harness/dbt/profiles.yml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1510,7 +1510,7 @@ id: toolu_01NkjZVRpTWyWpoVkBrMH13F
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/dbt_project.yml",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/dbt_project.yml",
   "old_string": "# DataQ runs its checks as the least-privilege DATAQ_READER role (snowflake.tf),\n# which only has grants on RETAIL. Open up the two dbt-owned schemas + their\n# objects to it so a suite can point at a dynamic table. Idempotent; runs after\n# every successful build. (dbt is run as ACCOUNTADMIN in the harness, so these\n# grants always succeed.)",
   "new_string": "# DataQ runs its checks as the least-privilege DATAQ_READER role (snowflake.tf),\n# which only has grants on RETAIL. Open up the two dbt-owned schemas + their\n# objects to it so a suite can point at a dynamic table. Idempotent; runs after\n# every successful build. dbt runs as DATAQ_LOADER, which OWNS these schemas (it\n# created them), so it can grant on them."
 }
@@ -1521,7 +1521,7 @@ id: toolu_01NkjZVRpTWyWpoVkBrMH13F
 tool_result
 id: toolu_01NkjZVRpTWyWpoVkBrMH13F
 ```
-The file /Users/arijit/Coding/Python/DataQ-harness/dbt/dbt_project.yml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ-harness/dbt/dbt_project.yml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1535,7 +1535,7 @@ id: toolu_01CNtgpLE6RaDFCSzLn48yTC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/terraform/snowflake.tf",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/terraform/snowflake.tf",
   "old_string": "resource \"snowflake_grant_account_role\" \"loader_to_user\" {\n  role_name = snowflake_account_role.loader.name\n  user_name = var.snowflake_reader_user\n}",
   "new_string": "resource \"snowflake_grant_account_role\" \"loader_to_user\" {\n  role_name = snowflake_account_role.loader.name\n  user_name = var.snowflake_reader_user\n}\n\n# CREATE SCHEMA on the database so the self-hosted dbt Core project (dbt/, #609)\n# can create + OWN its two lineage schemas (ANALYTICS_STG for staging views,\n# ANALYTICS for mart dynamic tables). Owning the schemas lets DATAQ_LOADER create\n# views + dynamic tables in them AND grant SELECT/USAGE to DATAQ_READER (dbt\n# on-run-end hooks) — so dbt never needs ACCOUNTADMIN. This is the only extra grant\n# dbt requires beyond the existing loader write-DML set.\nresource \"snowflake_grant_privileges_to_account_role\" \"loader_create_schema\" {\n  account_role_name = snowflake_account_role.loader.name\n  privileges        = [\"CREATE SCHEMA\"]\n  on_account_object {\n    object_type = \"DATABASE\"\n    object_name = snowflake_database.dataq.name\n  }\n}"
 }
@@ -1555,7 +1555,7 @@ tool_use Read
 id: toolu_017PdWggzjaXmDyjcim4xzgq
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/terraform/snowflake.tf",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/terraform/snowflake.tf",
   "offset": 160,
   "limit": 60
 }
@@ -1620,7 +1620,7 @@ tool_use Read
 id: toolu_01MTBVFQhK83btvgyJP9pofn
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/terraform/snowflake.tf",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/terraform/snowflake.tf",
   "offset": 150,
   "limit": 12
 }
@@ -1652,7 +1652,7 @@ id: toolu_01U3tKAye1Np9Phv7sD6wLo9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/terraform/snowflake.tf",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/terraform/snowflake.tf",
   "old_string": "resource \"snowflake_grant_account_role\" \"loader_to_user\" {\n  role_name = snowflake_account_role.loader.name\n  user_name = var.snowflake_reader_user\n}\n\n# ORDERS_HEADER is loaded by the ADF event pipeline (the event modality). The",
   "new_string": "resource \"snowflake_grant_account_role\" \"loader_to_user\" {\n  role_name = snowflake_account_role.loader.name\n  user_name = var.snowflake_reader_user\n}\n\n# CREATE SCHEMA on the database so the self-hosted dbt Core project (dbt/, #609)\n# can create + OWN its two lineage schemas (ANALYTICS_STG for staging views,\n# ANALYTICS for mart dynamic tables). Owning the schemas lets DATAQ_LOADER create\n# views + dynamic tables in them AND grant SELECT/USAGE to DATAQ_READER (dbt\n# on-run-end hooks) — so dbt never needs ACCOUNTADMIN. This is the only extra grant\n# dbt requires beyond the existing loader write-DML set.\nresource \"snowflake_grant_privileges_to_account_role\" \"loader_create_schema\" {\n  account_role_name = snowflake_account_role.loader.name\n  privileges        = [\"CREATE SCHEMA\"]\n  on_account_object {\n    object_type = \"DATABASE\"\n    object_name = snowflake_database.dataq.name\n  }\n}\n\n# ORDERS_HEADER is loaded by the ADF event pipeline (the event modality). The"
 }
@@ -1663,7 +1663,7 @@ id: toolu_01U3tKAye1Np9Phv7sD6wLo9
 tool_result
 id: toolu_01U3tKAye1Np9Phv7sD6wLo9
 ```
-The file /Users/arijit/Coding/Python/DataQ-harness/terraform/snowflake.tf has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ-harness/terraform/snowflake.tf has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1677,7 +1677,7 @@ id: toolu_01Wsxn3uGDrpLA4JV6MLRfNd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/terraform/snowflake.tf",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/terraform/snowflake.tf",
   "old_string": "resource \"snowflake_table\" \"orders_header\" {\n  database = snowflake_database.dataq.name\n  schema   = snowflake_schema.schemas[\"RETAIL\"].name\n  name     = \"ORDERS_HEADER\"\n\n  column {\n    name = \"ORDER_NUMBER\"",
   "new_string": "resource \"snowflake_table\" \"orders_header\" {\n  database = snowflake_database.dataq.name\n  schema   = snowflake_schema.schemas[\"RETAIL\"].name\n  name     = \"ORDERS_HEADER\"\n\n  # Change tracking is a prerequisite for the dbt mart dynamic tables (#609) that\n  # read this table via the stg_orders view; DATAQ_LOADER can't enable it itself\n  # (it doesn't own the table), so pre-enable here. ADF loads via COPY (INSERT), so\n  # unlike the write_pandas feeds this setting persists across loads.\n  change_tracking = true\n\n  column {\n    name = \"ORDER_NUMBER\""
 }
@@ -1688,7 +1688,7 @@ id: toolu_01Wsxn3uGDrpLA4JV6MLRfNd
 tool_result
 id: toolu_01Wsxn3uGDrpLA4JV6MLRfNd
 ```
-The file /Users/arijit/Coding/Python/DataQ-harness/terraform/snowflake.tf has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ-harness/terraform/snowflake.tf has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1697,7 +1697,7 @@ tool_use Read
 id: toolu_01AWfd4pvjwkWcLJsnhHbguH
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/terraform/snowflake.tf",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/terraform/snowflake.tf",
   "offset": 229,
   "limit": 14
 }
@@ -1731,7 +1731,7 @@ id: toolu_01G1TYongVpJHUzVAWE6LJ9U
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/terraform/snowflake.tf",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/terraform/snowflake.tf",
   "old_string": "resource \"snowflake_table\" \"customers\" {\n  database = snowflake_database.dataq.name\n  schema   = snowflake_schema.schemas[\"RETAIL\"].name\n  name     = \"CUSTOMERS\"",
   "new_string": "resource \"snowflake_table\" \"customers\" {\n  database = snowflake_database.dataq.name\n  schema   = snowflake_schema.schemas[\"RETAIL\"].name\n  name     = \"CUSTOMERS\"\n\n  # Prerequisite for the dbt mart dynamic tables (#609) that read this via the\n  # stg_customers view — see the note on ORDERS_HEADER above.\n  change_tracking = true"
 }
@@ -1742,7 +1742,7 @@ id: toolu_01G1TYongVpJHUzVAWE6LJ9U
 tool_result
 id: toolu_01G1TYongVpJHUzVAWE6LJ9U
 ```
-The file /Users/arijit/Coding/Python/DataQ-harness/terraform/snowflake.tf has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ-harness/terraform/snowflake.tf has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1755,7 +1755,7 @@ tool_use Write
 id: toolu_01EK7V7mATEPsqSPYnU3hSGT
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/bootstrap_change_tracking.sql",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/bootstrap_change_tracking.sql",
   "content": "-- One-time bootstrap: enable change tracking on the RETAIL base tables the dbt\n-- mart dynamic tables (#609) depend on but which are NOT terraform-managed.\n--\n-- Dynamic tables require change tracking on their ultimate base objects, and the\n-- creating role (DATAQ_LOADER) can't enable it because it doesn't own these tables.\n-- ORDERS_HEADER + CUSTOMERS are handled in snowflake.tf (change_tracking = true);\n-- ORDER_LINES + PRODUCTS are created on the fly by Airflow's write_pandas, so set\n-- it here. Run once as ACCOUNTADMIN (the base-table owner):\n--\n--   source ../secrets.sh   # SNOWFLAKE_ROLE=ACCOUNTADMIN\n--   snowsql -a \"$SNOWFLAKE_ACCOUNT\" -u \"$SNOWFLAKE_USER\" -r ACCOUNTADMIN \\\n--     -d DATAQ_DB -s RETAIL -f dbt/bootstrap_change_tracking.sql\n--   # or paste into a Snowflake worksheet.\n--\n-- CAVEAT: write_pandas overwrite=True does CREATE OR REPLACE TABLE, which DROPS this\n-- setting. The Airflow loader is stopped during the wind-down (#590), so it's stable\n-- for the demo window. If flow_a_snowflake_load runs again, re-run this file (or add\n-- the ALTER to _harness.load_to_snowflake after write_pandas).\nuse role accountadmin;\n\nalter table DATAQ_DB.RETAIL.ORDER_LINES set change_tracking = true;\nalter table DATAQ_DB.RETAIL.PRODUCTS set change_tracking = true;\n\n-- Belt-and-suspenders: ensure the terraform-managed pair is enabled too (idempotent),\n-- in case this is run before a `terraform apply` picks up the change_tracking flags.\nalter table DATAQ_DB.RETAIL.ORDERS_HEADER set change_tracking = true;\nalter […]
 
 > TOOL
@@ -1763,7 +1763,7 @@ id: toolu_01EK7V7mATEPsqSPYnU3hSGT
 tool_result
 id: toolu_01EK7V7mATEPsqSPYnU3hSGT
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ-harness/dbt/bootstrap_change_tracking.sql (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ-harness/dbt/bootstrap_change_tracking.sql (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1776,7 +1776,7 @@ tool_use Write
 id: toolu_01R9PaJ98bn82guaUMXKHaA4
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/Dockerfile",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/Dockerfile",
   "content": "# Self-hosted dbt Core image (#609). Runs `dbt build` over the retail lineage models\n# (staging views + mart dynamic tables on Snowflake), then publishes manifest.json +\n# run_results.json to ADLS. Host-agnostic by design — the same image runs as an ACA\n# Job (Azure window) and a docker-compose service (post-wind-down, #590/#591).\n#\n# Build (from harness root):  docker build -t dbt-lineage:latest dbt/\n# Local smoke (needs Snowflake env):\n#   docker run --rm --env-file <(grep SNOWFLAKE ../secrets.sh) dbt-lineage:latest build\nFROM python:3.13-slim\n\n# dbt shells out to git for deps/version; keep the image lean otherwise.\nRUN apt-get update \\\n    && apt-get install -y --no-install-recommends git \\\n    && rm -rf /var/lib/apt/lists/*\n\nWORKDIR /app/dbt\n\n# Deps first for layer caching.\nCOPY requirements.txt requirements.txt\nRUN pip install --no-cache-dir -r requirements.txt\n\n# The dbt project (models, macros, profiles.yml, run.sh, upload_artifacts.py).\nCOPY . /app/dbt\nRUN chmod +x /app/dbt/run.sh\n\n# profiles.yml lives alongside the project; everything else is env-var driven.\nENV DBT_PROFILES_DIR=/app/dbt\n\n# run.sh runs `dbt build \"$@\"` then the artifact upload; args pass through to dbt.\nENTRYPOINT [\"/app/dbt/run.sh\"]\nCMD [\"build\"]\n"
 }
 ```
@@ -1786,7 +1786,7 @@ id: toolu_01R9PaJ98bn82guaUMXKHaA4
 tool_result
 id: toolu_01R9PaJ98bn82guaUMXKHaA4
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ-harness/dbt/Dockerfile (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ-harness/dbt/Dockerfile (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1832,7 +1832,7 @@ id: toolu_01F53QNeSpNfFXXyyBJGgxLX
 57:variable "snowflake_account_name" {
 204:# snowflake_password moved to Key Vault — see
 205:# data.azurerm_key_vault_secret.snowflake_password in keyvault.tf
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -1875,7 +1875,7 @@ variable "postgres_admin_login" {
 variable "postgres_sku" {
   description = "Postgres Flexible Server SKU (Burstable B1ms = cheapest)."
   type        = string
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > TOOL
@@ -1885,7 +1885,7 @@ id: toolu_01TguF3uwGZmwGndDHgLvaXd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/terraform/variables.tf",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/terraform/variables.tf",
   "old_string": "variable \"mockdata_image_tag\" {\n  description = \"Tag of the mockdata image in the registry the cron Jobs run (build+push before the first scheduled run).\"\n  type        = string\n  default     = \"latest\"\n}",
   "new_string": "variable \"mockdata_image_tag\" {\n  description = \"Tag of the mockdata image in the registry the cron Jobs run (build+push before the first scheduled run).\"\n  type        = string\n  default     = \"latest\"\n}\n\nvariable \"dbt_image_tag\" {\n  description = \"Tag of the dbt-lineage image (#609) the transform Job runs (build+push before the first run).\"\n  type        = string\n  default     = \"latest\"\n}\n\nvariable \"dbt_cron\" {\n  description = \"Cron for the dbt transform Job — after flow_a_snowflake_load (01:30 UTC). Also manually startable via `az containerapp job start`.\"\n  type        = string\n  default     = \"0 2 * * *\"\n}"
 }
@@ -1905,7 +1905,7 @@ tool_use Read
 id: toolu_011mPZmkjcKuAnzw4YrUFEzg
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/terraform/variables.tf",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/terraform/variables.tf",
   "offset": 186,
   "limit": 6
 }
@@ -1931,7 +1931,7 @@ id: toolu_013qmKy9b2wUaP4GiqrSjfrs
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/terraform/variables.tf",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/terraform/variables.tf",
   "old_string": "variable \"mockdata_image_tag\" {\n  description = \"Tag of the mockdata image in the registry the cron Jobs run (build+push before the first scheduled run).\"\n  type        = string\n  default     = \"latest\"\n}\n",
   "new_string": "variable \"mockdata_image_tag\" {\n  description = \"Tag of the mockdata image in the registry the cron Jobs run (build+push before the first scheduled run).\"\n  type        = string\n  default     = \"latest\"\n}\n\nvariable \"dbt_image_tag\" {\n  description = \"Tag of the dbt-lineage image (#609) the transform Job runs (build+push before the first run).\"\n  type        = string\n  default     = \"latest\"\n}\n\nvariable \"dbt_cron\" {\n  description = \"Cron for the dbt transform Job — after flow_a_snowflake_load (01:30 UTC). Also manually startable via `az containerapp job start`.\"\n  type        = string\n  default     = \"0 2 * * *\"\n}\n"
 }
@@ -1942,7 +1942,7 @@ id: toolu_013qmKy9b2wUaP4GiqrSjfrs
 tool_result
 id: toolu_013qmKy9b2wUaP4GiqrSjfrs
 ```
-The file /Users/arijit/Coding/Python/DataQ-harness/terraform/variables.tf has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ-harness/terraform/variables.tf has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1951,7 +1951,7 @@ tool_use Write
 id: toolu_01AsZQ9qHhDua3rBPHrwhLWa
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/terraform/dbt_job.tf",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/terraform/dbt_job.tf",
   "content": "# dbt transform Job (#609) — self-hosted dbt Core on the shared dataq-cae. Runs\n# `dbt build` over the retail lineage models (dbt/, staging views + mart dynamic\n# tables on Snowflake), then publishes manifest.json + run_results.json to ADLS.\n# Same ACA-Job shape as the mockdata feeds (mockdata_job.tf); a Container Apps Job\n# (not a Container App) because dbt is a run-to-completion batch, not a service.\n#\n# Auth mirrors the Airflow container (airflow.tf): Snowflake password from Key Vault,\n# ADLS write via the storage account connection string. Runs as DATAQ_LOADER (not\n# ACCOUNTADMIN) — see profiles.yml / snowflake.tf loader_create_schema.\n#\n# Runs on var.dbt_cron; also startable on demand:  az containerapp job start -n dbt-lineage -g dataq-rg\n#\n# NOTE: build + push the image before the first run:\n#   az acr login -n <registry>\n#   docker build -t <login_server>/dbt-lineage:latest dbt/ && docker push <login_server>/dbt-lineage:latest\n# Post-wind-down the same image runs as a docker-compose service (dbt/README.md).\n\nresource \"azurerm_container_app_job\" \"dbt_lineage\" {\n  name                         = \"dbt-lineage\"\n  container_app_environment_id = azurerm_container_app_environment.harness.id\n  resource_group_name          = data.azurerm_resource_group.dataq.name\n  location                     = var.azure_location\n\n  # dbt build + dynamic-table initial refresh can take a few minutes; no retry (a\n  # failed run_results.json is itself the signal the #611 provider observes).\n  replica_timeout_in_seconds = 1800\n  replica_retry_limit        = 0\n\n  schedule_trigger_config {\n    cron_expression […]
 
 > TOOL
@@ -1959,7 +1959,7 @@ id: toolu_01AsZQ9qHhDua3rBPHrwhLWa
 tool_result
 id: toolu_01AsZQ9qHhDua3rBPHrwhLWa
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ-harness/terraform/dbt_job.tf (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ-harness/terraform/dbt_job.tf (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1972,7 +1972,7 @@ tool_use Write
 id: toolu_01GqvxSapgGJTCkroHfPm3AH
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/docker-compose.yml",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/docker-compose.yml",
   "content": "# Post-wind-down home for the dbt Core project (#590/#591 local-first). Same image\n# as the ACA Job (dbt_job.tf), but artifacts land on a local volume instead of ADLS\n# (DBT_ARTIFACTS_URI unset -> upload_artifacts.py is a no-op).\n#\n# Usage (from the harness root):\n#   source secrets.sh                                  # exports SNOWFLAKE_* into the shell\n#   docker compose -f dbt/docker-compose.yml run --rm dbt          # dbt build\n#   docker compose -f dbt/docker-compose.yml run --rm dbt run --select mart_order_revenue\n#\n# ${VAR} values are interpolated from the sourced shell env; DBT_SNOWFLAKE_ROLE\n# defaults to DATAQ_LOADER (profiles.yml) so ACCOUNTADMIN in secrets.sh is ignored.\nservices:\n  dbt:\n    build:\n      context: .\n    image: dbt-lineage:latest\n    environment:\n      SNOWFLAKE_ACCOUNT: \"${SNOWFLAKE_ACCOUNT}\"\n      SNOWFLAKE_USER: \"${SNOWFLAKE_USER}\"\n      SNOWFLAKE_PASSWORD: \"${SNOWFLAKE_PASSWORD}\"\n      SNOWFLAKE_WAREHOUSE: \"${SNOWFLAKE_WAREHOUSE:-DATAQ_WH}\"\n      SNOWFLAKE_DATABASE: \"${SNOWFLAKE_DATABASE:-DATAQ_DB}\"\n      DBT_SNOWFLAKE_ROLE: \"${DBT_SNOWFLAKE_ROLE:-DATAQ_LOADER}\"\n    volumes:\n      # dbt artifacts (target/) + logs persisted to the host for inspection / #596.\n      - ./target:/app/dbt/target\n      - ./logs:/app/dbt/logs\n"
 }
 ```
@@ -1982,7 +1982,7 @@ id: toolu_01GqvxSapgGJTCkroHfPm3AH
 tool_result
 id: toolu_01GqvxSapgGJTCkroHfPm3AH
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ-harness/dbt/docker-compose.yml (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ-harness/dbt/docker-compose.yml (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2080,7 +2080,7 @@ tool_use Write
 id: toolu_016pTV4jvNNziM6fjKvLtBrq
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/README.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/README.md",
   "content": "# dbt Core lineage project (`dataq_lineage`) — harness #609\n\nSelf-hosted **dbt Core** project that builds multi-hop lineage objects on top of the\nFlow-A retail base tables in Snowflake:\n\n```\nDATAQ_DB.RETAIL.{ORDERS_HEADER, ORDER_LINES, CUSTOMERS, PRODUCTS}   ← base (Airflow/ADF loads)\n        │  (source)\n        ▼\nDATAQ_DB.ANALYTICS_STG.{stg_orders, stg_order_lines, stg_customers, stg_products}   ← staging VIEWS\n        │  (ref)\n        ▼\nDATAQ_DB.ANALYTICS.{mart_order_revenue, mart_customer_orders}   ← mart DYNAMIC TABLES (target_lag 1h)\n```\n\nIt exists to (a) exercise **dbt as a third orchestration layer** (the DataQ-side\nprovider is a separate issue, #611) and (b) be the **test bed for the G-d lineage\nwork** (#596 — `manifest.json` is the node-graph input). Harness-only, ADR 0021 —\n**not** DataQ app code, **not** git-tracked.\n\n## Why this shape\n- **Staging = views, marts = dynamic tables** → real base→staging→mart lineage, and\n  the dynamic tables' refresh lag gives DataQ a **freshness monitor** to measure.\n- **Self-hosted dbt Core**, host-agnostic on purpose: dbt Cloud free has no\n  API/scheduler, dbt-on-Snowflake dies with the trial, Databricks-Jobs-dbt couples\n  to the Jobs API. A plain container survives the cloud wind-down (#590/#591); the\n  provider (#611) observes it purely through **artifacts + webhook**, never a\n  host-specific API.\n\n## Authentication & privileges\n- **dbt → Snowflake:** password auth, env-var driven (`profiles.yml` is 100%\n  `env_var()`, no secret in the file). Same creds the Airflow loader […]
 
 > TOOL
@@ -2088,7 +2088,7 @@ id: toolu_016pTV4jvNNziM6fjKvLtBrq
 tool_result
 id: toolu_016pTV4jvNNziM6fjKvLtBrq
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ-harness/dbt/README.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ-harness/dbt/README.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2115,7 +2115,7 @@ id: toolu_01MXgjP2jQJYTCGKcAZ4a8vo
 rc=0
 === .terraform initialized? ===
 .terraform
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -2140,7 +2140,7 @@ id: toolu_01DsXehguHfK1qewi21zgKeA
 ```
 [32m[1mSuccess![0m The configuration is valid.
 [0m
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -2174,7 +2174,7 @@ Plugins:
   At least one plugin is out of date with dbt-core.
   You can find instructions for upgrading here:
   https://docs.getdbt.com/docs/installation
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -2201,7 +2201,7 @@ id: toolu_01HLsUDWd6owBQ2Pb4cBTY7u
 [0m10:16:45  Registered adapter: snowflake=1.9.4
 [0m10:16:45  Unable to do partial parsing because saved manifest not found. Starting full parse.
 [0m10:16:46  Performance info: ./target/perf_info.json
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -2262,7 +2262,7 @@ tool_use Write
 id: toolu_01XVS4r4QDtaC8ppZuLPaV7h
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/.gitignore",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/.gitignore",
   "content": "# dbt build artifacts (harness is not git-tracked per ADR 0021, but keep the dir clean).\ntarget/\nlogs/\ndbt_packages/\n.user.yml\n"
 }
 ```
@@ -2272,7 +2272,7 @@ id: toolu_01XVS4r4QDtaC8ppZuLPaV7h
 tool_result
 id: toolu_01XVS4r4QDtaC8ppZuLPaV7h
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ-harness/dbt/.gitignore (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ-harness/dbt/.gitignore (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2458,7 +2458,7 @@ id: toolu_01JnFK3gSEXGqV6AKFdwc7dg
   # snowflake_table.orders_header will be updated in-place
       ~ change_tracking             = false -> true
 Plan: 1 to add, 2 to change, 0 to destroy.
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -2538,7 +2538,7 @@ snowflake_grant_privileges_to_account_role.loader_create_schema: Creation comple
 snowflake_table.orders_header: Modifications complete after 2s [id=DATAQ_DB|RETAIL|ORDERS_HEADER]
 snowflake_table.customers: Modifications complete after 2s [id=DATAQ_DB|RETAIL|CUSTOMERS]
 Apply complete! Resources: 1 added, 2 changed, 0 destroyed.
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -2570,7 +2570,7 @@ change_tracking on CUSTOMERS -> Statement executed successfully.
   ORDERS_HEADER: ON
   ORDER_LINES: ON
   PRODUCTS: ON
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -2638,7 +2638,7 @@ id: toolu_01M11YLZEjeuQvLJvimJWFiS
 145:syntax error line 1 at position 28 unexpected '.'.
 156:Database Error
 158:  syntax error line 1 at position 28 unexpected '.'.
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -2665,7 +2665,7 @@ SNOWFLAKE_DATABASE set? [<UNSET-OR-EMPTY>]
 exported?
 1
 SNOWFLAKE_ACCOUNT format (masked): PVQS...len=16
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -2679,7 +2679,7 @@ id: toolu_01BgdHVWfbjqtt72FCEEaQxf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/profiles.yml",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/profiles.yml",
   "old_string": "      warehouse: \"{{ env_var('SNOWFLAKE_WAREHOUSE', 'DATAQ_WH') }}\"\n      database: \"{{ env_var('SNOWFLAKE_DATABASE', 'DATAQ_DB') }}\"",
   "new_string": "      # `or` fallback (not just env_var's default) because secrets.sh exports these\n      # SET-BUT-EMPTY, and env_var only substitutes the default when a var is UNSET.\n      warehouse: \"{{ env_var('SNOWFLAKE_WAREHOUSE', '') or 'DATAQ_WH' }}\"\n      database: \"{{ env_var('SNOWFLAKE_DATABASE', '') or 'DATAQ_DB' }}\""
 }
@@ -2690,7 +2690,7 @@ id: toolu_01BgdHVWfbjqtt72FCEEaQxf
 tool_result
 id: toolu_01BgdHVWfbjqtt72FCEEaQxf
 ```
-The file /Users/arijit/Coding/Python/DataQ-harness/dbt/profiles.yml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ-harness/dbt/profiles.yml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2700,7 +2700,7 @@ id: toolu_01LoWbqAPueodGr2FUEAVRLK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/models/staging/_retail__sources.yml",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/models/staging/_retail__sources.yml",
   "old_string": "    database: \"{{ env_var('SNOWFLAKE_DATABASE', 'DATAQ_DB') }}\"",
   "new_string": "    database: \"{{ env_var('SNOWFLAKE_DATABASE', '') or 'DATAQ_DB' }}\""
 }
@@ -2711,7 +2711,7 @@ id: toolu_01LoWbqAPueodGr2FUEAVRLK
 tool_result
 id: toolu_01LoWbqAPueodGr2FUEAVRLK
 ```
-The file /Users/arijit/Coding/Python/DataQ-harness/dbt/models/staging/_retail__sources.yml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ-harness/dbt/models/staging/_retail__sources.yml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2768,7 +2768,7 @@ id: toolu_01SSdwW9g2LbTYPaBZXAjhoB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/models/marts/mart_order_revenue.sql",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/models/marts/mart_order_revenue.sql",
   "old_string": "with orders as (\n    select * from {{ ref('stg_orders') }}\n),",
   "new_string": "-- Dedupe to the order grain: the ADF COPY loads append, so ORDERS_HEADER can carry\n-- the same ORDER_NUMBER more than once. The mart contract is one row per order, so\n-- keep the latest header per order_number (the staging views stay faithful passthroughs;\n-- the grain is enforced here).\nwith orders as (\n    select * from {{ ref('stg_orders') }}\n    qualify row_number() over (partition by order_number order by order_ts desc) = 1\n),"
 }
@@ -2779,7 +2779,7 @@ id: toolu_01SSdwW9g2LbTYPaBZXAjhoB
 tool_result
 id: toolu_01SSdwW9g2LbTYPaBZXAjhoB
 ```
-The file /Users/arijit/Coding/Python/DataQ-harness/dbt/models/marts/mart_order_revenue.sql has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ-harness/dbt/models/marts/mart_order_revenue.sql has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2789,7 +2789,7 @@ id: toolu_01DoYuwGhsbRcpTgtmXo8hcn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/models/marts/mart_customer_orders.sql",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/models/marts/mart_customer_orders.sql",
   "old_string": "with customers as (\n    select * from {{ ref('stg_customers') }}\n),",
   "new_string": "-- Dedupe to the customer grain: the ADF COPY loads append, so CUSTOMERS can carry\n-- the same CUSTOMER_ID more than once. The mart contract is one row per customer;\n-- keep the latest signup per customer_id.\nwith customers as (\n    select * from {{ ref('stg_customers') }}\n    qualify row_number() over (partition by customer_id order by signup_date desc) = 1\n),"
 }
@@ -2800,7 +2800,7 @@ id: toolu_01DoYuwGhsbRcpTgtmXo8hcn
 tool_result
 id: toolu_01DoYuwGhsbRcpTgtmXo8hcn
 ```
-The file /Users/arijit/Coding/Python/DataQ-harness/dbt/models/marts/mart_customer_orders.sql has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ-harness/dbt/models/marts/mart_customer_orders.sql has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2874,7 +2874,7 @@ id: toolu_015YRkwdKVpUPMKuTxqhynG2
 10:31:14  Completed successfully
 10:31:14  
 10:31:14  Done. PASS=17 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=17
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -2960,7 +2960,7 @@ id: toolu_012Y5PnVETZ5GhTqqpRihDVA
   MART_CUSTOMER_ORDERS: rows=200 distinct_customer_id=200  OK
 === DATAQ_READER can SELECT the mart (the DataQ least-priv path) ===
   as DATAQ_READER -> MART_ORDER_REVENUE rows=800 max_order_ts=2026-07-04 19:41:40
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -3068,7 +3068,7 @@ tool_result
 id: toolu_016AT7JTZiuReZttA6q3vGhP
 ```
 === az signed-in user ===
-royarijit04@outlook.com
+<REDACTED_EMAIL>
 === PAT present in KV? (prefix only) ===
 pat prefix: dq_live_...  len=51
 === prod API healthz (via frontend proxy) ===
@@ -3272,7 +3272,7 @@ tool_use Read
 id: toolu_012F2ENN2ryQrjDbEE5hwRRZ
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/api/v1/checks.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/api/v1/checks.py",
   "offset": 35,
   "limit": 55
 }
@@ -3374,7 +3374,7 @@ tool_use Read
 id: toolu_01PndX3dgmi3S614gS4Lt8ZH
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/check_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/check_service.py",
   "offset": 88,
   "limit": 70
 }
@@ -3511,7 +3511,7 @@ RUN SUCCEEDED  overall=None
   [    pass] ?  metric=0.0
   [    pass] ?  metric=0.0
   [    pass] ?  metric=14.899888378888889
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -3603,7 +3603,7 @@ id: toolu_01AZS2QtZtcz6TXXBvZPWB13
 === docker + buildx available? ===
 29.6.1
 github.com/docker/buildx v0.35.0-desktop.2 b554ce1decd8b509893b1e7c6227eabfb923d094
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -3647,7 +3647,7 @@ tool_use Write
 id: toolu_0138AYnwwYsPiUsnGnVUProS
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/.dockerignore",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/.dockerignore",
   "content": "# Keep build artifacts + local state out of the image build context.\ntarget/\nlogs/\ndbt_packages/\n.user.yml\n.gitignore\ndocker-compose.yml\nREADME.md\nbootstrap_change_tracking.sql\n"
 }
 ```
@@ -3657,7 +3657,7 @@ id: toolu_0138AYnwwYsPiUsnGnVUProS
 tool_result
 id: toolu_0138AYnwwYsPiUsnGnVUProS
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ-harness/dbt/.dockerignore (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ-harness/dbt/.dockerignore (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3677,7 +3677,7 @@ tool_result
 id: toolu_011KdNDpKSRowjnSs31sta4i
 ```
 Login Succeeded
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -3732,7 +3732,7 @@ id: toolu_015t2awKeH2f54gNLKxJryaD
               + name              = "dbt-lineage"
                   + value = "adls://dataqharness3erlgd/raw/dbt"
 Plan: 1 to add, 0 to change, 0 to destroy.
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -3795,7 +3795,7 @@ id: toolu_01ELhRZ89pkWoGecQpW5tddr
 azurerm_container_app_job.dbt_lineage: Creating...
 azurerm_container_app_job.dbt_lineage: Creation complete after 19s [id=/subscriptions/37e710fd-b956-4a2e-94f2-b132bb26b3d6/resourceGroups/dataq-rg/providers/Microsoft.App/jobs/dbt-lineage]
 Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -3819,7 +3819,7 @@ tool_result
 id: toolu_01RbNf2iQhHCvbqhfwxBtPuA
 ```
 dbt-lineage-v07bd7u
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -3844,7 +3844,7 @@ id: toolu_01Rs67U9KsRozcgYBCKy5YFe
 ```
 poll 1: Running
 poll 2: Failed
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -3909,7 +3909,7 @@ warning: target/run_results.json not found — skipping.	PrimaryResult	2026-07-0
 no artifacts uploaded — did `dbt build` run?	PrimaryResult	2026-07-05T10:39:09.7346223Z
 artifact upload failed (non-fatal)	PrimaryResult	2026-07-05T10:39:09.7346223Z
 >> dbt build exit code: 2	PrimaryResult	2026-07-05T10:39:09.7346223Z
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -3923,7 +3923,7 @@ id: toolu_01KJTPspU31J12kAGZMNThgB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/run.sh",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/run.sh",
   "old_string": "export DBT_PROFILES_DIR=\"${DBT_PROFILES_DIR:-/app/dbt}\"\n\ncd /app/dbt\n\necho \">> dbt build (target_lag dynamic tables + data tests)\"\ndbt build \"$@\"\ndbt_rc=$?",
   "new_string": "export DBT_PROFILES_DIR=\"${DBT_PROFILES_DIR:-/app/dbt}\"\n\ncd /app/dbt\n\n# Generic dbt wrapper: the subcommand + flags come from \"$@\" (Dockerfile CMD / ACA\n# job args / compose command), e.g. `build`, `run --select mart_order_revenue`.\necho \">> dbt $*\"\ndbt \"$@\"\ndbt_rc=$?"
 }
@@ -3934,7 +3934,7 @@ id: toolu_01KJTPspU31J12kAGZMNThgB
 tool_result
 id: toolu_01KJTPspU31J12kAGZMNThgB
 ```
-The file /Users/arijit/Coding/Python/DataQ-harness/dbt/run.sh has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ-harness/dbt/run.sh has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3944,7 +3944,7 @@ id: toolu_01ERm8dMvkXnb81JGt9y5UMW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/run.sh",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/run.sh",
   "old_string": "echo \">> dbt build exit code: ${dbt_rc}\"\nexit \"${dbt_rc}\"",
   "new_string": "echo \">> dbt exit code: ${dbt_rc}\"\nexit \"${dbt_rc}\""
 }
@@ -3955,7 +3955,7 @@ id: toolu_01ERm8dMvkXnb81JGt9y5UMW
 tool_result
 id: toolu_01ERm8dMvkXnb81JGt9y5UMW
 ```
-The file /Users/arijit/Coding/Python/DataQ-harness/dbt/run.sh has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ-harness/dbt/run.sh has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3987,7 +3987,7 @@ id: toolu_01F5HJnDi5gdVyzTxjbNnCZ4
 #12 pushing manifest for dataqacr3erlgd.azurecr.io/dbt-lineage:latest@sha256:2f95dbd44c0c73d3c34cb8604874dd47d22ec56c1a287b62abf1ee1123b686a0 1.3s done
 #12 DONE 2.5s
 EXIT: 0
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -4016,7 +4016,7 @@ poll 2: Running
 poll 3: Running
 poll 4: Running
 poll 5: Succeeded
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -4134,7 +4134,7 @@ tool_use Write
 id: toolu_016XjSMdjwJy43vAMmBj2hyB
 ```json
 {
-  "file_path": "/Users/arijit/.claude/projects/-Users-arijit-Coding-Python-DataQ/memory/project_dbt_lineage_harness.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-arijit-Coding-Python-DataQ/memory/project_dbt_lineage_harness.md",
   "content": "---\nname: project_dbt_lineage_harness\ndescription: harness dbt Core lineage project (#609) — location, schemas, role, change-tracking caveat, artifact path for #611/#596\nmetadata:\n  type: project\n---\n\nSelf-hosted **dbt Core** lineage project built 2026-07-05 (#609, v1.1 W2). Lives at\n`~/Coding/Python/DataQ-harness/dbt/` (ADR 0021 — not git-tracked, not DataQ app code).\nSee [[project_harness_env]].\n\n**Shape:** `DATAQ_DB.RETAIL.{ORDERS_HEADER,ORDER_LINES,CUSTOMERS,PRODUCTS}` (base)\n→ `ANALYTICS_STG.{stg_orders,stg_order_lines,stg_customers,stg_products}` (views)\n→ `ANALYTICS.{MART_ORDER_REVENUE,MART_CUSTOMER_ORDERS}` (dynamic tables, target_lag 1h).\nMarts dedupe with `qualify row_number()` because the ADF COPY loads append (base tables\ncarry duplicate grains — 800 orders / 200 customers doubled).\n\n**Role:** dbt runs as **DATAQ_LOADER, not ACCOUNTADMIN** (user decision). Needed one extra\ngrant — `CREATE SCHEMA ON DATABASE DATAQ_DB` (terraform `snowflake.tf` → `loader_create_schema`).\nLoader owns the two ANALYTICS schemas so it grants SELECT/USAGE to DATAQ_READER via dbt\non-run-end hooks. profiles.yml reads `DBT_SNOWFLAKE_ROLE` (default DATAQ_LOADER) so secrets.sh's\n`SNOWFLAKE_ROLE=ACCOUNTADMIN` can't re-escalate. secrets.sh exports SNOWFLAKE_DATABASE/WAREHOUSE\n**set-but-empty** → profile uses `env_var(x,'') or 'DEFAULT'`, not env_var's default.\n\n**Change-tracking caveat (dynamic-table prereq):** loader can't enable change tracking (doesn't\nown base tables). ORDERS_HEADER+CUSTOMERS → `change_tracking=true` in snowflake.tf; ORDER_LINES+\nPRODUCTS → `dbt/bootstrap_change_tracking.sql` once as ACCOUNTADMIN. write_pandas overwrite drops\nit, so re-run if `flow_a_snowflake_load` runs again.\n\n**Hosting:** one image, three homes — local `dbt build`; ACA Job `dbt-lineage` on `dataq-cae`\n(terraform `dbt_job.tf`, cron `0 2 * * *`, **fires nightly** during the Azure window); docker-compose\npost-wind-down. `run.sh` is a generic `dbt \"$@\"` […]
 
 > TOOL
@@ -4142,7 +4142,7 @@ id: toolu_016XjSMdjwJy43vAMmBj2hyB
 tool_result
 id: toolu_016XjSMdjwJy43vAMmBj2hyB
 ```
-File created successfully at: /Users/arijit/.claude/projects/-Users-arijit-Coding-Python-DataQ/memory/project_dbt_lineage_harness.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-Users-arijit-Coding-Python-DataQ/memory/project_dbt_lineage_harness.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4151,7 +4151,7 @@ tool_use Read
 id: toolu_01Psi7kGFx8X9SovJ1denJHx
 ```json
 {
-  "file_path": "/Users/arijit/.claude/projects/-Users-arijit-Coding-Python-DataQ/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-arijit-Coding-Python-DataQ/memory/MEMORY.md",
   "offset": 1,
   "limit": 5
 }
@@ -4175,7 +4175,7 @@ tool_use Bash
 id: toolu_01EVUo23pKCCCve3DM3HLBa3
 ```json
 {
-  "command": "cd /Users/arijit/.claude/projects/-Users-arijit-Coding-Python-DataQ/memory && printf '%s\\n' '- [DataQ — dbt lineage harness project (#609)](project_dbt_lineage_harness.md) — self-hosted dbt Core in harness repo; RETAIL→ANALYTICS_STG views→ANALYTICS dynamic tables; runs as DATAQ_LOADER; change-tracking prereq; ACA job + ADLS artifacts for #611/#596' >> MEMORY.md && echo \"pointer appended\"",
+  "command": "cd /home/<USER>/.claude/projects/-Users-arijit-Coding-Python-DataQ/memory && printf '%s\\n' '- [DataQ — dbt lineage harness project (#609)](project_dbt_lineage_harness.md) — self-hosted dbt Core in harness repo; RETAIL→ANALYTICS_STG views→ANALYTICS dynamic tables; runs as DATAQ_LOADER; change-tracking prereq; ACA job + ADLS artifacts for #611/#596' >> MEMORY.md && echo \"pointer appended\"",
   "description": "Append memory pointer to MEMORY.md"
 }
 ```
@@ -4186,7 +4186,7 @@ tool_result
 id: toolu_01EVUo23pKCCCve3DM3HLBa3
 ```
 pointer appended
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -4265,7 +4265,7 @@ tool_use Read
 id: toolu_01Gug2t9MnNidMyqrTPVJ6a3
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "offset": 148,
   "limit": 22
 }
@@ -4321,7 +4321,7 @@ id: toolu_01JeAc8hAo6fgKXajQhMC8Sg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "### v1.1 W2 — Portability: OTel logs, secrets lifecycle, dry-run depth (due 2026-07-18) — 0/11",
   "new_string": "### v1.1 W2 — Portability: OTel logs, secrets lifecycle, dry-run depth (due 2026-07-18) — 1/12"
 }
@@ -4332,7 +4332,7 @@ id: toolu_01JeAc8hAo6fgKXajQhMC8Sg
 tool_result
 id: toolu_01JeAc8hAo6fgKXajQhMC8Sg
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4342,7 +4342,7 @@ id: toolu_0123xKrW5C966HwyL7BKZDWW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "| Status | Task | Theme / gap |\n|---|---|---|\n| ⬜ | [#524](https://github.com/TheurgicDuke771/DataQ/issues/524) opencensus → OTel log-export migration (opencensus is EOL; spans already OTel via #525) | Theme 14 |",
   "new_string": "| Status | Task | Theme / gap |\n|---|---|---|\n| ✅ | [#609](https://github.com/TheurgicDuke771/DataQ/issues/609) Self-hosted dbt Core lineage on Snowflake (RETAIL→ANALYTICS_STG views→ANALYTICS dynamic tables; runs as `DATAQ_LOADER`) — `dbt build` green local + ACA Job, DataQ suite (checks + freshness) green on `MART_ORDER_REVENUE`, artifacts to ADLS (2026-07-05); unblocks #611 | Theme 14 / G-d |\n| ⬜ | [#524](https://github.com/TheurgicDuke771/DataQ/issues/524) opencensus → OTel log-export migration (opencensus is EOL; spans already OTel via #525) | Theme 14 |"
 }
@@ -4353,7 +4353,7 @@ id: toolu_0123xKrW5C966HwyL7BKZDWW
 tool_result
 id: toolu_0123xKrW5C966HwyL7BKZDWW
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4393,7 +4393,7 @@ id: toolu_01GzUYKmhKdL6hrYKVKxrS5x
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "| **Open issues** | **65** (W1 progress 2026-07-04/05: #194/#195/#587 closed via #602/#603/#607; **#461 closed via #613** (PATs phase 1 merged — live PAT mint pending prod deploy) and **#583 via #614**; #588 rehearsed→reversed→reopened on W3; #609 filed (dbt lineage, W2 — rescoped to self-hosted dbt Core) + #611 filed (dbt as a third `OrchestrationProvider`, W2 — split from #609) + #286 pulled W7→W2;",
   "new_string": "| **Open issues** | **64** (W1 progress 2026-07-04/05: #194/#195/#587 closed via #602/#603/#607; **#461 closed via #613** (PATs phase 1 merged — live PAT mint pending prod deploy) and **#583 via #614**; #588 rehearsed→reversed→reopened on W3; **#609 closed 2026-07-05** (self-hosted dbt Core lineage — dbt build green local + ACA Job, DataQ suite green on a dynamic table, artifacts to ADLS; unblocks #611) + #611 filed (dbt as a third `OrchestrationProvider`, W2 — split from #609) + #286 pulled W7→W2;"
 }
@@ -4404,7 +4404,7 @@ id: toolu_01GzUYKmhKdL6hrYKVKxrS5x
 tool_result
 id: toolu_01GzUYKmhKdL6hrYKVKxrS5x
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4476,7 +4476,7 @@ tool_use Bash
 id: toolu_018QqPbWNL7mQAUBgPv5vSW2
 ```json
 {
-  "command": "cd ~/Coding/Python/DataQ && git add docs/progress.md && git commit -q -F - <<'EOF'\ndocs(tracker): #609 done — self-hosted dbt Core lineage verified end-to-end\n\ndbt build green locally + from the ACA Job (PASS=17), a DataQ suite (3\nexpectations + a freshness monitor) green against the ANALYTICS.MART_ORDER_REVENUE\ndynamic table, and manifest/run_results.json captured to ADLS raw/dbt/latest.\nUnblocks #611. Adds the pulled-forward #609 row to the W2 table (1/12), ticks\nepic #597, and drops the snapshot open-issue count 65 -> 64.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\ngit push -u origin docs/609-dbt-lineage-done 2>&1 | tail -3",
+  "command": "cd ~/Coding/Python/DataQ && git add docs/progress.md && git commit -q -F - <<'EOF'\ndocs(tracker): #609 done — self-hosted dbt Core lineage verified end-to-end\n\ndbt build green locally + from the ACA Job (PASS=17), a DataQ suite (3\nexpectations + a freshness monitor) green against the ANALYTICS.MART_ORDER_REVENUE\ndynamic table, and manifest/run_results.json captured to ADLS raw/dbt/latest.\nUnblocks #611. Adds the pulled-forward #609 row to the W2 table (1/12), ticks\nepic #597, and drops the snapshot open-issue count 65 -> 64.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\ngit push -u origin docs/609-dbt-lineage-done 2>&1 | tail -3",
   "description": "Commit + push docs branch"
 }
 ```
@@ -4666,7 +4666,8 @@ id: toolu_019W9mvZZuerqSqgxVbUXLw7
 tool_result
 id: toolu_019W9mvZZuerqSqgxVbUXLw7
 ```
-Rebasing (1/1)Auto-merging docs/progress.md
+Rebasing (1/1)
+Auto-merging docs/progress.md
 CONFLICT (content): Merge conflict in docs/progress.md
 error: could not apply e2a376c4... docs(tracker): #609 done — self-hosted dbt Core lineage verified end-to-end
 hint: Resolve all conflicts manually, mark them as resolved with
@@ -5037,7 +5038,7 @@ tool_use Read
 id: toolu_01UCpe9veY3Hh9mupY5Mu9G4
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/orchestration/base.py"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/orchestration/base.py"
 }
 ```
 
@@ -5093,7 +5094,7 @@ tool_use Read
 id: toolu_01LbCoWef372DbXM7b57iPxr
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/orchestration/airflow.py"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/orchestration/airflow.py"
 }
 ```
 
@@ -5133,7 +5134,7 @@ tool_use Read
 id: toolu_01GbmCsFX6jcaMWB61y8uCut
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/orchestration/registry.py"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/orchestration/registry.py"
 }
 ```
 
@@ -5306,7 +5307,7 @@ elapsed_time: 10.432257890701294
 args.which: build
 === overall status derivation? distinct result statuses ===
 Counter({'success': 12, 'pass': 5})
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -5659,7 +5660,7 @@ tool_use Write
 id: toolu_01PwprSWeiUYN3szMKLKUVCJ
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/adr/0029-dbt-orchestration-provider.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/adr/0029-dbt-orchestration-provider.md",
   "content": "# ADR 0029 — dbt as a third OrchestrationProvider (artifact-poll + HMAC webhook)\n\n- **Status:** Accepted\n- **Date:** 2026-07-05\n- **Deciders:** solo-dev\n- **Related:** [0004](0004-orchestration-abstraction.md) (orchestration seam), [0007](0007-airflow-callback-model.md) (the sibling callback model this mirrors), [0011](0011-extensibility-seams-for-deferred-integrations.md) (second-impl-deferred seams), [0010](0010-provider-agnostic-infrastructure-seams.md)/[0013](0013-marketplace-distribution-and-anti-lock-in.md) (anti-lock-in). Issue #611 (split from #609).\n\n## Context\n\nADR 0004 established one `OrchestrationProvider` seam with ADF as the reference impl and Airflow as the second. dbt is a **third** orchestration layer — a genuine second-generation test of the seam (not dbt clubbed under the already-proven Airflow provider). The harness dbt project (#609) produces the runs to observe.\n\nThe problem: **dbt Core has no runs API.** dbt Cloud's free tier has no API/scheduler; dbt-on-Snowflake observes via Snowflake (dies with the trial); Databricks dbt tasks observe via the Jobs API. Binding to any of those couples DataQ to a host. What *every* dbt deployment produces, wherever it runs, is **artifacts** (`run_results.json`, `manifest.json`) and the ability to run a command after a build. So the provider must bind to that universal surface — neutrality by construction (ADR 0010/0013).\n\n## Decision\n\nAdd a `dbt` provider that mirrors the Airflow callback model (ADR 0007) — HMAC-signed push webhook + a poll fallback — with the poll reading […]
 
 > TOOL
@@ -5667,7 +5668,7 @@ id: toolu_01PwprSWeiUYN3szMKLKUVCJ
 tool_result
 id: toolu_01PwprSWeiUYN3szMKLKUVCJ
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ/docs/adr/0029-dbt-orchestration-provider.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ/docs/adr/0029-dbt-orchestration-provider.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5680,7 +5681,7 @@ tool_use Write
 id: toolu_01YKn8j8WsNBAqmMSR38xHD4
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/orchestration/dbt.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/orchestration/dbt.py",
   "content": "\"\"\"dbt orchestration provider (ADR 0029) — artifact-poll + HMAC callback.\n\ndbt Core has no runs API. DataQ observes dbt builds through their **universal\nsurface** — the `run_results.json` artifact plus a post-build callback — so the\nsame contract works wherever dbt runs (dbt Cloud, dbt-on-Snowflake, Databricks dbt\ntasks, local compose): neutrality by construction (ADR 0010/0013). This mirrors the\nAirflow callback model (ADR 0007): a signed webhook is the near-real-time channel,\nan artifacts poll is the 10-min fallback.\n\nOrchestration provider, **not a datasource** (CLAUDE.md §4): this module implements\nthe `ConnectionAdapter` seam (config validation + connectivity test) and the\n`OrchestrationProvider` seam (event parse + poll), never `CheckRunner`.\n\nGrain (ADR 0029): the connection is a dbt **project** (one artifacts deployment,\nresolved by ``project_name``); a **job** is the fine-grained trigger unit\n(``pipeline_or_dag_id``), the analog of Airflow's instance→DAG. The poll reads\n``<artifacts_uri>/<job>/latest/run_results.json`` per configured job.\n\"\"\"\n\nfrom __future__ import annotations\n\nimport json\nfrom collections.abc import Mapping\nfrom datetime import datetime\nfrom typing import Any, Literal\nfrom urllib.parse import urlparse\n\nfrom pydantic import BaseModel, ConfigDict, field_validator, model_validator\n\nfrom backend.app.orchestration.base import MalformedEventError, RunUpdate\n\n# Fail fast rather than hang the request/beat thread on an unreachable store.\n_READ_TIMEOUT_SECONDS = 10.0\n\n# The stable per-job artifact pointer the producer (upload_artifacts.py) overwrites\n# every build; `runs/<UTC-ts>/` copies are retained alongside for audit/#596.\n_RUN_RESULTS_RELPATH = \"latest/run_results.json\"\n\n# dbt node result statuses […]
 
 > TOOL
@@ -5688,7 +5689,7 @@ id: toolu_01YKn8j8WsNBAqmMSR38xHD4
 tool_result
 id: toolu_01YKn8j8WsNBAqmMSR38xHD4
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ/backend/app/orchestration/dbt.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ/backend/app/orchestration/dbt.py (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5702,7 +5703,7 @@ id: toolu_01E9FzLDmSdWth8YUcGNz14A
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/orchestration/dbt.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/orchestration/dbt.py",
   "old_string": "from typing import Any, Literal\nfrom urllib.parse import urlparse",
   "new_string": "from typing import Any\nfrom urllib.parse import urlparse"
 }
@@ -5713,7 +5714,7 @@ id: toolu_01E9FzLDmSdWth8YUcGNz14A
 tool_result
 id: toolu_01E9FzLDmSdWth8YUcGNz14A
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/orchestration/dbt.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/orchestration/dbt.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5916,7 +5917,7 @@ tool_use Read
 id: toolu_01VcHApUscRKB29EsWg9ksNE
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/db/models.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/db/models.py",
   "offset": 343,
   "limit": 30
 }
@@ -5970,7 +5971,7 @@ id: toolu_014q9GisB6RsR6jmfQ9p6Nbb
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/db/models.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/db/models.py",
   "old_string": "CONNECTION_TYPES = (\"snowflake\", \"adls_gen2\", \"s3\", \"unity_catalog\", \"adf\", \"airflow\")",
   "new_string": "CONNECTION_TYPES = (\"snowflake\", \"adls_gen2\", \"s3\", \"unity_catalog\", \"adf\", \"airflow\", \"dbt\")"
 }
@@ -5981,7 +5982,7 @@ id: toolu_014q9GisB6RsR6jmfQ9p6Nbb
 tool_result
 id: toolu_014q9GisB6RsR6jmfQ9p6Nbb
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/db/models.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/db/models.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5991,7 +5992,7 @@ id: toolu_01Y3YcgB3ZDmX7CSv4JYVjtA
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/db/models.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/db/models.py",
   "old_string": "ORCHESTRATION_PROVIDERS = (\"adf\", \"airflow\")",
   "new_string": "ORCHESTRATION_PROVIDERS = (\"adf\", \"airflow\", \"dbt\")"
 }
@@ -6002,7 +6003,7 @@ id: toolu_01Y3YcgB3ZDmX7CSv4JYVjtA
 tool_result
 id: toolu_01Y3YcgB3ZDmX7CSv4JYVjtA
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/db/models.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/db/models.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6012,7 +6013,7 @@ id: toolu_01GGaMVearRBwMPW8bxPSNCX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/db/models.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/db/models.py",
   "old_string": "            postgresql_where=text(\"triggered_by LIKE 'adf:%' OR triggered_by LIKE 'airflow:%'\"),\n        ),",
   "new_string": "            postgresql_where=text(\n                \"triggered_by LIKE 'adf:%' OR triggered_by LIKE 'airflow:%' \"\n                \"OR triggered_by LIKE 'dbt:%'\"\n            ),\n        ),"
 }
@@ -6023,7 +6024,7 @@ id: toolu_01GGaMVearRBwMPW8bxPSNCX
 tool_result
 id: toolu_01GGaMVearRBwMPW8bxPSNCX
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/db/models.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/db/models.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6033,7 +6034,7 @@ id: toolu_01TmneXFa7gBi9LBYDMkmVbK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/orchestration_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/orchestration_service.py",
   "old_string": "_ORCH_TRIGGER_PREDICATE = text(\"triggered_by LIKE 'adf:%' OR triggered_by LIKE 'airflow:%'\")",
   "new_string": "_ORCH_TRIGGER_PREDICATE = text(\n    \"triggered_by LIKE 'adf:%' OR triggered_by LIKE 'airflow:%' OR triggered_by LIKE 'dbt:%'\"\n)"
 }
@@ -6053,7 +6054,7 @@ tool_use Read
 id: toolu_018K8DmSx3c2BfUpBEZrFvLw
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/orchestration_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/orchestration_service.py",
   "offset": 38,
   "limit": 6
 }
@@ -6079,7 +6080,7 @@ id: toolu_014P8vbVheLCcHWWjCxgyaku
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/orchestration_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/orchestration_service.py",
   "old_string": "_ORCH_TRIGGER_PREDICATE = text(\"triggered_by LIKE 'adf:%' OR triggered_by LIKE 'airflow:%'\")",
   "new_string": "_ORCH_TRIGGER_PREDICATE = text(\n    \"triggered_by LIKE 'adf:%' OR triggered_by LIKE 'airflow:%' OR triggered_by LIKE 'dbt:%'\"\n)"
 }
@@ -6090,7 +6091,7 @@ id: toolu_014P8vbVheLCcHWWjCxgyaku
 tool_result
 id: toolu_014P8vbVheLCcHWWjCxgyaku
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/services/orchestration_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/services/orchestration_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6104,7 +6105,7 @@ id: toolu_01ReTyix1LLEDtS8ncNrsNuS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/orchestration/registry.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/orchestration/registry.py",
   "old_string": "from backend.app.orchestration.adf import AdfProvider\nfrom backend.app.orchestration.airflow import AirflowProvider\nfrom backend.app.orchestration.base import OrchestrationProvider",
   "new_string": "from backend.app.orchestration.adf import AdfProvider\nfrom backend.app.orchestration.airflow import AirflowProvider\nfrom backend.app.orchestration.base import OrchestrationProvider\nfrom backend.app.orchestration.dbt import DbtProvider"
 }
@@ -6115,7 +6116,7 @@ id: toolu_01ReTyix1LLEDtS8ncNrsNuS
 tool_result
 id: toolu_01ReTyix1LLEDtS8ncNrsNuS
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/orchestration/registry.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/orchestration/registry.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6125,7 +6126,7 @@ id: toolu_01AadkdZvSTgHicEuUBtUsgC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/orchestration/registry.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/orchestration/registry.py",
   "old_string": "_PROVIDERS: dict[str, OrchestrationProvider] = {\n    \"adf\": AdfProvider(),\n    \"airflow\": AirflowProvider(),\n}",
   "new_string": "_PROVIDERS: dict[str, OrchestrationProvider] = {\n    \"adf\": AdfProvider(),\n    \"airflow\": AirflowProvider(),\n    \"dbt\": DbtProvider(),\n}"
 }
@@ -6136,7 +6137,7 @@ id: toolu_01AadkdZvSTgHicEuUBtUsgC
 tool_result
 id: toolu_01AadkdZvSTgHicEuUBtUsgC
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/orchestration/registry.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/orchestration/registry.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6145,7 +6146,7 @@ tool_use Read
 id: toolu_01EmamgEsYaN7itBW8TAsvuW
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/datasources/registry.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/datasources/registry.py",
   "offset": 24,
   "limit": 24
 }
@@ -6189,7 +6190,7 @@ id: toolu_01MP6VBMd8SCVcejZ1prrS7W
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/datasources/registry.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/datasources/registry.py",
   "old_string": "from backend.app.orchestration.adf import ADFConnectionAdapter\nfrom backend.app.orchestration.airflow import AirflowConnectionAdapter",
   "new_string": "from backend.app.orchestration.adf import ADFConnectionAdapter\nfrom backend.app.orchestration.airflow import AirflowConnectionAdapter\nfrom backend.app.orchestration.dbt import DbtConnectionAdapter"
 }
@@ -6200,7 +6201,7 @@ id: toolu_01MP6VBMd8SCVcejZ1prrS7W
 tool_result
 id: toolu_01MP6VBMd8SCVcejZ1prrS7W
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/datasources/registry.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/datasources/registry.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6210,7 +6211,7 @@ id: toolu_01499DpDr5Tiw8f9T6EeHNRG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/datasources/registry.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/datasources/registry.py",
   "old_string": "    \"adf\": ADFConnectionAdapter(),\n    \"airflow\": AirflowConnectionAdapter(),\n}",
   "new_string": "    \"adf\": ADFConnectionAdapter(),\n    \"airflow\": AirflowConnectionAdapter(),\n    \"dbt\": DbtConnectionAdapter(),\n}"
 }
@@ -6221,7 +6222,7 @@ id: toolu_01499DpDr5Tiw8f9T6EeHNRG
 tool_result
 id: toolu_01499DpDr5Tiw8f9T6EeHNRG
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/datasources/registry.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/datasources/registry.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6231,7 +6232,7 @@ id: toolu_01AC6jZgwEVsn2Ls9CRD3GmG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/datasources/registry.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/datasources/registry.py",
   "old_string": "# only datasources get a `CheckRunner`. ADF and Airflow are orchestration\n# providers, so their adapters live under `orchestration/`, not `datasources/`\n# (CLAUDE.md §4).",
   "new_string": "# only datasources get a `CheckRunner`. ADF, Airflow, and dbt are orchestration\n# providers, so their adapters live under `orchestration/`, not `datasources/`\n# (CLAUDE.md §4)."
 }
@@ -6242,7 +6243,7 @@ id: toolu_01AC6jZgwEVsn2Ls9CRD3GmG
 tool_result
 id: toolu_01AC6jZgwEVsn2Ls9CRD3GmG
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/datasources/registry.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/datasources/registry.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6255,7 +6256,7 @@ tool_use Read
 id: toolu_01L9zszpfJToxvXtLR3vefdE
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/core/config.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/core/config.py",
   "offset": 90,
   "limit": 12
 }
@@ -6287,7 +6288,7 @@ id: toolu_01UDVg7GEq9ytM7NfMuSK4Gs
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/core/config.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/core/config.py",
   "old_string": "    airflow_webhook_secret_name: str = \"airflow-webhook-secret\"  # noqa: S105 — KV key name\n",
   "new_string": "    airflow_webhook_secret_name: str = \"airflow-webhook-secret\"  # noqa: S105 — KV key name\n    # SecretStore key holding the dbt callback HMAC signing key (ADR 0029; sibling\n    # of the Airflow key). → KV_SECRET_DBT_WEBHOOK_SECRET in dev, KV secret\n    # `dbt-webhook-secret` in prod. App-level (shared across dbt connections); the\n    # per-connection secret is the artifacts-store read credential, not this.\n    dbt_webhook_secret_name: str = \"dbt-webhook-secret\"  # noqa: S105 — KV key name\n"
 }
@@ -6298,7 +6299,7 @@ id: toolu_01UDVg7GEq9ytM7NfMuSK4Gs
 tool_result
 id: toolu_01UDVg7GEq9ytM7NfMuSK4Gs
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/core/config.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/core/config.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6311,7 +6312,7 @@ tool_use Read
 id: toolu_01SeMDqRJeoPWcGtNCViFanY
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/api/v1/orchestration.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/api/v1/orchestration.py",
   "offset": 139,
   "limit": 46
 }
@@ -6378,16 +6379,16 @@ id: toolu_01L8v6fuqmxS5BvUfoyJTKgv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/api/v1/orchestration.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/api/v1/orchestration.py",
   "old_string": "    provider = get_orchestration_provider(\"airflow\")\n    update = provider.parse_event(body, request.headers)  # raises MalformedEventError → 422\n    return await _ack_event(db, provider_impl=provider, update=update, secret_store=secret_store)",
-  "new_string": "    provider = get_orchestration_provider(\"airflow\")\n    update = provider.parse_event(body, request.headers)  # raises MalformedEventError → 422\n    return await _ack_event(db, provider_impl=provider, update=update, secret_store=secret_store)\n\n\ndef _authenticate_dbt(body: bytes, signature: str | None, secret_store: SecretStore) -> None:\n    \"\"\"Verify the HMAC-SHA256 over the raw body against the header (ADR 0029).\n\n    Identical scheme to the Airflow callback (`_authenticate_airflow`) but keyed on\n    the dbt signing secret; the signature is never logged.\n    \"\"\"\n    settings = get_settings()\n    try:\n        key = secret_store.get(settings.dbt_webhook_secret_name)\n    except SecretNotFoundError as exc:\n        log.error(\"dbt_webhook_secret_missing\", secret_name=settings.dbt_webhook_secret_name)\n        raise WebhookNotConfiguredError(\"dbt webhook receiver is not configured\") from exc\n\n    expected = hmac.new(key.encode(\"utf-8\"), body, hashlib.sha256).hexdigest()\n    # Compare on UTF-8 bytes (see _authenticate_airflow): a non-ASCII signature must\n    # not reach compare_digest as str, else TypeError → 500 instead of 401.\n    if not signature or not hmac.compare_digest(\n        signature.encode(\"utf-8\"), expected.encode(\"utf-8\")\n    ):\n        log.warning(\"dbt_webhook_auth_failed\", signature_present=bool(signature))\n        raise WebhookAuthError(\"invalid or missing webhook signature\")\n\n\n@router.post(\n    \"/orchestration/events/dbt\",\n    response_model=EventAck,\n    status_code=status.HTTP_200_OK,\n    summary=\"Receive a dbt build callback event\",\n)\nasync def receive_dbt_event(\n    request: Request,\n    db: Annotated[Session, Depends(get_db)],\n    secret_store: Annotated[SecretStore, Depends(get_secret_store)],\n) -> EventAck:\n    body = await request.body()\n    _authenticate_dbt(body, request.headers.get(_SIGNATURE_HEADER), secret_store)\n\n    provider = get_orchestration_provider(\"dbt\")\n    update = provider.parse_event(body, request.headers)  # raises MalformedEventError → 422\n […]
+  "new_string": "    provider = get_orchestration_provider(\"airflow\")\n    update = provider.parse_event(body, request.headers)  # raises MalformedEventError → 422\n    return await _ack_event(db, provider_impl=provider, update=update, secret_store=secret_store)\n\n\ndef _authenticate_dbt(body: bytes, signature: str | None, secret_store: SecretStore) -> None:\n    \"\"\"Verify the HMAC-SHA256 over the raw body against the header (ADR 0029).\n\n    Identical scheme to the Airflow callback (`_authenticate_airflow`) but keyed on\n    the dbt signing secret; the signature is never logged.\n    \"\"\"\n    settings = get_settings()\n    try:\n        key = secret_store.get(settings.dbt_webhook_secret_name)\n    except SecretNotFoundError as exc:\n        log.error(\"dbt_webhook_secret_missing\", secret_name=settings.dbt_webhook_secret_name)\n        raise WebhookNotConfiguredError(\"dbt webhook receiver is not configured\") from exc\n\n    expected = hmac.new(key.encode(\"utf-8\"), body, hashlib.sha256).hexdigest()\n    # Compare on UTF-8 bytes (see _authenticate_airflow): a non-ASCII signature must\n    # not reach compare_digest as str, else TypeError → 500 instead of 401.\n    if not signature or not hmac.compare_digest(\n        signature.encode(\"utf-8\"), expected.encode(\"utf-8\")\n    ):\n        log.warning(\"dbt_webhook_auth_failed\", signature_present=bool(signature))\n        raise WebhookAuthError(\"invalid or missing webhook signature\")\n\n\<REDACTED_EMAIL>(\n    \"/orchestration/events/dbt\",\n    response_model=EventAck,\n    status_code=status.HTTP_200_OK,\n    summary=\"Receive a dbt build callback event\",\n)\nasync def receive_dbt_event(\n    request: Request,\n    db: Annotated[Session, Depends(get_db)],\n    secret_store: Annotated[SecretStore, Depends(get_secret_store)],\n) -> EventAck:\n    body = await request.body()\n    _authenticate_dbt(body, request.headers.get(_SIGNATURE_HEADER), secret_store)\n\n    provider = get_orchestration_provider(\"dbt\")\n    update = provider.parse_event(body, request.headers)  # raises MalformedEventError → 422\n […]
 
 > TOOL
 
 tool_result
 id: toolu_01L8v6fuqmxS5BvUfoyJTKgv
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/api/v1/orchestration.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/api/v1/orchestration.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6424,7 +6425,7 @@ tool_use Write
 id: toolu_01TM7LbyDNzXGsrJ61uyrmd7
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/alembic/versions/c1d2e3f4a5b6_widen_orchestration_for_dbt.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/alembic/versions/c1d2e3f4a5b6_widen_orchestration_for_dbt.py",
   "content": "\"\"\"widen orchestration value-sets + trigger-dedup predicate for the dbt provider\n\nAdds ``dbt`` as a third `OrchestrationProvider` (ADR 0029, #611). dbt is an\norchestration provider, not a datasource (CLAUDE.md §4), so it joins the same\nvalue-sets ADF/Airflow live in. Five widenings, all **additive** (permit one more\nvalue) and therefore backward-compatible — old code that never emits ``dbt`` is\nunaffected, and no existing row can violate a widened constraint:\n\n1. ``ck_connections_type_valid``      — allow a ``dbt`` connection row.\n2. ``uq_connections_orchestrator_type_env`` — one dbt connection per env (as ADF/Airflow).\n3. ``ck_pipeline_runs_provider_valid`` — allow ``provider='dbt'`` pipeline runs.\n4. ``ck_trigger_bindings_provider_valid`` — allow ``provider='dbt'`` trigger bindings.\n5. ``uq_runs_suite_triggered_by``      — extend the trigger-dedup predicate to ``dbt:%``.\n\nDeployable ahead of the dbt provider code (nothing writes ``dbt`` until the\nservice ships). Tested up + down locally. Raw SQL (exact constraint/index names)\nmirrors the #308 dedup-index migration; kept in sync with the model constraints in\n`db/models.py` and `orchestration_service._ORCH_TRIGGER_PREDICATE`.\n\"\"\"\n\nfrom collections.abc import Sequence\n\nfrom alembic import op\n\n# revision identifiers, used by Alembic.\nrevision: str = \"c1d2e3f4a5b6\"\ndown_revision: str | None = \"b0c1d2e3f4a5\"\nbranch_labels: str | Sequence[str] | None = None\ndepends_on: str | Sequence[str] | None = None\n\n_CONNECTION_TYPES_WITH_DBT = (\n    \"'snowflake', 'adls_gen2', 's3', 'unity_catalog', 'adf', 'airflow', 'dbt'\"\n)\n_CONNECTION_TYPES_NO_DBT = \"'snowflake', 'adls_gen2', 's3', 'unity_catalog', 'adf', 'airflow'\"\n\n\ndef _set_type_check(values: str) -> None:\n    op.execute(\"ALTER TABLE connections DROP […]
 
 > TOOL
@@ -6432,7 +6433,7 @@ id: toolu_01TM7LbyDNzXGsrJ61uyrmd7
 tool_result
 id: toolu_01TM7LbyDNzXGsrJ61uyrmd7
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ/backend/alembic/versions/c1d2e3f4a5b6_widen_orchestration_for_dbt.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ/backend/alembic/versions/c1d2e3f4a5b6_widen_orchestration_for_dbt.py (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6576,7 +6577,7 @@ tool_use Read
 id: toolu_016qQzvxziXr5b1VqPTd41tV
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/integrations/airflow/dataq_airflow_callback.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/integrations/airflow/dataq_airflow_callback.py",
   "offset": 60,
   "limit": 120
 }
@@ -6636,7 +6637,7 @@ tool_use Write
 id: toolu_01XcakDkUDnBcFzN1iSWLybh
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/integrations/dbt/dataq_dbt_callback.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/integrations/dbt/dataq_dbt_callback.py",
   "content": "\"\"\"DataQ ↔ dbt build callback snippet (run after `dbt build`).\n\ndbt Core has no callback context (unlike Airflow's `on_*_callback`), so this is a\nsmall **post-build wrapper**: run it right after `dbt build`, pointed at the run's\n``run_results.json``, and it POSTs a compact, HMAC-signed JSON document to DataQ's\ndbt event receiver. DataQ records the run in ``pipeline_runs`` and, on success,\ntriggers any suite bound to this job (DataQ ADR 0004 / 0029). Both success and\nfailure are reported; only success fires a trigger.\n\nWire it into your build wrapper (e.g. the container entrypoint)::\n\n    dbt build\n    python dataq_dbt_callback.py target/run_results.json   # never fails the build\n\nConfiguration — environment variables, read at call time:\n\n    DATAQ_WEBHOOK_URL     Full receiver URL, e.g.\n                          https://dataq.example.com/api/v1/orchestration/events/dbt\n    DATAQ_WEBHOOK_SECRET  HMAC signing key — the SAME value DataQ stores in Key\n                          Vault as ``dbt-webhook-secret``.\n    DATAQ_DBT_PROJECT     Project name. MUST match the ``project_name`` of the dbt\n                          connection registered in DataQ (that is how DataQ\n                          attributes the run). Falls back to the project parsed\n                          from ``run_results.json`` node ids when unset.\n    DATAQ_DBT_JOB         Job name — the trigger unit (``pipeline_or_dag_id``). One\n                          project may expose several jobs (e.g. distinct --select\n                          slices); bind a suite to a specific job. Required.\n\nDesign notes: stdlib-only (no extra pip installs), and **fail-safe** — […]
 
 > TOOL
@@ -6644,7 +6645,7 @@ id: toolu_01XcakDkUDnBcFzN1iSWLybh
 tool_result
 id: toolu_01XcakDkUDnBcFzN1iSWLybh
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ/integrations/dbt/dataq_dbt_callback.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ/integrations/dbt/dataq_dbt_callback.py (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6653,7 +6654,7 @@ tool_use Write
 id: toolu_017toBvVigjXxU38CnqVm87v
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/integrations/dbt/README.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/integrations/dbt/README.md",
   "content": "# DataQ ↔ dbt callback\n\nReport dbt build runs to DataQ so it can record them in `pipeline_runs` and trigger\na DQ suite when a build succeeds (DataQ ADR 0004 / 0029). dbt is an **orchestration\nprovider** in DataQ — a workflow whose runs DataQ observes and reacts to — not a\ndatasource.\n\ndbt Core has no callback context (unlike Airflow's `on_*_callback`), so this is a\ntiny **post-build wrapper** you run right after `dbt build`, pointed at the run's\n`run_results.json`.\n\n## Setup\n\n1. **Register a dbt connection in DataQ** (Connections → dbt) with:\n   - `project_name` — a logical name for this dbt project (the callback's\n     `DATAQ_DBT_PROJECT` must match it).\n   - `artifacts_uri` — where the build publishes artifacts, for the poll fallback:\n     `adls://<account>/<container>/<prefix>`, `s3://<bucket>/<prefix>`, or\n     `file:///<path>`.\n   - `jobs` — the job names this project publishes (each polled at\n     `<artifacts_uri>/<job>/latest/run_results.json`).\n   - the artifacts-store read credential as the connection secret (ADLS SAS / S3\n     secret key; none for `file://`).\n2. **Store the HMAC signing key** in DataQ's secret store as `dbt-webhook-secret`\n   (the same value you set as `DATAQ_WEBHOOK_SECRET` below).\n3. **Copy `dataq_dbt_callback.py`** next to your dbt build wrapper and invoke it\n   after `dbt build`:\n\n   ```bash\n   dbt build\n   python dataq_dbt_callback.py target/run_results.json   # never fails the build\n […]
 
 > TOOL
@@ -6661,7 +6662,7 @@ id: toolu_017toBvVigjXxU38CnqVm87v
 tool_result
 id: toolu_017toBvVigjXxU38CnqVm87v
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ/integrations/dbt/README.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ/integrations/dbt/README.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6786,7 +6787,7 @@ tool_use Read
 id: toolu_01RGkVpvebmDGR9eA9dYfLCF
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/api/test_orchestration_events_airflow.py"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/api/test_orchestration_events_airflow.py"
 }
 ```
 
@@ -6853,7 +6854,7 @@ tool_use Write
 id: toolu_01CP4mCCxpmHfrQkcGwkho2q
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/orchestration/test_dbt_provider.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/orchestration/test_dbt_provider.py",
   "content": "\"\"\"DbtProvider / DbtConfig / DbtConnectionAdapter unit tests.\n\nPure unit tests (no auth here — HMAC verification is the endpoint's job): callback\nparse + status mapping, config validation per artifacts scheme, and the artifacts\npoll (`list_recent_runs`) with `_read_artifact` patched (no cloud SDK needed).\n\"\"\"\n\nimport json\nfrom datetime import UTC, datetime, timedelta\nfrom typing import Any\n\nimport pytest\n\nfrom backend.app.orchestration import dbt as dbt_mod\nfrom backend.app.orchestration.base import MalformedEventError\nfrom backend.app.orchestration.dbt import DbtConfig, DbtConnectionAdapter, DbtProvider\n\n_CALLBACK = {\n    \"project_name\": \"dataq_lineage\",\n    \"job_name\": \"lineage_build\",\n    \"invocation_id\": \"522104cf-f67a-463f-bc5b-b6057cc93a62\",\n    \"status\": \"success\",\n    \"started_at\": \"2026-07-05T10:31:04+00:00\",\n    \"finished_at\": \"2026-07-05T10:31:14+00:00\",\n}\n\n\ndef _payload(**overrides: Any) -> bytes:\n    return json.dumps({**_CALLBACK, **overrides}).encode()\n\n\ndef _run_results(*statuses: str, invocation_id: str = \"inv-1\", generated_at: str | None = None) -> bytes:\n    return json.dumps(\n        {\n            \"metadata\": {\n                \"invocation_id\": invocation_id,\n                \"invocation_started_at\": \"2026-07-05T10:31:04Z\",\n                \"generated_at\": generated_at or \"2026-07-05T10:31:14Z\",\n            },\n            \"results\": [{\"status\": s, \"unique_id\": f\"model.dataq_lineage.m{i}\"} for i, s in enumerate(statuses)],\n        }\n    ).encode()\n\n\n# ── identity + parse_event ────────────────────────────────────────────────────\n\n\ndef test_provider_identity() -> None:\n    p = DbtProvider()\n    assert p.provider == \"dbt\"\n    assert p.resource_config_key == \"project_name\"\n\n\ndef test_parse_success_maps_fields() -> None:\n    update = DbtProvider().parse_event(_payload(), {})\n    assert update.provider_run_id == \"522104cf-f67a-463f-bc5b-b6057cc93a62\"\n    assert update.pipeline_or_dag_id == \"lineage_build\"  # job = pipeline_or_dag_id\n    assert update.resource_name == \"dataq_lineage\"  # project resolves the connection\n    assert update.status == \"succeeded\"\n    assert update.started_at == datetime.fromisoformat(\"2026-07-05T10:31:04+00:00\")\n    assert update.finished_at == datetime.fromisoformat(\"2026-07-05T10:31:14+00:00\")\n\n\ndef test_parse_failed_carries_error() -> None:\n    update = DbtProvider().parse_event(_payload(status=\"error\", error=\"model X failed\"), […]
 
 > TOOL
@@ -6861,7 +6862,7 @@ id: toolu_01CP4mCCxpmHfrQkcGwkho2q
 tool_result
 id: toolu_01CP4mCCxpmHfrQkcGwkho2q
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ/backend/tests/orchestration/test_dbt_provider.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ/backend/tests/orchestration/test_dbt_provider.py (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6874,15 +6875,15 @@ tool_use Write
 id: toolu_01QbeMKxce95kwDvgVmGEJ3T
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/api/test_orchestration_events_dbt.py",
-  "content": "\"\"\"dbt webhook endpoint tests via TestClient against a real Postgres.\n\nAuth is HMAC-SHA256 over the raw body in X-DataQ-Signature (ADR 0029), so the test\ncomputes the signature over the exact bytes it sends. get_db + get_secret_store are\noverridden; the store is seeded with the signing key. Skips without TEST_DATABASE_URL.\n\"\"\"\n\nimport hashlib\nimport hmac\nimport json\nimport uuid\nfrom collections.abc import Iterator\nfrom typing import Any\n\nimport pytest\nfrom fastapi.testclient import TestClient\nfrom sqlalchemy import select\n\nfrom backend.app.core.config import get_settings\nfrom backend.app.core.secrets import SecretNotFoundError, get_secret_store\nfrom backend.app.db.models import Connection, PipelineRun, Run, Suite, TriggerBinding, User\nfrom backend.app.db.session import get_db\nfrom backend.app.main import app\n\n_SIGNING_KEY = \"dbt-hmac-signing-key-abc\"\n_PROJECT = \"dataq_lineage\"\n\n_CALLBACK = {\n    \"project_name\": _PROJECT,\n    \"job_name\": \"lineage_build\",\n    \"invocation_id\": \"522104cf-f67a-463f-bc5b-b6057cc93a62\",\n    \"status\": \"success\",\n}\n\n_URL = \"/api/v1/orchestration/events/dbt\"\n\n\nclass FakeStore:\n    def __init__(self) -> None:\n        self.data: dict[str, str] = {}\n\n    def get(self, name: str) -> str:\n        if name not in self.data:\n            raise SecretNotFoundError(name)\n        return self.data[name]\n\n    def set(self, name: str, value: str) -> None:\n        self.data[name] = value\n\n\n@pytest.fixture\ndef client(db_session: Any) -> Iterator[tuple[TestClient, FakeStore]]:\n    store = FakeStore()\n    store.set(get_settings().dbt_webhook_secret_name, _SIGNING_KEY)\n    app.dependency_overrides[get_db] = lambda: db_session\n    app.dependency_overrides[get_secret_store] = lambda: store\n    try:\n        yield TestClient(app), store\n    finally:\n        app.dependency_overrides.clear()\n\n\ndef _sign(body: bytes, key: str = _SIGNING_KEY) -> str:\n    return hmac.new(key.encode(\"utf-8\"), body, hashlib.sha256).hexdigest()\n\n\ndef _post(api: TestClient, body: bytes, signature: str | None) -> Any:\n    headers = {\"Content-Type\": \"application/json\"}\n    if signature is not None:\n […]
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/api/test_orchestration_events_dbt.py",
+  "content": "\"\"\"dbt webhook endpoint tests via TestClient against a real Postgres.\n\nAuth is HMAC-SHA256 over the raw body in X-DataQ-Signature (ADR 0029), so the test\ncomputes the signature over the exact bytes it sends. get_db + get_secret_store are\noverridden; the store is seeded with the signing key. Skips without TEST_DATABASE_URL.\n\"\"\"\n\nimport hashlib\nimport hmac\nimport json\nimport uuid\nfrom collections.abc import Iterator\nfrom typing import Any\n\nimport pytest\nfrom fastapi.testclient import TestClient\nfrom sqlalchemy import select\n\nfrom backend.app.core.config import get_settings\nfrom backend.app.core.secrets import SecretNotFoundError, get_secret_store\nfrom backend.app.db.models import Connection, PipelineRun, Run, Suite, TriggerBinding, User\nfrom backend.app.db.session import get_db\nfrom backend.app.main import app\n\n_SIGNING_KEY = \"dbt-hmac-signing-key-abc\"\n_PROJECT = \"dataq_lineage\"\n\n_CALLBACK = {\n    \"project_name\": _PROJECT,\n    \"job_name\": \"lineage_build\",\n    \"invocation_id\": \"522104cf-f67a-463f-bc5b-b6057cc93a62\",\n    \"status\": \"success\",\n}\n\n_URL = \"/api/v1/orchestration/events/dbt\"\n\n\nclass FakeStore:\n    def __init__(self) -> None:\n        self.data: dict[str, str] = {}\n\n    def get(self, name: str) -> str:\n        if name not in self.data:\n            raise SecretNotFoundError(name)\n        return self.data[name]\n\n    def set(self, name: str, value: str) -> None:\n        self.data[name] = value\n\n\<REDACTED_EMAIL>\ndef client(db_session: Any) -> Iterator[tuple[TestClient, FakeStore]]:\n    store = FakeStore()\n    store.set(get_settings().dbt_webhook_secret_name, _SIGNING_KEY)\n    app.dependency_overrides[get_db] = lambda: db_session\n    app.dependency_overrides[get_secret_store] = lambda: store\n    try:\n        yield TestClient(app), store\n    finally:\n        app.dependency_overrides.clear()\n\n\ndef _sign(body: bytes, key: str = _SIGNING_KEY) -> str:\n    return hmac.new(key.encode(\"utf-8\"), body, hashlib.sha256).hexdigest()\n\n\ndef _post(api: TestClient, body: bytes, signature: str | None) -> Any:\n    headers = {\"Content-Type\": \"application/json\"}\n    if signature is not None:\n […]
 
 > TOOL
 
 tool_result
 id: toolu_01QbeMKxce95kwDvgVmGEJ3T
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ/backend/tests/api/test_orchestration_events_dbt.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ/backend/tests/api/test_orchestration_events_dbt.py (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6995,8 +6996,8 @@ id: toolu_014xBR96TEKHfymAYtgqecpq
 ```
 ERROR: usage: python -m pytest [options] [file_or_dir] [file_or_dir] [...]
 python -m pytest: error: unrecognized arguments: --cov=backend/app --cov-report=term-missing --cov-fail-under=80
-  inifile: /Users/arijit/Coding/Python/DataQ/pyproject.toml
-  rootdir: /Users/arijit/Coding/Python/DataQ
+  inifile: /home/<USER>/Coding/Python/DataQ/pyproject.toml
+  rootdir: /home/<USER>/Coding/Python/DataQ
 ```
 
 > TOOL
@@ -7048,7 +7049,7 @@ tool_use Read
 id: toolu_01FNZk85ATtjuotGN1CTGtN3
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/orchestration/test_adf_provider.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/orchestration/test_adf_provider.py",
   "offset": 200,
   "limit": 16
 }
@@ -7084,7 +7085,7 @@ id: toolu_01UqcCyvg5Pi8gjTPHp6x7pp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/orchestration/test_adf_provider.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/orchestration/test_adf_provider.py",
   "old_string": "    # adf + airflow are both registered now; probe a provider with no impl\n    # (dbt is the post-v1 third-provider candidate, ADR 0011).\n    with pytest.raises(UnsupportedProviderError, match=\"dbt\"):\n        get_orchestration_provider(\"dbt\")",
   "new_string": "    # adf + airflow + dbt are all registered now; probe a provider with no impl\n    # (prefect is a hypothetical future OrchestrationProvider, ADR 0011).\n    with pytest.raises(UnsupportedProviderError, match=\"prefect\"):\n        get_orchestration_provider(\"prefect\")"
 }
@@ -7095,7 +7096,7 @@ id: toolu_01UqcCyvg5Pi8gjTPHp6x7pp
 tool_result
 id: toolu_01UqcCyvg5Pi8gjTPHp6x7pp
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/orchestration/test_adf_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/orchestration/test_adf_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7162,7 +7163,7 @@ tool_use Read
 id: toolu_01A5TVeg84mFw1FQVyd2VTFa
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/datasources/test_snowflake.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/datasources/test_snowflake.py",
   "offset": 608,
   "limit": 16
 }
@@ -7196,7 +7197,7 @@ id: toolu_019mFvHRi3hwUM3HRe1j1J18
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/datasources/test_snowflake.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/datasources/test_snowflake.py",
   "old_string": "    # All six CONNECTION_TYPES now have adapters, so probe a type that isn't a\n    # valid connection type at all (a post-v1 RDBMS candidate, ADR 0011).",
   "new_string": "    # All seven CONNECTION_TYPES now have adapters, so probe a type that isn't a\n    # valid connection type at all (a post-v1 RDBMS candidate, ADR 0011)."
 }
@@ -7207,7 +7208,7 @@ id: toolu_019mFvHRi3hwUM3HRe1j1J18
 tool_result
 id: toolu_019mFvHRi3hwUM3HRe1j1J18
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/datasources/test_snowflake.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/datasources/test_snowflake.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7220,7 +7221,7 @@ tool_use Read
 id: toolu_01J3rRBVrgTgC7ox5EBQn4wm
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/integrations/test_airflow_callback_snippet.py"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/integrations/test_airflow_callback_snippet.py"
 }
 ```
 
@@ -7274,7 +7275,7 @@ tool_use Write
 id: toolu_01HMREGpWCLsdRj41VQsBmLs
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/integrations/test_dbt_callback_snippet.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/integrations/test_dbt_callback_snippet.py",
   "content": "\"\"\"Round-trip tests for the user-facing dbt build callback snippet.\n\nThe snippet (`integrations/dbt/dataq_dbt_callback.py`) is the *producer* half of the\ndbt integration; `backend/app/api/v1/orchestration.py` is the *consumer*. These\ntests load the snippet by path and assert producer and consumer agree on both axes:\nthe HMAC the snippet signs is accepted by the receiver's `_authenticate_dbt`, and\nthe JSON it builds (from a `run_results.json`) parses cleanly through\n`DbtProvider.parse_event`. If either side drifts (header name, signing input, field\nnames, status map), a test here fails before a user's build silently does.\n\"\"\"\n\nimport importlib.util\nimport json\nfrom pathlib import Path\nfrom typing import Any\n\nimport pytest\n\nfrom backend.app.api.v1.orchestration import WebhookAuthError, _authenticate_dbt\nfrom backend.app.core.config import get_settings\nfrom backend.app.core.secrets import SecretNotFoundError\nfrom backend.app.orchestration.dbt import DbtProvider\n\n_KEY = \"shared-dbt-hmac-signing-key\"\n\n\ndef _load_snippet() -> Any:\n    repo_root = Path(__file__).resolve().parents[3]\n    path = repo_root / \"integrations\" / \"dbt\" / \"dataq_dbt_callback.py\"\n    spec = importlib.util.spec_from_file_location(\"dataq_dbt_callback\", path)\n    assert spec is not None and spec.loader is not None\n    module = importlib.util.module_from_spec(spec)\n    spec.loader.exec_module(module)\n    return module\n\n\nsnippet = _load_snippet()\n\n\nclass _FakeStore:\n    def __init__(self, **data: str) -> None:\n        self.data = dict(data)\n\n    def get(self, name: str) -> str:\n        if name not in self.data:\n            raise SecretNotFoundError(name)\n        return self.data[name]\n\n    def set(self, name: str, value: str) -> None:\n        self.data[name] = value\n\n\ndef _store(key: str = _KEY) -> _FakeStore:\n    return _FakeStore(**{get_settings().dbt_webhook_secret_name: key})\n\n\ndef _run_results(*statuses: str) -> dict[str, Any]:\n    return {\n […]
 
 > TOOL
@@ -7282,7 +7283,7 @@ id: toolu_01HMREGpWCLsdRj41VQsBmLs
 tool_result
 id: toolu_01HMREGpWCLsdRj41VQsBmLs
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ/backend/tests/integrations/test_dbt_callback_snippet.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ/backend/tests/integrations/test_dbt_callback_snippet.py (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7552,7 +7553,7 @@ id: toolu_016sNkEYX5pyWpTWqJHUPe7v
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/alembic/versions/c1d2e3f4a5b6_widen_orchestration_for_dbt.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/alembic/versions/c1d2e3f4a5b6_widen_orchestration_for_dbt.py",
   "old_string": "    op.execute(\"ALTER TABLE connections DROP CONSTRAINT ck_connections_type_valid\")\n    op.execute(\n        f\"ALTER TABLE connections ADD CONSTRAINT ck_connections_type_valid CHECK (type IN ({values}))\"\n    )",
   "new_string": "    op.execute(\"ALTER TABLE connections DROP CONSTRAINT ck_connections_type_valid\")\n    op.execute(\n        \"ALTER TABLE connections ADD CONSTRAINT ck_connections_type_valid \"\n        f\"CHECK (type IN ({values}))\"\n    )"
 }
@@ -7563,7 +7564,7 @@ id: toolu_016sNkEYX5pyWpTWqJHUPe7v
 tool_result
 id: toolu_016sNkEYX5pyWpTWqJHUPe7v
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/alembic/versions/c1d2e3f4a5b6_widen_orchestration_for_dbt.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/alembic/versions/c1d2e3f4a5b6_widen_orchestration_for_dbt.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7679,7 +7680,7 @@ id: toolu_012Mk6Nq8zRhbiFb3LHdQeBQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/orchestration/dbt.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/orchestration/dbt.py",
   "old_string": "    \"success\": \"succeeded\",\n    \"succeeded\": \"succeeded\",\n    \"pass\": \"succeeded\",",
   "new_string": "    \"success\": \"succeeded\",\n    \"succeeded\": \"succeeded\",\n    \"pass\": \"succeeded\",  # nosec B105 — dbt result status, not a password"
 }
@@ -7690,7 +7691,7 @@ id: toolu_012Mk6Nq8zRhbiFb3LHdQeBQ
 tool_result
 id: toolu_012Mk6Nq8zRhbiFb3LHdQeBQ
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/orchestration/dbt.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/orchestration/dbt.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7731,7 +7732,7 @@ id: toolu_01UggtHBEdbBqfZfZuwYKur9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/orchestration/dbt.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/orchestration/dbt.py",
   "old_string": "    try:\n        return client.get_object(Bucket=bucket, Key=key)[\"Body\"].read()\n    except ClientError as exc:\n        if exc.response.get(\"Error\", {}).get(\"Code\") in (\"NoSuchKey\", \"404\"):\n            return None\n        raise",
   "new_string": "    try:\n        data: bytes = client.get_object(Bucket=bucket, Key=key)[\"Body\"].read()\n        return data\n    except ClientError as exc:\n        if exc.response.get(\"Error\", {}).get(\"Code\") in (\"NoSuchKey\", \"404\"):\n            return None\n        raise"
 }
@@ -7742,7 +7743,7 @@ id: toolu_01UggtHBEdbBqfZfZuwYKur9
 tool_result
 id: toolu_01UggtHBEdbBqfZfZuwYKur9
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/orchestration/dbt.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/orchestration/dbt.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7851,7 +7852,7 @@ id: toolu_01VoSLY8DYa7pGoEVJKZZLwv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/api/test_trigger_bindings.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/api/test_trigger_bindings.py",
   "old_string": "    resp = client.post(\"/api/v1/trigger-bindings\", json=_payload(suite_id, provider=\"dbt\"))",
   "new_string": "    resp = client.post(\"/api/v1/trigger-bindings\", json=_payload(suite_id, provider=\"prefect\"))"
 }
@@ -7871,7 +7872,7 @@ tool_use Read
 id: toolu_01LP2j9xGFFovdMZaeRkSsVR
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/api/test_trigger_bindings.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/api/test_trigger_bindings.py",
   "offset": 93,
   "limit": 6
 }
@@ -7897,7 +7898,7 @@ id: toolu_018oCoQLzz4cFWgYvYWk1Ny1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/api/test_trigger_bindings.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/api/test_trigger_bindings.py",
   "old_string": "    resp = client.post(\"/api/v1/trigger-bindings\", json=_payload(suite_id, provider=\"dbt\"))\n    assert resp.status_code == 422\n    assert resp.json()[\"error\"][\"code\"] == \"trigger_binding_invalid\"",
   "new_string": "    resp = client.post(\"/api/v1/trigger-bindings\", json=_payload(suite_id, provider=\"prefect\"))\n    assert resp.status_code == 422\n    assert resp.json()[\"error\"][\"code\"] == \"trigger_binding_invalid\""
 }
@@ -7908,7 +7909,7 @@ id: toolu_018oCoQLzz4cFWgYvYWk1Ny1
 tool_result
 id: toolu_018oCoQLzz4cFWgYvYWk1Ny1
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/api/test_trigger_bindings.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/api/test_trigger_bindings.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7999,7 +8000,7 @@ tool_use Read
 id: toolu_01V8JVp2ptyMW1Qp82mxnfCq
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/orchestration/test_dbt_provider.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/orchestration/test_dbt_provider.py",
   "offset": 200,
   "limit": 17
 }
@@ -8035,7 +8036,7 @@ tool_use Read
 id: toolu_0158dJsR66V526tQpHoptfvX
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/orchestration/test_dbt_provider.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/orchestration/test_dbt_provider.py",
   "offset": 216,
   "limit": 20
 }
@@ -8073,7 +8074,7 @@ id: toolu_019ZmHZGuZ8hCf6DzUeUZkWg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/orchestration/test_dbt_provider.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/orchestration/test_dbt_provider.py",
   "old_string": "    monkeypatch.setattr(dbt_mod, \"_read_artifact\", fake_read)\n    DbtConnectionAdapter().test(_cfg(jobs=[\"first\", \"second\"]), \"secret\")\n    assert called[\"job\"] == \"first\"",
   "new_string": "    monkeypatch.setattr(dbt_mod, \"_read_artifact\", fake_read)\n    DbtConnectionAdapter().test(_cfg(jobs=[\"first\", \"second\"]), \"secret\")\n    assert called[\"job\"] == \"first\"\n\n\n# ── _read_artifact (the reader seam itself, per scheme) ───────────────────────\n\n\ndef test_read_artifact_file_scheme_round_trip(tmp_path: Any) -> None:\n    # Real filesystem — no mock of the seam under test.\n    latest = tmp_path / \"lineage_build\" / \"latest\"\n    latest.mkdir(parents=True)\n    (latest / \"run_results.json\").write_bytes(_run_results(\"success\", \"pass\"))\n    cfg = DbtConfig.model_validate(_cfg(artifacts_uri=f\"file://{tmp_path}\"))\n    updates = DbtProvider().list_recent_runs(cfg.model_dump(), \"\", _SINCE)\n    assert len(updates) == 1\n    assert updates[0].status == \"succeeded\"\n\n\ndef test_read_artifact_file_missing_returns_none(tmp_path: Any) -> None:\n    cfg = DbtConfig.model_validate(_cfg(artifacts_uri=f\"file://{tmp_path}\"))\n    assert dbt_mod._read_artifact(cfg, \"nope\", \"\") is None\n\n\ndef test_read_artifact_adls_builds_path_and_reads(monkeypatch: pytest.MonkeyPatch) -> None:\n    seen: dict[str, Any] = {}\n\n    class _Downloaded:\n        def readall(self) -> bytes:\n            return _run_results(\"success\")\n\n    class _BlobClient:\n        def download_blob(self, **_: Any) -> _Downloaded:\n            return _Downloaded()\n\n    class _Service:\n        def __init__(self, account_url: str, credential: str) -> None:\n            seen[\"account_url\"] = account_url\n            seen[\"credential\"] = credential\n\n        def get_blob_client(self, container: str, blob: str) -> _BlobClient:\n            seen[\"container\"] = container\n            seen[\"blob\"] = blob\n            return _BlobClient()\n\n    monkeypatch.setattr(\"azure.storage.blob.BlobServiceClient\", _Service)\n    cfg = DbtConfig.model_validate(_cfg(artifacts_uri=\"adls://acct/raw/dbt\"))\n    data = dbt_mod._read_artifact(cfg, \"lineage_build\", \"sas-token\")\n    assert data is not None\n    assert seen[\"account_url\"] == \"https://acct.blob.core.windows.net\"\n    assert seen[\"credential\"] == \"sas-token\"\n    assert seen[\"container\"] == \"raw\"\n    assert seen[\"blob\"] == \"dbt/lineage_build/latest/run_results.json\"\n\n\ndef test_read_artifact_adls_missing_returns_none(monkeypatch: pytest.MonkeyPatch) -> None:\n    from azure.core.exceptions import ResourceNotFoundError\n\n    class _BlobClient:\n        def […]
 
@@ -8082,7 +8083,7 @@ id: toolu_019ZmHZGuZ8hCf6DzUeUZkWg
 tool_result
 id: toolu_019ZmHZGuZ8hCf6DzUeUZkWg
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/orchestration/test_dbt_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/orchestration/test_dbt_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8182,7 +8183,7 @@ id: toolu_01XQSRsiP19YZdbEV6LTgvbY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/orchestration/test_dbt_provider.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/orchestration/test_dbt_provider.py",
   "old_string": "    class _S3:\n        def get_object(self, Bucket: str, Key: str) -> dict[str, Any]:\n            seen[\"bucket\"] = Bucket\n            seen[\"key\"] = Key\n            return {\"Body\": _Body()}",
   "new_string": "    class _S3:\n        def get_object(self, **kw: str) -> dict[str, Any]:\n            seen[\"bucket\"] = kw[\"Bucket\"]\n            seen[\"key\"] = kw[\"Key\"]\n            return {\"Body\": _Body()}"
 }
@@ -8193,7 +8194,7 @@ id: toolu_01XQSRsiP19YZdbEV6LTgvbY
 tool_result
 id: toolu_01XQSRsiP19YZdbEV6LTgvbY
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/orchestration/test_dbt_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/orchestration/test_dbt_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8203,7 +8204,7 @@ id: toolu_01AFqRGXAzmcpzc9TWuGxo9i
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/orchestration/test_dbt_provider.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/orchestration/test_dbt_provider.py",
   "old_string": "    class _S3:\n        def get_object(self, Bucket: str, Key: str) -> dict[str, Any]:\n            raise ClientError({\"Error\": {\"Code\": \"NoSuchKey\"}}, \"GetObject\")",
   "new_string": "    class _S3:\n        def get_object(self, **kw: str) -> dict[str, Any]:\n            raise ClientError({\"Error\": {\"Code\": \"NoSuchKey\"}}, \"GetObject\")"
 }
@@ -8214,7 +8215,7 @@ id: toolu_01AFqRGXAzmcpzc9TWuGxo9i
 tool_result
 id: toolu_01AFqRGXAzmcpzc9TWuGxo9i
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/orchestration/test_dbt_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/orchestration/test_dbt_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8282,7 +8283,7 @@ id: toolu_01LiMyLdGBrdTrRoES8itgvS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/adr/README.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/adr/README.md",
   "old_string": "| [0028](0028-cloud-neutral-image-runtime-config-generic-oidc.md) | Cloud-neutral image — one multi-arch frontend image, nothing baked; auth config injected at runtime (`window.__DATAQ_CONFIG__` via nginx envsubst) behind a generic `DATAQ_AUTH_*` contract; bypass fail-closed (explicit `DATAQ_AUTH_MODE=bypass` only); replace MSAL with a generic OIDC client validated against Azure; frontend SWA→Container App (amends 0024); AWS/GCP IaC post-v1 (#505) | Accepted |",
   "new_string": "| [0028](0028-cloud-neutral-image-runtime-config-generic-oidc.md) | Cloud-neutral image — one multi-arch frontend image, nothing baked; auth config injected at runtime (`window.__DATAQ_CONFIG__` via nginx envsubst) behind a generic `DATAQ_AUTH_*` contract; bypass fail-closed (explicit `DATAQ_AUTH_MODE=bypass` only); replace MSAL with a generic OIDC client validated against Azure; frontend SWA→Container App (amends 0024); AWS/GCP IaC post-v1 (#505) | Accepted |\n| [0029](0029-dbt-orchestration-provider.md) | dbt as a **third** `OrchestrationProvider` (mirrors the Airflow callback model 0007) — HMAC webhook + artifacts poll of `run_results.json` (adls/s3/file); binds to dbt's universal surface (no host API); job-level grain; migration widens the connection-type/provider/dedup value-sets (#611) | Accepted |"
 }
@@ -8302,7 +8303,7 @@ tool_use Read
 id: toolu_012zuaaqA1YZW5YXYJv2LUeE
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/adr/README.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/adr/README.md",
   "offset": 1,
   "limit": 6
 }
@@ -8328,7 +8329,7 @@ id: toolu_0166PAsBXgeEYFrqYo495NBr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/adr/README.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/adr/README.md",
   "old_string": "| [0028](0028-cloud-neutral-image-runtime-config-generic-oidc.md) | Cloud-neutral image — one multi-arch frontend image, nothing baked; auth config injected at runtime (`window.__DATAQ_CONFIG__` via nginx envsubst) behind a generic `DATAQ_AUTH_*` contract; bypass fail-closed (explicit `DATAQ_AUTH_MODE=bypass` only); replace MSAL with a generic OIDC client validated against Azure; frontend SWA→Container App (amends 0024); AWS/GCP IaC post-v1 (#505) | Accepted |",
   "new_string": "| [0028](0028-cloud-neutral-image-runtime-config-generic-oidc.md) | Cloud-neutral image — one multi-arch frontend image, nothing baked; auth config injected at runtime (`window.__DATAQ_CONFIG__` via nginx envsubst) behind a generic `DATAQ_AUTH_*` contract; bypass fail-closed (explicit `DATAQ_AUTH_MODE=bypass` only); replace MSAL with a generic OIDC client validated against Azure; frontend SWA→Container App (amends 0024); AWS/GCP IaC post-v1 (#505) | Accepted |\n| [0029](0029-dbt-orchestration-provider.md) | dbt as a **third** `OrchestrationProvider` (mirrors the Airflow callback model 0007) — HMAC webhook + artifacts poll of `run_results.json` (adls/s3/file); binds to dbt's universal surface (no host API); job-level grain; migration widens the connection-type/provider/dedup value-sets (#611) | Accepted |"
 }
@@ -8339,7 +8340,7 @@ id: toolu_0166PAsBXgeEYFrqYo495NBr
 tool_result
 id: toolu_0166PAsBXgeEYFrqYo495NBr
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/adr/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/adr/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8353,7 +8354,7 @@ id: toolu_01AqCdEpieALvVs2WbxvYbwu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/CLAUDE.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/CLAUDE.md",
   "old_string": "AWS/GCP deploy IaC post-v1 (#505) | [0028](docs/adr/0028-cloud-neutral-image-runtime-config-generic-oidc.md) | Accepted (2026-06-30) — build tracked in #504 |",
   "new_string": "AWS/GCP deploy IaC post-v1 (#505) | [0028](docs/adr/0028-cloud-neutral-image-runtime-config-generic-oidc.md) | Accepted (2026-06-30) — build tracked in #504 |\n| dbt as a **third `OrchestrationProvider`** (mirrors the Airflow callback model 0007, not clubbed under it) — binds to dbt's universal surface (`run_results.json` artifact + post-build callback), never a host API; HMAC webhook `POST /orchestration/events/dbt` + 10-min poll of `run_results.json` (adls/s3/file); **job-level** grain (`pipeline_or_dag_id`=job, connection resolved by `project_name`); app-level signing key + per-connection artifacts-read secret; migration widens the connection-type/provider CHECKs + orchestrator + trigger-dedup indexes for `dbt` | [0029](docs/adr/0029-dbt-orchestration-provider.md) | Accepted (2026-07-05, #611) |"
 }
@@ -8373,7 +8374,7 @@ tool_use Read
 id: toolu_01GBuFPJ1YaYsfgb2maaMHX6
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/CLAUDE.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/CLAUDE.md",
   "offset": 236,
   "limit": 2
 }
@@ -8395,7 +8396,7 @@ id: toolu_016Nkr3sHBcbXsR3wXjuAzBx
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/CLAUDE.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/CLAUDE.md",
   "old_string": "AWS/GCP deploy IaC post-v1 (#505) | [0028](docs/adr/0028-cloud-neutral-image-runtime-config-generic-oidc.md) | Accepted (2026-06-30) — build tracked in #504 |",
   "new_string": "AWS/GCP deploy IaC post-v1 (#505) | [0028](docs/adr/0028-cloud-neutral-image-runtime-config-generic-oidc.md) | Accepted (2026-06-30) — build tracked in #504 |\n| dbt as a **third `OrchestrationProvider`** (mirrors the Airflow callback model 0007, not clubbed under it) — binds to dbt's universal surface (`run_results.json` artifact + post-build callback), never a host API; HMAC webhook `POST /orchestration/events/dbt` + 10-min poll of `run_results.json` (adls/s3/file); **job-level** grain (`pipeline_or_dag_id`=job, connection resolved by `project_name`); app-level signing key + per-connection artifacts-read secret; migration widens the connection-type/provider CHECKs + orchestrator + trigger-dedup indexes for `dbt` | [0029](docs/adr/0029-dbt-orchestration-provider.md) | Accepted (2026-07-05, #611) |"
 }
@@ -8406,7 +8407,7 @@ id: toolu_016Nkr3sHBcbXsR3wXjuAzBx
 tool_result
 id: toolu_016Nkr3sHBcbXsR3wXjuAzBx
 ```
-The file /Users/arijit/Coding/Python/DataQ/CLAUDE.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/CLAUDE.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8443,7 +8444,7 @@ id: toolu_01WszhZJEWGQkqPxHztY7oXA
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/CLAUDE.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/CLAUDE.md",
   "old_string": "It runs DQ checks across **4 datasources** and integrates with **2 orchestration providers**.",
   "new_string": "It runs DQ checks across **4 datasources** and integrates with **3 orchestration providers**."
 }
@@ -8454,7 +8455,7 @@ id: toolu_01WszhZJEWGQkqPxHztY7oXA
 tool_result
 id: toolu_01WszhZJEWGQkqPxHztY7oXA
 ```
-The file /Users/arijit/Coding/Python/DataQ/CLAUDE.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/CLAUDE.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8464,7 +8465,7 @@ id: toolu_015iXY8gcz5L3AnyETDyvqPz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/CLAUDE.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/CLAUDE.md",
   "old_string": "| **Orchestration providers (monitor + trigger only — NOT datasources)** | Azure Data Factory (ADF), Apache Airflow |",
   "new_string": "| **Orchestration providers (monitor + trigger only — NOT datasources)** | Azure Data Factory (ADF), Apache Airflow, dbt (ADR 0029) |"
 }
@@ -8475,7 +8476,7 @@ id: toolu_015iXY8gcz5L3AnyETDyvqPz
 tool_result
 id: toolu_015iXY8gcz5L3AnyETDyvqPz
 ```
-The file /Users/arijit/Coding/Python/DataQ/CLAUDE.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/CLAUDE.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8485,7 +8486,7 @@ id: toolu_0188iESE5kJht8TB5a5565iD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/CLAUDE.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/CLAUDE.md",
   "old_string": "Both providers implement a single `OrchestrationProvider` interface — ADF is the reference implementation, Airflow is the second. **Never hardcode ADF-only logic; always go through the abstraction.**",
   "new_string": "All three providers implement a single `OrchestrationProvider` interface — ADF is the reference implementation, Airflow is the second, dbt (ADR 0029) is the third (artifact-poll + HMAC callback, no host REST API). **Never hardcode ADF-only logic; always go through the abstraction.**"
 }
@@ -8496,7 +8497,7 @@ id: toolu_0188iESE5kJht8TB5a5565iD
 tool_result
 id: toolu_0188iESE5kJht8TB5a5565iD
 ```
-The file /Users/arijit/Coding/Python/DataQ/CLAUDE.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/CLAUDE.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8506,7 +8507,7 @@ id: toolu_01FB4x9gfPuFZ6MhzTzE697t
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/CLAUDE.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/CLAUDE.md",
   "old_string": "| Airflow | DAG `on_*_callback` → webhook | HMAC-signed payload (signing key in Key Vault) | Airflow REST API `dagRuns`, 10 min |",
   "new_string": "| Airflow | DAG `on_*_callback` → webhook | HMAC-signed payload (signing key in Key Vault) | Airflow REST API `dagRuns`, 10 min |\n| dbt | post-build callback → webhook | HMAC-signed payload (app-level signing key) | poll `run_results.json` artifact (adls/s3/file), 10 min |"
 }
@@ -8517,7 +8518,7 @@ id: toolu_01FB4x9gfPuFZ6MhzTzE697t
 tool_result
 id: toolu_01FB4x9gfPuFZ6MhzTzE697t
 ```
-The file /Users/arijit/Coding/Python/DataQ/CLAUDE.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/CLAUDE.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8573,7 +8574,7 @@ tool_use Bash
 id: toolu_0167vKDna9eCRehqTwkxFp7Q
 ```json
 {
-  "command": "cd ~/Coding/Python/DataQ && git commit -q -F - <<'EOF'\nfeat(orchestration): dbt as a third OrchestrationProvider (ADR 0029, #611)\n\ndbt Core has no runs API, so DataQ observes dbt builds through their universal\nsurface — the run_results.json artifact plus a post-build HMAC callback — mirroring\nthe Airflow callback model (ADR 0007), host-agnostically (works under dbt Cloud,\ndbt-on-Snowflake, Databricks dbt tasks, local compose; ADR 0010/0013).\n\n- DbtProvider + DbtConnectionAdapter + a 3-scheme artifacts reader (adls/s3/file)\n  in app/orchestration/dbt.py; registered in both registries.\n- POST /orchestration/events/dbt receiver (HMAC-SHA256 over the raw body,\n  uniform-401), app-level signing key (dbt_webhook_secret_name); the per-connection\n  secret is the artifacts-store read credential.\n- Job-level grain: pipeline_or_dag_id = job name, connection resolved by\n  project_name; trigger_bindings unchanged (provider-agnostic composite key).\n- Migration widens the connection-type/provider CHECKs + the orchestrator and\n  trigger-dedup partial indexes for 'dbt' (tested up + down locally).\n- integrations/dbt/ post-build callback snippet + README (stdlib-only, fail-safe).\n- Tests: provider unit + config validation + the reader seam per scheme + receiver\n  auth battery + snippet round-trip (77 new; dbt.py 97%).\n\nADR 0029 + index/CLAUDE.md updates. Depends on #609 (the dbt project producing runs).\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\ngit log --oneline -1",
+  "command": "cd ~/Coding/Python/DataQ && git commit -q -F - <<'EOF'\nfeat(orchestration): dbt as a third OrchestrationProvider (ADR 0029, #611)\n\ndbt Core has no runs API, so DataQ observes dbt builds through their universal\nsurface — the run_results.json artifact plus a post-build HMAC callback — mirroring\nthe Airflow callback model (ADR 0007), host-agnostically (works under dbt Cloud,\ndbt-on-Snowflake, Databricks dbt tasks, local compose; ADR 0010/0013).\n\n- DbtProvider + DbtConnectionAdapter + a 3-scheme artifacts reader (adls/s3/file)\n  in app/orchestration/dbt.py; registered in both registries.\n- POST /orchestration/events/dbt receiver (HMAC-SHA256 over the raw body,\n  uniform-401), app-level signing key (dbt_webhook_secret_name); the per-connection\n  secret is the artifacts-store read credential.\n- Job-level grain: pipeline_or_dag_id = job name, connection resolved by\n  project_name; trigger_bindings unchanged (provider-agnostic composite key).\n- Migration widens the connection-type/provider CHECKs + the orchestrator and\n  trigger-dedup partial indexes for 'dbt' (tested up + down locally).\n- integrations/dbt/ post-build callback snippet + README (stdlib-only, fail-safe).\n- Tests: provider unit + config validation + the reader seam per scheme + receiver\n  auth battery + snippet round-trip (77 new; dbt.py 97%).\n\nADR 0029 + index/CLAUDE.md updates. Depends on #609 (the dbt project producing runs).\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\ngit log --oneline -1",
   "description": "Commit the dbt provider feature"
 }
 ```
@@ -8639,7 +8640,7 @@ id: toolu_0199T6bnzt6nyBwPrH7tvaKA
 {
   "description": "Code review #611 dbt provider",
   "subagent_type": "pr-review-toolkit:code-reviewer",
-  "prompt": "Review the changes on the current branch `feature/611-dbt-orchestration-provider` (PR #620) against `main`. Get the diff with `git diff main...HEAD` (run from /Users/arijit/Coding/Python/DataQ).\n\nThis adds **dbt as a third OrchestrationProvider** (ADR 0029, issue #611). Key files:\n- `backend/app/orchestration/dbt.py` — DbtProvider + DbtConnectionAdapter + `_read_artifact` (adls/s3/file reader)\n- `backend/app/api/v1/orchestration.py` — the `/orchestration/events/dbt` HMAC receiver (`_authenticate_dbt`, `receive_dbt_event`)\n- `backend/app/db/models.py`, `backend/app/services/orchestration_service.py`, `backend/app/core/config.py`, the two registries\n- `backend/alembic/versions/c1d2e3f4a5b6_widen_orchestration_for_dbt.py` (migration)\n- `integrations/dbt/dataq_dbt_callback.py` (user-facing snippet)\n- tests under `backend/tests/orchestration/`, `backend/tests/api/`, `backend/tests/integrations/`\n\nIt mirrors the existing Airflow provider (`backend/app/orchestration/airflow.py`) and its receiver/tests — compare against that as the reference pattern. Read CLAUDE.md for project conventions.\n\nFocus on: correctness of the artifact reader path construction (adls/s3/file) and the `since`/timezone filter in `list_recent_runs`; HMAC auth parity with the Airflow receiver; whether any dbt-specific branching leaks into service code (should all go through the `OrchestrationProvider` seam); the status-derivation logic; and any silent-failure / error-handling gaps in the poll (fail-soft per connection). Report concrete, high-signal findings only — this passed local black/ruff/mypy/bandit and the full pytest suite (1389 passed)."
+  "prompt": "Review the changes on the current branch `feature/611-dbt-orchestration-provider` (PR #620) against `main`. Get the diff with `git diff main...HEAD` (run from /home/<USER>/Coding/Python/DataQ).\n\nThis adds **dbt as a third OrchestrationProvider** (ADR 0029, issue #611). Key files:\n- `backend/app/orchestration/dbt.py` — DbtProvider + DbtConnectionAdapter + `_read_artifact` (adls/s3/file reader)\n- `backend/app/api/v1/orchestration.py` — the `/orchestration/events/dbt` HMAC receiver (`_authenticate_dbt`, `receive_dbt_event`)\n- `backend/app/db/models.py`, `backend/app/services/orchestration_service.py`, `backend/app/core/config.py`, the two registries\n- `backend/alembic/versions/c1d2e3f4a5b6_widen_orchestration_for_dbt.py` (migration)\n- `integrations/dbt/dataq_dbt_callback.py` (user-facing snippet)\n- tests under `backend/tests/orchestration/`, `backend/tests/api/`, `backend/tests/integrations/`\n\nIt mirrors the existing Airflow provider (`backend/app/orchestration/airflow.py`) and its receiver/tests — compare against that as the reference pattern. Read CLAUDE.md for project conventions.\n\nFocus on: correctness of the artifact reader path construction (adls/s3/file) and the `since`/timezone filter in `list_recent_runs`; HMAC auth parity with the Airflow receiver; whether any dbt-specific branching leaks into service code (should all go through the `OrchestrationProvider` seam); the status-derivation logic; and any silent-failure / error-handling gaps in the poll (fail-soft per connection). Report concrete, high-signal findings only — this passed local black/ruff/mypy/bandit and the full pytest suite (1389 passed)."
 }
 ```
 
@@ -8664,7 +8665,7 @@ id: toolu_01XDTztoWyWby97Dya5seKj3
 {
   "description": "Migration safety review",
   "subagent_type": "migration-safety",
-  "prompt": "Audit the new Alembic migration `backend/alembic/versions/c1d2e3f4a5b6_widen_orchestration_for_dbt.py` on the current branch `feature/611-dbt-orchestration-provider` (from /Users/arijit/Coding/Python/DataQ).\n\nIt adds `dbt` as a third orchestration provider by widening five things to permit one more value: the `ck_connections_type_valid` CHECK, the `uq_connections_orchestrator_type_env` partial index, the `ck_pipeline_runs_provider_valid` and `ck_trigger_bindings_provider_valid` CHECKs, and the `uq_runs_suite_triggered_by` trigger-dedup partial index (adds `dbt:%`).\n\nAssess backward-compatibility for a rolling deploy (old code running against the new schema, and the new schema built ahead of the code): are these widenings safe to deploy before the app code? Are the CHECK drop+recreate and index drop+recreate steps safe on a populated DB? Is the downgrade correct (and its stated caveat about dbt rows sound)? Flag any two-step-deploy concern. The migration was tested up→down→up locally against the dev Postgres with no errors. Report concrete findings only."
+  "prompt": "Audit the new Alembic migration `backend/alembic/versions/c1d2e3f4a5b6_widen_orchestration_for_dbt.py` on the current branch `feature/611-dbt-orchestration-provider` (from /home/<USER>/Coding/Python/DataQ).\n\nIt adds `dbt` as a third orchestration provider by widening five things to permit one more value: the `ck_connections_type_valid` CHECK, the `uq_connections_orchestrator_type_env` partial index, the `ck_pipeline_runs_provider_valid` and `ck_trigger_bindings_provider_valid` CHECKs, and the `uq_runs_suite_triggered_by` trigger-dedup partial index (adds `dbt:%`).\n\nAssess backward-compatibility for a rolling deploy (old code running against the new schema, and the new schema built ahead of the code): are these widenings safe to deploy before the app code? Are the CHECK drop+recreate and index drop+recreate steps safe on a populated DB? Is the downgrade correct (and its stated caveat about dbt rows sound)? Flag any two-step-deploy concern. The migration was tested up→down→up locally against the dev Postgres with no errors. Report concrete findings only."
 }
 ```
 
@@ -8793,7 +8794,7 @@ tool_use Read
 id: toolu_01Vo9uCkvJQNKAjmF7KrSoqk
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/orchestration/dbt.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/orchestration/dbt.py",
   "offset": 104,
   "limit": 55
 }
@@ -8863,7 +8864,7 @@ id: toolu_01PxjZ6QFVd2QtU5erPbURCG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/orchestration/dbt.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/orchestration/dbt.py",
   "old_string": "        client = BlobServiceClient(\n            account_url=f\"https://{account}.blob.core.windows.net\", credential=secret\n        )\n        try:\n            return (\n                client.get_blob_client(container, blob)\n                .download_blob(timeout=int(_READ_TIMEOUT_SECONDS))\n                .readall()\n            )\n        except ResourceNotFoundError:\n            return None",
   "new_string": "        # Bound socket connect/read like the ADLS datasource adapter — `test()` runs\n        # this synchronously in the request thread, so an unreachable account must\n        # fail fast, not hang. (`download_blob(timeout=)` is only the server-side op\n        # timeout, so set the client-level socket timeouts too.)\n        client = BlobServiceClient(\n            account_url=f\"https://{account}.blob.core.windows.net\",\n            credential=secret,\n            connection_timeout=int(_READ_TIMEOUT_SECONDS),\n            read_timeout=int(_READ_TIMEOUT_SECONDS),\n        )\n        try:\n            return (\n                client.get_blob_client(container, blob)\n                .download_blob(timeout=int(_READ_TIMEOUT_SECONDS))\n                .readall()\n            )\n        except ResourceNotFoundError:\n            return None"
 }
@@ -8874,7 +8875,7 @@ id: toolu_01PxjZ6QFVd2QtU5erPbURCG
 tool_result
 id: toolu_01PxjZ6QFVd2QtU5erPbURCG
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/orchestration/dbt.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/orchestration/dbt.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8888,7 +8889,7 @@ id: toolu_011ZywmLEmLTU1jDwRiFzgdn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/orchestration/dbt.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/orchestration/dbt.py",
   "old_string": "    # s3\n    import boto3\n    from botocore.exceptions import ClientError\n\n    bucket = parsed.netloc\n    prefix = parsed.path.lstrip(\"/\")\n    key = f\"{prefix}/{job}/{_RUN_RESULTS_RELPATH}\" if prefix else f\"{job}/{_RUN_RESULTS_RELPATH}\"\n    client = boto3.client(\n        \"s3\",\n        region_name=config.region,\n        aws_access_key_id=config.access_key_id,\n        aws_secret_access_key=secret,\n    )",
   "new_string": "    # s3\n    import boto3\n    from botocore.config import Config\n    from botocore.exceptions import ClientError\n\n    bucket = parsed.netloc\n    prefix = parsed.path.lstrip(\"/\")\n    key = f\"{prefix}/{job}/{_RUN_RESULTS_RELPATH}\" if prefix else f\"{job}/{_RUN_RESULTS_RELPATH}\"\n    client = boto3.client(\n        \"s3\",\n        region_name=config.region,\n        aws_access_key_id=config.access_key_id,\n        aws_secret_access_key=secret,\n        # Bound connect/read like the S3 datasource adapter — `test()` runs this in\n        # the request thread; boto3's ~60s defaults would hang on a blackholed host.\n        config=Config(\n            connect_timeout=int(_READ_TIMEOUT_SECONDS), read_timeout=int(_READ_TIMEOUT_SECONDS)\n        ),\n    )"
 }
@@ -8899,7 +8900,7 @@ id: toolu_011ZywmLEmLTU1jDwRiFzgdn
 tool_result
 id: toolu_011ZywmLEmLTU1jDwRiFzgdn
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/orchestration/dbt.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/orchestration/dbt.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8914,7 +8915,7 @@ tool_use Read
 id: toolu_01SeGiSAReT1RpNP4CgpfqwF
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/api/v1/orchestration.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/api/v1/orchestration.py",
   "offset": 1,
   "limit": 22
 }
@@ -8956,7 +8957,7 @@ id: toolu_01U8AA1PtfB9H6NFZgVMkM6V
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/api/v1/orchestration.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/api/v1/orchestration.py",
   "old_string": "\"\"\"Orchestration event webhook receivers (ADF + Airflow).\n\nTwo machine-to-machine channels (no Azure AD user), each authenticated per its\nprovider's constraints, then funnelled through the same provider-agnostic\ningestion (`ingest_event`): resolve provider → parse to `RunUpdate` → persist.\n\n- `POST /orchestration/events/adf` — Azure Monitor. Auth = shared secret in the\n  ``token`` query parameter, constant-time vs the Key Vault secret (ADR 0006:\n  Azure Monitor webhooks can't set custom headers).\n- `POST /orchestration/events/airflow` — our DAG callback snippet. Auth =\n  HMAC-SHA256 over the **raw body** in the ``X-DataQ-Signature`` header,\n  constant-time vs the Key Vault signing key (ADR 0007: we author the snippet,\n  so it can sign a header).",
   "new_string": "\"\"\"Orchestration event webhook receivers (ADF + Airflow + dbt).\n\nMachine-to-machine channels (no Azure AD user), each authenticated per its\nprovider's constraints, then funnelled through the same provider-agnostic\ningestion (`ingest_event`): resolve provider → parse to `RunUpdate` → persist.\n\n- `POST /orchestration/events/adf` — Azure Monitor. Auth = shared secret in the\n  ``token`` query parameter, constant-time vs the Key Vault secret (ADR 0006:\n  Azure Monitor webhooks can't set custom headers).\n- `POST /orchestration/events/airflow` — our DAG callback snippet. Auth =\n  HMAC-SHA256 over the **raw body** in the ``X-DataQ-Signature`` header,\n  constant-time vs the Key Vault signing key (ADR […]
 
@@ -8965,7 +8966,7 @@ id: toolu_01U8AA1PtfB9H6NFZgVMkM6V
 tool_result
 id: toolu_01U8AA1PtfB9H6NFZgVMkM6V
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/api/v1/orchestration.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/api/v1/orchestration.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8978,7 +8979,7 @@ tool_use Read
 id: toolu_01Vi1o5Ckk3BuWxBx9iVLmkE
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/orchestration/dbt.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/orchestration/dbt.py",
   "offset": 288,
   "limit": 20
 }
@@ -9018,7 +9019,7 @@ id: toolu_01NDF7eqbxSVjvGigGPz5neN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/orchestration/dbt.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/orchestration/dbt.py",
   "old_string": "            finished_at = _parse_dt(metadata.get(\"generated_at\"))\n            if finished_at is not None and since.tzinfo and finished_at < since:\n                continue",
   "new_string": "            finished_at = _parse_dt(metadata.get(\"generated_at\"))\n            # `since` is always aware (UTC); only compare when generated_at parsed to\n            # an aware datetime too — a tz-naive one would TypeError and fail-soft the\n            # WHOLE connection poll (dropping every job), so include it rather than skip.\n            if finished_at is not None and finished_at.tzinfo is not None and finished_at < since:\n                continue"
 }
@@ -9029,7 +9030,7 @@ id: toolu_01NDF7eqbxSVjvGigGPz5neN
 tool_result
 id: toolu_01NDF7eqbxSVjvGigGPz5neN
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/orchestration/dbt.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/orchestration/dbt.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -9043,7 +9044,7 @@ id: toolu_01366SdHX8jksEj1GEb9Wr8z
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/alembic/versions/c1d2e3f4a5b6_widen_orchestration_for_dbt.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/alembic/versions/c1d2e3f4a5b6_widen_orchestration_for_dbt.py",
   "old_string": "Deployable ahead of the dbt provider code (nothing writes dbt until the service\nships). Tested up + down locally. Raw SQL (exact constraint/index names)\nmirrors the #308 dedup-index migration; kept in sync with the model constraints in\n`db/models.py` and `orchestration_service._ORCH_TRIGGER_PREDICATE`.\n\"\"\"",
   "new_string": "Tested up + down locally. Raw SQL (exact constraint/index names) mirrors the #308\ndedup-index migration; kept in sync with the model constraints in `db/models.py`\nand `orchestration_service._ORCH_TRIGGER_PREDICATE`.\n\n**Lock footprint (deliberate):** the two index rebuilds `DROP` + non-concurrently\n`CREATE UNIQUE INDEX`, taking a brief ACCESS EXCLUSIVE lock on `connections` and\n`runs`, and the CHECK re-adds full-scan-validate — all inside one transaction. This\nis the *gap-free* choice on purpose: keeping it transactional means a concurrent\norchestration webhook's `ON CONFLICT (uq_runs_suite_triggered_by)` blocks on the\nlock and resumes against the rebuilt index, never hitting a \"no matching unique\nconstraint\" window (which a `CREATE INDEX CONCURRENTLY` rebuild *would* expose). At\nthe current demo/harness table sizes the lock is sub-second, so the transactional\nform is the right trade-off. If `connections`/`runs` ever grow large, split the\nindex rebuilds into a `postgresql_concurrently=True` migration (per the note on\n`aa33d80c2158`) and the CHECKs into `NOT VALID` + `VALIDATE CONSTRAINT`.\n\n**Downgrade window:** since this PR also wires `DbtProvider` into the registry (no\nfeature flag), a `dbt` connection/webhook can […]
 
@@ -9066,7 +9067,7 @@ tool_use Read
 id: toolu_01Woe8FnGYPHZfnB74v7JGtn
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/alembic/versions/c1d2e3f4a5b6_widen_orchestration_for_dbt.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/alembic/versions/c1d2e3f4a5b6_widen_orchestration_for_dbt.py",
   "offset": 14,
   "limit": 10
 }
@@ -9096,7 +9097,7 @@ id: toolu_019iy1m7fkGpu7YQHUPANUvL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/alembic/versions/c1d2e3f4a5b6_widen_orchestration_for_dbt.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/alembic/versions/c1d2e3f4a5b6_widen_orchestration_for_dbt.py",
   "old_string": "Deployable ahead of the dbt provider code (nothing writes ``dbt`` until the\nservice ships). Tested up + down locally. Raw SQL (exact constraint/index names)\nmirrors the #308 dedup-index migration; kept in sync with the model constraints in\n`db/models.py` and `orchestration_service._ORCH_TRIGGER_PREDICATE`.\n\"\"\"",
   "new_string": "Tested up + down locally. Raw SQL (exact constraint/index names) mirrors the #308\ndedup-index migration; kept in sync with the model constraints in `db/models.py`\nand `orchestration_service._ORCH_TRIGGER_PREDICATE`.\n\n**Lock footprint (deliberate):** the two index rebuilds `DROP` + non-concurrently\n`CREATE UNIQUE INDEX`, taking a brief ACCESS EXCLUSIVE lock on `connections` and\n`runs`, and the CHECK re-adds full-scan-validate — all in one transaction. This is\nthe *gap-free* choice on purpose: staying transactional means a concurrent\norchestration webhook's `ON CONFLICT (uq_runs_suite_triggered_by)` blocks on the\nlock and resumes against the rebuilt index, never hitting a \"no matching unique\nconstraint\" window that a `CREATE INDEX CONCURRENTLY` rebuild would expose. At the\ncurrent demo/harness table sizes the lock is sub-second, so this is the right\ntrade-off. If `connections`/`runs` ever grow large, split the index rebuilds into a\n`postgresql_concurrently=True` migration (per the note on `aa33d80c2158`) and the\nCHECKs into `NOT VALID` + `VALIDATE CONSTRAINT`.\n\n**Downgrade window:** this PR also wires `DbtProvider` into the registry (no feature\nflag), so a `dbt` connection/webhook can land minutes after […]
 
@@ -9105,7 +9106,7 @@ id: toolu_019iy1m7fkGpu7YQHUPANUvL
 tool_result
 id: toolu_019iy1m7fkGpu7YQHUPANUvL
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/alembic/versions/c1d2e3f4a5b6_widen_orchestration_for_dbt.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/alembic/versions/c1d2e3f4a5b6_widen_orchestration_for_dbt.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -9119,7 +9120,7 @@ id: toolu_01FT7cYGftdqfTJ1m7RGP33k
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/alembic/versions/c1d2e3f4a5b6_widen_orchestration_for_dbt.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/alembic/versions/c1d2e3f4a5b6_widen_orchestration_for_dbt.py",
   "old_string": "def _set_type_check(values: str) -> None:\n    op.execute(\"ALTER TABLE connections DROP CONSTRAINT ck_connections_type_valid\")\n    op.execute(\n        \"ALTER TABLE connections ADD CONSTRAINT ck_connections_type_valid \"\n        f\"CHECK (type IN ({values}))\"\n    )\n\n\ndef _set_provider_check(table: str, values: str) -> None:\n    name = f\"ck_{table}_provider_valid\"\n    op.execute(f\"ALTER TABLE {table} DROP CONSTRAINT {name}\")\n    op.execute(f\"ALTER TABLE {table} ADD CONSTRAINT {name} CHECK (provider IN ({values}))\")",
   "new_string": "def _set_type_check(values: str) -> None:\n    # IF EXISTS on the drop (like the index drops) so a partial-retry after an\n    # aborted run re-applies cleanly.\n    op.execute(\"ALTER TABLE connections DROP CONSTRAINT IF EXISTS ck_connections_type_valid\")\n    op.execute(\n        \"ALTER TABLE connections ADD CONSTRAINT ck_connections_type_valid \"\n        f\"CHECK (type IN ({values}))\"\n    )\n\n\ndef _set_provider_check(table: str, values: str) -> None:\n    name = f\"ck_{table}_provider_valid\"\n    op.execute(f\"ALTER TABLE {table} DROP CONSTRAINT IF EXISTS {name}\")\n    op.execute(f\"ALTER TABLE {table} ADD CONSTRAINT {name} CHECK (provider IN ({values}))\")"
 }
@@ -9130,7 +9131,7 @@ id: toolu_01FT7cYGftdqfTJ1m7RGP33k
 tool_result
 id: toolu_01FT7cYGftdqfTJ1m7RGP33k
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/alembic/versions/c1d2e3f4a5b6_widen_orchestration_for_dbt.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/alembic/versions/c1d2e3f4a5b6_widen_orchestration_for_dbt.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9140,7 +9141,7 @@ id: toolu_015XW8mQfVuuzvHN4kz5zx3t
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/alembic/versions/c1d2e3f4a5b6_widen_orchestration_for_dbt.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/alembic/versions/c1d2e3f4a5b6_widen_orchestration_for_dbt.py",
   "old_string": "def downgrade() -> None:\n    # Narrowing back is only safe because nothing has written a dbt row yet at the\n    # point this migration is the head; a rollback after dbt data exists would fail\n    # the re-added CHECK — the intended recovery is to roll forward, not back.",
   "new_string": "def downgrade() -> None:\n    # Narrowing back is only safe in the brief window before any dbt row exists —\n    # this PR ships DbtProvider unflagged, so that window closes as soon as the\n    # first dbt connection/webhook lands. A rollback after dbt data exists fails the\n    # re-added CHECK / UNIQUE INDEX (whole txn aborts atomically, no partial state);\n    # the intended recovery past that point is to roll forward, not back."
 }
@@ -9151,7 +9152,7 @@ id: toolu_015XW8mQfVuuzvHN4kz5zx3t
 tool_result
 id: toolu_015XW8mQfVuuzvHN4kz5zx3t
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/alembic/versions/c1d2e3f4a5b6_widen_orchestration_for_dbt.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/alembic/versions/c1d2e3f4a5b6_widen_orchestration_for_dbt.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -9164,7 +9165,7 @@ tool_use Read
 id: toolu_01R8m1wEXVsHmeZkTLSKdkUV
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/orchestration/test_dbt_provider.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/orchestration/test_dbt_provider.py",
   "offset": 283,
   "limit": 40
 }
@@ -9228,7 +9229,7 @@ id: toolu_01SjDZENaFupodu7DAveiF88
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/orchestration/test_dbt_provider.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/orchestration/test_dbt_provider.py",
   "old_string": "    class _Service:\n        def __init__(self, account_url: str, credential: str) -> None:\n            seen[\"account_url\"] = account_url\n            seen[\"credential\"] = credential\n\n        def get_blob_client(self, container: str, blob: str) -> _BlobClient:\n            seen[\"container\"] = container\n            seen[\"blob\"] = blob\n            return _BlobClient()",
   "new_string": "    class _Service:\n        def __init__(self, account_url: str, credential: str, **_: Any) -> None:\n            seen[\"account_url\"] = account_url\n            seen[\"credential\"] = credential\n\n        def get_blob_client(self, container: str, blob: str) -> _BlobClient:\n            seen[\"container\"] = container\n            seen[\"blob\"] = blob\n            return _BlobClient()"
 }
@@ -9239,7 +9240,7 @@ id: toolu_01SjDZENaFupodu7DAveiF88
 tool_result
 id: toolu_01SjDZENaFupodu7DAveiF88
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/orchestration/test_dbt_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/orchestration/test_dbt_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9249,7 +9250,7 @@ id: toolu_01MJDGNLCysCKrizbmwcqatF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/orchestration/test_dbt_provider.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/orchestration/test_dbt_provider.py",
   "old_string": "    class _Service:\n        def __init__(self, account_url: str, credential: str) -> None:\n            pass\n\n        def get_blob_client(self, container: str, blob: str) -> _BlobClient:\n            return _BlobClient()",
   "new_string": "    class _Service:\n        def __init__(self, account_url: str, credential: str, **_: Any) -> None:\n            pass\n\n        def get_blob_client(self, container: str, blob: str) -> _BlobClient:\n            return _BlobClient()"
 }
@@ -9260,7 +9261,7 @@ id: toolu_01MJDGNLCysCKrizbmwcqatF
 tool_result
 id: toolu_01MJDGNLCysCKrizbmwcqatF
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/orchestration/test_dbt_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/orchestration/test_dbt_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -9351,7 +9352,7 @@ tool_use Bash
 id: toolu_011LTGS1FV72Ga1qcpq2GuaE
 ```json
 {
-  "command": "cd ~/Coding/Python/DataQ && git add -A && git commit -q -F - <<'EOF'\nfixup: address code-review + migration-safety findings (#611)\n\nCode review (both Important findings):\n- _read_artifact now bounds socket connect/read time on all schemes, mirroring the\n  s3/adls datasource adapters (boto3 Config(connect/read_timeout); BlobServiceClient\n  connection_timeout/read_timeout) — test() runs it synchronously in the request\n  thread, so an unreachable store must fail fast, not hang.\n- Refresh the orchestration.py module docstring to include the dbt receiver.\n- Guard the list_recent_runs since-filter on an aware generated_at so a tz-naive\n  artifact can't TypeError and fail-soft the whole connection poll.\n\nMigration-safety (conditional verdict):\n- Document the deliberate gap-free non-concurrent-transactional lock choice at\n  demo scale (+ the concurrent/NOT VALID path for future large tables).\n- Reframe the downgrade safe-window (provider ships unflagged in this PR → safe\n  only before any dbt activity).\n- DROP CONSTRAINT IF EXISTS for partial-retry robustness.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\ngit push 2>&1 | tail -2",
+  "command": "cd ~/Coding/Python/DataQ && git add -A && git commit -q -F - <<'EOF'\nfixup: address code-review + migration-safety findings (#611)\n\nCode review (both Important findings):\n- _read_artifact now bounds socket connect/read time on all schemes, mirroring the\n  s3/adls datasource adapters (boto3 Config(connect/read_timeout); BlobServiceClient\n  connection_timeout/read_timeout) — test() runs it synchronously in the request\n  thread, so an unreachable store must fail fast, not hang.\n- Refresh the orchestration.py module docstring to include the dbt receiver.\n- Guard the list_recent_runs since-filter on an aware generated_at so a tz-naive\n  artifact can't TypeError and fail-soft the whole connection poll.\n\nMigration-safety (conditional verdict):\n- Document the deliberate gap-free non-concurrent-transactional lock choice at\n  demo scale (+ the concurrent/NOT VALID path for future large tables).\n- Reframe the downgrade safe-window (provider ships unflagged in this PR → safe\n  only before any dbt activity).\n- DROP CONSTRAINT IF EXISTS for partial-retry robustness.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\ngit push 2>&1 | tail -2",
   "description": "Commit + push review fixes"
 }
 ```
@@ -9570,7 +9571,7 @@ tool_use Read
 id: toolu_01G8W7PghwaryDdJoX3F7qEx
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/pyproject.toml",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/pyproject.toml",
   "offset": 62,
   "limit": 18
 }
@@ -9608,7 +9609,7 @@ id: toolu_012b9u1qpRQj4J4QmFkRiB7Z
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/pyproject.toml",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/pyproject.toml",
   "old_string": "    \"azure.storage.*\",\n    \"azure.identity\",\n    \"azure.keyvault.*\",",
   "new_string": "    \"azure.storage.*\",\n    \"azure.core.*\",\n    \"azure.identity\",\n    \"azure.keyvault.*\","
 }
@@ -9619,7 +9620,7 @@ id: toolu_012b9u1qpRQj4J4QmFkRiB7Z
 tool_result
 id: toolu_012b9u1qpRQj4J4QmFkRiB7Z
 ```
-The file /Users/arijit/Coding/Python/DataQ/pyproject.toml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/pyproject.toml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9629,7 +9630,7 @@ id: toolu_01BfbcKyyLJR8hCgjuQoFpsv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/orchestration/dbt.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/orchestration/dbt.py",
   "old_string": "        try:\n            return (\n                client.get_blob_client(container, blob)\n                .download_blob(timeout=int(_READ_TIMEOUT_SECONDS))\n                .readall()\n            )\n        except ResourceNotFoundError:\n            return None",
   "new_string": "        try:\n            blob_bytes: bytes = (\n                client.get_blob_client(container, blob)\n                .download_blob(timeout=int(_READ_TIMEOUT_SECONDS))\n                .readall()\n            )\n            return blob_bytes\n        except ResourceNotFoundError:\n            return None"
 }
@@ -9640,7 +9641,7 @@ id: toolu_01BfbcKyyLJR8hCgjuQoFpsv
 tool_result
 id: toolu_01BfbcKyyLJR8hCgjuQoFpsv
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/orchestration/dbt.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/orchestration/dbt.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -9701,7 +9702,7 @@ tool_use Bash
 id: toolu_01LKWyQUtMGcqsFgUAFxZKNF
 ```json
 {
-  "command": "cd ~/Coding/Python/DataQ && black --check backend/app/orchestration/dbt.py 2>&1 | tail -1 && git add -A && git commit -q -F - <<'EOF'\nfixup: mypy in CI typecheck env — azure.core override + typed ADLS read (#611)\n\nCI's typecheck-only env has no azure stubs (local env does), so `mypy backend/app/`\nflagged the `azure.core.exceptions` import + a no-any-return on the ADLS `.readall()`.\nAdd `azure.core.*` to the mypy ignore_missing_imports overrides (sibling of the\nexisting `azure.storage.*`) and bind the ADLS read to a typed `bytes` local, mirroring\nthe s3 branch. Verified with `mypy backend/app/` (93 files) as CI runs it.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\ngit push 2>&1 | tail -2",
+  "command": "cd ~/Coding/Python/DataQ && black --check backend/app/orchestration/dbt.py 2>&1 | tail -1 && git add -A && git commit -q -F - <<'EOF'\nfixup: mypy in CI typecheck env — azure.core override + typed ADLS read (#611)\n\nCI's typecheck-only env has no azure stubs (local env does), so `mypy backend/app/`\nflagged the `azure.core.exceptions` import + a no-any-return on the ADLS `.readall()`.\nAdd `azure.core.*` to the mypy ignore_missing_imports overrides (sibling of the\nexisting `azure.storage.*`) and bind the ADLS read to a typed `bytes` local, mirroring\nthe s3 branch. Verified with `mypy backend/app/` (93 files) as CI runs it.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\ngit push 2>&1 | tail -2",
   "description": "Commit + push mypy CI fix"
 }
 ```
@@ -9846,7 +9847,7 @@ id: toolu_01KymVJTMNbgWWs4yLE8tkks
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "| **Open PRs** | [#619](https://github.com/TheurgicDuke771/DataQ/pull/619) — tracker: #609 done |",
   "new_string": "| **Open PRs** | none |"
 }
@@ -9866,7 +9867,7 @@ tool_use Read
 id: toolu_01MYP5ZmujkMZVXkcKsv7Q2u
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "offset": 27,
   "limit": 2
 }
@@ -9887,7 +9888,7 @@ id: toolu_018ZemaG1f4YB67fkk5vqmdP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "+ #611 filed (dbt as a third `OrchestrationProvider`, W2 — split from #609) + #286 pulled W7→W2;",
   "new_string": "+ **#611 code-merged 2026-07-05 via #620** (dbt as a third `OrchestrationProvider` — ADR 0029; reopened for the pending Azure-window live-verify) + #286 pulled W7→W2;"
 }
@@ -9898,7 +9899,7 @@ id: toolu_018ZemaG1f4YB67fkk5vqmdP
 tool_result
 id: toolu_018ZemaG1f4YB67fkk5vqmdP
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9908,7 +9909,7 @@ id: toolu_01AnaRnoWnWQeUKsbkrsFCFK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "| **Open PRs** | [#619](https://github.com/TheurgicDuke771/DataQ/pull/619) — tracker: #609 done |",
   "new_string": "| **Open PRs** | none |"
 }
@@ -9919,7 +9920,7 @@ id: toolu_01AnaRnoWnWQeUKsbkrsFCFK
 tool_result
 id: toolu_01AnaRnoWnWQeUKsbkrsFCFK
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -9933,7 +9934,7 @@ id: toolu_01DkRRBYgBGJYLWDkeK37tfE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "| ✅ | [#609](https://github.com/TheurgicDuke771/DataQ/issues/609) Self-hosted dbt Core lineage on Snowflake (RETAIL→ANALYTICS_STG views→ANALYTICS dynamic tables; runs as `DATAQ_LOADER`) — `dbt build` green local + ACA Job, DataQ suite (checks + freshness) green on `MART_ORDER_REVENUE`, artifacts to ADLS (2026-07-05); unblocks #611 | Theme 14 / G-d |",
   "new_string": "| ✅ | [#609](https://github.com/TheurgicDuke771/DataQ/issues/609) Self-hosted dbt Core lineage on Snowflake (RETAIL→ANALYTICS_STG views→ANALYTICS dynamic tables; runs as `DATAQ_LOADER`) — `dbt build` green local + ACA Job, DataQ suite (checks + freshness) green on `MART_ORDER_REVENUE`, artifacts to ADLS (2026-07-05); unblocks #611 | Theme 14 / G-d |\n| 🟡 | [#611](https://github.com/TheurgicDuke771/DataQ/issues/611) dbt as a **third `OrchestrationProvider`** (ADR 0029) — `DbtProvider` + adapter + 3-scheme artifact reader (adls/s3/file) + HMAC `POST /orchestration/events/dbt` + 10-min poll + migration + `integrations/dbt/` snippet; **code merged #620** (agentic review + migration-safety addressed, CI green). **Live-verify pending** (Azure window, gated on manual prod deploy) — issue reopened until it passes | Theme 14 / G-d |"
 }
@@ -9944,7 +9945,7 @@ id: toolu_01DkRRBYgBGJYLWDkeK37tfE
 tool_result
 id: toolu_01DkRRBYgBGJYLWDkeK37tfE
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -9958,7 +9959,7 @@ id: toolu_01RDKTAp3KGjyyU617R8VPnW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "### v1.1 W2 — Portability: OTel logs, secrets lifecycle, dry-run depth (due 2026-07-18) — 1/12",
   "new_string": "### v1.1 W2 — Portability: OTel logs, secrets lifecycle, dry-run depth (due 2026-07-18) — 1/13 (+#611 code-merged, live-verify pending)"
 }
@@ -9969,7 +9970,7 @@ id: toolu_01RDKTAp3KGjyyU617R8VPnW
 tool_result
 id: toolu_01RDKTAp3KGjyyU617R8VPnW
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -9982,7 +9983,7 @@ tool_use Bash
 id: toolu_01Rp3M9AQP1veqZmr2ZmCzH8
 ```json
 {
-  "command": "cd ~/Coding/Python/DataQ && git diff --stat && git add docs/progress.md && git commit -q -F - <<'EOF'\ndocs(tracker): #611 dbt provider code-merged (#620); Open-PRs → none\n\nAdds the #611 row to the v1.1 W2 table as 🟡 (code merged via #620 — provider +\nadapter + reader + receiver + migration + snippet + tests, review addressed, CI\ngreen; live-verify pending a manual prod deploy, issue reopened). Flips the stale\nOpen-PRs snapshot row to none (#619 + #620 both merged).\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\ngit push -u origin docs/611-dbt-provider-merged 2>&1 | tail -2",
+  "command": "cd ~/Coding/Python/DataQ && git diff --stat && git add docs/progress.md && git commit -q -F - <<'EOF'\ndocs(tracker): #611 dbt provider code-merged (#620); Open-PRs → none\n\nAdds the #611 row to the v1.1 W2 table as 🟡 (code merged via #620 — provider +\nadapter + reader + receiver + migration + snippet + tests, review addressed, CI\ngreen; live-verify pending a manual prod deploy, issue reopened). Flips the stale\nOpen-PRs snapshot row to none (#619 + #620 both merged).\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\ngit push -u origin docs/611-dbt-provider-merged 2>&1 | tail -2",
   "description": "Commit + push tracker docs branch"
 }
 ```
@@ -10545,7 +10546,7 @@ Traceback (most recent call last):
   File "/opt/homebrew/Caskroom/miniconda/base/envs/dataq/lib/python3.13/site-packages/requests/models.py", line 1167, in raise_for_status
     raise HTTPError(http_error_msg, response=self)
 requests.exceptions.HTTPError: 502 Server Error: Bad Gateway for url: https://dataq-app-frontend.purplefield-f7322a1b.westus2.azurecontainerapps.io/api/v1/connections
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -10664,7 +10665,7 @@ tool_use Read
 id: toolu_01H3GtwpNwoDBWAuQSidBSPu
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/core/secrets.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/core/secrets.py",
   "offset": 111,
   "limit": 20
 }
@@ -10790,7 +10791,7 @@ suite runs triggered_by 'dbt:dbt:17f78c01-e26c-41dd-bdb4-bc9422743d82': 1
   run_id=e3d2eab6-de63-419c-b1dd-4cba5b0dc548 status=running triggered_by=dbt:dbt:17f78c01-e26c-41dd-bdb4-bc9422743d82
 
 ✅ WEBHOOK LIVE-VERIFY PASSED
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -10984,7 +10985,7 @@ id: toolu_01PdBFrdf1s36VKsSNDLxiQ7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "### v1.1 W2 — Portability: OTel logs, secrets lifecycle, dry-run depth (due 2026-07-18) — 1/13 (+#611 code-merged, live-verify pending)",
   "new_string": "### v1.1 W2 — Portability: OTel logs, secrets lifecycle, dry-run depth (due 2026-07-18) — 2/13"
 }
@@ -10995,7 +10996,7 @@ id: toolu_01PdBFrdf1s36VKsSNDLxiQ7
 tool_result
 id: toolu_01PdBFrdf1s36VKsSNDLxiQ7
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11005,7 +11006,7 @@ id: toolu_01MF7uKc9nqJzkT7rrLAXJ6L
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "| 🟡 | [#611](https://github.com/TheurgicDuke771/DataQ/issues/611) dbt as a **third `OrchestrationProvider`** (ADR 0029) — `DbtProvider` + adapter + 3-scheme artifact reader (adls/s3/file) + HMAC `POST /orchestration/events/dbt` + 10-min poll + migration + `integrations/dbt/` snippet; **code merged #620** (agentic review + migration-safety addressed, CI green). **Live-verify pending** (Azure window, gated on manual prod deploy) — issue reopened until it passes | Theme 14 / G-d |",
   "new_string": "| ✅ | [#611](https://github.com/TheurgicDuke771/DataQ/issues/611) dbt as a **third `OrchestrationProvider`** (ADR 0029) — `DbtProvider` + adapter + 3-scheme artifact reader (adls/s3/file) + HMAC `POST /orchestration/events/dbt` + 10-min poll + migration + `integrations/dbt/` snippet (#620, agentic review + migration-safety addressed). **Deployed to prod + live-verified 2026-07-05**: signed webhook → `pipeline_run` (dbt, succeeded) → bound mart suite fired + ran green against the #609 dynamic table. Poll-path live ADLS read deferred to [#622](https://github.com/TheurgicDuke771/DataQ/issues/622) (api UAMI read-only on KV) | Theme 14 / G-d |"
 }
@@ -11016,7 +11017,7 @@ id: toolu_01MF7uKc9nqJzkT7rrLAXJ6L
 tool_result
 id: toolu_01MF7uKc9nqJzkT7rrLAXJ6L
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11030,7 +11031,7 @@ id: toolu_012dLvkmqyXsfLKcpUGLK6a7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "+ **#611 code-merged 2026-07-05 via #620** (dbt as a third `OrchestrationProvider` — ADR 0029; reopened for the pending Azure-window live-verify) + #286 pulled W7→W2;",
   "new_string": "+ **#611 closed 2026-07-05** (dbt as a third `OrchestrationProvider` — ADR 0029, #620; deployed to prod + **webhook live-verified**: signed event → pipeline_run → bound mart suite fired green; poll live-read deferred to **#622**, api UAMI read-only on KV) + #286 pulled W7→W2;"
 }
@@ -11041,7 +11042,7 @@ id: toolu_012dLvkmqyXsfLKcpUGLK6a7
 tool_result
 id: toolu_012dLvkmqyXsfLKcpUGLK6a7
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11074,7 +11075,7 @@ tool_use Bash
 id: toolu_015kNtsvq1VGxrtHGgAzVJpQ
 ```json
 {
-  "command": "cd ~/Coding/Python/DataQ && git add docs/progress.md && git commit -q -F - <<'EOF'\ndocs(tracker): #611 dbt provider live-verified on prod — done\n\nFlips the #611 W2 row to ✅ (deployed to prod; webhook path live-verified —\nsigned event → pipeline_run → bound mart suite fired + ran green against the\n#609 dynamic table). W2 now 2/13. Poll-path live ADLS read deferred to #622\n(api UAMI read-only on Key Vault). Snapshot open-count net-unchanged (#611\nclosed, #622 filed); epic #597 #611 ticked.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\ngit push -u origin docs/611-live-verified 2>&1 | tail -2",
+  "command": "cd ~/Coding/Python/DataQ && git add docs/progress.md && git commit -q -F - <<'EOF'\ndocs(tracker): #611 dbt provider live-verified on prod — done\n\nFlips the #611 W2 row to ✅ (deployed to prod; webhook path live-verified —\nsigned event → pipeline_run → bound mart suite fired + ran green against the\n#609 dynamic table). W2 now 2/13. Poll-path live ADLS read deferred to #622\n(api UAMI read-only on Key Vault). Snapshot open-count net-unchanged (#611\nclosed, #622 filed); epic #597 #611 ticked.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\ngit push -u origin docs/611-live-verified 2>&1 | tail -2",
   "description": "Commit + push tracker update"
 }
 ```
@@ -11298,7 +11299,7 @@ tool_use Read
 id: toolu_01TThhx2iCCBaPCH619wQAhi
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/deploy/terraform/azure/keyvault.tf",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/deploy/terraform/azure/keyvault.tf",
   "offset": 1,
   "limit": 45
 }
@@ -11349,7 +11350,7 @@ id: toolu_01N1KuufPyxRBJF7ZXq1dFbA
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/deploy/terraform/azure/keyvault.tf",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/deploy/terraform/azure/keyvault.tf",
   "old_string": "# holds the datasource connection credentials the app writes/reads via the API at\n# runtime, plus the pre-seeded orchestration webhook secrets. RBAC authorization\n# (not access policies): the UAMI gets Secrets User (read); the deployer gets\n# Secrets Officer (write) so Terraform can seed the webhook secrets.",
   "new_string": "# holds the datasource connection credentials the app writes/reads via the API at\n# runtime, plus the pre-seeded orchestration webhook secrets. RBAC authorization\n# (not access policies): the UAMI gets Secrets Officer (read+write) so the app can\n# CREATE/rotate connection credentials at runtime (SecretStore.set) — read-only\n# would 502 every connection-create-with-secret (#622); the deployer also gets\n# Secrets Officer so Terraform can seed the webhook secrets."
 }
@@ -11360,7 +11361,7 @@ id: toolu_01N1KuufPyxRBJF7ZXq1dFbA
 tool_result
 id: toolu_01N1KuufPyxRBJF7ZXq1dFbA
 ```
-The file /Users/arijit/Coding/Python/DataQ/deploy/terraform/azure/keyvault.tf has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/deploy/terraform/azure/keyvault.tf has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11370,7 +11371,7 @@ id: toolu_018sankt8Q1sPxPnVWhAfJeu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/deploy/terraform/azure/keyvault.tf",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/deploy/terraform/azure/keyvault.tf",
   "old_string": "# App identity -> read secrets at runtime (DefaultAzureCredential).\nresource \"azurerm_role_assignment\" \"kv_app_reader\" {\n  scope                = azurerm_key_vault.app.id\n  role_definition_name = \"Key Vault Secrets User\"\n  principal_id         = azurerm_user_assigned_identity.app.principal_id\n}",
   "new_string": "# App identity -> read AND write secrets at runtime (DefaultAzureCredential). Write\n# is required so the connection manager can persist/rotate credentials via the API\n# (SecretStore.set); read alone breaks connection-create-with-secret (#622).\nresource \"azurerm_role_assignment\" \"kv_app_secrets\" {\n  scope                = azurerm_key_vault.app.id\n  role_definition_name = \"Key Vault Secrets Officer\"\n  principal_id         = azurerm_user_assigned_identity.app.principal_id\n}\n\n# Renamed from kv_app_reader (was Secrets User) when the role widened to Officer\n# for #622 — keep the state entry so the plan is a role change, not a churn.\nmoved {\n  from = azurerm_role_assignment.kv_app_reader\n  to   = azurerm_role_assignment.kv_app_secrets\n}"
 }
@@ -11381,7 +11382,7 @@ id: toolu_018sankt8Q1sPxPnVWhAfJeu
 tool_result
 id: toolu_018sankt8Q1sPxPnVWhAfJeu
 ```
-The file /Users/arijit/Coding/Python/DataQ/deploy/terraform/azure/keyvault.tf has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/deploy/terraform/azure/keyvault.tf has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11394,7 +11395,7 @@ tool_use Read
 id: toolu_01LooXG941s2w8AU1YszhDTn
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/deploy/terraform/azure/containerapps.tf",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/deploy/terraform/azure/containerapps.tf",
   "offset": 148,
   "limit": 8
 }
@@ -11546,7 +11547,7 @@ tool_use Read
 id: toolu_01FjNppDqq1pwUttU32LcTPE
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/deploy/terraform/azure/keyvault.tf",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/deploy/terraform/azure/keyvault.tf",
   "offset": 33,
   "limit": 20
 }
@@ -11609,7 +11610,7 @@ tool_use Read
 id: toolu_01McnFbAyttqwnsh5s2ahZxS
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/deploy/README.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/deploy/README.md",
   "offset": 46,
   "limit": 6
 }
@@ -11635,7 +11636,7 @@ id: toolu_01FSTSxVro9P6tVwnjCEWuqx
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/deploy/README.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/deploy/README.md",
   "old_string": "  Administrator`/`Owner` to grant the managed identity the **Key Vault Secrets User**\n  role (an RBAC role assignment).",
   "new_string": "  Administrator`/`Owner` to grant the managed identity the **Key Vault Secrets Officer**\n  role (an RBAC role assignment — read+write, so the app can persist/rotate connection\n  credentials at runtime; #622)."
 }
@@ -11646,7 +11647,7 @@ id: toolu_01FSTSxVro9P6tVwnjCEWuqx
 tool_result
 id: toolu_01FSTSxVro9P6tVwnjCEWuqx
 ```
-The file /Users/arijit/Coding/Python/DataQ/deploy/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/deploy/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11655,7 +11656,7 @@ tool_use Read
 id: toolu_01JJ94KSHn1pJKeTok1dBqsG
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/deploy/README.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/deploy/README.md",
   "offset": 133,
   "limit": 3
 }
@@ -11677,7 +11678,7 @@ tool_use Read
 id: toolu_01PGfYkE19UrmVKYNjkCUjGN
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/deploy/README.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/deploy/README.md",
   "offset": 135,
   "limit": 3
 }
@@ -11700,7 +11701,7 @@ id: toolu_01DqZCqQaioeoPTQB3nJACMQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/deploy/README.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/deploy/README.md",
   "old_string": "2. **Managed identity** on the api + worker apps with **Key Vault Secrets User**\n   on the vault (so `DefaultAzureCredential` resolves `SECRET_STORE=azure_key_vault`).",
   "new_string": "2. **Managed identity** on the api + worker apps with **Key Vault Secrets Officer**\n   on the vault (read+write, so `DefaultAzureCredential` resolves\n   `SECRET_STORE=azure_key_vault` for both reads and the connection-credential writes\n   the API performs; read-only breaks connection-create-with-secret — #622)."
 }
@@ -11711,7 +11712,7 @@ id: toolu_01DqZCqQaioeoPTQB3nJACMQ
 tool_result
 id: toolu_01DqZCqQaioeoPTQB3nJACMQ
 ```
-The file /Users/arijit/Coding/Python/DataQ/deploy/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/deploy/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11724,7 +11725,7 @@ tool_use Bash
 id: toolu_011Qk2TgMMLjxC2rK8qjbhQn
 ```json
 {
-  "command": "cd ~/Coding/Python/DataQ && git checkout -b fix/622-app-kv-write 2>&1 | tail -1 && git add deploy/terraform/azure/keyvault.tf deploy/terraform/azure/containerapps.tf deploy/README.md && git commit -q -F - <<'EOF'\nfix(deploy): grant the app identity Key Vault Secrets Officer (write) — Fixes #622\n\nThe api/worker managed identity had Key Vault Secrets User (read-only), so the\nconnection manager's runtime SecretStore.set 502'd on every connection created\nwith a credential (`connection_secret_write_failed`) — surfaced during the #611\ndbt live-verify. Widen the app UAMI's role to Secrets Officer (read+write) so the\nAPI can persist/rotate connection credentials at runtime. Rename the role-assignment\nresource kv_app_reader → kv_app_secrets (with a `moved` block so the plan is a clean\nrole change) and update the two containerapps depends_on refs + deploy/README.\n\nApply is a manual `terraform apply` by the deployer (the Deploy workflow only does\napp-level rollout). After apply, the dbt poll-path live-verify (#611) can run.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\ngit push -u origin fix/622-app-kv-write 2>&1 | tail -2",
+  "command": "cd ~/Coding/Python/DataQ && git checkout -b fix/622-app-kv-write 2>&1 | tail -1 && git add deploy/terraform/azure/keyvault.tf deploy/terraform/azure/containerapps.tf deploy/README.md && git commit -q -F - <<'EOF'\nfix(deploy): grant the app identity Key Vault Secrets Officer (write) — Fixes #622\n\nThe api/worker managed identity had Key Vault Secrets User (read-only), so the\nconnection manager's runtime SecretStore.set 502'd on every connection created\nwith a credential (`connection_secret_write_failed`) — surfaced during the #611\ndbt live-verify. Widen the app UAMI's role to Secrets Officer (read+write) so the\nAPI can persist/rotate connection credentials at runtime. Rename the role-assignment\nresource kv_app_reader → kv_app_secrets (with a `moved` block so the plan is a clean\nrole change) and update the two containerapps depends_on refs + deploy/README.\n\nApply is a manual `terraform apply` by the deployer (the Deploy workflow only does\napp-level rollout). After apply, the dbt poll-path live-verify (#611) can run.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\ngit push -u origin fix/622-app-kv-write 2>&1 | tail -2",
   "description": "Commit + push #622 IaC fix"
 }
 ```
@@ -11854,7 +11855,7 @@ id: toolu_01JXwkNoihJXcB2zK2KLsGj8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/deploy/terraform/azure/keyvault.tf",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/deploy/terraform/azure/keyvault.tf",
   "old_string": "# App identity -> read AND write secrets at runtime (DefaultAzureCredential). Write\n# is required so the connection manager can persist/rotate credentials via the API\n# (SecretStore.set); read alone breaks connection-create-with-secret (#622).\nresource \"azurerm_role_assignment\" \"kv_app_secrets\" {\n  scope                = azurerm_key_vault.app.id\n  role_definition_name = \"Key Vault Secrets Officer\"\n  principal_id         = azurerm_user_assigned_identity.app.principal_id\n}\n\n# Renamed from kv_app_reader (was Secrets User) when the role widened to Officer\n# for #622 — keep the state entry so the plan is a role change, not a churn.\nmoved {\n  from = azurerm_role_assignment.kv_app_reader\n  to   = azurerm_role_assignment.kv_app_secrets\n}",
   "new_string": "# App identity -> get/list/SET secrets at runtime (DefaultAzureCredential). It needs\n# write so the connection manager can persist/rotate credentials via the API\n# (SecretStore.set) — read-only broke connection-create-with-secret (#622).\n#\n# Least privilege: a CUSTOM role scoped to get + list + set only, NOT the built-in\n# \"Key Vault Secrets Officer\" (which also grants delete/purge/backup/restore the app\n# never uses). Keeps the app identity's blast radius to exactly its two operations.\n# (When #372 lands SecretStore.delete, add `.../deleteSecret/action` here.)\nresource \"azurerm_role_definition\" \"app_kv_secrets_rw\" {\n  name        = \"DataQ App KV Secrets RW ${random_string.suffix.result}\"\n  scope       = azurerm_key_vault.app.id\n  description = \"get + list + set secrets (no delete/purge) for the DataQ app identity.\"\n\n  permissions {\n    data_actions = […]
 
@@ -11863,7 +11864,7 @@ id: toolu_01JXwkNoihJXcB2zK2KLsGj8
 tool_result
 id: toolu_01JXwkNoihJXcB2zK2KLsGj8
 ```
-The file /Users/arijit/Coding/Python/DataQ/deploy/terraform/azure/keyvault.tf has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/deploy/terraform/azure/keyvault.tf has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11877,7 +11878,7 @@ id: toolu_01LWoP2f1d9PsGPVXP5sHSrq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/deploy/terraform/azure/keyvault.tf",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/deploy/terraform/azure/keyvault.tf",
   "old_string": "# (not access policies): the UAMI gets Secrets Officer (read+write) so the app can\n# CREATE/rotate connection credentials at runtime (SecretStore.set) — read-only\n# would 502 every connection-create-with-secret (#622); the deployer also gets\n# Secrets Officer so Terraform can seed the webhook secrets.",
   "new_string": "# (not access policies): the UAMI gets a custom get+list+set role so the app can\n# CREATE/rotate connection credentials at runtime (SecretStore.set) — read-only\n# would 502 every connection-create-with-secret (#622), and the built-in Officer\n# would over-grant delete/purge; the deployer gets the built-in Secrets Officer so\n# Terraform can seed the webhook secrets."
 }
@@ -11888,7 +11889,7 @@ id: toolu_01LWoP2f1d9PsGPVXP5sHSrq
 tool_result
 id: toolu_01LWoP2f1d9PsGPVXP5sHSrq
 ```
-The file /Users/arijit/Coding/Python/DataQ/deploy/terraform/azure/keyvault.tf has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/deploy/terraform/azure/keyvault.tf has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11898,7 +11899,7 @@ id: toolu_01Jm8pNKgd5m23u9k7BejeDE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/deploy/README.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/deploy/README.md",
   "old_string": "  Administrator`/`Owner` to grant the managed identity the **Key Vault Secrets Officer**\n  role (an RBAC role assignment — read+write, so the app can persist/rotate connection\n  credentials at runtime; #622).",
   "new_string": "  Administrator`/`Owner` to grant the managed identity a **custom get+list+set Key Vault\n  role** (an RBAC role assignment — read+write so the app can persist/rotate connection\n  credentials at runtime, but not the broader built-in Secrets Officer; #622)."
 }
@@ -11909,7 +11910,7 @@ id: toolu_01Jm8pNKgd5m23u9k7BejeDE
 tool_result
 id: toolu_01Jm8pNKgd5m23u9k7BejeDE
 ```
-The file /Users/arijit/Coding/Python/DataQ/deploy/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/deploy/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11919,7 +11920,7 @@ id: toolu_011VeoGNUspxVB5FMZWxVvz6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/deploy/README.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/deploy/README.md",
   "old_string": "2. **Managed identity** on the api + worker apps with **Key Vault Secrets Officer**\n   on the vault (read+write, so `DefaultAzureCredential` resolves\n   `SECRET_STORE=azure_key_vault` for both reads and the connection-credential writes\n   the API performs; read-only breaks connection-create-with-secret — #622).",
   "new_string": "2. **Managed identity** on the api + worker apps with a **custom get+list+set Key Vault\n   role** (read+write but not the broader built-in Secrets Officer, so\n   `DefaultAzureCredential` resolves `SECRET_STORE=azure_key_vault` for both reads and\n   the connection-credential writes the API performs; read-only breaks\n   connection-create-with-secret — #622)."
 }
@@ -11930,7 +11931,7 @@ id: toolu_011VeoGNUspxVB5FMZWxVvz6
 tool_result
 id: toolu_011VeoGNUspxVB5FMZWxVvz6
 ```
-The file /Users/arijit/Coding/Python/DataQ/deploy/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/deploy/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11963,7 +11964,7 @@ tool_use Bash
 id: toolu_015advHGb3zENvVcgxH9KfhM
 ```json
 {
-  "command": "cd ~/Coding/Python/DataQ && git add deploy/terraform/azure/keyvault.tf deploy/README.md && git commit -q -F - <<'EOF'\nfixup: least-privilege custom KV role (get/list/set) instead of Officer (#622)\n\nCommit security review flagged the built-in Key Vault Secrets Officer as overly\npermissive (it also grants delete/purge/backup/restore the app never uses). Replace\nit with a custom role definition scoped to exactly get + list + set\n(getSecret/readMetadata/setSecret dataActions) assigned to the app UAMI — the app's\nblast radius is now precisely its two operations (SecretStore.get/set). Deployer\nkeeps built-in Secrets Officer for seeding. (When #372 adds SecretStore.delete, add\nthe deleteSecret dataAction.)\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\ngit push 2>&1 | tail -2",
+  "command": "cd ~/Coding/Python/DataQ && git add deploy/terraform/azure/keyvault.tf deploy/README.md && git commit -q -F - <<'EOF'\nfixup: least-privilege custom KV role (get/list/set) instead of Officer (#622)\n\nCommit security review flagged the built-in Key Vault Secrets Officer as overly\npermissive (it also grants delete/purge/backup/restore the app never uses). Replace\nit with a custom role definition scoped to exactly get + list + set\n(getSecret/readMetadata/setSecret dataActions) assigned to the app UAMI — the app's\nblast radius is now precisely its two operations (SecretStore.get/set). Deployer\nkeeps built-in Secrets Officer for seeding. (When #372 adds SecretStore.delete, add\nthe deleteSecret dataAction.)\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\ngit push 2>&1 | tail -2",
   "description": "Commit + push least-privilege custom role"
 }
 ```
@@ -12506,7 +12507,7 @@ tool_use Read
 id: toolu_01Pp8YKqVPZcVt4QRdtWJLXQ
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/core/secrets.py"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/core/secrets.py"
 }
 ```
 
@@ -12603,7 +12604,7 @@ tool_use Read
 id: toolu_01PMtKMo6CsryooFPjohLrV9
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/connection_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/connection_service.py",
   "offset": 330,
   "limit": 40
 }
@@ -12666,7 +12667,7 @@ tool_use Read
 id: toolu_01L5gDzT5PEygxGCpf85d6yx
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/notification_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/notification_service.py",
   "offset": 100,
   "limit": 60
 }
@@ -12720,7 +12721,7 @@ id: toolu_01UuQv538PqedF7Cfa87a2uZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/core/secrets.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/core/secrets.py",
   "old_string": "@runtime_checkable\nclass SecretStore(Protocol):\n    def get(self, name: str) -> str: ...\n\n    def set(self, name: str, value: str) -> None: ...",
   "new_string": "@runtime_checkable\nclass SecretStore(Protocol):\n    def get(self, name: str) -> str: ...\n\n    def set(self, name: str, value: str) -> None: ...\n\n    def delete(self, name: str) -> None:\n        \"\"\"Best-effort removal of a secret (#372). Idempotent — a missing secret is a\n        clean no-op — and **fail-soft**: it never raises, since it only ever runs as\n        cleanup when the owning entity (connection / suite notification) is deleted or\n        its secret cleared, and that must not 500 on a store hiccup. Failures are\n        logged.\"\"\"\n        ..."
 }
@@ -12731,7 +12732,7 @@ id: toolu_01UuQv538PqedF7Cfa87a2uZ
 tool_result
 id: toolu_01UuQv538PqedF7Cfa87a2uZ
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/core/secrets.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/core/secrets.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -12745,7 +12746,7 @@ id: toolu_01WbbYrc2Ww2Tw3ufaKrcqBm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/core/secrets.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/core/secrets.py",
   "old_string": "    def set(self, name: str, value: str) -> None:\n        \"\"\"Write into the process env. Dev only — NOT persisted across restarts.\n\n        Lets connection-CRUD exercise the write-through path locally without an\n        Azure tenant. Production uses AzureKeyVaultStore, which persists.\n        \"\"\"\n        os.environ[_env_key(name)] = value",
   "new_string": "    def set(self, name: str, value: str) -> None:\n        \"\"\"Write into the process env. Dev only — NOT persisted across restarts.\n\n        Lets connection-CRUD exercise the write-through path locally without an\n        Azure tenant. Production uses AzureKeyVaultStore, which persists.\n        \"\"\"\n        os.environ[_env_key(name)] = value\n\n    def delete(self, name: str) -> None:\n        \"\"\"Remove the env var if present (#372). Idempotent; can't fail.\"\"\"\n        os.environ.pop(_env_key(name), None)"
 }
@@ -12756,7 +12757,7 @@ id: toolu_01WbbYrc2Ww2Tw3ufaKrcqBm
 tool_result
 id: toolu_01WbbYrc2Ww2Tw3ufaKrcqBm
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/core/secrets.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/core/secrets.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -12770,7 +12771,7 @@ id: toolu_01YY8Bk81FE3KwzL4g8V1iPF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/core/secrets.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/core/secrets.py",
   "old_string": "    def set(self, name: str, value: str) -> None:\n        try:\n            self._client_lazy().set_secret(name, value)\n        except Exception as exc:\n            raise SecretWriteError(\n                f\"Key Vault secret {name!r} at {self._vault_url}: {exc}\"\n            ) from exc",
   "new_string": "    def set(self, name: str, value: str) -> None:\n        try:\n            self._client_lazy().set_secret(name, value)\n        except Exception as exc:\n            raise SecretWriteError(\n                f\"Key Vault secret {name!r} at {self._vault_url}: {exc}\"\n            ) from exc\n\n    def delete(self, name: str) -> None:\n        \"\"\"Best-effort soft-delete (#372). A missing secret is a clean no-op; any\n        other failure is logged, never raised (orphan cleanup must not 500 the\n        entity delete). Fires the delete; doesn't block on the soft-delete poller.\"\"\"\n        from azure.core.exceptions import ResourceNotFoundError\n\n        try:\n            self._client_lazy().begin_delete_secret(name)\n        except ResourceNotFoundError:\n            pass\n        except Exception as exc:\n            log.warning(\"secret_delete_failed\", name=name, error=str(exc))"
 }
@@ -12781,7 +12782,7 @@ id: toolu_01YY8Bk81FE3KwzL4g8V1iPF
 tool_result
 id: toolu_01YY8Bk81FE3KwzL4g8V1iPF
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/core/secrets.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/core/secrets.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -12791,7 +12792,7 @@ id: toolu_01QKH6xhy1hmvgz5pRjjkjK6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/core/secrets.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/core/secrets.py",
   "old_string": "    def set(self, name: str, value: str) -> None:\n        try:\n            self._client_lazy().set(self._key(name), value)\n        except Exception as exc:\n            raise SecretWriteError(f\"Redis secret {name!r}: {exc}\") from exc",
   "new_string": "    def set(self, name: str, value: str) -> None:\n        try:\n            self._client_lazy().set(self._key(name), value)\n        except Exception as exc:\n            raise SecretWriteError(f\"Redis secret {name!r}: {exc}\") from exc\n\n    def delete(self, name: str) -> None:\n        \"\"\"Best-effort delete (#372); a missing key is a no-op, failures are logged.\"\"\"\n        try:\n            self._client_lazy().delete(self._key(name))\n        except Exception as exc:\n            log.warning(\"secret_delete_failed\", name=name, error=str(exc))"
 }
@@ -12802,7 +12803,7 @@ id: toolu_01QKH6xhy1hmvgz5pRjjkjK6
 tool_result
 id: toolu_01QKH6xhy1hmvgz5pRjjkjK6
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/core/secrets.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/core/secrets.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -12935,7 +12936,7 @@ id: toolu_01UnuU3NUYqRn7f4JuovcToZ
 ```json
 {
   "file_path": "/private/tmp/claude-501/-Users-arijit-Coding-Python-DataQ/4feb9be8-2ae1-4d50-be97-b9c4cbaead36/scratchpad/add_delete.py",
-  "content": "\"\"\"Insert a `delete` method after each secret-store test double's `set` method,\nmirroring the double's storage (dict-pop, or NotImplementedError for read-only).\"\"\"\nimport re\nimport subprocess\nfrom pathlib import Path\n\nroot = Path(\"/Users/arijit/Coding/Python/DataQ/backend\")\nfiles = subprocess.run(\n    [\"grep\", \"-rl\", \"def set(self, name\", str(root / \"tests\")],\n    capture_output=True, text=True,\n).stdout.split()\n\nSET_RE = re.compile(r\"^(\\s*)def set\\(self, name: str, value: str\\) -> None:.*$\")\n\nfor f in files:\n    p = Path(f)\n    lines = p.read_text().splitlines(keepends=True)\n    out = []\n    i = 0\n    changed = False\n    while i < len(lines):\n        line = lines[i]\n        out.append(line)\n        m = SET_RE.match(line)\n        if not m:\n            i += 1\n            continue\n        indent = m.group(1)\n        body_indent = indent + \"    \"\n        # Gather the set method body (indented lines after the def, incl. blanks).\n        j = i + 1\n        body = []\n        while j < len(lines):\n            ln = lines[j]\n            if ln.strip() == \"\":\n                body.append(ln)\n                j += 1\n                continue\n            if ln.startswith(body_indent):\n                body.append(ln)\n                j += 1\n            else:\n                break\n        # Emit the set body, then a delete method mirroring it.\n        out.extend(body)\n        # Decide delete body from the set body.\n        joined = \"\".join(body)\n        del_stmt = None\n        dm = re.search(r\"self\\.(\\w+)\\[name\\]\\s*=\\s*value\", joined)\n        if dm:\n            del_stmt = f\"{body_indent}self.{dm.group(1)}.pop(name, None)\\n\"\n        elif \"raise NotImplementedError\" in joined:\n            del_stmt = f\"{body_indent}raise NotImplementedError\\n\"\n        else:\n            del_stmt = f\"{body_indent}pass\\n\"\n        # Trim trailing blank lines […]
+  "content": "\"\"\"Insert a `delete` method after each secret-store test double's `set` method,\nmirroring the double's storage (dict-pop, or NotImplementedError for read-only).\"\"\"\nimport re\nimport subprocess\nfrom pathlib import Path\n\nroot = Path(\"/home/<USER>/Coding/Python/DataQ/backend\")\nfiles = subprocess.run(\n    [\"grep\", \"-rl\", \"def set(self, name\", str(root / \"tests\")],\n    capture_output=True, text=True,\n).stdout.split()\n\nSET_RE = re.compile(r\"^(\\s*)def set\\(self, name: str, value: str\\) -> None:.*$\")\n\nfor f in files:\n    p = Path(f)\n    lines = p.read_text().splitlines(keepends=True)\n    out = []\n    i = 0\n    changed = False\n    while i < len(lines):\n        line = lines[i]\n        out.append(line)\n        m = SET_RE.match(line)\n        if not m:\n            i += 1\n            continue\n        indent = m.group(1)\n        body_indent = indent + \"    \"\n        # Gather the set method body (indented lines after the def, incl. blanks).\n        j = i + 1\n        body = []\n        while j < len(lines):\n            ln = lines[j]\n            if ln.strip() == \"\":\n                body.append(ln)\n                j += 1\n                continue\n            if ln.startswith(body_indent):\n                body.append(ln)\n                j += 1\n            else:\n                break\n        # Emit the set body, then a delete method mirroring it.\n        out.extend(body)\n        # Decide delete body from the set body.\n        joined = \"\".join(body)\n        del_stmt = None\n        dm = re.search(r\"self\\.(\\w+)\\[name\\]\\s*=\\s*value\", joined)\n        if dm:\n            del_stmt = f\"{body_indent}self.{dm.group(1)}.pop(name, None)\\n\"\n        elif \"raise NotImplementedError\" in joined:\n            del_stmt = f\"{body_indent}raise NotImplementedError\\n\"\n        else:\n            del_stmt = f\"{body_indent}pass\\n\"\n        # Trim trailing blank lines […]
 
 > TOOL
 
@@ -13032,7 +13033,7 @@ tool_use Read
 id: toolu_012Vmk7f18egjFPFpA2zCHti
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/connection_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/connection_service.py",
   "offset": 339,
   "limit": 6
 }
@@ -13058,7 +13059,7 @@ id: toolu_01PdZrUEaP2BATmPTRTL1S3h
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/connection_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/connection_service.py",
   "old_string": "def delete_connection(session: Session, connection_id: uuid.UUID) -> None:\n    conn = get_connection(session, connection_id)\n    session.delete(conn)\n    session.commit()\n    log.info(\"connection_deleted\", connection_id=str(connection_id))",
   "new_string": "def delete_connection(\n    session: Session, connection_id: uuid.UUID, *, secret_store: SecretStore\n) -> None:\n    conn = get_connection(session, connection_id)\n    secret_ref = conn.secret_ref\n    session.delete(conn)\n    session.commit()\n    # Best-effort remove the orphaned credential from the store (#372) — after the\n    # row is gone, and fail-soft (delete never raises), so a store hiccup can't 500\n    # a successful delete.\n    if secret_ref:\n        secret_store.delete(secret_ref)\n    log.info(\"connection_deleted\", connection_id=str(connection_id))"
 }
@@ -13069,7 +13070,7 @@ id: toolu_01PdZrUEaP2BATmPTRTL1S3h
 tool_result
 id: toolu_01PdZrUEaP2BATmPTRTL1S3h
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/services/connection_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/services/connection_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -13110,7 +13111,7 @@ tool_use Read
 id: toolu_01PGAkdpkWUXbMRHXnSDeode
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/api/v1/connections.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/api/v1/connections.py",
   "offset": 158,
   "limit": 10
 }
@@ -13140,7 +13141,7 @@ id: toolu_01TrRbNwTJbWpJqeiZXLv9UH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/api/v1/connections.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/api/v1/connections.py",
   "old_string": "def delete_connection(\n    connection_id: uuid.UUID,\n    current_user: Annotated[User, Depends(get_current_user)],\n    db: Annotated[Session, Depends(get_db)],\n) -> None:\n    svc.delete_connection(db, connection_id)",
   "new_string": "def delete_connection(\n    connection_id: uuid.UUID,\n    current_user: Annotated[User, Depends(get_current_user)],\n    db: Annotated[Session, Depends(get_db)],\n    secret_store: Annotated[SecretStore, Depends(get_secret_store)],\n) -> None:\n    svc.delete_connection(db, connection_id, secret_store=secret_store)"
 }
@@ -13151,7 +13152,7 @@ id: toolu_01TrRbNwTJbWpJqeiZXLv9UH
 tool_result
 id: toolu_01TrRbNwTJbWpJqeiZXLv9UH
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/api/v1/connections.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/api/v1/connections.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -13165,7 +13166,7 @@ id: toolu_0167Cj4SKtQQGQ1yH1k8yVn4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/notification_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/notification_service.py",
   "old_string": "    if webhook is not None:\n        if webhook == \"\":\n            config.webhook_secret_ref = None\n        else:",
   "new_string": "    if webhook is not None:\n        if webhook == \"\":\n            # Clearing the per-suite webhook — drop the orphaned secret too (#372).\n            if config.webhook_secret_ref:\n                secret_store.delete(config.webhook_secret_ref)\n            config.webhook_secret_ref = None\n        else:"
 }
@@ -13176,7 +13177,7 @@ id: toolu_0167Cj4SKtQQGQ1yH1k8yVn4
 tool_result
 id: toolu_0167Cj4SKtQQGQ1yH1k8yVn4
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/services/notification_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/services/notification_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -13186,7 +13187,7 @@ id: toolu_01GiYkT19NUyKjbfjjf9whzE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/notification_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/notification_service.py",
   "old_string": "def delete_config(session: Session, suite_id: uuid.UUID) -> bool:\n    \"\"\"Delete a suite's config (revert to defaults). Returns whether a row existed.\"\"\"\n    config = get_config(session, suite_id)\n    if config is None:\n        return False\n    session.delete(config)\n    session.commit()\n    log.info(\"suite_notification_deleted\", suite_id=str(suite_id))\n    return True",
   "new_string": "def delete_config(\n    session: Session, suite_id: uuid.UUID, *, secret_store: SecretStore\n) -> bool:\n    \"\"\"Delete a suite's config (revert to defaults). Returns whether a row existed.\"\"\"\n    config = get_config(session, suite_id)\n    if config is None:\n        return False\n    secret_ref = config.webhook_secret_ref\n    session.delete(config)\n    session.commit()\n    # Best-effort remove the orphaned per-suite webhook secret (#372), fail-soft.\n    if secret_ref:\n        secret_store.delete(secret_ref)\n    log.info(\"suite_notification_deleted\", suite_id=str(suite_id))\n    return True"
 }
@@ -13197,7 +13198,7 @@ id: toolu_01GiYkT19NUyKjbfjjf9whzE
 tool_result
 id: toolu_01GiYkT19NUyKjbfjjf9whzE
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/services/notification_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/services/notification_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -13233,7 +13234,7 @@ tool_use Read
 id: toolu_014GM6pMHMz2BGpqVahJacjX
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/api/v1/notifications.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/api/v1/notifications.py",
   "offset": 110,
   "limit": 10
 }
@@ -13261,7 +13262,7 @@ id: toolu_015ZJR169FhFsfz4KU5A6zoJ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/api/v1/notifications.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/api/v1/notifications.py",
   "old_string": "def delete_notifications(\n    suite_id: uuid.UUID,\n    current_user: Annotated[User, Depends(get_current_user)],\n    db: Annotated[Session, Depends(get_db)],\n) -> None:\n    require_permission(db, suite_id, current_user.id, minimum=\"edit\")\n    svc.delete_config(db, suite_id)",
   "new_string": "def delete_notifications(\n    suite_id: uuid.UUID,\n    current_user: Annotated[User, Depends(get_current_user)],\n    db: Annotated[Session, Depends(get_db)],\n    secret_store: Annotated[SecretStore, Depends(get_secret_store)],\n) -> None:\n    require_permission(db, suite_id, current_user.id, minimum=\"edit\")\n    svc.delete_config(db, suite_id, secret_store=secret_store)"
 }
@@ -13272,7 +13273,7 @@ id: toolu_015ZJR169FhFsfz4KU5A6zoJ
 tool_result
 id: toolu_015ZJR169FhFsfz4KU5A6zoJ
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/api/v1/notifications.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/api/v1/notifications.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -13317,7 +13318,7 @@ tool_use Read
 id: toolu_0168ZDsSDZkVS1mMeGqZrwCG
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/services/test_connection_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/services/test_connection_service.py",
   "offset": 225,
   "limit": 22
 }
@@ -13426,7 +13427,7 @@ id: toolu_01AMoNoiHPNQ7aU7xzXCBHLn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/services/test_connection_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/services/test_connection_service.py",
   "old_string": "def test_delete_removes_row(db_session: Any) -> None:\n    conn = _create(db_session, FakeStore())\n    svc.delete_connection(db_session, conn.id)\n    with pytest.raises(ConnectionNotFoundError):\n        svc.get_connection(db_session, conn.id)\n\n\ndef test_delete_unknown_raises_not_found(db_session: Any) -> None:\n    with pytest.raises(ConnectionNotFoundError):\n        svc.delete_connection(db_session, uuid.uuid4())",
   "new_string": "def test_delete_removes_row_and_secret(db_session: Any) -> None:\n    store = FakeStore()\n    conn = _create(db_session, store)\n    ref = conn.secret_ref\n    assert ref in store.data  # credential was written through on create\n    svc.delete_connection(db_session, conn.id, secret_store=store)\n    with pytest.raises(ConnectionNotFoundError):\n        svc.get_connection(db_session, conn.id)\n    assert ref not in store.data  # #372: orphaned credential removed on delete\n\n\ndef test_delete_fails_soft_when_secret_delete_raises(db_session: Any) -> None:\n    # A store whose delete raises must not 500 the connection delete (#372).\n    class _RaisingDelete(FakeStore):\n        def delete(self, name: str) -> None:\n            raise RuntimeError(\"kv down\")\n\n    store = _RaisingDelete()\n    conn = _create(db_session, store)\n    # The service passes the raising store straight through; if delete were not\n    # fail-soft this would raise. (Real stores swallow internally; here the double\n    # raises to prove the service doesn't depend on that.)\n    with pytest.raises(RuntimeError):\n        svc.delete_connection(db_session, conn.id, secret_store=store)\n\n\ndef test_delete_unknown_raises_not_found(db_session: Any) -> None:\n    with pytest.raises(ConnectionNotFoundError):\n        svc.delete_connection(db_session, uuid.uuid4(), secret_store=FakeStore())"
 }
@@ -13437,7 +13438,7 @@ id: toolu_01AMoNoiHPNQ7aU7xzXCBHLn
 tool_result
 id: toolu_01AMoNoiHPNQ7aU7xzXCBHLn
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/services/test_connection_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/services/test_connection_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -13451,7 +13452,7 @@ id: toolu_011Sgbm3kpv9G9RgYB7YWoCs
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/services/test_connection_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/services/test_connection_service.py",
   "old_string": "def test_delete_fails_soft_when_secret_delete_raises(db_session: Any) -> None:\n    # A store whose delete raises must not 500 the connection delete (#372).\n    class _RaisingDelete(FakeStore):\n        def delete(self, name: str) -> None:\n            raise RuntimeError(\"kv down\")\n\n    store = _RaisingDelete()\n    conn = _create(db_session, store)\n    # The service passes the raising store straight through; if delete were not\n    # fail-soft this would raise. (Real stores swallow internally; here the double\n    # raises to prove the service doesn't depend on that.)\n    with pytest.raises(RuntimeError):\n        svc.delete_connection(db_session, conn.id, secret_store=store)\n\n\ndef test_delete_unknown_raises_not_found(db_session: Any) -> None:",
   "new_string": "def test_delete_unknown_raises_not_found(db_session: Any) -> None:"
 }
@@ -13462,7 +13463,7 @@ id: toolu_011Sgbm3kpv9G9RgYB7YWoCs
 tool_result
 id: toolu_011Sgbm3kpv9G9RgYB7YWoCs
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/services/test_connection_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/services/test_connection_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -13471,7 +13472,7 @@ tool_use Read
 id: toolu_01Cnv647nBEfXSbpbn4ECzin
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/services/test_connection_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/services/test_connection_service.py",
   "offset": 116,
   "limit": 8
 }
@@ -13502,7 +13503,7 @@ tool_use Read
 id: toolu_01TA1pcq6aFSFH2wuoNFG7Ey
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/services/test_connection_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/services/test_connection_service.py",
   "offset": 563,
   "limit": 10
 }
@@ -13532,7 +13533,7 @@ id: toolu_01Nmf3tGjTnVfDJyaBzJLJbZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/services/test_connection_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/services/test_connection_service.py",
   "old_string": "    conn = _create(db_session, FakeStore())\n    assert len(_versions(db_session, conn.id)) == 1\n    svc.delete_connection(db_session, conn.id)\n    assert _versions(db_session, conn.id) == []",
   "new_string": "    conn = _create(db_session, FakeStore())\n    assert len(_versions(db_session, conn.id)) == 1\n    svc.delete_connection(db_session, conn.id, secret_store=FakeStore())\n    assert _versions(db_session, conn.id) == []"
 }
@@ -13543,7 +13544,7 @@ id: toolu_01Nmf3tGjTnVfDJyaBzJLJbZ
 tool_result
 id: toolu_01Nmf3tGjTnVfDJyaBzJLJbZ
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/services/test_connection_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/services/test_connection_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -13556,7 +13557,7 @@ tool_use Read
 id: toolu_01GPFw2EsTtv3sP2fUsH7tgF
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/services/test_notification_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/services/test_notification_service.py",
   "offset": 204,
   "limit": 45
 }
@@ -13624,7 +13625,7 @@ id: toolu_019BowrXnMU76h2cauF3V3ai
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/services/test_notification_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/services/test_notification_service.py",
   "old_string": "def test_delete_config(db_session: Any) -> None:\n    suite = _suite(db_session)\n    svc.upsert_config(\n        db_session,\n        suite_id=suite.id,\n        enabled=True,\n        alert_on=\"fail\",\n        webhook=None,\n        secret_store=_FakeStore(),\n    )\n    assert svc.delete_config(db_session, suite.id) is True\n    assert svc.get_config(db_session, suite.id) is None\n    assert svc.delete_config(db_session, suite.id) is False  # idempotent",
   "new_string": "def test_delete_config_removes_row_and_webhook_secret(db_session: Any) -> None:\n    suite = _suite(db_session)\n    store = _FakeStore()\n    config = svc.upsert_config(\n        db_session,\n        suite_id=suite.id,\n        enabled=True,\n        alert_on=\"fail\",\n        webhook=\"https://suite.webhook.office.com\",\n        secret_store=store,\n    )\n    ref = config.webhook_secret_ref\n    assert ref in store.secrets\n    assert svc.delete_config(db_session, suite.id, secret_store=store) is True\n    assert svc.get_config(db_session, suite.id) is None\n    assert ref not in store.secrets  # #372: orphaned webhook secret removed\n    assert svc.delete_config(db_session, suite.id, secret_store=store) is False  # idempotent\n\n\ndef test_clearing_webhook_removes_the_secret(db_session: Any) -> None:\n    suite = _suite(db_session)\n    store = _FakeStore()\n    config = svc.upsert_config(\n        db_session,\n        suite_id=suite.id,\n        enabled=True,\n        alert_on=\"fail\",\n        webhook=\"https://suite.webhook.office.com\",\n        secret_store=store,\n    )\n    ref = config.webhook_secret_ref\n    assert ref in store.secrets\n    # Clearing the webhook (\"\") nulls the ref AND removes the secret (#372).\n    updated = svc.upsert_config(\n        db_session,\n        suite_id=suite.id,\n        enabled=True,\n        alert_on=\"fail\",\n        webhook=\"\",\n        secret_store=store,\n    )\n    assert updated.webhook_secret_ref is None\n    assert ref not in store.secrets"
 }
@@ -13635,7 +13636,7 @@ id: toolu_019BowrXnMU76h2cauF3V3ai
 tool_result
 id: toolu_019BowrXnMU76h2cauF3V3ai
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/services/test_notification_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/services/test_notification_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -13730,7 +13731,7 @@ tool_use Read
 id: toolu_01Bp8ma3qozkF79Syw5rERjm
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/core/test_secrets.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/core/test_secrets.py",
   "offset": 98,
   "limit": 70
 }
@@ -13796,7 +13797,7 @@ tool_use Read
 id: toolu_012A1JbxpKvrxNBJXYkhLVwk
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/core/test_secrets.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/core/test_secrets.py",
   "offset": 167,
   "limit": 60
 }
@@ -13875,7 +13876,7 @@ tool_use Read
 id: toolu_01UmvuA22y5P2YJNk5FkVtVb
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/core/test_secrets.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/core/test_secrets.py",
   "offset": 226,
   "limit": 60
 }
@@ -14077,7 +14078,7 @@ id: toolu_01MCEWbVUeJpqCaYakyu1vXr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/deploy/terraform/azure/keyvault.tf",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/deploy/terraform/azure/keyvault.tf",
   "old_string": "# Least privilege: a CUSTOM role scoped to get + list + set only, NOT the built-in\n# \"Key Vault Secrets Officer\" (which also grants delete/purge/backup/restore the app\n# never uses). Keeps the app identity's blast radius to exactly its two operations.\n# (When #372 lands SecretStore.delete, add `.../deleteSecret/action` here.)\nresource \"azurerm_role_definition\" \"app_kv_secrets_rw\" {\n  name        = \"DataQ App KV Secrets RW ${random_string.suffix.result}\"\n  scope       = azurerm_key_vault.app.id\n  description = \"get + list + set secrets (no delete/purge) for the DataQ app identity.\"\n\n  permissions {\n    data_actions = [\n      \"Microsoft.KeyVault/vaults/secrets/getSecret/action\",\n      \"Microsoft.KeyVault/vaults/secrets/setSecret/action\",\n      \"Microsoft.KeyVault/vaults/secrets/readMetadata/action\",\n    ]\n  }\n\n  assignable_scopes = [azurerm_key_vault.app.id]\n}",
   "new_string": "# Least privilege: a CUSTOM role scoped to get + list + set + soft-delete only, NOT\n# the built-in \"Key Vault Secrets Officer\" (which also grants purge/backup/restore\n# the app never uses). Keeps the app identity's blast radius to exactly its\n# operations: SecretStore.get/set (connection credentials) + delete (orphan cleanup\n# on connection/webhook delete, #372). No purge — soft-delete is enough for cleanup.\nresource \"azurerm_role_definition\" \"app_kv_secrets_rw\" {\n  name        = \"DataQ App KV Secrets RW ${random_string.suffix.result}\"\n  scope       = azurerm_key_vault.app.id\n  description = \"get + list + set + soft-delete secrets (no purge) for the DataQ app identity.\"\n\n  permissions {\n    data_actions = [\n      \"Microsoft.KeyVault/vaults/secrets/getSecret/action\",\n      \"Microsoft.KeyVault/vaults/secrets/setSecret/action\",\n      \"Microsoft.KeyVault/vaults/secrets/deleteSecret/action\",\n […]
 
@@ -14086,7 +14087,7 @@ id: toolu_01MCEWbVUeJpqCaYakyu1vXr
 tool_result
 id: toolu_01MCEWbVUeJpqCaYakyu1vXr
 ```
-The file /Users/arijit/Coding/Python/DataQ/deploy/terraform/azure/keyvault.tf has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/deploy/terraform/azure/keyvault.tf has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -14174,7 +14175,7 @@ tool_use Bash
 id: toolu_019fdYzSDiyZkUtDSfbhzmgT
 ```json
 {
-  "command": "cd ~/Coding/Python/DataQ && git commit -q -F - <<'EOF'\nfix(secrets): add SecretStore.delete + remove orphaned secrets on delete — Fixes #372\n\nThe SecretStore Protocol exposed only get/set, so deleting a connection or clearing\na per-suite webhook left the credential in the backing store (Key Vault / Redis /\nenv). Add a best-effort, fail-soft `delete` to the Protocol and all three impls\n(Env pop, Redis del, Azure KV soft-delete — a missing secret is a clean no-op; KV/\nRedis failures are logged, never raised, so orphan cleanup can't 500 the delete).\n\nWire it in:\n- connection delete removes `conn-<id>` (connection_service + API dependency).\n- clearing a per-suite webhook (`webhook=\"\"`) and deleting the notification config\n  remove `suite-notif-<id>` (notification_service + API dependency).\n\nTests: delete per impl incl. fail-soft (KV/Redis raise → swallowed) and KV\nnot-found no-op; connection-delete + webhook-clear/delete now assert the secret is\ngone. The 20 secret-store test doubles gained a matching `delete` (Protocol conformance).\n\nTerraform: the custom app KV role (#622) gains `deleteSecret` (soft-delete only, no\npurge) so the prod delete actually removes the secret — needs a `terraform apply`.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\ngit push -u origin fix/372-secretstore-delete 2>&1 | tail -2",
+  "command": "cd ~/Coding/Python/DataQ && git commit -q -F - <<'EOF'\nfix(secrets): add SecretStore.delete + remove orphaned secrets on delete — Fixes #372\n\nThe SecretStore Protocol exposed only get/set, so deleting a connection or clearing\na per-suite webhook left the credential in the backing store (Key Vault / Redis /\nenv). Add a best-effort, fail-soft `delete` to the Protocol and all three impls\n(Env pop, Redis del, Azure KV soft-delete — a missing secret is a clean no-op; KV/\nRedis failures are logged, never raised, so orphan cleanup can't 500 the delete).\n\nWire it in:\n- connection delete removes `conn-<id>` (connection_service + API dependency).\n- clearing a per-suite webhook (`webhook=\"\"`) and deleting the notification config\n  remove `suite-notif-<id>` (notification_service + API dependency).\n\nTests: delete per impl incl. fail-soft (KV/Redis raise → swallowed) and KV\nnot-found no-op; connection-delete + webhook-clear/delete now assert the secret is\ngone. The 20 secret-store test doubles gained a matching `delete` (Protocol conformance).\n\nTerraform: the custom app KV role (#622) gains `deleteSecret` (soft-delete only, no\npurge) so the prod delete actually removes the secret — needs a `terraform apply`.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\ngit push -u origin fix/372-secretstore-delete 2>&1 | tail -2",
   "description": "Commit + push #372"
 }
 ```
@@ -14216,7 +14217,7 @@ id: toolu_01B5uma7LueUKwL4EMAHstzx
 {
   "description": "Code review #372 SecretStore.delete",
   "subagent_type": "pr-review-toolkit:code-reviewer",
-  "prompt": "Review the changes on the current branch `fix/372-secretstore-delete` (PR #625) against `main`. Get the diff with `git diff main...HEAD` (run from /Users/arijit/Coding/Python/DataQ).\n\nThis adds `SecretStore.delete` (issue #372) — the store had only get/set, so deleting a connection or clearing a per-suite webhook orphaned the credential. Key files:\n- `backend/app/core/secrets.py` — `delete` added to the `SecretStore` Protocol + `EnvSecretStore`/`AzureKeyVaultStore`/`RedisSecretStore` (best-effort, fail-soft: never raises; KV uses `begin_delete_secret` soft-delete).\n- `backend/app/services/connection_service.py` (`delete_connection`) + `backend/app/services/notification_service.py` (`upsert_config` webhook-clear path + `delete_config`) — call `secret_store.delete(ref)` after the row is gone.\n- `backend/app/api/v1/connections.py` + `notifications.py` — added the `secret_store` dependency to the delete routes.\n- `backend/tests/core/test_secrets.py` + `test_connection_service.py` + `test_notification_service.py` — delete tests + assertions.\n- `deploy/terraform/azure/keyvault.tf` — the custom KV role gains `deleteSecret`.\n- 20 test files gained a `delete` method on their secret-store doubles (Protocol conformance).\n\nFocus on: correctness of the fail-soft contract (does the Protocol docstring match every impl's behavior? is the AKV soft-delete via `begin_delete_secret` correct and non-blocking?); ordering (secret deleted after the DB commit — is there a leak/orphan window or a rollback concern if commit fails?); whether the webhook-clear path correctly deletes before nulling the ref; and whether any delete call site could raise and […]
+  "prompt": "Review the changes on the current branch `fix/372-secretstore-delete` (PR #625) against `main`. Get the diff with `git diff main...HEAD` (run from /home/<USER>/Coding/Python/DataQ).\n\nThis adds `SecretStore.delete` (issue #372) — the store had only get/set, so deleting a connection or clearing a per-suite webhook orphaned the credential. Key files:\n- `backend/app/core/secrets.py` — `delete` added to the `SecretStore` Protocol + `EnvSecretStore`/`AzureKeyVaultStore`/`RedisSecretStore` (best-effort, fail-soft: never raises; KV uses `begin_delete_secret` soft-delete).\n- `backend/app/services/connection_service.py` (`delete_connection`) + `backend/app/services/notification_service.py` (`upsert_config` webhook-clear path + `delete_config`) — call `secret_store.delete(ref)` after the row is gone.\n- `backend/app/api/v1/connections.py` + `notifications.py` — added the `secret_store` dependency to the delete routes.\n- `backend/tests/core/test_secrets.py` + `test_connection_service.py` + `test_notification_service.py` — delete tests + assertions.\n- `deploy/terraform/azure/keyvault.tf` — the custom KV role gains `deleteSecret`.\n- 20 test files gained a `delete` method on their secret-store doubles (Protocol conformance).\n\nFocus on: correctness of the fail-soft contract (does the Protocol docstring match every impl's behavior? is the AKV soft-delete via `begin_delete_secret` correct and non-blocking?); ordering (secret deleted after the DB commit — is there a leak/orphan window or a rollback concern if commit fails?); whether the webhook-clear path correctly deletes before nulling the ref; and whether any delete call site could raise and […]
 
 > TOOL
 
@@ -14306,7 +14307,7 @@ tool_use Read
 id: toolu_0153HznVAXdMje24CeBam4Ks
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/notification_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/notification_service.py",
   "offset": 136,
   "limit": 12
 }
@@ -14338,7 +14339,7 @@ id: toolu_013z3mYjWbcSURgf6iCbLLQZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/notification_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/notification_service.py",
   "old_string": "        else:\n            secret_ref = config.webhook_secret_ref or f\"suite-notif-{config.id}\"\n            secret_store.set(secret_ref, webhook)\n            config.webhook_secret_ref = secret_ref",
   "new_string": "        else:\n            # Mint a UNIQUE ref per fresh set (not a stable `suite-notif-{id}`): the\n            # clear path now soft-deletes the secret (#372), and Key Vault refuses to\n            # re-`set` a soft-deleted *name* (409 until purge/recover, which the app\n            # deliberately can't do) — so reusing the name on a clear→re-set of the\n            # same config would 500. A rotation (ref still set) reuses the live name\n            # (a new version, no conflict).\n            secret_ref = config.webhook_secret_ref or f\"suite-notif-{config.id}-{uuid.uuid4().hex[:12]}\"\n            secret_store.set(secret_ref, webhook)\n            config.webhook_secret_ref = secret_ref"
 }
@@ -14349,7 +14350,7 @@ id: toolu_013z3mYjWbcSURgf6iCbLLQZ
 tool_result
 id: toolu_013z3mYjWbcSURgf6iCbLLQZ
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/services/notification_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/services/notification_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -14430,7 +14431,7 @@ id: toolu_01T3zEPxUyrb6m4tfn8rzafZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/services/test_notification_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/services/test_notification_service.py",
   "old_string": "from backend.app.core.secrets import SecretNotFoundError",
   "new_string": "from backend.app.core.secrets import SecretNotFoundError, SecretWriteError"
 }
@@ -14441,7 +14442,7 @@ id: toolu_01T3zEPxUyrb6m4tfn8rzafZ
 tool_result
 id: toolu_01T3zEPxUyrb6m4tfn8rzafZ
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/services/test_notification_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/services/test_notification_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -14451,7 +14452,7 @@ id: toolu_011hczRCriuM72JmTfncUSnH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/services/test_notification_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/services/test_notification_service.py",
   "old_string": "    assert updated.webhook_secret_ref is None\n    assert ref not in store.secrets",
   "new_string": "    assert updated.webhook_secret_ref is None\n    assert ref not in store.secrets\n\n\nclass _SoftDeleteStore(_FakeStore):\n    \"\"\"Simulates Azure Key Vault soft-delete: `set` of a previously-deleted name\n    raises (the 409 'deleted but recoverable' the app can't purge/recover past).\"\"\"\n\n    def __init__(self) -> None:\n        super().__init__()\n        self._deleted: set[str] = set()\n\n    def set(self, name: str, value: str) -> None:\n        if name in self._deleted:\n            raise SecretWriteError(f\"{name} is in a deleted but recoverable state\")\n        self.secrets[name] = value\n\n    def delete(self, name: str) -> None:\n        self.secrets.pop(name, None)\n        self._deleted.add(name)\n\n\ndef test_clear_then_reset_webhook_does_not_reuse_soft_deleted_name(db_session: Any) -> None:\n    # Regression (#372 review): clearing soft-deletes the secret; a re-set must mint a\n    # NEW name, not reuse the soft-deleted one (which KV refuses to set → would 500).\n    suite = _suite(db_session)\n    store = _SoftDeleteStore()\n    url = \"https://suite.webhook.office.com\"\n\n    def _save(webhook: str) -> Any:\n        return svc.upsert_config(\n            db_session,\n            suite_id=suite.id,\n            enabled=True,\n            alert_on=\"fail\",\n            webhook=webhook,\n            secret_store=store,\n        )\n\n    ref1 = _save(url).webhook_secret_ref\n    _save(\"\")  # clear → soft-delete ref1\n    ref2 = _save(url).webhook_secret_ref  # re-set — must not raise\n    assert ref2 != ref1\n    assert ref2 in store.secrets"
 }
@@ -14462,7 +14463,7 @@ id: toolu_011hczRCriuM72JmTfncUSnH
 tool_result
 id: toolu_011hczRCriuM72JmTfncUSnH
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/services/test_notification_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/services/test_notification_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -14544,7 +14545,7 @@ id: toolu_01PTimTjS4BCZAkCZndF5Y3k
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/services/test_notification_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/services/test_notification_service.py",
   "old_string": "    assert config.webhook_secret_ref == f\"suite-notif-{config.id}\"\n    # The URL lives in the store, not the DB row.\n    assert store.secrets[config.webhook_secret_ref] == \"https://contoso.webhook.office.com/hook\"",
   "new_string": "    # Unique per-set ref (stable prefix + a fresh suffix, #372 review) — see\n    # test_clear_then_reset_webhook_does_not_reuse_soft_deleted_name for why.\n    assert config.webhook_secret_ref is not None\n    assert config.webhook_secret_ref.startswith(f\"suite-notif-{config.id}-\")\n    # The URL lives in the store, not the DB row.\n    assert store.secrets[config.webhook_secret_ref] == \"https://contoso.webhook.office.com/hook\""
 }
@@ -14555,7 +14556,7 @@ id: toolu_01PTimTjS4BCZAkCZndF5Y3k
 tool_result
 id: toolu_01PTimTjS4BCZAkCZndF5Y3k
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/services/test_notification_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/services/test_notification_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -14593,7 +14594,7 @@ tool_use Read
 id: toolu_01QXokR1FqegyXQRAh89qvNt
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/notification_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/notification_service.py",
   "offset": 136,
   "limit": 18
 }
@@ -14631,7 +14632,7 @@ id: toolu_015C6xATpPzCNxjAYCUa4gtv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/notification_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/notification_service.py",
   "old_string": "    if webhook is not None:\n        if webhook == \"\":\n            # Clearing the per-suite webhook — drop the orphaned secret too (#372).\n            if config.webhook_secret_ref:\n                secret_store.delete(config.webhook_secret_ref)\n            config.webhook_secret_ref = None\n        else:",
   "new_string": "    cleared_secret_ref: str | None = None\n    if webhook is not None:\n        if webhook == \"\":\n            # Clearing the per-suite webhook — drop the orphaned secret too (#372),\n            # but only AFTER the commit (below), so a rolled-back commit can't leave\n            # the row pointing at an already-deleted secret.\n            cleared_secret_ref = config.webhook_secret_ref\n            config.webhook_secret_ref = None\n        else:"
 }
@@ -14642,7 +14643,7 @@ id: toolu_015C6xATpPzCNxjAYCUa4gtv
 tool_result
 id: toolu_015C6xATpPzCNxjAYCUa4gtv
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/services/notification_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/services/notification_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -14651,7 +14652,7 @@ tool_use Read
 id: toolu_01LX8ZPgMJ8pByJerHeZ4S2b
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/notification_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/notification_service.py",
   "offset": 154,
   "limit": 10
 }
@@ -14681,7 +14682,7 @@ id: toolu_01U5naH3JVfJ6T3CF3JtXAZT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/notification_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/notification_service.py",
   "old_string": "    session.commit()\n    session.refresh(config)\n    log.info(\"suite_notification_saved\", suite_id=str(suite_id), enabled=enabled, alert_on=alert_on)\n    return config",
   "new_string": "    session.commit()\n    session.refresh(config)\n    # Post-commit, fail-soft: remove the cleared webhook's now-orphaned secret (#372).\n    if cleared_secret_ref:\n        secret_store.delete(cleared_secret_ref)\n    log.info(\"suite_notification_saved\", suite_id=str(suite_id), enabled=enabled, alert_on=alert_on)\n    return config"
 }
@@ -14692,7 +14693,7 @@ id: toolu_01U5naH3JVfJ6T3CF3JtXAZT
 tool_result
 id: toolu_01U5naH3JVfJ6T3CF3JtXAZT
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/services/notification_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/services/notification_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -14734,7 +14735,7 @@ tool_use Bash
 id: toolu_01XYH932BQgoKkaNxRNqz2Ty
 ```json
 {
-  "command": "cd ~/Coding/Python/DataQ && git add -A && git commit -q -F - <<'EOF'\nfixup: webhook secret name-reuse regression + delete-after-commit (#372 review)\n\nCode review found: clearing a per-suite webhook soft-deletes the secret, but the\nname was the stable `suite-notif-{id}`; since the config row survives a clear, a\nlater re-set hit `set_secret` on a soft-deleted name → KV 409 (unrecoverable\nwithout purge, which the app deliberately can't do) → 500, webhook un-settable for\nthe retention window.\n\n- Mint a UNIQUE ref per fresh set (`suite-notif-{id}-{uuid}`), so a cleared name is\n  never reused. Rotation (ref still set) still reuses the live name (new version).\n- Move the clear-path delete to AFTER commit (mirrors delete_connection) so a\n  rolled-back commit can't leave the row pointing at a deleted secret.\n- Regression test with a soft-delete-simulating store (set of a deleted name\n  raises): set → clear → re-set now mints a new name and doesn't 500.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\ngit push 2>&1 | tail -2",
+  "command": "cd ~/Coding/Python/DataQ && git add -A && git commit -q -F - <<'EOF'\nfixup: webhook secret name-reuse regression + delete-after-commit (#372 review)\n\nCode review found: clearing a per-suite webhook soft-deletes the secret, but the\nname was the stable `suite-notif-{id}`; since the config row survives a clear, a\nlater re-set hit `set_secret` on a soft-deleted name → KV 409 (unrecoverable\nwithout purge, which the app deliberately can't do) → 500, webhook un-settable for\nthe retention window.\n\n- Mint a UNIQUE ref per fresh set (`suite-notif-{id}-{uuid}`), so a cleared name is\n  never reused. Rotation (ref still set) still reuses the live name (new version).\n- Move the clear-path delete to AFTER commit (mirrors delete_connection) so a\n  rolled-back commit can't leave the row pointing at a deleted secret.\n- Regression test with a soft-delete-simulating store (set of a deleted name\n  raises): set → clear → re-set now mints a new name and doesn't 500.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\ngit push 2>&1 | tail -2",
   "description": "Commit + push #372 review fixes"
 }
 ```
@@ -15092,7 +15093,7 @@ tool_use Read
 id: toolu_01L3itrsPqSgob9MoqE4M2qe
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/core/secrets.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/core/secrets.py",
   "offset": 137,
   "limit": 14
 }
@@ -15150,7 +15151,7 @@ id: toolu_01X5vuxa1R8xHR8152KZbm8G
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/core/secrets.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/core/secrets.py",
   "old_string": "        except ResourceNotFoundError:\n            pass\n        except Exception as exc:\n            log.warning(\"secret_delete_failed\", name=name, error=str(exc))",
   "new_string": "        except ResourceNotFoundError:\n            # Already absent (or soft-deleted) — deletion is idempotent, nothing to do.\n            return\n        except Exception as exc:\n            log.warning(\"secret_delete_failed\", name=name, error=str(exc))"
 }
@@ -15170,7 +15171,7 @@ tool_use Read
 id: toolu_019Yoj7TBjRUgnxVW3WNi6H2
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/core/secrets.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/core/secrets.py",
   "offset": 143,
   "limit": 12
 }
@@ -15202,7 +15203,7 @@ id: toolu_018umpa3sfWQtKtTwLYpE2ty
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/core/secrets.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/core/secrets.py",
   "old_string": "        try:\n            self._client_lazy().begin_delete_secret(name)\n        except ResourceNotFoundError:\n            pass\n        except Exception as exc:\n            log.warning(\"secret_delete_failed\", name=name, error=str(exc))",
   "new_string": "        try:\n            self._client_lazy().begin_delete_secret(name)\n        except ResourceNotFoundError:\n            # Already absent (or soft-deleted) — deletion is idempotent, nothing to do.\n            return\n        except Exception as exc:\n            log.warning(\"secret_delete_failed\", name=name, error=str(exc))"
 }
@@ -15213,7 +15214,7 @@ id: toolu_018umpa3sfWQtKtTwLYpE2ty
 tool_result
 id: toolu_018umpa3sfWQtKtTwLYpE2ty
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/core/secrets.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/core/secrets.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -15226,7 +15227,7 @@ tool_use Bash
 id: toolu_01NevZcSgNz9wLgFzNJoJQ9W
 ```json
 {
-  "command": "cd ~/Coding/Python/DataQ/backend && ruff check app/core/secrets.py 2>&1 | tail -1; black --check app/core/secrets.py 2>&1 | tail -1; python -m pytest tests/core/test_secrets.py -o addopts=\"\" -q 2>&1 | tail -2; cd ~/Coding/Python/DataQ && git add backend/app/core/secrets.py && git commit -q -m \"fixup: explanatory return, not bare pass, on KV delete not-found (CodeQL py/empty-except)\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\" && git push 2>&1 | tail -1",
+  "command": "cd ~/Coding/Python/DataQ/backend && ruff check app/core/secrets.py 2>&1 | tail -1; black --check app/core/secrets.py 2>&1 | tail -1; python -m pytest tests/core/test_secrets.py -o addopts=\"\" -q 2>&1 | tail -2; cd ~/Coding/Python/DataQ && git add backend/app/core/secrets.py && git commit -q -m \"fixup: explanatory return, not bare pass, on KV delete not-found (CodeQL py/empty-except)\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\" && git push 2>&1 | tail -1",
   "description": "Verify + commit + push CodeQL fix"
 }
 ```
@@ -15466,7 +15467,7 @@ id: toolu_01CEtBJ6MMLgXBSmz2HkxVUd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/deploy/terraform/azure/keyvault.tf",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/deploy/terraform/azure/keyvault.tf",
   "old_string": "      \"Microsoft.KeyVault/vaults/secrets/getSecret/action\",\n      \"Microsoft.KeyVault/vaults/secrets/setSecret/action\",\n      \"Microsoft.KeyVault/vaults/secrets/deleteSecret/action\",\n      \"Microsoft.KeyVault/vaults/secrets/readMetadata/action\",",
   "new_string": "      \"Microsoft.KeyVault/vaults/secrets/getSecret/action\",\n      \"Microsoft.KeyVault/vaults/secrets/setSecret/action\",\n      \"Microsoft.KeyVault/vaults/secrets/delete\",\n      \"Microsoft.KeyVault/vaults/secrets/readMetadata/action\","
 }
@@ -15486,7 +15487,7 @@ tool_use Read
 id: toolu_01NcD83urpVoq5thVxzwZ3vG
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/deploy/terraform/azure/keyvault.tf",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/deploy/terraform/azure/keyvault.tf",
   "offset": 49,
   "limit": 10
 }
@@ -15516,7 +15517,7 @@ id: toolu_01NvgprXkrFt3xe1Yy3XVzd6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/deploy/terraform/azure/keyvault.tf",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/deploy/terraform/azure/keyvault.tf",
   "old_string": "      \"Microsoft.KeyVault/vaults/secrets/deleteSecret/action\",",
   "new_string": "      \"Microsoft.KeyVault/vaults/secrets/delete\","
 }
@@ -15527,7 +15528,7 @@ id: toolu_01NvgprXkrFt3xe1Yy3XVzd6
 tool_result
 id: toolu_01NvgprXkrFt3xe1Yy3XVzd6
 ```
-The file /Users/arijit/Coding/Python/DataQ/deploy/terraform/azure/keyvault.tf has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/deploy/terraform/azure/keyvault.tf has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -15792,7 +15793,7 @@ id: toolu_01Cfy3sh3oRjrck71njJp9DY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "| ⬜ | [#372](https://github.com/TheurgicDuke771/DataQ/issues/372) `SecretStore.delete` — webhook/connection secrets orphan today; live-verify on Key Vault | Theme 6 |",
   "new_string": "| ✅ | [#372](https://github.com/TheurgicDuke771/DataQ/issues/372) `SecretStore.delete` — added to the Protocol + all 3 impls (fail-soft); connection-delete + webhook clear/delete remove the orphaned secret; unique per-set webhook ref avoids KV soft-delete name-reuse (review). **Deployed + live-verified on prod KV** 2026-07-05 (create-with-secret → delete → secret soft-deleted). #625 | Theme 6 |\n| ✅ | [#622](https://github.com/TheurgicDuke771/DataQ/issues/622) App KV identity was read-only → API connection-create-with-secret 502'd (found via #611). Custom least-priv **get/list/set/soft-delete** role (not built-in Officer). **Applied + verified on prod** (secret write 200, live ADLS read 200, delete soft-deletes). #624 | Theme 6 / infra |"
 }
@@ -15803,7 +15804,7 @@ id: toolu_01Cfy3sh3oRjrck71njJp9DY
 tool_result
 id: toolu_01Cfy3sh3oRjrck71njJp9DY
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -15813,7 +15814,7 @@ id: toolu_01PpXRy4BbQwrDdVbc8frsfr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "### v1.1 W2 — Portability: OTel logs, secrets lifecycle, dry-run depth (due 2026-07-18) — 2/13",
   "new_string": "### v1.1 W2 — Portability: OTel logs, secrets lifecycle, dry-run depth (due 2026-07-18) — 4/14"
 }
@@ -15824,7 +15825,7 @@ id: toolu_01PpXRy4BbQwrDdVbc8frsfr
 tool_result
 id: toolu_01PpXRy4BbQwrDdVbc8frsfr
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -15834,7 +15835,7 @@ id: toolu_01AyQjao5VgPdB25NwKiqCc1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "poll live-read deferred to **#622**, api UAMI read-only on KV) + #286 pulled W7→W2;",
   "new_string": "poll live-read deferred to #622) + **#372 + #622 closed 2026-07-05** (SecretStore.delete #625 + custom least-priv KV get/list/set/soft-delete role #624 — both deployed & prod-verified: connection-delete soft-deletes its secret) + #286 pulled W7→W2;"
 }
@@ -15845,7 +15846,7 @@ id: toolu_01AyQjao5VgPdB25NwKiqCc1
 tool_result
 id: toolu_01AyQjao5VgPdB25NwKiqCc1
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -15855,7 +15856,7 @@ id: toolu_01832bum15M7iTFUG3Tp2mC7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "| **Open issues** | **64** (W1 progress 2026-07-04/05:",
   "new_string": "| **Open issues** | **63** (W1 progress 2026-07-04/05:"
 }
@@ -15866,7 +15867,7 @@ id: toolu_01832bum15M7iTFUG3Tp2mC7
 tool_result
 id: toolu_01832bum15M7iTFUG3Tp2mC7
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -15879,7 +15880,7 @@ tool_use Bash
 id: toolu_01AsV4pavacYFRqZPDVJfkWu
 ```json
 {
-  "command": "cd ~/Coding/Python/DataQ && git add docs/progress.md && git commit -q -F - <<'EOF'\ndocs(tracker): #372 + #622 done — SecretStore.delete + KV least-priv role, prod-verified\n\nFlips the W2 #372 row to ✅ (SecretStore.delete deployed + live-verified: connection\ndelete soft-deletes its KV secret) and adds a #622 ✅ row (custom get/list/set/soft-delete\nKV role, applied + verified). W2 → 4/14; snapshot open-count 64→63.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\ngit push -u origin docs/622-372-done 2>&1 | tail -1 && gh pr create --base main --head docs/622-372-done --milestone \"v1.1 Week 2 — Portability: OTel logs, secrets lifecycle, dry-run depth\" --title \"docs(tracker): #372 + #622 done — secrets lifecycle, prod-verified\" --body \"Flips #372 to ✅ (SecretStore.delete deployed + live-verified on prod KV) and adds #622 ✅ (custom least-priv KV get/list/set/soft-delete role). W2 → 4/14. Docs-only.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\" 2>&1 | tail -1",
+  "command": "cd ~/Coding/Python/DataQ && git add docs/progress.md && git commit -q -F - <<'EOF'\ndocs(tracker): #372 + #622 done — SecretStore.delete + KV least-priv role, prod-verified\n\nFlips the W2 #372 row to ✅ (SecretStore.delete deployed + live-verified: connection\ndelete soft-deletes its KV secret) and adds a #622 ✅ row (custom get/list/set/soft-delete\nKV role, applied + verified). W2 → 4/14; snapshot open-count 64→63.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\ngit push -u origin docs/622-372-done 2>&1 | tail -1 && gh pr create --base main --head docs/622-372-done --milestone \"v1.1 Week 2 — Portability: OTel logs, secrets lifecycle, dry-run depth\" --title \"docs(tracker): #372 + #622 done — secrets lifecycle, prod-verified\" --body \"Flips #372 to ✅ (SecretStore.delete deployed + live-verified on prod KV) and adds #622 ✅ (custom least-priv KV get/list/set/soft-delete role). W2 → 4/14. Docs-only.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\" 2>&1 | tail -1",
   "description": "Commit + push + PR the tracker update"
 }
 ```
@@ -15988,7 +15989,7 @@ tool_use Bash
 id: toolu_017d3ZvGaBFxM5vgSABeSb2E
 ```json
 {
-  "command": "cd ~/Coding/Python/DataQ && git add deploy/terraform/azure/keyvault.tf && git commit -q -F - <<'EOF'\nfix(deploy): correct KV secret-delete dataAction to `.../secrets/delete` (#372)\n\n#625 shipped `Microsoft.KeyVault/vaults/secrets/deleteSecret/action`, which Azure\nrejects (InvalidDataActionOrNotDataAction) — the real data-plane action is\n`Microsoft.KeyVault/vaults/secrets/delete` (verified via `az provider operation\nshow`). The live custom role was already applied with the correct string; this\naligns the committed terraform so the next apply is a no-op instead of a 400.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\ngit push -u origin fix/kv-delete-dataaction 2>&1 | tail -1 && gh pr create --base main --head fix/kv-delete-dataaction --milestone \"v1.1 Week 2 — Portability: OTel logs, secrets lifecycle, dry-run depth\" --title \"fix(deploy): correct KV secret-delete dataAction (#372 follow-up)\" --body \"#625's KV role used \\`.../secrets/deleteSecret/action\\`, which Azure rejects — the real action is \\`.../secrets/delete\\`. The live role was already applied correctly; this aligns the committed terraform (next apply = no-op). Verified via \\`az provider operation show --namespace Microsoft.KeyVault\\`.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\" 2>&1 | tail -1",
+  "command": "cd ~/Coding/Python/DataQ && git add deploy/terraform/azure/keyvault.tf && git commit -q -F - <<'EOF'\nfix(deploy): correct KV secret-delete dataAction to `.../secrets/delete` (#372)\n\n#625 shipped `Microsoft.KeyVault/vaults/secrets/deleteSecret/action`, which Azure\nrejects (InvalidDataActionOrNotDataAction) — the real data-plane action is\n`Microsoft.KeyVault/vaults/secrets/delete` (verified via `az provider operation\nshow`). The live custom role was already applied with the correct string; this\naligns the committed terraform so the next apply is a no-op instead of a 400.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\ngit push -u origin fix/kv-delete-dataaction 2>&1 | tail -1 && gh pr create --base main --head fix/kv-delete-dataaction --milestone \"v1.1 Week 2 — Portability: OTel logs, secrets lifecycle, dry-run depth\" --title \"fix(deploy): correct KV secret-delete dataAction (#372 follow-up)\" --body \"#625's KV role used \\`.../secrets/deleteSecret/action\\`, which Azure rejects — the real action is \\`.../secrets/delete\\`. The live role was already applied correctly; this aligns the committed terraform (next apply = no-op). Verified via \\`az provider operation show --namespace Microsoft.KeyVault\\`.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\" 2>&1 | tail -1",
   "description": "Commit + PR the terraform dataAction fix"
 }
 ```
@@ -16109,7 +16110,7 @@ tool_use Read
 id: toolu_012F2ENN2ryQrjDbEE5hwRRZ
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/api/v1/checks.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/api/v1/checks.py",
   "offset": 35,
   "limit": 55
 }
@@ -16211,7 +16212,7 @@ tool_use Read
 id: toolu_01PndX3dgmi3S614gS4Lt8ZH
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/check_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/check_service.py",
   "offset": 88,
   "limit": 70
 }
@@ -16348,7 +16349,7 @@ RUN SUCCEEDED  overall=None
   [    pass] ?  metric=0.0
   [    pass] ?  metric=0.0
   [    pass] ?  metric=14.899888378888889
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -16440,7 +16441,7 @@ id: toolu_01AZS2QtZtcz6TXXBvZPWB13
 === docker + buildx available? ===
 29.6.1
 github.com/docker/buildx v0.35.0-desktop.2 b554ce1decd8b509893b1e7c6227eabfb923d094
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -16484,7 +16485,7 @@ tool_use Write
 id: toolu_0138AYnwwYsPiUsnGnVUProS
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/.dockerignore",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/.dockerignore",
   "content": "# Keep build artifacts + local state out of the image build context.\ntarget/\nlogs/\ndbt_packages/\n.user.yml\n.gitignore\ndocker-compose.yml\nREADME.md\nbootstrap_change_tracking.sql\n"
 }
 ```
@@ -16494,7 +16495,7 @@ id: toolu_0138AYnwwYsPiUsnGnVUProS
 tool_result
 id: toolu_0138AYnwwYsPiUsnGnVUProS
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ-harness/dbt/.dockerignore (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ-harness/dbt/.dockerignore (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -16514,7 +16515,7 @@ tool_result
 id: toolu_011KdNDpKSRowjnSs31sta4i
 ```
 Login Succeeded
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -16569,7 +16570,7 @@ id: toolu_015t2awKeH2f54gNLKxJryaD
               + name              = "dbt-lineage"
                   + value = "adls://dataqharness3erlgd/raw/dbt"
 Plan: 1 to add, 0 to change, 0 to destroy.
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -16632,7 +16633,7 @@ id: toolu_01ELhRZ89pkWoGecQpW5tddr
 azurerm_container_app_job.dbt_lineage: Creating...
 azurerm_container_app_job.dbt_lineage: Creation complete after 19s [id=/subscriptions/37e710fd-b956-4a2e-94f2-b132bb26b3d6/resourceGroups/dataq-rg/providers/Microsoft.App/jobs/dbt-lineage]
 Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -16656,7 +16657,7 @@ tool_result
 id: toolu_01RbNf2iQhHCvbqhfwxBtPuA
 ```
 dbt-lineage-v07bd7u
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -16681,7 +16682,7 @@ id: toolu_01Rs67U9KsRozcgYBCKy5YFe
 ```
 poll 1: Running
 poll 2: Failed
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -16746,7 +16747,7 @@ warning: target/run_results.json not found — skipping.	PrimaryResult	2026-07-0
 no artifacts uploaded — did `dbt build` run?	PrimaryResult	2026-07-05T10:39:09.7346223Z
 artifact upload failed (non-fatal)	PrimaryResult	2026-07-05T10:39:09.7346223Z
 >> dbt build exit code: 2	PrimaryResult	2026-07-05T10:39:09.7346223Z
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -16760,7 +16761,7 @@ id: toolu_01KJTPspU31J12kAGZMNThgB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/run.sh",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/run.sh",
   "old_string": "export DBT_PROFILES_DIR=\"${DBT_PROFILES_DIR:-/app/dbt}\"\n\ncd /app/dbt\n\necho \">> dbt build (target_lag dynamic tables + data tests)\"\ndbt build \"$@\"\ndbt_rc=$?",
   "new_string": "export DBT_PROFILES_DIR=\"${DBT_PROFILES_DIR:-/app/dbt}\"\n\ncd /app/dbt\n\n# Generic dbt wrapper: the subcommand + flags come from \"$@\" (Dockerfile CMD / ACA\n# job args / compose command), e.g. `build`, `run --select mart_order_revenue`.\necho \">> dbt $*\"\ndbt \"$@\"\ndbt_rc=$?"
 }
@@ -16771,7 +16772,7 @@ id: toolu_01KJTPspU31J12kAGZMNThgB
 tool_result
 id: toolu_01KJTPspU31J12kAGZMNThgB
 ```
-The file /Users/arijit/Coding/Python/DataQ-harness/dbt/run.sh has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ-harness/dbt/run.sh has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -16781,7 +16782,7 @@ id: toolu_01ERm8dMvkXnb81JGt9y5UMW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/run.sh",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/run.sh",
   "old_string": "echo \">> dbt build exit code: ${dbt_rc}\"\nexit \"${dbt_rc}\"",
   "new_string": "echo \">> dbt exit code: ${dbt_rc}\"\nexit \"${dbt_rc}\""
 }
@@ -16792,7 +16793,7 @@ id: toolu_01ERm8dMvkXnb81JGt9y5UMW
 tool_result
 id: toolu_01ERm8dMvkXnb81JGt9y5UMW
 ```
-The file /Users/arijit/Coding/Python/DataQ-harness/dbt/run.sh has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ-harness/dbt/run.sh has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -16824,7 +16825,7 @@ id: toolu_01F5HJnDi5gdVyzTxjbNnCZ4
 #12 pushing manifest for dataqacr3erlgd.azurecr.io/dbt-lineage:latest@sha256:2f95dbd44c0c73d3c34cb8604874dd47d22ec56c1a287b62abf1ee1123b686a0 1.3s done
 #12 DONE 2.5s
 EXIT: 0
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -16853,7 +16854,7 @@ poll 2: Running
 poll 3: Running
 poll 4: Running
 poll 5: Succeeded
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -16971,7 +16972,7 @@ tool_use Write
 id: toolu_016XjSMdjwJy43vAMmBj2hyB
 ```json
 {
-  "file_path": "/Users/arijit/.claude/projects/-Users-arijit-Coding-Python-DataQ/memory/project_dbt_lineage_harness.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-arijit-Coding-Python-DataQ/memory/project_dbt_lineage_harness.md",
   "content": "---\nname: project_dbt_lineage_harness\ndescription: harness dbt Core lineage project (#609) — location, schemas, role, change-tracking caveat, artifact path for #611/#596\nmetadata:\n  type: project\n---\n\nSelf-hosted **dbt Core** lineage project built 2026-07-05 (#609, v1.1 W2). Lives at\n`~/Coding/Python/DataQ-harness/dbt/` (ADR 0021 — not git-tracked, not DataQ app code).\nSee [[project_harness_env]].\n\n**Shape:** `DATAQ_DB.RETAIL.{ORDERS_HEADER,ORDER_LINES,CUSTOMERS,PRODUCTS}` (base)\n→ `ANALYTICS_STG.{stg_orders,stg_order_lines,stg_customers,stg_products}` (views)\n→ `ANALYTICS.{MART_ORDER_REVENUE,MART_CUSTOMER_ORDERS}` (dynamic tables, target_lag 1h).\nMarts dedupe with `qualify row_number()` because the ADF COPY loads append (base tables\ncarry duplicate grains — 800 orders / 200 customers doubled).\n\n**Role:** dbt runs as **DATAQ_LOADER, not ACCOUNTADMIN** (user decision). Needed one extra\ngrant — `CREATE SCHEMA ON DATABASE DATAQ_DB` (terraform `snowflake.tf` → `loader_create_schema`).\nLoader owns the two ANALYTICS schemas so it grants SELECT/USAGE to DATAQ_READER via dbt\non-run-end hooks. profiles.yml reads `DBT_SNOWFLAKE_ROLE` (default DATAQ_LOADER) so secrets.sh's\n`SNOWFLAKE_ROLE=ACCOUNTADMIN` can't re-escalate. secrets.sh exports SNOWFLAKE_DATABASE/WAREHOUSE\n**set-but-empty** → profile uses `env_var(x,'') or 'DEFAULT'`, not env_var's default.\n\n**Change-tracking caveat (dynamic-table prereq):** loader can't enable change tracking (doesn't\nown base tables). ORDERS_HEADER+CUSTOMERS → `change_tracking=true` in snowflake.tf; ORDER_LINES+\nPRODUCTS → `dbt/bootstrap_change_tracking.sql` once as ACCOUNTADMIN. write_pandas overwrite drops\nit, so re-run if `flow_a_snowflake_load` runs again.\n\n**Hosting:** one image, three homes — local `dbt build`; ACA Job `dbt-lineage` on `dataq-cae`\n(terraform `dbt_job.tf`, cron `0 2 * * *`, **fires nightly** during the Azure window); docker-compose\npost-wind-down. `run.sh` is a generic `dbt \"$@\"` […]
 
 > TOOL
@@ -16979,7 +16980,7 @@ id: toolu_016XjSMdjwJy43vAMmBj2hyB
 tool_result
 id: toolu_016XjSMdjwJy43vAMmBj2hyB
 ```
-File created successfully at: /Users/arijit/.claude/projects/-Users-arijit-Coding-Python-DataQ/memory/project_dbt_lineage_harness.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-Users-arijit-Coding-Python-DataQ/memory/project_dbt_lineage_harness.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -16988,7 +16989,7 @@ tool_use Read
 id: toolu_01Psi7kGFx8X9SovJ1denJHx
 ```json
 {
-  "file_path": "/Users/arijit/.claude/projects/-Users-arijit-Coding-Python-DataQ/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-arijit-Coding-Python-DataQ/memory/MEMORY.md",
   "offset": 1,
   "limit": 5
 }
@@ -17012,7 +17013,7 @@ tool_use Bash
 id: toolu_01EVUo23pKCCCve3DM3HLBa3
 ```json
 {
-  "command": "cd /Users/arijit/.claude/projects/-Users-arijit-Coding-Python-DataQ/memory && printf '%s\\n' '- [DataQ — dbt lineage harness project (#609)](project_dbt_lineage_harness.md) — self-hosted dbt Core in harness repo; RETAIL→ANALYTICS_STG views→ANALYTICS dynamic tables; runs as DATAQ_LOADER; change-tracking prereq; ACA job + ADLS artifacts for #611/#596' >> MEMORY.md && echo \"pointer appended\"",
+  "command": "cd /home/<USER>/.claude/projects/-Users-arijit-Coding-Python-DataQ/memory && printf '%s\\n' '- [DataQ — dbt lineage harness project (#609)](project_dbt_lineage_harness.md) — self-hosted dbt Core in harness repo; RETAIL→ANALYTICS_STG views→ANALYTICS dynamic tables; runs as DATAQ_LOADER; change-tracking prereq; ACA job + ADLS artifacts for #611/#596' >> MEMORY.md && echo \"pointer appended\"",
   "description": "Append memory pointer to MEMORY.md"
 }
 ```
@@ -17023,7 +17024,7 @@ tool_result
 id: toolu_01EVUo23pKCCCve3DM3HLBa3
 ```
 pointer appended
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -17222,7 +17223,7 @@ tool_use Read
 id: toolu_01G8W7PghwaryDdJoX3F7qEx
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/pyproject.toml",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/pyproject.toml",
   "offset": 62,
   "limit": 18
 }
@@ -17260,7 +17261,7 @@ id: toolu_012b9u1qpRQj4J4QmFkRiB7Z
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/pyproject.toml",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/pyproject.toml",
   "old_string": "    \"azure.storage.*\",\n    \"azure.identity\",\n    \"azure.keyvault.*\",",
   "new_string": "    \"azure.storage.*\",\n    \"azure.core.*\",\n    \"azure.identity\",\n    \"azure.keyvault.*\","
 }
@@ -17271,7 +17272,7 @@ id: toolu_012b9u1qpRQj4J4QmFkRiB7Z
 tool_result
 id: toolu_012b9u1qpRQj4J4QmFkRiB7Z
 ```
-The file /Users/arijit/Coding/Python/DataQ/pyproject.toml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/pyproject.toml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -17281,7 +17282,7 @@ id: toolu_01BfbcKyyLJR8hCgjuQoFpsv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/orchestration/dbt.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/orchestration/dbt.py",
   "old_string": "        try:\n            return (\n                client.get_blob_client(container, blob)\n                .download_blob(timeout=int(_READ_TIMEOUT_SECONDS))\n                .readall()\n            )\n        except ResourceNotFoundError:\n            return None",
   "new_string": "        try:\n            blob_bytes: bytes = (\n                client.get_blob_client(container, blob)\n                .download_blob(timeout=int(_READ_TIMEOUT_SECONDS))\n                .readall()\n            )\n            return blob_bytes\n        except ResourceNotFoundError:\n            return None"
 }
@@ -17292,7 +17293,7 @@ id: toolu_01BfbcKyyLJR8hCgjuQoFpsv
 tool_result
 id: toolu_01BfbcKyyLJR8hCgjuQoFpsv
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/orchestration/dbt.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/orchestration/dbt.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -17353,7 +17354,7 @@ tool_use Bash
 id: toolu_01LKWyQUtMGcqsFgUAFxZKNF
 ```json
 {
-  "command": "cd ~/Coding/Python/DataQ && black --check backend/app/orchestration/dbt.py 2>&1 | tail -1 && git add -A && git commit -q -F - <<'EOF'\nfixup: mypy in CI typecheck env — azure.core override + typed ADLS read (#611)\n\nCI's typecheck-only env has no azure stubs (local env does), so `mypy backend/app/`\nflagged the `azure.core.exceptions` import + a no-any-return on the ADLS `.readall()`.\nAdd `azure.core.*` to the mypy ignore_missing_imports overrides (sibling of the\nexisting `azure.storage.*`) and bind the ADLS read to a typed `bytes` local, mirroring\nthe s3 branch. Verified with `mypy backend/app/` (93 files) as CI runs it.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\ngit push 2>&1 | tail -2",
+  "command": "cd ~/Coding/Python/DataQ && black --check backend/app/orchestration/dbt.py 2>&1 | tail -1 && git add -A && git commit -q -F - <<'EOF'\nfixup: mypy in CI typecheck env — azure.core override + typed ADLS read (#611)\n\nCI's typecheck-only env has no azure stubs (local env does), so `mypy backend/app/`\nflagged the `azure.core.exceptions` import + a no-any-return on the ADLS `.readall()`.\nAdd `azure.core.*` to the mypy ignore_missing_imports overrides (sibling of the\nexisting `azure.storage.*`) and bind the ADLS read to a typed `bytes` local, mirroring\nthe s3 branch. Verified with `mypy backend/app/` (93 files) as CI runs it.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\ngit push 2>&1 | tail -2",
   "description": "Commit + push mypy CI fix"
 }
 ```
@@ -17498,7 +17499,7 @@ id: toolu_01KymVJTMNbgWWs4yLE8tkks
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "| **Open PRs** | [#619](https://github.com/TheurgicDuke771/DataQ/pull/619) — tracker: #609 done |",
   "new_string": "| **Open PRs** | none |"
 }
@@ -17518,7 +17519,7 @@ tool_use Read
 id: toolu_01MYP5ZmujkMZVXkcKsv7Q2u
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "offset": 27,
   "limit": 2
 }
@@ -17539,7 +17540,7 @@ id: toolu_018ZemaG1f4YB67fkk5vqmdP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "+ #611 filed (dbt as a third `OrchestrationProvider`, W2 — split from #609) + #286 pulled W7→W2;",
   "new_string": "+ **#611 code-merged 2026-07-05 via #620** (dbt as a third `OrchestrationProvider` — ADR 0029; reopened for the pending Azure-window live-verify) + #286 pulled W7→W2;"
 }
@@ -17550,7 +17551,7 @@ id: toolu_018ZemaG1f4YB67fkk5vqmdP
 tool_result
 id: toolu_018ZemaG1f4YB67fkk5vqmdP
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -17560,7 +17561,7 @@ id: toolu_01AnaRnoWnWQeUKsbkrsFCFK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "| **Open PRs** | [#619](https://github.com/TheurgicDuke771/DataQ/pull/619) — tracker: #609 done |",
   "new_string": "| **Open PRs** | none |"
 }
@@ -17571,7 +17572,7 @@ id: toolu_01AnaRnoWnWQeUKsbkrsFCFK
 tool_result
 id: toolu_01AnaRnoWnWQeUKsbkrsFCFK
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -17585,7 +17586,7 @@ id: toolu_01DkRRBYgBGJYLWDkeK37tfE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "| ✅ | [#609](https://github.com/TheurgicDuke771/DataQ/issues/609) Self-hosted dbt Core lineage on Snowflake (RETAIL→ANALYTICS_STG views→ANALYTICS dynamic tables; runs as `DATAQ_LOADER`) — `dbt build` green local + ACA Job, DataQ suite (checks + freshness) green on `MART_ORDER_REVENUE`, artifacts to ADLS (2026-07-05); unblocks #611 | Theme 14 / G-d |",
   "new_string": "| ✅ | [#609](https://github.com/TheurgicDuke771/DataQ/issues/609) Self-hosted dbt Core lineage on Snowflake (RETAIL→ANALYTICS_STG views→ANALYTICS dynamic tables; runs as `DATAQ_LOADER`) — `dbt build` green local + ACA Job, DataQ suite (checks + freshness) green on `MART_ORDER_REVENUE`, artifacts to ADLS (2026-07-05); unblocks #611 | Theme 14 / G-d |\n| 🟡 | [#611](https://github.com/TheurgicDuke771/DataQ/issues/611) dbt as a **third `OrchestrationProvider`** (ADR 0029) — `DbtProvider` + adapter + 3-scheme artifact reader (adls/s3/file) + HMAC `POST /orchestration/events/dbt` + 10-min poll + migration + `integrations/dbt/` snippet; **code merged #620** (agentic review + migration-safety addressed, CI green). **Live-verify pending** (Azure window, gated on manual prod deploy) — issue reopened until it passes | Theme 14 / G-d |"
 }
@@ -17596,7 +17597,7 @@ id: toolu_01DkRRBYgBGJYLWDkeK37tfE
 tool_result
 id: toolu_01DkRRBYgBGJYLWDkeK37tfE
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -17610,7 +17611,7 @@ id: toolu_01RDKTAp3KGjyyU617R8VPnW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "### v1.1 W2 — Portability: OTel logs, secrets lifecycle, dry-run depth (due 2026-07-18) — 1/12",
   "new_string": "### v1.1 W2 — Portability: OTel logs, secrets lifecycle, dry-run depth (due 2026-07-18) — 1/13 (+#611 code-merged, live-verify pending)"
 }
@@ -17621,7 +17622,7 @@ id: toolu_01RDKTAp3KGjyyU617R8VPnW
 tool_result
 id: toolu_01RDKTAp3KGjyyU617R8VPnW
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -17634,7 +17635,7 @@ tool_use Bash
 id: toolu_01Rp3M9AQP1veqZmr2ZmCzH8
 ```json
 {
-  "command": "cd ~/Coding/Python/DataQ && git diff --stat && git add docs/progress.md && git commit -q -F - <<'EOF'\ndocs(tracker): #611 dbt provider code-merged (#620); Open-PRs → none\n\nAdds the #611 row to the v1.1 W2 table as 🟡 (code merged via #620 — provider +\nadapter + reader + receiver + migration + snippet + tests, review addressed, CI\ngreen; live-verify pending a manual prod deploy, issue reopened). Flips the stale\nOpen-PRs snapshot row to none (#619 + #620 both merged).\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\ngit push -u origin docs/611-dbt-provider-merged 2>&1 | tail -2",
+  "command": "cd ~/Coding/Python/DataQ && git diff --stat && git add docs/progress.md && git commit -q -F - <<'EOF'\ndocs(tracker): #611 dbt provider code-merged (#620); Open-PRs → none\n\nAdds the #611 row to the v1.1 W2 table as 🟡 (code merged via #620 — provider +\nadapter + reader + receiver + migration + snippet + tests, review addressed, CI\ngreen; live-verify pending a manual prod deploy, issue reopened). Flips the stale\nOpen-PRs snapshot row to none (#619 + #620 both merged).\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\ngit push -u origin docs/611-dbt-provider-merged 2>&1 | tail -2",
   "description": "Commit + push tracker docs branch"
 }
 ```
@@ -17870,7 +17871,7 @@ tool_use Read
 id: toolu_014GM6pMHMz2BGpqVahJacjX
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/api/v1/notifications.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/api/v1/notifications.py",
   "offset": 110,
   "limit": 10
 }
@@ -17898,7 +17899,7 @@ id: toolu_015ZJR169FhFsfz4KU5A6zoJ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/api/v1/notifications.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/api/v1/notifications.py",
   "old_string": "def delete_notifications(\n    suite_id: uuid.UUID,\n    current_user: Annotated[User, Depends(get_current_user)],\n    db: Annotated[Session, Depends(get_db)],\n) -> None:\n    require_permission(db, suite_id, current_user.id, minimum=\"edit\")\n    svc.delete_config(db, suite_id)",
   "new_string": "def delete_notifications(\n    suite_id: uuid.UUID,\n    current_user: Annotated[User, Depends(get_current_user)],\n    db: Annotated[Session, Depends(get_db)],\n    secret_store: Annotated[SecretStore, Depends(get_secret_store)],\n) -> None:\n    require_permission(db, suite_id, current_user.id, minimum=\"edit\")\n    svc.delete_config(db, suite_id, secret_store=secret_store)"
 }
@@ -17909,7 +17910,7 @@ id: toolu_015ZJR169FhFsfz4KU5A6zoJ
 tool_result
 id: toolu_015ZJR169FhFsfz4KU5A6zoJ
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/api/v1/notifications.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/api/v1/notifications.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -17954,7 +17955,7 @@ tool_use Read
 id: toolu_0168ZDsSDZkVS1mMeGqZrwCG
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/services/test_connection_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/services/test_connection_service.py",
   "offset": 225,
   "limit": 22
 }
@@ -18063,7 +18064,7 @@ id: toolu_01AMoNoiHPNQ7aU7xzXCBHLn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/services/test_connection_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/services/test_connection_service.py",
   "old_string": "def test_delete_removes_row(db_session: Any) -> None:\n    conn = _create(db_session, FakeStore())\n    svc.delete_connection(db_session, conn.id)\n    with pytest.raises(ConnectionNotFoundError):\n        svc.get_connection(db_session, conn.id)\n\n\ndef test_delete_unknown_raises_not_found(db_session: Any) -> None:\n    with pytest.raises(ConnectionNotFoundError):\n        svc.delete_connection(db_session, uuid.uuid4())",
   "new_string": "def test_delete_removes_row_and_secret(db_session: Any) -> None:\n    store = FakeStore()\n    conn = _create(db_session, store)\n    ref = conn.secret_ref\n    assert ref in store.data  # credential was written through on create\n    svc.delete_connection(db_session, conn.id, secret_store=store)\n    with pytest.raises(ConnectionNotFoundError):\n        svc.get_connection(db_session, conn.id)\n    assert ref not in store.data  # #372: orphaned credential removed on delete\n\n\ndef test_delete_fails_soft_when_secret_delete_raises(db_session: Any) -> None:\n    # A store whose delete raises must not 500 the connection delete (#372).\n    class _RaisingDelete(FakeStore):\n        def delete(self, name: str) -> None:\n            raise RuntimeError(\"kv down\")\n\n    store = _RaisingDelete()\n    conn = _create(db_session, store)\n    # The service passes the raising store straight through; if delete were not\n    # fail-soft this would raise. (Real stores swallow internally; here the double\n    # raises to prove the service doesn't depend on that.)\n    with pytest.raises(RuntimeError):\n        svc.delete_connection(db_session, conn.id, secret_store=store)\n\n\ndef test_delete_unknown_raises_not_found(db_session: Any) -> None:\n    with pytest.raises(ConnectionNotFoundError):\n        svc.delete_connection(db_session, uuid.uuid4(), secret_store=FakeStore())"
 }
@@ -18074,7 +18075,7 @@ id: toolu_01AMoNoiHPNQ7aU7xzXCBHLn
 tool_result
 id: toolu_01AMoNoiHPNQ7aU7xzXCBHLn
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/services/test_connection_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/services/test_connection_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -18088,7 +18089,7 @@ id: toolu_011Sgbm3kpv9G9RgYB7YWoCs
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/services/test_connection_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/services/test_connection_service.py",
   "old_string": "def test_delete_fails_soft_when_secret_delete_raises(db_session: Any) -> None:\n    # A store whose delete raises must not 500 the connection delete (#372).\n    class _RaisingDelete(FakeStore):\n        def delete(self, name: str) -> None:\n            raise RuntimeError(\"kv down\")\n\n    store = _RaisingDelete()\n    conn = _create(db_session, store)\n    # The service passes the raising store straight through; if delete were not\n    # fail-soft this would raise. (Real stores swallow internally; here the double\n    # raises to prove the service doesn't depend on that.)\n    with pytest.raises(RuntimeError):\n        svc.delete_connection(db_session, conn.id, secret_store=store)\n\n\ndef test_delete_unknown_raises_not_found(db_session: Any) -> None:",
   "new_string": "def test_delete_unknown_raises_not_found(db_session: Any) -> None:"
 }
@@ -18099,7 +18100,7 @@ id: toolu_011Sgbm3kpv9G9RgYB7YWoCs
 tool_result
 id: toolu_011Sgbm3kpv9G9RgYB7YWoCs
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/services/test_connection_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/services/test_connection_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -18108,7 +18109,7 @@ tool_use Read
 id: toolu_01Cnv647nBEfXSbpbn4ECzin
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/services/test_connection_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/services/test_connection_service.py",
   "offset": 116,
   "limit": 8
 }
@@ -18139,7 +18140,7 @@ tool_use Read
 id: toolu_01TA1pcq6aFSFH2wuoNFG7Ey
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/services/test_connection_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/services/test_connection_service.py",
   "offset": 563,
   "limit": 10
 }
@@ -18169,7 +18170,7 @@ id: toolu_01Nmf3tGjTnVfDJyaBzJLJbZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/services/test_connection_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/services/test_connection_service.py",
   "old_string": "    conn = _create(db_session, FakeStore())\n    assert len(_versions(db_session, conn.id)) == 1\n    svc.delete_connection(db_session, conn.id)\n    assert _versions(db_session, conn.id) == []",
   "new_string": "    conn = _create(db_session, FakeStore())\n    assert len(_versions(db_session, conn.id)) == 1\n    svc.delete_connection(db_session, conn.id, secret_store=FakeStore())\n    assert _versions(db_session, conn.id) == []"
 }
@@ -18180,7 +18181,7 @@ id: toolu_01Nmf3tGjTnVfDJyaBzJLJbZ
 tool_result
 id: toolu_01Nmf3tGjTnVfDJyaBzJLJbZ
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/services/test_connection_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/services/test_connection_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -18193,7 +18194,7 @@ tool_use Read
 id: toolu_01GPFw2EsTtv3sP2fUsH7tgF
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/services/test_notification_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/services/test_notification_service.py",
   "offset": 204,
   "limit": 45
 }
@@ -18261,7 +18262,7 @@ id: toolu_019BowrXnMU76h2cauF3V3ai
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/services/test_notification_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/services/test_notification_service.py",
   "old_string": "def test_delete_config(db_session: Any) -> None:\n    suite = _suite(db_session)\n    svc.upsert_config(\n        db_session,\n        suite_id=suite.id,\n        enabled=True,\n        alert_on=\"fail\",\n        webhook=None,\n        secret_store=_FakeStore(),\n    )\n    assert svc.delete_config(db_session, suite.id) is True\n    assert svc.get_config(db_session, suite.id) is None\n    assert svc.delete_config(db_session, suite.id) is False  # idempotent",
   "new_string": "def test_delete_config_removes_row_and_webhook_secret(db_session: Any) -> None:\n    suite = _suite(db_session)\n    store = _FakeStore()\n    config = svc.upsert_config(\n        db_session,\n        suite_id=suite.id,\n        enabled=True,\n        alert_on=\"fail\",\n        webhook=\"https://suite.webhook.office.com\",\n        secret_store=store,\n    )\n    ref = config.webhook_secret_ref\n    assert ref in store.secrets\n    assert svc.delete_config(db_session, suite.id, secret_store=store) is True\n    assert svc.get_config(db_session, suite.id) is None\n    assert ref not in store.secrets  # #372: orphaned webhook secret removed\n    assert svc.delete_config(db_session, suite.id, secret_store=store) is False  # idempotent\n\n\ndef test_clearing_webhook_removes_the_secret(db_session: Any) -> None:\n    suite = _suite(db_session)\n    store = _FakeStore()\n    config = svc.upsert_config(\n        db_session,\n        suite_id=suite.id,\n        enabled=True,\n        alert_on=\"fail\",\n        webhook=\"https://suite.webhook.office.com\",\n        secret_store=store,\n    )\n    ref = config.webhook_secret_ref\n    assert ref in store.secrets\n    # Clearing the webhook (\"\") nulls the ref AND removes the secret (#372).\n    updated = svc.upsert_config(\n        db_session,\n        suite_id=suite.id,\n        enabled=True,\n        alert_on=\"fail\",\n        webhook=\"\",\n        secret_store=store,\n    )\n    assert updated.webhook_secret_ref is None\n    assert ref not in store.secrets"
 }
@@ -18272,7 +18273,7 @@ id: toolu_019BowrXnMU76h2cauF3V3ai
 tool_result
 id: toolu_019BowrXnMU76h2cauF3V3ai
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/services/test_notification_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/services/test_notification_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -18367,7 +18368,7 @@ tool_use Read
 id: toolu_01Bp8ma3qozkF79Syw5rERjm
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/core/test_secrets.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/core/test_secrets.py",
   "offset": 98,
   "limit": 70
 }
@@ -18433,7 +18434,7 @@ tool_use Read
 id: toolu_012A1JbxpKvrxNBJXYkhLVwk
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/core/test_secrets.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/core/test_secrets.py",
   "offset": 167,
   "limit": 60
 }
@@ -18512,7 +18513,7 @@ tool_use Read
 id: toolu_01UmvuA22y5P2YJNk5FkVtVb
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/core/test_secrets.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/core/test_secrets.py",
   "offset": 226,
   "limit": 60
 }
@@ -18714,7 +18715,7 @@ id: toolu_01MCEWbVUeJpqCaYakyu1vXr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/deploy/terraform/azure/keyvault.tf",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/deploy/terraform/azure/keyvault.tf",
   "old_string": "# Least privilege: a CUSTOM role scoped to get + list + set only, NOT the built-in\n# \"Key Vault Secrets Officer\" (which also grants delete/purge/backup/restore the app\n# never uses). Keeps the app identity's blast radius to exactly its two operations.\n# (When #372 lands SecretStore.delete, add `.../deleteSecret/action` here.)\nresource \"azurerm_role_definition\" \"app_kv_secrets_rw\" {\n  name        = \"DataQ App KV Secrets RW ${random_string.suffix.result}\"\n  scope       = azurerm_key_vault.app.id\n  description = \"get + list + set secrets (no delete/purge) for the DataQ app identity.\"\n\n  permissions {\n    data_actions = [\n      \"Microsoft.KeyVault/vaults/secrets/getSecret/action\",\n      \"Microsoft.KeyVault/vaults/secrets/setSecret/action\",\n      \"Microsoft.KeyVault/vaults/secrets/readMetadata/action\",\n    ]\n  }\n\n  assignable_scopes = [azurerm_key_vault.app.id]\n}",
   "new_string": "# Least privilege: a CUSTOM role scoped to get + list + set + soft-delete only, NOT\n# the built-in \"Key Vault Secrets Officer\" (which also grants purge/backup/restore\n# the app never uses). Keeps the app identity's blast radius to exactly its\n# operations: SecretStore.get/set (connection credentials) + delete (orphan cleanup\n# on connection/webhook delete, #372). No purge — soft-delete is enough for cleanup.\nresource \"azurerm_role_definition\" \"app_kv_secrets_rw\" {\n  name        = \"DataQ App KV Secrets RW ${random_string.suffix.result}\"\n  scope       = azurerm_key_vault.app.id\n  description = \"get + list + set + soft-delete secrets (no purge) for the DataQ app identity.\"\n\n  permissions {\n    data_actions = [\n      \"Microsoft.KeyVault/vaults/secrets/getSecret/action\",\n      \"Microsoft.KeyVault/vaults/secrets/setSecret/action\",\n      \"Microsoft.KeyVault/vaults/secrets/deleteSecret/action\",\n […]
 
@@ -18723,7 +18724,7 @@ id: toolu_01MCEWbVUeJpqCaYakyu1vXr
 tool_result
 id: toolu_01MCEWbVUeJpqCaYakyu1vXr
 ```
-The file /Users/arijit/Coding/Python/DataQ/deploy/terraform/azure/keyvault.tf has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/deploy/terraform/azure/keyvault.tf has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -18811,7 +18812,7 @@ tool_use Bash
 id: toolu_019fdYzSDiyZkUtDSfbhzmgT
 ```json
 {
-  "command": "cd ~/Coding/Python/DataQ && git commit -q -F - <<'EOF'\nfix(secrets): add SecretStore.delete + remove orphaned secrets on delete — Fixes #372\n\nThe SecretStore Protocol exposed only get/set, so deleting a connection or clearing\na per-suite webhook left the credential in the backing store (Key Vault / Redis /\nenv). Add a best-effort, fail-soft `delete` to the Protocol and all three impls\n(Env pop, Redis del, Azure KV soft-delete — a missing secret is a clean no-op; KV/\nRedis failures are logged, never raised, so orphan cleanup can't 500 the delete).\n\nWire it in:\n- connection delete removes `conn-<id>` (connection_service + API dependency).\n- clearing a per-suite webhook (`webhook=\"\"`) and deleting the notification config\n  remove `suite-notif-<id>` (notification_service + API dependency).\n\nTests: delete per impl incl. fail-soft (KV/Redis raise → swallowed) and KV\nnot-found no-op; connection-delete + webhook-clear/delete now assert the secret is\ngone. The 20 secret-store test doubles gained a matching `delete` (Protocol conformance).\n\nTerraform: the custom app KV role (#622) gains `deleteSecret` (soft-delete only, no\npurge) so the prod delete actually removes the secret — needs a `terraform apply`.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\ngit push -u origin fix/372-secretstore-delete 2>&1 | tail -2",
+  "command": "cd ~/Coding/Python/DataQ && git commit -q -F - <<'EOF'\nfix(secrets): add SecretStore.delete + remove orphaned secrets on delete — Fixes #372\n\nThe SecretStore Protocol exposed only get/set, so deleting a connection or clearing\na per-suite webhook left the credential in the backing store (Key Vault / Redis /\nenv). Add a best-effort, fail-soft `delete` to the Protocol and all three impls\n(Env pop, Redis del, Azure KV soft-delete — a missing secret is a clean no-op; KV/\nRedis failures are logged, never raised, so orphan cleanup can't 500 the delete).\n\nWire it in:\n- connection delete removes `conn-<id>` (connection_service + API dependency).\n- clearing a per-suite webhook (`webhook=\"\"`) and deleting the notification config\n  remove `suite-notif-<id>` (notification_service + API dependency).\n\nTests: delete per impl incl. fail-soft (KV/Redis raise → swallowed) and KV\nnot-found no-op; connection-delete + webhook-clear/delete now assert the secret is\ngone. The 20 secret-store test doubles gained a matching `delete` (Protocol conformance).\n\nTerraform: the custom app KV role (#622) gains `deleteSecret` (soft-delete only, no\npurge) so the prod delete actually removes the secret — needs a `terraform apply`.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\ngit push -u origin fix/372-secretstore-delete 2>&1 | tail -2",
   "description": "Commit + push #372"
 }
 ```
@@ -18853,7 +18854,7 @@ id: toolu_01B5uma7LueUKwL4EMAHstzx
 {
   "description": "Code review #372 SecretStore.delete",
   "subagent_type": "pr-review-toolkit:code-reviewer",
-  "prompt": "Review the changes on the current branch `fix/372-secretstore-delete` (PR #625) against `main`. Get the diff with `git diff main...HEAD` (run from /Users/arijit/Coding/Python/DataQ).\n\nThis adds `SecretStore.delete` (issue #372) — the store had only get/set, so deleting a connection or clearing a per-suite webhook orphaned the credential. Key files:\n- `backend/app/core/secrets.py` — `delete` added to the `SecretStore` Protocol + `EnvSecretStore`/`AzureKeyVaultStore`/`RedisSecretStore` (best-effort, fail-soft: never raises; KV uses `begin_delete_secret` soft-delete).\n- `backend/app/services/connection_service.py` (`delete_connection`) + `backend/app/services/notification_service.py` (`upsert_config` webhook-clear path + `delete_config`) — call `secret_store.delete(ref)` after the row is gone.\n- `backend/app/api/v1/connections.py` + `notifications.py` — added the `secret_store` dependency to the delete routes.\n- `backend/tests/core/test_secrets.py` + `test_connection_service.py` + `test_notification_service.py` — delete tests + assertions.\n- `deploy/terraform/azure/keyvault.tf` — the custom KV role gains `deleteSecret`.\n- 20 test files gained a `delete` method on their secret-store doubles (Protocol conformance).\n\nFocus on: correctness of the fail-soft contract (does the Protocol docstring match every impl's behavior? is the AKV soft-delete via `begin_delete_secret` correct and non-blocking?); ordering (secret deleted after the DB commit — is there a leak/orphan window or a rollback concern if commit fails?); whether the webhook-clear path correctly deletes before nulling the ref; and whether any delete call site could raise and […]
+  "prompt": "Review the changes on the current branch `fix/372-secretstore-delete` (PR #625) against `main`. Get the diff with `git diff main...HEAD` (run from /home/<USER>/Coding/Python/DataQ).\n\nThis adds `SecretStore.delete` (issue #372) — the store had only get/set, so deleting a connection or clearing a per-suite webhook orphaned the credential. Key files:\n- `backend/app/core/secrets.py` — `delete` added to the `SecretStore` Protocol + `EnvSecretStore`/`AzureKeyVaultStore`/`RedisSecretStore` (best-effort, fail-soft: never raises; KV uses `begin_delete_secret` soft-delete).\n- `backend/app/services/connection_service.py` (`delete_connection`) + `backend/app/services/notification_service.py` (`upsert_config` webhook-clear path + `delete_config`) — call `secret_store.delete(ref)` after the row is gone.\n- `backend/app/api/v1/connections.py` + `notifications.py` — added the `secret_store` dependency to the delete routes.\n- `backend/tests/core/test_secrets.py` + `test_connection_service.py` + `test_notification_service.py` — delete tests + assertions.\n- `deploy/terraform/azure/keyvault.tf` — the custom KV role gains `deleteSecret`.\n- 20 test files gained a `delete` method on their secret-store doubles (Protocol conformance).\n\nFocus on: correctness of the fail-soft contract (does the Protocol docstring match every impl's behavior? is the AKV soft-delete via `begin_delete_secret` correct and non-blocking?); ordering (secret deleted after the DB commit — is there a leak/orphan window or a rollback concern if commit fails?); whether the webhook-clear path correctly deletes before nulling the ref; and whether any delete call site could raise and […]
 
 > TOOL
 

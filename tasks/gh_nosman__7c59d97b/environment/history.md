@@ -12,7 +12,7 @@ tool_use Bash
 id: toolu_01G8ByTgjpS8QaPw8FQQjnBb
 ```json
 {
-  "command": "find /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src -type f -name \"*.rs\" | head -20 && ls /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/",
+  "command": "find /home/<USER>/p/gossamer-checkpoints-visualization/src -type f -name \"*.rs\" | head -20 && ls /home/<USER>/p/gossamer-checkpoints-visualization/src/",
   "description": "List source files"
 }
 ```
@@ -22,26 +22,26 @@ id: toolu_01G8ByTgjpS8QaPw8FQQjnBb
 tool_result
 id: toolu_01G8ByTgjpS8QaPw8FQQjnBb
 ```
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/config.rs
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/watermark.rs
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/db.rs
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/main.rs
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/parsers/codex.rs
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/parsers/claude_code.rs
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/parsers/mod.rs
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/entity/session.rs
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/entity/mod.rs
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/entity/repository.rs
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/ingest/mod.rs
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/attach.rs
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/handoff.rs
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/resume.rs
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/clean.rs
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/sessions.rs
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs
+/home/<USER>/p/gossamer-checkpoints-visualization/src/config.rs
+/home/<USER>/p/gossamer-checkpoints-visualization/src/watermark.rs
+/home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs
+/home/<USER>/p/gossamer-checkpoints-visualization/src/db.rs
+/home/<USER>/p/gossamer-checkpoints-visualization/src/main.rs
+/home/<USER>/p/gossamer-checkpoints-visualization/src/parsers/codex.rs
+/home/<USER>/p/gossamer-checkpoints-visualization/src/parsers/claude_code.rs
+/home/<USER>/p/gossamer-checkpoints-visualization/src/parsers/mod.rs
+/home/<USER>/p/gossamer-checkpoints-visualization/src/entity/session.rs
+/home/<USER>/p/gossamer-checkpoints-visualization/src/entity/mod.rs
+/home/<USER>/p/gossamer-checkpoints-visualization/src/entity/repository.rs
+/home/<USER>/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs
+/home/<USER>/p/gossamer-checkpoints-visualization/src/ingest/mod.rs
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/attach.rs
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/handoff.rs
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/resume.rs
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/clean.rs
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/sessions.rs
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs
 commands
 config.rs
 db.rs
@@ -59,7 +59,7 @@ tool_use Read
 id: toolu_01FrTFxmZJmpCzvJuNPHvMuh
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs"
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs"
 }
 ```
 
@@ -119,7 +119,7 @@ tool_use Read
 id: toolu_01R6jQpGrNfK11zP9bagzhiy
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/db.rs"
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/db.rs"
 }
 ```
 
@@ -168,7 +168,7 @@ tool_use Bash
 id: toolu_01JTsMpZESPeT1ayW4BKQX9f
 ```json
 {
-  "command": "grep -n \"checkpoint\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs | head -40",
+  "command": "grep -n \"checkpoint\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs | head -40",
   "description": "Find checkpoint-related code in index.rs"
 }
 ```
@@ -215,7 +215,7 @@ tool_use Bash
 id: toolu_01SqenW49ox5Q3cQwUuXCCBj
 ```json
 {
-  "command": "grep -n \"upsert_checkpoint\\|commit_message\\|commit_sha\\|author_name\\|os_user\\|CheckpointParams\\|struct.*Checkpoint\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs | head -50",
+  "command": "grep -n \"upsert_checkpoint\\|commit_message\\|commit_sha\\|author_name\\|os_user\\|CheckpointParams\\|struct.*Checkpoint\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs | head -50",
   "description": "Find checkpoint struct and upsert function"
 }
 ```
@@ -256,7 +256,7 @@ tool_use Read
 id: toolu_01Ra1vjyKHsMpFRdb6LEVeqg
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "offset": 200,
   "limit": 120
 }
@@ -316,7 +316,7 @@ tool_use Read
 id: toolu_01AWWuUVCRTSuQGYjLZ5HqfM
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "offset": 340,
   "limit": 120
 }
@@ -380,7 +380,7 @@ tool_use Read
 id: toolu_01HftM95MJM9DDar1TLWCbkK
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "offset": 619,
   "limit": 100
 }

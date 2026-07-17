@@ -13,7 +13,7 @@ tool_use Read
 id: functions.Read:0
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/.claude/hooks/session-start.sh"
+  "file_path": "/home/<USER>/dev/cohezion/.claude/hooks/session-start.sh"
 }
 ```
 
@@ -32,7 +32,7 @@ id: functions.Glob:1
 tool_result ERROR
 id: functions.Read:0
 ```
-File does not exist. Note: your current working directory is /home/mike-anderson/dev/cohezion.
+File does not exist. Note: your current working directory is /home/<USER>/dev/cohezion.
 ```
 
 > TOOL
@@ -40,26 +40,26 @@ File does not exist. Note: your current working directory is /home/mike-anderson
 tool_result
 id: functions.Glob:1
 ```
-/home/mike-anderson/dev/cohezion/.claude/hooks/bash_tool_catcher.py
-/home/mike-anderson/dev/cohezion/.claude/hooks/format-on-edit.sh
-/home/mike-anderson/dev/cohezion/.claude/hooks/guard-services.sh
-/home/mike-anderson/dev/cohezion/.claude/hooks/validate-agent-files.sh
-/home/mike-anderson/dev/cohezion/.claude/hooks/warn-sensitive-commands.sh
-/home/mike-anderson/dev/cohezion/.claude/hooks/graph-sync-on-vault-write.sh
-/home/mike-anderson/dev/cohezion/.claude/hooks/lint-on-edit.sh
-/home/mike-anderson/dev/cohezion/.claude/hooks/pre-commit-check.sh
-/home/mike-anderson/dev/cohezion/.claude/hooks/ralph-graph-annotate.sh
-/home/mike-anderson/dev/cohezion/.claude/hooks/protect-files.sh
-/home/mike-anderson/dev/cohezion/.claude/hooks/branch-safety-warning.sh
-/home/mike-anderson/dev/cohezion/.claude/hooks/entire-auto-update.sh
-/home/mike-anderson/dev/cohezion/.claude/hooks/track-plan-files.sh
-/home/mike-anderson/dev/cohezion/.claude/hooks/mcp-health-check.sh
-/home/mike-anderson/dev/cohezion/.claude/hooks/track-plan-commits.sh
-/home/mike-anderson/dev/cohezion/.claude/hooks/session-concierge.sh
-/home/mike-anderson/dev/cohezion/.claude/hooks/test-on-edit.sh
-/home/mike-anderson/dev/cohezion/.claude/hooks/check-bash-output.sh
-/home/mike-anderson/dev/cohezion/.claude/hooks/drift-detection.sh
-/home/mike-anderson/dev/cohezion/.claude/hooks/archive-plan.sh
+/home/<USER>/dev/cohezion/.claude/hooks/bash_tool_catcher.py
+/home/<USER>/dev/cohezion/.claude/hooks/format-on-edit.sh
+/home/<USER>/dev/cohezion/.claude/hooks/guard-services.sh
+/home/<USER>/dev/cohezion/.claude/hooks/validate-agent-files.sh
+/home/<USER>/dev/cohezion/.claude/hooks/warn-sensitive-commands.sh
+/home/<USER>/dev/cohezion/.claude/hooks/graph-sync-on-vault-write.sh
+/home/<USER>/dev/cohezion/.claude/hooks/lint-on-edit.sh
+/home/<USER>/dev/cohezion/.claude/hooks/pre-commit-check.sh
+/home/<USER>/dev/cohezion/.claude/hooks/ralph-graph-annotate.sh
+/home/<USER>/dev/cohezion/.claude/hooks/protect-files.sh
+/home/<USER>/dev/cohezion/.claude/hooks/branch-safety-warning.sh
+/home/<USER>/dev/cohezion/.claude/hooks/entire-auto-update.sh
+/home/<USER>/dev/cohezion/.claude/hooks/track-plan-files.sh
+/home/<USER>/dev/cohezion/.claude/hooks/mcp-health-check.sh
+/home/<USER>/dev/cohezion/.claude/hooks/track-plan-commits.sh
+/home/<USER>/dev/cohezion/.claude/hooks/session-concierge.sh
+/home/<USER>/dev/cohezion/.claude/hooks/test-on-edit.sh
+/home/<USER>/dev/cohezion/.claude/hooks/check-bash-output.sh
+/home/<USER>/dev/cohezion/.claude/hooks/drift-detection.sh
+/home/<USER>/dev/cohezion/.claude/hooks/archive-plan.sh
 ```
 
 > TOOL
@@ -68,7 +68,7 @@ tool_use Read
 id: functions.Read:2
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/.claude/hooks/mcp-health-check.sh"
+  "file_path": "/home/<USER>/dev/cohezion/.claude/hooks/mcp-health-check.sh"
 }
 ```
 
@@ -140,7 +140,7 @@ id: functions.Glob:3
 tool_result
 id: functions.Glob:3
 ```
-/home/mike-anderson/dev/cohezion/.claude/hooks/guard-services.sh
+/home/<USER>/dev/cohezion/.claude/hooks/guard-services.sh
 ```
 
 > TOOL
@@ -149,7 +149,7 @@ tool_use Read
 id: functions.Read:4
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/.claude/hooks/guard-services.sh"
+  "file_path": "/home/<USER>/dev/cohezion/.claude/hooks/guard-services.sh"
 }
 ```
 
@@ -218,7 +218,7 @@ tool_use Bash
 id: functions.Bash:6
 ```json
 {
-  "command": "find /home/mike-anderson/dev/cohezion -name \"guard-services.sh\" -o -name \"*vault*\" -type f 2>/dev/null | head -20",
+  "command": "find /home/<USER>/dev/cohezion -name \"guard-services.sh\" -o -name \"*vault*\" -type f 2>/dev/null | head -20",
   "description": "Find vault and guard-services files"
 }
 ```
@@ -228,26 +228,26 @@ id: functions.Bash:6
 tool_result
 id: functions.Bash:6
 ```
-/home/mike-anderson/dev/cohezion/docs/plans/2026-02-23-fix-vault-mcp-session-error.md
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/vault_reference_report.json
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/tests/test_vault_graph_tools.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/tests/test_vault_graph_affinity.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/tests/test_vault_graph_queries.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/tests/test_vault_graph_client.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/tests/test_vault_search_cache.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/tests/test_vault_ops.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/tests/test_vault_watcher.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/tests/__pycache__/test_vault_graph_queries.cpython-313-pytest-9.0.2.pyc
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/tests/__pycache__/test_vault_graph_affinity.cpython-313-pytest-9.0.2.pyc
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/tests/__pycache__/test_vault_search_cache.cpython-313-pytest-9.0.2.pyc
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/tests/__pycache__/test_vault_graph_tools.cpython-313-pytest-9.0.2.pyc
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/tests/__pycache__/test_vault_watcher.cpython-313-pytest-9.0.2.pyc
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/tests/__pycache__/test_vault_graph_client.cpython-313-pytest-9.0.2.pyc
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/tests/__pycache__/test_vault_ops.cpython-313-pytest-9.0.2.pyc
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/_cloud_vault_mcp.pth
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/bin/cloud-vault-mcp
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/benchmarks/benchmark_vault_backlinks.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/benchmarks/benchmark_vault_search_cache.py
+/home/<USER>/dev/cohezion/docs/plans/2026-02-23-fix-vault-mcp-session-error.md
+/home/<USER>/dev/cohezion/cloud-vault-mcp/vault_reference_report.json
+/home/<USER>/dev/cohezion/cloud-vault-mcp/tests/test_vault_graph_tools.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/tests/test_vault_graph_affinity.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/tests/test_vault_graph_queries.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/tests/test_vault_graph_client.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/tests/test_vault_search_cache.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/tests/test_vault_ops.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/tests/test_vault_watcher.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/tests/__pycache__/test_vault_graph_queries.cpython-313-pytest-9.0.2.pyc
+/home/<USER>/dev/cohezion/cloud-vault-mcp/tests/__pycache__/test_vault_graph_affinity.cpython-313-pytest-9.0.2.pyc
+/home/<USER>/dev/cohezion/cloud-vault-mcp/tests/__pycache__/test_vault_search_cache.cpython-313-pytest-9.0.2.pyc
+/home/<USER>/dev/cohezion/cloud-vault-mcp/tests/__pycache__/test_vault_graph_tools.cpython-313-pytest-9.0.2.pyc
+/home/<USER>/dev/cohezion/cloud-vault-mcp/tests/__pycache__/test_vault_watcher.cpython-313-pytest-9.0.2.pyc
+/home/<USER>/dev/cohezion/cloud-vault-mcp/tests/__pycache__/test_vault_graph_client.cpython-313-pytest-9.0.2.pyc
+/home/<USER>/dev/cohezion/cloud-vault-mcp/tests/__pycache__/test_vault_ops.cpython-313-pytest-9.0.2.pyc
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/_cloud_vault_mcp.pth
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/bin/cloud-vault-mcp
+/home/<USER>/dev/cohezion/cloud-vault-mcp/benchmarks/benchmark_vault_backlinks.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/benchmarks/benchmark_vault_search_cache.py
 ```
 
 > TOOL
@@ -255,47 +255,47 @@ id: functions.Bash:6
 tool_result
 id: functions.Glob:5
 ```
-/home/mike-anderson/dev/cohezion/scripts/clean_claude_permissions.sh
-/home/mike-anderson/dev/cohezion/scripts/deploy_research_paper.sh
-/home/mike-anderson/dev/cohezion/scripts/deploy_tunnel.sh
-/home/mike-anderson/dev/cohezion/scripts/deploy_cloud_run.sh
-/home/mike-anderson/dev/cohezion/scripts/hooks/check-artifact-size.sh
-/home/mike-anderson/dev/cohezion/scripts/hooks/check-file-count.sh
-/home/mike-anderson/dev/cohezion/scripts/hooks/check-file-size.sh
-/home/mike-anderson/dev/cohezion/scripts/hooks/check-complexity.sh
-/home/mike-anderson/dev/cohezion/scripts/live_status.sh
-/home/mike-anderson/dev/cohezion/scripts/optimize_repository.sh
-/home/mike-anderson/dev/cohezion/scripts/maintenance/weekly_repo_maintenance.sh
-/home/mike-anderson/dev/cohezion/scripts/overnight/run_tuned_medium.sh
-/home/mike-anderson/dev/cohezion/scripts/overnight/run_mass_sim.sh
-/home/mike-anderson/dev/cohezion/scripts/overnight/run_full_pipeline.sh
-/home/mike-anderson/dev/cohezion/scripts/overnight_watchdog.sh
-/home/mike-anderson/dev/cohezion/scripts/monitor_overnight.sh
-/home/mike-anderson/dev/cohezion/scripts/run_simulation_cron.sh
-/home/mike-anderson/dev/cohezion/scripts/setup/generate_tls_certificates.sh
-/home/mike-anderson/dev/cohezion/scripts/setup/install_security_tools.sh
-/home/mike-anderson/dev/cohezion/scripts/setup_pre_commit_hooks.sh
-/home/mike-anderson/dev/cohezion/scripts/system/launch_surreal.sh
-/home/mike-anderson/dev/cohezion/scripts/validate_deployment.sh
-/home/mike-anderson/dev/cohezion/scripts/validate-session-setup.sh
-/home/mike-anderson/dev/cohezion/scripts/update_duckdns.sh
-/home/mike-anderson/dev/cohezion/scripts/workers_status.sh
-/home/mike-anderson/dev/cohezion/scripts/ci/recover_bmad.sh
-/home/mike-anderson/dev/cohezion/scripts/ci/check_protected_dirs.sh
-/home/mike-anderson/dev/cohezion/scripts/run-surreal-tests.sh
-/home/mike-anderson/dev/cohezion/scripts/security/weekly_security_report.sh
-/home/mike-anderson/dev/cohezion/scripts/update_tools.sh
-/home/mike-anderson/dev/cohezion/scripts/security/local_dependency_scan.sh
-/home/mike-anderson/dev/cohezion/scripts/start_resource_daemon.sh
-/home/mike-anderson/dev/cohezion/scripts/check_time_left.sh
-/home/mike-anderson/dev/cohezion/scripts/run_jobs.sh
-/home/mike-anderson/dev/cohezion/scripts/jobs/compound_train_cron.sh
-/home/mike-anderson/dev/cohezion/scripts/jobs/health_check_cron.sh
-/home/mike-anderson/dev/cohezion/scripts/jobs/retrospection_cron.sh
-/home/mike-anderson/dev/cohezion/scripts/jobs/ouroboros_cron.sh
-/home/mike-anderson/dev/cohezion/scripts/jobs/research_scout_cron.sh
-/home/mike-anderson/dev/cohezion/scripts/jobs/kernel_submit_cron.sh
-/home/mike-anderson/dev/cohezion/scripts/jobs/email_status_cron.sh
+/home/<USER>/dev/cohezion/scripts/clean_claude_permissions.sh
+/home/<USER>/dev/cohezion/scripts/deploy_research_paper.sh
+/home/<USER>/dev/cohezion/scripts/deploy_tunnel.sh
+/home/<USER>/dev/cohezion/scripts/deploy_cloud_run.sh
+/home/<USER>/dev/cohezion/scripts/hooks/check-artifact-size.sh
+/home/<USER>/dev/cohezion/scripts/hooks/check-file-count.sh
+/home/<USER>/dev/cohezion/scripts/hooks/check-file-size.sh
+/home/<USER>/dev/cohezion/scripts/hooks/check-complexity.sh
+/home/<USER>/dev/cohezion/scripts/live_status.sh
+/home/<USER>/dev/cohezion/scripts/optimize_repository.sh
+/home/<USER>/dev/cohezion/scripts/maintenance/weekly_repo_maintenance.sh
+/home/<USER>/dev/cohezion/scripts/overnight/run_tuned_medium.sh
+/home/<USER>/dev/cohezion/scripts/overnight/run_mass_sim.sh
+/home/<USER>/dev/cohezion/scripts/overnight/run_full_pipeline.sh
+/home/<USER>/dev/cohezion/scripts/overnight_watchdog.sh
+/home/<USER>/dev/cohezion/scripts/monitor_overnight.sh
+/home/<USER>/dev/cohezion/scripts/run_simulation_cron.sh
+/home/<USER>/dev/cohezion/scripts/setup/generate_tls_certificates.sh
+/home/<USER>/dev/cohezion/scripts/setup/install_security_tools.sh
+/home/<USER>/dev/cohezion/scripts/setup_pre_commit_hooks.sh
+/home/<USER>/dev/cohezion/scripts/system/launch_surreal.sh
+/home/<USER>/dev/cohezion/scripts/validate_deployment.sh
+/home/<USER>/dev/cohezion/scripts/validate-session-setup.sh
+/home/<USER>/dev/cohezion/scripts/update_duckdns.sh
+/home/<USER>/dev/cohezion/scripts/workers_status.sh
+/home/<USER>/dev/cohezion/scripts/ci/recover_bmad.sh
+/home/<USER>/dev/cohezion/scripts/ci/check_protected_dirs.sh
+/home/<USER>/dev/cohezion/scripts/run-surreal-tests.sh
+/home/<USER>/dev/cohezion/scripts/security/weekly_security_report.sh
+/home/<USER>/dev/cohezion/scripts/update_tools.sh
+/home/<USER>/dev/cohezion/scripts/security/local_dependency_scan.sh
+/home/<USER>/dev/cohezion/scripts/start_resource_daemon.sh
+/home/<USER>/dev/cohezion/scripts/check_time_left.sh
+/home/<USER>/dev/cohezion/scripts/run_jobs.sh
+/home/<USER>/dev/cohezion/scripts/jobs/compound_train_cron.sh
+/home/<USER>/dev/cohezion/scripts/jobs/health_check_cron.sh
+/home/<USER>/dev/cohezion/scripts/jobs/retrospection_cron.sh
+/home/<USER>/dev/cohezion/scripts/jobs/ouroboros_cron.sh
+/home/<USER>/dev/cohezion/scripts/jobs/research_scout_cron.sh
+/home/<USER>/dev/cohezion/scripts/jobs/kernel_submit_cron.sh
+/home/<USER>/dev/cohezion/scripts/jobs/email_status_cron.sh
 ```
 
 > AGENT
@@ -318,7 +318,7 @@ tool_use Bash
 id: functions.Bash:8
 ```json
 {
-  "command": "find /home/mike-anderson/dev/cohezion -name \"*wake*\" -type f 2>/dev/null | head -10",
+  "command": "find /home/<USER>/dev/cohezion -name \"*wake*\" -type f 2>/dev/null | head -10",
   "description": "Find wake-related files"
 }
 ```
@@ -328,106 +328,106 @@ id: functions.Bash:8
 tool_result
 id: functions.Glob:7
 ```
-/home/mike-anderson/dev/cohezion/.claude/commands/audit.md
-/home/mike-anderson/dev/cohezion/.claude/commands/heal.md
-/home/mike-anderson/dev/cohezion/.claude/commands/deploy.md
-/home/mike-anderson/dev/cohezion/.claude/commands/security-review.md
-/home/mike-anderson/dev/cohezion/.claude/commands/new-agent.md
-/home/mike-anderson/dev/cohezion/.claude/commands/wake.md
-/home/mike-anderson/dev/cohezion/.claude/commands/fix-packages.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-agent-bmm-architect.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-agent-bmad-master.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-agent-cis-storyteller.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-agent-bmm-qa.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-agent-cis-design-thinking-coach.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-agent-bmb-workflow-builder.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-agent-bmm-quick-flow-solo-dev.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-agent-bmm-dev.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-agent-bmm-sm.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-agent-bmm-analyst.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-agent-bmm-tech-writer.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-agent-cis-brainstorming-coach.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-agent-cis-creative-problem-solver.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-agent-bmb-agent-builder.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bash-report.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-agent-gds-game-architect.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-agent-bmb-module-builder.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-agent-cis-innovation-strategist.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-agent-cis-presentation-master.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-agent-bmm-ux-designer.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-agent-bmm-pm.md
-/home/mike-anderson/dev/cohezion/.claude/commands/async-audit.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-agent-gds-game-dev.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-bmb-edit-agent.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-agent-gds-game-scrum-master.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-bmm-correct-course.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-bmm-create-architecture.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-bmb-validate-max-parallel-workflow.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-bmb-validate-workflow.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-bmm-create-product-brief.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-bmm-check-implementation-readiness.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-bmm-validate-prd.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-bmb-create-workflow.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-bmm-create-ux-design.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-bmm-qa-generate-e2e-tests.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-bmm-code-review.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-agent-gds-game-qa.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-bmm-document-project.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-bmb-edit-module.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-bmm-quick-spec.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-bmm-quick-dev.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-bmb-rework-workflow.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-agent-gds-game-designer.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-bmm-dev-story.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-agent-tea-tea.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-cis-design-thinking.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-bmm-retrospective.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-bmm-sprint-status.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-bmb-create-module-brief.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-brainstorming.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-bmm-technical-research.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-bmm-create-prd.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-bmm-domain-research.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-bmb-edit-workflow.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-bmb-create-module.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-bmm-edit-prd.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-bmm-sprint-planning.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-bmb-validate-agent.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-bmm-market-research.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-bmm-create-story.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-bmm-generate-project-context.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-agent-gds-tech-writer.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-bmm-create-epics-and-stories.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-agent-gds-game-solo-dev.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-bmb-create-agent.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-bmb-validate-module.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-gds-narrative.md
-/home/mike-anderson/dev/cohezion/.claude/commands/test-fix.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-tea-testarch-atdd.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-cis-storytelling.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-editorial-review-structure.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-tea-testarch-automate.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-gds-quick-dev.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-cis-innovation-strategy.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-shard-doc.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-gds-gdd.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-gds-gametest-framework.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-tea-testarch-test-design.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-index-docs.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-gds-gametest-playtest-plan.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-editorial-review-prose.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-gds-brainstorm-game.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-tea-testarch-test-review.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-cis-problem-solving.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-gds-retrospective.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-gds-create-gdd.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-tea-teach-me-testing.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-gds-correct-course.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-tea-testarch-trace.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-gds-sprint-status.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-party-mode.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-gds-gametest-automate.md
-/home/mike-anderson/dev/cohezion/.claude/commands/bmad-review-adversarial-general.md
+/home/<USER>/dev/cohezion/.claude/commands/audit.md
+/home/<USER>/dev/cohezion/.claude/commands/heal.md
+/home/<USER>/dev/cohezion/.claude/commands/deploy.md
+/home/<USER>/dev/cohezion/.claude/commands/security-review.md
+/home/<USER>/dev/cohezion/.claude/commands/new-agent.md
+/home/<USER>/dev/cohezion/.claude/commands/wake.md
+/home/<USER>/dev/cohezion/.claude/commands/fix-packages.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-agent-bmm-architect.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-agent-bmad-master.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-agent-cis-storyteller.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-agent-bmm-qa.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-agent-cis-design-thinking-coach.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-agent-bmb-workflow-builder.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-agent-bmm-quick-flow-solo-dev.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-agent-bmm-dev.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-agent-bmm-sm.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-agent-bmm-analyst.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-agent-bmm-tech-writer.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-agent-cis-brainstorming-coach.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-agent-cis-creative-problem-solver.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-agent-bmb-agent-builder.md
+/home/<USER>/dev/cohezion/.claude/commands/bash-report.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-agent-gds-game-architect.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-agent-bmb-module-builder.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-agent-cis-innovation-strategist.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-agent-cis-presentation-master.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-agent-bmm-ux-designer.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-agent-bmm-pm.md
+/home/<USER>/dev/cohezion/.claude/commands/async-audit.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-agent-gds-game-dev.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-bmb-edit-agent.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-agent-gds-game-scrum-master.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-bmm-correct-course.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-bmm-create-architecture.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-bmb-validate-max-parallel-workflow.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-bmb-validate-workflow.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-bmm-create-product-brief.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-bmm-check-implementation-readiness.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-bmm-validate-prd.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-bmb-create-workflow.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-bmm-create-ux-design.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-bmm-qa-generate-e2e-tests.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-bmm-code-review.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-agent-gds-game-qa.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-bmm-document-project.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-bmb-edit-module.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-bmm-quick-spec.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-bmm-quick-dev.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-bmb-rework-workflow.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-agent-gds-game-designer.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-bmm-dev-story.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-agent-tea-tea.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-cis-design-thinking.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-bmm-retrospective.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-bmm-sprint-status.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-bmb-create-module-brief.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-brainstorming.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-bmm-technical-research.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-bmm-create-prd.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-bmm-domain-research.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-bmb-edit-workflow.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-bmb-create-module.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-bmm-edit-prd.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-bmm-sprint-planning.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-bmb-validate-agent.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-bmm-market-research.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-bmm-create-story.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-bmm-generate-project-context.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-agent-gds-tech-writer.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-bmm-create-epics-and-stories.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-agent-gds-game-solo-dev.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-bmb-create-agent.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-bmb-validate-module.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-gds-narrative.md
+/home/<USER>/dev/cohezion/.claude/commands/test-fix.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-tea-testarch-atdd.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-cis-storytelling.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-editorial-review-structure.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-tea-testarch-automate.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-gds-quick-dev.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-cis-innovation-strategy.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-shard-doc.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-gds-gdd.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-gds-gametest-framework.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-tea-testarch-test-design.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-index-docs.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-gds-gametest-playtest-plan.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-editorial-review-prose.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-gds-brainstorm-game.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-tea-testarch-test-review.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-cis-problem-solving.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-gds-retrospective.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-gds-create-gdd.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-tea-teach-me-testing.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-gds-correct-course.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-tea-testarch-trace.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-gds-sprint-status.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-party-mode.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-gds-gametest-automate.md
+/home/<USER>/dev/cohezion/.claude/commands/bmad-review-adversarial-general.md
 (Results are truncated. Consider using a more specific path or pattern.)
 ```
 
@@ -436,16 +436,16 @@ id: functions.Glob:7
 tool_result
 id: functions.Bash:8
 ```
-/home/mike-anderson/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/.agent/workflows/wake.md
-/home/mike-anderson/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/scripts/wake_up.py
-/home/mike-anderson/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/.claude/commands/wake.md
-/home/mike-anderson/dev/cohezion/.worktrees/gemini-mcp-fix/.claude/commands/wake.md
-/home/mike-anderson/dev/cohezion/.worktrees/gemini-mcp-fix/scripts/wake_up.py
-/home/mike-anderson/dev/cohezion/.worktrees/gemini-mcp-fix/.agent/workflows/wake.md
-/home/mike-anderson/dev/cohezion/.worktrees/spec-genesis-engine-395e48851/.agent/workflows/wake.md
-/home/mike-anderson/dev/cohezion/.worktrees/spec-genesis-engine-395e48851/src/web/anima_dashboard/node_modules/caniuse-lite/data/features/wake-lock.js
-/home/mike-anderson/dev/cohezion/.worktrees/spec-genesis-engine-395e48851/.claude/commands/wake.md
-/home/mike-anderson/dev/cohezion/.worktrees/spec-genesis-engine-395e48851/scripts/wake_up.py
+/home/<USER>/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/.agent/workflows/wake.md
+/home/<USER>/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/scripts/wake_up.py
+/home/<USER>/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/.claude/commands/wake.md
+/home/<USER>/dev/cohezion/.worktrees/gemini-mcp-fix/.claude/commands/wake.md
+/home/<USER>/dev/cohezion/.worktrees/gemini-mcp-fix/scripts/wake_up.py
+/home/<USER>/dev/cohezion/.worktrees/gemini-mcp-fix/.agent/workflows/wake.md
+/home/<USER>/dev/cohezion/.worktrees/spec-genesis-engine-395e48851/.agent/workflows/wake.md
+/home/<USER>/dev/cohezion/.worktrees/spec-genesis-engine-395e48851/src/web/anima_dashboard/node_modules/caniuse-lite/data/features/wake-lock.js
+/home/<USER>/dev/cohezion/.worktrees/spec-genesis-engine-395e48851/.claude/commands/wake.md
+/home/<USER>/dev/cohezion/.worktrees/spec-genesis-engine-395e48851/scripts/wake_up.py
 ```
 
 > TOOL
@@ -454,7 +454,7 @@ tool_use Read
 id: functions.Read:9
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/.claude/commands/wake.md"
+  "file_path": "/home/<USER>/dev/cohezion/.claude/commands/wake.md"
 }
 ```
 
@@ -464,7 +464,7 @@ tool_use Read
 id: functions.Read:10
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/scripts/wake_up.py"
+  "file_path": "/home/<USER>/dev/cohezion/scripts/wake_up.py"
 }
 ```
 
@@ -544,7 +544,7 @@ id: functions.Grep:11
 {
   "-n": true,
   "pattern": "8360",
-  "path": "/home/mike-anderson/dev/cohezion",
+  "path": "/home/<USER>/dev/cohezion",
   "output_mode": "content"
 }
 ```
@@ -555,7 +555,7 @@ tool_result
 id: functions.Grep:11
 ```
 <persisted-output>
-Output too large (82.2KB). Full output saved to: /home/mike-anderson/.claude/projects/-home-mike-anderson-dev-cohezion/e8e77c46-efa0-44e6-b448-f034e0eb0c3c/tool-results/functions.Grep:11.txt
+Output too large (82.2KB). Full output saved to: /home/<USER>/.claude/projects/-home-mike-anderson-dev-cohezion/e8e77c46-efa0-44e6-b448-f034e0eb0c3c/tool-results/functions.Grep:11.txt
 
 Preview (first 2KB):
 docs/HTTPS_SETUP_GUIDE.md:56:The server will now run on `https://localhost:8360`
@@ -600,11 +600,11 @@ id: functions.Glob:12
 tool_result
 id: functions.Glob:12
 ```
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/scripts/setup-cloud-access.sh
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/scripts/rotate-token.sh
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/scripts/verify-tunnel.sh
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/setup.sh
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/tqdm/completion.sh
+/home/<USER>/dev/cohezion/cloud-vault-mcp/scripts/setup-cloud-access.sh
+/home/<USER>/dev/cohezion/cloud-vault-mcp/scripts/rotate-token.sh
+/home/<USER>/dev/cohezion/cloud-vault-mcp/scripts/verify-tunnel.sh
+/home/<USER>/dev/cohezion/cloud-vault-mcp/setup.sh
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/tqdm/completion.sh
 ```
 
 > TOOL
@@ -622,106 +622,106 @@ id: functions.Glob:13
 tool_result
 id: functions.Glob:13
 ```
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/benchmarks/benchmark_vault_backlinks.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/benchmarks/benchmark_vault_search_cache.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/benchmarks/benchmark_sheets_api.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/benchmarks/benchmark_ollama_inference.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/src/mcp_server/__init__.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/tests/test_sse_stream.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/tests/test_teleport.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/tests/__init__.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/_virtualenv.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/bin/activate_this.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/sentencepiece/__init__.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/sentencepiece/sentencepiece_pb2.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/sentencepiece/sentencepiece_model_pb2.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/sentencepiece/_version.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/typing_inspection/typing_objects.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/typing_inspection/introspection.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/typing_inspection/__init__.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/_internal/module_utils.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/_internal/__init__.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/_extension/__init__.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/_extension/utils.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/utils/download.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/utils/__init__.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/transforms/_multi_channel.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/transforms/_transforms.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/transforms/__init__.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/version.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/pipelines/_wav2vec2/__init__.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/pipelines/_wav2vec2/utils.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/pipelines/_wav2vec2/impl.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/pipelines/_wav2vec2/aligner.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/pipelines/__init__.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/pipelines/_squim_pipeline.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/lib/__init__.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/dotenv/main.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/dotenv/variables.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/dotenv/parser.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/dotenv/__main__.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/dotenv/ipython.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/dotenv/cli.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/dotenv/__init__.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/pipelines/_tts/__init__.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/pipelines/_tts/interface.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/pipelines/_tts/utils.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/pipelines/_tts/impl.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/pipelines/rnnt_pipeline.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/pipelines/_source_separation_pipeline.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/speechcommands.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/cmudict.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/cmuarctic.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/musdb_hq.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/yesno.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/iemocap.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/librispeech.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/librispeech_biasing.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/snips.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/__init__.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/libritts.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/quesst14.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/utils.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/voxceleb1.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/fluentcommands.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/dotenv/version.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/compliance/kaldi.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/compliance/__init__.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/librilight_limited.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/vctk.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/librimix.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/ljspeech.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/dr_vctk.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/gtzan.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/tedlium.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/commonvoice.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/models/rnnt_decoder.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/models/decoder/_cuda_ctc_decoder.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/models/decoder/__init__.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/models/__init__.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/models/conformer.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/models/deepspeech.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/requests/__version__.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/requests/models.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/requests/api.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/requests/certs.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/requests/auth.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/requests/structures.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/requests/utils.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/requests/hooks.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/requests/__init__.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/requests/sessions.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/requests/_internal_utils.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/__init__.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/_torchcodec.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/functional/functional.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/functional/_alignment.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/functional/filtering.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/functional/__init__.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/models/decoder/_ctc_decoder.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/models/conv_tasnet.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/models/wavernn.py
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/models/wav2letter.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/benchmarks/benchmark_vault_backlinks.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/benchmarks/benchmark_vault_search_cache.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/benchmarks/benchmark_sheets_api.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/benchmarks/benchmark_ollama_inference.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/src/mcp_server/__init__.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/tests/test_sse_stream.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/tests/test_teleport.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/tests/__init__.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/_virtualenv.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/bin/activate_this.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/sentencepiece/__init__.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/sentencepiece/sentencepiece_pb2.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/sentencepiece/sentencepiece_model_pb2.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/sentencepiece/_version.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/typing_inspection/typing_objects.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/typing_inspection/introspection.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/typing_inspection/__init__.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/_internal/module_utils.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/_internal/__init__.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/_extension/__init__.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/_extension/utils.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/utils/download.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/utils/__init__.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/transforms/_multi_channel.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/transforms/_transforms.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/transforms/__init__.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/version.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/pipelines/_wav2vec2/__init__.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/pipelines/_wav2vec2/utils.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/pipelines/_wav2vec2/impl.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/pipelines/_wav2vec2/aligner.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/pipelines/__init__.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/pipelines/_squim_pipeline.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/lib/__init__.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/dotenv/main.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/dotenv/variables.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/dotenv/parser.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/dotenv/__main__.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/dotenv/ipython.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/dotenv/cli.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/dotenv/__init__.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/pipelines/_tts/__init__.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/pipelines/_tts/interface.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/pipelines/_tts/utils.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/pipelines/_tts/impl.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/pipelines/rnnt_pipeline.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/pipelines/_source_separation_pipeline.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/speechcommands.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/cmudict.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/cmuarctic.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/musdb_hq.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/yesno.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/iemocap.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/librispeech.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/librispeech_biasing.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/snips.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/__init__.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/libritts.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/quesst14.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/utils.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/voxceleb1.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/fluentcommands.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/dotenv/version.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/compliance/kaldi.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/compliance/__init__.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/librilight_limited.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/vctk.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/librimix.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/ljspeech.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/dr_vctk.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/gtzan.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/tedlium.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/datasets/commonvoice.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/models/rnnt_decoder.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/models/decoder/_cuda_ctc_decoder.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/models/decoder/__init__.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/models/__init__.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/models/conformer.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/models/deepspeech.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/requests/__version__.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/requests/models.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/requests/api.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/requests/certs.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/requests/auth.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/requests/structures.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/requests/utils.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/requests/hooks.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/requests/__init__.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/requests/sessions.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/requests/_internal_utils.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/__init__.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/_torchcodec.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/functional/functional.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/functional/_alignment.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/functional/filtering.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/functional/__init__.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/models/decoder/_ctc_decoder.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/models/conv_tasnet.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/models/wavernn.py
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.13/site-packages/torchaudio/models/wav2letter.py
 (Results are truncated. Consider using a more specific path or pattern.)
 ```
 
@@ -733,7 +733,7 @@ id: functions.Grep:14
 {
   "-n": true,
   "pattern": "server_manager|init_default_servers",
-  "path": "/home/mike-anderson/dev/cohezion/src",
+  "path": "/home/<USER>/dev/cohezion/src",
   "output_mode": "files_with_matches"
 }
 ```
@@ -759,7 +759,7 @@ tool_use Read
 id: functions.Read:15
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/mcp/manager/defaults.py"
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/mcp/manager/defaults.py"
 }
 ```
 

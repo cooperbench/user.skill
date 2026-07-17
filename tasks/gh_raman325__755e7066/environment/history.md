@@ -72,7 +72,7 @@ tool_use Bash
 id: toolu_01F5wqq2BVfgEEWR76UJSB48
 ```json
 {
-  "command": "cd /Users/raman/projects/home-assistant && git fetch upstream 2>&1 | tail -2 && git log upstream/dev --oneline -1",
+  "command": "cd /home/<USER>/projects/home-assistant && git fetch upstream 2>&1 | tail -2 && git log upstream/dev --oneline -1",
   "description": "Fetch HA core upstream and show latest commit"
 }
 ```
@@ -83,7 +83,7 @@ tool_use Bash
 id: toolu_01RTubupBkjmeHbJjKaUxJ2e
 ```json
 {
-  "command": "cd /Users/raman/projects/zwave-js-server-python && git fetch upstream 2>&1 | tail -2 && git log upstream/main --oneline -1",
+  "command": "cd /home/<USER>/projects/zwave-js-server-python && git fetch upstream 2>&1 | tail -2 && git log upstream/main --oneline -1",
   "description": "Fetch zwave-js-server-python upstream and show latest commit"
 }
 ```
@@ -94,7 +94,7 @@ tool_use Bash
 id: toolu_01QTshtAY6DY6LSykwghfesN
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && git fetch upstream 2>&1 | tail -2 && git log upstream/master --oneline -1",
+  "command": "cd /home/<USER>/projects/node-zwave-js && git fetch upstream 2>&1 | tail -2 && git log upstream/master --oneline -1",
   "description": "Fetch node-zwave-js upstream and show latest commit"
 }
 ```
@@ -185,7 +185,7 @@ id: toolu_01F5wqq2BVfgEEWR76UJSB48
  + c00921b9b10...65fd4005a5a yoto_sensors         -> upstream/yoto_sensors  (forced update)
  * [new tag]                 2026.6.2             -> 2026.6.2
 2e8e5c63e86 Fix Hue light level sensor crash on None value (#173532)
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -196,7 +196,7 @@ id: toolu_01RTubupBkjmeHbJjKaUxJ2e
  * [new tag]         0.71.0     -> 0.71.0
  * [new tag]         0.72.0     -> 0.72.0
 d3caf60 Bump codecov/codecov-action from 6.0.1 to 7.0.0 (#1448)
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -205,7 +205,7 @@ tool_result
 id: toolu_01QTshtAY6DY6LSykwghfesN
 ```
 007da492f fix: discard `NodeNamingAndLocationCC` reports with overlong payload (#8865)
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > AGENT
@@ -370,7 +370,7 @@ tool_use Bash
 id: toolu_01JUWuPNmQ1XDhqBUjumiq9h
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && git show upstream/master:packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts > /tmp/AccessControl.ts && wc -l /tmp/AccessControl.ts && grep -n \"usesUserCredentialCC\\|getCredentialCapabilitiesCached\\|ucCredentialType\\|supportedUsers\\|FIXME\" /tmp/AccessControl.ts",
+  "command": "cd /home/<USER>/projects/node-zwave-js && git show upstream/master:packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts > /tmp/AccessControl.ts && wc -l /tmp/AccessControl.ts && grep -n \"usesUserCredentialCC\\|getCredentialCapabilitiesCached\\|ucCredentialType\\|supportedUsers\\|FIXME\" /tmp/AccessControl.ts",
   "description": "Extract upstream AccessControl.ts and locate key symbols"
 }
 ```
@@ -434,7 +434,7 @@ tool_use Bash
 id: toolu_019jpmnXiP4tMYXrVnC6ui3g
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && git grep -l '\"User Credential\"' upstream/master -- packages/config/config/devices/ 2>/dev/null",
+  "command": "cd /home/<USER>/projects/node-zwave-js && git grep -l '\"User Credential\"' upstream/master -- packages/config/config/devices/ 2>/dev/null",
   "description": "Find device configs declaring User Credential CC"
 }
 ```
@@ -445,7 +445,7 @@ tool_use Bash
 id: toolu_01UZkFUsp9mWZTMbZxkqXmf6
 ```json
 {
-  "command": "cd /Users/raman/projects/home-assistant && git show upstream/dev:homeassistant/components/zwave_js/lock_helpers.py > /tmp/lock_helpers.py && wc -l /tmp/lock_helpers.py",
+  "command": "cd /home/<USER>/projects/home-assistant && git show upstream/dev:homeassistant/components/zwave_js/lock_helpers.py > /tmp/lock_helpers.py && wc -l /tmp/lock_helpers.py",
   "description": "Extract upstream lock_helpers.py"
 }
 ```
@@ -456,7 +456,7 @@ tool_result
 id: toolu_01UZkFUsp9mWZTMbZxkqXmf6
 ```
      522 /tmp/lock_helpers.py
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -473,7 +473,7 @@ tool_use Bash
 id: toolu_01Kb4Gb4ZiXSA3rA3HiGo7j6
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && git grep -l \"addCCs\\|removeCCs\" upstream/master -- packages/config/config/devices/ | head -20; echo \"---0x83/131 search---\"; git grep -ln '\"0x83\"\\|User Credential' upstream/master -- packages/config/config/devices/ | head",
+  "command": "cd /home/<USER>/projects/node-zwave-js && git grep -l \"addCCs\\|removeCCs\" upstream/master -- packages/config/config/devices/ | head -20; echo \"---0x83/131 search---\"; git grep -ln '\"0x83\"\\|User Credential' upstream/master -- packages/config/config/devices/ | head",
   "description": "Search device configs for CC declarations"
 }
 ```
@@ -506,7 +506,7 @@ tool_result
 id: toolu_01Kb4Gb4ZiXSA3rA3HiGo7j6
 ```
 ---0x83/131 search---
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -704,7 +704,7 @@ tool_use Bash
 id: toolu_015qFNdYs2sBSNykZA1QeB9i
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && git log upstream/master --oneline --follow -- packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts | head -40",
+  "command": "cd /home/<USER>/projects/node-zwave-js && git log upstream/master --oneline --follow -- packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts | head -40",
   "description": "History of AccessControl.ts"
 }
 ```
@@ -722,7 +722,7 @@ cca17b9a3 fix: separate U3C users from credential slots, improve error handling 
 604d368a7 refactor: make `endpoint.accessControl` `undefined` if unsupported (#8752)
 da5ba2f29 refactor: move credential API behind the `accessControl` namespace (#8750)
 7bbb8b4f8 feat: add unified API to manage users and credentials (#8738)
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -731,7 +731,7 @@ tool_use Bash
 id: toolu_01DNxN4rk39MT2qMyjuoTL21
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && git log upstream/master -S 'usesUserCredentialCC' --oneline -- packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts | tail -5; echo ---; git log upstream/master -S 'This is not implemented yet, so checking for U3C first is fine for now' --oneline | tail -3",
+  "command": "cd /home/<USER>/projects/node-zwave-js && git log upstream/master -S 'usesUserCredentialCC' --oneline -- packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts | tail -5; echo ---; git log upstream/master -S 'This is not implemented yet, so checking for U3C first is fine for now' --oneline | tail -3",
   "description": "Find commits introducing the dispatch and FIXME"
 }
 ```
@@ -748,7 +748,7 @@ cca17b9a3 fix: separate U3C users from credential slots, improve error handling 
 da5ba2f29 refactor: move credential API behind the `accessControl` namespace (#8750)
 ---
 7bbb8b4f8 feat: add unified API to manage users and credentials (#8738)
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -757,7 +757,7 @@ tool_use Bash
 id: toolu_01PUPLFug5XYHMCEZpuS4bDe
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && for c in 7bbb8b4f8 da5ba2f29 604d368a7 cca17b9a3 c97bdb7aa acc14813d b4beb5bc3 ebec1eea8; do echo \"$c -> $(git tag --contains $c | head -1)\"; done; echo \"--- latest tag:\"; git tag --sort=-v:refname | head -3",
+  "command": "cd /home/<USER>/projects/node-zwave-js && for c in 7bbb8b4f8 da5ba2f29 604d368a7 cca17b9a3 c97bdb7aa acc14813d b4beb5bc3 ebec1eea8; do echo \"$c -> $(git tag --contains $c | head -1)\"; done; echo \"--- latest tag:\"; git tag --sort=-v:refname | head -3",
   "description": "Map AccessControl.ts commits to release tags"
 }
 ```
@@ -779,7 +779,7 @@ ebec1eea8 -> v15.24.1
 v15.24.2
 v15.24.1
 v15.24.0
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -788,7 +788,7 @@ tool_use Bash
 id: toolu_01HUistLBQc1PeJc7cnADWFc
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && git show 7bbb8b4f8:packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts 2>/dev/null > /tmp/AccessControl_orig.ts || git show 7bbb8b4f8:packages/zwave-js/src/lib/node/AccessControl.ts > /tmp/AccessControl_orig.ts 2>/dev/null; ls -la /tmp/AccessControl_orig.ts 2>/dev/null; git show 7bbb8b4f8 --stat | head -30",
+  "command": "cd /home/<USER>/projects/node-zwave-js && git show 7bbb8b4f8:packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts 2>/dev/null > /tmp/AccessControl_orig.ts || git show 7bbb8b4f8:packages/zwave-js/src/lib/node/AccessControl.ts > /tmp/AccessControl_orig.ts 2>/dev/null; ls -la /tmp/AccessControl_orig.ts 2>/dev/null; git show 7bbb8b4f8 --stat | head -30",
   "description": "Get original AccessControl implementation from first commit"
 }
 ```
@@ -800,7 +800,7 @@ id: toolu_01HUistLBQc1PeJc7cnADWFc
 ```
 -rw-r--r--@ 1 raman  wheel  0 Jun 11 22:43 /tmp/AccessControl_orig.ts
 commit 7bbb8b4f82f7836a49392f172eb4a1b83e4068da
-Author: AlCalzone <dominic.griesel@nabucasa.com>
+Author: AlCalzone <<REDACTED_EMAIL>>
 Date:   Thu Apr 9 15:31:31 2026 +0200
 
     feat: add unified API to manage users and credentials (#8738)
@@ -821,7 +821,7 @@ Date:   Thu Apr 9 15:31:31 2026 +0200
  .../lib/test/node/accessControl.UserCode.test.ts   |  837 ++++++++++++++
  .../test/node/accessControl.UserCredential.test.ts | 1030 +++++++++++++++++
  15 files changed, 3869 insertions(+), 675 deletions(-)
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -830,7 +830,7 @@ tool_use Bash
 id: toolu_01C4rg81NQX3VcrB3ntwhr9G
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && git show 7bbb8b4f8:packages/zwave-js/src/lib/node/endpoint-mixins/05_AccessControl.ts > /tmp/AC_15.23.0.ts && grep -n \"usesUserCredentialCC\\|getCredentialCapabilitiesCached\\|supportedUsers\\|numberOfCredentialSlots\" /tmp/AC_15.23.0.ts | head -30",
+  "command": "cd /home/<USER>/projects/node-zwave-js && git show 7bbb8b4f8:packages/zwave-js/src/lib/node/endpoint-mixins/05_AccessControl.ts > /tmp/AC_15.23.0.ts && grep -n \"usesUserCredentialCC\\|getCredentialCapabilitiesCached\\|supportedUsers\\|numberOfCredentialSlots\" /tmp/AC_15.23.0.ts | head -30",
   "description": "Inspect v15.23.0 original implementation"
 }
 ```
@@ -870,7 +870,7 @@ id: toolu_01C4rg81NQX3VcrB3ntwhr9G
 964:		if (!this._usesUserCredentialCC) {
 975:		if (this._usesUserCredentialCC) {
 988:		if (this._usesUserCredentialCC) {
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -879,7 +879,7 @@ tool_use Bash
 id: toolu_01MAKK5ntZAooZ6p73edveg7
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && git show cca17b9a3 --stat | head -20; echo \"==== diff of getCredentialCapabilitiesCached in 8756 ====\"; git show cca17b9a3 -- packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts packages/zwave-js/src/lib/node/endpoint-mixins/05_AccessControl.ts | grep -A 60 \"getCredentialCapabilitiesCached\" | head -100",
+  "command": "cd /home/<USER>/projects/node-zwave-js && git show cca17b9a3 --stat | head -20; echo \"==== diff of getCredentialCapabilitiesCached in 8756 ====\"; git show cca17b9a3 -- packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts packages/zwave-js/src/lib/node/endpoint-mixins/05_AccessControl.ts | grep -A 60 \"getCredentialCapabilitiesCached\" | head -100",
   "description": "Inspect PR 8756 changes to capabilities"
 }
 ```
@@ -890,7 +890,7 @@ tool_result
 id: toolu_01MAKK5ntZAooZ6p73edveg7
 ```
 commit cca17b9a3563204ff7c938e776c5d9e87da6cbc4
-Author: AlCalzone <dominic.griesel@openhomefoundation.org>
+Author: AlCalzone <<REDACTED_EMAIL>>
 Date:   Tue Apr 21 10:13:04 2026 +0200
 
     fix: separate U3C users from credential slots, improve error handling (#8756)
@@ -1014,7 +1014,7 @@ tool_use Bash
 id: toolu_01KHTVNjhqc43RYLTK7sBYrZ
 ```json
 {
-  "command": "cd /Users/raman/projects/zwave-js-server-python && git show upstream/main:zwave_js_server/model/access_control.py > /tmp/access_control_py.py 2>/dev/null && grep -n \"number_of_credential_slots\\|class.*Capabilit\\|def \\|numberOfCredentialSlots\" /tmp/access_control_py.py | head -40; echo \"=== const ===\"; git show upstream/main:zwave_js_server/const/command_class/access_control.py 2>/dev/null | head -5; echo \"=== min server version ===\"; git grep -n \"MIN_SERVER_VERSION\\|minSchemaVersion\\|SCHEMA\" upstream/main -- zwave_js_server/const/__init__.py | head",
+  "command": "cd /home/<USER>/projects/zwave-js-server-python && git show upstream/main:zwave_js_server/model/access_control.py > /tmp/access_control_py.py 2>/dev/null && grep -n \"number_of_credential_slots\\|class.*Capabilit\\|def \\|numberOfCredentialSlots\" /tmp/access_control_py.py | head -40; echo \"=== const ===\"; git show upstream/main:zwave_js_server/const/command_class/access_control.py 2>/dev/null | head -5; echo \"=== min server version ===\"; git grep -n \"MIN_SERVER_VERSION\\|minSchemaVersion\\|SCHEMA\" upstream/main -- zwave_js_server/const/__init__.py | head",
   "description": "Inspect python client access_control model"
 }
 ```
@@ -1070,7 +1070,7 @@ tool_use Bash
 id: toolu_011H2SZyuikuEHLiHiaVSimz
 ```json
 {
-  "command": "cd /Users/raman/projects/home-assistant && git show upstream/dev:homeassistant/components/zwave_js/manifest.json | grep -A3 requirements; git show upstream/dev:homeassistant/components/zwave_js/const.py | grep -n \"DRIVER_VERSION\\|SERVER_VERSION\\|MIN_\" | head",
+  "command": "cd /home/<USER>/projects/home-assistant && git show upstream/dev:homeassistant/components/zwave_js/manifest.json | grep -A3 requirements; git show upstream/dev:homeassistant/components/zwave_js/const.py | grep -n \"DRIVER_VERSION\\|SERVER_VERSION\\|MIN_\" | head",
   "description": "Check HA zwave_js requirements and min server version"
 }
 ```
@@ -1084,7 +1084,7 @@ id: toolu_011H2SZyuikuEHLiHiaVSimz
   "usb": [
     {
       "known_devices": ["Aeotec Z-Stick Gen5+", "Z-WaveMe UZB"],
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -1385,7 +1385,7 @@ tool_use Bash
 id: toolu_01X9MRJUetbwEPWGF8USn3ry
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && git grep -c '\"compat\"' upstream/master -- 'packages/config/config/devices/*/[a-c]*.json' 2>/dev/null | head -3; echo \"=== addCCs anywhere ===\"; git grep -l 'addCCs' upstream/master 2>/dev/null | head -5; echo \"=== User Credential in config dir ===\"; git grep -il 'credential' upstream/master -- packages/config/config/devices/ 2>/dev/null | head -10",
+  "command": "cd /home/<USER>/projects/node-zwave-js && git grep -c '\"compat\"' upstream/master -- 'packages/config/config/devices/*/[a-c]*.json' 2>/dev/null | head -3; echo \"=== addCCs anywhere ===\"; git grep -l 'addCCs' upstream/master 2>/dev/null | head -5; echo \"=== User Credential in config dir ===\"; git grep -il 'credential' upstream/master -- packages/config/config/devices/ 2>/dev/null | head -10",
   "description": "Sanity-check config DB grep approach"
 }
 ```
@@ -1407,7 +1407,7 @@ upstream/master:packages/zwave-js/src/lib/node/Node.ts
 === User Credential in config dir ===
 upstream/master:packages/config/config/devices/0x0189/117001.json
 upstream/master:packages/config/config/devices/0x027e/g-240wz.json
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -1416,7 +1416,7 @@ tool_use Bash
 id: toolu_019kFMKsamjjsYBtSRUnjdZC
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && git show cca17b9a3 -- packages/cc/src/cc/_CCValues.generated.ts | grep -B3 -A25 \"credentialCapabilities\" | head -80",
+  "command": "cd /home/<USER>/projects/node-zwave-js && git show cca17b9a3 -- packages/cc/src/cc/_CCValues.generated.ts | grep -B3 -A25 \"credentialCapabilities\" | head -80",
   "description": "Check if 8756 changed credentialCapabilities value structure"
 }
 ```
@@ -1426,7 +1426,7 @@ id: toolu_019kFMKsamjjsYBtSRUnjdZC
 tool_result
 id: toolu_019kFMKsamjjsYBtSRUnjdZC
 ```
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -1435,7 +1435,7 @@ tool_use Bash
 id: toolu_01XvoEqKYLgG93h9a2rXT59D
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && git log --oneline -S '\"supportedUsers\"' upstream/master -- packages/cc/src/cc/UserCodeCC.ts | tail -5; git log upstream/master --oneline --diff-filter=A -- packages/cc/src/cc/UserCodeCC.ts | tail -2",
+  "command": "cd /home/<USER>/projects/node-zwave-js && git log --oneline -S '\"supportedUsers\"' upstream/master -- packages/cc/src/cc/UserCodeCC.ts | tail -5; git log upstream/master --oneline --diff-filter=A -- packages/cc/src/cc/UserCodeCC.ts | tail -2",
   "description": "History of UserCodeCC supportedUsers value"
 }
 ```
@@ -1448,7 +1448,7 @@ id: toolu_01XvoEqKYLgG93h9a2rXT59D
 20788b760 refactor: migrate legacy decorators to ES decorators (#7360)
 588555bc9 refactor: move CC implementations into separate package (#4668)
 588555bc9 refactor: move CC implementations into separate package (#4668)
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -1457,7 +1457,7 @@ tool_use Bash
 id: toolu_012qsJ6pTgQUDMzRCAco5A3N
 ```json
 {
-  "command": "cd /Users/raman/projects/home-assistant && git log upstream/dev --oneline --follow -- homeassistant/components/zwave_js/lock_helpers.py | head; echo ====; cd /Users/raman/projects/zwave-js-server-python && git show upstream/main:zwave_js_server/model/access_control.py | sed -n '590,680p'",
+  "command": "cd /home/<USER>/projects/home-assistant && git log upstream/dev --oneline --follow -- homeassistant/components/zwave_js/lock_helpers.py | head; echo ====; cd /home/<USER>/projects/zwave-js-server-python && git show upstream/main:zwave_js_server/model/access_control.py | sed -n '590,680p'",
   "description": "HA lock_helpers history and python client RPC confirmation"
 }
 ```
@@ -1815,7 +1815,7 @@ tool_use Bash
 id: toolu_01CWLgzZ1TwDEG5rFm4i4j9Y
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && git show upstream/master:packages/cc/src/cc/UserCredentialCC.ts | grep -n -i \"backwards\\|backward\\|User Code\" | head -10; echo ===docs===; git grep -in \"must also support\\|backwards compat\" upstream/master -- docs/ packages/cc/src/cc/UserCredentialCC.ts | head -5",
+  "command": "cd /home/<USER>/projects/node-zwave-js && git show upstream/master:packages/cc/src/cc/UserCredentialCC.ts | grep -n -i \"backwards\\|backward\\|User Code\" | head -10; echo ===docs===; git grep -in \"must also support\\|backwards compat\" upstream/master -- docs/ packages/cc/src/cc/UserCredentialCC.ts | head -5",
   "description": "Check spec notes on U3C / User Code coexistence"
 }
 ```
@@ -1842,7 +1842,7 @@ upstream/master:docs/api/valueid.md:110:- `allowed`: Defines the allowed values 
 upstream/master:docs/config-files/file-format.md:347:#### Backwards Compatibility
 upstream/master:docs/config-files/file-format.md:349:For backwards compatibility with applications that don't support `allowed`, Z-Wave JS automatically computes `minValue` and `maxValue` from the set of allowed values. Applications can use this envelope for basic validation, while applications that support `allowed` can perform more precise validation.
 upstream/master:docs/getting-started/migrating/v14.md:18:In input positions where Z-Wave JS previously accepted `Buffer`s, this change is backwards compatible, as `Buffer` is a subclass of `Uint8Array`. Applications can simply continue passing `Buffer` instances to Z-Wave JS.
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -1925,7 +1925,7 @@ tool_use Bash
 id: toolu_01LCHvERTEG3QTc49YWSe2pZ
 ```json
 {
-  "command": "cd /Users/raman/projects/zwave-js-server-python && git show 0.72.0:zwave_js_server/const.py 2>/dev/null | grep -n \"SCHEMA\" | head -5; git show 0.72.0:zwave_js_server/const/__init__.py 2>/dev/null | grep -n \"SCHEMA\" | head -5",
+  "command": "cd /home/<USER>/projects/zwave-js-server-python && git show 0.72.0:zwave_js_server/const.py 2>/dev/null | grep -n \"SCHEMA\" | head -5; git show 0.72.0:zwave_js_server/const/__init__.py 2>/dev/null | grep -n \"SCHEMA\" | head -5",
   "description": "Check schema versions in pinned client 0.72.0"
 }
 ```
@@ -1937,7 +1937,7 @@ id: toolu_01LCHvERTEG3QTc49YWSe2pZ
 ```
 14:MIN_SERVER_SCHEMA_VERSION = 49
 16:MAX_SERVER_SCHEMA_VERSION = 49
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -1946,7 +1946,7 @@ tool_use Bash
 id: toolu_01NG86KTw3ocDvaoVRJBaavE
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && git show v15.24.2:packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts | grep -n \"assertValidSlot\\|numberOfCredentialSlots: maxUsers\" | head; echo ====; git show v15.24.2:packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts | grep -c \"assertValidSlot\"",
+  "command": "cd /home/<USER>/projects/node-zwave-js && git show v15.24.2:packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts | grep -n \"assertValidSlot\\|numberOfCredentialSlots: maxUsers\" | head; echo ====; git show v15.24.2:packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts | grep -c \"assertValidSlot\"",
   "description": "Confirm assert and UC semantics in v15.24.2"
 }
 ```
@@ -1968,7 +1968,7 @@ id: toolu_01NG86KTw3ocDvaoVRJBaavE
 1360:		this.#assertValidSlot(type, slot);
 ====
 10
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -1977,7 +1977,7 @@ tool_use Bash
 id: toolu_01Hv9X2aLjCZuUmZEXHbpZpV
 ```json
 {
-  "command": "gh api -X GET search/issues -f q='repo:home-assistant/core \"between 1 and 0\"' -q '.items[] | \"\\(.number) \\(.title) [\\(.state)] \\(.html_url)\"' 2>&1 | head; echo ====; cd /Users/raman/projects/node-zwave-js && for f in 0x0189/117001.json 0x027e/g-240wz.json; do echo \"== $f\"; git show upstream/master:packages/config/config/devices/$f | grep -i -B2 -A2 credential | head -8; done",
+  "command": "gh api -X GET search/issues -f q='repo:home-assistant/core \"between 1 and 0\"' -q '.items[] | \"\\(.number) \\(.title) [\\(.state)] \\(.html_url)\"' 2>&1 | head; echo ====; cd /home/<USER>/projects/node-zwave-js && for f in 0x0189/117001.json 0x027e/g-240wz.json; do echo \"== $f\"; git show upstream/master:packages/config/config/devices/$f | grep -i -B2 -A2 credential | head -8; done",
   "description": "HA core issue search and config file inspection"
 }
 ```
@@ -2018,7 +2018,7 @@ tool_use Bash
 id: toolu_01FLCm3eCFm2HHrdMGyDuvjm
 ```json
 {
-  "command": "cd /Users/raman/projects/home-assistant && git show upstream/dev:homeassistant/components/zwave_js/services.yaml | grep -B2 -A8 \"invoke_cc_api\"; git grep -n \"SERVICE_INVOKE_CC_API\" upstream/dev -- homeassistant/components/zwave_js/services.py | head -3; git show upstream/dev:homeassistant/components/zwave_js/services.py | grep -n \"supports_response\\|SupportsResponse\" | head",
+  "command": "cd /home/<USER>/projects/home-assistant && git show upstream/dev:homeassistant/components/zwave_js/services.yaml | grep -B2 -A8 \"invoke_cc_api\"; git grep -n \"SERVICE_INVOKE_CC_API\" upstream/dev -- homeassistant/components/zwave_js/services.py | head -3; git show upstream/dev:homeassistant/components/zwave_js/services.py | grep -n \"supports_response\\|SupportsResponse\" | head",
   "description": "Check invoke_cc_api response support"
 }
 ```
@@ -2060,7 +2060,7 @@ upstream/dev:homeassistant/components/zwave_js/services.py:547:            const
 135:        supports_response=SupportsResponse.ONLY,
 152:        supports_response=SupportsResponse.ONLY,
 603:            supports_response=SupportsResponse.ONLY,
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -2069,7 +2069,7 @@ tool_use Bash
 id: toolu_01BYL9VeSsbFjMLT7vKekuh7
 ```json
 {
-  "command": "cd /Users/raman/projects/home-assistant && git show upstream/dev:homeassistant/components/zwave_js/services.py | sed -n '540,610p'",
+  "command": "cd /home/<USER>/projects/home-assistant && git show upstream/dev:homeassistant/components/zwave_js/services.py | sed -n '540,610p'",
   "description": "Check invoke_cc_api registration"
 }
 ```
@@ -2150,7 +2150,7 @@ id: toolu_01BYL9VeSsbFjMLT7vKekuh7
             const.DOMAIN,
             const.SERVICE_SET_LOCK_USERCODE,
             entity_domain=LOCK_DOMAIN,
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -2159,7 +2159,7 @@ tool_use Bash
 id: toolu_01V8FJnLN43VyXuhCCCEDtjT
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && git show upstream/master:packages/cc/src/cc/UserCodeCC.ts > /tmp/UserCodeCC.ts && grep -n \"getUsersCount\\|UsersNumberReport\\|supportedUsers\" /tmp/UserCodeCC.ts | head -20",
+  "command": "cd /home/<USER>/projects/node-zwave-js && git show upstream/master:packages/cc/src/cc/UserCodeCC.ts > /tmp/UserCodeCC.ts && grep -n \"getUsersCount\\|UsersNumberReport\\|supportedUsers\" /tmp/UserCodeCC.ts | head -20",
   "description": "Confirm getUsersCount API and supportedUsers persistence"
 }
 ```
@@ -2189,7 +2189,7 @@ id: toolu_01V8FJnLN43VyXuhCCCEDtjT
 1640:export class UserCodeCCUsersNumberReport extends UserCodeCC {
 1642:		options: WithAddress<UserCodeCCUsersNumberReportOptions>,
 1646:		this.supportedUsers = options.supportedUsers;
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -2351,7 +2351,7 @@ tool_use Write
 id: toolu_0189fDmwv3rRogiiNNktDur5
 ```json
 {
-  "file_path": "/Users/raman/.claude/projects/-Users-raman-projects-lock-code-manager/memory/project_zwave_uc_zero_slots_root_cause.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-raman-projects-lock-code-manager/memory/project_zwave_uc_zero_slots_root_cause.md",
   "content": "---\nname: project-zwave-uc-zero-slots-root-cause\ndescription: Issue #1251 \"between 1 and 0\" — caps=0 originates in the driver; PR #1252's direct access_control bypass does NOT fix writes because the driver's #assertValidSlot enforces the same predicate\nmetadata:\n  type: project\n---\n\nInvestigation of issue #1251 (LCM 4.0.x, \"Credential slot for pin_code must be between 1 and 0\"), done 2026-06-11:\n\n- The error fires in HA `lock_helpers.async_set_credential` only when PIN_CODE IS present in caps with `number_of_credential_slots == 0`. If PIN were missing entirely the user would see `credential_type_not_supported` instead.\n- Caps are a pure pass-through: python client RPC → zwave-js-server → driver `AccessControlAPI.getCredentialCapabilitiesCached()`. The 0 is computed driver-side: UC branch returns `numberOfCredentialSlots: maxUsers` where `maxUsers = UserCodeCCValues.supportedUsers ?? 0`; U3C branch passes through stored per-type caps.\n- **PR #1252's bypass (call `node.access_control.set_credential` directly) does not unblock affected users**: the driver's `#assertValidSlot` (AccessControl.ts:1791) validates against the same cached caps inside `setCredential` (UC path line 1066, U3C line 1038) and `deleteCredential`. Affected locks get `ZWaveError: Credential slot N is out of range for credential type PINCode` → `FailedZWaveCommand` instead. The only write path that dodges the broken caps is the legacy User Code CC util (`zwave_js_server.util.lock.set_usercode` / `zwave_js.set_lock_usercode`, still present in HA).\n- Version matrix: HA 2026.6 […]
 
 > TOOL
@@ -2359,7 +2359,7 @@ id: toolu_0189fDmwv3rRogiiNNktDur5
 tool_result
 id: toolu_0189fDmwv3rRogiiNNktDur5
 ```
-File created successfully at: /Users/raman/.claude/projects/-Users-raman-projects-lock-code-manager/memory/project_zwave_uc_zero_slots_root_cause.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-Users-raman-projects-lock-code-manager/memory/project_zwave_uc_zero_slots_root_cause.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2368,7 +2368,7 @@ tool_use Bash
 id: toolu_012uBZJ7g58WGSw43BLRyf2w
 ```json
 {
-  "command": "echo '- [Zwave UC zero-slots root cause (#1251)](project_zwave_uc_zero_slots_root_cause.md) — caps=0 is driver-side; PR #1252 bypass cannot fix writes (driver asserts same predicate)' >> /Users/raman/.claude/projects/-Users-raman-projects-lock-code-manager/memory/MEMORY.md",
+  "command": "echo '- [Zwave UC zero-slots root cause (#1251)](project_zwave_uc_zero_slots_root_cause.md) — caps=0 is driver-side; PR #1252 bypass cannot fix writes (driver asserts same predicate)' >> /home/<USER>/.claude/projects/-Users-raman-projects-lock-code-manager/memory/MEMORY.md",
   "description": "Add memory index entry"
 }
 ```
@@ -2646,7 +2646,7 @@ tool_use Bash
 id: toolu_01GgszVwdA81omGFQMjDjenN
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && git show upstream/master:packages/zwave-js/src/lib/node/Node.ts > /tmp/Node.ts && grep -n \"getDefinedValueIDs\" /tmp/Node.ts | head -5",
+  "command": "cd /home/<USER>/projects/node-zwave-js && git show upstream/master:packages/zwave-js/src/lib/node/Node.ts > /tmp/Node.ts && grep -n \"getDefinedValueIDs\" /tmp/Node.ts | head -5",
   "description": "Locate getDefinedValueIDs in Node.ts"
 }
 ```
@@ -2661,7 +2661,7 @@ id: toolu_01GgszVwdA81omGFQMjDjenN
 473:					return impl.getDefinedValueIDs();
 478:			return nodeUtils.getDefinedValueIDs(this.driver, this);
 2089:			// for a controlled CC is decided separately in getDefinedValueIDs().
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -2723,7 +2723,7 @@ tool_use Bash
 id: toolu_01CqAYfVrFQeHBrA2L9qWyxR
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && git show upstream/master:packages/zwave-js/src/lib/node/utils.ts > /tmp/node_utils.ts && grep -n \"getDefinedValueIDs\\|shouldExposeValue\\|existing\\|findValues\\|getAllMetadata\" /tmp/node_utils.ts | head -20",
+  "command": "cd /home/<USER>/projects/node-zwave-js && git show upstream/master:packages/zwave-js/src/lib/node/utils.ts > /tmp/node_utils.ts && grep -n \"getDefinedValueIDs\\|shouldExposeValue\\|existing\\|findValues\\|getAllMetadata\" /tmp/node_utils.ts | head -20",
   "description": "Find dynamic value enumeration in node utils"
 }
 ```
@@ -2737,7 +2737,7 @@ id: toolu_01CqAYfVrFQeHBrA2L9qWyxR
 336:	return getDefinedValueIDsInternal(ctx, node, false);
 343:export function getDefinedValueIDsInternal(
 388:						...ccInstance.getDefinedValueIDs(
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -2821,7 +2821,7 @@ tool_use Bash
 id: toolu_01BL6iqQpav3fSq1SWSt5Ajk
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && git show upstream/master:packages/cc/src/lib/CommandClass.ts > /tmp/CommandClass.ts && grep -n \"getDefinedValueIDs\" /tmp/CommandClass.ts | head -3",
+  "command": "cd /home/<USER>/projects/node-zwave-js && git show upstream/master:packages/cc/src/lib/CommandClass.ts > /tmp/CommandClass.ts && grep -n \"getDefinedValueIDs\" /tmp/CommandClass.ts | head -3",
   "description": "Find base getDefinedValueIDs"
 }
 ```
@@ -2832,7 +2832,7 @@ tool_result
 id: toolu_01BL6iqQpav3fSq1SWSt5Ajk
 ```
 772:	public getDefinedValueIDs(
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -2938,7 +2938,7 @@ tool_use Bash
 id: toolu_017MXgsPkEjgP4u7tudSqXzB
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && git status --short | head; git remote -v; git branch --show-current; ls .github/PULL_REQUEST_TEMPLATE.md 2>/dev/null && echo \"template exists\"",
+  "command": "cd /home/<USER>/projects/node-zwave-js && git status --short | head; git remote -v; git branch --show-current; ls .github/PULL_REQUEST_TEMPLATE.md 2>/dev/null && echo \"template exists\"",
   "description": "Check node-zwave-js repo state and remotes"
 }
 ```
@@ -2956,7 +2956,7 @@ upstream	https://github.com/zwave-js/node-zwave-js.git (push)
 fix/uc-delete-credential-value-db
 .github/PULL_REQUEST_TEMPLATE.md
 template exists
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -2965,7 +2965,7 @@ tool_use Bash
 id: toolu_01TE9AXXoQ21PmmembPnjWN9
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && cat .github/PULL_REQUEST_TEMPLATE.md 2>/dev/null; echo ====; grep -n '\"test' package.json | head; ls node_modules >/dev/null 2>&1 && echo \"node_modules present\" || echo \"node_modules MISSING\"",
+  "command": "cd /home/<USER>/projects/node-zwave-js && cat .github/PULL_REQUEST_TEMPLATE.md 2>/dev/null; echo ====; grep -n '\"test' package.json | head; ls node_modules >/dev/null 2>&1 && echo \"node_modules present\" || echo \"node_modules MISSING\"",
   "description": "Read PR template and test scripts"
 }
 ```
@@ -2996,7 +2996,7 @@ PR description here
 144:    "test:perf": "yarn ts test/valuedb-perf.ts",
 145:    "test:firmware": "yarn ts test/firmware-extraction.ts",
 node_modules present
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > AGENT
@@ -3009,7 +3009,7 @@ tool_use Bash
 id: toolu_01PU8W2GFusZKWn8SGVb28tF
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && sed -n '1,90p' packages/zwave-js/src/lib/test/node/accessControl.UserCode.test.ts",
+  "command": "cd /home/<USER>/projects/node-zwave-js && sed -n '1,90p' packages/zwave-js/src/lib/test/node/accessControl.UserCode.test.ts",
   "description": "Read UserCode access control test setup"
 }
 ```
@@ -3109,7 +3109,7 @@ integrationTest(
 		nodeCapabilities: {
 			commandClasses: [
 				CommandClasses.Version,
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -3118,7 +3118,7 @@ tool_use Bash
 id: toolu_01A4BmS4Tp6311UC2n9KfXqX
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && sed -n '1,80p' packages/zwave-js/src/lib/test/node/accessControl.UserCredential.test.ts && grep -n \"ccCaps\\|UserCredential\" packages/zwave-js/src/lib/test/node/accessControl.UserCredential.test.ts | head -20",
+  "command": "cd /home/<USER>/projects/node-zwave-js && sed -n '1,80p' packages/zwave-js/src/lib/test/node/accessControl.UserCredential.test.ts && grep -n \"ccCaps\\|UserCredential\" packages/zwave-js/src/lib/test/node/accessControl.UserCredential.test.ts | head -20",
   "description": "Read UserCredential access control test setup"
 }
 ```
@@ -3236,7 +3236,7 @@ tool_use Bash
 id: toolu_01EAG7TSTm87yPcXH4AirXZW
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && grep -rn \"UserCredentialCCCapabilities\" packages/testing/src/CCSpecificCapabilities.ts | head -3; awk '/UserCredentialCCCapabilities/,/^}/' packages/testing/src/CCSpecificCapabilities.ts | head -40; echo ===defaults===; grep -rn \"User Credential\" packages/testing/src/CCSpecificCapabilities.ts packages/zwave-js/src/lib/node/mockCCBehaviors/UserCredential.ts | head -5",
+  "command": "cd /home/<USER>/projects/node-zwave-js && grep -rn \"UserCredentialCCCapabilities\" packages/testing/src/CCSpecificCapabilities.ts | head -3; awk '/UserCredentialCCCapabilities/,/^}/' packages/testing/src/CCSpecificCapabilities.ts | head -40; echo ===defaults===; grep -rn \"User Credential\" packages/testing/src/CCSpecificCapabilities.ts packages/zwave-js/src/lib/node/mockCCBehaviors/UserCredential.ts | head -5",
   "description": "Check mock U3C capabilities interface"
 }
 ```
@@ -3277,7 +3277,7 @@ export interface UserCredentialCCCapabilities {
 packages/testing/src/CCSpecificCapabilities.ts:262:	[0x83 /* User Credential */]: UserCredentialCCCapabilities;
 packages/zwave-js/src/lib/node/mockCCBehaviors/UserCredential.ts:138:		CommandClasses["User Credential"],
 packages/zwave-js/src/lib/node/mockCCBehaviors/UserCredential.ts:2114:// Behavior: User Credential Association Set → Report
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > AGENT
@@ -3290,7 +3290,7 @@ tool_use Bash
 id: toolu_01RgHcg9JKaEa7x4NHQcaKaw
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && git switch -c fix/access-control-dual-cc-fallback upstream/master && git log --oneline -1 && sed -n '1,60p' packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts",
+  "command": "cd /home/<USER>/projects/node-zwave-js && git switch -c fix/access-control-dual-cc-fallback upstream/master && git log --oneline -1 && sed -n '1,60p' packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts",
   "description": "Create branch from upstream/master and check imports"
 }
 ```
@@ -3362,7 +3362,7 @@ export interface UserData {
 	credentialRule?: UserCredentialRule;
 	expiringTimeoutMinutes?: number;
 }
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > AGENT
@@ -3376,7 +3376,7 @@ id: toolu_01PAmLmEbz1N3h9aEr6aF795
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/node-zwave-js/packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts",
+  "file_path": "/home/<USER>/projects/node-zwave-js/packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts",
   "old_string": "\t// FIXME: This is technically not correct. A node could support both CCs,\n\t// and we may have to decide which one to use, or switch between them on\n\t// the fly using Version CC / migration.\n\t// This is not implemented yet, so checking for U3C first is fine for now.\n\tget #usesUserCredentialCC(): boolean {\n\t\treturn this.endpoint.supportsCC(CommandClasses[\"User Credential\"]);\n\t}",
   "new_string": "\t// FIXME: Switching between both CCs on the fly using Version CC /\n\t// migration is not implemented yet. For now, prefer User Credential CC\n\t// when its interview yielded usable data, and fall back to User Code CC\n\t// otherwise.\n\tget #usesUserCredentialCC(): boolean {\n\t\tif (!this.endpoint.supportsCC(CommandClasses[\"User Credential\"])) {\n\t\t\treturn false;\n\t\t}\n\t\tif (!this.endpoint.supportsCC(CommandClasses[\"User Code\"])) {\n\t\t\treturn true;\n\t\t}\n\t\t// Some devices advertise support for User Credential CC, but report\n\t\t// no users or no usable credential types. When such a device also\n\t\t// supports User Code CC, manage users and credentials through that\n\t\t// instead of pretending that none can exist.\n\t\treturn this.#u3cIsUsable;\n\t}\n\n\t/**\n\t * Whether the cached User Credential CC capabilities indicate that users\n\t * and credentials can actually be managed through it. This is the case\n\t * when the device reports at least one user and at least one credential\n\t * type with a non-zero number of […]
 
@@ -3394,7 +3394,7 @@ tool_use Read
 id: toolu_01VYpTn2jSQGcMKChM5KUMEj
 ```json
 {
-  "file_path": "/Users/raman/projects/node-zwave-js/packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts",
+  "file_path": "/home/<USER>/projects/node-zwave-js/packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts",
   "offset": 210,
   "limit": 20
 }
@@ -3434,7 +3434,7 @@ id: toolu_01FwHDsCoqDcdVH927kjszLZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/node-zwave-js/packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts",
+  "file_path": "/home/<USER>/projects/node-zwave-js/packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts",
   "old_string": "\t// FIXME: This is technically not correct. A node could support both CCs,\n\t// and we may have to decide which one to use, or switch between them on\n\t// the fly using Version CC / migration.\n\t// This is not implemented yet, so checking for U3C first is fine for now.\n\tget #usesUserCredentialCC(): boolean {\n\t\treturn this.endpoint.supportsCC(CommandClasses[\"User Credential\"]);\n\t}",
   "new_string": "\t// FIXME: Switching between both CCs on the fly using Version CC /\n\t// migration is not implemented yet. For now, prefer User Credential CC\n\t// when its interview yielded usable data, and fall back to User Code CC\n\t// otherwise.\n\tget #usesUserCredentialCC(): boolean {\n\t\tif (!this.endpoint.supportsCC(CommandClasses[\"User Credential\"])) {\n\t\t\treturn false;\n\t\t}\n\t\tif (!this.endpoint.supportsCC(CommandClasses[\"User Code\"])) {\n\t\t\treturn true;\n\t\t}\n\t\t// Some devices advertise support for User Credential CC, but report\n\t\t// no users or no usable credential types. When such a device also\n\t\t// supports User Code CC, manage users and credentials through that\n\t\t// instead of pretending that none can exist.\n\t\treturn this.#u3cIsUsable;\n\t}\n\n\t/**\n\t * Whether the cached User Credential CC capabilities indicate that users\n\t * and credentials can actually be managed through it. This is the case\n\t * when the device reports at least one user and at least one credential\n\t * type with a non-zero number of […]
 
@@ -3443,7 +3443,7 @@ id: toolu_01FwHDsCoqDcdVH927kjszLZ
 tool_result
 id: toolu_01FwHDsCoqDcdVH927kjszLZ
 ```
-The file /Users/raman/projects/node-zwave-js/packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/node-zwave-js/packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3456,7 +3456,7 @@ tool_use Bash
 id: toolu_01FQ5NXjiMFgCzwLVdtigtNk
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && grep -n \"integrationTest\\|setCredential\\|assertReceivedControllerFrame\\|UserCodeCCSet\" packages/zwave-js/src/lib/test/node/accessControl.UserCode.test.ts | head -30",
+  "command": "cd /home/<USER>/projects/node-zwave-js && grep -n \"integrationTest\\|setCredential\\|assertReceivedControllerFrame\\|UserCodeCCSet\" packages/zwave-js/src/lib/test/node/accessControl.UserCode.test.ts | head -30",
   "description": "Find write test patterns in UserCode test"
 }
 ```
@@ -3496,7 +3496,7 @@ id: toolu_01FQ5NXjiMFgCzwLVdtigtNk
 718:integrationTest(
 748:integrationTest(
 785:			mockNode.assertReceivedControllerFrame(
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -3505,7 +3505,7 @@ tool_use Bash
 id: toolu_01B3aq3Jyy8mHSqygsDryvqy
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && sed -n '478,516p' packages/zwave-js/src/lib/test/node/accessControl.UserCode.test.ts",
+  "command": "cd /home/<USER>/projects/node-zwave-js && sed -n '478,516p' packages/zwave-js/src/lib/test/node/accessControl.UserCode.test.ts",
   "description": "Read V1 setCredential test for the pattern"
 }
 ```
@@ -3553,7 +3553,7 @@ integrationTest(
 		},
 	},
 );
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -3562,7 +3562,7 @@ tool_use Write
 id: toolu_015swJmyjEcVKvwgT432REXo
 ```json
 {
-  "file_path": "/Users/raman/projects/node-zwave-js/packages/zwave-js/src/lib/test/node/accessControl.DualCC.test.ts",
+  "file_path": "/home/<USER>/projects/node-zwave-js/packages/zwave-js/src/lib/test/node/accessControl.DualCC.test.ts",
   "content": "import {\n\ttype UserCredentialCapability,\n\tUserCredentialRule,\n\tUserCredentialType,\n\tUserCredentialUserType,\n\tUserIDStatus,\n} from \"@zwave-js/cc\";\nimport { UserCodeCCSet } from \"@zwave-js/cc/UserCodeCC\";\nimport { UserCredentialCCCredentialSet } from \"@zwave-js/cc/UserCredentialCC\";\nimport { CommandClasses } from \"@zwave-js/core\";\nimport { MockZWaveFrameType, ccCaps } from \"@zwave-js/testing\";\nimport { integrationTest } from \"../integrationTestSuite.js\";\n\n// These tests cover nodes that support BOTH User Code CC and\n// User Credential CC. The User Credential CC is preferred, but only\n// when its interview yielded usable capabilities. Otherwise the\n// User Code CC is used as a fallback.\n\nconst userCodeCCCapabilities = ccCaps({\n\tccId: CommandClasses[\"User Code\"],\n\tversion: 1,\n\tnumUsers: 10,\n\tsupportedASCIIChars: \"0123456789\",\n\tsupportedUserIDStatuses: [\n\t\tUserIDStatus.Available,\n\t\tUserIDStatus.Enabled,\n\t\tUserIDStatus.Disabled,\n\t],\n});\n\nintegrationTest(\n\t\"Falls back to User Code CC when User Credential CC reports no users\",\n\t{\n\t\tnodeCapabilities: {\n\t\t\tcommandClasses: [\n\t\t\t\tCommandClasses.Version,\n\t\t\t\tuserCodeCCCapabilities,\n\t\t\t\tccCaps({\n\t\t\t\t\tccId: CommandClasses[\"User Credential\"],\n\t\t\t\t\tisSupported: true,\n\t\t\t\t\tversion: 1,\n\t\t\t\t\tnumberOfSupportedUsers: 0,\n\t\t\t\t\tsupportedCredentialRules: [UserCredentialRule.Single],\n\t\t\t\t\tmaxUserNameLength: 16,\n\t\t\t\t\tsupportedUserTypes: [UserCredentialUserType.General],\n\t\t\t\t\tsupportedCredentialTypes: new Map(),\n\t\t\t\t}),\n\t\t\t],\n\t\t},\n\n\t\ttestBody: async (t, driver, node, mockController, mockNode) => {\n\t\t\t// Capabilities must be derived from User Code CC\n\t\t\tconst userCaps = node.accessControl!.getUserCapabilitiesCached();\n\t\t\tt.expect(userCaps.maxUsers).toBe(10);\n\n\t\t\tconst credCaps = node.accessControl!\n\t\t\t\t.getCredentialCapabilitiesCached();\n\t\t\tconst pinCap = credCaps.supportedCredentialTypes.get(\n\t\t\t\tUserCredentialType.PINCode,\n\t\t\t);\n\t\t\tt.expect(pinCap).toBeDefined();\n\t\t\tt.expect(pinCap!.numberOfCredentialSlots).toBe(10);\n\n\t\t\t// ...and writes must go through User Code CC\n\t\t\tawait node.accessControl!.setCredential(\n\t\t\t\t2,\n\t\t\t\tUserCredentialType.PINCode,\n\t\t\t\t2,\n\t\t\t\t\"5678\",\n\t\t\t);\n\n\t\t\tmockNode.assertReceivedControllerFrame(\n\t\t\t\t(frame) =>\n\t\t\t\t\tframe.type === MockZWaveFrameType.Request\n\t\t\t\t\t&& frame.payload instanceof UserCodeCCSet,\n\t\t\t\t{\n\t\t\t\t\terrorMessage: \"Should have used User Code Set\",\n\t\t\t\t},\n\t\t\t);\n\t\t},\n\t},\n);\n\nintegrationTest(\n\t\"Falls back to User Code CC when User Credential CC reports no usable credential types\",\n\t{\n\t\tnodeCapabilities: {\n\t\t\tcommandClasses: [\n\t\t\t\tCommandClasses.Version,\n\t\t\t\tuserCodeCCCapabilities,\n\t\t\t\tccCaps({\n\t\t\t\t\tccId: CommandClasses[\"User Credential\"],\n\t\t\t\t\tisSupported: true,\n\t\t\t\t\tversion: 1,\n\t\t\t\t\tnumberOfSupportedUsers: 20,\n\t\t\t\t\tsupportedCredentialRules: [UserCredentialRule.Single],\n\t\t\t\t\tmaxUserNameLength: 16,\n\t\t\t\t\tsupportedUserTypes: [UserCredentialUserType.General],\n\t\t\t\t\tsupportedCredentialTypes: new Map<\n\t\t\t\t\t\tUserCredentialType,\n\t\t\t\t\t\tUserCredentialCapability\n\t\t\t\t\t>([\n\t\t\t\t\t\t[UserCredentialType.PINCode, {\n\t\t\t\t\t\t\tnumberOfCredentialSlots: 0,\n\t\t\t\t\t\t\tminCredentialLength: 4,\n\t\t\t\t\t\t\tmaxCredentialLength: 10,\n\t\t\t\t\t\t\tmaxCredentialHashLength: 0,\n\t\t\t\t\t\t\tsupportsCredentialLearn: false,\n\t\t\t\t\t\t}],\n\t\t\t\t\t]),\n\t\t\t\t}),\n\t\t\t],\n\t\t},\n\n\t\ttestBody: async (t, driver, node, mockController, mockNode) => {\n\t\t\t// Capabilities must be […]
 
 > TOOL
@@ -3570,7 +3570,7 @@ id: toolu_015swJmyjEcVKvwgT432REXo
 tool_result
 id: toolu_015swJmyjEcVKvwgT432REXo
 ```
-File created successfully at: /Users/raman/projects/node-zwave-js/packages/zwave-js/src/lib/test/node/accessControl.DualCC.test.ts (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/projects/node-zwave-js/packages/zwave-js/src/lib/test/node/accessControl.DualCC.test.ts (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3579,7 +3579,7 @@ tool_use Bash
 id: toolu_01C2pgom5akksUBbVFxX5o7T
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && grep -n \"public async setUser\\|export interface SetUserOptions\" packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts packages/zwave-js/src/lib/node/_Types.ts 2>/dev/null | head; grep -rn \"accessControl!.setUser(\" packages/zwave-js/src/lib/test/node/accessControl.UserCredential.test.ts | head -3",
+  "command": "cd /home/<USER>/projects/node-zwave-js && grep -n \"public async setUser\\|export interface SetUserOptions\" packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts packages/zwave-js/src/lib/node/_Types.ts 2>/dev/null | head; grep -rn \"accessControl!.setUser(\" packages/zwave-js/src/lib/test/node/accessControl.UserCredential.test.ts | head -3",
   "description": "Check setUser signature and usage in tests"
 }
 ```
@@ -3594,7 +3594,7 @@ packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts:690:	public async s
 packages/zwave-js/src/lib/test/node/accessControl.UserCredential.test.ts:171:			await node.accessControl!.setUser(1, {
 packages/zwave-js/src/lib/test/node/accessControl.UserCredential.test.ts:242:			await node.accessControl!.setUser(1, {
 packages/zwave-js/src/lib/test/node/accessControl.UserCredential.test.ts:251:			await node.accessControl!.setUser(2, {
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > AGENT
@@ -3607,7 +3607,7 @@ tool_use Bash
 id: toolu_01SUGRWhtEvENsi31DaHjpmc
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && yarn vitest run packages/zwave-js/src/lib/test/node/accessControl.DualCC.test.ts 2>&1 | tail -30",
+  "command": "cd /home/<USER>/projects/node-zwave-js && yarn vitest run packages/zwave-js/src/lib/test/node/accessControl.DualCC.test.ts 2>&1 | tail -30",
   "description": "Run new dual-CC tests",
   "timeout": 300000
 }
@@ -3618,7 +3618,7 @@ id: toolu_01SUGRWhtEvENsi31DaHjpmc
 tool_result
 id: toolu_01SUGRWhtEvENsi31DaHjpmc
 ```
-[1m[46m RUN [49m[22m [36mv4.0.18 [39m[90m/Users/raman/projects/node-zwave-js[39m
+[1m[46m RUN [49m[22m [36mv4.0.18 [39m[90m/home/<USER>/projects/node-zwave-js[39m
 
  [32m✓[39m packages/zwave-js/src/lib/test/node/accessControl.DualCC.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 7151[2mms[22m[39m
    [33m[2m✓[22m[39m Falls back to User Code CC when User Credential CC reports no users [33m 3183[2mms[22m[39m
@@ -3629,7 +3629,7 @@ id: toolu_01SUGRWhtEvENsi31DaHjpmc
 [2m      Tests [22m [1m[32m3 passed[39m[22m[90m (3)[39m
 [2m   Start at [22m 23:12:13
 [2m   Duration [22m 9.31s[2m (transform 1.68s, setup 0ms, import 2.08s, tests 7.15s, environment 0ms)[22m
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > AGENT
@@ -3642,7 +3642,7 @@ tool_use Bash
 id: toolu_019cAFMwEAwexCF4poPah9NM
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && yarn vitest run packages/zwave-js/src/lib/test/node/accessControl.UserCode.test.ts packages/zwave-js/src/lib/test/node/accessControl.UserCredential.test.ts packages/zwave-js/src/lib/test/cc-specific/userCredentialInterview.test.ts 2>&1 | tail -12",
+  "command": "cd /home/<USER>/projects/node-zwave-js && yarn vitest run packages/zwave-js/src/lib/test/node/accessControl.UserCode.test.ts packages/zwave-js/src/lib/test/node/accessControl.UserCredential.test.ts packages/zwave-js/src/lib/test/cc-specific/userCredentialInterview.test.ts 2>&1 | tail -12",
   "description": "Run existing access control test suites",
   "timeout": 600000
 }
@@ -3664,7 +3664,7 @@ id: toolu_019cAFMwEAwexCF4poPah9NM
 [2m      Tests [22m [1m[32m72 passed[39m[22m[90m (72)[39m
 [2m   Start at [22m 23:12:32
 [2m   Duration [22m 56.87s[2m (transform 5.09s, setup 0ms, import 6.43s, tests 112.74s, environment 0ms)[22m
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > AGENT
@@ -3677,7 +3677,7 @@ tool_use Bash
 id: toolu_01SnfdkWiMGCfY6q7edru2uz
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && grep -n '\"lint\\|\"fmt\\|\"check' package.json | head -12",
+  "command": "cd /home/<USER>/projects/node-zwave-js && grep -n '\"lint\\|\"fmt\\|\"check' package.json | head -12",
   "description": "List lint/format scripts"
 }
 ```
@@ -3698,7 +3698,7 @@ id: toolu_01SnfdkWiMGCfY6q7edru2uz
 127:    "fmt:check": "dprint check > /dev/null",
 128:    "lint": "yarn run lint:ts && yarn fmt:check",
 154:    "check-references": "workspaces-to-typescript-project-references --check --tsconfigPath tsconfig.build.json",
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -3707,7 +3707,7 @@ tool_use Bash
 id: toolu_01JjBJmwuruR7H45Fg1kh1Rm
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && yarn dprint check packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts packages/zwave-js/src/lib/test/node/accessControl.DualCC.test.ts 2>&1 | tail -20",
+  "command": "cd /home/<USER>/projects/node-zwave-js && yarn dprint check packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts packages/zwave-js/src/lib/test/node/accessControl.DualCC.test.ts 2>&1 | tail -20",
   "description": "Check formatting of changed files",
   "timeout": 120000
 }
@@ -3718,7 +3718,7 @@ id: toolu_01JjBJmwuruR7H45Fg1kh1Rm
 tool_result
 id: toolu_01JjBJmwuruR7H45Fg1kh1Rm
 ```
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > AGENT
@@ -3731,7 +3731,7 @@ tool_use Bash
 id: toolu_01ACCvT1SSBRLzAyDAm2iTF2
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && yarn oxlint --type-aware packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts packages/zwave-js/src/lib/test/node/accessControl.DualCC.test.ts 2>&1 | tail -6; yarn eslint packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts packages/zwave-js/src/lib/test/node/accessControl.DualCC.test.ts 2>&1 | tail -6",
+  "command": "cd /home/<USER>/projects/node-zwave-js && yarn oxlint --type-aware packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts packages/zwave-js/src/lib/test/node/accessControl.DualCC.test.ts 2>&1 | tail -6; yarn eslint packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts packages/zwave-js/src/lib/test/node/accessControl.DualCC.test.ts 2>&1 | tail -6",
   "description": "Lint changed files",
   "timeout": 300000
 }
@@ -3744,7 +3744,7 @@ id: toolu_01ACCvT1SSBRLzAyDAm2iTF2
 ```
 Found 0 warnings and 0 errors.
 Finished in 437ms on 2 files with 149 rules using 14 threads.
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -3753,7 +3753,7 @@ tool_use Bash
 id: toolu_01WBwGtf3ngFDGRF9FJZksA4
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && timeout 240 yarn workspace zwave-js exec tsgo --noEmit -p tsconfig.json 2>&1 | tail -8",
+  "command": "cd /home/<USER>/projects/node-zwave-js && timeout 240 yarn workspace zwave-js exec tsgo --noEmit -p tsconfig.json 2>&1 | tail -8",
   "description": "Typecheck zwave-js package",
   "timeout": 260000
 }
@@ -3771,7 +3771,7 @@ id: toolu_01WBwGtf3ngFDGRF9FJZksA4
      1  src/lib/test/driver/setValueSucceedAfterFailure.test.ts[90m:56[0m
      1  src/lib/test/node/Node.getSetValue.test.ts[90m:7[0m
      2  src/lib/test/zniffer/parseZLFEntry.test.ts[90m:38[0m
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -3780,7 +3780,7 @@ tool_use Bash
 id: toolu_013HCv9awhSEGiuYvy48y1Uc
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && timeout 240 yarn workspace zwave-js exec tsgo --noEmit -p tsconfig.json 2>&1 | grep -i \"AccessControl\\|DualCC\" | head; echo \"exit-check done\"",
+  "command": "cd /home/<USER>/projects/node-zwave-js && timeout 240 yarn workspace zwave-js exec tsgo --noEmit -p tsconfig.json 2>&1 | grep -i \"AccessControl\\|DualCC\" | head; echo \"exit-check done\"",
   "description": "Check typecheck errors touch changed files",
   "timeout": 260000
 }
@@ -3792,7 +3792,7 @@ tool_result
 id: toolu_013HCv9awhSEGiuYvy48y1Uc
 ```
 exit-check done
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -3801,7 +3801,7 @@ tool_use Bash
 id: toolu_01XzCcUkaZDzjbrZwDpVsbuG
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && git add packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts packages/zwave-js/src/lib/test/node/accessControl.DualCC.test.ts && git commit -m \"$(cat <<'EOF'\nfix: fall back to User Code CC when User Credential CC is unusable\n\nSome devices advertise support for both User Code CC and User Credential\nCC, but report no users or no usable credential types via U3C. The\nunified Access Control API unconditionally preferred U3C on such nodes,\ncausing all user/credential operations to fail slot validation.\n\nPrefer U3C only when its cached capabilities indicate at least one user\nand one credential type with a non-zero number of slots, and fall back\nto User Code CC otherwise.\n\nCo-Authored-By: Claude Fable 5 <noreply@anthropic.com>\nEOF\n)\" && git push -u origin fix/access-control-dual-cc-fallback 2>&1 | tail -3",
+  "command": "cd /home/<USER>/projects/node-zwave-js && git add packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts packages/zwave-js/src/lib/test/node/accessControl.DualCC.test.ts && git commit -m \"$(cat <<'EOF'\nfix: fall back to User Code CC when User Credential CC is unusable\n\nSome devices advertise support for both User Code CC and User Credential\nCC, but report no users or no usable credential types via U3C. The\nunified Access Control API unconditionally preferred U3C on such nodes,\ncausing all user/credential operations to fail slot validation.\n\nPrefer U3C only when its cached capabilities indicate at least one user\nand one credential type with a non-zero number of slots, and fall back\nto User Code CC otherwise.\n\nCo-Authored-By: Claude Fable 5 <<REDACTED_EMAIL>>\nEOF\n)\" && git push -u origin fix/access-control-dual-cc-fallback 2>&1 | tail -3",
   "description": "Commit and push branch to fork"
 }
 ```
@@ -3825,7 +3825,7 @@ tool_use Bash
 id: toolu_013BvmaZSrCp43pswHaJQnPT
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && yarn run sync-references 2>&1 | tail -5; git status --short | head",
+  "command": "cd /home/<USER>/projects/node-zwave-js && yarn run sync-references 2>&1 | tail -5; git status --short | head",
   "description": "Run sync-references and inspect changes"
 }
 ```
@@ -3840,7 +3840,7 @@ Update Project References!
 M  packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts
 A  packages/zwave-js/src/lib/test/node/accessControl.DualCC.test.ts
 ?? .serena/
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -3849,7 +3849,7 @@ tool_use Bash
 id: toolu_01L3cgfVpazC4D38FfZszJjQ
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && git diff packages/cc/tsconfig.build.json",
+  "command": "cd /home/<USER>/projects/node-zwave-js && git diff packages/cc/tsconfig.build.json",
   "description": "Inspect tsconfig reference change"
 }
 ```
@@ -3878,7 +3878,7 @@ index e9b4fd730..4c93dd8ba 100644
 +	],
  	"exclude": []
  }
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > DEVELOPER
@@ -3952,7 +3952,7 @@ tool_use Bash
 id: toolu_011KDVERasFyxMoFD8N9C5MX
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && git checkout -- packages/cc/tsconfig.build.json && git commit --no-verify -m \"$(cat <<'EOF'\nfix: fall back to User Code CC when User Credential CC is unusable\n\nSome devices advertise support for both User Code CC and User Credential\nCC, but report no users or no usable credential types via U3C. The\nunified Access Control API unconditionally preferred U3C on such nodes,\ncausing all user/credential operations to fail slot validation.\n\nPrefer U3C only when its cached capabilities indicate at least one user\nand one credential type with a non-zero number of slots, and fall back\nto User Code CC otherwise.\n\nCo-Authored-By: Claude Fable 5 <noreply@anthropic.com>\nEOF\n)\" && git push -u origin fix/access-control-dual-cc-fallback 2>&1 | tail -3",
+  "command": "cd /home/<USER>/projects/node-zwave-js && git checkout -- packages/cc/tsconfig.build.json && git commit --no-verify -m \"$(cat <<'EOF'\nfix: fall back to User Code CC when User Credential CC is unusable\n\nSome devices advertise support for both User Code CC and User Credential\nCC, but report no users or no usable credential types via U3C. The\nunified Access Control API unconditionally preferred U3C on such nodes,\ncausing all user/credential operations to fail slot validation.\n\nPrefer U3C only when its cached capabilities indicate at least one user\nand one credential type with a non-zero number of slots, and fall back\nto User Code CC otherwise.\n\nCo-Authored-By: Claude Fable 5 <<REDACTED_EMAIL>>\nEOF\n)\" && git push -u origin fix/access-control-dual-cc-fallback 2>&1 | tail -3",
   "description": "Revert tsconfig ref, commit with --no-verify, push"
 }
 ```
@@ -3968,7 +3968,7 @@ id: toolu_011KDVERasFyxMoFD8N9C5MX
 To https://github.com/raman325/node-zwave-js.git
  * [new branch]          fix/access-control-dual-cc-fallback -> fix/access-control-dual-cc-fallback
 branch 'fix/access-control-dual-cc-fallback' set up to track 'origin/fix/access-control-dual-cc-fallback'.
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > AGENT
@@ -3981,7 +3981,7 @@ tool_use Bash
 id: toolu_01T16tcFACwkTLTozGDTVTfs
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && gh pr create -R zwave-js/zwave-js --base master --head raman325:fix/access-control-dual-cc-fallback --title \"fix: fall back to User Code CC when User Credential CC is unusable\" --body \"$(cat <<'EOF'\nThe Access Control feature API dispatches between User Code CC and User Credential CC via `#usesUserCredentialCC`, which so far only checked `supportsCC(User Credential)` (with a FIXME noting that nodes may support both CCs).\n\nFor a node that advertises U3C but whose U3C interview yields no usable data — no users, no supported credential types, or only credential types with `numberOfCredentialSlots: 0` — this made the entire unified API unusable even when the node also supports User Code CC and works fine through it:\n\n- `getUserCapabilitiesCached()` / `getCredentialCapabilitiesCached()` report 0 users / 0 slots\n- `#assertValidSlot` consequently throws `Credential slot N is out of range for credential type PINCode` for every `setCredential` / `deleteCredential` call\n\nApplications built on the unified API then fail every PIN operation. Seen in the wild via Home Assistant + Lock Code Manager, where users get `Credential slot for pin_code must be between 1 and 0` (HA validates against the same cached capabilities before calling the driver): raman325/lock_code_manager#1251\n\n### Fix\n\n`#usesUserCredentialCC` now prefers User Credential CC only when […]
+  "command": "cd /home/<USER>/projects/node-zwave-js && gh pr create -R zwave-js/zwave-js --base master --head raman325:fix/access-control-dual-cc-fallback --title \"fix: fall back to User Code CC when User Credential CC is unusable\" --body \"$(cat <<'EOF'\nThe Access Control feature API dispatches between User Code CC and User Credential CC via `#usesUserCredentialCC`, which so far only checked `supportsCC(User Credential)` (with a FIXME noting that nodes may support both CCs).\n\nFor a node that advertises U3C but whose U3C interview yields no usable data — no users, no supported credential types, or only credential types with `numberOfCredentialSlots: 0` — this made the entire unified API unusable even when the node also supports User Code CC and works fine through it:\n\n- `getUserCapabilitiesCached()` / `getCredentialCapabilitiesCached()` report 0 users / 0 slots\n- `#assertValidSlot` consequently throws `Credential slot N is out of range for credential type PINCode` for every `setCredential` / `deleteCredential` call\n\nApplications built on the unified API then fail every PIN operation. Seen in the wild via Home Assistant + Lock Code Manager, where users get `Credential slot for pin_code must be between 1 and 0` (HA validates against the same cached capabilities before calling the driver): raman325/lock_code_manager#1251\n\n### Fix\n\n`#usesUserCredentialCC` now prefers User Credential CC only when […]
 
 > TOOL
 
@@ -3989,7 +3989,7 @@ tool_result
 id: toolu_01T16tcFACwkTLTozGDTVTfs
 ```
 https://github.com/zwave-js/zwave-js/pull/8873
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > AGENT
@@ -4064,7 +4064,7 @@ tool_use Read
 id: toolu_01QzGaVcBdSDt5Tg8xypRA4n
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py"
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py"
 }
 ```
 
@@ -4134,7 +4134,7 @@ tool_use Bash
 id: toolu_01HNogVe4etaz2eJJrz5Y2iL
 ```json
 {
-  "command": "cd /Users/raman/projects/zwave-js-server-python && git show 0.72.0:zwave_js_server/util/lock.py | head -150",
+  "command": "cd /home/<USER>/projects/zwave-js-server-python && git show 0.72.0:zwave_js_server/util/lock.py | head -150",
   "description": "Read lock util API at pinned version"
 }
 ```
@@ -4230,7 +4230,7 @@ tool_use Bash
 id: toolu_0177qwnmtjn7v4E5Nh6MtTuP
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && ls packages/zwave-js/src/lib/node/CCHandlers/ && grep -rn \"credential added\\|credential modified\" packages/zwave-js/src/lib/node/CCHandlers/ | head -5",
+  "command": "cd /home/<USER>/projects/node-zwave-js && ls packages/zwave-js/src/lib/node/CCHandlers/ && grep -rn \"credential added\\|credential modified\" packages/zwave-js/src/lib/node/CCHandlers/ | head -5",
   "description": "Check CC handlers for UC push events"
 }
 ```
@@ -4270,7 +4270,7 @@ packages/zwave-js/src/lib/node/CCHandlers/UserCredentialCC.ts:76:			node.emit("c
 packages/zwave-js/src/lib/node/CCHandlers/UserCredentialCC.ts:100:				node.emit("credential added", endpoint, {
 packages/zwave-js/src/lib/node/CCHandlers/UserCredentialCC.ts:116:	// owner. Applications can observe it via the existing "credential modified"
 packages/zwave-js/src/lib/node/CCHandlers/UserCredentialCC.ts:121:	node.emit("credential modified", endpoint, {
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -4279,7 +4279,7 @@ tool_use Bash
 id: toolu_01NoDvHYkmiCaHi29bzvQGhv
 ```json
 {
-  "command": "cd /Users/raman/projects/zwave-js-server-python && git show 0.72.0:zwave_js_server/util/lock.py | sed -n '150,200p'",
+  "command": "cd /home/<USER>/projects/zwave-js-server-python && git show 0.72.0:zwave_js_server/util/lock.py | sed -n '150,200p'",
   "description": "Read clear_usercode util"
 }
 ```
@@ -4340,7 +4340,7 @@ async def set_configuration(
         cached_value = next(
             (
                 value
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -5070,7 +5070,7 @@ tool_use Bash
 id: toolu_01E1PfeWHfvvDqx16pwsF5rn
 ```json
 {
-  "command": "grep -n \"SetValueStatus\\|class SetValueResult\" /Users/raman/projects/zwave-js-server-python/zwave_js_server/model/value.py | head -5; cd /Users/raman/projects/zwave-js-server-python && git show 0.72.0:zwave_js_server/const/__init__.py | grep -A20 \"class SetValueStatus\"; git show 0.72.0:zwave_js_server/exceptions.py | grep -n \"class NotFoundError\\|class FailedZWaveCommand\\|class BaseZwaveJSServerError\" ",
+  "command": "grep -n \"SetValueStatus\\|class SetValueResult\" /home/<USER>/projects/zwave-js-server-python/zwave_js_server/model/value.py | head -5; cd /home/<USER>/projects/zwave-js-server-python && git show 0.72.0:zwave_js_server/const/__init__.py | grep -A20 \"class SetValueStatus\"; git show 0.72.0:zwave_js_server/exceptions.py | grep -n \"class NotFoundError\\|class FailedZWaveCommand\\|class BaseZwaveJSServerError\" ",
   "description": "Check SetValueStatus enum and exception hierarchy"
 }
 ```
@@ -5109,7 +5109,7 @@ class SetValueStatus(IntEnum):
 15:class BaseZwaveJSServerError(Exception):
 51:class NotFoundError(BaseZwaveJSServerError):
 97:class FailedZWaveCommand(FailedCommand):
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > AGENT
@@ -5373,7 +5373,7 @@ id: toolu_01D6BY6FStEhYoTocUSJHC1e
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "old_string": "from collections.abc import Callable\nfrom dataclasses import dataclass, field\nfrom datetime import timedelta\nimport logging\nfrom typing import Any, Literal\n\nfrom zwave_js_server.client import Client\nfrom zwave_js_server.const import NodeStatus\nfrom zwave_js_server.const.command_class.access_control import (\n    SetCredentialResult,\n    UserCredentialType,\n)\nfrom zwave_js_server.const.command_class.notification import (\n    AccessControlNotificationEvent,\n    NotificationType,\n)\nfrom zwave_js_server.exceptions import BaseZwaveJSServerError\nfrom zwave_js_server.model.node import Node\nfrom zwave_js_server.util.lock import get_usercodes",
   "new_string": "from collections.abc import Callable\nfrom dataclasses import dataclass, field\nfrom datetime import timedelta\nimport functools\nimport logging\nfrom typing import Any, Literal\n\nfrom zwave_js_server.client import Client\nfrom zwave_js_server.const import CommandClass, NodeStatus, SetValueStatus\nfrom zwave_js_server.const.command_class.access_control import UserCredentialType\nfrom zwave_js_server.const.command_class.lock import (\n    ATTR_CODE_SLOT,\n    ATTR_IN_USE,\n    ATTR_USERCODE,\n    LOCK_USERCODE_PROPERTY,\n    LOCK_USERCODE_STATUS_PROPERTY,\n)\nfrom zwave_js_server.const.command_class.notification import (\n    AccessControlNotificationEvent,\n    NotificationType,\n)\nfrom zwave_js_server.exceptions import BaseZwaveJSServerError, NotFoundError\nfrom zwave_js_server.model.node import Node\nfrom zwave_js_server.util.lock import (\n    clear_usercode,\n    get_usercode,\n    get_usercode_from_node,\n    get_usercodes,\n    set_usercode,\n)"
 }
@@ -5384,7 +5384,7 @@ id: toolu_01D6BY6FStEhYoTocUSJHC1e
 tool_result
 id: toolu_01D6BY6FStEhYoTocUSJHC1e
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5394,7 +5394,7 @@ id: toolu_018fFthFUYuuJdXYzyRHpUTj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "old_string": "# All known Access Control Notification CC events that indicate the lock is locked\n# or unlocked",
   "new_string": "# SetValueResult statuses that mean a User Code CC value write was accepted.\n_UC_SET_VALUE_OK = (\n    SetValueStatus.SUCCESS,\n    SetValueStatus.SUCCESS_UNSUPERVISED,\n    SetValueStatus.WORKING,\n)\n\n# All known Access Control Notification CC events that indicate the lock is locked\n# or unlocked"
 }
@@ -5405,7 +5405,7 @@ id: toolu_018fFthFUYuuJdXYzyRHpUTj
 tool_result
 id: toolu_018fFthFUYuuJdXYzyRHpUTj
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5415,7 +5415,7 @@ id: toolu_01BEsP8kcruCwfraZmihvzWC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "old_string": "    lock_config_entry: ConfigEntry = field(repr=False)\n    # Home Assistant event-bus listeners (separate lifecycle from push\n    # subscriptions: registered in ``async_setup``, released in\n    # ``async_unload``).\n    _listeners: list[Callable[[], None]] = field(init=False, default_factory=list)",
   "new_string": "    lock_config_entry: ConfigEntry = field(repr=False)\n    # Home Assistant event-bus listeners (separate lifecycle from push\n    # subscriptions: registered in ``async_setup``, released in\n    # ``async_unload``).\n    _listeners: list[Callable[[], None]] = field(init=False, default_factory=list)\n    # Whether the unified access-control API is unusable for PIN management\n    # on this lock and the legacy User Code CC utilities must be used\n    # instead. None until ``async_get_capabilities`` runs the detection.\n    _uc_fallback: bool | None = field(init=False, default=None)"
 }
@@ -5426,7 +5426,7 @@ id: toolu_01BEsP8kcruCwfraZmihvzWC
 tool_result
 id: toolu_01BEsP8kcruCwfraZmihvzWC
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5440,7 +5440,7 @@ id: toolu_0151Z8tG5BznPiG6KgpcQgGa
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "old_string": "        Uses the unified ``access_control`` API which dispatches to UC\n        or U3C internally per node-zwave-js v15.23.4+.\n        \"\"\"\n        try:",
   "new_string": "        Uses the unified ``access_control`` API which dispatches to UC\n        or U3C internally per node-zwave-js v15.23.4+. When that API is\n        unusable for this lock (see ``async_get_capabilities``), users\n        are synthesized from the User Code CC value DB instead: one\n        implicit user per occupied slot with ``user_id == slot``,\n        matching the User Code CC model where the user IS the credential.\n        \"\"\"\n        if await self._async_uc_fallback_active():\n            return self._uc_users_from_value_db()\n        try:"
 }
@@ -5451,7 +5451,7 @@ id: toolu_0151Z8tG5BznPiG6KgpcQgGa
 tool_result
 id: toolu_0151Z8tG5BznPiG6KgpcQgGa
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > DEVELOPER
@@ -5464,7 +5464,7 @@ tool_use Bash
 id: toolu_01NMXuaHuCy9dLnjKHsje4qG
 ```json
 {
-  "command": "cd /Users/raman/projects/zwave-js-server-python && git show 0.72.0:zwave_js_server/model/node/__init__.py 2>/dev/null | grep -n \"def command_classes\" -A8; git show 0.72.0:zwave_js_server/const/__init__.py | grep -n \"USER_CODE\\|USER_CREDENTIAL\" | head -5",
+  "command": "cd /home/<USER>/projects/zwave-js-server-python && git show 0.72.0:zwave_js_server/model/node/__init__.py 2>/dev/null | grep -n \"def command_classes\" -A8; git show 0.72.0:zwave_js_server/const/__init__.py | grep -n \"USER_CODE\\|USER_CREDENTIAL\" | head -5",
   "description": "Check command_classes property and CC enum"
 }
 ```
@@ -5484,7 +5484,7 @@ id: toolu_01NMXuaHuCy9dLnjKHsje4qG
 347-        return self._statistics
 348-
 181:    USER_CODE = 99
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -5738,7 +5738,7 @@ id: toolu_01Thx4Bj4a9ACKcePA44PSW6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "old_string": "from zwave_js_server.const.command_class.lock import (\n    ATTR_CODE_SLOT,\n    ATTR_IN_USE,\n    ATTR_USERCODE,\n    LOCK_USERCODE_PROPERTY,\n    LOCK_USERCODE_STATUS_PROPERTY,\n)",
   "new_string": "from zwave_js_server.const.command_class.lock import (\n    ATTR_CODE_SLOT,\n    ATTR_IN_USE,\n    ATTR_USERCODE,\n    LOCK_USERCODE_PROPERTY,\n    LOCK_USERCODE_STATUS_PROPERTY,\n    CodeSlotStatus,\n)"
 }
@@ -5749,7 +5749,7 @@ id: toolu_01Thx4Bj4a9ACKcePA44PSW6
 tool_result
 id: toolu_01Thx4Bj4a9ACKcePA44PSW6
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5759,7 +5759,7 @@ id: toolu_01HVdLnS4ifDabtUTDCNboG7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "old_string": "        if await self._async_uc_fallback_active():\n            return self._uc_users_from_value_db()\n        try:",
   "new_string": "        if await self._async_uc_fallback_active():\n            return await self._async_uc_users_from_value_db()\n        try:"
 }
@@ -5770,7 +5770,7 @@ id: toolu_01HVdLnS4ifDabtUTDCNboG7
 tool_result
 id: toolu_01HVdLnS4ifDabtUTDCNboG7
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5784,7 +5784,7 @@ id: toolu_016vFR9b9ydcdSuJDUjoBMWg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "old_string": "    # Whether the unified access-control API is unusable for PIN management\n    # on this lock and the legacy User Code CC utilities must be used\n    # instead. None until ``async_get_capabilities`` runs the detection.\n    _uc_fallback: bool | None = field(init=False, default=None)",
   "new_string": "    # Whether the unified access-control API is unusable for PIN management\n    # on this lock and the legacy User Code CC utilities must be used\n    # instead. None until ``async_get_capabilities`` runs the detection.\n    _uc_fallback: bool | None = field(init=False, default=None)\n    # Slot of a UC-fallback set operation currently in flight. User Code CC\n    # has no in-band duplicate-rejection result; some firmwares report a\n    # duplicate via an Access Control notification instead (sometimes with\n    # userId=0). Tracking the in-flight slot lets the notification handler\n    # attribute that rejection to the right slot.\n    _set_in_progress_code_slot: int | None = field(init=False, default=None)"
 }
@@ -5795,7 +5795,7 @@ id: toolu_016vFR9b9ydcdSuJDUjoBMWg
 tool_result
 id: toolu_016vFR9b9ydcdSuJDUjoBMWg
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5805,7 +5805,7 @@ id: toolu_01AqJ8WG1iDt2e5UDxZ7XD7c
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "old_string": "        The unified ``access_control`` API in node-zwave-js claims support\n        for both UC and U3C, but ``async_get_credential_capabilities``\n        queries U3C-specific data only. UC-only locks (mostly older\n        500-series firmwares but also some current Z-Wave Plus\n        implementations) come back with the PIN credential type either\n        missing or advertising ``num_slots=0``. When that happens we\n        fall back to reading the lock's UC slot count directly and\n        return slot-only capabilities: ``supports_user_management=False``\n        and ``max_user_name_length=0``, which the seam recognizes as a\n        slot-only provider and routes through the credential-only\n        primitives (``async_set_credential`` / ``async_delete_credential``\n        / ``async_get_users``) without the user lifecycle.\n        \"\"\"\n        try:\n            caps = await lock_helpers.async_get_credential_capabilities(self.node)\n        except BaseZwaveJSServerError as err:\n            raise LockDisconnected(f\"get capabilities failed: {err}\") from err\n        except HomeAssistantError as err:\n            raise LockOperationFailed(f\"get capabilities failed: {err}\") from err\n        pin = caps[\"supported_credential_types\"].get(_PIN_TYPE_STR)\n\n        if pin and pin[\"num_slots\"] > 0:\n            # U3C path — the lock advertises real PIN credential slots.\n            return LockCapabilities(\n                supports_user_management=caps[\"supports_user_management\"],\n                max_users=caps[\"max_users\"],\n                credential_types={\n                    CredentialType.PIN: CredentialTypeCapability(\n                        num_slots=pin[\"num_slots\"],\n                        min_length=pin[\"min_length\"],\n                        max_length=pin[\"max_length\"],\n                        supports_learn=pin[\"supports_learn\"],\n                    )\n                },\n                max_user_name_length=caps.get(\"max_user_name_length\", 0),\n            )\n\n        # UC path — try the legacy User Code CC. ``get_usercodes`` walks\n        # slot 1, 2, 3, ... in the value DB until ``NotFoundError``, so\n        # the returned list length is the lock's actual UC slot […]
 
 > TOOL
@@ -5813,7 +5813,7 @@ id: toolu_01AqJ8WG1iDt2e5UDxZ7XD7c
 tool_result
 id: toolu_01AqJ8WG1iDt2e5UDxZ7XD7c
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5827,7 +5827,7 @@ id: toolu_01NNHVkoHfCDwiupvFir1ipo
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "old_string": "        \"\"\"\n        Write the PIN credential under user_id; map device rejections.\n\n        Bypasses ``lock_helpers.async_set_credential`` and calls\n        ``node.access_control.set_credential`` directly. The HA helper\n        validates ``1 <= slot <= num_slots`` using\n        ``get_credential_capabilities_cached()`` which returns U3C-only\n        data -- on a UC-only lock that means zero slots, and the helper\n        rejects with ``Credential slot for pin_code must be between 1\n        and 0`` (issue #1251). The driver-level call unifies UC and U3C\n        internally per the node-zwave-js v15.23.4+ contract, so going\n        direct works for both lock generations. We map the\n        ``SetCredentialResult`` status enum to LCM's typed exceptions\n        in place of HA's translation-key flow.\n        \"\"\"\n        try:\n            status = await self.node.access_control.set_credential(\n                user_id,\n                UserCredentialType.PIN_CODE,\n                credential.slot,\n                pin,\n            )\n        except BaseZwaveJSServerError as err:\n            # Transient Z-Wave command failure (e.g. a sleeping/battery lock):\n            # route to retry rather than slot suspension.\n            raise LockDisconnected(\n                f\"set credential slot {credential.slot} failed: {err}\"\n            ) from err\n        if status is SetCredentialResult.OK:\n            return True\n        if status in (\n            SetCredentialResult.ERROR_DUPLICATE_CREDENTIAL,\n            SetCredentialResult.ERROR_DUPLICATE_ADMIN_PIN_CODE,\n        ):\n            raise DuplicateCodeError(\n                code_slot=credential.slot,\n                lock_entity_id=self.lock.entity_id,\n            )\n        raise CodeRejectedError(\n            code_slot=credential.slot,\n            lock_entity_id=self.lock.entity_id,\n            reason=f\"lock rejected with status {status.name}\",\n        )\n\n    async def async_delete_credential(self, ref: CredentialRef) -> bool:\n        \"\"\"\n        Delete the credential addressed by ref.\n\n        Bypasses ``lock_helpers.async_delete_credential`` for the same\n        reason as ``async_set_credential`` -- […]
 
 > TOOL
@@ -5835,7 +5835,7 @@ id: toolu_01NNHVkoHfCDwiupvFir1ipo
 tool_result
 id: toolu_01NNHVkoHfCDwiupvFir1ipo
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5849,7 +5849,7 @@ id: toolu_01RnUF6ArEJs3ezvJ9StGgpG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "old_string": "    @callback\n    def setup_push_subscription(self) -> None:\n        \"\"\"Subscribe to access-control credential change events.\"\"\"\n        if self._push_unsubs:\n            return\n\n        ready, reason = self._get_client_state()\n        if not ready:\n            raise LockDisconnected(reason)\n\n        try:\n            for name, handler in (\n                (\"credential added\", self._on_credential_changed),\n                (\"credential modified\", self._on_credential_changed),\n                (\"credential deleted\", self._on_credential_deleted),\n            ):\n                self._register_push_unsub(self.node.on(name, handler))\n        except ValueError as err:\n            self._clear_push_unsubs()\n            raise LockDisconnected(f\"node not ready: {err}\") from err",
   "new_string": "    @callback\n    def setup_push_subscription(self) -> None:\n        \"\"\"\n        Subscribe to credential change events.\n\n        In unified mode the driver emits ``credential added/modified/\n        deleted`` node events. In UC-fallback mode those events never\n        fire (the driver only emits them from its own unified API\n        methods, which the fallback bypasses), so we subscribe to raw\n        ``value updated`` events for the User Code CC values instead --\n        the same push source the legacy 3.x provider used. When the\n        mode is not yet known (capability probe hasn't run), subscribe\n        to both; the handlers are self-filtering and pushes are\n        idempotent.\n        \"\"\"\n        if self._push_unsubs:\n            return\n\n        ready, reason = self._get_client_state()\n        if not ready:\n            raise LockDisconnected(reason)\n\n        subscriptions: list[tuple[str, Callable[[dict[str, Any]], None]]] = []\n        if self._uc_fallback is not False:\n            subscriptions.append((\"value updated\", self._on_uc_value_updated))\n        if not self._uc_fallback:\n            subscriptions.extend(\n                (\n                    (\"credential added\", self._on_credential_changed),\n                    (\"credential modified\", self._on_credential_changed),\n                    (\"credential deleted\", self._on_credential_deleted),\n […]
 
@@ -5858,7 +5858,7 @@ id: toolu_01RnUF6ArEJs3ezvJ9StGgpG
 tool_result
 id: toolu_01RnUF6ArEJs3ezvJ9StGgpG
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5868,7 +5868,7 @@ id: toolu_01Lpgqbwhdg8rcGyUpDgjdYb
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "old_string": "        params = evt.data.get(ATTR_PARAMETERS) or {}\n        code_slot = params.get(\"userId\", 0)\n\n        self.async_fire_code_slot_event(",
   "new_string": "        params = evt.data.get(ATTR_PARAMETERS) or {}\n        code_slot = params.get(\"userId\", 0)\n\n        # Handle duplicate code rejection — only when LCM initiated the set\n        # (the in-progress slot is only tracked by the UC-fallback write\n        # path; unified-mode writes report duplicates in-band). Mark the\n        # slot as rejected so the sync manager raises DuplicateCodeError\n        # on the next tick, routing through the standard CodeRejectedError\n        # flow. Some Z-Wave lock firmwares report this notification with\n        # userId=0 instead of the offending slot; treat 0 as referring to\n        # the slot we're currently setting.\n        if (\n            evt.data[ATTR_EVENT]\n            == AccessControlNotificationEvent.NEW_USER_CODE_NOT_ADDED_DUE_TO_DUPLICATE_CODE\n            and self._set_in_progress_code_slot is not None\n            and code_slot in (0, self._set_in_progress_code_slot)\n        ):\n            slot = self._set_in_progress_code_slot\n            self._set_in_progress_code_slot = None\n            self.mark_code_rejected(slot)\n            return\n\n        self.async_fire_code_slot_event("
 }
@@ -5879,7 +5879,7 @@ id: toolu_01Lpgqbwhdg8rcGyUpDgjdYb
 tool_result
 id: toolu_01Lpgqbwhdg8rcGyUpDgjdYb
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5889,7 +5889,7 @@ id: toolu_01CbvDz3DdKYZU8JtNSGXAnC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "old_string": "    async def async_hard_refresh_codes(self) -> dict[int, SlotCredential]:\n        \"\"\"Re-read users AND credentials fresh from the device, then project to slots.\"\"\"\n        try:\n            await self.node.access_control.get_users()\n            await self.node.access_control.get_all_credentials()\n        except BaseZwaveJSServerError as err:\n            raise LockDisconnected(f\"hard refresh failed: {err}\") from err\n        except HomeAssistantError as err:\n            raise LockOperationFailed(f\"hard refresh failed: {err}\") from err\n        return await self.async_get_usercodes()",
   "new_string": "    async def async_hard_refresh_codes(self) -> dict[int, SlotCredential]:\n        \"\"\"Re-read users AND credentials fresh from the device, then project to slots.\"\"\"\n        if await self._async_uc_fallback_active():\n            await self._async_refresh_usercode_cache()\n            return await self.async_get_usercodes()\n        try:\n            await self.node.access_control.get_users()\n            await self.node.access_control.get_all_credentials()\n        except BaseZwaveJSServerError as err:\n            raise LockDisconnected(f\"hard refresh failed: {err}\") from err\n        except HomeAssistantError as err:\n            raise LockOperationFailed(f\"hard refresh failed: {err}\") from err\n        return await self.async_get_usercodes()"
 }
@@ -5900,7 +5900,7 @@ id: toolu_01CbvDz3DdKYZU8JtNSGXAnC
 tool_result
 id: toolu_01CbvDz3DdKYZU8JtNSGXAnC
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5963,7 +5963,7 @@ id: toolu_019kSUVnPVQFBTVsdWWKRLQL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
   "old_string": "        Validates the lock advertises the capabilities LCM needs\n        (``supports_user_management`` + PIN credentials) for native-user\n        providers; structural failures (``LockCodeManagerProviderError``)\n        propagate and prevent setup. Transport-level failures\n        (``LockDisconnected``/``LockOperationFailed``) during the\n        capability probe OR the provider's own ``async_setup`` are logged\n        and the coordinator is created anyway so the integration retries\n        once the lock comes online.\n        \"\"\"\n        self._lcm_config_entry = config_entry\n        try:\n            if self.supports_native_users:\n                caps = await self._get_cached_capabilities()\n                if not caps.supports_user_management:\n                    raise LockCodeManagerProviderError(\n                        f\"{self.lock.entity_id}: lock does not support user management\"\n                    )\n                if CredentialType.PIN not in caps.credential_types:\n                    raise LockCodeManagerProviderError(\n                        f\"{self.lock.entity_id}: lock does not advertise PIN credential support\"\n                    )",
   "new_string": "        Validates the lock advertises PIN credential support for\n        native-user providers; structural failures\n        (``LockCodeManagerProviderError``) propagate and prevent setup.\n        ``supports_user_management`` is deliberately NOT required: a\n        native-user provider can serve a slot-only lock (e.g. a Z-Wave\n        User Code CC fallback), in which case the seam's\n        ``_supports_user_records`` gate skips the user lifecycle and\n        routes through the credential primitives directly.\n        Transport-level failures\n        (``LockDisconnected``/``LockOperationFailed``) during the\n        capability probe OR the provider's own ``async_setup`` are logged\n        and the coordinator is created anyway so the integration retries\n        once the lock comes online.\n        \"\"\"\n        self._lcm_config_entry = config_entry\n        try:\n            if self.supports_native_users:\n                caps = await self._get_cached_capabilities()\n […]
 
@@ -5972,7 +5972,7 @@ id: toolu_019kSUVnPVQFBTVsdWWKRLQL
 tool_result
 id: toolu_019kSUVnPVQFBTVsdWWKRLQL
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6234,12 +6234,12 @@ tool_result
 id: toolu_01JoXZtk7xdhKUMzLWEL9117
 ```
 commit 0dcf28560e5033bff8bd016df923f94649727fd1
-Author: Raman Gupta <7243222+raman325@users.noreply.github.com>
+Author: Raman Gupta <<REDACTED_EMAIL>>
 Date:   Fri Jun 5 00:34:27 2026 -0400
 
     feat: add deobfuscate_log service to reverse masked PIN tokens (#1217)
     
-    Co-authored-by: Claude Opus 4.7 (1M context) <noreply@anthropic.com>
+    Co-authored-by: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>
 
  tests/test_services.py | 46 +++++++++++++++++++++++++++++
  tests/test_util.py     | 78 ++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -6603,7 +6603,7 @@ id: toolu_015HqkE55ocVBTcyjWbJmWF3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/zwave_js/conftest.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/zwave_js/conftest.py",
   "old_string": "    LCM's zwave_js provider calls ``set_credential`` and\n    ``delete_credential`` directly on this object (bypassing HA's\n    ``lock_helpers`` whose slot validation breaks for UC-only locks --\n    see issue #1251). Default both to ``SetCredentialResult.OK`` so\n    tests that don't specifically exercise rejection don't have to\n    re-mock them.\n    \"\"\"\n    ac = MagicMock()\n    ac.get_user_cached = AsyncMock(return_value=None)\n    ac.get_users_cached = AsyncMock(return_value=[])\n    ac.get_all_credentials_cached = AsyncMock(return_value=[])\n    ac.get_users = AsyncMock(return_value=[])\n    ac.get_all_credentials = AsyncMock(return_value=[])\n    ac.set_credential = AsyncMock(return_value=SetCredentialResult.OK)\n    ac.delete_credential = AsyncMock(return_value=SetCredentialResult.OK)\n    with patch.object(type(lock_schlage_be469), \"access_control\", ac):\n        yield ac",
   "new_string": "    The provider's unified-mode reads go through this object; its write\n    primitives are mocked too so UC-fallback tests can assert they are\n    NOT called (UC mode must route through the User Code CC utilities\n    instead -- see issue #1251).\n    \"\"\"\n    ac = MagicMock()\n    ac.get_user_cached = AsyncMock(return_value=None)\n    ac.get_users_cached = AsyncMock(return_value=[])\n    ac.get_all_credentials_cached = AsyncMock(return_value=[])\n    ac.get_users = AsyncMock(return_value=[])\n    ac.get_all_credentials = AsyncMock(return_value=[])\n    ac.set_credential = AsyncMock(return_value=SetCredentialResult.OK)\n    ac.delete_credential = AsyncMock(return_value=SetCredentialResult.OK)\n    with patch.object(type(lock_schlage_be469), \"access_control\", ac):\n        yield ac\n\n\ndef uc_only_caps_response() -> dict:\n    \"\"\"Return a degenerate credential-capabilities response (issue #1251).\n\n    This is what ``lock_helpers.async_get_credential_capabilities`` returns\n    when the unified ``access_control`` API has no usable PIN data for the\n    lock: the helper hardcodes ``supports_user_management=True`` but the\n    PIN credential type is missing (or advertises ``num_slots=0``).\n    \"\"\"\n    return {\n […]
 
@@ -6612,7 +6612,7 @@ id: toolu_015HqkE55ocVBTcyjWbJmWF3
 tool_result
 id: toolu_015HqkE55ocVBTcyjWbJmWF3
 ```
-The file /Users/raman/projects/lock_code_manager/tests/providers/zwave_js/conftest.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/tests/providers/zwave_js/conftest.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6622,7 +6622,7 @@ id: toolu_01NWXvggT5t1ZsjzfNYb14mG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/zwave_js/conftest.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/zwave_js/conftest.py",
   "old_string": "from zwave_js_server.const.command_class.access_control import (\n    SetCredentialResult,\n    UserCredentialType,\n)\nfrom zwave_js_server.model.driver import Driver\nfrom zwave_js_server.model.node import Node",
   "new_string": "from zwave_js_server.const.command_class.access_control import (\n    SetCredentialResult,\n    UserCredentialType,\n)\nfrom zwave_js_server.exceptions import NotFoundError\nfrom zwave_js_server.model.driver import Driver\nfrom zwave_js_server.model.node import Node"
 }
@@ -6633,7 +6633,7 @@ id: toolu_01NWXvggT5t1ZsjzfNYb14mG
 tool_result
 id: toolu_01NWXvggT5t1ZsjzfNYb14mG
 ```
-The file /Users/raman/projects/lock_code_manager/tests/providers/zwave_js/conftest.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/tests/providers/zwave_js/conftest.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7119,7 +7119,7 @@ id: toolu_015hxhmeJSdAZFDWjhDEr135
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/zwave_js/test_provider.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/zwave_js/test_provider.py",
   "old_string": "from datetime import timedelta\nfrom unittest.mock import MagicMock, patch\n\nimport pytest\nfrom pytest_homeassistant_custom_component.common import MockConfigEntry\nfrom zwave_js_server.const import NodeStatus\nfrom zwave_js_server.const.command_class.access_control import (\n    UserCredentialType,\n    UserCredentialUserType,\n)\nfrom zwave_js_server.exceptions import FailedZWaveCommand\nfrom zwave_js_server.model.access_control import CredentialData, UserData\nfrom zwave_js_server.model.node import Node",
   "new_string": "from datetime import timedelta\nfrom unittest.mock import AsyncMock, MagicMock, patch\n\nimport pytest\nfrom pytest_homeassistant_custom_component.common import MockConfigEntry\nfrom zwave_js_server.const import CommandClass, NodeStatus, SetValueStatus\nfrom zwave_js_server.const.command_class.access_control import (\n    UserCredentialType,\n    UserCredentialUserType,\n)\nfrom zwave_js_server.exceptions import FailedZWaveCommand, NotFoundError\nfrom zwave_js_server.model.access_control import CredentialData, UserData\nfrom zwave_js_server.model.node import Node\nfrom zwave_js_server.model.value import SetValueResult"
 }
@@ -7187,7 +7187,7 @@ tool_use Read
 id: toolu_01Rs86qD1RjJ3kuFJS8Nfw6H
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/zwave_js/test_provider.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/zwave_js/test_provider.py",
   "offset": 30,
   "limit": 20
 }
@@ -7227,7 +7227,7 @@ id: toolu_01WqJm5gLvJVb5vGyNgswByL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/zwave_js/test_provider.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/zwave_js/test_provider.py",
   "old_string": "from datetime import timedelta\nfrom unittest.mock import MagicMock, patch\n\nimport pytest\nfrom pytest_homeassistant_custom_component.common import MockConfigEntry\nfrom zwave_js_server.const import NodeStatus\nfrom zwave_js_server.const.command_class.access_control import (\n    UserCredentialType,\n    UserCredentialUserType,\n)\nfrom zwave_js_server.exceptions import FailedZWaveCommand\nfrom zwave_js_server.model.access_control import CredentialData, UserData\nfrom zwave_js_server.model.node import Node",
   "new_string": "from datetime import timedelta\nfrom unittest.mock import AsyncMock, MagicMock, patch\n\nimport pytest\nfrom pytest_homeassistant_custom_component.common import MockConfigEntry\nfrom zwave_js_server.const import CommandClass, NodeStatus, SetValueStatus\nfrom zwave_js_server.const.command_class.access_control import (\n    UserCredentialType,\n    UserCredentialUserType,\n)\nfrom zwave_js_server.exceptions import FailedZWaveCommand, NotFoundError\nfrom zwave_js_server.model.access_control import CredentialData, UserData\nfrom zwave_js_server.model.node import Node\nfrom zwave_js_server.model.value import SetValueResult"
 }
@@ -7238,7 +7238,7 @@ id: toolu_01WqJm5gLvJVb5vGyNgswByL
 tool_result
 id: toolu_01WqJm5gLvJVb5vGyNgswByL
 ```
-The file /Users/raman/projects/lock_code_manager/tests/providers/zwave_js/test_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/tests/providers/zwave_js/test_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7248,7 +7248,7 @@ id: toolu_018PQtWxbGkyGZ4RiXFpeosR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/zwave_js/test_provider.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/zwave_js/test_provider.py",
   "old_string": "from custom_components.lock_code_manager.domain.models import SlotCredential\nfrom custom_components.lock_code_manager.providers.zwave_js import ZWaveJSLock\n\n# Properties tests",
   "new_string": "from custom_components.lock_code_manager.domain.models import SlotCredential\nfrom custom_components.lock_code_manager.providers.zwave_js import ZWaveJSLock\n\nfrom .conftest import uc_only_caps_response, uc_slot_walk\n\n# Properties tests"
 }
@@ -7259,7 +7259,7 @@ id: toolu_018PQtWxbGkyGZ4RiXFpeosR
 tool_result
 id: toolu_018PQtWxbGkyGZ4RiXFpeosR
 ```
-The file /Users/raman/projects/lock_code_manager/tests/providers/zwave_js/test_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/tests/providers/zwave_js/test_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7591,7 +7591,7 @@ id: toolu_012WsWfmZBP2PYuHZWWidWFk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "old_string": "    # Whether the unified access-control API is unusable for PIN management\n    # on this lock and the legacy User Code CC utilities must be used\n    # instead. None until ``async_get_capabilities`` runs the detection.\n    _uc_fallback: bool | None = field(init=False, default=None)",
   "new_string": "    # Whether the unified access-control API is unusable for PIN management\n    # on this lock and the legacy User Code CC utilities must be used\n    # instead. None until ``async_get_capabilities`` runs the detection.\n    # Deliberately stored (not re-probed per operation) so it shares the\n    # lifetime of the base's capabilities cache: the seam's slot-only\n    # routing decision is frozen from the same snapshot, and flipping one\n    # without the other would route writes incoherently. Both reset\n    # together when the provider is rebuilt (HA restart, LCM reload, or a\n    # zwave_js entry reload -- which a driver upgrade always triggers),\n    # so a lock healed by the upstream fix lands back in unified mode on\n    # its next reload with no LCM change.\n    _uc_fallback: bool | None = field(init=False, default=None)"
 }
@@ -7602,7 +7602,7 @@ id: toolu_012WsWfmZBP2PYuHZWWidWFk
 tool_result
 id: toolu_012WsWfmZBP2PYuHZWWidWFk
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8017,7 +8017,7 @@ id: toolu_01Xuz4QREWeGNMaCDxp1VKED
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/test_seam.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/test_seam.py",
   "old_string": "async def test_setup_internal_rejects_lock_without_user_management(\n    hass: HomeAssistant,\n) -> None:\n    \"\"\"A native-user lock missing user management fails setup with a typed error.\"\"\"\n\n    class _NoUserMgmtLock(_NativeStubLock):\n        async def async_get_capabilities(self) -> LockCapabilities:\n            return LockCapabilities(\n                supports_user_management=False,\n                max_users=30,\n                credential_types={\n                    CredentialType.PIN: CredentialTypeCapability(\n                        num_slots=30,\n                        min_length=4,\n                        max_length=8,\n                        supports_learn=False,\n                    ),\n                },\n                max_user_name_length=16,\n            )\n\n    lock = _make_lock(hass, _NoUserMgmtLock, \"seam_setup_no_user_mgmt\")\n    config_entry = MockConfigEntry(domain=DOMAIN)\n    config_entry.add_to_hass(hass)\n    with pytest.raises(LockCodeManagerProviderError, match=\"user management\"):\n        await lock.async_setup_internal(config_entry)",
   "new_string": "async def test_setup_internal_accepts_slot_only_capabilities(\n    hass: HomeAssistant,\n) -> None:\n    \"\"\"A native-user lock reporting slot-only capabilities completes setup.\n\n    ``supports_user_management=False`` with PIN support is a valid shape\n    (e.g. the Z-Wave User Code CC fallback): the seam's\n    ``_supports_user_records`` gate routes such locks through the\n    credential primitives without the user lifecycle, so setup must not\n    reject them.\n    \"\"\"\n\n    class _SlotOnlyCapsLock(_NativeStubLock):\n        async def async_get_capabilities(self) -> LockCapabilities:\n            return LockCapabilities(\n                supports_user_management=False,\n                max_users=0,\n                credential_types={\n                    CredentialType.PIN: CredentialTypeCapability(\n                        num_slots=30,\n                        min_length=4,\n                        max_length=8,\n                        supports_learn=False,\n                    ),\n                },\n                max_user_name_length=0,\n            )\n\n    lock = _make_lock(hass, _SlotOnlyCapsLock, \"seam_setup_slot_only_caps\")\n    config_entry = MockConfigEntry(domain=DOMAIN)\n    config_entry.add_to_hass(hass)\n    await lock.async_setup_internal(config_entry)\n\n    assert lock._setup_succeeded is True\n    assert await lock._supports_user_records() is False"
 }
@@ -8048,7 +8048,7 @@ tool_use Read
 id: toolu_011PRPhfYcTTR5V8Pojz87oL
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/test_seam.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/test_seam.py",
   "offset": 205,
   "limit": 45
 }
@@ -8123,7 +8123,7 @@ id: toolu_0127zyj8sTDP8sW5NPsMrUSa
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/test_seam.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/test_seam.py",
   "old_string": "async def test_setup_internal_rejects_lock_without_user_management(\n    hass: HomeAssistant,\n) -> None:\n    \"\"\"A native-user lock missing user management fails setup with a typed error.\"\"\"\n\n    class _NoUserMgmtLock(_NativeStubLock):\n        async def async_get_capabilities(self) -> LockCapabilities:\n            return LockCapabilities(\n                supports_user_management=False,\n                max_users=30,\n                credential_types={\n                    CredentialType.PIN: CredentialTypeCapability(\n                        num_slots=30,\n                        min_length=4,\n                        max_length=8,\n                        supports_learn=False,\n                    ),\n                },\n                max_user_name_length=16,\n            )\n\n    lock = _make_lock(hass, _NoUserMgmtLock, \"seam_setup_no_user_mgmt\")\n    config_entry = MockConfigEntry(domain=DOMAIN)\n    config_entry.add_to_hass(hass)\n    with pytest.raises(LockCodeManagerProviderError, match=\"user management\"):\n        await lock.async_setup_internal(config_entry)",
   "new_string": "async def test_setup_internal_accepts_slot_only_capabilities(\n    hass: HomeAssistant,\n) -> None:\n    \"\"\"A native-user lock reporting slot-only capabilities completes setup.\n\n    ``supports_user_management=False`` with PIN support is a valid shape\n    (e.g. the Z-Wave User Code CC fallback): the seam's\n    ``_supports_user_records`` gate routes such locks through the\n    credential primitives without the user lifecycle, so setup must not\n    reject them.\n    \"\"\"\n\n    class _SlotOnlyCapsLock(_NativeStubLock):\n        async def async_get_capabilities(self) -> LockCapabilities:\n            return LockCapabilities(\n                supports_user_management=False,\n                max_users=0,\n                credential_types={\n                    CredentialType.PIN: CredentialTypeCapability(\n                        num_slots=30,\n                        min_length=4,\n                        max_length=8,\n                        supports_learn=False,\n                    ),\n                },\n                max_user_name_length=0,\n            )\n\n    lock = _make_lock(hass, _SlotOnlyCapsLock, \"seam_setup_slot_only_caps\")\n    config_entry = MockConfigEntry(domain=DOMAIN)\n    config_entry.add_to_hass(hass)\n    await lock.async_setup_internal(config_entry)\n\n    assert lock._setup_succeeded is True\n    assert await lock._supports_user_records() is False"
 }
@@ -8134,7 +8134,7 @@ id: toolu_0127zyj8sTDP8sW5NPsMrUSa
 tool_result
 id: toolu_0127zyj8sTDP8sW5NPsMrUSa
 ```
-The file /Users/raman/projects/lock_code_manager/tests/providers/test_seam.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/tests/providers/test_seam.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8143,7 +8143,7 @@ tool_use Read
 id: toolu_01Gk4S7pbLc2AoSUiZx9jvCz
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/matter/test_provider.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/matter/test_provider.py",
   "offset": 160,
   "limit": 22
 }
@@ -8185,7 +8185,7 @@ id: toolu_01GAN2ELzQJi6ALMUJdGthPA
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/matter/test_provider.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/matter/test_provider.py",
   "old_string": "async def test_setup_internal_unsupported_lock(\n    hass: HomeAssistant,\n    matter_lock_simple: MatterLock,\n    simple_lcm_config_entry: MockConfigEntry,\n) -> None:\n    \"\"\"Base setup raises when the lock doesn't support user management.\"\"\"\n    mock_get_lock_info = AsyncMock(return_value={\"supports_user_management\": False})\n    with (\n        patch.object(\n            matter_lock_simple, \"_get_matter_client\", return_value=MagicMock()\n        ),\n        patch.object(matter_lock_simple, \"_get_matter_node\", return_value=MagicMock()),\n        patch(f\"{_PROVIDER_MODULE}.get_lock_info\", mock_get_lock_info),\n        pytest.raises(LockCodeManagerError, match=\"does not support user management\"),\n    ):\n        await matter_lock_simple.async_setup_internal(simple_lcm_config_entry)",
   "new_string": "async def test_setup_internal_unsupported_lock(\n    hass: HomeAssistant,\n    matter_lock_simple: MatterLock,\n    simple_lcm_config_entry: MockConfigEntry,\n) -> None:\n    \"\"\"Base setup raises when the lock advertises no PIN credential support.\n\n    ``supports_user_management`` alone no longer fails setup (slot-only\n    locks are served via the seam's credential-primitive routing); the\n    structural requirement is PIN support, which this lock also lacks.\n    \"\"\"\n    mock_get_lock_info = AsyncMock(return_value={\"supports_user_management\": False})\n    with (\n        patch.object(\n            matter_lock_simple, \"_get_matter_client\", return_value=MagicMock()\n        ),\n        patch.object(matter_lock_simple, \"_get_matter_node\", return_value=MagicMock()),\n        patch(f\"{_PROVIDER_MODULE}.get_lock_info\", mock_get_lock_info),\n        pytest.raises(\n            LockCodeManagerError, match=\"does not advertise PIN credential support\"\n        ),\n    ):\n        await matter_lock_simple.async_setup_internal(simple_lcm_config_entry)"
 }
@@ -8196,7 +8196,7 @@ id: toolu_01GAN2ELzQJi6ALMUJdGthPA
 tool_result
 id: toolu_01GAN2ELzQJi6ALMUJdGthPA
 ```
-The file /Users/raman/projects/lock_code_manager/tests/providers/matter/test_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/tests/providers/matter/test_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8472,7 +8472,7 @@ tool_use Read
 id: toolu_017hJeRk3Ls6yzUh71doiCV9
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py"
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py"
 }
 ```
 
@@ -8544,7 +8544,7 @@ tool_use Write
 id: toolu_01DXY2TwaDSuBvNNx56MpLUg
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py",
   "content": "\"\"\"\nTemporary User Code CC fallback support for the Z-Wave JS provider.\n\nWorks around issue #1251: on some locks, node-zwave-js's unified\naccess-control API computes degenerate credential capabilities (PIN\nmissing or zero slots) from its cached interview data, and both Home\nAssistant's ``lock_helpers`` and the driver itself validate every\ncredential write against that data -- bricking PIN management even\nthough the lock works fine through the legacy User Code CC. When the\nnode advertises User Code CC, this layer routes all PIN operations\nthrough the legacy User Code CC value paths instead, restoring the\npre-4.0 behavior for exactly the population that needs it.\n\nThe upstream fix is zwave-js/zwave-js#8873. Once the minimum supported\ndriver includes it, the unified API reports usable capabilities for\nthese locks, the detection in ``_uc_fallback_capabilities`` stops\ntriggering, and everything here goes dormant. To remove the fallback\nentirely at that point:\n\n1. Delete this module.\n2. Make ``ZWaveJSLock`` extend ``BaseLock`` directly again.\n3. Delete the fallback branch points in ``zwave_js.py`` (grep for\n   ``_uc_`` and ``_set_in_progress_code_slot``).\n4. Delete ``tests/providers/zwave_js/test_uc_fallback.py`` and the\n   ``uc_only_caps_response`` / ``uc_slot_walk`` / ``mock_uc_utils`` /\n   ``uc_fallback_lock`` fixtures in that package's ``conftest.py``.\n\"\"\"\n\nfrom __future__ import annotations\n\nfrom dataclasses import dataclass, field\nimport functools\nimport logging\nfrom typing import Any, Literal\n\nfrom zwave_js_server.const import CommandClass, SetValueStatus\nfrom zwave_js_server.const.command_class.lock import (\n    ATTR_CODE_SLOT,\n    ATTR_IN_USE,\n    ATTR_USERCODE,\n    LOCK_USERCODE_PROPERTY,\n    LOCK_USERCODE_STATUS_PROPERTY,\n    CodeSlotStatus,\n)\nfrom zwave_js_server.const.command_class.notification […]
 
 > TOOL
@@ -8552,7 +8552,7 @@ id: toolu_01DXY2TwaDSuBvNNx56MpLUg
 tool_result
 id: toolu_01DXY2TwaDSuBvNNx56MpLUg
 ```
-File created successfully at: /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8629,7 +8629,7 @@ id: toolu_01Wvr3SVDn9U6QCKcWYX7tjX
 >           raise AttributeError(
                 "%s does not have the attribute %r" % (target, name)
             )
-E           AttributeError: <module 'custom_components.lock_code_manager.providers.zwave_js' from '/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py'> does not have the attribute 'get_usercodes'
+E           AttributeError: <module 'custom_components.lock_code_manager.providers.zwave_js' from '/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py'> does not have the attribute 'get_usercodes'
 
 ../../.local/share/uv/python/cpython-3.14.4-macos-aarch64-none/lib/python3.14/unittest/mock.py:1480: AttributeError
 ```
@@ -8831,7 +8831,7 @@ tool_use Bash
 id: toolu_01UQ7szHm9L9qJW5bq7HQGpA
 ```json
 {
-  "command": "git add custom_components/lock_code_manager/providers/ tests/providers/zwave_js/ && git commit -m \"$(cat <<'EOF'\nrefactor(zwave_js): isolate the UC fallback into a removable support layer\n\nMove every User Code CC fallback field, helper, and push handler into\nZWaveJSUserCodeFallbackSupport (providers/_zwave_js_uc.py), an\nintermediate class between BaseLock and ZWaveJSLock, and consolidate all\nfallback tests into tests/providers/zwave_js/test_uc_fallback.py. The\nconcrete provider keeps only the routing branch points.\n\nOnce the upstream driver fix (zwave-js/zwave-js#8873) is the minimum\nsupported version, the workaround can be deleted as a unit: drop the\nmodule, re-base ZWaveJSLock on BaseLock, remove the branch points, and\ndelete the test file plus its conftest fixtures. The module docstring\ncarries the full removal recipe.\n\nCo-Authored-By: Claude Fable 5 <noreply@anthropic.com>\nEOF\n)\" 2>&1 | tail -2 && git push 2>&1 | tail -1",
+  "command": "git add custom_components/lock_code_manager/providers/ tests/providers/zwave_js/ && git commit -m \"$(cat <<'EOF'\nrefactor(zwave_js): isolate the UC fallback into a removable support layer\n\nMove every User Code CC fallback field, helper, and push handler into\nZWaveJSUserCodeFallbackSupport (providers/_zwave_js_uc.py), an\nintermediate class between BaseLock and ZWaveJSLock, and consolidate all\nfallback tests into tests/providers/zwave_js/test_uc_fallback.py. The\nconcrete provider keeps only the routing branch points.\n\nOnce the upstream driver fix (zwave-js/zwave-js#8873) is the minimum\nsupported version, the workaround can be deleted as a unit: drop the\nmodule, re-base ZWaveJSLock on BaseLock, remove the branch points, and\ndelete the test file plus its conftest fixtures. The module docstring\ncarries the full removal recipe.\n\nCo-Authored-By: Claude Fable 5 <<REDACTED_EMAIL>>\nEOF\n)\" 2>&1 | tail -2 && git push 2>&1 | tail -1",
   "description": "Commit and push isolation refactor",
   "timeout": 300000
 }
@@ -8881,7 +8881,7 @@ tool_use Bash
 id: toolu_01SM6vsqb7KbQHVty8LadMSC
 ```json
 {
-  "command": "git commit -m \"$(cat <<'EOF'\nrefactor(zwave_js): isolate the UC fallback into a removable support layer\n\nMove every User Code CC fallback field, helper, and push handler into\nZWaveJSUserCodeFallbackSupport (providers/_zwave_js_uc.py), an\nintermediate class between BaseLock and ZWaveJSLock, and consolidate all\nfallback tests into tests/providers/zwave_js/test_uc_fallback.py. The\nconcrete provider keeps only the routing branch points.\n\nOnce the upstream driver fix (zwave-js/zwave-js#8873) is the minimum\nsupported version, the workaround can be deleted as a unit: drop the\nmodule, re-base ZWaveJSLock on BaseLock, remove the branch points, and\ndelete the test file plus its conftest fixtures. The module docstring\ncarries the full removal recipe.\n\nCo-Authored-By: Claude Fable 5 <noreply@anthropic.com>\nEOF\n)\" 2>&1 | tail -4; git log --oneline -1",
+  "command": "git commit -m \"$(cat <<'EOF'\nrefactor(zwave_js): isolate the UC fallback into a removable support layer\n\nMove every User Code CC fallback field, helper, and push handler into\nZWaveJSUserCodeFallbackSupport (providers/_zwave_js_uc.py), an\nintermediate class between BaseLock and ZWaveJSLock, and consolidate all\nfallback tests into tests/providers/zwave_js/test_uc_fallback.py. The\nconcrete provider keeps only the routing branch points.\n\nOnce the upstream driver fix (zwave-js/zwave-js#8873) is the minimum\nsupported version, the workaround can be deleted as a unit: drop the\nmodule, re-base ZWaveJSLock on BaseLock, remove the branch points, and\ndelete the test file plus its conftest fixtures. The module docstring\ncarries the full removal recipe.\n\nCo-Authored-By: Claude Fable 5 <<REDACTED_EMAIL>>\nEOF\n)\" 2>&1 | tail -4; git log --oneline -1",
   "description": "Retry commit",
   "timeout": 300000
 }
@@ -8957,7 +8957,7 @@ id: toolu_01ASFA4MxZzLCgQ2s3MbufxQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py",
   "old_string": "    @property\n    def node(self) -> Node:\n        \"\"\"Return the Z-Wave JS node (provided by the concrete provider).\"\"\"\n        raise NotImplementedError",
   "new_string": "    @property\n    def node(self) -> Node:\n        \"\"\"Return the Z-Wave JS node; the concrete provider supplies this.\"\"\"\n        raise NotImplementedError"
 }
@@ -8968,7 +8968,7 @@ id: toolu_01ASFA4MxZzLCgQ2s3MbufxQ
 tool_result
 id: toolu_01ASFA4MxZzLCgQ2s3MbufxQ
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8977,7 +8977,7 @@ tool_use Bash
 id: toolu_01NQk38eMNTEaU8xTZ1m9Vfk
 ```json
 {
-  "command": "git add -A && git commit -m \"$(cat <<'EOF'\nrefactor(zwave_js): isolate the UC fallback into a removable support layer\n\nMove every User Code CC fallback field, helper, and push handler into\nZWaveJSUserCodeFallbackSupport (providers/_zwave_js_uc.py), an\nintermediate class between BaseLock and ZWaveJSLock, and consolidate all\nfallback tests into tests/providers/zwave_js/test_uc_fallback.py. The\nconcrete provider keeps only the routing branch points.\n\nOnce the upstream driver fix (zwave-js/zwave-js#8873) is the minimum\nsupported version, the workaround can be deleted as a unit: drop the\nmodule, re-base ZWaveJSLock on BaseLock, remove the branch points, and\ndelete the test file plus its conftest fixtures. The module docstring\ncarries the full removal recipe.\n\nCo-Authored-By: Claude Fable 5 <noreply@anthropic.com>\nEOF\n)\" 2>&1 | tail -2; git log --oneline -1; git push 2>&1 | tail -1",
+  "command": "git add -A && git commit -m \"$(cat <<'EOF'\nrefactor(zwave_js): isolate the UC fallback into a removable support layer\n\nMove every User Code CC fallback field, helper, and push handler into\nZWaveJSUserCodeFallbackSupport (providers/_zwave_js_uc.py), an\nintermediate class between BaseLock and ZWaveJSLock, and consolidate all\nfallback tests into tests/providers/zwave_js/test_uc_fallback.py. The\nconcrete provider keeps only the routing branch points.\n\nOnce the upstream driver fix (zwave-js/zwave-js#8873) is the minimum\nsupported version, the workaround can be deleted as a unit: drop the\nmodule, re-base ZWaveJSLock on BaseLock, remove the branch points, and\ndelete the test file plus its conftest fixtures. The module docstring\ncarries the full removal recipe.\n\nCo-Authored-By: Claude Fable 5 <<REDACTED_EMAIL>>\nEOF\n)\" 2>&1 | tail -2; git log --oneline -1; git push 2>&1 | tail -1",
   "description": "Commit and push",
   "timeout": 300000
 }
@@ -9251,7 +9251,7 @@ tool_use Bash
 id: toolu_01Xu5Pa9PBP4HJzVPYKpAJEF
 ```json
 {
-  "command": ".venv/bin/python -m pytest tests/ -q 2>&1 | tail -2 && git add tests/providers/zwave_js/test_uc_fallback.py && git commit -m \"$(cat <<'EOF'\ntest(zwave_js): cover all UC fallback error and edge branches\n\nBrings _zwave_js_uc.py to 100% coverage: transport/missing-slot/failure\n-status mappings on clear and the verification poll, the unknown-slot\ncache-refresh retry (success, refresh failure, second-walk failure),\nthe V1 default when User Code CC is missing from the node, value-update\nevent filtering (wrong CC, wrong property, slot 0), falsy/all-zeros\nvalue resolution, and duplicate-event dedup.\n\nCo-Authored-By: Claude Fable 5 <noreply@anthropic.com>\nEOF\n)\" 2>&1 | tail -1 && git push 2>&1 | tail -1",
+  "command": ".venv/bin/python -m pytest tests/ -q 2>&1 | tail -2 && git add tests/providers/zwave_js/test_uc_fallback.py && git commit -m \"$(cat <<'EOF'\ntest(zwave_js): cover all UC fallback error and edge branches\n\nBrings _zwave_js_uc.py to 100% coverage: transport/missing-slot/failure\n-status mappings on clear and the verification poll, the unknown-slot\ncache-refresh retry (success, refresh failure, second-walk failure),\nthe V1 default when User Code CC is missing from the node, value-update\nevent filtering (wrong CC, wrong property, slot 0), falsy/all-zeros\nvalue resolution, and duplicate-event dedup.\n\nCo-Authored-By: Claude Fable 5 <<REDACTED_EMAIL>>\nEOF\n)\" 2>&1 | tail -1 && git push 2>&1 | tail -1",
   "description": "Full suite, commit, push coverage tests",
   "timeout": 600000
 }
@@ -9455,7 +9455,7 @@ v321/node-129-driver-dump.json
 v321/node-133-ui-dump.json
 v321/node-133-driver-dump.json
 v321/ui-logs-2026-06-13T12:08:14.242Z.log
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -9634,7 +9634,7 @@ id: toolu_01TVTxaNoLQCRbJUrx5rqQnB
 1329:                        └─[UserCodeCCReport]
 1368:                        └─[UserCodeCCGet]
 1424:                        └─[UserCodeCCReport]
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > AGENT
@@ -9876,7 +9876,7 @@ tool_use Bash
 id: toolu_014xEiGurooH3MbeuEJJNJqs
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && git show upstream/master:packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts 2>/dev/null | sed -n '1062,1123p'",
+  "command": "cd /home/<USER>/projects/node-zwave-js && git show upstream/master:packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts 2>/dev/null | sed -n '1062,1123p'",
   "description": "Re-read driver UC setCredential verification"
 }
 ```
@@ -9948,7 +9948,7 @@ id: toolu_014xEiGurooH3MbeuEJJNJqs
 				: SetCredentialResult.Error_Unknown;
 		}
 	}
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -10020,7 +10020,7 @@ id: toolu_01K7t1gRMr9fvGpNmWSneFGR
 User Code (99) present: False
 User Credential (131) present: False
 all CCs: []
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -10048,7 +10048,7 @@ id: toolu_01EKsuxGsyHcuGeyawBWbvj7
 --- v405/node-129-driver-dump.json ---
   has 'User Code': True | 'User Credential': False
   top keys: ['id', 'manufacturer', 'label', 'description', 'fingerprint', 'interviewStage', 'ready', 'dsk', 'securityClasses', 'failedS2Bootstrapping', 'isListening', 'isFrequentListening', 'isRouting', 'supportsBeaming', 'supportsSecurity']
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > AGENT
@@ -10125,7 +10125,7 @@ tool_use Read
 id: toolu_01KuXxtCJc3z7RwXwEncpdfa
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "offset": 228,
   "limit": 66
 }
@@ -10169,7 +10169,7 @@ id: toolu_012UzU7NNqWeWFDeHQxwZbDu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "old_string": "        Auto-detects User Code CC (UC) vs User Credential CC (U3C) and\n        returns capabilities shaped so the seam routes through the right\n        code path.\n\n        The unified ``access_control`` API in node-zwave-js computes its\n        capabilities from cached interview data; on some locks that data\n        is degenerate -- the PIN credential type comes back either\n        missing or advertising ``num_slots=0`` even though the lock\n        manages codes fine through the legacy User Code CC (issue\n        #1251, upstream fix in zwave-js/zwave-js#8873). When that\n        happens AND the node actually advertises User Code CC, we fall\n        back to reading the lock's UC slot count from the value DB and\n        return slot-only capabilities: ``supports_user_management=False``\n        and ``max_user_name_length=0``, which the seam recognizes as a\n        slot-only lock and routes through the credential-only\n        primitives (``async_set_credential`` / ``async_delete_credential``\n        / ``async_get_users``) without the user lifecycle. All\n        credential operations then use the User Code CC utilities\n        directly. Once the upstream fix ships and the unified API\n        reports usable PIN capabilities for these locks, the fallback\n        detection stops triggering on its own.\n        \"\"\"\n        try:\n            caps = await lock_helpers.async_get_credential_capabilities(self.node)\n        except BaseZwaveJSServerError as err:\n            raise LockDisconnected(f\"get capabilities failed: {err}\") from err\n        except HomeAssistantError as err:\n            raise LockOperationFailed(f\"get capabilities […]
 
 > TOOL
@@ -10177,7 +10177,7 @@ id: toolu_012UzU7NNqWeWFDeHQxwZbDu
 tool_result
 id: toolu_012UzU7NNqWeWFDeHQxwZbDu
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -10191,7 +10191,7 @@ id: toolu_0199mBcb6URrT9Y9XvfoGgHL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py",
   "old_string": "    def _node_supports_user_code_cc(self) -> bool:\n        \"\"\"Return whether the node's endpoint 0 advertises User Code CC.\"\"\"\n        return any(cc.id == CommandClass.USER_CODE for cc in self.node.command_classes)",
   "new_string": "    def _node_supports_user_code_cc(self) -> bool:\n        \"\"\"Return whether the node's endpoint 0 advertises User Code CC.\"\"\"\n        return any(cc.id == CommandClass.USER_CODE for cc in self.node.command_classes)\n\n    def _node_supports_user_credential_cc(self) -> bool:\n        \"\"\"Return whether the node's endpoint 0 advertises User Credential CC.\"\"\"\n        return any(\n            cc.id == CommandClass.USER_CREDENTIAL for cc in self.node.command_classes\n        )"
 }
@@ -10202,7 +10202,7 @@ id: toolu_0199mBcb6URrT9Y9XvfoGgHL
 tool_result
 id: toolu_0199mBcb6URrT9Y9XvfoGgHL
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10255,7 +10255,7 @@ id: toolu_01VH4vmCWEE65w4Pms2GH81G
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py",
   "old_string": "_LOGGER = logging.getLogger(__name__)\n\n# SetValueResult statuses that mean a User Code CC value write was accepted.",
   "new_string": "_LOGGER = logging.getLogger(__name__)\n\n# User Credential CC command-class id (0x83). The pinned zwave_js_server\n# release has no ``CommandClass`` enum member for it yet, so match the raw\n# id when checking whether a node implements it.\n_USER_CREDENTIAL_CC_ID = 0x83\n\n# SetValueResult statuses that mean a User Code CC value write was accepted."
 }
@@ -10266,7 +10266,7 @@ id: toolu_01VH4vmCWEE65w4Pms2GH81G
 tool_result
 id: toolu_01VH4vmCWEE65w4Pms2GH81G
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10276,7 +10276,7 @@ id: toolu_017BnCujXxrhVrQNCGapUMb6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py",
   "old_string": "    def _node_supports_user_credential_cc(self) -> bool:\n        \"\"\"Return whether the node's endpoint 0 advertises User Credential CC.\"\"\"\n        return any(\n            cc.id == CommandClass.USER_CREDENTIAL for cc in self.node.command_classes\n        )",
   "new_string": "    def _node_supports_user_credential_cc(self) -> bool:\n        \"\"\"Return whether the node's endpoint 0 advertises User Credential CC.\"\"\"\n        return any(\n            cc.id == _USER_CREDENTIAL_CC_ID for cc in self.node.command_classes\n        )"
 }
@@ -10287,7 +10287,7 @@ id: toolu_017BnCujXxrhVrQNCGapUMb6
 tool_result
 id: toolu_017BnCujXxrhVrQNCGapUMb6
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -10300,7 +10300,7 @@ tool_use Read
 id: toolu_01RAGWNQsbkxKcdKm4H4ypPV
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py",
   "offset": 170,
   "limit": 52
 }
@@ -10349,7 +10349,7 @@ id: toolu_01Ui9Ufec2JXo7bZT13ceQnJ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py",
   "old_string": "    def _uc_fallback_capabilities(self) -> LockCapabilities | None:\n        \"\"\"\n        Detect the fallback and build slot-only capabilities for it.\n\n        Called by ``async_get_capabilities`` after the unified API\n        reported no usable PIN support. Only falls back when the node\n        advertises User Code CC -- without it the legacy utilities\n        cannot work either, and the lock genuinely has no PIN support\n        LCM can manage -- and when the User Code CC value DB walk finds\n        slots. Sets ``_uc_fallback`` accordingly and returns None when\n        no fallback is possible.\n\n        ``get_usercodes`` walks slot 1, 2, 3, ... in the value DB until\n        ``NotFoundError``, so the returned list length is the lock's\n        actual UC slot count. The function only raises ``NotFoundError``\n        internally (caught there) and is otherwise pure value-DB\n        walking, so we let any unexpected exception surface rather\n        than silently mis-routing the lock to \"no PIN support\".\n        \"\"\"\n        uc_slots = (\n            get_usercodes(self.node) if self._node_supports_user_code_cc() else []\n        )\n        if not uc_slots:\n            self._uc_fallback = False\n            return None\n        _LOGGER.warning(\n            \"Lock %s: unified access-control API reports no usable PIN \"\n            \"capabilities but the node supports User Code CC with %s slots; \"\n            \"falling back to legacy User Code CC handling (see issue […]
 
 > TOOL
@@ -10357,7 +10357,7 @@ id: toolu_01Ui9Ufec2JXo7bZT13ceQnJ
 tool_result
 id: toolu_01Ui9Ufec2JXo7bZT13ceQnJ
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > DEVELOPER
@@ -10374,7 +10374,7 @@ tool_use Bash
 id: toolu_011FEumJ9aD7WFHCQmTLTdj7
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && git show upstream/master:packages/cc/src/cc/UserCodeCC.ts > /tmp/UserCodeCC.ts 2>/dev/null; echo \"=== UserCodeCCAPI.get return ===\" && grep -n \"public async get(\" /tmp/UserCodeCC.ts; sed -n \"$(grep -n 'public async get(' /tmp/UserCodeCC.ts | head -1 | cut -d: -f1),+35p\" /tmp/UserCodeCC.ts",
+  "command": "cd /home/<USER>/projects/node-zwave-js && git show upstream/master:packages/cc/src/cc/UserCodeCC.ts > /tmp/UserCodeCC.ts 2>/dev/null; echo \"=== UserCodeCCAPI.get return ===\" && grep -n \"public async get(\" /tmp/UserCodeCC.ts; sed -n \"$(grep -n 'public async get(' /tmp/UserCodeCC.ts | head -1 | cut -d: -f1),+35p\" /tmp/UserCodeCC.ts",
   "description": "Read UserCodeCCAPI.get return shape"
 }
 ```
@@ -10424,7 +10424,7 @@ id: toolu_011FEumJ9aD7WFHCQmTLTdj7
 				return;
 			} else if (multiple) {
 				return pick(response, ["userCodes", "nextUserId"]);
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -10433,7 +10433,7 @@ tool_use Bash
 id: toolu_01LCR9TknKFfLur1VUZRMxsS
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && echo \"=== UserCode type def ===\" && grep -n \"userCode\" /tmp/UserCodeCC.ts | grep -iE \"string|Bytes|Buffer|interface|: \" | head -10; echo \"=== interface UserCode ===\" && grep -rn \"interface UserCode\\b\\|type UserCode\\b\\|userCode:\" packages/cc/src/cc/_Types.ts packages/cc/src/lib/_Types.ts 2>/dev/null | head; echo \"=== report userCode decode ===\" && grep -n \"this.userCode\" /tmp/UserCodeCC.ts | head",
+  "command": "cd /home/<USER>/projects/node-zwave-js && echo \"=== UserCode type def ===\" && grep -n \"userCode\" /tmp/UserCodeCC.ts | grep -iE \"string|Bytes|Buffer|interface|: \" | head -10; echo \"=== interface UserCode ===\" && grep -rn \"interface UserCode\\b\\|type UserCode\\b\\|userCode:\" packages/cc/src/cc/_Types.ts packages/cc/src/lib/_Types.ts 2>/dev/null | head; echo \"=== report userCode decode ===\" && grep -n \"this.userCode\" /tmp/UserCodeCC.ts | head",
   "description": "Find UserCode.userCode type and report decode"
 }
 ```
@@ -10466,7 +10466,7 @@ id: toolu_01LCR9TknKFfLur1VUZRMxsS
 1474:				"user code": userCodeToLogString(this.userCode),
 1498:		this.userCode = options.userCode ?? "";
 1556:			this.userCode,
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -10475,7 +10475,7 @@ tool_use Bash
 id: toolu_01WGEX9eEVRRqkrTKHKtiAKc
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && echo \"=== UserCodeCCReport.from / parse (around 1490-1570) ===\" && sed -n '1485,1575p' /tmp/UserCodeCC.ts",
+  "command": "cd /home/<USER>/projects/node-zwave-js && echo \"=== UserCodeCCReport.from / parse (around 1490-1570) ===\" && sed -n '1485,1575p' /tmp/UserCodeCC.ts",
   "description": "Read UserCodeCCReport parse"
 }
 ```
@@ -10577,7 +10577,7 @@ id: toolu_01RVz9B3JpVEqrqJY7AUwea8
 ```
 type of values: <class 'dict'> len 99
 sample dict item: ('98-0-insideHandlesCanOpenDoorConfiguration', {'id': '133-98-0-insideHandlesCanOpenDoorConfiguration', 'nodeId': 133, 'toUpdate': False, 'commandClass': 98, 'commandClassName': 'Door Lock', 'endpoint': 0, 'property': 'insideHandlesCanOpenDoorConfiguration', 'propertyName': 'insideHandlesCanOpenDoorConfiguration', 'type': 'any', 'readable': True, 'writeable': True, 'label': 'Which inside handles can open the door (configuration)', 'stateless': False, 'commandClassVersion': 2, 'list': False, 'value': [False, False, False, False], 'lastUpdate': 1780531917309})
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -10646,7 +10646,7 @@ tool_use Bash
 id: toolu_01Y8CQGqUFaKVaruhS9dDzQL
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && git show upstream/master --stat | head -1; git log upstream/master -1 --format=\"upstream/master @ %h (%ci)\"; echo \"=== exact UC setCredential verify block with line numbers ===\" && git show upstream/master:packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts | grep -nE \"this.#assertValidSlot\\(type, userId\\)|const result = await api.set\\(|verified = await api.get|succeeded = verified|succeeded = supervisedCommandSucceeded|Error_Unknown|SetCredentialResult.OK\" | sed -n '1,30p'",
+  "command": "cd /home/<USER>/projects/node-zwave-js && git show upstream/master --stat | head -1; git log upstream/master -1 --format=\"upstream/master @ %h (%ci)\"; echo \"=== exact UC setCredential verify block with line numbers ===\" && git show upstream/master:packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts | grep -nE \"this.#assertValidSlot\\(type, userId\\)|const result = await api.set\\(|verified = await api.get|succeeded = verified|succeeded = supervisedCommandSucceeded|Error_Unknown|SetCredentialResult.OK\" | sed -n '1,30p'",
   "description": "Pin exact upstream line numbers"
 }
 ```
@@ -10689,7 +10689,7 @@ upstream/master @ 007da492f (2026-06-11 07:14:04 +0000)
 1066:			this.#assertValidSlot(type, userId);
 1090:			const result = await api.set(
 1097:				const verified = await api.get(userId);
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -10698,7 +10698,7 @@ tool_use Bash
 id: toolu_018UJJp47LTHeETsmuwqb2Kd
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && git show upstream/master:packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts | sed -n '1086,1103p'; echo \"=== combined-path twin (588-616) ===\"; git show upstream/master:packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts | sed -n '604,616p'",
+  "command": "cd /home/<USER>/projects/node-zwave-js && git show upstream/master:packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts | sed -n '1086,1103p'; echo \"=== combined-path twin (588-616) ===\"; git show upstream/master:packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts | sed -n '604,616p'",
   "description": "Read both verify-by-equality blocks exactly"
 }
 ```
@@ -10739,7 +10739,7 @@ id: toolu_018UJJp47LTHeETsmuwqb2Kd
 			} else {
 				succeeded = supervisedCommandSucceeded(result);
 			}
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > AGENT
@@ -10752,7 +10752,7 @@ tool_use Bash
 id: toolu_01Lja4U6KqAZhHoVpnm2GTWc
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && ls .github/ISSUE_TEMPLATE/ 2>/dev/null; echo \"---\"; head -60 .github/ISSUE_TEMPLATE/bug_report.yml 2>/dev/null || head -40 .github/ISSUE_TEMPLATE/*.md 2>/dev/null",
+  "command": "cd /home/<USER>/projects/node-zwave-js && ls .github/ISSUE_TEMPLATE/ 2>/dev/null; echo \"---\"; head -60 .github/ISSUE_TEMPLATE/bug_report.yml 2>/dev/null || head -40 .github/ISSUE_TEMPLATE/*.md 2>/dev/null",
   "description": "Check zwave-js issue template"
 }
 ```
@@ -10774,7 +10774,7 @@ tool_use Bash
 id: toolu_011wCUi9of9F5UraLTuXfUrc
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && cat .github/ISSUE_TEMPLATE/config.yml; echo \"=== CONTRIBUTING re bug reports ===\"; grep -riE \"bug|issue|report\" CONTRIBUTING.md 2>/dev/null | head -10",
+  "command": "cd /home/<USER>/projects/node-zwave-js && cat .github/ISSUE_TEMPLATE/config.yml; echo \"=== CONTRIBUTING re bug reports ===\"; grep -riE \"bug|issue|report\" CONTRIBUTING.md 2>/dev/null | head -10",
   "description": "Check issue config and contributing guidance"
 }
 ```
@@ -10838,7 +10838,7 @@ id: toolu_01Vnz9qk9beNdPxVp9bqCDZR
 }
 
 === driver version banner in log ===
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -10860,7 +10860,7 @@ id: toolu_01VYbKepMqrGa198HopajJAg
 node 133: mfr='Allegion' label='BE469' secClasses={'S2_AccessControl': False, 'S2_Authenticated': False, 'S2_Unauthenticated': False, 'S0_Legacy': True} firmware=None
 node 129: mfr='Allegion' label='BE469ZP' secClasses={'S2_AccessControl': True, 'S2_Authenticated': False, 'S2_Unauthenticated': False, 'S0_Legacy': False} firmware=None
 === zwave-js-ui bundles driver 15.24.2 / server 3.9.0 (11.19.1) per earlier release check ===
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > AGENT
@@ -10887,7 +10887,7 @@ id: toolu_012XumWpSS1LejHu3Gymz8UE
   enabled slots: [4, 5, 6]
 === v321 node 129 (S2 BE469ZP) enabled slots ===
   enabled slots: [1, 2, 3, 4, 5, 6]
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > AGENT
@@ -11351,7 +11351,7 @@ id: toolu_018Lk5gsfr7nMmYgUnCwACCd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py",
   "old_string": "            credential_types={\n                CredentialType.PIN: CredentialTypeCapability(\n                    num_slots=len(uc_slots),\n                    # UC spec allows 4-10 ASCII digits per User Code CC v1+.",
   "new_string": "            credential_types={\n                CredentialType.PIN: CredentialTypeCapability(\n                    num_slots=num_slots,\n                    # UC spec allows 4-10 ASCII digits per User Code CC v1+."
 }
@@ -11362,7 +11362,7 @@ id: toolu_018Lk5gsfr7nMmYgUnCwACCd
 tool_result
 id: toolu_018Lk5gsfr7nMmYgUnCwACCd
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11428,7 +11428,7 @@ tool_result
 id: toolu_01LXYEue72FcLRwJhecGouZZ
 ```
 --- keys at top --- ['id', 'manufacturer', 'label', 'description', 'fingerprint', 'interviewStage', 'ready', 'securityClasses', 'failedS2Bootstrapping', 'isListening', 'isFrequentListening', 'isRouting', 'supportsBeaming', 'supportsSecurity', 'protocol', 'protocolVersion', 'sdkVersion', 'supportedDataRates', 'deviceClass', 'commandClasses', 'maySupportBasicCC', 'configFileName']
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > AGENT
@@ -11609,7 +11609,7 @@ tool_use Write
 id: toolu_01ToRCo3rQ1SjShaEfgZd2RN
 ```json
 {
-  "file_path": "/Users/raman/.claude/projects/-Users-raman-projects-lock-code-manager/memory/project_zwave_uc_masked_code_write_reject.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-raman-projects-lock-code-manager/memory/project_zwave_uc_masked_code_write_reject.md",
   "content": "---\nname: project-zwave-uc-masked-code-write-reject\ndescription: Issue #1251 working-capability variant + #1257 — 4.x permanently disables slots on ambiguous write results that 3.x tolerated; root cause is driver verify-by-code-equality and the chosen LCM fix\nmetadata:\n  type: project\n---\n\nInvestigated 2026-06-13 (branch `fix/zwave-js-uc-only-lock-fallback`, PR #1252). This is a SECOND, distinct variant of #1251, separate from the zero-slot-capabilities bug in [[project_zwave_uc_zero_slots_root_cause]].\n\n**What changed since LCM 3.x** = the Z-Wave credential WRITE path.\n- 3.x: `zwave_js.set_lock_usercode` → `zwave_js_server.util.lock.set_usercode` → `node.async_set_value` (trusts unsupervised SUCCESS).\n- 4.x: `lock_helpers.async_set_credential` → `node.access_control.set_credential`, whose driver UC branch (`packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts` ~L1090-1102, twin ~L608-613) verifies via `succeeded = verified?.userCode === codeData`. Locks that withhold/mask the user code on GET (Schlage BE469 family; the unsupervised path where `api.set` returns undefined → S0_Legacy) never satisfy that equality, so `setCredential` returns `SetCredentialResult.Error_Unknown` even though the code was accepted (`userIdStatus` → Enabled). HA → `credential_rejected_unknown` (\"rejected the credential without giving a reason\") → LCM `CodeRejectedError` → permanent slot DISABLE.\n\nEvidence: 4.0.5 Z-Wave log node 133 slot 4 = `userIdStatus 1` then `[-] removed` 96ms later (LCM disabled+cleared an accepted write); 3.2.1 same codes persist. Supervised S2 locks are UNAFFECTED (use `supervisedCommandSucceeded`). #1257 is the same disease in Matter: transient startup `unknown(133)` / `InvalidState: Not connected` become permanent […]
 
 > TOOL
@@ -11617,7 +11617,7 @@ id: toolu_01ToRCo3rQ1SjShaEfgZd2RN
 tool_result
 id: toolu_01ToRCo3rQ1SjShaEfgZd2RN
 ```
-File created successfully at: /Users/raman/.claude/projects/-Users-raman-projects-lock-code-manager/memory/project_zwave_uc_masked_code_write_reject.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-Users-raman-projects-lock-code-manager/memory/project_zwave_uc_masked_code_write_reject.md (file state is current in your context — no need to Read it back)
 ```
 
 > DEVELOPER

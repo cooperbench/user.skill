@@ -126,7 +126,7 @@ tool_use Read
 id: toolu_01KWdE4A1kth28323EpTqBYh
 ```json
 {
-  "file_path": "/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/agent-sandbox/sandbox-template.yaml"
+  "file_path": "/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/agent-sandbox/sandbox-template.yaml"
 }
 ```
 
@@ -187,8 +187,8 @@ id: toolu_015FUAfDeQ7G3hX2wQf3F6Cb
 tool_result
 id: toolu_015FUAfDeQ7G3hX2wQf3F6Cb
 ```
-/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/agent-sandbox/sandbox-template.yaml
-/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/agent-sandbox/warm-pool.yaml
+/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/agent-sandbox/sandbox-template.yaml
+/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/agent-sandbox/warm-pool.yaml
 ```
 
 > AGENT
@@ -230,7 +230,7 @@ id: toolu_01LzKoQTsGsRG7Z5HbqAguRg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/agent-sandbox/sandbox-template.yaml",
+  "file_path": "/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/agent-sandbox/sandbox-template.yaml",
   "old_string": "    spec:\n      runtimeClassName: gvisor\n      containers:",
   "new_string": "    spec:\n      containers:"
 }
@@ -241,7 +241,7 @@ id: toolu_01LzKoQTsGsRG7Z5HbqAguRg
 tool_result
 id: toolu_01LzKoQTsGsRG7Z5HbqAguRg
 ```
-The file /Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/agent-sandbox/sandbox-template.yaml has been updated successfully.
+The file /home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/agent-sandbox/sandbox-template.yaml has been updated successfully.
 ```
 
 > AGENT
@@ -280,7 +280,7 @@ tool_use Bash
 id: toolu_01B4wzXcS4BpYSEZ99B3Rtbh
 ```json
 {
-  "command": "kubectl apply -f /Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/agent-sandbox/sandbox-template.yaml",
+  "command": "kubectl apply -f /home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/agent-sandbox/sandbox-template.yaml",
   "description": "Reapply sandbox template without gvisor RuntimeClass"
 }
 ```
@@ -327,7 +327,7 @@ tool_use Read
 id: toolu_01YFhucpfxjcsiNJCkQYm3tK
 ```json
 {
-  "file_path": "/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/agent-sandbox/warm-pool.yaml"
+  "file_path": "/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/agent-sandbox/warm-pool.yaml"
 }
 ```
 

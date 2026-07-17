@@ -9,7 +9,7 @@ tool_use Read
 id: toolu_01CZynvMAiFFk93qvRbrqLjf
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/CONTRIBUTING.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/CONTRIBUTING.md",
   "limit": 80
 }
 ```
@@ -41,7 +41,7 @@ id: toolu_015qEjXVNc26TuZcxu6aMkpM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/CLAUDE.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/CLAUDE.md",
   "old_string": "### Commit & change discipline\n- **One functionality per commit** (where possible).\n- **Manually test each committed change before starting the next functionality** (required until unit tests land in Week 8).\n- **Defects → GitHub issue, never silent fixes.** Use `gh issue create`. The fixing PR must include `Fixes #N`.\n- **From Week 8 onward, every new functionality ships with tests.**",
   "new_string": "### Commit & change discipline\nPer-functionality workflow, in order:\n1. **One functionality per commit** (where possible).\n2. **Test coverage for the functionality** (unit/integration as applicable — the ≥80% CI gate, live since Week 8, covers this).\n3. **Docs updated if required** (CLAUDE.md / ADR / CONTRIBUTING / user docs — whichever the change touches).\n4. **Agentic code-review on the PR** — spawn `/code-review` (never an inline self-review only).\n5. **Fix issues found in the same PR** where feasible.\n6. **File a GitHub issue for anything deferred** — never drop a finding silently. Use `gh issue create`; the fixing PR must include `Fixes #N`.\n7. **Full CI gate must pass** (lint/format/types/tests/security — see below).\n8. **Squash-merge to `main`.**"
 }
@@ -52,7 +52,7 @@ id: toolu_015qEjXVNc26TuZcxu6aMkpM
 tool_result
 id: toolu_015qEjXVNc26TuZcxu6aMkpM
 ```
-The file /Users/arijit/Coding/Python/DataQ/CLAUDE.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/CLAUDE.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

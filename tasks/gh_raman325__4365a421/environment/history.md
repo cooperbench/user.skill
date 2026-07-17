@@ -63,7 +63,7 @@ tool_use Read
 id: toolu_01GsxGK9nxrwXrTVaA8PczT3
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/__init__.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/__init__.py",
   "offset": 545,
   "limit": 25
 }
@@ -107,7 +107,7 @@ tool_use Read
 id: toolu_01Q6fqefH75ncGyMVeGrfmiD
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
   "offset": 450,
   "limit": 25
 }
@@ -151,7 +151,7 @@ tool_use Read
 id: toolu_013kMjPKChZ76azfAxepijc2
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py",
   "offset": 365,
   "limit": 20
 }
@@ -190,7 +190,7 @@ tool_use Read
 id: toolu_01LA36FEQ9zMqVMXqePjmcHG
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/ts/slot-card.ts",
+  "file_path": "/home/<USER>/projects/lock_code_manager/ts/slot-card.ts",
   "offset": 885,
   "limit": 40
 }
@@ -245,7 +245,7 @@ tool_use Read
 id: toolu_01LmLp19fnG6eYH3SAXWHHgz
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/ts/slot-card.ts",
+  "file_path": "/home/<USER>/projects/lock_code_manager/ts/slot-card.ts",
   "offset": 555,
   "limit": 55
 }
@@ -319,7 +319,7 @@ tool_use Read
 id: toolu_0168pvxwjQZRnHEoiohdbmVj
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/ts/generate-view.ts",
+  "file_path": "/home/<USER>/projects/lock_code_manager/ts/generate-view.ts",
   "offset": 325,
   "limit": 55
 }
@@ -397,7 +397,7 @@ tool_use Read
 id: toolu_01R1D3hDxUiJrPLeWR7cnUr9
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/__init__.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/__init__.py",
   "offset": 472,
   "limit": 12
 }
@@ -460,7 +460,7 @@ tool_use Read
 id: toolu_01SjtxVECq6zYiEo8ja8LC4x
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/ts/slot-card.ts",
+  "file_path": "/home/<USER>/projects/lock_code_manager/ts/slot-card.ts",
   "offset": 1,
   "limit": 60
 }
@@ -529,7 +529,7 @@ tool_use Read
 id: toolu_01LdH8m7sbgKUBLXDQexqudH
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/ts/generate-view.ts",
+  "file_path": "/home/<USER>/projects/lock_code_manager/ts/generate-view.ts",
   "offset": 280,
   "limit": 110
 }
@@ -598,7 +598,7 @@ id: toolu_01WF8n2SDdxwJYjFou1wegjn
 {
   "description": "Identify narration/historical/obvious comments",
   "subagent_type": "Explore",
-  "prompt": "Survey a Home Assistant custom integration codebase for comments and docstrings that should be cleaned up. The repo is at /Users/raman/projects/lock_code_manager. \n\nWe're hunting for three specific kinds of bad comments:\n\n1. **Narrations of change history or before/after state** — phrases like \"we used to\", \"previously\", \"now\", \"this used to\", \"match the X behavior\", \"in the old code\", \"before this fix\", \"we now\", \"the new way\", references to specific PRs/versions (\"PR #1227\", \"v3.x\", \"3.0\"), references to removed code (\"we removed\", \"no longer\"), or any narration of *what was changed* rather than *what the code does*.\n\n2. **Historical/migration context that doesn't help a future reader** — references to specific past incidents, deprecated behaviors that have already been removed, \"for back-compat with version X\" where X is far in the past, etc. KEEP comments that explain an *active* compatibility constraint or invariant; DROP those that narrate past states.\n\n3. **Obvious restatement of code** — docstrings or comments that just re-say what the next line of code does (\"# increment counter\" above `counter += 1`), pure tautologies, or Google-style `Args:`/`Returns:` blocks (this project's style is prose-only docstrings — no Args/Returns sections).\n\nFocus the sweep on […]
+  "prompt": "Survey a Home Assistant custom integration codebase for comments and docstrings that should be cleaned up. The repo is at /home/<USER>/projects/lock_code_manager. \n\nWe're hunting for three specific kinds of bad comments:\n\n1. **Narrations of change history or before/after state** — phrases like \"we used to\", \"previously\", \"now\", \"this used to\", \"match the X behavior\", \"in the old code\", \"before this fix\", \"we now\", \"the new way\", references to specific PRs/versions (\"PR #1227\", \"v3.x\", \"3.0\"), references to removed code (\"we removed\", \"no longer\"), or any narration of *what was changed* rather than *what the code does*.\n\n2. **Historical/migration context that doesn't help a future reader** — references to specific past incidents, deprecated behaviors that have already been removed, \"for back-compat with version X\" where X is far in the past, etc. KEEP comments that explain an *active* compatibility constraint or invariant; DROP those that narrate past states.\n\n3. **Obvious restatement of code** — docstrings or comments that just re-say what the next line of code does (\"# increment counter\" above `counter += 1`), pure tautologies, or Google-style `Args:`/`Returns:` blocks (this project's style is prose-only docstrings — no Args/Returns sections).\n\nFocus the sweep on […]
 
 > TOOL
 
@@ -609,18 +609,18 @@ The "now -- wait" comment in sync.py (line 878) is explaining current behavior, 
 
 Let me finalize with more precise analysis. Based on my thorough review:
 
-/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py:375 — NARRATION — "match the 3.x behavior of the HA service we used to call" — REWRITE — "To maintain compatibility with legacy firmware that worked with 3.x behavior"
+/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py:375 — NARRATION — "match the 3.x behavior of the HA service we used to call" — REWRITE — "To maintain compatibility with legacy firmware that worked with 3.x behavior"
 
-/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py:403 — NARRATION — "historical Matter contract (PR #1077) tolerated name-set" — REWRITE — "Tolerate name-set failures to allow subsequent credential write"
+/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py:403 — NARRATION — "historical Matter contract (PR #1077) tolerated name-set" — REWRITE — "Tolerate name-set failures to allow subsequent credential write"
 
-/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py:422 — NARRATION — "UPDATE's historical contract (PR #1077): tolerate any" — REWRITE — "Tolerate any rename failure per established protocol"
+/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py:422 — NARRATION — "UPDATE's historical contract (PR #1077): tolerate any" — REWRITE — "Tolerate any rename failure per established protocol"
 
-/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zigbee2mqtt.py:582 — NARRATION — "Parallel gathers plus per-slot timeouts used to raise and fail" — REWRITE — "Sequential queries prevent firmware from being overwhelmed"
+/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zigbee2mqtt.py:582 — NARRATION — "Parallel gathers plus per-slot timeouts used to raise and fail" — REWRITE — "Sequential queries prevent firmware from being overwhelmed"
 
 Based on my comprehensive review of the codebase, here are the findings:
 
-/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py:375 — NARRATION — "match the 3.x behavior of the HA service we used to call" — REWRITE — "Maintain firmware compatibility like the 3.x provider did"
-/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py:403 — NARRATION — "historical Matter contract (PR […]
+/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py:375 — NARRATION — "match the 3.x behavior of the HA service we used to call" — REWRITE — "Maintain firmware compatibility like the 3.x provider did"
+/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py:403 — NARRATION — "historical Matter contract (PR […]
 
 > AGENT
 
@@ -635,7 +635,7 @@ id: toolu_01LtqcroaXWfPmKDLzWcUWmb
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py",
   "old_string": "            # Transient non-OK (canonically ``FAIL``): match the 3.x\n            # behavior of the HA service we used to call -- log and\n            # let the optimistic push + next sync tick converge.",
   "new_string": "            # Transient non-OK (canonically ``FAIL``) is non-fatal: the\n            # optimistic push covers UI and the next sync tick reconciles."
 }
@@ -646,7 +646,7 @@ id: toolu_01LtqcroaXWfPmKDLzWcUWmb
 tool_result
 id: toolu_01LtqcroaXWfPmKDLzWcUWmb
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -661,7 +661,7 @@ tool_use Bash
 id: toolu_01PLNKY9KzHZHZXq8NqYDaDa
 ```json
 {
-  "command": "grep -n \"loadCardHelpers\\|interface Window\\|declare global\" /Users/raman/projects/lock_code_manager/ts/ha_type_stubs.ts /Users/raman/projects/lock_code_manager/ts/*.ts 2>/dev/null | head -20",
+  "command": "grep -n \"loadCardHelpers\\|interface Window\\|declare global\" /home/<USER>/projects/lock_code_manager/ts/ha_type_stubs.ts /home/<USER>/projects/lock_code_manager/ts/*.ts 2>/dev/null | head -20",
   "description": "Find existing global/window augmentations"
 }
 ```
@@ -671,26 +671,26 @@ id: toolu_01PLNKY9KzHZHZXq8NqYDaDa
 tool_result
 id: toolu_01PLNKY9KzHZHZXq8NqYDaDa
 ```
-/Users/raman/projects/lock_code_manager/ts/main.ts:10:declare global {
-/Users/raman/projects/lock_code_manager/ts/main.ts:17:    interface Window {
-/Users/raman/projects/lock_code_manager/ts/lock-codes-card.ts:833:declare global {
-/Users/raman/projects/lock_code_manager/ts/lock-codes-card.ts:834:    interface Window {
-/Users/raman/projects/lock_code_manager/ts/slot-card.ts:866:        const loadHelpers = (window as Window & { loadCardHelpers?: () => Promise<unknown> })
-/Users/raman/projects/lock_code_manager/ts/slot-card.ts:867:            .loadCardHelpers;
-/Users/raman/projects/lock_code_manager/ts/slot-card.ts:885:     * `loadCardHelpers().createRowElement()` helper. Falls back to a plain
-/Users/raman/projects/lock_code_manager/ts/slot-card.ts:901:        // Use HA's loadCardHelpers to get createRowElement, which handles
-/Users/raman/projects/lock_code_manager/ts/slot-card.ts:904:        const loadHelpers = (window as any).loadCardHelpers;
-/Users/raman/projects/lock_code_manager/ts/slot-card.ts:1406:declare global {
-/Users/raman/projects/lock_code_manager/ts/slot-card.ts:1407:    interface Window {
-/Users/raman/projects/lock_code_manager/ts/slot-card.integration.test.ts:713:            delete (window as any).loadCardHelpers;
-/Users/raman/projects/lock_code_manager/ts/slot-card.integration.test.ts:729:            (window as any).loadCardHelpers = vi.fn().mockResolvedValue({
-/Users/raman/projects/lock_code_manager/ts/slot-card.integration.test.ts:759:            (window as any).loadCardHelpers = loadHelpersSpy;
-/Users/raman/projects/lock_code_manager/ts/slot-card.integration.test.ts:791:            (window as any).loadCardHelpers = vi.fn().mockRejectedValue(new Error('helpers boom'));
-/Users/raman/projects/lock_code_manager/ts/slot-card.integration.test.ts:2065:            delete (window as any).loadCardHelpers;
-/Users/raman/projects/lock_code_manager/ts/slot-card.integration.test.ts:2068:        it('returns fallback div when loadCardHelpers is not available', async () => {
-/Users/raman/projects/lock_code_manager/ts/slot-card.integration.test.ts:2086:        it('creates element via loadCardHelpers and caches it', async () => {
-/Users/raman/projects/lock_code_manager/ts/slot-card.integration.test.ts:2093:            (window as any).loadCardHelpers = vi.fn().mockResolvedValue({
-/Users/raman/projects/lock_code_manager/ts/slot-card.integration.test.ts:2115:            // loadCardHelpers should not be called again
+/home/<USER>/projects/lock_code_manager/ts/main.ts:10:declare global {
+/home/<USER>/projects/lock_code_manager/ts/main.ts:17:    interface Window {
+/home/<USER>/projects/lock_code_manager/ts/lock-codes-card.ts:833:declare global {
+/home/<USER>/projects/lock_code_manager/ts/lock-codes-card.ts:834:    interface Window {
+/home/<USER>/projects/lock_code_manager/ts/slot-card.ts:866:        const loadHelpers = (window as Window & { loadCardHelpers?: () => Promise<unknown> })
+/home/<USER>/projects/lock_code_manager/ts/slot-card.ts:867:            .loadCardHelpers;
+/home/<USER>/projects/lock_code_manager/ts/slot-card.ts:885:     * `loadCardHelpers().createRowElement()` helper. Falls back to a plain
+/home/<USER>/projects/lock_code_manager/ts/slot-card.ts:901:        // Use HA's loadCardHelpers to get createRowElement, which handles
+/home/<USER>/projects/lock_code_manager/ts/slot-card.ts:904:        const loadHelpers = (window as any).loadCardHelpers;
+/home/<USER>/projects/lock_code_manager/ts/slot-card.ts:1406:declare global {
+/home/<USER>/projects/lock_code_manager/ts/slot-card.ts:1407:    interface Window {
+/home/<USER>/projects/lock_code_manager/ts/slot-card.integration.test.ts:713:            delete (window as any).loadCardHelpers;
+/home/<USER>/projects/lock_code_manager/ts/slot-card.integration.test.ts:729:            (window as any).loadCardHelpers = vi.fn().mockResolvedValue({
+/home/<USER>/projects/lock_code_manager/ts/slot-card.integration.test.ts:759:            (window as any).loadCardHelpers = loadHelpersSpy;
+/home/<USER>/projects/lock_code_manager/ts/slot-card.integration.test.ts:791:            (window as any).loadCardHelpers = vi.fn().mockRejectedValue(new Error('helpers boom'));
+/home/<USER>/projects/lock_code_manager/ts/slot-card.integration.test.ts:2065:            delete (window as any).loadCardHelpers;
+/home/<USER>/projects/lock_code_manager/ts/slot-card.integration.test.ts:2068:        it('returns fallback div when loadCardHelpers is not available', async () => {
+/home/<USER>/projects/lock_code_manager/ts/slot-card.integration.test.ts:2086:        it('creates element via loadCardHelpers and caches it', async () => {
+/home/<USER>/projects/lock_code_manager/ts/slot-card.integration.test.ts:2093:            (window as any).loadCardHelpers = vi.fn().mockResolvedValue({
+/home/<USER>/projects/lock_code_manager/ts/slot-card.integration.test.ts:2115:            // loadCardHelpers should not be called again
 ```
 
 > AGENT
@@ -703,7 +703,7 @@ tool_use Read
 id: toolu_01Vv93q6QcSiztVGdGeeUbkJ
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/ts/slot-card.ts",
+  "file_path": "/home/<USER>/projects/lock_code_manager/ts/slot-card.ts",
   "offset": 855,
   "limit": 15
 }
@@ -737,7 +737,7 @@ tool_use Read
 id: toolu_016qMjw9dcwjvwFDEcgtaTxg
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/ts/slot-card.ts",
+  "file_path": "/home/<USER>/projects/lock_code_manager/ts/slot-card.ts",
   "offset": 1400,
   "limit": 25
 }
@@ -786,7 +786,7 @@ id: toolu_017s48hoR1H6DtZ8taBUs8bM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/ts/slot-card.ts",
+  "file_path": "/home/<USER>/projects/lock_code_manager/ts/slot-card.ts",
   "old_string": "const DEFAULT_CODE_DISPLAY: CodeDisplayMode = 'masked_with_reveal';",
   "new_string": "const DEFAULT_CODE_DISPLAY: CodeDisplayMode = 'masked_with_reveal';\n\n/** HTMLElement extended with HA's runtime-injected `hass` property. */\ninterface HassElement extends HTMLElement {\n    hass?: HomeAssistant;\n}\n\n/** Subset of HA's loadCardHelpers() return value we depend on. */\ninterface CardHelpers {\n    createRowElement: (config: { entity: string }) => HTMLElement;\n}"
 }
@@ -797,7 +797,7 @@ id: toolu_017s48hoR1H6DtZ8taBUs8bM
 tool_result
 id: toolu_017s48hoR1H6DtZ8taBUs8bM
 ```
-The file /Users/raman/projects/lock_code_manager/ts/slot-card.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/ts/slot-card.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -807,7 +807,7 @@ id: toolu_01XphKMdL4KwRMbjEXs2npi6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/ts/slot-card.ts",
+  "file_path": "/home/<USER>/projects/lock_code_manager/ts/slot-card.ts",
   "old_string": "declare global {\n    interface Window {\n        customCards?: Array<{\n            description: string;\n            name: string;\n            preview?: boolean;\n            type: string;\n        }>;\n    }\n}",
   "new_string": "declare global {\n    interface Window {\n        customCards?: Array<{\n            description: string;\n            name: string;\n            preview?: boolean;\n            type: string;\n        }>;\n        loadCardHelpers?: () => Promise<CardHelpers>;\n    }\n}"
 }
@@ -818,7 +818,7 @@ id: toolu_01XphKMdL4KwRMbjEXs2npi6
 tool_result
 id: toolu_01XphKMdL4KwRMbjEXs2npi6
 ```
-The file /Users/raman/projects/lock_code_manager/ts/slot-card.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/ts/slot-card.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -832,7 +832,7 @@ id: toolu_011naAuEspfXCpcirR6nKAVW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/ts/slot-card.ts",
+  "file_path": "/home/<USER>/projects/lock_code_manager/ts/slot-card.ts",
   "old_string": "        if (customElements.get('ha-entity-picker')) return;\n        const loadHelpers = (window as Window & { loadCardHelpers?: () => Promise<unknown> })\n            .loadCardHelpers;\n        if (!loadHelpers) return;",
   "new_string": "        if (customElements.get('ha-entity-picker')) return;\n        const loadHelpers = window.loadCardHelpers;\n        if (!loadHelpers) return;"
 }
@@ -843,7 +843,7 @@ id: toolu_011naAuEspfXCpcirR6nKAVW
 tool_result
 id: toolu_011naAuEspfXCpcirR6nKAVW
 ```
-The file /Users/raman/projects/lock_code_manager/ts/slot-card.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/ts/slot-card.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -852,7 +852,7 @@ tool_use Read
 id: toolu_01Ry78dN9wbW66G2UvbPGB9k
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/ts/slot-card.ts",
+  "file_path": "/home/<USER>/projects/lock_code_manager/ts/slot-card.ts",
   "offset": 895,
   "limit": 40
 }
@@ -904,7 +904,7 @@ tool_use Read
 id: toolu_01Bw1sJ3S34t26cAoDVsxY5V
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/ts/slot-card.ts",
+  "file_path": "/home/<USER>/projects/lock_code_manager/ts/slot-card.ts",
   "offset": 868,
   "limit": 15
 }
@@ -943,7 +943,7 @@ id: toolu_01EzCu2KmJbDkHKmHuv7ftL9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/ts/slot-card.ts",
+  "file_path": "/home/<USER>/projects/lock_code_manager/ts/slot-card.ts",
   "old_string": "/** Subset of HA's loadCardHelpers() return value we depend on. */\ninterface CardHelpers {\n    createRowElement: (config: { entity: string }) => HTMLElement;\n}",
   "new_string": "/** Subset of HA's loadCardHelpers() return value we depend on. */\ninterface CardHelpers {\n    createCardElement: (config: { entities: string[]; type: string }) => HTMLElement & {\n        constructor: { getConfigElement?: () => Promise<unknown> };\n    };\n    createRowElement: (config: { entity: string }) => HTMLElement;\n}"
 }
@@ -954,7 +954,7 @@ id: toolu_01EzCu2KmJbDkHKmHuv7ftL9
 tool_result
 id: toolu_01EzCu2KmJbDkHKmHuv7ftL9
 ```
-The file /Users/raman/projects/lock_code_manager/ts/slot-card.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/ts/slot-card.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -964,7 +964,7 @@ id: toolu_01CKmp99igXeShP76oPxm4dV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/ts/slot-card.ts",
+  "file_path": "/home/<USER>/projects/lock_code_manager/ts/slot-card.ts",
   "old_string": "        try {\n            const helpers = (await loadHelpers()) as {\n                createCardElement: (config: { entities: string[]; type: string }) => HTMLElement & {\n                    constructor: { getConfigElement?: () => Promise<unknown> };\n                };",
   "new_string": "        try {\n            const helpers = await loadHelpers();\n            const helpersTyped = helpers as {"
 }
@@ -975,7 +975,7 @@ id: toolu_01CKmp99igXeShP76oPxm4dV
 tool_result
 id: toolu_01CKmp99igXeShP76oPxm4dV
 ```
-The file /Users/raman/projects/lock_code_manager/ts/slot-card.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/ts/slot-card.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -988,7 +988,7 @@ tool_use Read
 id: toolu_01SCwFHvJXAhjzCCZskVZ7g7
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/ts/slot-card.ts",
+  "file_path": "/home/<USER>/projects/lock_code_manager/ts/slot-card.ts",
   "offset": 875,
   "limit": 25
 }
@@ -1033,7 +1033,7 @@ id: toolu_01P3qQBAGVxphS8JLRpYYNmn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/ts/slot-card.ts",
+  "file_path": "/home/<USER>/projects/lock_code_manager/ts/slot-card.ts",
   "old_string": "        try {\n            const helpers = await loadHelpers();\n            const helpersTyped = helpers as {\n            };\n            const cardElement = helpers.createCardElement({ entities: [], type: 'entities' });\n            await cardElement.constructor.getConfigElement?.();",
   "new_string": "        try {\n            const helpers = await loadHelpers();\n            const cardElement = helpers.createCardElement({ entities: [], type: 'entities' });\n            await cardElement.constructor.getConfigElement?.();"
 }
@@ -1044,7 +1044,7 @@ id: toolu_01P3qQBAGVxphS8JLRpYYNmn
 tool_result
 id: toolu_01P3qQBAGVxphS8JLRpYYNmn
 ```
-The file /Users/raman/projects/lock_code_manager/ts/slot-card.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/ts/slot-card.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1058,7 +1058,7 @@ id: toolu_01ReZiMUXsgrWhPe7t2vax92
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/ts/slot-card.ts",
+  "file_path": "/home/<USER>/projects/lock_code_manager/ts/slot-card.ts",
   "old_string": "        const cached = this._entityRowCache.get(entityId);\n        if (cached) {\n            // eslint-disable-next-line @typescript-eslint/no-explicit-any\n            (cached as any).hass = this._hass;\n            return cached;\n        }\n\n        // Use HA's loadCardHelpers to get createRowElement, which handles\n        // lazy-loading and domain-to-row mapping automatically\n        // eslint-disable-next-line @typescript-eslint/no-explicit-any\n        const loadHelpers = (window as any).loadCardHelpers;\n        if (!loadHelpers) {\n            const fallback = document.createElement('div');\n            fallback.textContent = entityId;\n            return fallback;\n        }\n        try {\n            const helpers = await loadHelpers();\n            const el = helpers.createRowElement({ entity: entityId }) as HTMLElement;\n            // eslint-disable-next-line @typescript-eslint/no-explicit-any\n            (el as any).hass = this._hass;\n            this._entityRowCache.set(entityId, el);\n            return el;",
   "new_string": "        const cached = this._entityRowCache.get(entityId);\n        if (cached) {\n            (cached as HassElement).hass = this._hass;\n            return cached;\n        }\n\n        const loadHelpers = window.loadCardHelpers;\n        if (!loadHelpers) {\n            const fallback = document.createElement('div');\n            fallback.textContent = entityId;\n            return fallback;\n        }\n        try {\n            const helpers = await loadHelpers();\n            const el = helpers.createRowElement({ entity: entityId }) as HassElement;\n            el.hass = this._hass;\n            this._entityRowCache.set(entityId, el);\n            return el;"
 }
@@ -1069,7 +1069,7 @@ id: toolu_01ReZiMUXsgrWhPe7t2vax92
 tool_result
 id: toolu_01ReZiMUXsgrWhPe7t2vax92
 ```
-The file /Users/raman/projects/lock_code_manager/ts/slot-card.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/ts/slot-card.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1089,14 +1089,14 @@ tool_result
 id: toolu_013Et3uoamZYP33c6Vr9yEKc
 ```
 yarn run v1.22.22
-$ /Users/raman/projects/lock_code_manager/node_modules/.bin/tsc --noEmit
+$ /home/<USER>/projects/lock_code_manager/node_modules/.bin/tsc --noEmit
 node_modules/@vitest/expect/dist/index.d.ts(8,27): error TS2307: Cannot find module '@vitest/utils/display' or its corresponding type declarations.
-  There are types at '/Users/raman/projects/lock_code_manager/node_modules/@vitest/utils/dist/display.d.ts', but this result could not be resolved under your current 'moduleResolution' setting. Consider updating to 'node16', 'nodenext', or 'bundler'.
+  There are types at '/home/<USER>/projects/lock_code_manager/node_modules/@vitest/utils/dist/display.d.ts', but this result could not be resolved under your current 'moduleResolution' setting. Consider updating to 'node16', 'nodenext', or 'bundler'.
 node_modules/vite/dist/node/chunks/moduleRunnerTransport.d.ts(1,28): error TS2307: Cannot find module '#types/hmrPayload' or its corresponding type declarations.
 node_modules/vite/dist/node/index.d.ts(3,223): error TS2307: Cannot find module '#types/hmrPayload' or its corresponding type declarations.
 node_modules/vite/dist/node/index.d.ts(4,139): error TS2307: Cannot find module '#types/customEvent' or its corresponding type declarations.
 node_modules/vite/dist/node/index.d.ts(7,41): error TS2307: Cannot find module 'rollup/parseAst' or its corresponding type declarations.
-  There are types at '/Users/raman/projects/lock_code_manager/node_modules/rollup/dist/parseAst.d.ts', but this result could not be resolved under your current 'moduleResolution' setting. Consider updating to 'node16', 'nodenext', or 'bundler'.
+  There are types at '/home/<USER>/projects/lock_code_manager/node_modules/rollup/dist/parseAst.d.ts', but this result could not be resolved under your current 'moduleResolution' setting. Consider updating to 'node16', 'nodenext', or 'bundler'.
 node_modules/vite/dist/node/index.d.ts(21,45): error TS2307: Cannot find module '#types/internal/terserOptions' or its corresponding type declarations.
 node_modules/vite/dist/node/index.d.ts(23,109): error TS2307: Cannot find module '#types/internal/cssPreprocessorOptions' or its corresponding type declarations.
 node_modules/vite/dist/node/index.d.ts(24,101): error TS2307: Cannot find module '#types/internal/lightningcssOptions' or its corresponding type declarations.
@@ -1138,7 +1138,7 @@ tool_use Read
 id: toolu_01GTowK3CWCfw1zZLKCSui4p
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/ts/generate-view.ts",
+  "file_path": "/home/<USER>/projects/lock_code_manager/ts/generate-view.ts",
   "offset": 1,
   "limit": 50
 }
@@ -1207,7 +1207,7 @@ tool_use Bash
 id: toolu_01SpmoSFAwAfixusD6ayn1kL
 ```json
 {
-  "command": "grep -n \"function generateEntityCards\\|generateEntityCards =\" /Users/raman/projects/lock_code_manager/ts/generate-view.ts | head -5",
+  "command": "grep -n \"function generateEntityCards\\|generateEntityCards =\" /home/<USER>/projects/lock_code_manager/ts/generate-view.ts | head -5",
   "description": "Find generateEntityCards definition"
 }
 ```
@@ -1226,7 +1226,7 @@ tool_use Read
 id: toolu_019VHk2HUadSQ6kpoCx2TM2p
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/ts/generate-view.ts",
+  "file_path": "/home/<USER>/projects/lock_code_manager/ts/generate-view.ts",
   "offset": 154,
   "limit": 15
 }
@@ -1261,7 +1261,7 @@ id: toolu_01EzrXy3ms94paZQMRqnvpLE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/ts/generate-view.ts",
+  "file_path": "/home/<USER>/projects/lock_code_manager/ts/generate-view.ts",
   "old_string": "/** @internal - exported for testing via generate-view.internal.ts */\nexport function maybeGenerateFoldEntityRowCard(\n    hass: HomeAssistant,\n    configEntry: ConfigEntryJSONFragment,\n    entities: LockCodeManagerEntityEntry[],\n    label: string,\n    useFoldEntityRow: boolean\n) {\n    if (entities.length === 0) return [];\n    const entityCards = generateEntityCards(hass, configEntry, entities);\n    return useFoldEntityRow\n        ? [\n              DIVIDER_CARD,\n              {\n                  entities: entityCards,\n                  head: {\n                      label,\n                      type: 'section'\n                  },\n                  type: 'custom:fold-entity-row'\n              }\n          ]\n        : [\n              {\n                  label,\n                  type: 'section'\n              },\n              ...entityCards\n          ];\n}\n\n/** @internal - exported for testing via generate-view.internal.ts */\nexport function maybeGenerateFoldEntityRowConditionCard(\n    hass: HomeAssistant,\n    configEntry: ConfigEntryJSONFragment,\n    conditionEntities: LockCodeManagerEntityEntry[],\n    calendarEntityId: string | null | undefined,\n    label: string,\n    useFoldEntityRow: boolean\n) {\n    if (conditionEntities.length === 0 && calendarEntityId == null) return [];\n    const entityCards = generateEntityCards(hass, configEntry, conditionEntities);\n    if (calendarEntityId != null) {\n        entityCards.unshift({\n            entity: calendarEntityId\n        });\n    }\n\n    return useFoldEntityRow\n        ? [\n              DIVIDER_CARD,\n              {\n                  entities: entityCards,\n                  head: {\n                      label,\n                      type: 'section'\n                  },\n                  type: 'custom:fold-entity-row'\n              }\n          ]\n        : [\n              {\n                  label,\n                  type: 'section'\n              },\n              ...entityCards\n          ];\n}",
   "new_string": "/**\n * Wraps a list of entity card configs as either a fold-entity-row group\n * (preceded by a divider) or a plain section header followed by the cards.\n */\nfunction wrapAsFoldOrSection(\n    entityCards: { entity: string; name?: string }[],\n    label: string,\n    useFoldEntityRow: boolean\n) {\n    return useFoldEntityRow\n        ? [\n              DIVIDER_CARD,\n […]
 
@@ -1270,7 +1270,7 @@ id: toolu_01EzrXy3ms94paZQMRqnvpLE
 tool_result
 id: toolu_01EzrXy3ms94paZQMRqnvpLE
 ```
-The file /Users/raman/projects/lock_code_manager/ts/generate-view.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/ts/generate-view.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1317,27 +1317,27 @@ id: toolu_01XKG8v3hMBeTH9TTiHMiaoG
 tool_result
 id: toolu_01XKG8v3hMBeTH9TTiHMiaoG
 ```
-    at [90mfile:///Users/raman/projects/lock_code_manager/[39mnode_modules/[4m@vitest/runner[24m/dist/index.js:1653:37
-    at Traces.$ [90m(file:///Users/raman/projects/lock_code_manager/[39mnode_modules/[4mvitest[24m/dist/chunks/traces.U4xDYhzZ.js:115:27[90m)[39m
-    at trace [90m(file:///Users/raman/projects/lock_code_manager/[39mnode_modules/[4mvitest[24m/dist/chunks/test.B8ej_ZHS.js:239:21[90m)[39m
-    at runTest [90m(file:///Users/raman/projects/lock_code_manager/[39mnode_modules/[4m@vitest/runner[24m/dist/index.js:1653:12[90m)[39m
+    at [90mfile:///home/<USER>/projects/lock_code_manager/[39mnode_modules/[4m@vitest/runner[24m/dist/index.js:1653:37
+    at Traces.$ [90m(file:///home/<USER>/projects/lock_code_manager/[39mnode_modules/[4mvitest[24m/dist/chunks/traces.U4xDYhzZ.js:115:27[90m)[39m
+    at trace [90m(file:///home/<USER>/projects/lock_code_manager/[39mnode_modules/[4mvitest[24m/dist/chunks/test.B8ej_ZHS.js:239:21[90m)[39m
+    at runTest [90m(file:///home/<USER>/projects/lock_code_manager/[39mnode_modules/[4m@vitest/runner[24m/dist/index.js:1653:12[90m)[39m
 
 [90mstderr[2m | ts/slot-card.integration.test.ts[2m > [22m[2mLockCodeManagerSlotCard integration[2m > [22m[2mreview-fix coverage (PR #1116)[2m > [22m[2m_getEntityRow error handling[2m > [22m[2mreturns an error placeholder when createRowElement throws
 [22m[39mlcm-slot: failed to lazy-load ha-entity-picker TypeError: helpers.createCardElement is not a function
-    at LockCodeManagerSlotCard._ensureEntityPickerLoaded [90m(/Users/raman/projects/lock_code_manager/[39mts/slot-card.ts:883:41[90m)[39m
+    at LockCodeManagerSlotCard._ensureEntityPickerLoaded [90m(/home/<USER>/projects/lock_code_manager/[39mts/slot-card.ts:883:41[90m)[39m
 
 [90mstderr[2m | ts/slot-card.integration.test.ts[2m > [22m[2mLockCodeManagerSlotCard integration[2m > [22m[2mreview-fix coverage (PR #1116)[2m > [22m[2m_getEntityRow error handling[2m > [22m[2mdoes not cache the error placeholder so the next render retries
 [22m[39mlcm-slot: failed to lazy-load ha-entity-picker Error: still failing
-    at [90m/Users/raman/projects/lock_code_manager/[39mts/slot-card.integration.test.ts:3379:43
-    at Mock [90m(file:///Users/raman/projects/lock_code_manager/[39mnode_modules/[4m@vitest/spy[24m/dist/index.js:285:34[90m)[39m
-    at LockCodeManagerSlotCard._ensureEntityPickerLoaded [90m(/Users/raman/projects/lock_code_manager/[39mts/slot-card.ts:882:35[90m)[39m
-    at LockCodeManagerSlotCard.connectedCallback [90m(/Users/raman/projects/lock_code_manager/[39mts/slot-card.ts:212:19[90m)[39m
-    at LockCodeManagerSlotCard.invokeTheCallbackFunction [90m(/Users/raman/projects/lock_code_manager/[39mnode_modules/[4mjsdom[24m/lib/generated/idl/Function.js:19:26[90m)[39m
-    at invokeCEReactions [90m(/Users/raman/projects/lock_code_manager/[39mnode_modules/[4mjsdom[24m/lib/jsdom/living/helpers/custom-elements.js:190:31[90m)[39m
-    at ceReactionsPostSteps [90m(/Users/raman/projects/lock_code_manager/[39mnode_modules/[4mjsdom[24m/lib/jsdom/living/helpers/custom-elements.js:54:3[90m)[39m
-    at HTMLDivElement.appendChild [90m(/Users/raman/projects/lock_code_manager/[39mnode_modules/[4mjsdom[24m/lib/generated/idl/Node.js:415:9[90m)[39m
-    at [90m/Users/raman/projects/lock_code_manager/[39mts/slot-card.integration.test.ts:3385:27
-    at [90mfile:///Users/raman/projects/lock_code_manager/[39mnode_modules/[4m@vitest/runner[24m/dist/index.js:145:11
+    at [90m/home/<USER>/projects/lock_code_manager/[39mts/slot-card.integration.test.ts:3379:43
+    at Mock [90m(file:///home/<USER>/projects/lock_code_manager/[39mnode_modules/[4m@vitest/spy[24m/dist/index.js:285:34[90m)[39m
+    at LockCodeManagerSlotCard._ensureEntityPickerLoaded [90m(/home/<USER>/projects/lock_code_manager/[39mts/slot-card.ts:882:35[90m)[39m
+    at LockCodeManagerSlotCard.connectedCallback [90m(/home/<USER>/projects/lock_code_manager/[39mts/slot-card.ts:212:19[90m)[39m
+    at LockCodeManagerSlotCard.invokeTheCallbackFunction [90m(/home/<USER>/projects/lock_code_manager/[39mnode_modules/[4mjsdom[24m/lib/generated/idl/Function.js:19:26[90m)[39m
+    at invokeCEReactions [90m(/home/<USER>/projects/lock_code_manager/[39mnode_modules/[4mjsdom[24m/lib/jsdom/living/helpers/custom-elements.js:190:31[90m)[39m
+    at ceReactionsPostSteps [90m(/home/<USER>/projects/lock_code_manager/[39mnode_modules/[4mjsdom[24m/lib/jsdom/living/helpers/custom-elements.js:54:3[90m)[39m
+    at HTMLDivElement.appendChild [90m(/home/<USER>/projects/lock_code_manager/[39mnode_modules/[4mjsdom[24m/lib/generated/idl/Node.js:415:9[90m)[39m
+    at [90m/home/<USER>/projects/lock_code_manager/[39mts/slot-card.integration.test.ts:3385:27
+    at [90mfile:///home/<USER>/projects/lock_code_manager/[39mnode_modules/[4m@vitest/runner[24m/dist/index.js:145:11
 
  [32m✓[39m ts/slot-card.integration.test.ts [2m([22m[2m219 tests[22m[2m)[22m[33m 513[2mms[22m[39m
 
@@ -1426,7 +1426,7 @@ tool_use Read
 id: toolu_01Frip4j97udr8UR7jJ64B2J
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/__init__.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/__init__.py",
   "offset": 773,
   "limit": 15
 }
@@ -1460,7 +1460,7 @@ tool_use Read
 id: toolu_01T1uJwpvmScJY4wmLAN83df
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/domain/slot_coordinator.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/domain/slot_coordinator.py",
   "offset": 1,
   "limit": 15
 }
@@ -1494,7 +1494,7 @@ tool_use Read
 id: toolu_01Sm5EapeK7tuXBQ4JUVQX7x
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/domain/credentials.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/domain/credentials.py",
   "offset": 180,
   "limit": 30
 }
@@ -1543,7 +1543,7 @@ tool_use Read
 id: toolu_01BXkv3LmRbghgpwQz9YwCvo
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
   "offset": 395,
   "limit": 40
 }
@@ -1594,7 +1594,7 @@ tool_use Read
 id: toolu_015hnJ3FBowvGYr3UpXAQCmx
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
   "offset": 690,
   "limit": 15
 }
@@ -1628,7 +1628,7 @@ tool_use Read
 id: toolu_01GQ6CtL1ro6qaWav51sVk5s
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
   "offset": 730,
   "limit": 15
 }
@@ -1662,7 +1662,7 @@ tool_use Read
 id: toolu_01FUwVrGcA4LXVd7HYHR25bL
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
   "offset": 1000,
   "limit": 15
 }
@@ -1696,7 +1696,7 @@ tool_use Read
 id: toolu_01NNYFohfTiEqY6EyVJw3YLu
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
   "offset": 1128,
   "limit": 15
 }
@@ -1730,7 +1730,7 @@ tool_use Read
 id: toolu_01AvTkzXCETYPH8ME3tnrEeH
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "offset": 315,
   "limit": 15
 }
@@ -1764,7 +1764,7 @@ tool_use Read
 id: toolu_01B7UXL66zGHMMRaNy9wcKP9
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "offset": 550,
   "limit": 15
 }
@@ -1798,7 +1798,7 @@ tool_use Read
 id: toolu_01Cn7vK5vs1HMxELxsEHGpUK
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zigbee2mqtt.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zigbee2mqtt.py",
   "offset": 575,
   "limit": 15
 }
@@ -1836,7 +1836,7 @@ tool_use Read
 id: toolu_01Vwqt155hi6yAqDMtZaEY5P
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
   "offset": 1035,
   "limit": 15
 }
@@ -1870,7 +1870,7 @@ tool_use Read
 id: toolu_01Fm23EiBjvCP4wQwpsNTV5N
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
   "offset": 1125,
   "limit": 15
 }
@@ -1904,7 +1904,7 @@ tool_use Read
 id: toolu_01CLoxTrh6woVy319KQ1LjDt
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
   "offset": 524,
   "limit": 12
 }
@@ -1942,7 +1942,7 @@ id: toolu_01694faGavfhQrAbpazAawqj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/__init__.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/__init__.py",
   "old_string": "    \"\"\"\n    Clean up persistent repair issues when the entry is fully removed.\n\n    Called by Home Assistant only on entry deletion -- not on unload,\n    reload, disable, or HA restart. The repair issues created by this\n    integration are flagged ``is_persistent=True`` precisely so they\n    survive restarts and reloads; deleting them in ``async_unload_entry``\n    (the previous behavior) wiped them on every restart, causing the\n    \"click an issue and it says repaired\" short-circuit. With cleanup\n    moved here, persistent issues persist until the user actually\n    removes the entry.\n    \"\"\"",
   "new_string": "    \"\"\"\n    Clean up persistent repair issues when the entry is fully removed.\n\n    Called by Home Assistant only on entry deletion -- not on unload,\n    reload, disable, or HA restart. The repair issues created by this\n    integration are flagged ``is_persistent=True`` so they survive\n    restarts and reloads; clearing them belongs here, not in\n    ``async_unload_entry``, so they outlive any non-deletion unload.\n    \"\"\""
 }
@@ -1953,7 +1953,7 @@ id: toolu_01694faGavfhQrAbpazAawqj
 tool_result
 id: toolu_01694faGavfhQrAbpazAawqj
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/__init__.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/__init__.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1967,7 +1967,7 @@ id: toolu_01LwmirTet6DWz5urR4U9muC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/domain/slot_coordinator.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/domain/slot_coordinator.py",
   "old_string": "\"\"\"\nPer-slot entity coordinator.\n\nA SlotEntityCoordinator instance owns the per-slot state surface that\ntext, switch, and active-binary-sensor entities used to compute on their\nown. Entities become read-only views over the coordinator: they register\nwrite callbacks for state changes and dispatch user intent (set a PIN,\ntoggle enabled) through the coordinator. The coordinator updates the\ncanonical config entry, manages slot-level repair issues, and asks the\nper-lock SlotSyncManagers to re-evaluate on the next tick.\n\nThere is one SlotEntityCoordinator per (config_entry, slot_num); the per-\nlock SlotSyncManager remains one per (config_entry, slot_num, lock).\n\"\"\"",
   "new_string": "\"\"\"\nPer-slot entity coordinator.\n\nA SlotEntityCoordinator instance owns the per-slot state surface for the\ntext, switch, and active-binary-sensor entities. Entities are read-only\nviews over the coordinator: they register write callbacks for state\nchanges and dispatch user intent (set a PIN, toggle enabled) through the\ncoordinator. The coordinator updates the canonical config entry, manages\nslot-level repair issues, and asks the per-lock SlotSyncManagers to\nre-evaluate on the next tick.\n\nThere is one SlotEntityCoordinator per (config_entry, slot_num); the per-\nlock SlotSyncManager remains one per (config_entry, slot_num, lock).\n\"\"\""
 }
@@ -1978,7 +1978,7 @@ id: toolu_01LwmirTet6DWz5urR4U9muC
 tool_result
 id: toolu_01LwmirTet6DWz5urR4U9muC
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/domain/slot_coordinator.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/domain/slot_coordinator.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1994,7 +1994,7 @@ id: toolu_018THUJbPVRvL5hEXEjdJoPH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/domain/credentials.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/domain/credentials.py",
   "old_string": "class WriteResult(StrEnum):\n    \"\"\"\n    Outcome of a credential write (``async_set_credential``).\n\n    Replaces the old ``bool`` return, distinguishing three cases the seam\n    needs:\n\n    - ``NO_CHANGE`` -- the value was already set; nothing was written (the old\n      ``False``). The coordinator is not refreshed.\n    - ``CONFIRMED`` -- the lock acknowledged the write (the old ``True``). The\n      slot is marked verified; non-push providers refresh to read it back.\n    - ``OPTIMISTIC`` -- the write returned an ambiguous result we are treating\n      as completed but have NOT confirmed (e.g. a Z-Wave driver\n      ``ERROR_UNKNOWN`` from a masked read-back). The slot is marked unverified\n      and awaits confirmation via a push event or hard refresh; if none\n      arrives, it re-syncs rather than silently reporting success. See the\n      Phase 2 push-as-commit spec.\n    \"\"\"",
   "new_string": "class WriteResult(StrEnum):\n    \"\"\"\n    Outcome of a credential write (``async_set_credential``).\n\n    - ``NO_CHANGE`` -- the value was already set; nothing was written. The\n      coordinator is not refreshed.\n    - ``CONFIRMED`` -- the lock acknowledged the write. The slot is marked\n      verified; non-push providers refresh to read it back.\n    - ``OPTIMISTIC`` -- the write returned an ambiguous result we treat as\n      completed but have NOT confirmed (e.g. a Z-Wave driver\n      ``ERROR_UNKNOWN`` […]
 
@@ -2003,7 +2003,7 @@ id: toolu_018THUJbPVRvL5hEXEjdJoPH
 tool_result
 id: toolu_018THUJbPVRvL5hEXEjdJoPH
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/domain/credentials.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/domain/credentials.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2017,7 +2017,7 @@ id: toolu_01Pgu5DMhH3Ja1LvahTFZ9sk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
   "old_string": "        if existing_user_index is not None:\n            # UPDATE: rename via set_lock_user.\n            #\n            # set_lock_user here is a metadata-only name update. The\n            # historical Matter contract (PR #1077) tolerated name-set\n            # failures so a transient 500 or a name the lock rejects\n            # does not block the subsequent credential write; the user\n            # still exists at the known index, the only thing lost is\n            # the name update. If every candidate in the cascade fails\n            # with MatterError we log a warning and fall through.",
   "new_string": "        if existing_user_index is not None:\n            # UPDATE: rename via set_lock_user.\n            #\n            # set_lock_user here is a metadata-only name update.\n            # Name-set failures must not block the subsequent credential\n            # write -- the user still exists at the known index and only\n            # the cosmetic name update is lost. The cascade tries each\n            # candidate name; if every one fails with MatterError we log\n            # a warning and fall through."
 }
@@ -2028,7 +2028,7 @@ id: toolu_01Pgu5DMhH3Ja1LvahTFZ9sk
 tool_result
 id: toolu_01Pgu5DMhH3Ja1LvahTFZ9sk
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2042,7 +2042,7 @@ id: toolu_012roDc8AhXwJ47NuegoQeg4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
   "old_string": "            except (LockDisconnected, LockOperationFailed, MatterError) as err:\n                # UPDATE's historical contract (PR #1077): tolerate any\n                # rename failure so the subsequent credential write still\n                # proceeds. The user record is still valid at\n                # ``existing_user_index`` -- the only thing lost is the\n                # cosmetic name update. The helper raises typed seam\n                # exceptions (LockDisconnected for transport failures,\n                # LockOperationFailed for validation rejections,\n                # MatterError when every candidate hit a lock-side\n                # rejection); we swallow all three here on the UPDATE\n                # path and log a warning instead.",
   "new_string": "            except (LockDisconnected, LockOperationFailed, MatterError) as err:\n                # UPDATE tolerates any rename failure so the subsequent\n                # credential write still proceeds. The user record is\n                # still valid at ``existing_user_index`` -- only the\n                # cosmetic name update is lost. The helper raises typed\n                # seam exceptions (LockDisconnected for transport,\n                # LockOperationFailed for validation rejections,\n                # MatterError when every candidate hit a lock-side\n                # rejection); all three are swallowed here on the UPDATE\n                # path and logged as a warning."
 }
@@ -2053,7 +2053,7 @@ id: toolu_012roDc8AhXwJ47NuegoQeg4
 tool_result
 id: toolu_012roDc8AhXwJ47NuegoQeg4
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2067,7 +2067,7 @@ id: toolu_015wjTetdqG6mA1FjJk9tNM6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
   "old_string": "        ``credential_index=None`` auto-allocates the next free credential slot\n        (CREATE). Passing an existing index addresses the user's current PIN\n        credential for MODIFY. ``code_slot`` is the LCM slot only and is used\n        for error reporting; it is no longer pinned to the Matter index.",
   "new_string": "        ``credential_index=None`` auto-allocates the next free credential slot\n        (CREATE). Passing an existing index addresses the user's current PIN\n        credential for MODIFY. ``code_slot`` is the LCM slot, used only for\n        error reporting; the Matter credential index is opaque to LCM."
 }
@@ -2078,7 +2078,7 @@ id: toolu_015wjTetdqG6mA1FjJk9tNM6
 tool_result
 id: toolu_015wjTetdqG6mA1FjJk9tNM6
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2092,7 +2092,7 @@ id: toolu_0118k4VMTa1FnEjQux8A6rzh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
   "old_string": "        Return the user's current Matter PIN credential index, or ``None``.\n\n        LCM no longer pins ``credential_index`` to the LCM slot; instead it\n        treats Matter's credential index as opaque and rediscovers it per\n        operation. This helper deliberately walks the **raw** lock-side\n        user data (not ``async_get_users``) so the returned value is the\n        Matter credential index Matter expects for\n        ``set_lock_credential`` / ``clear_lock_credential`` -- not the\n        LCM-projected slot that ``async_get_users`` exposes upward.",
   "new_string": "        Return the user's current Matter PIN credential index, or ``None``.\n\n        LCM treats Matter's credential index as opaque and rediscovers it\n        per operation. This helper deliberately walks the **raw**\n        lock-side user data (not ``async_get_users``) so the returned\n        value is the Matter credential index Matter expects for\n        ``set_lock_credential`` / ``clear_lock_credential`` -- not the\n        LCM-projected slot that ``async_get_users`` exposes upward."
 }
@@ -2103,7 +2103,7 @@ id: toolu_0118k4VMTa1FnEjQux8A6rzh
 tool_result
 id: toolu_0118k4VMTa1FnEjQux8A6rzh
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2117,7 +2117,7 @@ id: toolu_01Q4gUNS3cSnFd1RdB1EDaUb
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
   "old_string": "        The event's ``credentials[].credentialIndex`` is the Matter credential\n        index, which is no longer pinned to the LCM slot under the user-tag\n        model. To find the LCM slot we resolve via the event's top-level\n        ``userIndex`` -> user.name -> ``lcm:<slot>:`` tag, falling back to\n        walking the user list for a PIN credential at ``credentialIndex``\n        when ``userIndex`` is absent. The lookup is async so the callback\n        schedules a task rather than blocking the event loop.",
   "new_string": "        The event's ``credentials[].credentialIndex`` is the Matter\n        credential index, which LCM treats as opaque under the user-tag\n        model. To find the LCM slot we resolve via the event's top-level\n        ``userIndex`` -> user.name -> ``lcm:<slot>:`` tag, falling back to\n        walking the user list for a PIN credential at ``credentialIndex``\n        when ``userIndex`` is absent. The lookup is async so the callback\n        schedules a task rather than blocking the event loop."
 }
@@ -2128,7 +2128,7 @@ id: toolu_01Q4gUNS3cSnFd1RdB1EDaUb
 tool_result
 id: toolu_01Q4gUNS3cSnFd1RdB1EDaUb
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2138,7 +2138,7 @@ id: toolu_0162VX83b6ZPPdeLNMqM4nJF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
   "old_string": "        The LCM slot is resolved by walking the event's ``userIndex`` to\n        the owning user's name and parsing its ``lcm:<slot>:`` tag --\n        ``userIndex`` alone is sufficient. ``dataIndex`` (the Matter\n        credential index) is captured best-effort for log context only;\n        it's no longer pinned to the LCM slot under the user-tag model\n        and dropping otherwise-resolvable events when it's missing or\n        malformed would silently lose state updates. The lookup is async\n        (a fresh ``_raw_lock_users`` round-trip) so the callback\n        schedules a task rather than blocking the event loop. Events\n        for users LCM doesn't own (untagged names) are ignored.",
   "new_string": "        The LCM slot is resolved by walking the event's ``userIndex`` to\n        the owning user's name and parsing its ``lcm:<slot>:`` tag --\n        ``userIndex`` alone is sufficient. ``dataIndex`` (the Matter\n        credential index) is captured best-effort for log context only;\n        under the user-tag model it is opaque to LCM, and dropping\n        otherwise-resolvable events when it's missing or malformed would\n        silently lose state updates. The lookup is async (a fresh\n        ``_raw_lock_users`` round-trip) so the callback schedules a task\n        rather than blocking the event loop. Events for users LCM\n        doesn't own (untagged names) are ignored."
 }
@@ -2149,7 +2149,7 @@ id: toolu_0162VX83b6ZPPdeLNMqM4nJF
 tool_result
 id: toolu_0162VX83b6ZPPdeLNMqM4nJF
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2163,7 +2163,7 @@ id: toolu_01Ak1dYxfpvpT64A3VJSmX7R
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "old_string": "        The base seam passes a tagged ``user.name`` (``lcm:<slot>:<display>``)\n        whose slot is the LCM-side identity for this credential. The Z-Wave\n        lock's own ``user_id`` is whatever Z-Wave happens to allocate; LCM\n        no longer pins it to the slot. Discovery on every call:",
   "new_string": "        The base seam passes a tagged ``user.name`` (``lcm:<slot>:<display>``)\n        whose slot is the LCM-side identity for this credential. The Z-Wave\n        lock's own ``user_id`` is whatever Z-Wave happens to allocate; LCM\n        treats it as opaque and rediscovers it via the tag on every call:"
 }
@@ -2174,7 +2174,7 @@ id: toolu_01Ak1dYxfpvpT64A3VJSmX7R
 tool_result
 id: toolu_01Ak1dYxfpvpT64A3VJSmX7R
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2188,7 +2188,7 @@ id: toolu_01WLDoF8buihMjjmis7mRGdk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "old_string": "        In unified mode the driver emits ``credential added/modified/\n        deleted`` node events. In UC-fallback mode those events never\n        fire (the driver only emits them from its own unified API\n        methods, which the fallback bypasses), so we subscribe to raw\n        ``value updated`` events for the User Code CC values instead --\n        the same push source the legacy 3.x provider used. When the\n        mode is not yet known (capability probe hasn't run), subscribe\n        to both; the handlers are self-filtering and pushes are\n        idempotent.",
   "new_string": "        In unified mode the driver emits ``credential added/modified/\n        deleted`` node events. In UC-fallback mode those events never\n        fire (the driver only emits them from its own unified API\n        methods, which the fallback bypasses), so we subscribe to raw\n        ``value updated`` events for the User Code CC values instead.\n        When the mode is not yet known (capability probe hasn't run),\n        subscribe to both; the handlers are self-filtering and pushes\n        are idempotent."
 }
@@ -2199,7 +2199,7 @@ id: toolu_01WLDoF8buihMjjmis7mRGdk
 tool_result
 id: toolu_01WLDoF8buihMjjmis7mRGdk
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2213,7 +2213,7 @@ id: toolu_01CwBv9KYQuf42KfeLaQqv5C
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zigbee2mqtt.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zigbee2mqtt.py",
   "old_string": "        # Query one slot at a time so Zigbee2MQTT / firmware can answer each GET before\n        # the next. Parallel gathers plus per-slot timeouts used to raise and fail the\n        # entire refresh, leaving coordinator.data empty — sync then skips every slot\n        # (see SlotSyncManager._resolve_slot_state).\n        # Transient publish/timeout/read failures use the unreadable credential so sync\n        # does not treat the slot as confirmed-empty and storm reprogramming after MQTT\n        # recovery.",
   "new_string": "        # Query one slot at a time so Zigbee2MQTT / firmware can answer each GET before\n        # the next. Parallel gather + per-slot timeouts can fail the entire refresh and\n        # leave coordinator.data empty -- sync then skips every slot (see\n        # SlotSyncManager._resolve_slot_state).\n        # Transient publish/timeout/read failures use the unreadable credential so sync\n        # does not treat the slot as confirmed-empty and storm reprogramming after MQTT\n        # recovery."
 }
@@ -2224,7 +2224,7 @@ id: toolu_01CwBv9KYQuf42KfeLaQqv5C
 tool_result
 id: toolu_01CwBv9KYQuf42KfeLaQqv5C
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zigbee2mqtt.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zigbee2mqtt.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2238,7 +2238,7 @@ id: toolu_01CWhjEYwpBx5WarCyNtYiPa
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
   "old_string": "        # Owner resolution is two-pass to match the same identity rule the\n        # set path uses (see Matter's _find_user_index_for_slot). The\n        # canonical pass matches by the ``lcm:<slot>:`` tag in user.name;\n        # the legacy fallback handles pre-PR-B installs where\n        # ``credential.slot`` was pinned to the LCM slot. Matching by\n        # ``credential.slot == code_slot`` alone is unsafe once providers\n        # let the lock auto-allocate the credential index -- a tagged\n        # user for slot A whose credential lands at index B would be\n        # mis-matched when clearing slot B.",
   "new_string": "        # Owner resolution is two-pass to match the same identity rule the\n        # set path uses (see Matter's _find_user_index_for_slot). The\n        # canonical pass matches by the ``lcm:<slot>:`` tag in user.name;\n        # the fallback adopts installs from before user-tag matching,\n        # where ``credential.slot`` was pinned to the LCM slot. Matching\n        # by ``credential.slot == code_slot`` alone is unsafe once\n        # providers let the lock auto-allocate the credential index -- a\n        # tagged user for slot A whose credential lands at index B would\n        # be mis-matched when clearing slot B."
 }
@@ -2249,7 +2249,7 @@ id: toolu_01CWhjEYwpBx5WarCyNtYiPa
 tool_result
 id: toolu_01CWhjEYwpBx5WarCyNtYiPa
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2311,7 +2311,7 @@ id: toolu_01RzBQJYfDCyafmxjjpigF5s
 .....................................................                    [100%]
 =============================== warnings summary ===============================
 tests/providers/zha/test_provider.py: 172 warnings
-  /Users/raman/projects/lock_code_manager/.venv/lib/python3.14/site-packages/homeassistant/components/usb/utils.py:39: DeprecationWarning: `description` is deprecated, use `product` instead
+  /home/<USER>/projects/lock_code_manager/.venv/lib/python3.14/site-packages/homeassistant/components/usb/utils.py:39: DeprecationWarning: `description` is deprecated, use `product` instead
     description=port.description,
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html

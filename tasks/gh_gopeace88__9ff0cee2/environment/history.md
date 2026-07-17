@@ -29,7 +29,7 @@ tool_use Bash
 id: toolu_01A22bS8k7ijgRrEMah3wLDF
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq 2>/dev/null && echo \"=== runvision-iq ===\" && git status --short --untracked-files=all && echo \"--- staged ---\" && git diff --shortstat --cached && echo \"--- unstaged ---\" && git diff --shortstat",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq 2>/dev/null && echo \"=== runvision-iq ===\" && git status --short --untracked-files=all && echo \"--- staged ---\" && git diff --shortstat --cached && echo \"--- unstaged ---\" && git diff --shortstat",
   "description": "Check runvision-iq repo status"
 }
 ```
@@ -50,7 +50,7 @@ tool_use Bash
 id: toolu_01HtDEoJUjbsqu8qFA3zxn5W
 ```json
 {
-  "command": "for d in /home/jhkim/00.Projects/00.RunVision/runvision-wear; do\n  if [ -d \"$d/.git\" ] || git -C \"$d\" rev-parse --git-dir >/dev/null 2>&1; then\n    echo \"=== $d ===\" && git -C \"$d\" status --short --untracked-files=all && echo \"--- staged ---\" && git -C \"$d\" diff --shortstat --cached && echo \"--- unstaged ---\" && git -C \"$d\" diff --shortstat\n  else\n    echo \"=== $d === (not a git repo / missing)\"\n  fi\ndone",
+  "command": "for d in /home/<USER>/00.Projects/00.RunVision/runvision-wear; do\n  if [ -d \"$d/.git\" ] || git -C \"$d\" rev-parse --git-dir >/dev/null 2>&1; then\n    echo \"=== $d ===\" && git -C \"$d\" status --short --untracked-files=all && echo \"--- staged ---\" && git -C \"$d\" diff --shortstat --cached && echo \"--- unstaged ---\" && git -C \"$d\" diff --shortstat\n  else\n    echo \"=== $d === (not a git repo / missing)\"\n  fi\ndone",
   "description": "Check runvision-wear repo status"
 }
 ```
@@ -60,7 +60,7 @@ id: toolu_01HtDEoJUjbsqu8qFA3zxn5W
 tool_result
 id: toolu_01HtDEoJUjbsqu8qFA3zxn5W
 ```
-=== /home/jhkim/00.Projects/00.RunVision/runvision-wear ===
+=== /home/<USER>/00.Projects/00.RunVision/runvision-wear ===
 --- staged ---
 --- unstaged ---
 ```
@@ -139,7 +139,7 @@ tool_use Bash
 id: toolu_01RBQvkjyYAy9Sfjwr2FdSht
 ```json
 {
-  "command": "for d in \"/home/jhkim/00.Projects/00.RunVision\" \"/home/jhkim/00.Projects/00.RunVision/runvision-iq\" \"/home/jhkim/00.Projects/00.RunVision/runvision-wear\"; do\n  echo \"================ $d ================\"\n  git -C \"$d\" fetch --quiet 2>&1\n  br=$(git -C \"$d\" rev-parse --abbrev-ref HEAD)\n  up=$(git -C \"$d\" rev-parse --abbrev-ref --symbolic-full-name @{u} 2>/dev/null)\n  echo \"branch=$br  upstream=$up\"\n  if [ -n \"$up\" ]; then\n    echo \"--- incoming commits (HEAD..$up) ---\"\n    git -C \"$d\" log --oneline HEAD..@{u} 2>/dev/null | head -30\n    echo \"--- shortstat ---\"\n    git -C \"$d\" diff --shortstat HEAD..@{u} 2>/dev/null\n  else\n    echo \"(no upstream tracking branch)\"\n  fi\ndone",
+  "command": "for d in \"/home/<USER>/00.Projects/00.RunVision\" \"/home/<USER>/00.Projects/00.RunVision/runvision-iq\" \"/home/<USER>/00.Projects/00.RunVision/runvision-wear\"; do\n  echo \"================ $d ================\"\n  git -C \"$d\" fetch --quiet 2>&1\n  br=$(git -C \"$d\" rev-parse --abbrev-ref HEAD)\n  up=$(git -C \"$d\" rev-parse --abbrev-ref --symbolic-full-name @{u} 2>/dev/null)\n  echo \"branch=$br  upstream=$up\"\n  if [ -n \"$up\" ]; then\n    echo \"--- incoming commits (HEAD..$up) ---\"\n    git -C \"$d\" log --oneline HEAD..@{u} 2>/dev/null | head -30\n    echo \"--- shortstat ---\"\n    git -C \"$d\" diff --shortstat HEAD..@{u} 2>/dev/null\n  else\n    echo \"(no upstream tracking branch)\"\n  fi\ndone",
   "description": "Fetch and inspect incoming pullable changes per repo"
 }
 ```
@@ -149,7 +149,7 @@ id: toolu_01RBQvkjyYAy9Sfjwr2FdSht
 tool_result
 id: toolu_01RBQvkjyYAy9Sfjwr2FdSht
 ```
-================ /home/jhkim/00.Projects/00.RunVision ================
+================ /home/<USER>/00.Projects/00.RunVision ================
 branch=main  upstream=origin/main
 --- incoming commits (HEAD..origin/main) ---
 30d201e docs(reviews): N4 알려진 한계 기록 (어드버서리얼 needs-attention, 보류)
@@ -160,14 +160,14 @@ fad45b8 merge: Apple Watch 러닝 degraded 세션 summary 미진입 수정 (revi
 fa034aa fix(watch): 러닝 degraded 세션(nil)에서 summary 미진입 결함 수정 (review F12)
 --- shortstat ---
  2 files changed, 143 insertions(+), 1 deletion(-)
-================ /home/jhkim/00.Projects/00.RunVision/runvision-iq ================
+================ /home/<USER>/00.Projects/00.RunVision/runvision-iq ================
 branch=main  upstream=gopeace88/RunVision-IQ/main
 --- incoming commits (HEAD..gopeace88/RunVision-IQ/main) ---
 3228a85 merge: Garmin char-failure 영구 disconnect 고착 수정 (review N4)
 e2a8e7f fix(garmin/ble): char discovery 10회 실패 후 영구 disconnect 고착 수정 (review N4)
 --- shortstat ---
  1 file changed, 8 insertions(+), 1 deletion(-)
-================ /home/jhkim/00.Projects/00.RunVision/runvision-wear ================
+================ /home/<USER>/00.Projects/00.RunVision/runvision-wear ================
 branch=main  upstream=origin/main
 --- incoming commits (HEAD..origin/main) ---
 6b65d80 merge: Galaxy connect()를 main looper로 — GATT 단일 스레드 불변식 완성 (재감사 N1)
@@ -194,7 +194,7 @@ tool_use Bash
 id: toolu_01UjudTnp6NvjW7VgZxdDuiZ
 ```json
 {
-  "command": "node \"/home/jhkim/.claude/plugins/cache/openai-codex/codex/1.0.4/scripts/codex-companion.mjs\" --help 2>&1 | head -60; echo \"=== EXIT $? ===\"",
+  "command": "node \"/home/<USER>/.claude/plugins/cache/openai-codex/codex/1.0.4/scripts/codex-companion.mjs\" --help 2>&1 | head -60; echo \"=== EXIT $? ===\"",
   "description": "Check codex-companion review options"
 }
 ```
@@ -241,7 +241,7 @@ tool_use Bash
 id: toolu_019Rky3gWB6PsdP3Wn7RMcfV
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\nBR=$(git rev-parse --abbrev-ref HEAD)\nLOCAL=$(git rev-parse HEAD)\nUP=$(git rev-parse --abbrev-ref --symbolic-full-name @{u})\necho \">>> repo=runvision-iq branch=$BR local=$LOCAL upstream=$UP\"\ngit switch --detach \"$UP\" --quiet 2>&1\necho \">>> detached to: $(git rev-parse HEAD)\"\necho \">>> running codex review --base $LOCAL --scope branch --wait\"\nnode \"/home/jhkim/.claude/plugins/cache/openai-codex/codex/1.0.4/scripts/codex-companion.mjs\" review --wait --base \"$LOCAL\" --scope branch\nRC=$?\necho \">>> codex exit=$RC ; restoring HEAD to $BR\"\ngit switch \"$BR\" --quiet 2>&1\necho \">>> restored HEAD: $(git rev-parse --abbrev-ref HEAD) @ $(git rev-parse HEAD)\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\nBR=$(git rev-parse --abbrev-ref HEAD)\nLOCAL=$(git rev-parse HEAD)\nUP=$(git rev-parse --abbrev-ref --symbolic-full-name @{u})\necho \">>> repo=runvision-iq branch=$BR local=$LOCAL upstream=$UP\"\ngit switch --detach \"$UP\" --quiet 2>&1\necho \">>> detached to: $(git rev-parse HEAD)\"\necho \">>> running codex review --base $LOCAL --scope branch --wait\"\nnode \"/home/<USER>/.claude/plugins/cache/openai-codex/codex/1.0.4/scripts/codex-companion.mjs\" review --wait --base \"$LOCAL\" --scope branch\nRC=$?\necho \">>> codex exit=$RC ; restoring HEAD to $BR\"\ngit switch \"$BR\" --quiet 2>&1\necho \">>> restored HEAD: $(git rev-parse --abbrev-ref HEAD) @ $(git rev-parse HEAD)\"",
   "description": "Codex review of incoming changes in runvision-iq"
 }
 ```
@@ -257,10 +257,10 @@ id: toolu_019Rky3gWB6PsdP3Wn7RMcfV
 [codex] Starting Codex review thread.
 [codex] Thread ready (019e545c-defe-7762-a086-ded8d2ab7fbe).
 [codex] Reviewer started: changes against 'f1411cbcc900318a4f2ab933b069cf024d065aca'
-[codex] Running command: /bin/bash -lc "sed -n '1,200p' /home/jhkim/.codex/superpowers/skills/using-superpowers/SKILL.md"
-[codex] Command completed: /bin/bash -lc "sed -n '1,200p' /home/jhkim/.codex/superpowers/skills/using-superpowers/SKILL.md" (exit 0)
-[codex] Running command: /bin/bash -lc "sed -n '1,220p' /home/jhkim/.codex/superpowers/skills/requesting-code-review/S...
-[codex] Command completed: /bin/bash -lc "sed -n '1,220p' /home/jhkim/.codex/superpowers/skills/requesting-code-review/S... (exit 0)
+[codex] Running command: /bin/bash -lc "sed -n '1,200p' /home/<USER>/.codex/superpowers/skills/using-superpowers/SKILL.md"
+[codex] Command completed: /bin/bash -lc "sed -n '1,200p' /home/<USER>/.codex/superpowers/skills/using-superpowers/SKILL.md" (exit 0)
+[codex] Running command: /bin/bash -lc "sed -n '1,220p' /home/<USER>/.codex/superpowers/skills/requesting-code-review/S...
+[codex] Command completed: /bin/bash -lc "sed -n '1,220p' /home/<USER>/.codex/superpowers/skills/requesting-code-review/S... (exit 0)
 [codex] Running command: /bin/bash -lc 'git diff f1411cbcc900318a4f2ab933b069cf024d065aca'
 [codex] Command completed: /bin/bash -lc 'git diff f1411cbcc900318a4f2ab933b069cf024d065aca' (exit 0)
 [codex] Running command: /bin/bash -lc "sed -n '340,490p' source/RunVisionIQView.mc"
@@ -286,7 +286,7 @@ tool_use Bash
 id: toolu_017DuGSrR2vewPWcCzyrLAFd
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision\nBR=$(git rev-parse --abbrev-ref HEAD)\nLOCAL=$(git rev-parse HEAD)\nUP=$(git rev-parse --abbrev-ref --symbolic-full-name @{u})\necho \">>> repo=00.RunVision branch=$BR local=$LOCAL upstream=$UP\"\ngit switch --detach \"$UP\" --quiet 2>&1\necho \">>> detached to: $(git rev-parse HEAD)\"\nnode \"/home/jhkim/.claude/plugins/cache/openai-codex/codex/1.0.4/scripts/codex-companion.mjs\" review --wait --base \"$LOCAL\" --scope branch\nRC=$?\necho \">>> codex exit=$RC ; restoring HEAD to $BR\"\ngit switch \"$BR\" --quiet 2>&1\necho \">>> restored HEAD: $(git rev-parse --abbrev-ref HEAD) @ $(git rev-parse HEAD)\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision\nBR=$(git rev-parse --abbrev-ref HEAD)\nLOCAL=$(git rev-parse HEAD)\nUP=$(git rev-parse --abbrev-ref --symbolic-full-name @{u})\necho \">>> repo=00.RunVision branch=$BR local=$LOCAL upstream=$UP\"\ngit switch --detach \"$UP\" --quiet 2>&1\necho \">>> detached to: $(git rev-parse HEAD)\"\nnode \"/home/<USER>/.claude/plugins/cache/openai-codex/codex/1.0.4/scripts/codex-companion.mjs\" review --wait --base \"$LOCAL\" --scope branch\nRC=$?\necho \">>> codex exit=$RC ; restoring HEAD to $BR\"\ngit switch \"$BR\" --quiet 2>&1\necho \">>> restored HEAD: $(git rev-parse --abbrev-ref HEAD) @ $(git rev-parse HEAD)\"",
   "description": "Codex review of incoming changes in parent repo"
 }
 ```
@@ -301,8 +301,8 @@ id: toolu_017DuGSrR2vewPWcCzyrLAFd
 [codex] Starting Codex review thread.
 [codex] Thread ready (019e545d-e26b-7320-9a72-fc8e91ecb0b6).
 [codex] Reviewer started: changes against '36d32fd8cdc83a9b3984b46c8e5c4c5c18b52ece'
-[codex] Running command: /bin/bash -lc "cat /home/jhkim/.codex/superpowers/skills/using-superpowers/SKILL.md && printf...
-[codex] Command completed: /bin/bash -lc "cat /home/jhkim/.codex/superpowers/skills/using-superpowers/SKILL.md && printf... (exit 0)
+[codex] Running command: /bin/bash -lc "cat /home/<USER>/.codex/superpowers/skills/using-superpowers/SKILL.md && printf...
+[codex] Command completed: /bin/bash -lc "cat /home/<USER>/.codex/superpowers/skills/using-superpowers/SKILL.md && printf... (exit 0)
 [codex] Running command: /bin/bash -lc "sed -n '1,260p' runvision-watchos/Sources/RunVisionWatch/Workout/WorkoutManage...
 [codex] Command completed: /bin/bash -lc "sed -n '1,260p' runvision-watchos/Sources/RunVisionWatch/Workout/WorkoutManage... (exit 0)
 [codex] Running command: /bin/bash -lc "sed -n '260,520p' runvision-watchos/Sources/RunVisionWatch/Workout/WorkoutMana...
@@ -333,7 +333,7 @@ tool_use Bash
 id: toolu_01NJLyZnzGSLcTJph9UGifxh
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-wear\nBR=$(git rev-parse --abbrev-ref HEAD)\nLOCAL=$(git rev-parse HEAD)\nUP=$(git rev-parse --abbrev-ref --symbolic-full-name @{u})\necho \">>> repo=runvision-wear branch=$BR local=$LOCAL upstream=$UP\"\ngit switch --detach \"$UP\" --quiet 2>&1\necho \">>> detached to: $(git rev-parse HEAD)\"\nnode \"/home/jhkim/.claude/plugins/cache/openai-codex/codex/1.0.4/scripts/codex-companion.mjs\" review --wait --base \"$LOCAL\" --scope branch\nRC=$?\necho \">>> codex exit=$RC ; restoring HEAD to $BR\"\ngit switch \"$BR\" --quiet 2>&1\necho \">>> restored HEAD: $(git rev-parse --abbrev-ref HEAD) @ $(git rev-parse HEAD)\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-wear\nBR=$(git rev-parse --abbrev-ref HEAD)\nLOCAL=$(git rev-parse HEAD)\nUP=$(git rev-parse --abbrev-ref --symbolic-full-name @{u})\necho \">>> repo=runvision-wear branch=$BR local=$LOCAL upstream=$UP\"\ngit switch --detach \"$UP\" --quiet 2>&1\necho \">>> detached to: $(git rev-parse HEAD)\"\nnode \"/home/<USER>/.claude/plugins/cache/openai-codex/codex/1.0.4/scripts/codex-companion.mjs\" review --wait --base \"$LOCAL\" --scope branch\nRC=$?\necho \">>> codex exit=$RC ; restoring HEAD to $BR\"\ngit switch \"$BR\" --quiet 2>&1\necho \">>> restored HEAD: $(git rev-parse --abbrev-ref HEAD) @ $(git rev-parse HEAD)\"",
   "description": "Codex review of incoming changes in runvision-wear"
 }
 ```
@@ -370,8 +370,8 @@ id: toolu_01RDvnCR5KfAiJCRqthcLBHu
 3	[codex] Starting Codex review thread.
 4	[codex] Thread ready (019e545e-d414-7bc0-bc08-420073eaa3a2).
 5	[codex] Reviewer started: changes against 'b23a17a7128a206c4b382c205da243e081ffb1cb'
-6	[codex] Running command: /bin/bash -lc "cat /home/jhkim/.codex/superpowers/skills/using-superpowers/SKILL.md && printf...
-7	[codex] Command completed: /bin/bash -lc "cat /home/jhkim/.codex/superpowers/skills/using-superpowers/SKILL.md && printf... (exit 0)
+6	[codex] Running command: /bin/bash -lc "cat /home/<USER>/.codex/superpowers/skills/using-superpowers/SKILL.md && printf...
+7	[codex] Command completed: /bin/bash -lc "cat /home/<USER>/.codex/superpowers/skills/using-superpowers/SKILL.md && printf... (exit 0)
 8	[codex] Running command: /bin/bash -lc "sed -n '1,260p' app/src/main/kotlin/com/runvision/wear/ble/RLensConnection.kt"
 9	[codex] Command completed: /bin/bash -lc "sed -n '1,260p' app/src/main/kotlin/com/runvision/wear/ble/RLensConnection.kt" (exit 0)
 10	[codex] Running command: /bin/bash -lc "sed -n '1,260p' app/src/main/kotlin/com/runvision/wear/MainActivity.kt"
@@ -446,7 +446,7 @@ id: toolu_0125tdL77A4p1CbzEPg69LP5
 51	
 52	Review comment:
 53	
-54	- [P2] Preserve prewarmed DEM fetches when starting altitude sampling — /home/jhkim/00.Projects/00.RunVision/runvision-wear/app/src/main/kotlin/com/runvision/wear/sensor/AltitudeProvider.kt:284-285
+54	- [P2] Preserve prewarmed DEM fetches when starting altitude sampling — /home/<USER>/00.Projects/00.RunVision/runvision-wear/app/src/main/kotlin/com/runvision/wear/sensor/AltitudeProvider.kt:284-285
 55	  In cycling mode, `pushGps()` can spend the GPS-lock wait period prewarming the DEM cache via `fetchJob = scope.launch { elevation.fetchAsync(...) }`, but `start()` now unconditionally calls `scope.cancel()` before registering the barometer. If the DEM request is still in flight when GPS lock is acquired, this cancels the warm-up fetch right before the first samples use `pickReference()`, so the workout falls back to GPS/no reference until another location update starts a new fetch. This is a regression in initial altitude accuracy on slow or cold network fetches.
 56	>>> codex exit=0 ; restoring HEAD to main
 57	>>> […]
@@ -461,7 +461,7 @@ tool_use Bash
 id: toolu_01M8CY5hDo3XP6jHssGEK76U
 ```json
 {
-  "command": "for d in \"/home/jhkim/00.Projects/00.RunVision\" \"/home/jhkim/00.Projects/00.RunVision/runvision-iq\" \"/home/jhkim/00.Projects/00.RunVision/runvision-wear\"; do\n  echo \"$d -> $(git -C \"$d\" rev-parse --abbrev-ref HEAD) @ $(git -C \"$d\" rev-parse --short HEAD) ; dirty=[$(git -C \"$d\" status --porcelain | wc -l)]\"\ndone",
+  "command": "for d in \"/home/<USER>/00.Projects/00.RunVision\" \"/home/<USER>/00.Projects/00.RunVision/runvision-iq\" \"/home/<USER>/00.Projects/00.RunVision/runvision-wear\"; do\n  echo \"$d -> $(git -C \"$d\" rev-parse --abbrev-ref HEAD) @ $(git -C \"$d\" rev-parse --short HEAD) ; dirty=[$(git -C \"$d\" status --porcelain | wc -l)]\"\ndone",
   "description": "Verify all repos restored to main and clean"
 }
 ```
@@ -471,9 +471,9 @@ id: toolu_01M8CY5hDo3XP6jHssGEK76U
 tool_result
 id: toolu_01M8CY5hDo3XP6jHssGEK76U
 ```
-/home/jhkim/00.Projects/00.RunVision -> main @ 36d32fd ; dirty=[0]
-/home/jhkim/00.Projects/00.RunVision/runvision-iq -> main @ f1411cb ; dirty=[0]
-/home/jhkim/00.Projects/00.RunVision/runvision-wear -> main @ b23a17a ; dirty=[0]
+/home/<USER>/00.Projects/00.RunVision -> main @ 36d32fd ; dirty=[0]
+/home/<USER>/00.Projects/00.RunVision/runvision-iq -> main @ f1411cb ; dirty=[0]
+/home/<USER>/00.Projects/00.RunVision/runvision-wear -> main @ b23a17a ; dirty=[0]
 ```
 
 > AGENT
@@ -489,7 +489,7 @@ id: toolu_01M8CY5hDo3XP6jHssGEK76U
 >
 > Review comment:
 >
-> - [P2] Preserve prewarmed DEM fetches when starting altitude sampling — `/home/jhkim/00.Projects/00.RunVision/runvision-wear/app/src/main/kotlin/com/runvision/wear/sensor/AltitudeProvider.kt:284-285`
+> - [P2] Preserve prewarmed DEM fetches when starting altitude sampling — `/home/<USER>/00.Projects/00.RunVision/runvision-wear/app/src/main/kotlin/com/runvision/wear/sensor/AltitudeProvider.kt:284-285`
 >   In cycling mode, `pushGps()` can spend the GPS-lock wait period prewarming the DEM cache via `fetchJob = scope.launch { elevation.fetchAsync(...) }`, but `start()` now unconditionally calls `scope.cancel()` before registering the barometer. If the DEM request is still in flight when GPS lock is acquired, this cancels the warm-up fetch right before the first samples use `pickReference()`, so the workout falls back to GPS/no reference until another location update starts a new fetch. This is a regression in initial altitude accuracy on slow or cold network fetches.
 
 ---

@@ -75,7 +75,7 @@ Based on my thorough search of the `src/` directory (excluding `rewrite/`), here
 
 ### 1. **"激光链路标准测试设备" - Device Name**
 **Found in 2 files:**
-- `/mnt/d/code/frontend/dongfanghong/src/pages/home/HomePage.vue` (line 4)
+- `/mnt/d/code/frontend/dongfanghong/src/pages/home/<USER>` (line 4)
 - `/mnt/d/code/frontend/dongfanghong/src/components/layout/HeaderBar.vue` (line 8)
 
 **Usage:** This is the application title displayed in the header and home page.
@@ -286,11 +286,11 @@ id: call_b1d7f48db3444c0f88552f55
 tool_result
 id: call_490fafc1aa2c4667b6049849
 ```
-/mnt/d/code/frontend/dongfanghong/src/pages/home/HomePage.vue-2-    <div class="flex flex-col">
-/mnt/d/code/frontend/dongfanghong/src/pages/home/HomePage.vue-3-        <header class="text-center mb-8">
-src/pages/home/HomePage.vue:4:            <h1 class="text-3xl font-semibold text-[#3b82f6] mb-2">激光链路标准测试设备</h1>
-/mnt/d/code/frontend/dongfanghong/src/pages/home/HomePage.vue-5-        </header>
-/mnt/d/code/frontend/dongfanghong/src/pages/home/HomePage.vue-6-    </div>
+/mnt/d/code/frontend/dongfanghong/src/pages/home/<USER>    <div class="flex flex-col">
+/mnt/d/code/frontend/dongfanghong/src/pages/home/<USER>        <header class="text-center mb-8">
+src/pages/home/<USER>:4:            <h1 class="text-3xl font-semibold text-[#3b82f6] mb-2">激光链路标准测试设备</h1>
+/mnt/d/code/frontend/dongfanghong/src/pages/home/<USER>        </header>
+/mnt/d/code/frontend/dongfanghong/src/pages/home/<USER>    </div>
 --
 /mnt/d/code/frontend/dongfanghong/src/components/layout/HeaderBar.vue-6-          <img src="../../assets/icons/logo.svg" alt="RS485" class="h-[20px] w-[20px]" />
 /mnt/d/code/frontend/dongfanghong/src/components/layout/HeaderBar.vue-7-        </div>
@@ -687,7 +687,7 @@ id: call_9252ecd4fb2c4c0dbb83d1e6
 ```json
 {
   "replace_all": false,
-  "file_path": "/mnt/d/code/frontend/dongfanghong/src/pages/home/HomePage.vue",
+  "file_path": "/mnt/d/code/frontend/dongfanghong/src/pages/home/<USER>",
   "old_string": "激光链路标准测试设备",
   "new_string": "激光模拟器"
 }
@@ -734,7 +734,7 @@ tool_use Read
 id: call_cc7bf4b05e2a4a43ae202ac5
 ```json
 {
-  "file_path": "/mnt/d/code/frontend/dongfanghong/src/pages/home/HomePage.vue",
+  "file_path": "/mnt/d/code/frontend/dongfanghong/src/pages/home/<USER>",
   "limit": 10
 }
 ```
@@ -798,7 +798,7 @@ id: call_732a95c6093f41808c482afd
 ```json
 {
   "replace_all": false,
-  "file_path": "/mnt/d/code/frontend/dongfanghong/src/pages/home/HomePage.vue",
+  "file_path": "/mnt/d/code/frontend/dongfanghong/src/pages/home/<USER>",
   "old_string": "激光链路标准测试设备",
   "new_string": "激光模拟器"
 }
@@ -817,7 +817,7 @@ The file /mnt/d/code/frontend/dongfanghong/src/components/layout/HeaderBar.vue h
 tool_result
 id: call_732a95c6093f41808c482afd
 ```
-The file /mnt/d/code/frontend/dongfanghong/src/pages/home/HomePage.vue has been updated successfully.
+The file /mnt/d/code/frontend/dongfanghong/src/pages/home/<USER> has been updated successfully.
 ```
 
 > AGENT
@@ -845,6 +845,6 @@ The file /mnt/d/code/frontend/dongfanghong/src/pages/home/HomePage.vue has been 
 
 **修改文件：**
 - `src/components/layout/HeaderBar.vue:8` — 标题改为"激光模拟器"
-- `src/pages/home/HomePage.vue:4` — 标题改为"激光模拟器"
+- `src/pages/home/<USER>:4` — 标题改为"激光模拟器"
 
 **使用方式：** 在应用里加载这个帧配置，创建发送实例，按截图需要的参数填值（速率选对应选项、误码率填浮点数如 6.3e-7），本地收发后遥测界面就会显示对应值。

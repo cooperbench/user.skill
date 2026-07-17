@@ -8,7 +8,7 @@ tool_use Bash
 id: toolu_01F45pjEvgN97fLcQeQ1fX46
 ```json
 {
-  "command": "ls /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-profile-edit/../",
+  "command": "ls /home/<USER>/fediverse/hackerspub-android-worktrees/feature-profile-edit/../",
   "description": "List parent directory"
 }
 ```
@@ -32,7 +32,7 @@ tool_use Bash
 id: toolu_01MC6VAaEpMJENnA1aBg5QA9
 ```json
 {
-  "command": "ls /Users/kodingwarrior/fediverse/",
+  "command": "ls /home/<USER>/fediverse/",
   "description": "List fediverse directory"
 }
 ```
@@ -67,7 +67,7 @@ id: toolu_01CJfHug6Gmh1e3FRK4t6R4K
 {
   "description": "Find profile edit mutation in hackerspub",
   "subagent_type": "Explore",
-  "prompt": "Search the codebase at /Users/kodingwarrior/fediverse/hackerspub for a profile edit mutation (GraphQL mutation for editing the user's own actor/profile — fields like name, bio/summary, avatar, header, aliases, etc.).\n\nReport:\n1. Whether such a mutation exists, and if so, its exact name and location (file path + line number).\n2. Its full GraphQL schema signature (input types, arguments, return type).\n3. The input type fields (all editable profile fields).\n4. Any related mutations (e.g. separate upload for avatar/header).\n\nIf no profile edit mutation exists, state that clearly and mention whether REST endpoints or other mechanisms exist for profile editing.\n\nThoroughness: medium. Report under 300 words."
+  "prompt": "Search the codebase at /home/<USER>/fediverse/hackerspub for a profile edit mutation (GraphQL mutation for editing the user's own actor/profile — fields like name, bio/summary, avatar, header, aliases, etc.).\n\nReport:\n1. Whether such a mutation exists, and if so, its exact name and location (file path + line number).\n2. Its full GraphQL schema signature (input types, arguments, return type).\n3. The input type fields (all editable profile fields).\n4. Any related mutations (e.g. separate upload for avatar/header).\n\nIf no profile edit mutation exists, state that clearly and mention whether REST endpoints or other mechanisms exist for profile editing.\n\nThoroughness: medium. Report under 300 words."
 }
 ```
 
@@ -83,8 +83,8 @@ Perfect! I have all the information needed. Let me compile the report.
 **1. Mutation Exists: YES**
 
 - **Mutation Name:** `updateAccount`
-- **Location:** `/Users/kodingwarrior/fediverse/hackerspub/graphql/account.ts` (lines 496-602)
-- **Schema Definition:** `/Users/kodingwarrior/fediverse/hackerspub/graphql/schema.graphql` (lines 1424-1443)
+- **Location:** `/home/<USER>/fediverse/hackerspub/graphql/account.ts` (lines 496-602)
+- **Schema Definition:** `/home/<USER>/fediverse/hackerspub/graphql/schema.graphql` (lines 1424-1443)
 
 **2. GraphQL Schema Signature:**
 

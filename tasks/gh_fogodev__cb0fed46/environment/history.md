@@ -1,6 +1,6 @@
 > SYSTEM
 
-# AGENTS.md instructions for /Users/ericson/.codex/worktrees/55bb/ars-ui
+# AGENTS.md instructions for /home/<USER>/.codex/worktrees/55bb/ars-ui
 
 <INSTRUCTIONS>
 ## Approach
@@ -45,8 +45,8 @@ tool_use exec_command
 id: call_OKDbHoR43zRWAtvVy7VkHJYh
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/ericson/.claude/skills/using-superpowers/SKILL.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "cmd": "sed -n '1,220p' /home/<USER>/.claude/skills/using-superpowers/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -58,8 +58,8 @@ tool_use exec_command
 id: call_z75OoBt6kFvGfTubc1Xswer7
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/ericson/.claude/skills/brainstorming/SKILL.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "cmd": "sed -n '1,220p' /home/<USER>/.claude/skills/brainstorming/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -71,8 +71,8 @@ tool_use exec_command
 id: call_21OFGYjPk8ROEViYF7POw1Ru
 ```json
 {
-  "cmd": "rg -n \"Field|Fieldset|Form|field|fieldset|form|adapter-component|issue-332|issue-423\" /Users/ericson/.codex/memories/MEMORY.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "cmd": "rg -n \"Field|Fieldset|Form|field|fieldset|form|adapter-component|issue-332|issue-423\" /home/<USER>/.codex/memories/MEMORY.md",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -158,7 +158,7 @@ Original token count: 1366
 Output:
 14:- ars-ui, checkbox, leptos, dioxus, adapter delivery, issue-320, issue-431, merge_dioxus_attrs, hidden input, form reset, cargo xtask spec info checkbox, as_child, @codex review
 16:## Task 2: Implement Field, Fieldset, and Form adapter work for Leptos (#332) and Dioxus (#423), with review-fix follow-through
-20:- rollout_summaries/REDACTED.md (cwd=/Users/ericson/.codex/worktrees/3efe/ars-ui, rollout_path=/Users/ericson/.codex/sessions/2026/06/04/rollout-2026-06-04T14-33-56-019e93b2-e997-7881-b092-7b1fb63bf491.jsonl, updated_at=2026-06-07T02:45:47+00:00, thread_id=019e93b2-e997-7881-b092-7b1fb63bf491, combined cross-adapter delivery, focused wasm validation, review-thread cleanup, and Coverage still pending at stop time)
+20:- rollout_summaries/REDACTED.md (cwd=/home/<USER>/.codex/worktrees/3efe/ars-ui, rollout_path=/home/<USER>/.codex/sessions/2026/06/04/rollout-2026-06-04T14-33-56-019e93b2-e997-7881-b092-7b1fb63bf491.jsonl, updated_at=2026-06-07T02:45:47+00:00, thread_id=019e93b2-e997-7881-b092-7b1fb63bf491, combined cross-adapter delivery, focused wasm validation, review-thread cleanup, and Coverage still pending at stop time)
 24:- ars-ui, leptos, dioxus, adapter delivery, field, fieldset, form, issue-332, issue-423, wasm-bindgen-test-runner, browser tests, ButtonAsChild, raw oninput, status-region, review threads, @codex review
 30:- issue bodies that call for parity, SSR/hydration stability, form integration, and named tests should push the default toward broad adapter completeness instead of a partial component shell [Task 1][Task 2]
 35:- the fastest orientation loop for this task family was: read the live GitHub issues, run `cargo xtask spec info <component>`, `cargo xtask spec component-deps <component> --adapter <adapter>`, and `cargo xtask spec issue-deps --adapter <adapter> --component <component> --dry-run`, then read `docs/implementation/adapter-components/`, `docs/implementation/adapter-contract.md`, and the relevant component/adapter specs before editing [Task 1][Task 2]
@@ -174,8 +174,8 @@ tool_use exec_command
 id: call_ykYIan7XCd7GLczGz1KvSb0U
 ```json
 {
-  "cmd": "sed -n '1,260p' /Users/ericson/.codex/memories/rollout_summaries/REDACTED.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "cmd": "sed -n '1,260p' /home/<USER>/.codex/memories/rollout_summaries/REDACTED.md",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -188,7 +188,7 @@ id: call_JVLwFaOV6OnoWwMPEh9jagp7
 ```json
 {
   "cmd": "wc -l docs/implementation/adapter-component-delivery.md .agents/skills/post-implementation-audit/SKILL.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -201,7 +201,7 @@ id: call_OqENtHQ1mWDrwnkDdS6S0CoH
 ```json
 {
   "cmd": "rg --files crates/ars-leptos crates/ars-dioxus crates/ars-e2e examples spec docs/implementation | rg '(field|fieldset|form|adapter-component|adapter-components)'",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -214,7 +214,7 @@ id: call_5lTldMkefSspLFF4ebVnMcTS
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -232,13 +232,13 @@ Original token count: 783
 Output:
 thread_id: 019e93b2-e997-7881-b092-7b1fb63bf491
 updated_at: 2026-06-07T02:45:47+00:00
-rollout_path: /Users/ericson/.codex/sessions/2026/06/04/rollout-2026-06-04T14-33-56-019e93b2-e997-7881-b092-7b1fb63bf491.jsonl
-cwd: /Users/ericson/.codex/worktrees/3efe/ars-ui
+rollout_path: /home/<USER>/.codex/sessions/2026/06/04/rollout-2026-06-04T14-33-56-019e93b2-e997-7881-b092-7b1fb63bf491.jsonl
+cwd: /home/<USER>/.codex/worktrees/3efe/ars-ui
 git_branch: codex/issue-332-423-field-form-adapters
 
 # Implemented Leptos and Dioxus Field/Fieldset/Form adapter work for issues #332 and #423, then fixed review regressions and pushed a follow-up commit.
 
-Rollout context: the user asked to "Implement tasks #332 and #423" in `/Users/ericson/.codex/worktrees/3efe/ars-ui`. The work was framed as adapter-level component delivery, so the agent read the live GitHub issues, the adapter workflow docs, the Leptos/Dioxus framework skills, the adapter contract docs, and the component specs before editing. The two issues were closely related: #332 covered the Leptos adapter for Field/Fieldset/Form; #423 covered the Dioxus adapter for the same component family. Dependency checks confirmed both were unblocked and matched the issue bodies.
+Rollout context: the user asked to "Implement tasks #332 and #423" in `/home/<USER>/.codex/worktrees/3efe/ars-ui`. The work was framed as adapter-level component delivery, so the agent read the live GitHub issues, the adapter workflow docs, the Leptos/Dioxus framework skills, the adapter contract docs, and the component specs before editing. The two issues were closely related: #332 covered the Leptos adapter for Field/Fieldset/Form; #423 covered the Dioxus adapter for the same component family. Dependency checks confirmed both were unblocked and matched the issue bodies.
 
 ## Task 1: Leptos + Dioxus Field/Fieldset/Form adapter implementation and follow-up fixes
 
@@ -375,7 +375,7 @@ id: call_0GynVkNrKLcddoyDSpj27JpF
 ```json
 {
   "cmd": "sed -n '1,220p' docs/implementation/adapter-component-delivery.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -388,7 +388,7 @@ id: call_CSONRcqalo00vLK9bNZs51ws
 ```json
 {
   "cmd": "sed -n '1,260p' .agents/skills/post-implementation-audit/SKILL.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -401,7 +401,7 @@ id: call_3e3rUBmlgCXEIPeS1jEAjo8y
 ```json
 {
   "cmd": "sed -n '1,220p' docs/implementation/adapter-components/README.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -414,7 +414,7 @@ id: call_9SIxjeeqJ38Ins6Cbw6wQMfG
 ```json
 {
   "cmd": "sed -n '1,240p' docs/implementation/adapter-components/checklists/component-delivery.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -605,7 +605,7 @@ id: call_tR4IkQZWWqpeCLjlm3wbV9EJ
 ```json
 {
   "cmd": "sed -n '1,260p' docs/implementation/sketches/332-423-field-form-counterpart-sketch.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -618,7 +618,7 @@ id: call_2ZplPuDbL2TpYN3XGIROal2i
 ```json
 {
   "cmd": "sed -n '1,260p' crates/ars-leptos/src/utility/field.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -631,7 +631,7 @@ id: call_HvT8WjCxSSerg06jIyfxiyrs
 ```json
 {
   "cmd": "sed -n '1,260p' crates/ars-dioxus/src/utility/field.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -644,7 +644,7 @@ id: call_BuRgxN2HpPNSWaOjp9dD5Wny
 ```json
 {
   "cmd": "sed -n '1,260p' crates/ars-e2e/src/utility/field_form.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -955,7 +955,7 @@ id: call_KEm3P37qk0L15ZQfADucBViL
 ```json
 {
   "cmd": "sed -n '220,520p' crates/ars-leptos/src/utility/field.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -968,7 +968,7 @@ id: call_nqkOtNlQy74l0ppIDV4Q2kvz
 ```json
 {
   "cmd": "sed -n '220,520p' crates/ars-dioxus/src/utility/field.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -981,7 +981,7 @@ id: call_biq4X8iDgYNV2GU1CXbgjYz0
 ```json
 {
   "cmd": "sed -n '1,300p' crates/ars-leptos/src/utility/form.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -994,7 +994,7 @@ id: call_hRIfA0eUXwJw6tYlNpJ2Tdb9
 ```json
 {
   "cmd": "sed -n '1,340p' crates/ars-dioxus/src/utility/form.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -1334,7 +1334,7 @@ id: call_UUtBUO1CYKc7mM6AL6nWW9HP
 ```json
 {
   "cmd": "sed -n '300,680p' crates/ars-leptos/src/utility/form.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -1347,7 +1347,7 @@ id: call_m4YWNSfc7JW2g6VcxSuJ9njo
 ```json
 {
   "cmd": "sed -n '340,760p' crates/ars-dioxus/src/utility/form.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -1360,7 +1360,7 @@ id: call_8OmBNwjZBxi0Xof3NMVjeruK
 ```json
 {
   "cmd": "sed -n '1,260p' crates/ars-leptos/src/utility/fieldset.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -1373,7 +1373,7 @@ id: call_vR6MkWXacda7C9Vw8QglD6mW
 ```json
 {
   "cmd": "sed -n '1,300p' crates/ars-dioxus/src/utility/fieldset.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -1724,7 +1724,7 @@ id: call_Gb4QYfSnd3wk8vMWosgNgMGV
 ```json
 {
   "cmd": "sed -n '1,240p' crates/ars-leptos/src/utility/field_support.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -1737,7 +1737,7 @@ id: call_lTsiHdknQKcJKFaEubQLwfZs
 ```json
 {
   "cmd": "sed -n '1,260p' crates/ars-dioxus/src/utility/field_support.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -1750,7 +1750,7 @@ id: call_6qXXnJ5cigcoje4Qt1Ng32q3
 ```json
 {
   "cmd": "rg -n \"Field|Fieldset|Form|field|fieldset|form|validation_errors|on_value_input|reset|required|readonly|disabled|aria-errormessage|status\" crates/ars-leptos/tests crates/ars-dioxus/tests | head -n 240",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -1763,7 +1763,7 @@ id: call_VTmZEThEuVOrcuZuVfiQ6OR5
 ```json
 {
   "cmd": "rg -n \"field_form|Field|Fieldset|Form|validation|email|required|status|field-error|native\" examples crates/ars-e2e/fixtures | head -n 240",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -2079,7 +2079,7 @@ id: call_B6IPoDg2M0TioLhbkEuAt9c3
 ```json
 {
   "cmd": "gh issue view 332 --json number,title,state,body,labels,url",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -2092,7 +2092,7 @@ id: call_v8K8KKfKuA9u5PO5Y9PniOf0
 ```json
 {
   "cmd": "gh issue view 423 --json number,title,state,body,labels,url",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -2105,7 +2105,7 @@ id: call_N9hYRgKWeZVyolCZj6L3nbL6
 ```json
 {
   "cmd": "cargo xtask spec info field",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -2118,7 +2118,7 @@ id: call_npurCrJeBC1OdPhWSw5kh8ik
 ```json
 {
   "cmd": "cargo xtask spec info fieldset",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -2131,7 +2131,7 @@ id: call_GotyAulqsR5ikIgc6K0e6R5k
 ```json
 {
   "cmd": "cargo xtask spec info form",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -2331,8 +2331,8 @@ tool_use exec_command
 id: call_WSXEKeVxu89PCL30VchTusij
 ```json
 {
-  "cmd": "sed -n '1,260p' /Users/ericson/.claude/skills/writing-plans/SKILL.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "cmd": "sed -n '1,260p' /home/<USER>/.claude/skills/writing-plans/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -2382,8 +2382,8 @@ tool_use exec_command
 id: call_Q4VrxvpCwkPCQMmVS1BHRbVo
 ```json
 {
-  "cmd": "nl -ba /Users/ericson/.codex/memories/MEMORY.md | sed -n '16,24p;35,38p;53,53p'",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "cmd": "nl -ba /home/<USER>/.codex/memories/MEMORY.md | sed -n '16,24p;35,38p;53,53p'",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 6000
 }
@@ -2395,8 +2395,8 @@ tool_use exec_command
 id: call_jmMMfdW6a25scnE8O0Dd6CW9
 ```json
 {
-  "cmd": "nl -ba /Users/ericson/.codex/memories/rollout_summaries/REDACTED.md | sed -n '1,26p;49,74p;99,148p'",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "cmd": "nl -ba /home/<USER>/.codex/memories/rollout_summaries/REDACTED.md | sed -n '1,26p;49,74p;99,148p'",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2416,7 +2416,7 @@ Output:
     17	
     18	### rollout_summary_files
     19	
-    20	- rollout_summaries/REDACTED.md (cwd=/Users/ericson/.codex/worktrees/3efe/ars-ui, rollout_path=/Users/ericson/.codex/sessions/2026/06/04/rollout-2026-06-04T14-33-56-019e93b2-e997-7881-b092-7b1fb63bf491.jsonl, updated_at=2026-06-07T02:45:47+00:00, thread_id=019e93b2-e997-7881-b092-7b1fb63bf491, combined cross-adapter delivery, focused wasm validation, review-thread cleanup, and Coverage still pending at stop time)
+    20	- rollout_summaries/REDACTED.md (cwd=/home/<USER>/.codex/worktrees/3efe/ars-ui, rollout_path=/home/<USER>/.codex/sessions/2026/06/04/rollout-2026-06-04T14-33-56-019e93b2-e997-7881-b092-7b1fb63bf491.jsonl, updated_at=2026-06-07T02:45:47+00:00, thread_id=019e93b2-e997-7881-b092-7b1fb63bf491, combined cross-adapter delivery, focused wasm validation, review-thread cleanup, and Coverage still pending at stop time)
     21	
     22	### keywords
     23	
@@ -2437,13 +2437,13 @@ Original token count: 695
 Output:
      1	thread_id: 019e93b2-e997-7881-b092-7b1fb63bf491
      2	updated_at: 2026-06-07T02:45:47+00:00
-     3	rollout_path: /Users/ericson/.codex/sessions/2026/06/04/rollout-2026-06-04T14-33-56-019e93b2-e997-7881-b092-7b1fb63bf491.jsonl
-     4	cwd: /Users/ericson/.codex/worktrees/3efe/ars-ui
+     3	rollout_path: /home/<USER>/.codex/sessions/2026/06/04/rollout-2026-06-04T14-33-56-019e93b2-e997-7881-b092-7b1fb63bf491.jsonl
+     4	cwd: /home/<USER>/.codex/worktrees/3efe/ars-ui
      5	git_branch: codex/issue-332-423-field-form-adapters
      6	
      7	# Implemented Leptos and Dioxus Field/Fieldset/Form adapter work for issues #332 and #423, then fixed review regressions and pushed a follow-up commit.
      8	
-     9	Rollout context: the user asked to "Implement tasks #332 and #423" in `/Users/ericson/.codex/worktrees/3efe/ars-ui`. The work was framed as adapter-level component delivery, so the agent read the live GitHub issues, the adapter workflow docs, the Leptos/Dioxus framework skills, the adapter contract docs, and the component specs before editing. The two issues were closely related: #332 covered the Leptos adapter for Field/Fieldset/Form; #423 covered the Dioxus adapter for the same component family. Dependency checks confirmed both were unblocked and matched the issue bodies.
+     9	Rollout context: the user asked to "Implement tasks #332 and #423" in `/home/<USER>/.codex/worktrees/3efe/ars-ui`. The work was framed as adapter-level component delivery, so the agent read the live GitHub issues, the adapter workflow docs, the Leptos/Dioxus framework skills, the adapter contract docs, and the component specs before editing. The two issues were closely related: #332 covered the Leptos adapter for Field/Fieldset/Form; #423 covered the Dioxus adapter for the same component family. Dependency checks confirmed both were unblocked and matched the issue bodies.
     10	
     11	## Task 1: Leptos + Dioxus Field/Fieldset/Form adapter implementation and follow-up fixes
     12	
@@ -2459,8 +2459,8 @@ tool_use exec_command
 id: call_8w8aRsjFButFgxJbAc2ckbV8
 ```json
 {
-  "cmd": "wc -l /Users/ericson/.codex/memories/rollout_summaries/REDACTED.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "cmd": "wc -l /home/<USER>/.codex/memories/rollout_summaries/REDACTED.md",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 2000
 }
@@ -2476,7 +2476,7 @@ Wall time: 0.0609 seconds
 Process exited with code 0
 Original token count: 34
 Output:
-      30 /Users/ericson/.codex/memories/rollout_summaries/REDACTED.md
+      30 /home/<USER>/.codex/memories/rollout_summaries/REDACTED.md
 
 ```
 

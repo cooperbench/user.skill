@@ -205,7 +205,7 @@ id: toolu_019QpDFKhxag92XC5pUrqHQd
   "description": "Explore code-insights session data, analysis pipeline, and reflect feature",
   "subagent_type": "Explore",
   "name": "codebase-explorer",
-  "prompt": "You are exploring the code-insights monorepo at /Users/melagiri/Workspace/codeInsights/code-insights to understand how the product captures and surfaces learnings from AI coding sessions.\n\nI need a thorough picture of these specific areas — read the actual source files:\n\n1. **Session Analysis Pipeline** — How does `code-insights insights` work? Trace from CLI command through to the LLM prompt and the structured output it produces. Which files are involved? What fields does the analysis output (facets, friction, patterns, prompt quality)?\n\n2. **Reflect Feature** — How does `code-insights reflect` work? What does it aggregate across sessions? What's the structure of reflect_snapshots in SQLite? What does it output to the user?\n\n3. **SQLite Schema** — Read the migration file(s) to understand ALL tables and key columns. Pay attention to: sessions, analysis, facets, reflect_snapshots, analysis_queue.\n\n4. **Export Feature** — Does code-insights have any export/knowledge-export capability? What formats? How is it used?\n\n5. **CLAUDE.md / docs/PRODUCT.md** — Read these to understand what the product already captures (friction categories, effective patterns, prompt quality, attribution, driver fields).\n\n6. **Session data shape** — What does a `ParsedSession` look like? What metadata is captured per session (project, tool, […]
+  "prompt": "You are exploring the code-insights monorepo at /home/<USER>/Workspace/codeInsights/code-insights to understand how the product captures and surfaces learnings from AI coding sessions.\n\nI need a thorough picture of these specific areas — read the actual source files:\n\n1. **Session Analysis Pipeline** — How does `code-insights insights` work? Trace from CLI command through to the LLM prompt and the structured output it produces. Which files are involved? What fields does the analysis output (facets, friction, patterns, prompt quality)?\n\n2. **Reflect Feature** — How does `code-insights reflect` work? What does it aggregate across sessions? What's the structure of reflect_snapshots in SQLite? What does it output to the user?\n\n3. **SQLite Schema** — Read the migration file(s) to understand ALL tables and key columns. Pay attention to: sessions, analysis, facets, reflect_snapshots, analysis_queue.\n\n4. **Export Feature** — Does code-insights have any export/knowledge-export capability? What formats? How is it used?\n\n5. **CLAUDE.md / docs/PRODUCT.md** — Read these to understand what the product already captures (friction categories, effective patterns, prompt quality, attribution, driver fields).\n\n6. **Session data shape** — What does a `ParsedSession` look like? What metadata is captured per session (project, tool, […]
 
 > TOOL
 
@@ -488,7 +488,7 @@ tool_use Bash
 id: toolu_01B7EFkbDnCAMhYjZry1RrY8
 ```json
 {
-  "command": "ls /Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/",
+  "command": "ls /home/<USER>/Workspace/codeInsights/code-insights/docs/plans/",
   "description": "List existing plan docs"
 }
 ```
@@ -509,7 +509,7 @@ tool_use Write
 id: toolu_01DnFJ3vu53AqEwCkLHcChmL
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/2026-04-20-codebase-knowledge-research.md",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/plans/2026-04-20-codebase-knowledge-research.md",
   "content": "# Codebase-Attached Knowledge — Research & Design Notes\n\n> Research conducted 2026-04-20. This doc captures competitive landscape, ecosystem patterns,\n> and strategic direction for a \"codebase-attached learnings\" feature in code-insights.\n\n---\n\n## The Idea\n\ncode-insights already extracts structured knowledge from AI coding sessions:\n- **Decisions** (situation, choice, reasoning, alternatives, trade-offs, revisit_when)\n- **Learnings** (symptom, root_cause, takeaway, applies_when)\n- **Friction hotspots** (9 categories, with attribution: user/AI/environmental)\n- **Effective patterns** (8 categories, with driver: user-driven/AI-driven/collaborative)\n- **Prompt quality insights** (5 dimensions, deficit/strength categories)\n- **Weekly reflect synthesis** (rules for CLAUDE.md, skill recommendations, working style)\n\nThe gap: all of this lives in `~/.code-insights/data.db` — a personal database tied to the developer, not the codebase. A developer who clones the repo gets none of it.\n\nThe vision: surface this accumulated knowledge as **repo-attached files** that travel with the codebase, serving both AI agents (as context/instructions) and humans (as architectural decision records and onboarding context).\n\n---\n\n## Competitive Landscape\n\n### entire.io\n\n- **What it is:** Git-native CLI (MIT, open source) that captures AI agent sessions alongside git commits.\n- **Storage model:** Dual-branch git strategy:\n  - Shadow branches (`entire/<hash>`) — ephemeral, local-only working refs\n  - Orphan metadata branch (`entire/checkpoints/v1`) — disconnected history branch accumulating all session metadata + transcripts\n  - Git commit trailer `Entire-Checkpoint: <hash>` […]
 
 > TOOL
@@ -517,7 +517,7 @@ id: toolu_01DnFJ3vu53AqEwCkLHcChmL
 tool_result
 id: toolu_01DnFJ3vu53AqEwCkLHcChmL
 ```
-File created successfully at: /Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/2026-04-20-codebase-knowledge-research.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Workspace/codeInsights/code-insights/docs/plans/2026-04-20-codebase-knowledge-research.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -573,7 +573,7 @@ tool_use Bash
 id: toolu_01ALUmSG7t8WL6G6XsFfsSpp
 ```json
 {
-  "command": "cat /Users/melagiri/Workspace/codeInsights/code-insights/.gitignore | grep -A2 -B2 \"plans\"",
+  "command": "cat /home/<USER>/Workspace/codeInsights/code-insights/.gitignore | grep -A2 -B2 \"plans\"",
   "description": "Check what gitignore rule covers plans/"
 }
 ```
@@ -836,7 +836,7 @@ id: toolu_01MHobTu8h5NE7xHJUCsfj3h
   "description": "Technical architecture design for codebase-attached knowledge feature",
   "subagent_type": "technical-architect",
   "name": "tech-architect",
-  "prompt": "You are the technical architect for code-insights — an open-source, local-first CLI + dashboard (Vite + React SPA) + Hono server monorepo. Your job is to design the technical architecture for a new \"Codebase-Attached Knowledge\" feature.\n\n## Codebase Location\n/Users/melagiri/Workspace/codeInsights/code-insights\n\n## Context You Must Read First\nBefore designing, read these files to understand the existing architecture:\n- `docs/ARCHITECTURE.md` — full architecture overview\n- `cli/src/commands/export.ts` — existing export CLI command\n- `server/src/routes/export.ts` — existing export API routes\n- `server/src/llm/export-prompts.ts` — existing LLM prompts for export synthesis\n- `cli/src/db/migrate.ts` — SQLite schema (V9), understand all tables\n- `server/src/routes/reflect.ts` — reflect aggregation logic (produces claudeMdRules[], hookSuggestions[])\n- `cli/src/types.ts` — key types\n\n## The Feature: Codebase-Attached Knowledge\n\n**What it does:** Takes knowledge extracted from AI coding sessions (decisions, learnings, friction patterns, effective patterns, CLAUDE.md rules) and writes a structured `.code-insights.md` file into the actual project repository, so it travels with the code.\n\n**Confirmed design decisions:**\n- 5th export format: builds on the existing export pipeline (server/src/routes/export.ts + server/src/llm/export-prompts.ts)\n- Single file: `.code-insights.md` at the detected project root\n- Format: YAML frontmatter (machine-readable, for AI agents) + human-readable markdown sections\n- Explicit opt-in: `code-insights export --format repo` or similar CLI command\n- Project-scoped: uses existing […]
+  "prompt": "You are the technical architect for code-insights — an open-source, local-first CLI + dashboard (Vite + React SPA) + Hono server monorepo. Your job is to design the technical architecture for a new \"Codebase-Attached Knowledge\" feature.\n\n## Codebase Location\n/home/<USER>/Workspace/codeInsights/code-insights\n\n## Context You Must Read First\nBefore designing, read these files to understand the existing architecture:\n- `docs/ARCHITECTURE.md` — full architecture overview\n- `cli/src/commands/export.ts` — existing export CLI command\n- `server/src/routes/export.ts` — existing export API routes\n- `server/src/llm/export-prompts.ts` — existing LLM prompts for export synthesis\n- `cli/src/db/migrate.ts` — SQLite schema (V9), understand all tables\n- `server/src/routes/reflect.ts` — reflect aggregation logic (produces claudeMdRules[], hookSuggestions[])\n- `cli/src/types.ts` — key types\n\n## The Feature: Codebase-Attached Knowledge\n\n**What it does:** Takes knowledge extracted from AI coding sessions (decisions, learnings, friction patterns, effective patterns, CLAUDE.md rules) and writes a structured `.code-insights.md` file into the actual project repository, so it travels with the code.\n\n**Confirmed design decisions:**\n- 5th export format: builds on the existing export pipeline (server/src/routes/export.ts + server/src/llm/export-prompts.ts)\n- Single file: `.code-insights.md` at the detected project root\n- Format: YAML frontmatter (machine-readable, for AI agents) + human-readable markdown sections\n- Explicit opt-in: `code-insights export --format repo` or similar CLI command\n- Project-scoped: uses existing […]
 
 > TOOL
 
@@ -951,7 +951,7 @@ tool_use Bash
 id: toolu_01GrbdWffdf4gpcN9bjbTszT
 ```json
 {
-  "command": "mkdir -p /Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs",
+  "command": "mkdir -p /home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs",
   "description": "Create specs directory"
 }
 ```
@@ -970,7 +970,7 @@ tool_use Write
 id: toolu_01EQkzNuXrWCDn3HQZNTqddL
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-04-20-codebase-knowledge-design.md",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-04-20-codebase-knowledge-design.md",
   "content": "# Codebase-Attached Knowledge — Product Requirements Document\n\n**Feature:** `.code-insights.md` — repo-attached knowledge file  \n**Status:** Design / Pre-implementation review  \n**Date:** 2026-04-20  \n**Author:** Srikanth Rao M  \n\n---\n\n## 1. Problem Statement\n\ncode-insights extracts structured knowledge from AI coding sessions: architectural decisions (with reasoning and alternatives), learnings (root cause + takeaway), friction patterns (9 categories, with attribution), and effective patterns (8 categories, with driver). All of this lives in `~/.code-insights/data.db` — a personal database tied to the developer, not the codebase.\n\nWhen a new AI session starts on the same codebase, the agent knows nothing about past decisions. When a new developer joins the project, they start from zero. The knowledge built *from* working on a codebase never sticks *to* the codebase.\n\n---\n\n## 2. Goals\n\n- Take accumulated knowledge from AI session analysis and surface it as a file that travels with the repository\n- Serve two first-class audiences simultaneously: AI coding agents (structured, parseable rules) and human developers (narrative context and decisions)\n- Zero authoring effort — content is generated automatically from sessions that already exist\n- Explicit opt-in always; never auto-generated; privacy-first\n\n## Non-Goals\n\n- Team knowledge aggregation (multiple developers' sessions merged)\n- Manual knowledge authoring or editing within the file\n- Knowledge search or […]
 
 > TOOL
@@ -978,7 +978,7 @@ id: toolu_01EQkzNuXrWCDn3HQZNTqddL
 tool_result
 id: toolu_01EQkzNuXrWCDn3HQZNTqddL
 ```
-File created successfully at: /Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-04-20-codebase-knowledge-design.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-04-20-codebase-knowledge-design.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1032,7 +1032,7 @@ id: toolu_01YbM7Q4CFd6sSyWfntnLPKd
   "description": "Strategic PRD review by devtools-cofounder",
   "subagent_type": "devtools-cofounder",
   "name": "prd-review-strategic",
-  "prompt": "You are reviewing a Product Requirements Document for code-insights — an open-source, local-first CLI + dashboard tool for analyzing AI coding sessions (Claude Code, Cursor, Copilot CLI, Codex). Read the full PRD at:\n\n/Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-04-20-codebase-knowledge-design.md\n\nAlso read the research doc at:\n/Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/2026-04-20-codebase-knowledge-research.md\n\nGive a strategic review covering:\n\n1. **Value proposition clarity** — Is the \"why\" of this feature compelling and clearly articulated? Does the killer use case (onboarding developer inheriting a codebase) hold up as the primary hook?\n\n2. **Scope discipline** — Is this scoped appropriately? Is there anything in scope that should be cut? Is there anything out of scope that should be pulled in for the feature to feel complete?\n\n3. **The \"full regeneration, no merge\" decision** — The UX engineer argued the file should be a pure read-only artifact (no user-editable sections). Custom rules go in CLAUDE.md. Do you agree? Any risks with this approach?\n\n4. **Adoption friction** — Any moments in the proposed UX (CLI or dashboard) where a developer would hesitate, get confused, or abandon the feature?\n\n5. **The privacy warning** — The PRD proposes showing the ⚠ warning on every generation. Is that too noisy? Not enough? […]
+  "prompt": "You are reviewing a Product Requirements Document for code-insights — an open-source, local-first CLI + dashboard tool for analyzing AI coding sessions (Claude Code, Cursor, Copilot CLI, Codex). Read the full PRD at:\n\n/home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-04-20-codebase-knowledge-design.md\n\nAlso read the research doc at:\n/home/<USER>/Workspace/codeInsights/code-insights/docs/plans/2026-04-20-codebase-knowledge-research.md\n\nGive a strategic review covering:\n\n1. **Value proposition clarity** — Is the \"why\" of this feature compelling and clearly articulated? Does the killer use case (onboarding developer inheriting a codebase) hold up as the primary hook?\n\n2. **Scope discipline** — Is this scoped appropriately? Is there anything in scope that should be cut? Is there anything out of scope that should be pulled in for the feature to feel complete?\n\n3. **The \"full regeneration, no merge\" decision** — The UX engineer argued the file should be a pure read-only artifact (no user-editable sections). Custom rules go in CLAUDE.md. Do you agree? Any risks with this approach?\n\n4. **Adoption friction** — Any moments in the proposed UX (CLI or dashboard) where a developer would hesitate, get confused, or abandon the feature?\n\n5. **The privacy warning** — The PRD proposes showing the ⚠ warning on every generation. Is that too noisy? Not enough? […]
 
 > TOOL
 
@@ -1056,7 +1056,7 @@ id: toolu_01VeXmqQCVE4QRZbTEUzXsyT
   "description": "Technical PRD review by technical-architect",
   "subagent_type": "technical-architect",
   "name": "prd-review-technical",
-  "prompt": "You are reviewing a Product Requirements Document for a new \"Codebase-Attached Knowledge\" feature in code-insights. Read the full PRD at:\n\n/Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-04-20-codebase-knowledge-design.md\n\nAlso read these files to ground your review in the actual codebase:\n- /Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts\n- /Users/melagiri/Workspace/codeInsights/code-insights/server/src/llm/export-prompts.ts\n- /Users/melagiri/Workspace/codeInsights/code-insights/cli/src/index.ts\n- /Users/melagiri/Workspace/codeInsights/code-insights/cli/src/types.ts\n\nGive a technical review covering:\n\n1. **Architecture soundness** — Does the \"5th export format on existing pipeline\" approach hold up against the actual export.ts and export-prompts.ts code? Any structural mismatch between the PRD's description and what actually exists?\n\n2. **The YAML frontmatter + LLM markdown body split** — The PRD proposes generating frontmatter deterministically in code and LLM generating only the markdown body. Does this cleanly fit the existing SSE streaming response model? How would the server combine frontmatter + LLM body in the stream?\n\n3. **Project root detection** — The PRD proposes walking up from `sessions.project_path` to find `.git`. Is this reliable? Any platform-specific concerns? What about symlinks?\n\n4. **`POST /api/export/write-repo` endpoint** — The dashboard needs a server endpoint that writes to the filesystem. Is this safe? What authorization/validation is needed? What happens if the server is running but the project path is on a different machine than the dashboard user (remote […]
+  "prompt": "You are reviewing a Product Requirements Document for a new \"Codebase-Attached Knowledge\" feature in code-insights. Read the full PRD at:\n\n/home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-04-20-codebase-knowledge-design.md\n\nAlso read these files to ground your review in the actual codebase:\n- /home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts\n- /home/<USER>/Workspace/codeInsights/code-insights/server/src/llm/export-prompts.ts\n- /home/<USER>/Workspace/codeInsights/code-insights/cli/src/index.ts\n- /home/<USER>/Workspace/codeInsights/code-insights/cli/src/types.ts\n\nGive a technical review covering:\n\n1. **Architecture soundness** — Does the \"5th export format on existing pipeline\" approach hold up against the actual export.ts and export-prompts.ts code? Any structural mismatch between the PRD's description and what actually exists?\n\n2. **The YAML frontmatter + LLM markdown body split** — The PRD proposes generating frontmatter deterministically in code and LLM generating only the markdown body. Does this cleanly fit the existing SSE streaming response model? How would the server combine frontmatter + LLM body in the stream?\n\n3. **Project root detection** — The PRD proposes walking up from `sessions.project_path` to find `.git`. Is this reliable? Any platform-specific concerns? What about symlinks?\n\n4. **`POST /api/export/write-repo` endpoint** — The dashboard needs a server endpoint that writes to the filesystem. Is this safe? What authorization/validation is needed? What happens if the server is running but the project path is on a different machine than the dashboard user (remote […]
 
 > TOOL
 
@@ -1113,7 +1113,7 @@ tool_use Read
 id: toolu_01V88ETkoUXD6oQ92DTp1qeo
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-04-20-codebase-knowledge-design.md"
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-04-20-codebase-knowledge-design.md"
 }
 ```
 
@@ -1155,7 +1155,7 @@ tool_use Write
 id: toolu_01TGoGdTdZdMFRvkCupznMxy
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-04-20-codebase-knowledge-design.md",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-04-20-codebase-knowledge-design.md",
   "content": "# Codebase-Attached Knowledge — Product Requirements Document\n\n**Feature:** `.code-insights.md` — repo-attached knowledge file  \n**Status:** Approved for implementation planning  \n**Date:** 2026-04-20  \n**Author:** Srikanth Rao M  \n**Reviewed by:** devtools-cofounder, technical-architect  \n\n---\n\n## 1. Problem Statement\n\ncode-insights extracts structured knowledge from AI coding sessions: architectural decisions (with reasoning and alternatives), learnings (root cause + takeaway), friction patterns (9 categories, with attribution), and effective patterns (8 categories, with driver). All of this lives in `~/.code-insights/data.db` — a personal database tied to the developer, not the codebase.\n\nWhen a new AI session starts on the same codebase, the agent knows nothing about past decisions. When a new developer joins the project, they start from zero. The knowledge built *from* working on a codebase never sticks *to* the codebase.\n\n---\n\n## 2. Goals\n\n- Take accumulated knowledge from AI session analysis and surface it as a file that travels with the repository\n- Serve two first-class audiences simultaneously: AI coding agents (structured, parseable rules) and human developers (narrative context and decisions)\n- **Zero authoring effort, one deliberate generation step** — content is generated from sessions that already exist, but the developer consciously runs the command and reviews/commits the output\n- Explicit opt-in always; never auto-generated; privacy-first\n\n## Non-Goals\n\n- […]
 
 > TOOL
@@ -1163,7 +1163,7 @@ id: toolu_01TGoGdTdZdMFRvkCupznMxy
 tool_result
 id: toolu_01TGoGdTdZdMFRvkCupznMxy
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-04-20-codebase-knowledge-design.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-04-20-codebase-knowledge-design.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL

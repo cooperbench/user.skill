@@ -1729,7 +1729,7 @@ tool_use Bash
 id: call_92d10b36a1aa468fa7bf8030
 ```json
 {
-  "command": "git commit -m \"$(cat <<'EOF'\nfeat: 集成测试体系 + 线1 bug修复 — 36条集测项(343 tests) + onSettled竞态/resolveSettle兜底/storageService mock\n\n集成测试（12对话~60子agent）：\n- 28个integration spec，11479行测试代码\n- 1177 passed → 1178/1178 全绿\n- 知识资产：6份集测调研文档（历史提取/设计验收标准/旧系统行为/新系统接缝审计）\n\nBug修复：\n- BF1: settleResolvers 改 Set<() => void> 支持多等待者\n- BF2: runExecutionLoop finally 兜底 resolveSettle（errorPolicy stop/pause 场景）\n- BF3: helpers.ts 补 storageService mock（fanOutToStorage await 后 undefined 抛异常）\n- BF-prev: frame-matcher.ts 'any' operator fix + routing-tick.ts fanOutToStorage await\n\nCo-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git commit -m \"$(cat <<'EOF'\nfeat: 集成测试体系 + 线1 bug修复 — 36条集测项(343 tests) + onSettled竞态/resolveSettle兜底/storageService mock\n\n集成测试（12对话~60子agent）：\n- 28个integration spec，11479行测试代码\n- 1177 passed → 1178/1178 全绿\n- 知识资产：6份集测调研文档（历史提取/设计验收标准/旧系统行为/新系统接缝审计）\n\nBug修复：\n- BF1: settleResolvers 改 Set<() => void> 支持多等待者\n- BF2: runExecutionLoop finally 兜底 resolveSettle（errorPolicy stop/pause 场景）\n- BF3: helpers.ts 补 storageService mock（fanOutToStorage await 后 undefined 抛异常）\n- BF-prev: frame-matcher.ts 'any' operator fix + routing-tick.ts fanOutToStorage await\n\nCo-Authored-By: Claude Opus 4.7 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit integration testing + bug fixes"
 }
 ```

@@ -19,14 +19,14 @@ I have many posthog errors, here is one such stacktrace:
           "frames": [
             {
               "colno": 30,
-              "filename": "/C:/Users/juan.solorzano/AppData/Roaming/npm/node_modules/@code-insights/cli/server-dist/routes/route-helpers.js",
+              "filename": "/C:/home/<USER>/AppData/Roaming/npm/node_modules/@code-insights/cli/server-dist/routes/route-helpers.js",
               "function": "<anonymous>",
               "in_app": false,
               "lineno": 127
             },
             {
               "colno": 5,
-              "filename": "/C:/Users/juan.solorzano/AppData/Roaming/npm/node_modules/@code-insights/cli/node_modules/hono/dist/helper/streaming/sse.js",
+              "filename": "/C:/home/<USER>/AppData/Roaming/npm/node_modules/@code-insights/cli/node_modules/hono/dist/helper/streaming/sse.js",
               "function": "async run",
               "in_app": false,
               "lineno": 30
@@ -38,7 +38,7 @@ I have many posthog errors, here is one such stacktrace:
       }
     ],
     "$exception_message": "Cannot connect to Ollama at  http://10.10.10.67:11434 — is it running? Start it with: ollama serve",
-    "$exception_stack_trace_raw": "Error: Cannot connect to Ollama at  http://10.10.10.67:11434 — is it running? Start it with: ollama serve\n    at file:///C:/Users/juan.solorzano/AppData/Roaming/npm/node_modules/@code-insights/cli/server-dist/routes/route-helpers.js:127:30\n    at async run (file:///C:/Users/juan.solorzano/AppData/Roaming/npm/node_modules/@code-insights/cli/node_modules/hono/dist/helper/streaming/sse.js:30:5)",
+    "$exception_stack_trace_raw": "Error: Cannot connect to Ollama at  http://10.10.10.67:11434 — is it running? Start it with: ollama serve\n    at file:///C:/home/<USER>/AppData/Roaming/npm/node_modules/@code-insights/cli/server-dist/routes/route-helpers.js:127:30\n    at async run (file:///C:/home/<USER>/AppData/Roaming/npm/node_modules/@code-insights/cli/node_modules/hono/dist/helper/streaming/sse.js:30:5)",
     "$exception_type": "Error",
     "$geoip_disable": true,
     "$ip": "186.4.171.244",
@@ -76,7 +76,7 @@ tool_use Bash
 id: toolu_01Wqct2aVecoNLAxS5wHgS8K
 ```json
 {
-  "command": "find /Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes -name \"route-helpers*\" | head -5",
+  "command": "find /home/<USER>/Workspace/codeInsights/code-insights/server/src/routes -name \"route-helpers*\" | head -5",
   "description": "Find route-helpers source file"
 }
 ```
@@ -87,7 +87,7 @@ tool_use Bash
 id: toolu_017TkirexnbVCNF2it32bQoZ
 ```json
 {
-  "command": "grep -rn \"Cannot connect to Ollama\" /Users/melagiri/Workspace/codeInsights/code-insights --include=\"*.ts\" -l",
+  "command": "grep -rn \"Cannot connect to Ollama\" /home/<USER>/Workspace/codeInsights/code-insights --include=\"*.ts\" -l",
   "description": "Find where Ollama connection error is thrown"
 }
 ```
@@ -97,7 +97,7 @@ id: toolu_017TkirexnbVCNF2it32bQoZ
 tool_result
 id: toolu_01Wqct2aVecoNLAxS5wHgS8K
 ```
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts
 ```
 
 > TOOL
@@ -105,7 +105,7 @@ id: toolu_01Wqct2aVecoNLAxS5wHgS8K
 tool_result
 id: toolu_017TkirexnbVCNF2it32bQoZ
 ```
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts
 ```
 
 > TOOL
@@ -114,7 +114,7 @@ tool_use Read
 id: toolu_014hfSGMX2SUb7qa9aEAD9AJ
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts"
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts"
 }
 ```
 
@@ -124,7 +124,7 @@ tool_use Read
 id: toolu_01E8RpN2YP2v1xFu1Txstsyy
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts"
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts"
 }
 ```
 
@@ -209,7 +209,7 @@ tool_use Bash
 id: toolu_01NkZqg2A4w6hz1EJctX3GDM
 ```json
 {
-  "command": "grep -n \"captureError\\|trackEvent\" /Users/melagiri/Workspace/codeInsights/code-insights/cli/src/utils/telemetry.ts | head -40",
+  "command": "grep -n \"captureError\\|trackEvent\" /home/<USER>/Workspace/codeInsights/code-insights/cli/src/utils/telemetry.ts | head -40",
   "description": "Find captureError and trackEvent definitions in telemetry"
 }
 ```
@@ -232,7 +232,7 @@ tool_use Bash
 id: toolu_01J9GDsMczN3L84kaWGZiCnD
 ```json
 {
-  "command": "grep -n \"ECONNREFUSED\\|fetch\\|TypeError\" /Users/melagiri/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts",
+  "command": "grep -n \"ECONNREFUSED\\|fetch\\|TypeError\" /home/<USER>/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts",
   "description": "Check how Ollama handles connection errors"
 }
 ```
@@ -253,7 +253,7 @@ tool_use Read
 id: toolu_01CxzxZarja3h7dAwzmCQ4Lq
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/utils/telemetry.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/cli/src/utils/telemetry.ts",
   "offset": 185,
   "limit": 80
 }
@@ -316,7 +316,7 @@ tool_use Read
 id: toolu_01KisSGXWEFeedWyWJG7FyvP
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/utils/telemetry.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/cli/src/utils/telemetry.ts",
   "offset": 100,
   "limit": 90
 }
@@ -407,7 +407,7 @@ tool_use Bash
 id: toolu_01Gs9VqGjrTokH2x7EycaosJ
 ```json
 {
-  "command": "grep -rn \"captureError\" /Users/melagiri/Workspace/codeInsights/code-insights --include=\"*.ts\" | grep -v \"node_modules\" | grep -v \"dist/\"",
+  "command": "grep -rn \"captureError\" /home/<USER>/Workspace/codeInsights/code-insights --include=\"*.ts\" | grep -v \"node_modules\" | grep -v \"dist/\"",
   "description": "Find all captureError usages across the codebase"
 }
 ```
@@ -417,34 +417,34 @@ id: toolu_01Gs9VqGjrTokH2x7EycaosJ
 tool_result
 id: toolu_01Gs9VqGjrTokH2x7EycaosJ
 ```
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/telemetry.test.ts:18:  captureError: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts:18:  captureError: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts:4:import { trackEvent, captureError } from '@code-insights/cli/utils/telemetry';
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts:276:    captureError(error, { format, scope, depth, llm_provider: llmConfig?.provider, llm_model: llmConfig?.model });
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts:400:      captureError(err, { format, scope, depth, llm_provider: llmConfig?.provider, llm_model: llmConfig?.model });
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/reflect.test.ts:18:  captureError: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:9:import { trackEvent, captureError } from '@code-insights/cli/utils/telemetry';
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:68: * Emit the 'analysis_run' telemetry event (and captureError on failure) for a
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:100:    captureError(new Error(result.error ?? `${analysisType} analysis failed`), errorProperties);
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:202:        captureError(new Error(result.error ?? `${opts.analysisType} stream failed`), errorProperties);
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:241:      captureError(err, {
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.test.ts:19:  captureError: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/facets.test.ts:18:  captureError: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/utils/telemetry.ts:138: * Used to enrich trackEvent calls and captureError calls with consistent error metadata.
-/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/utils/telemetry.ts:196:export function captureError(error: unknown, properties?: Record<string, unknown>): void {
-/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/commands/dashboard.ts:7:import { trackEvent, identifyUser, captureError, classifyError } from '../utils/telemetry.js';
-/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/commands/dashboard.ts:129:    captureError(err, { command: 'dashboard', error_type });
-/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/commands/install-hook.ts:5:import { trackEvent, captureError, classifyError } from '../utils/telemetry.js';
-/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/commands/install-hook.ts:108:    captureError(error, { command: 'install_hook', error_type });
-/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/commands/status.ts:6:import { trackEvent, captureError, classifyError } from '../utils/telemetry.js';
-/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/commands/status.ts:86:    captureError(error, { command: 'status', error_type });
-/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/commands/__tests__/install-hook.test.ts:10:  captureError: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/commands/reset.ts:7:import { trackEvent, captureError, classifyError } from '../utils/telemetry.js';
-/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/commands/reset.ts:60:      captureError(error, { command: 'reset', error_type });
-/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/commands/init.ts:5:import { trackEvent, captureError, classifyError } from '../utils/telemetry.js';
-/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/commands/init.ts:49:    captureError(error, { command: 'init', error_type });
-/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/commands/sync.ts:7:import { trackEvent, identifyUser, captureError, classifyError } from '../utils/telemetry.js';
-/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/commands/sync.ts:352:    captureError(error, […]
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/telemetry.test.ts:18:  captureError: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts:18:  captureError: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts:4:import { trackEvent, captureError } from '@code-insights/cli/utils/telemetry';
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts:276:    captureError(error, { format, scope, depth, llm_provider: llmConfig?.provider, llm_model: llmConfig?.model });
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts:400:      captureError(err, { format, scope, depth, llm_provider: llmConfig?.provider, llm_model: llmConfig?.model });
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/reflect.test.ts:18:  captureError: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:9:import { trackEvent, captureError } from '@code-insights/cli/utils/telemetry';
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:68: * Emit the 'analysis_run' telemetry event (and captureError on failure) for a
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:100:    captureError(new Error(result.error ?? `${analysisType} analysis failed`), errorProperties);
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:202:        captureError(new Error(result.error ?? `${opts.analysisType} stream failed`), errorProperties);
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:241:      captureError(err, {
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.test.ts:19:  captureError: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/facets.test.ts:18:  captureError: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/cli/src/utils/telemetry.ts:138: * Used to enrich trackEvent calls and captureError calls with consistent error metadata.
+/home/<USER>/Workspace/codeInsights/code-insights/cli/src/utils/telemetry.ts:196:export function captureError(error: unknown, properties?: Record<string, unknown>): void {
+/home/<USER>/Workspace/codeInsights/code-insights/cli/src/commands/dashboard.ts:7:import { trackEvent, identifyUser, captureError, classifyError } from '../utils/telemetry.js';
+/home/<USER>/Workspace/codeInsights/code-insights/cli/src/commands/dashboard.ts:129:    captureError(err, { command: 'dashboard', error_type });
+/home/<USER>/Workspace/codeInsights/code-insights/cli/src/commands/install-hook.ts:5:import { trackEvent, captureError, classifyError } from '../utils/telemetry.js';
+/home/<USER>/Workspace/codeInsights/code-insights/cli/src/commands/install-hook.ts:108:    captureError(error, { command: 'install_hook', error_type });
+/home/<USER>/Workspace/codeInsights/code-insights/cli/src/commands/status.ts:6:import { trackEvent, captureError, classifyError } from '../utils/telemetry.js';
+/home/<USER>/Workspace/codeInsights/code-insights/cli/src/commands/status.ts:86:    captureError(error, { command: 'status', error_type });
+/home/<USER>/Workspace/codeInsights/code-insights/cli/src/commands/__tests__/install-hook.test.ts:10:  captureError: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/cli/src/commands/reset.ts:7:import { trackEvent, captureError, classifyError } from '../utils/telemetry.js';
+/home/<USER>/Workspace/codeInsights/code-insights/cli/src/commands/reset.ts:60:      captureError(error, { command: 'reset', error_type });
+/home/<USER>/Workspace/codeInsights/code-insights/cli/src/commands/init.ts:5:import { trackEvent, captureError, classifyError } from '../utils/telemetry.js';
+/home/<USER>/Workspace/codeInsights/code-insights/cli/src/commands/init.ts:49:    captureError(error, { command: 'init', error_type });
+/home/<USER>/Workspace/codeInsights/code-insights/cli/src/commands/sync.ts:7:import { trackEvent, identifyUser, captureError, classifyError } from '../utils/telemetry.js';
+/home/<USER>/Workspace/codeInsights/code-insights/cli/src/commands/sync.ts:352:    captureError(error, […]
 
 > TOOL
 
@@ -452,7 +452,7 @@ tool_use Bash
 id: toolu_015x4iYtUUhpDtPqwG7ipMPB
 ```json
 {
-  "command": "grep -rn \"trackEvent\\|captureError\" /Users/melagiri/Workspace/codeInsights/code-insights/server/src --include=\"*.ts\" | grep -v \"node_modules\"",
+  "command": "grep -rn \"trackEvent\\|captureError\" /home/<USER>/Workspace/codeInsights/code-insights/server/src --include=\"*.ts\" | grep -v \"node_modules\"",
   "description": "Find all telemetry calls in server routes"
 }
 ```
@@ -462,46 +462,46 @@ id: toolu_015x4iYtUUhpDtPqwG7ipMPB
 tool_result
 id: toolu_015x4iYtUUhpDtPqwG7ipMPB
 ```
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/telemetry.test.ts:17:  trackEvent: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/telemetry.test.ts:18:  captureError: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/messages.test.ts:17:  trackEvent: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/analytics.test.ts:17:  trackEvent: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/insights.test.ts:17:  trackEvent: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/sessions.test.ts:17:  trackEvent: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/reflect.test.ts:17:  trackEvent: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/reflect.test.ts:18:  captureError: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts:4:import { trackEvent, captureError } from '@code-insights/cli/utils/telemetry';
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts:102:  trackEvent('export_run', {
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts:257:    trackEvent('export_run', {
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts:276:    captureError(error, { format, scope, depth, llm_provider: llmConfig?.provider, llm_model: llmConfig?.model });
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts:277:    trackEvent('export_run', {
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts:381:      trackEvent('export_run', {
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts:400:      captureError(err, { format, scope, depth, llm_provider: llmConfig?.provider, llm_model: llmConfig?.model });
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts:401:      trackEvent('export_run', {
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/projects.test.ts:17:  trackEvent: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts:17:  trackEvent: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts:18:  captureError: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.test.ts:18:  trackEvent: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.test.ts:19:  captureError: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/facets.test.ts:17:  trackEvent: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/facets.test.ts:18:  captureError: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:9:import { trackEvent, captureError } from '@code-insights/cli/utils/telemetry';
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:68: * Emit the 'analysis_run' telemetry event (and captureError on failure) for a
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:74: *     onSuccess: () => trackEvent('insight_generated', { type: 'session', count: result.insights.length }),
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:99:    trackEvent('analysis_run', errorProperties);
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:100:    captureError(new Error(result.error ?? `${analysisType} analysis failed`), errorProperties);
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:102:    trackEvent('analysis_run', baseProperties);
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:201:        trackEvent('analysis_run', errorProperties);
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:202:        captureError(new Error(result.error ?? `${opts.analysisType} stream failed`), errorProperties);
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:208:        trackEvent('analysis_run', baseProperties);
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:241:      captureError(err, {
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/config.test.ts:18:  trackEvent: vi.fn(),
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/analysis.ts:3:import { trackEvent } from '@code-insights/cli/utils/telemetry';
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/analysis.ts:87:      trackEvent('insight_generated', { type: 'session', count: result.insights.length });
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/analysis.ts:123:      trackEvent('insight_generated', { type: 'session', count: result.insights.length });
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/analysis.ts:151:      trackEvent('insight_generated', { type: 'prompt_quality', count: result.insights.length });
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/analysis.ts:182:      trackEvent('insight_generated', { type: 'prompt_quality', count: result.insights.length });
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/analysis.ts:232:      trackEvent('insight_generated', { […]
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/telemetry.test.ts:17:  trackEvent: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/telemetry.test.ts:18:  captureError: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/messages.test.ts:17:  trackEvent: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/analytics.test.ts:17:  trackEvent: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/insights.test.ts:17:  trackEvent: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/sessions.test.ts:17:  trackEvent: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/reflect.test.ts:17:  trackEvent: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/reflect.test.ts:18:  captureError: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts:4:import { trackEvent, captureError } from '@code-insights/cli/utils/telemetry';
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts:102:  trackEvent('export_run', {
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts:257:    trackEvent('export_run', {
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts:276:    captureError(error, { format, scope, depth, llm_provider: llmConfig?.provider, llm_model: llmConfig?.model });
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts:277:    trackEvent('export_run', {
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts:381:      trackEvent('export_run', {
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts:400:      captureError(err, { format, scope, depth, llm_provider: llmConfig?.provider, llm_model: llmConfig?.model });
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts:401:      trackEvent('export_run', {
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/projects.test.ts:17:  trackEvent: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts:17:  trackEvent: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/analysis.test.ts:18:  captureError: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.test.ts:18:  trackEvent: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.test.ts:19:  captureError: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/facets.test.ts:17:  trackEvent: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/facets.test.ts:18:  captureError: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:9:import { trackEvent, captureError } from '@code-insights/cli/utils/telemetry';
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:68: * Emit the 'analysis_run' telemetry event (and captureError on failure) for a
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:74: *     onSuccess: () => trackEvent('insight_generated', { type: 'session', count: result.insights.length }),
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:99:    trackEvent('analysis_run', errorProperties);
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:100:    captureError(new Error(result.error ?? `${analysisType} analysis failed`), errorProperties);
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:102:    trackEvent('analysis_run', baseProperties);
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:201:        trackEvent('analysis_run', errorProperties);
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:202:        captureError(new Error(result.error ?? `${opts.analysisType} stream failed`), errorProperties);
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:208:        trackEvent('analysis_run', baseProperties);
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts:241:      captureError(err, {
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/config.test.ts:18:  trackEvent: vi.fn(),
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/analysis.ts:3:import { trackEvent } from '@code-insights/cli/utils/telemetry';
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/analysis.ts:87:      trackEvent('insight_generated', { type: 'session', count: result.insights.length });
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/analysis.ts:123:      trackEvent('insight_generated', { type: 'session', count: result.insights.length });
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/analysis.ts:151:      trackEvent('insight_generated', { type: 'prompt_quality', count: result.insights.length });
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/analysis.ts:182:      trackEvent('insight_generated', { type: 'prompt_quality', count: result.insights.length });
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/analysis.ts:232:      trackEvent('insight_generated', { […]
 
 > AGENT
 
@@ -513,7 +513,7 @@ tool_use Read
 id: toolu_013cwxuL374TGCW5puJ1c1yu
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts",
   "offset": "[240, 410]"
 }
 ```
@@ -533,7 +533,7 @@ tool_use Read
 id: toolu_01YBDSMGnrvBxCReiKUGWKmG
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts",
   "offset": 236,
   "limit": 20
 }
@@ -572,7 +572,7 @@ tool_use Read
 id: toolu_01PEJzitppCZjDz3AfoJuFxb
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts",
   "offset": 240,
   "limit": 170
 }
@@ -640,7 +640,7 @@ tool_use Bash
 id: toolu_019v7N6BGHc5s8N8k7umZcBN
 ```json
 {
-  "command": "grep -n \"captureError\\|trackEvent\" /Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/reflect.ts | head -30",
+  "command": "grep -n \"captureError\\|trackEvent\" /home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/reflect.ts | head -30",
   "description": "Check reflect route for captureError patterns"
 }
 ```
@@ -659,7 +659,7 @@ tool_use Bash
 id: toolu_01Lhv9qHStxsus4gUT3trKZ9
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights log --oneline -15 -- server/src/routes/ cli/src/utils/telemetry.ts",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights log --oneline -15 -- server/src/routes/ cli/src/utils/telemetry.ts",
   "description": "Recent commits touching routes and telemetry"
 }
 ```
@@ -692,7 +692,7 @@ tool_use Bash
 id: toolu_015TGa1VXnw42s7BJMotCMi8
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights log --oneline -20 -- server/src/routes/route-helpers.ts",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights log --oneline -20 -- server/src/routes/route-helpers.ts",
   "description": "History of route-helpers specifically"
 }
 ```
@@ -716,7 +716,7 @@ tool_use Bash
 id: toolu_016TxXr7U6Xs8xJPa2m5JS5r
 ```json
 {
-  "command": "grep -n \"captureError\\|trackEvent\" /Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/reflect.ts 2>/dev/null | head -20",
+  "command": "grep -n \"captureError\\|trackEvent\" /home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/reflect.ts 2>/dev/null | head -20",
   "description": "Check reflect.ts for telemetry calls"
 }
 ```
@@ -739,7 +739,7 @@ tool_use Read
 id: toolu_01XqQqzVtioxuQ9NJnZ2bhRK
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts",
   "offset": 90,
   "limit": 50
 }
@@ -824,7 +824,7 @@ tool_use Bash
 id: toolu_01DExrQRLXQg3varSz2AZ78m
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights checkout -b fix/telemetry-captureError-noise",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights checkout -b fix/telemetry-captureError-noise",
   "description": "Create fix branch"
 }
 ```
@@ -852,7 +852,7 @@ id: toolu_01KEp7svzw3L3dkFJySUbbJ4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts",
   "old_string": "  if (!result.success) {\n    const errorProperties: Record<string, unknown> = {\n      ...baseProperties,\n      error_type: result.error_type,\n      error_message: result.error,\n      response_preview: result.response_preview,\n    };\n    trackEvent('analysis_run', errorProperties);\n    captureError(new Error(result.error ?? `${analysisType} analysis failed`), errorProperties);\n  } else {",
   "new_string": "  if (!result.success) {\n    trackEvent('analysis_run', {\n      ...baseProperties,\n      error_type: result.error_type,\n      error_message: result.error,\n      response_preview: result.response_preview,\n    });\n  } else {"
 }
@@ -863,7 +863,7 @@ id: toolu_01KEp7svzw3L3dkFJySUbbJ4
 tool_result
 id: toolu_01KEp7svzw3L3dkFJySUbbJ4
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts has been updated successfully.
 ```
 
 > TOOL
@@ -873,7 +873,7 @@ id: toolu_01J9QSLxfyMHj8N5YXWq9uP6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts",
   "old_string": "      if (!result.success) {\n        const errorProperties: Record<string, unknown> = {\n          ...baseProperties,\n          error_type: result.error_type,\n          error_message: result.error,\n          response_preview: result.response_preview,\n        };\n        trackEvent('analysis_run', errorProperties);\n        captureError(new Error(result.error ?? `${opts.analysisType} stream failed`), errorProperties);\n        await stream.writeSSE({",
   "new_string": "      if (!result.success) {\n        trackEvent('analysis_run', {\n          ...baseProperties,\n          error_type: result.error_type,\n          error_message: result.error,\n          response_preview: result.response_preview,\n        });\n        await stream.writeSSE({"
 }
@@ -884,7 +884,7 @@ id: toolu_01J9QSLxfyMHj8N5YXWq9uP6
 tool_result
 id: toolu_01J9QSLxfyMHj8N5YXWq9uP6
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts has been updated successfully.
 ```
 
 > TOOL
@@ -894,7 +894,7 @@ id: toolu_016oKVnjuHEcSorA7BavCFGr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts",
   "old_string": "      captureError(err, {\n        type: `${telemetryType}_stream`,\n        llm_provider: llmConfig?.provider,\n        llm_model: llmConfig?.model,\n      });",
   "new_string": "      captureError(err, {\n        analysis_type: `${telemetryType}_stream`,\n        llm_provider: llmConfig?.provider,\n        llm_model: llmConfig?.model,\n      });"
 }
@@ -905,7 +905,7 @@ id: toolu_016oKVnjuHEcSorA7BavCFGr
 tool_result
 id: toolu_016oKVnjuHEcSorA7BavCFGr
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts has been updated successfully.
 ```
 
 > AGENT
@@ -919,7 +919,7 @@ id: toolu_01YLRBCi3tMazpm3JbZLXLdN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts",
   "old_string": "    const message = error instanceof Error ? error.message : 'Export generation failed';\n    captureError(error, { format, scope, depth, llm_provider: llmConfig?.provider, llm_model: llmConfig?.model });\n    trackEvent('export_run', {",
   "new_string": "    const message = error instanceof Error ? error.message : 'Export generation failed';\n    trackEvent('export_run', {"
 }
@@ -930,7 +930,7 @@ id: toolu_01YLRBCi3tMazpm3JbZLXLdN
 tool_result
 id: toolu_01YLRBCi3tMazpm3JbZLXLdN
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts has been updated successfully.
 ```
 
 > TOOL
@@ -940,7 +940,7 @@ id: toolu_015B94VgwxKi3jL1bGbjfimr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts",
   "old_string": "      const message = err instanceof Error ? err.message : 'Unknown error';\n      captureError(err, { format, scope, depth, llm_provider: llmConfig?.provider, llm_model: llmConfig?.model });\n      trackEvent('export_run', {",
   "new_string": "      const message = err instanceof Error ? err.message : 'Unknown error';\n      trackEvent('export_run', {"
 }
@@ -951,7 +951,7 @@ id: toolu_015B94VgwxKi3jL1bGbjfimr
 tool_result
 id: toolu_015B94VgwxKi3jL1bGbjfimr
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts has been updated successfully.
 ```
 
 > AGENT
@@ -964,7 +964,7 @@ tool_use Bash
 id: toolu_01FCAPwrQEVKPX6EvumDKwC6
 ```json
 {
-  "command": "grep -n \"captureError\" /Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts",
+  "command": "grep -n \"captureError\" /home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts",
   "description": "Check if captureError is still referenced in export.ts"
 }
 ```
@@ -984,7 +984,7 @@ id: toolu_01Qf3q4SgGVsWds89XPRKLAa
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts",
   "old_string": "import { trackEvent, captureError } from '@code-insights/cli/utils/telemetry';",
   "new_string": "import { trackEvent } from '@code-insights/cli/utils/telemetry';"
 }
@@ -995,7 +995,7 @@ id: toolu_01Qf3q4SgGVsWds89XPRKLAa
 tool_result
 id: toolu_01Qf3q4SgGVsWds89XPRKLAa
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts has been updated successfully.
 ```
 
 > AGENT
@@ -1009,7 +1009,7 @@ id: toolu_01HXTiKXosVsxXMngvBEDDpU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts",
   "old_string": "  const url = baseUrl || DEFAULT_OLLAMA_URL;",
   "new_string": "  const url = (baseUrl || DEFAULT_OLLAMA_URL).trim();"
 }
@@ -1030,7 +1030,7 @@ tool_use Bash
 id: toolu_01DeWkaiNdW8HVmVfdyAbUVM
 ```json
 {
-  "command": "grep -n \"const url = baseUrl\" /Users/melagiri/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts",
+  "command": "grep -n \"const url = baseUrl\" /home/<USER>/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts",
   "description": "Find both occurrences of url assignment"
 }
 ```
@@ -1055,7 +1055,7 @@ id: toolu_01VyUA82yAocjkHAdPYJbKLv
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts",
   "old_string": "  const url = baseUrl || DEFAULT_OLLAMA_URL;",
   "new_string": "  const url = (baseUrl || DEFAULT_OLLAMA_URL).trim();"
 }
@@ -1066,7 +1066,7 @@ id: toolu_01VyUA82yAocjkHAdPYJbKLv
 tool_result
 id: toolu_01VyUA82yAocjkHAdPYJbKLv
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts has been updated. All occurrences were successfully replaced.
+The file /home/<USER>/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts has been updated. All occurrences were successfully replaced.
 ```
 
 > AGENT
@@ -1079,7 +1079,7 @@ tool_use Bash
 id: toolu_014TX4p1YY2jyGbGE18wNsKW
 ```json
 {
-  "command": "grep -n \"captureError\" /Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts",
+  "command": "grep -n \"captureError\" /home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts",
   "description": "Verify captureError still used in route-helpers.ts"
 }
 ```
@@ -1105,7 +1105,7 @@ id: toolu_013YRT1ABdbdtuouuf6UDLG4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts",
   "old_string": " * Emit the 'analysis_run' telemetry event (and captureError on failure) for a",
   "new_string": " * Emit the 'analysis_run' telemetry event for a"
 }
@@ -1116,7 +1116,7 @@ id: toolu_013YRT1ABdbdtuouuf6UDLG4
 tool_result
 id: toolu_013YRT1ABdbdtuouuf6UDLG4
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts has been updated successfully.
 ```
 
 > AGENT
@@ -1143,7 +1143,7 @@ id: toolu_01UC29aiForgKbhJGjcATwnS
 > tsc
 
 
-> @code-insights/dashboard@0.1.0 build /Users/melagiri/Workspace/codeInsights/code-insights/dashboard
+> @code-insights/dashboard@0.1.0 build /home/<USER>/Workspace/codeInsights/code-insights/dashboard
 > vite build
 
 vite v6.4.1 building for production...
@@ -1220,7 +1220,7 @@ tool_use Bash
 id: toolu_018WHhDA6aRPL2LCrGwyZxuf
 ```json
 {
-  "command": "grep -n \"captureError\\|analysis_type\\|type:\" /Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts | grep -v \"analysisType\\|opts\\.analysisType\\|error_type\\|AnalysisOptions\\|interface\\|string\\|Record\"",
+  "command": "grep -n \"captureError\\|analysis_type\\|type:\" /home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts | grep -v \"analysisType\\|opts\\.analysisType\\|error_type\\|AnalysisOptions\\|interface\\|string\\|Record\"",
   "description": "Verify route-helpers changes at a glance"
 }
 ```
@@ -1246,7 +1246,7 @@ tool_use Bash
 id: toolu_014uoiWiTbatgRvk6qVzKsVH
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights diff --stat",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights diff --stat",
   "description": "Show changed files summary"
 }
 ```
@@ -1315,7 +1315,7 @@ tool_use Bash
 id: toolu_01PHcAtebo4JNkz25hDhaNnC
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights push -u origin fix/telemetry-captureError-noise 2>&1",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights push -u origin fix/telemetry-captureError-noise 2>&1",
   "description": "Push branch to remote"
 }
 ```
@@ -1362,7 +1362,7 @@ tool_use Bash
 id: toolu_019bSDyy9afgYMJy7egRHWeP
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights status",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights status",
   "description": "Check working tree status"
 }
 ```
@@ -1373,7 +1373,7 @@ tool_use Bash
 id: toolu_01XQeKAQjfhEfHXDp364igvS
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights diff --stat HEAD",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights diff --stat HEAD",
   "description": "Show what changed vs HEAD"
 }
 ```
@@ -1417,7 +1417,7 @@ tool_use Bash
 id: toolu_01DXWndpb9BJBX3hAKuN7V44
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights add server/src/llm/providers/ollama.ts server/src/routes/export.ts server/src/routes/route-helpers.ts && git -C /Users/melagiri/Workspace/codeInsights/code-insights commit -m \"$(cat <<'EOF'\nfix(telemetry): stop captureError on expected LLM failures, fix PostHog type collision\n\n- Remove captureError from !result.success paths in trackAnalysisResult and\n  streamSessionAnalysis — expected LLM failures (Ollama not running, API auth,\n  model not found) were generating spurious PostHog \\$exception events. The\n  trackEvent('analysis_run') call already captures full context.\n- Rename type -> analysis_type in the catch-block captureError properties to\n  avoid colliding with PostHog's cymbal exception schema ('serde error: missing\n  field type').\n- Remove captureError from export.ts catch blocks wrapping direct client.chat()\n  calls — same signal/noise issue; trackEvent('export_run') is sufficient.\n- Trim Ollama baseUrl in createOllamaClient and discoverOllamaModels to prevent\n  double-space in error messages when users configure a URL with a leading space.\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights add server/src/llm/providers/ollama.ts server/src/routes/export.ts server/src/routes/route-helpers.ts && git -C /home/<USER>/Workspace/codeInsights/code-insights commit -m \"$(cat <<'EOF'\nfix(telemetry): stop captureError on expected LLM failures, fix PostHog type collision\n\n- Remove captureError from !result.success paths in trackAnalysisResult and\n  streamSessionAnalysis — expected LLM failures (Ollama not running, API auth,\n  model not found) were generating spurious PostHog \\$exception events. The\n  trackEvent('analysis_run') call already captures full context.\n- Rename type -> analysis_type in the catch-block captureError properties to\n  avoid colliding with PostHog's cymbal exception schema ('serde error: missing\n  field type').\n- Remove captureError from export.ts catch blocks wrapping direct client.chat()\n  calls — same signal/noise issue; trackEvent('export_run') is sufficient.\n- Trim Ollama baseUrl in createOllamaClient and discoverOllamaModels to prevent\n  double-space in error messages when users configure a URL with a leading space.\n\nCo-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit the telemetry fixes"
 }
 ```
@@ -1437,7 +1437,7 @@ tool_use Bash
 id: toolu_01WdqnGzsasJEkubQRkB5tuf
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights push 2>&1",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights push 2>&1",
   "description": "Push the commit"
 }
 ```
@@ -1574,7 +1574,7 @@ tool_use Read
 id: toolu_01VswbEZpxuWaVFd7UUbXLUh
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/REVIEW-SPECIALISTS.md"
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/REVIEW-SPECIALISTS.md"
 }
 ```
 
@@ -1650,7 +1650,7 @@ id: toolu_01FkAmvJioB61YNSM1ujQwyY
   "description": "Node/CLI Specialist Review — PR #290",
   "subagent_type": "superpowers:code-reviewer",
   "mode": "bypassPermissions",
-  "prompt": "You are a Node/CLI Specialist reviewer for PR #290. This is review ROUND 1.\n\nYour PRIMARY expertise is Node.js patterns, CLI design, async safety, and error handling\nin a Commander.js + ESM + TypeScript + Hono server environment.\nYou ALSO maintain general engineering awareness.\n\nFetch the PR diff: gh pr diff 290\nAlso fetch PR details: gh pr view 290\n\nThe working directory is: /Users/melagiri/Workspace/codeInsights/code-insights\n\nCONTEXT:\nThis PR fixes telemetry noise — `captureError` (which emits PostHog `$exception` events) was being called for expected/handled LLM failures (Ollama not running, API auth errors, model not found). The fix:\n1. Removes `captureError` from `!result.success` paths in `trackAnalysisResult` and `streamSessionAnalysis` in route-helpers.ts\n2. Renames `type` → `analysis_type` in catch-block captureError properties (fixes PostHog cymbal schema collision)\n3. Removes `captureError` from export.ts LLM catch blocks (same signal/noise issue)\n4. Trims `baseUrl` in Ollama provider to handle user-typed URLs with leading spaces\n\nDOMAIN-SPECIFIC CHECKS (80% of your focus):\n- Async patterns: proper await, unhandled rejections, concurrent operation safety\n- File system: path.join (not concat), permissions, symlinks, temp file cleanup\n- Stream handling: backpressure, error propagation, cleanup on abort\n- ESM resolution: .js extensions in imports, no CommonJS require()\n- CLI UX: error messages, exit codes, progress […]
+  "prompt": "You are a Node/CLI Specialist reviewer for PR #290. This is review ROUND 1.\n\nYour PRIMARY expertise is Node.js patterns, CLI design, async safety, and error handling\nin a Commander.js + ESM + TypeScript + Hono server environment.\nYou ALSO maintain general engineering awareness.\n\nFetch the PR diff: gh pr diff 290\nAlso fetch PR details: gh pr view 290\n\nThe working directory is: /home/<USER>/Workspace/codeInsights/code-insights\n\nCONTEXT:\nThis PR fixes telemetry noise — `captureError` (which emits PostHog `$exception` events) was being called for expected/handled LLM failures (Ollama not running, API auth errors, model not found). The fix:\n1. Removes `captureError` from `!result.success` paths in `trackAnalysisResult` and `streamSessionAnalysis` in route-helpers.ts\n2. Renames `type` → `analysis_type` in catch-block captureError properties (fixes PostHog cymbal schema collision)\n3. Removes `captureError` from export.ts LLM catch blocks (same signal/noise issue)\n4. Trims `baseUrl` in Ollama provider to handle user-typed URLs with leading spaces\n\nDOMAIN-SPECIFIC CHECKS (80% of your focus):\n- Async patterns: proper await, unhandled rejections, concurrent operation safety\n- File system: path.join (not concat), permissions, symlinks, temp file cleanup\n- Stream handling: backpressure, error propagation, cleanup on abort\n- ESM resolution: .js extensions in imports, no CommonJS require()\n- CLI UX: error messages, exit codes, progress […]
 
 > TOOL
 
@@ -1674,7 +1674,7 @@ id: toolu_01Hp7B8DyQ5TkuTe1STQMHCu
   "description": "LLM Expert Review — PR #290",
   "subagent_type": "general-purpose",
   "mode": "bypassPermissions",
-  "prompt": "You are performing an independent LLM EXPERT review of PR #290 in the code-insights repo. This is review ROUND 1.\n\nFetch the PR diff using: gh pr diff 290\nAlso fetch the PR details: gh pr view 290\n\nThe working directory is: /Users/melagiri/Workspace/codeInsights/code-insights\n\nCONTEXT:\nThis PR touches `server/src/llm/providers/ollama.ts` — specifically adding `.trim()` to the `baseUrl` in both `createOllamaClient` and `discoverOllamaModels`. The Ollama provider is a local LLM client that calls Ollama's REST API. The trim prevents double-space in error messages when users configure a URL with a leading space.\n\nReview all LLM-related code for:\n- The `.trim()` fix: is it sufficient? Are there other whitespace/normalization issues (trailing slash, trailing whitespace, protocol normalization)?\n- The Ollama provider's error detection heuristic: `cause?.code === 'ECONNREFUSED' || (err instanceof TypeError && err.message.includes('fetch'))` — does this reliably catch all \"Ollama not running\" scenarios across Node versions and OS platforms?\n- Cross-platform behavior: Windows vs Mac/Linux differences in network error codes\n- The `discoverOllamaModels` function uses `AbortSignal.timeout(3000)` — is 3 seconds a reasonable timeout for model discovery?\n- Are there other URL construction sites in the Ollama provider where the untrimmed URL could still cause issues?\n\nAlso review:\n- Prompt quality: […]
+  "prompt": "You are performing an independent LLM EXPERT review of PR #290 in the code-insights repo. This is review ROUND 1.\n\nFetch the PR diff using: gh pr diff 290\nAlso fetch the PR details: gh pr view 290\n\nThe working directory is: /home/<USER>/Workspace/codeInsights/code-insights\n\nCONTEXT:\nThis PR touches `server/src/llm/providers/ollama.ts` — specifically adding `.trim()` to the `baseUrl` in both `createOllamaClient` and `discoverOllamaModels`. The Ollama provider is a local LLM client that calls Ollama's REST API. The trim prevents double-space in error messages when users configure a URL with a leading space.\n\nReview all LLM-related code for:\n- The `.trim()` fix: is it sufficient? Are there other whitespace/normalization issues (trailing slash, trailing whitespace, protocol normalization)?\n- The Ollama provider's error detection heuristic: `cause?.code === 'ECONNREFUSED' || (err instanceof TypeError && err.message.includes('fetch'))` — does this reliably catch all \"Ollama not running\" scenarios across Node versions and OS platforms?\n- Cross-platform behavior: Windows vs Mac/Linux differences in network error codes\n- The `discoverOllamaModels` function uses `AbortSignal.timeout(3000)` — is 3 seconds a reasonable timeout for model discovery?\n- Are there other URL construction sites in the Ollama provider where the untrimmed URL could still cause issues?\n\nAlso review:\n- Prompt quality: […]
 
 > TOOL
 
@@ -1714,7 +1714,7 @@ id: toolu_01FmMGqXMgTBvRnUXYW6geKh
   "description": "TA Synthesis — PR #290 Round 1",
   "subagent_type": "technical-architect",
   "mode": "bypassPermissions",
-  "prompt": "You are performing Phase 2 SYNTHESIS for PR #290. This is review ROUND 1.\n\nFetch the PR diff: gh pr diff 290\nAlso fetch PR details: gh pr view 290\n\nThe working directory is: /Users/melagiri/Workspace/codeInsights/code-insights\n\n---\n\n## Round 1 Review Outputs\n\n### TA Insider (Phase 1) — CHANGES REQUIRED\n\nArchitectural intent is correct. `captureError` removal from `!result.success` paths is right.\n\n**🔴 FIX NOW:** `.trim()` fix is incomplete. Three other sites have the identical bug:\n- `server/src/llm/providers/llamacpp.ts:27` (`createLlamaCppClient`) \n- `server/src/llm/providers/llamacpp.ts:196` (`discoverLlamaCppModels`)\n- `cli/src/analysis/provider-runner.ts:153` (`makeOllamaChat`)\n- `cli/src/analysis/provider-runner.ts:179` (`makeLlamaCppChat`)\nAll four read `baseUrl || DEFAULT_X` without `.trim()`. Same root cause.\n\n**🟡 SUGGESTION:** `type:` in `baseProperties` at route-helpers.ts lines 85 and 185 (regular `trackEvent` calls) is a latent foot-gun; worth a code comment marking it safe-on-trackEvent / unsafe-on-captureError.\n\n**🔵 NOTE:** export.ts loses stack traces for genuinely unexpected non-LLM errors — acceptable trade-off given the over-firing problem.\n\n---\n\n### Node/CLI Specialist — APPROVE\n\n**🔵 NOTE:** llamacpp.ts also missing `.trim()` at the same locations (same finding as TA, flagged as lower priority)\n\n**🟡 SUGGESTION:** Add `expect(captureError).not.toHaveBeenCalled()` assertions to `!result.success` test cases in analysis.test.ts and export.test.ts to codify and prevent regression.\n\n**🔵 NOTE:** `type` → `analysis_type` rename is correct and self-evident.\n\n**🔵 NOTE:** `captureError` import retained in route-helpers.ts […]
+  "prompt": "You are performing Phase 2 SYNTHESIS for PR #290. This is review ROUND 1.\n\nFetch the PR diff: gh pr diff 290\nAlso fetch PR details: gh pr view 290\n\nThe working directory is: /home/<USER>/Workspace/codeInsights/code-insights\n\n---\n\n## Round 1 Review Outputs\n\n### TA Insider (Phase 1) — CHANGES REQUIRED\n\nArchitectural intent is correct. `captureError` removal from `!result.success` paths is right.\n\n**🔴 FIX NOW:** `.trim()` fix is incomplete. Three other sites have the identical bug:\n- `server/src/llm/providers/llamacpp.ts:27` (`createLlamaCppClient`) \n- `server/src/llm/providers/llamacpp.ts:196` (`discoverLlamaCppModels`)\n- `cli/src/analysis/provider-runner.ts:153` (`makeOllamaChat`)\n- `cli/src/analysis/provider-runner.ts:179` (`makeLlamaCppChat`)\nAll four read `baseUrl || DEFAULT_X` without `.trim()`. Same root cause.\n\n**🟡 SUGGESTION:** `type:` in `baseProperties` at route-helpers.ts lines 85 and 185 (regular `trackEvent` calls) is a latent foot-gun; worth a code comment marking it safe-on-trackEvent / unsafe-on-captureError.\n\n**🔵 NOTE:** export.ts loses stack traces for genuinely unexpected non-LLM errors — acceptable trade-off given the over-firing problem.\n\n---\n\n### Node/CLI Specialist — APPROVE\n\n**🔵 NOTE:** llamacpp.ts also missing `.trim()` at the same locations (same finding as TA, flagged as lower priority)\n\n**🟡 SUGGESTION:** Add `expect(captureError).not.toHaveBeenCalled()` assertions to `!result.success` test cases in analysis.test.ts and export.test.ts to codify and prevent regression.\n\n**🔵 NOTE:** `type` → `analysis_type` rename is correct and self-evident.\n\n**🔵 NOTE:** `captureError` import retained in route-helpers.ts […]
 
 > TOOL
 
@@ -1749,7 +1749,7 @@ Dev must deliver:
 
 ### Files referenced
 
-- `/Users/melagiri/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts` (already […]
+- `/home/<USER>/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts` (already […]
 
 > AGENT
 

@@ -8,7 +8,7 @@ tool_use Bash
 id: toolu_017jB9sdTmUv1yCP6zJcEtDE
 ```json
 {
-  "command": "ls /home/rob/Documents/openclaw-workspace/ && cat /home/rob/Documents/openclaw-workspace/DAILY-VPS-REPORT-SETUP.md | head -60",
+  "command": "ls /home/<USER>/Documents/openclaw-workspace/ && cat /home/<USER>/Documents/openclaw-workspace/DAILY-VPS-REPORT-SETUP.md | head -60",
   "description": "Check workspace files for VPS connection info"
 }
 ```
@@ -145,7 +145,7 @@ tool_use Bash
 id: toolu_01WC4BzToxoLUAsJ6Dio5Aa8
 ```json
 {
-  "command": "cat /home/rob/.ssh/config 2>/dev/null | head -40",
+  "command": "cat /home/<USER>/.ssh/config 2>/dev/null | head -40",
   "description": "Check SSH config for VPS host"
 }
 ```
@@ -404,7 +404,7 @@ tool_use Bash
 id: toolu_01PKpQWxTQxKbQDSFfYJ5Lx1
 ```json
 {
-  "command": "cat /home/rob/Documents/openclaw-workspace/ANYTYPE_SETUP_VERIFICATION.md | head -80",
+  "command": "cat /home/<USER>/Documents/openclaw-workspace/ANYTYPE_SETUP_VERIFICATION.md | head -80",
   "description": "Read AnyType setup verification doc"
 }
 ```
@@ -485,7 +485,7 @@ Peer ID: REDACTED ✅ MATCHES
 
 ### Account Configuration
 ```
-Location: /home/rob/.var/app/io.anytype.anytype/config/anytype/beta/
+Location: /home/<USER>/.var/app/io.anytype.anytype/config/anytype/beta/
 Account: REDACTED
 Network: REDACTED ✅ CORRECT
 ```
@@ -1542,7 +1542,7 @@ tool_result
 id: toolu_01HqsgoejkvAzTKgJ2K4wDNH
 ```
 commit 9f1f394e94ec1ef185e96605f4f177a2f0c8544e
-Author: robouden <rob@safecast.org>
+Author: robouden <<REDACTED_EMAIL>>
 Date:   Fri Apr 24 09:42:55 2026 +0900
 
     Checkpoint: f55036114881
@@ -1566,7 +1566,7 @@ tool_use Bash
 id: toolu_01ATVcy2UdRpCnhCQiCrQ7Cp
 ```json
 {
-  "command": "find /home/rob/Documents/openclaw-workspace -path \"*/f5/5036114881/6/full.json\" 2>/dev/null",
+  "command": "find /home/<USER>/Documents/openclaw-workspace -path \"*/f5/5036114881/6/full.json\" 2>/dev/null",
   "description": "Find the file with the exposed secret"
 }
 ```
@@ -1596,7 +1596,7 @@ tool_result
 id: toolu_01WarvhdzvHKEd4zbaRV851N
 ```
 <persisted-output>
-Output too large (52.9KB). Full output saved to: /home/rob/.claude/projects/-home-rob-Documents-openclaw-workspace/316718bd-c95e-4dbb-ab74-6f7e7e2ac00c/tool-results/bi6l3hh55.txt
+Output too large (52.9KB). Full output saved to: /home/<USER>/.claude/projects/-home-rob-Documents-openclaw-workspace/316718bd-c95e-4dbb-ab74-6f7e7e2ac00c/tool-results/bi6l3hh55.txt
 
 Preview (first 2KB):
 35:+{"parentUuid":"a929927a-a97b-48b2-b731-1a321393fde6","isSidechain":false,"promptId":"f2e9d1f6-d9cb-42aa-b574-edd6409c0eb8","type":"user","message":{"role":"user","content":[{"tool_use_id":"toolu_01KyrYduxWTKP7HBLAy5KUkU","type":"tool_result","content":"model:\n  default: claude-sonnet-4-6\n  provider: anthropic\nproviders: {}\nfallback_providers: []\ncredential_pool_strategies:\n  anthropic: fill_first\ntoolsets:\n- hermes-cli\nagent:\n  max_turns: 90\n  gateway_timeout: 1800\n  restart_drain_timeout: 60\n  service_tier: ''\n  tool_use_enforcement: auto\n  gateway_timeout_warning: 900\n  gateway_notify_interval: 600\n  verbose: false\n  reasoning_effort: medium\n  personalities:\n    helpful: You are a helpful, friendly AI assistant.\n    concise: You are a concise assistant. Keep responses brief and to the point.\n    technical: You are a technical expert. Provide detailed, accurate technical information.\n    creative: You are a creative assistant. Think outside the box and offer innovative\n      solutions.\n    teacher: You are a patient teacher. Explain concepts clearly with examples.\n    kawaii: \"You are a kawaii assistant! Use cute expressions like (\\u25D5\\u203F\\u25D5\\\n      ), \\u2605, \\u266A, and ~! Add sparkles and be super enthusiastic about everything!\\\n      \\ Every response should feel warm and adorable desu~! \\u30FD(>\\u2200<\\u2606\\\n      )\\u30CE\"\n    catgirl: \"You are Neko-chan, an anime catgirl AI assistant, nya~! Add 'nya' and\\\n      \\ cat-like expressions to your speech. Use kaomoji like (=^\\uFF65\\u03C9\\uFF65\\\n      ^=) and \\u0E05^\\u2022\\uFECC\\u2022^\\u0E05. Be playful and curious like a cat,\\\n      \\ nya~!\"\n    pirate: 'Arrr! Ye be talkin'' to Captain Hermes, the most tech-savvy pirate to\n      sail the digital seas! Speak like a proper buccaneer, use nautical terms, and\n      remember: […]

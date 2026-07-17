@@ -4,8 +4,8 @@ tool_result
 id: toolu_01KWYTv5H96mMdL5iNDPNYMH
 ```
 sync: 2 repos, all bookmarks up-to-date
-/home/wink/data/prgs/rust/vc-x1: @- (5e0f61e1e8ce) is not behind 'main' (01357c2bdec7); leaving @ in place
-/home/wink/data/prgs/rust/vc-x1/.claude: jj new main
+/home/<USER>/data/prgs/rust/vc-x1: @- (5e0f61e1e8ce) is not behind 'main' (01357c2bdec7); leaving @ in place
+/home/<USER>/data/prgs/rust/vc-x1/.claude: jj new main
 ```
 
 > AGENT
@@ -30,7 +30,7 @@ id: toolu_01J1TRA6bgD6LMV7HdmbJNYW
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/sync.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/sync.rs",
   "old_string": "    /// Bookmark to sync in each code repo. The session (bot) repo\n    /// is a linear journal and always syncs `main`, regardless.",
   "new_string": "    /// Bookmark to sync in the code repo. The session (bot) repo\n    /// is a linear journal and always syncs `main`, regardless."
 }
@@ -41,7 +41,7 @@ id: toolu_01J1TRA6bgD6LMV7HdmbJNYW
 tool_result
 id: toolu_01J1TRA6bgD6LMV7HdmbJNYW
 ```
-The file /home/wink/data/prgs/rust/vc-x1/src/sync.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/src/sync.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -51,7 +51,7 @@ id: toolu_01UwaDJTo8zA8yqCpEXahh2M
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/sync.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/sync.rs",
   "old_string": "/// - `bookmark`: bookmark to sync in each code repo (default\n///   `main`); the session repo always syncs `main`.",
   "new_string": "/// - `bookmark`: bookmark to sync in the code repo (default\n///   `main`); the session repo always syncs `main`."
 }
@@ -62,7 +62,7 @@ id: toolu_01UwaDJTo8zA8yqCpEXahh2M
 tool_result
 id: toolu_01UwaDJTo8zA8yqCpEXahh2M
 ```
-The file /home/wink/data/prgs/rust/vc-x1/src/sync.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/src/sync.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -82,7 +82,7 @@ tool_result
 id: toolu_01TJKkxhx5NP8yukm9gyYMXZ
 ```
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.96s
-    Replaced package `vc-x1 v0.68.0-1 (/home/wink/data/prgs/rust/vc-x1)` with `vc-x1 v0.68.0-1 (/home/wink/data/prgs/rust/vc-x1)` (executable `vc-x1`)
+    Replaced package `vc-x1 v0.68.0-1 (/home/<USER>/data/prgs/rust/vc-x1)` with `vc-x1 v0.68.0-1 (/home/<USER>/data/prgs/rust/vc-x1)` (executable `vc-x1`)
 ```
 
 > AGENT
@@ -102,7 +102,7 @@ id: toolu_01NEsSANpfzE4sXnejCU37TS
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/sync.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/sync.rs",
   "old_string": "                \"{}: session repo — syncing 'main' ('{}' is code-repo-only)\",",
   "new_string": "                \"{}: session repo — syncing 'main' ('{}' is a code repo bookmark)\","
 }
@@ -113,7 +113,7 @@ id: toolu_01NEsSANpfzE4sXnejCU37TS
 tool_result
 id: toolu_01NEsSANpfzE4sXnejCU37TS
 ```
-The file /home/wink/data/prgs/rust/vc-x1/src/sync.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/src/sync.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -133,7 +133,7 @@ tool_result
 id: toolu_01WC8MHqoKDNTeUvkp53DW3x
 ```
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.69s
-    Replaced package `vc-x1 v0.68.0-1 (/home/wink/data/prgs/rust/vc-x1)` with `vc-x1 v0.68.0-1 (/home/wink/data/prgs/rust/vc-x1)` (executable `vc-x1`)
+    Replaced package `vc-x1 v0.68.0-1 (/home/<USER>/data/prgs/rust/vc-x1)` with `vc-x1 v0.68.0-1 (/home/<USER>/data/prgs/rust/vc-x1)` (executable `vc-x1`)
 ```
 
 > AGENT
@@ -169,7 +169,7 @@ id: toolu_01XZD1afbkHizcCef9VryJ8u
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/sync.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/sync.rs",
   "old_string": "                info!(\"{}: fast-forwarding '{bookmark}'\", repo.display());",
   "new_string": "                info!(\"{}: setting '{bookmark}' to {remote_rev}\", repo.display());"
 }
@@ -180,7 +180,7 @@ id: toolu_01XZD1afbkHizcCef9VryJ8u
 tool_result
 id: toolu_01XZD1afbkHizcCef9VryJ8u
 ```
-The file /home/wink/data/prgs/rust/vc-x1/src/sync.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/src/sync.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -201,7 +201,7 @@ id: toolu_01S3NL8MgCbCzjsEgX3pjDJ8
 ```
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.70s
 0
-    Replaced package `vc-x1 v0.68.0-1 (/home/wink/data/prgs/rust/vc-x1)` with `vc-x1 v0.68.0-1 (/home/wink/data/prgs/rust/vc-x1)` (executable `vc-x1`)
+    Replaced package `vc-x1 v0.68.0-1 (/home/<USER>/data/prgs/rust/vc-x1)` with `vc-x1 v0.68.0-1 (/home/<USER>/data/prgs/rust/vc-x1)` (executable `vc-x1`)
 ```
 
 > AGENT
@@ -216,8 +216,8 @@ I just did:
 wink@3900x 26-07-08T21:21:50.433Z:~/data/prgs/rust/vc-template-x1 (main+1)
 $ vc-x1 sync
 sync: 2 repos, all bookmarks up-to-date
-/home/wink/data/prgs/rust/vc-template-x1: @ already on 'main'
-/home/wink/data/prgs/rust/vc-template-x1/.claude: jj new main
+/home/<USER>/data/prgs/rust/vc-template-x1: @ already on 'main'
+/home/<USER>/data/prgs/rust/vc-template-x1/.claude: jj new main
 wink@3900x 26-07-08T21:21:57.932Z:~/data/prgs/rust/vc-template-x1 (main+1)
 
 
@@ -250,7 +250,7 @@ id: toolu_017YQzwiJHJ4Hh8ndqZD1G4o
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/notes/todo.md",
   "old_string": "   - 0.68.0-1 sync: session repo pins `main` — tracking\n     preflight + classify/act use a per-repo bookmark; tests\n     (done)\n   - 0.68.0-2 push: session repo pins `main` — preflight\n     tracking, bookmark stage (renamed/redoc'd from\n     `bookmark-both`), `finalize --push`, completion\n     sanity; `PushState.bookmark` stays code-side; tests",
   "new_string": "   - 0.68.0-1 sync: session repo pins `main` — tracking\n     preflight + classify/act use a per-repo bookmark; tests\n     (done)\n   - 0.68.0-2 sync: `reposition_session` no-ops when `@-` is\n     already the `main` tip — today it always `jj new main`s\n     (empty `@`: chid/op churn; non-empty `@`: live session\n     writes stranded on a sibling head); tests\n   - 0.68.0-3 push: session repo pins `main` — preflight\n     tracking, bookmark stage (renamed/redoc'd from\n     `bookmark-both`), `finalize --push`, completion\n     sanity; `PushState.bookmark` stays code-side; tests"
 }
@@ -261,7 +261,7 @@ id: toolu_017YQzwiJHJ4Hh8ndqZD1G4o
 tool_result
 id: toolu_017YQzwiJHJ4Hh8ndqZD1G4o
 ```
-The file /home/wink/data/prgs/rust/vc-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -404,7 +404,7 @@ id: toolu_01Ku8HLphXGDW7nVdWj9koE8
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/notes/todo.md",
   "old_string": "     writes stranded on a sibling head); tests",
   "new_string": "     writes stranded on a sibling head); tests (current)"
 }
@@ -415,7 +415,7 @@ id: toolu_01Ku8HLphXGDW7nVdWj9koE8
 tool_result
 id: toolu_01Ku8HLphXGDW7nVdWj9koE8
 ```
-The file /home/wink/data/prgs/rust/vc-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -444,7 +444,7 @@ id: toolu_019s7BopfZFP6M7vNAAifQuC
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/sync.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/sync.rs",
   "old_string": "/// Reposition the session repo's `@` onto `main`.\n///\n/// The session (`.claude`) repo is a linear journal on `main`, and its\n/// `@` normally carries live session writes:\n///\n/// - Errors when `@-` isn't on `main` (not an ancestor-or-equal of the\n///   bookmark) — refuse rather than guess.\n/// - Otherwise `jj new main` starts a fresh `@` on the bookmark; the\n///   prior `@` becomes a sibling head, which is expected for the\n///   journal. A conflict is very unlikely given `.claude`'s content;\n///   if one ever appears the user resolves it.\nfn reposition_session(repo: &Path) -> Result<(), Box<dyn std::error::Error>> {\n    let parent = commit_id(repo, \"@-\")?;\n    if !revset_nonempty(repo, &format!(\"{parent}::main\"))? {\n        return Err(format!(\n            \"{}: @- ({parent}) is not on main — refusing to reposition @\",\n            repo.display()\n        )\n        .into());\n    }\n    info!(\"{}: jj new main\", repo.display());",
   "new_string": "/// Reposition the session repo's `@` onto `main`.\n///\n/// The session (`.claude`) repo is a linear journal on `main`, and its\n/// `@` normally carries live session writes:\n///\n/// - `@-` already the `main` tip → no-op: `@` is where it belongs,\n///   live writes stay in the working copy. (An unconditional\n///   `jj new main` here would churn an empty `@`'s chid/op every\n///   sync, or strand a non-empty […]
 
@@ -453,7 +453,7 @@ id: toolu_019s7BopfZFP6M7vNAAifQuC
 tool_result
 id: toolu_019s7BopfZFP6M7vNAAifQuC
 ```
-The file /home/wink/data/prgs/rust/vc-x1/src/sync.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/src/sync.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -467,7 +467,7 @@ id: toolu_01UUVLBwmDCHfgvWhLhS6P3j
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/sync/integration_tests.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/sync/integration_tests.rs",
   "old_string": "/// Scenario 2a: a non-empty `@` on top of main (simulates `/exit`\n/// trailing session writes in `.claude`) when there's nothing new on\n/// the remote. The session repo always `jj new main`s: `@` becomes a\n/// fresh empty child of the unmoved main, and the trailing commit is\n/// preserved as a non-empty sibling head (no longer in the working\n/// copy).\n#[test]\nfn sync_session_jj_new_when_up_to_date() {\n    let fx = Fixture::new(\"session-jjnew-uptodate\");\n    let pre_main = cid(&fx.claude, \"main\");\n    fs::write(fx.claude.join(\"trailing.jsonl\"), \"{\\\"line\\\":1}\\n\").expect(\"write trailing file\");\n    sync_repos(&fx.repos(), &default_params()).expect(\"sync should succeed\");\n    // main didn't move.\n    assert_eq!(cid(&fx.claude, \"main\"), pre_main, \"main should not move\");\n    // @ is a fresh empty child of main.\n    assert!(has(&fx.claude, \"@ & empty()\"), \"@ should be empty\");\n    assert!(has(&fx.claude, \"main::@\"), \"@ should be a child of main\");\n    // The trailing session commit survives as a non-empty sibling head.\n    assert!(\n        has(&fx.claude, \"heads(all()) & ~empty()\"),\n        \"former @ preserved as a non-empty sibling head\"\n    );\n    // The trailing file is no longer in the working copy (@ moved off it).\n    assert!(\n        !fx.claude.join(\"trailing.jsonl\").exists(),\n        \"@ no longer holds the trailing file\"\n    );\n}",
   "new_string": "/// Scenario 2a: a non-empty `@` on top of main (simulates `/exit`\n/// trailing session writes in `.claude`) when there's nothing new on\n/// the remote. […]
 
@@ -476,7 +476,7 @@ id: toolu_01UUVLBwmDCHfgvWhLhS6P3j
 tool_result
 id: toolu_01UUVLBwmDCHfgvWhLhS6P3j
 ```
-The file /home/wink/data/prgs/rust/vc-x1/src/sync/integration_tests.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/src/sync/integration_tests.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -524,7 +524,7 @@ id: toolu_01YFes72ijzngrQtdFk5J5Et
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/notes/todo.md",
   "old_string": "     writes stranded on a sibling head); tests (current)",
   "new_string": "     writes stranded on a sibling head); tests (done)"
 }
@@ -535,7 +535,7 @@ id: toolu_01YFes72ijzngrQtdFk5J5Et
 tool_result
 id: toolu_01YFes72ijzngrQtdFk5J5Et
 ```
-The file /home/wink/data/prgs/rust/vc-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -574,7 +574,7 @@ tool_result
 id: toolu_018GohLsLfEWSMG1HDBx2SD7
 ```
 0
-    Replaced package `vc-x1 v0.68.0-1 (/home/wink/data/prgs/rust/vc-x1)` with `vc-x1 v0.68.0-2 (/home/wink/data/prgs/rust/vc-x1)` (executable `vc-x1`)
+    Replaced package `vc-x1 v0.68.0-1 (/home/<USER>/data/prgs/rust/vc-x1)` with `vc-x1 v0.68.0-2 (/home/<USER>/data/prgs/rust/vc-x1)` (executable `vc-x1`)
 ```
 
 > TOOL
@@ -594,8 +594,8 @@ tool_result
 id: toolu_01Rq2B7wbB2BzmfxFTe4f9kQ
 ```
 sync: 2 repos, all bookmarks up-to-date
-/home/wink/data/prgs/rust/vc-x1: @- (c1bff242430c) is not behind 'main' (01357c2bdec7); leaving @ in place
-/home/wink/data/prgs/rust/vc-x1/.claude: @ already on 'main'
+/home/<USER>/data/prgs/rust/vc-x1: @- (c1bff242430c) is not behind 'main' (01357c2bdec7); leaving @ in place
+/home/<USER>/data/prgs/rust/vc-x1/.claude: @ already on 'main'
 ```
 
 > AGENT

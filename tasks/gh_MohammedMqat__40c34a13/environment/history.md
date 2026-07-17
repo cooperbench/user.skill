@@ -309,7 +309,7 @@ tool_use Read
 id: toolu_01P91YFMCgh9xr4fcuURbNQp
 ```json
 {
-  "file_path": "/home/mohmqat/Work/week-5-project-express/public/entity/app.js"
+  "file_path": "/home/<USER>/Work/week-5-project-express/public/entity/app.js"
 }
 ```
 
@@ -376,7 +376,7 @@ tool_use Read
 id: toolu_01TEPTjbeStDx1JAYUXvv5dE
 ```json
 {
-  "file_path": "/home/mohmqat/Work/week-5-project-express/public/app.js"
+  "file_path": "/home/<USER>/Work/week-5-project-express/public/app.js"
 }
 ```
 
@@ -442,7 +442,7 @@ tool_use Read
 id: toolu_013iWnW5o3QS1Z3nFRaMzjhc
 ```json
 {
-  "file_path": "/home/mohmqat/Work/week-5-project-express/src/controllers/anime-details.js"
+  "file_path": "/home/<USER>/Work/week-5-project-express/src/controllers/anime-details.js"
 }
 ```
 
@@ -496,7 +496,7 @@ tool_use Read
 id: toolu_013crph3QU7iCRxv3LMFLYV6
 ```json
 {
-  "file_path": "/home/mohmqat/Work/week-5-project-express/src/controllers/anime-seasonal.js"
+  "file_path": "/home/<USER>/Work/week-5-project-express/src/controllers/anime-seasonal.js"
 }
 ```
 
@@ -529,7 +529,7 @@ tool_use Read
 id: toolu_018KnyzRj5cTDjDf8ugFo8BT
 ```json
 {
-  "file_path": "/home/mohmqat/Work/week-5-project-express/src/controllers/auth.js"
+  "file_path": "/home/<USER>/Work/week-5-project-express/src/controllers/auth.js"
 }
 ```
 
@@ -589,7 +589,7 @@ tool_use Read
 id: toolu_01E2M4LCriLpHKX2xCZ1Pstp
 ```json
 {
-  "file_path": "/home/mohmqat/Work/week-5-project-express/.gitignore"
+  "file_path": "/home/<USER>/Work/week-5-project-express/.gitignore"
 }
 ```
 

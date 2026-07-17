@@ -231,7 +231,7 @@ tool_use Read
 id: toolu_012yXhuzHCK1aCnBprQjjxpk
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/index.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/index.md"
 }
 ```
 
@@ -241,7 +241,7 @@ tool_use Read
 id: toolu_01K55iphbXErMKzZqqiLCT9c
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/application-architecture.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/application-architecture.md"
 }
 ```
 
@@ -251,7 +251,7 @@ tool_use Read
 id: toolu_01X4QX4SuCc5jB7TCndo6xUm
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/developer-guidelines.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/developer-guidelines.md"
 }
 ```
 
@@ -261,7 +261,7 @@ tool_use Read
 id: toolu_01GGvX7aXLzJhxyuQdy6vCpD
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/local-development-setup.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/local-development-setup.md"
 }
 ```
 
@@ -271,7 +271,7 @@ tool_use Read
 id: toolu_017JsTd78uoyNodzBt1wZCre
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md"
 }
 ```
 
@@ -281,7 +281,7 @@ tool_use Read
 id: toolu_015wdSKsSGfRC45qHxSWKicD
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/development-toolkit.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/development-toolkit.md"
 }
 ```
 
@@ -570,7 +570,7 @@ tool_use Read
 id: toolu_01GaFyLhA5qzXET7RbbATPJv
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/sidebars.js"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/sidebars.js"
 }
 ```
 
@@ -580,7 +580,7 @@ tool_use Read
 id: toolu_017ny4QXy9kQCcEnGv3TbRuH
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/index.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/index.md"
 }
 ```
 
@@ -590,7 +590,7 @@ tool_use Read
 id: toolu_01EukGY9DkH1kFfPDCZGSyCA
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/platform-overview.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/platform-overview.md"
 }
 ```
 
@@ -600,7 +600,7 @@ tool_use Read
 id: toolu_01Tx9pkhuNVfqpuFGCaq33sJ
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/deploy-first-service.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/deploy-first-service.md"
 }
 ```
 
@@ -834,7 +834,7 @@ tool_use Read
 id: toolu_015kJzvozuokw7UJZikeGJf3
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/building-use-cases.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/building-use-cases.md"
 }
 ```
 
@@ -844,7 +844,7 @@ tool_use Read
 id: toolu_01NN8qfti97uE48kW8jccTPt
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/app-migration/service-guides/index.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/app-migration/service-guides/index.md"
 }
 ```
 
@@ -854,7 +854,7 @@ tool_use Read
 id: toolu_01GvCeJcQvZzGnApSHUZ1UuA
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/src/pages/index.js"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/src/pages/index.js"
 }
 ```
 
@@ -1098,9 +1098,9 @@ id: toolu_01YGfmT3tFKD7Gcyw8Yfk5ie
 tool_result
 id: toolu_0116TWdvftYhYC967nshSBeF
 ```
-/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/REVIEW_NEW_APPLICATIONS_DOCS.md
-/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/TECHNICAL_REVIEW_SUMMARY.md
-/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/REVIEW_FINDINGS_AT_A_GLANCE.md
+/home/<USER>/code/konecta-ix-platform/kix-platform-docs/REVIEW_NEW_APPLICATIONS_DOCS.md
+/home/<USER>/code/konecta-ix-platform/kix-platform-docs/TECHNICAL_REVIEW_SUMMARY.md
+/home/<USER>/code/konecta-ix-platform/kix-platform-docs/REVIEW_FINDINGS_AT_A_GLANCE.md
 ```
 
 > TOOL
@@ -1108,7 +1108,7 @@ id: toolu_0116TWdvftYhYC967nshSBeF
 tool_result
 id: toolu_01P1wzm9P9MN84o3R21kdtwC
 ```
-/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/CRITICAL_FIXES_NEEDED.md
+/home/<USER>/code/konecta-ix-platform/kix-platform-docs/CRITICAL_FIXES_NEEDED.md
 ```
 
 > TOOL
@@ -1116,7 +1116,7 @@ id: toolu_01P1wzm9P9MN84o3R21kdtwC
 tool_result
 id: toolu_01YGfmT3tFKD7Gcyw8Yfk5ie
 ```
-/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/ARCHITECTURE_AND_CLARITY_ISSUES.md
+/home/<USER>/code/konecta-ix-platform/kix-platform-docs/ARCHITECTURE_AND_CLARITY_ISSUES.md
 ```
 
 > TOOL
@@ -1124,7 +1124,7 @@ id: toolu_01YGfmT3tFKD7Gcyw8Yfk5ie
 tool_result
 id: toolu_019WgBsHjxQVFp1Nvg6cAMER
 ```
-/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/TECHNICAL_REVIEW_SUMMARY.md
+/home/<USER>/code/konecta-ix-platform/kix-platform-docs/TECHNICAL_REVIEW_SUMMARY.md
 ```
 
 > TOOL
@@ -1133,7 +1133,7 @@ tool_use Bash
 id: toolu_01U7FyJFvR18B1Vy5HepHj1w
 ```json
 {
-  "command": "rm /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/REVIEW_NEW_APPLICATIONS_DOCS.md /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/TECHNICAL_REVIEW_SUMMARY.md /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/REVIEW_FINDINGS_AT_A_GLANCE.md /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/CRITICAL_FIXES_NEEDED.md /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/ARCHITECTURE_AND_CLARITY_ISSUES.md",
+  "command": "rm /home/<USER>/code/konecta-ix-platform/kix-platform-docs/REVIEW_NEW_APPLICATIONS_DOCS.md /home/<USER>/code/konecta-ix-platform/kix-platform-docs/TECHNICAL_REVIEW_SUMMARY.md /home/<USER>/code/konecta-ix-platform/kix-platform-docs/REVIEW_FINDINGS_AT_A_GLANCE.md /home/<USER>/code/konecta-ix-platform/kix-platform-docs/CRITICAL_FIXES_NEEDED.md /home/<USER>/code/konecta-ix-platform/kix-platform-docs/ARCHITECTURE_AND_CLARITY_ISSUES.md",
   "description": "Remove review artifacts from repo"
 }
 ```
@@ -1313,7 +1313,7 @@ id: toolu_01P4taCQFhx41nxdc6crHpvD
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/src/pages/index.js",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/src/pages/index.js",
   "old_string": "      { label: 'Technology Specs', to: '/docs/developer-guide/technology-specs' },",
   "new_string": "      { label: 'Technology Specs', to: '/docs/applications/technology-specs' },"
 }
@@ -1325,7 +1325,7 @@ tool_use Read
 id: toolu_01ARVABX5NShno5xGVfTaveF
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/index.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/index.md"
 }
 ```
 
@@ -1334,7 +1334,7 @@ id: toolu_01ARVABX5NShno5xGVfTaveF
 tool_result
 id: toolu_01P4taCQFhx41nxdc6crHpvD
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/src/pages/index.js has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/src/pages/index.js has been updated successfully.
 ```
 
 > TOOL
@@ -1455,7 +1455,7 @@ id: toolu_01YGkPxCCcNt5y6cfFZ94ZRR
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/index.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/index.md",
   "old_string": "This guide explains how to build services on the KIX Platform. It covers what the platform provides, how to build use cases, service patterns, and technology specifications.\n\n**Audience:** Use case developers building on KIX\n\n## Architecture Layers\n\n| Layer | Purpose | Components |\n|-------|---------|------------|\n| **Northbound** | Service exposure to consumers | Kong API Gateway, LiteLLM MCP Gateway, Admin UI |\n| **Capability** | Business logic and orchestration | Control Plane, Agents, Voice, Messaging, Knowledge |\n| **Southbound** | Infrastructure (abstracted) | GCP services, databases, storage, events |\n\n## Service Consumption Model\n\nConsumers access platform capabilities through three methods:\n\n| Method | Consumer Type | Authentication |\n|--------|---------------|----------------|\n| REST API (Kong) | External systems, applications | API Key or JWT |\n| MCP Tools (LiteLLM) | AI agents | Service account |\n| Admin UI | Internal users | OIDC |\n\nAll requests are authenticated, routed through the appropriate gateway, and executed by the capability layer. Infrastructure is never exposed directly to consumers.\n\n## Sections\n\n- **[Platform Overview](./platform-overview)** — What the platform provides and what developers build\n- **[Building Use Cases](./building-use-cases)** — Service patterns, development flow, and deployment\n- **[Branching Strategy](./branching-strategy)** — Gitflow model and branch-to-environment mapping\n- **[Technology Specs](./technology-specs)** — Detailed specifications for each platform component\n- […]
 
 > TOOL
@@ -1463,7 +1463,7 @@ id: toolu_01YGkPxCCcNt5y6cfFZ94ZRR
 tool_result
 id: toolu_01YGkPxCCcNt5y6cfFZ94ZRR
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/index.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/index.md has been updated successfully.
 ```
 
 > TOOL
@@ -1546,7 +1546,7 @@ id: toolu_01FYy8hCuChCFC92EkKp8DFL
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/sidebars.js",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/sidebars.js",
   "old_string": "        'developer-guide/secrets-management',\n        'developer-guide/development-toolkit',\n        'developer-guide/claude-code',",
   "new_string": "        'developer-guide/secrets-management',\n        // 'developer-guide/development-toolkit', // Placeholder — re-enable when content is added\n        'developer-guide/claude-code',"
 }
@@ -1558,7 +1558,7 @@ tool_use Read
 id: toolu_01A43dwRTdpyKgj7nTcSDNXu
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/platform-overview.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/platform-overview.md"
 }
 ```
 
@@ -1567,7 +1567,7 @@ id: toolu_01A43dwRTdpyKgj7nTcSDNXu
 tool_result
 id: toolu_01FYy8hCuChCFC92EkKp8DFL
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/sidebars.js has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/sidebars.js has been updated successfully.
 ```
 
 > TOOL
@@ -1689,7 +1689,7 @@ id: toolu_01PqKN2TMtpDSAroY6auLhF8
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/platform-overview.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/platform-overview.md",
   "old_string": "## What Developers Build\n\n| Component | Responsibility |\n|-----------|----------------|\n| **Agent Logic** | Business logic using CrewAI framework |\n| **API Endpoints** | Request handlers behind Kong routes |\n| **Data Schema** | Database tables and vector collections |\n| **Prompts** | LLM prompts and configurations |\n| **Workflows** | Multi-step orchestration (if needed) |",
   "new_string": "## Developer Responsibilities\n\nFor an overview of the components you build (CrewAI flows, MCP Servers, Python tools, custom UI), see the [Applications overview](/docs/applications). The table below summarises what you are responsible for once your use case is onboarded:\n\n| Responsibility | What This Means |\n|----------------|-----------------|\n| **Agent Logic** | Business logic using the CrewAI framework |\n| **API Endpoints** | Request handlers behind Kong routes |\n| **Data Schema** | Database tables and vector collections |\n| **Prompts** | LLM prompts and configurations |\n| **Workflows** | Multi-step orchestration (if needed) |"
 }
@@ -1700,7 +1700,7 @@ id: toolu_01PqKN2TMtpDSAroY6auLhF8
 tool_result
 id: toolu_01PqKN2TMtpDSAroY6auLhF8
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/platform-overview.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/platform-overview.md has been updated successfully.
 ```
 
 > AGENT
@@ -1714,7 +1714,7 @@ id: toolu_011PmEL5ahL4xNGy6CfWTkA1
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/index.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/index.md",
   "old_string": "# Applications\n\nThe KIX Platform for AI Solutions is a modular architecture designed to build, deploy and operate AI-powered applications at Konecta. It connects front-end applications, agentic workflows, language models, tool servers and observability through well-defined integration points — so AI developers can focus on creating the building blocks for their use case while the platform handles infrastructure, routing, authentication and governance.\n\n## What Developers Build\n\nDevelopers contribute one or more of the following components:\n\n- **Python tools** — Custom code logic consumed by AI agents\n- **Agentic flows** — CrewAI Crews and Flows that orchestrate multi-step AI tasks\n- **MCP Servers** — Expose APIs and data sources to LLMs as callable tools\n- **Custom UI** — A dedicated front-end, or use **Konecta IQ** as a ready-made interface to interact with agents\n\nEach component is developed and tested locally against an environment that mirrors production, then submitted for packaging and deployment through the standard CI/CD pipeline.\n\n## In This Section\n\n| Page | Description |\n|---|---|\n| [Application Architecture](./application-architecture) | Production architecture overview — LiteLLM, CrewAI, MCP Servers, models and observability |\n| [Local Development Setup](./local-development-setup) | Set up the full platform locally with step-by-step instructions for each component |\n\nSee also the […]
 
 > TOOL
@@ -1731,7 +1731,7 @@ tool_use Read
 id: toolu_01WPhpeUc2TjhkaSwsmXLKw8
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/index.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/index.md"
 }
 ```
 
@@ -1775,7 +1775,7 @@ id: toolu_014Db7CLxsZyZfFL2CWNPaEF
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/index.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/index.md",
   "old_string": "# Applications\n\nThe KIX Platform for AI Solutions is a modular architecture designed to build, deploy and operate AI-powered applications at Konecta. It connects front-end applications, agentic workflows, language models, tool servers and observability through well-defined integration points — so AI developers can focus on creating the building blocks for their use case while the platform handles infrastructure, routing, authentication and governance.\n\n## What Developers Build\n\nDevelopers contribute one or more of the following components:\n\n- **Python tools** — Custom code logic consumed by AI agents\n- **Agentic flows** — CrewAI Crews and Flows that orchestrate multi-step AI tasks\n- **MCP Servers** — Expose APIs and data sources to LLMs as callable tools\n- **Custom UI** — A dedicated front-end, or use **Konecta IQ** as a ready-made interface to interact with agents\n\nEach component is developed and tested locally against an environment that mirrors production, then submitted for packaging and deployment through the standard CI/CD pipeline.\n\n## In This Section\n\n| Page | Description |\n|---|---|\n| [Application Architecture](./application-architecture) | Production architecture overview — LiteLLM, CrewAI, MCP Servers, models and observability |\n| [Local Development Setup](./local-development-setup) | Set up the full platform locally with step-by-step instructions for each component |\n\nSee also the […]
 
 > TOOL
@@ -1783,7 +1783,7 @@ id: toolu_014Db7CLxsZyZfFL2CWNPaEF
 tool_result
 id: toolu_014Db7CLxsZyZfFL2CWNPaEF
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/index.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/index.md has been updated successfully.
 ```
 
 > TOOL
@@ -1865,7 +1865,7 @@ tool_use Read
 id: toolu_01HHSAfsjagTCJZ1qbVq8zAQ
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/application-architecture.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/application-architecture.md"
 }
 ```
 
@@ -1875,7 +1875,7 @@ tool_use Read
 id: toolu_01Wg7C9ParQiQuaMfnvEc8vu
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/local-development-setup.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/local-development-setup.md"
 }
 ```
 
@@ -1885,7 +1885,7 @@ tool_use Read
 id: toolu_01RSc4eT3xfRkbwJvfizCoAy
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md"
 }
 ```
 
@@ -2019,7 +2019,7 @@ id: toolu_0139BPaQrih248eke2rzRXuP
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/application-architecture.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/application-architecture.md",
   "old_string": "---\ntitle: \"Application Architecture\"\nsidebar_label: \"Application Architecture\"\nsidebar_position: 4\ndescription: \"Architecture patterns and standards for KIX Platform applications\"\n---",
   "new_string": "---\ntitle: \"Application Architecture\"\nsidebar_label: \"Application Architecture\"\nsidebar_position: 2\ndescription: \"Architecture patterns and standards for KIX Platform applications\"\n---"
 }
@@ -2032,7 +2032,7 @@ id: toolu_01Lo1oTXubbQSa1T4ZaKPhYk
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/application-architecture.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/application-architecture.md",
   "old_string": "## Related Documentation\n\n- [Platform Architecture](/docs/architecture) — Infrastructure-level view of the KIX Platform (GCP, GKE, networking)\n- [LiteLLM Gateway](/docs/services/litellm-gateway) — Detailed configuration and operations guide for the AI gateway\n- [Observability](/docs/app-migration/observability) — Full monitoring, logging and tracing stack details",
   "new_string": "## Next Steps\n\n- [Technology Specs](./technology-specs) — Detailed specifications for each platform component\n- [Local Development Setup](./local-development-setup) — Replicate this architecture on your local machine\n\n## Related Documentation\n\n- [Platform Architecture](/docs/architecture) — Infrastructure-level view of the KIX Platform (GCP, GKE, networking)\n- [LiteLLM Gateway](/docs/services/litellm-gateway) — Detailed configuration and operations guide for the AI gateway\n- [Observability](/docs/app-migration/observability) — Monitoring, logging and tracing stack details"
 }
@@ -2045,7 +2045,7 @@ id: toolu_01PZiWDy3ZELuVhQSkkCmKsC
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/local-development-setup.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/local-development-setup.md",
   "old_string": "---\ntitle: \"Local Development Setup\"\nsidebar_label: \"Local Development Setup\"\nsidebar_position: 5\ndescription: \"Setting up your local environment for KIX Platform application development\"\n---",
   "new_string": "---\ntitle: \"Local Development Setup\"\nsidebar_label: \"Local Development Setup\"\nsidebar_position: 4\ndescription: \"Setting up your local environment for KIX Platform application development\"\n---"
 }
@@ -2058,7 +2058,7 @@ id: toolu_01Djv6ffLeDnQj6kZzJ2nhar
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/local-development-setup.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/local-development-setup.md",
   "old_string": "## What AI Developers Build\n\nAI developers are expected to use the platform and focus on creating the building blocks required for their use case. The platform handles infrastructure, routing, authentication and observability — developers provide the logic. Typical contributions include:\n\n- **Python tools** — Custom code logic consumed by agents\n- **Agentic flows** — CrewAI Crews and Flows that orchestrate multi-step AI tasks\n- **MCP Servers** — Make APIs and data sources accessible to LLMs as tools\n- **Custom UI** — A dedicated front-end for a specific use case, or simply use **Konecta IQ** as a readily available UI to interact with agents without building any interface\n\n## Production Architecture Recap\n\nThe KIX Platform for AI Solutions runs a modular architecture in production where applications connect to an AI gateway (LiteLLM), an agentic orchestration layer (CrewAI), MCP Servers for tool capabilities and a full observability stack. For a detailed breakdown of each component and how they interact, see the [Application Architecture](./application-architecture) page.",
   "new_string": "The production architecture (LiteLLM, CrewAI, MCP Servers, observability) can be replicated on your local machine so you can develop and test before deploying. For a breakdown of each component see the [Application […]
 
@@ -2069,7 +2069,7 @@ id: toolu_01LMkG9QHSzNHPkhmqsSRg25
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/local-development-setup.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/local-development-setup.md",
   "old_string": "*Documentation on local observability setup coming soon.*",
   "new_string": "*Documentation on local observability setup coming soon.*\n\n## Next Steps\n\n- [Deploy First Service](/docs/developer-guide/deploy-first-service) — End-to-end tutorial taking code through to production via Terraform, Helm and ArgoCD\n- [Building Use Cases](/docs/developer-guide/building-use-cases) — Service patterns, development flow and governance requirements\n- [Secrets Management](/docs/developer-guide/secrets-management) — External Secrets Operator and GCP Secret Manager"
 }
@@ -2082,7 +2082,7 @@ id: toolu_01SAvcb1jDiuz7S4uaF32W9J
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md",
   "old_string": "---\ntitle: \"Technology Specifications\"\nsidebar_label: \"Technology Specs\"\nsidebar_position: 7\ndescription: \"Detailed specifications for each platform component including CrewAI, LiteLLM, Kong, databases, and more\"\n---",
   "new_string": "---\ntitle: \"Technology Specifications\"\nsidebar_label: \"Technology Specs\"\nsidebar_position: 3\ndescription: \"Detailed specifications for each platform component including CrewAI, LiteLLM, Kong, databases, and more\"\n---"
 }
@@ -2093,7 +2093,7 @@ id: toolu_01SAvcb1jDiuz7S4uaF32W9J
 tool_result
 id: toolu_0139BPaQrih248eke2rzRXuP
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/application-architecture.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/application-architecture.md has been updated successfully.
 ```
 
 > TOOL
@@ -2101,7 +2101,7 @@ The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/appl
 tool_result
 id: toolu_01Lo1oTXubbQSa1T4ZaKPhYk
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/application-architecture.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/application-architecture.md has been updated successfully.
 ```
 
 > TOOL
@@ -2109,7 +2109,7 @@ The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/appl
 tool_result
 id: toolu_01PZiWDy3ZELuVhQSkkCmKsC
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/local-development-setup.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/local-development-setup.md has been updated successfully.
 ```
 
 > TOOL
@@ -2117,7 +2117,7 @@ The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/appl
 tool_result
 id: toolu_01Djv6ffLeDnQj6kZzJ2nhar
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/local-development-setup.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/local-development-setup.md has been updated successfully.
 ```
 
 > TOOL
@@ -2125,7 +2125,7 @@ The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/appl
 tool_result
 id: toolu_01LMkG9QHSzNHPkhmqsSRg25
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/local-development-setup.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/local-development-setup.md has been updated successfully.
 ```
 
 > TOOL
@@ -2133,7 +2133,7 @@ The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/appl
 tool_result
 id: toolu_01SAvcb1jDiuz7S4uaF32W9J
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md has been updated successfully.
 ```
 
 > AGENT
@@ -2146,7 +2146,7 @@ tool_use Read
 id: toolu_01Rzeb6QLp8UHWSwNbXb4m7L
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/deploy-first-service.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/deploy-first-service.md",
   "offset": 1005,
   "limit": 30
 }
@@ -2191,7 +2191,7 @@ id: toolu_0195YqnbY8QSt3rZo4ZEA3CR
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/deploy-first-service.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/deploy-first-service.md",
   "old_string": "**Learn More:**\n- [Secrets Management](/docs/developer-guide/secrets-management) - Advanced ESO patterns\n- [Kong Gateway Guide](/docs/services/kong-gateway) - Authentication, rate limiting, plugins\n\n**Platform Services:**\n- [LiteLLM Gateway](/docs/services/litellm-gateway) - AI model routing\n- [Cloud SQL](/docs/services/cloud-sql) - Managed PostgreSQL\n- [Memorystore Redis](/docs/services/redis) - Managed Redis cache",
   "new_string": "**Learn More:**\n- [Local Development Setup](/docs/applications/local-development-setup) - Run the full platform locally (LiteLLM, CrewAI, MCP Servers)\n- [Secrets Management](/docs/developer-guide/secrets-management) - Advanced ESO patterns\n- [Kong Gateway Guide](/docs/services/kong-gateway) - Authentication, rate limiting, plugins\n\n**Platform Services:**\n- [LiteLLM Gateway](/docs/services/litellm-gateway) - AI model routing\n- [Cloud SQL](/docs/services/cloud-sql) - Managed PostgreSQL\n- [Memorystore Redis](/docs/services/redis) - Managed Redis cache"
 }
@@ -2202,7 +2202,7 @@ id: toolu_0195YqnbY8QSt3rZo4ZEA3CR
 tool_result
 id: toolu_0195YqnbY8QSt3rZo4ZEA3CR
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/deploy-first-service.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/deploy-first-service.md has been updated successfully.
 ```
 
 > TOOL
@@ -2299,7 +2299,7 @@ id: toolu_01Wim4PYCcFbyLuqCRjbJXrK
 > docusaurus build
 
 [INFO] [en] Creating an optimized production build...
-Warn: `blogDir` doesn't exist: "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/blog".
+Warn: `blogDir` doesn't exist: "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/blog".
 [webpackbar] ℹ Compiling Client
 [webpackbar] ℹ Compiling Server
 [webpackbar] ✔ Server: Compiled successfully in 57.48s
@@ -2460,7 +2460,7 @@ id: toolu_01FxLVjfWyT7wVdkRtHoS28F
 ```json
 {
   "pattern": "nightly-qualityyml|rollback-procedure",
-  "path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/security/risk-register.md",
+  "path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/security/risk-register.md",
   "output_mode": "content"
 }
 ```
@@ -2472,7 +2472,7 @@ id: toolu_01Uf2qj9451LhC6ExxggmLjX
 ```json
 {
   "pattern": "^##",
-  "path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/infrastructure-ops/cicd-runbook.md",
+  "path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/infrastructure-ops/cicd-runbook.md",
   "output_mode": "content"
 }
 ```
@@ -2553,7 +2553,7 @@ tool_use Read
 id: toolu_01NMQg7XfGwi1WHfiauK9AXi
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/infrastructure-ops/cicd-runbook.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/infrastructure-ops/cicd-runbook.md",
   "offset": 139,
   "limit": 3
 }
@@ -2565,7 +2565,7 @@ tool_use Read
 id: toolu_01Qz5sfkUKuHL6o8BmVDpBmB
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/infrastructure-ops/cicd-runbook.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/infrastructure-ops/cicd-runbook.md",
   "offset": 329,
   "limit": 3
 }
@@ -2577,7 +2577,7 @@ tool_use Read
 id: toolu_015Lz95Sjz8VAZGX2WbKiEC9
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/security/risk-register.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/security/risk-register.md",
   "offset": 43,
   "limit": 5
 }
@@ -2589,7 +2589,7 @@ tool_use Read
 id: toolu_01BUXpFhFKi7p37EqzXCAazh
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/security/risk-register.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/security/risk-register.md",
   "offset": 95,
   "limit": 5
 }
@@ -2650,7 +2650,7 @@ id: toolu_01TbqhJy8HMBHPAB7Eg4WRFU
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/security/risk-register.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/security/risk-register.md",
   "old_string": "[nightly quality checks](/docs/infrastructure-ops/cicd-runbook#nightly-qualityyml)",
   "new_string": "[nightly quality checks](/docs/infrastructure-ops/cicd-runbook#nightly-qualityyml-drift-detection)"
 }
@@ -2663,7 +2663,7 @@ id: toolu_01G2oPDsK6FYYwHk94g8swid
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/security/risk-register.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/security/risk-register.md",
   "old_string": "[Rollback Procedure](/docs/infrastructure-ops/cicd-runbook#rollback-procedure)",
   "new_string": "[Rollback Procedure](/docs/infrastructure-ops/cicd-runbook#rollback)"
 }
@@ -2674,7 +2674,7 @@ id: toolu_01G2oPDsK6FYYwHk94g8swid
 tool_result
 id: toolu_01TbqhJy8HMBHPAB7Eg4WRFU
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/security/risk-register.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/security/risk-register.md has been updated successfully.
 ```
 
 > TOOL
@@ -2682,7 +2682,7 @@ The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/secu
 tool_result
 id: toolu_01G2oPDsK6FYYwHk94g8swid
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/security/risk-register.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/security/risk-register.md has been updated successfully.
 ```
 
 > AGENT
@@ -2710,7 +2710,7 @@ id: toolu_01T783RGcsdhp47P45GCMhMF
 > docusaurus build
 
 [INFO] [en] Creating an optimized production build...
-Warn: `blogDir` doesn't exist: "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/blog".
+Warn: `blogDir` doesn't exist: "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/blog".
 [webpackbar] ℹ Compiling Client
 [webpackbar] ℹ Compiling Server
 [webpackbar] ✔ Server: Compiled successfully in 4.04s
@@ -2787,7 +2787,7 @@ tool_use Bash
 id: toolu_01UXpwSzwE4sv5FuvvSeNz42
 ```json
 {
-  "command": "git add docs/applications/application-architecture.md docs/applications/index.md docs/applications/local-development-setup.md docs/applications/technology-specs.md docs/developer-guide/deploy-first-service.md docs/developer-guide/index.md docs/developer-guide/platform-overview.md docs/security/risk-register.md sidebars.js src/pages/index.js && git commit -m \"$(cat <<'EOF'\ndocs: tidy application docs — fix broken links, deduplicate content, improve navigation\n\n- Fix broken technology-specs link on homepage and Developer Guide index\n- Fix broken anchors in risk-register pointing to cicd-runbook\n- Remove development-toolkit from sidebar (all placeholder content)\n- Deduplicate \"What Developers Build\" across Applications and Developer Guide\n- Remove repeated intro paragraph between applications index and architecture page\n- Clarify boundary between Applications and Developer Guide sections\n- Add Next Steps navigation to application-architecture and local-development-setup\n- Add cross-link from deploy-first-service to local-development-setup\n- Clean up sidebar_position values in Applications front matter\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add docs/applications/application-architecture.md docs/applications/index.md docs/applications/local-development-setup.md docs/applications/technology-specs.md docs/developer-guide/deploy-first-service.md docs/developer-guide/index.md docs/developer-guide/platform-overview.md docs/security/risk-register.md sidebars.js src/pages/index.js && git commit -m \"$(cat <<'EOF'\ndocs: tidy application docs — fix broken links, deduplicate content, improve navigation\n\n- Fix broken technology-specs link on homepage and Developer Guide index\n- Fix broken anchors in risk-register pointing to cicd-runbook\n- Remove development-toolkit from sidebar (all placeholder content)\n- Deduplicate \"What Developers Build\" across Applications and Developer Guide\n- Remove repeated intro paragraph between applications index and architecture page\n- Clarify boundary between Applications and Developer Guide sections\n- Add Next Steps navigation to application-architecture and local-development-setup\n- Add cross-link from deploy-first-service to local-development-setup\n- Clean up sidebar_position values in Applications front matter\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Stage all changed files and commit"
 }
 ```
@@ -2857,7 +2857,7 @@ id: toolu_01DbRei2zaYMJFMGVwMgGsCY
 > docusaurus start --port 3005
 
 [INFO] Starting the development server...
-Warn: `blogDir` doesn't exist: "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/blog".
+Warn: `blogDir` doesn't exist: "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/blog".
 [SUCCESS] Docusaurus website is running at: http://localhost:3005/
 </output>
 ```
@@ -2890,7 +2890,7 @@ id: toolu_01VJjVWhno9JJxG6zDUf9ajw
 {
   "pattern": "platform-engineering",
   "output_mode": "content",
-  "path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs",
+  "path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs",
   "glob": "*.{js,jsx,md,css}"
 }
 ```
@@ -2928,7 +2928,7 @@ tool_use Read
 id: toolu_01W8LVbHG8X2w3Q1bSwPwcYd
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docusaurus.config.js",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docusaurus.config.js",
   "offset": 155,
   "limit": 20
 }
@@ -2968,7 +2968,7 @@ id: toolu_01P1aYxVBSwU1j1zb4eQ9DVv
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docusaurus.config.js",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docusaurus.config.js",
   "old_string": "            items: [\n              { label: 'Slack #platform-engineering', href: '#' },\n              {\n                label: 'GitHub Issues',\n                href: 'https://github.com/konecta-ix-platform/kix-platform-docs/issues',\n              },\n            ],",
   "new_string": "            items: [\n              {\n                label: 'GitHub Issues',\n                href: 'https://github.com/konecta-ix-platform/kix-platform-docs/issues',\n              },\n            ],"
 }
@@ -2979,7 +2979,7 @@ id: toolu_01P1aYxVBSwU1j1zb4eQ9DVv
 tool_result
 id: toolu_01P1aYxVBSwU1j1zb4eQ9DVv
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docusaurus.config.js has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docusaurus.config.js has been updated successfully.
 ```
 
 > AGENT
@@ -3021,7 +3021,7 @@ tool_use Read
 id: toolu_01S7UKwEvihaBFKQXNyuyMhX
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/app-migration/service-guides/index.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/app-migration/service-guides/index.md",
   "offset": 80,
   "limit": 6
 }
@@ -3033,7 +3033,7 @@ tool_use Read
 id: toolu_01CePBjNxTykDQQdRgSfUtU1
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/security/governance.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/security/governance.md",
   "offset": 120,
   "limit": 6
 }
@@ -3045,7 +3045,7 @@ tool_use Read
 id: toolu_019vTmXK6fqRdzYmSnm6MHuG
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/security/governance.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/security/governance.md",
   "offset": 205,
   "limit": 6
 }
@@ -3057,7 +3057,7 @@ tool_use Read
 id: toolu_01WdXveFPPpQM66rdEQUbGfr
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/reference/creating-new-repository.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/reference/creating-new-repository.md",
   "offset": 562,
   "limit": 6
 }
@@ -3069,7 +3069,7 @@ tool_use Read
 id: toolu_01HXKRGGZR2YRavr2TJyrhpu
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/reference/quick-reference.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/reference/quick-reference.md",
   "offset": 159,
   "limit": 6
 }
@@ -3081,7 +3081,7 @@ tool_use Read
 id: toolu_01L8CCcKQDUvMtU8i28ethdD
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/getting-started/onboarding.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/getting-started/onboarding.md",
   "offset": 544,
   "limit": 6
 }
@@ -3093,7 +3093,7 @@ tool_use Read
 id: toolu_01CsHZD29yfcRfw8iYJJiu63
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/getting-started/onboarding.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/getting-started/onboarding.md",
   "offset": 697,
   "limit": 6
 }
@@ -3105,7 +3105,7 @@ tool_use Read
 id: toolu_01JQDaQE6vg4hrpXK1NTHP5s
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/getting-started/index.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/getting-started/index.md",
   "offset": 33,
   "limit": 6
 }
@@ -3129,12 +3129,12 @@ id: toolu_01S7UKwEvihaBFKQXNyuyMhX
 tool_result
 id: toolu_019vTmXK6fqRdzYmSnm6MHuG
 ```
-   205→| AI Lead | Mischa van Oijen | mischa.vanoijen@konecta.com |
+   205→| AI Lead | Mischa van Oijen | <REDACTED_EMAIL> |
    206→
    207→**Communication Channels:**
    208→- Slack: #kix-platform-engineering (general)
    209→- Slack: #kix-platform-oncall (urgent)
-   210→- Email: security@konecta-group.com (security incidents)
+   210→- Email: <REDACTED_EMAIL> (security incidents)
 ```
 
 > TOOL
@@ -3186,7 +3186,7 @@ id: toolu_01JQDaQE6vg4hrpXK1NTHP5s
     35→
     36→- **Slack:** #kix-platform-engineering
     37→- **Urgent:** #kix-platform-oncall
-    38→- **Security:** security@konecta-group.com
+    38→- **Security:** <REDACTED_EMAIL>
 ```
 
 > TOOL
@@ -3194,12 +3194,12 @@ id: toolu_01JQDaQE6vg4hrpXK1NTHP5s
 tool_result
 id: toolu_01CsHZD29yfcRfw8iYJJiu63
 ```
-   697→| AI Lead | Mischa van Oijen | mischa.vanoijen@konecta.com |
+   697→| AI Lead | Mischa van Oijen | <REDACTED_EMAIL> |
    698→
    699→**Communication:**
    700→- Slack: #kix-platform-engineering
    701→- Urgent: #kix-platform-oncall
-   702→- Security: security@konecta-group.com
+   702→- Security: <REDACTED_EMAIL>
 ```
 
 > TOOL
@@ -3221,7 +3221,7 @@ tool_use Read
 id: toolu_01C3RWNJckL9YUwfvPNjnASZ
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/crewai/index.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/crewai/index.md",
   "offset": 167,
   "limit": 6
 }
@@ -3233,7 +3233,7 @@ tool_use Read
 id: toolu_01Swi82yLES1ZQXmzSrXvpLg
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/infrastructure-ops/cicd-runbook.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/infrastructure-ops/cicd-runbook.md",
   "offset": 482,
   "limit": 6
 }
@@ -3245,7 +3245,7 @@ tool_use Read
 id: toolu_01SWBn3pBPa5ZvmcXmHry7HV
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/README.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/README.md",
   "offset": 144,
   "limit": 6
 }
@@ -3257,7 +3257,7 @@ tool_use Read
 id: toolu_01U1oDUMCQskYq6P8M7UYJHR
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/CLAUDE.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/CLAUDE.md",
   "offset": 777,
   "limit": 6
 }
@@ -3269,7 +3269,7 @@ tool_use Read
 id: toolu_01Ud7JVE7P9SbH2ApEBFXxGE
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/VALIDATION_METRICS.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/VALIDATION_METRICS.md",
   "offset": 406,
   "limit": 6
 }
@@ -3281,7 +3281,7 @@ tool_use Read
 id: toolu_014r4qwULuNEq1Pd8Rxjpr23
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/index.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/index.md",
   "offset": 100,
   "limit": 6
 }
@@ -3293,7 +3293,7 @@ tool_use Read
 id: toolu_01RjXz5onde2yKtxbgDsbpi3
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/archive/jekyll/index.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/archive/jekyll/index.md",
   "offset": 100,
   "limit": 6
 }
@@ -3401,7 +3401,7 @@ id: toolu_01Rf2odTLZVHAs4Z5Uzxx5pF
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/app-migration/service-guides/index.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/app-migration/service-guides/index.md",
   "old_string": "## Support\n\n- **Slack**: #platform-engineering\n- **Issues**: [kix-platform-docs GitHub Issues](https://github.com/konecta-ix-platform/kix-platform-docs/issues)",
   "new_string": "## Support\n\n- **Issues**: [kix-platform-docs GitHub Issues](https://github.com/konecta-ix-platform/kix-platform-docs/issues)"
 }
@@ -3414,7 +3414,7 @@ id: toolu_01RwahSyG2uSuvBSpPsj4xzR
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/security/governance.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/security/governance.md",
   "old_string": "- **P1 alerts:** PagerDuty -> on-call engineer phone + Slack #kix-platform-oncall\n- **P2 alerts:** Slack #kix-platform-oncall + email\n- **P3/P4 alerts:** Slack #kix-platform-engineering + GitHub issue",
   "new_string": "- **P1 alerts:** PagerDuty -> on-call engineer phone + email\n- **P2 alerts:** Email notification\n- **P3/P4 alerts:** GitHub issue"
 }
@@ -3427,9 +3427,9 @@ id: toolu_01DYV6XV7mUVbXdYEp8FNxRn
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/security/governance.md",
-  "old_string": "**Communication Channels:**\n- Slack: #kix-platform-engineering (general)\n- Slack: #kix-platform-oncall (urgent)\n- Email: security@konecta-group.com (security incidents)",
-  "new_string": "**Communication Channels:**\n- Email: security@konecta-group.com (security incidents)\n- GitHub Issues: [kix-platform-docs](https://github.com/konecta-ix-platform/kix-platform-docs/issues) (general)"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/security/governance.md",
+  "old_string": "**Communication Channels:**\n- Slack: #kix-platform-engineering (general)\n- Slack: #kix-platform-oncall (urgent)\n- Email: <REDACTED_EMAIL> (security incidents)",
+  "new_string": "**Communication Channels:**\n- Email: <REDACTED_EMAIL> (security incidents)\n- GitHub Issues: [kix-platform-docs](https://github.com/konecta-ix-platform/kix-platform-docs/issues) (general)"
 }
 ```
 
@@ -3440,7 +3440,7 @@ id: toolu_018sUnLyaywjqLATTCypKzbV
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/reference/creating-new-repository.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/reference/creating-new-repository.md",
   "old_string": "**Questions?**\n- Slack: #platform-engineering\n- Documentation: https://konecta-ix-platform.github.io/kix-platform-docs",
   "new_string": "**Questions?**\n- Documentation: https://konecta-ix-platform.github.io/kix-platform-docs"
 }
@@ -3453,7 +3453,7 @@ id: toolu_0172RZBtQeuaQFc2nvgoUpaj
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/reference/quick-reference.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/reference/quick-reference.md",
   "old_string": "**Slack:** #kix-platform-engineering\n\n## Related Pages",
   "new_string": "## Related Pages"
 }
@@ -3466,7 +3466,7 @@ id: toolu_01ReHuLy8oFUExhrBNV3Jztn
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/getting-started/onboarding.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/getting-started/onboarding.md",
   "old_string": "- Notify team in #kix-platform-engineering\n\n**During deployment:**",
   "new_string": "\n**During deployment:**"
 }
@@ -3479,9 +3479,9 @@ id: toolu_01HbEacEGHNNVtJcJXk6MHRt
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/getting-started/onboarding.md",
-  "old_string": "**Communication:**\n- Slack: #kix-platform-engineering\n- Urgent: #kix-platform-oncall\n- Security: security@konecta-group.com",
-  "new_string": "**Communication:**\n- Security: security@konecta-group.com\n- Issues: [GitHub Issues](https://github.com/konecta-ix-platform/kix-platform-docs/issues)"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/getting-started/onboarding.md",
+  "old_string": "**Communication:**\n- Slack: #kix-platform-engineering\n- Urgent: #kix-platform-oncall\n- Security: <REDACTED_EMAIL>",
+  "new_string": "**Communication:**\n- Security: <REDACTED_EMAIL>\n- Issues: [GitHub Issues](https://github.com/konecta-ix-platform/kix-platform-docs/issues)"
 }
 ```
 
@@ -3492,9 +3492,9 @@ id: toolu_016Pd2yRFSEYzdx14AxLsEvt
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/getting-started/index.md",
-  "old_string": "## Support\n\n- **Slack:** #kix-platform-engineering\n- **Urgent:** #kix-platform-oncall\n- **Security:** security@konecta-group.com",
-  "new_string": "## Support\n\n- **Issues:** [GitHub Issues](https://github.com/konecta-ix-platform/kix-platform-docs/issues)\n- **Security:** security@konecta-group.com"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/getting-started/index.md",
+  "old_string": "## Support\n\n- **Slack:** #kix-platform-engineering\n- **Urgent:** #kix-platform-oncall\n- **Security:** <REDACTED_EMAIL>",
+  "new_string": "## Support\n\n- **Issues:** [GitHub Issues](https://github.com/konecta-ix-platform/kix-platform-docs/issues)\n- **Security:** <REDACTED_EMAIL>"
 }
 ```
 
@@ -3505,7 +3505,7 @@ id: toolu_01HHBiiaAdED2X6EJNKSJoWf
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/crewai/index.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/crewai/index.md",
   "old_string": "- **Internal Support**: Platform Engineering team via Slack #platform-engineering\n- **CrewAI Enterprise Portal**: [https://enterprise.crewai.com](https://enterprise.crewai.com)",
   "new_string": "- **Internal Support**: [GitHub Issues](https://github.com/konecta-ix-platform/kix-platform-docs/issues)\n- **CrewAI Enterprise Portal**: [https://enterprise.crewai.com](https://enterprise.crewai.com)"
 }
@@ -3518,7 +3518,7 @@ id: toolu_01Sn6UE57sYcw6LbKNQD2HmQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/infrastructure-ops/cicd-runbook.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/infrastructure-ops/cicd-runbook.md",
   "old_string": "- Notify team in #kix-platform-engineering\n\n### During Deployment",
   "new_string": "\n### During Deployment"
 }
@@ -3531,7 +3531,7 @@ id: toolu_01LY1prK6YQprCXuZC9sfRwy
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/README.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/README.md",
   "old_string": "## Support\n\n- **Issues:** [GitHub Issues](https://github.com/konecta-ix-platform/kix-platform-docs/issues)\n- **Questions:** Slack #platform-engineering\n- **Live Site:** https://konecta-ix-platform.github.io/kix-platform-docs",
   "new_string": "## Support\n\n- **Issues:** [GitHub Issues](https://github.com/konecta-ix-platform/kix-platform-docs/issues)\n- **Live Site:** https://konecta-ix-platform.github.io/kix-platform-docs"
 }
@@ -3544,7 +3544,7 @@ id: toolu_01WhCXknvM4eSMdzmLyiy3vA
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/CLAUDE.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/CLAUDE.md",
   "old_string": "- **Issues:** Use GitHub Issues in relevant repository\n- **Questions:** Platform Engineering team via Slack #platform-engineering\n- **Documentation:** https://konecta-ix-platform.github.io/kix-platform-docs",
   "new_string": "- **Issues:** Use GitHub Issues in relevant repository\n- **Documentation:** https://konecta-ix-platform.github.io/kix-platform-docs"
 }
@@ -3557,7 +3557,7 @@ id: toolu_01JCki3kiMbcEycm44pVUEzA
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/VALIDATION_METRICS.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/VALIDATION_METRICS.md",
   "old_string": "**Contact:** #platform-engineering on Slack",
   "new_string": "**Contact:** [GitHub Issues](https://github.com/konecta-ix-platform/kix-platform-docs/issues)"
 }
@@ -3570,7 +3570,7 @@ id: toolu_01JBZoe9xjXhvsQcsAmb2rVq
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/index.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/index.md",
   "old_string": "- **Issues:** Use GitHub Issues in relevant repository\n- **Questions:** Platform Engineering team via Slack #platform-engineering\n- **Documentation:** This site ([konecta-ix-platform.github.io/kix-platform-docs](https://konecta-ix-platform.github.io/kix-platform-docs))",
   "new_string": "- **Issues:** Use GitHub Issues in relevant repository\n- **Documentation:** This site ([konecta-ix-platform.github.io/kix-platform-docs](https://konecta-ix-platform.github.io/kix-platform-docs))"
 }
@@ -3583,7 +3583,7 @@ id: toolu_015A3Yqaj2mjsvabFGh6rMTz
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/archive/jekyll/index.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/archive/jekyll/index.md",
   "old_string": "- **Issues:** Use GitHub Issues in relevant repository\n- **Questions:** Platform Engineering team via Slack #platform-engineering\n- **Documentation:** This site ([konecta-ix-platform.github.io/kix-platform-docs](https://konecta-ix-platform.github.io/kix-platform-docs))",
   "new_string": "- **Issues:** Use GitHub Issues in relevant repository\n- **Documentation:** This site ([konecta-ix-platform.github.io/kix-platform-docs](https://konecta-ix-platform.github.io/kix-platform-docs))"
 }
@@ -3658,7 +3658,7 @@ id: toolu_016Pd2yRFSEYzdx14AxLsEvt
 tool_result
 id: toolu_01HHBiiaAdED2X6EJNKSJoWf
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/crewai/index.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/crewai/index.md has been updated successfully.
 ```
 
 > TOOL
@@ -3666,7 +3666,7 @@ The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/crew
 tool_result
 id: toolu_01Sn6UE57sYcw6LbKNQD2HmQ
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/infrastructure-ops/cicd-runbook.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/infrastructure-ops/cicd-runbook.md has been updated successfully.
 ```
 
 > TOOL
@@ -3674,7 +3674,7 @@ The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/infr
 tool_result
 id: toolu_01LY1prK6YQprCXuZC9sfRwy
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/README.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/README.md has been updated successfully.
 ```
 
 > TOOL
@@ -3682,7 +3682,7 @@ The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/README.md
 tool_result
 id: toolu_01WhCXknvM4eSMdzmLyiy3vA
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/CLAUDE.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/CLAUDE.md has been updated successfully.
 ```
 
 > TOOL
@@ -3690,7 +3690,7 @@ The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/CLAUDE.md
 tool_result
 id: toolu_01JCki3kiMbcEycm44pVUEzA
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/VALIDATION_METRICS.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/VALIDATION_METRICS.md has been updated successfully.
 ```
 
 > TOOL
@@ -3698,7 +3698,7 @@ The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/VALIDATIO
 tool_result
 id: toolu_01JBZoe9xjXhvsQcsAmb2rVq
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/index.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/index.md has been updated successfully.
 ```
 
 > TOOL
@@ -3706,7 +3706,7 @@ The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/index.md 
 tool_result
 id: toolu_015A3Yqaj2mjsvabFGh6rMTz
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/archive/jekyll/index.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/archive/jekyll/index.md has been updated successfully.
 ```
 
 > AGENT
@@ -3719,7 +3719,7 @@ tool_use Read
 id: toolu_016D8685YuXrusToZm1wxjWv
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/app-migration/service-guides/index.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/app-migration/service-guides/index.md",
   "offset": 78,
   "limit": 8
 }
@@ -3731,7 +3731,7 @@ tool_use Read
 id: toolu_01N4xfyrNsCuazFY9EN2Sgb9
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/security/governance.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/security/governance.md",
   "offset": 118,
   "limit": 15
 }
@@ -3743,7 +3743,7 @@ tool_use Read
 id: toolu_01Crgtbmz44qH6kFSTCTDQiG
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/security/governance.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/security/governance.md",
   "offset": 203,
   "limit": 10
 }
@@ -3755,7 +3755,7 @@ tool_use Read
 id: toolu_01NhLFajxmimRqr8v9gWk4bF
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/reference/creating-new-repository.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/reference/creating-new-repository.md",
   "offset": 560,
   "limit": 10
 }
@@ -3767,7 +3767,7 @@ tool_use Read
 id: toolu_012Bb81CtGqwJZCvjXwepAa8
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/reference/quick-reference.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/reference/quick-reference.md",
   "offset": 158,
   "limit": 8
 }
@@ -3779,7 +3779,7 @@ tool_use Read
 id: toolu_019FTUeQ44zvNM2EVBgAep6H
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/getting-started/onboarding.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/getting-started/onboarding.md",
   "offset": 542,
   "limit": 10
 }
@@ -3791,7 +3791,7 @@ tool_use Read
 id: toolu_01JLmkAht8pwzUYqPMmdDqXr
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/getting-started/onboarding.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/getting-started/onboarding.md",
   "offset": 695,
   "limit": 10
 }
@@ -3803,7 +3803,7 @@ tool_use Read
 id: toolu_015eKqSmapFvaqvTy3PSL6gm
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/getting-started/index.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/getting-started/index.md",
   "offset": 32,
   "limit": 8
 }
@@ -3851,14 +3851,14 @@ id: toolu_01N4xfyrNsCuazFY9EN2Sgb9
 tool_result
 id: toolu_01Crgtbmz44qH6kFSTCTDQiG
 ```
-   203→| Infrastructure Lead | Nathan Booth | nathan.booth@konecta.com |
-   204→| DevSecOps Lead | Meghant Sharma | meghant.sharma@konecta.com |
-   205→| AI Lead | Mischa van Oijen | mischa.vanoijen@konecta.com |
+   203→| Infrastructure Lead | Nathan Booth | <REDACTED_EMAIL> |
+   204→| DevSecOps Lead | Meghant Sharma | <REDACTED_EMAIL> |
+   205→| AI Lead | Mischa van Oijen | <REDACTED_EMAIL> |
    206→
    207→**Communication Channels:**
    208→- Slack: #kix-platform-engineering (general)
    209→- Slack: #kix-platform-oncall (urgent)
-   210→- Email: security@konecta-group.com (security incidents)
+   210→- Email: <REDACTED_EMAIL> (security incidents)
    211→
    212→## Related Pages
 ```
@@ -3900,14 +3900,14 @@ id: toolu_01NhLFajxmimRqr8v9gWk4bF
 tool_result
 id: toolu_01JLmkAht8pwzUYqPMmdDqXr
 ```
-   695→| Infrastructure Lead | Nathan Booth | nathan.booth@konecta.com |
-   696→| DevSecOps Lead | Meghant Sharma | meghant.sharma@konecta.com |
-   697→| AI Lead | Mischa van Oijen | mischa.vanoijen@konecta.com |
+   695→| Infrastructure Lead | Nathan Booth | <REDACTED_EMAIL> |
+   696→| DevSecOps Lead | Meghant Sharma | <REDACTED_EMAIL> |
+   697→| AI Lead | Mischa van Oijen | <REDACTED_EMAIL> |
    698→
    699→**Communication:**
    700→- Slack: #kix-platform-engineering
    701→- Urgent: #kix-platform-oncall
-   702→- Security: security@konecta-group.com
+   702→- Security: <REDACTED_EMAIL>
    703→- Weekly sync: Fridays 10:00 UTC
    704→
 ```
@@ -3923,7 +3923,7 @@ id: toolu_015eKqSmapFvaqvTy3PSL6gm
     35→
     36→- **Slack:** #kix-platform-engineering
     37→- **Urgent:** #kix-platform-oncall
-    38→- **Security:** security@konecta-group.com
+    38→- **Security:** <REDACTED_EMAIL>
     39→
 ```
 
@@ -3951,7 +3951,7 @@ id: toolu_01H9VdTbkhLjgfW7PyqCXAf8
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/app-migration/service-guides/index.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/app-migration/service-guides/index.md",
   "old_string": "## Support\n\n- **Slack**: #platform-engineering\n- **Issues**: [kix-platform-docs GitHub Issues](https://github.com/konecta-ix-platform/kix-platform-docs/issues)",
   "new_string": "## Support\n\n- **Issues**: [kix-platform-docs GitHub Issues](https://github.com/konecta-ix-platform/kix-platform-docs/issues)"
 }
@@ -3964,7 +3964,7 @@ id: toolu_019bJ14pt49V5Mucff622r1i
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/security/governance.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/security/governance.md",
   "old_string": "- **P1 alerts:** PagerDuty -> on-call engineer phone + Slack #kix-platform-oncall\n- **P2 alerts:** Slack #kix-platform-oncall + email\n- **P3/P4 alerts:** Slack #kix-platform-engineering + GitHub issue",
   "new_string": "- **P1 alerts:** PagerDuty -> on-call engineer phone + email\n- **P2 alerts:** Email notification\n- **P3/P4 alerts:** GitHub issue"
 }
@@ -3977,9 +3977,9 @@ id: toolu_011RAyyRJV41hjsPZQSTCJZE
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/security/governance.md",
-  "old_string": "**Communication Channels:**\n- Slack: #kix-platform-engineering (general)\n- Slack: #kix-platform-oncall (urgent)\n- Email: security@konecta-group.com (security incidents)",
-  "new_string": "**Communication Channels:**\n- Email: security@konecta-group.com (security incidents)\n- GitHub Issues: [kix-platform-docs](https://github.com/konecta-ix-platform/kix-platform-docs/issues) (general)"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/security/governance.md",
+  "old_string": "**Communication Channels:**\n- Slack: #kix-platform-engineering (general)\n- Slack: #kix-platform-oncall (urgent)\n- Email: <REDACTED_EMAIL> (security incidents)",
+  "new_string": "**Communication Channels:**\n- Email: <REDACTED_EMAIL> (security incidents)\n- GitHub Issues: [kix-platform-docs](https://github.com/konecta-ix-platform/kix-platform-docs/issues) (general)"
 }
 ```
 
@@ -3990,7 +3990,7 @@ id: toolu_01DQpLQ6ed14tQMj6i7PH5ja
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/reference/creating-new-repository.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/reference/creating-new-repository.md",
   "old_string": "**Questions?**\n- Slack: #platform-engineering\n- Documentation: https://konecta-ix-platform.github.io/kix-platform-docs",
   "new_string": "**Questions?**\n- Documentation: https://konecta-ix-platform.github.io/kix-platform-docs"
 }
@@ -4003,7 +4003,7 @@ id: toolu_01FPYF2jrcXJdR5kVSwQHDmo
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/reference/quick-reference.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/reference/quick-reference.md",
   "old_string": "**Slack:** #kix-platform-engineering\n\n## Related Pages",
   "new_string": "## Related Pages"
 }
@@ -4016,7 +4016,7 @@ id: toolu_01Bj84mYchXk2Q1uhk58pZwW
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/getting-started/onboarding.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/getting-started/onboarding.md",
   "old_string": "- Ensure change window compliance (production)\n- Notify team in #kix-platform-engineering\n\n**During deployment:**",
   "new_string": "- Ensure change window compliance (production)\n\n**During deployment:**"
 }
@@ -4029,9 +4029,9 @@ id: toolu_011ixcCKc6eCNQ5NUSPpzoMD
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/getting-started/onboarding.md",
-  "old_string": "**Communication:**\n- Slack: #kix-platform-engineering\n- Urgent: #kix-platform-oncall\n- Security: security@konecta-group.com\n- Weekly sync: Fridays 10:00 UTC",
-  "new_string": "**Communication:**\n- Security: security@konecta-group.com\n- Issues: [GitHub Issues](https://github.com/konecta-ix-platform/kix-platform-docs/issues)\n- Weekly sync: Fridays 10:00 UTC"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/getting-started/onboarding.md",
+  "old_string": "**Communication:**\n- Slack: #kix-platform-engineering\n- Urgent: #kix-platform-oncall\n- Security: <REDACTED_EMAIL>\n- Weekly sync: Fridays 10:00 UTC",
+  "new_string": "**Communication:**\n- Security: <REDACTED_EMAIL>\n- Issues: [GitHub Issues](https://github.com/konecta-ix-platform/kix-platform-docs/issues)\n- Weekly sync: Fridays 10:00 UTC"
 }
 ```
 
@@ -4042,9 +4042,9 @@ id: toolu_01H1LH1skNqEosw54x9QxcXH
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/getting-started/index.md",
-  "old_string": "## Support\n\n- **Slack:** #kix-platform-engineering\n- **Urgent:** #kix-platform-oncall\n- **Security:** security@konecta-group.com",
-  "new_string": "## Support\n\n- **Issues:** [GitHub Issues](https://github.com/konecta-ix-platform/kix-platform-docs/issues)\n- **Security:** security@konecta-group.com"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/getting-started/index.md",
+  "old_string": "## Support\n\n- **Slack:** #kix-platform-engineering\n- **Urgent:** #kix-platform-oncall\n- **Security:** <REDACTED_EMAIL>",
+  "new_string": "## Support\n\n- **Issues:** [GitHub Issues](https://github.com/konecta-ix-platform/kix-platform-docs/issues)\n- **Security:** <REDACTED_EMAIL>"
 }
 ```
 
@@ -4053,7 +4053,7 @@ id: toolu_01H1LH1skNqEosw54x9QxcXH
 tool_result
 id: toolu_01H9VdTbkhLjgfW7PyqCXAf8
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/app-migration/service-guides/index.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/app-migration/service-guides/index.md has been updated successfully.
 ```
 
 > TOOL
@@ -4061,7 +4061,7 @@ The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/app-
 tool_result
 id: toolu_019bJ14pt49V5Mucff622r1i
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/security/governance.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/security/governance.md has been updated successfully.
 ```
 
 > TOOL
@@ -4069,7 +4069,7 @@ The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/secu
 tool_result
 id: toolu_011RAyyRJV41hjsPZQSTCJZE
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/security/governance.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/security/governance.md has been updated successfully.
 ```
 
 > TOOL
@@ -4077,7 +4077,7 @@ The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/secu
 tool_result
 id: toolu_01DQpLQ6ed14tQMj6i7PH5ja
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/reference/creating-new-repository.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/reference/creating-new-repository.md has been updated successfully.
 ```
 
 > TOOL
@@ -4085,7 +4085,7 @@ The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/refe
 tool_result
 id: toolu_01FPYF2jrcXJdR5kVSwQHDmo
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/reference/quick-reference.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/reference/quick-reference.md has been updated successfully.
 ```
 
 > TOOL
@@ -4093,7 +4093,7 @@ The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/refe
 tool_result
 id: toolu_01Bj84mYchXk2Q1uhk58pZwW
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/getting-started/onboarding.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/getting-started/onboarding.md has been updated successfully.
 ```
 
 > TOOL
@@ -4101,7 +4101,7 @@ The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/gett
 tool_result
 id: toolu_011ixcCKc6eCNQ5NUSPpzoMD
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/getting-started/onboarding.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/getting-started/onboarding.md has been updated successfully.
 ```
 
 > TOOL
@@ -4109,7 +4109,7 @@ The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/gett
 tool_result
 id: toolu_01H1LH1skNqEosw54x9QxcXH
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/getting-started/index.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/getting-started/index.md has been updated successfully.
 ```
 
 > AGENT
@@ -4159,7 +4159,7 @@ tool_use Read
 id: toolu_016YpPsf6T4PnNmKV8SNrK7C
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/infrastructure-ops/cicd-runbook.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/infrastructure-ops/cicd-runbook.md",
   "offset": 510,
   "limit": 6
 }
@@ -4171,7 +4171,7 @@ tool_use Read
 id: toolu_01FRX5dQe4ypjYvji2ZX1KRW
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/security/governance.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/security/governance.md",
   "offset": 90,
   "limit": 6
 }
@@ -4183,7 +4183,7 @@ tool_use Read
 id: toolu_01CRfQmhQBbEEpBzvxXCP3ei
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/app-migration/gitops-promotion.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/app-migration/gitops-promotion.md",
   "offset": 257,
   "limit": 10
 }
@@ -4238,7 +4238,7 @@ id: toolu_018GRb8cGLrWhMEAq8WQWm2z
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/infrastructure-ops/cicd-runbook.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/infrastructure-ops/cicd-runbook.md",
   "old_string": "**Contact:** #platform-team on Slack",
   "new_string": "**Contact:** [GitHub Issues](https://github.com/konecta-ix-platform/kix-platform-docs/issues)"
 }
@@ -4251,7 +4251,7 @@ id: toolu_01BRpceK1rQqvHdySDhmq5U1
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/security/governance.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/security/governance.md",
   "old_string": "3. **Communication:** Notify relevant stakeholders via Slack #kix-platform-oncall",
   "new_string": "3. **Communication:** Notify relevant stakeholders via email"
 }
@@ -4264,7 +4264,7 @@ id: toolu_01FWF7W5dRD2Fx2ZsNZNkmgU
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/app-migration/gitops-promotion.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/app-migration/gitops-promotion.md",
   "old_string": "| Event | Channel | Recipients |\n|-------|---------|------------|\n| Sync success | Slack #deployments | Team channel |\n| Sync failure | Slack #deployments + PagerDuty | Team + On-call |\n| Health degraded | Slack #alerts | Team channel |\n| Prod deployment | Slack #prod-changes | Wider audience |",
   "new_string": "| Event | Channel | Recipients |\n|-------|---------|------------|\n| Sync success | Email notification | Team |\n| Sync failure | Email + PagerDuty | Team + On-call |\n| Health degraded | Email alert | Team |\n| Prod deployment | Email notification | Wider audience |"
 }
@@ -4275,7 +4275,7 @@ id: toolu_01FWF7W5dRD2Fx2ZsNZNkmgU
 tool_result
 id: toolu_018GRb8cGLrWhMEAq8WQWm2z
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/infrastructure-ops/cicd-runbook.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/infrastructure-ops/cicd-runbook.md has been updated successfully.
 ```
 
 > TOOL
@@ -4283,7 +4283,7 @@ The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/infr
 tool_result
 id: toolu_01BRpceK1rQqvHdySDhmq5U1
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/security/governance.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/security/governance.md has been updated successfully.
 ```
 
 > TOOL
@@ -4291,7 +4291,7 @@ The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/secu
 tool_result
 id: toolu_01FWF7W5dRD2Fx2ZsNZNkmgU
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/app-migration/gitops-promotion.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/app-migration/gitops-promotion.md has been updated successfully.
 ```
 
 > AGENT
@@ -4304,7 +4304,7 @@ tool_use Bash
 id: toolu_018NwCyDhSd5bm4JsV13AN6K
 ```json
 {
-  "command": "git add docs/app-migration/service-guides/index.md docs/security/governance.md docs/reference/creating-new-repository.md docs/reference/quick-reference.md docs/getting-started/onboarding.md docs/getting-started/index.md docs/crewai/index.md docs/infrastructure-ops/cicd-runbook.md docs/app-migration/gitops-promotion.md README.md CLAUDE.md VALIDATION_METRICS.md index.md archive/jekyll/index.md docusaurus.config.js && git commit -m \"$(cat <<'EOF'\ndocs: remove all Slack references across documentation\n\nSlack is not used — replace with GitHub Issues and email where\na contact channel is needed, remove standalone Slack lines elsewhere.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add docs/app-migration/service-guides/index.md docs/security/governance.md docs/reference/creating-new-repository.md docs/reference/quick-reference.md docs/getting-started/onboarding.md docs/getting-started/index.md docs/crewai/index.md docs/infrastructure-ops/cicd-runbook.md docs/app-migration/gitops-promotion.md README.md CLAUDE.md VALIDATION_METRICS.md index.md archive/jekyll/index.md docusaurus.config.js && git commit -m \"$(cat <<'EOF'\ndocs: remove all Slack references across documentation\n\nSlack is not used — replace with GitHub Issues and email where\na contact channel is needed, remove standalone Slack lines elsewhere.\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Stage and commit Slack removal"
 }
 ```
@@ -4328,7 +4328,7 @@ tool_use Read
 id: toolu_01ACRBuUbjohAGvzaumNnTL8
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md"
 }
 ```
 
@@ -4338,7 +4338,7 @@ tool_use Bash
 id: toolu_01ENfSVTFsMESf7cM9MJSXDL
 ```json
 {
-  "command": "ls /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/services/",
+  "command": "ls /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/services/",
   "description": "List available platform services docs"
 }
 ```
@@ -4423,7 +4423,7 @@ id: toolu_01QfQQUpD5YP7PWfQyHzQzo4
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md",
   "old_string": "## CrewAI\n\n**Purpose:** Multi-agent orchestration for autonomous task execution",
   "new_string": "## [CrewAI](/docs/crewai)\n\n**Purpose:** Multi-agent orchestration for autonomous task execution"
 }
@@ -4436,7 +4436,7 @@ id: toolu_01TMgXHdS38Uks8R19TLJKRU
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md",
   "old_string": "## LiteLLM\n\n**Purpose:** Unified LLM access and MCP tool gateway",
   "new_string": "## [LiteLLM](/docs/services/litellm-gateway)\n\n**Purpose:** Unified LLM access and MCP tool gateway"
 }
@@ -4449,7 +4449,7 @@ id: toolu_01PsVKEacjmYyW2XL6eXocfF
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md",
   "old_string": "## Kong API Gateway\n\n**Purpose:** API gateway for service exposure and third-party API abstraction",
   "new_string": "## [Kong API Gateway](/docs/services/kong-gateway)\n\n**Purpose:** API gateway for service exposure and third-party API abstraction"
 }
@@ -4462,7 +4462,7 @@ id: toolu_01MrwQDQXqNo3dJi5JiZkrXx
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md",
   "old_string": "## Cloud SQL (PostgreSQL)\n\n**Purpose:** Relational data storage",
   "new_string": "## [Cloud SQL (PostgreSQL)](/docs/services/cloud-sql)\n\n**Purpose:** Relational data storage"
 }
@@ -4475,7 +4475,7 @@ id: toolu_01Y6h1xkm7NKAXdqfYuGWHjx
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md",
   "old_string": "## Redis (Memorystore)\n\n**Purpose:** Caching and session state",
   "new_string": "## [Redis (Memorystore)](/docs/services/redis)\n\n**Purpose:** Caching and session state"
 }
@@ -4486,7 +4486,7 @@ id: toolu_01Y6h1xkm7NKAXdqfYuGWHjx
 tool_result
 id: toolu_01QfQQUpD5YP7PWfQyHzQzo4
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md has been updated successfully.
 ```
 
 > TOOL
@@ -4494,7 +4494,7 @@ The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/appl
 tool_result
 id: toolu_01TMgXHdS38Uks8R19TLJKRU
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md has been updated successfully.
 ```
 
 > TOOL
@@ -4502,7 +4502,7 @@ The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/appl
 tool_result
 id: toolu_01PsVKEacjmYyW2XL6eXocfF
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md has been updated successfully.
 ```
 
 > TOOL
@@ -4510,7 +4510,7 @@ The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/appl
 tool_result
 id: toolu_01MrwQDQXqNo3dJi5JiZkrXx
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md has been updated successfully.
 ```
 
 > TOOL
@@ -4518,7 +4518,7 @@ The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/appl
 tool_result
 id: toolu_01Y6h1xkm7NKAXdqfYuGWHjx
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md has been updated successfully.
 ```
 
 > AGENT
@@ -4543,7 +4543,7 @@ tool_use Read
 id: toolu_01AWq9Vt3BHHWdcmobD8duQg
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/services/index.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/services/index.md"
 }
 ```
 
@@ -4553,7 +4553,7 @@ tool_use Read
 id: toolu_01GVpXiH2mGPJaKQzWoE9yiu
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/services/cloud-sql.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/services/cloud-sql.md",
   "limit": 30
 }
 ```
@@ -4662,7 +4662,7 @@ tool_use Write
 id: toolu_01GGUmCrfeKLWXjtC1MRCK9N
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/services/elevenlabs.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/services/elevenlabs.md",
   "content": "---\ntitle: ElevenLabs\nsidebar_label: ElevenLabs\nsidebar_position: 6\ndescription: Voice synthesis and conversational AI service\ndraft: false\n---\n\n# ElevenLabs\n\n:::info Coming Soon\nDetailed documentation for the ElevenLabs service is under development. For current specifications, see [Technology Specs](/docs/applications/technology-specs#elevenlabs).\n:::\n\n## Overview\n\nElevenLabs provides voice synthesis and conversational AI capabilities as the platform's primary voice runtime. It supports text-to-speech, speech-to-text, and real-time conversational AI with multi-language support.\n\n**Use ElevenLabs when you need:**\n- Text-to-speech synthesis\n- Real-time conversational AI\n- Speech-to-text transcription\n- Multi-language voice support\n\n**Supported Languages (MVP):** English, Spanish, Portuguese\n\n## Related Documentation\n\n- [Technology Specs](/docs/applications/technology-specs#elevenlabs) — Constraints and latency budgets\n- [Kong Gateway](/docs/services/kong-gateway) — Voice calls route through Kong\n"
 }
 ```
@@ -4673,7 +4673,7 @@ tool_use Write
 id: toolu_01UnbnSdBfMJax5Q7y9ns9uE
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/services/qdrant.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/services/qdrant.md",
   "content": "---\ntitle: Qdrant\nsidebar_label: Qdrant\nsidebar_position: 7\ndescription: Vector storage for RAG and semantic search\ndraft: false\n---\n\n# Qdrant\n\n:::info Coming Soon\nDetailed documentation for the Qdrant service is under development. For current specifications, see [Technology Specs](/docs/applications/technology-specs#qdrant).\n:::\n\n## Overview\n\nQdrant provides vector storage for Retrieval-Augmented Generation (RAG) and semantic search across the platform. It stores embeddings generated by the platform embedding model and supports high-performance similarity search.\n\n**Use Qdrant when you need:**\n- Vector similarity search\n- RAG over internal knowledge bases\n- Semantic search across documents\n- Embedding storage and retrieval\n\n**Available In:** dev, qa, prod environments\n\n## Related Documentation\n\n- [Technology Specs](/docs/applications/technology-specs#qdrant) — Specifications and constraints\n- [LiteLLM Gateway](/docs/services/litellm-gateway) — Embedding model access via LiteLLM\n"
 }
 ```
@@ -4684,7 +4684,7 @@ tool_use Write
 id: toolu_012q86FFEiktDnzwjs88tM8n
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/services/pubsub.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/services/pubsub.md",
   "content": "---\ntitle: Pub/Sub\nsidebar_label: Pub/Sub\nsidebar_position: 8\ndescription: Asynchronous messaging and event-driven architecture\ndraft: false\n---\n\n# Pub/Sub\n\n:::info Coming Soon\nDetailed documentation for the Pub/Sub service is under development. For current specifications, see [Technology Specs](/docs/applications/technology-specs#pubsub).\n:::\n\n## Overview\n\nGoogle Cloud Pub/Sub provides asynchronous messaging and event-driven architecture for the platform. It enables decoupled communication between services with guaranteed delivery and configurable ordering.\n\n**Use Pub/Sub when you need:**\n- Asynchronous messaging between services\n- Event-driven architectures\n- Decoupled processing pipelines\n- Reliable message delivery with dead letter queues\n\n**Available In:** dev, qa, prod environments\n\n## Related Documentation\n\n- [Technology Specs](/docs/applications/technology-specs#pubsub) — Specifications and constraints\n- [Cloud SQL](/docs/services/cloud-sql) — Often used alongside Pub/Sub for persisting event outcomes\n"
 }
 ```
@@ -4695,7 +4695,7 @@ tool_use Write
 id: toolu_01J74qbBX6NZK4Sm6G3DWdrd
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/services/gcs.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/services/gcs.md",
   "content": "---\ntitle: Cloud Storage (GCS)\nsidebar_label: Cloud Storage\nsidebar_position: 9\ndescription: Object storage for documents and artifacts\ndraft: false\n---\n\n# Cloud Storage (GCS)\n\n:::info Coming Soon\nDetailed documentation for the Cloud Storage service is under development. For current specifications, see [Technology Specs](/docs/applications/technology-specs#gcs-cloud-storage).\n:::\n\n## Overview\n\nGoogle Cloud Storage provides object storage for documents, artifacts, and other unstructured data. All buckets are EU-located with versioning enabled and lifecycle policies for cost management.\n\n**Use Cloud Storage when you need:**\n- Document and file storage\n- Artifact storage for CI/CD pipelines\n- Large object storage (up to 5TB per object)\n- Signed URLs for temporary external access\n\n**Available In:** dev, qa, prod environments\n\n## Related Documentation\n\n- [Technology Specs](/docs/applications/technology-specs#gcs-cloud-storage) — Specifications and constraints\n- [Secrets Management](/docs/developer-guide/secrets-management) — Accessing GCS credentials via External Secrets Operator\n"
 }
 ```
@@ -4706,7 +4706,7 @@ tool_use Write
 id: toolu_014vT8eZnTUvWtHyNERr2rwu
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/services/channel-hub.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/services/channel-hub.md",
   "content": "---\ntitle: Channel Hub\nsidebar_label: Channel Hub\nsidebar_position: 10\ndescription: Outbound messaging across multiple channels\ndraft: false\n---\n\n# Channel Hub\n\n:::info Coming Soon\nDetailed documentation for the Channel Hub service is under development. For current specifications, see [Technology Specs](/docs/applications/technology-specs#channel-hub).\n:::\n\n## Overview\n\nThe Channel Hub provides outbound messaging across multiple channels including SMS, email, WhatsApp, and Google Chat. All messages are logged for audit and subject to rate limits and PII handling rules.\n\n**Use Channel Hub when you need:**\n- Send SMS, email, or WhatsApp messages\n- Multi-channel notification delivery\n- Audit-compliant outbound messaging\n- Template-based messaging (WhatsApp)\n\n## Related Documentation\n\n- [Technology Specs](/docs/applications/technology-specs#channel-hub) — Supported channels and constraints\n- [Kong Gateway](/docs/services/kong-gateway) — Channel Hub routes through Kong\n"
 }
 ```
@@ -4716,7 +4716,7 @@ id: toolu_014vT8eZnTUvWtHyNERr2rwu
 tool_result
 id: toolu_01GGUmCrfeKLWXjtC1MRCK9N
 ```
-File created successfully at: /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/services/elevenlabs.md
+File created successfully at: /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/services/elevenlabs.md
 ```
 
 > TOOL
@@ -4724,7 +4724,7 @@ File created successfully at: /home/nathan_booth/code/konecta-ix-platform/kix-pl
 tool_result
 id: toolu_01UnbnSdBfMJax5Q7y9ns9uE
 ```
-File created successfully at: /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/services/qdrant.md
+File created successfully at: /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/services/qdrant.md
 ```
 
 > TOOL
@@ -4732,7 +4732,7 @@ File created successfully at: /home/nathan_booth/code/konecta-ix-platform/kix-pl
 tool_result
 id: toolu_012q86FFEiktDnzwjs88tM8n
 ```
-File created successfully at: /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/services/pubsub.md
+File created successfully at: /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/services/pubsub.md
 ```
 
 > TOOL
@@ -4740,7 +4740,7 @@ File created successfully at: /home/nathan_booth/code/konecta-ix-platform/kix-pl
 tool_result
 id: toolu_01J74qbBX6NZK4Sm6G3DWdrd
 ```
-File created successfully at: /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/services/gcs.md
+File created successfully at: /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/services/gcs.md
 ```
 
 > TOOL
@@ -4748,7 +4748,7 @@ File created successfully at: /home/nathan_booth/code/konecta-ix-platform/kix-pl
 tool_result
 id: toolu_014vT8eZnTUvWtHyNERr2rwu
 ```
-File created successfully at: /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/services/channel-hub.md
+File created successfully at: /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/services/channel-hub.md
 ```
 
 > AGENT
@@ -4761,7 +4761,7 @@ tool_use Read
 id: toolu_01BZHHbjcUHJrvu2vp8cnaW1
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/sidebars.js",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/sidebars.js",
   "offset": 86,
   "limit": 20
 }
@@ -4801,7 +4801,7 @@ id: toolu_01N8d3dHe2Pat7FNsk9PqcK9
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/sidebars.js",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/sidebars.js",
   "old_string": "        'services/index',\n        'services/kong-gateway',\n        'services/litellm-gateway',\n        'services/cloud-sql',\n        'services/redis',\n        {\n          type: 'category',\n          label: 'CrewAI Enterprise',",
   "new_string": "        'services/index',\n        'services/kong-gateway',\n        'services/litellm-gateway',\n        'services/cloud-sql',\n        'services/redis',\n        'services/elevenlabs',\n        'services/qdrant',\n        'services/pubsub',\n        'services/gcs',\n        'services/channel-hub',\n        {\n          type: 'category',\n          label: 'CrewAI Enterprise',"
 }
@@ -4812,7 +4812,7 @@ id: toolu_01N8d3dHe2Pat7FNsk9PqcK9
 tool_result
 id: toolu_01N8d3dHe2Pat7FNsk9PqcK9
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/sidebars.js has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/sidebars.js has been updated successfully.
 ```
 
 > AGENT
@@ -4825,7 +4825,7 @@ tool_use Read
 id: toolu_01RMQ8ufFdDN6jMTc7j27yFp
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md"
 }
 ```
 
@@ -4893,7 +4893,7 @@ id: toolu_019WLPW25g56Z1EcFcfFRbZB
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md",
   "old_string": "## ElevenLabs\n\n**Purpose:** Voice synthesis and conversational AI (primary voice runtime)",
   "new_string": "## [ElevenLabs](/docs/services/elevenlabs)\n\n**Purpose:** Voice synthesis and conversational AI (primary voice runtime)"
 }
@@ -4906,7 +4906,7 @@ id: toolu_01NHidvsNP9Re9GcVyFbw17M
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md",
   "old_string": "## Qdrant\n\n**Purpose:** Vector storage for RAG and semantic search",
   "new_string": "## [Qdrant](/docs/services/qdrant)\n\n**Purpose:** Vector storage for RAG and semantic search"
 }
@@ -4919,7 +4919,7 @@ id: toolu_01MWJ89pCK58gzVVCwo9d9NQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md",
   "old_string": "## Pub/Sub\n\n**Purpose:** Asynchronous messaging and event-driven architecture",
   "new_string": "## [Pub/Sub](/docs/services/pubsub)\n\n**Purpose:** Asynchronous messaging and event-driven architecture"
 }
@@ -4932,7 +4932,7 @@ id: toolu_01F2vDZAguzgtosvPsiG7dtC
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md",
   "old_string": "## GCS (Cloud Storage)\n\n**Purpose:** Object storage for documents and artifacts",
   "new_string": "## [GCS (Cloud Storage)](/docs/services/gcs)\n\n**Purpose:** Object storage for documents and artifacts"
 }
@@ -4945,7 +4945,7 @@ id: toolu_01S8rxr7iL1UtyjR8fHFS1Aq
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md",
   "old_string": "## Channel Hub\n\n**Purpose:** Outbound messaging across multiple channels",
   "new_string": "## [Channel Hub](/docs/services/channel-hub)\n\n**Purpose:** Outbound messaging across multiple channels"
 }
@@ -4956,7 +4956,7 @@ id: toolu_01S8rxr7iL1UtyjR8fHFS1Aq
 tool_result
 id: toolu_019WLPW25g56Z1EcFcfFRbZB
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md has been updated successfully.
 ```
 
 > TOOL
@@ -4964,7 +4964,7 @@ The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/appl
 tool_result
 id: toolu_01NHidvsNP9Re9GcVyFbw17M
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md has been updated successfully.
 ```
 
 > TOOL
@@ -4972,7 +4972,7 @@ The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/appl
 tool_result
 id: toolu_01MWJ89pCK58gzVVCwo9d9NQ
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md has been updated successfully.
 ```
 
 > TOOL
@@ -4980,7 +4980,7 @@ The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/appl
 tool_result
 id: toolu_01F2vDZAguzgtosvPsiG7dtC
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md has been updated successfully.
 ```
 
 > TOOL
@@ -4988,7 +4988,7 @@ The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/appl
 tool_result
 id: toolu_01S8rxr7iL1UtyjR8fHFS1Aq
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md has been updated successfully.
 ```
 
 > AGENT
@@ -5001,7 +5001,7 @@ tool_use Read
 id: toolu_01Aii7ZQzub5e6TL1kCybH7J
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/services/index.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/services/index.md",
   "offset": 85,
   "limit": 18
 }
@@ -5039,7 +5039,7 @@ id: toolu_01RRWjf24BfqMMfNuxrL1Tf9
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/services/index.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/services/index.md",
   "old_string": "**Performance:** `<1ms` average latency\n\n---\n\n## Service Comparison",
   "new_string": "**Performance:** `<1ms` average latency\n\n---\n\n### Voice\n\n**[ElevenLabs](/docs/services/elevenlabs)** - Voice synthesis and conversational AI\n\n- Text-to-speech and speech-to-text\n- Real-time conversational AI\n- Multi-language support (English, Spanish, Portuguese)\n\n**When to use:** Voice-enabled agents, text-to-speech in applications\n\n---\n\n### Vector Search\n\n**[Qdrant](/docs/services/qdrant)** - Vector storage for RAG and semantic search\n\n- Similarity search over embeddings\n- RAG over internal knowledge bases\n- Persistent SSD storage with replication\n\n**When to use:** Retrieval-Augmented Generation, semantic search, document similarity\n\n---\n\n### Messaging\n\n**[Pub/Sub](/docs/services/pubsub)** - Asynchronous messaging\n\n- Guaranteed delivery with dead letter queues\n- 7-day message retention\n- Optional ordering per topic\n\n**When to use:** Event-driven architectures, async processing, decoupled services\n\n---\n\n### Object Storage\n\n**[Cloud Storage (GCS)](/docs/services/gcs)** - Object storage for documents and artifacts\n\n- EU multi-region with versioning\n- Lifecycle policies (Standard → Nearline → Archive)\n- Signed URLs for temporary access\n\n**When to use:** Document storage, file uploads, artifact storage\n\n---\n\n### Outbound Messaging\n\n**[Channel Hub](/docs/services/channel-hub)** - Multi-channel outbound messaging\n\n- SMS, email, WhatsApp, Google Chat\n- Audit logging on all messages\n- Template-based messaging for WhatsApp\n\n**When to use:** Send notifications, alerts, or messages to end users across channels\n\n---\n\n## Service Comparison"
 }
@@ -5050,7 +5050,7 @@ id: toolu_01RRWjf24BfqMMfNuxrL1Tf9
 tool_result
 id: toolu_01RRWjf24BfqMMfNuxrL1Tf9
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/services/index.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/services/index.md has been updated successfully.
 ```
 
 > AGENT
@@ -5063,7 +5063,7 @@ tool_use Read
 id: toolu_01LsdW3Lv5B8YpFV8ZbEooNV
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/services/index.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/services/index.md",
   "offset": 449,
   "limit": 20
 }
@@ -5103,7 +5103,7 @@ id: toolu_019knsVbjiwfbQLvwTh9qAQU
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/services/index.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/services/index.md",
   "old_string": "### Service Guides\n- [Kong Gateway](/docs/services/kong-gateway) - API management\n- [LiteLLM Gateway](/docs/services/litellm-gateway) - AI model access\n- [Cloud SQL](/docs/services/cloud-sql) - PostgreSQL database\n- [Memorystore Redis](/docs/services/redis) - Caching and session storage",
   "new_string": "### Service Guides\n- [Kong Gateway](/docs/services/kong-gateway) - API management\n- [LiteLLM Gateway](/docs/services/litellm-gateway) - AI model access\n- [Cloud SQL](/docs/services/cloud-sql) - PostgreSQL database\n- [Memorystore Redis](/docs/services/redis) - Caching and session storage\n- [ElevenLabs](/docs/services/elevenlabs) - Voice synthesis\n- [Qdrant](/docs/services/qdrant) - Vector search\n- [Pub/Sub](/docs/services/pubsub) - Async messaging\n- [Cloud Storage](/docs/services/gcs) - Object storage\n- [Channel Hub](/docs/services/channel-hub) - Outbound messaging"
 }
@@ -5114,7 +5114,7 @@ id: toolu_019knsVbjiwfbQLvwTh9qAQU
 tool_result
 id: toolu_019knsVbjiwfbQLvwTh9qAQU
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/services/index.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/services/index.md has been updated successfully.
 ```
 
 > AGENT
@@ -5141,7 +5141,7 @@ id: toolu_017m8kQrx1qLamFyedRhMfes
 > docusaurus build
 
 [INFO] [en] Creating an optimized production build...
-Warn: `blogDir` doesn't exist: "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/blog".
+Warn: `blogDir` doesn't exist: "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/blog".
 [webpackbar] ℹ Compiling Client
 [webpackbar] ℹ Compiling Server
 [webpackbar] ✔ Server: Compiled successfully in 49.25s
@@ -5160,7 +5160,7 @@ tool_use Read
 id: toolu_01RH3wbHzTnQaVweQnsExVkx
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/sidebars.js",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/sidebars.js",
   "offset": 86,
   "limit": 20
 }
@@ -5204,7 +5204,7 @@ id: toolu_01UxgNBmgjMWJYD6NT5GjyPe
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/services/elevenlabs.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/services/elevenlabs.md",
   "old_string": "sidebar_label: ElevenLabs",
   "new_string": "sidebar_label: \"🚧 ElevenLabs\""
 }
@@ -5217,7 +5217,7 @@ id: toolu_01PsRzz6RzgUNf7f5aub3qgn
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/services/qdrant.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/services/qdrant.md",
   "old_string": "sidebar_label: Qdrant",
   "new_string": "sidebar_label: \"🚧 Qdrant\""
 }
@@ -5230,7 +5230,7 @@ id: toolu_01E6h8Xyy3CNsnZMsPoRG2u6
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/services/pubsub.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/services/pubsub.md",
   "old_string": "sidebar_label: Pub/Sub",
   "new_string": "sidebar_label: \"🚧 Pub/Sub\""
 }
@@ -5243,7 +5243,7 @@ id: toolu_01GB7X8ZfCJndHBVgkpjEuS3
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/services/gcs.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/services/gcs.md",
   "old_string": "sidebar_label: Cloud Storage",
   "new_string": "sidebar_label: \"🚧 Cloud Storage\""
 }
@@ -5256,7 +5256,7 @@ id: toolu_01Ee6ybniLc3sqL9JTNUQM86
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/services/channel-hub.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/services/channel-hub.md",
   "old_string": "sidebar_label: Channel Hub",
   "new_string": "sidebar_label: \"🚧 Channel Hub\""
 }
@@ -5267,7 +5267,7 @@ id: toolu_01Ee6ybniLc3sqL9JTNUQM86
 tool_result
 id: toolu_01UxgNBmgjMWJYD6NT5GjyPe
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/services/elevenlabs.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/services/elevenlabs.md has been updated successfully.
 ```
 
 > TOOL
@@ -5275,7 +5275,7 @@ The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/serv
 tool_result
 id: toolu_01PsRzz6RzgUNf7f5aub3qgn
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/services/qdrant.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/services/qdrant.md has been updated successfully.
 ```
 
 > TOOL
@@ -5283,7 +5283,7 @@ The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/serv
 tool_result
 id: toolu_01E6h8Xyy3CNsnZMsPoRG2u6
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/services/pubsub.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/services/pubsub.md has been updated successfully.
 ```
 
 > TOOL
@@ -5291,7 +5291,7 @@ The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/serv
 tool_result
 id: toolu_01GB7X8ZfCJndHBVgkpjEuS3
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/services/gcs.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/services/gcs.md has been updated successfully.
 ```
 
 > TOOL
@@ -5308,7 +5308,7 @@ tool_use Read
 id: toolu_01NDLmkNkcjPrqo5eggGZoYh
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/services/channel-hub.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/services/channel-hub.md",
   "limit": 5
 }
 ```
@@ -5332,7 +5332,7 @@ id: toolu_012ZDThKXCdhZ9ue1cnA8GEY
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/services/channel-hub.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/services/channel-hub.md",
   "old_string": "sidebar_label: Channel Hub",
   "new_string": "sidebar_label: \"🚧 Channel Hub\""
 }
@@ -5343,7 +5343,7 @@ id: toolu_012ZDThKXCdhZ9ue1cnA8GEY
 tool_result
 id: toolu_012ZDThKXCdhZ9ue1cnA8GEY
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/services/channel-hub.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/services/channel-hub.md has been updated successfully.
 ```
 
 > AGENT
@@ -5356,7 +5356,7 @@ tool_use Bash
 id: toolu_01DZpS3NfUuJQ5ELvrJnXGEG
 ```json
 {
-  "command": "git add docs/services/elevenlabs.md docs/services/qdrant.md docs/services/pubsub.md docs/services/gcs.md docs/services/channel-hub.md docs/services/index.md docs/applications/technology-specs.md sidebars.js && git commit -m \"$(cat <<'EOF'\ndocs: add placeholder service pages and link from technology specs\n\nCreate coming-soon pages for ElevenLabs, Qdrant, Pub/Sub, GCS, and\nChannel Hub under Platform Services. All technology spec headings now\nlink through to their matching service page. Sidebar labels use 🚧\nto indicate pages under construction.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add docs/services/elevenlabs.md docs/services/qdrant.md docs/services/pubsub.md docs/services/gcs.md docs/services/channel-hub.md docs/services/index.md docs/applications/technology-specs.md sidebars.js && git commit -m \"$(cat <<'EOF'\ndocs: add placeholder service pages and link from technology specs\n\nCreate coming-soon pages for ElevenLabs, Qdrant, Pub/Sub, GCS, and\nChannel Hub under Platform Services. All technology spec headings now\nlink through to their matching service page. Sidebar labels use 🚧\nto indicate pages under construction.\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit placeholder service pages"
 }
 ```
@@ -5426,12 +5426,12 @@ id: toolu_01EGKZXcPGabNBz1XjencMuG
 > docusaurus start --port 3005
 
 [INFO] Starting the development server...
-Warn: `blogDir` doesn't exist: "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/blog".
+Warn: `blogDir` doesn't exist: "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/blog".
 [SUCCESS] Docusaurus website is running at: http://localhost:3005/
 [webpackbar] ℹ Compiling Client
 [webpackbar] ✔ Client: Compiled successfully in 23.32s
 client (webpack 5.105.0) compiled successfully
-Warn: `blogDir` doesn't exist: "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/blog".
+Warn: `blogDir` doesn't exist: "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/blog".
 [webpackbar] ℹ Compiling Client
 [webpackbar] ✔ Client: Compiled successfully in 5.14s
 client (webpack 5.105.0) compiled successfully
@@ -5535,7 +5535,7 @@ id: toolu_012678vFgLT7RJr86ao7oK7C
 > docusaurus start --port 3005 --port 3005
 
 [INFO] Starting the development server...
-Warn: `blogDir` doesn't exist: "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/blog".
+Warn: `blogDir` doesn't exist: "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/blog".
 [SUCCESS] Docusaurus website is running at: http://localhost:3005/
 [webpackbar] ℹ Compiling Client
 </output>
@@ -5654,7 +5654,7 @@ tool_use Bash
 id: toolu_01GgkEj7uZNvnVsnu1sx6yxS
 ```json
 {
-  "command": "git checkout develop && git merge fix/application-docs-review --no-ff -m \"$(cat <<'EOF'\nMerge branch 'fix/application-docs-review' into develop\n\ndocs: application docs review — fix links, deduplicate content, remove Slack refs, add service placeholders\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git checkout develop && git merge fix/application-docs-review --no-ff -m \"$(cat <<'EOF'\nMerge branch 'fix/application-docs-review' into develop\n\ndocs: application docs review — fix links, deduplicate content, remove Slack refs, add service placeholders\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Checkout develop and merge feature branch"
 }
 ```
@@ -5825,7 +5825,7 @@ id: toolu_0182zFe1gfSxxsRn4smPhxdN
 tool_result
 id: toolu_016Qd8jR7z6V8Wi2rqFp5PUh
 ```
-{"baseRefName":"develop","body":"## Summary\n- New developer guide page for the `workload-base` module (`docs/developer-guide/workload-base-module.md`)\n- Added `workload-base` entry to the module catalog (`docs/reference/module-catalog.md`)\n- Added sidebar navigation entry in Developer Guide section (`sidebars.js`)\n\n## Changes\n- **Developer guide page** covers: what the module creates, what stays outside, quick start (minimal + full), secrets pipeline (4 types), computed values, ExternalSecret groups, cross-project IAM, outputs, and migration with `moved` blocks\n- **Module catalog** updated with workload-base row in GCP modules table\n- **Sidebar** updated to include the new page after \"Secrets Management\"\n\n## Related\n- Module PR: kix-platform-modules#35 (merged)\n- KonectaIQ migration PR: kix-workload-konectaiq#113\n\n## Test plan\n- [ ] Verify Docusaurus builds without errors\n- [ ] Verify new page renders correctly at `/docs/developer-guide/workload-base-module`\n- [ ] Verify sidebar navigation includes the new entry\n- [ ] Verify module catalog table renders correctly\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)","commits":[{"authoredDate":"2026-02-19T15:06:29Z","authors":[{"email":"adam.dolman@konecta.com","id":"MDQ6VXNlcjc1MzI4Njcy","login":"adamdolman","name":"“Adam"},{"email":"noreply@anthropic.com","id":"MDQ6VXNlcjgxODQ3","login":"claude","name":"Claude Opus 4.6"}],"committedDate":"2026-02-19T15:06:29Z","messageBody":"New developer guide page documenting the workload-base module:\n- What it creates, what stays outside\n- Quick start examples (minimal and full)\n- Secrets pipeline, ESO groups, cross-project IAM\n- Migration guide with moved blocks\nAlso adds workload-base to module catalog and sidebar navigation.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>","messageHeadline":"docs: add workload-base module developer guide","oid":"0b8a481610c1aca1bf19c619e83c2229bc210487"}],"files":[{"path":"docs/developer-guide/workload-base-module.md","additions":260,"deletions":0},{"path":"docs/reference/module-catalog.md","additions":1,"deletions":0},{"path":"sidebars.js","additions":1,"deletions":0}],"headRefName":"feature/workload-base-docs","title":"docs: add workload-base module developer guide"}
+{"baseRefName":"develop","body":"## Summary\n- New developer guide page for the `workload-base` module (`docs/developer-guide/workload-base-module.md`)\n- Added `workload-base` entry to the module catalog (`docs/reference/module-catalog.md`)\n- Added sidebar navigation entry in Developer Guide section (`sidebars.js`)\n\n## Changes\n- **Developer guide page** covers: what the module creates, what stays outside, quick start (minimal + full), secrets pipeline (4 types), computed values, ExternalSecret groups, cross-project IAM, outputs, and migration with `moved` blocks\n- **Module catalog** updated with workload-base row in GCP modules table\n- **Sidebar** updated to include the new page after \"Secrets Management\"\n\n## Related\n- Module PR: kix-platform-modules#35 (merged)\n- KonectaIQ migration PR: kix-workload-konectaiq#113\n\n## Test plan\n- [ ] Verify Docusaurus builds without errors\n- [ ] Verify new page renders correctly at `/docs/developer-guide/workload-base-module`\n- [ ] Verify sidebar navigation includes the new entry\n- [ ] Verify module catalog table renders correctly\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)","commits":[{"authoredDate":"2026-02-19T15:06:29Z","authors":[{"email":"<REDACTED_EMAIL>","id":"MDQ6VXNlcjc1MzI4Njcy","login":"adamdolman","name":"“Adam"},{"email":"<REDACTED_EMAIL>","id":"MDQ6VXNlcjgxODQ3","login":"claude","name":"Claude Opus 4.6"}],"committedDate":"2026-02-19T15:06:29Z","messageBody":"New developer guide page documenting the workload-base module:\n- What it creates, what stays outside\n- Quick start examples (minimal and full)\n- Secrets pipeline, ESO groups, cross-project IAM\n- Migration guide with moved blocks\nAlso adds workload-base to module catalog and sidebar navigation.\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>","messageHeadline":"docs: add workload-base module developer guide","oid":"0b8a481610c1aca1bf19c619e83c2229bc210487"}],"files":[{"path":"docs/developer-guide/workload-base-module.md","additions":260,"deletions":0},{"path":"docs/reference/module-catalog.md","additions":1,"deletions":0},{"path":"sidebars.js","additions":1,"deletions":0}],"headRefName":"feature/workload-base-docs","title":"docs: add workload-base module developer guide"}
 ```
 
 > TOOL
@@ -5943,7 +5943,7 @@ tool_use Read
 id: toolu_01XEs4vQiUPy22LcavM44fPp
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/sidebars.js"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/sidebars.js"
 }
 ```
 
@@ -6041,7 +6041,7 @@ id: toolu_01GxbHUqH8z4SAhpU2W8aPyG
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/sidebars.js",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/sidebars.js",
   "old_string": "<<<<<<< HEAD\n        // 'developer-guide/development-toolkit', // Placeholder — re-enable when content is added\n=======\n        'developer-guide/workload-base-module',\n        'developer-guide/development-toolkit',\n>>>>>>> 0b8a481 (docs: add workload-base module developer guide)",
   "new_string": "        'developer-guide/workload-base-module',\n        // 'developer-guide/development-toolkit', // Placeholder — re-enable when content is added"
 }
@@ -6052,7 +6052,7 @@ id: toolu_01GxbHUqH8z4SAhpU2W8aPyG
 tool_result
 id: toolu_01GxbHUqH8z4SAhpU2W8aPyG
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/sidebars.js has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/sidebars.js has been updated successfully.
 ```
 
 > TOOL
@@ -6072,7 +6072,7 @@ tool_result
 id: toolu_01SxZBnbWfXisRnrtbjdkyXZ
 ```
 [fix/application-docs-review 0e85850] docs: add workload-base module developer guide
- Author: “Adam <adam.dolman@konecta.com>
+ Author: “Adam <<REDACTED_EMAIL>>
  Date: Thu Feb 19 15:06:29 2026 +0000
  3 files changed, 262 insertions(+)
  create mode 100644 docs/developer-guide/workload-base-module.md
@@ -6103,7 +6103,7 @@ id: toolu_0182ckmUjxsYDWmUii16NC5V
 > docusaurus build
 
 [INFO] [en] Creating an optimized production build...
-Warn: `blogDir` doesn't exist: "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/blog".
+Warn: `blogDir` doesn't exist: "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/blog".
 [webpackbar] ℹ Compiling Client
 [webpackbar] ℹ Compiling Server
 [webpackbar] ✔ Server: Compiled successfully in 6.59s
@@ -6553,14 +6553,14 @@ I've completed a thorough exploration of the kix-platform-docs repository. Here'
 
 **Key files with versioning/tagging information:**
 
-- `/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/app-migration/cicd-pipeline.md` (lines 222-230)
+- `/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/app-migration/cicd-pipeline.md` (lines 222-230)
   - Documents **Image Tagging Strategy** with 3 tag types:
     - `sha-{7-char}` — Immutable build identifier (every build)
     - `v{major}.{minor}.{patch}` — Release version (on git tag)
     - `{env}-latest` — Environment pointer/mutable tag (on promotion)
   - Rule: SHA tags are immutable, never overwrite
 
-- `/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/branching-strategy.md` (lines 106-123)
+- `/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/branching-strategy.md` (lines 106-123)
   - Documents branch-to-image tagging mapping:
     - `develop` → `dev-<sha>` tag
     - `main` → `qa-<sha>` tag  
@@ -6576,7 +6576,7 @@ I've completed a thorough exploration of the kix-platform-docs repository. Here'
 
 ### 3. **CI/CD Architecture**
 
-Located in `/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/app-migration/cicd-pipeline.md`:
+Located in `/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/app-migration/cicd-pipeline.md`:
 
 - **Two-repo model:**
   - Code repos (konecta-ix-applications, konecta-ix-mcp-servers, konecta-ix-demos): Build pipeline
@@ -6595,7 +6595,7 @@ tool_use Write
 id: toolu_01U7x2BEs8FXdnYc2fbPyfgk
 ```json
 {
-  "file_path": "/home/nathan_booth/.claude/plans/cosmic-plotting-fox.md",
+  "file_path": "/home/<USER>/.claude/plans/cosmic-plotting-fox.md",
   "content": "# Plan: Release Tagging & Versioning Guide\n\n## Context\n\nRelease versioning info is currently scattered across `cicd-pipeline.md` (image tagging strategy) and `branching-strategy.md` (branch-to-tag mapping). There's no single reference for how to version applications, tag releases, and how those tags flow through to Docker images and ArgoCD promotions. This doc consolidates and formalises the approach.\n\n## Approach\n\nCreate a new Developer Guide page `docs/developer-guide/release-versioning.md` that covers:\n\n1. **Semantic Versioning (SemVer)** — `v{MAJOR}.{MINOR}.{PATCH}` standard\n   - When to bump each segment\n   - Pre-release tags (`v1.2.0-rc.1`) for release candidates if needed\n\n2. **Git Tag → Docker Image → Deployment flow**\n   - How git tags trigger versioned image builds\n   - Image tag matrix (already partially documented, consolidate here):\n     - `sha-{7char}` — every build, immutable\n     - `v1.2.3` — on git tag from main, immutable\n     - `{env}-latest` — mutable environment pointer\n\n3. **How to create a release** — step-by-step using `gh release create`\n   - Tag from `main` only\n   - GitHub Release with auto-generated changelog\n   - What triggers downstream (CI builds versioned image, workload repo updated)\n\n4. **Cross-reference** existing docs rather than duplicate:\n   - Link to branching-strategy.md for branch model\n   - Link to cicd-pipeline.md for pipeline stages\n   - Link to gitops-promotion.md for ArgoCD promotion\n\n## Files to modify\n\n1. […]
 
 > TOOL
@@ -6603,7 +6603,7 @@ id: toolu_01U7x2BEs8FXdnYc2fbPyfgk
 tool_result
 id: toolu_01U7x2BEs8FXdnYc2fbPyfgk
 ```
-File created successfully at: /home/nathan_booth/.claude/plans/cosmic-plotting-fox.md
+File created successfully at: /home/<USER>/.claude/plans/cosmic-plotting-fox.md
 ```
 
 > TOOL
@@ -6635,7 +6635,7 @@ id: toolu_01BRmYEgy6Ky5DtN2n4wpQEK
 ```
 User has approved your plan. You can now start coding. Start with updating your todo list if applicable
 
-Your plan has been saved to: /home/nathan_booth/.claude/plans/cosmic-plotting-fox.md
+Your plan has been saved to: /home/<USER>/.claude/plans/cosmic-plotting-fox.md
 You can refer back to it if needed during implementation.
 
 ## Approved Plan:
@@ -6837,7 +6837,7 @@ tool_use Read
 id: toolu_01BwRaUYhQcwTk7TE68pwMzk
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/branching-strategy.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/branching-strategy.md"
 }
 ```
 
@@ -6847,7 +6847,7 @@ tool_use Read
 id: toolu_01M6KtURTVYisbe7oQQktqNt
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/index.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/index.md"
 }
 ```
 
@@ -6857,7 +6857,7 @@ tool_use Read
 id: toolu_01SRbDxm1AsQwwbLYz1cmSSi
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/app-migration/cicd-pipeline.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/app-migration/cicd-pipeline.md",
   "offset": 210,
   "limit": 40
 }
@@ -6998,7 +6998,7 @@ tool_use Write
 id: toolu_01368txx66zX36scPC9VQcca
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/release-versioning.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/release-versioning.md",
   "content": "---\ntitle: \"Release & Versioning\"\nsidebar_label: \"Release & Versioning\"\nsidebar_position: 5\ndescription: \"Semantic versioning, release tagging, and Docker image tagging for KIX Platform applications\"\n---\n\n# Release & Versioning\n\nAll KIX Platform application and service repositories follow [Semantic Versioning 2.0.0](https://semver.org/) (SemVer). Git tags drive Docker image tags and production deployments — there is no separate release process beyond tagging.\n\n## Version Format\n\n```\nv{MAJOR}.{MINOR}.{PATCH}\n```\n\n| Segment | Bump when | Example |\n|---------|-----------|---------|\n| **MAJOR** | Breaking API or behavioural change — consumers must update | `v1.0.0` → `v2.0.0` |\n| **MINOR** | New feature, backward-compatible | `v1.0.0` → `v1.1.0` |\n| **PATCH** | Bug fix, backward-compatible | `v1.1.0` → `v1.1.1` |\n\n**Rules:**\n- Always prefix with `v` (e.g., `v1.2.3`, not `1.2.3`)\n- Start at `v1.0.0` for the first production release\n- Use `v0.x.x` only during initial development before first production deployment\n- Never reuse or overwrite a tag — tags are immutable\n\n## How Tags Flow Through the Pipeline\n\nA single git tag triggers the entire release chain — from image build through to production deployment.\n\n```\nDeveloper tags main          CI/CD Pipeline              ArgoCD\n─────────────────────       ─────────────────────       ──────────────────\ngit tag v1.2.0        ───▶  Build image            ───▶  Workload repo\ngit push origin v1.2.0      Push to Artifact Registry    values-prod.yaml\n                             Tags: v1.2.0, sha-abc1234   image.tag: v1.2.0\n                                                          Syncs to prod\n```\n\n### Image Tag Matrix\n\nEvery image in […]
 
 > TOOL
@@ -7006,7 +7006,7 @@ id: toolu_01368txx66zX36scPC9VQcca
 tool_result
 id: toolu_01368txx66zX36scPC9VQcca
 ```
-File created successfully at: /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/release-versioning.md
+File created successfully at: /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/release-versioning.md
 ```
 
 > TOOL
@@ -7064,7 +7064,7 @@ tool_use Read
 id: toolu_01MjNouzpLDWX4MVgPN5hj2D
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/sidebars.js"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/sidebars.js"
 }
 ```
 
@@ -7160,7 +7160,7 @@ id: toolu_017ZLQxLpeuTAp81mvmL5GYc
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/sidebars.js",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/sidebars.js",
   "old_string": "        'developer-guide/branching-strategy',\n        'developer-guide/building-use-cases',",
   "new_string": "        'developer-guide/branching-strategy',\n        'developer-guide/release-versioning',\n        'developer-guide/building-use-cases',"
 }
@@ -7171,7 +7171,7 @@ id: toolu_017ZLQxLpeuTAp81mvmL5GYc
 tool_result
 id: toolu_017ZLQxLpeuTAp81mvmL5GYc
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/sidebars.js has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/sidebars.js has been updated successfully.
 ```
 
 > TOOL
@@ -7230,7 +7230,7 @@ id: toolu_01W48TKLbv7pih1PQXrcSiE6
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/index.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/index.md",
   "old_string": "- **[Branching Strategy](./branching-strategy)** — Gitflow model and branch-to-environment mapping\n- **[Building Use Cases](./building-use-cases)** — Service patterns, development flow, and deployment",
   "new_string": "- **[Branching Strategy](./branching-strategy)** — Gitflow model and branch-to-environment mapping\n- **[Release & Versioning](./release-versioning)** — Semantic versioning, release tagging, and Docker image tags\n- **[Building Use Cases](./building-use-cases)** — Service patterns, development flow, and deployment"
 }
@@ -7241,7 +7241,7 @@ id: toolu_01W48TKLbv7pih1PQXrcSiE6
 tool_result
 id: toolu_01W48TKLbv7pih1PQXrcSiE6
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/index.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/index.md has been updated successfully.
 ```
 
 > TOOL
@@ -7300,7 +7300,7 @@ id: toolu_011v6RVg5D2c3AiApm3Xt75S
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/branching-strategy.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/branching-strategy.md",
   "old_string": "## Quick Reference",
   "new_string": "## Related Documentation\n\n- [Release & Versioning](/docs/developer-guide/release-versioning) — Semantic versioning rules, release tagging, Docker image tag matrix\n\n## Quick Reference"
 }
@@ -7311,7 +7311,7 @@ id: toolu_011v6RVg5D2c3AiApm3Xt75S
 tool_result
 id: toolu_011v6RVg5D2c3AiApm3Xt75S
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/branching-strategy.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/branching-strategy.md has been updated successfully.
 ```
 
 > TOOL
@@ -7384,7 +7384,7 @@ id: toolu_01BDPRidSjFuYRAs4X5SboXW
 > docusaurus build
 
 [INFO] [en] Creating an optimized production build...
-Warn: `blogDir` doesn't exist: "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/blog".
+Warn: `blogDir` doesn't exist: "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/blog".
 [webpackbar] ℹ Compiling Client
 [webpackbar] ℹ Compiling Server
 [webpackbar] ✔ Server: Compiled successfully in 3.84s
@@ -7422,7 +7422,7 @@ tool_use Bash
 id: toolu_01KyA87vDbgUsKHodsD9QaXe
 ```json
 {
-  "command": "git commit -m \"$(cat <<'EOF'\ndocs: add release and versioning guide\n\nConsolidates SemVer conventions, git tag workflow, Docker image tag\nmatrix, and release checklist into a single developer guide page.\nCross-links from branching strategy and developer guide index.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git commit -m \"$(cat <<'EOF'\ndocs: add release and versioning guide\n\nConsolidates SemVer conventions, git tag workflow, Docker image tag\nmatrix, and release checklist into a single developer guide page.\nCross-links from branching strategy and developer guide index.\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit changes"
 }
 ```
@@ -7640,7 +7640,7 @@ tool_use Read
 id: toolu_01X2XuZgupJGFCGfGsfMHCDi
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/release-versioning.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/release-versioning.md"
 }
 ```
 
@@ -7696,7 +7696,7 @@ tool_use Write
 id: toolu_01HAUYTUynJBQBWj4prHL4oR
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/release-versioning.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/release-versioning.md",
   "content": "---\ntitle: \"Release & Versioning\"\nsidebar_label: \"Release & Versioning\"\nsidebar_position: 5\ndescription: \"Semantic versioning, release tagging, and Docker image tagging for KIX Platform applications\"\n---\n\n# Release & Versioning\n\nAll KIX Platform application and service repositories follow [Semantic Versioning 2.0.0](https://semver.org/) (SemVer). Git tags drive Docker image tags and production deployments — there is no separate release process beyond tagging.\n\n## Version Format\n\n```\nv{MAJOR}.{MINOR}.{PATCH}\n```\n\n| Segment | Bump when | Example |\n|---------|-----------|---------|\n| **MAJOR** | Breaking API or behavioral change — consumers must update | `v1.0.0` → `v2.0.0` |\n| **MINOR** | New feature, backward-compatible | `v1.0.0` → `v1.1.0` |\n| **PATCH** | Bug fix, backward-compatible | `v1.1.0` → `v1.1.1` |\n\n**Rules:**\n- Always prefix with `v` (e.g., `v1.2.3`, not `1.2.3`)\n- Start at `v1.0.0` for the first production release\n- Use `v0.x.x` only during initial development before first production deployment\n- Never reuse or overwrite a tag — tags are immutable\n\n### First Release\n\nFor a new application reaching production for the first time:\n\n```bash\ngh release create v1.0.0 \\\n  --target main \\\n  --title \"v1.0.0\" \\\n  --notes \"Initial production release\"\n```\n\n## How Tags Flow Through the Pipeline\n\nA single git tag triggers the entire release chain — from image build through to production deployment.\n\n```\nDeveloper tags main          CI/CD Pipeline              ArgoCD\n─────────────────────       ─────────────────────       ──────────────────\ngit tag v1.2.0        ───▶  Build […]
 
 > TOOL
@@ -7704,7 +7704,7 @@ id: toolu_01HAUYTUynJBQBWj4prHL4oR
 tool_result
 id: toolu_01HAUYTUynJBQBWj4prHL4oR
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/release-versioning.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/release-versioning.md has been updated successfully.
 ```
 
 > TOOL
@@ -7771,7 +7771,7 @@ id: toolu_019XYjCQvrzAb9js9CRLwW8z
 > docusaurus build
 
 [INFO] [en] Creating an optimized production build...
-Warn: `blogDir` doesn't exist: "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/blog".
+Warn: `blogDir` doesn't exist: "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/blog".
 [webpackbar] ℹ Compiling Client
 [webpackbar] ℹ Compiling Server
 [webpackbar] ✔ Server: Compiled successfully in 2.52s
@@ -7912,7 +7912,7 @@ tool_use Read
 id: toolu_019FFAxZuwbg38ScdieqqnhT
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/release-versioning.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/release-versioning.md"
 }
 ```
 
@@ -7968,7 +7968,7 @@ id: toolu_01YP2ePpRUnnwXWNK1AKZMdC
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/release-versioning.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/release-versioning.md",
   "old_string": "## What Gets Versioned\n\n| Repository type | Versioned? | How |\n|----------------|-----------|-----|\n| **Application repos** (`kix-app-*`) | Yes | Git tags → Docker image tags |\n| **MCP server repos** (`kix-mcp-*`) | Yes | Git tags → Docker image tags |\n| **Workload repos** (`kix-workload-*`) | Yes | Git tags → ArgoCD `targetRevision` |\n| **Platform modules** (`kix-platform-modules`) | Yes | Git tags/refs in module `source` URLs |\n| **Infrastructure** (`kix-platform-infrastructure`) | No | Deployed via workflow dispatch from `main` |\n| **Documentation** (`kix-platform-docs`) | No | Deployed automatically on push to `main` |\n\n## Release Checklist",
   "new_string": "## Tagging Examples by Repository Type\n\nEach repository type follows the same SemVer format but the effect of a tag differs depending on the repo's role. Repos are versioned independently.\n\n| Repository type | Versioned? | Tag triggers |\n|----------------|-----------|-----|\n| **Application repos** (`kix-app-*`) | Yes | Docker image build and push to Artifact Registry |\n| **MCP server repos** (`kix-mcp-*`) | Yes | Docker image build and push to Artifact Registry |\n| **Workload repos** (`kix-workload-*`) | Yes | ArgoCD `targetRevision` update → production sync |\n| **Platform modules** (`kix-platform-modules`) | Yes | Immutable `ref=` for module consumers |\n| **Infrastructure** (`kix-platform-infrastructure`) | No | Deployed […]
 
@@ -7977,7 +7977,7 @@ id: toolu_01YP2ePpRUnnwXWNK1AKZMdC
 tool_result
 id: toolu_01YP2ePpRUnnwXWNK1AKZMdC
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/release-versioning.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/release-versioning.md has been updated successfully.
 ```
 
 > TOOL
@@ -8000,7 +8000,7 @@ id: toolu_01TGi3CzkTPQLcTAzzw8cV6P
 > docusaurus build
 
 [INFO] [en] Creating an optimized production build...
-Warn: `blogDir` doesn't exist: "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/blog".
+Warn: `blogDir` doesn't exist: "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/blog".
 [webpackbar] ℹ Compiling Client
 [webpackbar] ℹ Compiling Server
 [webpackbar] ✔ Server: Compiled successfully in 3.58s
@@ -8080,7 +8080,7 @@ tool_use Read
 id: toolu_01LsvYR2vK59ux44x5132L4S
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/release-versioning.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/release-versioning.md",
   "offset": 84,
   "limit": 50
 }
@@ -8194,7 +8194,7 @@ tool_use Read
 id: toolu_017WP6jwcDX5xvKCzkPjcj5U
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/release-versioning.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/release-versioning.md"
 }
 ```
 
@@ -8254,7 +8254,7 @@ id: toolu_01H91hgxMciG8iDaFnAPc77R
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/release-versioning.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/release-versioning.md",
   "old_string": "## Creating a Release\n\n### Prerequisites\n\n- Code has been promoted through `develop` → `main` and passed QA\n- You have push access to the repository\n- The `gh` CLI is installed and authenticated\n\n### Step-by-step\n\n**1. Ensure main is up to date:**\n\n```bash\ngit checkout main\ngit pull origin main\n```\n\n**2. Determine the version number:**\n\nCheck the latest tag to decide the next version:\n\n```bash\ngit tag --sort=-v:refname | head -5\n```\n\nApply SemVer rules — if the last release was `v1.1.0`:\n- Bug fix only → `v1.1.1`\n- New feature → `v1.2.0`\n- Breaking change → `v2.0.0`\n\n**3. Create the tag and GitHub Release:**\n\n```bash\ngh release create v1.2.0 \\\n  --target main \\\n  --title \"v1.2.0\" \\\n  --generate-notes\n```\n\nThis creates both the git tag and a GitHub Release with auto-generated changelog from merged PRs since the last release.\n\n**4. Verify the release pipeline:**\n\n- Check GitHub Actions — the CI pipeline should trigger on the `v*` tag\n- Confirm the versioned image appears in Artifact Registry\n- Check the workload repo — the promotion workflow updates `values-prod.yaml` with the new version tag, triggering ArgoCD sync to prod\n\n### Hotfix Releases\n\nFor urgent production fixes, follow the [hotfix flow](/docs/developer-guide/branching-strategy#hotfix-branches) and tag a patch release:\n\n```bash\n# After hotfix PR is merged to main and verified in QA\ngh release create […]
 
 > TOOL
@@ -8262,7 +8262,7 @@ id: toolu_01H91hgxMciG8iDaFnAPc77R
 tool_result
 id: toolu_01H91hgxMciG8iDaFnAPc77R
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/release-versioning.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/release-versioning.md has been updated successfully.
 ```
 
 > TOOL
@@ -8283,7 +8283,7 @@ tool_result
 id: toolu_0197hnZJCBoBDP1B1uazMHmK
 ```
 [INFO] [en] Creating an optimized production build...
-Warn: `blogDir` doesn't exist: "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/blog".
+Warn: `blogDir` doesn't exist: "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/blog".
 [webpackbar] ℹ Compiling Client
 [webpackbar] ℹ Compiling Server
 [webpackbar] ✔ Server: Compiled successfully in 2.46s
@@ -8554,7 +8554,7 @@ tool_use Read
 id: toolu_017LKteorx9oFFi2TMaMfuyW
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/release-versioning.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/release-versioning.md"
 }
 ```
 
@@ -8613,7 +8613,7 @@ tool_use Read
 id: toolu_01LpSgGkizJJDo9ha7Q61gLz
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/app-migration/gitops-promotion.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/app-migration/gitops-promotion.md",
   "offset": 1,
   "limit": 80
 }
@@ -8677,7 +8677,7 @@ id: toolu_0188mUyhp1qfERgaJP35ESo1
 ```json
 {
   "pattern": "promotion|image.tag|deploy.yaml|dispatch",
-  "path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/app-migration/gitops-promotion.md",
+  "path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/app-migration/gitops-promotion.md",
   "output_mode": "content",
   "-n": true
 }
@@ -8708,7 +8708,7 @@ tool_use Read
 id: toolu_01XoZe3fp1dJLm1Vuy3MGxSA
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/app-migration/gitops-promotion.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/app-migration/gitops-promotion.md",
   "offset": 140,
   "limit": 50
 }
@@ -8769,7 +8769,7 @@ tool_use Write
 id: toolu_019oWB6MpB676pgSSqUDHWRU
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/release-versioning.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/release-versioning.md",
   "content": "---\ntitle: \"Release & Versioning\"\nsidebar_label: \"Release & Versioning\"\nsidebar_position: 5\ndescription: \"Semantic versioning, release tagging, and Docker image tagging for KIX Platform applications\"\n---\n\n# Release & Versioning\n\nAll KIX Platform application and service repositories follow [Semantic Versioning 2.0.0](https://semver.org/) (SemVer). Git tags drive Docker image tags and production deployments — there is no separate release process beyond tagging.\n\n## Version Format\n\n```\nv{MAJOR}.{MINOR}.{PATCH}\n```\n\n| Segment | Bump when | Example |\n|---------|-----------|---------|\n| **MAJOR** | Breaking API or behavioral change — consumers must update | `v1.0.0` → `v2.0.0` |\n| **MINOR** | New feature, backward-compatible | `v1.0.0` → `v1.1.0` |\n| **PATCH** | Bug fix, backward-compatible | `v1.1.0` → `v1.1.1` |\n\n**Rules:**\n- Always prefix with `v` (e.g., `v1.2.3`, not `1.2.3`)\n- Start at `v1.0.0` for the first production release\n- Use `v0.x.x` only during initial development before first production deployment\n- Never reuse or overwrite a tag — tags are immutable\n\n### First Release\n\nFor a new application reaching production for the first time:\n\n```bash\ngh release create v1.0.0 \\\n  --target main \\\n  --title \"v1.0.0\" \\\n  --notes \"Initial production release\"\n```\n\n## How Tags Flow Through the Pipeline\n\nA single git tag triggers the entire release chain — from image build through to production deployment.\n\n```\nDeveloper tags main          CI/CD Pipeline              ArgoCD\n─────────────────────       ─────────────────────       ──────────────────\ngit tag v1.2.0        ───▶  Build […]
 
 > TOOL
@@ -8777,7 +8777,7 @@ id: toolu_019oWB6MpB676pgSSqUDHWRU
 tool_result
 id: toolu_019oWB6MpB676pgSSqUDHWRU
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/release-versioning.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/release-versioning.md has been updated successfully.
 ```
 
 > TOOL
@@ -8798,7 +8798,7 @@ tool_result
 id: toolu_01LQE88ZqFTrMNCPoHJMRfzf
 ```
 [INFO] [en] Creating an optimized production build...
-Warn: `blogDir` doesn't exist: "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/blog".
+Warn: `blogDir` doesn't exist: "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/blog".
 [webpackbar] ℹ Compiling Client
 [webpackbar] ℹ Compiling Server
 [webpackbar] ✔ Server: Compiled successfully in 3.65s
@@ -9143,7 +9143,7 @@ id: toolu_01Rp3wWxBqrrKAGe3QaCDRnB
 tool_result
 id: toolu_01P9ZDTvGraxsiUU2dJz99ms
 ```
-kix-platform-docs@2.0.0 /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs
+kix-platform-docs@2.0.0 /home/<USER>/code/konecta-ix-platform/kix-platform-docs
 ├── @docusaurus/core@3.9.2
 └─┬ @docusaurus/preset-classic@3.9.2
 ```
@@ -9224,7 +9224,7 @@ id: toolu_01Wdd6jjD24KLH7zX4gQCnro
 npm warn audit 503 Service Unavailable - POST https://registry.npmjs.org/-/npm/v1/security/advisories/bulk - Service Unavailable
 { error: 'Service Unavailable' }
 npm error audit endpoint returned an error
-npm error A complete log of this run can be found in: /home/nathan_booth/.npm/_logs/2026-02-20T08_23_52_835Z-debug-0.log
+npm error A complete log of this run can be found in: /home/<USER>/.npm/_logs/2026-02-20T08_23_52_835Z-debug-0.log
 Command running in background with ID: b8ef82d. Output is being written to: /tmp/claude-1000/-home-nathan-booth-code-konecta-ix-platform-kix-platform-docs/tasks/b8ef82d.output
 ```
 
@@ -9238,7 +9238,7 @@ tool_use Read
 id: toolu_0185dzV99PLewLtCPMpHrdBu
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/.github/workflows/deploy.yml"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/.github/workflows/deploy.yml"
 }
 ```
 
@@ -9248,7 +9248,7 @@ tool_use Read
 id: toolu_01WvXXJ2dYN4YQKzEReUUvxr
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/package.json"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/package.json"
 }
 ```
 
@@ -9461,7 +9461,7 @@ id: toolu_01RbyypoyLsosx2SfCZfGB54
 tool_result
 id: toolu_01RbyypoyLsosx2SfCZfGB54
 ```
-kix-platform-docs@2.0.0 /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs
+kix-platform-docs@2.0.0 /home/<USER>/code/konecta-ix-platform/kix-platform-docs
 └── @easyops-cn/docusaurus-search-local@0.55.0
 ```
 
@@ -9476,7 +9476,7 @@ id: toolu_01DbY3Vg3AT3n5MDHPFsafgD
 ```json
 {
   "pattern": "docusaurus-search-local",
-  "path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docusaurus.config.js",
+  "path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docusaurus.config.js",
   "output_mode": "content",
   "context": 5
 }
@@ -9588,7 +9588,7 @@ tool_use Read
 id: toolu_016iVHoUfEQmZCr1TBmoo2cD
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/package.json"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/package.json"
 }
 ```
 
@@ -9653,7 +9653,7 @@ id: toolu_01Q3czsipZxJmKm7EnikKGoB
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/package.json",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/package.json",
   "old_string": "    \"write-translations\": \"docusaurus write-translations\",\n    \"write-heading-ids\": \"docusaurus write-heading-ids\"",
   "new_string": "    \"write-translations\": \"docusaurus write-translations\",\n    \"write-heading-ids\": \"docusaurus write-heading-ids\",\n    \"format:check\": \"prettier --check \\\"docs/**/*.md\\\" \\\"src/**/*.{js,jsx,css}\\\" \\\"*.{js,json,md}\\\"\",\n    \"format\": \"prettier --write \\\"docs/**/*.md\\\" \\\"src/**/*.{js,jsx,css}\\\" \\\"*.{js,json,md}\\\"\",\n    \"spellcheck\": \"cspell \\\"docs/**/*.md\\\" --no-progress\""
 }
@@ -9664,7 +9664,7 @@ id: toolu_01Q3czsipZxJmKm7EnikKGoB
 tool_result
 id: toolu_01Q3czsipZxJmKm7EnikKGoB
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/package.json has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/package.json has been updated successfully.
 ```
 
 > AGENT
@@ -9677,7 +9677,7 @@ tool_use Write
 id: toolu_01Tfsm4y3cev5tbCMo8svns2
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/cspell.json",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/cspell.json",
   "content": "{\n  \"version\": \"0.2\",\n  \"language\": \"en-GB\",\n  \"words\": [\n    \"Konecta\",\n    \"konecta\",\n    \"argocd\",\n    \"argo\",\n    \"backstage\",\n    \"buildx\",\n    \"cicd\",\n    \"cloudsql\",\n    \"cosign\",\n    \"crewai\",\n    \"cspell\",\n    \"dast\",\n    \"devops\",\n    \"devsecops\",\n    \"docusaurus\",\n    \"elevenlabs\",\n    \"gitflow\",\n    \"gitops\",\n    \"grafana\",\n    \"grpc\",\n    \"hardcoded\",\n    \"helmfile\",\n    \"hotfix\",\n    \"iqportal\",\n    \"istio\",\n    \"kustomize\",\n    \"litellm\",\n    \"memorystore\",\n    \"namespace\",\n    \"namespaces\",\n    \"oidc\",\n    \"onboarded\",\n    \"prereq\",\n    \"prereqs\",\n    \"pubsub\",\n    \"qdrant\",\n    \"runbook\",\n    \"semver\",\n    \"struct\",\n    \"techdocs\",\n    \"trivy\",\n    \"versioned\",\n    \"webhooks\",\n    \"workload\",\n    \"workloads\"\n  ],\n  \"ignorePaths\": [\n    \"node_modules\",\n    \"build\",\n    \".docusaurus\",\n    \"mcp-server\",\n    \"static\",\n    \"package.json\",\n    \"package-lock.json\",\n    \"archive\"\n  ],\n  \"ignoreRegExpList\": [\n    \"/```[\\\\s\\\\S]*?```/g\",\n    \"`[^`]+`\",\n    \"\\\\[.*?\\\\]\\\\(.*?\\\\)\",\n    \"https?://[^\\\\s)>]+\",\n    \"sha-[a-f0-9]+\",\n    \"v\\\\d+\\\\.\\\\d+\\\\.\\\\d+\"\n  ]\n}\n"
 }
 ```
@@ -9687,7 +9687,7 @@ id: toolu_01Tfsm4y3cev5tbCMo8svns2
 tool_result
 id: toolu_01Tfsm4y3cev5tbCMo8svns2
 ```
-File created successfully at: /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/cspell.json
+File created successfully at: /home/<USER>/code/konecta-ix-platform/kix-platform-docs/cspell.json
 ```
 
 > AGENT
@@ -9700,7 +9700,7 @@ tool_use Write
 id: toolu_01KgqQoVSFbyk1N8RSbsftSH
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/.prettierrc",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/.prettierrc",
   "content": "{\n  \"semi\": true,\n  \"singleQuote\": true,\n  \"trailingComma\": \"all\",\n  \"tabWidth\": 2,\n  \"printWidth\": 100,\n  \"proseWrap\": \"preserve\",\n  \"overrides\": [\n    {\n      \"files\": \"*.md\",\n      \"options\": {\n        \"proseWrap\": \"preserve\",\n        \"tabWidth\": 2\n      }\n    }\n  ]\n}\n"
 }
 ```
@@ -9710,7 +9710,7 @@ id: toolu_01KgqQoVSFbyk1N8RSbsftSH
 tool_result
 id: toolu_01KgqQoVSFbyk1N8RSbsftSH
 ```
-File created successfully at: /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/.prettierrc
+File created successfully at: /home/<USER>/code/konecta-ix-platform/kix-platform-docs/.prettierrc
 ```
 
 > TOOL
@@ -9719,7 +9719,7 @@ tool_use Write
 id: toolu_01YZEfWZbz4ALnboJT7m9t1S
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/.prettierignore",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/.prettierignore",
   "content": "node_modules\nbuild\n.docusaurus\nmcp-server\nstatic\npackage-lock.json\narchive\n"
 }
 ```
@@ -9729,7 +9729,7 @@ id: toolu_01YZEfWZbz4ALnboJT7m9t1S
 tool_result
 id: toolu_01YZEfWZbz4ALnboJT7m9t1S
 ```
-File created successfully at: /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/.prettierignore
+File created successfully at: /home/<USER>/code/konecta-ix-platform/kix-platform-docs/.prettierignore
 ```
 
 > AGENT
@@ -9742,7 +9742,7 @@ tool_use Bash
 id: toolu_01Mc71zoGGNWN3UTmAePbj6X
 ```json
 {
-  "command": "ls /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/.github/workflows/",
+  "command": "ls /home/<USER>/code/konecta-ix-platform/kix-platform-docs/.github/workflows/",
   "description": "List existing workflows"
 }
 ```
@@ -9761,7 +9761,7 @@ tool_use Write
 id: toolu_018XGMq54qBBkzWFMQGoSXv5
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/.github/workflows/ci.yml",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/.github/workflows/ci.yml",
   "content": "name: CI\n\non:\n  push:\n    branches:\n      - develop\n  pull_request:\n    branches:\n      - develop\n      - main\n\npermissions:\n  contents: read\n\nconcurrency:\n  group: ci-${{ github.ref }}\n  cancel-in-progress: true\n\njobs:\n  checks:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v4\n\n      - name: Setup Node.js\n        uses: actions/setup-node@v4\n        with:\n          node-version: 20\n          cache: npm\n\n      - name: Install dependencies\n        run: npm ci\n\n      - name: Check for outdated packages\n        run: npm outdated || true\n\n      - name: Build Docusaurus site\n        run: npm run build\n\n      - name: Build MCP server\n        working-directory: mcp-server\n        run: |\n          npm ci\n          npm run build\n\n      - name: Format check\n        run: npm run format:check\n\n      - name: Spell check\n        run: npm run spellcheck\n"
 }
 ```
@@ -9771,7 +9771,7 @@ id: toolu_018XGMq54qBBkzWFMQGoSXv5
 tool_result
 id: toolu_018XGMq54qBBkzWFMQGoSXv5
 ```
-File created successfully at: /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/.github/workflows/ci.yml
+File created successfully at: /home/<USER>/code/konecta-ix-platform/kix-platform-docs/.github/workflows/ci.yml
 ```
 
 > TOOL
@@ -9864,7 +9864,7 @@ tool_result
 id: toolu_01794kW8X5U3tdAfCgoVWrjJ
 ```
 [INFO] [en] Creating an optimized production build...
-Warn: `blogDir` doesn't exist: "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/blog".
+Warn: `blogDir` doesn't exist: "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/blog".
 [webpackbar] ℹ Compiling Client
 [webpackbar] ℹ Compiling Server
 [webpackbar] ✔ Server: Compiled successfully in 20.42s
@@ -10071,7 +10071,7 @@ tool_use Read
 id: toolu_01TiEX9gQ5KvJL1gXvDZXJET
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/cspell.json"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/cspell.json"
 }
 ```
 
@@ -10158,7 +10158,7 @@ tool_use Write
 id: toolu_016xoqkCBQRzu9jfXzY3cE9H
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/cspell.json",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/cspell.json",
   "content": "{\n  \"version\": \"0.2\",\n  \"language\": \"en-GB\",\n  \"words\": [\n    \"Konecta\",\n    \"konecta\",\n    \"agentic\",\n    \"aiplatform\",\n    \"argocd\",\n    \"armor\",\n    \"artifactregistry\",\n    \"authkit\",\n    \"autoresize\",\n    \"backstage\",\n    \"buildkit\",\n    \"buildx\",\n    \"channelhub\",\n    \"cicd\",\n    \"cloudtasks\",\n    \"cloudsql\",\n    \"clustersecretstore\",\n    \"cosign\",\n    \"crds\",\n    \"crewai\",\n    \"cspell\",\n    \"dast\",\n    \"devops\",\n    \"devsecops\",\n    \"distroless\",\n    \"docingestion\",\n    \"docusaurus\",\n    \"elevenlabs\",\n    \"externalsecret\",\n    \"gcpsm\",\n    \"gitflow\",\n    \"gitops\",\n    \"googledomains\",\n    \"googledrive\",\n    \"googlemaps\",\n    \"grafana\",\n    \"grpc\",\n    \"handoff\",\n    \"handoffs\",\n    \"hardcoded\",\n    \"healthz\",\n    \"helmfile\",\n    \"hmac\",\n    \"hotfix\",\n    \"hrfraud\",\n    \"hrportal\",\n    \"httproute\",\n    \"iqportal\",\n    \"iqplatform\",\n    \"istio\",\n    \"kickoff\",\n    \"konghq\",\n    \"kustomize\",\n    \"kyverno\",\n    \"litellm\",\n    \"memorystore\",\n    \"mkdocs\",\n    \"namespace\",\n    \"namespaces\",\n    \"networkpolicies\",\n    \"nexthink\",\n    \"oidc\",\n    \"omnichannel\",\n    \"onboarded\",\n    \"passwordless\",\n    \"pipelining\",\n    \"portfolioguru\",\n    \"preemptible\",\n    \"prereq\",\n    \"prereqs\",\n    \"pubsub\",\n    \"qdrant\",\n    \"ragengine\",\n    \"readyz\",\n    \"recordsets\",\n    \"resourcemanager\",\n    \"roadiehq\",\n    \"runbook\",\n    \"secretmanager\",\n    \"semver\",\n    \"serviceaccount\",\n    \"sigstore\",\n    \"siloed\",\n    \"sonarqube\",\n    \"struct\",\n    \"supernet\",\n    \"techdocs\",\n    \"terratest\",\n    \"tfsec\",\n    \"tfstate\",\n    \"tfvars\",\n    \"trivy\",\n    \"usecase\",\n    \"versioned\",\n    \"webcrawler\",\n    \"webhooks\",\n    \"workload\",\n    \"workloads\"\n  ],\n  \"ignorePaths\": [\n    \"node_modules\",\n    \"build\",\n    \".docusaurus\",\n    \"mcp-server\",\n    \"static\",\n    \"package.json\",\n    \"package-lock.json\",\n    \"archive\"\n  ],\n  \"ignoreRegExpList\": [\n    \"/```[\\\\s\\\\S]*?```/g\",\n    \"`[^`]+`\",\n    \"\\\\[.*?\\\\]\\\\(.*?\\\\)\",\n    \"https?://[^\\\\s)>]+\",\n    \"sha-[a-f0-9]+\",\n    \"v\\\\d+\\\\.\\\\d+\\\\.\\\\d+\",\n    \"kix-[a-z-]+\"\n  ],\n  \"flagWords\": [],\n  \"allowCompoundWords\": true\n}\n"
 }
 ```
@@ -10168,7 +10168,7 @@ id: toolu_016xoqkCBQRzu9jfXzY3cE9H
 tool_result
 id: toolu_016xoqkCBQRzu9jfXzY3cE9H
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/cspell.json has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/cspell.json has been updated successfully.
 ```
 
 > AGENT
@@ -10272,7 +10272,7 @@ id: toolu_01X4WBLvxo5ub4yGBTzwN4tD
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/cspell.json",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/cspell.json",
   "old_string": "  \"flagWords\": [],\n  \"allowCompoundWords\": true",
   "new_string": "  \"flagWords\": [],\n  \"allowCompoundWords\": true,\n  \"overrides\": [\n    {\n      \"filename\": \"docs/**/*.md\",\n      \"words\": [\n        \"BAOE\",\n        \"CISO\",\n        \"CMEK\",\n        \"FDCPA\",\n        \"HITL\",\n        \"MYAPP\",\n        \"NSEC\",\n        \"PITR\",\n        \"SMEMBERS\",\n        \"SSCAN\",\n        \"Syft\",\n        \"TCPA\",\n        \"VARS\",\n        \"WORKOS\",\n        \"mgmt\",\n        \"testiq\",\n        \"Nearline\"\n      ]\n    }\n  ]"
 }
@@ -10283,7 +10283,7 @@ id: toolu_01X4WBLvxo5ub4yGBTzwN4tD
 tool_result
 id: toolu_01X4WBLvxo5ub4yGBTzwN4tD
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/cspell.json has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/cspell.json has been updated successfully.
 ```
 
 > AGENT
@@ -10297,7 +10297,7 @@ id: toolu_01TN716b6hnJLEhsh7FPz1Ph
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/cspell.json",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/cspell.json",
   "old_string": "    \"kix-[a-z-]+\"",
   "new_string": "    \"kix-[a-z-]+\",\n    \"\\\\|\\\\s*\\\\*\\\\*[A-Z][a-z]+\\\\s+[A-Z][a-z]+\\\\*\\\\*\""
 }
@@ -10308,7 +10308,7 @@ id: toolu_01TN716b6hnJLEhsh7FPz1Ph
 tool_result
 id: toolu_01TN716b6hnJLEhsh7FPz1Ph
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/cspell.json has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/cspell.json has been updated successfully.
 ```
 
 > AGENT
@@ -10322,7 +10322,7 @@ id: toolu_01F1U9AK4M2q32SfBt7F6VaS
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/cspell.json",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/cspell.json",
   "old_string": "        \"Nearline\"",
   "new_string": "        \"Nearline\",\n        \"Adil\",\n        \"Benrachi\",\n        \"Meghant\",\n        \"Mischa\",\n        \"Oijen\",\n        \"Samia\",\n        \"Tahiri\",\n        \"Poppins\",\n        \"architectured\""
 }
@@ -10333,7 +10333,7 @@ id: toolu_01F1U9AK4M2q32SfBt7F6VaS
 tool_result
 id: toolu_01F1U9AK4M2q32SfBt7F6VaS
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/cspell.json has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/cspell.json has been updated successfully.
 ```
 
 > TOOL
@@ -10392,7 +10392,7 @@ id: toolu_01BYCSMk5dxtiUfyabP9oBSd
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/cspell.json",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/cspell.json",
   "old_string": "        \"architectured\"",
   "new_string": "        \"architectured\",\n        \"Prob\",\n        \"Defense\""
 }
@@ -10403,7 +10403,7 @@ id: toolu_01BYCSMk5dxtiUfyabP9oBSd
 tool_result
 id: toolu_01BYCSMk5dxtiUfyabP9oBSd
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/cspell.json has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/cspell.json has been updated successfully.
 ```
 
 > AGENT
@@ -10417,7 +10417,7 @@ id: toolu_0154qwanRdYn4mGYgkHKFFJU
 ```json
 {
   "pattern": "fied\\b",
-  "path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/platform-overview.md",
+  "path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/platform-overview.md",
   "output_mode": "content",
   "context": 1
 }
@@ -10430,7 +10430,7 @@ id: toolu_01Tm9yW6R4KnzyDMS5aX8tzP
 ```json
 {
   "pattern": "fied\\b",
-  "path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/reference/glossary.md",
+  "path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/reference/glossary.md",
   "output_mode": "content",
   "context": 1
 }
@@ -10471,7 +10471,7 @@ id: toolu_017MSyXxpb4vajqSb88nnccn
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/cspell.json",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/cspell.json",
   "old_string": "        \"Prob\",\n        \"Defense\"",
   "new_string": "        \"Prob\",\n        \"Defense\",\n        \"fied\""
 }
@@ -10482,7 +10482,7 @@ id: toolu_017MSyXxpb4vajqSb88nnccn
 tool_result
 id: toolu_017MSyXxpb4vajqSb88nnccn
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/cspell.json has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/cspell.json has been updated successfully.
 ```
 
 > AGENT
@@ -10850,7 +10850,7 @@ Process on port 3005 killed
 > docusaurus start --port 3005 --port 3005
 
 [INFO] Starting the development server...
-Warn: `blogDir` doesn't exist: "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/blog".
+Warn: `blogDir` doesn't exist: "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/blog".
 [SUCCESS] Docusaurus website is running at: http://localhost:3005/
 [webpackbar] ℹ Compiling Client
 ```
@@ -10904,7 +10904,7 @@ tool_use Bash
 id: toolu_0139vtGRqbb8ubj4MVouZAMV
 ```json
 {
-  "command": "git add .github/workflows/ci.yml cspell.json .prettierrc .prettierignore package.json package-lock.json && git commit -m \"$(cat <<'EOF'\nchore: add CI workflow, spell check, and formatter\n\n- Add CI workflow (ci.yml) running on develop push and PRs: build,\n  format check, spell check, MCP server build\n- Upgrade docusaurus-search-local from 0.46.1 to 0.55.0\n- Add cspell for spell checking with platform dictionary\n- Add prettier for consistent formatting\n- Add npm scripts: format, format:check, spellcheck\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add .github/workflows/ci.yml cspell.json .prettierrc .prettierignore package.json package-lock.json && git commit -m \"$(cat <<'EOF'\nchore: add CI workflow, spell check, and formatter\n\n- Add CI workflow (ci.yml) running on develop push and PRs: build,\n  format check, spell check, MCP server build\n- Upgrade docusaurus-search-local from 0.46.1 to 0.55.0\n- Add cspell for spell checking with platform dictionary\n- Add prettier for consistent formatting\n- Add npm scripts: format, format:check, spellcheck\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit tooling and CI changes"
 }
 ```
@@ -10932,7 +10932,7 @@ tool_use Bash
 id: toolu_015J5SdmcZHNYjx9YPMPHzyf
 ```json
 {
-  "command": "git add -A && git commit -m \"$(cat <<'EOF'\nstyle: apply prettier formatting baseline across all docs\n\nInitial formatting pass to establish consistent style. No content\nchanges — whitespace and markdown formatting only.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add -A && git commit -m \"$(cat <<'EOF'\nstyle: apply prettier formatting baseline across all docs\n\nInitial formatting pass to establish consistent style. No content\nchanges — whitespace and markdown formatting only.\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit formatting baseline"
 }
 ```
@@ -11066,7 +11066,7 @@ tool_use Read
 id: toolu_01FMJCPTzcvHEUaEujfHumCn
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/.github/workflows/ci.yml"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/.github/workflows/ci.yml"
 }
 ```
 
@@ -11169,7 +11169,7 @@ tool_use Write
 id: toolu_01ARsxc37v45Z1D3WrfBwvX8
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/.github/workflows/ci.yml",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/.github/workflows/ci.yml",
   "content": "name: Build Verification\n\non:\n  push:\n    branches:\n      - develop\n  pull_request:\n    branches:\n      - develop\n      - main\n\npermissions:\n  contents: read\n\nconcurrency:\n  group: ci-${{ github.ref }}\n  cancel-in-progress: true\n\njobs:\n  build-verification:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v4\n\n      - name: Setup Node.js\n        uses: actions/setup-node@v4\n        with:\n          node-version: 20\n          cache: npm\n\n      - name: Install dependencies\n        run: npm ci\n\n      - name: Check for outdated packages\n        run: |\n          echo \"## Outdated Packages\" >> $GITHUB_STEP_SUMMARY\n          if npm outdated 2>/dev/null; then\n            echo \"All packages are up to date.\" >> $GITHUB_STEP_SUMMARY\n          else\n            echo '```' >> $GITHUB_STEP_SUMMARY\n            npm outdated 2>/dev/null >> $GITHUB_STEP_SUMMARY || true\n            echo '```' >> $GITHUB_STEP_SUMMARY\n          fi\n\n      - name: Build Docusaurus site\n        run: npm run build\n\n      - name: Build MCP server\n        working-directory: mcp-server\n        run: |\n          npm ci\n          npm run build\n\n      - name: Format check\n        id: format\n        run: |\n          npm run format:check 2>&1 | tee /tmp/format-output.txt\n        continue-on-error: true\n\n      - name: Spell check\n        id: spellcheck\n        run: |\n          npm run spellcheck 2>&1 | tee /tmp/spellcheck-output.txt\n        continue-on-error: true\n\n      - name: Generate report\n        if: always()\n        run: |\n          echo \"## Build Verification Report\" >> $GITHUB_STEP_SUMMARY\n          echo \"\" >> $GITHUB_STEP_SUMMARY\n\n          echo \"| Check | Status |\" >> $GITHUB_STEP_SUMMARY\n          echo \"|-------|--------|\" >> $GITHUB_STEP_SUMMARY\n          echo \"| Docusaurus build | :white_check_mark: Passed |\" >> $GITHUB_STEP_SUMMARY\n […]
 
 > TOOL
@@ -11177,7 +11177,7 @@ id: toolu_01ARsxc37v45Z1D3WrfBwvX8
 tool_result
 id: toolu_01ARsxc37v45Z1D3WrfBwvX8
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/.github/workflows/ci.yml has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/.github/workflows/ci.yml has been updated successfully.
 ```
 
 > AGENT
@@ -11261,7 +11261,7 @@ tool_use Read
 id: toolu_014az9NyTrhLmHZpUvEC9hjm
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/.github/workflows/ci.yml"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/.github/workflows/ci.yml"
 }
 ```
 
@@ -11342,7 +11342,7 @@ tool_use Write
 id: toolu_01DKT3C1YBwWZyBvyvsHWrqb
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/.github/workflows/ci.yml",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/.github/workflows/ci.yml",
   "content": "name: Build Verification\n\non:\n  push:\n    branches:\n      - develop\n  pull_request:\n    branches:\n      - develop\n      - main\n\npermissions:\n  contents: write\n\nconcurrency:\n  group: ci-${{ github.ref }}\n  cancel-in-progress: true\n\njobs:\n  build-verification:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v4\n        with:\n          ref: ${{ github.head_ref || github.ref_name }}\n          token: ${{ secrets.GITHUB_TOKEN }}\n\n      - name: Setup Node.js\n        uses: actions/setup-node@v4\n        with:\n          node-version: 20\n          cache: npm\n\n      - name: Install dependencies\n        run: npm ci\n\n      - name: Check for outdated packages\n        run: |\n          echo \"## Outdated Packages\" >> $GITHUB_STEP_SUMMARY\n          if npm outdated 2>/dev/null; then\n            echo \"All packages are up to date.\" >> $GITHUB_STEP_SUMMARY\n          else\n            echo '```' >> $GITHUB_STEP_SUMMARY\n            npm outdated 2>/dev/null >> $GITHUB_STEP_SUMMARY || true\n            echo '```' >> $GITHUB_STEP_SUMMARY\n          fi\n\n      - name: Build Docusaurus site\n        run: npm run build\n\n      - name: Build MCP server\n        working-directory: mcp-server\n        run: |\n          npm ci\n          npm run build\n\n      - name: Autofix formatting\n        id: format-fix\n        run: |\n          # Capture files that need formatting before fixing\n          npx prettier --check \"docs/**/*.md\" \"src/**/*.{js,jsx,css}\" \"*.js\" \"*.json\" 2>&1 | tee /tmp/format-before.txt || true\n\n          # Count files needing fixes\n          BEFORE_COUNT=$(grep -c \"^\\[warn\\]\" /tmp/format-before.txt 2>/dev/null || echo \"0\")\n\n          if [ \"$BEFORE_COUNT\" -gt 0 ]; then\n            npx prettier --write \"docs/**/*.md\" \"src/**/*.{js,jsx,css}\" \"*.js\" \"*.json\" 2>/dev/null || true\n            echo \"fixed_count=$BEFORE_COUNT\" >> $GITHUB_OUTPUT\n            echo […]
 
 > TOOL
@@ -11350,7 +11350,7 @@ id: toolu_01DKT3C1YBwWZyBvyvsHWrqb
 tool_result
 id: toolu_01DKT3C1YBwWZyBvyvsHWrqb
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/.github/workflows/ci.yml has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/.github/workflows/ci.yml has been updated successfully.
 ```
 
 > AGENT
@@ -11443,7 +11443,7 @@ tool_use Bash
 id: toolu_01UwpNVs5grXLh1En8Wq27Yj
 ```json
 {
-  "command": "git add .github/workflows/ci.yml && git commit -m \"$(cat <<'EOF'\nci: add autofix and report to build verification workflow\n\n- Rename workflow to Build Verification\n- Auto-fix formatting with prettier --write and commit back\n- Auto-add unknown spelling words to cspell.json dictionary\n- Generate GitHub Step Summary report showing all findings\n- Report includes expandable details for fixes applied\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add .github/workflows/ci.yml && git commit -m \"$(cat <<'EOF'\nci: add autofix and report to build verification workflow\n\n- Rename workflow to Build Verification\n- Auto-fix formatting with prettier --write and commit back\n- Auto-add unknown spelling words to cspell.json dictionary\n- Generate GitHub Step Summary report showing all findings\n- Report includes expandable details for fixes applied\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit CI workflow changes"
 }
 ```
@@ -11574,7 +11574,7 @@ tool_use Read
 id: toolu_01EMkSzAQ9CKVBRUqSzt6NuW
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/.github/workflows/ci.yml",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/.github/workflows/ci.yml",
   "limit": 10
 }
 ```
@@ -11603,7 +11603,7 @@ id: toolu_0117v8qR6HF2dnPBRFVqtjJB
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/.github/workflows/ci.yml",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/.github/workflows/ci.yml",
   "old_string": "on:\n  push:\n    branches:\n      - develop\n  pull_request:\n    branches:\n      - develop\n      - main",
   "new_string": "on:\n  push:\n    branches:\n      - develop\n  pull_request:\n    branches:\n      - develop"
 }
@@ -11614,7 +11614,7 @@ id: toolu_0117v8qR6HF2dnPBRFVqtjJB
 tool_result
 id: toolu_0117v8qR6HF2dnPBRFVqtjJB
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/.github/workflows/ci.yml has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/.github/workflows/ci.yml has been updated successfully.
 ```
 
 > TOOL
@@ -11623,7 +11623,7 @@ tool_use Bash
 id: toolu_01V2jn2xE8oMarokEwJCCy1B
 ```json
 {
-  "command": "git add .github/workflows/ci.yml && git commit -m \"$(cat <<'EOF'\nci: restrict build verification to develop branch only\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\" && git push origin chore/package-updates",
+  "command": "git add .github/workflows/ci.yml && git commit -m \"$(cat <<'EOF'\nci: restrict build verification to develop branch only\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\" && git push origin chore/package-updates",
   "description": "Commit and push CI trigger change"
 }
 ```

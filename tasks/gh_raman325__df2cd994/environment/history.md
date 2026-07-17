@@ -81,11 +81,11 @@ id: toolu_017UkTLuuCZhGKAnz2bAJZJb
 tool_result
 id: toolu_018JMS2eQPkXp9r4hAKzUUpc
 ```
-Error: result (76,333 characters across 1 line) exceeds maximum allowed tokens. Output has been saved to /Users/raman/.claude/projects/-Users-raman-projects-lock-code-manager/8037d8a8-10be-4bc5-ae5f-1328262250f0/tool-results/mcp-plugin_github_github-list_issues-1782148090942.txt.
+Error: result (76,333 characters across 1 line) exceeds maximum allowed tokens. Output has been saved to /home/<USER>/.claude/projects/-Users-raman-projects-lock-code-manager/8037d8a8-10be-4bc5-ae5f-1328262250f0/tool-results/mcp-plugin_github_github-list_issues-1782148090942.txt.
 Format: Plain text
 Use offset and limit parameters to read specific portions of the file, search within it for specific content, and jq to make structured queries.
 REQUIREMENTS FOR SUMMARIZATION/ANALYSIS/REVIEW:
-- You MUST read the content from the file at /Users/raman/.claude/projects/-Users-raman-projects-lock-code-manager/8037d8a8-10be-4bc5-ae5f-1328262250f0/tool-results/mcp-plugin_github_github-list_issues-1782148090942.txt in sequential chunks until 100% of the content has been read.
+- You MUST read the content from the file at /home/<USER>/.claude/projects/-Users-raman-projects-lock-code-manager/8037d8a8-10be-4bc5-ae5f-1328262250f0/tool-results/mcp-plugin_github_github-list_issues-1782148090942.txt in sequential chunks until 100% of the content has been read.
 - Note: this file's lines are too long for Read's offset/limit chunking. If a shell tool is available, slice by character range (e.g. python read()[A:B], dd, or cut -c) instead.
 - If you receive truncation warnings when reading the file, reduce the chunk size until you have read 100% of the content without truncation.
 - Before producing ANY summary or analysis, you MUST explicitly describe what portion of the content you have read. ***If you did not read the entire content, you MUST explicitly state this.***
@@ -113,7 +113,7 @@ tool_use Bash
 id: toolu_014bNmTDALCmFEbZ7RJZL2Dv
 ```json
 {
-  "command": "python3 -c \"\nimport json\nf='/Users/raman/.claude/projects/-Users-raman-projects-lock-code-manager/8037d8a8-10be-4bc5-ae5f-1328262250f0/tool-results/mcp-plugin_github_github-list_issues-1782148090942.txt'\ndata=json.load(open(f))\nitems = data.get('issues') or data.get('items') or (data if isinstance(data,list) else None)\nif items is None:\n    print(type(data), list(data.keys()) if isinstance(data,dict) else '')\nelse:\n    for it in items:\n        print(it.get('number'), '|', it.get('title'))\n\"",
+  "command": "python3 -c \"\nimport json\nf='/home/<USER>/.claude/projects/-Users-raman-projects-lock-code-manager/8037d8a8-10be-4bc5-ae5f-1328262250f0/tool-results/mcp-plugin_github_github-list_issues-1782148090942.txt'\ndata=json.load(open(f))\nitems = data.get('issues') or data.get('items') or (data if isinstance(data,list) else None)\nif items is None:\n    print(type(data), list(data.keys()) if isinstance(data,dict) else '')\nelse:\n    for it in items:\n        print(it.get('number'), '|', it.get('title'))\n\"",
   "description": "Parse issue list compactly"
 }
 ```
@@ -124,7 +124,7 @@ tool_use Read
 id: toolu_01P4fFnEfGd5VdQ7ZtMWxtVg
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/domain/resilience.py"
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/domain/resilience.py"
 }
 ```
 
@@ -217,11 +217,11 @@ id: toolu_01JHYXnMFg9RwGxd6yyNQznN
 tool_result
 id: toolu_012d1iGYo9zGyc3nWDKT7rKE
 ```
-Error: result (71,990 characters across 1 line) exceeds maximum allowed tokens. Output has been saved to /Users/raman/.claude/projects/-Users-raman-projects-lock-code-manager/8037d8a8-10be-4bc5-ae5f-1328262250f0/tool-results/mcp-plugin_github_github-issue_read-1782148112140.txt.
+Error: result (71,990 characters across 1 line) exceeds maximum allowed tokens. Output has been saved to /home/<USER>/.claude/projects/-Users-raman-projects-lock-code-manager/8037d8a8-10be-4bc5-ae5f-1328262250f0/tool-results/mcp-plugin_github_github-issue_read-1782148112140.txt.
 Format: Plain text
 Use offset and limit parameters to read specific portions of the file, search within it for specific content, and jq to make structured queries.
 REQUIREMENTS FOR SUMMARIZATION/ANALYSIS/REVIEW:
-- You MUST read the content from the file at /Users/raman/.claude/projects/-Users-raman-projects-lock-code-manager/8037d8a8-10be-4bc5-ae5f-1328262250f0/tool-results/mcp-plugin_github_github-issue_read-1782148112140.txt in sequential chunks until 100% of the content has been read.
+- You MUST read the content from the file at /home/<USER>/.claude/projects/-Users-raman-projects-lock-code-manager/8037d8a8-10be-4bc5-ae5f-1328262250f0/tool-results/mcp-plugin_github_github-issue_read-1782148112140.txt in sequential chunks until 100% of the content has been read.
 - Note: this file's lines are too long for Read's offset/limit chunking. If a shell tool is available, slice by character range (e.g. python read()[A:B], dd, or cut -c) instead.
 - If you receive truncation warnings when reading the file, reduce the chunk size until you have read 100% of the content without truncation.
 - Before producing ANY summary or analysis, you MUST explicitly describe what portion of the content you have read. ***If you did not read the entire content, you MUST explicitly state this.***
@@ -232,11 +232,11 @@ REQUIREMENTS FOR SUMMARIZATION/ANALYSIS/REVIEW:
 tool_result
 id: toolu_01JHYXnMFg9RwGxd6yyNQznN
 ```
-Error: result (71,401 characters across 1 line) exceeds maximum allowed tokens. Output has been saved to /Users/raman/.claude/projects/-Users-raman-projects-lock-code-manager/8037d8a8-10be-4bc5-ae5f-1328262250f0/tool-results/mcp-plugin_github_github-issue_read-1782148112345.txt.
+Error: result (71,401 characters across 1 line) exceeds maximum allowed tokens. Output has been saved to /home/<USER>/.claude/projects/-Users-raman-projects-lock-code-manager/8037d8a8-10be-4bc5-ae5f-1328262250f0/tool-results/mcp-plugin_github_github-issue_read-1782148112345.txt.
 Format: Plain text
 Use offset and limit parameters to read specific portions of the file, search within it for specific content, and jq to make structured queries.
 REQUIREMENTS FOR SUMMARIZATION/ANALYSIS/REVIEW:
-- You MUST read the content from the file at /Users/raman/.claude/projects/-Users-raman-projects-lock-code-manager/8037d8a8-10be-4bc5-ae5f-1328262250f0/tool-results/mcp-plugin_github_github-issue_read-1782148112345.txt in sequential chunks until 100% of the content has been read.
+- You MUST read the content from the file at /home/<USER>/.claude/projects/-Users-raman-projects-lock-code-manager/8037d8a8-10be-4bc5-ae5f-1328262250f0/tool-results/mcp-plugin_github_github-issue_read-1782148112345.txt in sequential chunks until 100% of the content has been read.
 - Note: this file's lines are too long for Read's offset/limit chunking. If a shell tool is available, slice by character range (e.g. python read()[A:B], dd, or cut -c) instead.
 - If you receive truncation warnings when reading the file, reduce the chunk size until you have read 100% of the content without truncation.
 - Before producing ANY summary or analysis, you MUST explicitly describe what portion of the content you have read. ***If you did not read the entire content, you MUST explicitly state this.***
@@ -252,7 +252,7 @@ tool_use Bash
 id: toolu_012fpg9rFT3Y66DyeT6ecLRn
 ```json
 {
-  "command": "python3 -c \"\nimport json\nf='/Users/raman/.claude/projects/-Users-raman-projects-lock-code-manager/8037d8a8-10be-4bc5-ae5f-1328262250f0/tool-results/mcp-plugin_github_github-issue_read-1782148112140.txt'\nd=json.load(open(f))\nbody=d.get('body','')\nprint('TITLE:', d.get('title'))\nprint('STATE:', d.get('state'))\nprint('LEN body:', len(body))\nprint('==== BODY (first 6000 chars) ====')\nprint(body[:6000])\n\"",
+  "command": "python3 -c \"\nimport json\nf='/home/<USER>/.claude/projects/-Users-raman-projects-lock-code-manager/8037d8a8-10be-4bc5-ae5f-1328262250f0/tool-results/mcp-plugin_github_github-issue_read-1782148112140.txt'\nd=json.load(open(f))\nbody=d.get('body','')\nprint('TITLE:', d.get('title'))\nprint('STATE:', d.get('state'))\nprint('LEN body:', len(body))\nprint('==== BODY (first 6000 chars) ====')\nprint(body[:6000])\n\"",
   "description": "Extract issue body"
 }
 ```
@@ -300,7 +300,7 @@ tool_use Bash
 id: toolu_01Tw3xSPC6ys34ptdGPghBgD
 ```json
 {
-  "command": "python3 -c \"\nimport json\nf='/Users/raman/.claude/projects/-Users-raman-projects-lock-code-manager/8037d8a8-10be-4bc5-ae5f-1328262250f0/tool-results/mcp-plugin_github_github-issue_read-1782148112345.txt'\nd=json.load(open(f))\nitems = d if isinstance(d,list) else d.get('comments',[])\nprint('num comments:', len(items))\nfor c in items:\n    print('==== comment by', c.get('user',{}).get('login') if isinstance(c.get('user'),dict) else c.get('user'), '====')\n    print(c.get('body','')[:4000])\n    print()\n\"",
+  "command": "python3 -c \"\nimport json\nf='/home/<USER>/.claude/projects/-Users-raman-projects-lock-code-manager/8037d8a8-10be-4bc5-ae5f-1328262250f0/tool-results/mcp-plugin_github_github-issue_read-1782148112345.txt'\nd=json.load(open(f))\nitems = d if isinstance(d,list) else d.get('comments',[])\nprint('num comments:', len(items))\nfor c in items:\n    print('==== comment by', c.get('user',{}).get('login') if isinstance(c.get('user'),dict) else c.get('user'), '====')\n    print(c.get('body','')[:4000])\n    print()\n\"",
   "description": "Extract issue comments"
 }
 ```
@@ -434,7 +434,7 @@ tool_use Read
 id: toolu_015G3CTYXRoMgLwqgSGxT3JP
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/domain/sync.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/domain/sync.py",
   "offset": 630,
   "limit": 340
 }
@@ -638,7 +638,7 @@ tool_use Read
 id: toolu_01UWQ6opCYZAyyxf88grRFVT
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
   "offset": 800,
   "limit": 220
 }
@@ -706,7 +706,7 @@ tool_use Read
 id: toolu_015MHdCQnctQWqH4ZT4VQPqL
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
   "offset": 1019,
   "limit": 130
 }
@@ -910,7 +910,7 @@ tool_use Read
 id: toolu_01CQ6TG57gY1MqZrLJeVR79K
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/domain/sync.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/domain/sync.py",
   "offset": 556,
   "limit": 75
 }
@@ -965,7 +965,7 @@ tool_use Read
 id: toolu_01GSXZX34pCVKD67LXV4X1Bb
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
   "offset": 510,
   "limit": 220
 }
@@ -1116,7 +1116,7 @@ tool_use Read
 id: toolu_01SPSLVZ8kV2Kn7EdyKm9R4T
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
   "offset": 388,
   "limit": 110
 }
@@ -1171,7 +1171,7 @@ tool_use Read
 id: toolu_01VL2K9WurYQ1iiT3Rbc2X9Y
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
   "offset": 760,
   "limit": 30
 }
@@ -1288,7 +1288,7 @@ tool_use Bash
 id: toolu_01MvwJibpADfXem4gjPEYhfy
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager && ls tests/ && echo \"=== matter test files ===\" && find tests -iname \"*matter*\" && echo \"=== MCE/InvalidState in tests ===\" && grep -rln \"MatterClientException\\|InvalidState\\|unknown(133)\\|_is_transient\" tests",
+  "command": "cd /home/<USER>/projects/lock_code_manager && ls tests/ && echo \"=== matter test files ===\" && find tests -iname \"*matter*\" && echo \"=== MCE/InvalidState in tests ===\" && grep -rln \"MatterClientException\\|InvalidState\\|unknown(133)\\|_is_transient\" tests",
   "description": "Locate matter test files from repo root"
 }
 ```
@@ -1461,7 +1461,7 @@ tool_use Read
 id: toolu_01NxZSnAPNQwtxyCZrmtwWx8
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/matter/test_provider.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/matter/test_provider.py",
   "offset": 2189,
   "limit": 90
 }
@@ -1522,7 +1522,7 @@ tool_use Read
 id: toolu_018L3knYsCUAoRdjtb5PFN9e
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/matter/test_provider.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/matter/test_provider.py",
   "offset": 2368,
   "limit": 210
 }
@@ -1585,7 +1585,7 @@ tool_use Read
 id: toolu_01SdSXt7XBw2Q8LUzdxuhRfr
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/matter/test_provider.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/matter/test_provider.py",
   "offset": 1993,
   "limit": 30
 }
@@ -1638,7 +1638,7 @@ tool_use Read
 id: toolu_01APajuEBD9xgeTaXCQJguLM
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/matter/test_provider.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/matter/test_provider.py",
   "offset": 1,
   "limit": 50
 }
@@ -1711,7 +1711,7 @@ tool_use Read
 id: toolu_01Q2FftZ9LBXm9HWYnjBkgNR
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/matter/test_provider.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/matter/test_provider.py",
   "offset": 320,
   "limit": 30
 }
@@ -1765,7 +1765,7 @@ id: toolu_01L33xE43HxtYx2RZeJFwL4q
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/matter/test_provider.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/matter/test_provider.py",
   "old_string": "async def test_get_usercodes_get_lock_users_communication_error(\n    hass: HomeAssistant, matter_lock: MatterLock\n) -> None:\n    \"\"\"Test async_get_usercodes raises LockDisconnected on HomeAssistantError from get_lock_users.\"\"\"\n    mock_get_lock_users = AsyncMock(side_effect=HomeAssistantError(\"connection lost\"))\n    with patch(f\"{_PROVIDER_MODULE}.get_lock_users\", mock_get_lock_users):\n        with pytest.raises(LockDisconnected, match=\"get_lock_users failed\"):\n            await matter_lock.async_get_usercodes()",
   "new_string": "async def test_get_usercodes_get_lock_users_communication_error(\n    hass: HomeAssistant, matter_lock: MatterLock\n) -> None:\n    \"\"\"Test async_get_usercodes raises LockDisconnected on HomeAssistantError from get_lock_users.\"\"\"\n    mock_get_lock_users = AsyncMock(side_effect=HomeAssistantError(\"connection lost\"))\n    with patch(f\"{_PROVIDER_MODULE}.get_lock_users\", mock_get_lock_users):\n        with pytest.raises(LockDisconnected, match=\"get_lock_users failed\"):\n            await matter_lock.async_get_usercodes()\n\n\nasync def test_get_usercodes_get_lock_users_client_exception(\n    hass: HomeAssistant, matter_lock: MatterLock\n) -> None:\n    \"\"\"``MatterClientException`` from get_lock_users routes to LockDisconnected.\n\n    ``InvalidState: Not connected`` (a ``MatterClientException``, raised\n    by the matter-server client before its websocket is connected at\n    startup) is independent of ``HomeAssistantError`` -- so a read site\n    that only catches ``HomeAssistantError`` lets it escape to the sync\n    catchall and spuriously suspends the slot (issue #1257).\n    \"\"\"\n    mock_get_lock_users = AsyncMock(side_effect=MatterClientException(\"Not connected\"))\n    with patch(f\"{_PROVIDER_MODULE}.get_lock_users\", mock_get_lock_users):\n        with pytest.raises(LockDisconnected, match=\"get_lock_users failed\"):\n            await matter_lock.async_get_usercodes()"
 }
@@ -1776,7 +1776,7 @@ id: toolu_01L33xE43HxtYx2RZeJFwL4q
 tool_result
 id: toolu_01L33xE43HxtYx2RZeJFwL4q
 ```
-The file /Users/raman/projects/lock_code_manager/tests/providers/matter/test_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/tests/providers/matter/test_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1786,7 +1786,7 @@ id: toolu_01UJpEW6i6WaDYdazDkfjzc4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/matter/test_provider.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/matter/test_provider.py",
   "old_string": "    async def test_get_capabilities_service_validation_error(\n        self, hass: HomeAssistant, matter_lock: MatterLock\n    ) -> None:\n        \"\"\"ServiceValidationError from get_lock_info raises LockOperationFailed.\"\"\"\n        mock_get_lock_info = AsyncMock(side_effect=ServiceValidationError(\"bad input\"))\n        with (\n            patch(f\"{_PROVIDER_MODULE}.get_lock_info\", mock_get_lock_info),\n            pytest.raises(LockOperationFailed, match=\"rejected input\"),\n        ):\n            await matter_lock.async_get_capabilities()",
   "new_string": "    async def test_get_capabilities_service_validation_error(\n        self, hass: HomeAssistant, matter_lock: MatterLock\n    ) -> None:\n        \"\"\"ServiceValidationError from get_lock_info raises LockOperationFailed.\"\"\"\n        mock_get_lock_info = AsyncMock(side_effect=ServiceValidationError(\"bad input\"))\n        with (\n            patch(f\"{_PROVIDER_MODULE}.get_lock_info\", mock_get_lock_info),\n            pytest.raises(LockOperationFailed, match=\"rejected input\"),\n        ):\n            await matter_lock.async_get_capabilities()\n\n    async def test_get_capabilities_client_exception(\n        self, hass: HomeAssistant, matter_lock: MatterLock\n    ) -> None:\n        \"\"\"``MatterClientException`` from get_lock_info raises LockDisconnected.\n\n        Independent of ``HomeAssistantError`` (issue #1257): a startup\n        ``InvalidState: Not connected`` must route to retry, not escape\n        the read site and suspend the slot.\n        \"\"\"\n        mock_get_lock_info = AsyncMock(side_effect=MatterClientException(\"Not connected\"))\n        with (\n            patch(f\"{_PROVIDER_MODULE}.get_lock_info\", mock_get_lock_info),\n            pytest.raises(LockDisconnected, match=\"get_lock_info failed\"),\n        ):\n            await matter_lock.async_get_capabilities()"
 }
@@ -1797,7 +1797,7 @@ id: toolu_01UJpEW6i6WaDYdazDkfjzc4
 tool_result
 id: toolu_01UJpEW6i6WaDYdazDkfjzc4
 ```
-The file /Users/raman/projects/lock_code_manager/tests/providers/matter/test_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/tests/providers/matter/test_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1811,7 +1811,7 @@ id: toolu_0174RTWKDNbx2jc9HUsW4UFA
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/matter/test_provider.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/matter/test_provider.py",
   "old_string": "    async def test_set_user_create_routes_disconnect_during_fallback(\n        self, hass: HomeAssistant, matter_lock: MatterLock\n    ) -> None:\n        \"\"\"A ``HomeAssistantError`` during the cascade maps to ``LockDisconnected``.\"\"\"\n        mock_set_user = AsyncMock(\n            side_effect=[\n                UnknownError(\"InvalidCommand (0x85)\"),\n                HomeAssistantError(\"transport closed\"),\n            ]\n        )\n        user = User(user_id=1, name=\"lcm:1:Alice\")\n        with (\n            self._patch_users([]),\n            patch(f\"{_PROVIDER_MODULE}.set_lock_user\", mock_set_user),\n            pytest.raises(LockDisconnected, match=\"transport closed\"),\n        ):\n            await matter_lock.async_set_user(user)\n\n        assert mock_set_user.call_count == 2",
   "new_string": "    async def test_set_user_create_routes_disconnect_during_fallback(\n        self, hass: HomeAssistant, matter_lock: MatterLock\n    ) -> None:\n        \"\"\"A ``HomeAssistantError`` during the cascade maps to ``LockDisconnected``.\"\"\"\n        mock_set_user = AsyncMock(\n            side_effect=[\n                UnknownError(\"InvalidCommand (0x85)\"),\n                HomeAssistantError(\"transport closed\"),\n            ]\n        )\n        user = User(user_id=1, name=\"lcm:1:Alice\")\n        with (\n            self._patch_users([]),\n            patch(f\"{_PROVIDER_MODULE}.set_lock_user\", mock_set_user),\n            pytest.raises(LockDisconnected, match=\"transport closed\"),\n        ):\n            await matter_lock.async_set_user(user)\n\n        assert mock_set_user.call_count == 2\n\n    async def test_set_user_create_routes_client_exception_during_fallback(\n        self, hass: HomeAssistant, matter_lock: MatterLock\n    ) -> None:\n        \"\"\"A ``MatterClientException`` during the cascade maps to ``LockDisconnected``.\n\n        ``InvalidState: Not connected`` is a transport failure, not a\n        charset rejection, so it short-circuits the cascade (trying the\n        next candidate name would hit the same closed connection) and\n        routes to retry rather than escaping to the catchall suspend\n        (issue #1257). It is independent of ``HomeAssistantError``, so\n        the prior fix that only added ``MatterError`` did not cover it.\n        \"\"\"\n        mock_set_user = AsyncMock(\n            side_effect=[\n                UnknownError(\"InvalidCommand (0x85)\"),\n                MatterClientException(\"Not connected\"),\n            ]\n        )\n        user = User(user_id=1, […]
 
@@ -1820,7 +1820,7 @@ id: toolu_0174RTWKDNbx2jc9HUsW4UFA
 tool_result
 id: toolu_0174RTWKDNbx2jc9HUsW4UFA
 ```
-The file /Users/raman/projects/lock_code_manager/tests/providers/matter/test_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/tests/providers/matter/test_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1830,7 +1830,7 @@ id: toolu_01VdGYapCxArhAxiZwHMogYz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/matter/test_provider.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/matter/test_provider.py",
   "old_string": "    async def test_delete_user_service_validation_error(\n        self, hass: HomeAssistant, matter_lock: MatterLock\n    ) -> None:\n        \"\"\"ServiceValidationError from clear_lock_user raises LockOperationFailed.\"\"\"\n        mock_clear_user = AsyncMock(side_effect=ServiceValidationError(\"bad user\"))\n        with (\n            patch(f\"{_PROVIDER_MODULE}.clear_lock_user\", mock_clear_user),\n            pytest.raises(LockOperationFailed, match=\"rejected input\"),\n        ):\n            await matter_lock.async_delete_user(3)",
   "new_string": "    async def test_delete_user_service_validation_error(\n        self, hass: HomeAssistant, matter_lock: MatterLock\n    ) -> None:\n        \"\"\"ServiceValidationError from clear_lock_user raises LockOperationFailed.\"\"\"\n        mock_clear_user = AsyncMock(side_effect=ServiceValidationError(\"bad user\"))\n        with (\n            patch(f\"{_PROVIDER_MODULE}.clear_lock_user\", mock_clear_user),\n            pytest.raises(LockOperationFailed, match=\"rejected input\"),\n        ):\n            await matter_lock.async_delete_user(3)\n\n    async def test_delete_user_client_exception(\n        self, hass: HomeAssistant, matter_lock: MatterLock\n    ) -> None:\n        \"\"\"``MatterClientException`` from clear_lock_user raises LockDisconnected.\n\n        This is the exact path behind the original #1257 report:\n        ``Unexpected error during clear usercode ... InvalidState: Not\n        connected``. The clear-user site only caught ``HomeAssistantError``,\n        so the client exception escaped to the sync catchall and\n        suspended the slot instead of being retried.\n        \"\"\"\n        mock_clear_user = AsyncMock(side_effect=MatterClientException(\"Not connected\"))\n        with (\n            patch(f\"{_PROVIDER_MODULE}.clear_lock_user\", mock_clear_user),\n            pytest.raises(LockDisconnected, match=\"clear_lock_user failed\"),\n        ):\n            await matter_lock.async_delete_user(3)"
 }
@@ -1841,7 +1841,7 @@ id: toolu_01VdGYapCxArhAxiZwHMogYz
 tool_result
 id: toolu_01VdGYapCxArhAxiZwHMogYz
 ```
-The file /Users/raman/projects/lock_code_manager/tests/providers/matter/test_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/tests/providers/matter/test_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1936,7 +1936,7 @@ id: toolu_019wChRJHKzn7XZ2DjYySsjY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
   "old_string": "        except ServiceValidationError as err:\n            raise LockOperationFailed(\n                f\"Matter get_lock_users rejected input for {self.lock.entity_id}: {err}\"\n            ) from err\n        except HomeAssistantError as err:\n            raise LockDisconnected(\n                f\"Matter get_lock_users failed for {self.lock.entity_id}: {err}\"\n            ) from err",
   "new_string": "        except ServiceValidationError as err:\n            raise LockOperationFailed(\n                f\"Matter get_lock_users rejected input for {self.lock.entity_id}: {err}\"\n            ) from err\n        except (HomeAssistantError, MatterError, MatterClientException) as err:\n            # MatterError / MatterClientException are independent of\n            # HomeAssistantError (e.g. ``InvalidState: Not connected`` while the\n            # client reconnects at startup, issue #1257); catch them explicitly\n            # or they escape to the sync catchall and suspend the slot.\n            raise LockDisconnected(\n                f\"Matter get_lock_users failed for {self.lock.entity_id}: {err}\"\n            ) from err"
 }
@@ -1947,7 +1947,7 @@ id: toolu_019wChRJHKzn7XZ2DjYySsjY
 tool_result
 id: toolu_019wChRJHKzn7XZ2DjYySsjY
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1961,7 +1961,7 @@ id: toolu_015cSRAKiS3L9oxZ2mFVHBfb
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
   "old_string": "        except ServiceValidationError as err:\n            raise LockOperationFailed(\n                f\"Matter get_lock_info rejected input for {self.lock.entity_id}: {err}\"\n            ) from err\n        except HomeAssistantError as err:\n            raise LockDisconnected(\n                f\"Matter get_lock_info failed for {self.lock.entity_id}: {err}\"\n            ) from err",
   "new_string": "        except ServiceValidationError as err:\n            raise LockOperationFailed(\n                f\"Matter get_lock_info rejected input for {self.lock.entity_id}: {err}\"\n            ) from err\n        except (HomeAssistantError, MatterError, MatterClientException) as err:\n            # Independent of HomeAssistantError (issue #1257): a startup\n            # ``InvalidState: Not connected`` must route to retry, not escape\n            # the read site and suspend the slot.\n            raise LockDisconnected(\n                f\"Matter get_lock_info failed for {self.lock.entity_id}: {err}\"\n            ) from err"
 }
@@ -1972,7 +1972,7 @@ id: toolu_015cSRAKiS3L9oxZ2mFVHBfb
 tool_result
 id: toolu_015cSRAKiS3L9oxZ2mFVHBfb
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1982,7 +1982,7 @@ id: toolu_01TQ46TUdP4nKDEbc3kedA5L
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
   "old_string": "            except ServiceValidationError as err:\n                raise LockOperationFailed(\n                    f\"Matter set_lock_user rejected input for \"\n                    f\"{self.lock.entity_id} (user_name={name!r}): {err}\"\n                ) from err\n            except HomeAssistantError as err:\n                raise LockDisconnected(\n                    f\"Matter set_lock_user failed for {self.lock.entity_id} \"\n                    f\"(user_name={name!r}): {err}\"\n                ) from err\n            except MatterError as err:\n                failures.append((name, err))\n                last_matter_error = err\n                continue",
   "new_string": "            except ServiceValidationError as err:\n                raise LockOperationFailed(\n                    f\"Matter set_lock_user rejected input for \"\n                    f\"{self.lock.entity_id} (user_name={name!r}): {err}\"\n                ) from err\n            except (HomeAssistantError, MatterClientException) as err:\n                # Transport failures (incl. ``InvalidState: Not connected`` at\n                # startup, issue #1257) are not charset-recoverable -- the next\n                # candidate name hits the same closed connection -- so short-\n                # circuit to retry instead of falling through. MatterClientException\n                # is independent of HomeAssistantError, hence the explicit catch.\n                raise LockDisconnected(\n                    f\"Matter set_lock_user failed for {self.lock.entity_id} \"\n                    f\"(user_name={name!r}): {err}\"\n                ) from err\n            except MatterError as err:\n                failures.append((name, err))\n                last_matter_error = err\n                continue"
 }
@@ -1993,7 +1993,7 @@ id: toolu_01TQ46TUdP4nKDEbc3kedA5L
 tool_result
 id: toolu_01TQ46TUdP4nKDEbc3kedA5L
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2007,7 +2007,7 @@ id: toolu_01MSyw8QZ1NemB9gUXugJDKo
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
   "old_string": "        except ServiceValidationError as err:\n            raise LockOperationFailed(\n                f\"Matter clear_lock_user rejected input for {self.lock.entity_id}: {err}\"\n            ) from err\n        except HomeAssistantError as err:\n            raise LockDisconnected(\n                f\"Matter clear_lock_user failed for {self.lock.entity_id}: {err}\"\n            ) from err",
   "new_string": "        except ServiceValidationError as err:\n            raise LockOperationFailed(\n                f\"Matter clear_lock_user rejected input for {self.lock.entity_id}: {err}\"\n            ) from err\n        except (HomeAssistantError, MatterError, MatterClientException) as err:\n            # The original #1257 report's signature: ``Unexpected error during\n            # clear usercode ... InvalidState: Not connected``. MatterError /\n            # MatterClientException are independent of HomeAssistantError, so\n            # route them to retry rather than the sync catchall suspend.\n            raise LockDisconnected(\n                f\"Matter clear_lock_user failed for {self.lock.entity_id}: {err}\"\n            ) from err"
 }
@@ -2018,7 +2018,7 @@ id: toolu_01MSyw8QZ1NemB9gUXugJDKo
 tool_result
 id: toolu_01MSyw8QZ1NemB9gUXugJDKo
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2077,7 +2077,7 @@ id: toolu_01EYSdGt4WUHrtrzYNKsqp9b
 ...........................................................              [100%]
 =============================== warnings summary ===============================
 tests/providers/zha/test_provider.py: 172 warnings
-  /Users/raman/projects/lock_code_manager/.venv/lib/python3.14/site-packages/homeassistant/components/usb/utils.py:39: DeprecationWarning: `description` is deprecated, use `product` instead
+  /home/<USER>/projects/lock_code_manager/.venv/lib/python3.14/site-packages/homeassistant/components/usb/utils.py:39: DeprecationWarning: `description` is deprecated, use `product` instead
     description=port.description,
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
@@ -2334,7 +2334,7 @@ tool_use Bash
 id: toolu_01ELTcWMFYveYbvFA4JU5KqS
 ```json
 {
-  "command": "git commit -F - <<'EOF'\nfix(matter): route MatterClientException at user/read sites to retry (#1257)\n\nInvalidState/MatterClientException is independent of both MatterError and\nHomeAssistantError, so four matter SDK call sites that caught only\n(ServiceValidationError, HomeAssistantError[, MatterError]) let a startup\n\"InvalidState: Not connected\" escape to the sync catchall, which suspends\nthe slot via a non-self-healing _code_suspend_target path:\n\n- _raw_lock_users (get_lock_users)\n- async_get_capabilities (get_lock_info)\n- _try_set_lock_user_with_fallbacks (set_lock_user)\n- async_delete_user (clear_lock_user)\n\nThe #1257 credential-site fix only covered _send_set_credential and\nasync_delete_credential. Extend the same classification to these sites so\ntransient startup errors route to LockDisconnected (retry via the lock\nconnectivity breaker) instead of suspending the slot. On the set_lock_user\ncascade, only MatterClientException short-circuits to LockDisconnected;\nMatterError keeps its charset-fallthrough semantics (a dead connection\nwon't be fixed by a different user name).\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\nEOF",
+  "command": "git commit -F - <<'EOF'\nfix(matter): route MatterClientException at user/read sites to retry (#1257)\n\nInvalidState/MatterClientException is independent of both MatterError and\nHomeAssistantError, so four matter SDK call sites that caught only\n(ServiceValidationError, HomeAssistantError[, MatterError]) let a startup\n\"InvalidState: Not connected\" escape to the sync catchall, which suspends\nthe slot via a non-self-healing _code_suspend_target path:\n\n- _raw_lock_users (get_lock_users)\n- async_get_capabilities (get_lock_info)\n- _try_set_lock_user_with_fallbacks (set_lock_user)\n- async_delete_user (clear_lock_user)\n\nThe #1257 credential-site fix only covered _send_set_credential and\nasync_delete_credential. Extend the same classification to these sites so\ntransient startup errors route to LockDisconnected (retry via the lock\nconnectivity breaker) instead of suspending the slot. On the set_lock_user\ncascade, only MatterClientException short-circuits to LockDisconnected;\nMatterError keeps its charset-fallthrough semantics (a dead connection\nwon't be fixed by a different user name).\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\nEOF",
   "description": "Commit the fix"
 }
 ```
@@ -2848,8 +2848,8 @@ From https://github.com/raman325/lock_code_manager
  11 files changed, 448 insertions(+), 57 deletions(-)
  create mode 100644 tests/providers/matter/test_sdk_exception_translation.py
 === gone branches ===
-+ test/provider-native-transport-contract   8ada27de (/Users/raman/projects/lock_code_manager/.claude/worktrees/agent-a5de906429b6408ba) [origin/test/provider-native-transport-contract: gone] test(providers): enforce native-transport-exception contract across providers
-+ refactor/matter-sdk-exception-choke-point 88e3379b (/Users/raman/projects/lock_code_manager/.claude/worktrees/agent-a788f2f38ec92c99f) [origin/refactor/matter-sdk-exception-choke-point: gone] refactor(matter): funnel SDK calls through a single exception choke point
++ test/provider-native-transport-contract   8ada27de (/home/<USER>/projects/lock_code_manager/.claude/worktrees/agent-a5de906429b6408ba) [origin/test/provider-native-transport-contract: gone] test(providers): enforce native-transport-exception contract across providers
++ refactor/matter-sdk-exception-choke-point 88e3379b (/home/<USER>/projects/lock_code_manager/.claude/worktrees/agent-a788f2f38ec92c99f) [origin/refactor/matter-sdk-exception-choke-point: gone] refactor(matter): funnel SDK calls through a single exception choke point
 ```
 
 > AGENT
@@ -2862,7 +2862,7 @@ tool_use Bash
 id: toolu_01VoMwyAAzJ1SYgfmJueuu8T
 ```json
 {
-  "command": "git worktree remove /Users/raman/projects/lock_code_manager/.claude/worktrees/agent-a5de906429b6408ba --force 2>&1\ngit worktree remove /Users/raman/projects/lock_code_manager/.claude/worktrees/agent-a788f2f38ec92c99f --force 2>&1\ngit worktree prune\ngit branch -D test/provider-native-transport-contract refactor/matter-sdk-exception-choke-point 2>&1\necho \"=== remaining worktrees ===\" ; git worktree list",
+  "command": "git worktree remove /home/<USER>/projects/lock_code_manager/.claude/worktrees/agent-a5de906429b6408ba --force 2>&1\ngit worktree remove /home/<USER>/projects/lock_code_manager/.claude/worktrees/agent-a788f2f38ec92c99f --force 2>&1\ngit worktree prune\ngit branch -D test/provider-native-transport-contract refactor/matter-sdk-exception-choke-point 2>&1\necho \"=== remaining worktrees ===\" ; git worktree list",
   "description": "Remove merged agent worktrees and branches"
 }
 ```
@@ -2875,7 +2875,7 @@ id: toolu_01VoMwyAAzJ1SYgfmJueuu8T
 Deleted branch test/provider-native-transport-contract (was 8ada27de).
 Deleted branch refactor/matter-sdk-exception-choke-point (was 88e3379b).
 === remaining worktrees ===
-/Users/raman/projects/lock_code_manager bdd97d78 [main]
+/home/<USER>/projects/lock_code_manager bdd97d78 [main]
 ```
 
 > AGENT
@@ -2888,7 +2888,7 @@ tool_use Read
 id: toolu_01KX2jhPEaVjtZMcpGiZfr8d
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/domain/coordinator.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/domain/coordinator.py",
   "offset": 40,
   "limit": 120
 }
@@ -2946,7 +2946,7 @@ tool_use Read
 id: toolu_01JGAeivWo6ZY5Dan5WNg6TD
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/domain/coordinator.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/domain/coordinator.py",
   "offset": 250,
   "limit": 175
 }
@@ -3050,7 +3050,7 @@ tool_use Read
 id: toolu_01STGn3oUoiGKMLtPc3iPsw3
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/domain/coordinator.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/domain/coordinator.py",
   "offset": 424,
   "limit": 90
 }
@@ -3144,7 +3144,7 @@ tool_use Read
 id: toolu_01C82MWjbAMVNQ8XZFZNBXSQ
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
   "offset": 810,
   "limit": 110
 }
@@ -3276,7 +3276,7 @@ tool_use Read
 id: toolu_01EWYLxNcHpovwNN5jS1mQrn
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
   "offset": 164,
   "limit": 36
 }
@@ -3331,7 +3331,7 @@ tool_use Read
 id: toolu_01HFCoForfXiKnemJZnoCokF
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
   "offset": 495,
   "limit": 20
 }
@@ -3374,7 +3374,7 @@ tool_use Read
 id: toolu_01HLo6q2ad1Lt7rppNBwhLkK
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
   "offset": 250,
   "limit": 22
 }
@@ -3882,7 +3882,7 @@ tool_use Read
 id: toolu_01LrqvLYcXxgrppDGshxMCoc
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/test_base.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/test_base.py",
   "offset": 146,
   "limit": 75
 }
@@ -4020,7 +4020,7 @@ tool_use Read
 id: toolu_01TZT18jPDixoZtAEX3jwQLe
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/common.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/common.py",
   "offset": 55,
   "limit": 40
 }
@@ -4084,7 +4084,7 @@ id: toolu_01LX44cvRRNQ4oHjvaJuKmzL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/common.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/common.py",
   "old_string": "        super().__init__(*args, **kwargs)\n        self._connected = True\n        self._hard_refresh_interval: timedelta | None = None\n        self.codes: dict[int, str] = {1: \"1234\", 2: \"5678\"}\n        self.service_calls: defaultdict[str, list] = defaultdict(list)",
   "new_string": "        super().__init__(*args, **kwargs)\n        self._connected = True\n        self._device_available = True\n        self._hard_refresh_interval: timedelta | None = None\n        self.codes: dict[int, str] = {1: \"1234\", 2: \"5678\"}\n        self.service_calls: defaultdict[str, list] = defaultdict(list)"
 }
@@ -4095,7 +4095,7 @@ id: toolu_01LX44cvRRNQ4oHjvaJuKmzL
 tool_result
 id: toolu_01LX44cvRRNQ4oHjvaJuKmzL
 ```
-The file /Users/raman/projects/lock_code_manager/tests/common.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/tests/common.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4105,7 +4105,7 @@ id: toolu_0163B3VctVKEMribtvraCLYe
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/common.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/common.py",
   "old_string": "    def set_connected(self, connected: bool) -> None:\n        \"\"\"Set connection state for testing.\"\"\"\n        self._connected = connected\n\n    async def async_is_integration_connected(self) -> bool:\n        \"\"\"Return whether the integration's client/driver/broker is connected.\"\"\"\n        return self._connected",
   "new_string": "    def set_connected(self, connected: bool) -> None:\n        \"\"\"Set connection state for testing.\"\"\"\n        self._connected = connected\n\n    def set_device_available(self, available: bool) -> None:\n        \"\"\"Set device (node) availability for testing.\"\"\"\n        self._device_available = available\n\n    async def async_is_integration_connected(self) -> bool:\n        \"\"\"Return whether the integration's client/driver/broker is connected.\"\"\"\n        return self._connected\n\n    async def async_is_device_available(self) -> bool:\n        \"\"\"Return whether the physical device (node) is reachable.\"\"\"\n        return self._device_available"
 }
@@ -4116,7 +4116,7 @@ id: toolu_0163B3VctVKEMribtvraCLYe
 tool_result
 id: toolu_0163B3VctVKEMribtvraCLYe
 ```
-The file /Users/raman/projects/lock_code_manager/tests/common.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/tests/common.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4130,7 +4130,7 @@ id: toolu_01AYnSjDTh3RvoYSL1V5y6ht
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/test_base.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/test_base.py",
   "old_string": "        lock.set_connected(False)\n        await lock.coordinator.async_refresh()\n        assert lock.unsubscribe_calls == 1\n\n        lock.set_connected(True)\n        await lock.coordinator.async_refresh()\n        assert lock.subscribe_calls == 1\n\n        await hass.config_entries.async_unload(lcm_config_entry.entry_id)",
   "new_string": "        lock.set_connected(False)\n        await lock.coordinator.async_refresh()\n        assert lock.unsubscribe_calls == 1\n\n        lock.set_connected(True)\n        await lock.coordinator.async_refresh()\n        assert lock.subscribe_calls == 1\n\n        await hass.config_entries.async_unload(lcm_config_entry.entry_id)\n\n\nasync def test_connection_transition_on_device_availability(\n    hass: HomeAssistant,\n    mock_lock_config_entry,\n):\n    \"\"\"A device-level (node) outage drives the same resubscribe/refresh path.\n\n    Recovery must be detected uniformly whether the outage was at the\n    integration/transport layer or the device/node layer: with the\n    integration still connected, toggling device availability alone must\n    unsubscribe on the drop and resubscribe + refresh on recovery\n    (issue #1257 recovery latency).\n    \"\"\"\n    with patch(\n        \"custom_components.lock_code_manager.domain.locks.INTEGRATIONS_CLASS_MAP\",\n        {\"test\": MockLCMLockWithPush},\n    ):\n        lcm_config_entry = MockConfigEntry(\n            domain=DOMAIN, data=BASE_CONFIG, unique_id=\"Mock Title\"\n        )\n        lcm_config_entry.add_to_hass(hass)\n        await hass.config_entries.async_setup(lcm_config_entry.entry_id)\n        await hass.async_block_till_done()\n\n        lock = lcm_config_entry.runtime_data.locks[LOCK_1_ENTITY_ID]\n        assert isinstance(lock, MockLCMLockWithPush)\n\n        lock.subscribe_calls = 0\n        lock.unsubscribe_calls = 0\n        lock._min_operation_delay = 0.0\n        lock._last_operation_time = 0.0\n\n        await lock.coordinator.async_refresh()\n\n        # Integration stays connected; only the node drops.\n        lock.set_device_available(False)\n        await lock.coordinator.async_refresh()\n        assert lock.unsubscribe_calls == 1\n\n        lock.set_device_available(True)\n        lock.coordinator.async_request_refresh = AsyncMock()\n        await lock.coordinator.async_refresh()\n        assert lock.subscribe_calls == 1\n        lock.coordinator.async_request_refresh.assert_awaited()\n\n        await hass.config_entries.async_unload(lcm_config_entry.entry_id)"
 }
@@ -4141,7 +4141,7 @@ id: toolu_01AYnSjDTh3RvoYSL1V5y6ht
 tool_result
 id: toolu_01AYnSjDTh3RvoYSL1V5y6ht
 ```
-The file /Users/raman/projects/lock_code_manager/tests/providers/test_base.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/tests/providers/test_base.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4164,7 +4164,7 @@ id: toolu_01Gaf6AkKmoppx3dagtf35B5
 tool_result
 id: toolu_01Gaf6AkKmoppx3dagtf35B5
 ```
-  File "/Users/raman/projects/lock_code_manager/.venv/lib/python3.14/site-packages/homeassistant/helpers/frame.py", line 393, in _report_usage_no_integration
+  File "/home/<USER>/projects/lock_code_manager/.venv/lib/python3.14/site-packages/homeassistant/helpers/frame.py", line 393, in _report_usage_no_integration
     _LOGGER.warning(msg, stack_info=True)
 INFO     homeassistant.helpers.entity_registry:entity_registry.py:1509 Registered new binary_sensor.lock_code_manager entity: binary_sensor.test_1_code_slot_1_in_sync
 INFO     homeassistant.helpers.entity_registry:entity_registry.py:1509 Registered new sensor.lock_code_manager entity: sensor.test_1_code_slot_1
@@ -4202,7 +4202,7 @@ id: toolu_01AdVjV2QnkJmKMoVaLHCA6P
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
   "old_string": "    @final\n    async def async_internal_is_integration_connected(self) -> bool:\n        \"\"\"Return whether the integration's client/driver/broker is connected.\"\"\"\n        is_up = await self.async_is_integration_connected()\n        self._handle_connection_transition(is_up)\n        self._last_connection_up = is_up\n        return is_up\n\n    @final\n    @callback\n    def _handle_connection_transition(self, is_up: bool) -> None:",
   "new_string": "    @final\n    async def async_internal_is_reachable(self) -> bool:\n        \"\"\"\n        Return whether the lock is reachable end-to-end right now.\n\n        Combines the integration/transport signal\n        (``async_is_integration_connected``) with the device/node signal\n        (``async_is_device_available``): the lock is reachable only when both\n        layers are up. Recovery is therefore detected uniformly whether the\n        outage was at the network or the device layer -- a node that comes\n        back while the integration stayed connected drives the same\n        resubscribe/refresh transition as an integration reconnect, instead of\n        waiting out the connectivity breaker's backoff probe (issue #1257).\n        \"\"\"\n        is_up = (\n            await self.async_is_integration_connected()\n            and await self.async_is_device_available()\n        )\n        self._note_reachability(is_up)\n        return is_up\n\n    @final\n    @callback\n    def _note_reachability(self, is_up: bool) -> None:\n        \"\"\"Feed a reachability observation to the transition handler and remember it.\"\"\"\n        self._handle_connection_transition(is_up)\n        self._last_connection_up = is_up\n\n    @final\n    @callback\n    def _handle_connection_transition(self, is_up: bool) -> None:"
 }
@@ -4213,7 +4213,7 @@ id: toolu_01AdVjV2QnkJmKMoVaLHCA6P
 tool_result
 id: toolu_01AdVjV2QnkJmKMoVaLHCA6P
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4227,7 +4227,7 @@ id: toolu_01J627uRDJ58SCYxxucN2698
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
   "old_string": "        if not await self.async_internal_is_integration_connected():\n            raise LockDisconnected(\n                f\"Cannot {_OPERATION_MESSAGES[operation_type]} {self.lock.entity_id} - integration not connected\"\n            )\n\n        if not await self.async_is_device_available():\n            raise LockDisconnected(\n                f\"Cannot {_OPERATION_MESSAGES[operation_type]} {self.lock.entity_id} - device not available\"\n            )",
   "new_string": "        # Evaluate both layers, feed the combined reachability to the\n        # transition handler, then raise the layer-specific message. The two\n        # checks are kept distinct for diagnostics; the transition only cares\n        # whether the lock is reachable end-to-end.\n        integration_up = await self.async_is_integration_connected()\n        device_up = await self.async_is_device_available()\n        self._note_reachability(integration_up and device_up)\n        if not integration_up:\n            raise LockDisconnected(\n                f\"Cannot {_OPERATION_MESSAGES[operation_type]} {self.lock.entity_id} - integration not connected\"\n            )\n        if not device_up:\n            raise LockDisconnected(\n                f\"Cannot {_OPERATION_MESSAGES[operation_type]} {self.lock.entity_id} - device not available\"\n            )"
 }
@@ -4238,7 +4238,7 @@ id: toolu_01J627uRDJ58SCYxxucN2698
 tool_result
 id: toolu_01J627uRDJ58SCYxxucN2698
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4251,7 +4251,7 @@ tool_use Bash
 id: toolu_01Qkk3wxG1Gt26Wo6y48b2er
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\nsed -n '140p' custom_components/lock_code_manager/providers/_base.py\necho \"=== coordinator 431-435 ===\"; sed -n '431,435p' custom_components/lock_code_manager/domain/coordinator.py\necho \"=== test_init 655-660 ===\"; sed -n '655,660p' tests/test_init.py",
+  "command": "cd /home/<USER>/projects/lock_code_manager\nsed -n '140p' custom_components/lock_code_manager/providers/_base.py\necho \"=== coordinator 431-435 ===\"; sed -n '431,435p' custom_components/lock_code_manager/domain/coordinator.py\necho \"=== test_init 655-660 ===\"; sed -n '655,660p' tests/test_init.py",
   "description": "Show exact lines to update"
 }
 ```
@@ -4288,7 +4288,7 @@ id: toolu_01DKihF2FQi9LhyCRVnBihG2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
   "old_string": "       - Periodic async_internal_is_integration_connected() at connection_check_interval",
   "new_string": "       - Periodic async_internal_is_reachable() at connection_check_interval"
 }
@@ -4299,7 +4299,7 @@ id: toolu_01DKihF2FQi9LhyCRVnBihG2
 tool_result
 id: toolu_01DKihF2FQi9LhyCRVnBihG2
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4309,7 +4309,7 @@ id: toolu_01A6om8JMhfLL9GauXNxtQdx
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/domain/coordinator.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/domain/coordinator.py",
   "old_string": "        \"\"\"Poll connection state so providers can resubscribe on reconnect.\"\"\"\n        try:\n            await self._lock.async_internal_is_integration_connected()",
   "new_string": "        \"\"\"Poll connection state so providers can resubscribe on reconnect.\"\"\"\n        try:\n            await self._lock.async_internal_is_reachable()"
 }
@@ -4320,7 +4320,7 @@ id: toolu_01A6om8JMhfLL9GauXNxtQdx
 tool_result
 id: toolu_01A6om8JMhfLL9GauXNxtQdx
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/domain/coordinator.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/domain/coordinator.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4330,7 +4330,7 @@ id: toolu_01XCw66tJQ9iw9BjJFhkWeKh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/__init__.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/__init__.py",
   "old_string": "        if not await result.async_internal_is_integration_connected():",
   "new_string": "        if not await result.async_internal_is_reachable():"
 }
@@ -4354,7 +4354,7 @@ tool_use Read
 id: toolu_01NwaxWRZi5Y2f4EKudMbSsD
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/__init__.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/__init__.py",
   "offset": 871,
   "limit": 4
 }
@@ -4378,7 +4378,7 @@ id: toolu_01A89wBFrcoztYejTf7jJ8KV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/__init__.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/__init__.py",
   "old_string": "        if not await result.async_internal_is_integration_connected():\n            _LOGGER.debug(",
   "new_string": "        if not await result.async_internal_is_reachable():\n            _LOGGER.debug("
 }
@@ -4389,7 +4389,7 @@ id: toolu_01A89wBFrcoztYejTf7jJ8KV
 tool_result
 id: toolu_01A89wBFrcoztYejTf7jJ8KV
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/__init__.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/__init__.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4398,7 +4398,7 @@ tool_use Read
 id: toolu_01EV9RtVeuwJFodPbpG8RKG3
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/test_base.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/test_base.py",
   "offset": 96,
   "limit": 12
 }
@@ -4430,7 +4430,7 @@ id: toolu_019h77iSNn1q7ja5HfQQcNRm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/test_base.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/test_base.py",
   "old_string": "    # async_is_integration_connected has a sensible default — it returns\n    # False here because the test config entry isn't in the LOADED state.\n    assert await lock.async_internal_is_integration_connected() is False",
   "new_string": "    # async_internal_is_reachable combines the integration and device\n    # signals — it returns False here because the test config entry isn't in\n    # the LOADED state (integration down short-circuits the combined check).\n    assert await lock.async_internal_is_reachable() is False"
 }
@@ -4441,7 +4441,7 @@ id: toolu_019h77iSNn1q7ja5HfQQcNRm
 tool_result
 id: toolu_019h77iSNn1q7ja5HfQQcNRm
 ```
-The file /Users/raman/projects/lock_code_manager/tests/providers/test_base.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/tests/providers/test_base.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4450,7 +4450,7 @@ tool_use Read
 id: toolu_01LCL4NDetDxo1ver9e9Kwuk
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/test_init.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/test_init.py",
   "offset": 653,
   "limit": 12
 }
@@ -4486,7 +4486,7 @@ id: toolu_012Xbkw1SBU7emKGsQ7vvdZT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/test_init.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/test_init.py",
   "old_string": "    coordinators had not yet been created. The await on\n    ``async_internal_is_integration_connected`` between locks let the event\n    loop drain the entity-add tasks for prior locks, whose",
   "new_string": "    coordinators had not yet been created. The await on\n    ``async_internal_is_reachable`` between locks let the event\n    loop drain the entity-add tasks for prior locks, whose"
 }
@@ -4497,7 +4497,7 @@ id: toolu_012Xbkw1SBU7emKGsQ7vvdZT
 tool_result
 id: toolu_012Xbkw1SBU7emKGsQ7vvdZT
 ```
-The file /Users/raman/projects/lock_code_manager/tests/test_init.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/tests/test_init.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4554,7 +4554,7 @@ id: toolu_01DYePmDG3xLLT5xeADb8kXH
 .....................................................................    [100%]
 =============================== warnings summary ===============================
 tests/providers/zha/test_provider.py: 172 warnings
-  /Users/raman/projects/lock_code_manager/.venv/lib/python3.14/site-packages/homeassistant/components/usb/utils.py:39: DeprecationWarning: `description` is deprecated, use `product` instead
+  /home/<USER>/projects/lock_code_manager/.venv/lib/python3.14/site-packages/homeassistant/components/usb/utils.py:39: DeprecationWarning: `description` is deprecated, use `product` instead
     description=port.description,
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
@@ -4571,7 +4571,7 @@ tool_use Bash
 id: toolu_016WKD7qScsq4o12S2M5LHAc
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; echo \"=== stale references (should be empty) ===\"; grep -rn \"async_internal_is_integration_connected\" custom_components tests; echo \"=== changed files ===\"; git status --short",
+  "command": "cd /home/<USER>/projects/lock_code_manager; echo \"=== stale references (should be empty) ===\"; grep -rn \"async_internal_is_integration_connected\" custom_components tests; echo \"=== changed files ===\"; git status --short",
   "description": "Check for stale references and list changes"
 }
 ```
@@ -4649,7 +4649,7 @@ tool_use Bash
 id: toolu_01EBvaewALRSBj8xjmbnJdYQ
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\ngit checkout -b fix/unified-reachability-backoff-recovery\ngit add custom_components/lock_code_manager/__init__.py custom_components/lock_code_manager/domain/coordinator.py custom_components/lock_code_manager/providers/_base.py tests/common.py tests/providers/test_base.py tests/test_init.py\ngit commit -F - <<'EOF'\nfix(providers): recover backoff on device-level reconnect, not just integration (#1257)\n\nThe lock connectivity breaker's `unreachable` state is a device-reachability\nstate, but the only fast reset path (the connection-transition handler that\nkicks a refresh + resubscribe) was driven solely by the integration signal\n(async_is_integration_connected). For Matter the matter-server entry stays\nLOADED through a node-only outage, so a node reconnect was never detected\nquickly and recovery fell through to the escalating backoff probe\n(60s -> ... -> 1800s) -- the \"codes work again after several minutes\" symptom.\n\nUnify on a single end-to-end reachability signal: rename\nasync_internal_is_integration_connected -> async_internal_is_reachable, which\ncombines the integration/transport signal with the device/node signal\n(async_is_device_available). The transition handler is now fed combined\nreachability from both the 30s connection check and the operation gate, so a\ndevice-level reconnect resets the backoff at the ~30s connection-check cadence\nregardless of provider. Failures already fed the breaker uniformly; this makes\nrecovery uniform too. The rate-limit gate keeps its layer-specific\nLockDisconnected messages for diagnostics while feeding the combined signal.\n\nResubscribing on a node blip is effectively free: MatterClient.subscribe_events\nis local callback registration (no server round-trip) and setup_push_subscription\nis idempotent.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\nEOF",
+  "command": "cd /home/<USER>/projects/lock_code_manager\ngit checkout -b fix/unified-reachability-backoff-recovery\ngit add custom_components/lock_code_manager/__init__.py custom_components/lock_code_manager/domain/coordinator.py custom_components/lock_code_manager/providers/_base.py tests/common.py tests/providers/test_base.py tests/test_init.py\ngit commit -F - <<'EOF'\nfix(providers): recover backoff on device-level reconnect, not just integration (#1257)\n\nThe lock connectivity breaker's `unreachable` state is a device-reachability\nstate, but the only fast reset path (the connection-transition handler that\nkicks a refresh + resubscribe) was driven solely by the integration signal\n(async_is_integration_connected). For Matter the matter-server entry stays\nLOADED through a node-only outage, so a node reconnect was never detected\nquickly and recovery fell through to the escalating backoff probe\n(60s -> ... -> 1800s) -- the \"codes work again after several minutes\" symptom.\n\nUnify on a single end-to-end reachability signal: rename\nasync_internal_is_integration_connected -> async_internal_is_reachable, which\ncombines the integration/transport signal with the device/node signal\n(async_is_device_available). The transition handler is now fed combined\nreachability from both the 30s connection check and the operation gate, so a\ndevice-level reconnect resets the backoff at the ~30s connection-check cadence\nregardless of provider. Failures already fed the breaker uniformly; this makes\nrecovery uniform too. The rate-limit gate keeps its layer-specific\nLockDisconnected messages for diagnostics while feeding the combined signal.\n\nResubscribing on a node blip is effectively free: MatterClient.subscribe_events\nis local callback registration (no server round-trip) and setup_push_subscription\nis idempotent.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\nEOF",
   "description": "Branch and commit"
 }
 ```
@@ -4692,7 +4692,7 @@ tool_use Bash
 id: toolu_01WW43zfFZr3dSKzKDy4PLhp
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\ngit push -u origin fix/unified-reachability-backoff-recovery 2>&1 | tail -3\ncat > /tmp/pr_body3.md <<'EOF'\n## Proposed change\n\nFinal piece of the #1257 follow-up: fix the \"Matter codes start working again only after several minutes\" recovery latency.\n\nThe lock connectivity breaker's `unreachable` state is reset quickly by the connection-transition handler (`_handle_connection_transition`), which kicks a coordinator refresh + push resubscribe on a False→True transition. But that handler was driven **only** by the integration signal (`async_is_integration_connected`). For Matter, the matter-*server* config entry stays `LOADED` through a node-only outage, so a node reconnect was never detected by that path — recovery fell through to the escalating backoff probe (`60s → 120 → 240 → … → 1800s`), i.e. up to 30 minutes.\n\nFailures already feed the breaker uniformly (any `LockDisconnected`, network- or device-level, via `note_connectivity_failure`/`_apply_backoff`). This makes **recovery** uniform too, by unifying on a single end-to-end reachability signal:\n\n- Rename `async_internal_is_integration_connected` → **`async_internal_is_reachable`**, computing `integration_connected AND device_available` and feeding that to the transition handler.\n- Extract `_note_reachability()` so both the 30s connection check **and** the operation gate (`_execute_rate_limited`) drive the transition off the combined signal. The gate keeps its layer-specific `LockDisconnected` messages for diagnostics.\n- Net effect: a device/node reconnect now resets the backoff at […]
+  "command": "cd /home/<USER>/projects/lock_code_manager\ngit push -u origin fix/unified-reachability-backoff-recovery 2>&1 | tail -3\ncat > /tmp/pr_body3.md <<'EOF'\n## Proposed change\n\nFinal piece of the #1257 follow-up: fix the \"Matter codes start working again only after several minutes\" recovery latency.\n\nThe lock connectivity breaker's `unreachable` state is reset quickly by the connection-transition handler (`_handle_connection_transition`), which kicks a coordinator refresh + push resubscribe on a False→True transition. But that handler was driven **only** by the integration signal (`async_is_integration_connected`). For Matter, the matter-*server* config entry stays `LOADED` through a node-only outage, so a node reconnect was never detected by that path — recovery fell through to the escalating backoff probe (`60s → 120 → 240 → … → 1800s`), i.e. up to 30 minutes.\n\nFailures already feed the breaker uniformly (any `LockDisconnected`, network- or device-level, via `note_connectivity_failure`/`_apply_backoff`). This makes **recovery** uniform too, by unifying on a single end-to-end reachability signal:\n\n- Rename `async_internal_is_integration_connected` → **`async_internal_is_reachable`**, computing `integration_connected AND device_available` and feeding that to the transition handler.\n- Extract `_note_reachability()` so both the 30s connection check **and** the operation gate (`_execute_rate_limited`) drive the transition off the combined signal. The gate keeps its layer-specific `LockDisconnected` messages for diagnostics.\n- Net effect: a device/node reconnect now resets the backoff at […]
 
 > TOOL
 
@@ -4745,7 +4745,7 @@ tool_use Bash
 id: toolu_01AbUK6iGHN2JeDznNKHpBUk
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\ngh run view 27973036902 2>&1 | head -40",
+  "command": "cd /home/<USER>/projects/lock_code_manager\ngh run view 27973036902 2>&1 | head -40",
   "description": "View the failing workflow run summary"
 }
 ```
@@ -4788,7 +4788,7 @@ tool_use Bash
 id: toolu_01U15axK94spbYvjPbGNhhGi
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\ngh run view 27973036902 --log-failed 2>&1 | head -40\necho \"=== release workflow file ===\"\nls .github/workflows/",
+  "command": "cd /home/<USER>/projects/lock_code_manager\ngh run view 27973036902 --log-failed 2>&1 | head -40\necho \"=== release workflow file ===\"\nls .github/workflows/",
   "description": "Get failed step log and list workflows"
 }
 ```
@@ -4830,7 +4830,7 @@ tool_use Read
 id: toolu_01A1Aw18dgk3j7X9Dsz9Cckt
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/.github/workflows/release.yaml"
+  "file_path": "/home/<USER>/projects/lock_code_manager/.github/workflows/release.yaml"
 }
 ```
 
@@ -4894,7 +4894,7 @@ tool_use Bash
 id: toolu_01JZ8TQE9Xs6x8yfZo5SiboV
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\necho \"=== Get Version + Update + Upload step lines ===\"\ngh run view 27973036902 --log 2>&1 | grep -iE \"VERSION=|github.ref|Input required|tag|Get Version|svenstaro|refs/tags\" | head -30\necho\necho \"=== the release 4.1.4 details ===\"\ngh release view 4.1.4 --json tagName,isDraft,targetCommitish,createdAt,publishedAt 2>&1 | head",
+  "command": "cd /home/<USER>/projects/lock_code_manager\necho \"=== Get Version + Update + Upload step lines ===\"\ngh run view 27973036902 --log 2>&1 | grep -iE \"VERSION=|github.ref|Input required|tag|Get Version|svenstaro|refs/tags\" | head -30\necho\necho \"=== the release 4.1.4 details ===\"\ngh release view 4.1.4 --json tagName,isDraft,targetCommitish,createdAt,publishedAt 2>&1 | head",
   "description": "Inspect log values and release metadata"
 }
 ```
@@ -4928,7 +4928,7 @@ tool_use Bash
 id: toolu_01NfPX8h5VQGUEK3JJ5oMzuc
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\necho \"=== recent Release workflow runs ===\"\ngh run list --workflow=release.yaml -L 8 2>&1\necho\necho \"=== git history of release.yaml (last 8) ===\"\ngit log --oneline -8 -- .github/workflows/release.yaml",
+  "command": "cd /home/<USER>/projects/lock_code_manager\necho \"=== recent Release workflow runs ===\"\ngh run list --workflow=release.yaml -L 8 2>&1\necho\necho \"=== git history of release.yaml (last 8) ===\"\ngit log --oneline -8 -- .github/workflows/release.yaml",
   "description": "Check release run history and workflow git log"
 }
 ```

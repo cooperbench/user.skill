@@ -64,7 +64,7 @@ tool_use Bash
 id: toolu_017RzAkVtmm8Tj5LApegQz5e
 ```json
 {
-  "command": "/Users/dcambria/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh status 2>&1 | head -30",
+  "command": "/home/<USER>/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh status 2>&1 | head -30",
   "description": "Check container status for concertacao"
 }
 ```
@@ -1438,7 +1438,7 @@ tool_use Bash
 id: toolu_01VHkdHqhCGYgewHrQLT2DJQ
 ```json
 {
-  "command": "ls -la /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/docs/superpowers/specs/ 2>&1 | tail -5\ndate +%Y-%m-%d",
+  "command": "ls -la /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/docs/superpowers/specs/ 2>&1 | tail -5\ndate +%Y-%m-%d",
   "description": "Check specs dir and date"
 }
 ```
@@ -1515,7 +1515,7 @@ tool_use Write
 id: toolu_01YEtwfCnLDD5obvTPrSGPvK
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/docs/superpowers/specs/2026-06-08-mapa-plataformas-query-count-design.md",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/docs/superpowers/specs/2026-06-08-mapa-plataformas-query-count-design.md",
   "content": "# Mapa de Plataformas — Query própria + correção do contador \"Mostrando X de Y\"\n\n**Data:** 2026-06-08\n**Site:** Concertação Amazônica (blog 1, raiz)\n**Autor:** Daniel Cambría\n\n## Problema\n\nA página **Mapa de Plataformas** (`/conhecimento/mapa-das-plataformas/`, PT post `26827`,\nEN \"Platform Map\" post `75718`) recebeu, por copy-paste da página **Espiral de\nConhecimento**, um widget de contagem (\"Mostrando X de Y\") cujo dynamic tag\n`jet-query-count` está cravado em **`query_id=\"12\"`** — a query *\"Objetos para\nEspiral\"* (CPT `objetos`+`estudos`, 421 itens). Resultado: a mensagem conta\n**estudos**, não **plataformas**, e fala \"estudos cadastrados\".\n\nAlém disso, há um **bug herdado**: para qualquer busca cujo resultado seja\n**menor que 12**, a mensagem continua dizendo \"Mostrando **12**...\".\n\n### Diagnóstico (verificado no dev)\n\nPadrão de wiring na **Espiral** (referência que funciona):\n\n| Componente | Valor | Papel |\n|---|---|---|\n| Listing grid `1a6ba01` | `_element_id=estudos`, `custom_query_id=12` | renderiza via Query Builder query 12 |\n| Filtros JSF | `query_id=estudos` | apontam para o `_element_id` do listing (provider) |\n| Count `0781799` (corrigido) | `query_id=12`, `[end-item]` | conta via query 12, robusto |\n| Count `bb87a69` (bugado) | `query_id=12`, `%visible%` | conta via query 12, mas `%visible%` congela |\n\nEstado atual da **Mapa de Plataformas (PT 26827)**:\n\n| Componente | Valor | Status |\n|---|---|---|\n| Listing grid `23d592f` (listing `14035`) | `_element_id=plataformas-de-pesquisa`, **sem `custom_query_id`** | […]
 
 > TOOL
@@ -1523,7 +1523,7 @@ id: toolu_01YEtwfCnLDD5obvTPrSGPvK
 tool_result
 id: toolu_01YEtwfCnLDD5obvTPrSGPvK
 ```
-File created successfully at: /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/docs/superpowers/specs/2026-06-08-mapa-plataformas-query-count-design.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/docs/superpowers/specs/2026-06-08-mapa-plataformas-query-count-design.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1543,7 +1543,7 @@ tool_use Bash
 id: toolu_01VAbtmwC4ixuKXNWGGTkUZJ
 ```json
 {
-  "command": "git add docs/superpowers/specs/2026-06-08-mapa-plataformas-query-count-design.md && git commit -q -m \"docs(spec): Mapa de Plataformas — query própria + fix contador 'Mostrando X de Y'\n\nDiagnóstico: count widget copiado da Espiral aponta para query 12 (estudos);\nbug herdado '<12 mostra 12' por uso de %visible% num span não-disparado pelos\nfiltros. Solução A: nova Query Builder query de plataformas, religar listing/\ncount, usar [end-item]. Paridade PT/EN + correção da Espiral.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\" && echo \"OK committed\" && git log --oneline -1",
+  "command": "git add docs/superpowers/specs/2026-06-08-mapa-plataformas-query-count-design.md && git commit -q -m \"docs(spec): Mapa de Plataformas — query própria + fix contador 'Mostrando X de Y'\n\nDiagnóstico: count widget copiado da Espiral aponta para query 12 (estudos);\nbug herdado '<12 mostra 12' por uso de %visible% num span não-disparado pelos\nfiltros. Solução A: nova Query Builder query de plataformas, religar listing/\ncount, usar [end-item]. Paridade PT/EN + correção da Espiral.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\" && echo \"OK committed\" && git log --oneline -1",
   "description": "Commit the design spec"
 }
 ```
@@ -1656,7 +1656,7 @@ id: toolu_01WFD6Tx4u9aHELqNjNUjaza
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/docs/superpowers/specs/2026-06-08-mapa-plataformas-query-count-design.md",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/docs/superpowers/specs/2026-06-08-mapa-plataformas-query-count-design.md",
   "old_string": "Filtro de tema (checkbox `13571`) injeta a query var `categorias-da-plataforma`\nsobre a taxonomia `eixos` via glossary; o provider JSF é `plataformas-de-pesquisa`\n(= `_element_id` do listing). A query nova deve ser do tipo `posts`,\n`post_type=plataformas`, `post_status=publish`, `posts_per_page=8` (espelhando o\n`posts_num=8` atual do widget e o \"Load More\"), sem tax_query fixa (os filtros\ninjetam dinamicamente, como na query 12).\n\n> **Nota — posts_per_page:** o listing usa `posts_num=8` + Load More. A query 12\n> da Espiral usa `posts_per_page=12`, daí o \"12\". A query nova usa **8** para bater\n> com o comportamento atual da página. O `[end-item]` cobre qualquer valor.",
   "new_string": "Filtro de tema (checkbox `13571`) injeta a query var `categorias-da-plataforma`\nsobre a taxonomia `eixos` via glossary; o provider JSF é `plataformas-de-pesquisa`\n(= `_element_id` do listing). A query nova deve ser do tipo `posts`,\n`post_type=plataformas`, `post_status=publish`, `posts_per_page=12`, sem tax_query\nfixa (os filtros injetam dinamicamente, como na query 12).\n\n> **Nota — posts_per_page:** definido em **12** (decisão do Daniel 2026-06-08),\n> alinhado à query 12 da Espiral. O widget de listing tinha `posts_num=8`; será\n> ajustado para 12 também, ou o `custom_query_id` sobrescreve o `posts_num` do\n> widget (a query manda no paging). O `[end-item]` cobre qualquer valor."
 }
@@ -1667,7 +1667,7 @@ id: toolu_01WFD6Tx4u9aHELqNjNUjaza
 tool_result
 id: toolu_01WFD6Tx4u9aHELqNjNUjaza
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/docs/superpowers/specs/2026-06-08-mapa-plataformas-query-count-design.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/docs/superpowers/specs/2026-06-08-mapa-plataformas-query-count-design.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1677,7 +1677,7 @@ id: toolu_01WDZhERyB2Adba3AJGwd9CZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/docs/superpowers/specs/2026-06-08-mapa-plataformas-query-count-design.md",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/docs/superpowers/specs/2026-06-08-mapa-plataformas-query-count-design.md",
   "old_string": "- Tipo: `posts`\n- `post_type: [\"plataformas\"]`, `post_status: [\"publish\"]`\n- `posts_per_page: 8`\n- `orderby: title ASC`",
   "new_string": "- Tipo: `posts`\n- `post_type: [\"plataformas\"]`, `post_status: [\"publish\"]`\n- `posts_per_page: 12`\n- `orderby: title ASC`"
 }
@@ -1688,7 +1688,7 @@ id: toolu_01WDZhERyB2Adba3AJGwd9CZ
 tool_result
 id: toolu_01WDZhERyB2Adba3AJGwd9CZ
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/docs/superpowers/specs/2026-06-08-mapa-plataformas-query-count-design.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/docs/superpowers/specs/2026-06-08-mapa-plataformas-query-count-design.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1698,7 +1698,7 @@ id: toolu_01Ui41jXJp1pu7kbzSQSzNdM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/docs/superpowers/specs/2026-06-08-mapa-plataformas-query-count-design.md",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/docs/superpowers/specs/2026-06-08-mapa-plataformas-query-count-design.md",
   "old_string": "- **Listing `23d592f`**: adicionar `\"use_custom_query\":\"yes\"` e\n  `\"custom_query_id\":\"<NEW_QID>\"`. Manter `_element_id=plataformas-de-pesquisa`\n  e `posts_num=8`.",
   "new_string": "- **Listing `23d592f`**: adicionar `\"use_custom_query\":\"yes\"` e\n  `\"custom_query_id\":\"<NEW_QID>\"`. Manter `_element_id=plataformas-de-pesquisa`.\n  Ajustar `posts_num` para `12` (ou deixar a query mandar no paging)."
 }
@@ -1709,7 +1709,7 @@ id: toolu_01Ui41jXJp1pu7kbzSQSzNdM
 tool_result
 id: toolu_01Ui41jXJp1pu7kbzSQSzNdM
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/docs/superpowers/specs/2026-06-08-mapa-plataformas-query-count-design.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/docs/superpowers/specs/2026-06-08-mapa-plataformas-query-count-design.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1746,7 +1746,7 @@ tool_use Bash
 id: toolu_015ozspBMFaQXQ9vQTVyh2JD
 ```json
 {
-  "command": "echo \"=== Backup dos 4 _elementor_data ANTES de planejar (snapshot pra plano referenciar) ===\"\nmkdir -p /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/tmp/mapa-plataformas-fix\ncd /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/tmp/mapa-plataformas-fix\nfor ID in 26827 75718 26826 79123; do\n  docker exec -u www-data concertacao-dev-wordpress wp post meta get $ID _elementor_data --format=json > snapshot_${ID}.json 2>/dev/null\n  echo \"snapshot_${ID}.json: $(wc -c < snapshot_${ID}.json) bytes\"\ndone\nls -la",
+  "command": "echo \"=== Backup dos 4 _elementor_data ANTES de planejar (snapshot pra plano referenciar) ===\"\nmkdir -p /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/tmp/mapa-plataformas-fix\ncd /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/tmp/mapa-plataformas-fix\nfor ID in 26827 75718 26826 79123; do\n  docker exec -u www-data concertacao-dev-wordpress wp post meta get $ID _elementor_data --format=json > snapshot_${ID}.json 2>/dev/null\n  echo \"snapshot_${ID}.json: $(wc -c < snapshot_${ID}.json) bytes\"\ndone\nls -la",
   "description": "Snapshot the 4 elementor_data blobs"
 }
 ```
@@ -1939,7 +1939,7 @@ tool_use Write
 id: toolu_01GJBx9MC8ipMW3jJSWbUoUC
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/docs/superpowers/plans/2026-06-08-mapa-plataformas-query-count.md",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/docs/superpowers/plans/2026-06-08-mapa-plataformas-query-count.md",
   "content": "# Mapa de Plataformas — Query própria + fix contador — Implementation Plan\n\n> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.\n\n**Goal:** Fazer o contador \"Mostrando X de Y\" da página Mapa de Plataformas contar **plataformas** (não estudos) e eliminar o bug em que resultados <12 mostram \"12\", com paridade PT/EN; corrigir também a origem do bug na Espiral.\n\n**Architecture:** Solução 100% data-driven (sem mu-plugin). Cria uma query JetEngine para o CPT `plataformas`, religa o listing grid a ela via `custom_query_id`, e aponta o dynamic tag `jet-query-count` para essa query usando a macro robusta `[end-item]`. Edições no `_elementor_data` feitas por script PHP que localiza widgets por ID (decode → mutate → `wp_json_encode` → `wp_slash`).\n\n**Tech Stack:** WordPress Multisite (blog 1), JetEngine Query Builder, JetSmartFilters, Elementor, WP-CLI dentro do container `concertacao-dev-wordpress`.\n\n---\n\n## Contexto essencial (ler antes de começar)\n\n**IDs envolvidos (blog 1, raiz):**\n\n| Item | ID | Papel |\n|---|---|---|\n| Página Mapa de Plataformas (PT) | `26827` | onde está o count bugado |\n| Página Platform Map (EN) | `75718` | sem count hoje; vai ganhar |\n| Página Espiral de Conhecimento (PT) […]
 
 > TOOL
@@ -1947,7 +1947,7 @@ id: toolu_01GJBx9MC8ipMW3jJSWbUoUC
 tool_result
 id: toolu_01GJBx9MC8ipMW3jJSWbUoUC
 ```
-File created successfully at: /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/docs/superpowers/plans/2026-06-08-mapa-plataformas-query-count.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/docs/superpowers/plans/2026-06-08-mapa-plataformas-query-count.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1960,7 +1960,7 @@ tool_use Bash
 id: toolu_01V8shtvGMsRRBLeXJoZHGom
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao\ngit add docs/superpowers/specs/2026-06-08-mapa-plataformas-query-count-design.md docs/superpowers/plans/2026-06-08-mapa-plataformas-query-count.md\ngit commit -q -m \"docs(plan): Mapa de Plataformas — plano de implementação query+contador\n\nSpec atualizada (posts_per_page=12, textos finais) + plano em 7 tasks:\nquery nova, relink listing PT/EN, count PT, count EN novo, Espiral PT/EN,\ndeploy prod 2-etapas, validação. Scripts PHP com wp_slash e validação JSON.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\"\necho \"=== commit ===\"\ngit log --oneline -1",
+  "command": "cd /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao\ngit add docs/superpowers/specs/2026-06-08-mapa-plataformas-query-count-design.md docs/superpowers/plans/2026-06-08-mapa-plataformas-query-count.md\ngit commit -q -m \"docs(plan): Mapa de Plataformas — plano de implementação query+contador\n\nSpec atualizada (posts_per_page=12, textos finais) + plano em 7 tasks:\nquery nova, relink listing PT/EN, count PT, count EN novo, Espiral PT/EN,\ndeploy prod 2-etapas, validação. Scripts PHP com wp_slash e validação JSON.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\"\necho \"=== commit ===\"\ngit log --oneline -1",
   "description": "Commit spec update + implementation plan"
 }
 ```

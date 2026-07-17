@@ -2,9 +2,9 @@
 
 Can you get on a different branch and fix Launching Pi...
 
-Error: Failed to load extension "/home/mike-anderson/dev/cohezion/.pi/extensions/cohezion-kg.ts": Tool "kg_search" conflicts with /home/mike-anderson/dev/cohezion/.pi/extensions/cohezion-kg-optimized.ts
-Error: Failed to load extension "/home/mike-anderson/dev/cohezion/.pi/extensions/cohezion-kg.ts": Tool "kg_history" conflicts with /home/mike-anderson/dev/cohezion/.pi/extensions/cohezion-kg-optimized.ts
-Error: Failed to load extension "/home/mike-anderson/dev/cohezion/.pi/extensions/cohezion-kg.ts": Tool "kg_stats" conflicts with /home/mike-anderson/dev/cohezion/.pi/extensions/cohezion-kg-optimized.ts
+Error: Failed to load extension "/home/<USER>/dev/cohezion/.pi/extensions/cohezion-kg.ts": Tool "kg_search" conflicts with /home/<USER>/dev/cohezion/.pi/extensions/cohezion-kg-optimized.ts
+Error: Failed to load extension "/home/<USER>/dev/cohezion/.pi/extensions/cohezion-kg.ts": Tool "kg_history" conflicts with /home/<USER>/dev/cohezion/.pi/extensions/cohezion-kg-optimized.ts
+Error: Failed to load extension "/home/<USER>/dev/cohezion/.pi/extensions/cohezion-kg.ts": Tool "kg_stats" conflicts with /home/<USER>/dev/cohezion/.pi/extensions/cohezion-kg-optimized.ts
 Error: exit status 1
 
 > AGENT
@@ -28,7 +28,7 @@ tool_use Bash
 id: toolu_012uYe7Euq1DNohDob4BULWi
 ```json
 {
-  "command": "ls -la /home/mike-anderson/dev/cohezion/.pi/extensions/cohezion-kg*.ts",
+  "command": "ls -la /home/<USER>/dev/cohezion/.pi/extensions/cohezion-kg*.ts",
   "description": "List the conflicting extension files"
 }
 ```
@@ -67,7 +67,7 @@ tool_use Bash
 id: toolu_0158SJTv7XxwrHqxgcwtp8Hc
 ```json
 {
-  "command": "ls -la /home/mike-anderson/dev/cohezion/.pi/extensions/cohezion-kg*.ts",
+  "command": "ls -la /home/<USER>/dev/cohezion/.pi/extensions/cohezion-kg*.ts",
   "description": "List the conflicting extension files",
   "dangerouslyDisableSandbox": true
 }
@@ -142,7 +142,7 @@ tool_use Read
 id: toolu_01J7oT7QWa8sJ7MDfNnaegYv
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/.pi/extensions/cohezion-kg.ts"
+  "file_path": "/home/<USER>/dev/cohezion/.pi/extensions/cohezion-kg.ts"
 }
 ```
 
@@ -152,7 +152,7 @@ tool_use Read
 id: toolu_01RYgbKpGKeiDaMZEt7qwPst
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/.pi/extensions/cohezion-kg-optimized.ts"
+  "file_path": "/home/<USER>/dev/cohezion/.pi/extensions/cohezion-kg-optimized.ts"
 }
 ```
 
@@ -432,7 +432,7 @@ tool_use Write
 id: toolu_01B5egSE9aLxt7iVgkkt9pMT
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/.pi/extensions/cohezion-kg.ts",
+  "file_path": "/home/<USER>/dev/cohezion/.pi/extensions/cohezion-kg.ts",
   "content": "/**\n * DEPRECATED: Use cohezion-kg-optimized.ts instead.\n * This file is intentionally empty to avoid tool name conflicts.\n */\nimport type { ExtensionAPI } from \"@mariozechner/pi-coding-agent\";\n\nexport default function cohezionKG(_pi: ExtensionAPI) {\n  // No-op: all KG tools are registered by cohezion-kg-optimized.ts\n}\n"
 }
 ```
@@ -442,7 +442,7 @@ id: toolu_01B5egSE9aLxt7iVgkkt9pMT
 tool_result
 id: toolu_01B5egSE9aLxt7iVgkkt9pMT
 ```
-The file /home/mike-anderson/dev/cohezion/.pi/extensions/cohezion-kg.ts has been updated successfully.
+The file /home/<USER>/dev/cohezion/.pi/extensions/cohezion-kg.ts has been updated successfully.
 ```
 
 > AGENT
@@ -469,9 +469,9 @@ Pi should launch cleanly now. Want to try it?
 
 Same issue persists: Launching Pi...
 
-Error: Failed to load extension "/home/mike-anderson/dev/cohezion/.pi/extensions/cohezion-kg.ts": Tool "kg_search" conflicts with /home/mike-anderson/dev/cohezion/.pi/extensions/cohezion-kg-optimized.ts
-Error: Failed to load extension "/home/mike-anderson/dev/cohezion/.pi/extensions/cohezion-kg.ts": Tool "kg_history" conflicts with /home/mike-anderson/dev/cohezion/.pi/extensions/cohezion-kg-optimized.ts
-Error: Failed to load extension "/home/mike-anderson/dev/cohezion/.pi/extensions/cohezion-kg.ts": Tool "kg_stats" conflicts with /home/mike-anderson/dev/cohezion/.pi/extensions/cohezion-kg-optimized.ts
+Error: Failed to load extension "/home/<USER>/dev/cohezion/.pi/extensions/cohezion-kg.ts": Tool "kg_search" conflicts with /home/<USER>/dev/cohezion/.pi/extensions/cohezion-kg-optimized.ts
+Error: Failed to load extension "/home/<USER>/dev/cohezion/.pi/extensions/cohezion-kg.ts": Tool "kg_history" conflicts with /home/<USER>/dev/cohezion/.pi/extensions/cohezion-kg-optimized.ts
+Error: Failed to load extension "/home/<USER>/dev/cohezion/.pi/extensions/cohezion-kg.ts": Tool "kg_stats" conflicts with /home/<USER>/dev/cohezion/.pi/extensions/cohezion-kg-optimized.ts
 Error: exit status 1
 
 > AGENT
@@ -484,7 +484,7 @@ tool_use Read
 id: toolu_01DUfM4V5weKrnaX7usaTKZ5
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/.pi/extensions/cohezion-kg.ts"
+  "file_path": "/home/<USER>/dev/cohezion/.pi/extensions/cohezion-kg.ts"
 }
 ```
 
@@ -502,7 +502,7 @@ tool_use Write
 id: toolu_01CoafYgB3R4Ccsb34SJhTgr
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/.pi/extensions/cohezion-kg.ts",
+  "file_path": "/home/<USER>/dev/cohezion/.pi/extensions/cohezion-kg.ts",
   "content": "/**\n * DEPRECATED: Use cohezion-kg-optimized.ts instead.\n * This file is intentionally empty to avoid tool name conflicts.\n */\nimport type { ExtensionAPI } from \"@mariozechner/pi-coding-agent\";\n\nexport default function (_pi: ExtensionAPI) {\n  // No-op: all KG tools are registered by cohezion-kg-optimized.ts\n}\n"
 }
 ```
@@ -512,7 +512,7 @@ id: toolu_01CoafYgB3R4Ccsb34SJhTgr
 tool_result
 id: toolu_01CoafYgB3R4Ccsb34SJhTgr
 ```
-The file /home/mike-anderson/dev/cohezion/.pi/extensions/cohezion-kg.ts has been updated successfully.
+The file /home/<USER>/dev/cohezion/.pi/extensions/cohezion-kg.ts has been updated successfully.
 ```
 
 > AGENT
@@ -546,7 +546,7 @@ id: toolu_01QsuLZaLBRVMLSBdNJ8CyMp
 ```json
 {
   "pattern": "~/vaults/cohezion-vault/cerebellum/**/*.md",
-  "path": "/home/mike-anderson/vaults/cohezion-vault/cerebellum"
+  "path": "/home/<USER>/vaults/cohezion-vault/cerebellum"
 }
 ```
 
@@ -585,7 +585,7 @@ id: toolu_01WJUAov22BsoPRKCwQx4csV
 ```json
 {
   "pattern": "**/*.md",
-  "path": "/home/mike-anderson/vaults/cohezion-vault"
+  "path": "/home/<USER>/vaults/cohezion-vault"
 }
 ```
 
@@ -594,106 +594,106 @@ id: toolu_01WJUAov22BsoPRKCwQx4csV
 tool_result
 id: toolu_01WJUAov22BsoPRKCwQx4csV
 ```
-/home/mike-anderson/vaults/cohezion-vault/mcp-server/.pytest_cache/README.md
-/home/mike-anderson/vaults/cohezion-vault/.entire/metadata/b36c2d47-0f3a-46da-bd90-a56ae5f8472d/context.md
-/home/mike-anderson/vaults/cohezion-vault/.entire/metadata/a8ef61bd-3cc4-4391-bfce-f382819de4f8/context.md
-/home/mike-anderson/vaults/cohezion-vault/.entire/metadata/41744052-0e7b-4025-9ee8-f4700beab18b/context.md
-/home/mike-anderson/vaults/cohezion-vault/.pytest_cache/README.md
-/home/mike-anderson/vaults/cohezion-vault/obsidian-plugin/3d-graph-plugin/node_modules/ajv/lib/dotjs/README.md
-/home/mike-anderson/vaults/cohezion-vault/obsidian-plugin/3d-graph-plugin/node_modules/typescript/lib/README.md
-/home/mike-anderson/vaults/cohezion-vault/obsidian-plugin/3d-graph-plugin/.pytest_cache/README.md
-/home/mike-anderson/vaults/cohezion-vault/obsidian-plugin/3d-graph-plugin/node_modules/@bcoe/v8-coverage/dist/lib/CHANGELOG.md
-/home/mike-anderson/vaults/cohezion-vault/obsidian-plugin/3d-graph-plugin/node_modules/@bcoe/v8-coverage/dist/lib/LICENSE.md
-/home/mike-anderson/vaults/cohezion-vault/obsidian-plugin/3d-graph-plugin/node_modules/@bcoe/v8-coverage/dist/lib/README.md
-/home/mike-anderson/vaults/cohezion-vault/obsidian-plugin/3d-graph-plugin/node_modules/@sinonjs/commons/lib/prototypes/README.md
-/home/mike-anderson/vaults/cohezion-vault/tools/cohezion-engine/.pytest_cache/README.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/3d-graph-completion-report.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/3d-graph-visualization-setup.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/3d-graph-quick-start.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/agents/spec-reviewer-quality.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/agents/plan-challenger.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/agents/spec-reviewer-compliance.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/agents/plan-verifier.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/commands/spec.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/commands/spec-implement.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/commands/spec-verify.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/commands/learn.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/commands/research.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/commands/security-review.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/commands/vault.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/commands/spec-plan.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/commands/sync.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/README-3D-GRAPH.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/rules/context-continuation.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/rules/cz-cli.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/rules/development-workflows.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/rules/mcp-servers.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/rules/vault-conventions.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/rules/project.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/rules/cli-override.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/skills/daily-research/SKILL.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/CHANGELOG.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/agent-context.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/agent-journey-tracking.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/ai-safety-alignment.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/ai-agents.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/10-log-mining-adversarial-review.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/agent-architecture.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/agentic-ai.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/09-rust-flume-python313-incompatibility.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/10-claude-log-mining-architecture.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/agent-loop-architecture.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/adversarial-review.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/INSTALLATION.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/benchmarks/release-metrics.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/benchmarks/README.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/HANDOFF.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/concept.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/concept-isolation.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/anthropic-research-engineer.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/concept-caching.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/compound-engineering-investigation-retrospection-before-destructive-operations.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/catalytic-materials.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/anomaly-detection.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/concept-modularity.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/concept-versioning.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/black-holes.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/concept-automation.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/concept-testing.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/context-management.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/astrophysics-observations.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/compound-engineering.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/concept-validation.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/astronomy.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/ai-safety.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/api-design.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/concept-optimization.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/bioinformatics.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/alignment.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/cognitive-science.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/cs249r/ai_for_good.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/cohezion.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/cs249r/conclusion.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/cs249r/ml-systems-glossary.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/cs249r/data_engineering.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/cs249r/dl_primer.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/cs249r/frontiers.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/cs249r/dnn_architectures.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/cs249r/benchmarking.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/cs249r/hw_acceleration.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/cs249r/efficient_ai.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/cs249r/frameworks.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/cs249r/index.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/cs249r/ml_systems.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/cs249r/introduction.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/decision-phase-1-surrealdb-agent-context.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/decision-vault-first-knowledge-architecture.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/experience-feedback-loop.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/exoplanet-habitability.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/embodied-ai.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/error-handling-with-dlq.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/dark-matter.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/dark-matter-detection.md
+/home/<USER>/vaults/cohezion-vault/mcp-server/.pytest_cache/README.md
+/home/<USER>/vaults/cohezion-vault/.entire/metadata/b36c2d47-0f3a-46da-bd90-a56ae5f8472d/context.md
+/home/<USER>/vaults/cohezion-vault/.entire/metadata/a8ef61bd-3cc4-4391-bfce-f382819de4f8/context.md
+/home/<USER>/vaults/cohezion-vault/.entire/metadata/41744052-0e7b-4025-9ee8-f4700beab18b/context.md
+/home/<USER>/vaults/cohezion-vault/.pytest_cache/README.md
+/home/<USER>/vaults/cohezion-vault/obsidian-plugin/3d-graph-plugin/node_modules/ajv/lib/dotjs/README.md
+/home/<USER>/vaults/cohezion-vault/obsidian-plugin/3d-graph-plugin/node_modules/typescript/lib/README.md
+/home/<USER>/vaults/cohezion-vault/obsidian-plugin/3d-graph-plugin/.pytest_cache/README.md
+/home/<USER>/vaults/cohezion-vault/obsidian-plugin/3d-graph-plugin/node_modules/@bcoe/v8-coverage/dist/lib/CHANGELOG.md
+/home/<USER>/vaults/cohezion-vault/obsidian-plugin/3d-graph-plugin/node_modules/@bcoe/v8-coverage/dist/lib/LICENSE.md
+/home/<USER>/vaults/cohezion-vault/obsidian-plugin/3d-graph-plugin/node_modules/@bcoe/v8-coverage/dist/lib/README.md
+/home/<USER>/vaults/cohezion-vault/obsidian-plugin/3d-graph-plugin/node_modules/@sinonjs/commons/lib/prototypes/README.md
+/home/<USER>/vaults/cohezion-vault/tools/cohezion-engine/.pytest_cache/README.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/3d-graph-completion-report.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/3d-graph-visualization-setup.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/3d-graph-quick-start.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/agents/spec-reviewer-quality.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/agents/plan-challenger.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/agents/spec-reviewer-compliance.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/agents/plan-verifier.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/commands/spec.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/commands/spec-implement.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/commands/spec-verify.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/commands/learn.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/commands/research.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/commands/security-review.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/commands/vault.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/commands/spec-plan.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/commands/sync.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/README-3D-GRAPH.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/rules/context-continuation.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/rules/cz-cli.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/rules/development-workflows.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/rules/mcp-servers.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/rules/vault-conventions.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/rules/project.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/rules/cli-override.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/.claude/skills/daily-research/SKILL.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/CHANGELOG.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/agent-context.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/agent-journey-tracking.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/ai-safety-alignment.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/ai-agents.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/10-log-mining-adversarial-review.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/agent-architecture.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/agentic-ai.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/09-rust-flume-python313-incompatibility.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/10-claude-log-mining-architecture.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/agent-loop-architecture.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/adversarial-review.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/INSTALLATION.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/benchmarks/release-metrics.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/benchmarks/README.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/HANDOFF.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/concept.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/concept-isolation.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/anthropic-research-engineer.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/concept-caching.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/compound-engineering-investigation-retrospection-before-destructive-operations.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/catalytic-materials.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/anomaly-detection.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/concept-modularity.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/concept-versioning.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/black-holes.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/concept-automation.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/concept-testing.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/context-management.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/astrophysics-observations.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/compound-engineering.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/concept-validation.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/astronomy.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/ai-safety.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/api-design.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/concept-optimization.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/bioinformatics.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/alignment.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/cognitive-science.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/cs249r/ai_for_good.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/cohezion.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/cs249r/conclusion.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/cs249r/ml-systems-glossary.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/cs249r/data_engineering.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/cs249r/dl_primer.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/cs249r/frontiers.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/cs249r/dnn_architectures.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/cs249r/benchmarking.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/cs249r/hw_acceleration.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/cs249r/efficient_ai.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/cs249r/frameworks.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/cs249r/index.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/cs249r/ml_systems.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/cs249r/introduction.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/decision-phase-1-surrealdb-agent-context.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/decision-vault-first-knowledge-architecture.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/experience-feedback-loop.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/exoplanet-habitability.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/embodied-ai.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/error-handling-with-dlq.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/dark-matter.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/concepts/dark-matter-detection.md
 (Results are truncated. Consider using a more specific path or pattern.)
 ```
 
@@ -708,7 +708,7 @@ id: toolu_01Dx6Qdki7qbQ4NAfuHLbGQZ
 ```json
 {
   "pattern": "decisions/*.md",
-  "path": "/home/mike-anderson/vaults/cohezion-vault"
+  "path": "/home/<USER>/vaults/cohezion-vault"
 }
 ```
 
@@ -719,7 +719,7 @@ id: toolu_01PCfTj7ZpRHkxGCGejzfQ5s
 ```json
 {
   "pattern": "learnings/*.md",
-  "path": "/home/mike-anderson/vaults/cohezion-vault"
+  "path": "/home/<USER>/vaults/cohezion-vault"
 }
 ```
 
@@ -730,7 +730,7 @@ id: toolu_01XtEzyWpjUodVkaXZRLR3R6
 ```json
 {
   "pattern": "patterns/*.md",
-  "path": "/home/mike-anderson/vaults/cohezion-vault"
+  "path": "/home/<USER>/vaults/cohezion-vault"
 }
 ```
 
@@ -765,7 +765,7 @@ id: toolu_014Z1PvdAm8PWZH48hNM2wGT
 ```json
 {
   "pattern": "**/decisions/**/*.md",
-  "path": "/home/mike-anderson/vaults/cohezion-vault"
+  "path": "/home/<USER>/vaults/cohezion-vault"
 }
 ```
 
@@ -776,7 +776,7 @@ id: toolu_01XNcJEx2pfPss9B6TXyNC36
 ```json
 {
   "pattern": "**/learnings/**/*.md",
-  "path": "/home/mike-anderson/vaults/cohezion-vault"
+  "path": "/home/<USER>/vaults/cohezion-vault"
 }
 ```
 
@@ -785,11 +785,11 @@ id: toolu_01XNcJEx2pfPss9B6TXyNC36
 tool_result
 id: toolu_01XNcJEx2pfPss9B6TXyNC36
 ```
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/learnings/verification/verify_skill/1771220602.md
-/home/mike-anderson/vaults/cohezion-vault/luma-speedrun/learnings/2026-03-25-session-lessons.md
-/home/mike-anderson/vaults/cohezion-vault/learnings/aimo/compound-engineering-campaign.md
-/home/mike-anderson/vaults/cohezion-vault/luma-speedrun/learnings/session-95-mfma-breakthrough-2026-04-05.md
-/home/mike-anderson/vaults/cohezion-vault/learnings/mereon_mhd_integration.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/learnings/verification/verify_skill/1771220602.md
+/home/<USER>/vaults/cohezion-vault/luma-speedrun/learnings/2026-03-25-session-lessons.md
+/home/<USER>/vaults/cohezion-vault/learnings/aimo/compound-engineering-campaign.md
+/home/<USER>/vaults/cohezion-vault/luma-speedrun/learnings/session-95-mfma-breakthrough-2026-04-05.md
+/home/<USER>/vaults/cohezion-vault/learnings/mereon_mhd_integration.md
 ```
 
 > TOOL
@@ -797,106 +797,106 @@ id: toolu_01XNcJEx2pfPss9B6TXyNC36
 tool_result
 id: toolu_014Z1PvdAm8PWZH48hNM2wGT
 ```
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-09-ai-model-strategy.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-09-model-wrangler-strategy.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-09-fastmcp-asgi-integration-fix.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-07-event-driven-inbox-processor.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-09-12d-graph-next-steps.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-09-12d-graph-surrealdb-integration.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-08-bmad-framework-removal.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-09-ollama-context-management.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-09-12d-graph-refined-plan.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-10-canvas-driven-compound-engineering.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-09-ollama-mcp-server.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-10-compound-node-linking-plan.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-10-compound-engineering-meta-learning.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-10-framework-driven-prioritization.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-09-operational-principle-no-destructive-operations-without-learning.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-09-rust-flume-python313-incompatibility.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-10-compound-linking-plan-adversarial-review.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-10-claude-log-mining-architecture.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-10-canvas-driven-compound-engineering-refined.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-09-session-46-git-unification-complete.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-09-session-43-mcp-setup.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-09-session-43-phase-5b-verification-phase-6-launch.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-11-phase-1-agent-context-schema-complete.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-10-operational-forensics-compound-engineering.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-11-lessons-compound-engineering-phase-1-complete.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-10-phase3-3d-graph-adversarial-review.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-10-phase-a-implementation-complete.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-10-phase-7-executor-pattern-launch.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-10-log-mining-adversarial-review.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-11-session-55-compound-engineering-approach-for-universe-simulation-preservation.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-11-phase1-execution-status.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-11-session-55-discovered-redundant-pack-files-as-root-cause-of-12gb-size-final-cons.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-11-session-55-critical-antipattern-training-data-committed-to-git-history-blocks-gi.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-11-phase1-completion-summary.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-10-token-efficient-compound-engineering-roadmap.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-11-session-55-adversarial-review-blockers-identified.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-10-kyutai-token-waste-postmortem.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-10-kyutai-mcp-obsidian-plugin-plan.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-10-kyutai-pocket-tts-token-efficient-success.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-11-phase1-step1-schema-complete.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-11-session-55-git-aggressive-gc-doesnt-consolidate-packs-manual-repack-forced.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-11-adopt-graphrag-for-vault-knowledge-graph.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-13-gitlab-to-github-consolidation-with-artifact-governance.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-13-local-model-roster-update-february-2026-sota-assessment.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-11-session-55-phase-a-investigation-complete.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-12-phase2-prioritization-decision.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-12-phase1-complete-vault-and-surrealdb-integration.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-12-session-56-handoff-complete.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-13-experience-vae-training-pipeline-session-58.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-13-next-10-phases-graphrag-roadmap.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-12-session-56-documentation-extraction-complete.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-11-vault-first-knowledge-architecture.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-12-phase-0-foundation-complete.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-12-phase-2-track-a-surrealdb-agent-reasoning-complete.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-12-platform-codification-summary-guide.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-13-phase-2-execution-strategy-wave-2.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-12-phase-2-schema-design.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-11-session-55-team-execution-summary.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-12-claude-code-context-awareness-codification.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-13-phase-2-completion-approved-ready-for-production-deployment.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-12-cloudflare-tunnel-for-persistent-mcp-remote-access.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-12-lessons-compound-engineering-phase-2-complete.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-12-session-56-recap-phase-1-complete-phase-2-launched.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-11-use-escalation-staged-deployment-for-large-repository-cleanup.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-12-session-56-complete-index.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-12-repository-health-governance-skill-created.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-12-session-57-graphrag-complete-phases-1-4-delivered.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-11-session-55-http-500-failure-may-be-protocol-specific-ssh-push-alternative-availa.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-12-charter-aligned-scoring-formula.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-11-session-55-pause-push-conduct-retrospective-before-github-deployment.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-11-session-55-phase-c-execution-ready.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-12-prime-skill-pattern-as-governance-framework.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-11-surrealdb-agent-context-schema-design.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-13-phase-2-final-completion-summary.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-14-phase-2-adversarial-review-corrected-status-and-path-forward.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-14-graphrag-verification-and-integration-session.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-13-use-versioning-headers-instead-of-file-suffixes.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-14-3-tier-adversarial-review-protocol-for-code-quality.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-13-phase-3-unblocking-semantic-dimensions-complete.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-13-phase-2-track-a-complete.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-14-compound-engineering-team-execution-retrospective.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-13-phase-2-track-b-entire-io-sync-daemon-complete.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-14-phase-2-track-a-complete.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-13-track-b-entire-sync-daemon-complete.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-14-end-to-end-compound-cycle-validation-script.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-13-session-60-retrospective-and-revised-plan.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-14-phase-2-complete-all-3-tracks-delivered-for-production.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-14-adversarial-multi-agent-review-protocol.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-14-agent-orchestration-design-3-tier-hotwarmcold-model-rotation.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-14-phase-6d-completion-report.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-14-session-60-retrospective-revised-plan.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-14-phase-4-retrospective-and-phase-5-overnight-plan.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-14-wave-1-status-all-phases-6-complete.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-14-phase-6d-decision-quality-scoring-complete.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-14-settings-files-validation-and-fix.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-16-fix-3-reasoning-inference-option-b.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-14-phase-4-implementation-progress.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-14-phase-7-implementation-ready.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-14-phase-6c-semantic-contradiction-detection-complete.md
-/home/mike-anderson/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-14-phases-1-3-retrospective-key-learnings.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-09-ai-model-strategy.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-09-model-wrangler-strategy.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-09-fastmcp-asgi-integration-fix.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-07-event-driven-inbox-processor.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-09-12d-graph-next-steps.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-09-12d-graph-surrealdb-integration.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-08-bmad-framework-removal.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-09-ollama-context-management.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-09-12d-graph-refined-plan.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-10-canvas-driven-compound-engineering.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-09-ollama-mcp-server.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-10-compound-node-linking-plan.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-10-compound-engineering-meta-learning.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-10-framework-driven-prioritization.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-09-operational-principle-no-destructive-operations-without-learning.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-09-rust-flume-python313-incompatibility.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-10-compound-linking-plan-adversarial-review.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-10-claude-log-mining-architecture.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-10-canvas-driven-compound-engineering-refined.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-09-session-46-git-unification-complete.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-09-session-43-mcp-setup.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-09-session-43-phase-5b-verification-phase-6-launch.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-11-phase-1-agent-context-schema-complete.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-10-operational-forensics-compound-engineering.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-11-lessons-compound-engineering-phase-1-complete.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-10-phase3-3d-graph-adversarial-review.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-10-phase-a-implementation-complete.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-10-phase-7-executor-pattern-launch.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-10-log-mining-adversarial-review.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-11-session-55-compound-engineering-approach-for-universe-simulation-preservation.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-11-phase1-execution-status.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-11-session-55-discovered-redundant-pack-files-as-root-cause-of-12gb-size-final-cons.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-11-session-55-critical-antipattern-training-data-committed-to-git-history-blocks-gi.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-11-phase1-completion-summary.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-10-token-efficient-compound-engineering-roadmap.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-11-session-55-adversarial-review-blockers-identified.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-10-kyutai-token-waste-postmortem.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-10-kyutai-mcp-obsidian-plugin-plan.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-10-kyutai-pocket-tts-token-efficient-success.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-11-phase1-step1-schema-complete.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-11-session-55-git-aggressive-gc-doesnt-consolidate-packs-manual-repack-forced.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-11-adopt-graphrag-for-vault-knowledge-graph.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-13-gitlab-to-github-consolidation-with-artifact-governance.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-13-local-model-roster-update-february-2026-sota-assessment.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-11-session-55-phase-a-investigation-complete.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-12-phase2-prioritization-decision.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-12-phase1-complete-vault-and-surrealdb-integration.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-12-session-56-handoff-complete.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-13-experience-vae-training-pipeline-session-58.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-13-next-10-phases-graphrag-roadmap.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-12-session-56-documentation-extraction-complete.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-11-vault-first-knowledge-architecture.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-12-phase-0-foundation-complete.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-12-phase-2-track-a-surrealdb-agent-reasoning-complete.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-12-platform-codification-summary-guide.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-13-phase-2-execution-strategy-wave-2.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-12-phase-2-schema-design.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-11-session-55-team-execution-summary.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-12-claude-code-context-awareness-codification.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-13-phase-2-completion-approved-ready-for-production-deployment.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-12-cloudflare-tunnel-for-persistent-mcp-remote-access.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-12-lessons-compound-engineering-phase-2-complete.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-12-session-56-recap-phase-1-complete-phase-2-launched.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-11-use-escalation-staged-deployment-for-large-repository-cleanup.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-12-session-56-complete-index.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-12-repository-health-governance-skill-created.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-12-session-57-graphrag-complete-phases-1-4-delivered.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-11-session-55-http-500-failure-may-be-protocol-specific-ssh-push-alternative-availa.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-12-charter-aligned-scoring-formula.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-11-session-55-pause-push-conduct-retrospective-before-github-deployment.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-11-session-55-phase-c-execution-ready.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-12-prime-skill-pattern-as-governance-framework.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-11-surrealdb-agent-context-schema-design.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-13-phase-2-final-completion-summary.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-14-phase-2-adversarial-review-corrected-status-and-path-forward.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-14-graphrag-verification-and-integration-session.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-13-use-versioning-headers-instead-of-file-suffixes.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-14-3-tier-adversarial-review-protocol-for-code-quality.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-13-phase-3-unblocking-semantic-dimensions-complete.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-13-phase-2-track-a-complete.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-14-compound-engineering-team-execution-retrospective.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-13-phase-2-track-b-entire-io-sync-daemon-complete.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-14-phase-2-track-a-complete.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-13-track-b-entire-sync-daemon-complete.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-14-end-to-end-compound-cycle-validation-script.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-13-session-60-retrospective-and-revised-plan.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-14-phase-2-complete-all-3-tracks-delivered-for-production.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-14-adversarial-multi-agent-review-protocol.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-14-agent-orchestration-design-3-tier-hotwarmcold-model-rotation.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-14-phase-6d-completion-report.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-14-session-60-retrospective-revised-plan.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-14-phase-4-retrospective-and-phase-5-overnight-plan.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-14-wave-1-status-all-phases-6-complete.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-14-phase-6d-decision-quality-scoring-complete.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-14-settings-files-validation-and-fix.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-16-fix-3-reasoning-inference-option-b.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-14-phase-4-implementation-progress.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-14-phase-7-implementation-ready.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-14-phase-6c-semantic-contradiction-detection-complete.md
+/home/<USER>/vaults/cohezion-vault/.worktrees/daily-notes-wiki-links/decisions/2026-02-14-phases-1-3-retrospective-key-learnings.md
 (Results are truncated. Consider using a more specific path or pattern.)
 ```
 
@@ -910,7 +910,7 @@ tool_use Read
 id: toolu_01VVn9UBDpTqWihtBmENnCX7
 ```json
 {
-  "file_path": "/home/mike-anderson/vaults/cohezion-vault/learnings/mereon_mhd_integration.md"
+  "file_path": "/home/<USER>/vaults/cohezion-vault/learnings/mereon_mhd_integration.md"
 }
 ```
 
@@ -921,7 +921,7 @@ id: toolu_01YAzpH1vWBoQu8PmSoM1aD3
 ```json
 {
   "pattern": "decisions/*.md",
-  "path": "/home/mike-anderson/vaults/cohezion-vault"
+  "path": "/home/<USER>/vaults/cohezion-vault"
 }
 ```
 
@@ -972,7 +972,7 @@ tool_use Write
 id: toolu_019mRft3GXwySjjjXKFHR1qV
 ```json
 {
-  "file_path": "/home/mike-anderson/vaults/cohezion-vault/learnings/2026-04-11-pi-extension-tool-name-conflict.md",
+  "file_path": "/home/<USER>/vaults/cohezion-vault/learnings/2026-04-11-pi-extension-tool-name-conflict.md",
   "content": "---\ntitle: Pi Extension Tool Name Conflicts\ndate: 2026-04-11\ncategory: debugging\ntags: [pi-agent, extensions, tool-conflict, duplicate-files]\nseverity: medium\nrecurrence: likely\nsession: pi-kg-fix\n---\n\n# Pi Extension Tool Name Conflicts\n\n## Problem\n\nPi (`@mariozechner/pi-coding-agent`) fails to start with:\n\n```\nError: Failed to load extension \"cohezion-kg.ts\": Tool \"kg_search\" conflicts with cohezion-kg-optimized.ts\n```\n\nPi loads **every** `.ts` file in `.pi/extensions/` and calls its default export. If two extensions register the same tool name, the second fails and Pi exits with status 1.\n\n## Root Cause\n\nWhen `cohezion-kg.ts` was optimized (adding caching, deduplication, TTL), a new file `cohezion-kg-optimized.ts` was created but the original `cohezion-kg.ts` was never removed. Both registered `kg_search`, `kg_history`, and `kg_stats`.\n\n## Solution\n\nReplace `cohezion-kg.ts` with a no-op stub that registers zero tools:\n\n```typescript\nimport type { ExtensionAPI } from \"@mariozechner/pi-coding-agent\";\n\nexport default function (_pi: ExtensionAPI) {\n  // No-op: all KG tools are registered by cohezion-kg-optimized.ts\n}\n```\n\nIdeal cleanup: `git rm .pi/extensions/cohezion-kg.ts` entirely.\n\n## Key Insight\n\nPi's extension loader has **no deduplication or override mechanism** — it treats every file as an independent extension. Unlike plugin systems with priority/override semantics, Pi simply fails on the first name collision.\n\n## Prevention\n\n- When creating an optimized/v2 version of an extension, **delete the original** in the same commit\n- Consider a naming convention: `cohezion-kg.ts` (single canonical name) rather than `cohezion-kg-optimized.ts`\n- Add a pre-launch check […]
 
 > TOOL
@@ -980,7 +980,7 @@ id: toolu_019mRft3GXwySjjjXKFHR1qV
 tool_result
 id: toolu_019mRft3GXwySjjjXKFHR1qV
 ```
-File created successfully at: /home/mike-anderson/vaults/cohezion-vault/learnings/2026-04-11-pi-extension-tool-name-conflict.md
+File created successfully at: /home/<USER>/vaults/cohezion-vault/learnings/2026-04-11-pi-extension-tool-name-conflict.md
 ```
 
 > AGENT
@@ -994,7 +994,7 @@ id: toolu_017WEAPkrxqApbTWKevf9tDD
 ```json
 {
   "pattern": "surreal_client|SurrealClient|surreal.*insert|surreal.*create",
-  "path": "/home/mike-anderson/dev/cohezion/src/cohezion/persistence",
+  "path": "/home/<USER>/dev/cohezion/src/cohezion/persistence",
   "output_mode": "files_with_matches"
 }
 ```
@@ -1006,7 +1006,7 @@ id: toolu_0182SZ4UbjrZrJvyyPCgc6tJ
 ```json
 {
   "pattern": "def.*create_learning|def.*log_learning|def.*record_learning",
-  "path": "/home/mike-anderson/dev/cohezion/src",
+  "path": "/home/<USER>/dev/cohezion/src",
   "output_mode": "content"
 }
 ```
@@ -1035,7 +1035,7 @@ id: toolu_01YWhPf2aFWZZhA5F5EcsHCm
 ```json
 {
   "pattern": "surreal|surrealdb",
-  "path": "/home/mike-anderson/dev/cohezion/src/cohezion/knowledge_graph",
+  "path": "/home/<USER>/dev/cohezion/src/cohezion/knowledge_graph",
   "output_mode": "files_with_matches"
 }
 ```
@@ -1047,7 +1047,7 @@ id: toolu_01UvMoqK9Tn86R1naeAiP7XC
 ```json
 {
   "pattern": "CREATE learning|INSERT.*learning|learning table",
-  "path": "/home/mike-anderson/dev/cohezion/src",
+  "path": "/home/<USER>/dev/cohezion/src",
   "output_mode": "content",
   "-i": true
 }
@@ -1087,7 +1087,7 @@ tool_use Read
 id: toolu_01M5icnJAJLGAFZtjodePMy3
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/skills/SURREALDB_OPERATIONS_PRIME.md",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/skills/SURREALDB_OPERATIONS_PRIME.md",
   "limit": 50
 }
 ```
@@ -1127,7 +1127,7 @@ tool_use Write
 id: toolu_011GXhcyX2cdFFJe3vJYo99D
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/.pi/persist-learning.sh",
+  "file_path": "/home/<USER>/dev/cohezion/.pi/persist-learning.sh",
   "content": "#!/bin/bash\n# One-shot script to persist the Pi extension conflict learning to SurrealDB\n# Run: bash .pi/persist-learning.sh\n# Safe to delete after running.\n\nset -euo pipefail\n\nSURREAL_URL=\"http://localhost:8001/sql\"\nAUTH=\"root:root\"\nHEADERS=(-H \"Accept: application/json\" -H \"surreal-ns: cohezion\" -H \"surreal-db: cohezion\")\n\necho \"Checking SurrealDB health...\"\nif ! curl -sf http://localhost:8001/health > /dev/null 2>&1; then\n  echo \"ERROR: SurrealDB not reachable on port 8001\"\n  exit 1\nfi\n\necho \"Inserting learning record...\"\ncurl -s -u \"$AUTH\" \"${HEADERS[@]}\" \\\n  --data-raw \"CREATE learning SET\n    title = 'Pi Extension Tool Name Conflicts',\n    content = 'Pi loads every .ts file in .pi/extensions/ and registers tools from each. Two files (cohezion-kg.ts and cohezion-kg-optimized.ts) registered the same tools (kg_search, kg_history, kg_stats), causing Pi to fail with exit status 1. Fix: replace the stale file with a no-op stub or delete it. Pi has no deduplication/override mechanism — first name collision = hard failure.',\n    date = '2026-04-11',\n    tags = ['pi-agent', 'extensions', 'tool-conflict', 'debugging'],\n    session = 0,\n    model_id = 'claude-opus-4-6',\n    category = 'debugging',\n    severity = 'medium',\n    vault_path = 'learnings/2026-04-11-pi-extension-tool-name-conflict.md',\n    timestamp = time::now();\" \\\n  \"$SURREAL_URL\"\n\necho \"\"\necho \"Done. Learning persisted to SurrealDB.\"\necho \"You can verify with: curl -s -u root:root -H 'surreal-ns: cohezion' -H 'surreal-db: cohezion' --data 'SELECT * FROM learning ORDER BY timestamp DESC LIMIT 1;' http://localhost:8001/sql\"\necho \"\"\necho \"Safe […]
 
 > TOOL
@@ -1135,7 +1135,7 @@ id: toolu_011GXhcyX2cdFFJe3vJYo99D
 tool_result
 id: toolu_011GXhcyX2cdFFJe3vJYo99D
 ```
-File created successfully at: /home/mike-anderson/dev/cohezion/.pi/persist-learning.sh
+File created successfully at: /home/<USER>/dev/cohezion/.pi/persist-learning.sh
 ```
 
 > AGENT
@@ -1143,7 +1143,7 @@ File created successfully at: /home/mike-anderson/dev/cohezion/.pi/persist-learn
 Done. Here's what I've set up:
 
 **Vault** (complete):
-- Written to `/home/mike-anderson/vaults/cohezion-vault/learnings/2026-04-11-pi-extension-tool-name-conflict.md`
+- Written to `/home/<USER>/vaults/cohezion-vault/learnings/2026-04-11-pi-extension-tool-name-conflict.md`
 - YAML frontmatter with tags, category, severity
 - Full problem/root cause/solution/prevention documentation
 

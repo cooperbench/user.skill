@@ -2,13 +2,35 @@
 
 i created a new sandcastle in a project and my persisted dirs/files are owned by nobody. 
 explore the reason and propose a fix:
-~/Projects/GitHub/Sandcastle % sc ls                                                                                                [main]Server: demo (https://demo.sandcastle.rocks)NAME  PROJECT  STATUS   CREATED           DNS                    TAILSCALE IP  IMAGE AGEtubu  sc       running  2026-05-07 20:08  admin.tubu.sc.sandman  10.206.10.3   13h agodev   sc       running  2026-05-08 08:49  dev.sc.sandman         10.206.10.5   -~/Projects/GitHub/Sandcastle % ssh dev.sc.sandman ls -la /persisted                                                                 [main]total 0drwxrwxrwx 1 thies  thies     48 May  7 11:16 .drwxr-xr-x 1 root   root      70 May  8 06:51 ..drwxrwxr-x 1 nobody nogroup  372 May  7 11:16 dockyarddrwxrwxr-x 1 nobody nogroup 1152 May  7 11:19 sandcastledrwxrwxr-x 1 nobody nogroup  558 May  7 11:16 sysbox
+~/Projects/GitHub/Sandcastle % sc ls                                                                                                [main]
+Server: demo (https://demo.sandcastle.rocks)
+NAME  PROJECT  STATUS   CREATED           DNS                    TAILSCALE IP  IMAGE AGE
+tubu  sc       running  2026-05-07 20:08  admin.tubu.sc.sandman  10.206.10.3   13h ago
+dev   sc       running  2026-05-08 08:49  dev.sc.sandman         10.206.10.5   -
+~/Projects/GitHub/Sandcastle % ssh dev.sc.sandman ls -la /persisted                                                                 [main]
+total 0
+drwxrwxrwx 1 thies  thies     48 May  7 11:16 .
+drwxr-xr-x 1 root   root      70 May  8 06:51 ..
+drwxrwxr-x 1 nobody nogroup  372 May  7 11:16 dockyard
+drwxrwxr-x 1 nobody nogroup 1152 May  7 11:19 sandcastle
+drwxrwxr-x 1 nobody nogroup  558 May  7 11:16 sysbox
 
 > DEVELOPER
 
 i created a new sandcastle in a project and my persisted dirs/files are owned by nobody. 
 explore the reason and propose a fix:
-~/Projects/GitHub/Sandcastle % sc ls                                                                                                [main]Server: demo (https://demo.sandcastle.rocks)NAME  PROJECT  STATUS   CREATED           DNS                    TAILSCALE IP  IMAGE AGEtubu  sc       running  2026-05-07 20:08  admin.tubu.sc.sandman  10.206.10.3   13h agodev   sc       running  2026-05-08 08:49  dev.sc.sandman         10.206.10.5   -~/Projects/GitHub/Sandcastle % ssh dev.sc.sandman ls -la /persisted                                                                 [main]total 0drwxrwxrwx 1 thies  thies     48 May  7 11:16 .drwxr-xr-x 1 root   root      70 May  8 06:51 ..drwxrwxr-x 1 nobody nogroup  372 May  7 11:16 dockyarddrwxrwxr-x 1 nobody nogroup 1152 May  7 11:19 sandcastledrwxrwxr-x 1 nobody nogroup  558 May  7 11:16 sysbox
+~/Projects/GitHub/Sandcastle % sc ls                                                                                                [main]
+Server: demo (https://demo.sandcastle.rocks)
+NAME  PROJECT  STATUS   CREATED           DNS                    TAILSCALE IP  IMAGE AGE
+tubu  sc       running  2026-05-07 20:08  admin.tubu.sc.sandman  10.206.10.3   13h ago
+dev   sc       running  2026-05-08 08:49  dev.sc.sandman         10.206.10.5   -
+~/Projects/GitHub/Sandcastle % ssh dev.sc.sandman ls -la /persisted                                                                 [main]
+total 0
+drwxrwxrwx 1 thies  thies     48 May  7 11:16 .
+drwxr-xr-x 1 root   root      70 May  8 06:51 ..
+drwxrwxr-x 1 nobody nogroup  372 May  7 11:16 dockyard
+drwxrwxr-x 1 nobody nogroup 1152 May  7 11:19 sandcastle
+drwxrwxr-x 1 nobody nogroup  558 May  7 11:16 sysbox
 
 every user of sandcastle shoudl maybe have his own fixed UIS/GID - explain your strategy
 
@@ -48,7 +70,7 @@ tool_use Bash
 id: toolu_013mkY7aHtSeLn3nKzUjtNGp
 ```json
 {
-  "command": "grep -rn \"persisted\\|/persisted\\|data_path\\|userns\\|uid_map\\|uidmap\" /Users/thies/Projects/GitHub/Sandcastle/app /Users/thies/Projects/GitHub/Sandcastle/installer 2>/dev/null | head -80",
+  "command": "grep -rn \"persisted\\|/persisted\\|data_path\\|userns\\|uid_map\\|uidmap\" /home/<USER>/Projects/GitHub/Sandcastle/app /home/<USER>/Projects/GitHub/Sandcastle/installer 2>/dev/null | head -80",
   "description": "Search for persisted/uid handling"
 }
 ```
@@ -58,46 +80,46 @@ id: toolu_013mkY7aHtSeLn3nKzUjtNGp
 tool_result
 id: toolu_013mkY7aHtSeLn3nKzUjtNGp
 ```
-/Users/thies/Projects/GitHub/Sandcastle/app/models/sandbox_alias.rb:85:    scope = scope.where.not(id: id) if persisted?
-/Users/thies/Projects/GitHub/Sandcastle/app/models/project.rb:18:  validate :validate_data_path
-/Users/thies/Projects/GitHub/Sandcastle/app/models/project.rb:49:      data_path: user.default_data_path,
-/Users/thies/Projects/GitHub/Sandcastle/app/models/project.rb:58:    sandbox.data_path = default_project? ? data_path : path
-/Users/thies/Projects/GitHub/Sandcastle/app/models/project.rb:92:    self.data_path = clean_path(data_path, allow_root: true)
-/Users/thies/Projects/GitHub/Sandcastle/app/models/project.rb:114:  def validate_data_path
-/Users/thies/Projects/GitHub/Sandcastle/app/models/project.rb:115:    validate_mount_path(:data_path, allow_root: true)
-/Users/thies/Projects/GitHub/Sandcastle/app/models/sandbox.rb:34:  validate :validate_data_path
-/Users/thies/Projects/GitHub/Sandcastle/app/models/sandbox.rb:141:  def home_persisted?
-/Users/thies/Projects/GitHub/Sandcastle/app/models/sandbox.rb:146:    return unless home_path.present? && data_path.present?
-/Users/thies/Projects/GitHub/Sandcastle/app/models/sandbox.rb:147:    home_path == data_path ? home_path : nil
-/Users/thies/Projects/GitHub/Sandcastle/app/models/sandbox.rb:207:    self.data_path = normalize_mount_path(data_path, allow_root: true)
-/Users/thies/Projects/GitHub/Sandcastle/app/models/sandbox.rb:222:  def validate_data_path
-/Users/thies/Projects/GitHub/Sandcastle/app/models/sandbox.rb:223:    validate_mount_path(:data_path, allow_root: true)
-/Users/thies/Projects/GitHub/Sandcastle/app/models/sandbox_mount.rb:2:  MOUNT_TYPES = %w[home data persisted_path].freeze
-/Users/thies/Projects/GitHub/Sandcastle/app/models/user.rb:16:  has_many :persisted_paths, dependent: :destroy
-/Users/thies/Projects/GitHub/Sandcastle/app/models/user.rb:25:  after_create_commit :seed_default_persisted_paths
-/Users/thies/Projects/GitHub/Sandcastle/app/models/user.rb:122:  def seed_default_persisted_paths
-/Users/thies/Projects/GitHub/Sandcastle/app/models/user.rb:124:      persisted_paths.create(path: p)
-/Users/thies/Projects/GitHub/Sandcastle/app/javascript/controllers/persisted_paths_controller.js:14:    event.target.closest("[data-persisted-paths-row]").remove()
-/Users/thies/Projects/GitHub/Sandcastle/app/jobs/container_sync_job.rb:104:    # Fallback: restore from persisted tailscaled.state (interactive-login survivors).
-/Users/thies/Projects/GitHub/Sandcastle/app/jobs/container_sync_job.rb:149:    # persisted tailscaled.state so they reconnect automatically after reinstall.
-/Users/thies/Projects/GitHub/Sandcastle/app/controllers/settings_controller.rb:83:  def update_persisted_paths
-/Users/thies/Projects/GitHub/Sandcastle/app/controllers/settings_controller.rb:85:    paths = (params[:persisted_paths] || []).map { |p| p[:path].to_s.strip.chomp("/") }.reject(&:blank?).uniq
-/Users/thies/Projects/GitHub/Sandcastle/app/controllers/settings_controller.rb:88:      @user.persisted_paths.where.not(path: paths).destroy_all
-/Users/thies/Projects/GitHub/Sandcastle/app/controllers/settings_controller.rb:89:      paths.each { |p| @user.persisted_paths.find_or_create_by!(path: p) }
-/Users/thies/Projects/GitHub/Sandcastle/app/controllers/sandboxes_controller.rb:275:      user.persisted_paths.find_or_create_by!(path: bind_path)
-/Users/thies/Projects/GitHub/Sandcastle/app/controllers/sandboxes_controller.rb:371:      sandbox.data_path = scoped_path
-/Users/thies/Projects/GitHub/Sandcastle/app/controllers/projects_controller.rb:69:      :mount_home, :home_path, :data_path, :oidc_enabled, :gcp_oidc_enabled,
-/Users/thies/Projects/GitHub/Sandcastle/app/controllers/api/sandboxes_controller.rb:64:        if want_home && snap.home_snapshot.present? && sandbox.home_persisted? && BtrfsHelper.btrfs?
-/Users/thies/Projects/GitHub/Sandcastle/app/controllers/api/sandboxes_controller.rb:71:          data_target = if snap.data_subdir.present? && sandbox.data_path.present?
-/Users/thies/Projects/GitHub/Sandcastle/app/controllers/api/sandboxes_controller.rb:72:            "#{SandboxManager::DATA_DIR}/users/#{current_user.name}/data/#{sandbox.data_path}/#{snap.data_subdir}".chomp("/")
-/Users/thies/Projects/GitHub/Sandcastle/app/controllers/api/sandboxes_controller.rb:73:          elsif sandbox.data_path.present?
-/Users/thies/Projects/GitHub/Sandcastle/app/controllers/api/sandboxes_controller.rb:74:            "#{SandboxManager::DATA_DIR}/users/#{current_user.name}/data/#{sandbox.data_path}".chomp("/")
-/Users/thies/Projects/GitHub/Sandcastle/app/controllers/api/sandboxes_controller.rb:298:        data_path: sandbox.data_path,
-/Users/thies/Projects/GitHub/Sandcastle/app/controllers/api/sandboxes_controller.rb:378:        sandbox.data_path = scoped_path
-/Users/thies/Projects/GitHub/Sandcastle/app/controllers/api/projects_controller.rb:42:        :mount_home, :home_path, :data_path, :oidc_enabled, :gcp_oidc_enabled,
-/Users/thies/Projects/GitHub/Sandcastle/app/controllers/api/projects_controller.rb:65:        data_path: project.data_path,
-/Users/thies/Projects/GitHub/Sandcastle/app/views/settings/show.html.erb:331:            <%= hidden_field_tag "gcp_oidc_configs[#{index}][id]", config.id if config.persisted? %>
-/Users/thies/Projects/GitHub/Sandcastle/app/views/settings/show.html.erb:378:            <% if config.persisted? %> […]
+/home/<USER>/Projects/GitHub/Sandcastle/app/models/sandbox_alias.rb:85:    scope = scope.where.not(id: id) if persisted?
+/home/<USER>/Projects/GitHub/Sandcastle/app/models/project.rb:18:  validate :validate_data_path
+/home/<USER>/Projects/GitHub/Sandcastle/app/models/project.rb:49:      data_path: user.default_data_path,
+/home/<USER>/Projects/GitHub/Sandcastle/app/models/project.rb:58:    sandbox.data_path = default_project? ? data_path : path
+/home/<USER>/Projects/GitHub/Sandcastle/app/models/project.rb:92:    self.data_path = clean_path(data_path, allow_root: true)
+/home/<USER>/Projects/GitHub/Sandcastle/app/models/project.rb:114:  def validate_data_path
+/home/<USER>/Projects/GitHub/Sandcastle/app/models/project.rb:115:    validate_mount_path(:data_path, allow_root: true)
+/home/<USER>/Projects/GitHub/Sandcastle/app/models/sandbox.rb:34:  validate :validate_data_path
+/home/<USER>/Projects/GitHub/Sandcastle/app/models/sandbox.rb:141:  def home_persisted?
+/home/<USER>/Projects/GitHub/Sandcastle/app/models/sandbox.rb:146:    return unless home_path.present? && data_path.present?
+/home/<USER>/Projects/GitHub/Sandcastle/app/models/sandbox.rb:147:    home_path == data_path ? home_path : nil
+/home/<USER>/Projects/GitHub/Sandcastle/app/models/sandbox.rb:207:    self.data_path = normalize_mount_path(data_path, allow_root: true)
+/home/<USER>/Projects/GitHub/Sandcastle/app/models/sandbox.rb:222:  def validate_data_path
+/home/<USER>/Projects/GitHub/Sandcastle/app/models/sandbox.rb:223:    validate_mount_path(:data_path, allow_root: true)
+/home/<USER>/Projects/GitHub/Sandcastle/app/models/sandbox_mount.rb:2:  MOUNT_TYPES = %w[home data persisted_path].freeze
+/home/<USER>/Projects/GitHub/Sandcastle/app/models/user.rb:16:  has_many :persisted_paths, dependent: :destroy
+/home/<USER>/Projects/GitHub/Sandcastle/app/models/user.rb:25:  after_create_commit :seed_default_persisted_paths
+/home/<USER>/Projects/GitHub/Sandcastle/app/models/user.rb:122:  def seed_default_persisted_paths
+/home/<USER>/Projects/GitHub/Sandcastle/app/models/user.rb:124:      persisted_paths.create(path: p)
+/home/<USER>/Projects/GitHub/Sandcastle/app/javascript/controllers/persisted_paths_controller.js:14:    event.target.closest("[data-persisted-paths-row]").remove()
+/home/<USER>/Projects/GitHub/Sandcastle/app/jobs/container_sync_job.rb:104:    # Fallback: restore from persisted tailscaled.state (interactive-login survivors).
+/home/<USER>/Projects/GitHub/Sandcastle/app/jobs/container_sync_job.rb:149:    # persisted tailscaled.state so they reconnect automatically after reinstall.
+/home/<USER>/Projects/GitHub/Sandcastle/app/controllers/settings_controller.rb:83:  def update_persisted_paths
+/home/<USER>/Projects/GitHub/Sandcastle/app/controllers/settings_controller.rb:85:    paths = (params[:persisted_paths] || []).map { |p| p[:path].to_s.strip.chomp("/") }.reject(&:blank?).uniq
+/home/<USER>/Projects/GitHub/Sandcastle/app/controllers/settings_controller.rb:88:      @user.persisted_paths.where.not(path: paths).destroy_all
+/home/<USER>/Projects/GitHub/Sandcastle/app/controllers/settings_controller.rb:89:      paths.each { |p| @user.persisted_paths.find_or_create_by!(path: p) }
+/home/<USER>/Projects/GitHub/Sandcastle/app/controllers/sandboxes_controller.rb:275:      user.persisted_paths.find_or_create_by!(path: bind_path)
+/home/<USER>/Projects/GitHub/Sandcastle/app/controllers/sandboxes_controller.rb:371:      sandbox.data_path = scoped_path
+/home/<USER>/Projects/GitHub/Sandcastle/app/controllers/projects_controller.rb:69:      :mount_home, :home_path, :data_path, :oidc_enabled, :gcp_oidc_enabled,
+/home/<USER>/Projects/GitHub/Sandcastle/app/controllers/api/sandboxes_controller.rb:64:        if want_home && snap.home_snapshot.present? && sandbox.home_persisted? && BtrfsHelper.btrfs?
+/home/<USER>/Projects/GitHub/Sandcastle/app/controllers/api/sandboxes_controller.rb:71:          data_target = if snap.data_subdir.present? && sandbox.data_path.present?
+/home/<USER>/Projects/GitHub/Sandcastle/app/controllers/api/sandboxes_controller.rb:72:            "#{SandboxManager::DATA_DIR}/users/#{current_user.name}/data/#{sandbox.data_path}/#{snap.data_subdir}".chomp("/")
+/home/<USER>/Projects/GitHub/Sandcastle/app/controllers/api/sandboxes_controller.rb:73:          elsif sandbox.data_path.present?
+/home/<USER>/Projects/GitHub/Sandcastle/app/controllers/api/sandboxes_controller.rb:74:            "#{SandboxManager::DATA_DIR}/users/#{current_user.name}/data/#{sandbox.data_path}".chomp("/")
+/home/<USER>/Projects/GitHub/Sandcastle/app/controllers/api/sandboxes_controller.rb:298:        data_path: sandbox.data_path,
+/home/<USER>/Projects/GitHub/Sandcastle/app/controllers/api/sandboxes_controller.rb:378:        sandbox.data_path = scoped_path
+/home/<USER>/Projects/GitHub/Sandcastle/app/controllers/api/projects_controller.rb:42:        :mount_home, :home_path, :data_path, :oidc_enabled, :gcp_oidc_enabled,
+/home/<USER>/Projects/GitHub/Sandcastle/app/controllers/api/projects_controller.rb:65:        data_path: project.data_path,
+/home/<USER>/Projects/GitHub/Sandcastle/app/views/settings/show.html.erb:331:            <%= hidden_field_tag "gcp_oidc_configs[#{index}][id]", config.id if config.persisted? %>
+/home/<USER>/Projects/GitHub/Sandcastle/app/views/settings/show.html.erb:378:            <% if config.persisted? %> […]
 
 > TOOL
 
@@ -105,7 +127,7 @@ tool_use Bash
 id: toolu_01WD5Fow3cQCNRy9pveEk7cG
 ```json
 {
-  "command": "grep -rn \"useradd\\|UID\\|uid\\|chown\\|sysbox\\|userns\" /Users/thies/Projects/GitHub/Sandcastle/images/sandbox 2>/dev/null | head -60",
+  "command": "grep -rn \"useradd\\|UID\\|uid\\|chown\\|sysbox\\|userns\" /home/<USER>/Projects/GitHub/Sandcastle/images/sandbox 2>/dev/null | head -60",
   "description": "Search sandbox image for uid handling"
 }
 ```
@@ -115,24 +137,24 @@ id: toolu_01WD5Fow3cQCNRy9pveEk7cG
 tool_result
 id: toolu_01WD5Fow3cQCNRy9pveEk7cG
 ```
-/Users/thies/Projects/GitHub/Sandcastle/images/sandbox/docker-restart.sh:20:    # /var/lib/docker is a sysbox bind-mount — cannot remove the mount point itself,
-/Users/thies/Projects/GitHub/Sandcastle/images/sandbox/Dockerfile:20:# breaks sysbox-runc, nestybox/sysbox#958). Without the hold, `apt-get upgrade`
-/Users/thies/Projects/GitHub/Sandcastle/images/sandbox/Dockerfile:22:# runc (1.3.3+) whose CVE-2025-52881 fix rejects sysbox's FUSE-backed procfs
-/Users/thies/Projects/GitHub/Sandcastle/images/sandbox/Dockerfile.base:90:# Pin runc — multiple runc versions break inside sysbox containers:
-/Users/thies/Projects/GitHub/Sandcastle/images/sandbox/Dockerfile.base:91:#   runc 1.2+  — /proc/thread-self handling change (fixed in sysbox 0.6.6)
-/Users/thies/Projects/GitHub/Sandcastle/images/sandbox/Dockerfile.base:92:#   runc 1.3.3 — CVE-2025-52881 fix detects sysbox's virtual /proc as an
-/Users/thies/Projects/GitHub/Sandcastle/images/sandbox/Dockerfile.base:94:#                (nestybox/sysbox#973, unresolved as of Feb 2026)
-/Users/thies/Projects/GitHub/Sandcastle/images/sandbox/Dockerfile.base:95:# Also: containerd.io ≥ 2.x breaks sysbox-runc entirely (nestybox/sysbox#958).
-/Users/thies/Projects/GitHub/Sandcastle/images/sandbox/Dockerfile.base:107:# Chown to UID 1001 so the sandbox user (created at runtime by entrypoint.sh
-/Users/thies/Projects/GitHub/Sandcastle/images/sandbox/Dockerfile.base:108:# via `useradd` — first free UID after ubuntu/1000) can run `mise install/use`
-/Users/thies/Projects/GitHub/Sandcastle/images/sandbox/Dockerfile.base:122:    && chown -R 1001:1001 /usr/local/share/mise /usr/local/etc/mise
-/Users/thies/Projects/GitHub/Sandcastle/images/sandbox/Dockerfile.base:167:# namespace UID remapping means it appears owned by nobody (not the sandbox
-/Users/thies/Projects/GitHub/Sandcastle/images/sandbox/Dockerfile.base:168:# user) inside the container — chown fails silently.  StrictModes would
-/Users/thies/Projects/GitHub/Sandcastle/images/sandbox/entrypoint.sh:9:    useradd -m -s /bin/bash -G sudo,docker "$USERNAME"
-/Users/thies/Projects/GitHub/Sandcastle/images/sandbox/entrypoint.sh:33:# ID-mapped mounts — the host UID is remapped transparently so files appear
-/Users/thies/Projects/GitHub/Sandcastle/images/sandbox/entrypoint.sh:34:# correctly owned inside the container. No recursive chown needed on the
-/Users/thies/Projects/GitHub/Sandcastle/images/sandbox/entrypoint.sh:35:# happy path. A cheap stat guard falls back to the old recursive chown if
-/Users/thies/Projects/GitHub/Sandcastle/images/sandbox/entrypoint.sh:36:# the top-level dir still looks wrong […]
+/home/<USER>/Projects/GitHub/Sandcastle/images/sandbox/docker-restart.sh:20:    # /var/lib/docker is a sysbox bind-mount — cannot remove the mount point itself,
+/home/<USER>/Projects/GitHub/Sandcastle/images/sandbox/Dockerfile:20:# breaks sysbox-runc, nestybox/sysbox#958). Without the hold, `apt-get upgrade`
+/home/<USER>/Projects/GitHub/Sandcastle/images/sandbox/Dockerfile:22:# runc (1.3.3+) whose CVE-2025-52881 fix rejects sysbox's FUSE-backed procfs
+/home/<USER>/Projects/GitHub/Sandcastle/images/sandbox/Dockerfile.base:90:# Pin runc — multiple runc versions break inside sysbox containers:
+/home/<USER>/Projects/GitHub/Sandcastle/images/sandbox/Dockerfile.base:91:#   runc 1.2+  — /proc/thread-self handling change (fixed in sysbox 0.6.6)
+/home/<USER>/Projects/GitHub/Sandcastle/images/sandbox/Dockerfile.base:92:#   runc 1.3.3 — CVE-2025-52881 fix detects sysbox's virtual /proc as an
+/home/<USER>/Projects/GitHub/Sandcastle/images/sandbox/Dockerfile.base:94:#                (nestybox/sysbox#973, unresolved as of Feb 2026)
+/home/<USER>/Projects/GitHub/Sandcastle/images/sandbox/Dockerfile.base:95:# Also: containerd.io ≥ 2.x breaks sysbox-runc entirely (nestybox/sysbox#958).
+/home/<USER>/Projects/GitHub/Sandcastle/images/sandbox/Dockerfile.base:107:# Chown to UID 1001 so the sandbox user (created at runtime by entrypoint.sh
+/home/<USER>/Projects/GitHub/Sandcastle/images/sandbox/Dockerfile.base:108:# via `useradd` — first free UID after ubuntu/1000) can run `mise install/use`
+/home/<USER>/Projects/GitHub/Sandcastle/images/sandbox/Dockerfile.base:122:    && chown -R 1001:1001 /usr/local/share/mise /usr/local/etc/mise
+/home/<USER>/Projects/GitHub/Sandcastle/images/sandbox/Dockerfile.base:167:# namespace UID remapping means it appears owned by nobody (not the sandbox
+/home/<USER>/Projects/GitHub/Sandcastle/images/sandbox/Dockerfile.base:168:# user) inside the container — chown fails silently.  StrictModes would
+/home/<USER>/Projects/GitHub/Sandcastle/images/sandbox/entrypoint.sh:9:    useradd -m -s /bin/bash -G sudo,docker "$USERNAME"
+/home/<USER>/Projects/GitHub/Sandcastle/images/sandbox/entrypoint.sh:33:# ID-mapped mounts — the host UID is remapped transparently so files appear
+/home/<USER>/Projects/GitHub/Sandcastle/images/sandbox/entrypoint.sh:34:# correctly owned inside the container. No recursive chown needed on the
+/home/<USER>/Projects/GitHub/Sandcastle/images/sandbox/entrypoint.sh:35:# happy path. A cheap stat guard falls back to the old recursive chown if
+/home/<USER>/Projects/GitHub/Sandcastle/images/sandbox/entrypoint.sh:36:# the top-level dir still looks wrong […]
 
 > TOOL
 
@@ -140,7 +162,7 @@ tool_use Read
 id: toolu_01CKszuTqdGUiHqiLdZ6qk2X
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/images/sandbox/entrypoint.sh",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/images/sandbox/entrypoint.sh",
   "limit": 100
 }
 ```
@@ -191,7 +213,7 @@ tool_use Bash
 id: toolu_01SD4opU3bvsxRS2wTqPg2g9
 ```json
 {
-  "command": "grep -n \"persisted\\|data_path\\|HostConfig\\|Binds\\|chown\\|mkdir\\|UidMapping\\|userns\\|sysbox\" /Users/thies/Projects/GitHub/Sandcastle/app/services/sandbox_manager.rb | head -60",
+  "command": "grep -n \"persisted\\|data_path\\|HostConfig\\|Binds\\|chown\\|mkdir\\|UidMapping\\|userns\\|sysbox\" /home/<USER>/Projects/GitHub/Sandcastle/app/services/sandbox_manager.rb | head -60",
   "description": "Search SandboxManager for mount logic"
 }
 ```
@@ -242,7 +264,7 @@ tool_use Read
 id: toolu_01PwfRBiUUvXtrCVBniX7J3A
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/app/services/sandbox_manager.rb",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/app/services/sandbox_manager.rb",
   "offset": 130,
   "limit": 200
 }
@@ -301,7 +323,7 @@ tool_use Read
 id: toolu_01T9RwJagtVJP2yXB5idzw8w
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/app/services/sandbox_manager.rb",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/app/services/sandbox_manager.rb",
   "offset": 740,
   "limit": 160
 }
@@ -361,7 +383,7 @@ tool_use Read
 id: toolu_01QCGwppgKYJWcJ1dr5aPgHf
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/app/services/sandbox_manager.rb",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/app/services/sandbox_manager.rb",
   "offset": 1020,
   "limit": 120
 }
@@ -413,7 +435,7 @@ tool_use Bash
 id: toolu_018iUd8JhPqESJDerHBa8qtJ
 ```json
 {
-  "command": "grep -rn \"userns\\|uid_map\\|--userns\\|shift\\|idmap\\|SYSBOX\\|allocate-userns\\|relaxed-readonly\\|sysbox-mgr\" /Users/thies/Projects/GitHub/Sandcastle/installer /Users/thies/Projects/GitHub/Sandcastle/bootstrap 2>/dev/null | head -40",
+  "command": "grep -rn \"userns\\|uid_map\\|--userns\\|shift\\|idmap\\|SYSBOX\\|allocate-userns\\|relaxed-readonly\\|sysbox-mgr\" /home/<USER>/Projects/GitHub/Sandcastle/installer /home/<USER>/Projects/GitHub/Sandcastle/bootstrap 2>/dev/null | head -40",
   "description": "Search for sysbox userns config"
 }
 ```
@@ -423,44 +445,44 @@ id: toolu_018iUd8JhPqESJDerHBa8qtJ
 tool_result
 id: toolu_018iUd8JhPqESJDerHBa8qtJ
 ```
-/Users/thies/Projects/GitHub/Sandcastle/installer/installer.sh.in:40:shift 2>/dev/null || true
-/Users/thies/Projects/GitHub/Sandcastle/installer/installer.sh.in:883:        shift 2
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/sandcastle-admin.sh:70:        shift 2
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/sandcastle-admin.sh:74:        shift
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/sandcastle-admin.sh:78:        shift
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/sandcastle-admin.sh:269:      --skip-db)     skip_db=true; shift ;;
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/sandcastle-admin.sh:270:      --skip-data)   skip_data=true; shift ;;
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/sandcastle-admin.sh:271:      --skip-images) skip_images=true; shift ;;
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/sandcastle-admin.sh:272:      --yes|-y)      yes=true; shift ;;
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/sandcastle-admin.sh:274:      *)             backup_file="$1"; shift ;;
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/sandcastle-admin.sh:563:shift 2>/dev/null || true
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:67:    # Per-instance sysbox daemons (separate sysbox-mgr + sysbox-fs per installation)
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:68:    SYSBOX_RUN_DIR="${DOCKYARD_ROOT}/run/sysbox"
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:69:    SYSBOX_DATA_DIR="${DOCKYARD_ROOT}/lib/sysbox"
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:545:    # SYSBOX_VERSION: 0.6.7.10-tc is a patched fork (github.com/thieso2/sysbox)
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:546:    #   that adds --run-dir to sysbox-mgr, sysbox-fs, and sysbox-runc, allowing
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:548:    #   SetRunDir() calls os.Setenv("SYSBOX_RUN_DIR", dir) and os.Args is scanned
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:570:    local SYSBOX_VERSION="0.7.0.6-tc"
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:571:    local SYSBOX_TARBALL="sysbox-static-${ARCH}.tar.gz"
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:576:    local DOCKER_SHA256 DOCKER_ROOTLESS_SHA256 SYSBOX_SHA256 COMPOSE_SHA256
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:581:            SYSBOX_SHA256="91f44ab16948a14c4df8225d254e730e616b952a74879eb0a874692690fae20b"
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:587:            SYSBOX_SHA256="9601a03ab1455bf3a3409c7cc09df864df8c717c38e35f0c13ded80665b89d81"
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:594:    local SYSBOX_URL="https://github.com/thieso2/sysbox/releases/download/v${SYSBOX_VERSION}/${SYSBOX_TARBALL}"
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:601:    mkdir -p "$SYSBOX_RUN_DIR"
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:602:    mkdir -p "$SYSBOX_DATA_DIR"
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:640:                    echo "mount fstype=fuse options=(nosuid,nodev) options in (ro,rw) -> ${SYSBOX_DATA_DIR}/**/,"
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:641:                    echo "umount ${SYSBOX_DATA_DIR}/**/,"
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:648:            echo "  AppArmor fusermount3 profile updated for ${SYSBOX_DATA_DIR}"
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:681:    download "$SYSBOX_URL"          "$SYSBOX_SHA256"
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:699:    local SYSBOX_EXTRACT="${STAGING}/sysbox-static-${SYSBOX_VERSION}"
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:700:    mkdir -p "$SYSBOX_EXTRACT"
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:701:    tar -xzf "${CACHE_DIR}/${SYSBOX_TARBALL}" -C "$SYSBOX_EXTRACT"
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:706:    for bin in sysbox-runc sysbox-mgr sysbox-fs; do
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:708:        src=$(find "$SYSBOX_EXTRACT" -name "$bin" -type f | head -1)
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:710:            echo "Error: $bin not found in ${SYSBOX_TARBALL}" >&2
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:774:      "runtimeArgs": ["--run-dir", "${SYSBOX_RUN_DIR}"]
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:884:# --- Start sysbox-mgr ---
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:885:${BIN_DIR}/sysbox-mgr --run-dir ${SYSBOX_RUN_DIR} --data-root ${SYSBOX_DATA_DIR} […]
+/home/<USER>/Projects/GitHub/Sandcastle/installer/installer.sh.in:40:shift 2>/dev/null || true
+/home/<USER>/Projects/GitHub/Sandcastle/installer/installer.sh.in:883:        shift 2
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/sandcastle-admin.sh:70:        shift 2
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/sandcastle-admin.sh:74:        shift
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/sandcastle-admin.sh:78:        shift
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/sandcastle-admin.sh:269:      --skip-db)     skip_db=true; shift ;;
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/sandcastle-admin.sh:270:      --skip-data)   skip_data=true; shift ;;
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/sandcastle-admin.sh:271:      --skip-images) skip_images=true; shift ;;
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/sandcastle-admin.sh:272:      --yes|-y)      yes=true; shift ;;
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/sandcastle-admin.sh:274:      *)             backup_file="$1"; shift ;;
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/sandcastle-admin.sh:563:shift 2>/dev/null || true
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:67:    # Per-instance sysbox daemons (separate sysbox-mgr + sysbox-fs per installation)
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:68:    SYSBOX_RUN_DIR="${DOCKYARD_ROOT}/run/sysbox"
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:69:    SYSBOX_DATA_DIR="${DOCKYARD_ROOT}/lib/sysbox"
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:545:    # SYSBOX_VERSION: 0.6.7.10-tc is a patched fork (github.com/thieso2/sysbox)
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:546:    #   that adds --run-dir to sysbox-mgr, sysbox-fs, and sysbox-runc, allowing
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:548:    #   SetRunDir() calls os.Setenv("SYSBOX_RUN_DIR", dir) and os.Args is scanned
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:570:    local SYSBOX_VERSION="0.7.0.6-tc"
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:571:    local SYSBOX_TARBALL="sysbox-static-${ARCH}.tar.gz"
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:576:    local DOCKER_SHA256 DOCKER_ROOTLESS_SHA256 SYSBOX_SHA256 COMPOSE_SHA256
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:581:            SYSBOX_SHA256="91f44ab16948a14c4df8225d254e730e616b952a74879eb0a874692690fae20b"
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:587:            SYSBOX_SHA256="9601a03ab1455bf3a3409c7cc09df864df8c717c38e35f0c13ded80665b89d81"
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:594:    local SYSBOX_URL="https://github.com/thieso2/sysbox/releases/download/v${SYSBOX_VERSION}/${SYSBOX_TARBALL}"
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:601:    mkdir -p "$SYSBOX_RUN_DIR"
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:602:    mkdir -p "$SYSBOX_DATA_DIR"
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:640:                    echo "mount fstype=fuse options=(nosuid,nodev) options in (ro,rw) -> ${SYSBOX_DATA_DIR}/**/,"
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:641:                    echo "umount ${SYSBOX_DATA_DIR}/**/,"
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:648:            echo "  AppArmor fusermount3 profile updated for ${SYSBOX_DATA_DIR}"
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:681:    download "$SYSBOX_URL"          "$SYSBOX_SHA256"
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:699:    local SYSBOX_EXTRACT="${STAGING}/sysbox-static-${SYSBOX_VERSION}"
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:700:    mkdir -p "$SYSBOX_EXTRACT"
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:701:    tar -xzf "${CACHE_DIR}/${SYSBOX_TARBALL}" -C "$SYSBOX_EXTRACT"
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:706:    for bin in sysbox-runc sysbox-mgr sysbox-fs; do
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:708:        src=$(find "$SYSBOX_EXTRACT" -name "$bin" -type f | head -1)
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:710:            echo "Error: $bin not found in ${SYSBOX_TARBALL}" >&2
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:774:      "runtimeArgs": ["--run-dir", "${SYSBOX_RUN_DIR}"]
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:884:# --- Start sysbox-mgr ---
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:885:${BIN_DIR}/sysbox-mgr --run-dir ${SYSBOX_RUN_DIR} --data-root ${SYSBOX_DATA_DIR} […]
 
 > TOOL
 
@@ -468,7 +490,7 @@ tool_use Bash
 id: toolu_019mkmtFbwRhyPD6wvnX5ovH
 ```json
 {
-  "command": "ls /Users/thies/Projects/GitHub/Sandcastle/installer/templates/ 2>/dev/null; grep -n \"data\\|users\\|persisted\\|chown\\|btrfs\\|subvolume\" /Users/thies/Projects/GitHub/Sandcastle/app/services/btrfs_helper.rb 2>/dev/null | head -40",
+  "command": "ls /home/<USER>/Projects/GitHub/Sandcastle/installer/templates/ 2>/dev/null; grep -n \"data\\|users\\|persisted\\|chown\\|btrfs\\|subvolume\" /home/<USER>/Projects/GitHub/Sandcastle/app/services/btrfs_helper.rb 2>/dev/null | head -40",
   "description": "List installer templates and inspect btrfs helper"
 }
 ```
@@ -521,7 +543,7 @@ tool_use Read
 id: toolu_01BmWY4HBL6b4xuMYE57TiV1
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh",
   "offset": 870,
   "limit": 50
 }
@@ -586,7 +608,7 @@ tool_use Bash
 id: toolu_01BjAb9yvem6WYNAz3xgx5iv
 ```json
 {
-  "command": "grep -n \"subuid\\|subgid\\|sysbox\\|userns-remap\\|uid_map\" /Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh /Users/thies/Projects/GitHub/Sandcastle/installer/installer.sh.in 2>/dev/null | head -30",
+  "command": "grep -n \"subuid\\|subgid\\|sysbox\\|userns-remap\\|uid_map\" /home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh /home/<USER>/Projects/GitHub/Sandcastle/installer/installer.sh.in 2>/dev/null | head -30",
   "description": "Find subuid/userns config"
 }
 ```
@@ -596,30 +618,30 @@ id: toolu_01BjAb9yvem6WYNAz3xgx5iv
 tool_result
 id: toolu_01BjAb9yvem6WYNAz3xgx5iv
 ```
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:67:    # Per-instance sysbox daemons (separate sysbox-mgr + sysbox-fs per installation)
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:68:    SYSBOX_RUN_DIR="${DOCKYARD_ROOT}/run/sysbox"
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:69:    SYSBOX_DATA_DIR="${DOCKYARD_ROOT}/lib/sysbox"
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:162:# Always returns "overlay2" — sysbox-runc does not support ZFS as a container
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:184:    # sysbox requires overlay2 — it does not recognize ZFS rootfs.
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:256:    local sysbox_service="${prefix}sysbox.service"
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:268:    if systemctl list-unit-files "$sysbox_service" &>/dev/null 2>&1 && systemctl cat "$sysbox_service" &>/dev/null 2>&1; then
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:269:        echo "Error: Systemd service ${sysbox_service} already exists — DOCKYARD_DOCKER_PREFIX=${prefix} is in use." >&2
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:541:    #   Uses sysbox-runc as default runtime → the bundled runc 1.3.3 is never
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:543:    #   sysbox procfs incompatibility (nestybox/sysbox#973).
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:545:    # SYSBOX_VERSION: 0.6.7.10-tc is a patched fork (github.com/thieso2/sysbox)
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:546:    #   that adds --run-dir to sysbox-mgr, sysbox-fs, and sysbox-runc, allowing
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:547:    #   N independent sysbox instances per host (each with its own socket dir).
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:552:    #   Fixed: https://github.com/thieso2/sysbox/issues/5
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:556:    #   (see https://github.com/thieso2/sysbox/issues/9)
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:571:    local SYSBOX_TARBALL="sysbox-static-${ARCH}.tar.gz"
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:594:    local SYSBOX_URL="https://github.com/thieso2/sysbox/releases/download/v${SYSBOX_VERSION}/${SYSBOX_TARBALL}"
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:621:    # Allow sysbox-fs FUSE mounts at this instance's sysbox mountpoint.
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:624:    # override every sysbox container fails with a context-deadline-exceeded
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:625:    # RPC error from sysbox-fs.
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:638:                    # profile (LP: #2122161). sysbox-fs needs it for FUSE mounts.
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:698:    echo "Extracting sysbox static binaries..."
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:699:    local SYSBOX_EXTRACT="${STAGING}/sysbox-static-${SYSBOX_VERSION}"
-/Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:702:    # All three sysbox binaries go directly to BIN_DIR. […]
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:67:    # Per-instance sysbox daemons (separate sysbox-mgr + sysbox-fs per installation)
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:68:    SYSBOX_RUN_DIR="${DOCKYARD_ROOT}/run/sysbox"
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:69:    SYSBOX_DATA_DIR="${DOCKYARD_ROOT}/lib/sysbox"
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:162:# Always returns "overlay2" — sysbox-runc does not support ZFS as a container
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:184:    # sysbox requires overlay2 — it does not recognize ZFS rootfs.
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:256:    local sysbox_service="${prefix}sysbox.service"
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:268:    if systemctl list-unit-files "$sysbox_service" &>/dev/null 2>&1 && systemctl cat "$sysbox_service" &>/dev/null 2>&1; then
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:269:        echo "Error: Systemd service ${sysbox_service} already exists — DOCKYARD_DOCKER_PREFIX=${prefix} is in use." >&2
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:541:    #   Uses sysbox-runc as default runtime → the bundled runc 1.3.3 is never
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:543:    #   sysbox procfs incompatibility (nestybox/sysbox#973).
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:545:    # SYSBOX_VERSION: 0.6.7.10-tc is a patched fork (github.com/thieso2/sysbox)
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:546:    #   that adds --run-dir to sysbox-mgr, sysbox-fs, and sysbox-runc, allowing
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:547:    #   N independent sysbox instances per host (each with its own socket dir).
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:552:    #   Fixed: https://github.com/thieso2/sysbox/issues/5
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:556:    #   (see https://github.com/thieso2/sysbox/issues/9)
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:571:    local SYSBOX_TARBALL="sysbox-static-${ARCH}.tar.gz"
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:594:    local SYSBOX_URL="https://github.com/thieso2/sysbox/releases/download/v${SYSBOX_VERSION}/${SYSBOX_TARBALL}"
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:621:    # Allow sysbox-fs FUSE mounts at this instance's sysbox mountpoint.
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:624:    # override every sysbox container fails with a context-deadline-exceeded
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:625:    # RPC error from sysbox-fs.
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:638:                    # profile (LP: #2122161). sysbox-fs needs it for FUSE mounts.
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:698:    echo "Extracting sysbox static binaries..."
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:699:    local SYSBOX_EXTRACT="${STAGING}/sysbox-static-${SYSBOX_VERSION}"
+/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh:702:    # All three sysbox binaries go directly to BIN_DIR. […]
 
 > AGENT
 
@@ -694,7 +716,7 @@ tool_use Bash
 id: toolu_01RkkQVpigWh9C56d13i8ZWq
 ```json
 {
-  "command": "ls /Users/thies/Projects/GitHub/dockyard/ 2>&1 | head -20; echo \"---\"; ls /Users/thies/Projects/GitHub/dockyard/src/ 2>&1 | head; echo \"---\"; cd /Users/thies/Projects/GitHub/dockyard && git log --oneline -5 2>&1",
+  "command": "ls /home/<USER>/Projects/GitHub/dockyard/ 2>&1 | head -20; echo \"---\"; ls /home/<USER>/Projects/GitHub/dockyard/src/ 2>&1 | head; echo \"---\"; cd /home/<USER>/Projects/GitHub/dockyard && git log --oneline -5 2>&1",
   "description": "Inspect sibling dockyard repo"
 }
 ```
@@ -741,7 +763,7 @@ ea1b8ac feat: support shared sysbox userns configuration
 b2709f2 fix: apply bridge subnet whitelist to systemd ExecStartPost too
 cebc408 fix: auto-whitelist bridge subnets in isolation chain
 8f904ba feat: upgrade sysbox to v0.7.0.6-tc, add BTRFS bind mount tests (#18)
-Shell cwd was reset to /Users/thies/Projects/GitHub/Sandcastle
+Shell cwd was reset to /home/<USER>/Projects/GitHub/Sandcastle
 ```
 
 > TOOL
@@ -750,7 +772,7 @@ tool_use Bash
 id: toolu_01ERp4xkJuddVnAN1cbj3DFv
 ```json
 {
-  "command": "cd /Users/thies/Projects/GitHub/dockyard && git show --stat ea1b8ac 2>&1 | head -50",
+  "command": "cd /home/<USER>/Projects/GitHub/dockyard && git show --stat ea1b8ac 2>&1 | head -50",
   "description": "See what the dockyard fix changed"
 }
 ```
@@ -761,7 +783,7 @@ tool_result
 id: toolu_01ERp4xkJuddVnAN1cbj3DFv
 ```
 commit ea1b8aca060879ab325e01a4fd79d260e711ff96
-Author: thies <thieso@gmail.com>
+Author: thies <<REDACTED_EMAIL>>
 Date:   Fri May 8 09:52:57 2026 +0200
 
     feat: support shared sysbox userns configuration
@@ -787,7 +809,7 @@ Date:   Fri May 8 09:52:57 2026 +0200
  src/16_status.sh         |   6 +
  src/90_usage.sh          |   6 +
  14 files changed, 608 insertions(+), 51 deletions(-)
-Shell cwd was reset to /Users/thies/Projects/GitHub/Sandcastle
+Shell cwd was reset to /home/<USER>/Projects/GitHub/Sandcastle
 ```
 
 > TOOL
@@ -796,7 +818,7 @@ tool_use Bash
 id: toolu_01GA9S1xiE5iFdB1JTvj1AXK
 ```json
 {
-  "command": "grep -n \"build\\|dockyard.sh\" /Users/thies/Projects/GitHub/dockyard/build.sh 2>&1 | head -20; echo \"---\"; ls -la /Users/thies/Projects/GitHub/dockyard/dockyard.sh /Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh 2>&1",
+  "command": "grep -n \"build\\|dockyard.sh\" /home/<USER>/Projects/GitHub/dockyard/build.sh 2>&1 | head -20; echo \"---\"; ls -la /home/<USER>/Projects/GitHub/dockyard/dockyard.sh /home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh 2>&1",
   "description": "Inspect build process and file ages"
 }
 ```
@@ -808,8 +830,8 @@ id: toolu_01GA9S1xiE5iFdB1JTvj1AXK
 ```
 3:OUT="dist/dockyard.sh"
 ---
--rwxr-xr-x@ 1 thies  staff  75466  8 Mai  09:41 /Users/thies/Projects/GitHub/dockyard/dockyard.sh
--rw-r--r--@ 1 thies  staff  70274  7 Mai  21:14 /Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh
+-rwxr-xr-x@ 1 thies  staff  75466  8 Mai  09:41 /home/<USER>/Projects/GitHub/dockyard/dockyard.sh
+-rw-r--r--@ 1 thies  staff  70274  7 Mai  21:14 /home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh
 ```
 
 > TOOL
@@ -818,7 +840,7 @@ tool_use Read
 id: toolu_01UPRp2gwSiEYAMVkJXzmh6V
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/dockyard/build.sh"
+  "file_path": "/home/<USER>/Projects/GitHub/dockyard/build.sh"
 }
 ```
 
@@ -850,7 +872,7 @@ tool_use Bash
 id: toolu_01MVYLRt5hwXRCYwy1baw82e
 ```json
 {
-  "command": "ls -la /Users/thies/Projects/GitHub/dockyard/dist/dockyard.sh 2>&1; cd /Users/thies/Projects/GitHub/dockyard && git status 2>&1 | head -10",
+  "command": "ls -la /home/<USER>/Projects/GitHub/dockyard/dist/dockyard.sh 2>&1; cd /home/<USER>/Projects/GitHub/dockyard && git status 2>&1 | head -10",
   "description": "Check dist build and dockyard repo status"
 }
 ```
@@ -860,7 +882,7 @@ id: toolu_01MVYLRt5hwXRCYwy1baw82e
 tool_result
 id: toolu_01MVYLRt5hwXRCYwy1baw82e
 ```
--rwxr-xr-x@ 1 thies  staff  75466  8 Mai  09:41 /Users/thies/Projects/GitHub/dockyard/dist/dockyard.sh
+-rwxr-xr-x@ 1 thies  staff  75466  8 Mai  09:41 /home/<USER>/Projects/GitHub/dockyard/dist/dockyard.sh
 On branch main
 Your branch is up to date with 'origin/main'.
 
@@ -871,7 +893,7 @@ Untracked files:
 	ROOTLESS_SYSBOX_COMPARISON.md
 	cmd/dockyardtest/dockyardtest
 	cmd/dockyardtest/dockyardtest_linux
-Shell cwd was reset to /Users/thies/Projects/GitHub/Sandcastle
+Shell cwd was reset to /home/<USER>/Projects/GitHub/Sandcastle
 ```
 
 > TOOL
@@ -880,7 +902,7 @@ tool_use Bash
 id: toolu_01KehmTo4PVLVttrH48ethxa
 ```json
 {
-  "command": "cd /Users/thies/Projects/GitHub/dockyard && ./build.sh && ls -la dist/dockyard.sh",
+  "command": "cd /home/<USER>/Projects/GitHub/dockyard && ./build.sh && ls -la dist/dockyard.sh",
   "description": "Rebuild dockyard.sh and check"
 }
 ```
@@ -892,7 +914,7 @@ id: toolu_01KehmTo4PVLVttrH48ethxa
 ```
 Built: dist/dockyard.sh (    1903 lines)
 -rwxr-xr-x@ 1 thies  staff  75466  8 Mai  10:16 dist/dockyard.sh
-Shell cwd was reset to /Users/thies/Projects/GitHub/Sandcastle
+Shell cwd was reset to /home/<USER>/Projects/GitHub/Sandcastle
 ```
 
 > TOOL
@@ -901,7 +923,7 @@ tool_use Bash
 id: toolu_01EU54ckQr5T5rGRNW4TGDLJ
 ```json
 {
-  "command": "diff /Users/thies/Projects/GitHub/dockyard/dist/dockyard.sh /Users/thies/Projects/GitHub/dockyard/dockyard.sh | head -5; echo \"---\"; diff -q /Users/thies/Projects/GitHub/dockyard/dist/dockyard.sh /Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh",
+  "command": "diff /home/<USER>/Projects/GitHub/dockyard/dist/dockyard.sh /home/<USER>/Projects/GitHub/dockyard/dockyard.sh | head -5; echo \"---\"; diff -q /home/<USER>/Projects/GitHub/dockyard/dist/dockyard.sh /home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh",
   "description": "Verify dist matches committed and diff vs Sandcastle copy"
 }
 ```
@@ -912,7 +934,7 @@ tool_result
 id: toolu_01EU54ckQr5T5rGRNW4TGDLJ
 ```
 ---
-Files /Users/thies/Projects/GitHub/dockyard/dist/dockyard.sh and /Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh differ
+Files /home/<USER>/Projects/GitHub/dockyard/dist/dockyard.sh and /home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh differ
 ```
 
 > TOOL
@@ -921,7 +943,7 @@ tool_use Bash
 id: toolu_01Wuc4uHZfkcXuvFhajcvsdh
 ```json
 {
-  "command": "cp /Users/thies/Projects/GitHub/dockyard/dist/dockyard.sh /Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh && diff -q /Users/thies/Projects/GitHub/dockyard/dist/dockyard.sh /Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh && git status -s installer/templates/dockyard.sh && git diff --stat installer/templates/dockyard.sh",
+  "command": "cp /home/<USER>/Projects/GitHub/dockyard/dist/dockyard.sh /home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh && diff -q /home/<USER>/Projects/GitHub/dockyard/dist/dockyard.sh /home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh && git status -s installer/templates/dockyard.sh && git diff --stat installer/templates/dockyard.sh",
   "description": "Copy and verify"
 }
 ```
@@ -942,7 +964,7 @@ tool_use Bash
 id: toolu_017yynewTehKFLMc4pk72Mfm
 ```json
 {
-  "command": "grep -n \"SYSBOX_MGR_EXTRA\\|SUBUID\\|SUBGID\\|alloc-userns\\|userns\" /Users/thies/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh | head -20",
+  "command": "grep -n \"SYSBOX_MGR_EXTRA\\|SUBUID\\|SUBGID\\|alloc-userns\\|userns\" /home/<USER>/Projects/GitHub/Sandcastle/installer/templates/dockyard.sh | head -20",
   "description": "Find new env vars in updated dockyard.sh"
 }
 ```

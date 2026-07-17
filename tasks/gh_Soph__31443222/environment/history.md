@@ -26,7 +26,7 @@ id: toolu_01FAnzqa6PQsiYZbYMAzLCzd
 tool_result
 id: toolu_01FAnzqa6PQsiYZbYMAzLCzd
 ```
-/Users/soph/Work/entire/devenv/git-sync
+/home/<USER>/Work/entire/devenv/git-sync
 CHANGELOG.md
 client_test.go
 client.go
@@ -171,7 +171,7 @@ tool_use Read
 id: toolu_014YS4RSKSHFZYqufHrpXBm2
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/syncer/syncer.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/syncer/syncer.go",
   "offset": 340,
   "limit": 90
 }
@@ -235,7 +235,7 @@ tool_use Read
 id: toolu_017mCVMUtv2NS8X7VoRvhzHa
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/auth/entiredb.go"
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/auth/entiredb.go"
 }
 ```
 
@@ -412,7 +412,7 @@ tool_use Read
 id: toolu_01JJMDrGGeyucfRhydwPgBF7
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/auth/auth.go"
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth.go"
 }
 ```
 
@@ -492,7 +492,7 @@ docs/protocol.md:323:- **On**: after `RequestInfoRefs` follows redirects, `Endpo
 docs/testing.md:83:The JSON report includes per-run results, aggregate min/avg/max timings, batch counts for batched runs, heap peaks, and relay modes seen across successful runs. If `--source-url` is a filesystem path, the tool converts it to `file://...` automatically.
 docs/usage.md:23:  https://github.com/source-org/source-repo.git \
 docs/usage.md:24:  https://github.com/target-org/target-repo.git
-docs/usage.md:128:- `ssh://git@example.com/org/repo.git`
+docs/usage.md:128:- `ssh://<REDACTED_EMAIL>/org/repo.git`
 docs/usage.md:130:- `git+ssh://example.com/org/repo.git`
 ```
 
@@ -502,7 +502,7 @@ tool_use Read
 id: toolu_01DNnXYCu4VTwiK3P47Squg8
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/docs/usage.md",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/docs/usage.md",
   "offset": 115,
   "limit": 40
 }
@@ -526,8 +526,8 @@ id: toolu_01DNnXYCu4VTwiK3P47Squg8
 125	
 126	`git-sync` also supports SSH remotes. Accepted forms include:
 127	
-128	- `ssh://git@example.com/org/repo.git`
-129	- `git@example.com:org/repo.git`
+128	- `ssh://<REDACTED_EMAIL>/org/repo.git`
+129	- `<REDACTED_EMAIL>:org/repo.git`
 130	- `git+ssh://example.com/org/repo.git`
 131	
 132	SSH transport shells out to the local `ssh` binary, so host aliases,

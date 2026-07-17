@@ -24,7 +24,7 @@ tool_use Read
 id: toolu_01VLcpDNN82RjaiJvepSprUe
 ```json
 {
-  "file_path": "/Users/ben/.claude/projects/-Users-ben-git-paper-scan-processor/memory/feedback_checklist_substeps.md"
+  "file_path": "/home/<USER>/.claude/projects/-Users-ben-git-paper-scan-processor/memory/feedback_checklist_substeps.md"
 }
 ```
 
@@ -59,7 +59,7 @@ tool_use Write
 id: toolu_01UR8XuTbw7MpNfVDa4UkGGw
 ```json
 {
-  "file_path": "/Users/ben/.claude/projects/-Users-ben-git-paper-scan-processor/memory/feedback_warn_large_diffs.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-ben-git-paper-scan-processor/memory/feedback_warn_large_diffs.md",
   "content": "---\nname: feedback-warn-large-diffs\ndescription: \"Proactively warn before implementing any request (chat or spec.md) that looks like it'll produce a large/churned diff, and propose splitting it\"\nmetadata:\n  type: feedback\n---\n\nBefore starting implementation on a requested feature or change — whether it comes from a spec.md checklist item or an ad-hoc chat message — assess whether it looks like it will touch many files or produce a large diff. If so, flag this to the user up front and propose splitting the work into smaller, independently reviewable steps (see [[feedback_checklist_substeps]] for the 1a/1b/1c convention) before writing code.\n\n**Why:** User confirmed on 2026-07-08 that this proactive warning should apply universally, not just when authoring spec.md checklist items — any chat request that would churn a lot of code should get the same treatment.\n\n**How to apply:** Do this assessment for every non-trivial implementation request, regardless of source (spec checklist or plain chat ask). Give the warning before writing code, not after. Trivial/small requests don't need this treatment — use judgment on what counts as \"large.\"\n"
 }
 ```
@@ -69,7 +69,7 @@ id: toolu_01UR8XuTbw7MpNfVDa4UkGGw
 tool_result
 id: toolu_01UR8XuTbw7MpNfVDa4UkGGw
 ```
-File created successfully at: /Users/ben/.claude/projects/-Users-ben-git-paper-scan-processor/memory/feedback_warn_large_diffs.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-Users-ben-git-paper-scan-processor/memory/feedback_warn_large_diffs.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -79,7 +79,7 @@ id: toolu_019gwbe41mJ46VvpDV5enujX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/.claude/projects/-Users-ben-git-paper-scan-processor/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-ben-git-paper-scan-processor/memory/MEMORY.md",
   "old_string": "- [Feedback: checklist sub-steps](feedback_checklist_substeps.md) — Default to small, independently reviewable checklist steps (1a/1b/1c); only bundle trivial features",
   "new_string": "- [Feedback: checklist sub-steps](feedback_checklist_substeps.md) — Default to small, independently reviewable checklist steps (1a/1b/1c); only bundle trivial features\n- [Feedback: warn on large diffs](feedback_warn_large_diffs.md) — Proactively flag large/churned changes before implementing, from spec.md or chat, and propose splitting them"
 }
@@ -99,7 +99,7 @@ tool_use Read
 id: toolu_01T86BKckWVJu72TcdNax32S
 ```json
 {
-  "file_path": "/Users/ben/.claude/projects/-Users-ben-git-paper-scan-processor/memory/MEMORY.md"
+  "file_path": "/home/<USER>/.claude/projects/-Users-ben-git-paper-scan-processor/memory/MEMORY.md"
 }
 ```
 
@@ -128,7 +128,7 @@ id: toolu_015Nrs2BokwzDahQAjCipKyv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/.claude/projects/-Users-ben-git-paper-scan-processor/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-ben-git-paper-scan-processor/memory/MEMORY.md",
   "old_string": "- [Feedback: commit confirmation](feedback_commit_confirmation.md) — Never commit without confirmation this turn; show the draft commit message before committing",
   "new_string": "- [Feedback: commit confirmation](feedback_commit_confirmation.md) — Never commit without confirmation this turn; show the draft commit message before committing\n- [Feedback: warn on large diffs](feedback_warn_large_diffs.md) — Proactively flag large/churned changes before implementing, from spec.md or chat, and propose splitting them"
 }
@@ -139,7 +139,7 @@ id: toolu_015Nrs2BokwzDahQAjCipKyv
 tool_result
 id: toolu_015Nrs2BokwzDahQAjCipKyv
 ```
-The file /Users/ben/.claude/projects/-Users-ben-git-paper-scan-processor/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-ben-git-paper-scan-processor/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

@@ -34,7 +34,7 @@ tool_use Read
 id: toolu_01922Am8eRLCqP7gtghCprXU
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/logging/logger.go"
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/logging/logger.go"
 }
 ```
 
@@ -104,7 +104,7 @@ tool_use Read
 id: toolu_01HNW2p6Yaw5hsL5ycD4jBRz
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/logging/logger_test.go"
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/logging/logger_test.go"
 }
 ```
 
@@ -178,7 +178,7 @@ tool_use Read
 id: toolu_015ELzPm5M9sDKo77WSLPrXv
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/hooks_git_cmd.go"
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/hooks_git_cmd.go"
 }
 ```
 
@@ -251,7 +251,7 @@ tool_use Read
 id: toolu_019YLAWoUrPwbcZGXUvMF8dg
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/docs/architecture/logging.md"
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/docs/architecture/logging.md"
 }
 ```
 
@@ -438,7 +438,7 @@ id: toolu_01DLxXdtE2vb95xgmKZtEUGn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/logging/logger.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/logging/logger.go",
   "old_string": "// Init initializes the logger for a session, writing JSON logs to\n// .entire/logs/<session-id>.log.\n//\n// If the log file cannot be created, falls back to stderr.\n// Log level is controlled by ENTIRE_LOG_LEVEL environment variable.",
   "new_string": "// Init initializes the logger for a session, writing JSON logs to\n// .entire/logs/entire.log.\n//\n// The sessionID is stored as an slog attribute on every log line for filtering.\n// If the log file cannot be created, falls back to stderr.\n// Log level is controlled by ENTIRE_LOG_LEVEL environment variable."
 }
@@ -449,7 +449,7 @@ id: toolu_01DLxXdtE2vb95xgmKZtEUGn
 tool_result
 id: toolu_01DLxXdtE2vb95xgmKZtEUGn
 ```
-The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/logging/logger.go has been updated successfully.
+The file /home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/logging/logger.go has been updated successfully.
 ```
 
 > TOOL
@@ -459,7 +459,7 @@ id: toolu_01DaqLLdMo7CNbWBkFquuYAf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/logging/logger.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/logging/logger.go",
   "old_string": "\tlogFilePath := filepath.Join(logsPath, sessionID+\".log\")\n\tf, err := os.OpenFile(logFilePath, os.O_CREATE|os.O_APPEND|os.O_WRONLY, 0o600) //nolint:gosec // sessionID validated above",
   "new_string": "\tlogFilePath := filepath.Join(logsPath, \"entire.log\")\n\tf, err := os.OpenFile(logFilePath, os.O_CREATE|os.O_APPEND|os.O_WRONLY, 0o600)"
 }
@@ -470,7 +470,7 @@ id: toolu_01DaqLLdMo7CNbWBkFquuYAf
 tool_result
 id: toolu_01DaqLLdMo7CNbWBkFquuYAf
 ```
-The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/logging/logger.go has been updated successfully.
+The file /home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/logging/logger.go has been updated successfully.
 ```
 
 > AGENT
@@ -522,7 +522,7 @@ id: toolu_01RHsZJTm8AfcJGH4TL5MVDm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/hooks_git_cmd.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/hooks_git_cmd.go",
   "old_string": "// initHookLogging initializes logging for hooks by reading the current session ID.\n// Returns a cleanup function that should be deferred.\nfunc initHookLogging() func() {\n\t// Set up log level getter so logging can read from settings\n\tlogging.SetLogLevelGetter(GetLogLevel)\n\n\tsessionID, err := paths.ReadCurrentSession()\n\tif err != nil || sessionID == \"\" {\n\t\t// No session file or empty - logging will use stderr fallback\n\t\treturn func() {}\n\t}\n\tif err := logging.Init(sessionID); err != nil {\n\t\t// Init failed - logging will use stderr fallback\n\t\treturn func() {}\n\t}\n\treturn logging.Close\n}",
   "new_string": "// initHookLogging initializes logging for hooks by reading the current session ID.\n// Returns a cleanup function that should be deferred.\nfunc initHookLogging() func() {\n\t// Set up log level getter so logging can read from settings\n\tlogging.SetLogLevelGetter(GetLogLevel)\n\n\t// Read session ID for the slog attribute (empty string is fine - log file is fixed)\n\tsessionID, _ := paths.ReadCurrentSession()\n\tif err := logging.Init(sessionID); err != nil {\n\t\t// Init failed - logging will use stderr fallback\n\t\treturn func() {}\n\t}\n\treturn logging.Close\n}"
 }
@@ -533,7 +533,7 @@ id: toolu_01RHsZJTm8AfcJGH4TL5MVDm
 tool_result
 id: toolu_01RHsZJTm8AfcJGH4TL5MVDm
 ```
-The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/hooks_git_cmd.go has been updated successfully.
+The file /home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/hooks_git_cmd.go has been updated successfully.
 ```
 
 > AGENT
@@ -558,16 +558,16 @@ tool_result
 id: toolu_01LeJDN3AFzJGG9rDVzvAbQg
 ```
 cmd/entire/cli/validation/validators.go:18:func ValidateSessionID(id string) error {
-/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/validation/validators.go-19-	if id == "" {
-/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/validation/validators.go-20-		return errors.New("session ID cannot be empty")
-/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/validation/validators.go-21-	}
-/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/validation/validators.go-22-	if strings.ContainsAny(id, "/\\") {
+/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/validation/validators.go-19-	if id == "" {
+/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/validation/validators.go-20-		return errors.New("session ID cannot be empty")
+/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/validation/validators.go-21-	}
+/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/validation/validators.go-22-	if strings.ContainsAny(id, "/\\") {
 cmd/entire/cli/validation/validators.go-23-		return fmt.Errorf("invalid session ID %q: contains path separators", id)
-/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/validation/validators.go-24-	}
-/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/validation/validators.go-25-	return nil
-/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/validation/validators.go-26-}
-/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/validation/validators.go-27-
-/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/validation/validators.go-28-// ValidateToolUseID validates that a tool use ID contains only safe characters for paths.
+/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/validation/validators.go-24-	}
+/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/validation/validators.go-25-	return nil
+/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/validation/validators.go-26-}
+/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/validation/validators.go-27-
+/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/validation/validators.go-28-// ValidateToolUseID validates that a tool use ID contains only safe characters for paths.
 ```
 
 > AGENT
@@ -581,7 +581,7 @@ id: toolu_011ESu63zG7VdxJweJ26DVzu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/logging/logger.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/logging/logger.go",
   "old_string": "\t// Validate session ID to prevent path traversal attacks\n\tif err := validation.ValidateSessionID(sessionID); err != nil {\n\t\treturn fmt.Errorf(\"invalid session ID for logging: %w\", err)\n\t}",
   "new_string": "\t// Validate session ID if provided (used only for the slog attribute, not the filename)\n\tif sessionID != \"\" {\n\t\tif err := validation.ValidateSessionID(sessionID); err != nil {\n\t\t\treturn fmt.Errorf(\"invalid session ID for logging: %w\", err)\n\t\t}\n\t}"
 }
@@ -592,7 +592,7 @@ id: toolu_011ESu63zG7VdxJweJ26DVzu
 tool_result
 id: toolu_011ESu63zG7VdxJweJ26DVzu
 ```
-The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/logging/logger.go has been updated successfully.
+The file /home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/logging/logger.go has been updated successfully.
 ```
 
 > TOOL
@@ -643,7 +643,7 @@ tool_use Read
 id: toolu_01NhTbR1Y8g3sNthXeSx24ub
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/logging/logger_test.go"
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/logging/logger_test.go"
 }
 ```
 
@@ -721,7 +721,7 @@ tool_use Write
 id: toolu_01GmaVA7YtAHa4NMy2nJruqx
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/logging/logger_test.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/logging/logger_test.go",
   "content": "package logging\n\nimport (\n\t\"bytes\"\n\t\"context\"\n\t\"encoding/json\"\n\t\"log/slog\"\n\t\"os\"\n\t\"os/exec\"\n\t\"path/filepath\"\n\t\"strings\"\n\t\"testing\"\n\t\"time\"\n)\n\n// Test constants to avoid goconst warnings\nconst (\n\ttestSessionID = \"2025-01-15-test-session\"\n\ttestComponent = \"hooks\"\n\ttestAgent     = \"claude-code\"\n\tlevelINFO     = \"INFO\"\n)\n\n// testLogFilePath returns the expected log file path for a test temp directory.\nfunc testLogFilePath(tmpDir string) string {\n\treturn filepath.Join(tmpDir, \".entire\", \"logs\", \"entire.log\")\n}\n\nfunc TestParseLogLevel(t *testing.T) {\n\ttests := []struct {\n\t\tname     string\n\t\tenvValue string\n\t\twant     slog.Level\n\t}{\n\t\t{\"empty defaults to INFO\", \"\", slog.LevelInfo},\n\t\t{\"DEBUG lowercase\", \"debug\", slog.LevelDebug},\n\t\t{\"DEBUG uppercase\", \"DEBUG\", slog.LevelDebug},\n\t\t{\"INFO lowercase\", \"info\", slog.LevelInfo},\n\t\t{\"INFO uppercase\", \"INFO\", slog.LevelInfo},\n\t\t{\"WARN lowercase\", \"warn\", slog.LevelWarn},\n\t\t{\"WARN uppercase\", \"WARN\", slog.LevelWarn},\n\t\t{\"ERROR lowercase\", \"error\", slog.LevelError},\n\t\t{\"ERROR uppercase\", \"ERROR\", slog.LevelError},\n\t\t{\"invalid defaults to INFO\", \"invalid\", slog.LevelInfo},\n\t\t{\"warning alias\", \"warning\", slog.LevelWarn},\n\t}\n\n\tfor _, tt := range tests {\n\t\tt.Run(tt.name, func(t *testing.T) {\n\t\t\tgot := parseLogLevel(tt.envValue)\n\t\t\tif got != tt.want {\n\t\t\t\tt.Errorf(\"parseLogLevel(%q) = %v, want %v\", tt.envValue, got, tt.want)\n\t\t\t}\n\t\t})\n\t}\n}\n\nfunc TestInit_CreatesLogDirectory(t *testing.T) {\n\ttmpDir := t.TempDir()\n\tt.Chdir(tmpDir)\n\n\t// Initialize git repo so RepoRoot works\n\tinitGitRepo(t, tmpDir)\n\n\terr := Init(testSessionID)\n\tif err != nil {\n\t\tt.Fatalf(\"Init() error = %v\", err)\n\t}\n\tdefer Close()\n\n\tlogsDir := filepath.Join(tmpDir, \".entire\", \"logs\")\n\tif _, err := os.Stat(logsDir); os.IsNotExist(err) {\n\t\tt.Errorf(\"Init() did not create .entire/logs/ directory\")\n\t}\n}\n\nfunc TestInit_CreatesLogFile(t *testing.T) {\n\ttmpDir := t.TempDir()\n\tt.Chdir(tmpDir)\n\n\tinitGitRepo(t, tmpDir)\n\n\terr := Init(testSessionID)\n\tif err != nil {\n\t\tt.Fatalf(\"Init() error = %v\", err)\n\t}\n\tdefer Close()\n\n\tif _, err := os.Stat(testLogFilePath(tmpDir)); os.IsNotExist(err) {\n\t\tt.Errorf(\"Init() did not create log file at %s\", testLogFilePath(tmpDir))\n\t}\n}\n\nfunc TestInit_WritesJSONLogs(t *testing.T) {\n\ttmpDir := t.TempDir()\n\tt.Chdir(tmpDir)\n\n\tinitGitRepo(t, tmpDir)\n\n\tsessionID := \"2025-01-15-json-test\"\n\terr := Init(sessionID)\n\tif err != nil {\n\t\tt.Fatalf(\"Init() error = […]
 
 > TOOL
@@ -729,7 +729,7 @@ id: toolu_01GmaVA7YtAHa4NMy2nJruqx
 tool_result
 id: toolu_01GmaVA7YtAHa4NMy2nJruqx
 ```
-The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/logging/logger_test.go has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
+The file /home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/logging/logger_test.go has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
      1→package logging
      2→
      3→import (
@@ -830,7 +830,7 @@ id: toolu_01QucP9bVBQxeUgqnBGE4XtM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/docs/architecture/logging.md",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/docs/architecture/logging.md",
   "old_string": "The CLI uses Go's `log/slog` package for structured JSON logging. Logs are written to `.entire/logs/<session-id>.log` and help debug hook execution and CLI behavior.",
   "new_string": "The CLI uses Go's `log/slog` package for structured JSON logging. All logs are written to a single file `.entire/logs/entire.log` and help debug hook execution and CLI behavior. The `session_id` attribute on each log line allows filtering by session."
 }
@@ -841,7 +841,7 @@ id: toolu_01QucP9bVBQxeUgqnBGE4XtM
 tool_result
 id: toolu_01QucP9bVBQxeUgqnBGE4XtM
 ```
-The file /Users/alex/workspace/cli/.worktrees/2/docs/architecture/logging.md has been updated successfully.
+The file /home/<USER>/workspace/cli/.worktrees/2/docs/architecture/logging.md has been updated successfully.
 ```
 
 > TOOL
@@ -851,7 +851,7 @@ id: toolu_012AkcvZfVnwT8JNQASVGVkg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/docs/architecture/logging.md",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/docs/architecture/logging.md",
   "old_string": "# All logs for a session\njq 'select(.session_id == \"2025-12-31-abc123\")' .entire/logs/*.log\n\n# All logs for a specific subagent task\njq 'select(.tool_use_id == \"X\")' .entire/logs/*.log\n\n# All subagent activity\njq 'select(.hook_type == \"subagent\")' .entire/logs/*.log",
   "new_string": "# All logs for a session\njq 'select(.session_id == \"2025-12-31-abc123\")' .entire/logs/entire.log\n\n# All logs for a specific subagent task\njq 'select(.tool_use_id == \"X\")' .entire/logs/entire.log\n\n# All subagent activity\njq 'select(.hook_type == \"subagent\")' .entire/logs/entire.log\n\n# Tail logs in real time\ntail -f .entire/logs/entire.log | jq ."
 }
@@ -862,7 +862,7 @@ id: toolu_012AkcvZfVnwT8JNQASVGVkg
 tool_result
 id: toolu_012AkcvZfVnwT8JNQASVGVkg
 ```
-The file /Users/alex/workspace/cli/.worktrees/2/docs/architecture/logging.md has been updated successfully.
+The file /home/<USER>/workspace/cli/.worktrees/2/docs/architecture/logging.md has been updated successfully.
 ```
 
 > TOOL
@@ -905,17 +905,17 @@ id: toolu_01XHBQ9Z2BGrSFq1pE3GnRVX
 tool_result
 id: toolu_01XHBQ9Z2BGrSFq1pE3GnRVX
 ```
-/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/logging/logger.go-4-//
-/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/logging/logger.go-5-//	// Initialize logger for a session (typically at session start)
+/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/logging/logger.go-4-//
+/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/logging/logger.go-5-//	// Initialize logger for a session (typically at session start)
 cmd/entire/cli/logging/logger.go:6://	if err := logging.Init(sessionID); err != nil {
-/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/logging/logger.go-7-//	    // handle error
-/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/logging/logger.go-8-//	}
+/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/logging/logger.go-7-//	    // handle error
+/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/logging/logger.go-8-//	}
 --
-/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/hooks_git_cmd.go-67-	// Read session ID for the slog attribute (empty string is fine - log file is fixed)
+/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/hooks_git_cmd.go-67-	// Read session ID for the slog attribute (empty string is fine - log file is fixed)
 cmd/entire/cli/hooks_git_cmd.go-68-	sessionID, _ := paths.ReadCurrentSession()
 cmd/entire/cli/hooks_git_cmd.go:69:	if err := logging.Init(sessionID); err != nil {
-/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/hooks_git_cmd.go-70-		// Init failed - logging will use stderr fallback
-/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/hooks_git_cmd.go-71-		return func() {}
+/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/hooks_git_cmd.go-70-		// Init failed - logging will use stderr fallback
+/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/hooks_git_cmd.go-71-		return func() {}
 ```
 
 > TOOL
@@ -936,17 +936,17 @@ id: toolu_01PzxonpLNGdHjXdysJXk25K
 tool_result
 id: toolu_01PzxonpLNGdHjXdysJXk25K
 ```
-/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/hooks_git_cmd.go-67-	// Read session ID for the slog attribute (empty string is fine - log file is fixed)
+/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/hooks_git_cmd.go-67-	// Read session ID for the slog attribute (empty string is fine - log file is fixed)
 cmd/entire/cli/hooks_git_cmd.go-68-	sessionID, _ := paths.ReadCurrentSession()
 cmd/entire/cli/hooks_git_cmd.go:69:	if err := logging.Init(sessionID); err != nil {
-/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/hooks_git_cmd.go-70-		// Init failed - logging will use stderr fallback
-/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/hooks_git_cmd.go-71-		return func() {}
+/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/hooks_git_cmd.go-70-		// Init failed - logging will use stderr fallback
+/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/hooks_git_cmd.go-71-		return func() {}
 --
-/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/logging/logger.go-4-//
-/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/logging/logger.go-5-//	// Initialize logger for a session (typically at session start)
+/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/logging/logger.go-4-//
+/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/logging/logger.go-5-//	// Initialize logger for a session (typically at session start)
 cmd/entire/cli/logging/logger.go:6://	if err := logging.Init(sessionID); err != nil {
-/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/logging/logger.go-7-//	    // handle error
-/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/logging/logger.go-8-//	}
+/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/logging/logger.go-7-//	    // handle error
+/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/logging/logger.go-8-//	}
 ```
 
 > AGENT
@@ -1013,7 +1013,7 @@ id: toolu_012V2WzViv3Y1AKb2pmBgmRD
   "pattern": "logging\\.Init",
   "output_mode": "content",
   "-C": 3,
-  "path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/hooks_git_cmd_test.go"
+  "path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/hooks_git_cmd_test.go"
 }
 ```
 
@@ -1115,7 +1115,7 @@ id: toolu_01KGUtpii8P7NHoKUJg8xHh3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/logging/logger.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/logging/logger.go",
   "old_string": "\tlogFilePath := filepath.Join(logsPath, \"entire.log\")\n\tf, err := os.OpenFile(logFilePath, os.O_CREATE|os.O_APPEND|os.O_WRONLY, 0o600)",
   "new_string": "\tlogFilePath := filepath.Join(logsPath, \"entire.log\")\n\tf, err := os.OpenFile(logFilePath, os.O_CREATE|os.O_APPEND|os.O_WRONLY, 0o600) //nolint:gosec // fixed filename, not user-controlled"
 }
@@ -1126,7 +1126,7 @@ id: toolu_01KGUtpii8P7NHoKUJg8xHh3
 tool_result
 id: toolu_01KGUtpii8P7NHoKUJg8xHh3
 ```
-The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/logging/logger.go has been updated successfully.
+The file /home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/logging/logger.go has been updated successfully.
 ```
 
 > AGENT
@@ -1139,7 +1139,7 @@ tool_use Read
 id: toolu_019ZKNtx6AkuLVg1SiuLVkEy
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/hooks_git_cmd.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/hooks_git_cmd.go",
   "offset": 61,
   "limit": 17
 }
@@ -1185,7 +1185,7 @@ id: toolu_0126zs4pbFjMaNFem6iqpfei
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/hooks_git_cmd.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/hooks_git_cmd.go",
   "old_string": "\t// Read session ID for the slog attribute (empty string is fine - log file is fixed)\n\tsessionID, _ := paths.ReadCurrentSession()",
   "new_string": "\t// Read session ID for the slog attribute (empty string is fine - log file is fixed)\n\tsessionID, err := paths.ReadCurrentSession()\n\tif err != nil {\n\t\tsessionID = \"\"\n\t}"
 }
@@ -1196,7 +1196,7 @@ id: toolu_0126zs4pbFjMaNFem6iqpfei
 tool_result
 id: toolu_0126zs4pbFjMaNFem6iqpfei
 ```
-The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/hooks_git_cmd.go has been updated successfully.
+The file /home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/hooks_git_cmd.go has been updated successfully.
 ```
 
 > TOOL
@@ -1271,7 +1271,7 @@ tool_use Read
 id: toolu_01GHoyGUsDMkvsPsqiXAGRBc
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/hook_registry_test.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/hook_registry_test.go",
   "offset": 70,
   "limit": 40
 }
@@ -1332,7 +1332,7 @@ tool_use Read
 id: toolu_01221np5LASSY49a87UD23sw
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/hook_registry_test.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/hook_registry_test.go",
   "offset": 180,
   "limit": 40
 }
@@ -1394,7 +1394,7 @@ id: toolu_01H9s5kAhgszGLtx5Nn5ejDm
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/hook_registry_test.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/hook_registry_test.go",
   "old_string": "sessionID+\".log\"",
   "new_string": "\"entire.log\""
 }
@@ -1405,7 +1405,7 @@ id: toolu_01H9s5kAhgszGLtx5Nn5ejDm
 tool_result
 id: toolu_01H9s5kAhgszGLtx5Nn5ejDm
 ```
-The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/hook_registry_test.go has been updated. All occurrences of 'sessionID+".log"' were successfully replaced with '"entire.log"'.
+The file /home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/hook_registry_test.go has been updated. All occurrences of 'sessionID+".log"' were successfully replaced with '"entire.log"'.
 ```
 
 > AGENT
@@ -1418,7 +1418,7 @@ tool_use Read
 id: toolu_01Se3bZNZN2f5JG9yfBHtecW
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/hooks_git_cmd_test.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/hooks_git_cmd_test.go",
   "offset": 38,
   "limit": 30
 }
@@ -1470,7 +1470,7 @@ id: toolu_01AEdnAMLBHUejfjSTx1Gc4R
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/hooks_git_cmd_test.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/hooks_git_cmd_test.go",
   "old_string": "\t\t// Verify log file was created\n\t\tlogFile := filepath.Join(logsDir, sessionID+\".log\")\n\t\tif _, err := os.Stat(logFile); os.IsNotExist(err) {\n\t\t\tt.Errorf(\"expected log file to be created at %s\", logFile)\n\t\t}",
   "new_string": "\t\t// Verify log file was created\n\t\tlogFile := filepath.Join(logsDir, \"entire.log\")\n\t\tif _, err := os.Stat(logFile); os.IsNotExist(err) {\n\t\t\tt.Errorf(\"expected log file to be created at %s\", logFile)\n\t\t}"
 }
@@ -1481,7 +1481,7 @@ id: toolu_01AEdnAMLBHUejfjSTx1Gc4R
 tool_result
 id: toolu_01AEdnAMLBHUejfjSTx1Gc4R
 ```
-The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/hooks_git_cmd_test.go has been updated successfully.
+The file /home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/hooks_git_cmd_test.go has been updated successfully.
 ```
 
 > AGENT
@@ -1494,7 +1494,7 @@ tool_use Read
 id: toolu_01VX2mZTRLeHoKdXzKgzE6cs
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/hooks_git_cmd_test.go"
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/hooks_git_cmd_test.go"
 }
 ```
 
@@ -1844,8 +1844,8 @@ id: toolu_01Bdp1AbYBXMh7SvwYdzAGa5
 tool_result
 id: toolu_01Bdp1AbYBXMh7SvwYdzAGa5
 ```
-origin	git@github.com:entireio/cli.git (fetch)
-origin	git@github.com:entireio/cli.git (push)
+origin	<REDACTED_EMAIL>:entireio/cli.git (fetch)
+origin	<REDACTED_EMAIL>:entireio/cli.git (push)
 ```
 
 > TOOL
@@ -1873,7 +1873,7 @@ tool_use Bash
 id: toolu_01UshqhXpDSqUgTg3VVh1tye
 ```json
 {
-  "command": "git commit -m \"$(cat <<'EOF'\nConsolidate logging to single file per worktree\n\nWrite all logs to .entire/logs/entire.log instead of per-session files.\nThis enables `tail -f` before sessions start, simplifies concurrent\nsession debugging, and removes the need for hooks to look up session IDs\njust to find the log file. The session_id slog attribute still appears\non every line for filtering with jq.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git commit -m \"$(cat <<'EOF'\nConsolidate logging to single file per worktree\n\nWrite all logs to .entire/logs/entire.log instead of per-session files.\nThis enables `tail -f` before sessions start, simplifies concurrent\nsession debugging, and removes the need for hooks to look up session IDs\njust to find the log file. The session_id slog attribute still appears\non every line for filtering with jq.\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Create commit"
 }
 ```

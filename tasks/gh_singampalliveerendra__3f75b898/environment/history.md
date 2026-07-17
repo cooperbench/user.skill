@@ -140,7 +140,7 @@ tool_use Bash
 id: toolu_01Uk87TpJYpvEV5pKNyhaRh1
 ```json
 {
-  "command": "ls -lt /home/veerendra/.claude/projects/-home-veerendra-farmer-yourfamilyfarmer/*.jsonl 2>/dev/null | head -5",
+  "command": "ls -lt /home/<USER>/.claude/projects/-home-veerendra-farmer-yourfamilyfarmer/*.jsonl 2>/dev/null | head -5",
   "description": "List recent session transcript files"
 }
 ```
@@ -150,11 +150,11 @@ id: toolu_01Uk87TpJYpvEV5pKNyhaRh1
 tool_result
 id: toolu_01Uk87TpJYpvEV5pKNyhaRh1
 ```
--rw------- 1 veerendra veerendra   52756 Jun 26 14:58 /home/veerendra/.claude/projects/-home-veerendra-farmer-yourfamilyfarmer/8bd94e44-9f78-4315-b29f-7f11ba92f64e.jsonl
--rw------- 1 veerendra veerendra 3280510 Jun 26 14:48 /home/veerendra/.claude/projects/-home-veerendra-farmer-yourfamilyfarmer/aba66bc7-cdba-4fa2-901c-00f6034520c6.jsonl
--rw------- 1 veerendra veerendra  208459 Jun 26 14:42 /home/veerendra/.claude/projects/-home-veerendra-farmer-yourfamilyfarmer/40c07203-a3ab-48bf-bd8a-47c9d0d0f7dd.jsonl
--rw------- 1 veerendra veerendra  174118 Jun 26 11:39 /home/veerendra/.claude/projects/-home-veerendra-farmer-yourfamilyfarmer/7404107f-0764-4d33-b1b4-98a16de33836.jsonl
--rw------- 1 veerendra veerendra  421711 Jun 26 11:07 /home/veerendra/.claude/projects/-home-veerendra-farmer-yourfamilyfarmer/168f910f-036a-43a7-b4ff-f9c4bcd003a3.jsonl
+-rw------- 1 veerendra veerendra   52756 Jun 26 14:58 /home/<USER>/.claude/projects/-home-veerendra-farmer-yourfamilyfarmer/8bd94e44-9f78-4315-b29f-7f11ba92f64e.jsonl
+-rw------- 1 veerendra veerendra 3280510 Jun 26 14:48 /home/<USER>/.claude/projects/-home-veerendra-farmer-yourfamilyfarmer/aba66bc7-cdba-4fa2-901c-00f6034520c6.jsonl
+-rw------- 1 veerendra veerendra  208459 Jun 26 14:42 /home/<USER>/.claude/projects/-home-veerendra-farmer-yourfamilyfarmer/40c07203-a3ab-48bf-bd8a-47c9d0d0f7dd.jsonl
+-rw------- 1 veerendra veerendra  174118 Jun 26 11:39 /home/<USER>/.claude/projects/-home-veerendra-farmer-yourfamilyfarmer/7404107f-0764-4d33-b1b4-98a16de33836.jsonl
+-rw------- 1 veerendra veerendra  421711 Jun 26 11:07 /home/<USER>/.claude/projects/-home-veerendra-farmer-yourfamilyfarmer/168f910f-036a-43a7-b4ff-f9c4bcd003a3.jsonl
 ```
 
 > AGENT
@@ -167,7 +167,7 @@ tool_use Bash
 id: toolu_01FspA2Mz6K3oRDVEVavUqRW
 ```json
 {
-  "command": "cd /home/veerendra/.claude/projects/-home-veerendra-farmer-yourfamilyfarmer/\npython3 - <<'EOF'\nimport json\nf=\"aba66bc7-cdba-4fa2-901c-00f6034520c6.jsonl\"\nprompts=[]\nfor line in open(f):\n    try: o=json.loads(line)\n    except: continue\n    if o.get(\"type\")==\"user\":\n        m=o.get(\"message\",{})\n        c=m.get(\"content\")\n        text=\"\"\n        if isinstance(c,str): text=c\n        elif isinstance(c,list):\n            for p in c:\n                if isinstance(p,dict) and p.get(\"type\")==\"text\": text+=p[\"text\"]\n        text=text.strip()\n        if not text: continue\n        # skip tool results / system reminders / command stdout\n        if text.startswith(\"<\") or \"tool_result\" in text[:30]: continue\n        prompts.append((o.get(\"timestamp\",\"\"),text))\nfor ts,t in prompts[-12:]:\n    print(\"=\"*60)\n    print(ts)\n    print(t[:1500])\nEOF",
+  "command": "cd /home/<USER>/.claude/projects/-home-veerendra-farmer-yourfamilyfarmer/\npython3 - <<'EOF'\nimport json\nf=\"aba66bc7-cdba-4fa2-901c-00f6034520c6.jsonl\"\nprompts=[]\nfor line in open(f):\n    try: o=json.loads(line)\n    except: continue\n    if o.get(\"type\")==\"user\":\n        m=o.get(\"message\",{})\n        c=m.get(\"content\")\n        text=\"\"\n        if isinstance(c,str): text=c\n        elif isinstance(c,list):\n            for p in c:\n                if isinstance(p,dict) and p.get(\"type\")==\"text\": text+=p[\"text\"]\n        text=text.strip()\n        if not text: continue\n        # skip tool results / system reminders / command stdout\n        if text.startswith(\"<\") or \"tool_result\" in text[:30]: continue\n        prompts.append((o.get(\"timestamp\",\"\"),text))\nfor ts,t in prompts[-12:]:\n    print(\"=\"*60)\n    print(ts)\n    print(t[:1500])\nEOF",
   "description": "Extract user prompts from previous session"
 }
 ```
@@ -182,7 +182,7 @@ id: toolu_01FspA2Mz6K3oRDVEVavUqRW
 [Image #1]
 ============================================================
 2026-06-26T08:24:16.804Z
-[Image: source: /home/veerendra/.claude/image-cache/aba66bc7-cdba-4fa2-901c-00f6034520c6/1.png]
+[Image: source: /home/<USER>/.claude/image-cache/aba66bc7-cdba-4fa2-901c-00f6034520c6/1.png]
 ============================================================
 2026-06-26T08:40:37.739Z
 what all queries i havve to run in supabase
@@ -191,7 +191,7 @@ what all queries i havve to run in supabase
 [Image #2] put how grow have to highlight in up
 ============================================================
 2026-06-26T08:44:44.617Z
-[Image: source: /home/veerendra/.claude/image-cache/aba66bc7-cdba-4fa2-901c-00f6034520c6/2.png]
+[Image: source: /home/<USER>/.claude/image-cache/aba66bc7-cdba-4fa2-901c-00f6034520c6/2.png]
 ============================================================
 2026-06-26T08:55:42.063Z
 deploy
@@ -200,13 +200,13 @@ deploy
 [Image #3] it looking not in structure in laptop view mobile view is fine but desktop have to more strytured
 ============================================================
 2026-06-26T09:03:06.690Z
-[Image: source: /home/veerendra/.claude/image-cache/aba66bc7-cdba-4fa2-901c-00f6034520c6/3.png]
+[Image: source: /home/<USER>/.claude/image-cache/aba66bc7-cdba-4fa2-901c-00f6034520c6/3.png]
 ============================================================
 2026-06-26T09:13:03.355Z
 sseeing many payment status in wrong in many placed [Image #4] in here the payment done but showing pending ststaus check everything and make proper flow of every paymentone . becouse these are the crucial part right , and also in this pic showing in poayment progress showing the payment recieved option and this second pic [Image #5] not showing payment recieved in progress why check and fix that one also
 ============================================================
 2026-06-26T09:13:03.356Z
-[Image: source: /home/veerendra/.claude/image-cache/aba66bc7-cdba-4fa2-901c-00f6034520c6/4.png][Image: source: /home/veerendra/.claude/image-cache/aba66bc7-cdba-4fa2-901c-00f6034520c6/5.png]
+[Image: source: /home/<USER>/.claude/image-cache/aba66bc7-cdba-4fa2-901c-00f6034520c6/4.png][Image: source: /home/<USER>/.claude/image-cache/aba66bc7-cdba-4fa2-901c-00f6034520c6/5.png]
 ============================================================
 2026-06-26T09:13:45.695Z
 sseeing many payment status in wrong in many placed [Image #4] in here the payment done but showing pending ststaus check everything and make proper flow of every paymentone . becouse these are the crucial part right , and also in this pic showing in poayment progress […]

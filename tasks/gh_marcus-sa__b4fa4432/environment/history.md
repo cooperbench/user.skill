@@ -2,7 +2,7 @@
 
 <system_instruction>
 You are working inside Conductor, a Mac app that lets the user run many coding agents in parallel.
-Your work should take place in the /Users/marcus/conductor/workspaces/brain-v1/los-angeles directory (unless otherwise directed), which has been set up for you to work in.
+Your work should take place in the /home/<USER>/conductor/workspaces/brain-v1/los-angeles directory (unless otherwise directed), which has been set up for you to work in.
 Each workspace has a .context directory (gitignored) where you can save files to collaborate with other agents.
 The target branch for this workspace is main. Use this for actions like creating new PRs, bisecting, etc., unless you're told otherwise.
 
@@ -44,7 +44,7 @@ tool_use Read
 id: toolu_01Swrb16uemqaHkQ6vLdqpC6
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/sandbox-provider-settings/deliver/execution-log.json"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/sandbox-provider-settings/deliver/execution-log.json"
 }
 ```
 
@@ -126,7 +126,7 @@ tool_use Read
 id: toolu_01CEuLYXWmuDJoqhUH9Vr71D
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/sandbox-provider-settings/deliver/roadmap.json"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/sandbox-provider-settings/deliver/roadmap.json"
 }
 ```
 
@@ -183,10 +183,10 @@ id: toolu_017XDLrsrY4iDVSnfJVhcCJY
 tool_result
 id: toolu_017XDLrsrY4iDVSnfJVhcCJY
 ```
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/sandbox-provider-settings/deliver/CLAUDE.md
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/sandbox-provider-settings/deliver/execution-log.json
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/sandbox-provider-settings/deliver/.develop-progress.json
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/sandbox-provider-settings/deliver/roadmap.json
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/sandbox-provider-settings/deliver/CLAUDE.md
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/sandbox-provider-settings/deliver/execution-log.json
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/sandbox-provider-settings/deliver/.develop-progress.json
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/sandbox-provider-settings/deliver/roadmap.json
 ```
 
 > TOOL
@@ -222,7 +222,7 @@ id: toolu_01Ex8kLFRkXYs2drfYD3pMHe
 tool_result
 id: toolu_01Ex8kLFRkXYs2drfYD3pMHe
 ```
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/evolution/2026-03-25-sandbox-agent-integration.md
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/evolution/2026-03-25-sandbox-agent-integration.md
 ```
 
 > AGENT
@@ -237,7 +237,7 @@ tool_use Bash
 id: toolu_014jigeXWJ98GYnbZ1SLTLPS
 ```json
 {
-  "command": "ls /Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/evolution/",
+  "command": "ls /home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/evolution/",
   "description": "List existing evolution docs"
 }
 ```
@@ -288,7 +288,7 @@ tool_use Write
 id: toolu_01PrrneDNd9aV3toHV3sWEu9
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/evolution/2026-03-31-sandbox-provider-settings.md",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/evolution/2026-03-31-sandbox-provider-settings.md",
   "content": "# Sandbox Provider Settings\n\n**Date**: 2026-03-31\n**Feature ID**: sandbox-provider-settings\n**Branch**: marcus-sa/skills-file-storage\n\n## Summary\n\nAdded sandbox provider configuration to workspace settings — both the backend API (GET/PUT) and frontend UI (settings page dropdown). This unblocks agent creation by allowing workspace admins to select which sandbox provider (e.g., `local-claude`) to use for sandboxed agent execution.\n\n## Business Context\n\nCreating sandboxed agents requires a workspace-level sandbox provider to be configured. Previously, there was no way to set this through the UI — the field existed in the SurrealDB schema but was not exposed via the settings API or rendered in the settings page. This feature closes that gap.\n\n## Steps Completed\n\n| Step | Description | Outcome |\n|------|-------------|---------|\n| 01-01 | Backend: include sandbox_provider in settings GET/PUT | Extended `toSettingsResponse()` to return `sandboxProvider`, added validation to PUT handler |\n| 01-02 | Frontend: add sandbox provider select to settings page | Added `SandboxProviderSection` component with Select dropdown that persists on change |\n\n## Key Decisions\n\n- **Skipped unit tests** for both steps — all logic lives in route handlers and React components, covered adequately by acceptance tests and component tests respectively.\n- **Validation approach**: PUT endpoint validates against a known provider list; invalid values return 400.\n- **No design/architecture […]
 
 > TOOL
@@ -296,7 +296,7 @@ id: toolu_01PrrneDNd9aV3toHV3sWEu9
 tool_result
 id: toolu_01PrrneDNd9aV3toHV3sWEu9
 ```
-File created successfully at: /Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/evolution/2026-03-31-sandbox-provider-settings.md
+File created successfully at: /home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/evolution/2026-03-31-sandbox-provider-settings.md
 ```
 
 > AGENT
@@ -327,7 +327,7 @@ tool_use Bash
 id: toolu_01DHbrF1U82JQ3TRo1GM8fsh
 ```json
 {
-  "command": "rm -rf /Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/sandbox-provider-settings",
+  "command": "rm -rf /home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/sandbox-provider-settings",
   "description": "Remove feature workspace"
 }
 ```
@@ -346,7 +346,7 @@ tool_use Bash
 id: toolu_01FrDyrYFa6v4JALu5PCaikm
 ```json
 {
-  "command": "ls /Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/ 2>/dev/null || echo \"empty\"",
+  "command": "ls /home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/ 2>/dev/null || echo \"empty\"",
   "description": "Check if feature dir is empty"
 }
 ```
@@ -402,7 +402,7 @@ tool_use Bash
 id: toolu_01VyPCrDinyfm7XVTNDCZ2yi
 ```json
 {
-  "command": "git add docs/evolution/2026-03-31-sandbox-provider-settings.md && git commit -s --no-verify -m \"$(cat <<'EOF'\ndocs(evolution): add sandbox-provider-settings feature summary\n\nArchives the completed feature with business context, steps, decisions,\nand commit references.\n\nCo-Authored-By: Claude Opus 4.6 (1M context) <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add docs/evolution/2026-03-31-sandbox-provider-settings.md && git commit -s --no-verify -m \"$(cat <<'EOF'\ndocs(evolution): add sandbox-provider-settings feature summary\n\nArchives the completed feature with business context, steps, decisions,\nand commit references.\n\nCo-Authored-By: Claude Opus 4.6 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit evolution document"
 }
 ```
@@ -423,7 +423,7 @@ tool_use Bash
 id: toolu_0116Sqn8REMjVTp5jua37mQG
 ```json
 {
-  "command": "git add docs/feature/sandbox-provider-settings && git commit -s --no-verify -m \"$(cat <<'EOF'\nchore: remove sandbox-provider-settings temporary workspace\n\nFeature finalized — process artifacts (roadmap, execution log, progress\nstate) archived in evolution doc.\n\nCo-Authored-By: Claude Opus 4.6 (1M context) <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add docs/feature/sandbox-provider-settings && git commit -s --no-verify -m \"$(cat <<'EOF'\nchore: remove sandbox-provider-settings temporary workspace\n\nFeature finalized — process artifacts (roadmap, execution log, progress\nstate) archived in evolution doc.\n\nCo-Authored-By: Claude Opus 4.6 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit workspace cleanup"
 }
 ```
@@ -449,7 +449,7 @@ tool_use Bash
 id: toolu_01CajsxAqNZcHqAFuuZ6ScP6
 ```json
 {
-  "command": "test -f /Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/evolution/2026-03-31-sandbox-provider-settings.md && echo \"Evolution doc: OK\" || echo \"Evolution doc: MISSING\"",
+  "command": "test -f /home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/evolution/2026-03-31-sandbox-provider-settings.md && echo \"Evolution doc: OK\" || echo \"Evolution doc: MISSING\"",
   "description": "Verify evolution doc exists"
 }
 ```

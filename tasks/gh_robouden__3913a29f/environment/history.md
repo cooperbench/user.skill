@@ -13,7 +13,7 @@ tool_use Read
 id: toolu_01QRY7YKbakN3cWVZFxeQAK3
 ```json
 {
-  "file_path": "/home/rob/.claude/projects/-home-rob-Documents-openclaw-workspace/memory/hermes_setup.md"
+  "file_path": "/home/<USER>/.claude/projects/-home-rob-Documents-openclaw-workspace/memory/hermes_setup.md"
 }
 ```
 
@@ -28,7 +28,7 @@ id: toolu_01QRY7YKbakN3cWVZFxeQAK3
 4	type: project
 5	originSessionId: 73180418-e784-40bf-926b-0e7aea4ad050
 6	---
-7	User runs **Hermes Agent** (fork of OpenClaw) at `/home/rob/.hermes/` — binary at `/home/rob/.local/bin/hermes`, config at `~/.hermes/config.yaml`, credential pool at `~/.hermes/auth.json`.
+7	User runs **Hermes Agent** (fork of OpenClaw) at `/home/<USER>/.hermes/` — binary at `/home/<USER>/.local/bin/hermes`, config at `~/.hermes/config.yaml`, credential pool at `~/.hermes/auth.json`.
 8	
 9	Active provider: **alibaba** (DashScope international endpoint `https://dashscope-intl.aliyuncs.com/compatible-mode/v1`) using `DASHSCOPE_API_KEY` exported in `~/.bashrc`. Model: `qwen3-coder-plus`.
 10	
@@ -44,7 +44,7 @@ tool_use Bash
 id: toolu_01R1iMLT1Cso75pCT9BwGhJv
 ```json
 {
-  "command": "ls /home/rob/.hermes/",
+  "command": "ls /home/<USER>/.hermes/",
   "description": "List Hermes directory contents"
 }
 ```
@@ -91,7 +91,7 @@ tool_use Bash
 id: toolu_01KyrYduxWTKP7HBLAy5KUkU
 ```json
 {
-  "command": "cat /home/rob/.hermes/config.yaml",
+  "command": "cat /home/<USER>/.hermes/config.yaml",
   "description": "Read Hermes config"
 }
 ```
@@ -145,7 +145,7 @@ tool_use Bash
 id: toolu_01RQU5pafSfz2gKX4mDKag6v
 ```json
 {
-  "command": "ls -lt /home/rob/.hermes/logs/ | head -20",
+  "command": "ls -lt /home/<USER>/.hermes/logs/ | head -20",
   "description": "List recent Hermes log files"
 }
 ```
@@ -171,7 +171,7 @@ tool_use Bash
 id: toolu_01TkQW3kgYu2Ncx1o6fVXXod
 ```json
 {
-  "command": "tail -100 /home/rob/.hermes/logs/agent.log",
+  "command": "tail -100 /home/<USER>/.hermes/logs/agent.log",
   "description": "Read recent Hermes agent log"
 }
 ```
@@ -182,7 +182,7 @@ tool_result
 id: toolu_01TkQW3kgYu2Ncx1o6fVXXod
 ```
 2026-04-19 09:58:46,977 INFO anthropic._base_client: Retrying request to /v1/messages in 0.753417 seconds
-2026-04-19 09:58:55,382 INFO run_agent: Loaded environment variables from /home/rob/.hermes/.env
+2026-04-19 09:58:55,382 INFO run_agent: Loaded environment variables from /home/<USER>/.hermes/.env
 2026-04-19 09:59:00,150 INFO tools.mcp_tool: MCP server 'anytype' (stdio): registered 38 tool(s): mcp_anytype_API_search_global, mcp_anytype_API_list_spaces, mcp_anytype_API_create_space, mcp_anytype_API_get_space, mcp_anytype_API_update_space, mcp_anytype_API_add_list_objects, mcp_anytype_API_remove_list_object, mcp_anytype_API_get_list_views, mcp_anytype_API_get_list_objects, mcp_anytype_API_list_members, mcp_anytype_API_get_member, mcp_anytype_API_list_objects, mcp_anytype_API_create_object, mcp_anytype_API_delete_object, mcp_anytype_API_get_object, mcp_anytype_API_update_object, mcp_anytype_API_list_properties, mcp_anytype_API_create_property, mcp_anytype_API_delete_property, mcp_anytype_API_get_property, mcp_anytype_API_update_property, mcp_anytype_API_list_tags, mcp_anytype_API_create_tag, mcp_anytype_API_delete_tag, mcp_anytype_API_get_tag, mcp_anytype_API_update_tag, mcp_anytype_API_search_space, mcp_anytype_API_list_types, mcp_anytype_API_create_type, mcp_anytype_API_delete_type, mcp_anytype_API_get_type, mcp_anytype_API_update_type, mcp_anytype_API_list_templates, mcp_anytype_API_get_template, mcp_anytype_list_resources, mcp_anytype_read_resource, mcp_anytype_list_prompts, mcp_anytype_get_prompt
 2026-04-19 09:59:00,151 INFO tools.mcp_tool: MCP: registered 38 tool(s) from 1 server(s)
 2026-04-19 09:59:00,151 INFO tools.mcp_tool:   MCP: 38 tool(s) from 1 server(s)
@@ -194,7 +194,7 @@ id: toolu_01TkQW3kgYu2Ncx1o6fVXXod
 2026-04-19 09:59:06,687 INFO [20260419_095900_e5a110] agent.credential_pool: credential pool: marking OLLAMA_API_KEY exhausted (status=401), rotating
 2026-04-19 09:59:06,689 INFO [20260419_095900_e5a110] agent.credential_pool: credential pool: no available entries (all exhausted or empty)
 2026-04-19 09:59:06,694 ERROR [20260419_095900_e5a110] root: Non-retryable client error: unauthorized
-2026-04-19 10:01:15,507 INFO run_agent: Loaded environment variables from /home/rob/.hermes/.env
+2026-04-19 10:01:15,507 INFO run_agent: Loaded environment variables from /home/<USER>/.hermes/.env
 2026-04-19 10:01:20,037 INFO tools.mcp_tool: MCP server 'anytype' […]
 
 > AGENT
@@ -212,7 +212,7 @@ tool_use Bash
 id: toolu_01Uq82E7GvmqomgHSDpkWYv3
 ```json
 {
-  "command": "cat /home/rob/.hermes/auth.json | python3 -c \"import json,sys; d=json.load(sys.stdin); [print(k, [(e.get('id','?'), e.get('last_status','?')) for e in v] if isinstance(v,list) else v) for k,v in d.items()]\" 2>/dev/null || cat /home/rob/.hermes/auth.json",
+  "command": "cat /home/<USER>/.hermes/auth.json | python3 -c \"import json,sys; d=json.load(sys.stdin); [print(k, [(e.get('id','?'), e.get('last_status','?')) for e in v] if isinstance(v,list) else v) for k,v in d.items()]\" 2>/dev/null || cat /home/<USER>/.hermes/auth.json",
   "description": "Inspect Hermes auth credential pool statuses"
 }
 ```
@@ -226,7 +226,7 @@ version 1
 providers {'openai-codex': {'tokens': {'id_token': 'REDACTED', 'access_token': 'REDACTED', 'refresh_token': 'REDACTED', 'account_id': 'b83e90eb-7fc8-4e83-b4ea-2b405e08bdf5'}, 'last_refresh': '2026-04-19T01:12:21.040326Z', 'auth_mode': 'chatgpt'}}
 active_provider openai-codex
 updated_at 2026-04-19T11:20:37.051612+00:00
-credential_pool {'anthropic': [{'id': '380b8f', 'label': 'anthropic-oauth-3', 'auth_type': 'oauth', 'priority': 0, 'source': 'manual:hermes_pkce', 'access_token': 'REDACTED', 'refresh_token': 'REDACTED', 'last_status': 'exhausted', 'last_status_at': 1776597342.9345908, 'last_error_code': None, 'last_error_reason': None, 'last_error_message': None, 'last_error_reset_at': None, 'base_url': 'https://api.anthropic.com', 'expires_at_ms': 1776588322566, 'request_count': 0}, {'id': '91a28e', 'label': 'claude_code', 'auth_type': 'oauth', 'priority': 1, 'source': 'claude_code', 'access_token': 'REDACTED', 'refresh_token': 'REDACTED', 'last_status': 'ok', 'last_status_at': None, 'last_error_code': None, 'last_error_reason': None, 'last_error_message': None, 'last_error_reset_at': None, 'expires_at_ms': 1776626437050, 'request_count': 0}, {'id': '1eb7e2', 'label': 'ANTHROPIC_API_KEY', 'auth_type': 'oauth', 'priority': 2, 'source': 'env:ANTHROPIC_API_KEY', 'access_token': 'minimax-oauth', 'last_status': None, 'last_status_at': None, 'last_error_code': None, 'last_error_reason': None, 'last_error_message': None, 'last_error_reset_at': None, 'base_url': 'https://api.anthropic.com', 'request_count': 0}], 'openrouter': [{'id': 'dfd73f', 'label': 'OPENROUTER_API_KEY', 'auth_type': 'api_key', 'priority': 0, 'source': 'env:OPENROUTER_API_KEY', 'access_token': '[REDACTED_SK]', 'last_status': None, 'last_status_at': None, 'last_error_code': None, 'last_error_reason': None, 'last_error_message': None, 'last_error_reset_at': None, 'base_url': 'https://openrouter.ai/api/v1', 'request_count': 0}], 'qwen-oauth': [{'id': '45dd9f', 'label': '/home/rob/.qwen/oauth_creds.json', 'auth_type': 'oauth', 'priority': 0, 'source': 'qwen-cli', 'access_token': 'REDACTED', 'last_status': 'exhausted', 'last_status_at': 1776507208.3848886, 'last_error_code': 401, 'last_error_reason': 'invalid_api_key', 'last_error_message': 'invalid access token or token expired', 'last_error_reset_at': None, 'base_url': 'https://portal.qwen.ai/v1', 'expires_at_ms': 1776528678154, 'request_count': 0}], 'alibaba': [{'id': '88e462', 'label': 'DASHSCOPE_API_KEY', 'auth_type': 'api_key', 'priority': 0, 'source': 'env:DASHSCOPE_API_KEY', 'access_token': '[REDACTED_SK]', 'last_status': 'ok', 'last_status_at': None, 'last_error_code': […]
+credential_pool {'anthropic': [{'id': '380b8f', 'label': 'anthropic-oauth-3', 'auth_type': 'oauth', 'priority': 0, 'source': 'manual:hermes_pkce', 'access_token': 'REDACTED', 'refresh_token': 'REDACTED', 'last_status': 'exhausted', 'last_status_at': 1776597342.9345908, 'last_error_code': None, 'last_error_reason': None, 'last_error_message': None, 'last_error_reset_at': None, 'base_url': 'https://api.anthropic.com', 'expires_at_ms': 1776588322566, 'request_count': 0}, {'id': '91a28e', 'label': 'claude_code', 'auth_type': 'oauth', 'priority': 1, 'source': 'claude_code', 'access_token': 'REDACTED', 'refresh_token': 'REDACTED', 'last_status': 'ok', 'last_status_at': None, 'last_error_code': None, 'last_error_reason': None, 'last_error_message': None, 'last_error_reset_at': None, 'expires_at_ms': 1776626437050, 'request_count': 0}, {'id': '1eb7e2', 'label': 'ANTHROPIC_API_KEY', 'auth_type': 'oauth', 'priority': 2, 'source': 'env:ANTHROPIC_API_KEY', 'access_token': 'minimax-oauth', 'last_status': None, 'last_status_at': None, 'last_error_code': None, 'last_error_reason': None, 'last_error_message': None, 'last_error_reset_at': None, 'base_url': 'https://api.anthropic.com', 'request_count': 0}], 'openrouter': [{'id': 'dfd73f', 'label': 'OPENROUTER_API_KEY', 'auth_type': 'api_key', 'priority': 0, 'source': 'env:OPENROUTER_API_KEY', 'access_token': '[REDACTED_SK]', 'last_status': None, 'last_status_at': None, 'last_error_code': None, 'last_error_reason': None, 'last_error_message': None, 'last_error_reset_at': None, 'base_url': 'https://openrouter.ai/api/v1', 'request_count': 0}], 'qwen-oauth': [{'id': '45dd9f', 'label': '/home/<USER>/.qwen/oauth_creds.json', 'auth_type': 'oauth', 'priority': 0, 'source': 'qwen-cli', 'access_token': 'REDACTED', 'last_status': 'exhausted', 'last_status_at': 1776507208.3848886, 'last_error_code': 401, 'last_error_reason': 'invalid_api_key', 'last_error_message': 'invalid access token or token expired', 'last_error_reset_at': None, 'base_url': 'https://portal.qwen.ai/v1', 'expires_at_ms': 1776528678154, 'request_count': 0}], 'alibaba': [{'id': '88e462', 'label': 'DASHSCOPE_API_KEY', 'auth_type': 'api_key', 'priority': 0, 'source': 'env:DASHSCOPE_API_KEY', 'access_token': '[REDACTED_SK]', 'last_status': 'ok', 'last_status_at': None, 'last_error_code': […]
 
 > AGENT
 
@@ -252,7 +252,7 @@ tool_use Bash
 id: toolu_015x5xb1BzDjiZERsU7DMuDB
 ```json
 {
-  "command": "cat /home/rob/.hermes/.env 2>/dev/null; echo \"---BASHRC EXCERPT---\"; grep -i \"anthropic\\|dashscope\\|ollama\\|minimax\" /home/rob/.bashrc 2>/dev/null",
+  "command": "cat /home/<USER>/.hermes/.env 2>/dev/null; echo \"---BASHRC EXCERPT---\"; grep -i \"anthropic\\|dashscope\\|ollama\\|minimax\" /home/<USER>/.bashrc 2>/dev/null",
   "description": "Check Hermes .env and relevant bashrc exports"
 }
 ```
@@ -281,7 +281,7 @@ SIGNAL_HTTP_URL=http://127.0.0.1:8080
 SIGNAL_ACCOUNT=+818022605966
 SIGNAL_ALLOWED_USERS=+818022605966
 SIGNAL_GROUP_ALLOWED_USERS=*
-EMAIL_ADDRESS=oudendijk.biz@gmail.com
+EMAIL_ADDRESS=<REDACTED_EMAIL>
 REDACTED
 EMAIL_IMAP_HOST=imap.gmail.com
 EMAIL_SMTP_HOST=smtp.gmail.com
@@ -309,7 +309,7 @@ Found it. There are **two compounding causes**:
 
 **Cause 1 — Wrong `ANTHROPIC_API_KEY` in `.hermes/.env` (the main bug)**
 
-[.hermes/.env](/home/rob/.hermes/.env) has:
+[.hermes/.env](/home/<USER>/.hermes/.env) has:
 ```
 REDACTED
 ```
@@ -331,7 +331,7 @@ tool_use Read
 id: toolu_0198BWhBvHYpED61ynP7BF9J
 ```json
 {
-  "file_path": "/home/rob/.hermes/.env"
+  "file_path": "/home/<USER>/.hermes/.env"
 }
 ```
 
@@ -359,7 +359,7 @@ id: toolu_0198BWhBvHYpED61ynP7BF9J
 17	SIGNAL_ACCOUNT=+818022605966
 18	SIGNAL_ALLOWED_USERS=+818022605966
 19	SIGNAL_GROUP_ALLOWED_USERS=*
-20	EMAIL_ADDRESS=oudendijk.biz@gmail.com
+20	EMAIL_ADDRESS=<REDACTED_EMAIL>
 21	REDACTED
 22	EMAIL_IMAP_HOST=imap.gmail.com
 23	EMAIL_SMTP_HOST=smtp.gmail.com
@@ -385,7 +385,7 @@ id: toolu_016kybaUPBUa5uiH4WLAkdc1
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/rob/.hermes/.env",
+  "file_path": "/home/<USER>/.hermes/.env",
   "old_string": "REDACTED\n",
   "new_string": ""
 }
@@ -396,7 +396,7 @@ id: toolu_016kybaUPBUa5uiH4WLAkdc1
 tool_result
 id: toolu_016kybaUPBUa5uiH4WLAkdc1
 ```
-The file /home/rob/.hermes/.env has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.hermes/.env has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -409,7 +409,7 @@ tool_use Bash
 id: toolu_017zi1fQisJGRJE6P3DpN9m4
 ```json
 {
-  "command": "cd /home/rob && /home/rob/.local/bin/hermes auth remove anthropic 380b8f 2>&1 || echo \"manual removal needed\"",
+  "command": "cd /home/<USER> && /home/<USER>/.local/bin/hermes auth remove anthropic 380b8f 2>&1 || echo \"manual removal needed\"",
   "description": "Remove exhausted anthropic-oauth-3 credential"
 }
 ```
@@ -420,14 +420,14 @@ tool_result
 id: toolu_017zi1fQisJGRJE6P3DpN9m4
 ```
 Removed anthropic credential #1 (anthropic-oauth-3)
-Shell cwd was reset to /home/rob/Documents/openclaw-workspace
+Shell cwd was reset to /home/<USER>/Documents/openclaw-workspace
 ```
 
 > AGENT
 
 Done. Here's the summary:
 
-**Root cause:** Line 28 in [.hermes/.env](/home/rob/.hermes/.env) had `REDACTED` — a copy-paste accident from the `MINIMAX_PORTAL_API_KEY` line below it. Hermes loads `.env` at startup *before* `.bashrc`, so this bad value replaced your real key, creating a poisoned credential entry that failed on every API call and triggered retries.
+**Root cause:** Line 28 in [.hermes/.env](/home/<USER>/.hermes/.env) had `REDACTED` — a copy-paste accident from the `MINIMAX_PORTAL_API_KEY` line below it. Hermes loads `.env` at startup *before* `.bashrc`, so this bad value replaced your real key, creating a poisoned credential entry that failed on every API call and triggered retries.
 
 **What was fixed:**
 1. Removed the bad `REDACTED` line from `.env` — your real key from `.bashrc` will now be used
@@ -470,7 +470,7 @@ tool_use Bash
 id: toolu_01DLev8hQy4b4Y853DPgCxTy
 ```json
 {
-  "command": "# Check Claude Code's current token vs what Hermes has cached\npython3 -c \"\nimport json\nwith open('/home/rob/.hermes/auth.json') as f:\n    content = f.read()\n# Find claude_code entry\nlines = content.split('\\n')\n\" 2>/dev/null\n\n# Check Claude Code OAuth store\nls ~/.claude/ 2>/dev/null\ncat ~/.claude/.credentials.json 2>/dev/null | python3 -c \"import json,sys; d=json.load(sys.stdin); print('expires_at:', d.get('expiresAt','?')); tok=d.get('accessToken',''); print('token prefix:', tok[:20]+'...' if tok else 'none')\" 2>/dev/null",
+  "command": "# Check Claude Code's current token vs what Hermes has cached\npython3 -c \"\nimport json\nwith open('/home/<USER>/.hermes/auth.json') as f:\n    content = f.read()\n# Find claude_code entry\nlines = content.split('\\n')\n\" 2>/dev/null\n\n# Check Claude Code OAuth store\nls ~/.claude/ 2>/dev/null\ncat ~/.claude/.credentials.json 2>/dev/null | python3 -c \"import json,sys; d=json.load(sys.stdin); print('expires_at:', d.get('expiresAt','?')); tok=d.get('accessToken',''); print('token prefix:', tok[:20]+'...' if tok else 'none')\" 2>/dev/null",
   "description": "Compare Claude Code current token vs Hermes cached token"
 }
 ```
@@ -512,7 +512,7 @@ tool_use Bash
 id: toolu_01HHRQ7165CA4L8R25McSVd3
 ```json
 {
-  "command": "find ~/.config/claude* ~/.local/share/claude* /home/rob/.config/Claude* -name \"*.json\" 2>/dev/null | head -5\n# Also check if hermes can refresh its anthropic auth\n/home/rob/.local/bin/hermes auth list 2>&1 | head -30",
+  "command": "find ~/.config/claude* ~/.local/share/claude* /home/<USER>/.config/Claude* -name \"*.json\" 2>/dev/null | head -5\n# Also check if hermes can refresh its anthropic auth\n/home/<USER>/.local/bin/hermes auth list 2>&1 | head -30",
   "description": "Find Claude auth store and check hermes auth list"
 }
 ```
@@ -522,11 +522,11 @@ id: toolu_01HHRQ7165CA4L8R25McSVd3
 tool_result
 id: toolu_01HHRQ7165CA4L8R25McSVd3
 ```
-/home/rob/.config/Claude/developer_settings.json
-/home/rob/.config/Claude/git-worktrees.json
-/home/rob/.config/Claude/config.json
-/home/rob/.config/Claude/window-state.json
-/home/rob/.config/Claude/claude_desktop_config.json
+/home/<USER>/.config/Claude/developer_settings.json
+/home/<USER>/.config/Claude/git-worktrees.json
+/home/<USER>/.config/Claude/config.json
+/home/<USER>/.config/Claude/window-state.json
+/home/<USER>/.config/Claude/claude_desktop_config.json
 alibaba (1 credentials):
   #1  DASHSCOPE_API_KEY    api_key env:DASHSCOPE_API_KEY ←
 
@@ -546,7 +546,7 @@ openrouter (1 credentials):
   #1  OPENROUTER_API_KEY   api_key env:OPENROUTER_API_KEY ←
 
 qwen-oauth (1 credentials):
-  #1  /home/rob/.qwen/oauth_creds.json oauth   qwen-cli exhausted invalid_api_key (401) (ready to retry) ←
+  #1  /home/<USER>/.qwen/oauth_creds.json oauth   qwen-cli exhausted invalid_api_key (401) (ready to retry) ←
 
 zai (1 credentials):
   #1  ZAI_API_KEY          api_key env:ZAI_API_KEY ←
@@ -558,7 +558,7 @@ tool_use Bash
 id: toolu_01X2C7hG3RC5GiQPZaB8Yqnu
 ```json
 {
-  "command": "python3 -c \"\nimport json\nwith open('/home/rob/.hermes/auth.json') as f:\n    data = f.read()\n# Parse the non-standard format by looking for credential_pool\nimport re\ncp_match = re.search(r\\\"credential_pool (.+?)(?:\\nactive_provider|\\nupdated_at|\\Z)\\\", data, re.DOTALL)\nif cp_match:\n    try:\n        pool = eval(cp_match.group(1).strip())\n        for provider, creds in pool.items():\n            print(f'{provider}:')\n            for c in creds:\n                print(f'  id={c[\\\"id\\\"]} label={c[\\\"label\\\"]} status={c.get(\\\"last_status\\\",\\\"none\\\")} token_prefix={str(c.get(\\\"access_token\\\",\\\"\\\"))[:15]}')\n    except: print('parse error')\n\"",
+  "command": "python3 -c \"\nimport json\nwith open('/home/<USER>/.hermes/auth.json') as f:\n    data = f.read()\n# Parse the non-standard format by looking for credential_pool\nimport re\ncp_match = re.search(r\\\"credential_pool (.+?)(?:\\nactive_provider|\\nupdated_at|\\Z)\\\", data, re.DOTALL)\nif cp_match:\n    try:\n        pool = eval(cp_match.group(1).strip())\n        for provider, creds in pool.items():\n            print(f'{provider}:')\n            for c in creds:\n                print(f'  id={c[\\\"id\\\"]} label={c[\\\"label\\\"]} status={c.get(\\\"last_status\\\",\\\"none\\\")} token_prefix={str(c.get(\\\"access_token\\\",\\\"\\\"))[:15]}')\n    except: print('parse error')\n\"",
   "description": "Show current credential pool from auth.json"
 }
 ```
@@ -577,7 +577,7 @@ tool_use Bash
 id: toolu_01Ga1PriamYXsZWrm8NxSnkc
 ```json
 {
-  "command": "python3 -c \"\nimport ast, re\nraw = open('/home/rob/.hermes/auth.json').read()\n# Extract just the credential_pool line\nfor line in raw.split('\\n'):\n    if line.startswith('credential_pool '):\n        pool = ast.literal_eval(line[len('credential_pool '):])\n        for prov, creds in pool.items():\n            print(prov)\n            for c in creds:\n                tok = c.get('access_token','')\n                print(f'  {c[\\\"id\\\"]} | {c[\\\"label\\\"]} | {c.get(\\\"last_status\\\",\\\"-\\\")} | {tok[:20]}')\n        break\n\"",
+  "command": "python3 -c \"\nimport ast, re\nraw = open('/home/<USER>/.hermes/auth.json').read()\n# Extract just the credential_pool line\nfor line in raw.split('\\n'):\n    if line.startswith('credential_pool '):\n        pool = ast.literal_eval(line[len('credential_pool '):])\n        for prov, creds in pool.items():\n            print(prov)\n            for c in creds:\n                tok = c.get('access_token','')\n                print(f'  {c[\\\"id\\\"]} | {c[\\\"label\\\"]} | {c.get(\\\"last_status\\\",\\\"-\\\")} | {tok[:20]}')\n        break\n\"",
   "description": "Parse credential pool from auth.json"
 }
 ```
@@ -596,7 +596,7 @@ tool_use Bash
 id: toolu_01AVJBqwR4Hng8UyhU9Rppz5
 ```json
 {
-  "command": "python3 << 'EOF'\nraw = open('/home/rob/.hermes/auth.json').read()\nlines = raw.split('\\n')\nfor i, line in enumerate(lines):\n    if 'anthropic' in line.lower() or 'credential_pool' in line.lower():\n        print(f\"Line {i}: {line[:120]}\")\nEOF",
+  "command": "python3 << 'EOF'\nraw = open('/home/<USER>/.hermes/auth.json').read()\nlines = raw.split('\\n')\nfor i, line in enumerate(lines):\n    if 'anthropic' in line.lower() or 'credential_pool' in line.lower():\n        print(f\"Line {i}: {line[:120]}\")\nEOF",
   "description": "Find anthropic credential lines in auth.json"
 }
 ```
@@ -620,7 +620,7 @@ tool_use Bash
 id: toolu_014Ge3kSGY1QHDjcoxjEkcTB
 ```json
 {
-  "command": "grep \"ANTHROPIC_API_KEY\" /home/rob/.bashrc",
+  "command": "grep \"ANTHROPIC_API_KEY\" /home/<USER>/.bashrc",
   "description": "Get real Anthropic API key from bashrc"
 }
 ```
@@ -639,7 +639,7 @@ tool_use Read
 id: toolu_01DVWZbkVk6QaV946ThsL75u
 ```json
 {
-  "file_path": "/home/rob/.hermes/.env"
+  "file_path": "/home/<USER>/.hermes/.env"
 }
 ```
 
@@ -667,7 +667,7 @@ id: toolu_01DVWZbkVk6QaV946ThsL75u
 17	SIGNAL_ACCOUNT=+818022605966
 18	SIGNAL_ALLOWED_USERS=+818022605966
 19	SIGNAL_GROUP_ALLOWED_USERS=*
-20	EMAIL_ADDRESS=oudendijk.biz@gmail.com
+20	EMAIL_ADDRESS=<REDACTED_EMAIL>
 21	REDACTED
 22	EMAIL_IMAP_HOST=imap.gmail.com
 23	EMAIL_SMTP_HOST=smtp.gmail.com
@@ -692,7 +692,7 @@ id: toolu_0141ZmJLNXvKYoLFoQR8yrwx
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/rob/.hermes/.env",
+  "file_path": "/home/<USER>/.hermes/.env",
   "old_string": "REDACTED",
   "new_string": "REDACTED\nREDACTED"
 }
@@ -703,7 +703,7 @@ id: toolu_0141ZmJLNXvKYoLFoQR8yrwx
 tool_result
 id: toolu_0141ZmJLNXvKYoLFoQR8yrwx
 ```
-The file /home/rob/.hermes/.env has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.hermes/.env has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -716,7 +716,7 @@ tool_use Bash
 id: toolu_01WC8G7CV2HUpNQwEqfuLYvS
 ```json
 {
-  "command": "/home/rob/.local/bin/hermes auth list 2>&1",
+  "command": "/home/<USER>/.local/bin/hermes auth list 2>&1",
   "description": "Check current auth state after fix"
 }
 ```
@@ -748,7 +748,7 @@ openrouter (1 credentials):
   #1  OPENROUTER_API_KEY   api_key env:OPENROUTER_API_KEY ←
 
 qwen-oauth (1 credentials):
-  #1  /home/rob/.qwen/oauth_creds.json oauth   qwen-cli exhausted invalid_api_key (401) (ready to retry) ←
+  #1  /home/<USER>/.qwen/oauth_creds.json oauth   qwen-cli exhausted invalid_api_key (401) (ready to retry) ←
 
 zai (1 credentials):
   #1  ZAI_API_KEY          api_key env:ZAI_API_KEY ←

@@ -39,7 +39,7 @@ tool_use Read
 id: toolu_01VgRAXdr6xN7Dncb1hHfAoD
 ```json
 {
-  "file_path": "/Users/anton/src/agent-skills-shaper/skills/delivery/SKILL.md"
+  "file_path": "/home/<USER>/src/agent-skills-shaper/skills/delivery/SKILL.md"
 }
 ```
 
@@ -77,7 +77,7 @@ tool_use Read
 id: toolu_01NaFricLDmXkvT79cMF6JUu
 ```json
 {
-  "file_path": "/Users/anton/src/agent-skills-shaper/skills/exec-breakdown/SKILL.md"
+  "file_path": "/home/<USER>/src/agent-skills-shaper/skills/exec-breakdown/SKILL.md"
 }
 ```
 
@@ -136,7 +136,7 @@ tool_use Read
 id: toolu_019L6u17aGvNSPUoqGKR4iXC
 ```json
 {
-  "file_path": "/Users/anton/src/agent-skills-shaper/skills/exec-build/SKILL.md"
+  "file_path": "/home/<USER>/src/agent-skills-shaper/skills/exec-build/SKILL.md"
 }
 ```
 
@@ -146,7 +146,7 @@ tool_use Read
 id: toolu_01CHFR7NSUCAVgAScLWH6Tek
 ```json
 {
-  "file_path": "/Users/anton/src/agent-skills-shaper/skills/exec-pickup/SKILL.md"
+  "file_path": "/home/<USER>/src/agent-skills-shaper/skills/exec-pickup/SKILL.md"
 }
 ```
 
@@ -262,7 +262,7 @@ tool_use Read
 id: toolu_01CWZPAM1dgPenmWotR1JpoP
 ```json
 {
-  "file_path": "/Users/anton/src/agent-skills-shaper/docs/delivery-shape-contract.md",
+  "file_path": "/home/<USER>/src/agent-skills-shaper/docs/delivery-shape-contract.md",
   "offset": 140,
   "limit": 135
 }

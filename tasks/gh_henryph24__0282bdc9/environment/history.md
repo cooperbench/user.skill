@@ -8,7 +8,7 @@ tool_use Bash
 id: toolu_01BEToM4fUF1WVdRmzCoHNGe
 ```json
 {
-  "command": "wc -l /Users/hungpq2412/neuralips26/main.tex",
+  "command": "wc -l /home/<USER>/neuralips26/main.tex",
   "description": "Count lines in main.tex"
 }
 ```
@@ -18,7 +18,7 @@ id: toolu_01BEToM4fUF1WVdRmzCoHNGe
 tool_result
 id: toolu_01BEToM4fUF1WVdRmzCoHNGe
 ```
-    2862 /Users/hungpq2412/neuralips26/main.tex
+    2862 /home/<USER>/neuralips26/main.tex
 ```
 
 > TOOL
@@ -27,7 +27,7 @@ tool_use Bash
 id: toolu_01JoLq6mpPzZJmEg6SZWXM7W
 ```json
 {
-  "command": "grep -n -E \"^\\\\\\\\(section|subsection|subsubsection|begin\\\\{abstract\\\\}|end\\\\{abstract\\\\})\" /Users/hungpq2412/neuralips26/main.tex",
+  "command": "grep -n -E \"^\\\\\\\\(section|subsection|subsubsection|begin\\\\{abstract\\\\}|end\\\\{abstract\\\\})\" /home/<USER>/neuralips26/main.tex",
   "description": "Find all section structure in main.tex"
 }
 ```
@@ -92,7 +92,7 @@ tool_use Read
 id: toolu_019xD1TuFLU8D26MwktmbfhP
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 57,
   "limit": 230
 }
@@ -116,7 +116,7 @@ tool_use Read
 id: toolu_01GihAQ9n3ymagMWMtgVicQd
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 380,
   "limit": 170
 }
@@ -145,7 +145,7 @@ tool_use Read
 id: toolu_01R872eKiVjWPuoT6gcBWyD1
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 285,
   "limit": 110
 }
@@ -196,7 +196,7 @@ tool_use Read
 id: toolu_014YKmUdtJjXxXyDmxbzEZLb
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 549,
   "limit": 200
 }
@@ -235,7 +235,7 @@ tool_use Bash
 id: toolu_01Q6hhVWAPwYXPhZzXukaqQY
 ```json
 {
-  "command": "grep -n -E \"^(\\\\\\\\appendix|\\\\\\\\section|\\\\\\\\subsection)\" /Users/hungpq2412/neuralips26/main.tex | head -80",
+  "command": "grep -n -E \"^(\\\\\\\\appendix|\\\\\\\\section|\\\\\\\\subsection)\" /home/<USER>/neuralips26/main.tex | head -80",
   "description": "Find appendix marker and section structure"
 }
 ```
@@ -505,7 +505,7 @@ tool_use Read
 id: toolu_01WZeCqQn1jGY6DjhB9XK8As
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 1025,
   "limit": 100
 }

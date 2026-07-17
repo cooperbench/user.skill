@@ -8,7 +8,7 @@ tool_use Bash
 id: toolu_01PLmzcm6pyMnvcA3NdSS6fe
 ```json
 {
-  "command": "find /Users/ta93abe/Developer/github.com/ta93abe/slides/contents -type f -name \"*.md\" | xargs grep -l -i \"workflow\" 2>/dev/null | head -20",
+  "command": "find /home/<USER>/Developer/github.com/ta93abe/slides/contents -type f -name \"*.md\" | xargs grep -l -i \"workflow\" 2>/dev/null | head -20",
   "description": "Find slides containing workflow references"
 }
 ```
@@ -18,11 +18,11 @@ id: toolu_01PLmzcm6pyMnvcA3NdSS6fe
 tool_result
 id: toolu_01PLmzcm6pyMnvcA3NdSS6fe
 ```
-/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/slides.md
-/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/note.md
-/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workflows.md
-/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workers.md
-/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md
+/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/slides.md
+/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/note.md
+/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workflows.md
+/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workers.md
+/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md
 ```
 
 > TOOL
@@ -31,7 +31,7 @@ tool_use Read
 id: toolu_01HnJrUvTzPWvN55TSh3AGH4
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workflows.md"
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workflows.md"
 }
 ```
 

@@ -13,7 +13,7 @@ id: call_I0XZLX6wH00DuJkZE6eF9iNA
 ```json
 {
   "cmd": "pwd && rg --files",
-  "workdir": "/Users/rizel/Documents/work/skills",
+  "workdir": "/home/<USER>/Documents/work/skills",
   "max_output_tokens": 12000,
   "yield_time_ms": 1000
 }
@@ -26,7 +26,7 @@ id: call_NPYx7Ycd8vdb3SXXNAHUkI5X
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/Users/rizel/Documents/work/skills",
+  "workdir": "/home/<USER>/Documents/work/skills",
   "max_output_tokens": 4000,
   "yield_time_ms": 1000
 }
@@ -39,7 +39,7 @@ id: call_LoFBDfT8yM7jl8DdUkRoEu6G
 ```json
 {
   "cmd": "git remote -v",
-  "workdir": "/Users/rizel/Documents/work/skills",
+  "workdir": "/home/<USER>/Documents/work/skills",
   "max_output_tokens": 4000,
   "yield_time_ms": 1000
 }
@@ -51,8 +51,8 @@ tool_use exec_command
 id: call_oFHodXP9oLclsg88lfsmctUP
 ```json
 {
-  "cmd": "sed -n '1,200p' /Users/rizel/.agents/skills/entire/skills/search/SKILL.md",
-  "workdir": "/Users/rizel/Documents/work/skills",
+  "cmd": "sed -n '1,200p' /home/<USER>/.agents/skills/entire/skills/search/SKILL.md",
+  "workdir": "/home/<USER>/Documents/work/skills",
   "max_output_tokens": 6000,
   "yield_time_ms": 1000
 }
@@ -68,7 +68,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 51
 Output:
-/Users/rizel/Documents/work/skills
+/home/<USER>/Documents/work/skills
 skills/what-happened/SKILL.md
 skills/session-handoff/SKILL.md
 skills/search/SKILL.md
@@ -147,7 +147,7 @@ followed by a blank line, then the content.
 
 > AGENT
 
-I’ve confirmed the repo shape and there’s an untracked [TUTORIAL.md](/Users/rizel/Documents/work/skills/TUTORIAL.md) that I’ll leave alone. Next I’m pulling the issue details and reading the relevant skill files so we can patch the exact behavior the issue describes.
+I’ve confirmed the repo shape and there’s an untracked [TUTORIAL.md](/home/<USER>/Documents/work/skills/TUTORIAL.md) that I’ll leave alone. Next I’m pulling the issue details and reading the relevant skill files so we can patch the exact behavior the issue describes.
 
 > TOOL
 
@@ -156,7 +156,7 @@ id: call_cFw2MuqKlqQjPbx7B5HsT79l
 ```json
 {
   "cmd": "sed -n '1,240p' README.md",
-  "workdir": "/Users/rizel/Documents/work/skills",
+  "workdir": "/home/<USER>/Documents/work/skills",
   "max_output_tokens": 8000,
   "yield_time_ms": 1000
 }
@@ -169,7 +169,7 @@ id: call_gq1qCbMsUY8gREi1RW1hCfat
 ```json
 {
   "cmd": "sed -n '1,240p' package.json",
-  "workdir": "/Users/rizel/Documents/work/skills",
+  "workdir": "/home/<USER>/Documents/work/skills",
   "max_output_tokens": 4000,
   "yield_time_ms": 1000
 }
@@ -182,7 +182,7 @@ id: call_ItTvyJqWhAyHpXwNfhSLjECF
 ```json
 {
   "cmd": "sed -n '1,240p' skills/what-happened/SKILL.md",
-  "workdir": "/Users/rizel/Documents/work/skills",
+  "workdir": "/home/<USER>/Documents/work/skills",
   "max_output_tokens": 12000,
   "yield_time_ms": 1000
 }
@@ -195,7 +195,7 @@ id: call_oXAMBfUDzHJQUGxWl0zVZ4B2
 ```json
 {
   "cmd": "sed -n '1,240p' skills/explain/SKILL.md",
-  "workdir": "/Users/rizel/Documents/work/skills",
+  "workdir": "/home/<USER>/Documents/work/skills",
   "max_output_tokens": 12000,
   "yield_time_ms": 1000
 }
@@ -344,7 +344,7 @@ id: call_qyoAfSyYEmHBIQhI3MKmJYGx
 ```json
 {
   "cmd": "find . -maxdepth 3 -type f | sort",
-  "workdir": "/Users/rizel/Documents/work/skills",
+  "workdir": "/home/<USER>/Documents/work/skills",
   "max_output_tokens": 12000,
   "yield_time_ms": 1000
 }
@@ -357,7 +357,7 @@ id: call_Q8m0VPQl7Cyq2BCutdA3DDJV
 ```json
 {
   "cmd": "find skills -maxdepth 2 -type f -name 'SKILL.md' -print -exec sh -c 'printf \"\\n--- %s ---\\n\" \"$1\"; sed -n \"1,40p\" \"$1\"' _ {} \\;",
-  "workdir": "/Users/rizel/Documents/work/skills",
+  "workdir": "/home/<USER>/Documents/work/skills",
   "max_output_tokens": 16000,
   "yield_time_ms": 1000
 }
@@ -370,7 +370,7 @@ id: call_WCrjTnLBOcON0SHwLTWKB3Kq
 ```json
 {
   "cmd": "sed -n '1,200p' gemini-extension.json",
-  "workdir": "/Users/rizel/Documents/work/skills",
+  "workdir": "/home/<USER>/Documents/work/skills",
   "max_output_tokens": 6000,
   "yield_time_ms": 1000
 }
@@ -534,7 +534,7 @@ id: call_urHcZ3lCGxrWbEEsbrdBXATF
 ```json
 {
   "cmd": "npx -y skills@1.5.2 add https://github.com/entireio/skills --dry-run",
-  "workdir": "/Users/rizel/Documents/work/skills",
+  "workdir": "/home/<USER>/Documents/work/skills",
   "max_output_tokens": 12000,
   "yield_time_ms": 1000,
   "tty": false
@@ -548,7 +548,7 @@ id: call_cI7TLBvtDXK5nqKmWkXqjnps
 ```json
 {
   "cmd": "npx -y skills@1.5.2 --help",
-  "workdir": "/Users/rizel/Documents/work/skills",
+  "workdir": "/home/<USER>/Documents/work/skills",
   "max_output_tokens": 8000,
   "yield_time_ms": 1000,
   "tty": false
@@ -709,7 +709,7 @@ id: call_OiUC8SXlzBFMYbaKLmbw7qVy
 ```json
 {
   "cmd": "tmpdir=$(mktemp -d) && cd \"$tmpdir\" && npm pack skills@1.5.2 >/dev/null && tar -xzf skills-1.5.2.tgz && rg -n \"name:|frontmatter|gray-matter|SKILL.md|Found 1 skill|Found .* skill|description\" package -S",
-  "workdir": "/Users/rizel/Documents/work/skills",
+  "workdir": "/home/<USER>/Documents/work/skills",
   "max_output_tokens": 16000,
   "yield_time_ms": 1000
 }
@@ -722,7 +722,7 @@ id: call_rDnVJDZ5VXAKMyRMdp079OSJ
 ```json
 {
   "cmd": "npx -y skills@1.5.2 add https://github.com/entireio/skills --list --yes",
-  "workdir": "/Users/rizel/Documents/work/skills",
+  "workdir": "/home/<USER>/Documents/work/skills",
   "max_output_tokens": 12000,
   "yield_time_ms": 1000
 }
@@ -826,7 +826,7 @@ id: call_zQNdhB5Hq5ZJOZvQxcIEpDgN
 ```json
 {
   "cmd": "rg -n \"session-handoff|what-happened|Entire Search|Entire Explain|name:\" README.md skills .codex .claude .agents gemini-extension.json .cursor-plugin .codex-plugin .claude-plugin .opencode -S",
-  "workdir": "/Users/rizel/Documents/work/skills",
+  "workdir": "/home/<USER>/Documents/work/skills",
   "max_output_tokens": 12000,
   "yield_time_ms": 1000
 }
@@ -839,7 +839,7 @@ id: call_2rD8DQZwDnRrt2icevb1pRcW
 ```json
 {
   "cmd": "git ls-files --stage skills/explain/SKILL.md skills/search/SKILL.md skills/session-handoff/SKILL.md skills/what-happened/SKILL.md",
-  "workdir": "/Users/rizel/Documents/work/skills",
+  "workdir": "/home/<USER>/Documents/work/skills",
   "max_output_tokens": 4000,
   "yield_time_ms": 1000
 }
@@ -899,8 +899,8 @@ tool_use exec_command
 id: call_DNAX0FUZdHnZeSpTzJPhTUj0
 ```json
 {
-  "cmd": "npx -y skills@1.5.2 add /Users/rizel/Documents/work/skills --list --yes",
-  "workdir": "/Users/rizel/Documents/work/skills",
+  "cmd": "npx -y skills@1.5.2 add /home/<USER>/Documents/work/skills --list --yes",
+  "workdir": "/home/<USER>/Documents/work/skills",
   "max_output_tokens": 12000,
   "yield_time_ms": 1000
 }
@@ -913,7 +913,7 @@ id: call_twv1aeeTjhHDwisFq6Z7JcZU
 ```json
 {
   "cmd": "git diff -- skills/explain/SKILL.md skills/search/SKILL.md skills/session-handoff/SKILL.md",
-  "workdir": "/Users/rizel/Documents/work/skills",
+  "workdir": "/home/<USER>/Documents/work/skills",
   "max_output_tokens": 8000,
   "yield_time_ms": 1000
 }
@@ -941,7 +941,7 @@ Output:
 │
 │  Tip: use the --yes (-y) and --global (-g) flags to install without prompts.
 [?25l│
-◇  Source: /Users/rizel/Documents/work/skills
+◇  Source: /home/<USER>/Documents/work/skills
 [?25h[?25l│
 ◇  Local path validated
 [?25h[?25l│
@@ -1004,7 +1004,7 @@ id: call_YNJz9imSrP8wxGB4ORyhhYKy
 ```json
 {
   "cmd": "git diff --check",
-  "workdir": "/Users/rizel/Documents/work/skills",
+  "workdir": "/home/<USER>/Documents/work/skills",
   "max_output_tokens": 4000,
   "yield_time_ms": 1000
 }
@@ -1017,7 +1017,7 @@ id: call_nUShnvzfbhkgw1876xEsEx4k
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/rizel/Documents/work/skills",
+  "workdir": "/home/<USER>/Documents/work/skills",
   "max_output_tokens": 4000,
   "yield_time_ms": 1000
 }
@@ -1055,6 +1055,6 @@ Output:
 
 > AGENT
 
-The issue is fixed in this checkout by adding the missing `name` frontmatter to the three undiscoverable skills: [skills/explain/SKILL.md](/Users/rizel/Documents/work/skills/skills/explain/SKILL.md), [skills/search/SKILL.md](/Users/rizel/Documents/work/skills/skills/search/SKILL.md), and [skills/session-handoff/SKILL.md](/Users/rizel/Documents/work/skills/skills/session-handoff/SKILL.md). `skills@1.5.2` requires both `name` and `description` in `SKILL.md`, which is why only `what-happened` had been detected before.
+The issue is fixed in this checkout by adding the missing `name` frontmatter to the three undiscoverable skills: [skills/explain/SKILL.md](/home/<USER>/Documents/work/skills/skills/explain/SKILL.md), [skills/search/SKILL.md](/home/<USER>/Documents/work/skills/skills/search/SKILL.md), and [skills/session-handoff/SKILL.md](/home/<USER>/Documents/work/skills/skills/session-handoff/SKILL.md). `skills@1.5.2` requires both `name` and `description` in `SKILL.md`, which is why only `what-happened` had been detected before.
 
-I verified the repro locally with `npx -y skills@1.5.2 add /Users/rizel/Documents/work/skills --list --yes`, and it now reports `Found 4 skills` instead of `Found 1 skill`. `git diff --check` is clean. I left the untracked [TUTORIAL.md](/Users/rizel/Documents/work/skills/TUTORIAL.md) alone.
+I verified the repro locally with `npx -y skills@1.5.2 add /home/<USER>/Documents/work/skills --list --yes`, and it now reports `Found 4 skills` instead of `Found 1 skill`. `git diff --check` is clean. I left the untracked [TUTORIAL.md](/home/<USER>/Documents/work/skills/TUTORIAL.md) alone.

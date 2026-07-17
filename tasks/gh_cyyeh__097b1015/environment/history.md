@@ -48,7 +48,7 @@ I've thoroughly explored the opensandbox-integration codebase and can provide yo
 
 ### 1. Server Startup Flow
 
-**Entry Point: `/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/backend/app/main.py`**
+**Entry Point: `/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/backend/app/main.py`**
 
 The FastAPI application:
 - Starts via `poetry run uvicorn app.main:app --reload --host 0.0.0.0 --port 8000` (dev target in Makefile line 28)
@@ -80,7 +80,7 @@ tool_use Read
 id: toolu_01JCg3MJhHWkGNvt9bdxkUeX
 ```json
 {
-  "file_path": "/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/Makefile"
+  "file_path": "/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/Makefile"
 }
 ```
 
@@ -155,9 +155,9 @@ No files found
 tool_result
 id: toolu_01C8oN4m8KjGbAE1iXuv9F6f
 ```
-/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/e2e/.env.example
-/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/backend/.env
-/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/backend/.env.example
+/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/e2e/.env.example
+/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/backend/.env
+/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/backend/.env.example
 ```
 
 > TOOL
@@ -166,7 +166,7 @@ tool_use Read
 id: toolu_01CxD1CV3oZ2eJc39mHfN2NS
 ```json
 {
-  "file_path": "/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/sandbox/config.docker.toml"
+  "file_path": "/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/sandbox/config.docker.toml"
 }
 ```
 
@@ -198,7 +198,7 @@ tool_use Bash
 id: toolu_019vpLpasgHfZoQ4UWZyREDC
 ```json
 {
-  "command": "ls /Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/sandbox/ 2>/dev/null || echo \"sandbox/ directory not found\"",
+  "command": "ls /home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/sandbox/ 2>/dev/null || echo \"sandbox/ directory not found\"",
   "description": "List sandbox config directory"
 }
 ```
@@ -235,9 +235,9 @@ tool_result ERROR
 id: toolu_01XYDfEKncC6NRSLu1k9Cci6
 ```
 Exit code 1
-permission denied while trying to connect to the Docker daemon socket at unix:///Users/cyyeh/.orbstack/run/docker.sock: Get "http://%2FUsers%2Fcyyeh%2F.orbstack%2Frun%2Fdocker.sock/v1.51/containers/json?all=1&filters=%7B%22name%22%3A%7B%22opensandbox-dev%22%3Atrue%7D%7D": dial unix /Users/cyyeh/.orbstack/run/docker.sock: connect: operation not permitted
+permission denied while trying to connect to the Docker daemon socket at unix:///home/<USER>/.orbstack/run/docker.sock: Get "http://%2FUsers%2Fcyyeh%2F.orbstack%2Frun%2Fdocker.sock/v1.51/containers/json?all=1&filters=%7B%22name%22%3A%7B%22opensandbox-dev%22%3Atrue%7D%7D": dial unix /home/<USER>/.orbstack/run/docker.sock: connect: operation not permitted
 
-permission denied while trying to connect to the Docker daemon socket at unix:///Users/cyyeh/.orbstack/run/docker.sock: Get "http://%2FUsers%2Fcyyeh%2F.orbstack%2Frun%2Fdocker.sock/v1.51/containers/json?all=1&filters=%7B%22name%22%3A%7B%22opensandbox-dev%22%3Atrue%7D%7D": dial unix /Users/cyyeh/.orbstack/run/docker.sock: connect: operation not permitted
+permission denied while trying to connect to the Docker daemon socket at unix:///home/<USER>/.orbstack/run/docker.sock: Get "http://%2FUsers%2Fcyyeh%2F.orbstack%2Frun%2Fdocker.sock/v1.51/containers/json?all=1&filters=%7B%22name%22%3A%7B%22opensandbox-dev%22%3Atrue%7D%7D": dial unix /home/<USER>/.orbstack/run/docker.sock: connect: operation not permitted
 ```
 
 > TOOL
@@ -356,7 +356,7 @@ id: toolu_01Q7CYRejJbwrc5hK8cJEg5f
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/Makefile",
+  "file_path": "/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/Makefile",
   "old_string": "\t\t-v $$(pwd)/sandbox/config.docker.toml:/root/.sandbox.toml \\",
   "new_string": "\t\t-v $$(pwd)/sandbox/config.docker.toml:/etc/opensandbox/config.toml \\"
 }
@@ -367,7 +367,7 @@ id: toolu_01Q7CYRejJbwrc5hK8cJEg5f
 tool_result
 id: toolu_01Q7CYRejJbwrc5hK8cJEg5f
 ```
-The file /Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/Makefile has been updated successfully.
+The file /home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/Makefile has been updated successfully.
 ```
 
 > AGENT
@@ -429,7 +429,7 @@ tool_use Read
 id: toolu_01SEpppHfuGQM6sJ5RHw9Q2J
 ```json
 {
-  "file_path": "/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/docker-compose.yml"
+  "file_path": "/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/docker-compose.yml"
 }
 ```
 
@@ -519,7 +519,7 @@ tool_use Read
 id: toolu_01QcmTL9UM6UMasGoKVgDnq5
 ```json
 {
-  "file_path": "/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/deploy/kustomize/base/opensandbox-deployment.yaml"
+  "file_path": "/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/deploy/kustomize/base/opensandbox-deployment.yaml"
 }
 ```
 
@@ -586,7 +586,7 @@ tool_use Read
 id: toolu_01A6jo36ei8kaSjwduu932Uc
 ```json
 {
-  "file_path": "/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/deploy/helm/duckdb-data-agent/templates/opensandbox-deployment.yaml"
+  "file_path": "/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/deploy/helm/duckdb-data-agent/templates/opensandbox-deployment.yaml"
 }
 ```
 
@@ -656,7 +656,7 @@ id: toolu_01PT3UXaE81mtmxJty3zvs32
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/docker-compose.yml",
+  "file_path": "/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/docker-compose.yml",
   "old_string": "      - ./sandbox/config.docker.toml:/root/.sandbox.toml",
   "new_string": "      - ./sandbox/config.docker.toml:/etc/opensandbox/config.toml"
 }
@@ -667,7 +667,7 @@ id: toolu_01PT3UXaE81mtmxJty3zvs32
 tool_result
 id: toolu_01PT3UXaE81mtmxJty3zvs32
 ```
-The file /Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/docker-compose.yml has been updated successfully.
+The file /home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/docker-compose.yml has been updated successfully.
 ```
 
 > TOOL
@@ -677,7 +677,7 @@ id: toolu_011EiUsNRnDxtfy3m2A7Eoho
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/deploy/kustomize/base/opensandbox-deployment.yaml",
+  "file_path": "/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/deploy/kustomize/base/opensandbox-deployment.yaml",
   "old_string": "              mountPath: /root/.sandbox.toml\n              subPath: sandbox.toml",
   "new_string": "              mountPath: /etc/opensandbox/config.toml\n              subPath: sandbox.toml"
 }
@@ -688,7 +688,7 @@ id: toolu_011EiUsNRnDxtfy3m2A7Eoho
 tool_result
 id: toolu_011EiUsNRnDxtfy3m2A7Eoho
 ```
-The file /Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/deploy/kustomize/base/opensandbox-deployment.yaml has been updated successfully.
+The file /home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/deploy/kustomize/base/opensandbox-deployment.yaml has been updated successfully.
 ```
 
 > TOOL
@@ -698,7 +698,7 @@ id: toolu_01DEdixMdEFJeGu7KBWe7Utn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/deploy/helm/duckdb-data-agent/templates/opensandbox-deployment.yaml",
+  "file_path": "/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/deploy/helm/duckdb-data-agent/templates/opensandbox-deployment.yaml",
   "old_string": "              mountPath: /root/.sandbox.toml\n              subPath: opensandbox-config.toml",
   "new_string": "              mountPath: /etc/opensandbox/config.toml\n              subPath: opensandbox-config.toml"
 }
@@ -709,7 +709,7 @@ id: toolu_01DEdixMdEFJeGu7KBWe7Utn
 tool_result
 id: toolu_01DEdixMdEFJeGu7KBWe7Utn
 ```
-The file /Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/deploy/helm/duckdb-data-agent/templates/opensandbox-deployment.yaml has been updated successfully.
+The file /home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/deploy/helm/duckdb-data-agent/templates/opensandbox-deployment.yaml has been updated successfully.
 ```
 
 > AGENT

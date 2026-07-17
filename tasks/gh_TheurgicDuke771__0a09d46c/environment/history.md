@@ -53,7 +53,7 @@ tool_use Read
 id: toolu_01DhPAxBGAxr9y3jWS3G5Y5z
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "offset": 150,
   "limit": 40
 }
@@ -256,7 +256,7 @@ tool_use Bash
 id: toolu_019aVQNYN62DsJA3WmKgS1A9
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ/backend && wc -l app/alerting/*.py",
+  "command": "cd /home/<USER>/Coding/Python/DataQ/backend && wc -l app/alerting/*.py",
   "description": "Line counts of alerting files"
 }
 ```
@@ -289,7 +289,7 @@ tool_use Read
 id: toolu_017PYbph9tohuk6ZwNGkpe4T
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/dedup.py"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/dedup.py"
 }
 ```
 
@@ -329,7 +329,7 @@ tool_use Read
 id: toolu_01WS8V1xQJZTb33N5kHthDuM
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/routing.py"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/routing.py"
 }
 ```
 
@@ -373,7 +373,7 @@ tool_use Read
 id: toolu_016n5W5WCKsWNemkiA49cK6p
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/suppression.py"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/suppression.py"
 }
 ```
 
@@ -423,7 +423,7 @@ tool_use Read
 id: toolu_01JNo6954cZEjKkAASUKmovV
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/base.py"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/base.py"
 }
 ```
 
@@ -524,7 +524,7 @@ tool_use Read
 id: toolu_01CU9XTxhC14bgY5aUAziQe2
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/db/models.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/db/models.py",
   "offset": 25,
   "limit": 75
 }
@@ -563,7 +563,7 @@ tool_use Read
 id: toolu_01ExDATHhKLGyDhZuvMuboxR
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/db/models.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/db/models.py",
   "offset": 535,
   "limit": 40
 }
@@ -618,7 +618,7 @@ tool_use Read
 id: toolu_01UTpnrVBCPTd8qq7aHAxMxr
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/registry.py"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/registry.py"
 }
 ```
 
@@ -669,7 +669,7 @@ tool_use Read
 id: toolu_014u49KgQj1MVmve5NGBfcty
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/core/config.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/core/config.py",
   "offset": 100,
   "limit": 40
 }
@@ -739,7 +739,7 @@ tool_use Read
 id: toolu_01NjqrZzyCxXkWukXCBBt9Yc
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/teams.py"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/teams.py"
 }
 ```
 
@@ -794,7 +794,7 @@ tool_use Read
 id: toolu_01RwNdwcv1S6t3qYjghHZFcL
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/notification_service.py"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/notification_service.py"
 }
 ```
 
@@ -933,7 +933,7 @@ tool_use Bash
 id: toolu_01HS8mQjs1ep7mNzcsEnPbjr
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ && git checkout -b fix/alerting-severity-single-source main 2>&1 | tail -2 && git branch --show-current",
+  "command": "cd /home/<USER>/Coding/Python/DataQ && git checkout -b fix/alerting-severity-single-source main 2>&1 | tail -2 && git branch --show-current",
   "description": "Create feature branch"
 }
 ```
@@ -1023,7 +1023,7 @@ id: toolu_01AWvPYkycSi6t46u6pPLqgB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/dedup.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/dedup.py",
   "old_string": "from sqlalchemy import select, tuple_\nfrom sqlalchemy.orm import Session\n\nfrom backend.app.db.models import Result, Run\n\n# Failing severity tiers → rank (higher = worse). `pass`/`skip`/`error` aren't\n# alert-worthy and never appear here.\n_RANK = {\"warn\": 1, \"fail\": 2, \"critical\": 3}\n# An operational run failure (the adapter raised — no per-check result rows) is a\n# single suite-level failure signature, keyed by this sentinel, ranked at fail.\n_OPERATIONAL_KEY = \"__run__\"\n_OPERATIONAL_RANK = 2",
   "new_string": "from sqlalchemy import select, tuple_\nfrom sqlalchemy.orm import Session\n\nfrom backend.app.alerting.base import FAILING_TIERS\nfrom backend.app.db.models import Result, Run\n\n# Failing severity tiers → rank (higher = worse), derived from the single shared\n# severity order in `alerting.base.FAILING_TIERS` (#386) so dedup can't silently\n# drift from the rest of the alerting layer (routing, suppression) when a tier is\n# added or reordered. `pass`/`skip`/`error` aren't alert-worthy and never appear here.\n_RANK = {tier: rank for rank, tier in enumerate(FAILING_TIERS, start=1)}\n# An operational run failure (the adapter raised — no per-check result rows) is a\n# single suite-level failure signature, keyed by this sentinel, ranked at `fail`.\n_OPERATIONAL_KEY = \"__run__\"\n_OPERATIONAL_RANK = _RANK[\"fail\"]"
 }
@@ -1034,7 +1034,7 @@ id: toolu_01AWvPYkycSi6t46u6pPLqgB
 tool_result
 id: toolu_01AWvPYkycSi6t46u6pPLqgB
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/alerting/dedup.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/alerting/dedup.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1048,7 +1048,7 @@ id: toolu_01HT4cofxwLcdXT6jSd9NYdL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/suppression.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/suppression.py",
   "old_string": "    \"\"\"True when every failing check on ``run`` is currently snoozed (→ suppress).\n\n    Returns ``False`` (don't suppress) when the run has no per-check failures\n    (clean or operational) or when at least one failing check is live.\n    \"\"\"\n    moment = now or datetime.now(UTC)",
   "new_string": "    \"\"\"True when every failing check on ``run`` is currently snoozed (→ suppress).\n\n    Returns ``False`` (don't suppress) when the run failed to execute, has no\n    per-check failures (clean), or has at least one live failing check.\n    \"\"\"\n    # An operational run failure is an *execution* failure, not a data-quality\n    # result — it has no per-check result rows to snooze today (run_service rolls\n    # partials back), so the query below would already return False. Guard it\n    # explicitly (#387) so a future partial-failure path can never let per-check\n    # snoozes silence a genuine execution failure.\n    if run.status == \"failed\":\n        return False\n    moment = now or datetime.now(UTC)"
 }
@@ -1059,7 +1059,7 @@ id: toolu_01HT4cofxwLcdXT6jSd9NYdL
 tool_result
 id: toolu_01HT4cofxwLcdXT6jSd9NYdL
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/alerting/suppression.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/alerting/suppression.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1073,7 +1073,7 @@ id: toolu_011tpz8b4uMgBBKD7sNjHGHd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/routing.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/routing.py",
   "old_string": "# Per-suite delivery policies (mirror db.models.ALERT_ON_POLICIES). The default\n# preserves the pre-config behaviour: alert on warn+ but not on clean runs.\nFAIL_ONLY = \"fail\"\nWARN_PLUS = \"warn\"\nALWAYS = \"always\"\nDEFAULT_POLICY = WARN_PLUS",
   "new_string": "# Per-suite delivery policies. The single source of the allowed values is\n# db.models.ALERT_ON_POLICIES (the SuiteNotification CHECK constraint +\n# notification_service validation); these are the same values named for\n# readability at the routing call sites, pinned to that source by a drift-guard\n# test (#388). The default preserves the pre-config behaviour: alert on warn+ but\n# not on clean runs.\nFAIL_ONLY = \"fail\"\nWARN_PLUS = \"warn\"\nALWAYS = \"always\"\nDEFAULT_POLICY = WARN_PLUS"
 }
@@ -1084,7 +1084,7 @@ id: toolu_011tpz8b4uMgBBKD7sNjHGHd
 tool_result
 id: toolu_011tpz8b4uMgBBKD7sNjHGHd
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/alerting/routing.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/alerting/routing.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1097,7 +1097,7 @@ tool_use Read
 id: toolu_01Gb1VRieuPFAtQFuT6Qvhx8
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_dedup.py"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_dedup.py"
 }
 ```
 
@@ -1167,7 +1167,7 @@ tool_use Read
 id: toolu_01Sae2P4HaqQfk58vS5pFsVf
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_routing.py"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_routing.py"
 }
 ```
 
@@ -1239,7 +1239,7 @@ tool_use Read
 id: toolu_01PMGc4ftMfHFkuwJVCgrUhU
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_suppression.py"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_suppression.py"
 }
 ```
 
@@ -1316,7 +1316,7 @@ id: toolu_01Ub3nBieFPx8RSA8qRAKV99
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_dedup.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_dedup.py",
   "old_string": "def test_first_failure_fires(db_session: Any) -> None:",
   "new_string": "def test_rank_derives_from_shared_failing_tiers() -> None:\n    \"\"\"#386: dedup's severity ranks are the one shared severity order, not an\n    independent copy — so adding or reordering a tier in ``base.FAILING_TIERS``\n    can't silently diverge dedup from routing/suppression.\"\"\"\n    from backend.app.alerting.base import FAILING_TIERS\n\n    # Same tiers, same order, ranked worst-last from the single source.\n    assert dedup._RANK == {tier: rank for rank, tier in enumerate(FAILING_TIERS, start=1)}\n    assert tuple(dedup._RANK) == FAILING_TIERS\n    # The operational-failure sentinel is ranked at `fail`, from that same source.\n    assert dedup._OPERATIONAL_RANK == dedup._RANK[\"fail\"]\n\n\ndef test_first_failure_fires(db_session: Any) -> None:"
 }
@@ -1327,7 +1327,7 @@ id: toolu_01Ub3nBieFPx8RSA8qRAKV99
 tool_result
 id: toolu_01Ub3nBieFPx8RSA8qRAKV99
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_dedup.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_dedup.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1341,7 +1341,7 @@ id: toolu_01FiD4N2SEKrCazXT5QwwMos
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_suppression.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_suppression.py",
   "old_string": "def test_operational_failure_not_suppressed(db_session: Any) -> None:\n    # An operational run failure has no per-check results → snooze can't apply.\n    suite = _suite(db_session)\n    run = _run_with(db_session, suite, [], status=\"failed\")\n    assert suppression.all_failures_snoozed(db_session, run, now=_NOW) is False",
   "new_string": "def test_operational_failure_not_suppressed(db_session: Any) -> None:\n    # An operational run failure has no per-check results → snooze can't apply.\n    suite = _suite(db_session)\n    run = _run_with(db_session, suite, [], status=\"failed\")\n    assert suppression.all_failures_snoozed(db_session, run, now=_NOW) is False\n\n\ndef test_operational_failure_alerts_even_with_snoozed_rows(db_session: Any) -> None:\n    # #387: a run that failed to *execute* must always alert, even if it happens to\n    # carry only snoozed failing rows (a future partial-failure path) — an execution\n    # failure isn't per-check snoozable. Without the status=='failed' guard the query\n    # below would see failing⊆snoozed and wrongly suppress; the guard forbids that.\n    suite = _suite(db_session)\n    chk = _check(db_session, suite, snoozed_until=_NOW + timedelta(hours=2))\n    run = _run_with(db_session, suite, [(chk, \"fail\")], status=\"failed\")\n    assert suppression.all_failures_snoozed(db_session, run, now=_NOW) is False"
 }
@@ -1352,7 +1352,7 @@ id: toolu_01FiD4N2SEKrCazXT5QwwMos
 tool_result
 id: toolu_01FiD4N2SEKrCazXT5QwwMos
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_suppression.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_suppression.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1366,7 +1366,7 @@ id: toolu_01FbhXVKN9ec8KTNmTQ8LBbs
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_routing.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_routing.py",
   "old_string": "import pytest\n\nfrom backend.app.alerting.base import RunReport\nfrom backend.app.alerting.routing import CRITICAL, QUIET, STANDARD, route_for",
   "new_string": "import pytest\nfrom sqlalchemy import CheckConstraint\n\nfrom backend.app.alerting import routing\nfrom backend.app.alerting.base import RunReport\nfrom backend.app.alerting.routing import CRITICAL, QUIET, STANDARD, route_for\nfrom backend.app.db.models import ALERT_ON_POLICIES, SuiteNotification\nfrom backend.app.services import notification_service"
 }
@@ -1377,7 +1377,7 @@ id: toolu_01FbhXVKN9ec8KTNmTQ8LBbs
 tool_result
 id: toolu_01FbhXVKN9ec8KTNmTQ8LBbs
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_routing.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_routing.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1391,7 +1391,7 @@ id: toolu_01WGswygmYL7F3dGxZ34RfAM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_routing.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_routing.py",
   "old_string": "def test_urgency_independent_of_policy() -> None:\n    # Policy gates whether to send; urgency/mention still come from severity.\n    crit = _report(worst=\"critical\")\n    assert route_for(crit, \"always\").mention_channel is True\n    assert route_for(crit, \"fail\").urgency == \"critical\"",
   "new_string": "def test_urgency_independent_of_policy() -> None:\n    # Policy gates whether to send; urgency/mention still come from severity.\n    crit = _report(worst=\"critical\")\n    assert route_for(crit, \"always\").mention_channel is True\n    assert route_for(crit, \"fail\").urgency == \"critical\"\n\n\n# ── alert_on single-source (drift guards, #388) ──────────────────────────────\n\n\ndef test_routing_policy_constants_match_model() -> None:\n    # routing's named policy constants can't drift from the single source of the\n    # allowed alert_on values (db.models.ALERT_ON_POLICIES).\n    assert {routing.FAIL_ONLY, routing.WARN_PLUS, routing.ALWAYS} == set(ALERT_ON_POLICIES)\n    assert routing.DEFAULT_POLICY in ALERT_ON_POLICIES\n\n\ndef test_alert_on_constraint_derives_from_the_shared_constant() -> None:\n    # The SuiteNotification CHECK constraint is built from ALERT_ON_POLICIES, so it\n    # can't drift from the runtime validation that uses the same tuple.\n    constraint = next(\n        c\n        for c in SuiteNotification.__table__.constraints\n        if isinstance(c, CheckConstraint) and c.name == \"alert_on_valid\"\n    )\n    sql = str(constraint.sqltext)\n    for value in ALERT_ON_POLICIES:\n        assert f\"'{value}'\" in sql\n\n\ndef test_validation_uses_the_same_source_object() -> None:\n    # notification_service validates against the identical tuple object, so the\n    # model constraint and the 422-raising validation are one source (#388).\n    assert notification_service.ALERT_ON_POLICIES is ALERT_ON_POLICIES"
 }
@@ -1402,7 +1402,7 @@ id: toolu_01WGswygmYL7F3dGxZ34RfAM
 tool_result
 id: toolu_01WGswygmYL7F3dGxZ34RfAM
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_routing.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_routing.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1412,7 +1412,7 @@ id: toolu_01VFdUHsyw9u7FLaDW2XnCEA
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_routing.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_routing.py",
   "old_string": "    constraint = next(\n        c\n        for c in SuiteNotification.__table__.constraints\n        if isinstance(c, CheckConstraint) and c.name == \"alert_on_valid\"\n    )",
   "new_string": "    table = SuiteNotification.metadata.tables[SuiteNotification.__tablename__]\n    constraint = next(\n        c\n        for c in table.constraints\n        if isinstance(c, CheckConstraint) and c.name == \"alert_on_valid\"\n    )"
 }
@@ -1423,7 +1423,7 @@ id: toolu_01VFdUHsyw9u7FLaDW2XnCEA
 tool_result
 id: toolu_01VFdUHsyw9u7FLaDW2XnCEA
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_routing.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_routing.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1506,7 +1506,7 @@ tool_use Bash
 id: toolu_01YEnCaNRnnm11SHJ4H619Zt
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ/backend && grep -rn \"TEST_DATABASE_URL\\|db_session\\|postgresql\" tests/conftest.py 2>/dev/null | head; echo \"---docker---\"; docker ps --format '{{.Names}}\\t{{.Ports}}' 2>/dev/null | grep -i -E \"postgres|pg\" ",
+  "command": "cd /home/<USER>/Coding/Python/DataQ/backend && grep -rn \"TEST_DATABASE_URL\\|db_session\\|postgresql\" tests/conftest.py 2>/dev/null | head; echo \"---docker---\"; docker ps --format '{{.Names}}\\t{{.Ports}}' 2>/dev/null | grep -i -E \"postgres|pg\" ",
   "description": "Check conftest for test DB config and running postgres"
 }
 ```
@@ -1615,7 +1615,7 @@ tool_use Bash
 id: toolu_013mHNr7MxP1TFKEjtdQxaAp
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ && python -c \"\nfrom backend.app.db.models import SuiteNotification\nfrom sqlalchemy import CheckConstraint\nt = SuiteNotification.metadata.tables[SuiteNotification.__tablename__]\nfor c in t.constraints:\n    if isinstance(c, CheckConstraint):\n        print(repr(c.name), '::', str(c.sqltext))\n\"",
+  "command": "cd /home/<USER>/Coding/Python/DataQ && python -c \"\nfrom backend.app.db.models import SuiteNotification\nfrom sqlalchemy import CheckConstraint\nt = SuiteNotification.metadata.tables[SuiteNotification.__tablename__]\nfor c in t.constraints:\n    if isinstance(c, CheckConstraint):\n        print(repr(c.name), '::', str(c.sqltext))\n\"",
   "description": "Inspect SuiteNotification check constraint names from repo root"
 }
 ```
@@ -1639,7 +1639,7 @@ id: toolu_019R3KY7ZDFqdwQwDWng4QVC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_routing.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_routing.py",
   "old_string": "    table = SuiteNotification.metadata.tables[SuiteNotification.__tablename__]\n    constraint = next(\n        c\n        for c in table.constraints\n        if isinstance(c, CheckConstraint) and c.name == \"alert_on_valid\"\n    )",
   "new_string": "    table = SuiteNotification.metadata.tables[SuiteNotification.__tablename__]\n    constraint = next(\n        c\n        for c in table.constraints\n        if isinstance(c, CheckConstraint) and (c.name or \"\").endswith(\"alert_on_valid\")\n    )"
 }
@@ -1650,7 +1650,7 @@ id: toolu_019R3KY7ZDFqdwQwDWng4QVC
 tool_result
 id: toolu_019R3KY7ZDFqdwQwDWng4QVC
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_routing.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_routing.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1660,7 +1660,7 @@ id: toolu_01BwpnuAqTjJThX6Kaou1FwV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_routing.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_routing.py",
   "old_string": "        if isinstance(c, CheckConstraint) and (c.name or \"\").endswith(\"alert_on_valid\")",
   "new_string": "        if isinstance(c, CheckConstraint) and str(c.name or \"\").endswith(\"alert_on_valid\")"
 }
@@ -1671,7 +1671,7 @@ id: toolu_01BwpnuAqTjJThX6Kaou1FwV
 tool_result
 id: toolu_01BwpnuAqTjJThX6Kaou1FwV
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_routing.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_routing.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1684,7 +1684,7 @@ tool_use Bash
 id: toolu_01Knif3sx6pqmL2kf8zwEkc4
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ/backend && python -m pytest tests/alerting/test_dedup.py tests/alerting/test_suppression.py tests/alerting/test_routing.py -p no:cov -q 2>&1 | tail -8",
+  "command": "cd /home/<USER>/Coding/Python/DataQ/backend && python -m pytest tests/alerting/test_dedup.py tests/alerting/test_suppression.py tests/alerting/test_routing.py -p no:cov -q 2>&1 | tail -8",
   "description": "Re-run the three affected alerting test files without coverage gate"
 }
 ```
@@ -1696,8 +1696,8 @@ id: toolu_01Knif3sx6pqmL2kf8zwEkc4
 ```
 ERROR: usage: python -m pytest [options] [file_or_dir] [file_or_dir] [...]
 python -m pytest: error: unrecognized arguments: --cov=backend/app --cov-report=term-missing --cov-fail-under=80
-  inifile: /Users/arijit/Coding/Python/DataQ/pyproject.toml
-  rootdir: /Users/arijit/Coding/Python/DataQ
+  inifile: /home/<USER>/Coding/Python/DataQ/pyproject.toml
+  rootdir: /home/<USER>/Coding/Python/DataQ
 ```
 
 > TOOL
@@ -1753,7 +1753,7 @@ tool_use Bash
 id: toolu_01SayZ1ULBWP8TsJ4azKTmgP
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ && echo \"=== mypy ===\" && mypy backend/app/alerting/dedup.py backend/app/alerting/suppression.py backend/app/alerting/routing.py backend/tests/alerting/test_dedup.py backend/tests/alerting/test_suppression.py backend/tests/alerting/test_routing.py 2>&1 | tail -15",
+  "command": "cd /home/<USER>/Coding/Python/DataQ && echo \"=== mypy ===\" && mypy backend/app/alerting/dedup.py backend/app/alerting/suppression.py backend/app/alerting/routing.py backend/tests/alerting/test_dedup.py backend/tests/alerting/test_suppression.py backend/tests/alerting/test_routing.py 2>&1 | tail -15",
   "description": "mypy on changed files"
 }
 ```
@@ -1780,7 +1780,7 @@ id: toolu_01UAbW1t2PyPNASc2ZTJKsfz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_routing.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_routing.py",
   "old_string": "from backend.app.db.models import ALERT_ON_POLICIES, SuiteNotification\nfrom backend.app.services import notification_service",
   "new_string": "from backend.app.db.models import ALERT_ON_POLICIES, SuiteNotification"
 }
@@ -1791,7 +1791,7 @@ id: toolu_01UAbW1t2PyPNASc2ZTJKsfz
 tool_result
 id: toolu_01UAbW1t2PyPNASc2ZTJKsfz
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_routing.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_routing.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1801,7 +1801,7 @@ id: toolu_01SDnqxCJurxEs29uGkLKgpp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_routing.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_routing.py",
   "old_string": "    sql = str(constraint.sqltext)\n    for value in ALERT_ON_POLICIES:\n        assert f\"'{value}'\" in sql\n\n\ndef test_validation_uses_the_same_source_object() -> None:\n    # notification_service validates against the identical tuple object, so the\n    # model constraint and the 422-raising validation are one source (#388).\n    assert notification_service.ALERT_ON_POLICIES is ALERT_ON_POLICIES",
   "new_string": "    sql = str(constraint.sqltext)\n    for value in ALERT_ON_POLICIES:\n        assert f\"'{value}'\" in sql\n    # And exactly those values — no stale literal the constant dropped.\n    assert sql.count(\"'\") == 2 * len(ALERT_ON_POLICIES)"
 }
@@ -1812,7 +1812,7 @@ id: toolu_01SDnqxCJurxEs29uGkLKgpp
 tool_result
 id: toolu_01SDnqxCJurxEs29uGkLKgpp
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_routing.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_routing.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1858,7 +1858,7 @@ tool_use Bash
 id: toolu_01XLS7hSSYYTDzX9JY4595DN
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ && bandit -q -r backend/app/alerting/dedup.py backend/app/alerting/suppression.py backend/app/alerting/routing.py 2>&1 | tail -8",
+  "command": "cd /home/<USER>/Coding/Python/DataQ && bandit -q -r backend/app/alerting/dedup.py backend/app/alerting/suppression.py backend/app/alerting/routing.py 2>&1 | tail -8",
   "description": "Bandit on changed source files"
 }
 ```
@@ -1945,7 +1945,7 @@ tool_use Bash
 id: toolu_01PP3xrxCNh73NtJfCDQkj1B
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ/backend && python -m pytest tests/alerting --cov=backend.app.alerting.dedup --cov=backend.app.alerting.suppression --cov=backend.app.alerting.routing --cov-report=term-missing --cov-fail-under=0 -q 2>&1 | tail -10",
+  "command": "cd /home/<USER>/Coding/Python/DataQ/backend && python -m pytest tests/alerting --cov=backend.app.alerting.dedup --cov=backend.app.alerting.suppression --cov=backend.app.alerting.routing --cov-report=term-missing --cov-fail-under=0 -q 2>&1 | tail -10",
   "description": "Coverage table for the three changed modules from backend dir"
 }
 ```
@@ -2026,7 +2026,7 @@ tool_use Bash
 id: toolu_01PeVavKTi2YZhL67foqfp5y
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ && git add backend/app/alerting/dedup.py backend/tests/alerting/test_dedup.py && git commit -q -F - <<'EOF'\nfix(alerting): derive dedup severity ranks from the shared FAILING_TIERS (#386)\n\n`dedup._RANK` hardcoded its own {warn,fail,critical} → rank map independently\nof `alerting.base.FAILING_TIERS`. They agreed in v1 but could silently diverge\nonce a severity tier is added or reordered (dedup treating a tier as\nalert-worthy while routing/suppression disagree). Derive `_RANK` (and the\noperational-failure `_OPERATIONAL_RANK`) from `FAILING_TIERS` so there is one\nseverity-order source, and add a drift-guard test pinning them to it.\n\nNo behaviour change today. Fixes #386.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\ngit log --oneline -1",
+  "command": "cd /home/<USER>/Coding/Python/DataQ && git add backend/app/alerting/dedup.py backend/tests/alerting/test_dedup.py && git commit -q -F - <<'EOF'\nfix(alerting): derive dedup severity ranks from the shared FAILING_TIERS (#386)\n\n`dedup._RANK` hardcoded its own {warn,fail,critical} → rank map independently\nof `alerting.base.FAILING_TIERS`. They agreed in v1 but could silently diverge\nonce a severity tier is added or reordered (dedup treating a tier as\nalert-worthy while routing/suppression disagree). Derive `_RANK` (and the\noperational-failure `_OPERATIONAL_RANK`) from `FAILING_TIERS` so there is one\nseverity-order source, and add a drift-guard test pinning them to it.\n\nNo behaviour change today. Fixes #386.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\ngit log --oneline -1",
   "description": "Commit #386"
 }
 ```
@@ -2045,7 +2045,7 @@ tool_use Bash
 id: toolu_01Mwgz3rtrd6b7iazKe8gQTx
 ```json
 {
-  "command": "git add backend/app/alerting/suppression.py backend/tests/alerting/test_suppression.py && git commit -q -F - <<'EOF'\nfix(alerting): always alert operationally-failed runs regardless of snooze (#387)\n\n`suppression.all_failures_snoozed` suppresses an alert when every failing check\nis snoozed. Today an operational `run.status == 'failed'` run has no per-check\nresult rows (run_service rolls partials back), so it can't be suppressed — but\nthat correctness rests entirely on the rollback behaviour holding. Add an\nexplicit `if run.status == 'failed': return False` guard so a future\npartial-failure path can never let per-check snoozes silence a genuine\nexecution failure, and a test that proves it (a failed run carrying only\nsnoozed failing rows still alerts).\n\nDefensive; no behaviour change under current run semantics. Fixes #387.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\ngit log --oneline -1",
+  "command": "git add backend/app/alerting/suppression.py backend/tests/alerting/test_suppression.py && git commit -q -F - <<'EOF'\nfix(alerting): always alert operationally-failed runs regardless of snooze (#387)\n\n`suppression.all_failures_snoozed` suppresses an alert when every failing check\nis snoozed. Today an operational `run.status == 'failed'` run has no per-check\nresult rows (run_service rolls partials back), so it can't be suppressed — but\nthat correctness rests entirely on the rollback behaviour holding. Add an\nexplicit `if run.status == 'failed': return False` guard so a future\npartial-failure path can never let per-check snoozes silence a genuine\nexecution failure, and a test that proves it (a failed run carrying only\nsnoozed failing rows still alerts).\n\nDefensive; no behaviour change under current run semantics. Fixes #387.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\ngit log --oneline -1",
   "description": "Commit #387"
 }
 ```
@@ -2064,7 +2064,7 @@ tool_use Bash
 id: toolu_01EwbPpvytMsGa7499jKa9yv
 ```json
 {
-  "command": "git add backend/app/alerting/routing.py backend/tests/alerting/test_routing.py && git commit -q -F - <<'EOF'\ntest(alerting): lock alert_on policy literals to their single source (#388)\n\nThe `alert_on` allowed values ('fail'/'warn'/'always') are single-sourced\nthrough `db.models.ALERT_ON_POLICIES`, referenced by both the SuiteNotification\nCHECK constraint (`_in_check`) and `notification_service` validation — the #633\nrefactors already collapsed the model↔validation copies. The one remaining\nhand-copy is `routing.py`'s FAIL_ONLY/WARN_PLUS/ALWAYS named constants. Point\ntheir comment at the single source and add drift-guard tests: routing's\nconstants must equal `set(ALERT_ON_POLICIES)`, and the CHECK constraint SQL must\ncarry exactly those literals (no stale value the constant dropped).\n\nPure maintainability; no behaviour change. Fixes #388.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\ngit log --oneline -3",
+  "command": "git add backend/app/alerting/routing.py backend/tests/alerting/test_routing.py && git commit -q -F - <<'EOF'\ntest(alerting): lock alert_on policy literals to their single source (#388)\n\nThe `alert_on` allowed values ('fail'/'warn'/'always') are single-sourced\nthrough `db.models.ALERT_ON_POLICIES`, referenced by both the SuiteNotification\nCHECK constraint (`_in_check`) and `notification_service` validation — the #633\nrefactors already collapsed the model↔validation copies. The one remaining\nhand-copy is `routing.py`'s FAIL_ONLY/WARN_PLUS/ALWAYS named constants. Point\ntheir comment at the single source and add drift-guard tests: routing's\nconstants must equal `set(ALERT_ON_POLICIES)`, and the CHECK constraint SQL must\ncarry exactly those literals (no stale value the constant dropped).\n\nPure maintainability; no behaviour change. Fixes #388.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\ngit log --oneline -3",
   "description": "Commit #388"
 }
 ```
@@ -2167,7 +2167,7 @@ tool_use Read
 id: toolu_01SGxVECfcvEGR7W93Srvy8X
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/run_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/run_service.py",
   "offset": 295,
   "limit": 45
 }
@@ -2216,7 +2216,7 @@ tool_use Read
 id: toolu_01CRFbEzjWcQ3XGtLCvyJcSW
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/builder.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/builder.py",
   "offset": 1,
   "limit": 35
 }
@@ -2516,7 +2516,7 @@ tool_use Read
 id: toolu_01McGmk7Mi8h8wV9sLxdZNKe
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "offset": 20,
   "limit": 10
 }
@@ -2567,7 +2567,7 @@ id: toolu_016dxGLF2JXiiLRfYdvPJXVp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "### v1.1 W2 — Portability: OTel logs, secrets lifecycle, dry-run depth (due 2026-07-18) — 6/14",
   "new_string": "### v1.1 W2 — Portability: OTel logs, secrets lifecycle, dry-run depth (due 2026-07-18) — 10/14"
 }
@@ -2578,7 +2578,7 @@ id: toolu_016dxGLF2JXiiLRfYdvPJXVp
 tool_result
 id: toolu_016dxGLF2JXiiLRfYdvPJXVp
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2592,7 +2592,7 @@ id: toolu_01HXDs7vatKidVLZ4nkdu1wY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "| ⬜ | [#386](https://github.com/TheurgicDuke771/DataQ/issues/386) Alerting batch (1/4): tie `dedup._RANK` to the shared severity source (mapped from backlog 2026-07-04 — one batch PR with #387/#388/#389) | Theme 5 |\n| ⬜ | [#387](https://github.com/TheurgicDuke771/DataQ/issues/387) Alerting batch (2/4): `suppression.py` early-return on operationally-failed runs | Theme 5 |\n| ⬜ | [#388](https://github.com/TheurgicDuke771/DataQ/issues/388) Alerting batch (3/4): single-source the `alert_on` literals | Theme 5 |\n| ⬜ | [#389](https://github.com/TheurgicDuke771/DataQ/issues/389) Alerting batch (4/4): channel-neutral rename of `teams_webhook_secret_name` — the W2 vendor-neutrality item | Theme 5 |",
   "new_string": "| ✅ | [#386](https://github.com/TheurgicDuke771/DataQ/issues/386) Alerting batch (1/4): `dedup._RANK` now derives from the shared `base.FAILING_TIERS` (+ drift-guard test); values unchanged (#656) | Theme 5 |\n| ✅ | [#387](https://github.com/TheurgicDuke771/DataQ/issues/387) Alerting batch (2/4): `suppression.all_failures_snoozed` early-returns `False` on `run.status=='failed'` so an execution failure can't be snooze-silenced (defensive; #656) | Theme 5 |\n| ✅ | [#388](https://github.com/TheurgicDuke771/DataQ/issues/388) Alerting batch (3/4): `alert_on` literals locked to `ALERT_ON_POLICIES` (model↔validation already single-sourced; routing constants + CHECK-constraint SQL drift-guarded; #656) | Theme 5 |\n| ✅ | [#389](https://github.com/TheurgicDuke771/DataQ/issues/389) Alerting batch (4/4): **closed won't-fix** — overtaken by the Slack/email publishers; `teams_webhook_secret_name` is now correctly channel-specific + symmetric with `slack_webhook_secret_name`, renaming would break that symmetry. Follow-up [#655](https://github.com/TheurgicDuke771/DataQ/issues/655) filed (converge the 3 severity-rank maps) | Theme 5 […]
 
@@ -2601,7 +2601,7 @@ id: toolu_01HXDs7vatKidVLZ4nkdu1wY
 tool_result
 id: toolu_01HXDs7vatKidVLZ4nkdu1wY
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2615,7 +2615,7 @@ id: toolu_01X7biKfEZZBFZKpWYFTSs3T
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "| **Open issues** | **64** (W2 2026-07-05 — **UI-gap remediation batch**",
   "new_string": "| **Open issues** | **66** (W2 2026-07-05 — **alerting-nit batch [#656](https://github.com/TheurgicDuke771/DataQ/pull/656)**: #386 (dedup severity single-source) + #387 (suppression guard) + #388 (alert_on drift-guard) closed; #389 closed won't-fix (Slack/email publishers made the per-channel name correct); follow-up #655 filed to converge the 3 severity-rank maps. — **UI-gap remediation batch**"
 }
@@ -2626,7 +2626,7 @@ id: toolu_01X7biKfEZZBFZKpWYFTSs3T
 tool_result
 id: toolu_01X7biKfEZZBFZKpWYFTSs3T
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2753,7 +2753,7 @@ tool_use Read
 id: toolu_01L2sWn3SUEGFWfsQoPUevoL
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/dashboard_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/dashboard_service.py",
   "offset": 20,
   "limit": 45
 }
@@ -2838,7 +2838,7 @@ id: toolu_013WNHF9gYaP2HM3is1YSNY6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/db/models.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/db/models.py",
   "old_string": "_RESULT_SEVERITY_TIERS = (\"pass\", \"warn\", \"fail\", \"critical\")\n_RESULT_OPERATIONAL_STATUSES = (\"skip\", \"error\")\nRESULT_STATUSES = _RESULT_SEVERITY_TIERS + _RESULT_OPERATIONAL_STATUSES",
   "new_string": "_RESULT_SEVERITY_TIERS = (\"pass\", \"warn\", \"fail\", \"critical\")\n_RESULT_OPERATIONAL_STATUSES = (\"skip\", \"error\")\nRESULT_STATUSES = _RESULT_SEVERITY_TIERS + _RESULT_OPERATIONAL_STATUSES\n# Failing severity tiers (the non-`pass` tiers) → rank, worst last. The single\n# source for the discrete \"which run outcome is worse\" ordering shared by alert\n# dedup, the RunReport builder, and run-outcome rollups (#655) — derived from the\n# tier vocabulary above so it can't drift. Deliberately distinct from the\n# health-penalty *weights* in dashboard_service (ADR 0005), which weight `pass`\n# too and are a separate concept.\nSEVERITY_RANK: dict[str, int] = {\n    tier: rank for rank, tier in enumerate((t for t in _RESULT_SEVERITY_TIERS if t != \"pass\"), 1)\n}"
 }
@@ -2849,7 +2849,7 @@ id: toolu_013WNHF9gYaP2HM3is1YSNY6
 tool_result
 id: toolu_013WNHF9gYaP2HM3is1YSNY6
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/db/models.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/db/models.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2863,7 +2863,7 @@ id: toolu_01AmSVRV92Vc66K4fBMk3pFm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/base.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/base.py",
   "old_string": "if TYPE_CHECKING:\n    from sqlalchemy.orm import Session\n\n# Severity tiers that count as \"not clean\", worst last. A run is alert-worthy\n# when any check lands in one of these (or the run failed to execute). `pass` is\n# clean; `skip`/`error` are operational, not data-quality severities (ADR 0005),\n# so they never set `worst_severity`.\nFAILING_TIERS: tuple[str, ...] = (\"warn\", \"fail\", \"critical\")",
   "new_string": "from backend.app.db.models import SEVERITY_RANK\n\nif TYPE_CHECKING:\n    from sqlalchemy.orm import Session\n\n# Severity tiers that count as \"not clean\", worst last. A run is alert-worthy\n# when any check lands in one of these (or the run failed to execute). `pass` is\n# clean; `skip`/`error` are operational, not data-quality severities (ADR 0005),\n# so they never set `worst_severity`. Derived from the shared `SEVERITY_RANK`\n# (#655) so the failing-tier set and the rank order have one source.\nFAILING_TIERS: tuple[str, ...] = tuple(SEVERITY_RANK)"
 }
@@ -2874,7 +2874,7 @@ id: toolu_01AmSVRV92Vc66K4fBMk3pFm
 tool_result
 id: toolu_01AmSVRV92Vc66K4fBMk3pFm
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/alerting/base.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/alerting/base.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2888,7 +2888,7 @@ id: toolu_01SnTFWj8zehyn1r3DpJioZf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/dedup.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/dedup.py",
   "old_string": "from backend.app.alerting.base import FAILING_TIERS\nfrom backend.app.db.models import Result, Run\n\n# Failing severity tiers → rank (higher = worse), derived from the single shared\n# severity order in `alerting.base.FAILING_TIERS` (#386) so dedup can't silently\n# drift from the rest of the alerting layer (routing, suppression) when a tier is\n# added or reordered. `pass`/`skip`/`error` aren't alert-worthy and never appear here.\n_RANK = {tier: rank for rank, tier in enumerate(FAILING_TIERS, start=1)}\n# An operational run failure (the adapter raised — no per-check result rows) is a\n# single suite-level failure signature, keyed by this sentinel, ranked at `fail`.\n_OPERATIONAL_KEY = \"__run__\"\n_OPERATIONAL_RANK = _RANK[\"fail\"]",
   "new_string": "from backend.app.db.models import SEVERITY_RANK, Result, Run\n\n# Dedup ranks failing checks by the single shared severity order (`SEVERITY_RANK`,\n# #386/#655) so it can't drift from the rest of the alerting layer (routing,\n# suppression) or run-outcome rollups. `pass`/`skip`/`error` aren't alert-worthy\n# and never appear here.\n# An operational run failure (the adapter raised — no per-check result rows) is a\n# single suite-level failure signature, keyed by this sentinel, ranked at `fail`.\n_OPERATIONAL_KEY = \"__run__\"\n_OPERATIONAL_RANK = SEVERITY_RANK[\"fail\"]"
 }
@@ -2899,7 +2899,7 @@ id: toolu_01SnTFWj8zehyn1r3DpJioZf
 tool_result
 id: toolu_01SnTFWj8zehyn1r3DpJioZf
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/alerting/dedup.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/alerting/dedup.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2913,7 +2913,7 @@ id: toolu_01Rj2Eo5CtxRrwShkdRU2pAu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/dedup.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/dedup.py",
   "old_string": "    ranks = {str(check_id): _RANK[status] for check_id, status in rows if status in _RANK}",
   "new_string": "    ranks = {\n        str(check_id): SEVERITY_RANK[status]\n        for check_id, status in rows\n        if status in SEVERITY_RANK\n    }"
 }
@@ -2924,7 +2924,7 @@ id: toolu_01Rj2Eo5CtxRrwShkdRU2pAu
 tool_result
 id: toolu_01Rj2Eo5CtxRrwShkdRU2pAu
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/alerting/dedup.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/alerting/dedup.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2938,7 +2938,7 @@ id: toolu_01UR6bbUPxTxPNVuHnMx7U17
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/builder.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/builder.py",
   "old_string": "from backend.app.alerting.base import FAILING_TIERS, CheckReport, RunReport\nfrom backend.app.db.models import Check, Connection, Result, Run, Suite\nfrom backend.app.services import run_service\n\n# Worst-first lookup so a single pass can keep the highest tier seen. This is the\n# discrete \"which run is worse\" ordering for alert routing; the same warn<fail<\n# critical order also lives as health-penalty *weights* in\n# `dashboard_service` (ADR 0005) — a new severity tier touches both.\n_SEVERITY_RANK = {tier: rank for rank, tier in enumerate(FAILING_TIERS, start=1)}\n\n\ndef _worst_severity(statuses: list[str]) -> str | None:\n    \"\"\"The highest failing tier among ``statuses`` (``critical`` > ``fail`` >\n    ``warn``), or ``None`` when nothing breached.\"\"\"\n    present = [s for s in statuses if s in _SEVERITY_RANK]\n    return max(present, key=lambda s: _SEVERITY_RANK[s]) if present else None",
   "new_string": "from backend.app.alerting.base import CheckReport, RunReport\nfrom backend.app.db.models import SEVERITY_RANK, Check, Connection, Result, Run, Suite\nfrom backend.app.services import run_service\n\n# The discrete \"which run is worse\" ordering for alert routing is the single\n# shared `SEVERITY_RANK` (#655); the same warn<fail<critical order also lives as\n# health-penalty *weights* in `dashboard_service` (ADR 0005), a separate concept.\n\n\ndef _worst_severity(statuses: list[str]) -> str | None:\n    \"\"\"The highest failing tier among ``statuses`` (``critical`` > ``fail`` >\n    ``warn``), or ``None`` when nothing breached.\"\"\"\n    present = [s for s in […]
 
@@ -2947,7 +2947,7 @@ id: toolu_01UR6bbUPxTxPNVuHnMx7U17
 tool_result
 id: toolu_01UR6bbUPxTxPNVuHnMx7U17
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/alerting/builder.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/alerting/builder.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2961,7 +2961,7 @@ id: toolu_01Ho8TUr1dMhMxRYvcWMmGZQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/run_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/run_service.py",
   "old_string": "from backend.app.db.models import RESULT_STATUSES, RUN_STATUSES, Check, Result, Run",
   "new_string": "from backend.app.db.models import (\n    RESULT_STATUSES,\n    RUN_STATUSES,\n    SEVERITY_RANK,\n    Check,\n    Result,\n    Run,\n)"
 }
@@ -2972,7 +2972,7 @@ id: toolu_01Ho8TUr1dMhMxRYvcWMmGZQ
 tool_result
 id: toolu_01Ho8TUr1dMhMxRYvcWMmGZQ
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/services/run_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/services/run_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2981,7 +2981,7 @@ tool_use Read
 id: toolu_01HdFbqbBDU2C5we98ijX8zP
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/run_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/run_service.py",
   "offset": 300,
   "limit": 45
 }
@@ -3031,7 +3031,7 @@ id: toolu_014NTX726DMm1gGkAZgf8Kdh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/run_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/run_service.py",
   "old_string": "# Severity tiers (ADR 0005), worst last — for the \"worst check outcome\" a run\n# carries. Operational statuses (skip/error) aren't failures, so they don't rank.\n_SEVERITY_RANK: dict[str, int] = {\"warn\": 1, \"fail\": 2, \"critical\": 3}\n\n\ndef check_outcome_counts(",
   "new_string": "def check_outcome_counts("
 }
@@ -3042,7 +3042,7 @@ id: toolu_014NTX726DMm1gGkAZgf8Kdh
 tool_result
 id: toolu_014NTX726DMm1gGkAZgf8Kdh
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/services/run_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/services/run_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3052,7 +3052,7 @@ id: toolu_01N14rtVUTCY7UDKDdyXAEhp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/run_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/run_service.py",
   "old_string": "        worst, worst_rank = None, 0\n        for tier, rank in _SEVERITY_RANK.items():\n            if by_status.get(tier) and rank > worst_rank:\n                worst, worst_rank = tier, rank\n        # Evaluated checks only: pass + the three failing tiers (skip/error excluded).\n        total = passed + sum(by_status.get(tier, 0) for tier in _SEVERITY_RANK)",
   "new_string": "        worst, worst_rank = None, 0\n        # Worst check outcome by the single shared severity order (#655); skip/error\n        # aren't in SEVERITY_RANK, so they don't count as a failure or rank.\n        for tier, rank in SEVERITY_RANK.items():\n            if by_status.get(tier) and rank > worst_rank:\n                worst, worst_rank = tier, rank\n        # Evaluated checks only: pass + the three failing tiers (skip/error excluded).\n        total = passed + sum(by_status.get(tier, 0) for tier in SEVERITY_RANK)"
 }
@@ -3063,7 +3063,7 @@ id: toolu_01N14rtVUTCY7UDKDdyXAEhp
 tool_result
 id: toolu_01N14rtVUTCY7UDKDdyXAEhp
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/services/run_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/services/run_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3099,7 +3099,7 @@ id: toolu_014DKFv4cophhHFD8StGDAkc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/dashboard_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/dashboard_service.py",
   "old_string": "# ── health score (ADR 0005) ──────────────────────────────────────────────────\n# Fixed penalty weights; W_MAX (the critical weight) normalises into [0, 100] so\n# all-fail scores 50, not the floor — critical stays meaningfully worse than fail.",
   "new_string": "# ── health score (ADR 0005) ──────────────────────────────────────────────────\n# Fixed penalty weights; W_MAX (the critical weight) normalises into [0, 100] so\n# all-fail scores 50, not the floor — critical stays meaningfully worse than fail.\n# Deliberately separate from the shared `db.models.SEVERITY_RANK` (#655): that is a\n# discrete worst-outcome *ordering* over the failing tiers, whereas these are\n# continuous *weights* that also score `pass` (0.0) — a different concept."
 }
@@ -3110,7 +3110,7 @@ id: toolu_014DKFv4cophhHFD8StGDAkc
 tool_result
 id: toolu_014DKFv4cophhHFD8StGDAkc
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/services/dashboard_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/services/dashboard_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3123,7 +3123,7 @@ tool_use Read
 id: toolu_01GYjTmQCeqGwBezE4dD4sTc
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_dedup.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_dedup.py",
   "offset": 60,
   "limit": 16
 }
@@ -3159,7 +3159,7 @@ id: toolu_01D9gRPYXZ5NFtgkzx1uBtkp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_dedup.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_dedup.py",
   "old_string": "def test_rank_derives_from_shared_failing_tiers() -> None:\n    \"\"\"#386: dedup's severity ranks are the one shared severity order, not an\n    independent copy — so adding or reordering a tier in ``base.FAILING_TIERS``\n    can't silently diverge dedup from routing/suppression.\"\"\"\n    from backend.app.alerting.base import FAILING_TIERS\n\n    # Same tiers, same order, ranked worst-last from the single source.\n    assert dedup._RANK == {tier: rank for rank, tier in enumerate(FAILING_TIERS, start=1)}\n    assert tuple(dedup._RANK) == FAILING_TIERS\n    # The operational-failure sentinel is ranked at `fail`, from that same source.\n    assert dedup._OPERATIONAL_RANK == dedup._RANK[\"fail\"]",
   "new_string": "def test_operational_rank_uses_the_shared_source() -> None:\n    \"\"\"#386/#655: dedup ranks via the shared ``db.models.SEVERITY_RANK``, not an\n    independent copy, so it can't diverge from routing/suppression/run-outcome\n    rollups. The operational-failure sentinel is ranked at ``fail`` from that\n    same source.\"\"\"\n    from backend.app.db.models import SEVERITY_RANK\n\n    assert dedup._OPERATIONAL_RANK == SEVERITY_RANK[\"fail\"]"
 }
@@ -3170,7 +3170,7 @@ id: toolu_01D9gRPYXZ5NFtgkzx1uBtkp
 tool_result
 id: toolu_01D9gRPYXZ5NFtgkzx1uBtkp
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_dedup.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_dedup.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3221,7 +3221,7 @@ tool_use Write
 id: toolu_01UDf9A3KoV9ZzsTE1nrDmrA
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/db/test_severity_rank.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/db/test_severity_rank.py",
   "content": "\"\"\"Drift guards for the single severity-rank source (#655).\n\n`db.models.SEVERITY_RANK` is the one canonical \"which run outcome is worse\"\nordering — alert dedup, the RunReport builder, run-outcome rollups and the\nalerting `FAILING_TIERS` set all derive from it rather than keeping independent\ncopies. These tests pin that single source so a new/reordered tier can't\nsilently diverge them.\n\"\"\"\n\nfrom __future__ import annotations\n\nfrom backend.app.alerting.base import FAILING_TIERS\nfrom backend.app.db.models import _RESULT_SEVERITY_TIERS, SEVERITY_RANK\n\n\ndef test_severity_rank_values() -> None:\n    # The failing tiers, ranked worst-last, excluding `pass` and the operational\n    # statuses (skip/error never rank — ADR 0005).\n    assert SEVERITY_RANK == {\"warn\": 1, \"fail\": 2, \"critical\": 3}\n\n\ndef test_severity_rank_derives_from_the_tier_vocabulary() -> None:\n    # Order + membership come from `_RESULT_SEVERITY_TIERS` (minus `pass`), so\n    # editing that one tuple is the only way to change the ranking.\n    expected = tuple(t for t in _RESULT_SEVERITY_TIERS if t != \"pass\")\n    assert tuple(SEVERITY_RANK) == expected\n    assert list(SEVERITY_RANK.values()) == sorted(SEVERITY_RANK.values())  # worst last\n\n\ndef test_failing_tiers_is_the_same_source() -> None:\n    # The alerting failing-tier set is derived from the rank map, not a 2nd copy.\n    assert FAILING_TIERS == tuple(SEVERITY_RANK)\n    assert \"pass\" not in FAILING_TIERS\n    assert \"skip\" not in SEVERITY_RANK and \"error\" not in SEVERITY_RANK\n"
 }
 ```
@@ -3231,7 +3231,7 @@ id: toolu_01UDf9A3KoV9ZzsTE1nrDmrA
 tool_result
 id: toolu_01UDf9A3KoV9ZzsTE1nrDmrA
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ/backend/tests/db/test_severity_rank.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ/backend/tests/db/test_severity_rank.py (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3335,7 +3335,7 @@ tool_use Bash
 id: toolu_01VNc7gX5nYy5MQ4CsvQtoxC
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ/backend && python -m pytest tests/alerting tests/db/test_severity_rank.py tests/services/test_run_service.py tests/services/test_dashboard_service.py --no-cov -q 2>&1 | tail -12",
+  "command": "cd /home/<USER>/Coding/Python/DataQ/backend && python -m pytest tests/alerting tests/db/test_severity_rank.py tests/services/test_run_service.py tests/services/test_dashboard_service.py --no-cov -q 2>&1 | tail -12",
   "description": "Run affected test suites"
 }
 ```
@@ -3361,7 +3361,7 @@ tool_use Bash
 id: toolu_01Cqu9CkPSBWRFw5DzsBynf3
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ && files=\"backend/app/db/models.py backend/app/alerting/base.py backend/app/alerting/dedup.py backend/app/alerting/builder.py backend/app/services/run_service.py backend/app/services/dashboard_service.py backend/tests/db/test_severity_rank.py backend/tests/alerting/test_dedup.py\"; echo \"=== Black ===\" && black --check $files 2>&1 | tail -2 && echo \"=== Ruff ===\" && ruff check $files 2>&1 | tail -3 && echo \"=== Bandit ===\" && bandit -q -r backend/app/db/models.py backend/app/alerting/base.py backend/app/alerting/dedup.py backend/app/alerting/builder.py backend/app/services/run_service.py backend/app/services/dashboard_service.py 2>&1 | tail -3",
+  "command": "cd /home/<USER>/Coding/Python/DataQ && files=\"backend/app/db/models.py backend/app/alerting/base.py backend/app/alerting/dedup.py backend/app/alerting/builder.py backend/app/services/run_service.py backend/app/services/dashboard_service.py backend/tests/db/test_severity_rank.py backend/tests/alerting/test_dedup.py\"; echo \"=== Black ===\" && black --check $files 2>&1 | tail -2 && echo \"=== Ruff ===\" && ruff check $files 2>&1 | tail -3 && echo \"=== Bandit ===\" && bandit -q -r backend/app/db/models.py backend/app/alerting/base.py backend/app/alerting/dedup.py backend/app/alerting/builder.py backend/app/services/run_service.py backend/app/services/dashboard_service.py 2>&1 | tail -3",
   "description": "Black, Ruff, Bandit on changed files"
 }
 ```
@@ -3394,7 +3394,7 @@ tool_use Bash
 id: toolu_01BWajbJa6BLK21DQYGRA5cZ
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ; set files backend/app/db/models.py backend/app/alerting/base.py backend/app/alerting/dedup.py backend/app/alerting/builder.py backend/app/services/run_service.py backend/app/services/dashboard_service.py backend/tests/db/test_severity_rank.py backend/tests/alerting/test_dedup.py; echo \"=== Black ===\" && black --check $files 2>&1 | tail -2 && echo \"=== Ruff ===\" && ruff check $files 2>&1 | tail -3 && echo \"=== mypy ===\" && mypy $files 2>&1 | grep -v \"unused section\" | tail -4",
+  "command": "cd /home/<USER>/Coding/Python/DataQ; set files backend/app/db/models.py backend/app/alerting/base.py backend/app/alerting/dedup.py backend/app/alerting/builder.py backend/app/services/run_service.py backend/app/services/dashboard_service.py backend/tests/db/test_severity_rank.py backend/tests/alerting/test_dedup.py; echo \"=== Black ===\" && black --check $files 2>&1 | tail -2 && echo \"=== Ruff ===\" && ruff check $files 2>&1 | tail -3 && echo \"=== mypy ===\" && mypy $files 2>&1 | grep -v \"unused section\" | tail -4",
   "description": "Black, Ruff, mypy on changed files (fish list)"
 }
 ```
@@ -3468,7 +3468,7 @@ tool_use Bash
 id: toolu_01Y9uR8gM6bdrUSiRHXNBXz4
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ/backend && python -m pytest --no-cov -q 2>&1 | tail -15",
+  "command": "cd /home/<USER>/Coding/Python/DataQ/backend && python -m pytest --no-cov -q 2>&1 | tail -15",
   "description": "Full backend test suite"
 }
 ```
@@ -3505,7 +3505,7 @@ tool_use Bash
 id: toolu_017nedK4itxa5khsTpfC7zUv
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ && git add backend/app/db/models.py backend/app/alerting/base.py backend/app/alerting/dedup.py backend/app/alerting/builder.py backend/app/services/run_service.py backend/app/services/dashboard_service.py backend/tests/db/test_severity_rank.py backend/tests/alerting/test_dedup.py && git commit -q -F - <<'EOF'\nrefactor(alerting): single-source the severity-rank ordering (#655)\n\nThe discrete \"which run outcome is worse\" ordering (warn<fail<critical) existed\nin three independent copies: `dedup._RANK` and `builder._SEVERITY_RANK` (both\nderived from `FAILING_TIERS` after #386) and a still-hardcoded\n`run_service._SEVERITY_RANK` — the exact drift class #386 targeted, one layer up.\n\nIntroduce one canonical `db.models.SEVERITY_RANK`, derived from the existing\n`_RESULT_SEVERITY_TIERS` tier vocabulary (the non-`pass` tiers, worst last), and\npoint all three consumers at it. `alerting.base.FAILING_TIERS` is now derived\nfrom it too, so the failing-tier set and the rank order have a single source\nthat chains back to one tuple. `db.models` is the right home: it already owns the\ntier vocabulary and is a leaf every consumer imports, so no layering inversion or\nimport cycle (base → db.models is safe; db.models imports nothing from alerting).\n\nThe health-penalty *weights* in `dashboard_service` are deliberately left\nseparate (they weight `pass` too and are a continuous score, not a discrete\nordering) — documented in place.\n\nDrift-guard tests in `tests/db/test_severity_rank.py` pin the derivation, the\nvalue map, and the `FAILING_TIERS` consistency; the #386 dedup test is updated\nto assert against the shared source. No behaviour change (values identical).\n\nFixes #655.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\ngit commit -q docs/progress.md […]
+  "command": "cd /home/<USER>/Coding/Python/DataQ && git add backend/app/db/models.py backend/app/alerting/base.py backend/app/alerting/dedup.py backend/app/alerting/builder.py backend/app/services/run_service.py backend/app/services/dashboard_service.py backend/tests/db/test_severity_rank.py backend/tests/alerting/test_dedup.py && git commit -q -F - <<'EOF'\nrefactor(alerting): single-source the severity-rank ordering (#655)\n\nThe discrete \"which run outcome is worse\" ordering (warn<fail<critical) existed\nin three independent copies: `dedup._RANK` and `builder._SEVERITY_RANK` (both\nderived from `FAILING_TIERS` after #386) and a still-hardcoded\n`run_service._SEVERITY_RANK` — the exact drift class #386 targeted, one layer up.\n\nIntroduce one canonical `db.models.SEVERITY_RANK`, derived from the existing\n`_RESULT_SEVERITY_TIERS` tier vocabulary (the non-`pass` tiers, worst last), and\npoint all three consumers at it. `alerting.base.FAILING_TIERS` is now derived\nfrom it too, so the failing-tier set and the rank order have a single source\nthat chains back to one tuple. `db.models` is the right home: it already owns the\ntier vocabulary and is a leaf every consumer imports, so no layering inversion or\nimport cycle (base → db.models is safe; db.models imports nothing from alerting).\n\nThe health-penalty *weights* in `dashboard_service` are deliberately left\nseparate (they weight `pass` too and are a continuous score, not a discrete\nordering) — documented in place.\n\nDrift-guard tests in `tests/db/test_severity_rank.py` pin the derivation, the\nvalue map, and the `FAILING_TIERS` consistency; the #386 dedup test is updated\nto assert against the shared source. No behaviour change (values identical).\n\nFixes #655.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\ngit commit -q docs/progress.md […]
 
 > TOOL
 
@@ -4290,7 +4290,7 @@ id: toolu_01JbHcZGoocumjJK5bVmUP6E
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/db/models.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/db/models.py",
   "old_string": "# Failing severity tiers (the non-`pass` tiers) → rank, worst last. The single\n# source for the discrete \"which run outcome is worse\" ordering shared by alert\n# dedup, the RunReport builder, and run-outcome rollups (#655) — derived from the\n# tier vocabulary above so it can't drift. Deliberately distinct from the\n# health-penalty *weights* in dashboard_service (ADR 0005), which weight `pass`\n# too and are a separate concept.\nSEVERITY_RANK: dict[str, int] = {\n    tier: rank for rank, tier in enumerate((t for t in _RESULT_SEVERITY_TIERS if t != \"pass\"), 1)\n}",
   "new_string": "# Failing severity tiers (the non-`pass` tiers) → rank, worst last. The single\n# source for the discrete \"which run outcome is worse\" ordering shared by alert\n# dedup, the RunReport builder, and run-outcome rollups (#655) — derived from the\n# tier vocabulary above so it can't drift. Deliberately distinct from the\n# health-penalty *weights* in dashboard_service (ADR 0005), which weight `pass`\n# too and are a separate concept.\nSEVERITY_RANK: dict[str, int] = {\n    tier: rank for rank, tier in enumerate((t for t in _RESULT_SEVERITY_TIERS if t != \"pass\"), 1)\n}\n# The failing-tier set (keys of SEVERITY_RANK, worst last): the tiers that count as\n# \"not clean\" for alerting. Lives here with […]
 
@@ -4299,7 +4299,7 @@ id: toolu_01JbHcZGoocumjJK5bVmUP6E
 tool_result
 id: toolu_01JbHcZGoocumjJK5bVmUP6E
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/db/models.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/db/models.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4313,7 +4313,7 @@ id: toolu_018SuyJXD56Bpx2up8iQ4Ys1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/base.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/base.py",
   "old_string": "from backend.app.db.models import SEVERITY_RANK\n\nif TYPE_CHECKING:\n    from sqlalchemy.orm import Session\n\n# Severity tiers that count as \"not clean\", worst last. A run is alert-worthy\n# when any check lands in one of these (or the run failed to execute). `pass` is\n# clean; `skip`/`error` are operational, not data-quality severities (ADR 0005),\n# so they never set `worst_severity`. Derived from the shared `SEVERITY_RANK`\n# (#655) so the failing-tier set and the rank order have one source.\nFAILING_TIERS: tuple[str, ...] = tuple(SEVERITY_RANK)",
   "new_string": "# Failing severity tiers (worst last) — a run is alert-worthy when any check lands\n# in one of these (or the run failed to execute). `pass` is clean; `skip`/`error`\n# are operational, not data-quality severities (ADR 0005). Single-sourced with the\n# severity rank in db.models (#655); re-exported here for the alerting layer.\nfrom backend.app.db.models import FAILING_TIERS\n\nif TYPE_CHECKING:\n    from sqlalchemy.orm import Session\n\n__all__ = [\"FAILING_TIERS\", \"CheckReport\", \"RunReport\", \"ResultPublisher\"]"
 }
@@ -4324,7 +4324,7 @@ id: toolu_018SuyJXD56Bpx2up8iQ4Ys1
 tool_result
 id: toolu_018SuyJXD56Bpx2up8iQ4Ys1
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/alerting/base.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/alerting/base.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4337,7 +4337,7 @@ tool_use Read
 id: toolu_01MkSL9SLJpUkwx43qqnNzd3
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/base.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/base.py",
   "offset": 13,
   "limit": 30
 }
@@ -4391,7 +4391,7 @@ id: toolu_01JanVuwb4eoak4tXTwdNHtn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/db/test_severity_rank.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/db/test_severity_rank.py",
   "old_string": "from backend.app.alerting.base import FAILING_TIERS\nfrom backend.app.db.models import _RESULT_SEVERITY_TIERS, SEVERITY_RANK",
   "new_string": "from backend.app.db.models import _RESULT_SEVERITY_TIERS, FAILING_TIERS, SEVERITY_RANK"
 }
@@ -4402,7 +4402,7 @@ id: toolu_01JanVuwb4eoak4tXTwdNHtn
 tool_result
 id: toolu_01JanVuwb4eoak4tXTwdNHtn
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/db/test_severity_rank.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/db/test_severity_rank.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4415,7 +4415,7 @@ tool_use Read
 id: toolu_019WmKLSoyKRS76igtVdeLxA
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/db/test_severity_rank.py"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/db/test_severity_rank.py"
 }
 ```
 
@@ -4462,7 +4462,7 @@ id: toolu_0197Bab5MTpHFRhb2QyxYSj2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/db/test_severity_rank.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/db/test_severity_rank.py",
   "old_string": "def test_failing_tiers_is_the_same_source() -> None:\n    # The alerting failing-tier set is derived from the rank map, not a 2nd copy.\n    assert FAILING_TIERS == tuple(SEVERITY_RANK)\n    assert \"pass\" not in FAILING_TIERS\n    assert \"skip\" not in SEVERITY_RANK and \"error\" not in SEVERITY_RANK",
   "new_string": "def test_failing_tiers_is_the_same_source() -> None:\n    # The failing-tier set is derived from the rank map, not a 2nd hardcoded copy.\n    assert FAILING_TIERS == tuple(SEVERITY_RANK)\n    assert \"pass\" not in FAILING_TIERS\n    assert \"skip\" not in SEVERITY_RANK and \"error\" not in SEVERITY_RANK\n\n\ndef test_alerting_base_reexports_the_same_object() -> None:\n    # The alerting layer imports FAILING_TIERS from its own base module (an explicit\n    # re-export of the db.models source); prove it's the same object so a consumer\n    # can't pick up a stale copy.\n    from backend.app.alerting.base import FAILING_TIERS as base_failing_tiers\n\n    assert base_failing_tiers is FAILING_TIERS"
 }
@@ -4473,7 +4473,7 @@ id: toolu_0197Bab5MTpHFRhb2QyxYSj2
 tool_result
 id: toolu_0197Bab5MTpHFRhb2QyxYSj2
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/db/test_severity_rank.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/db/test_severity_rank.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4545,7 +4545,7 @@ id: toolu_01QuAVRJuAntqnLzmripfnwF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/db/test_severity_rank.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/db/test_severity_rank.py",
   "old_string": "    from backend.app.alerting.base import FAILING_TIERS as base_failing_tiers\n\n    assert base_failing_tiers is FAILING_TIERS",
   "new_string": "    from backend.app.alerting.base import FAILING_TIERS as BASE_FAILING_TIERS\n\n    assert BASE_FAILING_TIERS is FAILING_TIERS"
 }
@@ -4556,7 +4556,7 @@ id: toolu_01QuAVRJuAntqnLzmripfnwF
 tool_result
 id: toolu_01QuAVRJuAntqnLzmripfnwF
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/db/test_severity_rank.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/db/test_severity_rank.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4590,7 +4590,7 @@ tool_use Bash
 id: toolu_0161qWyzTjQEtdiMNzFp8U56
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ/backend && python -m pytest tests/alerting tests/db/test_severity_rank.py --no-cov -q 2>&1 | tail -6",
+  "command": "cd /home/<USER>/Coding/Python/DataQ/backend && python -m pytest tests/alerting tests/db/test_severity_rank.py --no-cov -q 2>&1 | tail -6",
   "description": "Run alerting + severity-rank tests"
 }
 ```
@@ -4637,7 +4637,7 @@ tool_use Bash
 id: toolu_018MRgxPYTG5tUeBbwFSYQ3A
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ && git add backend/app/db/models.py backend/app/alerting/base.py backend/tests/db/test_severity_rank.py && git status --short && git commit -q -F - <<'EOF'\nfixup! refactor(alerting): single-source the severity-rank ordering (#655)\n\nMove FAILING_TIERS into db.models alongside SEVERITY_RANK (deriving it there,\n`tuple(SEVERITY_RANK)`) and re-export it from alerting.base. This resolves the\nCodeQL `py/unused-global-variable` false positive that blocked the merge:\nSEVERITY_RANK now has an in-file use (it builds FAILING_TIERS) instead of being\nconsumed only cross-module, and the whole severity vocabulary lives in one place.\nalerting.base gains an explicit `__all__` so the re-export is intentional.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\ngit push 2>&1 | tail -3",
+  "command": "cd /home/<USER>/Coding/Python/DataQ && git add backend/app/db/models.py backend/app/alerting/base.py backend/tests/db/test_severity_rank.py && git status --short && git commit -q -F - <<'EOF'\nfixup! refactor(alerting): single-source the severity-rank ordering (#655)\n\nMove FAILING_TIERS into db.models alongside SEVERITY_RANK (deriving it there,\n`tuple(SEVERITY_RANK)`) and re-export it from alerting.base. This resolves the\nCodeQL `py/unused-global-variable` false positive that blocked the merge:\nSEVERITY_RANK now has an in-file use (it builds FAILING_TIERS) instead of being\nconsumed only cross-module, and the whole severity vocabulary lives in one place.\nalerting.base gains an explicit `__all__` so the re-export is intentional.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\ngit push 2>&1 | tail -3",
   "description": "Commit fixup and push to the PR branch"
 }
 ```
@@ -4878,7 +4878,7 @@ id: toolu_01FtpfAubzbW957bF67QXybf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/db/models.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/db/models.py",
   "old_string": "from typing import Any",
   "new_string": "from collections.abc import Iterable\nfrom typing import Any"
 }
@@ -4889,7 +4889,7 @@ id: toolu_01FtpfAubzbW957bF67QXybf
 tool_result
 id: toolu_01FtpfAubzbW957bF67QXybf
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/db/models.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/db/models.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4903,7 +4903,7 @@ id: toolu_01CxRpzTXGPsHyFKQQu6su6C
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/db/models.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/db/models.py",
   "old_string": "# The failing-tier set (keys of SEVERITY_RANK, worst last): the tiers that count as\n# \"not clean\" for alerting. Lives here with the rest of the severity vocabulary so\n# the set and the rank order have one source; the alerting layer imports it.\nFAILING_TIERS: tuple[str, ...] = tuple(SEVERITY_RANK)",
   "new_string": "# The failing-tier set (keys of SEVERITY_RANK, worst last): the tiers that count as\n# \"not clean\" for alerting. Lives here with the rest of the severity vocabulary so\n# the set and the rank order have one source; the alerting layer imports it.\nFAILING_TIERS: tuple[str, ...] = tuple(SEVERITY_RANK)\n\n\ndef worst_severity(statuses: Iterable[str]) -> str | None:\n    \"\"\"The highest failing tier present in ``statuses`` (``critical`` > ``fail`` >\n    ``warn``), or ``None`` when none breached — `pass`/`skip`/`error` never rank.\n\n    The single place the shared severity order is applied to pick a run's worst\n    outcome (#655), used by the RunReport builder and the run-outcome rollups so\n    they don't each re-implement the max-by-rank loop.\n    \"\"\"\n    present = [s for s in statuses if s in FAILING_TIERS]\n    return max(present, key=lambda s: SEVERITY_RANK[s]) if present else None"
 }
@@ -4914,7 +4914,7 @@ id: toolu_01CxRpzTXGPsHyFKQQu6su6C
 tool_result
 id: toolu_01CxRpzTXGPsHyFKQQu6su6C
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/db/models.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/db/models.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4928,7 +4928,7 @@ id: toolu_01GDxx8FyGDmL6uqAxBgGWzp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/builder.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/builder.py",
   "old_string": "from backend.app.alerting.base import CheckReport, RunReport\nfrom backend.app.db.models import SEVERITY_RANK, Check, Connection, Result, Run, Suite\nfrom backend.app.services import run_service\n\n# The discrete \"which run is worse\" ordering for alert routing is the single\n# shared `SEVERITY_RANK` (#655); the same warn<fail<critical order also lives as\n# health-penalty *weights* in `dashboard_service` (ADR 0005), a separate concept.\n\n\ndef _worst_severity(statuses: list[str]) -> str | None:\n    \"\"\"The highest failing tier among ``statuses`` (``critical`` > ``fail`` >\n    ``warn``), or ``None`` when nothing breached.\"\"\"\n    present = [s for s in statuses if s in SEVERITY_RANK]\n    return max(present, key=lambda s: SEVERITY_RANK[s]) if present else None",
   "new_string": "from backend.app.alerting.base import CheckReport, RunReport\nfrom backend.app.db.models import Check, Connection, Result, Run, Suite, worst_severity\nfrom backend.app.services import run_service"
 }
@@ -4939,7 +4939,7 @@ id: toolu_01GDxx8FyGDmL6uqAxBgGWzp
 tool_result
 id: toolu_01GDxx8FyGDmL6uqAxBgGWzp
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/alerting/builder.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/alerting/builder.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4948,7 +4948,7 @@ tool_use Read
 id: toolu_01KrmSgQhxxQwUa5Nmn5Z2wc
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/builder.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/builder.py",
   "offset": 76,
   "limit": 8
 }
@@ -4976,7 +4976,7 @@ id: toolu_01LqUX6oBaBDUdFJg6SkDTnQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/builder.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/builder.py",
   "old_string": "    worst = _worst_severity([r.status for r in results])",
   "new_string": "    worst = worst_severity(r.status for r in results)"
 }
@@ -4987,7 +4987,7 @@ id: toolu_01LqUX6oBaBDUdFJg6SkDTnQ
 tool_result
 id: toolu_01LqUX6oBaBDUdFJg6SkDTnQ
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/alerting/builder.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/alerting/builder.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5001,7 +5001,7 @@ id: toolu_01MVgruBmYEoXNEKXW6S2AvQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/run_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/run_service.py",
   "old_string": "        passed = by_status.get(\"pass\", 0)\n        worst, worst_rank = None, 0\n        # Worst check outcome by the single shared severity order (#655); skip/error\n        # aren't in SEVERITY_RANK, so they don't count as a failure or rank.\n        for tier, rank in SEVERITY_RANK.items():\n            if by_status.get(tier) and rank > worst_rank:\n                worst, worst_rank = tier, rank\n        # Evaluated checks only: pass + the three failing tiers (skip/error excluded).\n        total = passed + sum(by_status.get(tier, 0) for tier in SEVERITY_RANK)\n        out[run_id] = (total, passed, worst)",
   "new_string": "        passed = by_status.get(\"pass\", 0)\n        # Worst check outcome via the single shared severity helper (#655); skip/error\n        # aren't failing tiers, so they never rank.\n        worst = worst_severity(by_status)\n        # Evaluated checks only: pass + the three failing tiers (skip/error excluded).\n        total = passed + sum(by_status.get(tier, 0) for tier in SEVERITY_RANK)\n        out[run_id] = (total, passed, worst)"
 }
@@ -5012,7 +5012,7 @@ id: toolu_01MVgruBmYEoXNEKXW6S2AvQ
 tool_result
 id: toolu_01MVgruBmYEoXNEKXW6S2AvQ
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/services/run_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/services/run_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5026,7 +5026,7 @@ id: toolu_01UJUSBgCnTBCNHmBUwoUVZH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/run_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/run_service.py",
   "old_string": "from backend.app.db.models import (\n    RESULT_STATUSES,\n    RUN_STATUSES,\n    SEVERITY_RANK,\n    Check,\n    Result,\n    Run,\n)",
   "new_string": "from backend.app.db.models import (\n    RESULT_STATUSES,\n    RUN_STATUSES,\n    SEVERITY_RANK,\n    Check,\n    Result,\n    Run,\n    worst_severity,\n)"
 }
@@ -5037,7 +5037,7 @@ id: toolu_01UJUSBgCnTBCNHmBUwoUVZH
 tool_result
 id: toolu_01UJUSBgCnTBCNHmBUwoUVZH
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/services/run_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/services/run_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5051,7 +5051,7 @@ id: toolu_01DbacLLA6myRj5AhxK58EDD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/db/test_severity_rank.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/db/test_severity_rank.py",
   "old_string": "from backend.app.db.models import _RESULT_SEVERITY_TIERS, FAILING_TIERS, SEVERITY_RANK",
   "new_string": "from backend.app.db.models import (\n    _RESULT_SEVERITY_TIERS,\n    FAILING_TIERS,\n    SEVERITY_RANK,\n    worst_severity,\n)"
 }
@@ -5062,7 +5062,7 @@ id: toolu_01DbacLLA6myRj5AhxK58EDD
 tool_result
 id: toolu_01DbacLLA6myRj5AhxK58EDD
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/db/test_severity_rank.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/db/test_severity_rank.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5072,7 +5072,7 @@ id: toolu_016qT1xxTTi9cyonJCwW6zza
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/db/test_severity_rank.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/db/test_severity_rank.py",
   "old_string": "def test_alerting_base_reexports_the_same_object() -> None:",
   "new_string": "def test_worst_severity_picks_the_highest_failing_tier() -> None:\n    # The shared helper both consumers now use: highest failing tier present, or\n    # None when nothing breached; pass/skip/error never rank.\n    assert worst_severity([\"pass\", \"warn\", \"critical\", \"fail\"]) == \"critical\"\n    assert worst_severity([\"pass\", \"warn\"]) == \"warn\"\n    assert worst_severity([\"pass\", \"skip\", \"error\"]) is None\n    assert worst_severity([]) is None\n    # Accepts any iterable of statuses (e.g. a status→count dict's keys).\n    assert worst_severity({\"pass\": 3, \"fail\": 1}) == \"fail\"\n\n\ndef test_alerting_base_reexports_the_same_object() -> None:"
 }
@@ -5083,7 +5083,7 @@ id: toolu_016qT1xxTTi9cyonJCwW6zza
 tool_result
 id: toolu_016qT1xxTTi9cyonJCwW6zza
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/db/test_severity_rank.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/db/test_severity_rank.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5119,7 +5119,7 @@ tool_use Bash
 id: toolu_013gMUmKNs13o5az3NXtqK5U
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ/backend && python -m pytest tests/alerting tests/db/test_severity_rank.py --no-cov -q 2>&1 | tail -4 && echo \"=== FULL SUITE ===\" && python -m pytest --no-cov -q 2>&1 | tail -4",
+  "command": "cd /home/<USER>/Coding/Python/DataQ/backend && python -m pytest tests/alerting tests/db/test_severity_rank.py --no-cov -q 2>&1 | tail -4 && echo \"=== FULL SUITE ===\" && python -m pytest --no-cov -q 2>&1 | tail -4",
   "description": "Affected tests + full suite"
 }
 ```
@@ -5170,7 +5170,7 @@ tool_use Bash
 id: toolu_013teTU5y5qhXFgm2Gkt7hrB
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ && grep -n \"_worst_severity\\|worst_severity\\|def test_worst\" backend/tests/alerting/test_builder.py",
+  "command": "cd /home/<USER>/Coding/Python/DataQ && grep -n \"_worst_severity\\|worst_severity\\|def test_worst\" backend/tests/alerting/test_builder.py",
   "description": "Find worst_severity tests in test_builder (from repo root)"
 }
 ```
@@ -5200,7 +5200,7 @@ tool_use Read
 id: toolu_01R3VtMZiG8h9ryjiWoinPVT
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_builder.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_builder.py",
   "offset": 66,
   "limit": 13
 }
@@ -5237,7 +5237,7 @@ id: toolu_01RifFCygft1m5jhX4oisPve
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_builder.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_builder.py",
   "old_string": "def test_worst_severity_orders_critical_over_fail_over_warn() -> None:\n    assert builder._worst_severity([\"pass\", \"warn\", \"fail\", \"critical\"]) == \"critical\"\n    assert builder._worst_severity([\"pass\", \"warn\", \"fail\"]) == \"fail\"\n    assert builder._worst_severity([\"pass\", \"warn\"]) == \"warn\"\n\n\ndef test_worst_severity_none_when_clean_or_operational() -> None:\n    assert builder._worst_severity([\"pass\", \"pass\"]) is None\n    assert builder._worst_severity([\"skip\", \"error\"]) is None\n    assert builder._worst_severity([]) is None\n\n\n",
   "new_string": ""
 }
@@ -5248,7 +5248,7 @@ id: toolu_01RifFCygft1m5jhX4oisPve
 tool_result
 id: toolu_01RifFCygft1m5jhX4oisPve
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_builder.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_builder.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5288,7 +5288,7 @@ tool_use Bash
 id: toolu_01AJwScEZoYd8oz2DoXbDh57
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ/backend && python -m pytest --no-cov -q 2>&1 | tail -4",
+  "command": "cd /home/<USER>/Coding/Python/DataQ/backend && python -m pytest --no-cov -q 2>&1 | tail -4",
   "description": "Full suite after removing stale builder tests"
 }
 ```
@@ -5314,7 +5314,7 @@ tool_use Bash
 id: toolu_01X7ieo5gtLLwKjVcGgRiQFd
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ && echo \"=== bandit ===\" && bandit -q -r backend/app/db/models.py backend/app/alerting/builder.py backend/app/services/run_service.py 2>&1 | grep -iE \"issue|severity:\" | head; echo \"=== coverage: models worst_severity + changed modules ===\" && cd backend && python -m pytest tests/alerting tests/db/test_severity_rank.py tests/services/test_run_service.py --cov=backend.app.db.models --cov=backend.app.alerting.builder --cov=backend.app.services.run_service --cov-report=term-missing --cov-fail-under=0 -q 2>&1 | grep -iE \"models.py|builder.py|run_service.py\" | head",
+  "command": "cd /home/<USER>/Coding/Python/DataQ && echo \"=== bandit ===\" && bandit -q -r backend/app/db/models.py backend/app/alerting/builder.py backend/app/services/run_service.py 2>&1 | grep -iE \"issue|severity:\" | head; echo \"=== coverage: models worst_severity + changed modules ===\" && cd backend && python -m pytest tests/alerting tests/db/test_severity_rank.py tests/services/test_run_service.py --cov=backend.app.db.models --cov=backend.app.alerting.builder --cov=backend.app.services.run_service --cov-report=term-missing --cov-fail-under=0 -q 2>&1 | grep -iE \"models.py|builder.py|run_service.py\" | head",
   "description": "Bandit + coverage on changed modules"
 }
 ```
@@ -5367,7 +5367,7 @@ tool_use Bash
 id: toolu_017amsNLpkLCjQ2iQenHa9UF
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ && git add backend/app/db/models.py backend/app/alerting/builder.py backend/app/services/run_service.py backend/tests/db/test_severity_rank.py backend/tests/alerting/test_builder.py && git status --short && git commit -q -F - <<'EOF'\nfixup! refactor(alerting): single-source the severity-rank ordering (#655)\n\nGive BOTH severity constants a real in-file use in db.models via a shared\n`worst_severity(statuses)` helper (uses FAILING_TIERS for membership + SEVERITY_RANK\nfor the max-by-rank), and route builder + run_service through it. This removes the\nduplicated worst-severity loops in those two modules (the #655 goal, one level up)\nand legitimately clears the CodeQL `py/unused-global-variable` false positives that\nblocked the merge — no dismissal, no services→alerting layering inversion.\n\nThe two builder tests for the removed private `_worst_severity` are dropped; the\nhelper's coverage moves to tests/db/test_severity_rank.py.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\ngit push 2>&1 | tail -2",
+  "command": "cd /home/<USER>/Coding/Python/DataQ && git add backend/app/db/models.py backend/app/alerting/builder.py backend/app/services/run_service.py backend/tests/db/test_severity_rank.py backend/tests/alerting/test_builder.py && git status --short && git commit -q -F - <<'EOF'\nfixup! refactor(alerting): single-source the severity-rank ordering (#655)\n\nGive BOTH severity constants a real in-file use in db.models via a shared\n`worst_severity(statuses)` helper (uses FAILING_TIERS for membership + SEVERITY_RANK\nfor the max-by-rank), and route builder + run_service through it. This removes the\nduplicated worst-severity loops in those two modules (the #655 goal, one level up)\nand legitimately clears the CodeQL `py/unused-global-variable` false positives that\nblocked the merge — no dismissal, no services→alerting layering inversion.\n\nThe two builder tests for the removed private `_worst_severity` are dropped; the\nhelper's coverage moves to tests/db/test_severity_rank.py.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\ngit push 2>&1 | tail -2",
   "description": "Commit second fixup and push"
 }
 ```
@@ -5514,7 +5514,7 @@ id: toolu_01WxkPxRzW612jCxDcRqQCaV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "| **Open issues** | **66** (W2 2026-07-05 — **alerting-nit batch [#656](https://github.com/TheurgicDuke771/DataQ/pull/656)**: #386 (dedup severity single-source) + #387 (suppression guard) + #388 (alert_on drift-guard) closed; #389 closed won't-fix (Slack/email publishers made the per-channel name correct); follow-up #655 filed to converge the 3 severity-rank maps. — **UI-gap remediation batch**",
   "new_string": "| **Open issues** | **65** (W2 2026-07-05 — **alerting-nit batch [#656](https://github.com/TheurgicDuke771/DataQ/pull/656)**: #386 (dedup severity single-source) + #387 (suppression guard) + #388 (alert_on drift-guard) closed; #389 closed won't-fix (Slack/email publishers made the per-channel name correct). Follow-up **#655 closed via [#657](https://github.com/TheurgicDuke771/DataQ/pull/657)** — one canonical `db.models.SEVERITY_RANK` + `FAILING_TIERS` + shared `worst_severity()` helper (converged the 3 rank maps + the builder/run_service worst-severity loops). — **UI-gap remediation batch**"
 }
@@ -5525,7 +5525,7 @@ id: toolu_01WxkPxRzW612jCxDcRqQCaV
 tool_result
 id: toolu_01WxkPxRzW612jCxDcRqQCaV
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5538,7 +5538,7 @@ tool_use Bash
 id: toolu_01JiZSjGcifYUdrutRgzjFjR
 ```json
 {
-  "command": "git checkout -b docs/progress-655-snapshot 2>&1 | tail -1 && git add docs/progress.md && git commit -q -F - <<'EOF'\ndocs(progress): mark #655 closed + refresh open-issue count (66→65)\n\nPost-merge tracker update for #657 (the #655 severity-rank single-source): the\nopen-issue count could only be known after merge, so it lands here.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\ngit push -u origin docs/progress-655-snapshot 2>&1 | tail -2",
+  "command": "git checkout -b docs/progress-655-snapshot 2>&1 | tail -1 && git add docs/progress.md && git commit -q -F - <<'EOF'\ndocs(progress): mark #655 closed + refresh open-issue count (66→65)\n\nPost-merge tracker update for #657 (the #655 severity-rank single-source): the\nopen-issue count could only be known after merge, so it lands here.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\ngit push -u origin docs/progress-655-snapshot 2>&1 | tail -2",
   "description": "Create docs branch and push snapshot update"
 }
 ```
@@ -5744,7 +5744,7 @@ tool_use Read
 id: toolu_01DqBHYqasCi5W8J5eUH2qyJ
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/slack.py"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/slack.py"
 }
 ```
 
@@ -5791,7 +5791,7 @@ tool_use Read
 id: toolu_01C1mRKqosBdo8E5Bnn4WggX
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/email.py"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/email.py"
 }
 ```
 
@@ -5847,7 +5847,7 @@ tool_use Read
 id: toolu_01PEwoqm2zREdcG4GDxDauGL
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/builder.py"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/builder.py"
 }
 ```
 
@@ -5946,7 +5946,7 @@ tool_use Read
 id: toolu_01MZBGpidyXRN7aMtuCDwd3q
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/core/config.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/core/config.py",
   "offset": 73,
   "limit": 15
 }
@@ -6046,7 +6046,7 @@ tool_use Read
 id: toolu_01CWgfZjJt8Muqwg2zdVyVUG
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/datasources/gx_runner.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/datasources/gx_runner.py",
   "offset": 108,
   "limit": 30
 }
@@ -6099,7 +6099,7 @@ tool_use Read
 id: toolu_016e36jC7Nqin76mRj5nKEZN
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_slack_email_publishers.py"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_slack_email_publishers.py"
 }
 ```
 
@@ -6161,7 +6161,7 @@ id: toolu_01QKQv7CEHR1TxPAUhKd8uDb
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/base.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/base.py",
   "old_string": "    run_id: uuid.UUID\n    suite_id: uuid.UUID\n    suite_name: str\n    run_status: str\n    datasource_type: str\n    target_label: str\n    worst_severity: str | None\n    counts: dict[str, int]\n    checks: list[CheckReport]\n    finished_at: datetime | None\n\n    @property\n    def success(self) -> bool:",
   "new_string": "    run_id: uuid.UUID\n    suite_id: uuid.UUID\n    suite_name: str\n    run_status: str\n    datasource_type: str\n    target_label: str\n    worst_severity: str | None\n    counts: dict[str, int]\n    checks: list[CheckReport]\n    finished_at: datetime | None\n    # Run metadata for actionable alerts (#416) — env, when it ran, what triggered\n    # it, and a deep link to the run-detail page. All optional/defaulted so existing\n    # constructors keep working; `run_url` is None when no public base URL is set.\n    env: str | None = None\n    started_at: datetime | None = None\n    triggered_by: str | None = None\n    run_url: str | None = None\n\n    @property\n    def duration_seconds(self) -> float | None:\n        \"\"\"Wall-clock run duration in seconds, or ``None`` if either endpoint is\n        missing (e.g. a run that failed before it started).\"\"\"\n        if self.started_at is None or self.finished_at is None:\n            return None\n        return (self.finished_at - self.started_at).total_seconds()\n\n    @property\n    def success(self) -> bool:"
 }
@@ -6181,7 +6181,7 @@ tool_use Read
 id: toolu_01R4e8qxsVgETCZLQZecSfV5
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/base.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/base.py",
   "offset": 50,
   "limit": 45
 }
@@ -6240,7 +6240,7 @@ id: toolu_01XuSYJYwnupYhN59jXVrcoS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/base.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/base.py",
   "old_string": "    counts: dict[str, int]\n    checks: list[CheckReport]\n    finished_at: datetime | None\n\n    @property\n    def success(self) -> bool:",
   "new_string": "    counts: dict[str, int]\n    checks: list[CheckReport]\n    finished_at: datetime | None\n    # Run metadata for actionable alerts (#416) — env, when it ran, what triggered\n    # it, and a deep link to the run-detail page. All optional/defaulted so existing\n    # constructors keep working; `run_url` is None when no public base URL is set.\n    env: str | None = None\n    started_at: datetime | None = None\n    triggered_by: str | None = None\n    run_url: str | None = None\n\n    @property\n    def duration_seconds(self) -> float | None:\n        \"\"\"Wall-clock run duration in seconds, or ``None`` if either endpoint is\n        missing (e.g. a run that failed before it started).\"\"\"\n        if self.started_at is None or self.finished_at is None:\n            return None\n        return (self.finished_at - self.started_at).total_seconds()\n\n    @property\n    def success(self) -> bool:"
 }
@@ -6251,7 +6251,7 @@ id: toolu_01XuSYJYwnupYhN59jXVrcoS
 tool_result
 id: toolu_01XuSYJYwnupYhN59jXVrcoS
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/alerting/base.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/alerting/base.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6265,7 +6265,7 @@ id: toolu_01RSmfqTySWP72e3aLZPX3RQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/builder.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/builder.py",
   "old_string": "from backend.app.alerting.base import CheckReport, RunReport\nfrom backend.app.db.models import Check, Connection, Result, Run, Suite, worst_severity\nfrom backend.app.services import run_service",
   "new_string": "from backend.app.alerting.base import CheckReport, RunReport\nfrom backend.app.core.config import get_settings\nfrom backend.app.db.models import Check, Connection, Result, Run, Suite, worst_severity\nfrom backend.app.services import run_service\n\n\ndef _run_url(run_id: uuid.UUID) -> str | None:\n    \"\"\"Deep link to the run-detail page (``/results/<id>``, App.tsx), or ``None``\n    when no public base URL is configured — the alert then omits the link rather\n    than emitting a broken relative one.\"\"\"\n    base = get_settings().public_base_url.rstrip(\"/\")\n    return f\"{base}/results/{run_id}\" if base else None"
 }
@@ -6276,7 +6276,7 @@ id: toolu_01RSmfqTySWP72e3aLZPX3RQ
 tool_result
 id: toolu_01RSmfqTySWP72e3aLZPX3RQ
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/alerting/builder.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/alerting/builder.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6290,7 +6290,7 @@ id: toolu_01L3vz2HyREEwWpw6h8h7gxG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/builder.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/builder.py",
   "old_string": "from __future__ import annotations\n\nfrom typing import Any",
   "new_string": "from __future__ import annotations\n\nimport uuid\nfrom typing import Any"
 }
@@ -6301,7 +6301,7 @@ id: toolu_01L3vz2HyREEwWpw6h8h7gxG
 tool_result
 id: toolu_01L3vz2HyREEwWpw6h8h7gxG
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/alerting/builder.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/alerting/builder.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6311,7 +6311,7 @@ id: toolu_01SQYgnurbqfhM9YTM5cfXnY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/builder.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/builder.py",
   "old_string": "        worst_severity=worst,\n        counts=counts,\n        checks=check_reports,\n        finished_at=run.finished_at,\n    )",
   "new_string": "        worst_severity=worst,\n        counts=counts,\n        checks=check_reports,\n        finished_at=run.finished_at,\n        env=connection.env if connection is not None else None,\n        started_at=run.started_at,\n        triggered_by=run.triggered_by,\n        run_url=_run_url(run.id),\n    )"
 }
@@ -6322,7 +6322,7 @@ id: toolu_01SQYgnurbqfhM9YTM5cfXnY
 tool_result
 id: toolu_01SQYgnurbqfhM9YTM5cfXnY
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/alerting/builder.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/alerting/builder.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6335,7 +6335,7 @@ tool_use Write
 id: toolu_01VNudpcvfVA5MPBxVNHAwQm
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/render.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/render.py",
   "content": "\"\"\"Pure formatting helpers shared by the Slack + email renderers (#416).\n\nTurn the already-redacted ``RunReport`` / ``CheckReport`` DTOs into the small\nstrings the channel renderers assemble: run metadata (env, trigger, when, how\nlong) and a per-check *expected-vs-observed + redacted-sample* detail line. Kept\nhere so the two channels stay consistent and neither re-implements the\nformatting — pure functions (DTO in, ``str`` out), no I/O, no ORM, and they only\never read the redacted fields the builder produced, so nothing here can leak PII.\n\"\"\"\n\nfrom __future__ import annotations\n\nfrom datetime import datetime\nfrom typing import Any\n\nfrom backend.app.alerting.base import CheckReport, RunReport\n\n# Longer scalars (a big value_set, a stringified row) are truncated so one check\n# can't blow up a card; the full detail lives on the linked run-detail page.\n_MAX_SCALAR = 60\n\n# triggered_by is stored as \"<provider>:<...>\" (schedule/adf/airflow/dbt) or NULL\n# for a manual run. Map the prefix to a friendly source name for the alert.\n_TRIGGER_LABELS = {\n    \"schedule\": \"Schedule\",\n    \"adf\": \"ADF\",\n    \"airflow\": \"Airflow\",\n    \"dbt\": \"dbt\",\n    \"manual\": \"Manual\",\n}\n\n\ndef _scalar(value: Any) -> str:\n    \"\"\"A compact one-line string for a JSON scalar, truncated if long.\"\"\"\n    text = f\"{value:g}\" if isinstance(value, float) else str(value)\n    return text if len(text) <= _MAX_SCALAR else text[: _MAX_SCALAR - 1] + \"…\"\n\n\ndef _compact(mapping: dict[str, […]
 
 > TOOL
@@ -6343,7 +6343,7 @@ id: toolu_01VNudpcvfVA5MPBxVNHAwQm
 tool_result
 id: toolu_01VNudpcvfVA5MPBxVNHAwQm
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ/backend/app/alerting/render.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ/backend/app/alerting/render.py (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6357,7 +6357,7 @@ id: toolu_01NghDmM2nGy8jUZBGcJb46W
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/slack.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/slack.py",
   "old_string": "from backend.app.alerting.base import CheckReport, RunReport\nfrom backend.app.alerting.routing import CRITICAL, Route, route_for\nfrom backend.app.core.logging import get_logger\nfrom backend.app.core.secrets import SecretStore\nfrom backend.app.services import notification_service",
   "new_string": "from backend.app.alerting import render\nfrom backend.app.alerting.base import CheckReport, RunReport\nfrom backend.app.alerting.routing import CRITICAL, Route, route_for\nfrom backend.app.core.logging import get_logger\nfrom backend.app.core.secrets import SecretStore\nfrom backend.app.services import notification_service"
 }
@@ -6368,7 +6368,7 @@ id: toolu_01NghDmM2nGy8jUZBGcJb46W
 tool_result
 id: toolu_01NghDmM2nGy8jUZBGcJb46W
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/alerting/slack.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/alerting/slack.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6382,7 +6382,7 @@ id: toolu_015HbJPiLKrX98rQ5MZ7uwVj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/slack.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/slack.py",
   "old_string": "    blocks: list[dict[str, object]] = [\n        {\"type\": \"header\", \"text\": {\"type\": \"plain_text\", \"text\": headline[:150]}},\n        {\n            \"type\": \"section\",\n            \"fields\": [\n                {\"type\": \"mrkdwn\", \"text\": f\"*Datasource:*\\n{report.datasource_type}\"},\n                {\"type\": \"mrkdwn\", \"text\": f\"*Target:*\\n{report.target_label}\"},\n                {\"type\": \"mrkdwn\", \"text\": f\"*Severity:*\\n{report.worst_severity or '—'}\"},\n                {\"type\": \"mrkdwn\", \"text\": f\"*Run:*\\n{report.run_status}\"},\n            ],\n        },\n    ]\n\n    failing = [c for c in report.checks if c.status != \"pass\"]\n    if failing:\n        lines = \"\\n\".join(_check_line(c) for c in failing[:_MAX_CHECK_LINES])\n        if len(failing) > _MAX_CHECK_LINES:\n            lines += f\"\\n…and {len(failing) - _MAX_CHECK_LINES} more\"\n        blocks.append({\"type\": \"section\", \"text\": {\"type\": \"mrkdwn\", \"text\": lines}})\n\n    # `<!channel>` escalates a critical breach to everyone in the channel.\n    if route.mention_channel:\n        blocks.insert(\n            0, {\"type\": \"section\", \"text\": {\"type\": \"mrkdwn\", \"text\": \"<!channel> *CRITICAL*\"}}\n        )\n\n    return {\"text\": headline, \"blocks\": blocks}\n\n\ndef _check_line(check: CheckReport) -> str:\n    \"\"\"One failing check as a Slack mrkdwn bullet (name · status · redacted sample).\"\"\"\n    line = f\"• *{check.check_name}* — `{check.status}`\"\n    sample = check.sample_summary or {}\n    pct = sample.get(\"unexpected_percent\")\n    count = sample.get(\"unexpected_count\")\n    if pct is not None:\n        line += f\" ({pct}% unexpected)\"\n    elif count is not None:\n        line += f\" ({count} unexpected)\"\n    return line",
   "new_string": "    # Base facts + run metadata (env / trigger / when / duration) as section fields;\n    # Slack renders up to 10 fields, and […]
 
@@ -6391,7 +6391,7 @@ id: toolu_015HbJPiLKrX98rQ5MZ7uwVj
 tool_result
 id: toolu_015HbJPiLKrX98rQ5MZ7uwVj
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/alerting/slack.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/alerting/slack.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6405,7 +6405,7 @@ id: toolu_01JJUR5XwRUPLsLZmLuSVGRg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/email.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/email.py",
   "old_string": "from backend.app.alerting.base import CheckReport, RunReport\nfrom backend.app.alerting.routing import route_for\nfrom backend.app.core.logging import get_logger\nfrom backend.app.core.secrets import SecretNotFoundError, SecretStore\nfrom backend.app.services import notification_service",
   "new_string": "from backend.app.alerting import render\nfrom backend.app.alerting.base import CheckReport, RunReport\nfrom backend.app.alerting.routing import route_for\nfrom backend.app.core.logging import get_logger\nfrom backend.app.core.secrets import SecretNotFoundError, SecretStore\nfrom backend.app.services import notification_service"
 }
@@ -6416,7 +6416,7 @@ id: toolu_01JJUR5XwRUPLsLZmLuSVGRg
 tool_result
 id: toolu_01JJUR5XwRUPLsLZmLuSVGRg
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/alerting/email.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/alerting/email.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6430,7 +6430,7 @@ id: toolu_01USEFvGxjuteUoDDpaZYkgB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/email.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/email.py",
   "old_string": "def render_text_body(report: RunReport) -> str:\n    \"\"\"Plain-text body (the alternative for non-HTML clients).\"\"\"\n    lines = [\n        render_subject(report),\n        \"\",\n        f\"Suite:       {report.suite_name}\",\n        f\"Datasource:  {report.datasource_type}\",\n        f\"Target:      {report.target_label}\",\n        f\"Run status:  {report.run_status}\",\n        f\"Worst severity: {report.worst_severity or '—'}\",\n        \"\",\n    ]\n    failing = [c for c in report.checks if c.status != \"pass\"]\n    if failing:\n        lines.append(\"Failing checks:\")\n        lines.extend(_check_line(c) for c in failing[:_MAX_CHECK_LINES])\n        if len(failing) > _MAX_CHECK_LINES:\n            lines.append(f\"  …and {len(failing) - _MAX_CHECK_LINES} more\")\n    return \"\\n\".join(lines)\n\n\ndef render_html_body(report: RunReport) -> str:\n    \"\"\"Minimal HTML body (inline-styled, email-client safe).\"\"\"\n    colour = \"#16a34a\" if report.success else \"#dc2626\"\n    rows = \"\".join(\n        f\"<tr><td style='padding:2px 8px;'><code>{_esc(c.status)}</code></td>\"\n        f\"<td style='padding:2px 8px;'>{_esc(c.check_name)}</td>\"\n        f\"<td style='padding:2px 8px;color:#6b7280;'>{_esc(_sample_note(c))}</td></tr>\"\n        for c in report.checks\n        if c.status != \"pass\"\n    )\n    table = (\n        f\"<table style='border-collapse:collapse;margin-top:8px;'>{rows}</table>\" if rows else \"\"\n    )\n    return (\n        f\"<div style='font-family:system-ui,Arial,sans-serif;'>\"\n        f\"<h2 style='color:{colour};margin:0 0 8px;'>{_esc(render_subject(report))}</h2>\"\n        f\"<p style='margin:0;color:#374151;'>\"\n        f\"<b>Datasource:</b> {_esc(report.datasource_type)} &nbsp;·&nbsp; \"\n        f\"<b>Target:</b> {_esc(report.target_label)} &nbsp;·&nbsp; \"\n        f\"<b>Severity:</b> {_esc(report.worst_severity or '—')}</p>\"\n        f\"{table}</div>\"\n    )\n\n\ndef _check_line(check: CheckReport) -> str:\n    note = _sample_note(check)\n    return f\"  - [{check.status}] {check.check_name}\" + (f\" — {note}\" if note else \"\")\n\n\ndef _sample_note(check: CheckReport) -> str:\n    sample = check.sample_summary or {}\n    pct = sample.get(\"unexpected_percent\")\n    count = sample.get(\"unexpected_count\")\n    if pct is not None:\n        return f\"{pct}% unexpected\"\n    if count is not None:\n        return f\"{count} unexpected\"\n    return […]
 
 > TOOL
@@ -6438,7 +6438,7 @@ id: toolu_01USEFvGxjuteUoDDpaZYkgB
 tool_result
 id: toolu_01USEFvGxjuteUoDDpaZYkgB
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/alerting/email.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/alerting/email.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6492,7 +6492,7 @@ id: toolu_01Sgh8xKi8praHWU21N6MjYF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_slack_email_publishers.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_slack_email_publishers.py",
   "old_string": "    assert f\"…and {25 - slack_mod._MAX_CHECK_LINES} more\" in text\n    assert \"(3 unexpected)\" in text  # count-only sample note branch",
   "new_string": "    assert f\"…and {25 - slack_mod._MAX_CHECK_LINES} more\" in text\n    assert \"3 unexpected\" in text  # count-only sample note branch (render.check_detail)"
 }
@@ -6503,7 +6503,7 @@ id: toolu_01Sgh8xKi8praHWU21N6MjYF
 tool_result
 id: toolu_01Sgh8xKi8praHWU21N6MjYF
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_slack_email_publishers.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_slack_email_publishers.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6516,7 +6516,7 @@ tool_use Write
 id: toolu_01NhrW39BCN12K1zEjYWCAvy
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_render.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_render.py",
   "content": "\"\"\"Tests for the shared Slack/email render helpers (#416).\n\nPure functions — no DB, no network — so they exercise the formatting branches\n(expected-vs-observed, metric fallback, redacted sample, metadata, truncation)\ndirectly on constructed DTOs.\n\"\"\"\n\nfrom __future__ import annotations\n\nimport uuid\nfrom datetime import UTC, datetime\n\nfrom backend.app.alerting import render\nfrom backend.app.alerting.base import CheckReport, RunReport\n\n\ndef _check(\n    *,\n    status: str = \"fail\",\n    metric: float | None = None,\n    observed: dict | None = None,\n    expected: dict | None = None,\n    sample: dict | None = None,\n) -> CheckReport:\n    return CheckReport(\"c\", \"expect_x\", status, metric, observed, expected, sample)\n\n\ndef _report(**overrides: object) -> RunReport:\n    base = {\n        \"run_id\": uuid.uuid4(),\n        \"suite_id\": uuid.uuid4(),\n        \"suite_name\": \"S\",\n        \"run_status\": \"succeeded\",\n        \"datasource_type\": \"snowflake\",\n        \"target_label\": \"T\",\n        \"worst_severity\": \"fail\",\n        \"counts\": {\"fail\": 1},\n        \"checks\": [],\n        \"finished_at\": None,\n    }\n    base.update(overrides)\n    return RunReport(**base)  # type: ignore[arg-type]\n\n\n# ── check_sample_note ─────────────────────────────────────────────────────────\n\n\ndef test_sample_note_prefers_percent_then_count() -> None:\n    assert render.check_sample_note(_check(sample={\"unexpected_percent\": 3.2})) == \"3.2% unexpected\"\n    assert render.check_sample_note(_check(sample={\"unexpected_count\": 5})) == \"5 unexpected\"\n    # A falsy zero count must still render (not be dropped as \"missing\").\n    assert render.check_sample_note(_check(sample={\"unexpected_count\": 0})) == \"0 unexpected\"\n    assert render.check_sample_note(_check(sample=None)) == \"\"\n\n\n# ── check_detail ──────────────────────────────────────────────────────────────\n\n\ndef test_detail_combines_expected_observed_and_sample() -> None:\n    detail = render.check_detail(\n        _check(\n            expected={\"min_value\": 0, \"column\": \"unit_price\"},\n            observed={\"observed_value\": 12},\n            sample={\"unexpected_percent\": 3.2},\n        )\n    )\n    assert detail == \"expected min_value=0, column=unit_price · observed 12 · […]
 
 > TOOL
@@ -6524,7 +6524,7 @@ id: toolu_01NhrW39BCN12K1zEjYWCAvy
 tool_result
 id: toolu_01NhrW39BCN12K1zEjYWCAvy
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_render.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_render.py (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6538,7 +6538,7 @@ id: toolu_014Rfbu7W4tnv85nqYg8i8Lr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_slack_email_publishers.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_slack_email_publishers.py",
   "old_string": "def test_email_html_escapes_and_lists_failures() -> None:\n    html = email_mod.render_html_body(_report(worst=\"fail\"))\n    assert \"order_total &gt;= 0\" in html  # '>' escaped, check listed",
   "new_string": "def test_email_html_escapes_and_lists_failures() -> None:\n    html = email_mod.render_html_body(_report(worst=\"fail\"))\n    assert \"order_total &gt;= 0\" in html  # '>' escaped, check listed\n\n\n# ── enrichment: deep link · metadata · expected-vs-observed (#416) ────────────\n\n\ndef _rich_report() -> RunReport:\n    \"\"\"A failing report carrying run metadata + a deep link + a check with an\n    expected/observed detail, to exercise the #416 enrichment end-to-end.\"\"\"\n    return dataclasses.replace(\n        _report(worst=\"fail\"),\n        env=\"prod\",\n        started_at=datetime(2026, 7, 6, 4, 30, tzinfo=UTC),\n        finished_at=datetime(2026, 7, 6, 4, 30, 12, tzinfo=UTC),\n        triggered_by=\"adf:pl_orders:run-99\",\n        run_url=\"https://dataq.example.com/results/abc123\",\n        checks=[\n            CheckReport(\n                \"order_total >= 0\",\n                \"expect_column_values_to_be_between\",\n                \"fail\",\n                None,\n                {\"observed_value\": 12},\n                {\"min_value\": 0},\n                {\"unexpected_percent\": 3.2},\n            ),\n        ],\n    )\n\n\ndef test_slack_render_includes_view_run_button_and_metadata() -> None:\n    body = render_slack_message(_rich_report(), route_for(_report(worst=\"fail\"), \"warn\"))\n    blocks = body[\"blocks\"]\n    # A button block deep-links to the run.\n    button = next(b for b in blocks if b.get(\"type\") == \"actions\")  # type: ignore[union-attr]\n    assert button[\"elements\"][0][\"url\"] == \"https://dataq.example.com/results/abc123\"\n    text = str(blocks)\n    assert \"prod\" in text and \"ADF\" in text  # env + trigger metadata fields\n    # expected-vs-observed detail on the failing check.\n    assert \"expected min_value=0 · observed 12 · 3.2% unexpected\" in text\n\n\ndef test_slack_render_omits_button_without_run_url() -> None:\n    body = render_slack_message(_report(worst=\"fail\"), route_for(_report(worst=\"fail\"), \"warn\"))\n […]
 
@@ -6547,7 +6547,7 @@ id: toolu_014Rfbu7W4tnv85nqYg8i8Lr
 tool_result
 id: toolu_014Rfbu7W4tnv85nqYg8i8Lr
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_slack_email_publishers.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_slack_email_publishers.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6658,7 +6658,7 @@ tool_use Bash
 id: toolu_01Ty1FEmnCmUJmXJxacDqr3v
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ && grep -n \"def test_\\|build_run_report\\|_run(\\|_mk_run\\|def _run\" backend/tests/alerting/test_builder.py | head -40",
+  "command": "cd /home/<USER>/Coding/Python/DataQ && grep -n \"def test_\\|build_run_report\\|_run(\\|_mk_run\\|def _run\" backend/tests/alerting/test_builder.py | head -40",
   "description": "Inspect test_builder.py structure from repo root"
 }
 ```
@@ -6693,7 +6693,7 @@ tool_use Read
 id: toolu_01XGvzUVeheEG8Zou9b9uMY4
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_builder.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_builder.py",
   "offset": 86,
   "limit": 66
 }
@@ -6778,7 +6778,7 @@ tool_use Read
 id: toolu_012nsqoupYnznhoCAsVq9zwh
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_builder.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_builder.py",
   "offset": 147,
   "limit": 20
 }
@@ -6822,7 +6822,7 @@ id: toolu_01L3KCF66ZxTeecrFrRE1dVe
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_builder.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_builder.py",
   "old_string": "def test_build_report_surfaces_non_pii_sample_values(db_session: Any) -> None:",
   "new_string": "def test_build_report_populates_run_metadata(\n    db_session: Any, monkeypatch: pytest.MonkeyPatch\n) -> None:\n    # #416: env (from the connection), started_at + triggered_by (from the run), and\n    # a run_url deep link assembled from the configured public base URL.\n    from types import SimpleNamespace\n\n    monkeypatch.setattr(\n        builder, \"get_settings\", lambda: SimpleNamespace(public_base_url=\"https://dq.example.com/\")\n    )\n    owner = User(aad_object_id=uuid.uuid4().hex, email=f\"u-{uuid.uuid4().hex[:6]}@x.io\")\n    db_session.add(owner)\n    db_session.flush()\n    conn = Connection(\n        name=f\"c-{uuid.uuid4().hex[:8]}\",\n        type=\"snowflake\",\n        env=\"uat\",\n        config={\"account\": \"a\"},\n        secret_ref=\"kv\",\n        created_by=owner.id,\n    )\n    db_session.add(conn)\n    db_session.flush()\n    suite = Suite(name=\"S\", connection_id=conn.id, created_by=owner.id, target={\"table\": \"T\"})\n    db_session.add(suite)\n    db_session.flush()\n    started = datetime(2026, 7, 6, 4, 30, tzinfo=UTC)\n    run = Run(\n        suite_id=suite.id,\n        status=\"succeeded\",\n        started_at=started,\n        finished_at=started + timedelta(seconds=12),\n        triggered_by=\"schedule:daily\",\n    )\n    db_session.add(run)\n    db_session.commit()\n\n    report = builder.build_run_report(db_session, run)\n\n    assert report.env == \"uat\"\n    assert report.started_at == started\n    assert report.triggered_by == \"schedule:daily\"\n    assert report.run_url == f\"https://dq.example.com/results/{run.id}\"\n    assert report.duration_seconds == 12.0\n\n\ndef test_build_report_run_url_none_without_base_url(\n    db_session: Any, monkeypatch: pytest.MonkeyPatch\n) -> None:\n    from types import SimpleNamespace\n\n    monkeypatch.setattr(builder, \"get_settings\", lambda: SimpleNamespace(public_base_url=\"\"))\n    _suite, run = _suite_with_check(db_session, status=\"pass\")\n    assert builder.build_run_report(db_session, run).run_url is None\n\n\ndef test_build_report_surfaces_non_pii_sample_values(db_session: Any) -> None:"
 }
@@ -6833,7 +6833,7 @@ id: toolu_01L3KCF66ZxTeecrFrRE1dVe
 tool_result
 id: toolu_01L3KCF66ZxTeecrFrRE1dVe
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_builder.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_builder.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6846,7 +6846,7 @@ tool_use Read
 id: toolu_01JD2EM7fzihzbLgpd8J3WgK
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_builder.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_builder.py",
   "offset": 1,
   "limit": 20
 }
@@ -6886,7 +6886,7 @@ id: toolu_014vTo2KC1jFftc51jiSHRif
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_builder.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_builder.py",
   "old_string": "import uuid\nfrom datetime import UTC, datetime\nfrom typing import Any, cast\n\nfrom backend.app.alerting import builder",
   "new_string": "import uuid\nfrom datetime import UTC, datetime, timedelta\nfrom typing import Any, cast\n\nimport pytest\n\nfrom backend.app.alerting import builder"
 }
@@ -6897,7 +6897,7 @@ id: toolu_014vTo2KC1jFftc51jiSHRif
 tool_result
 id: toolu_014vTo2KC1jFftc51jiSHRif
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_builder.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_builder.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6932,7 +6932,7 @@ tool_use Bash
 id: toolu_015y6jVQNWK6s411pPzbATbS
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ/backend && python -m pytest tests/alerting --no-cov -q 2>&1 | tail -6",
+  "command": "cd /home/<USER>/Coding/Python/DataQ/backend && python -m pytest tests/alerting --no-cov -q 2>&1 | tail -6",
   "description": "Run full alerting suite from backend dir"
 }
 ```
@@ -6957,7 +6957,7 @@ tool_use Bash
 id: toolu_01GYgybZrAezw68GE9gf6QtP
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ && ruff check --fix backend/app/alerting/render.py backend/app/alerting/base.py backend/app/alerting/builder.py backend/app/alerting/slack.py backend/app/alerting/email.py backend/tests/alerting/test_render.py backend/tests/alerting/test_slack_email_publishers.py backend/tests/alerting/test_builder.py 2>&1 | tail -3; echo \"=== black ===\"; black backend/app/alerting/render.py backend/app/alerting/base.py backend/app/alerting/builder.py backend/app/alerting/slack.py backend/app/alerting/email.py backend/tests/alerting/test_render.py backend/tests/alerting/test_slack_email_publishers.py backend/tests/alerting/test_builder.py 2>&1 | tail -1",
+  "command": "cd /home/<USER>/Coding/Python/DataQ && ruff check --fix backend/app/alerting/render.py backend/app/alerting/base.py backend/app/alerting/builder.py backend/app/alerting/slack.py backend/app/alerting/email.py backend/tests/alerting/test_render.py backend/tests/alerting/test_slack_email_publishers.py backend/tests/alerting/test_builder.py 2>&1 | tail -3; echo \"=== black ===\"; black backend/app/alerting/render.py backend/app/alerting/base.py backend/app/alerting/builder.py backend/app/alerting/slack.py backend/app/alerting/email.py backend/tests/alerting/test_render.py backend/tests/alerting/test_slack_email_publishers.py backend/tests/alerting/test_builder.py 2>&1 | tail -1",
   "description": "Ruff --fix and Black on all changed files"
 }
 ```
@@ -7006,7 +7006,7 @@ tool_use Read
 id: toolu_012JPuQ7GDMUb3g9BvQoxnzU
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_slack_email_publishers.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_slack_email_publishers.py",
   "offset": 138,
   "limit": 18
 }
@@ -7044,7 +7044,7 @@ id: toolu_01CYVYHGpPHbZjKmmvauvCrw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_slack_email_publishers.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_slack_email_publishers.py",
   "old_string": "def test_slack_render_includes_view_run_button_and_metadata() -> None:\n    body = render_slack_message(_rich_report(), route_for(_report(worst=\"fail\"), \"warn\"))\n    blocks = body[\"blocks\"]\n    # A button block deep-links to the run.\n    button = next(b for b in blocks if b.get(\"type\") == \"actions\")  # type: ignore[union-attr]\n    assert button[\"elements\"][0][\"url\"] == \"https://dataq.example.com/results/abc123\"\n    text = str(blocks)\n    assert \"prod\" in text and \"ADF\" in text  # env + trigger metadata fields\n    # expected-vs-observed detail on the failing check.\n    assert \"expected min_value=0 · observed 12 · 3.2% unexpected\" in text\n\n\ndef test_slack_render_omits_button_without_run_url() -> None:\n    body = render_slack_message(_report(worst=\"fail\"), route_for(_report(worst=\"fail\"), \"warn\"))\n    assert not any(b.get(\"type\") == \"actions\" for b in body[\"blocks\"])  # type: ignore[union-attr]",
   "new_string": "def test_slack_render_includes_view_run_button_and_metadata() -> None:\n    body = render_slack_message(_rich_report(), route_for(_report(worst=\"fail\"), \"warn\"))\n    blocks = cast(list[dict[str, Any]], body[\"blocks\"])\n    # A button block deep-links to the run.\n    button = next(b for b in blocks if b.get(\"type\") == \"actions\")\n    assert button[\"elements\"][0][\"url\"] == \"https://dataq.example.com/results/abc123\"\n    text = str(blocks)\n    assert \"prod\" in text and \"ADF\" in text  # env + trigger metadata fields\n    # expected-vs-observed detail on the failing check.\n    assert \"expected min_value=0 · observed 12 · 3.2% unexpected\" in text\n\n\ndef test_slack_render_omits_button_without_run_url() -> None:\n    body = render_slack_message(_report(worst=\"fail\"), route_for(_report(worst=\"fail\"), \"warn\"))\n    blocks = cast(list[dict[str, Any]], body[\"blocks\"])\n    assert not any(b.get(\"type\") == \"actions\" for b in blocks)"
 } […]
@@ -7054,7 +7054,7 @@ id: toolu_01CYVYHGpPHbZjKmmvauvCrw
 tool_result
 id: toolu_01CYVYHGpPHbZjKmmvauvCrw
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_slack_email_publishers.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_slack_email_publishers.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7068,7 +7068,7 @@ id: toolu_019Lbq3xpsJZzNngiwYfGsha
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_slack_email_publishers.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_slack_email_publishers.py",
   "old_string": "from typing import Any, ClassVar",
   "new_string": "from typing import Any, ClassVar, cast"
 }
@@ -7079,7 +7079,7 @@ id: toolu_019Lbq3xpsJZzNngiwYfGsha
 tool_result
 id: toolu_019Lbq3xpsJZzNngiwYfGsha
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_slack_email_publishers.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_slack_email_publishers.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7117,7 +7117,7 @@ id: toolu_019nPYC9R6tmWXiT9jareyLZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_render.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_render.py",
   "old_string": "    status: str = \"fail\",\n    metric: float | None = None,\n    observed: dict | None = None,\n    expected: dict | None = None,\n    sample: dict | None = None,\n) -> CheckReport:",
   "new_string": "    status: str = \"fail\",\n    metric: float | None = None,\n    observed: dict[str, Any] | None = None,\n    expected: dict[str, Any] | None = None,\n    sample: dict[str, Any] | None = None,\n) -> CheckReport:"
 }
@@ -7128,7 +7128,7 @@ id: toolu_019nPYC9R6tmWXiT9jareyLZ
 tool_result
 id: toolu_019nPYC9R6tmWXiT9jareyLZ
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_render.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_render.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7142,7 +7142,7 @@ id: toolu_01AGvHoTpWJ5F93A1fCGKoKo
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_render.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_render.py",
   "old_string": "import uuid\nfrom datetime import UTC, datetime\n\nfrom backend.app.alerting import render",
   "new_string": "import uuid\nfrom datetime import UTC, datetime\nfrom typing import Any\n\nfrom backend.app.alerting import render"
 }
@@ -7153,7 +7153,7 @@ id: toolu_01AGvHoTpWJ5F93A1fCGKoKo
 tool_result
 id: toolu_01AGvHoTpWJ5F93A1fCGKoKo
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_render.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_render.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7185,7 +7185,7 @@ tool_use Bash
 id: toolu_01RQd8yNByyPMCQLsrb2xMAT
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ/backend && python -m pytest --no-cov -q 2>&1 | tail -4",
+  "command": "cd /home/<USER>/Coding/Python/DataQ/backend && python -m pytest --no-cov -q 2>&1 | tail -4",
   "description": "Full backend suite"
 }
 ```
@@ -7207,7 +7207,7 @@ tool_use Bash
 id: toolu_01GLneXZMGXnSz1216AhATHr
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ && echo \"=== bandit ===\" && bandit -q -r backend/app/alerting/render.py backend/app/alerting/base.py backend/app/alerting/builder.py backend/app/alerting/slack.py backend/app/alerting/email.py 2>&1 | grep -iE \">> issue|No issues|Severity\" | head; echo \"=== coverage ===\" && cd backend && python -m pytest --cov=backend.app.alerting.render --cov=backend.app.alerting.slack --cov=backend.app.alerting.email --cov=backend.app.alerting.builder --cov=backend.app.alerting.base --cov-report=term-missing --cov-fail-under=0 -q 2>&1 | grep -iE \"render.py|slack.py|email.py|builder.py|base.py|TOTAL\"",
+  "command": "cd /home/<USER>/Coding/Python/DataQ && echo \"=== bandit ===\" && bandit -q -r backend/app/alerting/render.py backend/app/alerting/base.py backend/app/alerting/builder.py backend/app/alerting/slack.py backend/app/alerting/email.py 2>&1 | grep -iE \">> issue|No issues|Severity\" | head; echo \"=== coverage ===\" && cd backend && python -m pytest --cov=backend.app.alerting.render --cov=backend.app.alerting.slack --cov=backend.app.alerting.email --cov=backend.app.alerting.builder --cov=backend.app.alerting.base --cov-report=term-missing --cov-fail-under=0 -q 2>&1 | grep -iE \"render.py|slack.py|email.py|builder.py|base.py|TOTAL\"",
   "description": "Bandit + coverage on changed alerting modules"
 }
 ```
@@ -7256,7 +7256,7 @@ tool_use Bash
 id: toolu_01Y65wvsKpa4utsavQt8gv1H
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ && grep -rln \"PUBLIC_BASE_URL\\|public_base_url\" docs 2>/dev/null; echo \"---\"; grep -rln \"PUBLIC_BASE_URL\" . --include=\"*.md\" 2>/dev/null | head",
+  "command": "cd /home/<USER>/Coding/Python/DataQ && grep -rln \"PUBLIC_BASE_URL\\|public_base_url\" docs 2>/dev/null; echo \"---\"; grep -rln \"PUBLIC_BASE_URL\" . --include=\"*.md\" 2>/dev/null | head",
   "description": "Find docs referencing public_base_url"
 }
 ```
@@ -7298,7 +7298,7 @@ tool_use Read
 id: toolu_019ZngGaMG4EGd3yLx5c9Dnb
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/deploy/README.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/deploy/README.md",
   "offset": 35,
   "limit": 4
 }
@@ -7322,7 +7322,7 @@ id: toolu_01SYYPJd8EmUFzDRQP1Uvm3n
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/deploy/README.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/deploy/README.md",
   "old_string": "| `PUBLIC_BASE_URL` | n/a | the public origin (used to assemble webhook URLs). |",
   "new_string": "| `PUBLIC_BASE_URL` | n/a | the public origin — used to assemble inbound webhook URLs **and** the \"View run\" deep links in Slack/email alerts (#416); unset → alerts omit the link. |"
 }
@@ -7333,7 +7333,7 @@ id: toolu_01SYYPJd8EmUFzDRQP1Uvm3n
 tool_result
 id: toolu_01SYYPJd8EmUFzDRQP1Uvm3n
 ```
-The file /Users/arijit/Coding/Python/DataQ/deploy/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/deploy/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7347,7 +7347,7 @@ id: toolu_01X4xWNrBaE8f12wxH1o2DKM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/core/config.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/core/config.py",
   "old_string": "    # Public base URL of the deployed API (scheme+host, no trailing slash), used\n    # to assemble the inbound orchestration webhook URLs the admin webhook-config\n    # surface shows (#490). Set to the public host on deploy (e.g. the SWA origin\n    # that proxies /api). Empty → fall back to the request's own base URL.\n    #   PUBLIC_BASE_URL=https://dataq.example.com\n    public_base_url: str = \"\"",
   "new_string": "    # Public base URL of the deployed app (scheme+host, no trailing slash). Used to\n    # assemble the inbound orchestration webhook URLs the admin webhook-config\n    # surface shows (#490) AND the \"View run\" deep links in Slack/email alerts\n    # (/results/<run_id>, #416). Set to the public host on deploy (the frontend\n    # origin that proxies /api). Empty → webhook URLs fall back to the request's own\n    # base URL, and alerts omit the deep link.\n    #   PUBLIC_BASE_URL=https://dataq.example.com\n    public_base_url: str = \"\""
 }
@@ -7358,7 +7358,7 @@ id: toolu_01X4xWNrBaE8f12wxH1o2DKM
 tool_result
 id: toolu_01X4xWNrBaE8f12wxH1o2DKM
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/core/config.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/core/config.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7433,7 +7433,7 @@ tool_use Read
 id: toolu_0117q6PUEuz4MuqkS5JQTeSW
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/run_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/run_service.py",
   "offset": 577,
   "limit": 70
 }
@@ -7480,7 +7480,7 @@ id: toolu_013BC2rv42eDPvZFhZq3uwtE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/render.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/render.py",
   "old_string": "# Longer scalars (a big value_set, a stringified row) are truncated so one check\n# can't blow up a card; the full detail lives on the linked run-detail page.\n_MAX_SCALAR = 60",
   "new_string": "# Longer scalars (a big value_set, a stringified row) are truncated so one check\n# can't blow up a card; the full detail lives on the linked run-detail page.\n_MAX_SCALAR = 60\n# How many redacted failing-sample values to preview inline in an alert.\n_MAX_SAMPLE_VALUES = 3"
 }
@@ -7491,7 +7491,7 @@ id: toolu_013BC2rv42eDPvZFhZq3uwtE
 tool_result
 id: toolu_013BC2rv42eDPvZFhZq3uwtE
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/alerting/render.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/alerting/render.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7501,7 +7501,7 @@ id: toolu_01FTjqsch7idaS8RNhjigLFf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/render.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/render.py",
   "old_string": "def check_detail(check: CheckReport) -> str:",
   "new_string": "def check_sample_values(check: CheckReport) -> str:\n    \"\"\"A short preview of the tested column's **already-redacted** failing values —\n    ``\"e.g. -5, -12, -3\"`` — from ``sample_summary['partial_unexpected_list']``, or\n    ``\"\"`` when there are none / they're row-dicts (too wide for a one-liner).\n\n    These are whatever ``run_service.redact_sample_failures`` chose to surface\n    (non-PII tested-column values, or ``\"***\"`` masks) — never raw PII: this only\n    reads the redacted DTO, it does not re-derive from raw rows.\n    \"\"\"\n    values = (check.sample_summary or {}).get(\"partial_unexpected_list\")\n    if not isinstance(values, list):\n        return \"\"\n    scalars = [v for v in values if not isinstance(v, dict | list)]\n    if not scalars:\n        return \"\"\n    shown = \", \".join(_scalar(v) for v in scalars[:_MAX_SAMPLE_VALUES])\n    extra = len(scalars) - _MAX_SAMPLE_VALUES\n    return f\"e.g. {shown}\" + (f\", +{extra} more\" if extra > 0 else \"\")\n\n\ndef check_detail(check: CheckReport) -> str:"
 }
@@ -7512,7 +7512,7 @@ id: toolu_01FTjqsch7idaS8RNhjigLFf
 tool_result
 id: toolu_01FTjqsch7idaS8RNhjigLFf
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/alerting/render.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/alerting/render.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7522,7 +7522,7 @@ id: toolu_01UoqHuXpFWCStpCK9yHQd2i
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/render.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/render.py",
   "old_string": "    sample = check_sample_note(check)\n    if sample:\n        parts.append(sample)\n    return \" · \".join(parts)",
   "new_string": "    sample = check_sample_note(check)\n    if sample:\n        parts.append(sample)\n    values = check_sample_values(check)\n    if values:\n        parts.append(values)\n    return \" · \".join(parts)"
 }
@@ -7533,7 +7533,7 @@ id: toolu_01UoqHuXpFWCStpCK9yHQd2i
 tool_result
 id: toolu_01UoqHuXpFWCStpCK9yHQd2i
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/alerting/render.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/alerting/render.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7547,7 +7547,7 @@ id: toolu_01TBDyhsYi2n3WzrbseS2tRG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_render.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_render.py",
   "old_string": "def test_detail_empty_when_nothing_present() -> None:\n    assert render.check_detail(_check()) == \"\"",
   "new_string": "def test_detail_empty_when_nothing_present() -> None:\n    assert render.check_detail(_check()) == \"\"\n\n\ndef test_detail_previews_redacted_sample_values() -> None:\n    detail = render.check_detail(\n        _check(sample={\"unexpected_count\": 4, \"partial_unexpected_list\": [-5, -12, -3, -1]})\n    )\n    assert detail == \"4 unexpected · e.g. -5, -12, -3, +1 more\"\n\n\ndef test_sample_values_ignores_row_dicts_and_missing() -> None:\n    # Row-dict samples are too wide for a one-liner (shown on the run page instead).\n    assert render.check_sample_values(_check(sample={\"partial_unexpected_list\": [{\"a\": 1}]})) == \"\"\n    assert render.check_sample_values(_check(sample=None)) == \"\""
 }
@@ -7558,7 +7558,7 @@ id: toolu_01TBDyhsYi2n3WzrbseS2tRG
 tool_result
 id: toolu_01TBDyhsYi2n3WzrbseS2tRG
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_render.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_render.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7567,7 +7567,7 @@ tool_use Bash
 id: toolu_01LsxVeHjhuPpy2eYb5nmoiL
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ/backend && python -m pytest tests/alerting/test_render.py tests/alerting/test_slack_email_publishers.py tests/alerting/test_builder.py --no-cov -q 2>&1 | tail -5",
+  "command": "cd /home/<USER>/Coding/Python/DataQ/backend && python -m pytest tests/alerting/test_render.py tests/alerting/test_slack_email_publishers.py tests/alerting/test_builder.py --no-cov -q 2>&1 | tail -5",
   "description": "Run render + publisher + builder tests"
 }
 ```
@@ -7591,7 +7591,7 @@ tool_use Bash
 id: toolu_01GeTgiUVWca29DvPE6KVZpd
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ && ruff check backend/app/alerting/render.py backend/app/alerting/base.py backend/app/alerting/builder.py backend/app/alerting/slack.py backend/app/alerting/email.py backend/app/core/config.py backend/tests/alerting/test_render.py backend/tests/alerting/test_slack_email_publishers.py backend/tests/alerting/test_builder.py 2>&1 | tail -2 && black --check backend/app/alerting/render.py backend/app/alerting/base.py backend/app/alerting/builder.py backend/app/alerting/slack.py backend/app/alerting/email.py backend/tests/alerting/test_render.py 2>&1 | tail -1 && mypy backend/app/alerting/render.py backend/app/alerting/base.py backend/app/alerting/builder.py backend/app/alerting/slack.py backend/app/alerting/email.py backend/tests/alerting/test_render.py backend/tests/alerting/test_slack_email_publishers.py backend/tests/alerting/test_builder.py 2>&1 | grep -v \"unused section\" | tail -2",
+  "command": "cd /home/<USER>/Coding/Python/DataQ && ruff check backend/app/alerting/render.py backend/app/alerting/base.py backend/app/alerting/builder.py backend/app/alerting/slack.py backend/app/alerting/email.py backend/app/core/config.py backend/tests/alerting/test_render.py backend/tests/alerting/test_slack_email_publishers.py backend/tests/alerting/test_builder.py 2>&1 | tail -2 && black --check backend/app/alerting/render.py backend/app/alerting/base.py backend/app/alerting/builder.py backend/app/alerting/slack.py backend/app/alerting/email.py backend/tests/alerting/test_render.py 2>&1 | tail -1 && mypy backend/app/alerting/render.py backend/app/alerting/base.py backend/app/alerting/builder.py backend/app/alerting/slack.py backend/app/alerting/email.py backend/tests/alerting/test_render.py backend/tests/alerting/test_slack_email_publishers.py backend/tests/alerting/test_builder.py 2>&1 | grep -v \"unused section\" | tail -2",
   "description": "Ruff, Black, mypy final check"
 }
 ```
@@ -7612,7 +7612,7 @@ tool_use Bash
 id: toolu_019wGWkX83HFoGYHkuX6uft7
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ/backend && python -m pytest --no-cov -q 2>&1 | tail -3 && echo \"=== coverage (render) ===\" && python -m pytest tests/alerting --cov=backend.app.alerting.render --cov-report=term-missing --cov-fail-under=0 -q 2>&1 | grep -iE \"render.py\"",
+  "command": "cd /home/<USER>/Coding/Python/DataQ/backend && python -m pytest --no-cov -q 2>&1 | tail -3 && echo \"=== coverage (render) ===\" && python -m pytest tests/alerting --cov=backend.app.alerting.render --cov-report=term-missing --cov-fail-under=0 -q 2>&1 | grep -iE \"render.py\"",
   "description": "Full suite + render coverage"
 }
 ```
@@ -7639,7 +7639,7 @@ tool_use Bash
 id: toolu_01GimyGsVMXFBU8MM9okm4JG
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ && git add -A && git commit -q -F - <<'EOF'\nfeat(alerting): enrich Slack/email alerts with deep link, metadata, expected-vs-observed (#416)\n\nThe Slack/email alerts (added in #413) were minimal — suite, datasource, target,\nseverity, failing-check names + count: enough to know something failed, not enough\nto act. Enrich both channels so an alert says exactly what to fix:\n\n- **Deep link to the run** — a \"View run\" button (Slack Block Kit) / link (email)\n  to `/results/<run_id>`, assembled from the existing `PUBLIC_BASE_URL` (no new\n  config); omitted when unset rather than emitting a broken relative link.\n- **Run metadata** — env, trigger source (Schedule/ADF/Airflow/dbt/Manual, parsed\n  from `triggered_by`), start time, and wall-clock duration.\n- **Per-check expected-vs-observed** — the check's expected kwargs, observed value\n  (or `metric_value`), the redacted unexpected %/count, and a short preview of the\n  tested column's **already-redacted** failing values (`e.g. -5, -12, -3`).\n\nNew shared `alerting/render.py` holds the pure formatters both channels use, so\nthey stay consistent and neither re-implements the formatting (also dedupes the\nold per-channel `_sample_note`). `RunReport` gains optional `env`/`started_at`/\n`triggered_by`/`run_url` fields + a `duration_seconds` property, populated by the\nbuilder; all defaulted so existing constructors are unaffected.\n\n**PII:** the renderers read only the already-redacted DTO fields the builder\nproduced (`sample_summary` via `redact_sample_failures`, observed/expected are […]
+  "command": "cd /home/<USER>/Coding/Python/DataQ && git add -A && git commit -q -F - <<'EOF'\nfeat(alerting): enrich Slack/email alerts with deep link, metadata, expected-vs-observed (#416)\n\nThe Slack/email alerts (added in #413) were minimal — suite, datasource, target,\nseverity, failing-check names + count: enough to know something failed, not enough\nto act. Enrich both channels so an alert says exactly what to fix:\n\n- **Deep link to the run** — a \"View run\" button (Slack Block Kit) / link (email)\n  to `/results/<run_id>`, assembled from the existing `PUBLIC_BASE_URL` (no new\n  config); omitted when unset rather than emitting a broken relative link.\n- **Run metadata** — env, trigger source (Schedule/ADF/Airflow/dbt/Manual, parsed\n  from `triggered_by`), start time, and wall-clock duration.\n- **Per-check expected-vs-observed** — the check's expected kwargs, observed value\n  (or `metric_value`), the redacted unexpected %/count, and a short preview of the\n  tested column's **already-redacted** failing values (`e.g. -5, -12, -3`).\n\nNew shared `alerting/render.py` holds the pure formatters both channels use, so\nthey stay consistent and neither re-implements the formatting (also dedupes the\nold per-channel `_sample_note`). `RunReport` gains optional `env`/`started_at`/\n`triggered_by`/`run_url` fields + a `duration_seconds` property, populated by the\nbuilder; all defaulted so existing constructors are unaffected.\n\n**PII:** the renderers read only the already-redacted DTO fields the builder\nproduced (`sample_summary` via `redact_sample_failures`, observed/expected are […]
 
 > TOOL
 
@@ -7659,7 +7659,7 @@ tool_use Read
 id: toolu_018wfNz3xAYAUkG4Z7DCwbg3
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/render.py"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/render.py"
 }
 ```
 
@@ -7744,7 +7744,7 @@ tool_use Read
 id: toolu_01FKu3QDRzG5sabpd7CxvmXC
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/email.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/email.py",
   "offset": 43,
   "limit": 62
 }
@@ -7960,7 +7960,7 @@ id: toolu_01Cfae1qMK8m6zneEpq4aozN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "### v1.1 W2 — Portability: OTel logs, secrets lifecycle, dry-run depth (due 2026-07-18) — 10/14",
   "new_string": "### v1.1 W2 — Portability: OTel logs, secrets lifecycle, dry-run depth (due 2026-07-18) — 11/14"
 }
@@ -7980,7 +7980,7 @@ tool_use Read
 id: toolu_014opHmtGswsR7mzGzuSHtLr
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "offset": 150,
   "limit": 1
 }
@@ -8001,7 +8001,7 @@ id: toolu_01SeJkSo9TAtC6YVDjJ7grx5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "### v1.1 W2 — Portability: OTel logs, secrets lifecycle, dry-run depth (due 2026-07-18) — 10/14",
   "new_string": "### v1.1 W2 — Portability: OTel logs, secrets lifecycle, dry-run depth (due 2026-07-18) — 11/14"
 }
@@ -8012,7 +8012,7 @@ id: toolu_01SeJkSo9TAtC6YVDjJ7grx5
 tool_result
 id: toolu_01SeJkSo9TAtC6YVDjJ7grx5
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8022,7 +8022,7 @@ id: toolu_01ABDTrAxsyn3wdD5KNLmwbZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "| ⬜ | [#416](https://github.com/TheurgicDuke771/DataQ/issues/416) Enrich Slack/email alerts (deep link, expected-vs-observed, redacted sample, run metadata) — same code area as the batch (mapped 2026-07-04) | Theme 5 |",
   "new_string": "| ✅ | [#416](https://github.com/TheurgicDuke771/DataQ/issues/416) Enrich Slack/email alerts — \"View run\" deep link (reuses `PUBLIC_BASE_URL`), run metadata (env/trigger/started/duration), per-check expected-vs-observed + redacted sample preview; shared pure `alerting/render.py` formatters ([#659](https://github.com/TheurgicDuke771/DataQ/pull/659)). Live Slack+email visual verify deferred to the smoke lane (no transport in CI) | Theme 5 |"
 }
@@ -8033,7 +8033,7 @@ id: toolu_01ABDTrAxsyn3wdD5KNLmwbZ
 tool_result
 id: toolu_01ABDTrAxsyn3wdD5KNLmwbZ
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8047,7 +8047,7 @@ id: toolu_01RcowDtNZ5YUaiqSPJ2gCB7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "| **Open issues** | **65** (W2 2026-07-05 — **alerting-nit batch [#656](https://github.com/TheurgicDuke771/DataQ/pull/656)**: #386 (dedup severity single-source) + #387 (suppression guard) + #388 (alert_on drift-guard) closed; #389 closed won't-fix (Slack/email publishers made the per-channel name correct). Follow-up **#655 closed via [#657](https://github.com/TheurgicDuke771/DataQ/pull/657)** — one canonical `db.models.SEVERITY_RANK` + `FAILING_TIERS` + shared `worst_severity()` helper (converged the 3 rank maps + the builder/run_service worst-severity loops). — **UI-gap remediation batch**",
   "new_string": "| **Open issues** | **64** (W2 2026-07-05 — **alerting batch**: #386 (dedup severity single-source) + #387 (suppression guard) + #388 (alert_on drift-guard) closed via [#656](https://github.com/TheurgicDuke771/DataQ/pull/656); #389 closed won't-fix (Slack/email publishers made the per-channel name correct); **#655 closed via [#657](https://github.com/TheurgicDuke771/DataQ/pull/657)** — one canonical `db.models.SEVERITY_RANK` + `FAILING_TIERS` + shared `worst_severity()` helper (converged the 3 rank maps + the builder/run_service worst-severity loops); **#416 closed via [#659](https://github.com/TheurgicDuke771/DataQ/pull/659)** — enriched Slack/email alerts (deep link + metadata + expected-vs-observed via a shared pure `alerting/render.py`). — **UI-gap remediation batch**"
 }
@@ -8058,7 +8058,7 @@ id: toolu_01RcowDtNZ5YUaiqSPJ2gCB7
 tool_result
 id: toolu_01RcowDtNZ5YUaiqSPJ2gCB7
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8071,7 +8071,7 @@ tool_use Bash
 id: toolu_012ob3ZyLpi3FT2M7B9U3AUt
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ\nbody=$(gh issue view 597 --json body --jq '.body')\nprintf '%s' \"$body\" | perl -pe 's/^- \\[ \\] #416 \\(alert enrichment/- [x] #416 (alert enrichment — done in #659/' | gh issue edit 597 --body-file - >/dev/null 2>&1\ngh issue view 597 --json body --jq '.body' | grep -iE \"#416 \\(\"",
+  "command": "cd /home/<USER>/Coding/Python/DataQ\nbody=$(gh issue view 597 --json body --jq '.body')\nprintf '%s' \"$body\" | perl -pe 's/^- \\[ \\] #416 \\(alert enrichment/- [x] #416 (alert enrichment — done in #659/' | gh issue edit 597 --body-file - >/dev/null 2>&1\ngh issue view 597 --json body --jq '.body' | grep -iE \"#416 \\(\"",
   "description": "Tick #416 in epic #597"
 }
 ```
@@ -8090,7 +8090,7 @@ tool_use Bash
 id: toolu_01N4DPTMwLcA4HhwzctS6Zvb
 ```json
 {
-  "command": "git add docs/progress.md && git commit -q -F - <<'EOF'\ndocs(progress): mark #416 done + refresh W2/open-issue count\n\nPost-merge tracker update for #659 (Slack/email alert enrichment): flip the W2\nrow to ✅ (11/14), refresh the Snapshot open-issue count (65→64).\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\ngit push -u origin docs/progress-416 2>&1 | tail -1 && gh pr create --base main --head docs/progress-416 --title \"docs(progress): mark #416 done + refresh counts\" --milestone \"v1.1 Week 2 — Portability: OTel logs, secrets lifecycle, dry-run depth\" --body \"Post-merge tracker catch-up for #659 (alert enrichment). Docs-only.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\" 2>&1 | tail -1",
+  "command": "git add docs/progress.md && git commit -q -F - <<'EOF'\ndocs(progress): mark #416 done + refresh W2/open-issue count\n\nPost-merge tracker update for #659 (Slack/email alert enrichment): flip the W2\nrow to ✅ (11/14), refresh the Snapshot open-issue count (65→64).\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\ngit push -u origin docs/progress-416 2>&1 | tail -1 && gh pr create --base main --head docs/progress-416 --title \"docs(progress): mark #416 done + refresh counts\" --milestone \"v1.1 Week 2 — Portability: OTel logs, secrets lifecycle, dry-run depth\" --body \"Post-merge tracker catch-up for #659 (alert enrichment). Docs-only.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\" 2>&1 | tail -1",
   "description": "Commit docs, push, open PR"
 }
 ```
@@ -8228,7 +8228,7 @@ tool_use Read
 id: toolu_015U5AcShaF4za4AHVBvLAYZ
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/dispatch.py"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/dispatch.py"
 }
 ```
 
@@ -8312,7 +8312,7 @@ tool_use Bash
 id: toolu_01EM1Dsnwq1jNcyh8D2n7VV9
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ\necho \"=== local .env / .env.app alert config (values masked) ===\"\nfor f in .env .env.app; do\n  if test -f $f\n    echo \"-- $f --\"\n    grep -iE \"SLACK_WEBHOOK|EMAIL_|TEAMS_WEBHOOK|PUBLIC_BASE_URL\" $f | sed -E 's/=(.+)/= <set>/'\n  end\nend\necho \"=== az available? ===\"; which az 2>/dev/null && echo \"yes\" || echo \"no az CLI\"",
+  "command": "cd /home/<USER>/Coding/Python/DataQ\necho \"=== local .env / .env.app alert config (values masked) ===\"\nfor f in .env .env.app; do\n  if test -f $f\n    echo \"-- $f --\"\n    grep -iE \"SLACK_WEBHOOK|EMAIL_|TEAMS_WEBHOOK|PUBLIC_BASE_URL\" $f | sed -E 's/=(.+)/= <set>/'\n  end\nend\necho \"=== az available? ===\"; which az 2>/dev/null && echo \"yes\" || echo \"no az CLI\"",
   "description": "Check local alert config presence and az availability"
 }
 ```
@@ -8332,7 +8332,7 @@ tool_use Bash
 id: toolu_01WXcAZwawNupqp93145fdJL
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ\necho \"=== .env ===\"; test -f .env && grep -iE \"SLACK_WEBHOOK|EMAIL_|TEAMS_WEBHOOK|PUBLIC_BASE_URL\" .env | sed -E 's/=.+/= <set>/' || echo \"(no .env)\"\necho \"=== .env.app ===\"; test -f .env.app && grep -iE \"SLACK_WEBHOOK|EMAIL_|TEAMS_WEBHOOK|PUBLIC_BASE_URL\" .env.app | sed -E 's/=.+/= <set>/' || echo \"(no .env.app)\"\necho \"=== az? ===\"; which az >/dev/null 2>&1 && echo yes || echo no",
+  "command": "cd /home/<USER>/Coding/Python/DataQ\necho \"=== .env ===\"; test -f .env && grep -iE \"SLACK_WEBHOOK|EMAIL_|TEAMS_WEBHOOK|PUBLIC_BASE_URL\" .env | sed -E 's/=.+/= <set>/' || echo \"(no .env)\"\necho \"=== .env.app ===\"; test -f .env.app && grep -iE \"SLACK_WEBHOOK|EMAIL_|TEAMS_WEBHOOK|PUBLIC_BASE_URL\" .env.app | sed -E 's/=.+/= <set>/' || echo \"(no .env.app)\"\necho \"=== az? ===\"; which az >/dev/null 2>&1 && echo yes || echo no",
   "description": "Check local alert config and az availability"
 }
 ```
@@ -8373,7 +8373,7 @@ WARNING: The behavior of this command has been altered by the following extensio
   {
     "name": "WORKSPACE_ADMIN_EMAILS",
     "secretRef": null,
-    "value": "dataq-admin@royarijit04outlook.onmicrosoft.com"
+    "value": "<REDACTED_EMAIL>"
   },
   {
     "name": "PUBLIC_BASE_URL",
@@ -8403,7 +8403,7 @@ WARNING: The behavior of this command has been altered by the following extensio
   {
     "name": "EMAIL_USERNAME",
     "secretRef": null,
-    "value": "theurgicduke771@gmail.com"
+    "value": "<REDACTED_EMAIL>"
   },
   {
     "name": "EMAIL_FROM",
@@ -8471,11 +8471,11 @@ id: toolu_015EGQQ16tJeRtJgr4QjNXzN
 [
   {
     "name": "EMAIL_FROM",
-    "value": "theurgicduke771@gmail.com"
+    "value": "<REDACTED_EMAIL>"
   },
   {
     "name": "EMAIL_TO",
-    "value": "theurgicduke771@gmail.com"
+    "value": "<REDACTED_EMAIL>"
   }
 ]
 ```
@@ -8525,7 +8525,7 @@ frontend 200
 
 The deployed app **is** fully configured for both channels:
 - Slack: `REDACTED` (secret present in KV) ✓
-- Email: Gmail SMTP, to/from `theurgicduke771@gmail.com`, password secret `channel-email-password` present ✓
+- Email: Gmail SMTP, to/from `<REDACTED_EMAIL>`, password secret `channel-email-password` present ✓
 - `PUBLIC_BASE_URL` set, app up (frontend 200) ✓
 
 So the channel config isn't the problem. That leaves: the run wasn't alert-worthy, it was deduped/suppressed, or delivery is failing at the transport (bad webhook URL / revoked Gmail app-password). Let me check the worker logs for what actually happened on recent runs:
@@ -8758,7 +8758,7 @@ id: toolu_01Sb7wCmsK5ASh2zwxx4dHo2
 22:25:03   dataq-harness-airflow-trigger -> Running
 22:25:07   ADF trigger tr_customers_daily -> Started
 22:25:23   ADF trigger tr_orders_landed -> Started
-22:25:23 Harness is UP (mockdata crons stay suspended; 'run' fires them manually). Remember to '/Users/arijit/Coding/Python/DataQ-harness/scripts/harness_window.sh stop' when done.
+22:25:23 Harness is UP (mockdata crons stay suspended; 'run' fires them manually). Remember to '/home/<USER>/Coding/Python/DataQ-harness/scripts/harness_window.sh stop' when done.
 22:25:23 Starting the 5 mockdata jobs as manual executions (parallel)...
 22:25:26   mockdata-orders -> execution mockdata-orders-geoqx8t
 22:25:27   mockdata-inventory -> execution mockdata-inventory-ro5khrs
@@ -9089,7 +9089,7 @@ The harness window fired the full path successfully — and it **did** send you 
 ## So: why you thought notifications were broken
 They weren't broken — **dedup** is why you rarely see them. Your suites have been failing persistently, so the *first* failure alerted (possibly before Slack/email was even configured → silent no-op) and every identical failure since is suppressed by design. A notification only fires on a **new/changed/recovered-then-failed** outcome — which is exactly what just happened for "Refunds."
 
-**Action for you:** check the Slack channel behind `channel-slack-webhook`, and the inbox (and **spam/Promotions**) for `theurgicduke771@gmail.com` around **05:29 UTC** […]
+**Action for you:** check the Slack channel behind `channel-slack-webhook`, and the inbox (and **spam/Promotions**) for `<REDACTED_EMAIL>` around **05:29 UTC** […]
 
 > DEVELOPER
 
@@ -9412,13 +9412,13 @@ tool_result
 id: toolu_01SSd61PVRZvQ24HS7bFTWPo
 ```
 token acquired (len 1787)
-az identity: royarijit04@outlook.com
+az identity: <REDACTED_EMAIL>
 GET /me -> HTTP 200
 ```
 
 > AGENT
 
-Bearer works (`/me` → 200) as `royarijit04@outlook.com`. Let me explore connections + an existing Snowflake suite's target (read-only) to prepare the new-suite payload while the deploy finishes:
+Bearer works (`/me` → 200) as `<REDACTED_EMAIL>`. Let me explore connections + an existing Snowflake suite's target (read-only) to prepare the new-suite payload while the deploy finishes:
 
 > TOOL
 
@@ -9558,7 +9558,7 @@ tool_use Read
 id: toolu_011TWpsA8Fp92ydD1By9akvj
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/api/v1/suites.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/api/v1/suites.py",
   "offset": 108,
   "limit": 30
 }
@@ -9651,7 +9651,7 @@ tool_use Read
 id: toolu_012Rse8NSTVXEPe2uDx52i3h
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/api/v1/suites.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/api/v1/suites.py",
   "offset": 39,
   "limit": 45
 }
@@ -9692,7 +9692,7 @@ tool_use Read
 id: toolu_01NMpigyYRctY17f1LpBmRy4
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/api/v1/checks.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/api/v1/checks.py",
   "offset": 35,
   "limit": 40
 }
@@ -10204,7 +10204,7 @@ Done — **#416 is deployed to prod and verified end-to-end with a fresh alert.*
    - `email_alert_sent` — recipients=1 ✅
 
 ## What you should now see (the enriched #416 format)
-- **Slack** (channel behind `channel-slack-webhook`) and **email** (`theurgicduke771@gmail.com`, check spam/Promotions), sent ~**05:44 UTC**, for **"Notification Test (#416)"**:
+- **Slack** (channel behind `channel-slack-webhook`) and **email** (`<REDACTED_EMAIL>`, check spam/Promotions), sent ~**05:44 UTC**, for **"Notification Test (#416)"**:
   - A **"View run" button/link** → `…/results/51534777-69a4-4859-9711-3f56948ad81b`
   - **Metadata row**: Environment `dev` · Triggered by `Manual` · Started · Duration (~5s)
   - **Per-check detail**: `row count is impossibly high — fail — expected max_value=1000000000, min_value=999999999 · observed 24960`
@@ -10232,7 +10232,7 @@ tool_use Bash
 id: toolu_01P2AF1ENrsnPJssu1jYyCMz
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ; echo \"=== User fields ===\"; python -c \"from backend.app.db.models import User; print([c.name for c in User.__table__.columns])\"; echo \"=== card.py (Teams) fields shown ===\"; grep -nE \"Datasource|Target|Severity|Suite|Owner|FactSet|title|facts|Environment\" backend/app/alerting/card.py | head -20",
+  "command": "cd /home/<USER>/Coding/Python/DataQ; echo \"=== User fields ===\"; python -c \"from backend.app.db.models import User; print([c.name for c in User.__table__.columns])\"; echo \"=== card.py (Teams) fields shown ===\"; grep -nE \"Datasource|Target|Severity|Suite|Owner|FactSet|title|facts|Environment\" backend/app/alerting/card.py | head -20",
   "description": "Check User fields + Teams card structure"
 }
 ```
@@ -10371,7 +10371,7 @@ id: toolu_015sMofKyBaM8hnrPu9rAG13
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/base.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/base.py",
   "old_string": "    env: str | None = None\n    started_at: datetime | None = None\n    triggered_by: str | None = None\n    run_url: str | None = None",
   "new_string": "    env: str | None = None\n    started_at: datetime | None = None\n    triggered_by: str | None = None\n    run_url: str | None = None\n    owner: str | None = None"
 }
@@ -10382,7 +10382,7 @@ id: toolu_015sMofKyBaM8hnrPu9rAG13
 tool_result
 id: toolu_015sMofKyBaM8hnrPu9rAG13
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/alerting/base.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/alerting/base.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -10395,7 +10395,7 @@ tool_use Read
 id: toolu_018da9uqSBtAAybw16s2YU7m
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/builder.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/builder.py",
   "offset": 50,
   "limit": 15
 }
@@ -10430,7 +10430,7 @@ id: toolu_013nLFPURWjougp3K5u8SFDk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/builder.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/builder.py",
   "old_string": "    suite = session.get(Suite, run.suite_id)\n    connection = session.get(Connection, suite.connection_id) if suite is not None else None\n    checks = {c.id: c for c in session.scalars(select(Check).where(Check.suite_id == run.suite_id))}\n    results: list[Result] = run_service.list_results(session, run.id)",
   "new_string": "    suite = session.get(Suite, run.suite_id)\n    connection = session.get(Connection, suite.connection_id) if suite is not None else None\n    owner = session.get(User, suite.created_by) if suite is not None else None\n    checks = {c.id: c for c in session.scalars(select(Check).where(Check.suite_id == run.suite_id))}\n    results: list[Result] = run_service.list_results(session, run.id)"
 }
@@ -10441,7 +10441,7 @@ id: toolu_013nLFPURWjougp3K5u8SFDk
 tool_result
 id: toolu_013nLFPURWjougp3K5u8SFDk
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/alerting/builder.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/alerting/builder.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10451,7 +10451,7 @@ id: toolu_018K6nKE7AkomBYtUsCc5Ndg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/builder.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/builder.py",
   "old_string": "from backend.app.db.models import Check, Connection, Result, Run, Suite, worst_severity",
   "new_string": "from backend.app.db.models import Check, Connection, Result, Run, Suite, User, worst_severity"
 }
@@ -10462,7 +10462,7 @@ id: toolu_018K6nKE7AkomBYtUsCc5Ndg
 tool_result
 id: toolu_018K6nKE7AkomBYtUsCc5Ndg
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/alerting/builder.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/alerting/builder.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -10476,7 +10476,7 @@ id: toolu_01GM1ozMqPcG8DUMYMiPsqY9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/builder.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/builder.py",
   "old_string": "        env=connection.env if connection is not None else None,\n        started_at=run.started_at,\n        triggered_by=run.triggered_by,\n        run_url=_run_url(run.id),\n    )",
   "new_string": "        env=connection.env if connection is not None else None,\n        started_at=run.started_at,\n        triggered_by=run.triggered_by,\n        run_url=_run_url(run.id),\n        owner=(owner.display_name or owner.email) if owner is not None else None,\n    )"
 }
@@ -10487,7 +10487,7 @@ id: toolu_01GM1ozMqPcG8DUMYMiPsqY9
 tool_result
 id: toolu_01GM1ozMqPcG8DUMYMiPsqY9
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/alerting/builder.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/alerting/builder.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -10501,7 +10501,7 @@ id: toolu_013nbD5qLQcxAhwi9g4TGWF8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/render.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/render.py",
   "old_string": "    pairs: list[tuple[str, str | None]] = [\n        (\"Environment\", report.env),\n        (\"Triggered by\", triggered_source(report.triggered_by)),\n        (\"Started\", _format_timestamp(report.started_at)),\n        (\"Duration\", format_duration(report.duration_seconds)),\n    ]\n    return [(label, value) for label, value in pairs if value]",
   "new_string": "    pairs: list[tuple[str, str | None]] = [\n        (\"Owner\", report.owner),\n        (\"Environment\", report.env),\n        (\"Triggered by\", triggered_source(report.triggered_by)),\n        (\"Started\", _format_timestamp(report.started_at)),\n        (\"Duration\", format_duration(report.duration_seconds)),\n    ]\n    return [(label, value) for label, value in pairs if value]"
 }
@@ -10512,7 +10512,7 @@ id: toolu_013nbD5qLQcxAhwi9g4TGWF8
 tool_result
 id: toolu_013nbD5qLQcxAhwi9g4TGWF8
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/alerting/render.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/alerting/render.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -10525,7 +10525,7 @@ tool_use Read
 id: toolu_014HuvvapsoAtHJqv95twDb3
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/email.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/email.py",
   "offset": 68,
   "limit": 32
 }
@@ -10577,7 +10577,7 @@ id: toolu_01SXkNmHTwrKSkRZGiLmK58H
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/email.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/email.py",
   "old_string": "def render_html_body(report: RunReport) -> str:\n    \"\"\"Minimal HTML body (inline-styled, email-client safe).\"\"\"\n    colour = \"#16a34a\" if report.success else \"#dc2626\"\n    rows = \"\".join(\n        f\"<tr><td style='padding:2px 8px;'><code>{_esc(c.status)}</code></td>\"\n        f\"<td style='padding:2px 8px;'>{_esc(c.check_name)}</td>\"\n        f\"<td style='padding:2px 8px;color:#6b7280;'>{_esc(render.check_detail(c))}</td></tr>\"\n        for c in report.checks\n        if c.status != \"pass\"\n    )\n    table = (\n        f\"<table style='border-collapse:collapse;margin-top:8px;'>{rows}</table>\" if rows else \"\"\n    )\n    meta = \" &nbsp;·&nbsp; \".join(\n        f\"<b>{_esc(label)}:</b> {_esc(value)}\" for label, value in render.run_metadata(report)\n    )\n    meta_line = f\"<p style='margin:6px 0 0;color:#6b7280;'>{meta}</p>\" if meta else \"\"\n    button = (\n        f\"<p style='margin:10px 0 0;'><a href='{_esc(report.run_url)}' \"\n        f\"style='color:#2563eb;'>View run →</a></p>\"\n        if report.run_url\n        else \"\"\n    )\n    return (\n        f\"<div style='font-family:system-ui,Arial,sans-serif;'>\"\n        f\"<h2 style='color:{colour};margin:0 0 8px;'>{_esc(render_subject(report))}</h2>\"\n        f\"<p style='margin:0;color:#374151;'>\"\n        f\"<b>Datasource:</b> {_esc(report.datasource_type)} &nbsp;·&nbsp; \"\n        f\"<b>Target:</b> {_esc(report.target_label)} &nbsp;·&nbsp; \"\n        f\"<b>Severity:</b> {_esc(report.worst_severity or '—')}</p>\"\n        f\"{meta_line}{table}{button}</div>\"\n    )",
   "new_string": "def render_html_body(report: RunReport) -> str:\n    \"\"\"Minimal HTML body (inline-styled, email-client safe).\"\"\"\n    colour = \"#16a34a\" if report.success else \"#dc2626\"\n    # Failing-checks table with a header row (Status · Check · Details).\n    th = \"padding:6px 10px;text-align:left;border-bottom:2px solid #d1d5db;font-size:13px;color:#374151;\"\n    td = \"padding:6px 10px;border-bottom:1px solid #eee;font-size:13px;vertical-align:top;\"\n    rows = \"\".join(\n        f\"<tr><td style='{td}'><code>{_esc(c.status)}</code></td>\"\n        f\"<td style='{td}'>{_esc(c.check_name)}</td>\"\n        f\"<td style='{td}color:#6b7280;'>{_esc(render.check_detail(c))}</td></tr>\"\n        for c in report.checks\n        if c.status != \"pass\"\n    )\n    table = (\n        f\"<table style='border-collapse:collapse;margin-top:12px;'>\"\n        f\"<thead><tr><th style='{th}'>Status</th><th style='{th}'>Check</th>\"\n        f\"<th style='{th}'>Details</th></tr></thead><tbody>{rows}</tbody></table>\"\n        if rows\n        else \"\"\n    )\n […]
 
@@ -10586,7 +10586,7 @@ id: toolu_01SXkNmHTwrKSkRZGiLmK58H
 tool_result
 id: toolu_01SXkNmHTwrKSkRZGiLmK58H
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/alerting/email.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/alerting/email.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -10599,7 +10599,7 @@ tool_use Read
 id: toolu_01QswA7Lep2AHnTbQTL5z8cf
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/card.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/card.py",
   "offset": 44,
   "limit": 85
 }
@@ -10659,7 +10659,7 @@ tool_use Read
 id: toolu_01SB8kTcu1H4vwXFHh8UChjT
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/card.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/card.py",
   "offset": 1,
   "limit": 27
 }
@@ -10706,7 +10706,7 @@ id: toolu_01SwAUk6y3kyAJEnaGpoN184
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/card.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/card.py",
   "old_string": "from backend.app.alerting.base import FAILING_TIERS, CheckReport, RunReport\nfrom backend.app.alerting.routing import QUIET, Route",
   "new_string": "from backend.app.alerting import render\nfrom backend.app.alerting.base import FAILING_TIERS, CheckReport, RunReport\nfrom backend.app.alerting.routing import QUIET, Route"
 }
@@ -10717,7 +10717,7 @@ id: toolu_01SwAUk6y3kyAJEnaGpoN184
 tool_result
 id: toolu_01SwAUk6y3kyAJEnaGpoN184
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/alerting/card.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/alerting/card.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10727,7 +10727,7 @@ id: toolu_01KWHtA7ygNBcX4bdchcxDCi
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/card.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/card.py",
   "old_string": "    facts = [\n        {\"title\": \"Datasource\", \"value\": report.datasource_type or \"—\"},\n        {\"title\": \"Target\", \"value\": report.target_label},\n        {\"title\": \"Run\", \"value\": report.run_status},\n        {\"title\": \"Severity\", \"value\": report.worst_severity or \"—\"},\n    ]\n    if report.finished_at is not None:\n        facts.append({\"title\": \"Finished\", \"value\": report.finished_at.isoformat()})\n    return {\"type\": \"FactSet\", \"facts\": facts}",
   "new_string": "    facts = [\n        {\"title\": \"Datasource\", \"value\": report.datasource_type or \"—\"},\n        {\"title\": \"Target\", \"value\": report.target_label},\n        {\"title\": \"Run\", \"value\": report.run_status},\n        {\"title\": \"Severity\", \"value\": report.worst_severity or \"—\"},\n    ]\n    # Owner / Environment / Triggered by / Started / Duration — the same shared\n    # metadata the Slack + email renderers show (#661, #416 parity).\n    facts += [{\"title\": label, \"value\": value} for label, value in render.run_metadata(report)]\n    return {\"type\": \"FactSet\", \"facts\": facts}"
 }
@@ -10738,7 +10738,7 @@ id: toolu_01KWHtA7ygNBcX4bdchcxDCi
 tool_result
 id: toolu_01KWHtA7ygNBcX4bdchcxDCi
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/alerting/card.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/alerting/card.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -10752,7 +10752,7 @@ id: toolu_01QC7ULuL3mkaGChf2LAB2ZS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/card.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/card.py",
   "old_string": "    return {\n        \"type\": \"AdaptiveCard\",\n        \"$schema\": _ADAPTIVE_CARD_SCHEMA,\n        \"version\": _ADAPTIVE_CARD_VERSION,\n        \"body\": body,\n    }",
   "new_string": "    card: dict[str, Any] = {\n        \"type\": \"AdaptiveCard\",\n        \"$schema\": _ADAPTIVE_CARD_SCHEMA,\n        \"version\": _ADAPTIVE_CARD_VERSION,\n        \"body\": body,\n    }\n    # A \"View run\" deep link to the run-detail page (when a public base URL is set).\n    if report.run_url:\n        card[\"actions\"] = [\n            {\"type\": \"Action.OpenUrl\", \"title\": \"View run\", \"url\": report.run_url}\n        ]\n    return card"
 }
@@ -10763,7 +10763,7 @@ id: toolu_01QC7ULuL3mkaGChf2LAB2ZS
 tool_result
 id: toolu_01QC7ULuL3mkaGChf2LAB2ZS
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/alerting/card.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/alerting/card.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -10776,7 +10776,7 @@ tool_use Bash
 id: toolu_011GXGGQgvy8fMjDYpGSYJ4S
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ/backend && python -m pytest tests/alerting tests/db/test_severity_rank.py --no-cov -q 2>&1 | tail -25",
+  "command": "cd /home/<USER>/Coding/Python/DataQ/backend && python -m pytest tests/alerting tests/db/test_severity_rank.py --no-cov -q 2>&1 | tail -25",
   "description": "Run alerting tests to find breakages"
 }
 ```
@@ -10817,7 +10817,7 @@ tool_use Bash
 id: toolu_01XfHJut9xCSJrxE2JATqPwz
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ && sed -n '1,80p' backend/tests/alerting/test_card.py | grep -nE \"def _report|def _content|finished_at|started_at|triggered_by|env=|owner|def test_card_carries|Finished|RunReport\\(\" ",
+  "command": "cd /home/<USER>/Coding/Python/DataQ && sed -n '1,80p' backend/tests/alerting/test_card.py | grep -nE \"def _report|def _content|finished_at|started_at|triggered_by|env=|owner|def test_card_carries|Finished|RunReport\\(\" ",
   "description": "Inspect test_card report helper + the failing test"
 }
 ```
@@ -10841,7 +10841,7 @@ tool_use Read
 id: toolu_01K2tAtGzoy55qibCHwD2qGu
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_card.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_card.py",
   "offset": 20,
   "limit": 60
 }
@@ -10911,7 +10911,7 @@ id: toolu_012HEN9EGUcanzH1a47oSNY1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_card.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_card.py",
   "old_string": "    assert facts[\"Datasource\"] == \"snowflake\"\n    assert facts[\"Target\"] == \"RETAIL.ORDERS\"\n    assert facts[\"Severity\"] == \"fail\"\n    assert facts[\"Finished\"] == \"2026-06-26T12:00:00+00:00\"",
   "new_string": "    assert facts[\"Datasource\"] == \"snowflake\"\n    assert facts[\"Target\"] == \"RETAIL.ORDERS\"\n    assert facts[\"Severity\"] == \"fail\"\n    # Metadata (from the shared render.run_metadata) — always at least the trigger.\n    assert facts[\"Triggered by\"] == \"Manual\"\n    assert \"Finished\" not in facts  # replaced by Started/Duration metadata (#661)\n\n\ndef test_card_carries_owner_metadata_and_view_run_action() -> None:\n    # #661/#416 parity: owner + env + a \"View run\" deep-link action on the card.\n    report = dataclasses.replace(\n        _report(),\n        owner=\"Ada Lovelace\",\n        env=\"prod\",\n        run_url=\"https://dataq.example.com/results/abc\",\n    )\n    content = _content(report)\n    factset = next(b for b in content[\"body\"] if b[\"type\"] == \"FactSet\")\n    facts = {f[\"title\"]: f[\"value\"] for f in factset[\"facts\"]}\n    assert facts[\"Owner\"] == \"Ada Lovelace\"\n    assert facts[\"Environment\"] == \"prod\"\n    assert content[\"actions\"] == [\n        {\"type\": \"Action.OpenUrl\", \"title\": \"View run\", \"url\": \"https://dataq.example.com/results/abc\"}\n    ]\n\n\ndef test_card_omits_action_without_run_url() -> None:\n    assert \"actions\" not in _content(_report())"
 }
@@ -10922,7 +10922,7 @@ id: toolu_012HEN9EGUcanzH1a47oSNY1
 tool_result
 id: toolu_012HEN9EGUcanzH1a47oSNY1
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_card.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_card.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -10965,7 +10965,7 @@ id: toolu_01HorWzok1MA4CN6oL1XHdUM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_card.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_card.py",
   "old_string": "import uuid\nfrom datetime import UTC, datetime\nfrom typing import Any, cast",
   "new_string": "import dataclasses\nimport uuid\nfrom datetime import UTC, datetime\nfrom typing import Any, cast"
 }
@@ -10976,7 +10976,7 @@ id: toolu_01HorWzok1MA4CN6oL1XHdUM
 tool_result
 id: toolu_01HorWzok1MA4CN6oL1XHdUM
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_card.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_card.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -10990,7 +10990,7 @@ id: toolu_01957JznQk2kdSwCEDVvmJqx
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_render.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_render.py",
   "old_string": "def test_run_metadata_includes_set_fields_and_omits_missing() -> None:\n    started = datetime(2026, 7, 6, 4, 30, tzinfo=UTC)\n    finished = datetime(2026, 7, 6, 4, 32, 5, tzinfo=UTC)\n    pairs = dict(\n        render.run_metadata(\n            _report(\n                env=\"prod\", triggered_by=\"adf:pl:run\", started_at=started, finished_at=finished\n            )\n        )\n    )\n    assert pairs[\"Environment\"] == \"prod\"\n    assert pairs[\"Triggered by\"] == \"ADF\"\n    assert pairs[\"Duration\"] == \"2m 5s\"\n    assert \"2026-07-06 04:30\" in pairs[\"Started\"]",
   "new_string": "def test_run_metadata_includes_set_fields_and_omits_missing() -> None:\n    started = datetime(2026, 7, 6, 4, 30, tzinfo=UTC)\n    finished = datetime(2026, 7, 6, 4, 32, 5, tzinfo=UTC)\n    pairs = dict(\n        render.run_metadata(\n            _report(\n                owner=\"Ada Lovelace\",\n                env=\"prod\",\n                triggered_by=\"adf:pl:run\",\n                started_at=started,\n                finished_at=finished,\n            )\n        )\n    )\n    assert pairs[\"Owner\"] == \"Ada Lovelace\"\n    assert pairs[\"Environment\"] == \"prod\"\n    assert pairs[\"Triggered by\"] == \"ADF\"\n    assert pairs[\"Duration\"] == \"2m 5s\"\n    assert \"2026-07-06 04:30\" in pairs[\"Started\"]"
 }
@@ -11050,7 +11050,7 @@ tool_use Read
 id: toolu_01RXXQ9mbKP6Z8LpLQvL7SFA
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_render.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_render.py",
   "offset": 126,
   "limit": 18
 }
@@ -11088,7 +11088,7 @@ id: toolu_01CtjKxjBaFyeckiZMjEwoLM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_render.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_render.py",
   "old_string": "    pairs = dict(\n        render.run_metadata(\n            _report(env=\"prod\", triggered_by=\"adf:pl:run\", started_at=started, finished_at=finished)\n        )\n    )\n    assert pairs[\"Environment\"] == \"prod\"\n    assert pairs[\"Triggered by\"] == \"ADF\"\n    assert pairs[\"Duration\"] == \"2m 5s\"\n    assert \"2026-07-06 04:30\" in pairs[\"Started\"]",
   "new_string": "    pairs = dict(\n        render.run_metadata(\n            _report(\n                owner=\"Ada Lovelace\",\n                env=\"prod\",\n                triggered_by=\"adf:pl:run\",\n                started_at=started,\n                finished_at=finished,\n            )\n        )\n    )\n    assert pairs[\"Owner\"] == \"Ada Lovelace\"\n    assert pairs[\"Environment\"] == \"prod\"\n    assert pairs[\"Triggered by\"] == \"ADF\"\n    assert pairs[\"Duration\"] == \"2m 5s\"\n    assert \"2026-07-06 04:30\" in pairs[\"Started\"]"
 }
@@ -11099,7 +11099,7 @@ id: toolu_01CtjKxjBaFyeckiZMjEwoLM
 tool_result
 id: toolu_01CtjKxjBaFyeckiZMjEwoLM
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_render.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_render.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11113,7 +11113,7 @@ id: toolu_01B8gQPticE2zUbjzYkKLW1j
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_builder.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_builder.py",
   "old_string": "    assert report.env == \"uat\"\n    assert report.started_at == started\n    assert report.triggered_by == \"schedule:daily\"\n    assert report.run_url == f\"https://dq.example.com/results/{run.id}\"\n    assert report.duration_seconds == 12.0",
   "new_string": "    assert report.env == \"uat\"\n    assert report.started_at == started\n    assert report.triggered_by == \"schedule:daily\"\n    assert report.run_url == f\"https://dq.example.com/results/{run.id}\"\n    assert report.duration_seconds == 12.0\n    # Owner falls back to the email when the User has no display_name (#661).\n    assert report.owner == owner.email"
 }
@@ -11124,7 +11124,7 @@ id: toolu_01B8gQPticE2zUbjzYkKLW1j
 tool_result
 id: toolu_01B8gQPticE2zUbjzYkKLW1j
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_builder.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_builder.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11137,7 +11137,7 @@ tool_use Read
 id: toolu_01NYaxcSWVPqFZP3iwGJUBRa
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_slack_email_publishers.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_slack_email_publishers.py",
   "offset": 111,
   "limit": 65
 }
@@ -11197,7 +11197,7 @@ id: toolu_01SwBe5spHbU9DGJsFFjjGWB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_slack_email_publishers.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_slack_email_publishers.py",
   "old_string": "    return dataclasses.replace(\n        _report(worst=\"fail\"),\n        env=\"prod\",\n        started_at=datetime(2026, 7, 6, 4, 30, tzinfo=UTC),\n        finished_at=datetime(2026, 7, 6, 4, 30, 12, tzinfo=UTC),\n        triggered_by=\"adf:pl_orders:run-99\",\n        run_url=\"https://dataq.example.com/results/abc123\",",
   "new_string": "    return dataclasses.replace(\n        _report(worst=\"fail\"),\n        env=\"prod\",\n        started_at=datetime(2026, 7, 6, 4, 30, tzinfo=UTC),\n        finished_at=datetime(2026, 7, 6, 4, 30, 12, tzinfo=UTC),\n        triggered_by=\"adf:pl_orders:run-99\",\n        run_url=\"https://dataq.example.com/results/abc123\",\n        owner=\"Ada Lovelace\","
 }
@@ -11208,7 +11208,7 @@ id: toolu_01SwBe5spHbU9DGJsFFjjGWB
 tool_result
 id: toolu_01SwBe5spHbU9DGJsFFjjGWB
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_slack_email_publishers.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_slack_email_publishers.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11222,7 +11222,7 @@ id: toolu_011gheDixEY44TdifMPHoUSw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_slack_email_publishers.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_slack_email_publishers.py",
   "old_string": "    text = str(blocks)\n    assert \"prod\" in text and \"ADF\" in text  # env + trigger metadata fields\n    # expected-vs-observed detail on the failing check.\n    assert \"expected min_value=0 · observed 12 · 3.2% unexpected\" in text\n\n\ndef test_slack_render_omits_button_without_run_url() -> None:",
   "new_string": "    text = str(blocks)\n    assert \"prod\" in text and \"ADF\" in text  # env + trigger metadata fields\n    assert \"Ada Lovelace\" in text  # owner (#661)\n    # expected-vs-observed detail on the failing check.\n    assert \"expected min_value=0 · observed 12 · 3.2% unexpected\" in text\n\n\ndef test_slack_render_omits_button_without_run_url() -> None:"
 }
@@ -11233,7 +11233,7 @@ id: toolu_011gheDixEY44TdifMPHoUSw
 tool_result
 id: toolu_011gheDixEY44TdifMPHoUSw
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_slack_email_publishers.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_slack_email_publishers.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11243,7 +11243,7 @@ id: toolu_01Q6Rk5xzb7JCHGn367BnuDq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_slack_email_publishers.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_slack_email_publishers.py",
   "old_string": "def test_email_html_has_deep_link_and_expected_observed() -> None:\n    html = email_mod.render_html_body(_rich_report())\n    assert \"https://dataq.example.com/results/abc123\" in html  # View run link\n    assert \"expected min_value=0 · observed 12 · 3.2% unexpected\" in html\n    assert \"prod\" in html and \"ADF\" in html  # metadata row",
   "new_string": "def test_email_html_has_deep_link_and_expected_observed() -> None:\n    html = email_mod.render_html_body(_rich_report())\n    assert \"https://dataq.example.com/results/abc123\" in html  # View run link\n    assert \"expected min_value=0 · observed 12 · 3.2% unexpected\" in html\n    assert \"prod\" in html and \"ADF\" in html  # metadata row\n    # #661: a proper table (header row) + suite + owner surfaced.\n    assert \"<thead>\" in html and \">Status<\" in html and \">Check<\" in html and \">Details<\" in html\n    assert \"<b>Suite:</b>\" in html and \"Orders Header\" in html  # suite name in the body\n    assert \"Ada Lovelace\" in html  # owner"
 }
@@ -11254,7 +11254,7 @@ id: toolu_01Q6Rk5xzb7JCHGn367BnuDq
 tool_result
 id: toolu_01Q6Rk5xzb7JCHGn367BnuDq
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_slack_email_publishers.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_slack_email_publishers.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11264,7 +11264,7 @@ id: toolu_012z26WzuMDgcojBYorGmAZj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_slack_email_publishers.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_slack_email_publishers.py",
   "old_string": "    assert \"View run: https://dataq.example.com/results/abc123\" in text\n    assert \"Environment: prod\" in text\n    assert \"Triggered by: ADF\" in text\n    assert \"Duration: 12.0s\" in text",
   "new_string": "    assert \"View run: https://dataq.example.com/results/abc123\" in text\n    assert \"Owner: Ada Lovelace\" in text\n    assert \"Environment: prod\" in text\n    assert \"Triggered by: ADF\" in text\n    assert \"Duration: 12.0s\" in text"
 }
@@ -11275,7 +11275,7 @@ id: toolu_012z26WzuMDgcojBYorGmAZj
 tool_result
 id: toolu_012z26WzuMDgcojBYorGmAZj
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/alerting/test_slack_email_publishers.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/alerting/test_slack_email_publishers.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11288,7 +11288,7 @@ tool_use Bash
 id: toolu_01ShmemWrDB4kYXDfSaAtyw8
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ/backend && python -m pytest tests/alerting tests/db/test_severity_rank.py --no-cov -q 2>&1 | tail -12",
+  "command": "cd /home/<USER>/Coding/Python/DataQ/backend && python -m pytest tests/alerting tests/db/test_severity_rank.py --no-cov -q 2>&1 | tail -12",
   "description": "Run alerting + severity tests"
 }
 ```
@@ -11313,7 +11313,7 @@ tool_use Bash
 id: toolu_01Def64yz29y883wVDdaswhM
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ && ruff check --fix backend/app/alerting/base.py backend/app/alerting/builder.py backend/app/alerting/render.py backend/app/alerting/email.py backend/app/alerting/card.py backend/tests/alerting/test_card.py backend/tests/alerting/test_render.py backend/tests/alerting/test_builder.py backend/tests/alerting/test_slack_email_publishers.py 2>&1 | tail -2; black backend/app/alerting/*.py backend/tests/alerting/*.py 2>&1 | tail -1",
+  "command": "cd /home/<USER>/Coding/Python/DataQ && ruff check --fix backend/app/alerting/base.py backend/app/alerting/builder.py backend/app/alerting/render.py backend/app/alerting/email.py backend/app/alerting/card.py backend/tests/alerting/test_card.py backend/tests/alerting/test_render.py backend/tests/alerting/test_builder.py backend/tests/alerting/test_slack_email_publishers.py 2>&1 | tail -2; black backend/app/alerting/*.py backend/tests/alerting/*.py 2>&1 | tail -1",
   "description": "Ruff --fix and Black"
 }
 ```
@@ -11364,7 +11364,7 @@ id: toolu_01SNFXBZ4eTvUrgPyJjfumE9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/email.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/email.py",
   "old_string": "    th = \"padding:6px 10px;text-align:left;border-bottom:2px solid #d1d5db;font-size:13px;color:#374151;\"\n    td = \"padding:6px 10px;border-bottom:1px solid #eee;font-size:13px;vertical-align:top;\"",
   "new_string": "    th = (\n        \"padding:6px 10px;text-align:left;border-bottom:2px solid #d1d5db;\"\n        \"font-size:13px;color:#374151;\"\n    )\n    td = \"padding:6px 10px;border-bottom:1px solid #eee;font-size:13px;vertical-align:top;\""
 }
@@ -11375,7 +11375,7 @@ id: toolu_01SNFXBZ4eTvUrgPyJjfumE9
 tool_result
 id: toolu_01SNFXBZ4eTvUrgPyJjfumE9
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/alerting/email.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/alerting/email.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11411,7 +11411,7 @@ tool_use Bash
 id: toolu_01Sbjsj8hdwbHC7fSX9yfvoY
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ/backend && python -m pytest --no-cov -q 2>&1 | tail -3; echo \"=== bandit ===\"; bandit -q -r backend/app/alerting/base.py backend/app/alerting/builder.py backend/app/alerting/render.py backend/app/alerting/email.py backend/app/alerting/card.py 2>&1 | grep -iE \">> issue|No issues\" | head",
+  "command": "cd /home/<USER>/Coding/Python/DataQ/backend && python -m pytest --no-cov -q 2>&1 | tail -3; echo \"=== bandit ===\"; bandit -q -r backend/app/alerting/base.py backend/app/alerting/builder.py backend/app/alerting/render.py backend/app/alerting/email.py backend/app/alerting/card.py 2>&1 | grep -iE \">> issue|No issues\" | head",
   "description": "Full suite + Bandit"
 }
 ```
@@ -11461,7 +11461,7 @@ tool_use Bash
 id: toolu_0193ga4GqytVLyA6eBhGvDaH
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ && git add -A && git commit -q -F - <<'EOF'\nfeat(alerting): tabular email + suite/owner across all channels (#661)\n\nFollow-up to #416, from live review of a real email alert. Makes the alert say\nwho owns what failed, in a scannable layout, consistently on every channel:\n\n- **Owner** — new `RunReport.owner`, populated by the builder from the suite's\n  creator (`display_name`, else `email`). Surfaced via the shared\n  `render.run_metadata`, so Slack fields, the email metadata block, AND the Teams\n  card facts all show it — one source, no per-channel copy.\n- **Email → a proper table** — the failing-checks list is now a real `<thead>`\n  table (Status · Check · Details) instead of header-less rows, plus a facts line\n  that names the **Suite** explicitly (was only in the subject).\n- **Teams card brought to #416 parity** — it was skipped in #416; it now carries\n  the same run metadata (owner/env/trigger/started/duration) in its FactSet and a\n  \"View run\" `Action.OpenUrl` deep link. (Teams is implemented + wired but a quiet\n  no-op in prod until a webhook secret is configured.)\n\nPII-safe: `owner` is a workspace user (the suite creator), not dataset data;\nrenderers still read only the already-redacted DTO. Renderers stay pure and […]
+  "command": "cd /home/<USER>/Coding/Python/DataQ && git add -A && git commit -q -F - <<'EOF'\nfeat(alerting): tabular email + suite/owner across all channels (#661)\n\nFollow-up to #416, from live review of a real email alert. Makes the alert say\nwho owns what failed, in a scannable layout, consistently on every channel:\n\n- **Owner** — new `RunReport.owner`, populated by the builder from the suite's\n  creator (`display_name`, else `email`). Surfaced via the shared\n  `render.run_metadata`, so Slack fields, the email metadata block, AND the Teams\n  card facts all show it — one source, no per-channel copy.\n- **Email → a proper table** — the failing-checks list is now a real `<thead>`\n  table (Status · Check · Details) instead of header-less rows, plus a facts line\n  that names the **Suite** explicitly (was only in the subject).\n- **Teams card brought to #416 parity** — it was skipped in #416; it now carries\n  the same run metadata (owner/env/trigger/started/duration) in its FactSet and a\n  \"View run\" `Action.OpenUrl` deep link. (Teams is implemented + wired but a quiet\n  no-op in prod until a webhook secret is configured.)\n\nPII-safe: `owner` is a workspace user (the suite creator), not dataset data;\nrenderers still read only the already-redacted DTO. Renderers stay pure and […]
 
 > TOOL
 

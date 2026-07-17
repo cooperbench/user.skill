@@ -33,7 +33,7 @@ tool_use Read
 id: toolu_01Km9LoTno8kyQsD7eEuFVif
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/harvest/[harvestId]/page.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/harvest/[harvestId]/page.tsx",
   "offset": 378,
   "limit": 10
 }
@@ -62,7 +62,7 @@ tool_use Read
 id: toolu_01LDGuqWqvbXgqkWM1KdnevC
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/produce/[id]/page.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/produce/[id]/page.tsx",
   "offset": 403,
   "limit": 8
 }
@@ -90,7 +90,7 @@ id: toolu_01WRDsN61YXvWvHrzT2vEZsF
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/harvest/[harvestId]/page.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/harvest/[harvestId]/page.tsx",
   "old_string": "              {L('Harvested on', 'కోసిన తేదీ')}: {new Date(harvest.harvested_at)",
   "new_string": "              {L('Harvest Date Time', 'కోత తేదీ సమయం')}: {new Date(harvest.harvested_at)"
 }
@@ -103,7 +103,7 @@ id: toolu_01Jf6k2tQrsCTBXFW33Qw29y
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/produce/[id]/page.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/produce/[id]/page.tsx",
   "old_string": "                {L('Harvested on', 'కోసిన తేదీ')}: {new Date(latestHarvest.at)",
   "new_string": "                {L('Harvest Date Time', 'కోత తేదీ సమయం')}: {new Date(latestHarvest.at)"
 }
@@ -114,7 +114,7 @@ id: toolu_01Jf6k2tQrsCTBXFW33Qw29y
 tool_result
 id: toolu_01WRDsN61YXvWvHrzT2vEZsF
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/harvest/[harvestId]/page.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/harvest/[harvestId]/page.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -122,7 +122,7 @@ The file /home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/harvest/[harve
 tool_result
 id: toolu_01Jf6k2tQrsCTBXFW33Qw29y
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/produce/[id]/page.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/produce/[id]/page.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -213,7 +213,7 @@ tool_use Read
 id: toolu_01WM8XTcPT2P4Xo49j1BNkAa
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/page.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/page.tsx",
   "offset": 330,
   "limit": 115
 }
@@ -289,7 +289,7 @@ tool_use Read
 id: toolu_01KYxtxVKyt2sciwQkCic58H
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/MyOrdersChip.tsx"
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/MyOrdersChip.tsx"
 }
 ```
 
@@ -376,7 +376,7 @@ tool_use Read
 id: toolu_016vEU86qGLaHwNHUDG6zUTH
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/GlobalNav.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/GlobalNav.tsx",
   "offset": 44,
   "limit": 20
 }
@@ -416,7 +416,7 @@ id: toolu_01KBUkkFDAUhtVB5p9EjU5pf
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/page.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/page.tsx",
   "old_string": "      <GlobalNav\n        activeTab=\"consumer\"\n        location={{ name: consumerLocationName, onClick: () => setShowLocationSheet(true) }}\n      />",
   "new_string": "      <GlobalNav activeTab=\"consumer\" />"
 }
@@ -429,7 +429,7 @@ id: toolu_01TPyZjAoCPN4uCVXAyrvtrn
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/page.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/page.tsx",
   "old_string": "          {/* My Orders quick link (only when logged in) */}\n          <div className=\"mt-5\">\n            <MyOrdersChip />\n          </div>",
   "new_string": "          {/* My Orders quick link (only when logged in) + location on the right */}\n          <div className=\"mt-5 flex items-center gap-2\">\n            <MyOrdersChip />\n            <button\n              onClick={() => setShowLocationSheet(true)}\n              aria-label={L('Set location', 'లొకేషన్ పెట్టండి')}\n              className=\"ml-auto inline-flex items-center gap-1 text-xs font-bold text-green-100 bg-green-800 active:bg-green-700 rounded-full px-3 py-2 leading-tight max-w-[160px]\"\n            >\n              <span aria-hidden>📍</span>\n              <span className=\"truncate\">{consumerLocationName || L('Set location', 'లొకేషన్ పెట్టండి')}</span>\n            </button>\n          </div>"
 }
@@ -440,7 +440,7 @@ id: toolu_01TPyZjAoCPN4uCVXAyrvtrn
 tool_result
 id: toolu_01KBUkkFDAUhtVB5p9EjU5pf
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/page.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/page.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -448,7 +448,7 @@ The file /home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/page.tsx has b
 tool_result
 id: toolu_01TPyZjAoCPN4uCVXAyrvtrn
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/page.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/page.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -497,7 +497,7 @@ tool_use Read
 id: toolu_01Dtu1WHbesdteVXPts3hKJX
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/GlobalNav.tsx"
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/GlobalNav.tsx"
 }
 ```
 
@@ -602,7 +602,7 @@ id: toolu_01RuWa8N8x6vVLokQoBaoJfa
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/GlobalNav.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/GlobalNav.tsx",
   "old_string": "  const { tx, L } = useLang()\n  const { state, consumer, openAuth, logout, suspendedReason, dismissSuspension } = useConsumerAuth()\n\n  const tabs = [\n    { key: 'consumer' as const, href: '/consumer', label: tx.consumerNav },\n    { key: 'farmer' as const, href: '/farmer/dashboard', label: tx.farmerNav },\n    { key: 'delivery' as const, href: '/rider', label: tx.deliveryNav },\n    { key: 'moderator' as const, href: '#', label: tx.moderatorNav, disabled: true },\n  ]\n\n  return (",
   "new_string": "  const { L } = useLang()\n  const { state, consumer, openAuth, logout, suspendedReason, dismissSuspension } = useConsumerAuth()\n\n  return ("
 }
@@ -613,7 +613,7 @@ id: toolu_01RuWa8N8x6vVLokQoBaoJfa
 tool_result
 id: toolu_01RuWa8N8x6vVLokQoBaoJfa
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/GlobalNav.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/GlobalNav.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -623,7 +623,7 @@ id: toolu_01NUPqgiqWWv9xZXuS6qsHZA
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/GlobalNav.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/GlobalNav.tsx",
   "old_string": "          <LanguageToggle />\n        </div>\n      </div>\n\n      {/* Role tabs */}\n      <div className=\"flex\">\n        {tabs.map((tab) => {\n          const isActive = tab.key === activeTab\n\n          if (tab.disabled) {\n            return (\n              <span key={tab.key} className=\"flex-1 text-center py-2.5 text-xs text-green-700 font-medium\">\n                {tab.label}\n              </span>\n            )\n          }\n\n          return (\n            <Link\n              key={tab.key}\n              href={tab.href}\n              className={`flex-1 text-center py-2.5 text-xs font-bold transition-colors ${\n                isActive\n                  ? 'bg-green-700 text-white border-b-2 border-green-300'\n                  : 'text-green-300 hover:text-white'\n              }`}\n            >\n              {tab.label}\n            </Link>\n          )\n        })}\n      </div>\n\n      {/* Suspension banner",
   "new_string": "          <LanguageToggle />\n          {/* Role switcher — tucked into a ⚙️ menu so consumers see a plain\n              shop, and Farmer/Delivery sign-in stays available but out of the\n              way (top-right). */}\n          <RoleMenu />\n        </div>\n      </div>\n\n      {/* Suspension banner"
 }
@@ -634,7 +634,7 @@ id: toolu_01NUPqgiqWWv9xZXuS6qsHZA
 tool_result
 id: toolu_01NUPqgiqWWv9xZXuS6qsHZA
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/GlobalNav.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/GlobalNav.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -648,7 +648,7 @@ id: toolu_014vKGW11CfNXx6ntaQfifht
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/GlobalNav.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/GlobalNav.tsx",
   "old_string": "function ConsumerMenu({ name, onLogout }: { name: string | null; onLogout: () => Promise<void> }) {",
   "new_string": "function RoleMenu() {\n  const { L } = useLang()\n  const [open, setOpen] = useState(false)\n  const wrapRef = useRef<HTMLDivElement>(null)\n\n  useEffect(() => {\n    if (!open) return\n    const onDocClick = (e: MouseEvent) => {\n      if (!wrapRef.current?.contains(e.target as Node)) setOpen(false)\n    }\n    const onEsc = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false) }\n    document.addEventListener('mousedown', onDocClick)\n    document.addEventListener('keydown', onEsc)\n    return () => {\n      document.removeEventListener('mousedown', onDocClick)\n      document.removeEventListener('keydown', onEsc)\n    }\n  }, [open])\n\n  return (\n    <div ref={wrapRef} className=\"relative\">\n      <button\n        onClick={() => setOpen((v) => !v)}\n        aria-haspopup=\"menu\"\n        aria-expanded={open}\n        aria-label={L('Settings', 'సెట్టింగ్‌లు')}\n        className=\"text-base leading-none text-green-100 bg-green-800 active:bg-green-700 rounded-full w-8 h-8 flex items-center justify-center\"\n      >\n        <span aria-hidden>⚙️</span>\n      </button>\n      {open && (\n        <div\n          role=\"menu\"\n          className=\"absolute right-0 mt-2 w-52 bg-white rounded-2xl shadow-xl border border-gray-100 py-1.5 text-sm z-50\"\n        >\n          <p className=\"px-4 py-2 text-[11px] text-gray-500 leading-tight border-b border-gray-100 mb-1\">\n            {L('Switch role', 'పాత్ర మార్చండి')}\n          </p>\n          <Link\n            href=\"/consumer\"\n            onClick={() => setOpen(false)}\n            className=\"block px-4 py-2.5 text-gray-800 active:bg-gray-100\"\n          >\n            {L('🛒 Shop as Consumer', 'కొనుగోలుదారుగా')}\n          </Link>\n          <Link\n            href=\"/farmer/dashboard\"\n            onClick={() => setOpen(false)}\n            className=\"block px-4 py-2.5 text-gray-800 active:bg-gray-100\"\n          >\n            {L('🧑‍🌾 Login as Farmer', 'రైతుగా లాగిన్')}\n          </Link>\n          <Link\n            href=\"/rider\"\n            onClick={() => setOpen(false)}\n            className=\"block px-4 py-2.5 text-gray-800 active:bg-gray-100\"\n […]
 
@@ -657,7 +657,7 @@ id: toolu_014vKGW11CfNXx6ntaQfifht
 tool_result
 id: toolu_014vKGW11CfNXx6ntaQfifht
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/GlobalNav.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/GlobalNav.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -670,7 +670,7 @@ tool_use Read
 id: toolu_01RUMSrvy81HFKehdhfv1AgV
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/GlobalNav.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/GlobalNav.tsx",
   "offset": 9,
   "limit": 14
 }
@@ -704,7 +704,7 @@ id: toolu_018QJ9qizwtj19jp4oGQBgyF
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/GlobalNav.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/GlobalNav.tsx",
   "old_string": "export default function GlobalNav({\n  activeTab = 'consumer',\n  location,\n}: {\n  activeTab?: ActiveTab\n  location?: LocationControl\n}) {",
   "new_string": "export default function GlobalNav({\n  location,\n}: {\n  // Kept for backward-compat with callers that still pass it; the role tabs\n  // were replaced by the ⚙️ RoleMenu, so it no longer drives any highlight.\n  activeTab?: ActiveTab\n  location?: LocationControl\n}) {"
 }
@@ -715,7 +715,7 @@ id: toolu_018QJ9qizwtj19jp4oGQBgyF
 tool_result
 id: toolu_018QJ9qizwtj19jp4oGQBgyF
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/GlobalNav.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/GlobalNav.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -790,7 +790,7 @@ tool_use Read
 id: toolu_012EZ5ZFEHFTFzaNY7ZxcuWK
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/produce/[id]/page.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/produce/[id]/page.tsx",
   "offset": 265,
   "limit": 55
 }
@@ -852,7 +852,7 @@ tool_use Read
 id: toolu_015427wgvknsRP88pf5Ex8RH
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/harvest/[harvestId]/page.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/harvest/[harvestId]/page.tsx",
   "offset": 255,
   "limit": 32
 }
@@ -908,7 +908,7 @@ id: toolu_01DVemGFx7d7sKmyn3RgZoKk
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/produce/[id]/page.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/produce/[id]/page.tsx",
   "old_string": "              <div className=\"absolute bottom-3 left-0 right-0 flex justify-center gap-1.5 pointer-events-none\">\n                {gallery.map((_, i) => (\n                  <span key={i} className={`h-1.5 rounded-full transition-all ${i === activeImg ? 'w-4 bg-white' : 'w-1.5 bg-white/60'}`} />",
   "new_string": "              <div className=\"absolute bottom-7 left-0 right-0 flex justify-center gap-1.5 pointer-events-none drop-shadow\">\n                {gallery.map((_, i) => (\n                  <span key={i} className={`h-1.5 rounded-full transition-all ${i === activeImg ? 'w-4 bg-white' : 'w-1.5 bg-white/70'}`} />"
 }
@@ -919,7 +919,7 @@ id: toolu_01DVemGFx7d7sKmyn3RgZoKk
 tool_result
 id: toolu_01DVemGFx7d7sKmyn3RgZoKk
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/produce/[id]/page.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/produce/[id]/page.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -929,7 +929,7 @@ id: toolu_019kiLLNPJzrber5ynTetytq
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/harvest/[harvestId]/page.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/harvest/[harvestId]/page.tsx",
   "old_string": "              <div className=\"absolute bottom-3 left-0 right-0 flex justify-center gap-1.5 pointer-events-none\">\n                {gallery.map((_, i) => (\n                  <span key={i} className={`h-1.5 rounded-full transition-all ${i === activeImg ? 'w-4 bg-white' : 'w-1.5 bg-white/60'}`} />",
   "new_string": "              <div className=\"absolute bottom-7 left-0 right-0 flex justify-center gap-1.5 pointer-events-none drop-shadow\">\n                {gallery.map((_, i) => (\n                  <span key={i} className={`h-1.5 rounded-full transition-all ${i === activeImg ? 'w-4 bg-white' : 'w-1.5 bg-white/70'}`} />"
 }
@@ -940,7 +940,7 @@ id: toolu_019kiLLNPJzrber5ynTetytq
 tool_result
 id: toolu_019kiLLNPJzrber5ynTetytq
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/harvest/[harvestId]/page.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/harvest/[harvestId]/page.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

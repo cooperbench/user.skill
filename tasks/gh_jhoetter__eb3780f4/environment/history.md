@@ -42,7 +42,7 @@ I’ve added the spec under `docs/`. I’m doing one quick pass for clarity and 
 
 > AGENT
 
-Added the spec here: [docs/hunyuan3d-asset-generation-spec.md](/Users/jhoetter/repos/bim-ai/docs/hunyuan3d-asset-generation-spec.md)
+Added the spec here: [docs/hunyuan3d-asset-generation-spec.md](/home/<USER>/repos/bim-ai/docs/hunyuan3d-asset-generation-spec.md)
 
 It includes the `agents.md` queue/API flow, the simpler `gradio_client` prototype path, current asset-library fit, required schema additions, backend/frontend milestones, post-processing requirements, privacy/security, licensing risks, and a prototype-to-production migration plan.
 

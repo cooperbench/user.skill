@@ -44,7 +44,7 @@ tool_use Read
 id: toolu_01Jiv8Z3AbfkRDo8ZB4aWfas
 ```json
 {
-  "file_path": "/Users/alex/workspace/entire-cli-e2e-tests/agents/agent.go"
+  "file_path": "/home/<USER>/workspace/entire-cli-e2e-tests/agents/agent.go"
 }
 ```
 
@@ -116,7 +116,7 @@ tool_use Read
 id: toolu_013U22nYhae9K949tXyyEAiF
 ```json
 {
-  "file_path": "/Users/alex/workspace/entire-cli-e2e-tests/agents/claude.go"
+  "file_path": "/home/<USER>/workspace/entire-cli-e2e-tests/agents/claude.go"
 }
 ```
 
@@ -180,7 +180,7 @@ tool_use Read
 id: toolu_01Ws7aNSbiNPVMHrDJVgEhyB
 ```json
 {
-  "file_path": "/Users/alex/workspace/entire-cli-e2e-tests/agents/gemini.go"
+  "file_path": "/home/<USER>/workspace/entire-cli-e2e-tests/agents/gemini.go"
 }
 ```
 
@@ -244,7 +244,7 @@ tool_use Read
 id: toolu_01ApTZkmPw46WecDeVxY53K1
 ```json
 {
-  "file_path": "/Users/alex/workspace/entire-cli-e2e-tests/agents/opencode.go"
+  "file_path": "/home/<USER>/workspace/entire-cli-e2e-tests/agents/opencode.go"
 }
 ```
 
@@ -311,7 +311,7 @@ tool_use Read
 id: toolu_01WJRwne9JMPGj8Tpt92Cgtj
 ```json
 {
-  "file_path": "/Users/alex/workspace/entire-cli-e2e-tests/tests/main_test.go"
+  "file_path": "/home/<USER>/workspace/entire-cli-e2e-tests/tests/main_test.go"
 }
 ```
 
@@ -369,7 +369,7 @@ id: toolu_01VrExY6KBSdwuFX7sGbcMw3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/entire-cli-e2e-tests/agents/agent.go",
+  "file_path": "/home/<USER>/workspace/entire-cli-e2e-tests/agents/agent.go",
   "old_string": "type Agent interface {\n\tName() string\n\tEntireAgent() string\n\tPromptPattern() string\n\t// TimeoutMultiplier returns a factor applied to per-test timeouts.\n\t// Slower agents (e.g. Gemini) return values > 1.\n\tTimeoutMultiplier() float64\n\tRunPrompt(ctx context.Context, dir string, prompt string, opts ...Option) (Output, error)\n\tStartSession(ctx context.Context, dir string) (Session, error)\n}",
   "new_string": "type Agent interface {\n\tName() string\n\t// Binary returns the CLI binary name (e.g. \"claude\", \"gemini\").\n\tBinary() string\n\tEntireAgent() string\n\tPromptPattern() string\n\t// TimeoutMultiplier returns a factor applied to per-test timeouts.\n\t// Slower agents (e.g. Gemini) return values > 1.\n\tTimeoutMultiplier() float64\n\tRunPrompt(ctx context.Context, dir string, prompt string, opts ...Option) (Output, error)\n\tStartSession(ctx context.Context, dir string) (Session, error)\n}"
 }
@@ -380,7 +380,7 @@ id: toolu_01VrExY6KBSdwuFX7sGbcMw3
 tool_result
 id: toolu_01VrExY6KBSdwuFX7sGbcMw3
 ```
-The file /Users/alex/workspace/entire-cli-e2e-tests/agents/agent.go has been updated successfully.
+The file /home/<USER>/workspace/entire-cli-e2e-tests/agents/agent.go has been updated successfully.
 ```
 
 > TOOL
@@ -390,7 +390,7 @@ id: toolu_015NZZbYLbaViph84aymkPsw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/entire-cli-e2e-tests/agents/claude.go",
+  "file_path": "/home/<USER>/workspace/entire-cli-e2e-tests/agents/claude.go",
   "old_string": "func (c *Claude) Name() string             { return \"claude-code\" }\nfunc (c *Claude) EntireAgent() string      { return \"claude-code\" }",
   "new_string": "func (c *Claude) Name() string             { return \"claude-code\" }\nfunc (c *Claude) Binary() string           { return \"claude\" }\nfunc (c *Claude) EntireAgent() string      { return \"claude-code\" }"
 }
@@ -401,7 +401,7 @@ id: toolu_015NZZbYLbaViph84aymkPsw
 tool_result
 id: toolu_015NZZbYLbaViph84aymkPsw
 ```
-The file /Users/alex/workspace/entire-cli-e2e-tests/agents/claude.go has been updated successfully.
+The file /home/<USER>/workspace/entire-cli-e2e-tests/agents/claude.go has been updated successfully.
 ```
 
 > TOOL
@@ -411,7 +411,7 @@ id: toolu_01QNdAo5nVgWtaaPkdtjxBXH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/entire-cli-e2e-tests/agents/gemini.go",
+  "file_path": "/home/<USER>/workspace/entire-cli-e2e-tests/agents/gemini.go",
   "old_string": "func (g *Gemini) Name() string               { return \"gemini-cli\" }\nfunc (g *Gemini) EntireAgent() string        { return \"gemini\" }",
   "new_string": "func (g *Gemini) Name() string               { return \"gemini-cli\" }\nfunc (g *Gemini) Binary() string             { return \"gemini\" }\nfunc (g *Gemini) EntireAgent() string        { return \"gemini\" }"
 }
@@ -422,7 +422,7 @@ id: toolu_01QNdAo5nVgWtaaPkdtjxBXH
 tool_result
 id: toolu_01QNdAo5nVgWtaaPkdtjxBXH
 ```
-The file /Users/alex/workspace/entire-cli-e2e-tests/agents/gemini.go has been updated successfully.
+The file /home/<USER>/workspace/entire-cli-e2e-tests/agents/gemini.go has been updated successfully.
 ```
 
 > TOOL
@@ -432,7 +432,7 @@ id: toolu_01UAPCZR1QPbtFWLpSx2Zyik
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/entire-cli-e2e-tests/agents/opencode.go",
+  "file_path": "/home/<USER>/workspace/entire-cli-e2e-tests/agents/opencode.go",
   "old_string": "func (a *openCodeAgent) Name() string              { return \"opencode\" }\nfunc (a *openCodeAgent) EntireAgent() string        { return \"opencode\" }",
   "new_string": "func (a *openCodeAgent) Name() string              { return \"opencode\" }\nfunc (a *openCodeAgent) Binary() string             { return \"opencode\" }\nfunc (a *openCodeAgent) EntireAgent() string        { return \"opencode\" }"
 }
@@ -443,7 +443,7 @@ id: toolu_01UAPCZR1QPbtFWLpSx2Zyik
 tool_result
 id: toolu_01UAPCZR1QPbtFWLpSx2Zyik
 ```
-The file /Users/alex/workspace/entire-cli-e2e-tests/agents/opencode.go has been updated successfully.
+The file /home/<USER>/workspace/entire-cli-e2e-tests/agents/opencode.go has been updated successfully.
 ```
 
 > TOOL
@@ -453,7 +453,7 @@ id: toolu_01Nvae2BU2RiEFq4KAvWG4HB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/entire-cli-e2e-tests/tests/main_test.go",
+  "file_path": "/home/<USER>/workspace/entire-cli-e2e-tests/tests/main_test.go",
   "old_string": "\tversion := \"unknown\"\n\tif out, err := exec.Command(\"entire\", \"version\").Output(); err == nil {\n\t\tversion = string(out)\n\t\t_ = os.WriteFile(filepath.Join(runDir, \"entire-version.txt\"), out, 0o644)\n\t}\n\n\tfmt.Fprintf(os.Stderr, \"entire version: %s\", version)\n\tfmt.Fprintf(os.Stderr, \"artifact dir:   %s\\n\", runDir)\n\n\tos.Exit(m.Run())",
   "new_string": "\t// Preflight: verify required dependencies before running any tests.\n\tvar missing []string\n\tfor _, bin := range []string{\"git\", \"tmux\", \"entire\"} {\n\t\tif _, err := exec.LookPath(bin); err != nil {\n\t\t\tmissing = append(missing, bin)\n\t\t}\n\t}\n\tfor _, a := range agents.All() {\n\t\tif _, err := exec.LookPath(a.Binary()); err != nil {\n\t\t\tmissing = append(missing, a.Binary())\n\t\t}\n\t}\n\tif len(missing) > 0 {\n\t\tfmt.Fprintf(os.Stderr, \"preflight: missing required binaries: %v\\n\", missing)\n\t\tos.Exit(1)\n\t}\n\n\tversion := \"unknown\"\n\tif out, err := exec.Command(\"entire\", \"version\").Output(); err == nil {\n\t\tversion = string(out)\n\t\t_ = os.WriteFile(filepath.Join(runDir, \"entire-version.txt\"), out, 0o644)\n\t}\n\n\tfmt.Fprintf(os.Stderr, \"entire version: %s\", version)\n\tfmt.Fprintf(os.Stderr, \"artifact dir:   %s\\n\", runDir)\n\n\tos.Exit(m.Run())"
 }
@@ -464,7 +464,7 @@ id: toolu_01Nvae2BU2RiEFq4KAvWG4HB
 tool_result
 id: toolu_01Nvae2BU2RiEFq4KAvWG4HB
 ```
-The file /Users/alex/workspace/entire-cli-e2e-tests/tests/main_test.go has been updated successfully.
+The file /home/<USER>/workspace/entire-cli-e2e-tests/tests/main_test.go has been updated successfully.
 ```
 
 > AGENT
@@ -478,7 +478,7 @@ id: toolu_01LKud3n5PRAk6sjvPHzbZcp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/entire-cli-e2e-tests/tests/main_test.go",
+  "file_path": "/home/<USER>/workspace/entire-cli-e2e-tests/tests/main_test.go",
   "old_string": "\t_ \"github.com/entire-io/e2e-tests/agents\"",
   "new_string": "\t\"github.com/entire-io/e2e-tests/agents\""
 }
@@ -489,7 +489,7 @@ id: toolu_01LKud3n5PRAk6sjvPHzbZcp
 tool_result
 id: toolu_01LKud3n5PRAk6sjvPHzbZcp
 ```
-The file /Users/alex/workspace/entire-cli-e2e-tests/tests/main_test.go has been updated successfully.
+The file /home/<USER>/workspace/entire-cli-e2e-tests/tests/main_test.go has been updated successfully.
 ```
 
 > AGENT
@@ -534,7 +534,7 @@ tool_use Read
 id: toolu_01L6myT54Hdu6qaTtHrbwQij
 ```json
 {
-  "file_path": "/Users/alex/workspace/entire-cli-e2e-tests/go.mod"
+  "file_path": "/home/<USER>/workspace/entire-cli-e2e-tests/go.mod"
 }
 ```
 
@@ -576,9 +576,9 @@ tool_result ERROR
 id: toolu_01189dZvRDWoyT1qEn1hrHuF
 ```
 Exit code 1
-github.com/entire-io/e2e-tests/tests: build constraints exclude all Go files in /Users/alex/workspace/entire-cli-e2e-tests/tests
+github.com/entire-io/e2e-tests/tests: build constraints exclude all Go files in /home/<USER>/workspace/entire-cli-e2e-tests/tests
 
-github.com/entire-io/e2e-tests/tests: build constraints exclude all Go files in /Users/alex/workspace/entire-cli-e2e-tests/tests
+github.com/entire-io/e2e-tests/tests: build constraints exclude all Go files in /home/<USER>/workspace/entire-cli-e2e-tests/tests
 ```
 
 > TOOL
@@ -610,7 +610,7 @@ tool_use Read
 id: toolu_01FLUhAxHtmtDupjBwDgsfeY
 ```json
 {
-  "file_path": "/Users/alex/workspace/entire-cli-e2e-tests/testutil/repo.go",
+  "file_path": "/home/<USER>/workspace/entire-cli-e2e-tests/testutil/repo.go",
   "limit": 20
 }
 ```
@@ -694,7 +694,7 @@ id: toolu_01T9kZELjcpnu1dokeNc8oEH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/entire-cli-e2e-tests/agents/claude.go",
+  "file_path": "/home/<USER>/workspace/entire-cli-e2e-tests/agents/claude.go",
   "old_string": "\tcmd := exec.CommandContext(ctx, \"claude\", args...)",
   "new_string": "\tcmd := exec.CommandContext(ctx, c.Binary(), args...)"
 }
@@ -705,7 +705,7 @@ id: toolu_01T9kZELjcpnu1dokeNc8oEH
 tool_result
 id: toolu_01T9kZELjcpnu1dokeNc8oEH
 ```
-The file /Users/alex/workspace/entire-cli-e2e-tests/agents/claude.go has been updated successfully.
+The file /home/<USER>/workspace/entire-cli-e2e-tests/agents/claude.go has been updated successfully.
 ```
 
 > TOOL
@@ -715,7 +715,7 @@ id: toolu_01FSmJBsnGxRXcGxSdWQ3eFf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/entire-cli-e2e-tests/agents/claude.go",
+  "file_path": "/home/<USER>/workspace/entire-cli-e2e-tests/agents/claude.go",
   "old_string": "\t\tCommand:  \"claude \" + strings.Join(displayArgs, \" \"),",
   "new_string": "\t\tCommand:  c.Binary() + \" \" + strings.Join(displayArgs, \" \"),"
 }
@@ -726,7 +726,7 @@ id: toolu_01FSmJBsnGxRXcGxSdWQ3eFf
 tool_result
 id: toolu_01FSmJBsnGxRXcGxSdWQ3eFf
 ```
-The file /Users/alex/workspace/entire-cli-e2e-tests/agents/claude.go has been updated successfully.
+The file /home/<USER>/workspace/entire-cli-e2e-tests/agents/claude.go has been updated successfully.
 ```
 
 > TOOL
@@ -736,7 +736,7 @@ id: toolu_01J9Xk5Qdy7AdgRpDitQxCpR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/entire-cli-e2e-tests/agents/claude.go",
+  "file_path": "/home/<USER>/workspace/entire-cli-e2e-tests/agents/claude.go",
   "old_string": "\ts, err := NewTmuxSession(name, dir, []string{\"CLAUDECODE\"}, \"env\", \"ACCESSIBLE=1\", \"ENTIRE_TEST_TTY=0\", \"claude\", \"--dangerously-skip-permissions\")",
   "new_string": "\ts, err := NewTmuxSession(name, dir, []string{\"CLAUDECODE\"}, \"env\", \"ACCESSIBLE=1\", \"ENTIRE_TEST_TTY=0\", c.Binary(), \"--dangerously-skip-permissions\")"
 }
@@ -747,7 +747,7 @@ id: toolu_01J9Xk5Qdy7AdgRpDitQxCpR
 tool_result
 id: toolu_01J9Xk5Qdy7AdgRpDitQxCpR
 ```
-The file /Users/alex/workspace/entire-cli-e2e-tests/agents/claude.go has been updated successfully.
+The file /home/<USER>/workspace/entire-cli-e2e-tests/agents/claude.go has been updated successfully.
 ```
 
 > TOOL
@@ -757,7 +757,7 @@ id: toolu_01WRWoMjpTGrPN7kyaBRhc9v
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/entire-cli-e2e-tests/agents/gemini.go",
+  "file_path": "/home/<USER>/workspace/entire-cli-e2e-tests/agents/gemini.go",
   "old_string": "\tcmd := exec.CommandContext(ctx, \"gemini\", args...)",
   "new_string": "\tcmd := exec.CommandContext(ctx, g.Binary(), args...)"
 }
@@ -768,7 +768,7 @@ id: toolu_01WRWoMjpTGrPN7kyaBRhc9v
 tool_result
 id: toolu_01WRWoMjpTGrPN7kyaBRhc9v
 ```
-The file /Users/alex/workspace/entire-cli-e2e-tests/agents/gemini.go has been updated successfully.
+The file /home/<USER>/workspace/entire-cli-e2e-tests/agents/gemini.go has been updated successfully.
 ```
 
 > TOOL
@@ -778,7 +778,7 @@ id: toolu_01Nj6P9HvLgR6gjgqziEwrVB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/entire-cli-e2e-tests/agents/gemini.go",
+  "file_path": "/home/<USER>/workspace/entire-cli-e2e-tests/agents/gemini.go",
   "old_string": "\t\tCommand:  \"gemini \" + strings.Join(displayArgs, \" \"),",
   "new_string": "\t\tCommand:  g.Binary() + \" \" + strings.Join(displayArgs, \" \"),"
 }
@@ -789,7 +789,7 @@ id: toolu_01Nj6P9HvLgR6gjgqziEwrVB
 tool_result
 id: toolu_01Nj6P9HvLgR6gjgqziEwrVB
 ```
-The file /Users/alex/workspace/entire-cli-e2e-tests/agents/gemini.go has been updated successfully.
+The file /home/<USER>/workspace/entire-cli-e2e-tests/agents/gemini.go has been updated successfully.
 ```
 
 > TOOL
@@ -799,7 +799,7 @@ id: toolu_013n3YkH9pRmyuoUD6F4gNJB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/entire-cli-e2e-tests/agents/gemini.go",
+  "file_path": "/home/<USER>/workspace/entire-cli-e2e-tests/agents/gemini.go",
   "old_string": "\ts, err := NewTmuxSession(name, dir, nil, \"env\", \"ACCESSIBLE=1\", \"ENTIRE_TEST_TTY=0\", \"gemini\", \"-y\")",
   "new_string": "\ts, err := NewTmuxSession(name, dir, nil, \"env\", \"ACCESSIBLE=1\", \"ENTIRE_TEST_TTY=0\", g.Binary(), \"-y\")"
 }
@@ -810,7 +810,7 @@ id: toolu_013n3YkH9pRmyuoUD6F4gNJB
 tool_result
 id: toolu_013n3YkH9pRmyuoUD6F4gNJB
 ```
-The file /Users/alex/workspace/entire-cli-e2e-tests/agents/gemini.go has been updated successfully.
+The file /home/<USER>/workspace/entire-cli-e2e-tests/agents/gemini.go has been updated successfully.
 ```
 
 > TOOL
@@ -820,7 +820,7 @@ id: toolu_019RjRKieRKvGJcg8WnNs7JL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/entire-cli-e2e-tests/agents/opencode.go",
+  "file_path": "/home/<USER>/workspace/entire-cli-e2e-tests/agents/opencode.go",
   "old_string": "\tcmd := exec.CommandContext(ctx, \"opencode\", args...)",
   "new_string": "\tcmd := exec.CommandContext(ctx, a.Binary(), args...)"
 }
@@ -831,7 +831,7 @@ id: toolu_019RjRKieRKvGJcg8WnNs7JL
 tool_result
 id: toolu_019RjRKieRKvGJcg8WnNs7JL
 ```
-The file /Users/alex/workspace/entire-cli-e2e-tests/agents/opencode.go has been updated successfully.
+The file /home/<USER>/workspace/entire-cli-e2e-tests/agents/opencode.go has been updated successfully.
 ```
 
 > TOOL
@@ -841,7 +841,7 @@ id: toolu_01L1apcSvN1bduqMUaYzZEBH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/entire-cli-e2e-tests/agents/opencode.go",
+  "file_path": "/home/<USER>/workspace/entire-cli-e2e-tests/agents/opencode.go",
   "old_string": "\t\tCommand: fmt.Sprintf(\"opencode %s\", strings.Join(args, \" \")),",
   "new_string": "\t\tCommand: fmt.Sprintf(\"%s %s\", a.Binary(), strings.Join(args, \" \")),"
 }
@@ -852,7 +852,7 @@ id: toolu_01L1apcSvN1bduqMUaYzZEBH
 tool_result
 id: toolu_01L1apcSvN1bduqMUaYzZEBH
 ```
-The file /Users/alex/workspace/entire-cli-e2e-tests/agents/opencode.go has been updated successfully.
+The file /home/<USER>/workspace/entire-cli-e2e-tests/agents/opencode.go has been updated successfully.
 ```
 
 > TOOL
@@ -862,7 +862,7 @@ id: toolu_01B28JXGburdxYrqyTNYfAnB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/entire-cli-e2e-tests/agents/opencode.go",
+  "file_path": "/home/<USER>/workspace/entire-cli-e2e-tests/agents/opencode.go",
   "old_string": "\ts, err := NewTmuxSession(name, dir, nil, \"env\", \"ENTIRE_TEST_TTY=0\", \"opencode\", \"--model\", a.model)",
   "new_string": "\ts, err := NewTmuxSession(name, dir, nil, \"env\", \"ENTIRE_TEST_TTY=0\", a.Binary(), \"--model\", a.model)"
 }
@@ -873,7 +873,7 @@ id: toolu_01B28JXGburdxYrqyTNYfAnB
 tool_result
 id: toolu_01B28JXGburdxYrqyTNYfAnB
 ```
-The file /Users/alex/workspace/entire-cli-e2e-tests/agents/opencode.go has been updated successfully.
+The file /home/<USER>/workspace/entire-cli-e2e-tests/agents/opencode.go has been updated successfully.
 ```
 
 > AGENT
@@ -974,7 +974,7 @@ tool_use Bash
 id: toolu_012EEQ5xwABhAaAxxH1PNorT
 ```json
 {
-  "command": "git -C /Users/alex/workspace/entire-cli-e2e-tests status",
+  "command": "git -C /home/<USER>/workspace/entire-cli-e2e-tests status",
   "description": "Show working tree status"
 }
 ```
@@ -1008,7 +1008,7 @@ tool_use Bash
 id: toolu_01PchMTqGxs2jodsxktGdUws
 ```json
 {
-  "command": "git -C /Users/alex/workspace/entire-cli-e2e-tests diff",
+  "command": "git -C /home/<USER>/workspace/entire-cli-e2e-tests diff",
   "description": "Show staged and unstaged changes"
 }
 ```
@@ -1064,7 +1064,7 @@ tool_use Bash
 id: toolu_01KZdiYBtrmdsWescw6hASxC
 ```json
 {
-  "command": "git -C /Users/alex/workspace/entire-cli-e2e-tests log --oneline -5",
+  "command": "git -C /home/<USER>/workspace/entire-cli-e2e-tests log --oneline -5",
   "description": "Show recent commit messages"
 }
 ```
@@ -1091,7 +1091,7 @@ tool_use Bash
 id: toolu_01EiUrZWMRUoajwpZ6K1efh4
 ```json
 {
-  "command": "git -C /Users/alex/workspace/entire-cli-e2e-tests add agents/agent.go agents/claude.go agents/gemini.go agents/opencode.go tests/main_test.go",
+  "command": "git -C /home/<USER>/workspace/entire-cli-e2e-tests add agents/agent.go agents/claude.go agents/gemini.go agents/opencode.go tests/main_test.go",
   "description": "Stage only the files we changed"
 }
 ```
@@ -1110,7 +1110,7 @@ tool_use Bash
 id: toolu_01P3GCCfBfJepCCU5r1HteqT
 ```json
 {
-  "command": "git -C /Users/alex/workspace/entire-cli-e2e-tests commit -m \"$(cat <<'EOF'\nfeat: add preflight dependency checks in TestMain\n\nVerify git, tmux, entire, and all registered agent binaries are on $PATH\nbefore running any tests, failing early with a clear error instead of\ncryptic failures deep in test execution.\n\nAdds Binary() to the Agent interface as the single source of truth for\neach agent's CLI binary name, used by both preflight checks and the\nexisting RunPrompt/StartSession/Output.Command code paths.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git -C /home/<USER>/workspace/entire-cli-e2e-tests commit -m \"$(cat <<'EOF'\nfeat: add preflight dependency checks in TestMain\n\nVerify git, tmux, entire, and all registered agent binaries are on $PATH\nbefore running any tests, failing early with a clear error instead of\ncryptic failures deep in test execution.\n\nAdds Binary() to the Agent interface as the single source of truth for\neach agent's CLI binary name, used by both preflight checks and the\nexisting RunPrompt/StartSession/Output.Command code paths.\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit preflight dependency checks"
 }
 ```
@@ -1134,7 +1134,7 @@ tool_use Read
 id: toolu_014919ZewpQfHeNgXmPEenA1
 ```json
 {
-  "file_path": "/Users/alex/workspace/entire-cli-e2e-tests/agents/claude.go",
+  "file_path": "/home/<USER>/workspace/entire-cli-e2e-tests/agents/claude.go",
   "offset": 78,
   "limit": 6
 }
@@ -1164,7 +1164,7 @@ id: toolu_01KF7FcXJFqsJfKVGUPEPVCQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/entire-cli-e2e-tests/agents/claude.go",
+  "file_path": "/home/<USER>/workspace/entire-cli-e2e-tests/agents/claude.go",
   "old_string": "\tdefer os.RemoveAll(configDir)",
   "new_string": "\tdefer func() { _ = os.RemoveAll(configDir) }()"
 }
@@ -1175,7 +1175,7 @@ id: toolu_01KF7FcXJFqsJfKVGUPEPVCQ
 tool_result
 id: toolu_01KF7FcXJFqsJfKVGUPEPVCQ
 ```
-The file /Users/alex/workspace/entire-cli-e2e-tests/agents/claude.go has been updated successfully.
+The file /home/<USER>/workspace/entire-cli-e2e-tests/agents/claude.go has been updated successfully.
 ```
 
 > TOOL
@@ -1259,7 +1259,7 @@ tool_use Read
 id: toolu_01TPpoiHRgGZGuwjkGgWNr71
 ```json
 {
-  "file_path": "/Users/alex/workspace/entire-cli-e2e-tests/testutil/repo.go"
+  "file_path": "/home/<USER>/workspace/entire-cli-e2e-tests/testutil/repo.go"
 }
 ```
 
@@ -1321,7 +1321,7 @@ id: toolu_01P8nqcdt6y3KmtyhTRWo3q7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/entire-cli-e2e-tests/testutil/repo.go",
+  "file_path": "/home/<USER>/workspace/entire-cli-e2e-tests/testutil/repo.go",
   "old_string": "\t\"github.com/entireio/cli/e2e/agents\"\n\t\"github.com/entireio/cli/e2e/entire\"",
   "new_string": "\t\"github.com/entire-io/e2e-tests/agents\"\n\t\"github.com/entire-io/e2e-tests/entire\""
 }
@@ -1332,7 +1332,7 @@ id: toolu_01P8nqcdt6y3KmtyhTRWo3q7
 tool_result
 id: toolu_01P8nqcdt6y3KmtyhTRWo3q7
 ```
-The file /Users/alex/workspace/entire-cli-e2e-tests/testutil/repo.go has been updated successfully.
+The file /home/<USER>/workspace/entire-cli-e2e-tests/testutil/repo.go has been updated successfully.
 ```
 
 > TOOL
@@ -1405,7 +1405,7 @@ tool_use Read
 id: toolu_01FiSdWTKh4hWsqGPX4r69Yu
 ```json
 {
-  "file_path": "/Users/alex/workspace/entire-cli-e2e-tests/cmd/testreport/main.go",
+  "file_path": "/home/<USER>/workspace/entire-cli-e2e-tests/cmd/testreport/main.go",
   "offset": 50,
   "limit": 8
 }
@@ -1432,7 +1432,7 @@ tool_use Read
 id: toolu_01QfxdPpTHJfoqsnjstNX7X6
 ```json
 {
-  "file_path": "/Users/alex/workspace/entire-cli-e2e-tests/tests/session_lifecycle_test.go",
+  "file_path": "/home/<USER>/workspace/entire-cli-e2e-tests/tests/session_lifecycle_test.go",
   "offset": 68,
   "limit": 10
 }
@@ -1462,7 +1462,7 @@ id: toolu_0147PVzte69HRULEiG29LNoB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/entire-cli-e2e-tests/cmd/testreport/main.go",
+  "file_path": "/home/<USER>/workspace/entire-cli-e2e-tests/cmd/testreport/main.go",
   "old_string": "\t\tdefer f.Close()",
   "new_string": "\t\tdefer func() { _ = f.Close() }()"
 }
@@ -1473,7 +1473,7 @@ id: toolu_0147PVzte69HRULEiG29LNoB
 tool_result
 id: toolu_0147PVzte69HRULEiG29LNoB
 ```
-The file /Users/alex/workspace/entire-cli-e2e-tests/cmd/testreport/main.go has been updated successfully.
+The file /home/<USER>/workspace/entire-cli-e2e-tests/cmd/testreport/main.go has been updated successfully.
 ```
 
 > TOOL
@@ -1483,7 +1483,7 @@ id: toolu_01E3dSjeUs6QdRNxTUWdQg4G
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/entire-cli-e2e-tests/tests/session_lifecycle_test.go",
+  "file_path": "/home/<USER>/workspace/entire-cli-e2e-tests/tests/session_lifecycle_test.go",
   "old_string": "\t\tos.WriteFile(filepath.Join(s.Dir, \"depleted.go\"),\n\t\t\t[]byte(\"package main\\n\\n// Manual user edit\\nfunc Depleted() { return }\\n\"), 0o644)",
   "new_string": "\t\tif err := os.WriteFile(filepath.Join(s.Dir, \"depleted.go\"),\n\t\t\t[]byte(\"package main\\n\\n// Manual user edit\\nfunc Depleted() { return }\\n\"), 0o644); err != nil {\n\t\t\tt.Fatalf(\"write depleted.go: %v\", err)\n\t\t}"
 }
@@ -1494,7 +1494,7 @@ id: toolu_01E3dSjeUs6QdRNxTUWdQg4G
 tool_result
 id: toolu_01E3dSjeUs6QdRNxTUWdQg4G
 ```
-The file /Users/alex/workspace/entire-cli-e2e-tests/tests/session_lifecycle_test.go has been updated successfully.
+The file /home/<USER>/workspace/entire-cli-e2e-tests/tests/session_lifecycle_test.go has been updated successfully.
 ```
 
 > TOOL
@@ -1504,7 +1504,7 @@ id: toolu_01WdWGUFsPNXcNiEzRf7ACY9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/entire-cli-e2e-tests/testutil/repo.go",
+  "file_path": "/home/<USER>/workspace/entire-cli-e2e-tests/testutil/repo.go",
   "old_string": "\t\tt.Cleanup(func() { os.RemoveAll(dir) })",
   "new_string": "\t\tt.Cleanup(func() { _ = os.RemoveAll(dir) })"
 }
@@ -1515,7 +1515,7 @@ id: toolu_01WdWGUFsPNXcNiEzRf7ACY9
 tool_result
 id: toolu_01WdWGUFsPNXcNiEzRf7ACY9
 ```
-The file /Users/alex/workspace/entire-cli-e2e-tests/testutil/repo.go has been updated successfully.
+The file /home/<USER>/workspace/entire-cli-e2e-tests/testutil/repo.go has been updated successfully.
 ```
 
 > TOOL
@@ -1525,7 +1525,7 @@ id: toolu_012vgVE7iaiGivaQYxmKYuDJ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/entire-cli-e2e-tests/testutil/repo.go",
+  "file_path": "/home/<USER>/workspace/entire-cli-e2e-tests/testutil/repo.go",
   "old_string": "\ts.ConsoleLog.WriteString(\"> \" + out.Command + \"\\n\")\n\ts.ConsoleLog.WriteString(\"stdout:\\n\" + out.Stdout + \"\\n\")\n\ts.ConsoleLog.WriteString(\"stderr:\\n\" + out.Stderr + \"\\n\")",
   "new_string": "\t_, _ = s.ConsoleLog.WriteString(\"> \" + out.Command + \"\\n\")\n\t_, _ = s.ConsoleLog.WriteString(\"stdout:\\n\" + out.Stdout + \"\\n\")\n\t_, _ = s.ConsoleLog.WriteString(\"stderr:\\n\" + out.Stderr + \"\\n\")"
 }
@@ -1536,7 +1536,7 @@ id: toolu_012vgVE7iaiGivaQYxmKYuDJ
 tool_result
 id: toolu_012vgVE7iaiGivaQYxmKYuDJ
 ```
-The file /Users/alex/workspace/entire-cli-e2e-tests/testutil/repo.go has been updated successfully.
+The file /home/<USER>/workspace/entire-cli-e2e-tests/testutil/repo.go has been updated successfully.
 ```
 
 > TOOL
@@ -1586,7 +1586,7 @@ id: toolu_01Wm9hD3zSKxfQBhT8VXz5rW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/entire-cli-e2e-tests/testutil/repo.go",
+  "file_path": "/home/<USER>/workspace/entire-cli-e2e-tests/testutil/repo.go",
   "old_string": "\ts.ConsoleLog.WriteString(\"> git \" + strings.Join(args, \" \") + \"\\n\")",
   "new_string": "\t_, _ = s.ConsoleLog.WriteString(\"> git \" + strings.Join(args, \" \") + \"\\n\")"
 }
@@ -1597,7 +1597,7 @@ id: toolu_01Wm9hD3zSKxfQBhT8VXz5rW
 tool_result
 id: toolu_01Wm9hD3zSKxfQBhT8VXz5rW
 ```
-The file /Users/alex/workspace/entire-cli-e2e-tests/testutil/repo.go has been updated successfully.
+The file /home/<USER>/workspace/entire-cli-e2e-tests/testutil/repo.go has been updated successfully.
 ```
 
 > TOOL
@@ -1607,7 +1607,7 @@ id: toolu_0176UgwXXiVCyE7kUKxXQL2z
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/entire-cli-e2e-tests/testutil/repo.go",
+  "file_path": "/home/<USER>/workspace/entire-cli-e2e-tests/testutil/repo.go",
   "old_string": "\ts.ConsoleLog.WriteString(\"> send: \" + input + \"\\n\")",
   "new_string": "\t_, _ = s.ConsoleLog.WriteString(\"> send: \" + input + \"\\n\")"
 }
@@ -1618,7 +1618,7 @@ id: toolu_0176UgwXXiVCyE7kUKxXQL2z
 tool_result
 id: toolu_0176UgwXXiVCyE7kUKxXQL2z
 ```
-The file /Users/alex/workspace/entire-cli-e2e-tests/testutil/repo.go has been updated successfully.
+The file /home/<USER>/workspace/entire-cli-e2e-tests/testutil/repo.go has been updated successfully.
 ```
 
 > TOOL
@@ -1658,7 +1658,7 @@ tool_use Bash
 id: toolu_01M9NnqA1qAfPmDk8womHj96
 ```json
 {
-  "command": "ls /Users/alex/workspace/cli/e2e/",
+  "command": "ls /home/<USER>/workspace/cli/e2e/",
   "description": "Check e2e directory in cli repo"
 }
 ```
@@ -1684,7 +1684,7 @@ tool_use Bash
 id: toolu_01E5jiLQ2Ejss1JQfykvAKrE
 ```json
 {
-  "command": "git -C /Users/alex/workspace/cli status --short -- e2e/",
+  "command": "git -C /home/<USER>/workspace/cli status --short -- e2e/",
   "description": "Check git status of e2e dir in cli repo"
 }
 ```
@@ -1699,7 +1699,7 @@ id: toolu_01E5jiLQ2Ejss1JQfykvAKrE
 
 > AGENT
 
-Yep, the e2e tests live in `/Users/alex/workspace/cli/e2e/`. Everything's already committed there — let me check the current state of the files I need to change.
+Yep, the e2e tests live in `/home/<USER>/workspace/cli/e2e/`. Everything's already committed there — let me check the current state of the files I need to change.
 
 > TOOL
 
@@ -1707,7 +1707,7 @@ tool_use Read
 id: toolu_01DbCM5pt7sNJypS5ThQtYhn
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/e2e/agents/agent.go"
+  "file_path": "/home/<USER>/workspace/cli/e2e/agents/agent.go"
 }
 ```
 
@@ -1770,7 +1770,7 @@ tool_use Read
 id: toolu_012W6pFd5quZZJ4Unxb5WUFQ
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/e2e/agents/claude.go"
+  "file_path": "/home/<USER>/workspace/cli/e2e/agents/claude.go"
 }
 ```
 
@@ -1835,7 +1835,7 @@ tool_use Read
 id: toolu_01MCNCDCvDJ59WAXYdgqzww3
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/e2e/agents/gemini.go"
+  "file_path": "/home/<USER>/workspace/cli/e2e/agents/gemini.go"
 }
 ```
 
@@ -1907,7 +1907,7 @@ tool_use Read
 id: toolu_01RKcKEYZ6ZUceHSeQWy41yB
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/e2e/agents/opencode.go"
+  "file_path": "/home/<USER>/workspace/cli/e2e/agents/opencode.go"
 }
 ```
 
@@ -1978,7 +1978,7 @@ tool_use Read
 id: toolu_01SWrwBfEdbcTUTFSzFMcuq5
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/e2e/tests/main_test.go"
+  "file_path": "/home/<USER>/workspace/cli/e2e/tests/main_test.go"
 }
 ```
 
@@ -2038,7 +2038,7 @@ id: toolu_014DeepFVJGhroKbQXUynZhs
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/e2e/agents/agent.go",
+  "file_path": "/home/<USER>/workspace/cli/e2e/agents/agent.go",
   "old_string": "type Agent interface {\n\tName() string\n\tEntireAgent() string",
   "new_string": "type Agent interface {\n\tName() string\n\t// Binary returns the CLI binary name (e.g. \"claude\", \"gemini\").\n\tBinary() string\n\tEntireAgent() string"
 }
@@ -2049,7 +2049,7 @@ id: toolu_014DeepFVJGhroKbQXUynZhs
 tool_result
 id: toolu_014DeepFVJGhroKbQXUynZhs
 ```
-The file /Users/alex/workspace/cli/e2e/agents/agent.go has been updated successfully.
+The file /home/<USER>/workspace/cli/e2e/agents/agent.go has been updated successfully.
 ```
 
 > TOOL
@@ -2059,7 +2059,7 @@ id: toolu_014tFURKZZQj1SMVQGc9ajRR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/e2e/agents/claude.go",
+  "file_path": "/home/<USER>/workspace/cli/e2e/agents/claude.go",
   "old_string": "func (c *Claude) Name() string               { return \"claude-code\" }\nfunc (c *Claude) EntireAgent() string        { return \"claude-code\" }",
   "new_string": "func (c *Claude) Name() string               { return \"claude-code\" }\nfunc (c *Claude) Binary() string             { return \"claude\" }\nfunc (c *Claude) EntireAgent() string        { return \"claude-code\" }"
 }
@@ -2070,7 +2070,7 @@ id: toolu_014tFURKZZQj1SMVQGc9ajRR
 tool_result
 id: toolu_014tFURKZZQj1SMVQGc9ajRR
 ```
-The file /Users/alex/workspace/cli/e2e/agents/claude.go has been updated successfully.
+The file /home/<USER>/workspace/cli/e2e/agents/claude.go has been updated successfully.
 ```
 
 > TOOL
@@ -2080,7 +2080,7 @@ id: toolu_01FRnioJm8984SGmE1Q9wnUp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/e2e/agents/claude.go",
+  "file_path": "/home/<USER>/workspace/cli/e2e/agents/claude.go",
   "old_string": "\tdefer os.RemoveAll(configDir)",
   "new_string": "\tdefer func() { _ = os.RemoveAll(configDir) }()"
 }
@@ -2091,7 +2091,7 @@ id: toolu_01FRnioJm8984SGmE1Q9wnUp
 tool_result
 id: toolu_01FRnioJm8984SGmE1Q9wnUp
 ```
-The file /Users/alex/workspace/cli/e2e/agents/claude.go has been updated successfully.
+The file /home/<USER>/workspace/cli/e2e/agents/claude.go has been updated successfully.
 ```
 
 > TOOL
@@ -2101,7 +2101,7 @@ id: toolu_018ZmHd2X8Vsz7QNomRnRtcX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/e2e/agents/claude.go",
+  "file_path": "/home/<USER>/workspace/cli/e2e/agents/claude.go",
   "old_string": "\tcmd := exec.CommandContext(ctx, \"claude\", args...)",
   "new_string": "\tcmd := exec.CommandContext(ctx, c.Binary(), args...)"
 }
@@ -2112,7 +2112,7 @@ id: toolu_018ZmHd2X8Vsz7QNomRnRtcX
 tool_result
 id: toolu_018ZmHd2X8Vsz7QNomRnRtcX
 ```
-The file /Users/alex/workspace/cli/e2e/agents/claude.go has been updated successfully.
+The file /home/<USER>/workspace/cli/e2e/agents/claude.go has been updated successfully.
 ```
 
 > TOOL
@@ -2122,7 +2122,7 @@ id: toolu_01GxBoZht8cboZJa2GmpRhWW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/e2e/agents/claude.go",
+  "file_path": "/home/<USER>/workspace/cli/e2e/agents/claude.go",
   "old_string": "\t\tCommand:  \"claude \" + strings.Join(displayArgs, \" \"),",
   "new_string": "\t\tCommand:  c.Binary() + \" \" + strings.Join(displayArgs, \" \"),"
 }
@@ -2133,7 +2133,7 @@ id: toolu_01GxBoZht8cboZJa2GmpRhWW
 tool_result
 id: toolu_01GxBoZht8cboZJa2GmpRhWW
 ```
-The file /Users/alex/workspace/cli/e2e/agents/claude.go has been updated successfully.
+The file /home/<USER>/workspace/cli/e2e/agents/claude.go has been updated successfully.
 ```
 
 > TOOL
@@ -2143,7 +2143,7 @@ id: toolu_015ztdtiMTo5xrvoMqdEXFpf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/e2e/agents/claude.go",
+  "file_path": "/home/<USER>/workspace/cli/e2e/agents/claude.go",
   "old_string": "\targs = append(args, \"claude\", \"--dangerously-skip-permissions\")",
   "new_string": "\targs = append(args, c.Binary(), \"--dangerously-skip-permissions\")"
 }
@@ -2154,7 +2154,7 @@ id: toolu_015ztdtiMTo5xrvoMqdEXFpf
 tool_result
 id: toolu_015ztdtiMTo5xrvoMqdEXFpf
 ```
-The file /Users/alex/workspace/cli/e2e/agents/claude.go has been updated successfully.
+The file /home/<USER>/workspace/cli/e2e/agents/claude.go has been updated successfully.
 ```
 
 > TOOL
@@ -2164,7 +2164,7 @@ id: toolu_01NuXafLNDCZuUcbkTu8pAvS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/e2e/agents/gemini.go",
+  "file_path": "/home/<USER>/workspace/cli/e2e/agents/gemini.go",
   "old_string": "func (g *Gemini) Name() string               { return \"gemini-cli\" }\nfunc (g *Gemini) EntireAgent() string        { return \"gemini\" }",
   "new_string": "func (g *Gemini) Name() string               { return \"gemini-cli\" }\nfunc (g *Gemini) Binary() string             { return \"gemini\" }\nfunc (g *Gemini) EntireAgent() string        { return \"gemini\" }"
 }
@@ -2175,7 +2175,7 @@ id: toolu_01NuXafLNDCZuUcbkTu8pAvS
 tool_result
 id: toolu_01NuXafLNDCZuUcbkTu8pAvS
 ```
-The file /Users/alex/workspace/cli/e2e/agents/gemini.go has been updated successfully.
+The file /home/<USER>/workspace/cli/e2e/agents/gemini.go has been updated successfully.
 ```
 
 > TOOL
@@ -2185,7 +2185,7 @@ id: toolu_01S4z7jN75iieMyaKE1KaL8N
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/e2e/agents/gemini.go",
+  "file_path": "/home/<USER>/workspace/cli/e2e/agents/gemini.go",
   "old_string": "\tcmd := exec.CommandContext(ctx, \"gemini\", args...)",
   "new_string": "\tcmd := exec.CommandContext(ctx, g.Binary(), args...)"
 }
@@ -2196,7 +2196,7 @@ id: toolu_01S4z7jN75iieMyaKE1KaL8N
 tool_result
 id: toolu_01S4z7jN75iieMyaKE1KaL8N
 ```
-The file /Users/alex/workspace/cli/e2e/agents/gemini.go has been updated successfully.
+The file /home/<USER>/workspace/cli/e2e/agents/gemini.go has been updated successfully.
 ```
 
 > TOOL
@@ -2206,7 +2206,7 @@ id: toolu_01AsmGa4dLvXGQH5EdqZEJ1Q
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/e2e/agents/gemini.go",
+  "file_path": "/home/<USER>/workspace/cli/e2e/agents/gemini.go",
   "old_string": "\t\tCommand:  \"gemini \" + strings.Join(displayArgs, \" \"),",
   "new_string": "\t\tCommand:  g.Binary() + \" \" + strings.Join(displayArgs, \" \"),"
 }
@@ -2217,7 +2217,7 @@ id: toolu_01AsmGa4dLvXGQH5EdqZEJ1Q
 tool_result
 id: toolu_01AsmGa4dLvXGQH5EdqZEJ1Q
 ```
-The file /Users/alex/workspace/cli/e2e/agents/gemini.go has been updated successfully.
+The file /home/<USER>/workspace/cli/e2e/agents/gemini.go has been updated successfully.
 ```
 
 > TOOL
@@ -2227,7 +2227,7 @@ id: toolu_01Qo8YMwwKdkTtapmntgiiWT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/e2e/agents/gemini.go",
+  "file_path": "/home/<USER>/workspace/cli/e2e/agents/gemini.go",
   "old_string": "\ts, err := NewTmuxSession(name, dir, []string{\"CI\", \"GITHUB_ACTIONS\"}, \"env\", \"ACCESSIBLE=1\", \"ENTIRE_TEST_TTY=0\", \"gemini\", \"--model\", \"gemini-3-flash-preview\", \"-y\")",
   "new_string": "\ts, err := NewTmuxSession(name, dir, []string{\"CI\", \"GITHUB_ACTIONS\"}, \"env\", \"ACCESSIBLE=1\", \"ENTIRE_TEST_TTY=0\", g.Binary(), \"--model\", \"gemini-3-flash-preview\", \"-y\")"
 }
@@ -2238,7 +2238,7 @@ id: toolu_01Qo8YMwwKdkTtapmntgiiWT
 tool_result
 id: toolu_01Qo8YMwwKdkTtapmntgiiWT
 ```
-The file /Users/alex/workspace/cli/e2e/agents/gemini.go has been updated successfully.
+The file /home/<USER>/workspace/cli/e2e/agents/gemini.go has been updated successfully.
 ```
 
 > TOOL
@@ -2248,7 +2248,7 @@ id: toolu_01Ja5eTghiBizj9guAfDkHuu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/e2e/agents/opencode.go",
+  "file_path": "/home/<USER>/workspace/cli/e2e/agents/opencode.go",
   "old_string": "func (a *openCodeAgent) Name() string               { return \"opencode\" }\nfunc (a *openCodeAgent) EntireAgent() string        { return \"opencode\" }",
   "new_string": "func (a *openCodeAgent) Name() string               { return \"opencode\" }\nfunc (a *openCodeAgent) Binary() string              { return \"opencode\" }\nfunc (a *openCodeAgent) EntireAgent() string        { return \"opencode\" }"
 }
@@ -2259,7 +2259,7 @@ id: toolu_01Ja5eTghiBizj9guAfDkHuu
 tool_result
 id: toolu_01Ja5eTghiBizj9guAfDkHuu
 ```
-The file /Users/alex/workspace/cli/e2e/agents/opencode.go has been updated successfully.
+The file /home/<USER>/workspace/cli/e2e/agents/opencode.go has been updated successfully.
 ```
 
 > TOOL
@@ -2269,7 +2269,7 @@ id: toolu_01BBQL5qAGYR7KhzmAN31zZX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/e2e/agents/opencode.go",
+  "file_path": "/home/<USER>/workspace/cli/e2e/agents/opencode.go",
   "old_string": "\t\tcmd := exec.CommandContext(ctx, \"opencode\", \"run\", \"--model\", a.model, \"say hi\")",
   "new_string": "\t\tcmd := exec.CommandContext(ctx, a.Binary(), \"run\", \"--model\", a.model, \"say hi\")"
 }
@@ -2280,7 +2280,7 @@ id: toolu_01BBQL5qAGYR7KhzmAN31zZX
 tool_result
 id: toolu_01BBQL5qAGYR7KhzmAN31zZX
 ```
-The file /Users/alex/workspace/cli/e2e/agents/opencode.go has been updated successfully.
+The file /home/<USER>/workspace/cli/e2e/agents/opencode.go has been updated successfully.
 ```
 
 > TOOL
@@ -2290,7 +2290,7 @@ id: toolu_01GLR2biK3rxAUey5TV2r2c8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/e2e/agents/opencode.go",
+  "file_path": "/home/<USER>/workspace/cli/e2e/agents/opencode.go",
   "old_string": "\tcmd := exec.CommandContext(ctx, \"opencode\", args...)",
   "new_string": "\tcmd := exec.CommandContext(ctx, a.Binary(), args...)"
 }
@@ -2301,7 +2301,7 @@ id: toolu_01GLR2biK3rxAUey5TV2r2c8
 tool_result
 id: toolu_01GLR2biK3rxAUey5TV2r2c8
 ```
-The file /Users/alex/workspace/cli/e2e/agents/opencode.go has been updated successfully.
+The file /home/<USER>/workspace/cli/e2e/agents/opencode.go has been updated successfully.
 ```
 
 > TOOL
@@ -2311,7 +2311,7 @@ id: toolu_01XC2ee7xGG7WCkWbVeUtXRw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/e2e/agents/opencode.go",
+  "file_path": "/home/<USER>/workspace/cli/e2e/agents/opencode.go",
   "old_string": "\t\tCommand: \"opencode \" + strings.Join(args, \" \"),",
   "new_string": "\t\tCommand: a.Binary() + \" \" + strings.Join(args, \" \"),"
 }
@@ -2322,7 +2322,7 @@ id: toolu_01XC2ee7xGG7WCkWbVeUtXRw
 tool_result
 id: toolu_01XC2ee7xGG7WCkWbVeUtXRw
 ```
-The file /Users/alex/workspace/cli/e2e/agents/opencode.go has been updated successfully.
+The file /home/<USER>/workspace/cli/e2e/agents/opencode.go has been updated successfully.
 ```
 
 > TOOL
@@ -2332,7 +2332,7 @@ id: toolu_01TWr2fTw8kkRx7hnuRBYyPe
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/e2e/agents/opencode.go",
+  "file_path": "/home/<USER>/workspace/cli/e2e/agents/opencode.go",
   "old_string": "\t\ts, err = NewTmuxSession(name, dir, nil, \"env\", \"ENTIRE_TEST_TTY=0\", \"opencode\", \"--model\", a.model)",
   "new_string": "\t\ts, err = NewTmuxSession(name, dir, nil, \"env\", \"ENTIRE_TEST_TTY=0\", a.Binary(), \"--model\", a.model)"
 }
@@ -2343,7 +2343,7 @@ id: toolu_01TWr2fTw8kkRx7hnuRBYyPe
 tool_result
 id: toolu_01TWr2fTw8kkRx7hnuRBYyPe
 ```
-The file /Users/alex/workspace/cli/e2e/agents/opencode.go has been updated successfully.
+The file /home/<USER>/workspace/cli/e2e/agents/opencode.go has been updated successfully.
 ```
 
 > TOOL
@@ -2353,7 +2353,7 @@ id: toolu_018JGtGGZ9eURnrBTDtvYEsk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/e2e/tests/main_test.go",
+  "file_path": "/home/<USER>/workspace/cli/e2e/tests/main_test.go",
   "old_string": "\t_ \"github.com/entireio/cli/e2e/agents\"",
   "new_string": "\t\"github.com/entireio/cli/e2e/agents\""
 }
@@ -2364,7 +2364,7 @@ id: toolu_018JGtGGZ9eURnrBTDtvYEsk
 tool_result
 id: toolu_018JGtGGZ9eURnrBTDtvYEsk
 ```
-The file /Users/alex/workspace/cli/e2e/tests/main_test.go has been updated successfully.
+The file /home/<USER>/workspace/cli/e2e/tests/main_test.go has been updated successfully.
 ```
 
 > TOOL
@@ -2374,7 +2374,7 @@ id: toolu_01RF7YGkbJRA25Hb5MGQVmXJ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/e2e/tests/main_test.go",
+  "file_path": "/home/<USER>/workspace/cli/e2e/tests/main_test.go",
   "old_string": "\tversion := \"unknown\"",
   "new_string": "\t// Preflight: verify required dependencies before running any tests.\n\tvar missing []string\n\tfor _, bin := range []string{\"git\", \"tmux\", \"entire\"} {\n\t\tif _, err := exec.LookPath(bin); err != nil {\n\t\t\tmissing = append(missing, bin)\n\t\t}\n\t}\n\tfor _, a := range agents.All() {\n\t\tif _, err := exec.LookPath(a.Binary()); err != nil {\n\t\t\tmissing = append(missing, a.Binary())\n\t\t}\n\t}\n\tif len(missing) > 0 {\n\t\tfmt.Fprintf(os.Stderr, \"preflight: missing required binaries: %v\\n\", missing)\n\t\tos.Exit(1)\n\t}\n\n\tversion := \"unknown\""
 }
@@ -2385,7 +2385,7 @@ id: toolu_01RF7YGkbJRA25Hb5MGQVmXJ
 tool_result
 id: toolu_01RF7YGkbJRA25Hb5MGQVmXJ
 ```
-The file /Users/alex/workspace/cli/e2e/tests/main_test.go has been updated successfully.
+The file /home/<USER>/workspace/cli/e2e/tests/main_test.go has been updated successfully.
 ```
 
 > AGENT
@@ -2398,7 +2398,7 @@ tool_use Bash
 id: toolu_01DeM2gfTsT5BPKJ5b1reEJy
 ```json
 {
-  "command": "cd /Users/alex/workspace/cli && go build ./e2e/agents/",
+  "command": "cd /home/<USER>/workspace/cli && go build ./e2e/agents/",
   "description": "Build agents package in cli repo"
 }
 ```
@@ -2463,7 +2463,7 @@ tool_use Bash
 id: toolu_017B9Fe4QpGUar5ae99FpXVV
 ```json
 {
-  "command": "git -C /Users/alex/workspace/entire-cli-e2e-tests log --oneline -3",
+  "command": "git -C /home/<USER>/workspace/entire-cli-e2e-tests log --oneline -3",
   "description": "Check what we committed in the wrong repo"
 }
 ```
@@ -2492,7 +2492,7 @@ tool_use Bash
 id: toolu_01U9pVv34JKGN9rCVhDKTz1Q
 ```json
 {
-  "command": "git -C /Users/alex/workspace/entire-cli-e2e-tests reset HEAD~1",
+  "command": "git -C /home/<USER>/workspace/entire-cli-e2e-tests reset HEAD~1",
   "description": "Undo the preflight commit in e2e-tests repo"
 }
 ```
@@ -2521,7 +2521,7 @@ tool_use Bash
 id: toolu_01XNDrCYmbuc2TqXrc3g6tYe
 ```json
 {
-  "command": "git -C /Users/alex/workspace/entire-cli-e2e-tests checkout -- .",
+  "command": "git -C /home/<USER>/workspace/entire-cli-e2e-tests checkout -- .",
   "description": "Discard all working tree changes in e2e-tests repo"
 }
 ```
@@ -2544,7 +2544,7 @@ tool_use Bash
 id: toolu_01PZANnpUFP69tVwzn2sUkXM
 ```json
 {
-  "command": "git -C /Users/alex/workspace/cli status --short -- e2e/",
+  "command": "git -C /home/<USER>/workspace/cli status --short -- e2e/",
   "description": "Check cli repo changes"
 }
 ```
@@ -2567,7 +2567,7 @@ tool_use Bash
 id: toolu_01HpB9JWUedKJQGZGQVgAfww
 ```json
 {
-  "command": "git -C /Users/alex/workspace/cli log --oneline -5",
+  "command": "git -C /home/<USER>/workspace/cli log --oneline -5",
   "description": "Recent commit messages in cli repo"
 }
 ```
@@ -2590,7 +2590,7 @@ tool_use Bash
 id: toolu_01BCkBwu1r6EXXBLDPvbsMQ8
 ```json
 {
-  "command": "git -C /Users/alex/workspace/cli add e2e/agents/agent.go e2e/agents/claude.go e2e/agents/gemini.go e2e/agents/opencode.go e2e/tests/main_test.go && git -C /Users/alex/workspace/cli commit -m \"$(cat <<'EOF'\nfeat: add preflight dependency checks in TestMain\n\nVerify git, tmux, entire, and all registered agent binaries are on $PATH\nbefore running any tests, failing early with a clear error instead of\ncryptic failures deep in test execution.\n\nAdds Binary() to the Agent interface as the single source of truth for\neach agent's CLI binary name, used by both preflight checks and the\nexisting RunPrompt/StartSession/Output.Command code paths.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git -C /home/<USER>/workspace/cli add e2e/agents/agent.go e2e/agents/claude.go e2e/agents/gemini.go e2e/agents/opencode.go e2e/tests/main_test.go && git -C /home/<USER>/workspace/cli commit -m \"$(cat <<'EOF'\nfeat: add preflight dependency checks in TestMain\n\nVerify git, tmux, entire, and all registered agent binaries are on $PATH\nbefore running any tests, failing early with a clear error instead of\ncryptic failures deep in test execution.\n\nAdds Binary() to the Agent interface as the single source of truth for\neach agent's CLI binary name, used by both preflight checks and the\nexisting RunPrompt/StartSession/Output.Command code paths.\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Stage and commit in cli repo"
 }
 ```
@@ -2628,7 +2628,7 @@ tool_use Read
 id: toolu_01JsWF8sib1JadUdjiAjKPMA
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/e2e/tests/main_test.go"
+  "file_path": "/home/<USER>/workspace/cli/e2e/tests/main_test.go"
 }
 ```
 
@@ -2696,7 +2696,7 @@ id: toolu_017cTp5GZzSQ2znnbnogeZ1k
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/e2e/tests/main_test.go",
+  "file_path": "/home/<USER>/workspace/cli/e2e/tests/main_test.go",
   "old_string": "\t// Preflight: verify required dependencies before running any tests.",
   "new_string": "\t// Isolate tests from the host's ~/.gitconfig.\n\tos.Setenv(\"GIT_CONFIG_GLOBAL\", \"/dev/null\")\n\n\t// Preflight: verify required dependencies before running any tests."
 }
@@ -2707,7 +2707,7 @@ id: toolu_017cTp5GZzSQ2znnbnogeZ1k
 tool_result
 id: toolu_017cTp5GZzSQ2znnbnogeZ1k
 ```
-The file /Users/alex/workspace/cli/e2e/tests/main_test.go has been updated successfully.
+The file /home/<USER>/workspace/cli/e2e/tests/main_test.go has been updated successfully.
 ```
 
 > TOOL
@@ -2748,7 +2748,7 @@ id: toolu_01R1BYwFjK4sFfiPdeB1edQc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/e2e/tests/main_test.go",
+  "file_path": "/home/<USER>/workspace/cli/e2e/tests/main_test.go",
   "old_string": "\t// Isolate tests from the host's ~/.gitconfig.\n\tos.Setenv(\"GIT_CONFIG_GLOBAL\", \"/dev/null\")\n\n\t// Preflight: verify required dependencies before running any tests.",
   "new_string": "\t// Preflight: verify required dependencies before running any tests."
 }
@@ -2772,7 +2772,7 @@ tool_use Read
 id: toolu_01B4qPT4FrXhiG8agMgCZKhD
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/e2e/tests/main_test.go",
+  "file_path": "/home/<USER>/workspace/cli/e2e/tests/main_test.go",
   "offset": 26,
   "limit": 10
 }

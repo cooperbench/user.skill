@@ -32,11 +32,11 @@ Here is a complete picture of how the Acknowledge and Resolve actions work, from
 
 ### Relevant files
 
-- `/Users/pc/web3/ReleaseBeacon/web/app/todo/page.tsx` — the page component
-- `/Users/pc/web3/ReleaseBeacon/web/lib/api/client.ts` — frontend API client
-- `/Users/pc/web3/ReleaseBeacon/internal/api/todos.go` — HTTP handlers
-- `/Users/pc/web3/ReleaseBeacon/internal/api/server.go` — route registration
-- `/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go` — database implementation
+- `/home/<USER>/web3/ReleaseBeacon/web/app/todo/page.tsx` — the page component
+- `/home/<USER>/web3/ReleaseBeacon/web/lib/api/client.ts` — frontend API client
+- `/home/<USER>/web3/ReleaseBeacon/internal/api/todos.go` — HTTP handlers
+- `/home/<USER>/web3/ReleaseBeacon/internal/api/server.go` — route registration
+- `/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go` — database implementation
 
 ---
 
@@ -91,7 +91,7 @@ tool_use Read
 id: toolu_bdrk_01CxHGS3FuBfbdyJfWXLWqVr
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go",
   "offset": 1640,
   "limit": 100
 }
@@ -175,7 +175,7 @@ id: toolu_bdrk_01LV448DiaugMxbK8EVdZ21G
 ```json
 {
   "pattern": "CreateReleaseTodo|CreateSemanticReleaseTodo",
-  "path": "/Users/pc/web3/ReleaseBeacon/internal/routing/worker.go",
+  "path": "/home/<USER>/web3/ReleaseBeacon/internal/routing/worker.go",
   "output_mode": "content",
   "-C": 5
 }
@@ -221,7 +221,7 @@ tool_use Read
 id: toolu_bdrk_01LAf9xFepRn6b7FLwn5nmio
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go",
   "limit": 30,
   "offset": 1731
 }
@@ -299,7 +299,7 @@ id: toolu_bdrk_01CTHgskEp2W8WCg59GKGFxY
   "glob": "*.go",
   "output_mode": "content",
   "pattern": "CREATE TABLE release_todos|release_todos\"",
-  "path": "/Users/pc/web3/ReleaseBeacon/internal"
+  "path": "/home/<USER>/web3/ReleaseBeacon/internal"
 }
 ```
 
@@ -328,7 +328,7 @@ id: toolu_bdrk_01A68uqnkz6kNQpfzhv8ZPCt
 ```json
 {
   "pattern": "released_at|release_date|published_at",
-  "path": "/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go",
+  "path": "/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go",
   "output_mode": "content",
   "-n": true,
   "head_limit": 20
@@ -375,7 +375,7 @@ id: toolu_bdrk_01XYKjQqWcEuBKpo4jFB86AE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go",
   "old_string": "\t\t\tSELECT r2.id FROM releases r2\n\t\t\t\t\t\tJOIN releases r1 ON r1.source_id = r2.source_id\n\t\t\t\t\t\tJOIN release_todos t1 ON t1.release_id = r1.id\n\t\t\t\t\t\tWHERE t1.id = $1 AND r2.created_at <= r1.created_at AND r2.id != r1.id\n\t\t\t\t\t))\n\t\t\t\t\tOR\n\t\t\t\t\t(semantic_release_id IS NOT NULL AND semantic_release_id IN (\n\t\t\t\t\t\tSELECT sr2.id FROM semantic_releases sr2\n\t\t\t\t\t\tJOIN semantic_releases sr1 ON sr1.project_id = sr2.project_id\n\t\t\t\t\t\tJOIN release_todos t1 ON t1.semantic_release_id = sr1.id\n\t\t\t\t\t\tWHERE t1.id = $1 AND sr2.created_at <= sr1.created_at AND sr2.id != sr1.id\n\t\t\t\t\t))\n\t\t\t\t)`, id)\n\t}\n\n\treturn nil\n}\n\nfunc (s *PgStore) ResolveTodo(ctx context.Context, id string, cascade bool) error {\n\ttag, err := s.pool.Exec(ctx,\n\t\t`UPDATE release_todos SET status = 'resolved', resolved_at = NOW() WHERE id = $1`, id)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"resolve todo: %w\", err)\n\t}\n\tif tag.RowsAffected() == 0 {\n\t\treturn fmt.Errorf(\"todo not found\")\n\t}\n\n\tif cascade {\n\t\t// Also resolve older pending/acknowledged todos for the same source/project.\n\t\t_, _ = s.pool.Exec(ctx, `\n\t\t\tUPDATE release_todos SET status = 'resolved', resolved_at = NOW()\n\t\t\tWHERE id != $1 AND status IN ('pending', 'acknowledged')\n\t\t\tAND (\n\t\t\t\t(release_id IS NOT NULL AND release_id IN (\n\t\t\t\t\tSELECT r2.id FROM releases r2\n\t\t\t\t\tJOIN releases r1 ON r1.source_id = r2.source_id\n\t\t\t\t\tJOIN release_todos t1 ON t1.release_id = r1.id\n\t\t\t\t\tWHERE t1.id = $1 AND r2.created_at <= r1.created_at AND r2.id != r1.id\n\t\t\t\t))\n\t\t\t\tOR\n\t\t\t\t(semantic_release_id IS NOT NULL AND semantic_release_id IN (\n\t\t\t\t\tSELECT sr2.id FROM semantic_releases sr2\n\t\t\t\t\tJOIN semantic_releases sr1 ON sr1.project_id = sr2.project_id\n\t\t\t\t\tJOIN release_todos […]
 
 > TOOL
@@ -432,7 +432,7 @@ tool_use Read
 id: toolu_bdrk_01Tko96J271EBjhcskSoE5hU
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go",
   "limit": 60,
   "offset": 1659
 }
@@ -489,7 +489,7 @@ id: toolu_bdrk_01FdghG9Aw9eenD4NsNZU3sr
   "pattern": "semantic_releases.*released_at|released_at.*semantic_releases",
   "output_mode": "content",
   "head_limit": 5,
-  "path": "/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go"
+  "path": "/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go"
 }
 ```
 
@@ -548,7 +548,7 @@ DESIGN.md-68-    Status      string          `json:"status"`                  //
 DESIGN.md-69-    Error       string          `json:"error,omitempty"`
 DESIGN.md-70-    CreatedAt   time.Time       `json:"created_at"`
 DESIGN.md-71-    CompletedAt *time.Time      `json:"completed_at,omitempty"`
-/Users/pc/web3/ReleaseBeacon/DESIGN.md-72-}
+/home/<USER>/web3/ReleaseBeacon/DESIGN.md-72-}
 
 [Showing results with pagination = limit: 10]
 ```
@@ -564,7 +564,7 @@ id: toolu_bdrk_01FV4X6eNpqLWvBgUqgnHNFo
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go",
   "old_string": "\t\t\t\t\tWHERE t1.id = $1 AND r2.created_at <= r1.created_at AND r2.id != r1.id\n\t\t\t\t))\n\t\t\t\tOR\n\t\t\t\t(semantic_release_id IS NOT NULL AND semantic_release_id IN (\n\t\t\t\t\tSELECT sr2.id FROM semantic_releases sr2\n\t\t\t\t\tJOIN semantic_releases sr1 ON sr1.project_id = sr2.project_id\n\t\t\t\t\tJOIN release_todos t1 ON t1.semantic_release_id = sr1.id\n\t\t\t\t\tWHERE t1.id = $1 AND sr2.created_at <= sr1.created_at AND sr2.id != sr1.id\n\t\t\t\t))\n\t\t\t)`, id)\n\t}\n\n\treturn nil\n}\n\nfunc (s *PgStore) ResolveTodo(ctx context.Context, id string, cascade bool) error {\n\ttag, err := s.pool.Exec(ctx,\n\t\t`UPDATE release_todos SET status = 'resolved', resolved_at = NOW() WHERE id = $1`, id)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"resolve todo: %w\", err)\n\t}\n\tif tag.RowsAffected() == 0 {\n\t\treturn fmt.Errorf(\"todo not found\")\n\t}\n\n\tif cascade {\n\t\t// Also resolve older pending/acknowledged todos for the same source/project.\n\t\t_, _ = s.pool.Exec(ctx, `\n\t\t\tUPDATE release_todos SET status = 'resolved', resolved_at = NOW()\n\t\t\tWHERE id != $1 AND status IN ('pending', 'acknowledged')\n\t\t\tAND (\n\t\t\t\t(release_id IS NOT NULL AND release_id IN (\n\t\t\t\t\tSELECT r2.id FROM releases r2\n\t\t\t\t\tJOIN releases r1 ON r1.source_id = r2.source_id\n\t\t\t\t\tJOIN release_todos t1 ON t1.release_id = r1.id\n\t\t\t\t\tWHERE t1.id = $1 AND r2.created_at <= r1.created_at AND r2.id != r1.id\n\t\t\t\t))\n\t\t\t\tOR\n\t\t\t\t(semantic_release_id IS NOT NULL AND semantic_release_id IN (\n\t\t\t\t\tSELECT sr2.id FROM semantic_releases sr2\n\t\t\t\t\tJOIN semantic_releases sr1 ON sr1.project_id = sr2.project_id\n\t\t\t\t\tJOIN release_todos t1 ON t1.semantic_release_id = sr1.id\n\t\t\t\t\tWHERE t1.id = $1 AND sr2.created_at <= sr1.created_at AND sr2.id != sr1.id\n\t\t\t\t))\n\t\t\t)`, […]
 
 > TOOL
@@ -572,7 +572,7 @@ id: toolu_bdrk_01FV4X6eNpqLWvBgUqgnHNFo
 tool_result
 id: toolu_bdrk_01FV4X6eNpqLWvBgUqgnHNFo
 ```
-The file /Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go has been updated successfully.
 ```
 
 > AGENT
@@ -585,7 +585,7 @@ tool_use Read
 id: toolu_bdrk_01MFA7KaCB4fBURXZnYKfiMR
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go",
   "limit": 15,
   "offset": 1665
 }
@@ -631,7 +631,7 @@ id: toolu_bdrk_011Vb9KTYSTrhh16wW81sjzN
   "output_mode": "content",
   "-n": true,
   "pattern": "r2\\.created_at|r1\\.created_at",
-  "path": "/Users/pc/web3/ReleaseBeacon/internal"
+  "path": "/home/<USER>/web3/ReleaseBeacon/internal"
 }
 ```
 
@@ -656,7 +656,7 @@ id: toolu_bdrk_01RMijVtdmGzgTkQovp8K4Na
 {
   "-n": true,
   "output_mode": "content",
-  "path": "/Users/pc/web3/ReleaseBeacon/internal",
+  "path": "/home/<USER>/web3/ReleaseBeacon/internal",
   "pattern": "r\\.created_at(?!.*released_at)|ORDER BY.*r\\.created_at"
 }
 ```
@@ -677,7 +677,7 @@ id: toolu_bdrk_01Mr3NsFcWyoyDGAXviutQ5S
 {
   "-n": true,
   "output_mode": "content",
-  "path": "/Users/pc/web3/ReleaseBeacon/internal",
+  "path": "/home/<USER>/web3/ReleaseBeacon/internal",
   "pattern": "ORDER BY r\\\\.created_at|WHERE.*r\\\\.created_at [<>]"
 }
 ```
@@ -700,7 +700,7 @@ tool_use Read
 id: toolu_bdrk_017oKqeiRd84dPwFUF2pYMrg
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go",
   "limit": 20,
   "offset": 1515
 }

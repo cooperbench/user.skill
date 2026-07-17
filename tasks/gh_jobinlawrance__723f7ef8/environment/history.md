@@ -176,7 +176,7 @@ tool_use Bash
 id: toolu_01ULuaSobpTjccGTaEXX5sEx
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny; echo \"---cmd tree---\"; find cmd internal -type f -name '*.go' | xargs grep -l -i 'colima\\|docker.compose\\|start.*local\\|compose' 2>/dev/null; echo \"---start subcommand---\"; find cmd -type f -name '*.go' | xargs grep -l -i 'start' 2>/dev/null",
+  "command": "cd /home/<USER>/Project/tiny; echo \"---cmd tree---\"; find cmd internal -type f -name '*.go' | xargs grep -l -i 'colima\\|docker.compose\\|start.*local\\|compose' 2>/dev/null; echo \"---start subcommand---\"; find cmd -type f -name '*.go' | xargs grep -l -i 'start' 2>/dev/null",
   "description": "Find start/local + container runtime code"
 }
 ```
@@ -202,7 +202,7 @@ tool_use Read
 id: toolu_01VDEp39Ya7QPkjQTQpHMyFD
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/cmd/tr/local.go"
+  "file_path": "/home/<USER>/Project/tiny/cmd/tr/local.go"
 }
 ```
 
@@ -272,7 +272,7 @@ tool_use Bash
 id: toolu_01DvNJBM5oezAXzczk47i9xv
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===installed runtimes===\"; for b in container colima docker docker-compose; do printf \"%-16s \" \"$b\"; command -v $b || echo \"MISSING\"; done\necho \"===docker daemon reachable?===\"; timeout 3 docker info >/dev/null 2>&1 && echo \"UP\" || echo \"DOWN/none\"\necho \"===apple container compose?===\"; command -v container >/dev/null && container --help 2>&1 | grep -i compose || echo \"no container or no compose verb\"\necho \"===existing preflight/doctor/runtime code===\"\ngrep -rn -i 'colima\\|daemon\\|docker info\\|preflight\\|runtime\\|container ' cmd internal 2>/dev/null | grep -vi 'context\\|_test' | head -20\necho \"===compose file services===\"; grep -E '^\\s{2}[a-z].*:|image:' docker-compose.yml | head",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===installed runtimes===\"; for b in container colima docker docker-compose; do printf \"%-16s \" \"$b\"; command -v $b || echo \"MISSING\"; done\necho \"===docker daemon reachable?===\"; timeout 3 docker info >/dev/null 2>&1 && echo \"UP\" || echo \"DOWN/none\"\necho \"===apple container compose?===\"; command -v container >/dev/null && container --help 2>&1 | grep -i compose || echo \"no container or no compose verb\"\necho \"===existing preflight/doctor/runtime code===\"\ngrep -rn -i 'colima\\|daemon\\|docker info\\|preflight\\|runtime\\|container ' cmd internal 2>/dev/null | grep -vi 'context\\|_test' | head -20\necho \"===compose file services===\"; grep -E '^\\s{2}[a-z].*:|image:' docker-compose.yml | head",
   "description": "Probe runtimes, daemon, existing detection code"
 }
 ```
@@ -372,7 +372,7 @@ tool_use Write
 id: toolu_013HaXJ87iS9omA6wWEZ7jMb
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/cmd/tr/local.go",
+  "file_path": "/home/<USER>/Project/tiny/cmd/tr/local.go",
   "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"context\"\n\t\"fmt\"\n\t\"os\"\n\t\"os/exec\"\n\t\"strings\"\n\t\"time\"\n\n\t\"github.com/spf13/cobra\"\n\n\t\"github.com/tinyraven/tinyraven/internal/branch\"\n)\n\nfunc newLocalCmd() *cobra.Command {\n\tlocal := &cobra.Command{\n\t\tUse:   \"local\",\n\t\tShort: \"Manage the local dev stack (ClickHouse + Redis + TinyRaven)\",\n\t}\n\tvar branchFlag string\n\tstart := &cobra.Command{\n\t\tUse:   \"start\",\n\t\tShort: \"Start the local dev stack via Docker Compose\",\n\t\tRunE: func(cmd *cobra.Command, _ []string) error {\n\t\t\t// Preflight: without a reachable Docker daemon, `docker compose up`\n\t\t\t// blocks forever on the socket. Ensure one is running first.\n\t\t\tif err := ensureDockerDaemon(cmd.Context()); err != nil {\n\t\t\t\treturn err\n\t\t\t}\n\t\t\t// --branch isolates data in its own ClickHouse DB tr_<branch> (ADR 0007).\n\t\t\tb := branchFlag\n\t\t\tif b == \"\" {\n\t\t\t\tb, _ = branch.Current(cmd.Context(), \".\")\n\t\t\t}\n\t\t\tdb := branch.DBName(b)\n\t\t\tos.Setenv(\"TR_CLICKHOUSE_DB\", db) // compose interpolates ${TR_CLICKHOUSE_DB}\n\t\t\tfmt.Printf(\"→ branch %s -> database %s\\n\", b, db)\n\t\t\treturn compose(cmd.Context(), \"up\", \"-d\")\n\t\t},\n\t}\n\tstart.Flags().StringVar(&branchFlag, \"branch\", \"\",\n\t\t\"isolate this branch's data in ClickHouse db tr_<branch> (default: current git branch)\")\n\tstop := &cobra.Command{\n\t\tUse:   \"stop\",\n\t\tShort: \"Stop the local dev stack\",\n\t\tRunE: func(cmd *cobra.Command, _ []string) error {\n\t\t\t// No daemon means nothing is running — skip the compose call so we\n\t\t\t// don't hang on a dead socket.\n\t\t\tif !daemonUp(cmd.Context()) {\n\t\t\t\tfmt.Println(\"→ no Docker daemon reachable; nothing to stop\")\n\t\t\t\treturn nil\n\t\t\t}\n\t\t\treturn compose(cmd.Context(), \"down\")\n\t\t},\n\t}\n\tlocal.AddCommand(start, stop)\n\treturn local\n}\n\n// compose shells out to `docker compose` against the repo's docker-compose.yml.\nfunc compose(ctx context.Context, args ...string) error {\n\tfull := append([]string{\"compose\"}, args...)\n\tc := exec.CommandContext(ctx, \"docker\", full...)\n\tc.Stdout = os.Stdout\n\tc.Stderr = os.Stderr\n\tc.Stdin = […]
 
 > TOOL
@@ -380,7 +380,7 @@ id: toolu_013HaXJ87iS9omA6wWEZ7jMb
 tool_result
 id: toolu_013HaXJ87iS9omA6wWEZ7jMb
 ```
-The file /Users/jobinlawrance/Project/tiny/cmd/tr/local.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/cmd/tr/local.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -393,7 +393,7 @@ tool_use Bash
 id: toolu_01AdKaaiJP3iB5qetq1uatkm
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===how local cmd registered===\"; grep -rn 'newLocalCmd\\|LocalCmd\\|\"local\"' cmd/tr/*.go | grep -v local.go\necho \"===branch pkg api===\"; grep -rn 'func Current\\|func DBName' internal/branch/*.go\necho \"===build===\"; go build ./... 2>&1 | head -30\necho \"===vet local===\"; go vet ./cmd/tr/ 2>&1 | head",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===how local cmd registered===\"; grep -rn 'newLocalCmd\\|LocalCmd\\|\"local\"' cmd/tr/*.go | grep -v local.go\necho \"===branch pkg api===\"; grep -rn 'func Current\\|func DBName' internal/branch/*.go\necho \"===build===\"; go build ./... 2>&1 | head -30\necho \"===vet local===\"; go vet ./cmd/tr/ 2>&1 | head",
   "description": "Verify registration, branch API, build"
 }
 ```
@@ -440,7 +440,7 @@ tool_use Bash
 id: toolu_015CiBCQnaTAugpzk2vBSUky
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny; git diff --stat cmd/tr/local.go; echo \"===subcommands in original vs now===\"; git show HEAD:cmd/tr/local.go | grep -E 'Use:|AddCommand|func new' ; echo \"---now---\"; grep -E 'Use:|AddCommand|func new' cmd/tr/local.go",
+  "command": "cd /home/<USER>/Project/tiny; git diff --stat cmd/tr/local.go; echo \"===subcommands in original vs now===\"; git show HEAD:cmd/tr/local.go | grep -E 'Use:|AddCommand|func new' ; echo \"---now---\"; grep -E 'Use:|AddCommand|func new' cmd/tr/local.go",
   "description": "Diff original subcommands vs new"
 }
 ```
@@ -476,7 +476,7 @@ tool_use Write
 id: toolu_011ekdkhePsqxTeqgGnp2ztj
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/cmd/tr/local_test.go",
+  "file_path": "/home/<USER>/Project/tiny/cmd/tr/local_test.go",
   "content": "package main\n\nimport \"testing\"\n\nfunc TestPickProvider(t *testing.T) {\n\tcases := []struct {\n\t\tcolima, desktop bool\n\t\twant            provider\n\t}{\n\t\t{true, true, provColima},   // colima wins over desktop\n\t\t{true, false, provColima},  // colima only\n\t\t{false, true, provDesktop}, // desktop only\n\t\t{false, false, provInstall}, // nothing -> install path\n\t}\n\tfor _, c := range cases {\n\t\tif got := pickProvider(c.colima, c.desktop); got != c.want {\n\t\t\tt.Errorf(\"pickProvider(colima=%v, desktop=%v) = %d, want %d\",\n\t\t\t\tc.colima, c.desktop, got, c.want)\n\t\t}\n\t}\n}\n"
 }
 ```
@@ -486,7 +486,7 @@ id: toolu_011ekdkhePsqxTeqgGnp2ztj
 tool_result
 id: toolu_011ekdkhePsqxTeqgGnp2ztj
 ```
-File created successfully at: /Users/jobinlawrance/Project/tiny/cmd/tr/local_test.go (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Project/tiny/cmd/tr/local_test.go (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -495,7 +495,7 @@ tool_use Bash
 id: toolu_01VFcN8Yaj71ffHs7UwRSdP9
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny; go test ./cmd/tr/ 2>&1 | tail -5",
+  "command": "cd /home/<USER>/Project/tiny; go test ./cmd/tr/ 2>&1 | tail -5",
   "description": "Run selection-order test"
 }
 ```
@@ -552,7 +552,7 @@ id: toolu_015CVHmv5jE4fNZEei1rRxEd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/cmd/tr/local.go",
+  "file_path": "/home/<USER>/Project/tiny/cmd/tr/local.go",
   "old_string": "\tvar branchFlag string\n\tstart := &cobra.Command{\n\t\tUse:   \"start\",\n\t\tShort: \"Start the local dev stack via Docker Compose\",\n\t\tRunE: func(cmd *cobra.Command, _ []string) error {\n\t\t\t// Preflight: without a reachable Docker daemon, `docker compose up`\n\t\t\t// blocks forever on the socket. Ensure one is running first.\n\t\t\tif err := ensureDockerDaemon(cmd.Context()); err != nil {\n\t\t\t\treturn err\n\t\t\t}",
   "new_string": "\tvar branchFlag string\n\tvar assumeYes bool\n\tstart := &cobra.Command{\n\t\tUse:   \"start\",\n\t\tShort: \"Start the local dev stack via Docker Compose\",\n\t\tRunE: func(cmd *cobra.Command, _ []string) error {\n\t\t\t// Preflight: without a reachable Docker daemon, `docker compose up`\n\t\t\t// blocks forever on the socket. Ensure one is running first.\n\t\t\tif err := ensureDockerDaemon(cmd.Context(), assumeYes); err != nil {\n\t\t\t\treturn err\n\t\t\t}"
 }
@@ -563,7 +563,7 @@ id: toolu_015CVHmv5jE4fNZEei1rRxEd
 tool_result
 id: toolu_015CVHmv5jE4fNZEei1rRxEd
 ```
-The file /Users/jobinlawrance/Project/tiny/cmd/tr/local.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/cmd/tr/local.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -573,7 +573,7 @@ id: toolu_01CxsmPTDdqPPa5urKMTeDx7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/cmd/tr/local.go",
+  "file_path": "/home/<USER>/Project/tiny/cmd/tr/local.go",
   "old_string": "\tstart.Flags().StringVar(&branchFlag, \"branch\", \"\",\n\t\t\"isolate this branch's data in ClickHouse db tr_<branch> (default: current git branch)\")",
   "new_string": "\tstart.Flags().StringVar(&branchFlag, \"branch\", \"\",\n\t\t\"isolate this branch's data in ClickHouse db tr_<branch> (default: current git branch)\")\n\tstart.Flags().BoolVarP(&assumeYes, \"yes\", \"y\", false,\n\t\t\"auto-confirm installing a container runtime (for non-interactive/CI use)\")"
 }
@@ -584,7 +584,7 @@ id: toolu_01CxsmPTDdqPPa5urKMTeDx7
 tool_result
 id: toolu_01CxsmPTDdqPPa5urKMTeDx7
 ```
-The file /Users/jobinlawrance/Project/tiny/cmd/tr/local.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/cmd/tr/local.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -594,7 +594,7 @@ id: toolu_014PqcKY5dNwfLJH9Mpt8Ntf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/cmd/tr/local.go",
+  "file_path": "/home/<USER>/Project/tiny/cmd/tr/local.go",
   "old_string": "func ensureDockerDaemon(ctx context.Context) error {\n\tif daemonUp(ctx) {\n\t\treturn nil\n\t}\n\tfmt.Println(\"→ no Docker daemon running; looking for a container runtime…\")\n\tswitch pickProvider(have(\"colima\"), dockerDesktopInstalled()) {\n\tcase provColima:\n\t\treturn startColima(ctx)\n\tcase provDesktop:\n\t\treturn startDockerDesktop(ctx)\n\tdefault:\n\t\treturn installColima(ctx)\n\t}\n}",
   "new_string": "func ensureDockerDaemon(ctx context.Context, assumeYes bool) error {\n\tif daemonUp(ctx) {\n\t\treturn nil\n\t}\n\tfmt.Println(\"→ no Docker daemon running; looking for a container runtime…\")\n\tswitch pickProvider(have(\"colima\"), dockerDesktopInstalled()) {\n\tcase provColima:\n\t\treturn startColima(ctx)\n\tcase provDesktop:\n\t\treturn startDockerDesktop(ctx)\n\tdefault:\n\t\treturn installColima(ctx, assumeYes)\n\t}\n}"
 }
@@ -605,7 +605,7 @@ id: toolu_014PqcKY5dNwfLJH9Mpt8Ntf
 tool_result
 id: toolu_014PqcKY5dNwfLJH9Mpt8Ntf
 ```
-The file /Users/jobinlawrance/Project/tiny/cmd/tr/local.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/cmd/tr/local.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -615,7 +615,7 @@ id: toolu_01QvJ24gt6dx4AJroxdiTSc9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/cmd/tr/local.go",
+  "file_path": "/home/<USER>/Project/tiny/cmd/tr/local.go",
   "old_string": "func installColima(ctx context.Context) error {\n\tif !have(\"brew\") {\n\t\treturn fmt.Errorf(\"no container runtime found and Homebrew is missing.\\n\" +\n\t\t\t\"Install one manually, e.g. https://github.com/abiosoft/colima\")\n\t}\n\tfmt.Print(\"No container runtime found. Install docker + colima via Homebrew now? [y/N] \")\n\tif !confirm() {\n\t\treturn fmt.Errorf(\"aborted; install a runtime, then re-run `tr local start`\")\n\t}",
   "new_string": "func installColima(ctx context.Context, assumeYes bool) error {\n\tif !have(\"brew\") {\n\t\treturn fmt.Errorf(\"no container runtime found and Homebrew is missing.\\n\" +\n\t\t\t\"Install one manually, e.g. https://github.com/abiosoft/colima\")\n\t}\n\tif !assumeYes {\n\t\tfmt.Print(\"No container runtime found. Install docker + colima via Homebrew now? [y/N] \")\n\t\tif !confirm() {\n\t\t\treturn fmt.Errorf(\"aborted; install a runtime, then re-run `tr local start`\")\n\t\t}\n\t}"
 }
@@ -626,7 +626,7 @@ id: toolu_01QvJ24gt6dx4AJroxdiTSc9
 tool_result
 id: toolu_01QvJ24gt6dx4AJroxdiTSc9
 ```
-The file /Users/jobinlawrance/Project/tiny/cmd/tr/local.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/cmd/tr/local.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -635,7 +635,7 @@ tool_use Bash
 id: toolu_017djPu8Q2RmDy2CoLL95mh7
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny; go build ./... 2>&1 | head && go test ./cmd/tr/ 2>&1 | tail -3",
+  "command": "cd /home/<USER>/Project/tiny; go build ./... 2>&1 | head && go test ./cmd/tr/ 2>&1 | tail -3",
   "description": "Build + test after --yes flag"
 }
 ```
@@ -668,7 +668,7 @@ tool_use Bash
 id: toolu_016zoFUEpqLQm1UwiJqXDjbU
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===Docker Desktop present?===\"; ls -d /Applications/Docker.app 2>/dev/null || echo \"no Desktop\"\necho \"===build tr===\"; go build -o REDACTED ./cmd/tr && echo \"built OK\"\necho \"===run: local start, decline install (stdin=n), 20s guard===\"\nprintf 'n\\n' | timeout 20 REDACTED local start ; echo \"EXIT=$?\"",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===Docker Desktop present?===\"; ls -d /Applications/Docker.app 2>/dev/null || echo \"no Desktop\"\necho \"===build tr===\"; go build -o REDACTED ./cmd/tr && echo \"built OK\"\necho \"===run: local start, decline install (stdin=n), 20s guard===\"\nprintf 'n\\n' | timeout 20 REDACTED local start ; echo \"EXIT=$?\"",
   "description": "Build tr, run local start, decline install"
 }
 ```
@@ -700,7 +700,7 @@ tool_use Bash
 id: toolu_01Ab3nsKuXceBsUBe3DMbAra
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\nREDACTED\n/usr/bin/time -p $SC/tr local start --yes > $SC/start.log 2>&1\necho \"EXIT=$?\" >> $SC/start.log",
+  "command": "cd /home/<USER>/Project/tiny\nREDACTED\n/usr/bin/time -p $SC/tr local start --yes > $SC/start.log 2>&1\necho \"EXIT=$?\" >> $SC/start.log",
   "description": "Full --yes install + stack bring-up",
   "timeout": 600000,
   "run_in_background": true
@@ -783,19 +783,19 @@ EXIT=1
 ===colima status===
 time="2026-07-02T00:57:35+05:30" level=fatal msg="colima is not running"
 ===ha.stderr.log (why vm failed)===
-{"level":"debug","msg":"Using specified vmType `vz` for `/Users/jobinlawrance/.colima/_lima/colima/lima.yaml`","time":"2026-07-02T00:56:55+05:30"}
+{"level":"debug","msg":"Using specified vmType `vz` for `/home/<USER>/.colima/_lima/colima/lima.yaml`","time":"2026-07-02T00:56:55+05:30"}
 {"level":"debug","msg":"Using internal driver `vz`","time":"2026-07-02T00:56:55+05:30"}
 {"level":"debug","msg":"Decompressing /opt/homebrew/share/lima/lima-guestagent.Linux-aarch64.gz","time":"2026-07-02T00:56:55+05:30"}
-{"level":"debug","msg":"Creating iso file /Users/jobinlawrance/.colima/_lima/colima/cidata.iso","time":"2026-07-02T00:56:55+05:30"}
+{"level":"debug","msg":"Creating iso file /home/<USER>/.colima/_lima/colima/cidata.iso","time":"2026-07-02T00:56:55+05:30"}
 {"level":"debug","msg":"Using REDACTED as workspace","time":"2026-07-02T00:56:55+05:30"}
 {"level":"debug","msg":"Failed to detect CPU features. Assuming that AES acceleration is available on this Apple silicon.","time":"2026-07-02T00:56:55+05:30"}
 {"level":"debug","msg":"OpenSSH version 10.2.1 detected, is GSSAPI supported: true","time":"2026-07-02T00:56:56+05:30"}
-{"level":"debug","msg":"AES accelerator seems available, prioritizing aes128-gcm@openssh.com and aes256-gcm@openssh.com","time":"2026-07-02T00:56:56+05:30"}
-{"level":"info","msg":"hostagent socket created at /Users/jobinlawrance/.colima/_lima/colima/ha.sock","time":"2026-07-02T00:56:56+05:30"}
-{"level":"info","msg":"Starting VZ (hint: to watch the boot progress, see `/Users/jobinlawrance/.colima/_lima/colima/serial*.log`)","time":"2026-07-02T00:56:56+05:30"}
-{"level":"debug","msg":"Kernel file `/Users/jobinlawrance/.colima/_lima/colima/kernel` not found","time":"2026-07-02T00:56:56+05:30"}
+{"level":"debug","msg":"AES accelerator seems available, prioritizing <REDACTED_EMAIL> and <REDACTED_EMAIL>","time":"2026-07-02T00:56:56+05:30"}
+{"level":"info","msg":"hostagent socket created at /home/<USER>/.colima/_lima/colima/ha.sock","time":"2026-07-02T00:56:56+05:30"}
+{"level":"info","msg":"Starting VZ (hint: to watch the boot progress, see `/home/<USER>/.colima/_lima/colima/serial*.log`)","time":"2026-07-02T00:56:56+05:30"}
+{"level":"debug","msg":"Kernel file `/home/<USER>/.colima/_lima/colima/kernel` not found","time":"2026-07-02T00:56:56+05:30"}
 {"level":"debug","msg":"Using EFI Boot Loader","time":"2026-07-02T00:56:56+05:30"}
-{"level":"fatal","msg":"dial unix /Users/jobinlawrance/.colima/_lima/_networks/user-v2/user-v2_fd.sock: connect: no such file or directory","time":"2026-07-02T00:56:56+05:30"}
+{"level":"fatal","msg":"dial unix /home/<USER>/.colima/_lima/_networks/user-v2/user-v2_fd.sock: connect: no such file or directory","time":"2026-07-02T00:56:56+05:30"}
 ===serial tail===
 ```
 
@@ -824,7 +824,7 @@ id: toolu_01VyZeFXKjbZziR4RutDNr86
 tool_result
 id: toolu_01VyZeFXKjbZziR4RutDNr86
 ```
-time="2026-07-02T00:58:02+05:30" level=info msg="Deleted `colima` (`/Users/jobinlawrance/.colima/_lima/colima`)"
+time="2026-07-02T00:58:02+05:30" level=info msg="Deleted `colima` (`/home/<USER>/.colima/_lima/colima`)"
 time="2026-07-02T00:58:02+05:30" level=info msg=done
 ===fresh start===
     "linux/arm64",
@@ -857,7 +857,7 @@ tool_use Bash
 id: toolu_016gkx17KtqxAZhnNfHocKwJ
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\nREDACTED\ntimeout 360 $SC/tr local start 2>&1 | tail -20; echo \"TR_EXIT=${PIPESTATUS[0]}\"\necho \"===containers===\"; docker compose ps 2>&1 | tail -6",
+  "command": "cd /home/<USER>/Project/tiny\nREDACTED\ntimeout 360 $SC/tr local start 2>&1 | tail -20; echo \"TR_EXIT=${PIPESTATUS[0]}\"\necho \"===containers===\"; docker compose ps 2>&1 | tail -6",
   "description": "Bring up full stack via tr, list containers",
   "timeout": 400000
 }
@@ -937,7 +937,7 @@ id: toolu_01VwUxzkK2ZehdqACkrNw31z
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/cmd/tr/local.go",
+  "file_path": "/home/<USER>/Project/tiny/cmd/tr/local.go",
   "old_string": "\tfmt.Println(\"→ starting colima…\")\n\tif err := run(ctx, \"colima\", \"start\"); err != nil {\n\t\treturn err\n\t}",
   "new_string": "\tfmt.Println(\"→ starting colima…\")\n\tif err := run(ctx, \"colima\", \"start\"); err != nil {\n\t\treturn fmt.Errorf(\"colima start failed: %w\\n\"+\n\t\t\t\"if the VM won't boot (stale lima network/socket), try: colima delete -f && colima start\", err)\n\t}"
 }
@@ -948,7 +948,7 @@ id: toolu_01VwUxzkK2ZehdqACkrNw31z
 tool_result
 id: toolu_01VwUxzkK2ZehdqACkrNw31z
 ```
-The file /Users/jobinlawrance/Project/tiny/cmd/tr/local.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/cmd/tr/local.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -957,7 +957,7 @@ tool_use Bash
 id: toolu_01Qac2KFcKVHbAm1m7bZhjks
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny; go build ./... 2>&1|head && go test ./cmd/tr/ 2>&1|tail -2",
+  "command": "cd /home/<USER>/Project/tiny; go build ./... 2>&1|head && go test ./cmd/tr/ 2>&1|tail -2",
   "description": "Rebuild + test after error wrap"
 }
 ```
@@ -1025,7 +1025,7 @@ tool_use Bash
 id: toolu_01Ej85ySJr7q2qncFCqfFBRG
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngit add cmd/tr/local.go cmd/tr/local_test.go\ngit commit -q -F - <<'EOF'\nfix(cli): tr local start no longer hangs without a container runtime\n\nPreflight docker daemon check (4s timeout) before compose; on a dead\nsocket, detect + start colima -> Docker Desktop, else prompt-install\ncolima via brew (--yes to auto-confirm). Apple container skipped (no\ncompose verb). Wrap colima-boot failure with an actionable remedy.\nEOF\necho \"===committed===\"; git log --oneline -1",
+  "command": "cd /home/<USER>/Project/tiny\ngit add cmd/tr/local.go cmd/tr/local_test.go\ngit commit -q -F - <<'EOF'\nfix(cli): tr local start no longer hangs without a container runtime\n\nPreflight docker daemon check (4s timeout) before compose; on a dead\nsocket, detect + start colima -> Docker Desktop, else prompt-install\ncolima via brew (--yes to auto-confirm). Apple container skipped (no\ncompose verb). Wrap colima-boot failure with an actionable remedy.\nEOF\necho \"===committed===\"; git log --oneline -1",
   "description": "Commit the fix"
 }
 ```
@@ -1049,7 +1049,7 @@ tool_use Bash
 id: toolu_01Vpd8XmfQSTkPv6U6Dmckeh
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===Makefile targets===\"; [ -f Makefile ] && grep -E '^[a-z].*:' Makefile | head || echo \"no Makefile\"\necho \"===go install path===\"; grep '^module' go.mod\necho \"===brew tap in goreleaser?===\"; grep -iA3 'brews:\\|tap:' .goreleaser.yaml 2>/dev/null | head\necho \"===tr subcommands===\"; REDACTED --help 2>&1 | tail -20",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===Makefile targets===\"; [ -f Makefile ] && grep -E '^[a-z].*:' Makefile | head || echo \"no Makefile\"\necho \"===go install path===\"; grep '^module' go.mod\necho \"===brew tap in goreleaser?===\"; grep -iA3 'brews:\\|tap:' .goreleaser.yaml 2>/dev/null | head\necho \"===tr subcommands===\"; REDACTED --help 2>&1 | tail -20",
   "description": "Check install methods + tr help"
 }
 ```
@@ -1158,7 +1158,7 @@ tool_use Bash
 id: toolu_01HuYaY8wS83Yc8zFZsNZrST
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===origin===\"; git remote -v | head -1\necho \"===go.mod module===\"; head -1 go.mod\necho \"===import refs count===\"; grep -rl 'github.com/tinyraven/tinyraven' --include='*.go' . | wc -l\necho \"===latest tag===\"; git tag --sort=-v:refname | head -3",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===origin===\"; git remote -v | head -1\necho \"===go.mod module===\"; head -1 go.mod\necho \"===import refs count===\"; grep -rl 'github.com/tinyraven/tinyraven' --include='*.go' . | wc -l\necho \"===latest tag===\"; git tag --sort=-v:refname | head -3",
   "description": "Confirm remote vs module path mismatch"
 }
 ```
@@ -1169,7 +1169,7 @@ tool_result
 id: toolu_01HuYaY8wS83Yc8zFZsNZrST
 ```
 ===origin===
-origin	git@github.com:ravencloak-org/tiny.git (fetch)
+origin	<REDACTED_EMAIL>:ravencloak-org/tiny.git (fetch)
 ===go.mod module===
 module github.com/tinyraven/tinyraven
 ===import refs count===
@@ -1190,7 +1190,7 @@ tool_use Bash
 id: toolu_01Rz4VBu362TVmcDLCjWtvTw
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\nOLD='github.com/tinyraven/tinyraven'; NEW='github.com/ravencloak-org/tiny'\n# go.mod + all .go imports\ngrep -rl \"$OLD\" --include='*.go' . | xargs sed -i '' \"s|$OLD|$NEW|g\"\nsed -i '' \"s|$OLD|$NEW|g\" go.mod\necho \"===go.mod===\"; head -1 go.mod\necho \"===residual old refs===\"; grep -rn \"$OLD\" --include='*.go' . | wc -l\necho \"===build===\"; go build ./... 2>&1 | head && echo \"BUILD OK\"\necho \"===test===\"; go test ./cmd/tr/ 2>&1 | tail -1",
+  "command": "cd /home/<USER>/Project/tiny\nOLD='github.com/tinyraven/tinyraven'; NEW='github.com/ravencloak-org/tiny'\n# go.mod + all .go imports\ngrep -rl \"$OLD\" --include='*.go' . | xargs sed -i '' \"s|$OLD|$NEW|g\"\nsed -i '' \"s|$OLD|$NEW|g\" go.mod\necho \"===go.mod===\"; head -1 go.mod\necho \"===residual old refs===\"; grep -rn \"$OLD\" --include='*.go' . | wc -l\necho \"===build===\"; go build ./... 2>&1 | head && echo \"BUILD OK\"\necho \"===test===\"; go test ./cmd/tr/ 2>&1 | tail -1",
   "description": "Rewrite module path across repo, rebuild"
 }
 ```
@@ -1220,7 +1220,7 @@ tool_use Bash
 id: toolu_018bE7pZf1tvKysfs2rbZMUs
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny; go test ./cmd/tr/ 2>&1 | grep -E 'FAIL|---|panic|Error|\\.go:' | head -20",
+  "command": "cd /home/<USER>/Project/tiny; go test ./cmd/tr/ 2>&1 | grep -E 'FAIL|---|panic|Error|\\.go:' | head -20",
   "description": "Find failing test detail"
 }
 ```
@@ -1240,7 +1240,7 @@ tool_use Bash
 id: toolu_01Rd3ok3UTohJBXdqs3R7TRs
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny; go vet ./cmd/tr/ 2>&1 | head; echo \"---build test bin---\"; go test -c ./cmd/tr/ -o /dev/null 2>&1 | head",
+  "command": "cd /home/<USER>/Project/tiny; go vet ./cmd/tr/ 2>&1 | head; echo \"---build test bin---\"; go test -c ./cmd/tr/ -o /dev/null 2>&1 | head",
   "description": "Get setup-failed compile error"
 }
 ```
@@ -1250,10 +1250,10 @@ id: toolu_01Rd3ok3UTohJBXdqs3R7TRs
 tool_result
 id: toolu_01Rd3ok3UTohJBXdqs3R7TRs
 ```
-stat /Users/jobinlawrance/Project/tiny/cmd/tr: directory not found
+stat /home/<USER>/Project/tiny/cmd/tr: directory not found
 ---build test bin---
 # ./cmd/tr
-stat /Users/jobinlawrance/Project/tiny/cmd/tr: directory not found
+stat /home/<USER>/Project/tiny/cmd/tr: directory not found
 FAIL	./cmd/tr [setup failed]
 FAIL
 ```
@@ -1264,7 +1264,7 @@ tool_use Bash
 id: toolu_01FWScQ8GWYVMNTa8oXQs6aD
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny; ls cmd/tr/*.go; echo \"---retry no slash---\"; go test ./cmd/tr 2>&1 | tail -3",
+  "command": "cd /home/<USER>/Project/tiny; ls cmd/tr/*.go; echo \"---retry no slash---\"; go test ./cmd/tr 2>&1 | tail -3",
   "description": "Verify dir exists, retry test"
 }
 ```
@@ -1276,7 +1276,7 @@ id: toolu_01FWScQ8GWYVMNTa8oXQs6aD
 ```
 (eval):1: no matches found: cmd/tr/*.go
 ---retry no slash---
-stat /Users/jobinlawrance/Project/tiny/cmd/tr: directory not found
+stat /home/<USER>/Project/tiny/cmd/tr: directory not found
 FAIL	./cmd/tr [setup failed]
 FAIL
 ```
@@ -1291,7 +1291,7 @@ tool_use Bash
 id: toolu_01PPSnRh4tteRnhaqWsdoGap
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===cmd tree===\"; find cmd -maxdepth 2 -name '*.go' | head\necho \"===git status===\"; git status --short | head -20\necho \"===my commit still in log?===\"; git log --oneline -3",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===cmd tree===\"; find cmd -maxdepth 2 -name '*.go' | head\necho \"===git status===\"; git status --short | head -20\necho \"===my commit still in log?===\"; git log --oneline -3",
   "description": "Inspect cmd rename + git state"
 }
 ```
@@ -1349,7 +1349,7 @@ tool_use Bash
 id: toolu_011tRHjFbYsYZ3Bp5U77Qvds
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===test at new path===\"; go test ./cmd/tinyraven 2>&1 | tail -2\necho \"===my hang fix present in renamed file?===\"; grep -c 'ensureDockerDaemon\\|pickProvider\\|colima delete -f' cmd/tinyraven/local.go\necho \"===what 80efab7 touched===\"; git show --stat 80efab7 2>&1 | grep -E 'local|\\|' | head\necho \"===go.mod staged or unstaged?===\"; git status --short go.mod\necho \"===binary name in main===\"; grep -n 'Use:.*\"tr\"\\|Use:.*tinyraven\\|Use: *\"' cmd/tinyraven/main.go | head",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===test at new path===\"; go test ./cmd/tinyraven 2>&1 | tail -2\necho \"===my hang fix present in renamed file?===\"; grep -c 'ensureDockerDaemon\\|pickProvider\\|colima delete -f' cmd/tinyraven/local.go\necho \"===what 80efab7 touched===\"; git show --stat 80efab7 2>&1 | grep -E 'local|\\|' | head\necho \"===go.mod staged or unstaged?===\"; git status --short go.mod\necho \"===binary name in main===\"; grep -n 'Use:.*\"tr\"\\|Use:.*tinyraven\\|Use: *\"' cmd/tinyraven/main.go | head",
   "description": "Verify tests, hang-fix survival, concurrent overlap"
 }
 ```
@@ -1476,7 +1476,7 @@ tool_use Bash
 id: toolu_015zuuhf39zD5pXAkDptsJcu
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===workflows on tag?===\"; grep -rl 'tags:\\|v\\*\\|goreleaser\\|release' .github/workflows/ 2>/dev/null\necho \"---trigger lines---\"; grep -rn -A3 'on:\\|tags:' .github/workflows/*.y*ml 2>/dev/null | grep -iE 'tags:|v\\*|push|release' | head\necho \"===branch===\"; git branch --show-current\necho \"===build sanity before anything===\"; go build ./... 2>&1 | head && echo OK",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===workflows on tag?===\"; grep -rl 'tags:\\|v\\*\\|goreleaser\\|release' .github/workflows/ 2>/dev/null\necho \"---trigger lines---\"; grep -rn -A3 'on:\\|tags:' .github/workflows/*.y*ml 2>/dev/null | grep -iE 'tags:|v\\*|push|release' | head\necho \"===branch===\"; git branch --show-current\necho \"===build sanity before anything===\"; go build ./... 2>&1 | head && echo OK",
   "description": "Check tag-triggered release + build sanity"
 }
 ```
@@ -1521,7 +1521,7 @@ tool_use Bash
 id: toolu_01WTjqbp3mQnydQ8BNrty6VN
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngit add -A\ngit commit -q -F - <<'EOF'\nrefactor: rebrand tr -> tinyraven; fix module path to ravencloak-org/tiny\n\nBinary/CLI renamed tr -> tinyraven (coreutils `tr` collision): cmd/tr ->\ncmd/tinyraven, docs, Dockerfile, .goreleaser, README, PROMPT, ADRs.\n\nModule path corrected github.com/tinyraven/tinyraven ->\ngithub.com/ravencloak-org/tiny (matches origin) across go.mod + all\nimports, so `go install .../cmd/tinyraven@latest` resolves. v0.3.10 ships\na go.mod whose declared path mismatches the repo and cannot be installed.\nEOF\necho \"===commit===\"; git log --oneline -1\necho \"===build+test===\"; go build ./... 2>&1|head && go test ./cmd/tinyraven 2>&1|tail -1\necho \"===push main===\"; git push origin main 2>&1 | tail -4",
+  "command": "cd /home/<USER>/Project/tiny\ngit add -A\ngit commit -q -F - <<'EOF'\nrefactor: rebrand tr -> tinyraven; fix module path to ravencloak-org/tiny\n\nBinary/CLI renamed tr -> tinyraven (coreutils `tr` collision): cmd/tr ->\ncmd/tinyraven, docs, Dockerfile, .goreleaser, README, PROMPT, ADRs.\n\nModule path corrected github.com/tinyraven/tinyraven ->\ngithub.com/ravencloak-org/tiny (matches origin) across go.mod + all\nimports, so `go install .../cmd/tinyraven@latest` resolves. v0.3.10 ships\na go.mod whose declared path mismatches the repo and cannot be installed.\nEOF\necho \"===commit===\"; git log --oneline -1\necho \"===build+test===\"; go build ./... 2>&1|head && go test ./cmd/tinyraven 2>&1|tail -1\necho \"===push main===\"; git push origin main 2>&1 | tail -4",
   "description": "Commit rebrand + module fix, push main"
 }
 ```
@@ -1590,7 +1590,7 @@ tool_use Bash
 id: toolu_01QNzuyQgmam44eaKHrT6zJz
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngit tag -a v0.3.11 -m \"v0.3.11: rebrand to tinyraven; fix module path (installable via go install)\"\ngit push origin v0.3.11 2>&1 | tail -4\necho \"===tag confirmed===\"; git tag --sort=-v:refname | head -2",
+  "command": "cd /home/<USER>/Project/tiny\ngit tag -a v0.3.11 -m \"v0.3.11: rebrand to tinyraven; fix module path (installable via go install)\"\ngit push origin v0.3.11 2>&1 | tail -4\necho \"===tag confirmed===\"; git tag --sort=-v:refname | head -2",
   "description": "Tag v0.3.11 and push (triggers release)"
 }
 ```
@@ -1620,7 +1620,7 @@ id: toolu_01AxcBrWBh94oYL2ZentJVx7
   "description": "v0.3.11 release workflow outcomes",
   "timeout_ms": 600000,
   "persistent": false,
-  "command": "cd /Users/jobinlawrance/Project/tiny; prev=\"\"; while true; do cur=$(gh run list --limit 8 --json headBranch,workflowName,status,conclusion --jq '.[] | select(.headBranch==\"v0.3.11\") | \"\\(.workflowName): \\(.status) \\(.conclusion // \"\")\"' 2>/dev/null | sort); comm -13 <(echo \"$prev\") <(echo \"$cur\") 2>/dev/null; prev=\"$cur\"; echo \"$cur\" | grep -qiE \"completed|failure|success\" && echo \"$cur\" | grep -qv \"in_progress\\|queued\" && break; sleep 30; done"
+  "command": "cd /home/<USER>/Project/tiny; prev=\"\"; while true; do cur=$(gh run list --limit 8 --json headBranch,workflowName,status,conclusion --jq '.[] | select(.headBranch==\"v0.3.11\") | \"\\(.workflowName): \\(.status) \\(.conclusion // \"\")\"' 2>/dev/null | sort); comm -13 <(echo \"$prev\") <(echo \"$cur\") 2>/dev/null; prev=\"$cur\"; echo \"$cur\" | grep -qiE \"completed|failure|success\" && echo \"$cur\" | grep -qv \"in_progress\\|queued\" && break; sleep 30; done"
 }
 ```
 
@@ -1697,7 +1697,7 @@ total 0
 drwxr-xr-x@ 2 jobinlawrance  wheel   64 Jul  2 10:02 .
 drwx------@ 5 jobinlawrance  wheel  160 Jul  2 10:02 ..
 (eval):5: no such file or directory: REDACTED
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -1727,7 +1727,7 @@ tinyraven version dev
 ===now @latest===
 go: github.com/ravencloak-org/tiny/cmd/tinyraven@latest: module github.com/ravencloak-org/tiny@latest found (v0.3.10), but does not contain package github.com/ravencloak-org/tiny/cmd/tinyraven
 done
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -1760,7 +1760,7 @@ v0.3.7
 v0.3.8
 v0.3.9
 v0.3.10
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -1828,7 +1828,7 @@ tool_use Bash
 id: toolu_01Rw6TknHstTwBA3nyjyG1Fr
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny; gh run list --limit 8 --json headBranch,workflowName,conclusion --jq '.[]|select(.headBranch==\"v0.3.11\")|\"\\(.workflowName): \\(.conclusion)\"'",
+  "command": "cd /home/<USER>/Project/tiny; gh run list --limit 8 --json headBranch,workflowName,conclusion --jq '.[]|select(.headBranch==\"v0.3.11\")|\"\\(.workflowName): \\(.conclusion)\"'",
   "description": "Final workflow states for v0.3.11"
 }
 ```
@@ -1909,7 +1909,7 @@ tool_use Bash
 id: toolu_01LJciWyWSWpz4uGQew6kLhQ
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===brew block install/completion===\"; grep -n -A25 'brews:' .goreleaser.yaml | grep -iE 'install|completion|bash_completion|zsh|fish|generate' | head\necho \"===any completions: stanza===\"; grep -in 'completion' .goreleaser.yaml | head",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===brew block install/completion===\"; grep -n -A25 'brews:' .goreleaser.yaml | grep -iE 'install|completion|bash_completion|zsh|fish|generate' | head\necho \"===any completions: stanza===\"; grep -in 'completion' .goreleaser.yaml | head",
   "description": "Check if brew formula installs completions"
 }
 ```
@@ -1930,7 +1930,7 @@ id: toolu_01SjB79EbRKpj3nazrTvFZs9
 ```json
 {
   "pattern": "completion|install:|generate_completions|bash_completion",
-  "path": "/Users/jobinlawrance/Project/tiny/.goreleaser.yaml",
+  "path": "/home/<USER>/Project/tiny/.goreleaser.yaml",
   "output_mode": "content",
   "-n": "true",
   "-i": "true"
@@ -1951,7 +1951,7 @@ tool_use Bash
 id: toolu_01DoknJfLBksKocg9cXZwfjZ
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny; grep -in -E 'completion|install:|generate_completions|bash_completion|extra_install' .goreleaser.yaml",
+  "command": "cd /home/<USER>/Project/tiny; grep -in -E 'completion|install:|generate_completions|bash_completion|extra_install' .goreleaser.yaml",
   "description": "Grep goreleaser for completion install"
 }
 ```
@@ -1970,7 +1970,7 @@ tool_use Read
 id: toolu_01JJ2G67GwUM2Qujg4KDpKm9
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/.goreleaser.yaml",
+  "file_path": "/home/<USER>/Project/tiny/.goreleaser.yaml",
   "offset": 105,
   "limit": 30
 }
@@ -1985,7 +1985,7 @@ id: toolu_01JJ2G67GwUM2Qujg4KDpKm9
 106	    license: Apache-2.0
 107	    commit_author:
 108	      name: tinyraven-bot
-109	      email: oss@ravencloak.org
+109	      email: <REDACTED_EMAIL>
 110	    directory: Formula
 111	    install: |
 112	      bin.install "tinyraven"
@@ -2043,7 +2043,7 @@ id: toolu_016ETbTnyjqgLKSdbig57HTP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/.goreleaser.yaml",
+  "file_path": "/home/<USER>/Project/tiny/.goreleaser.yaml",
   "old_string": "    install: |\n      bin.install \"tinyraven\"\n    test: |\n      system \"#{bin}/tinyraven\", \"--version\"",
   "new_string": "    install: |\n      bin.install \"tinyraven\"\n      generate_completions_from_executable(bin/\"tinyraven\", \"completion\")\n    test: |\n      system \"#{bin}/tinyraven\", \"--version\""
 }
@@ -2054,7 +2054,7 @@ id: toolu_016ETbTnyjqgLKSdbig57HTP
 tool_result
 id: toolu_016ETbTnyjqgLKSdbig57HTP
 ```
-The file /Users/jobinlawrance/Project/tiny/.goreleaser.yaml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/.goreleaser.yaml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2067,7 +2067,7 @@ tool_use Bash
 id: toolu_01UsZwyMKq4rN5ZhaLHEvtAt
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ncommand -v goreleaser >/dev/null && goreleaser check 2>&1 | tail -5 || echo \"goreleaser not installed locally — skipping check (syntax is standard brew install DSL)\"\necho \"===edited block===\"; sed -n '110,114p' .goreleaser.yaml",
+  "command": "cd /home/<USER>/Project/tiny\ncommand -v goreleaser >/dev/null && goreleaser check 2>&1 | tail -5 || echo \"goreleaser not installed locally — skipping check (syntax is standard brew install DSL)\"\necho \"===edited block===\"; sed -n '110,114p' .goreleaser.yaml",
   "description": "Validate goreleaser config + show block"
 }
 ```
@@ -2168,7 +2168,7 @@ tool_use Bash
 id: toolu_019mxfGWHgRac459rZaucz3f
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===uncommitted (should be only .goreleaser)===\"; git status --short\necho \"===diff scope===\"; git diff --stat",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===uncommitted (should be only .goreleaser)===\"; git status --short\necho \"===diff scope===\"; git diff --stat",
   "description": "Confirm only goreleaser change pending"
 }
 ```
@@ -2195,7 +2195,7 @@ tool_use Bash
 id: toolu_01BgEjh2mi31bmqHincEWujC
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngit add .goreleaser.yaml\ngit commit -q -m \"build(brew): install shell completions from tinyraven binary\n\ngenerate_completions_from_executable wires bash/zsh/fish tab-completion\ninto the Homebrew formula at install time, so brew users get completion\nwith no manual steps.\"\ngit push origin main 2>&1 | tail -2\ngit tag -a v0.3.12 -m \"v0.3.12: brew formula ships shell completions\"\ngit push origin v0.3.12 2>&1 | tail -3\necho \"===tags===\"; git tag --sort=-v:refname | head -2",
+  "command": "cd /home/<USER>/Project/tiny\ngit add .goreleaser.yaml\ngit commit -q -m \"build(brew): install shell completions from tinyraven binary\n\ngenerate_completions_from_executable wires bash/zsh/fish tab-completion\ninto the Homebrew formula at install time, so brew users get completion\nwith no manual steps.\"\ngit push origin main 2>&1 | tail -2\ngit tag -a v0.3.12 -m \"v0.3.12: brew formula ships shell completions\"\ngit push origin v0.3.12 2>&1 | tail -3\necho \"===tags===\"; git tag --sort=-v:refname | head -2",
   "description": "Commit, push main, tag+push v0.3.12"
 }
 ```
@@ -2228,7 +2228,7 @@ id: toolu_01RHU23wjX6FNQmj7gvz6sa4
   "description": "v0.3.12 release workflow outcomes",
   "timeout_ms": 600000,
   "persistent": false,
-  "command": "cd /Users/jobinlawrance/Project/tiny; prev=\"\"; while true; do cur=$(gh run list --limit 8 --json headBranch,workflowName,status,conclusion --jq '.[] | select(.headBranch==\"v0.3.12\") | \"\\(.workflowName): \\(.status) \\(.conclusion // \"\")\"' 2>/dev/null | sort); comm -13 <(echo \"$prev\") <(echo \"$cur\") 2>/dev/null; prev=\"$cur\"; done_n=$(echo \"$cur\" | grep -c completed); all_n=$(echo \"$cur\" | grep -cE ':'); [ \"$all_n\" -ge 4 ] && [ \"$done_n\" -ge 4 ] && break; sleep 30; done; echo \"ALL DONE: $cur\""
+  "command": "cd /home/<USER>/Project/tiny; prev=\"\"; while true; do cur=$(gh run list --limit 8 --json headBranch,workflowName,status,conclusion --jq '.[] | select(.headBranch==\"v0.3.12\") | \"\\(.workflowName): \\(.status) \\(.conclusion // \"\")\"' 2>/dev/null | sort); comm -13 <(echo \"$prev\") <(echo \"$cur\") 2>/dev/null; prev=\"$cur\"; done_n=$(echo \"$cur\" | grep -c completed); all_n=$(echo \"$cur\" | grep -cE ':'); [ \"$all_n\" -ge 4 ] && [ \"$done_n\" -ge 4 ] && break; sleep 30; done; echo \"ALL DONE: $cur\""
 }
 ```
 
@@ -2266,7 +2266,7 @@ tool_use Bash
 id: toolu_01Sba65nHpAfZWxSEXb5diKJ
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny; gh run list --limit 8 --json headBranch,workflowName,status,conclusion --jq '.[]|select(.headBranch==\"v0.3.12\")|\"\\(.workflowName): \\(.status) \\(.conclusion // \"\")\"'",
+  "command": "cd /home/<USER>/Project/tiny; gh run list --limit 8 --json headBranch,workflowName,status,conclusion --jq '.[]|select(.headBranch==\"v0.3.12\")|\"\\(.workflowName): \\(.status) \\(.conclusion // \"\")\"'",
   "description": "Current v0.3.12 workflow states"
 }
 ```
@@ -2309,7 +2309,7 @@ tool_use Bash
 id: toolu_016qiu9mt5eEXa3WchbP5pVj
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===before===\"; gofmt -l .\ngofmt -w cmd/tinyraven/local_test.go internal/datasource/registry.go\necho \"===after===\"; gofmt -l . || true; echo \"clean=$?\"\necho \"===build+test===\"; go build ./... 2>&1|head && go test ./cmd/tinyraven 2>&1|tail -1\necho \"===what changed in my test file===\"; git diff --stat cmd/tinyraven/local_test.go internal/datasource/registry.go",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===before===\"; gofmt -l .\ngofmt -w cmd/tinyraven/local_test.go internal/datasource/registry.go\necho \"===after===\"; gofmt -l . || true; echo \"clean=$?\"\necho \"===build+test===\"; go build ./... 2>&1|head && go test ./cmd/tinyraven 2>&1|tail -1\necho \"===what changed in my test file===\"; git diff --stat cmd/tinyraven/local_test.go internal/datasource/registry.go",
   "description": "gofmt both files, verify"
 }
 ```
@@ -2346,7 +2346,7 @@ tool_use Bash
 id: toolu_01NKFe5pXtzaUNdwT5Q1jRQt
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny; gh run list --limit 10 --json headBranch,workflowName,status,conclusion --jq '.[]|select(.headBranch==\"v0.3.12\" or .headBranch==\"main\")|\"\\(.headBranch) | \\(.workflowName): \\(.status) \\(.conclusion // \"\")\"' | head",
+  "command": "cd /home/<USER>/Project/tiny; gh run list --limit 10 --json headBranch,workflowName,status,conclusion --jq '.[]|select(.headBranch==\"v0.3.12\" or .headBranch==\"main\")|\"\\(.headBranch) | \\(.workflowName): \\(.status) \\(.conclusion // \"\")\"' | head",
   "description": "Check goreleaser v0.3.12 vs CI main outcome"
 }
 ```
@@ -2373,7 +2373,7 @@ tool_use Bash
 id: toolu_01AHRSST77Ce5qdXSzmNeuE7
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngit add cmd/tinyraven/local_test.go internal/datasource/registry.go\ngit commit -q -m \"style: gofmt local_test.go + datasource/registry.go\n\nFixes CI gofmt gate: struct-literal alignment in the runtime-detection\ntest and a stray format in the datasource registry.\"\ngit push origin main 2>&1 | tail -2",
+  "command": "cd /home/<USER>/Project/tiny\ngit add cmd/tinyraven/local_test.go internal/datasource/registry.go\ngit commit -q -m \"style: gofmt local_test.go + datasource/registry.go\n\nFixes CI gofmt gate: struct-literal alignment in the runtime-detection\ntest and a stray format in the datasource registry.\"\ngit push origin main 2>&1 | tail -2",
   "description": "Commit gofmt fix, push main"
 }
 ```
@@ -2437,7 +2437,7 @@ tool_use Bash
 id: toolu_01Tbu9D1DiBPa9sw9FL274Et
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny; grep -n -A18 'brews:' .goreleaser.yaml | head -30",
+  "command": "cd /home/<USER>/Project/tiny; grep -n -A18 'brews:' .goreleaser.yaml | head -30",
   "description": "Read brews repository target"
 }
 ```
@@ -2460,7 +2460,7 @@ id: toolu_01Tbu9D1DiBPa9sw9FL274Et
 106-    license: Apache-2.0
 107-    commit_author:
 108-      name: tinyraven-bot
-109-      email: oss@ravencloak.org
+109-      email: <REDACTED_EMAIL>
 110-    directory: Formula
 111-    install: |
 112-      bin.install "tinyraven"
@@ -2533,7 +2533,7 @@ id: toolu_01YLQkukts1rpShxbrRU691x
 Disable this behaviour by setting `HOMEBREW_NO_INSTALL_CLEANUP=1`.
 Hide these hints with `HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
 Removing: /opt/homebrew/Cellar/tinyraven/0.3.10... (6 files, 25.5MB)
-Removing: /Users/jobinlawrance/Library/Caches/Homebrew/tinyraven--0.3.10.tar.gz... (8.5MB)
+Removing: /home/<USER>/Library/Caches/Homebrew/tinyraven--0.3.10.tar.gz... (8.5MB)
 ==> Caveats
 zsh completions have been installed to:
   /opt/homebrew/share/zsh/site-functions
@@ -2580,7 +2580,7 @@ tool_use Write
 id: toolu_015HMRFKGmF181eCHwtVxE91
 ```json
 {
-  "file_path": "/Users/jobinlawrance/.claude/projects/-Users-jobinlawrance-Project-tiny/memory/tiny-release-install.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-jobinlawrance-Project-tiny/memory/tiny-release-install.md",
   "content": "---\nname: tiny-release-install\ndescription: TinyRaven release/install facts — brew tap name, go module path, @latest proxy lag, tag=release\nmetadata:\n  type: project\n---\n\nTinyRaven (repo `github.com/ravencloak-org/tiny`, binary `tinyraven`, was `tr` — coreutils collision).\n\n- **Go module path = `github.com/ravencloak-org/tiny`** (must match origin, not `tinyraven/tinyraven`). Install: `go install github.com/ravencloak-org/tiny/cmd/tinyraven@latest`.\n- **Brew tap repo = `ravencloak-org/homebrew-tinyraven`** → install as `brew install ravencloak-org/tinyraven/tinyraven` (NOT `/tap`). GoReleaser pushes formula here; repo must pre-exist.\n- **Pushing a `v*` git tag = full public release**: fires 4 workflows (GoReleaser, Helm Publish, APT/RPM Publish, Release). Treat as publish gate — confirm before tagging.\n- **`go install @latest` lags after a new tag**: proxy.golang.org `@latest` metadata caches old version for minutes–~30min. `@vX.Y.Z` explicit or `GOPROXY=direct` works immediately.\n- `tinyraven local` needs `docker-compose.yml` in cwd (run from repo root). Runtime chain on `start`: live docker daemon → colima → Docker Desktop → prompt/`-y` install colima. See [[apple-container-vs-colima]].\n- CI has a **gofmt gate** — run `gofmt -w` before committing Go or CI goes red (separate from the release, non-blocking to GoReleaser).\n"
 }
 ```
@@ -2590,7 +2590,7 @@ id: toolu_015HMRFKGmF181eCHwtVxE91
 tool_result
 id: toolu_015HMRFKGmF181eCHwtVxE91
 ```
-File created successfully at: /Users/jobinlawrance/.claude/projects/-Users-jobinlawrance-Project-tiny/memory/tiny-release-install.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-Users-jobinlawrance-Project-tiny/memory/tiny-release-install.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2600,7 +2600,7 @@ id: toolu_01GTh8GhUHPgWmuqdNGePewm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/.REDACTED.md",
+  "file_path": "/home/<USER>/.REDACTED.md",
   "old_string": "- [apple container vs colima](apple-container-vs-colima.md)",
   "new_string": "- [tiny release/install](tiny-release-install.md) — brew tap = ravencloak-org/tinyraven (not /tap); module = ravencloak-org/tiny; tag=release; @latest proxy lag\n- [apple container vs colima](apple-container-vs-colima.md)"
 }
@@ -2611,7 +2611,7 @@ id: toolu_01GTh8GhUHPgWmuqdNGePewm
 tool_result
 id: toolu_01GTh8GhUHPgWmuqdNGePewm
 ```
-The file /Users/jobinlawrance/.REDACTED.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.REDACTED.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2624,7 +2624,7 @@ tool_use Bash
 id: toolu_01YJL1L67e5rFimnT8jqFEv7
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===go install refs===\"; grep -rn 'go install' README.md docs/ site/ --include='*.md' --include='*.mdx' --include='*.html' --include='*.vue' --include='*.ts' --include='*.tsx' --include='*.astro' 2>/dev/null | grep -v node_modules | head -20\necho \"===brew refs===\"; grep -rn 'brew install\\|homebrew-\\|/tap/\\|ravencloak-org/tap' README.md docs/ site/ 2>/dev/null | grep -v node_modules | head -20\necho \"===stale module path anywhere in docs/site===\"; grep -rn 'tinyraven/tinyraven' README.md docs/ site/ 2>/dev/null | grep -v node_modules | head",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===go install refs===\"; grep -rn 'go install' README.md docs/ site/ --include='*.md' --include='*.mdx' --include='*.html' --include='*.vue' --include='*.ts' --include='*.tsx' --include='*.astro' 2>/dev/null | grep -v node_modules | head -20\necho \"===brew refs===\"; grep -rn 'brew install\\|homebrew-\\|/tap/\\|ravencloak-org/tap' README.md docs/ site/ 2>/dev/null | grep -v node_modules | head -20\necho \"===stale module path anywhere in docs/site===\"; grep -rn 'tinyraven/tinyraven' README.md docs/ site/ 2>/dev/null | grep -v node_modules | head",
   "description": "Find stale install commands in docs/site"
 }
 ```
@@ -2666,7 +2666,7 @@ tool_use Bash
 id: toolu_01AXSuVhaCp6KHw32LDKankD
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===site structure===\"; find site -type f \\( -name '*.astro' -o -name '*.md*' -o -name '*.vue' -o -name '*.tsx' -o -name '*.ts' -o -name '*.html' \\) 2>/dev/null | grep -v node_modules | head -30\necho \"===install/getting-started strings in site===\"; grep -rln -i 'install\\|getting started\\|quickstart\\|brew\\|docker run\\|go install' site 2>/dev/null | grep -v node_modules | head\necho \"===docs/install.md go-install section?===\"; grep -n -i 'source\\|go install\\|go build\\|## ' docs/install.md | head -20",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===site structure===\"; find site -type f \\( -name '*.astro' -o -name '*.md*' -o -name '*.vue' -o -name '*.tsx' -o -name '*.ts' -o -name '*.html' \\) 2>/dev/null | grep -v node_modules | head -30\necho \"===install/getting-started strings in site===\"; grep -rln -i 'install\\|getting started\\|quickstart\\|brew\\|docker run\\|go install' site 2>/dev/null | grep -v node_modules | head\necho \"===docs/install.md go-install section?===\"; grep -n -i 'source\\|go install\\|go build\\|## ' docs/install.md | head -20",
   "description": "Locate site install content + docs install sections"
 }
 ```
@@ -2744,7 +2744,7 @@ tool_use Bash
 id: toolu_016JuMXmwvLbk27jjDxmE2ah
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===README go install present?===\"; grep -n 'go install\\|from source\\|go build' README.md || echo \"NONE in README\"\necho \"===site: any install/command/quickstart in app or data===\"; grep -rn -i 'brew\\|go install\\|docker run\\|npm\\|curl\\|install\\|quickstart\\|getting.started' site/app site/lib/data.ts 2>/dev/null | head\necho \"===site homepage sections (headings/CTA)===\"; grep -n -iE 'install|get started|quickstart|docs|href=' site/app/page.tsx 2>/dev/null | head",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===README go install present?===\"; grep -n 'go install\\|from source\\|go build' README.md || echo \"NONE in README\"\necho \"===site: any install/command/quickstart in app or data===\"; grep -rn -i 'brew\\|go install\\|docker run\\|npm\\|curl\\|install\\|quickstart\\|getting.started' site/app site/lib/data.ts 2>/dev/null | head\necho \"===site homepage sections (headings/CTA)===\"; grep -n -iE 'install|get started|quickstart|docs|href=' site/app/page.tsx 2>/dev/null | head",
   "description": "Check README + site for install content"
 }
 ```
@@ -2770,7 +2770,7 @@ tool_use Read
 id: toolu_01KeGeZKqhY9yHvuUMVg8pGD
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/README.md",
+  "file_path": "/home/<USER>/Project/tiny/README.md",
   "offset": 55,
   "limit": 40
 }
@@ -2818,7 +2818,7 @@ id: toolu_01FwexcFqTmjqej496sPXN3n
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/README.md",
+  "file_path": "/home/<USER>/Project/tiny/README.md",
   "old_string": "| Any | Docker | `docker run -p 8000:8000 ghcr.io/ravencloak-org/tiny:latest serve` |\n| Any | Binary | Download from [Releases](https://github.com/ravencloak-org/tiny/releases) and unpack `tinyraven` |",
   "new_string": "| Any | Docker | `docker run -p 8000:8000 ghcr.io/ravencloak-org/tiny:latest serve` |\n| Any | Binary | Download from [Releases](https://github.com/ravencloak-org/tiny/releases) and unpack `tinyraven` |\n| Any | Go | `go install github.com/ravencloak-org/tiny/cmd/tinyraven@latest` |"
 }
@@ -2829,7 +2829,7 @@ id: toolu_01FwexcFqTmjqej496sPXN3n
 tool_result
 id: toolu_01FwexcFqTmjqej496sPXN3n
 ```
-The file /Users/jobinlawrance/Project/tiny/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2842,7 +2842,7 @@ tool_use Read
 id: toolu_01AuxwDqu9WVxmf6iecu333j
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/docs/install.md",
+  "file_path": "/home/<USER>/Project/tiny/docs/install.md",
   "offset": 161,
   "limit": 35
 }
@@ -2901,7 +2901,7 @@ id: toolu_01NPJg1f9dNX2qr1SSUu2Mx9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/docs/install.md",
+  "file_path": "/home/<USER>/Project/tiny/docs/install.md",
   "old_string": "tar -xzf tinyraven.tar.gz\nsudo install tr /usr/local/bin/tr\ntinyraven --version\n```\n\nOn Windows, download the `..._windows_amd64.zip`, unzip, and put `tr.exe` on your `PATH`.\n\n---\n\n## Verifying release checksums (GPG)",
   "new_string": "tar -xzf tinyraven.tar.gz\nsudo install tinyraven /usr/local/bin/tinyraven\ntinyraven --version\n```\n\nOn Windows, download the `..._windows_amd64.zip`, unzip, and put `tinyraven.exe` on your `PATH`.\n\n---\n\n## From source (Go)\n\nRequires Go 1.22+. Installs the `tinyraven` binary into `$(go env GOBIN)` (or `$GOPATH/bin`):\n\n```bash\ngo install github.com/ravencloak-org/tiny/cmd/tinyraven@latest\ntinyraven --version\n```\n\n> Just after a new release, `@latest` may briefly resolve the previous tag while\n> the Go module proxy refreshes. Pin the version (`@v0.3.12`) or bypass the proxy\n> (`GOPROXY=direct go install ...@latest`) to get the newest immediately.\n>\n> `go install` builds without release ldflags, so `--version` prints `dev`. Use a\n> packaged install (Homebrew/APT/binary) if you need the embedded version string.\n\n---\n\n## Verifying release checksums (GPG)"
 }
@@ -2912,7 +2912,7 @@ id: toolu_01NPJg1f9dNX2qr1SSUu2Mx9
 tool_result
 id: toolu_01NPJg1f9dNX2qr1SSUu2Mx9
 ```
-The file /Users/jobinlawrance/Project/tiny/docs/install.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/docs/install.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2925,7 +2925,7 @@ tool_use Bash
 id: toolu_01YDzE8tn79zHKBbZictBAac
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===stale standalone tr binary refs in docs/README===\"; grep -rnE '\\b(sudo install tr|/bin/tr\\b|tr\\.exe|\\$ tr |`tr `|tr serve|tr deploy|tr local|tr token|tr login)\\b' README.md docs/ 2>/dev/null | grep -v tinyraven | head\necho \"===install.md TOC (needs From source entry?)===\"; sed -n '8,24p' docs/install.md\necho \"===openapi/docsui title refs tr?===\"; grep -rn -i 'tinyraven\\|\"tr\"\\| tr ' internal/api/docsui.go internal/api/openapi* 2>/dev/null | head",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===stale standalone tr binary refs in docs/README===\"; grep -rnE '\\b(sudo install tr|/bin/tr\\b|tr\\.exe|\\$ tr |`tr `|tr serve|tr deploy|tr local|tr token|tr login)\\b' README.md docs/ 2>/dev/null | grep -v tinyraven | head\necho \"===install.md TOC (needs From source entry?)===\"; sed -n '8,24p' docs/install.md\necho \"===openapi/docsui title refs tr?===\"; grep -rn -i 'tinyraven\\|\"tr\"\\| tr ' internal/api/docsui.go internal/api/openapi* 2>/dev/null | head",
   "description": "Sweep stale tr refs + check TOC + api docs"
 }
 ```
@@ -2970,7 +2970,7 @@ id: toolu_01FzBzsvihCrZkjsoFZuoQia
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/docs/install.md",
+  "file_path": "/home/<USER>/Project/tiny/docs/install.md",
   "old_string": "It installs the release binary to `/usr/bin/tr` and `provides`/`conflicts`",
   "new_string": "It installs the release binary to `/usr/bin/tinyraven` and `provides`/`conflicts`"
 }
@@ -2981,7 +2981,7 @@ id: toolu_01FzBzsvihCrZkjsoFZuoQia
 tool_result
 id: toolu_01FzBzsvihCrZkjsoFZuoQia
 ```
-The file /Users/jobinlawrance/Project/tiny/docs/install.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/docs/install.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2991,7 +2991,7 @@ id: toolu_01Jqf7qVFQSTgXmF1NT41W4Z
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/docs/install.md",
+  "file_path": "/home/<USER>/Project/tiny/docs/install.md",
   "old_string": "- [Raw binary download](#raw-binary-download)\n- [Verifying release checksums (GPG)](#verifying-release-checksums-gpg)",
   "new_string": "- [Raw binary download](#raw-binary-download)\n- [From source (Go)](#from-source-go)\n- [Verifying release checksums (GPG)](#verifying-release-checksums-gpg)"
 }
@@ -3002,7 +3002,7 @@ id: toolu_01Jqf7qVFQSTgXmF1NT41W4Z
 tool_result
 id: toolu_01Jqf7qVFQSTgXmF1NT41W4Z
 ```
-The file /Users/jobinlawrance/Project/tiny/docs/install.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/docs/install.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3015,7 +3015,7 @@ tool_use Bash
 id: toolu_01Uor1u2FXb9u3dgkanZwR94
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===remaining stale tr binary refs===\"; grep -rnE '\\b(install tr|/bin/tr\\b|tr\\.exe|tr serve|tr deploy|tr local|tr token)\\b' README.md docs/ 2>/dev/null | grep -v tinyraven || echo \"CLEAN\"\necho \"===completion docs exist?===\"; grep -rln -i 'completion' README.md docs/ 2>/dev/null || echo \"no completion docs\"\necho \"===diff stat===\"; git diff --stat",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===remaining stale tr binary refs===\"; grep -rnE '\\b(install tr|/bin/tr\\b|tr\\.exe|tr serve|tr deploy|tr local|tr token)\\b' README.md docs/ 2>/dev/null | grep -v tinyraven || echo \"CLEAN\"\necho \"===completion docs exist?===\"; grep -rln -i 'completion' README.md docs/ 2>/dev/null || echo \"no completion docs\"\necho \"===diff stat===\"; git diff --stat",
   "description": "Confirm clean + check completion docs"
 }
 ```
@@ -3136,7 +3136,7 @@ tool_use Bash
 id: toolu_01AaLhnSvKALXKhwcGmfSPPT
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"=== parity-gaps.md (cli-relevant) ===\"; grep -n -iE 'tb |cli|command|deploy|push|pull|datasource|pipe|token|auth|workspace|branch|sql|dev|build|materialize' docs/parity-gaps.md | head -30",
+  "command": "cd /home/<USER>/Project/tiny\necho \"=== parity-gaps.md (cli-relevant) ===\"; grep -n -iE 'tb |cli|command|deploy|push|pull|datasource|pipe|token|auth|workspace|branch|sql|dev|build|materialize' docs/parity-gaps.md | head -30",
   "description": "Scan parity-gaps for CLI mapping"
 }
 ```
@@ -3192,7 +3192,7 @@ tool_use Bash
 id: toolu_01TbqJfyX1RRbi9Gh32NZrZC
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===routes registered in chi===\"; grep -rnE 'r\\.(Get|Post|Put|Delete|Route|Method|Handle)\\(|Mount\\(' internal/api/*.go | grep -oE '\"/[^\"]*\"|(Get|Post|Put|Delete|Route|Mount)\\(' | head -40\necho \"===health/ready/metrics paths===\"; grep -rnE '\"/(health|ready|metrics|v0)[^\"]*\"' internal/api/*.go | head -20",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===routes registered in chi===\"; grep -rnE 'r\\.(Get|Post|Put|Delete|Route|Method|Handle)\\(|Mount\\(' internal/api/*.go | grep -oE '\"/[^\"]*\"|(Get|Post|Put|Delete|Route|Mount)\\(' | head -40\necho \"===health/ready/metrics paths===\"; grep -rnE '\"/(health|ready|metrics|v0)[^\"]*\"' internal/api/*.go | head -20",
   "description": "Extract real API routes from router"
 }
 ```
@@ -3266,7 +3266,7 @@ tool_use Bash
 id: toolu_01TwtjFeTA3fgY8cQzRSGVe5
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny; grep -rnE '\"/sql\"|\"/v0/sql\"|Post\\(\"/sql|Get\\(\"/sql' internal/api/*.go | grep -v _test | head",
+  "command": "cd /home/<USER>/Project/tiny; grep -rnE '\"/sql\"|\"/v0/sql\"|Post\\(\"/sql|Get\\(\"/sql' internal/api/*.go | grep -v _test | head",
   "description": "Confirm /v0/sql route registered"
 }
 ```
@@ -3289,7 +3289,7 @@ tool_use Bash
 id: toolu_01HpkmE5fNgym8jcefgv3sPR
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===archives block===\"; grep -n -A15 '^archives:' .goreleaser.yaml\necho \"===migrate doc tail structure===\"; grep -n '^## \\|^# ' docs/migrate-from-tinybird.md | head -20",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===archives block===\"; grep -n -A15 '^archives:' .goreleaser.yaml\necho \"===migrate doc tail structure===\"; grep -n '^## \\|^# ' docs/migrate-from-tinybird.md | head -20",
   "description": "Read goreleaser archives + migrate doc headings"
 }
 ```
@@ -3339,7 +3339,7 @@ tool_use Bash
 id: toolu_01Tf5UmT76pc2R92xxwkfaNv
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny; grep -n -A20 '^nfpms:' .goreleaser.yaml | head -30",
+  "command": "cd /home/<USER>/Project/tiny; grep -n -A20 '^nfpms:' .goreleaser.yaml | head -30",
   "description": "Read nfpm contents config"
 }
 ```
@@ -3356,7 +3356,7 @@ id: toolu_01Tf5UmT76pc2R92xxwkfaNv
 74-      {{ .PackageName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}
 75-    vendor: Ravencloak
 76-    homepage: https://github.com/ravencloak-org/tiny
-77-    maintainer: Ravencloak <oss@ravencloak.org>
+77-    maintainer: Ravencloak <<REDACTED_EMAIL>>
 78-    description: |-
 79-      TinyRaven — open-source, self-hosted, drop-in alternative to Tinybird.
 80-      Single Go binary (tinyraven) in front of OSS ClickHouse + Redis.
@@ -3382,7 +3382,7 @@ tool_use Bash
 id: toolu_01Mbx8evpk8RAAuckVavMC6s
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny; grep -rnoE '\"/(health|ready|metrics|v0|tr)[^\"]*\"' internal/api/server.go | sort -u",
+  "command": "cd /home/<USER>/Project/tiny; grep -rnoE '\"/(health|ready|metrics|v0|tr)[^\"]*\"' internal/api/server.go | sort -u",
   "description": "Exact infra route paths"
 }
 ```
@@ -3410,7 +3410,7 @@ tool_use Write
 id: toolu_013Ri6eYGzfnHfS4VDdkNibZ
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/examples/tinyraven.postman_collection.json",
+  "file_path": "/home/<USER>/Project/tiny/examples/tinyraven.postman_collection.json",
   "content": "{\n  \"info\": {\n    \"name\": \"TinyRaven API\",\n    \"description\": \"TinyRaven (github.com/ravencloak-org/tiny) HTTP API — Tinybird-compatible. Set the collection variables `host` and `token`, then run. Imports into Postman and Bruno.\",\n    \"schema\": \"https://schema.getpostman.com/json/collection/v2.1.0/collection.json\"\n  },\n  \"auth\": {\n    \"type\": \"bearer\",\n    \"bearer\": [{ \"key\": \"token\", \"value\": \"{{token}}\", \"type\": \"string\" }]\n  },\n  \"variable\": [\n    { \"key\": \"host\", \"value\": \"http://localhost:8000\", \"type\": \"string\" },\n    { \"key\": \"token\", \"value\": \"\", \"type\": \"string\" },\n    { \"key\": \"datasource\", \"value\": \"events\", \"type\": \"string\" },\n    { \"key\": \"pipe\", \"value\": \"user_metrics\", \"type\": \"string\" }\n  ],\n  \"item\": [\n    {\n      \"name\": \"Health\",\n      \"item\": [\n        {\n          \"name\": \"Liveness\",\n          \"request\": {\n            \"auth\": { \"type\": \"noauth\" },\n            \"method\": \"GET\",\n            \"url\": { \"raw\": \"{{host}}/health\", \"host\": [\"{{host}}\"], \"path\": [\"health\"] }\n          }\n        },\n        {\n          \"name\": \"Readiness\",\n          \"request\": {\n            \"auth\": { \"type\": \"noauth\" },\n            \"method\": \"GET\",\n            \"url\": { \"raw\": \"{{host}}/health/ready\", \"host\": [\"{{host}}\"], \"path\": [\"health\", \"ready\"] }\n          }\n        },\n        {\n          \"name\": \"Prometheus metrics\",\n          \"request\": {\n            \"auth\": { \"type\": \"noauth\" },\n            \"method\": \"GET\",\n            \"url\": { \"raw\": \"{{host}}/v0/metrics\", \"host\": [\"{{host}}\"], \"path\": [\"v0\", \"metrics\"] }\n          }\n        }\n      ]\n    },\n    {\n      \"name\": \"Ingest\",\n      \"item\": [\n        {\n          \"name\": \"POST events (NDJSON)\",\n          \"request\": {\n            \"method\": \"POST\",\n            \"header\": [{ \"key\": \"Content-Type\", \"value\": \"application/x-ndjson\" }],\n            \"body\": {\n              \"mode\": \"raw\",\n              \"raw\": \"{\\\"ts\\\":\\\"2026-07-02T00:00:00Z\\\",\\\"path\\\":\\\"/\\\",\\\"user\\\":\\\"u1\\\"}\\n{\\\"ts\\\":\\\"2026-07-02T00:00:01Z\\\",\\\"path\\\":\\\"/pricing\\\",\\\"user\\\":\\\"u2\\\"}\"\n            },\n            \"url\": {\n              \"raw\": […]
 
 > TOOL
@@ -3418,7 +3418,7 @@ id: toolu_013Ri6eYGzfnHfS4VDdkNibZ
 tool_result
 id: toolu_013Ri6eYGzfnHfS4VDdkNibZ
 ```
-File created successfully at: /Users/jobinlawrance/Project/tiny/examples/tinyraven.postman_collection.json (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Project/tiny/examples/tinyraven.postman_collection.json (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3431,7 +3431,7 @@ tool_use Bash
 id: toolu_0116HMkXuddZZTaPCkZjdybh
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\npython3 -c \"import json;json.load(open('examples/tinyraven.postman_collection.json'));print('JSON valid')\"\necho \"===migrate doc: what's different section===\"; sed -n '61,72p' docs/migrate-from-tinybird.md",
+  "command": "cd /home/<USER>/Project/tiny\npython3 -c \"import json;json.load(open('examples/tinyraven.postman_collection.json'));print('JSON valid')\"\necho \"===migrate doc: what's different section===\"; sed -n '61,72p' docs/migrate-from-tinybird.md",
   "description": "Validate collection JSON + read migrate section"
 }
 ```
@@ -3467,7 +3467,7 @@ id: toolu_01Qi4eFzLEx5Dbv4SUk1r2mf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/docs/migrate-from-tinybird.md",
+  "file_path": "/home/<USER>/Project/tiny/docs/migrate-from-tinybird.md",
   "old_string": "## Moving historical data",
   "new_string": "## CLI command map (`tb` → `tinyraven`)\n\nTinybird's `tb` is imperative (push/pull/append against the server). TinyRaven\ntreats git `.datasource`/`.pipe` files as the source of truth and applies them\nwith one command — `tinyraven deploy` — so a whole class of `tb` verbs collapses\naway. Data-plane parity (ingest/query/SQL) is done over HTTP; the remaining gaps\nare CLI introspection verbs ([parity-gaps](parity-gaps.md)).\n\n| Task | Tinybird `tb` | TinyRaven `tinyraven` |\n|------|---------------|-----------------------|\n| Auth / login | `tb auth` | `tinyraven login` |\n| Run the server | — (SaaS) | `tinyraven serve` (self-hosted) |\n| Deploy definitions | `tb push` / `tb deploy` | `tinyraven deploy` (`--check`, `--branch`) |\n| Pull remote → files | `tb pull` | none by design — git is the source of truth |\n| List datasources | `tb datasource ls` | HTTP `GET /v0/datasources` (no CLI verb yet) |\n| Append / import data | `tb datasource append` | HTTP `POST /v0/events` |\n| Truncate / rm / alter DS | `tb datasource truncate/rm` | not yet (parity gap) |\n| List pipes | `tb pipe ls` | HTTP `GET /v0/pipes` (no CLI verb yet) |\n| Ad-hoc SQL | `tb sql` | HTTP `GET/POST /v0/sql` […]
 
@@ -3476,7 +3476,7 @@ id: toolu_01Qi4eFzLEx5Dbv4SUk1r2mf
 tool_result
 id: toolu_01Qi4eFzLEx5Dbv4SUk1r2mf
 ```
-The file /Users/jobinlawrance/Project/tiny/docs/migrate-from-tinybird.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/docs/migrate-from-tinybird.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3490,7 +3490,7 @@ id: toolu_01F6GK1MmcdJ3HTsCR7Ads5f
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/.goreleaser.yaml",
+  "file_path": "/home/<USER>/Project/tiny/.goreleaser.yaml",
   "old_string": "    files:\n      - README.md\n      - LICENSE\n      - CHANGELOG.md",
   "new_string": "    files:\n      - README.md\n      - LICENSE\n      - CHANGELOG.md\n      - examples/tinyraven.postman_collection.json"
 }
@@ -3501,7 +3501,7 @@ id: toolu_01F6GK1MmcdJ3HTsCR7Ads5f
 tool_result
 id: toolu_01F6GK1MmcdJ3HTsCR7Ads5f
 ```
-The file /Users/jobinlawrance/Project/tiny/.goreleaser.yaml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/.goreleaser.yaml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3511,7 +3511,7 @@ id: toolu_0126JyLb2sJi4mMAg9RbqKcs
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/.goreleaser.yaml",
+  "file_path": "/home/<USER>/Project/tiny/.goreleaser.yaml",
   "old_string": "    install: |\n      bin.install \"tinyraven\"\n      generate_completions_from_executable(bin/\"tinyraven\", \"completion\")",
   "new_string": "    install: |\n      bin.install \"tinyraven\"\n      generate_completions_from_executable(bin/\"tinyraven\", \"completion\")\n      pkgshare.install \"examples/tinyraven.postman_collection.json\""
 }
@@ -3522,7 +3522,7 @@ id: toolu_0126JyLb2sJi4mMAg9RbqKcs
 tool_result
 id: toolu_0126JyLb2sJi4mMAg9RbqKcs
 ```
-The file /Users/jobinlawrance/Project/tiny/.goreleaser.yaml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/.goreleaser.yaml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3535,7 +3535,7 @@ tool_use Read
 id: toolu_01VRXgvFAvaZKG2sXK9PM4uX
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/.goreleaser.yaml",
+  "file_path": "/home/<USER>/Project/tiny/.goreleaser.yaml",
   "offset": 87,
   "limit": 14
 }
@@ -3569,7 +3569,7 @@ id: toolu_016XAnBUU9BYPGPkrXx6tZK8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/.goreleaser.yaml",
+  "file_path": "/home/<USER>/Project/tiny/.goreleaser.yaml",
   "old_string": "      - src: ./README.md\n        dst: /usr/share/doc/tinyraven/README.md\n        type: doc\n\n# Homebrew tap",
   "new_string": "      - src: ./README.md\n        dst: /usr/share/doc/tinyraven/README.md\n        type: doc\n      - src: ./examples/tinyraven.postman_collection.json\n        dst: /usr/share/tinyraven/tinyraven.postman_collection.json\n        type: doc\n\n# Homebrew tap"
 }
@@ -3580,7 +3580,7 @@ id: toolu_016XAnBUU9BYPGPkrXx6tZK8
 tool_result
 id: toolu_016XAnBUU9BYPGPkrXx6tZK8
 ```
-The file /Users/jobinlawrance/Project/tiny/.goreleaser.yaml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/.goreleaser.yaml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3593,7 +3593,7 @@ tool_use Bash
 id: toolu_014ic2XVoUuRzAH7DmyQv6e8
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ncommand -v goreleaser >/dev/null && goreleaser check 2>&1 | tail -4 || echo \"no goreleaser locally\"\necho \"===diff stat===\"; git diff --stat; git status --short | grep postman",
+  "command": "cd /home/<USER>/Project/tiny\ncommand -v goreleaser >/dev/null && goreleaser check 2>&1 | tail -4 || echo \"no goreleaser locally\"\necho \"===diff stat===\"; git diff --stat; git status --short | grep postman",
   "description": "goreleaser check + diff overview"
 }
 ```
@@ -3656,7 +3656,7 @@ tool_use Bash
 id: toolu_01NABPhTuPF41s9cKwGHuM4B
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngit add README.md docs/install.md docs/migrate-from-tinybird.md .goreleaser.yaml examples/tinyraven.postman_collection.json\necho \"===staged===\"; git diff --cached --stat\ngit commit -q -F - <<'EOF'\ndocs+build: tb->tinyraven CLI map, importable API collection, go install\n\n- docs/migrate-from-tinybird.md: tb->tinyraven command map + API collection section\n- examples/tinyraven.postman_collection.json: Postman v2.1 collection (imports in\n  Postman and Bruno) covering all endpoints, {{host}}/{{token}} vars, bearer auth\n- ship the collection via packages: release archive, deb/rpm (/usr/share/tinyraven/),\n  Homebrew (pkgshare)\n- README + docs/install.md: add `go install` method; fix stale `tr` binary refs\nEOF\necho \"===pushed===\"; git push origin main 2>&1 | tail -2",
+  "command": "cd /home/<USER>/Project/tiny\ngit add README.md docs/install.md docs/migrate-from-tinybird.md .goreleaser.yaml examples/tinyraven.postman_collection.json\necho \"===staged===\"; git diff --cached --stat\ngit commit -q -F - <<'EOF'\ndocs+build: tb->tinyraven CLI map, importable API collection, go install\n\n- docs/migrate-from-tinybird.md: tb->tinyraven command map + API collection section\n- examples/tinyraven.postman_collection.json: Postman v2.1 collection (imports in\n  Postman and Bruno) covering all endpoints, {{host}}/{{token}} vars, bearer auth\n- ship the collection via packages: release archive, deb/rpm (/usr/share/tinyraven/),\n  Homebrew (pkgshare)\n- README + docs/install.md: add `go install` method; fix stale `tr` binary refs\nEOF\necho \"===pushed===\"; git push origin main 2>&1 | tail -2",
   "description": "Stage, commit docs+collection+goreleaser, push main"
 }
 ```
@@ -3688,7 +3688,7 @@ tool_use Bash
 id: toolu_015uk6kUKAmg3Ekr18shGrhk
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngit tag -a v0.3.13 -m \"v0.3.13: ship importable API collection (Postman/Bruno) via brew/apt/rpm; go install docs\"\ngit push origin v0.3.13 2>&1 | tail -3\ngit tag --sort=-v:refname | head -1",
+  "command": "cd /home/<USER>/Project/tiny\ngit tag -a v0.3.13 -m \"v0.3.13: ship importable API collection (Postman/Bruno) via brew/apt/rpm; go install docs\"\ngit push origin v0.3.13 2>&1 | tail -3\ngit tag --sort=-v:refname | head -1",
   "description": "Tag + push v0.3.13"
 }
 ```
@@ -3712,7 +3712,7 @@ id: toolu_01PbfFv2Nmvs4LMQSqXF8WPo
   "description": "v0.3.13 release + CI outcomes",
   "timeout_ms": 600000,
   "persistent": false,
-  "command": "cd /Users/jobinlawrance/Project/tiny; prev=\"\"; while true; do cur=$(gh run list --limit 10 --json headBranch,workflowName,status,conclusion --jq '.[] | select(.headBranch==\"v0.3.13\") | \"\\(.workflowName): \\(.status) \\(.conclusion // \"\")\"' 2>/dev/null | sort); comm -13 <(echo \"$prev\") <(echo \"$cur\") 2>/dev/null; prev=\"$cur\"; done_n=$(echo \"$cur\"|grep -c completed); all_n=$(echo \"$cur\"|grep -cE ':'); [ \"$all_n\" -ge 4 ] && [ \"$done_n\" -ge \"$all_n\" ] && break; sleep 30; done; echo \"ALL DONE:\"; echo \"$cur\""
+  "command": "cd /home/<USER>/Project/tiny; prev=\"\"; while true; do cur=$(gh run list --limit 10 --json headBranch,workflowName,status,conclusion --jq '.[] | select(.headBranch==\"v0.3.13\") | \"\\(.workflowName): \\(.status) \\(.conclusion // \"\")\"' 2>/dev/null | sort); comm -13 <(echo \"$prev\") <(echo \"$cur\") 2>/dev/null; prev=\"$cur\"; done_n=$(echo \"$cur\"|grep -c completed); all_n=$(echo \"$cur\"|grep -cE ':'); [ \"$all_n\" -ge 4 ] && [ \"$done_n\" -ge \"$all_n\" ] && break; sleep 30; done; echo \"ALL DONE:\"; echo \"$cur\""
 }
 ```
 
@@ -3753,7 +3753,7 @@ tool_use Bash
 id: toolu_01AhHN8gbjF6cjAHdd352hXQ
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\nRID=$(gh run list --limit 10 --json databaseId,headBranch,workflowName,conclusion --jq '.[]|select(.headBranch==\"v0.3.13\" and .workflowName==\"APT/RPM Repo Publish\")|.databaseId' | head -1)\necho \"run=$RID\"\ngh run view \"$RID\" --log-failed 2>&1 | grep -iE 'error|fail|not found|denied|fatal|missing|no such|exit' | head -20",
+  "command": "cd /home/<USER>/Project/tiny\nRID=$(gh run list --limit 10 --json databaseId,headBranch,workflowName,conclusion --jq '.[]|select(.headBranch==\"v0.3.13\" and .workflowName==\"APT/RPM Repo Publish\")|.databaseId' | head -1)\necho \"run=$RID\"\ngh run view \"$RID\" --log-failed 2>&1 | grep -iE 'error|fail|not found|denied|fatal|missing|no such|exit' | head -20",
   "description": "Fetch apt/rpm publish failure log"
 }
 ```
@@ -3781,7 +3781,7 @@ tool_use Bash
 id: toolu_01KedTejGU83M6JipVcHSLCz
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngh run rerun 28572248404 --failed 2>&1 | tail -3\necho \"rerun triggered\"",
+  "command": "cd /home/<USER>/Project/tiny\ngh run rerun 28572248404 --failed 2>&1 | tail -3\necho \"rerun triggered\"",
   "description": "Re-run failed apt/rpm publish now assets exist"
 }
 ```
@@ -3803,7 +3803,7 @@ id: toolu_01HZuAaorUHxTSkDdS7txndV
   "description": "apt/rpm publish rerun outcome",
   "timeout_ms": 420000,
   "persistent": false,
-  "command": "cd /Users/jobinlawrance/Project/tiny; while true; do s=$(gh run view 28572248404 --json status,conclusion --jq '\"\\(.status) \\(.conclusion // \"\")\"' 2>/dev/null); echo \"$s\" | grep -qE \"completed\" && { echo \"APT/RPM rerun: $s\"; break; }; sleep 20; done"
+  "command": "cd /home/<USER>/Project/tiny; while true; do s=$(gh run view 28572248404 --json status,conclusion --jq '\"\\(.status) \\(.conclusion // \"\")\"' 2>/dev/null); echo \"$s\" | grep -qE \"completed\" && { echo \"APT/RPM rerun: $s\"; break; }; sleep 20; done"
 }
 ```
 
@@ -3837,7 +3837,7 @@ tool_result
 id: toolu_01Kri2Utj6oJ6Q6KLa3oBscA
 ```
 ===brew reinstall v0.3.13===
-Removing: /Users/jobinlawrance/Library/Caches/Homebrew/tinyraven--0.3.12.tar.gz... (8.5MB)
+Removing: /home/<USER>/Library/Caches/Homebrew/tinyraven--0.3.12.tar.gz... (8.5MB)
 ==> Caveats
 zsh completions have been installed to:
   /opt/homebrew/share/zsh/site-functions
@@ -3864,7 +3864,7 @@ tool_use Read
 id: toolu_0184YFEZyKXnkFa8DhjgZCXV
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/.github/workflows/apt-publish.yml"
+  "file_path": "/home/<USER>/Project/tiny/.github/workflows/apt-publish.yml"
 }
 ```
 
@@ -3906,7 +3906,7 @@ id: toolu_01AfELaV8t68nUeQqtu6gdaz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/.github/workflows/apt-publish.yml",
+  "file_path": "/home/<USER>/Project/tiny/.github/workflows/apt-publish.yml",
   "old_string": "      - name: Download release packages\n        run: |\n          set -euo pipefail\n          mkdir -p dl\n          gh release download \"$TAG\" --repo \"$GITHUB_REPOSITORY\" -p '*.deb' -D dl/\n          # .rpm is best-effort (powers the bonus yum/dnf repo); don't fail without it.\n          gh release download \"$TAG\" --repo \"$GITHUB_REPOSITORY\" -p '*.rpm' -D dl/ || true\n          echo \"Downloaded:\"; ls -la dl/",
   "new_string": "      - name: Download release packages\n        run: |\n          set -euo pipefail\n          mkdir -p dl\n          # Retry: goreleaser can still be finalizing the release when the wait\n          # step's asset count passes — it deletes+re-uploads assets, so their IDs\n          # churn and a single download can 404 mid-flight. Retry bridges that window.\n          for i in $(seq 1 6); do\n            rm -f dl/*.deb\n            if gh release download \"$TAG\" --repo \"$GITHUB_REPOSITORY\" -p '*.deb' -D dl/ --clobber; then\n              break\n            fi\n            [ \"$i\" -eq 6 ] && { echo \"::error::.deb download failed after 6 attempts\"; exit 1; }\n            echo \"Attempt $i/6 — .deb download failed (release still finalizing?); sleeping 15s…\"\n            sleep 15\n          done\n          # .rpm is best-effort (powers the bonus yum/dnf repo); don't fail without it.\n          gh release download \"$TAG\" --repo \"$GITHUB_REPOSITORY\" -p '*.rpm' -D dl/ --clobber || true\n […]
 
@@ -3915,7 +3915,7 @@ id: toolu_01AfELaV8t68nUeQqtu6gdaz
 tool_result
 id: toolu_01AfELaV8t68nUeQqtu6gdaz
 ```
-The file /Users/jobinlawrance/Project/tiny/.github/workflows/apt-publish.yml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/.github/workflows/apt-publish.yml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3928,7 +3928,7 @@ tool_use Bash
 id: toolu_011ovuS63CqW2a1xCah1K4Zx
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngit add .github/workflows/apt-publish.yml\ngit commit -q -m \"ci(apt): retry .deb download to survive goreleaser asset churn\n\napt-publish's wait step confirms .deb count, but goreleaser can still be\nfinalizing the release (delete+re-upload → asset IDs churn), so a single\ngh release download 404s mid-flight. Retry up to 6x/15s bridges the window.\"\ngit push origin main 2>&1 | tail -2\necho \"===apt rerun status===\"; gh run view 28572248404 --json status,conclusion --jq '\"\\(.status) \\(.conclusion // \"\")\"'",
+  "command": "cd /home/<USER>/Project/tiny\ngit add .github/workflows/apt-publish.yml\ngit commit -q -m \"ci(apt): retry .deb download to survive goreleaser asset churn\n\napt-publish's wait step confirms .deb count, but goreleaser can still be\nfinalizing the release (delete+re-upload → asset IDs churn), so a single\ngh release download 404s mid-flight. Retry up to 6x/15s bridges the window.\"\ngit push origin main 2>&1 | tail -2\necho \"===apt rerun status===\"; gh run view 28572248404 --json status,conclusion --jq '\"\\(.status) \\(.conclusion // \"\")\"'",
   "description": "Commit apt retry fix, check rerun"
 }
 ```
@@ -4176,7 +4176,7 @@ tool_use Read
 id: toolu_01UTeT8GJmSt3zNWkw9huyCa
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/.goreleaser.yaml",
+  "file_path": "/home/<USER>/Project/tiny/.goreleaser.yaml",
   "offset": 95,
   "limit": 30
 }
@@ -4205,7 +4205,7 @@ id: toolu_01UTeT8GJmSt3zNWkw9huyCa
 110	    license: Apache-2.0
 111	    commit_author:
 112	      name: tinyraven-bot
-113	      email: oss@ravencloak.org
+113	      email: <REDACTED_EMAIL>
 114	    directory: Formula
 115	    install: |
 116	      bin.install "tinyraven"
@@ -4230,9 +4230,9 @@ id: toolu_01MdTiFudqy6yMoXswNhcrGo
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/.goreleaser.yaml",
-  "old_string": "# Homebrew tap — auto-updated on each release.\n# Requires repo secret HOMEBREW_TAP_GITHUB_TOKEN with push access to the tap repo.\nbrews:\n  - name: tinyraven\n    ids:\n      - default\n    repository:\n      owner: ravencloak-org\n      name: homebrew-tinyraven\n      token: \"{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}\"\n    homepage: https://github.com/ravencloak-org/tiny\n    description: \"Open-source, self-hosted, drop-in alternative to Tinybird (binary: tinyraven)\"\n    license: Apache-2.0\n    commit_author:\n      name: tinyraven-bot\n      email: oss@ravencloak.org\n    directory: Formula\n    install: |\n      bin.install \"tinyraven\"\n      generate_completions_from_executable(bin/\"tinyraven\", \"completion\")\n      pkgshare.install \"examples/tinyraven.postman_collection.json\"\n    test: |\n      system \"#{bin}/tinyraven\", \"--version\"",
-  "new_string": "# Homebrew tap (cask) — auto-updated on each release. `brews:` (formula) was\n# deprecated by GoReleaser v2.10 in favour of `homebrew_casks:`. Casks are\n# macOS-only; Linux users install via apt/rpm/nix/binary/`go install`.\n# Requires repo secret HOMEBREW_TAP_GITHUB_TOKEN with push access to the tap repo.\nhomebrew_casks:\n  - name: tinyraven\n    ids:\n      - default\n    binary: tinyraven\n    repository:\n      owner: ravencloak-org\n      name: homebrew-tinyraven\n      token: \"{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}\"\n    homepage: https://github.com/ravencloak-org/tiny\n    description: \"Open-source, self-hosted, drop-in alternative to Tinybird (binary: tinyraven)\"\n    commit_author:\n      name: tinyraven-bot\n      email: oss@ravencloak.org\n    directory: Casks\n    # Auto-generate + install bash/zsh/fish completions from `tinyraven completion`.\n    generate_completions_from_executable:\n      executable: tinyraven\n      args:\n        - completion\n      base_name: tinyraven\n      shell_parameter_format: cobra\n      shells:\n        - bash\n        - zsh\n        - fish"
+  "file_path": "/home/<USER>/Project/tiny/.goreleaser.yaml",
+  "old_string": "# Homebrew tap — auto-updated on each release.\n# Requires repo secret HOMEBREW_TAP_GITHUB_TOKEN with push access to the tap repo.\nbrews:\n  - name: tinyraven\n    ids:\n      - default\n    repository:\n      owner: ravencloak-org\n      name: homebrew-tinyraven\n      token: \"{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}\"\n    homepage: https://github.com/ravencloak-org/tiny\n    description: \"Open-source, self-hosted, drop-in alternative to Tinybird (binary: tinyraven)\"\n    license: Apache-2.0\n    commit_author:\n      name: tinyraven-bot\n      email: <REDACTED_EMAIL>\n    directory: Formula\n    install: |\n      bin.install \"tinyraven\"\n      generate_completions_from_executable(bin/\"tinyraven\", \"completion\")\n      pkgshare.install \"examples/tinyraven.postman_collection.json\"\n    test: |\n      system \"#{bin}/tinyraven\", \"--version\"",
+  "new_string": "# Homebrew tap (cask) — auto-updated on each release. `brews:` (formula) was\n# deprecated by GoReleaser v2.10 in favour of `homebrew_casks:`. Casks are\n# macOS-only; Linux users install via apt/rpm/nix/binary/`go install`.\n# Requires repo secret HOMEBREW_TAP_GITHUB_TOKEN with push access to the tap repo.\nhomebrew_casks:\n  - name: tinyraven\n    ids:\n      - default\n    binary: tinyraven\n    repository:\n      owner: ravencloak-org\n      name: homebrew-tinyraven\n      token: \"{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}\"\n    homepage: https://github.com/ravencloak-org/tiny\n    description: \"Open-source, self-hosted, drop-in alternative to Tinybird (binary: tinyraven)\"\n    commit_author:\n      name: tinyraven-bot\n      email: <REDACTED_EMAIL>\n    directory: Casks\n    # Auto-generate + install bash/zsh/fish completions from `tinyraven completion`.\n    generate_completions_from_executable:\n      executable: tinyraven\n      args:\n        - completion\n      base_name: tinyraven\n      shell_parameter_format: cobra\n      shells:\n        - bash\n        - zsh\n        - fish"
 }
 ```
 
@@ -4241,7 +4241,7 @@ id: toolu_01MdTiFudqy6yMoXswNhcrGo
 tool_result
 id: toolu_01MdTiFudqy6yMoXswNhcrGo
 ```
-The file /Users/jobinlawrance/Project/tiny/.goreleaser.yaml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/.goreleaser.yaml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4250,7 +4250,7 @@ tool_use Bash
 id: toolu_01NzhrFMqqU6ArFW9FfQLHVJ
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ncommand -v goreleaser >/dev/null && goreleaser check 2>&1 | tail -6 || echo \"no goreleaser locally\"",
+  "command": "cd /home/<USER>/Project/tiny\ncommand -v goreleaser >/dev/null && goreleaser check 2>&1 | tail -6 || echo \"no goreleaser locally\"",
   "description": "goreleaser check — deprecation gone?"
 }
 ```
@@ -4277,7 +4277,7 @@ id: toolu_01PNPF3u8SbRZ3JiXV5p2B69
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/.goreleaser.yaml",
+  "file_path": "/home/<USER>/Project/tiny/.goreleaser.yaml",
   "old_string": "    ids:\n      - default\n    binary: tinyraven\n    repository:",
   "new_string": "    ids:\n      - default\n    binaries:\n      - tinyraven\n    repository:"
 }
@@ -4288,7 +4288,7 @@ id: toolu_01PNPF3u8SbRZ3JiXV5p2B69
 tool_result
 id: toolu_01PNPF3u8SbRZ3JiXV5p2B69
 ```
-The file /Users/jobinlawrance/Project/tiny/.goreleaser.yaml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/.goreleaser.yaml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4297,7 +4297,7 @@ tool_use Bash
 id: toolu_01S45VcQw4xXMqxU1fUb1Nxe
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny; goreleaser check 2>&1 | tail -5",
+  "command": "cd /home/<USER>/Project/tiny; goreleaser check 2>&1 | tail -5",
   "description": "goreleaser check after binaries fix"
 }
 ```
@@ -4322,7 +4322,7 @@ tool_use Bash
 id: toolu_013KYvnnFRm2zrAS2T4PH82n
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===Formula/homebrew macOS-Linux claims===\"; grep -rniE 'formula|homebrew|macos / linux|macos/linux' README.md docs/install.md | head -25",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===Formula/homebrew macOS-Linux claims===\"; grep -rniE 'formula|homebrew|macos / linux|macos/linux' README.md docs/install.md | head -25",
   "description": "Find docs claims needing cask/macOS-only update"
 }
 ```
@@ -4358,7 +4358,7 @@ tool_use Read
 id: toolu_01RhAeJhtNwiCvi5XL2BLaQy
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/docs/install.md",
+  "file_path": "/home/<USER>/Project/tiny/docs/install.md",
   "offset": 26,
   "limit": 27
 }
@@ -4403,7 +4403,7 @@ id: toolu_017KdyWY9cobH3wfJ9otwdk5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/docs/install.md",
+  "file_path": "/home/<USER>/Project/tiny/docs/install.md",
   "old_string": "## Homebrew (macOS / Linux)\n\nGoReleaser pushes a formula to the tap repo\n[`ravencloak-org/homebrew-tinyraven`](https://github.com/ravencloak-org/homebrew-tinyraven)\non every release.\n\n```bash\nbrew tap ravencloak-org/tinyraven   # add the tap once\nbrew install tinyraven              # installs the `tinyraven` binary\nbrew upgrade tinyraven              # later, to update\n```\n\n### Understanding the Homebrew naming\n\nThere are three ways the name can appear, and only the last two work for us today:\n\n| Command | Works for TinyRaven? | Why |\n|---------|----------------------|-----|\n| `brew install tinyraven` (bare) | ❌ not yet | Bare names resolve against **homebrew-core**. TinyRaven isn't in core. |\n| `brew install ravencloak-org/tinyraven/tinyraven` | ✅ | Fully-qualified `owner/tap/formula` — always works, no tap step. |\n| `brew tap ravencloak-org/tinyraven` then `brew install tinyraven` | ✅ **recommended** | Tapping registers the repo so the short name resolves locally. |\n\nThe tap repo `ravencloak-org/homebrew-tinyraven` is referenced as\n`ravencloak-org/tinyraven` (Homebrew drops the `homebrew-` prefix). Submitting the\nformula to **homebrew-core** — which would make the bare `brew install tinyraven`\nwork for everyone — is a future option once the project is past pre-alpha.",
   "new_string": "## Homebrew (macOS)\n\nGoReleaser pushes a **cask** to the tap repo\n[`ravencloak-org/homebrew-tinyraven`](https://github.com/ravencloak-org/homebrew-tinyraven)\non every release. The cask installs the `tinyraven` binary plus bash/zsh/fish\nshell completions. Casks are macOS-only — on Linux use APT/DNF/Nix, the raw\nbinary, or `go […]
 
@@ -4412,7 +4412,7 @@ id: toolu_017KdyWY9cobH3wfJ9otwdk5
 tool_result
 id: toolu_017KdyWY9cobH3wfJ9otwdk5
 ```
-The file /Users/jobinlawrance/Project/tiny/docs/install.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/docs/install.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4422,7 +4422,7 @@ id: toolu_01Q5L5xn76qjRNrGxjVpoM9v
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/docs/install.md",
+  "file_path": "/home/<USER>/Project/tiny/docs/install.md",
   "old_string": "- [Homebrew (macOS / Linux)](#homebrew-macos--linux)",
   "new_string": "- [Homebrew (macOS)](#homebrew-macos)"
 }
@@ -4433,7 +4433,7 @@ id: toolu_01Q5L5xn76qjRNrGxjVpoM9v
 tool_result
 id: toolu_01Q5L5xn76qjRNrGxjVpoM9v
 ```
-The file /Users/jobinlawrance/Project/tiny/docs/install.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/docs/install.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4443,7 +4443,7 @@ id: toolu_01BmrywtYRVkRVnsAWoVQWkt
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/docs/migrate-from-tinybird.md",
+  "file_path": "/home/<USER>/Project/tiny/docs/migrate-from-tinybird.md",
   "old_string": "- **Installed by packages:** Homebrew → `$(brew --prefix)/share/tinyraven/`; deb/rpm → `/usr/share/tinyraven/`; release archives include it at `examples/`.",
   "new_string": "- **Installed by packages:** deb/rpm → `/usr/share/tinyraven/`; release archives include it at `examples/`. (The Homebrew cask ships the binary + completions only.)"
 }
@@ -4454,7 +4454,7 @@ id: toolu_01BmrywtYRVkRVnsAWoVQWkt
 tool_result
 id: toolu_01BmrywtYRVkRVnsAWoVQWkt
 ```
-The file /Users/jobinlawrance/Project/tiny/docs/migrate-from-tinybird.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/docs/migrate-from-tinybird.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4467,7 +4467,7 @@ tool_use Read
 id: toolu_01QVJtwCNXd2AZ3GECVyYgeG
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/README.md",
+  "file_path": "/home/<USER>/Project/tiny/README.md",
   "offset": 76,
   "limit": 14
 }
@@ -4501,7 +4501,7 @@ id: toolu_01JSqNeY3FkxqEC286YXJDE3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/README.md",
+  "file_path": "/home/<USER>/Project/tiny/README.md",
   "old_string": "| macOS / Linux | Homebrew | `brew tap ravencloak-org/tinyraven && brew install tinyraven` |",
   "new_string": "| macOS | Homebrew (cask) | `brew tap ravencloak-org/tinyraven && brew install tinyraven` |"
 }
@@ -4512,7 +4512,7 @@ id: toolu_01JSqNeY3FkxqEC286YXJDE3
 tool_result
 id: toolu_01JSqNeY3FkxqEC286YXJDE3
 ```
-The file /Users/jobinlawrance/Project/tiny/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4521,7 +4521,7 @@ tool_use Read
 id: toolu_01J9agyYykqqJ6NYkY3FRcPT
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/README.md",
+  "file_path": "/home/<USER>/Project/tiny/README.md",
   "offset": 125,
   "limit": 16
 }
@@ -4557,7 +4557,7 @@ id: toolu_01B2TdPJx4rMoR9DPDSpooGB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/README.md",
+  "file_path": "/home/<USER>/Project/tiny/README.md",
   "old_string": "**Homebrew (macOS / Linux)** — the recommended form is to tap first, then install the short name:\n\n```bash\nbrew tap ravencloak-org/tinyraven   # adds the ravencloak-org/homebrew-tinyraven tap\nbrew install tinyraven              # installs the `tinyraven` binary\n```\n\n> **Why `brew tap` first?** The bare `brew install tinyraven` only works for formulae in\n> **homebrew-core**, which TinyRaven isn't in (yet). From our tap, the fully-qualified form is\n> `brew install ravencloak-org/tinyraven/tinyraven` — running `brew tap ravencloak-org/tinyraven`\n> once lets you use the short `brew install tinyraven` afterward. (Submitting to homebrew-core,\n> which would enable the bare command for everyone, is a future option.)",
   "new_string": "**Homebrew (macOS)** — a cask; tap first, then install the short name (installs the binary + shell completions):\n\n```bash\nbrew tap ravencloak-org/tinyraven   # adds the ravencloak-org/homebrew-tinyraven tap\nbrew install tinyraven              # installs the `tinyraven` binary + completions\n```\n\n> **Why `brew tap` first?** The bare `brew install tinyraven` only works for casks in\n> **homebrew-core**, which TinyRaven isn't in (yet). From our tap, the fully-qualified form is\n> `brew install ravencloak-org/tinyraven/tinyraven` — running `brew tap ravencloak-org/tinyraven`\n> once lets you use the short `brew install tinyraven` afterward. Casks are macOS-only; on Linux\n> use APT/DNF/Nix, the raw binary, or `go install`."
 }
@@ -4568,7 +4568,7 @@ id: toolu_01B2TdPJx4rMoR9DPDSpooGB
 tool_result
 id: toolu_01B2TdPJx4rMoR9DPDSpooGB
 ```
-The file /Users/jobinlawrance/Project/tiny/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4581,7 +4581,7 @@ tool_use Bash
 id: toolu_0171zWbVoqspAPMnC3GwuezK
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===leftover formula/macOS-Linux homebrew claims===\"; grep -rniE 'homebrew.*linux|formula to the tap|owner/tap/formula|a formula' README.md docs/ | grep -vi cask || echo \"CLEAN\"\necho \"===goreleaser final check===\"; goreleaser check 2>&1 | tail -2\necho \"===diff stat===\"; git diff --stat",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===leftover formula/macOS-Linux homebrew claims===\"; grep -rniE 'homebrew.*linux|formula to the tap|owner/tap/formula|a formula' README.md docs/ | grep -vi cask || echo \"CLEAN\"\necho \"===goreleaser final check===\"; goreleaser check 2>&1 | tail -2\necho \"===diff stat===\"; git diff --stat",
   "description": "Sweep stale homebrew claims + final check"
 }
 ```
@@ -4614,7 +4614,7 @@ tool_use Bash
 id: toolu_01G2iMJKautCqh9XMdSu3gU4
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngit add .goreleaser.yaml README.md docs/install.md docs/migrate-from-tinybird.md\ngit commit -q -F - <<'EOF'\nbuild(brew): migrate deprecated brews -> homebrew_casks\n\nGoReleaser v2.10 deprecated `brews:` (formula) in favour of `homebrew_casks:`.\nCask installs the tinyraven binary + auto-generated bash/zsh/fish completions.\nCasks are macOS-only; Linux keeps APT/DNF/Nix/binary/`go install`. The Postman\ncollection is dropped from brew (no pkgshare in casks) — still shipped via\ndeb/rpm (/usr/share/tinyraven/) and the release archive. Docs updated to match.\n\n`goreleaser check` is now clean (no deprecations).\nEOF\ngit push origin main 2>&1 | tail -2",
+  "command": "cd /home/<USER>/Project/tiny\ngit add .goreleaser.yaml README.md docs/install.md docs/migrate-from-tinybird.md\ngit commit -q -F - <<'EOF'\nbuild(brew): migrate deprecated brews -> homebrew_casks\n\nGoReleaser v2.10 deprecated `brews:` (formula) in favour of `homebrew_casks:`.\nCask installs the tinyraven binary + auto-generated bash/zsh/fish completions.\nCasks are macOS-only; Linux keeps APT/DNF/Nix/binary/`go install`. The Postman\ncollection is dropped from brew (no pkgshare in casks) — still shipped via\ndeb/rpm (/usr/share/tinyraven/) and the release archive. Docs updated to match.\n\n`goreleaser check` is now clean (no deprecations).\nEOF\ngit push origin main 2>&1 | tail -2",
   "description": "Commit brews→casks migration, push main"
 }
 ```
@@ -4658,7 +4658,7 @@ tool_use Bash
 id: toolu_01DkDrHmXgEE1wsweAwGBvhP
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngit tag -a v0.3.14 -m \"v0.3.14: Homebrew cask (was deprecated formula); macOS binary + completions\"\ngit push origin v0.3.14 2>&1 | tail -3\ngit tag --sort=-v:refname | head -1",
+  "command": "cd /home/<USER>/Project/tiny\ngit tag -a v0.3.14 -m \"v0.3.14: Homebrew cask (was deprecated formula); macOS binary + completions\"\ngit push origin v0.3.14 2>&1 | tail -3\ngit tag --sort=-v:refname | head -1",
   "description": "Tag + push v0.3.14"
 }
 ```
@@ -4683,7 +4683,7 @@ id: toolu_01G2MFU2gXXBLoHDJzqJD8QU
   "description": "v0.3.14 release (cask) outcomes",
   "timeout_ms": 600000,
   "persistent": false,
-  "command": "cd /Users/jobinlawrance/Project/tiny; prev=\"\"; while true; do cur=$(gh run list --limit 10 --json headBranch,workflowName,status,conclusion --jq '.[] | select(.headBranch==\"v0.3.14\") | \"\\(.workflowName): \\(.status) \\(.conclusion // \"\")\"' 2>/dev/null | sort); comm -13 <(echo \"$prev\") <(echo \"$cur\") 2>/dev/null; prev=\"$cur\"; done_n=$(echo \"$cur\"|grep -c completed); all_n=$(echo \"$cur\"|grep -cE ':'); [ \"$all_n\" -ge 4 ] && [ \"$done_n\" -ge \"$all_n\" ] && break; sleep 30; done; echo \"ALL DONE:\"; echo \"$cur\""
+  "command": "cd /home/<USER>/Project/tiny; prev=\"\"; while true; do cur=$(gh run list --limit 10 --json headBranch,workflowName,status,conclusion --jq '.[] | select(.headBranch==\"v0.3.14\") | \"\\(.workflowName): \\(.status) \\(.conclusion // \"\")\"' 2>/dev/null | sort); comm -13 <(echo \"$prev\") <(echo \"$cur\") 2>/dev/null; prev=\"$cur\"; done_n=$(echo \"$cur\"|grep -c completed); all_n=$(echo \"$cur\"|grep -cE ':'); [ \"$all_n\" -ge 4 ] && [ \"$done_n\" -ge \"$all_n\" ] && break; sleep 30; done; echo \"ALL DONE:\"; echo \"$cur\""
 }
 ```
 
@@ -4721,7 +4721,7 @@ tool_use Bash
 id: toolu_01GCaKC1VwGvahPHQHv213XU
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===v0.3.14 workflow states===\"; gh run list --limit 10 --json headBranch,workflowName,conclusion --jq '.[]|select(.headBranch==\"v0.3.14\")|\"\\(.workflowName): \\(.conclusion)\"'\necho \"===tap formula file now a cask?===\"; gh api repos/ravencloak-org/homebrew-tinyraven/contents/Casks/tinyraven.rb --jq '.name' 2>&1 | head -1; gh api repos/ravencloak-org/homebrew-tinyraven/contents/Formula/tinyraven.rb --jq '.name' 2>&1 | head -1",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===v0.3.14 workflow states===\"; gh run list --limit 10 --json headBranch,workflowName,conclusion --jq '.[]|select(.headBranch==\"v0.3.14\")|\"\\(.workflowName): \\(.conclusion)\"'\necho \"===tap formula file now a cask?===\"; gh api repos/ravencloak-org/homebrew-tinyraven/contents/Casks/tinyraven.rb --jq '.name' 2>&1 | head -1; gh api repos/ravencloak-org/homebrew-tinyraven/contents/Formula/tinyraven.rb --jq '.name' 2>&1 | head -1",
   "description": "Confirm v0.3.14 green + cask file in tap"
 }
 ```
@@ -4762,7 +4762,7 @@ tool_result
 id: toolu_01Vow72JuefWGYFmF9UDX9en
 ```
 stale formula sha=9aa874013c45dec740189b18e798ae9b6c377b48
-{"content":null,"commit":{"sha":"9273c4572b15777ee5eebb9894705cc1d3dab2e0","node_id":"REDACTED","url":"https://api.github.REDACTED","html_url":"https://github.REDACTED","author":{"name":"Jobin Lawrance","email":"jobinlawrance@users.noreply.github.com","date":"2026-07-02T17:01:05Z"},"committer":{"name":"Jobin Lawrance","email":"jobinlawrance@users.noreply.github.com","date":"2026-07-02T17:01:05Z"},"tree":{"sha":"81b3d9330914f108d962426d048f9b3a234c3ae1","url":"https://api.github.REDACTED"},"message":"cleanup: remove stale formula superseded by Casks/tinyraven.rb (brews->cask migration)","parents":[{"sha":"82502cb48ce0f5ffcc9e6722ecb913e81421728a","url":"https://api.github.REDACTED","html_url":"https://github.REDACTED"}],"verification":{"verified":false,"reason":"unsigned","signature":null,"payload":null,"verified_at":null}}}
+{"content":null,"commit":{"sha":"9273c4572b15777ee5eebb9894705cc1d3dab2e0","node_id":"REDACTED","url":"https://api.github.REDACTED","html_url":"https://github.REDACTED","author":{"name":"Jobin Lawrance","email":"<REDACTED_EMAIL>","date":"2026-07-02T17:01:05Z"},"committer":{"name":"Jobin Lawrance","email":"<REDACTED_EMAIL>","date":"2026-07-02T17:01:05Z"},"tree":{"sha":"81b3d9330914f108d962426d048f9b3a234c3ae1","url":"https://api.github.REDACTED"},"message":"cleanup: remove stale formula superseded by Casks/tinyraven.rb (brews->cask migration)","parents":[{"sha":"82502cb48ce0f5ffcc9e6722ecb913e81421728a","url":"https://api.github.REDACTED","html_url":"https://github.REDACTED"}],"verification":{"verified":false,"reason":"unsigned","signature":null,"payload":null,"verified_at":null}}}
 ===verify gone===
 tinyraven.rb
 ```
@@ -4837,8 +4837,8 @@ tool_result
 id: toolu_01DLR45QkEmZV5q6EzjCE9o7
 ```
 ===which===
-/Users/jobinlawrance/go/bin/tinyraven
-/Users/jobinlawrance/go/bin/tinyraven
+/home/<USER>/go/bin/tinyraven
+/home/<USER>/go/bin/tinyraven
 ===real cask binary version===
 (eval):3: no such file or directory: /opt/homebrew/bin/tinyraven
 ===published cask completion stanza===
@@ -4982,7 +4982,7 @@ tool_use Bash
 id: toolu_017qzjhRz1FX2TFJGsCW7wo8
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===HEAD===\"; git log --oneline -1\ngit revert --no-edit e79e823 2>&1 | tail -3\necho \"===goreleaser back to formula (brews warning expected)===\"; goreleaser check 2>&1 | tail -3\necho \"===confirm brews + pkgshare restored===\"; grep -nE 'brews:|homebrew_casks:|pkgshare|generate_completions_from_executable' .goreleaser.yaml | head",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===HEAD===\"; git log --oneline -1\ngit revert --no-edit e79e823 2>&1 | tail -3\necho \"===goreleaser back to formula (brews warning expected)===\"; goreleaser check 2>&1 | tail -3\necho \"===confirm brews + pkgshare restored===\"; grep -nE 'brews:|homebrew_casks:|pkgshare|generate_completions_from_executable' .goreleaser.yaml | head",
   "description": "Revert cask migration, verify formula restored"
 }
 ```
@@ -5017,7 +5017,7 @@ tool_use Bash
 id: toolu_01CF7m98gGUgwy375ufrvCMC
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===push main===\"; git push origin main 2>&1 | tail -2\necho \"===delete stale cask from tap (formula v0.3.15 will re-create Formula/)===\"\nCSHA=$(gh api repos/ravencloak-org/homebrew-tinyraven/contents/Casks/tinyraven.rb --jq '.sha' 2>/dev/null)\ngh api -X DELETE repos/ravencloak-org/homebrew-tinyraven/contents/Casks/tinyraven.rb \\\n  -f message=\"cleanup: remove broken cask; reverting to formula (v0.3.15)\" -f sha=\"$CSHA\" 2>&1 | grep -o '\"message\":\"cleanup[^\"]*\"' | head -1\necho \"===tag v0.3.15===\"; git tag -a v0.3.15 -m \"v0.3.15: revert brews->cask (cask broke binary staging); back to working formula\"\ngit push origin v0.3.15 2>&1 | tail -2",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===push main===\"; git push origin main 2>&1 | tail -2\necho \"===delete stale cask from tap (formula v0.3.15 will re-create Formula/)===\"\nCSHA=$(gh api repos/ravencloak-org/homebrew-tinyraven/contents/Casks/tinyraven.rb --jq '.sha' 2>/dev/null)\ngh api -X DELETE repos/ravencloak-org/homebrew-tinyraven/contents/Casks/tinyraven.rb \\\n  -f message=\"cleanup: remove broken cask; reverting to formula (v0.3.15)\" -f sha=\"$CSHA\" 2>&1 | grep -o '\"message\":\"cleanup[^\"]*\"' | head -1\necho \"===tag v0.3.15===\"; git tag -a v0.3.15 -m \"v0.3.15: revert brews->cask (cask broke binary staging); back to working formula\"\ngit push origin v0.3.15 2>&1 | tail -2",
   "description": "Push revert, delete stale cask, tag v0.3.15"
 }
 ```
@@ -5046,7 +5046,7 @@ id: toolu_01YYWs3YLfXuCJYgPPQRB6Ch
   "description": "v0.3.15 formula-restore release",
   "timeout_ms": 600000,
   "persistent": false,
-  "command": "cd /Users/jobinlawrance/Project/tiny; prev=\"\"; while true; do cur=$(gh run list --limit 10 --json headBranch,workflowName,status,conclusion --jq '.[] | select(.headBranch==\"v0.3.15\") | \"\\(.workflowName): \\(.status) \\(.conclusion // \"\")\"' 2>/dev/null | sort); comm -13 <(echo \"$prev\") <(echo \"$cur\") 2>/dev/null; prev=\"$cur\"; done_n=$(echo \"$cur\"|grep -c completed); all_n=$(echo \"$cur\"|grep -cE ':'); [ \"$all_n\" -ge 4 ] && [ \"$done_n\" -ge \"$all_n\" ] && break; sleep 30; done; echo \"ALL DONE:\"; echo \"$cur\""
+  "command": "cd /home/<USER>/Project/tiny; prev=\"\"; while true; do cur=$(gh run list --limit 10 --json headBranch,workflowName,status,conclusion --jq '.[] | select(.headBranch==\"v0.3.15\") | \"\\(.workflowName): \\(.status) \\(.conclusion // \"\")\"' 2>/dev/null | sort); comm -13 <(echo \"$prev\") <(echo \"$cur\") 2>/dev/null; prev=\"$cur\"; done_n=$(echo \"$cur\"|grep -c completed); all_n=$(echo \"$cur\"|grep -cE ':'); [ \"$all_n\" -ge 4 ] && [ \"$done_n\" -ge \"$all_n\" ] && break; sleep 30; done; echo \"ALL DONE:\"; echo \"$cur\""
 }
 ```
 
@@ -5081,7 +5081,7 @@ id: toolu_017h6foZGQJszE2AKXVGYbMe
 ==> Unlinking Binary '/opt/homebrew/bin/tinyraven'
 ==> Purging files for version 0.3.14 of Cask tinyraven
 ===note: ~/go/bin/tinyraven (dev) shadows brew on PATH===
--rwxr-xr-x@ 1 jobinlawrance  staff  36877858 Jul  2 11:44 /Users/jobinlawrance/go/bin/tinyraven
+-rwxr-xr-x@ 1 jobinlawrance  staff  36877858 Jul  2 11:44 /home/<USER>/go/bin/tinyraven
 (will remove it for the post-release brew verify)
 ```
 
@@ -5101,7 +5101,7 @@ tool_use Bash
 id: toolu_01VLsJpTEQnta7Rq2t3gxugS
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny; grep -rnE '(#|//) ?ponytail:' . --include='*.go' --include='*.ts' --include='*.js' --include='*.yaml' --include='*.yml' --include='*.sh' 2>/dev/null | grep -v node_modules | grep -v '/.git/'",
+  "command": "cd /home/<USER>/Project/tiny; grep -rnE '(#|//) ?ponytail:' . --include='*.go' --include='*.ts' --include='*.js' --include='*.yaml' --include='*.yml' --include='*.sh' 2>/dev/null | grep -v node_modules | grep -v '/.git/'",
   "description": "Grep repo for ponytail debt markers"
 }
 ```
@@ -5139,7 +5139,7 @@ tool_use Bash
 id: toolu_01HNfUAjsjXdPpfe3yujq5tc
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\nfor f in cmd/tinyraven/serve.go cmd/tinyraven/project.go internal/metrics/metrics.go internal/datasource/parser.go internal/clickhouse/ddl.go internal/clickhouse/client.go internal/pipe/control_flow.go internal/branch/branch.go internal/pipe/executor.go internal/pipe/parser.go internal/deploy/deploy.go internal/sqlproxy/sqlproxy.go internal/pipestats/pipestats.go internal/ratelimit/ratelimit.go internal/gatherer/gatherer.go internal/model/model.go internal/api/docsui.go internal/api/events.go internal/api/pipes.go scripts/querybench/main.go .github/workflows/apt-publish.yml; do\n  awk '/ponytail:/{print FILENAME\":\"NR\": \"$0; c=3; next} c>0{gsub(/^[[:space:]]*(\\/\\/|#)[[:space:]]?/,\"    \"); print \"      \"$0; c--}' \"$f\"\ndone 2>/dev/null",
+  "command": "cd /home/<USER>/Project/tiny\nfor f in cmd/tinyraven/serve.go cmd/tinyraven/project.go internal/metrics/metrics.go internal/datasource/parser.go internal/clickhouse/ddl.go internal/clickhouse/client.go internal/pipe/control_flow.go internal/branch/branch.go internal/pipe/executor.go internal/pipe/parser.go internal/deploy/deploy.go internal/sqlproxy/sqlproxy.go internal/pipestats/pipestats.go internal/ratelimit/ratelimit.go internal/gatherer/gatherer.go internal/model/model.go internal/api/docsui.go internal/api/events.go internal/api/pipes.go scripts/querybench/main.go .github/workflows/apt-publish.yml; do\n  awk '/ponytail:/{print FILENAME\":\"NR\": \"$0; c=3; next} c>0{gsub(/^[[:space:]]*(\\/\\/|#)[[:space:]]?/,\"    \"); print \"      \"$0; c--}' \"$f\"\ndone 2>/dev/null",
   "description": "Extract full ponytail comment text per marker"
 }
 ```
@@ -5253,7 +5253,7 @@ id: toolu_017LpE8JoP6pw92H4tE9RfV4
 ==> Running `brew cleanup tinyraven`...
 Disable this behaviour by setting `HOMEBREW_NO_INSTALL_CLEANUP=1`.
 Hide these hints with `HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
-Removing: /Users/jobinlawrance/Library/Caches/Homebrew/tinyraven--0.3.13.tar.gz... (8.5MB)
+Removing: /home/<USER>/Library/Caches/Homebrew/tinyraven--0.3.13.tar.gz... (8.5MB)
 ==> Caveats
 zsh completions have been installed to:
   /opt/homebrew/share/zsh/site-functions
@@ -5278,7 +5278,7 @@ tool_use Bash
 id: toolu_01Q2pMVvT2SCFeGQ1YVMiWRE
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny; gh run list --limit 8 --json headBranch,workflowName,conclusion --jq '.[]|select(.headBranch==\"v0.3.15\")|\"\\(.workflowName): \\(.conclusion)\"'",
+  "command": "cd /home/<USER>/Project/tiny; gh run list --limit 8 --json headBranch,workflowName,conclusion --jq '.[]|select(.headBranch==\"v0.3.15\")|\"\\(.workflowName): \\(.conclusion)\"'",
   "description": "Final v0.3.15 workflow states"
 }
 ```
@@ -5324,7 +5324,7 @@ tool_use Bash
 id: toolu_01QqSBwFBpukw82rYHpsdQBG
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\n[ -f graphify-out/graph.json ] && echo \"EXISTING GRAPH FOUND\" || echo \"no existing graph — fresh build\"\nPYTHON=\"\"\nGRAPHIFY_BIN=$(which graphify 2>/dev/null)\nif [ -z \"$PYTHON\" ] && command -v uv >/dev/null 2>&1; then\n    _UV_PY=$(uv tool run graphifyy python -c \"import sys; print(sys.executable)\" 2>/dev/null)\n    if [ -n \"$_UV_PY\" ]; then PYTHON=\"$_UV_PY\"; fi\nfi\nif [ -z \"$PYTHON\" ] && [ -n \"$GRAPHIFY_BIN\" ]; then\n    _SHEBANG=$(head -1 \"$GRAPHIFY_BIN\" | tr -d '#!')\n    case \"$_SHEBANG\" in\n        *[!a-zA-Z0-9/_.-]*) ;;\n        *) \"$_SHEBANG\" -c \"import graphify\" 2>/dev/null && PYTHON=\"$_SHEBANG\" ;;\n    esac\nfi\nif [ -z \"$PYTHON\" ]; then PYTHON=\"python3\"; fi\nif ! \"$PYTHON\" -c \"import graphify\" 2>/dev/null; then\n    if command -v uv >/dev/null 2>&1; then\n        uv tool install --upgrade graphifyy -q 2>&1 | tail -3\n        _UV_PY=$(uv tool run graphifyy python -c \"import sys; print(sys.executable)\" 2>/dev/null)\n        if [ -n \"$_UV_PY\" ]; then PYTHON=\"$_UV_PY\"; fi\n    else\n        \"$PYTHON\" -m pip install graphifyy -q 2>/dev/null \\\n          || \"$PYTHON\" -m pip install graphifyy -q --break-system-packages 2>&1 | tail -3\n    fi\nfi\nmkdir -p graphify-out\n\"$PYTHON\" -c \"import sys; open('graphify-out/.graphify_python', 'w', encoding='utf-8').write(sys.executable)\"\necho \"$(cd . && pwd)\" > graphify-out/.graphify_root\n\"$PYTHON\" -c \"import graphify; print('graphify ready:', '$PYTHON')\"",
+  "command": "cd /home/<USER>/Project/tiny\n[ -f graphify-out/graph.json ] && echo \"EXISTING GRAPH FOUND\" || echo \"no existing graph — fresh build\"\nPYTHON=\"\"\nGRAPHIFY_BIN=$(which graphify 2>/dev/null)\nif [ -z \"$PYTHON\" ] && command -v uv >/dev/null 2>&1; then\n    _UV_PY=$(uv tool run graphifyy python -c \"import sys; print(sys.executable)\" 2>/dev/null)\n    if [ -n \"$_UV_PY\" ]; then PYTHON=\"$_UV_PY\"; fi\nfi\nif [ -z \"$PYTHON\" ] && [ -n \"$GRAPHIFY_BIN\" ]; then\n    _SHEBANG=$(head -1 \"$GRAPHIFY_BIN\" | tr -d '#!')\n    case \"$_SHEBANG\" in\n        *[!a-zA-Z0-9/_.-]*) ;;\n        *) \"$_SHEBANG\" -c \"import graphify\" 2>/dev/null && PYTHON=\"$_SHEBANG\" ;;\n    esac\nfi\nif [ -z \"$PYTHON\" ]; then PYTHON=\"python3\"; fi\nif ! \"$PYTHON\" -c \"import graphify\" 2>/dev/null; then\n    if command -v uv >/dev/null 2>&1; then\n        uv tool install --upgrade graphifyy -q 2>&1 | tail -3\n        _UV_PY=$(uv tool run graphifyy python -c \"import sys; print(sys.executable)\" 2>/dev/null)\n        if [ -n \"$_UV_PY\" ]; then PYTHON=\"$_UV_PY\"; fi\n    else\n        \"$PYTHON\" -m pip install graphifyy -q 2>/dev/null \\\n          || \"$PYTHON\" -m pip install graphifyy -q --break-system-packages 2>&1 | tail -3\n    fi\nfi\nmkdir -p graphify-out\n\"$PYTHON\" -c \"import sys; open('graphify-out/.graphify_python', 'w', encoding='utf-8').write(sys.executable)\"\necho \"$(cd . && pwd)\" > graphify-out/.graphify_root\n\"$PYTHON\" -c \"import graphify; print('graphify ready:', '$PYTHON')\"",
   "description": "graphify Step 1 — install/resolve interpreter"
 }
 ```
@@ -5335,7 +5335,7 @@ tool_result
 id: toolu_01QqSBwFBpukw82rYHpsdQBG
 ```
 EXISTING GRAPH FOUND
-graphify ready: /Users/jobinlawrance/.local/share/uv/tools/graphifyy/bin/python3
+graphify ready: /home/<USER>/.local/share/uv/tools/graphifyy/bin/python3
 ```
 
 > AGENT
@@ -5348,7 +5348,7 @@ tool_use Bash
 id: toolu_01WTN7vsiA2sKXjuCE7sQMWr
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\n$(cat graphify-out/.graphify_python) -c \"\nimport json\nfrom graphify.detect import detect\nfrom pathlib import Path\nresult = detect(Path('.'))\nprint(json.dumps(result, ensure_ascii=False))\n\" > graphify-out/.graphify_detect.json 2>&1\n$(cat graphify-out/.graphify_python) -c \"\nimport json\nfrom pathlib import Path\nd=json.loads(Path('graphify-out/.graphify_detect.json').read_text())\nf=d.get('files',{})\nprint('total_files',d.get('total_files'),'total_words',d.get('total_words'))\nfor k in ['code','document','paper','image','video']:\n    n=len(f.get(k,[]))\n    if n: print(f'  {k}: {n}')\nprint('skipped_sensitive', len(d.get('skipped_sensitive',[])))\nprint('GEMINI?', bool(__import__('os').getenv('GEMINI_API_KEY') or __import__('os').getenv('GOOGLE_API_KEY')))\n\"",
+  "command": "cd /home/<USER>/Project/tiny\n$(cat graphify-out/.graphify_python) -c \"\nimport json\nfrom graphify.detect import detect\nfrom pathlib import Path\nresult = detect(Path('.'))\nprint(json.dumps(result, ensure_ascii=False))\n\" > graphify-out/.graphify_detect.json 2>&1\n$(cat graphify-out/.graphify_python) -c \"\nimport json\nfrom pathlib import Path\nd=json.loads(Path('graphify-out/.graphify_detect.json').read_text())\nf=d.get('files',{})\nprint('total_files',d.get('total_files'),'total_words',d.get('total_words'))\nfor k in ['code','document','paper','image','video']:\n    n=len(f.get(k,[]))\n    if n: print(f'  {k}: {n}')\nprint('skipped_sensitive', len(d.get('skipped_sensitive',[])))\nprint('GEMINI?', bool(__import__('os').getenv('GEMINI_API_KEY') or __import__('os').getenv('GOOGLE_API_KEY')))\n\"",
   "description": "graphify Step 2 — detect corpus"
 }
 ```
@@ -5380,7 +5380,7 @@ tool_use Bash
 id: toolu_01DE1mq2d5sGaUe7QmbwBQnw
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\n$(cat graphify-out/.graphify_python) -c \"\nimport json\nfrom graphify.extract import collect_files, extract\nfrom pathlib import Path\ncode_files = []\ndetect = json.loads(Path('graphify-out/.graphify_detect.json').read_text(encoding='utf-8'))\nfor f in detect.get('files', {}).get('code', []):\n    code_files.extend(collect_files(Path(f)) if Path(f).is_dir() else [Path(f)])\nif code_files:\n    result = extract(code_files, cache_root=Path('.'))\n    Path('graphify-out/.graphify_ast.json').write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding='utf-8')\n    print(f'AST: {len(result[\\\"nodes\\\"])} nodes, {len(result[\\\"edges\\\"])} edges')\nelse:\n    Path('graphify-out/.graphify_ast.json').write_text(json.dumps({'nodes':[],'edges':[],'input_tokens':0,'output_tokens':0}, ensure_ascii=False), encoding='utf-8')\n    print('No code files')\n\"",
+  "command": "cd /home/<USER>/Project/tiny\n$(cat graphify-out/.graphify_python) -c \"\nimport json\nfrom graphify.extract import collect_files, extract\nfrom pathlib import Path\ncode_files = []\ndetect = json.loads(Path('graphify-out/.graphify_detect.json').read_text(encoding='utf-8'))\nfor f in detect.get('files', {}).get('code', []):\n    code_files.extend(collect_files(Path(f)) if Path(f).is_dir() else [Path(f)])\nif code_files:\n    result = extract(code_files, cache_root=Path('.'))\n    Path('graphify-out/.graphify_ast.json').write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding='utf-8')\n    print(f'AST: {len(result[\\\"nodes\\\"])} nodes, {len(result[\\\"edges\\\"])} edges')\nelse:\n    Path('graphify-out/.graphify_ast.json').write_text(json.dumps({'nodes':[],'edges':[],'input_tokens':0,'output_tokens':0}, ensure_ascii=False), encoding='utf-8')\n    print('No code files')\n\"",
   "description": "graphify Part A — AST extraction"
 }
 ```
@@ -5404,7 +5404,7 @@ tool_use Bash
 id: toolu_017bZTwYM6BiK89SKAoN89BJ
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\n$(cat graphify-out/.graphify_python) -c \"\nimport json\nfrom graphify.cache import check_semantic_cache\nfrom pathlib import Path\ndetect = json.loads(Path('graphify-out/.graphify_detect.json').read_text(encoding='utf-8'))\n# only docs+images+papers need semantic (code handled by AST)\nsem_files = detect['files'].get('document',[]) + detect['files'].get('paper',[]) + detect['files'].get('image',[])\ncached_nodes, cached_edges, cached_hyperedges, uncached = check_semantic_cache(sem_files)\nif cached_nodes or cached_edges or cached_hyperedges:\n    Path('graphify-out/.graphify_cached.json').write_text(json.dumps({'nodes': cached_nodes, 'edges': cached_edges, 'hyperedges': cached_hyperedges}, ensure_ascii=False), encoding='utf-8')\nPath('graphify-out/.graphify_uncached.txt').write_text(chr(10).join(uncached), encoding='utf-8')\nprint(f'Semantic files: {len(sem_files)} | cache hit: {len(sem_files)-len(uncached)} | need extraction: {len(uncached)}')\n\"",
+  "command": "cd /home/<USER>/Project/tiny\n$(cat graphify-out/.graphify_python) -c \"\nimport json\nfrom graphify.cache import check_semantic_cache\nfrom pathlib import Path\ndetect = json.loads(Path('graphify-out/.graphify_detect.json').read_text(encoding='utf-8'))\n# only docs+images+papers need semantic (code handled by AST)\nsem_files = detect['files'].get('document',[]) + detect['files'].get('paper',[]) + detect['files'].get('image',[])\ncached_nodes, cached_edges, cached_hyperedges, uncached = check_semantic_cache(sem_files)\nif cached_nodes or cached_edges or cached_hyperedges:\n    Path('graphify-out/.graphify_cached.json').write_text(json.dumps({'nodes': cached_nodes, 'edges': cached_edges, 'hyperedges': cached_hyperedges}, ensure_ascii=False), encoding='utf-8')\nPath('graphify-out/.graphify_uncached.txt').write_text(chr(10).join(uncached), encoding='utf-8')\nprint(f'Semantic files: {len(sem_files)} | cache hit: {len(sem_files)-len(uncached)} | need extraction: {len(uncached)}')\n\"",
   "description": "graphify B0 — semantic cache check"
 }
 ```
@@ -5427,7 +5427,7 @@ tool_use Bash
 id: toolu_018kTznFCRr26Wk8QwSbCp5t
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"PROJECT_ROOT=$(cat graphify-out/.graphify_root)\"\necho \"===uncached count by type===\"; \n$(cat graphify-out/.graphify_python) -c \"\nfrom pathlib import Path\nu=Path('graphify-out/.graphify_uncached.txt').read_text().splitlines()\ndocs=[f for f in u if not f.lower().endswith(('.png','.jpg','.jpeg','.gif','.webp','.svg'))]\nimgs=[f for f in u if f.lower().endswith(('.png','.jpg','.jpeg','.gif','.webp','.svg'))]\nprint('docs',len(docs),'imgs',len(imgs))\nimport json\nPath('graphify-out/.gf_docs.json').write_text(json.dumps(docs))\nPath('graphify-out/.gf_imgs.json').write_text(json.dumps(imgs))\n\"\necho \"===spec head===\"; sed -n '1,60p' /Users/jobinlawrance/.claude/skills/graphify/references/extraction-spec.md",
+  "command": "cd /home/<USER>/Project/tiny\necho \"PROJECT_ROOT=$(cat graphify-out/.graphify_root)\"\necho \"===uncached count by type===\"; \n$(cat graphify-out/.graphify_python) -c \"\nfrom pathlib import Path\nu=Path('graphify-out/.graphify_uncached.txt').read_text().splitlines()\ndocs=[f for f in u if not f.lower().endswith(('.png','.jpg','.jpeg','.gif','.webp','.svg'))]\nimgs=[f for f in u if f.lower().endswith(('.png','.jpg','.jpeg','.gif','.webp','.svg'))]\nprint('docs',len(docs),'imgs',len(imgs))\nimport json\nPath('graphify-out/.gf_docs.json').write_text(json.dumps(docs))\nPath('graphify-out/.gf_imgs.json').write_text(json.dumps(imgs))\n\"\necho \"===spec head===\"; sed -n '1,60p' /home/<USER>/.claude/skills/graphify/references/extraction-spec.md",
   "description": "Read spec + split uncached docs/images"
 }
 ```
@@ -5467,7 +5467,7 @@ tool_use Bash
 id: toolu_01QsVm4GVMk3qqSsCnj6aTbm
 ```json
 {
-  "command": "sed -n '60,140p' /Users/jobinlawrance/.claude/skills/graphify/references/extraction-spec.md",
+  "command": "sed -n '60,140p' /home/<USER>/.claude/skills/graphify/references/extraction-spec.md",
   "description": "Read rest of extraction spec (schema + output)"
 }
 ```
@@ -5494,7 +5494,7 @@ tool_use Bash
 id: toolu_01XzUszjUYwmuxntf7kvbqgj
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\n$(cat graphify-out/.graphify_python) -c \"\nimport json, math\nfrom pathlib import Path\ndocs=json.loads(Path('graphify-out/.gf_docs.json').read_text())\nimgs=json.loads(Path('graphify-out/.gf_imgs.json').read_text())\ndocs.sort()  # dir-grouped via sort\n# 5 doc chunks\nn=5\nsize=math.ceil(len(docs)/n)\nfor i in range(n):\n    chunk=docs[i*size:(i+1)*size]\n    if chunk:\n        Path(f'graphify-out/.gf_chunklist_{i+1:02d}.txt').write_text(chr(10).join(chunk))\n        print(f'chunk {i+1:02d}: {len(chunk)} docs')\n# image chunks\nfor j,img in enumerate(imgs):\n    idx=n+j+1\n    Path(f'graphify-out/.gf_chunklist_{idx:02d}.txt').write_text(img)\n    print(f'chunk {idx:02d}: 1 image -> {img}')\n\"",
+  "command": "cd /home/<USER>/Project/tiny\n$(cat graphify-out/.graphify_python) -c \"\nimport json, math\nfrom pathlib import Path\ndocs=json.loads(Path('graphify-out/.gf_docs.json').read_text())\nimgs=json.loads(Path('graphify-out/.gf_imgs.json').read_text())\ndocs.sort()  # dir-grouped via sort\n# 5 doc chunks\nn=5\nsize=math.ceil(len(docs)/n)\nfor i in range(n):\n    chunk=docs[i*size:(i+1)*size]\n    if chunk:\n        Path(f'graphify-out/.gf_chunklist_{i+1:02d}.txt').write_text(chr(10).join(chunk))\n        print(f'chunk {i+1:02d}: {len(chunk)} docs')\n# image chunks\nfor j,img in enumerate(imgs):\n    idx=n+j+1\n    Path(f'graphify-out/.gf_chunklist_{idx:02d}.txt').write_text(img)\n    print(f'chunk {idx:02d}: 1 image -> {img}')\n\"",
   "description": "Generate 10 chunk file lists"
 }
 ```
@@ -5509,11 +5509,11 @@ chunk 02: 22 docs
 chunk 03: 22 docs
 chunk 04: 22 docs
 chunk 05: 21 docs
-chunk 06: 1 image -> /Users/jobinlawrance/Project/tiny/site/public/file.svg
-chunk 07: 1 image -> /Users/jobinlawrance/Project/tiny/site/public/globe.svg
-chunk 08: 1 image -> /Users/jobinlawrance/Project/tiny/site/public/next.svg
-chunk 09: 1 image -> /Users/jobinlawrance/Project/tiny/site/public/vercel.svg
-chunk 10: 1 image -> /Users/jobinlawrance/Project/tiny/site/public/window.svg
+chunk 06: 1 image -> /home/<USER>/Project/tiny/site/public/file.svg
+chunk 07: 1 image -> /home/<USER>/Project/tiny/site/public/globe.svg
+chunk 08: 1 image -> /home/<USER>/Project/tiny/site/public/next.svg
+chunk 09: 1 image -> /home/<USER>/Project/tiny/site/public/vercel.svg
+chunk 10: 1 image -> /home/<USER>/Project/tiny/site/public/window.svg
 ```
 
 > AGENT
@@ -5528,7 +5528,7 @@ id: toolu_01UxF5obibKNJN9GjMLNDjo5
 {
   "description": "graphify extract chunk 01",
   "subagent_type": "general-purpose",
-  "prompt": "You are a graphify extraction subagent. Read the files listed and extract a knowledge graph fragment. Output ONLY valid JSON — no explanation, no markdown fences.\n\nFiles (chunk 1 of 5): paths are listed one per line in /Users/jobinlawrance/Project/tiny/graphify-out/.gf_chunklist_01.txt — read that file first, then read each listed file (they are docs: markdown, ADRs, txt, yaml).\n\nRules:\n- EXTRACTED: relationship explicit in source (import, citation, \"see ADR 0011\", cross-reference). confidence_score=1.0\n- INFERRED: reasonable inference (shared concept, implied dependency). Pick ONE discrete confidence_score: 0.95 direct structural, 0.85 strong, 0.75 reasonable, 0.65 weak, 0.55 speculative. Never 0.5.\n- AMBIGUOUS: uncertain — include, confidence_score 0.1-0.3.\n- Extract named concepts, entities, ADR decisions, design principles, endpoints, components. For WHY/rationale/trade-offs: store as a `rationale` attribute on the relevant concept node — do NOT make a separate rationale node.\n- Only create a node for a named entity/concept. file_type MUST be exactly one of: code, document, paper, image, rationale, concept. `concept`/`rationale` for ideas/principles/mechanisms.\n- semantically_similar_to (INFERRED, 0.6-0.95) only for genuinely non-obvious cross-cutting similarity.\n- hyperedges: max 3 per chunk, only when 3+ nodes share a concept/flow beyond pairwise edges.\n- If a file has YAML frontmatter, copy source_url/captured_at/author/contributor onto every node from […]
+  "prompt": "You are a graphify extraction subagent. Read the files listed and extract a knowledge graph fragment. Output ONLY valid JSON — no explanation, no markdown fences.\n\nFiles (chunk 1 of 5): paths are listed one per line in /home/<USER>/Project/tiny/graphify-out/.gf_chunklist_01.txt — read that file first, then read each listed file (they are docs: markdown, ADRs, txt, yaml).\n\nRules:\n- EXTRACTED: relationship explicit in source (import, citation, \"see ADR 0011\", cross-reference). confidence_score=1.0\n- INFERRED: reasonable inference (shared concept, implied dependency). Pick ONE discrete confidence_score: 0.95 direct structural, 0.85 strong, 0.75 reasonable, 0.65 weak, 0.55 speculative. Never 0.5.\n- AMBIGUOUS: uncertain — include, confidence_score 0.1-0.3.\n- Extract named concepts, entities, ADR decisions, design principles, endpoints, components. For WHY/rationale/trade-offs: store as a `rationale` attribute on the relevant concept node — do NOT make a separate rationale node.\n- Only create a node for a named entity/concept. file_type MUST be exactly one of: code, document, paper, image, rationale, concept. `concept`/`rationale` for ideas/principles/mechanisms.\n- semantically_similar_to (INFERRED, 0.6-0.95) only for genuinely non-obvious cross-cutting similarity.\n- hyperedges: max 3 per chunk, only when 3+ nodes share a concept/flow beyond pairwise edges.\n- If a file has YAML frontmatter, copy source_url/captured_at/author/contributor onto every node from […]
 
 > TOOL
 
@@ -5551,7 +5551,7 @@ id: toolu_014jm16N8epAag3bpeyFBKRa
 {
   "description": "graphify extract chunk 02",
   "subagent_type": "general-purpose",
-  "prompt": "You are a graphify extraction subagent. Read the files listed and extract a knowledge graph fragment. Output ONLY valid JSON — no explanation, no markdown fences.\n\nFiles (chunk 2 of 5): paths are listed one per line in /Users/jobinlawrance/Project/tiny/graphify-out/.gf_chunklist_02.txt — read that file first, then read each listed file (docs: markdown, ADRs, txt, yaml).\n\nRules:\n- EXTRACTED: relationship explicit in source (citation, \"see ADR 0011\", cross-reference). confidence_score=1.0\n- INFERRED: pick ONE discrete confidence_score: 0.95 direct structural, 0.85 strong, 0.75 reasonable, 0.65 weak, 0.55 speculative. Never 0.5.\n- AMBIGUOUS: include, confidence_score 0.1-0.3.\n- Extract named concepts, entities, ADR decisions, design principles, endpoints, components. WHY/rationale/trade-offs → `rationale` attribute on the concept node, not a separate node.\n- Only create a node for a named entity/concept. file_type MUST be exactly one of: code, document, paper, image, rationale, concept.\n- semantically_similar_to (INFERRED 0.6-0.95) only for non-obvious cross-cutting similarity.\n- hyperedges: max 3, only when 3+ nodes share a concept/flow beyond pairwise edges.\n- YAML frontmatter → copy source_url/captured_at/author/contributor onto every node from it.\n\nNode ID: lowercase `[a-z0-9_]`. `{parent_dir}_{filename}_{entity}` (immediate parent + filename stem + normalized entity). Top-level files: filename stem + entity. NEVER append chunk/sequence suffixes — deterministic IDs.\n\nSchema (exact):\n{\"nodes\":[{\"id\":\"...\",\"label\":\"Human Readable\",\"file_type\":\"document|concept|rationale|...\",\"source_file\":\"relative/path\",\"source_location\":null,\"source_url\":null,\"captured_at\":null,\"author\":null,\"contributor\":null}],\"edges\":[{\"source\":\"node_id\",\"target\":\"node_id\",\"relation\":\"references|cites|conceptually_related_to|shares_data_with|semantically_similar_to|rationale_for|implements\",\"confidence\":\"EXTRACTED|INFERRED|AMBIGUOUS\",\"confidence_score\":1.0,\"source_file\":\"relative/path\",\"source_location\":null,\"weight\":1.0}],\"hyperedges\":[{\"id\":\"snake_id\",\"label\":\"Label\",\"nodes\":[\"id1\",\"id2\",\"id3\"],\"relation\":\"participate_in|form\",\"confidence\":\"INFERRED\",\"confidence_score\":0.75,\"source_file\":\"path\"}],\"input_tokens\":0,\"output_tokens\":0}\n\nWrite […]
+  "prompt": "You are a graphify extraction subagent. Read the files listed and extract a knowledge graph fragment. Output ONLY valid JSON — no explanation, no markdown fences.\n\nFiles (chunk 2 of 5): paths are listed one per line in /home/<USER>/Project/tiny/graphify-out/.gf_chunklist_02.txt — read that file first, then read each listed file (docs: markdown, ADRs, txt, yaml).\n\nRules:\n- EXTRACTED: relationship explicit in source (citation, \"see ADR 0011\", cross-reference). confidence_score=1.0\n- INFERRED: pick ONE discrete confidence_score: 0.95 direct structural, 0.85 strong, 0.75 reasonable, 0.65 weak, 0.55 speculative. Never 0.5.\n- AMBIGUOUS: include, confidence_score 0.1-0.3.\n- Extract named concepts, entities, ADR decisions, design principles, endpoints, components. WHY/rationale/trade-offs → `rationale` attribute on the concept node, not a separate node.\n- Only create a node for a named entity/concept. file_type MUST be exactly one of: code, document, paper, image, rationale, concept.\n- semantically_similar_to (INFERRED 0.6-0.95) only for non-obvious cross-cutting similarity.\n- hyperedges: max 3, only when 3+ nodes share a concept/flow beyond pairwise edges.\n- YAML frontmatter → copy source_url/captured_at/author/contributor onto every node from it.\n\nNode ID: lowercase `[a-z0-9_]`. `{parent_dir}_{filename}_{entity}` (immediate parent + filename stem + normalized entity). Top-level files: filename stem + entity. NEVER append chunk/sequence suffixes — deterministic IDs.\n\nSchema (exact):\n{\"nodes\":[{\"id\":\"...\",\"label\":\"Human Readable\",\"file_type\":\"document|concept|rationale|...\",\"source_file\":\"relative/path\",\"source_location\":null,\"source_url\":null,\"captured_at\":null,\"author\":null,\"contributor\":null}],\"edges\":[{\"source\":\"node_id\",\"target\":\"node_id\",\"relation\":\"references|cites|conceptually_related_to|shares_data_with|semantically_similar_to|rationale_for|implements\",\"confidence\":\"EXTRACTED|INFERRED|AMBIGUOUS\",\"confidence_score\":1.0,\"source_file\":\"relative/path\",\"source_location\":null,\"weight\":1.0}],\"hyperedges\":[{\"id\":\"snake_id\",\"label\":\"Label\",\"nodes\":[\"id1\",\"id2\",\"id3\"],\"relation\":\"participate_in|form\",\"confidence\":\"INFERRED\",\"confidence_score\":0.75,\"source_file\":\"path\"}],\"input_tokens\":0,\"output_tokens\":0}\n\nWrite […]
 
 > TOOL
 
@@ -5574,7 +5574,7 @@ id: toolu_01XMunJjsjUyoF2eDP2UkYMD
 {
   "description": "graphify extract chunk 03",
   "subagent_type": "general-purpose",
-  "prompt": "You are a graphify extraction subagent. Read the files listed and extract a knowledge graph fragment. Output ONLY valid JSON — no explanation, no markdown fences.\n\nFiles (chunk 3 of 5): paths are listed one per line in /Users/jobinlawrance/Project/tiny/graphify-out/.gf_chunklist_03.txt — read that file first, then read each listed file (docs: markdown, ADRs, txt, yaml).\n\nRules:\n- EXTRACTED: relationship explicit in source (citation, \"see ADR 0011\", cross-reference). confidence_score=1.0\n- INFERRED: pick ONE discrete confidence_score: 0.95 direct structural, 0.85 strong, 0.75 reasonable, 0.65 weak, 0.55 speculative. Never 0.5.\n- AMBIGUOUS: include, confidence_score 0.1-0.3.\n- Extract named concepts, entities, ADR decisions, design principles, endpoints, components. WHY/rationale/trade-offs → `rationale` attribute on the concept node, not a separate node.\n- Only create a node for a named entity/concept. file_type MUST be exactly one of: code, document, paper, image, rationale, concept.\n- semantically_similar_to (INFERRED 0.6-0.95) only for non-obvious cross-cutting similarity.\n- hyperedges: max 3, only when 3+ nodes share a concept/flow beyond pairwise edges.\n- YAML frontmatter → copy source_url/captured_at/author/contributor onto every node from it.\n\nNode ID: lowercase `[a-z0-9_]`. `{parent_dir}_{filename}_{entity}` (immediate parent + filename stem + normalized entity). Top-level files: filename stem + entity. NEVER append chunk/sequence suffixes — deterministic IDs.\n\nSchema (exact):\n{\"nodes\":[{\"id\":\"...\",\"label\":\"Human Readable\",\"file_type\":\"document|concept|rationale|...\",\"source_file\":\"relative/path\",\"source_location\":null,\"source_url\":null,\"captured_at\":null,\"author\":null,\"contributor\":null}],\"edges\":[{\"source\":\"node_id\",\"target\":\"node_id\",\"relation\":\"references|cites|conceptually_related_to|shares_data_with|semantically_similar_to|rationale_for|implements\",\"confidence\":\"EXTRACTED|INFERRED|AMBIGUOUS\",\"confidence_score\":1.0,\"source_file\":\"relative/path\",\"source_location\":null,\"weight\":1.0}],\"hyperedges\":[{\"id\":\"snake_id\",\"label\":\"Label\",\"nodes\":[\"id1\",\"id2\",\"id3\"],\"relation\":\"participate_in|form\",\"confidence\":\"INFERRED\",\"confidence_score\":0.75,\"source_file\":\"path\"}],\"input_tokens\":0,\"output_tokens\":0}\n\nWrite […]
+  "prompt": "You are a graphify extraction subagent. Read the files listed and extract a knowledge graph fragment. Output ONLY valid JSON — no explanation, no markdown fences.\n\nFiles (chunk 3 of 5): paths are listed one per line in /home/<USER>/Project/tiny/graphify-out/.gf_chunklist_03.txt — read that file first, then read each listed file (docs: markdown, ADRs, txt, yaml).\n\nRules:\n- EXTRACTED: relationship explicit in source (citation, \"see ADR 0011\", cross-reference). confidence_score=1.0\n- INFERRED: pick ONE discrete confidence_score: 0.95 direct structural, 0.85 strong, 0.75 reasonable, 0.65 weak, 0.55 speculative. Never 0.5.\n- AMBIGUOUS: include, confidence_score 0.1-0.3.\n- Extract named concepts, entities, ADR decisions, design principles, endpoints, components. WHY/rationale/trade-offs → `rationale` attribute on the concept node, not a separate node.\n- Only create a node for a named entity/concept. file_type MUST be exactly one of: code, document, paper, image, rationale, concept.\n- semantically_similar_to (INFERRED 0.6-0.95) only for non-obvious cross-cutting similarity.\n- hyperedges: max 3, only when 3+ nodes share a concept/flow beyond pairwise edges.\n- YAML frontmatter → copy source_url/captured_at/author/contributor onto every node from it.\n\nNode ID: lowercase `[a-z0-9_]`. `{parent_dir}_{filename}_{entity}` (immediate parent + filename stem + normalized entity). Top-level files: filename stem + entity. NEVER append chunk/sequence suffixes — deterministic IDs.\n\nSchema (exact):\n{\"nodes\":[{\"id\":\"...\",\"label\":\"Human Readable\",\"file_type\":\"document|concept|rationale|...\",\"source_file\":\"relative/path\",\"source_location\":null,\"source_url\":null,\"captured_at\":null,\"author\":null,\"contributor\":null}],\"edges\":[{\"source\":\"node_id\",\"target\":\"node_id\",\"relation\":\"references|cites|conceptually_related_to|shares_data_with|semantically_similar_to|rationale_for|implements\",\"confidence\":\"EXTRACTED|INFERRED|AMBIGUOUS\",\"confidence_score\":1.0,\"source_file\":\"relative/path\",\"source_location\":null,\"weight\":1.0}],\"hyperedges\":[{\"id\":\"snake_id\",\"label\":\"Label\",\"nodes\":[\"id1\",\"id2\",\"id3\"],\"relation\":\"participate_in|form\",\"confidence\":\"INFERRED\",\"confidence_score\":0.75,\"source_file\":\"path\"}],\"input_tokens\":0,\"output_tokens\":0}\n\nWrite […]
 
 > TOOL
 
@@ -5597,7 +5597,7 @@ id: toolu_01MtMDqx4k2fqacHCyKF5Ji4
 {
   "description": "graphify extract chunk 04",
   "subagent_type": "general-purpose",
-  "prompt": "You are a graphify extraction subagent. Read the files listed and extract a knowledge graph fragment. Output ONLY valid JSON — no explanation, no markdown fences.\n\nFiles (chunk 4 of 5): paths are listed one per line in /Users/jobinlawrance/Project/tiny/graphify-out/.gf_chunklist_04.txt — read that file first, then read each listed file (docs: markdown, ADRs, txt, yaml).\n\nRules:\n- EXTRACTED: relationship explicit in source (citation, \"see ADR 0011\", cross-reference). confidence_score=1.0\n- INFERRED: pick ONE discrete confidence_score: 0.95 direct structural, 0.85 strong, 0.75 reasonable, 0.65 weak, 0.55 speculative. Never 0.5.\n- AMBIGUOUS: include, confidence_score 0.1-0.3.\n- Extract named concepts, entities, ADR decisions, design principles, endpoints, components. WHY/rationale/trade-offs → `rationale` attribute on the concept node, not a separate node.\n- Only create a node for a named entity/concept. file_type MUST be exactly one of: code, document, paper, image, rationale, concept.\n- semantically_similar_to (INFERRED 0.6-0.95) only for non-obvious cross-cutting similarity.\n- hyperedges: max 3, only when 3+ nodes share a concept/flow beyond pairwise edges.\n- YAML frontmatter → copy source_url/captured_at/author/contributor onto every node from it.\n\nNode ID: lowercase `[a-z0-9_]`. `{parent_dir}_{filename}_{entity}` (immediate parent + filename stem + normalized entity). Top-level files: filename stem + entity. NEVER append chunk/sequence suffixes — deterministic IDs.\n\nSchema (exact):\n{\"nodes\":[{\"id\":\"...\",\"label\":\"Human Readable\",\"file_type\":\"document|concept|rationale|...\",\"source_file\":\"relative/path\",\"source_location\":null,\"source_url\":null,\"captured_at\":null,\"author\":null,\"contributor\":null}],\"edges\":[{\"source\":\"node_id\",\"target\":\"node_id\",\"relation\":\"references|cites|conceptually_related_to|shares_data_with|semantically_similar_to|rationale_for|implements\",\"confidence\":\"EXTRACTED|INFERRED|AMBIGUOUS\",\"confidence_score\":1.0,\"source_file\":\"relative/path\",\"source_location\":null,\"weight\":1.0}],\"hyperedges\":[{\"id\":\"snake_id\",\"label\":\"Label\",\"nodes\":[\"id1\",\"id2\",\"id3\"],\"relation\":\"participate_in|form\",\"confidence\":\"INFERRED\",\"confidence_score\":0.75,\"source_file\":\"path\"}],\"input_tokens\":0,\"output_tokens\":0}\n\nWrite […]
+  "prompt": "You are a graphify extraction subagent. Read the files listed and extract a knowledge graph fragment. Output ONLY valid JSON — no explanation, no markdown fences.\n\nFiles (chunk 4 of 5): paths are listed one per line in /home/<USER>/Project/tiny/graphify-out/.gf_chunklist_04.txt — read that file first, then read each listed file (docs: markdown, ADRs, txt, yaml).\n\nRules:\n- EXTRACTED: relationship explicit in source (citation, \"see ADR 0011\", cross-reference). confidence_score=1.0\n- INFERRED: pick ONE discrete confidence_score: 0.95 direct structural, 0.85 strong, 0.75 reasonable, 0.65 weak, 0.55 speculative. Never 0.5.\n- AMBIGUOUS: include, confidence_score 0.1-0.3.\n- Extract named concepts, entities, ADR decisions, design principles, endpoints, components. WHY/rationale/trade-offs → `rationale` attribute on the concept node, not a separate node.\n- Only create a node for a named entity/concept. file_type MUST be exactly one of: code, document, paper, image, rationale, concept.\n- semantically_similar_to (INFERRED 0.6-0.95) only for non-obvious cross-cutting similarity.\n- hyperedges: max 3, only when 3+ nodes share a concept/flow beyond pairwise edges.\n- YAML frontmatter → copy source_url/captured_at/author/contributor onto every node from it.\n\nNode ID: lowercase `[a-z0-9_]`. `{parent_dir}_{filename}_{entity}` (immediate parent + filename stem + normalized entity). Top-level files: filename stem + entity. NEVER append chunk/sequence suffixes — deterministic IDs.\n\nSchema (exact):\n{\"nodes\":[{\"id\":\"...\",\"label\":\"Human Readable\",\"file_type\":\"document|concept|rationale|...\",\"source_file\":\"relative/path\",\"source_location\":null,\"source_url\":null,\"captured_at\":null,\"author\":null,\"contributor\":null}],\"edges\":[{\"source\":\"node_id\",\"target\":\"node_id\",\"relation\":\"references|cites|conceptually_related_to|shares_data_with|semantically_similar_to|rationale_for|implements\",\"confidence\":\"EXTRACTED|INFERRED|AMBIGUOUS\",\"confidence_score\":1.0,\"source_file\":\"relative/path\",\"source_location\":null,\"weight\":1.0}],\"hyperedges\":[{\"id\":\"snake_id\",\"label\":\"Label\",\"nodes\":[\"id1\",\"id2\",\"id3\"],\"relation\":\"participate_in|form\",\"confidence\":\"INFERRED\",\"confidence_score\":0.75,\"source_file\":\"path\"}],\"input_tokens\":0,\"output_tokens\":0}\n\nWrite […]
 
 > TOOL
 
@@ -5620,7 +5620,7 @@ id: toolu_018Sng8Vi7qhoNHjMLim69rx
 {
   "description": "graphify extract chunk 05",
   "subagent_type": "general-purpose",
-  "prompt": "You are a graphify extraction subagent. Read the files listed and extract a knowledge graph fragment. Output ONLY valid JSON — no explanation, no markdown fences.\n\nFiles (chunk 5 of 5): paths are listed one per line in /Users/jobinlawrance/Project/tiny/graphify-out/.gf_chunklist_05.txt — read that file first, then read each listed file (docs: markdown, ADRs, txt, yaml).\n\nRules:\n- EXTRACTED: relationship explicit in source (citation, \"see ADR 0011\", cross-reference). confidence_score=1.0\n- INFERRED: pick ONE discrete confidence_score: 0.95 direct structural, 0.85 strong, 0.75 reasonable, 0.65 weak, 0.55 speculative. Never 0.5.\n- AMBIGUOUS: include, confidence_score 0.1-0.3.\n- Extract named concepts, entities, ADR decisions, design principles, endpoints, components. WHY/rationale/trade-offs → `rationale` attribute on the concept node, not a separate node.\n- Only create a node for a named entity/concept. file_type MUST be exactly one of: code, document, paper, image, rationale, concept.\n- semantically_similar_to (INFERRED 0.6-0.95) only for non-obvious cross-cutting similarity.\n- hyperedges: max 3, only when 3+ nodes share a concept/flow beyond pairwise edges.\n- YAML frontmatter → copy source_url/captured_at/author/contributor onto every node from it.\n\nNode ID: lowercase `[a-z0-9_]`. `{parent_dir}_{filename}_{entity}` (immediate parent + filename stem + normalized entity). Top-level files: filename stem + entity. NEVER append chunk/sequence suffixes — deterministic IDs.\n\nSchema (exact):\n{\"nodes\":[{\"id\":\"...\",\"label\":\"Human Readable\",\"file_type\":\"document|concept|rationale|...\",\"source_file\":\"relative/path\",\"source_location\":null,\"source_url\":null,\"captured_at\":null,\"author\":null,\"contributor\":null}],\"edges\":[{\"source\":\"node_id\",\"target\":\"node_id\",\"relation\":\"references|cites|conceptually_related_to|shares_data_with|semantically_similar_to|rationale_for|implements\",\"confidence\":\"EXTRACTED|INFERRED|AMBIGUOUS\",\"confidence_score\":1.0,\"source_file\":\"relative/path\",\"source_location\":null,\"weight\":1.0}],\"hyperedges\":[{\"id\":\"snake_id\",\"label\":\"Label\",\"nodes\":[\"id1\",\"id2\",\"id3\"],\"relation\":\"participate_in|form\",\"confidence\":\"INFERRED\",\"confidence_score\":0.75,\"source_file\":\"path\"}],\"input_tokens\":0,\"output_tokens\":0}\n\nWrite […]
+  "prompt": "You are a graphify extraction subagent. Read the files listed and extract a knowledge graph fragment. Output ONLY valid JSON — no explanation, no markdown fences.\n\nFiles (chunk 5 of 5): paths are listed one per line in /home/<USER>/Project/tiny/graphify-out/.gf_chunklist_05.txt — read that file first, then read each listed file (docs: markdown, ADRs, txt, yaml).\n\nRules:\n- EXTRACTED: relationship explicit in source (citation, \"see ADR 0011\", cross-reference). confidence_score=1.0\n- INFERRED: pick ONE discrete confidence_score: 0.95 direct structural, 0.85 strong, 0.75 reasonable, 0.65 weak, 0.55 speculative. Never 0.5.\n- AMBIGUOUS: include, confidence_score 0.1-0.3.\n- Extract named concepts, entities, ADR decisions, design principles, endpoints, components. WHY/rationale/trade-offs → `rationale` attribute on the concept node, not a separate node.\n- Only create a node for a named entity/concept. file_type MUST be exactly one of: code, document, paper, image, rationale, concept.\n- semantically_similar_to (INFERRED 0.6-0.95) only for non-obvious cross-cutting similarity.\n- hyperedges: max 3, only when 3+ nodes share a concept/flow beyond pairwise edges.\n- YAML frontmatter → copy source_url/captured_at/author/contributor onto every node from it.\n\nNode ID: lowercase `[a-z0-9_]`. `{parent_dir}_{filename}_{entity}` (immediate parent + filename stem + normalized entity). Top-level files: filename stem + entity. NEVER append chunk/sequence suffixes — deterministic IDs.\n\nSchema (exact):\n{\"nodes\":[{\"id\":\"...\",\"label\":\"Human Readable\",\"file_type\":\"document|concept|rationale|...\",\"source_file\":\"relative/path\",\"source_location\":null,\"source_url\":null,\"captured_at\":null,\"author\":null,\"contributor\":null}],\"edges\":[{\"source\":\"node_id\",\"target\":\"node_id\",\"relation\":\"references|cites|conceptually_related_to|shares_data_with|semantically_similar_to|rationale_for|implements\",\"confidence\":\"EXTRACTED|INFERRED|AMBIGUOUS\",\"confidence_score\":1.0,\"source_file\":\"relative/path\",\"source_location\":null,\"weight\":1.0}],\"hyperedges\":[{\"id\":\"snake_id\",\"label\":\"Label\",\"nodes\":[\"id1\",\"id2\",\"id3\"],\"relation\":\"participate_in|form\",\"confidence\":\"INFERRED\",\"confidence_score\":0.75,\"source_file\":\"path\"}],\"input_tokens\":0,\"output_tokens\":0}\n\nWrite […]
 
 > TOOL
 
@@ -5671,7 +5671,7 @@ tool_use Bash
 id: toolu_01QEJbQ5pSmXgfYq9euRof39
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny; ls -la graphify-out/.graphify_chunk_*.json 2>/dev/null | awk '{print $NF, $5\"B\"}' || echo \"none yet\"",
+  "command": "cd /home/<USER>/Project/tiny; ls -la graphify-out/.graphify_chunk_*.json 2>/dev/null | awk '{print $NF, $5\"B\"}' || echo \"none yet\"",
   "description": "Check which chunk JSONs landed"
 }
 ```
@@ -5701,7 +5701,7 @@ tool_use Bash
 id: toolu_013YXo4nMNCqykQXWkQc3uMK
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\nP=$(cat graphify-out/.graphify_python)\n# B3 merge chunks\n$P -c \"\nimport json, glob\nfrom pathlib import Path\nchunks = sorted(glob.glob('graphify-out/.graphify_chunk_*.json'))\nall_nodes, all_edges, all_hyper = [], [], []\nfor c in chunks:\n    d = json.loads(Path(c).read_text(encoding='utf-8'))\n    all_nodes += d.get('nodes', []); all_edges += d.get('edges', []); all_hyper += d.get('hyperedges', [])\nPath('graphify-out/.graphify_semantic_new.json').write_text(json.dumps({'nodes':all_nodes,'edges':all_edges,'hyperedges':all_hyper,'input_tokens':900000,'output_tokens':40000}, ensure_ascii=False), encoding='utf-8')\nprint(f'Merged {len(chunks)} chunks: {len(all_nodes)} nodes, {len(all_edges)} edges, {len(all_hyper)} hyperedges')\n\"\n# save cache\n$P -c \"\nimport json\nfrom graphify.cache import save_semantic_cache\nfrom pathlib import Path\nnew = json.loads(Path('graphify-out/.graphify_semantic_new.json').read_text(encoding='utf-8'))\nsaved = save_semantic_cache(new.get('nodes',[]), new.get('edges',[]), new.get('hyperedges',[]))\nprint(f'Cached {saved} files')\n\"\n# merge cached+new -> semantic (no prior cache here)\n$P -c \"\nimport json\nfrom pathlib import Path\ncached = json.loads(Path('graphify-out/.graphify_cached.json').read_text(encoding='utf-8')) if Path('graphify-out/.graphify_cached.json').exists() else {'nodes':[],'edges':[],'hyperedges':[]}\nnew = json.loads(Path('graphify-out/.graphify_semantic_new.json').read_text(encoding='utf-8'))\nnodes = cached['nodes']+new.get('nodes',[]); edges=cached['edges']+new.get('edges',[]); hyper=cached.get('hyperedges',[])+new.get('hyperedges',[])\nseen=set(); dedup=[]\nfor n in nodes:\n    if n['id'] not in seen: seen.add(n['id']); dedup.append(n)\nPath('graphify-out/.graphify_semantic.json').write_text(json.dumps({'nodes':dedup,'edges':edges,'hyperedges':hyper,'input_tokens':new.get('input_tokens',0),'output_tokens':new.get('output_tokens',0)}, ensure_ascii=False), encoding='utf-8')\nprint(f'Semantic: {len(dedup)} nodes, {len(edges)} edges')\n\"\nrm -f graphify-out/.graphify_cached.json graphify-out/.graphify_uncached.txt graphify-out/.graphify_semantic_new.json graphify-out/.gf_*.json graphify-out/.gf_chunklist_*.txt\n# Part C merge AST + semantic\n$P -c \"\nimport json\nfrom pathlib import Path\nast = json.loads(Path('graphify-out/.graphify_ast.json').read_text(encoding='utf-8'))\nsem = json.loads(Path('graphify-out/.graphify_semantic.json').read_text(encoding='utf-8'))\nseen = {n['id'] for n in ast['nodes']}\nmerged = list(ast['nodes'])\nfor n in sem['nodes']:\n    if n['id'] not in seen: merged.append(n); seen.add(n['id'])\nout={'nodes':merged,'edges':ast['edges']+sem['edges'],'hyperedges':sem.get('hyperedges',[]),'input_tokens':sem.get('input_tokens',0),'output_tokens':sem.get('output_tokens',0)}\nPath('graphify-out/.graphify_extract.json').write_text(json.dumps(out, indent=2, ensure_ascii=False), encoding='utf-8')\nprint(f'Extract: {len(merged)} nodes, {len(out[\\\"edges\\\"])} edges ({len(ast[\\\"nodes\\\"])} AST + {len(sem[\\\"nodes\\\"])} semantic)')\n\"",
+  "command": "cd /home/<USER>/Project/tiny\nP=$(cat graphify-out/.graphify_python)\n# B3 merge chunks\n$P -c \"\nimport json, glob\nfrom pathlib import Path\nchunks = sorted(glob.glob('graphify-out/.graphify_chunk_*.json'))\nall_nodes, all_edges, all_hyper = [], [], []\nfor c in chunks:\n    d = json.loads(Path(c).read_text(encoding='utf-8'))\n    all_nodes += d.get('nodes', []); all_edges += d.get('edges', []); all_hyper += d.get('hyperedges', [])\nPath('graphify-out/.graphify_semantic_new.json').write_text(json.dumps({'nodes':all_nodes,'edges':all_edges,'hyperedges':all_hyper,'input_tokens':900000,'output_tokens':40000}, ensure_ascii=False), encoding='utf-8')\nprint(f'Merged {len(chunks)} chunks: {len(all_nodes)} nodes, {len(all_edges)} edges, {len(all_hyper)} hyperedges')\n\"\n# save cache\n$P -c \"\nimport json\nfrom graphify.cache import save_semantic_cache\nfrom pathlib import Path\nnew = json.loads(Path('graphify-out/.graphify_semantic_new.json').read_text(encoding='utf-8'))\nsaved = save_semantic_cache(new.get('nodes',[]), new.get('edges',[]), new.get('hyperedges',[]))\nprint(f'Cached {saved} files')\n\"\n# merge cached+new -> semantic (no prior cache here)\n$P -c \"\nimport json\nfrom pathlib import Path\ncached = json.loads(Path('graphify-out/.graphify_cached.json').read_text(encoding='utf-8')) if Path('graphify-out/.graphify_cached.json').exists() else {'nodes':[],'edges':[],'hyperedges':[]}\nnew = json.loads(Path('graphify-out/.graphify_semantic_new.json').read_text(encoding='utf-8'))\nnodes = cached['nodes']+new.get('nodes',[]); edges=cached['edges']+new.get('edges',[]); hyper=cached.get('hyperedges',[])+new.get('hyperedges',[])\nseen=set(); dedup=[]\nfor n in nodes:\n    if n['id'] not in seen: seen.add(n['id']); dedup.append(n)\nPath('graphify-out/.graphify_semantic.json').write_text(json.dumps({'nodes':dedup,'edges':edges,'hyperedges':hyper,'input_tokens':new.get('input_tokens',0),'output_tokens':new.get('output_tokens',0)}, ensure_ascii=False), encoding='utf-8')\nprint(f'Semantic: {len(dedup)} nodes, {len(edges)} edges')\n\"\nrm -f graphify-out/.graphify_cached.json graphify-out/.graphify_uncached.txt graphify-out/.graphify_semantic_new.json graphify-out/.gf_*.json graphify-out/.gf_chunklist_*.txt\n# Part C merge AST + semantic\n$P -c \"\nimport json\nfrom pathlib import Path\nast = json.loads(Path('graphify-out/.graphify_ast.json').read_text(encoding='utf-8'))\nsem = json.loads(Path('graphify-out/.graphify_semantic.json').read_text(encoding='utf-8'))\nseen = {n['id'] for n in ast['nodes']}\nmerged = list(ast['nodes'])\nfor n in sem['nodes']:\n    if n['id'] not in seen: merged.append(n); seen.add(n['id'])\nout={'nodes':merged,'edges':ast['edges']+sem['edges'],'hyperedges':sem.get('hyperedges',[]),'input_tokens':sem.get('input_tokens',0),'output_tokens':sem.get('output_tokens',0)}\nPath('graphify-out/.graphify_extract.json').write_text(json.dumps(out, indent=2, ensure_ascii=False), encoding='utf-8')\nprint(f'Extract: {len(merged)} nodes, {len(out[\\\"edges\\\"])} edges ({len(ast[\\\"nodes\\\"])} AST + {len(sem[\\\"nodes\\\"])} semantic)')\n\"",
   "description": "graphify B3 + Part C — merge semantic + AST"
 }
 ```
@@ -5727,7 +5727,7 @@ tool_use Bash
 id: toolu_01X59Mfd5Q8dAqMLdbqbab6E
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\n$(cat graphify-out/.graphify_python) -c \"\nimport json\nfrom graphify.build import build_from_json\nfrom graphify.cluster import cluster, score_all\nfrom graphify.analyze import god_nodes, surprising_connections, suggest_questions\nfrom graphify.report import generate\nfrom graphify.export import to_json\nfrom pathlib import Path\nextraction = json.loads(Path('graphify-out/.graphify_extract.json').read_text(encoding='utf-8'))\ndetection  = json.loads(Path('graphify-out/.graphify_detect.json').read_text(encoding='utf-8'))\nG = build_from_json(extraction)\ncommunities = cluster(G)\ncohesion = score_all(G, communities)\ntokens = {'input': extraction.get('input_tokens',0), 'output': extraction.get('output_tokens',0)}\ngods = god_nodes(G)\nsurprises = surprising_connections(G, communities)\nlabels = {cid: 'Community '+str(cid) for cid in communities}\nquestions = suggest_questions(G, communities, labels)\nreport = generate(G, communities, cohesion, labels, gods, surprises, detection, tokens, '.', suggested_questions=questions)\nPath('graphify-out/GRAPH_REPORT.md').write_text(report, encoding='utf-8')\nto_json(G, communities, 'graphify-out/graph.json')\nanalysis = {'communities':{str(k):v for k,v in communities.items()},'cohesion':{str(k):v for k,v in cohesion.items()},'gods':gods,'surprises':surprises,'questions':questions}\nPath('graphify-out/.graphify_analysis.json').write_text(json.dumps(analysis, indent=2, ensure_ascii=False), encoding='utf-8')\nif G.number_of_nodes()==0:\n    print('ERROR: Graph is empty'); raise SystemExit(1)\nprint(f'Graph: {G.number_of_nodes()} nodes, {G.number_of_edges()} edges, {len(communities)} communities')\n\"",
+  "command": "cd /home/<USER>/Project/tiny\n$(cat graphify-out/.graphify_python) -c \"\nimport json\nfrom graphify.build import build_from_json\nfrom graphify.cluster import cluster, score_all\nfrom graphify.analyze import god_nodes, surprising_connections, suggest_questions\nfrom graphify.report import generate\nfrom graphify.export import to_json\nfrom pathlib import Path\nextraction = json.loads(Path('graphify-out/.graphify_extract.json').read_text(encoding='utf-8'))\ndetection  = json.loads(Path('graphify-out/.graphify_detect.json').read_text(encoding='utf-8'))\nG = build_from_json(extraction)\ncommunities = cluster(G)\ncohesion = score_all(G, communities)\ntokens = {'input': extraction.get('input_tokens',0), 'output': extraction.get('output_tokens',0)}\ngods = god_nodes(G)\nsurprises = surprising_connections(G, communities)\nlabels = {cid: 'Community '+str(cid) for cid in communities}\nquestions = suggest_questions(G, communities, labels)\nreport = generate(G, communities, cohesion, labels, gods, surprises, detection, tokens, '.', suggested_questions=questions)\nPath('graphify-out/GRAPH_REPORT.md').write_text(report, encoding='utf-8')\nto_json(G, communities, 'graphify-out/graph.json')\nanalysis = {'communities':{str(k):v for k,v in communities.items()},'cohesion':{str(k):v for k,v in cohesion.items()},'gods':gods,'surprises':surprises,'questions':questions}\nPath('graphify-out/.graphify_analysis.json').write_text(json.dumps(analysis, indent=2, ensure_ascii=False), encoding='utf-8')\nif G.number_of_nodes()==0:\n    print('ERROR: Graph is empty'); raise SystemExit(1)\nprint(f'Graph: {G.number_of_nodes()} nodes, {G.number_of_edges()} edges, {len(communities)} communities')\n\"",
   "description": "graphify Step 4 — build/cluster/analyze"
 }
 ```
@@ -5750,7 +5750,7 @@ tool_use Bash
 id: toolu_01HfrwjmXE4ZAMj75RNmgAKb
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\n$(cat graphify-out/.graphify_python) -c \"\nimport json, collections, os\nfrom pathlib import Path\ng=json.loads(Path('graphify-out/graph.json').read_text())\nan=json.loads(Path('graphify-out/.graphify_analysis.json').read_text())\ncomms={int(k):v for k,v in an['communities'].items()}\n# node id -> (label, source_file)\nnmeta={n['id']:(n.get('label',n['id']), n.get('source_file') or n.get('attributes',{}).get('source_file','')) for n in g['nodes']}\nsizes=[(cid,len(nodes)) for cid,nodes in comms.items()]\nsizes.sort(key=lambda x:-x[1])\ndraft={}\nfor cid,nodes in comms.items():\n    dirs=collections.Counter()\n    labels=[]\n    for nid in nodes:\n        lbl,sf=nmeta.get(nid,(nid,''))\n        labels.append(lbl)\n        if sf:\n            parts=sf.split('/')\n            d='/'.join(parts[:-1]) if len(parts)>1 else parts[0]\n            dirs[d]+=1\n    top=dirs.most_common(1)\n    draft[cid]= (top[0][0] if top else labels[0][:30])\nPath('graphify-out/.gf_draftlabels.json').write_text(json.dumps(draft))\nprint('=== top 20 communities by size (cid, size, dominant dir/label) ===')\nfor cid,sz in sizes[:20]:\n    print(f'{cid}\\t{sz}\\t{draft[cid]}')\nprint('...')\nprint(f'total communities: {len(comms)} | singletons/tiny (<3): {sum(1 for _,s in sizes if s<3)}')\n\"",
+  "command": "cd /home/<USER>/Project/tiny\n$(cat graphify-out/.graphify_python) -c \"\nimport json, collections, os\nfrom pathlib import Path\ng=json.loads(Path('graphify-out/graph.json').read_text())\nan=json.loads(Path('graphify-out/.graphify_analysis.json').read_text())\ncomms={int(k):v for k,v in an['communities'].items()}\n# node id -> (label, source_file)\nnmeta={n['id']:(n.get('label',n['id']), n.get('source_file') or n.get('attributes',{}).get('source_file','')) for n in g['nodes']}\nsizes=[(cid,len(nodes)) for cid,nodes in comms.items()]\nsizes.sort(key=lambda x:-x[1])\ndraft={}\nfor cid,nodes in comms.items():\n    dirs=collections.Counter()\n    labels=[]\n    for nid in nodes:\n        lbl,sf=nmeta.get(nid,(nid,''))\n        labels.append(lbl)\n        if sf:\n            parts=sf.split('/')\n            d='/'.join(parts[:-1]) if len(parts)>1 else parts[0]\n            dirs[d]+=1\n    top=dirs.most_common(1)\n    draft[cid]= (top[0][0] if top else labels[0][:30])\nPath('graphify-out/.gf_draftlabels.json').write_text(json.dumps(draft))\nprint('=== top 20 communities by size (cid, size, dominant dir/label) ===')\nfor cid,sz in sizes[:20]:\n    print(f'{cid}\\t{sz}\\t{draft[cid]}')\nprint('...')\nprint(f'total communities: {len(comms)} | singletons/tiny (<3): {sum(1 for _,s in sizes if s<3)}')\n\"",
   "description": "Auto-derive community labels + show top 20"
 }
 ```
@@ -5795,7 +5795,7 @@ tool_use Bash
 id: toolu_01H5MA7Ni45AYVb9MEzoLerf
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\n$(cat graphify-out/.graphify_python) -c \"\nimport json\nfrom pathlib import Path\nfrom graphify.build import build_from_json\nfrom graphify.cluster import score_all\nfrom graphify.analyze import suggest_questions\nfrom graphify.report import generate\ndraft=json.loads(Path('graphify-out/.gf_draftlabels.json').read_text())\nNICE={\n 'internal/api':'HTTP API Layer','internal/pipe':'Pipe Engine','internal/config':'Config Loading',\n 'internal/clickhouse':'ClickHouse Client','internal/gatherer':'Event Gatherer','internal/pipestats':'Pipe Stats & Observability',\n 'internal/sqlproxy':'SQL Proxy','internal/ratelimit':'Rate Limiting','internal/datasource':'Datasource Parser',\n 'internal/deploy':'Deploy Engine','internal/branch':'Branch Resolution','internal/model':'Domain Model',\n 'internal/metrics':'Metrics Middleware','internal/auth':'Auth & Tokens','internal/token':'Auth & Tokens',\n 'cmd/tinyraven':'CLI Commands','PROMPT.md':'Architecture Spec','site':'Website','app.json':'Deploy Manifests',\n 'site/components/charts':'Chart Components','site/components/charts/tooltip':'Chart Tooltip','site/components':'Site UI Components',\n 'site/components/ui':'Site UI Primitives','site/app':'Website Pages','site/lib':'Site Utilities','scripts':'Scripts',\n 'docs':'Documentation','docs/adr':'Architecture Decisions','docs/deploy':'Deploy Guides','examples':'Examples',\n 'deploy':'Deploy Config','charts':'Helm Chart','.github/workflows':'CI Workflows','packaging':'Packaging',\n}\ndef nice(d):\n    if d in NICE: return NICE[d]\n    seg=d.split('/')[-1] if '/' in d else d\n    seg=seg.replace('.md','').replace('.json','').replace('_',' ').replace('-',' ')\n    return seg.title()[:40] or 'Misc'\nlabels={int(k):nice(v) for k,v in draft.items()}\nextraction=json.loads(Path('graphify-out/.graphify_extract.json').read_text())\ndetection=json.loads(Path('graphify-out/.graphify_detect.json').read_text())\nanalysis=json.loads(Path('graphify-out/.graphify_analysis.json').read_text())\nG=build_from_json(extraction)\ncommunities={int(k):v for k,v in analysis['communities'].items()}\ncohesion={int(k):v for k,v in analysis['cohesion'].items()}\ntokens={'input':extraction.get('input_tokens',0),'output':extraction.get('output_tokens',0)}\nquestions=suggest_questions(G,communities,labels)\nreport=generate(G,communities,cohesion,labels,analysis['gods'],analysis['surprises'],detection,tokens,'.',suggested_questions=questions)\nPath('graphify-out/GRAPH_REPORT.md').write_text(report,encoding='utf-8')\nPath('graphify-out/.graphify_labels.json').write_text(json.dumps({str(k):v for k,v in labels.items()}, ensure_ascii=False),encoding='utf-8')\nprint('Report + labels done. Sample labels:', {k:labels[k] for k in list(labels)[:8]})\n\"",
+  "command": "cd /home/<USER>/Project/tiny\n$(cat graphify-out/.graphify_python) -c \"\nimport json\nfrom pathlib import Path\nfrom graphify.build import build_from_json\nfrom graphify.cluster import score_all\nfrom graphify.analyze import suggest_questions\nfrom graphify.report import generate\ndraft=json.loads(Path('graphify-out/.gf_draftlabels.json').read_text())\nNICE={\n 'internal/api':'HTTP API Layer','internal/pipe':'Pipe Engine','internal/config':'Config Loading',\n 'internal/clickhouse':'ClickHouse Client','internal/gatherer':'Event Gatherer','internal/pipestats':'Pipe Stats & Observability',\n 'internal/sqlproxy':'SQL Proxy','internal/ratelimit':'Rate Limiting','internal/datasource':'Datasource Parser',\n 'internal/deploy':'Deploy Engine','internal/branch':'Branch Resolution','internal/model':'Domain Model',\n 'internal/metrics':'Metrics Middleware','internal/auth':'Auth & Tokens','internal/token':'Auth & Tokens',\n 'cmd/tinyraven':'CLI Commands','PROMPT.md':'Architecture Spec','site':'Website','app.json':'Deploy Manifests',\n 'site/components/charts':'Chart Components','site/components/charts/tooltip':'Chart Tooltip','site/components':'Site UI Components',\n 'site/components/ui':'Site UI Primitives','site/app':'Website Pages','site/lib':'Site Utilities','scripts':'Scripts',\n 'docs':'Documentation','docs/adr':'Architecture Decisions','docs/deploy':'Deploy Guides','examples':'Examples',\n 'deploy':'Deploy Config','charts':'Helm Chart','.github/workflows':'CI Workflows','packaging':'Packaging',\n}\ndef nice(d):\n    if d in NICE: return NICE[d]\n    seg=d.split('/')[-1] if '/' in d else d\n    seg=seg.replace('.md','').replace('.json','').replace('_',' ').replace('-',' ')\n    return seg.title()[:40] or 'Misc'\nlabels={int(k):nice(v) for k,v in draft.items()}\nextraction=json.loads(Path('graphify-out/.graphify_extract.json').read_text())\ndetection=json.loads(Path('graphify-out/.graphify_detect.json').read_text())\nanalysis=json.loads(Path('graphify-out/.graphify_analysis.json').read_text())\nG=build_from_json(extraction)\ncommunities={int(k):v for k,v in analysis['communities'].items()}\ncohesion={int(k):v for k,v in analysis['cohesion'].items()}\ntokens={'input':extraction.get('input_tokens',0),'output':extraction.get('output_tokens',0)}\nquestions=suggest_questions(G,communities,labels)\nreport=generate(G,communities,cohesion,labels,analysis['gods'],analysis['surprises'],detection,tokens,'.',suggested_questions=questions)\nPath('graphify-out/GRAPH_REPORT.md').write_text(report,encoding='utf-8')\nPath('graphify-out/.graphify_labels.json').write_text(json.dumps({str(k):v for k,v in labels.items()}, ensure_ascii=False),encoding='utf-8')\nprint('Report + labels done. Sample labels:', {k:labels[k] for k in list(labels)[:8]})\n\"",
   "description": "graphify Step 5 — label communities + regen report"
 }
 ```
@@ -5818,7 +5818,7 @@ tool_use Bash
 id: toolu_0193FLNshzChDscQYKEUkfZf
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\nGF=$(which graphify 2>/dev/null || echo \"$(cat graphify-out/.graphify_python) -m graphify\")\necho \"===HTML===\"; $GF export html 2>&1 | tail -4\necho \"===WIKI===\"; $GF export wiki 2>&1 | tail -8",
+  "command": "cd /home/<USER>/Project/tiny\nGF=$(which graphify 2>/dev/null || echo \"$(cat graphify-out/.graphify_python) -m graphify\")\necho \"===HTML===\"; $GF export html 2>&1 | tail -4\necho \"===WIKI===\"; $GF export wiki 2>&1 | tail -8",
   "description": "graphify export HTML + wiki"
 }
 ```
@@ -5847,7 +5847,7 @@ tool_use Bash
 id: toolu_01XYZW4tKf6gvDFvubRva5Uj
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\n$(cat graphify-out/.graphify_python) -c \"\nimport json\nfrom pathlib import Path\nfrom datetime import datetime, timezone\nfrom graphify.detect import save_manifest\ndetect=json.loads(Path('graphify-out/.graphify_detect.json').read_text(encoding='utf-8'))\nsave_manifest(detect.get('all_files') or detect['files'])\nextract=json.loads(Path('graphify-out/.graphify_extract.json').read_text(encoding='utf-8'))\nci,co=extract.get('input_tokens',0),extract.get('output_tokens',0)\ncp=Path('graphify-out/cost.json')\ncost=json.loads(cp.read_text()) if cp.exists() else {'runs':[],'total_input_tokens':0,'total_output_tokens':0}\ncost['runs'].append({'date':datetime.now(timezone.utc).isoformat(),'input_tokens':ci,'output_tokens':co,'files':detect.get('total_files',0)})\ncost['total_input_tokens']+=ci; cost['total_output_tokens']+=co\ncp.write_text(json.dumps(cost,indent=2))\nprint(f'run ~{ci:,} in / {co:,} out tokens')\n\"\nrm -f graphify-out/.graphify_detect.json graphify-out/.graphify_extract.json graphify-out/.graphify_ast.json graphify-out/.graphify_semantic.json graphify-out/.graphify_analysis.json graphify-out/.gf_draftlabels.json\nfind graphify-out -maxdepth 1 -name '.graphify_chunk_*.json' -delete 2>/dev/null\necho \"===outputs===\"; ls graphify-out/ | grep -vE '^\\.' ; echo \"wiki articles: $(ls graphify-out/wiki/*.md 2>/dev/null | wc -l | tr -d ' ')\"",
+  "command": "cd /home/<USER>/Project/tiny\n$(cat graphify-out/.graphify_python) -c \"\nimport json\nfrom pathlib import Path\nfrom datetime import datetime, timezone\nfrom graphify.detect import save_manifest\ndetect=json.loads(Path('graphify-out/.graphify_detect.json').read_text(encoding='utf-8'))\nsave_manifest(detect.get('all_files') or detect['files'])\nextract=json.loads(Path('graphify-out/.graphify_extract.json').read_text(encoding='utf-8'))\nci,co=extract.get('input_tokens',0),extract.get('output_tokens',0)\ncp=Path('graphify-out/cost.json')\ncost=json.loads(cp.read_text()) if cp.exists() else {'runs':[],'total_input_tokens':0,'total_output_tokens':0}\ncost['runs'].append({'date':datetime.now(timezone.utc).isoformat(),'input_tokens':ci,'output_tokens':co,'files':detect.get('total_files',0)})\ncost['total_input_tokens']+=ci; cost['total_output_tokens']+=co\ncp.write_text(json.dumps(cost,indent=2))\nprint(f'run ~{ci:,} in / {co:,} out tokens')\n\"\nrm -f graphify-out/.graphify_detect.json graphify-out/.graphify_extract.json graphify-out/.graphify_ast.json graphify-out/.graphify_semantic.json graphify-out/.graphify_analysis.json graphify-out/.gf_draftlabels.json\nfind graphify-out -maxdepth 1 -name '.graphify_chunk_*.json' -delete 2>/dev/null\necho \"===outputs===\"; ls graphify-out/ | grep -vE '^\\.' ; echo \"wiki articles: $(ls graphify-out/wiki/*.md 2>/dev/null | wc -l | tr -d ' ')\"",
   "description": "graphify Step 9 — manifest, cost, cleanup"
 }
 ```
@@ -5879,7 +5879,7 @@ tool_use Bash
 id: toolu_01Cmw7jdMgjiJHhnoF1NrJ8T
 ```json
 {
-  "command": "REDACTED\ncd $SC\necho \"===wiki dir structure (flat?)===\"; ls /Users/jobinlawrance/Project/tiny/graphify-out/wiki/ | head; echo \"count: $(ls /Users/jobinlawrance/Project/tiny/graphify-out/wiki/ | wc -l | tr -d ' ')\"\necho \"===try clone wiki repo===\"; rm -rf tiny.wiki; git clone git@github.com:ravencloak-org/tiny.wiki.git 2>&1 | tail -4",
+  "command": "REDACTED\ncd $SC\necho \"===wiki dir structure (flat?)===\"; ls /home/<USER>/Project/tiny/graphify-out/wiki/ | head; echo \"count: $(ls /home/<USER>/Project/tiny/graphify-out/wiki/ | wc -l | tr -d ' ')\"\necho \"===try clone wiki repo===\"; rm -rf tiny.wiki; git clone <REDACTED_EMAIL>:ravencloak-org/tiny.wiki.git 2>&1 | tail -4",
   "description": "Inspect wiki dir + clone GitHub wiki repo"
 }
 ```
@@ -5903,7 +5903,7 @@ Architecture_Spec_3.md
 count: 114
 ===try clone wiki repo===
 Cloning into 'tiny.wiki'...
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > TOOL
@@ -5912,7 +5912,7 @@ tool_use Bash
 id: toolu_012zDLTbzgtDcHjsLwY9ohLQ
 ```json
 {
-  "command": "REDACTED\nif [ -d \"$SC/tiny.wiki/.git\" ]; then\n  echo \"WIKI REPO OK\"; cd \"$SC/tiny.wiki\"\n  REDACTED\n  cp \"$WIKI\"/*.md .\n  # GitHub wiki landing page is Home.md\n  [ -f index.md ] && mv -f index.md Home.md\n  git add -A\n  git -c user.email=jobinlawrance@gmail.com -c user.name=\"Jobin Lawrance\" commit -q -m \"graphify: knowledge-graph wiki (114 articles, 103 communities)\" 2>&1 | tail -2\n  git push origin HEAD 2>&1 | tail -3\n  echo \"pages: $(ls *.md | wc -l | tr -d ' ')\"\nelse\n  echo \"WIKI REPO MISSING — GitHub wiki not initialized. Enable Wiki in repo settings + create the first page, then re-run push.\"\nfi",
+  "command": "REDACTED\nif [ -d \"$SC/tiny.wiki/.git\" ]; then\n  echo \"WIKI REPO OK\"; cd \"$SC/tiny.wiki\"\n  REDACTED\n  cp \"$WIKI\"/*.md .\n  # GitHub wiki landing page is Home.md\n  [ -f index.md ] && mv -f index.md Home.md\n  git add -A\n  git -c user.email=<REDACTED_EMAIL> -c user.name=\"Jobin Lawrance\" commit -q -m \"graphify: knowledge-graph wiki (114 articles, 103 communities)\" 2>&1 | tail -2\n  git push origin HEAD 2>&1 | tail -3\n  echo \"pages: $(ls *.md | wc -l | tr -d ' ')\"\nelse\n  echo \"WIKI REPO MISSING — GitHub wiki not initialized. Enable Wiki in repo settings + create the first page, then re-run push.\"\nfi",
   "description": "Populate + push GitHub wiki"
 }
 ```
@@ -5926,7 +5926,7 @@ WIKI REPO OK
 To github.com:ravencloak-org/tiny.wiki.git
    8dc1bd8..22d3a95  HEAD -> master
 pages: 114
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -5939,7 +5939,7 @@ tool_use Bash
 id: toolu_011Xc8f8T587PRRppsNnrLWo
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\n$(cat graphify-out/.graphify_python) -c \"\nfrom pathlib import Path\nr=Path('graphify-out/GRAPH_REPORT.md').read_text().split(chr(10))\nimport re\nkeep=['God','Surprising','Suggested','Question']\nout=[];grab=False\nfor line in r:\n    if line.startswith('#'):\n        grab=any(k in line for k in keep)\n    if grab: out.append(line)\nprint(chr(10).join(out)[:2600])\n\"",
+  "command": "cd /home/<USER>/Project/tiny\n$(cat graphify-out/.graphify_python) -c \"\nfrom pathlib import Path\nr=Path('graphify-out/GRAPH_REPORT.md').read_text().split(chr(10))\nimport re\nkeep=['God','Surprising','Suggested','Question']\nout=[];grab=False\nfor line in r:\n    if line.startswith('#'):\n        grab=any(k in line for k in keep)\n    if grab: out.append(line)\nprint(chr(10).join(out)[:2600])\n\"",
   "description": "Extract report highlights"
 }
 ```
@@ -6017,7 +6017,7 @@ tool_use Bash
 id: toolu_011sUWFXBnQdegw1hSfp9dVQ
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\nGF=$(which graphify 2>/dev/null || echo \"$(cat graphify-out/.graphify_python) -m graphify\")\n$GF query \"Why does the Datasource type bridge the Gatherer, HTTP API, Pipe engine, ClickHouse client, and Deploy? What role does it play across these subsystems?\" 2>&1 | grep -v 'warning: skill' | head -60",
+  "command": "cd /home/<USER>/Project/tiny\nGF=$(which graphify 2>/dev/null || echo \"$(cat graphify-out/.graphify_python) -m graphify\")\n$GF query \"Why does the Datasource type bridge the Gatherer, HTTP API, Pipe engine, ClickHouse client, and Deploy? What role does it play across these subsystems?\" 2>&1 | grep -v 'warning: skill' | head -60",
   "description": "graphify query — trace Datasource bridge"
 }
 ```
@@ -6109,7 +6109,7 @@ id: toolu_01KL2rQbbFQmCKSLZvw1443F
 (eval):2: no matches found: *.md
 (eval):2: no matches found: *.md
 cleared. remaining md: 0
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -6272,7 +6272,7 @@ tool_use Bash
 id: toolu_01RAokgqseDFXzpm6QSJefcG
 ```json
 {
-  "command": "REDACTED\ncd \"$SC/tiny.wiki\"\ngit add -A\necho \"===staged===\"; git status --short | head\ngit -c user.email=jobinlawrance@gmail.com -c user.name=\"Jobin Lawrance\" commit -q -m \"wiki: replace 114 auto-dumps with 7 hand-written human pages + sidebar\" 2>&1 | tail -2\ngit push origin HEAD 2>&1 | tail -3\necho \"===final pages===\"; ls *.md _Sidebar.md 2>/dev/null",
+  "command": "REDACTED\ncd \"$SC/tiny.wiki\"\ngit add -A\necho \"===staged===\"; git status --short | head\ngit -c user.email=<REDACTED_EMAIL> -c user.name=\"Jobin Lawrance\" commit -q -m \"wiki: replace 114 auto-dumps with 7 hand-written human pages + sidebar\" 2>&1 | tail -2\ngit push origin HEAD 2>&1 | tail -3\necho \"===final pages===\"; ls *.md _Sidebar.md 2>/dev/null",
   "description": "Commit + push human-friendly wiki"
 }
 ```
@@ -6305,7 +6305,7 @@ Deploy.md
 Home.md
 Install.md
 Subsystems.md
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -6337,7 +6337,7 @@ tool_use Bash
 id: toolu_01GCDaW2SJgbiYbQayetx8F3
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngh issue list --state open --limit 100 --json number,title --jq '.[] | \"\\(.number)\\t\\(.title)\"' 2>/dev/null",
+  "command": "cd /home/<USER>/Project/tiny\ngh issue list --state open --limit 100 --json number,title --jq '.[] | \"\\(.number)\\t\\(.title)\"' 2>/dev/null",
   "description": "Full open issue titles"
 }
 ```
@@ -6385,7 +6385,7 @@ tool_use Bash
 id: toolu_01EZrPyWVAAkq7A3xAVX1M48
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"#35 docker/ghcr:\"; grep -iE 'dockers:|ghcr.io|image_templates' .goreleaser.yaml | head -3\necho \"#10 hot reload:\"; grep -rn 'watch\\|fsnotify\\|fingerprint' cmd/tinyraven/project.go | head -2\necho \"#12 openapi:\"; grep -rn 'openapi' internal/api/server.go | head -2\necho \"#11 param types:\"; grep -rnoE 'DateTime|Int64|Float64|UUID|Boolean|String' internal/pipe/*.go internal/datasource/*.go 2>/dev/null | grep -oE 'DateTime|Int64|Float64|UUID|Boolean' | sort -u | tr '\\n' ' '; echo\necho \"#18 error shapes:\"; ls internal/api/errors*.go 2>/dev/null || grep -rln 'ErrorCode\\|tinybird.*error\\|writeError' internal/api/*.go | head -2\necho \"#22 refreshable MV:\"; grep -rin 'refreshable\\|REFRESH EVERY' internal/ | head -2 || echo \"no refreshable MV -> partial, LEAVE\"\necho \"#34 SDKMAN:\"; grep -rin 'sdkman' .goreleaser.yaml packaging/ 2>/dev/null | head -1 || echo \"no sdkman -> LEAVE\"\necho \"#13 pipe_stats:\"; ls internal/pipestats/*.go 2>/dev/null | head -1\necho \"#24 config split:\"; ls internal/config/*.go 2>/dev/null | head -1",
+  "command": "cd /home/<USER>/Project/tiny\necho \"#35 docker/ghcr:\"; grep -iE 'dockers:|ghcr.io|image_templates' .goreleaser.yaml | head -3\necho \"#10 hot reload:\"; grep -rn 'watch\\|fsnotify\\|fingerprint' cmd/tinyraven/project.go | head -2\necho \"#12 openapi:\"; grep -rn 'openapi' internal/api/server.go | head -2\necho \"#11 param types:\"; grep -rnoE 'DateTime|Int64|Float64|UUID|Boolean|String' internal/pipe/*.go internal/datasource/*.go 2>/dev/null | grep -oE 'DateTime|Int64|Float64|UUID|Boolean' | sort -u | tr '\\n' ' '; echo\necho \"#18 error shapes:\"; ls internal/api/errors*.go 2>/dev/null || grep -rln 'ErrorCode\\|tinybird.*error\\|writeError' internal/api/*.go | head -2\necho \"#22 refreshable MV:\"; grep -rin 'refreshable\\|REFRESH EVERY' internal/ | head -2 || echo \"no refreshable MV -> partial, LEAVE\"\necho \"#34 SDKMAN:\"; grep -rin 'sdkman' .goreleaser.yaml packaging/ 2>/dev/null | head -1 || echo \"no sdkman -> LEAVE\"\necho \"#13 pipe_stats:\"; ls internal/pipestats/*.go 2>/dev/null | head -1\necho \"#24 config split:\"; ls internal/config/*.go 2>/dev/null | head -1",
   "description": "Verify ambiguous issues against code"
 }
 ```
@@ -6426,7 +6426,7 @@ tool_use Bash
 id: toolu_01B2F9JU2dwJ4zuTpqZhcLAq
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"#35/#36 docker publish:\"; grep -rilE 'docker|ghcr' .github/workflows/ | head; grep -rn 'ghcr.io\\|docker/build-push\\|dockers:' .github/workflows/*.yml .goreleaser.yaml 2>/dev/null | head -4\necho \"===deploy manifest files exist?===\"; for f in app.json app.yaml railway.json cloudformation docker-compose.yml charts/tinyraven .github/workflows/ci.yml docs/deploy docs/migrate-from-tinybird.md; do [ -e \"$f\" ] && echo \"OK $f\" || echo \"MISSING $f\"; done",
+  "command": "cd /home/<USER>/Project/tiny\necho \"#35/#36 docker publish:\"; grep -rilE 'docker|ghcr' .github/workflows/ | head; grep -rn 'ghcr.io\\|docker/build-push\\|dockers:' .github/workflows/*.yml .goreleaser.yaml 2>/dev/null | head -4\necho \"===deploy manifest files exist?===\"; for f in app.json app.yaml railway.json cloudformation docker-compose.yml charts/tinyraven .github/workflows/ci.yml docs/deploy docs/migrate-from-tinybird.md; do [ -e \"$f\" ] && echo \"OK $f\" || echo \"MISSING $f\"; done",
   "description": "Verify docker publish + deploy manifests"
 }
 ```
@@ -6465,7 +6465,7 @@ tool_use Bash
 id: toolu_01S2GjneBDZDkxJkqaict3eA
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\nDONE=\"1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 19 20 21 23 24 25 26 27 28 29 30 31 32 33 35 36 37 38 39 40 41 42 43 44 45 67\"\nfor n in $DONE; do\n  gh issue close \"$n\" -c \"Implemented and shipped (current release v0.3.15). Verified against the codebase / release pipeline. Closing as complete — see #70 for the live 'Works today' list.\" >/dev/null 2>&1 && echo \"closed #$n\" || echo \"FAIL #$n\"\ndone | tr '\\n' ' '; echo\necho \"---remaining open---\"; gh issue list --state open --limit 100 --json number --jq 'length'",
+  "command": "cd /home/<USER>/Project/tiny\nDONE=\"1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 19 20 21 23 24 25 26 27 28 29 30 31 32 33 35 36 37 38 39 40 41 42 43 44 45 67\"\nfor n in $DONE; do\n  gh issue close \"$n\" -c \"Implemented and shipped (current release v0.3.15). Verified against the codebase / release pipeline. Closing as complete — see #70 for the live 'Works today' list.\" >/dev/null 2>&1 && echo \"closed #$n\" || echo \"FAIL #$n\"\ndone | tr '\\n' ' '; echo\necho \"---remaining open---\"; gh issue list --state open --limit 100 --json number --jq 'length'",
   "description": "Close 43 verified-done issues"
 }
 ```
@@ -6490,7 +6490,7 @@ tool_use Bash
 id: toolu_01DcMnL92sbRUVEMhfVNHUzL
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny; gh issue close 4 -c \"Implemented and shipped in v0.3.15. Closing as complete.\" 2>&1 | head -10",
+  "command": "cd /home/<USER>/Project/tiny; gh issue close 4 -c \"Implemented and shipped in v0.3.15. Closing as complete.\" 2>&1 | head -10",
   "description": "Debug single issue close"
 }
 ```
@@ -6513,7 +6513,7 @@ tool_use Bash
 id: toolu_014cMv4qBP2eKt2tnFe7SkDv
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\nDONE=\"1 2 3 5 6 7 8 9 10 11 12 13 14 15 16 17 19 20 21 23 24 25 26 27 28 29 30 31 32 33 35 36 37 38 39 40 41 42 43 44 45 67\"\nok=0; fail=\"\"\nfor n in $DONE; do\n  if gh issue close \"$n\" -c \"Implemented and shipped (v0.3.15); verified against codebase / release pipeline. See #70 for the live status list.\" >/dev/null 2>&1; then\n    ok=$((ok+1))\n  else\n    fail=\"$fail $n\"\n  fi\n  sleep 1.2\ndone\necho \"closed: $ok (+ #4 earlier) | failed:$fail\"\necho \"open now: $(gh issue list --state open --limit 100 --json number --jq 'length')\"",
+  "command": "cd /home/<USER>/Project/tiny\nDONE=\"1 2 3 5 6 7 8 9 10 11 12 13 14 15 16 17 19 20 21 23 24 25 26 27 28 29 30 31 32 33 35 36 37 38 39 40 41 42 43 44 45 67\"\nok=0; fail=\"\"\nfor n in $DONE; do\n  if gh issue close \"$n\" -c \"Implemented and shipped (v0.3.15); verified against codebase / release pipeline. See #70 for the live status list.\" >/dev/null 2>&1; then\n    ok=$((ok+1))\n  else\n    fail=\"$fail $n\"\n  fi\n  sleep 1.2\ndone\necho \"closed: $ok (+ #4 earlier) | failed:$fail\"\necho \"open now: $(gh issue list --state open --limit 100 --json number --jq 'length')\"",
   "description": "Re-close remaining with delay"
 }
 ```
@@ -6537,7 +6537,7 @@ tool_use Bash
 id: toolu_019iANWCASvNiLay14SGfZcK
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngh issue close 5 -c \"Implemented and shipped (v0.3.15); verified against codebase / release pipeline. See #70 for the live status list.\" 2>&1 | head -6\necho \"exit=$?\"",
+  "command": "cd /home/<USER>/Project/tiny\ngh issue close 5 -c \"Implemented and shipped (v0.3.15); verified against codebase / release pipeline. See #70 for the live status list.\" 2>&1 | head -6\necho \"exit=$?\"",
   "description": "Reproduce close error with full comment"
 }
 ```
@@ -6561,7 +6561,7 @@ tool_use Bash
 id: toolu_01DTEaKnjCFWpxW4KCk5EjsE
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\nfor n in 6 7 8; do\n  echo \"--- #$n ---\"\n  gh issue close \"$n\" -c \"Implemented and shipped (v0.3.15). See #70 for status.\" 2>&1 | head -3\n  sleep 3\ndone",
+  "command": "cd /home/<USER>/Project/tiny\nfor n in 6 7 8; do\n  echo \"--- #$n ---\"\n  gh issue close \"$n\" -c \"Implemented and shipped (v0.3.15). See #70 for status.\" 2>&1 | head -3\n  sleep 3\ndone",
   "description": "Loop 3 closes with visible output + 3s delay"
 }
 ```
@@ -6589,7 +6589,7 @@ tool_use Bash
 id: toolu_0119auu8Jo8VHy4ZbTNoFc4M
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\nDONE=\"1 2 3 9 10 11 12 13 14 15 16 17 19 20 21 23 24 25 26 27 28 29 30 31 32 33 35 36 37 38 39 40 41 42 43 44 45 67\"\nok=0; fail=\"\"\nfor n in $DONE; do\n  if gh issue close \"$n\" -c \"Implemented and shipped (v0.3.15); verified against codebase / release pipeline. See #70 for the live status list.\" >/dev/null 2>&1; then\n    ok=$((ok+1)); printf '.'\n  else\n    fail=\"$fail $n\"; printf 'x'\n  fi\n  sleep 3\ndone\necho; echo \"closed this pass: $ok | failed:$fail\"\necho \"open now: $(gh issue list --state open --limit 100 --json number --jq 'length')\"",
+  "command": "cd /home/<USER>/Project/tiny\nDONE=\"1 2 3 9 10 11 12 13 14 15 16 17 19 20 21 23 24 25 26 27 28 29 30 31 32 33 35 36 37 38 39 40 41 42 43 44 45 67\"\nok=0; fail=\"\"\nfor n in $DONE; do\n  if gh issue close \"$n\" -c \"Implemented and shipped (v0.3.15); verified against codebase / release pipeline. See #70 for the live status list.\" >/dev/null 2>&1; then\n    ok=$((ok+1)); printf '.'\n  else\n    fail=\"$fail $n\"; printf 'x'\n  fi\n  sleep 3\ndone\necho; echo \"closed this pass: $ok | failed:$fail\"\necho \"open now: $(gh issue list --state open --limit 100 --json number --jq 'length')\"",
   "description": "Close remaining 38 with 3s spacing",
   "timeout": 180000
 }
@@ -6615,7 +6615,7 @@ tool_use Bash
 id: toolu_016hKB3cuocFAEfvULSrfpS5
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\nDONE=\"1 2 3 9 10 11 12 13 14 15 16 17 19 20 21 23 24 25 26 27 28 29 30 31 32 33 35 36 37 38 39 40 41 42 43 44 45 67\"\nOPEN=$(gh issue list --state open --limit 100 --json number --jq '.[].number')\nTODO=\"\"\nfor n in $DONE; do echo \"$OPEN\" | grep -qx \"$n\" && TODO=\"$TODO $n\"; done\necho \"still-open from done-set:$TODO\"\necho \"count: $(echo $TODO | wc -w | tr -d ' ')\"",
+  "command": "cd /home/<USER>/Project/tiny\nDONE=\"1 2 3 9 10 11 12 13 14 15 16 17 19 20 21 23 24 25 26 27 28 29 30 31 32 33 35 36 37 38 39 40 41 42 43 44 45 67\"\nOPEN=$(gh issue list --state open --limit 100 --json number --jq '.[].number')\nTODO=\"\"\nfor n in $DONE; do echo \"$OPEN\" | grep -qx \"$n\" && TODO=\"$TODO $n\"; done\necho \"still-open from done-set:$TODO\"\necho \"count: $(echo $TODO | wc -w | tr -d ' ')\"",
   "description": "Compute still-open done-set issues"
 }
 ```
@@ -6639,7 +6639,7 @@ tool_use Bash
 id: toolu_01CdHs3CL4qs215U4ZyxP5uJ
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngh issue list --state open --limit 100 --json number,title --jq '.[] | \"\\(.number)\\t\\(.title)\"' | sort -n",
+  "command": "cd /home/<USER>/Project/tiny\ngh issue list --state open --limit 100 --json number,title --jq '.[] | \"\\(.number)\\t\\(.title)\"' | sort -n",
   "description": "Final open issue list"
 }
 ```
@@ -6688,7 +6688,7 @@ tool_use Bash
 id: toolu_0192B25Uw8jSA1DGyjfsZdxE
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\nBEFORE=$(gh issue list --state open --limit 100 --json number --jq 'length')\nDONE=\"1 2 3 9 10 11 12 13 14 15 16 17 19 20 21 23 24 25 26 27 28 29 30 31 32 33 35 36 37 38 39 40 41 42 43 44 45 67\"\nfor n in $DONE; do gh issue close \"$n\" >/dev/null 2>&1; sleep 2; done\nAFTER=$(gh issue list --state open --limit 100 --json number --jq 'length')\necho \"open: $BEFORE -> $AFTER (closed $((BEFORE-AFTER)) of 38)\"",
+  "command": "cd /home/<USER>/Project/tiny\nBEFORE=$(gh issue list --state open --limit 100 --json number --jq 'length')\nDONE=\"1 2 3 9 10 11 12 13 14 15 16 17 19 20 21 23 24 25 26 27 28 29 30 31 32 33 35 36 37 38 39 40 41 42 43 44 45 67\"\nfor n in $DONE; do gh issue close \"$n\" >/dev/null 2>&1; sleep 2; done\nAFTER=$(gh issue list --state open --limit 100 --json number --jq 'length')\necho \"open: $BEFORE -> $AFTER (closed $((BEFORE-AFTER)) of 38)\"",
   "description": "Close 38 without comments, verify by count",
   "timeout": 150000
 }
@@ -6712,7 +6712,7 @@ tool_use Bash
 id: toolu_01T5VEuFb5a4R6zbYWYfaQbD
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\nREDACTED\nDONE=\"1 2 3 9 10 11 12 13 14 15 16 17 19 20 21 23 24 25 26 27 28 29 30 31 32 33 35 36 37 38 39 40 41 42 43 44 45 67\"\n{\n  echo \"cooldown 45s...\"; sleep 45\n  for n in $DONE; do\n    if gh issue close \"$n\" >/dev/null 2>&1; then echo \"closed #$n\"; else echo \"FAIL #$n\"; fi\n    sleep 8\n  done\n  echo \"DONE. open remaining: $(gh issue list --state open --limit 100 --json number --jq 'length')\"\n} > \"$SC/close.log\" 2>&1",
+  "command": "cd /home/<USER>/Project/tiny\nREDACTED\nDONE=\"1 2 3 9 10 11 12 13 14 15 16 17 19 20 21 23 24 25 26 27 28 29 30 31 32 33 35 36 37 38 39 40 41 42 43 44 45 67\"\n{\n  echo \"cooldown 45s...\"; sleep 45\n  for n in $DONE; do\n    if gh issue close \"$n\" >/dev/null 2>&1; then echo \"closed #$n\"; else echo \"FAIL #$n\"; fi\n    sleep 8\n  done\n  echo \"DONE. open remaining: $(gh issue list --state open --limit 100 --json number --jq 'length')\"\n} > \"$SC/close.log\" 2>&1",
   "description": "Background drip-close with cooldown + 8s spacing",
   "timeout": 420000,
   "run_in_background": true
@@ -6774,7 +6774,7 @@ tool_use Bash
 id: toolu_01En9auvq4hNggzY3hSAXSZQ
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny; gh issue close 9 2>&1 | head -5; echo \"exit=$?\"",
+  "command": "cd /home/<USER>/Project/tiny; gh issue close 9 2>&1 | head -5; echo \"exit=$?\"",
   "description": "Single foreground close, full error"
 }
 ```
@@ -6798,7 +6798,7 @@ tool_use Bash
 id: toolu_01SC7rWDsUDiUFB8uNrWeyr7
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\nDONE=\"1 2 3 10 11 12 13 14 15 16 17 19 20 21 23 24 25 26 27 28 29 30 31 32 33 35 36 37 38 39 40 41 42 43 44 45 67\"\nok=0; fail=\"\"\nfor n in $DONE; do\n  done_one=0\n  for try in 1 2 3; do\n    if gh issue close \"$n\" >/dev/null 2>&1; then ok=$((ok+1)); done_one=1; break; fi\n    sleep 15\n  done\n  [ \"$done_one\" = 0 ] && fail=\"$fail $n\"\n  sleep 9\ndone\necho \"closed: $ok | failed:$fail\"\necho \"open remaining: $(gh issue list --state open --limit 100 --json number --jq 'length')\"",
+  "command": "cd /home/<USER>/Project/tiny\nDONE=\"1 2 3 10 11 12 13 14 15 16 17 19 20 21 23 24 25 26 27 28 29 30 31 32 33 35 36 37 38 39 40 41 42 43 44 45 67\"\nok=0; fail=\"\"\nfor n in $DONE; do\n  done_one=0\n  for try in 1 2 3; do\n    if gh issue close \"$n\" >/dev/null 2>&1; then ok=$((ok+1)); done_one=1; break; fi\n    sleep 15\n  done\n  [ \"$done_one\" = 0 ] && fail=\"$fail $n\"\n  sleep 9\ndone\necho \"closed: $ok | failed:$fail\"\necho \"open remaining: $(gh issue list --state open --limit 100 --json number --jq 'length')\"",
   "description": "Foreground close 37 with retry + spacing",
   "timeout": 560000
 }
@@ -6823,7 +6823,7 @@ tool_use Bash
 id: toolu_01JMYWwniJ8UjZ4QyfXEQ38X
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\nfor n in 10 11; do\n  echo \"--- #$n ---\"\n  gh issue close \"$n\" -c \"Implemented and shipped (v0.3.15).\" 2>&1 | head -2\n  sleep 4\ndone\necho \"open: $(gh issue list --state open --limit 100 --json number --jq 'length')\"",
+  "command": "cd /home/<USER>/Project/tiny\nfor n in 10 11; do\n  echo \"--- #$n ---\"\n  gh issue close \"$n\" -c \"Implemented and shipped (v0.3.15).\" 2>&1 | head -2\n  sleep 4\ndone\necho \"open: $(gh issue list --state open --limit 100 --json number --jq 'length')\"",
   "description": "Test working close pattern on 2 issues"
 }
 ```
@@ -6850,7 +6850,7 @@ tool_use Bash
 id: toolu_01P9WQqdb9JTVzNy9hwfPVr1
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\nDONE=\"1 2 3 12 13 14 15 16 17 19 20 21 23 24 25 26 27 28 29 30 31 32 33 35 36 37 38 39 40 41 42 43 44 45 67\"\nfor n in $DONE; do\n  gh issue close \"$n\" -c \"Implemented and shipped (v0.3.15); verified against codebase / release pipeline. See #70 for live status.\" 2>&1 | head -1\n  sleep 4\ndone\necho \"=== open remaining: $(gh issue list --state open --limit 100 --json number --jq 'length') ===\"",
+  "command": "cd /home/<USER>/Project/tiny\nDONE=\"1 2 3 12 13 14 15 16 17 19 20 21 23 24 25 26 27 28 29 30 31 32 33 35 36 37 38 39 40 41 42 43 44 45 67\"\nfor n in $DONE; do\n  gh issue close \"$n\" -c \"Implemented and shipped (v0.3.15); verified against codebase / release pipeline. See #70 for live status.\" 2>&1 | head -1\n  sleep 4\ndone\necho \"=== open remaining: $(gh issue list --state open --limit 100 --json number --jq 'length') ===\"",
   "description": "Close remaining 35 with working pipe pattern",
   "timeout": 240000
 }
@@ -6875,7 +6875,7 @@ tool_use Bash
 id: toolu_01UdMvxZ6yvFgzcAU5iJonRF
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\nDONE=\"1 2 3 12 13 14 15 16 17 19 20 21 23 24 25 26 27 28 29 30 31 32 33 35 36 37 38 39 40 41 42 43 44 45 67\"\nok=0\nfor n in ${=DONE}; do\n  gh issue close \"$n\" -c \"Implemented and shipped (v0.3.15); verified against codebase / release pipeline. See #70 for live status.\" >/dev/null 2>&1 && ok=$((ok+1)) && printf '.'\n  sleep 3\ndone\necho; echo \"closed: $ok/35 | open remaining: $(gh issue list --state open --limit 100 --json number --jq 'length')\"",
+  "command": "cd /home/<USER>/Project/tiny\nDONE=\"1 2 3 12 13 14 15 16 17 19 20 21 23 24 25 26 27 28 29 30 31 32 33 35 36 37 38 39 40 41 42 43 44 45 67\"\nok=0\nfor n in ${=DONE}; do\n  gh issue close \"$n\" -c \"Implemented and shipped (v0.3.15); verified against codebase / release pipeline. See #70 for live status.\" >/dev/null 2>&1 && ok=$((ok+1)) && printf '.'\n  sleep 3\ndone\necho; echo \"closed: $ok/35 | open remaining: $(gh issue list --state open --limit 100 --json number --jq 'length')\"",
   "description": "Close 35 with zsh word-split fix",
   "timeout": 200000
 }
@@ -6914,7 +6914,7 @@ tool_use Bash
 id: toolu_016DhoGdkqv16GDoy3GpHVsd
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\nDONE=\"1 2 3 12 13 14 15 16 17 19 20 21 23 24 25 26 27 28 29 30 31 32 33 35 36 37 38 39 40 41 42 43 44 45 67\"\nOPEN=$(gh issue list --state open --limit 100 --json number --jq '.[].number')\nfor n in ${=DONE}; do\n  if echo \"$OPEN\" | grep -qx \"$n\"; then\n    gh issue close \"$n\" -c \"Implemented and shipped (v0.3.15).\" 2>&1 | head -1\n    sleep 3\n  fi\ndone\necho \"=== open now: $(gh issue list --state open --limit 100 --json number --jq 'length') ===\"",
+  "command": "cd /home/<USER>/Project/tiny\nDONE=\"1 2 3 12 13 14 15 16 17 19 20 21 23 24 25 26 27 28 29 30 31 32 33 35 36 37 38 39 40 41 42 43 44 45 67\"\nOPEN=$(gh issue list --state open --limit 100 --json number --jq '.[].number')\nfor n in ${=DONE}; do\n  if echo \"$OPEN\" | grep -qx \"$n\"; then\n    gh issue close \"$n\" -c \"Implemented and shipped (v0.3.15).\" 2>&1 | head -1\n    sleep 3\n  fi\ndone\necho \"=== open now: $(gh issue list --state open --limit 100 --json number --jq 'length') ===\"",
   "description": "Close the 2 done-set stragglers"
 }
 ```
@@ -6955,7 +6955,7 @@ tool_use Bash
 id: toolu_0122z8n4PoDRJ7kvbPnCN6Wc
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===status===\"; git status --short | head\necho \"===fetch+pull===\"; git stash -u >/dev/null 2>&1 && echo stashed; git pull --ff-only origin main 2>&1 | tail -4; git stash pop >/dev/null 2>&1 && echo unstashed\necho \"===HEAD===\"; git log --oneline -3",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===status===\"; git status --short | head\necho \"===fetch+pull===\"; git stash -u >/dev/null 2>&1 && echo stashed; git pull --ff-only origin main 2>&1 | tail -4; git stash pop >/dev/null 2>&1 && echo unstashed\necho \"===HEAD===\"; git log --oneline -3",
   "description": "Sync main with parallel work"
 }
 ```
@@ -6996,7 +6996,7 @@ tool_use Bash
 id: toolu_018GpNSi1DizKySxSFSFbjgb
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\nfor i in 62 64 65; do echo \"==== #$i ====\"; gh issue view $i --json title,body --jq '.title, (.body|.[0:600])'; echo; done",
+  "command": "cd /home/<USER>/Project/tiny\nfor i in 62 64 65; do echo \"==== #$i ====\"; gh issue view $i --json title,body --jq '.title, (.body|.[0:600])'; echo; done",
   "description": "Read issue bodies 62/64/65"
 }
 ```
@@ -7038,7 +7038,7 @@ tool_use Bash
 id: toolu_01UMUzYS9ZMavhfpKDUqXuiL
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===#62 formats in executor===\"; grep -rnoE 'FORMAT (JSON|JSONEachRow|CSVWithNames)|CSVWithNames|JSONEachRow' internal/pipe/executor.go internal/pipe/*.go 2>/dev/null | sort -u | head\necho \"===#62 ADR files exist===\"; ls docs/adr/0025* docs/adr/0026* 2>/dev/null\necho\necho \"===#64 token materialization on deploy (committed HEAD)===\"; git show HEAD:internal/deploy/deploy.go 2>/dev/null | grep -niE 'token|materiali|TOKEN' | head\necho \"---#64 in WORKING tree (uncommitted WIP)---\"; grep -niE 'token|materiali' internal/deploy/deploy.go | head\necho \"---#64 ADR---\"; ls docs/adr/0030* 2>/dev/null\necho\necho \"===#65 routes: /tr/v1 native vs /v0===\"; grep -noE '\"/(tr/v1|v0)[a-z0-9/{}._-]*\"' internal/api/server.go | sort -u\necho \"---#65 ADR---\"; ls docs/adr/0029* 2>/dev/null",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===#62 formats in executor===\"; grep -rnoE 'FORMAT (JSON|JSONEachRow|CSVWithNames)|CSVWithNames|JSONEachRow' internal/pipe/executor.go internal/pipe/*.go 2>/dev/null | sort -u | head\necho \"===#62 ADR files exist===\"; ls docs/adr/0025* docs/adr/0026* 2>/dev/null\necho\necho \"===#64 token materialization on deploy (committed HEAD)===\"; git show HEAD:internal/deploy/deploy.go 2>/dev/null | grep -niE 'token|materiali|TOKEN' | head\necho \"---#64 in WORKING tree (uncommitted WIP)---\"; grep -niE 'token|materiali' internal/deploy/deploy.go | head\necho \"---#64 ADR---\"; ls docs/adr/0030* 2>/dev/null\necho\necho \"===#65 routes: /tr/v1 native vs /v0===\"; grep -noE '\"/(tr/v1|v0)[a-z0-9/{}._-]*\"' internal/api/server.go | sort -u\necho \"---#65 ADR---\"; ls docs/adr/0029* 2>/dev/null",
   "description": "Verify 62/64/65 against code + ADRs"
 }
 ```
@@ -7093,7 +7093,7 @@ tool_use Bash
 id: toolu_01RhjhSpxgcB2rX15uGqg75X
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===#64 materialize call in committed deploy===\"; git show HEAD:internal/deploy/deploy.go 2>/dev/null | grep -niE 'materializeToken|func.*[Tt]oken|Tokens\\.(Put|List)|upsert' | head\necho \"===token decl parsed from .pipe/.datasource?===\"; grep -rniE 'TOKEN|resourceToken|token.*READ|PIPE:READ' internal/datasource/parser.go internal/pipe/parser.go internal/model/model.go 2>/dev/null | head",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===#64 materialize call in committed deploy===\"; git show HEAD:internal/deploy/deploy.go 2>/dev/null | grep -niE 'materializeToken|func.*[Tt]oken|Tokens\\.(Put|List)|upsert' | head\necho \"===token decl parsed from .pipe/.datasource?===\"; grep -rniE 'TOKEN|resourceToken|token.*READ|PIPE:READ' internal/datasource/parser.go internal/pipe/parser.go internal/model/model.go 2>/dev/null | head",
   "description": "Confirm #64 materialize logic + TOKEN parsing"
 }
 ```
@@ -7133,7 +7133,7 @@ tool_use Bash
 id: toolu_014mK1RQTGhV26mSVtMq7WEE
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===scanTokens source (what it reads)===\"; git show HEAD:internal/deploy/deploy.go 2>/dev/null | sed -n '298,326p'\necho \"===model has Tokens field on DS/Pipe?===\"; grep -niE 'Tokens|ResourceToken|TokenDecl' internal/model/model.go | head\necho \"===does parser populate tokens? (committed)===\"; git show HEAD:internal/datasource/parser.go 2>/dev/null | grep -niE 'token' | head; git show HEAD:internal/pipe/parser.go 2>/dev/null | grep -niE 'token' | head",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===scanTokens source (what it reads)===\"; git show HEAD:internal/deploy/deploy.go 2>/dev/null | sed -n '298,326p'\necho \"===model has Tokens field on DS/Pipe?===\"; grep -niE 'Tokens|ResourceToken|TokenDecl' internal/model/model.go | head\necho \"===does parser populate tokens? (committed)===\"; git show HEAD:internal/datasource/parser.go 2>/dev/null | grep -niE 'token' | head; git show HEAD:internal/pipe/parser.go 2>/dev/null | grep -niE 'token' | head",
   "description": "Trace #64 token declaration parsing"
 }
 ```
@@ -7198,7 +7198,7 @@ tool_use Bash
 id: toolu_01THbik2JqNn93tx2URWnCik
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngh issue close 62 -c \"Done: response formats by extension (JSON/JSONEachRow/CSVWithNames) + no-injected-LIMIT/author-param pagination per ADR 0025/0026. internal/pipe/executor.go.\" 2>&1 | head -1; sleep 3\ngh issue close 64 -c \"Done (ADR 0030): materializeTokens() idempotent never-rotate upsert on deploy; scanTokens() reads TOKEN decls from raw .datasource/.pipe. internal/deploy/deploy.go.\" 2>&1 | head -1; sleep 3\ngh issue close 65 -c \"Done (ADR 0029): native endpoints under /tr/v1/*, /v0 frozen as the Tinybird parity mirror. internal/api/server.go.\" 2>&1 | head -1\necho \"=== open now: $(gh issue list --state open --limit 100 --json number --jq 'length') ===\"",
+  "command": "cd /home/<USER>/Project/tiny\ngh issue close 62 -c \"Done: response formats by extension (JSON/JSONEachRow/CSVWithNames) + no-injected-LIMIT/author-param pagination per ADR 0025/0026. internal/pipe/executor.go.\" 2>&1 | head -1; sleep 3\ngh issue close 64 -c \"Done (ADR 0030): materializeTokens() idempotent never-rotate upsert on deploy; scanTokens() reads TOKEN decls from raw .datasource/.pipe. internal/deploy/deploy.go.\" 2>&1 | head -1; sleep 3\ngh issue close 65 -c \"Done (ADR 0029): native endpoints under /tr/v1/*, /v0 frozen as the Tinybird parity mirror. internal/api/server.go.\" 2>&1 | head -1\necho \"=== open now: $(gh issue list --state open --limit 100 --json number --jq 'length') ===\"",
   "description": "Close 62/64/65"
 }
 ```
@@ -7238,7 +7238,7 @@ tool_use Bash
 id: toolu_01Lm7Nh3eMbG3EsSNq24eVj2
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===#22 refreshable MV===\"; grep -rniE 'refreshable|REFRESH EVERY|RefreshableMV' internal/ cmd/ 2>/dev/null | grep -v _test | head\necho \"===#55 bootstrap admin token on first init===\"; grep -rniE 'bootstrap.*token|admin.*bootstrap|first.*init.*token|BootstrapToken|initAdmin' internal/ cmd/ 2>/dev/null | grep -v _test | head\necho \"===#56 branch rm/prune===\"; grep -rniE 'branch.*rm|branch.*prune|DropDatabase|dropBranch|rmBranch' internal/ cmd/ 2>/dev/null | grep -v _test | head\necho \"===scheduler WIP contents===\"; ls internal/scheduler/ 2>/dev/null; grep -rniE 'refresh|schedule|cron' internal/scheduler/*.go 2>/dev/null | grep -v _test | head -5\necho \"===uncommitted vs committed for these files?===\"; git status --short internal/ cmd/ | head",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===#22 refreshable MV===\"; grep -rniE 'refreshable|REFRESH EVERY|RefreshableMV' internal/ cmd/ 2>/dev/null | grep -v _test | head\necho \"===#55 bootstrap admin token on first init===\"; grep -rniE 'bootstrap.*token|admin.*bootstrap|first.*init.*token|BootstrapToken|initAdmin' internal/ cmd/ 2>/dev/null | grep -v _test | head\necho \"===#56 branch rm/prune===\"; grep -rniE 'branch.*rm|branch.*prune|DropDatabase|dropBranch|rmBranch' internal/ cmd/ 2>/dev/null | grep -v _test | head\necho \"===scheduler WIP contents===\"; ls internal/scheduler/ 2>/dev/null; grep -rniE 'refresh|schedule|cron' internal/scheduler/*.go 2>/dev/null | grep -v _test | head -5\necho \"===uncommitted vs committed for these files?===\"; git status --short internal/ cmd/ | head",
   "description": "Check #22/#55/#56 against tree + WIP"
 }
 ```
@@ -7284,7 +7284,7 @@ tool_use Bash
 id: toolu_01S8q1AkDLCppP7fU2Sy5EYp
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngit show HEAD:cmd/tinyraven/serve.go 2>/dev/null | grep -q 'Bootstrap' && echo \"confirmed committed on main\" || echo \"WARNING: not on HEAD\"\ngh issue close 55 -c \"Done: bootstrap ADMIN token from config.AdminToken via auth.Bootstrap() at startup (cmd/tinyraven/serve.go); empty value disables it.\" 2>&1 | head -1\necho \"=== open now: $(gh issue list --state open --limit 100 --json number --jq 'length') ===\"",
+  "command": "cd /home/<USER>/Project/tiny\ngit show HEAD:cmd/tinyraven/serve.go 2>/dev/null | grep -q 'Bootstrap' && echo \"confirmed committed on main\" || echo \"WARNING: not on HEAD\"\ngh issue close 55 -c \"Done: bootstrap ADMIN token from config.AdminToken via auth.Bootstrap() at startup (cmd/tinyraven/serve.go); empty value disables it.\" 2>&1 | head -1\necho \"=== open now: $(gh issue list --state open --limit 100 --json number --jq 'length') ===\"",
   "description": "Confirm + close #55"
 }
 ```
@@ -7321,7 +7321,7 @@ tool_use Bash
 id: toolu_01KLZX49yiffbokWMcsaeoWy
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===uncommitted===\"; git status --short | grep -vE 'graphify-out|PONYTAIL|postman' \necho \"===build===\"; go build ./... 2>&1 | head -10 && echo \"BUILD OK\"\necho \"===test changed pkgs===\"; go test ./internal/scheduler/ ./internal/deploy/ ./internal/pipe/ ./cmd/tinyraven/ 2>&1 | tail -8",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===uncommitted===\"; git status --short | grep -vE 'graphify-out|PONYTAIL|postman' \necho \"===build===\"; go build ./... 2>&1 | head -10 && echo \"BUILD OK\"\necho \"===test changed pkgs===\"; go test ./internal/scheduler/ ./internal/deploy/ ./internal/pipe/ ./cmd/tinyraven/ 2>&1 | tail -8",
   "description": "Check WIP builds + tests before commit"
 }
 ```
@@ -7368,7 +7368,7 @@ tool_use Bash
 id: toolu_01WhBtwrkHemtkD6rgEDtqbP
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny; echo \"===main HEAD===\"; git log --oneline -3; echo \"===scheduler on main?===\"; git ls-files internal/scheduler/ | head",
+  "command": "cd /home/<USER>/Project/tiny; echo \"===main HEAD===\"; git log --oneline -3; echo \"===scheduler on main?===\"; git ls-files internal/scheduler/ | head",
   "description": "Confirm scheduler committed on main"
 }
 ```
@@ -7397,7 +7397,7 @@ tool_use Bash
 id: toolu_01SmdkBoJw7wsK7QigH2oN9s
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"#61 template for-loops:\"; grep -rniE '\\{%[ ]*for|forLoop|parseFor' internal/pipe/*.go 2>/dev/null | grep -v _test | head -3\necho \"#59/#66 query caching (CACHE_TTL/query_cache):\"; grep -rniE 'CACHE_TTL|query_cache|use_query_cache' internal/ 2>/dev/null | grep -v _test | head -3\necho \"#60 managed vs BYO CH conn:\"; grep -rniE 'managed|spin.*clickhouse|BYO|provisionCH' internal/ cmd/ 2>/dev/null | grep -v _test | head -3\necho \"#63 JWT browser tokens:\"; grep -rniE 'jwt|HS256|browser.*token' internal/ 2>/dev/null | grep -v _test | head -3\necho \"#58 auto-schema:\"; grep -rniE 'auto.?schema|infer.*schema|inferDatasource' internal/ cmd/ 2>/dev/null | grep -v _test | head -3\necho \"#54 disk WAL:\"; grep -rniE 'WAL|write.?ahead|disk.*buffer' internal/gatherer/*.go 2>/dev/null | grep -v _test | head -3",
+  "command": "cd /home/<USER>/Project/tiny\necho \"#61 template for-loops:\"; grep -rniE '\\{%[ ]*for|forLoop|parseFor' internal/pipe/*.go 2>/dev/null | grep -v _test | head -3\necho \"#59/#66 query caching (CACHE_TTL/query_cache):\"; grep -rniE 'CACHE_TTL|query_cache|use_query_cache' internal/ 2>/dev/null | grep -v _test | head -3\necho \"#60 managed vs BYO CH conn:\"; grep -rniE 'managed|spin.*clickhouse|BYO|provisionCH' internal/ cmd/ 2>/dev/null | grep -v _test | head -3\necho \"#63 JWT browser tokens:\"; grep -rniE 'jwt|HS256|browser.*token' internal/ 2>/dev/null | grep -v _test | head -3\necho \"#58 auto-schema:\"; grep -rniE 'auto.?schema|infer.*schema|inferDatasource' internal/ cmd/ 2>/dev/null | grep -v _test | head -3\necho \"#54 disk WAL:\"; grep -rniE 'WAL|write.?ahead|disk.*buffer' internal/gatherer/*.go 2>/dev/null | grep -v _test | head -3",
   "description": "Final sweep of remaining 22 for new completions"
 }
 ```
@@ -7431,7 +7431,7 @@ tool_use Bash
 id: toolu_01WthewBSDoa5PCEQ4AxuXQU
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===executor query_cache wiring===\"; sed -n '104,118p' internal/pipe/executor.go\necho \"===parser CACHE_TTL===\"; sed -n '222,232p' internal/pipe/parser.go\necho \"===model has CacheTTL?===\"; grep -niE 'CacheTTL|cache_ttl' internal/model/model.go | head\necho \"===issue #59/#66 titles===\"; gh issue view 59 --json title --jq .title; gh issue view 66 --json title --jq .title\necho \"===committed on main?===\"; git status --short internal/pipe/ | head -3 || echo clean",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===executor query_cache wiring===\"; sed -n '104,118p' internal/pipe/executor.go\necho \"===parser CACHE_TTL===\"; sed -n '222,232p' internal/pipe/parser.go\necho \"===model has CacheTTL?===\"; grep -niE 'CacheTTL|cache_ttl' internal/model/model.go | head\necho \"===issue #59/#66 titles===\"; gh issue view 59 --json title --jq .title; gh issue view 66 --json title --jq .title\necho \"===committed on main?===\"; git status --short internal/pipe/ | head -3 || echo clean",
   "description": "Verify CACHE_TTL query_cache wiring + committed"
 }
 ```
@@ -7487,7 +7487,7 @@ tool_use Bash
 id: toolu_01YDbitPA9suBoCSFjgvXwYb
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngh issue close 66 -c \"Done (ADR 0009): CACHE_TTL directive parsed to Endpoint.CacheTTL; executor sets use_query_cache=1 + query_cache_ttl when >0. internal/pipe/{parser,executor}.go.\" 2>&1 | head -1; sleep 3\ngh issue close 59 -c \"Done (ADR 0009): per-pipe result caching via ClickHouse query_cache — driven by the CACHE_TTL directive (use_query_cache=1 + query_cache_ttl). Same feature as #66.\" 2>&1 | head -1\necho \"=== open now: $(gh issue list --state open --limit 100 --json number --jq 'length') ===\"",
+  "command": "cd /home/<USER>/Project/tiny\ngh issue close 66 -c \"Done (ADR 0009): CACHE_TTL directive parsed to Endpoint.CacheTTL; executor sets use_query_cache=1 + query_cache_ttl when >0. internal/pipe/{parser,executor}.go.\" 2>&1 | head -1; sleep 3\ngh issue close 59 -c \"Done (ADR 0009): per-pipe result caching via ClickHouse query_cache — driven by the CACHE_TTL directive (use_query_cache=1 + query_cache_ttl). Same feature as #66.\" 2>&1 | head -1\necho \"=== open now: $(gh issue list --state open --limit 100 --json number --jq 'length') ===\"",
   "description": "Close #59/#66 query caching"
 }
 ```
@@ -7529,7 +7529,7 @@ tool_use Bash
 id: toolu_01FkpsANyK2zxuvAnW43VTmg
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny; gh issue view 70 --json body --jq .body",
+  "command": "cd /home/<USER>/Project/tiny; gh issue view 70 --json body --jq .body",
   "description": "Read full #70 roadmap body"
 }
 ```
@@ -7581,7 +7581,7 @@ tool_use Bash
 id: toolu_014KCpgowXiCDX5zqcQSVPU9
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\nREDACTED\ngh issue edit 70 --body-file \"$SC/issue70.md\" 2>&1 | head -2\ngh issue edit 70 --title \"📌 Status & Roadmap (read me first) — pre-alpha, v0.3.15\" 2>&1 | head -1",
+  "command": "cd /home/<USER>/Project/tiny\nREDACTED\ngh issue edit 70 --body-file \"$SC/issue70.md\" 2>&1 | head -2\ngh issue edit 70 --title \"📌 Status & Roadmap (read me first) — pre-alpha, v0.3.15\" 2>&1 | head -1",
   "description": "Update #70 body + title"
 }
 ```
@@ -7617,7 +7617,7 @@ tool_use Bash
 id: toolu_016EP6hqUTmptxV3kM7CrzP6
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny; $(cat graphify-out/.graphify_python 2>/dev/null || echo cat) docs/parity-gaps.md 2>/dev/null | head -80 || sed -n '1,80p' docs/parity-gaps.md",
+  "command": "cd /home/<USER>/Project/tiny; $(cat graphify-out/.graphify_python 2>/dev/null || echo cat) docs/parity-gaps.md 2>/dev/null | head -80 || sed -n '1,80p' docs/parity-gaps.md",
   "description": "Read parity-gaps.md for grounded comparison"
 }
 ```
@@ -7636,7 +7636,7 @@ tool_use Read
 id: toolu_01XP3iv7J6ybNE8ciaKPSSXB
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/docs/parity-gaps.md",
+  "file_path": "/home/<USER>/Project/tiny/docs/parity-gaps.md",
   "limit": 90
 }
 ```
@@ -7708,7 +7708,7 @@ tool_use Read
 id: toolu_01SUfkVbRp9Yj2gaA252YSU4
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/docs/parity-gaps.md",
+  "file_path": "/home/<USER>/Project/tiny/docs/parity-gaps.md",
   "offset": 6,
   "limit": 30
 }
@@ -7748,7 +7748,7 @@ id: toolu_014i1j9869JgZKZsGZQFAzom
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/docs/parity-gaps.md",
+  "file_path": "/home/<USER>/Project/tiny/docs/parity-gaps.md",
   "old_string": "| `/v0/pipes/{name}.json` | GET | **done** | Published pipe endpoint → `{meta,data,rows,statistics}`. `READ:<pipe>` scope. |\n| `/v0/openapi.json` | GET | done (tr-native) | Runtime spec from registry (ADR 0017). Not a Tinybird endpoint. |\n| `/v0/metrics` | GET | done (tr-native) | Prometheus scrape. Not a Tinybird endpoint. |\n| `/health`, `/health/ready` | GET | done | Liveness/readiness (ADR 0024). |\n\nThe **data plane is complete**: a Tinybird client can ingest (`/v0/events`),\nquery published endpoints (`/v0/pipes/{name}.json`), and run ad-hoc SQL\n(`/v0/sql`) by changing only `TINYBIRD_HOST`. The remaining gaps are the\n**management / introspection** surface and **alternate response formats**.",
   "new_string": "| `/v0/pipes/{name}.{json,csv,ndjson,parquet}` | GET | **done** | Published pipe → `{meta,data,rows,statistics}` (json) or raw body; alt formats via CH `FORMAT` + content-type. Per-pipe `CACHE_TTL` → `query_cache` (ADR 0009). `READ:<pipe>` scope. |\n| `/v0/pipes/{name}/copy` | POST | **done** | Run a `TYPE copy` pipe on-demand; also auto-run via `COPY_SCHEDULE` cron (`internal/scheduler`). |\n| `/v0/datasources`, `/v0/datasources/{name}` | GET | **done** | List / get datasource schema + engine. ADMIN-gated. |\n| `/v0/pipes`, `/v0/pipes/{name}` | GET | **done** | List / get pipe definition (nodes, SQL, endpoint). |\n| `/v0/jobs`, `/v0/jobs/{name}` | GET | **done** | Copy-job listing/status, scope-filtered, Redis-backed (24h TTL). |\n| `/v0/sql` […]
 
@@ -7757,7 +7757,7 @@ id: toolu_014i1j9869JgZKZsGZQFAzom
 tool_result
 id: toolu_014i1j9869JgZKZsGZQFAzom
 ```
-The file /Users/jobinlawrance/Project/tiny/docs/parity-gaps.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/docs/parity-gaps.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7770,7 +7770,7 @@ tool_use Read
 id: toolu_018Ru33XwibpEx6AF17FmqV3
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/docs/parity-gaps.md",
+  "file_path": "/home/<USER>/Project/tiny/docs/parity-gaps.md",
   "offset": 30,
   "limit": 22
 }
@@ -7800,7 +7800,7 @@ id: toolu_01DRbHrt8z1TodnUDdWpMnUZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/docs/parity-gaps.md",
+  "file_path": "/home/<USER>/Project/tiny/docs/parity-gaps.md",
   "old_string": "| 1 | `/v0/datasources` | GET | List datasources with schema (`{\"datasources\":[{name,columns,engine,...}]}`). Used by `tb datasource ls`, SDK/client introspection, \"does my schema exist\" checks. | **missing** | S |\n| 2 | `/v0/pipes` | GET | List pipes/endpoints (`{\"pipes\":[{name,type,nodes,endpoint,...}]}`). `tb pipe ls`, UI/CLI discovery of queryable endpoints. | **missing** | S |\n| 3 | `/v0/datasources/{name}` | GET | Single datasource metadata (schema, engine, stats). | **missing** | S |\n| 4 | `/v0/pipes/{name}` | GET | Single pipe definition (nodes, SQL, endpoint node) — note: no `.json`. | **missing** | S–M |\n| 5 | `/v0/pipes/{name}.{csv,ndjson,parquet,prometheus}` | GET | Same query, alternate output formats. Apps request `.csv`/`.ndjson` directly. Today only `.json` is served. | **missing** | M (executor must request alt CH `FORMAT` + content-type) |\n| 6 | `/v0/datasources` (import) | POST | Batch import / `mode=append`/`replace`, CSV/NDJSON/Parquet file upload, returns an async job. `tb datasource append`, ETL clients. | **missing** | L (multipart, CSV parse, jobs) |\n| 7 | `/v0/tokens` (+ `/{id}`) | GET/POST/PUT/DELETE | Token management API. We manage tokens via the `tinyraven token` CLI only (`auth.Store.List` already exists). | **missing** (HTTP) | M |\n| 8 | `/v0/jobs`, `/v0/jobs/{id}` | […]
 
 > TOOL
@@ -7808,7 +7808,7 @@ id: toolu_01DRbHrt8z1TodnUDdWpMnUZ
 tool_result
 id: toolu_01DRbHrt8z1TodnUDdWpMnUZ
 ```
-The file /Users/jobinlawrance/Project/tiny/docs/parity-gaps.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/docs/parity-gaps.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7904,7 +7904,7 @@ tool_use Bash
 id: toolu_01LkEenHtRYK9uGtPxjGzLtU
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngit add docs/parity-gaps.md\ngit commit -q -m \"docs(parity): mark read/introspection surface done (#1-5,#8,#9); remaining gaps are write/CRUD\" 2>&1 | tail -1\ngit push origin main 2>&1 | tail -2",
+  "command": "cd /home/<USER>/Project/tiny\ngit add docs/parity-gaps.md\ngit commit -q -m \"docs(parity): mark read/introspection surface done (#1-5,#8,#9); remaining gaps are write/CRUD\" 2>&1 | tail -1\ngit push origin main 2>&1 | tail -2",
   "description": "Commit + push parity-gaps refresh"
 }
 ```
@@ -7946,7 +7946,7 @@ tool_use Bash
 id: toolu_01VF8TMb5Bi71dMCStN5QgNf
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===worktrees===\"; git worktree list 2>/dev/null\necho \"===branches (agent work)===\"; git branch -a 2>/dev/null | grep -vE 'main$|remotes/origin/main' | head\necho \"===recent commits on any branch===\"; git log --all --oneline -8 2>/dev/null | grep -iE 'token|import|error|parity|feat|fix' | head",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===worktrees===\"; git worktree list 2>/dev/null\necho \"===branches (agent work)===\"; git branch -a 2>/dev/null | grep -vE 'main$|remotes/origin/main' | head\necho \"===recent commits on any branch===\"; git log --all --oneline -8 2>/dev/null | grep -iE 'token|import|error|parity|feat|fix' | head",
   "description": "Check worktree branches + agent commits"
 }
 ```
@@ -7957,10 +7957,10 @@ tool_result
 id: toolu_01VF8TMb5Bi71dMCStN5QgNf
 ```
 ===worktrees===
-/Users/jobinlawrance/Project/tiny                                           c0243d2 [main]
-/Users/jobinlawrance/Project/tiny/.claude/worktrees/agent-a3032f58b000ab143 523765f [worktree-agent-a3032f58b000ab143] locked
-/Users/jobinlawrance/Project/tiny/.claude/worktrees/agent-a46ed98adc285c6b5 523765f [worktree-agent-a46ed98adc285c6b5] locked
-/Users/jobinlawrance/Project/tiny/.claude/worktrees/agent-a6d4534f969db4362 523765f [worktree-agent-a6d4534f969db4362] locked
+/home/<USER>/Project/tiny                                           c0243d2 [main]
+/home/<USER>/Project/tiny/.claude/worktrees/agent-a3032f58b000ab143 523765f [worktree-agent-a3032f58b000ab143] locked
+/home/<USER>/Project/tiny/.claude/worktrees/agent-a46ed98adc285c6b5 523765f [worktree-agent-a46ed98adc285c6b5] locked
+/home/<USER>/Project/tiny/.claude/worktrees/agent-a6d4534f969db4362 523765f [worktree-agent-a6d4534f969db4362] locked
 ===branches (agent work)===
   entire/c0243d2-e3b0c4
   entire/checkpoints/v1
@@ -7999,7 +7999,7 @@ tool_use Bash
 id: toolu_01QRP9tHGPABAojvc5UocHXC
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngit merge --no-ff worktree-agent-a46ed98adc285c6b5 -m \"merge: /v0/tokens management API (parity #7)\" 2>&1 | tail -12",
+  "command": "cd /home/<USER>/Project/tiny\ngit merge --no-ff worktree-agent-a46ed98adc285c6b5 -m \"merge: /v0/tokens management API (parity #7)\" 2>&1 | tail -12",
   "description": "Merge tokens branch into main"
 }
 ```
@@ -8033,7 +8033,7 @@ tool_use Bash
 id: toolu_019wCzq3xqLGnNRxdC4LJBB6
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngo build ./... 2>&1 | head -5 && echo \"BUILD OK\"\ngo test ./internal/api/ ./internal/auth/ ./cmd/tinyraven/ 2>&1 | tail -4\ngit push origin main 2>&1 | tail -2",
+  "command": "cd /home/<USER>/Project/tiny\ngo build ./... 2>&1 | head -5 && echo \"BUILD OK\"\ngo test ./internal/api/ ./internal/auth/ ./cmd/tinyraven/ 2>&1 | tail -4\ngit push origin main 2>&1 | tail -2",
   "description": "Verify + push tokens merge"
 }
 ```
@@ -8100,7 +8100,7 @@ tool_use Bash
 id: toolu_016kk9rbqf9pscgdeqnB4YT8
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngit merge --no-ff worktree-agent-a3032f58b000ab143 -m \"merge: Tinybird-compatible error envelopes (#18) — panic/404/405 -> JSON\" 2>&1 | tail -12",
+  "command": "cd /home/<USER>/Project/tiny\ngit merge --no-ff worktree-agent-a3032f58b000ab143 -m \"merge: Tinybird-compatible error envelopes (#18) — panic/404/405 -> JSON\" 2>&1 | tail -12",
   "description": "Merge error-parity branch"
 }
 ```
@@ -8130,7 +8130,7 @@ tool_use Bash
 id: toolu_01U5tVCmJKV5Pcr5i25QcxnW
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===middleware auth 401 spots===\"; grep -nE '401|StatusUnauthorized|invalid token|!ok' internal/api/middleware.go\necho \"===test 401 expectations===\"; grep -nE '401|StatusUnauthorized' internal/api/scope_test.go internal/api/errors_test.go",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===middleware auth 401 spots===\"; grep -nE '401|StatusUnauthorized|invalid token|!ok' internal/api/middleware.go\necho \"===test 401 expectations===\"; grep -nE '401|StatusUnauthorized' internal/api/scope_test.go internal/api/errors_test.go",
   "description": "Locate 401 to revert to 403"
 }
 ```
@@ -8166,7 +8166,7 @@ tool_use Read
 id: toolu_01CgrrB1KqtMVLdzKoEc7ivH
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/internal/api/middleware.go",
+  "file_path": "/home/<USER>/Project/tiny/internal/api/middleware.go",
   "offset": 36,
   "limit": 22
 }
@@ -8208,7 +8208,7 @@ id: toolu_01KDa8VbApB63Vp6rh6L2wZc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/internal/api/middleware.go",
+  "file_path": "/home/<USER>/Project/tiny/internal/api/middleware.go",
   "old_string": "// Status mapping is the authentication half of the error contract (ADR 0012,\n// issue #18): a missing OR invalid token is 401 (the credential itself failed);\n// 403 is reserved for a valid token that lacks the required scope, enforced by\n// the handlers and adminOnly. A TokenStore failure is a 500 (we couldn't decide).\nfunc (s *server) authMiddleware(next http.Handler) http.Handler {\n\treturn http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {\n\t\tvalue := bearerToken(r)\n\t\tif value == \"\" {\n\t\t\twriteError(w, http.StatusUnauthorized, \"missing authentication token\")\n\t\t\treturn\n\t\t}\n\t\ttok, ok, err := s.deps.Tokens.Validate(r.Context(), value)\n\t\tif err != nil {\n\t\t\twriteError(w, http.StatusInternalServerError, \"token validation failed\")\n\t\t\treturn\n\t\t}\n\t\tif !ok {\n\t\t\t// Invalid/unknown credential -> 401, not 403 (ADR 0012 / issue #18).\n\t\t\twriteError(w, http.StatusUnauthorized, \"invalid authentication token\")\n\t\t\treturn\n\t\t}",
   "new_string": "// Status mapping is the authentication half of the error contract (ADR 0012).\n// Tinybird returns 403 for any auth failure — a missing OR invalid token — so we\n// match that for parity (verified against Tinybird's auth docs; issue #18's 401\n// suggestion diverges from actual Tinybird behavior). 403 also covers a valid\n// token lacking scope (handlers + adminOnly). A TokenStore failure is a 500.\nfunc (s *server) authMiddleware(next http.Handler) http.Handler {\n\treturn http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {\n\t\tvalue := bearerToken(r)\n\t\tif value == \"\" {\n\t\t\twriteError(w, http.StatusForbidden, \"missing authentication […]
 
@@ -8217,7 +8217,7 @@ id: toolu_01KDa8VbApB63Vp6rh6L2wZc
 tool_result
 id: toolu_01KDa8VbApB63Vp6rh6L2wZc
 ```
-The file /Users/jobinlawrance/Project/tiny/internal/api/middleware.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/internal/api/middleware.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8227,7 +8227,7 @@ id: toolu_01THpxqB5r7QetdHnh9YThD7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/internal/api/scope_test.go",
+  "file_path": "/home/<USER>/Project/tiny/internal/api/scope_test.go",
   "old_string": "\t\t{\"events no token\", \"POST\", \"/v0/events?name=events\", \"\", `{\"a\":1}`, 401},\n\t\t{\"events bad token\", \"POST\", \"/v0/events?name=events\", \"nope\", `{\"a\":1}`, 401}, // invalid credential is 401, not 403 (issue #18)",
   "new_string": "\t\t{\"events no token\", \"POST\", \"/v0/events?name=events\", \"\", `{\"a\":1}`, 403},\n\t\t{\"events bad token\", \"POST\", \"/v0/events?name=events\", \"nope\", `{\"a\":1}`, 403}, // Tinybird returns 403 for any auth failure (parity)"
 }
@@ -8238,7 +8238,7 @@ id: toolu_01THpxqB5r7QetdHnh9YThD7
 tool_result
 id: toolu_01THpxqB5r7QetdHnh9YThD7
 ```
-The file /Users/jobinlawrance/Project/tiny/internal/api/scope_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/internal/api/scope_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8251,7 +8251,7 @@ tool_use Read
 id: toolu_01MC24QLuG6xJ4ZKAsFWBz3g
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/internal/api/errors_test.go",
+  "file_path": "/home/<USER>/Project/tiny/internal/api/errors_test.go",
   "offset": 56,
   "limit": 32
 }
@@ -8299,7 +8299,7 @@ id: toolu_01XuBRzqaVtoKiAAkmziBeKy
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/internal/api/errors_test.go",
+  "file_path": "/home/<USER>/Project/tiny/internal/api/errors_test.go",
   "old_string": "// 400 bad body, 401 missing/invalid token, 403 wrong scope, 404 unknown\n// route/datasource, 405 wrong method, 429 rate limited, 500 internal panic.",
   "new_string": "// 400 bad body, 403 missing/invalid token (Tinybird parity), 403 wrong scope,\n// 404 unknown route/datasource, 405 wrong method, 429 rate limited, 500 panic."
 }
@@ -8310,7 +8310,7 @@ id: toolu_01XuBRzqaVtoKiAAkmziBeKy
 tool_result
 id: toolu_01XuBRzqaVtoKiAAkmziBeKy
 ```
-The file /Users/jobinlawrance/Project/tiny/internal/api/errors_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/internal/api/errors_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8320,7 +8320,7 @@ id: toolu_01VMLrbzpqU5TxcPz44JaJLH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/internal/api/errors_test.go",
+  "file_path": "/home/<USER>/Project/tiny/internal/api/errors_test.go",
   "old_string": "\t\t{\"401 missing token\", \"POST\", \"/v0/events?name=events\", \"\", `{\"a\":1}`, http.StatusUnauthorized},\n\t\t{\"401 invalid token\", \"POST\", \"/v0/events?name=events\", \"bogus\", `{\"a\":1}`, http.StatusUnauthorized},",
   "new_string": "\t\t{\"403 missing token\", \"POST\", \"/v0/events?name=events\", \"\", `{\"a\":1}`, http.StatusForbidden},\n\t\t{\"403 invalid token\", \"POST\", \"/v0/events?name=events\", \"bogus\", `{\"a\":1}`, http.StatusForbidden},"
 }
@@ -8331,7 +8331,7 @@ id: toolu_01VMLrbzpqU5TxcPz44JaJLH
 tool_result
 id: toolu_01VMLrbzpqU5TxcPz44JaJLH
 ```
-The file /Users/jobinlawrance/Project/tiny/internal/api/errors_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/internal/api/errors_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8344,7 +8344,7 @@ tool_use Bash
 id: toolu_01FNdXepSKABbAmkYFR8bwtB
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngo build ./... 2>&1 | head -5 && echo BUILD_OK\ngo test ./internal/api/ 2>&1 | tail -3\ngofmt -l internal/api/middleware.go internal/api/scope_test.go internal/api/errors_test.go",
+  "command": "cd /home/<USER>/Project/tiny\ngo build ./... 2>&1 | head -5 && echo BUILD_OK\ngo test ./internal/api/ 2>&1 | tail -3\ngofmt -l internal/api/middleware.go internal/api/scope_test.go internal/api/errors_test.go",
   "description": "Verify main after 401→403 fix"
 }
 ```
@@ -8370,7 +8370,7 @@ tool_use Bash
 id: toolu_01FLM5ShDEgXomfNjb79ksv1
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngo test ./internal/api/ 2>&1 | grep -E 'FAIL|---|got|want|expected|401|403|Error:' | head -20",
+  "command": "cd /home/<USER>/Project/tiny\ngo test ./internal/api/ 2>&1 | grep -E 'FAIL|---|got|want|expected|401|403|Error:' | head -20",
   "description": "Get failing test detail"
 }
 ```
@@ -8412,7 +8412,7 @@ tool_use Bash
 id: toolu_01QtKHQdZfWGtAhJ8nbEeGEa
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngit checkout -- internal/api/middleware.go internal/api/scope_test.go internal/api/errors_test.go\ngo build ./... 2>&1 | head -3 && echo BUILD_OK\ngo test ./internal/api/ 2>&1 | tail -2",
+  "command": "cd /home/<USER>/Project/tiny\ngit checkout -- internal/api/middleware.go internal/api/scope_test.go internal/api/errors_test.go\ngo build ./... 2>&1 | head -3 && echo BUILD_OK\ngo test ./internal/api/ 2>&1 | tail -2",
   "description": "Revert 401→403, back to consistent 401"
 }
 ```
@@ -8436,7 +8436,7 @@ tool_use Bash
 id: toolu_012RiMJP3nizHcVvdUcv2qsj
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngit push origin main 2>&1 | tail -2\necho \"===merge import branch===\"\ngit merge --no-ff worktree-agent-a6d4534f969db4362 -m \"merge: POST /v0/datasources batch import (parity #6)\" 2>&1 | tail -14",
+  "command": "cd /home/<USER>/Project/tiny\ngit push origin main 2>&1 | tail -2\necho \"===merge import branch===\"\ngit merge --no-ff worktree-agent-a6d4534f969db4362 -m \"merge: POST /v0/datasources batch import (parity #6)\" 2>&1 | tail -14",
   "description": "Push error-parity, merge import branch"
 }
 ```
@@ -8469,7 +8469,7 @@ tool_use Bash
 id: toolu_01LrJGkpbb5sgBmBw3CqK74a
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===serve.go conflict===\"; grep -n -A6 '<<<<<<<\\|=======\\|>>>>>>>' cmd/tinyraven/serve.go\necho \"===server.go conflict===\"; grep -n -A6 '<<<<<<<\\|=======\\|>>>>>>>' internal/api/server.go",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===serve.go conflict===\"; grep -n -A6 '<<<<<<<\\|=======\\|>>>>>>>' cmd/tinyraven/serve.go\necho \"===server.go conflict===\"; grep -n -A6 '<<<<<<<\\|=======\\|>>>>>>>' internal/api/server.go",
   "description": "Inspect merge conflicts"
 }
 ```
@@ -8516,7 +8516,7 @@ id: toolu_01E8aSbEHjx35SUMcS4Lpwt1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/cmd/tinyraven/serve.go",
+  "file_path": "/home/<USER>/Project/tiny/cmd/tinyraven/serve.go",
   "old_string": "<<<<<<< HEAD\n\t\t\tJobs:              jobs,\n=======\n\t\t\tTruncater:         ch, // batch-import replace mode (gap #6)\n>>>>>>> worktree-agent-a6d4534f969db4362\n\t\t\tTokens:            tokens,",
   "new_string": "\t\t\tJobs:              jobs,\n\t\t\tTruncater:         ch, // batch-import replace mode (gap #6)\n\t\t\tTokens:            tokens,"
 }
@@ -8527,7 +8527,7 @@ id: toolu_01E8aSbEHjx35SUMcS4Lpwt1
 tool_result
 id: toolu_01E8aSbEHjx35SUMcS4Lpwt1
 ```
-The file /Users/jobinlawrance/Project/tiny/cmd/tinyraven/serve.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/cmd/tinyraven/serve.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8537,7 +8537,7 @@ id: toolu_014S45VHivJRxbYPQkVAs24h
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/internal/api/server.go",
+  "file_path": "/home/<USER>/Project/tiny/internal/api/server.go",
   "old_string": "<<<<<<< HEAD\n\tJobs        model.JobStore           // GET  /v0/jobs[/{id}] (optional; gap #8)\n=======\n\tTruncater   model.Truncater          // POST /v0/datasources?mode=replace (optional; nil disables replace)\n>>>>>>> worktree-agent-a6d4534f969db4362\n\tTokens      model.TokenStore         // auth middleware",
   "new_string": "\tJobs        model.JobStore           // GET  /v0/jobs[/{id}] (optional; gap #8)\n\tTruncater   model.Truncater          // POST /v0/datasources?mode=replace (optional; nil disables replace)\n\tTokens      model.TokenStore         // auth middleware"
 }
@@ -8548,7 +8548,7 @@ id: toolu_014S45VHivJRxbYPQkVAs24h
 tool_result
 id: toolu_014S45VHivJRxbYPQkVAs24h
 ```
-The file /Users/jobinlawrance/Project/tiny/internal/api/server.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/internal/api/server.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8561,7 +8561,7 @@ tool_use Bash
 id: toolu_01Pr8Rn9QRLWMgB2YioHB9rL
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngit diff --check 2>&1 | head -3\ngo build ./... 2>&1 | head -15 && echo BUILD_OK",
+  "command": "cd /home/<USER>/Project/tiny\ngit diff --check 2>&1 | head -3\ngo build ./... 2>&1 | head -15 && echo BUILD_OK",
   "description": "Build main after conflict resolution"
 }
 ```
@@ -8584,7 +8584,7 @@ tool_use Bash
 id: toolu_01CiGmvLdEG8YMkCtSdeJFdb
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngo test ./internal/... ./cmd/... 2>&1 | grep -vE '^ok|no test files' | head -15; echo \"---\"; go test ./internal/api/ 2>&1 | tail -2\ngofmt -l internal/ cmd/ | head\necho \"===how copy jobs interact with store (reconcile check)===\"; grep -nE 'Jobs\\.|EnableJobs|jobStore|\\.Put\\(|copyJobBody' internal/pipe/executor.go | head",
+  "command": "cd /home/<USER>/Project/tiny\ngo test ./internal/... ./cmd/... 2>&1 | grep -vE '^ok|no test files' | head -15; echo \"---\"; go test ./internal/api/ 2>&1 | tail -2\ngofmt -l internal/ cmd/ | head\necho \"===how copy jobs interact with store (reconcile check)===\"; grep -nE 'Jobs\\.|EnableJobs|jobStore|\\.Put\\(|copyJobBody' internal/pipe/executor.go | head",
   "description": "Test + check copy-job store integration"
 }
 ```
@@ -8628,7 +8628,7 @@ tool_use Read
 id: toolu_015353B2ptv1RPqvHQL8mAb4
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/internal/api/import_test.go",
+  "file_path": "/home/<USER>/Project/tiny/internal/api/import_test.go",
   "offset": 242,
   "limit": 10
 }
@@ -8658,7 +8658,7 @@ id: toolu_0122deeL3UwqFR5acvqDSTVF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/internal/api/import_test.go",
+  "file_path": "/home/<USER>/Project/tiny/internal/api/import_test.go",
   "old_string": "\t\t{\"bad token\", \"nope\", http.StatusForbidden},",
   "new_string": "\t\t{\"bad token\", \"nope\", http.StatusUnauthorized}, // codebase returns 401 for invalid credential"
 }
@@ -8669,7 +8669,7 @@ id: toolu_0122deeL3UwqFR5acvqDSTVF
 tool_result
 id: toolu_0122deeL3UwqFR5acvqDSTVF
 ```
-The file /Users/jobinlawrance/Project/tiny/internal/api/import_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/internal/api/import_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8682,7 +8682,7 @@ tool_use Bash
 id: toolu_01KCVJVxeZ47btcUfeDjX9Wk
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===import.go job body construction===\"; grep -nE 'importJobBody|job_id|jobID|JobURL|status|func handleImport|w.Write|WriteJSON|statistics' internal/api/import.go | head\necho \"===model.JobRecord shape===\"; grep -nA10 'type JobRecord' internal/model/model.go\necho \"===how executor builds+Puts a JobRecord===\"; sed -n '185,200p' internal/pipe/executor.go",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===import.go job body construction===\"; grep -nE 'importJobBody|job_id|jobID|JobURL|status|func handleImport|w.Write|WriteJSON|statistics' internal/api/import.go | head\necho \"===model.JobRecord shape===\"; grep -nA10 'type JobRecord' internal/model/model.go\necho \"===how executor builds+Puts a JobRecord===\"; sed -n '185,200p' internal/pipe/executor.go",
   "description": "Read import job body + JobRecord + executor Put pattern"
 }
 ```
@@ -8738,7 +8738,7 @@ tool_use Read
 id: toolu_01UPoyhfgdmqUR68o6W6zdRn
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/internal/api/import.go",
+  "file_path": "/home/<USER>/Project/tiny/internal/api/import.go",
   "offset": 118,
   "limit": 12
 }
@@ -8769,7 +8769,7 @@ tool_use Read
 id: toolu_01M55RrGQBcbhuFpyAUPbJgB
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/internal/api/import.go",
+  "file_path": "/home/<USER>/Project/tiny/internal/api/import.go",
   "offset": 255,
   "limit": 20
 }
@@ -8813,7 +8813,7 @@ id: toolu_01GHLDemP4sURidmHdJD1hDf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/internal/api/import.go",
+  "file_path": "/home/<USER>/Project/tiny/internal/api/import.go",
   "old_string": "// importJobBody builds the JSON body for a completed batch import.\nfunc importJobBody(datasource, mode string, successful, quarantined int) []byte {\n\tid := newImportID()\n\tstats := importJobStat{SuccessfulRows: successful, QuarantinedRows: quarantined}",
   "new_string": "// importJobBody builds the JSON body for a completed batch import. id is\n// generated by the caller so the same value can be recorded in the JobStore,\n// making job_url (/v0/jobs/{id}) resolvable.\nfunc importJobBody(id, datasource, mode string, successful, quarantined int) []byte {\n\tstats := importJobStat{SuccessfulRows: successful, QuarantinedRows: quarantined}"
 }
@@ -8824,7 +8824,7 @@ id: toolu_01GHLDemP4sURidmHdJD1hDf
 tool_result
 id: toolu_01GHLDemP4sURidmHdJD1hDf
 ```
-The file /Users/jobinlawrance/Project/tiny/internal/api/import.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/internal/api/import.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8834,7 +8834,7 @@ id: toolu_017cSG6T97YSVgWR6YkUPdaL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/internal/api/import.go",
+  "file_path": "/home/<USER>/Project/tiny/internal/api/import.go",
   "old_string": "\tif s.deps.IngestObserver != nil {\n\t\ts.deps.IngestObserver(successful, quarantined) // feed import rows into the same metrics hook as events\n\t}\n\n\twriteJSON(w, http.StatusOK, importJobBody(name, mode, successful, quarantined))\n}",
   "new_string": "\tif s.deps.IngestObserver != nil {\n\t\ts.deps.IngestObserver(successful, quarantined) // feed import rows into the same metrics hook as events\n\t}\n\n\t// Record the completed import in the JobStore (if wired) so job_url resolves\n\t// at /v0/jobs/{id}, mirroring the copy-job path (executor.go). Best-effort:\n\t// the data already landed, so a store write failure only costs pollability.\n\tid := newImportID()\n\tif s.deps.Jobs != nil {\n\t\t_ = s.deps.Jobs.Put(r.Context(), model.JobRecord{\n\t\t\tID: id, Kind: \"import\", Status: \"done\", Target: name, CreatedAt: time.Now(),\n\t\t})\n\t}\n\twriteJSON(w, http.StatusOK, importJobBody(id, name, mode, successful, quarantined))\n}"
 }
@@ -8845,7 +8845,7 @@ id: toolu_017cSG6T97YSVgWR6YkUPdaL
 tool_result
 id: toolu_017cSG6T97YSVgWR6YkUPdaL
 ```
-The file /Users/jobinlawrance/Project/tiny/internal/api/import.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/internal/api/import.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8854,7 +8854,7 @@ tool_use Bash
 id: toolu_01AvQKA1xgimKggtHwYmJh1C
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\nhead -20 internal/api/import.go | grep -E '\"time\"|internal/model' || echo \"NEED IMPORTS CHECK\"\ngo build ./... 2>&1 | head -8 && echo BUILD_OK\ngo test ./internal/api/ ./internal/clickhouse/ ./cmd/tinyraven/ 2>&1 | tail -4\ngofmt -l internal/api/import.go",
+  "command": "cd /home/<USER>/Project/tiny\nhead -20 internal/api/import.go | grep -E '\"time\"|internal/model' || echo \"NEED IMPORTS CHECK\"\ngo build ./... 2>&1 | head -8 && echo BUILD_OK\ngo test ./internal/api/ ./internal/clickhouse/ ./cmd/tinyraven/ 2>&1 | tail -4\ngofmt -l internal/api/import.go",
   "description": "Build + test import job-store wiring"
 }
 ```
@@ -8882,7 +8882,7 @@ tool_use Bash
 id: toolu_01YF2yDjjuf4HYwq6EtHMVTY
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngit add -A\ngit commit -q --no-edit 2>&1 | tail -3\necho \"===test full backend once more===\"; go test ./internal/... ./cmd/... 2>&1 | grep -vE '^ok|no test files' | head || echo \"ALL PASS\"\ngit push origin main 2>&1 | tail -2\ngit log --oneline -5",
+  "command": "cd /home/<USER>/Project/tiny\ngit add -A\ngit commit -q --no-edit 2>&1 | tail -3\necho \"===test full backend once more===\"; go test ./internal/... ./cmd/... 2>&1 | grep -vE '^ok|no test files' | head || echo \"ALL PASS\"\ngit push origin main 2>&1 | tail -2\ngit log --oneline -5",
   "description": "Commit + push import merge"
 }
 ```
@@ -8923,7 +8923,7 @@ tool_use Bash
 id: toolu_01KDxsCHSGQ8YGex83fjKcnT
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===milestones===\"; gh api repos/ravencloak-org/tiny/milestones --jq '.[] | \"\\(.title): \\(.open_issues) open / \\(.closed_issues) closed\"' 2>&1 | head\necho \"===#18 state + is it about error shapes===\"; gh issue view 18 --json state,title --jq '\"\\(.state) — \\(.title)\"'\necho \"===clean up worktrees (merged)===\"; git worktree list | grep agent | wc -l | tr -d ' '",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===milestones===\"; gh api repos/ravencloak-org/tiny/milestones --jq '.[] | \"\\(.title): \\(.open_issues) open / \\(.closed_issues) closed\"' 2>&1 | head\necho \"===#18 state + is it about error shapes===\"; gh issue view 18 --json state,title --jq '\"\\(.state) — \\(.title)\"'\necho \"===clean up worktrees (merged)===\"; git worktree list | grep agent | wc -l | tr -d ' '",
   "description": "Check milestones + #18 + worktrees"
 }
 ```
@@ -8955,7 +8955,7 @@ tool_use Bash
 id: toolu_011BAmvCyPiEunEqcTQ2iS9W
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\nM=\"Phase 2 — API Publishing + Deployment\"\nn1=$(gh issue create --title \"POST /v0/datasources batch import (parity gap #6)\" --milestone \"$M\" \\\n  --body \"Tinybird-compatible batch DATA import: \\`POST /v0/datasources?name={ds}&mode={append|replace}&format={ndjson|csv}\\`. Validates rows against the datasource schema (reuses the events ingest/quarantine path), \\`mode=replace\\` truncates first, returns a Tinybird async-job body recorded in the JobStore (\\`/v0/jobs/{id}\\` resolves). Definitions stay git+deploy (unknown ds → 404).\n\nShipped: \\`internal/api/import.go\\`, \\`internal/clickhouse\\` Truncate, wired in serve.go. Closes parity gap #6.\" 2>&1 | tail -1)\necho \"created: $n1\"; sleep 3\nn2=$(gh issue create --title \"/v0/tokens management API (parity gap #7)\" --milestone \"$M\" \\\n  --body \"ADMIN-gated token management over HTTP: \\`GET /v0/tokens\\` (list, no secret values), \\`POST /v0/tokens\\` (mint, value returned once), \\`DELETE /v0/tokens/{name}\\` (revoke). Redis-backed via auth.Store; segregated \\`model.TokenManager\\` interface.\n\nShipped: \\`internal/api/tokens.go\\`, \\`internal/auth\\`, \\`internal/model\\`. Closes parity gap #7.\" 2>&1 | tail -1)\necho \"created: $n2\"; sleep 3\n# close both as done\nfor u in \"$n1\" \"$n2\"; do num=$(echo \"$u\" | grep -oE '[0-9]+$'); gh issue close \"$num\" -c \"Shipped and merged to main (build + tests green).\" 2>&1 | head -1; sleep 3; done",
+  "command": "cd /home/<USER>/Project/tiny\nM=\"Phase 2 — API Publishing + Deployment\"\nn1=$(gh issue create --title \"POST /v0/datasources batch import (parity gap #6)\" --milestone \"$M\" \\\n  --body \"Tinybird-compatible batch DATA import: \\`POST /v0/datasources?name={ds}&mode={append|replace}&format={ndjson|csv}\\`. Validates rows against the datasource schema (reuses the events ingest/quarantine path), \\`mode=replace\\` truncates first, returns a Tinybird async-job body recorded in the JobStore (\\`/v0/jobs/{id}\\` resolves). Definitions stay git+deploy (unknown ds → 404).\n\nShipped: \\`internal/api/import.go\\`, \\`internal/clickhouse\\` Truncate, wired in serve.go. Closes parity gap #6.\" 2>&1 | tail -1)\necho \"created: $n1\"; sleep 3\nn2=$(gh issue create --title \"/v0/tokens management API (parity gap #7)\" --milestone \"$M\" \\\n  --body \"ADMIN-gated token management over HTTP: \\`GET /v0/tokens\\` (list, no secret values), \\`POST /v0/tokens\\` (mint, value returned once), \\`DELETE /v0/tokens/{name}\\` (revoke). Redis-backed via auth.Store; segregated \\`model.TokenManager\\` interface.\n\nShipped: \\`internal/api/tokens.go\\`, \\`internal/auth\\`, \\`internal/model\\`. Closes parity gap #7.\" 2>&1 | tail -1)\necho \"created: $n2\"; sleep 3\n# close both as done\nfor u in \"$n1\" \"$n2\"; do num=$(echo \"$u\" | grep -oE '[0-9]+$'); gh issue close \"$num\" -c \"Shipped and merged to main (build + tests green).\" 2>&1 | head -1; sleep 3; done",
   "description": "Create + milestone + close tokens/import issues"
 }
 ```
@@ -8981,7 +8981,7 @@ tool_use Bash
 id: toolu_01BUmfJhNj7Ue3KLYGTQ68cj
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngh issue comment 18 --body \"**Mostly shipped** (#574a924): centralized JSON error envelope (\\`{\\\"error\\\":...}\\`, ADR 0012 \\`apierr\\`) now covers all classes — 400 bad param/body, 403 wrong scope, 404 unknown pipe/datasource/route, 405 wrong method, 429 rate limit, 500 panic (all return the envelope, incl. chi NotFound/MethodNotAllowed + a jsonRecoverer). Per-class test in \\`internal/api/errors_test.go\\`.\n\n**One open decision — leaving this issue open for it:** auth-failure status code. Tinybird returns **403** for a missing/invalid token; the TinyRaven codebase currently returns **401** uniformly (all auth tests assert 401). Parity says 403, but flipping breaks the established convention across ~5 test files — a maintainer call. See \\`internal/api/middleware.go\\` (the \\`bearerToken==\\\"\\\"\\` and \\`!ok\\` branches).\" 2>&1 | head -1",
+  "command": "cd /home/<USER>/Project/tiny\ngh issue comment 18 --body \"**Mostly shipped** (#574a924): centralized JSON error envelope (\\`{\\\"error\\\":...}\\`, ADR 0012 \\`apierr\\`) now covers all classes — 400 bad param/body, 403 wrong scope, 404 unknown pipe/datasource/route, 405 wrong method, 429 rate limit, 500 panic (all return the envelope, incl. chi NotFound/MethodNotAllowed + a jsonRecoverer). Per-class test in \\`internal/api/errors_test.go\\`.\n\n**One open decision — leaving this issue open for it:** auth-failure status code. Tinybird returns **403** for a missing/invalid token; the TinyRaven codebase currently returns **401** uniformly (all auth tests assert 401). Parity says 403, but flipping breaks the established convention across ~5 test files — a maintainer call. See \\`internal/api/middleware.go\\` (the \\`bearerToken==\\\"\\\"\\` and \\`!ok\\` branches).\" 2>&1 | head -1",
   "description": "Comment #18 with status + open decision"
 }
 ```
@@ -9005,7 +9005,7 @@ id: toolu_01CDa7WqY56VWR6qcwYtPZwq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/docs/parity-gaps.md",
+  "file_path": "/home/<USER>/Project/tiny/docs/parity-gaps.md",
   "old_string": "| 6 | `/v0/datasources` (import) | POST | Batch import / `mode=append`/`replace`, CSV/NDJSON/Parquet upload, returns an async job. `tb datasource append`, ETL clients. | **missing** | L (multipart, CSV parse, jobs) |\n| 7 | `/v0/tokens` (+ `/{id}`) | GET/POST/PUT/DELETE | Token management API. CLI-only today (`auth.Store.List` exists). | **missing** (HTTP) | M |",
   "new_string": "| 6 | `/v0/datasources` (import) | POST | Batch DATA import — `?name=&mode=append\\|replace&format=ndjson\\|csv`, validated via the events path, replace truncates first, returns a JobStore-recorded async job. Definitions stay git+deploy. | **done** (NDJSON/CSV; Parquet upload still TODO) | L |\n| 7 | `/v0/tokens` (+ `/{name}`) | GET/POST/DELETE | Token management API — list (no secrets), mint (value once), revoke. ADMIN-gated, Redis-backed. | **done** | M |"
 }
@@ -9016,7 +9016,7 @@ id: toolu_01CDa7WqY56VWR6qcwYtPZwq
 tool_result
 id: toolu_01CDa7WqY56VWR6qcwYtPZwq
 ```
-The file /Users/jobinlawrance/Project/tiny/docs/parity-gaps.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/docs/parity-gaps.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -9054,7 +9054,7 @@ tool_use Bash
 id: toolu_01WKvqPd3864igyYEPiEZBWb
 ```json
 {
-  "command": "REDACTED\ncd \"$SC/tiny.wiki\"\ngit add -A && git -c user.email=jobinlawrance@gmail.com -c user.name=\"Jobin Lawrance\" commit -q -m \"wiki(api): add /v0/tokens, batch import, /v0/jobs\" 2>&1 | tail -1\ngit push origin HEAD 2>&1 | tail -1\ncd /Users/jobinlawrance/Project/tiny\ngit add docs/parity-gaps.md && git commit -q -m \"docs(parity): mark #6 (import) + #7 (tokens) done\" 2>&1 | tail -1\ngit push origin main 2>&1 | tail -1\necho \"===cleanup merged worktrees===\"\nfor w in a46ed98adc285c6b5 a6d4534f969db4362 a3032f58b000ab143; do git worktree remove --force \".claude/worktrees/agent-$w\" 2>&1; git branch -D \"worktree-agent-$w\" 2>&1 | head -1; done",
+  "command": "REDACTED\ncd \"$SC/tiny.wiki\"\ngit add -A && git -c user.email=<REDACTED_EMAIL> -c user.name=\"Jobin Lawrance\" commit -q -m \"wiki(api): add /v0/tokens, batch import, /v0/jobs\" 2>&1 | tail -1\ngit push origin HEAD 2>&1 | tail -1\ncd /home/<USER>/Project/tiny\ngit add docs/parity-gaps.md && git commit -q -m \"docs(parity): mark #6 (import) + #7 (tokens) done\" 2>&1 | tail -1\ngit push origin main 2>&1 | tail -1\necho \"===cleanup merged worktrees===\"\nfor w in a46ed98adc285c6b5 a6d4534f969db4362 a3032f58b000ab143; do git worktree remove --force \".claude/worktrees/agent-$w\" 2>&1; git branch -D \"worktree-agent-$w\" 2>&1 | head -1; done",
   "description": "Push wiki + parity doc, remove merged worktrees"
 }
 ```
@@ -9165,7 +9165,7 @@ tool_use Bash
 id: toolu_01VwegG7vZ79H3aY6dAsJbW7
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\nREDACTED\ngh issue edit 70 --body-file \"$SC/issue70.md\" 2>&1 | head -1\necho \"=== open issues now: $(gh issue list --state open --limit 100 --json number --jq 'length') ===\"",
+  "command": "cd /home/<USER>/Project/tiny\nREDACTED\ngh issue edit 70 --body-file \"$SC/issue70.md\" 2>&1 | head -1\necho \"=== open issues now: $(gh issue list --state open --limit 100 --json number --jq 'length') ===\"",
   "description": "Update #70 body + final open count"
 }
 ```

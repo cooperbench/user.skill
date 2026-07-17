@@ -39,7 +39,7 @@ tool_use Read
 id: toolu_01QRrGVXLWUMGxUMicMe23wP
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/old-prs/cmd/entire/cli/versioncheck/versioncheck_test.go"
+  "file_path": "/home/<USER>/wks/cli/old-prs/cmd/entire/cli/versioncheck/versioncheck_test.go"
 }
 ```
 
@@ -138,7 +138,7 @@ tool_use Read
 id: toolu_019SVCrt4PGp4ehQBfSrWBKc
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/old-prs/cmd/entire/cli/versioncheck/versioncheck_test.go",
+  "file_path": "/home/<USER>/wks/cli/old-prs/cmd/entire/cli/versioncheck/versioncheck_test.go",
   "limit": 57
 }
 ```
@@ -224,7 +224,7 @@ tool_use Read
 id: toolu_01WzETk5zC4AYCVX6A7M7C1d
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/old-prs/cmd/entire/cli/versioncheck/versioncheck.go"
+  "file_path": "/home/<USER>/wks/cli/old-prs/cmd/entire/cli/versioncheck/versioncheck.go"
 }
 ```
 
@@ -375,7 +375,7 @@ id: toolu_0122Ve7vtjM6qikzx4V7GGE4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/old-prs/cmd/entire/cli/versioncheck/versioncheck.go",
+  "file_path": "/home/<USER>/wks/cli/old-prs/cmd/entire/cli/versioncheck/versioncheck.go",
   "old_string": "\t// Skip notification for prerelease versions (development builds).\n\t// We don't publish prerelease versions, so these are development builds and shouldn't trigger update notifications.\n\tif semver.Prerelease(current) != \"\" {\n\t\treturn false\n\t}\n\n\t// semver.Compare returns -1 if current < latest\n\treturn semver.Compare(current, latest) < 0",
   "new_string": "\t// Skip notification for dev builds (e.g., \"1.0.0-dev-xxx\").\n\t// These are local development builds and shouldn't trigger update notifications.\n\t// Normal prereleases (e.g., \"1.0.0-rc1\") should still be compared normally.\n\tif strings.Contains(semver.Prerelease(current), \"dev\") {\n\t\treturn false\n\t}\n\n\t// semver.Compare returns -1 if current < latest\n\treturn semver.Compare(current, latest) < 0"
 }
@@ -386,7 +386,7 @@ id: toolu_0122Ve7vtjM6qikzx4V7GGE4
 tool_result
 id: toolu_0122Ve7vtjM6qikzx4V7GGE4
 ```
-The file /Users/gtrrz-victor/wks/cli/old-prs/cmd/entire/cli/versioncheck/versioncheck.go has been updated successfully.
+The file /home/<USER>/wks/cli/old-prs/cmd/entire/cli/versioncheck/versioncheck.go has been updated successfully.
 ```
 
 > TOOL

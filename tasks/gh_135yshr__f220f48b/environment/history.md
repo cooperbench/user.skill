@@ -114,7 +114,7 @@ tool_use Read
 id: toolu_01HpeKcYCTWZHXbz4CZJVdvt
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/3d95f47f3d2974.md"
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/3d95f47f3d2974.md"
 }
 ```
 
@@ -251,7 +251,7 @@ tool_use Read
 id: toolu_01WSSDD1zeEj2bBUK9KMsNBR
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60d7d006c0f38f.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60d7d006c0f38f.md",
   "offset": 1,
   "limit": 80
 }
@@ -341,7 +341,7 @@ tool_use Read
 id: toolu_018f3YpNpuZLvH4eBqRPe1F1
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/9e3ec9a7d52c98.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/9e3ec9a7d52c98.md",
   "offset": 1,
   "limit": 80
 }
@@ -437,7 +437,7 @@ tool_use Read
 id: toolu_01EByXcSbyz28r6s1cvNyXog
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/9e3ec9a7d52c98.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/9e3ec9a7d52c98.md",
   "offset": 80,
   "limit": 200
 }
@@ -529,7 +529,7 @@ tool_use Read
 id: toolu_01NzXjRQ2JsLx7374gAQHhrW
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/5ffc0f6a7251e4.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/5ffc0f6a7251e4.md",
   "offset": 1,
   "limit": 60
 }
@@ -763,7 +763,7 @@ tool_use Write
 id: toolu_01FGYau4PZs6G6f44RHvMAAb
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "content": "---\ntitle: \"DDD×CQRSのリードモデル設計〜プロジェクションと結果整合性の選び方〜\"\nemoji: \"📖\"\ntype: \"tech\"\ntopics: [\"Go\", \"DDD\", \"CQRS\", \"ReadModel\", \"設計\"]\npublished: false\n---\n\n## はじめに\n\n:::message\n\n本記事は私のDDD×CQRSシリーズの一部です。各セクションの根拠となる一次情報源は、該当箇所に参照リンクを記載しています。\n\n:::\n\nCQRSをDDDに導入したあと、私が一番悩んだのはコマンド側ではなく**クエリ側**でした。「QueryServiceでDTOを返せばよい」までは整理できても、その先にある「リードモデルをどこにどう作るか」「書き込みと読み取りのズレをどう吸収するか」で手が止まりました。\n\nこの記事では、CQRSの読み取り側（リードモデル）に焦点を当て、次の3点を整理します。\n\n- **リードモデルとは何で、何でないか**\n- **プロジェクション（読み取りモデルの更新）の3つの戦略と選び方**\n- **結果整合性のレイテンシをUXでどう吸収するか**\n\nCQRSそのものの基礎や、Repository / QueryServiceの使い分けは「[DDDにCQRSを導入する前に知っておきたいこと](https://zenn.dev/135yshr/articles/9e3ec9a7d52c98)」、認可の設計は「[DDD×CQRSの認可設計](https://zenn.dev/135yshr/articles/60d7d006c0f38f)」をご覧ください。本記事はこれらの続編という位置づけです。\n\n:::message\n\n本記事のコード例は、DDDシリーズで使っているレイヤー構成に従います。\n\n- `domain/model/` — 集約・ドメインイベント\n- `domain/event/` — ドメインイベントの型定義\n- `usecase/` — アプリケーション層（CommandとQueryの両方）\n- `infrastructure/postgres/` — Repository・QueryServiceの実装\n- `infrastructure/projection/` — プロジェクション処理\n\nコード例は説明の都合上セクションごとに分割していますが、同一ファイルのコードは結合してご利用ください。\n\n:::\n\n---\n\n## リードモデルとは何か\n\nCQRSにおける**リードモデル（Read Model）**は、「画面や API レスポンスの形にあわせて非正規化された、読み取り専用のデータ表現」です。書き込みモデル（集約）とは独立しており、JOIN・集計・キャッシュ・全文検索インデックスなど、読み取りに都合のよい形を自由に選べます。\n\n> The thin read layer can even go directly to the database, bypassing the domain model entirely.\n>\n> — Greg Young, [CQRS Documents](https://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf)\n\n私は最初、リードモデルを「集約をDTOに変換しただけのもの」と考えていました。しかしそれは**RepositoryからDTOへの詰め替え**にすぎず、CQRSのうまみはほぼ得られません。リードモデルは次の3つの条件を満たして初めて意味を持ちます。\n\n| 条件                         | 説明                                                                       |\n| ---------------------------- | -------------------------------------------------------------------------- |\n| 書き込みモデルから独立している | 集約の構造が変わってもリードモデルが壊れない                           |\n| 画面・API単位で非正規化されている | 1回のクエリで必要なデータが揃う                                       |\n| ドメインルールを持たない         | 検証・状態遷移・ビジネス計算は行わない                                 |\n\nつまり「リードモデルは別物として作る」ことに意味があり、書き込みモデルの構造をそのまま映したリードモデルは、ただの薄いDTOです。\n\n### リードモデルと書き込みモデルの距離\n\nリードモデルと書き込みモデルの「距離」は、システムによって違います。次の3段階で考えると整理しやすいです。\n\n```mermaid\nflowchart LR\n    A[書き込みモデル<br/>集約] -->|距離1| B[同じDB / 別ビュー]\n    A -->|距離2| C[同じDB / 別テーブル]\n    A -->|距離3| D[別DB / 別ストア<br/>Elasticsearch等]\n```\n\n- **距離1**: 書き込みテーブルに対してビュー（VIEW / Materialized View）を作る\n- **距離2**: 同じDB内に専用のリードテーブルを持ち、プロジェクションで更新する\n- **距離3**: 別のデータストア（検索エンジン、KVS、ドキュメントDB）にプロジェクションする\n\n距離が大きくなるほど読み取り性能と柔軟性は上がりますが、整合性の維持コストも上がります。次節で扱うプロジェクション戦略は、この「距離」と「整合性」の組み合わせの選択そのものです。\n\n---\n\n## プロジェクションの3つの戦略\n\nリードモデルを最新に保つ仕組みを**プロジェクション**と呼びます。プロジェクションには大きく3つの戦略があります。\n\n| 戦略                       | 一貫性             | 複雑性 | 再構築コスト | 主な実装                         |\n| -------------------------- | ------------------ | ------ | ------------ | -------------------------------- |\n| A. 同期プロジェクション     | 強整合性           | 低     | 低           | 同一トランザクション内で更新     |\n| B. 非同期プロジェクション   | 結果整合性         | 高     | 中〜高       | イベント駆動 + Outboxパターン   |\n| C. オンデマンドプロジェクション | 強整合性（読み取り時計算） | 低     | なし         | DBビュー / Materialized View    |\n\n選び方の基本方針は「整合性要件 × 読み取り負荷」です。\n\n```mermaid\nflowchart TD\n    Q{読み取り頻度<br/>は高いか?} -->|低| C[戦略C<br/>オンデマンド]\n    Q -->|高| R{結果整合性を<br/>許容できるか?}\n    R -->|No| A[戦略A<br/>同期プロジェクション]\n    R -->|Yes| B[戦略B<br/>非同期プロジェクション]\n```\n\n「迷ったら戦略C → A → Bの順に検討する」のが私の経験則です。Bは強力ですが、Outboxやワーカー、再構築機構など運用の道具立てが多く、必要になるまで導入を遅らせるのが安全です。\n\n---\n\n## 戦略A: 同期プロジェクション\n\n書き込みと同じトランザクションで、読み取りテーブルも更新する戦略です。書き込みが完了した瞬間にリードモデルは最新化されており、結果整合性の問題は発生しません。\n\n### 実装例\n\n注文を確定したら、注文一覧画面用のリードテーブル `order_list_view` も同じトランザクションで更新します。\n\n```go\n// usecase/place_order.go\n\ntype PlaceOrderUseCase struct {\n    txRunner       TxRunner\n […]
 
 > TOOL
@@ -780,7 +780,7 @@ tool_use Read
 id: toolu_01YbxAB9d85RvcdfJjty2cXT
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md"
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md"
 }
 ```
 
@@ -805,7 +805,7 @@ tool_use Write
 id: toolu_01FAz7iv2ReBtFV6jC9t4dPY
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "content": "---\ntitle: \"DDD×CQRSのリードモデル設計〜プロジェクションと結果整合性の選び方〜\"\nemoji: \"📖\"\ntype: \"tech\"\ntopics: [\"Go\", \"DDD\", \"CQRS\", \"ReadModel\", \"設計\"]\npublished: false\n---\n\n## はじめに\n\n:::message\n\n本記事は私のDDD×CQRSシリーズの一部です。各セクションの根拠となる一次情報源は、該当箇所に参照リンクを記載しています。\n\n:::\n\nCQRSをDDDに導入したあと、私が一番悩んだのはコマンド側ではなく**クエリ側**でした。「QueryServiceでDTOを返せばよい」までは整理できても、その先にある「リードモデルをどこにどう作るか」「書き込みと読み取りのズレをどう吸収するか」で手が止まりました。\n\nこの記事では、CQRSの読み取り側（リードモデル）に焦点を当て、次の3点を整理します。\n\n- **リードモデルとは何で、何でないか**\n- **プロジェクション（読み取りモデルの更新）の3つの戦略と選び方**\n- **結果整合性のレイテンシをUXでどう吸収するか**\n\nCQRSそのものの基礎や、Repository / QueryServiceの使い分けは「[DDDにCQRSを導入する前に知っておきたいこと](https://zenn.dev/135yshr/articles/9e3ec9a7d52c98)」、認可の設計は「[DDD×CQRSの認可設計](https://zenn.dev/135yshr/articles/60d7d006c0f38f)」をご覧ください。本記事はこれらの続編という位置づけです。\n\n:::message\n\n本記事のコード例は、DDDシリーズで使っているレイヤー構成に従います。\n\n- `domain/model/` — 集約・ドメインイベント\n- `domain/event/` — ドメインイベントの型定義\n- `usecase/` — アプリケーション層（CommandとQueryの両方）\n- `infrastructure/postgres/` — Repository・QueryServiceの実装\n- `infrastructure/projection/` — プロジェクション処理\n\nコード例は説明の都合上セクションごとに分割していますが、同一ファイルのコードは結合してご利用ください。\n\n:::\n\n---\n\n## リードモデルとは何か\n\nCQRSにおける**リードモデル（Read Model）**は、「画面や API レスポンスの形にあわせて非正規化された、読み取り専用のデータ表現」です。書き込みモデル（集約）とは独立しており、JOIN・集計・キャッシュ・全文検索インデックスなど、読み取りに都合のよい形を自由に選べます。\n\n> The thin read layer can even go directly to the database, bypassing the domain model entirely.\n>\n> — Greg Young, [CQRS Documents](https://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf)\n\n私は最初、リードモデルを「集約をDTOに変換しただけのもの」と考えていました。しかしそれは**RepositoryからDTOへの詰め替え**にすぎず、CQRSのうまみはほぼ得られません。リードモデルは次の3つの条件を満たして初めて意味を持ちます。\n\n| 条件                              | 説明                                             |\n| --------------------------------- | ------------------------------------------------ |\n| 書き込みモデルから独立している    | 集約の構造が変わってもリードモデルが壊れない     |\n| 画面・API単位で非正規化されている | 1回のクエリで必要なデータが揃う                  |\n| ドメインルールを持たない          | 検証・状態遷移・ビジネス計算は行わない           |\n\nつまり「リードモデルは別物として作る」ことに意味があり、書き込みモデルの構造をそのまま映したリードモデルは、ただの薄いDTOです。\n\n### リードモデルと書き込みモデルの距離\n\nリードモデルと書き込みモデルの「距離」は、システムによって違います。次の3段階で考えると整理しやすいです。\n\n```mermaid\nflowchart LR\n    A[書き込みモデル<br/>集約] -->|距離1| B[同じDB / 別ビュー]\n    A -->|距離2| C[同じDB / 別テーブル]\n    A -->|距離3| D[別DB / 別ストア<br/>Elasticsearch等]\n```\n\n- **距離1**: 書き込みテーブルに対してビュー（VIEW / Materialized View）を作る\n- **距離2**: 同じDB内に専用のリードテーブルを持ち、プロジェクションで更新する\n- **距離3**: 別のデータストア（検索エンジン、KVS、ドキュメントDB）にプロジェクションする\n\n距離が大きくなるほど読み取り性能と柔軟性は上がりますが、整合性の維持コストも上がります。次節で扱うプロジェクション戦略は、この「距離」と「整合性」の組み合わせの選択そのものです。\n\n---\n\n## プロジェクションの3つの戦略\n\nリードモデルを最新に保つ仕組みを**プロジェクション**と呼びます。プロジェクションには大きく3つの戦略があります。\n\n| 戦略                            | 一貫性                     | 複雑性 | 再構築コスト | 主な実装                       |\n| ------------------------------- | -------------------------- | ------ | ------------ | ------------------------------ |\n| A. 同期プロジェクション         | 強整合性                   | 低     | 低           | 同一トランザクション内で更新   |\n| B. 非同期プロジェクション       | 結果整合性                 | 高     | 中〜高       | イベント駆動 + Outboxパターン  |\n| C. オンデマンドプロジェクション | 強整合性（読み取り時計算） | 低     | なし         | DBビュー / Materialized View   |\n\n選び方の基本方針は「整合性要件 × 読み取り負荷」です。\n\n```mermaid\nflowchart TD\n    Q{読み取り頻度<br/>は高いか?} -->|低| C[戦略C<br/>オンデマンド]\n    Q -->|高| R{結果整合性を<br/>許容できるか?}\n    R -->|No| A[戦略A<br/>同期プロジェクション]\n    R -->|Yes| B[戦略B<br/>非同期プロジェクション]\n```\n\n「迷ったら戦略C → A → Bの順に検討する」のが私の経験則です。Bは強力ですが、Outboxやワーカー、再構築機構など運用の道具立てが多く、必要になるまで導入を遅らせるのが安全です。\n\n---\n\n## 戦略A: 同期プロジェクション\n\n書き込みと同じトランザクションで、読み取りテーブルも更新する戦略です。書き込みが完了した瞬間にリードモデルは最新化されており、結果整合性の問題は発生しません。\n\n### 実装例\n\n注文を確定したら、注文一覧画面用のリードテーブル `order_list_view` も同じトランザクションで更新します。\n\n```go\n// usecase/place_order.go\n\ntype PlaceOrderUseCase struct {\n    txRunner      TxRunner\n […]
 
 > TOOL
@@ -813,7 +813,7 @@ id: toolu_01FAz7iv2ReBtFV6jC9t4dPY
 tool_result
 id: toolu_01FAz7iv2ReBtFV6jC9t4dPY
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -903,7 +903,7 @@ tool_use Read
 id: toolu_01RC2oxgAQsdeMq8Zfxw89cg
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "offset": 335,
   "limit": 15
 }
@@ -938,7 +938,7 @@ id: toolu_01DUBAcc5JvuVRXfT4RnaMtW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "    // ... rows を DTO に詰める\n}\n```\n\n### 採用する判断基準\n\n- リードモデルが書き込みモデルの**簡単な射影で済む**（重い集計が必要ない）",
   "new_string": "    // ... rows を DTO に詰める\n}\n```\n\n### 戦略Cを採用する判断基準\n\n- リードモデルが書き込みモデルの**簡単な射影で済む**（重い集計が必要ない）"
 }
@@ -949,7 +949,7 @@ id: toolu_01DUBAcc5JvuVRXfT4RnaMtW
 tool_result
 id: toolu_01DUBAcc5JvuVRXfT4RnaMtW
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -963,7 +963,7 @@ id: toolu_01U1vAcuLxEyrGyjF8NQE58Z
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "### 採用する判断基準\n\n- 書き込みと読み取りが**同一データベース**で完結する",
   "new_string": "### 戦略Aを採用する判断基準\n\n- 書き込みと読み取りが**同一データベース**で完結する"
 }
@@ -974,7 +974,7 @@ id: toolu_01U1vAcuLxEyrGyjF8NQE58Z
 tool_result
 id: toolu_01U1vAcuLxEyrGyjF8NQE58Z
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1018,7 +1018,7 @@ id: toolu_015Fq7riddoKh5ByabyL4kn1
 tool_result
 id: toolu_015Fq7riddoKh5ByabyL4kn1
 ```
-/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md
+/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md
   110:10     error  漢字が7つ以上連続しています: 注文一覧画面用                                                   ja-technical-writing/max-kanji-continuous-len
   348:75     error  一文に二回以上利用されている助詞 "に" がみつかりました。
 
@@ -1062,7 +1062,7 @@ tool_use Read
 id: toolu_017bnKGy9CWAXjamAcioy3Ea
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "offset": 105,
   "limit": 10
 }
@@ -1092,7 +1092,7 @@ id: toolu_018W6fWrDC27uLSkoCNh1V3G
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "注文を確定したら、注文一覧画面用のリードテーブル `order_list_view` も同じトランザクションで更新します。",
   "new_string": "注文を確定したら、一覧画面のためのリードテーブル `order_list_view` も同じトランザクションで更新します。"
 }
@@ -1103,7 +1103,7 @@ id: toolu_018W6fWrDC27uLSkoCNh1V3G
 tool_result
 id: toolu_018W6fWrDC27uLSkoCNh1V3G
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1112,7 +1112,7 @@ tool_use Read
 id: toolu_016igQDwroPpW8CF76sVPcaS
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "offset": 345,
   "limit": 10
 }
@@ -1142,7 +1142,7 @@ id: toolu_01UJLeoGL83dH4zwjNWRg2zo
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "Materialized Viewにすればキャッシュも効きますが、リフレッシュのタイミングを自分で管理する必要が出てくるため、戦略Bに近い運用コストになります。「Materialized View にしたくなったら戦略Bを真面目に検討する」のが私の判断基準です。",
   "new_string": "Materialized Viewにすればキャッシュも効きますが、リフレッシュのタイミングを自分で管理する必要が出てくるため、戦略Bに近い運用コストになります。「Materialized View が欲しくなったら戦略Bを真面目に検討する」のが私の判断基準です。"
 }
@@ -1153,7 +1153,7 @@ id: toolu_01UJLeoGL83dH4zwjNWRg2zo
 tool_result
 id: toolu_01UJLeoGL83dH4zwjNWRg2zo
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1162,7 +1162,7 @@ tool_use Read
 id: toolu_018b7LbzB76fye1rBgDaRtqB
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "offset": 415,
   "limit": 45
 }
@@ -1227,7 +1227,7 @@ id: toolu_015qDY5KS9iXNHxHt9oMgNNw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "リードモデルは**View per Use Case**で設計します。「注文一覧画面用」「注文詳細画面用」「ダッシュボード用」をそれぞれ別のテーブルやビューにします。汎用テーブルを作って画面ごとに JOIN すると、CQRSのうまみが消えます。",
   "new_string": "リードモデルは**View per Use Case**で設計します。「注文の一覧画面用」「注文の詳細画面用」「ダッシュボード用」をそれぞれ別のテーブルやビューにします。汎用テーブルを作って画面ごとに JOIN すると、CQRSのうまみが消えます。"
 }
@@ -1238,7 +1238,7 @@ id: toolu_015qDY5KS9iXNHxHt9oMgNNw
 tool_result
 id: toolu_015qDY5KS9iXNHxHt9oMgNNw
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1248,7 +1248,7 @@ id: toolu_014gAhV5QffPVZGEaqtdwiwU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "リードモデルは「どう検索されるか」が決まっていることが多いです。スキーマと一緒にインデックスも設計します。検索条件 → インデックス → クエリプランがそのまま回答になるように作ります。",
   "new_string": "リードモデルは「どう検索されるか」が先に決まっていることが多いです。スキーマと一緒にインデックスも設計します。検索条件 → インデックス → クエリプランがそのまま回答になるよう作ります。"
 }
@@ -1259,7 +1259,7 @@ id: toolu_014gAhV5QffPVZGEaqtdwiwU
 tool_result
 id: toolu_014gAhV5QffPVZGEaqtdwiwU
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1269,7 +1269,7 @@ id: toolu_01Khz4DiDkrNgZVMgFfsJ9QB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "「ステータスが `placed` かつ `total_amount >= 10000` なら 'priority' を立てる」のような計算をリードモデル更新時に行ってしまうと、ビジネスルールが2箇所に増えます。書き込みモデル側でルールを評価し、結果をイベントに乗せてリードモデルに渡すのが筋です。",
   "new_string": "「ステータスが `placed` かつ `total_amount >= 10000` なら 'priority' を立てる」のような計算をリードモデル更新時に書いてしまうと、ビジネスルールが2箇所に増えます。書き込みモデル側でルールを評価し、結果をイベントに乗せてリードモデルへ渡すのが筋です。"
 }
@@ -1280,7 +1280,7 @@ id: toolu_01Khz4DiDkrNgZVMgFfsJ9QB
 tool_result
 id: toolu_01Khz4DiDkrNgZVMgFfsJ9QB
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1290,7 +1290,7 @@ id: toolu_01GFNwM6KtRpNWbkm9WxpGHg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "リードモデルを生のまま UseCase や Domain Service に渡し、そこから判断を生やすパターンです。リードモデルは表示用の射影なので、不変条件もバージョンもありません。**ビジネス判断は集約から**、というルールを守ります。",
   "new_string": "リードモデルを生のまま UseCase や Domain Service に渡し、そこから判断を生やすパターンです。リードモデルは表示用の射影なので、不変条件やバージョンを持ちません。**ビジネス判断は集約から**、というルールを守ります。"
 }
@@ -1301,7 +1301,7 @@ id: toolu_01GFNwM6KtRpNWbkm9WxpGHg
 tool_result
 id: toolu_01GFNwM6KtRpNWbkm9WxpGHg
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1310,7 +1310,7 @@ tool_use Read
 id: toolu_015DVjUk812k1yHkPe4HaX8z
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "offset": 485,
   "limit": 15
 }
@@ -1345,7 +1345,7 @@ id: toolu_0142pYcJMqDaboBcMSprcSQM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "CQRSシリーズで扱ってきた「コマンド側」「認可」「リードモデル」がこれで一通り揃いました。次はおそらく「リードモデルが古くなったときの再構築運用」あたりが論点になると思います。そこに踏み込むかどうかは、システムの規模次第です。",
   "new_string": "CQRSシリーズで扱ってきた「コマンド側」「認可」「リードモデル」がこれで一通り揃いました。次は「リードモデルが古くなったときの再構築運用」あたりが論点になります。そこに踏み込むかどうかは、システムの規模次第です。"
 }
@@ -1356,7 +1356,7 @@ id: toolu_0142pYcJMqDaboBcMSprcSQM
 tool_result
 id: toolu_0142pYcJMqDaboBcMSprcSQM
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1375,7 +1375,7 @@ id: toolu_01PruUxhTeVXZGLZGCqWjWpq
 tool_result
 id: toolu_01PruUxhTeVXZGLZGCqWjWpq
 ```
-/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md
+/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md
   348:75     error  一文に二回以上利用されている助詞 "に" がみつかりました。
 
 次の助詞が連続しているため、文を読みにくくしています。
@@ -1397,7 +1397,7 @@ tool_use Read
 id: toolu_01Dg9RtxbpmZZuRCW7DmEvhs
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "offset": 346,
   "limit": 5
 }
@@ -1422,7 +1422,7 @@ id: toolu_01Eh8jTzv4G3MBQ5w4ci1uhe
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "Materialized Viewにすればキャッシュも効きますが、リフレッシュのタイミングを自分で管理する必要が出てくるため、戦略Bに近い運用コストになります。「Materialized View が欲しくなったら戦略Bを真面目に検討する」のが私の判断基準です。",
   "new_string": "Materialized Viewにすればキャッシュも効きますが、リフレッシュのタイミングを自分で管理する必要が出てくるため、戦略Bに近い運用コストがかかります。「Materialized View が欲しくなったら戦略Bを真面目に検討する」のが私の判断基準です。"
 }
@@ -1433,7 +1433,7 @@ id: toolu_01Eh8jTzv4G3MBQ5w4ci1uhe
 tool_result
 id: toolu_01Eh8jTzv4G3MBQ5w4ci1uhe
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1442,7 +1442,7 @@ tool_use Read
 id: toolu_01TfC1zhnP8aHt8EZHCL2z7e
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "offset": 445,
   "limit": 5
 }
@@ -1467,7 +1467,7 @@ id: toolu_01PcVABtk9jg7EMAzGm3edHL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "「ステータスが `placed` かつ `total_amount >= 10000` なら 'priority' を立てる」のような計算をリードモデル更新時に書いてしまうと、ビジネスルールが2箇所に増えます。書き込みモデル側でルールを評価し、結果をイベントに乗せてリードモデルへ渡すのが筋です。",
   "new_string": "「ステータスが `placed` かつ `total_amount >= 10000` なら 'priority' を立てる」といった計算をリードモデル側で書くと、ビジネスルールが2箇所に増えます。書き込みモデル側で評価し、結果をイベントに乗せてリードモデルへ渡すのが筋です。"
 }
@@ -1478,7 +1478,7 @@ id: toolu_01PcVABtk9jg7EMAzGm3edHL
 tool_result
 id: toolu_01PcVABtk9jg7EMAzGm3edHL
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1729,7 +1729,7 @@ id: toolu_01BxypCDDnUZo2aBQUBZ9xRc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "## はじめに\n\n:::message\n\n本記事は私のDDD×CQRSシリーズの一部です。各セクションの根拠となる一次情報源は、該当箇所に参照リンクを記載しています。\n\n:::\n\nCQRSをDDDに導入したあと、私が一番悩んだのはコマンド側ではなく**クエリ側**でした。「QueryServiceでDTOを返せばよい」までは整理できても、その先にある「リードモデルをどこにどう作るか」「書き込みと読み取りのズレをどう吸収するか」で手が止まりました。\n\nこの記事では、CQRSの読み取り側（リードモデル）に焦点を当て、次の3点を整理します。\n\n- **リードモデルとは何で、何でないか**\n- **プロジェクション（読み取りモデルの更新）の3つの戦略と選び方**\n- **結果整合性のレイテンシをUXでどう吸収するか**\n\nCQRSそのものの基礎や、Repository / QueryServiceの使い分けは「[DDDにCQRSを導入する前に知っておきたいこと](https://zenn.dev/135yshr/articles/9e3ec9a7d52c98)」、認可の設計は「[DDD×CQRSの認可設計](https://zenn.dev/135yshr/articles/60d7d006c0f38f)」をご覧ください。本記事はこれらの続編という位置づけです。\n\n:::message\n\n本記事のコード例は、DDDシリーズで使っているレイヤー構成に従います。\n\n- `domain/model/` — 集約・ドメインイベント\n- `domain/event/` — ドメインイベントの型定義\n- `usecase/` — アプリケーション層（CommandとQueryの両方）\n- `infrastructure/postgres/` — Repository・QueryServiceの実装\n- `infrastructure/projection/` — プロジェクション処理\n\nコード例は説明の都合上セクションごとに分割していますが、同一ファイルのコードは結合してご利用ください。\n\n:::",
   "new_string": "## はじめに\n\nCQRSをDDDに導入したあと、私が一番悩んだのはコマンド側ではなく**読み取り側**でした。「QueryServiceでDTOを返せばよい」までは整理できても、その先にある「リードモデルをどこにどう作るか」「書き込みと読み取りのズレをどう吸収するか」で手が止まりました。\n\n本記事で答えるのは次の3つです。\n\n1. **読み取り側のデータ表現（リードモデル）を、書き込みモデルからどう分離するか**\n2. **リードモデルを最新に保つプロジェクション戦略を、どの順で検討すべきか**\n3. **結果整合性のレイテンシを、UX側でどう吸収するか**\n\n「読み方」「設計判断の選び方」を扱う記事であり、CQRSの基礎解説や個別実装の網羅ではありません。\n\n:::message\n\n**前提知識と読む順**\n\n本記事はDDD×CQRSシリーズの3作目です。下記2本を先に読むと前提が揃います。\n\n1. [DDDにCQRSを導入する前に知っておきたいこと](https://zenn.dev/135yshr/articles/9e3ec9a7d52c98) — CQRSの基礎、Repository / QueryServiceの使い分け\n2. [DDD×CQRSの認可設計](https://zenn.dev/135yshr/articles/60d7d006c0f38f) — コマンドとクエリで異なる認可箇所\n3. 本記事（リードモデルとプロジェクションの設計）\n\n:::\n\n:::message\n\n**本記事で使う用語**\n\n- **リードモデル**: 画面・APIレスポンス向けに非正規化された、読み取り専用のデータ表現です\n- **プロジェクション**: 書き込みモデルやドメインイベントから、リードモデルを生成・更新する処理です\n- **QueryService**: アプリケーション層に置く、リードモデルから DTO を返すインターフェースです\n- **Outbox**: 書き込みDBの中に「これから別プロセスに渡したいイベント」を一旦置くテーブルです\n- **集約 / ドメインイベント**: それぞれ書き込み側の整合性単位、書き込みで発生する出来事を表す不変オブジェクトです\n\n:::\n\n:::message\n\n**コード例の前提**\n\nレイヤー構成はシリーズ前作と同じです。\n\n- `domain/model/` — 集約・ドメインイベント\n- `domain/event/` — ドメインイベントの型定義\n- `usecase/` — アプリケーション層（CommandとQueryの両方）\n- `infrastructure/postgres/` — Repository・QueryServiceの実装\n- `infrastructure/projection/` — プロジェクション処理\n\nコード例の `order.Repository` `TxRunner` `OutboxWriter` などはシリーズ前作で導入した型です。本記事では再定義しません。コード例はセクションごとに分割していますが、同一ファイルのコードは結合してご利用ください。\n\n:::\n\n:::message alert\n\n**本記事の経験談について**\n\n本文中の「経験則」「判断基準」とした記述は、私が関わったプロジェクト数（注文・予約系を中心に4〜5件、いずれもチーム規模10名以下、トランザクション量はピーク数十req/sec程度）を母集団とした主観的なものです。金融・大規模分散など領域が大きく異なる場合は、そのまま当てはまらないことがあります。\n\n:::"
 }
@@ -1740,7 +1740,7 @@ id: toolu_01BxypCDDnUZo2aBQUBZ9xRc
 tool_result
 id: toolu_01BxypCDDnUZo2aBQUBZ9xRc
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1754,7 +1754,7 @@ id: toolu_01RBDmMj3rfkfXFuBqiCJs91
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "## リードモデルとは何か\n\nCQRSにおける**リードモデル（Read Model）**は、「画面や API レスポンスの形にあわせて非正規化された、読み取り専用のデータ表現」です。書き込みモデル（集約）とは独立しており、JOIN・集計・キャッシュ・全文検索インデックスなど、読み取りに都合のよい形を自由に選べます。\n\n> The thin read layer can even go directly to the database, bypassing the domain model entirely.\n>\n> — Greg Young, [CQRS Documents](https://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf)\n\n私は最初、リードモデルを「集約をDTOに変換しただけのもの」と考えていました。しかしそれは**RepositoryからDTOへの詰め替え**にすぎず、CQRSのうまみはほぼ得られません。リードモデルは次の3つの条件を満たして初めて意味を持ちます。\n\n| 条件                              | 説明                                         |\n| --------------------------------- | -------------------------------------------- |\n| 書き込みモデルから独立している    | 集約の構造が変わってもリードモデルが壊れない |\n| 画面・API単位で非正規化されている | 1回のクエリで必要なデータが揃う              |\n| ドメインルールを持たない          | 検証・状態遷移・ビジネス計算は行わない       |\n\nつまり「リードモデルは別物として作る」ことに意味があり、書き込みモデルの構造をそのまま映したリードモデルは、ただの薄いDTOです。\n\n### リードモデルと書き込みモデルの距離\n\nリードモデルと書き込みモデルの「距離」は、システムによって違います。次の3段階で考えると整理しやすいです。\n\n```mermaid\nflowchart LR\n    A[書き込みモデル<br/>集約] -->|距離1| B[同じDB / 別ビュー]\n    A -->|距離2| C[同じDB / 別テーブル]\n    A -->|距離3| D[別DB / 別ストア<br/>Elasticsearch等]\n```\n\n- **距離1**: 書き込みテーブルに対してビュー（VIEW / Materialized View）を作る\n- **距離2**: 同じDB内に専用のリードテーブルを持ち、プロジェクションで更新する\n- **距離3**: 別のデータストア（検索エンジン、KVS、ドキュメントDB）にプロジェクションする\n\n距離が大きくなるほど読み取り性能と柔軟性は上がりますが、整合性の維持コストも上がります。次節で扱うプロジェクション戦略は、この「距離」と「整合性」の組み合わせの選択そのものです。",
   "new_string": "## リードモデルとは何か\n\nCQRSにおける**リードモデル（Read Model）**は、「画面やAPIレスポンスの形にあわせて非正規化された、読み取り専用のデータ表現」です。書き込みモデル（集約）とは独立しており、JOIN・集計・キャッシュ・全文検索インデックスなど、読み取りに都合のよい形を自由に選べます。\n\nGreg Youngは、読み取り側はドメインモデルを経由しなくてよいと述べています。\n\n> The Read Side ... is a thin layer over the database. (CQRS Documents, \"The Read Side\" 節)\n>\n> — Greg Young, [CQRS Documents](https://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf)\n\n私は最初、リードモデルを「集約をDTOに変換しただけのもの」と考えていました。しかしそれは**RepositoryからDTOへの詰め替え**にすぎず、CQRSのうまみはほぼ得られません。リードモデルは次の3つの条件を満たして初めて意味を持ちます（**表1**）。\n\n**表1: リードモデルの3条件**\n\n| 条件                              | 説明                                         |\n| --------------------------------- | -------------------------------------------- |\n| 書き込みモデルから独立している    | 集約の構造が変わってもリードモデルが壊れない |\n| 画面・API単位で非正規化されている | 1回のクエリで必要なデータが揃う              |\n| ドメインルールを持たない          | 検証・状態遷移・ビジネス計算は行わない       |\n\nつまり「リードモデルは別物として作る」ことに意味があり、書き込みモデルの構造をそのまま映したリードモデルは、ただの薄いDTOです。\n\n### リードモデルの配置先（私の整理）\n\nリードモデルをどこに置くかは、システムによって違います。本記事では次の3つを便宜的に **配置パターン1 / 2 / 3** と呼んで進めます（業界用語ではなく、本記事内のラベルです）。\n\n```mermaid\nflowchart LR\n    A[書き込みモデル<br/>集約] -->|パターン1| B[同じDB / 別ビュー]\n    A -->|パターン2| C[同じDB / 別テーブル]\n    A -->|パターン3| D[別DB / 別ストア<br/>Elasticsearch等]\n```\n\n**図1: リードモデルの配置パターン**\n\n- **パターン1**: 書き込みテーブルに対してビュー（VIEW / Materialized View）を作る\n- **パターン2**: 同じDB内に専用のリードテーブルを持ち、プロジェクションで更新する\n- **パターン3**: 別のデータストア（検索エンジン、KVS、ドキュメントDB）にプロジェクションする\n\n配置が書き込みモデルから離れるほど読み取り性能と柔軟性は上がりますが、整合性の維持コストも上がります。次節で扱うプロジェクション戦略は、この「配置」と「整合性」の組み合わせの選択そのものです。"
 }
@@ -1765,7 +1765,7 @@ id: toolu_01RBDmMj3rfkfXFuBqiCJs91
 tool_result
 id: toolu_01RBDmMj3rfkfXFuBqiCJs91
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1809,7 +1809,7 @@ id: toolu_01QfFWGSHvVt38zDGNzZLvWY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "## プロジェクションの3つの戦略\n\nリードモデルを最新に保つ仕組みを**プロジェクション**と呼びます。プロジェクションには大きく3つの戦略があります。\n\n| 戦略                            | 一貫性                     | 複雑性 | 再構築コスト | 主な実装                       |\n| ------------------------------- | -------------------------- | ------ | ------------ | ------------------------------ |\n| A. 同期プロジェクション         | 強整合性                   | 低     | 低           | 同一トランザクション内で更新   |\n| B. 非同期プロジェクション       | 結果整合性                 | 高     | 中〜高       | イベント駆動 + Outboxパターン  |\n| C. オンデマンドプロジェクション | 強整合性（読み取り時計算） | 低     | なし         | DBビュー / Materialized View   |\n\n選び方の基本方針は「整合性要件 × 読み取り負荷」です。\n\n```mermaid\nflowchart TD\n    Q{読み取り頻度<br/>は高いか?} -->|低| C[戦略C<br/>オンデマンド]\n    Q -->|高| R{結果整合性を<br/>許容できるか?}\n    R -->|No| A[戦略A<br/>同期プロジェクション]\n    R -->|Yes| B[戦略B<br/>非同期プロジェクション]\n```\n\n「迷ったら戦略C → A → Bの順に検討する」のが私の経験則です。Bは強力ですが、Outboxやワーカー、再構築機構など運用の道具立てが多く、必要になるまで導入を遅らせるのが安全です。",
   "new_string": "## プロジェクションの3つの戦略\n\nリードモデルを最新に保つ仕組みを**プロジェクション**と呼びます。プロジェクションには大きく3つの戦略があります（**表2**）。\n\n**表2: プロジェクション戦略の比較**\n\n| 戦略                            | 整合性モデル             | 運用コンポーネント数 | 再構築の容易さ                 | 初期フェーズ向き | 主な実装                     |\n| ------------------------------- | ------------------------ | -------------------- | ------------------------------ | ---------------- | ---------------------------- |\n| A. 同期プロジェクション         | トランザクション整合性   | 1（書き込みDBのみ）  | 中（バッチ再計算が必要）       | ◯                | 同一トランザクション内で更新 |\n| B. 非同期プロジェクション       | 結果整合性               | 3以上（書き込みDB + outbox + Projectorワーカー） | 高（イベント再生で再構築）   | △                | イベント駆動 + Outboxパターン |\n| C. オンデマンドプロジェクション | 読み取り時のクエリで確定 | 1（書き込みDBのみ）  | 高（VIEW定義変更のみ）         | ◎                | DBビュー / Materialized View |\n\n評価指標の定義は次の通りです（重要度は読者の文脈で変わるため、定性的な比較に絞っています）。\n\n- **整合性モデル**: 書き込み完了と読み取り完了の関係を、SQL標準の用語で表現します\n  - 「トランザクション整合性」: 同一トランザクションのコミット直後に最新値が読める（書き込みと同じACID範囲内）\n  - 「結果整合性」: 書き込み後に時間差で反映される\n  - 「読み取り時のクエリで確定」: リード時に毎回SQLで集計するため、トランザクション分離レベル（多くの場合 READ COMMITTED）で読める範囲が決まる\n- **運用コンポーネント数**: 書き込み・読み取りパスに登場する独立した実行プロセスの数です（少ないほど運用が簡単）\n- **再構築の容易さ**: スキーマ変更時に、既存データから新しいリードモデルを作り直せるかです\n- **初期フェーズ向き**: プロジェクト立ち上げ時に「迷ったら採用」する候補としての推しやすさです\n\n選び方の基本方針は「整合性要件 × 読み取り負荷」で、加えて「初期フェーズ向き」軸も意識します。\n\n```mermaid\nflowchart TD\n    Q{読み取り頻度<br/>は高いか?} -->|低| C[戦略C<br/>オンデマンド]\n    Q -->|高| R{結果整合性を<br/>許容できるか?}\n    R -->|No| A[戦略A<br/>同期プロジェクション]\n    R -->|Yes| B[戦略B<br/>非同期プロジェクション]\n```\n\n**図2: […]
 
@@ -1819,7 +1819,7 @@ tool_use Read
 id: toolu_01TaYdRj1hNAN994xKDBfSBu
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "offset": 115,
   "limit": 35
 }
@@ -1874,7 +1874,7 @@ id: toolu_01SUmnatC7bYkhJGqFSCcx9q
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "リードモデルを最新に保つ仕組みを**プロジェクション**と呼びます。プロジェクションには大きく3つの戦略があります。\n\n| 戦略 | 一貫性 | 複雑性 | 再構築コスト | 主な実装 |\n| --- | --- | --- | --- | --- |\n| A. 同期プロジェクション | 強整合性 | 低 | 低 | 同一トランザクション内で更新 |\n| B. 非同期プロジェクション | 結果整合性 | 高 | 中〜高 | イベント駆動 + Outboxパターン |\n| C. オンデマンドプロジェクション | 強整合性（読み取り時計算） | 低 | なし | DBビュー / Materialized View |\n\n選び方の基本方針は「整合性要件 × 読み取り負荷」です。\n\n```mermaid\nflowchart TD\n    Q{読み取り頻度<br/>は高いか?} -->|低| C[戦略C<br/>オンデマンド]\n    Q -->|高| R{結果整合性を<br/>許容できるか?}\n    R -->|No| A[戦略A<br/>同期プロジェクション]\n    R -->|Yes| B[戦略B<br/>非同期プロジェクション]\n```\n\n「迷ったら戦略C → A → Bの順に検討する」のが私の経験則です。Bは強力ですが、Outboxやワーカー、再構築機構など運用の道具立てが多く、必要になるまで導入を遅らせるのが安全です。",
   "new_string": "リードモデルを最新に保つ仕組みを**プロジェクション**と呼びます。プロジェクションには大きく3つの戦略があります（**表2**）。\n\n**表2: プロジェクション戦略の比較**\n\n| 戦略 | 整合性モデル | 運用コンポーネント数 | 再構築の容易さ | 初期フェーズ向き | 主な実装 |\n| --- | --- | --- | --- | --- | --- |\n| A. 同期プロジェクション | トランザクション整合性 | 1（書き込みDBのみ） | 中（バッチ再計算） | ◯ | 同一トランザクション内で更新 |\n| B. 非同期プロジェクション | 結果整合性 | 3以上（書き込みDB + outbox + Projector） | 高（イベント再生で再構築） | △ | イベント駆動 + Outboxパターン |\n| C. オンデマンドプロジェクション | 読み取り時のクエリで確定 | 1（書き込みDBのみ） | 高（VIEW定義の変更） | ◎ | DBビュー / Materialized View |\n\n評価指標の定義は次の通りです。重要度は読者の文脈で変わるため、定性的な比較に絞っています。\n\n- **整合性モデル**: 書き込み完了と読み取り完了の関係を、SQL/CQRSの語彙で表現します\n  - 「トランザクション整合性」: 同一トランザクションのコミット直後に最新値が読めます（ACID範囲内）\n  - 「結果整合性」: 書き込み後に時間差で反映されます\n  - 「読み取り時のクエリで確定」: リード時に毎回SQLで集計するため、トランザクション分離レベル（多くの場合 READ COMMITTED）で読める範囲が決まります\n- **運用コンポーネント数**: 書き込み・読み取りパスに登場する独立した実行プロセスの数です（少ないほど運用が簡単）\n- **再構築の容易さ**: スキーマ変更時に、既存データから新しいリードモデルを作り直せるかです\n- **初期フェーズ向き**: プロジェクト立ち上げ時に「迷ったら採用」する候補としての推しやすさです\n\n選び方の基本方針は「整合性要件 × 読み取り負荷」で、加えて「初期フェーズ向き」軸も意識します。\n\n```mermaid\nflowchart TD\n    Q{読み取り頻度<br/>は高いか?} -->|低| C[戦略C<br/>オンデマンド]\n    Q -->|高| R{結果整合性を<br/>許容できるか?}\n    R -->|No| A[戦略A<br/>同期プロジェクション]\n    R -->|Yes| B[戦略B<br/>非同期プロジェクション]\n```\n\n**図2: 戦略選択のフロー**\n\n「迷ったら戦略C → […]
 
@@ -1883,7 +1883,7 @@ id: toolu_01SUmnatC7bYkhJGqFSCcx9q
 tool_result
 id: toolu_01SUmnatC7bYkhJGqFSCcx9q
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1896,7 +1896,7 @@ tool_use Read
 id: toolu_01NamBGRxjwPd5FFt2d2xKWz
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "offset": 148,
   "limit": 60
 }
@@ -1976,7 +1976,7 @@ id: toolu_011HDmNgWf4szxjSWiCuisKd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "func (uc *PlaceOrderUseCase) Execute(ctx context.Context, in PlaceOrderInput) error {\n    return uc.txRunner.Run(ctx, func(ctx context.Context) error {\n        o, err := order.Place(in.CustomerID, in.Items)\n        if err != nil {\n            return err\n        }\n        if err := uc.orderRepo.Save(ctx, o); err != nil {\n            return err\n        }\n        return uc.orderListView.Upsert(ctx, OrderListRow{\n            OrderID:      o.ID().String(),\n            CustomerName: in.CustomerName,\n            TotalAmount:  o.TotalAmount(),\n            Status:       o.Status().String(),\n            PlacedAt:     o.PlacedAt(),\n        })\n    })\n}\n```",
   "new_string": "func (uc *PlaceOrderUseCase) Execute(ctx context.Context, in PlaceOrderInput) error {\n    return uc.txRunner.Run(ctx, func(ctx context.Context) error {\n        o, err := order.Place(in.CustomerID, in.Items)\n        if err != nil {\n            return err\n        }\n        if err := uc.orderRepo.Save(ctx, o); err != nil {\n            return err\n        }\n        // リードモデルに詰める値はすべて集約から取り出して、\n        // 「集約に保存した内容」と「画面に出る内容」のズレを防ぎます。\n        return uc.orderListView.Upsert(ctx, OrderListRow{\n            OrderID:      o.ID().String(),\n            CustomerName: o.CustomerSnapshotName(), // 集約が保持する顧客名スナップショット\n            TotalAmount:  o.TotalAmount(),\n            Status:       o.Status().String(),\n            PlacedAt:     o.PlacedAt(),\n        })\n    })\n}\n```\n\n集約は `order.Place` の時点で顧客名のスナップショットを内部に保持しており、`CustomerSnapshotName()` で取り出します。**リードモデルに詰める値は、入力（`in`）と集約（`o`）が混在しないよう、できる限り集約に寄せる**のがおすすめです。混ぜると「保存に成功した内容」と「画面に出る内容」がずれる事故が起きやすくなります。"
 }
@@ -1987,7 +1987,7 @@ id: toolu_011HDmNgWf4szxjSWiCuisKd
 tool_result
 id: toolu_011HDmNgWf4szxjSWiCuisKd
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2000,7 +2000,7 @@ tool_use Read
 id: toolu_01KBJyE61CRKLoGN5oGmqkuj
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "offset": 210,
   "limit": 25
 }
@@ -2045,7 +2045,7 @@ id: toolu_01Vwx8eqyGTiYgeHKaqbJs8m
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "### 落とし穴\n\n私が一度ハマったのは、**リードモデルの更新失敗で書き込みごとロールバックする**ケースです。リードモデル側の制約違反（たとえば `customer_name` の NOT NULL）で書き込み自体が落ちると、ドメインの整合性とは無関係な理由で業務処理が止まります。\n\n対策として、リードモデル側のスキーマは**できるだけ緩く**しておきます。NOT NULL や UNIQUE は最低限に絞り、補助的なインデックスは後から張る、というスタンスです。",
   "new_string": "### 落とし穴\n\n私がハマったのは、**リードモデルの更新失敗で書き込みごとロールバックする**ケースです。具体的には次の状況でした。\n\n- 顧客マスタの整備直後、顧客名を持たない既存レコードが本番に残っていた\n- リードモデル `order_list_view` で `customer_name` を NOT NULL にしていた\n- 既存顧客に対する注文確定リクエストが、リードモデルの NOT NULL 違反でトランザクションごと失敗\n\nドメインの整合性とは無関係な理由で業務処理（注文確定）が止まりました。集約側は注文を作れる状態なのに、リードモデルの都合で書き込み自体が落ちる構図です。\n\n対策として、リードモデル側のスキーマは**できるだけ緩く**しておきます。NOT NULL や UNIQUE は最低限に絞り、補助的なインデックスは後から張る、というスタンスです。"
 }
@@ -2056,7 +2056,7 @@ id: toolu_01Vwx8eqyGTiYgeHKaqbJs8m
 tool_result
 id: toolu_01Vwx8eqyGTiYgeHKaqbJs8m
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2069,7 +2069,7 @@ tool_use Read
 id: toolu_01WyimXhMtnFKaJELzPQk9Q8
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "offset": 240,
   "limit": 85
 }
@@ -2147,7 +2147,7 @@ id: toolu_018WCw1hjsfXwZ3EcFRaQiub
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "ポイントは「集約とoutboxを同じトランザクションで書き、別プロセスが outbox を読み出してリードモデルを更新する」点です。これでブローカーや別DBへの発行は**at-least-onceに退化**しますが、書き込みDBの一貫性は保てます。",
   "new_string": "ポイントは「集約とoutboxを同じトランザクションで書き、別プロセスが outbox を読み出してリードモデルを更新する」点です。これで書き込みDBの整合性（書き込みとイベント記録のアトミック性）は守られ、リードモデル更新は**at-least-onceセマンティクスに緩和される**形になります。exactly-onceは諦め、その代わり整合性とリトライ可能性を取る、というトレードオフです。"
 }
@@ -2158,7 +2158,7 @@ id: toolu_018WCw1hjsfXwZ3EcFRaQiub
 tool_result
 id: toolu_018WCw1hjsfXwZ3EcFRaQiub
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2167,7 +2167,7 @@ tool_use Read
 id: toolu_01G6J9wMTcTHKMvSxpwX7q13
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "offset": 320,
   "limit": 50
 }
@@ -2237,7 +2237,7 @@ id: toolu_016uUWp2nTUEuu3k5ZihmYTB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "イベントを跨いだ順序保証が必要なら、`aggregate_id` 単位でシリアライズします（同じ集約のイベントは順序通り処理する）。グローバル順序は通常不要で、要件としても重すぎることが多いです。",
   "new_string": "イベント間の順序保証が必要なら、`aggregate_id` 単位でシリアライズします（同じ集約のイベントは順序通りに処理します）。グローバル順序が必要かどうかは業務によります。金融の取引履歴や監査ログのように「全体で時系列を保証したい」要件があるなら別途設計が必要です。私が扱ってきた範囲（注文・予約系）では集約単位の順序で足りるケースがほとんどでした。"
 }
@@ -2248,7 +2248,7 @@ id: toolu_016uUWp2nTUEuu3k5ZihmYTB
 tool_result
 id: toolu_016uUWp2nTUEuu3k5ZihmYTB
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2258,7 +2258,7 @@ id: toolu_016KiHivsTFoNh5YpRChus3z
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "Projector は**冪等**に書く必要があります。`Upsert` を使うのは「同じイベントが2回流れても結果が変わらない」性質を担保するためです。at-least-onceで配信される以上、重複処理は前提です。\n\n### 再構築可能性\n\n戦略Bの強みは「イベントを残しておけば、リードモデルをいつでも作り直せる」点です。リードモデルのスキーマを変更したいときも、新しいスキーマで全イベントを再生すれば移行できます。リードモデルをキャッシュとして扱える、と言い換えてもよいです。",
   "new_string": "Projector は**冪等**に書く必要があります。at-least-onceで配信される以上、重複処理は前提です。\n\n`Upsert` は「同じイベントが2回流れても同じ結果になる」ことを保証する一手段ですが、Upsertだけでは不十分なケースがある点に注意してください。たとえば次のような場合です。\n\n- **状態遷移系イベントが順不同で届く**: `OrderPlaced` → `OrderShipped` → `OrderDelivered` のような遷移列で、後続イベントが先に到着したあとに前のイベントが処理されると、単純な Upsert ではステータスが巻き戻ります\n- **計算系イベントの二重適用**: ポイント加算のような累積処理では Upsert そのものが使えず、`processed_at` または `event_id` をリードテーブル側に持って二重適用を弾く必要があります\n\n対策は2つで、本記事では順序保証側（前述の `aggregate_id` 単位シリアライズ）を採用しています。さらに堅くしたい場合は、リードテーブルに `last_event_id` を持たせて「処理済みIDより小さいイベントは無視する」ガードを追加します。\n\nつまり「**Upsertは冪等性の十分条件ではなく、Upsert + 順序保証 or イベントIDのガード**」で初めて安全になります。\n\n### 再構築可能性\n\n戦略Bの強みは「イベントを残しておけば、リードモデルをいつでも作り直せる」点です。リードモデルのスキーマを変更したいときも、新しいスキーマで全イベントを再生すれば移行できます。**Read Model is a cache** という言い方は Greg Young が CQRS Documents の \"The Read Side\" 節で示している考え方で、リードモデルをキャッシュとして扱えることがこの戦略のうまみです。"
 }
@@ -2269,7 +2269,7 @@ id: toolu_016KiHivsTFoNh5YpRChus3z
 tool_result
 id: toolu_016KiHivsTFoNh5YpRChus3z
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2282,7 +2282,7 @@ tool_use Read
 id: toolu_017MZh2BAHWfXwgJ4NfPNJMN
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "offset": 390,
   "limit": 75
 }
@@ -2370,7 +2370,7 @@ id: toolu_01PHZqChnWsKJhk298ARzuBh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "### 手2: バージョン番号 / ETagでスタール検知\n\nリードモデルにバージョン番号を持たせ、書き込みレスポンスに「期待バージョン」を返します。クライアントは次回読み取り時に期待バージョン未満の応答を**スタール**として扱い、リトライします。\n\n```go\n// 書き込みレスポンス\ntype PlaceOrderResponse struct {\n    OrderID         string `json:\"order_id\"`\n    ExpectedVersion int64  `json:\"expected_version\"` // ← この値以上が見えるはず\n}\n\n// 読み取りリクエスト\n// GET /orders?since_version=42\n```\n\nサーバー側で「現在のリードモデルバージョン < since_version なら 202 を返す」といった実装にしておけば、クライアントは数百ms後にリトライするだけで済みます。",
   "new_string": "### 手2: バージョン番号でスタール検知\n\nリードモデルにバージョン番号を持たせ、書き込みレスポンスに「この値以上が見えるはず」という期待バージョンを返します。クライアントは次回読み取り時に期待バージョン未満の応答を**スタール**として扱い、リトライします。\n\nバージョン番号の生成は、集約ごとの単調増加IDが扱いやすいです。Outbox の `id` 列（BIGSERIAL）をそのままリードテーブルの `version` に転記するのが一番簡単で、Projector が自然に「最後に処理した outbox.id」をバージョンとして書き込めます。\n\n```sql\nCREATE TABLE order_list_view (\n    order_id      TEXT PRIMARY KEY,\n    customer_name TEXT,\n    total_amount  BIGINT,\n    status        TEXT,\n    placed_at     TIMESTAMPTZ,\n    version       BIGINT NOT NULL  -- ← outbox.id を転記\n);\n```\n\n書き込みレスポンスと読み取りリクエストはこんなイメージです。\n\n```go\n// 書き込みレスポンス: outboxにINSERTした最新IDを返す\ntype PlaceOrderResponse struct {\n    OrderID         string `json:\"order_id\"`\n    ExpectedVersion int64  `json:\"expected_version\"` // ← この値以上が見えるはず\n}\n\n// 読み取りリクエスト\n// GET /orders?since_version=42\n\n// QueryService側: 集約単位の最大バージョンが since_version 未満なら 202\nfunc (s *OrderQueryService) FindAll(ctx context.Context, sinceVersion int64) (Result, error) {\n    var maxVersion int64\n    _ = s.db.QueryRowContext(ctx,\n        `SELECT COALESCE(MAX(version), 0) FROM order_list_view`,\n    ).Scan(&maxVersion)\n    if maxVersion < sinceVersion {\n        return Result{Stale: true}, nil\n    }\n    // ... 通常の取得\n}\n```\n\nETagを使う場合は、`ExpectedVersion` をそのまま `ETag` ヘッダに載せ、クライアントが `If-None-Match` で送り返す形になります。仕組みはバージョン番号と同じで、HTTPヘッダに乗せるかボディに乗せるかの違いです。本記事ではバージョン番号ベースで例示しています。\n\nクライアントのリトライ間隔は、システムの平均反映遅延に合わせて決めます。私が運用していた範囲では outbox→Projector のラグは中央値で 200ms 前後、95パーセンタイルで 1〜2 秒でした。**まず計測してから決める**のが基本で、固定値の例示は鵜呑みにしないでください。"
 }
@@ -2381,7 +2381,7 @@ id: toolu_01PHZqChnWsKJhk298ARzuBh
 tool_result
 id: toolu_01PHZqChnWsKJhk298ARzuBh
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2390,7 +2390,7 @@ tool_use Read
 id: toolu_01T1ixdoVy5Sx6LxJ6ZVwDQ2
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "offset": 485,
   "limit": 40
 }
@@ -2450,7 +2450,7 @@ id: toolu_01HP1UNkroCzT68Te4f4eR8t
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "```go\nfunc (uc *PlaceOrderUseCase) Execute(ctx context.Context, in PlaceOrderInput) error {\n    return uc.txRunner.Run(ctx, func(ctx context.Context) error {\n        o, err := order.Place(in.CustomerID, in.Items)\n        if err != nil {\n            return err\n        }\n        if err := uc.orderRepo.Save(ctx, o); err != nil {\n            return err\n        }\n        if err := uc.outbox.Append(ctx, o.PullEvents()); err != nil {\n            return err\n        }\n        // 自分の注文一覧だけは同期で更新する\n        return uc.myOrdersView.Upsert(ctx, toMyOrderRow(o))\n    })\n}\n```\n\nこれで「自分のページに戻ったら必ず自分の注文は見える」というUXは保ちながら、組織全体に見える集計ビューは結果整合性に任せられます。",
   "new_string": "```go\nfunc (uc *PlaceOrderUseCase) Execute(ctx context.Context, in PlaceOrderInput) error {\n    // 注意: TxRunner.Run のクロージャ内では同一トランザクションが ctx に紐づきます。\n    // orderRepo.Save / outbox.Append / myOrdersView.Upsert はすべてこの ctx を受け取り、\n    // 同じトランザクションでコミットされる前提です。\n    // ネストした txRunner.Run を内側で呼び出すとサブトランザクションになるか\n    // 既存トランザクションを引き継ぐかは実装に依存するので、本記事ではネストしません。\n    return uc.txRunner.Run(ctx, func(ctx context.Context) error {\n        o, err := order.Place(in.CustomerID, in.Items)\n        if err != nil {\n            return err\n        }\n        if err := uc.orderRepo.Save(ctx, o); err != nil {\n            return err\n        }\n        if err := uc.outbox.Append(ctx, o.PullEvents()); err != nil {\n            return err\n        }\n        // 自分の注文一覧だけは同期で更新する\n        return uc.myOrdersView.Upsert(ctx, toMyOrderRow(o))\n    })\n}\n```\n\nこれで「自分のページに戻ったら必ず自分の注文は見える」というUXを保ちながら、組織全体に見える集計ビューは結果整合性に任せられます。"
 }
@@ -2461,7 +2461,7 @@ id: toolu_01HP1UNkroCzT68Te4f4eR8t
 tool_result
 id: toolu_01HP1UNkroCzT68Te4f4eR8t
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2474,7 +2474,7 @@ tool_use Read
 id: toolu_01UwsgB9CgLT2gAXJoAhNMe2
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "offset": 515,
   "limit": 90
 }
@@ -2560,7 +2560,7 @@ id: toolu_01U4kxZqo77yXFbExgV1T3ds
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "### 画面・APIごとに用意する\n\nリードモデルは**View per Use Case**で設計します。「注文の一覧画面用」「注文の詳細画面用」「ダッシュボード用」をそれぞれ別のテーブルやビューにします。汎用テーブルを作って画面ごとに JOIN すると、CQRSのうまみが消えます。",
   "new_string": "### 画面・APIごとに用意する\n\nリードモデルは画面・API単位で個別に持ちます。本記事ではこの方針を便宜的に「**View per Use Case**」と呼びますが、これは Greg Young の CQRS 解説でしばしば登場する **Read Model per View** や **Screen-driven design** の発想を、本記事用に言い換えたものです。「注文の一覧画面用」「注文の詳細画面用」「ダッシュボード用」をそれぞれ別のテーブルやビューにします。汎用テーブルを作って画面ごとに JOIN すると、CQRSのうまみが消えます。"
 }
@@ -2571,7 +2571,7 @@ id: toolu_01U4kxZqo77yXFbExgV1T3ds
 tool_result
 id: toolu_01U4kxZqo77yXFbExgV1T3ds
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2581,7 +2581,7 @@ id: toolu_01F77LAGFRhhnuXZtnunpdWR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "## アンチパターン\n\n私が踏んだもの、見たことのあるものを4つ挙げます。\n\n### アンチパターン1: リードモデルにビジネスルールを入れる\n\n「ステータスが `placed` かつ `total_amount >= 10000` なら 'priority' を立てる」といった計算をリードモデル側で書くと、ビジネスルールが2箇所に増えます。書き込みモデル側で評価し、結果をイベントに乗せてリードモデルへ渡すのが筋です。\n\n### アンチパターン2: リードモデルをドメインモデルにする\n\nリードモデルを生のまま UseCase や Domain Service に渡し、そこから判断を生やすパターンです。リードモデルは表示用の射影なので、不変条件やバージョンを持ちません。**ビジネス判断は集約から**、というルールを守ります。\n\n### アンチパターン3: リードモデルのために集約を分割する\n\n「この画面の表示が遅いから集約を分けたい」と言い出すと、書き込みモデルがリードモデルに引きずられて壊れます。表示の都合は**リードモデル側で吸収**します。集約境界はあくまでビジネス不変条件で決めます。\n\n### アンチパターン4: プロジェクションでN+1する\n\nProjectorがイベントを受けて「関連データを取りに行く」実装にすると、書き込み件数だけクエリが飛びます。**必要なデータはイベントに乗せて運ぶ**のが原則です。`OrderPlaced` イベントには `customer_name` まで含める、と割り切ります。\n\n```go\n// ❌ Projector内で関連データを取得\nfunc (p *OrderListProjector) Project(ctx context.Context, payload []byte) error {\n    var ev event.OrderPlaced\n    _ = json.Unmarshal(payload, &ev)\n    customer, _ := p.customerRepo.FindByID(ctx, ev.CustomerID) // ← N+1\n    // ...\n}\n\n// ✅ イベントに必要な情報を含めて運ぶ\ntype OrderPlaced struct {\n    OrderID      string\n    CustomerID   string\n    CustomerName string // ← 書き込み時点でスナップショットを取る\n    TotalAmount  int64\n    OccurredAt   time.Time\n}\n```\n\nイベントは「その瞬間のスナップショット」を運びます。あとから関連データを引きにいくのは、結果整合性のレイテンシをさらに広げる原因にもなります。",
   "new_string": "## アンチパターン\n\n4つ挙げます。経験度合いがそれぞれ違うので、各項目の頭に **【経験】** （自分で踏んだ）、**【観察】** （チームメンバーや別プロジェクトで見た）を付けます。\n\n### アンチパターン1【経験】: リードモデルに「業務判断」を入れる\n\n「ステータスが `placed` かつ `total_amount >= 10000` なら **業務上の優先処理対象** として priority フラグを立てる」のような計算をリードモデル側に書くと、ビジネスルールが2箇所に分散します。\n\nここで線引きが大切です。リードモデル側に置いてよいのは**純粋な表示ロジック**（UI都合のラベル付け、ソート用キーの算出、色分け用のカテゴリ判定など）だけです。一方、**業務判断**（請求対象になる/ならない、優先処理キューに入る/入らない、SLAが変わるなど後続処理に影響する判断）は書き込みモデル側で確定させ、結果をイベントに乗せます。\n\n私が踏んだケースは、UIの「優先」バッジを表示するためにリードモデル側で `priority` を計算していたら、いつのまにかその priority を別のバッチジョブが業務判断に流用していた、というものでした。表示ロジックのつもりが業務ロジックに昇格していたわけです。境界が崩れた瞬間にこのアンチパターンは発動します。\n\n### アンチパターン2【観察】: リードモデルをドメインモデルにする\n\nリードモデルを生のまま UseCase や Domain Service に渡し、そこから判断を生やすパターンです。リードモデルは表示用の射影なので、不変条件やバージョンを持ちません。**ビジネス判断は集約から**、というルールを守ります。\n\n### アンチパターン3【観察】: リードモデルのために集約を分割する\n\n「この画面の表示が遅いから集約を分けたい」と言い出すと、書き込みモデルがリードモデルに引きずられて壊れます。表示の都合は**リードモデル側で吸収**します。集約境界はあくまでビジネス不変条件で決めます。\n\n### アンチパターン4【経験】: プロジェクションでうっかりN+1する\n\n「最初のうちは小さくしておこう」とイベントに最小限のIDだけ載せて始めると、Projectorがリードモデルを組み立てるときに**関連データを取りに行く実装になりがち**です。書き込み件数だけクエリが飛び、後から気付いて直すのは大仕事になります。\n\n戦略B採用時の原則は「**必要なデータはイベントに乗せて運ぶ**」です。`OrderPlaced` イベントには `customer_name` まで含める、と割り切ります。実装としては先述の戦略Bのコードと同じ形ですが、ここでは「うっかり下のように書いてしまう罠」を明示しておきます。\n\n```go\n// ❌ Projector内で関連データを取得（典型的なやらかし）\nfunc (p *OrderListProjector) Project(ctx context.Context, payload []byte) error {\n    var ev event.OrderPlaced\n    _ = json.Unmarshal(payload, &ev)\n    customer, _ := p.customerRepo.FindByID(ctx, ev.CustomerID) // ← N+1の温床\n    // ...\n}\n\n// ✅ イベントに必要な情報を含めて運ぶ\ntype OrderPlaced struct {\n    OrderID      string\n    CustomerID   string\n    CustomerName string // ← 書き込み時点でスナップショットを取る\n    TotalAmount  int64\n    OccurredAt   time.Time\n}\n```\n\nイベントは「その瞬間のスナップショット」を運びます。あとから関連データを引きにいくのは、結果整合性のレイテンシをさらに広げる原因にもなります。「イベントは初手で大きめに作る」と覚えておくと、後で削るのは簡単なので楽です。"
 }
@@ -2592,7 +2592,7 @@ id: toolu_01F77LAGFRhhnuXZtnunpdWR
 tool_result
 id: toolu_01F77LAGFRhhnuXZtnunpdWR
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2606,7 +2606,7 @@ id: toolu_01Rut1SZdTvtppKXxnvukfRU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "## まとめ\n\nCQRSのリードモデル設計を、戦略の選び方と実装のポイントから整理しました。\n\n- リードモデルは**書き込みモデルとは別物**として設計します。詰め替えだけでは意味がありません\n- プロジェクション戦略は**A: 同期 / B: 非同期（Outbox） / C: オンデマンド**の3つで、整合性要件と読み取り負荷で選びます\n- 迷ったら**C → A → B**の順で検討します。Bは強力ですが運用コストが高いです\n- 結果整合性は技術で消すのではなく、**UXで吸収**します（オプティミスティック更新、バージョン番号、ハイブリッド）\n- リードモデルは**画面・API単位で非正規化**し、ビジネスルールは持たせません\n\nCQRSシリーズで扱ってきた「コマンド側」「認可」「リードモデル」がこれで一通り揃いました。次は「リードモデルが古くなったときの再構築運用」あたりが論点になります。そこに踏み込むかどうかは、システムの規模次第です。\n\n私自身、最初のプロジェクトでは戦略Cから始めて、画面が増えてきたタイミングで戦略Aに移し、最終的に一部だけ戦略Bという形に落ち着きました。**最初から戦略Bで設計しない**のが、CQRSを実用的に運用するうえでの一番の学びでした。\n\n## 参考文献\n\n- Greg Young, [CQRS Documents](https://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf)\n- Martin Fowler, [CQRS](https://martinfowler.com/bliki/CQRS.html)\n- Chris Richardson, [Pattern: Transactional outbox](https://microservices.io/patterns/data/transactional-outbox.html)\n- Vaughn Vernon, _Implementing Domain-Driven Design_, Chapter 4 \"Architecture\"",
   "new_string": "## まとめ\n\nCQRSのリードモデル設計を、戦略の選び方と実装のポイントから整理しました。\n\n- リードモデルは**書き込みモデルとは別物**として設計します。詰め替えだけでは意味がありません\n- プロジェクション戦略は**A: 同期 / B: 非同期（Outbox） / C: オンデマンド**の3つです。整合性モデル・運用コンポーネント数・初期フェーズ向きの3軸で選びます（表2）\n- 迷ったら**C → A → B**の順で検討します。Bは強力ですが運用コンポーネントが増えます\n- 結果整合性は技術で消すのではなく、**UXで吸収**します（オプティミスティック更新、バージョン番号、ハイブリッド）\n- リードモデルは**画面・API単位で非正規化**し、業務判断は持たせません（表示ロジックは可）\n\n「最初から戦略Bで設計しない」は、表2の「初期フェーズ向き」軸そのままの結論です。整合性と読み取り負荷の評価で戦略Bが第一候補に挙がる場合でも、運用コンポーネント数の増加を後回しにできるなら C → A の順で段階導入したほうが運用が落ち着きます。私のプロジェクト経験でも、戦略Cから始めて、画面が増えてきたタイミングで戦略Aに移し、最終的に一部だけ戦略Bという形に落ち着きました。\n\nなお Martin Fowler の[CQRS](https://martinfowler.com/bliki/CQRS.html) では「多くのシステムにとってCQRSは不必要なリスクと複雑性を加える」と明確に警告されており、本記事の戦略選択フロー（図2）も「結果整合性を許容できるか？」を必ず通る作りにしているのは同じ立場です。\n\nシリーズとしては「コマンド側」「認可」「リードモデル」で書きたい主要トピックは一巡しました。続編としては「**リードモデルの再構築運用**」（イベント再生によるリビルド、ダウンタイムを最小にする切り替え）を検討中ですが、現時点で着手予定は確定していません。書く判断はシステム規模次第のテーマなので、需要が見えたら別記事に切り出すつもりです。\n\n## 参考文献\n\n- Greg Young, [CQRS Documents](https://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf) — 本記事のリードモデルの定義および「Read Model is a cache」の整理は、本書 \"The Read Side\" 節に依拠しています。具体的なページ番号は版差があるため、節名で参照しています\n- Martin Fowler, [CQRS](https://martinfowler.com/bliki/CQRS.html) — 戦略選択フロー（図2）における「結果整合性を許容できるか」の問いの根拠\n- Chris Richardson, [Pattern: Transactional outbox](https://microservices.io/patterns/data/transactional-outbox.html) — 戦略Bの Outbox パターンの仕様\n- Vaughn Vernon, _Implementing Domain-Driven Design_, Chapter 4 \"Architecture\", \"Command-Query Responsibility Segregation, or CQRS\" 節 — クエリ側でドメインモデルを経由しない構造の妥当性"
 }
@@ -2617,7 +2617,7 @@ id: toolu_01Rut1SZdTvtppKXxnvukfRU
 tool_result
 id: toolu_01Rut1SZdTvtppKXxnvukfRU
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2703,7 +2703,7 @@ tool_use Read
 id: toolu_01NUp2ep1ciu5ht9FkqnjDHn
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "offset": 358,
   "limit": 20
 }
@@ -2743,7 +2743,7 @@ id: toolu_01WFGc4Pqr4PVpQuA3CLWcLE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "- **状態遷移系イベントが順不同で届く**: `OrderPlaced` → `OrderShipped` → `OrderDelivered` のような遷移列で、後続イベントが先に到着したあとに前のイベントが処理されると、単純な Upsert ではステータスが巻き戻ります",
   "new_string": "- **状態遷移系イベントが順不同で届く**: `OrderPlaced` → `OrderShipped` → `OrderDelivered` のような遷移列で、後続イベントが先着したあと前のイベントが処理されると、単純な Upsert ではステータスが巻き戻ります"
 }
@@ -2754,7 +2754,7 @@ id: toolu_01WFGc4Pqr4PVpQuA3CLWcLE
 tool_result
 id: toolu_01WFGc4Pqr4PVpQuA3CLWcLE
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2764,7 +2764,7 @@ id: toolu_01Jz2A9CeT2N692T8VbJAbU3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "戦略Bの強みは「イベントを残しておけば、リードモデルをいつでも作り直せる」点です。リードモデルのスキーマを変更したいときも、新しいスキーマで全イベントを再生すれば移行できます。**Read Model is a cache** という言い方は Greg Young が CQRS Documents の \"The Read Side\" 節で示している考え方で、リードモデルをキャッシュとして扱えることがこの戦略のうまみです。",
   "new_string": "戦略Bの強みは「イベントを残しておけば、リードモデルをいつでも作り直せる」点です。リードモデルのスキーマを変更したいときも、新しいスキーマで全イベントを再生すれば移行できます。**Read Model is a cache** という言い方は Greg Young が CQRS Documents の \"The Read Side\" 節で示しています。リードモデルをキャッシュとして扱えることが、この戦略のうまみです。"
 }
@@ -2775,7 +2775,7 @@ id: toolu_01Jz2A9CeT2N692T8VbJAbU3
 tool_result
 id: toolu_01Jz2A9CeT2N692T8VbJAbU3
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2784,7 +2784,7 @@ tool_use Read
 id: toolu_01KiJyAEufjBfX6HKdAz7eVq
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "offset": 437,
   "limit": 15
 }
@@ -2819,7 +2819,7 @@ id: toolu_019mrdq4iGfrP5KodQKYgNKM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "バージョン番号の生成は、集約ごとの単調増加IDが扱いやすいです。Outbox の `id` 列（BIGSERIAL）をそのままリードテーブルの `version` に転記するのが一番簡単で、Projector が自然に「最後に処理した outbox.id」をバージョンとして書き込めます。",
   "new_string": "バージョン番号は、集約ごとの単調増加IDが扱いやすいです。Outbox の `id` 列（BIGSERIAL）をそのままリードテーブルの `version` に転記するのが一番簡単です。Projector が自然に「最後に処理した outbox.id」をバージョンとして書き込めます。"
 }
@@ -2830,7 +2830,7 @@ id: toolu_019mrdq4iGfrP5KodQKYgNKM
 tool_result
 id: toolu_019mrdq4iGfrP5KodQKYgNKM
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2839,7 +2839,7 @@ tool_use Read
 id: toolu_012dZeHKKfB9Z3UDGGeZJHdT
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "offset": 518,
   "limit": 10
 }
@@ -2869,7 +2869,7 @@ id: toolu_01XZqEyQtrYcA5sZuhrJgJHt
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "リードモデルは画面・API単位で個別に持ちます。本記事ではこの方針を便宜的に「**View per Use Case**」と呼びますが、これは Greg Young の CQRS 解説でしばしば登場する **Read Model per View** や **Screen-driven design** の発想を、本記事用に言い換えたものです。「注文の一覧画面用」「注文の詳細画面用」「ダッシュボード用」をそれぞれ別のテーブルやビューにします。汎用テーブルを作って画面ごとに JOIN すると、CQRSのうまみが消えます。",
   "new_string": "リードモデルは画面・API単位で個別に持ちます。本記事ではこの方針を便宜的に「**View per Use Case**」と呼びます。Greg Young の CQRS 解説でしばしば登場する **Read Model per View** や **Screen-driven design** の発想を、本記事用に言い換えたものです。\n\n「注文の一覧画面用」「注文の詳細画面用」「ダッシュボード用」をそれぞれ別のテーブルやビューにします。汎用テーブルを作って画面ごとに JOIN すると、CQRSのうまみが消えます。"
 }
@@ -2880,7 +2880,7 @@ id: toolu_01XZqEyQtrYcA5sZuhrJgJHt
 tool_result
 id: toolu_01XZqEyQtrYcA5sZuhrJgJHt
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2889,7 +2889,7 @@ tool_use Read
 id: toolu_014MyfxJavcDQ9TUwhc7KuAF
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "offset": 545,
   "limit": 30
 }
@@ -2939,7 +2939,7 @@ id: toolu_018Uu5LphNkHm9d7tt1d5GZr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "「ステータスが `placed` かつ `total_amount >= 10000` なら **業務上の優先処理対象** として priority フラグを立てる」のような計算をリードモデル側に書くと、ビジネスルールが2箇所に分散します。\n\nここで線引きが大切です。リードモデル側に置いてよいのは**純粋な表示ロジック**（UI都合のラベル付け、ソート用キーの算出、色分け用のカテゴリ判定など）だけです。一方、**業務判断**（請求対象になる/ならない、優先処理キューに入る/入らない、SLAが変わるなど後続処理に影響する判断）は書き込みモデル側で確定させ、結果をイベントに乗せます。\n\n私が踏んだケースは、UIの「優先」バッジを表示するためにリードモデル側で `priority` を計算していたら、いつのまにかその priority を別のバッチジョブが業務判断に流用していた、というものでした。表示ロジックのつもりが業務ロジックに昇格していたわけです。境界が崩れた瞬間にこのアンチパターンは発動します。",
   "new_string": "「ステータスが `placed` かつ `total_amount >= 10000` なら **業務上の優先処理対象** として priority フラグを立てる」のような計算をリードモデル側に書くと、ビジネスルールが2箇所に分散します。\n\nここで線引きが大切です。リードモデル側に置いてよいのは**純粋な表示ロジック**だけです（UI都合のラベル付け、ソート用キーの算出、色分け用のカテゴリ判定など）。一方、**業務判断**は書き込みモデル側で確定させ、結果をイベントに乗せます。請求対象になる/ならない、優先処理キューに入る/入らない、SLAが変わる、といった後続処理に影響する判断のことです。\n\n私が踏んだケースは、UIの「優先」バッジを表示するためにリードモデル側で `priority` を計算していたら、いつのまにかその priority を別のバッチジョブが業務判断に流用していた、というものでした。表示ロジックのつもりが業務ロジックに昇格していたわけです。境界が崩れた瞬間にこのアンチパターンは発動します。"
 }
@@ -2950,7 +2950,7 @@ id: toolu_018Uu5LphNkHm9d7tt1d5GZr
 tool_result
 id: toolu_018Uu5LphNkHm9d7tt1d5GZr
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2960,7 +2960,7 @@ id: toolu_012DEQkomYSLztKHLwUotaWT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "「最初のうちは小さくしておこう」とイベントに最小限のIDだけ載せて始めると、Projectorがリードモデルを組み立てるときに**関連データを取りに行く実装になりがち**です。書き込み件数だけクエリが飛び、後から気付いて直すのは大仕事になります。",
   "new_string": "「最初のうちは小さくしておこう」とイベントに最小限のIDだけ載せて始めると、Projectorがリードモデルを組み立てる時点で**関連データを取りに行く実装になりがち**です。書き込み件数だけクエリが飛び、後から気付いて直すのは大仕事になります。"
 }
@@ -2971,7 +2971,7 @@ id: toolu_012DEQkomYSLztKHLwUotaWT
 tool_result
 id: toolu_012DEQkomYSLztKHLwUotaWT
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2980,7 +2980,7 @@ tool_use Read
 id: toolu_01CdxLiNaoHyfmfXH4eAfk2Z
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "offset": 596,
   "limit": 25
 }
@@ -3020,7 +3020,7 @@ id: toolu_01WjuWUqY8U69HkH938cYvXJ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "「最初から戦略Bで設計しない」は、表2の「初期フェーズ向き」軸そのままの結論です。整合性と読み取り負荷の評価で戦略Bが第一候補に挙がる場合でも、運用コンポーネント数の増加を後回しにできるなら C → A の順で段階導入したほうが運用が落ち着きます。私のプロジェクト経験でも、戦略Cから始めて、画面が増えてきたタイミングで戦略Aに移し、最終的に一部だけ戦略Bという形に落ち着きました。\n\nなお Martin Fowler の[CQRS](https://martinfowler.com/bliki/CQRS.html) では「多くのシステムにとってCQRSは不必要なリスクと複雑性を加える」と明確に警告されており、本記事の戦略選択フロー（図2）も「結果整合性を許容できるか？」を必ず通る作りにしているのは同じ立場です。\n\nシリーズとしては「コマンド側」「認可」「リードモデル」で書きたい主要トピックは一巡しました。続編としては「**リードモデルの再構築運用**」（イベント再生によるリビルド、ダウンタイムを最小にする切り替え）を検討中ですが、現時点で着手予定は確定していません。書く判断はシステム規模次第のテーマなので、需要が見えたら別記事に切り出すつもりです。\n\n## 参考文献\n\n- Greg Young, [CQRS Documents](https://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf) — 本記事のリードモデルの定義および「Read Model is a cache」の整理は、本書 \"The Read Side\" 節に依拠しています。具体的なページ番号は版差があるため、節名で参照しています\n- Martin Fowler, [CQRS](https://martinfowler.com/bliki/CQRS.html) — 戦略選択フロー（図2）における「結果整合性を許容できるか」の問いの根拠\n- Chris Richardson, [Pattern: Transactional outbox](https://microservices.io/patterns/data/transactional-outbox.html) — 戦略Bの Outbox パターンの仕様\n- Vaughn Vernon, _Implementing Domain-Driven Design_, Chapter 4 \"Architecture\", \"Command-Query Responsibility Segregation, or CQRS\" 節 — クエリ側でドメインモデルを経由しない構造の妥当性",
   "new_string": "「最初から戦略Bで設計しない」は、表2の「初期フェーズ向き」軸そのままの結論です。整合性と読み取り負荷の評価で戦略Bが第一候補に挙がる場合でも、運用コンポーネントの増加を後回しにできるなら C → A の順で段階導入したほうが落ち着きます。私自身、戦略Cから始めて、画面が増えてきたタイミングで戦略Aに移し、最終的に一部だけ戦略Bという形になりました。\n\nなお Martin Fowler の[CQRS](https://martinfowler.com/bliki/CQRS.html) では「多くのシステムにとってCQRSは不必要なリスクと複雑性を加える」と明確に警告されています。本記事の戦略選択フロー（図2）が「結果整合性を許容できるか」を必ず通る作りなのも、同じ立場を取っているからです。\n\nシリーズとしては「コマンド側」「認可」「リードモデル」で書きたい主要トピックは一巡しました。続編候補は「**リードモデルの再構築運用**」（イベント再生によるリビルド、ダウンタイム最小化）です。現時点で着手予定は未確定で、システム規模次第のテーマなので需要が見えたら切り出します。\n\n## 参考文献\n\n- Greg Young, [CQRS Documents](https://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf) — 本記事のリードモデルの定義、および「Read Model is a cache」の整理は本書 \"The Read Side\" 節に依拠します。ページ番号は版差があるため節名で参照しています\n- Martin Fowler, [CQRS](https://martinfowler.com/bliki/CQRS.html) — 戦略選択フロー（図2）の「結果整合性を許容できるか」の問いの根拠\n- Chris Richardson, [Pattern: Transactional outbox](https://microservices.io/patterns/data/transactional-outbox.html) — 戦略Bの Outbox パターンの仕様\n- Vaughn Vernon, _Implementing Domain-Driven Design_, Chapter 4 \"Architecture\" の \"Command-Query Responsibility Segregation, or CQRS\" 節 — クエリ側でドメインモデルを経由しない構造の妥当性"
 }
@@ -3031,7 +3031,7 @@ id: toolu_01WjuWUqY8U69HkH938cYvXJ
 tool_result
 id: toolu_01WjuWUqY8U69HkH938cYvXJ
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3109,7 +3109,7 @@ id: toolu_013EgNEXTiwcjTNgbizsKHAp
 tool_result
 id: toolu_013EgNEXTiwcjTNgbizsKHAp
 ```
-/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md
+/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md
    65:1472   error  Line 65 sentence length(107) exceeds the maximum sentence length of 100.
 Over 7 characters                      ja-technical-writing/sentence-length
   203:172    error  一文に二回以上利用されている助詞 "が" がみつかりました。
@@ -3156,7 +3156,7 @@ tool_use Read
 id: toolu_01V5NQLJb1m8oszvj3evJemR
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "offset": 63,
   "limit": 5
 }
@@ -3181,7 +3181,7 @@ id: toolu_01HLnSKCXvvJyrMxajHZCGct
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "本文中の「経験則」「判断基準」とした記述は、私が関わったプロジェクト数（注文・予約系を中心に4〜5件、いずれもチーム規模10名以下、トランザクション量はピーク数十req/sec程度）を母集団とした主観的なものです。金融・大規模分散など領域が大きく異なる場合は、そのまま当てはまらないことがあります。",
   "new_string": "本文中の「経験則」「判断基準」は、私が関わったプロジェクトを母集団とした主観です。母集団は注文・予約系を中心に4〜5件、チーム規模10名以下、トランザクション量はピーク数十req/sec程度です。金融・大規模分散など領域が大きく異なる場合は、そのまま当てはまらないことがあります。"
 }
@@ -3192,7 +3192,7 @@ id: toolu_01HLnSKCXvvJyrMxajHZCGct
 tool_result
 id: toolu_01HLnSKCXvvJyrMxajHZCGct
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3201,7 +3201,7 @@ tool_use Read
 id: toolu_01XHHZcpigX4F2PMA3jJ4pVQ
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "offset": 200,
   "limit": 10
 }
@@ -3231,7 +3231,7 @@ id: toolu_015wCVkKnkUg3KURxqiMKaoK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "集約は `order.Place` の時点で顧客名のスナップショットを内部に保持しており、`CustomerSnapshotName()` で取り出します。**リードモデルに詰める値は、入力（`in`）と集約（`o`）が混在しないよう、できる限り集約に寄せる**のがおすすめです。混ぜると「保存に成功した内容」と「画面に出る内容」がずれる事故が起きやすくなります。",
   "new_string": "集約は `order.Place` の時点で顧客名のスナップショットを内部に保持しており、`CustomerSnapshotName()` で取り出します。**リードモデルに詰める値は、入力（`in`）と集約（`o`）が混在しないよう、できる限り集約に寄せる**のがおすすめです。混ぜると「保存した内容」と「画面に出る内容」がずれる事故の温床になります。"
 }
@@ -3242,7 +3242,7 @@ id: toolu_015wCVkKnkUg3KURxqiMKaoK
 tool_result
 id: toolu_015wCVkKnkUg3KURxqiMKaoK
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3251,7 +3251,7 @@ tool_use Read
 id: toolu_01XyvxSqctaoWcPbAG1izBrS
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "offset": 252,
   "limit": 5
 }
@@ -3276,7 +3276,7 @@ id: toolu_01QpDwWWPx8qWbq2YRBf9sq3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "ポイントは「集約とoutboxを同じトランザクションで書き、別プロセスが outbox を読み出してリードモデルを更新する」点です。これで書き込みDBの整合性（書き込みとイベント記録のアトミック性）は守られ、リードモデル更新は**at-least-onceセマンティクスに緩和される**形になります。exactly-onceは諦め、その代わり整合性とリトライ可能性を取る、というトレードオフです。",
   "new_string": "ポイントは「集約とoutboxを同じトランザクションで書き、別プロセスが outbox を読み出してリードモデルを更新する」点です。これで書き込みDBの整合性（書き込みとイベント記録のアトミック性）は守られます。リードモデル更新側は**at-least-onceセマンティクスに緩和される**形です。exactly-onceは諦め、その代わり整合性とリトライ可能性を取る、というトレードオフになります。"
 }
@@ -3287,7 +3287,7 @@ id: toolu_01QpDwWWPx8qWbq2YRBf9sq3
 tool_result
 id: toolu_01QpDwWWPx8qWbq2YRBf9sq3
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3296,7 +3296,7 @@ tool_use Read
 id: toolu_01NBCaTqA8ApKmXH4HEkHa6N
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "offset": 327,
   "limit": 5
 }
@@ -3321,7 +3321,7 @@ id: toolu_01AEtJ7iVFJWWcaWXSNCBKFz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "イベント間の順序保証が必要なら、`aggregate_id` 単位でシリアライズします（同じ集約のイベントは順序通りに処理します）。グローバル順序が必要かどうかは業務によります。金融の取引履歴や監査ログのように「全体で時系列を保証したい」要件があるなら別途設計が必要です。私が扱ってきた範囲（注文・予約系）では集約単位の順序で足りるケースがほとんどでした。",
   "new_string": "イベント間の順序保証が必要なら、`aggregate_id` 単位でシリアライズします（同じ集約のイベントは順序通りに処理します）。グローバル順序が必要かどうかは業務によります。金融の取引履歴や監査ログのように「全体で時系列を保証したい」要件があれば別途設計が必要です。私が扱ってきた範囲（注文・予約系）では集約単位の順序で足りるケースがほとんどでした。"
 }
@@ -3332,7 +3332,7 @@ id: toolu_01AEtJ7iVFJWWcaWXSNCBKFz
 tool_result
 id: toolu_01AEtJ7iVFJWWcaWXSNCBKFz
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3341,7 +3341,7 @@ tool_use Read
 id: toolu_01824PtHZEjeVULubX77GwQK
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "offset": 361,
   "limit": 8
 }
@@ -3369,7 +3369,7 @@ id: toolu_01KPRjyfsYD7mGJLgC9Xzxoo
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "- **状態遷移系イベントが順不同で届く**: `OrderPlaced` → `OrderShipped` → `OrderDelivered` のような遷移列で、後続イベントが先着したあと前のイベントが処理されると、単純な Upsert ではステータスが巻き戻ります",
   "new_string": "- **状態遷移系イベントが順不同で届く**: `OrderPlaced` → `OrderShipped` → `OrderDelivered` のような遷移列を考えます。後続イベントが先着したあとに前のイベントが処理されると、単純な Upsert ではステータスが巻き戻ります"
 }
@@ -3380,7 +3380,7 @@ id: toolu_01KPRjyfsYD7mGJLgC9Xzxoo
 tool_result
 id: toolu_01KPRjyfsYD7mGJLgC9Xzxoo
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3389,7 +3389,7 @@ tool_use Read
 id: toolu_01GYVMc98d517sNXQ6P1dThh
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "offset": 548,
   "limit": 10
 }
@@ -3419,7 +3419,7 @@ id: toolu_01WW5aRcPMMVMGBf5aHFEEcB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "「ステータスが `placed` かつ `total_amount >= 10000` なら **業務上の優先処理対象** として priority フラグを立てる」のような計算をリードモデル側に書くと、ビジネスルールが2箇所に分散します。\n\nここで線引きが大切です。リードモデル側に置いてよいのは**純粋な表示ロジック**だけです（UI都合のラベル付け、ソート用キーの算出、色分け用のカテゴリ判定など）。一方、**業務判断**は書き込みモデル側で確定させ、結果をイベントに乗せます。請求対象になる/ならない、優先処理キューに入る/入らない、SLAが変わる、といった後続処理に影響する判断のことです。\n\n私が踏んだケースは、UIの「優先」バッジを表示するためにリードモデル側で `priority` を計算していたら、いつのまにかその priority を別のバッチジョブが業務判断に流用していた、というものでした。表示ロジックのつもりが業務ロジックに昇格していたわけです。境界が崩れた瞬間にこのアンチパターンは発動します。",
   "new_string": "リードモデル側に書くと「ビジネスルールが2箇所に分散する」例を考えてみます。`placed` ステータスかつ `total_amount >= 10000` なら **業務上の優先処理対象** として priority フラグを立てる、という計算です。これをリードモデル更新時に書くと、書き込みモデルと両方でルールを持つことになります。\n\nここで線引きが大切です。リードモデル側に置いてよいのは**純粋な表示ロジック**だけです（UI都合のラベル付け、ソート用キーの算出、色分け用のカテゴリ判定など）。一方、**業務判断**は書き込みモデル側で確定させ、結果をイベントに乗せます。請求対象、優先処理キューの対象、SLAの変化など、後続処理に影響する判断はすべてこちらに含まれます。\n\n私が踏んだケースは、UIの「優先」バッジを表示するためにリードモデル側で `priority` を計算していた、という構図でした。いつのまにかその priority を別のバッチジョブが業務判断に流用しており、表示ロジックのつもりが業務ロジックに昇格していたのです。境界が崩れた瞬間にこのアンチパターンは発動します。"
 }
@@ -3430,7 +3430,7 @@ id: toolu_01WW5aRcPMMVMGBf5aHFEEcB
 tool_result
 id: toolu_01WW5aRcPMMVMGBf5aHFEEcB
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3439,7 +3439,7 @@ tool_use Read
 id: toolu_01EhkZac4aW3igP8hgN4pGow
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "offset": 564,
   "limit": 5
 }
@@ -3464,7 +3464,7 @@ id: toolu_017ieEas2JWD8QpqPg2b5Uru
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "「最初のうちは小さくしておこう」とイベントに最小限のIDだけ載せて始めると、Projectorがリードモデルを組み立てる時点で**関連データを取りに行く実装になりがち**です。書き込み件数だけクエリが飛び、後から気付いて直すのは大仕事になります。",
   "new_string": "「最初のうちは小さくしておこう」とイベントに最小限のIDだけ載せて始めると、Projector がリードモデルを組み立てる段階で**関連データを取りに行く実装になりがち**です。書き込み件数だけクエリが飛び、後から気付いて直すのは大仕事になります。"
 }
@@ -3475,7 +3475,7 @@ id: toolu_017ieEas2JWD8QpqPg2b5Uru
 tool_result
 id: toolu_017ieEas2JWD8QpqPg2b5Uru
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3484,7 +3484,7 @@ tool_use Read
 id: toolu_01HS7bxswuqKQ1AxocHynMXN
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "offset": 609,
   "limit": 10
 }
@@ -3511,7 +3511,7 @@ id: toolu_0121ybRYfCfSF4dKgGFtcEKw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "- Vaughn Vernon, _Implementing Domain-Driven Design_, Chapter 4 \"Architecture\" の \"Command-Query Responsibility Segregation, or CQRS\" 節 — クエリ側でドメインモデルを経由しない構造の妥当性",
   "new_string": "- Vaughn Vernon, _Implementing Domain-Driven Design_, Chapter 4 \"Architecture\" — クエリ側がドメインモデルを経由しない構造の妥当性。とくに同章内の \"Command-Query Responsibility Segregation, or CQRS\" 節を参照しました"
 }
@@ -3522,7 +3522,7 @@ id: toolu_0121ybRYfCfSF4dKgGFtcEKw
 tool_result
 id: toolu_0121ybRYfCfSF4dKgGFtcEKw
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3541,7 +3541,7 @@ id: toolu_01FZsPkeEeCfNC7q3AwqC1Lu
 tool_result
 id: toolu_01FZsPkeEeCfNC7q3AwqC1Lu
 ```
-/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md
+/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md
   566:80     error  一文に二回以上利用されている助詞 "に" がみつかりました。
 
 次の助詞が連続しているため、文を読みにくくしています。
@@ -3563,7 +3563,7 @@ tool_use Read
 id: toolu_01VyBtL49uGXv6oqke8NiPne
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "offset": 564,
   "limit": 5
 }
@@ -3588,7 +3588,7 @@ id: toolu_01HLfkp92DczLzNk9rrJYrVY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "「最初のうちは小さくしておこう」とイベントに最小限のIDだけ載せて始めると、Projector がリードモデルを組み立てる段階で**関連データを取りに行く実装になりがち**です。書き込み件数だけクエリが飛び、後から気付いて直すのは大仕事になります。",
   "new_string": "「最初のうちは小さくしておこう」と最小限のIDだけイベントに載せて始めると、Projector がリードモデルを組み立てる段階で**関連データを取りに行く実装になりがち**です。書き込み件数だけクエリが飛び、後から気付いて直すのは大仕事になります。"
 }
@@ -3599,7 +3599,7 @@ id: toolu_01HLfkp92DczLzNk9rrJYrVY
 tool_result
 id: toolu_01HLfkp92DczLzNk9rrJYrVY
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3608,7 +3608,7 @@ tool_use Read
 id: toolu_018gJzV1jgssEDX68ifegRLi
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "offset": 613,
   "limit": 3
 }
@@ -3631,7 +3631,7 @@ id: toolu_01SSpc2uCajypoyHiMmXdJSw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "- Vaughn Vernon, _Implementing Domain-Driven Design_, Chapter 4 \"Architecture\" — クエリ側がドメインモデルを経由しない構造の妥当性。とくに同章内の \"Command-Query Responsibility Segregation, or CQRS\" 節を参照しました",
   "new_string": "- Vaughn Vernon, _Implementing Domain-Driven Design_, Chapter 4 \"Architecture\" 内 \"Command-Query Responsibility Segregation, or CQRS\" 節 — クエリ側がドメインモデルを経由しない構造の妥当性"
 }
@@ -3642,7 +3642,7 @@ id: toolu_01SSpc2uCajypoyHiMmXdJSw
 tool_result
 id: toolu_01SSpc2uCajypoyHiMmXdJSw
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3663,7 +3663,7 @@ id: toolu_01SAcHevp3j1uq8eKYG6mxyS
 ```
 ---TEXTLINT---
 
-/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md
+/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md
   566:80     error  一文に二回以上利用されている助詞 "に" がみつかりました。
 
 次の助詞が連続しているため、文を読みにくくしています。
@@ -3691,7 +3691,7 @@ tool_use Read
 id: toolu_015Tq4JwJpWshq4ZAjD5sfsE
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "offset": 564,
   "limit": 5
 }
@@ -3716,7 +3716,7 @@ id: toolu_01XzAjJS45DRhdBdShHQxzeY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "「最初のうちは小さくしておこう」と最小限のIDだけイベントに載せて始めると、Projector がリードモデルを組み立てる段階で**関連データを取りに行く実装になりがち**です。書き込み件数だけクエリが飛び、後から気付いて直すのは大仕事になります。",
   "new_string": "「最初のうちは小さくしておこう」と最小限のIDだけイベントに載せて始めると、Projector がリードモデルを組み立てる段階で**関連データを取得する実装になりがち**です。書き込み件数だけクエリが飛び、後から気付いて直すのは大仕事になります。"
 }
@@ -3727,7 +3727,7 @@ id: toolu_01XzAjJS45DRhdBdShHQxzeY
 tool_result
 id: toolu_01XzAjJS45DRhdBdShHQxzeY
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3736,7 +3736,7 @@ tool_use Read
 id: toolu_01D9sNc39ApG6JakwukeE2DQ
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "offset": 612,
   "limit": 5
 }
@@ -3760,7 +3760,7 @@ id: toolu_01GYMcjkkxzdqfXod5LSYaTD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "- Vaughn Vernon, _Implementing Domain-Driven Design_, Chapter 4 \"Architecture\" 内 \"Command-Query Responsibility Segregation, or CQRS\" 節 — クエリ側がドメインモデルを経由しない構造の妥当性",
   "new_string": "- Vaughn Vernon, _Implementing Domain-Driven Design_, Chapter 4 \"Architecture\", \"Command-Query Responsibility Segregation, or CQRS\" 節（クエリ側がドメインモデルを経由しない構造の妥当性）"
 }
@@ -3771,7 +3771,7 @@ id: toolu_01GYMcjkkxzdqfXod5LSYaTD
 tool_result
 id: toolu_01GYMcjkkxzdqfXod5LSYaTD
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3792,7 +3792,7 @@ id: toolu_015LqhmXufFjmb3v12A5L2h5
 ```
 ---TEXTLINT---
 
-/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md
+/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md
   614:122    error  This sentence exceeds the maximum count of comma. Maximum is 3             ja-technical-writing/max-comma
   614:18814  error  Line 614 sentence length(155) exceeds the maximum sentence length of 100.
 Over 55 characters  ja-technical-writing/sentence-length
@@ -3812,7 +3812,7 @@ tool_use Read
 id: toolu_01QA9jBYAbv9m1XWRzKn2GEe
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "offset": 609,
   "limit": 7
 }
@@ -3839,7 +3839,7 @@ id: toolu_01TRSZg5X537Be8W5Ut5aZ3A
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "- Vaughn Vernon, _Implementing Domain-Driven Design_, Chapter 4 \"Architecture\", \"Command-Query Responsibility Segregation, or CQRS\" 節（クエリ側がドメインモデルを経由しない構造の妥当性）",
   "new_string": "- Vaughn Vernon — _Implementing Domain-Driven Design_ の Chapter 4 \"Architecture\" にある \"Command-Query Responsibility Segregation or CQRS\" 節。クエリ側がドメインモデルを経由しない構造の妥当性"
 }
@@ -3850,7 +3850,7 @@ id: toolu_01TRSZg5X537Be8W5Ut5aZ3A
 tool_result
 id: toolu_01TRSZg5X537Be8W5Ut5aZ3A
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3871,7 +3871,7 @@ id: toolu_01FNoUFyx1v3oesP9E4KpaWW
 ```
 ---TEXTLINT---
 
-/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md
+/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md
   614:18814  error  Line 614 sentence length(134) exceeds the maximum sentence length of 100.
 Over 34 characters  ja-technical-writing/sentence-length
 
@@ -3891,7 +3891,7 @@ id: toolu_01DVjXrD85hCjfB6AU3QiGD6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "- Vaughn Vernon — _Implementing Domain-Driven Design_ の Chapter 4 \"Architecture\" にある \"Command-Query Responsibility Segregation or CQRS\" 節。クエリ側がドメインモデルを経由しない構造の妥当性",
   "new_string": "- Vaughn Vernon — _Implementing Domain-Driven Design_ Chapter 4 \"Architecture\" の CQRS 節（クエリ側がドメインモデルを経由しない構造の妥当性）"
 }
@@ -3902,7 +3902,7 @@ id: toolu_01DVjXrD85hCjfB6AU3QiGD6
 tool_result
 id: toolu_01DVjXrD85hCjfB6AU3QiGD6
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3923,7 +3923,7 @@ id: toolu_01Khn9HnLgr7729oQLf3BPLv
 ```
 ---TEXTLINT---
 
-/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md
+/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md
   614:18814  error  Line 614 sentence length(109) exceeds the maximum sentence length of 100.
 Over 9 characters  ja-technical-writing/sentence-length
 
@@ -3943,7 +3943,7 @@ id: toolu_01T7xp5BLRRzSJfo2faD7xuc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "- Vaughn Vernon — _Implementing Domain-Driven Design_ Chapter 4 \"Architecture\" の CQRS 節（クエリ側がドメインモデルを経由しない構造の妥当性）",
   "new_string": "- Vaughn Vernon — _Implementing Domain-Driven Design_ Chapter 4 \"Architecture\" の CQRS 節。クエリ側がドメインを経由しない構造の妥当性"
 }
@@ -3954,7 +3954,7 @@ id: toolu_01T7xp5BLRRzSJfo2faD7xuc
 tool_result
 id: toolu_01T7xp5BLRRzSJfo2faD7xuc
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4180,7 +4180,7 @@ tool_use Bash
 id: toolu_01NZjTUR6a9EupebcQiuAE65
 ```json
 {
-  "command": "git commit -m \"$(cat <<'EOF'\n📝 docs: add CQRS read model design article draft\n\nAdds a new draft article on CQRS read model design that completes the\nDDD×CQRS series (after the command-side and authorization articles).\nCovers three projection strategies (sync / async via Outbox / on-demand),\neventual consistency UX absorption, and anti-patterns.\n\nPublished as draft (published: false); to be released after final review.\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>\nEOF\n)\" && echo \"---\" && git status",
+  "command": "git commit -m \"$(cat <<'EOF'\n📝 docs: add CQRS read model design article draft\n\nAdds a new draft article on CQRS read model design that completes the\nDDD×CQRS series (after the command-side and authorization articles).\nCovers three projection strategies (sync / async via Outbox / on-demand),\neventual consistency UX absorption, and anti-patterns.\n\nPublished as draft (published: false); to be released after final review.\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\" && echo \"---\" && git status",
   "description": "コミット作成"
 }
 ```

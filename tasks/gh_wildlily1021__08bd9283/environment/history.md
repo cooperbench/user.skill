@@ -75,7 +75,7 @@ Based on my thorough search of the `src/` directory (excluding `rewrite/`), here
 
 ### 1. **"激光链路标准测试设备" - Device Name**
 **Found in 2 files:**
-- `/mnt/d/code/frontend/dongfanghong/src/pages/home/HomePage.vue` (line 4)
+- `/mnt/d/code/frontend/dongfanghong/src/pages/home/<USER>` (line 4)
 - `/mnt/d/code/frontend/dongfanghong/src/components/layout/HeaderBar.vue` (line 8)
 
 **Usage:** This is the application title displayed in the header and home page.
@@ -286,11 +286,11 @@ id: call_b1d7f48db3444c0f88552f55
 tool_result
 id: call_490fafc1aa2c4667b6049849
 ```
-/mnt/d/code/frontend/dongfanghong/src/pages/home/HomePage.vue-2-    <div class="flex flex-col">
-/mnt/d/code/frontend/dongfanghong/src/pages/home/HomePage.vue-3-        <header class="text-center mb-8">
-src/pages/home/HomePage.vue:4:            <h1 class="text-3xl font-semibold text-[#3b82f6] mb-2">激光链路标准测试设备</h1>
-/mnt/d/code/frontend/dongfanghong/src/pages/home/HomePage.vue-5-        </header>
-/mnt/d/code/frontend/dongfanghong/src/pages/home/HomePage.vue-6-    </div>
+/mnt/d/code/frontend/dongfanghong/src/pages/home/<USER>    <div class="flex flex-col">
+/mnt/d/code/frontend/dongfanghong/src/pages/home/<USER>        <header class="text-center mb-8">
+src/pages/home/<USER>:4:            <h1 class="text-3xl font-semibold text-[#3b82f6] mb-2">激光链路标准测试设备</h1>
+/mnt/d/code/frontend/dongfanghong/src/pages/home/<USER>        </header>
+/mnt/d/code/frontend/dongfanghong/src/pages/home/<USER>    </div>
 --
 /mnt/d/code/frontend/dongfanghong/src/components/layout/HeaderBar.vue-6-          <img src="../../assets/icons/logo.svg" alt="RS485" class="h-[20px] w-[20px]" />
 /mnt/d/code/frontend/dongfanghong/src/components/layout/HeaderBar.vue-7-        </div>

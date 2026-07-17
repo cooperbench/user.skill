@@ -93,7 +93,7 @@ tool_use Workflow
 id: toolu_013F5Y4HNyy6ujrkaFJPkUGB
 ```json
 {
-  "script": "export const meta = {\n  name: 'v2-release-preflight',\n  description: 'Pre-flight verification before dispatching the v2.0.0 major release',\n  phases: [\n    { title: 'Verify', detail: 'parallel read-only checks per RELEASING.md' },\n  ],\n}\n\nconst CHECK_SCHEMA = {\n  type: 'object',\n  properties: {\n    pass: { type: 'boolean' },\n    findings: { type: 'array', items: { type: 'string' } },\n    blockers: { type: 'array', items: { type: 'string' }, description: 'Issues that must be resolved before dispatch' },\n  },\n  required: ['pass', 'findings', 'blockers'],\n}\n\nconst SCOPE_SCHEMA = {\n  type: 'object',\n  properties: {\n    commitCount: { type: 'number' },\n    breakingChanges: { type: 'array', items: { type: 'string' } },\n    features: { type: 'array', items: { type: 'string' } },\n    fixes: { type: 'array', items: { type: 'string' } },\n    majorWarranted: { type: 'boolean' },\n    assessment: { type: 'string' },\n  },\n  required: ['commitCount', 'breakingChanges', 'features', 'fixes', 'majorWarranted', 'assessment'],\n}\n\nphase('Verify')\n\nconst [invariants, ciHealth, repoState, scope] = await parallel([\n  () => agent(`You are verifying release-pipeline invariants for the repo at /home/armel/Projects/OSS/bmad-module-skill-forge (GitHub: armelhbobdad/bmad-module-skill-forge) per its docs/_internal/RELEASING.md. Run these READ-ONLY checks and report pass/fail per check:\n\n1. Single-root invariant: \\`grep -l 'id-token: write' .github/workflows/*.yaml .github/workflows/*.yml 2>/dev/null\\` — expected set is exactly docs.yaml and release.yaml.\n2. No v* push trigger in any workflow: \\`grep -A3 […]
+  "script": "export const meta = {\n  name: 'v2-release-preflight',\n  description: 'Pre-flight verification before dispatching the v2.0.0 major release',\n  phases: [\n    { title: 'Verify', detail: 'parallel read-only checks per RELEASING.md' },\n  ],\n}\n\nconst CHECK_SCHEMA = {\n  type: 'object',\n  properties: {\n    pass: { type: 'boolean' },\n    findings: { type: 'array', items: { type: 'string' } },\n    blockers: { type: 'array', items: { type: 'string' }, description: 'Issues that must be resolved before dispatch' },\n  },\n  required: ['pass', 'findings', 'blockers'],\n}\n\nconst SCOPE_SCHEMA = {\n  type: 'object',\n  properties: {\n    commitCount: { type: 'number' },\n    breakingChanges: { type: 'array', items: { type: 'string' } },\n    features: { type: 'array', items: { type: 'string' } },\n    fixes: { type: 'array', items: { type: 'string' } },\n    majorWarranted: { type: 'boolean' },\n    assessment: { type: 'string' },\n  },\n  required: ['commitCount', 'breakingChanges', 'features', 'fixes', 'majorWarranted', 'assessment'],\n}\n\nphase('Verify')\n\nconst [invariants, ciHealth, repoState, scope] = await parallel([\n  () => agent(`You are verifying release-pipeline invariants for the repo at /home/<USER>/Projects/OSS/bmad-module-skill-forge (GitHub: armelhbobdad/bmad-module-skill-forge) per its docs/_internal/RELEASING.md. Run these READ-ONLY checks and report pass/fail per check:\n\n1. Single-root invariant: \\`grep -l 'id-token: write' .github/workflows/*.yaml .github/workflows/*.yml 2>/dev/null\\` — expected set is exactly docs.yaml and release.yaml.\n2. No v* push trigger in any workflow: \\`grep -A3 […]
 
 > TOOL
 
@@ -102,11 +102,11 @@ id: toolu_013F5Y4HNyy6ujrkaFJPkUGB
 ```
 Workflow launched in background. Task ID: w892qa4sy
 Summary: Pre-flight verification before dispatching the v2.0.0 major release
-Transcript dir: /home/armel/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/3ca42849-d777-42b0-b534-83867ba7ff74/subagents/workflows/wf_dedb5249-3af
-Script file: /home/armel/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/3ca42849-d777-42b0-b534-83867ba7ff74/workflows/scripts/v2-release-preflight-wf_dedb5249-3af.js
-(Edit this file with Write/Edit and re-invoke Workflow with {scriptPath: "/home/armel/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/3ca42849-d777-42b0-b534-83867ba7ff74/workflows/scripts/v2-release-preflight-wf_dedb5249-3af.js"} to iterate without resending the script.)
+Transcript dir: /home/<USER>/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/3ca42849-d777-42b0-b534-83867ba7ff74/subagents/workflows/wf_dedb5249-3af
+Script file: /home/<USER>/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/3ca42849-d777-42b0-b534-83867ba7ff74/workflows/scripts/v2-release-preflight-wf_dedb5249-3af.js
+(Edit this file with Write/Edit and re-invoke Workflow with {scriptPath: "/home/<USER>/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/3ca42849-d777-42b0-b534-83867ba7ff74/workflows/scripts/v2-release-preflight-wf_dedb5249-3af.js"} to iterate without resending the script.)
 Run ID: wf_dedb5249-3af
-To resume after editing the script: Workflow({scriptPath: "/home/armel/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/3ca42849-d777-42b0-b534-83867ba7ff74/workflows/scripts/v2-release-preflight-wf_dedb5249-3af.js", resumeFromRunId: "wf_dedb5249-3af"}) — completed agents return cached results.
+To resume after editing the script: Workflow({scriptPath: "/home/<USER>/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/3ca42849-d777-42b0-b534-83867ba7ff74/workflows/scripts/v2-release-preflight-wf_dedb5249-3af.js", resumeFromRunId: "wf_dedb5249-3af"}) — completed agents return cached results.
 
 You will be notified when it completes. Use /workflows to watch live progress.
 ```
@@ -304,7 +304,7 @@ tool_result
 id: toolu_015HN1JnG4hzj8iBRm8dEivo
 ```
 commit e562f4d1f61507830a5b1847bad09e91c609289a
-Author: armel <armelhbobdad@gmail.com>
+Author: armel <<REDACTED_EMAIL>>
 Date:   Tue May 26 19:06:41 2026 +0400
 
     feat: deepwiki pipeline alias + onboard deprecation
@@ -316,7 +316,7 @@ Date:   Tue May 26 19:06:41 2026 +0400
  2 files changed, 15 insertions(+), 2 deletions(-)
 ===========
 commit 68fda095e08f7c5d3c9e851f98877ed5472bb5a6
-Author: armel <armelhbobdad@gmail.com>
+Author: armel <<REDACTED_EMAIL>>
 Date:   Wed May 27 06:08:10 2026 +0400
 
     feat(campaign): onboard removal + v2.0 documentation
@@ -349,7 +349,7 @@ tool_result
 id: toolu_013amJGnKrcwCgDJpiqZYvZN
 ```
 commit 68fda095e08f7c5d3c9e851f98877ed5472bb5a6
-Author: armel <armelhbobdad@gmail.com>
+Author: armel <<REDACTED_EMAIL>>
 Date:   Wed May 27 06:08:10 2026 +0400
 
     feat(campaign): onboard removal + v2.0 documentation

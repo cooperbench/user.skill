@@ -16,7 +16,7 @@ tool_use Bash
 id: toolu_01Sb3oeHTZ15Ry1wSn8cJ7kp
 ```json
 {
-  "command": "ls /Users/hungpq2412/neuralips26/*.sty /Users/hungpq2412/neuralips26/neurips* 2>/dev/null",
+  "command": "ls /home/<USER>/neuralips26/*.sty /home/<USER>/neuralips26/neurips* 2>/dev/null",
   "description": "Find NeurIPS style files"
 }
 ```
@@ -26,8 +26,8 @@ id: toolu_01Sb3oeHTZ15Ry1wSn8cJ7kp
 tool_result
 id: toolu_01Sb3oeHTZ15Ry1wSn8cJ7kp
 ```
-/Users/hungpq2412/neuralips26/neurips_2026.sty
-/Users/hungpq2412/neuralips26/neurips_2026.sty
+/home/<USER>/neuralips26/neurips_2026.sty
+/home/<USER>/neuralips26/neurips_2026.sty
 ```
 
 > TOOL
@@ -36,7 +36,7 @@ tool_use Bash
 id: toolu_01EtA3k6L6Bj5PWxqX5f1TU2
 ```json
 {
-  "command": "grep -nE \"subsubsection|paragraph|subsection\" /Users/hungpq2412/neuralips26/main.tex | head -50",
+  "command": "grep -nE \"subsubsection|paragraph|subsection\" /home/<USER>/neuralips26/main.tex | head -50",
   "description": "Check current sectioning usage in main.tex"
 }
 ```
@@ -72,7 +72,7 @@ tool_use Bash
 id: toolu_01Ky53rAj1AVKxpMFkZWfYsg
 ```json
 {
-  "command": "grep -nE \"subsubsection|paragraph|subsection|secnumdepth|tocdepth|section\" /Users/hungpq2412/neuralips26/neurips_2026.sty | head -40",
+  "command": "grep -nE \"subsubsection|paragraph|subsection|secnumdepth|tocdepth|section\" /home/<USER>/neuralips26/neurips_2026.sty | head -40",
   "description": "Check sectioning in style file"
 }
 ```
@@ -111,7 +111,7 @@ tool_use Bash
 id: toolu_01XYzD8EYWgVQURWPv7zEzdG
 ```json
 {
-  "command": "ls /Users/hungpq2412/neuralips26/ | grep -iE \"instruction|format|guide|author|template\" 2>/dev/null",
+  "command": "ls /home/<USER>/neuralips26/ | grep -iE \"instruction|format|guide|author|template\" 2>/dev/null",
   "description": "Look for NeurIPS author instructions"
 }
 ```
@@ -133,7 +133,7 @@ tool_use Read
 id: toolu_01JZfNAmB5jHjwqPed7qn7sG
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/neurips_2026.sty",
+  "file_path": "/home/<USER>/neuralips26/neurips_2026.sty",
   "limit": 230,
   "offset": 175
 }
@@ -318,7 +318,7 @@ To obtain the actual NeurIPS 2026 formatting guidelines, I'd recommend:
 
 If you have access to the uncompressed formatting document, I'd be happy to analyze it and provide the specific guidance you're seeking about heading levels and sectioning commands.
 
-[Binary content (application/pdf, 151.6KB) also saved to /Users/hungpq2412/.claude/projects/-Users-hungpq2412-neuralips26/eebce0b6-1568-4ebd-a8ec-3737217b1b89/tool-results/webfetch-1777979417060-zrxnc0.pdf]
+[Binary content (application/pdf, 151.6KB) also saved to /home/<USER>/.claude/projects/-Users-hungpq2412-neuralips26/eebce0b6-1568-4ebd-a8ec-3737217b1b89/tool-results/webfetch-1777979417060-zrxnc0.pdf]
 ```
 
 > TOOL
@@ -327,7 +327,7 @@ tool_use Read
 id: toolu_01XUDmGbdcVKgniq5ZEdnUgt
 ```json
 {
-  "file_path": "/Users/hungpq2412/.claude/projects/-Users-hungpq2412-neuralips26/eebce0b6-1568-4ebd-a8ec-3737217b1b89/tool-results/webfetch-1777979417060-zrxnc0.pdf",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hungpq2412-neuralips26/eebce0b6-1568-4ebd-a8ec-3737217b1b89/tool-results/webfetch-1777979417060-zrxnc0.pdf",
   "pages": "3-7"
 }
 ```
@@ -337,7 +337,7 @@ id: toolu_01XUDmGbdcVKgniq5ZEdnUgt
 tool_result
 id: toolu_01XUDmGbdcVKgniq5ZEdnUgt
 ```
-PDF pages extracted: 3 page(s) from /Users/hungpq2412/.claude/projects/-Users-hungpq2412-neuralips26/eebce0b6-1568-4ebd-a8ec-3737217b1b89/tool-results/webfetch-1777979417060-zrxnc0.pdf (151.6KB)
+PDF pages extracted: 3 page(s) from /home/<USER>/.claude/projects/-Users-hungpq2412-neuralips26/eebce0b6-1568-4ebd-a8ec-3737217b1b89/tool-results/webfetch-1777979417060-zrxnc0.pdf (151.6KB)
 ```
 
 > TOOL
@@ -346,7 +346,7 @@ tool_use Read
 id: toolu_0193dzXpeN2j2k7iYdfSSJQ6
 ```json
 {
-  "file_path": "/Users/hungpq2412/.claude/projects/-Users-hungpq2412-neuralips26/eebce0b6-1568-4ebd-a8ec-3737217b1b89/tool-results/webfetch-1777979417060-zrxnc0.pdf",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hungpq2412-neuralips26/eebce0b6-1568-4ebd-a8ec-3737217b1b89/tool-results/webfetch-1777979417060-zrxnc0.pdf",
   "pages": "1-2"
 }
 ```
@@ -356,7 +356,7 @@ id: toolu_0193dzXpeN2j2k7iYdfSSJQ6
 tool_result
 id: toolu_0193dzXpeN2j2k7iYdfSSJQ6
 ```
-PDF pages extracted: 2 page(s) from /Users/hungpq2412/.claude/projects/-Users-hungpq2412-neuralips26/eebce0b6-1568-4ebd-a8ec-3737217b1b89/tool-results/webfetch-1777979417060-zrxnc0.pdf (151.6KB)
+PDF pages extracted: 2 page(s) from /home/<USER>/.claude/projects/-Users-hungpq2412-neuralips26/eebce0b6-1568-4ebd-a8ec-3737217b1b89/tool-results/webfetch-1777979417060-zrxnc0.pdf (151.6KB)
 ```
 
 > AGENT

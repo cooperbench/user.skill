@@ -177,7 +177,7 @@ tool_use Read
 id: toolu_01DKv4xjA4LuyRDbL2G67XJS
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsalog/server/src/db/seed.ts",
+  "file_path": "/home/<USER>/bosarsalog/server/src/db/seed.ts",
   "offset": 270,
   "limit": 40
 }
@@ -298,7 +298,7 @@ id: toolu_015jfxReQn2LuSbBCDhN8uPQ
   "-i": true,
   "output_mode": "content",
   "-n": true,
-  "path": "/home/achildrenmile/bosarsalog/server/src/db/schema.ts"
+  "path": "/home/<USER>/bosarsalog/server/src/db/schema.ts"
 }
 ```
 
@@ -321,7 +321,7 @@ tool_use Read
 id: toolu_01SAYVzkpbxQUGkzj2Hs4iY1
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsalog/server/src/db/schema.ts",
+  "file_path": "/home/<USER>/bosarsalog/server/src/db/schema.ts",
   "offset": 55,
   "limit": 20
 }
@@ -368,7 +368,7 @@ id: toolu_013bRdFTGoo7gDfbipS9PxNt
   "-i": true,
   "output_mode": "content",
   "-n": true,
-  "path": "/home/achildrenmile/bosarsalog/client"
+  "path": "/home/<USER>/bosarsalog/client"
 }
 ```
 
@@ -389,7 +389,7 @@ id: toolu_018avDJ2XE1enWCcdHsbnrot
   "pattern": "abbreviation|einstieg|suffix",
   "output_mode": "content",
   "-n": true,
-  "path": "/home/achildrenmile/bosarsalog/client/src/pages",
+  "path": "/home/<USER>/bosarsalog/client/src/pages",
   "head_limit": 40
 }
 ```
@@ -415,7 +415,7 @@ id: toolu_01XkQpfT6gVwqDZKEPidSeYb
   "-i": true,
   "output_mode": "content",
   "-n": true,
-  "path": "/home/achildrenmile/bosarsalog/client/src"
+  "path": "/home/<USER>/bosarsalog/client/src"
 }
 ```
 
@@ -471,7 +471,7 @@ id: toolu_0186kTxSk9ngLo1PdHrFbAsN
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsalog/server/src/db/seed.ts",
+  "file_path": "/home/<USER>/bosarsalog/server/src/db/seed.ts",
   "old_string": "  ['Nebelstein 2m', 'Nebelstein', '2m', 'OE3XNR', 145.6375, -0.6, 88.5, null, 'repeater', 0, ++sortIdx, '03'],\n  ['Nebelstein 70cm', 'Nebelstein', '70cm', 'OE3XNR', 438.6125, -7.6, 88.5, null, 'repeater', 1, ++sortIdx, '03'],",
   "new_string": "  ['Nebelstein 2m', 'Nebelstein', '2m', 'OE3XNR', 145.6375, -0.6, 88.5, null, 'repeater', 1, ++sortIdx, '03'],\n  ['Nebelstein 70cm', 'Nebelstein', '70cm', 'OE3XNR', 438.6125, -7.6, 88.5, null, 'repeater', 0, ++sortIdx, '03'],"
 }
@@ -501,7 +501,7 @@ tool_use Bash
 id: toolu_01JDWb7ZnZYmZy2R8Z1ftiTJ
 ```json
 {
-  "command": "cp /home/achildrenmile/bosarsalog/server/src/db/seed.ts /home/achildrenmile/bosarsalog/server/src/db/seed.ts.bak",
+  "command": "cp /home/<USER>/bosarsalog/server/src/db/seed.ts /home/<USER>/bosarsalog/server/src/db/seed.ts.bak",
   "description": "Backup seed.ts"
 }
 ```
@@ -525,7 +525,7 @@ id: toolu_01DEXDwLEeqRBmBRsgF3Re3K
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsalog/server/src/db/seed.ts",
+  "file_path": "/home/<USER>/bosarsalog/server/src/db/seed.ts",
   "old_string": "  ['Nebelstein 2m', 'Nebelstein', '2m', 'OE3XNR', 145.6375, -0.6, 88.5, null, 'repeater', 0, ++sortIdx, '03'],\n  ['Nebelstein 70cm', 'Nebelstein', '70cm', 'OE3XNR', 438.6125, -7.6, 88.5, null, 'repeater', 1, ++sortIdx, '03'],",
   "new_string": "  ['Nebelstein 2m', 'Nebelstein', '2m', 'OE3XNR', 145.6375, -0.6, 88.5, null, 'repeater', 1, ++sortIdx, '03'],\n  ['Nebelstein 70cm', 'Nebelstein', '70cm', 'OE3XNR', 438.6125, -7.6, 88.5, null, 'repeater', 0, ++sortIdx, '03'],"
 }
@@ -536,7 +536,7 @@ id: toolu_01DEXDwLEeqRBmBRsgF3Re3K
 tool_result
 id: toolu_01DEXDwLEeqRBmBRsgF3Re3K
 ```
-The file /home/achildrenmile/bosarsalog/server/src/db/seed.ts has been updated successfully.
+The file /home/<USER>/bosarsalog/server/src/db/seed.ts has been updated successfully.
 ```
 
 > AGENT

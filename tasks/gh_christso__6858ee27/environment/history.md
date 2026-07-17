@@ -1,6 +1,6 @@
 > SYSTEM
 
-# AGENTS.md instructions for /home/entity/projects/EntityProcess/agentv
+# AGENTS.md instructions for /home/<USER>/projects/EntityProcess/agentv
 
 <INSTRUCTIONS>
 # AgentV Agent Guide
@@ -29,7 +29,7 @@ $coordinator    av-y7eq.1 has the full config contract: .agentv/config.yaml, eva
 
 <skill>
 <name>coordinator</name>
-<path>/home/entity/.agents/skills/coordinator/SKILL.md</path>
+<path>/home/<USER>/.agents/skills/coordinator/SKILL.md</path>
 ---
 name: coordinator
 description: Orchestrate multiple worktree agents. Spawn, monitor, communicate, and merge.
@@ -76,7 +76,7 @@ id: call_ynOxufYWgGrQJZCPBpeSLhFt
 ```json
 {
   "cmd": "git fetch origin",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -89,7 +89,7 @@ id: call_0UCsE7Xd2ysW0Hs7SsyqAPcu
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -101,8 +101,8 @@ tool_use exec_command
 id: call_HMWwgr8SCnW0KIhUJMvIxUsB
 ```json
 {
-  "cmd": "sed -n '1,240p' /home/entity/.agents/skills/coordinator/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,240p' /home/<USER>/.agents/skills/coordinator/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -114,8 +114,8 @@ tool_use exec_command
 id: call_kxRqFEI1jBs6wDnSs70yISWf
 ```json
 {
-  "cmd": "sed -n '1,240p' /home/entity/.codex/plugins/cache/beads-marketplace/beads/1.1.0-rc.2/skills/beads/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,240p' /home/<USER>/.codex/plugins/cache/beads-marketplace/beads/1.1.0-rc.2/skills/beads/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 16000
 }
@@ -214,7 +214,7 @@ description: >
   whenever managing multi-session work, tracking dependencies, or recovering context.
 allowed-tools: "Read,Bash(bd:*)"
 version: "0.60.0"
-author: "Steve Yegge <steve.yegge@gmail.com>"
+author: "Steve Yegge <<REDACTED_EMAIL>>"
 license: "MIT"
 compatible-with: [claude-code, codex]
 tags: [issue-tracking, task-management, multi-session, dependencies]
@@ -255,7 +255,7 @@ id: call_bmr7k9HcHYONJesRWI17xKUm
 ```json
 {
   "cmd": "sed -n '1,260p' .agents/workflow.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 24000
 }
@@ -268,7 +268,7 @@ id: call_um1BeYyFoUYKn04ST4oX9p4V
 ```json
 {
   "cmd": "bd show av-y7eq.1 --long",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -281,7 +281,7 @@ id: call_YosxkUeS7rDU42gPIXG1pHkh
 ```json
 {
   "cmd": "bd show av-y7eq.2 --long",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -294,7 +294,7 @@ id: call_iV8IT1u747gUEST2bL9YfiMa
 ```json
 {
   "cmd": "bd show av-y7eq.3 --long",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -307,7 +307,7 @@ id: call_yRhNiKjhB5QUBvj4KROOAZ9L
 ```json
 {
   "cmd": "bd show av-y7eq.4 --long",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -492,7 +492,7 @@ id: call_8ziELnKmhI593Ei3L0mfjNn2
 ```json
 {
   "cmd": "bd show av-y7eq.5 --long",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -505,7 +505,7 @@ id: call_A2BRhi40TrKUmQAMqsQRoN3z
 ```json
 {
   "cmd": "bd show av-y7eq.6 --long",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -518,7 +518,7 @@ id: call_PL9fdVOHNFKzaDEc0Ci85MQy
 ```json
 {
   "cmd": "bd show av-y7eq.7 --long",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -531,7 +531,7 @@ id: call_L8NuEbCklqzBor6yKVGwSREJ
 ```json
 {
   "cmd": "bd show av-y7eq.8 --long",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -544,7 +544,7 @@ id: call_g7zs5qVbPhTZqhznY8h25hTB
 ```json
 {
   "cmd": "sed -n '1,260p' docs/plans/2026-07-03-agentv-config-contract.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 24000
 }
@@ -557,7 +557,7 @@ id: call_YEBhuPBk44Dyiu2MhDaP0bQl
 ```json
 {
   "cmd": "sed -n '1,280p' docs/plans/2026-07-03-coding-agent-target-runtime-contract.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 26000
 }
@@ -736,7 +736,7 @@ id: call_EIs7egwB2JG619fTHfh1IDcB
 ```json
 {
   "cmd": "git ls-tree -r --name-only origin/main docs/plans | rg '2026-07-03-(agentv-config|coding-agent)'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -749,7 +749,7 @@ id: call_9xpkOWrsvCcjQkMJZcZSCg00
 ```json
 {
   "cmd": "git show origin/main:docs/plans/2026-07-03-agentv-config-contract.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -762,7 +762,7 @@ id: call_lUaY7b0Ijo45fpTTE2lzanYH
 ```json
 {
   "cmd": "git show origin/main:docs/plans/2026-07-03-coding-agent-target-runtime-contract.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -775,7 +775,7 @@ id: call_44MEKAbsqGPra53dQWNq5Fss
 ```json
 {
   "cmd": "workmux status",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -947,7 +947,7 @@ id: call_lbGvQmDKIXLPTugy8rutdsXt
 ```json
 {
   "cmd": "workmux add av-y7eq-1-config --base origin/main -b -P /tmp/tmp.eQGz9M9k34.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -965,7 +965,7 @@ Original token count: 44
 Output:
 ✓ Successfully created worktree and tmux window for 'av-y7eq-1-config'
   Base: origin/main
-  Worktree: /home/entity/projects/EntityProcess/agentv__worktrees/av-y7eq-1-config
+  Worktree: /home/<USER>/projects/EntityProcess/agentv__worktrees/av-y7eq-1-config
 
 ```
 
@@ -980,7 +980,7 @@ id: call_3CTvFGNh98AnMU9AR8QlOu1y
 ```json
 {
   "cmd": "workmux wait av-y7eq-1-config --status working --timeout 120",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -1041,7 +1041,7 @@ id: call_TvLpwbYVmwcN9U8aKPakwMxV
 ```json
 {
   "cmd": "workmux status av-y7eq-1-config",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -1054,7 +1054,7 @@ id: call_Aa7SGxzdGNLD1qjOp2Pm4An0
 ```json
 {
   "cmd": "workmux capture av-y7eq-1-config -n 80",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -1135,7 +1135,7 @@ id: call_y9F14jJ54vP7SqoHxlXXm2Pr
 ```json
 {
   "cmd": "workmux wait av-y7eq-1-config --timeout 1800",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -1195,7 +1195,7 @@ id: call_3nCK0Kkpkpqc8LDvN5OfzM18
 ```json
 {
   "cmd": "workmux status av-y7eq-1-config",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 8000
 }
@@ -1208,7 +1208,7 @@ id: call_wSTwivL0PGwgY1aDjCn2ISSV
 ```json
 {
   "cmd": "workmux capture av-y7eq-1-config -n 100",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 22000
 }
@@ -1347,7 +1347,7 @@ id: call_ZTD3zrhCbC2qUMxROocq9KQz
 ```json
 {
   "cmd": "workmux status av-y7eq-1-config",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 8000
 }
@@ -1360,7 +1360,7 @@ id: call_HQdc0NyGwt7duM5YFQmlvOKM
 ```json
 {
   "cmd": "workmux capture av-y7eq-1-config -n 120",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 26000
 }

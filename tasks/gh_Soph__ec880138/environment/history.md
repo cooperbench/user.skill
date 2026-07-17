@@ -192,7 +192,7 @@ tool_use Read
 id: toolu_019dvgHxXgcSkBHzHE37ccDd
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/smarthttp.go"
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/smarthttp.go"
 }
 ```
 
@@ -324,7 +324,7 @@ tool_use Read
 id: toolu_012m4Kf8GxWacDadNfhtryWv
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go",
   "offset": 277,
   "limit": 160
 }
@@ -377,7 +377,7 @@ tool_use Read
 id: toolu_012qyLBV8pLE85E3os4CWjwz
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap.go"
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap.go"
 }
 ```
 
@@ -464,7 +464,7 @@ tool_use Read
 id: toolu_016HvXDwGgHr3g9MjM7wChct
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/strategy/bootstrap/bootstrap.go",
   "offset": 1290,
   "limit": 207
 }

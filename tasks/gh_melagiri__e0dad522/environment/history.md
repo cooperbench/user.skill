@@ -19,7 +19,7 @@ tool_use Read
 id: toolu_01DqQjiaHQiNFhaJR9KAZu9S
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/cli/package.json",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/cli/package.json",
   "limit": 10
 }
 ```
@@ -206,7 +206,7 @@ tool_use Read
 id: toolu_01JLjFP5PXDDWuMqr1d6c4v7
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/cli/CHANGELOG.md",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/cli/CHANGELOG.md",
   "limit": 50
 }
 ```
@@ -292,7 +292,7 @@ id: toolu_01Ejd4cnAg6dDnFUqBGj7KGY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/cli/package.json",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/cli/package.json",
   "old_string": "  \"version\": \"4.10.3\",",
   "new_string": "  \"version\": \"4.10.4\","
 }
@@ -303,7 +303,7 @@ id: toolu_01Ejd4cnAg6dDnFUqBGj7KGY
 tool_result
 id: toolu_01Ejd4cnAg6dDnFUqBGj7KGY
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/cli/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Workspace/codeInsights/code-insights/cli/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -313,7 +313,7 @@ id: toolu_01ESTXxobGn7aNK5UnR5YgqK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/cli/CHANGELOG.md",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/cli/CHANGELOG.md",
   "old_string": "## [4.10.3] - 2026-05-04",
   "new_string": "## [4.10.4] - 2026-05-06\n\n### Fixed\n\n- **`insights check` now uses configured LLM provider** — `insights check`\n  and `insights check --analyze` were hardcoded to use the native Claude\n  runner, ignoring the user's configured LLM provider. They now use\n  `ProviderRunner.fromConfig()`, correctly respecting the configured\n  provider (Anthropic, OpenAI, Ollama, llama.cpp, etc.). The dead\n  `--model` flag on `insights check` has also been removed.\n\n## [4.10.3] - 2026-05-04"
 }
@@ -324,7 +324,7 @@ id: toolu_01ESTXxobGn7aNK5UnR5YgqK
 tool_result
 id: toolu_01ESTXxobGn7aNK5UnR5YgqK
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/cli/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Workspace/codeInsights/code-insights/cli/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -348,19 +348,19 @@ id: toolu_0126MmH6GfhL3mbbjdXgd8pS
 tool_result
 id: toolu_0126MmH6GfhL3mbbjdXgd8pS
 ```
-> code-insights-workspace@ build /Users/melagiri/Workspace/codeInsights/code-insights
+> code-insights-workspace@ build /home/<USER>/Workspace/codeInsights/code-insights
 > pnpm --filter @code-insights/cli build && pnpm --filter @code-insights/server build && pnpm --filter @code-insights/dashboard build
 
 
-> @code-insights/cli@4.10.4 build /Users/melagiri/Workspace/codeInsights/code-insights/cli
+> @code-insights/cli@4.10.4 build /home/<USER>/Workspace/codeInsights/code-insights/cli
 > tsc && node -e "const{cpSync,mkdirSync}=require('fs');mkdirSync('dist/analysis/schemas',{recursive:true});cpSync('src/analysis/schemas/session-analysis.json','dist/analysis/schemas/session-analysis.json');cpSync('src/analysis/schemas/prompt-quality.json','dist/analysis/schemas/prompt-quality.json');"
 
 
-> @code-insights/server@0.1.0 build /Users/melagiri/Workspace/codeInsights/code-insights/server
+> @code-insights/server@0.1.0 build /home/<USER>/Workspace/codeInsights/code-insights/server
 > tsc
 
 
-> @code-insights/dashboard@0.1.0 build /Users/melagiri/Workspace/codeInsights/code-insights/dashboard
+> @code-insights/dashboard@0.1.0 build /home/<USER>/Workspace/codeInsights/code-insights/dashboard
 > vite build
 
 vite v6.4.1 building for production...
@@ -389,7 +389,7 @@ tool_use Bash
 id: toolu_01Pd4zT9Sfq43XGRN1dKKUYR
 ```json
 {
-  "command": "cd /Users/melagiri/Workspace/codeInsights/code-insights/cli && pnpm test 2>&1",
+  "command": "cd /home/<USER>/Workspace/codeInsights/code-insights/cli && pnpm test 2>&1",
   "description": "Run CLI test suite",
   "timeout": 120000
 }
@@ -400,11 +400,11 @@ id: toolu_01Pd4zT9Sfq43XGRN1dKKUYR
 tool_result
 id: toolu_01Pd4zT9Sfq43XGRN1dKKUYR
 ```
-> @code-insights/cli@4.10.4 test /Users/melagiri/Workspace/codeInsights/code-insights/cli
+> @code-insights/cli@4.10.4 test /home/<USER>/Workspace/codeInsights/code-insights/cli
 > vitest run
 
 
-[1m[46m RUN [49m[22m [36mv4.0.18 [39m[90m/Users/melagiri/Workspace/codeInsights/code-insights/cli[39m
+[1m[46m RUN [49m[22m [36mv4.0.18 [39m[90m/home/<USER>/Workspace/codeInsights/code-insights/cli[39m
 
  [32m✓[39m src/analysis/__tests__/native-runner.test.ts [2m([22m[2m20 tests[22m[2m)[22m[32m 15[2mms[22m[39m
  [32m✓[39m src/commands/stats/render/format.test.ts [2m([22m[2m33 tests[22m[2m)[22m[32m 21[2mms[22m[39m

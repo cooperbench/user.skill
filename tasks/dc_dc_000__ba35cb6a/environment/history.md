@@ -8,14 +8,14 @@ Yes.
 
 > DEVELOPER
 
-Read the full megaplan phase prompt from this file and follow it exactly: /Users/user_c042661f/Documents/Veas/.megaplan/plans/hector-commitments-sprint/plan_shannon_prompt.txt. Your final response must satisfy the structured output contract in that file. Do not summarize the file; execute its instructions.
+Read the full megaplan phase prompt from this file and follow it exactly: /home/<USER>/Documents/Veas/.megaplan/plans/hector-commitments-sprint/plan_shannon_prompt.txt. Your final response must satisfy the structured output contract in that file. Do not summarize the file; execute its instructions.
 
 > TOOL
 
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/.megaplan/plans/hector-commitments-sprint/plan_shannon_prompt.txt"
+  "file_path": "/home/<USER>/Documents/Veas/.megaplan/plans/hector-commitments-sprint/plan_shannon_prompt.txt"
 }
 ```
 
@@ -41,7 +41,7 @@ tool_result Read
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/docs/fitness-bot-commitments-plan.md"
+  "file_path": "/home/<USER>/Documents/Veas/docs/fitness-bot-commitments-plan.md"
 }
 ```
 

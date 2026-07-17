@@ -80,7 +80,7 @@ tool_result
 id: toolu_01NaWUzCVWN5BMZoVkwwhpXJ
 ```
 <persisted-output>
-Output too large (58.7KB). Full output saved to: /Users/raman/.claude/projects/-Users-raman-projects-lock-code-manager/767d0b4b-61ce-40e4-a26a-8aa50590fb1c/tool-results/b0d35tgiv.txt
+Output too large (58.7KB). Full output saved to: /home/<USER>/.claude/projects/-Users-raman-projects-lock-code-manager/767d0b4b-61ce-40e4-a26a-8aa50590fb1c/tool-results/b0d35tgiv.txt
 
 Preview (first 2KB):
 author:	raman325
@@ -149,7 +149,7 @@ tool_use Read
 id: toolu_017YuhotdVT4S5BFzTqEWgU7
 ```json
 {
-  "file_path": "/Users/raman/.claude/projects/-Users-raman-projects-lock-code-manager/767d0b4b-61ce-40e4-a26a-8aa50590fb1c/tool-results/b0d35tgiv.txt"
+  "file_path": "/home/<USER>/.claude/projects/-Users-raman-projects-lock-code-manager/767d0b4b-61ce-40e4-a26a-8aa50590fb1c/tool-results/b0d35tgiv.txt"
 }
 ```
 
@@ -303,7 +303,7 @@ tool_use Read
 id: toolu_019YUg54d3oKT2HWTYyPzAiX
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/domain/coordinator.py"
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/domain/coordinator.py"
 }
 ```
 
@@ -373,7 +373,7 @@ tool_use Read
 id: toolu_0184qYPC6B4nN7wtGZ4FhzTr
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
   "offset": 200,
   "limit": 120
 }
@@ -453,7 +453,7 @@ tool_use Read
 id: toolu_016sq4NGDnWepbFe3WMs4ibR
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
   "offset": 200,
   "limit": 110
 }
@@ -514,7 +514,7 @@ tool_use Read
 id: toolu_01Qntki8P2NJMXuB2ovJ5Ee2
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
   "offset": 860,
   "limit": 90
 }
@@ -580,7 +580,7 @@ tool_use Read
 id: toolu_01FBmtrNmYFavaH97ph32bfQ
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
   "offset": 780,
   "limit": 130
 }
@@ -669,7 +669,7 @@ tool_use Read
 id: toolu_018eXNvVDfkpU6U2eCinS48P
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
   "offset": 325,
   "limit": 70
 }
@@ -740,7 +740,7 @@ tool_use Read
 id: toolu_01QDhjfCpCGBz5GhmnbKfFDg
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
   "offset": 1,
   "limit": 60
 }

@@ -8,7 +8,7 @@ tool_use Read
 id: toolu_01ALhMa6Lzg6GjFroikJua5t
 ```json
 {
-  "file_path": "/Users/anton/.claude/skills/shape-idea/references/idea-elicitation.md"
+  "file_path": "/home/<USER>/.claude/skills/shape-idea/references/idea-elicitation.md"
 }
 ```
 
@@ -17,7 +17,7 @@ id: toolu_01ALhMa6Lzg6GjFroikJua5t
 tool_result ERROR
 id: toolu_01ALhMa6Lzg6GjFroikJua5t
 ```
-File does not exist. Note: your current working directory is /Users/anton/src/drain-cycle.
+File does not exist. Note: your current working directory is /home/<USER>/src/drain-cycle.
 ```
 
 > TOOL
@@ -26,7 +26,7 @@ tool_use Bash
 id: toolu_016E4QHCdoLuMzV7HnPs5EnA
 ```json
 {
-  "command": "ls /Users/anton/src/drain-cycle/docs/app-context.md 2>/dev/null && echo \"EXISTS\" || echo \"MISSING\"; echo \"---\"; ls /Users/anton/src/drain-cycle/docs/",
+  "command": "ls /home/<USER>/src/drain-cycle/docs/app-context.md 2>/dev/null && echo \"EXISTS\" || echo \"MISSING\"; echo \"---\"; ls /home/<USER>/src/drain-cycle/docs/",
   "description": "Check for app-context.md and list docs"
 }
 ```
@@ -56,7 +56,7 @@ tool_use Bash
 id: toolu_015aScjpgUqdsxLkM3dSk8nZ
 ```json
 {
-  "command": "ls /Users/anton/.claude/skills/shape-idea/references/ 2>/dev/null; echo \"===\"; find /Users/anton/.claude/skills/shape-idea -maxdepth 2 -type f | head -40",
+  "command": "ls /home/<USER>/.claude/skills/shape-idea/references/ 2>/dev/null; echo \"===\"; find /home/<USER>/.claude/skills/shape-idea -maxdepth 2 -type f | head -40",
   "description": "List shape-idea references"
 }
 ```
@@ -75,7 +75,7 @@ tool_use Read
 id: toolu_017UTwBqgWjXsZnT8bZGhnwq
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/docs/architecture.md"
+  "file_path": "/home/<USER>/src/drain-cycle/docs/architecture.md"
 }
 ```
 
@@ -84,7 +84,7 @@ id: toolu_017UTwBqgWjXsZnT8bZGhnwq
 tool_result ERROR
 id: toolu_017UTwBqgWjXsZnT8bZGhnwq
 ```
-File does not exist. Note: your current working directory is /Users/anton/src/drain-cycle. Did you mean architecture.html?
+File does not exist. Note: your current working directory is /home/<USER>/src/drain-cycle. Did you mean architecture.html?
 ```
 
 > TOOL
@@ -93,7 +93,7 @@ tool_use Read
 id: toolu_01PMwMsTDjGfgtT3y7htvjVi
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/docs/vision.md"
+  "file_path": "/home/<USER>/src/drain-cycle/docs/vision.md"
 }
 ```
 
@@ -119,7 +119,7 @@ tool_use Bash
 id: toolu_01NgNYSMShj9Q31Exwya7iYT
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle; grep -oiE \"persona|sub-agent|subagent|supervis|orchestrat|worker|reviewer|simplif|code-review|exec:[a-z-]+\" docs/architecture.html | sort | uniq -c | sort -rn | head -40",
+  "command": "cd /home/<USER>/src/drain-cycle; grep -oiE \"persona|sub-agent|subagent|supervis|orchestrat|worker|reviewer|simplif|code-review|exec:[a-z-]+\" docs/architecture.html | sort | uniq -c | sort -rn | head -40",
   "description": "Survey personas/agents in architecture.html"
 }
 ```
@@ -211,7 +211,7 @@ tool_use Bash
 id: toolu_01VDnzCdUaa4y5NbH9ENPGvJ
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle; grep -rlE \"peak|turn .*tok|· [0-9]+m\" --include=*.py src lib 2>/dev/null | head; echo \"===\"; grep -rnE \"turn|peak|tok\" --include=*.py . 2>/dev/null | grep -iE \"f\\\"|f'|format|render|print|status\" | head -20",
+  "command": "cd /home/<USER>/src/drain-cycle; grep -rlE \"peak|turn .*tok|· [0-9]+m\" --include=*.py src lib 2>/dev/null | head; echo \"===\"; grep -rnE \"turn|peak|tok\" --include=*.py . 2>/dev/null | grep -iE \"f\\\"|f'|format|render|print|status\" | head -20",
   "description": "Find default output rendering code"
 }
 ```
@@ -232,7 +232,7 @@ tool_use Bash
 id: toolu_01FQGW4K8hU8Ut98DJLi5WTe
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle; ls; echo \"=== peak/turn ===\"; grep -rnE \"peak|turn\" -l . --include=\"*.py\" 2>/dev/null | head; grep -rn \"peak\" . 2>/dev/null | grep -v \".git/\" | head -15",
+  "command": "cd /home/<USER>/src/drain-cycle; ls; echo \"=== peak/turn ===\"; grep -rnE \"peak|turn\" -l . --include=\"*.py\" 2>/dev/null | head; grep -rn \"peak\" . 2>/dev/null | grep -v \".git/\" | head -15",
   "description": "Locate output rendering source"
 }
 ```
@@ -296,7 +296,7 @@ tool_use Bash
 id: toolu_01DHj94dxQ3DLsGcnfxz8A6j
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle/drain_cycle; ls; echo \"=== status/progress files ===\"; ls -la | grep -iE \"status|progress|watch|render|console|tui|display\"",
+  "command": "cd /home/<USER>/src/drain-cycle/drain_cycle; ls; echo \"=== status/progress files ===\"; ls -la | grep -iE \"status|progress|watch|render|console|tui|display\"",
   "description": "List drain_cycle modules"
 }
 ```
@@ -342,7 +342,7 @@ tool_use Read
 id: toolu_01Vp4RnjTomkghLw1HGS2k3q
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/progress.py"
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/progress.py"
 }
 ```
 
@@ -403,7 +403,7 @@ tool_use Read
 id: toolu_01N2F7NdJL31vGv34eKkTKRQ
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/console.py"
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/console.py"
 }
 ```
 
@@ -511,7 +511,7 @@ tool_use Bash
 id: toolu_014tdA8EyfRcBXYL4fFBtawX
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle; echo \"=== docs/ideas ===\"; ls docs/ideas/ 2>/dev/null | head; echo \"=== idea-bank? ===\"; ls docs/idea-bank/ 2>/dev/null || echo \"(no idea-bank dir)\"",
+  "command": "cd /home/<USER>/src/drain-cycle; echo \"=== docs/ideas ===\"; ls docs/ideas/ 2>/dev/null | head; echo \"=== idea-bank? ===\"; ls docs/idea-bank/ 2>/dev/null || echo \"(no idea-bank dir)\"",
   "description": "Check idea record location convention"
 }
 ```
@@ -589,7 +589,7 @@ tool_use Write
 id: toolu_011H4BGGs3f4tugbMBWT4n9E
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/docs/ideas/live-execution-swimlanes.md",
+  "file_path": "/home/<USER>/src/drain-cycle/docs/ideas/live-execution-swimlanes.md",
   "content": "# Triage record: live-execution-swimlanes\n\n## Raw intake\n<!-- Verbatim capture of the idea as received. Do not edit. -->\nswim lanes to show me which \"agents\" are doing what during the execution run\n\nfor example i want to be able to see something like:\n\nABA-313: Issue Picked Up\n--| Starting supervising agent\n--| [Code is written]\n----| Starting code-review sub-agent\n----| Starting code-simplification sub-agent\n\netc\n\nBasically it should follow the architecture and personas I have but I want to be able to see what's going on while drain-cycle is running\n\nThis is equivalent to a kanban board, but in a vertical UI rather than a horizontal Kanban\n\n## Refined intent\n<!-- The confirmed six-line restate from the elicitation loop, in the user's own words. -->\n- Outcome: The default drain-cycle run output shows a live, vertically-nested tree of the agent hierarchy for the issue in flight — supervisor → current `exec:*` skill step → sub-agent persona — with the active node visibly marked.\n- User: The operator running a drain-cycle, who wants to trust the run without babysitting it.\n- Why now: The current default output is a flat, timestamped event stream plus a token line; it never shows *where in the standard chain* the work is, so […]
 
 > TOOL
@@ -597,7 +597,7 @@ id: toolu_011H4BGGs3f4tugbMBWT4n9E
 tool_result
 id: toolu_011H4BGGs3f4tugbMBWT4n9E
 ```
-File created successfully at: /Users/anton/src/drain-cycle/docs/ideas/live-execution-swimlanes.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/src/drain-cycle/docs/ideas/live-execution-swimlanes.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -626,7 +626,7 @@ tool_use Bash
 id: toolu_013vRnWiyVsK27JFKAb5Wo3Z
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle; cat /Users/anton/.claude/skills/shape-design/references/design-spike-templates.md 2>/dev/null | sed -n '1,400p'; echo \"=== dirs ===\"; ls docs/prototypes 2>/dev/null || echo \"(no prototypes dir)\"; ls docs/spikes 2>/dev/null || echo \"(no spikes dir)\"",
+  "command": "cd /home/<USER>/src/drain-cycle; cat /home/<USER>/.claude/skills/shape-design/references/design-spike-templates.md 2>/dev/null | sed -n '1,400p'; echo \"=== dirs ===\"; ls docs/prototypes 2>/dev/null || echo \"(no prototypes dir)\"; ls docs/spikes 2>/dev/null || echo \"(no spikes dir)\"",
   "description": "Load templates, check prototype/spike dirs"
 }
 ```
@@ -647,7 +647,7 @@ tool_use Bash
 id: toolu_01VTU6ueSZoeHyPrrE61JUgp
 ```json
 {
-  "command": "ls -la /Users/anton/.claude/skills/shape-design/ 2>/dev/null; echo \"=== references ===\"; ls -la /Users/anton/.claude/skills/shape-design/references/ 2>/dev/null",
+  "command": "ls -la /home/<USER>/.claude/skills/shape-design/ 2>/dev/null; echo \"=== references ===\"; ls -la /home/<USER>/.claude/skills/shape-design/references/ 2>/dev/null",
   "description": "Inspect shape-design skill dir"
 }
 ```
@@ -777,7 +777,7 @@ tool_use Write
 id: toolu_01YELzm5rqjwNWwqRi8y9EPh
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/docs/prototypes/live-execution-swimlanes/finding.md",
+  "file_path": "/home/<USER>/src/drain-cycle/docs/prototypes/live-execution-swimlanes/finding.md",
   "content": "# Prototype finding: live-execution-swimlanes\n\n**Track:** C — product spike (narrative mode)\n**Upstream:** `docs/ideas/live-execution-swimlanes.md`\n**Recommendation:** **Proceed** → `shape:design` Track A (design document)\n\n## Question\nGlancing at a vertical nested tree of the live run, can the operator instantly tell which `exec:*` step and persona is active — and what's done vs upcoming — well enough to trust the run without reading the scrolling log?\n\n## Approach\nNarrative mode. No code (a coded prototype would depend on the observability plumbing the upstream record flagged as an unproven assumption). Built three annotated ASCII mockups of the rendered terminal output, all showing the **same live moment** — ABA-313 mid-`review`, `security-auditor` running — varying only on the axis that drives trust: how much of the chain is visible and how the active node is emphasized. The operator (the user) was the observer; their reaction across two rounds is the observation.\n\n- **Round 1** — three layouts: (A) full vertical status tree, whole `exec:*` chain always drawn with per-node state marks; (B) progressive append-only log-tree, closest to the operator's original sketch, upcoming steps not shown; (C) compact horizontal stepper spine + vertical drill-down of the active step's personas.\n- **Round 2** — refined the round-1 winner […]
 
 > TOOL
@@ -785,7 +785,7 @@ id: toolu_01YELzm5rqjwNWwqRi8y9EPh
 tool_result
 id: toolu_01YELzm5rqjwNWwqRi8y9EPh
 ```
-File created successfully at: /Users/anton/src/drain-cycle/docs/prototypes/live-execution-swimlanes/finding.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/src/drain-cycle/docs/prototypes/live-execution-swimlanes/finding.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -817,7 +817,7 @@ tool_use Bash
 id: toolu_01VPQ2iYQFbqcnwfCaU3GXmL
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle; echo \"=== find shaper pack ===\"; find . -path ./.git -prune -o -type d -iname \"*shaper*\" -print 2>/dev/null; find . -path ./.git -prune -o -type d -iname \"*skill*\" -print 2>/dev/null | head; echo \"=== exec skills referenced ===\"; grep -rn \"exec:\" drain_cycle/*.py | grep -iE \"pickup|build|review|verify|simplif|finish|breakdown|debug\" | head -20",
+  "command": "cd /home/<USER>/src/drain-cycle; echo \"=== find shaper pack ===\"; find . -path ./.git -prune -o -type d -iname \"*shaper*\" -print 2>/dev/null; find . -path ./.git -prune -o -type d -iname \"*skill*\" -print 2>/dev/null | head; echo \"=== exec skills referenced ===\"; grep -rn \"exec:\" drain_cycle/*.py | grep -iE \"pickup|build|review|verify|simplif|finish|breakdown|debug\" | head -20",
   "description": "Locate shaper pack and exec chain refs"
 }
 ```
@@ -828,7 +828,7 @@ tool_use Bash
 id: toolu_01VKjAr7qz5vuYAvDAaqgXUW
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle; echo \"=== worker.py head ===\"; sed -n '1,60p' drain_cycle/worker.py",
+  "command": "cd /home/<USER>/src/drain-cycle; echo \"=== worker.py head ===\"; sed -n '1,60p' drain_cycle/worker.py",
   "description": "Read worker.py header"
 }
 ```
@@ -878,7 +878,7 @@ tool_use Bash
 id: toolu_01FoHBrrazVVN38agjt4Jp5K
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle; echo \"=== .claude ===\"; ls -la .claude/ 2>/dev/null; echo \"=== nested skills ===\"; find .claude -maxdepth 3 -iname \"*.md\" 2>/dev/null | grep -iE \"shape|exec|skill\" | head; echo \"=== submodules ===\"; cat .gitmodules 2>/dev/null || echo \"(none)\"; echo \"=== grep shaper anywhere ===\"; grep -rni \"shaper\" . --include=\"*.md\" --include=\"*.py\" --include=\"*.toml\" 2>/dev/null | grep -v \".git/\" | head",
+  "command": "cd /home/<USER>/src/drain-cycle; echo \"=== .claude ===\"; ls -la .claude/ 2>/dev/null; echo \"=== nested skills ===\"; find .claude -maxdepth 3 -iname \"*.md\" 2>/dev/null | grep -iE \"shape|exec|skill\" | head; echo \"=== submodules ===\"; cat .gitmodules 2>/dev/null || echo \"(none)\"; echo \"=== grep shaper anywhere ===\"; grep -rni \"shaper\" . --include=\"*.md\" --include=\"*.py\" --include=\"*.toml\" 2>/dev/null | grep -v \".git/\" | head",
   "description": "Find shaper pack location"
 }
 ```
@@ -920,30 +920,30 @@ id: toolu_0184yBDMxs3mg3oVLQnqUxCR
 tool_result
 id: toolu_0184yBDMxs3mg3oVLQnqUxCR
 ```
-/Users/anton/src/agent-skills-shaper/
+/home/<USER>/src/agent-skills-shaper/
 SIBLING EXISTS
 === exec skill files in global skills ===
-shape-build -> /Users/anton/src/agent-skills-shaper/skills/build  49B
-shape-debugging -> /Users/anton/src/agent-skills-shaper/skills/debugging  53B
-shape-delivery -> /Users/anton/src/agent-skills-shaper/skills/delivery  52B
-shape-design -> /Users/anton/src/agent-skills-shaper/skills/design  50B
-shape-exec-pickup -> /Users/anton/src/agent-skills-shaper/skills/exec-pickup  55B
-shape-execution-review -> /Users/anton/src/agent-skills-shaper/skills/execution-review  60B
-shape-idea -> /Users/anton/src/agent-skills-shaper/skills/idea  48B
-shape-plan-review -> /Users/anton/src/agent-skills-shaper/skills/plan-review  55B
-shape-pr-finishing -> /Users/anton/src/agent-skills-shaper/skills/pr-finishing  56B
-shape-pr-prepare -> /Users/anton/src/agent-skills-shaper/skills/pr-prepare  54B
-shape-project -> /Users/anton/src/agent-skills-shaper/skills/project  51B
-shape-render-html -> /Users/anton/src/agent-skills-shaper/skills/render-html  55B
-shape-simplify -> /Users/anton/src/agent-skills-shaper/skills/simplify  52B
-shape-using-this-pack -> /Users/anton/src/agent-skills-shaper/skills/using-this-pack  59B
-shape-verify-implementation -> /Users/anton/src/agent-skills-shaper/skills/verify-implementation  65B
-shape-writing-refinement -> /Users/anton/src/agent-skills-shaper/skills/writing-refinement  62B
+shape-build -> /home/<USER>/src/agent-skills-shaper/skills/build  49B
+shape-debugging -> /home/<USER>/src/agent-skills-shaper/skills/debugging  53B
+shape-delivery -> /home/<USER>/src/agent-skills-shaper/skills/delivery  52B
+shape-design -> /home/<USER>/src/agent-skills-shaper/skills/design  50B
+shape-exec-pickup -> /home/<USER>/src/agent-skills-shaper/skills/exec-pickup  55B
+shape-execution-review -> /home/<USER>/src/agent-skills-shaper/skills/execution-review  60B
+shape-idea -> /home/<USER>/src/agent-skills-shaper/skills/idea  48B
+shape-plan-review -> /home/<USER>/src/agent-skills-shaper/skills/plan-review  55B
+shape-pr-finishing -> /home/<USER>/src/agent-skills-shaper/skills/pr-finishing  56B
+shape-pr-prepare -> /home/<USER>/src/agent-skills-shaper/skills/pr-prepare  54B
+shape-project -> /home/<USER>/src/agent-skills-shaper/skills/project  51B
+shape-render-html -> /home/<USER>/src/agent-skills-shaper/skills/render-html  55B
+shape-simplify -> /home/<USER>/src/agent-skills-shaper/skills/simplify  52B
+shape-using-this-pack -> /home/<USER>/src/agent-skills-shaper/skills/using-this-pack  59B
+shape-verify-implementation -> /home/<USER>/src/agent-skills-shaper/skills/verify-implementation  65B
+shape-writing-refinement -> /home/<USER>/src/agent-skills-shaper/skills/writing-refinement  62B
 ```
 
 > AGENT
 
-`agent-skills-shaper` is the sibling pack at `/Users/anton/src/agent-skills-shaper/skills/`, symlinked into `~/.claude/skills/`. `exec:pickup` is the front door. Let me read it to extract the *real* step chain and personas the demo must walk.
+`agent-skills-shaper` is the sibling pack at `/home/<USER>/src/agent-skills-shaper/skills/`, symlinked into `~/.claude/skills/`. `exec:pickup` is the front door. Let me read it to extract the *real* step chain and personas the demo must walk.
 
 > TOOL
 
@@ -951,7 +951,7 @@ tool_use Bash
 id: toolu_01G33RBUAqj8gUuVzGmY2JcA
 ```json
 {
-  "command": "cd /Users/anton/src/agent-skills-shaper; echo \"=== exec-pickup SKILL ===\"; sed -n '1,120p' skills/exec-pickup/SKILL.md",
+  "command": "cd /home/<USER>/src/agent-skills-shaper; echo \"=== exec-pickup SKILL ===\"; sed -n '1,120p' skills/exec-pickup/SKILL.md",
   "description": "Read exec:pickup front-door skill"
 }
 ```
@@ -1044,7 +1044,7 @@ tool_use Bash
 id: toolu_01BGb15pAkMEusCSfy7Wwi9N
 ```json
 {
-  "command": "cd /Users/anton/src/agent-skills-shaper; echo \"=== skill dirs ===\"; ls skills/; echo \"=== breakdown? ===\"; ls skills/ | grep -i breakdown || grep -rl \"exec:breakdown\" skills/*/SKILL.md | head; echo \"=== personas in execution-review ===\"; grep -niE \"spec-compliance|security-auditor|code-quality|persona\" skills/execution-review/SKILL.md | head",
+  "command": "cd /home/<USER>/src/agent-skills-shaper; echo \"=== skill dirs ===\"; ls skills/; echo \"=== breakdown? ===\"; ls skills/ | grep -i breakdown || grep -rl \"exec:breakdown\" skills/*/SKILL.md | head; echo \"=== personas in execution-review ===\"; grep -niE \"spec-compliance|security-auditor|code-quality|persona\" skills/execution-review/SKILL.md | head",
   "description": "Map steps to real skill dirs and personas"
 }
 ```
@@ -1093,7 +1093,7 @@ tool_use Write
 id: toolu_01Uf4ci9tBQXHwtw7ByPh1mS
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py",
+  "file_path": "/home/<USER>/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py",
   "content": "#!/usr/bin/env python3\n\"\"\"Interactive swimlanes demo — NON-PRODUCTION prototype.\n\nAnimates the live-execution-swimlanes layout (Track C product spike, variant\n\"C-status-only\") end-to-end for one coding issue, walking the *real* exec:*\nchain from the bundled ``agent-skills-shaper`` pack.\n\nWhat is real here:\n  * the step chain and its order (pickup → breakdown → build → review → verify\n    → finish), read from the pack's exec:pickup workflow;\n  * the review personas (spec-compliance → security-auditor → code-quality),\n    discovered from execution-review/personas/;\n  * build's escalations (exec:debug on a stuck red loop, exec:simplify on green);\n  * each step's one-line caption, pulled from the matching SKILL.md frontmatter.\n\nWhat is simulated: the timings, token/turn counters, task list, and the review\nfinding that drives the NO-GO loop-back. No ``claude`` is ever invoked. This is\na UX prototype for the swimlanes layout in motion — nothing here is wired to a\nreal run. Do not extend it toward production; that needs a design doc and a\nclean implementation (see docs/prototypes/live-execution-swimlanes/finding.md).\n\nRun:\n    uv run python docs/prototypes/live-execution-swimlanes/demo.py\n    uv run python docs/prototypes/live-execution-swimlanes/demo.py --issue \"Add rate limiting to the API\" --speed 2\n    uv run python docs/prototypes/live-execution-swimlanes/demo.py --step    # advance with Enter\n\"\"\"\nfrom __future__ import annotations\n\nimport argparse\nimport random\nimport re\nimport sys\nimport time\nfrom dataclasses import dataclass, field\nfrom pathlib import Path\n\ntry:\n    from rich.console import Console, […]
 
 > TOOL
@@ -1101,7 +1101,7 @@ id: toolu_01Uf4ci9tBQXHwtw7ByPh1mS
 tool_result
 id: toolu_01Uf4ci9tBQXHwtw7ByPh1mS
 ```
-File created successfully at: /Users/anton/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1114,7 +1114,7 @@ tool_use Bash
 id: toolu_01ShV5HKydNG1HbBMdz9qfLv
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle; timeout 60 uv run python docs/prototypes/live-execution-swimlanes/demo.py --speed 50 2>&1 | tail -25; echo \"EXIT: ${PIPESTATUS[0]}\"",
+  "command": "cd /home/<USER>/src/drain-cycle; timeout 60 uv run python docs/prototypes/live-execution-swimlanes/demo.py --speed 50 2>&1 | tail -25; echo \"EXIT: ${PIPESTATUS[0]}\"",
   "description": "Run demo at high speed, check final frame"
 }
 ```
@@ -1134,7 +1134,7 @@ tool_use Bash
 id: toolu_01VqrLVsY7CH7XQcjFPjTsRF
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle; uv run python docs/prototypes/live-execution-swimlanes/demo.py --speed 50 2>&1 | tail -25; echo \"EXIT: ${PIPESTATUS[0]}\"",
+  "command": "cd /home/<USER>/src/drain-cycle; uv run python docs/prototypes/live-execution-swimlanes/demo.py --speed 50 2>&1 | tail -25; echo \"EXIT: ${PIPESTATUS[0]}\"",
   "description": "Run demo at high speed, check final frame"
 }
 ```
@@ -1168,7 +1168,7 @@ id: toolu_01DCmgGmgdLGAL4ErXBbvwu8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py",
+  "file_path": "/home/<USER>/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py",
   "old_string": "        if go:\n            self.r.flash = (\"verdict: GO — all personas clear\", \"bold green\")\n        else:\n            self.r.flash = (\"verdict: NO-GO — security finding → looping back to build\", \"bold red\")\n        self._tick(0.9, 4, tokens=500)\n        return go",
   "new_string": "        if go:\n            self.r.flash = (\"verdict: GO — all personas clear\", \"bold green\")\n        else:\n            self.r.flash = (\"verdict: NO-GO — security finding → looping back to build\", \"bold red\")\n        self._tick(0.9, 4, tokens=500)\n        if go:\n            self.end(\"review\")\n        return go"
 }
@@ -1179,7 +1179,7 @@ id: toolu_01DCmgGmgdLGAL4ErXBbvwu8
 tool_result
 id: toolu_01DCmgGmgdLGAL4ErXBbvwu8
 ```
-The file /Users/anton/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1188,7 +1188,7 @@ tool_use Bash
 id: toolu_01Go493GhEtPiUmBRZVbxuvX
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle; uv run python docs/prototypes/live-execution-swimlanes/demo.py --speed 50 2>&1 | tail -8; echo \"EXIT: ${PIPESTATUS[0]}\"",
+  "command": "cd /home/<USER>/src/drain-cycle; uv run python docs/prototypes/live-execution-swimlanes/demo.py --speed 50 2>&1 | tail -8; echo \"EXIT: ${PIPESTATUS[0]}\"",
   "description": "Re-run, verify final spine all done"
 }
 ```
@@ -1220,7 +1220,7 @@ id: toolu_01BueghUXt5TE8aWsDTUWqnd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py",
+  "file_path": "/home/<USER>/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py",
   "old_string": "        self.speed = max(speed, 0.01)\n        self.step = step\n        self.rng = random.Random(7)",
   "new_string": "        self.speed = max(speed, 0.01)\n        self.step = step\n        self.rng = random.Random(7)\n        self.review_pass = 0"
 }
@@ -1231,7 +1231,7 @@ id: toolu_01BueghUXt5TE8aWsDTUWqnd
 tool_result
 id: toolu_01BueghUXt5TE8aWsDTUWqnd
 ```
-The file /Users/anton/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1241,7 +1241,7 @@ id: toolu_01MNH9Bf4LkwxfZb1fa7Sero
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py",
+  "file_path": "/home/<USER>/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py",
   "old_string": "        self.begin(\"review\")\n        personas = self.r.pack.personas\n        verdicts = {\n            \"spec-compliance\": (\"ok\", \"GO · meets ac_checklist\"),\n            \"security-auditor\": (\"fail\", \"FINDING · unbounded retry can hammer endpoint\"),\n            \"code-quality\": (\"ok\", \"GO · clear, no smells\"),\n        }",
   "new_string": "        self.begin(\"review\")\n        self.review_pass += 1\n        personas = self.r.pack.personas\n        # First pass surfaces a security finding; the re-review after the fix is clean.\n        security = (\"ok\", \"GO · retries now bounded\") if self.review_pass > 1 else (\n            \"fail\", \"FINDING · unbounded retry can hammer endpoint\")\n        verdicts = {\n            \"spec-compliance\": (\"ok\", \"GO · meets ac_checklist\"),\n            \"security-auditor\": security,\n            \"code-quality\": (\"ok\", \"GO · clear, no smells\"),\n        }"
 }
@@ -1252,7 +1252,7 @@ id: toolu_01MNH9Bf4LkwxfZb1fa7Sero
 tool_result
 id: toolu_01MNH9Bf4LkwxfZb1fa7Sero
 ```
-The file /Users/anton/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1261,7 +1261,7 @@ tool_use Bash
 id: toolu_018MtFkdQru6JGV4rXXM4VaD
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle; uv run python docs/prototypes/live-execution-swimlanes/demo.py --speed 50 2>&1 | tail -8; echo \"EXIT: ${PIPESTATUS[0]}\"",
+  "command": "cd /home/<USER>/src/drain-cycle; uv run python docs/prototypes/live-execution-swimlanes/demo.py --speed 50 2>&1 | tail -8; echo \"EXIT: ${PIPESTATUS[0]}\"",
   "description": "Re-run, verify all steps done at end"
 }
 ```
@@ -1292,7 +1292,7 @@ tool_use Bash
 id: toolu_017hZA68hycktHKeedAg1gV6
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle; uv run python -c \"\nimport importlib.util, pathlib\nspec = importlib.util.spec_from_file_location('demo', 'docs/prototypes/live-execution-swimlanes/demo.py')\nm = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)\nfrom rich.console import Console\npack = m.load_pack()\nr = m.Run(issue_id='ABA-DEMO', issue_title='Add retry to webhook sender', pack=pack)\n# mid-build state\nr.status.update(pickup='done', breakdown='done', build='active')\nr.active='build'\nr.subs['build']=[['ok','slice 1 · core change','red→green→commit (+simplify)'],\n                 ['run','slice 2 · edge cases','exec:debug — root cause: off-by-one'],\n                 ['todo','slice 3 · wiring & config','']]\nr.turn=7; r.tokens=540000; r.peak=71000; r.sim_seconds=164\nConsole().print(m.render(r))\nprint()\n# mid-review NO-GO state\nr.status.update(build='done', review='active'); r.active='review'\nr.subs['review']=[['ok','spec-compliance','GO · meets ac_checklist'],\n                  ['fail','security-auditor','FINDING · unbounded retry can hammer endpoint'],\n                  ['run','code-quality','reviewing diff…']]\nr.flash=('verdict: NO-GO — security finding → looping back to build','bold red')\nr.turn=11; r.tokens=820000; r.peak=88000; r.sim_seconds=372\nConsole().print(m.render(r))\n\"",
+  "command": "cd /home/<USER>/src/drain-cycle; uv run python -c \"\nimport importlib.util, pathlib\nspec = importlib.util.spec_from_file_location('demo', 'docs/prototypes/live-execution-swimlanes/demo.py')\nm = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)\nfrom rich.console import Console\npack = m.load_pack()\nr = m.Run(issue_id='ABA-DEMO', issue_title='Add retry to webhook sender', pack=pack)\n# mid-build state\nr.status.update(pickup='done', breakdown='done', build='active')\nr.active='build'\nr.subs['build']=[['ok','slice 1 · core change','red→green→commit (+simplify)'],\n                 ['run','slice 2 · edge cases','exec:debug — root cause: off-by-one'],\n                 ['todo','slice 3 · wiring & config','']]\nr.turn=7; r.tokens=540000; r.peak=71000; r.sim_seconds=164\nConsole().print(m.render(r))\nprint()\n# mid-review NO-GO state\nr.status.update(build='done', review='active'); r.active='review'\nr.subs['review']=[['ok','spec-compliance','GO · meets ac_checklist'],\n                  ['fail','security-auditor','FINDING · unbounded retry can hammer endpoint'],\n                  ['run','code-quality','reviewing diff…']]\nr.flash=('verdict: NO-GO — security finding → looping back to build','bold red')\nr.turn=11; r.tokens=820000; r.peak=88000; r.sim_seconds=372\nConsole().print(m.render(r))\n\"",
   "description": "Render mid-build and mid-review frames"
 }
 ```
@@ -1309,7 +1309,7 @@ Traceback (most recent call last):
                                                ~~~~~~~~~~~~~~~~~~~~~~~^^^
   File "<frozen importlib._bootstrap_external>", line 759, in exec_module
   File "<frozen importlib._bootstrap>", line 491, in _call_with_frames_removed
-  File "/Users/anton/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py", line 90, in <module>
+  File "/home/<USER>/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py", line 90, in <module>
     @dataclass
      ^^^^^^^^^
   File "/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/dataclasses.py", line 1450, in dataclass
@@ -1339,7 +1339,7 @@ tool_use Bash
 id: toolu_01E5kqyxBeTCmAy8kG7eyUMV
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle; uv run python -c \"\nimport importlib.util, sys\nspec = importlib.util.spec_from_file_location('demo', 'docs/prototypes/live-execution-swimlanes/demo.py')\nm = importlib.util.module_from_spec(spec); sys.modules['demo']=m; spec.loader.exec_module(m)\nfrom rich.console import Console\npack = m.load_pack()\nr = m.Run(issue_id='ABA-DEMO', issue_title='Add retry to webhook sender', pack=pack)\nr.status.update(pickup='done', breakdown='done', build='active'); r.active='build'\nr.subs['build']=[['ok','slice 1 · core change','red→green→commit (+simplify)'],\n                 ['run','slice 2 · edge cases','exec:debug — root cause: off-by-one'],\n                 ['todo','slice 3 · wiring & config','']]\nr.turn=7; r.tokens=540000; r.peak=71000; r.sim_seconds=164\nConsole().print(m.render(r)); print()\nr.status.update(build='done', review='active'); r.active='review'\nr.subs['review']=[['ok','spec-compliance','GO · meets ac_checklist'],\n                  ['fail','security-auditor','FINDING · unbounded retry can hammer endpoint'],\n                  ['run','code-quality','reviewing diff…']]\nr.flash=('verdict: NO-GO — security finding → looping back to build','bold red')\nr.turn=11; r.tokens=820000; r.peak=88000; r.sim_seconds=372\nConsole().print(m.render(r))\nprint(); print('CAPTION pickup:', repr(pack.captions['pickup'])); print('PERSONAS:', pack.personas); print('PACK:', pack.root)\n\"",
+  "command": "cd /home/<USER>/src/drain-cycle; uv run python -c \"\nimport importlib.util, sys\nspec = importlib.util.spec_from_file_location('demo', 'docs/prototypes/live-execution-swimlanes/demo.py')\nm = importlib.util.module_from_spec(spec); sys.modules['demo']=m; spec.loader.exec_module(m)\nfrom rich.console import Console\npack = m.load_pack()\nr = m.Run(issue_id='ABA-DEMO', issue_title='Add retry to webhook sender', pack=pack)\nr.status.update(pickup='done', breakdown='done', build='active'); r.active='build'\nr.subs['build']=[['ok','slice 1 · core change','red→green→commit (+simplify)'],\n                 ['run','slice 2 · edge cases','exec:debug — root cause: off-by-one'],\n                 ['todo','slice 3 · wiring & config','']]\nr.turn=7; r.tokens=540000; r.peak=71000; r.sim_seconds=164\nConsole().print(m.render(r)); print()\nr.status.update(build='done', review='active'); r.active='review'\nr.subs['review']=[['ok','spec-compliance','GO · meets ac_checklist'],\n                  ['fail','security-auditor','FINDING · unbounded retry can hammer endpoint'],\n                  ['run','code-quality','reviewing diff…']]\nr.flash=('verdict: NO-GO — security finding → looping back to build','bold red')\nr.turn=11; r.tokens=820000; r.peak=88000; r.sim_seconds=372\nConsole().print(m.render(r))\nprint(); print('CAPTION pickup:', repr(pack.captions['pickup'])); print('PERSONAS:', pack.personas); print('PACK:', pack.root)\n\"",
   "description": "Render mid frames and dump pack data"
 }
 ```
@@ -1380,7 +1380,7 @@ endpoint
 
 CAPTION pickup: 'Front door for draining a Linear issue end-to-end'
 PERSONAS: ['spec-compliance', 'security-auditor', 'code-quality']
-PACK: /Users/anton/src/agent-skills-shaper
+PACK: /home/<USER>/src/agent-skills-shaper
 ```
 
 > AGENT
@@ -1394,7 +1394,7 @@ id: toolu_013Y92dUUE2ZvckFPqBh1FQA
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py",
+  "file_path": "/home/<USER>/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py",
   "old_string": "        security = (\"ok\", \"GO · retries now bounded\") if self.review_pass > 1 else (\n            \"fail\", \"FINDING · unbounded retry can hammer endpoint\")",
   "new_string": "        security = (\"ok\", \"GO · retries now bounded\") if self.review_pass > 1 else (\n            \"fail\", \"FINDING · unbounded retry → DoS risk\")"
 }
@@ -1405,7 +1405,7 @@ id: toolu_013Y92dUUE2ZvckFPqBh1FQA
 tool_result
 id: toolu_013Y92dUUE2ZvckFPqBh1FQA
 ```
-The file /Users/anton/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1440,7 +1440,7 @@ tool_use Read
 id: toolu_01GaqK3xiBCoXCXJ168igP1n
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py"
+  "file_path": "/home/<USER>/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py"
 }
 ```
 
@@ -1484,7 +1484,7 @@ tool_use Write
 id: toolu_01FGJz61mPB9thzf6KNK88Kr
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py",
+  "file_path": "/home/<USER>/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py",
   "content": "#!/usr/bin/env python3\n\"\"\"Interactive swimlanes demo — NON-PRODUCTION prototype.\n\nAnimates the live-execution-swimlanes layout (Track C product spike, variant\n\"C-status-only\") for a whole drain *cycle*: a queue of coding issues drained\none at a time, walking the *real* exec:* chain from the bundled\n``agent-skills-shaper`` pack.\n\nTwo surfaces, stacked:\n  * a queue pane listing every issue in dependency-resolved execution order,\n    with the running one marked and a ▶ on whichever you're viewing;\n  * the swimlane for the focused issue (header, exec:* stepper spine, and the\n    active step's persona drill-down).\n\nYou can toggle which issue's swimlane is shown while the cycle runs:\n  ↑/↓ or j/k   move the focus up/down the queue\n  1..N         jump to issue N\n  f            follow the running issue again (auto-follow)\n  space        pause / resume playback\n  q            quit\nBy default the focus auto-follows the running issue; any manual move turns that\noff until you press ``f``.\n\nWhat is real here:\n  * the step chain and its order (pickup → breakdown → build → review → verify\n    → finish), read from the pack's exec:pickup workflow;\n  * the review personas (spec-compliance → security-auditor → code-quality),\n    discovered from execution-review/personas/;\n  * build's escalations (exec:debug on a stuck red loop, exec:simplify on green);\n  * each step's one-line caption, […]
 
 > TOOL
@@ -1492,7 +1492,7 @@ id: toolu_01FGJz61mPB9thzf6KNK88Kr
 tool_result
 id: toolu_01FGJz61mPB9thzf6KNK88Kr
 ```
-The file /Users/anton/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1553,7 +1553,7 @@ id: toolu_01HSZ6vwVrFGbbHExyxGP6xh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py",
+  "file_path": "/home/<USER>/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py",
   "old_string": "# Defined deliberately OUT of execution order to show the topo sort at work.\n# Real shape: a chain (301→302) that fans out to two dependents (303, 304).\nCYCLE_SPECS = [\n    IssueSpec(\"ABA-304\", \"Document retry behaviour + runbook\", deps=(\"ABA-302\",),\n              pr=\"github.com/acme/app/pull/454\"),\n    IssueSpec(\"ABA-302\", \"Retry sender with capped backoff\", deps=(\"ABA-301\",),\n              risky=True, pr=\"github.com/acme/app/pull/452\"),\n    IssueSpec(\"ABA-301\", \"Add webhook retry queue table\",\n              pr=\"github.com/acme/app/pull/451\"),\n    IssueSpec(\"ABA-303\", \"Emit retry metrics + dashboard\", deps=(\"ABA-302\",),\n              pr=\"github.com/acme/app/pull/453\"),\n]",
   "new_string": "# Defined deliberately OUT of execution order to show the topo sort at work\n# (301, the only dep-free issue, is listed last). Real shape: a chain (301→302)\n# that fans out to two dependents (303, 304).\nCYCLE_SPECS = [\n    IssueSpec(\"ABA-302\", \"Retry sender with capped backoff\", deps=(\"ABA-301\",),\n              risky=True, pr=\"github.com/acme/app/pull/452\"),\n    IssueSpec(\"ABA-303\", \"Emit retry metrics + dashboard\", deps=(\"ABA-302\",),\n              pr=\"github.com/acme/app/pull/453\"),\n    IssueSpec(\"ABA-304\", \"Document retry behaviour + runbook\", deps=(\"ABA-302\",),\n              pr=\"github.com/acme/app/pull/454\"),\n    IssueSpec(\"ABA-301\", \"Add webhook retry queue table\",\n              pr=\"github.com/acme/app/pull/451\"),\n]"
 }
@@ -1564,7 +1564,7 @@ id: toolu_01HSZ6vwVrFGbbHExyxGP6xh
 tool_result
 id: toolu_01HSZ6vwVrFGbbHExyxGP6xh
 ```
-The file /Users/anton/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1651,7 +1651,7 @@ id: toolu_0132AcNyFyoF3VJ6FQpE5Rsx
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/docs/prototypes/live-execution-swimlanes/finding.md",
+  "file_path": "/home/<USER>/src/drain-cycle/docs/prototypes/live-execution-swimlanes/finding.md",
   "old_string": "Time-box: 1–2 build-observe iterations. Kill condition: no layout reads cleanly at a glance, or a flat-log improvement would do the job instead. Set before building; not extended.",
   "new_string": "Time-box: 1–2 build-observe iterations. Kill condition: no layout reads cleanly at a glance, or a flat-log improvement would do the job instead. Set before building; not extended.\n\n**Follow-up iteration (operator-requested, throwaway-code mode).** After the narrative spike resolved the single-issue layout, the operator asked to see the layout *in motion* and then to extend it with a cycle-level queue: \"see all the tasks in the queue and toggle between them for viewing… in execution order, which takes into account dependencies.\" Built `demo.py` — a non-production Python/`rich` animation that drains a four-issue cycle, reading the real `agent-skills-shaper` pack for step captions and review personas. It adds a **queue pane** (issues in dependency-resolved execution order, lane state per issue) above the focused issue's swimlane, with **keyboard toggle** (`↑/↓`/`1-N` to select, `f` to re-follow the running issue, `space` pause). This was a build-observe slice on the queue/toggle question, not a re-opening of the layout question."
 }
@@ -1662,7 +1662,7 @@ id: toolu_0132AcNyFyoF3VJ6FQpE5Rsx
 tool_result
 id: toolu_0132AcNyFyoF3VJ6FQpE5Rsx
 ```
-The file /Users/anton/src/drain-cycle/docs/prototypes/live-execution-swimlanes/finding.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/docs/prototypes/live-execution-swimlanes/finding.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1672,7 +1672,7 @@ id: toolu_019QcjuupzE99jNdCnXZGYAg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/docs/prototypes/live-execution-swimlanes/finding.md",
+  "file_path": "/home/<USER>/src/drain-cycle/docs/prototypes/live-execution-swimlanes/finding.md",
   "old_string": "- Round 2: operator chose **C-status-only** (tree only, redraws in place, no scrolling log in default mode) over C-pinned (tree + scrolling raw log).\n- Round 2: the horizontal spine was re-confirmed as acceptable (chosen a second time) when the contradiction was named explicitly.",
   "new_string": "- Round 2: operator chose **C-status-only** (tree only, redraws in place, no scrolling log in default mode) over C-pinned (tree + scrolling raw log).\n- Round 2: the horizontal spine was re-confirmed as acceptable (chosen a second time) when the contradiction was named explicitly.\n- Follow-up: after seeing the single-issue layout animate, the operator asked — unprompted — to add a **cycle queue** above the swimlane and to **toggle** which issue is viewed; and that the queue be ordered by **dependency-aware execution order**. The single-issue swimlane was not enough on its own: the operator wanted run-wide context (what's done, running, waiting) alongside the active issue's detail.\n- Follow-up: the requested toggle is *viewing*, not *steering* — switching which issue's detail is shown, while execution stays sequential (one issue runs at a time). The operator did not ask to run issues in parallel or reorder them."
 }
@@ -1683,7 +1683,7 @@ id: toolu_019QcjuupzE99jNdCnXZGYAg
 tool_result
 id: toolu_019QcjuupzE99jNdCnXZGYAg
 ```
-The file /Users/anton/src/drain-cycle/docs/prototypes/live-execution-swimlanes/finding.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/docs/prototypes/live-execution-swimlanes/finding.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1693,7 +1693,7 @@ id: toolu_01F2k4nK1KVkwoeUPnSzsmMj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/docs/prototypes/live-execution-swimlanes/finding.md",
+  "file_path": "/home/<USER>/src/drain-cycle/docs/prototypes/live-execution-swimlanes/finding.md",
   "old_string": "Net shape for the design doc:\n- Horizontal stepper spine: `done ● / active ◉ / upcoming ○` across the fixed `exec:*` chain (`pickup → breakdown → build → review → verify → simplify → finish`; `debug` as escalation).\n- Vertical drill-down under the active step only, showing its persona fan-out with per-persona state and verdict where one exists (e.g. `spec-compliance ✓ GO`).\n- Active node shows a one-line sub-status for liveness.\n- Status-only, redraws in place; coexists with `-w` (which keeps raw streaming) rather than duplicating it.",
   "new_string": "The queue/toggle follow-up extends — not contradicts — that finding. The swimlane answers \"where is *this* issue,\" but a drain runs a whole cycle; the operator also needs \"where is the *run*.\" So the surface is two-level: a **cycle queue** (every issue, in dependency-resolved execution order, with lane state `done ●` / `running ◉` / `queued ○` and a dependency note) sitting above the **focused issue's swimlane**. The toggle lets the operator inspect any issue's lane without losing the run's shape, and auto-follow keeps the running issue in view by default. Crucially the queue is *not* parallel swim lanes — execution is sequential, so […]
 
@@ -1702,7 +1702,7 @@ id: toolu_01F2k4nK1KVkwoeUPnSzsmMj
 tool_result
 id: toolu_01F2k4nK1KVkwoeUPnSzsmMj
 ```
-The file /Users/anton/src/drain-cycle/docs/prototypes/live-execution-swimlanes/finding.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/docs/prototypes/live-execution-swimlanes/finding.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1712,7 +1712,7 @@ id: toolu_01Sg4ctmkRoL1ipfpAaMFjHs
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/docs/prototypes/live-execution-swimlanes/finding.md",
+  "file_path": "/home/<USER>/src/drain-cycle/docs/prototypes/live-execution-swimlanes/finding.md",
   "old_string": "- **Redraw-in-place needs an operability/terminal-capability decision.** Redrawing a fixed region (vs append-only) interacts with non-TTY output, piping (stdout is kept clean today — see `console.py`), and CI/log capture. The design doc must state the fallback when stdout is not a TTY.\n- The chain rendered must be the *real* `exec:*` chain and personas, not an invented one (`docs/architecture.html`).",
   "new_string": "- **Redraw-in-place needs an operability/terminal-capability decision.** Redrawing a fixed region (vs append-only) interacts with non-TTY output, piping (stdout is kept clean today — see `console.py`), and CI/log capture. The design doc must state the fallback when stdout is not a TTY. The prototype demonstrates one: a non-interactive play-through that auto-follows the running issue.\n- **The queue needs the cycle's dependency-resolved execution order.** Rendering the queue assumes the orchestrator exposes the ordered issue list (topologically sorted over `blocked_by[]`) and per-issue lane state (done/running/queued). Confirm this is already available from the run plan / `active.json`, or name what must surface it. See `drain_cycle/progress.py` (`active.json`), the startup plan in `console.py`.\n- **The viewing toggle adds an input surface, not just an output one.** Keyboard selection over a live-redrawing region needs raw-mode TTY handling with a graceful […]
 
@@ -1721,7 +1721,7 @@ id: toolu_01Sg4ctmkRoL1ipfpAaMFjHs
 tool_result
 id: toolu_01Sg4ctmkRoL1ipfpAaMFjHs
 ```
-The file /Users/anton/src/drain-cycle/docs/prototypes/live-execution-swimlanes/finding.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/docs/prototypes/live-execution-swimlanes/finding.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1731,7 +1731,7 @@ id: toolu_01Xu7yMwFj5E4aFkXUNiWtyM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/docs/prototypes/live-execution-swimlanes/finding.md",
+  "file_path": "/home/<USER>/src/drain-cycle/docs/prototypes/live-execution-swimlanes/finding.md",
   "old_string": "## Disposition\nNo throwaway code was produced (narrative mode); nothing to delete. The mockups in this finding are illustrations, explicitly non-production.",
   "new_string": "## Disposition\nThe narrative-mode mockups in this finding are illustrations, explicitly non-production. The follow-up iteration produced throwaway code — `docs/prototypes/live-execution-swimlanes/demo.py` — which is marked NON-PRODUCTION in its module docstring (per Track C, C6): it simulates timings and invokes no `claude`, reading the real pack only for captions/personas. It is kept (not deleted) as a runnable illustration of the layout in motion for the design-doc reader, and must not be extended toward production — that requires the design doc and a clean implementation."
 }
@@ -1742,7 +1742,7 @@ id: toolu_01Xu7yMwFj5E4aFkXUNiWtyM
 tool_result
 id: toolu_01Xu7yMwFj5E4aFkXUNiWtyM
 ```
-The file /Users/anton/src/drain-cycle/docs/prototypes/live-execution-swimlanes/finding.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/docs/prototypes/live-execution-swimlanes/finding.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1818,7 +1818,7 @@ id: toolu_01H6Dmc2LcnucPVrwNE9zxuG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py",
+  "file_path": "/home/<USER>/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py",
   "old_string": "        self.r.flash = (f\"drained · PR {self.r.spec.pr}\", \"bold green\")",
   "new_string": "        self.r.flash = (f\"completed · PR {self.r.spec.pr}\", \"bold green\")"
 }
@@ -1829,7 +1829,7 @@ id: toolu_01H6Dmc2LcnucPVrwNE9zxuG
 tool_result
 id: toolu_01H6Dmc2LcnucPVrwNE9zxuG
 ```
-The file /Users/anton/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1839,7 +1839,7 @@ id: toolu_01CXWcrmDA62qyLkPw88g8Yd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py",
+  "file_path": "/home/<USER>/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py",
   "old_string": "    title.append(f\"  {done}/{n} done · drains in dependency order\", style=\"bold\")",
   "new_string": "    title.append(f\"  {done}/{n} done · dependency-resolved execution order\", style=\"bold\")"
 }
@@ -1850,7 +1850,7 @@ id: toolu_01CXWcrmDA62qyLkPw88g8Yd
 tool_result
 id: toolu_01CXWcrmDA62qyLkPw88g8Yd
 ```
-The file /Users/anton/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1860,7 +1860,7 @@ id: toolu_01961MRU79CLjGnfwKGf7zUo
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py",
+  "file_path": "/home/<USER>/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py",
   "old_string": "\"C-status-only\") for a whole drain *cycle*: a queue of coding issues drained\none at a time, walking the *real* exec:* chain from the bundled",
   "new_string": "\"C-status-only\") for a whole drain-cycle run: a queue of coding issues worked\none at a time, walking the *real* exec:* chain from the bundled"
 }
@@ -1871,7 +1871,7 @@ id: toolu_01961MRU79CLjGnfwKGf7zUo
 tool_result
 id: toolu_01961MRU79CLjGnfwKGf7zUo
 ```
-The file /Users/anton/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/docs/prototypes/live-execution-swimlanes/demo.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1918,7 +1918,7 @@ id: toolu_01PRcN7LeJ3ek5RqJmkR4zLv
 {
   "description": "Probe worker stream events",
   "subagent_type": "Explore",
-  "prompt": "Investigate the drain-cycle worker's event stream. Repo root: /Users/anton/src/drain-cycle.\n\nRead `drain_cycle/worker.py` in full, plus anything it imports for parsing the worker subprocess output (grep for `stream-json`, `output-format`, `json.loads`, `message`, `tool_use`, `usage`, `subagent`, `Task`, `Skill`).\n\nThe worker runs a single `claude -p --output-format stream-json` subprocess. I need to know precisely:\n1. What JSON event objects does the orchestrator receive and parse? List each event `type` it handles (e.g. assistant/user/result/system) and which fields it reads.\n2. Do those events expose tool-use detail — specifically `tool_use` blocks with tool `name` and `input`? Does the orchestrator currently look at them, or only at `usage`/token fields?\n3. Is there any signal in the stream that reveals which Skill is being invoked (e.g. a tool_use named `Skill` with a skill name in input) or when a sub-agent is spawned (a `Task` tool_use with `subagent_type`)? Even if the orchestrator ignores it today, does the raw stream CONTAIN it?\n4. How is per-turn usage keyed (the message.id dedup mentioned in code)?\n\nReport with concrete file:line evidence and verbatim snippets of the parsing logic. Be precise about what the stream contains vs what the orchestrator currently consumes — that distinction is the […]
+  "prompt": "Investigate the drain-cycle worker's event stream. Repo root: /home/<USER>/src/drain-cycle.\n\nRead `drain_cycle/worker.py` in full, plus anything it imports for parsing the worker subprocess output (grep for `stream-json`, `output-format`, `json.loads`, `message`, `tool_use`, `usage`, `subagent`, `Task`, `Skill`).\n\nThe worker runs a single `claude -p --output-format stream-json` subprocess. I need to know precisely:\n1. What JSON event objects does the orchestrator receive and parse? List each event `type` it handles (e.g. assistant/user/result/system) and which fields it reads.\n2. Do those events expose tool-use detail — specifically `tool_use` blocks with tool `name` and `input`? Does the orchestrator currently look at them, or only at `usage`/token fields?\n3. Is there any signal in the stream that reveals which Skill is being invoked (e.g. a tool_use named `Skill` with a skill name in input) or when a sub-agent is spawned (a `Task` tool_use with `subagent_type`)? Even if the orchestrator ignores it today, does the raw stream CONTAIN it?\n4. How is per-turn usage keyed (the message.id dedup mentioned in code)?\n\nReport with concrete file:line evidence and verbatim snippets of the parsing logic. Be precise about what the stream contains vs what the orchestrator currently consumes — that distinction is the […]
 
 > TOOL
 
@@ -1928,7 +1928,7 @@ id: toolu_01C9cNBGz4VN5tpucWYLhMHJ
 {
   "description": "Probe pack control flow",
   "subagent_type": "Explore",
-  "prompt": "Investigate how the agent-skills-shaper pack's exec:* chain invokes its steps and personas. Pack root: /Users/anton/src/agent-skills-shaper (skills under skills/). If not there, resolve via the symlink at ~/.claude/skills/exec-pickup.\n\nThe exec chain is: pickup → breakdown → build → review → verify → finish (with exec:debug, exec:simplify as escalations). I need to know the MECHANISM by which one step triggers the next and how review runs its personas, because that determines whether step/persona transitions appear as discrete, observable events in a single agent's tool-use stream.\n\nRead these SKILL.md files and report concretely:\n1. skills/exec-pickup/SKILL.md — how does it move from pickup → breakdown → build → review → ...? Does it (a) invoke each next step as a Skill tool call (e.g. `Skill(exec-build)`), (b) instruct the SAME agent to sequentially follow each step's instructions inline (no tool boundary), or (c) spawn sub-agents (Task tool with subagent_type) per step?\n2. skills/execution-review/SKILL.md and skills/execution-review/personas/*.md — how are the three personas (spec-compliance, security-auditor, code-quality) run? Are they (a) separate sub-agents spawned via Task/Agent with a subagent_type each, (b) sequential persona prompts the single review agent reads and applies inline, or (c) something else?\n3. Do build/review/verify […]
+  "prompt": "Investigate how the agent-skills-shaper pack's exec:* chain invokes its steps and personas. Pack root: /home/<USER>/src/agent-skills-shaper (skills under skills/). If not there, resolve via the symlink at ~/.claude/skills/exec-pickup.\n\nThe exec chain is: pickup → breakdown → build → review → verify → finish (with exec:debug, exec:simplify as escalations). I need to know the MECHANISM by which one step triggers the next and how review runs its personas, because that determines whether step/persona transitions appear as discrete, observable events in a single agent's tool-use stream.\n\nRead these SKILL.md files and report concretely:\n1. skills/exec-pickup/SKILL.md — how does it move from pickup → breakdown → build → review → ...? Does it (a) invoke each next step as a Skill tool call (e.g. `Skill(exec-build)`), (b) instruct the SAME agent to sequentially follow each step's instructions inline (no tool boundary), or (c) spawn sub-agents (Task tool with subagent_type) per step?\n2. skills/execution-review/SKILL.md and skills/execution-review/personas/*.md — how are the three personas (spec-compliance, security-auditor, code-quality) run? Are they (a) separate sub-agents spawned via Task/Agent with a subagent_type each, (b) sequential persona prompts the single review agent reads and applies inline, or (c) something else?\n3. Do build/review/verify […]
 
 > TOOL
 
@@ -1938,7 +1938,7 @@ id: toolu_01QQTGPtGaiduKyttn8GYSWX
 {
   "description": "Probe state file schemas",
   "subagent_type": "Explore",
-  "prompt": "Investigate the drain-cycle state/progress files. Repo root: /Users/anton/src/drain-cycle.\n\nI need to know whether any existing state file already records which exec:* step (pickup/breakdown/build/review/verify/finish) is currently active, and who writes it.\n\n1. Read `drain_cycle/progress.py` fully — focus on the `active.json` marker: its full schema (every field), who writes it and when, and whether any field tracks the current step/phase.\n2. Find and read whatever defines/writes `exec-state.json` (grep the repo and the agent-skills-shaper pack at /Users/anton/src/agent-skills-shaper for `exec-state`, `exec_state`). Report its full schema/sections (the conversation context mentions sections like \"pickup\", \"ac_checklist\", \"pr_urls\", \"outcome_verdict\", \"prep_verdict\"). Is there any field that names the current/last-completed exec step? Who writes it — the orchestrator, the worker, or the skills themselves?\n3. Does the orchestrator (worker.py / the main drain loop) ever READ a step/phase indicator back from either file during a run, or only write/aggregate tokens?\n\nReport each file's schema with field names and concrete file:line evidence, and clearly state: is there ALREADY a per-step state signal anywhere, written by anyone, that an orchestrator could read to know the active step? Do not propose solutions; report what exists."
+  "prompt": "Investigate the drain-cycle state/progress files. Repo root: /home/<USER>/src/drain-cycle.\n\nI need to know whether any existing state file already records which exec:* step (pickup/breakdown/build/review/verify/finish) is currently active, and who writes it.\n\n1. Read `drain_cycle/progress.py` fully — focus on the `active.json` marker: its full schema (every field), who writes it and when, and whether any field tracks the current step/phase.\n2. Find and read whatever defines/writes `exec-state.json` (grep the repo and the agent-skills-shaper pack at /home/<USER>/src/agent-skills-shaper for `exec-state`, `exec_state`). Report its full schema/sections (the conversation context mentions sections like \"pickup\", \"ac_checklist\", \"pr_urls\", \"outcome_verdict\", \"prep_verdict\"). Is there any field that names the current/last-completed exec step? Who writes it — the orchestrator, the worker, or the skills themselves?\n3. Does the orchestrator (worker.py / the main drain loop) ever READ a step/phase indicator back from either file during a run, or only write/aggregate tokens?\n\nReport each file's schema with field names and concrete file:line evidence, and clearly state: is there ALREADY a per-step state signal anywhere, written by anyone, that an orchestrator could read to know the active step? Do not propose solutions; report what exists."
 }
 ```
 
@@ -1983,7 +1983,7 @@ Based on my investigation of the drain-cycle codebase, here is the current state
 ```
 
 **Who writes it:**
-- **Orchestrator writes** at `/Users/anton/src/drain-cycle/drain_cycle/orchestrator.py:635` just before spawning the worker (`progress.write(marker)`), with an initial empty `"progress": {}` dict
+- **Orchestrator writes** at `/home/<USER>/src/drain-cycle/drain_cycle/orchestrator.py:635` just before spawning the worker (`progress.write(marker)`), with an initial empty `"progress": {}` dict
 - **Orchestrator writes** updates via the `on_progress` callback (line 653) as the worker emits per-turn updates
 - **Orchestrator clears** at line 682 (in a finally block) after the worker exits
 
@@ -2002,17 +2002,17 @@ Perfect! Now I have all the information I need. Let me compile a comprehensive r
 
 ## Report: Drain-Cycle Worker Event Stream Analysis
 
-Based on a complete investigation of `/Users/anton/src/drain-cycle/drain_cycle/worker.py` and its related parsing infrastructure, here is what the orchestrator receives and currently consumes:
+Based on a complete investigation of `/home/<USER>/src/drain-cycle/drain_cycle/worker.py` and its related parsing infrastructure, here is what the orchestrator receives and currently consumes:
 
 ### 1. **Event Types Handled**
 
-The orchestrator (via the `_UsageAccumulator.feed()` method at `/Users/anton/src/drain-cycle/drain_cycle/worker.py:510-515`) recognizes exactly **two event types**:
+The orchestrator (via the `_UsageAccumulator.feed()` method at `/home/<USER>/src/drain-cycle/drain_cycle/worker.py:510-515`) recognizes exactly **two event types**:
 
 - **`"assistant"`** (line 512): Per-turn assistant message events
 - **`"result"`** (line 514): Terminal session summary event
 
 Two additional event types exist in the stream but are **completely ignored**:
-- **`"system"`** (appears in tests at `/Users/anton/src/drain-cycle/tests/test_worker.py:91` with `subtype: "init"` and `session_id`)
+- **`"system"`** (appears in tests at `/home/<USER>/src/drain-cycle/tests/test_worker.py:91` with `subtype: "init"` and `session_id`)
 - **`"user"`** (handled only by watch_format.py for display, not by worker.py)
 
 ### 2. **Fields Extracted from Assistant Events**
@@ -2042,13 +2042,13 @@ The phrase "by name" suggests that these are being invoked as Skill tools. Let m
 
 ## Investigation Report: Exec:* Chain Invocation Mechanism
 
-Based on my analysis of `/Users/anton/src/agent-skills-shaper/skills/` and `/Users/anton/src/agent-skills-shaper/docs/adr/0003-persona-contract-and-dispatch-protocol.md`, here are the concrete findings:
+Based on my analysis of `/home/<USER>/src/agent-skills-shaper/skills/` and `/home/<USER>/src/agent-skills-shaper/docs/adr/0003-persona-contract-and-dispatch-protocol.md`, here are the concrete findings:
 
 ### 1. **Exec:pickup → Subsequent Steps (breakdown, build, review, verify, finish)**
 
 **Invocation Mechanism: Named Skill Delegation (Type A)**
 
-The critical evidence is in `/Users/anton/src/agent-skills-shaper/skills/exec-pickup/SKILL.md`, lines 14-16:
+The critical evidence is in `/home/<USER>/src/agent-skills-shaper/skills/exec-pickup/SKILL.md`, lines 14-16:
 
 > "This skill reads the issue, writes the `pickup` section of `exec-state.json`, and then **delegates each step — breakdown, build, review, verify, finish — to its owning `exec:*` skill by name**. It inlines no procedure; the named delegation is the whole of each step."
 
@@ -2107,7 +2107,7 @@ tool_use Write
 id: toolu_01KkfvkcrxTErGwTunezv34a
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/docs/spikes/live-execution-swimlanes-observability/recommendation.md",
+  "file_path": "/home/<USER>/src/drain-cycle/docs/spikes/live-execution-swimlanes-observability/recommendation.md",
   "content": "# Spike recommendation: live-execution-swimlanes — step/persona observability\n\n**Track:** B — backend spike\n**Upstream:** `docs/ideas/live-execution-swimlanes.md` (feasibility assumption); `docs/prototypes/live-execution-swimlanes/finding.md` (layout resolved, Proceed)\n**Downstream:** `shape:design` Track A design doc — this spike answers its gated first open question.\n\n## Question\nCan drain-cycle derive the active `exec:*` step and the active review persona from the worker's existing `stream-json` event stream, or must a lightweight marker contract be added?\n\n## Failure example\nDuring a real drain run the operator watches the default (non-`-w`) output and cannot tell the run is in `review / security-auditor` rather than `build`. The active step and persona are unknowable from what drain-cycle consumes today: the orchestrator's `_UsageAccumulator` reads only `message.id` and the four `message.usage` token fields, never `message.content` (`drain_cycle/worker.py:510–528`). The swimlanes view cannot render an active node without a signal that does not currently reach the orchestrator.\n\n## Time-box\n4 investigation steps, set before starting; not extended.\n1. What the worker stream carries vs. what the orchestrator consumes.\n2. How the pack invokes steps and personas (is each transition a machine-detectable boundary?).\n3. What existing state files already record about the active step.\n4. Synthesise.\n\nKill condition (set up front): if step 1 showed the stream opaque *and* the pack offered no invocation signal, the […]
 
 > TOOL
@@ -2115,7 +2115,7 @@ id: toolu_01KkfvkcrxTErGwTunezv34a
 tool_result
 id: toolu_01KkfvkcrxTErGwTunezv34a
 ```
-File created successfully at: /Users/anton/src/drain-cycle/docs/spikes/live-execution-swimlanes-observability/recommendation.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/src/drain-cycle/docs/spikes/live-execution-swimlanes-observability/recommendation.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2186,7 +2186,7 @@ id: toolu_01AEjKnEZZKVZJbviCfdVCJ1
 ```json
 {
   "description": "Map rendering and worker code surfaces",
-  "prompt": "I'm writing a design doc for a \"live execution swimlanes\" feature in the drain-cycle repo (/Users/anton/src/drain-cycle). I need a precise map of the code surfaces it will build on. Read these files and report concisely with file:line references:\n\n1. `drain_cycle/console.py` — how the default (non-`-w`) run output is rendered today: what functions emit the flat event lines (orch / ABA-NNN / HALT) and the `│`-indented agent output; how stdout-vs-TTY is handled; whether there's any live-refreshing region or it's all append-only print. Note the startup plan rendering (the cycle's issue list at run start).\n2. `drain_cycle/progress.py` — `active.json` schema/fields, `format_progress_line`, who writes and who reads it. Is there any step/phase field?\n3. `drain_cycle/worker.py` — how the worker subprocess stream-json is consumed, specifically `_UsageAccumulator.feed` and the surrounding loop (~lines 480-560): what fields of each event are read (message.id, message.usage, message.content?), and whether anything parses tool_use blocks.\n4. `drain_cycle/watch_format.py` — what it parses from the stream (tool_use name/args) for the `-w` pane, and whether it's a reusable parser.\n5. `drain_cycle/handoff.py` — the exec-state.json schema: section keys, who writes (skills vs orchestrator), who reads, and whether reads ignore unknown keys (backward-compat).\n\nFor each, give me the […]
+  "prompt": "I'm writing a design doc for a \"live execution swimlanes\" feature in the drain-cycle repo (/home/<USER>/src/drain-cycle). I need a precise map of the code surfaces it will build on. Read these files and report concisely with file:line references:\n\n1. `drain_cycle/console.py` — how the default (non-`-w`) run output is rendered today: what functions emit the flat event lines (orch / ABA-NNN / HALT) and the `│`-indented agent output; how stdout-vs-TTY is handled; whether there's any live-refreshing region or it's all append-only print. Note the startup plan rendering (the cycle's issue list at run start).\n2. `drain_cycle/progress.py` — `active.json` schema/fields, `format_progress_line`, who writes and who reads it. Is there any step/phase field?\n3. `drain_cycle/worker.py` — how the worker subprocess stream-json is consumed, specifically `_UsageAccumulator.feed` and the surrounding loop (~lines 480-560): what fields of each event are read (message.id, message.usage, message.content?), and whether anything parses tool_use blocks.\n4. `drain_cycle/watch_format.py` — what it parses from the stream (tool_use name/args) for the `-w` pane, and whether it's a reusable parser.\n5. `drain_cycle/handoff.py` — the exec-state.json schema: section keys, who writes (skills vs orchestrator), who reads, and whether reads ignore unknown keys (backward-compat).\n\nFor each, give me the […]
 
 > TOOL
 
@@ -2195,7 +2195,7 @@ id: toolu_01BimpDho4H5YCN6TjauNcmJ
 ```json
 {
   "description": "Extract design-decisions and architecture context",
-  "prompt": "In the drain-cycle repo (/Users/anton/src/drain-cycle), I'm writing a design doc and need the durable design context. Please:\n\n1. Find and read `docs/design-decisions.md` (or similarly named decision ledger). Report the full text of any sections relevant to: the control plane / observability, the run-log verdict schema (mentioned as \"§23\", \"§26\", \"N01\"), exec-state.json ownership, and anything about UI/console output or the watch pane. Quote the relevant section numbers and their content.\n\n2. Find and read `docs/architecture.html` (or .md). Report: the two-layer supervision/workflow split, the `exec:*` chain definition, the review personas, and specifically any section describing a \"sguard\" or control-plane pattern (mentioned in my notes as a pattern to mirror). Give me the headings and a tight summary of each relevant part.\n\n3. List `docs/adr/` or wherever ADRs live, and report the title + one-line summary of each ADR. Note the ADR file naming/numbering convention and the format of one example ADR (so I can match it). Note especially ADR 0003 if it exists (personas).\n\n4. Check `docs/design-docs/` for any EXISTING design doc and report its section structure/headings so I can match the house format.\n\nReport concisely with file paths. Read-only; don't change anything.",
+  "prompt": "In the drain-cycle repo (/home/<USER>/src/drain-cycle), I'm writing a design doc and need the durable design context. Please:\n\n1. Find and read `docs/design-decisions.md` (or similarly named decision ledger). Report the full text of any sections relevant to: the control plane / observability, the run-log verdict schema (mentioned as \"§23\", \"§26\", \"N01\"), exec-state.json ownership, and anything about UI/console output or the watch pane. Quote the relevant section numbers and their content.\n\n2. Find and read `docs/architecture.html` (or .md). Report: the two-layer supervision/workflow split, the `exec:*` chain definition, the review personas, and specifically any section describing a \"sguard\" or control-plane pattern (mentioned in my notes as a pattern to mirror). Give me the headings and a tight summary of each relevant part.\n\n3. List `docs/adr/` or wherever ADRs live, and report the title + one-line summary of each ADR. Note the ADR file naming/numbering convention and the format of one example ADR (so I can match it). Note especially ADR 0003 if it exists (personas).\n\n4. Check `docs/design-docs/` for any EXISTING design doc and report its section structure/headings so I can match the house format.\n\nReport concisely with file paths. Read-only; don't change anything.",
   "subagent_type": […]
 
 > TOOL
@@ -2252,7 +2252,7 @@ There is **no `docs/design-decisions.md` file in the current repo state**. Howev
 
 ### 2. Architecture Documentation
 
-**File:** `/Users/anton/src/drain-cycle/docs/architecture.html`
+**File:** `/home/<USER>/src/drain-cycle/docs/architecture.html`
 
 #### Two-Layer Supervision/Workflow Split:
 - **§1: Split the work into two layers, one product**
@@ -2295,7 +2295,7 @@ tool_use Write
 id: toolu_01SXKLNv6kp9QgWUPuNf7ppc
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/docs/design-docs/live-execution-swimlanes/design-doc.md",
+  "file_path": "/home/<USER>/src/drain-cycle/docs/design-docs/live-execution-swimlanes/design-doc.md",
   "content": "# Design doc: live-execution-swimlanes\n\n**Date:** 2026-06-18\n**Status:** Draft — not accepted; no implementation until accepted.\n**Track:** A — design document (`shape:design`)\n**Trigger:** Shared-interface surface — the feature reads across the artifact boundary (architecture §5) and touches the supervisor↔pack contract (ADR 0002, 0030), so it cannot be a purely additive local change.\n\n**Upstream:**\n- `docs/ideas/live-execution-swimlanes.md` — triage record (Confidence 0.5 → validation slot).\n- `docs/prototypes/live-execution-swimlanes/finding.md` — product spike, **Proceed**; resolved the layout.\n- `docs/spikes/live-execution-swimlanes-observability/recommendation.md` — backend spike; resolved feasibility (Option B, Gilad 4).\n\n**Related decisions:** ADR 0002 (thin-supervisor contract / artifact boundary), ADR 0008 (per-run log), ADR 0015 (`active.json` marker), ADR 0017 (opt-in OTel), ADR 0019 (`-w` runs claude in the tmux pane), ADR 0030 (pack-owned execution-state file). Architecture §5 (Layer 2 writes signals; Layer 1 reads them), §7 (state plane).\n\n---\n\n## Problem\n\nThe drain-cycle operator runs a cycle and steps away — that is the point of the supervisor (vision: \"my attention comes off the mechanical loop\"). To step away, the operator must trust the run is following the standard `exec:*` chain. Trust requires seeing *where in the chain* the work is.\n\n**Affected user.** The operator running a drain-cycle in the foreground (the default, non-`-w` invocation), who wants to glance at the terminal […]
 
 > TOOL
@@ -2303,7 +2303,7 @@ id: toolu_01SXKLNv6kp9QgWUPuNf7ppc
 tool_result
 id: toolu_01SXKLNv6kp9QgWUPuNf7ppc
 ```
-File created successfully at: /Users/anton/src/drain-cycle/docs/design-docs/live-execution-swimlanes/design-doc.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/src/drain-cycle/docs/design-docs/live-execution-swimlanes/design-doc.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2317,7 +2317,7 @@ id: toolu_01F7B8sj8qSvfvxpEwww1VZd
 ```json
 {
   "description": "Writing-editor pass on design doc",
-  "prompt": "You are the writing-editor persona. Your persona definition is at `/Users/anton/.claude/skills/shape-design/agents/writing-editor/AGENT.md` — read it first and apply its exact rubric and verdict vocabulary. If that file does not exist, fall back to a rigorous technical-writing edit: clarity, concision, no hedging, no redundancy, active voice, terms defined before use, claims supported, structure serves the reader.\n\nReview this design document: `/Users/anton/src/drain-cycle/docs/design-docs/live-execution-swimlanes/design-doc.md`\n\nReturn:\n1. A verdict — one of `accept` / `accept with notes` / `reject` (use the AGENT.md vocabulary if it differs).\n2. A concise, prioritized list of specific edits (quote the offending text + give the fix). Focus on real writing defects: wordiness, buried claims, undefined jargon, weak transitions, inconsistent terminology, sentences that try to do too much. Do NOT rewrite the engineering content or second-guess the technical decisions — edit the prose only.\n3. If you find nothing material, say so plainly.\n\nBe terse and specific. This is read-only — report edits, don't apply them.",
+  "prompt": "You are the writing-editor persona. Your persona definition is at `/home/<USER>/.claude/skills/shape-design/agents/writing-editor/AGENT.md` — read it first and apply its exact rubric and verdict vocabulary. If that file does not exist, fall back to a rigorous technical-writing edit: clarity, concision, no hedging, no redundancy, active voice, terms defined before use, claims supported, structure serves the reader.\n\nReview this design document: `/home/<USER>/src/drain-cycle/docs/design-docs/live-execution-swimlanes/design-doc.md`\n\nReturn:\n1. A verdict — one of `accept` / `accept with notes` / `reject` (use the AGENT.md vocabulary if it differs).\n2. A concise, prioritized list of specific edits (quote the offending text + give the fix). Focus on real writing defects: wordiness, buried claims, undefined jargon, weak transitions, inconsistent terminology, sentences that try to do too much. Do NOT rewrite the engineering content or second-guess the technical decisions — edit the prose only.\n3. If you find nothing material, say so plainly.\n\nBe terse and specific. This is read-only — report edits, don't apply them.",
   "subagent_type": "general-purpose"
 }
 ```
@@ -2361,7 +2361,7 @@ id: toolu_01V8rH893ubSYTchRNWoRmdw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/docs/design-docs/live-execution-swimlanes/design-doc.md",
+  "file_path": "/home/<USER>/src/drain-cycle/docs/design-docs/live-execution-swimlanes/design-doc.md",
   "old_string": "  3. Pack-side: ship the skills with the marker write behind no flag is unnecessary — an older pack simply omits the field and the renderer falls back → **verify** with an old-pack fixture (the marker-miss path, NFR-6 fallback leg).",
   "new_string": "  3. Pack-side: a flag gating the marker write is unnecessary — an older pack simply omits the field and the renderer falls back → **verify** with an old-pack fixture (the marker-miss path, NFR-6 fallback leg)."
 }
@@ -2372,7 +2372,7 @@ id: toolu_01V8rH893ubSYTchRNWoRmdw
 tool_result
 id: toolu_01V8rH893ubSYTchRNWoRmdw
 ```
-The file /Users/anton/src/drain-cycle/docs/design-docs/live-execution-swimlanes/design-doc.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/docs/design-docs/live-execution-swimlanes/design-doc.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2382,7 +2382,7 @@ id: toolu_011wBcMqYb1Bmy23EvaTk2Y6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/docs/design-docs/live-execution-swimlanes/design-doc.md",
+  "file_path": "/home/<USER>/src/drain-cycle/docs/design-docs/live-execution-swimlanes/design-doc.md",
   "old_string": "it consumes the worker stream only for token accounting (`worker.py:_UsageAccumulator.feed` reads `message.id` + `message.usage`, never `message.content`), and no state file records a current step (`active.json` has timing/tokens but no phase field; `exec-state.json` sections appear only *after* each phase completes).",
   "new_string": "it consumes the worker stream only for token accounting (`worker.py:_UsageAccumulator.feed` reads `message.id` + `message.usage`, never `message.content`). No state file records a current step: `active.json` has timing/tokens but no phase field, and `exec-state.json` sections appear only *after* each phase completes."
 }
@@ -2393,7 +2393,7 @@ id: toolu_011wBcMqYb1Bmy23EvaTk2Y6
 tool_result
 id: toolu_011wBcMqYb1Bmy23EvaTk2Y6
 ```
-The file /Users/anton/src/drain-cycle/docs/design-docs/live-execution-swimlanes/design-doc.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/docs/design-docs/live-execution-swimlanes/design-doc.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2403,7 +2403,7 @@ id: toolu_01YaMnj3zsXHDiB2qXAuYRGh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/docs/design-docs/live-execution-swimlanes/design-doc.md",
+  "file_path": "/home/<USER>/src/drain-cycle/docs/design-docs/live-execution-swimlanes/design-doc.md",
   "old_string": "the operator can tell which step is executing and which review persona is active, and what is done versus upcoming across the chain — for the issue in flight, and across the whole cycle's queue of issues in their dependency-resolved execution order.",
   "new_string": "the operator can tell which step is executing, which review persona is active, and what is done versus upcoming — both for the issue in flight and across the whole cycle's queue in dependency-resolved execution order."
 }
@@ -2414,7 +2414,7 @@ id: toolu_01YaMnj3zsXHDiB2qXAuYRGh
 tool_result
 id: toolu_01YaMnj3zsXHDiB2qXAuYRGh
 ```
-The file /Users/anton/src/drain-cycle/docs/design-docs/live-execution-swimlanes/design-doc.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/docs/design-docs/live-execution-swimlanes/design-doc.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2424,7 +2424,7 @@ id: toolu_01Xk1y8n8J2eY3HytJTwqjm6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/docs/design-docs/live-execution-swimlanes/design-doc.md",
+  "file_path": "/home/<USER>/src/drain-cycle/docs/design-docs/live-execution-swimlanes/design-doc.md",
   "old_string": "Step/persona observability reads precisely the inside-phase detail the boundary withholds. **The design's central obligation is to surface that detail for display without letting it gate anything** — advancement, halt, grading, or the worker's exit code. A swimlane field that is read-only-for-display and never gates is consistent with the boundary in the same way a run-log timestamp is: Layer 1 may *display* Layer-2-authored content; it may not *decide* on inside-phase content.",
   "new_string": "Step/persona observability reads precisely the inside-phase detail the boundary withholds. **The design's central obligation is to surface that detail for display without letting it gate anything** — advancement, halt, grading, or the worker's exit code. Layer 1 may *display* Layer-2-authored content; it may not *decide* on inside-phase content."
 }
@@ -2435,7 +2435,7 @@ id: toolu_01Xk1y8n8J2eY3HytJTwqjm6
 tool_result
 id: toolu_01Xk1y8n8J2eY3HytJTwqjm6
 ```
-The file /Users/anton/src/drain-cycle/docs/design-docs/live-execution-swimlanes/design-doc.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/docs/design-docs/live-execution-swimlanes/design-doc.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2445,7 +2445,7 @@ id: toolu_01ARxHXarsHTMytdfMeGpypV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/docs/design-docs/live-execution-swimlanes/design-doc.md",
+  "file_path": "/home/<USER>/src/drain-cycle/docs/design-docs/live-execution-swimlanes/design-doc.md",
   "old_string": "| NFR-2 | **Zero worker overhead** — observability must not change what the worker does |",
   "new_string": "| NFR-2 | **Zero worker overhead** — observability must not alter the worker's execution or token usage |"
 }
@@ -2456,7 +2456,7 @@ id: toolu_01ARxHXarsHTMytdfMeGpypV
 tool_result
 id: toolu_01ARxHXarsHTMytdfMeGpypV
 ```
-The file /Users/anton/src/drain-cycle/docs/design-docs/live-execution-swimlanes/design-doc.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/docs/design-docs/live-execution-swimlanes/design-doc.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2466,7 +2466,7 @@ id: toolu_01SwyXdBx6FVPKHy7NZjh7Up
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/docs/design-docs/live-execution-swimlanes/design-doc.md",
+  "file_path": "/home/<USER>/src/drain-cycle/docs/design-docs/live-execution-swimlanes/design-doc.md",
   "old_string": "- **Blast radius if wrong:** **no persona granularity** (the `review` section is written once, at completion) and it **lags by one step** — a slow or stuck step displays the *previous* step as active, failing NFR-1 exactly when the run is slow and trust matters most.",
   "new_string": "- **Blast radius if wrong:** **no persona granularity** (the `review` section is written once, at completion) and it **lags by one step** — a slow or stuck step displays the *previous* step as active, failing NFR-1 precisely in the slow-run case the feature exists to cover."
 }
@@ -2477,7 +2477,7 @@ id: toolu_01SwyXdBx6FVPKHy7NZjh7Up
 tool_result
 id: toolu_01SwyXdBx6FVPKHy7NZjh7Up
 ```
-The file /Users/anton/src/drain-cycle/docs/design-docs/live-execution-swimlanes/design-doc.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/docs/design-docs/live-execution-swimlanes/design-doc.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2487,7 +2487,7 @@ id: toolu_017GBWE1dktK4ZrsGPUMzeYa
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/docs/design-docs/live-execution-swimlanes/design-doc.md",
+  "file_path": "/home/<USER>/src/drain-cycle/docs/design-docs/live-execution-swimlanes/design-doc.md",
   "old_string": "All four were enumerated and stress-tested in the backend spike; summarised here with blast radius and reversal cost.",
   "new_string": "The backend spike enumerated and stress-tested all four; each is summarised here with blast radius and reversal cost."
 }
@@ -2500,7 +2500,7 @@ id: toolu_01FvNmu14HEDUpCf5Tr26ska
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/docs/design-docs/live-execution-swimlanes/design-doc.md",
+  "file_path": "/home/<USER>/src/drain-cycle/docs/design-docs/live-execution-swimlanes/design-doc.md",
   "old_string": "**Path to production** is not fully clear pre-skeleton (the redraw/toggle integration with the stderr append model is the unknown slice 1 retires); the doc does not claim otherwise.",
   "new_string": "**Path to production** is not fully clear pre-skeleton — the redraw/toggle integration with the stderr append model is the unknown slice 1 retires."
 }
@@ -2511,7 +2511,7 @@ id: toolu_01FvNmu14HEDUpCf5Tr26ska
 tool_result
 id: toolu_017GBWE1dktK4ZrsGPUMzeYa
 ```
-The file /Users/anton/src/drain-cycle/docs/design-docs/live-execution-swimlanes/design-doc.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/docs/design-docs/live-execution-swimlanes/design-doc.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2519,7 +2519,7 @@ The file /Users/anton/src/drain-cycle/docs/design-docs/live-execution-swimlanes/
 tool_result
 id: toolu_01FvNmu14HEDUpCf5Tr26ska
 ```
-The file /Users/anton/src/drain-cycle/docs/design-docs/live-execution-swimlanes/design-doc.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/docs/design-docs/live-execution-swimlanes/design-doc.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2586,7 +2586,7 @@ tool_use Read
 id: toolu_01Cgi4jRRFxmqUayGq4yaEUk
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/worker.py",
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/worker.py",
   "offset": 160,
   "limit": 100
 }

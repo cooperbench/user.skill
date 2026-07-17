@@ -1,6 +1,6 @@
 > SYSTEM
 
-# AGENTS.md instructions for /Users/toyamarinyon/repo/ultrahope.dev
+# AGENTS.md instructions for /home/<USER>/repo/ultrahope.dev
 
 <INSTRUCTIONS>
 <!-- BEGIN:nextjs-agent-rules -->
@@ -19,11 +19,11 @@ The user understands this may register local CA trust, start a privileged HTTPS 
 
 </INSTRUCTIONS>
 <environment_context>
-  <cwd>/Users/toyamarinyon/repo/ultrahope.dev</cwd>
+  <cwd>/home/<USER>/repo/ultrahope.dev</cwd>
   <shell>zsh</shell>
   <current_date>2026-07-04</current_date>
   <timezone>Asia/Tokyo</timezone>
-  <filesystem><workspace_roots><root>/Users/toyamarinyon/repo/ultrahope.dev</root></workspace_roots><permission_profile type="managed"><file_system type="restricted"><entry access="read"><special>:root</special></entry><entry access="write"><path>/Users/toyamarinyon/repo/ultrahope.dev</path></entry><entry access="write"><special>:slash_tmp</special></entry><entry access="write"><special>:tmpdir</special></entry><entry access="read"><path>/Users/toyamarinyon/repo/ultrahope.dev/.git</path></entry><entry access="read"><path>/Users/toyamarinyon/repo/ultrahope.dev/.agents</path></entry><entry access="read"><path>/Users/toyamarinyon/repo/ultrahope.dev/.codex</path></entry></file_system></permission_profile></filesystem>
+  <filesystem><workspace_roots><root>/home/<USER>/repo/ultrahope.dev</root></workspace_roots><permission_profile type="managed"><file_system type="restricted"><entry access="read"><special>:root</special></entry><entry access="write"><path>/home/<USER>/repo/ultrahope.dev</path></entry><entry access="write"><special>:slash_tmp</special></entry><entry access="write"><special>:tmpdir</special></entry><entry access="read"><path>/home/<USER>/repo/ultrahope.dev/.git</path></entry><entry access="read"><path>/home/<USER>/repo/ultrahope.dev/.agents</path></entry><entry access="read"><path>/home/<USER>/repo/ultrahope.dev/.codex</path></entry></file_system></permission_profile></filesystem>
 </environment_context>
 
 > DEVELOPER
@@ -50,7 +50,7 @@ id: call_FoGCKG7yMLrZOLoTVbtGh7TZ
 ```json
 {
   "cmd": "pwd && rg --files -g 'package.json' -g 'app/globals.css' -g 'postcss.config.*' -g 'tailwind.config.*' -g '.zed/**' -g 'zed.json' -g '.vscode/**' -g 'eslint.config.*' -g '.eslintrc*' -g 'stylelint.config.*' -g '.stylelintrc*' -g 'tsconfig.json'",
-  "workdir": "/Users/toyamarinyon/repo/ultrahope.dev",
+  "workdir": "/home/<USER>/repo/ultrahope.dev",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -63,7 +63,7 @@ id: call_bRSKiYLUbHUYI8l3xdJKcBUg
 ```json
 {
   "cmd": "sed -n '1,220p' app/globals.css",
-  "workdir": "/Users/toyamarinyon/repo/ultrahope.dev",
+  "workdir": "/home/<USER>/repo/ultrahope.dev",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -76,7 +76,7 @@ id: call_npwtzKyahKyka4p5v5GBNSfI
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/toyamarinyon/repo/ultrahope.dev",
+  "workdir": "/home/<USER>/repo/ultrahope.dev",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -92,7 +92,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 30
 Output:
-/Users/toyamarinyon/repo/ultrahope.dev
+/home/<USER>/repo/ultrahope.dev
 tsconfig.json
 package.json
 eslint.config.mjs
@@ -168,7 +168,7 @@ id: call_a3MUzfRqqTkxhhMa2gTqZIor
 ```json
 {
   "cmd": "sed -n '1,220p' package.json",
-  "workdir": "/Users/toyamarinyon/repo/ultrahope.dev",
+  "workdir": "/home/<USER>/repo/ultrahope.dev",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -181,7 +181,7 @@ id: call_1qddHttyMXpJhZDOGu0v387L
 ```json
 {
   "cmd": "sed -n '1,160p' postcss.config.mjs",
-  "workdir": "/Users/toyamarinyon/repo/ultrahope.dev",
+  "workdir": "/home/<USER>/repo/ultrahope.dev",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -194,7 +194,7 @@ id: call_F0ihWJtWRBgJMf7G158M6YEw
 ```json
 {
   "cmd": "sed -n '1,220p' eslint.config.mjs",
-  "workdir": "/Users/toyamarinyon/repo/ultrahope.dev",
+  "workdir": "/home/<USER>/repo/ultrahope.dev",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -343,7 +343,7 @@ export default eslintConfig;
 調べた感じ、これはいまなら Zed 側でかなり素直に解決できます。
 
 結論から言うと、`eslint` で直す話ではなく、Zed の CSS Language Server の選び方の問題です。  
-この repo の [app/globals.css](/Users/toyamarinyon/repo/ultrahope.dev/app/globals.css:1) は Tailwind CSS v4 の CSS-first 構文で、`@source` / `@theme` は Tailwind 公式の有効な directive です。Tailwind 公式 docs でも、こういう custom CSS syntax は一部エディタで warning/error になると明記されています。
+この repo の [app/globals.css](/home/<USER>/repo/ultrahope.dev/app/globals.css:1) は Tailwind CSS v4 の CSS-first 構文で、`@source` / `@theme` は Tailwind 公式の有効な directive です。Tailwind 公式 docs でも、こういう custom CSS syntax は一部エディタで warning/error になると明記されています。
 
 Zed 公式の現在の推奨はこれです。
 

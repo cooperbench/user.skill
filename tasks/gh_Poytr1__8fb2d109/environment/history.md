@@ -32,7 +32,7 @@ I've thoroughly explored the web/ directory and identified all toggle button imp
 ### **1. Core UI Components**
 
 #### **A. Switch Component** 
-**File:** `/Users/pc/web3/ReleaseBeacon/web/components/ui/switch.tsx`
+**File:** `/home/<USER>/web3/ReleaseBeacon/web/components/ui/switch.tsx`
 
 A Radix UI-based switch component with two sizes (default and small):
 
@@ -74,7 +74,7 @@ function Switch({
 - Focus ring: 3px ring with ring/50 opacity
 
 #### **B. Checkbox Component**
-**File:** `/Users/pc/web3/ReleaseBeacon/web/components/ui/checkbox.tsx`
+**File:** `/home/<USER>/web3/ReleaseBeacon/web/components/ui/checkbox.tsx`
 
 A Radix UI-based checkbox with […]
 
@@ -88,7 +88,7 @@ tool_use Read
 id: toolu_vrtx_01SG9gYBCya8A8EA6b9BQTUb
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/ui/switch.tsx"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/ui/switch.tsx"
 }
 ```
 
@@ -98,7 +98,7 @@ tool_use Read
 id: toolu_vrtx_01BSrWHGk1FqqmxHsCv9886G
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/ui/checkbox.tsx"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/ui/checkbox.tsx"
 }
 ```
 
@@ -108,7 +108,7 @@ tool_use Read
 id: toolu_vrtx_01MCgTKyUQBnv5m5Pe48izro
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/projects/project-detail.tsx"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/projects/project-detail.tsx"
 }
 ```
 
@@ -118,7 +118,7 @@ tool_use Read
 id: toolu_vrtx_01697f1HaSUL6P19abaXos4L
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/projects/project-form.tsx"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/projects/project-form.tsx"
 }
 ```
 
@@ -128,7 +128,7 @@ tool_use Read
 id: toolu_vrtx_018pBZVwBJyRTwADctvjoCUE
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/dashboard/shared/scan-results-table.tsx"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/dashboard/shared/scan-results-table.tsx"
 }
 ```
 
@@ -383,7 +383,7 @@ tool_use Read
 id: toolu_vrtx_017No8HDHHTcexdjXosv2ZSd
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/sources/source-form.tsx"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/sources/source-form.tsx"
 }
 ```
 
@@ -456,7 +456,7 @@ id: toolu_vrtx_017Wp7gkvubghR8twcnefXqf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/projects/project-detail.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/projects/project-detail.tsx",
   "old_string": "import { Pencil, Trash2, Play, Plus, ArrowLeft } from \"lucide-react\";",
   "new_string": "import { Pencil, Trash2, Play, Plus, ArrowLeft } from \"lucide-react\";\nimport { Switch } from \"@/components/ui/switch\";\nimport { Checkbox } from \"@/components/ui/checkbox\";"
 }
@@ -467,7 +467,7 @@ id: toolu_vrtx_017Wp7gkvubghR8twcnefXqf
 tool_result
 id: toolu_vrtx_017Wp7gkvubghR8twcnefXqf
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/components/projects/project-detail.tsx has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/components/projects/project-detail.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -481,7 +481,7 @@ id: toolu_vrtx_01VZGJDSQ6a5C2Qs2wVA5NAa
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/projects/project-detail.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/projects/project-detail.tsx",
   "old_string": "                          <div className=\"flex items-center gap-2\">\n                            <button\n                              onClick={() => handleToggleSource(source)}\n                              className=\"relative inline-flex h-5 w-9 shrink-0 cursor-pointer items-center rounded-full transition-colors duration-200\"\n                              style={{ backgroundColor: source.last_error ? \"var(--error-text)\" : source.enabled ? \"var(--status-completed)\" : \"var(--text-muted)\" }}\n                              title={source.last_error ? `Error: ${source.last_error}` : source.enabled ? t(\"projects.detail.disablePolling\") : t(\"projects.detail.enablePolling\")}\n                            >\n                              <span\n                                className=\"inline-block h-3.5 w-3.5 rounded-full bg-white shadow transition-transform duration-200\"\n                                style={{ transform: source.enabled ? \"translateX(18px)\" : \"translateX(3px)\" }}\n                              />\n                            </button>",
   "new_string": "                          <div className=\"flex items-center gap-2\">\n                            <Switch\n                              checked={source.enabled}\n                              onCheckedChange={() => handleToggleSource(source)}\n                              title={source.last_error ? `Error: ${source.last_error}` : source.enabled ? t(\"projects.detail.disablePolling\") : t(\"projects.detail.enablePolling\")}\n                            />"
 }
@@ -492,7 +492,7 @@ id: toolu_vrtx_01VZGJDSQ6a5C2Qs2wVA5NAa
 tool_result
 id: toolu_vrtx_01VZGJDSQ6a5C2Qs2wVA5NAa
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/components/projects/project-detail.tsx has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/components/projects/project-detail.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -506,7 +506,7 @@ id: toolu_vrtx_012aMxHCjYm1bRFLhsnLz6WT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/projects/project-detail.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/projects/project-detail.tsx",
   "old_string": "                <label className=\"flex items-center gap-2.5 text-[13px] text-secondary-foreground\">\n                  <input\n                    type=\"checkbox\"\n                    checked={currentRules.on_major_release ?? false}\n                    onChange={(e) =>\n                      setRulesDraft({ ...currentRules, on_major_release: e.target.checked })\n                    }\n                    className=\"h-4 w-4 rounded border accent-[#e8601a]\"\n                    style={{ borderColor: \"var(--border)\" }}\n                  />\n                  {t(\"projects.detail.majorRelease\")}\n                  <span className=\"text-[11px] text-text-muted\">\n                    {t(\"projects.detail.majorReleaseHint\")}\n                  </span>\n                </label>\n                <label className=\"flex items-center gap-2.5 text-[13px] text-secondary-foreground\">\n                  <input\n                    type=\"checkbox\"\n                    checked={currentRules.on_minor_release ?? false}\n                    onChange={(e) =>\n                      setRulesDraft({ ...currentRules, on_minor_release: e.target.checked })\n                    }\n                    className=\"h-4 w-4 rounded border accent-[#e8601a]\"\n                    style={{ borderColor: \"var(--border)\" }}\n                  />\n                  {t(\"projects.detail.minorRelease\")}\n                  <span className=\"text-[11px] text-text-muted\">\n                    {t(\"projects.detail.minorReleaseHint\")}\n                  </span>\n                </label>\n                <label className=\"flex items-center gap-2.5 text-[13px] text-secondary-foreground\">\n                  <input\n                    type=\"checkbox\"\n                    checked={currentRules.on_security_patch ?? false}\n                    onChange={(e) =>\n                      setRulesDraft({ ...currentRules, on_security_patch: e.target.checked })\n                    }\n                    className=\"h-4 w-4 rounded border accent-[#e8601a]\"\n                    style={{ borderColor: \"var(--border)\" }}\n                  />\n                  {t(\"projects.detail.securityPatch\")}\n                  <span className=\"text-[11px] text-text-muted\">\n                    {t(\"projects.detail.securityPatchHint\")}\n                  </span>\n                </label>",
   "new_string": "                <label className=\"flex items-center gap-2.5 text-[13px] text-secondary-foreground\">\n                  <Checkbox\n                    checked={currentRules.on_major_release ?? false}\n                    onCheckedChange={(checked) =>\n                      setRulesDraft({ ...currentRules, on_major_release: !!checked })\n                    }\n                  />\n                  {t(\"projects.detail.majorRelease\")}\n                  <span className=\"text-[11px] text-text-muted\">\n                    {t(\"projects.detail.majorReleaseHint\")}\n                  </span>\n                </label>\n                <label className=\"flex items-center gap-2.5 text-[13px] text-secondary-foreground\">\n                  <Checkbox\n                    checked={currentRules.on_minor_release ?? false}\n                    onCheckedChange={(checked) =>\n                      setRulesDraft({ ...currentRules, on_minor_release: !!checked })\n                    }\n                  />\n                  {t(\"projects.detail.minorRelease\")}\n                  <span className=\"text-[11px] text-text-muted\">\n                    {t(\"projects.detail.minorReleaseHint\")}\n                  </span>\n                </label>\n                <label className=\"flex items-center gap-2.5 text-[13px] text-secondary-foreground\">\n                  <Checkbox\n                    checked={currentRules.on_security_patch ?? false}\n                    onCheckedChange={(checked) =>\n                      setRulesDraft({ ...currentRules, on_security_patch: !!checked })\n                    }\n                  />\n                  {t(\"projects.detail.securityPatch\")}\n                  <span className=\"text-[11px] text-text-muted\">\n                    {t(\"projects.detail.securityPatchHint\")}\n                  </span>\n                </label>" […]
 
@@ -515,7 +515,7 @@ id: toolu_vrtx_012aMxHCjYm1bRFLhsnLz6WT
 tool_result
 id: toolu_vrtx_012aMxHCjYm1bRFLhsnLz6WT
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/components/projects/project-detail.tsx has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/components/projects/project-detail.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -529,7 +529,7 @@ id: toolu_vrtx_01LZgAGSpUvGdA4k5qpbUqh7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/projects/project-form.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/projects/project-form.tsx",
   "old_string": "import { Plus, X } from \"lucide-react\";",
   "new_string": "import { Plus, X } from \"lucide-react\";\nimport { Checkbox } from \"@/components/ui/checkbox\";"
 }
@@ -540,7 +540,7 @@ id: toolu_vrtx_01LZgAGSpUvGdA4k5qpbUqh7
 tool_result
 id: toolu_vrtx_01LZgAGSpUvGdA4k5qpbUqh7
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/components/projects/project-form.tsx has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/components/projects/project-form.tsx has been updated successfully.
 ```
 
 > TOOL
@@ -550,7 +550,7 @@ id: toolu_vrtx_018wQ52svC3ugjnxNg6oQrjK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/projects/project-form.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/projects/project-form.tsx",
   "old_string": "              {(provider === \"github\" || provider === \"gitlab\" || provider === \"pypi\" || provider === \"npm\") && (\n                <label className=\"flex items-center gap-2 text-sm text-muted-foreground\">\n                  <input\n                    type=\"checkbox\"\n                    checked={excludePrereleases}\n                    onChange={(e) => setExcludePrereleases(e.target.checked)}\n                    className=\"rounded\"\n                  />\n                  {t(\"projectForm.excludePrereleases\")}\n                </label>\n              )}",
   "new_string": "              {(provider === \"github\" || provider === \"gitlab\" || provider === \"pypi\" || provider === \"npm\") && (\n                <label className=\"flex items-center gap-2 text-sm text-muted-foreground\">\n                  <Checkbox\n                    checked={excludePrereleases}\n                    onCheckedChange={(checked) => setExcludePrereleases(!!checked)}\n                  />\n                  {t(\"projectForm.excludePrereleases\")}\n                </label>\n              )}"
 }
@@ -561,7 +561,7 @@ id: toolu_vrtx_018wQ52svC3ugjnxNg6oQrjK
 tool_result
 id: toolu_vrtx_018wQ52svC3ugjnxNg6oQrjK
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/components/projects/project-form.tsx has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/components/projects/project-form.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -575,7 +575,7 @@ id: toolu_vrtx_01Hu8qjojU6e832xn1B7kZiq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/dashboard/shared/scan-results-table.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/dashboard/shared/scan-results-table.tsx",
   "old_string": "import type { ScannedDependency, Project } from \"@/lib/api/types\";",
   "new_string": "import type { ScannedDependency, Project } from \"@/lib/api/types\";\nimport { Checkbox } from \"@/components/ui/checkbox\";"
 }
@@ -586,7 +586,7 @@ id: toolu_vrtx_01Hu8qjojU6e832xn1B7kZiq
 tool_result
 id: toolu_vrtx_01Hu8qjojU6e832xn1B7kZiq
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/components/dashboard/shared/scan-results-table.tsx has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/components/dashboard/shared/scan-results-table.tsx has been updated successfully.
 ```
 
 > TOOL
@@ -596,7 +596,7 @@ id: toolu_vrtx_01A3jqRa6SY2wLHtZayFgzHR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/dashboard/shared/scan-results-table.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/dashboard/shared/scan-results-table.tsx",
   "old_string": "            <th className=\"w-10 px-3 py-2.5\">\n              <input\n                type=\"checkbox\"\n                checked={selectedCount === deps.length}\n                onChange={(e) => {\n                  const val = e.target.checked;\n                  const s: Record<number, boolean> = {};\n                  deps.forEach((_, i) => { s[i] = val; });\n                  onSelectionsChange(s);\n                }}\n                className=\"rounded\"\n                style={{ accentColor: \"var(--beacon-accent)\" }}\n              />",
   "new_string": "            <th className=\"w-10 px-3 py-2.5\">\n              <Checkbox\n                checked={selectedCount === deps.length}\n                onCheckedChange={(checked) => {\n                  const val = !!checked;\n                  const s: Record<number, boolean> = {};\n                  deps.forEach((_, i) => { s[i] = val; });\n                  onSelectionsChange(s);\n                }}\n              />"
 }
@@ -607,7 +607,7 @@ id: toolu_vrtx_01A3jqRa6SY2wLHtZayFgzHR
 tool_result
 id: toolu_vrtx_01A3jqRa6SY2wLHtZayFgzHR
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/components/dashboard/shared/scan-results-table.tsx has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/components/dashboard/shared/scan-results-table.tsx has been updated successfully.
 ```
 
 > TOOL
@@ -617,7 +617,7 @@ id: toolu_vrtx_019kYDPmfbtkSany1NyCSGgE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/dashboard/shared/scan-results-table.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/dashboard/shared/scan-results-table.tsx",
   "old_string": "                <td className=\"px-3 py-2.5\">\n                  <input\n                    type=\"checkbox\"\n                    checked={!!selections[i]}\n                    onChange={(e) => onSelectionsChange({ ...selections, [i]: e.target.checked })}\n                    className=\"rounded\"\n                    style={{ accentColor: \"var(--beacon-accent)\" }}\n                  />",
   "new_string": "                <td className=\"px-3 py-2.5\">\n                  <Checkbox\n                    checked={!!selections[i]}\n                    onCheckedChange={(checked) => onSelectionsChange({ ...selections, [i]: !!checked })}\n                  />"
 }
@@ -628,7 +628,7 @@ id: toolu_vrtx_019kYDPmfbtkSany1NyCSGgE
 tool_result
 id: toolu_vrtx_019kYDPmfbtkSany1NyCSGgE
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/components/dashboard/shared/scan-results-table.tsx has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/components/dashboard/shared/scan-results-table.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -642,7 +642,7 @@ id: toolu_vrtx_01CkEp8emwArcuFy8HDXAjv3
 ```json
 {
   "pattern": "type=\"checkbox\"",
-  "path": "/Users/pc/web3/ReleaseBeacon/web",
+  "path": "/home/<USER>/web3/ReleaseBeacon/web",
   "output_mode": "content"
 }
 ```
@@ -665,7 +665,7 @@ tool_use Bash
 id: toolu_vrtx_01EJ9kmpsXJxLf8vqQevjaGk
 ```json
 {
-  "command": "cd /Users/pc/web3/ReleaseBeacon/web && npx tsc --noEmit 2>&1 | head -30",
+  "command": "cd /home/<USER>/web3/ReleaseBeacon/web && npx tsc --noEmit 2>&1 | head -30",
   "description": "Type-check the frontend",
   "timeout": 30000
 }
@@ -964,7 +964,7 @@ No files found
 tool_result
 id: toolu_vrtx_01C45m6qMuyXrQztXQLw9C6B
 ```
-/Users/pc/web3/ReleaseBeacon/web/app/projects/page.tsx
+/home/<USER>/web3/ReleaseBeacon/web/app/projects/page.tsx
 ```
 
 > TOOL
@@ -973,7 +973,7 @@ tool_use Read
 id: toolu_vrtx_01Qm2EKpKqT41Vde8hVEVu6G
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/app/projects/page.tsx"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/app/projects/page.tsx"
 }
 ```
 
@@ -1035,9 +1035,9 @@ id: toolu_vrtx_01Qm2EKpKqT41Vde8hVEVu6G
 tool_result
 id: toolu_vrtx_01U7F7nQTRwG2XUgtwrcCc9G
 ```
-/Users/pc/web3/ReleaseBeacon/web/components/projects/release-gate-tab.tsx
-/Users/pc/web3/ReleaseBeacon/web/components/projects/project-detail.tsx
-/Users/pc/web3/ReleaseBeacon/web/components/projects/project-form.tsx
+/home/<USER>/web3/ReleaseBeacon/web/components/projects/release-gate-tab.tsx
+/home/<USER>/web3/ReleaseBeacon/web/components/projects/project-detail.tsx
+/home/<USER>/web3/ReleaseBeacon/web/components/projects/project-form.tsx
 ```
 
 > TOOL
@@ -1113,7 +1113,7 @@ tool_use Read
 id: toolu_vrtx_01LxwCX6DNDA16RJCRcC7tF6
 ```json
 {
-  "file_path": "/Users/pc/.claude/plugins/cache/superpowers-marketplace/superpowers/5.0.6/skills/brainstorming/visual-companion.md"
+  "file_path": "/home/<USER>/.claude/plugins/cache/superpowers-marketplace/superpowers/5.0.6/skills/brainstorming/visual-companion.md"
 }
 ```
 
@@ -1154,7 +1154,7 @@ tool_use Bash
 id: toolu_vrtx_01HgHg1JuqPS2bGQN9oQEPyx
 ```json
 {
-  "command": "bash /Users/pc/.claude/plugins/cache/superpowers-marketplace/superpowers/5.0.6/scripts/start-server.sh --project-dir /Users/pc/web3/ReleaseBeacon",
+  "command": "bash /home/<USER>/.claude/plugins/cache/superpowers-marketplace/superpowers/5.0.6/scripts/start-server.sh --project-dir /home/<USER>/web3/ReleaseBeacon",
   "description": "Start visual companion server",
   "timeout": 10000
 }
@@ -1166,9 +1166,9 @@ tool_result ERROR
 id: toolu_vrtx_01HgHg1JuqPS2bGQN9oQEPyx
 ```
 Exit code 127
-bash: /Users/pc/.claude/plugins/cache/superpowers-marketplace/superpowers/5.0.6/scripts/start-server.sh: No such file or directory
+bash: /home/<USER>/.claude/plugins/cache/superpowers-marketplace/superpowers/5.0.6/scripts/start-server.sh: No such file or directory
 
-bash: /Users/pc/.claude/plugins/cache/superpowers-marketplace/superpowers/5.0.6/scripts/start-server.sh: No such file or directory
+bash: /home/<USER>/.claude/plugins/cache/superpowers-marketplace/superpowers/5.0.6/scripts/start-server.sh: No such file or directory
 ```
 
 > TOOL
@@ -1177,7 +1177,7 @@ tool_use Glob
 id: toolu_vrtx_01M1dSx2seoWHZo4LyCmRWhD
 ```json
 {
-  "pattern": "/Users/pc/.claude/plugins/cache/superpowers-marketplace/superpowers/**/start-server*"
+  "pattern": "/home/<USER>/.claude/plugins/cache/superpowers-marketplace/superpowers/**/start-server*"
 }
 ```
 
@@ -1186,8 +1186,8 @@ id: toolu_vrtx_01M1dSx2seoWHZo4LyCmRWhD
 tool_result
 id: toolu_vrtx_01M1dSx2seoWHZo4LyCmRWhD
 ```
-/Users/pc/.claude/plugins/cache/superpowers-marketplace/superpowers/4.2.0/skills/brainstorming/scripts/start-server.sh
-/Users/pc/.claude/plugins/cache/superpowers-marketplace/superpowers/5.0.6/skills/brainstorming/scripts/start-server.sh
+/home/<USER>/.claude/plugins/cache/superpowers-marketplace/superpowers/4.2.0/skills/brainstorming/scripts/start-server.sh
+/home/<USER>/.claude/plugins/cache/superpowers-marketplace/superpowers/5.0.6/skills/brainstorming/scripts/start-server.sh
 ```
 
 > TOOL
@@ -1196,7 +1196,7 @@ tool_use Bash
 id: toolu_vrtx_01C4n7LrfbLHESEVu4u1zbe7
 ```json
 {
-  "command": "bash /Users/pc/.claude/plugins/cache/superpowers-marketplace/superpowers/5.0.6/skills/brainstorming/scripts/start-server.sh --project-dir /Users/pc/web3/ReleaseBeacon",
+  "command": "bash /home/<USER>/.claude/plugins/cache/superpowers-marketplace/superpowers/5.0.6/skills/brainstorming/scripts/start-server.sh --project-dir /home/<USER>/web3/ReleaseBeacon",
   "description": "Start visual companion server",
   "timeout": 10000
 }
@@ -1207,7 +1207,7 @@ id: toolu_vrtx_01C4n7LrfbLHESEVu4u1zbe7
 tool_result
 id: toolu_vrtx_01C4n7LrfbLHESEVu4u1zbe7
 ```
-{"type":"server-started","port":50517,"host":"127.0.0.1","url_host":"localhost","url":"http://localhost:50517","screen_dir":"/Users/pc/web3/ReleaseBeacon/.superpowers/brainstorm/86736-1774772550/content","state_dir":"/Users/pc/web3/ReleaseBeacon/.superpowers/brainstorm/86736-1774772550/state"}
+{"type":"server-started","port":50517,"host":"127.0.0.1","url_host":"localhost","url":"http://localhost:50517","screen_dir":"/home/<USER>/web3/ReleaseBeacon/.superpowers/brainstorm/86736-1774772550/content","state_dir":"/home/<USER>/web3/ReleaseBeacon/.superpowers/brainstorm/86736-1774772550/state"}
 ```
 
 > TOOL
@@ -1239,7 +1239,7 @@ tool_use Write
 id: toolu_vrtx_01Qd3jwZ6fm5PfZ8CtgnArPd
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/.superpowers/brainstorm/86736-1774772550/content/current-vs-options.html",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/.superpowers/brainstorm/86736-1774772550/content/current-vs-options.html",
   "content": "<h2>Projects Page — Toolbar Layout</h2>\n<p class=\"subtitle\">Current layout packs search, sort, view toggle, and \"New Project\" into one horizontal row. Which arrangement would work better?</p>\n\n<div class=\"section\">\n  <div class=\"label\">Current Layout</div>\n  <div class=\"mockup\">\n    <div class=\"mockup-header\">Current: Everything in one row</div>\n    <div class=\"mockup-body\" style=\"padding: 20px; font-family: system-ui;\">\n      <div style=\"display: flex; justify-content: space-between; align-items: flex-start;\">\n        <div>\n          <div style=\"font-size: 22px; font-weight: 700;\">Projects</div>\n          <div style=\"font-size: 12px; color: #888; margin-top: 4px;\">Track upstream releases and get semantic analysis &nbsp;&#9432;</div>\n        </div>\n        <div style=\"display: flex; align-items: center; gap: 8px; flex-shrink: 0;\">\n          <div style=\"border: 1px solid #ddd; border-radius: 6px; padding: 6px 8px 6px 28px; font-size: 12px; color: #999; position: relative; min-width: 160px;\">\n            <span style=\"position: absolute; left: 8px; top: 50%; transform: translateY(-50%);\">&#128269;</span>\n            Search projects...\n          </div>\n          <div style=\"border: 1px solid #ddd; border-radius: 6px; padding: 6px 10px; font-size: 12px; display: flex; align-items: center; gap: 4px;\">\n            <span style=\"color: #999;\">&#8645;</span> Last updated\n          </div>\n          <div style=\"border: 1px solid #ddd; border-radius: 6px; display: flex;\">\n            <div style=\"padding: 6px 8px; background: #f0f0f0; border-radius: 5px 0 0 5px;\">&#9638;</div>\n            <div style=\"padding: 6px 8px; color: #999;\">&#9776;</div>\n          </div>\n          <div style=\"background: #e8601a; color: white; border-radius: 6px; padding: 6px 12px; font-size: 12px; font-weight: 500; display: flex; align-items: center; gap: 4px; white-space: nowrap;\">\n            + New Project\n          </div>\n        </div>\n      </div>\n    </div>\n […]
 
 > TOOL
@@ -1247,7 +1247,7 @@ id: toolu_vrtx_01Qd3jwZ6fm5PfZ8CtgnArPd
 tool_result
 id: toolu_vrtx_01Qd3jwZ6fm5PfZ8CtgnArPd
 ```
-File created successfully at: /Users/pc/web3/ReleaseBeacon/.superpowers/brainstorm/86736-1774772550/content/current-vs-options.html
+File created successfully at: /home/<USER>/web3/ReleaseBeacon/.superpowers/brainstorm/86736-1774772550/content/current-vs-options.html
 ```
 
 > AGENT
@@ -1333,7 +1333,7 @@ tool_use Write
 id: toolu_vrtx_01DdV4P5JT9gXzLG8GaXEyZy
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/.superpowers/brainstorm/86736-1774772550/content/waiting.html",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/.superpowers/brainstorm/86736-1774772550/content/waiting.html",
   "content": "<div style=\"display:flex;align-items:center;justify-content:center;min-height:60vh\">\n  <p class=\"subtitle\">Continuing in terminal...</p>\n</div>\n"
 }
 ```
@@ -1343,7 +1343,7 @@ id: toolu_vrtx_01DdV4P5JT9gXzLG8GaXEyZy
 tool_result
 id: toolu_vrtx_01DdV4P5JT9gXzLG8GaXEyZy
 ```
-File created successfully at: /Users/pc/web3/ReleaseBeacon/.superpowers/brainstorm/86736-1774772550/content/waiting.html
+File created successfully at: /home/<USER>/web3/ReleaseBeacon/.superpowers/brainstorm/86736-1774772550/content/waiting.html
 ```
 
 > AGENT
@@ -1357,7 +1357,7 @@ id: toolu_vrtx_011rdr5zjX5qJoA1A28B1quu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/app/projects/page.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/app/projects/page.tsx",
   "old_string": "          <button\n            onClick={() => setCreateOpen(true)}\n            className=\"flex items-center gap-1.5 rounded px-3 py-1.5 text-[13px] text-white transition-opacity hover:opacity-90 bg-beacon-accent\"\n            style={{ fontFamily: \"var(--font-dm-sans)\" }}\n          >\n            <Plus className=\"h-3.5 w-3.5\" />\n            {t(\"projects.newProject\")}\n          </button>\n        </div>\n      </div>",
   "new_string": "          <div className=\"h-5 w-px bg-border mx-1\" />\n          <button\n            onClick={() => setCreateOpen(true)}\n            className=\"flex items-center gap-1.5 rounded px-3 py-1.5 text-[13px] text-white transition-opacity hover:opacity-90 bg-beacon-accent\"\n            style={{ fontFamily: \"var(--font-dm-sans)\" }}\n          >\n            <Plus className=\"h-3.5 w-3.5\" />\n            {t(\"projects.newProject\")}\n          </button>\n        </div>\n      </div>"
 }
@@ -1368,7 +1368,7 @@ id: toolu_vrtx_011rdr5zjX5qJoA1A28B1quu
 tool_result
 id: toolu_vrtx_011rdr5zjX5qJoA1A28B1quu
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/app/projects/page.tsx has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/app/projects/page.tsx has been updated successfully.
 ```
 
 > TOOL

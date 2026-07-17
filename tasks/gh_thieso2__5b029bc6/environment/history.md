@@ -237,7 +237,7 @@ tool_use Bash
 id: toolu_01A3QheZZ357TkU1uKwCKxnr
 ```json
 {
-  "command": "git add images/sandbox/tmux.conf && git commit -m \"$(cat <<'EOF'\nfeat(sandbox): tmux opens new windows/panes in current working dir\n\nBind `c`, `\"`, and `%` to use `-c \"#{pane_current_path}\"` so new\nwindows and splits inherit the current pane's cwd. Add `-a` to\n`new-window` so new windows are inserted right after the current\none (paired with existing renumber-windows).\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>\nEOF\n)\" && git status",
+  "command": "git add images/sandbox/tmux.conf && git commit -m \"$(cat <<'EOF'\nfeat(sandbox): tmux opens new windows/panes in current working dir\n\nBind `c`, `\"`, and `%` to use `-c \"#{pane_current_path}\"` so new\nwindows and splits inherit the current pane's cwd. Add `-a` to\n`new-window` so new windows are inserted right after the current\none (paired with existing renumber-windows).\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\" && git status",
   "description": "Commit tmux.conf change"
 }
 ```

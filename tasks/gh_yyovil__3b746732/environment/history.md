@@ -1,6 +1,6 @@
 > SYSTEM
 
-# AGENTS.md instructions for /Users/tanishqpalandurkar/Projects/yyork
+# AGENTS.md instructions for /home/<USER>/Projects/yyork
 
 <INSTRUCTIONS>
 General instructions: follow these all the time.
@@ -15,11 +15,11 @@ General instructions: follow these all the time.
 
 </INSTRUCTIONS>
 <environment_context>
-  <cwd>/Users/tanishqpalandurkar/Projects/yyork</cwd>
+  <cwd>/home/<USER>/Projects/yyork</cwd>
   <shell>zsh</shell>
   <current_date>2026-06-09</current_date>
   <timezone>Asia/Kolkata</timezone>
-  <filesystem><workspace_roots><root>/Users/tanishqpalandurkar/Projects/yyork</root></workspace_roots><permission_profile type="disabled"><file_system type="unrestricted" /></permission_profile></filesystem>
+  <filesystem><workspace_roots><root>/home/<USER>/Projects/yyork</root></workspace_roots><permission_profile type="disabled"><file_system type="unrestricted" /></permission_profile></filesystem>
 </environment_context>
 
 > DEVELOPER
@@ -45,8 +45,8 @@ tool_use exec_command
 id: call_3a4E3BvARpymwFNXpaHODZ1E
 ```json
 {
-  "cmd": "rg -n \"canvas|resizable|Resizable|viewport|50%|50vw|basis|defaultSize|maxSize|minSize\" /Users/tanishqpalandurkar/.codex/memories/MEMORY.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "rg -n \"canvas|resizable|Resizable|viewport|50%|50vw|basis|defaultSize|maxSize|minSize\" /home/<USER>/.codex/memories/MEMORY.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -59,7 +59,7 @@ id: call_4iNzpdkNpuQNUpJWiRVdZknX
 ```json
 {
   "cmd": "rg -n \"canvas|resizable|Resizable|viewport|50%|50vw|basis|defaultSize|maxSize|minSize\" .",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -76,8 +76,8 @@ Process exited with code 0
 Original token count: 1185
 Output:
 26:- Agentation, annotations.go, canvas-web-preview.tsx, annotations.ts, internal/durabilityprovider/send.go, internal/durabilityprovider/zellij.go, staged annotations, batch delivery, markdown user message, Send to agent, severity, intent, selectedText, elementPath [chronicle memory]
-50:- `yyork` Agentation currently stages annotations client-side in `web/src/features/home/components/molecules/canvas-web-preview.tsx`, sends them as a batch through `internal/server/annotations.go`, and routes the resulting markdown user message through `internal/durabilityprovider/send.go`; the visible Zellij-delivery explanation said the provider feeds that message into the running agent TUI as if the user typed it [Task 2] [chronicle memory]
-70:- extensions/chronicle/resources/2026-06-07T22-17-00-hHns-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, rollout_path=/Users/tanishqpalandurkar/.codex/memories/extensions/chronicle/resources/2026-06-07T22-17-00-hHns-10min-memory-summary.md, updated_at=2026-06-07T22:17:00+00:00, thread_id=None, Files sidebar/header ergonomics, right-sidebar show/hide, and resizable-panel follow-up) [chronicle memory]
+50:- `yyork` Agentation currently stages annotations client-side in `web/src/features/home/<USER>/molecules/canvas-web-preview.tsx`, sends them as a batch through `internal/server/annotations.go`, and routes the resulting markdown user message through `internal/durabilityprovider/send.go`; the visible Zellij-delivery explanation said the provider feeds that message into the running agent TUI as if the user typed it [Task 2] [chronicle memory]
+70:- extensions/chronicle/resources/2026-06-07T22-17-00-hHns-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-07T22-17-00-hHns-10min-memory-summary.md, updated_at=2026-06-07T22:17:00+00:00, thread_id=None, Files sidebar/header ergonomics, right-sidebar show/hide, and resizable-panel follow-up) [chronicle memory]
 80:- canvas-panel.tsx, app.css, CodeView, session-files, Files tab, file tree, right-sidebar show/hide, react-resizable-panels, @pierre/trees, git -C <worktree> ls-files --cached --others --exclude-standard, .gitignore /yyork, .entire/, .antigravitycli/, .playwright-cli/, .crush/, crush.local.json, hasYyork false, ygkp7s, v042rv, yyork stop, merge before wipe, worktree lifecycle [chronicle memory]
 95:- @pierre/diffs, Review tab, canvas-diff-view.tsx, internal/server/diff.go, internal/server/diff_test.go, internal/server/server.go, canvas-diff.ts, session-scoped endpoint, 5rteat, .codex/hooks.json, entire hooks, timeout: 30, expected JSON got text/html; charset=utf-8, virtualized rendering, shadow DOM [chronicle memory]
 158:- in the later Files-layout thread, the visible request was to keep expand/collapse behavior while moving controls into a sidebar header and […]
@@ -94,7 +94,7 @@ Original token count: 9852
 Output:
 ./web/package.json:65:    "@xterm/addon-canvas": "^0.7.0",
 ./web/package.json:87:    "react-resizable-panels": "^4.11.2",
-./prds/canvas/BROWSER_PLAN.md:53:  - `web/src/features/home/components/molecules/canvas-web-preview.tsx`
+./prds/canvas/BROWSER_PLAN.md:53:  - `web/src/features/home/<USER>/molecules/canvas-web-preview.tsx`
 ./prds/canvas/BROWSER_PLAN.md:68:- The old screenshot viewport is not used by the React Browser tab.
 ./prds/canvas/BROWSER_PLAN.md:138:- [x] `rg "browser snapshot|Browser viewport|screenshot|snapshot"` has no Browser
 ./prds/canvas/BROWSER_PLAN.md:155:  `canvasPreviewUrls`, keyed by Canvas target:
@@ -112,14 +112,14 @@ Output:
 ./prds/canvas/PRD.md:299:GET /api/sessions/{sessionID}/canvas/diff?project={projectID}
 ./prds/canvas/PRD.md:336:GET /api/projects/{projectID}/canvas/browser-targets
 ./prds/canvas/PRD.md:337:GET /api/sessions/{sessionID}/canvas/browser-targets?project={projectID}
-./prds/canvas/PRD.md:360:web/src/features/home/components/organisms/canvas-panel.tsx
-./prds/canvas/PRD.md:361:web/src/features/home/components/organisms/canvas-file-tree.tsx
-./prds/canvas/PRD.md:362:web/src/features/home/components/organisms/canvas-diff-view.tsx
-./prds/canvas/PRD.md:363:web/src/features/home/components/organisms/canvas-browser-view.tsx
-./prds/canvas/PRD.md:364:web/src/features/home/data/canvas-tree.ts
-./prds/canvas/PRD.md:365:web/src/features/home/data/canvas-diff.ts
-./prds/canvas/PRD.md:366:web/src/features/home/data/canvas-preferences.ts
-./prds/canvas/PRD.md:367:web/src/features/home/domain/canvas.ts
+./prds/canvas/PRD.md:360:web/src/features/home/<USER>/organisms/canvas-panel.tsx
+./prds/canvas/PRD.md:361:web/src/features/home/<USER>/organisms/canvas-file-tree.tsx
+./prds/canvas/PRD.md:362:web/src/features/home/<USER>/organisms/canvas-diff-view.tsx
+./prds/canvas/PRD.md:363:web/src/features/home/<USER>/organisms/canvas-browser-view.tsx
+./prds/canvas/PRD.md:364:web/src/features/home/<USER>/canvas-tree.ts
+./prds/canvas/PRD.md:365:web/src/features/home/<USER>/canvas-diff.ts
+./prds/canvas/PRD.md:366:web/src/features/home/<USER>/canvas-preferences.ts
+./prds/canvas/PRD.md:367:web/src/features/home/<USER>/canvas.ts
 ./prds/canvas/PRD.md:538:- `canvas-preferences` normalization tests.
 ./pnpm-lock.yaml:50:      '@xterm/addon-canvas':
 ./pnpm-lock.yaml:116:      react-resizable-panels:
@@ -144,8 +144,8 @@ tool_use exec_command
 id: call_XjYamDAau5tUwey6hXxr0EaN
 ```json
 {
-  "cmd": "nl -ba web/src/features/home/pages/terminal-layout.tsx | sed -n '1,230p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "nl -ba web/src/features/home/<USER>/terminal-layout.tsx | sed -n '1,230p'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -157,8 +157,8 @@ tool_use exec_command
 id: call_DXCf0goLyXvWOz6vga1QJ19g
 ```json
 {
-  "cmd": "nl -ba web/src/features/home/components/organisms/canvas-panel.tsx | sed -n '1,430p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "nl -ba web/src/features/home/<USER>/organisms/canvas-panel.tsx | sed -n '1,430p'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -171,7 +171,7 @@ id: call_JxH5hmlvgrmMPpRgG1WAKTrg
 ```json
 {
   "cmd": "nl -ba web/src/styles/app.css | sed -n '360,410p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -183,8 +183,8 @@ tool_use exec_command
 id: call_n7szyueHGIQQ05l2oRksIf9O
 ```json
 {
-  "cmd": "nl -ba web/src/features/home/data/workspace-preferences.ts | sed -n '1,260p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "nl -ba web/src/features/home/<USER>/workspace-preferences.ts | sed -n '1,260p'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -204,8 +204,8 @@ Output:
      2	
      3	import { cn } from '@/lib/tailwind/utils';
      4	
-     5	import { CanvasPanel } from '@/features/home/components/organisms/canvas-panel';
-     6	import { useWorkspaceContext } from '@/features/home/pages/workspace-context';
+     5	import { CanvasPanel } from '@/features/home/<USER>/organisms/canvas-panel';
+     6	import { useWorkspaceContext } from '@/features/home/<USER>/workspace-context';
      7	
      8	const CANVAS_PANE_WIDTH_VAR = '--canvas-pane-width';
      9	const CANVAS_MIN_PERCENT = 22;
@@ -277,18 +277,18 @@ Output:
     36	  TooltipTrigger,
     37	} from '@/components/ui/tooltip';
     38	
-    39	import { CanvasWebPreview } from '@/features/home/components/molecules/canvas-web-preview';
-    40	import { CanvasDiffView } from '@/features/home/components/organisms/canvas-diff-view';
+    39	import { CanvasWebPreview } from '@/features/home/<USER>/molecules/canvas-web-preview';
+    40	import { CanvasDiffView } from '@/features/home/<USER>/organisms/canvas-diff-view';
     41	import {
     42	  type SessionFileContent,
     43	  sessionFileContentQueryOptions,
     44	  sessionFilesQueryOptions,
-    45	} from '@/features/home/data/session-files';
-    46	import type { HomeWorkspaceCanvasReviewPreferences } from '@/features/home/data/workspace-preferences';
+    45	} from '@/features/home/<USER>/session-files';
+    46	import type { HomeWorkspaceCanvasReviewPreferences } from '@/features/home/<USER>/workspace-preferences';
     47	import {
     48	  type CanvasTab,
     49	  isCanvasTab,
-    50	} from '@/features/home/domain/canvas-tabs';
+    50	} from '@/features/home/<USER>/canvas-tabs';
     51	
     52	export type { CanvasTab } […]
 
@@ -366,12 +366,12 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 2236
 Output:
-     1	import { validatePreviewUrlInput } from '@/features/home/data/browser-preview';
-     2	import { type CanvasTab, isCanvasTab } from '@/features/home/domain/canvas-tabs';
+     1	import { validatePreviewUrlInput } from '@/features/home/<USER>/browser-preview';
+     2	import { type CanvasTab, isCanvasTab } from '@/features/home/<USER>/canvas-tabs';
      3	import {
      4	  type WorkerSessionState,
      5	  workerSessionStates,
-     6	} from '@/features/home/domain/session-workspace';
+     6	} from '@/features/home/<USER>/session-workspace';
      7	
      8	const homeWorkspacePreferencesStorageKey =
      9	  'yyork.home.workspace-preferences';
@@ -432,8 +432,8 @@ tool_use exec_command
 id: call_gulC7HcDHBDJeHHRSFdCLLtQ
 ```json
 {
-  "cmd": "nl -ba web/src/features/home/pages/workspace-layout.tsx | sed -n '300,355p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "nl -ba web/src/features/home/<USER>/workspace-layout.tsx | sed -n '300,355p'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -445,8 +445,8 @@ tool_use exec_command
 id: call_DTfrMVBYxWmkOlRF5wNLaPGU
 ```json
 {
-  "cmd": "nl -ba web/src/features/home/pages/workspace-context.ts | sed -n '1,80p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "nl -ba web/src/features/home/<USER>/workspace-context.ts | sed -n '1,80p'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 6000
 }
@@ -531,16 +531,16 @@ Output:
      3	import type {
      4	  CanvasTab,
      5	  CanvasTargetSummary,
-     6	} from '@/features/home/components/organisms/canvas-panel';
-     7	import type { WorkspacePanelState } from '@/features/home/components/organisms/workspace-status-view';
+     6	} from '@/features/home/<USER>/organisms/canvas-panel';
+     7	import type { WorkspacePanelState } from '@/features/home/<USER>/organisms/workspace-status-view';
      8	import type {
      9	  HomeWorkspaceCanvasLayout,
     10	  HomeWorkspaceCanvasReviewPreferences,
-    11	} from '@/features/home/data/workspace-preferences';
+    11	} from '@/features/home/<USER>/workspace-preferences';
     12	import type {
     13	  KanbanColumnData,
     14	  WorkerSession,
-    15	} from '@/features/home/domain/session-workspace';
+    15	} from '@/features/home/<USER>/session-workspace';
     16	
     17	export interface WorkspaceContextValue {
     18	  canvasAvailable: boolean;
@@ -579,9 +579,9 @@ Output:
 
 > AGENT
 
-Not exactly. The outer Canvas pane is capped at **55%**, not 50%, and that percentage is of the `TerminalLayout` container, not necessarily the raw viewport. Source: [terminal-layout.tsx](/Users/tanishqpalandurkar/Projects/yyork/web/src/features/home/pages/terminal-layout.tsx:9) sets `CANVAS_MAX_PERCENT = 55`, and the drag math clamps to that at [terminal-layout.tsx](/Users/tanishqpalandurkar/Projects/yyork/web/src/features/home/pages/terminal-layout.tsx:160).
+Not exactly. The outer Canvas pane is capped at **55%**, not 50%, and that percentage is of the `TerminalLayout` container, not necessarily the raw viewport. Source: [terminal-layout.tsx](/home/<USER>/Projects/yyork/web/src/features/home/<USER>/terminal-layout.tsx:9) sets `CANVAS_MAX_PERCENT = 55`, and the drag math clamps to that at [terminal-layout.tsx](/home/<USER>/Projects/yyork/web/src/features/home/<USER>/terminal-layout.tsx:160).
 
-There’s also an inner resizable split inside the Files tab. The file-tree side is capped at **55% of the Canvas pane**: [canvas-panel.tsx](/Users/tanishqpalandurkar/Projects/yyork/web/src/features/home/components/organisms/canvas-panel.tsx:87).
+There’s also an inner resizable split inside the Files tab. The file-tree side is capped at **55% of the Canvas pane**: [canvas-panel.tsx](/home/<USER>/Projects/yyork/web/src/features/home/<USER>/organisms/canvas-panel.tsx:87).
 
 One caveat: stored `canvasLayout` values are not clamped on read, so manual/localStorage state could render outside that range. Normal dragging enforces 22% to 55%.
 

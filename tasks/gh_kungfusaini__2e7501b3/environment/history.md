@@ -12,7 +12,7 @@ tool_use Bash
 id: toolu_01HvkCBTjihkSafTKifY6tR9
 ```json
 {
-  "command": "ls /Users/sumeet/matrix/web/aether/ && echo \"---services---\" && ls /Users/sumeet/matrix/web/aether/services/",
+  "command": "ls /home/<USER>/matrix/web/aether/ && echo \"---services---\" && ls /home/<USER>/matrix/web/aether/services/",
   "description": "List aether project structure"
 }
 ```
@@ -49,7 +49,7 @@ tool_use Bash
 id: toolu_01PvoXFeQhWh8m4cuohnA3EL
 ```json
 {
-  "command": "cat /Users/sumeet/matrix/web/aether/AGENTS.md 2>/dev/null | head -80 && echo \"---\" && ls /Users/sumeet/matrix/web/aether/services/sumeetsaini_com 2>/dev/null | head -20",
+  "command": "cat /home/<USER>/matrix/web/aether/AGENTS.md 2>/dev/null | head -80 && echo \"---\" && ls /home/<USER>/matrix/web/aether/services/sumeetsaini_com 2>/dev/null | head -20",
   "description": "Inspect aether docs and similar service"
 }
 ```
@@ -397,7 +397,7 @@ tool_use Bash
 id: toolu_01PgnT4umzN461MyyQeNk7LA
 ```json
 {
-  "command": "mkdir -p /Users/sumeet/matrix/web/aether/services/bangbang_studios && ls /Users/sumeet/matrix/web/aether/services/sumeetsaini_com/content 2>/dev/null | head",
+  "command": "mkdir -p /home/<USER>/matrix/web/aether/services/bangbang_studios && ls /home/<USER>/matrix/web/aether/services/sumeetsaini_com/content 2>/dev/null | head",
   "description": "Create bangbang service dir and peek at content pattern"
 }
 ```
@@ -465,7 +465,7 @@ tool_use Write
 id: toolu_01YPEtcT41w8LBTqS6q7gCZ2
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/web/aether/services/bangbang_studios/vibeboard.html",
+  "file_path": "/home/<USER>/matrix/web/aether/services/bangbang_studios/vibeboard.html",
   "content": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\" />\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\" />\n<title>Bang Bang Studios — Vibe Board</title>\n<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n<link href=\"https://fonts.googleapis.com/css2?family=Bungee&family=Bungee+Shade&family=Inter:wght@400;600;800&family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@400;700&family=VT323&family=Major+Mono+Display&family=Archivo+Black&family=Anton&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,400&family=JetBrains+Mono:wght@400;700&display=swap\" rel=\"stylesheet\">\n<style>\n  :root{\n    --bg:#0a0410;\n    --bg-2:#120820;\n    --ink:#f5f0ff;\n    --ink-dim:#b6a8d4;\n    --line:#2a1a44;\n    --magenta:#ff2bd6;\n    --pink:#ff48a4;\n    --purple:#8a2be2;\n    --deep:#3a0a6b;\n    --cyan:#2be6ff;\n  }\n  *{box-sizing:border-box}\n  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}\n  body{\n    background:\n      radial-gradient(1200px 600px at 80% -10%, rgba(255,43,214,.15), transparent 60%),\n      radial-gradient(900px 500px at -10% 30%, rgba(138,43,226,.18), transparent 60%),\n      var(--bg);\n    min-height:100vh;\n  }\n  header{\n    padding:48px 32px 24px;\n    max-width:1400px;\n    margin:0 auto;\n    display:grid;\n    grid-template-columns:1fr auto;\n    align-items:end;\n    gap:24px;\n    border-bottom:1px solid var(--line);\n  }\n  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--magenta)}\n  h1{margin:8px 0 0;font-family:'Bungee',sans-serif;font-size:clamp(40px,6vw,84px);line-height:.95;letter-spacing:-.01em}\n  h1 .alt{color:var(--magenta)}\n  .sub{max-width:520px;color:var(--ink-dim);font-size:14px;line-height:1.6;margin-top:12px}\n  .legend{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-dim);text-align:right;line-height:1.7}\n  .legend b{color:var(--ink)}\n\n  main{max-width:1400px;margin:0 auto;padding:48px 32px 96px}\n  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:32px}\n\n  .card{\n    background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));\n    border:1px solid var(--line);\n    border-radius:18px;\n    overflow:hidden;\n    display:flex;\n    flex-direction:column;\n    transition:transform .25s ease, border-color .25s ease;\n  }\n  .card:hover{transform:translateY(-4px);border-color:#4a2a7a}\n  .stage{aspect-ratio:16/10;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}\n  .stage svg{width:100%;height:100%;display:block}\n  .meta{padding:24px 24px 28px;display:flex;flex-direction:column;gap:18px}\n  .row{display:flex;align-items:center;justify-content:space-between;gap:16px}\n  .num{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-dim);letter-spacing:.25em}\n  .name{font-family:'Bungee',sans-serif;font-size:26px;line-height:1;letter-spacing:-.01em}\n  .tag{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--magenta);text-transform:uppercase;letter-spacing:.2em}\n  .desc{color:var(--ink-dim);font-size:13.5px;line-height:1.65;margin:0}\n  .swatches{display:flex;gap:6px}\n  .sw{width:28px;height:28px;border-radius:6px;border:1px solid rgba(255,255,255,.06)}\n  .typo{font-size:12px;color:var(--ink-dim);display:grid;grid-template-columns:auto 1fr;gap:8px 14px;align-items:center;font-family:'JetBrains Mono',monospace}\n  .typo .label{color:#7a6a9c}\n  .typo .val{color:var(--ink)}\n  .keys{display:flex;flex-wrap:wrap;gap:6px}\n  .key{font-family:'JetBrains Mono',monospace;font-size:10px;padding:5px 10px;border:1px solid var(--line);border-radius:999px;color:var(--ink-dim);text-transform:uppercase;letter-spacing:.1em}\n  .refs{font-size:11px;color:#7a6a9c;line-height:1.7;font-family:'JetBrains Mono',monospace}\n  .refs a{color:var(--ink-dim);text-decoration:none;border-bottom:1px dotted #4a2a7a}\n  .refs a:hover{color:var(--magenta)}\n\n  /* === card 1: COMIC BURST === */\n  .c1 .stage{background:#000}\n  .c1 .name{color:var(--magenta)}\n  /* === card 2: NEON CATHEDRAL === */\n  .c2 .stage{background:radial-gradient(circle at 50% 60%, #1a0530 0%, #06010d 70%)}\n  .c2 .name{font-family:'Fraunces',serif;font-weight:700;font-style:italic;color:#f5e6ff;text-transform:none;letter-spacing:-.02em}\n  /* === card 3: VAPORWAVE === */\n  .c3 .stage{background:linear-gradient(180deg,#1a0833 0%,#3a0a6b 60%,#ff2bd6 100%)}\n  .c3 .name{font-family:'Bungee […]
 
 > TOOL
@@ -473,7 +473,7 @@ id: toolu_01YPEtcT41w8LBTqS6q7gCZ2
 tool_result
 id: toolu_01YPEtcT41w8LBTqS6q7gCZ2
 ```
-File created successfully at: /Users/sumeet/matrix/web/aether/services/bangbang_studios/vibeboard.html (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/matrix/web/aether/services/bangbang_studios/vibeboard.html (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -482,7 +482,7 @@ tool_use Bash
 id: toolu_01Wig4MzVSCA7BimJPPhca7A
 ```json
 {
-  "command": "open /Users/sumeet/matrix/web/aether/services/bangbang_studios/vibeboard.html",
+  "command": "open /home/<USER>/matrix/web/aether/services/bangbang_studios/vibeboard.html",
   "description": "Open vibe board in default browser"
 }
 ```
@@ -548,7 +548,7 @@ tool_use Bash
 id: toolu_01K8NR7ZgzgJtCocEjYYUimR
 ```json
 {
-  "command": "mkdir -p /Users/sumeet/matrix/web/aether/services/bangbang_studios/assets && cp /Users/sumeet/.claude/image-cache/f0b74a03-515c-4efc-87fe-84297f584e06/1.png /Users/sumeet/matrix/web/aether/services/bangbang_studios/assets/logo.png && ls /Users/sumeet/matrix/web/aether/services/bangbang_studios/assets/",
+  "command": "mkdir -p /home/<USER>/matrix/web/aether/services/bangbang_studios/assets && cp /home/<USER>/.claude/image-cache/f0b74a03-515c-4efc-87fe-84297f584e06/1.png /home/<USER>/matrix/web/aether/services/bangbang_studios/assets/logo.png && ls /home/<USER>/matrix/web/aether/services/bangbang_studios/assets/",
   "description": "Copy logo into project assets"
 }
 ```
@@ -559,7 +559,7 @@ tool_result ERROR
 id: toolu_01K8NR7ZgzgJtCocEjYYUimR
 ```
 Exit code 1
-cp: /Users/sumeet/.claude/image-cache/f0b74a03-515c-4efc-87fe-84297f584e06/1.png: No such file or directory
+cp: /home/<USER>/.claude/image-cache/f0b74a03-515c-4efc-87fe-84297f584e06/1.png: No such file or directory
 ```
 
 > TOOL
@@ -568,7 +568,7 @@ tool_use Bash
 id: toolu_0112HpVPwEUMdfhKdqQb9KNd
 ```json
 {
-  "command": "find /Users/sumeet/.claude/image-cache -name \"*.png\" -newer /tmp 2>/dev/null | head -5; ls /Users/sumeet/.claude/image-cache/ 2>/dev/null | head",
+  "command": "find /home/<USER>/.claude/image-cache -name \"*.png\" -newer /tmp 2>/dev/null | head -5; ls /home/<USER>/.claude/image-cache/ 2>/dev/null | head",
   "description": "Locate cached logo image"
 }
 ```
@@ -587,7 +587,7 @@ tool_use Bash
 id: toolu_01MogPGhQu3Wr6Ctni2cAZjT
 ```json
 {
-  "command": "ls -la /Users/sumeet/.claude/ 2>/dev/null | head -20; echo \"---\"; find /Users/sumeet -path '*/image-cache/*' -name \"*.png\" 2>/dev/null | head -5",
+  "command": "ls -la /home/<USER>/.claude/ 2>/dev/null | head -20; echo \"---\"; find /home/<USER> -path '*/image-cache/*' -name \"*.png\" 2>/dev/null | head -5",
   "description": "Find image cache location"
 }
 ```
@@ -630,7 +630,7 @@ tool_use Write
 id: toolu_01Q5mgKPnwAnLepcxM4rDrvA
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html",
+  "file_path": "/home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html",
   "content": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\" />\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\" />\n<title>Bang Bang Studios — Hero Preview · Chrome Pop</title>\n<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n<link href=\"https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,700;1,9..144,400;1,9..144,700&family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;500;700&family=Bungee&display=swap\" rel=\"stylesheet\">\n<style>\n  :root{\n    --bg:#08020f;\n    --ink:#f5e6ff;\n    --ink-dim:#b6a8d4;\n    --magenta:#ff2bd6;\n    --pink:#ff48a4;\n    --purple:#8a2be2;\n    --cyan:#2be6ff;\n  }\n  *{box-sizing:border-box}\n  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}\n  body{\n    min-height:100vh;\n    background:\n      radial-gradient(1000px 700px at 75% 50%, rgba(255,43,214,.14), transparent 60%),\n      radial-gradient(900px 600px at 20% 80%, rgba(43,230,255,.08), transparent 60%),\n      radial-gradient(700px 500px at 50% 10%, rgba(138,43,226,.18), transparent 70%),\n      var(--bg);\n  }\n\n  /* ===== NAV ===== */\n  nav{\n    position:fixed; top:0; left:0; right:0; z-index:20;\n    display:flex; justify-content:space-between; align-items:center;\n    padding:24px 40px;\n    backdrop-filter:blur(8px);\n    -webkit-backdrop-filter:blur(8px);\n    background:linear-gradient(180deg, rgba(8,2,15,.6), rgba(8,2,15,0));\n  }\n  .brand{display:flex;align-items:center;gap:12px}\n  .brand-stamp{width:44px;height:44px;border-radius:50%;background:#000;display:grid;place-items:center;box-shadow:0 4px 24px rgba(255,43,214,.4)}\n  .brand-stamp svg{width:36px;height:36px}\n  .brand-text{font-family:'Fraunces',serif;font-style:italic;font-weight:700;font-size:18px;line-height:1;letter-spacing:-.01em}\n  .brand-sub{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.3em;color:var(--magenta);text-transform:uppercase;margin-top:4px}\n  nav ul{display:flex;gap:32px;list-style:none;margin:0;padding:0;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase}\n  nav ul a{color:var(--ink-dim);text-decoration:none;transition:color .2s}\n  nav ul a:hover{color:var(--magenta)}\n  .nav-cta{\n    font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;\n    color:#000;background:var(--magenta);padding:10px 18px;border-radius:999px;text-decoration:none;\n    transition:transform .2s, box-shadow .2s;\n  }\n  .nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(255,43,214,.5)}\n\n  /* ===== HERO ===== */\n  .hero{\n    position:relative; min-height:100vh; min-height:100svh;\n    display:grid; grid-template-columns:1fr; align-items:center;\n    padding:120px 40px 80px;\n  }\n  .hero-inner{\n    position:relative; max-width:1400px; margin:0 auto; width:100%;\n    display:grid; grid-template-columns:1.1fr 1fr; gap:60px; align-items:center;\n  }\n  .copy{position:relative; z-index:3}\n  .eyebrow{\n    display:inline-flex; align-items:center; gap:10px;\n    font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.3em; text-transform:uppercase;\n    color:var(--magenta); padding:8px 14px; border:1px solid rgba(255,43,214,.4); border-radius:999px;\n    background:rgba(255,43,214,.06);\n  }\n  .eyebrow::before{content:'';width:6px;height:6px;background:var(--magenta);border-radius:50%;box-shadow:0 0 12px var(--magenta)}\n  h1{\n    margin:22px 0 18px;\n    font-family:'Fraunces',serif; font-style:italic; font-weight:700;\n    font-size:clamp(48px, 7.5vw, 104px); line-height:.95; letter-spacing:-.025em;\n    background:linear-gradient(135deg, #fff 0%, #ff8ae5 35%, #ff2bd6 55%, #8a2be2 […]
 
 > TOOL
@@ -638,7 +638,7 @@ id: toolu_01Q5mgKPnwAnLepcxM4rDrvA
 tool_result
 id: toolu_01Q5mgKPnwAnLepcxM4rDrvA
 ```
-File created successfully at: /Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -647,7 +647,7 @@ tool_use Bash
 id: toolu_014AcKzXmEJ7snj4XHMnQZZV
 ```json
 {
-  "command": "open /Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html",
+  "command": "open /home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html",
   "description": "Open hero preview"
 }
 ```
@@ -692,7 +692,7 @@ tool_use Write
 id: toolu_01Sms1VjJ2BQ2BWqmYdfxAzR
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html",
+  "file_path": "/home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html",
   "content": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\" />\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\" />\n<title>Bang Bang Studios — Hero Preview · Liquid Chrome</title>\n<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n<link href=\"https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,700&family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;500;700&display=swap\" rel=\"stylesheet\">\n<style>\n  :root{\n    --bg:#08020f;\n    --ink:#f5e6ff;\n    --ink-dim:#b6a8d4;\n    --magenta:#ff2bd6;\n    --pink:#ff8ae5;\n    --purple:#8a2be2;\n    --cyan:#2be6ff;\n  }\n  *{box-sizing:border-box}\n  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}\n  body{\n    min-height:100vh;\n    background:\n      radial-gradient(1100px 800px at 70% 55%, rgba(255,43,214,.12), transparent 60%),\n      radial-gradient(900px 700px at 15% 80%, rgba(43,230,255,.07), transparent 60%),\n      radial-gradient(700px 600px at 50% 0%, rgba(138,43,226,.18), transparent 70%),\n      var(--bg);\n  }\n\n  /* ===== NAV ===== */\n  nav{\n    position:fixed; top:0; left:0; right:0; z-index:20;\n    display:flex; justify-content:space-between; align-items:center;\n    padding:28px 40px;\n    backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);\n    background:linear-gradient(180deg, rgba(8,2,15,.5), rgba(8,2,15,0));\n  }\n  .brand{\n    font-family:'Fraunces',serif; font-style:italic; font-weight:700;\n    font-size:20px; line-height:1; letter-spacing:-.015em;\n    color:#fff;\n  }\n  .brand small{\n    display:block; margin-top:5px;\n    font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:.35em;\n    color:var(--ink-dim); text-transform:uppercase; font-style:normal; font-weight:400;\n  }\n  nav ul{display:flex;gap:36px;list-style:none;margin:0;padding:0;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase}\n  nav ul a{color:var(--ink-dim);text-decoration:none;transition:color .2s}\n  nav ul a:hover{color:#fff}\n  .nav-cta{\n    font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.2em; text-transform:uppercase;\n    color:#fff; padding:11px 20px; border-radius:999px; text-decoration:none;\n    border:1px solid rgba(245,230,255,.25); background:rgba(255,255,255,.02);\n    transition:all .25s;\n  }\n  .nav-cta:hover{border-color:var(--magenta);background:rgba(255,43,214,.08)}\n\n  /* ===== HERO ===== */\n  .hero{\n    position:relative; min-height:100vh; min-height:100svh;\n    display:grid; align-items:center;\n    padding:140px 40px 100px;\n  }\n  .hero-inner{\n    position:relative; max-width:1400px; margin:0 auto; width:100%;\n    display:grid; grid-template-columns:1.05fr 1fr; gap:80px; align-items:center;\n  }\n  .copy{position:relative; z-index:3}\n  .eyebrow{\n    display:inline-flex; align-items:center; gap:10px;\n    font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.3em; text-transform:uppercase;\n    color:var(--ink-dim);\n  }\n  .eyebrow::before{content:'';width:6px;height:6px;background:var(--magenta);border-radius:50%;box-shadow:0 0 14px var(--magenta)}\n  h1{\n    margin:24px 0 22px;\n    font-family:'Fraunces',serif; font-weight:300;\n    font-size:clamp(52px, 8vw, 116px); line-height:.92; letter-spacing:-.035em;\n […]
 
 > TOOL
@@ -700,7 +700,7 @@ id: toolu_01Sms1VjJ2BQ2BWqmYdfxAzR
 tool_result
 id: toolu_01Sms1VjJ2BQ2BWqmYdfxAzR
 ```
-The file /Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -709,7 +709,7 @@ tool_use Bash
 id: toolu_01SKFdsB4j7u7KCr1ged4Uvd
 ```json
 {
-  "command": "open /Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html",
+  "command": "open /home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html",
   "description": "Reopen pure liquid chrome hero"
 }
 ```
@@ -742,7 +742,7 @@ tool_use Write
 id: toolu_01RQjuoAaGw3xvEzJAobBijy
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html",
+  "file_path": "/home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html",
   "content": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\" />\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\" />\n<title>Bang Bang Studios — Hero Preview · Liquid Chrome</title>\n<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n<link href=\"https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,700&family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;500&display=swap\" rel=\"stylesheet\">\n<style>\n  :root{\n    --bg:#08020f;\n    --ink:#f5e6ff;\n    --ink-dim:#b6a8d4;\n    --magenta:#ff2bd6;\n    --pink:#ff8ae5;\n    --purple:#8a2be2;\n    --cyan:#2be6ff;\n  }\n  *{box-sizing:border-box}\n  html,body{margin:0;padding:0;background:#08020f;color:var(--ink);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}\n\n  /* ===== NAV ===== */\n  nav{\n    position:fixed; top:0; left:0; right:0; z-index:20;\n    display:flex; justify-content:space-between; align-items:center;\n    padding:28px 40px;\n  }\n  .brand{\n    font-family:'Fraunces',serif; font-style:italic; font-weight:700;\n    font-size:20px; line-height:1; letter-spacing:-.015em;\n    color:#f5e6ff;\n  }\n  .brand small{\n    display:block; margin-top:5px;\n    font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:.35em;\n    color:var(--ink-dim); text-transform:uppercase; font-style:normal; font-weight:400;\n  }\n  nav ul{display:flex;gap:36px;list-style:none;margin:0;padding:0;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase}\n  nav ul a{color:var(--ink-dim);text-decoration:none;transition:color .2s}\n  nav ul a:hover{color:#fff}\n  .nav-cta{\n    font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.2em; text-transform:uppercase;\n    color:#f5e6ff; padding:11px 20px; border-radius:999px; text-decoration:none;\n    border:1px solid rgba(245,230,255,.25);\n    transition:all .25s;\n  }\n  .nav-cta:hover{border-color:var(--magenta);background:rgba(255,43,214,.08)}\n\n  /* ===== HERO: blob is the hero, copy sits over it ===== */\n  .hero{\n    position:relative; min-height:100vh; min-height:100svh;\n    display:flex; flex-direction:column; align-items:center; justify-content:center;\n    padding:140px 40px 120px;\n    overflow:hidden;\n  }\n  .blob-wrap{\n    position:absolute; inset:0;\n    display:flex; align-items:center; justify-content:center;\n    z-index:1;\n  }\n  .blob-wrap svg{\n    width:min(110vh, 110vw); height:auto; max-width:none;\n    filter:drop-shadow(0 40px 120px rgba(255,43,214,.35));\n  }\n  .blob-breathe{animation:breathe 8s ease-in-out infinite; transform-origin:50% 50%; transform-box:fill-box}\n  @keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.025)}}\n\n  .copy{\n    position:relative; z-index:3; text-align:center; max-width:880px; margin:0 auto;\n  }\n  .eyebrow{\n    display:inline-flex; align-items:center; gap:10px;\n    font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.3em; text-transform:uppercase;\n    color:var(--ink-dim);\n    margin-bottom:24px;\n  }\n  .eyebrow::before{content:'';width:6px;height:6px;background:var(--magenta);border-radius:50%;box-shadow:0 0 14px var(--magenta)}\n\n  h1{\n    margin:0 0 24px;\n    font-family:'Fraunces',serif; font-weight:300;\n    font-size:clamp(56px, 9vw, 140px); line-height:.9; letter-spacing:-.04em;\n    color:#fff;\n […]
 
 > TOOL
@@ -750,7 +750,7 @@ id: toolu_01RQjuoAaGw3xvEzJAobBijy
 tool_result
 id: toolu_01RQjuoAaGw3xvEzJAobBijy
 ```
-The file /Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -759,7 +759,7 @@ tool_use Bash
 id: toolu_01BqeDqQt2E3RxqwCmgdjFLJ
 ```json
 {
-  "command": "open /Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html",
+  "command": "open /home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html",
   "description": "Open the cleaned-up liquid chrome hero"
 }
 ```
@@ -788,7 +788,7 @@ tool_use Write
 id: toolu_016uWH627UeauLJ65GUo1g1Y
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html",
+  "file_path": "/home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html",
   "content": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\" />\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\" />\n<title>Bang Bang Studios — Blob</title>\n<style>\n  *{box-sizing:border-box;margin:0;padding:0}\n  html,body{width:100%;height:100%;background:#08020f;overflow:hidden}\n  svg{display:block;width:100vw;height:100vh}\n  .blob-breathe{animation:breathe 8s ease-in-out infinite; transform-origin:50% 50%; transform-box:fill-box}\n  @keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}\n</style>\n</head>\n<body>\n\n<svg viewBox=\"0 0 800 500\" xmlns=\"http://www.w3.org/2000/svg\" preserveAspectRatio=\"xMidYMid slice\">\n  <defs>\n    <radialGradient id=\"blob5a\" cx=\"35%\" cy=\"40%\" r=\"60%\">\n      <stop offset=\"0%\" stop-color=\"#ff8ae5\"/>\n      <stop offset=\"35%\" stop-color=\"#ff2bd6\"/>\n      <stop offset=\"65%\" stop-color=\"#8a2be2\"/>\n      <stop offset=\"100%\" stop-color=\"#1a0530\"/>\n    </radialGradient>\n    <radialGradient id=\"blob5b\" cx=\"70%\" cy=\"80%\" r=\"50%\">\n      <stop offset=\"0%\" stop-color=\"#2be6ff\" stop-opacity=\".7\"/>\n      <stop offset=\"60%\" stop-color=\"#8a2be2\" stop-opacity=\".1\"/>\n      <stop offset=\"100%\" stop-color=\"#000\" stop-opacity=\"0\"/>\n    </radialGradient>\n    <linearGradient id=\"iri5\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\">\n      <stop offset=\"0%\" stop-color=\"#fff\" stop-opacity=\".9\"/>\n      <stop offset=\"50%\" stop-color=\"#ff2bd6\" stop-opacity=\".3\"/>\n      <stop offset=\"100%\" stop-color=\"#2be6ff\" stop-opacity=\".6\"/>\n    </linearGradient>\n    <filter id=\"soft5\"><feGaussianBlur stdDeviation=\"6\"/></filter>\n  </defs>\n  <rect width=\"800\" height=\"500\" fill=\"#08020f\"/>\n  <ellipse cx=\"500\" cy=\"380\" rx=\"380\" ry=\"200\" fill=\"url(#blob5b)\"/>\n  <g class=\"blob-breathe\">\n    <path d=\"M 380 130 C 540 110, 680 200, 660 320 C 640 430, 480 460, 360 420 C 220 370, 150 270, 220 190 C 270 130, 320 140, 380 130 Z\" fill=\"url(#blob5a)\"/>\n    <path d=\"M 320 170 C 420 160, 520 200, 480 270 C 440 320, 350 320, 300 270 C 260 230, 280 175, 320 170 Z\" fill=\"url(#iri5)\" opacity=\".7\" filter=\"url(#soft5)\"/>\n    <ellipse cx=\"340\" cy=\"200\" rx=\"60\" ry=\"18\" fill=\"#fff\" opacity=\".7\"/>\n    <ellipse cx=\"320\" cy=\"195\" rx=\"20\" ry=\"6\" fill=\"#fff\"/>\n  </g>\n</svg>\n\n</body>\n</html>\n"
 }
 ```
@@ -798,7 +798,7 @@ id: toolu_016uWH627UeauLJ65GUo1g1Y
 tool_result
 id: toolu_016uWH627UeauLJ65GUo1g1Y
 ```
-The file /Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -807,7 +807,7 @@ tool_use Bash
 id: toolu_01N8izBDwhqApFVYYw1HorY6
 ```json
 {
-  "command": "open /Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html",
+  "command": "open /home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html",
   "description": "Open blob-only page"
 }
 ```
@@ -838,7 +838,7 @@ tool_use Write
 id: toolu_01RNXddDJ2vvREKjDBvdyFMA
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html",
+  "file_path": "/home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html",
   "content": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\" />\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\" />\n<title>Bang Bang Studios — Blob</title>\n<style>\n  *{box-sizing:border-box;margin:0;padding:0}\n  html,body{width:100%;height:100%;background:#08020f;overflow:hidden}\n  canvas{display:block;width:100vw;height:100vh}\n</style>\n</head>\n<body>\n\n<script type=\"importmap\">\n{ \"imports\": { \"three\": \"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js\" } }\n</script>\n\n<script type=\"module\">\nimport * as THREE from 'three';\n\nconst renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });\nrenderer.setSize(innerWidth, innerHeight);\nrenderer.setPixelRatio(Math.min(devicePixelRatio, 2));\nrenderer.setClearColor(0x08020f, 1);\ndocument.body.appendChild(renderer.domElement);\n\nconst scene = new THREE.Scene();\nconst camera = new THREE.PerspectiveCamera(45, innerWidth/innerHeight, 0.1, 100);\ncamera.position.set(0, 0, 4);\n\nconst geo = new THREE.IcosahedronGeometry(1.25, 96);\n\n// Stefan Gustavson simplex noise (public domain)\nconst noiseGLSL = `\nvec3 mod289(vec3 x){return x - floor(x*(1.0/289.0))*289.0;}\nvec4 mod289(vec4 x){return x - floor(x*(1.0/289.0))*289.0;}\nvec4 permute(vec4 x){return mod289(((x*34.0)+1.0)*x);}\nvec4 taylorInvSqrt(vec4 r){return 1.79284291400159 - 0.85373472095314 * r;}\nfloat snoise(vec3 v){\n  const vec2 C = vec2(1.0/6.0, 1.0/3.0);\n  const vec4 D = vec4(0.0, 0.5, 1.0, 2.0);\n  vec3 i  = floor(v + dot(v, C.yyy));\n  vec3 x0 = v - i + dot(i, C.xxx);\n  vec3 g = step(x0.yzx, x0.xyz);\n  vec3 l = 1.0 - g;\n  vec3 i1 = min(g.xyz, l.zxy);\n  vec3 i2 = max(g.xyz, l.zxy);\n  vec3 x1 = x0 - i1 + C.xxx;\n  vec3 x2 = x0 - i2 + C.yyy;\n  vec3 x3 = x0 - D.yyy;\n  i = mod289(i);\n  vec4 p = permute(permute(permute(\n            i.z + vec4(0.0, i1.z, i2.z, 1.0))\n          + i.y + vec4(0.0, i1.y, i2.y, 1.0))\n          + i.x + vec4(0.0, i1.x, i2.x, 1.0));\n  float n_ […]
 
 > TOOL
@@ -846,7 +846,7 @@ id: toolu_01RNXddDJ2vvREKjDBvdyFMA
 tool_result
 id: toolu_01RNXddDJ2vvREKjDBvdyFMA
 ```
-The file /Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -855,7 +855,7 @@ tool_use Bash
 id: toolu_01BDMmfQsY7TGHVnxCfZb9TK
 ```json
 {
-  "command": "open /Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html",
+  "command": "open /home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html",
   "description": "Open 3D blob"
 }
 ```
@@ -977,7 +977,7 @@ id: toolu_01MRGhvNDQeFF7nUtU5MR8MA
 tool_result
 id: toolu_01MRGhvNDQeFF7nUtU5MR8MA
 ```
-/Users/sumeet/.local/share/npm/lib/node_modules
+/home/<USER>/.local/share/npm/lib/node_modules
 ```
 
 > TOOL
@@ -986,7 +986,7 @@ tool_use Bash
 id: toolu_01Jm7AqU7zbeCaMDghfTGGVJ
 ```json
 {
-  "command": "find /Users/sumeet/.local/share/npm/lib/node_modules -maxdepth 3 -name \"playwright*\" -type d 2>/dev/null ; find /usr/local/lib/node_modules -maxdepth 3 -name \"playwright*\" -type d 2>/dev/null",
+  "command": "find /home/<USER>/.local/share/npm/lib/node_modules -maxdepth 3 -name \"playwright*\" -type d 2>/dev/null ; find /usr/local/lib/node_modules -maxdepth 3 -name \"playwright*\" -type d 2>/dev/null",
   "description": "Locate playwright package"
 }
 ```
@@ -1099,7 +1099,7 @@ tool_use Write
 id: toolu_016SiBoanSBbp2RVXYNYvidG
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html",
+  "file_path": "/home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html",
   "content": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\" />\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\" />\n<title>Bang Bang Studios — Blob</title>\n<style>\n  *{box-sizing:border-box;margin:0;padding:0}\n  html,body{width:100%;height:100%;background:#08020f;overflow:hidden}\n  canvas{display:block;width:100vw;height:100vh}\n</style>\n</head>\n<body>\n\n<script type=\"importmap\">\n{ \"imports\": { \"three\": \"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js\" } }\n</script>\n\n<script type=\"module\">\nimport * as THREE from 'three';\n\nconst renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });\nrenderer.setSize(innerWidth, innerHeight);\nrenderer.setPixelRatio(Math.min(devicePixelRatio, 2));\nrenderer.setClearColor(0x08020f, 1);\ndocument.body.appendChild(renderer.domElement);\n\nconst scene = new THREE.Scene();\nconst camera = new THREE.PerspectiveCamera(40, innerWidth/innerHeight, 0.1, 100);\ncamera.position.set(0, 0, 4.2);\n\n// smooth, high-resolution sphere — high detail keeps the surface silky\nconst geo = new THREE.IcosahedronGeometry(1.25, 128);\n\nconst noiseGLSL = `\nvec3 mod289(vec3 x){return x - floor(x*(1.0/289.0))*289.0;}\nvec4 mod289(vec4 x){return x - floor(x*(1.0/289.0))*289.0;}\nvec4 permute(vec4 x){return mod289(((x*34.0)+1.0)*x);}\nvec4 taylorInvSqrt(vec4 r){return 1.79284291400159 - 0.85373472095314 * r;}\nfloat snoise(vec3 v){\n  const vec2 C = vec2(1.0/6.0, 1.0/3.0);\n  const vec4 D = vec4(0.0, 0.5, 1.0, 2.0);\n  vec3 i  = floor(v + dot(v, C.yyy));\n  vec3 x0 = v - i + dot(i, C.xxx);\n  vec3 g = step(x0.yzx, x0.xyz);\n  vec3 l = 1.0 - g;\n  vec3 i1 = min(g.xyz, l.zxy);\n  vec3 i2 = max(g.xyz, l.zxy);\n  vec3 x1 = x0 - i1 + C.xxx;\n  vec3 x2 = x0 - i2 + C.yyy;\n  vec3 x3 = x0 - D.yyy;\n  i = mod289(i);\n  vec4 p = permute(permute(permute(\n            i.z + vec4(0.0, i1.z, i2.z, 1.0))\n          + i.y + vec4(0.0, i1.y, i2.y, 1.0))\n          + i.x + vec4(0.0, i1.x, […]
 
 > TOOL
@@ -1107,7 +1107,7 @@ id: toolu_016SiBoanSBbp2RVXYNYvidG
 tool_result
 id: toolu_016SiBoanSBbp2RVXYNYvidG
 ```
-The file /Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1120,7 +1120,7 @@ tool_use Write
 id: toolu_01NPjfhka89i6Umv3u7P6zYa
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/web/aether/services/bangbang_studios/scripts/shot.sh",
+  "file_path": "/home/<USER>/matrix/web/aether/services/bangbang_studios/scripts/shot.sh",
   "content": "#!/usr/bin/env bash\n# Screenshot helper. Usage: ./scripts/shot.sh [file.html] [out.png] [width] [height]\nset -euo pipefail\nHERE=\"$(cd \"$(dirname \"$0\")/..\" && pwd)\"\nFILE=\"${1:-$HERE/hero_preview.html}\"\nOUT=\"${2:-/tmp/blob.png}\"\nW=\"${3:-1400}\"\nH=\"${4:-900}\"\n\nCHROME=\"$HOME/Library/Caches/ms-playwright/chromium_headless_shell-1217/chrome-headless-shell-mac-x64/chrome-headless-shell\"\n\n# convert local file path to file:// URL\nURL=\"file://${FILE}\"\n\n\"$CHROME\" \\\n  --headless \\\n  --disable-gpu \\\n  --use-angle=swiftshader \\\n  --enable-webgl \\\n  --ignore-gpu-blocklist \\\n  --no-sandbox \\\n  --hide-scrollbars \\\n  --virtual-time-budget=3500 \\\n  --window-size=\"${W},${H}\" \\\n  --screenshot=\"$OUT\" \\\n  \"$URL\" 2>/dev/null\n\necho \"wrote $OUT\"\n"
 }
 ```
@@ -1130,7 +1130,7 @@ id: toolu_01NPjfhka89i6Umv3u7P6zYa
 tool_result
 id: toolu_01NPjfhka89i6Umv3u7P6zYa
 ```
-File created successfully at: /Users/sumeet/matrix/web/aether/services/bangbang_studios/scripts/shot.sh (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/matrix/web/aether/services/bangbang_studios/scripts/shot.sh (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1139,7 +1139,7 @@ tool_use Bash
 id: toolu_01XfpuZkB8ghL5wMSUN96LAZ
 ```json
 {
-  "command": "chmod +x /Users/sumeet/matrix/web/aether/services/bangbang_studios/scripts/shot.sh && /Users/sumeet/matrix/web/aether/services/bangbang_studios/scripts/shot.sh /Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html /tmp/blob1.png && ls -la /tmp/blob1.png",
+  "command": "chmod +x /home/<USER>/matrix/web/aether/services/bangbang_studios/scripts/shot.sh && /home/<USER>/matrix/web/aether/services/bangbang_studios/scripts/shot.sh /home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html /tmp/blob1.png && ls -la /tmp/blob1.png",
   "description": "Take first screenshot of blob"
 }
 ```
@@ -1189,7 +1189,7 @@ id: toolu_019MQMQQZRyXCoAzDcFHeBar
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html",
+  "file_path": "/home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html",
   "old_string": "const fragment = `\nuniform float uTime;\nvarying vec3 vNormal;\nvarying vec3 vViewDir;\nvarying vec3 vWorldPos;\n\nvoid main(){\n  vec3 N = normalize(vNormal);\n  vec3 V = normalize(vViewDir);\n\n  float fres = 1.0 - max(0.0, dot(N, V));\n\n  // palette matched to the original SVG card #5\n  vec3 deep    = vec3(0.10, 0.02, 0.18);  // shadow\n  vec3 purple  = vec3(0.54, 0.17, 0.89);  // 8a2be2\n  vec3 magenta = vec3(1.00, 0.17, 0.84);  // ff2bd6\n  vec3 pink    = vec3(1.00, 0.54, 0.90);  // ff8ae5\n  vec3 cyan    = vec3(0.17, 0.90, 1.00);  // 2be6ff\n\n  // smooth radial gradient: pink core -> magenta -> purple -> dark rim\n  // (in SVG it was gradient stops; here we drive it by fresnel + a top-left bias)\n  vec3 lightDir = normalize(vec3(-0.55, 0.55, 0.85));\n  float keyLit = max(0.0, dot(N, lightDir));\n\n  // base body — bias the gradient so the lit side reads pink, the back reads dark\n  float t1 = smoothstep(0.0, 1.0, keyLit);\n  vec3 body = mix(deep, purple, t1);\n  body = mix(body, magenta, smoothstep(0.3, 0.85, t1));\n  body = mix(body, pink, smoothstep(0.75, 1.0, t1));\n\n  // very soft cyan rim refraction on the back of the silhouette\n  float backRim = smoothstep(0.55, 0.95, fres) * (1.0 - keyLit);\n  body += cyan * […]
 
 > TOOL
@@ -1197,7 +1197,7 @@ id: toolu_019MQMQQZRyXCoAzDcFHeBar
 tool_result
 id: toolu_019MQMQQZRyXCoAzDcFHeBar
 ```
-The file /Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1207,7 +1207,7 @@ id: toolu_01W1RVZjdgxCgaapuaC4SeXk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html",
+  "file_path": "/home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html",
   "old_string": "varying vec3 vNormal;\nvarying vec3 vViewDir;\nvarying vec3 vWorldPos;\n\n${noiseGLSL}",
   "new_string": "varying vec3 vNormal;\nvarying vec3 vViewDir;\nvarying vec3 vWorldPos;\nvarying vec3 vLocalPos;\n\n${noiseGLSL}"
 }
@@ -1218,7 +1218,7 @@ id: toolu_01W1RVZjdgxCgaapuaC4SeXk
 tool_result
 id: toolu_01W1RVZjdgxCgaapuaC4SeXk
 ```
-The file /Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1228,7 +1228,7 @@ id: toolu_0194gjsUtsj7DZ9UWyQMgVzN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html",
+  "file_path": "/home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html",
   "old_string": "  vec4 worldPos = modelMatrix * vec4(newP, 1.0);\n  vWorldPos = worldPos.xyz;",
   "new_string": "  vec4 worldPos = modelMatrix * vec4(newP, 1.0);\n  vWorldPos = worldPos.xyz;\n  vLocalPos = newP;"
 }
@@ -1239,7 +1239,7 @@ id: toolu_0194gjsUtsj7DZ9UWyQMgVzN
 tool_result
 id: toolu_0194gjsUtsj7DZ9UWyQMgVzN
 ```
-The file /Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1248,7 +1248,7 @@ tool_use Bash
 id: toolu_019iV54C1dwjwe2CefViUGMj
 ```json
 {
-  "command": "/Users/sumeet/matrix/web/aether/services/bangbang_studios/scripts/shot.sh /Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html /tmp/blob2.png",
+  "command": "/home/<USER>/matrix/web/aether/services/bangbang_studios/scripts/shot.sh /home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html /tmp/blob2.png",
   "description": "Screenshot updated blob"
 }
 ```
@@ -1297,7 +1297,7 @@ id: toolu_01KN38Gwtx8otXqZttysyPjB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html",
+  "file_path": "/home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html",
   "old_string": "  // === big white specular (chrome highlight, broad soft) ===\n  vec3 lightDir = normalize(vec3(-0.45, 0.55, 0.95));\n  vec3 H = normalize(lightDir + V);\n  float specBase = max(0.0, dot(N, H));\n  float specBroad = pow(specBase, 4.0)  * 0.55;\n  float specHot   = pow(specBase, 60.0) * 0.95;\n  body += vec3(1.0) * (specBroad + specHot);\n\n  // light dust of magenta glow that lifts everything (saturation rescue)\n  body += magenta * 0.05;\n\n  // softer tonemap so we keep the bright pink instead of crushing to white\n  body = 1.0 - exp(-body * 1.05);\n  body = pow(body, vec3(1.0/2.2));",
   "new_string": "  // === small soft white specular — chrome highlight, NOT plastic ===\n  // single tight highlight, low contribution so it doesn't wash the body\n  vec3 lightDir = normalize(vec3(-0.50, 0.55, 0.95));\n  vec3 H = normalize(lightDir + V);\n  float specBase = max(0.0, dot(N, H));\n  float specSoft = pow(specBase, 12.0) * 0.22;\n  float specHot  = pow(specBase, 140.0) * 0.55;\n  body += vec3(1.0) * (specSoft + specHot);\n\n  // gamma only — no tonemap. tonemap was crushing the saturation.\n  body = pow(clamp(body, 0.0, 1.0), vec3(1.0/2.2));"
 }
@@ -1308,7 +1308,7 @@ id: toolu_01KN38Gwtx8otXqZttysyPjB
 tool_result
 id: toolu_01KN38Gwtx8otXqZttysyPjB
 ```
-The file /Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1318,7 +1318,7 @@ id: toolu_01A2Kd9puu4NoPe2swUdYDJh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html",
+  "file_path": "/home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html",
   "old_string": "const halo = new THREE.Mesh(haloGeo, haloMat);\nhalo.position.set(0.5, -0.25, -0.5);\nhalo.scale.set(1.25, 0.9, 1.0);\nscene.add(halo);",
   "new_string": "// flat backdrop sprite for the cyan/purple ambient halo, bottom-right\nconst haloPlane = new THREE.Mesh(\n  new THREE.PlaneGeometry(8, 8),\n  new THREE.ShaderMaterial({\n    transparent: true,\n    blending: THREE.AdditiveBlending,\n    depthWrite: false,\n    vertexShader: `varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0); }`,\n    fragmentShader: `\n      varying vec2 vUv;\n      void main(){\n        // bottom-right biased radial — matches SVG blob5b at cx=70% cy=80%\n        vec2 c = vec2(0.70, 0.30); // y is flipped in screen\n        float d = distance(vUv, c);\n        float cy = smoothstep(0.55, 0.0, d);\n        float pu = smoothstep(0.85, 0.15, d);\n        vec3 col = mix(vec3(0.54,0.17,0.89), vec3(0.17,0.90,1.00), smoothstep(0.0, 0.35, d));\n        gl_FragColor = vec4(col, pu * 0.35);\n      }`\n  })\n);\nhaloPlane.position.z = -1.5;\nscene.add(haloPlane);"
 }
@@ -1329,7 +1329,7 @@ id: toolu_01A2Kd9puu4NoPe2swUdYDJh
 tool_result
 id: toolu_01A2Kd9puu4NoPe2swUdYDJh
 ```
-The file /Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1339,7 +1339,7 @@ id: toolu_014F1RFLHbd9JDDxhRNR5bTf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html",
+  "file_path": "/home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html",
   "old_string": "// soft purple halo behind, additive\nconst haloGeo = new THREE.SphereGeometry(2.5, 64, 64);\nconst haloMat = new THREE.ShaderMaterial({\n  transparent: true,\n  blending: THREE.AdditiveBlending,\n  depthWrite: false,\n  uniforms: { uTime: { value: 0 } },\n  vertexShader: `\n    varying vec3 vNormal; varying vec3 vViewDir;\n    void main(){\n      vec4 wp = modelMatrix * vec4(position,1.0);\n      vNormal = normalize(mat3(modelMatrix) * normal);\n      vViewDir = normalize(cameraPosition - wp.xyz);\n      gl_Position = projectionMatrix * viewMatrix * wp;\n    }`,\n  fragmentShader: `\n    varying vec3 vNormal; varying vec3 vViewDir;\n    void main(){\n      float f = 1.0 - max(0.0, dot(normalize(vNormal), normalize(vViewDir)));\n      float g = pow(f, 4.0);\n      vec3 col = mix(vec3(0.54,0.17,0.89), vec3(1.0,0.17,0.84), g);\n      gl_FragColor = vec4(col, g * 0.28);\n    }`\n});",
   "new_string": ""
 }
@@ -1350,7 +1350,7 @@ id: toolu_014F1RFLHbd9JDDxhRNR5bTf
 tool_result
 id: toolu_014F1RFLHbd9JDDxhRNR5bTf
 ```
-The file /Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1360,7 +1360,7 @@ id: toolu_01WmN4XpLPSZUap8pgEt7k8c
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html",
+  "file_path": "/home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html",
   "old_string": "  mat.uniforms.uTime.value = t;\n  haloMat.uniforms.uTime.value = t;",
   "new_string": "  mat.uniforms.uTime.value = t;"
 }
@@ -1371,7 +1371,7 @@ id: toolu_01WmN4XpLPSZUap8pgEt7k8c
 tool_result
 id: toolu_01WmN4XpLPSZUap8pgEt7k8c
 ```
-The file /Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1380,7 +1380,7 @@ tool_use Bash
 id: toolu_01V562zbeCDzDU2Rwk6kUHnd
 ```json
 {
-  "command": "/Users/sumeet/matrix/web/aether/services/bangbang_studios/scripts/shot.sh /Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html /tmp/blob3.png",
+  "command": "/home/<USER>/matrix/web/aether/services/bangbang_studios/scripts/shot.sh /home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html /tmp/blob3.png",
   "description": "Screenshot blob v3"
 }
 ```
@@ -1451,7 +1451,7 @@ id: toolu_01Az6UUx2EWmRXHDbZ6gt8HU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html",
+  "file_path": "/home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html",
   "old_string": "// flat backdrop sprite for the cyan/purple ambient halo, bottom-right\nconst haloPlane = new THREE.Mesh(\n  new THREE.PlaneGeometry(8, 8),\n  new THREE.ShaderMaterial({\n    transparent: true,\n    blending: THREE.AdditiveBlending,\n    depthWrite: false,\n    vertexShader: `varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0); }`,\n    fragmentShader: `\n      varying vec2 vUv;\n      void main(){\n        // bottom-right biased radial — matches SVG blob5b at cx=70% cy=80%\n        vec2 c = vec2(0.70, 0.30); // y is flipped in screen\n        float d = distance(vUv, c);\n        float cy = smoothstep(0.55, 0.0, d);\n        float pu = smoothstep(0.85, 0.15, d);\n        vec3 col = mix(vec3(0.54,0.17,0.89), vec3(0.17,0.90,1.00), smoothstep(0.0, 0.35, d));\n        gl_FragColor = vec4(col, pu * 0.35);\n      }`\n  })\n);\nhaloPlane.position.z = -1.5;\nscene.add(haloPlane);",
   "new_string": "// soft purple/cyan halo behind the blob, bottom-right — a single small plane\nconst haloPlane = new THREE.Mesh(\n  new THREE.PlaneGeometry(4, 4),\n  new THREE.ShaderMaterial({\n    transparent: true,\n    blending: THREE.AdditiveBlending,\n    depthWrite: false,\n    vertexShader: `varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0); }`,\n    fragmentShader: `\n      varying vec2 vUv;\n      void main(){\n        float d = distance(vUv, vec2(0.5, 0.5));\n        float a = smoothstep(0.5, 0.0, d);\n        vec3 col = mix(vec3(0.17,0.90,1.00), vec3(0.54,0.17,0.89), smoothstep(0.0, 0.3, d));\n        gl_FragColor = vec4(col, a * 0.15);\n      }`\n  })\n);\nhaloPlane.position.set(0.9, -0.55, -1.0);\nscene.add(haloPlane);" […]
 
@@ -1460,7 +1460,7 @@ id: toolu_01Az6UUx2EWmRXHDbZ6gt8HU
 tool_result
 id: toolu_01Az6UUx2EWmRXHDbZ6gt8HU
 ```
-The file /Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1470,7 +1470,7 @@ id: toolu_01WohnWoBMsnk6aRdxi8ni7k
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html",
+  "file_path": "/home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html",
   "old_string": "  // === cyan refraction halo, biased to bottom-right of the blob ===\n  // SVG had blob5b at cx=70% cy=80% — so we bias the cyan rim there.\n  vec2 cc = vec2(0.55, -0.55);\n  float dc = distance(vLocalPos.xy, cc);\n  float cyanMask = smoothstep(1.4, 0.3, dc) * smoothstep(0.45, 0.95, fres);\n  body += cyan * cyanMask * 0.55;\n\n  // === iridescent inner highlight (the SVG had a soft white-pink-cyan inner shape) ===\n  vec2 ic = vec2(-0.10, 0.05);\n  float di = distance(vLocalPos.xy, ic);\n  float innerWash = smoothstep(0.8, 0.0, di) * smoothstep(0.0, 0.4, max(0.0, dot(N, normalize(vec3(-0.3,0.4,1.0)))));\n  body += mix(vec3(0.0), vec3(1.0,0.85,1.0), innerWash * 0.18);",
   "new_string": "  // === cyan refraction — tight rim on bottom-right edge only ===\n  // narrow band of cyan at the silhouette of the bottom-right\n  vec2 cc = vec2(0.65, -0.65);\n  float dc = distance(vLocalPos.xy, cc);\n  float cyanMask = smoothstep(1.0, 0.5, dc) * smoothstep(0.6, 0.98, fres);\n  body += cyan * cyanMask * 0.40;"
 }
@@ -1481,7 +1481,7 @@ id: toolu_01WohnWoBMsnk6aRdxi8ni7k
 tool_result
 id: toolu_01WohnWoBMsnk6aRdxi8ni7k
 ```
-The file /Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1490,7 +1490,7 @@ tool_use Bash
 id: toolu_015BfxrqGiBBTbcN6GaX5D8F
 ```json
 {
-  "command": "/Users/sumeet/matrix/web/aether/services/bangbang_studios/scripts/shot.sh /Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html /tmp/blob4.png",
+  "command": "/home/<USER>/matrix/web/aether/services/bangbang_studios/scripts/shot.sh /home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html /tmp/blob4.png",
   "description": "Screenshot v4"
 }
 ```
@@ -1539,7 +1539,7 @@ id: toolu_01WJ8oMcTWUzKxa5MW1c3fq2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html",
+  "file_path": "/home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html",
   "old_string": "  // === small soft white specular — chrome highlight, NOT plastic ===\n  // single tight highlight, low contribution so it doesn't wash the body\n  vec3 lightDir = normalize(vec3(-0.50, 0.55, 0.95));\n  vec3 H = normalize(lightDir + V);\n  float specBase = max(0.0, dot(N, H));\n  float specSoft = pow(specBase, 12.0) * 0.22;\n  float specHot  = pow(specBase, 140.0) * 0.55;\n  body += vec3(1.0) * (specSoft + specHot);",
   "new_string": "  // === single small white specular — restrained, lets body color breathe ===\n  vec3 lightDir = normalize(vec3(-0.50, 0.55, 0.95));\n  vec3 H = normalize(lightDir + V);\n  float specBase = max(0.0, dot(N, H));\n  float specSoft = pow(specBase, 20.0) * 0.10;\n  float specHot  = pow(specBase, 200.0) * 0.25;\n  body += vec3(1.0) * (specSoft + specHot);"
 }
@@ -1550,7 +1550,7 @@ id: toolu_01WJ8oMcTWUzKxa5MW1c3fq2
 tool_result
 id: toolu_01WJ8oMcTWUzKxa5MW1c3fq2
 ```
-The file /Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1559,7 +1559,7 @@ tool_use Bash
 id: toolu_01AEbsE11avqGunxUC3YJ5RZ
 ```json
 {
-  "command": "/Users/sumeet/matrix/web/aether/services/bangbang_studios/scripts/shot.sh /Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html /tmp/blob5.png",
+  "command": "/home/<USER>/matrix/web/aether/services/bangbang_studios/scripts/shot.sh /home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html /tmp/blob5.png",
   "description": "Screenshot v5"
 }
 ```
@@ -1608,7 +1608,7 @@ id: toolu_01EjADWeEJCopJwkYLsTxdk2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html",
+  "file_path": "/home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html",
   "old_string": "  vec4 worldPos = modelMatrix * vec4(newP, 1.0);\n  vWorldPos = worldPos.xyz;\n  vLocalPos = newP;\n  vNormal = normalize(mat3(modelMatrix) * newN);\n  vViewDir = normalize(cameraPosition - worldPos.xyz);\n  gl_Position = projectionMatrix * viewMatrix * worldPos;\n}`;",
   "new_string": "  vec4 worldPos = modelMatrix * vec4(newP, 1.0);\n  vWorldPos = worldPos.xyz;\n  vLocalPos = newP;\n  vNormal = normalize(mat3(modelMatrix) * newN);\n  vViewDir = normalize(cameraPosition - worldPos.xyz);\n  vec4 projected = projectionMatrix * viewMatrix * worldPos;\n  vNdc = projected.xy / projected.w;\n  gl_Position = projected;\n}`;"
 }
@@ -1619,7 +1619,7 @@ id: toolu_01EjADWeEJCopJwkYLsTxdk2
 tool_result
 id: toolu_01EjADWeEJCopJwkYLsTxdk2
 ```
-The file /Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1629,7 +1629,7 @@ id: toolu_01VwQdjQUYADg57hMoqHms6b
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html",
+  "file_path": "/home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html",
   "old_string": "varying vec3 vNormal;\nvarying vec3 vViewDir;\nvarying vec3 vWorldPos;\nvarying vec3 vLocalPos;\n\n${noiseGLSL}",
   "new_string": "varying vec3 vNormal;\nvarying vec3 vViewDir;\nvarying vec3 vWorldPos;\nvarying vec3 vLocalPos;\nvarying vec2 vNdc;\n\n${noiseGLSL}"
 }
@@ -1640,7 +1640,7 @@ id: toolu_01VwQdjQUYADg57hMoqHms6b
 tool_result
 id: toolu_01VwQdjQUYADg57hMoqHms6b
 ```
-The file /Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1650,7 +1650,7 @@ id: toolu_01Gn2Yt5tHUU88VvKUX2DNwF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html",
+  "file_path": "/home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html",
   "old_string": "varying vec3 vNormal;\nvarying vec3 vViewDir;\nvarying vec3 vWorldPos;\nvarying vec3 vLocalPos;\n\nvoid main(){\n  vec3 N = normalize(vNormal);\n  vec3 V = normalize(vViewDir);\n  float fres = 1.0 - max(0.0, dot(N, V));",
   "new_string": "varying vec3 vNormal;\nvarying vec3 vViewDir;\nvarying vec3 vWorldPos;\nvarying vec3 vLocalPos;\nvarying vec2 vNdc;\n\nvoid main(){\n  vec3 N = normalize(vNormal);\n  vec3 V = normalize(vViewDir);\n  float fres = 1.0 - max(0.0, dot(N, V));"
 }
@@ -1661,7 +1661,7 @@ id: toolu_01Gn2Yt5tHUU88VvKUX2DNwF
 tool_result
 id: toolu_01Gn2Yt5tHUU88VvKUX2DNwF
 ```
-The file /Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1675,7 +1675,7 @@ id: toolu_01PtrRnDHR3aDEnBNRGidfRb
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html",
+  "file_path": "/home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html",
   "old_string": "  // === position-driven body gradient ===\n  // mimic the SVG radialGradient cx=35% cy=40% by measuring distance from the\n  // upper-left of the local sphere. This makes the gradient body-mapped, not light-mapped.\n  vec2 gc = vec2(-0.55, 0.45);\n  float d = distance(vLocalPos.xy, gc);\n  float t = smoothstep(0.0, 2.0, d);\n\n  vec3 body = mix(pink, magenta, smoothstep(0.05, 0.45, t));\n  body = mix(body, purple, smoothstep(0.45, 0.80, t));\n  body = mix(body, deep,   smoothstep(0.80, 1.05, t));\n\n  // === cyan refraction — tight rim on bottom-right edge only ===\n  // narrow band of cyan at the silhouette of the bottom-right\n  vec2 cc = vec2(0.65, -0.65);\n  float dc = distance(vLocalPos.xy, cc);\n  float cyanMask = smoothstep(1.0, 0.5, dc) * smoothstep(0.6, 0.98, fres);\n  body += cyan * cyanMask * 0.40;",
   "new_string": "  // === SCREEN-SPACE body gradient (NDC, doesn't rotate with mesh) ===\n  // mimic SVG radialGradient cx=35% cy=40% r=60%: pink @ upper-left, deep @ outer\n  vec2 gc = vec2(-0.30, 0.20);            // upper-left in NDC\n  float d = distance(vNdc, gc) / 0.85;    // normalized so 1.0 ~= silhouette\n  vec3 body = pink;\n  body = mix(body, magenta, smoothstep(0.20, 0.55, d));\n  body = mix(body, purple,  smoothstep(0.55, 0.85, d));\n  body = mix(body, […]
 
@@ -1684,7 +1684,7 @@ id: toolu_01PtrRnDHR3aDEnBNRGidfRb
 tool_result
 id: toolu_01PtrRnDHR3aDEnBNRGidfRb
 ```
-The file /Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1694,7 +1694,7 @@ id: toolu_01Q5J9V6dj98Le8mMeZdHvwz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html",
+  "file_path": "/home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html",
   "old_string": "  // very slow drift — this is liquid chrome, not a beach ball\n  mesh.rotation.y = t * 0.05;\n  mesh.rotation.x = Math.sin(t * 0.07) * 0.10;",
   "new_string": "  // no rotation — gradient is screen-space anchored. Just breathing via the noise uTime."
 }
@@ -1705,7 +1705,7 @@ id: toolu_01Q5J9V6dj98Le8mMeZdHvwz
 tool_result
 id: toolu_01Q5J9V6dj98Le8mMeZdHvwz
 ```
-The file /Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1714,7 +1714,7 @@ tool_use Bash
 id: toolu_01KfgumgbaWAwCHNQChtKhRu
 ```json
 {
-  "command": "/Users/sumeet/matrix/web/aether/services/bangbang_studios/scripts/shot.sh /Users/sumeet/matrix/web/aether/services/bangbang_studios/hero_preview.html /tmp/blob6.png",
+  "command": "/home/<USER>/matrix/web/aether/services/bangbang_studios/scripts/shot.sh /home/<USER>/matrix/web/aether/services/bangbang_studios/hero_preview.html /tmp/blob6.png",
   "description": "Screenshot v6"
 }
 ```

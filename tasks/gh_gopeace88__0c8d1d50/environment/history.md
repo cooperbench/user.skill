@@ -17,7 +17,7 @@ tool_use Bash
 id: toolu_01VLfFE4pcRtifL8n85WcLSk
 ```json
 {
-  "command": "find /home/jhkim/00.Projects/00.RunVision/runvision-iq -name \"manifest.xml\" 2>/dev/null",
+  "command": "find /home/<USER>/00.Projects/00.RunVision/runvision-iq -name \"manifest.xml\" 2>/dev/null",
   "description": "Find Garmin manifest.xml"
 }
 ```
@@ -27,8 +27,8 @@ id: toolu_01VLfFE4pcRtifL8n85WcLSk
 tool_result
 id: toolu_01VLfFE4pcRtifL8n85WcLSk
 ```
-/home/jhkim/00.Projects/00.RunVision/runvision-iq/manifest.xml
-/home/jhkim/00.Projects/00.RunVision/runvision-iq/activeLook/manifest.xml
+/home/<USER>/00.Projects/00.RunVision/runvision-iq/manifest.xml
+/home/<USER>/00.Projects/00.RunVision/runvision-iq/activeLook/manifest.xml
 ```
 
 > TOOL
@@ -37,7 +37,7 @@ tool_use Bash
 id: toolu_01A7YtQ4qKLY7nCFiHZyTDwu
 ```json
 {
-  "command": "grep -o 'iq:product id=\"[^\"]*\"' /home/jhkim/00.Projects/00.RunVision/runvision-iq/manifest.xml | sed 's/iq:product id=\"//;s/\"//' | sort",
+  "command": "grep -o 'iq:product id=\"[^\"]*\"' /home/<USER>/00.Projects/00.RunVision/runvision-iq/manifest.xml | sed 's/iq:product id=\"//;s/\"//' | sort",
   "description": "List supported product IDs from manifest"
 }
 ```
@@ -157,7 +157,7 @@ tool_use Bash
 id: toolu_01CYnaNTHMYhw5EXM6CbamCZ
 ```json
 {
-  "command": "find /home/jhkim/00.Projects/00.RunVision -name \"generate_device_list.py\" 2>/dev/null",
+  "command": "find /home/<USER>/00.Projects/00.RunVision -name \"generate_device_list.py\" 2>/dev/null",
   "description": "Locate generate_device_list.py"
 }
 ```
@@ -167,7 +167,7 @@ id: toolu_01CYnaNTHMYhw5EXM6CbamCZ
 tool_result
 id: toolu_01CYnaNTHMYhw5EXM6CbamCZ
 ```
-/home/jhkim/00.Projects/00.RunVision/runvision-iq/scripts/generate_device_list.py
+/home/<USER>/00.Projects/00.RunVision/runvision-iq/scripts/generate_device_list.py
 ```
 
 > TOOL
@@ -176,7 +176,7 @@ tool_use Bash
 id: toolu_01RRx9sWqxy8J91hEgq2uR6S
 ```json
 {
-  "command": "grep -niE \"enduro|instinct|tactical|택티컬|엔듀로|솔라\" /home/jhkim/00.Projects/00.RunVision/runvision-iq/scripts/generate_device_list.py",
+  "command": "grep -niE \"enduro|instinct|tactical|택티컬|엔듀로|솔라\" /home/<USER>/00.Projects/00.RunVision/runvision-iq/scripts/generate_device_list.py",
   "description": "Search device display map for enduro/instinct/tactical entries"
 }
 ```
@@ -221,7 +221,7 @@ tool_use Bash
 id: toolu_01SjWQK3yYLoi52yrU7g7Q4U
 ```json
 {
-  "command": "grep -oE 'iq:product id=\"(enduro[0-9]*|instinct[a-z0-9]*)\"' /home/jhkim/00.Projects/00.RunVision/runvision-iq/manifest.xml | sort",
+  "command": "grep -oE 'iq:product id=\"(enduro[0-9]*|instinct[a-z0-9]*)\"' /home/<USER>/00.Projects/00.RunVision/runvision-iq/manifest.xml | sort",
   "description": "Check manifest for enduro/instinct product ids"
 }
 ```
@@ -284,7 +284,7 @@ tool_use Bash
 id: toolu_01GNZnNFgs7ThcFAvjqu51yn
 ```json
 {
-  "command": "grep -oE 'iq:product id=\"(enduro[0-9]*|instinct[a-z0-9]*|fenix7x[a-z]*)\"' /home/jhkim/00.Projects/00.RunVision/runvision-iq/activeLook/manifest.xml | sort",
+  "command": "grep -oE 'iq:product id=\"(enduro[0-9]*|instinct[a-z0-9]*|fenix7x[a-z]*)\"' /home/<USER>/00.Projects/00.RunVision/runvision-iq/activeLook/manifest.xml | sort",
   "description": "Check ActiveLook manifest for enduro/instinct ids"
 }
 ```
@@ -310,7 +310,7 @@ tool_use Bash
 id: toolu_01CEXoQmJFqEgoy6vmDPsc9S
 ```json
 {
-  "command": "echo \"=== ActiveLook manifest: 전체 product 수 ===\"; grep -c 'iq:product id=' /home/jhkim/00.Projects/00.RunVision/runvision-iq/activeLook/manifest.xml; echo; echo \"=== enduro/instinct 항목 ===\"; grep -oE 'iq:product id=\"[^\"]*\"' /home/jhkim/00.Projects/00.RunVision/runvision-iq/activeLook/manifest.xml | sed 's/iq:product id=\"//;s/\"//' | grep -iE 'enduro|instinct' | sort",
+  "command": "echo \"=== ActiveLook manifest: 전체 product 수 ===\"; grep -c 'iq:product id=' /home/<USER>/00.Projects/00.RunVision/runvision-iq/activeLook/manifest.xml; echo; echo \"=== enduro/instinct 항목 ===\"; grep -oE 'iq:product id=\"[^\"]*\"' /home/<USER>/00.Projects/00.RunVision/runvision-iq/activeLook/manifest.xml | sed 's/iq:product id=\"//;s/\"//' | grep -iE 'enduro|instinct' | sort",
   "description": "List all enduro/instinct ids in ActiveLook manifest"
 }
 ```
@@ -367,7 +367,7 @@ tool_use Bash
 id: toolu_01YBULx3FQzfQ35JjLX7zKGn
 ```json
 {
-  "command": "echo \"=== 우리 manifest 앱 헤더 (type/min-api/permissions) ===\"; grep -iE 'iq:application|min-?api|<iq:permission|datafield|BluetoothLowEnergy|type=' /home/jhkim/00.Projects/00.RunVision/runvision-iq/manifest.xml | head -40",
+  "command": "echo \"=== 우리 manifest 앱 헤더 (type/min-api/permissions) ===\"; grep -iE 'iq:application|min-?api|<iq:permission|datafield|BluetoothLowEnergy|type=' /home/<USER>/00.Projects/00.RunVision/runvision-iq/manifest.xml | head -40",
   "description": "Read app type, min API, BLE permission from manifest"
 }
 ```
@@ -400,7 +400,7 @@ tool_use Bash
 id: toolu_019r7fqiiLnhaFgQUZuv6V6D
 ```json
 {
-  "command": "echo \"=== SDK 후보 경로 ===\"; ls -d ~/.Garmin/ConnectIQ/Sdks/*/ 2>/dev/null; ls -d ~/.Garmin/ConnectIQ/Devices/ 2>/dev/null; echo \"--- build.sh의 SDK 참조 ---\"; grep -iE 'sdk|devices|GARMIN|connectiq' /home/jhkim/00.Projects/00.RunVision/runvision-iq/build.sh 2>/dev/null | head; echo \"--- WSL 마운트 윈도우 경로 후보 ---\"; ls -d /mnt/c/Users/*/AppData/Roaming/Garmin/ConnectIQ/Devices/ 2>/dev/null | head",
+  "command": "echo \"=== SDK 후보 경로 ===\"; ls -d ~/.Garmin/ConnectIQ/Sdks/*/ 2>/dev/null; ls -d ~/.Garmin/ConnectIQ/Devices/ 2>/dev/null; echo \"--- build.sh의 SDK 참조 ---\"; grep -iE 'sdk|devices|GARMIN|connectiq' /home/<USER>/00.Projects/00.RunVision/runvision-iq/build.sh 2>/dev/null | head; echo \"--- WSL 마운트 윈도우 경로 후보 ---\"; ls -d /mnt/c/Users/*/AppData/Roaming/Garmin/ConnectIQ/Devices/ 2>/dev/null | head",
   "description": "Locate Garmin Connect IQ SDK and device DB"
 }
 ```
@@ -416,7 +416,7 @@ SDK="C:\\Users\\jinhee\\AppData\\Roaming\\Garmin\\ConnectIQ\\Sdks\\connectiq-sdk
     powershell.exe -NoProfile -Command "& '$SDK' -e -r -o '$OUT' -f '$JUNGLE' -y '$KEY'"
     powershell.exe -NoProfile -Command "& '$SDK' -o '$OUT' -f '$JUNGLE' -y '$KEY' -d $DEV -w"
 --- WSL 마운트 윈도우 경로 후보 ---
-/mnt/c/Users/jinhee/AppData/Roaming/Garmin/ConnectIQ/Devices/
+/mnt/c/home/<USER>/AppData/Roaming/Garmin/ConnectIQ/Devices/
 ```
 
 > AGENT
@@ -429,7 +429,7 @@ tool_use Bash
 id: toolu_01YMvRHj1VjPvUX8hEfmu84v
 ```json
 {
-  "command": "DEV=/mnt/c/Users/jinhee/AppData/Roaming/Garmin/ConnectIQ/Devices; echo \"=== enduro/instinct 기기 폴더 ===\"; ls -d \"$DEV\"/enduro* \"$DEV\"/instinct* 2>/dev/null",
+  "command": "DEV=/mnt/c/home/<USER>/AppData/Roaming/Garmin/ConnectIQ/Devices; echo \"=== enduro/instinct 기기 폴더 ===\"; ls -d \"$DEV\"/enduro* \"$DEV\"/instinct* 2>/dev/null",
   "description": "List enduro/instinct device folders in SDK device DB"
 }
 ```
@@ -440,18 +440,18 @@ tool_result
 id: toolu_01YMvRHj1VjPvUX8hEfmu84v
 ```
 === enduro/instinct 기기 폴더 ===
-/mnt/c/Users/jinhee/AppData/Roaming/Garmin/ConnectIQ/Devices/enduro
-/mnt/c/Users/jinhee/AppData/Roaming/Garmin/ConnectIQ/Devices/enduro3
-/mnt/c/Users/jinhee/AppData/Roaming/Garmin/ConnectIQ/Devices/instinct2
-/mnt/c/Users/jinhee/AppData/Roaming/Garmin/ConnectIQ/Devices/instinct2s
-/mnt/c/Users/jinhee/AppData/Roaming/Garmin/ConnectIQ/Devices/instinct2x
-/mnt/c/Users/jinhee/AppData/Roaming/Garmin/ConnectIQ/Devices/instinct3amoled45mm
-/mnt/c/Users/jinhee/AppData/Roaming/Garmin/ConnectIQ/Devices/instinct3amoled50mm
-/mnt/c/Users/jinhee/AppData/Roaming/Garmin/ConnectIQ/Devices/instinct3solar45mm
-/mnt/c/Users/jinhee/AppData/Roaming/Garmin/ConnectIQ/Devices/instinctcrossover
-/mnt/c/Users/jinhee/AppData/Roaming/Garmin/ConnectIQ/Devices/instinctcrossoveramoled
-/mnt/c/Users/jinhee/AppData/Roaming/Garmin/ConnectIQ/Devices/instincte40mm
-/mnt/c/Users/jinhee/AppData/Roaming/Garmin/ConnectIQ/Devices/instincte45mm
+/mnt/c/home/<USER>/AppData/Roaming/Garmin/ConnectIQ/Devices/enduro
+/mnt/c/home/<USER>/AppData/Roaming/Garmin/ConnectIQ/Devices/enduro3
+/mnt/c/home/<USER>/AppData/Roaming/Garmin/ConnectIQ/Devices/instinct2
+/mnt/c/home/<USER>/AppData/Roaming/Garmin/ConnectIQ/Devices/instinct2s
+/mnt/c/home/<USER>/AppData/Roaming/Garmin/ConnectIQ/Devices/instinct2x
+/mnt/c/home/<USER>/AppData/Roaming/Garmin/ConnectIQ/Devices/instinct3amoled45mm
+/mnt/c/home/<USER>/AppData/Roaming/Garmin/ConnectIQ/Devices/instinct3amoled50mm
+/mnt/c/home/<USER>/AppData/Roaming/Garmin/ConnectIQ/Devices/instinct3solar45mm
+/mnt/c/home/<USER>/AppData/Roaming/Garmin/ConnectIQ/Devices/instinctcrossover
+/mnt/c/home/<USER>/AppData/Roaming/Garmin/ConnectIQ/Devices/instinctcrossoveramoled
+/mnt/c/home/<USER>/AppData/Roaming/Garmin/ConnectIQ/Devices/instincte40mm
+/mnt/c/home/<USER>/AppData/Roaming/Garmin/ConnectIQ/Devices/instincte45mm
 ```
 
 > AGENT
@@ -464,7 +464,7 @@ tool_use Bash
 id: toolu_015rRBPaRiJFrChVoaeijEzE
 ```json
 {
-  "command": "DEV=/mnt/c/Users/jinhee/AppData/Roaming/Garmin/ConnectIQ/Devices; echo \"=== enduro2 / instinct3solar50mm 명시 확인 ===\"; ls -d \"$DEV\"/enduro2 \"$DEV\"/instinct3solar50mm 2>&1; echo; echo \"=== instinct3solar45mm 폴더 내용 ===\"; ls \"$DEV\"/instinct3solar45mm/ 2>/dev/null",
+  "command": "DEV=/mnt/c/home/<USER>/AppData/Roaming/Garmin/ConnectIQ/Devices; echo \"=== enduro2 / instinct3solar50mm 명시 확인 ===\"; ls -d \"$DEV\"/enduro2 \"$DEV\"/instinct3solar50mm 2>&1; echo; echo \"=== instinct3solar45mm 폴더 내용 ===\"; ls \"$DEV\"/instinct3solar45mm/ 2>/dev/null",
   "description": "Confirm enduro2/instinct3solar50mm absence and list device files"
 }
 ```
@@ -475,8 +475,8 @@ tool_result
 id: toolu_015rRBPaRiJFrChVoaeijEzE
 ```
 === enduro2 / instinct3solar50mm 명시 확인 ===
-ls: cannot access '/mnt/c/Users/jinhee/AppData/Roaming/Garmin/ConnectIQ/Devices/enduro2': No such file or directory
-ls: cannot access '/mnt/c/Users/jinhee/AppData/Roaming/Garmin/ConnectIQ/Devices/instinct3solar50mm': No such file or directory
+ls: cannot access '/mnt/c/home/<USER>/AppData/Roaming/Garmin/ConnectIQ/Devices/enduro2': No such file or directory
+ls: cannot access '/mnt/c/home/<USER>/AppData/Roaming/Garmin/ConnectIQ/Devices/instinct3solar50mm': No such file or directory
 
 === instinct3solar45mm 폴더 내용 ===
 compiler.json
@@ -537,7 +537,7 @@ tool_use Bash
 id: toolu_018QTqHFUM9bfuhEyMrisfcH
 ```json
 {
-  "command": "DEV=/mnt/c/Users/jinhee/AppData/Roaming/Garmin/ConnectIQ/Devices\necho \"=== 로컬 기기 폴더 총 개수 ===\"; ls -d \"$DEV\"/*/ 2>/dev/null | wc -l\necho; echo \"=== 우리 manifest 기기 중 로컬 DB에 '없는' 것 (= 다운로드 안 됐거나 미존재) ===\"\nfor id in $(grep -oE 'iq:product id=\"[^\"]*\"' /home/jhkim/00.Projects/00.RunVision/runvision-iq/manifest.xml | sed 's/iq:product id=\"//;s/\"//' | sort -u); do\n  if [ ! -d \"$DEV/$id\" ]; then echo \"MISSING: $id\"; fi\ndone\necho \"(위에 아무것도 없으면 manifest의 모든 기기가 로컬에 존재 = DB 포괄적)\"",
+  "command": "DEV=/mnt/c/home/<USER>/AppData/Roaming/Garmin/ConnectIQ/Devices\necho \"=== 로컬 기기 폴더 총 개수 ===\"; ls -d \"$DEV\"/*/ 2>/dev/null | wc -l\necho; echo \"=== 우리 manifest 기기 중 로컬 DB에 '없는' 것 (= 다운로드 안 됐거나 미존재) ===\"\nfor id in $(grep -oE 'iq:product id=\"[^\"]*\"' /home/<USER>/00.Projects/00.RunVision/runvision-iq/manifest.xml | sed 's/iq:product id=\"//;s/\"//' | sort -u); do\n  if [ ! -d \"$DEV/$id\" ]; then echo \"MISSING: $id\"; fi\ndone\necho \"(위에 아무것도 없으면 manifest의 모든 기기가 로컬에 존재 = DB 포괄적)\"",
   "description": "Cross-check manifest devices against local SDK device DB"
 }
 ```
@@ -565,7 +565,7 @@ tool_use Bash
 id: toolu_01WD85KuGafcEFYauWpyGe7P
 ```json
 {
-  "command": "DEV=/mnt/c/Users/jinhee/AppData/Roaming/Garmin/ConnectIQ/Devices\nfor id in instinct3solar45mm enduro3 fr165; do\n  echo \"================= $id =================\"\n  echo \"--- compiler.json: connectIQVersion / datafield / ble ---\"\n  grep -oiE '\"connectIQVersion\"[^,]*|\"datafield\"|\"type\":[ ]*\"datafield\"|bluetoothLowEnergy|\"ble[a-zA-Z]*\"' \"$DEV/$id/compiler.json\" 2>/dev/null | sort -u\n  echo \"--- simulator.json: datafield / ble / bluetooth keys ---\"\n  grep -oiE '\"datafield[a-zA-Z]*\"|bluetoothLowEnergy|\"ble[a-zA-Z]*\"|\"central\"' \"$DEV/$id/simulator.json\" 2>/dev/null | sort -u\ndone",
+  "command": "DEV=/mnt/c/home/<USER>/AppData/Roaming/Garmin/ConnectIQ/Devices\nfor id in instinct3solar45mm enduro3 fr165; do\n  echo \"================= $id =================\"\n  echo \"--- compiler.json: connectIQVersion / datafield / ble ---\"\n  grep -oiE '\"connectIQVersion\"[^,]*|\"datafield\"|\"type\":[ ]*\"datafield\"|bluetoothLowEnergy|\"ble[a-zA-Z]*\"' \"$DEV/$id/compiler.json\" 2>/dev/null | sort -u\n  echo \"--- simulator.json: datafield / ble / bluetooth keys ---\"\n  grep -oiE '\"datafield[a-zA-Z]*\"|bluetoothLowEnergy|\"ble[a-zA-Z]*\"|\"central\"' \"$DEV/$id/simulator.json\" 2>/dev/null | sort -u\ndone",
   "description": "Extract API level, datafield, BLE capabilities per device"
 }
 ```
@@ -606,7 +606,7 @@ tool_use Bash
 id: toolu_01RrpA8wE7uddBc1h8nTAZnp
 ```json
 {
-  "command": "DEV=/mnt/c/Users/jinhee/AppData/Roaming/Garmin/ConnectIQ/Devices\necho \"=== instinct3solar45mm compiler.json 에서 permission/bluetooth/connectivity 관련 ===\"\ngrep -oiE '\"[a-zA-Z]*ermission[a-zA-Z]*\"|[a-zA-Z]*luetooth[a-zA-Z]*|\"[a-zA-Z]*onnectivity[a-zA-Z]*\"|\"capabilities\"' \"$DEV/instinct3solar45mm/compiler.json\" | sort -u\necho; echo \"=== compiler.json 최상위 키 구조 (python) ===\"\npython3 -c \"\nimport json\nd=json.load(open('$DEV/instinct3solar45mm/compiler.json'))\ndef keys(o,p=''):\n    if isinstance(o,dict):\n        for k,v in o.items():\n            print(p+k, '->', type(v).__name__)\n            if k.lower() in ('partnumbers','capabilities','permissions') and isinstance(v,list) and v and isinstance(v[0],dict):\n                for kk in v[0]: print('   ',p+k+'[0].'+kk)\nkeys(d)\n\"",
+  "command": "DEV=/mnt/c/home/<USER>/AppData/Roaming/Garmin/ConnectIQ/Devices\necho \"=== instinct3solar45mm compiler.json 에서 permission/bluetooth/connectivity 관련 ===\"\ngrep -oiE '\"[a-zA-Z]*ermission[a-zA-Z]*\"|[a-zA-Z]*luetooth[a-zA-Z]*|\"[a-zA-Z]*onnectivity[a-zA-Z]*\"|\"capabilities\"' \"$DEV/instinct3solar45mm/compiler.json\" | sort -u\necho; echo \"=== compiler.json 최상위 키 구조 (python) ===\"\npython3 -c \"\nimport json\nd=json.load(open('$DEV/instinct3solar45mm/compiler.json'))\ndef keys(o,p=''):\n    if isinstance(o,dict):\n        for k,v in o.items():\n            print(p+k, '->', type(v).__name__)\n            if k.lower() in ('partnumbers','capabilities','permissions') and isinstance(v,list) and v and isinstance(v[0],dict):\n                for kk in v[0]: print('   ',p+k+'[0].'+kk)\nkeys(d)\n\"",
   "description": "Inspect compiler.json structure for BLE/permission keys"
 }
 ```
@@ -656,7 +656,7 @@ tool_use Bash
 id: toolu_01DG1txrWXmHh3RorJD3BFb3
 ```json
 {
-  "command": "DEV=/mnt/c/Users/jinhee/AppData/Roaming/Garmin/ConnectIQ/Devices\npython3 -c \"\nimport json\nfor id in ['instinct3solar45mm','instinct2','fr165']:\n    d=json.load(open('$DEV/'+id+'/simulator.json'))\n    s=json.dumps(d).lower()\n    print('=====',id,'=====')\n    # find any key path mentioning ble/bluetooth/central/connectivity\n    import re\n    for kw in ['bluetoothlowenergy','\\\"ble','central','bluetooth','connectivity']:\n        print('  contains',repr(kw),':', kw in s)\n    # show connectivity-ish dict if present\n    def walk(o,p=''):\n        if isinstance(o,dict):\n            for k,v in o.items():\n                if any(w in k.lower() for w in ['ble','bluetooth','connect','permission']):\n                    print('   KEY',p+k,'=',json.dumps(v)[:120])\n                walk(v,p+k+'.')\n        elif isinstance(o,list):\n            for i,v in enumerate(o[:3]): walk(v,p+'[]'+'.')\n    walk(d)\n\"",
+  "command": "DEV=/mnt/c/home/<USER>/AppData/Roaming/Garmin/ConnectIQ/Devices\npython3 -c \"\nimport json\nfor id in ['instinct3solar45mm','instinct2','fr165']:\n    d=json.load(open('$DEV/'+id+'/simulator.json'))\n    s=json.dumps(d).lower()\n    print('=====',id,'=====')\n    # find any key path mentioning ble/bluetooth/central/connectivity\n    import re\n    for kw in ['bluetoothlowenergy','\\\"ble','central','bluetooth','connectivity']:\n        print('  contains',repr(kw),':', kw in s)\n    # show connectivity-ish dict if present\n    def walk(o,p=''):\n        if isinstance(o,dict):\n            for k,v in o.items():\n                if any(w in k.lower() for w in ['ble','bluetooth','connect','permission']):\n                    print('   KEY',p+k,'=',json.dumps(v)[:120])\n                walk(v,p+k+'.')\n        elif isinstance(o,list):\n            for i,v in enumerate(o[:3]): walk(v,p+'[]'+'.')\n    walk(d)\n\"",
   "description": "Search simulator.json for BLE/connectivity capability keys"
 }
 ```
@@ -727,7 +727,7 @@ tool_use Read
 id: toolu_015AejiTKKVMSfBHXoqZrmdG
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/build.sh"
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/build.sh"
 }
 ```
 
@@ -771,7 +771,7 @@ tool_use Bash
 id: toolu_01CjRpdAez43N7T45vtvGiX1
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq && ./build.sh instinct3solar45mm 2>&1 | tail -30",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq && ./build.sh instinct3solar45mm 2>&1 | tail -30",
   "description": "Compile app for instinct3solar45mm to verify BLE/datafield/API",
   "timeout": 240000
 }
@@ -837,7 +837,7 @@ tool_use Bash
 id: toolu_01FJborSb7xaoQLRyqxihYJ6
 ```json
 {
-  "command": "DEV=/mnt/c/Users/jinhee/AppData/Roaming/Garmin/ConnectIQ/Devices\necho \"=== 모든 기기 displayName 중 'Enduro' 포함 ===\"\nfor f in \"$DEV\"/*/compiler.json; do\n  dn=$(python3 -c \"import json,sys; print(json.load(open(sys.argv[1])).get('displayName',''))\" \"$f\" 2>/dev/null)\n  case \"$dn\" in *[Ee]nduro*) echo \"$(basename $(dirname $f))  ->  $dn\";; esac\ndone\necho; echo \"=== enduro 와 enduro3 의 displayName/deviceFamily 직접 확인 ===\"\nfor id in enduro enduro3; do\n  python3 -c \"import json; d=json.load(open('$DEV/$id/compiler.json')); print('$id:', d.get('displayName'), '| family:', d.get('deviceFamily'), '| API:', d['partNumbers'][0]['connectIQVersion'])\"\ndone",
+  "command": "DEV=/mnt/c/home/<USER>/AppData/Roaming/Garmin/ConnectIQ/Devices\necho \"=== 모든 기기 displayName 중 'Enduro' 포함 ===\"\nfor f in \"$DEV\"/*/compiler.json; do\n  dn=$(python3 -c \"import json,sys; print(json.load(open(sys.argv[1])).get('displayName',''))\" \"$f\" 2>/dev/null)\n  case \"$dn\" in *[Ee]nduro*) echo \"$(basename $(dirname $f))  ->  $dn\";; esac\ndone\necho; echo \"=== enduro 와 enduro3 의 displayName/deviceFamily 직접 확인 ===\"\nfor id in enduro enduro3; do\n  python3 -c \"import json; d=json.load(open('$DEV/$id/compiler.json')); print('$id:', d.get('displayName'), '| family:', d.get('deviceFamily'), '| API:', d['partNumbers'][0]['connectIQVersion'])\"\ndone",
   "description": "Find which CIQ device the Enduro 2 maps to via displayName"
 }
 ```
@@ -917,7 +917,7 @@ tool_use Bash
 id: toolu_014RAyZffmnJ2MsdtddRuMsd
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== manifest의 instinct3solar / enduro 줄 추가 이력 (git log -S) ===\"\ngit log --oneline -S 'instinct3solar50mm' -- manifest.xml | head -5\necho \"--- 해당 라인 blame ---\"\ngit blame -L '/instinct3solar/,/instinct3solar/' manifest.xml 2>/dev/null | head\necho; echo \"=== 마지막 릴리스 .iq 빌드 산출물 존재? (instinct3solar50mm 포함 빌드 성공했었나 단서) ===\"\nls -la bin/*.iq 2>/dev/null || echo \"(bin에 .iq 없음)\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== manifest의 instinct3solar / enduro 줄 추가 이력 (git log -S) ===\"\ngit log --oneline -S 'instinct3solar50mm' -- manifest.xml | head -5\necho \"--- 해당 라인 blame ---\"\ngit blame -L '/instinct3solar/,/instinct3solar/' manifest.xml 2>/dev/null | head\necho; echo \"=== 마지막 릴리스 .iq 빌드 산출물 존재? (instinct3solar50mm 포함 빌드 성공했었나 단서) ===\"\nls -la bin/*.iq 2>/dev/null || echo \"(bin에 .iq 없음)\"",
   "description": "Investigate git history of instinct3solar50mm manifest entry"
 }
 ```
@@ -949,7 +949,7 @@ tool_use Bash
 id: toolu_012miS1etvQ2V7r8hj4rs3dV
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== manifest: enduro/instinct 활성 vs 주석 (실제 줄 그대로) ===\"\ngrep -nE 'enduro|instinct3|fenix7x' manifest.xml",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== manifest: enduro/instinct 활성 vs 주석 (실제 줄 그대로) ===\"\ngrep -nE 'enduro|instinct3|fenix7x' manifest.xml",
   "description": "Show actual manifest lines for enduro/instinct3/fenix7x"
 }
 ```
@@ -981,7 +981,7 @@ tool_use Read
 id: toolu_0156BLuYtL2nDsum6zxettRw
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/scripts/generate_device_list.py"
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/scripts/generate_device_list.py"
 }
 ```
 
@@ -1049,7 +1049,7 @@ tool_use Bash
 id: toolu_014xCwEWpKG4jyBKXunqfQfo
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision\nF=\"Docs/runvision-iq/CONNECT-IQ-STORE-LISTING.md\"\necho \"=== 파일 존재? ===\"; ls -la \"$F\" 2>/dev/null && echo \"(존재)\" || echo \"(없음)\"\necho; echo \"=== 현재 Enduro / fēnix 7 / Instinct 표기 ===\"; grep -nE 'Enduro|fēnix® 7|7X|Instinct' \"$F\" 2>/dev/null | head -20",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision\nF=\"Docs/runvision-iq/CONNECT-IQ-STORE-LISTING.md\"\necho \"=== 파일 존재? ===\"; ls -la \"$F\" 2>/dev/null && echo \"(존재)\" || echo \"(없음)\"\necho; echo \"=== 현재 Enduro / fēnix 7 / Instinct 표기 ===\"; grep -nE 'Enduro|fēnix® 7|7X|Instinct' \"$F\" 2>/dev/null | head -20",
   "description": "Check current store listing Enduro/fenix7 content"
 }
 ```
@@ -1115,7 +1115,7 @@ tool_use Bash
 id: toolu_01Ln6GnsoRpzwmGy9ri2PoxS
 ```json
 {
-  "command": "DEV=/mnt/c/Users/jinhee/AppData/Roaming/Garmin/ConnectIQ/Devices\necho \"=== 로컬 기기 DB 최신성: 가장 최근 추가/수정된 기기 폴더 10개 ===\"\nls -dt \"$DEV\"/*/ 2>/dev/null | head -10 | while read d; do echo \"$(stat -c '%y' \"$d\" | cut -d. -f1)  $(basename $d)\"; done\necho; echo \"=== instinct3 계열 폴더 수정시각 ===\"\nfor id in instinct3amoled45mm instinct3amoled50mm instinct3solar45mm; do\n  [ -d \"$DEV/$id\" ] && echo \"$(stat -c '%y' \"$DEV/$id\" | cut -d. -f1)  $id\"\ndone\necho; echo \"=== 설치된 SDK 버전들 ===\"\nls -d /mnt/c/Users/jinhee/AppData/Roaming/Garmin/ConnectIQ/Sdks/*/ 2>/dev/null | sed 's#.*/Sdks/##'",
+  "command": "DEV=/mnt/c/home/<USER>/AppData/Roaming/Garmin/ConnectIQ/Devices\necho \"=== 로컬 기기 DB 최신성: 가장 최근 추가/수정된 기기 폴더 10개 ===\"\nls -dt \"$DEV\"/*/ 2>/dev/null | head -10 | while read d; do echo \"$(stat -c '%y' \"$d\" | cut -d. -f1)  $(basename $d)\"; done\necho; echo \"=== instinct3 계열 폴더 수정시각 ===\"\nfor id in instinct3amoled45mm instinct3amoled50mm instinct3solar45mm; do\n  [ -d \"$DEV/$id\" ] && echo \"$(stat -c '%y' \"$DEV/$id\" | cut -d. -f1)  $id\"\ndone\necho; echo \"=== 설치된 SDK 버전들 ===\"\nls -d /mnt/c/home/<USER>/AppData/Roaming/Garmin/ConnectIQ/Sdks/*/ 2>/dev/null | sed 's#.*/Sdks/##'",
   "description": "Check device DB freshness and installed SDK versions"
 }
 ```
@@ -1271,7 +1271,7 @@ id: toolu_01WvPTf4PMu2SoEim88Xt3FB
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/manifest.xml",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/manifest.xml",
   "old_string": "            <!-- <iq:product id=\"instinct3solar50mm\"/> SDK 8.4.0에 없음 (향후 추가 예정) -->",
   "new_string": "            <!-- <iq:product id=\"instinct3solar50mm\"/> 실존 device id이나 SDK 8.4.0·Garmin Store 모두 'invalid'로 거부 (Garmin 버그 CIQQA-3813). 빌드 통과 확인되면 활성화 -->"
 }
@@ -1295,7 +1295,7 @@ tool_use Read
 id: toolu_012YEg8AoTrf8xeh2bJiZ319
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/manifest.xml",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/manifest.xml",
   "offset": 150,
   "limit": 10
 }
@@ -1325,7 +1325,7 @@ id: toolu_01NzfoXDYC9jCaCCasS6H6Zq
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/manifest.xml",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/manifest.xml",
   "old_string": "            <!-- <iq:product id=\"instinct3solar50mm\"/> SDK 8.4.0에 없음 (향후 추가 예정) -->",
   "new_string": "            <!-- <iq:product id=\"instinct3solar50mm\"/> 실존 device id이나 SDK 8.4.0·Garmin Store 모두 'invalid'로 거부 (Garmin 버그 CIQQA-3813). 빌드 통과 확인되면 활성화 -->"
 }
@@ -1336,7 +1336,7 @@ id: toolu_01NzfoXDYC9jCaCCasS6H6Zq
 tool_result
 id: toolu_01NzfoXDYC9jCaCCasS6H6Zq
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/manifest.xml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/manifest.xml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1350,7 +1350,7 @@ id: toolu_01To8xm2yNM4TYfF2zURbFVf
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/scripts/generate_device_list.py",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/scripts/generate_device_list.py",
   "old_string": "    # Enduro\n    \"enduro\":  \"1\",\n    \"enduro2\": \"2\",\n    \"enduro3\": \"3\",",
   "new_string": "    # Enduro (Enduro 2 = fenix7x device id — 별도 enduro2 id 없음, 추가 금지)\n    \"enduro\":  \"1\",\n    \"enduro3\": \"3\","
 }
@@ -1361,7 +1361,7 @@ id: toolu_01To8xm2yNM4TYfF2zURbFVf
 tool_result
 id: toolu_01To8xm2yNM4TYfF2zURbFVf
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/scripts/generate_device_list.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/scripts/generate_device_list.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1371,7 +1371,7 @@ id: toolu_01CobsyArJu9B3GUBZzkpwVe
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/scripts/generate_device_list.py",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/scripts/generate_device_list.py",
   "old_string": "    (\"Enduro™\",      [\"enduro\", \"enduro2\", \"enduro3\"]),",
   "new_string": "    (\"Enduro™\",      [\"enduro\", \"enduro3\"]),"
 }
@@ -1382,7 +1382,7 @@ id: toolu_01CobsyArJu9B3GUBZzkpwVe
 tool_result
 id: toolu_01CobsyArJu9B3GUBZzkpwVe
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/scripts/generate_device_list.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/scripts/generate_device_list.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1395,7 +1395,7 @@ tool_use Bash
 id: toolu_01CvJHVSZn9NUNfgcTaSSkEk
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq && python3 scripts/generate_device_list.py --dry-run 2>&1 | grep -iE 'Enduro|활성 기기 수|매핑 없는|총 [0-9]+개|error|Traceback' | head",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq && python3 scripts/generate_device_list.py --dry-run 2>&1 | grep -iE 'Enduro|활성 기기 수|매핑 없는|총 [0-9]+개|error|Traceback' | head",
   "description": "Dry-run script to confirm no output change and no errors"
 }
 ```
@@ -1495,15 +1495,15 @@ tool_use Write
 id: toolu_012NGT9suAb4nWZ3bj5bgdzW
 ```json
 {
-  "file_path": "/home/jhkim/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/project_garmin_device_ids.md",
-  "content": "---\nname: garmin-device-ids\ndescription: Garmin Connect IQ device-id 매핑 함정 — Enduro 2=fenix7x, instinct3solar50mm은 Garmin 버그로 빌드 불가, Tactical=베이스 id 공유. 기기 지원 검증법.\nmetadata:\n  type: reference\n---\n\nRunVision-IQ(Monkey C) 기기 지원 판정 시 모델명 ≠ 빌드 device id. 실측(2026-05-28)으로 확인한 함정:\n\n- **Enduro 2 = `fenix7x` device id.** 별도 `enduro2` id는 없으며 **영원히 안 생김**(monkeyc: `Invalid device id`). SDK의 `fenix7x` displayName = \"fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2\". → manifest에 fenix7x 있으면 Enduro 2 지원됨. `generate_device_list.py`에 enduro2 추가 금지(phantom).\n- **`instinct3solar50mm` = 실존하는 진짜 device id**(실제 50mm Solar 제품용)이지만 **Garmin 버그 CIQQA-3813(Acknowledged)**로 SDK 8.4.0·Garmin Store 모두 'invalid'로 거부 → 빌드 불가. manifest에서 **주석 유지**. 향후 Garmin이 고치면 `./build.sh instinct3solar50mm` 통과 확인 후 활성화(스크립트 매핑은 이미 준비됨). `enduro2`와 성격 다름(이건 진짜 id, enduro2는 가짜).\n- **Tactical/Surf/Camo 등 에디션은 별도 device id 없음 — 베이스 모델 id 공유.** 예: Instinct 3 Solar Tactical Edition = `instinct3solar45mm`. Instinct 2 Solar Tactical = `instinct2`. 한 번 베이스 지원하면 에디션 자동 커버.\n\n**검증 방법(권위순):**\n1. SDK 기기 DB: `/mnt/c/Users/jinhee/AppData/Roaming/Garmin/ConnectIQ/Devices/<id>/compiler.json` — `partNumbers[].connectIQVersion`(API레벨), `appTypes`에 datafield 여부, `displayName`(모델 별칭 확인). ⚠️ 이 폴더는 SDK Manager로 **다운로드된 기기만** 담음(폴더 없음 ≠ 카탈로그에 없음). 마지막 동기화 2026-01-21.\n2. 결정적: `cd runvision-iq && ./build.sh <device>` 실제 […]
+  "file_path": "/home/<USER>/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/project_garmin_device_ids.md",
+  "content": "---\nname: garmin-device-ids\ndescription: Garmin Connect IQ device-id 매핑 함정 — Enduro 2=fenix7x, instinct3solar50mm은 Garmin 버그로 빌드 불가, Tactical=베이스 id 공유. 기기 지원 검증법.\nmetadata:\n  type: reference\n---\n\nRunVision-IQ(Monkey C) 기기 지원 판정 시 모델명 ≠ 빌드 device id. 실측(2026-05-28)으로 확인한 함정:\n\n- **Enduro 2 = `fenix7x` device id.** 별도 `enduro2` id는 없으며 **영원히 안 생김**(monkeyc: `Invalid device id`). SDK의 `fenix7x` displayName = \"fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2\". → manifest에 fenix7x 있으면 Enduro 2 지원됨. `generate_device_list.py`에 enduro2 추가 금지(phantom).\n- **`instinct3solar50mm` = 실존하는 진짜 device id**(실제 50mm Solar 제품용)이지만 **Garmin 버그 CIQQA-3813(Acknowledged)**로 SDK 8.4.0·Garmin Store 모두 'invalid'로 거부 → 빌드 불가. manifest에서 **주석 유지**. 향후 Garmin이 고치면 `./build.sh instinct3solar50mm` 통과 확인 후 활성화(스크립트 매핑은 이미 준비됨). `enduro2`와 성격 다름(이건 진짜 id, enduro2는 가짜).\n- **Tactical/Surf/Camo 등 에디션은 별도 device id 없음 — 베이스 모델 id 공유.** 예: Instinct 3 Solar Tactical Edition = `instinct3solar45mm`. Instinct 2 Solar Tactical = `instinct2`. 한 번 베이스 지원하면 에디션 자동 커버.\n\n**검증 방법(권위순):**\n1. SDK 기기 DB: `/mnt/c/home/<USER>/AppData/Roaming/Garmin/ConnectIQ/Devices/<id>/compiler.json` — `partNumbers[].connectIQVersion`(API레벨), `appTypes`에 datafield 여부, `displayName`(모델 별칭 확인). ⚠️ 이 폴더는 SDK Manager로 **다운로드된 기기만** 담음(폴더 없음 ≠ 카탈로그에 없음). 마지막 동기화 2026-01-21.\n2. 결정적: `cd runvision-iq && ./build.sh <device>` 실제 […]
 
 > TOOL
 
 tool_result
 id: toolu_012NGT9suAb4nWZ3bj5bgdzW
 ```
-File created successfully at: /home/jhkim/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/project_garmin_device_ids.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/project_garmin_device_ids.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1512,7 +1512,7 @@ tool_use Read
 id: toolu_01Y1tT4AEUhNRGq9JhyST3fr
 ```json
 {
-  "file_path": "/home/jhkim/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/MEMORY.md",
   "offset": 60,
   "limit": 20
 }
@@ -1552,7 +1552,7 @@ id: toolu_014sPGRYr2QQXuyzXfTh2rG7
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/MEMORY.md",
   "old_string": "## 기기 목록 스크립트 (generate_device_list.py)\n→ [feedback_device_list_script.md](./feedback_device_list_script.md)\n- 새 시리즈 추가 시 DEVICE_DISPLAY + SERIES_GROUPS 두 곳 모두 업데이트 필수",
   "new_string": "## 기기 목록 스크립트 (generate_device_list.py)\n→ [feedback_device_list_script.md](./feedback_device_list_script.md)\n- 새 시리즈 추가 시 DEVICE_DISPLAY + SERIES_GROUPS 두 곳 모두 업데이트 필수\n\n## Garmin device-id 함정 (모델명 ≠ 빌드 id)\n→ [project_garmin_device_ids.md](./project_garmin_device_ids.md)\n- Enduro 2 = `fenix7x`(별도 enduro2 id 없음/영원). instinct3solar50mm=실존 id이나 Garmin버그 CIQQA-3813로 빌드불가(주석유지). Tactical=베이스 id 공유\n- 검증: SDK Devices/<id>/compiler.json + `./build.sh <device>` 실컴파일(BLE Central은 컴파일로만 확인)"
 }
@@ -1563,7 +1563,7 @@ id: toolu_014sPGRYr2QQXuyzXfTh2rG7
 tool_result
 id: toolu_014sPGRYr2QQXuyzXfTh2rG7
 ```
-The file /home/jhkim/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1633,7 +1633,7 @@ tool_use Bash
 id: toolu_01SThXiSmD8nDbZ3kBbuXiWx
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\nDEV=/mnt/c/Users/jinhee/AppData/Roaming/Garmin/ConnectIQ/Devices\necho \"=== manifest의 edge id (활성) ===\"\ngrep -oE 'iq:product id=\"edge[^\"]*\"' manifest.xml | sed 's/iq:product id=\"//;s/\"//' | sort\necho; echo \"=== 각 edge id의 SDK 공식 displayName ===\"\nfor id in $(grep -oE 'iq:product id=\"edge[^\"]*\"' manifest.xml | sed 's/iq:product id=\"//;s/\"//' | sort); do\n  dn=$(python3 -c \"import json; print(json.load(open('$DEV/$id/compiler.json')).get('displayName',''))\" 2>/dev/null)\n  echo \"$id  ->  $dn\"\ndone",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\nDEV=/mnt/c/home/<USER>/AppData/Roaming/Garmin/ConnectIQ/Devices\necho \"=== manifest의 edge id (활성) ===\"\ngrep -oE 'iq:product id=\"edge[^\"]*\"' manifest.xml | sed 's/iq:product id=\"//;s/\"//' | sort\necho; echo \"=== 각 edge id의 SDK 공식 displayName ===\"\nfor id in $(grep -oE 'iq:product id=\"edge[^\"]*\"' manifest.xml | sed 's/iq:product id=\"//;s/\"//' | sort); do\n  dn=$(python3 -c \"import json; print(json.load(open('$DEV/$id/compiler.json')).get('displayName',''))\" 2>/dev/null)\n  echo \"$id  ->  $dn\"\ndone",
   "description": "Get manifest edge ids and SDK official display names"
 }
 ```
@@ -1681,7 +1681,7 @@ id: toolu_01Qrj1k9HHvzx9Gctbm8oGNb
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/scripts/generate_device_list.py",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/scripts/generate_device_list.py",
   "old_string": "    \"fenix7x\":          \"7X\",",
   "new_string": "    \"fenix7x\":          \"7X / Enduro 2\","
 }
@@ -1692,7 +1692,7 @@ id: toolu_01Qrj1k9HHvzx9Gctbm8oGNb
 tool_result
 id: toolu_01Qrj1k9HHvzx9Gctbm8oGNb
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/scripts/generate_device_list.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/scripts/generate_device_list.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1702,7 +1702,7 @@ id: toolu_01W69ZRNRAbh5kcHrUuR9Hsw
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/scripts/generate_device_list.py",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/scripts/generate_device_list.py",
   "old_string": "    # Venu X1 (직사각형 디스플레이)\n    \"venux1\": \"X1\",\n}",
   "new_string": "    # Venu X1 (직사각형 디스플레이)\n    \"venux1\": \"X1\",\n\n    # Edge (사이클 컴퓨터 — DataField + BLE Central 지원, 사이클 모드)\n    \"edge530\":      \"530\",\n    \"edge540\":      \"540 / 540 Solar\",\n    \"edge830\":      \"830\",\n    \"edge840\":      \"840 / 840 Solar\",\n    \"edge850\":      \"850\",\n    \"edge1030\":     \"1030\",\n    \"edge1030plus\": \"1030 Plus\",\n    \"edge1040\":     \"1040 / 1040 Solar\",\n    \"edge1050\":     \"1050\",\n    \"edgeexplore2\": \"Explore 2\",\n    \"edgemtb\":      \"MTB\",\n}"
 }
@@ -1713,7 +1713,7 @@ id: toolu_01W69ZRNRAbh5kcHrUuR9Hsw
 tool_result
 id: toolu_01W69ZRNRAbh5kcHrUuR9Hsw
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/scripts/generate_device_list.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/scripts/generate_device_list.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1723,7 +1723,7 @@ id: toolu_011yDVT4qzB8foZyk95oB9xe
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/scripts/generate_device_list.py",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/scripts/generate_device_list.py",
   "old_string": "    (\"Approach®\",    [\"approachs7042mm\", \"approachs7047mm\"]),\n]",
   "new_string": "    (\"Approach®\",    [\"approachs7042mm\", \"approachs7047mm\"]),\n    (\"Edge®\",        [\n        \"edge530\", \"edge540\", \"edge830\", \"edge840\", \"edge850\",\n        \"edge1030\", \"edge1030plus\", \"edge1040\", \"edge1050\",\n        \"edgeexplore2\", \"edgemtb\",\n    ]),\n]"
 }
@@ -1734,7 +1734,7 @@ id: toolu_011yDVT4qzB8foZyk95oB9xe
 tool_result
 id: toolu_011yDVT4qzB8foZyk95oB9xe
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/scripts/generate_device_list.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/scripts/generate_device_list.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1789,7 +1789,7 @@ id: toolu_01Mv89TXCZ3WmtaH1sJnYYhv
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/scripts/generate_device_list.py",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/scripts/generate_device_list.py",
   "old_string": "    # Venu X1 (직사각형 디스플레이)\n    \"venux1\": \"X1\",\n\n    # Edge (사이클 컴퓨터 — DataField + BLE Central 지원, 사이클 모드)\n    \"edge530\":      \"530\",\n    \"edge540\":      \"540 / 540 Solar\",\n    \"edge830\":      \"830\",\n    \"edge840\":      \"840 / 840 Solar\",\n    \"edge850\":      \"850\",\n    \"edge1030\":     \"1030\",\n    \"edge1030plus\": \"1030 Plus\",\n    \"edge1040\":     \"1040 / 1040 Solar\",\n    \"edge1050\":     \"1050\",\n    \"edgeexplore2\": \"Explore 2\",\n    \"edgemtb\":      \"MTB\",\n}",
   "new_string": "    # Venu X1 (직사각형 디스플레이)\n    \"venux1\": \"X1\",\n\n    # Edge (사이클 컴퓨터): 개발 검토중 — 고객 목록에 아직 추가 금지. 출시 확정 시 매핑 + Edge® 그룹 추가.\n}"
 }
@@ -1800,7 +1800,7 @@ id: toolu_01Mv89TXCZ3WmtaH1sJnYYhv
 tool_result
 id: toolu_01Mv89TXCZ3WmtaH1sJnYYhv
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/scripts/generate_device_list.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/scripts/generate_device_list.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1810,7 +1810,7 @@ id: toolu_01FGxGcCnNMW1LjNx6yy7y7n
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/scripts/generate_device_list.py",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/scripts/generate_device_list.py",
   "old_string": "    (\"Approach®\",    [\"approachs7042mm\", \"approachs7047mm\"]),\n    (\"Edge®\",        [\n        \"edge530\", \"edge540\", \"edge830\", \"edge840\", \"edge850\",\n        \"edge1030\", \"edge1030plus\", \"edge1040\", \"edge1050\",\n        \"edgeexplore2\", \"edgemtb\",\n    ]),\n]",
   "new_string": "    (\"Approach®\",    [\"approachs7042mm\", \"approachs7047mm\"]),\n    # (\"Edge®\", [...]) — 개발 검토중, 출시 확정 시 추가\n]"
 }
@@ -1821,7 +1821,7 @@ id: toolu_01FGxGcCnNMW1LjNx6yy7y7n
 tool_result
 id: toolu_01FGxGcCnNMW1LjNx6yy7y7n
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/scripts/generate_device_list.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/scripts/generate_device_list.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1834,7 +1834,7 @@ tool_use Bash
 id: toolu_01Bje3DrcN7evanCaKLi3WPF
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== dry-run: Edge 미표시 + Enduro 2 표시 확인 ===\"\npython3 scripts/generate_device_list.py --dry-run 2>&1 | grep -iE '총 [0-9]+개 모델|Edge®|fēnix® 7:|매핑 없는|Traceback' | head -5\necho; echo \"=== 최종 git diff (스크립트) ===\"\ngit diff scripts/generate_device_list.py",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== dry-run: Edge 미표시 + Enduro 2 표시 확인 ===\"\npython3 scripts/generate_device_list.py --dry-run 2>&1 | grep -iE '총 [0-9]+개 모델|Edge®|fēnix® 7:|매핑 없는|Traceback' | head -5\necho; echo \"=== 최종 git diff (스크립트) ===\"\ngit diff scripts/generate_device_list.py",
   "description": "Verify Edge excluded, Enduro 2 kept, show final script diff"
 }
 ```
@@ -1887,7 +1887,7 @@ tool_use Bash
 id: toolu_01VoxFySY6y67Pvw3ZGJf2tD
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== CONNECT-IQ-STORE-LISTING.md 변경 여부 (없어야 정상) ===\"\ngit status --short ../Docs/runvision-iq/CONNECT-IQ-STORE-LISTING.md 2>/dev/null; [ -z \"$(git status --short ../Docs/runvision-iq/CONNECT-IQ-STORE-LISTING.md 2>/dev/null)\" ] && echo \"→ 변경 없음 ✓\"\necho; echo \"=== Edge가 manifest엔 활성인지 (스토어 호환성에 영향) ===\"\ngrep -c 'iq:product id=\"edge' manifest.xml | xargs echo \"manifest 활성 edge 기기 수:\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== CONNECT-IQ-STORE-LISTING.md 변경 여부 (없어야 정상) ===\"\ngit status --short ../Docs/runvision-iq/CONNECT-IQ-STORE-LISTING.md 2>/dev/null; [ -z \"$(git status --short ../Docs/runvision-iq/CONNECT-IQ-STORE-LISTING.md 2>/dev/null)\" ] && echo \"→ 변경 없음 ✓\"\necho; echo \"=== Edge가 manifest엔 활성인지 (스토어 호환성에 영향) ===\"\ngrep -c 'iq:product id=\"edge' manifest.xml | xargs echo \"manifest 활성 edge 기기 수:\"",
   "description": "Confirm .md untouched and check Edge active in manifest"
 }
 ```
@@ -1915,7 +1915,7 @@ id: toolu_01RfHs2UFfNTPPBHRMuXPiqS
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/project_garmin_device_ids.md",
+  "file_path": "/home/<USER>/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/project_garmin_device_ids.md",
   "old_string": "우리 앱 요구: `type=\"datafield\"` + `minApiLevel 3.1.0` + `BluetoothLowEnergy` 권한.\n관련: [[feedback_device_list_script]], [[project_glass_metric_transmit_interval]]",
   "new_string": "우리 앱 요구: `type=\"datafield\"` + `minApiLevel 3.1.0` + `BluetoothLowEnergy` 권한.\n\n**⚠️ Edge(사이클 컴퓨터) = 개발 검토중(2026-05-28 기준), 고객 지원기기 목록에 추가 금지.** manifest.xml엔 Edge 11종(edge530/540/830/840/850/1030/1030plus/1040/1050/explore2/mtb)이 **활성**이라 Garmin 스토어는 이미 호환으로 노출 중 — 하지만 사용자는 아직 \"정식 지원\"으로 안내하지 말라고 명시. 교훈: **manifest 활성 ≠ 고객 안내 가능.** 고객용 목록(`generate_device_list.py`/CONNECT-IQ-STORE-LISTING.md)에 기기 추가 전 사용자에게 출시 확정 여부 확인할 것.\n관련: [[feedback_device_list_script]], [[project_glass_metric_transmit_interval]]"
 }
@@ -1926,7 +1926,7 @@ id: toolu_01RfHs2UFfNTPPBHRMuXPiqS
 tool_result
 id: toolu_01RfHs2UFfNTPPBHRMuXPiqS
 ```
-The file /home/jhkim/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/project_garmin_device_ids.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/project_garmin_device_ids.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1970,7 +1970,7 @@ tool_use Bash
 id: toolu_01Y8m6RZGkKW6eNsPWQj2ebR
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== git 태그 ===\"; git tag | tail -20; echo \"(태그 없으면 위 비어있음)\"\necho; echo \"=== manifest version 변경 이력 (커밋+날짜) ===\"\ngit log --oneline --date=short --format='%h %ad %s' -L '/iq:application/,/version=/:manifest.xml' 2>/dev/null | grep -iE 'version|^[0-9a-f]{7}' | head -20\necho; echo \"=== fenix7x 가 manifest에 추가된 커밋 ===\"; git log --oneline --date=short --format='%h %ad %s' -S 'id=\"fenix7x\"' -- manifest.xml | head -3\necho; echo \"=== instinct3solar45mm 추가 커밋 ===\"; git log --oneline --date=short --format='%h %ad %s' -S 'instinct3solar45mm' -- manifest.xml | head -3\necho; echo \"=== Garmin/Connect IQ 릴리스 로그 문서 존재? ===\"\nls ../Docs/runvision-iq/*.md 2>/dev/null | grep -iE 'release|submission|배포|store|listing' ; find ../Docs -iname '*release*' -o -iname '*배포*' 2>/dev/null | head",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== git 태그 ===\"; git tag | tail -20; echo \"(태그 없으면 위 비어있음)\"\necho; echo \"=== manifest version 변경 이력 (커밋+날짜) ===\"\ngit log --oneline --date=short --format='%h %ad %s' -L '/iq:application/,/version=/:manifest.xml' 2>/dev/null | grep -iE 'version|^[0-9a-f]{7}' | head -20\necho; echo \"=== fenix7x 가 manifest에 추가된 커밋 ===\"; git log --oneline --date=short --format='%h %ad %s' -S 'id=\"fenix7x\"' -- manifest.xml | head -3\necho; echo \"=== instinct3solar45mm 추가 커밋 ===\"; git log --oneline --date=short --format='%h %ad %s' -S 'instinct3solar45mm' -- manifest.xml | head -3\necho; echo \"=== Garmin/Connect IQ 릴리스 로그 문서 존재? ===\"\nls ../Docs/runvision-iq/*.md 2>/dev/null | grep -iE 'release|submission|배포|store|listing' ; find ../Docs -iname '*release*' -o -iname '*배포*' 2>/dev/null | head",
   "description": "Investigate release version, tags, and device-addition commits"
 }
 ```
@@ -2035,7 +2035,7 @@ tool_use Bash
 id: toolu_01UHpcCBY352ZcZqNbcx1YnK
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\nfor ref in ef8b4e6 5ec0acc 1112121 HEAD; do\n  ver=$(git show $ref:manifest.xml 2>/dev/null | grep -oE 'version=\"[0-9]+\\.[0-9]+\\.[0-9]+\"' | head -1)\n  fx=$(git show $ref:manifest.xml 2>/dev/null | grep -c 'id=\"fenix7x\"')\n  it=$(git show $ref:manifest.xml 2>/dev/null | grep -c 'id=\"instinct3solar45mm\"')\n  echo \"$ref  app$ver  | fenix7x(Enduro2)=$fx  instinct3solar45mm(Tactical)=$it\"\ndone\necho \"(각 1 이면 해당 릴리스 manifest에 활성 포함)\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\nfor ref in ef8b4e6 5ec0acc 1112121 HEAD; do\n  ver=$(git show $ref:manifest.xml 2>/dev/null | grep -oE 'version=\"[0-9]+\\.[0-9]+\\.[0-9]+\"' | head -1)\n  fx=$(git show $ref:manifest.xml 2>/dev/null | grep -c 'id=\"fenix7x\"')\n  it=$(git show $ref:manifest.xml 2>/dev/null | grep -c 'id=\"instinct3solar45mm\"')\n  echo \"$ref  app$ver  | fenix7x(Enduro2)=$fx  instinct3solar45mm(Tactical)=$it\"\ndone\necho \"(각 1 이면 해당 릴리스 manifest에 활성 포함)\"",
   "description": "Verify both device ids present in manifest at each release commit"
 }
 ```
@@ -2090,7 +2090,7 @@ tool_use Read
 id: toolu_01RdsQ8AcJ4YNrAUMKQuDB5t
 ```json
 {
-  "file_path": "/home/jhkim/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/project_app_versions.md"
+  "file_path": "/home/<USER>/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/project_app_versions.md"
 }
 ```
 
@@ -2136,7 +2136,7 @@ id: toolu_0168SVtAzoKUJCpRxRKXvmkz
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/project_app_versions.md",
+  "file_path": "/home/<USER>/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/project_app_versions.md",
   "old_string": "## Wear OS 앱 배포 구조 변경 (2026-03-20)\n- **이전**: Flutter 폰 앱 내 `wearApp project(':wear')` 내장 방식\n- **현재**: runvision-wear를 Play Store multi-form-factor로 등록\n- **제거된 것**: `android/wear/` 폴더, `include \":wear\"`, `wearApp project(':wear')`",
   "new_string": "## Wear OS 앱 배포 구조 변경 (2026-03-20)\n- **이전**: Flutter 폰 앱 내 `wearApp project(':wear')` 내장 방식\n- **현재**: runvision-wear를 Play Store multi-form-factor로 등록\n- **제거된 것**: `android/wear/` 폴더, `include \":wear\"`, `wearApp project(':wear')`\n\n## runvision-iq/ (Garmin Monkey C DataField)\n- **현재 스토어 라이브**: **1.1.10** (커밋 2026-05-14 \"86개 기기 지원\", 사용자 확인 2026-05-28)\n- 작업 트리: 1.2.0 (사이클 모드 추가, 미배포)\n- Enduro 2(=`fenix7x`, 2025-11-16부터)·Instinct 3 Solar Tactical(=`instinct3solar45mm`, v1.1.5~)이 **1.1.10에 모두 활성** → 두 기기 이미 지원, 재릴리즈 불필요. 상세: [[garmin-device-ids]]"
 }
@@ -2147,7 +2147,7 @@ id: toolu_0168SVtAzoKUJCpRxRKXvmkz
 tool_result
 id: toolu_0168SVtAzoKUJCpRxRKXvmkz
 ```
-The file /home/jhkim/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/project_app_versions.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/project_app_versions.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2157,7 +2157,7 @@ id: toolu_01Pura2S5SQoLsi99vUFgJZL
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/MEMORY.md",
   "old_string": "- Monkey C: 1.1.7 Connect IQ 스토어 등록 (2026-04-03)",
   "new_string": "- Monkey C: 1.1.10 Connect IQ 스토어 라이브 (2026-05-14, 확인 2026-05-28) — 작업트리 1.2.0 미배포"
 }
@@ -2168,7 +2168,7 @@ id: toolu_01Pura2S5SQoLsi99vUFgJZL
 tool_result
 id: toolu_01Pura2S5SQoLsi99vUFgJZL
 ```
-The file /home/jhkim/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2205,7 +2205,7 @@ id: toolu_01TrNXYhugeX9UT9CiRS5Zvy
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/scripts/generate_device_list.py",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/scripts/generate_device_list.py",
   "old_string": "    # Venu X1 (직사각형 디스플레이)\n    \"venux1\": \"X1\",\n\n    # Edge (사이클 컴퓨터): 개발 검토중 — 고객 목록에 아직 추가 금지. 출시 확정 시 매핑 + Edge® 그룹 추가.\n}",
   "new_string": "    # Venu X1 (직사각형 디스플레이)\n    \"venux1\": \"X1\",\n\n    # Edge (사이클 컴퓨터 — DataField + BLE Central 지원, 사이클 모드. 1.2.0 시뮬레이터 검증)\n    \"edge530\":      \"530\",\n    \"edge540\":      \"540 / 540 Solar\",\n    \"edge830\":      \"830\",\n    \"edge840\":      \"840 / 840 Solar\",\n    \"edge850\":      \"850\",\n    \"edge1030\":     \"1030\",\n    \"edge1030plus\": \"1030 Plus\",\n    \"edge1040\":     \"1040 / 1040 Solar\",\n    \"edge1050\":     \"1050\",\n    \"edgeexplore2\": \"Explore 2\",\n    \"edgemtb\":      \"MTB\",\n}"
 }
@@ -2216,7 +2216,7 @@ id: toolu_01TrNXYhugeX9UT9CiRS5Zvy
 tool_result
 id: toolu_01TrNXYhugeX9UT9CiRS5Zvy
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/scripts/generate_device_list.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/scripts/generate_device_list.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2226,7 +2226,7 @@ id: toolu_01PuYN1DYBmk3pwni6nxw1Mh
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/runvision-iq/scripts/generate_device_list.py",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/runvision-iq/scripts/generate_device_list.py",
   "old_string": "    (\"Approach®\",    [\"approachs7042mm\", \"approachs7047mm\"]),\n    # (\"Edge®\", [...]) — 개발 검토중, 출시 확정 시 추가\n]",
   "new_string": "    (\"Approach®\",    [\"approachs7042mm\", \"approachs7047mm\"]),\n    (\"Edge®\",        [\n        \"edge530\", \"edge540\", \"edge830\", \"edge840\", \"edge850\",\n        \"edge1030\", \"edge1030plus\", \"edge1040\", \"edge1050\",\n        \"edgeexplore2\", \"edgemtb\",\n    ]),\n]"
 }
@@ -2237,7 +2237,7 @@ id: toolu_01PuYN1DYBmk3pwni6nxw1Mh
 tool_result
 id: toolu_01PuYN1DYBmk3pwni6nxw1Mh
 ```
-The file /home/jhkim/00.Projects/00.RunVision/runvision-iq/scripts/generate_device_list.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/runvision-iq/scripts/generate_device_list.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2250,7 +2250,7 @@ tool_use Bash
 id: toolu_018YtPSC758cNSJh1tvbMdxh
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== 실제 생성 실행 ===\"\npython3 scripts/generate_device_list.py 2>&1 | grep -iE '활성 기기 수|매핑 없는|총 [0-9]+개 모델|업데이트 완료|Traceback'\necho; echo \"=== 생성된 .md 변경 diff ===\"\ngit -C .. diff --stat Docs/runvision-iq/CONNECT-IQ-STORE-LISTING.md\necho \"--- Edge / Enduro / fenix7 표기 ---\"\ngit -C .. diff Docs/runvision-iq/CONNECT-IQ-STORE-LISTING.md | grep -E '^\\+' | grep -iE 'Edge®|Enduro™|fēnix® 7:|7X / Enduro|모델' | head",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== 실제 생성 실행 ===\"\npython3 scripts/generate_device_list.py 2>&1 | grep -iE '활성 기기 수|매핑 없는|총 [0-9]+개 모델|업데이트 완료|Traceback'\necho; echo \"=== 생성된 .md 변경 diff ===\"\ngit -C .. diff --stat Docs/runvision-iq/CONNECT-IQ-STORE-LISTING.md\necho \"--- Edge / Enduro / fenix7 표기 ---\"\ngit -C .. diff Docs/runvision-iq/CONNECT-IQ-STORE-LISTING.md | grep -E '^\\+' | grep -iE 'Edge®|Enduro™|fēnix® 7:|7X / Enduro|모델' | head",
   "description": "Regenerate store listing and show resulting changes"
 }
 ```
@@ -2263,7 +2263,7 @@ id: toolu_018YtPSC758cNSJh1tvbMdxh
 === 실제 생성 실행 ===
 ✅ 활성 기기 수: 97개
 총 97개 모델
-✅ 업데이트 완료: /home/jhkim/00.Projects/00.RunVision/Docs/runvision-iq/CONNECT-IQ-STORE-LISTING.md
+✅ 업데이트 완료: /home/<USER>/00.Projects/00.RunVision/Docs/runvision-iq/CONNECT-IQ-STORE-LISTING.md
 
 === 생성된 .md 변경 diff ===
 --- Edge / Enduro / fenix7 표기 ---
@@ -2279,7 +2279,7 @@ tool_use Bash
 id: toolu_01FQMh4GcbPtGjSAhyUjU5ev
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision\nF=Docs/runvision-iq/CONNECT-IQ-STORE-LISTING.md\necho \"=== 실제 파일 내 Edge / Enduro / 7X 표기 ===\"\ngrep -nE 'Edge®|Enduro™|7X / Enduro|7X,' \"$F\" | head\necho; echo \"=== parent 레포 git status (이 파일) ===\"\ngit status --short \"$F\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision\nF=Docs/runvision-iq/CONNECT-IQ-STORE-LISTING.md\necho \"=== 실제 파일 내 Edge / Enduro / 7X 표기 ===\"\ngrep -nE 'Edge®|Enduro™|7X / Enduro|7X,' \"$F\" | head\necho; echo \"=== parent 레포 git status (이 파일) ===\"\ngit status --short \"$F\"",
   "description": "Check actual file content and parent repo git status"
 }
 ```
@@ -2313,7 +2313,7 @@ tool_use Bash
 id: toolu_01HiDLJ8YBGHpEAM8aKBihdB
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision\nF=Docs/runvision-iq/CONNECT-IQ-STORE-LISTING.md\necho \"=== 추적 여부 ===\"; git ls-files --error-unmatch \"$F\" 2>&1 | head -1\necho \"=== ignore 여부 ===\"; git check-ignore -v \"$F\" 2>&1 || echo \"(ignore 아님)\"\necho \"=== 전체 git status (parent) ===\"; git status --short | head",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision\nF=Docs/runvision-iq/CONNECT-IQ-STORE-LISTING.md\necho \"=== 추적 여부 ===\"; git ls-files --error-unmatch \"$F\" 2>&1 | head -1\necho \"=== ignore 여부 ===\"; git check-ignore -v \"$F\" 2>&1 || echo \"(ignore 아님)\"\necho \"=== 전체 git status (parent) ===\"; git status --short | head",
   "description": "Check if listing file is tracked or gitignored"
 }
 ```
@@ -2342,7 +2342,7 @@ tool_use Bash
 id: toolu_018vhqVrY4SLLeYY5ABLtU7q
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision\necho \"=== Docs/runvision-iq/ 중 git 추적되는 파일 수 ===\"\ngit ls-files Docs/runvision-iq/ | wc -l\necho \"=== (있다면) 예시 ===\"; git ls-files Docs/runvision-iq/ | head -5\necho \"=== .gitignore 6번째 줄 주변 ===\"; sed -n '1,10p' .gitignore",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision\necho \"=== Docs/runvision-iq/ 중 git 추적되는 파일 수 ===\"\ngit ls-files Docs/runvision-iq/ | wc -l\necho \"=== (있다면) 예시 ===\"; git ls-files Docs/runvision-iq/ | head -5\necho \"=== .gitignore 6번째 줄 주변 ===\"; sed -n '1,10p' .gitignore",
   "description": "Check whether Docs/runvision-iq is entirely untracked"
 }
 ```
@@ -2379,7 +2379,7 @@ id: toolu_014MCGe2BVHcVChSHrQmwKHk
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/project_garmin_device_ids.md",
+  "file_path": "/home/<USER>/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/project_garmin_device_ids.md",
   "old_string": "**⚠️ Edge(사이클 컴퓨터) = 개발 검토중(2026-05-28 기준), 고객 지원기기 목록에 추가 금지.** manifest.xml엔 Edge 11종(edge530/540/830/840/850/1030/1030plus/1040/1050/explore2/mtb)이 **활성**이라 Garmin 스토어는 이미 호환으로 노출 중 — 하지만 사용자는 아직 \"정식 지원\"으로 안내하지 말라고 명시. 교훈: **manifest 활성 ≠ 고객 안내 가능.** 고객용 목록(`generate_device_list.py`/CONNECT-IQ-STORE-LISTING.md)에 기기 추가 전 사용자에게 출시 확정 여부 확인할 것.",
   "new_string": "**Edge(사이클 컴퓨터) 11종**(edge530/540/830/840/850/1030/1030plus/1040/1050/explore2/mtb): manifest 활성 + **2026-05-28 사용자 승인(1.2.0 시뮬레이터 검증)으로 고객 목록에 추가됨**(`generate_device_list.py` DEVICE_DISPLAY+SERIES_GROUPS, Edge® 그룹). 단 1.2.0은 미배포 — 라이브 1.1.10엔 Edge가 manifest엔 있으나 사이클 모드는 1.2.0 신규. **교훈(유지): manifest 활성 ≠ 고객 안내 가능. 고객 목록에 기기 추가 전 사용자에게 출시/검증 확정 확인할 것** (이 건도 처음엔 검토중이라 보류→승인 후 추가).\n\n**⚠️ `Docs/runvision-iq/` 전체가 parent 레포에서 git 무시됨**: `.gitignore`의 `runvision-iq/`(leading slash 없음)가 nested 별도레포뿐 아니라 `Docs/runvision-iq/`까지 매칭 → CONNECT-IQ-STORE-LISTING.md 등 Garmin 문서 전부 미추적. 의도치 않은 부작용일 가능성(`/runvision-iq/`로 고치면 Docs는 추적됨). 미해결, 사용자 확인 대기."
 }
@@ -2390,7 +2390,7 @@ id: toolu_014MCGe2BVHcVChSHrQmwKHk
 tool_result
 id: toolu_014MCGe2BVHcVChSHrQmwKHk
 ```
-The file /home/jhkim/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/project_garmin_device_ids.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-home-jhkim-00-Projects-00-RunVision/memory/project_garmin_device_ids.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2436,7 +2436,7 @@ tool_use Read
 id: toolu_01LDqQnMJJxFYiFFudcvfG5h
 ```json
 {
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/.gitignore"
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/.gitignore"
 }
 ```
 
@@ -2532,7 +2532,7 @@ id: toolu_01U8mHk6EndLYFCWcViw5rMH
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/jhkim/00.Projects/00.RunVision/.gitignore",
+  "file_path": "/home/<USER>/00.Projects/00.RunVision/.gitignore",
   "old_string": "# Separate git repository (managed independently)\nrunvision-iq/",
   "new_string": "# Separate git repository at repo root (managed independently).\n# Leading slash로 루트만 무시 → Docs/runvision-iq/ 문서는 추적됨 (영상/바이너리는 아래 전역 규칙으로 별도 무시).\n/runvision-iq/"
 }
@@ -2543,7 +2543,7 @@ id: toolu_01U8mHk6EndLYFCWcViw5rMH
 tool_result
 id: toolu_01U8mHk6EndLYFCWcViw5rMH
 ```
-The file /home/jhkim/00.Projects/00.RunVision/.gitignore has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/00.Projects/00.RunVision/.gitignore has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2556,7 +2556,7 @@ tool_use Bash
 id: toolu_01P3qQ5WcxDSaLyNfyNcvfKY
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision\necho \"=== 루트 runvision-iq 여전히 무시? (Yes 여야 정상) ===\"\ngit check-ignore runvision-iq/manifest.xml >/dev/null && echo \"무시됨 ✓\" || echo \"⚠️ 추적됨!\"\necho \"=== Docs/runvision-iq/.md 이제 추적 가능? ===\"\ngit check-ignore Docs/runvision-iq/CONNECT-IQ-STORE-LISTING.md >/dev/null && echo \"⚠️ 아직 무시\" || echo \"추적 가능 ✓\"\necho; echo \"=== Docs/runvision-iq/ 새로 추적될 파일 수 + 총 용량 ===\"\nmapfile -t FILES < <(git ls-files --others --exclude-standard \"Docs/runvision-iq/\")\necho \"파일 수: ${#FILES[@]}\"\nprintf '%s\\0' \"${FILES[@]}\" | du -ch --files0-from=- 2>/dev/null | tail -1\necho; echo \"=== 1MB 이상 대용량 파일 (커밋 주의 대상) ===\"\nfor f in \"${FILES[@]}\"; do sz=$(stat -c%s \"$f\" 2>/dev/null); [ \"${sz:-0}\" -ge 1048576 ] && echo \"$(numfmt --to=iec $sz)  $f\"; done | sort -rh | head -20\necho \"(없으면 대용량 파일 없음)\"\necho; echo \"=== 확장자별 분포 ===\"\nfor f in \"${FILES[@]}\"; do echo \"${f##*.}\"; done | sort | uniq -c | sort -rn | head",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision\necho \"=== 루트 runvision-iq 여전히 무시? (Yes 여야 정상) ===\"\ngit check-ignore runvision-iq/manifest.xml >/dev/null && echo \"무시됨 ✓\" || echo \"⚠️ 추적됨!\"\necho \"=== Docs/runvision-iq/.md 이제 추적 가능? ===\"\ngit check-ignore Docs/runvision-iq/CONNECT-IQ-STORE-LISTING.md >/dev/null && echo \"⚠️ 아직 무시\" || echo \"추적 가능 ✓\"\necho; echo \"=== Docs/runvision-iq/ 새로 추적될 파일 수 + 총 용량 ===\"\nmapfile -t FILES < <(git ls-files --others --exclude-standard \"Docs/runvision-iq/\")\necho \"파일 수: ${#FILES[@]}\"\nprintf '%s\\0' \"${FILES[@]}\" | du -ch --files0-from=- 2>/dev/null | tail -1\necho; echo \"=== 1MB 이상 대용량 파일 (커밋 주의 대상) ===\"\nfor f in \"${FILES[@]}\"; do sz=$(stat -c%s \"$f\" 2>/dev/null); [ \"${sz:-0}\" -ge 1048576 ] && echo \"$(numfmt --to=iec $sz)  $f\"; done | sort -rh | head -20\necho \"(없으면 대용량 파일 없음)\"\necho; echo \"=== 확장자별 분포 ===\"\nfor f in \"${FILES[@]}\"; do echo \"${f##*.}\"; done | sort | uniq -c | sort -rn | head",
   "description": "Assess newly trackable files under Docs/runvision-iq and flag large media"
 }
 ```
@@ -2654,7 +2654,7 @@ tool_use Bash
 id: toolu_01CdNybpZkAsCB1EnAamUsTP
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision\necho \"=== git status (parent, 요약) ===\"; git status --short | head -20\necho \"--- 추적/스테이징 파일 총수 미리보기 (Docs/runvision-iq/ + .gitignore) ---\"\ngit add --dry-run .gitignore \"Docs/runvision-iq/\" 2>/dev/null | wc -l\necho; echo \"=== 최근 커밋 메시지 스타일 ===\"; git log --oneline -5",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision\necho \"=== git status (parent, 요약) ===\"; git status --short | head -20\necho \"--- 추적/스테이징 파일 총수 미리보기 (Docs/runvision-iq/ + .gitignore) ---\"\ngit add --dry-run .gitignore \"Docs/runvision-iq/\" 2>/dev/null | wc -l\necho; echo \"=== 최근 커밋 메시지 스타일 ===\"; git log --oneline -5",
   "description": "Check parent repo status and recent commit style before committing"
 }
 ```
@@ -2690,7 +2690,7 @@ tool_use Bash
 id: toolu_01TyPptsgfJAWm6xA6kLHNs9
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision\ngit add .gitignore \"Docs/runvision-iq/\"\necho \"=== 스테이징 확인 (Docs/runvision-iq/ + .gitignore 만) ===\"\ngit diff --cached --name-only | sed -E 's#(Docs/runvision-iq/).*#\\1...#' | sort -u\necho \"스테이징 파일 수: $(git diff --cached --name-only | wc -l)\"",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision\ngit add .gitignore \"Docs/runvision-iq/\"\necho \"=== 스테이징 확인 (Docs/runvision-iq/ + .gitignore 만) ===\"\ngit diff --cached --name-only | sed -E 's#(Docs/runvision-iq/).*#\\1...#' | sort -u\necho \"스테이징 파일 수: $(git diff --cached --name-only | wc -l)\"",
   "description": "Stage docs and gitignore, verify staging scope"
 }
 ```
@@ -2717,7 +2717,7 @@ tool_use Bash
 id: toolu_01QVqAbPFDJ2fgwiSUisRTW7
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision\ngit commit -m \"$(cat <<'EOF'\ndocs(garmin): Docs/runvision-iq/ 문서 버전관리 포함\n\n.gitignore의 `runvision-iq/`(미앵커) 패턴이 루트 별도레포뿐 아니라\nDocs/runvision-iq/까지 무시하던 부작용 수정(`/runvision-iq/`로 앵커).\n설치가이드·스토어 목록 등 Garmin 문서 86개 추적 시작.\n스토어 목록(CONNECT-IQ-STORE-LISTING.md)엔 Enduro 2(=fenix7x 별칭)·Edge 11종 표기 반영.\n\nCo-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>\nEOF\n)\"\necho \"=== 커밋 후 상태 ===\"; git status --short; echo \"--- 최신 커밋 ---\"; git log --oneline -1",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision\ngit commit -m \"$(cat <<'EOF'\ndocs(garmin): Docs/runvision-iq/ 문서 버전관리 포함\n\n.gitignore의 `runvision-iq/`(미앵커) 패턴이 루트 별도레포뿐 아니라\nDocs/runvision-iq/까지 무시하던 부작용 수정(`/runvision-iq/`로 앵커).\n설치가이드·스토어 목록 등 Garmin 문서 86개 추적 시작.\n스토어 목록(CONNECT-IQ-STORE-LISTING.md)엔 Enduro 2(=fenix7x 별칭)·Edge 11종 표기 반영.\n\nCo-Authored-By: Claude Opus 4.7 <<REDACTED_EMAIL>>\nEOF\n)\"\necho \"=== 커밋 후 상태 ===\"; git status --short; echo \"--- 최신 커밋 ---\"; git log --oneline -1",
   "description": "Commit the docs and gitignore fix, verify"
 }
 ```
@@ -2773,7 +2773,7 @@ tool_use Bash
 id: toolu_0153aJrHzzTJVCXRb85u4x24
 ```json
 {
-  "command": "cd /home/jhkim/00.Projects/00.RunVision/runvision-iq\necho \"=== runvision-iq 레포 상태 ===\"; git status --short\necho; echo \"=== 이번 세션 내가 수정한 파일 (manifest 주석 + 스크립트) diff 요약 ===\"\ngit diff --stat manifest.xml scripts/generate_device_list.py",
+  "command": "cd /home/<USER>/00.Projects/00.RunVision/runvision-iq\necho \"=== runvision-iq 레포 상태 ===\"; git status --short\necho; echo \"=== 이번 세션 내가 수정한 파일 (manifest 주석 + 스크립트) diff 요약 ===\"\ngit diff --stat manifest.xml scripts/generate_device_list.py",
   "description": "Show pending changes in the separate runvision-iq repo"
 }
 ```

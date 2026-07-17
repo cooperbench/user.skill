@@ -67,7 +67,7 @@ tool_use Bash
 id: toolu_01UfvX8Zd9Lso65djsthkGYH
 ```json
 {
-  "command": "grep -rn \"framing\" --include=\"*.rs\" -l /home/wink/data/prgs/rust/iiac-perf/src | head",
+  "command": "grep -rn \"framing\" --include=\"*.rs\" -l /home/<USER>/data/prgs/rust/iiac-perf/src | head",
   "description": "Find files mentioning framing"
 }
 ```
@@ -77,10 +77,10 @@ id: toolu_01UfvX8Zd9Lso65djsthkGYH
 tool_result
 id: toolu_01UfvX8Zd9Lso65djsthkGYH
 ```
-/home/wink/data/prgs/rust/iiac-perf/src/overhead.rs
-/home/wink/data/prgs/rust/iiac-perf/src/benches/tp_pc.rs
-/home/wink/data/prgs/rust/iiac-perf/src/main.rs
-/home/wink/data/prgs/rust/iiac-perf/src/harness.rs
+/home/<USER>/data/prgs/rust/iiac-perf/src/overhead.rs
+/home/<USER>/data/prgs/rust/iiac-perf/src/benches/tp_pc.rs
+/home/<USER>/data/prgs/rust/iiac-perf/src/main.rs
+/home/<USER>/data/prgs/rust/iiac-perf/src/harness.rs
 ```
 
 > TOOL
@@ -89,7 +89,7 @@ tool_use Read
 id: toolu_01PUGvmyUrrJ4F124y4F3U1U
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/iiac-perf/src/overhead.rs"
+  "file_path": "/home/<USER>/data/prgs/rust/iiac-perf/src/overhead.rs"
 }
 ```
 

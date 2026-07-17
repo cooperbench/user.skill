@@ -1,6 +1,6 @@
 > SYSTEM
 
-# AGENTS.md instructions for /Users/ericson/.codex/worktrees/55bb/ars-ui
+# AGENTS.md instructions for /home/<USER>/.codex/worktrees/55bb/ars-ui
 
 <INSTRUCTIONS>
 ## Approach
@@ -45,8 +45,8 @@ tool_use exec_command
 id: call_OKDbHoR43zRWAtvVy7VkHJYh
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/ericson/.claude/skills/using-superpowers/SKILL.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "cmd": "sed -n '1,220p' /home/<USER>/.claude/skills/using-superpowers/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -58,8 +58,8 @@ tool_use exec_command
 id: call_z75OoBt6kFvGfTubc1Xswer7
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/ericson/.claude/skills/brainstorming/SKILL.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "cmd": "sed -n '1,220p' /home/<USER>/.claude/skills/brainstorming/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -71,8 +71,8 @@ tool_use exec_command
 id: call_21OFGYjPk8ROEViYF7POw1Ru
 ```json
 {
-  "cmd": "rg -n \"Field|Fieldset|Form|field|fieldset|form|adapter-component|issue-332|issue-423\" /Users/ericson/.codex/memories/MEMORY.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "cmd": "rg -n \"Field|Fieldset|Form|field|fieldset|form|adapter-component|issue-332|issue-423\" /home/<USER>/.codex/memories/MEMORY.md",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -158,7 +158,7 @@ Original token count: 1366
 Output:
 14:- ars-ui, checkbox, leptos, dioxus, adapter delivery, issue-320, issue-431, merge_dioxus_attrs, hidden input, form reset, cargo xtask spec info checkbox, as_child, @codex review
 16:## Task 2: Implement Field, Fieldset, and Form adapter work for Leptos (#332) and Dioxus (#423), with review-fix follow-through
-20:- rollout_summaries/REDACTED.md (cwd=/Users/ericson/.codex/worktrees/3efe/ars-ui, rollout_path=/Users/ericson/.codex/sessions/2026/06/04/rollout-2026-06-04T14-33-56-019e93b2-e997-7881-b092-7b1fb63bf491.jsonl, updated_at=2026-06-07T02:45:47+00:00, thread_id=019e93b2-e997-7881-b092-7b1fb63bf491, combined cross-adapter delivery, focused wasm validation, review-thread cleanup, and Coverage still pending at stop time)
+20:- rollout_summaries/REDACTED.md (cwd=/home/<USER>/.codex/worktrees/3efe/ars-ui, rollout_path=/home/<USER>/.codex/sessions/2026/06/04/rollout-2026-06-04T14-33-56-019e93b2-e997-7881-b092-7b1fb63bf491.jsonl, updated_at=2026-06-07T02:45:47+00:00, thread_id=019e93b2-e997-7881-b092-7b1fb63bf491, combined cross-adapter delivery, focused wasm validation, review-thread cleanup, and Coverage still pending at stop time)
 24:- ars-ui, leptos, dioxus, adapter delivery, field, fieldset, form, issue-332, issue-423, wasm-bindgen-test-runner, browser tests, ButtonAsChild, raw oninput, status-region, review threads, @codex review
 30:- issue bodies that call for parity, SSR/hydration stability, form integration, and named tests should push the default toward broad adapter completeness instead of a partial component shell [Task 1][Task 2]
 35:- the fastest orientation loop for this task family was: read the live GitHub issues, run `cargo xtask spec info <component>`, `cargo xtask spec component-deps <component> --adapter <adapter>`, and `cargo xtask spec issue-deps --adapter <adapter> --component <component> --dry-run`, then read `docs/implementation/adapter-components/`, `docs/implementation/adapter-contract.md`, and the relevant component/adapter specs before editing [Task 1][Task 2]
@@ -174,8 +174,8 @@ tool_use exec_command
 id: call_ykYIan7XCd7GLczGz1KvSb0U
 ```json
 {
-  "cmd": "sed -n '1,260p' /Users/ericson/.codex/memories/rollout_summaries/REDACTED.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "cmd": "sed -n '1,260p' /home/<USER>/.codex/memories/rollout_summaries/REDACTED.md",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -188,7 +188,7 @@ id: call_JVLwFaOV6OnoWwMPEh9jagp7
 ```json
 {
   "cmd": "wc -l docs/implementation/adapter-component-delivery.md .agents/skills/post-implementation-audit/SKILL.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -201,7 +201,7 @@ id: call_OqENtHQ1mWDrwnkDdS6S0CoH
 ```json
 {
   "cmd": "rg --files crates/ars-leptos crates/ars-dioxus crates/ars-e2e examples spec docs/implementation | rg '(field|fieldset|form|adapter-component|adapter-components)'",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -214,7 +214,7 @@ id: call_5lTldMkefSspLFF4ebVnMcTS
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -232,13 +232,13 @@ Original token count: 783
 Output:
 thread_id: 019e93b2-e997-7881-b092-7b1fb63bf491
 updated_at: 2026-06-07T02:45:47+00:00
-rollout_path: /Users/ericson/.codex/sessions/2026/06/04/rollout-2026-06-04T14-33-56-019e93b2-e997-7881-b092-7b1fb63bf491.jsonl
-cwd: /Users/ericson/.codex/worktrees/3efe/ars-ui
+rollout_path: /home/<USER>/.codex/sessions/2026/06/04/rollout-2026-06-04T14-33-56-019e93b2-e997-7881-b092-7b1fb63bf491.jsonl
+cwd: /home/<USER>/.codex/worktrees/3efe/ars-ui
 git_branch: codex/issue-332-423-field-form-adapters
 
 # Implemented Leptos and Dioxus Field/Fieldset/Form adapter work for issues #332 and #423, then fixed review regressions and pushed a follow-up commit.
 
-Rollout context: the user asked to "Implement tasks #332 and #423" in `/Users/ericson/.codex/worktrees/3efe/ars-ui`. The work was framed as adapter-level component delivery, so the agent read the live GitHub issues, the adapter workflow docs, the Leptos/Dioxus framework skills, the adapter contract docs, and the component specs before editing. The two issues were closely related: #332 covered the Leptos adapter for Field/Fieldset/Form; #423 covered the Dioxus adapter for the same component family. Dependency checks confirmed both were unblocked and matched the issue bodies.
+Rollout context: the user asked to "Implement tasks #332 and #423" in `/home/<USER>/.codex/worktrees/3efe/ars-ui`. The work was framed as adapter-level component delivery, so the agent read the live GitHub issues, the adapter workflow docs, the Leptos/Dioxus framework skills, the adapter contract docs, and the component specs before editing. The two issues were closely related: #332 covered the Leptos adapter for Field/Fieldset/Form; #423 covered the Dioxus adapter for the same component family. Dependency checks confirmed both were unblocked and matched the issue bodies.
 
 ## Task 1: Leptos + Dioxus Field/Fieldset/Form adapter implementation and follow-up fixes
 
@@ -375,7 +375,7 @@ id: call_0GynVkNrKLcddoyDSpj27JpF
 ```json
 {
   "cmd": "sed -n '1,220p' docs/implementation/adapter-component-delivery.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -388,7 +388,7 @@ id: call_CSONRcqalo00vLK9bNZs51ws
 ```json
 {
   "cmd": "sed -n '1,260p' .agents/skills/post-implementation-audit/SKILL.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -401,7 +401,7 @@ id: call_3e3rUBmlgCXEIPeS1jEAjo8y
 ```json
 {
   "cmd": "sed -n '1,220p' docs/implementation/adapter-components/README.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -414,7 +414,7 @@ id: call_9SIxjeeqJ38Ins6Cbw6wQMfG
 ```json
 {
   "cmd": "sed -n '1,240p' docs/implementation/adapter-components/checklists/component-delivery.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -605,7 +605,7 @@ id: call_tR4IkQZWWqpeCLjlm3wbV9EJ
 ```json
 {
   "cmd": "sed -n '1,260p' docs/implementation/sketches/332-423-field-form-counterpart-sketch.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -618,7 +618,7 @@ id: call_2ZplPuDbL2TpYN3XGIROal2i
 ```json
 {
   "cmd": "sed -n '1,260p' crates/ars-leptos/src/utility/field.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -631,7 +631,7 @@ id: call_HvT8WjCxSSerg06jIyfxiyrs
 ```json
 {
   "cmd": "sed -n '1,260p' crates/ars-dioxus/src/utility/field.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -644,7 +644,7 @@ id: call_BuRgxN2HpPNSWaOjp9dD5Wny
 ```json
 {
   "cmd": "sed -n '1,260p' crates/ars-e2e/src/utility/field_form.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -955,7 +955,7 @@ id: call_KEm3P37qk0L15ZQfADucBViL
 ```json
 {
   "cmd": "sed -n '220,520p' crates/ars-leptos/src/utility/field.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -968,7 +968,7 @@ id: call_nqkOtNlQy74l0ppIDV4Q2kvz
 ```json
 {
   "cmd": "sed -n '220,520p' crates/ars-dioxus/src/utility/field.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -981,7 +981,7 @@ id: call_biq4X8iDgYNV2GU1CXbgjYz0
 ```json
 {
   "cmd": "sed -n '1,300p' crates/ars-leptos/src/utility/form.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -994,7 +994,7 @@ id: call_hRIfA0eUXwJw6tYlNpJ2Tdb9
 ```json
 {
   "cmd": "sed -n '1,340p' crates/ars-dioxus/src/utility/form.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -1334,7 +1334,7 @@ id: call_UUtBUO1CYKc7mM6AL6nWW9HP
 ```json
 {
   "cmd": "sed -n '300,680p' crates/ars-leptos/src/utility/form.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -1347,7 +1347,7 @@ id: call_m4YWNSfc7JW2g6VcxSuJ9njo
 ```json
 {
   "cmd": "sed -n '340,760p' crates/ars-dioxus/src/utility/form.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -1360,7 +1360,7 @@ id: call_8OmBNwjZBxi0Xof3NMVjeruK
 ```json
 {
   "cmd": "sed -n '1,260p' crates/ars-leptos/src/utility/fieldset.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -1373,7 +1373,7 @@ id: call_vR6MkWXacda7C9Vw8QglD6mW
 ```json
 {
   "cmd": "sed -n '1,300p' crates/ars-dioxus/src/utility/fieldset.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -1724,7 +1724,7 @@ id: call_Gb4QYfSnd3wk8vMWosgNgMGV
 ```json
 {
   "cmd": "sed -n '1,240p' crates/ars-leptos/src/utility/field_support.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -1737,7 +1737,7 @@ id: call_lTsiHdknQKcJKFaEubQLwfZs
 ```json
 {
   "cmd": "sed -n '1,260p' crates/ars-dioxus/src/utility/field_support.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -1750,7 +1750,7 @@ id: call_6qXXnJ5cigcoje4Qt1Ng32q3
 ```json
 {
   "cmd": "rg -n \"Field|Fieldset|Form|field|fieldset|form|validation_errors|on_value_input|reset|required|readonly|disabled|aria-errormessage|status\" crates/ars-leptos/tests crates/ars-dioxus/tests | head -n 240",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -1763,7 +1763,7 @@ id: call_VTmZEThEuVOrcuZuVfiQ6OR5
 ```json
 {
   "cmd": "rg -n \"field_form|Field|Fieldset|Form|validation|email|required|status|field-error|native\" examples crates/ars-e2e/fixtures | head -n 240",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -2079,7 +2079,7 @@ id: call_B6IPoDg2M0TioLhbkEuAt9c3
 ```json
 {
   "cmd": "gh issue view 332 --json number,title,state,body,labels,url",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -2092,7 +2092,7 @@ id: call_v8K8KKfKuA9u5PO5Y9PniOf0
 ```json
 {
   "cmd": "gh issue view 423 --json number,title,state,body,labels,url",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -2105,7 +2105,7 @@ id: call_N9hYRgKWeZVyolCZj6L3nbL6
 ```json
 {
   "cmd": "cargo xtask spec info field",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -2118,7 +2118,7 @@ id: call_npurCrJeBC1OdPhWSw5kh8ik
 ```json
 {
   "cmd": "cargo xtask spec info fieldset",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -2131,7 +2131,7 @@ id: call_GotyAulqsR5ikIgc6K0e6R5k
 ```json
 {
   "cmd": "cargo xtask spec info form",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -2331,8 +2331,8 @@ tool_use exec_command
 id: call_WSXEKeVxu89PCL30VchTusij
 ```json
 {
-  "cmd": "sed -n '1,260p' /Users/ericson/.claude/skills/writing-plans/SKILL.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "cmd": "sed -n '1,260p' /home/<USER>/.claude/skills/writing-plans/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -2382,8 +2382,8 @@ tool_use exec_command
 id: call_Q4VrxvpCwkPCQMmVS1BHRbVo
 ```json
 {
-  "cmd": "nl -ba /Users/ericson/.codex/memories/MEMORY.md | sed -n '16,24p;35,38p;53,53p'",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "cmd": "nl -ba /home/<USER>/.codex/memories/MEMORY.md | sed -n '16,24p;35,38p;53,53p'",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 6000
 }
@@ -2395,8 +2395,8 @@ tool_use exec_command
 id: call_jmMMfdW6a25scnE8O0Dd6CW9
 ```json
 {
-  "cmd": "nl -ba /Users/ericson/.codex/memories/rollout_summaries/REDACTED.md | sed -n '1,26p;49,74p;99,148p'",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "cmd": "nl -ba /home/<USER>/.codex/memories/rollout_summaries/REDACTED.md | sed -n '1,26p;49,74p;99,148p'",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2416,7 +2416,7 @@ Output:
     17	
     18	### rollout_summary_files
     19	
-    20	- rollout_summaries/REDACTED.md (cwd=/Users/ericson/.codex/worktrees/3efe/ars-ui, rollout_path=/Users/ericson/.codex/sessions/2026/06/04/rollout-2026-06-04T14-33-56-019e93b2-e997-7881-b092-7b1fb63bf491.jsonl, updated_at=2026-06-07T02:45:47+00:00, thread_id=019e93b2-e997-7881-b092-7b1fb63bf491, combined cross-adapter delivery, focused wasm validation, review-thread cleanup, and Coverage still pending at stop time)
+    20	- rollout_summaries/REDACTED.md (cwd=/home/<USER>/.codex/worktrees/3efe/ars-ui, rollout_path=/home/<USER>/.codex/sessions/2026/06/04/rollout-2026-06-04T14-33-56-019e93b2-e997-7881-b092-7b1fb63bf491.jsonl, updated_at=2026-06-07T02:45:47+00:00, thread_id=019e93b2-e997-7881-b092-7b1fb63bf491, combined cross-adapter delivery, focused wasm validation, review-thread cleanup, and Coverage still pending at stop time)
     21	
     22	### keywords
     23	
@@ -2437,13 +2437,13 @@ Original token count: 695
 Output:
      1	thread_id: 019e93b2-e997-7881-b092-7b1fb63bf491
      2	updated_at: 2026-06-07T02:45:47+00:00
-     3	rollout_path: /Users/ericson/.codex/sessions/2026/06/04/rollout-2026-06-04T14-33-56-019e93b2-e997-7881-b092-7b1fb63bf491.jsonl
-     4	cwd: /Users/ericson/.codex/worktrees/3efe/ars-ui
+     3	rollout_path: /home/<USER>/.codex/sessions/2026/06/04/rollout-2026-06-04T14-33-56-019e93b2-e997-7881-b092-7b1fb63bf491.jsonl
+     4	cwd: /home/<USER>/.codex/worktrees/3efe/ars-ui
      5	git_branch: codex/issue-332-423-field-form-adapters
      6	
      7	# Implemented Leptos and Dioxus Field/Fieldset/Form adapter work for issues #332 and #423, then fixed review regressions and pushed a follow-up commit.
      8	
-     9	Rollout context: the user asked to "Implement tasks #332 and #423" in `/Users/ericson/.codex/worktrees/3efe/ars-ui`. The work was framed as adapter-level component delivery, so the agent read the live GitHub issues, the adapter workflow docs, the Leptos/Dioxus framework skills, the adapter contract docs, and the component specs before editing. The two issues were closely related: #332 covered the Leptos adapter for Field/Fieldset/Form; #423 covered the Dioxus adapter for the same component family. Dependency checks confirmed both were unblocked and matched the issue bodies.
+     9	Rollout context: the user asked to "Implement tasks #332 and #423" in `/home/<USER>/.codex/worktrees/3efe/ars-ui`. The work was framed as adapter-level component delivery, so the agent read the live GitHub issues, the adapter workflow docs, the Leptos/Dioxus framework skills, the adapter contract docs, and the component specs before editing. The two issues were closely related: #332 covered the Leptos adapter for Field/Fieldset/Form; #423 covered the Dioxus adapter for the same component family. Dependency checks confirmed both were unblocked and matched the issue bodies.
     10	
     11	## Task 1: Leptos + Dioxus Field/Fieldset/Form adapter implementation and follow-up fixes
     12	
@@ -2459,8 +2459,8 @@ tool_use exec_command
 id: call_8w8aRsjFButFgxJbAc2ckbV8
 ```json
 {
-  "cmd": "wc -l /Users/ericson/.codex/memories/rollout_summaries/REDACTED.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "cmd": "wc -l /home/<USER>/.codex/memories/rollout_summaries/REDACTED.md",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 2000
 }
@@ -2476,7 +2476,7 @@ Wall time: 0.0609 seconds
 Process exited with code 0
 Original token count: 34
 Output:
-      30 /Users/ericson/.codex/memories/rollout_summaries/REDACTED.md
+      30 /home/<USER>/.codex/memories/rollout_summaries/REDACTED.md
 
 ```
 
@@ -2530,8 +2530,8 @@ tool_use exec_command
 id: call_KnPqxPODliKdFKpeNEXhce2q
 ```json
 {
-  "cmd": "sed -n '1,260p' /Users/ericson/.claude/skills/executing-plans/SKILL.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "cmd": "sed -n '1,260p' /home/<USER>/.claude/skills/executing-plans/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -2543,8 +2543,8 @@ tool_use exec_command
 id: call_WZlKKxcPw54PxME1sf3cT7cD
 ```json
 {
-  "cmd": "sed -n '1,260p' /Users/ericson/.claude/skills/test-driven-development/SKILL.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "cmd": "sed -n '1,260p' /home/<USER>/.claude/skills/test-driven-development/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -2556,8 +2556,8 @@ tool_use exec_command
 id: call_ZEm4NS9o5fBrjAAufrwoQi53
 ```json
 {
-  "cmd": "sed -n '1,260p' /Users/ericson/.codex/worktrees/55bb/ars-ui/.agents/skills/dioxus/SKILL.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "cmd": "sed -n '1,260p' /home/<USER>/.codex/worktrees/55bb/ars-ui/.agents/skills/dioxus/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -2569,8 +2569,8 @@ tool_use exec_command
 id: call_EmJedyMr2XZLIRUTHcrhTr1m
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/ericson/.codex/worktrees/55bb/ars-ui/.agents/skills/leptos/SKILL.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/worktrees/55bb/ars-ui/.agents/skills/leptos/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -2582,8 +2582,8 @@ tool_use exec_command
 id: call_jINkomI5vLXve1kAChxPnyn7
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/ericson/.codex/worktrees/55bb/ars-ui/.agents/skills/post-implementation-audit/SKILL.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/worktrees/55bb/ars-ui/.agents/skills/post-implementation-audit/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -2876,8 +2876,8 @@ tool_use exec_command
 id: call_0JzJpYpxysmsmii4T00P2pOd
 ```json
 {
-  "cmd": "sed -n '1,240p' /Users/ericson/.claude/skills/using-git-worktrees/SKILL.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "cmd": "sed -n '1,240p' /home/<USER>/.claude/skills/using-git-worktrees/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -2890,7 +2890,7 @@ id: call_WOSWm5alo3WUGHwIigIc3EzC
 ```json
 {
   "cmd": "wc -l docs/implementation/adapter-component-delivery.md docs/implementation/adapter-components/*.md docs/implementation/adapter-components/checklists/*.md docs/implementation/sketches/332-423-field-form-counterpart-sketch.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2903,7 +2903,7 @@ id: call_6sfIPZSWC5mAVH2deeBw1jAZ
 ```json
 {
   "cmd": "sed -n '1,220p' docs/implementation/adapter-component-delivery.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -2916,7 +2916,7 @@ id: call_OOm3hVAFPKFHStDwUSpm7z37
 ```json
 {
   "cmd": "sed -n '1,260p' docs/implementation/adapter-components/README.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -2929,7 +2929,7 @@ id: call_j9S0ZfIKY9HhESCgb66Hz4jP
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -3175,7 +3175,7 @@ id: call_pchgKZHLOLpQt71z273etmbI
 ```json
 {
   "cmd": "git switch -c codex/field-form-adapter-retrofit-audit",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -3206,7 +3206,7 @@ id: call_w1xJQ3wvzcZx53iRZwYCDesw
 ```json
 {
   "cmd": "sed -n '1,220p' docs/implementation/adapter-components/01-before-you-code.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -3219,7 +3219,7 @@ id: call_hSsQ0C1tdQHcC2YasnMZJwzv
 ```json
 {
   "cmd": "sed -n '1,240p' docs/implementation/adapter-components/10-reference-exploration-sketch.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -3232,7 +3232,7 @@ id: call_Z2DPcUVRWSiEUBA9unEmshqa
 ```json
 {
   "cmd": "sed -n '1,320p' docs/implementation/adapter-components/07-parity-review.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -3245,7 +3245,7 @@ id: call_6MMpPnYeed1bhFlDLjSxBLCz
 ```json
 {
   "cmd": "sed -n '1,220p' docs/implementation/adapter-components/11-i18n-and-a11y-support.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -3431,7 +3431,7 @@ id: call_iVlsKktnubvLcZU1i4nBY825
 ```json
 {
   "cmd": "sed -n '1,340p' docs/implementation/adapter-components/02-adapter-api-and-wiring.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -3444,7 +3444,7 @@ id: call_sPRQGnA4B2Ju0PUqr21DQaoY
 ```json
 {
   "cmd": "sed -n '1,240p' docs/implementation/adapter-components/03-framework-rules.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -3457,7 +3457,7 @@ id: call_Y0ozTUbu3Gsu9KTqmss8y1EP
 ```json
 {
   "cmd": "sed -n '1,160p' docs/implementation/adapter-components/04-adapter-tests.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 14000
 }
@@ -3470,7 +3470,7 @@ id: call_RXqVvi5SOIVtFnVKrSEW0N2J
 ```json
 {
   "cmd": "sed -n '1,120p' docs/implementation/adapter-components/13-composition-integration.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3685,7 +3685,7 @@ id: call_WKIJMMHMjiOqIc9JiFpkjYYo
 ```json
 {
   "cmd": "sed -n '1,260p' docs/implementation/adapter-components/05-e2e-fixtures-and-harnesses.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -3698,7 +3698,7 @@ id: call_gWd8hKkmB09dDWZRjto9NGcB
 ```json
 {
   "cmd": "sed -n '1,260p' docs/implementation/adapter-components/06-widgets-examples.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -3711,7 +3711,7 @@ id: call_GNh66Io24W4Ig8jeGdjh7JjJ
 ```json
 {
   "cmd": "sed -n '1,180p' docs/implementation/adapter-components/09-browser-parity-harness.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 14000
 }
@@ -3724,7 +3724,7 @@ id: call_v3ec5F5QoPGS6R5dULqGizPm
 ```json
 {
   "cmd": "sed -n '1,180p' docs/implementation/adapter-components/12-parity-audit-loop.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 14000
 }
@@ -3737,7 +3737,7 @@ id: call_EnPmgMMLXEih6tXNqM7urNs2
 ```json
 {
   "cmd": "sed -n '1,240p' docs/implementation/adapter-components/08-validation-and-pr-closeout.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -3998,7 +3998,7 @@ id: call_Z38SLeyVnFaTqucxTvs9AIxn
 ```json
 {
   "cmd": "sed -n '1,180p' docs/implementation/adapter-components/checklists/component-delivery.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -4011,7 +4011,7 @@ id: call_pQZsIHfvJkIaPJDswCSnkKHi
 ```json
 {
   "cmd": "sed -n '1,120p' docs/implementation/adapter-components/checklists/e2e-feature-matrix.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 10000
 }
@@ -4024,7 +4024,7 @@ id: call_zm6phryffBo4IIV5b3t2oMXv
 ```json
 {
   "cmd": "sed -n '1,120p' docs/implementation/adapter-components/checklists/widgets-visual-review.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 10000
 }
@@ -4037,7 +4037,7 @@ id: call_12bQlmshWuam7ValpPTpNF57
 ```json
 {
   "cmd": "sed -n '1,260p' docs/implementation/sketches/332-423-field-form-counterpart-sketch.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -4251,7 +4251,7 @@ id: call_JBhzlnctTCspGmUbtVEPxqdG
 ```json
 {
   "cmd": "gh project list --owner fogodev --format json",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -4282,7 +4282,7 @@ id: call_5bvIIzZXST0Pib8aJmkbH3FG
 ```json
 {
   "cmd": "gh project item-add 2 --owner fogodev --url https://github.com/fogodev/ars-ui/issues/730 --format json",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -4307,7 +4307,7 @@ id: call_D2FpriCR8vWdlfok0uVUZRbq
 ```json
 {
   "cmd": "gh project field-list 2 --owner fogodev --format json",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -4338,7 +4338,7 @@ id: call_nQ0D2VSdLERVfUBuAdFKJDST
 ```json
 {
   "cmd": "gh project item-edit --project-id PVT_kwHOAKgEE84BTlkR --id PVTI_lAHOAKgEE84BTlkRzgv7sxk --field-id PVTSSF_lAHOAKgEE84BTlkRzhAzkdY --single-select-option-id 47fc9ee4",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 8000
 }
@@ -4351,7 +4351,7 @@ id: call_LnYZ42a2QqPuP659c48mn2oh
 ```json
 {
   "cmd": "gh project item-edit --project-id PVT_kwHOAKgEE84BTlkR --id PVTI_lAHOAKgEE84BTlkRzgv7sxk --field-id PVTSSF_lAHOAKgEE84BTlkRzhAzkiM --single-select-option-id 741eb5bc",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 8000
 }
@@ -4364,7 +4364,7 @@ id: call_EroPhbs3dKqriAz1nvBHu4yK
 ```json
 {
   "cmd": "gh project item-edit --project-id PVT_kwHOAKgEE84BTlkR --id PVTI_lAHOAKgEE84BTlkRzgv7sxk --field-id PVTSSF_lAHOAKgEE84BTlkRzhAzkiQ --single-select-option-id 08b6b172",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 8000
 }
@@ -4377,7 +4377,7 @@ id: call_FjE92k8XnGRIy7KZPAtqLwYo
 ```json
 {
   "cmd": "gh project item-edit --project-id PVT_kwHOAKgEE84BTlkR --id PVTI_lAHOAKgEE84BTlkRzgv7sxk --field-id PVTSSF_lAHOAKgEE84BTlkRzhAzkiU --single-select-option-id da893bb5",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 8000
 }
@@ -4497,7 +4497,7 @@ id: call_5ZwoYnHufjFADny5uBdFfsUp
 ```json
 {
   "cmd": "wc -l spec/components/utility/field.md spec/components/utility/fieldset.md spec/components/utility/form.md spec/leptos-components/utility/field.md spec/leptos-components/utility/fieldset.md spec/leptos-components/utility/form.md spec/dioxus-components/utility/field.md spec/dioxus-components/utility/fieldset.md spec/dioxus-components/utility/form.md docs/implementation/adapter-contract.md examples/widgets-ownership.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -4510,7 +4510,7 @@ id: call_wwbcLCKx1CQ53HfwxnBYaI5q
 ```json
 {
   "cmd": "rg -n \"validation|Error|Validity|native|field|fieldset|form|submit|reset|readonly|disabled|required|invalid\" crates/ars-forms crates/ars-components/src/utility spec/components/utility spec/leptos-components/utility spec/dioxus-components/utility | head -n 300",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -4523,7 +4523,7 @@ id: call_c8iEfhTzOSDq2BPfqs8aJDXR
 ```json
 {
   "cmd": "rg --files crates/ars-forms crates/ars-components/src/utility | sort",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -4536,7 +4536,7 @@ id: call_mw9iQRuFJi5eQ7FfoHaHV8Ih
 ```json
 {
   "cmd": "sed -n '1,260p' crates/ars-forms/src/validation.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -4812,7 +4812,7 @@ id: call_iQ5fVwwmVSycQw0qqCErA6A2
 ```json
 {
   "cmd": "sed -n '1,220p' crates/ars-forms/src/validation/mod.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -4825,7 +4825,7 @@ id: call_3b29Q5MjlB5Yy5yr2E8qqcDn
 ```json
 {
   "cmd": "sed -n '1,260p' crates/ars-forms/src/validation/error.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -4838,7 +4838,7 @@ id: call_tl1L6paBjKRq9yv3GaEPGon2
 ```json
 {
   "cmd": "sed -n '1,260p' crates/ars-forms/src/validation/built_in.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -4851,7 +4851,7 @@ id: call_pMgJWAXI16mwMbWVEkccamza
 ```json
 {
   "cmd": "sed -n '1,220p' crates/ars-forms/src/form/messages.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -4864,7 +4864,7 @@ id: call_GwGte1De3wdQhsMfrkUk5DIb
 ```json
 {
   "cmd": "sed -n '1,220p' crates/ars-forms/src/lib.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -5127,7 +5127,7 @@ id: call_FaVjU5ASWrH7u10x7eH9z0mr
 ```json
 {
   "cmd": "sed -n '1,260p' spec/components/utility/form.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -5140,7 +5140,7 @@ id: call_gTYeEmgPVxmbz4cMWbeBwIz8
 ```json
 {
   "cmd": "sed -n '1,260p' spec/components/utility/field.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -5153,7 +5153,7 @@ id: call_ox281vbvkpoORsgifdnww8hd
 ```json
 {
   "cmd": "sed -n '1,220p' spec/components/utility/fieldset.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -5166,7 +5166,7 @@ id: call_vohDQMjcXYzG0cJxV0Cqxzvv
 ```json
 {
   "cmd": "sed -n '1,180p' spec/foundation/07-forms.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -5179,7 +5179,7 @@ id: call_UipEO3DcooKOevJivUBoUwBq
 ```json
 {
   "cmd": "sed -n '1,160p' docs/implementation/adapter-contract.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -5192,7 +5192,7 @@ id: call_OY0US9OeEwHJwMBW09K1vPdR
 ```json
 {
   "cmd": "sed -n '1,80p' examples/widgets-ownership.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -5527,7 +5527,7 @@ id: call_tYMpmqLYJXXSdeqBd4xiVlMr
 ```json
 {
   "cmd": "sed -n '1,420p' crates/ars-leptos/src/utility/form.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -5540,7 +5540,7 @@ id: call_pJLuh45VCBjwsPpr27q8iWbP
 ```json
 {
   "cmd": "sed -n '1,460p' crates/ars-dioxus/src/utility/form.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 26000
 }
@@ -5553,7 +5553,7 @@ id: call_mn9lkJpRJGwM9AWIqmx9i0sK
 ```json
 {
   "cmd": "sed -n '1,220p' crates/ars-leptos/tests/form.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -5566,7 +5566,7 @@ id: call_iTCzETzWvqXeEwhHbpuqQpvY
 ```json
 {
   "cmd": "sed -n '1,260p' crates/ars-dioxus/tests/form.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -5579,7 +5579,7 @@ id: call_m2ilzW37ywjqgG1MPv6CEd0I
 ```json
 {
   "cmd": "sed -n '1,220p' crates/ars-forms/Cargo.toml",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 10000
 }
@@ -6014,7 +6014,7 @@ id: call_QRYpMuFk130vndSuShUPOzeY
 ```json
 {
   "cmd": "rg --files crates/ars-forms/tests crates/ars-forms/src | rg 'tests|validation'",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 6000
 }
@@ -6057,7 +6057,7 @@ id: call_jNoLRPjhVWt8au5HJIU0UmNR
 ```json
 {
   "cmd": "cargo test -p ars-forms --lib native_validity",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -6149,7 +6149,7 @@ id: call_SvRbZtrBoRIK89hGiYawg9UX
 ```json
 {
   "cmd": "cargo test -p ars-forms --lib native_validity merge_error_map",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -6184,7 +6184,7 @@ id: call_XCkhhTTETitg26UR9SyTAPRx
 ```json
 {
   "cmd": "cargo test -p ars-forms --lib native",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 16000
 }
@@ -6200,7 +6200,7 @@ Wall time: 3.0542 seconds
 Process exited with code 0
 Original token count: 200
 Output:
-   Compiling ars-forms v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-forms)
+   Compiling ars-forms v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-forms)
     Finished `test` profile [unoptimized + debuginfo] target(s) in 2.50s
      Running unittests src/lib.rs (target/debug/deps/ars_forms-50152a7540f90799)
 
@@ -6227,7 +6227,7 @@ id: call_QJyLAwuy36I0lvM4PuwQfn78
 ```json
 {
   "cmd": "sed -n '420,760p' crates/ars-leptos/src/utility/form.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -6240,7 +6240,7 @@ id: call_qOL58TGEHBKlADjXOATaKOMY
 ```json
 {
   "cmd": "sed -n '460,840p' crates/ars-dioxus/src/utility/form.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -6445,7 +6445,7 @@ id: call_23vRSqZMr6q4RsmWpuxyTjgE
 ```json
 {
   "cmd": "rg -n \"use ars_forms|merge_validation_errors|native_validation_error|build_type|build_pattern|build_length|build_range|build_step|build_parsed|validity_flag\" crates/ars-leptos/src/utility/form.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -6512,7 +6512,7 @@ id: call_ceUexfnFccGGdn51jiC6K55t
 ```json
 {
   "cmd": "sed -n '300,430p' crates/ars-leptos/src/utility/form.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 14000
 }
@@ -6618,7 +6618,7 @@ id: call_UkRLDabmfOj7dIr0u7m06OcL
 ```json
 {
   "cmd": "rg -n \"use ars_forms|merge_validation_errors|native_validation_error|build_type|build_pattern|build_length|build_range|build_step|build_parsed|validity_flag\" crates/ars-dioxus/src/utility/form.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -6689,7 +6689,7 @@ id: call_eaNfeE7ZchvUQGoJM0C9LpDZ
 ```json
 {
   "cmd": "cargo test -p ars-forms --lib native",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -6702,7 +6702,7 @@ id: call_ciO7VCCHvchiPb9Mkr2gdl9S
 ```json
 {
   "cmd": "cargo test -p ars-leptos --test form",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 16000
 }
@@ -6715,7 +6715,7 @@ id: call_o1bpMiqVPrB2XGw4jTcLg9gV
 ```json
 {
   "cmd": "cargo test -p ars-dioxus --test form",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 16000
 }
@@ -6941,16 +6941,16 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 483
 Output:
-   Compiling ars-i18n v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-i18n)
-   Compiling ars-core v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-core)
-   Compiling ars-a11y v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-a11y)
-   Compiling ars-test-harness v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-test-harness)
-   Compiling ars-interactions v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-interactions)
-   Compiling ars-collections v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-collections)
-   Compiling ars-dom v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-dom)
-   Compiling ars-forms v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-forms)
-   Compiling ars-components v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-components)
-   Compiling ars-dioxus v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
+   Compiling ars-i18n v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-i18n)
+   Compiling ars-core v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-core)
+   Compiling ars-a11y v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-a11y)
+   Compiling ars-test-harness v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-test-harness)
+   Compiling ars-interactions v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-interactions)
+   Compiling ars-collections v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-collections)
+   Compiling ars-dom v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-dom)
+   Compiling ars-forms v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-forms)
+   Compiling ars-components v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-components)
+   Compiling ars-dioxus v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
 warning: unused imports: `NativeInputType` and `NativeValidity`
  --> crates/ars-dioxus/src/utility/form.rs:7:36
   |
@@ -6959,7 +6959,7 @@ warning: unused imports: `NativeInputType` and `NativeValidity`
   |
   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
 
-   Compiling ars-test-harness-dioxus v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-test-harness-dioxus)
+   Compiling ars-test-harness-dioxus v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-test-harness-dioxus)
 warning: `ars-dioxus` (lib) generated 1 warning (run `cargo fix --lib -p ars-dioxus` to apply 1 suggestion)
     Finished `test` profile [unoptimized + debuginfo] target(s) in 56.30s
      Running tests/form.rs (target/debug/deps/form-d7a6f468ace15b5b)
@@ -7079,15 +7079,15 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 281
 Output:
-   Compiling ars-i18n v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-i18n)
-   Compiling ars-core v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-core)
-   Compiling ars-a11y v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-a11y)
-   Compiling ars-interactions v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-interactions)
-   Compiling ars-collections v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-collections)
-   Compiling ars-dom v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-dom)
-   Compiling ars-forms v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-forms)
-   Compiling ars-components v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-components)
-   Compiling ars-leptos v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-leptos)
+   Compiling ars-i18n v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-i18n)
+   Compiling ars-core v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-core)
+   Compiling ars-a11y v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-a11y)
+   Compiling ars-interactions v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-interactions)
+   Compiling ars-collections v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-collections)
+   Compiling ars-dom v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-dom)
+   Compiling ars-forms v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-forms)
+   Compiling ars-components v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-components)
+   Compiling ars-leptos v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-leptos)
     Finished `test` profile [unoptimized + debuginfo] target(s) in 1m 53s
      Running tests/form.rs (target/debug/deps/form-350fb3245fc30520)
 
@@ -7109,7 +7109,7 @@ id: call_xyh2Vt69DrDXMFHuB6NgtXIh
 ```json
 {
   "cmd": "rg -n \"inherited|readonly|disabled|validation_errors_update|reactive|reset|class|style|global|formnovalidate|aria.*described|errormessage\" crates/ars-leptos/tests crates/ars-dioxus/tests crates/ars-e2e/src/utility/field_form.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -7122,7 +7122,7 @@ id: call_aAy3xATHESp6WDAxJPjPvA87
 ```json
 {
   "cmd": "rg -n \"Fieldset|Field|Form|validation_errors|Email|Required|ErrorMessage|status|on_submit|on_reset|Input\" examples/widgets-leptos/src/categories/utility.rs examples/widgets-leptos-css/src/categories/utility.rs examples/widgets-leptos-tailwind/src/categories/utility.rs examples/widgets-dioxus/src/categories/utility.rs examples/widgets-dioxus-css/src/categories/utility.rs examples/widgets-dioxus-tailwind/src/categories/utility.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 26000
 }
@@ -7135,7 +7135,7 @@ id: call_o4mgH3mcZjreHo5xP8AJgKTg
 ```json
 {
   "cmd": "rg -n \"field_form|utility|run_field_form|computed|visual|axe|invalid|required|reset|locale|status\" crates/ars-e2e/src crates/ars-e2e/fixtures/leptos/src/categories/utility.rs crates/ars-e2e/fixtures/dioxus/src/categories/utility.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -7148,7 +7148,7 @@ id: call_byGlkHSMjqwwR0Xs2N3NoLiH
 ```json
 {
   "cmd": "rg -n \"pub mod prelude|utility::field|utility::fieldset|utility::form|pub use .*field|pub use .*form\" crates/ars-leptos/src crates/ars-dioxus/src",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 14000
 }
@@ -7375,7 +7375,7 @@ id: call_5tDOqFAqI9yo7MMkMKUT57pi
 ```json
 {
   "cmd": "sed -n '1,260p' crates/ars-leptos/tests/field.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -7388,7 +7388,7 @@ id: call_o9oT6jM2AcOCh6OUw4cljJVl
 ```json
 {
   "cmd": "sed -n '1,260p' crates/ars-dioxus/tests/field.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -7401,7 +7401,7 @@ id: call_Ardv0OAlXh8OzCtS9P9EROHl
 ```json
 {
   "cmd": "sed -n '1,260p' crates/ars-leptos/tests/fieldset.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -7414,7 +7414,7 @@ id: call_MvlnV2afoynQlJRLmLYpdLoG
 ```json
 {
   "cmd": "sed -n '1,260p' crates/ars-dioxus/tests/fieldset.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -7463,7 +7463,7 @@ fn field_renders_root_label_input_and_messages() {
                 <Input
                     r#type=InputType::Email
                     name="email"
-                    placeholder="name@example.com"
+                    placeholder="<REDACTED_EMAIL>"
                     class="account-input"
                 />
                 <Description>"Use your work email address."</Description>
@@ -7496,7 +7496,7 @@ fn field_renders_root_label_input_and_messages() {
         r#"readonly"#,
         r#"type="email""#,
         r#"name="email""#,
-        r#"placeholder="name@example.com""#,
+        r#"placeholder="<REDACTED_EMAIL>""#,
         r#"class="account-input""#,
         r#"id="email-field-description""#,
         r#"data-ars-part="description""#,
@@ -7552,7 +7552,7 @@ fn field_renders_root_label_input_and_messages() {
                 Input {
                     r#type: InputType::Email,
                     name: "email",
-                    placeholder: "name@example.com",
+                    placeholder: "<REDACTED_EMAIL>",
                     class: "account-input",
                 }
                 ErrorMessage { "Email is required." }
@@ -7585,7 +7585,7 @@ fn field_renders_root_label_input_and_messages() {
         r#"readonly"#,
         r#"type="email""#,
         r#"name="email""#,
-        r#"placeholder="name@example.com""#,
+        r#"placeholder="<REDACTED_EMAIL>""#,
         r#"class="account-input""#,
         r#"id="email-field-description""#,
         r#"data-ars-part="description""#,
@@ -7767,7 +7767,7 @@ id: call_E50PQcD2z27pE9Lshn7zyA0f
 ```json
 {
   "cmd": "rg -n \"merge_consumer|apply_part_attrs|HtmlAttr::Style|style=|style:\" crates/ars-leptos/src crates/ars-leptos/tests crates/ars-dioxus/src crates/ars-dioxus/tests",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -7780,7 +7780,7 @@ id: call_4WfN8Uko1zF57CQT4L4amBli
 ```json
 {
   "cmd": "sed -n '1,260p' crates/ars-leptos/tests/field.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -7793,7 +7793,7 @@ id: call_x4e63ft98ijPMgmkbE7EF89r
 ```json
 {
   "cmd": "sed -n '1,260p' crates/ars-dioxus/tests/field.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -7806,7 +7806,7 @@ id: call_x4einUfcoNcHncVX332StOM4
 ```json
 {
   "cmd": "sed -n '1,260p' crates/ars-leptos/tests/fieldset.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -7819,7 +7819,7 @@ id: call_hhpu2TQCNMgcdhme4PUbUMmb
 ```json
 {
   "cmd": "sed -n '1,260p' crates/ars-dioxus/tests/fieldset.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -7917,7 +7917,7 @@ fn field_renders_root_label_input_and_messages() {
                 <Input
                     r#type=InputType::Email
                     name="email"
-                    placeholder="name@example.com"
+                    placeholder="<REDACTED_EMAIL>"
                     class="account-input"
                 />
                 <Description>"Use your work email address."</Description>
@@ -7950,7 +7950,7 @@ fn field_renders_root_label_input_and_messages() {
         r#"readonly"#,
         r#"type="email""#,
         r#"name="email""#,
-        r#"placeholder="name@example.com""#,
+        r#"placeholder="<REDACTED_EMAIL>""#,
         r#"class="account-input""#,
         r#"id="email-field-description""#,
         r#"data-ars-part="description""#,
@@ -8006,7 +8006,7 @@ fn field_renders_root_label_input_and_messages() {
                 Input {
                     r#type: InputType::Email,
                     name: "email",
-                    placeholder: "name@example.com",
+                    placeholder: "<REDACTED_EMAIL>",
                     class: "account-input",
                 }
                 ErrorMessage { "Email is required." }
@@ -8039,7 +8039,7 @@ fn field_renders_root_label_input_and_messages() {
         r#"readonly"#,
         r#"type="email""#,
         r#"name="email""#,
-        r#"placeholder="name@example.com""#,
+        r#"placeholder="<REDACTED_EMAIL>""#,
         r#"class="account-input""#,
         r#"id="email-field-description""#,
         r#"data-ars-part="description""#,
@@ -8221,7 +8221,7 @@ id: call_zRmof4HRROQCtOzffNxY9qzF
 ```json
 {
   "cmd": "sed -n '1,460p' crates/ars-leptos/src/utility/field.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -8234,7 +8234,7 @@ id: call_LQMD1i0g4kDG4pOPRCIe3gVN
 ```json
 {
   "cmd": "sed -n '1,440p' crates/ars-leptos/src/utility/fieldset.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -8247,7 +8247,7 @@ id: call_s1GDX1kHqdTiVudsc871WnyE
 ```json
 {
   "cmd": "sed -n '1,520p' crates/ars-dioxus/src/utility/field.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -8260,7 +8260,7 @@ id: call_WRVzdDMQ6hd3McWsapU3uAPM
 ```json
 {
   "cmd": "sed -n '1,500p' crates/ars-dioxus/src/utility/fieldset.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -8273,7 +8273,7 @@ id: call_9go2MlOrqZqglTIcf6ThkRl9
 ```json
 {
   "cmd": "sed -n '180,240p' crates/ars-leptos/src/attrs.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -8671,7 +8671,7 @@ id: call_11CVdZKuH2tA7zqtDAwcLeFK
 ```json
 {
   "cmd": "cargo test -p ars-dioxus --test field field_parts_accept_consumer_class_and_style",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 14000
 }
@@ -8684,7 +8684,7 @@ id: call_G5wYdOOY1Hc4N7Sp4UBFsDdX
 ```json
 {
   "cmd": "cargo test -p ars-dioxus --test fieldset fieldset_parts_accept_consumer_class_and_style",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 14000
 }
@@ -8697,7 +8697,7 @@ id: call_A2jgM1rHv9iXDv8pV7jx1A7Y
 ```json
 {
   "cmd": "cargo test -p ars-leptos --features ssr --test field field_parts_accept_consumer_class_and_style",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 14000
 }
@@ -8710,7 +8710,7 @@ id: call_4GHAYnb6N8YetmFVLCdyztBK
 ```json
 {
   "cmd": "cargo test -p ars-leptos --features ssr --test fieldset fieldset_parts_accept_consumer_class_and_style",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 14000
 }
@@ -8730,7 +8730,7 @@ Output:
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on build directory
-   Compiling ars-dioxus v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
+   Compiling ars-dioxus v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
 error[E0599]: no method named `class` found for struct `ars_dioxus::prelude::field::LabelPropsBuilder<TypedBuilderFields>` in the current scope
   --> crates/ars-dioxus/tests/field.rs:85:25
    |
@@ -8775,8 +8775,8 @@ Output:
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on shared package cache
-   Compiling ars-dioxus v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
-   Compiling ars-test-harness-dioxus v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-test-harness-dioxus)
+   Compiling ars-dioxus v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
+   Compiling ars-test-harness-dioxus v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-test-harness-dioxus)
 error[E0599]: no method named `class` found for struct `ars_dioxus::prelude::fieldset::LegendPropsBuilder<TypedBuilderFields>` in the current scope
   --> crates/ars-dioxus/tests/fieldset.rs:74:26
    |
@@ -8827,7 +8827,7 @@ Output:
    Compiling leptos_macro v0.8.16
    Compiling inventory v0.3.24
    Compiling leptos v0.8.19
-   Compiling ars-core v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-core)
+   Compiling ars-core v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-core)
    Compiling hydration_context v0.3.0
    Compiling oco_ref v0.2.1
    Compiling gloo-utils v0.2.0
@@ -8839,16 +8839,16 @@ Output:
    Compiling gloo-net v0.6.0
    Compiling reactive_graph v0.2.14
    Compiling server_fn_macro_default v0.8.5
-   Compiling ars-a11y v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-a11y)
-   Compiling ars-interactions v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-interactions)
+   Compiling ars-a11y v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-a11y)
+   Compiling ars-interactions v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-interactions)
    Compiling reactive_stores v0.4.3
-   Compiling ars-collections v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-collections)
-   Compiling ars-dom v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-dom)
-   Compiling ars-forms v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-forms)
-   Compiling ars-components v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-components)
+   Compiling ars-collections v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-collections)
+   Compiling ars-dom v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-dom)
+   Compiling ars-forms v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-forms)
+   Compiling ars-components v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-components)
    Compiling leptos_server v0.8.7
    Compiling leptos_dom v0.8.8
-   Compiling ars-leptos v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-leptos)
+   Compiling ars-leptos v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-leptos)
 error[E0599]: the method `style` exists for struct `ars_leptos::prelude::field::LabelPropsBuilder<_>`, but its trait bounds were not satisfied
    --> crates/ars-leptos/tests/field.rs:84:44
     |
@@ -8871,7 +8871,7 @@ Output:
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on build directory
-   Compiling ars-leptos v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-leptos)
+   Compiling ars-leptos v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-leptos)
 error[E0599]: the method `style` exists for struct `ars_leptos::prelude::fieldset::LegendPropsBuilder<_>`, but its trait bounds were not satisfied
    --> crates/ars-leptos/tests/fieldset.rs:73:46
     |
@@ -8913,7 +8913,7 @@ id: call_ekj2VrhZGcK4I7iOJF5RlqKW
 ```json
 {
   "cmd": "sed -n '160,380p' crates/ars-leptos/src/input/checkbox.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -8926,7 +8926,7 @@ id: call_QWG7hE5iDHuiwcKNCf41FWJM
 ```json
 {
   "cmd": "sed -n '240,430p' crates/ars-dioxus/src/input/checkbox.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -9098,7 +9098,7 @@ id: call_V3UzZVsO5wMhDJFEHUn9Cerd
 ```json
 {
   "cmd": "sed -n '1,130p' crates/ars-leptos/src/utility/form.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -9111,7 +9111,7 @@ id: call_5hiteivxpVrkTmmILO3t7Jha
 ```json
 {
   "cmd": "sed -n '1,110p' crates/ars-dioxus/src/utility/form.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -9124,7 +9124,7 @@ id: call_HqUaIN2IMjVKxXAqGxu1qU5r
 ```json
 {
   "cmd": "rg -n \"pub fn part_attrs|fn part_attrs\" crates/ars-dioxus/src crates/ars-leptos/src/use_machine/mod.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -9315,7 +9315,7 @@ id: call_3jYTaJRo5CF5TbYgAvYr7uTC
 ```json
 {
   "cmd": "cargo test -p ars-dioxus --test field field_parts_accept_consumer_class_and_style",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 16000
 }
@@ -9328,7 +9328,7 @@ id: call_Fi7z3TC4bHqw2ETEQ19Q2lxI
 ```json
 {
   "cmd": "cargo test -p ars-dioxus --test fieldset fieldset_parts_accept_consumer_class_and_style",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 16000
 }
@@ -9341,7 +9341,7 @@ id: call_MEd4FLVTIJBS7TVgpQIyb3OU
 ```json
 {
   "cmd": "cargo test -p ars-leptos --features ssr --test field field_parts_accept_consumer_class_and_style",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 16000
 }
@@ -9354,7 +9354,7 @@ id: call_ykSSFgTYml7vLSlSa0IcITU7
 ```json
 {
   "cmd": "cargo test -p ars-leptos --features ssr --test fieldset fieldset_parts_accept_consumer_class_and_style",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 16000
 }
@@ -9374,8 +9374,8 @@ Output:
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on build directory
-   Compiling ars-dioxus v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
-   Compiling ars-test-harness-dioxus v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-test-harness-dioxus)
+   Compiling ars-dioxus v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
+   Compiling ars-test-harness-dioxus v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-test-harness-dioxus)
     Finished `test` profile [unoptimized + debuginfo] target(s) in 8.76s
      Running tests/field.rs (target/debug/deps/field-843892dbc1e2d5b3)
 
@@ -9401,7 +9401,7 @@ Output:
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on build directory
-   Compiling ars-dioxus v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
+   Compiling ars-dioxus v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
     Finished `test` profile [unoptimized + debuginfo] target(s) in 9.46s
      Running tests/fieldset.rs (target/debug/deps/fieldset-d780d70c905436bc)
 
@@ -9428,7 +9428,7 @@ Output:
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on build directory
-   Compiling ars-leptos v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-leptos)
+   Compiling ars-leptos v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-leptos)
     Finished `test` profile [unoptimized + debuginfo] target(s) in 5.43s
      Running tests/field.rs (target/debug/deps/field-19e0d89399febfb1)
 
@@ -9454,7 +9454,7 @@ Output:
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on package cache
-   Compiling ars-leptos v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-leptos)
+   Compiling ars-leptos v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-leptos)
     Finished `test` profile [unoptimized + debuginfo] target(s) in 4.18s
      Running tests/fieldset.rs (target/debug/deps/fieldset-cee2a53a64746b2e)
 
@@ -9477,7 +9477,7 @@ id: call_OLvhj2KqyjTk7Np7vMF2NMQS
 ```json
 {
   "cmd": "sed -n '1,260p' crates/ars-leptos/tests/form.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -9490,7 +9490,7 @@ id: call_nJJCfiWYicHGo92atXb7OAt2
 ```json
 {
   "cmd": "sed -n '1,280p' crates/ars-dioxus/tests/form.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -9503,7 +9503,7 @@ id: call_uvQvoEIMYhCevpODifv9B4nv
 ```json
 {
   "cmd": "sed -n '1,260p' spec/leptos-components/utility/field.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -9516,7 +9516,7 @@ id: call_r3Qo54zetxmPmPPNtQgZQAyX
 ```json
 {
   "cmd": "sed -n '1,260p' spec/dioxus-components/utility/field.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -9529,7 +9529,7 @@ id: call_81ygY4RKZFuy7B0W2cPXlK8h
 ```json
 {
   "cmd": "sed -n '1,260p' spec/leptos-components/utility/form.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -9542,7 +9542,7 @@ id: call_IF8iFX9UUdASWvZZW1FCZGDt
 ```json
 {
   "cmd": "sed -n '1,260p' spec/dioxus-components/utility/form.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -10016,7 +10016,7 @@ id: call_D971h7KrmiBw91yb0iojwxVo
 ```json
 {
   "cmd": "cargo test -p ars-dioxus --test form form_renders_root_and_status_region",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 10000
 }
@@ -10029,7 +10029,7 @@ id: call_jDVR39I53aiz3G51VwwuBBnh
 ```json
 {
   "cmd": "cargo test -p ars-leptos --features ssr --test form form_renders_root_and_status_region",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -10048,7 +10048,7 @@ Output:
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on package cache
-   Compiling ars-dioxus v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
+   Compiling ars-dioxus v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
     Finished `test` profile [unoptimized + debuginfo] target(s) in 1.67s
      Running tests/form.rs (target/debug/deps/form-d7a6f468ace15b5b)
 
@@ -10074,7 +10074,7 @@ Output:
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on build directory
-   Compiling ars-leptos v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-leptos)
+   Compiling ars-leptos v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-leptos)
 error[E0599]: the method `style` exists for struct `ars_leptos::prelude::form::FormPropsBuilder<_>`, but its trait bounds were not satisfied
   --> crates/ars-leptos/tests/form.rs:38:17
    |
@@ -10118,7 +10118,7 @@ id: call_rXalZodqH174mSUZNU2STh90
 ```json
 {
   "cmd": "cargo test -p ars-leptos --features ssr --test form form_renders_root_and_status_region",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 10000
 }
@@ -10131,7 +10131,7 @@ id: call_uNCw65T7BPIR4c3nA8Q21Pp0
 ```json
 {
   "cmd": "cargo test -p ars-forms --lib native",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 10000
 }
@@ -10151,7 +10151,7 @@ Output:
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on build directory
-   Compiling ars-leptos v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-leptos)
+   Compiling ars-leptos v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-leptos)
     Finished `test` profile [unoptimized + debuginfo] target(s) in 4.97s
      Running tests/form.rs (target/debug/deps/form-8ab106ef0cfddf2e)
 
@@ -10202,7 +10202,7 @@ id: call_EeEU7dZCfh2fllfiDfvy4TIt
 ```json
 {
   "cmd": "cargo test -p ars-leptos --features ssr --test field --test fieldset --test form",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 16000
 }
@@ -10215,7 +10215,7 @@ id: call_8Zq2ynCTe1XimIE9xz3QNeCv
 ```json
 {
   "cmd": "cargo test -p ars-dioxus --test field --test fieldset --test form",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 16000
 }
@@ -10234,7 +10234,7 @@ Output:
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on package cache
-   Compiling ars-leptos v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-leptos)
+   Compiling ars-leptos v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-leptos)
     Finished `test` profile [unoptimized + debuginfo] target(s) in 1.37s
      Running tests/field.rs (target/debug/deps/field-19e0d89399febfb1)
 
@@ -10316,7 +10316,7 @@ id: call_rfQ1zEEhWyi4ZG5H0orEDI3z
 ```json
 {
   "cmd": "rg --files crates/ars-leptos/tests crates/ars-dioxus/tests | rg '(field|fieldset|form).*wasm|wasm.*(field|fieldset|form)'",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -10329,7 +10329,7 @@ id: call_BqIxTmqHtgYM2G9HWArmK4rv
 ```json
 {
   "cmd": "sed -n '1,260p' crates/ars-leptos/tests/field_wasm.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -10342,7 +10342,7 @@ id: call_JjQ5BRku801ikMG7k6OzS5ck
 ```json
 {
   "cmd": "sed -n '1,260p' crates/ars-dioxus/tests/field_wasm.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -10355,7 +10355,7 @@ id: call_Crw4U1VN97CUOuGb0h6WZTkc
 ```json
 {
   "cmd": "sed -n '1,320p' crates/ars-leptos/tests/form_wasm.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -10368,7 +10368,7 @@ id: call_B6WO8CLMBLZIB1AtTMY3KzdR
 ```json
 {
   "cmd": "sed -n '1,360p' crates/ars-dioxus/tests/form_wasm.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -10460,7 +10460,7 @@ id: call_Y9dJYwpeiVayjFUeAmUhpWve
 ```json
 {
   "cmd": "sed -n '1,280p' crates/ars-leptos/tests/test_field_wasm.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -10473,7 +10473,7 @@ id: call_KvYjQSrNgo8C71zwEeQKXJ7c
 ```json
 {
   "cmd": "sed -n '1,280p' crates/ars-dioxus/tests/test_field_wasm.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -10486,7 +10486,7 @@ id: call_uxt1RrJJonONnXgwTKM7QRY9
 ```json
 {
   "cmd": "sed -n '1,260p' crates/ars-leptos/tests/test_fieldset_wasm.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -10499,7 +10499,7 @@ id: call_e5rLeQa3bWHUmRLPHlOCUodv
 ```json
 {
   "cmd": "sed -n '1,260p' crates/ars-dioxus/tests/test_fieldset_wasm.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -10512,7 +10512,7 @@ id: call_cKqEA0xkGyJOCYBfDke4Q5cD
 ```json
 {
   "cmd": "sed -n '1,380p' crates/ars-leptos/tests/test_form_wasm.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -10525,7 +10525,7 @@ id: call_4sx3la6vcNxm2EsvjTBWLJO5
 ```json
 {
   "cmd": "sed -n '1,420p' crates/ars-dioxus/tests/test_form_wasm.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -11129,7 +11129,7 @@ id: call_kX8zR3HIeXkLUZeopWeNvYdh
 ```json
 {
   "cmd": "wc -l crates/ars-leptos/tests/test_field_wasm.rs crates/ars-dioxus/tests/test_field_wasm.rs crates/ars-leptos/tests/test_fieldset_wasm.rs crates/ars-dioxus/tests/test_fieldset_wasm.rs crates/ars-leptos/tests/test_form_wasm.rs crates/ars-dioxus/tests/test_form_wasm.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -11142,7 +11142,7 @@ id: call_29tSOmAYz55bWNzsgfIJwyWN
 ```json
 {
   "cmd": "sed -n '260,620p' crates/ars-leptos/tests/test_form_wasm.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -11155,7 +11155,7 @@ id: call_1NPmhlPR85hTLTjl1BHAgXQi
 ```json
 {
   "cmd": "sed -n '260,620p' crates/ars-dioxus/tests/test_form_wasm.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -11168,7 +11168,7 @@ id: call_OrMRZCdGBMejnpF1izTN8dWR
 ```json
 {
   "cmd": "sed -n '260,620p' crates/ars-dioxus/tests/test_field_wasm.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -11181,7 +11181,7 @@ id: call_yMmOrCs7CF2NbgK45ZDS0LeO
 ```json
 {
   "cmd": "sed -n '260,560p' crates/ars-leptos/tests/test_fieldset_wasm.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -11194,7 +11194,7 @@ id: call_qvr8HTxug2a66URbUG1DdWco
 ```json
 {
   "cmd": "sed -n '260,560p' crates/ars-dioxus/tests/test_fieldset_wasm.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -11437,7 +11437,7 @@ Output:
                 ErrorMessage { "Email is required." }
                 button {
                     r#type: "button",
-                    onclick: move |_| email.set(String::from("admin@email.com")),
+                    onclick: move |_| email.set(String::from("<REDACTED_EMAIL>")),
                     "Make valid"
                 }
             }
@@ -11511,7 +11511,7 @@ Output:
 #[wasm_bindgen_test(async)]
 async fn field_controlled_value_reapplies_rejected_input() {
     fn app() -> Element {
-        let mut email = use_signal(|| String::from("fixed@example.com"));
+        let mut email = use_signal(|| String::from("<REDACTED_EMAIL>"));
 
         rsx! {
             Field { id: "wasm-controlled-email-field",
@@ -11582,7 +11582,7 @@ id: call_XKo7UvhF0KBF4wvb93eUnrNX
 ```json
 {
   "cmd": "REDACTED WASM_BINDGEN_TEST_ONLY_WEB=1 cargo test -p ars-dioxus --features web --target wasm32-unknown-unknown --test test_fieldset_wasm",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 16000
 }
@@ -11686,15 +11686,15 @@ Wall time: 28.8804 seconds
 Process exited with code 1
 Original token count: 534
 Output:
-   Compiling ars-i18n v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-i18n)
-   Compiling ars-core v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-core)
-   Compiling ars-a11y v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-a11y)
-   Compiling ars-interactions v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-interactions)
-   Compiling ars-collections v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-collections)
-   Compiling ars-dom v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-dom)
-   Compiling ars-forms v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-forms)
-   Compiling ars-components v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-components)
-   Compiling ars-dioxus v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
+   Compiling ars-i18n v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-i18n)
+   Compiling ars-core v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-core)
+   Compiling ars-a11y v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-a11y)
+   Compiling ars-interactions v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-interactions)
+   Compiling ars-collections v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-collections)
+   Compiling ars-dom v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-dom)
+   Compiling ars-forms v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-forms)
+   Compiling ars-components v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-components)
+   Compiling ars-dioxus v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
 warning: field `reset_generation` is never read
   --> crates/ars-dioxus/src/utility/form.rs:22:16
    |
@@ -11717,7 +11717,7 @@ Caused by:
 error: test failed, to rerun pass `-p ars-dioxus --test test_fieldset_wasm`
 
 Caused by:
-  process didn't exit successfully: `wasm-bindgen-test-runner /Users/ericson/.codex/worktrees/55bb/ars-ui/target/wasm32-unknown-unknown/debug/deps/test_fieldset_wasm-e866718e30cbbe9c.wasm` (exit status: 1)
+  process didn't exit successfully: `wasm-bindgen-test-runner /home/<USER>/.codex/worktrees/55bb/ars-ui/target/wasm32-unknown-unknown/debug/deps/test_fieldset_wasm-e866718e30cbbe9c.wasm` (exit status: 1)
 note: test exited abnormally; to see the full output pass --no-capture to the harness.
 
 ```
@@ -11733,7 +11733,7 @@ id: call_q3STmvDaqOSSf11wgZm4TxBF
 ```json
 {
   "cmd": "REDACTED WASM_BINDGEN_TEST_ONLY_WEB=1 cargo test -p ars-dioxus --features web --target wasm32-unknown-unknown --test test_fieldset_wasm",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 16000,
   "sandbox_permissions": "require_escalated",
@@ -11796,7 +11796,7 @@ id: call_7AqysZqOvn6bfU0mt1YlcSP7
 ```json
 {
   "cmd": "rg -n \"reset_generation\" crates/ars-dioxus/src/utility crates/ars-dioxus/tests",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -11834,7 +11834,7 @@ id: call_9n92Ib1zzzOCkvX23CIhDNLV
 ```json
 {
   "cmd": "rg 'unwrap_or_else\\(\\|\\| use_|map_or_else\\([^\\n]*use_' crates/ars-dioxus/src/utility/field.rs crates/ars-dioxus/src/utility/fieldset.rs crates/ars-dioxus/src/utility/form.rs crates/ars-dioxus/src/utility/field_support.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -11847,7 +11847,7 @@ id: call_rY8BsHH2jG7DSpnW02GTaKzF
 ```json
 {
   "cmd": "REDACTED WASM_BINDGEN_TEST_ONLY_WEB=1 cargo test -p ars-leptos --features csr --target wasm32-unknown-unknown --test test_field_wasm --test test_fieldset_wasm --test test_form_wasm",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 18000,
   "sandbox_permissions": "require_escalated",
@@ -11866,7 +11866,7 @@ id: call_mAbf2ockuV8PwCNIzliLNpmU
 ```json
 {
   "cmd": "REDACTED WASM_BINDGEN_TEST_ONLY_WEB=1 cargo test -p ars-dioxus --features web --target wasm32-unknown-unknown --test test_field_wasm --test test_fieldset_wasm --test test_form_wasm",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 18000,
   "sandbox_permissions": "require_escalated",
@@ -12018,15 +12018,15 @@ Original token count: 233
 Output:
    Compiling leptos_dom v0.8.8
    Compiling leptos_server v0.8.7
-   Compiling ars-i18n v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-i18n)
-   Compiling ars-core v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-core)
-   Compiling ars-a11y v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-a11y)
-   Compiling ars-interactions v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-interactions)
-   Compiling ars-collections v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-collections)
-   Compiling ars-dom v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-dom)
-   Compiling ars-forms v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-forms)
-   Compiling ars-components v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-components)
-   Compiling ars-leptos v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-leptos)
+   Compiling ars-i18n v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-i18n)
+   Compiling ars-core v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-core)
+   Compiling ars-a11y v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-a11y)
+   Compiling ars-interactions v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-interactions)
+   Compiling ars-collections v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-collections)
+   Compiling ars-dom v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-dom)
+   Compiling ars-forms v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-forms)
+   Compiling ars-components v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-components)
+   Compiling ars-leptos v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-leptos)
 
 ```
 
@@ -12040,7 +12040,7 @@ Wall time: 21.1990 seconds
 Process exited with code 0
 Original token count: 650
 Output:
-   Compiling ars-dioxus v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
+   Compiling ars-dioxus v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
     Finished `test` profile [unoptimized + debuginfo] target(s) in 1m 12s
      Running tests/test_field_wasm.rs (target/wasm32-unknown-unknown/debug/deps/test_field_wasm-d8e57fe7f18971c7.wasm)
 Running headless tests in Chrome on `http://127.0.0.1:58022/`
@@ -12168,7 +12168,7 @@ id: call_6xdcjlFwnHz7olg7PsJb7ZaW
 ```json
 {
   "cmd": "sed -n '1,220p' spec/leptos-components/utility/fieldset.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -12181,7 +12181,7 @@ id: call_Bx0zed1kiFyoKrlr8sBugv0r
 ```json
 {
   "cmd": "sed -n '1,220p' spec/dioxus-components/utility/fieldset.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -12194,7 +12194,7 @@ id: call_bK6YIbObT4Tb448FsB2vaoFz
 ```json
 {
   "cmd": "sed -n '1,260p' docs/implementation/sketches/332-423-field-form-counterpart-sketch.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -12207,7 +12207,7 @@ id: call_SFthAWa8D1S0IqZTKCr5Yk9F
 ```json
 {
   "cmd": "rg -n \"Field|Fieldset|Form|style|GlobalAttributes|NativeValidity|merge_error\" spec/foundation/07-forms.md spec/leptos-components/utility/field.md spec/dioxus-components/utility/field.md spec/leptos-components/utility/fieldset.md spec/dioxus-components/utility/fieldset.md spec/leptos-components/utility/form.md spec/dioxus-components/utility/form.md docs/implementation/sketches/332-423-field-form-counterpart-sketch.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -12418,7 +12418,7 @@ id: call_2p23kgEWY9oaZvhJfr8LoTUx
 ```json
 {
   "cmd": "rg -n \"native validity|validity|validation message|native_validation|validation_errors\" spec/foundation/07-forms.md | head -n 80",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -12461,7 +12461,7 @@ id: call_nMAUaTGC1RCSjm0au20LgyrW
 ```json
 {
   "cmd": "sed -n '3988,4022p' spec/foundation/07-forms.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -12534,7 +12534,7 @@ id: call_LAsP8vI4uopanCy8rItZkKiS
 ```json
 {
   "cmd": "sed -n '34,52p' spec/leptos-components/utility/field.md && sed -n '56,82p' spec/dioxus-components/utility/field.md && sed -n '20,65p' spec/dioxus-components/utility/field.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -12602,7 +12602,7 @@ id: call_fcpVG3SSt3ea6VnmCFLfDqWi
 ```json
 {
   "cmd": "rg -n \"field|fieldset|form|utility\" crates/ars-e2e/src crates/ars-e2e/fixtures/leptos/src crates/ars-e2e/fixtures/dioxus/src xtask/src/e2e.rs xtask/src/main.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -12615,7 +12615,7 @@ id: call_hz6OTT4nHrCMle0Vt29qOxF6
 ```json
 {
   "cmd": "cargo xtask e2e --help",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -12628,7 +12628,7 @@ id: call_Do9YvamEGSuDb623IpLBTUxM
 ```json
 {
   "cmd": "cargo xtask lint adapter-parity",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 16000
 }
@@ -12782,7 +12782,7 @@ id: call_244glUDiZVdbHGVLep7cmtux
 ```json
 {
   "cmd": "cargo xtask e2e utility --help",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -12842,7 +12842,7 @@ id: call_7UKdyMY5Xteo6lzvURVbI9GR
 ```json
 {
   "cmd": "cargo xtask e2e utility --adapter leptos",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 18000,
   "sandbox_permissions": "require_escalated",
@@ -12862,7 +12862,7 @@ id: call_JixoOyj46BIGY6juvkFEITL8
 ```json
 {
   "cmd": "cargo xtask e2e utility --adapter dioxus",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 18000,
   "sandbox_permissions": "require_escalated",
@@ -13092,7 +13092,7 @@ id: call_4CuaNKJ5O9bhPs2wKn0HZ0p6
 ```json
 {
   "cmd": "cargo xtask e2e utility --adapter leptos",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 18000,
   "sandbox_permissions": "require_escalated",
@@ -13135,7 +13135,7 @@ id: call_0t8mQIl7GW9KJBjF3ZiEaCvs
 ```json
 {
   "cmd": "sed -n '1,150p' crates/ars-e2e/src/utility/mod.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -13148,7 +13148,7 @@ id: call_0Nnu4ZU7vmao1o35Snfrg92w
 ```json
 {
   "cmd": "sed -n '150,260p' xtask/src/e2e.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -13161,7 +13161,7 @@ id: call_OBESuYeEUOda2WneKAA3VWRr
 ```json
 {
   "cmd": "find /private/tmp /private/var/folders/ts/_zp0gkt95q72v3w7wfnd84z80000gn/T -maxdepth 2 -type f -name '*e2e*' -o -name '*leptos*fixture*' -o -name '*dioxus*fixture*'",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -13174,7 +13174,7 @@ id: call_XZyIjN9s1kijT8Sa3saagYk6
 ```json
 {
   "cmd": "sed -n '1,110p' crates/ars-e2e/src/main.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -13431,7 +13431,7 @@ id: call_mWX3dcdrfCr66f300s9KVKDo
 ```json
 {
   "cmd": "rg -n \"start_fixture_session|struct Fixture|fixture log|log_path|Command::new|chromedriver|port\" crates/ars-e2e/src -g '*.rs'",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -13444,7 +13444,7 @@ id: call_3Wg9nymIsbhdTmmclKW1P6wR
 ```json
 {
   "cmd": "sed -n '1,260p' crates/ars-e2e/src/fixtures.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -13589,7 +13589,7 @@ id: call_sLCTSyGoGqKP5nfNeifr4KLc
 ```json
 {
   "cmd": "sed -n '150,230p' crates/ars-e2e/src/utility/mod.rs && sed -n '260,320p' crates/ars-e2e/src/fixtures.rs && sed -n '1,90p' crates/ars-e2e/src/browser.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -13686,7 +13686,7 @@ id: call_BWLG3TFi2nk8XxJ6zvfj2Q2W
 ```json
 {
   "cmd": "cargo xtask spec validate",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 16000
 }
@@ -13699,7 +13699,7 @@ id: call_zcrsVytq3WHoUFT8Gjcf59FY
 ```json
 {
   "cmd": "cargo test -p ars-forms --lib native",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 10000
 }
@@ -13712,7 +13712,7 @@ id: call_crpRSNmwm9HpHRWfiGnXDV7x
 ```json
 {
   "cmd": "cargo test -p ars-leptos --features ssr --test field --test fieldset --test form",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -13725,7 +13725,7 @@ id: call_uHC1XXLHtg6qkLKLxJ1MtGca
 ```json
 {
   "cmd": "cargo test -p ars-dioxus --test field --test fieldset --test form",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -13838,7 +13838,7 @@ Output:
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on build directory
-   Compiling ars-dioxus v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
+   Compiling ars-dioxus v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
 error[E0609]: no field `reset_generation` on type `FormContext`
    --> crates/ars-dioxus/src/input/checkbox.rs:216:65
     |
@@ -13875,7 +13875,7 @@ id: call_ObsI1lCinosF3JIxRbxhpGdp
 ```json
 {
   "cmd": "cargo test -p ars-dioxus --test field --test fieldset --test form",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -13891,7 +13891,7 @@ Wall time: 4.2951 seconds
 Process exited with code 0
 Original token count: 403
 Output:
-   Compiling ars-dioxus v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
+   Compiling ars-dioxus v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
 warning: this lint expectation is unfulfilled
   --> crates/ars-dioxus/src/utility/form.rs:23:9
    |
@@ -13901,7 +13901,7 @@ warning: this lint expectation is unfulfilled
    = note: Input adapters read this reset generation when form-participating controls are compiled; utility-only wasm test targets can compile Form without those consumers.
    = note: `#[warn(unfulfilled_lint_expectations)]` on by default
 
-   Compiling ars-test-harness-dioxus v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-test-harness-dioxus)
+   Compiling ars-test-harness-dioxus v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-test-harness-dioxus)
 warning: `ars-dioxus` (lib) generated 1 warning
     Finished `test` profile [unoptimized + debuginfo] target(s) in 2.77s
      Running tests/field.rs (target/debug/deps/field-843892dbc1e2d5b3)
@@ -13946,7 +13946,7 @@ id: call_PkmFHixR4QA66cXC5SSudaJu
 ```json
 {
   "cmd": "cargo test -p ars-dioxus --test field --test fieldset --test form",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 10000
 }
@@ -13962,8 +13962,8 @@ Wall time: 3.5583 seconds
 Process exited with code 0
 Original token count: 293
 Output:
-   Compiling ars-dioxus v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
-   Compiling ars-test-harness-dioxus v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-test-harness-dioxus)
+   Compiling ars-dioxus v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
+   Compiling ars-test-harness-dioxus v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-test-harness-dioxus)
     Finished `test` profile [unoptimized + debuginfo] target(s) in 2.38s
      Running tests/field.rs (target/debug/deps/field-843892dbc1e2d5b3)
 
@@ -14003,7 +14003,7 @@ id: call_tK1lgelDio8luWe1o3y5oWXt
 ```json
 {
   "cmd": "sed -n '221,520p' .agents/skills/post-implementation-audit/SKILL.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -14052,7 +14052,7 @@ id: call_0FFlyHF05cuyQ720kItLhOjc
 ```json
 {
   "cmd": "cargo xfmt",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 16000
 }
@@ -14130,7 +14130,7 @@ id: call_bcjarU9eiptQXE4P6WOHt7QQ
 ```json
 {
   "cmd": "cargo xclippy",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -14238,7 +14238,7 @@ Output:
     Checking leptos_dom v0.8.8
    Compiling rmcp-macros v1.7.0
     Checking rmcp v1.7.0
-    Checking xtask v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/xtask)
+    Checking xtask v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/xtask)
    Compiling aws-lc-rs v1.17.0
    Compiling rustls v0.23.40
     Checking rustls-webpki v0.103.13
@@ -14247,15 +14247,15 @@ Output:
     Checking hyper-rustls v0.27.9
     Checking reqwest v0.13.4
     Checking thirtyfour v0.37.1
-    Checking ars-e2e v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-e2e)
-    Checking ars-i18n v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-i18n)
-    Checking ars-core v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-core)
-    Checking ars-a11y v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-a11y)
-    Checking ars-test-harness v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-test-harness)
-    Checking ars-interactions v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-interactions)
-    Checking ars-collections v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-collections)
-    Checking ars-dom v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-dom)
-    Checking ars-forms v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-forms)
+    Checking ars-e2e v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-e2e)
+    Checking ars-i18n v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-i18n)
+    Checking ars-core v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-core)
+    Checking ars-a11y v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-a11y)
+    Checking ars-test-harness v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-test-harness)
+    Checking ars-interactions v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-interactions)
+    Checking ars-collections v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-collections)
+    Checking ars-dom v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-dom)
+    Checking ars-forms v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-forms)
 
 ```
 
@@ -14286,9 +14286,9 @@ Wall time: 30.0025 seconds
 Process running with session ID 78876
 Original token count: 1639
 Output:
-    Checking ars-components v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-components)
-    Checking ars-dioxus v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
-    Checking ars-leptos v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-leptos)
+    Checking ars-components v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-components)
+    Checking ars-dioxus v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
+    Checking ars-leptos v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-leptos)
 warning: redundant closure
    --> crates/ars-dioxus/src/utility/field.rs:119:34
     |
@@ -14359,7 +14359,7 @@ Wall time: 30.0022 seconds
 Process running with session ID 78876
 Original token count: 415
 Output:
-    Checking ars-i18n v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-i18n)
+    Checking ars-i18n v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-i18n)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 34.51s
   > cargo clippy -p ars-i18n --all-targets --no-default-features --features std,web-intl
     Checking once_cell v1.21.4
@@ -14368,7 +14368,7 @@ Output:
    Compiling wasm-bindgen-macro-support v0.2.125
     Checking fixed_decimal v0.7.2
     Checking calendrical_calculations v0.2.4
-   Compiling ars-derive v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-derive)
+   Compiling ars-derive v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-derive)
     Checking zerofrom v0.1.8
     Checking trybuild v1.0.116
     Checking yoke v0.8.3
@@ -14400,7 +14400,7 @@ Output:
     Checking temporal_rs v0.2.3
     Checking icu_datetime v2.2.0
     Checking icu v2.2.0
-    Checking ars-i18n v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-i18n)
+    Checking ars-i18n v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-i18n)
 
 ```
 
@@ -14450,7 +14450,7 @@ id: call_0HOWkEI0XUNFdfk6f7sDVaAF
 ```json
 {
   "cmd": "cargo xfmt",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -14528,7 +14528,7 @@ id: call_DeWlPvareqMuAE1eNwoE8tiW
 ```json
 {
   "cmd": "cargo test -p ars-leptos --features ssr --test field --test fieldset --test form",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 10000
 }
@@ -14541,7 +14541,7 @@ id: call_5iHSQvcOXNFMiC5mVeF32Q3T
 ```json
 {
   "cmd": "cargo test -p ars-dioxus --test field --test fieldset --test form",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 10000
 }
@@ -14554,7 +14554,7 @@ id: call_FsIX44Xo79f2CQoqX3lh6yeZ
 ```json
 {
   "cmd": "cargo xclippy",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 16000
 }
@@ -14573,9 +14573,9 @@ Output:
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on package cache
-   Compiling ars-forms v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-forms)
-   Compiling ars-components v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-components)
-   Compiling ars-leptos v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-leptos)
+   Compiling ars-forms v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-forms)
+   Compiling ars-components v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-components)
+   Compiling ars-leptos v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-leptos)
     Finished `test` profile [unoptimized + debuginfo] target(s) in 5.55s
      Running tests/field.rs (target/debug/deps/field-19e0d89399febfb1)
 
@@ -14618,9 +14618,9 @@ Output:
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on build directory
-   Compiling ars-forms v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-forms)
-   Compiling ars-components v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-components)
-   Compiling ars-dioxus v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
+   Compiling ars-forms v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-forms)
+   Compiling ars-components v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-components)
+   Compiling ars-dioxus v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
 error: implementation of `std::ops::Fn` is not general enough
    --> crates/ars-dioxus/src/utility/field.rs:117:17
     |
@@ -14661,7 +14661,7 @@ Output:
      Running `target/debug/xtask clippy`
   > cargo clippy --workspace --all-targets --all-features --exclude ars-i18n
     Blocking waiting for file lock on build directory
-    Checking ars-dioxus v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
+    Checking ars-dioxus v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
 error: implementation of `std::ops::Fn` is not general enough
    --> crates/ars-dioxus/src/utility/field.rs:117:17
     |
@@ -14706,7 +14706,7 @@ id: call_AgdED8g9W9Qhqfu6A6hfcM1P
 ```json
 {
   "cmd": "cargo xfmt",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 10000
 }
@@ -14719,7 +14719,7 @@ id: call_BVPO2GReC3AoTGQjY9EEout3
 ```json
 {
   "cmd": "cargo test -p ars-dioxus --test field --test fieldset --test form",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 10000
 }
@@ -14796,8 +14796,8 @@ Wall time: 4.1245 seconds
 Process exited with code 0
 Original token count: 293
 Output:
-   Compiling ars-dioxus v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
-   Compiling ars-test-harness-dioxus v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-test-harness-dioxus)
+   Compiling ars-dioxus v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
+   Compiling ars-test-harness-dioxus v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-test-harness-dioxus)
     Finished `test` profile [unoptimized + debuginfo] target(s) in 2.88s
      Running tests/field.rs (target/debug/deps/field-843892dbc1e2d5b3)
 
@@ -14837,7 +14837,7 @@ id: call_cYEUHgr2hVNlDsKncNYB0poL
 ```json
 {
   "cmd": "cargo xclippy",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 18000
 }
@@ -14856,9 +14856,9 @@ Output:
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.20s
      Running `target/debug/xtask clippy`
   > cargo clippy --workspace --all-targets --all-features --exclude ars-i18n
-    Checking ars-dioxus v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
-    Checking ars-test-harness-dioxus v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-test-harness-dioxus)
-    Checking ars-dioxus-components v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus-components)
+    Checking ars-dioxus v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
+    Checking ars-test-harness-dioxus v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-test-harness-dioxus)
+    Checking ars-dioxus-components v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus-components)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 8.07s
 warning: the following packages contain code that will be rejected by a future version of Rust: block v0.1.6
 note: to see what the problems were, use the option `--future-incompat-report`, or run `cargo report future-incompatibilities --id 1`
@@ -14880,7 +14880,7 @@ id: call_ZHunaaMSO4YCXvGo9ys78xTW
 ```json
 {
   "cmd": "REDACTED WASM_BINDGEN_TEST_ONLY_WEB=1 cargo test -p ars-leptos --features csr --target wasm32-unknown-unknown --test test_field_wasm --test test_fieldset_wasm --test test_form_wasm",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 14000,
   "sandbox_permissions": "require_escalated",
@@ -14899,7 +14899,7 @@ id: call_kXw86AWhJfmi0ii69oJeq6BI
 ```json
 {
   "cmd": "REDACTED WASM_BINDGEN_TEST_ONLY_WEB=1 cargo test -p ars-dioxus --features web --target wasm32-unknown-unknown --test test_field_wasm --test test_fieldset_wasm --test test_form_wasm",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 14000,
   "sandbox_permissions": "require_escalated",
@@ -14918,7 +14918,7 @@ id: call_bmeCOVy9nsdDweiS6hF5iKSw
 ```json
 {
   "cmd": "cargo xtask spec validate",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 8000
 }
@@ -14935,9 +14935,9 @@ Process exited with code 0
 Original token count: 665
 Output:
     Blocking waiting for file lock on package cache
-   Compiling ars-forms v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-forms)
-   Compiling ars-components v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-components)
-   Compiling ars-leptos v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-leptos)
+   Compiling ars-forms v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-forms)
+   Compiling ars-components v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-components)
+   Compiling ars-leptos v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-leptos)
     Finished `test` profile [unoptimized + debuginfo] target(s) in 7.28s
      Running tests/test_field_wasm.rs (target/wasm32-unknown-unknown/debug/deps/test_field_wasm-3f97a161ea599eb2.wasm)
 Running headless tests in Chrome on `http://127.0.0.1:64109/`
@@ -14991,9 +14991,9 @@ Original token count: 726
 Output:
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on build directory
-   Compiling ars-forms v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-forms)
-   Compiling ars-components v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-components)
-   Compiling ars-dioxus v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
+   Compiling ars-forms v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-forms)
+   Compiling ars-components v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-components)
+   Compiling ars-dioxus v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
     Finished `test` profile [unoptimized + debuginfo] target(s) in 14.13s
      Running tests/test_field_wasm.rs (target/wasm32-unknown-unknown/debug/deps/test_field_wasm-d8e57fe7f18971c7.wasm)
 Running headless tests in Chrome on `http://127.0.0.1:64184/`
@@ -15061,7 +15061,7 @@ id: call_cuoPoaUMKilIrdSVXmznQuWK
 ```json
 {
   "cmd": "cargo llvm-cov test -p ars-forms --lib --text -- native",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 18000
 }
@@ -15147,7 +15147,7 @@ id: call_F66DBlkgFE5AiPeME0TkOKCj
 ```json
 {
   "cmd": "cargo llvm-cov test -p ars-forms --lib --summary-only -- native",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 8000
 }
@@ -15164,7 +15164,7 @@ Process exited with code 0
 Original token count: 1227
 Output:
 info: cargo-llvm-cov currently setting cfg(coverage); you can opt-out it by passing --no-cfg-coverage
-   Compiling ars-forms v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-forms)
+   Compiling ars-forms v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-forms)
     Finished `test` profile [unoptimized + debuginfo] target(s) in 1.67s
      Running unittests src/lib.rs (target/llvm-cov-target/debug/deps/ars_forms-50152a7540f90799)
 
@@ -15199,7 +15199,7 @@ id: call_ZGE7UXT4lFXHGDHn6XulwqZ3
 ```json
 {
   "cmd": "cargo llvm-cov test -p ars-forms --lib --text -- native | rg -n \"validation/native.rs|\\^0\" -C 3",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -15216,7 +15216,7 @@ Process exited with code 0
 Original token count: 508
 Output:
 info: cargo-llvm-cov currently setting cfg(coverage); you can opt-out it by passing --no-cfg-coverage
-   Compiling ars-forms v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-forms)
+   Compiling ars-forms v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-forms)
     Finished `test` profile [unoptimized + debuginfo] target(s) in 1.57s
      Running unittests src/lib.rs (target/llvm-cov-target/debug/deps/ars_forms-50152a7540f90799)
 
@@ -15245,7 +15245,7 @@ test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 270 filtered out; fi
 6797-  389|      0|    }
 6798-  390|       |}
 6799-
-6800:/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-forms/src/validation/native.rs:
+6800:/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-forms/src/validation/native.rs:
 6801-    1|       |//! Native browser constraint-validation mapping.
 6802-    2|       |//!
 6803-    3|       |//! Adapters read browser-specific `ValidityState` and DOM attributes, then pass
@@ -15259,7 +15259,7 @@ id: call_KgycZX2aj56E62fqP5jUAujC
 ```json
 {
   "cmd": "cargo llvm-cov test -p ars-forms --lib --text -- native | sed -n '/validation\\/native.rs:/,/validation\\/result.rs:/p' | rg -n \"\\^0| 0\\|\" -C 2",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 8000
 }
@@ -15276,7 +15276,7 @@ Process exited with code 0
 Original token count: 318
 Output:
 info: cargo-llvm-cov currently setting cfg(coverage); you can opt-out it by passing --no-cfg-coverage
-   Compiling ars-forms v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-forms)
+   Compiling ars-forms v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-forms)
     Finished `test` profile [unoptimized + debuginfo] target(s) in 1.55s
      Running unittests src/lib.rs (target/llvm-cov-target/debug/deps/ars_forms-50152a7540f90799)
 
@@ -15308,7 +15308,7 @@ id: call_n9IeBaFMidSUDbAm5O9DEfCN
 ```json
 {
   "cmd": "sed -n '150,230p' crates/ars-forms/src/validation/native.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -15423,7 +15423,7 @@ id: call_F6yyktQnbiqAA7QaOVPGezFd
 ```json
 {
   "cmd": "cargo xfmt",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 8000
 }
@@ -15436,7 +15436,7 @@ id: call_7ZageD5Wt65yUqMmKYWGeuC6
 ```json
 {
   "cmd": "cargo test -p ars-forms --lib native",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 8000
 }
@@ -15449,7 +15449,7 @@ id: call_iZWdYFqvsifxqqFYPQZ1zAUM
 ```json
 {
   "cmd": "cargo llvm-cov test -p ars-forms --lib --summary-only -- native",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 8000
 }
@@ -15527,7 +15527,7 @@ Process exited with code 0
 Original token count: 238
 Output:
     Blocking waiting for file lock on build directory
-   Compiling ars-forms v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-forms)
+   Compiling ars-forms v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-forms)
     Finished `test` profile [unoptimized + debuginfo] target(s) in 1.70s
      Running unittests src/lib.rs (target/debug/deps/ars_forms-50152a7540f90799)
 
@@ -15555,7 +15555,7 @@ Process exited with code 0
 Original token count: 1251
 Output:
 info: cargo-llvm-cov currently setting cfg(coverage); you can opt-out it by passing --no-cfg-coverage
-   Compiling ars-forms v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-forms)
+   Compiling ars-forms v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-forms)
     Finished `test` profile [unoptimized + debuginfo] target(s) in 1.96s
      Running unittests src/lib.rs (target/llvm-cov-target/debug/deps/ars_forms-50152a7540f90799)
 
@@ -15590,7 +15590,7 @@ id: call_8eUWynhH8sOLTDhgVApBRo8A
 ```json
 {
   "cmd": "cargo xclippy",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -15609,14 +15609,14 @@ Output:
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.15s
      Running `target/debug/xtask clippy`
   > cargo clippy --workspace --all-targets --all-features --exclude ars-i18n
-    Checking ars-forms v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-forms)
-    Checking ars-components v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-components)
-    Checking ars-dioxus v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
-    Checking ars-leptos v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-leptos)
-    Checking ars-leptos-components v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-leptos-components)
-    Checking ars-test-harness-leptos v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-test-harness-leptos)
-    Checking ars-test-harness-dioxus v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-test-harness-dioxus)
-    Checking ars-dioxus-components v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus-components)
+    Checking ars-forms v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-forms)
+    Checking ars-components v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-components)
+    Checking ars-dioxus v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
+    Checking ars-leptos v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-leptos)
+    Checking ars-leptos-components v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-leptos-components)
+    Checking ars-test-harness-leptos v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-test-harness-leptos)
+    Checking ars-test-harness-dioxus v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-test-harness-dioxus)
+    Checking ars-dioxus-components v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus-components)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 12.99s
 warning: the following packages contain code that will be rejected by a future version of Rust: block v0.1.6
 note: to see what the problems were, use the option `--future-incompat-report`, or run `cargo report future-incompatibilities --id 1`
@@ -15638,7 +15638,7 @@ id: call_Mj6arXYgjzhbUbJ3qDsafPI2
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -15651,7 +15651,7 @@ id: call_H0B8hdSqWA7EcHSGKyrrtKHN
 ```json
 {
   "cmd": "git diff --stat",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -15664,7 +15664,7 @@ id: call_tIwY1Vo50fez40DglL7uiyxx
 ```json
 {
   "cmd": "git diff --name-only",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -15788,7 +15788,7 @@ id: call_mcdLG26CIjJbAWljw2IuCuLE
 ```json
 {
   "cmd": "rg 'unwrap_or_else\\(\\|\\| use_|map_or_else\\([^\\n]*use_' crates/ars-dioxus/src/utility/field.rs crates/ars-dioxus/src/utility/fieldset.rs crates/ars-dioxus/src/utility/form.rs crates/ars-dioxus/src/utility/field_support.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -15846,8 +15846,8 @@ tool_use exec_command
 id: call_Mbj5oqlkeO18eFypJWEXFnRC
 ```json
 {
-  "cmd": "cat /Users/ericson/.claude/skills/brainstorming/SKILL.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "cmd": "cat /home/<USER>/.claude/skills/brainstorming/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -15892,8 +15892,8 @@ tool_use exec_command
 id: call_xKWMcIHby8AcJMZ3IjXVxlkf
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/ericson/.claude/skills/brainstorming/SKILL.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui"
+  "cmd": "sed -n '1,220p' /home/<USER>/.claude/skills/brainstorming/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui"
 }
 ```
 
@@ -15958,7 +15958,7 @@ id: call_4owBLB9UaH3HbKCgo9N3USRo
 ```json
 {
   "cmd": "rg \"class:|style:|GlobalAttributes|data-ars|styled|variant|size|tone|theme\" crates/ars-leptos/src/utility/field.rs crates/ars-leptos/src/utility/fieldset.rs crates/ars-leptos/src/utility/form.rs crates/ars-dioxus/src/utility/field.rs crates/ars-dioxus/src/utility/fieldset.rs crates/ars-dioxus/src/utility/form.rs spec/leptos-components/utility/field.md spec/leptos-components/utility/fieldset.md spec/leptos-components/utility/form.md spec/dioxus-components/utility/field.md spec/dioxus-components/utility/fieldset.md spec/dioxus-components/utility/form.md docs/implementation/sketches/332-423-field-form-counterpart-sketch.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 12000
 }
 ```
@@ -15970,7 +15970,7 @@ id: call_p5drmv98JrL25lUgmymk8nyC
 ```json
 {
   "cmd": "git diff -- crates/ars-leptos/src/utility/field.rs crates/ars-leptos/src/utility/fieldset.rs crates/ars-leptos/src/utility/form.rs crates/ars-dioxus/src/utility/field.rs crates/ars-dioxus/src/utility/fieldset.rs crates/ars-dioxus/src/utility/form.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 24000
 }
 ```
@@ -16111,7 +16111,7 @@ id: call_ZjI5yXKjfP5S3ZkUg6v2eHo6
 ```json
 {
   "cmd": "rg \"^pub fn |pub struct .*Props|#\\[component\\]\" crates/ars-leptos/src/utility/field.rs crates/ars-leptos/src/utility/fieldset.rs crates/ars-leptos/src/utility/form.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 12000
 }
 ```
@@ -16123,7 +16123,7 @@ id: call_PwaZ9OuFVMJVIshaxGUz57HF
 ```json
 {
   "cmd": "rg \"^pub fn |pub struct .*Props|#\\[component\\]|props\\(extends = GlobalAttributes\\)\" crates/ars-dioxus/src/utility/field.rs crates/ars-dioxus/src/utility/fieldset.rs crates/ars-dioxus/src/utility/form.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 12000
 }
 ```
@@ -16135,7 +16135,7 @@ id: call_FKVGItEhX6zlN8iSfMOO2r5X
 ```json
 {
   "cmd": "sed -n '1,260p' crates/ars-leptos/src/utility/form.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 16000
 }
 ```
@@ -16321,7 +16321,7 @@ id: call_VdvVePSbiwCpGIlFiOAsnptO
 ```json
 {
   "cmd": "rg \"status|Status|Part|status_region|status region|part\" spec/leptos-components/utility/form.md spec/dioxus-components/utility/form.md spec/components/utility/form.md crates/ars-components/src/utility/form -n",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 16000
 }
 ```
@@ -16333,7 +16333,7 @@ id: call_yqmkvtLsSXFVqQJeRBJrrmZQ
 ```json
 {
   "cmd": "sed -n '1,260p' crates/ars-components/src/utility/form/mod.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 16000
 }
 ```
@@ -16345,7 +16345,7 @@ id: call_ThzGzvdYwkbB0EAFbXAVP0dm
 ```json
 {
   "cmd": "sed -n '1,220p' crates/ars-dioxus/src/utility/form.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 16000
 }
 ```
@@ -16561,8 +16561,8 @@ tool_use exec_command
 id: call_CVrItnq3U7Cm9cgctRG8CTTt
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/ericson/.claude/skills/test-driven-development/SKILL.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "cmd": "sed -n '1,220p' /home/<USER>/.claude/skills/test-driven-development/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 12000
 }
 ```
@@ -16573,8 +16573,8 @@ tool_use exec_command
 id: call_TZZ7Lb347TaEDgXNHYfsvzkN
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/ericson/.codex/worktrees/55bb/ars-ui/.agents/skills/leptos/SKILL.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/worktrees/55bb/ars-ui/.agents/skills/leptos/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 12000
 }
 ```
@@ -16585,8 +16585,8 @@ tool_use exec_command
 id: call_33zxFZt9kBEBzkeaMG9CUJgt
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/ericson/.codex/worktrees/55bb/ars-ui/.agents/skills/dioxus/SKILL.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/worktrees/55bb/ars-ui/.agents/skills/dioxus/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 12000
 }
 ```
@@ -16762,7 +16762,7 @@ id: call_mW0MJ21pqWL70L5m5Y85YNrK
 ```json
 {
   "cmd": "rg \"status|Status|class|style\" crates/ars-leptos/tests/form.rs crates/ars-dioxus/tests/form.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 20000
 }
 ```
@@ -16774,7 +16774,7 @@ id: call_bY7PqmpGIuxN7DxTdzm9yWiA
 ```json
 {
   "cmd": "sed -n '1,260p' crates/ars-leptos/tests/form.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 22000
 }
 ```
@@ -16786,7 +16786,7 @@ id: call_CNKaWVRmio3LFwXjO8izsJeC
 ```json
 {
   "cmd": "sed -n '1,280p' crates/ars-dioxus/tests/form.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 22000
 }
 ```
@@ -17046,7 +17046,7 @@ id: call_KUadFPY9Vi0iTVfURxrkNYsb
 ```json
 {
   "cmd": "rg \"StatusRegion|has_.*part|SetHas|fallback|children\" crates/ars-leptos/src crates/ars-dioxus/src crates/ars-components/src -n",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 20000
 }
 ```
@@ -17058,7 +17058,7 @@ id: call_84p6r8quiclu6b9x2nv1NPMb
 ```json
 {
   "cmd": "rg \"StoredValue|RwSignal|provide_context|use_context\" crates/ars-leptos/src/utility -n",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 16000
 }
 ```
@@ -17070,7 +17070,7 @@ id: call_plz9J7rthCDOR0g8mm54FmHS
 ```json
 {
   "cmd": "rg \"use_context_provider|consume_context|use_context\" crates/ars-dioxus/src/utility -n",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 16000
 }
 ```
@@ -17213,7 +17213,7 @@ id: call_75XM9MTsz4lK8O4qxB6WTb8p
 ```json
 {
   "cmd": "cargo test -p ars-leptos --features ssr --test form form_status_region_part_accepts_consumer_class_and_style",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -17226,7 +17226,7 @@ id: call_oPOlhQkLzAMUTfcbREwWKvqj
 ```json
 {
   "cmd": "cargo test -p ars-dioxus --test form form_status_region_part_accepts_consumer_class_and_style",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -17247,9 +17247,9 @@ Output:
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on build directory
-   Compiling ars-forms v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-forms)
-   Compiling ars-components v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-components)
-   Compiling ars-leptos v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-leptos)
+   Compiling ars-forms v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-forms)
+   Compiling ars-components v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-components)
+   Compiling ars-leptos v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-leptos)
 error[E0432]: unresolved import `ars_leptos::utility::form::StatusRegion`
   --> crates/ars-leptos/tests/form.rs:11:18
    |
@@ -17280,10 +17280,10 @@ Output:
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on package cache
-   Compiling ars-forms v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-forms)
-   Compiling ars-components v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-components)
-   Compiling ars-dioxus v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
-   Compiling ars-test-harness-dioxus v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-test-harness-dioxus)
+   Compiling ars-forms v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-forms)
+   Compiling ars-components v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-components)
+   Compiling ars-dioxus v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
+   Compiling ars-test-harness-dioxus v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-test-harness-dioxus)
 error[E0432]: unresolved import `ars_dioxus::utility::form::StatusRegion`
  --> crates/ars-dioxus/tests/form.rs:8:18
   |
@@ -17306,7 +17306,7 @@ id: call_mSiefRDKvQSGdFmoR16FkRr4
 ```json
 {
   "cmd": "rg \"use_drop|use_hook|on_cleanup|Drop\" crates/ars-dioxus/src .agents/skills/dioxus/references -n",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 12000
 }
 ```
@@ -17361,7 +17361,7 @@ id: call_EgPZICoTpJKXpW7tdVZweoDu
 ```json
 {
   "cmd": "sed -n '140,180p' crates/ars-dioxus/src/utility/fieldset.rs && sed -n '220,245p' crates/ars-dioxus/src/utility/field.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 8000
 }
 ```
@@ -17465,7 +17465,7 @@ id: call_VUn3Yw03v6aFW4W8gCLyGsIC
 ```json
 {
   "cmd": "cargo test -p ars-leptos --features ssr --test form form_status_region_part_accepts_consumer_class_and_style",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 22000
 }
@@ -17478,7 +17478,7 @@ id: call_U7UGijieS8mPBSUGeH0zhgQu
 ```json
 {
   "cmd": "cargo test -p ars-dioxus --test form form_status_region_part_accepts_consumer_class_and_style",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 22000
 }
@@ -17495,7 +17495,7 @@ Process exited with code 0
 Original token count: 118
 Output:
     Blocking waiting for file lock on package cache
-   Compiling ars-leptos v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-leptos)
+   Compiling ars-leptos v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-leptos)
     Finished `test` profile [unoptimized + debuginfo] target(s) in 4.12s
      Running tests/form.rs (target/debug/deps/form-8ab106ef0cfddf2e)
 
@@ -17519,8 +17519,8 @@ Original token count: 408
 Output:
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on build directory
-   Compiling ars-dioxus v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
-   Compiling ars-test-harness-dioxus v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-test-harness-dioxus)
+   Compiling ars-dioxus v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
+   Compiling ars-test-harness-dioxus v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-test-harness-dioxus)
     Finished `test` profile [unoptimized + debuginfo] target(s) in 7.31s
      Running tests/form.rs (target/debug/deps/form-d7a6f468ace15b5b)
 
@@ -17558,7 +17558,7 @@ id: call_ni0S6ON2pSmS0hQxACZPSq6D
 ```json
 {
   "cmd": "rg \"struct VNode|pub struct VNode|enum DynamicNode|TemplateNode|Element =\" ~/.cargo/registry/src -g '*.rs' | head -80",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 12000
 }
 ```
@@ -17570,7 +17570,7 @@ id: call_fJZwMT1gyZHMrfkdwau6FOO6
 ```json
 {
   "cmd": "rg \"pub type Element|type Element|pub struct VNode|pub enum DynamicNode|pub enum VNode\" ~/.cargo/registry/src -g '*.rs' | rg \"dioxus|dioxus-core\" | head -120",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 12000
 }
 ```
@@ -17585,34 +17585,34 @@ Wall time: 1.4951 seconds
 Process exited with code 0
 Original token count: 3374
 Output:
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/objc2-foundation-0.3.2/src/generated/NSXMLNodeOptions.rs:        const NodeExpandEmptyElement = 1<<1;
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/objc2-foundation-0.3.2/src/generated/NSXMLNodeOptions.rs:        const NodeCompactEmptyElement = 1<<2;
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-html-0.7.7/src/elements.rs:        /// # let raw_expression: Element = rsx! {};
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-html-0.7.7/src/elements.rs:        /// # let raw_expression: Element = rsx! {};
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-html-0.7.7/src/elements.rs:        /// # let raw_expression: Element = rsx! {};
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-html-0.7.7/src/elements.rs:                    /// # let raw_expression: Element = rsx! {};
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-html-0.7.7/src/render_template.rs:use dioxus_core::{Template, TemplateAttribute, TemplateNode};
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-html-0.7.7/src/render_template.rs:fn render_template_node(node: &TemplateNode, out: &mut String) -> std::fmt::Result {
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-html-0.7.7/src/render_template.rs:        TemplateNode::Element {
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-html-0.7.7/src/render_template.rs:        TemplateNode::Text { text: t } => write!(out, "{t}")?,
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-html-0.7.7/src/render_template.rs:        TemplateNode::Dynamic { id: _ } => write!(out, "<!--placeholder-->")?,
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/js-sys-0.3.102/src/lib.rs:        Element = "element",
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-html-0.7.9/src/render_template.rs:use dioxus_core::{Template, TemplateAttribute, TemplateNode};
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-html-0.7.9/src/render_template.rs:fn render_template_node(node: &TemplateNode, out: &mut String) -> std::fmt::Result {
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-html-0.7.9/src/render_template.rs:        TemplateNode::Element {
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-html-0.7.9/src/render_template.rs:        TemplateNode::Text { text: t } => write!(out, "{t}")?,
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-html-0.7.9/src/render_template.rs:        TemplateNode::Dynamic { id: _ } => write!(out, "<!--placeholder-->")?,
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-html-0.7.9/src/elements.rs:        /// # let raw_expression: Element = rsx! {};
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-html-0.7.9/src/elements.rs:        /// # let raw_expression: Element = rsx! {};
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-html-0.7.9/src/elements.rs:        /// # let raw_expression: Element = rsx! {};
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-html-0.7.9/src/elements.rs:                    /// # let raw_expression: Element = rsx! {};
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/glib-0.18.5/src/auto/enums.rs:                Self::UnknownElement => "UnknownElement",
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/glib-0.18.5/src/auto/enums.rs:            Self::UnknownElement => ffi::G_MARKUP_ERROR_UNKNOWN_ELEMENT,
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/object-0.37.3/src/read/wasm.rs:    Element = 9,
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/object-0.37.3/src/read/wasm.rs:            SectionId::Element => "<element>",
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/object-0.37.3/src/read/wasm.rs:            SectionId::Element => SectionKind::Data,
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-poseidon-3.1.12/src/lib.rs:            PoseidonSyscallError::BytesToPrimeFieldElement => 6,
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rstml-0.12.1/src/node/mod.rs: […]
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/objc2-foundation-0.3.2/src/generated/NSXMLNodeOptions.rs:        const NodeExpandEmptyElement = 1<<1;
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/objc2-foundation-0.3.2/src/generated/NSXMLNodeOptions.rs:        const NodeCompactEmptyElement = 1<<2;
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-html-0.7.7/src/elements.rs:        /// # let raw_expression: Element = rsx! {};
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-html-0.7.7/src/elements.rs:        /// # let raw_expression: Element = rsx! {};
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-html-0.7.7/src/elements.rs:        /// # let raw_expression: Element = rsx! {};
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-html-0.7.7/src/elements.rs:                    /// # let raw_expression: Element = rsx! {};
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-html-0.7.7/src/render_template.rs:use dioxus_core::{Template, TemplateAttribute, TemplateNode};
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-html-0.7.7/src/render_template.rs:fn render_template_node(node: &TemplateNode, out: &mut String) -> std::fmt::Result {
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-html-0.7.7/src/render_template.rs:        TemplateNode::Element {
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-html-0.7.7/src/render_template.rs:        TemplateNode::Text { text: t } => write!(out, "{t}")?,
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-html-0.7.7/src/render_template.rs:        TemplateNode::Dynamic { id: _ } => write!(out, "<!--placeholder-->")?,
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/js-sys-0.3.102/src/lib.rs:        Element = "element",
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-html-0.7.9/src/render_template.rs:use dioxus_core::{Template, TemplateAttribute, TemplateNode};
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-html-0.7.9/src/render_template.rs:fn render_template_node(node: &TemplateNode, out: &mut String) -> std::fmt::Result {
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-html-0.7.9/src/render_template.rs:        TemplateNode::Element {
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-html-0.7.9/src/render_template.rs:        TemplateNode::Text { text: t } => write!(out, "{t}")?,
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-html-0.7.9/src/render_template.rs:        TemplateNode::Dynamic { id: _ } => write!(out, "<!--placeholder-->")?,
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-html-0.7.9/src/elements.rs:        /// # let raw_expression: Element = rsx! {};
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-html-0.7.9/src/elements.rs:        /// # let raw_expression: Element = rsx! {};
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-html-0.7.9/src/elements.rs:        /// # let raw_expression: Element = rsx! {};
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-html-0.7.9/src/elements.rs:                    /// # let raw_expression: Element = rsx! {};
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/glib-0.18.5/src/auto/enums.rs:                Self::UnknownElement => "UnknownElement",
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/glib-0.18.5/src/auto/enums.rs:            Self::UnknownElement => ffi::G_MARKUP_ERROR_UNKNOWN_ELEMENT,
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/object-0.37.3/src/read/wasm.rs:    Element = 9,
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/object-0.37.3/src/read/wasm.rs:            SectionId::Element => "<element>",
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/object-0.37.3/src/read/wasm.rs:            SectionId::Element => SectionKind::Data,
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-poseidon-3.1.12/src/lib.rs:            PoseidonSyscallError::BytesToPrimeFieldElement => 6,
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rstml-0.12.1/src/node/mod.rs: […]
 
 > TOOL
 
@@ -17624,16 +17624,16 @@ Wall time: 2.5873 seconds
 Process exited with code 0
 Original token count: 339
 Output:
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-html-0.7.7/src/geometry.rs:pub type ElementPoint = Point2D<f64, ElementSpace>;
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-html-0.7.9/src/geometry.rs:pub type ElementPoint = Point2D<f64, ElementSpace>;
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.9/src/nodes.rs:pub struct VNodeInner {
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.9/src/nodes.rs:pub struct VNode {
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.9/src/nodes.rs:pub enum DynamicNode {
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.9/src/lib.rs:    pub type Element = std::result::Result<VNode, RenderError>;
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.7/src/nodes.rs:pub struct VNodeInner {
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.7/src/nodes.rs:pub struct VNode {
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.7/src/nodes.rs:pub enum DynamicNode {
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.7/src/lib.rs:    pub type Element = std::result::Result<VNode, RenderError>;
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-html-0.7.7/src/geometry.rs:pub type ElementPoint = Point2D<f64, ElementSpace>;
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-html-0.7.9/src/geometry.rs:pub type ElementPoint = Point2D<f64, ElementSpace>;
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.9/src/nodes.rs:pub struct VNodeInner {
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.9/src/nodes.rs:pub struct VNode {
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.9/src/nodes.rs:pub enum DynamicNode {
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.9/src/lib.rs:    pub type Element = std::result::Result<VNode, RenderError>;
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.7/src/nodes.rs:pub struct VNodeInner {
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.7/src/nodes.rs:pub struct VNode {
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.7/src/nodes.rs:pub enum DynamicNode {
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.7/src/lib.rs:    pub type Element = std::result::Result<VNode, RenderError>;
 
 ```
 
@@ -17643,8 +17643,8 @@ tool_use exec_command
 id: call_bhekguAmEjC8xFS1rxVPfMqJ
 ```json
 {
-  "cmd": "sed -n '1,180p' /Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.9/src/nodes.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "cmd": "sed -n '1,180p' /home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.9/src/nodes.rs",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 12000
 }
 ```
@@ -17709,8 +17709,8 @@ tool_use exec_command
 id: call_WvalB3NoXa94KtjhG4Wihb1W
 ```json
 {
-  "cmd": "sed -n '180,380p' /Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.9/src/nodes.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "cmd": "sed -n '180,380p' /home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.9/src/nodes.rs",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 14000
 }
 ```
@@ -17810,8 +17810,8 @@ tool_use exec_command
 id: call_sEPLHl3In4JE6gl65Ki7WRrU
 ```json
 {
-  "cmd": "rg \"enum DynamicNode\" -n /Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.9/src/nodes.rs && sed -n '430,520p' /Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.9/src/nodes.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "cmd": "rg \"enum DynamicNode\" -n /home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.9/src/nodes.rs && sed -n '430,520p' /home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.9/src/nodes.rs",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 10000
 }
 ```
@@ -17885,8 +17885,8 @@ tool_use exec_command
 id: call_U9XAlfBQ5g3BHOjCRwO0zQyW
 ```json
 {
-  "cmd": "rg \"struct VComponent|impl VComponent|fn name|component\" -n /Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.9/src",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "cmd": "rg \"struct VComponent|impl VComponent|fn name|component\" -n /home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.9/src",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 12000
 }
 ```
@@ -17903,16 +17903,16 @@ Original token count: 11416
 Output:
 Total output lines: 232
 
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.9/src/scope_context.rs:17:        // Before the component is mounted, we need to keep track of effects that need to be run once the scope is mounted
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.9/src/scope_context.rs:42:/// A component's state separate from its props.
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.9/src/scope_context.rs:146:    /// Create a subscription that schedules a future render for the referenced component.
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.9/src/scope_context.rs:150:    /// Note: The function returned by this method will schedule an update for the current component even if it has already updated between when `schedule_update` was called and when the returned function is called.
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.9/src/scope_context.rs:151:    /// If the desired behavior is to invalidate the current rendering of the current component (and no-op if already invalidated)
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.9/src/scope_context.rs:158:    /// Schedule an update for any component given its [`ScopeId`].
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.9/src/scope_context.rs:160:    /// A component's [`ScopeId`] can be obtained from `use_hook` or the [`current_scope_id`](crate::current_scope_id) method.
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.9/src/scope_context.rs:162:    /// This method should be used when you want to schedule an update for a component.
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.9/src/scope_context.rs:164:    /// Note: It does not matter when `schedule_update_any` is called: the returned function will invalidate what ever generation of the specified component is current when returned function is called.
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.9/src/scope_context.rs:165: […]
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.9/src/scope_context.rs:17:        // Before the component is mounted, we need to keep track of effects that need to be run once the scope is mounted
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.9/src/scope_context.rs:42:/// A component's state separate from its props.
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.9/src/scope_context.rs:146:    /// Create a subscription that schedules a future render for the referenced component.
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.9/src/scope_context.rs:150:    /// Note: The function returned by this method will schedule an update for the current component even if it has already updated between when `schedule_update` was called and when the returned function is called.
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.9/src/scope_context.rs:151:    /// If the desired behavior is to invalidate the current rendering of the current component (and no-op if already invalidated)
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.9/src/scope_context.rs:158:    /// Schedule an update for any component given its [`ScopeId`].
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.9/src/scope_context.rs:160:    /// A component's [`ScopeId`] can be obtained from `use_hook` or the [`current_scope_id`](crate::current_scope_id) method.
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.9/src/scope_context.rs:162:    /// This method should be used when you want to schedule an update for a component.
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.9/src/scope_context.rs:164:    /// Note: It does not matter when `schedule_update_any` is called: the returned function will invalidate what ever generation of the specified component is current when returned function is called.
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.9/src/scope_context.rs:165: […]
 
 > TOOL
 
@@ -17920,8 +17920,8 @@ tool_use exec_command
 id: call_z2i8SJQRPyYGIlSyGR8rGOwY
 ```json
 {
-  "cmd": "sed -n '530,620p' /Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.9/src/nodes.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "cmd": "sed -n '530,620p' /home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-core-0.7.9/src/nodes.rs",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 9000
 }
 ```
@@ -18014,7 +18014,7 @@ id: call_Uk59NIfM6K68Z9eI2yWxVVQP
 ```json
 {
   "cmd": "cargo test -p ars-leptos --features ssr --test form",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 22000
 }
@@ -18027,7 +18027,7 @@ id: call_kHUNWhHEJayC1IcDJpbv36Aw
 ```json
 {
   "cmd": "cargo test -p ars-dioxus --test form",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 22000
 }
@@ -18073,7 +18073,7 @@ Output:
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on build directory
-   Compiling ars-dioxus v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
+   Compiling ars-dioxus v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
 error[E0425]: cannot find type `DynamicNode` in this scope
    --> crates/ars-dioxus/src/utility/form.rs:246:47
     |
@@ -18114,8 +18114,8 @@ tool_use exec_command
 id: call_ZYjKgMvnJjBqtbrnlfIFa2vF
 ```json
 {
-  "cmd": "rg \"dioxus_core|pub use .*DynamicNode|pub mod prelude\" /Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-0.7.9/src /Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-lib-0.7.9/src -n",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "cmd": "rg \"dioxus_core|pub use .*DynamicNode|pub mod prelude\" /home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-0.7.9/src /home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-lib-0.7.9/src -n",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 12000
 }
 ```
@@ -18130,16 +18130,16 @@ Wall time: 0.0444 seconds
 Process exited with code 2
 Original token count: 326
 Output:
-rg: /Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-lib-0.7.9/src: No such file or directory (os error 2)
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-0.7.9/src/launch.rs:4:use dioxus_core::{Element, LaunchConfig};
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-0.7.9/src/lib.rs:28:pub use dioxus_core;
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-0.7.9/src/lib.rs:30:pub use dioxus_core::{CapturedError, Ok, Result};
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-0.7.9/src/lib.rs:36:pub use dioxus_core as core;
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-0.7.9/src/lib.rs:74:pub use dioxus_core_macro as core_macro;
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-0.7.9/src/lib.rs:144:pub mod prelude {
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-0.7.9/src/lib.rs:177:    pub use dioxus_core_macro::{component, rsx, Props};
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-0.7.9/src/lib.rs:204:    pub use dioxus_core;
-/Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-0.7.9/src/lib.rs:242:    pub use dioxus_core::{
+rg: /home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-lib-0.7.9/src: No such file or directory (os error 2)
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-0.7.9/src/launch.rs:4:use dioxus_core::{Element, LaunchConfig};
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-0.7.9/src/lib.rs:28:pub use dioxus_core;
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-0.7.9/src/lib.rs:30:pub use dioxus_core::{CapturedError, Ok, Result};
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-0.7.9/src/lib.rs:36:pub use dioxus_core as core;
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-0.7.9/src/lib.rs:74:pub use dioxus_core_macro as core_macro;
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-0.7.9/src/lib.rs:144:pub mod prelude {
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-0.7.9/src/lib.rs:177:    pub use dioxus_core_macro::{component, rsx, Props};
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-0.7.9/src/lib.rs:204:    pub use dioxus_core;
+/home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-0.7.9/src/lib.rs:242:    pub use dioxus_core::{
 
 ```
 
@@ -18149,8 +18149,8 @@ tool_use exec_command
 id: call_H5ZVSwll398ORVvToNxLAKTy
 ```json
 {
-  "cmd": "sed -n '230,270p' /Users/ericson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-0.7.9/src/lib.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "cmd": "sed -n '230,270p' /home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dioxus-0.7.9/src/lib.rs",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 6000
 }
 ```
@@ -18205,7 +18205,7 @@ id: call_e8zrbfWhs076UZlcKI0IRZM9
 ```json
 {
   "cmd": "cargo test -p ars-dioxus --test form",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 22000
 }
@@ -18221,8 +18221,8 @@ Wall time: 3.1949 seconds
 Process exited with code 0
 Original token count: 163
 Output:
-   Compiling ars-dioxus v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
-   Compiling ars-test-harness-dioxus v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-test-harness-dioxus)
+   Compiling ars-dioxus v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
+   Compiling ars-test-harness-dioxus v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-test-harness-dioxus)
     Finished `test` profile [unoptimized + debuginfo] target(s) in 2.80s
      Running tests/form.rs (target/debug/deps/form-d7a6f468ace15b5b)
 
@@ -18247,7 +18247,7 @@ id: call_7YM826ZDrfxN0AgybCNDWxMj
 ```json
 {
   "cmd": "sed -n '1,100p' spec/leptos-components/utility/form.md && sed -n '210,250p' spec/leptos-components/utility/form.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 12000
 }
 ```
@@ -18259,7 +18259,7 @@ id: call_UysNM9o8NbOCzy9vY667qu5l
 ```json
 {
   "cmd": "sed -n '1,105p' spec/dioxus-components/utility/form.md && sed -n '220,260p' spec/dioxus-components/utility/form.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 12000
 }
 ```
@@ -18271,7 +18271,7 @@ id: call_v3n7uKYRIPlJ3GkMwwmfbNAE
 ```json
 {
   "cmd": "rg \"StatusRegion|status region|Compound part styling\" docs/implementation/sketches/332-423-field-form-counterpart-sketch.md -n",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 8000
 }
 ```
@@ -18429,7 +18429,7 @@ id: call_CODkSegofLm5ItNrSgbLn6Wz
 ```json
 {
   "cmd": "cargo xfmt",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 24000
 }
@@ -18507,7 +18507,7 @@ id: call_hVFpkq2XNLRNzriDpSmYUxte
 ```json
 {
   "cmd": "git diff --name-only",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 12000
 }
 ```
@@ -18558,7 +18558,7 @@ id: call_XT2frVjcZFS32uxdO2Xv2bZm
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 12000
 }
 ```
@@ -18570,7 +18570,7 @@ id: call_O968nwZknu1en2p6WpRTVFYa
 ```json
 {
   "cmd": "cargo test -p ars-leptos --features ssr --test field --test fieldset --test form",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 24000
 }
@@ -18583,7 +18583,7 @@ id: call_5oiz5F1RYOE0fmYluJvVSFVD
 ```json
 {
   "cmd": "cargo test -p ars-dioxus --test field --test fieldset --test form",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 24000
 }
@@ -18638,7 +18638,7 @@ Output:
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on package cache
-   Compiling ars-leptos v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-leptos)
+   Compiling ars-leptos v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-leptos)
     Finished `test` profile [unoptimized + debuginfo] target(s) in 6.56s
      Running tests/field.rs (target/debug/deps/field-19e0d89399febfb1)
 
@@ -18682,8 +18682,8 @@ Output:
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on build directory
-   Compiling ars-dioxus v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
-   Compiling ars-test-harness-dioxus v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-test-harness-dioxus)
+   Compiling ars-dioxus v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
+   Compiling ars-test-harness-dioxus v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-test-harness-dioxus)
     Finished `test` profile [unoptimized + debuginfo] target(s) in 11.85s
      Running tests/field.rs (target/debug/deps/field-843892dbc1e2d5b3)
 
@@ -18724,7 +18724,7 @@ id: call_xQrKdwimM2PrbStRsMGzf2jM
 ```json
 {
   "cmd": "REDACTED WASM_BINDGEN_TEST_ONLY_WEB=1 cargo test -p ars-leptos --features csr --target wasm32-unknown-unknown --test test_form_wasm",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 24000
 }
@@ -18737,7 +18737,7 @@ id: call_BVHj9EYpd4h2Nd9Kg9fUY6uB
 ```json
 {
   "cmd": "REDACTED WASM_BINDGEN_TEST_ONLY_WEB=1 cargo test -p ars-dioxus --features web --target wasm32-unknown-unknown --test test_form_wasm",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 24000
 }
@@ -18753,9 +18753,9 @@ Wall time: 0.0000 seconds
 Process exited with code 1
 Original token count: 235
 Output:
-   Compiling ars-forms v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-forms)
-   Compiling ars-components v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-components)
-   Compiling ars-leptos v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-leptos)
+   Compiling ars-forms v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-forms)
+   Compiling ars-components v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-components)
+   Compiling ars-leptos v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-leptos)
     Finished `test` profile [unoptimized + debuginfo] target(s) in 8.99s
      Running tests/test_form_wasm.rs (target/wasm32-unknown-unknown/debug/deps/test_form_wasm-6c62dddc4090fcd7.wasm)
 Error: failed to spawn server
@@ -18765,7 +18765,7 @@ Caused by:
 error: test failed, to rerun pass `-p ars-leptos --test test_form_wasm`
 
 Caused by:
-  process didn't exit successfully: `wasm-bindgen-test-runner /Users/ericson/.codex/worktrees/55bb/ars-ui/target/wasm32-unknown-unknown/debug/deps/test_form_wasm-6c62dddc4090fcd7.wasm` (exit status: 1)
+  process didn't exit successfully: `wasm-bindgen-test-runner /home/<USER>/.codex/worktrees/55bb/ars-ui/target/wasm32-unknown-unknown/debug/deps/test_form_wasm-6c62dddc4090fcd7.wasm` (exit status: 1)
 note: test exited abnormally; to see the full output pass --no-capture to the harness.
 
 ```
@@ -18781,9 +18781,9 @@ Process exited with code 1
 Original token count: 248
 Output:
     Blocking waiting for file lock on build directory
-   Compiling ars-forms v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-forms)
-   Compiling ars-components v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-components)
-   Compiling ars-dioxus v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
+   Compiling ars-forms v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-forms)
+   Compiling ars-components v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-components)
+   Compiling ars-dioxus v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
     Finished `test` profile [unoptimized + debuginfo] target(s) in 16.65s
      Running tests/test_form_wasm.rs (target/wasm32-unknown-unknown/debug/deps/test_form_wasm-3b4bb32fec49453a.wasm)
 Error: failed to spawn server
@@ -18793,7 +18793,7 @@ Caused by:
 error: test failed, to rerun pass `-p ars-dioxus --test test_form_wasm`
 
 Caused by:
-  process didn't exit successfully: `wasm-bindgen-test-runner /Users/ericson/.codex/worktrees/55bb/ars-ui/target/wasm32-unknown-unknown/debug/deps/test_form_wasm-3b4bb32fec49453a.wasm` (exit status: 1)
+  process didn't exit successfully: `wasm-bindgen-test-runner /home/<USER>/.codex/worktrees/55bb/ars-ui/target/wasm32-unknown-unknown/debug/deps/test_form_wasm-3b4bb32fec49453a.wasm` (exit status: 1)
 note: test exited abnormally; to see the full output pass --no-capture to the harness.
 
 ```
@@ -18809,7 +18809,7 @@ id: call_A0REaDpCpbaE4sAiJGHpo5AF
 ```json
 {
   "cmd": "REDACTED WASM_BINDGEN_TEST_ONLY_WEB=1 cargo test -p ars-leptos --features csr --target wasm32-unknown-unknown --test test_form_wasm",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 24000,
   "sandbox_permissions": "require_escalated",
@@ -18828,7 +18828,7 @@ id: call_fIP7u8stz3kmpo45R7vm8YoI
 ```json
 {
   "cmd": "REDACTED WASM_BINDGEN_TEST_ONLY_WEB=1 cargo test -p ars-dioxus --features web --target wasm32-unknown-unknown --test test_form_wasm",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 24000,
   "sandbox_permissions": "require_escalated",
@@ -18918,7 +18918,7 @@ id: call_0oiOoBHtHXreYhMiCu41PGTz
 ```json
 {
   "cmd": "cargo xtask spec validate",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -18931,7 +18931,7 @@ id: call_UqhCic9hxGkfEAbCVMQZDkBN
 ```json
 {
   "cmd": "cargo xtask lint adapter-parity",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -18944,7 +18944,7 @@ id: call_hHjoR7ItZ5WPqf5DwrCpj7Ir
 ```json
 {
   "cmd": "rg 'unwrap_or_else\\(\\|\\| use_|map_or_else\\([^\\n]*use_' crates/ars-dioxus/src/utility/field.rs crates/ars-dioxus/src/utility/fieldset.rs crates/ars-dioxus/src/utility/form.rs crates/ars-dioxus/src/utility/field_support.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -19024,7 +19024,7 @@ id: call_qNCCa4Xue9UwD2nET3GKBKln
 ```json
 {
   "cmd": "cargo xclippy",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -19043,8 +19043,8 @@ Output:
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.14s
      Running `target/debug/xtask clippy`
   > cargo clippy --workspace --all-targets --all-features --exclude ars-i18n
-    Checking ars-dioxus v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
-    Checking ars-leptos v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-leptos)
+    Checking ars-dioxus v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
+    Checking ars-leptos v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-leptos)
 warning: consider adding a `;` to the last statement for consistent formatting
    --> crates/ars-leptos/src/utility/form.rs:247:13
     |
@@ -19055,11 +19055,11 @@ warning: consider adding a `;` to the last statement for consistent formatting
     = note: requested on the command line with `-W clippy::semicolon-if-nothing-returned`
 
 warning: `ars-leptos` (lib) generated 1 warning (run `cargo clippy --fix --lib -p ars-leptos -- ` to apply 1 suggestion)
-    Checking ars-leptos-components v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-leptos-components)
-    Checking ars-test-harness-leptos v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-test-harness-leptos)
+    Checking ars-leptos-components v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-leptos-components)
+    Checking ars-test-harness-leptos v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-test-harness-leptos)
 warning: `ars-leptos` (lib test) generated 1 warning (1 duplicate)
-    Checking ars-test-harness-dioxus v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-test-harness-dioxus)
-    Checking ars-dioxus-components v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus-components)
+    Checking ars-test-harness-dioxus v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-test-harness-dioxus)
+    Checking ars-dioxus-components v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus-components)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 9.34s
 warning: the following packages contain code that will be rejected by a future version of Rust: block v0.1.6
 note: to see what the problems were, use the option `--future-incompat-report`, or run `cargo report future-incompatibilities --id 1`
@@ -19081,7 +19081,7 @@ id: call_vD1M5lnt0YWcxOGTF6b0WOmd
 ```json
 {
   "cmd": "cargo xfmt",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 16000
 }
@@ -19094,7 +19094,7 @@ id: call_c6zaN9Ff6EW2WWPPyGv5RvP3
 ```json
 {
   "cmd": "cargo xclippy",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 24000
 }
@@ -19175,12 +19175,12 @@ Output:
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.21s
      Running `target/debug/xtask clippy`
   > cargo clippy --workspace --all-targets --all-features --exclude ars-i18n
-    Checking ars-dioxus v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
-    Checking ars-leptos v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-leptos)
-    Checking ars-leptos-components v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-leptos-components)
-    Checking ars-test-harness-dioxus v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-test-harness-dioxus)
-    Checking ars-dioxus-components v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus-components)
-    Checking ars-test-harness-leptos v0.1.0 (/Users/ericson/.codex/worktrees/55bb/ars-ui/crates/ars-test-harness-leptos)
+    Checking ars-dioxus v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus)
+    Checking ars-leptos v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-leptos)
+    Checking ars-leptos-components v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-leptos-components)
+    Checking ars-test-harness-dioxus v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-test-harness-dioxus)
+    Checking ars-dioxus-components v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-dioxus-components)
+    Checking ars-test-harness-leptos v0.1.0 (/home/<USER>/.codex/worktrees/55bb/ars-ui/crates/ars-test-harness-leptos)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 5.10s
 warning: the following packages contain code that will be rejected by a future version of Rust: block v0.1.6
 note: to see what the problems were, use the option `--future-incompat-report`, or run `cargo report future-incompatibilities --id 1`
@@ -19202,7 +19202,7 @@ id: call_hb3UZcB0AQtMjtWWNywMKZUd
 ```json
 {
   "cmd": "rg \"not exposed as a separate public child component|not a public child component|none\\s+\\| core live-region attrs|duplicate live-region\" spec/leptos-components/utility/form.md spec/dioxus-components/utility/form.md docs/implementation/sketches/332-423-field-form-counterpart-sketch.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 12000
 }
 ```
@@ -19214,7 +19214,7 @@ id: call_kQeGEyA9x07xLcqx2cBQZJWi
 ```json
 {
   "cmd": "git diff -- crates/ars-leptos/src/utility/form.rs crates/ars-dioxus/src/utility/form.rs crates/ars-leptos/tests/form.rs crates/ars-dioxus/tests/form.rs spec/leptos-components/utility/form.md spec/dioxus-components/utility/form.md docs/implementation/sketches/332-423-field-form-counterpart-sketch.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 30000
 }
 ```
@@ -19301,7 +19301,7 @@ id: call_58zZcj98mjnyLKX2fZw3uOTi
 ```json
 {
   "cmd": "git diff --check",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 12000
 }
 ```
@@ -19359,7 +19359,7 @@ id: call_LcgGDamxEkfmtYGcg0IRnQee
 ```json
 {
   "cmd": "rg \"compound|part|class|style|GlobalAttributes|styled|unstyled|StatusRegion|fallback|live region|status region\" docs/implementation/adapter-component-delivery.md docs/implementation/adapter-components .agents/skills -n",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 20000
 }
 ```
@@ -19371,7 +19371,7 @@ id: call_ZvD7txlG7iye1GBDP8Emeqbg
 ```json
 {
   "cmd": "ls docs/implementation/adapter-components .agents/skills",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 12000
 }
 ```
@@ -19487,7 +19487,7 @@ id: call_aQLYWClJUQd5TWiskQG6w0zu
 ```json
 {
   "cmd": "sed -n '1,230p' docs/implementation/adapter-components/02-adapter-api-and-wiring.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 20000
 }
 ```
@@ -19499,7 +19499,7 @@ id: call_qJpbX3DGULh6VEnNVNBM4rJf
 ```json
 {
   "cmd": "sed -n '1,180p' docs/implementation/adapter-components/03-framework-rules.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 16000
 }
 ```
@@ -19511,7 +19511,7 @@ id: call_wnpIfEfySt1W6VZxNfxLOUYR
 ```json
 {
   "cmd": "sed -n '1,180p' docs/implementation/adapter-components/04-adapter-tests.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 16000
 }
 ```
@@ -19523,7 +19523,7 @@ id: call_pHSbSuN2P2JI8hFzzFiICjBf
 ```json
 {
   "cmd": "sed -n '90,145p' .agents/skills/leptos/SKILL.md && sed -n '80,125p' .agents/skills/dioxus/SKILL.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 14000
 }
 ```
@@ -19729,7 +19729,7 @@ id: call_1NBoxXVm0GKjMZZOkvzoLjNZ
 ```json
 {
   "cmd": "sed -n '330,390p' .agents/skills/post-implementation-audit/SKILL.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 10000
 }
 ```
@@ -19802,7 +19802,7 @@ id: call_38aeKQlQGcVPrerKZc6NiSsq
 ```json
 {
   "cmd": "rg \"Unstyled does not mean unstylable|unstyled does\\s+not mean unstylable|Required Structural Parts|fallback when the part is omitted|child component side effect|public stylable part\" docs/implementation/adapter-components/02-adapter-api-and-wiring.md docs/implementation/adapter-components/03-framework-rules.md docs/implementation/adapter-components/04-adapter-tests.md .agents/skills/leptos/SKILL.md .agents/skills/dioxus/SKILL.md .agents/skills/post-implementation-audit/SKILL.md -n",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 20000
 }
 ```
@@ -19814,7 +19814,7 @@ id: call_ptIsQX1iYuNhGf5SMoitjxs1
 ```json
 {
   "cmd": "git diff --check",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 12000
 }
 ```
@@ -19826,7 +19826,7 @@ id: call_Hh1rvh67usQV6IVT82iwFGZV
 ```json
 {
   "cmd": "git diff -- docs/implementation/adapter-components/02-adapter-api-and-wiring.md docs/implementation/adapter-components/03-framework-rules.md docs/implementation/adapter-components/04-adapter-tests.md .agents/skills/leptos/SKILL.md .agents/skills/dioxus/SKILL.md .agents/skills/post-implementation-audit/SKILL.md",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 26000
 }
 ```
@@ -19940,7 +19940,7 @@ id: call_JhtBU98ksL1uaW49uYARbQp3
 ```json
 {
   "cmd": "rg \"pub fn Root|pub fn Checkbox|pub fn Fieldset|pub fn Field\\(|pub fn Form\\(|pub use.*Root\" crates/ars-leptos/src/input/checkbox.rs crates/ars-dioxus/src/input/checkbox.rs crates/ars-leptos/src/utility/field.rs crates/ars-leptos/src/utility/fieldset.rs crates/ars-leptos/src/utility/form.rs crates/ars-dioxus/src/utility/field.rs crates/ars-dioxus/src/utility/fieldset.rs crates/ars-dioxus/src/utility/form.rs -n",
-  "workdir": "/Users/ericson/.codex/worktrees/55bb/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/55bb/ars-ui",
   "max_output_tokens": 12000
 }
 ```

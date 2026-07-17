@@ -46,7 +46,7 @@ tool_use Read
 id: toolu_01BZZJiz9jydmjrhSqvNQHrD
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/index.njk"
+  "file_path": "/home/<USER>/bosarsa/src/index.njk"
 }
 ```
 
@@ -73,7 +73,7 @@ id: toolu_01BZZJiz9jydmjrhSqvNQHrD
     16→  description: "Österreichischer Amateurfunkverein der Behörden und Organisationen mit Sicherheitsaufgaben"
     17→  url: "https://bosarsa.oeradio.at"
     18→  logo: "https://bosarsa.oeradio.at/logo.webp?v=2"
-    19→  email: "office@bos-arsa.at"
+    19→  email: "<REDACTED_EMAIL>"
     20→  address:
     21→    "@type": "PostalAddress"
     22→    streetAddress: "Buchengasse 3"
@@ -111,7 +111,7 @@ tool_use Read
 id: toolu_01B8rsuGWCPinYKRWAK6jM59
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/css/index.css"
+  "file_path": "/home/<USER>/bosarsa/src/css/index.css"
 }
 ```
 
@@ -170,7 +170,7 @@ tool_use Read
 id: toolu_018w9sMwZrsuv3A6c14i72cq
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/_includes/nav.njk"
+  "file_path": "/home/<USER>/bosarsa/src/_includes/nav.njk"
 }
 ```
 
@@ -264,7 +264,7 @@ id: toolu_012T5UhZD85sBfJ6q7NDsr4Q
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/index.njk",
+  "file_path": "/home/<USER>/bosarsa/src/index.njk",
   "old_string": "  <!-- Mitglied werden -->\n  <section class=\"section join\" id=\"mitglied\">",
   "new_string": "  <!-- Funkbetrieb -->\n  <section class=\"section section--alt\" id=\"funkbetrieb\">\n    <div class=\"container\">\n      <div class=\"section__header reveal\">\n        <span class=\"section__label\">Funkbetrieb</span>\n        <h2 class=\"section__title\">Unsere Übungsrunden</h2>\n        <div class=\"section__rule\"></div>\n        <p class=\"section__intro\">Regelmäßige Funkübungen stärken die Einsatzbereitschaft — damit im Ernstfall jeder Handgriff sitzt.</p>\n      </div>\n      <div class=\"schedule-grid\">\n        <div class=\"schedule-card reveal\">\n          <div class=\"schedule-card__icon\">\n            <i data-lucide=\"radio-tower\" style=\"width:24px;height:24px;\"></i>\n          </div>\n          <h3 class=\"schedule-card__title\">Krisenkommunikationsübung</h3>\n          <span class=\"schedule-card__badge\">Jeden Sonntag</span>\n          <div class=\"schedule-card__freq\">\n            <span>OE8XNK — 145.7625 MHz</span>\n            <span>−0,6 MHz Offset</span>\n          </div>\n          <p class=\"schedule-card__text\">Start ab 18:45 Lokalzeit auf der Gerlitzen (2m). Abfrage auf Kärntner Repeatern, dann Direktfrequenz. Österreichweit über den OE-Link-Verbund.</p>\n        </div>\n        <div class=\"schedule-card reveal\">\n          <div class=\"schedule-card__icon\">\n            <i data-lucide=\"globe\" style=\"width:24px;height:24px;\"></i>\n          </div>\n          <h3 class=\"schedule-card__title\">Notfunk Runde Österreich</h3>\n          <span class=\"schedule-card__badge\">Jeden 1. Mittwoch/Monat</span>\n          <div class=\"schedule-card__freq\">\n            <span>3643 kHz ± QRM</span>\n          </div>\n          <p class=\"schedule-card__text\">Monatliche Notfunk-Runde für ganz Österreich ab 17:15 UTC auf der Kurzwelle.</p>\n        </div>\n      </div>\n    </div>\n  </section>\n\n  <!-- Mitglied werden -->\n  <section class=\"section join\" id=\"mitglied\">"
 }
@@ -275,7 +275,7 @@ id: toolu_012T5UhZD85sBfJ6q7NDsr4Q
 tool_result
 id: toolu_012T5UhZD85sBfJ6q7NDsr4Q
 ```
-The file /home/achildrenmile/bosarsa/src/index.njk has been updated successfully.
+The file /home/<USER>/bosarsa/src/index.njk has been updated successfully.
 ```
 
 > TOOL
@@ -285,7 +285,7 @@ id: toolu_01UPzJ8JShYWmNcnoYh42w2b
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/_includes/nav.njk",
+  "file_path": "/home/<USER>/bosarsa/src/_includes/nav.njk",
   "old_string": "      <li><a href=\"{{ prefix }}ziele\">Ziele</a></li>\n      <li><a href=\"{{ prefix }}mitglied\">Mitglied werden</a></li>",
   "new_string": "      <li><a href=\"{{ prefix }}ziele\">Ziele</a></li>\n      <li><a href=\"{{ prefix }}funkbetrieb\">Funkbetrieb</a></li>\n      <li><a href=\"{{ prefix }}mitglied\">Mitglied werden</a></li>"
 }
@@ -296,7 +296,7 @@ id: toolu_01UPzJ8JShYWmNcnoYh42w2b
 tool_result
 id: toolu_01UPzJ8JShYWmNcnoYh42w2b
 ```
-The file /home/achildrenmile/bosarsa/src/_includes/nav.njk has been updated successfully.
+The file /home/<USER>/bosarsa/src/_includes/nav.njk has been updated successfully.
 ```
 
 > TOOL
@@ -306,7 +306,7 @@ id: toolu_019JciZSmmw5epeWabgiSgqH
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/css/index.css",
+  "file_path": "/home/<USER>/bosarsa/src/css/index.css",
   "old_string": "/* ===== Join Section ===== */",
   "new_string": "/* ===== Schedule (Funkbetrieb) ===== */\n.schedule-grid {\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  gap: 24px;\n}\n.schedule-card {\n  background: var(--white);\n  border: 1px solid var(--gray-100);\n  border-radius: var(--radius);\n  padding: 36px 28px;\n  transition: transform .25s, box-shadow .25s;\n  position: relative;\n}\n.schedule-card::after {\n  content: '';\n  position: absolute;\n  bottom: 0; left: 0; right: 0;\n  height: 3px;\n  background: var(--bos-gold);\n  transform: scaleX(0);\n  transform-origin: left;\n  transition: transform .35s;\n}\n.schedule-card:hover {\n  transform: translateY(-3px);\n  box-shadow: 0 8px 28px rgba(15,26,46,.08);\n}\n.schedule-card:hover::after { transform: scaleX(1); }\n.schedule-card__icon {\n  width: 48px; height: 48px;\n  display: flex; align-items: center; justify-content: center;\n  background: var(--polizei-navy); color: var(--bos-gold);\n  border-radius: var(--radius); margin-bottom: 18px;\n}\n.schedule-card__title {\n  font-size: 1.05rem; font-weight: 700;\n  color: var(--gray-900); margin-bottom: 10px;\n}\n.schedule-card__badge {\n  display: inline-block;\n  font-family: var(--font-mono);\n  font-size: .72rem;\n  font-weight: 600;\n  letter-spacing: 1px;\n  text-transform: uppercase;\n  color: var(--polizei-mid);\n  background: rgba(59,90,140,.08);\n  padding: 4px 12px;\n  border-radius: 100px;\n  margin-bottom: 16px;\n}\n.schedule-card__freq {\n  font-family: var(--font-mono);\n  font-size: .92rem;\n  font-weight: 600;\n  color: var(--bos-gold);\n  background: rgba(27,42,74,.04);\n  border-left: 3px solid var(--bos-gold);\n  padding: 10px 14px;\n  border-radius: 0 var(--radius) var(--radius) 0;\n  margin-bottom: 16px;\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.schedule-card__text {\n  color: var(--gray-500); font-size: .9rem; line-height: 1.6;\n}\n\n/* ===== Join Section ===== */"
 }
@@ -317,7 +317,7 @@ id: toolu_019JciZSmmw5epeWabgiSgqH
 tool_result
 id: toolu_019JciZSmmw5epeWabgiSgqH
 ```
-The file /home/achildrenmile/bosarsa/src/css/index.css has been updated successfully.
+The file /home/<USER>/bosarsa/src/css/index.css has been updated successfully.
 ```
 
 > AGENT
@@ -331,7 +331,7 @@ id: toolu_016hXvghtan3Hgg23MsZfPY5
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/css/index.css",
+  "file_path": "/home/<USER>/bosarsa/src/css/index.css",
   "old_string": "  .join__orgs { grid-template-columns: repeat(2, 1fr); }\n  .join__foerder { flex-direction: column; text-align: center; }\n}",
   "new_string": "  .join__orgs { grid-template-columns: repeat(2, 1fr); }\n  .join__foerder { flex-direction: column; text-align: center; }\n  .schedule-grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }\n}"
 }
@@ -342,7 +342,7 @@ id: toolu_016hXvghtan3Hgg23MsZfPY5
 tool_result
 id: toolu_016hXvghtan3Hgg23MsZfPY5
 ```
-The file /home/achildrenmile/bosarsa/src/css/index.css has been updated successfully.
+The file /home/<USER>/bosarsa/src/css/index.css has been updated successfully.
 ```
 
 > AGENT
@@ -387,7 +387,7 @@ id: toolu_0148k4uQvokdit7VVgAFcywS
 ```json
 {
   "pattern": "id=\"(ziele|funkbetrieb|mitglied)\"",
-  "path": "/home/achildrenmile/bosarsa/_site/index.html",
+  "path": "/home/<USER>/bosarsa/_site/index.html",
   "output_mode": "content"
 }
 ```
@@ -586,7 +586,7 @@ tool_use Bash
 id: toolu_01CLhynH6Z6au7bAXKh8mwg1
 ```json
 {
-  "command": "git add src/_includes/nav.njk src/css/index.css src/index.njk && git commit -m \"$(cat <<'EOF'\nFunkbetrieb-Sektion mit Übungsrunden auf Startseite hinzufügen\n\nNeue Sektion zwischen Ziele und Mitglied werden mit zwei Schedule-Karten\n(Krisenkommunikationsübung sonntags, Notfunk Runde monatlich) und Nav-Link.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\" && git status",
+  "command": "git add src/_includes/nav.njk src/css/index.css src/index.njk && git commit -m \"$(cat <<'EOF'\nFunkbetrieb-Sektion mit Übungsrunden auf Startseite hinzufügen\n\nNeue Sektion zwischen Ziele und Mitglied werden mit zwei Schedule-Karten\n(Krisenkommunikationsübung sonntags, Notfunk Runde monatlich) und Nav-Link.\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\" && git status",
   "description": "Stage, commit, and verify"
 }
 ```
@@ -666,7 +666,7 @@ tool_use Bash
 id: toolu_016iQ5J8Yk2xUaNX2gQWkdLm
 ```json
 {
-  "command": "ls /home/achildrenmile/bosarsa/Dockerfile /home/achildrenmile/bosarsa/docker-compose* 2>/dev/null",
+  "command": "ls /home/<USER>/bosarsa/Dockerfile /home/<USER>/bosarsa/docker-compose* 2>/dev/null",
   "description": "Check for Docker deployment files"
 }
 ```
@@ -676,8 +676,8 @@ id: toolu_016iQ5J8Yk2xUaNX2gQWkdLm
 tool_result
 id: toolu_016iQ5J8Yk2xUaNX2gQWkdLm
 ```
-/home/achildrenmile/bosarsa/docker-compose.yml
-/home/achildrenmile/bosarsa/Dockerfile
+/home/<USER>/bosarsa/docker-compose.yml
+/home/<USER>/bosarsa/Dockerfile
 ```
 
 > TOOL
@@ -686,7 +686,7 @@ tool_use Read
 id: toolu_016Hj4CMMFnzqPGLooBmEFP6
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/docker-compose.yml"
+  "file_path": "/home/<USER>/bosarsa/docker-compose.yml"
 }
 ```
 
@@ -915,7 +915,7 @@ tool_use Bash
 id: toolu_013zekN724pvsHhSU2CBRjLr
 ```json
 {
-  "command": "ls /home/achildrenmile/bosarsa/deploy* /home/achildrenmile/bosarsa/scripts/deploy* /home/achildrenmile/bosarsa/Makefile 2>/dev/null",
+  "command": "ls /home/<USER>/bosarsa/deploy* /home/<USER>/bosarsa/scripts/deploy* /home/<USER>/bosarsa/Makefile 2>/dev/null",
   "description": "Look for deploy scripts"
 }
 ```
@@ -926,7 +926,7 @@ tool_result ERROR
 id: toolu_013zekN724pvsHhSU2CBRjLr
 ```
 Exit code 2
-/home/achildrenmile/bosarsa/deploy-production.sh
+/home/<USER>/bosarsa/deploy-production.sh
 ```
 
 > TOOL
@@ -936,7 +936,7 @@ id: toolu_01KbebWbro8Xp68H1JEK15Cs
 ```json
 {
   "pattern": "**/deploy*",
-  "path": "/home/achildrenmile/bosarsa"
+  "path": "/home/<USER>/bosarsa"
 }
 ```
 
@@ -954,7 +954,7 @@ tool_use Read
 id: toolu_016ubZhcZuHu8YTwTSLhCTYe
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/deploy-production.sh"
+  "file_path": "/home/<USER>/bosarsa/deploy-production.sh"
 }
 ```
 
@@ -1040,7 +1040,7 @@ id: toolu_016XEg8cb5sho7Vf7Uutv5Ge
 ```
 [0;32m=== Deploying BOS-ARSA to achildrenmile@host-node-01 ===[0m
 Host: achildrenmile@host-node-01
-Remote dir: /home/achildrenmile/apps/bosarsa
+Remote dir: /home/<USER>/apps/bosarsa
 Container: bosarsa
 Port: 3417:80
 
@@ -1133,7 +1133,7 @@ tool_use Read
 id: toolu_014XaftxLvoRRsXVUmh3dsyx
 ```json
 {
-  "file_path": "/home/achildrenmile/.claude/projects/-home-achildrenmile-bosarsa/memory/MEMORY.md"
+  "file_path": "/home/<USER>/.claude/projects/-home-achildrenmile-bosarsa/memory/MEMORY.md"
 }
 ```
 
@@ -1180,7 +1180,7 @@ id: toolu_01XYy6tJjxgsHuAwUJXE9757
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/.claude/projects/-home-achildrenmile-bosarsa/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-home-achildrenmile-bosarsa/memory/MEMORY.md",
   "old_string": "- **Deployment**: Docker multi-stage (node build -> nginx serve), Cloudflare tunnel",
   "new_string": "- **Deployment**: Docker multi-stage (node build -> nginx serve), Cloudflare tunnel\n- **Deploy command**: `bash deploy-production.sh` (rsync to `achildrenmile@host-node-01`, docker build+restart remotely). NEVER build/deploy locally!"
 }
@@ -1191,7 +1191,7 @@ id: toolu_01XYy6tJjxgsHuAwUJXE9757
 tool_result
 id: toolu_01XYy6tJjxgsHuAwUJXE9757
 ```
-The file /home/achildrenmile/.claude/projects/-home-achildrenmile-bosarsa/memory/MEMORY.md has been updated successfully.
+The file /home/<USER>/.claude/projects/-home-achildrenmile-bosarsa/memory/MEMORY.md has been updated successfully.
 ```
 
 > AGENT
@@ -1289,7 +1289,7 @@ id: toolu_01R1QJBHeouYr8f7o1r2EiT4
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/index.njk",
+  "file_path": "/home/<USER>/bosarsa/src/index.njk",
   "old_string": "      <div class=\"schedule-grid\">\n        <div class=\"schedule-card reveal\">\n          <div class=\"schedule-card__icon\">\n            <i data-lucide=\"radio-tower\" style=\"width:24px;height:24px;\"></i>\n          </div>\n          <h3 class=\"schedule-card__title\">Krisenkommunikationsübung</h3>\n          <span class=\"schedule-card__badge\">Jeden Sonntag</span>\n          <div class=\"schedule-card__freq\">\n            <span>OE8XNK — 145.7625 MHz</span>\n            <span>−0,6 MHz Offset</span>\n          </div>\n          <p class=\"schedule-card__text\">Start ab 18:45 Lokalzeit auf der Gerlitzen (2m). Abfrage auf Kärntner Repeatern, dann Direktfrequenz. Österreichweit über den OE-Link-Verbund.</p>\n        </div>\n        <div class=\"schedule-card reveal\">\n          <div class=\"schedule-card__icon\">\n            <i data-lucide=\"globe\" style=\"width:24px;height:24px;\"></i>\n          </div>\n          <h3 class=\"schedule-card__title\">Notfunk Runde Österreich</h3>\n          <span class=\"schedule-card__badge\">Jeden 1. Mittwoch/Monat</span>\n          <div class=\"schedule-card__freq\">\n            <span>3643 kHz ± QRM</span>\n          </div>\n          <p class=\"schedule-card__text\">Monatliche Notfunk-Runde für ganz Österreich ab 17:15 UTC auf der Kurzwelle.</p>\n        </div>\n      </div>",
   "new_string": "      <div class=\"schedule-grid reveal\">\n        <div class=\"schedule-item\">\n          <h3 class=\"schedule-item__title\">Krisenkommunikationsübung</h3>\n          <p class=\"schedule-item__time\">Jeden Sonntag ab 18:45 Lokalzeit</p>\n          <p class=\"schedule-item__freq\">OE8XNK — 145.7625 MHz · −0,6 MHz Offset</p>\n          <p class=\"schedule-item__desc\">Start auf der Gerlitzen (2m), Abfrage auf Kärntner Repeatern, dann Direktfrequenz. Österreichweit über den OE-Link-Verbund.</p>\n        </div>\n        <div class=\"schedule-item\">\n          <h3 class=\"schedule-item__title\">Notfunk Runde Österreich</h3>\n          <p class=\"schedule-item__time\">Jeden 1. Mittwoch im Monat, 17:15 UTC</p>\n          <p class=\"schedule-item__freq\">3643 kHz ± QRM</p>\n          <p class=\"schedule-item__desc\">Monatliche Notfunk-Runde für ganz Österreich auf der Kurzwelle.</p>\n        </div>\n      </div>"
 }
@@ -1300,7 +1300,7 @@ id: toolu_01R1QJBHeouYr8f7o1r2EiT4
 tool_result
 id: toolu_01R1QJBHeouYr8f7o1r2EiT4
 ```
-The file /home/achildrenmile/bosarsa/src/index.njk has been updated successfully.
+The file /home/<USER>/bosarsa/src/index.njk has been updated successfully.
 ```
 
 > AGENT
@@ -1314,7 +1314,7 @@ id: toolu_016fY3SqwAzBrRpCepy21Yrb
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/css/index.css",
+  "file_path": "/home/<USER>/bosarsa/src/css/index.css",
   "old_string": "/* ===== Schedule (Funkbetrieb) ===== */\n.schedule-grid {\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  gap: 24px;\n}\n.schedule-card {\n  background: var(--white);\n  border: 1px solid var(--gray-100);\n  border-radius: var(--radius);\n  padding: 36px 28px;\n  transition: transform .25s, box-shadow .25s;\n  position: relative;\n}\n.schedule-card::after {\n  content: '';\n  position: absolute;\n  bottom: 0; left: 0; right: 0;\n  height: 3px;\n  background: var(--bos-gold);\n  transform: scaleX(0);\n  transform-origin: left;\n  transition: transform .35s;\n}\n.schedule-card:hover {\n  transform: translateY(-3px);\n  box-shadow: 0 8px 28px rgba(15,26,46,.08);\n}\n.schedule-card:hover::after { transform: scaleX(1); }\n.schedule-card__icon {\n  width: 48px; height: 48px;\n  display: flex; align-items: center; justify-content: center;\n  background: var(--polizei-navy); color: var(--bos-gold);\n  border-radius: var(--radius); margin-bottom: 18px;\n}\n.schedule-card__title {\n  font-size: 1.05rem; font-weight: 700;\n  color: var(--gray-900); margin-bottom: 10px;\n}\n.schedule-card__badge {\n  display: inline-block;\n  font-family: var(--font-mono);\n  font-size: .72rem;\n  font-weight: 600;\n  letter-spacing: 1px;\n  text-transform: uppercase;\n  color: var(--polizei-mid);\n  background: rgba(59,90,140,.08);\n  padding: 4px 12px;\n  border-radius: 100px;\n  margin-bottom: 16px;\n}\n.schedule-card__freq {\n  font-family: var(--font-mono);\n  font-size: .92rem;\n  font-weight: 600;\n  color: var(--bos-gold);\n  background: rgba(27,42,74,.04);\n  border-left: 3px solid var(--bos-gold);\n  padding: 10px 14px;\n  border-radius: 0 var(--radius) var(--radius) 0;\n  margin-bottom: 16px;\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.schedule-card__text {\n  color: var(--gray-500); font-size: .9rem; line-height: 1.6;\n}",
   "new_string": "/* ===== Schedule (Funkbetrieb) ===== */\n.schedule-grid {\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  gap: 48px;\n}\n.schedule-item__title {\n  font-size: 1.05rem; font-weight: 700;\n  color: var(--gray-900); margin-bottom: 6px;\n}\n.schedule-item__time {\n  font-size: .88rem; font-weight: 600;\n  color: var(--polizei-mid); margin-bottom: […]
 
@@ -1323,7 +1323,7 @@ id: toolu_016fY3SqwAzBrRpCepy21Yrb
 tool_result
 id: toolu_016fY3SqwAzBrRpCepy21Yrb
 ```
-The file /home/achildrenmile/bosarsa/src/css/index.css has been updated successfully.
+The file /home/<USER>/bosarsa/src/css/index.css has been updated successfully.
 ```
 
 > TOOL
@@ -1333,7 +1333,7 @@ id: toolu_01CyHBYzD71Y1BoYnMxAmik7
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/css/index.css",
+  "file_path": "/home/<USER>/bosarsa/src/css/index.css",
   "old_string": "  .schedule-grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }",
   "new_string": "  .schedule-grid { grid-template-columns: 1fr; gap: 32px; }"
 }
@@ -1344,7 +1344,7 @@ id: toolu_01CyHBYzD71Y1BoYnMxAmik7
 tool_result
 id: toolu_01CyHBYzD71Y1BoYnMxAmik7
 ```
-The file /home/achildrenmile/bosarsa/src/css/index.css has been updated successfully.
+The file /home/<USER>/bosarsa/src/css/index.css has been updated successfully.
 ```
 
 > TOOL
@@ -1384,7 +1384,7 @@ tool_use Bash
 id: toolu_01HqPd1FQiNW51QwSXJXoPW3
 ```json
 {
-  "command": "git add src/index.njk src/css/index.css && git commit -m \"$(cat <<'EOF'\nFunkbetrieb-Karten durch schlichte Text-Spalten ersetzen\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\" && git push origin master",
+  "command": "git add src/index.njk src/css/index.css && git commit -m \"$(cat <<'EOF'\nFunkbetrieb-Karten durch schlichte Text-Spalten ersetzen\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\" && git push origin master",
   "description": "Commit and push changes"
 }
 ```
@@ -1419,7 +1419,7 @@ id: toolu_01STpUgeC2JeJRMWyFNfq9gL
 ```
 [0;32m=== Deploying BOS-ARSA to achildrenmile@host-node-01 ===[0m
 Host: achildrenmile@host-node-01
-Remote dir: /home/achildrenmile/apps/bosarsa
+Remote dir: /home/<USER>/apps/bosarsa
 Container: bosarsa
 Port: 3417:80
 
@@ -1506,7 +1506,7 @@ tool_use Read
 id: toolu_01MyMdZ1ZuTcqbCa4BaS5Jut
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/_includes/nav.njk"
+  "file_path": "/home/<USER>/bosarsa/src/_includes/nav.njk"
 }
 ```
 
@@ -1594,7 +1594,7 @@ tool_use Read
 id: toolu_01MDtxaFpRDRXuiqVSohWwCN
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/_includes/footer.njk"
+  "file_path": "/home/<USER>/bosarsa/src/_includes/footer.njk"
 }
 ```
 
@@ -1662,7 +1662,7 @@ id: toolu_01A9AfVH8i5z1xisDToiKAck
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/_includes/footer.njk",
+  "file_path": "/home/<USER>/bosarsa/src/_includes/footer.njk",
   "old_string": "          <li><a href=\"/#ziele\">Ziele</a></li>\n          <li><a href=\"/#mitglied\">Mitglied werden</a></li>\n          <li><a href=\"mailto:{{ site.email }}\">Kontakt</a></li>",
   "new_string": "          <li><a href=\"/#ziele\">Ziele</a></li>\n          <li><a href=\"/#funkbetrieb\">Funkbetrieb</a></li>\n          <li><a href=\"/#mitglied\">Mitglied werden</a></li>\n          <li><a href=\"/presse/\">Presse</a></li>\n          <li><a href=\"mailto:{{ site.email }}\">Kontakt</a></li>"
 }
@@ -1673,7 +1673,7 @@ id: toolu_01A9AfVH8i5z1xisDToiKAck
 tool_result
 id: toolu_01A9AfVH8i5z1xisDToiKAck
 ```
-The file /home/achildrenmile/bosarsa/src/_includes/footer.njk has been updated successfully.
+The file /home/<USER>/bosarsa/src/_includes/footer.njk has been updated successfully.
 ```
 
 > TOOL
@@ -1709,7 +1709,7 @@ tool_use Bash
 id: toolu_014taqq6yNGCQZWaAvBJA7ge
 ```json
 {
-  "command": "git add src/_includes/footer.njk && git commit -m \"$(cat <<'EOF'\nPresse und Funkbetrieb in Footer-Navigation ergänzen\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\" && git push origin master",
+  "command": "git add src/_includes/footer.njk && git commit -m \"$(cat <<'EOF'\nPresse und Funkbetrieb in Footer-Navigation ergänzen\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\" && git push origin master",
   "description": "Commit and push"
 }
 ```
@@ -1745,7 +1745,7 @@ id: toolu_01QQz1NPv48tGrvvKBYvrGZ6
 ```
 [0;32m=== Deploying BOS-ARSA to achildrenmile@host-node-01 ===[0m
 Host: achildrenmile@host-node-01
-Remote dir: /home/achildrenmile/apps/bosarsa
+Remote dir: /home/<USER>/apps/bosarsa
 Container: bosarsa
 Port: 3417:80
 
@@ -1829,7 +1829,7 @@ id: toolu_01GrUkVWBnX9aYrzTiAU69wz
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/_includes/footer.njk",
+  "file_path": "/home/<USER>/bosarsa/src/_includes/footer.njk",
   "old_string": "          <li><a href=\"/impressum/\">Impressum</a></li>\n          <li><a href=\"/datenschutz/\">Datenschutz</a></li>\n          <li><a href=\"/presse/\">Presse</a></li>\n          <li><a href=\"https://bosarsalog.oeradio.at\" target=\"_blank\" rel=\"noopener noreferrer\">bosarsalog.oeradio.at</a></li>",
   "new_string": "          <li><a href=\"/impressum/\">Impressum</a></li>\n          <li><a href=\"/datenschutz/\">Datenschutz</a></li>\n          <li><a href=\"https://bosarsalog.oeradio.at\" target=\"_blank\" rel=\"noopener noreferrer\">bosarsalog.oeradio.at</a></li>"
 }
@@ -1840,7 +1840,7 @@ id: toolu_01GrUkVWBnX9aYrzTiAU69wz
 tool_result
 id: toolu_01GrUkVWBnX9aYrzTiAU69wz
 ```
-The file /home/achildrenmile/bosarsa/src/_includes/footer.njk has been updated successfully.
+The file /home/<USER>/bosarsa/src/_includes/footer.njk has been updated successfully.
 ```
 
 > TOOL
@@ -1849,7 +1849,7 @@ tool_use Bash
 id: toolu_01LZyVfDJE6DQxw1rnCpB2bX
 ```json
 {
-  "command": "nix-shell -p nodejs_20 --run \"npx @11ty/eleventy\" 2>&1 && git add src/_includes/footer.njk && git commit -m \"$(cat <<'EOF'\nPresse aus Rechtliches & Links entfernen (bereits in Navigation)\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\" && git push origin master",
+  "command": "nix-shell -p nodejs_20 --run \"npx @11ty/eleventy\" 2>&1 && git add src/_includes/footer.njk && git commit -m \"$(cat <<'EOF'\nPresse aus Rechtliches & Links entfernen (bereits in Navigation)\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\" && git push origin master",
   "description": "Build, commit and push"
 }
 ```
@@ -1892,7 +1892,7 @@ id: toolu_015Yq7H2Y6zn2usLxuLTuvN5
 ```
 [0;32m=== Deploying BOS-ARSA to achildrenmile@host-node-01 ===[0m
 Host: achildrenmile@host-node-01
-Remote dir: /home/achildrenmile/apps/bosarsa
+Remote dir: /home/<USER>/apps/bosarsa
 Container: bosarsa
 Port: 3417:80
 
@@ -1975,7 +1975,7 @@ id: toolu_01HDTuHBCv9Les9xhuVy3Lvw
 ```json
 {
   "description": "Check all external links",
-  "prompt": "Search the entire /home/achildrenmile/bosarsa/src/ directory for all external links (href=\"http\" or href=\"https\"). List every unique external URL found, grouped by file. Also check for any mailto: links. Be thorough - check all .njk, .html, .json files.",
+  "prompt": "Search the entire /home/<USER>/bosarsa/src/ directory for all external links (href=\"http\" or href=\"https\"). List every unique external URL found, grouped by file. Also check for any mailto: links. Be thorough - check all .njk, .html, .json files.",
   "subagent_type": "Explore"
 }
 ```
@@ -1986,7 +1986,7 @@ tool_use Read
 id: toolu_01Ra5iJfU4G432PWLR5gCEX8
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/datenschutz.njk"
+  "file_path": "/home/<USER>/bosarsa/src/datenschutz.njk"
 }
 ```
 
@@ -2042,7 +2042,7 @@ tool_use Read
 id: toolu_01EEB1tQLjgCzjWKKyRmJdgX
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/impressum.njk"
+  "file_path": "/home/<USER>/bosarsa/src/impressum.njk"
 }
 ```
 
@@ -2113,13 +2113,13 @@ id: toolu_01EEB1tQLjgCzjWKKyRmJdgX
 tool_result
 id: toolu_01HDTuHBCv9Les9xhuVy3Lvw
 ```
-Perfect! Now let me compile the complete findings. Here's the comprehensive report of all external links found in the `/home/achildrenmile/bosarsa/src/` directory:
+Perfect! Now let me compile the complete findings. Here's the comprehensive report of all external links found in the `/home/<USER>/bosarsa/src/` directory:
 
 ## External Links Report
 
 ### By File
 
-**`/home/achildrenmile/bosarsa/src/index.njk`**
+**`/home/<USER>/bosarsa/src/index.njk`**
 - https://www.polizei.gv.at
 - https://www.bundesfeuerwehrverband.at
 - https://www.roteskreuz.at
@@ -2135,27 +2135,27 @@ Perfect! Now let me compile the complete findings. Here's the comprehensive repo
 - https://bosarsalog.oeradio.at (sameAs URL)
 - https://oevsv.at (organization URL)
 
-**`/home/achildrenmile/bosarsa/src/datenschutz.njk`**
+**`/home/<USER>/bosarsa/src/datenschutz.njk`**
 - https://www.cloudflare.com/privacypolicy/
 - https://bosarsa.oeradio.at (canonical)
 
-**`/home/achildrenmile/bosarsa/src/impressum.njk`**
+**`/home/<USER>/bosarsa/src/impressum.njk`**
 - https://bosarsa.oeradio.at (canonical)
 
-**`/home/achildrenmile/bosarsa/src/presse.njk`**
+**`/home/<USER>/bosarsa/src/presse.njk`**
 - https://bosarsa.oeradio.at (canonical)
 
-**`/home/achildrenmile/bosarsa/src/_includes/footer.njk`**
+**`/home/<USER>/bosarsa/src/_includes/footer.njk`**
 - https://bosarsalog.oeradio.at
 - https://oeradio.at
 
-**`/home/achildrenmile/bosarsa/src/_includes/base.njk`**
+**`/home/<USER>/bosarsa/src/_includes/base.njk`**
 - https://unpkg.com/lucide@latest (script source)
 
-**`/home/achildrenmile/bosarsa/src/_data/site.json`**
+**`/home/<USER>/bosarsa/src/_data/site.json`**
 - https://bosarsa.oeradio.at
 
-**`/home/achildrenmile/bosarsa/src/_data/presse.json`**
+**`/home/<USER>/bosarsa/src/_data/presse.json`**
 - https://www.oevsv.at/export/shared/.content/.galleries/qsp_downloadgallery/2025_qsp_downloadgallery/QSP_06-2025.pdf
 - https://www.oevsv.at/export/shared/.content/.galleries/qsp_downloadgallery/2024_qsp_downloadgallery/QSP_12-2024.pdf
 - https://www.oevsv.at/export/shared/.content/.galleries/qsp_downloadgallery/2022_qsp_downloadgallery/QSP_07-08_2022.pdf
@@ -2167,7 +2167,7 @@ Perfect! Now let me compile the complete findings. Here's the comprehensive repo
 - https://www.oevsv.REDACTED
 - https://www.meinbezirk.at/klagenfurt-land/c-leute/die-welt-der-funkamateure_a4596338
 
-**`/home/achildrenmile/bosarsa/src/llms.njk`**
+**`/home/<USER>/bosarsa/src/llms.njk`**
 - https://bosarsa.at
 - https://bosarsalog.oeradio.at
 - https://oevsv.at
@@ -2244,7 +2244,7 @@ id: toolu_01FkJ5KNnvATtB6nGTfZZezZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/datenschutz.njk",
+  "file_path": "/home/<USER>/bosarsa/src/datenschutz.njk",
   "old_string": "  <section>\n    <h2>Ihre Rechte</h2>",
   "new_string": "  <section>\n    <h2>Content Delivery Network (CDN)</h2>\n    <p>Für die Darstellung von Icons wird die Bibliothek Lucide über den CDN-Dienst unpkg.com eingebunden. Beim Aufruf dieser Website stellt Ihr Browser eine Verbindung zu den Servern von unpkg (betrieben über Cloudflare) her. Dabei wird Ihre IP-Adresse an diesen Dienst übermittelt. Details finden Sie in der <a href=\"https://www.cloudflare.com/privacypolicy/\" target=\"_blank\" rel=\"noopener noreferrer\">Datenschutzerklärung von Cloudflare</a>.</p>\n  </section>\n\n  <section>\n    <h2>Externe Links</h2>\n    <p>Diese Website enthält Links zu externen Websites Dritter (z.&nbsp;B. Behörden, Partnerorganisationen, Medien). Auf die Inhalte und Datenschutzpraktiken dieser externen Seiten haben wir keinen Einfluss. Es gelten die jeweiligen Datenschutzerklärungen der Betreiber.</p>\n  </section>\n\n  <section>\n    <h2>Ihre Rechte</h2>"
 }
@@ -2255,7 +2255,7 @@ id: toolu_01FkJ5KNnvATtB6nGTfZZezZ
 tool_result
 id: toolu_01FkJ5KNnvATtB6nGTfZZezZ
 ```
-The file /home/achildrenmile/bosarsa/src/datenschutz.njk has been updated successfully.
+The file /home/<USER>/bosarsa/src/datenschutz.njk has been updated successfully.
 ```
 
 > TOOL
@@ -2264,7 +2264,7 @@ tool_use Bash
 id: toolu_012NyxPnymvJD3YokfncDJP6
 ```json
 {
-  "command": "nix-shell -p nodejs_20 --run \"npx @11ty/eleventy\" 2>&1 && git add src/datenschutz.njk && git commit -m \"$(cat <<'EOF'\nDatenschutzerklärung um CDN (unpkg/Lucide) und externe Links ergänzen\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\" && git push origin master",
+  "command": "nix-shell -p nodejs_20 --run \"npx @11ty/eleventy\" 2>&1 && git add src/datenschutz.njk && git commit -m \"$(cat <<'EOF'\nDatenschutzerklärung um CDN (unpkg/Lucide) und externe Links ergänzen\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\" && git push origin master",
   "description": "Build, commit and push"
 }
 ```
@@ -2308,7 +2308,7 @@ id: toolu_01QT3sWU8TbQtHXRgF4FEMNY
 ```
 [0;32m=== Deploying BOS-ARSA to achildrenmile@host-node-01 ===[0m
 Host: achildrenmile@host-node-01
-Remote dir: /home/achildrenmile/apps/bosarsa
+Remote dir: /home/<USER>/apps/bosarsa
 Container: bosarsa
 Port: 3417:80
 
@@ -2394,7 +2394,7 @@ id: toolu_01T5MntNh7KX37zxE1BYtxkZ
 ```json
 {
   "pattern": "lucide",
-  "path": "/home/achildrenmile/bosarsa/src",
+  "path": "/home/<USER>/bosarsa/src",
   "output_mode": "content",
   "glob": "*.njk",
   "-i": true
@@ -2447,7 +2447,7 @@ tool_use Bash
 id: toolu_01RhHMXDZ8L4771sSCgHihhp
 ```json
 {
-  "command": "curl -sL \"https://unpkg.com/lucide@latest/dist/umd/lucide.min.js\" -o /home/achildrenmile/bosarsa/src/js/lucide.min.js && wc -c /home/achildrenmile/bosarsa/src/js/lucide.min.js",
+  "command": "curl -sL \"https://unpkg.com/lucide@latest/dist/umd/lucide.min.js\" -o /home/<USER>/bosarsa/src/js/lucide.min.js && wc -c /home/<USER>/bosarsa/src/js/lucide.min.js",
   "description": "Download Lucide JS and save locally"
 }
 ```
@@ -2466,7 +2466,7 @@ tool_use Bash
 id: toolu_01UTCmh5NFjtcDZwS5xTzFkY
 ```json
 {
-  "command": "mkdir -p /home/achildrenmile/bosarsa/src/js && curl -sL \"https://unpkg.com/lucide@latest/dist/umd/lucide.min.js\" -o /home/achildrenmile/bosarsa/src/js/lucide.min.js && wc -c /home/achildrenmile/bosarsa/src/js/lucide.min.js",
+  "command": "mkdir -p /home/<USER>/bosarsa/src/js && curl -sL \"https://unpkg.com/lucide@latest/dist/umd/lucide.min.js\" -o /home/<USER>/bosarsa/src/js/lucide.min.js && wc -c /home/<USER>/bosarsa/src/js/lucide.min.js",
   "description": "Create js dir and download Lucide"
 }
 ```
@@ -2476,7 +2476,7 @@ id: toolu_01UTCmh5NFjtcDZwS5xTzFkY
 tool_result
 id: toolu_01UTCmh5NFjtcDZwS5xTzFkY
 ```
-392129 /home/achildrenmile/bosarsa/src/js/lucide.min.js
+392129 /home/<USER>/bosarsa/src/js/lucide.min.js
 ```
 
 > AGENT
@@ -2489,7 +2489,7 @@ tool_use Read
 id: toolu_015iGNPxkqZsPwq47hPJtTge
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/_includes/base.njk"
+  "file_path": "/home/<USER>/bosarsa/src/_includes/base.njk"
 }
 ```
 
@@ -2549,7 +2549,7 @@ tool_use Read
 id: toolu_011JPfrMNWpuXPVbAt23dMY5
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/eleventy.config.js"
+  "file_path": "/home/<USER>/bosarsa/eleventy.config.js"
 }
 ```
 
@@ -2568,7 +2568,7 @@ id: toolu_012quBBSEadDTBiKeeHTvAhD
 ```json
 {
   "pattern": "*.config.*",
-  "path": "/home/achildrenmile/bosarsa"
+  "path": "/home/<USER>/bosarsa"
 }
 ```
 
@@ -2577,7 +2577,7 @@ id: toolu_012quBBSEadDTBiKeeHTvAhD
 tool_result
 id: toolu_012quBBSEadDTBiKeeHTvAhD
 ```
-/home/achildrenmile/bosarsa/node_modules/iso-639-1/webpack.config.js
+/home/<USER>/bosarsa/node_modules/iso-639-1/webpack.config.js
 ```
 
 > TOOL
@@ -2587,7 +2587,7 @@ id: toolu_01AHsPkYFLfJJcGWiPVWvfzD
 ```json
 {
   "pattern": "\".eleventy*\"",
-  "path": "/home/achildrenmile/bosarsa"
+  "path": "/home/<USER>/bosarsa"
 }
 ```
 
@@ -2605,7 +2605,7 @@ tool_use Read
 id: toolu_01GkfcLjG7BNnsqM7uGTAyWf
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/package.json"
+  "file_path": "/home/<USER>/bosarsa/package.json"
 }
 ```
 
@@ -2645,7 +2645,7 @@ id: toolu_01Vc9czUk1qD1skgr4qMB17h
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/_includes/base.njk",
+  "file_path": "/home/<USER>/bosarsa/src/_includes/base.njk",
   "old_string": "  <script src=\"https://unpkg.com/lucide@latest\"></script>",
   "new_string": "  <script src=\"/js/lucide.min.js\"></script>"
 }
@@ -2656,7 +2656,7 @@ id: toolu_01Vc9czUk1qD1skgr4qMB17h
 tool_result
 id: toolu_01Vc9czUk1qD1skgr4qMB17h
 ```
-The file /home/achildrenmile/bosarsa/src/_includes/base.njk has been updated successfully.
+The file /home/<USER>/bosarsa/src/_includes/base.njk has been updated successfully.
 ```
 
 > AGENT
@@ -2670,7 +2670,7 @@ id: toolu_016a5rfm2M9dtMc6a2nyjPwh
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/datenschutz.njk",
+  "file_path": "/home/<USER>/bosarsa/src/datenschutz.njk",
   "old_string": "  <section>\n    <h2>Content Delivery Network (CDN)</h2>\n    <p>Für die Darstellung von Icons wird die Bibliothek Lucide über den CDN-Dienst unpkg.com eingebunden. Beim Aufruf dieser Website stellt Ihr Browser eine Verbindung zu den Servern von unpkg (betrieben über Cloudflare) her. Dabei wird Ihre IP-Adresse an diesen Dienst übermittelt. Details finden Sie in der <a href=\"https://www.cloudflare.com/privacypolicy/\" target=\"_blank\" rel=\"noopener noreferrer\">Datenschutzerklärung von Cloudflare</a>.</p>\n  </section>\n\n  <section>",
   "new_string": "  <section>"
 }
@@ -2681,7 +2681,7 @@ id: toolu_016a5rfm2M9dtMc6a2nyjPwh
 tool_result
 id: toolu_016a5rfm2M9dtMc6a2nyjPwh
 ```
-The file /home/achildrenmile/bosarsa/src/datenschutz.njk has been updated successfully.
+The file /home/<USER>/bosarsa/src/datenschutz.njk has been updated successfully.
 ```
 
 > TOOL
@@ -2717,7 +2717,7 @@ tool_use Bash
 id: toolu_01SKjcJ53figbsvsBFWrhVAB
 ```json
 {
-  "command": "ls -la /home/achildrenmile/bosarsa/_site/js/lucide.min.js",
+  "command": "ls -la /home/<USER>/bosarsa/_site/js/lucide.min.js",
   "description": "Verify JS file was copied to output"
 }
 ```
@@ -2728,7 +2728,7 @@ tool_result ERROR
 id: toolu_01SKjcJ53figbsvsBFWrhVAB
 ```
 Exit code 2
-ls: cannot access '/home/achildrenmile/bosarsa/_site/js/lucide.min.js': No such file or directory
+ls: cannot access '/home/<USER>/bosarsa/_site/js/lucide.min.js': No such file or directory
 ```
 
 > AGENT
@@ -2741,7 +2741,7 @@ tool_use Bash
 id: toolu_01VLBhdWPsw7qp5JSMLED4hH
 ```json
 {
-  "command": "ls /home/achildrenmile/bosarsa/_site/css/",
+  "command": "ls /home/<USER>/bosarsa/_site/css/",
   "description": "Check if CSS directory exists in output"
 }
 ```
@@ -2765,7 +2765,7 @@ tool_use Bash
 id: toolu_01LnkuwL8j6dhCqkqEFsK7jQ
 ```json
 {
-  "command": "ls /home/achildrenmile/bosarsa/_site/",
+  "command": "ls /home/<USER>/bosarsa/_site/",
   "description": "List output directory contents"
 }
 ```
@@ -2808,7 +2808,7 @@ tool_use Bash
 id: toolu_011JmCipqHoBHkW4JhmBSCkN
 ```json
 {
-  "command": "rm -rf /home/achildrenmile/bosarsa/src/js && mkdir -p /home/achildrenmile/bosarsa/js && mv /dev/null /dev/null 2>/dev/null; curl -sL \"https://unpkg.com/lucide@latest/dist/umd/lucide.min.js\" -o /home/achildrenmile/bosarsa/js/lucide.min.js && wc -c /home/achildrenmile/bosarsa/js/lucide.min.js",
+  "command": "rm -rf /home/<USER>/bosarsa/src/js && mkdir -p /home/<USER>/bosarsa/js && mv /dev/null /dev/null 2>/dev/null; curl -sL \"https://unpkg.com/lucide@latest/dist/umd/lucide.min.js\" -o /home/<USER>/bosarsa/js/lucide.min.js && wc -c /home/<USER>/bosarsa/js/lucide.min.js",
   "description": "Move JS to root-level js/ dir for passthrough copy"
 }
 ```
@@ -2818,7 +2818,7 @@ id: toolu_011JmCipqHoBHkW4JhmBSCkN
 tool_result
 id: toolu_011JmCipqHoBHkW4JhmBSCkN
 ```
-392129 /home/achildrenmile/bosarsa/js/lucide.min.js
+392129 /home/<USER>/bosarsa/js/lucide.min.js
 ```
 
 > AGENT
@@ -2832,7 +2832,7 @@ id: toolu_01KvHMtKsWZ9PUre5dy9MZFo
 ```json
 {
   "pattern": "\"dir\":|passthrough|addPassthroughCopy|input|output",
-  "path": "/home/achildrenmile/bosarsa",
+  "path": "/home/<USER>/bosarsa",
   "glob": "\"{eleventy,*.eleventy,.eleventy}.{js,cjs,mjs,json}\""
 }
 ```
@@ -2855,7 +2855,7 @@ tool_use Bash
 id: toolu_019DGHvioysJdyz6zxPjdbKc
 ```json
 {
-  "command": "nix-shell -p nodejs_20 --run \"npx @11ty/eleventy\" 2>&1 && ls /home/achildrenmile/bosarsa/_site/js/",
+  "command": "nix-shell -p nodejs_20 --run \"npx @11ty/eleventy\" 2>&1 && ls /home/<USER>/bosarsa/_site/js/",
   "description": "Rebuild and check if js/ gets copied",
   "timeout": 30000
 }
@@ -2867,7 +2867,7 @@ tool_result ERROR
 id: toolu_019DGHvioysJdyz6zxPjdbKc
 ```
 Exit code 2
-ls: cannot access '/home/achildrenmile/bosarsa/_site/js/': No such file or directory
+ls: cannot access '/home/<USER>/bosarsa/_site/js/': No such file or directory
 
 [11ty] Writing ./_site/llms.txt from ./src/llms.njk
 [11ty] Writing ./_site/robots.txt from ./src/robots.njk
@@ -2889,7 +2889,7 @@ tool_use Write
 id: toolu_0142eDe8XFuQFBk41JUnoMMk
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/eleventy.config.js",
+  "file_path": "/home/<USER>/bosarsa/eleventy.config.js",
   "content": "module.exports = function(eleventyConfig) {\n  eleventyConfig.addPassthroughCopy(\"js\");\n};\n"
 }
 ```
@@ -2899,7 +2899,7 @@ id: toolu_0142eDe8XFuQFBk41JUnoMMk
 tool_result
 id: toolu_0142eDe8XFuQFBk41JUnoMMk
 ```
-File created successfully at: /home/achildrenmile/bosarsa/eleventy.config.js
+File created successfully at: /home/<USER>/bosarsa/eleventy.config.js
 ```
 
 > TOOL
@@ -2908,7 +2908,7 @@ tool_use Bash
 id: toolu_012DPqAfP6qDQ2QRjFEQzXbf
 ```json
 {
-  "command": "nix-shell -p nodejs_20 --run \"npx @11ty/eleventy\" 2>&1 && ls -la /home/achildrenmile/bosarsa/_site/js/",
+  "command": "nix-shell -p nodejs_20 --run \"npx @11ty/eleventy\" 2>&1 && ls -la /home/<USER>/bosarsa/_site/js/",
   "description": "Rebuild and verify js/ copied",
   "timeout": 30000
 }
@@ -2920,7 +2920,7 @@ tool_result ERROR
 id: toolu_012DPqAfP6qDQ2QRjFEQzXbf
 ```
 Exit code 2
-ls: cannot access '/home/achildrenmile/bosarsa/_site/js/': No such file or directory
+ls: cannot access '/home/<USER>/bosarsa/_site/js/': No such file or directory
 
 [11ty] Writing ./_site/llms.txt from ./src/llms.njk
 [11ty] Writing ./_site/robots.txt from ./src/robots.njk
@@ -2942,7 +2942,7 @@ tool_use Write
 id: toolu_01NXfutwa6zoiwPoPHhahhmt
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/eleventy.config.js",
+  "file_path": "/home/<USER>/bosarsa/eleventy.config.js",
   "content": "export default function(eleventyConfig) {\n  eleventyConfig.addPassthroughCopy(\"js\");\n};\n"
 }
 ```
@@ -2952,7 +2952,7 @@ id: toolu_01NXfutwa6zoiwPoPHhahhmt
 tool_result
 id: toolu_01NXfutwa6zoiwPoPHhahhmt
 ```
-The file /home/achildrenmile/bosarsa/eleventy.config.js has been overwritten successfully.
+The file /home/<USER>/bosarsa/eleventy.config.js has been overwritten successfully.
 ```
 
 > TOOL
@@ -2961,7 +2961,7 @@ tool_use Bash
 id: toolu_01CJmwqoJv5Q1venPMnSApDx
 ```json
 {
-  "command": "nix-shell -p nodejs_20 --run \"npx @11ty/eleventy\" 2>&1 && ls -la /home/achildrenmile/bosarsa/_site/js/",
+  "command": "nix-shell -p nodejs_20 --run \"npx @11ty/eleventy\" 2>&1 && ls -la /home/<USER>/bosarsa/_site/js/",
   "description": "Rebuild with ESM config",
   "timeout": 30000
 }
@@ -2973,7 +2973,7 @@ tool_result ERROR
 id: toolu_01CJmwqoJv5Q1venPMnSApDx
 ```
 Exit code 2
-ls: cannot access '/home/achildrenmile/bosarsa/_site/js/': No such file or directory
+ls: cannot access '/home/<USER>/bosarsa/_site/js/': No such file or directory
 
 [11ty] Writing ./_site/llms.txt from ./src/llms.njk
 [11ty] Writing ./_site/robots.txt from ./src/robots.njk
@@ -2995,7 +2995,7 @@ tool_use Bash
 id: toolu_01KonAcjztWKXfB7zGBrCefP
 ```json
 {
-  "command": "nix-shell -p nodejs_20 --run \"npx @11ty/eleventy --config=eleventy.config.js\" 2>&1 && ls -la /home/achildrenmile/bosarsa/_site/js/ 2>&1",
+  "command": "nix-shell -p nodejs_20 --run \"npx @11ty/eleventy --config=eleventy.config.js\" 2>&1 && ls -la /home/<USER>/bosarsa/_site/js/ 2>&1",
   "description": "Explicitly specify config file",
   "timeout": 30000
 }
@@ -3007,25 +3007,25 @@ tool_result ERROR
 id: toolu_01KonAcjztWKXfB7zGBrCefP
 ```
 Exit code 1
-(node:81075) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/achildrenmile/bosarsa/eleventy.config.js is not specified and it doesn't parse as CommonJS.
+(node:81075) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/<USER>/bosarsa/eleventy.config.js is not specified and it doesn't parse as CommonJS.
 Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
-To eliminate this warning, add "type": "module" to /home/achildrenmile/bosarsa/package.json.
+To eliminate this warning, add "type": "module" to /home/<USER>/bosarsa/package.json.
 (Use `node --trace-warnings ...` to show where the warning was created)
 [11ty] Problem writing Eleventy templates:
 [11ty] 1. Problem creating an Eleventy Layout for the "./src/datenschutz.njk" template file. (via EleventyBaseError)
 [11ty] 2. You’re trying to use a layout that does not exist: _includes/base.njk (via `layout: base.njk`)
 [11ty] 
 [11ty] Original error stack trace: Error: You’re trying to use a layout that does not exist: _includes/base.njk (via `layout: base.njk`)
-[11ty]     at TemplateLayoutPathResolver.getFullPath (file:///home/achildrenmile/bosarsa/node_modules/@11ty/eleventy/src/TemplateLayoutPathResolver.js:115:10)
-[11ty]     at new TemplateLayout (file:///home/achildrenmile/bosarsa/node_modules/@11ty/eleventy/src/TemplateLayout.js:19:31)
-[11ty]     at TemplateLayout.getTemplate (file:///home/achildrenmile/bosarsa/node_modules/@11ty/eleventy/src/TemplateLayout.js:58:17)
-[11ty]     at Template.getLayout (file:///home/achildrenmile/bosarsa/node_modules/@11ty/eleventy/src/Template.js:187:26)
-[11ty]     at #getData (file:///home/achildrenmile/bosarsa/node_modules/@11ty/eleventy/src/Template.js:388:23)
-[11ty]     at async TemplateMap.add (file:///home/achildrenmile/bosarsa/node_modules/@11ty/eleventy/src/TemplateMap.js:70:14)
+[11ty]     at TemplateLayoutPathResolver.getFullPath (file:///home/<USER>/bosarsa/node_modules/@11ty/eleventy/src/TemplateLayoutPathResolver.js:115:10)
+[11ty]     at new TemplateLayout (file:///home/<USER>/bosarsa/node_modules/@11ty/eleventy/src/TemplateLayout.js:19:31)
+[11ty]     at TemplateLayout.getTemplate (file:///home/<USER>/bosarsa/node_modules/@11ty/eleventy/src/TemplateLayout.js:58:17)
+[11ty]     at Template.getLayout (file:///home/<USER>/bosarsa/node_modules/@11ty/eleventy/src/Template.js:187:26)
+[11ty]     at #getData (file:///home/<USER>/bosarsa/node_modules/@11ty/eleventy/src/Template.js:388:23)
+[11ty]     at async TemplateMap.add (file:///home/<USER>/bosarsa/node_modules/@11ty/eleventy/src/TemplateMap.js:70:14)
 [11ty]     at async Promise.all (index 1)
-[11ty]     at async TemplateWriter._addToTemplateMap (file:///home/achildrenmile/bosarsa/node_modules/@11ty/eleventy/src/TemplateWriter.js:340:13)
-[11ty]     at async TemplateWriter._createTemplateMap (file:///home/achildrenmile/bosarsa/node_modules/@11ty/eleventy/src/TemplateWriter.js:351:3)
-[11ty]     at async TemplateWriter.generateTemplates (file:///home/achildrenmile/bosarsa/node_modules/@11ty/eleventy/src/TemplateWriter.js:382:3)
+[11ty]     at async TemplateWriter._addToTemplateMap (file:///home/<USER>/bosarsa/node_modules/@11ty/eleventy/src/TemplateWriter.js:340:13)
+[11ty]     at async TemplateWriter._createTemplateMap (file:///home/<USER>/bosarsa/node_modules/@11ty/eleventy/src/TemplateWriter.js:351:3)
+[11ty]     at async TemplateWriter.generateTemplates (file:///home/<USER>/bosarsa/node_modules/@11ty/eleventy/src/TemplateWriter.js:382:3)
 [11ty] Wrote 0 files in 0.13 seconds (v3.1.2)
 [11ty] Eleventy Fatal Error (CLI):
 [11ty] 1. Problem creating an Eleventy Layout for the "./src/datenschutz.njk" template file. (via EleventyBaseError)
@@ -3041,7 +3041,7 @@ tool_use Bash
 id: toolu_01V5hb6cWzTDRe8M3FYUhDgx
 ```json
 {
-  "command": "rm /home/achildrenmile/bosarsa/eleventy.config.js && rm -rf /home/achildrenmile/bosarsa/js && mkdir -p /home/achildrenmile/bosarsa/src/js && curl -sL \"https://unpkg.com/lucide@latest/dist/umd/lucide.min.js\" -o /home/achildrenmile/bosarsa/src/js/lucide.min.js && wc -c /home/achildrenmile/bosarsa/src/js/lucide.min.js",
+  "command": "rm /home/<USER>/bosarsa/eleventy.config.js && rm -rf /home/<USER>/bosarsa/js && mkdir -p /home/<USER>/bosarsa/src/js && curl -sL \"https://unpkg.com/lucide@latest/dist/umd/lucide.min.js\" -o /home/<USER>/bosarsa/src/js/lucide.min.js && wc -c /home/<USER>/bosarsa/src/js/lucide.min.js",
   "description": "Clean up and put JS file in src/js/"
 }
 ```
@@ -3051,7 +3051,7 @@ id: toolu_01V5hb6cWzTDRe8M3FYUhDgx
 tool_result
 id: toolu_01V5hb6cWzTDRe8M3FYUhDgx
 ```
-392129 /home/achildrenmile/bosarsa/src/js/lucide.min.js
+392129 /home/<USER>/bosarsa/src/js/lucide.min.js
 ```
 
 > AGENT
@@ -3064,7 +3064,7 @@ tool_use Bash
 id: toolu_01SMhdgWfrRdpYidKCLNH3cJ
 ```json
 {
-  "command": "ls /home/achildrenmile/bosarsa/src/fonts/ 2>/dev/null && ls /home/achildrenmile/bosarsa/fonts/ 2>/dev/null",
+  "command": "ls /home/<USER>/bosarsa/src/fonts/ 2>/dev/null && ls /home/<USER>/bosarsa/fonts/ 2>/dev/null",
   "description": "Check where fonts are stored"
 }
 ```
@@ -3083,7 +3083,7 @@ tool_use Bash
 id: toolu_011FQYZg65hnKoDtnJCd5awQ
 ```json
 {
-  "command": "ls -d /home/achildrenmile/bosarsa/src/*/",
+  "command": "ls -d /home/<USER>/bosarsa/src/*/",
   "description": "List directories in src/"
 }
 ```
@@ -3093,10 +3093,10 @@ id: toolu_011FQYZg65hnKoDtnJCd5awQ
 tool_result
 id: toolu_011FQYZg65hnKoDtnJCd5awQ
 ```
-/home/achildrenmile/bosarsa/src/css/
-/home/achildrenmile/bosarsa/src/_data/
-/home/achildrenmile/bosarsa/src/_includes/
-/home/achildrenmile/bosarsa/src/js/
+/home/<USER>/bosarsa/src/css/
+/home/<USER>/bosarsa/src/_data/
+/home/<USER>/bosarsa/src/_includes/
+/home/<USER>/bosarsa/src/js/
 ```
 
 > TOOL
@@ -3105,7 +3105,7 @@ tool_use Bash
 id: toolu_01S3k9CpB4zzVMWkaw1KAHJA
 ```json
 {
-  "command": "ls /home/achildrenmile/bosarsa/_site/fonts/",
+  "command": "ls /home/<USER>/bosarsa/_site/fonts/",
   "description": "Check fonts in output"
 }
 ```
@@ -3128,7 +3128,7 @@ id: toolu_01KHegGiG99VA85xWSGu2KaU
 ```json
 {
   "pattern": "fonts/*\"",
-  "path": "/home/achildrenmile/bosarsa"
+  "path": "/home/<USER>/bosarsa"
 }
 ```
 
@@ -3146,7 +3146,7 @@ tool_use Bash
 id: toolu_01MUEum3CBPyaui5wZQ3N2eM
 ```json
 {
-  "command": "find /home/achildrenmile/bosarsa -maxdepth 2 -name \"*.woff2\" -not -path \"*/_site/*\" -not -path \"*/node_modules/*\" 2>/dev/null",
+  "command": "find /home/<USER>/bosarsa -maxdepth 2 -name \"*.woff2\" -not -path \"*/_site/*\" -not -path \"*/node_modules/*\" 2>/dev/null",
   "description": "Find font source files"
 }
 ```
@@ -3156,10 +3156,10 @@ id: toolu_01MUEum3CBPyaui5wZQ3N2eM
 tool_result
 id: toolu_01MUEum3CBPyaui5wZQ3N2eM
 ```
-/home/achildrenmile/bosarsa/fonts/inter-latin.woff2
-/home/achildrenmile/bosarsa/fonts/jetbrains-mono-latin-ext.woff2
-/home/achildrenmile/bosarsa/fonts/inter-latin-ext.woff2
-/home/achildrenmile/bosarsa/fonts/jetbrains-mono-latin.woff2
+/home/<USER>/bosarsa/fonts/inter-latin.woff2
+/home/<USER>/bosarsa/fonts/jetbrains-mono-latin-ext.woff2
+/home/<USER>/bosarsa/fonts/inter-latin-ext.woff2
+/home/<USER>/bosarsa/fonts/jetbrains-mono-latin.woff2
 ```
 
 > AGENT
@@ -3174,7 +3174,7 @@ tool_use Bash
 id: toolu_011EsZZDhQHxfhpePxiGBkBo
 ```json
 {
-  "command": "rm -rf /home/achildrenmile/bosarsa/src/js && mkdir -p /home/achildrenmile/bosarsa/js && curl -sL \"https://unpkg.com/lucide@latest/dist/umd/lucide.min.js\" -o /home/achildrenmile/bosarsa/js/lucide.min.js",
+  "command": "rm -rf /home/<USER>/bosarsa/src/js && mkdir -p /home/<USER>/bosarsa/js && curl -sL \"https://unpkg.com/lucide@latest/dist/umd/lucide.min.js\" -o /home/<USER>/bosarsa/js/lucide.min.js",
   "description": "Put JS in root-level js/ dir like fonts/"
 }
 ```
@@ -3193,7 +3193,7 @@ tool_use Bash
 id: toolu_01K68DwVAcnSifKjqPC34XnP
 ```json
 {
-  "command": "nix-shell -p nodejs_20 --run \"npx @11ty/eleventy\" 2>&1 && ls -la /home/achildrenmile/bosarsa/_site/js/ 2>&1",
+  "command": "nix-shell -p nodejs_20 --run \"npx @11ty/eleventy\" 2>&1 && ls -la /home/<USER>/bosarsa/_site/js/ 2>&1",
   "description": "Build and check if root-level js/ gets copied",
   "timeout": 30000
 }
@@ -3228,7 +3228,7 @@ tool_use Bash
 id: toolu_016brAhTf1AEGaExacGwiYkX
 ```json
 {
-  "command": "git add js/lucide.min.js src/_includes/base.njk src/datenschutz.njk && git commit -m \"$(cat <<'EOF'\nLucide Icons selbst hosten statt über unpkg CDN\n\nCDN-Abschnitt aus Datenschutzerklärung entfernt, da keine externen\nScript-Ressourcen mehr geladen werden.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\" && git push origin master",
+  "command": "git add js/lucide.min.js src/_includes/base.njk src/datenschutz.njk && git commit -m \"$(cat <<'EOF'\nLucide Icons selbst hosten statt über unpkg CDN\n\nCDN-Abschnitt aus Datenschutzerklärung entfernt, da keine externen\nScript-Ressourcen mehr geladen werden.\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\" && git push origin master",
   "description": "Commit and push"
 }
 ```
@@ -3264,7 +3264,7 @@ id: toolu_01GJDAKU5FyUDnBeFqH8LrLm
 ```
 [0;32m=== Deploying BOS-ARSA to achildrenmile@host-node-01 ===[0m
 Host: achildrenmile@host-node-01
-Remote dir: /home/achildrenmile/apps/bosarsa
+Remote dir: /home/<USER>/apps/bosarsa
 Container: bosarsa
 Port: 3417:80
 
@@ -3394,7 +3394,7 @@ tool_use Read
 id: toolu_01L5pumWNvijySKJ4tq76rkT
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/_includes/footer.njk"
+  "file_path": "/home/<USER>/bosarsa/src/_includes/footer.njk"
 }
 ```
 
@@ -3459,7 +3459,7 @@ id: toolu_01Axof3N48bFuM9wiTaxJLtj
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/_includes/footer.njk",
+  "file_path": "/home/<USER>/bosarsa/src/_includes/footer.njk",
   "old_string": "          <li><a href=\"https://bosarsalog.oeradio.at\" target=\"_blank\" rel=\"noopener noreferrer\">bosarsalog.oeradio.at</a></li>\n          <li><a href=\"https://oeradio.at\" target=\"_blank\" rel=\"noopener noreferrer\">oeradio.at</a></li>",
   "new_string": "          <li><a href=\"https://oe8.oevsv.at/ortsstellen/adl820/\" target=\"_blank\" rel=\"noopener noreferrer\">ADL820 im ÖVSV</a></li>\n          <li><a href=\"https://bosarsalog.oeradio.at\" target=\"_blank\" rel=\"noopener noreferrer\">bosarsalog.oeradio.at</a></li>\n          <li><a href=\"https://oeradio.at\" target=\"_blank\" rel=\"noopener noreferrer\">oeradio.at</a></li>"
 }
@@ -3470,7 +3470,7 @@ id: toolu_01Axof3N48bFuM9wiTaxJLtj
 tool_result
 id: toolu_01Axof3N48bFuM9wiTaxJLtj
 ```
-The file /home/achildrenmile/bosarsa/src/_includes/footer.njk has been updated successfully.
+The file /home/<USER>/bosarsa/src/_includes/footer.njk has been updated successfully.
 ```
 
 > AGENT
@@ -3484,7 +3484,7 @@ id: toolu_01R6pK4Bb3zB2sbbufdw5P3V
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/index.njk",
+  "file_path": "/home/<USER>/bosarsa/src/index.njk",
   "old_string": "  sameAs:\n    - \"https://bosarsa.at\"\n    - \"https://bosarsalog.oeradio.at\"",
   "new_string": "  sameAs:\n    - \"https://bosarsa.at\"\n    - \"https://bosarsalog.oeradio.at\"\n    - \"https://oe8.oevsv.at/ortsstellen/adl820/\""
 }
@@ -3495,7 +3495,7 @@ id: toolu_01R6pK4Bb3zB2sbbufdw5P3V
 tool_result
 id: toolu_01R6pK4Bb3zB2sbbufdw5P3V
 ```
-The file /home/achildrenmile/bosarsa/src/index.njk has been updated successfully.
+The file /home/<USER>/bosarsa/src/index.njk has been updated successfully.
 ```
 
 > TOOL
@@ -3504,7 +3504,7 @@ tool_use Bash
 id: toolu_01Cau5Se86we75iJ3DHCnngj
 ```json
 {
-  "command": "nix-shell -p nodejs_20 --run \"npx @11ty/eleventy\" 2>&1 && git add src/_includes/footer.njk src/index.njk && git commit -m \"$(cat <<'EOF'\nADL820-ÖVSV-Link im Footer und in strukturierten Daten ergänzen\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\" && git push origin master",
+  "command": "nix-shell -p nodejs_20 --run \"npx @11ty/eleventy\" 2>&1 && git add src/_includes/footer.njk src/index.njk && git commit -m \"$(cat <<'EOF'\nADL820-ÖVSV-Link im Footer und in strukturierten Daten ergänzen\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\" && git push origin master",
   "description": "Build, commit, push"
 }
 ```
@@ -3548,7 +3548,7 @@ id: toolu_018KGty63cVL9w4iwbLQrtKm
 ```
 [0;32m=== Deploying BOS-ARSA to achildrenmile@host-node-01 ===[0m
 Host: achildrenmile@host-node-01
-Remote dir: /home/achildrenmile/apps/bosarsa
+Remote dir: /home/<USER>/apps/bosarsa
 Container: bosarsa
 Port: 3417:80
 

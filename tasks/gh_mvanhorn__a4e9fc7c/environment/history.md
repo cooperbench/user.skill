@@ -69,7 +69,7 @@ tool_use Read
 id: toolu_01PwoeDUmR8WMnYNdf67s85N
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/cleanup.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/cleanup.go",
   "offset": 340,
   "limit": 15
 }
@@ -104,7 +104,7 @@ id: toolu_01Dz1LkeVoygpARr5Mv3okch
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/cleanup.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/cleanup.go",
   "old_string": "\treturn nil, err\n\t}\n\titems = append(items, stratItems...)",
   "new_string": "\treturn nil, fmt.Errorf(\"listing orphaned items: %w\", err)\n\t}\n\titems = append(items, stratItems...)"
 }
@@ -115,7 +115,7 @@ id: toolu_01Dz1LkeVoygpARr5Mv3okch
 tool_result
 id: toolu_01Dz1LkeVoygpARr5Mv3okch
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/cleanup.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/cleanup.go has been updated successfully.
 ```
 
 > AGENT
@@ -129,7 +129,7 @@ id: toolu_01CQjQpTX6H1uekubpoHva5J
 ```json
 {
   "pattern": "^import",
-  "path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/cleanup.go",
+  "path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/cleanup.go",
   "output_mode": "content",
   "-A": 10
 }
@@ -310,7 +310,7 @@ id: toolu_019Hc7EwBewPD5WdT1E2inAB
 ```json
 {
   "pattern": "func (env \\*TestEnv) InitEntire\\(",
-  "path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test",
+  "path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test",
   "output_mode": "content"
 }
 ```
@@ -330,7 +330,7 @@ id: toolu_018LXf9EHPi1qgCHEXFeQhRZ
 ```json
 {
   "pattern": "func NewFeatureBranchEnv\\(",
-  "path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test",
+  "path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test",
   "output_mode": "content"
 }
 ```
@@ -350,7 +350,7 @@ id: toolu_01CL6kzkdmH1rWxBVrbnpNSN
 ```json
 {
   "pattern": "RunForAllStrategiesWithRepoEnv",
-  "path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test",
+  "path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test",
   "output_mode": "content"
 }
 ```
@@ -371,7 +371,7 @@ id: toolu_01TguGFLxP3rxZco68mKyQWA
 ```json
 {
   "pattern": "func.*InitEntire\\(",
-  "path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test",
+  "path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test",
   "output_mode": "content"
 }
 ```
@@ -392,7 +392,7 @@ id: toolu_01PdfUDZfzEdmGZd8ZC2uNr6
 ```json
 {
   "pattern": "RunForAllStrategies",
-  "path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test",
+  "path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test",
   "output_mode": "content"
 }
 ```
@@ -416,7 +416,7 @@ tool_use Read
 id: toolu_01HLTCVzDRJhEEuW5uT81RGg
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/carry_forward_overlap_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/carry_forward_overlap_test.go",
   "offset": 40,
   "limit": 10
 }
@@ -445,7 +445,7 @@ tool_use Read
 id: toolu_01NKbJtJAUzjWdvZeFchoH4o
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/default_branch_test.go"
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/default_branch_test.go"
 }
 ```
 
@@ -507,7 +507,7 @@ tool_use Read
 id: toolu_01PdCnMHLyxk9pcnD8oSj2VE
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/deferred_finalization_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/deferred_finalization_test.go",
   "offset": 30,
   "limit": 15
 }
@@ -546,7 +546,7 @@ id: toolu_01XpycPX4r9vgdysxyXaa17N
 ```json
 {
   "pattern": "func RunForAllStrategies",
-  "path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test",
+  "path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test",
   "output_mode": "content",
   "-A": 15
 }
@@ -567,7 +567,7 @@ id: toolu_01F67V8ibZzMfY3P56LtU8iK
 ```json
 {
   "pattern": "func RunFor\"",
-  "path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test",
+  "path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test",
   "output_mode": "content"
 }
 ```
@@ -587,7 +587,7 @@ id: toolu_01L98xuxDDdBB8jttzSeNwFa
 ```json
 {
   "pattern": "RunFor\"",
-  "path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test",
+  "path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test",
   "output_mode": "content"
 }
 ```
@@ -610,7 +610,7 @@ tool_use Read
 id: toolu_01ERyUDjBS5sEKpB9msDGzDK
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/hooks_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/hooks_test.go",
   "limit": 40
 }
 ```
@@ -668,7 +668,7 @@ tool_use Read
 id: toolu_013RsUzRaX1ZxhaKEhmURYrp
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/testenv.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/testenv.go",
   "offset": 180,
   "limit": 60
 }
@@ -709,7 +709,7 @@ id: toolu_013RsUzRaX1ZxhaKEhmURYrp
    207→		env.T.Fatalf("failed to get repo config: %v", err)
    208→	}
    209→	cfg.User.Name = "Test User"
-   210→	cfg.User.Email = "test@example.com"
+   210→	cfg.User.Email = "<REDACTED_EMAIL>"
    211→
    212→	// Disable GPG signing for test commits (prevents failures if user has commit.gpgsign=true globally)
    213→	if cfg.Raw == nil {
@@ -735,7 +735,7 @@ id: toolu_011wLiXW3K2RuTJ4N8QxC9g9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/carry_forward_overlap_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/carry_forward_overlap_test.go",
   "old_string": "\tenv.InitEntire(strategy.StrategyNameManualCommit)",
   "new_string": "\tenv.InitEntire()"
 }
@@ -746,7 +746,7 @@ id: toolu_011wLiXW3K2RuTJ4N8QxC9g9
 tool_result
 id: toolu_011wLiXW3K2RuTJ4N8QxC9g9
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/carry_forward_overlap_test.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/carry_forward_overlap_test.go has been updated successfully.
 ```
 
 > TOOL
@@ -756,7 +756,7 @@ id: toolu_01K7r8KZRM1fVRFhVDAoHvuN
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/deferred_finalization_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/deferred_finalization_test.go",
   "old_string": "NewFeatureBranchEnv(t, strategy.StrategyNameManualCommit)",
   "new_string": "NewFeatureBranchEnv(t)"
 }
@@ -767,7 +767,7 @@ id: toolu_01K7r8KZRM1fVRFhVDAoHvuN
 tool_result
 id: toolu_01K7r8KZRM1fVRFhVDAoHvuN
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/deferred_finalization_test.go has been updated. All occurrences of 'NewFeatureBranchEnv(t, strategy.StrategyNameManualCommit)' were successfully replaced with 'NewFeatureBranchEnv(t)'.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/deferred_finalization_test.go has been updated. All occurrences of 'NewFeatureBranchEnv(t, strategy.StrategyNameManualCommit)' were successfully replaced with 'NewFeatureBranchEnv(t)'.
 ```
 
 > AGENT
@@ -781,7 +781,7 @@ id: toolu_01TKFFNEt3KQMxrTdihCvcnL
 ```json
 {
   "pattern": "strategy\\.",
-  "path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/deferred_finalization_test.go",
+  "path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/deferred_finalization_test.go",
   "output_mode": "content"
 }
 ```
@@ -812,7 +812,7 @@ id: toolu_01TFrhcxCozmqdff9usz28ov
 ```json
 {
   "pattern": "strategy\\.",
-  "path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/carry_forward_overlap_test.go",
+  "path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/carry_forward_overlap_test.go",
   "output_mode": "content"
 }
 ```
@@ -835,7 +835,7 @@ tool_use Read
 id: toolu_01YDKp8rXNsm6ew6jSfPviym
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/carry_forward_overlap_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/carry_forward_overlap_test.go",
   "limit": 15
 }
 ```
@@ -869,7 +869,7 @@ id: toolu_015bchZiyRhd35KUCywnxBgz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/carry_forward_overlap_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/carry_forward_overlap_test.go",
   "old_string": "import (\n\t\"testing\"\n\n\t\"github.com/entireio/cli/cmd/entire/cli/session\"\n\t\"github.com/entireio/cli/cmd/entire/cli/strategy\"\n)",
   "new_string": "import (\n\t\"testing\"\n\n\t\"github.com/entireio/cli/cmd/entire/cli/session\"\n)"
 }
@@ -880,7 +880,7 @@ id: toolu_015bchZiyRhd35KUCywnxBgz
 tool_result
 id: toolu_015bchZiyRhd35KUCywnxBgz
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/carry_forward_overlap_test.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/carry_forward_overlap_test.go has been updated successfully.
 ```
 
 > AGENT
@@ -893,7 +893,7 @@ tool_use Read
 id: toolu_01Sh38LDb1gu1SWmKaqsS4Bv
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/default_branch_test.go"
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/default_branch_test.go"
 }
 ```
 
@@ -959,7 +959,7 @@ tool_use Write
 id: toolu_01TGUsFQomkKAFgQTBKhkmmB
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/default_branch_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/default_branch_test.go",
   "content": "//go:build integration\n\npackage integration\n\nimport (\n\t\"testing\"\n)\n\n// TestDefaultBranch_WorksOnMain tests that the strategy works on main branch.\nfunc TestDefaultBranch_WorksOnMain(t *testing.T) {\n\tt.Parallel()\n\tenv := NewRepoWithCommit(t)\n\n\tbranch := env.GetCurrentBranch()\n\tif branch != \"main\" && branch != \"master\" {\n\t\tt.Fatalf(\"expected to be on main or master branch, got %q\", branch)\n\t}\n\n\tsession := env.NewSession()\n\tif err := env.SimulateUserPromptSubmit(session.ID); err != nil {\n\t\tt.Fatalf(\"SimulateUserPromptSubmit failed: %v\", err)\n\t}\n\n\tenv.WriteFile(\"file.txt\", \"content on main\")\n\tsession.CreateTranscript(\n\t\t\"Add a file\",\n\t\t[]FileChange{{Path: \"file.txt\", Content: \"content on main\"}},\n\t)\n\n\tif err := env.SimulateStop(session.ID, session.TranscriptPath); err != nil {\n\t\tt.Fatalf(\"SimulateStop failed: %v\", err)\n\t}\n\n\tpoints := env.GetRewindPoints()\n\tif len(points) != 1 {\n\t\tt.Errorf(\"expected 1 rewind point on main branch, got %d\", len(points))\n\t}\n}\n\n// TestDefaultBranch_WorksOnFeatureBranch tests that Entire tracking works on feature branches.\nfunc TestDefaultBranch_WorksOnFeatureBranch(t *testing.T) {\n\tt.Parallel()\n\tenv := NewFeatureBranchEnv(t)\n\tbranch := env.GetCurrentBranch()\n\tif branch != \"feature/test-branch\" {\n\t\tt.Fatalf(\"expected to be on feature/test-branch, got %q\", branch)\n\t}\n\n\tsession := env.NewSession()\n\tif err := env.SimulateUserPromptSubmit(session.ID); err != nil {\n\t\tt.Fatalf(\"SimulateUserPromptSubmit failed: %v\", err)\n\t}\n\n\tenv.WriteFile(\"feature.txt\", \"content on feature branch\")\n\tsession.CreateTranscript(\n\t\t\"Add a feature file\",\n\t\t[]FileChange{{Path: \"feature.txt\", Content: \"content on feature branch\"}},\n\t)\n\n\tif err := env.SimulateStop(session.ID, session.TranscriptPath); err != nil {\n\t\tt.Fatalf(\"SimulateStop failed: %v\", err)\n\t}\n\n\tpoints := env.GetRewindPoints()\n\tif len(points) != 1 {\n\t\tt.Errorf(\"expected 1 rewind point on feature branch, got %d\", len(points))\n\t}\n}\n\n// TestDefaultBranch_PostTaskWorksOnMain tests that task checkpoints work on main.\nfunc TestDefaultBranch_PostTaskWorksOnMain(t *testing.T) {\n\tt.Parallel()\n\tenv := NewRepoWithCommit(t)\n\n\tbranch := env.GetCurrentBranch()\n\tif branch != \"main\" && branch != \"master\" {\n\t\tt.Fatalf(\"expected to be on main […]
 
 > TOOL
@@ -967,7 +967,7 @@ id: toolu_01TGUsFQomkKAFgQTBKhkmmB
 tool_result
 id: toolu_01TGUsFQomkKAFgQTBKhkmmB
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/default_branch_test.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/default_branch_test.go has been updated successfully.
 ```
 
 > AGENT
@@ -1024,7 +1024,7 @@ id: toolu_01YZLEfxyu3zHwUFANZC66D5
 ```json
 {
   "pattern": "InitEntire\\([^)]+\\)",
-  "path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test",
+  "path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test",
   "output_mode": "content"
 }
 ```
@@ -1078,7 +1078,7 @@ id: toolu_012Pv2CuhxfbYQmQNUq4jqPm
 ```json
 {
   "pattern": "NewFeatureBranchEnv\\(t,",
-  "path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test",
+  "path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test",
   "output_mode": "content"
 }
 ```
@@ -1362,7 +1362,7 @@ id: toolu_01VmYdsNTbFXcGhfqRwLG4pe
 ```json
 {
   "pattern": "InitEntire\\(\\)\"",
-  "path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/hook_logging_test.go",
+  "path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/hook_logging_test.go",
   "output_mode": "content"
 }
 ```
@@ -1382,7 +1382,7 @@ id: toolu_01J6xKGyJjWtAMq1kk4ecsJV
 ```json
 {
   "pattern": "InitEntire",
-  "path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/hook_logging_test.go",
+  "path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/hook_logging_test.go",
   "output_mode": "content"
 }
 ```

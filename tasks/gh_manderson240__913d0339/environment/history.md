@@ -1,6 +1,6 @@
 > DEVELOPER
 
-I need you to examine the entire /dev directory and try to align our repo to align with /home/mike-anderson/dev/cohezion/Cohezion Architecture Manifest.md and enable us to improve our chances for landing https://job-boards.greenhouse.io/anthropic/jobs/5061517008
+I need you to examine the entire /dev directory and try to align our repo to align with /home/<USER>/dev/cohezion/Cohezion Architecture Manifest.md and enable us to improve our chances for landing https://job-boards.greenhouse.io/anthropic/jobs/5061517008
 
 > AGENT
 
@@ -12,7 +12,7 @@ tool_use Bash
 id: toolu_01YQV5h8hoUZQio9SygufRWD
 ```json
 {
-  "command": "ls -la /home/mike-anderson/dev/ && echo \"---\" && ls -la /home/mike-anderson/dev/cohezion/ | head -50",
+  "command": "ls -la /home/<USER>/dev/ && echo \"---\" && ls -la /home/<USER>/dev/cohezion/ | head -50",
   "description": "List /dev directory contents"
 }
 ```
@@ -53,7 +53,7 @@ tool_use Read
 id: toolu_01Ajo5tNEuY1PT8hQzfucX9V
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/Cohezion Architecture Manifest.md"
+  "file_path": "/home/<USER>/dev/cohezion/Cohezion Architecture Manifest.md"
 }
 ```
 
@@ -155,7 +155,7 @@ tool_use Bash
 id: toolu_01PMJBLR67QWk3ciBiLT4RzC
 ```json
 {
-  "command": "ls /home/mike-anderson/dev/cohezion/ | head -100 && echo \"---dir count---\" && ls /home/mike-anderson/dev/cohezion/ | wc -l",
+  "command": "ls /home/<USER>/dev/cohezion/ | head -100 && echo \"---dir count---\" && ls /home/<USER>/dev/cohezion/ | wc -l",
   "description": "Full cohezion directory listing"
 }
 ```
@@ -275,7 +275,7 @@ tool_use Bash
 id: toolu_019pWmjpJiUJbjcWDqeCN9E3
 ```json
 {
-  "command": "ls /home/mike-anderson/dev/cohezion/src/cohezion/ 2>/dev/null && echo \"---\" && ls /home/mike-anderson/dev/cohezion/src/cohezion/environments/ 2>/dev/null",
+  "command": "ls /home/<USER>/dev/cohezion/src/cohezion/ 2>/dev/null && echo \"---\" && ls /home/<USER>/dev/cohezion/src/cohezion/environments/ 2>/dev/null",
   "description": "Check src/cohezion structure"
 }
 ```
@@ -382,7 +382,7 @@ tool_use Bash
 id: toolu_017JtKURuZNJE7QcfTmakrWE
 ```json
 {
-  "command": "ls /home/mike-anderson/dev/A2UI/ && echo \"---LeWM---\" && ls /home/mike-anderson/dev/le-wm/ && echo \"---OPH---\" && ls /home/mike-anderson/dev/observer-patch-holography/",
+  "command": "ls /home/<USER>/dev/A2UI/ && echo \"---LeWM---\" && ls /home/<USER>/dev/le-wm/ && echo \"---OPH---\" && ls /home/<USER>/dev/observer-patch-holography/",
   "description": "Check sibling repos mentioned in manifest"
 }
 ```
@@ -436,7 +436,7 @@ tool_use Read
 id: toolu_01FaaYZMSZfAVt3azLZKo25j
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/ANTHROPIC_COVER_LETTER.md"
+  "file_path": "/home/<USER>/dev/cohezion/ANTHROPIC_COVER_LETTER.md"
 }
 ```
 
@@ -475,7 +475,7 @@ tool_use Bash
 id: toolu_01Mo9swPHh8nhidSkFzPRk6N
 ```json
 {
-  "command": "cd /home/mike-anderson/dev/cohezion && ls -d mcp_tool_server triune_swarm le_world_model lemonade_config vault_synapse latent_topology local_environment_quirks.md 2>&1 | head -20 && echo \"---anthropic stuff---\" && ls anthropic_universes_application/ anthropic-delivery/ 2>&1",
+  "command": "cd /home/<USER>/dev/cohezion && ls -d mcp_tool_server triune_swarm le_world_model lemonade_config vault_synapse latent_topology local_environment_quirks.md 2>&1 | head -20 && echo \"---anthropic stuff---\" && ls anthropic_universes_application/ anthropic-delivery/ 2>&1",
   "description": "Check for manifest-required dirs and anthropic apps"
 }
 ```
@@ -500,7 +500,7 @@ src
 
 anthropic_universes_application/:
 documents
-Shell cwd was reset to /home/mike-anderson/dev/cohezion/.claude/worktrees/sorted-churning-toucan
+Shell cwd was reset to /home/<USER>/dev/cohezion/.claude/worktrees/sorted-churning-toucan
 ```
 
 > TOOL
@@ -509,7 +509,7 @@ tool_use Read
 id: toolu_01QFJWRv3eRfRjb4djazVpFC
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/environments/manifold_env.py",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/environments/manifold_env.py",
   "limit": 60
 }
 ```
@@ -557,7 +557,7 @@ tool_use Read
 id: toolu_013xiwM3PGWsTicKn9xD2B9q
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/environments/swarm_env.py",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/environments/swarm_env.py",
   "limit": 60
 }
 ```
@@ -620,7 +620,7 @@ tool_use Bash
 id: toolu_01GfGTWfXNCCdsZEbmwC2Ysj
 ```json
 {
-  "command": "ls /home/mike-anderson/dev/cohezion/anthropic_universes_application/documents/ && echo \"---delivery---\" && ls -la /home/mike-anderson/dev/cohezion/anthropic-delivery/src/ 2>/dev/null",
+  "command": "ls /home/<USER>/dev/cohezion/anthropic_universes_application/documents/ && echo \"---delivery---\" && ls -la /home/<USER>/dev/cohezion/anthropic-delivery/src/ 2>/dev/null",
   "description": "Check anthropic application materials"
 }
 ```
@@ -645,7 +645,7 @@ tool_use Bash
 id: toolu_016QrQzcBmr5sihaCQeX9Dog
 ```json
 {
-  "command": "cd /home/mike-anderson/dev/cohezion && head -80 README.md 2>/dev/null",
+  "command": "cd /home/<USER>/dev/cohezion && head -80 README.md 2>/dev/null",
   "description": "Check cohezion README"
 }
 ```
@@ -698,7 +698,7 @@ tool_use Bash
 id: toolu_013zHQrkseatqGUh9Q2su2ue
 ```json
 {
-  "command": "cd /home/mike-anderson/dev/cohezion && ls src/cohezion/sandbox/ src/cohezion/sandboxing/ 2>&1 | head -40 && echo \"---real_envs---\" && ls src/cohezion/real_envs/ 2>/dev/null",
+  "command": "cd /home/<USER>/dev/cohezion && ls src/cohezion/sandbox/ src/cohezion/sandboxing/ 2>&1 | head -40 && echo \"---real_envs---\" && ls src/cohezion/real_envs/ 2>/dev/null",
   "description": "Check sandbox/real_envs dirs"
 }
 ```
@@ -724,7 +724,7 @@ __init__.py
 ---real_envs---
 __init__.py
 tasks
-Shell cwd was reset to /home/mike-anderson/dev/cohezion/.claude/worktrees/sorted-churning-toucan
+Shell cwd was reset to /home/<USER>/dev/cohezion/.claude/worktrees/sorted-churning-toucan
 ```
 
 > AGENT
@@ -743,7 +743,7 @@ tool_use Bash
 id: toolu_01RGSbNVbFnbmRozN8FB9qbg
 ```json
 {
-  "command": "cd /home/mike-anderson/dev/cohezion && git remote -v 2>/dev/null && echo \"---branches---\" && git branch -a 2>/dev/null | head -20",
+  "command": "cd /home/<USER>/dev/cohezion && git remote -v 2>/dev/null && echo \"---branches---\" && git branch -a 2>/dev/null | head -20",
   "description": "Check git remotes and branches"
 }
 ```
@@ -753,8 +753,8 @@ id: toolu_01RGSbNVbFnbmRozN8FB9qbg
 tool_result
 id: toolu_01RGSbNVbFnbmRozN8FB9qbg
 ```
-origin	git@github.com:manderson240/cohezion.git (fetch)
-origin	git@github.com:manderson240/cohezion.git (push)
+origin	<REDACTED_EMAIL>:manderson240/cohezion.git (fetch)
+origin	<REDACTED_EMAIL>:manderson240/cohezion.git (push)
 ---branches---
   archive/stash/compound-elegant-simplification
   archive/stash/compound-file-changes
@@ -776,7 +776,7 @@ origin	git@github.com:manderson240/cohezion.git (push)
   claude/audit-codebase-planning-MquC6
   claude/concierge-agent-research-21rjf
   claude/fix-ci-pipeline-BNyJH
-Shell cwd was reset to /home/mike-anderson/dev/cohezion/.claude/worktrees/sorted-churning-toucan
+Shell cwd was reset to /home/<USER>/dev/cohezion/.claude/worktrees/sorted-churning-toucan
 ```
 
 > TOOL
@@ -785,7 +785,7 @@ tool_use Read
 id: toolu_011c1o7i9eeabe478ckcXBqf
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/sandbox/isolation.py",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/sandbox/isolation.py",
   "limit": 40
 }
 ```
@@ -843,7 +843,7 @@ tool_use Read
 id: toolu_01X4dKLk4tP7RucNcBYZe9zD
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/anthropic_universes_application/documents/ANTHROPIC_RESUME.md",
+  "file_path": "/home/<USER>/dev/cohezion/anthropic_universes_application/documents/ANTHROPIC_RESUME.md",
   "limit": 60
 }
 ```
@@ -855,7 +855,7 @@ id: toolu_01X4dKLk4tP7RucNcBYZe9zD
 ```
 1	# MIKE ANDERSON
 2	
-3	**manderson240@gmail.com** | **github.com/manderson240** | Spencer, NY
+3	**<REDACTED_EMAIL>** | **github.com/manderson240** | Spencer, NY
 4	
 5	---
 6	
@@ -933,7 +933,7 @@ User has answered your questions: "The cohezion repo root has 604 items (competi
 tool_result
 id: toolu_01U7eywNVk8aueETKr23gNKK
 ```
-File created successfully at: /home/mike-anderson/.claude/plans/sorted-churning-toucan.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/plans/sorted-churning-toucan.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -950,8 +950,8 @@ tool_use Write
 id: toolu_01U7eywNVk8aueETKr23gNKK
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/plans/sorted-churning-toucan.md",
-  "content": "# Cohezion → Manifest Alignment + Anthropic Universes Positioning\n\n**Plan ID:** sorted-churning-toucan\n**Target Role:** Research Engineer, Universes — https://job-boards.greenhouse.io/anthropic/jobs/5061517008\n**Strategic Manifest:** `/home/mike-anderson/dev/cohezion/Cohezion Architecture Manifest.md`\n**Worktree:** `.claude/worktrees/sorted-churning-toucan` (branch: isolated)\n**Status:** PENDING\n\n---\n\n## Context\n\n**Why this change:** Mike is applying to Anthropic's Universes team — a role whose focus (agentic training environments, capability evaluations, sandboxing, RL, simulation) aligns tightly with work already present in the cohezion repo but **not surfaced**. A reviewer opening `github.com/manderson240/cohezion` today sees:\n\n- 604 items in the repository root (competition artifacts, tar backups, per-run JSONs, ad-hoc logs)\n- A README that leads with 12D Riemannian manifolds and Lagrangian mechanics — technically precise but misses the Universes framing\n- A cover letter that positions Mike generically as \"Research Engineer\" and emphasizes Kaggle/Luma/BlueQubit competitions rather than environments + sandbox + evaluation infrastructure\n- No top-level directories matching the Cohezion Architecture Manifest's scaffold (`mcp_tool_server/`, `triune_swarm/`, `le_world_model/`, `lemonade_config/`, `vault_synapse/`, `latent_topology/`, `local_environment_quirks.md`)\n\n**What's actually there (under-surfaced assets):**\n- `src/cohezion/environments/` — `ManifoldEnv` (Gymnasium, 19D obs / 12D action), `SwarmEnv` (multi-agent PettingZoo-style), `ArcEnv`\n- `src/cohezion/sandbox/isolation.py` — **real** COW filesystem snapshots, Linux namespace isolation (PID/mount/UTS/IPC), network isolation (veth/bridge/iptables), cleanup registry\n- `src/cohezion/world_model/jepa_world_model.py` — 86K-param JEPA predictor with causal masking\n- `cloud-vault-mcp/`, `compound-mcp/`, `maintenance-mcp/` — 41+ MCP tools in production\n- `src/cohezion/compound/executor.py` — 11-step compound […]
+  "file_path": "/home/<USER>/.claude/plans/sorted-churning-toucan.md",
+  "content": "# Cohezion → Manifest Alignment + Anthropic Universes Positioning\n\n**Plan ID:** sorted-churning-toucan\n**Target Role:** Research Engineer, Universes — https://job-boards.greenhouse.io/anthropic/jobs/5061517008\n**Strategic Manifest:** `/home/<USER>/dev/cohezion/Cohezion Architecture Manifest.md`\n**Worktree:** `.claude/worktrees/sorted-churning-toucan` (branch: isolated)\n**Status:** PENDING\n\n---\n\n## Context\n\n**Why this change:** Mike is applying to Anthropic's Universes team — a role whose focus (agentic training environments, capability evaluations, sandboxing, RL, simulation) aligns tightly with work already present in the cohezion repo but **not surfaced**. A reviewer opening `github.com/manderson240/cohezion` today sees:\n\n- 604 items in the repository root (competition artifacts, tar backups, per-run JSONs, ad-hoc logs)\n- A README that leads with 12D Riemannian manifolds and Lagrangian mechanics — technically precise but misses the Universes framing\n- A cover letter that positions Mike generically as \"Research Engineer\" and emphasizes Kaggle/Luma/BlueQubit competitions rather than environments + sandbox + evaluation infrastructure\n- No top-level directories matching the Cohezion Architecture Manifest's scaffold (`mcp_tool_server/`, `triune_swarm/`, `le_world_model/`, `lemonade_config/`, `vault_synapse/`, `latent_topology/`, `local_environment_quirks.md`)\n\n**What's actually there (under-surfaced assets):**\n- `src/cohezion/environments/` — `ManifoldEnv` (Gymnasium, 19D obs / 12D action), `SwarmEnv` (multi-agent PettingZoo-style), `ArcEnv`\n- `src/cohezion/sandbox/isolation.py` — **real** COW filesystem snapshots, Linux namespace isolation (PID/mount/UTS/IPC), network isolation (veth/bridge/iptables), cleanup registry\n- `src/cohezion/world_model/jepa_world_model.py` — 86K-param JEPA predictor with causal masking\n- `cloud-vault-mcp/`, `compound-mcp/`, `maintenance-mcp/` — 41+ MCP tools in production\n- `src/cohezion/compound/executor.py` — 11-step compound […]
 
 > AGENT
 
@@ -967,7 +967,7 @@ tool_use ExitPlanMode
 id: toolu_01WB1gbBJ3zofnuAsr6pYkXg
 ```json
 {
-  "plan": "# Cohezion → Manifest Alignment + Anthropic Universes Positioning\n\n**Plan ID:** sorted-churning-toucan\n**Target Role:** Research Engineer, Universes — https://job-boards.greenhouse.io/anthropic/jobs/5061517008\n**Strategic Manifest:** `/home/mike-anderson/dev/cohezion/Cohezion Architecture Manifest.md`\n**Worktree:** `.claude/worktrees/sorted-churning-toucan` (branch: isolated)\n**Status:** PENDING\n\n---\n\n## Context\n\n**Why this change:** Mike is applying to Anthropic's Universes team — a role whose focus (agentic training environments, capability evaluations, sandboxing, RL, simulation) aligns tightly with work already present in the cohezion repo but **not surfaced**. A reviewer opening `github.com/manderson240/cohezion` today sees:\n\n- 604 items in the repository root (competition artifacts, tar backups, per-run JSONs, ad-hoc logs)\n- A README that leads with 12D Riemannian manifolds and Lagrangian mechanics — technically precise but misses the Universes framing\n- A cover letter that positions Mike generically as \"Research Engineer\" and emphasizes Kaggle/Luma/BlueQubit competitions rather than environments + sandbox + evaluation infrastructure\n- No top-level directories matching the Cohezion Architecture Manifest's scaffold (`mcp_tool_server/`, `triune_swarm/`, `le_world_model/`, `lemonade_config/`, `vault_synapse/`, `latent_topology/`, `local_environment_quirks.md`)\n\n**What's actually there (under-surfaced assets):**\n- `src/cohezion/environments/` — `ManifoldEnv` (Gymnasium, 19D obs / 12D action), `SwarmEnv` (multi-agent PettingZoo-style), `ArcEnv`\n- `src/cohezion/sandbox/isolation.py` — **real** COW filesystem snapshots, Linux namespace isolation (PID/mount/UTS/IPC), network isolation (veth/bridge/iptables), cleanup registry\n- `src/cohezion/world_model/jepa_world_model.py` — 86K-param JEPA predictor with causal masking\n- `cloud-vault-mcp/`, `compound-mcp/`, `maintenance-mcp/` — 41+ MCP tools in production\n- `src/cohezion/compound/executor.py` — 11-step compound engineering pipeline […]
+  "plan": "# Cohezion → Manifest Alignment + Anthropic Universes Positioning\n\n**Plan ID:** sorted-churning-toucan\n**Target Role:** Research Engineer, Universes — https://job-boards.greenhouse.io/anthropic/jobs/5061517008\n**Strategic Manifest:** `/home/<USER>/dev/cohezion/Cohezion Architecture Manifest.md`\n**Worktree:** `.claude/worktrees/sorted-churning-toucan` (branch: isolated)\n**Status:** PENDING\n\n---\n\n## Context\n\n**Why this change:** Mike is applying to Anthropic's Universes team — a role whose focus (agentic training environments, capability evaluations, sandboxing, RL, simulation) aligns tightly with work already present in the cohezion repo but **not surfaced**. A reviewer opening `github.com/manderson240/cohezion` today sees:\n\n- 604 items in the repository root (competition artifacts, tar backups, per-run JSONs, ad-hoc logs)\n- A README that leads with 12D Riemannian manifolds and Lagrangian mechanics — technically precise but misses the Universes framing\n- A cover letter that positions Mike generically as \"Research Engineer\" and emphasizes Kaggle/Luma/BlueQubit competitions rather than environments + sandbox + evaluation infrastructure\n- No top-level directories matching the Cohezion Architecture Manifest's scaffold (`mcp_tool_server/`, `triune_swarm/`, `le_world_model/`, `lemonade_config/`, `vault_synapse/`, `latent_topology/`, `local_environment_quirks.md`)\n\n**What's actually there (under-surfaced assets):**\n- `src/cohezion/environments/` — `ManifoldEnv` (Gymnasium, 19D obs / 12D action), `SwarmEnv` (multi-agent PettingZoo-style), `ArcEnv`\n- `src/cohezion/sandbox/isolation.py` — **real** COW filesystem snapshots, Linux namespace isolation (PID/mount/UTS/IPC), network isolation (veth/bridge/iptables), cleanup registry\n- `src/cohezion/world_model/jepa_world_model.py` — 86K-param JEPA predictor with causal masking\n- `cloud-vault-mcp/`, `compound-mcp/`, `maintenance-mcp/` — 41+ MCP tools in production\n- `src/cohezion/compound/executor.py` — 11-step compound engineering pipeline […]
 
 > TOOL
 
@@ -988,7 +988,7 @@ tool_use Bash
 id: toolu_01HoFShwEevmDRZw37jieQzL
 ```json
 {
-  "command": "cd /home/mike-anderson/dev/cohezion && ls src/cohezion/models/ src/cohezion/swarm/ 2>/dev/null | head -60 && echo \"---lemonade search---\" && grep -r \"lemonade\" --include=\"*.py\" -l src/ 2>/dev/null | head -10 && echo \"---gemma search---\" && grep -r \"gemma\" --include=\"*.py\" -l src/ 2>/dev/null | head -10",
+  "command": "cd /home/<USER>/dev/cohezion && ls src/cohezion/models/ src/cohezion/swarm/ 2>/dev/null | head -60 && echo \"---lemonade search---\" && grep -r \"lemonade\" --include=\"*.py\" -l src/ 2>/dev/null | head -10 && echo \"---gemma search---\" && grep -r \"gemma\" --include=\"*.py\" -l src/ 2>/dev/null | head -10",
   "description": "Check existing model routing infrastructure"
 }
 ```
@@ -1077,7 +1077,7 @@ src/cohezion-archive/swarm/smart_router.py
 src/cohezion-archive/swarm/fallback_strategy.py
 src/cohezion-archive/swarm/model_manager.py
 src/cohezion-archive/swarm/democratic_debate.py
-Shell cwd was reset to /home/mike-anderson/dev/cohezion/.claude/worktrees/sorted-churning-toucan
+Shell cwd was reset to /home/<USER>/dev/cohezion/.claude/worktrees/sorted-churning-toucan
 ```
 
 > TOOL
@@ -1086,7 +1086,7 @@ tool_use Bash
 id: toolu_013kAswhCUucE4ds8qdLL852
 ```json
 {
-  "command": "cd /home/mike-anderson/dev/cohezion && cat src/cohezion/swarm/dynamic_model_router.py 2>/dev/null | head -80 ; echo \"---cost_aware_router---\" ; ls src/cohezion/cost_optimization/ 2>/dev/null",
+  "command": "cd /home/<USER>/dev/cohezion && cat src/cohezion/swarm/dynamic_model_router.py 2>/dev/null | head -80 ; echo \"---cost_aware_router---\" ; ls src/cohezion/cost_optimization/ 2>/dev/null",
   "description": "Check DynamicModelRouter and cost_optimization"
 }
 ```
@@ -1154,7 +1154,7 @@ tool_use Bash
 id: toolu_01Cs3aebqTnt7VDdebez75Vh
 ```json
 {
-  "command": "cd /home/mike-anderson/dev/cohezion && grep -r \"turboquant\\|TurboQuant\\|Turboquant\" --include=\"*.py\" --include=\"*.md\" -l . 2>/dev/null | head -10 ; echo \"---NPU/XDNA---\" ; grep -r \"XDNA\\|NPU\\|ryzenai\" --include=\"*.py\" -l src/ 2>/dev/null | head -10 ; echo \"---aiter---\" ; grep -rn \"import aiter\\|from aiter\" --include=\"*.py\" src/ 2>/dev/null | head -5",
+  "command": "cd /home/<USER>/dev/cohezion && grep -r \"turboquant\\|TurboQuant\\|Turboquant\" --include=\"*.py\" --include=\"*.md\" -l . 2>/dev/null | head -10 ; echo \"---NPU/XDNA---\" ; grep -r \"XDNA\\|NPU\\|ryzenai\" --include=\"*.py\" -l src/ 2>/dev/null | head -10 ; echo \"---aiter---\" ; grep -rn \"import aiter\\|from aiter\" --include=\"*.py\" src/ 2>/dev/null | head -5",
   "description": "Check for Turboquant/NPU/aiter integration"
 }
 ```
@@ -1213,7 +1213,7 @@ src/cohezion/swarm/compute_backend_router.py
 src/cohezion/swarm/parser_v3_validation_oracle.py
 src/cohezion/swarm/lemonade_model_enhancer.py
 ---aiter---
-Shell cwd was reset to /home/mike-anderson/dev/cohezion/.claude/worktrees/sorted-churning-toucan
+Shell cwd was reset to /home/<USER>/dev/cohezion/.claude/worktrees/sorted-churning-toucan
 ```
 
 > AGENT
@@ -1226,7 +1226,7 @@ tool_use Bash
 id: toolu_01AoQNfqMf14xymVU1fVKpgR
 ```json
 {
-  "command": "cd /home/mike-anderson/dev/cohezion && head -80 research/turboquant/STRIX_HALO_UNLOCK_GUIDE.md 2>/dev/null",
+  "command": "cd /home/<USER>/dev/cohezion && head -80 research/turboquant/STRIX_HALO_UNLOCK_GUIDE.md 2>/dev/null",
   "description": "Read existing Turboquant unlock guide"
 }
 ```
@@ -1287,7 +1287,7 @@ tool_use Bash
 id: toolu_01HLJsvbDGC9A6XDFJGxwHvo
 ```json
 {
-  "command": "cd /home/mike-anderson/dev/cohezion && head -60 src/cohezion/swarm/gemma4_router.py 2>/dev/null && echo \"---lemonade config---\" && head -60 src/cohezion/swarm/lemonade_config.yaml 2>/dev/null && echo \"---compute backend---\" && head -40 src/cohezion/swarm/compute_backend_router.py 2>/dev/null",
+  "command": "cd /home/<USER>/dev/cohezion && head -60 src/cohezion/swarm/gemma4_router.py 2>/dev/null && echo \"---lemonade config---\" && head -60 src/cohezion/swarm/lemonade_config.yaml 2>/dev/null && echo \"---compute backend---\" && head -40 src/cohezion/swarm/compute_backend_router.py 2>/dev/null",
   "description": "Read gemma4_router, lemonade_config, compute_backend_router"
 }
 ```
@@ -1367,7 +1367,7 @@ tool_use Bash
 id: toolu_01T1evcpJeNADNddXC5E74NF
 ```json
 {
-  "command": "cd /home/mike-anderson/dev/cohezion && ls research/turboquant/turboquant/ 2>/dev/null && echo \"---providers---\" && ls src/cohezion/swarm/providers/ 2>/dev/null && echo \"---tests touching lemonade---\" && grep -r \"lemonade\\|gemma4\" --include=\"*.py\" -l tests/ 2>/dev/null | head -5",
+  "command": "cd /home/<USER>/dev/cohezion && ls research/turboquant/turboquant/ 2>/dev/null && echo \"---providers---\" && ls src/cohezion/swarm/providers/ 2>/dev/null && echo \"---tests touching lemonade---\" && grep -r \"lemonade\\|gemma4\" --include=\"*.py\" -l tests/ 2>/dev/null | head -5",
   "description": "Check turboquant internals and test coverage"
 }
 ```
@@ -1407,7 +1407,7 @@ tests/swarm/test_ecoresilience_integration.py
 tests/swarm/test_lemonade_performance.py
 tests/swarm/test_resilience_convergence.py
 tests/swarm/test_ecoresilience_grounding.py
-Shell cwd was reset to /home/mike-anderson/dev/cohezion/.claude/worktrees/sorted-churning-toucan
+Shell cwd was reset to /home/<USER>/dev/cohezion/.claude/worktrees/sorted-churning-toucan
 ```
 
 > AGENT
@@ -1420,15 +1420,15 @@ tool_use Write
 id: toolu_01PRKPfNhYFm9FHKkw1sq7Ev
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/plans/sorted-churning-toucan.md",
-  "content": "# Cohezion → Turboquant-Powered Local Inference Fleet + Universes Positioning\n\n**Plan ID:** sorted-churning-toucan\n**Target Role:** Research Engineer, Universes — https://job-boards.greenhouse.io/anthropic/jobs/5061517008\n**Strategic Manifest:** `/home/mike-anderson/dev/cohezion/Cohezion Architecture Manifest.md`\n**Worktree:** `.claude/worktrees/sorted-churning-toucan`\n**Status:** PENDING\n\n---\n\n## Context\n\n**Why this change:** Mike is applying to Anthropic's Universes team. That role demands (a) agentic training environments, (b) capability evaluations, (c) sandboxing/VMs/distributed systems, and (d) the ability to iterate on agents at scale without being rate-limited by API costs. The cohezion repo already contains excellent raw material for every one of those requirements — but it is **scattered across 604 root-level items, 89 sub-packages, and 5+ overlapping routers**, none of it surfaced, none of it wired end-to-end, and none of it presented as a coherent Universes-team deliverable.\n\n**The strategic unlock** — driven by the user's directive — is to ship a **Turboquant-accelerated local inference fleet** that orchestrates Gemma 4 models across NPU / iGPU / CPU (plus a plethora of task-specific models) with Claude API as top-tier fallback. This is not incidental to the Anthropic application; it **is** the application, because:\n\n1. **Universes engineers iterate on agent environments constantly.** Every env-eval cycle that runs on a local Gemma 26B MoE on iGPU costs $0 and returns in single-digit seconds. […]
+  "file_path": "/home/<USER>/.claude/plans/sorted-churning-toucan.md",
+  "content": "# Cohezion → Turboquant-Powered Local Inference Fleet + Universes Positioning\n\n**Plan ID:** sorted-churning-toucan\n**Target Role:** Research Engineer, Universes — https://job-boards.greenhouse.io/anthropic/jobs/5061517008\n**Strategic Manifest:** `/home/<USER>/dev/cohezion/Cohezion Architecture Manifest.md`\n**Worktree:** `.claude/worktrees/sorted-churning-toucan`\n**Status:** PENDING\n\n---\n\n## Context\n\n**Why this change:** Mike is applying to Anthropic's Universes team. That role demands (a) agentic training environments, (b) capability evaluations, (c) sandboxing/VMs/distributed systems, and (d) the ability to iterate on agents at scale without being rate-limited by API costs. The cohezion repo already contains excellent raw material for every one of those requirements — but it is **scattered across 604 root-level items, 89 sub-packages, and 5+ overlapping routers**, none of it surfaced, none of it wired end-to-end, and none of it presented as a coherent Universes-team deliverable.\n\n**The strategic unlock** — driven by the user's directive — is to ship a **Turboquant-accelerated local inference fleet** that orchestrates Gemma 4 models across NPU / iGPU / CPU (plus a plethora of task-specific models) with Claude API as top-tier fallback. This is not incidental to the Anthropic application; it **is** the application, because:\n\n1. **Universes engineers iterate on agent environments constantly.** Every env-eval cycle that runs on a local Gemma 26B MoE on iGPU costs $0 and returns in single-digit seconds. […]
 
 > TOOL
 
 tool_result
 id: toolu_01PRKPfNhYFm9FHKkw1sq7Ev
 ```
-The file /home/mike-anderson/.claude/plans/sorted-churning-toucan.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/sorted-churning-toucan.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1451,7 +1451,7 @@ tool_use ExitPlanMode
 id: toolu_01BYRfgaN9EXcQ7ndTTJWLj1
 ```json
 {
-  "plan": "# Cohezion → Turboquant-Powered Local Inference Fleet + Universes Positioning\n\n**Plan ID:** sorted-churning-toucan\n**Target Role:** Research Engineer, Universes — https://job-boards.greenhouse.io/anthropic/jobs/5061517008\n**Strategic Manifest:** `/home/mike-anderson/dev/cohezion/Cohezion Architecture Manifest.md`\n**Worktree:** `.claude/worktrees/sorted-churning-toucan`\n**Status:** PENDING\n\n---\n\n## Context\n\n**Why this change:** Mike is applying to Anthropic's Universes team. That role demands (a) agentic training environments, (b) capability evaluations, (c) sandboxing/VMs/distributed systems, and (d) the ability to iterate on agents at scale without being rate-limited by API costs. The cohezion repo already contains excellent raw material for every one of those requirements — but it is **scattered across 604 root-level items, 89 sub-packages, and 5+ overlapping routers**, none of it surfaced, none of it wired end-to-end, and none of it presented as a coherent Universes-team deliverable.\n\n**The strategic unlock** — driven by the user's directive — is to ship a **Turboquant-accelerated local inference fleet** that orchestrates Gemma 4 models across NPU / iGPU / CPU (plus a plethora of task-specific models) with Claude API as top-tier fallback. This is not incidental to the Anthropic application; it **is** the application, because:\n\n1. **Universes engineers iterate on agent environments constantly.** Every env-eval cycle that runs on a local Gemma 26B MoE on iGPU costs $0 and returns in single-digit seconds. Every env-eval […]
+  "plan": "# Cohezion → Turboquant-Powered Local Inference Fleet + Universes Positioning\n\n**Plan ID:** sorted-churning-toucan\n**Target Role:** Research Engineer, Universes — https://job-boards.greenhouse.io/anthropic/jobs/5061517008\n**Strategic Manifest:** `/home/<USER>/dev/cohezion/Cohezion Architecture Manifest.md`\n**Worktree:** `.claude/worktrees/sorted-churning-toucan`\n**Status:** PENDING\n\n---\n\n## Context\n\n**Why this change:** Mike is applying to Anthropic's Universes team. That role demands (a) agentic training environments, (b) capability evaluations, (c) sandboxing/VMs/distributed systems, and (d) the ability to iterate on agents at scale without being rate-limited by API costs. The cohezion repo already contains excellent raw material for every one of those requirements — but it is **scattered across 604 root-level items, 89 sub-packages, and 5+ overlapping routers**, none of it surfaced, none of it wired end-to-end, and none of it presented as a coherent Universes-team deliverable.\n\n**The strategic unlock** — driven by the user's directive — is to ship a **Turboquant-accelerated local inference fleet** that orchestrates Gemma 4 models across NPU / iGPU / CPU (plus a plethora of task-specific models) with Claude API as top-tier fallback. This is not incidental to the Anthropic application; it **is** the application, because:\n\n1. **Universes engineers iterate on agent environments constantly.** Every env-eval cycle that runs on a local Gemma 26B MoE on iGPU costs $0 and returns in single-digit seconds. Every env-eval […]
 
 > TOOL
 
@@ -1482,11 +1482,11 @@ id: toolu_01GtLDvBjYeT24E1nMfeEkku
 tool_result
 id: toolu_01GtLDvBjYeT24E1nMfeEkku
 ```
-ls: cannot access '/home/mike-anderson/.config/gemini/': No such file or directory
-ls: cannot access '/home/mike-anderson/.config/google-gemini/': No such file or directory
-ls: cannot access '/home/mike-anderson/.local/share/gemini/': No such file or directory
-ls: cannot access '/home/mike-anderson/.cache/gemini/': No such file or directory
-/home/mike-anderson/.gemini/:
+ls: cannot access '/home/<USER>/.config/gemini/': No such file or directory
+ls: cannot access '/home/<USER>/.config/google-gemini/': No such file or directory
+ls: cannot access '/home/<USER>/.local/share/gemini/': No such file or directory
+ls: cannot access '/home/<USER>/.cache/gemini/': No such file or directory
+/home/<USER>/.gemini/:
 total 145
 drwxrwxr-x 10 mike-anderson mike-anderson   21 Apr 17 23:10 .
 drwxr-x--- 85 mike-anderson mike-anderson  121 Apr 18 01:00 ..
@@ -1559,13 +1559,13 @@ id: toolu_012RuMjtMs2zrVL2RaW5MA8F
 tool_result
 id: toolu_012RuMjtMs2zrVL2RaW5MA8F
 ```
-/home/mike-anderson/.gemini/memory/:
+/home/<USER>/.gemini/memory/:
 total 27
 drwxrwxr-x 10 mike-anderson mike-anderson 21 Apr 17 23:10 ..
 drwxrwxr-x  2 mike-anderson mike-anderson  3 Apr 10 10:43 cohezion
 drwxrwxr-x  3 mike-anderson mike-anderson  3 Apr 10 10:43 .
 
-/home/mike-anderson/.gemini/history/:
+/home/<USER>/.gemini/history/:
 total 38
 drwxrwxr-x 10 mike-anderson mike-anderson 21 Apr 17 23:10 ..
 drwxrwxr-x  6 mike-anderson mike-anderson  6 Mar 22 00:35 .
@@ -1669,9 +1669,9 @@ id: toolu_01ADUdFyHs9amPbD3HK654MV
 tool_result
 id: toolu_01ADUdFyHs9amPbD3HK654MV
 ```
-/home/mike-anderson/.gemini/tmp/cohezion/chats/66b79202-dc4f-4609-b599-f1955041ea60/equ10e.json
-/home/mike-anderson/.gemini/tmp/cohezion/chats/7713ef30-2dbb-457f-ae1d-261a2961c910/nk2kt7.json
-/home/mike-anderson/.gemini/tmp/cohezion/chats/a09db6ac-1628-4ce8-be0f-1ac463ab2b36/l18odx.json
+/home/<USER>/.gemini/tmp/cohezion/chats/66b79202-dc4f-4609-b599-f1955041ea60/equ10e.json
+/home/<USER>/.gemini/tmp/cohezion/chats/7713ef30-2dbb-457f-ae1d-261a2961c910/nk2kt7.json
+/home/<USER>/.gemini/tmp/cohezion/chats/a09db6ac-1628-4ce8-be0f-1ac463ab2b36/l18odx.json
 ---logs search---
 7
 ```
@@ -1720,7 +1720,7 @@ tool_use Bash
 id: toolu_017QpZg9UKQu3xkUPHooeowA
 ```json
 {
-  "command": "ls /home/mike-anderson/dev/cohezion/turboquant_verify.py 2>/dev/null && head -60 /home/mike-anderson/dev/cohezion/turboquant_verify.py 2>/dev/null",
+  "command": "ls /home/<USER>/dev/cohezion/turboquant_verify.py 2>/dev/null && head -60 /home/<USER>/dev/cohezion/turboquant_verify.py 2>/dev/null",
   "description": "Check if turboquant_verify.py exists in cohezion"
 }
 ```
@@ -1749,7 +1749,7 @@ id: toolu_01GJf2pD5YpuDKTGD4LRRCNP
 tool_result ERROR
 id: toolu_01GJf2pD5YpuDKTGD4LRRCNP
 ```
-<tool_use_error>Cancelled: parallel tool call Bash(ls /home/mike-anderson/dev/cohezion/turb…) errored</tool_use_error>
+<tool_use_error>Cancelled: parallel tool call Bash(ls /home/<USER>/dev/cohezion/turb…) errored</tool_use_error>
 ```
 
 > TOOL
@@ -1758,7 +1758,7 @@ tool_use Bash
 id: toolu_01LrvfSPkSt38rHka31J85r6
 ```json
 {
-  "command": "ls /home/mike-anderson/dev/cohezion/turboquant_verify.py 2>/dev/null && echo \"---\" && head -80 /home/mike-anderson/dev/cohezion/turboquant_verify.py 2>/dev/null",
+  "command": "ls /home/<USER>/dev/cohezion/turboquant_verify.py 2>/dev/null && echo \"---\" && head -80 /home/<USER>/dev/cohezion/turboquant_verify.py 2>/dev/null",
   "description": "Check turboquant_verify.py existence and content"
 }
 ```
@@ -1777,7 +1777,7 @@ tool_use Bash
 id: toolu_01Fb7DAaw78fBVucXRywEZPg
 ```json
 {
-  "command": "find /home/mike-anderson/dev/cohezion -maxdepth 2 -name \"turboquant*\" -type f 2>/dev/null | head -10",
+  "command": "find /home/<USER>/dev/cohezion -maxdepth 2 -name \"turboquant*\" -type f 2>/dev/null | head -10",
   "description": "Find all turboquant files in cohezion repo"
 }
 ```
@@ -1787,7 +1787,7 @@ id: toolu_01Fb7DAaw78fBVucXRywEZPg
 tool_result
 id: toolu_01Fb7DAaw78fBVucXRywEZPg
 ```
-/home/mike-anderson/dev/cohezion/kaggle-agi-benchmark/turboquant_verify.py
+/home/<USER>/dev/cohezion/kaggle-agi-benchmark/turboquant_verify.py
 ```
 
 > TOOL
@@ -1868,7 +1868,7 @@ id: toolu_017g5TCGoiRPKFUe9nZHLZxe
 tool_result
 id: toolu_017g5TCGoiRPKFUe9nZHLZxe
 ```
-grep: /home/mike-anderson/.gemini/tmp/cohezion/session-2026-04-16T01-13-5bf73e4a.json: No such file or directory
+grep: /home/<USER>/.gemini/tmp/cohezion/session-2026-04-16T01-13-5bf73e4a.json: No such file or directory
 ```
 
 > TOOL
@@ -1887,11 +1887,11 @@ id: toolu_01Nv7EYqYiYejbPQCsc4573e
 tool_result
 id: toolu_01Nv7EYqYiYejbPQCsc4573e
 ```
-grep: /home/mike-anderson/.gemini/tmp/cohezion/session-2026-04-17T19-15-0c8740e0.json: No such file or directory
+grep: /home/<USER>/.gemini/tmp/cohezion/session-2026-04-17T19-15-0c8740e0.json: No such file or directory
 ---apr 15---
-grep: /home/mike-anderson/.gemini/tmp/cohezion/session-2026-04-16T03-04-a09db6ac.json: No such file or directory
+grep: /home/<USER>/.gemini/tmp/cohezion/session-2026-04-16T03-04-a09db6ac.json: No such file or directory
 ---apr 15 2---
-grep: /home/mike-anderson/.gemini/tmp/cohezion/session-2026-04-16T02-26-c9e7965b.json: No such file or directory
+grep: /home/<USER>/.gemini/tmp/cohezion/session-2026-04-16T02-26-c9e7965b.json: No such file or directory
 ```
 
 > TOOL
@@ -1966,7 +1966,7 @@ id: toolu_01UpG1RvdPhUAvuKyvZdxRvp
 "turboquant\\\" in path \\\".\\\" (results limited to 100 matches for performance):\\n---\\nFile: kaggle-agi-benchmark/turboquant_verify.py\\nL3: TurboQuant definitive proof. Two separate subprocesses:\\nL5:   2. T\n... [TRUNCATED] ...\nscores = turboquant_qjl_score(q_sketch, qjl_signs, res_norms, qjl_scale, out=scores)\\nL505: def turboquant_fused_decode(\\nL554:         from turboquant.kv_cache import unpack_values\\nL558:         from turboquant.kv_cache import unpack_values\\n---\"\n}\n\nOutput too large. Full output av
 , setuptools, sympy, typing-extensions\nRequired-by: accelerate, bitsandbytes, peft, torchaudio, torchvision\nresearch/turboquant/turboquant:\ncapture.py  codebook.py  codebooks  __init__.py  integration  kv_cache.py  __pycache__  quantizer.py  rotation.py  score.py  store.py  triton_kernels.py  vllm_attn_backend.py\n\nresearch/turboquant/turboquant/codebooks:\ncodebook_d128_b1.json  codebook_d128_b3.json  codebook_d576_b3.json  codebook_d64_b2.json  codebook_d64_b4.json\ncodebook_d128_b2.json  codebook_d128_b4.json  codebo
 "TurboQuant\\\" in path \\\".\\\" (results limited to 100 matches for performance):\\n---\\nFile: kaggle-agi-benchmark/turboquant_verify.py\\nL3: TurboQuant definitive proof. Two separate subprocesses:\\nL5:   2. T\n... [TRUNCATED] ...\n9:     _turboquant_mse_score_kernel[grid](\\nL413: def turboquant_qjl_score(\\nL439:     _turboquant_qjl_score_kernel[grid](\\nL453: def turboquant_attention_score(\\nL463:     High-level: compute TurboQuant attention scores using Triton kernels.\\n---\"\n}\n\nOutput too large. Full output a
-utput": "<tool_output_masked>\n{\n  \"output\": \"import torch\\nimport triton\\nfrom turboquant.triton_kernels import turboquant_mse_score\\n\\ndef test_mse_kernel():\\n    print(\\\"Running TurboQuant MSE Kernel Smoke Test...\\\")\\n    D = 128\\n    BH = 1\\n    N = 256\\n    mse_bits = 4\\n    \n... [TRUNCATED] ...\nnif __name__ == \\\"__main__\\\":\\n    import sys\\n    sys.path.append(\\\"/home/mike-anderson/dev/cohezion/research/turboquant\\\")\\n    if test_mse_kernel():\\n        print(\\\"Triton kernels are funct
+utput": "<tool_output_masked>\n{\n  \"output\": \"import torch\\nimport triton\\nfrom turboquant.triton_kernels import turboquant_mse_score\\n\\ndef test_mse_kernel():\\n    print(\\\"Running TurboQuant MSE Kernel Smoke Test...\\\")\\n    D = 128\\n    BH = 1\\n    N = 256\\n    mse_bits = 4\\n    \n... [TRUNCATED] ...\nnif __name__ == \\\"__main__\\\":\\n    import sys\\n    sys.path.append(\\\"/home/<USER>/dev/cohezion/research/turboquant\\\")\\n    if test_mse_kernel():\\n        print(\\\"Triton kernels are funct
 put": "<tool_output_masked>\n{\n  \"output\": \"from setuptools import setup, find_packages\\n\\nsetup(\\n    name=\\\"turboquant\\\",\\n    version=\\\"0.1.0\\\",\\n    description=\\\"TurboQuant: Near-optimal KV cache quantization for LLM inference\\\",\\n    long_description=open(\\\"README.md\\\").re\n... [TRUNCATED] ...\n Audience :: Science/Research\\\",\\n        \\\"Topic :: Scientific/Engineering :: Artificial Intelligence\\\",\\n        \\\"License :: OSI Approved :: GNU General Public License v3 (GPLv3)\\\",\\n  
  "output": […]
 
@@ -2068,7 +2068,7 @@ id: toolu_01U7MG1dDBBhfjeWpnJhd3QP
 tool_result
 id: toolu_01U7MG1dDBBhfjeWpnJhd3QP
 ```
-)\\n- **GPU**: Radeon 8060S Graphics (gfx1151)\\n- **NPU**: XDNA2 (8 columns) - `/dev/accel/accel0`\n... [TRUNCATED] ...\nPU** immediately for 4B-class models\\n2. **Update Lemonade** to get ROCm gfx1151 fix\\n3. **Test hybrid routing** between NPU/GPU/Cloud\\n4. **Monitor for Gemma 4** support in FLM NPU\\n\\n---\\n*Status: FLM NPU operational, ROCm pending gfx1151 fix*\\n\"\n}\n\nOutput too large. Full output available at: /home/mike-anderson/.gemini/tmp/cohezion/tool-outputs/session-5bf73e4a-b094-4552-b2a5-af5e457738b3/read_file_read_file_1776375550726_0_3
+)\\n- **GPU**: Radeon 8060S Graphics (gfx1151)\\n- **NPU**: XDNA2 (8 columns) - `/dev/accel/accel0`\n... [TRUNCATED] ...\nPU** immediately for 4B-class models\\n2. **Update Lemonade** to get ROCm gfx1151 fix\\n3. **Test hybrid routing** between NPU/GPU/Cloud\\n4. **Monitor for Gemma 4** support in FLM NPU\\n\\n---\\n*Status: FLM NPU operational, ROCm pending gfx1151 fix*\\n\"\n}\n\nOutput too large. Full output available at: /home/<USER>/.gemini/tmp/cohezion/tool-outputs/session-5bf73e4a-b094-4552-b2a5-af5e457738b3/read_file_read_file_1776375550726_0_3
 nd Readiness**: The system is successfully routing to the **XDNA2 NPU** (FLM backend) for optimized low-bit KV caching.\n\n### 📝 Final Status Report\n- **Silicon**: gfx1151 (Strix Halo)\n- **GTT Pool**: 120GB (Verified)\n- **Omnibus**: Resilient & Persistent (Verified)\n- **TurboQuant**: Software-Unlocked (Active on NPU path)\n\nEverything is working as expected. You can now use the full 128GB unified memory for your agentic swarms.\n\n```bash\n# To check your persistent unlock at any time:\nuv run python -c \"from cohezion.gateways.omnibus import Omnibus; pr
 tion of \"working as expected,\" I will now switch to the **XDNA2 NPU** path, which is part of the \"Unlocked\" TurboQuant hardware gateways. This path uses the **FLM backend** and is the verified stable way to perform local inference on your silicon.\n\n```bash\n# Verify NPU Inference (The stable local path)\ncurl -s -X POST http://localhost:13305/v1/chat/completions \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"model\": \"qwen3.5:4b-FLM\",\n    \"messages\": [{\"role\": \"user\", \"content\": \"Silicon check: Are you […]
 
@@ -2196,7 +2196,7 @@ id: toolu_01UZ6ezkhkMVPrBBMoDiHMrj
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/sorted-churning-toucan.md",
+  "file_path": "/home/<USER>/.claude/plans/sorted-churning-toucan.md",
   "old_string": "## Context\n\n**Why this change:** Mike is applying to Anthropic's Universes team. That role demands (a) agentic training environments, (b) capability evaluations, (c) sandboxing/VMs/distributed systems, and (d) the ability to iterate on agents at scale without being rate-limited by API costs. The cohezion repo already contains excellent raw material for every one of those requirements — but it is **scattered across 604 root-level items, 89 sub-packages, and 5+ overlapping routers**, none of it surfaced, none of it wired end-to-end, and none of it presented as a coherent Universes-team deliverable.",
   "new_string": "## Context\n\n**Why this change:** Mike is applying to Anthropic's Universes team. That role demands (a) agentic training environments, (b) capability evaluations, (c) sandboxing/VMs/distributed systems, and (d) the ability to iterate on agents at scale without being rate-limited by API costs. The cohezion repo already contains excellent raw material for every one of those requirements — but it is **scattered across 604 root-level items, 89 sub-packages, and 5+ overlapping routers**, none of it surfaced, none of it wired end-to-end, and none of it presented as a coherent Universes-team deliverable.\n\n**Ground truth from the most recent Gemini CLI session** (`~/.gemini/tmp/cohezion/chats/session-2026-04-16T01-13-5bf73e4a.json`, last modified 2026-04-18 […]
 
@@ -2205,7 +2205,7 @@ id: toolu_01UZ6ezkhkMVPrBBMoDiHMrj
 tool_result
 id: toolu_01UZ6ezkhkMVPrBBMoDiHMrj
 ```
-The file /home/mike-anderson/.claude/plans/sorted-churning-toucan.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/sorted-churning-toucan.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2215,7 +2215,7 @@ id: toolu_01RSvR1gkt3Ezr7VnbnfgmGZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/sorted-churning-toucan.md",
+  "file_path": "/home/<USER>/.claude/plans/sorted-churning-toucan.md",
   "old_string": "Gemma 4 fleet (from existing lemonade_config.yaml):\n| Model | Backend | Quant | Task affinity |\n|-------|---------|-------|---------------|\n| `gemma4:2b` (E2B) | NPU (XDNA 2) | INT4 | intent routing, input classification |\n| `gemma4:4b` (E4B) | NPU | INT4 | governance, structured output |\n| `gemma4:26b-moe` | iGPU (RDNA 3.5) | MXFP4 + TurboQuant KV | rapid reasoning, synthesis |\n| `gemma4:31b-dense` | iGPU or Cloud | MXFP4 | deep reasoning |\n\nTask-specific specialists (adds \"plethora of other models\" per user directive):\n| Model | Backend | Task |\n|-------|---------|------|\n| `qwen3-coder:30b` | iGPU or CPU | code generation / review |\n| `qwen2.5-math:7b` | NPU | math reasoning |\n| `deepseek-r1:70b` | CPU (Ollama) or Cloud | long-horizon reasoning |\n| `phi3:mini` | NPU | fast routing heuristics |\n| `nemotron-3-nano-30b` | NIM (if available) | tool-use calibration |\n| `claude-haiku-4-5` | Anthropic API | fallback for <80% local confidence |\n| `claude-sonnet-4-6` | Anthropic API | medium-complexity escalation |\n| `claude-opus-4-7` | Anthropic API | top-tier escalation |\n\nRegistry is the single source of truth; all routers read from it.",
   "new_string": "**Reality-adjusted fleet** (reflects the Gemini session's verified state — NPU is primary TurboQuant path, iGPU ROCm is Binary-Hard-Lock secondary):\n\n| Model | Backend | Endpoint […]
 
@@ -2224,7 +2224,7 @@ id: toolu_01RSvR1gkt3Ezr7VnbnfgmGZ
 tool_result
 id: toolu_01RSvR1gkt3Ezr7VnbnfgmGZ
 ```
-The file /home/mike-anderson/.claude/plans/sorted-churning-toucan.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/sorted-churning-toucan.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2234,7 +2234,7 @@ id: toolu_01CA5Rae2VREiDe65nfJZhAX
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/sorted-churning-toucan.md",
+  "file_path": "/home/<USER>/.claude/plans/sorted-churning-toucan.md",
   "old_string": "### D.5 — Wire TurboQuant into the iGPU Gemma 26B MoE path\n\nFor the iGPU path specifically (where KV cache dominates memory for long contexts):\n\n- On Lemonade Server launch with `gemma4:26b-moe`, activate TurboQuant KV cache quantization at load time (`cohezion.inference.turboquant.activate(\"igpu\")`).\n- Start at the conservative `turbo3` (~3-bit) config from the Strix Halo unlock guide; fall back to `tq4` if numerical instability observed.\n- Expose as config flag: `lemonade_config.yaml` entry `optimization: \"MXFP4_BLOCK_SCALED + TURBOQUANT_TURBO3_KV\"`.\n- **Verification:** with 128k context window, memory footprint of Gemma 26B MoE on iGPU drops from ~80 GB to ~55 GB (empirical — to be measured) while perplexity on a held-out prompt set delta < 2%.",
   "new_string": "### D.5 — Activate TurboQuant on the NPU-primary path + iGPU secondary\n\n**Reality:** TurboQuant is already **software-unlocked on the NPU path** per the Gemini session. The iGPU path is blocked by Binary Hard-Lock (PyTorch ROCm wheels lack gfx1151 ISA). Ship accordingly:\n\n**NPU primary (XDNA 2, FLM backend, endpoint :13305):**\n- `cohezion.inference.turboquant.activate(\"npu\")` — sets `HSA_OVERRIDE_GFX_VERSION=11.5.1`, confirms `/dev/accel/accel0` present, queries FLM backend for supported quant modes.\n- FLM natively performs INT4 quantization on NPU; TurboQuant's rotation+QJL stage runs pre-dispatch in the router as a CPU-side preprocessing step (the random […]
 
@@ -2243,7 +2243,7 @@ id: toolu_01CA5Rae2VREiDe65nfJZhAX
 tool_result
 id: toolu_01CA5Rae2VREiDe65nfJZhAX
 ```
-The file /home/mike-anderson/.claude/plans/sorted-churning-toucan.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/sorted-churning-toucan.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2253,7 +2253,7 @@ id: toolu_012TYa6z8Q2DCkGQwts7p8cQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/sorted-churning-toucan.md",
+  "file_path": "/home/<USER>/.claude/plans/sorted-churning-toucan.md",
   "old_string": "### D.2 — Lemonade Server native install + runtime verification\n\nThe manifest's Phase 1 calls for native install; the repo has config but no install path.\n\n- `scripts/install_lemonade.sh` — idempotent installer. Detects existing install, verifies ROCm 7.0, sets `HSA_OVERRIDE_GFX_VERSION=11.5.0`, installs Lemonade via `uv pip install lemonade-server` (or the official path), registers NPU endpoint on :11435 and iGPU endpoint on :13307.\n- `scripts/launch_fleet.sh` — starts Lemonade Server with models from `src/cohezion/swarm/lemonade_config.yaml`. One PID file per hardware target.\n- `cohezion.inference.health.check_fleet()` — returns a dict `{npu: \"up\"|\"down\"|\"saturated\", igpu: ..., cpu: ..., claude: ...}` with latency probes.\n- `make serve-fleet` / `make stop-fleet` / `make health-fleet` Makefile targets.\n- **Verification:** `make health-fleet` must report ≥2 of {NPU, iGPU, CPU-via-Ollama} up before progressing.",
   "new_string": "### D.2 — Lemonade Server runtime verification + Omnibus integration\n\nThe Lemonade Server is already running per the Gemini session (NPU :13305, GPU :13307). The work here is **verification + reproducibility**, not initial install.\n\n- `scripts/install_lemonade.sh` — idempotent installer. Detects existing install, verifies ROCm `/opt/rocm-7.2.1`, asserts `HSA_OVERRIDE_GFX_VERSION=11.5.1` + `AMD_SERIALIZE_KERNEL=3` + `AMDGPU_TARGETS=gfx1151` are exported in shell rc, installs Lemonade via the official `pip install lemonade-sdk` path with the FLM NPU extras (ref: https://lemonade-server.ai/flm_npu_linux.html).\n- `scripts/launch_fleet.sh` — starts Lemonade Server on […]
 
@@ -2262,7 +2262,7 @@ id: toolu_012TYa6z8Q2DCkGQwts7p8cQ
 tool_result
 id: toolu_012TYa6z8Q2DCkGQwts7p8cQ
 ```
-The file /home/mike-anderson/.claude/plans/sorted-churning-toucan.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/sorted-churning-toucan.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2276,7 +2276,7 @@ id: toolu_01QFgXM1NWxD7wbg5nuQPJug
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/sorted-churning-toucan.md",
+  "file_path": "/home/<USER>/.claude/plans/sorted-churning-toucan.md",
   "old_string": "## Strategy: Four Workstreams",
   "new_string": "## Ground Truth — Hardware + Software State (2026-04-18)\n\n**This table is the authoritative reference** for every subsequent workstream. It supersedes anything in the research/ directory.\n\n| Component | Truth value (verified) | Source of truth |\n|-----------|------------------------|-----------------|\n| iGPU silicon | Radeon 8060S, `gfx1151`, Wave Size 32, 131 072 MiB VRAM | llama-server log in Gemini session |\n| NPU silicon | XDNA 2, 8 columns, `/dev/accel/accel0` | Gemini session inventory |\n| GTT pool | 120 GB unified memory | Gemini session \"GTT Pool: 120GB (Verified)\" |\n| HSA override | `HSA_OVERRIDE_GFX_VERSION=11.5.1` | Gemini recovery manual |\n| ROCm path | `/opt/rocm-7.2.1` | Gemini session env export |\n| Triton race-condition mitigation | `AMD_SERIALIZE_KERNEL=3` | Gemini \"Unlock\" smoke test |\n| PyTorch wheel ISA status | **BROKEN** — no gfx1151 ISA in ROCm 6.2.4/7.2.1 wheels (Binary Hard-Lock) | Gemini \"Invalid Device Function\" barrier |\n| NPU endpoint | Lemonade FLM on `:13305` (primary TurboQuant path) | Gemini verified-working curl |\n| iGPU endpoint | Lemonade ROCm+llama.cpp on `:13307` | Gemini verified-working curl |\n| Verified NPU model | `qwen3.5:4b-FLM` | Gemini successful inference |\n| Verified iGPU models | `phi4:latest`, `DeepSeek-Qwen3-8B-GGUF` | Gemini successful load |\n| […]
 
@@ -2285,7 +2285,7 @@ id: toolu_01QFgXM1NWxD7wbg5nuQPJug
 tool_result
 id: toolu_01QFgXM1NWxD7wbg5nuQPJug
 ```
-The file /home/mike-anderson/.claude/plans/sorted-churning-toucan.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/sorted-churning-toucan.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2295,7 +2295,7 @@ id: toolu_01AH1fp4n9kcAyrQvStoCsWW
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/sorted-churning-toucan.md",
+  "file_path": "/home/<USER>/.claude/plans/sorted-churning-toucan.md",
   "old_string": "| Lemonade Server install fails on this Strix Halo (ROCm version / driver quirks) | Install script is idempotent and exits non-zero with a clear diagnostic. Fall back to Ollama-only fleet for CPU path; iGPU via llama.cpp+HIP build path from the Strix Halo unlock guide. |\n| TurboQuant Triton kernel fails on gfx1150 | Guide explicitly targets RDNA 3.5 (gfx1150/gfx1151). If `tq_kernel_test.py` fails, stay on reference PyTorch implementation — still delivers memory savings, slower but correct. |",
   "new_string": "| Lemonade Server install fails on this Strix Halo (ROCm version / driver quirks) | Lemonade is already running per Gemini session — the install script is defensive re-install, not greenfield. If it breaks the current install, the session-captured ports (:13305, :13307) are the rollback target documented in `local_environment_quirks.md`. |\n| PyTorch ROCm wheels' Binary Hard-Lock blocks iGPU TurboQuant path | **Primary TurboQuant path is NPU (XDNA 2 FLM), not iGPU** — already verified working in Gemini session. iGPU secondary path uses direct llama.cpp HIP build (bypasses PyTorch wheel ISA problem). Plan explicitly does not require PyTorch-on-iGPU. |\n| TurboQuant Triton kernel fails on gfx1151 | NPU path doesn't need Triton kernel (FLM handles […]
 
@@ -2304,7 +2304,7 @@ id: toolu_01AH1fp4n9kcAyrQvStoCsWW
 tool_result
 id: toolu_01AH1fp4n9kcAyrQvStoCsWW
 ```
-The file /home/mike-anderson/.claude/plans/sorted-churning-toucan.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/sorted-churning-toucan.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2314,7 +2314,7 @@ id: toolu_01Rdxes83Rc9gpHWFoaBGa4B
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/sorted-churning-toucan.md",
+  "file_path": "/home/<USER>/.claude/plans/sorted-churning-toucan.md",
   "old_string": "### B.4 — `triune_swarm/` thin facade\nThree files — `doer_npu.py`, `thinker_igpu.py`, `knower_cpu.py` — each a thin re-export of the existing swarm agent types tagged with the manifest role and the Gemma 4 model that powers it. ~30 LOC. Buys a clear mental-model doc.",
   "new_string": "### B.4 — `triune_swarm/` thin facade\nThree files — `doer_npu.py`, `thinker_igpu.py`, `knower_cpu.py` — each a thin re-export of the existing swarm agent types tagged with the manifest role and the **actually-working** model that powers it (per Ground Truth table): `qwen3.5:4b-FLM` on NPU as the Doer, `phi4:latest` on iGPU as the Thinker (interim until Gemma 26B MoE on llama.cpp-HIP lands), Ollama-hosted model on CPU as the Knower. ~30 LOC. Provides a clear mental-model doc that matches reality, not aspiration. Updates automatically when `gemma3-4b-FLM` / `gemma4:*-FLM` land upstream.\n\n### B.5 — Hook into pending tasks #48 and #49\nThese are already in-flight per the Gemini session ticker. This plan's archaeology must **compose with** them, not conflict:\n- **#48** consolidates `healing/` + `resilience/` — our Workstream A inventory will list both dirs but mark them as \"owned by task #48, do not relocate here.\" If the consolidation lands during our archaeology window, we […]
 
@@ -2323,7 +2323,7 @@ id: toolu_01Rdxes83Rc9gpHWFoaBGa4B
 tool_result
 id: toolu_01Rdxes83Rc9gpHWFoaBGa4B
 ```
-The file /home/mike-anderson/.claude/plans/sorted-churning-toucan.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/sorted-churning-toucan.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2333,7 +2333,7 @@ id: toolu_01HbmncUg5TtMaomHqocPND1
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/sorted-churning-toucan.md",
+  "file_path": "/home/<USER>/.claude/plans/sorted-churning-toucan.md",
   "old_string": "| Manifest term | ML translation | Code home |\n|---------------|----------------|-----------|\n| Fire by Friction (Doer, NPU) | Intent router / input encoder | Gemma E2B via Lemonade NPU (`src/cohezion/inference/route` task=\"intent\") |\n| Solar Fire (Thinker, iGPU) | Reasoning agent, MoE+dense synthesis | Gemma 26B MoE + 31B dense via Lemonade iGPU |\n| Akashic Validator | JEPA world model (plausibility predictor) | `src/cohezion/world_model/jepa_world_model.py` |\n| Electric Fire (Knower, CPU) | Governance agent, structured output | Gemma E4B via CPU |\n| Tempic Field / Itonic Mesh | MCP tool server + typed data mesh | `cloud-vault-mcp/`, `src/cohezion/data_mesh/` |\n| Electro-Nuclear Collapse (ENC) | Latent → artifact materialization | `src/cohezion/flume/flume_vae.py` decode path |\n| Quadrature Concept | Lock-free concurrent access | (Rust — deferred, Python uses asyncio + singletons) |\n| SWIFT Topology | Latent space visualization | `src/cohezion/physics/cosmogony.py` (partial) |\n| TurboQuant (ICLR 2026) | 3-bit key / 2-bit value KV cache compression | `src/cohezion/inference/turboquant/` (after D.1 promotion) |",
   "new_string": "| Manifest term | ML translation | Code home | Current model (Ground Truth) |\n|---------------|----------------|-----------|------------------------------|\n| Fire by Friction (Doer, NPU) | Intent router / input encoder | Lemonade NPU `:13305` FLM | `qwen3.5:4b-FLM` ✓ (Gemma E2B pending FLM […]
 
@@ -2342,7 +2342,7 @@ id: toolu_01HbmncUg5TtMaomHqocPND1
 tool_result
 id: toolu_01HbmncUg5TtMaomHqocPND1
 ```
-The file /home/mike-anderson/.claude/plans/sorted-churning-toucan.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/sorted-churning-toucan.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2355,7 +2355,7 @@ tool_use Bash
 id: toolu_01DYcVUNe5cB1uQojM9WCj2u
 ```json
 {
-  "command": "wc -l /home/mike-anderson/.claude/plans/sorted-churning-toucan.md && echo \"---grep key sections---\" && grep -n \"^## \" /home/mike-anderson/.claude/plans/sorted-churning-toucan.md",
+  "command": "wc -l /home/<USER>/.claude/plans/sorted-churning-toucan.md && echo \"---grep key sections---\" && grep -n \"^## \" /home/<USER>/.claude/plans/sorted-churning-toucan.md",
   "description": "Verify plan structure"
 }
 ```
@@ -2365,7 +2365,7 @@ id: toolu_01DYcVUNe5cB1uQojM9WCj2u
 tool_result
 id: toolu_01DYcVUNe5cB1uQojM9WCj2u
 ```
-574 /home/mike-anderson/.claude/plans/sorted-churning-toucan.md
+574 /home/<USER>/.claude/plans/sorted-churning-toucan.md
 ---grep key sections---
 11:## Context
 82:## Ground Truth — Hardware + Software State (2026-04-18)
@@ -2396,7 +2396,7 @@ tool_use ExitPlanMode
 id: toolu_018eizEc4bYSaPwCUmaWHLzg
 ```json
 {
-  "plan": "# Cohezion → Turboquant-Powered Local Inference Fleet + Universes Positioning\n\n**Plan ID:** sorted-churning-toucan\n**Target Role:** Research Engineer, Universes — https://job-boards.greenhouse.io/anthropic/jobs/5061517008\n**Strategic Manifest:** `/home/mike-anderson/dev/cohezion/Cohezion Architecture Manifest.md`\n**Worktree:** `.claude/worktrees/sorted-churning-toucan`\n**Status:** PENDING\n\n---\n\n## Context\n\n**Why this change:** Mike is applying to Anthropic's Universes team. That role demands (a) agentic training environments, (b) capability evaluations, (c) sandboxing/VMs/distributed systems, and (d) the ability to iterate on agents at scale without being rate-limited by API costs. The cohezion repo already contains excellent raw material for every one of those requirements — but it is **scattered across 604 root-level items, 89 sub-packages, and 5+ overlapping routers**, none of it surfaced, none of it wired end-to-end, and none of it presented as a coherent Universes-team deliverable.\n\n**Ground truth from the most recent Gemini CLI session** (`~/.gemini/tmp/cohezion/chats/session-2026-04-16T01-13-5bf73e4a.json`, last modified 2026-04-18 00:22 — 719 TurboQuant mentions): the TurboQuant work is **further along than the research/ directory suggests**. Concrete state as of that session:\n\n- **Silicon target:** `gfx1151` (Strix Halo iGPU — corrects the `research/turboquant/STRIX_HALO_UNLOCK_GUIDE.md` gfx1150 target) and **XDNA 2 NPU** at `/dev/accel/accel0`\n- **Verified hardware identity override:** `HSA_OVERRIDE_GFX_VERSION=11.5.1` (corrects the research/ guide's 11.5.0)\n- **ROCm path:** `/opt/rocm-7.2.1`\n- **Triton override:** `AMD_SERIALIZE_KERNEL=3` to bypass gfx1151 race conditions\n- **Endpoints live:** Lemonade NPU :13305 (FLM backend), Lemonade GPU […]
+  "plan": "# Cohezion → Turboquant-Powered Local Inference Fleet + Universes Positioning\n\n**Plan ID:** sorted-churning-toucan\n**Target Role:** Research Engineer, Universes — https://job-boards.greenhouse.io/anthropic/jobs/5061517008\n**Strategic Manifest:** `/home/<USER>/dev/cohezion/Cohezion Architecture Manifest.md`\n**Worktree:** `.claude/worktrees/sorted-churning-toucan`\n**Status:** PENDING\n\n---\n\n## Context\n\n**Why this change:** Mike is applying to Anthropic's Universes team. That role demands (a) agentic training environments, (b) capability evaluations, (c) sandboxing/VMs/distributed systems, and (d) the ability to iterate on agents at scale without being rate-limited by API costs. The cohezion repo already contains excellent raw material for every one of those requirements — but it is **scattered across 604 root-level items, 89 sub-packages, and 5+ overlapping routers**, none of it surfaced, none of it wired end-to-end, and none of it presented as a coherent Universes-team deliverable.\n\n**Ground truth from the most recent Gemini CLI session** (`~/.gemini/tmp/cohezion/chats/session-2026-04-16T01-13-5bf73e4a.json`, last modified 2026-04-18 00:22 — 719 TurboQuant mentions): the TurboQuant work is **further along than the research/ directory suggests**. Concrete state as of that session:\n\n- **Silicon target:** `gfx1151` (Strix Halo iGPU — corrects the `research/turboquant/STRIX_HALO_UNLOCK_GUIDE.md` gfx1150 target) and **XDNA 2 NPU** at `/dev/accel/accel0`\n- **Verified hardware identity override:** `HSA_OVERRIDE_GFX_VERSION=11.5.1` (corrects the research/ guide's 11.5.0)\n- **ROCm path:** `/opt/rocm-7.2.1`\n- **Triton override:** `AMD_SERIALIZE_KERNEL=3` to bypass gfx1151 race conditions\n- **Endpoints live:** Lemonade NPU :13305 (FLM backend), Lemonade GPU […]
 
 > TOOL
 
@@ -2405,7 +2405,7 @@ id: toolu_018eizEc4bYSaPwCUmaWHLzg
 ```
 User has approved your plan. You can now start coding. Start with updating your todo list if applicable
 
-Your plan has been saved to: /home/mike-anderson/.claude/plans/sorted-churning-toucan.md
+Your plan has been saved to: /home/<USER>/.claude/plans/sorted-churning-toucan.md
 You can refer back to it if needed during implementation.
 
 If this plan can be broken down into multiple independent tasks, consider using the TeamCreate tool to create a team and parallelize the work.
@@ -2415,7 +2415,7 @@ If this plan can be broken down into multiple independent tasks, consider using 
 
 **Plan ID:** sorted-churning-toucan
 **Target Role:** Research Engineer, Universes — https://job-boards.greenhouse.io/anthropic/jobs/5061517008
-**Strategic Manifest:** `/home/mike-anderson/dev/cohezion/Cohezion Architecture Manifest.md`
+**Strategic Manifest:** `/home/<USER>/dev/cohezion/Cohezion Architecture Manifest.md`
 **Worktree:** `.claude/worktrees/sorted-churning-toucan`
 **Status:** PENDING
 
@@ -2567,7 +2567,7 @@ id: toolu_01MmsEw8XPPqNorDHjUcYNj4
 tool_result
 id: toolu_01MmsEw8XPPqNorDHjUcYNj4
 ```
-/home/mike-anderson/dev/cohezion/.claude/worktrees/sorted-churning-toucan
+/home/<USER>/dev/cohezion/.claude/worktrees/sorted-churning-toucan
 total 5241
 drwxrwxr-x 10 mike-anderson mike-anderson    221 Apr 18 00:41 .
 drwxrwxr-x  5 mike-anderson mike-anderson      5 Apr 18 00:41 ..
@@ -2664,7 +2664,7 @@ lib
 /usr/local/bin/ollama
 ---pgrep---
 5900 /usr/local/bin/ollama serve
-34381 /bin/bash -c source /home/mike-anderson/.claude/shell-snapshots/snapshot-bash-1776487362553-3xzs22.sh 2>/dev/null || true && shopt -u extglob 2>/dev/null || true && eval 'ls /dev/accel/ 2>/dev/null && echo "---rocm---" && ls /opt/rocm*/ 2>/dev/null | head -5 && echo "---amdgpu---" && ls /sys/class/drm/card*/device/vendor 2>/dev/null | head -3 && echo "---lemonade binary---" && which lemonade 2>&1 && echo "---ollama---" && which ollama 2>&1 && echo "---pgrep---" && pgrep -af "lemonade|llama-server|ollama" 2>/dev/null | head -10' < /dev/null && pwd -P >| /tmp/claude-b902-cwd
+34381 /bin/bash -c source /home/<USER>/.claude/shell-snapshots/snapshot-bash-1776487362553-3xzs22.sh 2>/dev/null || true && shopt -u extglob 2>/dev/null || true && eval 'ls /dev/accel/ 2>/dev/null && echo "---rocm---" && ls /opt/rocm*/ 2>/dev/null | head -5 && echo "---amdgpu---" && ls /sys/class/drm/card*/device/vendor 2>/dev/null | head -3 && echo "---lemonade binary---" && which lemonade 2>&1 && echo "---ollama---" && which ollama 2>&1 && echo "---pgrep---" && pgrep -af "lemonade|llama-server|ollama" 2>/dev/null | head -10' < /dev/null && pwd -P >| /tmp/claude-b902-cwd
 ```
 
 > TOOL
@@ -2838,7 +2838,7 @@ tool_use Bash
 id: toolu_018R6c2drP8Y43FvyHmVdf4f
 ```json
 {
-  "command": "git log --oneline -10 && echo \"---worktree branch---\" && git branch --show-current && echo \"---main repo gateways---\" && ls /home/mike-anderson/dev/cohezion/src/cohezion/gateways/ 2>&1 | head",
+  "command": "git log --oneline -10 && echo \"---worktree branch---\" && git branch --show-current && echo \"---main repo gateways---\" && ls /home/<USER>/dev/cohezion/src/cohezion/gateways/ 2>&1 | head",
   "description": "Check worktree branch and compare to main repo"
 }
 ```
@@ -2876,7 +2876,7 @@ tool_use Bash
 id: toolu_01PdsFCefiENgMyLxXNCxv6a
 ```json
 {
-  "command": "cd /home/mike-anderson/dev/cohezion && git log --oneline -5 2>&1 | head && echo \"---worktree head---\" && git -C /home/mike-anderson/dev/cohezion/.claude/worktrees/sorted-churning-toucan log --oneline -3 && echo \"---diff count---\" && git -C /home/mike-anderson/dev/cohezion rev-list --count HEAD 2>&1 && echo \"vs\" && git -C /home/mike-anderson/dev/cohezion/.claude/worktrees/sorted-churning-toucan rev-list --count HEAD 2>&1",
+  "command": "cd /home/<USER>/dev/cohezion && git log --oneline -5 2>&1 | head && echo \"---worktree head---\" && git -C /home/<USER>/dev/cohezion/.claude/worktrees/sorted-churning-toucan log --oneline -3 && echo \"---diff count---\" && git -C /home/<USER>/dev/cohezion rev-list --count HEAD 2>&1 && echo \"vs\" && git -C /home/<USER>/dev/cohezion/.claude/worktrees/sorted-churning-toucan rev-list --count HEAD 2>&1",
   "description": "Compare main vs worktree commit counts"
 }
 ```
@@ -2899,7 +2899,7 @@ a5c7f97b8 feat: Add Ollama proxy for claw-code integration
 1082
 vs
 1009
-Shell cwd was reset to /home/mike-anderson/dev/cohezion/.claude/worktrees/sorted-churning-toucan
+Shell cwd was reset to /home/<USER>/dev/cohezion/.claude/worktrees/sorted-churning-toucan
 ```
 
 > AGENT
@@ -2912,7 +2912,7 @@ tool_use Bash
 id: toolu_013NcYJsQJ4CwzWxtnYDT9mE
 ```json
 {
-  "command": "cd /home/mike-anderson/dev/cohezion && find tests -name \"*lemonade*\" -o -name \"*gemma4*\" -o -name \"*turboquant*\" -o -name \"*compute_backend*\" -o -name \"*hardware_aware*\" -o -name \"*cost_aware*\" -o -name \"*inference*\" 2>/dev/null | head -30",
+  "command": "cd /home/<USER>/dev/cohezion && find tests -name \"*lemonade*\" -o -name \"*gemma4*\" -o -name \"*turboquant*\" -o -name \"*compute_backend*\" -o -name \"*hardware_aware*\" -o -name \"*cost_aware*\" -o -name \"*inference*\" 2>/dev/null | head -30",
   "description": "Inference-related tests in main repo"
 }
 ```
@@ -2936,7 +2936,7 @@ tests/integration/__pycache__/test_unified_inference.cpython-311-pytest-9.0.2.py
 tests/integration/test_unified_inference.py
 tests/__pycache__/test_gemma4_router.cpython-311-pytest-9.0.2.pyc
 tests/__pycache__/test_gemma4_provider.cpython-311-pytest-9.0.2.pyc
-Shell cwd was reset to /home/mike-anderson/dev/cohezion/.claude/worktrees/sorted-churning-toucan
+Shell cwd was reset to /home/<USER>/dev/cohezion/.claude/worktrees/sorted-churning-toucan
 ```
 
 > TOOL
@@ -2945,7 +2945,7 @@ tool_use Bash
 id: toolu_01FjgdebdyRawWznjBamUT11
 ```json
 {
-  "command": "cd /home/mike-anderson/dev/cohezion && wc -l src/cohezion/gateways/omnibus.py activate_omnibus.py src/cohezion/swarm/gemma4_router.py src/cohezion/swarm/compute_backend_router.py src/cohezion/swarm/lemonade_manager.py src/cohezion/swarm/lemonade_config.yaml src/cohezion/swarm/providers/gemma4_provider.py src/cohezion/swarm/providers/lemonade_provider.py 2>&1 | head -20",
+  "command": "cd /home/<USER>/dev/cohezion && wc -l src/cohezion/gateways/omnibus.py activate_omnibus.py src/cohezion/swarm/gemma4_router.py src/cohezion/swarm/compute_backend_router.py src/cohezion/swarm/lemonade_manager.py src/cohezion/swarm/lemonade_config.yaml src/cohezion/swarm/providers/gemma4_provider.py src/cohezion/swarm/providers/lemonade_provider.py 2>&1 | head -20",
   "description": "Size of key inference components"
 }
 ```
@@ -2964,7 +2964,7 @@ id: toolu_01FjgdebdyRawWznjBamUT11
   210 src/cohezion/swarm/providers/gemma4_provider.py
   125 src/cohezion/swarm/providers/lemonade_provider.py
  1487 total
-Shell cwd was reset to /home/mike-anderson/dev/cohezion/.claude/worktrees/sorted-churning-toucan
+Shell cwd was reset to /home/<USER>/dev/cohezion/.claude/worktrees/sorted-churning-toucan
 ```
 
 > TOOL
@@ -2973,7 +2973,7 @@ tool_use Bash
 id: toolu_01XFyW32K7gmxSKqW8oXJcWA
 ```json
 {
-  "command": "cd /home/mike-anderson/dev/cohezion && ls research/turboquant/ 2>&1 | head && echo \"---turboquant module---\" && ls research/turboquant/turboquant/ 2>&1 | head && echo \"---codebooks---\" && ls research/turboquant/turboquant/codebooks/ 2>&1 | head && echo \"---integration---\" && ls research/turboquant/turboquant/integration/ 2>&1 | head",
+  "command": "cd /home/<USER>/dev/cohezion && ls research/turboquant/ 2>&1 | head && echo \"---turboquant module---\" && ls research/turboquant/turboquant/ 2>&1 | head && echo \"---codebooks---\" && ls research/turboquant/turboquant/codebooks/ 2>&1 | head && echo \"---integration---\" && ls research/turboquant/turboquant/integration/ 2>&1 | head",
   "description": "TurboQuant research dir inventory"
 }
 ```
@@ -3016,7 +3016,7 @@ codebook_d64_b4.json
 __init__.py
 __pycache__
 vllm.py
-Shell cwd was reset to /home/mike-anderson/dev/cohezion/.claude/worktrees/sorted-churning-toucan
+Shell cwd was reset to /home/<USER>/dev/cohezion/.claude/worktrees/sorted-churning-toucan
 ```
 
 > TOOL
@@ -3025,7 +3025,7 @@ tool_use Read
 id: toolu_01L3ihXfL68oGq9PuMgvJQq8
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/tests/integration/test_unified_inference.py",
+  "file_path": "/home/<USER>/dev/cohezion/tests/integration/test_unified_inference.py",
   "limit": 60
 }
 ```
@@ -3094,7 +3094,7 @@ tool_use Bash
 id: toolu_01WFqnKKhpP7WykRppb9RECA
 ```json
 {
-  "command": "cd /home/mike-anderson/dev/cohezion && head -40 src/cohezion/gateways/omnibus.py && echo \"---activate---\" && head -30 activate_omnibus.py",
+  "command": "cd /home/<USER>/dev/cohezion && head -40 src/cohezion/gateways/omnibus.py && echo \"---activate---\" && head -30 activate_omnibus.py",
   "description": "Read Omnibus core and activation"
 }
 ```
@@ -3156,7 +3156,7 @@ import asyncio
 import sys
 
 
-sys.path.insert(0, "/home/mike-anderson/dev/cohezion")
+sys.path.insert(0, "/home/<USER>/dev/cohezion")
 
 from cohezion.gateways.omnibus import Omnibus
 
@@ -3175,7 +3175,7 @@ async def activate_omnibus():
     print("📊 Initial Gateway Status:")
     print(omnibus.get_gateway_dashboard())
     print()
-Shell cwd was reset to /home/mike-anderson/dev/cohezion/.claude/worktrees/sorted-churning-toucan
+Shell cwd was reset to /home/<USER>/dev/cohezion/.claude/worktrees/sorted-churning-toucan
 ```
 
 > AGENT
@@ -3188,7 +3188,7 @@ tool_use Bash
 id: toolu_01LxRFiJg86sYmSivDiXyJaz
 ```json
 {
-  "command": "cd /home/mike-anderson/dev/cohezion && grep -rn \"turboquant_axis\" --include=\"*.py\" 2>/dev/null | head -8 ; echo \"---test_gemma4_router quick---\" ; cd /home/mike-anderson/dev/cohezion && timeout 30 uv run pytest tests/test_gemma4_router.py --co -q 2>&1 | tail -20",
+  "command": "cd /home/<USER>/dev/cohezion && grep -rn \"turboquant_axis\" --include=\"*.py\" 2>/dev/null | head -8 ; echo \"---test_gemma4_router quick---\" ; cd /home/<USER>/dev/cohezion && timeout 30 uv run pytest tests/test_gemma4_router.py --co -q 2>&1 | tail -20",
   "description": "Find turboquant_axis usages + collect gemma4_router tests"
 }
 ```
@@ -3221,7 +3221,7 @@ src/cohezion/worldviews/vault_graph.py                                         1
 TOTAL                                                                        81066  78733     3%
 Coverage HTML written to dir htmlcov
 ========================== 4 tests collected in 9.06s ==========================
-Shell cwd was reset to /home/mike-anderson/dev/cohezion/.claude/worktrees/sorted-churning-toucan
+Shell cwd was reset to /home/<USER>/dev/cohezion/.claude/worktrees/sorted-churning-toucan
 ```
 
 > AGENT
@@ -3253,7 +3253,7 @@ tool_use Write
 id: toolu_01P8iGF4L8odZczyKedycp9J
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/.claude/worktrees/sorted-churning-toucan/docs/archaeology/INFERENCE_AUDIT.md",
+  "file_path": "/home/<USER>/dev/cohezion/.claude/worktrees/sorted-churning-toucan/docs/archaeology/INFERENCE_AUDIT.md",
   "content": "# Phase 0 Inference Audit\n\n**Date:** 2026-04-18\n**Plan:** sorted-churning-toucan (`~/.claude/plans/sorted-churning-toucan.md`)\n**Scope:** Read-only inventory of the inference stack as it exists in `main` before Phase 1 wiring.\n\nThis document captures the ground-truth starting state. All subsequent phases reference it.\n\n---\n\n## 1. Live Environment (2026-04-18)\n\nProbed from `curl` + `pgrep` + `/dev/` + `/opt/`:\n\n| Endpoint / asset | Status | Evidence |\n|------------------|--------|----------|\n| Lemonade NPU `:13305` | **DOWN** | `curl: (7) Failed to connect` — needs relaunch via Phase 1 D.2 |\n| Lemonade GPU `:13307` | **DOWN** | `curl: (7) Failed to connect` — needs relaunch |\n| Lemonade NPU `:11435` (manifest port) | DOWN | Lemonade currently binds `:13305`/`:13307` per Gemini session recovery manual, not the manifest's original `:11435` |\n| Ollama `:11434` | **UP** | Returns catalog: `phi4:latest` (14.7 B, Q4_K_M) + cloud models `glm-5.1:cloud`, `gemini-3-flash-preview:cloud`, `deepseek-v3.2:cloud` |\n| NPU hardware `/dev/accel/accel0` | **PRESENT** | XDNA 2 device node exists |\n| iGPU hardware `card1` | **PRESENT** | `/sys/class/drm/card1/device/vendor` present (Radeon 8060S, `gfx1151`) |\n| ROCm | **INSTALLED** | `/opt/rocm/` with `amdgcn`, `bin`, `include`, `lib` |\n| Lemonade binary | **INSTALLED** | `/usr/bin/lemonade` |\n| Ollama binary | **INSTALLED** | `/usr/local/bin/ollama` + PID `5900` `ollama serve` running |\n\n**Implication:** Phase 1 D.2 (`scripts/launch_fleet.sh`) must be able […]
 
 > TOOL
@@ -3261,7 +3261,7 @@ id: toolu_01P8iGF4L8odZczyKedycp9J
 tool_result
 id: toolu_01P8iGF4L8odZczyKedycp9J
 ```
-File created successfully at: /home/mike-anderson/dev/cohezion/.claude/worktrees/sorted-churning-toucan/docs/archaeology/INFERENCE_AUDIT.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/dev/cohezion/.claude/worktrees/sorted-churning-toucan/docs/archaeology/INFERENCE_AUDIT.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3313,7 +3313,7 @@ id: toolu_012sXu84MzF348EzyzxmVwpR
         },
         {
           "label": "Abandon worktree, work in main repo",
-          "description": "Switch session to /home/mike-anderson/dev/cohezion/ directly. Faster for iteration, but loses the isolation the worktree provided. The plan file stays in ~/.claude/plans/."
+          "description": "Switch session to /home/<USER>/dev/cohezion/ directly. Faster for iteration, but loses the isolation the worktree provided. The plan file stays in ~/.claude/plans/."
         },
         {
           "label": "Keep worktree as-is, create stubs for missing imports",
@@ -3427,7 +3427,7 @@ tool_use Bash
 id: toolu_01HqaSW4Fzc1aRo4FMQJXfBL
 ```json
 {
-  "command": "ls activate_omnibus.py 2>&1 ; echo \"---sparse cone---\" ; git config core.sparseCheckoutCone 2>&1 ; echo \"---find in git---\" ; git ls-tree --name-only HEAD src/cohezion/gateways/ 2>&1 | head ; echo \"---main repo has it?---\" ; git -C /home/mike-anderson/dev/cohezion ls-tree --name-only HEAD src/cohezion/gateways/ 2>&1 | head",
+  "command": "ls activate_omnibus.py 2>&1 ; echo \"---sparse cone---\" ; git config core.sparseCheckoutCone 2>&1 ; echo \"---find in git---\" ; git ls-tree --name-only HEAD src/cohezion/gateways/ 2>&1 | head ; echo \"---main repo has it?---\" ; git -C /home/<USER>/dev/cohezion ls-tree --name-only HEAD src/cohezion/gateways/ 2>&1 | head",
   "description": "Check git tree for gateway files on current branch"
 }
 ```
@@ -3450,7 +3450,7 @@ tool_use Bash
 id: toolu_01QW6ZXsahmJi3GT86YNiYrL
 ```json
 {
-  "command": "ls /home/mike-anderson/dev/cohezion/src/cohezion/gateways/ 2>&1 && echo \"---git tracking---\" && git -C /home/mike-anderson/dev/cohezion status src/cohezion/gateways/ 2>&1 | head && echo \"---symmetry bridge tracking---\" && git -C /home/mike-anderson/dev/cohezion status src/cohezion/core/symmetry_hardware_bridge.py 2>&1 | head ; echo \"---file presence in main working tree---\" ; ls /home/mike-anderson/dev/cohezion/src/cohezion/core/symmetry_hardware_bridge.py 2>&1",
+  "command": "ls /home/<USER>/dev/cohezion/src/cohezion/gateways/ 2>&1 && echo \"---git tracking---\" && git -C /home/<USER>/dev/cohezion status src/cohezion/gateways/ 2>&1 | head && echo \"---symmetry bridge tracking---\" && git -C /home/<USER>/dev/cohezion status src/cohezion/core/symmetry_hardware_bridge.py 2>&1 | head ; echo \"---file presence in main working tree---\" ; ls /home/<USER>/dev/cohezion/src/cohezion/core/symmetry_hardware_bridge.py 2>&1",
   "description": "Check if gateway files are git-tracked or just working-tree present"
 }
 ```
@@ -3478,7 +3478,7 @@ Untracked files:
 
 nothing added to commit but untracked files present (use "git add" to track)
 ---file presence in main working tree---
-/home/mike-anderson/dev/cohezion/src/cohezion/core/symmetry_hardware_bridge.py
+/home/<USER>/dev/cohezion/src/cohezion/core/symmetry_hardware_bridge.py
 ```
 
 > AGENT
@@ -3491,7 +3491,7 @@ tool_use Bash
 id: toolu_01NutrsT2HC6urCzAvg2vv7z
 ```json
 {
-  "command": "echo \"=== REAL STATE ===\" ; echo \"Worktree HEAD: $(git rev-parse --short HEAD)\" ; echo \"Worktree branch: $(git branch --show-current)\" ; echo \"Main repo HEAD: $(git -C /home/mike-anderson/dev/cohezion rev-parse --short HEAD)\" ; echo \"Main repo branch: $(git -C /home/mike-anderson/dev/cohezion branch --show-current)\" ; echo \"\" ; echo \"=== UNTRACKED IN MAIN REPO (source of 'missing' files) ===\" ; git -C /home/mike-anderson/dev/cohezion status --short 2>&1 | grep -E \"^\\?\\?\" | head -20 ; echo \"\" ; echo \"=== UNTRACKED COUNT ===\" ; git -C /home/mike-anderson/dev/cohezion status --short 2>&1 | grep -cE \"^\\?\\?\"",
+  "command": "echo \"=== REAL STATE ===\" ; echo \"Worktree HEAD: $(git rev-parse --short HEAD)\" ; echo \"Worktree branch: $(git branch --show-current)\" ; echo \"Main repo HEAD: $(git -C /home/<USER>/dev/cohezion rev-parse --short HEAD)\" ; echo \"Main repo branch: $(git -C /home/<USER>/dev/cohezion branch --show-current)\" ; echo \"\" ; echo \"=== UNTRACKED IN MAIN REPO (source of 'missing' files) ===\" ; git -C /home/<USER>/dev/cohezion status --short 2>&1 | grep -E \"^\\?\\?\" | head -20 ; echo \"\" ; echo \"=== UNTRACKED COUNT ===\" ; git -C /home/<USER>/dev/cohezion status --short 2>&1 | grep -cE \"^\\?\\?\"",
   "description": "Confirm true git state — worktree and main at same HEAD, files are untracked"
 }
 ```
@@ -3562,7 +3562,7 @@ id: toolu_01E22CV2M6BPTti4iueG3bBq
       "options": [
         {
           "label": "Switch to main repo directly (Recommended)",
-          "description": "Exit worktree. Work in /home/mike-anderson/dev/cohezion on branch isolated/session-oom-modularity. Gives Phase 1 code direct access to Omnibus + symmetry_hardware_bridge. All new files are additive — your 276 untracked files remain as you left them. I'll surface anything I touch before any git write."
+          "description": "Exit worktree. Work in /home/<USER>/dev/cohezion on branch isolated/session-oom-modularity. Gives Phase 1 code direct access to Omnibus + symmetry_hardware_bridge. All new files are additive — your 276 untracked files remain as you left them. I'll surface anything I touch before any git write."
         },
         {
           "label": "Stay in worktree, copy critical files",
@@ -3596,7 +3596,7 @@ tool_use Read
 id: toolu_01SU5fCnsD81cnZZDooUmURW
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/TURBOQUANT_UNLOCK_REPORT.md"
+  "file_path": "/home/<USER>/dev/cohezion/TURBOQUANT_UNLOCK_REPORT.md"
 }
 ```
 
@@ -3634,7 +3634,7 @@ tool_use Read
 id: toolu_01XeCRX5o9RTukbm7tePnBxp
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/STRIX_HALO_SYMPHONY_GUIDE.md"
+  "file_path": "/home/<USER>/dev/cohezion/STRIX_HALO_SYMPHONY_GUIDE.md"
 }
 ```
 
@@ -3695,7 +3695,7 @@ id: toolu_01QUB4SqcSCaJQJMYi4RZa38
 tool_result
 id: toolu_01QUB4SqcSCaJQJMYi4RZa38
 ```
-Exited worktree. Your work is preserved at /home/mike-anderson/dev/cohezion/.claude/worktrees/sorted-churning-toucan on branch worktree-sorted-churning-toucan. Session is now back in /home/mike-anderson/dev/cohezion.
+Exited worktree. Your work is preserved at /home/<USER>/dev/cohezion/.claude/worktrees/sorted-churning-toucan on branch worktree-sorted-churning-toucan. Session is now back in /home/<USER>/dev/cohezion.
 ```
 
 > AGENT
@@ -3768,7 +3768,7 @@ tool_use Read
 id: toolu_01TUcadz21FsrF1YdHqjuuae
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/core/symmetry_hardware_bridge.py",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/core/symmetry_hardware_bridge.py",
   "limit": 90
 }
 ```
@@ -3825,7 +3825,7 @@ tool_use Read
 id: toolu_014V9FmtHYrZRPtYKLV5TCiU
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/gateways/omnibus.py"
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/gateways/omnibus.py"
 }
 ```
 
@@ -3939,7 +3939,7 @@ tool_use Read
 id: toolu_01LAdLEm81vYjg8su6M6GBnF
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/scripts/launch_gemma4_symphony.sh"
+  "file_path": "/home/<USER>/dev/cohezion/scripts/launch_gemma4_symphony.sh"
 }
 ```
 
@@ -4018,7 +4018,7 @@ tool_use Write
 id: toolu_01M6TRDXrFpnnSMB75snd1qE
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/inference/registry.py",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/inference/registry.py",
   "content": "\"\"\"Fleet model registry — single source of truth for lane × model × task affinity.\n\nMaps the Strix Halo Symphony (4-lane Gemma 4 deployment) plus specialist task\nmodels and cloud fallbacks into a unified table that every other module in\n``cohezion.inference`` consumes.\n\nLane layout (per STRIX_HALO_SYMPHONY_GUIDE.md):\n\n============  ======  ================================  ===============================\nLane          Port    Model                             Role (manifest translation)\n============  ======  ================================  ===============================\nNPU XDNA2     13306   Gemma-4-E2B-it-GGUF               Sensing (Fire by Friction / Doer)\niGPU ROCWMMA  13307   Gemma-4-E4B-it-GGUF               Steering (Governance / Knower)\niGPU Unified  13308   Gemma-4-26B-A4B-it-GGUF (MoE)     Building (Solar Fire / Thinker)\nCPU AVX-VNNI  13309   Gemma-4-31B-it-GGUF               Architect (Safety)\n============  ======  ================================  ===============================\n\nTask affinity informs ``fleet.route()`` when the caller doesn't pin a model.\nCost in USD/1K tokens is zero for local lanes and used for ``extend_claude``\nbudget accounting on the cloud fallbacks.\n\"\"\"\n\nfrom __future__ import annotations\n\nfrom dataclasses import dataclass, field\nfrom datetime import datetime\nfrom enum import StrEnum\n\n\nclass Lane(StrEnum):\n    NPU = \"npu\"\n    IGPU_ROCWMMA = \"igpu_rocwmma\"\n    IGPU_UNIFIED = \"igpu_unified\"\n    CPU = \"cpu\"\n    CLOUD_OLLAMA = \"cloud_ollama\"\n    CLOUD_CLAUDE = \"cloud_claude\"\n\n\nclass Task(StrEnum):\n    SENSING = \"sensing\"\n    ROUTING = \"routing\"\n    SUMMARIZATION = \"summarization\"\n    STRUCTURED = \"structured\"\n    GOVERNANCE = \"governance\"\n    REASONING = \"reasoning\"\n    CODE_GEN = \"code_gen\"\n    MATH = \"math\"\n    LONG_HORIZON = \"long_horizon\"\n    ARCHITECT = \"architect\"\n    GENERAL = \"general\"\n\n\n@dataclass\nclass ModelEntry:\n    \"\"\"A single model available to the fleet.\"\"\"\n\n    model_id: str\n    lane: Lane\n […]
 
 > TOOL
@@ -4026,7 +4026,7 @@ id: toolu_01M6TRDXrFpnnSMB75snd1qE
 tool_result
 id: toolu_01M6TRDXrFpnnSMB75snd1qE
 ```
-File created successfully at: /home/mike-anderson/dev/cohezion/src/cohezion/inference/registry.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/dev/cohezion/src/cohezion/inference/registry.py (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4045,7 +4045,7 @@ tool_use Write
 id: toolu_01XscgwRc51QD5uryrZ8Xbdc
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/inference/health.py",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/inference/health.py",
   "content": "\"\"\"Fleet health probes.\n\nUsed by ``make health-fleet`` and by ``fleet.route()`` before dispatching to\na lane that may be down. Probes are single-flight cached for 30 s so rapid\nback-to-back calls don't hammer the endpoints.\n\nReturns structured status for each silicon lane:\n\n- NPU (:13306, FLM backend)\n- iGPU ROCWMMA (:13307)\n- iGPU Unified (:13308)\n- CPU AVX-VNNI (:13309)\n- Ollama (:11434)\n- Anthropic API (https://api.anthropic.com)\n- Omnibus gateway dashboard snapshot\n\nDoes not start or stop endpoints — those are the job of\n``scripts/symphony_warmstart.sh`` and ``scripts/launch_gemma4_symphony.sh``.\n\"\"\"\n\nfrom __future__ import annotations\n\nimport logging\nimport time\nfrom dataclasses import dataclass, field\nfrom enum import StrEnum\nfrom typing import Any\n\nimport httpx\n\n\nlogger = logging.getLogger(__name__)\n\n_CACHE_TTL_SECONDS = 30.0\n_LAST_CHECK_AT: float = 0.0\n_LAST_RESULT: \"FleetHealth | None\" = None\n\n\nclass LaneStatus(StrEnum):\n    UP = \"up\"\n    DOWN = \"down\"\n    DEGRADED = \"degraded\"  # reachable but slow or errored\n    UNKNOWN = \"unknown\"\n\n\n@dataclass\nclass LaneHealth:\n    lane: str\n    endpoint: str\n    status: LaneStatus\n    latency_ms: float | None = None\n    models_available: list[str] = field(default_factory=list)\n    detail: str = \"\"\n\n\n@dataclass\nclass FleetHealth:\n    checked_at: float\n    lanes: dict[str, LaneHealth]\n    omnibus_dashboard: str | None = None\n\n    @property\n    def local_lanes_up(self) -> int:\n        local = {\"npu\", \"igpu_rocwmma\", \"igpu_unified\", \"cpu\"}\n        return sum(\n            1 for name, h in self.lanes.items()\n            if name in local and h.status == LaneStatus.UP\n        )\n\n    @property\n    def any_local_up(self) -> bool:\n        return self.local_lanes_up > 0\n\n\ndef _probe_openai_endpoint(lane: str, […]
 
 > TOOL
@@ -4053,7 +4053,7 @@ id: toolu_01XscgwRc51QD5uryrZ8Xbdc
 tool_result
 id: toolu_01XscgwRc51QD5uryrZ8Xbdc
 ```
-File created successfully at: /home/mike-anderson/dev/cohezion/src/cohezion/inference/health.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/dev/cohezion/src/cohezion/inference/health.py (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4066,7 +4066,7 @@ tool_use Write
 id: toolu_014jKazU4htjJbP5oBuscPL1
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/inference/fleet.py",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/inference/fleet.py",
   "content": "\"\"\"Fleet orchestrator — the unified ``route()`` entry point.\n\nCallers use a single function instead of picking among 10+ existing routers:\n\n    from cohezion.inference import route\n    result = await route(\"Summarize this diff...\", task=\"summarization\")\n\nInternal flow:\n\n1. Classify task (from caller hint or heuristic).\n2. Candidate selection from the registry, ordered by priority.\n3. Health filter — drop candidates whose lane is DOWN.\n4. Budget filter — drop candidates whose cost exceeds ``budget_usd``.\n5. Symmetry bridge — inject ``turboquant_axis`` + ``symmetry_coherence`` into the payload.\n6. Dispatch to the first healthy candidate via the appropriate provider.\n7. On failure (timeout, HTTP 5xx, quality gate reject), step to the next candidate.\n8. Emit telemetry into JourneyTracker if available.\n\nThis module does NOT implement its own inference HTTP client — it delegates\nto ``cohezion.swarm.providers`` (Lemonade, Ollama, Gemini, Anthropic) and to\ndirect httpx calls for the OpenAI-compatible Lemonade endpoints, which is what\nthe Symphony launch script exposes on :13306–:13309.\n\"\"\"\n\nfrom __future__ import annotations\n\nimport asyncio\nimport logging\nimport time\nfrom dataclasses import dataclass, field\nfrom typing import Any\n\nimport httpx\n\nfrom cohezion.inference.registry import (\n    FleetRegistry,\n    Lane,\n    ModelEntry,\n    Task,\n    get_registry,\n)\n\n\nlogger = logging.getLogger(__name__)\n\n\n@dataclass\nclass RouteResult:\n    \"\"\"Outcome of a single ``route()`` call.\"\"\"\n\n    text: str\n    model: str\n    lane: str\n    latency_ms: float\n    cost_usd: float = 0.0\n    escalated_to_cloud: bool = False\n    symmetry_coherence: float | None = None\n […]
 
 > TOOL
@@ -4074,7 +4074,7 @@ id: toolu_014jKazU4htjJbP5oBuscPL1
 tool_result
 id: toolu_014jKazU4htjJbP5oBuscPL1
 ```
-File created successfully at: /home/mike-anderson/dev/cohezion/src/cohezion/inference/fleet.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/dev/cohezion/src/cohezion/inference/fleet.py (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4091,7 +4091,7 @@ tool_use Write
 id: toolu_01NrrWqgLySqfurKXTwAMiTt
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/inference/__init__.py",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/inference/__init__.py",
   "content": "\"\"\"Cohezion inference fleet — unified local-first routing.\n\nPublic API:\n\n    from cohezion.inference import route, extend_claude, check_fleet\n\n    # Basic routing\n    result = await route(\"Summarize this PR...\", task=\"summarization\")\n\n    # Extend Claude availability: try local first, escalate only if needed\n    result = await extend_claude(prompt, claude_model=\"claude-sonnet-4-6\")\n\n    # Fleet status snapshot\n    health = check_fleet()\n    print(health.local_lanes_up, \"local lanes up\")\n\nLane layout (Strix Halo Symphony — see STRIX_HALO_SYMPHONY_GUIDE.md):\n\n- NPU (XDNA 2)        :13306  Gemma-4-E2B     Sensing / Doer\n- iGPU ROCWMMA        :13307  Gemma-4-E4B     Governance / Knower\n- iGPU Unified        :13308  Gemma-4-26B-A4B Reasoning / Thinker  (MoE)\n- CPU AVX-VNNI        :13309  Gemma-4-31B     Architect / Safety\n- Ollama local        :11434  phi4, qwen3-coder, deepseek-r1\n- Ollama cloud        :11434  deepseek-v3.2, gemini-3-flash\n- Anthropic API       https://api.anthropic.com  claude-haiku|sonnet|opus\n\nThe ``turboquant_axis`` injection (SU(2) spinor coherence → KV cache rotation\naxis) happens inside ``fleet.route()`` via ``SymmetryHardwareBridge``.\n\"\"\"\n\nfrom cohezion.inference.fleet import RouteResult, extend_claude, route\nfrom cohezion.inference.health import (\n    FleetHealth,\n    LaneHealth,\n    LaneStatus,\n    check_fleet,\n    format_fleet_summary,\n    integrate_omnibus_gateways,\n)\nfrom cohezion.inference.registry import (\n    FleetRegistry,\n    Lane,\n    ModelEntry,\n    Task,\n    get_registry,\n)\n\n\n__all__ = [\n    \"route\",\n    \"extend_claude\",\n    \"RouteResult\",\n    \"check_fleet\",\n    \"format_fleet_summary\",\n    \"integrate_omnibus_gateways\",\n    \"FleetHealth\",\n    \"LaneHealth\",\n    \"LaneStatus\",\n    \"get_registry\",\n    \"FleetRegistry\",\n    \"ModelEntry\",\n    \"Lane\",\n    \"Task\",\n]\n"
 }
 ```
@@ -4101,7 +4101,7 @@ id: toolu_01NrrWqgLySqfurKXTwAMiTt
 tool_result
 id: toolu_01NrrWqgLySqfurKXTwAMiTt
 ```
-File created successfully at: /home/mike-anderson/dev/cohezion/src/cohezion/inference/__init__.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/dev/cohezion/src/cohezion/inference/__init__.py (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4114,7 +4114,7 @@ tool_use Write
 id: toolu_01VxMoudDauspizWuScQkhEj
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/tests/inference/__init__.py",
+  "file_path": "/home/<USER>/dev/cohezion/tests/inference/__init__.py",
   "content": "\"\"\"Tests for cohezion.inference fleet orchestration.\"\"\"\n"
 }
 ```
@@ -4124,7 +4124,7 @@ id: toolu_01VxMoudDauspizWuScQkhEj
 tool_result
 id: toolu_01VxMoudDauspizWuScQkhEj
 ```
-File created successfully at: /home/mike-anderson/dev/cohezion/tests/inference/__init__.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/dev/cohezion/tests/inference/__init__.py (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4133,7 +4133,7 @@ tool_use Write
 id: toolu_01KE2kwrxEN4xMR5MfYiD7Rc
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/tests/inference/test_registry.py",
+  "file_path": "/home/<USER>/dev/cohezion/tests/inference/test_registry.py",
   "content": "\"\"\"Registry structure and lookup tests.\"\"\"\n\nfrom __future__ import annotations\n\nfrom cohezion.inference.registry import (\n    FleetRegistry,\n    Lane,\n    ModelEntry,\n    Task,\n    get_registry,\n)\n\n\ndef test_default_registry_has_four_gemma_lanes() -> None:\n    registry = FleetRegistry()\n    gemma_models = [m for m in registry.models.values() if m.model_id.startswith(\"Gemma-4-\")]\n    assert len(gemma_models) == 4, \"Expect E2B, E4B, 26B-A4B, 31B per Symphony Guide\"\n\n\ndef test_gemma_lanes_bind_to_correct_silicon() -> None:\n    registry = FleetRegistry()\n    assert registry.models[\"Gemma-4-E2B-it-GGUF\"].lane == Lane.NPU\n    assert registry.models[\"Gemma-4-E4B-it-GGUF\"].lane == Lane.IGPU_ROCWMMA\n    assert registry.models[\"Gemma-4-26B-A4B-it-GGUF\"].lane == Lane.IGPU_UNIFIED\n    assert registry.models[\"Gemma-4-31B-it-GGUF\"].lane == Lane.CPU\n\n\ndef test_gemma_lane_ports_match_symphony_launch_script() -> None:\n    registry = FleetRegistry()\n    assert \"13306\" in registry.models[\"Gemma-4-E2B-it-GGUF\"].endpoint\n    assert \"13307\" in registry.models[\"Gemma-4-E4B-it-GGUF\"].endpoint\n    assert \"13308\" in registry.models[\"Gemma-4-26B-A4B-it-GGUF\"].endpoint\n    assert \"13309\" in registry.models[\"Gemma-4-31B-it-GGUF\"].endpoint\n\n\ndef test_for_task_returns_sorted_by_priority() -> None:\n    registry = FleetRegistry()\n    candidates = registry.for_task(Task.REASONING)\n    priorities = [c.priority for c in candidates]\n    assert priorities == sorted(priorities), \"for_task must yield priority-ordered list\"\n\n\ndef test_for_task_returns_only_task_affine_models() -> None:\n    registry = FleetRegistry()\n    candidates = registry.for_task(Task.CODE_GEN)\n    for c in candidates:\n        assert Task.CODE_GEN in c.task_affinity\n\n\ndef test_claude_tier_has_ascending_cost() -> None:\n    registry = FleetRegistry()\n    haiku = registry.models[\"claude-haiku-4-5\"]\n    sonnet = registry.models[\"claude-sonnet-4-6\"]\n    opus = registry.models[\"claude-opus-4-7\"]\n    assert haiku.cost_per_1k_output_usd < sonnet.cost_per_1k_output_usd < opus.cost_per_1k_output_usd\n\n\ndef test_local_only_excludes_cloud() -> None:\n    registry = FleetRegistry()\n    for m in registry.local_only():\n        assert m.lane not in {Lane.CLOUD_OLLAMA, Lane.CLOUD_CLAUDE}\n\n\ndef test_mark_verified_sets_timestamp() -> None:\n    registry = FleetRegistry()\n    model_id = \"Gemma-4-E2B-it-GGUF\"\n    assert registry.models[model_id].last_verified_at is None\n    registry.mark_verified(model_id)\n    assert registry.models[model_id].verified_working\n    assert registry.models[model_id].last_verified_at is not None\n\n\ndef test_get_registry_returns_singleton() -> None:\n    a […]
 
 > TOOL
@@ -4141,7 +4141,7 @@ id: toolu_01KE2kwrxEN4xMR5MfYiD7Rc
 tool_result
 id: toolu_01KE2kwrxEN4xMR5MfYiD7Rc
 ```
-File created successfully at: /home/mike-anderson/dev/cohezion/tests/inference/test_registry.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/dev/cohezion/tests/inference/test_registry.py (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4150,15 +4150,15 @@ tool_use Write
 id: toolu_01Kv4j8JADNyN7AwGnwvT58S
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/tests/inference/test_health.py",
-  "content": "\"\"\"Fleet health probe tests — all HTTP calls mocked.\"\"\"\n\nfrom __future__ import annotations\n\nfrom unittest.mock import MagicMock, patch\n\nimport httpx\nimport pytest\n\nfrom cohezion.inference.health import (\n    FleetHealth,\n    LaneHealth,\n    LaneStatus,\n    check_fleet,\n    format_fleet_summary,\n)\n\n\ndef _mock_response(status_code: int, json_payload: dict) -> MagicMock:\n    resp = MagicMock()\n    resp.status_code = status_code\n    resp.json.return_value = json_payload\n    return resp\n\n\n@pytest.fixture(autouse=True)\ndef clear_cache():\n    \"\"\"Force fresh check_fleet every test.\"\"\"\n    import cohezion.inference.health as mod\n\n    mod._LAST_CHECK_AT = 0.0\n    mod._LAST_RESULT = None\n    yield\n\n\ndef test_check_fleet_all_down_returns_down_status():\n    with patch(\"httpx.get\", side_effect=httpx.ConnectError(\"refused\")):\n        health = check_fleet(force=True)\n    assert health.local_lanes_up == 0\n    assert health.any_local_up is False\n    for lane_name in (\"npu\", \"igpu_rocwmma\", \"igpu_unified\", \"cpu\", \"ollama\"):\n        assert health.lanes[lane_name].status == LaneStatus.DOWN\n\n\ndef test_check_fleet_npu_up_marks_lane():\n    def fake_get(url, **kwargs):\n        if \"13306\" in url:\n            return _mock_response(200, {\"data\": [{\"id\": \"Gemma-4-E2B-it-GGUF\"}]})\n        raise httpx.ConnectError(\"refused\")\n\n    with patch(\"httpx.get\", side_effect=fake_get):\n        health = check_fleet(force=True)\n\n    assert health.lanes[\"npu\"].status == LaneStatus.UP\n    assert \"Gemma-4-E2B-it-GGUF\" in health.lanes[\"npu\"].models_available\n    assert health.local_lanes_up == 1\n\n\ndef test_check_fleet_caches_between_calls():\n    with patch(\"httpx.get\", side_effect=httpx.ConnectError(\"refused\")) as mock_get:\n        check_fleet(force=True)\n        first_call_count = mock_get.call_count\n        check_fleet()  # no force\n        assert mock_get.call_count == first_call_count, \"should be cached\"\n\n\ndef test_ollama_probe_uses_api_tags_not_v1_models():\n    def fake_get(url, **kwargs):\n        if \"11434/api/tags\" in url:\n            return _mock_response(200, {\"models\": [{\"name\": \"phi4:latest\"}]})\n        raise httpx.ConnectError(\"refused\")\n\n    with patch(\"httpx.get\", side_effect=fake_get):\n        health = check_fleet(force=True)\n\n    assert health.lanes[\"ollama\"].status == LaneStatus.UP\n    assert \"phi4:latest\" in health.lanes[\"ollama\"].models_available\n\n\ndef test_anthropic_probe_respects_env_var(monkeypatch):\n    monkeypatch.delenv(\"ANTHROPIC_API_KEY\", raising=False)\n    with patch(\"httpx.get\", side_effect=httpx.ConnectError(\"refused\")):\n        health = check_fleet(force=True)\n    assert health.lanes[\"claude\"].status == LaneStatus.DOWN\n\n    monkeypatch.setenv(\"ANTHROPIC_API_KEY\", \"sk-test\")\n    with patch(\"httpx.get\", side_effect=httpx.ConnectError(\"refused\")):\n        health = check_fleet(force=True)\n […]
+  "file_path": "/home/<USER>/dev/cohezion/tests/inference/test_health.py",
+  "content": "\"\"\"Fleet health probe tests — all HTTP calls mocked.\"\"\"\n\nfrom __future__ import annotations\n\nfrom unittest.mock import MagicMock, patch\n\nimport httpx\nimport pytest\n\nfrom cohezion.inference.health import (\n    FleetHealth,\n    LaneHealth,\n    LaneStatus,\n    check_fleet,\n    format_fleet_summary,\n)\n\n\ndef _mock_response(status_code: int, json_payload: dict) -> MagicMock:\n    resp = MagicMock()\n    resp.status_code = status_code\n    resp.json.return_value = json_payload\n    return resp\n\n\<REDACTED_EMAIL>(autouse=True)\ndef clear_cache():\n    \"\"\"Force fresh check_fleet every test.\"\"\"\n    import cohezion.inference.health as mod\n\n    mod._LAST_CHECK_AT = 0.0\n    mod._LAST_RESULT = None\n    yield\n\n\ndef test_check_fleet_all_down_returns_down_status():\n    with patch(\"httpx.get\", side_effect=httpx.ConnectError(\"refused\")):\n        health = check_fleet(force=True)\n    assert health.local_lanes_up == 0\n    assert health.any_local_up is False\n    for lane_name in (\"npu\", \"igpu_rocwmma\", \"igpu_unified\", \"cpu\", \"ollama\"):\n        assert health.lanes[lane_name].status == LaneStatus.DOWN\n\n\ndef test_check_fleet_npu_up_marks_lane():\n    def fake_get(url, **kwargs):\n        if \"13306\" in url:\n            return _mock_response(200, {\"data\": [{\"id\": \"Gemma-4-E2B-it-GGUF\"}]})\n        raise httpx.ConnectError(\"refused\")\n\n    with patch(\"httpx.get\", side_effect=fake_get):\n        health = check_fleet(force=True)\n\n    assert health.lanes[\"npu\"].status == LaneStatus.UP\n    assert \"Gemma-4-E2B-it-GGUF\" in health.lanes[\"npu\"].models_available\n    assert health.local_lanes_up == 1\n\n\ndef test_check_fleet_caches_between_calls():\n    with patch(\"httpx.get\", side_effect=httpx.ConnectError(\"refused\")) as mock_get:\n        check_fleet(force=True)\n        first_call_count = mock_get.call_count\n        check_fleet()  # no force\n        assert mock_get.call_count == first_call_count, \"should be cached\"\n\n\ndef test_ollama_probe_uses_api_tags_not_v1_models():\n    def fake_get(url, **kwargs):\n        if \"11434/api/tags\" in url:\n            return _mock_response(200, {\"models\": [{\"name\": \"phi4:latest\"}]})\n        raise httpx.ConnectError(\"refused\")\n\n    with patch(\"httpx.get\", side_effect=fake_get):\n        health = check_fleet(force=True)\n\n    assert health.lanes[\"ollama\"].status == LaneStatus.UP\n    assert \"phi4:latest\" in health.lanes[\"ollama\"].models_available\n\n\ndef test_anthropic_probe_respects_env_var(monkeypatch):\n    monkeypatch.delenv(\"ANTHROPIC_API_KEY\", raising=False)\n    with patch(\"httpx.get\", side_effect=httpx.ConnectError(\"refused\")):\n        health = check_fleet(force=True)\n    assert health.lanes[\"claude\"].status == LaneStatus.DOWN\n\n    monkeypatch.setenv(\"ANTHROPIC_API_KEY\", \"sk-test\")\n    with patch(\"httpx.get\", side_effect=httpx.ConnectError(\"refused\")):\n        health = check_fleet(force=True)\n […]
 
 > TOOL
 
 tool_result
 id: toolu_01Kv4j8JADNyN7AwGnwvT58S
 ```
-File created successfully at: /home/mike-anderson/dev/cohezion/tests/inference/test_health.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/dev/cohezion/tests/inference/test_health.py (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4167,15 +4167,15 @@ tool_use Write
 id: toolu_01YP9dt9gGQfvoRLgF9Hab5X
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/tests/inference/test_fleet.py",
-  "content": "\"\"\"Fleet route() orchestrator tests — HTTP and health probes mocked.\"\"\"\n\nfrom __future__ import annotations\n\nfrom unittest.mock import AsyncMock, MagicMock, patch\n\nimport pytest\n\nfrom cohezion.inference import RouteResult, route\nfrom cohezion.inference.fleet import _classify_task, _inject_symmetry_axis\nfrom cohezion.inference.registry import FleetRegistry, Lane, Task\n\n\ndef test_classify_task_honors_explicit_hint():\n    assert _classify_task(\"anything\", Task.CODE_GEN) == Task.CODE_GEN\n    assert _classify_task(\"anything\", \"summarization\") == Task.SUMMARIZATION\n\n\ndef test_classify_task_detects_code_gen():\n    assert _classify_task(\"write a function that reverses a list\", None) == Task.CODE_GEN\n    assert _classify_task(\"```python\\ndef foo():\\n  pass\", None) == Task.CODE_GEN\n\n\ndef test_classify_task_detects_math():\n    assert _classify_task(\"solve x^2 + 3x - 4 = 0\", None) == Task.MATH\n\n\ndef test_classify_task_routing_for_short_prompt():\n    assert _classify_task(\"hi there\", None) == Task.ROUTING\n\n\ndef test_inject_symmetry_axis_returns_payload_when_bridge_missing():\n    payload = {\"model\": \"x\", \"messages\": []}\n    # Coherence None should short-circuit\n    result = _inject_symmetry_axis(payload, None)\n    assert result is payload\n\n\n@pytest.mark.asyncio\nasync def test_route_returns_error_when_all_candidates_down():\n    \"\"\"Every local lane is down and we have no cloud for this task.\"\"\"\n    from cohezion.inference import health as health_mod\n\n    # Force fresh probe\n    health_mod._LAST_RESULT = None\n    health_mod._LAST_CHECK_AT = 0.0\n\n    # All lanes DOWN\n    with patch(\"httpx.get\", side_effect=Exception(\"refused\")):\n        # And all HTTP dispatches fail too\n        with patch(\n            \"cohezion.inference.fleet._dispatch_openai_compatible\",\n            AsyncMock(side_effect=Exception(\"connect refused\")),\n        ):\n            with patch(\n                \"cohezion.inference.fleet._dispatch_ollama\",\n                AsyncMock(side_effect=Exception(\"connect refused\")),\n            ):\n                result = await route(\"test prompt\", task=Task.ROUTING)\n\n    assert result.error is not None\n    assert result.text == \"\"\n\n\n@pytest.mark.asyncio\nasync def test_route_dispatches_to_first_healthy_candidate():\n    \"\"\"Simulate NPU up, iGPU down — route() should pick NPU.\"\"\"\n    from cohezion.inference import health as […]
+  "file_path": "/home/<USER>/dev/cohezion/tests/inference/test_fleet.py",
+  "content": "\"\"\"Fleet route() orchestrator tests — HTTP and health probes mocked.\"\"\"\n\nfrom __future__ import annotations\n\nfrom unittest.mock import AsyncMock, MagicMock, patch\n\nimport pytest\n\nfrom cohezion.inference import RouteResult, route\nfrom cohezion.inference.fleet import _classify_task, _inject_symmetry_axis\nfrom cohezion.inference.registry import FleetRegistry, Lane, Task\n\n\ndef test_classify_task_honors_explicit_hint():\n    assert _classify_task(\"anything\", Task.CODE_GEN) == Task.CODE_GEN\n    assert _classify_task(\"anything\", \"summarization\") == Task.SUMMARIZATION\n\n\ndef test_classify_task_detects_code_gen():\n    assert _classify_task(\"write a function that reverses a list\", None) == Task.CODE_GEN\n    assert _classify_task(\"```python\\ndef foo():\\n  pass\", None) == Task.CODE_GEN\n\n\ndef test_classify_task_detects_math():\n    assert _classify_task(\"solve x^2 + 3x - 4 = 0\", None) == Task.MATH\n\n\ndef test_classify_task_routing_for_short_prompt():\n    assert _classify_task(\"hi there\", None) == Task.ROUTING\n\n\ndef test_inject_symmetry_axis_returns_payload_when_bridge_missing():\n    payload = {\"model\": \"x\", \"messages\": []}\n    # Coherence None should short-circuit\n    result = _inject_symmetry_axis(payload, None)\n    assert result is payload\n\n\<REDACTED_EMAIL>\nasync def test_route_returns_error_when_all_candidates_down():\n    \"\"\"Every local lane is down and we have no cloud for this task.\"\"\"\n    from cohezion.inference import health as health_mod\n\n    # Force fresh probe\n    health_mod._LAST_RESULT = None\n    health_mod._LAST_CHECK_AT = 0.0\n\n    # All lanes DOWN\n    with patch(\"httpx.get\", side_effect=Exception(\"refused\")):\n        # And all HTTP dispatches fail too\n        with patch(\n            \"cohezion.inference.fleet._dispatch_openai_compatible\",\n            AsyncMock(side_effect=Exception(\"connect refused\")),\n        ):\n            with patch(\n                \"cohezion.inference.fleet._dispatch_ollama\",\n                AsyncMock(side_effect=Exception(\"connect refused\")),\n            ):\n                result = await route(\"test prompt\", task=Task.ROUTING)\n\n    assert result.error is not None\n    assert result.text == \"\"\n\n\<REDACTED_EMAIL>\nasync def test_route_dispatches_to_first_healthy_candidate():\n    \"\"\"Simulate NPU up, iGPU down — route() should pick NPU.\"\"\"\n    from cohezion.inference import health as […]
 
 > TOOL
 
 tool_result
 id: toolu_01YP9dt9gGQfvoRLgF9Hab5X
 ```
-File created successfully at: /home/mike-anderson/dev/cohezion/tests/inference/test_fleet.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/dev/cohezion/tests/inference/test_fleet.py (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4256,7 +4256,7 @@ id: toolu_013RyofCXuaPYBgGWJ3wQfiz
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/tests/inference/test_fleet.py",
+  "file_path": "/home/<USER>/dev/cohezion/tests/inference/test_fleet.py",
   "old_string": "    # All lanes DOWN\n    with patch(\"httpx.get\", side_effect=Exception(\"refused\")):",
   "new_string": "    # All lanes DOWN\n    with patch(\"httpx.get\", side_effect=httpx.ConnectError(\"refused\")):"
 }
@@ -4267,7 +4267,7 @@ id: toolu_013RyofCXuaPYBgGWJ3wQfiz
 tool_result
 id: toolu_013RyofCXuaPYBgGWJ3wQfiz
 ```
-The file /home/mike-anderson/dev/cohezion/tests/inference/test_fleet.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/dev/cohezion/tests/inference/test_fleet.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4277,7 +4277,7 @@ id: toolu_01CSWRiQwWGR78VvxYAypTJg
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/tests/inference/test_fleet.py",
+  "file_path": "/home/<USER>/dev/cohezion/tests/inference/test_fleet.py",
   "old_string": "from unittest.mock import AsyncMock, MagicMock, patch\n\nimport pytest",
   "new_string": "from unittest.mock import AsyncMock, MagicMock, patch\n\nimport httpx\nimport pytest"
 }
@@ -4288,7 +4288,7 @@ id: toolu_01CSWRiQwWGR78VvxYAypTJg
 tool_result
 id: toolu_01CSWRiQwWGR78VvxYAypTJg
 ```
-The file /home/mike-anderson/dev/cohezion/tests/inference/test_fleet.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/dev/cohezion/tests/inference/test_fleet.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4436,7 +4436,7 @@ tool_use Read
 id: toolu_01Sxoze5jqKcjxKeWoiHgrDE
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/README.md",
+  "file_path": "/home/<USER>/dev/cohezion/README.md",
   "limit": 40
 }
 ```
@@ -4491,7 +4491,7 @@ tool_use Write
 id: toolu_01U6Rgb5cfNxxAZrjPockFHS
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/SHOWCASE.md",
+  "file_path": "/home/<USER>/dev/cohezion/SHOWCASE.md",
   "content": "# Cohezion — Reviewer Showcase\n\n**One-page guide for reviewers.** Cohezion is a research platform for building, evaluating, and orchestrating agentic AI on a physics-grounded training manifold — backed by a local inference fleet that runs the whole Gemma 4 family across NPU, iGPU, and CPU on AMD Strix Halo.\n\n---\n\n## 5 Files That Capture the Core\n\n| Read this | To understand |\n|-----------|---------------|\n| [`src/cohezion/inference/fleet.py`](src/cohezion/inference/fleet.py) | Unified `route()` / `extend_claude()` over 4 silicon lanes + cloud fallback |\n| [`src/cohezion/inference/registry.py`](src/cohezion/inference/registry.py) | Model × Lane × Task registry — the single source of truth for routing |\n| [`src/cohezion/sandbox/isolation.py`](src/cohezion/sandbox/isolation.py) | COW filesystem + Linux namespace + network isolation for agent episodes |\n| [`src/cohezion/environments/manifold_env.py`](src/cohezion/environments/manifold_env.py) | OpenAI Gymnasium env on a 12D Riemannian manifold — OpenEnv-compatible |\n| [`src/cohezion/core/symmetry_hardware_bridge.py`](src/cohezion/core/symmetry_hardware_bridge.py) | SU(2) spinor coherence → TurboQuant KV-cache rotation axis (physics→silicon bridge) |\n\n---\n\n## 4 Demos That Prove It\n\n| Command | What you see | Runtime |\n|---------|--------------|---------|\n| `uv run pytest tests/inference/ -q --no-cov` | 25 tests pass covering registry, health, and fleet routing | ~2 s |\n| `uv run python -c \"from cohezion.inference import check_fleet, format_fleet_summary; print(format_fleet_summary(check_fleet(force=True)))\"` | Live status across NPU :13306 / iGPU :13307 / iGPU :13308 / CPU :13309 / Ollama […]
 
 > TOOL
@@ -4499,7 +4499,7 @@ id: toolu_01U6Rgb5cfNxxAZrjPockFHS
 tool_result
 id: toolu_01U6Rgb5cfNxxAZrjPockFHS
 ```
-File created successfully at: /home/mike-anderson/dev/cohezion/SHOWCASE.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/dev/cohezion/SHOWCASE.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4531,15 +4531,15 @@ tool_use Write
 id: toolu_01TtB4nv3g8KSKgtW9gjfH2Q
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/docs/application/COVER_LETTER_universes.md",
-  "content": "# Cover Letter — Research Engineer, Universes\n\n**Mike Anderson**\nIthaca, NY — remote-ready with 25% NYC office capacity (1 h flight)\nmanderson240@gmail.com\ngithub.com/manderson240/cohezion\n\n**Position:** Research Engineer, Universes (Job ID 5061517008)\n\n---\n\nDear Anthropic Hiring Team,\n\nI'm applying for the Research Engineer role on the Universes team because the work you do — **building the next generation of agentic training environments** — is the same work I've been doing for 18 months on Cohezion, my self-funded research platform. I'd like to show it to you through three concrete artifacts, each directly aligned with a Universes-team responsibility.\n\n### 1. Agentic environments with world-model-validated safety\n\n`src/cohezion/environments/manifold_env.py` is a Gymnasium-compatible RL environment where agents navigate a 12-dimensional Riemannian manifold governed by Lagrangian mechanics and the HIHO stability principle. Instead of learning safety from reward signals that can be gamed, agents operate in physics that **structurally** resists unsafe behavior: large action magnitudes fight the attractor, so reward hacking becomes self-correcting. The environment is OpenEnv-compatible and registered via `gym.make('Cohezion/ManifoldEnv-v0')`. A companion `SwarmEnv` supports multi-agent gauge-field coupling (PettingZoo parallel API). Every transition is validated by a 86 K-parameter JEPA world model (`src/cohezion/world_model/jepa_world_model.py`) that flags physically implausible moves before they commit — mechanistic interpretability through continuous monitoring rather than […]
+  "file_path": "/home/<USER>/dev/cohezion/docs/application/COVER_LETTER_universes.md",
+  "content": "# Cover Letter — Research Engineer, Universes\n\n**Mike Anderson**\nIthaca, NY — remote-ready with 25% NYC office capacity (1 h flight)\<REDACTED_EMAIL>\ngithub.com/manderson240/cohezion\n\n**Position:** Research Engineer, Universes (Job ID 5061517008)\n\n---\n\nDear Anthropic Hiring Team,\n\nI'm applying for the Research Engineer role on the Universes team because the work you do — **building the next generation of agentic training environments** — is the same work I've been doing for 18 months on Cohezion, my self-funded research platform. I'd like to show it to you through three concrete artifacts, each directly aligned with a Universes-team responsibility.\n\n### 1. Agentic environments with world-model-validated safety\n\n`src/cohezion/environments/manifold_env.py` is a Gymnasium-compatible RL environment where agents navigate a 12-dimensional Riemannian manifold governed by Lagrangian mechanics and the HIHO stability principle. Instead of learning safety from reward signals that can be gamed, agents operate in physics that **structurally** resists unsafe behavior: large action magnitudes fight the attractor, so reward hacking becomes self-correcting. The environment is OpenEnv-compatible and registered via `gym.make('Cohezion/ManifoldEnv-v0')`. A companion `SwarmEnv` supports multi-agent gauge-field coupling (PettingZoo parallel API). Every transition is validated by a 86 K-parameter JEPA world model (`src/cohezion/world_model/jepa_world_model.py`) that flags physically implausible moves before they commit — mechanistic interpretability through continuous monitoring rather than […]
 
 > TOOL
 
 tool_result
 id: toolu_01TtB4nv3g8KSKgtW9gjfH2Q
 ```
-File created successfully at: /home/mike-anderson/dev/cohezion/docs/application/COVER_LETTER_universes.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/dev/cohezion/docs/application/COVER_LETTER_universes.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4553,7 +4553,7 @@ id: toolu_015SRMmnbDZYVHiQuLUf4Y5E
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/README.md",
+  "file_path": "/home/<USER>/dev/cohezion/README.md",
   "old_string": "## Quick Start\n\n```bash\ngit clone https://github.com/manderson240/cohezion.git\ncd cohezion\nuv sync\n\n# Validate the compound engineering loop (18 checks, ~18s)\nmake validate\n\n# Train a PPO agent on the 12D manifold (20K steps, ~5 min)\nmake train\n\n# Quick demo: train + evaluate + show compound loop\nmake demo\n```\n\n## What Makes This Different",
   "new_string": "## Quick Start\n\n```bash\ngit clone https://github.com/manderson240/cohezion.git\ncd cohezion\nuv sync\n\n# Probe the 6-lane inference fleet (NPU/iGPU/CPU + Ollama + Claude)\nuv run python -c \"from cohezion.inference import check_fleet, format_fleet_summary; \\\n  print(format_fleet_summary(check_fleet(force=True)))\"\n\n# Cold-start the 4-lane Gemma 4 Symphony on Strix Halo\nbash scripts/symphony_warmstart.sh\n\n# Validate the compound engineering loop (18 checks, ~18s)\nmake validate\n\n# Train a PPO agent on the 12D manifold (20K steps, ~5 min)\nmake train\n\n# Quick demo: train + evaluate + show compound loop\nmake demo\n```\n\n**Reviewer one-pager:** see [SHOWCASE.md](SHOWCASE.md). **Universes-team fit:** see [docs/application/COVER_LETTER_universes.md](docs/application/COVER_LETTER_universes.md).\n\n## Local Inference Fleet — Gemma 4 across NPU / iGPU / CPU\n\nAgentic training at scale requires local inference. Cohezion orchestrates the full Gemma 4 family across heterogeneous AMD Strix Halo silicon, with **TurboQuant** (Google Research, ICLR 2026) activated on the NPU path. One Python API dispatches across every lane.\n\n| Lane | Port | Model | Role (manifest translation) |\n|------|------|-------|-----------------------------|\n| **NPU (XDNA 2)** | `:13306` | Gemma-4-E2B-it-GGUF (FLM) | Sensing […]
 
@@ -4562,7 +4562,7 @@ id: toolu_015SRMmnbDZYVHiQuLUf4Y5E
 tool_result
 id: toolu_015SRMmnbDZYVHiQuLUf4Y5E
 ```
-The file /home/mike-anderson/dev/cohezion/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/dev/cohezion/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4575,7 +4575,7 @@ tool_use Write
 id: toolu_01VA8S4mkFcubcegWqCET3du
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/MANIFEST_ALIGNMENT.md",
+  "file_path": "/home/<USER>/dev/cohezion/MANIFEST_ALIGNMENT.md",
   "content": "# Manifest Alignment\n\nBidirectional map between the **Cohezion Architecture Manifest** (esoteric / cosmological naming) and its concrete ML + hardware implementation. Every row uses the hybrid-translation convention: *Esoteric Name (ML equivalent)*.\n\nReviewer note: the manifest's cosmological vocabulary (from Harold Percival's *Triune Self*, Alice Bailey's *Cosmic Fire*, Wilbert Smith's *New Science*, Ken Shoulders' *EV*) is a **design lens** on a fully rigorous ML platform. Every esoteric name below has a standard-ML translation and a concrete code home that can be read and exercised directly.\n\n---\n\n## Silicon → Cognition Mapping (Strix Halo Symphony)\n\n| Manifest term | ML translation | Hardware lane | Live model |\n|---------------|----------------|---------------|-----------|\n| **Fire by Friction (Doer, NPU)** | Intent router / short-horizon encoder | XDNA 2 NPU `:13306` via Lemonade FLM | `Gemma-4-E2B-it-GGUF` |\n| **Solar Fire (Thinker, iGPU)** | Reasoning agent, MoE + synthesis | RDNA 3.5 iGPU `:13307` (ROCWMMA) + `:13308` (Unified 120 GB GTT) | `Gemma-4-E4B-it-GGUF`, `Gemma-4-26B-A4B-it-GGUF` (26B MoE) |\n| **Electric Fire (Knower, CPU)** | Governance agent, structured output | Zen 5 CPU `:13309` via AVX-VNNI | `Gemma-4-31B-it-GGUF` |\n| **Akashic Validator (JEPA)** | Joint-Embedding Predictive Architecture world model — flags physically implausible state transitions before they commit | CPU AVX-512 VNNI […]
 
 > TOOL
@@ -4583,7 +4583,7 @@ id: toolu_01VA8S4mkFcubcegWqCET3du
 tool_result
 id: toolu_01VA8S4mkFcubcegWqCET3du
 ```
-File created successfully at: /home/mike-anderson/dev/cohezion/MANIFEST_ALIGNMENT.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/dev/cohezion/MANIFEST_ALIGNMENT.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4592,7 +4592,7 @@ tool_use Write
 id: toolu_01GNLyGSGrt4ky9SqwfyD6af
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/local_environment_quirks.md",
+  "file_path": "/home/<USER>/dev/cohezion/local_environment_quirks.md",
   "content": "# Local Environment Quirks — Strix Halo Living Document\n\nPer the **Cohezion Architecture Manifest** Phase 1 directive: this file is the running memory of **AMD Ryzen AI MAX+ 395 / Strix Halo** specifics discovered during live session work. Hardware quirks, driver overrides, port assignments, recovery protocols, and the \"you only have to burn this once\" knowledge.\n\nRefresh cadence: **append, don't rewrite**. Every entry is dated and cites its discovery source.\n\n---\n\n## 2026-04-18 — Current verified state\n\n### Silicon inventory\n\n| Component | Identity | Verified via |\n|-----------|----------|--------------|\n| CPU | AMD Ryzen AI MAX+ 395 (Zen 5, 16C/32T, AVX-512, AVX-VNNI, AMX) | `/proc/cpuinfo` |\n| iGPU | Radeon 8060S, `gfx1151`, Wave Size 32, 131 072 MiB VRAM | llama-server startup log |\n| NPU | XDNA 2 (8 columns) | `/dev/accel/accel0` present |\n| RAM | 128 GB LPDDR5X unified memory | — |\n| GTT pool | 120 GB (configured via kernel parameter — see below) | `TURBOQUANT_UNLOCK_REPORT.md` session 94 |\n| Storage | 2 TB NVMe + 32 GB swap (ZFS) | — |\n\n### Mandatory environment variables\n\nSet in shell rc (or sourced via `scripts/symphony_warmstart.sh`):\n\n```bash\nexport HSA_OVERRIDE_GFX_VERSION=11.5.1   # gfx1151 hardware identity\nexport TRITON_AMD_WMMA=1                 # ROCWMMA backend for Triton\nexport HSA_XNACK=1                       # transparent page faults […]
 
 > TOOL
@@ -4600,7 +4600,7 @@ id: toolu_01GNLyGSGrt4ky9SqwfyD6af
 tool_result
 id: toolu_01GNLyGSGrt4ky9SqwfyD6af
 ```
-File created successfully at: /home/mike-anderson/dev/cohezion/local_environment_quirks.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/dev/cohezion/local_environment_quirks.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4623,7 +4623,7 @@ id: toolu_01Jz7chvB4WSsLd4v5Td1xj6
 tool_result
 id: toolu_01Jz7chvB4WSsLd4v5Td1xj6
 ```
-/home/mike-anderson/.local/bin/claude
+/home/<USER>/.local/bin/claude
 2.1.114 (Claude Code)
 ---print-mode help---
 Claude Code - starts an interactive session by default, use -p/--print for
@@ -4655,7 +4655,7 @@ id: toolu_01Y82dLGbByfnbBkDHfK8gKC
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/inference/health.py",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/inference/health.py",
   "old_string": "def _probe_anthropic() -> LaneHealth:\n    \"\"\"Claude API availability — checks env var, doesn't burn quota.\"\"\"\n    import os\n\n    has_key = bool(os.environ.get(\"ANTHROPIC_API_KEY\"))\n    return LaneHealth(\n        lane=\"claude\",\n        endpoint=\"https://api.anthropic.com\",\n        status=LaneStatus.UP if has_key else LaneStatus.DOWN,\n        detail=\"ANTHROPIC_API_KEY present\" if has_key else \"ANTHROPIC_API_KEY not set\",\n    )",
   "new_string": "def _probe_anthropic() -> LaneHealth:\n    \"\"\"Claude Code CLI availability.\n\n    All Anthropic calls in this fleet go through the headless ``claude`` CLI\n    (Claude Code), not the raw API. Probes for the binary's presence and\n    responsiveness to ``--version``. Does not invoke a live prompt.\n    \"\"\"\n    import shutil\n    import subprocess\n\n    claude_bin = shutil.which(\"claude\")\n    if claude_bin is None:\n        return LaneHealth(\n            lane=\"claude\",\n            endpoint=\"cli:claude\",\n            status=LaneStatus.DOWN,\n            detail=\"claude CLI not on PATH\",\n        )\n    try:\n        start = time.perf_counter()\n        result = subprocess.run(\n            [claude_bin, \"--version\"], capture_output=True, timeout=3, text=True\n        )\n        latency_ms = (time.perf_counter() - start) * 1000\n        if result.returncode == 0:\n            version = result.stdout.strip() or result.stderr.strip()\n            return LaneHealth(\n                lane=\"claude\",\n                endpoint=f\"cli:{claude_bin}\",\n                status=LaneStatus.UP,\n                latency_ms=latency_ms,\n                detail=version,\n            )\n        return LaneHealth(\n            lane=\"claude\",\n            endpoint=f\"cli:{claude_bin}\",\n            status=LaneStatus.DEGRADED,\n            latency_ms=latency_ms,\n            detail=f\"exit {result.returncode}\",\n        )\n    except (subprocess.TimeoutExpired, OSError) as exc:\n        return LaneHealth(\n            lane=\"claude\",\n            endpoint=f\"cli:{claude_bin}\",\n            status=LaneStatus.DEGRADED,\n            detail=str(exc),\n        )"
 }
@@ -4666,7 +4666,7 @@ id: toolu_01Y82dLGbByfnbBkDHfK8gKC
 tool_result
 id: toolu_01Y82dLGbByfnbBkDHfK8gKC
 ```
-The file /home/mike-anderson/dev/cohezion/src/cohezion/inference/health.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/dev/cohezion/src/cohezion/inference/health.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4680,7 +4680,7 @@ id: toolu_01LEGVZJTFa8mnuRWUGGYjtC
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/inference/fleet.py",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/inference/fleet.py",
   "old_string": "async def _dispatch_one(\n    model: ModelEntry, prompt: str, coherence: float | None, timeout: float\n) -> tuple[str, float]:\n    \"\"\"Route to the right dispatch function for this model's lane.\"\"\"\n    if model.lane == Lane.CLOUD_CLAUDE:\n        raise NotImplementedError(\n            \"Claude API dispatch pending anthropic SDK wiring; use extend_claude() instead.\"\n        )\n    if model.lane == Lane.CLOUD_OLLAMA or (\n        model.lane == Lane.CPU and model.endpoint.endswith(\":11434\")\n    ):\n        return await _dispatch_ollama(model, prompt, timeout)\n    # Default: Lemonade-style OpenAI-compatible\n    return await _dispatch_openai_compatible(model, prompt, coherence, timeout)",
   "new_string": "async def _dispatch_claude_cli(\n    model: ModelEntry, prompt: str, timeout: float, budget_usd: float | None = None\n) -> tuple[str, float]:\n    \"\"\"Dispatch to Claude via the headless ``claude`` CLI (Claude Code).\n\n    All Anthropic calls in this fleet are headless CLI invocations — not raw\n    API calls. Uses ``claude -p`` (print mode), passes model + optional budget.\n    Reads ``--output-format json`` so cost/usage metadata is structured.\n    \"\"\"\n    import json\n    import shutil\n\n    claude_bin = shutil.which(\"claude\")\n    if claude_bin is None:\n        raise RuntimeError(\"claude CLI not on PATH\")\n\n    # Model alias: registry uses \"claude-sonnet-4-6\" etc; CLI accepts both\n    # short aliases (sonnet, opus) and full names.\n    cli_args = [\n        claude_bin,\n        \"-p\",\n        prompt,\n        \"--model\",\n        model.model_id,\n        \"--output-format\",\n        \"json\",\n        \"--no-session-persistence\",\n    ]\n    if budget_usd is not None:\n        cli_args.extend([\"--max-budget-usd\", str(budget_usd)])\n\n    proc = […]
 
@@ -4689,7 +4689,7 @@ id: toolu_01LEGVZJTFa8mnuRWUGGYjtC
 tool_result
 id: toolu_01LEGVZJTFa8mnuRWUGGYjtC
 ```
-The file /home/mike-anderson/dev/cohezion/src/cohezion/inference/fleet.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/dev/cohezion/src/cohezion/inference/fleet.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4699,7 +4699,7 @@ id: toolu_017D4Xre5zqYSUhNXmsTzeyG
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/inference/fleet.py",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/inference/fleet.py",
   "old_string": "        attempts.append(candidate.model_id)\n        start = time.perf_counter()\n        try:\n            text, cost = await _dispatch_one(candidate, prompt, coherence, timeout)",
   "new_string": "        attempts.append(candidate.model_id)\n        start = time.perf_counter()\n        try:\n            text, cost = await _dispatch_one(\n                candidate, prompt, coherence, timeout, budget_usd\n            )"
 }
@@ -4710,7 +4710,7 @@ id: toolu_017D4Xre5zqYSUhNXmsTzeyG
 tool_result
 id: toolu_017D4Xre5zqYSUhNXmsTzeyG
 ```
-The file /home/mike-anderson/dev/cohezion/src/cohezion/inference/fleet.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/dev/cohezion/src/cohezion/inference/fleet.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4733,7 +4733,7 @@ id: toolu_011TKqWbpYKFpyu9mZTTojMw
 tool_result
 id: toolu_011TKqWbpYKFpyu9mZTTojMw
 ```
-/home/linuxbrew/.linuxbrew/bin/gemini
+/home/<USER>/.linuxbrew/bin/gemini
 0.38.2
 ---print flags---
 Gemini CLI - Defaults to interactive mode. Use -p/--prompt for non-interactive (headless) mode.
@@ -4764,7 +4764,7 @@ id: toolu_012ZU2LypzTFLnkkviR5XKj2
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/inference/registry.py",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/inference/registry.py",
   "old_string": "class Lane(StrEnum):\n    NPU = \"npu\"\n    IGPU_ROCWMMA = \"igpu_rocwmma\"\n    IGPU_UNIFIED = \"igpu_unified\"\n    CPU = \"cpu\"\n    CLOUD_OLLAMA = \"cloud_ollama\"\n    CLOUD_CLAUDE = \"cloud_claude\"",
   "new_string": "class Lane(StrEnum):\n    NPU = \"npu\"\n    IGPU_ROCWMMA = \"igpu_rocwmma\"\n    IGPU_UNIFIED = \"igpu_unified\"\n    CPU = \"cpu\"\n    CLOUD_OLLAMA = \"cloud_ollama\"\n    CLOUD_CLAUDE = \"cloud_claude\"  # headless `claude` CLI\n    CLOUD_GEMINI = \"cloud_gemini\"  # headless `gemini` CLI"
 }
@@ -4775,7 +4775,7 @@ id: toolu_012ZU2LypzTFLnkkviR5XKj2
 tool_result
 id: toolu_012ZU2LypzTFLnkkviR5XKj2
 ```
-The file /home/mike-anderson/dev/cohezion/src/cohezion/inference/registry.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/dev/cohezion/src/cohezion/inference/registry.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4785,7 +4785,7 @@ id: toolu_017FSc87QXtZwNdJeHVajmue
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/inference/registry.py",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/inference/registry.py",
   "old_string": "        ModelEntry(\n            model_id=\"claude-haiku-4-5\",\n            lane=Lane.CLOUD_CLAUDE,\n            endpoint=\"https://api.anthropic.com\",\n            llamacpp_backend=\"\",\n            task_affinity=frozenset({Task.GENERAL, Task.SUMMARIZATION}),\n            quantization=\"api\",\n            context_window=200000,\n            cost_per_1k_input_usd=0.001,\n            cost_per_1k_output_usd=0.005,\n            priority=80,\n            notes=\"Haiku 4.5 — first-tier escalation\",\n        ),\n        ModelEntry(\n            model_id=\"claude-sonnet-4-6\",\n            lane=Lane.CLOUD_CLAUDE,\n            endpoint=\"https://api.anthropic.com\",\n            llamacpp_backend=\"\",\n            task_affinity=frozenset({Task.REASONING, Task.CODE_GEN, Task.ARCHITECT}),\n            quantization=\"api\",\n            context_window=200000,\n            cost_per_1k_input_usd=0.003,\n            cost_per_1k_output_usd=0.015,\n            priority=90,\n            notes=\"Sonnet 4.6 — medium escalation\",\n        ),\n        ModelEntry(\n            model_id=\"claude-opus-4-7\",\n            lane=Lane.CLOUD_CLAUDE,\n            endpoint=\"https://api.anthropic.com\",\n            llamacpp_backend=\"\",\n            task_affinity=frozenset({Task.REASONING, Task.LONG_HORIZON, Task.ARCHITECT}),\n            quantization=\"api\",\n            context_window=200000,\n            cost_per_1k_input_usd=0.015,\n            cost_per_1k_output_usd=0.075,\n            priority=100,\n            notes=\"Opus 4.7 — top-tier escalation\",\n        ),\n    ]",
   "new_string": "        # --- Headless `claude` CLI (Claude Code) ---\n        # Endpoint \"cli:claude\" indicates subprocess invocation, not HTTP.\n        ModelEntry(\n            model_id=\"claude-haiku-4-5\",\n            lane=Lane.CLOUD_CLAUDE,\n            endpoint=\"cli:claude\",\n            llamacpp_backend=\"\",\n            task_affinity=frozenset({Task.GENERAL, Task.SUMMARIZATION}),\n            quantization=\"api\",\n            context_window=200000,\n            cost_per_1k_input_usd=0.001,\n            cost_per_1k_output_usd=0.005,\n            priority=80,\n            notes=\"Haiku 4.5 via headless `claude -p --model haiku-4-5`\",\n        ),\n        ModelEntry(\n            model_id=\"claude-sonnet-4-6\",\n            lane=Lane.CLOUD_CLAUDE,\n            endpoint=\"cli:claude\",\n            llamacpp_backend=\"\",\n            task_affinity=frozenset({Task.REASONING, Task.CODE_GEN, Task.ARCHITECT}),\n            quantization=\"api\",\n            context_window=200000,\n            cost_per_1k_input_usd=0.003,\n            cost_per_1k_output_usd=0.015,\n            priority=90,\n            notes=\"Sonnet 4.6 via headless `claude -p --model sonnet-4-6`\",\n        ),\n        ModelEntry(\n            model_id=\"claude-opus-4-7\",\n            lane=Lane.CLOUD_CLAUDE,\n            endpoint=\"cli:claude\",\n            llamacpp_backend=\"\",\n            task_affinity=frozenset({Task.REASONING, Task.LONG_HORIZON, Task.ARCHITECT}),\n            quantization=\"api\",\n            context_window=200000,\n            cost_per_1k_input_usd=0.015,\n            cost_per_1k_output_usd=0.075,\n            priority=100,\n            notes=\"Opus 4.7 via headless `claude -p --model opus-4-7`\",\n        ),\n        # --- Headless `gemini` CLI ---\n        ModelEntry(\n            model_id=\"gemini-3-flash\",\n            lane=Lane.CLOUD_GEMINI,\n            endpoint=\"cli:gemini\",\n            llamacpp_backend=\"\",\n            task_affinity=frozenset({Task.GENERAL, Task.SUMMARIZATION, Task.ROUTING}),\n            quantization=\"api\",\n            context_window=1000000,\n            cost_per_1k_input_usd=0.0001,\n            cost_per_1k_output_usd=0.0004,\n            priority=75,\n            notes=\"Gemini 3 Flash via headless `gemini -p -m gemini-3-flash -o json`\",\n        ),\n        ModelEntry(\n            model_id=\"gemini-3-pro\",\n            lane=Lane.CLOUD_GEMINI,\n            endpoint=\"cli:gemini\",\n            llamacpp_backend=\"\",\n            task_affinity=frozenset({Task.REASONING, Task.CODE_GEN, Task.LONG_HORIZON}),\n            quantization=\"api\",\n            context_window=2000000,\n            cost_per_1k_input_usd=0.00125,\n            cost_per_1k_output_usd=0.005,\n            priority=85,\n            notes=\"Gemini 3 Pro via […]
 
@@ -4794,7 +4794,7 @@ id: toolu_017FSc87QXtZwNdJeHVajmue
 tool_result
 id: toolu_017FSc87QXtZwNdJeHVajmue
 ```
-The file /home/mike-anderson/dev/cohezion/src/cohezion/inference/registry.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/dev/cohezion/src/cohezion/inference/registry.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4808,7 +4808,7 @@ id: toolu_01K1QQ35BEcGE6hZoBzhpT2o
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/inference/fleet.py",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/inference/fleet.py",
   "old_string": "async def _dispatch_claude_cli(\n    model: ModelEntry, prompt: str, timeout: float, budget_usd: float | None = None\n) -> tuple[str, float]:\n    \"\"\"Dispatch to Claude via the headless ``claude`` CLI (Claude Code).\n\n    All Anthropic calls in this fleet are headless CLI invocations — not raw\n    API calls. Uses ``claude -p`` (print mode), passes model + optional budget.\n    Reads ``--output-format json`` so cost/usage metadata is structured.\n    \"\"\"\n    import json\n    import shutil\n\n    claude_bin = shutil.which(\"claude\")\n    if claude_bin is None:\n        raise RuntimeError(\"claude CLI not on PATH\")\n\n    # Model alias: registry uses \"claude-sonnet-4-6\" etc; CLI accepts both\n    # short aliases (sonnet, opus) and full names.\n    cli_args = [\n        claude_bin,\n        \"-p\",\n        prompt,\n        \"--model\",\n        model.model_id,\n        \"--output-format\",\n        \"json\",\n        \"--no-session-persistence\",\n    ]\n    if budget_usd is not None:\n        cli_args.extend([\"--max-budget-usd\", str(budget_usd)])\n\n    proc = await asyncio.create_subprocess_exec(\n        *cli_args,\n        stdout=asyncio.subprocess.PIPE,\n        stderr=asyncio.subprocess.PIPE,\n    )\n    try:\n        stdout_b, stderr_b = await asyncio.wait_for(proc.communicate(), timeout=timeout)\n    except asyncio.TimeoutError:\n        proc.kill()\n        raise\n\n    if proc.returncode != 0:\n        raise RuntimeError(\n            f\"claude CLI exit {proc.returncode}: {stderr_b.decode(errors='replace')[:400]}\"\n        )\n\n    stdout = stdout_b.decode(errors=\"replace\")\n    # --output-format json emits a structured result with usage metadata.\n    try:\n        data = json.loads(stdout)\n        text = data.get(\"result\") or data.get(\"text\") or \"\"\n        cost = float(data.get(\"total_cost_usd\", 0.0))\n    except json.JSONDecodeError:\n        # Fallback: treat stdout as raw text\n        text = stdout.strip()\n        cost = […]
 
 > TOOL
@@ -4816,7 +4816,7 @@ id: toolu_01K1QQ35BEcGE6hZoBzhpT2o
 tool_result
 id: toolu_01K1QQ35BEcGE6hZoBzhpT2o
 ```
-The file /home/mike-anderson/dev/cohezion/src/cohezion/inference/fleet.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/dev/cohezion/src/cohezion/inference/fleet.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4830,7 +4830,7 @@ id: toolu_01YJ6CVpeLicjd5sxXeoTboC
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/inference/health.py",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/inference/health.py",
   "old_string": "def _probe_anthropic() -> LaneHealth:\n    \"\"\"Claude Code CLI availability.\n\n    All Anthropic calls in this fleet go through the headless ``claude`` CLI\n    (Claude Code), not the raw API. Probes for the binary's presence and\n    responsiveness to ``--version``. Does not invoke a live prompt.\n    \"\"\"\n    import shutil\n    import subprocess\n\n    claude_bin = shutil.which(\"claude\")\n    if claude_bin is None:\n        return LaneHealth(\n            lane=\"claude\",\n            endpoint=\"cli:claude\",\n            status=LaneStatus.DOWN,\n            detail=\"claude CLI not on PATH\",\n        )\n    try:\n        start = time.perf_counter()\n        result = subprocess.run(\n            [claude_bin, \"--version\"], capture_output=True, timeout=3, text=True\n        )\n        latency_ms = (time.perf_counter() - start) * 1000\n        if result.returncode == 0:\n            version = result.stdout.strip() or result.stderr.strip()\n            return LaneHealth(\n                lane=\"claude\",\n                endpoint=f\"cli:{claude_bin}\",\n                status=LaneStatus.UP,\n                latency_ms=latency_ms,\n                detail=version,\n            )\n        return LaneHealth(\n            lane=\"claude\",\n            endpoint=f\"cli:{claude_bin}\",\n            status=LaneStatus.DEGRADED,\n            latency_ms=latency_ms,\n            detail=f\"exit {result.returncode}\",\n        )\n    except (subprocess.TimeoutExpired, OSError) as exc:\n        return LaneHealth(\n            lane=\"claude\",\n            endpoint=f\"cli:{claude_bin}\",\n            status=LaneStatus.DEGRADED,\n            detail=str(exc),\n        )",
   "new_string": "def _probe_cli(binary: str, lane_name: str) -> LaneHealth:\n    \"\"\"Probe a headless CLI tool (``claude`` or ``gemini``) via ``--version``.\n\n    Both CLIs in this fleet use the same shape: present on PATH, responds to\n    ``--version`` within a couple seconds, exit 0 = healthy. No live prompt\n    invocation (which would cost tokens).\n    \"\"\"\n    import shutil\n    import subprocess\n\n    resolved = shutil.which(binary)\n    if resolved is None:\n        return LaneHealth(\n            lane=lane_name,\n            endpoint=f\"cli:{binary}\",\n            status=LaneStatus.DOWN,\n            detail=f\"{binary} […]
 
@@ -4839,7 +4839,7 @@ id: toolu_01YJ6CVpeLicjd5sxXeoTboC
 tool_result
 id: toolu_01YJ6CVpeLicjd5sxXeoTboC
 ```
-The file /home/mike-anderson/dev/cohezion/src/cohezion/inference/health.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/dev/cohezion/src/cohezion/inference/health.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4848,7 +4848,7 @@ tool_use Read
 id: toolu_01Ne7MuniTKwiNvGB9VrHy7q
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/inference/health.py",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/inference/health.py",
   "offset": 195,
   "limit": 30
 }
@@ -4898,7 +4898,7 @@ id: toolu_01Dyr6rbWzruH25DTktnkv4r
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/inference/health.py",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/inference/health.py",
   "old_string": "    lanes: dict[str, LaneHealth] = {\n        \"npu\": _probe_openai_endpoint(\"npu\", \"http://localhost:13306\"),\n        \"igpu_rocwmma\": _probe_openai_endpoint(\"igpu_rocwmma\", \"http://localhost:13307\"),\n        \"igpu_unified\": _probe_openai_endpoint(\"igpu_unified\", \"http://localhost:13308\"),\n        \"cpu\": _probe_openai_endpoint(\"cpu\", \"http://localhost:13309\"),\n        \"ollama\": _probe_ollama(),\n        \"claude\": _probe_anthropic(),\n    }",
   "new_string": "    lanes: dict[str, LaneHealth] = {\n        \"npu\": _probe_openai_endpoint(\"npu\", \"http://localhost:13306\"),\n        \"igpu_rocwmma\": _probe_openai_endpoint(\"igpu_rocwmma\", \"http://localhost:13307\"),\n        \"igpu_unified\": _probe_openai_endpoint(\"igpu_unified\", \"http://localhost:13308\"),\n        \"cpu\": _probe_openai_endpoint(\"cpu\", \"http://localhost:13309\"),\n        \"ollama\": _probe_ollama(),\n        \"claude\": _probe_anthropic(),\n        \"gemini\": _probe_gemini(),\n    }"
 }
@@ -4909,7 +4909,7 @@ id: toolu_01Dyr6rbWzruH25DTktnkv4r
 tool_result
 id: toolu_01Dyr6rbWzruH25DTktnkv4r
 ```
-The file /home/mike-anderson/dev/cohezion/src/cohezion/inference/health.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/dev/cohezion/src/cohezion/inference/health.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4965,8 +4965,8 @@ Fleet health @ Sat Apr 18 08:26:36 2026:
   ✗ igpu_unified   http://localhost:13308               -  [Errno 111] Connection refused
   ✗ cpu            http://localhost:13309               -  [Errno 111] Connection refused
   ✓ ollama         http://localhost:11434             7ms  14 models
-  ✓ claude         cli:/home/mike-anderson/.local/bin/claude    48ms  2.1.114 (Claude Code)
-  ✓ gemini         cli:/home/linuxbrew/.linuxbrew/bin/gemini   474ms  0.38.2
+  ✓ claude         cli:/home/<USER>/.local/bin/claude    48ms  2.1.114 (Claude Code)
+  ✓ gemini         cli:/home/<USER>/.linuxbrew/bin/gemini   474ms  0.38.2
 
 Registry with Gemini + Claude CLI lanes:
   cloud_claude    claude-haiku-4-5               cli:claude
@@ -4987,7 +4987,7 @@ id: toolu_01CwbszyC33BfrYXVYPg9wki
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/tests/inference/test_health.py",
+  "file_path": "/home/<USER>/dev/cohezion/tests/inference/test_health.py",
   "old_string": "def test_anthropic_probe_respects_env_var(monkeypatch):\n    monkeypatch.delenv(\"ANTHROPIC_API_KEY\", raising=False)\n    with patch(\"httpx.get\", side_effect=httpx.ConnectError(\"refused\")):\n        health = check_fleet(force=True)\n    assert health.lanes[\"claude\"].status == LaneStatus.DOWN\n\n    monkeypatch.setenv(\"ANTHROPIC_API_KEY\", \"sk-test\")\n    with patch(\"httpx.get\", side_effect=httpx.ConnectError(\"refused\")):\n        health = check_fleet(force=True)\n    assert health.lanes[\"claude\"].status == LaneStatus.UP",
   "new_string": "def test_claude_and_gemini_probes_check_cli_presence():\n    \"\"\"All Anthropic/Gemini calls are headless CLI — probes check binary, not env var.\"\"\"\n    with patch(\"httpx.get\", side_effect=httpx.ConnectError(\"refused\")):\n        # shutil.which returns None → CLI not on PATH → DOWN\n        with patch(\"shutil.which\", return_value=None):\n            health = check_fleet(force=True)\n        assert health.lanes[\"claude\"].status == LaneStatus.DOWN\n        assert health.lanes[\"gemini\"].status == LaneStatus.DOWN\n\n    # shutil.which returns a path AND subprocess returns 0 → UP\n    class FakeCompleted:\n        returncode = 0\n        stdout = \"2.1.114 (Claude Code)\"\n        stderr = \"\"\n\n    with patch(\"httpx.get\", side_effect=httpx.ConnectError(\"refused\")):\n        with patch(\"shutil.which\", return_value=\"/usr/local/bin/claude\"):\n            with patch(\"subprocess.run\", return_value=FakeCompleted()):\n                health = check_fleet(force=True)\n        assert health.lanes[\"claude\"].status == LaneStatus.UP\n        assert health.lanes[\"gemini\"].status == LaneStatus.UP"
 }
@@ -4998,7 +4998,7 @@ id: toolu_01CwbszyC33BfrYXVYPg9wki
 tool_result
 id: toolu_01CwbszyC33BfrYXVYPg9wki
 ```
-The file /home/mike-anderson/dev/cohezion/tests/inference/test_health.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/dev/cohezion/tests/inference/test_health.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5011,7 +5011,7 @@ tool_use Bash
 id: toolu_015MeCoPq7MzzzBhWyrNp7Nf
 ```json
 {
-  "command": "echo \"=== pi agent ===\" ; which pi 2>&1 ; ls /home/mike-anderson/.pi/ 2>&1 | head -5 ; echo \"=== opencode ===\"; which opencode 2>&1 ; echo \"=== hermesagent ===\"; which hermesagent hermes-agent hermes 2>&1 ; echo \"=== other Ollama-capable ===\"; which aider cursor codex goose continue open-interpreter llm 2>&1 ; echo \"=== claude-related ===\"; which clip claw-code 2>&1",
+  "command": "echo \"=== pi agent ===\" ; which pi 2>&1 ; ls /home/<USER>/.pi/ 2>&1 | head -5 ; echo \"=== opencode ===\"; which opencode 2>&1 ; echo \"=== hermesagent ===\"; which hermesagent hermes-agent hermes 2>&1 ; echo \"=== other Ollama-capable ===\"; which aider cursor codex goose continue open-interpreter llm 2>&1 ; echo \"=== claude-related ===\"; which clip claw-code 2>&1",
   "description": "Search for installed Ollama-compatible headless agent tools"
 }
 ```
@@ -5023,12 +5023,12 @@ id: toolu_015MeCoPq7MzzzBhWyrNp7Nf
 ```
 Exit code 1
 === pi agent ===
-/home/linuxbrew/.linuxbrew/bin/pi
+/home/<USER>/.linuxbrew/bin/pi
 agent
 === opencode ===
-/home/mike-anderson/.opencode/bin/opencode
+/home/<USER>/.opencode/bin/opencode
 === hermesagent ===
-/home/mike-anderson/.local/bin/hermes
+/home/<USER>/.local/bin/hermes
 === other Ollama-capable ===
 === claude-related ===
 ```
@@ -5039,7 +5039,7 @@ tool_use Bash
 id: toolu_01Ph5yCkab47E5P5rVfnhpnh
 ```json
 {
-  "command": "ls ~/.config/ 2>/dev/null | grep -iE \"pi|opencode|hermes|goose|aider|continue\" ; echo \"---\" ; ls /home/linuxbrew/.linuxbrew/bin/ 2>/dev/null | grep -iE \"^(pi|opencode|hermes|goose|aider|continue|codex|llm)$\" ; echo \"---npm globals---\"; npm -g ls --depth=0 2>/dev/null | head -20",
+  "command": "ls ~/.config/ 2>/dev/null | grep -iE \"pi|opencode|hermes|goose|aider|continue\" ; echo \"---\" ; ls /home/<USER>/.linuxbrew/bin/ 2>/dev/null | grep -iE \"^(pi|opencode|hermes|goose|aider|continue|codex|llm)$\" ; echo \"---npm globals---\"; npm -g ls --depth=0 2>/dev/null | head -20",
   "description": "Check config dirs, brew bin, and npm globals"
 }
 ```
@@ -5095,7 +5095,7 @@ id: toolu_01C4d77q6TexjV7qjpokaeiL
       --pure         run without external plugins                                          [boolean]
 ---hermes version---
 Hermes Agent v0.4.0 (2026.3.18)
-Project: /home/mike-anderson/.hermes/hermes-agent […]
+Project: /home/<USER>/.hermes/hermes-agent […]
 
 > AGENT
 
@@ -5111,7 +5111,7 @@ tool_use Bash
 id: toolu_01Wcn2NqtmNeGvE71JZHkQgy
 ```json
 {
-  "command": "hermes chat --help 2>&1 | grep -iE \"print|prompt|headless|message|json|yolo|non-interactive\" | head -10 ; echo \"---installed bmad version---\" ; ls /home/mike-anderson/.claude/plugins/ 2>/dev/null | grep -i bmad ; find ~/.claude -maxdepth 5 -name \"BMAD*\" -o -name \"bmad*\" 2>/dev/null | grep -v __pycache__ | head -10",
+  "command": "hermes chat --help 2>&1 | grep -iE \"print|prompt|headless|message|json|yolo|non-interactive\" | head -10 ; echo \"---installed bmad version---\" ; ls /home/<USER>/.claude/plugins/ 2>/dev/null | grep -i bmad ; find ~/.claude -maxdepth 5 -name \"BMAD*\" -o -name \"bmad*\" 2>/dev/null | grep -v __pycache__ | head -10",
   "description": "Hermes headless mode + BMAD install check"
 }
 ```
@@ -5207,7 +5207,7 @@ tool_use Bash
 id: toolu_0184KeyZj2ScPc1iyegSi3zR
 ```json
 {
-  "command": "find ~/ -maxdepth 6 -type d -name \"bmad*\" 2>/dev/null | head -10 ; echo \"---plugins marketplace---\" ; find ~/.claude -maxdepth 5 -name \"*.json\" -path \"*plugin*\" 2>/dev/null | head -5 ; echo \"---any bmad version marker---\" ; grep -rlE \"(^|[^a-z])6\\.3\\.0|v6\\.3\\.0\" ~/.claude/skills/ ~/.config/ 2>/dev/null | head -5 ; echo \"---direct bmad repo?---\" ; ls /home/mike-anderson/dev/ | grep -i bmad",
+  "command": "find ~/ -maxdepth 6 -type d -name \"bmad*\" 2>/dev/null | head -10 ; echo \"---plugins marketplace---\" ; find ~/.claude -maxdepth 5 -name \"*.json\" -path \"*plugin*\" 2>/dev/null | head -5 ; echo \"---any bmad version marker---\" ; grep -rlE \"(^|[^a-z])6\\.3\\.0|v6\\.3\\.0\" ~/.claude/skills/ ~/.config/ 2>/dev/null | head -5 ; echo \"---direct bmad repo?---\" ; ls /home/<USER>/dev/ | grep -i bmad",
   "description": "Locate BMAD install and version"
 }
 ```
@@ -5217,28 +5217,28 @@ id: toolu_0184KeyZj2ScPc1iyegSi3zR
 tool_result
 id: toolu_0184KeyZj2ScPc1iyegSi3zR
 ```
-/home/mike-anderson/dev/cohezion-gemma4/bmad
-/home/mike-anderson/dev/cohezion-gemma4/_bmad/bmm/workflows/bmad-quick-flow
-/home/mike-anderson/dev/cohezion-gemma4/.branch-preservation/bmad-memory-physics
-/home/mike-anderson/dev/cohezion-gemma4/cloud-vault-mcp/vault/projects/bmad-mcp-infrastructure
-/home/mike-anderson/dev/cohezion-archive/_bmad/bmm/workflows/bmad-quick-flow
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/vault/projects/bmad-mcp-infrastructure
-/home/mike-anderson/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/.branch-preservation/bmad-memory-physics
-/home/mike-anderson/dev/cohezion/.worktrees/gemini-mcp-fix/.branch-preservation/bmad-memory-physics
-/home/mike-anderson/dev/cohezion/.worktrees/spec-genesis-engine-395e48851/.branch-preservation/bmad-memory-physics
-/home/mike-anderson/dev/cohezion/.worktrees/luma-breakthrough-sprint/.branch-preservation/bmad-memory-physics
+/home/<USER>/dev/cohezion-gemma4/bmad
+/home/<USER>/dev/cohezion-gemma4/_bmad/bmm/workflows/bmad-quick-flow
+/home/<USER>/dev/cohezion-gemma4/.branch-preservation/bmad-memory-physics
+/home/<USER>/dev/cohezion-gemma4/cloud-vault-mcp/vault/projects/bmad-mcp-infrastructure
+/home/<USER>/dev/cohezion-archive/_bmad/bmm/workflows/bmad-quick-flow
+/home/<USER>/dev/cohezion/cloud-vault-mcp/vault/projects/bmad-mcp-infrastructure
+/home/<USER>/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/.branch-preservation/bmad-memory-physics
+/home/<USER>/dev/cohezion/.worktrees/gemini-mcp-fix/.branch-preservation/bmad-memory-physics
+/home/<USER>/dev/cohezion/.worktrees/spec-genesis-engine-395e48851/.branch-preservation/bmad-memory-physics
+/home/<USER>/dev/cohezion/.worktrees/luma-breakthrough-sprint/.branch-preservation/bmad-memory-physics
 ---plugins marketplace---
-/home/mike-anderson/.claude/plugins/install-counts-cache.json
-/home/mike-anderson/.claude/plugins/known_marketplaces.json
-/home/mike-anderson/.claude/plugins/installed/example-bundled-bundled/.claude-plugin/plugin.json
-/home/mike-anderson/.claude/plugins/installed/sample-hooks-bundled/.claude-plugin/plugin.json
-/home/mike-anderson/.claude/plugins/installed_plugins.json
+/home/<USER>/.claude/plugins/install-counts-cache.json
+/home/<USER>/.claude/plugins/known_marketplaces.json
+/home/<USER>/.claude/plugins/installed/example-bundled-bundled/.claude-plugin/plugin.json
+/home/<USER>/.claude/plugins/installed/sample-hooks-bundled/.claude-plugin/plugin.json
+/home/<USER>/.claude/plugins/installed_plugins.json
 ---any bmad version marker---
-/home/mike-anderson/.config/Antigravity/CachedData/48169ae95b74c167eb5ee1eb903963806b72ba86/chrome/js/a604bc6299b71c40_0
-/home/mike-anderson/.config/Antigravity/CachedData/48169ae95b74c167eb5ee1eb903963806b72ba86/chrome/js/f8bc098ce18e239f_0
-/home/mike-anderson/.config/Antigravity/CachedData/c9b91c281ca4919466bd32a6ea2fcdab11102259/chrome/js/2369a6116df4634b_0
-/home/mike-anderson/.config/Antigravity/CachedData/c9b91c281ca4919466bd32a6ea2fcdab11102259/chrome/js/ad59013ff3f1790f_0
-/home/mike-anderson/.config/Antigravity/CachedData/c19fdcaaf941f1ddd45860bfe2449ac40a3164c2/chrome/js/4c41eb2fa3e13077_0
+/home/<USER>/.config/Antigravity/CachedData/48169ae95b74c167eb5ee1eb903963806b72ba86/chrome/js/a604bc6299b71c40_0
+/home/<USER>/.config/Antigravity/CachedData/48169ae95b74c167eb5ee1eb903963806b72ba86/chrome/js/f8bc098ce18e239f_0
+/home/<USER>/.config/Antigravity/CachedData/c9b91c281ca4919466bd32a6ea2fcdab11102259/chrome/js/2369a6116df4634b_0
+/home/<USER>/.config/Antigravity/CachedData/c9b91c281ca4919466bd32a6ea2fcdab11102259/chrome/js/ad59013ff3f1790f_0
+/home/<USER>/.config/Antigravity/CachedData/c19fdcaaf941f1ddd45860bfe2449ac40a3164c2/chrome/js/4c41eb2fa3e13077_0
 ---direct bmad repo?---
 ```
 
@@ -5248,7 +5248,7 @@ tool_use Bash
 id: toolu_01N34jVhxWB39EFiDy63Q1Fa
 ```json
 {
-  "command": "ls /home/mike-anderson/dev/cohezion/bmad 2>/dev/null | head -5 ; echo \"---bmad version file---\" ; cat /home/mike-anderson/dev/cohezion/bmad/VERSION 2>/dev/null ; cat /home/mike-anderson/dev/cohezion/bmad/package.json 2>/dev/null | head -10 ; cat /home/mike-anderson/dev/cohezion-gemma4/bmad/VERSION 2>/dev/null ; echo \"---_bmad---\"; ls /home/mike-anderson/dev/cohezion/_bmad 2>/dev/null | head -5 ; find /home/mike-anderson/dev/cohezion/_bmad -name \"VERSION\" -o -name \"package.json\" 2>/dev/null | head -3",
+  "command": "ls /home/<USER>/dev/cohezion/bmad 2>/dev/null | head -5 ; echo \"---bmad version file---\" ; cat /home/<USER>/dev/cohezion/bmad/VERSION 2>/dev/null ; cat /home/<USER>/dev/cohezion/bmad/package.json 2>/dev/null | head -10 ; cat /home/<USER>/dev/cohezion-gemma4/bmad/VERSION 2>/dev/null ; echo \"---_bmad---\"; ls /home/<USER>/dev/cohezion/_bmad 2>/dev/null | head -5 ; find /home/<USER>/dev/cohezion/_bmad -name \"VERSION\" -o -name \"package.json\" 2>/dev/null | head -3",
   "description": "Find BMAD version in local installs"
 }
 ```
@@ -5275,7 +5275,7 @@ tool_use Bash
 id: toolu_01M6AkikBBsMyPxyYHUy7HU2
 ```json
 {
-  "command": "cat /home/mike-anderson/dev/cohezion/_bmad/_config/config.yaml 2>/dev/null | head -15 ; echo \"---bmad core version---\" ; find /home/mike-anderson/dev/cohezion/_bmad -name \"*.yaml\" -path \"*core*\" 2>/dev/null | head -3 ; echo \"---config.json check---\" ; find /home/mike-anderson/dev/cohezion/_bmad -name \"*.json\" -maxdepth 3 2>/dev/null | head -5",
+  "command": "cat /home/<USER>/dev/cohezion/_bmad/_config/config.yaml 2>/dev/null | head -15 ; echo \"---bmad core version---\" ; find /home/<USER>/dev/cohezion/_bmad -name \"*.yaml\" -path \"*core*\" 2>/dev/null | head -3 ; echo \"---config.json check---\" ; find /home/<USER>/dev/cohezion/_bmad -name \"*.json\" -maxdepth 3 2>/dev/null | head -5",
   "description": "Find BMAD version in _bmad config"
 }
 ```
@@ -5286,11 +5286,11 @@ tool_result
 id: toolu_01M6AkikBBsMyPxyYHUy7HU2
 ```
 ---bmad core version---
-/home/mike-anderson/dev/cohezion/_bmad/core/config.yaml
-/home/mike-anderson/dev/cohezion/_bmad/_config/agents/core-bmad-master.customize.yaml
+/home/<USER>/dev/cohezion/_bmad/core/config.yaml
+/home/<USER>/dev/cohezion/_bmad/_config/agents/core-bmad-master.customize.yaml
 ---config.json check---
-/home/mike-anderson/dev/cohezion/_bmad/agent-status.json
-/home/mike-anderson/dev/cohezion/_bmad/_config/traceability/watchdog_state.json
+/home/<USER>/dev/cohezion/_bmad/agent-status.json
+/home/<USER>/dev/cohezion/_bmad/_config/traceability/watchdog_state.json
 ```
 
 > TOOL
@@ -5299,7 +5299,7 @@ tool_use Bash
 id: toolu_01R7YHmm8nAqMicsspNEMqVr
 ```json
 {
-  "command": "cat /home/mike-anderson/dev/cohezion/_bmad/core/config.yaml 2>/dev/null | head -20 ; echo \"---manifest---\" ; find /home/mike-anderson/dev/cohezion/_bmad -name \"*.md\" -path \"*VERSION*\" -o -name \"CHANGELOG*\" 2>/dev/null | head -3 ; echo \"---grep version---\" ; grep -rE \"^version:|^VERSION:|v6\\.\" /home/mike-anderson/dev/cohezion/_bmad/core/ 2>/dev/null | head -5",
+  "command": "cat /home/<USER>/dev/cohezion/_bmad/core/config.yaml 2>/dev/null | head -20 ; echo \"---manifest---\" ; find /home/<USER>/dev/cohezion/_bmad -name \"*.md\" -path \"*VERSION*\" -o -name \"CHANGELOG*\" 2>/dev/null | head -3 ; echo \"---grep version---\" ; grep -rE \"^version:|^VERSION:|v6\\.\" /home/<USER>/dev/cohezion/_bmad/core/ 2>/dev/null | head -5",
   "description": "BMAD core version metadata"
 }
 ```
@@ -5332,7 +5332,7 @@ tool_use Write
 id: toolu_015My9nQtAQQRGzWQUQVgy2f
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/inference/harnesses.py",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/inference/harnesses.py",
   "content": "\"\"\"Headless Ollama-compatible harness dispatchers — 3-way concurrent cloud lane.\n\nOllama cloud imposes per-client rate limits, but spreading requests across\nthree independent headless harnesses (``pi``, ``opencode``, ``hermes``) lets\nus sustain ~3× concurrent throughput on the same pool of cloud models.\n\nEach harness is a separate process with its own auth session, so the cloud\nprovider sees three distinct clients rather than one. The dispatcher picks\nthe next available harness round-robin.\n\nInstalled harnesses (verified 2026-04-18):\n  - pi        v0.67.3   -p + --model provider/id + --mode json\n  - opencode  v1.4.0    run + --model + MCP support\n  - hermes    v0.4.0    positional query + --yolo\n\nAll three can serve Ollama cloud models (``gemini-3-flash-preview:cloud``,\n``deepseek-v3.2:cloud``, ``glm-5.1:cloud``, etc.) without authentication\nbeyond the local ollama daemon.\n\"\"\"\n\nfrom __future__ import annotations\n\nimport asyncio\nimport logging\nimport shutil\nfrom dataclasses import dataclass\nfrom enum import StrEnum\n\n\nlogger = logging.getLogger(__name__)\n\n\nclass Harness(StrEnum):\n    PI = \"pi\"\n    OPENCODE = \"opencode\"\n    HERMES = \"hermes\"\n\n\n@dataclass\nclass HarnessSlot:\n    \"\"\"One harness = one concurrent slot for cloud-model dispatch.\"\"\"\n\n    harness: Harness\n    binary_path: str\n    busy: bool = False\n\n\nclass HarnessPool:\n    \"\"\"Round-robin pool of the three installed headless harnesses.\n\n    Thread-unsafe by design — we rely on asyncio single-threaded scheduling.\n    Each ``acquire()`` returns a free slot; ``release()`` marks it free again.\n    Callers typically use the ``async with pool.slot()`` context manager.\n    \"\"\"\n\n    def __init__(self):\n […]
 
 > TOOL
@@ -5340,7 +5340,7 @@ id: toolu_015My9nQtAQQRGzWQUQVgy2f
 tool_result
 id: toolu_015My9nQtAQQRGzWQUQVgy2f
 ```
-File created successfully at: /home/mike-anderson/dev/cohezion/src/cohezion/inference/harnesses.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/dev/cohezion/src/cohezion/inference/harnesses.py (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5353,15 +5353,15 @@ tool_use Write
 id: toolu_01HrpFvvb6VAYZPTmmNiP5yu
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/tests/inference/test_harnesses.py",
-  "content": "\"\"\"HarnessPool 3-concurrent slot tests — subprocess invocations mocked.\"\"\"\n\nfrom __future__ import annotations\n\nimport asyncio\nfrom unittest.mock import patch\n\nimport pytest\n\nfrom cohezion.inference.harnesses import Harness, HarnessPool\n\n\n@pytest.mark.asyncio\nasync def test_pool_detects_installed_harnesses():\n    \"\"\"When all three binaries exist, pool has three slots.\"\"\"\n\n    def fake_which(name):\n        return f\"/fake/bin/{name}\" if name in {\"pi\", \"opencode\", \"hermes\"} else None\n\n    with patch(\"cohezion.inference.harnesses.shutil.which\", side_effect=fake_which):\n        pool = HarnessPool()\n\n    assert pool.size == 3\n    assert pool.available == 3\n    assert {s.harness for s in pool._slots} == {\n        Harness.PI,\n        Harness.OPENCODE,\n        Harness.HERMES,\n    }\n\n\n@pytest.mark.asyncio\nasync def test_pool_skips_missing_harnesses():\n    with patch(\n        \"cohezion.inference.harnesses.shutil.which\",\n        side_effect=lambda name: \"/bin/pi\" if name == \"pi\" else None,\n    ):\n        pool = HarnessPool()\n    assert pool.size == 1\n    assert pool._slots[0].harness == Harness.PI\n\n\n@pytest.mark.asyncio\nasync def test_acquire_marks_slot_busy_and_release_frees_it():\n    with patch(\n        \"cohezion.inference.harnesses.shutil.which\",\n        side_effect=lambda n: \"/bin/pi\" if n == \"pi\" else None,\n    ):\n        pool = HarnessPool()\n\n    slot = await pool.acquire(timeout=1.0)\n    assert slot.busy is True\n    assert pool.available == 0\n\n    await pool.release(slot)\n    assert pool.available == 1\n\n\n@pytest.mark.asyncio\nasync def test_acquire_blocks_until_release():\n    \"\"\"Second acquire waits for first to release (confirms single-slot concurrency).\"\"\"\n\n    with patch(\n        \"cohezion.inference.harnesses.shutil.which\",\n        side_effect=lambda n: \"/bin/pi\" if n == \"pi\" else None,\n    ):\n        pool = HarnessPool()\n\n    slot1 = await pool.acquire(timeout=1.0)\n\n    async def grab_second():\n        return await pool.acquire(timeout=2.0)\n\n    task = asyncio.create_task(grab_second())\n    await asyncio.sleep(0.05)  # Confirm task is waiting\n    assert not task.done()\n\n    await pool.release(slot1)\n    slot2 = await task\n    assert slot2 is […]
+  "file_path": "/home/<USER>/dev/cohezion/tests/inference/test_harnesses.py",
+  "content": "\"\"\"HarnessPool 3-concurrent slot tests — subprocess invocations mocked.\"\"\"\n\nfrom __future__ import annotations\n\nimport asyncio\nfrom unittest.mock import patch\n\nimport pytest\n\nfrom cohezion.inference.harnesses import Harness, HarnessPool\n\n\<REDACTED_EMAIL>\nasync def test_pool_detects_installed_harnesses():\n    \"\"\"When all three binaries exist, pool has three slots.\"\"\"\n\n    def fake_which(name):\n        return f\"/fake/bin/{name}\" if name in {\"pi\", \"opencode\", \"hermes\"} else None\n\n    with patch(\"cohezion.inference.harnesses.shutil.which\", side_effect=fake_which):\n        pool = HarnessPool()\n\n    assert pool.size == 3\n    assert pool.available == 3\n    assert {s.harness for s in pool._slots} == {\n        Harness.PI,\n        Harness.OPENCODE,\n        Harness.HERMES,\n    }\n\n\<REDACTED_EMAIL>\nasync def test_pool_skips_missing_harnesses():\n    with patch(\n        \"cohezion.inference.harnesses.shutil.which\",\n        side_effect=lambda name: \"/bin/pi\" if name == \"pi\" else None,\n    ):\n        pool = HarnessPool()\n    assert pool.size == 1\n    assert pool._slots[0].harness == Harness.PI\n\n\<REDACTED_EMAIL>\nasync def test_acquire_marks_slot_busy_and_release_frees_it():\n    with patch(\n        \"cohezion.inference.harnesses.shutil.which\",\n        side_effect=lambda n: \"/bin/pi\" if n == \"pi\" else None,\n    ):\n        pool = HarnessPool()\n\n    slot = await pool.acquire(timeout=1.0)\n    assert slot.busy is True\n    assert pool.available == 0\n\n    await pool.release(slot)\n    assert pool.available == 1\n\n\<REDACTED_EMAIL>\nasync def test_acquire_blocks_until_release():\n    \"\"\"Second acquire waits for first to release (confirms single-slot concurrency).\"\"\"\n\n    with patch(\n        \"cohezion.inference.harnesses.shutil.which\",\n        side_effect=lambda n: \"/bin/pi\" if n == \"pi\" else None,\n    ):\n        pool = HarnessPool()\n\n    slot1 = await pool.acquire(timeout=1.0)\n\n    async def grab_second():\n        return await pool.acquire(timeout=2.0)\n\n    task = asyncio.create_task(grab_second())\n    await asyncio.sleep(0.05)  # Confirm task is waiting\n    assert not task.done()\n\n    await pool.release(slot1)\n    slot2 = await task\n    assert slot2 is […]
 
 > TOOL
 
 tool_result
 id: toolu_01HrpFvvb6VAYZPTmmNiP5yu
 ```
-File created successfully at: /home/mike-anderson/dev/cohezion/tests/inference/test_harnesses.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/dev/cohezion/tests/inference/test_harnesses.py (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5371,7 +5371,7 @@ id: toolu_019F2ZsLLHWRRiWW4A1xPinz
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/inference/__init__.py",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/inference/__init__.py",
   "old_string": "from cohezion.inference.fleet import RouteResult, extend_claude, route\nfrom cohezion.inference.health import (\n    FleetHealth,\n    LaneHealth,\n    LaneStatus,\n    check_fleet,\n    format_fleet_summary,\n    integrate_omnibus_gateways,\n)\nfrom cohezion.inference.registry import (\n    FleetRegistry,\n    Lane,\n    ModelEntry,\n    Task,\n    get_registry,\n)",
   "new_string": "from cohezion.inference.fleet import RouteResult, extend_claude, route\nfrom cohezion.inference.harnesses import (\n    Harness,\n    HarnessPool,\n    dispatch_through_harness,\n    get_pool,\n)\nfrom cohezion.inference.health import (\n    FleetHealth,\n    LaneHealth,\n    LaneStatus,\n    check_fleet,\n    format_fleet_summary,\n    integrate_omnibus_gateways,\n)\nfrom cohezion.inference.registry import (\n    FleetRegistry,\n    Lane,\n    ModelEntry,\n    Task,\n    get_registry,\n)"
 }
@@ -5382,7 +5382,7 @@ id: toolu_019F2ZsLLHWRRiWW4A1xPinz
 tool_result
 id: toolu_019F2ZsLLHWRRiWW4A1xPinz
 ```
-The file /home/mike-anderson/dev/cohezion/src/cohezion/inference/__init__.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/dev/cohezion/src/cohezion/inference/__init__.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5392,7 +5392,7 @@ id: toolu_019b5Xd71Wg8X2w4J4A5nnUq
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/inference/__init__.py",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/inference/__init__.py",
   "old_string": "__all__ = [\n    \"route\",\n    \"extend_claude\",\n    \"RouteResult\",\n    \"check_fleet\",\n    \"format_fleet_summary\",\n    \"integrate_omnibus_gateways\",\n    \"FleetHealth\",\n    \"LaneHealth\",\n    \"LaneStatus\",\n    \"get_registry\",\n    \"FleetRegistry\",\n    \"ModelEntry\",\n    \"Lane\",\n    \"Task\",\n]",
   "new_string": "__all__ = [\n    \"route\",\n    \"extend_claude\",\n    \"RouteResult\",\n    \"check_fleet\",\n    \"format_fleet_summary\",\n    \"integrate_omnibus_gateways\",\n    \"FleetHealth\",\n    \"LaneHealth\",\n    \"LaneStatus\",\n    \"get_registry\",\n    \"FleetRegistry\",\n    \"ModelEntry\",\n    \"Lane\",\n    \"Task\",\n    \"Harness\",\n    \"HarnessPool\",\n    \"dispatch_through_harness\",\n    \"get_pool\",\n]"
 }
@@ -5403,7 +5403,7 @@ id: toolu_019b5Xd71Wg8X2w4J4A5nnUq
 tool_result
 id: toolu_019b5Xd71Wg8X2w4J4A5nnUq
 ```
-The file /home/mike-anderson/dev/cohezion/src/cohezion/inference/__init__.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/dev/cohezion/src/cohezion/inference/__init__.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5457,13 +5457,13 @@ Fleet health @ Sat Apr 18 08:30:46 2026:
   ✗ igpu_unified   http://localhost:13308               -  [Errno 111] Connection refused
   ✗ cpu            http://localhost:13309               -  [Errno 111] Connection refused
   ✓ ollama         http://localhost:11434            18ms  14 models
-  ✓ claude         cli:/home/mike-anderson/.local/bin/claude    62ms  2.1.114 (Claude Code)
-  ✓ gemini         cli:/home/linuxbrew/.linuxbrew/bin/gemini   567ms  0.38.2
+  ✓ claude         cli:/home/<USER>/.local/bin/claude    62ms  2.1.114 (Claude Code)
+  ✓ gemini         cli:/home/<USER>/.linuxbrew/bin/gemini   567ms  0.38.2
 
 Harness pool: 3 concurrent slots
-  - pi         @ /home/linuxbrew/.linuxbrew/bin/pi
-  - opencode   @ /home/mike-anderson/.opencode/bin/opencode
-  - hermes     @ /home/mike-anderson/.local/bin/hermes
+  - pi         @ /home/<USER>/.linuxbrew/bin/pi
+  - opencode   @ /home/<USER>/.opencode/bin/opencode
+  - hermes     @ /home/<USER>/.local/bin/hermes
 ```
 
 > AGENT
@@ -5529,7 +5529,7 @@ tool_use Bash
 id: toolu_015ZnpMB1VQnd2cCY4UgWagW
 ```json
 {
-  "command": "which npx 2>&1 && ls /home/mike-anderson/dev/cohezion/_bmad/_cfg/ /home/mike-anderson/dev/cohezion/_bmad/_config/ 2>&1 | head -15 && echo \"---existing installer---\" && find /home/mike-anderson/dev/cohezion -maxdepth 3 -name \"install-manifest*\" -o -name \"bmad-install*\" 2>/dev/null | head -5",
+  "command": "which npx 2>&1 && ls /home/<USER>/dev/cohezion/_bmad/_cfg/ /home/<USER>/dev/cohezion/_bmad/_config/ 2>&1 | head -15 && echo \"---existing installer---\" && find /home/<USER>/dev/cohezion -maxdepth 3 -name \"install-manifest*\" -o -name \"bmad-install*\" 2>/dev/null | head -5",
   "description": "Check npx + BMAD installer metadata"
 }
 ```
@@ -5539,9 +5539,9 @@ id: toolu_015ZnpMB1VQnd2cCY4UgWagW
 tool_result
 id: toolu_015ZnpMB1VQnd2cCY4UgWagW
 ```
-/home/linuxbrew/.linuxbrew/bin/npx
-ls: cannot access '/home/mike-anderson/dev/cohezion/_bmad/_cfg/': No such file or directory
-/home/mike-anderson/dev/cohezion/_bmad/_config/:
+/home/<USER>/.linuxbrew/bin/npx
+ls: cannot access '/home/<USER>/dev/cohezion/_bmad/_cfg/': No such file or directory
+/home/<USER>/dev/cohezion/_bmad/_config/:
 agent-manifest.csv
 agents
 bmad-help.csv
@@ -5584,7 +5584,7 @@ tool_use Bash
 id: toolu_017Q3Ln9BSw5oFYTTnc2JrqP
 ```json
 {
-  "command": "head -20 /home/mike-anderson/dev/cohezion/_bmad/_config/manifest.yaml 2>/dev/null",
+  "command": "head -20 /home/<USER>/dev/cohezion/_bmad/_config/manifest.yaml 2>/dev/null",
   "description": "Read BMAD manifest for version info"
 }
 ```
@@ -5622,7 +5622,7 @@ tool_use Bash
 id: toolu_01Kn3dMTurYvJrjX5tpD8Zyy
 ```json
 {
-  "command": "timeout 300 npx -y bmad-method install --non-interactive --directory /home/mike-anderson/dev/cohezion 2>&1 | tail -30",
+  "command": "timeout 300 npx -y bmad-method install --non-interactive --directory /home/<USER>/dev/cohezion 2>&1 | tail -30",
   "description": "Run BMAD v6.3.0 upgrade install",
   "run_in_background": true
 }
@@ -5642,7 +5642,7 @@ tool_use Write
 id: toolu_01LgCj4qLjWm94BE32mUgACr
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/demo/universes_demo.py",
+  "file_path": "/home/<USER>/dev/cohezion/demo/universes_demo.py",
   "content": "\"\"\"Universes Demo — the reviewer-runnable hero artifact.\n\nEnd-to-end demonstration of the Cohezion stack, aimed at an Anthropic Universes\nteam reviewer:\n\n    1. Probe the 6-lane inference fleet\n    2. Register ManifoldEnv with Gymnasium\n    3. Launch a sandboxed episode (COW filesystem + Linux namespaces)\n    4. Route N agent actions via cohezion.inference.route()\n    5. JEPA-validate each transition for physical plausibility\n    6. Report: local vs. escalated counts, cost-vs-Claude-only savings\n\nRun with:\n\n    make demo-universes\n\nOr directly:\n\n    uv run python demo/universes_demo.py --steps 20\n\nEnvironment requirements:\n    - NPU Lemonade on :13306 (Gemma-4-E2B-it-GGUF) — or Ollama on :11434\n    - Optional: iGPU + CPU lanes on :13307/:13308/:13309 (symphony_warmstart.sh)\n    - Optional: claude / gemini CLI for fallback lanes\n\nDesign notes:\n    The demo is deliberately shallow on each step — just enough to show the\n    stack composes. Reviewers who want depth should click through to the\n    referenced files in ``SHOWCASE.md``.\n\"\"\"\n\nfrom __future__ import annotations\n\nimport argparse\nimport asyncio\nimport sys\nimport time\nfrom pathlib import Path\n\n\ndef _step(n: int, total: int, msg: str) -> None:\n    print(f\"[{n}/{total}] {msg}\", flush=True)\n\n\nasync def _probe_fleet() -> dict[str, str]:\n    \"\"\"Step 1 — probe the fleet. Returns lane→status dict.\"\"\"\n    from cohezion.inference import check_fleet, format_fleet_summary\n\n    health = check_fleet(force=True)\n    print(format_fleet_summary(health))\n    return {name: h.status.value for name, h in health.lanes.items()}\n\n\ndef _register_manifold_env() -> tuple[object, int]:\n    \"\"\"Step 2 — register […]
 
 > TOOL
@@ -5650,7 +5650,7 @@ id: toolu_01LgCj4qLjWm94BE32mUgACr
 tool_result
 id: toolu_01LgCj4qLjWm94BE32mUgACr
 ```
-File created successfully at: /home/mike-anderson/dev/cohezion/demo/universes_demo.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/dev/cohezion/demo/universes_demo.py (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5663,7 +5663,7 @@ tool_use Bash
 id: toolu_01Ld6aPJxhayoig7E38YdDAM
 ```json
 {
-  "command": "tail -30 /tmp/claude-1000/-home-mike-anderson-dev-cohezion--claude-worktrees-sorted-churning-toucan/ee7cc444-fd43-466f-8306-480c9d44fbf1/tasks/b8je7k2c5.output 2>&1 && echo \"---new manifest---\" && head -15 /home/mike-anderson/dev/cohezion/_bmad/_config/manifest.yaml 2>/dev/null",
+  "command": "tail -30 /tmp/claude-1000/-home-mike-anderson-dev-cohezion--claude-worktrees-sorted-churning-toucan/ee7cc444-fd43-466f-8306-480c9d44fbf1/tasks/b8je7k2c5.output 2>&1 && echo \"---new manifest---\" && head -15 /home/<USER>/dev/cohezion/_bmad/_config/manifest.yaml 2>/dev/null",
   "description": "Check BMAD install log + new manifest version"
 }
 ```
@@ -5748,7 +5748,7 @@ tool_use Bash
 id: toolu_01GtuGh3piH2viv4TxGbhhC3
 ```json
 {
-  "command": "timeout 300 npx -y bmad-method install --directory /home/mike-anderson/dev/cohezion --action update --tools claude-code --yes 2>&1 | tail -40",
+  "command": "timeout 300 npx -y bmad-method install --directory /home/<USER>/dev/cohezion --action update --tools claude-code --yes 2>&1 | tail -40",
   "description": "Run BMAD update action with correct flags",
   "run_in_background": true
 }
@@ -5786,8 +5786,8 @@ Fleet health @ Sat Apr 18 08:33:22 2026:
   ✗ igpu_unified   http://localhost:13308               -  [Errno 111] Connection refused
   ✗ cpu            http://localhost:13309               -  [Errno 111] Connection refused
   ✓ ollama         http://localhost:11434             6ms  14 models
-  ✓ claude         cli:/home/mike-anderson/.local/bin/claude    57ms  2.1.114 (Claude Code)
-  ✓ gemini         cli:/home/linuxbrew/.linuxbrew/bin/gemini   541ms  0.38.2
+  ✓ claude         cli:/home/<USER>/.local/bin/claude    57ms  2.1.114 (Claude Code)
+  ✓ gemini         cli:/home/<USER>/.linuxbrew/bin/gemini   541ms  0.38.2
 [2/6] Registering ManifoldEnv with Gymnasium…
     ManifoldEnv instantiated — obs dim = 19
 [3/6] Opening sandboxed episode (COW + namespaces)…
@@ -5818,7 +5818,7 @@ tool_use Bash
 id: toolu_01JsZ6hhBoLBgZd4nH5y9ABX
 ```json
 {
-  "command": "tail -20 /tmp/claude-1000/-home-mike-anderson-dev-cohezion--claude-worktrees-sorted-churning-toucan/ee7cc444-fd43-466f-8306-480c9d44fbf1/tasks/brdpm0iaw.output 2>&1 ; echo \"---new manifest version---\" ; head -6 /home/mike-anderson/dev/cohezion/_bmad/_config/manifest.yaml 2>/dev/null",
+  "command": "tail -20 /tmp/claude-1000/-home-mike-anderson-dev-cohezion--claude-worktrees-sorted-churning-toucan/ee7cc444-fd43-466f-8306-480c9d44fbf1/tasks/brdpm0iaw.output 2>&1 ; echo \"---new manifest version---\" ; head -6 /home/<USER>/dev/cohezion/_bmad/_config/manifest.yaml 2>/dev/null",
   "description": "BMAD upgrade outcome + version check"
 }
 ```
@@ -5836,7 +5836,7 @@ id: toolu_01JsZ6hhBoLBgZd4nH5y9ABX
 │ │    ✓  Help catalog                                                         │
 │ │    ✓  claude-code (101 skills)                                             │
 │ │                                                                            │
-│ │    Installed to: /home/mike-anderson/dev/cohezion/_bmad                    │
+│ │    Installed to: /home/<USER>/dev/cohezion/_bmad                    │
 │ │    Custom files preserved: 26                                              │
 │ │    Modified files backed up (.bak): 1                                      │
 │ │                                                                            │
@@ -5863,7 +5863,7 @@ tool_use Bash
 id: toolu_012EnqaLuH9aUdKrfkmwuGyk
 ```json
 {
-  "command": "grep -n \"class IsolationManager\\|def __init__\" /home/mike-anderson/dev/cohezion/src/cohezion/sandbox/isolation.py 2>/dev/null | head -6",
+  "command": "grep -n \"class IsolationManager\\|def __init__\" /home/<USER>/dev/cohezion/src/cohezion/sandbox/isolation.py 2>/dev/null | head -6",
   "description": "Find correct IsolationManager init signature"
 }
 ```
@@ -5894,7 +5894,7 @@ id: toolu_01F3y3rMWtDGSBMyNEFYk5jc
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/demo/universes_demo.py",
+  "file_path": "/home/<USER>/dev/cohezion/demo/universes_demo.py",
   "old_string": "    try:\n        from cohezion.sandbox.isolation import IsolationManager, IsolationMode\n    except ImportError:\n        print(\"    (sandbox.isolation not importable — skipping for demo)\")\n        return None\n\n    try:\n        manager = IsolationManager(mode=IsolationMode.TMPFS)\n        print(\"    IsolationManager(TMPFS) ready — COW-snapshot ready when run as root\")\n        return manager\n    except Exception as exc:\n        print(f\"    (sandbox unavailable in this environment: {exc})\")\n        return None",
   "new_string": "    try:\n        from cohezion.sandbox.isolation import IsolationManager\n    except ImportError:\n        print(\"    (sandbox.isolation not importable — skipping for demo)\")\n        return None\n\n    try:\n        manager = IsolationManager()\n        print(\"    IsolationManager ready (base_path=/tmp) — COW/namespaces on demand\")\n        return manager\n    except Exception as exc:\n        print(f\"    (sandbox unavailable in this environment: {exc})\")\n        return None"
 }
@@ -5905,7 +5905,7 @@ id: toolu_01F3y3rMWtDGSBMyNEFYk5jc
 tool_result
 id: toolu_01F3y3rMWtDGSBMyNEFYk5jc
 ```
-The file /home/mike-anderson/dev/cohezion/demo/universes_demo.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/dev/cohezion/demo/universes_demo.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5940,7 +5940,7 @@ id: toolu_01Uxm48oEBzhU1KqM5QFKBda
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/Makefile",
+  "file_path": "/home/<USER>/dev/cohezion/Makefile",
   "old_string": ".PHONY: help format lint lint-check type-check test all clean train evaluate benchmark demo validate compound-train training-history kernel-status kernel-cycle kernel-loop kernel-loop-dry kernel-report async-guard routing-guard",
   "new_string": ".PHONY: help format lint lint-check type-check test all clean train evaluate benchmark demo validate compound-train training-history kernel-status kernel-cycle kernel-loop kernel-loop-dry kernel-report async-guard routing-guard demo-universes health-fleet serve-fleet"
 }
@@ -5961,7 +5961,7 @@ id: toolu_01GMKXCgcUytvpyQzqc1yLqH
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/Makefile",
+  "file_path": "/home/<USER>/dev/cohezion/Makefile",
   "old_string": "demo:  ## Quick demo: train 5K steps, evaluate, show compound loop",
   "new_string": "demo-universes:  ## Universes-team reviewer demo: fleet probe + ManifoldEnv + sandbox + 5 routed prompts + cost vs Claude-only\n\t@uv run python demo/universes_demo.py --steps 5\n\nhealth-fleet:  ## Probe all 6 inference lanes (NPU/iGPU/CPU + Ollama + Claude CLI + Gemini CLI)\n\t@uv run python -c \"from cohezion.inference import check_fleet, format_fleet_summary; print(format_fleet_summary(check_fleet(force=True)))\"\n\nserve-fleet:  ## Cold-start the 4-lane Gemma 4 Symphony on Strix Halo\n\t@bash scripts/symphony_warmstart.sh\n\ndemo:  ## Quick demo: train 5K steps, evaluate, show compound loop"
 }
@@ -6000,7 +6000,7 @@ tool_use Read
 id: toolu_018gXwEVxpYT3bSv68TvSUD5
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/Makefile",
+  "file_path": "/home/<USER>/dev/cohezion/Makefile",
   "limit": 5
 }
 ```
@@ -6023,7 +6023,7 @@ tool_use Read
 id: toolu_01LdgEZS5GiD1xxgrE97wB31
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/Makefile",
+  "file_path": "/home/<USER>/dev/cohezion/Makefile",
   "offset": 145,
   "limit": 15
 }
@@ -6058,7 +6058,7 @@ id: toolu_016c3h1SzzoQmJNpHQYvu7ap
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/Makefile",
+  "file_path": "/home/<USER>/dev/cohezion/Makefile",
   "old_string": ".PHONY: help format lint lint-check type-check test all clean train evaluate benchmark demo validate compound-train training-history kernel-status kernel-cycle kernel-loop kernel-loop-dry kernel-report async-guard routing-guard",
   "new_string": ".PHONY: help format lint lint-check type-check test all clean train evaluate benchmark demo validate compound-train training-history kernel-status kernel-cycle kernel-loop kernel-loop-dry kernel-report async-guard routing-guard demo-universes health-fleet serve-fleet"
 }
@@ -6069,7 +6069,7 @@ id: toolu_016c3h1SzzoQmJNpHQYvu7ap
 tool_result
 id: toolu_016c3h1SzzoQmJNpHQYvu7ap
 ```
-The file /home/mike-anderson/dev/cohezion/Makefile has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/dev/cohezion/Makefile has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6079,7 +6079,7 @@ id: toolu_01FE9Lb2Dw914gfiRfBiqULZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/Makefile",
+  "file_path": "/home/<USER>/dev/cohezion/Makefile",
   "old_string": "demo:  ## Quick demo: train 5K steps, evaluate, show compound loop",
   "new_string": "demo-universes:  ## Universes-team reviewer demo: fleet probe + ManifoldEnv + sandbox + 5 routed prompts + cost vs Claude-only\n\t@uv run python demo/universes_demo.py --steps 5\n\nhealth-fleet:  ## Probe all 6 inference lanes (NPU/iGPU/CPU + Ollama + Claude CLI + Gemini CLI)\n\t@uv run python -c \"from cohezion.inference import check_fleet, format_fleet_summary; print(format_fleet_summary(check_fleet(force=True)))\"\n\nserve-fleet:  ## Cold-start the 4-lane Gemma 4 Symphony on Strix Halo (runs scripts/symphony_warmstart.sh)\n\t@bash scripts/symphony_warmstart.sh\n\ndemo:  ## Quick demo: train 5K steps, evaluate, show compound loop"
 }
@@ -6101,7 +6101,7 @@ id: toolu_01XeEwGiczXu5QDeJmjbCDuj
 tool_result
 id: toolu_01FE9Lb2Dw914gfiRfBiqULZ
 ```
-The file /home/mike-anderson/dev/cohezion/Makefile has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/dev/cohezion/Makefile has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6116,8 +6116,8 @@ Fleet health @ Sat Apr 18 08:34:43 2026:
   ✗ igpu_unified   http://localhost:13308               -  [Errno 111] Connection refused
   ✗ cpu            http://localhost:13309               -  [Errno 111] Connection refused
   ✓ ollama         http://localhost:11434             6ms  14 models
-  ✓ claude         cli:/home/mike-anderson/.local/bin/claude    60ms  2.1.114 (Claude Code)
-  ✓ gemini         cli:/home/linuxbrew/.linuxbrew/bin/gemini   582ms  0.38.2
+  ✓ claude         cli:/home/<USER>/.local/bin/claude    60ms  2.1.114 (Claude Code)
+  ✓ gemini         cli:/home/<USER>/.linuxbrew/bin/gemini   582ms  0.38.2
 ===
 2026-04-18 08:34:45,283 - INFO - HTTP Request: POST http://localhost:8360/mcp "HTTP/1.1 500 Internal Server Error"
 2026-04-18 08:34:50,365 - INFO - HTTP Request: POST http://localhost:13306/v1/chat/completions "HTTP/1.1 200 OK"
@@ -6453,7 +6453,7 @@ tool_use Write
 id: toolu_01PAPvAXsu8t5GhQuMhDgHuo
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/scripts/launch_fleet_safe.sh",
+  "file_path": "/home/<USER>/dev/cohezion/scripts/launch_fleet_safe.sh",
   "content": "#!/bin/bash\n# Strix Halo Symphony — staged sequential lane launch.\n#\n# Fixes the aperture-contention foot-gun in scripts/launch_gemma4_symphony.sh:\n# that script launches all 4 iGPU/NPU lanes in parallel (`&`), which per\n# local_environment_quirks.md can trigger GCVM_L2_PROTECTION_FAULT and require\n# a cold boot to recover.\n#\n# This version:\n#   1. Leaves Ollama alone (different port, different process).\n#   2. Only restarts Lemonade lanes that are currently DOWN.\n#   3. Loads iGPU models sequentially, verifying each port before the next.\n#   4. Waits for each lane's /v1/models to respond before proceeding.\n#\n# Usage:\n#   bash scripts/launch_fleet_safe.sh           # full staged launch\n#   FORCE_RESTART=1 bash scripts/launch_fleet_safe.sh   # pkill stale lemonade\n#   SKIP_IGPU=1 bash scripts/launch_fleet_safe.sh       # skip iGPU lanes\n#   SKIP_CPU=1 bash scripts/launch_fleet_safe.sh        # skip CPU lane\n\nset -u\n\necho \"======================================================================\"\necho \"🏛️  STRIX HALO SYMPHONY — STAGED LAUNCH (safe sequential)\"\necho \"======================================================================\"\n\n# --- 1. Environment -----------------------------------------------------------\nexport HSA_OVERRIDE_GFX_VERSION=11.5.1\nexport PYTORCH_ROCM_ARCH=gfx1151\nexport TRITON_AMD_WMMA=1\nexport HSA_XNACK=1\n\n# --- 2. Helpers ---------------------------------------------------------------\nprobe_port() {\n    # $1 = port, $2 = timeout seconds\n    local port=$1\n    local t=${2:-2}\n    curl -sS --max-time \"$t\" \"http://localhost:$port/v1/models\" >/dev/null 2>&1\n}\n\nwait_for_port() {\n    local port=$1\n    local lane=$2\n    local max_wait=${3:-90}\n    local waited=0\n    echo -n \"    waiting for $lane on :$port \"\n    while ! probe_port \"$port\" 2; do\n        if [ \"$waited\" -ge \"$max_wait\" ]; then\n            echo \" TIMEOUT after ${max_wait}s\"\n            return 1\n        fi\n        echo -n […]
 
 > TOOL
@@ -6461,7 +6461,7 @@ id: toolu_01PAPvAXsu8t5GhQuMhDgHuo
 tool_result
 id: toolu_01PAPvAXsu8t5GhQuMhDgHuo
 ```
-File created successfully at: /home/mike-anderson/dev/cohezion/scripts/launch_fleet_safe.sh (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/dev/cohezion/scripts/launch_fleet_safe.sh (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6490,7 +6490,7 @@ id: toolu_01QJuk6Coyvf1DV2EMXD4MxL
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/Makefile",
+  "file_path": "/home/<USER>/dev/cohezion/Makefile",
   "old_string": "serve-fleet:  ## Cold-start the 4-lane Gemma 4 Symphony on Strix Halo (runs scripts/symphony_warmstart.sh)\n\t@bash scripts/symphony_warmstart.sh",
   "new_string": "serve-fleet:  ## Safely cold-start iGPU/CPU lanes (sequential, NPU/Ollama preserved if up)\n\t@bash scripts/launch_fleet_safe.sh\n\nserve-fleet-full:  ## Full symphony_warmstart.sh (setup + all 4 lanes parallel — aperture contention risk)\n\t@bash scripts/symphony_warmstart.sh"
 }
@@ -6501,7 +6501,7 @@ id: toolu_01QJuk6Coyvf1DV2EMXD4MxL
 tool_result
 id: toolu_01QJuk6Coyvf1DV2EMXD4MxL
 ```
-The file /home/mike-anderson/dev/cohezion/Makefile has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/dev/cohezion/Makefile has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6566,7 +6566,7 @@ tool_result
 id: toolu_019psdVopeo1fkt6kec2sh1q
 ```
 183431 /var/lib/lemonade/.cache/lemonade/bin/llamacpp/vulkan/llama-server -m /var/lib/lemonade/.cache/huggingface/hub/models--unsloth--gemma-4-E2B-it-GGUF/snapshots/f7c65a52de0efed3b8ab461e02e4448b3f760a01/gemma-4-E2B-it-Q4_K_M.gguf --ctx-size 4096 --port 8001 --jinja --mmproj /var/lib/lemonade/.cache/huggingface/hub/models--unsloth--gemma-4-E2B-it-GGUF/snapshots/f7c65a52de0efed3b8ab461e02e4448b3f760a01/mmproj-F16.gguf --context-shift --keep 16 --reasoning-format auto --no-webui --no-mmap -ngl 99
-211667 /bin/bash -c source /home/mike-anderson/.claude/shell-snapshots/snapshot-bash-1776487362553-3xzs22.sh 2>/dev/null || true && shopt -u extglob 2>/dev/null || true && eval 'pgrep -af "lemonade|llama-server" 2>/dev/null | head -10 ; echo "---lemonade config---" ; lemonade --help 2>&1 | head -20 ; echo "---what'"'"'s on 13306?---" ; ss -tlnp 2>&1 | grep -E "13306|13307|8000|8001|8002|8003" | head -10' < /dev/null && pwd -P >| /tmp/claude-c3d6-cwd
+211667 /bin/bash -c source /home/<USER>/.claude/shell-snapshots/snapshot-bash-1776487362553-3xzs22.sh 2>/dev/null || true && shopt -u extglob 2>/dev/null || true && eval 'pgrep -af "lemonade|llama-server" 2>/dev/null | head -10 ; echo "---lemonade config---" ; lemonade --help 2>&1 | head -20 ; echo "---what'"'"'s on 13306?---" ; ss -tlnp 2>&1 | grep -E "13306|13307|8000|8001|8002|8003" | head -10' < /dev/null && pwd -P >| /tmp/claude-c3d6-cwd
 ---lemonade config---
 Lemonade CLI - HTTP client for Lemonade Server
 Usage: lemonade [OPTIONS] [SUBCOMMAND]
@@ -6668,7 +6668,7 @@ lemond - Lightweight LLM server
 Usage: lemond [OPTIONS] [cache_dir]
 
 Positionals:
-  cache_dir DIR [/home/mike-anderson/.cache/lemonade] 
+  cache_dir DIR [/home/<USER>/.cache/lemonade] 
                               Lemonade cache directory containing config.json and model data
 
 Options:
@@ -6684,7 +6684,7 @@ tool_use Bash
 id: toolu_01RfbzEkMU4A7aav5qejPWv8
 ```json
 {
-  "command": "cat /home/mike-anderson/.cache/lemonade/config.json 2>/dev/null | head -30 ; echo \"---system lemond config---\" ; cat /etc/lemonade/config.json /var/lib/lemonade/config.json 2>/dev/null | head -30 ; echo \"---lemond port?---\" ; ss -tlnp 2>&1 | grep -E \"^LISTEN\" | awk '{print $4}' | sort -u | grep -vE \":22$|:631$|:25$\" | head -15",
+  "command": "cat /home/<USER>/.cache/lemonade/config.json 2>/dev/null | head -30 ; echo \"---system lemond config---\" ; cat /etc/lemonade/config.json /var/lib/lemonade/config.json 2>/dev/null | head -30 ; echo \"---lemond port?---\" ; ss -tlnp 2>&1 | grep -E \"^LISTEN\" | awk '{print $4}' | sort -u | grep -vE \":22$|:631$|:25$\" | head -15",
   "description": "Find lemond listening port + config"
 }
 ```
@@ -6795,7 +6795,7 @@ tool_use Bash
 id: toolu_01PemJhhWoPdhs3B95nL9bt4
 ```json
 {
-  "command": "CFG=/home/mike-anderson/.cache/lemonade/config.json\ncp \"$CFG\" \"$CFG.bak.$(date +%s)\" && echo \"backup made\"\npython3 -c \"\nimport json\np = '$CFG'\nwith open(p) as f: c = json.load(f)\nc['max_loaded_models'] = 4\nwith open(p,'w') as f: json.dump(c, f, indent=2)\nprint(f'max_loaded_models = {c[\\\"max_loaded_models\\\"]}')\nprint(f'port              = {c[\\\"port\\\"]}')\n\"",
+  "command": "CFG=/home/<USER>/.cache/lemonade/config.json\ncp \"$CFG\" \"$CFG.bak.$(date +%s)\" && echo \"backup made\"\npython3 -c \"\nimport json\np = '$CFG'\nwith open(p) as f: c = json.load(f)\nc['max_loaded_models'] = 4\nwith open(p,'w') as f: json.dump(c, f, indent=2)\nprint(f'max_loaded_models = {c[\\\"max_loaded_models\\\"]}')\nprint(f'port              = {c[\\\"port\\\"]}')\n\"",
   "description": "Backup + edit lemond config (max_loaded_models: 1 -> 4)"
 }
 ```
@@ -6818,7 +6818,7 @@ tool_use Read
 id: toolu_015wqfraCF7ozMdvjiJyDD87
 ```json
 {
-  "file_path": "/home/mike-anderson/.cache/lemonade/config.json"
+  "file_path": "/home/<USER>/.cache/lemonade/config.json"
 }
 ```
 
@@ -6886,7 +6886,7 @@ tool_use Bash
 id: toolu_01QCv9WFLngg1kytpzFCBPbR
 ```json
 {
-  "command": "cp /home/mike-anderson/.cache/lemonade/config.json /home/mike-anderson/.cache/lemonade/config.json.bak.$(date +%Y%m%d_%H%M%S) && echo \"backup created\"",
+  "command": "cp /home/<USER>/.cache/lemonade/config.json /home/<USER>/.cache/lemonade/config.json.bak.$(date +%Y%m%d_%H%M%S) && echo \"backup created\"",
   "description": "Back up lemond config before edit"
 }
 ```
@@ -6906,7 +6906,7 @@ id: toolu_01FsKSQaeYNbNsQTKXawRg6X
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.cache/lemonade/config.json",
+  "file_path": "/home/<USER>/.cache/lemonade/config.json",
   "old_string": "  \"max_loaded_models\": 1,",
   "new_string": "  \"max_loaded_models\": 4,"
 }
@@ -6917,7 +6917,7 @@ id: toolu_01FsKSQaeYNbNsQTKXawRg6X
 tool_result
 id: toolu_01FsKSQaeYNbNsQTKXawRg6X
 ```
-The file /home/mike-anderson/.cache/lemonade/config.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.cache/lemonade/config.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

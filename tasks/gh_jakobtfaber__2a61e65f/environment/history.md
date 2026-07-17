@@ -1,6 +1,6 @@
 > SYSTEM
 
-# AGENTS.md instructions for /Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS
+# AGENTS.md instructions for /home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS
 
 <INSTRUCTIONS>
 # Codex Configuration
@@ -31,7 +31,7 @@ id: call_nOeIzHnYmGrSEhHeRus0FH7V
 ```json
 {
   "command": "git submodule status --recursive",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -43,7 +43,7 @@ id: call_ZE71Qq9hFMyIPgUoRqlgdQAD
 ```json
 {
   "command": "git config --file .gitmodules --get-regexp 'submodule\\..*\\.(path|url)' || true",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -55,7 +55,7 @@ id: call_CTYRkAfx1GtgDGwV8cmctPS5
 ```json
 {
   "command": "ls -ld Faber2026 2>/dev/null || true",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -106,7 +106,7 @@ id: call_a5wJlcOW1Cb5s0h12EX2nyoV
 ```json
 {
   "command": "rtk ls -ld Faber2026 2>/dev/null || true",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -118,7 +118,7 @@ id: call_LKcP6l6vyi93VxWK7ZZEnZNS
 ```json
 {
   "command": "rg --files -g '.gitmodules' -g '*Faber2026*' -g '!*.png' -g '!*.jpg'",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -158,7 +158,7 @@ id: call_To2nuE1cxBCWOPs6WYEkVo6X
 ```json
 {
   "command": "rtk grep --files -g '.gitmodules' -g '*Faber2026*' -g '!*.png' -g '!*.jpg'",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -170,7 +170,7 @@ id: call_zjsegtATta0kn2aWAfTgH0VF
 ```json
 {
   "command": "git ls-files --stage | grep -F 'Faber2026' || true",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -206,7 +206,7 @@ Output:
 
 `Faber2026` is **not present as a submodule** in this checkout.
 
-Checks run from `/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS`:
+Checks run from `/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS`:
 
 - `git submodule status --recursive` returned no entries.
 - `.gitmodules` has no registered submodules.
@@ -228,7 +228,7 @@ id: call_XR7fvlJzOAT1nKDdwrkTnkJ9
 ```json
 {
   "command": "git remote -v",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -240,7 +240,7 @@ id: call_mVLHhPwVaZBBgdzKHfFReNFi
 ```json
 {
   "command": "git ls-remote --symref origin HEAD && git ls-remote --heads origin",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 20000
 }
 ```
@@ -253,9 +253,9 @@ id: call_XR7fvlJzOAT1nKDdwrkTnkJ9
 Exit code: 0
 Wall time: 0.1 seconds
 Output:
-origin	git@github.com:jakobtfaber/dsa110-FLITS.git (fetch)
-origin	git@github.com:jakobtfaber/dsa110-FLITS.git (push)
-upstream	git@github.com:dsa110/dsa110-FLITS.git (fetch)
+origin	<REDACTED_EMAIL>:jakobtfaber/dsa110-FLITS.git (fetch)
+origin	<REDACTED_EMAIL>:jakobtfaber/dsa110-FLITS.git (push)
+upstream	<REDACTED_EMAIL>:dsa110/dsa110-FLITS.git (fetch)
 upstream	DISABLED (push)
 
 ```
@@ -290,7 +290,7 @@ id: call_vCWGPCYMY9vU1YkXncflIS39
 ```json
 {
   "command": "git fetch --all --prune",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 60000
 }
 ```
@@ -302,7 +302,7 @@ id: call_4bd3kEH7O7CBTzVF7c3RkEsn
 ```json
 {
   "command": "git ls-remote --symref upstream HEAD && git ls-remote --heads upstream",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 20000
 }
 ```
@@ -345,7 +345,7 @@ id: call_KjSYkT3OIl51mY281fx7jiMJ
 ```json
 {
   "command": "rtk git fetch --all --prune",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 60000
 }
 ```
@@ -373,7 +373,7 @@ id: call_3BlF9mHctXDDt7UO2Q6WMHVP
 ```json
 {
   "command": "for ref in $(git for-each-ref --format='%(refname:short)' refs/remotes/origin refs/remotes/upstream | sed '/HEAD$/d'); do hits=$(git ls-tree -r \"$ref\" | grep -F 'Faber2026' || true); if [ -n \"$hits\" ]; then printf '## %s\\n%s\\n' \"$ref\" \"$hits\"; fi; done",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 30000
 }
 ```
@@ -385,7 +385,7 @@ id: call_tdDganbuiipRWh2TDVyDo34z
 ```json
 {
   "command": "for ref in $(git for-each-ref --format='%(refname:short)' refs/remotes/origin refs/remotes/upstream | sed '/HEAD$/d'); do if git cat-file -e \"$ref:.gitmodules\" 2>/dev/null; then printf '## %s .gitmodules\\n' \"$ref\"; git show \"$ref:.gitmodules\"; fi; done",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 30000
 }
 ```
@@ -397,7 +397,7 @@ id: call_D4JcrA9SuZ5P5lsl6A33toWO
 ```json
 {
   "command": "for ref in $(git for-each-ref --format='%(refname:short)' refs/remotes/origin refs/remotes/upstream | sed '/HEAD$/d'); do hits=$(git ls-tree -r \"$ref\" | awk '$1 == \"160000\"'); if [ -n \"$hits\" ]; then printf '## %s gitlinks\\n%s\\n' \"$ref\" \"$hits\"; fi; done",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 30000
 }
 ```
@@ -441,8 +441,8 @@ No. After fetching remotes, `Faber2026` is not present on the remote branches I 
 
 Verified:
 
-- `origin` = `git@github.com:jakobtfaber/dsa110-FLITS.git`
-- `upstream` = `git@github.com:dsa110/dsa110-FLITS.git`
+- `origin` = `<REDACTED_EMAIL>:jakobtfaber/dsa110-FLITS.git`
+- `upstream` = `<REDACTED_EMAIL>:dsa110/dsa110-FLITS.git`
 - Fetched with `rtk git fetch --all --prune`
 - Scanned all fetched `origin/*` and `upstream/*` branch trees
 - Found no `Faber2026` path
@@ -465,8 +465,8 @@ tool_use shell_command
 id: call_VxP9M4t3Hm4rtwdI2AAq74He
 ```json
 {
-  "command": "rg -n --follow -i 'Faber2026|manuscript|overleaf|submodule|dsa110-FLITS|FLITS' /Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dotfiles/memory /Users/jakobfaber/.claude/projects/-Users-jakobfaber/memory 2>/dev/null",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "rg -n --follow -i 'Faber2026|manuscript|overleaf|submodule|dsa110-FLITS|FLITS' /home/<USER>/Developer/repos/github.com/jakobtfaber/dotfiles/memory /home/<USER>/.claude/projects/-Users-jakobfaber/memory 2>/dev/null",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 30000
 }
 ```
@@ -477,8 +477,8 @@ tool_use shell_command
 id: call_0WvUhPKv2XIgumtlpQqQruxE
 ```json
 {
-  "command": "rg -n --follow -i 'Faber2026|manuscript|overleaf|submodule|dsa110-FLITS|FLITS' /Users/jakobfaber/.codex/memories 2>/dev/null",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "rg -n --follow -i 'Faber2026|manuscript|overleaf|submodule|dsa110-FLITS|FLITS' /home/<USER>/.codex/memories 2>/dev/null",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 30000
 }
 ```
@@ -491,9 +491,9 @@ id: call_VxP9M4t3Hm4rtwdI2AAq74He
 Command blocked by PreToolUse hook: rtk-codex-guard: shell command should use RTK compact output.
 
 Suggested command:
-rtk grep -n --follow -i 'Faber2026|manuscript|overleaf|submodule|dsa110-FLITS|FLITS' /Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dotfiles/memory /Users/jakobfaber/.claude/projects/-Users-jakobfaber/memory 2>/dev/null
+rtk grep -n --follow -i 'Faber2026|manuscript|overleaf|submodule|dsa110-FLITS|FLITS' /home/<USER>/Developer/repos/github.com/jakobtfaber/dotfiles/memory /home/<USER>/.claude/projects/-Users-jakobfaber/memory 2>/dev/null
 
-To bypass for this command, prefix it with: RTK_DISABLED=1. Command: rg -n --follow -i 'Faber2026|manuscript|overleaf|submodule|dsa110-FLITS|FLITS' /Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dotfiles/memory /Users/jakobfaber/.claude/projects/-Users-jakobfaber/memory 2>/dev/null
+To bypass for this command, prefix it with: RTK_DISABLED=1. Command: rg -n --follow -i 'Faber2026|manuscript|overleaf|submodule|dsa110-FLITS|FLITS' /home/<USER>/Developer/repos/github.com/jakobtfaber/dotfiles/memory /home/<USER>/.claude/projects/-Users-jakobfaber/memory 2>/dev/null
 ```
 
 > TOOL
@@ -504,9 +504,9 @@ id: call_0WvUhPKv2XIgumtlpQqQruxE
 Command blocked by PreToolUse hook: rtk-codex-guard: shell command should use RTK compact output.
 
 Suggested command:
-rtk grep -n --follow -i 'Faber2026|manuscript|overleaf|submodule|dsa110-FLITS|FLITS' /Users/jakobfaber/.codex/memories 2>/dev/null
+rtk grep -n --follow -i 'Faber2026|manuscript|overleaf|submodule|dsa110-FLITS|FLITS' /home/<USER>/.codex/memories 2>/dev/null
 
-To bypass for this command, prefix it with: RTK_DISABLED=1. Command: rg -n --follow -i 'Faber2026|manuscript|overleaf|submodule|dsa110-FLITS|FLITS' /Users/jakobfaber/.codex/memories 2>/dev/null
+To bypass for this command, prefix it with: RTK_DISABLED=1. Command: rg -n --follow -i 'Faber2026|manuscript|overleaf|submodule|dsa110-FLITS|FLITS' /home/<USER>/.codex/memories 2>/dev/null
 ```
 
 > AGENT
@@ -519,8 +519,8 @@ tool_use shell_command
 id: call_ZhdjBnsZ2mZjGp8pUYSsgnDu
 ```json
 {
-  "command": "rtk grep -n --follow -i 'Faber2026|manuscript|overleaf|submodule|dsa110-FLITS|FLITS' /Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dotfiles/memory /Users/jakobfaber/.claude/projects/-Users-jakobfaber/memory 2>/dev/null",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "rtk grep -n --follow -i 'Faber2026|manuscript|overleaf|submodule|dsa110-FLITS|FLITS' /home/<USER>/Developer/repos/github.com/jakobtfaber/dotfiles/memory /home/<USER>/.claude/projects/-Users-jakobfaber/memory 2>/dev/null",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 30000
 }
 ```
@@ -531,8 +531,8 @@ tool_use shell_command
 id: call_0wYmJnFJ9Sch0Xr4wqUlNX4s
 ```json
 {
-  "command": "rtk grep -n --follow -i 'Faber2026|manuscript|overleaf|submodule|dsa110-FLITS|FLITS' /Users/jakobfaber/.codex/memories 2>/dev/null",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "rtk grep -n --follow -i 'Faber2026|manuscript|overleaf|submodule|dsa110-FLITS|FLITS' /home/<USER>/.codex/memories 2>/dev/null",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 30000
 }
 ```
@@ -569,8 +569,8 @@ tool_use shell_command
 id: call_ecNzL8DDiez6KTfL7Itc7tAF
 ```json
 {
-  "command": "RTK_DISABLED=1 rg -n --follow -i 'Faber2026|manuscript|overleaf|submodule|dsa110-FLITS|FLITS' /Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dotfiles/memory /Users/jakobfaber/.claude/projects/-Users-jakobfaber/memory 2>/dev/null",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "RTK_DISABLED=1 rg -n --follow -i 'Faber2026|manuscript|overleaf|submodule|dsa110-FLITS|FLITS' /home/<USER>/Developer/repos/github.com/jakobtfaber/dotfiles/memory /home/<USER>/.claude/projects/-Users-jakobfaber/memory 2>/dev/null",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 30000
 }
 ```
@@ -581,8 +581,8 @@ tool_use shell_command
 id: call_F6UXSHzywbjedxZU1btZaf8t
 ```json
 {
-  "command": "RTK_DISABLED=1 rg -n --follow -i 'Faber2026|manuscript|overleaf|submodule|dsa110-FLITS|FLITS' /Users/jakobfaber/.codex/memories 2>/dev/null",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "RTK_DISABLED=1 rg -n --follow -i 'Faber2026|manuscript|overleaf|submodule|dsa110-FLITS|FLITS' /home/<USER>/.codex/memories 2>/dev/null",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 30000
 }
 ```
@@ -596,20 +596,20 @@ Exit code: 0
 Wall time: 0.2 seconds
 Total output lines: 138
 Output:
-/Users/jakobfaber/.claude/projects/-Users-jakobfaber/memory/project_dsa110-flits-burst-energetics-calibration.md:2:name: project_dsa110-flits-burst-energetics-calibration
-/Users/jakobfaber/.claude/projects/-Users-jakobfaber/memory/project_dsa110-flits-burst-energetics-calibration.md:3:description: dsa110-FLITS burst-energetics (E_iso) table is NOT publishable as absolute energies — CHIME and DSA c0 are incommensurable per-telescope units, the E_CHIME+E_DSA sum breaks even cross-burst ranking, gamma_D=-5 rail is a likely DSA bandpass artifact. Full review in repo.
-/Users/jakobfaber/.claude/projects/-Users-jakobfaber/memory/project_dsa110-flits-burst-energetics-calibration.md:18:**Full review (in-repo, verified):** `analysis/burst_energies/CALIBRATION_REVIEW.md`. Science context: [[project_dsa110-flits-scattering-budget]]. Repo topology: [[project_dsa110-flits-dev-topology]].
-/Users/jakobfaber/.claude/projects/-Users-jakobfaber/memory/learning_faber2026-citation-hook-adsurl.md:2:name: learning_faber2026-citation-hook-adsurl
-/Users/jakobfaber/.claude/projects/-Users-jakobfaber/memory/learning_faber2026-citation-hook-adsurl.md:19:`~/Developer/overleaf/Faber2026/bib/refs.bib`), strip the `adsurl` and `adsnote`
-/Users/jakobfaber/.claude/projects/-Users-jakobfaber/memory/flits-delta-nu-d-fitting-mechanism.md:2:name: flits-delta-nu-d-fitting-mechanism
-/Users/jakobfaber/.claude/projects/-Users-jakobfaber/memory/flits-delta-nu-d-fitting-mechanism.md:30:Related: [[flits-joint-fit-shallow-alpha]], [[flits-alpha-tau-deltanu-twoprobes]]
-/Users/jakobfaber/.claude/projects/-Users-jakobfaber/memory/flits-scintillation-gp-framework.md:2:name: flits-scintillation-gp-framework
-/Users/jakobfaber/.claude/projects/-Users-jakobfaber/memory/flits-scintillation-gp-framework.md:8:# FLITS Scintillation GP Framework — Δν_d Recovery & Freya Result
-/Users/jakobfaber/.claude/projects/-Users-jakobfaber/memory/interstellar_optics_review.md:3:description: Branched-flow-in-cosmic-refractive-media review article — consolidation of 15 Overleaf source projects into a single advisor-circulable draft. Repo, state-file pointer, three-layer thesis, stable PDF URL, and non-obvious gotchas for a fresh session to resume without re-reading the plans.
-/Users/jakobfaber/.claude/projects/-Users-jakobfaber/memory/interstellar_optics_review.md:9:**Repo:** `~/Developer/overleaf/branched-flow-projects/` (local) · `github.com/jakobtfaber/interstellar-optics` (private)
-/Users/jakobfaber/.claude/projects/-Users-jakobfaber/memory/interstellar_optics_review.md:20:cd ~/Developer/overleaf/branched-flow-projects && cat review/STATUS.md && echo "=== recent commits ===" && git log --oneline -20
-/Users/jakobfaber/.claude/projects/-Users-jakobfaber/memory/interstellar_optics_review.md:25:Consolidation of ~15 separate Overleaf projects (notes, partial papers, calc-scratchpads — mostly on branched flow / wave propagation in random astrophysical media) accumulated over ~5 years, unified around a three-layer thesis:
-/Users/jakobfaber/.claude/projects/-Users-jakobfaber/memory/interstellar_optics_review.md:58:1. **The 19 zip files under `archive/source-overleaf-zips/` are consolidation sources, not active work.** They're `.gitignore`'d. Do […]
+/home/<USER>/.claude/projects/-Users-jakobfaber/memory/project_dsa110-flits-burst-energetics-calibration.md:2:name: project_dsa110-flits-burst-energetics-calibration
+/home/<USER>/.claude/projects/-Users-jakobfaber/memory/project_dsa110-flits-burst-energetics-calibration.md:3:description: dsa110-FLITS burst-energetics (E_iso) table is NOT publishable as absolute energies — CHIME and DSA c0 are incommensurable per-telescope units, the E_CHIME+E_DSA sum breaks even cross-burst ranking, gamma_D=-5 rail is a likely DSA bandpass artifact. Full review in repo.
+/home/<USER>/.claude/projects/-Users-jakobfaber/memory/project_dsa110-flits-burst-energetics-calibration.md:18:**Full review (in-repo, verified):** `analysis/burst_energies/CALIBRATION_REVIEW.md`. Science context: [[project_dsa110-flits-scattering-budget]]. Repo topology: [[project_dsa110-flits-dev-topology]].
+/home/<USER>/.claude/projects/-Users-jakobfaber/memory/learning_faber2026-citation-hook-adsurl.md:2:name: learning_faber2026-citation-hook-adsurl
+/home/<USER>/.claude/projects/-Users-jakobfaber/memory/learning_faber2026-citation-hook-adsurl.md:19:`~/Developer/overleaf/Faber2026/bib/refs.bib`), strip the `adsurl` and `adsnote`
+/home/<USER>/.claude/projects/-Users-jakobfaber/memory/flits-delta-nu-d-fitting-mechanism.md:2:name: flits-delta-nu-d-fitting-mechanism
+/home/<USER>/.claude/projects/-Users-jakobfaber/memory/flits-delta-nu-d-fitting-mechanism.md:30:Related: [[flits-joint-fit-shallow-alpha]], [[flits-alpha-tau-deltanu-twoprobes]]
+/home/<USER>/.claude/projects/-Users-jakobfaber/memory/flits-scintillation-gp-framework.md:2:name: flits-scintillation-gp-framework
+/home/<USER>/.claude/projects/-Users-jakobfaber/memory/flits-scintillation-gp-framework.md:8:# FLITS Scintillation GP Framework — Δν_d Recovery & Freya Result
+/home/<USER>/.claude/projects/-Users-jakobfaber/memory/interstellar_optics_review.md:3:description: Branched-flow-in-cosmic-refractive-media review article — consolidation of 15 Overleaf source projects into a single advisor-circulable draft. Repo, state-file pointer, three-layer thesis, stable PDF URL, and non-obvious gotchas for a fresh session to resume without re-reading the plans.
+/home/<USER>/.claude/projects/-Users-jakobfaber/memory/interstellar_optics_review.md:9:**Repo:** `~/Developer/overleaf/branched-flow-projects/` (local) · `github.com/jakobtfaber/interstellar-optics` (private)
+/home/<USER>/.claude/projects/-Users-jakobfaber/memory/interstellar_optics_review.md:20:cd ~/Developer/overleaf/branched-flow-projects && cat review/STATUS.md && echo "=== recent commits ===" && git log --oneline -20
+/home/<USER>/.claude/projects/-Users-jakobfaber/memory/interstellar_optics_review.md:25:Consolidation of ~15 separate Overleaf projects (notes, partial papers, calc-scratchpads — mostly on branched flow / wave propagation in random astrophysical media) accumulated over ~5 years, unified around a three-layer thesis:
+/home/<USER>/.claude/projects/-Users-jakobfaber/memory/interstellar_optics_review.md:58:1. **The 19 zip files under `archive/source-overleaf-zips/` are consolidation sources, not active work.** They're `.gitignore`'d. Do […]
 
 > TOOL
 
@@ -620,12 +620,12 @@ Exit code: 0
 Wall time: 0.3 seconds
 Total output lines: 2762
 Output:
-/Users/jakobfaber/.codex/memories/memory_summary.md:4:User works locally on macOS with `zsh` and spends a lot of time in terminal-first agent workflows: Codex CLI/Desktop, Claude Code in iTerm2, dotfiles/chezmoi, `my-skillset`, and several DSA-110 / FRB research repos. Current high-signal work is centered on `dsa110-FLITS`, often split across the local fork at `/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS`, the HPCC mirror at `/home/jfaber/flits/dsa110-FLITS`, remote hosts like `h17` / `iacobus` / `h23`, and the separate manuscript repo `~/Developer/overleaf/Faber2026`. [chronicle memory]
-/Users/jakobfaber/.codex/memories/memory_summary.md:20:- Treat dirty branches, worktrees, memory overlays, manuscript repos, HPCC mirrors, and generated artifacts as separate lanes until proven otherwise; remove only when proven stale.
-/Users/jakobfaber/.codex/memories/memory_summary.md:21:- When asked how much work has been written into repo docs versus a manuscript repo, inventory exact surfaces first and only wire into the manuscript after explicit approval. [chronicle memory]
-/Users/jakobfaber/.codex/memories/memory_summary.md:30:- In FLITS archive/provenance work, separate local mount state from archive reachability. `vls`/`vcp` success can overturn an overstated “data-blocked” label even when `DATA_DIR` is unset. [chronicle memory]
-/Users/jakobfaber/.codex/memories/memory_summary.md:31:- For FLITS tests, inherited shell state is not trustworthy. If `conda run -n flits` misbehaves, sanitize the environment before treating the repo as broken. [chronicle memory]
-/Users/jakobfaber/.codex/memories/memory_summary.md:32:- FLITS looked CPU-bound in the […]
+/home/<USER>/.codex/memories/memory_summary.md:4:User works locally on macOS with `zsh` and spends a lot of time in terminal-first agent workflows: Codex CLI/Desktop, Claude Code in iTerm2, dotfiles/chezmoi, `my-skillset`, and several DSA-110 / FRB research repos. Current high-signal work is centered on `dsa110-FLITS`, often split across the local fork at `/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS`, the HPCC mirror at `/home/<USER>/flits/dsa110-FLITS`, remote hosts like `h17` / `iacobus` / `h23`, and the separate manuscript repo `~/Developer/overleaf/Faber2026`. [chronicle memory]
+/home/<USER>/.codex/memories/memory_summary.md:20:- Treat dirty branches, worktrees, memory overlays, manuscript repos, HPCC mirrors, and generated artifacts as separate lanes until proven otherwise; remove only when proven stale.
+/home/<USER>/.codex/memories/memory_summary.md:21:- When asked how much work has been written into repo docs versus a manuscript repo, inventory exact surfaces first and only wire into the manuscript after explicit approval. [chronicle memory]
+/home/<USER>/.codex/memories/memory_summary.md:30:- In FLITS archive/provenance work, separate local mount state from archive reachability. `vls`/`vcp` success can overturn an overstated “data-blocked” label even when `DATA_DIR` is unset. [chronicle memory]
+/home/<USER>/.codex/memories/memory_summary.md:31:- For FLITS tests, inherited shell state is not trustworthy. If `conda run -n flits` misbehaves, sanitize the environment before treating the repo as broken. [chronicle memory]
+/home/<USER>/.codex/memories/memory_summary.md:32:- FLITS looked CPU-bound in the […]
 
 > AGENT
 
@@ -637,8 +637,8 @@ tool_use shell_command
 id: call_BowKOEDWWFZqdjAUPUyHw5nf
 ```json
 {
-  "command": "RTK_DISABLED=1 nl -ba /Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dotfiles/memory/project_dsa110-flits-scattering-budget.md | sed -n '1,45p'",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "RTK_DISABLED=1 nl -ba /home/<USER>/Developer/repos/github.com/jakobtfaber/dotfiles/memory/project_dsa110-flits-scattering-budget.md | sed -n '1,45p'",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -649,8 +649,8 @@ tool_use shell_command
 id: call_UiHKuiavpFo17mmxhovJtxIq
 ```json
 {
-  "command": "RTK_DISABLED=1 nl -ba /Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dotfiles/memory/project_dsa110-flits-dev-topology.md | sed -n '1,35p'",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "RTK_DISABLED=1 nl -ba /home/<USER>/Developer/repos/github.com/jakobtfaber/dotfiles/memory/project_dsa110-flits-dev-topology.md | sed -n '1,35p'",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -661,8 +661,8 @@ tool_use shell_command
 id: call_rzczirzq4mhaFoGayqDdeSoJ
 ```json
 {
-  "command": "RTK_DISABLED=1 nl -ba /Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dotfiles/memory/MEMORY.md | sed -n '24,31p'",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "RTK_DISABLED=1 nl -ba /home/<USER>/Developer/repos/github.com/jakobtfaber/dotfiles/memory/MEMORY.md | sed -n '24,31p'",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -673,8 +673,8 @@ tool_use shell_command
 id: call_0Cm0y54RovVULwm0MrtZAGn2
 ```json
 {
-  "command": "RTK_DISABLED=1 nl -ba /Users/jakobfaber/.codex/memories/MEMORY.md | sed -n '124,133p;141,146p'",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "RTK_DISABLED=1 nl -ba /home/<USER>/.codex/memories/MEMORY.md | sed -n '124,133p;141,146p'",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -698,9 +698,9 @@ Output:
      9	
     10	## Manuscript — Faber2026
     11	
-    12	- Repo: `git@github.com:jakobtfaber/Faber2026.git` (private). Path: `~/Developer/overleaf/Faber2026/`.
+    12	- Repo: `<REDACTED_EMAIL>:jakobtfaber/Faber2026.git` (private). Path: `~/Developer/overleaf/Faber2026/`.
     13	- AASTeX631 (`aastex631.cls`/`aasjournal.bst` vendored), `main.tex` → `\input` of `auth.tex` + `sections/{intro,observations,budget,results,discussion,conclusions}.tex` + `bib/refs.bib`. `latexmk` Makefile, compiles clean.
-    14	- Topology decision (Jakob's call): **name the repo for the author (`Faber2026`), paper *references* the pipeline** — not nested. `pipeline/` is a git submodule → `git@github.com:dsa110/dsa110-FLITS.git` pinned at `812b8e4`; submodule-pin doc is `PIPELINE.md` at repo root (moved off `pipeline/` so the submodule could mount there). Overleaf ignores submodules, so the Overleaf-linked copy builds without `pipeline/`. See [[reference_manuscript-repo-convention]].
+    14	- Topology decision (Jakob's call): **name the repo for the author (`Faber2026`), paper *references* the pipeline** — not nested. `pipeline/` is a git submodule → `<REDACTED_EMAIL>:dsa110/dsa110-FLITS.git` pinned at `812b8e4`; submodule-pin doc is `PIPELINE.md` at repo root (moved off `pipeline/` so the submodule could mount there). Overleaf ignores submodules, so the Overleaf-linked copy builds without `pipeline/`. See [[reference_manuscript-repo-convention]].
     15	- Linked to Overleaf (Premium account; Labs: Dimensions search, Python script runner, Library, Editor tabs, Rolling TeX Live).
     16	
     17	## CADC arc storage (VOSpace `arc:home/jfaber`)
@@ -763,8 +763,8 @@ Output:
    125	
    126	### rollout_summary_files
    127	
-   128	- extensions/chronicle/resources/2026-06-23T16-23-00-nRYS-10min-memory-summary.md (cwd=/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS, rollout_path=/Users/jakobfaber/.codex/memories/extensions/chronicle/resources/2026-06-23T16-23-00-nRYS-10min-memory-summary.md, updated_at=2026-06-23T16:23:00, thread_id=None, partial; Phase 7 radiometer/cluster-catalog work was verified, full regeneration was user-approved, and the assistant began inventorying other co-detections to test whether the resolved-vs-MW excess was systematic) [chronicle memory]
-   129	- extensions/chronicle/resources/2026-06-23T16-33-00-kWFi-10min-memory-summary.md (cwd=/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS, rollout_path=/Users/jakobfaber/.codex/memories/extensions/chronicle/resources/2026-06-23T16-33-00-kWFi-10min-memory-summary.md, updated_at=2026-06-23T16:33:00, thread_id=None, partial; `analysis/burst_energies/burst_energies.tex` existed in the repo but had not been copied into `~/Developer/overleaf/Faber2026`, and the user explicitly approved wiring it into the manuscript while keeping the manuscript lane separate) [chronicle memory]
+   128	- extensions/chronicle/resources/2026-06-23T16-23-00-nRYS-10min-memory-summary.md (cwd=/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-23T16-23-00-nRYS-10min-memory-summary.md, updated_at=2026-06-23T16:23:00, thread_id=None, partial; Phase 7 radiometer/cluster-catalog work was verified, full regeneration was user-approved, and the assistant began inventorying other co-detections to test whether the resolved-vs-MW excess was systematic) [chronicle memory]
+   129	- extensions/chronicle/resources/2026-06-23T16-33-00-kWFi-10min-memory-summary.md (cwd=/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-23T16-33-00-kWFi-10min-memory-summary.md, updated_at=2026-06-23T16:33:00, thread_id=None, partial; `analysis/burst_energies/burst_energies.tex` existed in the repo but had not been copied into `~/Developer/overleaf/Faber2026`, and the user explicitly approved wiring it into the manuscript while keeping the manuscript lane separate) [chronicle memory]
    130	
    131	### keywords
    132	
@@ -782,8 +782,8 @@ tool_use shell_command
 id: call_ybeaHspKMB5HYcqbO6hDkrbh
 ```json
 {
-  "command": "test -d /Users/jakobfaber/Developer/overleaf/Faber2026 && printf 'exists\\n' || printf 'missing\\n'",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "test -d /home/<USER>/Developer/overleaf/Faber2026 && printf 'exists\\n' || printf 'missing\\n'",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -794,8 +794,8 @@ tool_use shell_command
 id: call_l03LHnwSvzDqDwqfc0Oo5Rjw
 ```json
 {
-  "command": "git -C /Users/jakobfaber/Developer/overleaf/Faber2026 remote -v 2>/dev/null || true",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "git -C /home/<USER>/Developer/overleaf/Faber2026 remote -v 2>/dev/null || true",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -806,8 +806,8 @@ tool_use shell_command
 id: call_LoTX0UZShjmBJqMXEmlueq9U
 ```json
 {
-  "command": "git -C /Users/jakobfaber/Developer/overleaf/Faber2026 submodule status --recursive 2>/dev/null || true",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "git -C /home/<USER>/Developer/overleaf/Faber2026 submodule status --recursive 2>/dev/null || true",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -818,8 +818,8 @@ tool_use shell_command
 id: call_D3lZDp63MWVEpid2Wu7HlaBT
 ```json
 {
-  "command": "git -C /Users/jakobfaber/Developer/overleaf/Faber2026 config --file .gitmodules --get-regexp 'submodule\\..*\\.(path|url)' 2>/dev/null || true",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "git -C /home/<USER>/Developer/overleaf/Faber2026 config --file .gitmodules --get-regexp 'submodule\\..*\\.(path|url)' 2>/dev/null || true",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -844,8 +844,8 @@ id: call_l03LHnwSvzDqDwqfc0Oo5Rjw
 Exit code: 0
 Wall time: 0.5 seconds
 Output:
-origin	git@github.com:jakobtfaber/Faber2026.git (fetch)
-origin	git@github.com:jakobtfaber/Faber2026.git (push)
+origin	<REDACTED_EMAIL>:jakobtfaber/Faber2026.git (fetch)
+origin	<REDACTED_EMAIL>:jakobtfaber/Faber2026.git (push)
 
 ```
 
@@ -870,13 +870,13 @@ Exit code: 0
 Wall time: 0.4 seconds
 Output:
 submodule.pipeline.path pipeline
-submodule.pipeline.url git@github.com:dsa110/dsa110-FLITS.git
+submodule.pipeline.url <REDACTED_EMAIL>:dsa110/dsa110-FLITS.git
 
 ```
 
 > AGENT
 
-Live `Faber2026` confirms the memory shape: it has a `pipeline` submodule, not a `Faber2026` submodule inside FLITS. Its current `.gitmodules` still points at `git@github.com:dsa110/dsa110-FLITS.git`; I’ll verify the remote branch content too so we’re not fooled by a stale local clone.
+Live `Faber2026` confirms the memory shape: it has a `pipeline` submodule, not a `Faber2026` submodule inside FLITS. Its current `.gitmodules` still points at `<REDACTED_EMAIL>:dsa110/dsa110-FLITS.git`; I’ll verify the remote branch content too so we’re not fooled by a stale local clone.
 
 > TOOL
 
@@ -884,8 +884,8 @@ tool_use shell_command
 id: call_9W8yB1tFgXd0wZ4xi4wjWbuD
 ```json
 {
-  "command": "git -C /Users/jakobfaber/Developer/overleaf/Faber2026 ls-remote --symref origin HEAD && git -C /Users/jakobfaber/Developer/overleaf/Faber2026 ls-remote origin main:.gitmodules",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "git -C /home/<USER>/Developer/overleaf/Faber2026 ls-remote --symref origin HEAD && git -C /home/<USER>/Developer/overleaf/Faber2026 ls-remote origin main:.gitmodules",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 20000
 }
 ```
@@ -896,8 +896,8 @@ tool_use shell_command
 id: call_lNBrEYnHhhOTxF9i65h07Gsi
 ```json
 {
-  "command": "git -C /Users/jakobfaber/Developer/overleaf/Faber2026/pipeline remote -v 2>/dev/null || true",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "git -C /home/<USER>/Developer/overleaf/Faber2026/pipeline remote -v 2>/dev/null || true",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -908,8 +908,8 @@ tool_use shell_command
 id: call_IVXAy8pK7WFJz39Uo3FSbS1j
 ```json
 {
-  "command": "RTK_DISABLED=1 rg -n --follow -i 'pipeline/.*submodule|submodule.*pipeline|git@github.com:(dsa110|jakobtfaber)/dsa110-FLITS|Faber2026.*submodule|submodule.*Faber2026' /Users/jakobfaber/.codex/memories /Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dotfiles/memory /Users/jakobfaber/.claude/projects/-Users-jakobfaber/memory 2>/dev/null",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "RTK_DISABLED=1 rg -n --follow -i 'pipeline/.*submodule|submodule.*pipeline|<REDACTED_EMAIL>:(dsa110|jakobtfaber)/dsa110-FLITS|Faber2026.*submodule|submodule.*Faber2026' /home/<USER>/.codex/memories /home/<USER>/Developer/repos/github.com/jakobtfaber/dotfiles/memory /home/<USER>/.claude/projects/-Users-jakobfaber/memory 2>/dev/null",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 30000
 }
 ```
@@ -935,8 +935,8 @@ id: call_lNBrEYnHhhOTxF9i65h07Gsi
 Exit code: 0
 Wall time: 0.2 seconds
 Output:
-origin	git@github.com:dsa110/dsa110-FLITS.git (fetch)
-origin	git@github.com:dsa110/dsa110-FLITS.git (push)
+origin	<REDACTED_EMAIL>:dsa110/dsa110-FLITS.git (fetch)
+origin	<REDACTED_EMAIL>:dsa110/dsa110-FLITS.git (push)
 
 ```
 
@@ -948,11 +948,11 @@ id: call_IVXAy8pK7WFJz39Uo3FSbS1j
 Exit code: 0
 Wall time: 0.2 seconds
 Output:
-/Users/jakobfaber/.claude/projects/-Users-jakobfaber/memory/project_dsa110-flits-scattering-budget.md:14:- Topology decision (Jakob's call): **name the repo for the author (`Faber2026`), paper *references* the pipeline** — not nested. `pipeline/` is a git submodule → `git@github.com:dsa110/dsa110-FLITS.git` pinned at `812b8e4`; submodule-pin doc is `PIPELINE.md` at repo root (moved off `pipeline/` so the submodule could mount there). Overleaf ignores submodules, so the Overleaf-linked copy builds without `pipeline/`. See [[reference_manuscript-repo-convention]].
-/Users/jakobfaber/.claude/projects/-Users-jakobfaber/memory/MEMORY.md:26:- **dsa110-FLITS scattering/DM-budget + Faber2026**: co-detected-FRB paper (`jakobtfaber/Faber2026`, FLITS pinned as `pipeline/` submodule) + CADC arc storage; arc `Trash` archived to h17 + cleaned 2026-06-18 (arc 99.75%→64.2%, freed 66.18 GiB). Detail: [project_dsa110-flits-scattering-budget](project_dsa110-flits-scattering-budget.md)
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dotfiles/memory/project_dsa110-flits-scattering-budget.md:14:- Topology decision (Jakob's call): **name the repo for the author (`Faber2026`), paper *references* the pipeline** — not nested. `pipeline/` is a git submodule → `git@github.com:dsa110/dsa110-FLITS.git` pinned at `812b8e4`; submodule-pin doc is `PIPELINE.md` at repo root (moved off `pipeline/` so the submodule could mount there). Overleaf ignores submodules, so the Overleaf-linked copy builds without `pipeline/`. See [[reference_manuscript-repo-convention]].
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dotfiles/memory/MEMORY.md:26:- **dsa110-FLITS scattering/DM-budget + Faber2026**: co-detected-FRB paper (`jakobtfaber/Faber2026`, FLITS pinned as `pipeline/` submodule) + CADC arc storage; arc `Trash` archived to h17 + cleaned 2026-06-18 (arc 99.75%→64.2%, freed 66.18 GiB). Detail: [project_dsa110-flits-scattering-budget](project_dsa110-flits-scattering-budget.md)
-/Users/jakobfaber/.codex/memories/extensions/chronicle/resources/2026-06-23T00-57-00-lWqN-10min-memory-summary.md:90:Claude Code began grounding the advice in repo state. Visible […]
+/home/<USER>/.claude/projects/-Users-jakobfaber/memory/project_dsa110-flits-scattering-budget.md:14:- Topology decision (Jakob's call): **name the repo for the author (`Faber2026`), paper *references* the pipeline** — not nested. `pipeline/` is a git submodule → `<REDACTED_EMAIL>:dsa110/dsa110-FLITS.git` pinned at `812b8e4`; submodule-pin doc is `PIPELINE.md` at repo root (moved off `pipeline/` so the submodule could mount there). Overleaf ignores submodules, so the Overleaf-linked copy builds without `pipeline/`. See [[reference_manuscript-repo-convention]].
+/home/<USER>/.claude/projects/-Users-jakobfaber/memory/MEMORY.md:26:- **dsa110-FLITS scattering/DM-budget + Faber2026**: co-detected-FRB paper (`jakobtfaber/Faber2026`, FLITS pinned as `pipeline/` submodule) + CADC arc storage; arc `Trash` archived to h17 + cleaned 2026-06-18 (arc 99.75%→64.2%, freed 66.18 GiB). Detail: [project_dsa110-flits-scattering-budget](project_dsa110-flits-scattering-budget.md)
+/home/<USER>/Developer/repos/github.com/jakobtfaber/dotfiles/memory/project_dsa110-flits-scattering-budget.md:14:- Topology decision (Jakob's call): **name the repo for the author (`Faber2026`), paper *references* the pipeline** — not nested. `pipeline/` is a git submodule → `<REDACTED_EMAIL>:dsa110/dsa110-FLITS.git` pinned at `812b8e4`; submodule-pin doc is `PIPELINE.md` at repo root (moved off `pipeline/` so the submodule could mount there). Overleaf ignores submodules, so the Overleaf-linked copy builds without `pipeline/`. See [[reference_manuscript-repo-convention]].
+/home/<USER>/Developer/repos/github.com/jakobtfaber/dotfiles/memory/MEMORY.md:26:- **dsa110-FLITS scattering/DM-budget + Faber2026**: co-detected-FRB paper (`jakobtfaber/Faber2026`, FLITS pinned as `pipeline/` submodule) + CADC arc storage; arc `Trash` archived to h17 + cleaned 2026-06-18 (arc 99.75%→64.2%, freed 66.18 GiB). Detail: [project_dsa110-flits-scattering-budget](project_dsa110-flits-scattering-budget.md)
+/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-23T00-57-00-lWqN-10min-memory-summary.md:90:Claude Code began grounding the advice in repo state. Visible […]
 
 > AGENT
 
@@ -964,8 +964,8 @@ tool_use shell_command
 id: call_UNL4EhCKn17zNSF0Y9e4j2j4
 ```json
 {
-  "command": "rtk git -C /Users/jakobfaber/Developer/overleaf/Faber2026 fetch origin --prune",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "rtk git -C /home/<USER>/Developer/overleaf/Faber2026 fetch origin --prune",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 60000
 }
 ```
@@ -976,8 +976,8 @@ tool_use shell_command
 id: call_IbfPnlsceGnUAiTUvKygg4uL
 ```json
 {
-  "command": "RTK_DISABLED=1 nl -ba /Users/jakobfaber/.codex/memories/extensions/chronicle/resources/2026-06-23T16-23-00-nRYS-10min-memory-summary.md | sed -n '1,15p;124,131p'",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "RTK_DISABLED=1 nl -ba /home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-23T16-23-00-nRYS-10min-memory-summary.md | sed -n '1,15p;124,131p'",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -988,8 +988,8 @@ tool_use shell_command
 id: call_ImG50er8juQzqmTG3HdUrV4j
 ```json
 {
-  "command": "RTK_DISABLED=1 nl -ba /Users/jakobfaber/.codex/memories/extensions/chronicle/resources/2026-06-23T16-33-00-kWFi-10min-memory-summary.md | sed -n '18,22p;36,44p'",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "RTK_DISABLED=1 nl -ba /home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-23T16-33-00-kWFi-10min-memory-summary.md | sed -n '18,22p;36,44p'",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -1056,8 +1056,8 @@ tool_use shell_command
 id: call_7j61G0IoEuH7vWXzprxhNHpb
 ```json
 {
-  "command": "git -C /Users/jakobfaber/Developer/overleaf/Faber2026 show origin/main:.gitmodules 2>/dev/null || true",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "git -C /home/<USER>/Developer/overleaf/Faber2026 show origin/main:.gitmodules 2>/dev/null || true",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -1068,8 +1068,8 @@ tool_use shell_command
 id: call_geM5TTzcbhfYIL6WuUeuHRzT
 ```json
 {
-  "command": "git -C /Users/jakobfaber/Developer/overleaf/Faber2026 status --short --branch",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "git -C /home/<USER>/Developer/overleaf/Faber2026 status --short --branch",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -1080,8 +1080,8 @@ tool_use shell_command
 id: call_uJMmlWeGF7rnVVw4mULZKM0E
 ```json
 {
-  "command": "git -C /Users/jakobfaber/Developer/overleaf/Faber2026/pipeline rev-parse HEAD && git -C /Users/jakobfaber/Developer/overleaf/Faber2026/pipeline branch --show-current",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "git -C /home/<USER>/Developer/overleaf/Faber2026/pipeline rev-parse HEAD && git -C /home/<USER>/Developer/overleaf/Faber2026/pipeline branch --show-current",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -1094,9 +1094,9 @@ id: call_7j61G0IoEuH7vWXzprxhNHpb
 Command blocked by PreToolUse hook: rtk-codex-guard: shell command should use RTK compact output.
 
 Suggested command:
-rtk git -C /Users/jakobfaber/Developer/overleaf/Faber2026 show origin/main:.gitmodules 2>/dev/null || true
+rtk git -C /home/<USER>/Developer/overleaf/Faber2026 show origin/main:.gitmodules 2>/dev/null || true
 
-To bypass for this command, prefix it with: RTK_DISABLED=1. Command: git -C /Users/jakobfaber/Developer/overleaf/Faber2026 show origin/main:.gitmodules 2>/dev/null || true
+To bypass for this command, prefix it with: RTK_DISABLED=1. Command: git -C /home/<USER>/Developer/overleaf/Faber2026 show origin/main:.gitmodules 2>/dev/null || true
 ```
 
 > TOOL
@@ -1107,9 +1107,9 @@ id: call_geM5TTzcbhfYIL6WuUeuHRzT
 Command blocked by PreToolUse hook: rtk-codex-guard: shell command should use RTK compact output.
 
 Suggested command:
-rtk git -C /Users/jakobfaber/Developer/overleaf/Faber2026 status --short --branch
+rtk git -C /home/<USER>/Developer/overleaf/Faber2026 status --short --branch
 
-To bypass for this command, prefix it with: RTK_DISABLED=1. Command: git -C /Users/jakobfaber/Developer/overleaf/Faber2026 status --short --branch
+To bypass for this command, prefix it with: RTK_DISABLED=1. Command: git -C /home/<USER>/Developer/overleaf/Faber2026 status --short --branch
 ```
 
 > TOOL
@@ -1120,9 +1120,9 @@ id: call_uJMmlWeGF7rnVVw4mULZKM0E
 Command blocked by PreToolUse hook: rtk-codex-guard: shell command should use RTK compact output.
 
 Suggested command:
-git -C /Users/jakobfaber/Developer/overleaf/Faber2026/pipeline rev-parse HEAD && rtk git -C /Users/jakobfaber/Developer/overleaf/Faber2026/pipeline branch --show-current
+git -C /home/<USER>/Developer/overleaf/Faber2026/pipeline rev-parse HEAD && rtk git -C /home/<USER>/Developer/overleaf/Faber2026/pipeline branch --show-current
 
-To bypass for this command, prefix it with: RTK_DISABLED=1. Command: git -C /Users/jakobfaber/Developer/overleaf/Faber2026/pipeline rev-parse HEAD && git -C /Users/jakobfaber/Developer/overleaf/Faber2026/pipeline branch --show-current
+To bypass for this command, prefix it with: RTK_DISABLED=1. Command: git -C /home/<USER>/Developer/overleaf/Faber2026/pipeline rev-parse HEAD && git -C /home/<USER>/Developer/overleaf/Faber2026/pipeline branch --show-current
 ```
 
 > AGENT
@@ -1135,8 +1135,8 @@ tool_use shell_command
 id: call_e8Vggw1yNkmnoGeW3Lm63XBX
 ```json
 {
-  "command": "rtk git -C /Users/jakobfaber/Developer/overleaf/Faber2026 show origin/main:.gitmodules 2>/dev/null || true",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "rtk git -C /home/<USER>/Developer/overleaf/Faber2026 show origin/main:.gitmodules 2>/dev/null || true",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -1147,8 +1147,8 @@ tool_use shell_command
 id: call_YZ8Hb5GKCCquACTjC8zmSGdd
 ```json
 {
-  "command": "rtk git -C /Users/jakobfaber/Developer/overleaf/Faber2026 status --short --branch",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "rtk git -C /home/<USER>/Developer/overleaf/Faber2026 status --short --branch",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -1159,8 +1159,8 @@ tool_use shell_command
 id: call_JrBN8sf2PrehOPT3KRLZVR0L
 ```json
 {
-  "command": "RTK_DISABLED=1 git -C /Users/jakobfaber/Developer/overleaf/Faber2026/pipeline rev-parse HEAD && git -C /Users/jakobfaber/Developer/overleaf/Faber2026/pipeline branch --show-current",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "RTK_DISABLED=1 git -C /home/<USER>/Developer/overleaf/Faber2026/pipeline rev-parse HEAD && git -C /home/<USER>/Developer/overleaf/Faber2026/pipeline branch --show-current",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -1175,7 +1175,7 @@ Wall time: 0.2 seconds
 Output:
 [submodule "pipeline"]
 	path = pipeline
-	url = git@github.com:dsa110/dsa110-FLITS.git
+	url = <REDACTED_EMAIL>:dsa110/dsa110-FLITS.git
 
 ```
 
@@ -1214,13 +1214,13 @@ Current live state:
 
 ```text
 ~/Developer/overleaf/Faber2026
-  origin = git@github.com:jakobtfaber/Faber2026.git
-  submodule pipeline = git@github.com:dsa110/dsa110-FLITS.git
+  origin = <REDACTED_EMAIL>:jakobtfaber/Faber2026.git
+  submodule pipeline = <REDACTED_EMAIL>:dsa110/dsa110-FLITS.git
   pipeline HEAD = de5b225c98de851dc86e48033adb479c08feb1b4
   working tree = clean
 ```
 
-Important mismatch with your correction: memory says active FLITS development now happens on `git@github.com:jakobtfaber/dsa110-FLITS.git`, but `Faber2026/.gitmodules` still points the `pipeline` submodule at `git@github.com:dsa110/dsa110-FLITS.git`.
+Important mismatch with your correction: memory says active FLITS development now happens on `<REDACTED_EMAIL>:jakobtfaber/dsa110-FLITS.git`, but `Faber2026/.gitmodules` still points the `pipeline` submodule at `<REDACTED_EMAIL>:dsa110/dsa110-FLITS.git`.
 
 So the minimal fix, if your intent is “manuscript should follow the development fork,” is **not** to add `Faber2026` inside this repo. It is to update `~/Developer/overleaf/Faber2026/.gitmodules` and the submodule remote for `pipeline` from `dsa110/dsa110-FLITS` to `jakobtfaber/dsa110-FLITS`.
 
@@ -1235,7 +1235,7 @@ extensions/chronicle/resources/2026-06-23T16-23-00-nRYS-10min-memory-summary.md:
 
 > DEVELOPER
 
-Fix mismatch and point pipeline submodule in Faber2026/.gitmodules at git@github.com:jakobtfaber/dsa110-FLITS.git
+Fix mismatch and point pipeline submodule in Faber2026/.gitmodules at <REDACTED_EMAIL>:jakobtfaber/dsa110-FLITS.git
 
 > AGENT
 
@@ -1247,8 +1247,8 @@ tool_use shell_command
 id: call_HoG4BVcz5a5IDRRbtMbZWVP1
 ```json
 {
-  "command": "rtk git -C /Users/jakobfaber/Developer/overleaf/Faber2026 status --short --branch",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "rtk git -C /home/<USER>/Developer/overleaf/Faber2026 status --short --branch",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -1259,8 +1259,8 @@ tool_use shell_command
 id: call_y9Q4YHk7dyXXMFUpEnLOUzdb
 ```json
 {
-  "command": "sed -n '1,40p' /Users/jakobfaber/Developer/overleaf/Faber2026/.gitmodules",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "sed -n '1,40p' /home/<USER>/Developer/overleaf/Faber2026/.gitmodules",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -1288,7 +1288,7 @@ Wall time: 0.1 seconds
 Output:
 [submodule "pipeline"]
 	path = pipeline
-	url = git@github.com:dsa110/dsa110-FLITS.git
+	url = <REDACTED_EMAIL>:dsa110/dsa110-FLITS.git
 
 ```
 
@@ -1306,8 +1306,8 @@ tool_use shell_command
 id: call_xJHa9tyvSAPIiX5zS7UAKvwt
 ```json
 {
-  "command": "rtk git -C /Users/jakobfaber/Developer/overleaf/Faber2026 submodule sync pipeline",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "rtk git -C /home/<USER>/Developer/overleaf/Faber2026 submodule sync pipeline",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 20000
 }
 ```
@@ -1318,8 +1318,8 @@ tool_use shell_command
 id: call_zkiXmbPbcj623hkeg8kFF7m7
 ```json
 {
-  "command": "git -C /Users/jakobfaber/Developer/overleaf/Faber2026 config --file .gitmodules --get submodule.pipeline.url",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "git -C /home/<USER>/Developer/overleaf/Faber2026 config --file .gitmodules --get submodule.pipeline.url",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -1344,7 +1344,7 @@ id: call_zkiXmbPbcj623hkeg8kFF7m7
 Exit code: 0
 Wall time: 0.1 seconds
 Output:
-git@github.com:jakobtfaber/dsa110-FLITS.git
+<REDACTED_EMAIL>:jakobtfaber/dsa110-FLITS.git
 
 ```
 
@@ -1358,8 +1358,8 @@ tool_use shell_command
 id: call_3ekAT67LW2fGCoC7nMLw3aqf
 ```json
 {
-  "command": "git -C /Users/jakobfaber/Developer/overleaf/Faber2026/pipeline remote -v",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "git -C /home/<USER>/Developer/overleaf/Faber2026/pipeline remote -v",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -1370,8 +1370,8 @@ tool_use shell_command
 id: call_lkFW2CaS49Drlg3RCYzZ2I3X
 ```json
 {
-  "command": "rtk git -C /Users/jakobfaber/Developer/overleaf/Faber2026 status --short --branch",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "rtk git -C /home/<USER>/Developer/overleaf/Faber2026 status --short --branch",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -1382,8 +1382,8 @@ tool_use shell_command
 id: call_ethMiVHSqRLqLRKmNwJD16vn
 ```json
 {
-  "command": "git -C /Users/jakobfaber/Developer/overleaf/Faber2026 diff -- .gitmodules",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "git -C /home/<USER>/Developer/overleaf/Faber2026 diff -- .gitmodules",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -1396,8 +1396,8 @@ id: call_3ekAT67LW2fGCoC7nMLw3aqf
 Exit code: 0
 Wall time: 0.1 seconds
 Output:
-origin	git@github.com:jakobtfaber/dsa110-FLITS.git (fetch)
-origin	git@github.com:jakobtfaber/dsa110-FLITS.git (push)
+origin	<REDACTED_EMAIL>:jakobtfaber/dsa110-FLITS.git (fetch)
+origin	<REDACTED_EMAIL>:jakobtfaber/dsa110-FLITS.git (push)
 
 ```
 
@@ -1422,9 +1422,9 @@ id: call_ethMiVHSqRLqLRKmNwJD16vn
 Command blocked by PreToolUse hook: rtk-codex-guard: shell command should use RTK compact output.
 
 Suggested command:
-rtk git -C /Users/jakobfaber/Developer/overleaf/Faber2026 diff -- .gitmodules
+rtk git -C /home/<USER>/Developer/overleaf/Faber2026 diff -- .gitmodules
 
-To bypass for this command, prefix it with: RTK_DISABLED=1. Command: git -C /Users/jakobfaber/Developer/overleaf/Faber2026 diff -- .gitmodules
+To bypass for this command, prefix it with: RTK_DISABLED=1. Command: git -C /home/<USER>/Developer/overleaf/Faber2026 diff -- .gitmodules
 ```
 
 > AGENT
@@ -1437,8 +1437,8 @@ tool_use shell_command
 id: call_zRVnfSMPLkt64p4MCuHd3gat
 ```json
 {
-  "command": "rtk git -C /Users/jakobfaber/Developer/overleaf/Faber2026 diff -- .gitmodules",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "rtk git -C /home/<USER>/Developer/overleaf/Faber2026 diff -- .gitmodules",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -1450,7 +1450,7 @@ id: call_35RT667Zm6gOx6hJIxGcjJq9
 ```json
 {
   "command": "command -v agent-closeout-check || command -v mskill || true",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -1470,8 +1470,8 @@ Changes:
 
 .gitmodules
   @@ -1,3 +1,3 @@
-  -	url = git@github.com:dsa110/dsa110-FLITS.git
-  +	url = git@github.com:jakobtfaber/dsa110-FLITS.git
+  -	url = <REDACTED_EMAIL>:dsa110/dsa110-FLITS.git
+  +	url = <REDACTED_EMAIL>:jakobtfaber/dsa110-FLITS.git
   +1 -1
 
 ```
@@ -1484,7 +1484,7 @@ id: call_35RT667Zm6gOx6hJIxGcjJq9
 Exit code: 0
 Wall time: 0.1 seconds
 Output:
-/Users/jakobfaber/.local/bin/agent-closeout-check
+/home/<USER>/.local/bin/agent-closeout-check
 
 ```
 
@@ -1498,8 +1498,8 @@ tool_use shell_command
 id: call_HxQ074m4z0U8JHV7TkjpQR1u
 ```json
 {
-  "command": "agent-closeout-check --repo /Users/jakobfaber/Developer/overleaf/Faber2026 --touched .gitmodules",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "agent-closeout-check --repo /home/<USER>/Developer/overleaf/Faber2026 --touched .gitmodules",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 60000
 }
 ```
@@ -1514,7 +1514,7 @@ Wall time: 0.2 seconds
 Output:
 agent-closeout-check: needs closeout action
 - Provide a dirty-state handoff packet classifying every dirty path.
-- /Users/jakobfaber/Developer/overleaf/Faber2026: dirty-state handoff packet required for 1 dirty path(s)
+- /home/<USER>/Developer/overleaf/Faber2026: dirty-state handoff packet required for 1 dirty path(s)
 
 ```
 
@@ -1529,7 +1529,7 @@ id: call_j7TFyuBJLkmNuMha7Kj2gNoi
 ```json
 {
   "command": "agent-closeout-check --help",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -1540,8 +1540,8 @@ tool_use shell_command
 id: call_T5JIHjfsBVoXg8ijaaUpntRH
 ```json
 {
-  "command": "rtk git -C /Users/jakobfaber/Developer/overleaf/Faber2026 status --porcelain=v1",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "rtk git -C /home/<USER>/Developer/overleaf/Faber2026 status --porcelain=v1",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -1590,7 +1590,7 @@ id: call_gdOmwrARP4teQExecbpTz2sG
 ```json
 {
   "command": "RTK_DISABLED=1 sed -n '1,240p' $(command -v agent-closeout-check)",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -1601,8 +1601,8 @@ tool_use shell_command
 id: call_Zo5qdZ4teIV1BuoMCysgfDTt
 ```json
 {
-  "command": "RTK_DISABLED=1 rg -n 'dirty-state handoff|closeout packet|agent-closeout-check|dirty_paths|touched' /Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset /Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dotfiles 2>/dev/null",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "RTK_DISABLED=1 rg -n 'dirty-state handoff|closeout packet|agent-closeout-check|dirty_paths|touched' /home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset /home/<USER>/Developer/repos/github.com/jakobtfaber/dotfiles 2>/dev/null",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 30000
 }
 ```
@@ -1702,8 +1702,8 @@ Exit code: 0
 Wall time: 0.4 seconds
 Total output lines: 194
 Output:
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/AGENTS.md:146:- Apply per-machine via `bash meta/install-host.sh` — the **sole** MCP projector (`sync-mcps.sh` was deleted 2026-06-15; `docs/TARGET-ARCHITECTURE.md`). It writes a managed region directly into each client surface (Claude `~/.claude.json` `mcpServers`, Codex `${CODEX_HOME:-~/.codex}/config.toml` `[mcp_servers.*]`, Cursor `~/.cursor/mcp.json`), fenced by an `_mskillManaged` sidecar so human-authored servers are never touched. stdio entries are routed through the `mskill` shim stub (`{command:<abs stub>, args:["mcp",<name>]}`, zero embedded repo path); http entries carry their `url` verbatim. Idempotent (a second run is byte-identical); does NOT mutate the repo. It no longer shells out to `claude mcp add` / `codex mcp add` (that CLI path was the stale-realpath capture vector).
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/AGENTS.md:152:  - Do NOT hand-edit `~/.claude.json`'s `mcpServers.*`, `~/.codex/config.toml`'s `[mcp_servers.*]`, or `~/.cursor/mcp.json`'s `mcpServers.*`. These are managed regions owned by `bash meta/install-host.sh` (driven by `meta/mcps.json`, tracked by an `_mskillManaged` sidecar / per-table marker). Capture all MCP intent in `meta/mcps.json` and re-run `install-host.sh`; a hand-edit inside a managed region is overwritten on the next projection, and a hand-edit of a foreign (unmanaged) server is fine but is never touched by the repo. The CLI `claude mcp add` / `codex mcp add` path is retired for projection (it captured […]
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/AGENTS.md:146:- Apply per-machine via `bash meta/install-host.sh` — the **sole** MCP projector (`sync-mcps.sh` was deleted 2026-06-15; `docs/TARGET-ARCHITECTURE.md`). It writes a managed region directly into each client surface (Claude `~/.claude.json` `mcpServers`, Codex `${CODEX_HOME:-~/.codex}/config.toml` `[mcp_servers.*]`, Cursor `~/.cursor/mcp.json`), fenced by an `_mskillManaged` sidecar so human-authored servers are never touched. stdio entries are routed through the `mskill` shim stub (`{command:<abs stub>, args:["mcp",<name>]}`, zero embedded repo path); http entries carry their `url` verbatim. Idempotent (a second run is byte-identical); does NOT mutate the repo. It no longer shells out to `claude mcp add` / `codex mcp add` (that CLI path was the stale-realpath capture vector).
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/AGENTS.md:152:  - Do NOT hand-edit `~/.claude.json`'s `mcpServers.*`, `~/.codex/config.toml`'s `[mcp_servers.*]`, or `~/.cursor/mcp.json`'s `mcpServers.*`. These are managed regions owned by `bash meta/install-host.sh` (driven by `meta/mcps.json`, tracked by an `_mskillManaged` sidecar / per-table marker). Capture all MCP intent in `meta/mcps.json` and re-run `install-host.sh`; a hand-edit inside a managed region is overwritten on the next projection, and a hand-edit of a foreign (unmanaged) server is fine but is never touched by the repo. The CLI `claude mcp add` / `codex mcp add` path is retired for projection (it captured […]
 
 > AGENT
 
@@ -1715,8 +1715,8 @@ tool_use shell_command
 id: call_BrezR7U3nDvR3TQB8ttxSW7U
 ```json
 {
-  "command": "RTK_DISABLED=1 sed -n '300,430p' /Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/tools/agent-closeout-check.py",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "RTK_DISABLED=1 sed -n '300,430p' /home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/tools/agent-closeout-check.py",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -1783,8 +1783,8 @@ tool_use shell_command
 id: call_1L0FvQyZ31BmzkTPqKzkIWit
 ```json
 {
-  "command": "agent-closeout-check --repo /Users/jakobfaber/Developer/overleaf/Faber2026 --touched .gitmodules --packet /tmp/faber2026-closeout.json",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "agent-closeout-check --repo /home/<USER>/Developer/overleaf/Faber2026 --touched .gitmodules --packet /tmp/faber2026-closeout.json",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 60000
 }
 ```
@@ -1795,8 +1795,8 @@ tool_use shell_command
 id: call_FlMsNNGbhK50aDZApdlfN1b4
 ```json
 {
-  "command": "git -C /Users/jakobfaber/Developer/overleaf/Faber2026 config --get submodule.pipeline.url && git -C /Users/jakobfaber/Developer/overleaf/Faber2026/pipeline remote get-url origin",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "git -C /home/<USER>/Developer/overleaf/Faber2026 config --get submodule.pipeline.url && git -C /home/<USER>/Developer/overleaf/Faber2026/pipeline remote get-url origin",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -1821,8 +1821,8 @@ id: call_FlMsNNGbhK50aDZApdlfN1b4
 Exit code: 0
 Wall time: 0.1 seconds
 Output:
-git@github.com:jakobtfaber/dsa110-FLITS.git
-git@github.com:jakobtfaber/dsa110-FLITS.git
+<REDACTED_EMAIL>:jakobtfaber/dsa110-FLITS.git
+<REDACTED_EMAIL>:jakobtfaber/dsa110-FLITS.git
 
 ```
 
@@ -1836,8 +1836,8 @@ tool_use shell_command
 id: call_dFxSRSxzpo4r3cXKcFUdbe2x
 ```json
 {
-  "command": "git -C /Users/jakobfaber/Developer/overleaf/Faber2026 add .gitmodules && git -C /Users/jakobfaber/Developer/overleaf/Faber2026 commit -m \"chore: point FLITS submodule at development fork\"",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "git -C /home/<USER>/Developer/overleaf/Faber2026 add .gitmodules && git -C /home/<USER>/Developer/overleaf/Faber2026 commit -m \"chore: point FLITS submodule at development fork\"",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 60000
 }
 ```
@@ -1850,9 +1850,9 @@ id: call_dFxSRSxzpo4r3cXKcFUdbe2x
 Command blocked by PreToolUse hook: rtk-codex-guard: shell command should use RTK compact output.
 
 Suggested command:
-rtk git -C /Users/jakobfaber/Developer/overleaf/Faber2026 add .gitmodules && rtk git -C /Users/jakobfaber/Developer/overleaf/Faber2026 commit -m "chore: point FLITS submodule at development fork"
+rtk git -C /home/<USER>/Developer/overleaf/Faber2026 add .gitmodules && rtk git -C /home/<USER>/Developer/overleaf/Faber2026 commit -m "chore: point FLITS submodule at development fork"
 
-To bypass for this command, prefix it with: RTK_DISABLED=1. Command: git -C /Users/jakobfaber/Developer/overleaf/Faber2026 add .gitmodules && git -C /Users/jakobfaber/Developer/overleaf/Faber2026 commit -m "chore: point FLITS submodule at development fork"
+To bypass for this command, prefix it with: RTK_DISABLED=1. Command: git -C /home/<USER>/Developer/overleaf/Faber2026 add .gitmodules && git -C /home/<USER>/Developer/overleaf/Faber2026 commit -m "chore: point FLITS submodule at development fork"
 ```
 
 > AGENT
@@ -1865,8 +1865,8 @@ tool_use shell_command
 id: call_98syNxHTiik7E9uJZ1ebxA5m
 ```json
 {
-  "command": "rtk git -C /Users/jakobfaber/Developer/overleaf/Faber2026 add .gitmodules && rtk git -C /Users/jakobfaber/Developer/overleaf/Faber2026 commit -m \"chore: point FLITS submodule at development fork\"",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "rtk git -C /home/<USER>/Developer/overleaf/Faber2026 add .gitmodules && rtk git -C /home/<USER>/Developer/overleaf/Faber2026 commit -m \"chore: point FLITS submodule at development fork\"",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 60000
 }
 ```
@@ -1894,8 +1894,8 @@ tool_use shell_command
 id: call_a34OhyDIg5GKH9gvfBg68Qs5
 ```json
 {
-  "command": "rtk git -C /Users/jakobfaber/Developer/overleaf/Faber2026 status --short --branch",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "rtk git -C /home/<USER>/Developer/overleaf/Faber2026 status --short --branch",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -1906,8 +1906,8 @@ tool_use shell_command
 id: call_nv6fh1KL4HB2gjxGDmGX4Vwc
 ```json
 {
-  "command": "git -C /Users/jakobfaber/Developer/overleaf/Faber2026 config --file .gitmodules --get submodule.pipeline.url && git -C /Users/jakobfaber/Developer/overleaf/Faber2026 config --get submodule.pipeline.url && git -C /Users/jakobfaber/Developer/overleaf/Faber2026/pipeline remote get-url origin",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "git -C /home/<USER>/Developer/overleaf/Faber2026 config --file .gitmodules --get submodule.pipeline.url && git -C /home/<USER>/Developer/overleaf/Faber2026 config --get submodule.pipeline.url && git -C /home/<USER>/Developer/overleaf/Faber2026/pipeline remote get-url origin",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -1918,8 +1918,8 @@ tool_use shell_command
 id: call_tocofmJ7ypipMoBkAOHl0aiX
 ```json
 {
-  "command": "agent-closeout-check --repo /Users/jakobfaber/Developer/overleaf/Faber2026 --touched .gitmodules",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "agent-closeout-check --repo /home/<USER>/Developer/overleaf/Faber2026 --touched .gitmodules",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 60000
 }
 ```
@@ -1945,9 +1945,9 @@ id: call_nv6fh1KL4HB2gjxGDmGX4Vwc
 Exit code: 0
 Wall time: 0.2 seconds
 Output:
-git@github.com:jakobtfaber/dsa110-FLITS.git
-git@github.com:jakobtfaber/dsa110-FLITS.git
-git@github.com:jakobtfaber/dsa110-FLITS.git
+<REDACTED_EMAIL>:jakobtfaber/dsa110-FLITS.git
+<REDACTED_EMAIL>:jakobtfaber/dsa110-FLITS.git
+<REDACTED_EMAIL>:jakobtfaber/dsa110-FLITS.git
 
 ```
 
@@ -1970,15 +1970,15 @@ Fixed in `~/Developer/overleaf/Faber2026`.
 Changed `pipeline` in `.gitmodules` to:
 
 ```text
-git@github.com:jakobtfaber/dsa110-FLITS.git
+<REDACTED_EMAIL>:jakobtfaber/dsa110-FLITS.git
 ```
 
 Also ran `git submodule sync pipeline`, so all three now agree:
 
 ```text
-.gitmodules                  git@github.com:jakobtfaber/dsa110-FLITS.git
-Faber2026 .git/config        git@github.com:jakobtfaber/dsa110-FLITS.git
-pipeline origin              git@github.com:jakobtfaber/dsa110-FLITS.git
+.gitmodules                  <REDACTED_EMAIL>:jakobtfaber/dsa110-FLITS.git
+Faber2026 .git/config        <REDACTED_EMAIL>:jakobtfaber/dsa110-FLITS.git
+pipeline origin              <REDACTED_EMAIL>:jakobtfaber/dsa110-FLITS.git
 ```
 
 Committed locally in `Faber2026`:
@@ -2003,8 +2003,8 @@ tool_use shell_command
 id: call_nq2MgZ120dNa8HtsHaLq1dLj
 ```json
 {
-  "command": "rtk git -C /Users/jakobfaber/Developer/overleaf/Faber2026 status --short --branch",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "rtk git -C /home/<USER>/Developer/overleaf/Faber2026 status --short --branch",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -2015,8 +2015,8 @@ tool_use shell_command
 id: call_lG2NMtE2IIVUBTWM2jUCK69J
 ```json
 {
-  "command": "git -C /Users/jakobfaber/Developer/overleaf/Faber2026 branch --show-current",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "git -C /home/<USER>/Developer/overleaf/Faber2026 branch --show-current",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -2042,9 +2042,9 @@ id: call_lG2NMtE2IIVUBTWM2jUCK69J
 Command blocked by PreToolUse hook: rtk-codex-guard: shell command should use RTK compact output.
 
 Suggested command:
-rtk git -C /Users/jakobfaber/Developer/overleaf/Faber2026 branch --show-current
+rtk git -C /home/<USER>/Developer/overleaf/Faber2026 branch --show-current
 
-To bypass for this command, prefix it with: RTK_DISABLED=1. Command: git -C /Users/jakobfaber/Developer/overleaf/Faber2026 branch --show-current
+To bypass for this command, prefix it with: RTK_DISABLED=1. Command: git -C /home/<USER>/Developer/overleaf/Faber2026 branch --show-current
 ```
 
 > AGENT
@@ -2057,8 +2057,8 @@ tool_use shell_command
 id: call_jgDEyAZtN6yLtg2hZ2rS8srJ
 ```json
 {
-  "command": "rtk git -C /Users/jakobfaber/Developer/overleaf/Faber2026 push",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "rtk git -C /home/<USER>/Developer/overleaf/Faber2026 push",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 60000
 }
 ```
@@ -2087,8 +2087,8 @@ tool_use shell_command
 id: call_vZWkWrjFvtx4yOKDuEq3VJId
 ```json
 {
-  "command": "rtk git -C /Users/jakobfaber/Developer/overleaf/Faber2026 status --short --branch",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "rtk git -C /home/<USER>/Developer/overleaf/Faber2026 status --short --branch",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -2099,8 +2099,8 @@ tool_use shell_command
 id: call_t33EDDtN2Y9jsHEdzj1plg6T
 ```json
 {
-  "command": "git -C /Users/jakobfaber/Developer/overleaf/Faber2026 ls-remote origin refs/heads/draft/fork-b-finish",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "git -C /home/<USER>/Developer/overleaf/Faber2026 ls-remote origin refs/heads/draft/fork-b-finish",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 20000
 }
 ```
@@ -2203,8 +2203,8 @@ tool_use shell_command
 id: call_TxQ0OPGyha6KAUQddhCkRiVU
 ```json
 {
-  "command": "RTK_DISABLED=1 rg -n -i 'TOA|time of arrival|chance|coincidence|crossmatch|cross-match|position separation|separation|DM agreement|dispersion measure|codetect|co-detect|co detected|Faber2026|timing' /Users/jakobfaber/.codex/memories/MEMORY.md /Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dotfiles/memory/MEMORY.md /Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dotfiles/memory 2>/dev/null",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "RTK_DISABLED=1 rg -n -i 'TOA|time of arrival|chance|coincidence|crossmatch|cross-match|position separation|separation|DM agreement|dispersion measure|codetect|co-detect|co detected|Faber2026|timing' /home/<USER>/.codex/memories/MEMORY.md /home/<USER>/Developer/repos/github.com/jakobtfaber/dotfiles/memory/MEMORY.md /home/<USER>/Developer/repos/github.com/jakobtfaber/dotfiles/memory 2>/dev/null",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 30000
 }
 ```
@@ -2216,7 +2216,7 @@ id: call_A1Tzh0lW1bI6jAQYzINoN9VI
 ```json
 {
   "command": "RTK_DISABLED=1 rg -n -i 'TOA|time of arrival|chance|coincidence|crossmatch|cross-match|position separation|separation|DM agreement|dispersion measure|codetect|co-detect|co detected|timing' .",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 30000
 }
 ```
@@ -2229,14 +2229,14 @@ id: call_TxQ0OPGyha6KAUQddhCkRiVU
 Exit code: 0
 Wall time: 0.2 seconds
 Output:
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dotfiles/memory/MEMORY.md:26:- **dsa110-FLITS scattering/DM-budget + Faber2026**: co-detected-FRB paper (`jakobtfaber/Faber2026`, FLITS pinned as `pipeline/` submodule) + CADC arc storage; arc `Trash` archived to h17 + cleaned 2026-06-18 (arc 99.75%→64.2%, freed 66.18 GiB). Detail: [project_dsa110-flits-scattering-budget](project_dsa110-flits-scattering-budget.md)
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dotfiles/memory/MEMORY.md:29:  - Analysis docs: MkDocs Material site at fork `dsa110-FLITS/docs-analysis/` (`docs_dir` override, existing `docs/` untouched; `mkdocs build`, deps in `docs-analysis/requirements.txt`) — 4 pages (likelihood/model-selection/zach-case-study/verification). Manuscript scattering sections + 15 ADS-verified refs pushed to Faber2026 main 2026-06-21 (compiles clean). [Citation-hook gotcha](learning_faber2026-citation-hook-adsurl.md)
-/Users/jakobfaber/.codex/memories/MEMORY.md:16:## Task 2: Map the co-detection/two-screen science scope and keep hook/config changes scoped away from planning lanes, partial
-/Users/jakobfaber/.codex/memories/MEMORY.md:20:- extensions/chronicle/resources/2026-06-22T20-40-00-LeQd-10min-memory-summary.md (cwd=/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS, rollout_path=/Users/jakobfaber/.codex/memories/extensions/chronicle/resources/2026-06-22T20-40-00-LeQd-10min-memory-summary.md, updated_at=2026-06-22T20:40:00, thread_id=None, partial; captured the scoped three-file hook commit, the two-screen localization plan inventory, and the explicit separation from `AGENTS.md` / `CLAUDE.md` / `.codex/config.toml`) [chronicle memory]
-/Users/jakobfaber/.codex/memories/MEMORY.md:25:- docs/codetection-science-plan.md, CONTEXT.md, docs/adr/0001-two-band-leverage-positioning.md, two-screen localization, crossmatching, scattering_scintillation_consistency, simulation/engine.py, sim_fit_bridge.py, iacobus, DATA_DIR, .claude/hooks/ruff-fix.sh, .claude/hooks/validation-reinject.sh, .claude/hooks.json
-/Users/jakobfaber/.codex/memories/MEMORY.md:77:- h17, ubuntu@lxd110h17, singlebeam_210456524.h5, 1171470638, 894844460d0a1a0a, /data/ubuntu/chime-dsa-codetections/chime_singlebeam, vos.Client(), 403 Forbidden, CANFAR, VOSpace, /tmp/singlebeam_210456524.h5
-/Users/jakobfaber/.codex/memories/MEMORY.md:111:- /data/research/astrophysics/frbs/chime-dsa-codetections/chime_singlebeam, chimefrb/baseband-analysis:latest, sha256:f510909d892d0d5224c982c590cbe80967a49a59b79c396ab72bb710105c4c41, baseband-analysis-canfar-src, baseband_analysis_shell.sh, baseband_analysis_python.sh, verify-gate, research-chime-singlebeam-flux-units.md, CALIBRATION_REVIEW.md, BurstDataset._bandpass_correct, S/N units, per-channel calibration
-/Users/jakobfaber/.codex/memories/MEMORY.md:124:## Task 12: Keep FLITS regeneration, manuscript wiring, and resolved-vs-MW census work in separate lanes, and inventory what has or has not been written into […]
+/home/<USER>/Developer/repos/github.com/jakobtfaber/dotfiles/memory/MEMORY.md:26:- **dsa110-FLITS scattering/DM-budget + Faber2026**: co-detected-FRB paper (`jakobtfaber/Faber2026`, FLITS pinned as `pipeline/` submodule) + CADC arc storage; arc `Trash` archived to h17 + cleaned 2026-06-18 (arc 99.75%→64.2%, freed 66.18 GiB). Detail: [project_dsa110-flits-scattering-budget](project_dsa110-flits-scattering-budget.md)
+/home/<USER>/Developer/repos/github.com/jakobtfaber/dotfiles/memory/MEMORY.md:29:  - Analysis docs: MkDocs Material site at fork `dsa110-FLITS/docs-analysis/` (`docs_dir` override, existing `docs/` untouched; `mkdocs build`, deps in `docs-analysis/requirements.txt`) — 4 pages (likelihood/model-selection/zach-case-study/verification). Manuscript scattering sections + 15 ADS-verified refs pushed to Faber2026 main 2026-06-21 (compiles clean). [Citation-hook gotcha](learning_faber2026-citation-hook-adsurl.md)
+/home/<USER>/.codex/memories/MEMORY.md:16:## Task 2: Map the co-detection/two-screen science scope and keep hook/config changes scoped away from planning lanes, partial
+/home/<USER>/.codex/memories/MEMORY.md:20:- extensions/chronicle/resources/2026-06-22T20-40-00-LeQd-10min-memory-summary.md (cwd=/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-22T20-40-00-LeQd-10min-memory-summary.md, updated_at=2026-06-22T20:40:00, thread_id=None, partial; captured the scoped three-file hook commit, the two-screen localization plan inventory, and the explicit separation from `AGENTS.md` / `CLAUDE.md` / `.codex/config.toml`) [chronicle memory]
+/home/<USER>/.codex/memories/MEMORY.md:25:- docs/codetection-science-plan.md, CONTEXT.md, docs/adr/0001-two-band-leverage-positioning.md, two-screen localization, crossmatching, scattering_scintillation_consistency, simulation/engine.py, sim_fit_bridge.py, iacobus, DATA_DIR, .claude/hooks/ruff-fix.sh, .claude/hooks/validation-reinject.sh, .claude/hooks.json
+/home/<USER>/.codex/memories/MEMORY.md:77:- h17, ubuntu@lxd110h17, singlebeam_210456524.h5, 1171470638, 894844460d0a1a0a, /data/ubuntu/chime-dsa-codetections/chime_singlebeam, vos.Client(), 403 Forbidden, CANFAR, VOSpace, /tmp/singlebeam_210456524.h5
+/home/<USER>/.codex/memories/MEMORY.md:111:- /data/research/astrophysics/frbs/chime-dsa-codetections/chime_singlebeam, chimefrb/baseband-analysis:latest, sha256:f510909d892d0d5224c982c590cbe80967a49a59b79c396ab72bb710105c4c41, baseband-analysis-canfar-src, baseband_analysis_shell.sh, baseband_analysis_python.sh, verify-gate, research-chime-singlebeam-flux-units.md, CALIBRATION_REVIEW.md, BurstDataset._bandpass_correct, S/N units, per-channel calibration
+/home/<USER>/.codex/memories/MEMORY.md:124:## Task 12: Keep FLITS regeneration, manuscript wiring, and resolved-vs-MW census work in separate lanes, and inventory what has or has not been written into […]
 
 > TOOL
 
@@ -2247,13 +2247,13 @@ Exit code: 0
 Wall time: 0.4 seconds
 Total output lines: 282
 Output:
-./DATA_SOURCES.md:14:/arc/home/jfaber/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/
-./DATA_SOURCES.md:30:DATA_DIR=/arc/home/jfaber/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts \
+./DATA_SOURCES.md:14:/arc/home/<USER>/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/
+./DATA_SOURCES.md:30:DATA_DIR=/arc/home/<USER>/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts \
 ./codetections_manifest.yaml:1:# codetections_manifest.yaml
-./codetections_manifest.yaml:4:# Base        : /Users/iacobus/Research/CHIME_DSA_Codetections
-./codetections_manifest.yaml:8:base: "/Users/iacobus/Research/CHIME_DSA_Codetections"
-./codetections_manifest.yaml:9:canonical_target: "iacobus:/Users/iacobus/Research/CHIME_DSA_Codetections"
-./codetections_manifest.yaml:10:cloud_docs_mirror: "iacobus:/Users/iacobus/Library/Mobile Documents/com~apple~CloudDocs/Research/CHIME_DSA_Codetections"
+./codetections_manifest.yaml:4:# Base        : /home/<USER>/Research/CHIME_DSA_Codetections
+./codetections_manifest.yaml:8:base: "/home/<USER>/Research/CHIME_DSA_Codetections"
+./codetections_manifest.yaml:9:canonical_target: "iacobus:/home/<USER>/Research/CHIME_DSA_Codetections"
+./codetections_manifest.yaml:10:cloud_docs_mirror: "iacobus:/home/<USER>/Library/Mobile Documents/com~apple~CloudDocs/Research/CHIME_DSA_Codetections"
 ./codetections_manifest.yaml:25:    source: "h23:/media/ubuntu/ssd/jfaber (burstprop_paper + OLD_CHIME_DSA_Codetections)"
 ./codetections_manifest.yaml:26:    sentinel_path: "archive/OLD_CHIME_DSA_Codetections/polcal_fils/freya_230325aaag_fullstokes_interp.pkl"
 ./codetections_manifest.yaml:45:    source: "Dropbox CHIME_DSA_Codetections (24 Stokes pickles)"
@@ -2261,30 +2261,30 @@ Output:
 ./codetections_manifest.yaml:65:    source: "h23:/media/ubuntu/ssd/jfaber/chime_dsa_codetections/data/dsa_fullstokes_waterfalls"
 ./codetections_manifest.yaml:75:    source: "h23:/media/ubuntu/ssd/jfaber/chime_dsa_codetections/localizations"
 ./codetections_manifest.yaml:95:    source: "h23:/media/ubuntu/ssd/jfaber/chime_dsa_codetections/scattering"
-./data-manifest.csv:2:casey,chime,491,casey_chime_I_491_2085_32000b_cntr_bpc.npy,/arc/home/jfaber/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/casey_chime_I_491_2085_32000b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
-./data-manifest.csv:3:chromatica,chime,272,chromatica_chime_I_272_6382_32000b_cntr_bpc.npy,/arc/home/jfaber/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/chromatica_chime_I_272_6382_32000b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
-./data-manifest.csv:4:freya,chime,912,freya_chime_I_912_4067_32000b_cntr_bpc.npy,/arc/home/jfaber/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/freya_chime_I_912_4067_32000b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
-./data-manifest.csv:5:hamilton,chime,518,hamilton_chime_I_518_8007_32000b_cntr_bpc.npy,/arc/home/jfaber/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/hamilton_chime_I_518_8007_32000b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
-./data-manifest.csv:6:isha,chime,411,isha_chime_I_411_4359_32000b_cntr_bpc.npy,/arc/home/jfaber/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/isha_chime_I_411_4359_32000b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
-./data-manifest.csv:7:johndoeII,chime,696,johndoeII_chime_I_696_5184_32000b_cntr_bpc.npy,/arc/home/jfaber/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/johndoeII_chime_I_696_5184_32000b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
-./data-manifest.csv:8:mahi,chime,960,mahi_chime_I_960_1316_32000b_cntr_bpc.npy,/arc/home/jfaber/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/mahi_chime_I_960_1316_32000b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
-./data-manifest.csv:9:oran,chime,397,oran_chime_I_397_0153_32000b_cntr_bpc.npy,/arc/home/jfaber/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/oran_chime_I_397_0153_32000b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
-./data-manifest.csv:10:phineas,chime,610,phineas_chime_I_610_2894_32000b_cntr_bpc.npy,/arc/home/jfaber/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/phineas_chime_I_610_2894_32000b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
-./data-manifest.csv:11:whitney,chime,462,whitney_chime_I_462_1891_32000b_cntr_bpc.npy,/arc/home/jfaber/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/whitney_chime_I_462_1891_32000b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
-./data-manifest.csv:12:wilhelm,chime,602,wilhelm_chime_I_602_3809_32000b_cntr_bpc.npy,/arc/home/jfaber/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/wilhelm_chime_I_602_3809_32000b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
-./data-manifest.csv:13:zach,chime,262,zach_chime_I_262_3621_32000b_cntr_bpc.npy,/arc/home/jfaber/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/zach_chime_I_262_3621_32000b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
-./data-manifest.csv:14:casey,dsa,491,casey_dsa_I_491_211_2500b_cntr_bpc.npy,/arc/home/jfaber/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/casey_dsa_I_491_211_2500b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
-./data-manifest.csv:15:chromatica,dsa,272,chromatica_dsa_I_272_368_2500b_cntr_bpc.npy,/arc/home/jfaber/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/chromatica_dsa_I_272_368_2500b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
-./data-manifest.csv:16:freya,dsa,912,freya_dsa_I_912_4_2500b_cntr_bpc.npy,/arc/home/jfaber/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/freya_dsa_I_912_4_2500b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
-./data-manifest.csv:17:hamilton,dsa,518,hamilton_dsa_I_518_799_2500b_cntr_bpc.npy,/arc/home/jfaber/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/hamilton_dsa_I_518_799_2500b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
-./data-manifest.csv:18:isha,dsa,411,isha_dsa_I_411_568_2500b_cntr_bpc.npy,/arc/home/jfaber/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/isha_dsa_I_411_568_2500b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
-./data-manifest.csv:19:johndoeII,dsa,696,johndoeII_dsa_I_696_506_2500b_cntr_bpc.npy,/arc/home/jfaber/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/johndoeII_dsa_I_696_506_2500b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
-./data-manifest.csv:20:mahi,dsa,960,mahi_dsa_I_960_128_2500b_cntr_bpc.npy,/arc/home/jfaber/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/mahi_dsa_I_960_128_2500b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
-./data-manifest.csv:21:oran,dsa,397,oran_dsa_I_396_882_2500b_cntr_bpc.npy,/arc/home/jfaber/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/oran_dsa_I_396_882_2500b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
-./data-manifest.csv:22:phineas,dsa,610,phineas_dsa_I_610_274_2500b_cntr_bpc.npy,/arc/home/jfaber/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/phineas_dsa_I_610_274_2500b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
-./data-manifest.csv:23:whitney,dsa,462,whitney_dsa_I_462_174_2500b_cntr_bpc.npy,/arc/home/jfaber/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/whitney_dsa_I_462_174_2500b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
-./data-manifest.csv:24:wilhelm,dsa,602,wilhelm_dsa_I_602_346_2500b_cntr_bpc.npy,/arc/home/jfaber/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/wilhelm_dsa_I_602_346_2500b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
-./data-manifest.csv:25:zach,dsa,262,zach_dsa_I_262_368_2500b_cntr_bpc.npy,/arc/home/jfaber/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/zach_dsa_I_262_368_2500b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
+./data-manifest.csv:2:casey,chime,491,casey_chime_I_491_2085_32000b_cntr_bpc.npy,/arc/home/<USER>/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/casey_chime_I_491_2085_32000b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
+./data-manifest.csv:3:chromatica,chime,272,chromatica_chime_I_272_6382_32000b_cntr_bpc.npy,/arc/home/<USER>/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/chromatica_chime_I_272_6382_32000b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
+./data-manifest.csv:4:freya,chime,912,freya_chime_I_912_4067_32000b_cntr_bpc.npy,/arc/home/<USER>/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/freya_chime_I_912_4067_32000b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
+./data-manifest.csv:5:hamilton,chime,518,hamilton_chime_I_518_8007_32000b_cntr_bpc.npy,/arc/home/<USER>/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/hamilton_chime_I_518_8007_32000b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
+./data-manifest.csv:6:isha,chime,411,isha_chime_I_411_4359_32000b_cntr_bpc.npy,/arc/home/<USER>/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/isha_chime_I_411_4359_32000b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
+./data-manifest.csv:7:johndoeII,chime,696,johndoeII_chime_I_696_5184_32000b_cntr_bpc.npy,/arc/home/<USER>/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/johndoeII_chime_I_696_5184_32000b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
+./data-manifest.csv:8:mahi,chime,960,mahi_chime_I_960_1316_32000b_cntr_bpc.npy,/arc/home/<USER>/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/mahi_chime_I_960_1316_32000b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
+./data-manifest.csv:9:oran,chime,397,oran_chime_I_397_0153_32000b_cntr_bpc.npy,/arc/home/<USER>/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/oran_chime_I_397_0153_32000b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
+./data-manifest.csv:10:phineas,chime,610,phineas_chime_I_610_2894_32000b_cntr_bpc.npy,/arc/home/<USER>/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/phineas_chime_I_610_2894_32000b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
+./data-manifest.csv:11:whitney,chime,462,whitney_chime_I_462_1891_32000b_cntr_bpc.npy,/arc/home/<USER>/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/whitney_chime_I_462_1891_32000b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
+./data-manifest.csv:12:wilhelm,chime,602,wilhelm_chime_I_602_3809_32000b_cntr_bpc.npy,/arc/home/<USER>/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/wilhelm_chime_I_602_3809_32000b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
+./data-manifest.csv:13:zach,chime,262,zach_chime_I_262_3621_32000b_cntr_bpc.npy,/arc/home/<USER>/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/zach_chime_I_262_3621_32000b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
+./data-manifest.csv:14:casey,dsa,491,casey_dsa_I_491_211_2500b_cntr_bpc.npy,/arc/home/<USER>/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/casey_dsa_I_491_211_2500b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
+./data-manifest.csv:15:chromatica,dsa,272,chromatica_dsa_I_272_368_2500b_cntr_bpc.npy,/arc/home/<USER>/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/chromatica_dsa_I_272_368_2500b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
+./data-manifest.csv:16:freya,dsa,912,freya_dsa_I_912_4_2500b_cntr_bpc.npy,/arc/home/<USER>/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/freya_dsa_I_912_4_2500b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
+./data-manifest.csv:17:hamilton,dsa,518,hamilton_dsa_I_518_799_2500b_cntr_bpc.npy,/arc/home/<USER>/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/hamilton_dsa_I_518_799_2500b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
+./data-manifest.csv:18:isha,dsa,411,isha_dsa_I_411_568_2500b_cntr_bpc.npy,/arc/home/<USER>/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/isha_dsa_I_411_568_2500b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
+./data-manifest.csv:19:johndoeII,dsa,696,johndoeII_dsa_I_696_506_2500b_cntr_bpc.npy,/arc/home/<USER>/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/johndoeII_dsa_I_696_506_2500b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
+./data-manifest.csv:20:mahi,dsa,960,mahi_dsa_I_960_128_2500b_cntr_bpc.npy,/arc/home/<USER>/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/mahi_dsa_I_960_128_2500b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
+./data-manifest.csv:21:oran,dsa,397,oran_dsa_I_396_882_2500b_cntr_bpc.npy,/arc/home/<USER>/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/oran_dsa_I_396_882_2500b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
+./data-manifest.csv:22:phineas,dsa,610,phineas_dsa_I_610_274_2500b_cntr_bpc.npy,/arc/home/<USER>/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/phineas_dsa_I_610_274_2500b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
+./data-manifest.csv:23:whitney,dsa,462,whitney_dsa_I_462_174_2500b_cntr_bpc.npy,/arc/home/<USER>/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/whitney_dsa_I_462_174_2500b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
+./data-manifest.csv:24:wilhelm,dsa,602,wilhelm_dsa_I_602_346_2500b_cntr_bpc.npy,/arc/home/<USER>/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/wilhelm_dsa_I_602_346_2500b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
+./data-manifest.csv:25:zach,dsa,262,zach_dsa_I_262_368_2500b_cntr_bpc.npy,/arc/home/<USER>/baseband_morphologies/chime_dsa_codetections/data/DSA_bursts/zach_dsa_I_262_368_2500b_cntr_bpc.npy,PENDING,PENDING,PENDING_CHECKSUM
 ./docs-analysis/foreground.md:3:Foreground halos and galaxy clusters along the sightlines to the 12 CHIME/DSA co-detected FRBs, with each candidate **independently validated against public catalogs** (DESI Legacy Survey DR9 / Zhou+2021 photo-z, DESI DR1 spec-z, NED, PS1-STRM). Every object — confirmed, refuted, and inconclusive — is listed.
 ./docs-analysis/foreground.md:72:    Generated by `scratch/codetection/make_catalog_table.py` from the verified pipeline (`normalize_codetection.py` → `validate_foreground.py` → `ps1_strm_adjudicate.py` → `merge_final.py`). Source spreadsheet: `DSA110_CHIME_Codetection_BurstProperties_Foreground`. Cosmology: Planck18.
 ./galaxies/tarrio_ps1_photz/find_impact_matches.py:35:        # Compute angular separation
@@ -2302,7 +2302,7 @@ id: call_Yg2JwG2Jk5tFlg4y9banznX1
 ```json
 {
   "command": "RTK_DISABLED=1 find crossmatching -maxdepth 3 -type f | sort",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -2314,7 +2314,7 @@ id: call_bdT1hlkaPt3l98tCDNNlIL12
 ```json
 {
   "command": "RTK_DISABLED=1 find . -maxdepth 4 \\( -path './.git' -o -path './pipeline' \\) -prune -o \\( -iname '*toa*' -o -iname '*coinc*' -o -iname '*crossmatch*' -o -iname '*dm*agreement*' -o -iname '*position*' -o -iname '*separation*' -o -iname '*codetect*' -o -iname '*timing*' \\) -print | sort",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -2326,7 +2326,7 @@ id: call_ifHEXEYgkQIiMZUpBmtbn42P
 ```json
 {
   "command": "RTK_DISABLED=1 find . -maxdepth 5 \\( -path './.git' -o -path './pipeline' \\) -prune -o \\( -iname '*.png' -o -iname '*.pdf' -o -iname '*.svg' -o -iname '*.eps' \\) -print | sort | sed -n '1,240p'",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -2337,8 +2337,8 @@ tool_use shell_command
 id: call_wF2pullGM9SvKIRcHiA82H3O
 ```json
 {
-  "command": "RTK_DISABLED=1 find /Users/jakobfaber/Developer/overleaf/Faber2026 -maxdepth 4 \\( -path '*/.git' -o -path '*/pipeline/.git' \\) -prune -o \\( -iname '*toa*' -o -iname '*coinc*' -o -iname '*crossmatch*' -o -iname '*dm*agreement*' -o -iname '*position*' -o -iname '*separation*' -o -iname '*codetect*' -o -iname '*timing*' -o -iname '*.pdf' -o -iname '*.png' \\) -print | sort | sed -n '1,240p'",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "RTK_DISABLED=1 find /home/<USER>/Developer/overleaf/Faber2026 -maxdepth 4 \\( -path '*/.git' -o -path '*/pipeline/.git' \\) -prune -o \\( -iname '*toa*' -o -iname '*coinc*' -o -iname '*crossmatch*' -o -iname '*dm*agreement*' -o -iname '*position*' -o -iname '*separation*' -o -iname '*codetect*' -o -iname '*timing*' -o -iname '*.pdf' -o -iname '*.png' \\) -print | sort | sed -n '1,240p'",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -2639,49 +2639,49 @@ id: call_wF2pullGM9SvKIRcHiA82H3O
 Exit code: 0
 Wall time: 0.1 seconds
 Output:
-/Users/jakobfaber/Developer/overleaf/Faber2026/figures/alpha_pbf_systematic.pdf
-/Users/jakobfaber/Developer/overleaf/Faber2026/figures/chime_subband_compare.pdf
-/Users/jakobfaber/Developer/overleaf/Faber2026/figures/codetection_scint_excess.pdf
-/Users/jakobfaber/Developer/overleaf/Faber2026/figures/pbf_shapes.pdf
-/Users/jakobfaber/Developer/overleaf/Faber2026/figures/sightline_dm_scattering_budget.pdf
-/Users/jakobfaber/Developer/overleaf/Faber2026/figures/systematics_check_matrix.pdf
-/Users/jakobfaber/Developer/overleaf/Faber2026/figures/toa_crossmatch_analysis_premium.pdf
-/Users/jakobfaber/Developer/overleaf/Faber2026/figures/toa_crossmatch_analysis_premium.svg
-/Users/jakobfaber/Developer/overleaf/Faber2026/figures/whitney_multiplicity.pdf
-/Users/jakobfaber/Developer/overleaf/Faber2026/figures/wilhelm_pbf_evidence.pdf
-/Users/jakobfaber/Developer/overleaf/Faber2026/figures/wilhelm_scint_dnud_ne2025.pdf
-/Users/jakobfaber/Developer/overleaf/Faber2026/main.pdf
-/Users/jakobfaber/Developer/overleaf/Faber2026/pipeline/analyses/samples/dsa_chime_codetections
-/Users/jakobfaber/Developer/overleaf/Faber2026/pipeline/codetections_manifest.yaml
-/Users/jakobfaber/Developer/overleaf/Faber2026/pipeline/crossmatching
-/Users/jakobfaber/Developer/overleaf/Faber2026/pipeline/crossmatching/toa_crossmatch_results.json
-/Users/jakobfaber/Developer/overleaf/Faber2026/pipeline/crossmatching/toa_crossmatch.ipynb
-/Users/jakobfaber/Developer/overleaf/Faber2026/pipeline/crossmatching/toa_crossmatch.py
-/Users/jakobfaber/Developer/overleaf/Faber2026/pipeline/crossmatching/toa_utilities.py
-/Users/jakobfaber/Developer/overleaf/Faber2026/pipeline/galaxies/tarrio_ps1_photz/target_1_crossmatch_gaia.py
-/Users/jakobfaber/Developer/overleaf/Faber2026/pipeline/galaxies/tarrio_ps1_photz/target_1_crossmatch_gaia.txt
-/Users/jakobfaber/Developer/overleaf/Faber2026/pipeline/notebooks/codetections
-/Users/jakobfaber/Developer/overleaf/Faber2026/pipeline/results/chromatica_mass_profile.png
-/Users/jakobfaber/Developer/overleaf/Faber2026/pipeline/results/chromatica_sightline.png
-/Users/jakobfaber/Developer/overleaf/Faber2026/pipeline/results/freya_mass_profile.png
-/Users/jakobfaber/Developer/overleaf/Faber2026/pipeline/results/freya_sightline.png
-/Users/jakobfaber/Developer/overleaf/Faber2026/pipeline/results/galaxy_mass_profiles.png
-/Users/jakobfaber/Developer/overleaf/Faber2026/pipeline/results/hamilton_mass_profile.png
-/Users/jakobfaber/Developer/overleaf/Faber2026/pipeline/results/hamilton_sightline.png
-/Users/jakobfaber/Developer/overleaf/Faber2026/pipeline/results/isha_mass_profile.png
-/Users/jakobfaber/Developer/overleaf/Faber2026/pipeline/results/isha_sightline.png
-/Users/jakobfaber/Developer/overleaf/Faber2026/pipeline/results/johndoeii_mass_profile.png
-/Users/jakobfaber/Developer/overleaf/Faber2026/pipeline/results/johndoeii_sightline.png
-/Users/jakobfaber/Developer/overleaf/Faber2026/pipeline/results/phineas_mass_profile.png
-/Users/jakobfaber/Developer/overleaf/Faber2026/pipeline/results/phineas_sightline.png
-/Users/jakobfaber/Developer/overleaf/Faber2026/pipeline/results/sightline_intersections.png
-/Users/jakobfaber/Developer/overleaf/Faber2026/pipeline/results/whitney_mass_profile.png
-/Users/jakobfaber/Developer/overleaf/Faber2026/pipeline/results/whitney_sightline.png
-/Users/jakobfaber/Developer/overleaf/Faber2026/pipeline/results/wilhelm_mass_profile.png
-/Users/jakobfaber/Developer/overleaf/Faber2026/pipeline/results/wilhelm_sightline.png
-/Users/jakobfaber/Developer/overleaf/Faber2026/pipeline/results/zach_mass_profile.png
-/Users/jakobfaber/Developer/overleaf/Faber2026/pipeline/results/zach_sightline.png
-/Users/jakobfaber/Developer/overleaf/Faber2026/sections/toa.tex
+/home/<USER>/Developer/overleaf/Faber2026/figures/alpha_pbf_systematic.pdf
+/home/<USER>/Developer/overleaf/Faber2026/figures/chime_subband_compare.pdf
+/home/<USER>/Developer/overleaf/Faber2026/figures/codetection_scint_excess.pdf
+/home/<USER>/Developer/overleaf/Faber2026/figures/pbf_shapes.pdf
+/home/<USER>/Developer/overleaf/Faber2026/figures/sightline_dm_scattering_budget.pdf
+/home/<USER>/Developer/overleaf/Faber2026/figures/systematics_check_matrix.pdf
+/home/<USER>/Developer/overleaf/Faber2026/figures/toa_crossmatch_analysis_premium.pdf
+/home/<USER>/Developer/overleaf/Faber2026/figures/toa_crossmatch_analysis_premium.svg
+/home/<USER>/Developer/overleaf/Faber2026/figures/whitney_multiplicity.pdf
+/home/<USER>/Developer/overleaf/Faber2026/figures/wilhelm_pbf_evidence.pdf
+/home/<USER>/Developer/overleaf/Faber2026/figures/wilhelm_scint_dnud_ne2025.pdf
+/home/<USER>/Developer/overleaf/Faber2026/main.pdf
+/home/<USER>/Developer/overleaf/Faber2026/pipeline/analyses/samples/dsa_chime_codetections
+/home/<USER>/Developer/overleaf/Faber2026/pipeline/codetections_manifest.yaml
+/home/<USER>/Developer/overleaf/Faber2026/pipeline/crossmatching
+/home/<USER>/Developer/overleaf/Faber2026/pipeline/crossmatching/toa_crossmatch_results.json
+/home/<USER>/Developer/overleaf/Faber2026/pipeline/crossmatching/toa_crossmatch.ipynb
+/home/<USER>/Developer/overleaf/Faber2026/pipeline/crossmatching/toa_crossmatch.py
+/home/<USER>/Developer/overleaf/Faber2026/pipeline/crossmatching/toa_utilities.py
+/home/<USER>/Developer/overleaf/Faber2026/pipeline/galaxies/tarrio_ps1_photz/target_1_crossmatch_gaia.py
+/home/<USER>/Developer/overleaf/Faber2026/pipeline/galaxies/tarrio_ps1_photz/target_1_crossmatch_gaia.txt
+/home/<USER>/Developer/overleaf/Faber2026/pipeline/notebooks/codetections
+/home/<USER>/Developer/overleaf/Faber2026/pipeline/results/chromatica_mass_profile.png
+/home/<USER>/Developer/overleaf/Faber2026/pipeline/results/chromatica_sightline.png
+/home/<USER>/Developer/overleaf/Faber2026/pipeline/results/freya_mass_profile.png
+/home/<USER>/Developer/overleaf/Faber2026/pipeline/results/freya_sightline.png
+/home/<USER>/Developer/overleaf/Faber2026/pipeline/results/galaxy_mass_profiles.png
+/home/<USER>/Developer/overleaf/Faber2026/pipeline/results/hamilton_mass_profile.png
+/home/<USER>/Developer/overleaf/Faber2026/pipeline/results/hamilton_sightline.png
+/home/<USER>/Developer/overleaf/Faber2026/pipeline/results/isha_mass_profile.png
+/home/<USER>/Developer/overleaf/Faber2026/pipeline/results/isha_sightline.png
+/home/<USER>/Developer/overleaf/Faber2026/pipeline/results/johndoeii_mass_profile.png
+/home/<USER>/Developer/overleaf/Faber2026/pipeline/results/johndoeii_sightline.png
+/home/<USER>/Developer/overleaf/Faber2026/pipeline/results/phineas_mass_profile.png
+/home/<USER>/Developer/overleaf/Faber2026/pipeline/results/phineas_sightline.png
+/home/<USER>/Developer/overleaf/Faber2026/pipeline/results/sightline_intersections.png
+/home/<USER>/Developer/overleaf/Faber2026/pipeline/results/whitney_mass_profile.png
+/home/<USER>/Developer/overleaf/Faber2026/pipeline/results/whitney_sightline.png
+/home/<USER>/Developer/overleaf/Faber2026/pipeline/results/wilhelm_mass_profile.png
+/home/<USER>/Developer/overleaf/Faber2026/pipeline/results/wilhelm_sightline.png
+/home/<USER>/Developer/overleaf/Faber2026/pipeline/results/zach_mass_profile.png
+/home/<USER>/Developer/overleaf/Faber2026/pipeline/results/zach_sightline.png
+/home/<USER>/Developer/overleaf/Faber2026/sections/toa.tex
 
 ```
 
@@ -2696,7 +2696,7 @@ id: call_HdTQUGCHR7zqZbDA4wEgaayP
 ```json
 {
   "command": "RTK_DISABLED=1 sed -n '1,260p' crossmatching/toa_crossmatch.py",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -2708,7 +2708,7 @@ id: call_g7OmKAVqSVNc1FwNukt0Grbe
 ```json
 {
   "command": "RTK_DISABLED=1 sed -n '1,280p' crossmatching/association.py",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -2720,7 +2720,7 @@ id: call_ri7odp9JOANXvyZrqM2VgBVR
 ```json
 {
   "command": "RTK_DISABLED=1 sed -n '1,260p' crossmatching/plotting.py",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -2732,7 +2732,7 @@ id: call_1t873ZD3nlSSeNv9DSLNn3Er
 ```json
 {
   "command": "RTK_DISABLED=1 sed -n '1,220p' tests/test_crossmatching_notebook_reproduction.py && printf '\\n---\\n' && sed -n '1,220p' tests/test_chime_singlebeam_toa.py",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -3011,7 +3011,7 @@ id: call_f8nJQS6qGPc6v9BiYG9pFpOZ
 ```json
 {
   "command": "RTK_DISABLED=1 sed -n '220,520p' crossmatching/plotting.py",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -3023,7 +3023,7 @@ id: call_BST72ZululoF0FhJDpWSzhIZ
 ```json
 {
   "command": "RTK_DISABLED=1 head -80 crossmatching/toa_crossmatch_results.json && printf '\\n--- association ---\\n' && head -120 crossmatching/association_report.json && printf '\\n--- chime inputs ---\\n' && head -120 crossmatching/chime_side_inputs.json",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -3035,7 +3035,7 @@ id: call_2JP1vBE4ChVT8qoZ1E1CNA7x
 ```json
 {
   "command": "RTK_DISABLED=1 sed -n '1,260p' .agents/implement-codetection-association-significance.md && printf '\\n---\\n' && sed -n '1,260p' .agents/research-codetection-validation-rigor.md && printf '\\n---\\n' && sed -n '1,220p' .agents/experiment-chance-coincidence-falsealarm.md",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -3046,8 +3046,8 @@ tool_use shell_command
 id: call_187S6w2DcOsQgzjddpvUxMZA
 ```json
 {
-  "command": "RTK_DISABLED=1 sed -n '1,240p' /Users/jakobfaber/Developer/overleaf/Faber2026/sections/toa.tex && printf '\\n--- main refs ---\\n' && rg -n 'toa|TOA|crossmatch|systematics|chance|coincidence|position|DM agreement|fig:|toa_crossmatch|systematics_check' /Users/jakobfaber/Developer/overleaf/Faber2026/main.tex /Users/jakobfaber/Developer/overleaf/Faber2026/sections /Users/jakobfaber/Developer/overleaf/Faber2026/figbank.tex",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "RTK_DISABLED=1 sed -n '1,240p' /home/<USER>/Developer/overleaf/Faber2026/sections/toa.tex && printf '\\n--- main refs ---\\n' && rg -n 'toa|TOA|crossmatch|systematics|chance|coincidence|position|DM agreement|fig:|toa_crossmatch|systematics_check' /home/<USER>/Developer/overleaf/Faber2026/main.tex /home/<USER>/Developer/overleaf/Faber2026/sections /home/<USER>/Developer/overleaf/Faber2026/figbank.tex",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -3322,7 +3322,7 @@ id: call_jRi9d4Z8zz43b8nZeAaJbNvX
 ```json
 {
   "command": "RTK_DISABLED=1 find tests -maxdepth 1 -type f -name '*association*' -o -name 'test_association.py' -print && RTK_DISABLED=1 sed -n '1,260p' tests/test_association.py 2>/dev/null || true",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -3333,8 +3333,8 @@ tool_use shell_command
 id: call_ZE6noLrU9tpFbGUESzPIJmMh
 ```json
 {
-  "command": "RTK_DISABLED=1 sed -n '1,120p' /Users/jakobfaber/Developer/overleaf/Faber2026/main.tex && printf '\\n--- observations ---\\n' && sed -n '1,110p' /Users/jakobfaber/Developer/overleaf/Faber2026/sections/observations.tex",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "RTK_DISABLED=1 sed -n '1,120p' /home/<USER>/Developer/overleaf/Faber2026/main.tex && printf '\\n--- observations ---\\n' && sed -n '1,110p' /home/<USER>/Developer/overleaf/Faber2026/sections/observations.tex",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -3345,8 +3345,8 @@ tool_use shell_command
 id: call_JSRflaLvZbkYj3SsC6VSsDFV
 ```json
 {
-  "command": "file crossmatching/toa_crossmatch_analysis_premium.png crossmatching/systematics_check_matrix.png /Users/jakobfaber/Developer/overleaf/Faber2026/figures/toa_crossmatch_analysis_premium.pdf /Users/jakobfaber/Developer/overleaf/Faber2026/figures/systematics_check_matrix.pdf && shasum -a 256 crossmatching/toa_crossmatch_analysis_premium.pdf /Users/jakobfaber/Developer/overleaf/Faber2026/figures/toa_crossmatch_analysis_premium.pdf crossmatching/systematics_check_matrix.pdf /Users/jakobfaber/Developer/overleaf/Faber2026/figures/systematics_check_matrix.pdf",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "file crossmatching/toa_crossmatch_analysis_premium.png crossmatching/systematics_check_matrix.png /home/<USER>/Developer/overleaf/Faber2026/figures/toa_crossmatch_analysis_premium.pdf /home/<USER>/Developer/overleaf/Faber2026/figures/systematics_check_matrix.pdf && shasum -a 256 crossmatching/toa_crossmatch_analysis_premium.pdf /home/<USER>/Developer/overleaf/Faber2026/figures/toa_crossmatch_analysis_premium.pdf crossmatching/systematics_check_matrix.pdf /home/<USER>/Developer/overleaf/Faber2026/figures/systematics_check_matrix.pdf",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -3357,8 +3357,8 @@ tool_use shell_command
 id: call_f3W1wgDncKs8dk6TA7AqU8xu
 ```json
 {
-  "command": "git status --short --branch && git -C /Users/jakobfaber/Developer/overleaf/Faber2026 status --short --branch",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "git status --short --branch && git -C /home/<USER>/Developer/overleaf/Faber2026 status --short --branch",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -3481,12 +3481,12 @@ Wall time: 0.2 seconds
 Output:
 crossmatching/toa_crossmatch_analysis_premium.png:                                          PNG image data, 4804 x 1804, 8-bit/color RGBA, non-interlaced
 crossmatching/systematics_check_matrix.png:                                                 PNG image data, 4204 x 3004, 8-bit/color RGBA, non-interlaced
-/Users/jakobfaber/Developer/overleaf/Faber2026/figures/toa_crossmatch_analysis_premium.pdf: PDF document, version 1.4, 1 pages
-/Users/jakobfaber/Developer/overleaf/Faber2026/figures/systematics_check_matrix.pdf:        PDF document, version 1.4, 1 pages
+/home/<USER>/Developer/overleaf/Faber2026/figures/toa_crossmatch_analysis_premium.pdf: PDF document, version 1.4, 1 pages
+/home/<USER>/Developer/overleaf/Faber2026/figures/systematics_check_matrix.pdf:        PDF document, version 1.4, 1 pages
 4f17b9bc296cd4a84bd83147b41cd263affc8aaa642ef80d3b0e1bb91e147dc0  crossmatching/toa_crossmatch_analysis_premium.pdf
-1faa6bbba911565ff685f43a0280f870da6914635674a5aa8be2dc9208b21457  /Users/jakobfaber/Developer/overleaf/Faber2026/figures/toa_crossmatch_analysis_premium.pdf
+1faa6bbba911565ff685f43a0280f870da6914635674a5aa8be2dc9208b21457  /home/<USER>/Developer/overleaf/Faber2026/figures/toa_crossmatch_analysis_premium.pdf
 6de14e83868aeda07afb5e1467b03c2ea49b961be30fa31a790df90886a5c06e  crossmatching/systematics_check_matrix.pdf
-2ace2122497fdb382943a2ef1e249260d46bc6d27d907bfc0c2e3926e52a7a0a  /Users/jakobfaber/Developer/overleaf/Faber2026/figures/systematics_check_matrix.pdf
+2ace2122497fdb382943a2ef1e249260d46bc6d27d907bfc0c2e3926e52a7a0a  /home/<USER>/Developer/overleaf/Faber2026/figures/systematics_check_matrix.pdf
 
 ```
 
@@ -3498,9 +3498,9 @@ id: call_f3W1wgDncKs8dk6TA7AqU8xu
 Command blocked by PreToolUse hook: rtk-codex-guard: shell command should use RTK compact output.
 
 Suggested command:
-rtk git status --short --branch && rtk git -C /Users/jakobfaber/Developer/overleaf/Faber2026 status --short --branch
+rtk git status --short --branch && rtk git -C /home/<USER>/Developer/overleaf/Faber2026 status --short --branch
 
-To bypass for this command, prefix it with: RTK_DISABLED=1. Command: git status --short --branch && git -C /Users/jakobfaber/Developer/overleaf/Faber2026 status --short --branch
+To bypass for this command, prefix it with: RTK_DISABLED=1. Command: git status --short --branch && git -C /home/<USER>/Developer/overleaf/Faber2026 status --short --branch
 ```
 
 > AGENT
@@ -3513,7 +3513,7 @@ tool_use view_image
 id: call_aSybRAAsyMxSs64c5C9bDutA
 ```json
 {
-  "path": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS/crossmatching/toa_crossmatch_analysis_premium.png",
+  "path": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS/crossmatching/toa_crossmatch_analysis_premium.png",
   "detail": "high"
 }
 ```
@@ -3524,7 +3524,7 @@ tool_use view_image
 id: call_aKoXdxuIZfWKiuRipqa95smq
 ```json
 {
-  "path": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS/crossmatching/systematics_check_matrix.png",
+  "path": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS/crossmatching/systematics_check_matrix.png",
   "detail": "high"
 }
 ```
@@ -3564,7 +3564,7 @@ id: call_W0LPpkMeJSNLC6WuVJEowDvy
 ```json
 {
   "command": "python - <<'PY'\nimport json, math\nfrom pathlib import Path\nr=json.loads(Path('crossmatching/toa_crossmatch_results.json').read_text())\na=json.loads(Path('crossmatching/association_report.json').read_text())\nres=[]\nfor name,b in r.items():\n    res.append((name,b['measured_offset_ms']-b['geometric_delay_ms'], (b['combined_dm_uncertainty_ms']**2 + (b.get('fwhm_ms') or 0)**2)**0.5, b['dm'], b.get('fwhm_ms'), b['dm_mjd']))\nprint('n_toa',len(res))\nprint('residual_mean_ms',sum(x[1] for x in res)/len(res))\nprint('residual_minmax_ms',min(x[1] for x in res),max(x[1] for x in res))\nprint('max_abs_sigma',max(abs(v/e) for _,v,e,*_ in res))\nprint('worst_sigma',max(((abs(v/e),n,v,e) for n,v,e,*_ in res)))\nprint('assoc_expected_chance',a['expected_chance_associations'])\nprint('assoc_n',len(a['bursts']))\nprint('chance_range',min(b['chance_coincidence_P'] for b in a['bursts']),max(b['chance_coincidence_P'] for b in a['bursts']))\nprint('dm_active',sum(b['dm_agreement']['consistent'] is not None for b in a['bursts']))\nprint('dm_consistent',sum(b['dm_agreement']['consistent'] is True for b in a['bursts']))\nprint('pos_active',sum(b['position']['consistent'] is not None for b in a['bursts']))\nprint('pos_consistent',sum(b['position']['consistent'] is True for b in a['bursts']))\nprint('pos_sep_range_deg',min(b['position']['separation_deg'] for b in a['bursts'] if b['position']['separation_deg'] is not None),max(b['position']['separation_deg'] for b in a['bursts'] if b['position']['separation_deg'] is not None))\nprint('dm_constrained_names',[b['name'] for b in a['bursts'] if b['dm_agreement']['consistent'] is True])\nprint('dm_unconstrained_names',[b['name'] for b in a['bursts'] if b['dm_agreement']['consistent'] is None])\nPY",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -3575,8 +3575,8 @@ tool_use shell_command
 id: call_HXm0WPlLhRNZNly2VwWitiQq
 ```json
 {
-  "command": "stat -f '%Sm %z %N' crossmatching/toa_crossmatch_analysis_premium.pdf crossmatching/systematics_check_matrix.pdf /Users/jakobfaber/Developer/overleaf/Faber2026/figures/toa_crossmatch_analysis_premium.pdf /Users/jakobfaber/Developer/overleaf/Faber2026/figures/systematics_check_matrix.pdf",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "stat -f '%Sm %z %N' crossmatching/toa_crossmatch_analysis_premium.pdf crossmatching/systematics_check_matrix.pdf /home/<USER>/Developer/overleaf/Faber2026/figures/toa_crossmatch_analysis_premium.pdf /home/<USER>/Developer/overleaf/Faber2026/figures/systematics_check_matrix.pdf",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -3587,8 +3587,8 @@ tool_use shell_command
 id: call_rOF2iKHnNHH6tcQ2tSz4hw1a
 ```json
 {
-  "command": "RTK_DISABLED=1 rg -n 'chance|coincidence|position|separation|DM agreement|dm_agreement|association|expected_chance|chime_side|P\\(|false' /Users/jakobfaber/Developer/overleaf/Faber2026/sections /Users/jakobfaber/Developer/overleaf/Faber2026/*.tex crossmatching docs .agents | head -200",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "RTK_DISABLED=1 rg -n 'chance|coincidence|position|separation|DM agreement|dm_agreement|association|expected_chance|chime_side|P\\(|false' /home/<USER>/Developer/overleaf/Faber2026/sections /home/<USER>/Developer/overleaf/Faber2026/*.tex crossmatching docs .agents | head -200",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -3599,8 +3599,8 @@ tool_use shell_command
 id: call_857mAcw1n9koOx4snHEyL8Yq
 ```json
 {
-  "command": "rtk git status --short --branch && rtk git -C /Users/jakobfaber/Developer/overleaf/Faber2026 status --short --branch",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "rtk git status --short --branch && rtk git -C /home/<USER>/Developer/overleaf/Faber2026 status --short --branch",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -3641,8 +3641,8 @@ Wall time: 0.1 seconds
 Output:
 Jun 24 07:36:36 2026 38269 crossmatching/toa_crossmatch_analysis_premium.pdf
 Jun 24 07:36:36 2026 31043 crossmatching/systematics_check_matrix.pdf
-Jun 24 03:41:03 2026 38269 /Users/jakobfaber/Developer/overleaf/Faber2026/figures/toa_crossmatch_analysis_premium.pdf
-Jun 24 03:39:38 2026 31467 /Users/jakobfaber/Developer/overleaf/Faber2026/figures/systematics_check_matrix.pdf
+Jun 24 03:41:03 2026 38269 /home/<USER>/Developer/overleaf/Faber2026/figures/toa_crossmatch_analysis_premium.pdf
+Jun 24 03:39:38 2026 31467 /home/<USER>/Developer/overleaf/Faber2026/figures/systematics_check_matrix.pdf
 
 ```
 
@@ -3654,8 +3654,8 @@ id: call_rOF2iKHnNHH6tcQ2tSz4hw1a
 Exit code: 0
 Wall time: 0.1 seconds
 Output:
-/Users/jakobfaber/Developer/overleaf/Faber2026/budget_table.tex:7:co-detections, from the decomposition of Eq.~\ref{eq:dmbudget}. $\mathrm{DM_{MW}}$
-/Users/jakobfaber/Developer/overleaf/Faber2026/budget_table.tex:46:sensitivity analysis quantifies $P(\mathrm{DM_{host}}<0)$ per sightline.}
+/home/<USER>/Developer/overleaf/Faber2026/budget_table.tex:7:co-detections, from the decomposition of Eq.~\ref{eq:dmbudget}. $\mathrm{DM_{MW}}$
+/home/<USER>/Developer/overleaf/Faber2026/budget_table.tex:46:sensitivity analysis quantifies $P(\mathrm{DM_{host}}<0)$ per sightline.}
 .agents/experiment-powerlaw-pbf.md:59:**Per-band decomposition** (`pbf_band_compare.py`, best single-component gain-marginal
 .agents/research-chime-side-dm-localization.md:1:# Research: sourcing independent CHIME DM + localization to activate association pillars 2 & 4
 .agents/research-chime-side-dm-localization.md:7:**Question:** Can we source a genuinely *independent* CHIME DM and a CHIME localization for each of the 12 co-detections from the local singlebeam voltage data, to move association pillars 2 (DM agreement) and 4 (positional coincidence) beyond their `null+reason` placeholders? With what method, and with what limitations?
@@ -3777,8 +3777,8 @@ tool_use shell_command
 id: call_RVsGqExMgUSkWAwZOtoZf9wx
 ```json
 {
-  "command": "RTK_DISABLED=1 find /Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset -path '*dirty*git*state*' -o -iname 'SKILL.md' | head -50",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "RTK_DISABLED=1 find /home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset -path '*dirty*git*state*' -o -iname 'SKILL.md' | head -50",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -3791,56 +3791,56 @@ id: call_RVsGqExMgUSkWAwZOtoZf9wx
 Exit code: 0
 Wall time: 2.4 seconds
 Output:
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/tools/agent-gates/node_modules/.pnpm/@mastra+core@1.38.0_@standard-community+standard-json@0.3.5_@standard-schema+spec@1.1.0_877fd8e6ead276cc4a5d810a29459e41/node_modules/@mastra/core/dist/docs/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/tools/agent-gates/node_modules/.pnpm/dotenv@17.4.2/node_modules/dotenv/skills/dotenvx/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/tools/agent-gates/node_modules/.pnpm/dotenv@17.4.2/node_modules/dotenv/skills/dotenv/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/agents/hf-skills/huggingface-papers/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/agents/hf-skills/huggingface-local-models/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/agents/hf-skills/huggingface-llm-trainer/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/agents/hf-skills/huggingface-lora-space-builder/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/agents/hf-skills/transformers-js/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/agents/hf-skills/huggingface-community-evals/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/agents/hf-skills/trl-training/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/agents/hf-skills/huggingface-zerogpu/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/agents/hf-skills/huggingface-spaces/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/agents/hf-skills/huggingface-paper-publisher/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/agents/hf-skills/hf-cli/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/agents/hf-skills/train-sentence-transformers/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/agents/hf-skills/huggingface-vision-trainer/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/agents/hf-skills/huggingface-tool-builder/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/agents/hf-skills/huggingface-trackio/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/agents/hf-skills/huggingface-best/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/agents/hf-skills/huggingface-gradio/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/agents/hf-skills/huggingface-datasets/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/scientific-python-development/skills/pixi-package-manager/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/scientific-python-development/skills/python-testing/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/scientific-python-development/skills/python-packaging/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/scientific-python-development/skills/code-quality-tools/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/scientific-python-development/skills/scientific-documentation/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/containerization/skills/podman/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/containerization/skills/singularity-apptainer/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/containerization/skills/compose-orchestration/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/containerization/skills/container-registries/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/containerization/skills/container-security/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/containerization/skills/devcontainers/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/containerization/skills/gpu-containers/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/containerization/skills/dockerfile-patterns/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/zarr-data-format/skills/data-migration/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/zarr-data-format/skills/compression-codecs/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/zarr-data-format/skills/zarr-xarray-integration/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/zarr-data-format/skills/zarr-fundamentals/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/zarr-data-format/skills/cloud-storage-backends/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/scientific-domain-applications/skills/xarray-for-multidimensional-data/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/scientific-domain-applications/skills/astropy-fundamentals/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/zarr-chunk-optimization/skills/performance-reporting/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/zarr-chunk-optimization/skills/synthetic-data/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/zarr-chunk-optimization/skills/access-pattern-analysis/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/zarr-chunk-optimization/skills/rechunking/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/zarr-chunk-optimization/skills/chunking-strategy/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/ai-research-workflows/skills/using-research-workflows/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/ai-research-workflows/skills/planning-implementations/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/ai-research-workflows/skills/hardening-research-code/SKILL.md
-/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/ai-research-workflows/skills/validating-implementations/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/tools/agent-gates/node_modules/.pnpm/@mastra+core@1.38.0_@standard-community+standard-json@0.3.5_@standard-schema+spec@1.1.0_877fd8e6ead276cc4a5d810a29459e41/node_modules/@mastra/core/dist/docs/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/tools/agent-gates/node_modules/.pnpm/dotenv@17.4.2/node_modules/dotenv/skills/dotenvx/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/tools/agent-gates/node_modules/.pnpm/dotenv@17.4.2/node_modules/dotenv/skills/dotenv/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/agents/hf-skills/huggingface-papers/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/agents/hf-skills/huggingface-local-models/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/agents/hf-skills/huggingface-llm-trainer/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/agents/hf-skills/huggingface-lora-space-builder/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/agents/hf-skills/transformers-js/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/agents/hf-skills/huggingface-community-evals/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/agents/hf-skills/trl-training/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/agents/hf-skills/huggingface-zerogpu/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/agents/hf-skills/huggingface-spaces/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/agents/hf-skills/huggingface-paper-publisher/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/agents/hf-skills/hf-cli/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/agents/hf-skills/train-sentence-transformers/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/agents/hf-skills/huggingface-vision-trainer/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/agents/hf-skills/huggingface-tool-builder/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/agents/hf-skills/huggingface-trackio/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/agents/hf-skills/huggingface-best/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/agents/hf-skills/huggingface-gradio/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/agents/hf-skills/huggingface-datasets/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/scientific-python-development/skills/pixi-package-manager/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/scientific-python-development/skills/python-testing/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/scientific-python-development/skills/python-packaging/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/scientific-python-development/skills/code-quality-tools/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/scientific-python-development/skills/scientific-documentation/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/containerization/skills/podman/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/containerization/skills/singularity-apptainer/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/containerization/skills/compose-orchestration/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/containerization/skills/container-registries/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/containerization/skills/container-security/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/containerization/skills/devcontainers/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/containerization/skills/gpu-containers/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/containerization/skills/dockerfile-patterns/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/zarr-data-format/skills/data-migration/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/zarr-data-format/skills/compression-codecs/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/zarr-data-format/skills/zarr-xarray-integration/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/zarr-data-format/skills/zarr-fundamentals/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/zarr-data-format/skills/cloud-storage-backends/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/scientific-domain-applications/skills/xarray-for-multidimensional-data/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/scientific-domain-applications/skills/astropy-fundamentals/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/zarr-chunk-optimization/skills/performance-reporting/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/zarr-chunk-optimization/skills/synthetic-data/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/zarr-chunk-optimization/skills/access-pattern-analysis/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/zarr-chunk-optimization/skills/rechunking/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/zarr-chunk-optimization/skills/chunking-strategy/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/ai-research-workflows/skills/using-research-workflows/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/ai-research-workflows/skills/planning-implementations/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/ai-research-workflows/skills/hardening-research-code/SKILL.md
+/home/<USER>/Developer/repos/github.com/jakobtfaber/my-skillset/plugins-local/ai-research-workflows/skills/validating-implementations/SKILL.md
 
 ```
 
@@ -3855,7 +3855,7 @@ id: call_gUfL9v9Tel0CdS6WYOrYOtvD
 ```json
 {
   "command": "python -m pytest tests/test_association.py tests/test_crossmatching_notebook_reproduction.py -q",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 120000
 }
 ```
@@ -3884,7 +3884,7 @@ id: call_pH6wCiQSLhe7qihnDBWpnRS4
 ```json
 {
   "command": "rtk pytest tests/test_association.py tests/test_crossmatching_notebook_reproduction.py -q",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 120000
 }
 ```
@@ -3911,8 +3911,8 @@ tool_use shell_command
 id: call_ug0X7eF8AiBXyu67Ez2QqvZI
 ```json
 {
-  "command": "command -v pdftotext && pdftotext /Users/jakobfaber/Developer/overleaf/Faber2026/main.pdf - | rg -n 'Time-of-Arrival Crossmatching|chance|coincidence|position|DM agreement|Time-of-arrival residuals|Systematic correlation search' || true",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "command -v pdftotext && pdftotext /home/<USER>/Developer/overleaf/Faber2026/main.pdf - | rg -n 'Time-of-Arrival Crossmatching|chance|coincidence|position|DM agreement|Time-of-arrival residuals|Systematic correlation search' || true",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 30000
 }
 ```
@@ -3924,7 +3924,7 @@ id: call_JZynglCAPv6dJtU16dwRdZjb
 ```json
 {
   "command": "RTK_DISABLED=1 rg -n 'SUSPENDED|dm_active=9|2-real|7-marginal|3-noise|8/12|Pillar 4|position.*12/12' .agents crossmatching tests docs | head -120",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -3936,7 +3936,7 @@ id: call_Z5O5B3TO0GoM83UTh2VeFQHc
 ```json
 {
   "command": "python - <<'PY'\nfrom pathlib import Path\nfor p in [Path('crossmatching/association_report.json'), Path('crossmatching/chime_side_inputs.json'), Path('crossmatching/toa_crossmatch_results.json')]:\n    print(p, p.stat().st_mtime, p.stat().st_size)\nPY",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -4049,7 +4049,7 @@ id: call_UFhiL9xiQschqhGx7YkPhLaa
 ```json
 {
   "command": "RTK_DISABLED=1 nl -ba crossmatching/association.py | sed -n '1,260p'",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -4061,7 +4061,7 @@ id: call_wyy0yWk5TIxE16B1SRq5J0fC
 ```json
 {
   "command": "RTK_DISABLED=1 nl -ba crossmatching/plotting.py | sed -n '1,330p'",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -4072,8 +4072,8 @@ tool_use shell_command
 id: call_a8FBloEBGvGz3wxW4nGRqNkl
 ```json
 {
-  "command": "RTK_DISABLED=1 nl -ba /Users/jakobfaber/Developer/overleaf/Faber2026/sections/toa.tex | sed -n '1,130p' && printf '\\n--- main ---\\n' && nl -ba /Users/jakobfaber/Developer/overleaf/Faber2026/main.tex | sed -n '48,58p' && printf '\\n--- obs ---\\n' && nl -ba /Users/jakobfaber/Developer/overleaf/Faber2026/sections/observations.tex | sed -n '70,82p'",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "RTK_DISABLED=1 nl -ba /home/<USER>/Developer/overleaf/Faber2026/sections/toa.tex | sed -n '1,130p' && printf '\\n--- main ---\\n' && nl -ba /home/<USER>/Developer/overleaf/Faber2026/main.tex | sed -n '48,58p' && printf '\\n--- obs ---\\n' && nl -ba /home/<USER>/Developer/overleaf/Faber2026/sections/observations.tex | sed -n '70,82p'",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -4084,8 +4084,8 @@ tool_use shell_command
 id: call_MCQzq6s70F6p365NjJBeWqP9
 ```json
 {
-  "command": "RTK_DISABLED=1 nl -ba /Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dotfiles/memory/MEMORY.md | sed -n '26,29p' && printf '\\n--- codex ---\\n' && nl -ba /Users/jakobfaber/.codex/memories/MEMORY.md | sed -n '151,169p'",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "RTK_DISABLED=1 nl -ba /home/<USER>/Developer/repos/github.com/jakobtfaber/dotfiles/memory/MEMORY.md | sed -n '26,29p' && printf '\\n--- codex ---\\n' && nl -ba /home/<USER>/.codex/memories/MEMORY.md | sed -n '151,169p'",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -4253,14 +4253,14 @@ DSA — Deep Synoptic Array
 Short answer: **not yet**. We have enough machinery and data to make the full figure set, but the current paper-ready state is only partial.
 
 **What Exists**
-- TOA residual figure exists: [crossmatching/plotting.py](/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS/crossmatching/plotting.py:42) generates `toa_crossmatch_analysis_premium.{pdf,png,svg}`.
-- Timing systematics figure exists: [crossmatching/plotting.py](/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS/crossmatching/plotting.py:223) generates `systematics_check_matrix.{pdf,png,svg}`.
-- Manuscript includes those two figures in [sections/toa.tex](/Users/jakobfaber/Developer/overleaf/Faber2026/sections/toa.tex:51) and [sections/toa.tex](/Users/jakobfaber/Developer/overleaf/Faber2026/sections/toa.tex:61).
+- TOA residual figure exists: [crossmatching/plotting.py](/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS/crossmatching/plotting.py:42) generates `toa_crossmatch_analysis_premium.{pdf,png,svg}`.
+- Timing systematics figure exists: [crossmatching/plotting.py](/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS/crossmatching/plotting.py:223) generates `systematics_check_matrix.{pdf,png,svg}`.
+- Manuscript includes those two figures in [sections/toa.tex](/home/<USER>/Developer/overleaf/Faber2026/sections/toa.tex:51) and [sections/toa.tex](/home/<USER>/Developer/overleaf/Faber2026/sections/toa.tex:61).
 - Association metrics exist in code/report:
-  - Chance coincidence: [crossmatching/association.py](/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS/crossmatching/association.py:50)
-  - DM agreement: [crossmatching/association.py](/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS/crossmatching/association.py:68)
-  - CHIME-DSA position separation: [crossmatching/association.py](/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS/crossmatching/association.py:132)
-  - Report assembly: [crossmatching/association.py](/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS/crossmatching/association.py:170)
+  - Chance coincidence: [crossmatching/association.py](/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS/crossmatching/association.py:50)
+  - DM agreement: [crossmatching/association.py](/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS/crossmatching/association.py:68)
+  - CHIME-DSA position separation: [crossmatching/association.py](/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS/crossmatching/association.py:132)
+  - Report assembly: [crossmatching/association.py](/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS/crossmatching/association.py:170)
 
 **Current Metrics**
 - TOA residuals: 12/12 present; mean residual `+2.416 ms`; range `-2.686` to `+8.409 ms`; worst normalized residual `2.79 sigma` for Wilhelm.
@@ -4293,8 +4293,8 @@ tool_use shell_command
 id: call_GethKZOQMsbCxQ2F7SPGn7DC
 ```json
 {
-  "command": "sed -n '1,240p' /Users/jakobfaber/.codex/plugins/cache/openai-curated/superpowers/3c06cb2e/skills/brainstorming/SKILL.md",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "sed -n '1,240p' /home/<USER>/.codex/plugins/cache/openai-curated/superpowers/3c06cb2e/skills/brainstorming/SKILL.md",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -4348,8 +4348,8 @@ tool_use shell_command
 id: call_HtXhQQo5H5Bvrc5x6LwfIzmI
 ```json
 {
-  "command": "sed -n '1,260p' /Users/jakobfaber/.codex/plugins/cache/openai-curated/superpowers/3c06cb2e/skills/brainstorming/visual-companion.md",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "sed -n '1,260p' /home/<USER>/.codex/plugins/cache/openai-curated/superpowers/3c06cb2e/skills/brainstorming/visual-companion.md",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -4394,8 +4394,8 @@ tool_use shell_command
 id: call_uSeP7jTe5s5Udc3cod2PjQzg
 ```json
 {
-  "command": "sed -n '260,560p' /Users/jakobfaber/.codex/plugins/cache/openai-curated/superpowers/3c06cb2e/skills/brainstorming/visual-companion.md",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "sed -n '260,560p' /home/<USER>/.codex/plugins/cache/openai-curated/superpowers/3c06cb2e/skills/brainstorming/visual-companion.md",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -4449,8 +4449,8 @@ tool_use shell_command
 id: call_nrSKnYmuL4YN2OFEHEEr065o
 ```json
 {
-  "command": "/Users/jakobfaber/.codex/plugins/cache/openai-curated/superpowers/3c06cb2e/skills/brainstorming/scripts/start-server.sh --project-dir /Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "command": "/home/<USER>/.codex/plugins/cache/openai-curated/superpowers/3c06cb2e/skills/brainstorming/scripts/start-server.sh --project-dir /home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 30000
 }
 ```
@@ -4463,7 +4463,7 @@ id: call_nrSKnYmuL4YN2OFEHEEr065o
 Exit code: 0
 Wall time: 2.5 seconds
 Output:
-{"type":"server-started","port":51947,"host":"127.0.0.1","url_host":"localhost","url":"http://localhost:51947","screen_dir":"/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS/.superpowers/brainstorm/83731-1782321617/content","state_dir":"/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS/.superpowers/brainstorm/83731-1782321617/state"}
+{"type":"server-started","port":51947,"host":"127.0.0.1","url_host":"localhost","url":"http://localhost:51947","screen_dir":"/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS/.superpowers/brainstorm/83731-1782321617/content","state_dir":"/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS/.superpowers/brainstorm/83731-1782321617/state"}
 
 ```
 

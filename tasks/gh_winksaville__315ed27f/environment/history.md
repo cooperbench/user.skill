@@ -8,7 +8,7 @@ tool_use Read
 id: toolu_015SBYPmG3Ff4u7bMwj5Ujqz
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md",
   "offset": 0,
   "limit": 60
 }
@@ -58,7 +58,7 @@ tool_use Bash
 id: toolu_01X8ygLjdPP2QJi4ZJStWrUo
 ```json
 {
-  "command": "ls /home/wink/data/prgs/rust/iiac-perf/src/",
+  "command": "ls /home/<USER>/data/prgs/rust/iiac-perf/src/",
   "description": "List iiac-perf src files"
 }
 ```
@@ -225,7 +225,7 @@ tool_use Read
 id: toolu_0126AzNxDpvqZrL3nWBCL2vN
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/iiac-perf/src/tprobe.rs"
+  "file_path": "/home/<USER>/data/prgs/rust/iiac-perf/src/tprobe.rs"
 }
 ```
 
@@ -273,7 +273,7 @@ tool_use Read
 id: toolu_011vqsLkgEpwCsc87iaitW1o
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/iiac-perf/src/tprobe2.rs"
+  "file_path": "/home/<USER>/data/prgs/rust/iiac-perf/src/tprobe2.rs"
 }
 ```
 
@@ -313,7 +313,7 @@ tool_use Bash
 id: toolu_01WfkWKgfGzTeGUZJwwBwmYy
 ```json
 {
-  "command": "ls /home/wink/data/prgs/rust/iiac-perf/src/benches/ && grep -rn \"zcr\" /home/wink/data/prgs/rust/iiac-perf/src/benches/ -l",
+  "command": "ls /home/<USER>/data/prgs/rust/iiac-perf/src/benches/ && grep -rn \"zcr\" /home/<USER>/data/prgs/rust/iiac-perf/src/benches/ -l",
   "description": "List iiac-perf benches and find zcr benches"
 }
 ```
@@ -342,12 +342,12 @@ zcr_mpsc_1t.rs
 zcr_mpsc_2t.rs
 zcr_with_1t.rs
 zcr_with_2t.rs
-/home/wink/data/prgs/rust/iiac-perf/src/benches/zcr_with_2t.rs
-/home/wink/data/prgs/rust/iiac-perf/src/benches/zcr_mpsc_2t.rs
-/home/wink/data/prgs/rust/iiac-perf/src/benches/mod.rs
-/home/wink/data/prgs/rust/iiac-perf/src/benches/zcr_common.rs
-/home/wink/data/prgs/rust/iiac-perf/src/benches/zcr_with_1t.rs
-/home/wink/data/prgs/rust/iiac-perf/src/benches/zcr_mpsc_1t.rs
+/home/<USER>/data/prgs/rust/iiac-perf/src/benches/zcr_with_2t.rs
+/home/<USER>/data/prgs/rust/iiac-perf/src/benches/zcr_mpsc_2t.rs
+/home/<USER>/data/prgs/rust/iiac-perf/src/benches/mod.rs
+/home/<USER>/data/prgs/rust/iiac-perf/src/benches/zcr_common.rs
+/home/<USER>/data/prgs/rust/iiac-perf/src/benches/zcr_with_1t.rs
+/home/<USER>/data/prgs/rust/iiac-perf/src/benches/zcr_mpsc_1t.rs
 ```
 
 > TOOL
@@ -356,7 +356,7 @@ tool_use Read
 id: toolu_016rdUb8eFNeB1StJDohou5k
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/iiac-perf/src/benches/zcr_with_2t.rs"
+  "file_path": "/home/<USER>/data/prgs/rust/iiac-perf/src/benches/zcr_with_2t.rs"
 }
 ```
 
@@ -410,7 +410,7 @@ tool_use Read
 id: toolu_017kcwAge2ps3CkLmGe4vP91
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/iiac-perf/src/benches/zcr_mpsc_2t.rs"
+  "file_path": "/home/<USER>/data/prgs/rust/iiac-perf/src/benches/zcr_mpsc_2t.rs"
 }
 ```
 
@@ -462,7 +462,7 @@ tool_use Read
 id: toolu_01H3jAVPXybRW4r3P519xXFd
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/iiac-perf/src/benches/zcr_common.rs"
+  "file_path": "/home/<USER>/data/prgs/rust/iiac-perf/src/benches/zcr_common.rs"
 }
 ```
 
@@ -542,7 +542,7 @@ tool_use Read
 id: toolu_01DfD5Vm8qmELzjqfQJNWoB6
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/src/spsc/v0/producer.rs"
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/src/spsc/v0/producer.rs"
 }
 ```
 
@@ -600,7 +600,7 @@ tool_use Read
 id: toolu_01K42u9H7Cs5axrpYXv4nrSo
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/src/spsc/v0/consumer.rs"
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/src/spsc/v0/consumer.rs"
 }
 ```
 
@@ -659,7 +659,7 @@ tool_use Read
 id: toolu_01CZADrWi1XoAk3LguWMC2Dz
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/src/mpsc/v0/producer.rs"
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/src/mpsc/v0/producer.rs"
 }
 ```
 
@@ -710,7 +710,7 @@ tool_use Read
 id: toolu_011FDJXiGjsrmHn7cCmcqXSi
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/src/mpsc/v0/consumer.rs"
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/src/mpsc/v0/consumer.rs"
 }
 ```
 
@@ -811,7 +811,7 @@ tool_use Read
 id: toolu_01Hj9H7HFHA8K7XmguVUAgoK
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/iiac-perf/src/benches/tp_pc.rs"
+  "file_path": "/home/<USER>/data/prgs/rust/iiac-perf/src/benches/tp_pc.rs"
 }
 ```
 
@@ -866,7 +866,7 @@ tool_use Bash
 id: toolu_01Y5gchVVmZwTymw46KXWaBL
 ```json
 {
-  "command": "grep -n \"core_for\\|pub struct RunCfg\" -A 15 /home/wink/data/prgs/rust/iiac-perf/src/harness.rs | head -60",
+  "command": "grep -n \"core_for\\|pub struct RunCfg\" -A 15 /home/<USER>/data/prgs/rust/iiac-perf/src/harness.rs | head -60",
   "description": "Show RunCfg and core_for"
 }
 ```
@@ -940,7 +940,7 @@ tool_use Read
 id: toolu_012SctQgYTicJYQnMMUeGaks
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/iiac-perf/src/benches/probe_mpsc_2t.rs"
+  "file_path": "/home/<USER>/data/prgs/rust/iiac-perf/src/benches/probe_mpsc_2t.rs"
 }
 ```
 
@@ -1077,7 +1077,7 @@ tool_use Bash
 id: toolu_01RDasQMXQxMCzCJM2ZYbG85
 ```json
 {
-  "command": "grep -n \"zcr\\|tp2\\|tp_pc\\|register\\|NAME\" /home/wink/data/prgs/rust/iiac-perf/src/benches/mod.rs | head -40",
+  "command": "grep -n \"zcr\\|tp2\\|tp_pc\\|register\\|NAME\" /home/<USER>/data/prgs/rust/iiac-perf/src/benches/mod.rs | head -40",
   "description": "Show bench registry"
 }
 ```
@@ -1122,7 +1122,7 @@ tool_use Bash
 id: toolu_01MMAZFQfuJJpW5JnMtCFUfb
 ```json
 {
-  "command": "command -v iiac-perf && iiac-perf --version 2>/dev/null; jj st -R /home/wink/data/prgs/rust/iiac-perf 2>&1 | head -10; ls /home/wink/data/prgs/rust/iiac-perf/AGENTS.md 2>&1",
+  "command": "command -v iiac-perf && iiac-perf --version 2>/dev/null; jj st -R /home/<USER>/data/prgs/rust/iiac-perf 2>&1 | head -10; ls /home/<USER>/data/prgs/rust/iiac-perf/AGENTS.md 2>&1",
   "description": "Check iiac-perf install and repo state"
 }
 ```
@@ -1133,7 +1133,7 @@ tool_use Read
 id: toolu_01F4ErRHntmQJbL18WUr276C
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/cycle-protocol.md"
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/cycle-protocol.md"
 }
 ```
 
@@ -1142,12 +1142,12 @@ id: toolu_01F4ErRHntmQJbL18WUr276C
 tool_result
 id: toolu_01MMAZFQfuJJpW5JnMtCFUfb
 ```
-/home/wink/.cargo/bin/iiac-perf
+/home/<USER>/.cargo/bin/iiac-perf
 iiac-perf 0.20.0
 The working copy has no changes.
 Working copy  (@) : soyrkzlz 455002bf (empty) (no description set)
 Parent commit (@-): wrxxkrrr 9a68a5b7 main | refactor: move chores-01..03 into notes/chores/
-/home/wink/data/prgs/rust/iiac-perf/AGENTS.md
+/home/<USER>/data/prgs/rust/iiac-perf/AGENTS.md
 ```
 
 > TOOL
@@ -1204,7 +1204,7 @@ tool_use Read
 id: toolu_01E1SDMt5RE9uqtcjLpHP1g8
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/versioning.md"
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/versioning.md"
 }
 ```
 
@@ -1262,7 +1262,7 @@ tool_use Bash
 id: toolu_01LRNvSiAqNt9s5diMH3kjTq
 ```json
 {
-  "command": "grep -n '^version' Cargo.toml; grep -n '^version' /home/wink/data/prgs/rust/iiac-perf/Cargo.toml; head -50 /home/wink/data/prgs/rust/iiac-perf/AGENTS.md",
+  "command": "grep -n '^version' Cargo.toml; grep -n '^version' /home/<USER>/data/prgs/rust/iiac-perf/Cargo.toml; head -50 /home/<USER>/data/prgs/rust/iiac-perf/AGENTS.md",
   "description": "Check versions and iiac-perf AGENTS.md intro"
 }
 ```
@@ -1578,7 +1578,7 @@ tool_use Bash
 id: toolu_01AVvCkHuiEnfXvXtNdGBsaE
 ```json
 {
-  "command": "sed -n 1,60p /home/wink/data/prgs/rust/iiac-perf/src/benches/mod.rs; sed -n 1,40p /home/wink/data/prgs/rust/iiac-perf/src/ticks.rs",
+  "command": "sed -n 1,60p /home/<USER>/data/prgs/rust/iiac-perf/src/benches/mod.rs; sed -n 1,40p /home/<USER>/data/prgs/rust/iiac-perf/src/ticks.rs",
   "description": "Read registry file and ticks API"
 }
 ```
@@ -1652,7 +1652,7 @@ tool_use Write
 id: toolu_01XnA9WAVFN86fAvqpRwNjB8
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/iiac-perf/src/benches/tp_zcr_with_2t.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/iiac-perf/src/benches/tp_zcr_with_2t.rs",
   "content": "//! TProbe-decomposed variant of [`zcr_with_2t`][super::zcr_with_2t]:\n//! the same SPSC round-trip with each of the four protocol phases\n//! measured by its own [`TProbe`].\n//!\n//! Phases (main thread: `send req` / `recv resp`; worker: `recv\n//! req` / `send resp`) bracket the endpoint call with two\n//! [`crate::ticks::read_ticks`] reads, so each histogram isolates\n//! one side of the handoff:\n//!\n//! - `send` phases capture the producer's reserve + fill + commit\n//!   — including any stall acquiring peer-written cache lines.\n//! - `recv` phases capture the consumer's spin wait + read +\n//!   release, so they absorb the in-flight half-trip (the worker's\n//!   `recv req` also absorbs main's inter-iteration framing).\n//!\n//! Run back-to-back with [`tp_zcr_mpsc_2t`][super::tp_zcr_mpsc_2t]\n//! to localize the SPSC-vs-MPSC 2t gap (zc-ring-x1 Todo: explore\n//! why zcr-mpsc-2t measures faster than zcr-with-2t).\n//!\n//! Per-phase probing adds ~4 tick-read pairs + histogram records\n//! per round trip, so the harness-level mean is inflated vs the\n//! unprobed bench; the phase histograms themselves stay tight\n//! (each pair brackets only its endpoint call).\n\nuse std::hint::black_box;\nuse std::thread;\n\nuse zc_ring_x1::{Consumer, Producer};\n\nuse crate::benches::zcr_common::{Msg, STOP, leak_ring};\nuse crate::harness::{self, Bench, RunCfg};\nuse crate::pin;\nuse crate::ticks;\nuse crate::tprobe::TProbe;\n\n/// Registry name used on the CLI.\npub const NAME: &str = \"tp-zcr-with-2t\";\n\n/// Probed variant of `zcr-with-2t`. Main-thread probes live in\n/// the struct; the worker's travel back on […]
 
 > TOOL
@@ -1697,7 +1697,7 @@ tool_use Bash
 id: toolu_01WHkaXvWfZZVsCtmW9S5BXJ
 ```json
 {
-  "command": "grep -n '\\[lib\\]\\|\\[\\[bin\\]\\]\\|^name\\|^\\[' /home/wink/data/prgs/rust/iiac-perf/Cargo.toml; ls /home/wink/data/prgs/rust/iiac-perf/src/lib.rs 2>&1",
+  "command": "grep -n '\\[lib\\]\\|\\[\\[bin\\]\\]\\|^name\\|^\\[' /home/<USER>/data/prgs/rust/iiac-perf/Cargo.toml; ls /home/<USER>/data/prgs/rust/iiac-perf/src/lib.rs 2>&1",
   "description": "Check if iiac-perf has a lib target"
 }
 ```
@@ -1711,7 +1711,7 @@ Exit code 2
 1:[package]
 2:name = "iiac-perf"
 7:[dependencies]
-ls: cannot access '/home/wink/data/prgs/rust/iiac-perf/src/lib.rs': No such file or directory
+ls: cannot access '/home/<USER>/data/prgs/rust/iiac-perf/src/lib.rs': No such file or directory
 ```
 
 > TOOL
@@ -1778,7 +1778,7 @@ zcr-with-2t: zc-ring-x1 reserve_slot_with round-trip (2 threads, spin) [duration
        567,959,385      ls_refills_from_sys.ls_mabresp_lcl_cache:u                                      
            278,435      ls_refills_from_sys.ls_mabresp_lcl_l2:u                                      
             33,028      ls_refills_from_sys.ls_mabresp_lcl_dram:u
-Shell cwd was reset to /home/wink/data/prgs/rust/zc-ring-x1
+Shell cwd was reset to /home/<USER>/data/prgs/rust/zc-ring-x1
 ```
 
 > AGENT
@@ -1816,7 +1816,7 @@ tool_use Bash
 id: toolu_014xmdGoDLcAugERpiPpyRNZ
 ```json
 {
-  "command": "wc -l /home/wink/data/prgs/rust/iiac-perf/src/ticks.rs /home/wink/data/prgs/rust/iiac-perf/src/ticks/*.rs /home/wink/data/prgs/rust/iiac-perf/src/band_table.rs /home/wink/data/prgs/rust/iiac-perf/src/bands.rs /home/wink/data/prgs/rust/iiac-perf/src/tprobe.rs; grep -n \"use crate\\|^use \" /home/wink/data/prgs/rust/iiac-perf/src/band_table.rs /home/wink/data/prgs/rust/iiac-perf/src/ticks/x86_64.rs",
+  "command": "wc -l /home/<USER>/data/prgs/rust/iiac-perf/src/ticks.rs /home/<USER>/data/prgs/rust/iiac-perf/src/ticks/*.rs /home/<USER>/data/prgs/rust/iiac-perf/src/band_table.rs /home/<USER>/data/prgs/rust/iiac-perf/src/bands.rs /home/<USER>/data/prgs/rust/iiac-perf/src/tprobe.rs; grep -n \"use crate\\|^use \" /home/<USER>/data/prgs/rust/iiac-perf/src/band_table.rs /home/<USER>/data/prgs/rust/iiac-perf/src/ticks/x86_64.rs",
   "description": "Size tprobe's dependency closure"
 }
 ```
@@ -1826,18 +1826,18 @@ id: toolu_014xmdGoDLcAugERpiPpyRNZ
 tool_result
 id: toolu_014xmdGoDLcAugERpiPpyRNZ
 ```
-   54 /home/wink/data/prgs/rust/iiac-perf/src/ticks.rs
-   65 /home/wink/data/prgs/rust/iiac-perf/src/ticks/aarch64.rs
-   74 /home/wink/data/prgs/rust/iiac-perf/src/ticks/x86_64.rs
-  191 /home/wink/data/prgs/rust/iiac-perf/src/band_table.rs
-  197 /home/wink/data/prgs/rust/iiac-perf/src/bands.rs
-   64 /home/wink/data/prgs/rust/iiac-perf/src/tprobe.rs
+   54 /home/<USER>/data/prgs/rust/iiac-perf/src/ticks.rs
+   65 /home/<USER>/data/prgs/rust/iiac-perf/src/ticks/aarch64.rs
+   74 /home/<USER>/data/prgs/rust/iiac-perf/src/ticks/x86_64.rs
+  191 /home/<USER>/data/prgs/rust/iiac-perf/src/band_table.rs
+  197 /home/<USER>/data/prgs/rust/iiac-perf/src/bands.rs
+   64 /home/<USER>/data/prgs/rust/iiac-perf/src/tprobe.rs
   645 total
-/home/wink/data/prgs/rust/iiac-perf/src/ticks/x86_64.rs:5:use std::sync::OnceLock;
-/home/wink/data/prgs/rust/iiac-perf/src/ticks/x86_64.rs:6:use std::time::Duration;
-/home/wink/data/prgs/rust/iiac-perf/src/band_table.rs:14:use hdrhistogram::Histogram;
-/home/wink/data/prgs/rust/iiac-perf/src/band_table.rs:16:use crate::harness::{fmt_commas, fmt_commas_f64};
-/home/wink/data/prgs/rust/iiac-perf/src/band_table.rs:17:use crate::ticks;
+/home/<USER>/data/prgs/rust/iiac-perf/src/ticks/x86_64.rs:5:use std::sync::OnceLock;
+/home/<USER>/data/prgs/rust/iiac-perf/src/ticks/x86_64.rs:6:use std::time::Duration;
+/home/<USER>/data/prgs/rust/iiac-perf/src/band_table.rs:14:use hdrhistogram::Histogram;
+/home/<USER>/data/prgs/rust/iiac-perf/src/band_table.rs:16:use crate::harness::{fmt_commas, fmt_commas_f64};
+/home/<USER>/data/prgs/rust/iiac-perf/src/band_table.rs:17:use crate::ticks;
 ```
 
 > AGENT
@@ -2020,7 +2020,7 @@ id: toolu_01PJQccXgM2SwvGhd6K8Rgqr
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/Cargo.toml",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/Cargo.toml",
   "old_string": "version = \"0.12.0\"",
   "new_string": "version = \"0.13.0-0\""
 }
@@ -2094,7 +2094,7 @@ id: toolu_01TMPyMxBB2WerEPnV5bLBcU
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/Cargo.toml",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/Cargo.toml",
   "old_string": "version = \"0.12.0\"",
   "new_string": "version = \"0.13.0-0\""
 }
@@ -2105,7 +2105,7 @@ id: toolu_01TMPyMxBB2WerEPnV5bLBcU
 tool_result
 id: toolu_01TMPyMxBB2WerEPnV5bLBcU
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/Cargo.toml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/Cargo.toml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2115,7 +2115,7 @@ id: toolu_0126iH87Xk4YvJysS2oKuAZX
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md",
   "old_string": "## In Progress\n\n_No cycle currently in progress._",
   "new_string": "## In Progress\n\n**perf: explore spsc vs mpsc 2t gap**\n\nAt 1p/1c cross-thread the MPSC ring measures ~26% faster\nthan SPSC (73.9 vs 100.1 ns adjusted mean at 300s) [[20]].\nWe think SPSC bounces two index cache lines per handoff\n(each side polls the line the other writes) while MPSC's\nonly shared hot word is the slot seq. Verify from this repo\n— cross-core cache-fill counters plus a phase-probed round\ntrip — so the measurement is reproducible here. Details:\n[chores section](chores/chores-02.md#perf-explore-spsc-vs-mpsc-2t-gap).\n\n- 0.13.0-0 docs: 2t gap exploration plan (current)\n- 0.13.0-1 feat: 2t gap tprobe dev crate\n- 0.13.0-2 feat: 2t gap probed roundtrip example\n- 0.13.0-3 docs: 2t gap measurements + findings\n- 0.13.0 perf: explore spsc vs mpsc 2t gap (close-out)"
 }
@@ -2126,7 +2126,7 @@ id: toolu_0126iH87Xk4YvJysS2oKuAZX
 tool_result
 id: toolu_0126iH87Xk4YvJysS2oKuAZX
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2136,7 +2136,7 @@ id: toolu_01586NMUgxB3hKJuASiE4SGZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md",
   "old_string": "3. Explore why zcr-mpsc-2t measures faster than zcr-with-2t\n   (73.9 vs 100.1 ns adjusted mean at 300s, 1p/1c) and\n   whether the mechanism can improve SPSC [[20]]:\n   - we think SPSC bounces two index lines per handoff\n     (each side polls the line the other writes) while\n     MPSC's only shared hot word is the slot seq;\n   - verify with perf cache-transfer counters and/or the\n     padded-seq variant (a design open question);\n   - if confirmed, a seam-word variant might feed back\n     into the SPSC protocol.\n4. Batch alloc/free demo:",
   "new_string": "3. Batch alloc/free demo:"
 }
@@ -2147,7 +2147,7 @@ id: toolu_01586NMUgxB3hKJuASiE4SGZ
 tool_result
 id: toolu_01586NMUgxB3hKJuASiE4SGZ
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2186,7 +2186,7 @@ id: toolu_01Fvk4178RS1xWp8MD4azzfA
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md",
   "old_string": "# References\n\n[1]: https://github.com/winksaville/zc-ring-x1/commit/2ea448654c9a \"2ea448654c9a4b7f758e017d56161d9d731ab425\"",
   "new_string": "## perf: explore spsc vs mpsc 2t gap\n\nCommits:\n\nPicks up the Todo left by the mpsc cycle's\n[Outcome: the 2t surprise](chores-01.md#outcome-the-2t-surprise)\n[[6]]: at 1p/1c cross-thread the MPSC ring measures ~26%\nfaster than SPSC (73.9 vs 100.1 ns adjusted mean at 300s).\nWe think SPSC bounces two index cache lines per handoff\n(each side polls the line the other writes) while MPSC's\nonly shared hot word is the slot seq line. This cycle\nverifies that mechanism with measurements that live in this\nrepo, so the result is reproducible here rather than only\nin the sibling iiac-perf checkout.\n\nPlan:\n\n- **Local `tprobe/` dev crate** (`0.13.0-1`): iiac-perf is\n  binary-only, so its probes can't be imported. Copy, as\n  close to verbatim as possible, iiac-perf 0.20.0's\n  `tprobe.rs`, `tprobe2.rs`, `ticks.rs` + `ticks/`,\n  `band_table.rs`, `bands.rs`, and the two `fmt_commas`\n  helpers into a local crate (only external dep:\n  `hdrhistogram`), provenance noted in module docs.\n  - Root `Cargo.toml` gains `[workspace]` membership and a\n    path dev-dependency.\n  - A crate boundary from day one keeps future extraction\n    (or unification with iiac-perf) a file-level move, not\n    a rewrite. Verbatim-copy discipline limits drift while\n    two copies exist.\n  - `TProbe2` is copied for completeness but not used here:\n    its record […]
 
@@ -2195,7 +2195,7 @@ id: toolu_01Fvk4178RS1xWp8MD4azzfA
 tool_result
 id: toolu_01Fvk4178RS1xWp8MD4azzfA
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2205,7 +2205,7 @@ id: toolu_0125P8GJaFaienz4vztqGAbG
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md",
   "old_string": "[5]: https://github.com/winksaville/zc-ring-x1/commit/423ac89b4abb \"423ac89b4abb1c9330c30724cb9d1256cf95b510\"",
   "new_string": "[5]: https://github.com/winksaville/zc-ring-x1/commit/423ac89b4abb \"423ac89b4abb1c9330c30724cb9d1256cf95b510\"\n[6]: chores-01.md#outcome-the-2t-surprise"
 }
@@ -2216,7 +2216,7 @@ id: toolu_0125P8GJaFaienz4vztqGAbG
 tool_result
 id: toolu_0125P8GJaFaienz4vztqGAbG
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2275,7 +2275,7 @@ id: toolu_01YGwVdjd9m8p3qepZ5PP3ec
 tool_result
 id: toolu_01YGwVdjd9m8p3qepZ5PP3ec
 ```
-    Checking zc-ring-x1 v0.13.0-0 (/home/wink/data/prgs/rust/zc-ring-x1)
+    Checking zc-ring-x1 v0.13.0-0 (/home/<USER>/data/prgs/rust/zc-ring-x1)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.82s
 running 0 tests
 
@@ -2360,11 +2360,11 @@ tool_result
 id: toolu_01517x64mqdsNQnkZvTrvbKc
 ```
 push message: title="docs: 2t gap exploration plan", app_chid=roytsztptulk, claude_chid=powlqlxnttqy, claude_had_changes=true
-push commit-app: jj commit -R /home/wink/data/prgs/rust/zc-ring-x1
-push commit-claude: jj commit -R /home/wink/data/prgs/rust/zc-ring-x1/.claude
-push bookmark-set: jj bookmark set main -r @- -R /home/wink/data/prgs/rust/zc-ring-x1 / main -r @- -R /home/wink/data/prgs/rust/zc-ring-x1/.claude
-push push-app: jj git push --bookmark main -R /home/wink/data/prgs/rust/zc-ring-x1
-push finalize-claude: vc-x1 finalize --repo /home/wink/data/prgs/rust/zc-ring-x1/.claude --squash --push main --delay 10 --detach
+push commit-app: jj commit -R /home/<USER>/data/prgs/rust/zc-ring-x1
+push commit-claude: jj commit -R /home/<USER>/data/prgs/rust/zc-ring-x1/.claude
+push bookmark-set: jj bookmark set main -r @- -R /home/<USER>/data/prgs/rust/zc-ring-x1 / main -r @- -R /home/<USER>/data/prgs/rust/zc-ring-x1/.claude
+push push-app: jj git push --bookmark main -R /home/<USER>/data/prgs/rust/zc-ring-x1
+push finalize-claude: vc-x1 finalize --repo /home/<USER>/data/prgs/rust/zc-ring-x1/.claude --squash --push main --delay 10 --detach
 push: completed all stages (verified, state cleared)
 ```
 
@@ -2386,7 +2386,7 @@ tool_use Read
 id: toolu_01QfNMSVAkimpcMLwskA9xXV
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/iiac-perf/src/band_table.rs"
+  "file_path": "/home/<USER>/data/prgs/rust/iiac-perf/src/band_table.rs"
 }
 ```
 
@@ -2431,7 +2431,7 @@ tool_use Read
 id: toolu_01Bqi6mtJTJsuyrH6YYSTzzH
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/iiac-perf/src/bands.rs"
+  "file_path": "/home/<USER>/data/prgs/rust/iiac-perf/src/bands.rs"
 }
 ```
 
@@ -2471,7 +2471,7 @@ tool_use Read
 id: toolu_011bzwgrMiGf4YPhunfbWGKt
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/iiac-perf/src/ticks/x86_64.rs"
+  "file_path": "/home/<USER>/data/prgs/rust/iiac-perf/src/ticks/x86_64.rs"
 }
 ```
 
@@ -2525,7 +2525,7 @@ tool_use Read
 id: toolu_01Dijqc6JwQyKWRbShRjG4Zs
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/iiac-perf/src/ticks/aarch64.rs"
+  "file_path": "/home/<USER>/data/prgs/rust/iiac-perf/src/ticks/aarch64.rs"
 }
 ```
 
@@ -2574,7 +2574,7 @@ tool_use Bash
 id: toolu_014U9xxRFi8oWnSZMmuNLSvE
 ```json
 {
-  "command": "grep -n \"fn fmt_commas\" -A 30 /home/wink/data/prgs/rust/iiac-perf/src/harness.rs | head -60; grep -n \"hdrhistogram\\|minstant\" /home/wink/data/prgs/rust/iiac-perf/Cargo.toml",
+  "command": "grep -n \"fn fmt_commas\" -A 30 /home/<USER>/data/prgs/rust/iiac-perf/src/harness.rs | head -60; grep -n \"hdrhistogram\\|minstant\" /home/<USER>/data/prgs/rust/iiac-perf/Cargo.toml",
   "description": "Read fmt_commas helpers and dep versions"
 }
 ```
@@ -2631,7 +2631,7 @@ id: toolu_01WYc32MQcKyPcLH6Zhep99w
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md",
   "old_string": "- 0.13.0-0 docs: 2t gap exploration plan (current)\n- 0.13.0-1 feat: 2t gap tprobe dev crate",
   "new_string": "- 0.13.0-0 docs: 2t gap exploration plan (done)\n- 0.13.0-1 feat: 2t gap tprobe dev crate (current)"
 }
@@ -2642,7 +2642,7 @@ id: toolu_01WYc32MQcKyPcLH6Zhep99w
 tool_result
 id: toolu_01WYc32MQcKyPcLH6Zhep99w
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2651,7 +2651,7 @@ tool_use Bash
 id: toolu_01AXXGFJT2oZsYvdSFiXv1Gu
 ```json
 {
-  "command": "cat Cargo.toml; grep -n \"edition\\|rust-version\" /home/wink/data/prgs/rust/iiac-perf/Cargo.toml; sed -n '285,291p' /home/wink/data/prgs/rust/iiac-perf/src/harness.rs",
+  "command": "cat Cargo.toml; grep -n \"edition\\|rust-version\" /home/<USER>/data/prgs/rust/iiac-perf/Cargo.toml; sed -n '285,291p' /home/<USER>/data/prgs/rust/iiac-perf/src/harness.rs",
   "description": "Read root Cargo.toml and helper doc comments"
 }
 ```
@@ -2695,7 +2695,7 @@ id: toolu_01VQ5jpnnrjbikSu8sy4XkWi
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/Cargo.toml",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/Cargo.toml",
   "old_string": "version = \"0.13.0-0\"",
   "new_string": "version = \"0.13.0-1\""
 }
@@ -2706,7 +2706,7 @@ id: toolu_01VQ5jpnnrjbikSu8sy4XkWi
 tool_result
 id: toolu_01VQ5jpnnrjbikSu8sy4XkWi
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/Cargo.toml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/Cargo.toml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2716,7 +2716,7 @@ id: toolu_018PcfXdL8j7BT7QadUULJjj
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/Cargo.toml",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/Cargo.toml",
   "old_string": "# Demo-binary only: thread pinning for the pinned ring runs.\n[target.'cfg(target_os = \"linux\")'.dependencies]\nlibc = \"0.2\"",
   "new_string": "# Demo-binary only: thread pinning for the pinned ring runs.\n[target.'cfg(target_os = \"linux\")'.dependencies]\nlibc = \"0.2\"\n\n# The local tick-probe crate (see tprobe/), used by the\n# phase-probed examples only — not part of the library.\n[dev-dependencies]\ntprobe = { path = \"tprobe\" }\n\n[workspace]\nmembers = [\"tprobe\"]"
 }
@@ -2727,7 +2727,7 @@ id: toolu_018PcfXdL8j7BT7QadUULJjj
 tool_result
 id: toolu_018PcfXdL8j7BT7QadUULJjj
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/Cargo.toml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/Cargo.toml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2736,7 +2736,7 @@ tool_use Write
 id: toolu_01FCJsaD22EgzjksmGDqc2xC
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tprobe/Cargo.toml",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/Cargo.toml",
   "content": "# Local dev crate: tick-counter probes copied from the sibling\n# iiac-perf repo (0.20.0) so measurements are reproducible from\n# this repo alone. The crate boundary keeps a future extraction\n# (or unification with iiac-perf) a file-level move.\n[package]\nname = \"tprobe\"\nversion = \"0.1.0\"\nedition = \"2024\"\nrust-version = \"1.96\"\nlicense = \"MIT OR Apache-2.0\"\ndescription = \"Hardware tick-counter probes (TProbe/TProbe2), copied from iiac-perf 0.20.0\"\npublish = false\n\n[dependencies]\nhdrhistogram = \"7\"\nminstant = \"0.1\"\n"
 }
 ```
@@ -2746,7 +2746,7 @@ id: toolu_01FCJsaD22EgzjksmGDqc2xC
 tool_result
 id: toolu_01FCJsaD22EgzjksmGDqc2xC
 ```
-File created successfully at: /home/wink/data/prgs/rust/zc-ring-x1/tprobe/Cargo.toml (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/Cargo.toml (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2755,7 +2755,7 @@ tool_use Write
 id: toolu_01AoYB6SsxLYuqf6rpvXDjqZ
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/lib.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/lib.rs",
   "content": "//! Hardware tick-counter probes: named single-writer histograms\n//! of tick deltas ([`TProbe`]) and a scope-based sibling with a\n//! deferred-processing record buffer ([`TProbe2`]).\n//!\n//! Copied from the sibling iiac-perf repo at 0.20.0 (its\n//! `tprobe.rs`, `tprobe2.rs`, `ticks.rs` + `ticks/`,\n//! `band_table.rs`, and the two `fmt_commas` helpers from its\n//! `harness.rs`) so measurements run from this repo alone; kept\n//! as close to verbatim as possible so a future extraction or\n//! unification is a file-level move. Local deltas:\n//!\n//! - `band_table.rs` takes the fmt helpers from [`fmt`] (a new\n//!   module holding the two `harness.rs` functions).\n//! - `ticks` error/text mentions of \"iiac-perf\" renamed to\n//!   \"tprobe\".\n//! - Cross-module doc links into iiac-perf-only items (its\n//!   `probe.rs`, bench modules, `ideas.md`) became plain text.\n//! - `// OK: …` annotations added on `unwrap*` calls per this\n//!   repo's convention.\n\npub mod band_table;\npub mod fmt;\npub mod ticks;\npub mod tprobe;\npub mod tprobe2;\n\npub use tprobe::TProbe;\npub use tprobe2::{TProbe2, TProbe2RecId};\n"
 }
 ```
@@ -2765,7 +2765,7 @@ id: toolu_01AoYB6SsxLYuqf6rpvXDjqZ
 tool_result
 id: toolu_01AoYB6SsxLYuqf6rpvXDjqZ
 ```
-File created successfully at: /home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/lib.rs (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/lib.rs (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2774,7 +2774,7 @@ tool_use Write
 id: toolu_01SJ3LLuzJ8qeofFFKvtS8Wn
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/fmt.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/fmt.rs",
   "content": "//! Number formatting helpers for the band-table renderer,\n//! copied from iiac-perf 0.20.0 `harness.rs`.\n\n/// Format an integer with thousands separators, e.g.\n/// `12345` → `\"12,345\"`.\npub fn fmt_commas(n: u64) -> String {\n    let s = n.to_string();\n    let mut result = String::new();\n    for (i, c) in s.chars().rev().enumerate() {\n        if i > 0 && i % 3 == 0 {\n            result.push(',');\n        }\n        result.push(c);\n    }\n    result.chars().rev().collect()\n}\n\n/// Format a float with `decimals` fractional digits and thousands\n/// separators on the integer part.\npub fn fmt_commas_f64(n: f64, decimals: usize) -> String {\n    let s = format!(\"{n:.decimals$}\");\n    let (sign, body) = match s.strip_prefix('-') {\n        Some(rest) => (\"-\", rest),\n        None => (\"\", s.as_str()),\n    };\n    let (int_part, frac_part) = match body.find('.') {\n        Some(i) => (&body[..i], &body[i..]),\n        None => (body, \"\"),\n    };\n    let int_num: u64 = int_part.parse().unwrap_or(0); // OK: int part of a formatted float; overflow beyond u64 formats as 0\n    format!(\"{sign}{}{frac_part}\", fmt_commas(int_num))\n}\n"
 }
 ```
@@ -2784,7 +2784,7 @@ id: toolu_01SJ3LLuzJ8qeofFFKvtS8Wn
 tool_result
 id: toolu_01SJ3LLuzJ8qeofFFKvtS8Wn
 ```
-File created successfully at: /home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/fmt.rs (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/fmt.rs (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2793,7 +2793,7 @@ tool_use Write
 id: toolu_01BxrdVMZk5bbrYCtC93HGxD
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/ticks.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/ticks.rs",
   "content": "//! Hardware tick counter abstraction: thin wrapper over the\n//! target architecture's fixed-rate monotonic counter.\n//!\n//! Probes call three functions; the per-arch impl lives in a\n//! child module gated by `#[cfg(target_arch = ...)]`:\n//!\n//! - [`read_ticks`] — current counter value.\n//! - [`ticks_per_ns`] — calibrated conversion ratio.\n//! - [`require_ok`] — exit the process if the counter isn't\n//!   usable for probe measurements.\n//!\n//! `x86_64` (`rdtsc`) and `aarch64` (`CNTVCT_EL0`) are\n//! implemented today. RISC-V (`time` CSR) has an architecturally\n//! invariant counter by ISA spec, so its `require_ok` will be\n//! (nearly) a no-op once that impl lands.\n\n#[cfg(target_arch = \"x86_64\")]\nmod x86_64;\n\n#[cfg(target_arch = \"x86_64\")]\nuse x86_64 as imp;\n\n#[cfg(target_arch = \"aarch64\")]\nmod aarch64;\n\n#[cfg(target_arch = \"aarch64\")]\nuse aarch64 as imp;\n\n#[cfg(not(any(target_arch = \"x86_64\", target_arch = \"aarch64\")))]\ncompile_error!(\n    \"tprobe currently only supports target_arch = \\\"x86_64\\\" \\\n     and \\\"aarch64\\\". Add a per-arch impl module (RISC-V: time CSR) \\\n     and wire it into src/ticks.rs.\"\n);\n\n/// Read the current tick counter. Monotonic and fixed-rate.\n#[inline(always)]\npub fn read_ticks() -> u64 {\n    imp::read_ticks()\n}\n\n/// Calibrated ticks-per-nanosecond conversion ratio. First call\n/// pays the calibration cost; later calls are a cached load.\npub fn ticks_per_ns() -> f64 {\n    imp::ticks_per_ns()\n}\n\n/// Exit the process (code 1, message on stderr) if the tick\n/// counter isn't usable for probe measurements.\npub fn require_ok() {\n    imp::require_ok()\n}\n"
 } […]
 
@@ -2802,7 +2802,7 @@ id: toolu_01BxrdVMZk5bbrYCtC93HGxD
 tool_result
 id: toolu_01BxrdVMZk5bbrYCtC93HGxD
 ```
-File created successfully at: /home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/ticks.rs (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/ticks.rs (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2811,7 +2811,7 @@ tool_use Bash
 id: toolu_01EDmdP5ZwxiPVUSQtzBqgS2
 ```json
 {
-  "command": "sed -n 40,54p /home/wink/data/prgs/rust/iiac-perf/src/ticks.rs",
+  "command": "sed -n 40,54p /home/<USER>/data/prgs/rust/iiac-perf/src/ticks.rs",
   "description": "Read tail of original ticks.rs"
 }
 ```
@@ -2845,7 +2845,7 @@ id: toolu_01HpykeCFY4P57RZC3uMr5iv
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/ticks.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/ticks.rs",
   "old_string": "/// Calibrated ticks-per-nanosecond conversion ratio. First call\n/// pays the calibration cost; later calls are a cached load.\npub fn ticks_per_ns() -> f64 {\n    imp::ticks_per_ns()\n}\n\n/// Exit the process (code 1, message on stderr) if the tick\n/// counter isn't usable for probe measurements.\npub fn require_ok() {\n    imp::require_ok()\n}",
   "new_string": "/// Conversion ratio: counter ticks per nanosecond. Calibrated\n/// (x86_64) or read from hardware (aarch64, `CNTFRQ_EL0`).\n/// Cached — the first call does the work.\npub fn ticks_per_ns() -> f64 {\n    imp::ticks_per_ns()\n}\n\n/// Verify the tick counter is usable for probe measurements;\n/// exit the process (code 1) with a diagnostic if not. The\n/// checks performed depend on the target architecture.\npub fn require_ok() {\n    imp::require_ok();\n}"
 }
@@ -2856,7 +2856,7 @@ id: toolu_01HpykeCFY4P57RZC3uMr5iv
 tool_result
 id: toolu_01HpykeCFY4P57RZC3uMr5iv
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/ticks.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/ticks.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2866,7 +2866,7 @@ id: toolu_011expfZZBv8mQLpDdXf1E8E
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/lib.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/lib.rs",
   "old_string": "//! - `// OK: …` annotations added on `unwrap*` calls per this\n//!   repo's convention.",
   "new_string": "//! - `// OK: …` annotations on `unwrap*` calls and `///` docs\n//!   on previously-undocumented functions added per this repo's\n//!   conventions."
 }
@@ -2877,7 +2877,7 @@ id: toolu_011expfZZBv8mQLpDdXf1E8E
 tool_result
 id: toolu_011expfZZBv8mQLpDdXf1E8E
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/lib.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/lib.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2886,7 +2886,7 @@ tool_use Write
 id: toolu_01USbVSrss4vH9NbgRnB1hbg
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/ticks/x86_64.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/ticks/x86_64.rs",
   "content": "//! x86_64 impl of the tick-counter abstraction: `rdtsc` for\n//! reads, CPUID-based invariant-TSC detection, and a 10 ms\n//! spin-loop calibration for ticks-per-nanosecond.\n\nuse std::sync::OnceLock;\nuse std::time::Duration;\n\n/// Read the TSC via `rdtsc`.\n#[inline(always)]\npub fn read_ticks() -> u64 {\n    // Safe on any x86_64 CPU: TSC has been present since the\n    // original Pentium.\n    unsafe { core::arch::x86_64::_rdtsc() }\n}\n\nstatic TICKS_PER_NS: OnceLock<f64> = OnceLock::new();\n\n/// Cached calibration ratio; the first call runs [`calibrate`].\npub fn ticks_per_ns() -> f64 {\n    *TICKS_PER_NS.get_or_init(calibrate)\n}\n\n/// Spin for ~10 ms while reading `minstant::Instant` elapsed ns\n/// and raw `rdtsc` ticks at each end. `minstant` computes its\n/// own nanos-per-cycle internally but doesn't expose it, so we\n/// rederive the ratio from the two independent measurements.\nfn calibrate() -> f64 {\n    let start_instant = minstant::Instant::now();\n    let start_tsc = read_ticks();\n    let target = Duration::from_millis(10);\n    loop {\n        let elapsed = start_instant.elapsed();\n        if elapsed >= target {\n            let end_tsc = read_ticks();\n            let dtk = end_tsc.wrapping_sub(start_tsc) as f64;\n            let dns = elapsed.as_nanos() as f64;\n            return dtk / dns;\n        }\n        core::hint::spin_loop();\n    }\n}\n\n/// Exit unless the TSC is invariant and kernel-accepted.\npub fn require_ok() {\n    if !has_invariant_tsc() {\n        eprintln!(\n            \"error: invariant TSC not supported by this CPU \\\n             (CPUID.80000007h:EDX[bit 8] = 0). tprobe probes \\\n             require a fixed-rate, non-stopping […]
 
 > TOOL
@@ -2894,7 +2894,7 @@ id: toolu_01USbVSrss4vH9NbgRnB1hbg
 tool_result
 id: toolu_01USbVSrss4vH9NbgRnB1hbg
 ```
-File created successfully at: /home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/ticks/x86_64.rs (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/ticks/x86_64.rs (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2903,7 +2903,7 @@ tool_use Write
 id: toolu_01UhMW3wvec1QC22nUDAZMpA
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/ticks/aarch64.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/ticks/aarch64.rs",
   "content": "//! AArch64 impl of the tick-counter abstraction: the Generic\n//! Timer's virtual count (`CNTVCT_EL0`) for reads and its\n//! self-reported frequency (`CNTFRQ_EL0`) for the conversion\n//! ratio. Unlike x86, no calibration loop and no feature probe\n//! are needed: the Generic Timer is a mandatory architectural\n//! feature, invariant by spec (fixed frequency, keeps counting\n//! across idle/power states), and its frequency is readable\n//! directly from a register.\n\nuse std::sync::OnceLock;\n\n/// Read the Generic Timer virtual count via `CNTVCT_EL0`.\n#[inline(always)]\npub fn read_ticks() -> u64 {\n    // Plain `mrs` without an `isb` barrier, matching the plain\n    // (unfenced) `rdtsc` in the x86_64 impl. The read can be\n    // speculated a few instructions early/late, but at Generic\n    // Timer rates (54 MHz on the BCM2712 — ~18.5 ns per tick)\n    // that blur is well under one tick.\n    let ticks: u64;\n    unsafe {\n        core::arch::asm!(\n            \"mrs {t}, cntvct_el0\",\n            t = out(reg) ticks,\n            options(nomem, nostack, preserves_flags),\n        );\n    }\n    ticks\n}\n\nstatic TICKS_PER_NS: OnceLock<f64> = OnceLock::new();\n\n/// Conversion ratio from the timer's self-reported frequency.\npub fn ticks_per_ns() -> f64 {\n    *TICKS_PER_NS.get_or_init(|| cntfrq_hz() as f64 / 1e9)\n}\n\n/// `CNTFRQ_EL0` — Generic Timer frequency in Hz, programmed by\n/// firmware at boot (54 MHz on the BCM2712 / Raspberry Pi 5).\n/// The register […]
 
 > TOOL
@@ -2911,7 +2911,7 @@ id: toolu_01UhMW3wvec1QC22nUDAZMpA
 tool_result
 id: toolu_01UhMW3wvec1QC22nUDAZMpA
 ```
-File created successfully at: /home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/ticks/aarch64.rs (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/ticks/aarch64.rs (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2920,7 +2920,7 @@ tool_use Write
 id: toolu_01NU3m5mqXDd2yQyPjN4ZZb5
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/band_table.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/band_table.rs",
   "content": "//! Shared band-table renderer for tick-valued histograms.\n//!\n//! Both `TProbe` (fast path, direct-histogram) and `TProbe2`\n//! (scope API, records → drain) store hardware tick deltas and\n//! want the same band-table output shape — min/p1/…/p99/max\n//! rows with first/last/range/count/mean columns, plus summary\n//! lines for mean, stdev, mean min-p99, stdev min-p99. This\n//! module provides a single implementation both can call into.\n//!\n//! Display unit is chosen by `as_ticks`: `false` converts stored\n//! tick values to nanoseconds via [`crate::ticks::ticks_per_ns`];\n//! `true` shows raw ticks.\n\nuse hdrhistogram::Histogram;\n\nuse crate::fmt::{fmt_commas, fmt_commas_f64};\nuse crate::ticks;\n\nconst BOUNDARY_PCTS: &[f64] = &[\n    0.0, 0.01, 0.10, 0.20, 0.30, 0.40, 0.50, 0.60, 0.70, 0.80, 0.90, 0.99, 1.0,\n];\nconst BOUNDARY_NAMES: &[&str] = &[\n    \"min\", \"p1\", \"p10\", \"p20\", \"p30\", \"p40\", \"p50\", \"p60\", \"p70\", \"p80\", \"p90\", \"p99\", \"max\",\n];\n\n/// Render a band-table report for `hist`, interpreting stored\n/// values as hardware ticks. `kind` is the header label\n/// (`\"tprobe\"`, `\"tprobe2\"`, …) and `name` is the probe's name.\n/// `as_ticks=false` converts to ns; `true` keeps raw ticks.\npub(crate) fn render(kind: &str, name: &str, hist: &Histogram<u64>, as_ticks: bool) {\n    let sample_count = hist.len();\n    println!(\"  {kind}: {name} [count={}]\", fmt_commas(sample_count));\n    if sample_count == 0 {\n        println!();\n        return;\n    }\n\n    let unit = if as_ticks { \"tk\" } else { \"ns\" };\n    let tpn = ticks::ticks_per_ns();\n    let […]
 
 > TOOL
@@ -2928,7 +2928,7 @@ id: toolu_01NU3m5mqXDd2yQyPjN4ZZb5
 tool_result
 id: toolu_01NU3m5mqXDd2yQyPjN4ZZb5
 ```
-File created successfully at: /home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/band_table.rs (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/band_table.rs (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2937,7 +2937,7 @@ tool_use Write
 id: toolu_01Q58uLhBo1LtKMtKTgRayRU
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe.rs",
   "content": "//! Free-form measurement probe: a named, single-writer histogram\n//! of hardware tick-counter deltas.\n//!\n//! Same shape as iiac-perf's ns-valued `Probe`, but the caller\n//! records tick deltas (`ticks::read_ticks() − ticks::read_ticks()`)\n//! rather than nanoseconds. Skipping the tick→ns conversion at\n//! record time trims a mul-shift from the hot path; conversion\n//! to nanoseconds, if desired, is deferred to the report phase\n//! using [`crate::ticks::ticks_per_ns`].\n//!\n//! For a scope-based recording API (`start` / `end` with a\n//! deferred-processing record buffer) see [`crate::tprobe2`].\n//! The two primitives are kept separate because the scope API's\n//! buffer-per-sample model trades hot-path throughput for\n//! flexibility, so mixing the paths on one type forced awkward\n//! trade-offs.\n\nuse hdrhistogram::Histogram;\n\nuse crate::band_table;\nuse crate::ticks;\n\n/// A named, single-writer histogram of hardware tick-counter\n/// deltas. Not `Sync`; cross-thread *sharing* is out of scope.\n/// `Send` so probes can be moved between threads (e.g. returned\n/// via a `JoinHandle<TProbe>` on shutdown).\npub struct TProbe {\n    name: String,\n    hist: Histogram<u64>,\n}\n\nimpl TProbe {\n    /// Create an empty probe. Histogram upper bound is 1e12\n    /// ticks (~250 s at 4 GHz, ~100 s at 10 GHz), 3 significant\n    /// figures.\n    ///\n    /// Exits the process (code 1) if the hardware tick counter\n    /// isn't usable — see [`crate::ticks::require_ok`].\n    pub fn new(name: &str) -> […]
 
 > TOOL
@@ -2945,7 +2945,7 @@ id: toolu_01Q58uLhBo1LtKMtKTgRayRU
 tool_result
 id: toolu_01Q58uLhBo1LtKMtKTgRayRU
 ```
-File created successfully at: /home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe.rs (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe.rs (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2954,7 +2954,7 @@ tool_use Write
 id: toolu_013Hg3gqFVyc4APYkTrRtUMa
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe2.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe2.rs",
   "content": "//! Scope-based measurement probe: a named, single-writer\n//! histogram plus a record buffer, populated via `start` /\n//! `end` rather than `record(ticks)`.\n//!\n//! `start(site_id)` reads the hardware tick counter and returns\n//! an opaque [`TProbe2RecId`] carrying `(site_id, start_tsc)`;\n//! `end(id)` reads the tick counter again and appends a complete\n//! `(site_id, start_tsc, end_tsc)` record to the probe's\n//! internal buffer. No delta math, histogram ingestion, or\n//! tick→ns conversion happens on the hot path — all of that is\n//! deferred to [`TProbe2::report`], which drains pending records\n//! into the histogram before rendering.\n//!\n//! This primitive preserves record-order information across\n//! interleaved scopes and sites (non-stack nesting is supported\n//! by construction; see iiac-perf's ideas.md — Tprobe, Option B)\n//! and gives future evolution space for per-site grouping,\n//! bounded buffers, background drain threads, and long-term\n//! trace retention.\n//!\n//! The trade-off vs. [`crate::tprobe::TProbe`]: a growing\n//! `Vec<Record>` in the hot path adds cache pressure and\n//! reallocation cost in long, high-rate runs. For high-rate\n//! single-histogram measurement prefer `TProbe`. Run iiac-perf's\n//! `tp-pc` and `tp2-pc` benches back-to-back to see the hot-path\n//! cost of the scope API on a matched workload.\n\nuse hdrhistogram::Histogram;\n\nuse crate::band_table;\nuse crate::ticks;\n\n/// Opaque handle returned by [`TProbe2::start`], consumed by\n/// [`TProbe2::end`]. Carries the caller-supplied `site_id` and\n/// the start-time tick reading; no […]
 
 > TOOL
@@ -2962,7 +2962,7 @@ id: toolu_013Hg3gqFVyc4APYkTrRtUMa
 tool_result
 id: toolu_013Hg3gqFVyc4APYkTrRtUMa
 ```
-File created successfully at: /home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe2.rs (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe2.rs (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2981,8 +2981,8 @@ id: toolu_01Q7jprwMTdB2BZd1BXZiqbm
 tool_result
 id: toolu_01Q7jprwMTdB2BZd1BXZiqbm
 ```
-    Checking tprobe v0.1.0 (/home/wink/data/prgs/rust/zc-ring-x1/tprobe)
-    Checking zc-ring-x1 v0.13.0-1 (/home/wink/data/prgs/rust/zc-ring-x1)
+    Checking tprobe v0.1.0 (/home/<USER>/data/prgs/rust/zc-ring-x1/tprobe)
+    Checking zc-ring-x1 v0.13.0-1 (/home/<USER>/data/prgs/rust/zc-ring-x1)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.63s
 running 4 tests
 test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
@@ -3003,7 +3003,7 @@ id: toolu_01DLQaW4DXmtKSTieja9afPh
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md",
   "old_string": "- 0.13.0-1 feat: 2t gap tprobe dev crate (current)",
   "new_string": "- 0.13.0-1 feat: 2t gap tprobe dev crate (done)"
 }
@@ -3014,7 +3014,7 @@ id: toolu_01DLQaW4DXmtKSTieja9afPh
 tool_result
 id: toolu_01DLQaW4DXmtKSTieja9afPh
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3024,7 +3024,7 @@ id: toolu_01WtyzPUn65Lq3QbzuU9sZnb
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md",
   "old_string": "  binary-only, so its probes can't be imported. Copy, as\n  close to verbatim as possible, iiac-perf 0.20.0's\n  `tprobe.rs`, `tprobe2.rs`, `ticks.rs` + `ticks/`,\n  `band_table.rs`, `bands.rs`, and the two `fmt_commas`\n  helpers into a local crate (only external dep:\n  `hdrhistogram`), provenance noted in module docs.",
   "new_string": "  binary-only, so its probes can't be imported. Copy, as\n  close to verbatim as possible, iiac-perf 0.20.0's\n  `tprobe.rs`, `tprobe2.rs`, `ticks.rs` + `ticks/`,\n  `band_table.rs`, and the two `fmt_commas` helpers into a\n  local crate (external deps: `hdrhistogram`, plus\n  `minstant` for the x86_64 tick calibration; `bands.rs`\n  turned out not to be in the closure — `band_table.rs`\n  carries its own ladder — and would have dragged in\n  `clap`), provenance noted in module docs."
 }
@@ -3035,7 +3035,7 @@ id: toolu_01WtyzPUn65Lq3QbzuU9sZnb
 tool_result
 id: toolu_01WtyzPUn65Lq3QbzuU9sZnb
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > DEVELOPER
@@ -3124,7 +3124,7 @@ tool_use Bash
 id: toolu_01G2FwsV645EXEZEPpRkqzUi
 ```json
 {
-  "command": "cd /home/wink/data/prgs/rust/zc-ring-x1 && grep -rn \"tprobe2\\|TProbe2\" tprobe/src/",
+  "command": "cd /home/<USER>/data/prgs/rust/zc-ring-x1 && grep -rn \"tprobe2\\|TProbe2\" tprobe/src/",
   "description": "Find remaining tprobe2 mentions from repo root"
 }
 ```
@@ -3148,7 +3148,7 @@ id: toolu_01UfDW9jx687w1U36j8rLfBF
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe_span.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe_span.rs",
   "old_string": "        band_table::render(\"tprobe2\", &self.name, &self.hist, as_ticks);",
   "new_string": "        band_table::render(\"tprobe-span\", &self.name, &self.hist, as_ticks);"
 }
@@ -3169,7 +3169,7 @@ id: toolu_014cA6Wn5gGK1aUuF6SCWAkd
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/lib.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/lib.rs",
   "old_string": "pub mod tprobe2;\n\npub use tprobe::TProbe;\npub use tprobe2::{TProbeSpan, TProbeSpanId};",
   "new_string": "pub mod tprobe_span;\n\npub use tprobe::TProbe;\npub use tprobe_span::{TProbeSpan, TProbeSpanId};"
 }
@@ -3180,7 +3180,7 @@ id: toolu_014cA6Wn5gGK1aUuF6SCWAkd
 tool_result
 id: toolu_014cA6Wn5gGK1aUuF6SCWAkd
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/lib.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/lib.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3190,7 +3190,7 @@ id: toolu_01SPKE9CDHpvjvkHvPc41FzN
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/band_table.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/band_table.rs",
   "old_string": "/// (`\"tprobe\"`, `\"tprobe2\"`, …) and `name` is the probe's name.",
   "new_string": "/// (`\"tprobe\"`, `\"tprobe-span\"`, …) and `name` is the probe's\n/// name."
 }
@@ -3201,7 +3201,7 @@ id: toolu_01SPKE9CDHpvjvkHvPc41FzN
 tool_result
 id: toolu_01SPKE9CDHpvjvkHvPc41FzN
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/band_table.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/band_table.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3229,7 +3229,7 @@ tool_use Read
 id: toolu_01QHtSe4WYXEJ6FmeWSW98LX
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe_span.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe_span.rs",
   "offset": 1,
   "limit": 40
 }
@@ -3272,7 +3272,7 @@ id: toolu_01KUoecb5DiihvvJdtGCwrTf
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe_span.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe_span.rs",
   "old_string": "        band_table::render(\"tprobe2\", &self.name, &self.hist, as_ticks);",
   "new_string": "        band_table::render(\"tprobe-span\", &self.name, &self.hist, as_ticks);"
 }
@@ -3283,7 +3283,7 @@ id: toolu_01KUoecb5DiihvvJdtGCwrTf
 tool_result
 id: toolu_01KUoecb5DiihvvJdtGCwrTf
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe_span.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe_span.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3293,7 +3293,7 @@ id: toolu_019VH4jT72L93Y4u1bzHSyL2
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/lib.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/lib.rs",
   "old_string": "//! - `// OK: …` annotations on `unwrap*` calls and `///` docs\n//!   on previously-undocumented functions added per this repo's\n//!   conventions.",
   "new_string": "//! - `// OK: …` annotations on `unwrap*` calls and `///` docs\n//!   on previously-undocumented functions added per this repo's\n//!   conventions.\n//! - `TProbe2` renamed to [`TProbeSpan`] (`TProbe2RecId` →\n//!   [`TProbeSpanId`], `tprobe2.rs` → `tprobe_span.rs`, report\n//!   kind label `\"tprobe2\"` → `\"tprobe-span\"`): the `2` named\n//!   invention order, not semantics; \"span\" is the start/end\n//!   interval vocabulary. Intended as the go-forward API name\n//!   at unification."
 }
@@ -3304,7 +3304,7 @@ id: toolu_019VH4jT72L93Y4u1bzHSyL2
 tool_result
 id: toolu_019VH4jT72L93Y4u1bzHSyL2
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/lib.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/lib.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3314,7 +3314,7 @@ id: toolu_01WUrhg9Mp7bbuj24nyd9uNV
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tprobe/Cargo.toml",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/Cargo.toml",
   "old_string": "description = \"Hardware tick-counter probes (TProbe/TProbe2), copied from iiac-perf 0.20.0\"",
   "new_string": "description = \"Hardware tick-counter probes (TProbe/TProbeSpan), copied from iiac-perf 0.20.0\""
 }
@@ -3325,7 +3325,7 @@ id: toolu_01WUrhg9Mp7bbuj24nyd9uNV
 tool_result
 id: toolu_01WUrhg9Mp7bbuj24nyd9uNV
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/tprobe/Cargo.toml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/Cargo.toml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3335,7 +3335,7 @@ id: toolu_016d4xh5EpUdFgCFbDbKKPUz
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md",
   "old_string": "  - `TProbe2` is copied for completeness but not used here:\n    its record buffer grows unbounded (tens of millions of\n    round trips × 24 B per record), and its report drains\n    all sites into one histogram, so it can't separate\n    phases anyway. `TProbe` is the fit.",
   "new_string": "  - `TProbe2` is copied for completeness but not used here:\n    its record buffer grows unbounded (tens of millions of\n    round trips × 24 B per record), and its report drains\n    all sites into one histogram, so it can't separate\n    phases anyway. `TProbe` is the fit.\n  - In the copy `TProbe2` is renamed `TProbeSpan`\n    (`TProbe2RecId` → `TProbeSpanId`): the `2` named\n    invention order, not semantics; \"span\" is the start/end\n    interval vocabulary (non-stack interleaving is span-like,\n    not scope-like). Intended as the go-forward name when\n    iiac-perf unifies onto the extracted crate."
 }
@@ -3346,7 +3346,7 @@ id: toolu_016d4xh5EpUdFgCFbDbKKPUz
 tool_result
 id: toolu_016d4xh5EpUdFgCFbDbKKPUz
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3367,7 +3367,7 @@ id: toolu_01XcxivZXy5L3MgoMSee4jam
 ```
 tprobe/src/lib.rs:22://!   [`TProbeSpanId`], `tprobe2.rs` → `tprobe_span.rs`, report
 tprobe/src/lib.rs:23://!   kind label `"tprobe2"` → `"tprobe-span"`): the `2` named
-    Checking zc-ring-x1 v0.13.0-1 (/home/wink/data/prgs/rust/zc-ring-x1)
+    Checking zc-ring-x1 v0.13.0-1 (/home/<USER>/data/prgs/rust/zc-ring-x1)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.47s
 test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
 test result: ok. 40 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.10s
@@ -3402,7 +3402,7 @@ tool_use Write
 id: toolu_01DDxktDMQLX8xgsxxQ2NHx1
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/lib.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/lib.rs",
   "content": "//! Hardware tick-counter probes: named single-writer histograms\n//! of tick deltas ([`TProbe`]) and a span-based sibling with a\n//! deferred-processing record buffer ([`TProbeSpan`]).\n//!\n//! - [`ticks`] — the fixed-rate monotonic counter (`rdtsc` /\n//!   `CNTVCT_EL0`) with tick→ns calibration.\n//! - [`band_table`] — the percentile band-table report both\n//!   probe types render.\n//! - [`fmt`] — thousands-separator number formatting for the\n//!   report.\n\npub mod band_table;\npub mod fmt;\npub mod ticks;\npub mod tprobe;\npub mod tprobe_span;\n\npub use tprobe::TProbe;\npub use tprobe_span::{TProbeSpan, TProbeSpanId};\n"
 }
 ```
@@ -3412,7 +3412,7 @@ id: toolu_01DDxktDMQLX8xgsxxQ2NHx1
 tool_result
 id: toolu_01DDxktDMQLX8xgsxxQ2NHx1
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/lib.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/lib.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3421,7 +3421,7 @@ tool_use Write
 id: toolu_01L4JhBgLUfNCiTHi3vFtDDc
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tprobe/Cargo.toml",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/Cargo.toml",
   "content": "# Local dev crate: hardware tick-counter probes for the\n# phase-probed examples. A crate boundary from day one so a\n# future extraction (or unification with iiac-perf, whose\n# probes it derives from) is a file-level move.\n[package]\nname = \"tprobe\"\nversion = \"0.1.0\"\nedition = \"2024\"\nrust-version = \"1.96\"\nlicense = \"MIT OR Apache-2.0\"\ndescription = \"Hardware tick-counter probes (TProbe/TProbeSpan)\"\npublish = false\n\n[dependencies]\nhdrhistogram = \"7\"\n"
 }
 ```
@@ -3431,7 +3431,7 @@ id: toolu_01L4JhBgLUfNCiTHi3vFtDDc
 tool_result
 id: toolu_01L4JhBgLUfNCiTHi3vFtDDc
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/tprobe/Cargo.toml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/Cargo.toml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3441,7 +3441,7 @@ id: toolu_01TJGz5LFYEXkz1MuTkCDoXP
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/fmt.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/fmt.rs",
   "old_string": "//! Number formatting helpers for the band-table renderer,\n//! copied from iiac-perf 0.20.0 `harness.rs`.",
   "new_string": "//! Number formatting helpers for the band-table renderer."
 }
@@ -3452,7 +3452,7 @@ id: toolu_01TJGz5LFYEXkz1MuTkCDoXP
 tool_result
 id: toolu_01TJGz5LFYEXkz1MuTkCDoXP
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/fmt.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/fmt.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3462,7 +3462,7 @@ id: toolu_01R2GszHpp93fQYMnvcbEjnT
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe.rs",
   "old_string": "//! Free-form measurement probe: a named, single-writer histogram\n//! of hardware tick-counter deltas.\n//!\n//! Same shape as iiac-perf's ns-valued `Probe`, but the caller\n//! records tick deltas (`ticks::read_ticks() − ticks::read_ticks()`)\n//! rather than nanoseconds. Skipping the tick→ns conversion at\n//! record time trims a mul-shift from the hot path; conversion\n//! to nanoseconds, if desired, is deferred to the report phase\n//! using [`crate::ticks::ticks_per_ns`].\n//!\n//! For a scope-based recording API (`start` / `end` with a\n//! deferred-processing record buffer) see [`crate::tprobe_span`].\n//! The two primitives are kept separate because the scope API's\n//! buffer-per-sample model trades hot-path throughput for\n//! flexibility, so mixing the paths on one type forced awkward\n//! trade-offs.",
   "new_string": "//! Free-form measurement probe: a named, single-writer histogram\n//! of hardware tick-counter deltas.\n//!\n//! The caller records tick deltas (`ticks::read_ticks() −\n//! ticks::read_ticks()`) rather than nanoseconds: skipping the\n//! tick→ns conversion at record time trims a mul-shift from the\n//! hot path, and conversion to nanoseconds, if desired, is\n//! deferred to the report phase using\n//! [`crate::ticks::ticks_per_ns`].\n//!\n//! For a span-based recording API (`start` / `end` with a\n//! deferred-processing record buffer) see [`crate::tprobe_span`].\n//! The two primitives are kept separate because the span API's\n//! buffer-per-sample model trades hot-path throughput for\n//! flexibility, so mixing the paths on one […]
 
@@ -3471,7 +3471,7 @@ id: toolu_01R2GszHpp93fQYMnvcbEjnT
 tool_result
 id: toolu_01R2GszHpp93fQYMnvcbEjnT
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3481,7 +3481,7 @@ id: toolu_011gV68ADFyzSS9TsDqeEAU2
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe_span.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe_span.rs",
   "old_string": "//! Scope-based measurement probe: a named, single-writer\n//! histogram plus a record buffer, populated via `start` /\n//! `end` rather than `record(ticks)`.",
   "new_string": "//! Span-based measurement probe: a named, single-writer\n//! histogram plus a record buffer, populated via `start` /\n//! `end` rather than `record(ticks)`."
 }
@@ -3492,7 +3492,7 @@ id: toolu_011gV68ADFyzSS9TsDqeEAU2
 tool_result
 id: toolu_011gV68ADFyzSS9TsDqeEAU2
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe_span.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe_span.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3502,7 +3502,7 @@ id: toolu_01D7KxK8Y1FVGSuw2o8dFfHs
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe_span.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe_span.rs",
   "old_string": "//! This primitive preserves record-order information across\n//! interleaved scopes and sites (non-stack nesting is supported\n//! by construction; see iiac-perf's ideas.md — Tprobe, Option B)\n//! and gives future evolution space for per-site grouping,\n//! bounded buffers, background drain threads, and long-term\n//! trace retention.\n//!\n//! The trade-off vs. [`crate::tprobe::TProbe`]: a growing\n//! `Vec<Record>` in the hot path adds cache pressure and\n//! reallocation cost in long, high-rate runs. For high-rate\n//! single-histogram measurement prefer `TProbe`. Run iiac-perf's\n//! `tp-pc` and `tp2-pc` benches back-to-back to see the hot-path\n//! cost of the scope API on a matched workload.",
   "new_string": "//! This primitive preserves record-order information across\n//! interleaved spans and sites (non-stack nesting is supported\n//! by construction) and gives future evolution space for\n//! per-site grouping, bounded buffers, background drain\n//! threads, and long-term trace retention.\n//!\n//! The trade-off vs. [`crate::tprobe::TProbe`]: a growing\n//! `Vec<Record>` in the hot path adds cache pressure and\n//! reallocation cost in long, high-rate runs. For high-rate\n//! single-histogram measurement prefer `TProbe`."
 }
@@ -3513,7 +3513,7 @@ id: toolu_01D7KxK8Y1FVGSuw2o8dFfHs
 tool_result
 id: toolu_01D7KxK8Y1FVGSuw2o8dFfHs
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe_span.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe_span.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3565,7 +3565,7 @@ tool_use Write
 id: toolu_01GkydnApVxf58eh2K5jKbjg
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/ticks/x86_64.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/ticks/x86_64.rs",
   "content": "//! x86_64 impl of the tick-counter abstraction: `rdtsc` for\n//! reads, CPUID-based invariant-TSC detection, and a 10 ms\n//! spin-loop calibration for ticks-per-nanosecond.\n\nuse std::sync::OnceLock;\nuse std::time::{Duration, Instant};\n\n/// Read the TSC via `rdtsc`.\n#[inline(always)]\npub fn read_ticks() -> u64 {\n    // Safe on any x86_64 CPU: TSC has been present since the\n    // original Pentium.\n    unsafe { core::arch::x86_64::_rdtsc() }\n}\n\nstatic TICKS_PER_NS: OnceLock<f64> = OnceLock::new();\n\n/// Cached calibration ratio; the first call runs [`calibrate`].\npub fn ticks_per_ns() -> f64 {\n    *TICKS_PER_NS.get_or_init(calibrate)\n}\n\n/// Spin for ~10 ms while reading `std::time::Instant` elapsed\n/// ns and raw `rdtsc` ticks at each end, then derive the ratio\n/// from the two independent measurements. Instant's per-read\n/// overhead (a vDSO `clock_gettime`) is negligible over 10 ms.\nfn calibrate() -> f64 {\n    let start_instant = Instant::now();\n    let start_tsc = read_ticks();\n    let target = Duration::from_millis(10);\n    loop {\n        let elapsed = start_instant.elapsed();\n        if elapsed >= target {\n            let end_tsc = read_ticks();\n            let dtk = end_tsc.wrapping_sub(start_tsc) as f64;\n            let dns = elapsed.as_nanos() as f64;\n            return dtk / dns;\n        }\n        core::hint::spin_loop();\n    }\n}\n\n/// Exit unless the TSC is invariant and (on Linux) accepted by\n/// the kernel as its clocksource.\npub fn require_ok() {\n    if !has_invariant_tsc() {\n        eprintln!(\n            \"error: invariant TSC not supported by this CPU \\\n             (CPUID.80000007h:EDX[bit 8] […]
 
 > TOOL
@@ -3573,7 +3573,7 @@ id: toolu_01GkydnApVxf58eh2K5jKbjg
 tool_result
 id: toolu_01GkydnApVxf58eh2K5jKbjg
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/ticks/x86_64.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/ticks/x86_64.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3587,7 +3587,7 @@ id: toolu_013j73cHUi9scie7SZjFzppB
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md",
   "old_string": "- **Local `tprobe/` dev crate** (`0.13.0-1`): iiac-perf is\n  binary-only, so its probes can't be imported. Copy, as\n  close to verbatim as possible, iiac-perf 0.20.0's\n  `tprobe.rs`, `tprobe2.rs`, `ticks.rs` + `ticks/`,\n  `band_table.rs`, and the two `fmt_commas` helpers into a\n  local crate (external deps: `hdrhistogram`, plus\n  `minstant` for the x86_64 tick calibration; `bands.rs`\n  turned out not to be in the closure — `band_table.rs`\n  carries its own ladder — and would have dragged in\n  `clap`), provenance noted in module docs.\n  - Root `Cargo.toml` gains `[workspace]` membership and a\n    path dev-dependency.\n  - A crate boundary from day one keeps future extraction\n    (or unification with iiac-perf) a file-level move, not\n    a rewrite. Verbatim-copy discipline limits drift while\n    two copies exist.\n  - `TProbe2` is copied for completeness but not used here:\n    its record buffer grows unbounded (tens of millions of\n    round trips × 24 B per record), and its report drains\n    all sites into one histogram, so it can't separate\n    phases anyway. `TProbe` is the fit.\n  - In the copy `TProbe2` is renamed `TProbeSpan`\n    (`TProbe2RecId` → `TProbeSpanId`): the `2` named\n    invention order, not semantics; \"span\" is the start/end\n    interval vocabulary (non-stack interleaving is span-like,\n    not scope-like). […]
 
 > TOOL
@@ -3595,7 +3595,7 @@ id: toolu_013j73cHUi9scie7SZjFzppB
 tool_result
 id: toolu_013j73cHUi9scie7SZjFzppB
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3615,7 +3615,7 @@ tool_result
 id: toolu_01AEM2ngFwLLDGXiWbejGEWN
 ```
 tprobe/Cargo.toml:3:# future extraction (or unification with iiac-perf, whose
-    Checking zc-ring-x1 v0.13.0-1 (/home/wink/data/prgs/rust/zc-ring-x1)
+    Checking zc-ring-x1 v0.13.0-1 (/home/<USER>/data/prgs/rust/zc-ring-x1)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.64s
 test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
 test result: ok. 40 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
@@ -3628,7 +3628,7 @@ id: toolu_01DUyjhKzVQGJeZHdaqhJJVG
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tprobe/Cargo.toml",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/Cargo.toml",
   "old_string": "# Local dev crate: hardware tick-counter probes for the\n# phase-probed examples. A crate boundary from day one so a\n# future extraction (or unification with iiac-perf, whose\n# probes it derives from) is a file-level move.",
   "new_string": "# Local dev crate: hardware tick-counter probes for the\n# phase-probed examples. A crate boundary from day one so a\n# future extraction is a file-level move."
 }
@@ -3639,7 +3639,7 @@ id: toolu_01DUyjhKzVQGJeZHdaqhJJVG
 tool_result
 id: toolu_01DUyjhKzVQGJeZHdaqhJJVG
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/tprobe/Cargo.toml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/Cargo.toml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3739,11 +3739,11 @@ tool_result
 id: toolu_01BJbjMgjDcu15EZNo9tUjaJ
 ```
 push message: title="feat: 2t gap tprobe dev crate", app_chid=ounrruplupzy, claude_chid=mkxtmopqvlwz, claude_had_changes=true
-push commit-app: jj commit -R /home/wink/data/prgs/rust/zc-ring-x1
-push commit-claude: jj commit -R /home/wink/data/prgs/rust/zc-ring-x1/.claude
-push bookmark-set: jj bookmark set main -r @- -R /home/wink/data/prgs/rust/zc-ring-x1 / main -r @- -R /home/wink/data/prgs/rust/zc-ring-x1/.claude
-push push-app: jj git push --bookmark main -R /home/wink/data/prgs/rust/zc-ring-x1
-push finalize-claude: vc-x1 finalize --repo /home/wink/data/prgs/rust/zc-ring-x1/.claude --squash --push main --delay 10 --detach
+push commit-app: jj commit -R /home/<USER>/data/prgs/rust/zc-ring-x1
+push commit-claude: jj commit -R /home/<USER>/data/prgs/rust/zc-ring-x1/.claude
+push bookmark-set: jj bookmark set main -r @- -R /home/<USER>/data/prgs/rust/zc-ring-x1 / main -r @- -R /home/<USER>/data/prgs/rust/zc-ring-x1/.claude
+push push-app: jj git push --bookmark main -R /home/<USER>/data/prgs/rust/zc-ring-x1
+push finalize-claude: vc-x1 finalize --repo /home/<USER>/data/prgs/rust/zc-ring-x1/.claude --squash --push main --delay 10 --detach
 push: completed all stages (verified, state cleared)
 ```
 
@@ -3801,7 +3801,7 @@ tprobe/src/tprobe_span.rs   | 184 ++++++++++++++++++++++++++++++++++++++++++++
 
 > AGENT
 
-There's no separate repo — `tprobe/` is a subdirectory crate *inside* the zc-ring-x1 repo, at `/home/wink/data/prgs/rust/zc-ring-x1/tprobe/`. It's a Cargo **workspace member** (root `Cargo.toml` has `[workspace] members = ["tprobe"]` plus the path dev-dependency), not a new git/jj repo.
+There's no separate repo — `tprobe/` is a subdirectory crate *inside* the zc-ring-x1 repo, at `/home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/`. It's a Cargo **workspace member** (root `Cargo.toml` has `[workspace] members = ["tprobe"]` plus the path dev-dependency), not a new git/jj repo.
 
 It was committed and pushed as part of `0.13.0-1` — the diff stat above shows all 9 `tprobe/` files in that commit on `main`.
 
@@ -3851,7 +3851,7 @@ tool_use Read
 id: toolu_01PP7516p9ErTp7VCn6iwL9z
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/src/bin/zc-ring-x1-demo.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/src/bin/zc-ring-x1-demo.rs",
   "offset": 1,
   "limit": 230
 }
@@ -3890,7 +3890,7 @@ id: toolu_017fShTTLLAGkukDtmeFkvmT
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md",
   "old_string": "- 0.13.0-2 feat: 2t gap probed roundtrip example",
   "new_string": "- 0.13.0-2 feat: 2t gap probed roundtrip example (current)"
 }
@@ -3901,7 +3901,7 @@ id: toolu_017fShTTLLAGkukDtmeFkvmT
 tool_result
 id: toolu_017fShTTLLAGkukDtmeFkvmT
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3911,7 +3911,7 @@ id: toolu_01Cs24WG1NpLx1mEJQEhN3Sn
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/Cargo.toml",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/Cargo.toml",
   "old_string": "version = \"0.13.0-1\"",
   "new_string": "version = \"0.13.0-2\""
 }
@@ -3922,7 +3922,7 @@ id: toolu_01Cs24WG1NpLx1mEJQEhN3Sn
 tool_result
 id: toolu_01Cs24WG1NpLx1mEJQEhN3Sn
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/Cargo.toml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/Cargo.toml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3931,7 +3931,7 @@ tool_use Write
 id: toolu_01VBuFdV411xi1iYxnQnzrTQ
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/examples/tp_roundtrip.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/examples/tp_roundtrip.rs",
   "content": "//! Phase-probed 1p/1c round trip: localize where the SPSC vs\n//! MPSC cross-thread latency gap lives.\n//!\n//! Main sends a counter to a worker over one ring and waits for\n//! the echo on a second ring; each of the four protocol phases\n//! is measured by its own [`TProbe`] (two `read_ticks` bracket\n//! the endpoint call), so the reports separate the sides of the\n//! handoff:\n//!\n//! - `main send` / `worker send` — the producer's reserve +\n//!   fill + commit, including any stall acquiring peer-written\n//!   cache lines. The ring is never full here (one message in\n//!   flight, 8 slots), so no send ever waits for space.\n//! - `worker recv` / `main recv` — the consumer's spin wait +\n//!   read + release. These absorb the in-flight half trip;\n//!   `worker recv` also absorbs main's inter-iteration framing\n//!   (probe records, the every-N clock check).\n//!\n//! Usage: `tp_roundtrip [spsc|mpsc|both] [-d secs]\n//! [--pin main,worker] [-t]` — defaults: both flavors, 5 s\n//! each, unpinned, report in ns (`-t` for raw ticks).\n\nuse std::time::{Duration, Instant};\n\nuse tprobe::TProbe;\nuse tprobe::ticks;\nuse zc_ring_x1::{CACHE_LINE_SIZE, MpscRing, Ring};\n\n/// Ring slots per direction — a power of two, comfortably above\n/// the one message ever in flight.\nconst DEPTH: u32 = 8;\n\n/// Shutdown sentinel; the worker exits […]
 
 > TOOL
@@ -3939,7 +3939,7 @@ id: toolu_01VBuFdV411xi1iYxnQnzrTQ
 tool_result
 id: toolu_01VBuFdV411xi1iYxnQnzrTQ
 ```
-File created successfully at: /home/wink/data/prgs/rust/zc-ring-x1/examples/tp_roundtrip.rs (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/data/prgs/rust/zc-ring-x1/examples/tp_roundtrip.rs (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3958,8 +3958,8 @@ id: toolu_016SN3wsMHxpNGoKJ6t9h3EX
 tool_result
 id: toolu_016SN3wsMHxpNGoKJ6t9h3EX
 ```
-    Checking tprobe v0.1.0 (/home/wink/data/prgs/rust/zc-ring-x1/tprobe)
-    Checking zc-ring-x1 v0.13.0-2 (/home/wink/data/prgs/rust/zc-ring-x1)
+    Checking tprobe v0.1.0 (/home/<USER>/data/prgs/rust/zc-ring-x1/tprobe)
+    Checking zc-ring-x1 v0.13.0-2 (/home/<USER>/data/prgs/rust/zc-ring-x1)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.86s
    Compiling autocfg v1.5.1
    Compiling crc32fast v1.5.0
@@ -3971,14 +3971,14 @@ id: toolu_016SN3wsMHxpNGoKJ6t9h3EX
    Compiling minimal-lexical v0.2.1
    Compiling byteorder v1.5.0
    Compiling base64 v0.21.7
-   Compiling zc-ring-x1 v0.13.0-2 (/home/wink/data/prgs/rust/zc-ring-x1)
+   Compiling zc-ring-x1 v0.13.0-2 (/home/<USER>/data/prgs/rust/zc-ring-x1)
    Compiling miniz_oxide v0.8.9
    Compiling num-traits v0.2.19
    Compiling nom v7.1.3
    Compiling crossbeam-channel v0.5.16
    Compiling flate2 v1.1.9
    Compiling hdrhistogram v7.5.4
-   Compiling tprobe v0.1.0 (/home/wink/data/prgs/rust/zc-ring-x1/tprobe)
+   Compiling tprobe v0.1.0 (/home/<USER>/data/prgs/rust/zc-ring-x1/tprobe)
     Finished `release` profile [optimized] target(s) in 1.11s
      Running `target/release/examples/tp_roundtrip both -d 1`
 spsc round trip [duration=1.0s pin=none]:
@@ -4085,7 +4085,7 @@ id: toolu_017fsWVTc9wLfTNtCLXMXH7D
 ```
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.14s
 5
-    Replaced package `zc-ring-x1 v0.12.0 (/home/wink/data/prgs/rust/zc-ring-x1)` with `zc-ring-x1 v0.13.0-2 (/home/wink/data/prgs/rust/zc-ring-x1)` (executable `zc-ring-x1-demo`)
+    Replaced package `zc-ring-x1 v0.12.0 (/home/<USER>/data/prgs/rust/zc-ring-x1)` with `zc-ring-x1 v0.13.0-2 (/home/<USER>/data/prgs/rust/zc-ring-x1)` (executable `zc-ring-x1-demo`)
 ```
 
 > TOOL
@@ -4095,7 +4095,7 @@ id: toolu_0127oL4L5UtRpPGyBaxt3UCM
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md",
   "old_string": "- 0.13.0-2 feat: 2t gap probed roundtrip example (current)",
   "new_string": "- 0.13.0-2 feat: 2t gap probed roundtrip example (done)"
 }
@@ -4106,7 +4106,7 @@ id: toolu_0127oL4L5UtRpPGyBaxt3UCM
 tool_result
 id: toolu_0127oL4L5UtRpPGyBaxt3UCM
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4199,7 +4199,7 @@ id: toolu_01BmQokG4WFWKXNqR13WaeCP
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md",
   "old_string": "- 0.13.0-2 feat: 2t gap probed roundtrip example (done)\n- 0.13.0-3 docs: 2t gap measurements + findings\n- 0.13.0 perf: explore spsc vs mpsc 2t gap (close-out)",
   "new_string": "- 0.13.0-2 feat: 2t gap probed roundtrip example (done)\n- 0.13.0-3 refactor: 2t gap tp_runner crate + READMEs\n  (current)\n- 0.13.0-4 docs: 2t gap measurements + findings\n- 0.13.0 perf: explore spsc vs mpsc 2t gap (close-out;\n  also seeds tprobe/notes/design.md and\n  tprobe/notes/chores/chores-01.md)"
 }
@@ -4210,7 +4210,7 @@ id: toolu_01BmQokG4WFWKXNqR13WaeCP
 tool_result
 id: toolu_01BmQokG4WFWKXNqR13WaeCP
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4220,7 +4220,7 @@ id: toolu_01LJjBcZqA7ePTwhmJqBNeDd
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/Cargo.toml",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/Cargo.toml",
   "old_string": "version = \"0.13.0-2\"",
   "new_string": "version = \"0.13.0-3\""
 }
@@ -4231,7 +4231,7 @@ id: toolu_01LJjBcZqA7ePTwhmJqBNeDd
 tool_result
 id: toolu_01LJjBcZqA7ePTwhmJqBNeDd
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/Cargo.toml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/Cargo.toml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4245,7 +4245,7 @@ id: toolu_01W1ADdN9W1LNwcd3WxWuR9a
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md",
   "old_string": "- **Measurements + findings** (`0.13.0-3`): run unpinned,",
   "new_string": "- **Generic `tp_runner/` crate + READMEs** (`0.13.0-3`,\n  added during `-2` review): the example's generic runner\n  machinery — CLI config (`-d`/`--pin`/`-t` + positionals),\n  `pin_to_cpu`, the fixed-duration round-trip drive loop,\n  probe report ordering — moves to a third workspace crate,\n  `tp_runner/`, leaving only the two ring flavors in the\n  example. Deliberately *not* a full harness (no `Bench`\n  trait, adaptive sizing, or calibration — that is\n  iiac-perf's territory; needing it is the cue to unify).\n  `tprobe/README.md` + `tp_runner/README.md` cover build /\n  test / run.\n- **Measurements + findings** (`0.13.0-4`): run unpinned,"
 }
@@ -4256,7 +4256,7 @@ id: toolu_01W1ADdN9W1LNwcd3WxWuR9a
 tool_result
 id: toolu_01W1ADdN9W1LNwcd3WxWuR9a
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4266,7 +4266,7 @@ id: toolu_01JRpH8c7Jp9qrVDxVcieYpD
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md",
   "old_string": "  file a seam-word SPSC variant Todo (give SPSC a seq-like\n  publish word so neither side reads the other's index\n  line).",
   "new_string": "  file a seam-word SPSC variant Todo (give SPSC a seq-like\n  publish word so neither side reads the other's index\n  line).\n- **Close-out** additionally seeds the crate's own notes —\n  `tprobe/notes/design.md` (design rationale that outlived\n  the doc comments: probe-type trade-offs, ticks\n  abstraction, runner split) and\n  `tprobe/notes/chores/chores-01.md` (the crate's\n  going-forward record; this cycle's story stays here, the\n  seed points back)."
 }
@@ -4277,7 +4277,7 @@ id: toolu_01JRpH8c7Jp9qrVDxVcieYpD
 tool_result
 id: toolu_01JRpH8c7Jp9qrVDxVcieYpD
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4290,7 +4290,7 @@ tool_use Write
 id: toolu_01RYM4fRMhCAyXv9QfSEwPt5
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tp_runner/Cargo.toml",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tp_runner/Cargo.toml",
   "content": "# Local dev crate: the generic runner for phase-probed\n# measurement examples — CLI config, thread pinning, and the\n# fixed-duration round-trip drive loop. The probes themselves\n# live in the sibling tprobe crate.\n[package]\nname = \"tp_runner\"\nversion = \"0.1.0\"\nedition = \"2024\"\nrust-version = \"1.96\"\nlicense = \"MIT OR Apache-2.0\"\ndescription = \"Runner for phase-probed measurement examples (config, pinning, drive loop)\"\npublish = false\n\n[dependencies]\ntprobe = { path = \"../tprobe\" }\n\n[target.'cfg(target_os = \"linux\")'.dependencies]\nlibc = \"0.2\"\n"
 }
 ```
@@ -4300,7 +4300,7 @@ id: toolu_01RYM4fRMhCAyXv9QfSEwPt5
 tool_result
 id: toolu_01RYM4fRMhCAyXv9QfSEwPt5
 ```
-File created successfully at: /home/wink/data/prgs/rust/zc-ring-x1/tp_runner/Cargo.toml (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/data/prgs/rust/zc-ring-x1/tp_runner/Cargo.toml (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4309,7 +4309,7 @@ tool_use Write
 id: toolu_011EJVHCAaY8SmTXJnghvnqL
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tp_runner/src/lib.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tp_runner/src/lib.rs",
   "content": "//! Generic runner for phase-probed measurement examples: CLI\n//! config, thread pinning, and a fixed-duration round-trip\n//! drive loop over injected send/recv closures.\n//!\n//! - [`Cfg`] / [`Cfg::parse`] — the shared CLI grammar\n//!   (`-d`/`--duration`, `--pin main,worker`, `-t`/`--ticks`);\n//!   anything else lands in `positionals` for the example to\n//!   interpret ([`usage_exit`] for rejects).\n//! - [`pin_to_cpu`] — sched_setaffinity pinning (Linux; no-op\n//!   stub elsewhere).\n//! - [`drive`] — the measured loop: send a counter, receive\n//!   the echo, one [`TProbe`] per phase.\n//! - [`report`] — flavor header + the phase reports in trip\n//!   order.\n//!\n//! Deliberately not a benchmark harness: no adaptive loop\n//! sizing, overhead calibration, or bench registry — for that\n//! scale of machinery use iiac-perf.\n\nuse std::time::{Duration, Instant};\n\nuse tprobe::TProbe;\nuse tprobe::ticks;\n\n/// Sentinel available to callers as a shutdown message;\n/// [`drive`]'s counter skips it so payload values never\n/// collide with it.\npub const STOP: u64 = u64::MAX;\n\n/// Iterations between wall-clock checks in [`drive`], keeping\n/// the per-iteration cost of `Instant::now` off the common\n/// path.\nconst CLOCK_CHECK_EVERY: u64 = 4096;\n\n/// Parsed CLI configuration for a probed example run.\npub struct Cfg {\n    /// Wall-clock budget per flavor.\n    pub duration: Duration,\n    /// `Some((main_cpu, worker_cpu))` pins both threads.\n    pub pin: Option<(usize, usize)>,\n    /// Report raw ticks instead of nanoseconds.\n    pub […]
 
 > TOOL
@@ -4317,7 +4317,7 @@ id: toolu_011EJVHCAaY8SmTXJnghvnqL
 tool_result
 id: toolu_011EJVHCAaY8SmTXJnghvnqL
 ```
-File created successfully at: /home/wink/data/prgs/rust/zc-ring-x1/tp_runner/src/lib.rs (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/data/prgs/rust/zc-ring-x1/tp_runner/src/lib.rs (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4326,7 +4326,7 @@ tool_use Write
 id: toolu_01YQuYodV39ogptpzPuGDkHf
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/examples/tp_roundtrip.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/examples/tp_roundtrip.rs",
   "content": "//! Phase-probed 1p/1c round trip: localize where the SPSC vs\n//! MPSC cross-thread latency gap lives.\n//!\n//! Main sends a counter to a worker over one ring and waits for\n//! the echo on a second ring; each of the four protocol phases\n//! is measured by its own [`TProbe`] (two `read_ticks` bracket\n//! the endpoint call), so the reports separate the sides of the\n//! handoff:\n//!\n//! - `main send` / `worker send` — the producer's reserve +\n//!   fill + commit, including any stall acquiring peer-written\n//!   cache lines. The ring is never full here (one message in\n//!   flight, 8 slots), so no send ever waits for space.\n//! - `worker recv` / `main recv` — the consumer's spin wait +\n//!   read + release. These absorb the in-flight half trip;\n//!   `worker recv` also absorbs main's inter-iteration framing\n//!   (probe records, the every-N clock check).\n//!\n//! The generic machinery (CLI grammar, pinning, drive loop,\n//! reporting) is the sibling `tp_runner` crate; this example\n//! contributes only the two ring flavors.\n\nuse tp_runner::{Cfg, STOP, drive, pin_to_cpu, report, spin, usage_exit};\nuse tprobe::TProbe;\nuse tprobe::ticks;\nuse zc_ring_x1::{CACHE_LINE_SIZE, MpscRing, Ring};\n\n/// The CLI grammar, interpreted by [`Cfg::parse`] plus this\n/// example's flavor positionals.\nconst USAGE: &str = \"tp_roundtrip [spsc|mpsc|both] [-d secs] [--pin main,worker] [-t]\";\n\n/// Ring […]
 
 > TOOL
@@ -4334,7 +4334,7 @@ id: toolu_01YQuYodV39ogptpzPuGDkHf
 tool_result
 id: toolu_01YQuYodV39ogptpzPuGDkHf
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/examples/tp_roundtrip.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/examples/tp_roundtrip.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4344,7 +4344,7 @@ id: toolu_016NyDF9cAbWS8yasiYtaCTd
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/Cargo.toml",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/Cargo.toml",
   "old_string": "# The local tick-probe crate (see tprobe/), used by the\n# phase-probed examples only — not part of the library.\n[dev-dependencies]\ntprobe = { path = \"tprobe\" }\n\n[workspace]\nmembers = [\"tprobe\"]",
   "new_string": "# The local probe + runner crates (see tprobe/ and\n# tp_runner/), used by the phase-probed examples only — not\n# part of the library.\n[dev-dependencies]\ntprobe = { path = \"tprobe\" }\ntp_runner = { path = \"tp_runner\" }\n\n[workspace]\nmembers = [\"tprobe\", \"tp_runner\"]"
 }
@@ -4355,7 +4355,7 @@ id: toolu_016NyDF9cAbWS8yasiYtaCTd
 tool_result
 id: toolu_016NyDF9cAbWS8yasiYtaCTd
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/Cargo.toml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/Cargo.toml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4364,7 +4364,7 @@ tool_use Write
 id: toolu_01LabNSPZVoVtV98sRFKZJXU
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tprobe/README.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/README.md",
   "content": "# tprobe\n\nHardware tick-counter probes: named single-writer histograms\nof tick deltas. A local dev crate of the zc-ring-x1 workspace,\nbuilt as its own crate so a future extraction is a directory\nmove.\n\n- `TProbe` — the caller brackets a phase with\n  `ticks::read_ticks()` and records the delta; tick→ns\n  conversion is deferred to report time. The fit for\n  high-rate hot paths.\n- `TProbeSpan` — `start(site_id)` / `end(id)` span API over a\n  deferred-processing record buffer; preserves record order\n  and supports non-stack interleaving, at the cost of a\n  growing per-record buffer.\n- `ticks` — fixed-rate monotonic counter (x86_64 `rdtsc`,\n  aarch64 `CNTVCT_EL0`) with calibration and an invariance\n  check.\n- Reports render as a percentile band table (min/p1/…/p99/max\n  rows; ns by default, raw ticks on request).\n\n## Use\n\n```rust\nuse tprobe::{TProbe, ticks};\n\nlet mut probe = TProbe::new(\"phase name\");\nlet s = ticks::read_ticks();\n// ... the measured phase ...\nprobe.record(ticks::read_ticks().wrapping_sub(s));\nprobe.report(false); // false = ns, true = raw ticks\n```\n\n## Build / test\n\nFrom the workspace root (or here):\n\n```sh\ncargo build -p tprobe\ncargo test -p tprobe\n```\n\n## Run\n\ntprobe is a library — nothing to install. The workspace's\nphase-probed example exercises it end to end (see the sibling\n`tp_runner` crate for the runner half):\n\n```sh\ncargo run --release --example tp_roundtrip -- both -d 5 --pin 0,1\n```\n"
 }
 ```
@@ -4374,7 +4374,7 @@ id: toolu_01LabNSPZVoVtV98sRFKZJXU
 tool_result
 id: toolu_01LabNSPZVoVtV98sRFKZJXU
 ```
-File created successfully at: /home/wink/data/prgs/rust/zc-ring-x1/tprobe/README.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/README.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4383,7 +4383,7 @@ tool_use Write
 id: toolu_01QEJehRpZBUR4xMgSXic3qb
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tp_runner/README.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tp_runner/README.md",
   "content": "# tp_runner\n\nThe generic runner half of the workspace's phase-probed\nmeasurement examples: CLI config, thread pinning, and a\nfixed-duration round-trip drive loop. The probes themselves\nare the sibling `tprobe` crate; examples contribute only\ntheir workload closures.\n\n- `Cfg::parse` — shared CLI grammar: `-d`/`--duration <secs>`,\n  `--pin <main,worker>`, `-t`/`--ticks`; other positionals\n  pass through for the example to interpret.\n- `pin_to_cpu` — `sched_setaffinity` pinning (Linux; no-op\n  stub elsewhere).\n- `drive` — the measured loop: send a counter, receive the\n  echo, one `TProbe` per phase; wall clock checked every 4096\n  iterations; the counter skips `STOP` so callers can use it\n  as a shutdown sentinel.\n- `report` — flavor header + phase reports in trip order.\n\nDeliberately not a benchmark harness — no adaptive loop\nsizing, overhead calibration, or bench registry. Needing\nthose is the cue to use iiac-perf instead.\n\n## Build / test\n\n```sh\ncargo build -p tp_runner\n```\n\n## Run\n\nNothing to install — it's a library; run it through an\nexample, e.g.:\n\n```sh\ncargo run --release --example tp_roundtrip -- both -d 5 --pin 0,1\n```\n"
 }
 ```
@@ -4393,7 +4393,7 @@ id: toolu_01QEJehRpZBUR4xMgSXic3qb
 tool_result
 id: toolu_01QEJehRpZBUR4xMgSXic3qb
 ```
-File created successfully at: /home/wink/data/prgs/rust/zc-ring-x1/tp_runner/README.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/data/prgs/rust/zc-ring-x1/tp_runner/README.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4412,7 +4412,7 @@ id: toolu_0127puBnofbji99hUFEY1Tsf
 tool_result
 id: toolu_0127puBnofbji99hUFEY1Tsf
 ```
-    Checking tp_runner v0.1.0 (/home/wink/data/prgs/rust/zc-ring-x1/tp_runner)
+    Checking tp_runner v0.1.0 (/home/<USER>/data/prgs/rust/zc-ring-x1/tp_runner)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.83s
 7
 spsc round trip [duration=1.0s pin=none]:
@@ -4442,7 +4442,7 @@ id: toolu_01XxRV4EUwNL4fi8pKiBh3gM
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md",
   "old_string": "- 0.13.0-3 refactor: 2t gap tp_runner crate + READMEs\n  (current)",
   "new_string": "- 0.13.0-3 refactor: 2t gap tp_runner crate + READMEs\n  (done)"
 }
@@ -4453,7 +4453,7 @@ id: toolu_01XxRV4EUwNL4fi8pKiBh3gM
 tool_result
 id: toolu_01XxRV4EUwNL4fi8pKiBh3gM
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4520,7 +4520,7 @@ id: toolu_01YQro5nsCes138GuTPbPMN4
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/band_table.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/band_table.rs",
   "old_string": "/// Render a band-table report for `hist`, interpreting stored\n/// values as hardware ticks. `kind` is the header label\n/// (`\"tprobe\"`, `\"tprobe-span\"`, …) and `name` is the probe's\n/// name.\n/// `as_ticks=false` converts to ns; `true` keeps raw ticks.\npub(crate) fn render(kind: &str, name: &str, hist: &Histogram<u64>, as_ticks: bool) {",
   "new_string": "/// Render a band-table report for `hist`, interpreting stored\n/// values as hardware ticks. `kind` is the header label\n/// (`\"tprobe\"`, `\"tprobe-span\"`, …) and `name` is the probe's\n/// name. `as_ticks=false` converts to ns; `true` keeps raw\n/// ticks. `decimals` is the fractional digits on every value\n/// column.\npub(crate) fn render(\n    kind: &str,\n    name: &str,\n    hist: &Histogram<u64>,\n    as_ticks: bool,\n    decimals: usize,\n) {"
 }
@@ -4531,7 +4531,7 @@ id: toolu_01YQro5nsCes138GuTPbPMN4
 tool_result
 id: toolu_01YQro5nsCes138GuTPbPMN4
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/band_table.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/band_table.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4541,7 +4541,7 @@ id: toolu_01NnoFqLEqHQj9eJFBS8dLri
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe.rs",
   "old_string": "    /// Render a band-table report for this probe. `as_ticks`\n    /// controls the display unit: `false` converts stored tick\n    /// deltas to nanoseconds (default for the CLI); `true` shows\n    /// raw ticks (`-t`/`--ticks`).\n    pub fn report(&self, as_ticks: bool) {\n        band_table::render(\"tprobe\", &self.name, &self.hist, as_ticks);\n    }",
   "new_string": "    /// Render a band-table report for this probe. `as_ticks`\n    /// controls the display unit: `false` converts stored tick\n    /// deltas to nanoseconds (default for the CLI); `true` shows\n    /// raw ticks (`-t`/`--ticks`). `decimals` is the fractional\n    /// digits on every value column.\n    pub fn report(&self, as_ticks: bool, decimals: usize) {\n        band_table::render(\"tprobe\", &self.name, &self.hist, as_ticks, decimals);\n    }"
 }
@@ -4552,7 +4552,7 @@ id: toolu_01NnoFqLEqHQj9eJFBS8dLri
 tool_result
 id: toolu_01NnoFqLEqHQj9eJFBS8dLri
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4562,7 +4562,7 @@ id: toolu_01KSVyD3iNQGpgCH75H6ovGE
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe_span.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe_span.rs",
   "old_string": "    /// Render a band-table report for this probe. `as_ticks`\n    /// controls the display unit: `false` converts stored tick\n    /// deltas to nanoseconds (default for the CLI); `true` shows\n    /// raw ticks (`-t`/`--ticks`).\n    ///\n    /// Drains any pending `start`/`end` records into the histogram\n    /// before rendering: `delta = end_tsc − start_tsc`, clamped to\n    /// `1` since the histogram lower bound is 1.\n    pub fn report(&mut self, as_ticks: bool) {\n        for r in self.records.drain(..) {\n            let delta = r.end_tsc.saturating_sub(r.start_tsc);\n            self.hist.record(delta.max(1)).unwrap(); // OK: clamped ≥1, and any real delta is under the 1e12 bound\n        }\n        band_table::render(\"tprobe-span\", &self.name, &self.hist, as_ticks);\n    }",
   "new_string": "    /// Render a band-table report for this probe. `as_ticks`\n    /// controls the display unit: `false` converts stored tick\n    /// deltas to nanoseconds (default for the CLI); `true` shows\n    /// raw ticks (`-t`/`--ticks`). `decimals` is the fractional\n    /// digits on every value column.\n    ///\n    /// Drains any pending `start`/`end` records into the histogram\n    /// before rendering: `delta = end_tsc − start_tsc`, clamped to\n    /// `1` since the histogram lower bound is 1.\n    pub fn report(&mut self, as_ticks: bool, decimals: usize) {\n        for r in self.records.drain(..) {\n            let delta = r.end_tsc.saturating_sub(r.start_tsc);\n […]
 
@@ -4571,7 +4571,7 @@ id: toolu_01KSVyD3iNQGpgCH75H6ovGE
 tool_result
 id: toolu_01KSVyD3iNQGpgCH75H6ovGE
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe_span.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe_span.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4605,7 +4605,7 @@ id: toolu_01N5RspeMEqMgRdNnxUzP8Vu
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tp_runner/src/lib.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tp_runner/src/lib.rs",
   "old_string": "    /// Report raw ticks instead of nanoseconds.\n    pub ticks: bool,\n    /// Non-flag arguments, in order, for the caller to\n    /// interpret (e.g. flavor names).\n    pub positionals: Vec<String>,\n}",
   "new_string": "    /// Report raw ticks instead of nanoseconds.\n    pub ticks: bool,\n    /// Fractional digits on report value columns.\n    pub decimals: usize,\n    /// Non-flag arguments, in order, for the caller to\n    /// interpret (e.g. flavor names).\n    pub positionals: Vec<String>,\n}"
 }
@@ -4616,7 +4616,7 @@ id: toolu_01N5RspeMEqMgRdNnxUzP8Vu
 tool_result
 id: toolu_01N5RspeMEqMgRdNnxUzP8Vu
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/tp_runner/src/lib.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/tp_runner/src/lib.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4626,7 +4626,7 @@ id: toolu_01WDe2T3tHqZjzERokB8Vcns
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tp_runner/src/lib.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tp_runner/src/lib.rs",
   "old_string": "    /// Parse the process args against the shared grammar;\n    /// [`usage_exit`]s on a malformed flag. Defaults: 5 s,\n    /// unpinned, ns reporting.\n    pub fn parse(usage: &str) -> Cfg {\n        let mut cfg = Cfg {\n            duration: Duration::from_secs(5),\n            pin: None,\n            ticks: false,\n            positionals: Vec::new(),\n        };",
   "new_string": "    /// Parse the process args against the shared grammar;\n    /// [`usage_exit`]s on a malformed flag. Defaults: 5 s,\n    /// unpinned, ns reporting, 1 decimal.\n    pub fn parse(usage: &str) -> Cfg {\n        let mut cfg = Cfg {\n            duration: Duration::from_secs(5),\n            pin: None,\n            ticks: false,\n            decimals: 1,\n            positionals: Vec::new(),\n        };"
 }
@@ -4637,7 +4637,7 @@ id: toolu_01WDe2T3tHqZjzERokB8Vcns
 tool_result
 id: toolu_01WDe2T3tHqZjzERokB8Vcns
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/tp_runner/src/lib.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/tp_runner/src/lib.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4647,7 +4647,7 @@ id: toolu_01PcNf7ALscvAw56MBLHgw1H
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tp_runner/src/lib.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tp_runner/src/lib.rs",
   "old_string": "                \"-t\" | \"--ticks\" => cfg.ticks = true,\n                _ if a.starts_with('-') => usage_exit(usage),",
   "new_string": "                \"-t\" | \"--ticks\" => cfg.ticks = true,\n                \"--decimals\" => {\n                    cfg.decimals = args\n                        .next()\n                        .and_then(|v| v.parse().ok())\n                        .unwrap_or_else(|| usage_exit(usage));\n                }\n                _ if a.starts_with('-') => usage_exit(usage),"
 }
@@ -4658,7 +4658,7 @@ id: toolu_01PcNf7ALscvAw56MBLHgw1H
 tool_result
 id: toolu_01PcNf7ALscvAw56MBLHgw1H
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/tp_runner/src/lib.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/tp_runner/src/lib.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4668,7 +4668,7 @@ id: toolu_01QmtArq2LfoFimhkwVeaUtq
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tp_runner/src/lib.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tp_runner/src/lib.rs",
   "old_string": "    for p in probes {\n        p.report(cfg.ticks);\n    }",
   "new_string": "    for p in probes {\n        p.report(cfg.ticks, cfg.decimals);\n    }"
 }
@@ -4679,7 +4679,7 @@ id: toolu_01QmtArq2LfoFimhkwVeaUtq
 tool_result
 id: toolu_01QmtArq2LfoFimhkwVeaUtq
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/tp_runner/src/lib.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/tp_runner/src/lib.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4834,11 +4834,11 @@ tool_result
 id: toolu_017VgKhWvigFRZUddGbye43d
 ```
 push message: title="refactor: 2t gap tp_runner crate + READMEs", app_chid=otnstqvxynwn, claude_chid=rwtmknvsooym, claude_had_changes=true
-push commit-app: jj commit -R /home/wink/data/prgs/rust/zc-ring-x1
-push commit-claude: jj commit -R /home/wink/data/prgs/rust/zc-ring-x1/.claude
-push bookmark-set: jj bookmark set main -r @- -R /home/wink/data/prgs/rust/zc-ring-x1 / main -r @- -R /home/wink/data/prgs/rust/zc-ring-x1/.claude
-push push-app: jj git push --bookmark main -R /home/wink/data/prgs/rust/zc-ring-x1
-push finalize-claude: vc-x1 finalize --repo /home/wink/data/prgs/rust/zc-ring-x1/.claude --squash --push main --delay 10 --detach
+push commit-app: jj commit -R /home/<USER>/data/prgs/rust/zc-ring-x1
+push commit-claude: jj commit -R /home/<USER>/data/prgs/rust/zc-ring-x1/.claude
+push bookmark-set: jj bookmark set main -r @- -R /home/<USER>/data/prgs/rust/zc-ring-x1 / main -r @- -R /home/<USER>/data/prgs/rust/zc-ring-x1/.claude
+push push-app: jj git push --bookmark main -R /home/<USER>/data/prgs/rust/zc-ring-x1
+push finalize-claude: vc-x1 finalize --repo /home/<USER>/data/prgs/rust/zc-ring-x1/.claude --squash --push main --delay 10 --detach
 push: completed all stages (verified, state cleared)
 ```
 
@@ -4861,7 +4861,7 @@ id: toolu_01TicxzdJfe6Aw72uMgN71QK
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md",
   "old_string": "- 0.13.0-4 docs: 2t gap measurements + findings",
   "new_string": "- 0.13.0-4 docs: 2t gap measurements + findings (current)"
 }
@@ -4872,7 +4872,7 @@ id: toolu_01TicxzdJfe6Aw72uMgN71QK
 tool_result
 id: toolu_01TicxzdJfe6Aw72uMgN71QK
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4882,7 +4882,7 @@ id: toolu_01971L9d7qfZosMaw9FDtmeD
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/Cargo.toml",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/Cargo.toml",
   "old_string": "version = \"0.13.0-3\"",
   "new_string": "version = \"0.13.0-4\""
 }
@@ -4893,7 +4893,7 @@ id: toolu_01971L9d7qfZosMaw9FDtmeD
 tool_result
 id: toolu_01971L9d7qfZosMaw9FDtmeD
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/Cargo.toml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/Cargo.toml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4903,7 +4903,7 @@ id: toolu_01FjYu5Nbuew1b1JYhWC72k4
 ```json
 {
   "file_path": "/tmp/claude-1000/-home-wink-data-prgs-rust-zc-ring-x1/8c66c09d-abf3-4a14-a707-759683730347/scratchpad/measure-matrix.sh",
-  "content": "#!/bin/bash\n# 0.13.0-4 measurement matrix: tp_roundtrip per flavor x placement,\n# each under perf stat so one run yields phase histograms AND\n# cross-core fill counters.\nBIN=/home/wink/data/prgs/rust/zc-ring-x1/target/release/examples/tp_roundtrip\nEV=instructions,cycles,ls_refills_from_sys.ls_mabresp_lcl_cache,ls_refills_from_sys.ls_mabresp_lcl_l2,ls_refills_from_sys.ls_mabresp_lcl_dram\nOUT=/tmp/claude-1000/-home-wink-data-prgs-rust-zc-ring-x1/8c66c09d-abf3-4a14-a707-759683730347/scratchpad/m4\nmkdir -p \"$OUT\"\nfor flavor in spsc mpsc; do\n  for pin in \"0,1\" \"0,3\" \"0,12\" none; do\n    tag=\"$flavor-pin-${pin//,/}\"\n    if [ \"$pin\" = none ]; then\n      perf stat -e \"$EV\" -- \"$BIN\" \"$flavor\" -d 10 > \"$OUT/$tag.txt\" 2>&1\n    else\n      perf stat -e \"$EV\" -- \"$BIN\" \"$flavor\" -d 10 --pin \"$pin\" > \"$OUT/$tag.txt\" 2>&1\n    fi\n    echo \"=== $tag done\"\n  done\ndone\n"
+  "content": "#!/bin/bash\n# 0.13.0-4 measurement matrix: tp_roundtrip per flavor x placement,\n# each under perf stat so one run yields phase histograms AND\n# cross-core fill counters.\nBIN=/home/<USER>/data/prgs/rust/zc-ring-x1/target/release/examples/tp_roundtrip\nEV=instructions,cycles,ls_refills_from_sys.ls_mabresp_lcl_cache,ls_refills_from_sys.ls_mabresp_lcl_l2,ls_refills_from_sys.ls_mabresp_lcl_dram\nOUT=/tmp/claude-1000/-home-wink-data-prgs-rust-zc-ring-x1/8c66c09d-abf3-4a14-a707-759683730347/scratchpad/m4\nmkdir -p \"$OUT\"\nfor flavor in spsc mpsc; do\n  for pin in \"0,1\" \"0,3\" \"0,12\" none; do\n    tag=\"$flavor-pin-${pin//,/}\"\n    if [ \"$pin\" = none ]; then\n      perf stat -e \"$EV\" -- \"$BIN\" \"$flavor\" -d 10 > \"$OUT/$tag.txt\" 2>&1\n    else\n      perf stat -e \"$EV\" -- \"$BIN\" \"$flavor\" -d 10 --pin \"$pin\" > \"$OUT/$tag.txt\" 2>&1\n    fi\n    echo \"=== $tag done\"\n  done\ndone\n"
 }
 ```
 
@@ -5048,7 +5048,7 @@ id: toolu_01JWg9dyhd7wt1mzkWTwUw57
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md",
   "old_string": "### Preliminary evidence: cross-core fill counters",
   "new_string": "### Measurements (0.13.0-4)\n\nMachine: AMD Ryzen 9 3900X (Zen 2, 12c/24t; cpus 0–2 share\nCCX0's L3, cpu 3 is in CCX1, cpu 12 is cpu 0's SMT sibling\nsharing L1/L2). Command, per flavor × placement:\n\n```\nperf stat -e ls_refills_from_sys.ls_mabresp_lcl_cache,\\\nls_refills_from_sys.ls_mabresp_lcl_l2,\\\nls_refills_from_sys.ls_mabresp_lcl_dram -- \\\n  target/release/examples/tp_roundtrip <flavor> -d 10 [--pin m,w]\n```\n\nPhase values are the report's trimmed `mean min-p99` in ns;\n`fills/RT` is `ls_mabresp_lcl_cache` (demand fills served\nfrom another core's cache) divided by round trips.\n\n| placement  | flavor | m.send | w.recv | w.send | m.recv | RTs/10s | fills/RT |\n|------------|--------|-------:|-------:|-------:|-------:|--------:|---------:|\n| 0,1 CCX    | spsc   |   21.8 |   98.2 |   37.9 |   94.4 |   52.6M |     10.0 |\n| 0,1 CCX    | mpsc   |   11.9 |   65.8 |   12.8 |   71.4 |   72.9M |      6.7 |\n| 0,3 x-CCX  | spsc   |  108.8 |  504.0 |  135.1 |  476.9 |   14.5M |      9.8 |\n| 0,3 x-CCX  | mpsc   |   58.2 |  348.8 |   52.7 |  425.1 |   17.4M |      6.8 |\n| 0,12 SMT   | spsc   |    8.6 |   32.5 |    8.6 |   31.7 |  131.2M |       ~0 |\n| 0,12 SMT   | mpsc   |    8.8 |   47.5 |   13.3 |   50.8 |  104.0M |       ~0 |\n| […]
 
@@ -5057,7 +5057,7 @@ id: toolu_01JWg9dyhd7wt1mzkWTwUw57
 tool_result
 id: toolu_01JWg9dyhd7wt1mzkWTwUw57
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5067,7 +5067,7 @@ id: toolu_01WVKCBcydQUR8dpo92yFCMx
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md",
   "old_string": "### Preliminary evidence: cross-core fill counters\n\nExploratory 10 s runs",
   "new_string": "### Preliminary evidence: cross-core fill counters\n\nSuperseded by [Measurements (0.13.0-4)](#measurements-0130-4)\nabove — kept as the exploratory record that motivated the\ncycle's shape.\n\nExploratory 10 s runs"
 }
@@ -5078,7 +5078,7 @@ id: toolu_01WVKCBcydQUR8dpo92yFCMx
 tool_result
 id: toolu_01WVKCBcydQUR8dpo92yFCMx
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5092,7 +5092,7 @@ id: toolu_01E3aa8xr6SmRyobAjCMW1uV
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md",
   "old_string": "3. Batch alloc/free demo:",
   "new_string": "3. Seam-word SPSC variant: publish per-slot seq words so\n   neither side ever reads the other's index line —\n   Vyukov-style publish but load/store only (no CAS: the\n   single producer's index stays endpoint-private) [[21]]:\n   - motivation: cross-core, SPSC moves ~10.0 cache lines\n     per round trip vs MPSC's ~6.7 and loses ~26–40%; the\n     whole gap is line-transfer economics;\n   - must keep the SMT/1t win (SPSC beats MPSC at 0,12\n     where transfers ≈ 0 — the protocol itself is cheaper);\n   - costs a seq array in the layout (layout_version bump)\n     — measure A/B with tp_roundtrip before adopting.\n4. Batch alloc/free demo:"
 }
@@ -5103,7 +5103,7 @@ id: toolu_01E3aa8xr6SmRyobAjCMW1uV
 tool_result
 id: toolu_01E3aa8xr6SmRyobAjCMW1uV
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5113,7 +5113,7 @@ id: toolu_014hUTCw8wX8VFeh3hvUs4cT
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md",
   "old_string": "[20]: chores/chores-01.md#outcome-the-2t-surprise",
   "new_string": "[20]: chores/chores-01.md#outcome-the-2t-surprise\n[21]: chores/chores-02.md#findings-the-gap-is-line-transfer-economics"
 }
@@ -5124,7 +5124,7 @@ id: toolu_014hUTCw8wX8VFeh3hvUs4cT
 tool_result
 id: toolu_014hUTCw8wX8VFeh3hvUs4cT
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5165,7 +5165,7 @@ id: toolu_012XMKNgDuhVtQGEWjzhDa8J
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md",
   "old_string": "- 0.13.0-4 docs: 2t gap measurements + findings (current)",
   "new_string": "- 0.13.0-4 docs: 2t gap measurements + findings (done)"
 }
@@ -5176,7 +5176,7 @@ id: toolu_012XMKNgDuhVtQGEWjzhDa8J
 tool_result
 id: toolu_012XMKNgDuhVtQGEWjzhDa8J
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5276,7 +5276,7 @@ id: toolu_01UyQFg6KhrXQMsPyJy7UHg6
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md",
   "old_string": "- 0.13.0-4 docs: 2t gap measurements + findings (done)\n- 0.13.0 perf: explore spsc vs mpsc 2t gap (close-out;",
   "new_string": "- 0.13.0-4 docs: 2t gap measurements + findings (done)\n- 0.13.0-5 feat: 2t gap spin-wait probes (current) —\n  attempts + spin-time decomposition of the recv phases,\n  band-table count unit, matrix re-run at --decimals 3\n- 0.13.0 perf: explore spsc vs mpsc 2t gap (close-out;"
 }
@@ -5287,7 +5287,7 @@ id: toolu_01UyQFg6KhrXQMsPyJy7UHg6
 tool_result
 id: toolu_01UyQFg6KhrXQMsPyJy7UHg6
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5297,7 +5297,7 @@ id: toolu_01KD6oWAyRLyug5KDHS3YD2A
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/Cargo.toml",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/Cargo.toml",
   "old_string": "version = \"0.13.0-4\"",
   "new_string": "version = \"0.13.0-5\""
 }
@@ -5308,7 +5308,7 @@ id: toolu_01KD6oWAyRLyug5KDHS3YD2A
 tool_result
 id: toolu_01KD6oWAyRLyug5KDHS3YD2A
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/Cargo.toml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/Cargo.toml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5318,7 +5318,7 @@ id: toolu_01XSiNXncM3Xg5BdqGRyXVY6
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md",
   "old_string": "- **Close-out** additionally seeds the crate's own notes —",
   "new_string": "- **Spin-wait probes** (`0.13.0-5`, added during `-4`\n  review): decompose the recv phases — a spin-time probe\n  (first failed attempt → reserve success) and an attempts\n  histogram per recv side, recorded only when the reserve\n  actually waited (the zero-spin fraction falls out of the\n  count difference vs the phase probe). `TProbe` grows a\n  counts flavor (`new_counts`) and the band table a count\n  unit (`ct`, no tick→ns conversion). Matrix re-run at\n  `--decimals 3`, with exact fills/RT for the ~0 SMT cells.\n- **Close-out** additionally seeds the crate's own notes —"
 }
@@ -5329,7 +5329,7 @@ id: toolu_01XSiNXncM3Xg5BdqGRyXVY6
 tool_result
 id: toolu_01XSiNXncM3Xg5BdqGRyXVY6
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5343,7 +5343,7 @@ id: toolu_01YWYmh3PemnCE5rg6pR7mqE
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/band_table.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/band_table.rs",
   "old_string": "/// Render a band-table report for `hist`, interpreting stored\n/// values as hardware ticks. `kind` is the header label\n/// (`\"tprobe\"`, `\"tprobe-span\"`, …) and `name` is the probe's\n/// name. `as_ticks=false` converts to ns; `true` keeps raw\n/// ticks. `decimals` is the fractional digits on every value\n/// column.\npub(crate) fn render(\n    kind: &str,\n    name: &str,\n    hist: &Histogram<u64>,\n    as_ticks: bool,\n    decimals: usize,\n) {",
   "new_string": "/// Display unit for a rendered band table.\n#[derive(Clone, Copy, PartialEq, Eq)]\npub(crate) enum Unit {\n    /// Convert stored ticks to nanoseconds (`ns`).\n    Ns,\n    /// Raw stored ticks (`tk`).\n    Ticks,\n    /// Unitless counts (`ct`) — no conversion.\n    Count,\n}\n\n/// Render a band-table report for `hist`. `kind` is the header\n/// label (`\"tprobe\"`, `\"tprobe-span\"`, …) and `name` is the\n/// probe's name. `unit` picks the display unit / conversion;\n/// `decimals` is the fractional digits on every value column.\npub(crate) fn render(\n    kind: &str,\n    name: &str,\n    hist: &Histogram<u64>,\n    unit: Unit,\n    decimals: usize,\n) {"
 }
@@ -5354,7 +5354,7 @@ id: toolu_01YWYmh3PemnCE5rg6pR7mqE
 tool_result
 id: toolu_01YWYmh3PemnCE5rg6pR7mqE
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/band_table.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/band_table.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5364,7 +5364,7 @@ id: toolu_0198uvEd5Au13Z9oCiQoKuaL
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/band_table.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/band_table.rs",
   "old_string": "    let unit = if as_ticks { \"tk\" } else { \"ns\" };\n    let tpn = ticks::ticks_per_ns();\n    let conv = |v: u64| -> f64 { if as_ticks { v as f64 } else { v as f64 / tpn } };\n    let conv_f = |v: f64| -> f64 { if as_ticks { v } else { v / tpn } };",
   "new_string": "    let to_ns = unit == Unit::Ns;\n    let unit = match unit {\n        Unit::Ns => \"ns\",\n        Unit::Ticks => \"tk\",\n        Unit::Count => \"ct\",\n    };\n    let tpn = ticks::ticks_per_ns();\n    let conv = |v: u64| -> f64 { if to_ns { v as f64 / tpn } else { v as f64 } };\n    let conv_f = |v: f64| -> f64 { if to_ns { v / tpn } else { v } };"
 }
@@ -5375,7 +5375,7 @@ id: toolu_0198uvEd5Au13Z9oCiQoKuaL
 tool_result
 id: toolu_0198uvEd5Au13Z9oCiQoKuaL
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/band_table.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/band_table.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5385,7 +5385,7 @@ id: toolu_01BiPcMioiX5ZE1nUe6meVq1
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe.rs",
   "old_string": "/// A named, single-writer histogram of hardware tick-counter\n/// deltas. Not `Sync`; cross-thread *sharing* is out of scope.\n/// `Send` so probes can be moved between threads (e.g. returned\n/// via a `JoinHandle<TProbe>` on shutdown).\npub struct TProbe {\n    name: String,\n    hist: Histogram<u64>,\n}",
   "new_string": "/// A named, single-writer histogram of hardware tick-counter\n/// deltas. Not `Sync`; cross-thread *sharing* is out of scope.\n/// `Send` so probes can be moved between threads (e.g. returned\n/// via a `JoinHandle<TProbe>` on shutdown).\npub struct TProbe {\n    name: String,\n    hist: Histogram<u64>,\n    /// Values are unitless counts, not ticks — reports render\n    /// with the `ct` unit and never convert to ns.\n    counts: bool,\n}"
 }
@@ -5396,7 +5396,7 @@ id: toolu_01BiPcMioiX5ZE1nUe6meVq1
 tool_result
 id: toolu_01BiPcMioiX5ZE1nUe6meVq1
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5406,7 +5406,7 @@ id: toolu_01EYw1rNeEwPzM3sGngSFwYC
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe.rs",
   "old_string": "    pub fn new(name: &str) -> Self {\n        ticks::require_ok();\n        // Trigger calibration eagerly so the first report() doesn't\n        // pay for it.\n        let _ = ticks::ticks_per_ns();\n        Self {\n            name: name.to_string(),\n            hist: Histogram::<u64>::new_with_bounds(1, 1_000_000_000_000, 3).unwrap(), // OK: constant bounds are valid\n        }\n    }",
   "new_string": "    pub fn new(name: &str) -> Self {\n        ticks::require_ok();\n        // Trigger calibration eagerly so the first report() doesn't\n        // pay for it.\n        let _ = ticks::ticks_per_ns();\n        Self {\n            name: name.to_string(),\n            hist: Histogram::<u64>::new_with_bounds(1, 1_000_000_000_000, 3).unwrap(), // OK: constant bounds are valid\n            counts: false,\n        }\n    }\n\n    /// Create an empty probe whose recorded values are unitless\n    /// counts (e.g. spin attempts) rather than tick deltas;\n    /// reports render with the `ct` unit and never convert.\n    pub fn new_counts(name: &str) -> Self {\n        TProbe {\n            counts: true,\n            ..TProbe::new(name)\n        }\n    }"
 }
@@ -5417,7 +5417,7 @@ id: toolu_01EYw1rNeEwPzM3sGngSFwYC
 tool_result
 id: toolu_01EYw1rNeEwPzM3sGngSFwYC
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5427,7 +5427,7 @@ id: toolu_01VtfGLCKxyH43kt3AC3bQDK
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe.rs",
   "old_string": "    /// Render a band-table report for this probe. `as_ticks`\n    /// controls the display unit: `false` converts stored tick\n    /// deltas to nanoseconds (default for the CLI); `true` shows\n    /// raw ticks (`-t`/`--ticks`). `decimals` is the fractional\n    /// digits on every value column.\n    pub fn report(&self, as_ticks: bool, decimals: usize) {\n        band_table::render(\"tprobe\", &self.name, &self.hist, as_ticks, decimals);\n    }",
   "new_string": "    /// Render a band-table report for this probe. `as_ticks`\n    /// controls the display unit: `false` converts stored tick\n    /// deltas to nanoseconds (default for the CLI); `true` shows\n    /// raw ticks (`-t`/`--ticks`); a [`new_counts`] probe always\n    /// renders unitless counts. `decimals` is the fractional\n    /// digits on every value column.\n    ///\n    /// [`new_counts`]: TProbe::new_counts\n    pub fn report(&self, as_ticks: bool, decimals: usize) {\n        let unit = if self.counts {\n            band_table::Unit::Count\n        } else if as_ticks {\n            band_table::Unit::Ticks\n        } else {\n            band_table::Unit::Ns\n        };\n        band_table::render(\"tprobe\", &self.name, &self.hist, unit, decimals);\n    }"
 }
@@ -5438,7 +5438,7 @@ id: toolu_01VtfGLCKxyH43kt3AC3bQDK
 tool_result
 id: toolu_01VtfGLCKxyH43kt3AC3bQDK
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5448,7 +5448,7 @@ id: toolu_01CAs2GdUqCfMgUbpeoP1J8j
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe_span.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe_span.rs",
   "old_string": "        band_table::render(\"tprobe-span\", &self.name, &self.hist, as_ticks, decimals);",
   "new_string": "        let unit = if as_ticks {\n            band_table::Unit::Ticks\n        } else {\n            band_table::Unit::Ns\n        };\n        band_table::render(\"tprobe-span\", &self.name, &self.hist, unit, decimals);"
 }
@@ -5459,7 +5459,7 @@ id: toolu_01CAs2GdUqCfMgUbpeoP1J8j
 tool_result
 id: toolu_01CAs2GdUqCfMgUbpeoP1J8j
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe_span.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/src/tprobe_span.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5469,7 +5469,7 @@ id: toolu_01Nxki4tv9vobwoM6BCsC9Db
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tp_runner/src/lib.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tp_runner/src/lib.rs",
   "old_string": "/// Drive `dur` worth of round trips: send the counter via\n/// `send`, receive the echo via `recv`; the two phases record\n/// into `send_probe` / `recv_probe`. Returns when the budget\n/// is spent (checked every [`CLOCK_CHECK_EVERY`] iterations).\n/// The counter skips [`STOP`] so callers can use it as a\n/// shutdown sentinel afterwards.\npub fn drive(\n    dur: Duration,\n    send_probe: &mut TProbe,\n    recv_probe: &mut TProbe,\n    mut send: impl FnMut(u64),\n    mut recv: impl FnMut() -> u64,\n) {\n    let start = Instant::now();\n    let mut counter: u64 = 0;\n    loop {\n        for _ in 0..CLOCK_CHECK_EVERY {\n            counter = counter.wrapping_add(1);\n            if counter == STOP {\n                counter = 1;\n            }\n            let s = ticks::read_ticks();\n            send(counter);\n            send_probe.record(ticks::read_ticks().wrapping_sub(s));\n            let s = ticks::read_ticks();\n            let v = recv();\n            recv_probe.record(ticks::read_ticks().wrapping_sub(s));\n            assert_eq!(v, counter, \"echo mismatch\");\n        }\n        if start.elapsed() >= dur {\n            return;\n        }\n    }\n}",
   "new_string": "/// Drive `dur` worth of round trips: send the counter via\n/// `send`, receive the echo via `recv`. Returns when the\n/// budget is spent (checked every [`CLOCK_CHECK_EVERY`]\n/// iterations). The counter skips [`STOP`] so callers can use\n/// it as a shutdown sentinel afterwards.\n///\n/// All probing lives in the closures — the loop itself\n/// measures nothing, so callers control exactly what each\n/// probe brackets […]
 
@@ -5478,7 +5478,7 @@ id: toolu_01Nxki4tv9vobwoM6BCsC9Db
 tool_result
 id: toolu_01Nxki4tv9vobwoM6BCsC9Db
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/tp_runner/src/lib.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/tp_runner/src/lib.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5488,7 +5488,7 @@ id: toolu_01WbVDtKwCuNQ2Bwc4ZhQXq2
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tp_runner/src/lib.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tp_runner/src/lib.rs",
   "old_string": "//! - [`drive`] — the measured loop: send a counter, receive\n//!   the echo, one [`TProbe`] per phase.",
   "new_string": "//! - [`drive`] — the round-trip loop: send a counter, receive\n//!   the echo; probing lives in the caller's closures."
 }
@@ -5499,7 +5499,7 @@ id: toolu_01WbVDtKwCuNQ2Bwc4ZhQXq2
 tool_result
 id: toolu_01WbVDtKwCuNQ2Bwc4ZhQXq2
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/tp_runner/src/lib.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/tp_runner/src/lib.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5512,7 +5512,7 @@ tool_use Write
 id: toolu_011iTYCndgsXZi9uBhfrWi2i
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/examples/tp_roundtrip.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/examples/tp_roundtrip.rs",
   "content": "//! Phase-probed 1p/1c round trip: localize where the SPSC vs\n//! MPSC cross-thread latency gap lives.\n//!\n//! Main sends a counter to a worker over one ring and waits for\n//! the echo on a second ring; each protocol phase is measured\n//! by its own [`TProbe`] (two `read_ticks` bracket the endpoint\n//! call), so the reports separate the sides of the handoff:\n//!\n//! - `main send` / `worker send` — the producer's reserve +\n//!   fill + commit, including any stall acquiring peer-written\n//!   cache lines. The ring is never full here (one message in\n//!   flight, 8 slots), so no send ever waits for space.\n//! - `worker recv` / `main recv` — the consumer's spin wait +\n//!   read + release. These absorb the in-flight half trip;\n//!   `worker recv` also absorbs main's inter-iteration framing\n//!   (probe records, the every-N clock check).\n//! - `… recv spin` / `… recv attempts` — the wait inside the\n//!   recv phase, decomposed: spin time (first failed attempt →\n//!   reserve success) and the attempt count, recorded only for\n//!   reserves that actually waited. The zero-spin fraction is\n//!   the count difference vs the recv phase probe. Histogram\n//!   writes happen after the phase-end tick read; the only\n//!   in-phase overhead […]
 
 > TOOL
@@ -5564,7 +5564,7 @@ tool_use Read
 id: toolu_01CuViHVhdqeyrcREP6mW9PT
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/examples/tp_roundtrip.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/examples/tp_roundtrip.rs",
   "limit": 40
 }
 ```
@@ -5602,7 +5602,7 @@ tool_use Write
 id: toolu_013k9V7MoTUuCyDrnDcttSEj
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/examples/tp_roundtrip.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/examples/tp_roundtrip.rs",
   "content": "//! Phase-probed 1p/1c round trip: localize where the SPSC vs\n//! MPSC cross-thread latency gap lives.\n//!\n//! Main sends a counter to a worker over one ring and waits for\n//! the echo on a second ring; each protocol phase is measured\n//! by its own [`TProbe`] (two `read_ticks` bracket the endpoint\n//! call), so the reports separate the sides of the handoff:\n//!\n//! - `main send` / `worker send` — the producer's reserve +\n//!   fill + commit, including any stall acquiring peer-written\n//!   cache lines. The ring is never full here (one message in\n//!   flight, 8 slots), so no send ever waits for space.\n//! - `worker recv` / `main recv` — the consumer's spin wait +\n//!   read + release. These absorb the in-flight half trip;\n//!   `worker recv` also absorbs main's inter-iteration framing\n//!   (probe records, the every-N clock check).\n//! - `… recv spin` / `… recv attempts` — the wait inside the\n//!   recv phase, decomposed: spin time (first failed attempt →\n//!   reserve success) and the attempt count, recorded only for\n//!   reserves that actually waited. The zero-spin fraction is\n//!   the count difference vs the recv phase probe. Histogram\n//!   writes happen after the phase-end tick read; the only\n//!   in-phase overhead […]
 
 > TOOL
@@ -5610,7 +5610,7 @@ id: toolu_013k9V7MoTUuCyDrnDcttSEj
 tool_result
 id: toolu_013k9V7MoTUuCyDrnDcttSEj
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/examples/tp_roundtrip.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/examples/tp_roundtrip.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5669,7 +5669,7 @@ id: toolu_012GT7LGHw2dLmPcXM3wDW9B
 tool_result
 id: toolu_012GT7LGHw2dLmPcXM3wDW9B
 ```
-    Checking tp_runner v0.1.0 (/home/wink/data/prgs/rust/zc-ring-x1/tp_runner)
+    Checking tp_runner v0.1.0 (/home/<USER>/data/prgs/rust/zc-ring-x1/tp_runner)
 error: unused import: `tprobe::ticks`
   --> tp_runner/src/lib.rs:24:5
    |
@@ -5691,7 +5691,7 @@ id: toolu_01CAHSohNrtRNtdXNBtQT4tY
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tp_runner/src/lib.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tp_runner/src/lib.rs",
   "old_string": "use tprobe::TProbe;\nuse tprobe::ticks;",
   "new_string": "use tprobe::TProbe;"
 }
@@ -5702,7 +5702,7 @@ id: toolu_01CAHSohNrtRNtdXNBtQT4tY
 tool_result
 id: toolu_01CAHSohNrtRNtdXNBtQT4tY
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/tp_runner/src/lib.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/tp_runner/src/lib.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5733,7 +5733,7 @@ id: toolu_01YCBF4cUcPbmgTPdRNqEitd
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tp_runner/README.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tp_runner/README.md",
   "old_string": "- `drive` — the measured loop: send a counter, receive the\n  echo, one `TProbe` per phase; wall clock checked every 4096\n  iterations; the counter skips `STOP` so callers can use it\n  as a shutdown sentinel.",
   "new_string": "- `drive` — the round-trip loop: send a counter, receive the\n  echo; probing lives in the caller's closures; wall clock\n  checked every 4096 iterations; the counter skips `STOP` so\n  callers can use it as a shutdown sentinel."
 }
@@ -5744,7 +5744,7 @@ id: toolu_01YCBF4cUcPbmgTPdRNqEitd
 tool_result
 id: toolu_01YCBF4cUcPbmgTPdRNqEitd
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/tp_runner/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/tp_runner/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5918,7 +5918,7 @@ id: toolu_01BU5RSM6TpGBmjubHLWYdvR
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md",
   "old_string": "### Preliminary evidence: cross-core fill counters",
   "new_string": "### Spin decomposition (0.13.0-5)\n\nMatrix re-run with the spin probes at `--decimals 3` (same\ncommand shape as [Measurements (0.13.0-4)](#measurements-0130-4)).\n`spin` is the wait inside the recv phase (first failed\nattempt → reserve success), `att` the attempt count per\nwaiting reserve; both trimmed `mean min-p99`, per side\n(worker / main):\n\n| placement  | flavor | w.spin  | w.att | m.spin  | m.att | fills/RT |\n|------------|--------|--------:|------:|--------:|------:|---------:|\n| 0,1 CCX    | spsc   |   104.5 |   6.8 |   104.0 |   7.0 |    10.00 |\n| 0,1 CCX    | mpsc   |    74.0 |   4.2 |    72.6 |   4.0 |     6.59 |\n| 0,3 x-CCX  | spsc   |   543.9 |  28.8 |   544.9 |  27.9 |    10.08 |\n| 0,3 x-CCX  | mpsc   |   331.5 |  14.5 |   324.9 |  13.9 |     6.74 |\n| 0,12 SMT   | spsc   |    40.1 |   2.0 |    40.2 |   2.1 |   0.0009 |\n| 0,12 SMT   | mpsc   |    63.9 |   2.7 |    68.3 |   2.9 |   0.0010 |\n| unpinned   | spsc   |   125.3 |   7.6 |   126.4 |   8.0 |     9.83 |\n| unpinned   | mpsc   |   101.8 |   5.0 |   103.0 |   5.1 |     6.63 |\n\n- **Essentially every recv waits**: the spin/attempts probe\n […]
 
@@ -5927,7 +5927,7 @@ id: toolu_01BU5RSM6TpGBmjubHLWYdvR
 tool_result
 id: toolu_01BU5RSM6TpGBmjubHLWYdvR
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5937,7 +5937,7 @@ id: toolu_01DFTvw5qATzPsLuHAjh9Gs7
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md",
   "old_string": "- 0.13.0-5 feat: 2t gap spin-wait probes (current) —",
   "new_string": "- 0.13.0-5 feat: 2t gap spin-wait probes (done) —"
 }
@@ -5948,7 +5948,7 @@ id: toolu_01DFTvw5qATzPsLuHAjh9Gs7
 tool_result
 id: toolu_01DFTvw5qATzPsLuHAjh9Gs7
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6012,7 +6012,7 @@ id: toolu_01UkiH3soGvNMZYAx8ns3FRX
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md",
   "old_string": "Phase values are the report's trimmed `mean min-p99` in ns;\n`fills/RT` is `ls_mabresp_lcl_cache` (demand fills served\nfrom another core's cache) divided by round trips.\n\n| placement  | flavor | m.send | w.recv | w.send | m.recv | RTs/10s | fills/RT |\n|------------|--------|-------:|-------:|-------:|-------:|--------:|---------:|\n| 0,1 CCX    | spsc   |   21.8 |   98.2 |   37.9 |   94.4 |   52.6M |     10.0 |\n| 0,1 CCX    | mpsc   |   11.9 |   65.8 |   12.8 |   71.4 |   72.9M |      6.7 |\n| 0,3 x-CCX  | spsc   |  108.8 |  504.0 |  135.1 |  476.9 |   14.5M |      9.8 |\n| 0,3 x-CCX  | mpsc   |   58.2 |  348.8 |   52.7 |  425.1 |   17.4M |      6.8 |\n| 0,12 SMT   | spsc   |    8.6 |   32.5 |    8.6 |   31.7 |  131.2M |       ~0 |\n| 0,12 SMT   | mpsc   |    8.8 |   47.5 |   13.3 |   50.8 |  104.0M |       ~0 |\n| unpinned   | spsc   |   22.9 |  102.6 |   40.2 |  100.0 |   53.9M |     10.0 |\n| unpinned   | mpsc   |   11.3 |   68.3 |   13.7 |   77.5 |   66.3M |      6.7 |",
   "new_string": "One round trip (RT) is main send → worker recv → worker\nsend → main recv: main […]
 
@@ -6021,7 +6021,7 @@ id: toolu_01UkiH3soGvNMZYAx8ns3FRX
 tool_result
 id: toolu_01UkiH3soGvNMZYAx8ns3FRX
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6031,7 +6031,7 @@ id: toolu_01AQ6cvWsEfwMehgiBEPqkjh
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md",
   "old_string": "Matrix re-run with the spin probes at `--decimals 3` (same\ncommand shape as [Measurements (0.13.0-4)](#measurements-0130-4)).\n`spin` is the wait inside the recv phase (first failed\nattempt → reserve success), `att` the attempt count per\nwaiting reserve; both trimmed `mean min-p99`, per side\n(worker / main):",
   "new_string": "Where the wait goes: the matrix re-run with the spin probes\nat `--decimals 3` (same command shape as\n[Measurements (0.13.0-4)](#measurements-0130-4)) decomposes\neach recv phase into its wait and its work. Columns (trimmed\n`mean min-p99`, `w.` worker / `m.` main):\n\n- `spin` — the wait inside the recv phase, in ns: first\n  failed attempt → reserve success; recorded only when the\n  reserve actually waited.\n- `att` — polls per waiting reserve, a count: how many\n  times the wait-policy closure ran before the message was\n  visible.\n- `fills/RT` — cross-core cache-line fills per round trip,\n  as in the Measurements table (this run's values)."
 }
@@ -6042,7 +6042,7 @@ id: toolu_01AQ6cvWsEfwMehgiBEPqkjh
 tool_result
 id: toolu_01AQ6cvWsEfwMehgiBEPqkjh
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6052,7 +6052,7 @@ id: toolu_012t1nJe9YtMnrg1MMQ9kNpt
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md",
   "old_string": "| placement  | flavor | w.spin  | w.att | m.spin  | m.att | fills/RT |\n|------------|--------|--------:|------:|--------:|------:|---------:|\n| 0,1 CCX    | spsc   |   104.5 |   6.8 |   104.0 |   7.0 |    10.00 |\n| 0,1 CCX    | mpsc   |    74.0 |   4.2 |    72.6 |   4.0 |     6.59 |\n| 0,3 x-CCX  | spsc   |   543.9 |  28.8 |   544.9 |  27.9 |    10.08 |\n| 0,3 x-CCX  | mpsc   |   331.5 |  14.5 |   324.9 |  13.9 |     6.74 |\n| 0,12 SMT   | spsc   |    40.1 |   2.0 |    40.2 |   2.1 |   0.0009 |\n| 0,12 SMT   | mpsc   |    63.9 |   2.7 |    68.3 |   2.9 |   0.0010 |\n| unpinned   | spsc   |   125.3 |   7.6 |   126.4 |   8.0 |     9.83 |\n| unpinned   | mpsc   |   101.8 |   5.0 |   103.0 |   5.1 |     6.63 |",
   "new_string": "| placement  | flavor | w.spin  | w.att | m.spin  | m.att | fills/RT |\n|------------|--------|--------:|------:|--------:|------:|---------:|\n| 0,1 CCX    | spsc   |   104.5 |   6.8 |   104.0 |   7.0 |   10.001 |\n| 0,1 CCX    | mpsc   |    74.0 |   4.2 |    72.6 |   4.0 |    6.591 |\n| 0,3 x-CCX  | spsc   |   543.9 |  28.8 |   544.9 […]
 
@@ -6061,7 +6061,7 @@ id: toolu_012t1nJe9YtMnrg1MMQ9kNpt
 tool_result
 id: toolu_012t1nJe9YtMnrg1MMQ9kNpt
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6071,7 +6071,7 @@ id: toolu_01GhCQ4s7Ycxb2nKGxrQBtgx
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md",
   "old_string": "- The exact SMT fills/RT are 0.0009 (SPSC) / 0.0010 (MPSC) —\n  the `~0` cells of the `-4` table, now measured.\n- Caveat: the spin instrumentation costs throughput",
   "new_string": "- Caveat: the spin instrumentation costs throughput"
 }
@@ -6082,7 +6082,7 @@ id: toolu_01GhCQ4s7Ycxb2nKGxrQBtgx
 tool_result
 id: toolu_01GhCQ4s7Ycxb2nKGxrQBtgx
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6161,11 +6161,11 @@ tool_result
 id: toolu_01MWNLzVmxs9nMMCh4xE2bNf
 ```
 push message: title="feat: 2t gap spin-wait probes", app_chid=qpszxlqrtywq, claude_chid=pxmquswnyqyw, claude_had_changes=true
-push commit-app: jj commit -R /home/wink/data/prgs/rust/zc-ring-x1
-push commit-claude: jj commit -R /home/wink/data/prgs/rust/zc-ring-x1/.claude
-push bookmark-set: jj bookmark set main -r @- -R /home/wink/data/prgs/rust/zc-ring-x1 / main -r @- -R /home/wink/data/prgs/rust/zc-ring-x1/.claude
-push push-app: jj git push --bookmark main -R /home/wink/data/prgs/rust/zc-ring-x1
-push finalize-claude: vc-x1 finalize --repo /home/wink/data/prgs/rust/zc-ring-x1/.claude --squash --push main --delay 10 --detach
+push commit-app: jj commit -R /home/<USER>/data/prgs/rust/zc-ring-x1
+push commit-claude: jj commit -R /home/<USER>/data/prgs/rust/zc-ring-x1/.claude
+push bookmark-set: jj bookmark set main -r @- -R /home/<USER>/data/prgs/rust/zc-ring-x1 / main -r @- -R /home/<USER>/data/prgs/rust/zc-ring-x1/.claude
+push push-app: jj git push --bookmark main -R /home/<USER>/data/prgs/rust/zc-ring-x1
+push finalize-claude: vc-x1 finalize --repo /home/<USER>/data/prgs/rust/zc-ring-x1/.claude --squash --push main --delay 10 --detach
 push: completed all stages (verified, state cleared)
 ```
 
@@ -6188,7 +6188,7 @@ id: toolu_01GA3W39Emqy8PVw88fEnc2n
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/Cargo.toml",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/Cargo.toml",
   "old_string": "version = \"0.13.0-5\"",
   "new_string": "version = \"0.13.0\""
 }
@@ -6199,7 +6199,7 @@ id: toolu_01GA3W39Emqy8PVw88fEnc2n
 tool_result
 id: toolu_01GA3W39Emqy8PVw88fEnc2n
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/Cargo.toml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/Cargo.toml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6344,7 +6344,7 @@ id: toolu_01Qwqtuq8BChXGmoT7iFosr8
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md",
   "old_string": "## In Progress\n\n**perf: explore spsc vs mpsc 2t gap**\n\nAt 1p/1c cross-thread the MPSC ring measures ~26% faster\nthan SPSC (73.9 vs 100.1 ns adjusted mean at 300s) [[20]].\nWe think SPSC bounces two index cache lines per handoff\n(each side polls the line the other writes) while MPSC's\nonly shared hot word is the slot seq. Verify from this repo\n— cross-core cache-fill counters plus a phase-probed round\ntrip — so the measurement is reproducible here. Details:\n[chores section](chores/chores-02.md#perf-explore-spsc-vs-mpsc-2t-gap).\n\n- 0.13.0-0 docs: 2t gap exploration plan (done)\n- 0.13.0-1 feat: 2t gap tprobe dev crate (done)\n- 0.13.0-2 feat: 2t gap probed roundtrip example (done)\n- 0.13.0-3 refactor: 2t gap tp_runner crate + READMEs\n  (done)\n- 0.13.0-4 docs: 2t gap measurements + findings (done)\n- 0.13.0-5 feat: 2t gap spin-wait probes (done) —\n  attempts + spin-time decomposition of the recv phases,\n  band-table count unit, matrix re-run at --decimals 3\n- 0.13.0 perf: explore spsc vs mpsc 2t gap (close-out;\n  also seeds tprobe/notes/design.md and\n  tprobe/notes/chores/chores-01.md)",
   "new_string": "## In Progress\n\n_No cycle currently in progress._"
 }
@@ -6355,7 +6355,7 @@ id: toolu_01Qwqtuq8BChXGmoT7iFosr8
 tool_result
 id: toolu_01Qwqtuq8BChXGmoT7iFosr8
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6365,7 +6365,7 @@ id: toolu_01WbnPPk2L4Gnr5DHfxHQdEv
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md",
   "old_string": "- feat: mpsc ring sibling primitive [[19]]\n- refactor: versioned primitive module dirs [[12]]\n\n# References\n\n[11]: chores/chores-01.md#follow-on-endpoints-and-wait-policies\n[12]: chores/chores-02.md#refactor-versioned-primitive-module-dirs\n[19]: chores/chores-01.md#feat-mpsc-ring-sibling-primitive\n[20]: chores/chores-01.md#outcome-the-2t-surprise\n[21]: chores/chores-02.md#findings-the-gap-is-line-transfer-economics",
   "new_string": "- perf: explore spsc vs mpsc 2t gap [[12]]\n\n# References\n\n[11]: chores/chores-01.md#follow-on-endpoints-and-wait-policies\n[12]: chores/chores-02.md#perf-explore-spsc-vs-mpsc-2t-gap\n[21]: chores/chores-02.md#findings-the-gap-is-line-transfer-economics"
 }
@@ -6376,7 +6376,7 @@ id: toolu_01WbnPPk2L4Gnr5DHfxHQdEv
 tool_result
 id: toolu_01WbnPPk2L4Gnr5DHfxHQdEv
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6390,7 +6390,7 @@ id: toolu_01DSzqj7eo2kEp4wnMBzK4EL
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/done.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/done.md",
   "old_string": "- docs: refresh iiac-perf numbers, seam closed [[18]]\n\n# References",
   "new_string": "- docs: refresh iiac-perf numbers, seam closed [[18]]\n- feat: mpsc ring sibling primitive [[19]]\n- refactor: versioned primitive module dirs [[20]]\n\n# References"
 }
@@ -6401,7 +6401,7 @@ id: toolu_01DSzqj7eo2kEp4wnMBzK4EL
 tool_result
 id: toolu_01DSzqj7eo2kEp4wnMBzK4EL
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/notes/done.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/notes/done.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6411,7 +6411,7 @@ id: toolu_01AMB6FbZDVZ5oQNF77tft8A
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/done.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/done.md",
   "old_string": "[18]: chores/chores-01.md#docs-refresh-iiac-perf-numbers-seam-closed",
   "new_string": "[18]: chores/chores-01.md#docs-refresh-iiac-perf-numbers-seam-closed\n[19]: chores/chores-01.md#feat-mpsc-ring-sibling-primitive\n[20]: chores/chores-02.md#refactor-versioned-primitive-module-dirs"
 }
@@ -6422,7 +6422,7 @@ id: toolu_01AMB6FbZDVZ5oQNF77tft8A
 tool_result
 id: toolu_01AMB6FbZDVZ5oQNF77tft8A
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/notes/done.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/notes/done.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6436,7 +6436,7 @@ id: toolu_01MqVSMUohwtWrbziwXzVaFv
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md",
   "old_string": "## perf: explore spsc vs mpsc 2t gap\n\nCommits:",
   "new_string": "## perf: explore spsc vs mpsc 2t gap\n\nCommits: [[7]],[[8]],[[9]],[[10]],[[11]],[[12]]"
 }
@@ -6447,7 +6447,7 @@ id: toolu_01MqVSMUohwtWrbziwXzVaFv
 tool_result
 id: toolu_01MqVSMUohwtWrbziwXzVaFv
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6457,7 +6457,7 @@ id: toolu_014pUYV4hhsWBM6rdJE8f45F
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md",
   "old_string": "[6]: chores-01.md#outcome-the-2t-surprise",
   "new_string": "[6]: chores-01.md#outcome-the-2t-surprise\n[7]: https://github.com/winksaville/zc-ring-x1/commit/55cc19d3734f \"55cc19d3734f705a478d405953157b42182dfd19\"\n[8]: https://github.com/winksaville/zc-ring-x1/commit/7fe93150a95e \"7fe93150a95e304bab99af31dd0c85d37a21b93c\"\n[9]: https://github.com/winksaville/zc-ring-x1/commit/2fb9578ef7ff \"2fb9578ef7ff30ea3218b8d92f44e8962fafa385\"\n[10]: https://github.com/winksaville/zc-ring-x1/commit/21f1d1d21c93 \"21f1d1d21c93186f2fd010431e8bfb75be5d67f8\"\n[11]: https://github.com/winksaville/zc-ring-x1/commit/10c085ab8be5 \"10c085ab8be5f1c9a0357fb608adbac592c154ba\"\n[12]: https://github.com/winksaville/zc-ring-x1/commit/7c9d7bcd5278 \"7c9d7bcd5278c2bdb7b2d5d4a83e335b7a5c9582\""
 }
@@ -6468,7 +6468,7 @@ id: toolu_014pUYV4hhsWBM6rdJE8f45F
 tool_result
 id: toolu_014pUYV4hhsWBM6rdJE8f45F
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6478,7 +6478,7 @@ id: toolu_01KzwEzffeXcZ7mnKB6ufQmR
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md",
   "old_string": "SPSC pays ~3 more cross-core line transfers per round trip\n(~1.5 per handoff), stable across placements — consistent\nwith the two-index-lines hypothesis. Absolute counts exceed\nthe naive 2-vs-1 line accounting because each spin poll\nafter an invalidation refetches the line; the ratio matches\nthe ~26% latency gap. The 2t gap itself also reproduces at\n10 s unpinned: adjusted means 131.5 ns (SPSC) vs 93.9 ns\n(MPSC).",
   "new_string": "SPSC pays ~3 more cross-core line transfers per round trip\n(~1.5 per handoff), stable across placements — consistent\nwith the two-index-lines hypothesis. Absolute counts exceed\nthe naive 2-vs-1 line accounting because each spin poll\nafter an invalidation refetches the line; the ratio matches\nthe ~26% latency gap. The 2t gap itself also reproduces at\n10 s unpinned: adjusted means 131.5 ns (SPSC) vs 93.9 ns\n(MPSC).\n\n### As-built ladder\n\n- `0.13.0-0` docs: 2t gap exploration plan\n- `0.13.0-1` feat: 2t gap tprobe dev crate\n- `0.13.0-2` feat: 2t gap probed roundtrip example\n- `0.13.0-3` refactor: 2t gap tp_runner crate + READMEs\n- `0.13.0-4` docs: 2t gap measurements + findings\n- `0.13.0-5` feat: 2t gap spin-wait probes\n- `0.13.0` perf: explore spsc vs mpsc 2t gap (close-out;\n  seeded `tprobe/notes/design.md` and\n  `tprobe/notes/chores/chores-01.md`)"
 }
@@ -6489,7 +6489,7 @@ id: toolu_01KzwEzffeXcZ7mnKB6ufQmR
 tool_result
 id: toolu_01KzwEzffeXcZ7mnKB6ufQmR
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6502,7 +6502,7 @@ tool_use Write
 id: toolu_01T1hmBBXTUA1HLkZV1BYyY7
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tprobe/notes/design.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/notes/design.md",
   "content": "# tprobe design\n\nDesign rationale for the tprobe crate — the reasoning that\ndoesn't belong in doc comments. The crate provides hardware\ntick-counter probes for phase-level latency measurement; its\nsibling `tp_runner` provides the generic runner the probed\nexamples share.\n\n## Two probe primitives, kept separate\n\n- `TProbe` — the caller brackets a phase with two\n  `ticks::read_ticks()` and records the delta. The hot path\n  is one histogram write; the fit for high-rate loops.\n- `TProbeSpan` — `start(site_id)` / `end(id)` over a\n  deferred-processing record buffer. Preserves record order\n  and supports non-stack interleaving by construction; the\n  evolution space for per-site grouping, bounded buffers,\n  and trace retention.\n- They stay separate types because the span API's\n  buffer-per-sample model trades hot-path throughput for\n  flexibility — mixing the paths on one type forces awkward\n  trade-offs both ways.\n- `TProbeSpan`'s buffer grows without bound (24 B/record),\n  so it is the wrong tool for tens of millions of samples;\n  prefer `TProbe` there.\n\n## Ticks, not nanoseconds, on the hot path\n\nRecording raw tick deltas defers the tick→ns mul-shift to\nreport time. `ticks` abstracts the per-arch counter:\n\n- x86_64 — `rdtsc`; `require_ok` demands invariant TSC\n  (CPUID) and, on Linux, that the kernel selected `tsc` as\n  its clocksource (sysfs read); calibration derives\n  ticks/ns from a […]
 
 > TOOL
@@ -6510,7 +6510,7 @@ id: toolu_01T1hmBBXTUA1HLkZV1BYyY7
 tool_result
 id: toolu_01T1hmBBXTUA1HLkZV1BYyY7
 ```
-File created successfully at: /home/wink/data/prgs/rust/zc-ring-x1/tprobe/notes/design.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/notes/design.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6519,7 +6519,7 @@ tool_use Write
 id: toolu_01KdmGnaKeqaonGwctZEwtTG
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/tprobe/notes/chores/chores-01.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/notes/chores/chores-01.md",
   "content": "# Chores-01\n\nChores-XX files use prose form (short intro + `-` bullets).\nThis is the tprobe crate's going-forward record of landed\nwork, kept with the crate so it travels on a future\nextraction. Conventions follow the workspace's\n[AGENTS.md](../../../AGENTS.md#notes-file-conventions);\nreference numbering is file-local, starting at `[1]`.\n\nThe crate's origin story lives in the parent repo's\n[perf: explore spsc vs mpsc 2t gap](../../../notes/chores/chores-02.md#perf-explore-spsc-vs-mpsc-2t-gap)\ncycle (zc-ring-x1 `0.13.0`), which created `tprobe` and\n`tp_runner`; design rationale lives in\n[design.md](../design.md). New tprobe work records here.\n\n# References\n"
 }
 ```
@@ -6529,7 +6529,7 @@ id: toolu_01KdmGnaKeqaonGwctZEwtTG
 tool_result
 id: toolu_01KdmGnaKeqaonGwctZEwtTG
 ```
-File created successfully at: /home/wink/data/prgs/rust/zc-ring-x1/tprobe/notes/chores/chores-01.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/data/prgs/rust/zc-ring-x1/tprobe/notes/chores/chores-01.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6539,7 +6539,7 @@ id: toolu_01SE7G1xGqjw5L26RRVZSfin
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/README.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/README.md",
   "old_string": "- [ring-buffer-design.md](ring-buffer-design.md) — the\n  zero-copy ring buffer and its MPSC sibling (terminology,\n  requirements, layout, API, validation), kept in sync with\n  `src/`.",
   "new_string": "- [ring-buffer-design.md](ring-buffer-design.md) — the\n  zero-copy ring buffer and its MPSC sibling (terminology,\n  requirements, layout, API, validation), kept in sync with\n  `src/`.\n- [../tprobe/notes/design.md](../tprobe/notes/design.md) —\n  the tprobe measurement crate (probe primitives, ticks,\n  report renderer, the tprobe/tp_runner split); that crate\n  keeps its own notes so they travel on extraction."
 }
@@ -6559,7 +6559,7 @@ tool_use Read
 id: toolu_01A9kaeePdNETFcMg3a1wgkL
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/README.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/README.md",
   "offset": 13,
   "limit": 10
 }
@@ -6589,7 +6589,7 @@ id: toolu_011j2LyhNq7jPvB2XgF8Q5Uw
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/README.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/README.md",
   "old_string": "- [ring-buffer-design.md](ring-buffer-design.md) — the\n  zero-copy ring buffer and its MPSC sibling (terminology,\n  requirements, layout, API, validation), kept in sync with\n  `src/`.",
   "new_string": "- [ring-buffer-design.md](ring-buffer-design.md) — the\n  zero-copy ring buffer and its MPSC sibling (terminology,\n  requirements, layout, API, validation), kept in sync with\n  `src/`.\n- [../tprobe/notes/design.md](../tprobe/notes/design.md) —\n  the tprobe measurement crate (probe primitives, ticks,\n  report renderer, the tprobe/tp_runner split); the crate\n  keeps its own notes so they travel on extraction."
 }
@@ -6600,7 +6600,7 @@ id: toolu_011j2LyhNq7jPvB2XgF8Q5Uw
 tool_result
 id: toolu_011j2LyhNq7jPvB2XgF8Q5Uw
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/notes/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/notes/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6625,7 +6625,7 @@ id: toolu_01YaL45sb9BmhPu6TgJG5JwF
 ```
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.80s
 7
-    Replaced package `zc-ring-x1 v0.13.0-3 (/home/wink/data/prgs/rust/zc-ring-x1)` with `zc-ring-x1 v0.13.0 (/home/wink/data/prgs/rust/zc-ring-x1)` (executable `zc-ring-x1-demo`)
+    Replaced package `zc-ring-x1 v0.13.0-3 (/home/<USER>/data/prgs/rust/zc-ring-x1)` with `zc-ring-x1 v0.13.0 (/home/<USER>/data/prgs/rust/zc-ring-x1)` (executable `zc-ring-x1-demo`)
 validate-todo: notes/todo.md
 
 6 entries checked (6 Todo, 0 Bugs) — all sequential

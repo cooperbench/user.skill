@@ -8,7 +8,7 @@ tool_use Read
 id: toolu_01XM27miPcWbiJ51PwL2wWpE
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/_bmad/config.yaml"
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/_bmad/config.yaml"
 }
 ```
 
@@ -18,7 +18,7 @@ tool_use Read
 id: toolu_012zB1E7maXDkv95DnBvN1Nc
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/_bmad/config.user.yaml"
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/_bmad/config.user.yaml"
 }
 ```
 
@@ -101,7 +101,7 @@ tool_use Read
 id: toolu_01HaQiYRj5s5L62hrUbdVf6e
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/.claude/skills/bmad-module-builder/references/validate-module.md"
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/.claude/skills/bmad-module-builder/references/validate-module.md"
 }
 ```
 
@@ -147,7 +147,7 @@ tool_use Bash
 id: toolu_01T6HGo41S9vXYbKUvvv1Usr
 ```json
 {
-  "command": "ls -la /home/armel/Projects/OSS/bmad-module-skill-forge/skills/ 2>/dev/null; echo \"---validate script---\"; ls -la /home/armel/Projects/OSS/bmad-module-skill-forge/.claude/skills/bmad-module-builder/scripts/ 2>/dev/null",
+  "command": "ls -la /home/<USER>/Projects/OSS/bmad-module-skill-forge/skills/ 2>/dev/null; echo \"---validate script---\"; ls -la /home/<USER>/Projects/OSS/bmad-module-skill-forge/.claude/skills/bmad-module-builder/scripts/ 2>/dev/null",
   "description": "List skills folder and validation scripts"
 }
 ```
@@ -237,7 +237,7 @@ tool_use Bash
 id: toolu_01CcRyDETN8mHQAQUkb5pR3u
 ```json
 {
-  "command": "echo \"=== src/ skill folders ===\" && ls -d /home/armel/Projects/OSS/bmad-module-skill-forge/src/*/ 2>/dev/null && echo \"\" && echo \"=== structural validation ===\" && cd /home/armel/Projects/OSS/bmad-module-skill-forge/.claude/skills/bmad-module-builder && python3 ./scripts/validate-module.py \"/home/armel/Projects/OSS/bmad-module-skill-forge/src\"",
+  "command": "echo \"=== src/ skill folders ===\" && ls -d /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/*/ 2>/dev/null && echo \"\" && echo \"=== structural validation ===\" && cd /home/<USER>/Projects/OSS/bmad-module-skill-forge/.claude/skills/bmad-module-builder && python3 ./scripts/validate-module.py \"/home/<USER>/Projects/OSS/bmad-module-skill-forge/src\"",
   "description": "List src skills and run structural validation"
 }
 ```
@@ -249,25 +249,25 @@ id: toolu_01CcRyDETN8mHQAQUkb5pR3u
 ```
 Exit code 1
 === src/ skill folders ===
-/home/armel/Projects/OSS/bmad-module-skill-forge/src/forger/
-/home/armel/Projects/OSS/bmad-module-skill-forge/src/knowledge/
-/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/
-/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/
-/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-audit-skill/
-/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-brief-skill/
-/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/
-/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-create-skill/
-/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-create-stack-skill/
-/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-drop-skill/
-/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-export-skill/
-/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-forger/
-/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-quick-skill/
-/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-refine-architecture/
-/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-rename-skill/
-/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-setup/
-/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-test-skill/
-/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-update-skill/
-/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-verify-stack/
+/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/forger/
+/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/knowledge/
+/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/
+/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/
+/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-audit-skill/
+/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-brief-skill/
+/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/
+/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-create-skill/
+/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-create-stack-skill/
+/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-drop-skill/
+/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-export-skill/
+/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-forger/
+/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-quick-skill/
+/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-refine-architecture/
+/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-rename-skill/
+/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-setup/
+/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-test-skill/
+/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-update-skill/
+/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-verify-stack/
 
 === structural validation ===
 {
@@ -302,7 +302,7 @@ tool_use Read
 id: toolu_013oqkZu8JBF467W6yy4PAK8
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/.claude/skills/bmad-module-builder/scripts/validate-module.py"
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/.claude/skills/bmad-module-builder/scripts/validate-module.py"
 }
 ```
 
@@ -357,7 +357,7 @@ tool_use Bash
 id: toolu_016p7hCpEqTYB7jTtZEfUEhh
 ```json
 {
-  "command": "echo \"=== src/skf-setup tree ===\" && find /home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-setup -maxdepth 2 -type f 2>/dev/null && echo \"\" && echo \"=== src/module.yaml head ===\" && head -40 /home/armel/Projects/OSS/bmad-module-skill-forge/src/module.yaml && echo \"\" && echo \"=== src/module-help.csv head ===\" && head -25 /home/armel/Projects/OSS/bmad-module-skill-forge/src/module-help.csv",
+  "command": "echo \"=== src/skf-setup tree ===\" && find /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-setup -maxdepth 2 -type f 2>/dev/null && echo \"\" && echo \"=== src/module.yaml head ===\" && head -40 /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/module.yaml && echo \"\" && echo \"=== src/module-help.csv head ===\" && head -25 /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/module-help.csv",
   "description": "Inspect setup skill tree and module manifests"
 }
 ```
@@ -368,15 +368,15 @@ tool_result
 id: toolu_016p7hCpEqTYB7jTtZEfUEhh
 ```
 === src/skf-setup tree ===
-/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-setup/SKILL.md
-/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-setup/customize.toml
-/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-setup/references/detect-and-tier.md
-/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-setup/references/write-config.md
-/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-setup/references/report.md
-/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-setup/references/auto-index.md
-/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-setup/references/ccc-index.md
-/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-setup/references/tier-rules.md
-/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-setup/references/health-check.md
+/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-setup/SKILL.md
+/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-setup/customize.toml
+/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-setup/references/detect-and-tier.md
+/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-setup/references/write-config.md
+/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-setup/references/report.md
+/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-setup/references/auto-index.md
+/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-setup/references/ccc-index.md
+/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-setup/references/tier-rules.md
+/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-setup/references/health-check.md
 
 === src/module.yaml head ===
 code: skf
@@ -429,7 +429,7 @@ tool_use Bash
 id: toolu_01KaTJFSfS3Whm3mUrcnS8Db
 ```json
 {
-  "command": "echo \"=== how build assembles the module (search for module.yaml / module-help.csv handling) ===\" && grep -rn \"module-help.csv\\|module.yaml\" /home/armel/Projects/OSS/bmad-module-skill-forge/tools/ /home/armel/Projects/OSS/bmad-module-skill-forge/build/ 2>/dev/null | grep -iv \"node_modules\" | head -30\necho \"\"\necho \"=== build/ top structure ===\"\nls -la /home/armel/Projects/OSS/bmad-module-skill-forge/build/ 2>/dev/null | head\necho \"\"\necho \"=== does build place module.yaml inside skf-setup/assets? ===\"\nfind /home/armel/Projects/OSS/bmad-module-skill-forge/build -name \"module.yaml\" -o -name \"module-help.csv\" 2>/dev/null | head",
+  "command": "echo \"=== how build assembles the module (search for module.yaml / module-help.csv handling) ===\" && grep -rn \"module-help.csv\\|module.yaml\" /home/<USER>/Projects/OSS/bmad-module-skill-forge/tools/ /home/<USER>/Projects/OSS/bmad-module-skill-forge/build/ 2>/dev/null | grep -iv \"node_modules\" | head -30\necho \"\"\necho \"=== build/ top structure ===\"\nls -la /home/<USER>/Projects/OSS/bmad-module-skill-forge/build/ 2>/dev/null | head\necho \"\"\necho \"=== does build place module.yaml inside skf-setup/assets? ===\"\nfind /home/<USER>/Projects/OSS/bmad-module-skill-forge/build -name \"module.yaml\" -o -name \"module-help.csv\" 2>/dev/null | head",
   "description": "Inspect build packaging of module manifests"
 }
 ```
@@ -440,9 +440,9 @@ tool_result
 id: toolu_01KaTJFSfS3Whm3mUrcnS8Db
 ```
 === how build assembles the module (search for module.yaml / module-help.csv handling) ===
-/home/armel/Projects/OSS/bmad-module-skill-forge/tools/cli/lib/installer.js:172:    // Copy module.yaml and module-help.csv
-/home/armel/Projects/OSS/bmad-module-skill-forge/tools/cli/lib/installer.js:173:    for (const file of ['module.yaml', 'module-help.csv']) {
-/home/armel/Projects/OSS/bmad-module-skill-forge/build/site/architecture/index.html:364:<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="plaintext"><code><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">src/</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├── skf-forger/               # Agent skill (SKILL.md + manifest)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├── skf-setup/                # Setup skill (forge initialization)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├── skf-analyze-source/</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├── skf-brief-skill/</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├── skf-create-skill/</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├── skf-quick-skill/</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├── skf-create-stack-skill/</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├── skf-verify-stack/</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├── skf-refine-architecture/</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├── skf-update-skill/</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├── skf-audit-skill/</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├── skf-test-skill/</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├── skf-export-skill/</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├── skf-rename-skill/</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├── skf-drop-skill/</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├── forger/</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">│   ├── forge-tier.yaml</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">│   ├── preferences.yaml</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">│   └── README.md</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├── knowledge/</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">│   ├── skf-knowledge-index.csv</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">│   └── *.md (14 knowledge fragments + overview.md index)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├── shared/                   # Cross-workflow resources</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├── module.yaml               # Module metadata (code, name, config vars)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">└── module-help.csv           # Skill menu for bmad-help integration</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="src/├── skf-forger/               # Agent skill (SKILL.md + manifest)├── skf-setup/                # Setup skill (forge initialization)├── skf-analyze-source/├── skf-brief-skill/├── […]
+/home/<USER>/Projects/OSS/bmad-module-skill-forge/tools/cli/lib/installer.js:172:    // Copy module.yaml and module-help.csv
+/home/<USER>/Projects/OSS/bmad-module-skill-forge/tools/cli/lib/installer.js:173:    for (const file of ['module.yaml', 'module-help.csv']) {
+/home/<USER>/Projects/OSS/bmad-module-skill-forge/build/site/architecture/index.html:364:<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="plaintext"><code><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">src/</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├── skf-forger/               # Agent skill (SKILL.md + manifest)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├── skf-setup/                # Setup skill (forge initialization)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├── skf-analyze-source/</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├── skf-brief-skill/</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├── skf-create-skill/</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├── skf-quick-skill/</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├── skf-create-stack-skill/</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├── skf-verify-stack/</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├── skf-refine-architecture/</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├── skf-update-skill/</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├── skf-audit-skill/</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├── skf-test-skill/</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├── skf-export-skill/</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├── skf-rename-skill/</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├── skf-drop-skill/</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├── forger/</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">│   ├── forge-tier.yaml</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">│   ├── preferences.yaml</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">│   └── README.md</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├── knowledge/</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">│   ├── skf-knowledge-index.csv</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">│   └── *.md (14 knowledge fragments + overview.md index)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├── shared/                   # Cross-workflow resources</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├── module.yaml               # Module metadata (code, name, config vars)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">└── module-help.csv           # Skill menu for bmad-help integration</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="src/├── skf-forger/               # Agent skill (SKILL.md + manifest)├── skf-setup/                # Setup skill (forge initialization)├── skf-analyze-source/├── skf-brief-skill/├── […]
 
 > AGENT
 
@@ -456,7 +456,7 @@ tool_use Bash
 id: toolu_01AQ7NwFkphSJqpxp1mMJo5K
 ```json
 {
-  "command": "echo \"=== which src/ subdirs are real skills (have SKILL.md) ===\" && for d in /home/armel/Projects/OSS/bmad-module-skill-forge/src/*/; do if [ -f \"$d/SKILL.md\" ]; then echo \"SKILL: $(basename $d)\"; else echo \"  non-skill: $(basename $d)\"; fi; done\necho \"\"\necho \"=== full module-help.csv row count ===\"\nwc -l /home/armel/Projects/OSS/bmad-module-skill-forge/src/module-help.csv",
+  "command": "echo \"=== which src/ subdirs are real skills (have SKILL.md) ===\" && for d in /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/*/; do if [ -f \"$d/SKILL.md\" ]; then echo \"SKILL: $(basename $d)\"; else echo \"  non-skill: $(basename $d)\"; fi; done\necho \"\"\necho \"=== full module-help.csv row count ===\"\nwc -l /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/module-help.csv",
   "description": "Identify real skill folders vs resource folders"
 }
 ```
@@ -488,7 +488,7 @@ SKILL: skf-update-skill
 SKILL: skf-verify-stack
 
 === full module-help.csv row count ===
-18 /home/armel/Projects/OSS/bmad-module-skill-forge/src/module-help.csv
+18 /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/module-help.csv
 ```
 
 > AGENT
@@ -501,7 +501,7 @@ tool_use Bash
 id: toolu_016QcLJpKyJ2kFmCJB4L4HtH
 ```json
 {
-  "command": "cat > /tmp/skf_struct_validate.py << 'PYEOF'\nimport csv, json, sys\nfrom io import StringIO\nfrom pathlib import Path\n\nMOD = Path(\"/home/armel/Projects/OSS/bmad-module-skill-forge/src\")\nCSV_HEADER = [\"module\",\"skill\",\"display-name\",\"menu-code\",\"description\",\"action\",\"args\",\"phase\",\"after\",\"before\",\"required\",\"output-location\",\"outputs\"]\nfindings = []\ndef f(sev, cat, msg, detail=\"\"): findings.append({\"severity\":sev,\"category\":cat,\"message\":msg,\"detail\":detail})\n\n# skill folders (dirs with SKILL.md), setup skill\nsetup = \"skf-setup\"\nskill_folders = sorted([d.name for d in MOD.iterdir() if d.is_dir() and (d/\"SKILL.md\").is_file() and d.name != setup])\n\ncsv_text = (MOD/\"module-help.csv\").read_text(encoding=\"utf-8\")\nreader = csv.DictReader(StringIO(csv_text))\nheader = reader.fieldnames or []\nrows = list(reader)\n\nif header != CSV_HEADER:\n    f(\"high\",\"csv-header\",f\"header mismatch missing={set(CSV_HEADER)-set(header)} extra={set(header)-set(CSV_HEADER)}\")\n\n# column count consistency\nfor i,row in enumerate(rows):\n    if len(row) != len(CSV_HEADER):\n        f(\"medium\",\"csv-columns\",f\"Row {i+2} has {len(row)} cols expected {len(CSV_HEADER)}\", f\"skill={row.get('skill','?')}\")\n\ncsv_skills = {r.get(\"skill\",\"\") for r in rows}\n\n# skills without CSV entries\nfor s in skill_folders:\n    if s not in csv_skills:\n        f(\"high\",\"missing-entry\",f\"Skill '{s}' has no capability entries in the CSV\")\n\n# orphan entries\nfor s in csv_skills:\n    if s not in skill_folders and s != setup:\n        if not (MOD/s/\"SKILL.md\").is_file():\n            f(\"high\",\"orphan-entry\",f\"CSV references skill '{s}' which does not exist\")\n\n# unique menu codes\ncodes={}\nfor r in rows:\n    c=r.get(\"menu-code\",\"\").strip()\n    if c: codes.setdefault(c,[]).append(r.get(\"display-name\",\"?\"))\nfor c,names in codes.items():\n    if len(names)>1: f(\"high\",\"duplicate-menu-code\",f\"Menu code '{c}' used by: {', '.join(names)}\")\n\n# before/after refs -> valid_refs is skill:action\nvalid_refs=set()\nfor r in rows:\n    sk=r.get(\"skill\",\"\").strip(); ac=r.get(\"action\",\"\").strip()\n    if sk and ac: valid_refs.add(f\"{sk}:{ac}\")\nfor r in rows:\n    disp=r.get(\"display-name\",\"?\")\n    for field in (\"after\",\"before\"):\n        v=r.get(field,\"\").strip()\n        if not v: continue\n        for ref in v.split(\",\"):\n            ref=ref.strip()\n            if ref […]
+  "command": "cat > /tmp/skf_struct_validate.py << 'PYEOF'\nimport csv, json, sys\nfrom io import StringIO\nfrom pathlib import Path\n\nMOD = Path(\"/home/<USER>/Projects/OSS/bmad-module-skill-forge/src\")\nCSV_HEADER = [\"module\",\"skill\",\"display-name\",\"menu-code\",\"description\",\"action\",\"args\",\"phase\",\"after\",\"before\",\"required\",\"output-location\",\"outputs\"]\nfindings = []\ndef f(sev, cat, msg, detail=\"\"): findings.append({\"severity\":sev,\"category\":cat,\"message\":msg,\"detail\":detail})\n\n# skill folders (dirs with SKILL.md), setup skill\nsetup = \"skf-setup\"\nskill_folders = sorted([d.name for d in MOD.iterdir() if d.is_dir() and (d/\"SKILL.md\").is_file() and d.name != setup])\n\ncsv_text = (MOD/\"module-help.csv\").read_text(encoding=\"utf-8\")\nreader = csv.DictReader(StringIO(csv_text))\nheader = reader.fieldnames or []\nrows = list(reader)\n\nif header != CSV_HEADER:\n    f(\"high\",\"csv-header\",f\"header mismatch missing={set(CSV_HEADER)-set(header)} extra={set(header)-set(CSV_HEADER)}\")\n\n# column count consistency\nfor i,row in enumerate(rows):\n    if len(row) != len(CSV_HEADER):\n        f(\"medium\",\"csv-columns\",f\"Row {i+2} has {len(row)} cols expected {len(CSV_HEADER)}\", f\"skill={row.get('skill','?')}\")\n\ncsv_skills = {r.get(\"skill\",\"\") for r in rows}\n\n# skills without CSV entries\nfor s in skill_folders:\n    if s not in csv_skills:\n        f(\"high\",\"missing-entry\",f\"Skill '{s}' has no capability entries in the CSV\")\n\n# orphan entries\nfor s in csv_skills:\n    if s not in skill_folders and s != setup:\n        if not (MOD/s/\"SKILL.md\").is_file():\n            f(\"high\",\"orphan-entry\",f\"CSV references skill '{s}' which does not exist\")\n\n# unique menu codes\ncodes={}\nfor r in rows:\n    c=r.get(\"menu-code\",\"\").strip()\n    if c: codes.setdefault(c,[]).append(r.get(\"display-name\",\"?\"))\nfor c,names in codes.items():\n    if len(names)>1: f(\"high\",\"duplicate-menu-code\",f\"Menu code '{c}' used by: {', '.join(names)}\")\n\n# before/after refs -> valid_refs is skill:action\nvalid_refs=set()\nfor r in rows:\n    sk=r.get(\"skill\",\"\").strip(); ac=r.get(\"action\",\"\").strip()\n    if sk and ac: valid_refs.add(f\"{sk}:{ac}\")\nfor r in rows:\n    disp=r.get(\"display-name\",\"?\")\n    for field in (\"after\",\"before\"):\n        v=r.get(field,\"\").strip()\n        if not v: continue\n        for ref in v.split(\",\"):\n            ref=ref.strip()\n            if ref […]
 
 > TOOL
 
@@ -610,7 +610,7 @@ tool_use Read
 id: toolu_01MrbFK7eMAwEDQSi4xRwUwd
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/SKILL.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/SKILL.md",
   "limit": 40
 }
 ```
@@ -649,7 +649,7 @@ tool_use Bash
 id: toolu_017oLYESYa1dDY1Q4t7tA5h5
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\necho \"=== git log for skf-campaign ===\" && git log --oneline -8 -- src/skf-campaign/ 2>/dev/null\necho \"\"\necho \"=== is skf-campaign referenced anywhere (invoked by another skill)? ===\"\ngrep -rln \"skf-campaign\" src/ --include=\"*.md\" --include=\"*.csv\" --include=\"*.yaml\" 2>/dev/null | grep -v \"src/skf-campaign/\" | head\necho \"\"\necho \"=== how is before/after consumed? (installer / help) ===\"\ngrep -rn \"before\\|after\" /home/armel/Projects/OSS/bmad-module-skill-forge/tools/cli/lib/installer.js 2>/dev/null | head",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\necho \"=== git log for skf-campaign ===\" && git log --oneline -8 -- src/skf-campaign/ 2>/dev/null\necho \"\"\necho \"=== is skf-campaign referenced anywhere (invoked by another skill)? ===\"\ngrep -rln \"skf-campaign\" src/ --include=\"*.md\" --include=\"*.csv\" --include=\"*.yaml\" 2>/dev/null | grep -v \"src/skf-campaign/\" | head\necho \"\"\necho \"=== how is before/after consumed? (installer / help) ===\"\ngrep -rn \"before\\|after\" /home/<USER>/Projects/OSS/bmad-module-skill-forge/tools/cli/lib/installer.js 2>/dev/null | head",
   "description": "Investigate skf-campaign registration status and before/after usage"
 }
 ```
@@ -685,7 +685,7 @@ tool_use Bash
 id: toolu_01PoSPrKdNLbpCejxwFMkddp
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\necho \"=== skf-forger references to campaign ===\" && grep -n \"campaign\\|Campaign\" src/skf-forger/SKILL.md | head -20\necho \"\"\necho \"=== when was module-help.csv last touched vs skf-campaign SKILL.md ===\"\ngit log -1 --format=\"%h %ci %s\" -- src/module-help.csv\ngit log -1 --format=\"%h %ci %s\" -- src/skf-campaign/SKILL.md\necho \"\"\necho \"=== first commit that added skf-campaign/SKILL.md ===\"\ngit log --diff-filter=A --format=\"%h %ci %s\" -- src/skf-campaign/SKILL.md\necho \"\"\necho \"=== any mention of campaign in module-help.csv history? ===\"\ngit log --oneline -S \"skf-campaign\" -- src/module-help.csv | head",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\necho \"=== skf-forger references to campaign ===\" && grep -n \"campaign\\|Campaign\" src/skf-forger/SKILL.md | head -20\necho \"\"\necho \"=== when was module-help.csv last touched vs skf-campaign SKILL.md ===\"\ngit log -1 --format=\"%h %ci %s\" -- src/module-help.csv\ngit log -1 --format=\"%h %ci %s\" -- src/skf-campaign/SKILL.md\necho \"\"\necho \"=== first commit that added skf-campaign/SKILL.md ===\"\ngit log --diff-filter=A --format=\"%h %ci %s\" -- src/skf-campaign/SKILL.md\necho \"\"\necho \"=== any mention of campaign in module-help.csv history? ===\"\ngit log --oneline -S \"skf-campaign\" -- src/module-help.csv | head",
   "description": "Compare campaign skill vs CSV registration timeline"
 }
 ```
@@ -727,7 +727,7 @@ tool_use Bash
 id: toolu_01MJr6f4EvAHek772Eruxc9w
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge/src\nfor d in skf-*/; do\n  s=$(basename \"$d\")\n  desc=$(awk '/^description:/{sub(/^description: */,\"\"); print; exit}' \"$d/SKILL.md\")\n  echo \"[$s] $desc\"\ndone",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge/src\nfor d in skf-*/; do\n  s=$(basename \"$d\")\n  desc=$(awk '/^description:/{sub(/^description: */,\"\"); print; exit}' \"$d/SKILL.md\")\n  echo \"[$s] $desc\"\ndone",
   "description": "Extract frontmatter descriptions for all skf skills"
 }
 ```
@@ -756,7 +756,7 @@ tool_use Bash
 id: toolu_0161LHVTCtFkF6Sxwap7yf65
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge/src\necho \"=== module.yaml: agents block? ===\" && grep -n \"^agents:\" module.yaml || echo \"(no agents: block — skip roster validation)\"\necho \"\"\necho \"=== campaign: args / flags mentioned in SKILL.md ===\" && grep -niE \"args|--|headless|resume|flag\" skf-campaign/SKILL.md | head -8\necho \"\"\necho \"=== campaign: where does state live? ===\" && grep -niE \"campaign-state|forge_data|output|state file|{.*folder}\" skf-campaign/SKILL.md | head -8\necho \"\"\necho \"=== campaign SKILL.md stage table tail (to see scope) ===\" && sed -n '37,60p' skf-campaign/SKILL.md",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge/src\necho \"=== module.yaml: agents block? ===\" && grep -n \"^agents:\" module.yaml || echo \"(no agents: block — skip roster validation)\"\necho \"\"\necho \"=== campaign: args / flags mentioned in SKILL.md ===\" && grep -niE \"args|--|headless|resume|flag\" skf-campaign/SKILL.md | head -8\necho \"\"\necho \"=== campaign: where does state live? ===\" && grep -niE \"campaign-state|forge_data|output|state file|{.*folder}\" skf-campaign/SKILL.md | head -8\necho \"\"\necho \"=== campaign SKILL.md stage table tail (to see scope) ===\" && sed -n '37,60p' skf-campaign/SKILL.md",
   "description": "Confirm agents block, campaign args and state location"
 }
 ```
@@ -800,7 +800,7 @@ I now have everything. Here's the validation report.
 
 # Module Validation — `skf` (SKF: Skill Forge)
 
-**Module:** `/home/armel/Projects/OSS/bmad-module-skill-forge/src` · multi-skill, setup skill `skf-setup` · 16 skill folders · 17 CSV entries
+**Module:** `/home/<USER>/Projects/OSS/bmad-module-skill-forge/src` · multi-skill, setup skill `skf-setup` · 16 skill folders · 17 CSV entries
 **Result: PASS with one real fix needed** (register `skf-campaign`)
 
 ## A note on the script "failure"
@@ -896,7 +896,7 @@ tool_use Read
 id: toolu_01EtVuiWNbgZTTbiCPR3kQzK
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/module-help.csv"
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/module-help.csv"
 }
 ```
 
@@ -933,7 +933,7 @@ id: toolu_01FPWFvzdyy7MuxQR6pnAGkL
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/module-help.csv",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/module-help.csv",
   "old_string": "skf,skf-setup,Setup Forge,SF,\"Initialize forge environment — detect tools and set capability tier (Quick/Forge/Forge+/Deep)\",,,anytime,,\"skf-analyze-source,skf-brief-skill,skf-quick-skill,skf-verify-stack\",false,,forge-tier.yaml",
   "new_string": "skf,skf-setup,Setup Forge,SF,\"Initialize forge environment — detect tools and set capability tier (Quick/Forge/Forge+/Deep)\",,,anytime,,\"skf-analyze-source,skf-brief-skill,skf-quick-skill,skf-verify-stack,skf-campaign\",false,,forge-tier.yaml\nskf,skf-campaign,Campaign,CA,\"Orchestrate multi-library skill production across sessions — dependency tracking, file-based state, and resume\",,resume [--from=<skill>],anytime,skf-setup,,false,forge_data_folder,_campaign-state.yaml"
 }
@@ -944,7 +944,7 @@ id: toolu_01FPWFvzdyy7MuxQR6pnAGkL
 tool_result
 id: toolu_01FPWFvzdyy7MuxQR6pnAGkL
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/module-help.csv has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/module-help.csv has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -984,7 +984,7 @@ tool_use Bash
 id: toolu_01MuXh3Yfdy2pGczKwLMk9tV
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge/src\npython3 - << 'PY'\nimport csv\nrows=list(csv.DictReader(open(\"module-help.csv\",encoding=\"utf-8\")))\n# column integrity on touched rows\nfor r in rows:\n    if r[\"skill\"] in (\"skf-campaign\",\"skf-setup\"):\n        n=len([v for v in r.values()])\n        print(f\"{r['skill']:16} cols={len(r)} menu={r['menu-code']} after='{r['after']}' before='{r['before']}'\")\n# bidirectional symmetry check: every row whose `after` lists X must appear in X's `before`\nby_skill={}\nfor r in rows: by_skill.setdefault(r[\"skill\"],[]).append(r)\ndef befores(skill):\n    s=set()\n    for r in by_skill.get(skill,[]):\n        s|={x.strip() for x in r[\"before\"].split(\",\") if x.strip()}\n    return s\nbroken=0\nfor r in rows:\n    for a in (x.strip() for x in r[\"after\"].split(\",\") if x.strip()):\n        if r[\"skill\"] not in befores(a):\n            print(f\"  ASYMMETRY: {r['skill']}.after={a} but {a}.before lacks {r['skill']}\")\n            broken+=1\nprint(\"graph symmetric:\", broken==0)\nPY",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge/src\npython3 - << 'PY'\nimport csv\nrows=list(csv.DictReader(open(\"module-help.csv\",encoding=\"utf-8\")))\n# column integrity on touched rows\nfor r in rows:\n    if r[\"skill\"] in (\"skf-campaign\",\"skf-setup\"):\n        n=len([v for v in r.values()])\n        print(f\"{r['skill']:16} cols={len(r)} menu={r['menu-code']} after='{r['after']}' before='{r['before']}'\")\n# bidirectional symmetry check: every row whose `after` lists X must appear in X's `before`\nby_skill={}\nfor r in rows: by_skill.setdefault(r[\"skill\"],[]).append(r)\ndef befores(skill):\n    s=set()\n    for r in by_skill.get(skill,[]):\n        s|={x.strip() for x in r[\"before\"].split(\",\") if x.strip()}\n    return s\nbroken=0\nfor r in rows:\n    for a in (x.strip() for x in r[\"after\"].split(\",\") if x.strip()):\n        if r[\"skill\"] not in befores(a):\n            print(f\"  ASYMMETRY: {r['skill']}.after={a} but {a}.before lacks {r['skill']}\")\n            broken+=1\nprint(\"graph symmetric:\", broken==0)\nPY",
   "description": "Verify column integrity and graph symmetry"
 }
 ```
@@ -1039,7 +1039,7 @@ tool_use Bash
 id: toolu_019BrrDtupxR2KmY9FW7GPvx
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge && git checkout -b register-skf-campaign-help-entry && echo \"---\" && git status --short && echo \"--- branch ---\" && git branch --show-current",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge && git checkout -b register-skf-campaign-help-entry && echo \"---\" && git status --short && echo \"--- branch ---\" && git branch --show-current",
   "description": "Create and switch to new branch"
 }
 ```

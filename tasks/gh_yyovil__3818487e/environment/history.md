@@ -1,6 +1,6 @@
 > SYSTEM
 
-# AGENTS.md instructions for /Users/tanishqpalandurkar/Projects/yyork
+# AGENTS.md instructions for /home/<USER>/Projects/yyork
 
 <INSTRUCTIONS>
 General instructions: follow these all the time.
@@ -15,11 +15,11 @@ General instructions: follow these all the time.
 
 </INSTRUCTIONS>
 <environment_context>
-  <cwd>/Users/tanishqpalandurkar/Projects/yyork</cwd>
+  <cwd>/home/<USER>/Projects/yyork</cwd>
   <shell>zsh</shell>
   <current_date>2026-06-10</current_date>
   <timezone>Asia/Kolkata</timezone>
-  <filesystem><workspace_roots><root>/Users/tanishqpalandurkar/Projects/yyork</root></workspace_roots><permission_profile type="disabled"><file_system type="unrestricted" /></permission_profile></filesystem>
+  <filesystem><workspace_roots><root>/home/<USER>/Projects/yyork</root></workspace_roots><permission_profile type="disabled"><file_system type="unrestricted" /></permission_profile></filesystem>
 </environment_context>
 
 > DEVELOPER
@@ -36,8 +36,8 @@ tool_use exec_command
 id: call_d7E5OQwB3hdV8wogZj3OaHwB
 ```json
 {
-  "cmd": "rg -n \"yyork spawn|spawn worker|orchestrator|agent orchestrator|worker agents|worker agent\" /Users/tanishqpalandurkar/.codex/memories/MEMORY.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "rg -n \"yyork spawn|spawn worker|orchestrator|agent orchestrator|worker agents|worker agent\" /home/<USER>/.codex/memories/MEMORY.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -50,7 +50,7 @@ id: call_Fb5Pd3DBDjBacR4hKb82CK0a
 ```json
 {
   "cmd": "pwd && rg --files -g 'AGENTS.md' -g 'go.mod' -g 'package.json' -g 'prds/**' -g '!node_modules'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -63,7 +63,7 @@ id: call_qrHotytjMb9BPhRra6YB6FOP
 ```json
 {
   "cmd": "rg -n \"yyork spawn|spawn worker|orchestrator|worker agents|worker agent|spawn\" --glob '!node_modules' --glob '!vendor'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -96,7 +96,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 69
 Output:
-/Users/tanishqpalandurkar/Projects/yyork
+/home/<USER>/Projects/yyork
 AGENTS.md
 package.json
 prds/canvas/BROWSER_PLAN.md
@@ -155,7 +155,7 @@ id: call_t9M6N0TdGDGWnDBXjHr8jAPj
 ```json
 {
   "cmd": "sed -n '1,260p' AGENTS.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -168,7 +168,7 @@ id: call_DnyxGwn7T2zhV1BsdmT5Le31
 ```json
 {
   "cmd": "sed -n '1,280p' internal/cli/commands.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -181,7 +181,7 @@ id: call_ZEr4aUsAxSWxZxRsnEnMlHwQ
 ```json
 {
   "cmd": "sed -n '1,420p' internal/session/engine.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -194,7 +194,7 @@ id: call_W2BFICN9JDMK8fvQ2W4h5UTz
 ```json
 {
   "cmd": "sed -n '1,620p' internal/ao/workspace.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -207,7 +207,7 @@ id: call_JpBcTKYzmFC5oczPLJWZiKJ7
 ```json
 {
   "cmd": "sed -n '1,260p' internal/app/app.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -220,7 +220,7 @@ id: call_ICKP6OZAdXfID6fW44ZMS0zz
 ```json
 {
   "cmd": "sed -n '1,280p' internal/server/sessions.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -608,7 +608,7 @@ id: call_fvQhCqxPWDcRiU3KoJhvJ7CN
 ```json
 {
   "cmd": "sed -n '1,220p' internal/server/server.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -621,7 +621,7 @@ id: call_pAWMoIoz64RAloS2GsCToMNA
 ```json
 {
   "cmd": "sed -n '1,260p' internal/session/workspace_source.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -633,8 +633,8 @@ tool_use exec_command
 id: call_AD51e4Dk8tlDZpDaTO8Fl1xc
 ```json
 {
-  "cmd": "find /Users/tanishqpalandurkar/Projects/agent-orchestrator -maxdepth 3 -type f \\( -name 'package.json' -o -name 'go.mod' -o -name 'README.md' -o -name '*.ts' -o -name '*.go' \\) | sed -n '1,160p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "find /home/<USER>/Projects/agent-orchestrator -maxdepth 3 -type f \\( -name 'package.json' -o -name 'go.mod' -o -name 'README.md' -o -name '*.ts' -o -name '*.go' \\) | sed -n '1,160p'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -646,8 +646,8 @@ tool_use exec_command
 id: call_jZanTjjLaAIKW2pVKBtVAfOk
 ```json
 {
-  "cmd": "rg -n \"spawn|StartSession|launch|create.*session|SessionMetadata|writeMetadata|getLaunchCommand|ao spawn|commands?\\.spawn\" /Users/tanishqpalandurkar/Projects/agent-orchestrator/packages /Users/tanishqpalandurkar/Projects/agent-orchestrator/src /Users/tanishqpalandurkar/Projects/agent-orchestrator -g '!node_modules'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "rg -n \"spawn|StartSession|launch|create.*session|SessionMetadata|writeMetadata|getLaunchCommand|ao spawn|commands?\\.spawn\" /home/<USER>/Projects/agent-orchestrator/packages /home/<USER>/Projects/agent-orchestrator/src /home/<USER>/Projects/agent-orchestrator -g '!node_modules'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -659,8 +659,8 @@ tool_use exec_command
 id: call_jx7zDKLlPinlV3juFvh9WR85
 ```json
 {
-  "cmd": "sed -n '536,590p' /Users/tanishqpalandurkar/.codex/memories/MEMORY.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '536,590p' /home/<USER>/.codex/memories/MEMORY.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -799,32 +799,32 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 520
 Output:
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/openclaw-plugin/index.test.ts
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/openclaw-plugin/package.json
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/openclaw-plugin/index.ts
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/.changeset/README.md
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/website/next-env.d.ts
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/website/package.json
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/website/source.config.ts
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/docs/design/README.md
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/README.md
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/package.json
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/examples/README.md
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/core/rollup.config.ts
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/core/README.md
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/core/package.json
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/core/vitest.config.ts
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/web/next-env.d.ts
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/web/package.json
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/web/vitest.config.ts
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/integration-tests/package.json
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/integration-tests/vitest.config.ts
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/package.json
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/vitest.config.ts
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/notifier-macos/package.json
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/ao/README.md
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/ao/package.json
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/skills/README.md
+/home/<USER>/Projects/agent-orchestrator/openclaw-plugin/index.test.ts
+/home/<USER>/Projects/agent-orchestrator/openclaw-plugin/package.json
+/home/<USER>/Projects/agent-orchestrator/openclaw-plugin/index.ts
+/home/<USER>/Projects/agent-orchestrator/.changeset/README.md
+/home/<USER>/Projects/agent-orchestrator/website/next-env.d.ts
+/home/<USER>/Projects/agent-orchestrator/website/package.json
+/home/<USER>/Projects/agent-orchestrator/website/source.config.ts
+/home/<USER>/Projects/agent-orchestrator/docs/design/README.md
+/home/<USER>/Projects/agent-orchestrator/README.md
+/home/<USER>/Projects/agent-orchestrator/package.json
+/home/<USER>/Projects/agent-orchestrator/examples/README.md
+/home/<USER>/Projects/agent-orchestrator/packages/core/rollup.config.ts
+/home/<USER>/Projects/agent-orchestrator/packages/core/README.md
+/home/<USER>/Projects/agent-orchestrator/packages/core/package.json
+/home/<USER>/Projects/agent-orchestrator/packages/core/vitest.config.ts
+/home/<USER>/Projects/agent-orchestrator/packages/web/next-env.d.ts
+/home/<USER>/Projects/agent-orchestrator/packages/web/package.json
+/home/<USER>/Projects/agent-orchestrator/packages/web/vitest.config.ts
+/home/<USER>/Projects/agent-orchestrator/packages/integration-tests/package.json
+/home/<USER>/Projects/agent-orchestrator/packages/integration-tests/vitest.config.ts
+/home/<USER>/Projects/agent-orchestrator/packages/cli/package.json
+/home/<USER>/Projects/agent-orchestrator/packages/cli/vitest.config.ts
+/home/<USER>/Projects/agent-orchestrator/packages/notifier-macos/package.json
+/home/<USER>/Projects/agent-orchestrator/packages/ao/README.md
+/home/<USER>/Projects/agent-orchestrator/packages/ao/package.json
+/home/<USER>/Projects/agent-orchestrator/skills/README.md
 
 ```
 
@@ -840,30 +840,30 @@ Original token count: 204126
 Output:
 Total output lines: 4702
 
-rg: /Users/tanishqpalandurkar/Projects/agent-orchestrator/src: No such file or directory (os error 2)
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/ao/README.md:35:Point it at any repo — it clones, configures, and launches the dashboard in one command:
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/ao/README.md:57:1. **You start** — `ao start` launches the dashboard and an orchestrator agent.
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/ao/README.md:58:2. **Orchestrator spawns workers** — each issue gets its own agent in an isolated git worktree and branch.
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/integration-tests/src/agent-opencode.integration.test.ts:122:    await createSession(sessionName, cmd, tmpDir);
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/integration-tests/src/agent-opencode.integration.test.ts:188:describe("getLaunchCommand (integration)", () => {
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/integration-tests/src/agent-opencode.integration.test.ts:203:    const cmd = agent.getLaunchCommand({
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/integration-tests/src/agent-opencode.integration.test.ts:218:    const cmd = agent.getLaunchCommand({
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/integration-tests/src/agent-opencode.integration.test.ts:228:    const cmd = agent.getLaunchCommand({
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/integration-tests/src/agent-opencode.integration.test.ts:238:    const cmd = agent.getLaunchCommand({
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/integration-tests/src/agent-opencode.integration.test.ts:247:    const cmd = agent.getLaunchCommand({
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/integration-tests/src/agent-opencode.integration.test.ts:265:    const cmd = agent.getLaunchCommand({
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/integration-tests/src/agent-opencode.integration.test.ts:273:  it("uses prompt with systemPromptFile for orchestrator-style launch", () => {
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/integration-tests/src/agent-opencode.integration.test.ts:274:    const cmd = agent.getLaunchCommand({
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/integration-tests/src/agent-opencode.integration.test.ts:287:    const cmd = agent.getLaunchCommand({
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/integration-tests/src/agent-opencode.integration.test.ts:295:    const cmd = agent.getLaunchCommand({
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/integration-tests/src/agent-opencode.integration.test.ts:303:    const cmd = agent.getLaunchCommand({
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/integration-tests/src/agent-opencode.integration.test.ts:313:    const cmd = agent.getLaunchCommand({
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/integration-tests/src/agent-opencode.integration.test.ts:324:    const cmd = agent.getLaunchCommand({
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/integration-tests/src/agent-opencode.integration.test.ts:332:  it("uses run bootstrap launch for fresh sessions", () => {
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/integration-tests/src/agent-opencode.integration.test.ts:333:    const cmd = agent.getLaunchCommand({
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/integration-tests/src/agent-opencode.integration.test.ts:344:    const cmd = agent.getLaunchCommand({
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/ao/CHANGELOG.md:162:  - Keep `ao spawn` preflight check-only for `tmux` (no implicit install).
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/ao/CHANGELOG.md:172:- 3a650b0: Zero-friction onboarding: […]
+rg: /home/<USER>/Projects/agent-orchestrator/src: No such file or directory (os error 2)
+/home/<USER>/Projects/agent-orchestrator/packages/ao/README.md:35:Point it at any repo — it clones, configures, and launches the dashboard in one command:
+/home/<USER>/Projects/agent-orchestrator/packages/ao/README.md:57:1. **You start** — `ao start` launches the dashboard and an orchestrator agent.
+/home/<USER>/Projects/agent-orchestrator/packages/ao/README.md:58:2. **Orchestrator spawns workers** — each issue gets its own agent in an isolated git worktree and branch.
+/home/<USER>/Projects/agent-orchestrator/packages/integration-tests/src/agent-opencode.integration.test.ts:122:    await createSession(sessionName, cmd, tmpDir);
+/home/<USER>/Projects/agent-orchestrator/packages/integration-tests/src/agent-opencode.integration.test.ts:188:describe("getLaunchCommand (integration)", () => {
+/home/<USER>/Projects/agent-orchestrator/packages/integration-tests/src/agent-opencode.integration.test.ts:203:    const cmd = agent.getLaunchCommand({
+/home/<USER>/Projects/agent-orchestrator/packages/integration-tests/src/agent-opencode.integration.test.ts:218:    const cmd = agent.getLaunchCommand({
+/home/<USER>/Projects/agent-orchestrator/packages/integration-tests/src/agent-opencode.integration.test.ts:228:    const cmd = agent.getLaunchCommand({
+/home/<USER>/Projects/agent-orchestrator/packages/integration-tests/src/agent-opencode.integration.test.ts:238:    const cmd = agent.getLaunchCommand({
+/home/<USER>/Projects/agent-orchestrator/packages/integration-tests/src/agent-opencode.integration.test.ts:247:    const cmd = agent.getLaunchCommand({
+/home/<USER>/Projects/agent-orchestrator/packages/integration-tests/src/agent-opencode.integration.test.ts:265:    const cmd = agent.getLaunchCommand({
+/home/<USER>/Projects/agent-orchestrator/packages/integration-tests/src/agent-opencode.integration.test.ts:273:  it("uses prompt with systemPromptFile for orchestrator-style launch", () => {
+/home/<USER>/Projects/agent-orchestrator/packages/integration-tests/src/agent-opencode.integration.test.ts:274:    const cmd = agent.getLaunchCommand({
+/home/<USER>/Projects/agent-orchestrator/packages/integration-tests/src/agent-opencode.integration.test.ts:287:    const cmd = agent.getLaunchCommand({
+/home/<USER>/Projects/agent-orchestrator/packages/integration-tests/src/agent-opencode.integration.test.ts:295:    const cmd = agent.getLaunchCommand({
+/home/<USER>/Projects/agent-orchestrator/packages/integration-tests/src/agent-opencode.integration.test.ts:303:    const cmd = agent.getLaunchCommand({
+/home/<USER>/Projects/agent-orchestrator/packages/integration-tests/src/agent-opencode.integration.test.ts:313:    const cmd = agent.getLaunchCommand({
+/home/<USER>/Projects/agent-orchestrator/packages/integration-tests/src/agent-opencode.integration.test.ts:324:    const cmd = agent.getLaunchCommand({
+/home/<USER>/Projects/agent-orchestrator/packages/integration-tests/src/agent-opencode.integration.test.ts:332:  it("uses run bootstrap launch for fresh sessions", () => {
+/home/<USER>/Projects/agent-orchestrator/packages/integration-tests/src/agent-opencode.integration.test.ts:333:    const cmd = agent.getLaunchCommand({
+/home/<USER>/Projects/agent-orchestrator/packages/integration-tests/src/agent-opencode.integration.test.ts:344:    const cmd = agent.getLaunchCommand({
+/home/<USER>/Projects/agent-orchestrator/packages/ao/CHANGELOG.md:162:  - Keep `ao spawn` preflight check-only for `tmux` (no implicit install).
+/home/<USER>/Projects/agent-orchestrator/packages/ao/CHANGELOG.md:172:- 3a650b0: Zero-friction onboarding: […]
 
 > TOOL
 
@@ -875,7 +875,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 1587
 Output:
-- rollout_summaries/REDACTED.md (cwd=/Users/tanishqpalandurkar/Projects/agent-orchestrator, rollout_path=/Users/tanishqpalandurkar/.codex/sessions/2026/05/21/rollout-2026-05-21T22-50-37-019e4b8d-b055-7501-845e-b60da93cb526.jsonl, updated_at=2026-05-28T03:09:59+00:00, thread_id=019e4b8d-b055-7501-845e-b60da93cb526, repo-grounded metadata JSON shape and write sites)
+- rollout_summaries/REDACTED.md (cwd=/home/<USER>/Projects/agent-orchestrator, rollout_path=/home/<USER>/.codex/sessions/2026/05/21/rollout-2026-05-21T22-50-37-019e4b8d-b055-7501-845e-b60da93cb526.jsonl, updated_at=2026-05-28T03:09:59+00:00, thread_id=019e4b8d-b055-7501-845e-b60da93cb526, repo-grounded metadata JSON shape and write sites)
 
 ### keywords
 
@@ -885,7 +885,7 @@ Output:
 
 ### rollout_summary_files
 
-- rollout_summaries/REDACTED.md (cwd=/Users/tanishqpalandurkar/Projects/agent-orchestrator, rollout_path=/Users/tanishqpalandurkar/.codex/sessions/2026/05/21/rollout-2026-05-21T22-50-37-019e4b8d-b055-7501-845e-b60da93cb526.jsonl, updated_at=2026-05-28T03:09:59+00:00, thread_id=019e4b8d-b055-7501-845e-b60da93cb526, end-to-end spawn path from CLI to tmux runtime)
+- rollout_summaries/REDACTED.md (cwd=/home/<USER>/Projects/agent-orchestrator, rollout_path=/home/<USER>/.codex/sessions/2026/05/21/rollout-2026-05-21T22-50-37-019e4b8d-b055-7501-845e-b60da93cb526.jsonl, updated_at=2026-05-28T03:09:59+00:00, thread_id=019e4b8d-b055-7501-845e-b60da93cb526, end-to-end spawn path from CLI to tmux runtime)
 
 ### keywords
 
@@ -895,7 +895,7 @@ Output:
 
 ### rollout_summary_files
 
-- rollout_summaries/REDACTED.md (cwd=/Users/tanishqpalandurkar/Projects/agent-orchestrator, rollout_path=/Users/tanishqpalandurkar/.codex/sessions/2026/05/21/rollout-2026-05-21T22-50-37-019e4b8d-b055-7501-845e-b60da93cb526.jsonl, updated_at=2026-05-28T03:09:59+00:00, thread_id=019e4b8d-b055-7501-845e-b60da93cb526, config schema and merge path)
+- rollout_summaries/REDACTED.md (cwd=/home/<USER>/Projects/agent-orchestrator, rollout_path=/home/<USER>/.codex/sessions/2026/05/21/rollout-2026-05-21T22-50-37-019e4b8d-b055-7501-845e-b60da93cb526.jsonl, updated_at=2026-05-28T03:09:59+00:00, thread_id=019e4b8d-b055-7501-845e-b60da93cb526, config schema and merge path)
 
 ### keywords
 
@@ -905,7 +905,7 @@ Output:
 
 ### rollout_summary_files
 
-- rollout_summaries/REDACTED.md (cwd=/Users/tanishqpalandurkar/Projects/agent-orchestrator, rollout_path=/Users/tanishqpalandurkar/.codex/sessions/2026/05/21/rollout-2026-05-21T22-50-37-019e4b8d-b055-7501-845e-b60da93cb526.jsonl, updated_at=2026-05-28T03:09:59+00:00, thread_id=019e4b8d-b055-7501-845e-b60da93cb526, exact path/migration answer)
+- rollout_summaries/REDACTED.md (cwd=/home/<USER>/Projects/agent-orchestrator, rollout_path=/home/<USER>/.codex/sessions/2026/05/21/rollout-2026-05-21T22-50-37-019e4b8d-b055-7501-845e-b60da93cb526.jsonl, updated_at=2026-05-28T03:09:59+00:00, thread_id=019e4b8d-b055-7501-845e-b60da93cb526, exact path/migration answer)
 
 ### keywords
 
@@ -926,7 +926,7 @@ id: call_iMjtGspXRuGdwcLutruR8wAZ
 ```json
 {
   "cmd": "command -v ao && ao spawn --help",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -938,8 +938,8 @@ tool_use exec_command
 id: call_NBlTmKNMI4H2QR1DxJ1rTmak
 ```json
 {
-  "cmd": "sed -n '1,320p' /Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands/spawn.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,320p' /home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands/spawn.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -951,8 +951,8 @@ tool_use exec_command
 id: call_ZjwEM7ANf1NRhYU9D3us9yxJ
 ```json
 {
-  "cmd": "rg -n \"class SessionManager|spawn\\(|async spawn|spawnSession|createSession\" /Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/core/src /Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src -g '!node_modules'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "rg -n \"class SessionManager|spawn\\(|async spawn|spawnSession|createSession\" /home/<USER>/Projects/agent-orchestrator/packages/core/src /home/<USER>/Projects/agent-orchestrator/packages/cli/src -g '!node_modules'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -964,8 +964,8 @@ tool_use exec_command
 id: call_Hpu7KPiJDKsbO7RCvDYUXmys
 ```json
 {
-  "cmd": "rg -n \"api/spawn|POST /api/spawn|spawn route|handle.*spawn|spawn.*request|SessionManager\\.spawn\" /Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/web/src /Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/core/src /Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src -g '!node_modules'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "rg -n \"api/spawn|POST /api/spawn|spawn route|handle.*spawn|spawn.*request|SessionManager\\.spawn\" /home/<USER>/Projects/agent-orchestrator/packages/web/src /home/<USER>/Projects/agent-orchestrator/packages/core/src /home/<USER>/Projects/agent-orchestrator/packages/cli/src -g '!node_modules'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -977,8 +977,8 @@ tool_use exec_command
 id: call_RZrO6qoJbYpFE96QefoMQrMl
 ```json
 {
-  "cmd": "sed -n '70,96p' /Users/tanishqpalandurkar/Projects/agent-orchestrator/website/content/docs/cli.mdx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '70,96p' /home/<USER>/Projects/agent-orchestrator/website/content/docs/cli.mdx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -994,7 +994,7 @@ Wall time: 0.2063 seconds
 Process exited with code 0
 Original token count: 196
 Output:
-/Users/tanishqpalandurkar/.npm-global/bin/ao
+/home/<USER>/.npm-global/bin/ao
 Usage: ao spawn [options] [issue]
 
 Spawn a single agent session
@@ -1080,31 +1080,31 @@ Original token count: 17224
 Output:
 Total output lines: 371
 
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands/update.ts:321:    const child = spawn("ao", args, {
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands/update.ts:638:    const child = spawn(cmd!, args, {
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands/spawn.ts:199:async function spawnSession(
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands/spawn.ts:234:    const session = await sm.spawn({
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands/spawn.ts:376:          await spawnSession(
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands/spawn.ts:500:            const session = await sm.spawn({ projectId: groupProjectId, issueId: resolved });
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/core/src/index.ts:174:export { createSessionManager } from "./session-manager.js";
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/core/src/code-review-manager.ts:74:    const child = spawn(file, args, {
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/lib/web-dir.ts:63:  const browser = spawn(cmd, args, { stdio: "ignore" });
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands/open.ts:36:    const child = spawn(cmd, args, { detached: true, stdio: "ignore", windowsHide: false });
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/lib/install-helpers.ts:60:    const child = spawn(cmd, args, {
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/core/src/types.ts:1875:  spawn(config: SessionSpawnConfig): Promise<Session>;
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:327:          const child = spawn("tmux", ["attach", "-t", tmuxTarget], { stdio: "inherit" });
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/lib/prevent-sleep.ts:33: * const child = spawn("node", ["server.js"]);
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/lib/prevent-sleep.ts:48:  const child: ChildProcess = spawn("caffeinate", ["-i", "-w", String(targetPid)], {
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/core/src/daemon-children.ts:345:  const child = spawn(command, [...args], options);
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands/dashboard.ts:56:      const child = spawn("node", [startScript], {
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/lib/create-session-manager.ts:12:  createSessionManager,
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/lib/create-session-manager.ts:61:  return createSessionManager({ config, registry });
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/lib/create-session-manager.ts:73:  const sessionManager = createSessionManager({ config, registry });
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/lib/script-runner.ts:207:    const child = spawn(shell, shellArgs, {
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/core/src/session-manager.ts:377:export function createSessionManager(deps: SessionManagerDeps): OpenCodeSessionManager {
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/core/src/session-manager.ts:1188:  async function spawn(spawnConfig: SessionSpawnConfig): Promise<Session> {
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/core/src/session-manager.ts:1994:        // see the spawnSession site for the rationale.
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/core/src/__tests__/session-manager.test.ts:2:import { […]
+/home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands/update.ts:321:    const child = spawn("ao", args, {
+/home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands/update.ts:638:    const child = spawn(cmd!, args, {
+/home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands/spawn.ts:199:async function spawnSession(
+/home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands/spawn.ts:234:    const session = await sm.spawn({
+/home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands/spawn.ts:376:          await spawnSession(
+/home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands/spawn.ts:500:            const session = await sm.spawn({ projectId: groupProjectId, issueId: resolved });
+/home/<USER>/Projects/agent-orchestrator/packages/core/src/index.ts:174:export { createSessionManager } from "./session-manager.js";
+/home/<USER>/Projects/agent-orchestrator/packages/core/src/code-review-manager.ts:74:    const child = spawn(file, args, {
+/home/<USER>/Projects/agent-orchestrator/packages/cli/src/lib/web-dir.ts:63:  const browser = spawn(cmd, args, { stdio: "ignore" });
+/home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands/open.ts:36:    const child = spawn(cmd, args, { detached: true, stdio: "ignore", windowsHide: false });
+/home/<USER>/Projects/agent-orchestrator/packages/cli/src/lib/install-helpers.ts:60:    const child = spawn(cmd, args, {
+/home/<USER>/Projects/agent-orchestrator/packages/core/src/types.ts:1875:  spawn(config: SessionSpawnConfig): Promise<Session>;
+/home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:327:          const child = spawn("tmux", ["attach", "-t", tmuxTarget], { stdio: "inherit" });
+/home/<USER>/Projects/agent-orchestrator/packages/cli/src/lib/prevent-sleep.ts:33: * const child = spawn("node", ["server.js"]);
+/home/<USER>/Projects/agent-orchestrator/packages/cli/src/lib/prevent-sleep.ts:48:  const child: ChildProcess = spawn("caffeinate", ["-i", "-w", String(targetPid)], {
+/home/<USER>/Projects/agent-orchestrator/packages/core/src/daemon-children.ts:345:  const child = spawn(command, [...args], options);
+/home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands/dashboard.ts:56:      const child = spawn("node", [startScript], {
+/home/<USER>/Projects/agent-orchestrator/packages/cli/src/lib/create-session-manager.ts:12:  createSessionManager,
+/home/<USER>/Projects/agent-orchestrator/packages/cli/src/lib/create-session-manager.ts:61:  return createSessionManager({ config, registry });
+/home/<USER>/Projects/agent-orchestrator/packages/cli/src/lib/create-session-manager.ts:73:  const sessionManager = createSessionManager({ config, registry });
+/home/<USER>/Projects/agent-orchestrator/packages/cli/src/lib/script-runner.ts:207:    const child = spawn(shell, shellArgs, {
+/home/<USER>/Projects/agent-orchestrator/packages/core/src/session-manager.ts:377:export function createSessionManager(deps: SessionManagerDeps): OpenCodeSessionManager {
+/home/<USER>/Projects/agent-orchestrator/packages/core/src/session-manager.ts:1188:  async function spawn(spawnConfig: SessionSpawnConfig): Promise<Session> {
+/home/<USER>/Projects/agent-orchestrator/packages/core/src/session-manager.ts:1994:        // see the spawnSession site for the rationale.
+/home/<USER>/Projects/agent-orchestrator/packages/core/src/__tests__/session-manager.test.ts:2:import { […]
 
 > TOOL
 
@@ -1116,33 +1116,33 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 2655
 Output:
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/core/src/lifecycle-state.ts:61:        "spawn_requested",
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/core/src/lifecycle-state.ts:172:      reason: "spawn_requested",
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/core/src/lifecycle-state.ts:200:      return { state: "not_started", reason: "spawn_requested" };
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/core/src/types.ts:40:  | "spawn_requested"
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/core/src/lifecycle-transition.ts:266:      reason: "spawn_requested",
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/core/src/__tests__/test-utils.ts:40:      lifecycle.session.reason = "spawn_requested";
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/core/src/__tests__/metadata.test.ts:561:    expect(lifecycle!.session.reason).toBe("spawn_requested");
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/core/src/__tests__/agent-report.test.ts:393:      reason: "spawn_requested",
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/web/src/__tests__/helpers.ts:55:        return { state: "not_started", reason: "spawn_requested" };
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/web/src/__tests__/prompt-spawn.test.ts:11: *     2. POST /api/spawn — prompt field validated and forwarded to session manager
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/web/src/__tests__/prompt-spawn.test.ts:145:import { POST as spawnPOST } from "@/app/api/spawn/route";
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/web/src/__tests__/prompt-spawn.test.ts:150://   - /api/spawn ignored the `prompt` field — it never reached session manager
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/web/src/__tests__/prompt-spawn.test.ts:186:  describe("POST /api/spawn: prompt field was silently ignored", () => {
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/web/src/__tests__/prompt-spawn.test.ts:189:      vi.mocked(mockSessionManager.spawn).mockClear();
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/web/src/__tests__/prompt-spawn.test.ts:193:      const req = new NextRequest("http://localhost/api/spawn", {
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/web/src/__tests__/prompt-spawn.test.ts:211:      const req = new NextRequest("http://localhost/api/spawn", {
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/web/src/__tests__/prompt-spawn.test.ts:230://   - /api/spawn validates and forwards `prompt` to session manager
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/web/src/__tests__/prompt-spawn.test.ts:296:  describe("POST /api/spawn: prompt field validated and forwarded", () => {
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/web/src/__tests__/prompt-spawn.test.ts:299:      vi.mocked(mockSessionManager.spawn).mockClear();
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/web/src/__tests__/prompt-spawn.test.ts:303:      const req = new NextRequest("http://localhost/api/spawn", {
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/web/src/__tests__/prompt-spawn.test.ts:322:      const req = new NextRequest("http://localhost/api/spawn", {
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/web/src/__tests__/prompt-spawn.test.ts:340:      const req = new NextRequest("http://localhost/api/spawn", {
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/web/src/__tests__/prompt-spawn.test.ts:354:      const req = new NextRequest("http://localhost/api/spawn", {
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/web/src/__tests__/prompt-spawn.test.ts:368:      const req = new NextRequest("http://localhost/api/spawn", {
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/web/src/__tests__/prompt-spawn.test.ts:382:      const req = new NextRequest("http://localhost/api/spawn", {
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/web/src/__tests__/activity-events-routes.test.ts:192:import { POST as spawnPOST } from "@/app/api/spawn/route";
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/web/src/__tests__/activity-events-routes.test.ts:217:    it("POST /api/spawn emits api.session_spawn_requested on success", async […]
+/home/<USER>/Projects/agent-orchestrator/packages/core/src/lifecycle-state.ts:61:        "spawn_requested",
+/home/<USER>/Projects/agent-orchestrator/packages/core/src/lifecycle-state.ts:172:      reason: "spawn_requested",
+/home/<USER>/Projects/agent-orchestrator/packages/core/src/lifecycle-state.ts:200:      return { state: "not_started", reason: "spawn_requested" };
+/home/<USER>/Projects/agent-orchestrator/packages/core/src/types.ts:40:  | "spawn_requested"
+/home/<USER>/Projects/agent-orchestrator/packages/core/src/lifecycle-transition.ts:266:      reason: "spawn_requested",
+/home/<USER>/Projects/agent-orchestrator/packages/core/src/__tests__/test-utils.ts:40:      lifecycle.session.reason = "spawn_requested";
+/home/<USER>/Projects/agent-orchestrator/packages/core/src/__tests__/metadata.test.ts:561:    expect(lifecycle!.session.reason).toBe("spawn_requested");
+/home/<USER>/Projects/agent-orchestrator/packages/core/src/__tests__/agent-report.test.ts:393:      reason: "spawn_requested",
+/home/<USER>/Projects/agent-orchestrator/packages/web/src/__tests__/helpers.ts:55:        return { state: "not_started", reason: "spawn_requested" };
+/home/<USER>/Projects/agent-orchestrator/packages/web/src/__tests__/prompt-spawn.test.ts:11: *     2. POST /api/spawn — prompt field validated and forwarded to session manager
+/home/<USER>/Projects/agent-orchestrator/packages/web/src/__tests__/prompt-spawn.test.ts:145:import { POST as spawnPOST } from "@/app/api/spawn/route";
+/home/<USER>/Projects/agent-orchestrator/packages/web/src/__tests__/prompt-spawn.test.ts:150://   - /api/spawn ignored the `prompt` field — it never reached session manager
+/home/<USER>/Projects/agent-orchestrator/packages/web/src/__tests__/prompt-spawn.test.ts:186:  describe("POST /api/spawn: prompt field was silently ignored", () => {
+/home/<USER>/Projects/agent-orchestrator/packages/web/src/__tests__/prompt-spawn.test.ts:189:      vi.mocked(mockSessionManager.spawn).mockClear();
+/home/<USER>/Projects/agent-orchestrator/packages/web/src/__tests__/prompt-spawn.test.ts:193:      const req = new NextRequest("http://localhost/api/spawn", {
+/home/<USER>/Projects/agent-orchestrator/packages/web/src/__tests__/prompt-spawn.test.ts:211:      const req = new NextRequest("http://localhost/api/spawn", {
+/home/<USER>/Projects/agent-orchestrator/packages/web/src/__tests__/prompt-spawn.test.ts:230://   - /api/spawn validates and forwards `prompt` to session manager
+/home/<USER>/Projects/agent-orchestrator/packages/web/src/__tests__/prompt-spawn.test.ts:296:  describe("POST /api/spawn: prompt field validated and forwarded", () => {
+/home/<USER>/Projects/agent-orchestrator/packages/web/src/__tests__/prompt-spawn.test.ts:299:      vi.mocked(mockSessionManager.spawn).mockClear();
+/home/<USER>/Projects/agent-orchestrator/packages/web/src/__tests__/prompt-spawn.test.ts:303:      const req = new NextRequest("http://localhost/api/spawn", {
+/home/<USER>/Projects/agent-orchestrator/packages/web/src/__tests__/prompt-spawn.test.ts:322:      const req = new NextRequest("http://localhost/api/spawn", {
+/home/<USER>/Projects/agent-orchestrator/packages/web/src/__tests__/prompt-spawn.test.ts:340:      const req = new NextRequest("http://localhost/api/spawn", {
+/home/<USER>/Projects/agent-orchestrator/packages/web/src/__tests__/prompt-spawn.test.ts:354:      const req = new NextRequest("http://localhost/api/spawn", {
+/home/<USER>/Projects/agent-orchestrator/packages/web/src/__tests__/prompt-spawn.test.ts:368:      const req = new NextRequest("http://localhost/api/spawn", {
+/home/<USER>/Projects/agent-orchestrator/packages/web/src/__tests__/prompt-spawn.test.ts:382:      const req = new NextRequest("http://localhost/api/spawn", {
+/home/<USER>/Projects/agent-orchestrator/packages/web/src/__tests__/activity-events-routes.test.ts:192:import { POST as spawnPOST } from "@/app/api/spawn/route";
+/home/<USER>/Projects/agent-orchestrator/packages/web/src/__tests__/activity-events-routes.test.ts:217:    it("POST /api/spawn emits api.session_spawn_requested on success", async […]
 
 > TOOL
 
@@ -1188,8 +1188,8 @@ tool_use exec_command
 id: call_q6mwKG7wmgmiIzjbucpiTyly
 ```json
 {
-  "cmd": "sed -n '320,430p' /Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands/spawn.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '320,430p' /home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands/spawn.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -1201,8 +1201,8 @@ tool_use exec_command
 id: call_0jZsOv3FU69kpJ2V3epYDmg2
 ```json
 {
-  "cmd": "sed -n '1,180p' /Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/web/src/app/api/spawn/route.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,180p' /home/<USER>/Projects/agent-orchestrator/packages/web/src/app/api/spawn/route.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -1214,8 +1214,8 @@ tool_use exec_command
 id: call_2qJbFXlaejaTAlPlhHzqQSAo
 ```json
 {
-  "cmd": "sed -n '1160,1285p' /Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/core/src/session-manager.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1160,1285p' /home/<USER>/Projects/agent-orchestrator/packages/core/src/session-manager.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -1227,8 +1227,8 @@ tool_use exec_command
 id: call_ij2tAoTGO4H1zZatB2Fq0BNN
 ```json
 {
-  "cmd": "sed -n '1285,1410p' /Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/core/src/session-manager.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1285,1410p' /home/<USER>/Projects/agent-orchestrator/packages/core/src/session-manager.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -1241,7 +1241,7 @@ id: call_uUkENP6oNhsCJnqURi1HIxOL
 ```json
 {
   "cmd": "rg -n \"handleWorkspace|workspaceForRequest|terminalSessionForRequest|api/sessions\" internal/server -g '*.go'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -1537,8 +1537,8 @@ tool_use exec_command
 id: call_Sc6IkanRdqZtCoDOZxaKc6Mm
 ```json
 {
-  "cmd": "sed -n '1410,1515p' /Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/core/src/session-manager.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1410,1515p' /home/<USER>/Projects/agent-orchestrator/packages/core/src/session-manager.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -1551,7 +1551,7 @@ id: call_AMiZFnR1IAuVbQTYAp01TnY4
 ```json
 {
   "cmd": "sed -n '285,360p' internal/server/server.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -1564,7 +1564,7 @@ id: call_yJBU22QZdjgSwlTkMfWYsMvA
 ```json
 {
   "cmd": "sed -n '1,460p' internal/ao/workspace_test.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -1577,7 +1577,7 @@ id: call_bu85G06fF1LrcmUodtemFZir
 ```json
 {
   "cmd": "sed -n '1,420p' internal/cli/main_test.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 26000
 }
@@ -1590,7 +1590,7 @@ id: call_uSzeUwTo9Lx0wtU8iZXxzab7
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -1968,7 +1968,7 @@ id: call_klzFMLxTsBSIZlCwfXyDOKcf
 ```json
 {
   "cmd": "rg -n \"POST /api/sessions|fetch\\('/api/sessions|fetch\\(.*api/sessions|spawn|new session|start session|Create session|New worker|prompt\" web/src internal/server -g '!node_modules'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -1981,7 +1981,7 @@ id: call_BJInqMcXxKgzsa9PNigvMRKH
 ```json
 {
   "cmd": "rg -n \"WorkspaceProvider|NewWorkspaceProvider|StoreWorkspaceSource|NewStoreWorkspaceSource|ao\\.\" internal -g '*.go'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -1994,7 +1994,7 @@ id: call_ilEc9DM7uuRV6UZcMODbYdxG
 ```json
 {
   "cmd": "rg -n \"ao start|agent-orchestrator|WorkspaceProvider|orchestrator\" README.md prds/core/PRD.md prds/core/PLAN.md prds/plugins/agents/PRD.md docs/*.html internal/app/app.go internal/ao/workspace.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 26000
 }
@@ -2007,7 +2007,7 @@ id: call_OAvlnKy3tsXlB0TY4QhbK7It
 ```json
 {
   "cmd": "sed -n '1,180p' README.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -2027,25 +2027,25 @@ internal/server/sessions_test.go:65:		{ID: "01HRSERVER000000000000000B", Project
 internal/server/server.go:143:	mux.HandleFunc("POST /api/sessions/{sessionID}/ide", s.handleSessionIDE)
 internal/server/sessions.go:53:	for _, key := range []string{"displayName", "title", "prompt"} {
 internal/server/sessions.go:210:// bus. Short-lived CLI commands (spawn/stop) run in their own process, so the
-web/src/features/home/domain/session-workspace-contract.generated.ts:7:  'prompt',
+web/src/features/home/<USER>/session-workspace-contract.generated.ts:7:  'prompt',
 web/src/styles/app.css:290:     from spawning a scrollbar, and dropping scrollbar-gutter reclaims the
-web/src/features/home/domain/session-workspace.ts:69:   * the raw prompt, then "new agent: <id>". The bare workerId is never shown.
-web/src/features/home/domain/session-workspace.ts:94:  prompt: 'Prompt',
-web/src/features/home/domain/session-workspace.ts:200: * with full precedence (displayName > title > prompt > "new agent: <id>") in
-web/src/features/home/domain/kanban-card-model.unit.spec.ts:21:    prompt: 'tell me about this project',
-web/src/features/home/domain/kanban-card-model.unit.spec.ts:44:    expect(card.metadata).toContain('"prompt"');
-web/src/features/home/domain/kanban-card-model.unit.spec.ts:82:  it('prefers hook title over raw prompt duplication', () => {
-web/src/features/home/domain/kanban-card-model.unit.spec.ts:85:        JSON.stringify({ prompt: 'long prompt', title: 'Short title' })
-web/src/features/home/domain/kanban-card-model.unit.spec.ts:88:      prompt: 'long prompt',
-web/src/features/home/domain/session-workspace.unit.spec.ts:77:      { id: 'prompt', title: 'Prompt', cards: [] },
-web/src/features/home/domain/session-workspace.unit.spec.ts:106:      { id: 'prompt', label: 'Prompt', sessions: [] },
-web/src/features/home/domain/kanban-card-model.ts:98:    case 'prompt':
-web/src/features/home/domain/kanban-card-model.ts:118:  const prompt = readMetadataString(metadata, 'prompt');
-web/src/features/home/domain/kanban-card-model.ts:119:  if (prompt) {
-web/src/features/home/domain/kanban-card-model.ts:120:    return prompt;
-web/src/features/home/pages/workspace-layout.tsx:490:    const nextLabel = window.prompt('Rename session', currentLabel);
-web/src/features/home/pages/workspace-layout.tsx:604:    const nextProjectName = window.prompt('Rename project', project.name);
-web/src/features/home/components/organisms/terminal-panel.browser.spec.tsx:190:  // Switch […]
+web/src/features/home/<USER>/session-workspace.ts:69:   * the raw prompt, then "new agent: <id>". The bare workerId is never shown.
+web/src/features/home/<USER>/session-workspace.ts:94:  prompt: 'Prompt',
+web/src/features/home/<USER>/session-workspace.ts:200: * with full precedence (displayName > title > prompt > "new agent: <id>") in
+web/src/features/home/<USER>/kanban-card-model.unit.spec.ts:21:    prompt: 'tell me about this project',
+web/src/features/home/<USER>/kanban-card-model.unit.spec.ts:44:    expect(card.metadata).toContain('"prompt"');
+web/src/features/home/<USER>/kanban-card-model.unit.spec.ts:82:  it('prefers hook title over raw prompt duplication', () => {
+web/src/features/home/<USER>/kanban-card-model.unit.spec.ts:85:        JSON.stringify({ prompt: 'long prompt', title: 'Short title' })
+web/src/features/home/<USER>/kanban-card-model.unit.spec.ts:88:      prompt: 'long prompt',
+web/src/features/home/<USER>/session-workspace.unit.spec.ts:77:      { id: 'prompt', title: 'Prompt', cards: [] },
+web/src/features/home/<USER>/session-workspace.unit.spec.ts:106:      { id: 'prompt', label: 'Prompt', sessions: [] },
+web/src/features/home/<USER>/kanban-card-model.ts:98:    case 'prompt':
+web/src/features/home/<USER>/kanban-card-model.ts:118:  const prompt = readMetadataString(metadata, 'prompt');
+web/src/features/home/<USER>/kanban-card-model.ts:119:  if (prompt) {
+web/src/features/home/<USER>/kanban-card-model.ts:120:    return prompt;
+web/src/features/home/<USER>/workspace-layout.tsx:490:    const nextLabel = window.prompt('Rename session', currentLabel);
+web/src/features/home/<USER>/workspace-layout.tsx:604:    const nextProjectName = window.prompt('Rename project', project.name);
+web/src/features/home/<USER>/organisms/terminal-panel.browser.spec.tsx:190:  // Switch […]
 
 > TOOL
 
@@ -2184,7 +2184,7 @@ id: call_2an7I8ZegOySxvF3GIfqwAdo
 ```json
 {
   "cmd": "sed -n '340,385p' prds/core/PRD.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 9000
 }
@@ -2197,7 +2197,7 @@ id: call_FKDPmR28K4fISt955m04ltiv
 ```json
 {
   "cmd": "sed -n '300,380p' internal/cli/commands.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -2210,7 +2210,7 @@ id: call_osGm0Uzgvh3zmAEMKa70cG3r
 ```json
 {
   "cmd": "sed -n '1,240p' internal/server/sessions_test.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -2223,7 +2223,7 @@ id: call_HP8ThsuD0oRDHdSwoq1nMulR
 ```json
 {
   "cmd": "sed -n '240,430p' internal/server/sessions_test.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -2236,7 +2236,7 @@ id: call_ZjMYy1SSJzHPxVoAQa6iCPx3
 ```json
 {
   "cmd": "sed -n '1,260p' internal/session/workspace_source_test.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -2539,8 +2539,8 @@ func TestToLegacySessionAttachCommandIncludesConfig(t *testing.T) {
 
 	row := store.Session{ID: "v042rv", ZellijSession: "yyork-v042rv"}
 
-	withConfig := toLegacySession(row, "/home/me/.yyork/zellij/config.kdl")
-	wantWith := []string{"zellij", "--config", "/home/me/.yyork/zellij/config.kdl", […]
+	withConfig := toLegacySession(row, "/home/<USER>/.yyork/zellij/config.kdl")
+	wantWith := []string{"zellij", "--config", "/home/<USER>/.yyork/zellij/config.kdl", […]
 
 > TOOL
 
@@ -2549,7 +2549,7 @@ id: call_p0WZ7xFNLM2Hn1EEIji21R2l
 ```json
 {
   "cmd": "sed -n '240,340p' internal/cli/commands.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -2562,7 +2562,7 @@ id: call_ScqS05H7Mb3CvzlMOZqOlLPk
 ```json
 {
   "cmd": "sed -n '1,240p' internal/durabilityprovider/send.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -2575,7 +2575,7 @@ id: call_sF4eIK8MoO1HQV4nMqQC6cwh
 ```json
 {
   "cmd": "sed -n '1,220p' internal/durabilityprovider/provider.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -2588,7 +2588,7 @@ id: call_HltdYioiRxWYlaYyzEQa0lvN
 ```json
 {
   "cmd": "sed -n '1,220p' internal/durabilityprovider/zellij.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -2826,7 +2826,7 @@ id: call_7FThnq8nI07k7du7FhYtJUAu
 ```json
 {
   "cmd": "ao session --help && ao session kill --help || true",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -2838,8 +2838,8 @@ tool_use exec_command
 id: call_5kD8Gl4gmUIS9sADCWQzpVK3
 ```json
 {
-  "cmd": "sed -n '1,420p' /Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands/session.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,420p' /home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands/session.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -2851,8 +2851,8 @@ tool_use exec_command
 id: call_TfyGk9NJUAaWMDzPC6e76uQc
 ```json
 {
-  "cmd": "rg -n \"kill|stop|terminate|destroy|session.*kill|command\\(\\\"kill\\\"|kill-session\" /Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands/session.ts /Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/core/src/session-manager.ts /Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/web/src/app/api -g '!node_modules'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "rg -n \"kill|stop|terminate|destroy|session.*kill|command\\(\\\"kill\\\"|kill-session\" /home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands/session.ts /home/<USER>/Projects/agent-orchestrator/packages/core/src/session-manager.ts /home/<USER>/Projects/agent-orchestrator/packages/web/src/app/api -g '!node_modules'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -2864,8 +2864,8 @@ tool_use exec_command
 id: call_NRfQIbo70LvEq2ccRp8Ayjtw
 ```json
 {
-  "cmd": "sed -n '1,190p' /Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/web/src/app/api/sessions/[id]/route.ts 2>/dev/null || true",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,190p' /home/<USER>/Projects/agent-orchestrator/packages/web/src/app/api/sessions/[id]/route.ts 2>/dev/null || true",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -2990,32 +2990,32 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 5199
 Output:
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:37:    .description("Session management (ls, kill, cleanup, restore, claim-pr)");
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:45:      "--include-terminated",
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:46:      "Include terminated sessions (killed/done/merged/terminated/errored/cleanup)",
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:72:      // drop them unless --include-terminated is passed.
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:192:            `  ${hiddenTerminatedCount} terminated session${hiddenTerminatedCount !== 1 ? "s" : ""} hidden. Use --include-terminated to show.`,
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:232:          sock.destroy();
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:280:          // Ctrl+\ (0x1c) = detach without killing (like tmux Ctrl+B,D)
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:344:    .command("kill")
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:346:    .argument("<session>", "Session name to kill")
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:347:    .option("--purge-session", "Delete mapped OpenCode session during kill")
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:353:        await sm.kill(sessionName, { purgeOpenCode: opts.purgeSession === true });
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:354:        console.log(chalk.green(`\nSession ${sessionName} killed.`));
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:356:        console.error(chalk.red(`Failed to kill session ${sessionName}: ${err}`));
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:399:          killed: filterCleanupIds(rawResult.killed),
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:409:        if (result.killed.length === 0 && result.errors.length === 0) {
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:412:          for (const id of result.killed) {
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:413:            console.log(chalk.yellow(`  Would kill ${id}`));
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:415:          if (result.killed.length > 0) {
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:418:                `\nDry run complete. ${result.killed.length} session${result.killed.length !== 1 ? "s" : ""} would be cleaned.`,
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:427:          killed: filterCleanupIds(rawResult.killed),
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:431:        if (result.killed.length === 0 && result.errors.length === 0) {
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:434:          if (result.killed.length > 0) {
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:435:            for (const id of result.killed) {
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:444:          console.log(chalk.green(`\nCleanup complete. ${result.killed.length} sessions cleaned.`));
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:508:    .description("Restore a terminated/crashed session in-place")
-/Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/core/src/session-manager.ts:1037:  const TERMINAL_SESSION_STATUSES = new Set(["killed", "done", […]
+/home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:37:    .description("Session management (ls, kill, cleanup, restore, claim-pr)");
+/home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:45:      "--include-terminated",
+/home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:46:      "Include terminated sessions (killed/done/merged/terminated/errored/cleanup)",
+/home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:72:      // drop them unless --include-terminated is passed.
+/home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:192:            `  ${hiddenTerminatedCount} terminated session${hiddenTerminatedCount !== 1 ? "s" : ""} hidden. Use --include-terminated to show.`,
+/home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:232:          sock.destroy();
+/home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:280:          // Ctrl+\ (0x1c) = detach without killing (like tmux Ctrl+B,D)
+/home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:344:    .command("kill")
+/home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:346:    .argument("<session>", "Session name to kill")
+/home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:347:    .option("--purge-session", "Delete mapped OpenCode session during kill")
+/home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:353:        await sm.kill(sessionName, { purgeOpenCode: opts.purgeSession === true });
+/home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:354:        console.log(chalk.green(`\nSession ${sessionName} killed.`));
+/home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:356:        console.error(chalk.red(`Failed to kill session ${sessionName}: ${err}`));
+/home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:399:          killed: filterCleanupIds(rawResult.killed),
+/home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:409:        if (result.killed.length === 0 && result.errors.length === 0) {
+/home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:412:          for (const id of result.killed) {
+/home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:413:            console.log(chalk.yellow(`  Would kill ${id}`));
+/home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:415:          if (result.killed.length > 0) {
+/home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:418:                `\nDry run complete. ${result.killed.length} session${result.killed.length !== 1 ? "s" : ""} would be cleaned.`,
+/home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:427:          killed: filterCleanupIds(rawResult.killed),
+/home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:431:        if (result.killed.length === 0 && result.errors.length === 0) {
+/home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:434:          if (result.killed.length > 0) {
+/home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:435:            for (const id of result.killed) {
+/home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:444:          console.log(chalk.green(`\nCleanup complete. ${result.killed.length} sessions cleaned.`));
+/home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands/session.ts:508:    .description("Restore a terminated/crashed session in-place")
+/home/<USER>/Projects/agent-orchestrator/packages/core/src/session-manager.ts:1037:  const TERMINAL_SESSION_STATUSES = new Set(["killed", "done", […]
 
 > TOOL
 
@@ -3027,7 +3027,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 32
 Output:
-zsh:1: no matches found: /Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/web/src/app/api/sessions/[id]/route.ts
+zsh:1: no matches found: /home/<USER>/Projects/agent-orchestrator/packages/web/src/app/api/sessions/[id]/route.ts
 
 ```
 
@@ -3037,8 +3037,8 @@ tool_use exec_command
 id: call_q6q1uFZdirJL7P3bhaU9QCIR
 ```json
 {
-  "cmd": "sed -n '1,220p' web/src/features/home/data/workspace.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,220p' web/src/features/home/<USER>/workspace.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -3050,8 +3050,8 @@ tool_use exec_command
 id: call_C7Y72x2Kot2ceWieQuJA7qa4
 ```json
 {
-  "cmd": "sed -n '1,280p' web/src/features/home/pages/workspace-layout.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,280p' web/src/features/home/<USER>/workspace-layout.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 26000
 }
@@ -3064,7 +3064,7 @@ id: call_plii5JZYu5Mu4o2tP1UTdWPe
 ```json
 {
   "cmd": "rg -n \"fetchWorkspace|listSessions|/api/workspace|/api/sessions|workspace\\.sessions|serverSessions|sync\" web/src/features/home -g '!node_modules'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 26000
 }
@@ -3087,7 +3087,7 @@ import {
   type SessionWorkspace,
   type WorkerSession,
   type WorkerSessionRecord,
-} from '@/features/home/domain/session-workspace';
+} from '@/features/home/<USER>/session-workspace';
 
 // ---------------------------------------------------------------------------
 // /api/sessions — the new SQLite-backed source of truth.
@@ -3169,22 +3169,22 @@ const isMacPlatform =
 const MOD_KEY = isMacPlatform ? '⌘' : 'Ctrl';
 const SHIFT_KEY = isMacPlatform ? '⇧' : 'Shift';
 
-import { StopSessionConfirmDialog } from '@/features/home/components/molecules/stop-session-confirm-dialog';
+import { StopSessionConfirmDialog } from '@/features/home/<USER>/molecules/stop-session-confirm-dialog';
 import type {
   CanvasTab,
   CanvasTargetSummary,
-} from '@/features/home/components/organisms/canvas-panel';
-import { MainTopbar } from '@/features/home/components/organisms/main-topbar';
-import { ProjectOrchestratorSidebar } from '@/features/home/components/organisms/project-orchestrator-sidebar';
-import type { WorkspacePanelState } from '@/features/home/components/organisms/workspace-status-view';
-import { openProjectIdeMutationOptions } from '@/features/home/data/project-ide';
+} from '@/features/home/<USER>/organisms/canvas-panel';
+import { MainTopbar } from '@/features/home/<USER>/organisms/main-topbar';
+import { ProjectOrchestratorSidebar } from '@/features/home/<USER>/organisms/project-orchestrator-sidebar';
+import type { WorkspacePanelState } from '@/features/home/<USER>/organisms/workspace-status-view';
+import { openProjectIdeMutationOptions } from '@/features/home/<USER>/project-ide';
 import {
   fallbackHomeWorkspace,
   homeWorkspaceQueryKey,
   homeWorkspaceQueryOptions,
   renameSessionMutationOptions,
   stopSessionMutationOptions,
-} from '@/features/home/data/workspace';
+} from '@/features/home/<USER>/workspace';
 import {
   getCanvasPreviewTargetKey,
   getCanvasPreviewUrlForTarget,
@@ -3194,7 +3194,7 @@ import {
   type HomeWorkspacePreferences,
   readHomeWorkspacePreferences,
   writeHomeWorkspacePreferences,
-} from '@/features/home/data/workspace-preferences';
+} from '@/features/home/<USER>/workspace-preferences';
 import {
   getKanbanColumns,
   getProjectIdFromSelectionKey,
@@ -3211,11 +3211,11 @@ import {
   type WorkerSession,
   type WorkerSessionState,
   workerSessionStates,
-} from '@/features/home/domain/session-workspace';
+} from '@/features/home/<USER>/session-workspace';
 import {
   WorkspaceContext,
   type WorkspaceContextValue,
-} from '@/features/home/pages/workspace-context';
+} from '@/features/home/<USER>/workspace-context';
 import { […]
 
 > TOOL
@@ -3228,35 +3228,35 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 2462
 Output:
-web/src/features/home/pages/workspace-layout.tsx:204:    refetch: refetchWorkspace,
-web/src/features/home/pages/workspace-layout.tsx:209:  const { mutateAsync: stopSession } = useMutation(
-web/src/features/home/pages/workspace-layout.tsx:213:  const { mutateAsync: renameSession } = useMutation(
-web/src/features/home/pages/workspace-layout.tsx:234:  const workspaceSessions = workspace.sessions.filter(
-web/src/features/home/pages/workspace-layout.tsx:715:    onWorkspaceRefresh: () => void refetchWorkspace(),
-web/src/features/home/domain/session-workspace.unit.spec.ts:64:    expect(getKanbanColumns(workspace.sessions)).toMatchObject([
-web/src/features/home/domain/session-workspace.unit.spec.ts:88:    expect(getWorkerSessionGroups(workspace.sessions)).toEqual([
-web/src/features/home/domain/session-workspace.unit.spec.ts:148:          ...workspace.sessions[0]!,
-web/src/features/home/domain/session-workspace.unit.spec.ts:155:          ...workspace.sessions[1]!,
-web/src/features/home/domain/session-workspace.unit.spec.ts:181:      ...workspace.sessions[0]!,
-web/src/features/home/domain/session-workspace.unit.spec.ts:191:      getTerminalSession([orchestrator, ...workspace.sessions], selectionKey)
-web/src/features/home/domain/session-workspace.unit.spec.ts:236:        workspace.sessions,
-web/src/features/home/domain/session-workspace.unit.spec.ts:247:      { ...workspace.sessions[0]!, id: 'ao-1', project: 'project-a' },
-web/src/features/home/domain/session-workspace.unit.spec.ts:248:      { ...workspace.sessions[1]!, id: 'ao-1', project: 'project-b' },
-web/src/features/home/components/organisms/main-topbar.tsx:84:                // (kept in sync by the ResizeObserver in TerminalLayout). The
-web/src/features/home/components/organisms/kanban-column.stories.tsx:34:  play: async ({ canvas }) => {
-web/src/features/home/components/organisms/kanban-column.stories.tsx:46:  play: async ({ canvas }) => {
-web/src/features/home/components/organisms/kanban-column.stories.tsx:57:  play: async ({ canvas }) => {
-web/src/features/home/pages/terminal-layout.tsx:37:    const sync = (width: number) => {
-web/src/features/home/pages/terminal-layout.tsx:43:    sync(el.getBoundingClientRect().width);
-web/src/features/home/pages/terminal-layout.tsx:47:        sync(entry.contentRect.width);
-web/src/features/home/components/organisms/terminal-connection.unit.spec.ts:24:      'ws://localhost:3000/api/sessions/session%2Fao%202/terminal?cols=120&project=agent-orchestrator&rows=40'
-web/src/features/home/components/organisms/terminal-connection.unit.spec.ts:35:      'wss://yyork.local/api/sessions/session-ao-2/terminal?cols=100&project=agent-orchestrator&rows=30'
-web/src/features/home/components/organisms/terminal-panel.browser.spec.tsx:25:vi.mock('@wterm/react', async () => {
-web/src/features/home/components/organisms/terminal-panel.browser.spec.tsx:159:test('reuses one terminal instance across session switches instead of rebuilding it', async () => {
-web/src/features/home/components/organisms/terminal-panel.browser.spec.tsx:182:test('keeps forwarding wheel scroll to the re-pointed socket after a session switch', async () => {
-web/src/features/home/components/organisms/terminal-panel.browser.spec.tsx:220:test('binds the wheel listener only while mouse tracking is active', async () => {
-web/src/features/home/components/organisms/terminal-panel.browser.spec.tsx:256:test('opens the renderer settings menu without crashing the panel', async () => {
-web/src/features/home/data/workspace.ts:11:// /api/sessions — […]
+web/src/features/home/<USER>/workspace-layout.tsx:204:    refetch: refetchWorkspace,
+web/src/features/home/<USER>/workspace-layout.tsx:209:  const { mutateAsync: stopSession } = useMutation(
+web/src/features/home/<USER>/workspace-layout.tsx:213:  const { mutateAsync: renameSession } = useMutation(
+web/src/features/home/<USER>/workspace-layout.tsx:234:  const workspaceSessions = workspace.sessions.filter(
+web/src/features/home/<USER>/workspace-layout.tsx:715:    onWorkspaceRefresh: () => void refetchWorkspace(),
+web/src/features/home/<USER>/session-workspace.unit.spec.ts:64:    expect(getKanbanColumns(workspace.sessions)).toMatchObject([
+web/src/features/home/<USER>/session-workspace.unit.spec.ts:88:    expect(getWorkerSessionGroups(workspace.sessions)).toEqual([
+web/src/features/home/<USER>/session-workspace.unit.spec.ts:148:          ...workspace.sessions[0]!,
+web/src/features/home/<USER>/session-workspace.unit.spec.ts:155:          ...workspace.sessions[1]!,
+web/src/features/home/<USER>/session-workspace.unit.spec.ts:181:      ...workspace.sessions[0]!,
+web/src/features/home/<USER>/session-workspace.unit.spec.ts:191:      getTerminalSession([orchestrator, ...workspace.sessions], selectionKey)
+web/src/features/home/<USER>/session-workspace.unit.spec.ts:236:        workspace.sessions,
+web/src/features/home/<USER>/session-workspace.unit.spec.ts:247:      { ...workspace.sessions[0]!, id: 'ao-1', project: 'project-a' },
+web/src/features/home/<USER>/session-workspace.unit.spec.ts:248:      { ...workspace.sessions[1]!, id: 'ao-1', project: 'project-b' },
+web/src/features/home/<USER>/organisms/main-topbar.tsx:84:                // (kept in sync by the ResizeObserver in TerminalLayout). The
+web/src/features/home/<USER>/organisms/kanban-column.stories.tsx:34:  play: async ({ canvas }) => {
+web/src/features/home/<USER>/organisms/kanban-column.stories.tsx:46:  play: async ({ canvas }) => {
+web/src/features/home/<USER>/organisms/kanban-column.stories.tsx:57:  play: async ({ canvas }) => {
+web/src/features/home/<USER>/terminal-layout.tsx:37:    const sync = (width: number) => {
+web/src/features/home/<USER>/terminal-layout.tsx:43:    sync(el.getBoundingClientRect().width);
+web/src/features/home/<USER>/terminal-layout.tsx:47:        sync(entry.contentRect.width);
+web/src/features/home/<USER>/organisms/terminal-connection.unit.spec.ts:24:      'ws://localhost:3000/api/sessions/session%2Fao%202/terminal?cols=120&project=agent-orchestrator&rows=40'
+web/src/features/home/<USER>/organisms/terminal-connection.unit.spec.ts:35:      'wss://yyork.local/api/sessions/session-ao-2/terminal?cols=100&project=agent-orchestrator&rows=30'
+web/src/features/home/<USER>/organisms/terminal-panel.browser.spec.tsx:25:vi.mock('@wterm/react', async () => {
+web/src/features/home/<USER>/organisms/terminal-panel.browser.spec.tsx:159:test('reuses one terminal instance across session switches instead of rebuilding it', async () => {
+web/src/features/home/<USER>/organisms/terminal-panel.browser.spec.tsx:182:test('keeps forwarding wheel scroll to the re-pointed socket after a session switch', async () => {
+web/src/features/home/<USER>/organisms/terminal-panel.browser.spec.tsx:220:test('binds the wheel listener only while mouse tracking is active', async () => {
+web/src/features/home/<USER>/organisms/terminal-panel.browser.spec.tsx:256:test('opens the renderer settings menu without crashing the panel', async () => {
+web/src/features/home/<USER>/workspace.ts:11:// /api/sessions — […]
 
 > TOOL
 
@@ -3264,8 +3264,8 @@ tool_use exec_command
 id: call_QlOFwrLf5V5w3l7sgW9ww55i
 ```json
 {
-  "cmd": "sed -n '1,180p' web/src/features/home/domain/session-workspace-contract.generated.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,180p' web/src/features/home/<USER>/session-workspace-contract.generated.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -3277,8 +3277,8 @@ tool_use exec_command
 id: call_sPhBmV24LHO9MoYGhkiYxdEA
 ```json
 {
-  "cmd": "sed -n '1,270p' web/src/features/home/domain/session-workspace.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,270p' web/src/features/home/<USER>/session-workspace.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -3290,8 +3290,8 @@ tool_use exec_command
 id: call_Piffz2tBIlo0LSud94astX3A
 ```json
 {
-  "cmd": "sed -n '1,120p' web/src/features/home/data/workspace.unit.spec.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,120p' web/src/features/home/<USER>/workspace.unit.spec.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -3304,7 +3304,7 @@ id: call_nPVutdeSsKMxCgP5Q7PULKh9
 ```json
 {
   "cmd": "sed -n '1,180p' internal/session/session.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -3317,7 +3317,7 @@ id: call_Sfe4YNghILszuzjxywmycZ5z
 ```json
 {
   "cmd": "rg -n \"workspace\" internal/server/server_test.go web/e2e/root.spec.ts | sed -n '1,120p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -3406,7 +3406,7 @@ import {
   type SessionActivity,
   toKanbanCardView,
   type WorkerSessionRecord,
-} from '@/features/home/domain/kanban-card-model';
+} from '@/features/home/<USER>/kanban-card-model';
 import {
   type SessionWorkspace,
   type TerminalSessionKind,
@@ -3414,13 +3414,13 @@ import {
   type WorkerSession,
   type WorkerSessionState,
   workerSessionStates,
-} from '@/features/home/domain/session-workspace-contract.generated';
+} from '@/features/home/<USER>/session-workspace-contract.generated';
 
 export {
   type SessionActivity,
   sessionActivityStates,
   type WorkerSessionRecord,
-} from '@/features/home/domain/kanban-card-model';
+} from '@/features/home/<USER>/kanban-card-model';
 export {
   type ProjectOrchestrator,
   type SessionWorkspace,
@@ -3429,7 +3429,7 @@ export {
   type WorkerSession,
   type WorkerSessionState,
   workerSessionStates,
-} from '@/features/home/domain/session-workspace-contract.generated';
+} from '@/features/home/<USER>/session-workspace-contract.generated';
 
 export interface KanbanCardData {
   activity: SessionActivity;
@@ -3483,7 +3483,7 @@ Original token count: 429
 Output:
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
-import { renameSessionMutationOptions } from '@/features/home/data/workspace';
+import { renameSessionMutationOptions } from '@/features/home/<USER>/workspace';
 
 describe('renameSessionMutationOptions', () => {
   afterEach(() => {
@@ -3660,7 +3660,7 @@ id: call_FXNPaTINie4SauugzYWcPw5g
 ```json
 {
   "cmd": "sed -n '360,450p' web/e2e/root.spec.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -3673,7 +3673,7 @@ id: call_3zH79wA9IB15TvAteed6Z2Uo
 ```json
 {
   "cmd": "sed -n '920,1005p' web/e2e/root.spec.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -3686,7 +3686,7 @@ id: call_OC1Pq1pWcjSKgv3yR8LwjaBG
 ```json
 {
   "cmd": "rg -n \"api/sessions\" web/e2e web/src -g '*spec*' -g '*.test.*' -g '!node_modules'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -3874,13 +3874,13 @@ web/e2e/root.spec.ts:362:          candidate.url?.includes('/api/sessions/') &&
 web/e2e/root.spec.ts:463:  await page.route('**/api/sessions/*/ide?**', async (route) => {
 web/e2e/root.spec.ts:496:  expect(openIDERequest?.url).toContain('/api/sessions/ao-live-1/ide');
 web/e2e/root.spec.ts:915:    .toContain('/api/sessions/ao-orchestrator/terminal');
-web/src/features/home/data/session-files.unit.spec.ts:40:      '/api/sessions/v042rv/files?project=%2Frepo%2Fyyork',
-web/src/features/home/data/session-files.unit.spec.ts:101:      '/api/sessions/v042rv/files/content?path=lefthook.yml&project=%2Frepo%2Fyyork',
-web/src/features/home/data/session-ide.unit.spec.ts:12:    ).toBe('/api/sessions/session%2Fao%202/ide?project=agent-orchestrator');
-web/src/features/home/data/workspace.unit.spec.ts:52:    expect(fetchMock).toHaveBeenCalledWith('/api/sessions/v042rv', {
-web/src/features/home/data/canvas-diff.unit.spec.ts:65:      '/api/sessions/v042rv/canvas/diff?project=%2Frepo%2Fyyork',
-web/src/features/home/components/organisms/terminal-connection.unit.spec.ts:24:      'ws://localhost:3000/api/sessions/session%2Fao%202/terminal?cols=120&project=agent-orchestrator&rows=40'
-web/src/features/home/components/organisms/terminal-connection.unit.spec.ts:35:      'wss://yyork.local/api/sessions/session-ao-2/terminal?cols=100&project=agent-orchestrator&rows=30'
+web/src/features/home/<USER>/session-files.unit.spec.ts:40:      '/api/sessions/v042rv/files?project=%2Frepo%2Fyyork',
+web/src/features/home/<USER>/session-files.unit.spec.ts:101:      '/api/sessions/v042rv/files/content?path=lefthook.yml&project=%2Frepo%2Fyyork',
+web/src/features/home/<USER>/session-ide.unit.spec.ts:12:    ).toBe('/api/sessions/session%2Fao%202/ide?project=agent-orchestrator');
+web/src/features/home/<USER>/workspace.unit.spec.ts:52:    expect(fetchMock).toHaveBeenCalledWith('/api/sessions/v042rv', {
+web/src/features/home/<USER>/canvas-diff.unit.spec.ts:65:      '/api/sessions/v042rv/canvas/diff?project=%2Frepo%2Fyyork',
+web/src/features/home/<USER>/organisms/terminal-connection.unit.spec.ts:24:      'ws://localhost:3000/api/sessions/session%2Fao%202/terminal?cols=120&project=agent-orchestrator&rows=40'
+web/src/features/home/<USER>/organisms/terminal-connection.unit.spec.ts:35:      'wss://yyork.local/api/sessions/session-ao-2/terminal?cols=100&project=agent-orchestrator&rows=30'
 
 ```
 
@@ -3894,8 +3894,8 @@ tool_use exec_command
 id: call_jl1q5AkPpC5GNdNJU08FLGsg
 ```json
 {
-  "cmd": "sed -n '450,535p' web/src/features/home/pages/workspace-layout.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '450,535p' web/src/features/home/<USER>/workspace-layout.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -3907,8 +3907,8 @@ tool_use exec_command
 id: call_UGPhoxPsXHIqh3K8TylgaVQf
 ```json
 {
-  "cmd": "sed -n '535,640p' web/src/features/home/pages/workspace-layout.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '535,640p' web/src/features/home/<USER>/workspace-layout.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -3920,8 +3920,8 @@ tool_use exec_command
 id: call_oSuMtfcImehLMAP8ByJS3PCK
 ```json
 {
-  "cmd": "sed -n '680,760p' web/src/features/home/pages/workspace-layout.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '680,760p' web/src/features/home/<USER>/workspace-layout.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -3934,7 +3934,7 @@ id: call_8sTn833qbnpCAzJcD3SJttTq
 ```json
 {
   "cmd": "rg -n \"handleRenameSession|Rename|onRename|renameSession|displayName\" web/src/features/home -g '*.tsx' -g '*.ts'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -4213,42 +4213,42 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 1840
 Output:
-web/src/features/home/pages/workspace-layout.tsx:46:  renameSessionMutationOptions,
-web/src/features/home/pages/workspace-layout.tsx:213:  const { mutateAsync: renameSession } = useMutation(
-web/src/features/home/pages/workspace-layout.tsx:214:    renameSessionMutationOptions()
-web/src/features/home/pages/workspace-layout.tsx:477:  const handleTerminalSessionRename = (
-web/src/features/home/pages/workspace-layout.tsx:490:    const nextLabel = window.prompt('Rename session', currentLabel);
-web/src/features/home/pages/workspace-layout.tsx:496:    // displayName, and emits a session.updated SSE event so every client
-web/src/features/home/pages/workspace-layout.tsx:504:    renameSession({ sessionId, displayName: normalizedLabel })
-web/src/features/home/pages/workspace-layout.tsx:594:  const handleProjectRename = (projectId: string) => {
-web/src/features/home/pages/workspace-layout.tsx:604:    const nextProjectName = window.prompt('Rename project', project.name);
-web/src/features/home/pages/workspace-layout.tsx:737:    handleProjectRename,
-web/src/features/home/pages/workspace-layout.tsx:744:    handleTerminalSessionRename,
-web/src/features/home/pages/workspace-layout.tsx:785:            onProjectRename={props.handleProjectRename}
-web/src/features/home/pages/workspace-layout.tsx:789:            onTerminalSessionRename={props.handleTerminalSessionRename}
-web/src/features/home/domain/session-workspace.ts:68:   * of truth: a user-set displayName wins, then the hook-derived title, then
-web/src/features/home/domain/session-workspace.ts:200: * with full precedence (displayName > title > prompt > "new agent: <id>") in
-web/src/features/home/components/organisms/project-orchestrator-sidebar.tsx:109:  onProjectRename?: (projectId: string) => void;
-web/src/features/home/components/organisms/project-orchestrator-sidebar.tsx:114:  onTerminalSessionRename?: (selectionKey: string, label: string) => void;
-web/src/features/home/components/organisms/project-orchestrator-sidebar.tsx:146:          onTerminalSessionRename={props.onTerminalSessionRename}
-web/src/features/home/components/organisms/project-orchestrator-sidebar.tsx:200:                  onProjectRename={props.onProjectRename}
-web/src/features/home/components/organisms/project-orchestrator-sidebar.tsx:204:                  onTerminalSessionRename={props.onTerminalSessionRename}
-web/src/features/home/components/organisms/project-orchestrator-sidebar.tsx:250:  onTerminalSessionRename?: (selectionKey: string, label: string) => void;
-web/src/features/home/components/organisms/project-orchestrator-sidebar.tsx:335:              onTerminalSessionRename={props.onTerminalSessionRename}
-web/src/features/home/components/organisms/project-orchestrator-sidebar.tsx:353:  onTerminalSessionRename?: (selectionKey: string, label: string) => void;
-web/src/features/home/components/organisms/project-orchestrator-sidebar.tsx:379:        onRename={
-web/src/features/home/components/organisms/project-orchestrator-sidebar.tsx:380:          props.onTerminalSessionRename
-web/src/features/home/components/organisms/project-orchestrator-sidebar.tsx:382:                props.onTerminalSessionRename?.(
-web/src/features/home/components/organisms/project-orchestrator-sidebar.tsx:630:  onProjectRename?: (projectId: string) => void;
-web/src/features/home/components/organisms/project-orchestrator-sidebar.tsx:634:  onTerminalSessionRename?: (selectionKey: string, label: string) => void;
-web/src/features/home/components/organisms/project-orchestrator-sidebar.tsx:704:            onRename={() => props.onProjectRename?.(props.project.id)}
-web/src/features/home/components/organisms/project-orchestrator-sidebar.tsx:725:            onTerminalSessionRename={props.onTerminalSessionRename}
-web/src/features/home/components/organisms/project-orchestrator-sidebar.tsx:741:  onTerminalSessionRename?: (selectionKey: string, label: string) => void;
-web/src/features/home/components/organisms/project-orchestrator-sidebar.tsx:812:              onRename={
-web/src/features/home/components/organisms/project-orchestrator-sidebar.tsx:813:                props.onTerminalSessionRename
-web/src/features/home/components/organisms/project-orchestrator-sidebar.tsx:815:                      props.onTerminalSessionRename?.(
-web/src/features/home/components/organisms/project-orchestrator-sidebar.tsx:903:          onTerminalSessionRename={props.onTerminalSessionRename}
-web/src/features/home/components/organisms/project-orchestrator-sidebar.tsx:920:  onTerminalSessionRename?: (selectionKey: string, label: string) […]
+web/src/features/home/<USER>/workspace-layout.tsx:46:  renameSessionMutationOptions,
+web/src/features/home/<USER>/workspace-layout.tsx:213:  const { mutateAsync: renameSession } = useMutation(
+web/src/features/home/<USER>/workspace-layout.tsx:214:    renameSessionMutationOptions()
+web/src/features/home/<USER>/workspace-layout.tsx:477:  const handleTerminalSessionRename = (
+web/src/features/home/<USER>/workspace-layout.tsx:490:    const nextLabel = window.prompt('Rename session', currentLabel);
+web/src/features/home/<USER>/workspace-layout.tsx:496:    // displayName, and emits a session.updated SSE event so every client
+web/src/features/home/<USER>/workspace-layout.tsx:504:    renameSession({ sessionId, displayName: normalizedLabel })
+web/src/features/home/<USER>/workspace-layout.tsx:594:  const handleProjectRename = (projectId: string) => {
+web/src/features/home/<USER>/workspace-layout.tsx:604:    const nextProjectName = window.prompt('Rename project', project.name);
+web/src/features/home/<USER>/workspace-layout.tsx:737:    handleProjectRename,
+web/src/features/home/<USER>/workspace-layout.tsx:744:    handleTerminalSessionRename,
+web/src/features/home/<USER>/workspace-layout.tsx:785:            onProjectRename={props.handleProjectRename}
+web/src/features/home/<USER>/workspace-layout.tsx:789:            onTerminalSessionRename={props.handleTerminalSessionRename}
+web/src/features/home/<USER>/session-workspace.ts:68:   * of truth: a user-set displayName wins, then the hook-derived title, then
+web/src/features/home/<USER>/session-workspace.ts:200: * with full precedence (displayName > title > prompt > "new agent: <id>") in
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.tsx:109:  onProjectRename?: (projectId: string) => void;
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.tsx:114:  onTerminalSessionRename?: (selectionKey: string, label: string) => void;
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.tsx:146:          onTerminalSessionRename={props.onTerminalSessionRename}
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.tsx:200:                  onProjectRename={props.onProjectRename}
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.tsx:204:                  onTerminalSessionRename={props.onTerminalSessionRename}
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.tsx:250:  onTerminalSessionRename?: (selectionKey: string, label: string) => void;
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.tsx:335:              onTerminalSessionRename={props.onTerminalSessionRename}
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.tsx:353:  onTerminalSessionRename?: (selectionKey: string, label: string) => void;
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.tsx:379:        onRename={
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.tsx:380:          props.onTerminalSessionRename
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.tsx:382:                props.onTerminalSessionRename?.(
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.tsx:630:  onProjectRename?: (projectId: string) => void;
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.tsx:634:  onTerminalSessionRename?: (selectionKey: string, label: string) => void;
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.tsx:704:            onRename={() => props.onProjectRename?.(props.project.id)}
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.tsx:725:            onTerminalSessionRename={props.onTerminalSessionRename}
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.tsx:741:  onTerminalSessionRename?: (selectionKey: string, label: string) => void;
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.tsx:812:              onRename={
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.tsx:813:                props.onTerminalSessionRename
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.tsx:815:                      props.onTerminalSessionRename?.(
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.tsx:903:          onTerminalSessionRename={props.onTerminalSessionRename}
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.tsx:920:  onTerminalSessionRename?: (selectionKey: string, label: string) […]
 
 > TOOL
 
@@ -4257,7 +4257,7 @@ id: call_u8hlQ5Pn8d2q7smoixlKlXoM
 ```json
 {
   "cmd": "cat package.json",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -4270,7 +4270,7 @@ id: call_H6yhrSgNQjKptmecc7P3vUcc
 ```json
 {
   "cmd": "cat web/package.json",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -4283,7 +4283,7 @@ id: call_5RUgsEmrpiuNF9BLEnovjzjI
 ```json
 {
   "cmd": "cat go.mod",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -4311,7 +4311,7 @@ Output:
   "license": "MIT",
   "author": {
     "name": "yyopc",
-    "email": "itsyyopc@gmail.com",
+    "email": "<REDACTED_EMAIL>",
     "url": "https://github.com/yyopc"
   },
   "repository": {
@@ -4382,7 +4382,7 @@ Output:
   "license": "MIT",
   "author": {
     "name": "yyopc",
-    "email": "itsyyopc@gmail.com",
+    "email": "<REDACTED_EMAIL>",
     "url": "https://github.com/yyopc"
   },
   "repository": {
@@ -4494,7 +4494,7 @@ id: call_kPp5qg7K1eLw8bb72qC8wBbd
 ```json
 {
   "cmd": "ao start --help",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -4506,8 +4506,8 @@ tool_use exec_command
 id: call_0WJF29ZnmdhYbsgUcDEfgtz6
 ```json
 {
-  "cmd": "sed -n '1,180p' /Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands/start.ts 2>/dev/null || rg -n \"command\\(\\\"start\\\"|registerStart|start\" /Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands -g '*.ts'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,180p' /home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands/start.ts 2>/dev/null || rg -n \"command\\(\\\"start\\\"|registerStart|start\" /home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands -g '*.ts'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -4612,8 +4612,8 @@ tool_use exec_command
 id: call_CyuaFTberRfWcMy8aWtcWNkc
 ```json
 {
-  "cmd": "rg -n \"export function registerStart|command\\(\\\"start\\\"|no-dashboard|no-orchestrator|isAlreadyRunning|await.*start\" /Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands/start.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "rg -n \"export function registerStart|command\\(\\\"start\\\"|no-dashboard|no-orchestrator|isAlreadyRunning|await.*start\" /home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands/start.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -4625,8 +4625,8 @@ tool_use exec_command
 id: call_WhURJv8RoQ6ffyOtAQ4TvUIR
 ```json
 {
-  "cmd": "sed -n '1020,1250p' /Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands/start.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1020,1250p' /home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands/start.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 28000
 }
@@ -4638,8 +4638,8 @@ tool_use exec_command
 id: call_bHZ55AD9dGgXtNTTup3jN2Au
 ```json
 {
-  "cmd": "sed -n '1250,1510p' /Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/cli/src/commands/start.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1250,1510p' /home/<USER>/Projects/agent-orchestrator/packages/cli/src/commands/start.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -4840,8 +4840,8 @@ tool_use exec_command
 id: call_t2PWXN5jJLT23PsgcNKLtFxU
 ```json
 {
-  "cmd": "sed -n '2440,2515p' /Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/core/src/session-manager.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '2440,2515p' /home/<USER>/Projects/agent-orchestrator/packages/core/src/session-manager.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -4853,8 +4853,8 @@ tool_use exec_command
 id: call_VVst4iDmqZ2TOkgIoUd3J2HZ
 ```json
 {
-  "cmd": "rg -n \"async function get\\(|function get\\(|get\\(sessionId|SessionId\" /Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/core/src/session-manager.ts | sed -n '1,80p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "rg -n \"async function get\\(|function get\\(|get\\(sessionId|SessionId\" /home/<USER>/Projects/agent-orchestrator/packages/core/src/session-manager.ts | sed -n '1,80p'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -4866,8 +4866,8 @@ tool_use exec_command
 id: call_3oSRbgBKoqUgDdrASmR653np
 ```json
 {
-  "cmd": "sed -n '1000,1060p' /Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/core/src/session-manager.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1000,1060p' /home/<USER>/Projects/agent-orchestrator/packages/core/src/session-manager.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -5051,8 +5051,8 @@ tool_use exec_command
 id: call_czRSS3etvlTnpMczS8cO1yOC
 ```json
 {
-  "cmd": "sed -n '955,985p' /Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/core/src/session-manager.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '955,985p' /home/<USER>/Projects/agent-orchestrator/packages/core/src/session-manager.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -5064,8 +5064,8 @@ tool_use exec_command
 id: call_ZFnvascKbYBA5mZZOX3TZaI7
 ```json
 {
-  "cmd": "sed -n '2380,2445p' /Users/tanishqpalandurkar/Projects/agent-orchestrator/packages/core/src/session-manager.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '2380,2445p' /home/<USER>/Projects/agent-orchestrator/packages/core/src/session-manager.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -5209,7 +5209,7 @@ id: call_EOiTOia3mHRP1UYr3fmgW5C6
 ```json
 {
   "cmd": "sed -n '1,35p' internal/app/app.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -5222,7 +5222,7 @@ id: call_t5vCR4aSgQRoSJwIvSstISCY
 ```json
 {
   "cmd": "sed -n '105,155p' internal/app/app.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -5349,8 +5349,8 @@ tool_use exec_command
 id: call_rIc1ttZXyjvz86M4TbF1Qcui
 ```json
 {
-  "cmd": "sed -n '1,150p' web/src/features/home/domain/kanban-card-model.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,150p' web/src/features/home/<USER>/kanban-card-model.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -5362,8 +5362,8 @@ tool_use exec_command
 id: call_GZUwFf1K8Fn7g5zO858lvSGJ
 ```json
 {
-  "cmd": "sed -n '150,260p' web/src/features/home/domain/kanban-card-model.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '150,260p' web/src/features/home/<USER>/kanban-card-model.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -5383,7 +5383,7 @@ import type {
   KanbanCardData,
   WorkerSession,
   WorkerSessionState,
-} from '@/features/home/domain/session-workspace';
+} from '@/features/home/<USER>/session-workspace';
 
 export const sessionActivityStates = [
   'working',
@@ -5606,7 +5606,7 @@ id: call_jCahAodD6ZbDkLmkK7ov0pJ0
 ```json
 {
   "cmd": "gofmt -w internal/ao/control.go internal/ao/control_test.go internal/app/app.go internal/server/server.go internal/server/sessions.go internal/cli/commands.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -5618,8 +5618,8 @@ tool_use exec_command
 id: call_y7LyDOYg1B2dEX8dMrBEjBPQ
 ```json
 {
-  "cmd": "pnpm --filter @yyork/web exec oxfmt web/src/features/home/data/workspace.ts web/src/features/home/pages/workspace-layout.tsx web/src/features/home/data/workspace.unit.spec.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "pnpm --filter @yyork/web exec oxfmt web/src/features/home/<USER>/workspace.ts web/src/features/home/<USER>/workspace-layout.tsx web/src/features/home/<USER>/workspace.unit.spec.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -5682,8 +5682,8 @@ Original token count: 78
 Output:
 Expected at least one target file
 undefined
-/Users/tanishqpalandurkar/Projects/yyork/web:
- ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 2: oxfmt web/src/features/home/data/workspace.ts web/src/features/home/pages/workspace-layout.tsx web/src/features/home/data/workspace.unit.spec.ts
+/home/<USER>/Projects/yyork/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 2: oxfmt web/src/features/home/<USER>/workspace.ts web/src/features/home/<USER>/workspace-layout.tsx web/src/features/home/<USER>/workspace.unit.spec.ts
 
 ```
 
@@ -5698,7 +5698,7 @@ id: call_sZdVOpLlim33iZekNSNuBXti
 ```json
 {
   "cmd": "direnv exec . gofmt -w internal/ao/control.go internal/ao/control_test.go internal/app/app.go internal/server/server.go internal/server/sessions.go internal/cli/commands.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -5710,8 +5710,8 @@ tool_use exec_command
 id: call_UACvqZBIXcZUQw8edLAZWRgC
 ```json
 {
-  "cmd": "pnpm --dir web exec oxfmt src/features/home/data/workspace.ts src/features/home/pages/workspace-layout.tsx src/features/home/data/workspace.unit.spec.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "pnpm --dir web exec oxfmt src/features/home/<USER>/workspace.ts src/features/home/<USER>/workspace-layout.tsx src/features/home/<USER>/workspace.unit.spec.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -5755,7 +5755,7 @@ id: call_vK9MxOQLqcS6piuG5cI60mqM
 ```json
 {
   "cmd": "sed -n '1,260p' internal/ao/control.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -5768,7 +5768,7 @@ id: call_9MibogI8ni8OmxWXn6dLm132
 ```json
 {
   "cmd": "sed -n '30,90p' internal/server/server.go && sed -n '70,180p' internal/server/sessions.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -5781,7 +5781,7 @@ id: call_RLdUKbfMQEAS7IlaxbSc6TCy
 ```json
 {
   "cmd": "sed -n '115,145p' internal/app/app.go && sed -n '150,300p' internal/cli/commands.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -5793,8 +5793,8 @@ tool_use exec_command
 id: call_X3giKZJM0S0BMOwFByoVvL5K
 ```json
 {
-  "cmd": "sed -n '1,260p' web/src/features/home/data/workspace.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,260p' web/src/features/home/<USER>/workspace.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000
 }
@@ -5979,7 +5979,7 @@ import { z } from 'zod';
 import {
   type SessionWorkspace,
   workerSessionStates,
-} from '@/features/home/domain/session-workspace';
+} from '@/features/home/<USER>/session-workspace';
 
 export const homeWorkspaceQueryKey = ['home-workspace'] as const;
 
@@ -6061,7 +6061,7 @@ id: call_HzOgZ8c3uLWC1Pw1Rlm0JcQ1
 ```json
 {
   "cmd": "sed -n '180,260p' internal/server/sessions.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -6074,7 +6074,7 @@ id: call_H6fQqSHZa9LgyKgjmIJw9fld
 ```json
 {
   "cmd": "sed -n '1,120p' internal/ao/control_test.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -6086,8 +6086,8 @@ tool_use exec_command
 id: call_K6iw7eEiQTbSZMgyLgBhioEy
 ```json
 {
-  "cmd": "sed -n '485,525p' web/src/features/home/pages/workspace-layout.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '485,525p' web/src/features/home/<USER>/workspace-layout.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -6099,8 +6099,8 @@ tool_use exec_command
 id: call_hC7dkJ6ZcwtiSUPiWPPQQwBk
 ```json
 {
-  "cmd": "sed -n '1,75p' web/src/features/home/data/workspace.unit.spec.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,75p' web/src/features/home/<USER>/workspace.unit.spec.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -6317,7 +6317,7 @@ Original token count: 450
 Output:
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
-import { renameSessionMutationOptions } from '@/features/home/data/workspace';
+import { renameSessionMutationOptions } from '@/features/home/<USER>/workspace';
 
 describe('renameSessionMutationOptions', () => {
   afterEach(() => {
@@ -6403,7 +6403,7 @@ id: call_QYOtjRK7FJdYi5mS5qywGOB9
 ```json
 {
   "cmd": "direnv exec . gofmt -w internal/ao/control.go internal/ao/control_test.go internal/app/app.go internal/server/server.go internal/server/sessions.go internal/cli/commands.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -6415,8 +6415,8 @@ tool_use exec_command
 id: call_IdChJsKAfATNhgHjc0zURVos
 ```json
 {
-  "cmd": "pnpm --dir web exec oxfmt src/features/home/data/workspace.ts src/features/home/pages/workspace-layout.tsx src/features/home/data/workspace.unit.spec.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "pnpm --dir web exec oxfmt src/features/home/<USER>/workspace.ts src/features/home/<USER>/workspace-layout.tsx src/features/home/<USER>/workspace.unit.spec.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -6486,7 +6486,7 @@ id: call_l1CDyKcHfvdHT8sbKMrhaqE2
 ```json
 {
   "cmd": "direnv exec . go test ./internal/ao ./internal/server ./internal/cli ./internal/app",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -6519,8 +6519,8 @@ tool_use exec_command
 id: call_NxhTEzGDjyifUyScTsTQvRnF
 ```json
 {
-  "cmd": "pnpm --dir web exec vitest run src/features/home/data/workspace.unit.spec.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "pnpm --dir web exec vitest run src/features/home/<USER>/workspace.unit.spec.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -6533,7 +6533,7 @@ id: call_R86lbx1WA8iBHhrGbLvQysHa
 ```json
 {
   "cmd": "pnpm --dir web exec tsc --noEmit",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 40000
 }
@@ -6551,9 +6551,9 @@ Original token count: 124
 Output:
 [WARN] The "pnpm" field in package.json is no longer read by pnpm. The following keys were ignored: "pnpm.onlyBuiltDependencies". See https://pnpm.io/settings for the new home of each setting.
 
- RUN  v4.0.18 /Users/tanishqpalandurkar/Projects/yyork/web
+ RUN  v4.0.18 /home/<USER>/Projects/yyork/web
 
- ✓ |unit| src/features/home/data/workspace.unit.spec.ts (2 tests) 12ms
+ ✓ |unit| src/features/home/<USER>/workspace.unit.spec.ts (2 tests) 12ms
 
  Test Files  1 passed (1)
       Tests  2 passed (2)
@@ -6588,7 +6588,7 @@ id: call_jAjoSaPJvJM6OIpoKhfRqDVU
 ```json
 {
   "cmd": "direnv exec . go test ./...",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 40000
 }
@@ -6676,8 +6676,8 @@ tool_use exec_command
 id: call_juMY8Ft4KGRNuutPZlIPKs4X
 ```json
 {
-  "cmd": "git diff -- internal/ao/control.go internal/ao/control_test.go internal/app/app.go internal/server/server.go internal/server/sessions.go internal/cli/commands.go web/src/features/home/data/workspace.ts web/src/features/home/pages/workspace-layout.tsx web/src/features/home/data/workspace.unit.spec.ts README.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "git diff -- internal/ao/control.go internal/ao/control_test.go internal/app/app.go internal/server/server.go internal/server/sessions.go internal/cli/commands.go web/src/features/home/<USER>/workspace.ts web/src/features/home/<USER>/workspace-layout.tsx web/src/features/home/<USER>/workspace.unit.spec.ts README.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 50000
 }
@@ -6689,8 +6689,8 @@ tool_use exec_command
 id: call_hgtqYZk1Dti5BYkiGPD7UIZe
 ```json
 {
-  "cmd": "git status --short -- internal/ao/control.go internal/ao/control_test.go internal/app/app.go internal/server/server.go internal/server/sessions.go internal/cli/commands.go web/src/features/home/data/workspace.ts web/src/features/home/pages/workspace-layout.tsx web/src/features/home/data/workspace.unit.spec.ts README.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "git status --short -- internal/ao/control.go internal/ao/control_test.go internal/app/app.go internal/server/server.go internal/server/sessions.go internal/cli/commands.go web/src/features/home/<USER>/workspace.ts web/src/features/home/<USER>/workspace-layout.tsx web/src/features/home/<USER>/workspace.unit.spec.ts README.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -6748,9 +6748,9 @@ Output:
  M internal/app/app.go
  M internal/server/server.go
  M internal/server/sessions.go
- M web/src/features/home/data/workspace.ts
- M web/src/features/home/data/workspace.unit.spec.ts
- M web/src/features/home/pages/workspace-layout.tsx
+ M web/src/features/home/<USER>/workspace.ts
+ M web/src/features/home/<USER>/workspace.unit.spec.ts
+ M web/src/features/home/<USER>/workspace-layout.tsx
 ?? internal/ao/control.go
 ?? internal/ao/control_test.go
 ?? internal/cli/commands.go
@@ -6767,8 +6767,8 @@ tool_use exec_command
 id: call_u4RoVvHlbpO24uFNff9JCM6t
 ```json
 {
-  "cmd": "git diff --check -- internal/ao/control.go internal/ao/control_test.go internal/app/app.go internal/server/server.go internal/server/sessions.go internal/cli/commands.go web/src/features/home/data/workspace.ts web/src/features/home/pages/workspace-layout.tsx web/src/features/home/data/workspace.unit.spec.ts README.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "git diff --check -- internal/ao/control.go internal/ao/control_test.go internal/app/app.go internal/server/server.go internal/server/sessions.go internal/cli/commands.go web/src/features/home/<USER>/workspace.ts web/src/features/home/<USER>/workspace-layout.tsx web/src/features/home/<USER>/workspace.unit.spec.ts README.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -6798,7 +6798,7 @@ id: call_puvHB8tkqVEof36DIJPmpsGG
 ```json
 {
   "cmd": "rg -n \"defaultAgentPlugin\" internal/cli/commands.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -6811,7 +6811,7 @@ id: call_1lA94IZ1upG1ZnwdNwKt97ba
 ```json
 {
   "cmd": "sed -n '20,40p' internal/cli/commands.go && sed -n '165,185p' internal/cli/commands.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -6899,7 +6899,7 @@ id: call_ahDFueAczMiaYRLqnDPbn2pB
 ```json
 {
   "cmd": "direnv exec . gofmt -w internal/cli/commands.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -6912,7 +6912,7 @@ id: call_kXjHMeKbyJM7X9IUczt7FTXC
 ```json
 {
   "cmd": "direnv exec . go test ./internal/cli ./internal/ao ./internal/server",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -6957,8 +6957,8 @@ tool_use exec_command
 id: call_nfThShc1V6kv2depg1RybDcU
 ```json
 {
-  "cmd": "git diff --check -- internal/ao/control.go internal/ao/control_test.go internal/app/app.go internal/server/server.go internal/server/sessions.go internal/cli/commands.go web/src/features/home/data/workspace.ts web/src/features/home/pages/workspace-layout.tsx web/src/features/home/data/workspace.unit.spec.ts README.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "git diff --check -- internal/ao/control.go internal/ao/control_test.go internal/app/app.go internal/server/server.go internal/server/sessions.go internal/cli/commands.go web/src/features/home/<USER>/workspace.ts web/src/features/home/<USER>/workspace-layout.tsx web/src/features/home/<USER>/workspace.unit.spec.ts README.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -6984,7 +6984,7 @@ id: call_nGcepj2IMG8vwiOuNswjpgZX
 ```json
 {
   "cmd": "nl -ba internal/ao/control.go | sed -n '1,240p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -6997,7 +6997,7 @@ id: call_YnTSNcCm4TrIzLs7HyvWGGKE
 ```json
 {
   "cmd": "nl -ba internal/app/app.go | sed -n '115,145p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -7010,7 +7010,7 @@ id: call_jLyZY0qnOitTg0rfUBcPfaBt
 ```json
 {
   "cmd": "nl -ba internal/server/sessions.go | sed -n '80,220p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -7023,7 +7023,7 @@ id: call_iii3ivloCNstc9PlNeSB7qZl
 ```json
 {
   "cmd": "nl -ba internal/cli/commands.go | sed -n '150,300p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -7035,8 +7035,8 @@ tool_use exec_command
 id: call_dBWwHeC11oihQUF90ztb6Pkx
 ```json
 {
-  "cmd": "nl -ba web/src/features/home/data/workspace.ts | sed -n '1,170p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "nl -ba web/src/features/home/<USER>/workspace.ts | sed -n '1,170p'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -7048,8 +7048,8 @@ tool_use exec_command
 id: call_r68ZQ88vNqrvtWicXJ7BJDCi
 ```json
 {
-  "cmd": "nl -ba web/src/features/home/pages/workspace-layout.tsx | sed -n '480,535p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "nl -ba web/src/features/home/<USER>/workspace-layout.tsx | sed -n '480,535p'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -7258,7 +7258,7 @@ Output:
      4	import {
      5	  type SessionWorkspace,
      6	  workerSessionStates,
-     7	} from '@/features/home/domain/session-workspace';
+     7	} from '@/features/home/<USER>/session-workspace';
      8	
      9	export const homeWorkspaceQueryKey = ['home-workspace'] as const;
     10	
@@ -7372,7 +7372,7 @@ id: call_Ooy7GBAGz1MB7IsjNGJqJPTS
 ```json
 {
   "cmd": "direnv exec . gofmt -w internal/server/sessions.go && git diff --check -- internal/server/sessions.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -7395,18 +7395,18 @@ Output:
 
 Implemented the AO-backed path.
 
-yyork now reads live AO workspace state from `~/.agent-orchestrator`, so the project orchestrator and AO-spawned workers flow into the dashboard via `/api/workspace` instead of the old SQLite-only session list. Stop and rename actions are project-aware and route AO sessions through a new AO controller adapter in [internal/ao/control.go](/Users/tanishqpalandurkar/Projects/yyork/internal/ao/control.go:22).
+yyork now reads live AO workspace state from `~/.agent-orchestrator`, so the project orchestrator and AO-spawned workers flow into the dashboard via `/api/workspace` instead of the old SQLite-only session list. Stop and rename actions are project-aware and route AO sessions through a new AO controller adapter in [internal/ao/control.go](/home/<USER>/Projects/yyork/internal/ao/control.go:22).
 
 Key changes:
-- App wiring uses `ao.NewWorkspaceProvider()` and AO-backed stop/rename in [internal/app/app.go](/Users/tanishqpalandurkar/Projects/yyork/internal/app/app.go:124).
-- Server stop/rename supports project-aware AO sessions in [internal/server/sessions.go](/Users/tanishqpalandurkar/Projects/yyork/internal/server/sessions.go:87).
-- Home workspace query is back on `/api/workspace` with light polling for orchestrator-spawned workers in [workspace.ts](/Users/tanishqpalandurkar/Projects/yyork/web/src/features/home/data/workspace.ts:50).
+- App wiring uses `ao.NewWorkspaceProvider()` and AO-backed stop/rename in [internal/app/app.go](/home/<USER>/Projects/yyork/internal/app/app.go:124).
+- Server stop/rename supports project-aware AO sessions in [internal/server/sessions.go](/home/<USER>/Projects/yyork/internal/server/sessions.go:87).
+- Home workspace query is back on `/api/workspace` with light polling for orchestrator-spawned workers in [workspace.ts](/home/<USER>/Projects/yyork/web/src/features/home/<USER>/workspace.ts:50).
 - `yyork spawn --prompt ...` is now a compatibility wrapper around `ao spawn --prompt ...`; it no longer creates yyork-owned sessions in parallel.
 - README basic flow now starts from `ao start --no-dashboard` then `yyork`.
 
 Verified:
 - `direnv exec . go test ./...`
-- `pnpm --dir web exec vitest run src/features/home/data/workspace.unit.spec.ts`
+- `pnpm --dir web exec vitest run src/features/home/<USER>/workspace.unit.spec.ts`
 - `pnpm --dir web exec tsc --noEmit`
 - `git diff --check` on touched files
 

@@ -1,6 +1,6 @@
 > SYSTEM
 
-# AGENTS.md instructions for /Users/tanishqpalandurkar/Projects/yyork
+# AGENTS.md instructions for /home/<USER>/Projects/yyork
 
 <INSTRUCTIONS>
 General instructions: follow these all the time.
@@ -15,11 +15,11 @@ General instructions: follow these all the time.
 
 </INSTRUCTIONS>
 <environment_context>
-  <cwd>/Users/tanishqpalandurkar/Projects/yyork</cwd>
+  <cwd>/home/<USER>/Projects/yyork</cwd>
   <shell>zsh</shell>
   <current_date>2026-06-09</current_date>
   <timezone>Asia/Kolkata</timezone>
-  <filesystem><workspace_roots><root>/Users/tanishqpalandurkar/Projects/yyork</root></workspace_roots><permission_profile type="disabled"><file_system type="unrestricted" /></permission_profile></filesystem>
+  <filesystem><workspace_roots><root>/home/<USER>/Projects/yyork</root></workspace_roots><permission_profile type="disabled"><file_system type="unrestricted" /></permission_profile></filesystem>
 </environment_context>
 
 > DEVELOPER
@@ -36,8 +36,8 @@ tool_use exec_command
 id: call_rykt5cNXs9kZDWmhP6k163Ah
 ```json
 {
-  "cmd": "rg -n \"IAB|in-app browser|browser|annotation|annotations|user message|send.*agent|Browser\" /Users/tanishqpalandurkar/.codex/memories/MEMORY.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "rg -n \"IAB|in-app browser|browser|annotation|annotations|user message|send.*agent|Browser\" /home/<USER>/.codex/memories/MEMORY.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -50,7 +50,7 @@ id: call_QQWFOBsZYo9lUgOhdVEksJHs
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -63,7 +63,7 @@ id: call_JPSpaEsfsSY5PlS4NCG5tyQl
 ```json
 {
   "cmd": "rg --files",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -81,11 +81,11 @@ Original token count: 3735
 Output:
 2:scope: Use for recent `yyork` dogfooding in the browser dashboard and local worktrees: Files/Review behavior, hook-review context, file-browser/layout changes, session-scoped diff rendering, Zellij layout/statusline validation, recap requests, merge-before-wipe semantics, and terminal gap measurement under disk pressure.
 5:## Task 1: Files tab cleanup, file-tree/sidebar layout changes, Git-filtered file-browser behavior, and merge-before-wipe semantics [chronicle memory]
-40:- extensions/chronicle/resources/2026-06-07T22-27-00-EIBj-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, rollout_path=/Users/tanishqpalandurkar/.codex/memories/extensions/chronicle/resources/2026-06-07T22-27-00-EIBj-10min-memory-summary.md, updated_at=2026-06-07T22:27:00+00:00, thread_id=None, statusline-difference explanation tying browser attach behavior to managed Zellij config) [chronicle memory]
+40:- extensions/chronicle/resources/2026-06-07T22-27-00-EIBj-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-07T22-27-00-EIBj-10min-memory-summary.md, updated_at=2026-06-07T22:27:00+00:00, thread_id=None, statusline-difference explanation tying browser attach behavior to managed Zellij config) [chronicle memory]
 62:## Task 5: File-browser rendering through `CodeView`, symlinked-directory handling, and scroll verification [chronicle memory]
-66:- extensions/chronicle/resources/2026-06-07T21-57-00-xkzZ-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, rollout_path=/Users/tanishqpalandurkar/.codex/memories/extensions/chronicle/resources/2026-06-07T21-57-00-xkzZ-10min-memory-summary.md, updated_at=2026-06-07T21:57:00+00:00, thread_id=None, file-browser rendering, symlinked-directory fix, and in-app wheel-scroll verification) [chronicle memory]
+66:- extensions/chronicle/resources/2026-06-07T21-57-00-xkzZ-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-07T21-57-00-xkzZ-10min-memory-summary.md, updated_at=2026-06-07T21:57:00+00:00, thread_id=None, file-browser rendering, symlinked-directory fix, and in-app wheel-scroll verification) [chronicle memory]
 83:## Task 7: Native Zellij statusline verification / stay idle so the browser terminal can show session chrome
-87:- rollout_summaries/2026-06-07T22-49-50-sYzr-native_zellij_statusline_verification_stay_idle.md (cwd=/Users/tanishqpalandurkar/.yyork/worktrees/1syxq3, rollout_path=/Users/tanishqpalandurkar/.codex/sessions/2026/06/08/rollout-2026-06-08T04-19-50-019ea447-340a-7781-a054-a28628ecf385.jsonl, updated_at=2026-06-07T22:50:05+00:00, thread_id=019ea447-340a-7781-a054-a28628ecf385, explicit idle posture during live browser-terminal verification)
+87:- rollout_summaries/2026-06-07T22-49-50-sYzr-native_zellij_statusline_verification_stay_idle.md (cwd=/home/<USER>/.yyork/worktrees/1syxq3, rollout_path=/home/<USER>/.codex/sessions/2026/06/08/rollout-2026-06-08T04-19-50-019ea447-340a-7781-a054-a28628ecf385.jsonl, updated_at=2026-06-07T22:50:05+00:00, thread_id=019ea447-340a-7781-a054-a28628ecf385, explicit idle posture during live browser-terminal verification)
 91:- 1syxq3, zellij, statusline, simplified_ui, browser terminal, session chrome, idle, "Stay idle so the browser terminal can show the session chrome"
 101:- when the user said “Stay idle so the browser terminal can show the session chrome” -> in live browser-terminal or statusline verification, avoid tool use, […]
 
@@ -373,7 +373,7 @@ web/src/locales/index.ts
 web/src/locales/react-day-picker.ts
 web/output/playwright/zellij-statusline-dark-after-color15.png
 web/output/playwright/zellij-statusline-dark-vite-after.png
-web/src/features/home/templates/orchestrator-workspace-template.tsx […]
+web/src/features/home/<USER>/orchestrator-workspace-template.tsx […]
 
 > AGENT
 
@@ -386,7 +386,7 @@ id: call_xzncNnDvrjVH57C7zhxb4cBZ
 ```json
 {
   "cmd": "sed -n '1,240p' prds/canvas/BROWSER_PLAN.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -399,7 +399,7 @@ id: call_RCpTgwK8WFbGWOtiX258PidS
 ```json
 {
   "cmd": "sed -n '1,260p' internal/server/browser_preview.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -412,7 +412,7 @@ id: call_6FVPqLbB3BbyHLBhgIemeopn
 ```json
 {
   "cmd": "sed -n '1,300p' internal/server/annotations.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -424,8 +424,8 @@ tool_use exec_command
 id: call_p4zTtUcUNWD68bpxYyySxReW
 ```json
 {
-  "cmd": "sed -n '1,260p' web/src/features/home/components/molecules/canvas-web-preview.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,260p' web/src/features/home/<USER>/molecules/canvas-web-preview.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -702,7 +702,7 @@ import {
   type BrowserPreviewUrlResult,
   registerBrowserPreviewTarget,
   validatePreviewUrlInput,
-} from '@/features/home/data/browser-preview';
+} from '@/features/home/<USER>/browser-preview';
 
 interface WebPreviewContextValue {
   canGoBack: boolean;
@@ -745,7 +745,7 @@ id: call_SYAzljWEN25zQXvYjR5mrfnB
 ```json
 {
   "cmd": "sed -n '241,520p' prds/canvas/BROWSER_PLAN.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -758,7 +758,7 @@ id: call_5aRtG1vCCzGlO8OujkdKipFT
 ```json
 {
   "cmd": "sed -n '261,620p' internal/server/browser_preview.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -770,8 +770,8 @@ tool_use exec_command
 id: call_eeQwUDmWgz4ZeWrq0Z9U07xj
 ```json
 {
-  "cmd": "sed -n '261,620p' web/src/features/home/components/molecules/canvas-web-preview.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '261,620p' web/src/features/home/<USER>/molecules/canvas-web-preview.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -783,8 +783,8 @@ tool_use exec_command
 id: call_h72QYsTs2nbz0FKZ4kFzfyB6
 ```json
 {
-  "cmd": "sed -n '1,280p' web/src/features/home/data/browser-preview.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,280p' web/src/features/home/<USER>/browser-preview.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -797,7 +797,7 @@ id: call_ORmNJiDi8ZFaJOC0qggBeEw0
 ```json
 {
   "cmd": "rg -n \"annotation|annotations|agentation|send.*agent|handleAnnotations|yyork:|dom-event|Browser\" internal web/src prds/canvas",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -1137,7 +1137,7 @@ id: call_PCb8T9SzcGorAwlhDSYHQlMA
 ```json
 {
   "cmd": "sed -n '620,860p' internal/server/browser_preview.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -1149,8 +1149,8 @@ tool_use exec_command
 id: call_qmsXcOwBBmvuvxUvQALau7x8
 ```json
 {
-  "cmd": "sed -n '600,980p' web/src/features/home/components/molecules/canvas-web-preview.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '600,980p' web/src/features/home/<USER>/molecules/canvas-web-preview.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 28000
 }
@@ -1163,7 +1163,7 @@ id: call_wbpj4l22MBTTjvvFqYZT20us
 ```json
 {
   "cmd": "sed -n '1,180p' web/src/browser-preview-agentation.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -1176,7 +1176,7 @@ id: call_p5A2Z8LzW8JQSAt2BFsnLtjl
 ```json
 {
   "cmd": "rg -n \"/api/annotations|handleAnnotations|annotations-submitted|annotation-added|send.*annotation|BrowserPreviewAnnotation|BrowserPreviewAgentationMessage\" web/src internal/server",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -1188,8 +1188,8 @@ tool_use exec_command
 id: call_Ml63WNRnemQPhvBVOAGVAdJz
 ```json
 {
-  "cmd": "sed -n '1,220p' web/src/features/home/components/organisms/canvas-panel.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,220p' web/src/features/home/<USER>/organisms/canvas-panel.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -1201,8 +1201,8 @@ tool_use exec_command
 id: call_tIiAbM2Cl9h8h5nztcQlJVUO
 ```json
 {
-  "cmd": "sed -n '1,260p' web/src/features/home/pages/workspace-layout.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,260p' web/src/features/home/<USER>/workspace-layout.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -1489,18 +1489,18 @@ internal/server/annotations_test.go:118:	req := httptest.NewRequest(http.MethodP
 internal/server/server.go:148:	mux.HandleFunc("POST /api/annotations/{sessionID}", s.handleAnnotations)
 web/src/browser-preview-agentation.ts:74:        post('yyork:annotation-added', {
 web/src/browser-preview-agentation.ts:95:        post('yyork:annotations-submitted', { annotations, output });
-web/src/features/home/data/browser-preview.ts:45:export type BrowserPreviewAnnotation = {
-web/src/features/home/data/browser-preview.ts:64:export type BrowserPreviewAgentationMessage = {
-web/src/features/home/data/browser-preview.ts:65:  annotation?: BrowserPreviewAnnotation;
-web/src/features/home/data/browser-preview.ts:66:  annotations?: BrowserPreviewAnnotation[];
-web/src/features/home/data/browser-preview.ts:73:    | 'yyork:annotation-added'
-web/src/features/home/data/browser-preview.ts:78:    | 'yyork:annotations-submitted';
-web/src/features/home/data/browser-preview.ts:84:  | BrowserPreviewAgentationMessage
-web/src/features/home/data/browser-preview.ts:183:export function isBrowserPreviewAgentationMessage(
-web/src/features/home/data/browser-preview.ts:185:): value is BrowserPreviewAgentationMessage {
-web/src/features/home/data/browser-preview.ts:203:    isBrowserPreviewAgentationMessage(value)
-web/src/features/home/components/molecules/canvas-web-preview.tsx:42:  type BrowserPreviewAgentationMessage,
-web/src/features/home/components/molecules/canvas-web-preview.tsx:854:  message: BrowserPreviewAgentationMessage
+web/src/features/home/<USER>/browser-preview.ts:45:export type BrowserPreviewAnnotation = {
+web/src/features/home/<USER>/browser-preview.ts:64:export type BrowserPreviewAgentationMessage = {
+web/src/features/home/<USER>/browser-preview.ts:65:  annotation?: BrowserPreviewAnnotation;
+web/src/features/home/<USER>/browser-preview.ts:66:  annotations?: BrowserPreviewAnnotation[];
+web/src/features/home/<USER>/browser-preview.ts:73:    | 'yyork:annotation-added'
+web/src/features/home/<USER>/browser-preview.ts:78:    | 'yyork:annotations-submitted';
+web/src/features/home/<USER>/browser-preview.ts:84:  | BrowserPreviewAgentationMessage
+web/src/features/home/<USER>/browser-preview.ts:183:export function isBrowserPreviewAgentationMessage(
+web/src/features/home/<USER>/browser-preview.ts:185:): value is BrowserPreviewAgentationMessage {
+web/src/features/home/<USER>/browser-preview.ts:203:    isBrowserPreviewAgentationMessage(value)
+web/src/features/home/<USER>/molecules/canvas-web-preview.tsx:42:  type BrowserPreviewAgentationMessage,
+web/src/features/home/<USER>/molecules/canvas-web-preview.tsx:854:  message: BrowserPreviewAgentationMessage
 
 ```
 
@@ -1552,20 +1552,20 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 
-import { CanvasWebPreview } from '@/features/home/components/molecules/canvas-web-preview';
-import { CanvasDiffView } from '@/features/home/components/organisms/canvas-diff-view';
+import { CanvasWebPreview } from '@/features/home/<USER>/molecules/canvas-web-preview';
+import { CanvasDiffView } from '@/features/home/<USER>/organisms/canvas-diff-view';
 import {
   type SessionFileContent,
   sessionFileContentQueryOptions,
   sessionFilesQueryOptions,
-} from '@/features/home/data/session-files';
-import type { HomeWorkspaceCanvasReviewPreferences } from '@/features/home/data/workspace-preferences';
+} from '@/features/home/<USER>/session-files';
+import type { HomeWorkspaceCanvasReviewPreferences } from '@/features/home/<USER>/workspace-preferences';
 import {
   type CanvasTab,
   isCanvasTab,
-} from '@/features/home/domain/canvas-tabs';
+} from '@/features/home/<USER>/canvas-tabs';
 
-export type { CanvasTab } from '@/features/home/domain/canvas-tabs';
+export type { CanvasTab } from '@/features/home/<USER>/canvas-tabs';
 
 export interface CanvasTargetSummary {
   cwd?: string;
@@ -1630,22 +1630,22 @@ const isMacPlatform =
 const MOD_KEY = isMacPlatform ? '⌘' : 'Ctrl';
 const SHIFT_KEY = isMacPlatform ? '⇧' : 'Shift';
 
-import { StopSessionConfirmDialog } from '@/features/home/components/molecules/stop-session-confirm-dialog';
+import { StopSessionConfirmDialog } from '@/features/home/<USER>/molecules/stop-session-confirm-dialog';
 import type {
   CanvasTab,
   CanvasTargetSummary,
-} from '@/features/home/components/organisms/canvas-panel';
-import { MainTopbar } from '@/features/home/components/organisms/main-topbar';
-import { ProjectOrchestratorSidebar } from '@/features/home/components/organisms/project-orchestrator-sidebar';
-import type { WorkspacePanelState } from '@/features/home/components/organisms/workspace-status-view';
-import { openProjectIdeMutationOptions } from '@/features/home/data/project-ide';
+} from '@/features/home/<USER>/organisms/canvas-panel';
+import { MainTopbar } from '@/features/home/<USER>/organisms/main-topbar';
+import { ProjectOrchestratorSidebar } from '@/features/home/<USER>/organisms/project-orchestrator-sidebar';
+import type { WorkspacePanelState } from '@/features/home/<USER>/organisms/workspace-status-view';
+import { openProjectIdeMutationOptions } from '@/features/home/<USER>/project-ide';
 import {
   fallbackHomeWorkspace,
   homeWorkspaceQueryKey,
   homeWorkspaceQueryOptions,
   renameSessionMutationOptions,
   stopSessionMutationOptions,
-} from '@/features/home/data/workspace';
+} from '@/features/home/<USER>/workspace';
 import {
   getCanvasPreviewTargetKey,
   getCanvasPreviewUrlForTarget,
@@ -1655,7 +1655,7 @@ import {
   type HomeWorkspacePreferences,
   readHomeWorkspacePreferences,
   writeHomeWorkspacePreferences,
-} from '@/features/home/data/workspace-preferences';
+} from '@/features/home/<USER>/workspace-preferences';
 import {
   getKanbanColumns,
   getSelectedWorkerSession,
@@ -1666,12 +1666,12 @@ import {
   withSelectedWorkerSession,
   type WorkerSessionState,
   workerSessionStates,
-} from '@/features/home/domain/session-workspace';
+} from '@/features/home/<USER>/session-workspace';
 import {
   WorkspaceContext,
   type WorkspaceContextValue,
-} from '@/features/home/pages/workspace-context';
-import { OrchestratorWorkspaceTemplate } from '@/features/home/templates/orchestrator-workspace-template';
+} from '@/features/home/<USER>/workspace-context';
+import { OrchestratorWorkspaceTemplate } from '@/features/home/<USER>/orchestrator-workspace-template';
 
 interface PendingSessionStop {
   label: […]
@@ -1686,8 +1686,8 @@ tool_use exec_command
 id: call_JxxENqpagnZRavqbGERJztQj
 ```json
 {
-  "cmd": "sed -n '260,620p' web/src/features/home/pages/workspace-layout.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '260,620p' web/src/features/home/<USER>/workspace-layout.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -1700,7 +1700,7 @@ id: call_Ta0h5humeoy8Cr5WzSi70Gb5
 ```json
 {
   "cmd": "sed -n '1,180p' internal/server/annotations_test.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -1712,8 +1712,8 @@ tool_use exec_command
 id: call_CSYZ1yW1kjLn6aBHPL4xvCwE
 ```json
 {
-  "cmd": "sed -n '1,180p' web/src/features/home/data/browser-preview.unit.spec.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,180p' web/src/features/home/<USER>/browser-preview.unit.spec.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -1725,8 +1725,8 @@ tool_use exec_command
 id: call_7LTdk4gUwT8quRYG5mSufeA6
 ```json
 {
-  "cmd": "sed -n '1,180p' web/src/features/home/data/workspace-preferences.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,180p' web/src/features/home/<USER>/workspace-preferences.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -1739,7 +1739,7 @@ id: call_vhdF6CFN5WT3MzW9Q9Di0AFc
 ```json
 {
   "cmd": "sed -n '140,170p' internal/server/server.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -1752,7 +1752,7 @@ id: call_raxvjkL8vm2W6ZyTNbIHoQFF
 ```json
 {
   "cmd": "sed -n '350,375p' internal/server/server.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -1933,7 +1933,7 @@ import {
   normalizePreviewUrlInput,
   registerBrowserPreviewTarget,
   validatePreviewUrlInput,
-} from '@/features/home/data/browser-preview';
+} from '@/features/home/<USER>/browser-preview';
 
 describe('browser-preview data helpers', () => {
   afterEach(() => {
@@ -2027,12 +2027,12 @@ Wall time: 0.0001 seconds
 Process exited with code 0
 Original token count: 1249
 Output:
-import { validatePreviewUrlInput } from '@/features/home/data/browser-preview';
-import { type CanvasTab, isCanvasTab } from '@/features/home/domain/canvas-tabs';
+import { validatePreviewUrlInput } from '@/features/home/<USER>/browser-preview';
+import { type CanvasTab, isCanvasTab } from '@/features/home/<USER>/canvas-tabs';
 import {
   type WorkerSessionState,
   workerSessionStates,
-} from '@/features/home/domain/session-workspace';
+} from '@/features/home/<USER>/session-workspace';
 
 const homeWorkspacePreferencesStorageKey =
   'yyork.home.workspace-preferences';
@@ -2208,8 +2208,8 @@ tool_use exec_command
 id: call_M5U0ohfENnDTyzxOoRmpzXzY
 ```json
 {
-  "cmd": "sed -n '620,820p' web/src/features/home/pages/workspace-layout.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '620,820p' web/src/features/home/<USER>/workspace-layout.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -2221,8 +2221,8 @@ tool_use exec_command
 id: call_q4Qum6XClROratEnYdgVyhZS
 ```json
 {
-  "cmd": "rg -n \"<CanvasPanel|canvasAvailable|canvasTarget|canvasPreviewUrl|onPreviewUrlChange\" web/src/features/home/pages web/src/features/home/templates web/src/features/home/components -g '*.tsx'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "rg -n \"<CanvasPanel|canvasAvailable|canvasTarget|canvasPreviewUrl|onPreviewUrlChange\" web/src/features/home/<USER> web/src/features/home/<USER> web/src/features/home/<USER> -g '*.tsx'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -2234,8 +2234,8 @@ tool_use exec_command
 id: call_OdG6D0p8fxOAAju9c3FkQjqf
 ```json
 {
-  "cmd": "sed -n '1,220p' web/src/features/home/templates/orchestrator-workspace-template.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,220p' web/src/features/home/<USER>/orchestrator-workspace-template.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -2247,8 +2247,8 @@ tool_use exec_command
 id: call_uvYoV0h9C23SGGxcjvAk2m7q
 ```json
 {
-  "cmd": "sed -n '180,280p' web/src/features/home/data/workspace-preferences.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '180,280p' web/src/features/home/<USER>/workspace-preferences.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -2261,7 +2261,7 @@ id: call_50q0b9STuORYaNkZne88ROTr
 ```json
 {
   "cmd": "sed -n '1,340p' internal/server/browser_preview_test.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -2411,22 +2411,22 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 391
 Output:
-web/src/features/home/pages/terminal-layout.tsx:102:          <CanvasPanel
-web/src/features/home/pages/terminal-layout.tsx:104:            previewUrl={context.canvasPreviewUrl}
-web/src/features/home/pages/terminal-layout.tsx:106:            onPreviewUrlChange={context.onCanvasPreviewUrlChange}
-web/src/features/home/pages/terminal-layout.tsx:109:            target={context.canvasTarget}
-web/src/features/home/pages/workspace-layout.tsx:248:  const canvasTarget: CanvasTargetSummary = selectedTerminalSession
-web/src/features/home/pages/workspace-layout.tsx:260:  const canvasPreviewTargetKey = getCanvasPreviewTargetKey(canvasTarget);
-web/src/features/home/pages/workspace-layout.tsx:261:  const canvasPreviewUrl = getCanvasPreviewUrlForTarget(
-web/src/features/home/pages/workspace-layout.tsx:619:    canvasAvailable: isTerminalRoute,
-web/src/features/home/pages/workspace-layout.tsx:622:    canvasPreviewUrl,
-web/src/features/home/pages/workspace-layout.tsx:626:    canvasTarget,
-web/src/features/home/components/organisms/main-topbar.tsx:26:    canvasAvailable,
-web/src/features/home/components/organisms/main-topbar.tsx:44:      if (!canvasAvailable) {
-web/src/features/home/components/organisms/main-topbar.tsx:62:  }, [canvasAvailable]);
-web/src/features/home/components/organisms/main-topbar.tsx:77:        {canvasAvailable ? (
-web/src/features/home/components/organisms/canvas-panel.tsx:167:  onPreviewUrlChange: (url: string) => void;
-web/src/features/home/components/organisms/canvas-panel.tsx:205:            onUrlChange={props.onPreviewUrlChange}
+web/src/features/home/<USER>/terminal-layout.tsx:102:          <CanvasPanel
+web/src/features/home/<USER>/terminal-layout.tsx:104:            previewUrl={context.canvasPreviewUrl}
+web/src/features/home/<USER>/terminal-layout.tsx:106:            onPreviewUrlChange={context.onCanvasPreviewUrlChange}
+web/src/features/home/<USER>/terminal-layout.tsx:109:            target={context.canvasTarget}
+web/src/features/home/<USER>/workspace-layout.tsx:248:  const canvasTarget: CanvasTargetSummary = selectedTerminalSession
+web/src/features/home/<USER>/workspace-layout.tsx:260:  const canvasPreviewTargetKey = getCanvasPreviewTargetKey(canvasTarget);
+web/src/features/home/<USER>/workspace-layout.tsx:261:  const canvasPreviewUrl = getCanvasPreviewUrlForTarget(
+web/src/features/home/<USER>/workspace-layout.tsx:619:    canvasAvailable: isTerminalRoute,
+web/src/features/home/<USER>/workspace-layout.tsx:622:    canvasPreviewUrl,
+web/src/features/home/<USER>/workspace-layout.tsx:626:    canvasTarget,
+web/src/features/home/<USER>/organisms/main-topbar.tsx:26:    canvasAvailable,
+web/src/features/home/<USER>/organisms/main-topbar.tsx:44:      if (!canvasAvailable) {
+web/src/features/home/<USER>/organisms/main-topbar.tsx:62:  }, [canvasAvailable]);
+web/src/features/home/<USER>/organisms/main-topbar.tsx:77:        {canvasAvailable ? (
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:167:  onPreviewUrlChange: (url: string) => void;
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:205:            onUrlChange={props.onPreviewUrlChange}
 
 ```
 
@@ -2645,8 +2645,8 @@ tool_use exec_command
 id: call_lNqM4upgKRLMFkXQbc914XaC
 ```json
 {
-  "cmd": "sed -n '1,160p' web/src/features/home/pages/terminal-layout.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,160p' web/src/features/home/<USER>/terminal-layout.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -2666,8 +2666,8 @@ import { type ReactNode, type RefObject, useEffect, useRef } from 'react';
 
 import { cn } from '@/lib/tailwind/utils';
 
-import { CanvasPanel } from '@/features/home/components/organisms/canvas-panel';
-import { useWorkspaceContext } from '@/features/home/pages/workspace-context';
+import { CanvasPanel } from '@/features/home/<USER>/organisms/canvas-panel';
+import { useWorkspaceContext } from '@/features/home/<USER>/workspace-context';
 
 const CANVAS_PANE_WIDTH_VAR = '--canvas-pane-width';
 const CANVAS_MIN_PERCENT = 22;
@@ -2699,8 +2699,8 @@ tool_use exec_command
 id: call_wlGtULMBgi1A1if2AvEt796A
 ```json
 {
-  "cmd": "sed -n '1,180p' web/src/features/home/pages/workspace-context.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,180p' web/src/features/home/<USER>/workspace-context.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2721,16 +2721,16 @@ import { createContext, use } from 'react';
 import type {
   CanvasTab,
   CanvasTargetSummary,
-} from '@/features/home/components/organisms/canvas-panel';
-import type { WorkspacePanelState } from '@/features/home/components/organisms/workspace-status-view';
+} from '@/features/home/<USER>/organisms/canvas-panel';
+import type { WorkspacePanelState } from '@/features/home/<USER>/organisms/workspace-status-view';
 import type {
   HomeWorkspaceCanvasLayout,
   HomeWorkspaceCanvasReviewPreferences,
-} from '@/features/home/data/workspace-preferences';
+} from '@/features/home/<USER>/workspace-preferences';
 import type {
   KanbanColumnData,
   WorkerSession,
-} from '@/features/home/domain/session-workspace';
+} from '@/features/home/<USER>/session-workspace';
 
 export interface WorkspaceContextValue {
   canvasAvailable: boolean;
@@ -2786,7 +2786,7 @@ id: call_SFkQxYC6vg89JLxTBvvteSeL
 ```json
 {
   "cmd": "go test ./internal/server",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -2799,7 +2799,7 @@ id: call_NMicKTbpw2xQTATfFjI28scK
 ```json
 {
   "cmd": "sed -n '1,220p' web/package.json",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2812,7 +2812,7 @@ id: call_EIDoZdsQ0MsYMtgvpuWiOZN7
 ```json
 {
   "cmd": "sed -n '1,200p' package.json",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2854,7 +2854,7 @@ Output:
   "license": "MIT",
   "author": {
     "name": "yyopc",
-    "email": "itsyyopc@gmail.com",
+    "email": "<REDACTED_EMAIL>",
     "url": "https://github.com/yyopc"
   },
   "repository": {
@@ -2913,7 +2913,7 @@ Output:
   "license": "MIT",
   "author": {
     "name": "yyopc",
-    "email": "itsyyopc@gmail.com",
+    "email": "<REDACTED_EMAIL>",
     "url": "https://github.com/yyopc"
   },
   "repository": {
@@ -2973,7 +2973,7 @@ id: call_nSHE2N0CKQbHY9dPCD4hPE66
 ```json
 {
   "cmd": "direnv exec . go test ./internal/server",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -2985,8 +2985,8 @@ tool_use exec_command
 id: call_VmOvbJ0xBR6RzavpiHRMDLRg
 ```json
 {
-  "cmd": "pnpm --filter @yyork/web exec vitest run src/features/home/data/browser-preview.unit.spec.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "pnpm --filter @yyork/web exec vitest run src/features/home/<USER>/browser-preview.unit.spec.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -3018,9 +3018,9 @@ Original token count: 125
 Output:
 [WARN] The "pnpm" field in package.json is no longer read by pnpm. The following keys were ignored: "pnpm.onlyBuiltDependencies". See https://pnpm.io/settings for the new home of each setting.
 
- RUN  v4.0.18 /Users/tanishqpalandurkar/Projects/yyork/web
+ RUN  v4.0.18 /home/<USER>/Projects/yyork/web
 
- ✓ |unit| src/features/home/data/browser-preview.unit.spec.ts (6 tests) 13ms
+ ✓ |unit| src/features/home/<USER>/browser-preview.unit.spec.ts (6 tests) 13ms
 
  Test Files  1 passed (1)
       Tests  6 passed (6)
@@ -3041,7 +3041,7 @@ id: call_C4G11Dec5DF2DvrRHvh6h2jd
 ```json
 {
   "cmd": "nl -ba prds/canvas/BROWSER_PLAN.md | sed -n '60,340p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -3054,7 +3054,7 @@ id: call_NAU1ByzzWxnlYjMrozz8PRUT
 ```json
 {
   "cmd": "nl -ba internal/server/annotations.go | sed -n '1,130p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -3067,7 +3067,7 @@ id: call_ekfT2gfBO0n1rDrGmLlMXetu
 ```json
 {
   "cmd": "nl -ba web/src/browser-preview-agentation.ts | sed -n '1,130p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -3079,8 +3079,8 @@ tool_use exec_command
 id: call_QY8efslJL25lnt1cijP7RZW5
 ```json
 {
-  "cmd": "nl -ba web/src/features/home/components/molecules/canvas-web-preview.tsx | sed -n '470,875p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "nl -ba web/src/features/home/<USER>/molecules/canvas-web-preview.tsx | sed -n '470,875p'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -3093,7 +3093,7 @@ id: call_ZJazkH4lYqbOYAppBeulHfJE
 ```json
 {
   "cmd": "nl -ba internal/server/browser_preview.go | sed -n '40,155p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -3105,8 +3105,8 @@ tool_use exec_command
 id: call_4WQe5yqsQhLLrFJn3ORgIc2a
 ```json
 {
-  "cmd": "nl -ba /Users/tanishqpalandurkar/.codex/memories/MEMORY.md | sed -n '162,190p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "nl -ba /home/<USER>/.codex/memories/MEMORY.md | sed -n '162,190p'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 10000
 }
@@ -3414,9 +3414,9 @@ Output:
    163	
    164	### rollout_summary_files
    165	
-   166	- extensions/chronicle/resources/2026-06-07T00-10-00-Cmka-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, rollout_path=/Users/tanishqpalandurkar/.codex/memories/extensions/chronicle/resources/2026-06-07T00-10-00-Cmka-10min-memory-summary.md, updated_at=2026-06-07T00:10:00+00:00, thread_id=None, meaningful session labels, rename options, and browser-direction discussion) [chronicle memory]
-   167	- extensions/chronicle/resources/2026-06-07T00-00-00-UZuQ-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, rollout_path=/Users/tanishqpalandurkar/.codex/memories/extensions/chronicle/resources/2026-06-07T00-00-00-UZuQ-10min-memory-summary.md, updated_at=2026-06-07T00:00:00+00:00, thread_id=None, in-app-browser CDP/iframe/native-webview tradeoff framing and local preview context) [chronicle memory]
-   168	- extensions/chronicle/resources/2026-06-06T23-50-00-tmYs-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, rollout_path=/Users/tanishqpalandurkar/.codex/memories/extensions/chronicle/resources/2026-06-06T23-50-00-tmYs-10min-memory-summary.md, updated_at=2026-06-06T23:50:00+00:00, thread_id=None, Codex-like sidebar polish, session path visibility, and browser-integration brainstorming context) [chronicle memory]
+   166	- extensions/chronicle/resources/2026-06-07T00-10-00-Cmka-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-07T00-10-00-Cmka-10min-memory-summary.md, updated_at=2026-06-07T00:10:00+00:00, thread_id=None, meaningful session labels, rename options, and browser-direction discussion) [chronicle memory]
+   167	- extensions/chronicle/resources/2026-06-07T00-00-00-UZuQ-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-07T00-00-00-UZuQ-10min-memory-summary.md, updated_at=2026-06-07T00:00:00+00:00, thread_id=None, in-app-browser CDP/iframe/native-webview tradeoff framing and local preview context) [chronicle memory]
+   168	- extensions/chronicle/resources/2026-06-06T23-50-00-tmYs-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-06T23-50-00-tmYs-10min-memory-summary.md, updated_at=2026-06-06T23:50:00+00:00, thread_id=None, Codex-like sidebar polish, session path visibility, and browser-integration brainstorming context) [chronicle memory]
    169	
    170	### keywords
    171	
@@ -3431,13 +3431,13 @@ Output:
 
 The IAB is not ready to mark “annotation send to agent” as complete yet.
 
-Current status: Browser itself is mostly through the local-preview foundation. `B0-B4` are marked done in [BROWSER_PLAN.md](/Users/tanishqpalandurkar/Projects/yyork/prds/canvas/BROWSER_PLAN.md:61): live iframe preview, local-only URL validation, per-target URL persistence, proxy/injection, vendored preview bridge, and Agentation injection. The backend proxy registers local preview targets and injects bridge + Agentation scripts in [browser_preview.go](/Users/tanishqpalandurkar/Projects/yyork/internal/server/browser_preview.go:41).
+Current status: Browser itself is mostly through the local-preview foundation. `B0-B4` are marked done in [BROWSER_PLAN.md](/home/<USER>/Projects/yyork/prds/canvas/BROWSER_PLAN.md:61): live iframe preview, local-only URL validation, per-target URL persistence, proxy/injection, vendored preview bridge, and Agentation injection. The backend proxy registers local preview targets and injects bridge + Agentation scripts in [browser_preview.go](/home/<USER>/Projects/yyork/internal/server/browser_preview.go:41).
 
 Annotation pieces are partially wired:
 
-- Agentation is mounted inside proxied preview pages and posts `yyork:annotation-added`, `yyork:annotation-updated`, and `yyork:annotations-submitted` from [browser-preview-agentation.ts](/Users/tanishqpalandurkar/Projects/yyork/web/src/browser-preview-agentation.ts:71).
-- The Browser parent receives those messages, but currently just converts them into DOM-event tray rows in [canvas-web-preview.tsx](/Users/tanishqpalandurkar/Projects/yyork/web/src/features/home/components/molecules/canvas-web-preview.tsx:476).
-- The backend endpoint to send annotations to an agent already exists: `POST /api/annotations/{sessionID}` in [annotations.go](/Users/tanishqpalandurkar/Projects/yyork/internal/server/annotations.go:33). It resolves the session, formats markdown, and sends through the durability provider.
+- Agentation is mounted inside proxied preview pages and posts `yyork:annotation-added`, `yyork:annotation-updated`, and `yyork:annotations-submitted` from [browser-preview-agentation.ts](/home/<USER>/Projects/yyork/web/src/browser-preview-agentation.ts:71).
+- The Browser parent receives those messages, but currently just converts them into DOM-event tray rows in [canvas-web-preview.tsx](/home/<USER>/Projects/yyork/web/src/features/home/<USER>/molecules/canvas-web-preview.tsx:476).
+- The backend endpoint to send annotations to an agent already exists: `POST /api/annotations/{sessionID}` in [annotations.go](/home/<USER>/Projects/yyork/internal/server/annotations.go:33). It resolves the session, formats markdown, and sends through the durability provider.
 
 What’s left for true end-to-end:
 

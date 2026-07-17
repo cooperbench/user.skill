@@ -39,7 +39,7 @@ tool_use Read
 id: toolu_01VgRAXdr6xN7Dncb1hHfAoD
 ```json
 {
-  "file_path": "/Users/anton/src/agent-skills-shaper/skills/delivery/SKILL.md"
+  "file_path": "/home/<USER>/src/agent-skills-shaper/skills/delivery/SKILL.md"
 }
 ```
 
@@ -77,7 +77,7 @@ tool_use Read
 id: toolu_01NaFricLDmXkvT79cMF6JUu
 ```json
 {
-  "file_path": "/Users/anton/src/agent-skills-shaper/skills/exec-breakdown/SKILL.md"
+  "file_path": "/home/<USER>/src/agent-skills-shaper/skills/exec-breakdown/SKILL.md"
 }
 ```
 

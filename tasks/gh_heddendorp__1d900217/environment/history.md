@@ -1,6 +1,6 @@
 > SYSTEM
 
-# AGENTS.md instructions for /Users/hedde/code/evorto
+# AGENTS.md instructions for /home/<USER>/code/evorto
 
 <INSTRUCTIONS>
 # Repository Guidelines
@@ -59,8 +59,8 @@ tool_use exec_command
 id: call_d9CAIMgs7o1sN249SKzTCHWV
 ```json
 {
-  "cmd": "rg -n \"update-evorto-branch|latest changes|git fetch|FETCH_HEAD\" /Users/hedde/.codex/memories/MEMORY.md",
-  "workdir": "/Users/hedde/code/evorto",
+  "cmd": "rg -n \"update-evorto-branch|latest changes|git fetch|FETCH_HEAD\" /home/<USER>/.codex/memories/MEMORY.md",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -73,7 +73,7 @@ id: call_kr0pl2m2Nm8eat9FGMhPWG8f
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -86,7 +86,7 @@ id: call_DhC1cUEb285lqgmYc0iUaEqB
 ```json
 {
   "cmd": "ls skills/update-evorto-branch && sed -n '1,220p' skills/update-evorto-branch/SKILL.md",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -147,8 +147,8 @@ tool_use exec_command
 id: call_EgS7jof3aXcrvh8xmzdufVNp
 ```json
 {
-  "cmd": "sed -n '408,422p' /Users/hedde/.codex/memories/MEMORY.md",
-  "workdir": "/Users/hedde/code/evorto",
+  "cmd": "sed -n '408,422p' /home/<USER>/.codex/memories/MEMORY.md",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 3000
 }
@@ -161,7 +161,7 @@ id: call_ypFx3y4BobmgkgcLelr1evsE
 ```json
 {
   "cmd": "git fetch --no-tags origin main",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -173,8 +173,8 @@ tool_use exec_command
 id: call_WCRGQMiVSkNpsC9gvwNAZAce
 ```json
 {
-  "cmd": "find /Users/hedde/code/evorto -path '*/update-evorto-branch/SKILL.md' -print",
-  "workdir": "/Users/hedde/code/evorto",
+  "cmd": "find /home/<USER>/code/evorto -path '*/update-evorto-branch/SKILL.md' -print",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -250,7 +250,7 @@ id: call_TMZleWAZ1cZAvVwV6geIq5cr
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -263,7 +263,7 @@ id: call_NHTrzhsuHSM3uMQzuvamAlcz
 ```json
 {
   "cmd": "git rev-parse HEAD FETCH_HEAD && git merge-base --is-ancestor HEAD FETCH_HEAD; printf 'ancestor=%s\\n' \"$?\"",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -276,7 +276,7 @@ id: call_gt9B1s86r0XIE5ffIwiT2YP5
 ```json
 {
   "cmd": "git log --oneline --decorate --max-count=5 HEAD..FETCH_HEAD",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -350,7 +350,7 @@ id: call_KJSyNRF8HvOaZRn4YcNGgGpw
 ```json
 {
   "cmd": "git merge --ff-only FETCH_HEAD",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -400,7 +400,7 @@ id: call_YzGZk5X6v80eDvJTn2fWMgWK
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -413,7 +413,7 @@ id: call_rYJKKDFZPEJ3T2yDPU80sskI
 ```json
 {
   "cmd": "git rev-parse --short HEAD && git log -1 --oneline --decorate",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -450,7 +450,7 @@ d1662b419c4 (HEAD -> main, origin/main, origin/HEAD) test: harden launch-critica
 
 > AGENT
 
-Updated `/Users/hedde/code/evorto` to the latest remote `main`.
+Updated `/home/<USER>/code/evorto` to the latest remote `main`.
 
 Current state:
 - Branch: `main`

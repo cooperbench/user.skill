@@ -19,7 +19,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "dataclaw status",
-  "workdir": "/Users/user_c042661f/Documents/dataclaw",
+  "workdir": "/home/<USER>/Documents/dataclaw",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -51,7 +51,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "PYENV_VERSION=3.11.11 dataclaw status",
-  "workdir": "/Users/user_c042661f/Documents/dataclaw",
+  "workdir": "/home/<USER>/Documents/dataclaw",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }

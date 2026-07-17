@@ -80,7 +80,7 @@ tool_result
 id: toolu_01NaWUzCVWN5BMZoVkwwhpXJ
 ```
 <persisted-output>
-Output too large (58.7KB). Full output saved to: /Users/raman/.claude/projects/-Users-raman-projects-lock-code-manager/767d0b4b-61ce-40e4-a26a-8aa50590fb1c/tool-results/b0d35tgiv.txt
+Output too large (58.7KB). Full output saved to: /home/<USER>/.claude/projects/-Users-raman-projects-lock-code-manager/767d0b4b-61ce-40e4-a26a-8aa50590fb1c/tool-results/b0d35tgiv.txt
 
 Preview (first 2KB):
 author:	raman325
@@ -149,7 +149,7 @@ tool_use Read
 id: toolu_017YuhotdVT4S5BFzTqEWgU7
 ```json
 {
-  "file_path": "/Users/raman/.claude/projects/-Users-raman-projects-lock-code-manager/767d0b4b-61ce-40e4-a26a-8aa50590fb1c/tool-results/b0d35tgiv.txt"
+  "file_path": "/home/<USER>/.claude/projects/-Users-raman-projects-lock-code-manager/767d0b4b-61ce-40e4-a26a-8aa50590fb1c/tool-results/b0d35tgiv.txt"
 }
 ```
 
@@ -303,7 +303,7 @@ tool_use Read
 id: toolu_019YUg54d3oKT2HWTYyPzAiX
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/domain/coordinator.py"
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/domain/coordinator.py"
 }
 ```
 
@@ -373,7 +373,7 @@ tool_use Read
 id: toolu_0184qYPC6B4nN7wtGZ4FhzTr
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
   "offset": 200,
   "limit": 120
 }
@@ -453,7 +453,7 @@ tool_use Read
 id: toolu_016sq4NGDnWepbFe3WMs4ibR
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
   "offset": 200,
   "limit": 110
 }
@@ -514,7 +514,7 @@ tool_use Read
 id: toolu_01Qntki8P2NJMXuB2ovJ5Ee2
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
   "offset": 860,
   "limit": 90
 }
@@ -580,7 +580,7 @@ tool_use Read
 id: toolu_01FBmtrNmYFavaH97ph32bfQ
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
   "offset": 780,
   "limit": 130
 }
@@ -669,7 +669,7 @@ tool_use Read
 id: toolu_018eXNvVDfkpU6U2eCinS48P
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
   "offset": 325,
   "limit": 70
 }
@@ -740,7 +740,7 @@ tool_use Read
 id: toolu_01QDhjfCpCGBz5GhmnbKfFDg
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
   "offset": 1,
   "limit": 60
 }
@@ -929,7 +929,7 @@ tool_use Bash
 id: toolu_01W6ovCiFmAax85orjPcg3iB
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; grep -rn \"async_config_entry_first_refresh\\|async_refresh\\|first_refresh\\|async_request_refresh\" custom_components/lock_code_manager/ | grep -v test | head -20",
+  "command": "cd /home/<USER>/projects/lock_code_manager; grep -rn \"async_config_entry_first_refresh\\|async_refresh\\|first_refresh\\|async_request_refresh\" custom_components/lock_code_manager/ | grep -v test | head -20",
   "description": "Find how coordinator first refresh is triggered"
 }
 ```
@@ -967,7 +967,7 @@ tool_use Bash
 id: toolu_01DJVMqdr2sEBLL6ZtvdwnV6
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; grep -rn \"last_update_success\\|coordinator.data\\|self.coordinator\\|available\" custom_components/lock_code_manager/binary_sensor.py custom_components/lock_code_manager/sensor.py 2>/dev/null | head -30",
+  "command": "cd /home/<USER>/projects/lock_code_manager; grep -rn \"last_update_success\\|coordinator.data\\|self.coordinator\\|available\" custom_components/lock_code_manager/binary_sensor.py custom_components/lock_code_manager/sensor.py 2>/dev/null | head -30",
   "description": "Find how entities derive availability from coordinator"
 }
 ```
@@ -995,7 +995,7 @@ tool_use Read
 id: toolu_013XhsX4MimzVCYSd375WdZs
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
   "offset": 655,
   "limit": 95
 }
@@ -1070,7 +1070,7 @@ tool_use Bash
 id: toolu_01AabHiUzXp3L4TWpttwwajp
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; echo \"=== blame on the guard (coordinator.py ~378-382) ===\"; git log -1 --format=\"%h %ai %s\" -S \"if not self.last_update_success\" -- custom_components/lock_code_manager/domain/coordinator.py; echo; echo \"=== blame on the try/except (base ~674) ===\"; git log -1 --format=\"%h %ai %s\" -S \"Entities will be created but unavailable until lock is ready\" -- custom_components/lock_code_manager/providers/_base.py",
+  "command": "cd /home/<USER>/projects/lock_code_manager; echo \"=== blame on the guard (coordinator.py ~378-382) ===\"; git log -1 --format=\"%h %ai %s\" -S \"if not self.last_update_success\" -- custom_components/lock_code_manager/domain/coordinator.py; echo; echo \"=== blame on the try/except (base ~674) ===\"; git log -1 --format=\"%h %ai %s\" -S \"Entities will be created but unavailable until lock is ready\" -- custom_components/lock_code_manager/providers/_base.py",
   "description": "Find when guard and try/except were introduced"
 }
 ```
@@ -1093,7 +1093,7 @@ tool_use Bash
 id: toolu_01Bj7w2GUWFoTVK7VkVVajgM
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; grep -rn \"last_update_success\\|return {}\\|cold start\\|cold-start\" tests/ | grep -i \"coordinator\\|cold\\|update_success\" | head -20",
+  "command": "cd /home/<USER>/projects/lock_code_manager; grep -rn \"last_update_success\\|return {}\\|cold start\\|cold-start\" tests/ | grep -i \"coordinator\\|cold\\|update_success\" | head -20",
   "description": "Check tests asserting cold-start return {} behavior"
 }
 ```
@@ -1135,7 +1135,7 @@ tool_use Read
 id: toolu_01NZwHufvBjJAg5nWJec46yZ
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/test_coordinator.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/test_coordinator.py",
   "offset": 455,
   "limit": 130
 }
@@ -1307,7 +1307,7 @@ tool_use Bash
 id: toolu_01R27qx1YcLLbx9cKoZDCnm1
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; git checkout -b fix/coordinator-cold-start-false-success 2>&1 | tail -1",
+  "command": "cd /home/<USER>/projects/lock_code_manager; git checkout -b fix/coordinator-cold-start-false-success 2>&1 | tail -1",
   "description": "Create feature branch"
 }
 ```
@@ -1318,7 +1318,7 @@ tool_use Read
 id: toolu_01G3njCaeLTFLh1oQCm3vre9
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/test_coordinator.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/test_coordinator.py",
   "offset": 1,
   "limit": 60
 }
@@ -1403,7 +1403,7 @@ tool_use Read
 id: toolu_016amETwNoUJgnRZkKNj2Lqm
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/test_coordinator.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/test_coordinator.py",
   "offset": 60,
   "limit": 120
 }
@@ -1480,7 +1480,7 @@ id: toolu_01C4L7hwkg1yLzCsJxKFqAec
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/test_coordinator.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/test_coordinator.py",
   "old_string": "async def test_backoff_first_failure_returns_empty_dict(\n    poll_coordinator: LockUsercodeUpdateCoordinator,\n    poll_lock: MockLCMLock,\n) -> None:\n    \"\"\"Test that first failure returns empty dict when no prior success.\"\"\"\n    # No successful update yet\n    poll_coordinator.last_update_success = False\n\n    mock_get = AsyncMock(side_effect=LockDisconnected(\"Lock offline\"))\n    with patch.object(poll_lock, \"async_internal_get_usercodes\", mock_get):\n        result = await poll_coordinator.async_get_usercodes()\n\n    assert result == {}\n    assert poll_coordinator._lock_breaker.failure_count == 1",
   "new_string": "async def test_cold_start_failure_raises_update_failed(\n    poll_coordinator: LockUsercodeUpdateCoordinator,\n    poll_lock: MockLCMLock,\n) -> None:\n    \"\"\"A failure before any successful poll raises UpdateFailed, never a false success.\n\n    Returning {} here would be recorded by DataUpdateCoordinator as a successful\n    update, flipping last_update_success to True and logging a misleading\n    \"recovered\" while the lock is still unreachable (issue #1268). The breaker\n    still records the failure.\n    \"\"\"\n    # No successful update yet (cold start).\n    poll_coordinator.last_update_success = False\n\n    mock_get = AsyncMock(side_effect=LockDisconnected(\"Lock offline\"))\n    with patch.object(poll_lock, \"async_internal_get_usercodes\", mock_get):\n        with pytest.raises(UpdateFailed):\n            await poll_coordinator.async_get_usercodes()\n\n    assert poll_coordinator._lock_breaker.failure_count == 1\n\n\nasync def test_cold_start_repeated_failures_keep_raising(\n    poll_coordinator: LockUsercodeUpdateCoordinator,\n    poll_lock: MockLCMLock,\n) -> None:\n    \"\"\"Sustained cold-start failures keep raising; no tick masquerades as success.\n\n    Regression for issue #1268: the old guard returned {} whenever\n    last_update_success was False. DataUpdateCoordinator records that as a\n    successful empty update -- flipping last_update_success True (logged\n    \"recovered\" / \"success: True\" in 0.000s), feeding empty data to the sync\n    layer […]
 
@@ -1489,7 +1489,7 @@ id: toolu_01C4L7hwkg1yLzCsJxKFqAec
 tool_result
 id: toolu_01C4L7hwkg1yLzCsJxKFqAec
 ```
-The file /Users/raman/projects/lock_code_manager/tests/test_coordinator.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/tests/test_coordinator.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1502,7 +1502,7 @@ tool_use Bash
 id: toolu_01HM1drSoxtanNDDns5KuwSG
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; python -m pytest tests/test_coordinator.py -k \"cold_start\" -q 2>&1 | tail -30",
+  "command": "cd /home/<USER>/projects/lock_code_manager; python -m pytest tests/test_coordinator.py -k \"cold_start\" -q 2>&1 | tail -30",
   "description": "Run new cold-start tests (expect RED)"
 }
 ```
@@ -1525,7 +1525,7 @@ tool_use Bash
 id: toolu_01AjvhZXrQ7cDmqr3cLPUsgS
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; ls -d .venv venv 2>/dev/null; which uv; ls Makefile pyproject.toml tox.ini 2>/dev/null",
+  "command": "cd /home/<USER>/projects/lock_code_manager; ls -d .venv venv 2>/dev/null; which uv; ls Makefile pyproject.toml tox.ini 2>/dev/null",
   "description": "Locate venv and test tooling"
 }
 ```
@@ -1547,7 +1547,7 @@ tool_use Bash
 id: toolu_012DsgbfNjUFswyqnUF3YGgv
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; .venv/bin/python -m pytest tests/test_coordinator.py -k \"cold_start\" -q 2>&1 | tail -35",
+  "command": "cd /home/<USER>/projects/lock_code_manager; .venv/bin/python -m pytest tests/test_coordinator.py -k \"cold_start\" -q 2>&1 | tail -35",
   "description": "Run cold-start tests in venv (expect RED)"
 }
 ```
@@ -1603,7 +1603,7 @@ id: toolu_01TX88qJnptpfotGxQaUXEBi
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/domain/coordinator.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/domain/coordinator.py",
   "old_string": "        try:\n            data = await self._lock.async_internal_get_usercodes()\n        except LockCodeManagerError as err:\n            self._apply_backoff()\n            # During cold start (before the first successful poll), do not\n            # raise UpdateFailed. That would fail the initial refresh and\n            # keep coordinator-backed entities unavailable until a\n            # successful poll completes.\n            if not self.last_update_success:\n                return {}\n            raise UpdateFailed from err",
   "new_string": "        try:\n            data = await self._lock.async_internal_get_usercodes()\n        except LockCodeManagerError as err:\n            self._apply_backoff()\n            # Always surface the failure. Returning {} here would be recorded\n            # by DataUpdateCoordinator as a successful (empty) update -- flipping\n            # last_update_success to True, logging a misleading \"recovered\", and\n            # feeding empty data to the sync layer while the lock is still\n            # unreachable (issue #1268). The initial-refresh caller in\n            # BaseLock.async_setup_internal already catches UpdateFailed so a\n            # cold-start failure leaves entities unavailable without aborting\n            # setup; coordinator-backed entities key on slot presence in\n            # ``data`` (still the initialized {} either way), so raising changes\n            # no user-visible state -- it only keeps the coordinator honest.\n            raise UpdateFailed from err"
 }
@@ -1614,7 +1614,7 @@ id: toolu_01TX88qJnptpfotGxQaUXEBi
 tool_result
 id: toolu_01TX88qJnptpfotGxQaUXEBi
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/domain/coordinator.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/domain/coordinator.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1627,7 +1627,7 @@ tool_use Bash
 id: toolu_01Kmneefm9Wbg1ZhAbdLA5nY
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; .venv/bin/python -m pytest tests/test_coordinator.py -k \"cold_start\" -q 2>&1 | tail -8",
+  "command": "cd /home/<USER>/projects/lock_code_manager; .venv/bin/python -m pytest tests/test_coordinator.py -k \"cold_start\" -q 2>&1 | tail -8",
   "description": "Run cold-start tests (expect GREEN)"
 }
 ```
@@ -1651,7 +1651,7 @@ tool_use Bash
 id: toolu_01WhjgEc3fDAEtKGLRoqVahk
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; .venv/bin/python -m pytest tests/test_coordinator.py -q 2>&1 | tail -8",
+  "command": "cd /home/<USER>/projects/lock_code_manager; .venv/bin/python -m pytest tests/test_coordinator.py -q 2>&1 | tail -8",
   "description": "Run full coordinator test file"
 }
 ```
@@ -1671,7 +1671,7 @@ tool_use Bash
 id: toolu_01FZ4YzzSag2dTPaL7MGeoi9
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; time .venv/bin/python -m pytest tests/ -q 2>&1 | tail -15",
+  "command": "cd /home/<USER>/projects/lock_code_manager; time .venv/bin/python -m pytest tests/ -q 2>&1 | tail -15",
   "description": "Run full test suite"
 }
 ```
@@ -1691,7 +1691,7 @@ id: toolu_01FZ4YzzSag2dTPaL7MGeoi9
 .............................................                            [100%]
 =============================== warnings summary ===============================
 tests/providers/zha/test_provider.py: 172 warnings
-  /Users/raman/projects/lock_code_manager/.venv/lib/python3.14/site-packages/homeassistant/components/usb/utils.py:39: DeprecationWarning: `description` is deprecated, use `product` instead
+  /home/<USER>/projects/lock_code_manager/.venv/lib/python3.14/site-packages/homeassistant/components/usb/utils.py:39: DeprecationWarning: `description` is deprecated, use `product` instead
     description=port.description,
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
@@ -1714,7 +1714,7 @@ tool_use Bash
 id: toolu_01VJkLihD5yryGYhYWoYErgK
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; git add -A; prek run --files custom_components/lock_code_manager/domain/coordinator.py tests/test_coordinator.py 2>&1 | tail -25",
+  "command": "cd /home/<USER>/projects/lock_code_manager; git add -A; prek run --files custom_components/lock_code_manager/domain/coordinator.py tests/test_coordinator.py 2>&1 | tail -25",
   "description": "Run pre-commit checks on changed files"
 }
 ```
@@ -1725,7 +1725,7 @@ tool_use Bash
 id: toolu_01F9AMjUGcsZKoCvzU5oeuNJ
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; cat .github/PULL_REQUEST_TEMPLATE.md 2>/dev/null || ls .github/",
+  "command": "cd /home/<USER>/projects/lock_code_manager; cat .github/PULL_REQUEST_TEMPLATE.md 2>/dev/null || ls .github/",
   "description": "Show PR template"
 }
 ```
@@ -1807,7 +1807,7 @@ tool_use Bash
 id: toolu_016xoRHShHYfAUuF1vAKPHHq
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; git diff --cached --stat; echo \"===\"; git diff --cached custom_components/lock_code_manager/domain/coordinator.py",
+  "command": "cd /home/<USER>/projects/lock_code_manager; git diff --cached --stat; echo \"===\"; git diff --cached custom_components/lock_code_manager/domain/coordinator.py",
   "description": "Review staged diff"
 }
 ```
@@ -1853,7 +1853,7 @@ tool_use Bash
 id: toolu_01EJme8k4QvK7HQSmyeAykh2
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; git commit -F - <<'EOF'\nfix(coordinator): stop cold-start failures masquerading as success (#1268)\n\nThe cold-start guard in async_get_usercodes returned {} on any failure\nbefore the first successful poll. DataUpdateCoordinator records a returned\nvalue as a successful update, so returning {} flipped last_update_success\nto True, logged a misleading \"recovered\" / \"success: True in 0.000s\", and\nnotified the sync layer with empty data (\"Slot not in coordinator data,\nskipping\") -- all while the lock was still unreachable. Because the guard\nkeyed on last_update_success, which it itself flipped, the coordinator\noscillated between raising UpdateFailed and faking a recovery every tick.\n\nAlways raise UpdateFailed instead. The initial-refresh caller in\nBaseLock.async_setup_internal already catches UpdateFailed, so a cold-start\nfailure still leaves entities created-but-unavailable without aborting\nsetup. Coordinator-backed entities key on slot presence in `data` (the\ninitialized {} whether we raise or return {}), so this changes no\nuser-visible state -- it only keeps the coordinator's success/failure\nsignal honest.\n\nThis is Bug 2 from #1268; the Matter availability false-negative (Bug 1)\nthat prevents recovery is tracked separately.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\nEOF",
+  "command": "cd /home/<USER>/projects/lock_code_manager; git commit -F - <<'EOF'\nfix(coordinator): stop cold-start failures masquerading as success (#1268)\n\nThe cold-start guard in async_get_usercodes returned {} on any failure\nbefore the first successful poll. DataUpdateCoordinator records a returned\nvalue as a successful update, so returning {} flipped last_update_success\nto True, logged a misleading \"recovered\" / \"success: True in 0.000s\", and\nnotified the sync layer with empty data (\"Slot not in coordinator data,\nskipping\") -- all while the lock was still unreachable. Because the guard\nkeyed on last_update_success, which it itself flipped, the coordinator\noscillated between raising UpdateFailed and faking a recovery every tick.\n\nAlways raise UpdateFailed instead. The initial-refresh caller in\nBaseLock.async_setup_internal already catches UpdateFailed, so a cold-start\nfailure still leaves entities created-but-unavailable without aborting\nsetup. Coordinator-backed entities key on slot presence in `data` (the\ninitialized {} whether we raise or return {}), so this changes no\nuser-visible state -- it only keeps the coordinator's success/failure\nsignal honest.\n\nThis is Bug 2 from #1268; the Matter availability false-negative (Bug 1)\nthat prevents recovery is tracked separately.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\nEOF",
   "description": "Commit the fix"
 }
 ```
@@ -1899,7 +1899,7 @@ tool_use Bash
 id: toolu_01NDu7t97YYnFUJajm2PxFRP
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; git push -u origin fix/coordinator-cold-start-false-success 2>&1 | tail -5",
+  "command": "cd /home/<USER>/projects/lock_code_manager; git push -u origin fix/coordinator-cold-start-false-success 2>&1 | tail -5",
   "description": "Push feature branch"
 }
 ```
@@ -1922,7 +1922,7 @@ tool_use Bash
 id: toolu_01YUr7sAX2pMYBMe2gETywUM
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; gh pr create --title \"fix(coordinator): stop cold-start failures masquerading as success (#1268)\" --body \"$(cat <<'EOF'\n## Proposed change\n\nFixes **Bug 2** from #1268: a Matter lock coordinator that, after a joint HA + matter-server restart, logs a contradictory \"Update failed N consecutive times\" immediately followed by \"recovered\" / \"Finished fetching ... in 0.000 seconds (success: True)\", then \"Slot not in coordinator data, skipping\" for every slot.\n\nRoot cause is in `domain/coordinator.py::async_get_usercodes`. The cold-start guard returned `{}` on any failure before the first successful poll:\n\n```python\nif not self.last_update_success:\n    return {}\nraise UpdateFailed from err\n```\n\n`DataUpdateCoordinator` records *any returned value* as a successful update. So returning `{}`:\n\n- flipped `last_update_success` to `True` and logged a misleading **\"recovered\" / \"success: True in 0.000s\"** while the lock was still unreachable;\n- notified the sync layer with **empty data**, producing \"Slot not in coordinator data, skipping\" for every slot;\n- and, because the guard keyed on `last_update_success` (which it itself flipped), made the coordinator **oscillate** between raising `UpdateFailed` and faking a recovery on alternating ticks.\n\nThe fix is to always `raise UpdateFailed`. The initial-refresh caller in `BaseLock.async_setup_internal` already catches `UpdateFailed`/`ConfigEntryNotReady`, so a cold-start failure still leaves entities created-but-unavailable **without aborting setup**. Coordinator-backed entities key on slot […]
+  "command": "cd /home/<USER>/projects/lock_code_manager; gh pr create --title \"fix(coordinator): stop cold-start failures masquerading as success (#1268)\" --body \"$(cat <<'EOF'\n## Proposed change\n\nFixes **Bug 2** from #1268: a Matter lock coordinator that, after a joint HA + matter-server restart, logs a contradictory \"Update failed N consecutive times\" immediately followed by \"recovered\" / \"Finished fetching ... in 0.000 seconds (success: True)\", then \"Slot not in coordinator data, skipping\" for every slot.\n\nRoot cause is in `domain/coordinator.py::async_get_usercodes`. The cold-start guard returned `{}` on any failure before the first successful poll:\n\n```python\nif not self.last_update_success:\n    return {}\nraise UpdateFailed from err\n```\n\n`DataUpdateCoordinator` records *any returned value* as a successful update. So returning `{}`:\n\n- flipped `last_update_success` to `True` and logged a misleading **\"recovered\" / \"success: True in 0.000s\"** while the lock was still unreachable;\n- notified the sync layer with **empty data**, producing \"Slot not in coordinator data, skipping\" for every slot;\n- and, because the guard keyed on `last_update_success` (which it itself flipped), made the coordinator **oscillate** between raising `UpdateFailed` and faking a recovery on alternating ticks.\n\nThe fix is to always `raise UpdateFailed`. The initial-refresh caller in `BaseLock.async_setup_internal` already catches `UpdateFailed`/`ConfigEntryNotReady`, so a cold-start failure still leaves entities created-but-unavailable **without aborting setup**. Coordinator-backed entities key on slot […]
 
 > TOOL
 
@@ -1966,7 +1966,7 @@ id: toolu_018AQaky6CYgwS3FBKbRZgQv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/domain/coordinator.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/domain/coordinator.py",
   "old_string": "        except LockCodeManagerError as err:\n            self._apply_backoff()\n            # Always surface the failure. Returning {} here would be recorded\n            # by DataUpdateCoordinator as a successful (empty) update -- flipping\n            # last_update_success to True, logging a misleading \"recovered\", and\n            # feeding empty data to the sync layer while the lock is still\n            # unreachable (issue #1268). The initial-refresh caller in\n            # BaseLock.async_setup_internal already catches UpdateFailed so a\n            # cold-start failure leaves entities unavailable without aborting\n            # setup; coordinator-backed entities key on slot presence in\n            # ``data`` (still the initialized {} either way), so raising changes\n            # no user-visible state -- it only keeps the coordinator honest.\n            raise UpdateFailed from err",
   "new_string": "        except LockCodeManagerError as err:\n            self._apply_backoff()\n            # Don't swallow into {}: DataUpdateCoordinator records any return as\n            # a success, so an empty return fakes a \"recovered\" while the lock\n            # is still unreachable (#1268).\n            raise UpdateFailed from err"
 }
@@ -1977,7 +1977,7 @@ id: toolu_018AQaky6CYgwS3FBKbRZgQv
 tool_result
 id: toolu_018AQaky6CYgwS3FBKbRZgQv
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/domain/coordinator.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/domain/coordinator.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1986,7 +1986,7 @@ tool_use Bash
 id: toolu_01MdyoW9B3jfbVNW6mKxBusW
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; git add -A && git commit -q -F - <<'EOF' && git push -q 2>&1 | tail -2\ndocs(coordinator): trim cold-start comment to the non-obvious trap\n\nRaising UpdateFailed is the native failure path and needs no justification;\nkeep only the guardrail against re-introducing the {}-as-success trap.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\nEOF\necho \"pushed\"",
+  "command": "cd /home/<USER>/projects/lock_code_manager; git add -A && git commit -q -F - <<'EOF' && git push -q 2>&1 | tail -2\ndocs(coordinator): trim cold-start comment to the non-obvious trap\n\nRaising UpdateFailed is the native failure path and needs no justification;\nkeep only the guardrail against re-introducing the {}-as-success trap.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\nEOF\necho \"pushed\"",
   "description": "Commit comment trim and push"
 }
 ```
@@ -2045,7 +2045,7 @@ tool_use Write
 id: toolu_01SQ8XKYjj4DsHFfAgEEMeHv
 ```json
 {
-  "file_path": "/Users/raman/.claude/projects/-Users-raman-projects-lock-code-manager/memory/feedback_comment_deviations_not_defaults.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-raman-projects-lock-code-manager/memory/feedback_comment_deviations_not_defaults.md",
   "content": "---\nname: feedback_comment_deviations_not_defaults\ndescription: Comments should explain deviations from native/expected mechanisms, not justify using them\nmetadata:\n  type: feedback\n---\n\nWhen code uses the native/expected mechanism (e.g. `raise UpdateFailed` so HA's\nDataUpdateCoordinator marks the update failed), do NOT write a comment justifying\nwhy you're doing the obvious thing. The comment belongs on the *deviation*: the\nold code that swallowed failures into `return {}` should have had a comment\nexplaining why it bypassed the native failure path. Keep any surviving comment to\nthe single non-obvious trap (e.g. \"don't return {} — the coordinator records any\nreturn as success\") plus an issue ref, not a paragraph defending the default.\n\n**Why:** Over-explaining the default inverts the signal — readers learn nothing\nfrom \"we raise because raising is correct,\" and the verbosity buries the one fact\nthat matters. Comments are for what surprises, not what's expected.\n\n**How to apply:** Before writing an explanatory comment, ask \"am I justifying the\nnormal mechanism, or flagging a deviation/trap?\" Only the latter earns a comment.\nRelates to [[feedback_no_args_returns_docstrings]] (prefer prose explaining intent,\nand don't pad).\n"
 }
 ```
@@ -2055,7 +2055,7 @@ id: toolu_01SQ8XKYjj4DsHFfAgEEMeHv
 tool_result
 id: toolu_01SQ8XKYjj4DsHFfAgEEMeHv
 ```
-File created successfully at: /Users/raman/.claude/projects/-Users-raman-projects-lock-code-manager/memory/feedback_comment_deviations_not_defaults.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-Users-raman-projects-lock-code-manager/memory/feedback_comment_deviations_not_defaults.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2064,7 +2064,7 @@ tool_use Read
 id: toolu_01QkQFmmj5p2LbbdHbTYAxZG
 ```json
 {
-  "file_path": "/Users/raman/.claude/projects/-Users-raman-projects-lock-code-manager/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-raman-projects-lock-code-manager/memory/MEMORY.md",
   "offset": 1,
   "limit": 5
 }
@@ -2090,7 +2090,7 @@ id: toolu_012VJMZuRf6Fp3T712swkkyE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/.claude/projects/-Users-raman-projects-lock-code-manager/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-raman-projects-lock-code-manager/memory/MEMORY.md",
   "old_string": "- [feedback_no_acronyms.md](feedback_no_acronyms.md) — Spell out acronyms in code comments instead of using abbreviations",
   "new_string": "- [feedback_no_acronyms.md](feedback_no_acronyms.md) — Spell out acronyms in code comments instead of using abbreviations\n- [feedback_comment_deviations_not_defaults.md](feedback_comment_deviations_not_defaults.md) — Comment the deviation/trap, not the justification for using the native/expected mechanism"
 }
@@ -2101,7 +2101,7 @@ id: toolu_012VJMZuRf6Fp3T712swkkyE
 tool_result
 id: toolu_012VJMZuRf6Fp3T712swkkyE
 ```
-The file /Users/raman/.claude/projects/-Users-raman-projects-lock-code-manager/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-raman-projects-lock-code-manager/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2148,7 +2148,7 @@ tool_use Bash
 id: toolu_01U4yABhWP75wcKdWVgt53TF
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; F=.venv/lib/python3.14/site-packages/homeassistant/components/matter/helpers.py; echo \"=== $F ===\"; cat -n \"$F\" 2>/dev/null | sed -n '1,200p'",
+  "command": "cd /home/<USER>/projects/lock_code_manager; F=.venv/lib/python3.14/site-packages/homeassistant/components/matter/helpers.py; echo \"=== $F ===\"; cat -n \"$F\" 2>/dev/null | sed -n '1,200p'",
   "description": "Read HA matter helpers.py"
 }
 ```
@@ -2217,7 +2217,7 @@ tool_use Bash
 id: toolu_014Tsq45AjTmrsUmVnKGNwZr
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; F=.venv/lib/python3.14/site-packages/homeassistant/components/matter/lock_helpers.py; echo \"=== lock_helpers.py (first 120) ===\"; cat -n \"$F\" 2>/dev/null | sed -n '1,120p'",
+  "command": "cd /home/<USER>/projects/lock_code_manager; F=.venv/lib/python3.14/site-packages/homeassistant/components/matter/lock_helpers.py; echo \"=== lock_helpers.py (first 120) ===\"; cat -n \"$F\" 2>/dev/null | sed -n '1,120p'",
   "description": "Read matter lock_helpers.py"
 }
 ```
@@ -2295,7 +2295,7 @@ tool_use Bash
 id: toolu_01AqZEjxp3R5PcB4KhVjfsCf
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; D=.venv/lib/python3.14/site-packages/homeassistant/components/matter; grep -rn \"get_lock_users\\|get_node_from_device_entry\\|node_from_ha_device_id\\|\\.endpoint\\.node\\|_endpoint\\.node\\|def.*lock_users\\|ATTR_ENTITY_ID\\|er.async_get\" \"$D\"/lock.py 2>/dev/null | head -40",
+  "command": "cd /home/<USER>/projects/lock_code_manager; D=.venv/lib/python3.14/site-packages/homeassistant/components/matter; grep -rn \"get_lock_users\\|get_node_from_device_entry\\|node_from_ha_device_id\\|\\.endpoint\\.node\\|_endpoint\\.node\\|def.*lock_users\\|ATTR_ENTITY_ID\\|er.async_get\" \"$D\"/lock.py 2>/dev/null | head -40",
   "description": "Find how matter lock service resolves node"
 }
 ```
@@ -2330,7 +2330,7 @@ tool_use Bash
 id: toolu_013CSEnRnuCFUSwhdDjttYJr
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; find .venv -path \"*matter_server/client*\" -name \"*.py\" | head; echo \"===\"; CL=$(find .venv -path \"*matter_server/client/client.py\" | head -1); echo \"FILE: $CL\"; grep -n \"def get_nodes\\|def get_node\\b\\|_nodes\\b\\|self._nodes\\|server_info\\|def server_info\\|class MatterClient\" \"$CL\" | head -40",
+  "command": "cd /home/<USER>/projects/lock_code_manager; find .venv -path \"*matter_server/client*\" -name \"*.py\" | head; echo \"===\"; CL=$(find .venv -path \"*matter_server/client/client.py\" | head -1); echo \"FILE: $CL\"; grep -n \"def get_nodes\\|def get_node\\b\\|_nodes\\b\\|self._nodes\\|server_info\\|def server_info\\|class MatterClient\" \"$CL\" | head -40",
   "description": "Find matter_server client node store"
 }
 ```
@@ -2381,7 +2381,7 @@ tool_use Bash
 id: toolu_01BazPyzXbmfRiUi9s91mbcD
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; CL=.venv/lib/python3.14/site-packages/matter_server/client/client.py; cat -n \"$CL\" | sed -n '630,675p'",
+  "command": "cd /home/<USER>/projects/lock_code_manager; CL=.venv/lib/python3.14/site-packages/matter_server/client/client.py; cat -n \"$CL\" | sed -n '630,675p'",
   "description": "Read node-list rebuild context"
 }
 ```
@@ -2447,7 +2447,7 @@ tool_use Bash
 id: toolu_01UXCcyeyfB5ff2A4RSt9Faz
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; D=.venv/lib/python3.14/site-packages/homeassistant/components/matter; grep -rn \"def available\\|_attr_available\\|node.available\\|available =\" \"$D\"/entity.py | head; echo \"=== node.available ===\"; grep -n \"def available\\|available\" .venv/lib/python3.14/site-packages/matter_server/client/models/node.py | head",
+  "command": "cd /home/<USER>/projects/lock_code_manager; D=.venv/lib/python3.14/site-packages/homeassistant/components/matter; grep -rn \"def available\\|_attr_available\\|node.available\\|available =\" \"$D\"/entity.py | head; echo \"=== node.available ===\"; grep -n \"def available\\|available\" .venv/lib/python3.14/site-packages/matter_server/client/models/node.py | head",
   "description": "Check MatterEntity and MatterNode availability logic"
 }
 ```
@@ -2532,7 +2532,7 @@ tool_use Bash
 id: toolu_012ttExPqun3QQrgFkWmL7ms
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; git checkout main -q && git pull -q 2>&1 | tail -2; git log --oneline -3; echo \"=== branch ===\"; git checkout -b fix/matter-availability-entity-state -q && git branch --show-current",
+  "command": "cd /home/<USER>/projects/lock_code_manager; git checkout main -q && git pull -q 2>&1 | tail -2; git log --oneline -3; echo \"=== branch ===\"; git checkout -b fix/matter-availability-entity-state -q && git branch --show-current",
   "description": "Sync main and create branch"
 }
 ```
@@ -2555,7 +2555,7 @@ tool_use Bash
 id: toolu_01YD25eecW8gNGRPSwqnR1WK
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; ls tests/providers/matter/ 2>/dev/null; echo \"=== existing availability/require tests ===\"; grep -rn \"async_is_device_available\\|_require_client_and_node\\|is_device_available\\|client or node\" tests/ | head -20",
+  "command": "cd /home/<USER>/projects/lock_code_manager; ls tests/providers/matter/ 2>/dev/null; echo \"=== existing availability/require tests ===\"; grep -rn \"async_is_device_available\\|_require_client_and_node\\|is_device_available\\|client or node\" tests/ | head -20",
   "description": "Locate matter provider tests"
 }
 ```
@@ -2601,7 +2601,7 @@ tool_use Read
 id: toolu_01Map8MVzHnDmGNzz55cBeod
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/matter/test_provider.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/matter/test_provider.py",
   "offset": 100,
   "limit": 170
 }
@@ -2676,7 +2676,7 @@ tool_use Bash
 id: toolu_01Hhy5Pxfg1aCcKJqDzfJ9SM
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; sed -n '1,60p' tests/providers/matter/test_provider.py | grep -n \"import\\|_PROVIDER_MODULE\\|matter_lock_simple\\|STATE_\" ; echo \"=== conftest fixtures ===\"; grep -n \"def matter_lock_simple\\|entity_id\\|async_set\\|async_get_or_create\\|lock\\.\" tests/providers/matter/conftest.py | head -30",
+  "command": "cd /home/<USER>/projects/lock_code_manager; sed -n '1,60p' tests/providers/matter/test_provider.py | grep -n \"import\\|_PROVIDER_MODULE\\|matter_lock_simple\\|STATE_\" ; echo \"=== conftest fixtures ===\"; grep -n \"def matter_lock_simple\\|entity_id\\|async_set\\|async_get_or_create\\|lock\\.\" tests/providers/matter/conftest.py | head -30",
   "description": "Inspect matter test imports and fixtures"
 }
 ```
@@ -2730,7 +2730,7 @@ tool_use Read
 id: toolu_01VhGyrRkWQh2ZQmLuby6QAz
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/matter/conftest.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/matter/conftest.py",
   "offset": 100,
   "limit": 60
 }
@@ -2798,7 +2798,7 @@ tool_use Read
 id: toolu_01GfR67L75WwNJJKvU5Cow89
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/helpers.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/helpers.py",
   "offset": 100,
   "limit": 45
 }
@@ -2861,7 +2861,7 @@ tool_use Read
 id: toolu_011qrWcPmJeuRkZtghb4gcZ3
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/matter/test_provider.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/matter/test_provider.py",
   "offset": 350,
   "limit": 25
 }
@@ -2905,7 +2905,7 @@ tool_use Read
 id: toolu_016KREnHvwPmUnL8VidySiu4
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/matter/test_provider.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/matter/test_provider.py",
   "offset": 478,
   "limit": 20
 }
@@ -2944,7 +2944,7 @@ tool_use Read
 id: toolu_0196M8MWWJ9f7n1fTDj8w44w
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/matter/test_provider.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/matter/test_provider.py",
   "offset": 492,
   "limit": 20
 }
@@ -2988,7 +2988,7 @@ id: toolu_01BvgdfZVXPVSL5YfMiwRckz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/matter/test_provider.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/matter/test_provider.py",
   "old_string": "from homeassistant.core import HomeAssistant\nfrom homeassistant.exceptions import HomeAssistantError, ServiceValidationError",
   "new_string": "from homeassistant.const import STATE_LOCKED, STATE_UNAVAILABLE, STATE_UNKNOWN\nfrom homeassistant.core import HomeAssistant\nfrom homeassistant.exceptions import HomeAssistantError, ServiceValidationError"
 }
@@ -2999,7 +2999,7 @@ id: toolu_01BvgdfZVXPVSL5YfMiwRckz
 tool_result
 id: toolu_01BvgdfZVXPVSL5YfMiwRckz
 ```
-The file /Users/raman/projects/lock_code_manager/tests/providers/matter/test_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/tests/providers/matter/test_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3009,7 +3009,7 @@ id: toolu_01AZ3y6TpeqpRfCp9emY1gYx
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/matter/test_provider.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/matter/test_provider.py",
   "old_string": "class TestDeviceAvailability:\n    \"\"\"Device availability tests for Matter provider.\"\"\"\n\n    async def test_is_device_available_success(\n        self, hass: HomeAssistant, matter_lock_simple: MatterLock\n    ) -> None:\n        \"\"\"Test device availability returns True on successful helper call.\"\"\"\n        mock_get_lock_info = AsyncMock(return_value={})\n        with (\n            patch.object(\n                matter_lock_simple, \"_get_matter_client\", return_value=MagicMock()\n            ),\n            patch.object(\n                matter_lock_simple, \"_get_matter_node\", return_value=MagicMock()\n            ),\n            patch(f\"{_PROVIDER_MODULE}.get_lock_info\", mock_get_lock_info),\n        ):\n            assert await matter_lock_simple.async_is_device_available() is True\n\n    async def test_is_device_available_error(\n        self, hass: HomeAssistant, matter_lock_simple: MatterLock\n    ) -> None:\n        \"\"\"Test device availability returns False when helper call fails.\"\"\"\n        mock_get_lock_info = AsyncMock(side_effect=HomeAssistantError(\"device offline\"))\n        with (\n            patch.object(\n                matter_lock_simple, \"_get_matter_client\", return_value=MagicMock()\n            ),\n            patch.object(\n                matter_lock_simple, \"_get_matter_node\", return_value=MagicMock()\n            ),\n            patch(f\"{_PROVIDER_MODULE}.get_lock_info\", mock_get_lock_info),\n        ):\n            assert await matter_lock_simple.async_is_device_available() is False\n\n    async def test_is_device_available_no_client(\n        self, hass: HomeAssistant, matter_lock_simple: MatterLock\n    ) -> None:\n        \"\"\"Test device availability returns False when client unavailable.\"\"\"\n        with patch.object(matter_lock_simple, \"_get_matter_client\", return_value=None):\n            assert await matter_lock_simple.async_is_device_available() is False",
   "new_string": "class TestDeviceAvailability:\n    \"\"\"Device availability tests for Matter provider.\"\"\"\n\n    async def test_is_device_available_follows_entity_state(\n        self, hass: HomeAssistant, matter_lock_simple: MatterLock\n    ) -> None:\n        \"\"\"Availability is True when the lock entity reports a usable state.\"\"\"\n        hass.states.async_set(matter_lock_simple.lock.entity_id, STATE_LOCKED)\n        assert await matter_lock_simple.async_is_device_available() is True\n\n    async def test_is_device_available_false_when_entity_unavailable(\n        self, hass: HomeAssistant, matter_lock_simple: MatterLock\n    ) -> None:\n        \"\"\"Availability is False when the lock entity is unavailable.\"\"\"\n        hass.states.async_set(matter_lock_simple.lock.entity_id, STATE_UNAVAILABLE)\n        assert await matter_lock_simple.async_is_device_available() is False\n\n    async […]
 
@@ -3018,7 +3018,7 @@ id: toolu_01AZ3y6TpeqpRfCp9emY1gYx
 tool_result
 id: toolu_01AZ3y6TpeqpRfCp9emY1gYx
 ```
-The file /Users/raman/projects/lock_code_manager/tests/providers/matter/test_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/tests/providers/matter/test_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3032,7 +3032,7 @@ id: toolu_01AL8o3XaWX7LNVAFpiAMX2S
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/matter/test_provider.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/matter/test_provider.py",
   "old_string": "    with patch.object(matter_lock_simple, \"_get_matter_client\", return_value=None):\n        with pytest.raises(LockDisconnected, match=\"client or node unavailable\"):\n            await matter_lock_simple.async_get_usercodes()",
   "new_string": "    with patch.object(matter_lock_simple, \"_get_matter_client\", return_value=None):\n        with pytest.raises(LockDisconnected, match=\"Matter client unavailable\"):\n            await matter_lock_simple.async_get_usercodes()"
 }
@@ -3043,7 +3043,7 @@ id: toolu_01AL8o3XaWX7LNVAFpiAMX2S
 tool_result
 id: toolu_01AL8o3XaWX7LNVAFpiAMX2S
 ```
-The file /Users/raman/projects/lock_code_manager/tests/providers/matter/test_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/tests/providers/matter/test_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3053,7 +3053,7 @@ id: toolu_012yKJsQ7KuXmbfzvrWK2MNY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/matter/test_provider.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/matter/test_provider.py",
   "old_string": "    \"\"\"Test _require_client_and_node raises LockDisconnected when client is None.\"\"\"\n    with patch.object(matter_lock_simple, \"_get_matter_client\", return_value=None):\n        with pytest.raises(LockDisconnected, match=\"client or node unavailable\"):\n            matter_lock_simple._require_client_and_node()",
   "new_string": "    \"\"\"Test _require_client_and_node raises LockDisconnected when client is None.\"\"\"\n    with patch.object(matter_lock_simple, \"_get_matter_client\", return_value=None):\n        with pytest.raises(LockDisconnected, match=\"Matter client unavailable\"):\n            matter_lock_simple._require_client_and_node()"
 }
@@ -3064,7 +3064,7 @@ id: toolu_012yKJsQ7KuXmbfzvrWK2MNY
 tool_result
 id: toolu_012yKJsQ7KuXmbfzvrWK2MNY
 ```
-The file /Users/raman/projects/lock_code_manager/tests/providers/matter/test_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/tests/providers/matter/test_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3074,7 +3074,7 @@ id: toolu_01VAmWD1zFkEh9Rt66L84UPJ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/matter/test_provider.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/matter/test_provider.py",
   "old_string": "        patch.object(matter_lock_simple, \"_get_matter_node\", return_value=None),\n    ):\n        with pytest.raises(LockDisconnected, match=\"client or node unavailable\"):\n            matter_lock_simple._require_client_and_node()",
   "new_string": "        patch.object(matter_lock_simple, \"_get_matter_node\", return_value=None),\n    ):\n        with pytest.raises(LockDisconnected, match=\"Matter node not found\"):\n            matter_lock_simple._require_client_and_node()"
 }
@@ -3085,7 +3085,7 @@ id: toolu_01VAmWD1zFkEh9Rt66L84UPJ
 tool_result
 id: toolu_01VAmWD1zFkEh9Rt66L84UPJ
 ```
-The file /Users/raman/projects/lock_code_manager/tests/providers/matter/test_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/tests/providers/matter/test_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3098,7 +3098,7 @@ tool_use Bash
 id: toolu_01DTY72aEQJuzxvMssurthTX
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; .venv/bin/python -m pytest tests/providers/matter/test_provider.py -k \"device_available or require_client_and_node or get_usercodes_client_unavailable\" -q 2>&1 | tail -20",
+  "command": "cd /home/<USER>/projects/lock_code_manager; .venv/bin/python -m pytest tests/providers/matter/test_provider.py -k \"device_available or require_client_and_node or get_usercodes_client_unavailable\" -q 2>&1 | tail -20",
   "description": "Run new/updated tests (expect RED)"
 }
 ```
@@ -3110,7 +3110,7 @@ id: toolu_01DTY72aEQJuzxvMssurthTX
 ```
 ==================================== ERRORS ====================================
 ___________ ERROR collecting tests/providers/matter/test_provider.py ___________
-ImportError while importing test module '/Users/raman/projects/lock_code_manager/tests/providers/matter/test_provider.py'.
+ImportError while importing test module '/home/<USER>/projects/lock_code_manager/tests/providers/matter/test_provider.py'.
 Hint: make sure your test modules/packages have valid Python names.
 Traceback:
 ../../.local/share/uv/python/cpython-3.14.4-macos-aarch64-none/lib/python3.14/importlib/__init__.py:88: in import_module
@@ -3118,7 +3118,7 @@ Traceback:
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 tests/providers/matter/test_provider.py:17: in <module>
     from homeassistant.const import STATE_LOCKED, STATE_UNAVAILABLE, STATE_UNKNOWN
-E   ImportError: cannot import name 'STATE_LOCKED' from 'homeassistant.const' (/Users/raman/projects/lock_code_manager/.venv/lib/python3.14/site-packages/homeassistant/const.py)
+E   ImportError: cannot import name 'STATE_LOCKED' from 'homeassistant.const' (/home/<USER>/projects/lock_code_manager/.venv/lib/python3.14/site-packages/homeassistant/const.py)
 =========================== short test summary info ============================
 ERROR tests/providers/matter/test_provider.py
 !!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
@@ -3136,7 +3136,7 @@ id: toolu_01EU2nqfa6yQmfGq8VgYYbQq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/matter/test_provider.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/matter/test_provider.py",
   "old_string": "from homeassistant.const import STATE_LOCKED, STATE_UNAVAILABLE, STATE_UNKNOWN",
   "new_string": "from homeassistant.const import STATE_UNAVAILABLE, STATE_UNKNOWN"
 }
@@ -3147,7 +3147,7 @@ id: toolu_01EU2nqfa6yQmfGq8VgYYbQq
 tool_result
 id: toolu_01EU2nqfa6yQmfGq8VgYYbQq
 ```
-The file /Users/raman/projects/lock_code_manager/tests/providers/matter/test_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/tests/providers/matter/test_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3156,7 +3156,7 @@ tool_use Bash
 id: toolu_01T8PR1kYTaAC3HGvZSLZLc6
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; sed -i '' 's/matter_lock_simple.lock.entity_id, STATE_LOCKED/matter_lock_simple.lock.entity_id, \"locked\"/g' tests/providers/matter/test_provider.py; grep -n 'STATE_LOCKED\\|\"locked\"' tests/providers/matter/test_provider.py | head",
+  "command": "cd /home/<USER>/projects/lock_code_manager; sed -i '' 's/matter_lock_simple.lock.entity_id, STATE_LOCKED/matter_lock_simple.lock.entity_id, \"locked\"/g' tests/providers/matter/test_provider.py; grep -n 'STATE_LOCKED\\|\"locked\"' tests/providers/matter/test_provider.py | head",
   "description": "Replace STATE_LOCKED usages with literal"
 }
 ```
@@ -3177,7 +3177,7 @@ tool_use Bash
 id: toolu_01MHbhGDNjZwmdmGnQYHsW4o
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; .venv/bin/python -m pytest tests/providers/matter/test_provider.py -k \"device_available or require_client_and_node or get_usercodes_client_unavailable\" -q 2>&1 | tail -25",
+  "command": "cd /home/<USER>/projects/lock_code_manager; .venv/bin/python -m pytest tests/providers/matter/test_provider.py -k \"device_available or require_client_and_node or get_usercodes_client_unavailable\" -q 2>&1 | tail -25",
   "description": "Run new/updated tests (expect RED)"
 }
 ```
@@ -3225,7 +3225,7 @@ id: toolu_01V4mF8EeK4CGqX3mXmGDwCV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
   "old_string": "from homeassistant.config_entries import ConfigEntry\nfrom homeassistant.core import callback\nfrom homeassistant.exceptions import HomeAssistantError, ServiceValidationError",
   "new_string": "from homeassistant.config_entries import ConfigEntry\nfrom homeassistant.const import STATE_UNAVAILABLE, STATE_UNKNOWN\nfrom homeassistant.core import callback\nfrom homeassistant.exceptions import HomeAssistantError, ServiceValidationError"
 }
@@ -3236,7 +3236,7 @@ id: toolu_01V4mF8EeK4CGqX3mXmGDwCV
 tool_result
 id: toolu_01V4mF8EeK4CGqX3mXmGDwCV
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3246,7 +3246,7 @@ id: toolu_011aU7YkmtaRGHA3kqe8a4C5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
   "old_string": "    def _require_client_and_node(self) -> tuple[Any, Any]:\n        \"\"\"Get client and node, raising LockDisconnected if unavailable.\"\"\"\n        client = self._get_matter_client()\n        node = self._get_matter_node()\n        if not client or not node:\n            raise LockDisconnected(\n                f\"Matter client or node unavailable for {self.lock.entity_id}\"\n            )\n        return client, node",
   "new_string": "    def _require_client_and_node(self) -> tuple[Any, Any]:\n        \"\"\"Get client and node, raising LockDisconnected if either is unavailable.\n\n        The two failures are reported separately because they mean different\n        things: a missing client is the Matter integration not being loaded,\n        while an unresolved node is the device not being in the client's current\n        node set -- which happens transiently while the client rebuilds that set\n        on reconnect (issue #1268).\n        \"\"\"\n        client = self._get_matter_client()\n        if not client:\n            raise LockDisconnected(\n                f\"Matter client unavailable for {self.lock.entity_id}\"\n            )\n        node = self._get_matter_node()\n        if not node:\n            raise LockDisconnected(\n                f\"Matter node not found for {self.lock.entity_id}; device is not \"\n                \"in the Matter client's current node set\"\n            )\n        return client, node"
 }
@@ -3257,7 +3257,7 @@ id: toolu_011aU7YkmtaRGHA3kqe8a4C5
 tool_result
 id: toolu_011aU7YkmtaRGHA3kqe8a4C5
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3267,7 +3267,7 @@ id: toolu_01XwryKCYhxDhEZuSv5fZZEm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
   "old_string": "    async def async_is_device_available(self) -> bool:\n        \"\"\"Return whether the Matter lock device is available for commands.\"\"\"\n        try:\n            client, node = self._require_client_and_node()\n            await get_lock_info(client, node)\n        except (LockCodeManagerProviderError, HomeAssistantError) as err:\n            LOGGER.debug(\n                \"Lock %s: availability check failed: %s\",\n                self.lock.entity_id,\n                err,\n            )\n            return False\n        return True",
   "new_string": "    async def async_is_device_available(self) -> bool:\n        \"\"\"Return whether the Matter lock device is available for commands.\n\n        Defers to the lock entity's Home Assistant availability -- the same\n        signal the Matter integration derives from ``node.available`` -- rather\n        than re-deriving the node from the device registry and round-tripping\n        ``get_lock_info``. Re-derivation matches the device against\n        ``matter_client.get_nodes()``, which the client wipes and rebuilds while\n        reconnecting to the server (e.g. a joint Home Assistant + matter-server\n        restart); during that window the lookup returns None even though the lock\n        is reachable and its entity is available, tripping the breaker on a\n        transient (issue #1268). Entity availability is sticky across that window,\n        and the read primitives still surface a genuine outage as LockDisconnected.\n        \"\"\"\n        state = self.hass.states.get(self.lock.entity_id)\n        return state is not None and state.state not in (\n            STATE_UNAVAILABLE,\n            STATE_UNKNOWN,\n        )"
 }
@@ -3278,7 +3278,7 @@ id: toolu_01XwryKCYhxDhEZuSv5fZZEm
 tool_result
 id: toolu_01XwryKCYhxDhEZuSv5fZZEm
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3291,7 +3291,7 @@ tool_use Bash
 id: toolu_01J5ADupPZPttWmFxBoXXZRw
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; .venv/bin/python -m pytest tests/providers/matter/test_provider.py -k \"device_available or require_client_and_node or get_usercodes_client_unavailable\" -q 2>&1 | tail -8",
+  "command": "cd /home/<USER>/projects/lock_code_manager; .venv/bin/python -m pytest tests/providers/matter/test_provider.py -k \"device_available or require_client_and_node or get_usercodes_client_unavailable\" -q 2>&1 | tail -8",
   "description": "Run targeted tests (expect GREEN)"
 }
 ```
@@ -3315,7 +3315,7 @@ tool_use Bash
 id: toolu_012KrT1KNNo7WzTXxD9A2BEN
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; .venv/bin/python -m pytest tests/providers/matter/ -q 2>&1 | tail -8",
+  "command": "cd /home/<USER>/projects/lock_code_manager; .venv/bin/python -m pytest tests/providers/matter/ -q 2>&1 | tail -8",
   "description": "Run full matter provider test dir"
 }
 ```
@@ -3337,7 +3337,7 @@ tool_use Bash
 id: toolu_01LCewmSjHBdHYW696Xe7kj2
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; .venv/bin/python -m pytest tests/ -q 2>&1 | tail -6",
+  "command": "cd /home/<USER>/projects/lock_code_manager; .venv/bin/python -m pytest tests/ -q 2>&1 | tail -6",
   "description": "Run full test suite"
 }
 ```
@@ -3348,7 +3348,7 @@ tool_result
 id: toolu_01LCewmSjHBdHYW696Xe7kj2
 ```
 tests/providers/zha/test_provider.py: 172 warnings
-  /Users/raman/projects/lock_code_manager/.venv/lib/python3.14/site-packages/homeassistant/components/usb/utils.py:39: DeprecationWarning: `description` is deprecated, use `product` instead
+  /home/<USER>/projects/lock_code_manager/.venv/lib/python3.14/site-packages/homeassistant/components/usb/utils.py:39: DeprecationWarning: `description` is deprecated, use `product` instead
     description=port.description,
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
@@ -3365,7 +3365,7 @@ tool_use Bash
 id: toolu_01GBLbxAc85zHPGW6zWDQwS5
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; git add -A; prek run --files custom_components/lock_code_manager/providers/matter.py tests/providers/matter/test_provider.py 2>&1 | tail -25",
+  "command": "cd /home/<USER>/projects/lock_code_manager; git add -A; prek run --files custom_components/lock_code_manager/providers/matter.py tests/providers/matter/test_provider.py 2>&1 | tail -25",
   "description": "Run pre-commit on changed files"
 }
 ```
@@ -3412,7 +3412,7 @@ tool_use Bash
 id: toolu_01BqXdcPyRg8zdkd3RnjYECy
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; git add -A; prek run --files custom_components/lock_code_manager/providers/matter.py tests/providers/matter/test_provider.py 2>&1 | grep -E \"ruff|mypy|flake8|Failed|Passed\" | head; echo \"=== matter tests ===\"; .venv/bin/python -m pytest tests/providers/matter/ -q 2>&1 | tail -3",
+  "command": "cd /home/<USER>/projects/lock_code_manager; git add -A; prek run --files custom_components/lock_code_manager/providers/matter.py tests/providers/matter/test_provider.py 2>&1 | grep -E \"ruff|mypy|flake8|Failed|Passed\" | head; echo \"=== matter tests ===\"; .venv/bin/python -m pytest tests/providers/matter/ -q 2>&1 | tail -3",
   "description": "Re-run prek and matter tests after autofix"
 }
 ```
@@ -3448,7 +3448,7 @@ tool_use Bash
 id: toolu_018qic6Hr9TA2rqjnKd3s9fs
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; git diff --cached --stat; echo \"=== matter.py provider diff ===\"; git diff --cached custom_components/lock_code_manager/providers/matter.py",
+  "command": "cd /home/<USER>/projects/lock_code_manager; git diff --cached --stat; echo \"=== matter.py provider diff ===\"; git diff --cached custom_components/lock_code_manager/providers/matter.py",
   "description": "Review staged provider diff"
 }
 ```
@@ -3514,7 +3514,7 @@ tool_use Bash
 id: toolu_01VYe2oJUX63jAcyKnZDthb3
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; git commit -q -F - <<'EOF'\nfix(matter): base availability on entity state, not node re-derivation (#1268)\n\nasync_is_device_available re-derived the node via get_node_from_device_entry\n(matching the device against matter_client.get_nodes()) and round-tripped\nget_lock_info on every operation. On a joint HA + matter-server restart the\nclient wipes and rebuilds its node set and server_info is briefly None, so the\nre-derivation returns None during the reconnect window -- even though the matter\nconfig entry stays loaded, the lock entity stays available, and the matter\nservice calls keep working (entities hold a cached node ref and route by\nnode_id). That false negative tripped the breaker and pushed the next probe out\nto the 30-minute backoff cap, presenting as a permanent stall (Bug 1 of #1268).\n\nDefer to the lock entity's HA availability instead -- the same node.available\nsignal the matter integration exposes, which is sticky across the reconnect\nwindow. The read primitives still resolve the node and surface a genuine outage\nas LockDisconnected, so no safety is lost; we just stop gating on the fragile,\ndivergent signal and drop a per-operation round-trip.\n\nAlso split _require_client_and_node's failure into distinct \"client unavailable\"\nvs \"node not found\" messages so a recurrence is diagnosable to the exact branch.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\nEOF\ngit push -u origin fix/matter-availability-entity-state […]
+  "command": "cd /home/<USER>/projects/lock_code_manager; git commit -q -F - <<'EOF'\nfix(matter): base availability on entity state, not node re-derivation (#1268)\n\nasync_is_device_available re-derived the node via get_node_from_device_entry\n(matching the device against matter_client.get_nodes()) and round-tripped\nget_lock_info on every operation. On a joint HA + matter-server restart the\nclient wipes and rebuilds its node set and server_info is briefly None, so the\nre-derivation returns None during the reconnect window -- even though the matter\nconfig entry stays loaded, the lock entity stays available, and the matter\nservice calls keep working (entities hold a cached node ref and route by\nnode_id). That false negative tripped the breaker and pushed the next probe out\nto the 30-minute backoff cap, presenting as a permanent stall (Bug 1 of #1268).\n\nDefer to the lock entity's HA availability instead -- the same node.available\nsignal the matter integration exposes, which is sticky across the reconnect\nwindow. The read primitives still resolve the node and surface a genuine outage\nas LockDisconnected, so no safety is lost; we just stop gating on the fragile,\ndivergent signal and drop a per-operation round-trip.\n\nAlso split _require_client_and_node's failure into distinct \"client unavailable\"\nvs \"node not found\" messages so a recurrence is diagnosable to the exact branch.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\nEOF\ngit push -u origin fix/matter-availability-entity-state […]
 
 > TOOL
 
@@ -3554,7 +3554,7 @@ tool_use Bash
 id: toolu_01HHTs1RwbtZttCSpGRvceT9
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; gh pr create --title \"fix(matter): base availability on entity state, not node re-derivation (#1268)\" --body \"$(cat <<'EOF'\n## Proposed change\n\nAddresses **Bug 1** from #1268: after a joint HA + matter-server restart, LCM's Matter coordinator reports the lock unreachable and never recovers within a reasonable window — even though the lock entity shows `locked`, lock/unlock works, and `matter.get_lock_users` returns all users.\n\n### Root cause\n\nLCM's availability gate and the working `matter.get_lock_users` service resolve the node two different ways:\n\n| | Node resolution | Survives a matter-server reconnect? |\n|---|---|---|\n| Matter lock **entity** (what the service uses) | cached `self._endpoint.node`, routes by `node_id` | **Yes** — `entity.available` tracks `node.available` and is sticky |\n| LCM `async_is_device_available` → `_require_client_and_node` | re-derives via `get_node_from_device_entry`, matching against `matter_client.get_nodes()` | **No** — the client wipes/rebuilds `_nodes` on reconnect (`client.py:659`); `server_info` is briefly `None` |\n\nOn a joint restart the matter client cycles connect→`start_listening`, rebuilding its node set. The matter config entry stays `LOADED` (so LCM's *integration-connected* gate passes), but `get_node_from_device_entry` returns `None` during the rebuild → `LockDisconnected` → the breaker trips and the next probe is pushed out to the 30-min backoff cap. Combined with the now-fixed Bug 2 noise (#1270) and manual reloads […]
+  "command": "cd /home/<USER>/projects/lock_code_manager; gh pr create --title \"fix(matter): base availability on entity state, not node re-derivation (#1268)\" --body \"$(cat <<'EOF'\n## Proposed change\n\nAddresses **Bug 1** from #1268: after a joint HA + matter-server restart, LCM's Matter coordinator reports the lock unreachable and never recovers within a reasonable window — even though the lock entity shows `locked`, lock/unlock works, and `matter.get_lock_users` returns all users.\n\n### Root cause\n\nLCM's availability gate and the working `matter.get_lock_users` service resolve the node two different ways:\n\n| | Node resolution | Survives a matter-server reconnect? |\n|---|---|---|\n| Matter lock **entity** (what the service uses) | cached `self._endpoint.node`, routes by `node_id` | **Yes** — `entity.available` tracks `node.available` and is sticky |\n| LCM `async_is_device_available` → `_require_client_and_node` | re-derives via `get_node_from_device_entry`, matching against `matter_client.get_nodes()` | **No** — the client wipes/rebuilds `_nodes` on reconnect (`client.py:659`); `server_info` is briefly `None` |\n\nOn a joint restart the matter client cycles connect→`start_listening`, rebuilding its node set. The matter config entry stays `LOADED` (so LCM's *integration-connected* gate passes), but `get_node_from_device_entry` returns `None` during the rebuild → `LockDisconnected` → the breaker trips and the next probe is pushed out to the 30-min backoff cap. Combined with the now-fixed Bug 2 noise (#1270) and manual reloads […]
 
 > TOOL
 
@@ -3576,7 +3576,7 @@ tool_use Write
 id: toolu_01N1rEyP6Yzj5dp2FmiCoTWf
 ```json
 {
-  "file_path": "/Users/raman/.claude/projects/-Users-raman-projects-lock-code-manager/memory/project_provider_availability_entity_state.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-raman-projects-lock-code-manager/memory/project_provider_availability_entity_state.md",
   "content": "---\nname: project_provider_availability_entity_state\ndescription: Provider availability gates should defer to the lock entity's HA availability, not re-derive integration internals (Matter Bug 1 of #1268)\nmetadata:\n  type: project\n---\n\nRoot cause of Bug 1 in #1268 (PR #1271): the Matter provider's\n`async_is_device_available` re-derived the node via `get_node_from_device_entry`\n(matching the device against `matter_client.get_nodes()`) and round-tripped\n`get_lock_info` on every op. On a joint HA + matter-server restart the matter\nclient wipes/rebuilds its node set (`client.py` `self._nodes = {...}` in\n`start_listening`) and `server_info` is briefly None, so the re-derivation\nreturns None during the reconnect window — even though the matter config entry\nstays LOADED, the lock entity stays available, and `matter.get_lock_users`\nworks (the entity holds a cached `self._endpoint.node` ref and routes by\nnode_id). That false negative tripped the breaker out to the 30-min backoff cap.\n\nFix: gate on the lock entity's HA availability (`hass.states.get(entity_id)` not\nunavailable/unknown) — the same `node.available` signal the integration exposes,\nsticky across reconnect windows. Reads still resolve the node and fail honestly.\n\n**Principle:** a provider's availability gate should reflect \"is the lock entity\nreachable per HA\" (authoritative, local, cheap), NOT re-derive the integration's\ninternal client/node state (fragile, divergent, adds round-trips). Other\nproviders (zwave_js has its own node-based `async_is_device_available`) are\ncandidates for the same treatment. Relates to [[project_resilience_refactor]]\nand [[feedback_one_bug_can_hide_another]] (Bug 2 #1270 masked this).\n" […]
 
 > TOOL
@@ -3584,7 +3584,7 @@ id: toolu_01N1rEyP6Yzj5dp2FmiCoTWf
 tool_result
 id: toolu_01N1rEyP6Yzj5dp2FmiCoTWf
 ```
-File created successfully at: /Users/raman/.claude/projects/-Users-raman-projects-lock-code-manager/memory/project_provider_availability_entity_state.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-Users-raman-projects-lock-code-manager/memory/project_provider_availability_entity_state.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3594,7 +3594,7 @@ id: toolu_013bWqGT6UwSFSpbn6cpNA2h
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/.claude/projects/-Users-raman-projects-lock-code-manager/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-raman-projects-lock-code-manager/memory/MEMORY.md",
   "old_string": "- [project_phase2_lifecycle_gotchas.md](project_phase2_lifecycle_gotchas.md) — PR #1259 lifecycle traps",
   "new_string": "- [project_provider_availability_entity_state.md](project_provider_availability_entity_state.md) — Availability gates should defer to entity HA availability, not re-derive integration internals (Matter Bug 1 of #1268, PR #1271)\n- [project_phase2_lifecycle_gotchas.md](project_phase2_lifecycle_gotchas.md) — PR #1259 lifecycle traps"
 }
@@ -3605,7 +3605,7 @@ id: toolu_013bWqGT6UwSFSpbn6cpNA2h
 tool_result
 id: toolu_013bWqGT6UwSFSpbn6cpNA2h
 ```
-The file /Users/raman/.claude/projects/-Users-raman-projects-lock-code-manager/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-raman-projects-lock-code-manager/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3634,7 +3634,7 @@ tool_use Bash
 id: toolu_01Egau1QQnCr45nw48pcYSe4
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; ZW=.venv/lib/python3.14/site-packages/homeassistant/components/zwave_js/__init__.py; echo \"=== zwave_js: disconnect/reload handling ===\"; grep -n \"reload\\|async_unload\\|ConfigEntryNotReady\\|on_disconnect\\|client_listen\\|disconnect\\|listen_task\\|except\\|_reload\" \"$ZW\" | head -40",
+  "command": "cd /home/<USER>/projects/lock_code_manager; ZW=.venv/lib/python3.14/site-packages/homeassistant/components/zwave_js/__init__.py; echo \"=== zwave_js: disconnect/reload handling ===\"; grep -n \"reload\\|async_unload\\|ConfigEntryNotReady\\|on_disconnect\\|client_listen\\|disconnect\\|listen_task\\|except\\|_reload\" \"$ZW\" | head -40",
   "description": "Inspect zwave_js disconnect/reload handling"
 }
 ```
@@ -3690,7 +3690,7 @@ tool_use Bash
 id: toolu_01CnGm2ctSnetx3EQnABDpDQ
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; MT=.venv/lib/python3.14/site-packages/homeassistant/components/matter/__init__.py; echo \"=== matter: disconnect/reload/reconnect handling ===\"; grep -n \"reload\\|async_unload\\|ConfigEntryNotReady\\|on_disconnect\\|listen\\|disconnect\\|reconnect\\|schedule_reload\\|_client_listen\\|raise ConfigEntry\" \"$MT\" | head -40",
+  "command": "cd /home/<USER>/projects/lock_code_manager; MT=.venv/lib/python3.14/site-packages/homeassistant/components/matter/__init__.py; echo \"=== matter: disconnect/reload/reconnect handling ===\"; grep -n \"reload\\|async_unload\\|ConfigEntryNotReady\\|on_disconnect\\|listen\\|disconnect\\|reconnect\\|schedule_reload\\|_client_listen\\|raise ConfigEntry\" \"$MT\" | head -40",
   "description": "Inspect matter disconnect/reconnect handling"
 }
 ```
@@ -3744,7 +3744,7 @@ tool_use Read
 id: toolu_01Uf4VaaFfvZKPxEk66mQKhU
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/.venv/lib/python3.14/site-packages/homeassistant/components/matter/__init__.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/.venv/lib/python3.14/site-packages/homeassistant/components/matter/__init__.py",
   "offset": 255,
   "limit": 25
 }
@@ -3825,7 +3825,7 @@ tool_use Write
 id: toolu_01NFBRwgkKrBsrQ3cngNbiJ3
 ```json
 {
-  "file_path": "/Users/raman/.claude/projects/-Users-raman-projects-lock-code-manager/memory/project_provider_availability_entity_state.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-raman-projects-lock-code-manager/memory/project_provider_availability_entity_state.md",
   "content": "---\nname: project_provider_availability_entity_state\ndescription: Matter has more failure layers than Z-Wave; availability must read the per-node signal (entity.available), not re-derive integration internals (Bug 1 of #1268, PR #1271)\nmetadata:\n  type: project\n---\n\nRoot cause of Bug 1 in #1268 (PR #1271): the Matter provider modeled\nreachability the Z-Wave way and tripped the breaker on transport blips that\naren't about the lock.\n\n**Failure topology — Z-Wave vs Matter:**\n- Z-Wave: 2 tightly-coupled hops. (1) HA <-> controller (the Z-Wave JS driver),\n  (2) controller <-> lock (RF). Losing #1 reloads the entry and takes everything\n  down, so one \"integration connected + node reachable\" check models it. Entry\n  state == LOADED is a faithful reachability proxy (zwave_js reloads on driver\n  loss: `__init__.py` `async_schedule_reload`).\n- Matter: 3 layers, bottom one ambiguous. (1) HA/fabric <-> matter-server\n  (websocket transport; matter reloads the entry on drop, `__init__.py:276`),\n  (2) matter-server <-> lock (IP / Thread-via-border-router / BLE), (3) if #2\n  fails, is it the LOCK (dead/asleep/decommissioned) or the TRANSPORT (border\n  router / AP / partition)? These layers want different responses: an L1 blip\n  shouldn't alarm; an L2 transport fault shouldn't declare the lock offline;\n  only a genuine L3 lock outage should.\n\n**The encoded error:** the old `async_is_device_available` re-derived client+node\nvia `get_node_from_device_entry` […]
 
 > TOOL
@@ -3833,7 +3833,7 @@ id: toolu_01NFBRwgkKrBsrQ3cngNbiJ3
 tool_result
 id: toolu_01NFBRwgkKrBsrQ3cngNbiJ3
 ```
-The file /Users/raman/.claude/projects/-Users-raman-projects-lock-code-manager/memory/project_provider_availability_entity_state.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-raman-projects-lock-code-manager/memory/project_provider_availability_entity_state.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

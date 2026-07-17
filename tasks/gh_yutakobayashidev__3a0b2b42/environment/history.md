@@ -43,7 +43,7 @@ id: toolu_01XHiEi99q86uxAtcFd2faWg
 ```json
 {
   "pattern": "pdfpc",
-  "path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix"
+  "path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix"
 }
 ```
 
@@ -53,7 +53,7 @@ tool_use Read
 id: toolu_01Xtr2xfuM8FmHqorjaXzmdh
 ```json
 {
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/linux/home-packages.nix"
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/linux/home-packages.nix"
 }
 ```
 
@@ -163,7 +163,7 @@ id: toolu_01N9iTsEPDc9MfmmQwop4UUC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/linux/home-packages.nix",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/linux/home-packages.nix",
   "old_string": "    # Misc\n    cava",
   "new_string": "    # Presentation\n    pdfpc\n\n    # Misc\n    cava"
 }
@@ -174,7 +174,7 @@ id: toolu_01N9iTsEPDc9MfmmQwop4UUC
 tool_result
 id: toolu_01N9iTsEPDc9MfmmQwop4UUC
 ```
-The file /Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/linux/home-packages.nix has been updated successfully.
+The file /home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/linux/home-packages.nix has been updated successfully.
 ```
 
 > AGENT
@@ -195,7 +195,7 @@ tool_use Read
 id: toolu_017SBTg4UvdrrK9HeHh9GK1H
 ```json
 {
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix"
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix"
 }
 ```
 
@@ -317,7 +317,7 @@ id: toolu_01JRg2AAUKBrF5LnHAwy7Bxj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix",
   "old_string": "      \"mas\"",
   "new_string": "      \"mas\"\n      \"pdfpc\""
 }
@@ -328,7 +328,7 @@ id: toolu_01JRg2AAUKBrF5LnHAwy7Bxj
 tool_result
 id: toolu_01JRg2AAUKBrF5LnHAwy7Bxj
 ```
-The file /Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix has been updated successfully.
+The file /home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix has been updated successfully.
 ```
 
 > DEVELOPER
@@ -377,7 +377,7 @@ id: toolu_015mFQfAeCNm2woj7GDUisSy
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix",
   "old_string": "      \"mas\"\n      \"pdfpc\"",
   "new_string": "      \"mas\""
 }
@@ -389,7 +389,7 @@ tool_use Read
 id: toolu_01AZonuZ4XPuJm9u789k9HjG
 ```json
 {
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/packages.nix"
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/<USER>"
 }
 ```
 
@@ -398,7 +398,7 @@ id: toolu_01AZonuZ4XPuJm9u789k9HjG
 tool_result
 id: toolu_015mFQfAeCNm2woj7GDUisSy
 ```
-The file /Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix has been updated successfully.
+The file /home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix has been updated successfully.
 ```
 
 > TOOL
@@ -481,7 +481,7 @@ id: toolu_01DNzFXGBBAcwaQ9hYmnk2KD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/packages.nix",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/<USER>",
   "old_string": "    # Misc\n    sl",
   "new_string": "    # Presentation\n    pdfpc\n\n    # Misc\n    sl"
 }
@@ -494,7 +494,7 @@ id: toolu_013UiZSKwiytL3jFbiai6qJT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/linux/home-packages.nix",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/linux/home-packages.nix",
   "old_string": "    # Presentation\n    pdfpc\n\n    # Misc",
   "new_string": "    # Misc"
 }
@@ -505,7 +505,7 @@ id: toolu_013UiZSKwiytL3jFbiai6qJT
 tool_result
 id: toolu_01DNzFXGBBAcwaQ9hYmnk2KD
 ```
-The file /Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/packages.nix has been updated successfully.
+The file /home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/<USER> has been updated successfully.
 ```
 
 > TOOL
@@ -513,12 +513,12 @@ The file /Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/pac
 tool_result
 id: toolu_013UiZSKwiytL3jFbiai6qJT
 ```
-The file /Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/linux/home-packages.nix has been updated successfully.
+The file /home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/linux/home-packages.nix has been updated successfully.
 ```
 
 > AGENT
 
-nixpkgs に `aarch64-darwin` 対応の `pdfpc` があったので、共通パッケージ (`nix/modules/home/packages.nix`) に追加しました。Linux/macOS 両方で使えます。`rebuild` で反映されます。
+nixpkgs に `aarch64-darwin` 対応の `pdfpc` があったので、共通パッケージ (`nix/modules/home/<USER>`) に追加しました。Linux/macOS 両方で使えます。`rebuild` で反映されます。
 
 > DEVELOPER
 
@@ -559,7 +559,7 @@ id: toolu_01QesGAav4fnmzeaggzBSgXN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/packages.nix",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/<USER>",
   "old_string": "    # Misc\n    sl",
   "new_string": "    # VR\n    vrcx\n\n    # Misc\n    sl"
 }
@@ -572,7 +572,7 @@ id: toolu_01K1TwoAZ6nd52cZdg7m72k9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/linux/home-packages.nix",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/linux/home-packages.nix",
   "old_string": "    # VR\n    vrcx\n\n    # Misc",
   "new_string": "    # Misc"
 }
@@ -583,7 +583,7 @@ id: toolu_01K1TwoAZ6nd52cZdg7m72k9
 tool_result
 id: toolu_01QesGAav4fnmzeaggzBSgXN
 ```
-The file /Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/packages.nix has been updated successfully.
+The file /home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/<USER> has been updated successfully.
 ```
 
 > TOOL
@@ -591,7 +591,7 @@ The file /Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/pac
 tool_result
 id: toolu_01K1TwoAZ6nd52cZdg7m72k9
 ```
-The file /Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/linux/home-packages.nix has been updated successfully.
+The file /home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/linux/home-packages.nix has been updated successfully.
 ```
 
 > AGENT
@@ -602,7 +602,7 @@ The file /Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/linux/ho
 
 hmm yuta@M2-MacBook-Air  ~/ghq/github.com/yutakobayashidev/dotnix   main ✚  sudo darwin-rebuild switch --flake .#M2-MacBook-Air
 building the system configuration...
-warning: Git tree '/Users/yuta/ghq/github.com/yutakobayashidev/dotnix' is dirty
+warning: Git tree '/home/<USER>/ghq/github.com/yutakobayashidev/dotnix' is dirty
 evaluation warning: nix-index-database: flake output `hmModules` has been renamed to `homeModules`
 evaluation warning: 'system' has been renamed to/replaced by 'stdenv.hostPlatform.system'
 error:
@@ -657,7 +657,7 @@ API Error: 400 {"type":"error","error":{"type":"invalid_request_error","message"
 
 hmm yuta@M2-MacBook-Air  ~/ghq/github.com/yutakobayashidev/dotnix   main ✚  sudo darwin-rebuild switch --flake .#M2-MacBook-Air
 building the system configuration...
-warning: Git tree '/Users/yuta/ghq/github.com/yutakobayashidev/dotnix' is dirty
+warning: Git tree '/home/<USER>/ghq/github.com/yutakobayashidev/dotnix' is dirty
 evaluation warning: nix-index-database: flake output `hmModules` has been renamed to `homeModules`
 evaluation warning: 'system' has been renamed to/replaced by 'stdenv.hostPlatform.system'
 error:
@@ -714,7 +714,7 @@ tool_use Read
 id: toolu_016RJmCnkeEgFa2xz72potSR
 ```json
 {
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/packages.nix"
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/<USER>"
 }
 ```
 
@@ -724,7 +724,7 @@ tool_use Read
 id: toolu_01D4ag1gmMLseFbDyWsnQki7
 ```json
 {
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/linux/home-packages.nix"
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/linux/home-packages.nix"
 }
 ```
 
@@ -872,7 +872,7 @@ id: toolu_01JtghvLRUagY3JymuayekN6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/packages.nix",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/<USER>",
   "old_string": "    # Presentation\n    pdfpc\n\n    # VR\n    vrcx\n\n    # Misc",
   "new_string": "    # Presentation\n    pdfpc\n\n    # Misc"
 }
@@ -885,7 +885,7 @@ id: toolu_01MSESWebW9jtFFJz1mAw3sv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/linux/home-packages.nix",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/linux/home-packages.nix",
   "old_string": "    # Misc\n    cava",
   "new_string": "    # VR\n    vrcx\n\n    # Misc\n    cava"
 }
@@ -896,7 +896,7 @@ id: toolu_01MSESWebW9jtFFJz1mAw3sv
 tool_result
 id: toolu_01JtghvLRUagY3JymuayekN6
 ```
-The file /Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/packages.nix has been updated successfully.
+The file /home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/<USER> has been updated successfully.
 ```
 
 > TOOL
@@ -904,7 +904,7 @@ The file /Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/pac
 tool_result
 id: toolu_01MSESWebW9jtFFJz1mAw3sv
 ```
-The file /Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/linux/home-packages.nix has been updated successfully.
+The file /home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/linux/home-packages.nix has been updated successfully.
 ```
 
 > AGENT

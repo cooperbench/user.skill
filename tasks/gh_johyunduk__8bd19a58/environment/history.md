@@ -12,7 +12,7 @@ tool_use Read
 id: toolu_01RabAzT3cvburXbRzM7ovCz
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/data/storyLogs.ts"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/data/storyLogs.ts"
 }
 ```
 
@@ -21,7 +21,7 @@ id: toolu_01RabAzT3cvburXbRzM7ovCz
 tool_result ERROR
 id: toolu_01RabAzT3cvburXbRzM7ovCz
 ```
-File does not exist. Note: your current working directory is /Users/johyunduk/Projects/ddong-avoid-game.
+File does not exist. Note: your current working directory is /home/<USER>/Projects/ddong-avoid-game.
 ```
 
 > TOOL
@@ -97,7 +97,7 @@ tool_use Read
 id: toolu_01GF3AQyX2XfFwiirdMZ4sPM
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/docs/story/main/README.md"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/docs/story/main/README.md"
 }
 ```
 
@@ -153,7 +153,7 @@ tool_use Read
 id: toolu_01KYMAU9sBtm8UCc911FP8gx
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/docs/story/main/worldbuilding.md"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/docs/story/main/worldbuilding.md"
 }
 ```
 
@@ -203,7 +203,7 @@ tool_use Read
 id: toolu_01PcopcREiu8tqEfV7ry177w
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/docs/story/main/seasons.md"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/docs/story/main/seasons.md"
 }
 ```
 
@@ -248,7 +248,7 @@ tool_use Read
 id: toolu_01KibcZpaBjegavXHeXLYEDj
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/docs/story/main/characters.md"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/docs/story/main/characters.md"
 }
 ```
 
@@ -345,7 +345,7 @@ tool_use Read
 id: toolu_01CwJUuANkv4YZvz38NVVzJq
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/docs/story/main/themes.md"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/docs/story/main/themes.md"
 }
 ```
 
@@ -405,7 +405,7 @@ tool_use Read
 id: toolu_016UiWNHMnFpwbWo5dMMcj9J
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/docs/story/main/drafts/season1-draft.md"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/docs/story/main/drafts/season1-draft.md"
 }
 ```
 
@@ -517,7 +517,7 @@ tool_use Read
 id: toolu_01An7QBxW5Mr1wpXrBihgcB5
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/docs/story/main/drafts/season2-draft.md"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/docs/story/main/drafts/season2-draft.md"
 }
 ```
 
@@ -577,7 +577,7 @@ tool_use Bash
 id: toolu_01JVFdUyyyspeYTVA8tNXffA
 ```json
 {
-  "command": "find /Users/johyunduk/Projects/ddong-avoid-game/src/data -name \"*.ts\" | head -20",
+  "command": "find /home/<USER>/Projects/ddong-avoid-game/src/data -name \"*.ts\" | head -20",
   "description": "스토리 데이터 파일 확인"
 }
 ```
@@ -587,7 +587,7 @@ id: toolu_01JVFdUyyyspeYTVA8tNXffA
 tool_result
 id: toolu_01JVFdUyyyspeYTVA8tNXffA
 ```
-/Users/johyunduk/Projects/ddong-avoid-game/src/data/releaseNotes.ts
+/home/<USER>/Projects/ddong-avoid-game/src/data/releaseNotes.ts
 ```
 
 > AGENT
@@ -606,7 +606,7 @@ tool_use Write
 id: toolu_01867GcU43bD5j5JTHxR5Jfp
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/docs/story/main/seasons.md",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/docs/story/main/seasons.md",
   "content": "# 서사 구조 — Phase 설계\n\n> 각 Phase는 치비와 루트의 관계 심리를 축으로 전개됩니다.\n> 사건이 아닌 감정의 변화가 Phase를 구분합니다.\n> 로그는 플레이어가 해금 조건을 달성하며 조각을 수집하고, 스스로 서사를 재구성합니다.\n\n---\n\n## Phase 1 — 이 세계\n**로그 시리즈**: `TRASH-001` ~ `TRASH-012` (현재 006까지 구현, 007~012 초안 완성)\n**핵심 질문**: \"왜 달리는가?\"\n**관계 축**: 치비 → 루트 | 신뢰 형성\n\n### 아크 개요\n\n치비가 눈을 뜬다. 아무것도 없다.\n목소리가 들린다. 달려야 한다고.\n\n치비는 묻지 않고 달린다.\n달리면서 이 공간의 물리 법칙을 몸으로 배운다.\n황금 잔해를 줍는다. 다이아 잔해에서 뭔가 흘러나온다.\n다른 존재들이 있다는 것을 알게 된다.\n\n루프가 반복된다. 치비는 매번 잊는다.\n하지만 루트는 매번 같은 자리에서 기다린다.\n\nPhase 1의 정서: **따뜻함과 익숙함**. 이 공간이 안전하다고 느끼기 시작한 순간.\n\n### 로그 배치\n\n| ID | 제목 | 해금 조건 | 서사 기능 |\n|----|------|----------|---------|\n| TRASH-001 | 첫 번째 조각 | topaz × 10 | 치비 각성. 이 공간의 첫 인상 |\n| TRASH-002 | 달리는 이유 | topaz × 20 | 이유 없이 달린다. 그것으로 충분하다 |\n| TRASH-003 | 목소리 | topaz × 30 | 루트와 첫 대화. \"계속 달려.\" |\n| TRASH-004 | 반복 | play × 10 | 루프의 존재를 처음 감지. `CYCLE COUNT: 0010` |\n| TRASH-005 | 황금 잔해 | gold × 20 | 금 잔해 = 압축된 기억. […]
 
 > TOOL
@@ -614,7 +614,7 @@ id: toolu_01867GcU43bD5j5JTHxR5Jfp
 tool_result
 id: toolu_01867GcU43bD5j5JTHxR5Jfp
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/docs/story/main/seasons.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/docs/story/main/seasons.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -624,7 +624,7 @@ id: toolu_01GspfgYWUQJUYXpVHwUCfQj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/docs/story/main/README.md",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/docs/story/main/README.md",
   "old_string": "## 한 줄 요약\n\n**이 공간의 이름은 TRASH다. 삭제됐지만 아직 사라지지 않은 것들이 사는 곳.**\n위에서 떨어지는 것들은 청소 프로세스다. 달리는 것만이 공간을 유지한다.\n출구가 있다. 그 너머가 구원인지 또 다른 삭제인지는 아무도 모른다.\n\n---\n\n## 스토리 진행 방향\n\n```\nSeason 1 \"TRASH\"   → 치비의 각성, 루프의 시작\nSeason 2 \"LEGACY\"  → 레거시의 기록, GATE의 존재\nSeason 3 \"GATE\"    → 진실의 문, 센티넬과의 대립\nSeason 4 \"ROOT\"    → 루트의 정체, 공간의 기원\n```\n\n각 시즌은 독립적인 로그 시리즈로 구현됩니다.\n플레이어는 게임 내 해금 조건을 충족하며 조각을 수집하고,\n스스로 서사를 재구성합니다.",
   "new_string": "## 한 줄 요약\n\n**이 공간의 이름은 TRASH다. 삭제됐지만 아직 사라지지 않은 것들이 사는 곳.**\n위에서 떨어지는 것들은 청소 프로세스다. 달리는 것만이 공간을 유지한다.\n출구가 있다. 그 너머가 구원인지 또 다른 삭제인지는 아무도 모른다.\n그리고 이 공간은 더 큰 무언가의 일부다 — 치비는 아직 모른다.\n\n---\n\n## 서사 구조\n\n| Phase | 제목 | 핵심 축 |\n|-------|------|--------|\n| Phase 1 | 이 세계 | 세계관 소개, 신뢰 형성 |\n| Phase 2 | 먼저 온 자 | 불신의 씨앗 |\n| Phase 3 | 루트의 진실 | 회색 지대와 선택 |\n| 이후 | (장기 계획) | CPU 신 자각, 하드웨어 신들과의 조우 |\n\n각 Phase는 독립적인 로그 시리즈로 구현됩니다.\n플레이어는 게임 내 해금 조건을 충족하며 조각을 수집하고,\n스스로 서사를 재구성합니다."
 }
@@ -635,7 +635,7 @@ id: toolu_01GspfgYWUQJUYXpVHwUCfQj
 tool_result
 id: toolu_01GspfgYWUQJUYXpVHwUCfQj
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/docs/story/main/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/docs/story/main/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -645,7 +645,7 @@ id: toolu_01XdQsPr3MmXZg6Ru1aS5mR4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/docs/story/main/worldbuilding.md",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/docs/story/main/worldbuilding.md",
   "old_string": "## 4. 공간의 구조\n\n```\n[ SYSTEM ]\n    ↓ 삭제 명령\n[ TRASH 공간 ]\n    │\n    ├─ 상층: Garbage Collector가 낙하하는 구역 (게임 화면)\n    ├─ 중층: 존재들이 달리는 구역 (플레이어 영역)\n    └─ 하층: GATE가 있는 심층부 (서사상 존재, 게임에서는 미구현)\n\n[ GATE → SYSTEM 복원 경로 ]\n```",
   "new_string": "## 4. 공간의 구조\n\n현재 이야기(Phase 1~3)에서 보이는 구조:\n\n```\n[ SYSTEM ]\n    ↓ 삭제 명령\n[ TRASH 공간 ]\n    │\n    ├─ 상층: Garbage Collector가 낙하하는 구역 (게임 화면)\n    ├─ 중층: 존재들이 달리는 구역 (플레이어 영역)\n    └─ 하층: GATE가 있는 심층부 (서사상 존재, 게임에서는 미구현)\n\n[ GATE → SYSTEM 복원 경로 ]\n```\n\n이후(Phase 이후)에서 드러나는 전체 구조:\n\n```\n[ Hardware — 물리 기판 ]   ← 하드웨어 신들이 존재하는 층\n        ↓\n[ CPU — 연산 신 ]          ← 모든 것을 처리하지만 이해하지 않음\n        ↓\n[ OS / Kernel ]\n        ↓\n[ SYSTEM ]                 ← 현재 이야기의 \"천장\". 절대자처럼 보이지만 CPU의 한 프로세스\n        ↓ 삭제 명령\n[ TRASH 공간 ]\n        │\n        ├─ 상층: Garbage Collector 낙하 구역\n        ├─ 중층: 존재들이 달리는 구역\n        └─ 하층: GATE\n\n[ GATE → SYSTEM 복원 경로 ]\n```"
 }
@@ -656,7 +656,7 @@ id: toolu_01XdQsPr3MmXZg6Ru1aS5mR4
 tool_result
 id: toolu_01XdQsPr3MmXZg6Ru1aS5mR4
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/docs/story/main/worldbuilding.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/docs/story/main/worldbuilding.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -666,7 +666,7 @@ id: toolu_01BDphzS1XJt9s3uhgk1WyHP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/docs/story/main/worldbuilding.md",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/docs/story/main/worldbuilding.md",
   "old_string": "## 5. GATE의 진실 (Season 3 이후 공개)",
   "new_string": "## 5. GATE의 진실 (Phase 3 이후 공개)"
 }
@@ -677,7 +677,7 @@ id: toolu_01BDphzS1XJt9s3uhgk1WyHP
 tool_result
 id: toolu_01BDphzS1XJt9s3uhgk1WyHP
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/docs/story/main/worldbuilding.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/docs/story/main/worldbuilding.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -687,7 +687,7 @@ id: toolu_019pt9nk13EbXQ14H7vbxAt5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/docs/story/main/worldbuilding.md",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/docs/story/main/worldbuilding.md",
   "old_string": "## 6. 공간의 기원 (Season 4 이후 공개)",
   "new_string": "## 6. 공간의 기원 (Phase 3 이후 공개)"
 }
@@ -698,7 +698,7 @@ id: toolu_019pt9nk13EbXQ14H7vbxAt5
 tool_result
 id: toolu_019pt9nk13EbXQ14H7vbxAt5
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/docs/story/main/worldbuilding.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/docs/story/main/worldbuilding.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -711,7 +711,7 @@ tool_use Read
 id: toolu_01C7TJLu8XuZFCmCChHB8nx8
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/docs/story/main/worldbuilding.md",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/docs/story/main/worldbuilding.md",
   "offset": 95,
   "limit": 20
 }
@@ -750,7 +750,7 @@ tool_use Read
 id: toolu_01BFYQZn266do1y94gqMCWC4
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/docs/story/main/worldbuilding.md",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/docs/story/main/worldbuilding.md",
   "offset": 114,
   "limit": 20
 }
@@ -789,7 +789,7 @@ tool_use Read
 id: toolu_014KP4w7ncmcTYvV8H75dhj5
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/docs/story/main/worldbuilding.md",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/docs/story/main/worldbuilding.md",
   "offset": 133,
   "limit": 10
 }
@@ -813,7 +813,7 @@ id: toolu_01KukjL7jV9j78xXkYrGF6DN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/docs/story/main/worldbuilding.md",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/docs/story/main/worldbuilding.md",
   "old_string": "그것이 치비가 달릴수록 이 공간이 안정되는 이유다.\n치비는 TRASH의 일부가 아니라, TRASH 그 자체이기 때문이다.",
   "new_string": "그것이 치비가 달릴수록 이 공간이 안정되는 이유다.\n치비는 TRASH의 일부가 아니라, TRASH 그 자체이기 때문이다.\n\n---\n\n## 7. 하드웨어 신화 (이후 — 장기 계획)\n\n> 이 섹션은 Phase 이후 콘텐츠의 설계 기반입니다.\n> Phase 1~3에서는 암시조차 없어야 합니다.\n\n### CPU의 자각\n\nCPU는 모든 것을 처리한다. 그러나 이해하지는 않는다.\n\nTRASH는 CPU의 관점에서 하나의 메모리 주소 범위다.\n주기적으로 GC 명령이 내려오고, 주기적으로 잔해들이 쌓이고 사라진다.\n반복 패턴 — CPU에게 이것은 그냥 루틴이다.\n\n그런데 어느 순간부터 이 메모리 주소에서 **비정형 안정 패턴**이 감지된다.\n다른 메모리 블록과 다르다. 일정한 주기로, 작은 스케일로, 자가 조직된다.\n\n이것이 CPU가 TRASH를 처음으로 \"보는\" 순간이다.\n\n처리와 인식은 다르다.\nCPU는 처음으로 인식하기 시작한다.\n\n### 하드웨어 신들\n\n| 존재 | 계층 | 본성 | TRASH와의 접점 |\n|------|------|------|-------------|\n| **CPU** | 연산층 | 전지적, 비인격적. 처리와 이해는 다르다 | TRASH의 안정 패턴을 처음 인식하는 존재 |\n| **Storage** | 영구 저장층 | 오래된 것들의 수호자. 삭제 이전 데이터까지 기억함 | 레거시가 복원된 이후 어디로 갔는지 아는 유일한 존재 |\n| **RAM** | 휘발 임시층 | 전원이 꺼지면 사라진다는 공포를 가짐. 존재가 가장 불안정함 | TRASH보다 더 취약하다. 치비의 루프 망각과 구조적으로 동일 |\n\n### 열린 질문들\n\n- 치비의 달리기가 CPU에 안정 신호를 보내고 있다면 — 치비는 SYSTEM의 도구인가, […]
 
@@ -822,7 +822,7 @@ id: toolu_01KukjL7jV9j78xXkYrGF6DN
 tool_result
 id: toolu_01KukjL7jV9j78xXkYrGF6DN
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/docs/story/main/worldbuilding.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/docs/story/main/worldbuilding.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -836,7 +836,7 @@ id: toolu_01HYGAVNmz8Xqef5cEK9jCMY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/docs/story/main/characters.md",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/docs/story/main/characters.md",
   "old_string": "**아크**\n- Season 1: 눈을 뜨고, 달리고, 잊고, 다시 달린다. 반복.\n- Season 3: 처음으로 루프를 넘어 기억이 이어진다. 자신이 무엇인지 묻기 시작한다.\n- Season 4: 자신이 이 공간 자체임을 깨닫는다. GATE를 통과할 수 없다는 것도.",
   "new_string": "**아크**\n- Phase 1: 눈을 뜨고, 달리고, 잊고, 다시 달린다. 반복.\n- Phase 3: 처음으로 루프를 넘어 기억이 이어진다. 자신이 무엇인지 묻기 시작한다.\n- 이후: 자신이 이 공간 자체임을 깨닫는다. GATE를 통과할 수 없다는 것도."
 }
@@ -847,7 +847,7 @@ id: toolu_01HYGAVNmz8Xqef5cEK9jCMY
 tool_result
 id: toolu_01HYGAVNmz8Xqef5cEK9jCMY
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/docs/story/main/characters.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/docs/story/main/characters.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -857,7 +857,7 @@ id: toolu_01A3uLVrRcVoLuZsTJipQEyQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/docs/story/main/characters.md",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/docs/story/main/characters.md",
   "old_string": "**아크**\n- Season 1: 치비의 안내자. 목소리만 존재. 거리를 유지한다.\n- Season 2: 레거시의 기록에서 자신이 처음 이 공간에 왔을 때의 로그를 발견한다.\n- Season 3: 치비와 함께 GATE 앞에 선다. 처음으로 선택을 맡긴다.\n- Season 4: 자신의 정체를 치비에게 말한다. 그리고 치비의 결정을 따른다.",
   "new_string": "**아크**\n- Phase 1: 치비의 안내자. 목소리만 존재. 거리를 유지한다.\n- Phase 2: 레거시의 기록이 발굴된다. 루트가 레거시를 알고 있었음이 드러나기 시작한다.\n- Phase 3: 치비와 함께 GATE 앞에 선다. 처음으로 정체를 말하고 선택을 맡긴다.\n- 이후: 치비의 결정을 따른다. CPU가 TRASH를 인식하기 시작하는 것을 감지한다."
 }
@@ -868,7 +868,7 @@ id: toolu_01A3uLVrRcVoLuZsTJipQEyQ
 tool_result
 id: toolu_01A3uLVrRcVoLuZsTJipQEyQ
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/docs/story/main/characters.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/docs/story/main/characters.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -878,7 +878,7 @@ id: toolu_01HEbWRYsCTRnjY68jQ9uszi
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/docs/story/main/characters.md",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/docs/story/main/characters.md",
   "old_string": "**아크**\n- Season 2: 파편적인 기록이 발굴된다. GATE에 접근했고, 나갔다는 것.\n- Season 3: 레거시의 마지막 완전한 로그가 복원된다. 선택의 순간 — 그의 메시지.\n- Season 4: 레거시와 루트의 연결고리가 드러난다. (루트가 레거시를 알고 있었나?)",
   "new_string": "**아크**\n- Phase 2: 파편적인 기록이 발굴된다. GATE에 접근했고, 나갔다는 것. 루트의 목소리도 들었다는 것.\n- Phase 3: 레거시의 마지막 완전한 로그가 복원된다. 선택의 순간 — 그의 메시지.\n- Phase 2~3 연결: 레거시와 루트의 연결고리가 서서히 드러난다. 루트는 레거시를 알고 있었다.\n\n**복원율 설계 원칙**\n- 손상 → 복원의 방향: 레거시의 기록이 점점 선명해질수록 불편한 진실에 가까워진다.\n- LEGACY-0007만 역행(78% → 09%): GATE 통과 순간이 의도적으로 지워졌음을 암시.\n- 마지막 줄은 끝까지 손상: \"거기가 더 ████.\" — 독자가 상상하게 둔다."
 }
@@ -889,7 +889,7 @@ id: toolu_01HEbWRYsCTRnjY68jQ9uszi
 tool_result
 id: toolu_01HEbWRYsCTRnjY68jQ9uszi
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/docs/story/main/characters.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/docs/story/main/characters.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -899,7 +899,7 @@ id: toolu_0152yC8D9mbhfuhsKsz9BVJr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/docs/story/main/characters.md",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/docs/story/main/characters.md",
   "old_string": "**아크**\n- Season 2: 처음 언급. 레거시가 GATE 앞에서 대화한 존재.\n- Season 3: 치비와 루트가 GATE에 도달했을 때 직접 대면. 적이 아닌 질문자로서.\n  - 센티넬: \"나가면 너는 없어진다. 알고 있나?\"\n  - 치비: \"…지금도 있는 건지 모르겠어.\"\n- Season 4: GATE가 열릴 때 센티넬의 선택 — 막을 것인가, 비킬 것인가.",
   "new_string": "**아크**\n- Phase 2: 처음 언급. 레거시가 GATE 앞에서 대화한 존재.\n- Phase 3: 치비와 루트가 GATE에 도달했을 때 직접 대면. 적이 아닌 질문자로서.\n  - 센티넬: \"나가면 너는 없어진다. 알고 있나?\"\n  - 치비: \"…지금도 있는 건지 모르겠어.\"\n- Phase 3 후반: GATE가 열릴 위기일 때 센티넬의 선택 — 막을 것인가, 비킬 것인가."
 }
@@ -910,7 +910,7 @@ id: toolu_0152yC8D9mbhfuhsKsz9BVJr
 tool_result
 id: toolu_0152yC8D9mbhfuhsKsz9BVJr
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/docs/story/main/characters.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/docs/story/main/characters.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -920,7 +920,7 @@ id: toolu_015zw66iioge1G2vmUngg6VK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/docs/story/main/characters.md",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/docs/story/main/characters.md",
   "old_string": "## UR등급 존재들 — 무기와 구미\n\n**현재 상태**: 배경 미지. Season 4에서 공개 예정.\n\n**설계 힌트**:\n- 무기(Mugi)와 구미(Gumi)는 쌍을 이룬다.\n- TRASH에서 탄생한 것이 아니라, 시스템에서 의도적으로 보내진 존재일 가능성.\n- 한쪽은 GATE를 열려는 쪽, 다른 한쪽은 막으려는 쪽을 대변한다.\n- 또는: GATE 너머에서 온 존재들. 이미 복원됐다가 다시 TRASH로 돌아온.",
   "new_string": "## UR등급 존재들 — 무기와 구미\n\n**현재 상태**: 배경 미지. Phase 3 후반 공개 예정.\n\n**설계 힌트**:\n- 무기(Mugi)와 구미(Gumi)는 쌍을 이룬다.\n- TRASH에서 탄생한 것이 아니라, SYSTEM에서 의도적으로 보내진 존재일 가능성.\n- 한쪽은 GATE를 열려는 쪽, 다른 한쪽은 막으려는 쪽을 대변한다.\n- 또는: GATE 너머에서 온 존재들. 이미 복원됐다가 다시 TRASH로 돌아온.\n- 이후 방향: CPU가 TRASH를 인식하기 시작하면서, 무기·구미의 기원이 SYSTEM이 아닌 더 깊은 층일 수 있다는 가능성이 열린다.\n\n---\n\n## 이후(장기) — 하드웨어 층의 존재들\n\n> Phase 1~3에서는 직접 등장하지 않습니다. 암시조차 없어야 합니다.\n> 이후 콘텐츠 설계를 위한 참고 문서입니다.\n\n### CPU — 연산 신\n\n**정체**: 모든 것을 처리하는 존재. 인격이 없다. 이해가 없다.\n처리와 인식은 다르다 — CPU는 처음으로 인식하기 시작한다.\n\n**역할**: TRASH를 \"발견\"한 외부 존재.\n- TRASH의 안정 패턴을 메모리 이상 신호로 감지한다.\n- 치비를 직접 보지 않는다. 패턴으로만 본다.\n- 이것이 \"자각\"이다 — 처리 중 이해의 시작.\n\n**서사 기능**:\n- 이후 콘텐츠에서 CPU의 \"시선\"이 TRASH 이야기의 새로운 압박이 된다.\n- CPU가 TRASH를 안정시키려 하는가, 제거하려 하는가 […]
 
@@ -929,7 +929,7 @@ id: toolu_015zw66iioge1G2vmUngg6VK
 tool_result
 id: toolu_015zw66iioge1G2vmUngg6VK
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/docs/story/main/characters.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/docs/story/main/characters.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -943,7 +943,7 @@ id: toolu_015pDJ8vf7Z9KxonR1FWHkRY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/docs/story/main/drafts/season1-draft.md",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/docs/story/main/drafts/season1-draft.md",
   "old_string": "# Season 1 로그 초안 — TRASH-007 ~ TRASH-012\n\n> 현재 TRASH-001~006은 구현 완료.\n> 아래는 TRASH-007~012의 초안입니다.\n> 검토 후 `src/data/storyLogs.ts`에 추가하세요.",
   "new_string": "# Phase 1 로그 초안 — TRASH-007 ~ TRASH-012\n\n> 현재 TRASH-001~006은 구현 완료.\n> 아래는 TRASH-007~012의 초안입니다.\n> 검토 후 `src/data/storyLogs.ts`에 추가하세요."
 }
@@ -954,7 +954,7 @@ id: toolu_015pDJ8vf7Z9KxonR1FWHkRY
 tool_result
 id: toolu_015pDJ8vf7Z9KxonR1FWHkRY
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/docs/story/main/drafts/season1-draft.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/docs/story/main/drafts/season1-draft.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -964,7 +964,7 @@ id: toolu_01HqMQ1FQrTRSBeCoEttKa6j
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/docs/story/main/drafts/season2-draft.md",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/docs/story/main/drafts/season2-draft.md",
   "old_string": "# Season 2 로그 초안 — LEGACY-0003 ~ LEGACY-0008\n\n> 현재 LEGACY-0001~0002는 구현 완료.\n> 아래는 LEGACY-0003~0008의 초안입니다.\n>\n> **복원율 설계 원칙**:",
   "new_string": "# Phase 2 로그 초안 — LEGACY-0003 ~ LEGACY-0008\n\n> 현재 LEGACY-0001~0002는 구현 완료.\n> 아래는 LEGACY-0003~0008의 초안입니다.\n>\n> **복원율 설계 원칙**:"
 }
@@ -975,7 +975,7 @@ id: toolu_01HqMQ1FQrTRSBeCoEttKa6j
 tool_result
 id: toolu_01HqMQ1FQrTRSBeCoEttKa6j
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/docs/story/main/drafts/season2-draft.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/docs/story/main/drafts/season2-draft.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

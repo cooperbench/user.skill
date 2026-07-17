@@ -77,7 +77,7 @@ tool_result
 id: toolu_01NwibDgNNbFqMLq5xBQPawo
 ```
 commit 32dc16f431070cbe94535ef7a911116089b309d3
-Author: Noah Dolev <noah@elixirtrials.com>
+Author: Noah Dolev <<REDACTED_EMAIL>>
 Date:   Tue Apr 21 15:20:54 2026 +0000
 
     feat(training): MLflow tracking in QLoRA trainer
@@ -99,14 +99,14 @@ Date:   Tue Apr 21 15:20:54 2026 +0000
     RUNE_DISABLE_MLFLOW path, the ImportError path, the log-helper no-op
     path, and the new kwargs surface on both public functions.
     
-    Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>
+    Co-Authored-By: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>
 
  libs/model-training/src/model_training/trainer.py | 142 +++++++++++++++++++++-
  libs/model-training/tests/test_trainer_mlflow.py  | 107 ++++++++++++++++
  2 files changed, 244 insertions(+), 5 deletions(-)
 
 commit 1651a96fe7d1fc5a9be5c90b62cd1cab26faaa98
-Author: Noah Dolev <noah@elixirtrials.com>
+Author: Noah Dolev <<REDACTED_EMAIL>>
 Date:   Tue Apr 21 15:27:54 2026 +0000
 
     feat(training): mined-pairs → SFT chat converter
@@ -254,7 +254,7 @@ tool_use Read
 id: toolu_01LXp5TZGDkomSeX6qufGzst
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_train.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_train.py",
   "offset": 1,
   "limit": 100
 }
@@ -344,7 +344,7 @@ tool_use Grep
 id: toolu_016yS7G5MeU5bZm1dWyTb1Mx
 ```json
 {
-  "pattern": "def |^class \">\n<parameter name=\"path\">/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/trainer.py",
+  "pattern": "def |^class \">\n<parameter name=\"path\">/home/<USER>/Code/rune/libs/model-training/src/model_training/trainer.py",
   "output_mode": "content",
   "-n": true
 }
@@ -365,7 +365,7 @@ id: toolu_01M7tA72FnNhpuwB83PRvkXV
 ```json
 {
   "pattern": "^def |^class |^    def ",
-  "path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/trainer.py",
+  "path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/trainer.py",
   "output_mode": "content",
   "-n": true
 }
@@ -398,7 +398,7 @@ tool_use Read
 id: toolu_01B6N8Yy6AqVJKfF2uCrTyh2
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/trainer.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/trainer.py",
   "offset": 375,
   "limit": 60
 }
@@ -524,7 +524,7 @@ tool_use Read
 id: toolu_01FMdenPkBHYJqwVHymzRu1T
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/docs/plans/training_upgrade.md",
+  "file_path": "/home/<USER>/Code/rune/docs/plans/training_upgrade.md",
   "offset": 1,
   "limit": 80
 }
@@ -604,7 +604,7 @@ id: toolu_01Jjk1nhF1rTExXEjniGAqzV
 ```json
 {
   "pattern": "^def |^class |^__all__",
-  "path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_data.py",
+  "path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_data.py",
   "output_mode": "content",
   "-n": true
 }
@@ -639,7 +639,7 @@ tool_use Read
 id: toolu_016tm3UZNFpZmoGeFQf2hsxR
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_data.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_data.py",
   "offset": 852,
   "limit": 50
 }
@@ -706,7 +706,7 @@ id: toolu_01F8JTjRreE3BmLV5NUKMtTN
 ```json
 {
   "pattern": "pairs_to_chat_messages|normalize_mined_pairs|format_for_distillation",
-  "path": "/Users/noahdolevelixir/Code/rune",
+  "path": "/home/<USER>/Code/rune",
   "output_mode": "files_with_matches"
 }
 ```
@@ -734,7 +734,7 @@ id: toolu_01Y2ACNXfnvnwxTx5uVCvnUu
 ```json
 {
   "pattern": "format_for_distillation|normalize_mined_pairs",
-  "path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_prep.py",
+  "path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_prep.py",
   "output_mode": "content",
   "-n": true
 }
@@ -796,7 +796,7 @@ tool_use Read
 id: toolu_01YNyArvuRKUkKhqGwu6Lpps
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/diff_loss.py"
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/diff_loss.py"
 }
 ```
 
@@ -840,7 +840,7 @@ tool_use Read
 id: toolu_01CjoazTPBJRMnpiYJoF7YzV
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_train.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_train.py",
   "offset": 151,
   "limit": 100
 }
@@ -1375,7 +1375,7 @@ tool_use Write
 id: toolu_01RGYtXjsXsNY8oFwSkyJLWS
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/.claude/plans/synchronous-forging-dolphin.md",
+  "file_path": "/home/<USER>/.claude/plans/synchronous-forging-dolphin.md",
   "content": "# Plan: Training-Upgrade Branch Follow-ups\n\n## Context\n\nThe `feat/training-upgrade` branch adds MLflow tracking, a mined-pair → SFT\nconverter, a `train.sh` CLI wrapper, a diff-aware loss collator, and a\ntraining-hyperparameter HPO study. A review of the branch surfaced several\ngaps that undermine the stated goals — most notably:\n\n1. **Diff-aware loss is bag-of-token-ids, not a real diff.** Today's\n   `compute_diff_loss_weights` (`libs/model-training/src/model_training/diff_loss.py:56`)\n   marks an assistant token as \"unchanged\" whenever its token id appears\n   *anywhere* in the masked context. A novel line like `return x + y + z`\n   collides with nearly any context's tokens (`return`, `+`, identifiers,\n   whitespace) and is wrongly downweighted. Whitespace suppression is\n   accidental, not designed.\n\n2. **HPO fitness is 40% dead weight.** The `pass@1_humaneval` term\n   (`scripts/optimization/run_training_hpo.py:283`) is a stub that\n   unconditionally returns `0.0`. With `pass_at_1_weight=0.4`, Optuna is\n   ranking trials on 60% signal and 40% noise. HumanEval also isn't drawn\n   from the training distribution, so it's a poor proxy for the real\n   optimization target: \"did the adapter learn to produce the specific\n   revision given the specific pre-state?\" — i.e. episodic procedural\n   memory.\n\n3. **HPO ↔ trainer coupling is broken.** `warmup_ratio` is sampled by\n   Optuna but never forwarded to `SFTConfig`. `override_lora_alpha` and\n   `override_lora_dropout` exist as trainer kwargs but aren't exposed in\n […]
 
 > TOOL
@@ -1383,7 +1383,7 @@ id: toolu_01RGYtXjsXsNY8oFwSkyJLWS
 tool_result
 id: toolu_01RGYtXjsXsNY8oFwSkyJLWS
 ```
-File created successfully at: /Users/noahdolevelixir/.claude/plans/synchronous-forging-dolphin.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/plans/synchronous-forging-dolphin.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1401,7 +1401,7 @@ id: toolu_0198UiDHLTdPhCtfuKjkWhxB
 ```
 User has approved your plan. You can now start coding. Start with updating your todo list if applicable
 
-Your plan has been saved to: /Users/noahdolevelixir/.claude/plans/synchronous-forging-dolphin.md
+Your plan has been saved to: /home/<USER>/.claude/plans/synchronous-forging-dolphin.md
 You can refer back to it if needed during implementation.
 
 ## Approved Plan:
@@ -1483,7 +1483,7 @@ tool_use Read
 id: toolu_01HXC1vauWJkFjFJHShW42gi
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/subagent-driven-development/implementer-prompt.md"
+  "file_path": "/home/<USER>/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/subagent-driven-development/implementer-prompt.md"
 }
 ```
 
@@ -1541,7 +1541,7 @@ tool_use Read
 id: toolu_01MeFv6zkbexG7kXhNKcGYoA
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/subagent-driven-development/spec-reviewer-prompt.md"
+  "file_path": "/home/<USER>/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/subagent-driven-development/spec-reviewer-prompt.md"
 }
 ```
 
@@ -1596,7 +1596,7 @@ tool_use Read
 id: toolu_014FMHA47N4LcbKfJQan7fuF
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/subagent-driven-development/code-quality-reviewer-prompt.md"
+  "file_path": "/home/<USER>/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/subagent-driven-development/code-quality-reviewer-prompt.md"
 }
 ```
 
@@ -1834,7 +1834,7 @@ id: toolu_01MxBTHvRp6KACz8ZRQqFxGB
 {
   "description": "Task 1: MLflow extraction + aliases",
   "subagent_type": "general-purpose",
-  "prompt": "You are implementing Task 1 of the feat/training-upgrade follow-up plan. Working directory: /Users/noahdolevelixir/Code/rune. Current branch: feat/training-upgrade.\n\n## Task: P3 cleanup — extract shared MLflow helpers + public KL/CE alias\n\n### Change 1: Extract MLflow helpers into a new module\n\nCreate `libs/model-training/src/model_training/training_common.py` with this public surface (stdlib-only at module top; `mlflow` imported inside function bodies):\n\n- `setup_mlflow(experiment_name: str, tracking_uri: str | None) -> bool` — configure tracking URI + experiment; returns True if MLflow is active, False if `RUNE_DISABLE_MLFLOW=1` is set or mlflow is not importable.\n- `mlflow_log_params(params: dict[str, Any]) -> None` — silent no-op on failure / mlflow absence.\n- `mlflow_log_artifact(path: str) -> None` — silent no-op on failure.\n- `mlflow_log_output_artifacts(output_dir: str) -> None` — logs adapter safetensors + config.json from output_dir.\n- `mlflow_run(experiment_name, tracking_uri, run_name, params) -> context manager` — starts/ends a run, logs params, guards finally.\n\nSource of truth for behavior: the 5 helpers currently at the top of `libs/model-training/src/model_training/trainer.py` (lines ~23-101: `_setup_mlflow_trainer`, `_mlflow_log_params`, `_mlflow_log_artifact`, `_mlflow_log_output_artifacts`, `_mlflow_run`). Copy their bodies and docstrings verbatim, rename to public names (strip leading underscore).\n\nThe existing helper in `d2l_train.py` (`_setup_mlflow` at line 354) is a strict subset — no `RUNE_DISABLE_MLFLOW` gate, no tracking_uri arg. Make `setup_mlflow` […]
+  "prompt": "You are implementing Task 1 of the feat/training-upgrade follow-up plan. Working directory: /home/<USER>/Code/rune. Current branch: feat/training-upgrade.\n\n## Task: P3 cleanup — extract shared MLflow helpers + public KL/CE alias\n\n### Change 1: Extract MLflow helpers into a new module\n\nCreate `libs/model-training/src/model_training/training_common.py` with this public surface (stdlib-only at module top; `mlflow` imported inside function bodies):\n\n- `setup_mlflow(experiment_name: str, tracking_uri: str | None) -> bool` — configure tracking URI + experiment; returns True if MLflow is active, False if `RUNE_DISABLE_MLFLOW=1` is set or mlflow is not importable.\n- `mlflow_log_params(params: dict[str, Any]) -> None` — silent no-op on failure / mlflow absence.\n- `mlflow_log_artifact(path: str) -> None` — silent no-op on failure.\n- `mlflow_log_output_artifacts(output_dir: str) -> None` — logs adapter safetensors + config.json from output_dir.\n- `mlflow_run(experiment_name, tracking_uri, run_name, params) -> context manager` — starts/ends a run, logs params, guards finally.\n\nSource of truth for behavior: the 5 helpers currently at the top of `libs/model-training/src/model_training/trainer.py` (lines ~23-101: `_setup_mlflow_trainer`, `_mlflow_log_params`, `_mlflow_log_artifact`, `_mlflow_log_output_artifacts`, `_mlflow_run`). Copy their bodies and docstrings verbatim, rename to public names (strip leading underscore).\n\nThe existing helper in `d2l_train.py` (`_setup_mlflow` at line 354) is a strict subset — no `RUNE_DISABLE_MLFLOW` gate, no tracking_uri arg. Make `setup_mlflow` […]
 
 > TOOL
 
@@ -1878,7 +1878,7 @@ b353c18 refactor(training): extract shared MLflow helpers into training_common
 4bbd8cf feat(hpo): training-hyperparameter HPO study with Hyperband
 ---
 commit b353c18159a14e61513a573cf645cfd5481c7a41
-Author: Noah Dolev <noah@elixirtrials.com>
+Author: Noah Dolev <<REDACTED_EMAIL>>
 Date:   Tue Apr 21 22:53:41 2026 +0200
 
     refactor(training): extract shared MLflow helpers into training_common
@@ -1894,7 +1894,7 @@ Date:   Tue Apr 21 22:53:41 2026 +0200
     - Tests: test_training_common.py covers disable-env, ImportError, CPU-
       import invariant. test_trainer_mlflow.py passes unmodified.
     
-    Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+    Co-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>
     Entire-Checkpoint: 7c5456458292
 
  .../model-training/src/model_training/d2l_train.py |  23 +++--
@@ -1915,7 +1915,7 @@ id: toolu_01TMCC9iDntkmKDXvgQWJrhd
 ```json
 {
   "pattern": "_setup_mlflow_trainer|_mlflow_log_params|_mlflow_log_artifact|_mlflow_log_output_artifacts|_mlflow_run",
-  "path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/trainer.py",
+  "path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/trainer.py",
   "output_mode": "content",
   "-n": true
 }
@@ -1939,7 +1939,7 @@ tool_use Read
 id: toolu_016QM2NCxxdtTyRA1cDLdWfH
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_trainer_mlflow.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/tests/test_trainer_mlflow.py",
   "offset": 1,
   "limit": 40
 }
@@ -2002,7 +2002,7 @@ tool_use Read
 id: toolu_0135rLDWfzFEch1ZffgNmkqv
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_trainer_mlflow.py"
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/tests/test_trainer_mlflow.py"
 }
 ```
 
@@ -2065,7 +2065,7 @@ id: toolu_01NfjGXDn8g3s7cUauzoCMcy
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_trainer_mlflow.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/tests/test_trainer_mlflow.py",
   "old_string": "\"\"\"CPU tests for MLflow integration in trainer.py.\n\nVerifies the gating helpers work without a GPU and without actually writing\nto an MLflow backend:\n- RUNE_DISABLE_MLFLOW=1 short-circuits setup.\n- Missing ``mlflow`` package short-circuits setup.\n- ``_mlflow_log_params`` / ``_mlflow_log_artifact`` silently no-op when\n  tracking is disabled so training never breaks.\n- ``train_qlora`` accepts ``mlflow_experiment`` and ``mlflow_tracking_uri``\n  kwargs without touching the GPU.\n\"\"\"\n\nfrom __future__ import annotations\n\nimport sys\n\nimport pytest\n\n\ndef test_setup_returns_false_when_disabled(\n    monkeypatch: pytest.MonkeyPatch,\n) -> None:\n    \"\"\"RUNE_DISABLE_MLFLOW=1 suppresses MLflow regardless of install state.\"\"\"\n    monkeypatch.setenv(\"RUNE_DISABLE_MLFLOW\", \"1\")\n\n    from model_training.trainer import _setup_mlflow_trainer\n\n    assert _setup_mlflow_trainer(\"any-experiment\", tracking_uri=None) is False\n\n\ndef test_setup_returns_false_when_mlflow_missing(\n    monkeypatch: pytest.MonkeyPatch,\n) -> None:\n    \"\"\"Absent mlflow module returns False without raising.\"\"\"\n    monkeypatch.delenv(\"RUNE_DISABLE_MLFLOW\", raising=False)\n\n    # Force ImportError on `import mlflow` inside the helper.\n    real_import = (\n        __builtins__[\"__import__\"]  # type: ignore[index]\n        if isinstance(__builtins__, dict)\n        else __builtins__.__import__  # type: ignore[attr-defined]\n    )\n\n    def fake_import(name: str, *args: object, **kwargs: object) -> object:\n        if name == \"mlflow\":\n            raise ImportError(\"mocked: mlflow not installed\")\n        return real_import(name, *args, **kwargs)\n\n    monkeypatch.setattr(\"builtins.__import__\", fake_import)\n\n    # Drop any cached mlflow module so our fake_import takes effect.\n    monkeypatch.delitem(sys.modules, \"mlflow\", raising=False)\n\n    from model_training.trainer import _setup_mlflow_trainer\n\n    assert _setup_mlflow_trainer(\"any-experiment\", tracking_uri=None) is False\n\n\ndef test_log_helpers_silent_noop_when_mlflow_missing(\n    monkeypatch: pytest.MonkeyPatch,\n) -> None:\n    \"\"\"The log helpers never raise, even if mlflow import fails mid-call.\"\"\"\n    real_import = (\n        __builtins__[\"__import__\"]  # type: ignore[index]\n […]
 
 > TOOL
@@ -2073,7 +2073,7 @@ id: toolu_01NfjGXDn8g3s7cUauzoCMcy
 tool_result
 id: toolu_01NfjGXDn8g3s7cUauzoCMcy
 ```
-The file /Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_trainer_mlflow.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/libs/model-training/tests/test_trainer_mlflow.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2086,7 +2086,7 @@ tool_use Read
 id: toolu_013XyTx7T8y9UniMopZ3qf9Q
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/trainer.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/trainer.py",
   "offset": 1,
   "limit": 45
 }
@@ -2151,7 +2151,7 @@ id: toolu_01Acb38X2qk1KCDWjJzei2J6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/trainer.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/trainer.py",
   "old_string": "logger = logging.getLogger(__name__)\n\n# Back-compat shims: trainer.py callers previously used private names.\n_setup_mlflow_trainer = setup_mlflow\n_mlflow_log_params = mlflow_log_params\n_mlflow_log_artifact = mlflow_log_artifact\n_mlflow_log_output_artifacts = mlflow_log_output_artifacts\n_mlflow_run = mlflow_run\n\n\nclass _ResolvedParams(TypedDict):",
   "new_string": "logger = logging.getLogger(__name__)\n\n\nclass _ResolvedParams(TypedDict):"
 }
@@ -2162,7 +2162,7 @@ id: toolu_01Acb38X2qk1KCDWjJzei2J6
 tool_result
 id: toolu_01Acb38X2qk1KCDWjJzei2J6
 ```
-The file /Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/trainer.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/libs/model-training/src/model_training/trainer.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2172,7 +2172,7 @@ id: toolu_01SeTWbzz5NH5cZYyYZfHEcB
 ```json
 {
   "pattern": "_setup_mlflow_trainer|_mlflow_log_params|_mlflow_log_artifact|_mlflow_log_output_artifacts|_mlflow_run",
-  "path": "/Users/noahdolevelixir/Code/rune/libs/model-training",
+  "path": "/home/<USER>/Code/rune/libs/model-training",
   "output_mode": "content",
   "-n": true
 }
@@ -2227,7 +2227,7 @@ Context is at 90% — we need to stop and hand off.
 - ✅ Committed as `b353c18`
 - ❌ **Remaining**: ruff reports 2 unused-import errors in `trainer.py` (probably `mlflow_log_artifact`, `mlflow_run` etc. now that shims are gone — need to check which are still used vs. dead imports). Then re-run tests and amend/add a fixup commit.
 
-**Tasks 2–6 remain pending** (P2 coupling, P0 data/loss/pipeline, P1 HPO fitness). Plan is saved at `/Users/noahdolevelixir/.claude/plans/synchronous-forging-dolphin.md`.
+**Tasks 2–6 remain pending** (P2 coupling, P0 data/loss/pipeline, P1 HPO fitness). Plan is saved at `/home/<USER>/.claude/plans/synchronous-forging-dolphin.md`.
 
 **How do you want to proceed?** Options:
 1. **Finish Task 1 cleanup only, commit, and stop** — I fix the 2 ruff errors, run the test subset, amend-or-followup-commit, then you start a fresh session to continue Tasks 2–6 against the saved plan.

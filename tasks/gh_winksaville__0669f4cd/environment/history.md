@@ -4,8 +4,8 @@ tool_result
 id: toolu_01KWYTv5H96mMdL5iNDPNYMH
 ```
 sync: 2 repos, all bookmarks up-to-date
-/home/wink/data/prgs/rust/vc-x1: @- (5e0f61e1e8ce) is not behind 'main' (01357c2bdec7); leaving @ in place
-/home/wink/data/prgs/rust/vc-x1/.claude: jj new main
+/home/<USER>/data/prgs/rust/vc-x1: @- (5e0f61e1e8ce) is not behind 'main' (01357c2bdec7); leaving @ in place
+/home/<USER>/data/prgs/rust/vc-x1/.claude: jj new main
 ```
 
 > AGENT
@@ -30,7 +30,7 @@ id: toolu_01J1TRA6bgD6LMV7HdmbJNYW
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/sync.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/sync.rs",
   "old_string": "    /// Bookmark to sync in each code repo. The session (bot) repo\n    /// is a linear journal and always syncs `main`, regardless.",
   "new_string": "    /// Bookmark to sync in the code repo. The session (bot) repo\n    /// is a linear journal and always syncs `main`, regardless."
 }
@@ -41,7 +41,7 @@ id: toolu_01J1TRA6bgD6LMV7HdmbJNYW
 tool_result
 id: toolu_01J1TRA6bgD6LMV7HdmbJNYW
 ```
-The file /home/wink/data/prgs/rust/vc-x1/src/sync.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/src/sync.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -51,7 +51,7 @@ id: toolu_01UwaDJTo8zA8yqCpEXahh2M
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/sync.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/sync.rs",
   "old_string": "/// - `bookmark`: bookmark to sync in each code repo (default\n///   `main`); the session repo always syncs `main`.",
   "new_string": "/// - `bookmark`: bookmark to sync in the code repo (default\n///   `main`); the session repo always syncs `main`."
 }
@@ -62,7 +62,7 @@ id: toolu_01UwaDJTo8zA8yqCpEXahh2M
 tool_result
 id: toolu_01UwaDJTo8zA8yqCpEXahh2M
 ```
-The file /home/wink/data/prgs/rust/vc-x1/src/sync.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/src/sync.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -82,7 +82,7 @@ tool_result
 id: toolu_01TJKkxhx5NP8yukm9gyYMXZ
 ```
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.96s
-    Replaced package `vc-x1 v0.68.0-1 (/home/wink/data/prgs/rust/vc-x1)` with `vc-x1 v0.68.0-1 (/home/wink/data/prgs/rust/vc-x1)` (executable `vc-x1`)
+    Replaced package `vc-x1 v0.68.0-1 (/home/<USER>/data/prgs/rust/vc-x1)` with `vc-x1 v0.68.0-1 (/home/<USER>/data/prgs/rust/vc-x1)` (executable `vc-x1`)
 ```
 
 > AGENT
@@ -102,7 +102,7 @@ id: toolu_01NEsSANpfzE4sXnejCU37TS
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/sync.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/sync.rs",
   "old_string": "                \"{}: session repo — syncing 'main' ('{}' is code-repo-only)\",",
   "new_string": "                \"{}: session repo — syncing 'main' ('{}' is a code repo bookmark)\","
 }
@@ -113,7 +113,7 @@ id: toolu_01NEsSANpfzE4sXnejCU37TS
 tool_result
 id: toolu_01NEsSANpfzE4sXnejCU37TS
 ```
-The file /home/wink/data/prgs/rust/vc-x1/src/sync.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/src/sync.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -133,7 +133,7 @@ tool_result
 id: toolu_01WC8MHqoKDNTeUvkp53DW3x
 ```
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.69s
-    Replaced package `vc-x1 v0.68.0-1 (/home/wink/data/prgs/rust/vc-x1)` with `vc-x1 v0.68.0-1 (/home/wink/data/prgs/rust/vc-x1)` (executable `vc-x1`)
+    Replaced package `vc-x1 v0.68.0-1 (/home/<USER>/data/prgs/rust/vc-x1)` with `vc-x1 v0.68.0-1 (/home/<USER>/data/prgs/rust/vc-x1)` (executable `vc-x1`)
 ```
 
 > AGENT
@@ -169,7 +169,7 @@ id: toolu_01XZD1afbkHizcCef9VryJ8u
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/sync.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/sync.rs",
   "old_string": "                info!(\"{}: fast-forwarding '{bookmark}'\", repo.display());",
   "new_string": "                info!(\"{}: setting '{bookmark}' to {remote_rev}\", repo.display());"
 }
@@ -180,7 +180,7 @@ id: toolu_01XZD1afbkHizcCef9VryJ8u
 tool_result
 id: toolu_01XZD1afbkHizcCef9VryJ8u
 ```
-The file /home/wink/data/prgs/rust/vc-x1/src/sync.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/src/sync.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -201,7 +201,7 @@ id: toolu_01S3NL8MgCbCzjsEgX3pjDJ8
 ```
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.70s
 0
-    Replaced package `vc-x1 v0.68.0-1 (/home/wink/data/prgs/rust/vc-x1)` with `vc-x1 v0.68.0-1 (/home/wink/data/prgs/rust/vc-x1)` (executable `vc-x1`)
+    Replaced package `vc-x1 v0.68.0-1 (/home/<USER>/data/prgs/rust/vc-x1)` with `vc-x1 v0.68.0-1 (/home/<USER>/data/prgs/rust/vc-x1)` (executable `vc-x1`)
 ```
 
 > AGENT
@@ -216,8 +216,8 @@ I just did:
 wink@3900x 26-07-08T21:21:50.433Z:~/data/prgs/rust/vc-template-x1 (main+1)
 $ vc-x1 sync
 sync: 2 repos, all bookmarks up-to-date
-/home/wink/data/prgs/rust/vc-template-x1: @ already on 'main'
-/home/wink/data/prgs/rust/vc-template-x1/.claude: jj new main
+/home/<USER>/data/prgs/rust/vc-template-x1: @ already on 'main'
+/home/<USER>/data/prgs/rust/vc-template-x1/.claude: jj new main
 wink@3900x 26-07-08T21:21:57.932Z:~/data/prgs/rust/vc-template-x1 (main+1)
 
 
@@ -250,7 +250,7 @@ id: toolu_017YQzwiJHJ4Hh8ndqZD1G4o
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/notes/todo.md",
   "old_string": "   - 0.68.0-1 sync: session repo pins `main` — tracking\n     preflight + classify/act use a per-repo bookmark; tests\n     (done)\n   - 0.68.0-2 push: session repo pins `main` — preflight\n     tracking, bookmark stage (renamed/redoc'd from\n     `bookmark-both`), `finalize --push`, completion\n     sanity; `PushState.bookmark` stays code-side; tests",
   "new_string": "   - 0.68.0-1 sync: session repo pins `main` — tracking\n     preflight + classify/act use a per-repo bookmark; tests\n     (done)\n   - 0.68.0-2 sync: `reposition_session` no-ops when `@-` is\n     already the `main` tip — today it always `jj new main`s\n     (empty `@`: chid/op churn; non-empty `@`: live session\n     writes stranded on a sibling head); tests\n   - 0.68.0-3 push: session repo pins `main` — preflight\n     tracking, bookmark stage (renamed/redoc'd from\n     `bookmark-both`), `finalize --push`, completion\n     sanity; `PushState.bookmark` stays code-side; tests"
 }
@@ -261,7 +261,7 @@ id: toolu_017YQzwiJHJ4Hh8ndqZD1G4o
 tool_result
 id: toolu_017YQzwiJHJ4Hh8ndqZD1G4o
 ```
-The file /home/wink/data/prgs/rust/vc-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -404,7 +404,7 @@ id: toolu_01Ku8HLphXGDW7nVdWj9koE8
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/notes/todo.md",
   "old_string": "     writes stranded on a sibling head); tests",
   "new_string": "     writes stranded on a sibling head); tests (current)"
 }
@@ -415,7 +415,7 @@ id: toolu_01Ku8HLphXGDW7nVdWj9koE8
 tool_result
 id: toolu_01Ku8HLphXGDW7nVdWj9koE8
 ```
-The file /home/wink/data/prgs/rust/vc-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -444,7 +444,7 @@ id: toolu_019s7BopfZFP6M7vNAAifQuC
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/sync.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/sync.rs",
   "old_string": "/// Reposition the session repo's `@` onto `main`.\n///\n/// The session (`.claude`) repo is a linear journal on `main`, and its\n/// `@` normally carries live session writes:\n///\n/// - Errors when `@-` isn't on `main` (not an ancestor-or-equal of the\n///   bookmark) — refuse rather than guess.\n/// - Otherwise `jj new main` starts a fresh `@` on the bookmark; the\n///   prior `@` becomes a sibling head, which is expected for the\n///   journal. A conflict is very unlikely given `.claude`'s content;\n///   if one ever appears the user resolves it.\nfn reposition_session(repo: &Path) -> Result<(), Box<dyn std::error::Error>> {\n    let parent = commit_id(repo, \"@-\")?;\n    if !revset_nonempty(repo, &format!(\"{parent}::main\"))? {\n        return Err(format!(\n            \"{}: @- ({parent}) is not on main — refusing to reposition @\",\n            repo.display()\n        )\n        .into());\n    }\n    info!(\"{}: jj new main\", repo.display());",
   "new_string": "/// Reposition the session repo's `@` onto `main`.\n///\n/// The session (`.claude`) repo is a linear journal on `main`, and its\n/// `@` normally carries live session writes:\n///\n/// - `@-` already the `main` tip → no-op: `@` is where it belongs,\n///   live writes stay in the working copy. (An unconditional\n///   `jj new main` here would churn an empty `@`'s chid/op every\n///   sync, or strand a non-empty […]
 
@@ -453,7 +453,7 @@ id: toolu_019s7BopfZFP6M7vNAAifQuC
 tool_result
 id: toolu_019s7BopfZFP6M7vNAAifQuC
 ```
-The file /home/wink/data/prgs/rust/vc-x1/src/sync.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/src/sync.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -467,7 +467,7 @@ id: toolu_01UUVLBwmDCHfgvWhLhS6P3j
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/sync/integration_tests.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/sync/integration_tests.rs",
   "old_string": "/// Scenario 2a: a non-empty `@` on top of main (simulates `/exit`\n/// trailing session writes in `.claude`) when there's nothing new on\n/// the remote. The session repo always `jj new main`s: `@` becomes a\n/// fresh empty child of the unmoved main, and the trailing commit is\n/// preserved as a non-empty sibling head (no longer in the working\n/// copy).\n#[test]\nfn sync_session_jj_new_when_up_to_date() {\n    let fx = Fixture::new(\"session-jjnew-uptodate\");\n    let pre_main = cid(&fx.claude, \"main\");\n    fs::write(fx.claude.join(\"trailing.jsonl\"), \"{\\\"line\\\":1}\\n\").expect(\"write trailing file\");\n    sync_repos(&fx.repos(), &default_params()).expect(\"sync should succeed\");\n    // main didn't move.\n    assert_eq!(cid(&fx.claude, \"main\"), pre_main, \"main should not move\");\n    // @ is a fresh empty child of main.\n    assert!(has(&fx.claude, \"@ & empty()\"), \"@ should be empty\");\n    assert!(has(&fx.claude, \"main::@\"), \"@ should be a child of main\");\n    // The trailing session commit survives as a non-empty sibling head.\n    assert!(\n        has(&fx.claude, \"heads(all()) & ~empty()\"),\n        \"former @ preserved as a non-empty sibling head\"\n    );\n    // The trailing file is no longer in the working copy (@ moved off it).\n    assert!(\n        !fx.claude.join(\"trailing.jsonl\").exists(),\n        \"@ no longer holds the trailing file\"\n    );\n}",
   "new_string": "/// Scenario 2a: a non-empty `@` on top of main (simulates `/exit`\n/// trailing session writes in `.claude`) when there's nothing new on\n/// the remote. […]
 
@@ -476,7 +476,7 @@ id: toolu_01UUVLBwmDCHfgvWhLhS6P3j
 tool_result
 id: toolu_01UUVLBwmDCHfgvWhLhS6P3j
 ```
-The file /home/wink/data/prgs/rust/vc-x1/src/sync/integration_tests.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/src/sync/integration_tests.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -524,7 +524,7 @@ id: toolu_01YFes72ijzngrQtdFk5J5Et
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/notes/todo.md",
   "old_string": "     writes stranded on a sibling head); tests (current)",
   "new_string": "     writes stranded on a sibling head); tests (done)"
 }
@@ -535,7 +535,7 @@ id: toolu_01YFes72ijzngrQtdFk5J5Et
 tool_result
 id: toolu_01YFes72ijzngrQtdFk5J5Et
 ```
-The file /home/wink/data/prgs/rust/vc-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -574,7 +574,7 @@ tool_result
 id: toolu_018GohLsLfEWSMG1HDBx2SD7
 ```
 0
-    Replaced package `vc-x1 v0.68.0-1 (/home/wink/data/prgs/rust/vc-x1)` with `vc-x1 v0.68.0-2 (/home/wink/data/prgs/rust/vc-x1)` (executable `vc-x1`)
+    Replaced package `vc-x1 v0.68.0-1 (/home/<USER>/data/prgs/rust/vc-x1)` with `vc-x1 v0.68.0-2 (/home/<USER>/data/prgs/rust/vc-x1)` (executable `vc-x1`)
 ```
 
 > TOOL
@@ -594,8 +594,8 @@ tool_result
 id: toolu_01Rq2B7wbB2BzmfxFTe4f9kQ
 ```
 sync: 2 repos, all bookmarks up-to-date
-/home/wink/data/prgs/rust/vc-x1: @- (c1bff242430c) is not behind 'main' (01357c2bdec7); leaving @ in place
-/home/wink/data/prgs/rust/vc-x1/.claude: @ already on 'main'
+/home/<USER>/data/prgs/rust/vc-x1: @- (c1bff242430c) is not behind 'main' (01357c2bdec7); leaving @ in place
+/home/<USER>/data/prgs/rust/vc-x1/.claude: @ already on 'main'
 ```
 
 > AGENT
@@ -687,23 +687,23 @@ push preflight: cargo fmt
 push preflight: cargo clippy --all-targets -- -D warnings
 push preflight: cargo test
 push review: pending changes:
-  app (/home/wink/data/prgs/rust/vc-x1):
+  app (/home/<USER>/data/prgs/rust/vc-x1):
     Cargo.lock                    |  2 +-
     Cargo.toml                    |  2 +-
     notes/todo.md                 |  2 +-
     src/sync/integration_tests.rs | 43 +++++++++++++++++++++++++------------------
     src/sync.rs                   | 18 ++++++++++++++----
     5 files changed, 42 insertions(+), 25 deletions(-)
-  .claude (/home/wink/data/prgs/rust/vc-x1/.claude):
+  .claude (/home/<USER>/data/prgs/rust/vc-x1/.claude):
     .claude/45d00227-4919-4dac-8d79-8486b16d8a8f.jsonl | 132 +++++++++++++++++++++++
     1 file changed, 132 insertions(+), 0 deletions(-)
 push review: auto-approved (--yes)
 push message: title="fix: sync session reposition no-op (0.68.0-2)", app_chid=pyyltvnmomrp, claude_chid=vyvkuyvumxzw, claude_had_changes=true
-push commit-app: jj commit -R /home/wink/data/prgs/rust/vc-x1
-push commit-claude: jj commit -R /home/wink/data/prgs/rust/vc-x1/.claude
-push bookmark-both: jj bookmark set main -r @- -R /home/wink/data/prgs/rust/vc-x1 / /home/wink/data/prgs/rust/vc-x1/.claude
-push push-app: jj git push --bookmark main -R /home/wink/data/prgs/rust/vc-x1
-push finalize-claude: vc-x1 finalize --repo /home/wink/data/prgs/rust/vc-x1/.claude --squash --push main --delay 10 --detach
+push commit-app: jj commit -R /home/<USER>/data/prgs/rust/vc-x1
+push commit-claude: jj commit -R /home/<USER>/data/prgs/rust/vc-x1/.claude
+push bookmark-both: jj bookmark set main -r @- -R /home/<USER>/data/prgs/rust/vc-x1 / /home/<USER>/data/prgs/rust/vc-x1/.claude
+push push-app: jj git push --bookmark main -R /home/<USER>/data/prgs/rust/vc-x1
+push finalize-claude: vc-x1 finalize --repo /home/<USER>/data/prgs/rust/vc-x1/.claude --squash --push main --delay 10 --detach
 push: completed all stages (verified, state cleared)
 ```
 
@@ -728,7 +728,7 @@ id: toolu_01NQTgNXPjLoxRNTGA1qnDkv
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/notes/todo.md",
   "old_string": "     writes stranded on a sibling head); tests (done)\n   - 0.68.0-3 push: session repo pins `main` — preflight",
   "new_string": "     writes stranded on a sibling head); tests (done)\n   - 0.68.0-3 sync: quiet output — clean case prints one\n     summary line; per-repo \"@ already on\" no-op lines demoted\n     to debug (current)\n   - 0.68.0-4 push: session repo pins `main` — preflight"
 }
@@ -739,7 +739,7 @@ id: toolu_01NQTgNXPjLoxRNTGA1qnDkv
 tool_result
 id: toolu_01NQTgNXPjLoxRNTGA1qnDkv
 ```
-The file /home/wink/data/prgs/rust/vc-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -768,7 +768,7 @@ tool_use Read
 id: toolu_01HdhHM1JgQKG9eh5vKper9D
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/main.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/main.rs",
   "offset": 175,
   "limit": 50
 }
@@ -832,7 +832,7 @@ id: toolu_01GbQfiKyjVTmekpTmXa7kXf
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/sync.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/sync.rs",
   "old_string": "    if !any_action_needed {\n        let n = ctxs.len();\n        let noun = if n == 1 { \"repo\" } else { \"repos\" };\n        info!(\"sync: {n} {noun}, all bookmarks up-to-date\");\n    } else {",
   "new_string": "    if !any_action_needed {\n        let n = ctxs.len();\n        let noun = if n == 1 { \"repo is\" } else { \"repos are\" };\n        info!(\"sync: {n} {noun} up to date, nothing to sync\");\n    } else {"
 }
@@ -843,7 +843,7 @@ id: toolu_01GbQfiKyjVTmekpTmXa7kXf
 tool_result
 id: toolu_01GbQfiKyjVTmekpTmXa7kXf
 ```
-The file /home/wink/data/prgs/rust/vc-x1/src/sync.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/src/sync.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -853,7 +853,7 @@ id: toolu_01HJAso4LmDvRcg43Fv3JHkf
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/sync.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/sync.rs",
   "old_string": "    if parent == tip {\n        info!(\"{}: @ already on 'main'\", repo.display());\n        return Ok(());\n    }",
   "new_string": "    if parent == tip {\n        debug!(\"{}: @ already on 'main'\", repo.display());\n        return Ok(());\n    }"
 }
@@ -864,7 +864,7 @@ id: toolu_01HJAso4LmDvRcg43Fv3JHkf
 tool_result
 id: toolu_01HJAso4LmDvRcg43Fv3JHkf
 ```
-The file /home/wink/data/prgs/rust/vc-x1/src/sync.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/src/sync.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -874,7 +874,7 @@ id: toolu_01RpzEruG9tE6rtLqhbLytoi
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/sync.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/sync.rs",
   "old_string": "    if tip == parent {\n        info!(\"{}: @ already on '{bookmark}'\", repo.display());\n        return Ok(());\n    }",
   "new_string": "    if tip == parent {\n        debug!(\"{}: @ already on '{bookmark}'\", repo.display());\n        return Ok(());\n    }"
 }
@@ -885,7 +885,7 @@ id: toolu_01RpzEruG9tE6rtLqhbLytoi
 tool_result
 id: toolu_01RpzEruG9tE6rtLqhbLytoi
 ```
-The file /home/wink/data/prgs/rust/vc-x1/src/sync.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/src/sync.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -895,7 +895,7 @@ id: toolu_014pFdyD1tURpuQAprZg47YK
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/main.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/main.rs",
   "old_string": "        After a successful sync, `@` is repositioned onto the synced\\n\\\n        bookmark: the code repo `jj new`s a clean `@` (or rebases a\\n\\\n        dirty one with --rebase / a prompt), the `.claude` session\\n\\\n        repo always `jj new main`s.\\n\\n\\",
   "new_string": "        After a successful sync, `@` is repositioned onto the synced\\n\\\n        bookmark: the code repo `jj new`s a clean `@` (or rebases a\\n\\\n        dirty one with --rebase / a prompt), the `.claude` session\\n\\\n        repo `jj new main`s when main moved (no-op when `@-` is\\n\\\n        already the main tip).\\n\\n\\"
 }
@@ -906,7 +906,7 @@ id: toolu_014pFdyD1tURpuQAprZg47YK
 tool_result
 id: toolu_014pFdyD1tURpuQAprZg47YK
 ```
-The file /home/wink/data/prgs/rust/vc-x1/src/main.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/src/main.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -916,7 +916,7 @@ id: toolu_019WJAn8AuarVKqNx9NvhbtV
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/main.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/main.rs",
   "old_string": "          - all-up-to-date: one-line summary (`sync: N repos, all bookmarks up-to-date`)\\n  \\",
   "new_string": "          - all-up-to-date: one-line summary (`sync: N repos are up to date, nothing to sync`)\\n  \\"
 }
@@ -927,7 +927,7 @@ id: toolu_019WJAn8AuarVKqNx9NvhbtV
 tool_result
 id: toolu_019WJAn8AuarVKqNx9NvhbtV
 ```
-The file /home/wink/data/prgs/rust/vc-x1/src/main.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/src/main.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -948,7 +948,7 @@ id: toolu_01ShnEkWFdwi1rYbri22vF1o
 ```
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 2.79s
 0
-    Replaced package `vc-x1 v0.68.0-2 (/home/wink/data/prgs/rust/vc-x1)` with `vc-x1 v0.68.0-3 (/home/wink/data/prgs/rust/vc-x1)` (executable `vc-x1`)
+    Replaced package `vc-x1 v0.68.0-2 (/home/<USER>/data/prgs/rust/vc-x1)` with `vc-x1 v0.68.0-3 (/home/<USER>/data/prgs/rust/vc-x1)` (executable `vc-x1`)
 ```
 
 > TOOL
@@ -981,7 +981,7 @@ id: toolu_01DgbQeBHoEkNUMcHiwND2kW
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/notes/todo.md",
   "old_string": "     summary line; per-repo \"@ already on\" no-op lines demoted\n     to debug (current)",
   "new_string": "     summary line; per-repo \"@ already on\" no-op lines demoted\n     to debug (done)"
 }
@@ -992,7 +992,7 @@ id: toolu_01DgbQeBHoEkNUMcHiwND2kW
 tool_result
 id: toolu_01DgbQeBHoEkNUMcHiwND2kW
 ```
-The file /home/wink/data/prgs/rust/vc-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1027,7 +1027,7 @@ id: toolu_015AWAvUeY3F6pUBoCMsGHJz
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/sync.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/sync.rs",
   "old_string": "/// Fetch and classify each repo, then act (or not, in verify-only).",
   "new_string": "/// Clean-case summary tail (\"<N> repo(s) …\" prefixed at the emit\n/// site). Shared with main.rs's `long_about` so the documented\n/// output shape can't drift from the emitted one.\npub const UP_TO_DATE_MSG: &str = \"up to date, nothing to sync\";\n\n/// Fetch and classify each repo, then act (or not, in verify-only)."
 }
@@ -1038,7 +1038,7 @@ id: toolu_015AWAvUeY3F6pUBoCMsGHJz
 tool_result
 id: toolu_015AWAvUeY3F6pUBoCMsGHJz
 ```
-The file /home/wink/data/prgs/rust/vc-x1/src/sync.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/src/sync.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1048,7 +1048,7 @@ id: toolu_01UeuqT5WfMNq2XHFz6U4gYY
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/sync.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/sync.rs",
   "old_string": "        let noun = if n == 1 { \"repo is\" } else { \"repos are\" };\n        info!(\"sync: {n} {noun} up to date, nothing to sync\");",
   "new_string": "        let noun = if n == 1 { \"repo is\" } else { \"repos are\" };\n        info!(\"sync: {n} {noun} {UP_TO_DATE_MSG}\");"
 }
@@ -1059,7 +1059,7 @@ id: toolu_01UeuqT5WfMNq2XHFz6U4gYY
 tool_result
 id: toolu_01UeuqT5WfMNq2XHFz6U4gYY
 ```
-The file /home/wink/data/prgs/rust/vc-x1/src/sync.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/src/sync.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1069,7 +1069,7 @@ id: toolu_01MDAhr2wwrx6gUR1nibK6EV
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/main.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/main.rs",
   "old_string": "    #[command(long_about = \"Fetch and sync a set of repos to their remotes.\\n\\n\\",
   "new_string": "    #[command(long_about = format!(\"Fetch and sync a set of repos to their remotes.\\n\\n\\"
 }
@@ -1080,7 +1080,7 @@ id: toolu_01MDAhr2wwrx6gUR1nibK6EV
 tool_result
 id: toolu_01MDAhr2wwrx6gUR1nibK6EV
 ```
-The file /home/wink/data/prgs/rust/vc-x1/src/main.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/src/main.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1090,7 +1090,7 @@ id: toolu_012tVubj7XEBzBv1utdZd1JN
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/main.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/main.rs",
   "old_string": "          - all-up-to-date: one-line summary (`sync: N repos are up to date, nothing to sync`)\\n  \\\n          - action needed:  per-repo fetch + state + actions\\n  \\\n          - --quiet:        no output; exit code signals success\")]",
   "new_string": "          - all-up-to-date: one-line summary (`sync: N repos are {}`)\\n  \\\n          - action needed:  per-repo fetch + state + actions\\n  \\\n          - --quiet:        no output; exit code signals success\", sync::UP_TO_DATE_MSG))]"
 }
@@ -1101,7 +1101,7 @@ id: toolu_012tVubj7XEBzBv1utdZd1JN
 tool_result
 id: toolu_012tVubj7XEBzBv1utdZd1JN
 ```
-The file /home/wink/data/prgs/rust/vc-x1/src/main.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/src/main.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1122,7 +1122,7 @@ id: toolu_01CrfaUzzSqDvEpGM2BH9a1n
 ```
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.78s
 0
-    Replaced package `vc-x1 v0.68.0-3 (/home/wink/data/prgs/rust/vc-x1)` with `vc-x1 v0.68.0-3 (/home/wink/data/prgs/rust/vc-x1)` (executable `vc-x1`)
+    Replaced package `vc-x1 v0.68.0-3 (/home/<USER>/data/prgs/rust/vc-x1)` with `vc-x1 v0.68.0-3 (/home/<USER>/data/prgs/rust/vc-x1)` (executable `vc-x1`)
 ```
 
 > TOOL
@@ -1251,23 +1251,23 @@ push preflight: cargo fmt
 push preflight: cargo clippy --all-targets -- -D warnings
 push preflight: cargo test
 push review: pending changes:
-  app (/home/wink/data/prgs/rust/vc-x1):
+  app (/home/<USER>/data/prgs/rust/vc-x1):
     Cargo.lock    |  2 +-
     Cargo.toml    |  2 +-
     notes/todo.md |  5 ++++-
     src/main.rs   |  9 +++++----
     src/sync.rs   | 13 +++++++++----
     5 files changed, 20 insertions(+), 11 deletions(-)
-  .claude (/home/wink/data/prgs/rust/vc-x1/.claude):
+  .claude (/home/<USER>/data/prgs/rust/vc-x1/.claude):
     .claude/45d00227-4919-4dac-8d79-8486b16d8a8f.jsonl | 80 ++++++++++++++++++++++++
     1 file changed, 80 insertions(+), 0 deletions(-)
 push review: auto-approved (--yes)
 push message: title="feat: sync quiet clean-case output (0.68.0-3)", app_chid=vqnxvpoksqsl, claude_chid=ltknrzxvopyq, claude_had_changes=true
-push commit-app: jj commit -R /home/wink/data/prgs/rust/vc-x1
-push commit-claude: jj commit -R /home/wink/data/prgs/rust/vc-x1/.claude
-push bookmark-both: jj bookmark set main -r @- -R /home/wink/data/prgs/rust/vc-x1 / /home/wink/data/prgs/rust/vc-x1/.claude
-push push-app: jj git push --bookmark main -R /home/wink/data/prgs/rust/vc-x1
-push finalize-claude: vc-x1 finalize --repo /home/wink/data/prgs/rust/vc-x1/.claude --squash --push main --delay 10 --detach
+push commit-app: jj commit -R /home/<USER>/data/prgs/rust/vc-x1
+push commit-claude: jj commit -R /home/<USER>/data/prgs/rust/vc-x1/.claude
+push bookmark-both: jj bookmark set main -r @- -R /home/<USER>/data/prgs/rust/vc-x1 / /home/<USER>/data/prgs/rust/vc-x1/.claude
+push push-app: jj git push --bookmark main -R /home/<USER>/data/prgs/rust/vc-x1
+push finalize-claude: vc-x1 finalize --repo /home/<USER>/data/prgs/rust/vc-x1/.claude --squash --push main --delay 10 --detach
 push: completed all stages (verified, state cleared)
 ```
 
@@ -1280,10 +1280,10 @@ push: completed all stages (verified, state cleared)
 Ok, one more little tweak I'd like to add to this series, I tried to clone my simple repo and it works but gives a error:
 
 wink@3900x 26-07-09T00:34:46.679Z:~/zed-markdown-link-issue (main+1)
-$ vc-x1 clone git@github.com:winksaville/zed-markdown-link-issue zmli
-Cloning git@github.com:winksaville/zed-markdown-link-issue → /home/wink/zed-markdown-link-issue/zmli...
-Cloning git@github.com:winksaville/zed-markdown-link-issue.claude → /home/wink/zed-markdown-link-issue/zmli/.claude...
-error: jj git clone --colocate git@github.com:winksaville/zed-markdown-link-issue.claude /home/wink/zed-markdown-link-issue/zmli/.claude failed: Fetching into new repo in "/home/wink/zed-markdown-link-issue/zmli/.claude"
+$ vc-x1 clone <REDACTED_EMAIL>:winksaville/zed-markdown-link-issue zmli
+Cloning <REDACTED_EMAIL>:winksaville/zed-markdown-link-issue → /home/<USER>/zed-markdown-link-issue/zmli...
+Cloning <REDACTED_EMAIL>:winksaville/zed-markdown-link-issue.claude → /home/<USER>/zed-markdown-link-issue/zmli/.claude...
+error: jj git clone --colocate <REDACTED_EMAIL>:winksaville/zed-markdown-link-issue.claude /home/<USER>/zed-markdown-link-issue/zmli/.claude failed: Fetching into new repo in "/home/<USER>/zed-markdown-link-issue/zmli/.claude"
 git: ERROR: Repository not found.        
 Error: Git process failed: External git program failed:
 fatal: Could not read from remote repository.
@@ -1304,7 +1304,7 @@ tool_use Read
 id: toolu_01ETjyQSc9SSQnpyfuaEhc2X
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/clone.rs"
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/clone.rs"
 }
 ```
 
@@ -1376,8 +1376,8 @@ No existing probe — clone just attempts both and dies on the second. Here's my
 **Resulting behavior** for your case:
 
 ```
-Cloning git@github.com:winksaville/zed-markdown-link-issue → .../zmli...
-no companion session repo at git@github.com:winksaville/zed-markdown-link-issue.claude — cloning code repo only
+Cloning <REDACTED_EMAIL>:winksaville/zed-markdown-link-issue → .../zmli...
+no companion session repo at <REDACTED_EMAIL>:winksaville/zed-markdown-link-issue.claude — cloning code repo only
 
 Done! Cloned single repo to .../zmli
   Code repo: .../zmli
@@ -1392,11 +1392,11 @@ i.e. same result as `--por`, arrived at gracefully. `--por` stays as the explici
 Good enough for now --por worked great, I forgot we added that. so good enough as is for now:
 
 wink@3900x 26-07-09T00:41:37.556Z:~/zed-markdown-link-issue (main+1)
-$ vc-x1 clone git@github.com:winksaville/zed-markdown-link-issue --por zmli2
-Cloning git@github.com:winksaville/zed-markdown-link-issue → /home/wink/zed-markdown-link-issue/zmli2...
+$ vc-x1 clone <REDACTED_EMAIL>:winksaville/zed-markdown-link-issue --por zmli2
+Cloning <REDACTED_EMAIL>:winksaville/zed-markdown-link-issue → /home/<USER>/zed-markdown-link-issue/zmli2...
 
-Done! Project cloned to /home/wink/zed-markdown-link-issue/zmli2
-  Code repo: /home/wink/zed-markdown-link-issue/zmli2
+Done! Project cloned to /home/<USER>/zed-markdown-link-issue/zmli2
+  Code repo: /home/<USER>/zed-markdown-link-issue/zmli2
 wink@3900x 26-07-09T00:42:06.786Z:~/zed-markdown-link-issue (main+1)
 
 > AGENT
@@ -1479,7 +1479,7 @@ tool_use Read
 id: toolu_019jMsjZykGDw6aDNv3TYNbf
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/notes/todo-backlog.md",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/notes/todo-backlog.md",
   "offset": 270,
   "limit": 25
 }
@@ -1521,7 +1521,7 @@ id: toolu_017LushXrmeGiP3KxDMiL7Eq
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/notes/todo-backlog.md",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/notes/todo-backlog.md",
   "old_string": "    - Force-push bot `main` (rewrites the published commit;\n      chid preserved via `jj describe`).\n    - Push app `main`. The new bot commit paired with this\n      push receives `ochid: /<squashed-chid>` as normal — K\n      prior bot records plus the new one gives (K+1):1\n      bot→code (2:1 in the 0.59.0 case).",
   "new_string": "    - Force-push bot `main` (rewrites the published commit;\n      chid preserved via `jj describe`).\n    - Push app `main`. The new bot commit paired with this\n      push receives `ochid: /<squashed-chid>` as normal — K\n      prior bot records plus the new one gives (K+1):1\n      bot→code (2:1 in the 0.59.0 case).\n47. **`vc-x1 clone`: graceful single-repo fallback when no\n    companion `.claude` remote.** Default dual clone errors\n    mid-way when `<source>.claude` doesn't exist; `--por` is\n    the workaround (works, but you must know to pass it).\n    - After the code clone, probe the session URL with\n      `git ls-remote <url> HEAD`; on failure report \"no\n      companion session repo — cloning code repo only\"\n      (GitHub reports missing and no-access identically) and\n      skip the bot clone + symlink; done message says single\n      repo.\n    - A clone failure after a successful probe stays a real\n      error.\n    - Dry-run text notes steps […]
 
@@ -1530,7 +1530,7 @@ id: toolu_017LushXrmeGiP3KxDMiL7Eq
 tool_result
 id: toolu_017LushXrmeGiP3KxDMiL7Eq
 ```
-The file /home/wink/data/prgs/rust/vc-x1/notes/todo-backlog.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/notes/todo-backlog.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1544,7 +1544,7 @@ id: toolu_01VnWj7KeC5N5jB57y3DdEsa
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/notes/todo.md",
   "old_string": "   - 0.68.0-4 push: session repo pins `main` — preflight\n     tracking, bookmark stage (renamed/redoc'd from\n     `bookmark-both`), `finalize --push`, completion\n     sanity; `PushState.bookmark` stays code-side; tests",
   "new_string": "   - 0.68.0-4 push: session repo pins `main` — preflight\n     tracking, bookmark stage (renamed/redoc'd from\n     `bookmark-both`), `finalize --push`, completion\n     sanity; `PushState.bookmark` stays code-side; tests\n     (current)"
 }
@@ -1555,7 +1555,7 @@ id: toolu_01VnWj7KeC5N5jB57y3DdEsa
 tool_result
 id: toolu_01VnWj7KeC5N5jB57y3DdEsa
 ```
-The file /home/wink/data/prgs/rust/vc-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1583,7 +1583,7 @@ tool_use Read
 id: toolu_01T6gWyXfqmGWg8hSxKPNiKp
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/push/integration_tests.rs"
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/push/integration_tests.rs"
 }
 ```
 
@@ -1638,7 +1638,7 @@ id: toolu_0156oWLHsQPmGfqdWeLi3AYP
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/push.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/push.rs",
   "old_string": "/// Named stages of the `push` state machine.\n///\n/// Used by `--from <stage>` to resume at a specific point and by\n/// `--status` to report the current position. Ordered top-down so\n/// `Stage as u8` comparisons reflect progress through the flow.\n#[derive(Copy, Clone, Debug, PartialEq, Eq, ValueEnum)]\n#[value(rename_all = \"kebab-case\")]\npub enum Stage {\n    /// Run fmt / clippy / test / install / retest.\n    Preflight,\n    /// Present diff for the first approval gate.\n    Review,\n    /// Compose / edit the commit message; present for second gate.\n    Message,\n    /// Commit the app repo.\n    CommitApp,\n    /// Commit the `.claude` session repo (skipped if empty).\n    CommitClaude,\n    /// Advance both bookmarks to `@-`.\n    BookmarkBoth,\n    /// `jj git push --bookmark <b> -R .`.\n    PushApp,\n    /// `vc-x1 finalize --repo .claude --squash --push <b> ...`.\n    FinalizeClaude,\n}",
   "new_string": "/// Bookmark the session (`.claude`) repo always advances and\n/// pushes. The session repo is a linear journal on `main` by\n/// design — `<bookmark>` names a code-repo bookmark only.\nconst SESSION_BOOKMARK: &str = \"main\";\n\n/// Named stages of the `push` state machine.\n///\n/// Used by `--from <stage>` to resume at a specific point and by\n/// `--status` to report the current position. Ordered top-down so\n/// `Stage as u8` comparisons reflect […]
 
@@ -1647,7 +1647,7 @@ id: toolu_0156oWLHsQPmGfqdWeLi3AYP
 tool_result
 id: toolu_0156oWLHsQPmGfqdWeLi3AYP
 ```
-The file /home/wink/data/prgs/rust/vc-x1/src/push.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/src/push.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1657,7 +1657,7 @@ id: toolu_01AesHkNs8QXJgDZB9aaMVEj
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/push.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/push.rs",
   "old_string": "            Stage::BookmarkBoth => \"bookmark-both\",",
   "new_string": "            Stage::BookmarkSet => \"bookmark-set\","
 }
@@ -1668,7 +1668,7 @@ id: toolu_01AesHkNs8QXJgDZB9aaMVEj
 tool_result
 id: toolu_01AesHkNs8QXJgDZB9aaMVEj
 ```
-The file /home/wink/data/prgs/rust/vc-x1/src/push.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/src/push.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1678,7 +1678,7 @@ id: toolu_01JBLyTHCLufDz7apsCg99F2
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/push.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/push.rs",
   "old_string": "    /// Parse a kebab-case stage name back into a `Stage`.\n    ///\n    /// Unknown names return `None`; callers should surface a helpful\n    /// error rather than silently substituting a default.\n    pub fn from_str(name: &str) -> Option<Self> {\n        match name {\n            \"preflight\" => Some(Stage::Preflight),\n            \"review\" => Some(Stage::Review),\n            \"message\" => Some(Stage::Message),\n            \"commit-app\" => Some(Stage::CommitApp),\n            \"commit-claude\" => Some(Stage::CommitClaude),\n            \"bookmark-both\" => Some(Stage::BookmarkBoth),\n            \"push-app\" => Some(Stage::PushApp),\n            \"finalize-claude\" => Some(Stage::FinalizeClaude),\n            _ => None,\n        }\n    }",
   "new_string": "    /// Parse a kebab-case stage name back into a `Stage`.\n    ///\n    /// Unknown names return `None`; callers should surface a helpful\n    /// error rather than silently substituting a default.\n    /// `bookmark-both` is accepted as a legacy alias for\n    /// `bookmark-set` (pre-0.68.0 state files).\n    pub fn from_str(name: &str) -> Option<Self> {\n        match name {\n            \"preflight\" => Some(Stage::Preflight),\n            \"review\" => Some(Stage::Review),\n            \"message\" => Some(Stage::Message),\n            \"commit-app\" => Some(Stage::CommitApp),\n            \"commit-claude\" => Some(Stage::CommitClaude),\n            \"bookmark-set\" | \"bookmark-both\" => Some(Stage::BookmarkSet),\n            \"push-app\" => Some(Stage::PushApp),\n            \"finalize-claude\" => Some(Stage::FinalizeClaude),\n            _ => None,\n        }\n    }"
 }
@@ -1689,7 +1689,7 @@ id: toolu_01JBLyTHCLufDz7apsCg99F2
 tool_result
 id: toolu_01JBLyTHCLufDz7apsCg99F2
 ```
-The file /home/wink/data/prgs/rust/vc-x1/src/push.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/src/push.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1699,7 +1699,7 @@ id: toolu_01QerhqVvokUExCCwePGc4LD
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/push.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/push.rs",
   "old_string": "            Stage::CommitApp => Some(Stage::CommitClaude),\n            Stage::CommitClaude => Some(Stage::BookmarkBoth),\n            Stage::BookmarkBoth => Some(Stage::PushApp),",
   "new_string": "            Stage::CommitApp => Some(Stage::CommitClaude),\n            Stage::CommitClaude => Some(Stage::BookmarkSet),\n            Stage::BookmarkSet => Some(Stage::PushApp),"
 }
@@ -1710,7 +1710,7 @@ id: toolu_01QerhqVvokUExCCwePGc4LD
 tool_result
 id: toolu_01QerhqVvokUExCCwePGc4LD
 ```
-The file /home/wink/data/prgs/rust/vc-x1/src/push.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/src/push.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1720,7 +1720,7 @@ id: toolu_01CePyXLPMQsY3FsSH2JFAkR
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/push.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/push.rs",
   "old_string": "    /// Bookmark to advance in both repos (positional form of `--bookmark`).\n    ///\n    /// Accepting a positional lets the common case read as `vc-x1 push main`\n    /// without the `--bookmark` ceremony; `--bookmark` is kept as an\n    /// alias for scripts and for composition with other args. The two\n    /// forms conflict if both supplied.\n    #[arg(value_name = \"BOOKMARK\", conflicts_with = \"bookmark\")]\n    pub bookmark_pos: Option<String>,\n\n    /// Bookmark to advance in both repos (flag form; see positional).\n    #[arg(long, conflicts_with = \"bookmark_pos\")]\n    pub bookmark: Option<String>,",
   "new_string": "    /// Bookmark to advance in the code repo (positional form of\n    /// `--bookmark`). The session repo always advances `main`.\n    ///\n    /// Accepting a positional lets the common case read as `vc-x1 push main`\n    /// without the `--bookmark` ceremony; `--bookmark` is kept as an\n    /// alias for scripts and for composition with other args. The two\n    /// forms conflict if both supplied.\n    #[arg(value_name = \"BOOKMARK\", conflicts_with = \"bookmark\")]\n    pub bookmark_pos: Option<String>,\n\n    /// Bookmark to advance in the code repo (flag form; see positional).\n    #[arg(long, conflicts_with = \"bookmark_pos\")]\n    pub bookmark: Option<String>,"
 }
@@ -1731,7 +1731,7 @@ id: toolu_01CePyXLPMQsY3FsSH2JFAkR
 tool_result
 id: toolu_01CePyXLPMQsY3FsSH2JFAkR
 ```
-The file /home/wink/data/prgs/rust/vc-x1/src/push.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/src/push.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1741,7 +1741,7 @@ id: toolu_01NJ6WnsGin2HZCxFsZ7wZUo
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/push.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/push.rs",
   "old_string": "    /// The next stage to execute on resume.\n    pub stage: Stage,\n    /// Bookmark being advanced by this run (persisted so resume\n    /// doesn't need `--bookmark` again).\n    pub bookmark: String,",
   "new_string": "    /// The next stage to execute on resume.\n    pub stage: Stage,\n    /// Code-repo bookmark being advanced by this run (persisted so\n    /// resume doesn't need `--bookmark` again). The session repo's\n    /// side is pinned to `SESSION_BOOKMARK`, not stored here.\n    pub bookmark: String,"
 }
@@ -1752,7 +1752,7 @@ id: toolu_01NJ6WnsGin2HZCxFsZ7wZUo
 tool_result
 id: toolu_01NJ6WnsGin2HZCxFsZ7wZUo
 ```
-The file /home/wink/data/prgs/rust/vc-x1/src/push.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/src/push.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1766,7 +1766,7 @@ id: toolu_01LUyYs1Gedv9ZkfXZbT2dQE
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/push.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/push.rs",
   "old_string": "    info!(\"push preflight: verify bookmark tracking\");\n    crate::common::verify_tracking(root, &state.bookmark)?;\n    crate::common::verify_tracking(&claude_path(root), &state.bookmark)?;",
   "new_string": "    info!(\"push preflight: verify bookmark tracking\");\n    crate::common::verify_tracking(root, &state.bookmark)?;\n    crate::common::verify_tracking(&claude_path(root), SESSION_BOOKMARK)?;"
 }
@@ -1777,7 +1777,7 @@ id: toolu_01LUyYs1Gedv9ZkfXZbT2dQE
 tool_result
 id: toolu_01LUyYs1Gedv9ZkfXZbT2dQE
 ```
-The file /home/wink/data/prgs/rust/vc-x1/src/push.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/src/push.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1787,7 +1787,7 @@ id: toolu_017DLJRHy97pXBBjJs3Wouee
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/push.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/push.rs",
   "old_string": "/// Advance the bookmark to `@-` in both repos.\nfn stage_bookmark_both(\n    root: &Path,\n    state: &PushState,\n    params: &PushParams,\n) -> Result<(), Box<dyn std::error::Error>> {\n    let bk = &state.bookmark;\n    let app_arg = root.to_string_lossy();\n    let claude = claude_path(root);\n    let claude_arg = claude.to_string_lossy();\n    if params.dry_run {\n        info!(\n            \"push bookmark-both: [dry-run] would run jj bookmark set {bk} -r @- -R {app_arg} / {claude_arg}\"\n        );\n        return Ok(());\n    }\n    info!(\"push bookmark-both: jj bookmark set {bk} -r @- -R {app_arg} / {claude_arg}\");\n    run(\n        \"jj\",\n        &[\"bookmark\", \"set\", bk, \"-r\", \"@-\", \"-R\", &app_arg],\n        root,\n    )?;\n    run(\n        \"jj\",\n        &[\"bookmark\", \"set\", bk, \"-r\", \"@-\", \"-R\", &claude_arg],\n        root,\n    )?;\n    Ok(())\n}",
   "new_string": "/// Advance each repo's bookmark to its `@-`: the app repo advances\n/// `state.bookmark`, the session repo always advances\n/// `SESSION_BOOKMARK` (`main`) — a feature bookmark must never be\n/// created in the linear-journal session repo.\nfn stage_bookmark_set(\n    root: &Path,\n    state: &PushState,\n    params: &PushParams,\n) -> Result<(), Box<dyn std::error::Error>> {\n    let bk = &state.bookmark;\n    let app_arg = root.to_string_lossy();\n    let claude = claude_path(root);\n    let claude_arg = claude.to_string_lossy();\n    if params.dry_run {\n        info!(\n            \"push bookmark-set: [dry-run] would run jj bookmark set {bk} -r @- -R {app_arg} / {SESSION_BOOKMARK} -r @- -R {claude_arg}\"\n        );\n        return Ok(());\n    }\n    info!(\n        \"push bookmark-set: jj bookmark […]
 
@@ -1796,7 +1796,7 @@ id: toolu_017DLJRHy97pXBBjJs3Wouee
 tool_result
 id: toolu_017DLJRHy97pXBBjJs3Wouee
 ```
-The file /home/wink/data/prgs/rust/vc-x1/src/push.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/src/push.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1806,7 +1806,7 @@ id: toolu_01Y7488xAt41K4GQgSTZRu5s
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/push.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/push.rs",
   "old_string": "        Stage::CommitClaude => stage_commit_claude(root, state, params),\n        Stage::BookmarkBoth => stage_bookmark_both(root, state, params),",
   "new_string": "        Stage::CommitClaude => stage_commit_claude(root, state, params),\n        Stage::BookmarkSet => stage_bookmark_set(root, state, params),"
 }
@@ -1817,7 +1817,7 @@ id: toolu_01Y7488xAt41K4GQgSTZRu5s
 tool_result
 id: toolu_01Y7488xAt41K4GQgSTZRu5s
 ```
-The file /home/wink/data/prgs/rust/vc-x1/src/push.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/src/push.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1827,7 +1827,7 @@ id: toolu_01MiDjjZTBPPnPZdVaCoCN1E
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/push.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/push.rs",
   "old_string": "    if params.no_finalize {\n        info!(\"push finalize-claude: skip (--no-finalize)\");\n        return Ok(());\n    }\n    let bk = &state.bookmark;\n    let claude = claude_path(root);",
   "new_string": "    if params.no_finalize {\n        info!(\"push finalize-claude: skip (--no-finalize)\");\n        return Ok(());\n    }\n    let bk = SESSION_BOOKMARK;\n    let claude = claude_path(root);"
 }
@@ -1838,7 +1838,7 @@ id: toolu_01MiDjjZTBPPnPZdVaCoCN1E
 tool_result
 id: toolu_01MiDjjZTBPPnPZdVaCoCN1E
 ```
-The file /home/wink/data/prgs/rust/vc-x1/src/push.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/src/push.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1848,7 +1848,7 @@ id: toolu_01NBJLsE8yfRJEc8QbVfzd78
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/push.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/push.rs",
   "old_string": "/// Finalize `.claude` via an out-of-process `vc-x1 finalize` call.\n/// Shells out rather than calling `finalize::finalize` in-process\n/// so `--detach` can fork a child that outlives push's own\n/// lifetime. `--no-finalize` turns this stage into a no-op (which\n/// is how integration tests avoid spawning a detached process).\nfn stage_finalize_claude(\n    root: &Path,\n    state: &PushState,\n    params: &PushParams,\n) -> Result<(), Box<dyn std::error::Error>> {",
   "new_string": "/// Finalize `.claude` via an out-of-process `vc-x1 finalize` call,\n/// always pushing `SESSION_BOOKMARK` (`main`) — the session repo's\n/// bookmark is pinned, so `state.bookmark` plays no part here.\n/// Shells out rather than calling `finalize::finalize` in-process\n/// so `--detach` can fork a child that outlives push's own\n/// lifetime. `--no-finalize` turns this stage into a no-op (which\n/// is how integration tests avoid spawning a detached process).\nfn stage_finalize_claude(\n    root: &Path,\n    _state: &PushState,\n    params: &PushParams,\n) -> Result<(), Box<dyn std::error::Error>> {"
 }
@@ -1859,7 +1859,7 @@ id: toolu_01NBJLsE8yfRJEc8QbVfzd78
 tool_result
 id: toolu_01NBJLsE8yfRJEc8QbVfzd78
 ```
-The file /home/wink/data/prgs/rust/vc-x1/src/push.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/src/push.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1869,7 +1869,7 @@ id: toolu_01S8NKJh68kPCawgKTVkyfrR
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/push.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/push.rs",
   "old_string": "    // 3. .claude bookmark at state.claude_chid.\n    if let Some(claude_chid) = &state.claude_chid {\n        let claude = claude_path(root);\n        let claude_str = claude.to_string_lossy();\n        let actual = run(\n            \"jj\",\n            &[\n                \"log\",\n                \"-r\",\n                bookmark,",
   "new_string": "    // 3. .claude's pinned bookmark (main) at state.claude_chid.\n    if let Some(claude_chid) = &state.claude_chid {\n        let claude = claude_path(root);\n        let claude_str = claude.to_string_lossy();\n        let actual = run(\n            \"jj\",\n            &[\n                \"log\",\n                \"-r\",\n                SESSION_BOOKMARK,"
 }
@@ -1880,7 +1880,7 @@ id: toolu_01S8NKJh68kPCawgKTVkyfrR
 tool_result
 id: toolu_01S8NKJh68kPCawgKTVkyfrR
 ```
-The file /home/wink/data/prgs/rust/vc-x1/src/push.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/src/push.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1890,7 +1890,7 @@ id: toolu_01PpKbwdwccbQVMneXpV5dLk
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/push.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/push.rs",
   "old_string": "        let actual = actual.trim();\n        if actual != claude_chid.as_str() {\n            return Err(format!(\n                \"completion sanity: .claude bookmark '{bookmark}' is at chid '{actual}' but \\\n                 state.claude_chid is '{claude_chid}'.\"\n            )\n            .into());\n        }\n    }",
   "new_string": "        let actual = actual.trim();\n        if actual != claude_chid.as_str() {\n            return Err(format!(\n                \"completion sanity: .claude bookmark '{SESSION_BOOKMARK}' is at chid \\\n                 '{actual}' but state.claude_chid is '{claude_chid}'.\"\n            )\n            .into());\n        }\n    }"
 }
@@ -1901,7 +1901,7 @@ id: toolu_01PpKbwdwccbQVMneXpV5dLk
 tool_result
 id: toolu_01PpKbwdwccbQVMneXpV5dLk
 ```
-The file /home/wink/data/prgs/rust/vc-x1/src/push.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/src/push.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1970,7 +1970,7 @@ tool_use Read
 id: toolu_019yZNRvzDMttzKaLTJp2b9i
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/main.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/main.rs",
   "offset": 223,
   "limit": 40
 }
@@ -2015,7 +2015,7 @@ id: toolu_01UYeCHzhKG8xtVcYFCeR9nx
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/main.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/main.rs",
   "old_string": "        Stages: preflight (fmt/clippy/test) → review (approve diff)\\n\\\n        → message ($EDITOR / --title+--body, approve text) →\\n\\\n        commit-app → commit-claude (skipped if clean) → bookmark-both\\n\\\n        → push-app → finalize-claude. Failures in commit-app /\\n\\\n        commit-claude / bookmark-both roll both repos back via\\n\\\n        `jj op restore` to the snapshot recorded before commit-app.\\n\\",
   "new_string": "        Stages: preflight (fmt/clippy/test) → review (approve diff)\\n\\\n        → message ($EDITOR / --title+--body, approve text) →\\n\\\n        commit-app → commit-claude (skipped if clean) → bookmark-set\\n\\\n        (app → <bookmark>, session → main) → push-app →\\n\\\n        finalize-claude. Failures in commit-app / commit-claude /\\n\\\n        bookmark-set roll both repos back via\\n\\\n        `jj op restore` to the snapshot recorded before commit-app.\\n\\"
 }
@@ -2026,7 +2026,7 @@ id: toolu_01UYeCHzhKG8xtVcYFCeR9nx
 tool_result
 id: toolu_01UYeCHzhKG8xtVcYFCeR9nx
 ```
-The file /home/wink/data/prgs/rust/vc-x1/src/main.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/src/main.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2035,7 +2035,7 @@ tool_use Read
 id: toolu_01VjweKtuk15p8emNQF3h2kd
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/push/tests.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/push/tests.rs",
   "offset": 55,
   "limit": 120
 }
@@ -2115,7 +2115,7 @@ id: toolu_01Y9UtTwVNMdrchngs5JSjsd
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/push/tests.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/push/tests.rs",
   "old_string": "        (\"commit-claude\", Stage::CommitClaude),\n        (\"bookmark-both\", Stage::BookmarkSet),\n        (\"push-app\", Stage::PushApp),\n        (\"finalize-claude\", Stage::FinalizeClaude),\n    ] {\n        let cli = Cli::try_parse_from([\"test\", \"--from\", name]).unwrap();\n        assert_eq!(cli.args.from, Some(expected), \"stage {name}\");\n    }\n}",
   "new_string": "        (\"commit-claude\", Stage::CommitClaude),\n        (\"bookmark-set\", Stage::BookmarkSet),\n        (\"bookmark-both\", Stage::BookmarkSet), // legacy alias\n        (\"push-app\", Stage::PushApp),\n        (\"finalize-claude\", Stage::FinalizeClaude),\n    ] {\n        let cli = Cli::try_parse_from([\"test\", \"--from\", name]).unwrap();\n        assert_eq!(cli.args.from, Some(expected), \"stage {name}\");\n    }\n}\n\n/// `from_str` accepts the legacy `bookmark-both` spelling\n/// (pre-0.68.0 state files) and maps it to `BookmarkSet`.\n#[test]\nfn stage_from_str_legacy_bookmark_both() {\n    assert_eq!(Stage::from_str(\"bookmark-both\"), Some(Stage::BookmarkSet));\n}"
 }
@@ -2126,7 +2126,7 @@ id: toolu_01Y9UtTwVNMdrchngs5JSjsd
 tool_result
 id: toolu_01Y9UtTwVNMdrchngs5JSjsd
 ```
-The file /home/wink/data/prgs/rust/vc-x1/src/push/tests.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/src/push/tests.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2157,7 +2157,7 @@ id: toolu_01TYMv5uzZo77viWVVh7KDpJ
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/push/integration_tests.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/push/integration_tests.rs",
   "old_string": "/// `rollback_on_failure` rewinds both repos to their recorded",
   "new_string": "/// A feature-bookmark push pins the session repo to `main`: the\n/// app repo grows + pushes `feature`, while `.claude` advances and\n/// keeps only `main` — no `feature` bookmark may appear there.\n#[test]\nfn push_feature_bookmark_pins_session_to_main() {\n    let fx = Fixture::new(\"push-feature-pin\");\n    fs::write(fx.work.join(\"app.txt\"), \"app\").expect(\"write app file\");\n    fs::write(fx.claude.join(\"session.jsonl\"), \"{\\\"line\\\":1}\\n\").expect(\"write session file\");\n\n    let claude_main_before = cid(&fx.claude, \"main\");\n\n    let mut params = test_params(\"feat: on feature\", \"feature body\");\n    params.bookmark = Some(\"feature\".to_string());\n    push_in(&fx.work, &params).expect(\"push should succeed\");\n\n    // App repo: feature created, pushed, and at the new commit.\n    assert_eq!(desc_first_line(&fx.work, \"feature\"), \"feat: on feature\");\n    assert_eq!(\n        cid(&fx.work, \"feature\"),\n        cid(&fx.work, \"feature@origin\"),\n        \"app feature bookmark should be pushed\"\n    );\n\n    // Session repo: main advanced with the paired commit...\n    assert_ne!(\n        cid(&fx.claude, \"main\"),\n        claude_main_before,\n        \".claude main should have advanced\"\n    );\n    assert_eq!(desc_first_line(&fx.claude, \"main\"), \"feat: on feature\");\n    // ...and no feature bookmark exists there.\n    let claude_bookmarks = jj(&fx.claude, &[\"bookmark\", \"list\"]);\n    assert!(\n        !claude_bookmarks.contains(\"feature\"),\n        \".claude must not grow a 'feature' bookmark:\\n{claude_bookmarks}\"\n    );\n}\n\n/// `rollback_on_failure` rewinds both repos to their recorded"
 }
@@ -2196,7 +2196,7 @@ tool_use Read
 id: toolu_01Uusid26sauAGsjqM1ARHUf
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/push/integration_tests.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/push/integration_tests.rs",
   "offset": 140,
   "limit": 25
 }
@@ -2241,7 +2241,7 @@ id: toolu_01FcU2e6itvQQ2qP8iBdE81t
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/push/integration_tests.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/push/integration_tests.rs",
   "old_string": "    // `.claude` main moved off its initial commit.\n    assert_ne!(\n        cid(&fx.claude, \"main\"),\n        claude_main_before,\n        \".claude main should have advanced\"\n    );\n}\n\n/// `rollback_on_failure` rewinds both repos to their recorded",
   "new_string": "    // `.claude` main moved off its initial commit.\n    assert_ne!(\n        cid(&fx.claude, \"main\"),\n        claude_main_before,\n        \".claude main should have advanced\"\n    );\n}\n\n/// A feature-bookmark push pins the session repo to `main`: the\n/// app repo grows + pushes `feature`, while `.claude` advances and\n/// keeps only `main` — no `feature` bookmark may appear there.\n#[test]\nfn push_feature_bookmark_pins_session_to_main() {\n    let fx = Fixture::new(\"push-feature-pin\");\n    fs::write(fx.work.join(\"app.txt\"), \"app\").expect(\"write app file\");\n    fs::write(fx.claude.join(\"session.jsonl\"), \"{\\\"line\\\":1}\\n\").expect(\"write session file\");\n\n    let claude_main_before = cid(&fx.claude, \"main\");\n\n    let mut params = test_params(\"feat: on feature\", \"feature body\");\n    params.bookmark = Some(\"feature\".to_string());\n    push_in(&fx.work, &params).expect(\"push should succeed\");\n\n    // App repo: feature created, pushed, and at the new commit.\n    assert_eq!(desc_first_line(&fx.work, \"feature\"), \"feat: on feature\");\n    assert_eq!(\n        cid(&fx.work, \"feature\"),\n        cid(&fx.work, \"feature@origin\"),\n        \"app feature bookmark should be pushed\"\n    );\n\n    // Session repo: main advanced with the paired commit...\n    assert_ne!(\n        cid(&fx.claude, \"main\"),\n        claude_main_before,\n        \".claude main should have advanced\"\n    );\n    assert_eq!(desc_first_line(&fx.claude, \"main\"), \"feat: on feature\");\n    // ...and no feature bookmark exists there.\n    let claude_bookmarks = jj(&fx.claude, &[\"bookmark\", \"list\"]);\n    assert!(\n        !claude_bookmarks.contains(\"feature\"),\n        \".claude must not grow a 'feature' bookmark:\\n{claude_bookmarks}\"\n    );\n}\n\n/// `rollback_on_failure` rewinds both […]
 
@@ -2250,7 +2250,7 @@ id: toolu_01FcU2e6itvQQ2qP8iBdE81t
 tool_result
 id: toolu_01FcU2e6itvQQ2qP8iBdE81t
 ```
-The file /home/wink/data/prgs/rust/vc-x1/src/push/integration_tests.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/src/push/integration_tests.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2340,7 +2340,7 @@ id: toolu_01QXLz9HAZxQWR3yigdjCDKf
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/push/integration_tests.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/push/integration_tests.rs",
   "old_string": "    // ...and no feature bookmark exists there.\n    let claude_bookmarks = jj(&fx.claude, &[\"bookmark\", \"list\"]);\n    assert!(\n        !claude_bookmarks.contains(\"feature\"),\n        \".claude must not grow a 'feature' bookmark:\\n{claude_bookmarks}\"\n    );",
   "new_string": "    // ...and no feature bookmark exists there (bookmark-list lines\n    // are `name: ...`; match on the name position, not the whole\n    // line — commit titles may legitimately contain \"feature\").\n    let claude_bookmarks = jj(&fx.claude, &[\"bookmark\", \"list\"]);\n    assert!(\n        !claude_bookmarks\n            .lines()\n            .any(|l| l.starts_with(\"feature:\")),\n        \".claude must not grow a 'feature' bookmark:\\n{claude_bookmarks}\"\n    );"
 }
@@ -2351,7 +2351,7 @@ id: toolu_01QXLz9HAZxQWR3yigdjCDKf
 tool_result
 id: toolu_01QXLz9HAZxQWR3yigdjCDKf
 ```
-The file /home/wink/data/prgs/rust/vc-x1/src/push/integration_tests.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/src/push/integration_tests.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2388,7 +2388,7 @@ id: toolu_01BzSjnTurVMueSR4fLZMC13
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/notes/cycle-protocol.md",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/notes/cycle-protocol.md",
   "old_string": "  for the merge rebase, resume via `--from bookmark-both`.",
   "new_string": "  for the merge rebase, resume via `--from bookmark-set`."
 }
@@ -2399,7 +2399,7 @@ id: toolu_01BzSjnTurVMueSR4fLZMC13
 tool_result
 id: toolu_01BzSjnTurVMueSR4fLZMC13
 ```
-The file /home/wink/data/prgs/rust/vc-x1/notes/cycle-protocol.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/notes/cycle-protocol.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2409,7 +2409,7 @@ id: toolu_013NN5B48CMakK4M1zci4EPs
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/notes/todo.md",
   "old_string": "   Push has no supported stop after `commit-claude`, so today\n   the recipe pre-commits both sides manually and resumes via\n   `--from bookmark-both --yes` — skipping exactly the stages\n   that inject `ochid:` trailers.\n   - Add a stop after the commit stages (`--to commit-claude`\n     or `--no-publish`; name open); the existing `--from\n     bookmark-both` is already the resume half.",
   "new_string": "   Push has no supported stop after `commit-claude`, so today\n   the recipe pre-commits both sides manually and resumes via\n   `--from bookmark-set --yes` — skipping exactly the stages\n   that inject `ochid:` trailers.\n   - Add a stop after the commit stages (`--to commit-claude`\n     or `--no-publish`; name open); the existing `--from\n     bookmark-set` is already the resume half."
 }
@@ -2420,7 +2420,7 @@ id: toolu_013NN5B48CMakK4M1zci4EPs
 tool_result
 id: toolu_013NN5B48CMakK4M1zci4EPs
 ```
-The file /home/wink/data/prgs/rust/vc-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2430,7 +2430,7 @@ id: toolu_01WBuq6uMyeCecPs5fXcC8dU
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/notes/todo.md",
   "old_string": "     sanity; `PushState.bookmark` stays code-side; tests\n     (current)",
   "new_string": "     sanity; `PushState.bookmark` stays code-side; tests\n     (done)"
 }
@@ -2441,7 +2441,7 @@ id: toolu_01WBuq6uMyeCecPs5fXcC8dU
 tool_result
 id: toolu_01WBuq6uMyeCecPs5fXcC8dU
 ```
-The file /home/wink/data/prgs/rust/vc-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2481,7 +2481,7 @@ tool_result
 id: toolu_01QsZwqHpTMRRn9GX4qM9rDZ
 ```
 0
-    Replaced package `vc-x1 v0.68.0-3 (/home/wink/data/prgs/rust/vc-x1)` with `vc-x1 v0.68.0-4 (/home/wink/data/prgs/rust/vc-x1)` (executable `vc-x1`)
+    Replaced package `vc-x1 v0.68.0-3 (/home/<USER>/data/prgs/rust/vc-x1)` with `vc-x1 v0.68.0-4 (/home/<USER>/data/prgs/rust/vc-x1)` (executable `vc-x1`)
 ```
 
 > TOOL
@@ -2502,11 +2502,11 @@ id: toolu_01AR4hwHEpWLDgTjTck3gU4n
 ```
 push review: [dry-run] auto-approved
 push message: title="t", app_chid=vmssmslkutqs, claude_chid=vnmnswssqpun, claude_had_changes=true
-push commit-app: [dry-run] would run jj commit -R /home/wink/data/prgs/rust/vc-x1 -m "t" -m <body+ochid>
-push commit-claude: [dry-run] would run jj commit -R /home/wink/data/prgs/rust/vc-x1/.claude -m "t" -m <body+ochid>
-push bookmark-set: [dry-run] would run jj bookmark set main -r @- -R /home/wink/data/prgs/rust/vc-x1 / main -r @- -R /home/wink/data/prgs/rust/vc-x1/.claude
-push push-app: [dry-run] would run jj git push --bookmark main -R /home/wink/data/prgs/rust/vc-x1
-push finalize-claude: [dry-run] would run vc-x1 finalize --repo /home/wink/data/prgs/rust/vc-x1/.claude --squash --push main --delay 10 --detach
+push commit-app: [dry-run] would run jj commit -R /home/<USER>/data/prgs/rust/vc-x1 -m "t" -m <body+ochid>
+push commit-claude: [dry-run] would run jj commit -R /home/<USER>/data/prgs/rust/vc-x1/.claude -m "t" -m <body+ochid>
+push bookmark-set: [dry-run] would run jj bookmark set main -r @- -R /home/<USER>/data/prgs/rust/vc-x1 / main -r @- -R /home/<USER>/data/prgs/rust/vc-x1/.claude
+push push-app: [dry-run] would run jj git push --bookmark main -R /home/<USER>/data/prgs/rust/vc-x1
+push finalize-claude: [dry-run] would run vc-x1 finalize --repo /home/<USER>/data/prgs/rust/vc-x1/.claude --squash --push main --delay 10 --detach
 push: DRY-RUN complete — no changes written
 ```
 
@@ -2571,7 +2571,7 @@ id: toolu_019GuwckLiEAAx1vrYD7tn1R
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/push.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/push.rs",
   "old_string": "    /// Advance each repo's bookmark to its `@-`: app → `<bookmark>`,\n    /// session → `main`. Renamed from `bookmark-both` (0.68.0) when\n    /// the two repos stopped advancing the same name; the old name\n    /// is kept as a parse alias.\n    #[value(alias = \"bookmark-both\")]\n    BookmarkSet,",
   "new_string": "    /// Advance each repo's bookmark to its `@-`: app → `<bookmark>`,\n    /// session → `main`.\n    BookmarkSet,"
 }
@@ -2582,7 +2582,7 @@ id: toolu_019GuwckLiEAAx1vrYD7tn1R
 tool_result
 id: toolu_019GuwckLiEAAx1vrYD7tn1R
 ```
-The file /home/wink/data/prgs/rust/vc-x1/src/push.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/src/push.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2592,7 +2592,7 @@ id: toolu_019YKg2oNJmUtUG2BH7zNYKf
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/push.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/push.rs",
   "old_string": "    /// Unknown names return `None`; callers should surface a helpful\n    /// error rather than silently substituting a default.\n    /// `bookmark-both` is accepted as a legacy alias for\n    /// `bookmark-set` (pre-0.68.0 state files).\n    pub fn from_str(name: &str) -> Option<Self> {",
   "new_string": "    /// Unknown names return `None`; callers should surface a helpful\n    /// error rather than silently substituting a default.\n    pub fn from_str(name: &str) -> Option<Self> {"
 }
@@ -2603,7 +2603,7 @@ id: toolu_019YKg2oNJmUtUG2BH7zNYKf
 tool_result
 id: toolu_019YKg2oNJmUtUG2BH7zNYKf
 ```
-The file /home/wink/data/prgs/rust/vc-x1/src/push.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/src/push.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2613,7 +2613,7 @@ id: toolu_01Wby24Ni8gGqPgGVHb8ktyr
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/push.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/push.rs",
   "old_string": "            \"bookmark-set\" | \"bookmark-both\" => Some(Stage::BookmarkSet),",
   "new_string": "            \"bookmark-set\" => Some(Stage::BookmarkSet),"
 }
@@ -2624,7 +2624,7 @@ id: toolu_01Wby24Ni8gGqPgGVHb8ktyr
 tool_result
 id: toolu_01Wby24Ni8gGqPgGVHb8ktyr
 ```
-The file /home/wink/data/prgs/rust/vc-x1/src/push.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/src/push.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2634,7 +2634,7 @@ id: toolu_01AzydkQiVm6EDHyTyrQV8rp
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/src/push/tests.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/src/push/tests.rs",
   "old_string": "        (\"bookmark-set\", Stage::BookmarkSet),\n        (\"bookmark-both\", Stage::BookmarkSet), // legacy alias\n        (\"push-app\", Stage::PushApp),\n        (\"finalize-claude\", Stage::FinalizeClaude),\n    ] {\n        let cli = Cli::try_parse_from([\"test\", \"--from\", name]).unwrap();\n        assert_eq!(cli.args.from, Some(expected), \"stage {name}\");\n    }\n}\n\n/// `from_str` accepts the legacy `bookmark-both` spelling\n/// (pre-0.68.0 state files) and maps it to `BookmarkSet`.\n#[test]\nfn stage_from_str_legacy_bookmark_both() {\n    assert_eq!(Stage::from_str(\"bookmark-both\"), Some(Stage::BookmarkSet));\n}",
   "new_string": "        (\"bookmark-set\", Stage::BookmarkSet),\n        (\"push-app\", Stage::PushApp),\n        (\"finalize-claude\", Stage::FinalizeClaude),\n    ] {\n        let cli = Cli::try_parse_from([\"test\", \"--from\", name]).unwrap();\n        assert_eq!(cli.args.from, Some(expected), \"stage {name}\");\n    }\n}"
 }
@@ -2645,7 +2645,7 @@ id: toolu_01AzydkQiVm6EDHyTyrQV8rp
 tool_result
 id: toolu_01AzydkQiVm6EDHyTyrQV8rp
 ```
-The file /home/wink/data/prgs/rust/vc-x1/src/push/tests.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/src/push/tests.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2713,7 +2713,7 @@ tool_use Read
 id: toolu_01DZFyTQnur2PgZUVSS9USex
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/README.md",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/README.md",
   "offset": 620,
   "limit": 30
 }
@@ -2752,7 +2752,7 @@ id: toolu_01ETXyNv1aY1XntqhK1W5TgN
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/README.md",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/README.md",
   "old_string": "| `bookmark-both` | `jj bookmark set <bookmark> -r @- -R .` and `-R .claude` |\n| `push-app` | `jj git push --bookmark <bookmark> -R .` |\n| `finalize-claude` | `vc-x1 finalize --repo .claude --squash --push <bookmark> --delay 10 --detach` |\n\nFailures in `commit-app` / `commit-claude` / `bookmark-both` roll",
   "new_string": "| `bookmark-set` | `jj bookmark set <bookmark> -r @- -R .` and `jj bookmark set main -r @- -R .claude` |\n| `push-app` | `jj git push --bookmark <bookmark> -R .` |\n| `finalize-claude` | `vc-x1 finalize --repo .claude --squash --push main --delay 10 --detach` |\n\nFailures in `commit-app` / `commit-claude` / `bookmark-set` roll"
 }
@@ -2763,7 +2763,7 @@ id: toolu_01ETXyNv1aY1XntqhK1W5TgN
 tool_result
 id: toolu_01ETXyNv1aY1XntqhK1W5TgN
 ```
-The file /home/wink/data/prgs/rust/vc-x1/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2772,7 +2772,7 @@ tool_use Read
 id: toolu_01NJB3ei6NkjpcrvPPTi8QZA
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/README.md",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/README.md",
   "offset": 646,
   "limit": 20
 }
@@ -2812,7 +2812,7 @@ id: toolu_01FnnBhwqX33ViNYwGHi81AA
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/README.md",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/README.md",
   "old_string": "| `[BOOKMARK]` | Bookmark to advance; positional form of `--bookmark` |",
   "new_string": "| `[BOOKMARK]` | Code-repo bookmark to advance (the session repo always advances `main`); positional form of `--bookmark` |"
 }
@@ -2823,7 +2823,7 @@ id: toolu_01FnnBhwqX33ViNYwGHi81AA
 tool_result
 id: toolu_01FnnBhwqX33ViNYwGHi81AA
 ```
-The file /home/wink/data/prgs/rust/vc-x1/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2833,7 +2833,7 @@ id: toolu_01LAeQ18VWaZdYxYoRbxLaj4
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/notes/design-cli/por-dual-parity-audit.md",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/notes/design-cli/por-dual-parity-audit.md",
   "old_string": "  `ochid: /<code-chid>` on bot); the `--from\n  bookmark-both` flag; the 1:1 symmetric WC-commits\n  assumption flagged in T1.",
   "new_string": "  `ochid: /<code-chid>` on bot); the `--from\n  bookmark-set` flag; the 1:1 symmetric WC-commits\n  assumption flagged in T1."
 }
@@ -2853,7 +2853,7 @@ tool_use Read
 id: toolu_015cXWGG6bNSq3va2MVd1ysH
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/notes/design-cli/por-dual-parity-audit.md",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/notes/design-cli/por-dual-parity-audit.md",
   "offset": 395,
   "limit": 12
 }
@@ -2885,7 +2885,7 @@ id: toolu_0168LeebwG6KKb9BD4mMhStb
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/notes/design-cli/por-dual-parity-audit.md",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/notes/design-cli/por-dual-parity-audit.md",
   "old_string": "  `ochid: /<code-chid>` on bot); the `--from\n  bookmark-both` flag; the 1:1 symmetric WC-commits\n  assumption flagged in T1.",
   "new_string": "  `ochid: /<code-chid>` on bot); the `--from\n  bookmark-set` flag; the 1:1 symmetric WC-commits\n  assumption flagged in T1."
 }
@@ -2896,7 +2896,7 @@ id: toolu_0168LeebwG6KKb9BD4mMhStb
 tool_result
 id: toolu_0168LeebwG6KKb9BD4mMhStb
 ```
-The file /home/wink/data/prgs/rust/vc-x1/notes/design-cli/por-dual-parity-audit.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/notes/design-cli/por-dual-parity-audit.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2937,7 +2937,7 @@ id: toolu_019PbSuqnNU7w4e1HUiGoGmy
 ```
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.84s
 0
-    Replaced package `vc-x1 v0.68.0-4 (/home/wink/data/prgs/rust/vc-x1)` with `vc-x1 v0.68.0-4 (/home/wink/data/prgs/rust/vc-x1)` (executable `vc-x1`)
+    Replaced package `vc-x1 v0.68.0-4 (/home/<USER>/data/prgs/rust/vc-x1)` with `vc-x1 v0.68.0-4 (/home/<USER>/data/prgs/rust/vc-x1)` (executable `vc-x1`)
 ```
 
 > AGENT
@@ -2965,7 +2965,7 @@ id: toolu_01XWw2vtHjFB2kqaUVwQ8PAT
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/notes/todo.md",
   "old_string": "   - 0.68.0-4 push: session repo pins `main` — preflight\n     tracking, bookmark stage (renamed/redoc'd from\n     `bookmark-both`), `finalize --push`, completion\n     sanity; `PushState.bookmark` stays code-side; tests\n     (done)",
   "new_string": "   - 0.68.0-4 push: every stage's session-repo side uses\n     `main`, never the passed bookmark (done)\n     - preflight verifies the session repo tracks `main`\n     - bookmark stage sets app → `<bookmark>`, session →\n       `main`; renamed `bookmark-both` → `bookmark-set`\n     - finalize-claude pushes `main`\n     - completion sanity checks the session repo's `main`\n     - `PushState.bookmark` holds the code-repo bookmark only\n     - test: a feature-bookmark push advances the session\n       repo's `main` and creates no `feature` bookmark there"
 }
@@ -2976,7 +2976,7 @@ id: toolu_01XWw2vtHjFB2kqaUVwQ8PAT
 tool_result
 id: toolu_01XWw2vtHjFB2kqaUVwQ8PAT
 ```
-The file /home/wink/data/prgs/rust/vc-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3031,7 +3031,7 @@ push preflight: cargo fmt
 push preflight: cargo clippy --all-targets -- -D warnings
 push preflight: cargo test
 push review: pending changes:
-  app (/home/wink/data/prgs/rust/vc-x1):
+  app (/home/<USER>/data/prgs/rust/vc-x1):
     Cargo.lock                                |  2 +-
     Cargo.toml                                |  2 +-
     README.md                                 |  8 +--
@@ -3044,16 +3044,16 @@ push review: pending changes:
     src/push/tests.rs                         |  8 +--
     src/push.rs                               | 83 +++++++++++++++++++++------------
     11 files changed, 141 insertions(+), 55 deletions(-)
-  .claude (/home/wink/data/prgs/rust/vc-x1/.claude):
+  .claude (/home/<USER>/data/prgs/rust/vc-x1/.claude):
     .claude/45d00227-4919-4dac-8d79-8486b16d8a8f.jsonl | 245 +++++++++++++++++++++++
     1 file changed, 245 insertions(+), 0 deletions(-)
 push review: auto-approved (--yes)
 push message: title="feat: push pins bot repo to main (0.68.0-4)", app_chid=vmssmslkutqs, claude_chid=vnmnswssqpun, claude_had_changes=true
-push commit-app: jj commit -R /home/wink/data/prgs/rust/vc-x1
-push commit-claude: jj commit -R /home/wink/data/prgs/rust/vc-x1/.claude
-push bookmark-set: jj bookmark set main -r @- -R /home/wink/data/prgs/rust/vc-x1 / main -r @- -R /home/wink/data/prgs/rust/vc-x1/.claude
-push push-app: jj git push --bookmark main -R /home/wink/data/prgs/rust/vc-x1
-push finalize-claude: vc-x1 finalize --repo /home/wink/data/prgs/rust/vc-x1/.claude --squash --push main --delay 10 --detach
+push commit-app: jj commit -R /home/<USER>/data/prgs/rust/vc-x1
+push commit-claude: jj commit -R /home/<USER>/data/prgs/rust/vc-x1/.claude
+push bookmark-set: jj bookmark set main -r @- -R /home/<USER>/data/prgs/rust/vc-x1 / main -r @- -R /home/<USER>/data/prgs/rust/vc-x1/.claude
+push push-app: jj git push --bookmark main -R /home/<USER>/data/prgs/rust/vc-x1
+push finalize-claude: vc-x1 finalize --repo /home/<USER>/data/prgs/rust/vc-x1/.claude --squash --push main --delay 10 --detach
 push: completed all stages (verified, state cleared)
 ```
 
@@ -3156,7 +3156,7 @@ tool_use Read
 id: toolu_01Lb65iywzbUGXMbnmDMVCxK
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/README.md",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/README.md",
   "offset": 435,
   "limit": 105
 }
@@ -3196,7 +3196,7 @@ id: toolu_01CXEWCbn3AQmNQ4QrPqVBf9
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/README.md",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/README.md",
   "old_string": "After the bookmark action above, `sync` repositions `@` onto the\nfreshly-synced bookmark as a final pass, run after every repo syncs\ncleanly. The rule differs by repo (`@-` is the parent of `@`; `<b>`\nis the synced `--bookmark`):",
   "new_string": "`--bookmark` names a **code-repo** bookmark only: the session repo\nis a linear journal on `main` by design, so its side of every step\n(tracking preflight, classify, act, reposition) always uses `main`\nregardless of the flag.\n\nAfter the bookmark action above, `sync` repositions `@` onto the\nfreshly-synced bookmark as a final pass, run after every repo syncs\ncleanly. The rule differs by repo (`@-` is the parent of `@`; `<b>`\nis the synced `--bookmark`):"
 }
@@ -3207,7 +3207,7 @@ id: toolu_01CXEWCbn3AQmNQ4QrPqVBf9
 tool_result
 id: toolu_01CXEWCbn3AQmNQ4QrPqVBf9
 ```
-The file /home/wink/data/prgs/rust/vc-x1/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3217,7 +3217,7 @@ id: toolu_013z6CMYzfiXzt56jipF7NjZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/README.md",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/README.md",
   "old_string": "- **Session repo** (`.claude`): always `jj new main` when `@-` is on\n  `main`, so a fresh empty `@` starts each session on the tip; the\n  prior `@` (e.g. `/exit`'s trailing session writes) is preserved as\n  a sibling head. If `@-` isn't on `main`, `sync` errors rather than\n  strand it.",
   "new_string": "- **Session repo** (`.claude`): no-op when `@-` is already the\n  `main` tip — `@` keeps its change id and any live session writes\n  stay in the working copy. When `main` moved, `jj new main` starts\n  a fresh empty `@` on the new tip; the prior `@` (e.g. `/exit`'s\n  trailing session writes) is preserved as a sibling head. If `@-`\n  isn't on `main`, `sync` errors rather than strand it."
 }
@@ -3228,7 +3228,7 @@ id: toolu_013z6CMYzfiXzt56jipF7NjZ
 tool_result
 id: toolu_013z6CMYzfiXzt56jipF7NjZ
 ```
-The file /home/wink/data/prgs/rust/vc-x1/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3238,7 +3238,7 @@ id: toolu_01SbkVkZGXwJfNKb5u1qEeko
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/README.md",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/README.md",
   "old_string": "| `--bookmark <NAME>` | Bookmark to sync in each repo [default: main] |",
   "new_string": "| `--bookmark <NAME>` | Bookmark to sync in the code repo (session repo always syncs `main`) [default: main] |"
 }
@@ -3249,7 +3249,7 @@ id: toolu_01SbkVkZGXwJfNKb5u1qEeko
 tool_result
 id: toolu_01SbkVkZGXwJfNKb5u1qEeko
 ```
-The file /home/wink/data/prgs/rust/vc-x1/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3259,7 +3259,7 @@ id: toolu_01F79okZZKTGgqe7ktFMyrx6
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/README.md",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/README.md",
   "old_string": "- **All up-to-date** — one-line summary:\n  `sync: N repos, all bookmarks up-to-date`. Nothing else.\n  Makes \"sprinkle sync everywhere\" genuinely cheap. Scope is",
   "new_string": "- **All up-to-date** — one-line summary:\n  `sync: N repos are up to date, nothing to sync`. Nothing else\n  (no-op reposition lines are debug-level).\n  Makes \"sprinkle sync everywhere\" genuinely cheap. Scope is"
 }
@@ -3270,7 +3270,7 @@ id: toolu_01F79okZZKTGgqe7ktFMyrx6
 tool_result
 id: toolu_01F79okZZKTGgqe7ktFMyrx6
 ```
-The file /home/wink/data/prgs/rust/vc-x1/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3303,7 +3303,7 @@ id: toolu_01TvztoFALPRFun5rERLg6gv
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/notes/chores/chores-13.md",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/notes/chores/chores-13.md",
   "old_string": "## feat: pin bot repo to main (0.68.0)\n\n# References",
   "new_string": "## feat: pin bot repo to main (0.68.0)\n\n`vc-x1 push <bookmark>` applied the one bookmark name to both\nrepos (preflight tracking check, `bookmark-both`,\n`finalize --push`), and sync's classify/fetch used the passed\nbookmark for every repo — but the bot repo is a linear journal\non `main` by design. Pushing a feature bookmark would create\nand push that bookmark in the bot repo, leave the bot `main`\nbehind, and wedge the next sync's `reposition_session`. Prereq\nfor the trapezoidal-commit workflow (branch the code repo; bot\nstays on `main`).\n\nTwo adjacent sync warts surfaced (and were fixed) mid-cycle\nwhile dogfooding: the unconditional `jj new main` on the\nsession repo, and the three-lines-to-say-nothing clean-case\noutput.\n\n### As-built ladder\n\n- 0.68.0-0 prep: backfill Commits:, bump version, pick up\n  todo, open chores section\n- 0.68.0-1 sync: session repo pins `main` — tracking\n  preflight + classify/act use a per-repo bookmark; tests\n- 0.68.0-2 sync: `reposition_session` no-ops when `@-` is\n  already the `main` tip — previously it always `jj new\n  main`ed (empty `@`: chid/op churn; non-empty `@`: live\n  session writes stranded on a sibling head); tests\n- 0.68.0-3 sync: quiet output — clean case prints one\n  summary line (`UP_TO_DATE_MSG` const shared with main.rs's\n  long_about); per-repo […]
 
@@ -3312,7 +3312,7 @@ id: toolu_01TvztoFALPRFun5rERLg6gv
 tool_result
 id: toolu_01TvztoFALPRFun5rERLg6gv
 ```
-The file /home/wink/data/prgs/rust/vc-x1/notes/chores/chores-13.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/notes/chores/chores-13.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3322,7 +3322,7 @@ id: toolu_01HfGAfWWBcrzLL36x1fM2nA
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/notes/todo.md",
   "old_string": "**push/sync: bookmark is code-repo-only; pin the bot repo to\nmain.** `vc-x1 push <bookmark>` applies the one bookmark name\nto both repos (preflight tracking check, `bookmark-both`,\n`finalize --push`), and sync's classify/fetch use the passed\nbookmark for every repo — but the bot repo is a linear journal\non `main` by design. Pushing a feature bookmark would create\nand push that bookmark in the bot repo, leave the bot `main`\nbehind, and wedge the next sync's `reposition_session`. Prereq\nfor the trapezoidal-commit workflow (branch the code repo; bot\nstays on `main`).\n\n   - 0.68.0-0 prep: backfill Commits:, bump version, pick up\n     todo, open chores section (done)\n   - 0.68.0-1 sync: session repo pins `main` — tracking\n     preflight + classify/act use a per-repo bookmark; tests\n     (done)\n   - 0.68.0-2 sync: `reposition_session` no-ops when `@-` is\n     already the `main` tip — today it always `jj new main`s\n     (empty `@`: chid/op churn; non-empty `@`: live session\n     writes stranded on a sibling head); tests (done)\n   - 0.68.0-3 sync: quiet output — clean case prints one\n     summary line; per-repo \"@ already on\" no-op lines demoted\n     to debug (done)\n   - 0.68.0-4 push: every stage's session-repo side uses\n     `main`, never the passed bookmark (done)\n     - preflight verifies the session repo tracks […]
 
 > TOOL
@@ -3330,7 +3330,7 @@ id: toolu_01HfGAfWWBcrzLL36x1fM2nA
 tool_result
 id: toolu_01HfGAfWWBcrzLL36x1fM2nA
 ```
-The file /home/wink/data/prgs/rust/vc-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3340,7 +3340,7 @@ id: toolu_01BGEfCf2A7hnijFRvTviEcF
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/notes/todo.md",
   "old_string": "- docs: todo cleanup + trapezoid entries (0.67.1) — push-related todos reshaped around the trapezoidal (merge non-ff) workflow: new #1 bookmark-invariant fix and #2 push pause point; \"record uncovered code commits (N:1)\" re-scoped to code worked outside vc-x1; `push --squash` demoted to todo-backlog.md; cycle-protocol.md push-wrapper list synced [[22]]",
   "new_string": "- docs: todo cleanup + trapezoid entries (0.67.1) — push-related todos reshaped around the trapezoidal (merge non-ff) workflow: new #1 bookmark-invariant fix and #2 push pause point; \"record uncovered code commits (N:1)\" re-scoped to code worked outside vc-x1; `push --squash` demoted to todo-backlog.md; cycle-protocol.md push-wrapper list synced [[22]]\n- feat: pin bot repo to main (0.68.0) — `--bookmark` is code-repo-only in push and sync; the session repo's side of every step (tracking preflight, classify/act, `bookmark-set` — renamed from `bookmark-both` — `finalize --push`, completion sanity) is pinned to `main`; plus two mid-cycle sync fixes: `reposition_session` no-ops when `@-` is the `main` tip, and the clean case prints one `nothing to sync` summary line [[23]]"
 }
@@ -3351,7 +3351,7 @@ id: toolu_01BGEfCf2A7hnijFRvTviEcF
 tool_result
 id: toolu_01BGEfCf2A7hnijFRvTviEcF
 ```
-The file /home/wink/data/prgs/rust/vc-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3361,7 +3361,7 @@ id: toolu_01QyYL1D2XVLa8dCM9GzAN9F
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/notes/todo.md",
   "old_string": "[22]: /notes/chores/chores-13.md#docs-todo-cleanup--trapezoid-entries-0671",
   "new_string": "[22]: /notes/chores/chores-13.md#docs-todo-cleanup--trapezoid-entries-0671\n[23]: /notes/chores/chores-13.md#feat-pin-bot-repo-to-main-0680"
 }
@@ -3372,7 +3372,7 @@ id: toolu_01QyYL1D2XVLa8dCM9GzAN9F
 tool_result
 id: toolu_01QyYL1D2XVLa8dCM9GzAN9F
 ```
-The file /home/wink/data/prgs/rust/vc-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3382,7 +3382,7 @@ id: toolu_01M3SNHrEXj6Lt7QFvrycmKV
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/vc-x1/notes/cycle-protocol.md",
+  "file_path": "/home/<USER>/data/prgs/rust/vc-x1/notes/cycle-protocol.md",
   "old_string": "- Symmetric squash — demoted to `todo-backlog.md`\n  (\"vc-x1 push --squash\"): after-publication squash is\n  off the routine path now that Merge non-ff is the\n  routine shape.\n- Per-repo bookmark names (`## Todo` entry \"push/sync:\n  bookmark is code-repo-only; pin the bot repo to main\").",
   "new_string": "- Symmetric squash — demoted to `todo-backlog.md`\n  (\"vc-x1 push --squash\"): after-publication squash is\n  off the routine path now that Merge non-ff is the\n  routine shape.\n\nLanded: per-repo bookmark names (0.68.0) — `<bookmark>` is\ncode-repo-only; the session repo is pinned to `main`\nthroughout push and sync."
 }
@@ -3393,7 +3393,7 @@ id: toolu_01M3SNHrEXj6Lt7QFvrycmKV
 tool_result
 id: toolu_01M3SNHrEXj6Lt7QFvrycmKV
 ```
-The file /home/wink/data/prgs/rust/vc-x1/notes/cycle-protocol.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/vc-x1/notes/cycle-protocol.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3435,7 +3435,7 @@ tool_result
 id: toolu_012zgcQNU831uC7Bv7tBqMZF
 ```
 0
-    Replaced package `vc-x1 v0.68.0-4 (/home/wink/data/prgs/rust/vc-x1)` with `vc-x1 v0.68.0 (/home/wink/data/prgs/rust/vc-x1)` (executable `vc-x1`)
+    Replaced package `vc-x1 v0.68.0-4 (/home/<USER>/data/prgs/rust/vc-x1)` with `vc-x1 v0.68.0 (/home/<USER>/data/prgs/rust/vc-x1)` (executable `vc-x1`)
 vc-x1 0.68.0
 ```
 

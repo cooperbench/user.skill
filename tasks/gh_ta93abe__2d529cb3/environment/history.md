@@ -37,7 +37,7 @@ tool_use Read
 id: toolu_01QmgghVTnY4eptc3LbkcbbD
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/me/src/components/SnsLinks.astro"
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/me/src/components/SnsLinks.astro"
 }
 ```
 
@@ -86,7 +86,7 @@ tool_use Bash
 id: toolu_017skEyPJ366M7hLedVSYDpM
 ```json
 {
-  "command": "grep -n '^<<<<<<<\\|^=======\\|^>>>>>>>\\|^|||||||' /Users/ta93abe/Developer/github.com/ta93abe/me/src/components/SnsLinks.astro",
+  "command": "grep -n '^<<<<<<<\\|^=======\\|^>>>>>>>\\|^|||||||' /home/<USER>/Developer/github.com/ta93abe/me/src/components/SnsLinks.astro",
   "description": "コンフリクトマーカーの行番号を特定"
 }
 ```
@@ -111,7 +111,7 @@ tool_use Read
 id: toolu_016qVZGj1PMmzcmM2EZyo42Z
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/me/src/components/SnsLinks.astro",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/me/src/components/SnsLinks.astro",
   "offset": 505,
   "limit": 64
 }
@@ -201,7 +201,7 @@ tool_use Read
 id: toolu_01DuHWf2oscRmvm3xmtofe9D
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/me/src/components/SnsLinks.astro",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/me/src/components/SnsLinks.astro",
   "offset": 470,
   "limit": 35
 }
@@ -259,7 +259,7 @@ tool_use Bash
 id: toolu_01Eb4UTkme4VGLcc8vGJcdDk
 ```json
 {
-  "command": "grep -n 'class=\\|space-y\\|text-base\\|data-animate\\|<div\\|\\.map(' /Users/ta93abe/Developer/github.com/ta93abe/me/src/components/SnsLinks.astro | grep -v 'hover:bg\\|hoverBg' | head -40",
+  "command": "grep -n 'class=\\|space-y\\|text-base\\|data-animate\\|<div\\|\\.map(' /home/<USER>/Developer/github.com/ta93abe/me/src/components/SnsLinks.astro | grep -v 'hover:bg\\|hoverBg' | head -40",
   "description": "コンテナのクラス名とセレクタ関連を確認"
 }
 ```
@@ -321,7 +321,7 @@ tool_use Bash
 id: toolu_01BqzbsRvdreRS7VKvmmWBeg
 ```json
 {
-  "command": "echo \"=== posthog.astro ===\" && cat /Users/ta93abe/Developer/github.com/ta93abe/me/src/components/posthog.astro 2>/dev/null | head -60 && echo \"\" && echo \"=== capture usage across src ===\" && grep -rn 'posthog?.capture\\|posthog.capture\\|data-ph\\|capture(' /Users/ta93abe/Developer/github.com/ta93abe/me/src 2>/dev/null",
+  "command": "echo \"=== posthog.astro ===\" && cat /home/<USER>/Developer/github.com/ta93abe/me/src/components/posthog.astro 2>/dev/null | head -60 && echo \"\" && echo \"=== capture usage across src ===\" && grep -rn 'posthog?.capture\\|posthog.capture\\|data-ph\\|capture(' /home/<USER>/Developer/github.com/ta93abe/me/src 2>/dev/null",
   "description": "posthog.astroとcapture使用箇所を確認"
 }
 ```
@@ -345,18 +345,18 @@ id: toolu_01BqzbsRvdreRS7VKvmmWBeg
 </script>
 
 === capture usage across src ===
-/Users/ta93abe/Developer/github.com/ta93abe/me/src/components/SnsLinks.astro:560:			window.posthog?.capture("sns_link_clicked", {
-/Users/ta93abe/Developer/github.com/ta93abe/me/src/components/landing/HeroSection.astro:93:      window.posthog?.capture("hero_cta_clicked", {
-/Users/ta93abe/Developer/github.com/ta93abe/me/src/components/blog/ShareButtons.astro:88:			window.posthog?.capture("blog_post_url_copied", {
-/Users/ta93abe/Developer/github.com/ta93abe/me/src/components/blog/ShareButtons.astro:97:			window.posthog?.capture("blog_post_shared", {
-/Users/ta93abe/Developer/github.com/ta93abe/me/src/components/landing/LinksSection.astro:226:      window.posthog?.capture("landing_section_clicked", {
-/Users/ta93abe/Developer/github.com/ta93abe/me/src/pages/bookshelf/index.astro:100:        window.posthog?.capture("bookshelf_tag_filtered", { tag: tag });
-/Users/ta93abe/Developer/github.com/ta93abe/me/src/pages/blog/index.astro:96:    window.posthog?.capture("rss_feed_clicked", { page: "blog" });
-/Users/ta93abe/Developer/github.com/ta93abe/me/src/pages/blog/index.astro:103:        window.posthog?.capture("blog_tag_filtered", { tag: tag });
-/Users/ta93abe/Developer/github.com/ta93abe/me/src/pages/blog/[id].astro:185:        window.posthog?.capture("blog_code_copied", {
-/Users/ta93abe/Developer/github.com/ta93abe/me/src/pages/blog/[id].astro:200:  window.posthog?.capture("blog_post_viewed", {
-/Users/ta93abe/Developer/github.com/ta93abe/me/src/pages/works/index.astro:63:        window.posthog?.capture("works_tag_filtered", { tag: tag });
-/Users/ta93abe/Developer/github.com/ta93abe/me/src/pages/works/[id].astro:122:  window.posthog?.capture("work_viewed", {
+/home/<USER>/Developer/github.com/ta93abe/me/src/components/SnsLinks.astro:560:			window.posthog?.capture("sns_link_clicked", {
+/home/<USER>/Developer/github.com/ta93abe/me/src/components/landing/HeroSection.astro:93:      window.posthog?.capture("hero_cta_clicked", {
+/home/<USER>/Developer/github.com/ta93abe/me/src/components/blog/ShareButtons.astro:88:			window.posthog?.capture("blog_post_url_copied", {
+/home/<USER>/Developer/github.com/ta93abe/me/src/components/blog/ShareButtons.astro:97:			window.posthog?.capture("blog_post_shared", {
+/home/<USER>/Developer/github.com/ta93abe/me/src/components/landing/LinksSection.astro:226:      window.posthog?.capture("landing_section_clicked", {
+/home/<USER>/Developer/github.com/ta93abe/me/src/pages/bookshelf/index.astro:100:        window.posthog?.capture("bookshelf_tag_filtered", { tag: tag });
+/home/<USER>/Developer/github.com/ta93abe/me/src/pages/blog/index.astro:96:    window.posthog?.capture("rss_feed_clicked", { page: "blog" });
+/home/<USER>/Developer/github.com/ta93abe/me/src/pages/blog/index.astro:103:        window.posthog?.capture("blog_tag_filtered", { tag: tag });
+/home/<USER>/Developer/github.com/ta93abe/me/src/pages/blog/[id].astro:185:        window.posthog?.capture("blog_code_copied", {
+/home/<USER>/Developer/github.com/ta93abe/me/src/pages/blog/[id].astro:200:  window.posthog?.capture("blog_post_viewed", {
+/home/<USER>/Developer/github.com/ta93abe/me/src/pages/works/index.astro:63:        window.posthog?.capture("works_tag_filtered", { tag: tag });
+/home/<USER>/Developer/github.com/ta93abe/me/src/pages/works/[id].astro:122:  window.posthog?.capture("work_viewed", {
 ```
 
 > AGENT
@@ -369,7 +369,7 @@ tool_use Bash
 id: toolu_01WTodVuTksXDG22V8iDi3Qk
 ```json
 {
-  "command": "echo \"=== LinksSection script (210-240) ===\" && sed -n '205,245p' /Users/ta93abe/Developer/github.com/ta93abe/me/src/components/landing/LinksSection.astro",
+  "command": "echo \"=== LinksSection script (210-240) ===\" && sed -n '205,245p' /home/<USER>/Developer/github.com/ta93abe/me/src/components/landing/LinksSection.astro",
   "description": "LinksSectionのトラッキング実装を確認"
 }
 ```
@@ -416,7 +416,7 @@ tool_use Bash
 id: toolu_017TaCMEuUTbCH77uAqi13ui
 ```json
 {
-  "command": "echo \"=== data-animate usage repo-wide ===\" && grep -rn 'data-animate\\|is-visible\\|IntersectionObserver' /Users/ta93abe/Developer/github.com/ta93abe/me/src 2>/dev/null",
+  "command": "echo \"=== data-animate usage repo-wide ===\" && grep -rn 'data-animate\\|is-visible\\|IntersectionObserver' /home/<USER>/Developer/github.com/ta93abe/me/src 2>/dev/null",
   "description": "data-animate/IntersectionObserverが他で使われているか確認"
 }
 ```
@@ -427,18 +427,18 @@ tool_result
 id: toolu_017TaCMEuUTbCH77uAqi13ui
 ```
 === data-animate usage repo-wide ===
-/Users/ta93abe/Developer/github.com/ta93abe/me/src/styles/global.css:260:[data-animate] {
-/Users/ta93abe/Developer/github.com/ta93abe/me/src/styles/global.css:268:[data-animate].is-visible {
-/Users/ta93abe/Developer/github.com/ta93abe/me/src/styles/global.css:275:	[data-animate] {
-/Users/ta93abe/Developer/github.com/ta93abe/me/src/components/SnsLinks.astro:541:	const observer = new IntersectionObserver(
-/Users/ta93abe/Developer/github.com/ta93abe/me/src/components/SnsLinks.astro:545:					entry.target.classList.add("is-visible");
-/Users/ta93abe/Developer/github.com/ta93abe/me/src/components/SnsLinks.astro:553:	document.querySelectorAll("[data-animate]").forEach((el) => observer.observe(el));
-/Users/ta93abe/Developer/github.com/ta93abe/me/src/components/landing/LinksSection.astro:45:    <div class="links-header" data-animate="fade-up">
-/Users/ta93abe/Developer/github.com/ta93abe/me/src/components/landing/LinksSection.astro:50:    <div class="links-grid" data-animate="fade-up">
-/Users/ta93abe/Developer/github.com/ta93abe/me/src/layouts/Layout.astro:78:				[data-animate] {
-/Users/ta93abe/Developer/github.com/ta93abe/me/src/scripts/animations/observer.ts:1:const observer = new IntersectionObserver(
-/Users/ta93abe/Developer/github.com/ta93abe/me/src/scripts/animations/observer.ts:5:				entry.target.classList.add("is-visible");
-/Users/ta93abe/Developer/github.com/ta93abe/me/src/scripts/animations/observer.ts:13:for (const el of document.querySelectorAll("[data-animate]")) {
+/home/<USER>/Developer/github.com/ta93abe/me/src/styles/global.css:260:[data-animate] {
+/home/<USER>/Developer/github.com/ta93abe/me/src/styles/global.css:268:[data-animate].is-visible {
+/home/<USER>/Developer/github.com/ta93abe/me/src/styles/global.css:275:	[data-animate] {
+/home/<USER>/Developer/github.com/ta93abe/me/src/components/SnsLinks.astro:541:	const observer = new IntersectionObserver(
+/home/<USER>/Developer/github.com/ta93abe/me/src/components/SnsLinks.astro:545:					entry.target.classList.add("is-visible");
+/home/<USER>/Developer/github.com/ta93abe/me/src/components/SnsLinks.astro:553:	document.querySelectorAll("[data-animate]").forEach((el) => observer.observe(el));
+/home/<USER>/Developer/github.com/ta93abe/me/src/components/landing/LinksSection.astro:45:    <div class="links-header" data-animate="fade-up">
+/home/<USER>/Developer/github.com/ta93abe/me/src/components/landing/LinksSection.astro:50:    <div class="links-grid" data-animate="fade-up">
+/home/<USER>/Developer/github.com/ta93abe/me/src/layouts/Layout.astro:78:				[data-animate] {
+/home/<USER>/Developer/github.com/ta93abe/me/src/scripts/animations/observer.ts:1:const observer = new IntersectionObserver(
+/home/<USER>/Developer/github.com/ta93abe/me/src/scripts/animations/observer.ts:5:				entry.target.classList.add("is-visible");
+/home/<USER>/Developer/github.com/ta93abe/me/src/scripts/animations/observer.ts:13:for (const el of document.querySelectorAll("[data-animate]")) {
 ```
 
 > AGENT
@@ -462,7 +462,7 @@ id: toolu_01EePHQTxWgma4EUSVB4EAwi
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/me/src/components/SnsLinks.astro",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/me/src/components/SnsLinks.astro",
   "old_string": "<div class=\"grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4\">",
   "new_string": "<div class=\"sns-links grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4\">"
 }
@@ -473,7 +473,7 @@ id: toolu_01EePHQTxWgma4EUSVB4EAwi
 tool_result
 id: toolu_01EePHQTxWgma4EUSVB4EAwi
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/me/src/components/SnsLinks.astro has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/me/src/components/SnsLinks.astro has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -487,7 +487,7 @@ id: toolu_01UsJZKw1dCHcWyWKh689X9H
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/me/src/components/SnsLinks.astro",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/me/src/components/SnsLinks.astro",
   "old_string": "<<<<<<< Updated upstream\n=======\n\n<script>\n\tconst observer = new IntersectionObserver(\n\t\t(entries) => {\n\t\t\tentries.forEach((entry) => {\n\t\t\t\tif (entry.isIntersecting) {\n\t\t\t\t\tentry.target.classList.add(\"is-visible\");\n\t\t\t\t\tobserver.unobserve(entry.target);\n\t\t\t\t}\n\t\t\t});\n\t\t},\n\t\t{ threshold: 0.1, rootMargin: \"0px 0px -50px 0px\" },\n\t);\n\n\tdocument.querySelectorAll(\"[data-animate]\").forEach((el) => observer.observe(el));\n</script>\n\n<script is:inline>\n\tdocument.querySelectorAll(\".space-y-14 a[href]\").forEach(function(link) {\n\t\tlink.addEventListener(\"click\", function() {\n\t\t\tvar nameEl = link.querySelector(\"div.text-base\");\n\t\t\twindow.posthog?.capture(\"sns_link_clicked\", {\n\t\t\t\tplatform: nameEl ? nameEl.textContent?.trim() : null,\n\t\t\t\turl: link.getAttribute(\"href\"),\n\t\t\t});\n\t\t});\n\t});\n</script>\n>>>>>>> Stashed changes",
   "new_string": "<script is:inline>\n\tdocument.querySelectorAll(\".sns-links a[href]\").forEach(function(link) {\n\t\tlink.addEventListener(\"click\", function() {\n\t\t\twindow.posthog?.capture(\"sns_link_clicked\", {\n\t\t\t\tplatform: link.getAttribute(\"aria-label\"),\n\t\t\t\turl: link.getAttribute(\"href\"),\n\t\t\t});\n\t\t});\n\t});\n</script>"
 }
@@ -498,7 +498,7 @@ id: toolu_01UsJZKw1dCHcWyWKh689X9H
 tool_result
 id: toolu_01UsJZKw1dCHcWyWKh689X9H
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/me/src/components/SnsLinks.astro has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/me/src/components/SnsLinks.astro has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -511,7 +511,7 @@ tool_use Bash
 id: toolu_01XUgtRpGsSJfwuJfreSJUzY
 ```json
 {
-  "command": "cd /Users/ta93abe/Developer/github.com/ta93abe/me\necho \"=== 残存マーカー確認 ===\" && (grep -n '^<<<<<<<\\|^=======\\|^>>>>>>>' src/components/SnsLinks.astro && echo \"マーカー残存!\" || echo \"マーカーなし ✓\")\necho \"\" && echo \"=== 末尾の解消結果 (533-548) ===\" && sed -n '533,548p' src/components/SnsLinks.astro\necho \"\" && echo \"=== resolved としてステージ ===\" && git add src/components/SnsLinks.astro && git status --short src/components/SnsLinks.astro",
+  "command": "cd /home/<USER>/Developer/github.com/ta93abe/me\necho \"=== 残存マーカー確認 ===\" && (grep -n '^<<<<<<<\\|^=======\\|^>>>>>>>' src/components/SnsLinks.astro && echo \"マーカー残存!\" || echo \"マーカーなし ✓\")\necho \"\" && echo \"=== 末尾の解消結果 (533-548) ===\" && sed -n '533,548p' src/components/SnsLinks.astro\necho \"\" && echo \"=== resolved としてステージ ===\" && git add src/components/SnsLinks.astro && git status --short src/components/SnsLinks.astro",
   "description": "マーカー確認・結果表示・ステージング"
 }
 ```

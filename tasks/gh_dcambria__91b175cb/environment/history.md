@@ -37,7 +37,7 @@ tool_use Bash
 id: toolu_017zQFTp6nnMDm4DuhuHRikX
 ```json
 {
-  "command": "ls /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/ | grep -iE \"menu|wp.menu\"",
+  "command": "ls /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/ | grep -iE \"menu|wp.menu\"",
   "description": "List menu-related mu-plugins"
 }
 ```
@@ -48,7 +48,7 @@ tool_use Bash
 id: toolu_01LtdJEvqpsdQxnJ5ATjL3KV
 ```json
 {
-  "command": "ls /Users/dcambria/scripts/server-tools/v2/docker-dev/common/mu-plugins/ | grep -iE \"menu\"",
+  "command": "ls /home/<USER>/scripts/server-tools/v2/docker-dev/common/mu-plugins/ | grep -iE \"menu\"",
   "description": "List menu mu-plugins in common"
 }
 ```
@@ -89,7 +89,7 @@ tool_use Bash
 id: toolu_013gBmmqG1nJXzp1M4ojeusR
 ```json
 {
-  "command": "find /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins -type d -name \"wp-menu*\" 2>/dev/null; find /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins -type f -name \"wp-menu*\" 2>/dev/null | head -20",
+  "command": "find /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins -type d -name \"wp-menu*\" 2>/dev/null; find /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins -type f -name \"wp-menu*\" 2>/dev/null | head -20",
   "description": "Find wp-menu widget files in Elementor Pro"
 }
 ```
@@ -108,7 +108,7 @@ tool_use Bash
 id: toolu_01XjEwFneivGkXvweds5omqv
 ```json
 {
-  "command": "find /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro -type f \\( -name \"*.php\" \\) 2>/dev/null | xargs grep -l \"wp-menu\\|'wp_menu'\\|WP_Menu\" 2>/dev/null | head -10",
+  "command": "find /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro -type f \\( -name \"*.php\" \\) 2>/dev/null | xargs grep -l \"wp-menu\\|'wp_menu'\\|WP_Menu\" 2>/dev/null | head -10",
   "description": "Search for WP menu widget class"
 }
 ```
@@ -118,8 +118,8 @@ id: toolu_01XjEwFneivGkXvweds5omqv
 tool_result
 id: toolu_01XjEwFneivGkXvweds5omqv
 ```
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/license/editor-one-menu-items/editor-one-renew-menu-item.php
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/editor-one/module.php
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/license/editor-one-menu-items/editor-one-renew-menu-item.php
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/editor-one/module.php
 ```
 
 > TOOL
@@ -128,7 +128,7 @@ tool_use Bash
 id: toolu_01Le4P7h41cCGKUTCJmBuJwe
 ```json
 {
-  "command": "find /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro -type d -name \"*menu*\" 2>/dev/null",
+  "command": "find /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro -type d -name \"*menu*\" 2>/dev/null",
   "description": "Find menu module dir"
 }
 ```
@@ -138,23 +138,23 @@ id: toolu_01Le4P7h41cCGKUTCJmBuJwe
 tool_result
 id: toolu_01Le4P7h41cCGKUTCJmBuJwe
 ```
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/license/editor-one-menu-items
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/mega-menu
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/assets/lib/smartmenus
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/tiers/admin-menu-items
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/custom-css/admin-menu-items
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/notes/editor-one-menu-items
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/popup/editor-one-menu-items
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/popup/admin-menu-items
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/theme-builder/editor-one-menu-items
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/theme-builder/admin-menu-items
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/custom-code/editor-one-menu-items
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/custom-code/admin-menu-items
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/assets-manager/asset-types/editor-one-menu-items
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/assets-manager/asset-types/admin-menu-items
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/forms/submissions/editor-one-menu-items
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/forms/submissions/admin-menu-items
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/license/editor-one-menu-items
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/mega-menu
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/assets/lib/smartmenus
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/tiers/admin-menu-items
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/custom-css/admin-menu-items
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/notes/editor-one-menu-items
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/popup/editor-one-menu-items
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/popup/admin-menu-items
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/theme-builder/editor-one-menu-items
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/theme-builder/admin-menu-items
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/custom-code/editor-one-menu-items
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/custom-code/admin-menu-items
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/assets-manager/asset-types/editor-one-menu-items
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/assets-manager/asset-types/admin-menu-items
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/forms/submissions/editor-one-menu-items
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/forms/submissions/admin-menu-items
 ```
 
 > TOOL
@@ -163,7 +163,7 @@ tool_use Bash
 id: toolu_016QwfA4F1W958MD1bz8k2zi
 ```json
 {
-  "command": "ls /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/",
+  "command": "ls /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/",
   "description": "List nav-menu module contents"
 }
 ```
@@ -184,7 +184,7 @@ tool_use Bash
 id: toolu_01XhtotrYHs7UGxFuxCnQWfs
 ```json
 {
-  "command": "ls /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/",
+  "command": "ls /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/",
   "description": "List nav-menu widget files"
 }
 ```
@@ -207,7 +207,7 @@ tool_use Bash
 id: toolu_011SmBA1aH5N7SnNnkjZvu9V
 ```json
 {
-  "command": "find /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor* -type f -name \"*.php\" 2>/dev/null | xargs grep -l \"get_name.*wp-menu\\|'wp-menu'\" 2>/dev/null | head -5",
+  "command": "find /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor* -type f -name \"*.php\" 2>/dev/null | xargs grep -l \"get_name.*wp-menu\\|'wp-menu'\" 2>/dev/null | head -5",
   "description": "Locate wp-menu widget"
 }
 ```
@@ -226,7 +226,7 @@ tool_use Bash
 id: toolu_01LtxhzMMznFyWGqyG6c7LXf
 ```json
 {
-  "command": "grep -rn \"Menu do WordPress\\|WordPress Menu\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor*/  2>/dev/null | grep -v \"\\.po\\|\\.mo\\|\\.json\" | head -10",
+  "command": "grep -rn \"Menu do WordPress\\|WordPress Menu\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor*/  2>/dev/null | grep -v \"\\.po\\|\\.mo\\|\\.json\" | head -10",
   "description": "Find WordPress Menu widget label"
 }
 ```
@@ -236,16 +236,16 @@ id: toolu_01LtxhzMMznFyWGqyG6c7LXf
 tool_result
 id: toolu_01LtxhzMMznFyWGqyG6c7LXf
 ```
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/changelog.txt:96:* Tweak: Removed dropdown indicator icons from the accessibility tree in WordPress Menu widget
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/changelog.txt:104:* Security Fix: Improved code security enforcement in WordPress Menu widget
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/changelog.txt:174:* Fix: Focus color is not applied correctly for accessibility in WordPress Menu widget ([#24239](https://github.com/elementor/elementor/issues/24239))
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/changelog.txt:233:* Fix: Hide content on responsive breakpoint option is not working on WordPress Menu widget when Optimized Markup experiment is activated
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/changelog.txt:427:* Tweak: Added the ability to set `aria-label` for WordPress Menu widget
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/changelog.txt:568:* Tweak: Implemented CSS logical properties in WordPress Menu widget
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/changelog.txt:599:* Tweak: Added additional units to Horizontal and Vertical padding for Dropdown in WordPress Menu widget
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/changelog.txt:740:* Tweak: Added keyboard accessibility to Toggle Button in WordPress Menu widget ([#2348](https://github.com/orgs/elementor/discussions/2348))
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/changelog.txt:781:* Tweak: Changed Nav Menu widget name to WordPress Menu widget
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/nav-menu.php:27:		return esc_html__( 'WordPress Menu', 'elementor-pro' );
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/changelog.txt:96:* Tweak: Removed dropdown indicator icons from the accessibility tree in WordPress Menu widget
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/changelog.txt:104:* Security Fix: Improved code security enforcement in WordPress Menu widget
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/changelog.txt:174:* Fix: Focus color is not applied correctly for accessibility in WordPress Menu widget ([#24239](https://github.com/elementor/elementor/issues/24239))
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/changelog.txt:233:* Fix: Hide content on responsive breakpoint option is not working on WordPress Menu widget when Optimized Markup experiment is activated
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/changelog.txt:427:* Tweak: Added the ability to set `aria-label` for WordPress Menu widget
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/changelog.txt:568:* Tweak: Implemented CSS logical properties in WordPress Menu widget
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/changelog.txt:599:* Tweak: Added additional units to Horizontal and Vertical padding for Dropdown in WordPress Menu widget
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/changelog.txt:740:* Tweak: Added keyboard accessibility to Toggle Button in WordPress Menu widget ([#2348](https://github.com/orgs/elementor/discussions/2348))
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/changelog.txt:781:* Tweak: Changed Nav Menu widget name to WordPress Menu widget
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/nav-menu.php:27:		return esc_html__( 'WordPress Menu', 'elementor-pro' );
 ```
 
 > AGENT
@@ -258,7 +258,7 @@ tool_use Bash
 id: toolu_01LNdHtqYQTWLjYjZQkWvHkx
 ```json
 {
-  "command": "wc -l /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/nav-menu.php",
+  "command": "wc -l /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/nav-menu.php",
   "description": "Check file size"
 }
 ```
@@ -268,7 +268,7 @@ id: toolu_01LNdHtqYQTWLjYjZQkWvHkx
 tool_result
 id: toolu_01LNdHtqYQTWLjYjZQkWvHkx
 ```
-    1718 /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/nav-menu.php
+    1718 /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/nav-menu.php
 ```
 
 > TOOL
@@ -277,7 +277,7 @@ tool_use Bash
 id: toolu_017PFAL8SYoC3HeyfCmmLghE
 ```json
 {
-  "command": "grep -n \"start_controls_section\\|end_controls_section\\|start_controls_tabs\\|end_controls_tabs\\|start_controls_tab\\|end_controls_tab\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/nav-menu.php",
+  "command": "grep -n \"start_controls_section\\|end_controls_section\\|start_controls_tabs\\|end_controls_tabs\\|start_controls_tab\\|end_controls_tab\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/nav-menu.php",
   "description": "List section structure"
 }
 ```
@@ -339,7 +339,7 @@ tool_use Read
 id: toolu_01BS979Ma2gAjXkK3syPGtve
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/nav-menu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/nav-menu.php",
   "offset": 589,
   "limit": 410
 }
@@ -433,7 +433,7 @@ tool_use Read
 id: toolu_01V8hFHu4vTpZBeKK6gSapgP
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/nav-menu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/nav-menu.php",
   "offset": 990,
   "limit": 295
 }
@@ -534,7 +534,7 @@ tool_use Bash
 id: toolu_011XbKJeFY83pAAyQQRyZgbW
 ```json
 {
-  "command": "grep -rln \"elementor/element/nav-menu\\|section_style_main-menu\\|section_style_dropdown\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/ 2>/dev/null",
+  "command": "grep -rln \"elementor/element/nav-menu\\|section_style_main-menu\\|section_style_dropdown\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/ 2>/dev/null",
   "description": "Check existing nav-menu mu-plugin extensions"
 }
 ```
@@ -562,7 +562,7 @@ tool_use Read
 id: toolu_01MMhYkF65QvT1G1BnsuJ2PT
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-dropdown-btn.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-dropdown-btn.php",
   "limit": 20
 }
 ```
@@ -604,7 +604,7 @@ tool_use Write
 id: toolu_01DRxAYi4NezYcm6kosvpk35
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
   "content": "<?php\n/**\n * Plugin Name: BIT Nav Menu Extra Controls\n * Description: Estende o widget \"Menu do WordPress\" (Elementor Pro nav-menu) com\n *              controles ausentes no nativo:\n *              - Lista suspensa: padding dimensional (top/right/bottom/left)\n *              - Menu principal: tipografia individual por estado (Normal/Hover/Ativo)\n * Version:     1.0.0\n * Author:      Bureau IT\n * Network:     true\n */\n\nif ( ! defined( 'ABSPATH' ) ) {\n\texit;\n}\n\n/**\n * Menu principal — tipografia por estado (Normal/Hover/Ativo).\n *\n * O widget nativo só expõe uma `menu_typography` global (aplicada ao seletor\n * `.elementor-nav-menu .elementor-item`). Aqui injetamos um Group_Control_Typography\n * dentro de cada tab das tabs `tabs_menu_item_style`, com seletor refinado para o\n * estado correspondente. O CSS resultante sobrescreve a tipografia global apenas\n * quando o estado está ativo.\n */\nadd_action(\n\t'elementor/element/nav-menu/section_style_main-menu/before_section_end',\n\tfunction ( $element, $args ) {\n\t\t// Normal — sobrescreve apenas itens não-hover/active\n\t\t$element->add_group_control(\n\t\t\t\\Elementor\\Group_Control_Typography::get_type(),\n\t\t\t[\n\t\t\t\t'name'      => 'bit_menu_typography_normal',\n\t\t\t\t'label'     => esc_html__( 'Tipografia (Normal)', 'bit' ),\n\t\t\t\t'selector'  => '{{WRAPPER}} .elementor-nav-menu--main .elementor-item',\n\t\t\t\t'separator' => 'before',\n\t\t\t]\n\t\t);\n\n\t\t$element->add_group_control(\n\t\t\t\\Elementor\\Group_Control_Typography::get_type(),\n\t\t\t[\n\t\t\t\t'name'     => 'bit_menu_typography_hover',\n\t\t\t\t'label'    => esc_html__( 'Tipografia (Hover)', 'bit' ),\n\t\t\t\t'selector' => '{{WRAPPER}} .elementor-nav-menu--main .elementor-item:hover,\n\t\t\t\t\t{{WRAPPER}} .elementor-nav-menu--main .elementor-item:focus,\n\t\t\t\t\t{{WRAPPER}} .elementor-nav-menu--main .elementor-item.highlighted',\n\t\t\t]\n\t\t);\n\n\t\t$element->add_group_control(\n\t\t\t\\Elementor\\Group_Control_Typography::get_type(),\n\t\t\t[\n\t\t\t\t'name'     => 'bit_menu_typography_active',\n\t\t\t\t'label'    => esc_html__( 'Tipografia (Ativo)', 'bit' ),\n\t\t\t\t'selector' => '{{WRAPPER}} .elementor-nav-menu--main .elementor-item.elementor-item-active',\n\t\t\t]\n\t\t);\n\t},\n\t10,\n\t2\n);\n\n/**\n * Lista suspensa — padding dimensional (top/right/bottom/left).\n *\n * O widget nativo expõe `padding_horizontal_dropdown_item` e\n * `padding_vertical_dropdown_item` (apenas sliders […]
 
 > TOOL
@@ -612,7 +612,7 @@ id: toolu_01DRxAYi4NezYcm6kosvpk35
 tool_result
 id: toolu_01DRxAYi4NezYcm6kosvpk35
 ```
-File created successfully at: /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -625,7 +625,7 @@ tool_use Bash
 id: toolu_013Z9fCQTakLrNGBEXkgwdVT
 ```json
 {
-  "command": "cp /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php /Users/dcambria/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-nav-menu-extra-controls.php",
+  "command": "cp /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php /home/<USER>/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-nav-menu-extra-controls.php",
   "description": "Copy mu-plugin to common canonical"
 }
 ```
@@ -636,7 +636,7 @@ tool_use Bash
 id: toolu_01XWaWZdmTgneBHsYDgRDjoL
 ```json
 {
-  "command": "/Users/dcambria/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh cache-flush 2>&1 | tail -20",
+  "command": "/home/<USER>/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh cache-flush 2>&1 | tail -20",
   "description": "Flush dev caches"
 }
 ```
@@ -663,7 +663,7 @@ tool_use Bash
 id: toolu_018xxgqMf6QMYEPpj99APJ9n
 ```json
 {
-  "command": "/Users/dcambria/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh wp elementor flush-css 2>&1 | tail -20",
+  "command": "/home/<USER>/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh wp elementor flush-css 2>&1 | tail -20",
   "description": "Flush Elementor CSS cache"
 }
 ```
@@ -851,7 +851,7 @@ tool_use Bash
 id: toolu_01LapbMhQYYy65wufmsduFWn
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2 && git status docker-dev/common/mu-plugins/bit-nav-menu-extra-controls.php 2>&1",
+  "command": "cd /home/<USER>/scripts/server-tools/v2 && git status docker-dev/common/mu-plugins/bit-nav-menu-extra-controls.php 2>&1",
   "description": "Check git status of new mu-plugin"
 }
 ```
@@ -870,7 +870,7 @@ Untracked files:
 	docker-dev/common/mu-plugins/bit-nav-menu-extra-controls.php
 
 nothing added to commit but untracked files present (use "git add" to track)
-Shell cwd was reset to /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao
+Shell cwd was reset to /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao
 ```
 
 > AGENT

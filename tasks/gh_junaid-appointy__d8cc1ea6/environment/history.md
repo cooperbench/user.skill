@@ -12,7 +12,7 @@ tool_use Bash
 id: toolu_0184vVRi54DSkjzwxMmdZ3NS
 ```json
 {
-  "command": "cd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension && find . -type f -not -path '*/node_modules/*' -not -path '*/.git/*' -not -path '*/dist/*' -not -path '*/build/*' | head -100",
+  "command": "cd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension && find . -type f -not -path '*/node_modules/*' -not -path '*/.git/*' -not -path '*/dist/*' -not -path '*/build/*' | head -100",
   "description": "List extension files"
 }
 ```
@@ -130,7 +130,7 @@ tool_use Read
 id: toolu_01WttnHuVmMy35HDKdrf8xV3
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/CLAUDE.md"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/CLAUDE.md"
 }
 ```
 
@@ -163,7 +163,7 @@ tool_use Read
 id: toolu_01SYFAZnDGckPWBfEyFk1xk2
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts"
 }
 ```
 
@@ -206,7 +206,7 @@ tool_use Read
 id: toolu_01JRCn1gS6tKZymdmXrwrR7h
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "offset": 1154,
   "limit": 700
 }
@@ -218,7 +218,7 @@ tool_use Read
 id: toolu_01SK5RYjqDxbwqjPSrh2612i
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/background.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/background.ts"
 }
 ```
 
@@ -316,7 +316,7 @@ tool_use Read
 id: toolu_011Vdch1vcdk1nJGaFaiAzST
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts"
 }
 ```
 
@@ -326,7 +326,7 @@ tool_use Read
 id: toolu_01VFDFdkfAEyqJbgYBQswvvE
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts"
 }
 ```
 
@@ -393,7 +393,7 @@ tool_use Read
 id: toolu_01F94xY4zEfU5eYfMxWwA12w
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/sidepanel/App.tsx"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/sidepanel/App.tsx"
 }
 ```
 
@@ -416,7 +416,7 @@ tool_use Read
 id: toolu_01XJ2naLMTqYm9z2MPBvatz2
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/hooks.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/hooks.ts"
 }
 ```
 
@@ -476,7 +476,7 @@ tool_use Read
 id: toolu_01FtLLWVNwDHWbCECGLZb2yr
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/auth.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/auth.ts"
 }
 ```
 
@@ -526,7 +526,7 @@ tool_use Read
 id: toolu_01T8TUJ37rqB3GkZzioojoWt
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx"
 }
 ```
 
@@ -599,7 +599,7 @@ tool_use Read
 id: toolu_01MGKgxxyZxdzJN55GgS57iK
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/people.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/people.ts"
 }
 ```
 
@@ -637,7 +637,7 @@ tool_use Read
 id: toolu_01FNfUZJtB71k1Ycq5RGY1Zd
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/messaging.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/messaging.ts"
 }
 ```
 
@@ -721,7 +721,7 @@ tool_use Read
 id: toolu_012VhGBKCSFEQimtwCDtRwNA
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/sidepanel/main.tsx"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/sidepanel/main.tsx"
 }
 ```
 
@@ -731,7 +731,7 @@ tool_use Read
 id: toolu_01NMPnETyLf7mpFJFhTduptp
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/wxt.config.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/wxt.config.ts"
 }
 ```
 
@@ -809,7 +809,7 @@ tool_use Bash
 id: toolu_01GYiEKidaV56j2H6NLnAPYd
 ```json
 {
-  "command": "cd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension\necho \"=== callers of possibly-dead helpers (excluding their own definitions/comments) ===\"\nfor fn in scrollContainer mainVerticalList shieldPadding stacksVertically; do\n  n=$(grep -rn \"\\b$fn\\b\" entrypoints/ lib/ | grep -v \"function $fn\" | grep -v \"^\\s*\\*\" | wc -l | tr -d ' ')\n  echo \"$fn: $n reference(s) outside its definition\"\ndone\necho \"=== getComputedStyle / getBoundingClientRect / getClientRects counts (content script) ===\"\ngrep -c \"getComputedStyle\" entrypoints/calendar.content.ts\ngrep -c \"getBoundingClientRect\\|getClientRects\" entrypoints/calendar.content.ts\necho \"=== version ===\"\ngrep '\"version\"' package.json"
+  "command": "cd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension\necho \"=== callers of possibly-dead helpers (excluding their own definitions/comments) ===\"\nfor fn in scrollContainer mainVerticalList shieldPadding stacksVertically; do\n  n=$(grep -rn \"\\b$fn\\b\" entrypoints/ lib/ | grep -v \"function $fn\" | grep -v \"^\\s*\\*\" | wc -l | tr -d ' ')\n  echo \"$fn: $n reference(s) outside its definition\"\ndone\necho \"=== getComputedStyle / getBoundingClientRect / getClientRects counts (content script) ===\"\ngrep -c \"getComputedStyle\" entrypoints/calendar.content.ts\ngrep -c \"getBoundingClientRect\\|getClientRects\" entrypoints/calendar.content.ts\necho \"=== version ===\"\ngrep '\"version\"' package.json"
 }
 ```
 

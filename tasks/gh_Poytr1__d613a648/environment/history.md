@@ -1153,7 +1153,7 @@ tool_use Bash
 id: toolu_bdrk_01R4wnYc8AM4ajisoEDVUYhN
 ```json
 {
-  "command": "ls /Users/pc/web3/ReleaseBeacon/docs/",
+  "command": "ls /home/<USER>/web3/ReleaseBeacon/docs/",
   "description": "List docs directory contents"
 }
 ```
@@ -1175,7 +1175,7 @@ tool_use Bash
 id: toolu_bdrk_01DkSfT5SH1qGBaMMFUqWpKL
 ```json
 {
-  "command": "ls /Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/ 2>/dev/null || echo \"directory does not exist\"",
+  "command": "ls /home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/ 2>/dev/null || echo \"directory does not exist\"",
   "description": "Check if specs directory exists"
 }
 ```
@@ -1198,7 +1198,7 @@ tool_use Write
 id: toolu_bdrk_01ThEoLPk7k7y8dAproT8GZ6
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md",
   "content": "# Release Gate Design\n\n**Date:** 2026-03-23\n**Status:** Draft\n\n## Problem\n\nUsers want release notifications optionally postponed until all relevant sources for a version are available. For example, a third-party Docker image may lag months behind a GitHub release. Today, notifications fire immediately per-source and the semantic report runs independently — resulting in two separate notifications and potentially incomplete analysis.\n\n## Goals\n\n1. Allow multi-source projects to delay agent analysis until all (or critical) sources report a version\n2. Unify release + semantic report into a single notification for users who prefer it\n3. Support configurable version mapping across sources (GitHub `v1.21.0` ↔ Docker Hub `1.21.0`)\n4. Provide hybrid readiness rules: structured (deterministic) + natural language (LLM-evaluated)\n5. Timeout gracefully with partial reports when sources never arrive\n6. No behavior change for single-source projects or users who want immediate notifications\n\n## Non-Goals\n\n- Changing the existing `source_release` / `semantic_release` subscription model\n- Replacing the agent rules system (gate controls timing; agent rules control whether to run)\n- Real-time push notifications for gate status changes (polling/dashboard only)\n\n## Design\n\n### Subscription Model (Unchanged)\n\nThe existing subscription types handle both use cases:\n\n| Type | Behavior |\n|------|----------|\n| `source_release` | Fires immediately when a source detects a release (unchanged) |\n| `semantic_release` | Fires when […]
 
 > TOOL
@@ -1206,7 +1206,7 @@ id: toolu_bdrk_01ThEoLPk7k7y8dAproT8GZ6
 tool_result
 id: toolu_bdrk_01ThEoLPk7k7y8dAproT8GZ6
 ```
-File created successfully at: /Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md
+File created successfully at: /home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md
 ```
 
 > AGENT
@@ -1219,7 +1219,7 @@ tool_use Read
 id: toolu_bdrk_01DZZHsiGQGtcRvXSHcY3G7S
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md",
   "offset": 230
 }
 ```
@@ -1278,7 +1278,7 @@ id: toolu_bdrk_01BJnAGYoosiCUfSSDGrgifD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md",
   "old_string": "### Error Handling",
   "new_string": "### Observability: Gate Event History\n\nA `gate_events` table records every state transition for auditing and debugging:\n\n```sql\nCREATE TABLE gate_events (\n    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n    version_readiness_id UUID NOT NULL REFERENCES version_readiness(id) ON DELETE CASCADE,\n    project_id UUID NOT NULL REFERENCES projects(id) ON DELETE CASCADE,\n    version VARCHAR(100) NOT NULL,\n    event_type VARCHAR(30) NOT NULL\n        CHECK (event_type IN (\n            'source_met',       -- a required source reported this version\n            'gate_opened',      -- all structured rules passed, gate opened\n            'gate_timed_out',   -- timeout expired, gate force-opened\n            'nl_eval_started',  -- NL rule LLM evaluation began\n            'nl_eval_passed',   -- NL rule evaluated to true\n            'nl_eval_failed',   -- NL rule evaluated to false\n            'agent_triggered',  -- agent job enqueued after gate opened\n            'agent_completed',  -- agent finished, semantic report created\n            'notified'          -- semantic_release notifications sent\n        )),\n    source_id UUID,                       -- which source (for source_met events)\n    details JSONB,                        -- event-specific context\n    created_at TIMESTAMPTZ NOT NULL DEFAULT now()\n);\n\nCREATE INDEX idx_gate_events_readiness ON gate_events(version_readiness_id, created_at);\nCREATE INDEX idx_gate_events_project ON gate_events(project_id, created_at);\n```\n\n**`details` JSONB examples by event type:**\n\n| Event | Details |\n|-------|---------|\n| `source_met` | `{\"source_name\": \"Docker Hub\", \"raw_version\": \"1.21.0\", \"normalized_version\": \"1.21.0\", \"sources_met\": 2, \"sources_required\": 3}` |\n| `gate_timed_out` | `{\"sources_missing\": [\"uuid-dockerhub\"], \"waited_hours\": 168}` |\n| `nl_eval_passed` | `{\"rule\": \"Wait until Docker image has […]
 
@@ -1287,7 +1287,7 @@ id: toolu_bdrk_01BJnAGYoosiCUfSSDGrgifD
 tool_result
 id: toolu_bdrk_01BJnAGYoosiCUfSSDGrgifD
 ```
-The file /Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md has been updated successfully.
 ```
 
 > AGENT
@@ -1300,7 +1300,7 @@ tool_use Bash
 id: toolu_bdrk_01FE1iAA23VgvMovAwFNHG8t
 ```json
 {
-  "command": "git add docs/superpowers/specs/2026-03-23-release-gate-design.md && git commit -m \"$(cat <<'EOF'\ndocs: add release gate design spec\n\nSpec for postponing notifications until all required sources report a\nversion, with hybrid structured + NL rules, timeout with partial\nreports, version mapping, gate event history for observability, and\nenriched unified semantic notifications.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add docs/superpowers/specs/2026-03-23-release-gate-design.md && git commit -m \"$(cat <<'EOF'\ndocs: add release gate design spec\n\nSpec for postponing notifications until all required sources report a\nversion, with hybrid structured + NL rules, timeout with partial\nreports, version mapping, gate event history for observability, and\nenriched unified semantic notifications.\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit the design spec"
 }
 ```
@@ -1365,7 +1365,7 @@ id: toolu_bdrk_01ATXESncM84c7cvH3DwinRr
 {
   "description": "Review release gate spec",
   "subagent_type": "superpowers:code-reviewer",
-  "prompt": "You are reviewing a design spec document for technical correctness, completeness, and clarity. This is NOT a code review — it's a spec review.\n\n**Spec file:** `/Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md`\n\n**Project context:**\n- Changelogue is a Go-based release intelligence platform\n- It polls registries (Docker Hub, GitHub, etc.) for new releases\n- It uses River job queue (PostgreSQL-based) for async processing\n- It uses LLM agents (ADK-Go) for semantic analysis of releases\n- Architecture docs: `ARCH.md`, `DESIGN.md`, `API.md`\n- Key directories: `internal/ingestion/`, `internal/routing/`, `internal/agent/`, `internal/queue/`\n\n**Review criteria:**\n1. **Completeness:** Are there gaps in the design? Missing edge cases? Undefined behaviors?\n2. **Consistency:** Does the design align with the existing codebase patterns (transactional outbox, River jobs, sender interface)?\n3. **Clarity:** Is the spec unambiguous? Could an implementer follow it without guessing?\n4. **Feasibility:** Are there technical issues that would block implementation?\n5. **Data model:** Are the schema definitions complete and correct? Foreign keys, constraints, indexes?\n\nRead the spec file, then read relevant existing code files to verify consistency. Output:\n- **APPROVED** if no blocking issues\n- **Issues Found** with specific, actionable items to fix\n\nDo NOT suggest style/formatting changes. Focus on substance."
+  "prompt": "You are reviewing a design spec document for technical correctness, completeness, and clarity. This is NOT a code review — it's a spec review.\n\n**Spec file:** `/home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md`\n\n**Project context:**\n- Changelogue is a Go-based release intelligence platform\n- It polls registries (Docker Hub, GitHub, etc.) for new releases\n- It uses River job queue (PostgreSQL-based) for async processing\n- It uses LLM agents (ADK-Go) for semantic analysis of releases\n- Architecture docs: `ARCH.md`, `DESIGN.md`, `API.md`\n- Key directories: `internal/ingestion/`, `internal/routing/`, `internal/agent/`, `internal/queue/`\n\n**Review criteria:**\n1. **Completeness:** Are there gaps in the design? Missing edge cases? Undefined behaviors?\n2. **Consistency:** Does the design align with the existing codebase patterns (transactional outbox, River jobs, sender interface)?\n3. **Clarity:** Is the spec unambiguous? Could an implementer follow it without guessing?\n4. **Feasibility:** Are there technical issues that would block implementation?\n5. **Data model:** Are the schema definitions complete and correct? Foreign keys, constraints, indexes?\n\nRead the spec file, then read relevant existing code files to verify consistency. Output:\n- **APPROVED** if no blocking issues\n- **Issues Found** with specific, actionable items to fix\n\nDo NOT suggest style/formatting changes. Focus on substance."
 }
 ```
 
@@ -1380,7 +1380,7 @@ I now have a thorough understanding of the codebase and the spec. Let me compile
 
 ## Spec Review: Release Gate Design
 
-**File:** `/Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md`
+**File:** `/home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md`
 
 ### What the spec does well
 
@@ -1392,7 +1392,7 @@ The design addresses a real and clearly articulated problem. The separation betw
 
 #### Issue 1 -- CRITICAL: Subscription type naming inconsistency
 
-The spec uses `source_release` and `semantic_release` in the Subscription Model table (line 31-36), which matches the **actual codebase** (`/Users/pc/web3/ReleaseBeacon/internal/db/migrations.go`, line 96):
+The spec uses `source_release` and `semantic_release` in the Subscription Model table (line 31-36), which matches the **actual codebase** (`/home/<USER>/web3/ReleaseBeacon/internal/db/migrations.go`, line 96):
 
 ```sql
 CHECK (type IN ('source_release', 'semantic_release'))
@@ -1419,7 +1419,7 @@ tool_use Read
 id: toolu_bdrk_018ThUUT4wqGq8HTq3U2bwgG
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md"
 }
 ```
 
@@ -1468,7 +1468,7 @@ tool_use Write
 id: toolu_bdrk_013HbDzrYqzMb9CN2HiHLujB
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md",
   "content": "# Release Gate Design\n\n**Date:** 2026-03-23\n**Status:** Draft\n\n## Problem\n\nUsers want release notifications optionally postponed until all relevant sources for a version are available. For example, a third-party Docker image may lag months behind a GitHub release. Today, notifications fire immediately per-source and the semantic report runs independently — resulting in two separate notifications and potentially incomplete analysis.\n\n## Goals\n\n1. Allow multi-source projects to delay agent analysis until all (or critical) sources report a version\n2. Unify release + semantic report into a single notification for users who prefer it\n3. Support configurable version mapping across sources (GitHub `v1.21.0` ↔ Docker Hub `1.21.0`)\n4. Provide hybrid readiness rules: structured (deterministic) + natural language (LLM-evaluated)\n5. Timeout gracefully with partial reports when sources never arrive\n6. No behavior change for single-source projects or users who want immediate notifications\n\n## Non-Goals\n\n- Changing the existing `source_release` / `semantic_release` subscription model\n- Replacing the agent rules system (gate controls timing; agent rules control whether to run)\n- Real-time push notifications for gate status changes (polling/dashboard only)\n\n## Design\n\n### Subscription Model (Unchanged)\n\nThe existing subscription types handle both use cases:\n\n| Type | Behavior |\n|------|----------|\n| `source_release` | Fires immediately when a source detects a release (unchanged) |\n| `semantic_release` | Fires when […]
 
 > TOOL
@@ -1476,7 +1476,7 @@ id: toolu_bdrk_013HbDzrYqzMb9CN2HiHLujB
 tool_result
 id: toolu_bdrk_013HbDzrYqzMb9CN2HiHLujB
 ```
-The file /Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md has been updated successfully.
 ```
 
 > TOOL
@@ -1485,7 +1485,7 @@ tool_use Bash
 id: toolu_bdrk_01LDKpBnLuAtwcS1mVY7cnG9
 ```json
 {
-  "command": "git add docs/superpowers/specs/2026-03-23-release-gate-design.md && git commit -m \"$(cat <<'EOF'\ndocs: address spec review findings for release gate design\n\nFix all 10 review items:\n- Use JSONB arrays instead of UUID[] for codebase consistency\n- Specify unconditional GateCheckJob enqueue (worker short-circuits)\n- Add concurrency control with INSERT ON CONFLICT + WHERE status guard\n- Add partial index for timeout sweep queries\n- Specify GateTimeoutWorker periodic registration and SKIP LOCKED sweep\n- Clarify multi-variant tag handling via existing source filters\n- Document NL rule failure behavior and re-evaluation triggers\n- Define WaitForAllSources deprecation/migration strategy\n- Explain gate_events denormalization rationale\n- Note DESIGN.md subscription type naming discrepancy\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add docs/superpowers/specs/2026-03-23-release-gate-design.md && git commit -m \"$(cat <<'EOF'\ndocs: address spec review findings for release gate design\n\nFix all 10 review items:\n- Use JSONB arrays instead of UUID[] for codebase consistency\n- Specify unconditional GateCheckJob enqueue (worker short-circuits)\n- Add concurrency control with INSERT ON CONFLICT + WHERE status guard\n- Add partial index for timeout sweep queries\n- Specify GateTimeoutWorker periodic registration and SKIP LOCKED sweep\n- Clarify multi-variant tag handling via existing source filters\n- Document NL rule failure behavior and re-evaluation triggers\n- Define WaitForAllSources deprecation/migration strategy\n- Explain gate_events denormalization rationale\n- Note DESIGN.md subscription type naming discrepancy\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit the revised spec"
 }
 ```
@@ -1645,7 +1645,7 @@ Based on my thorough exploration of the Changelogue codebase, here is the comple
 
 ## 1. DATABASE MIGRATIONS
 
-**File:** `/Users/pc/web3/ReleaseBeacon/internal/db/migrations.go`
+**File:** `/home/<USER>/web3/ReleaseBeacon/internal/db/migrations.go`
 
 **Key Line Numbers:**
 - Lines 12-210: Main schema constant with all table definitions
@@ -1682,7 +1682,7 @@ tool_use Read
 id: toolu_bdrk_01TrkLVKxkywJTtdsKTfsQ5C
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/queue/jobs.go"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/queue/jobs.go"
 }
 ```
 
@@ -1738,7 +1738,7 @@ tool_use Read
 id: toolu_bdrk_01PAHhZfgAArqerFPYv6Ex4C
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/ingestion/pgstore.go"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/ingestion/pgstore.go"
 }
 ```
 
@@ -1803,7 +1803,7 @@ tool_use Read
 id: toolu_bdrk_01Qgffd3Fubn3jbVxrB1Sy4s
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/routing/worker.go"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/routing/worker.go"
 }
 ```
 
@@ -1861,7 +1861,7 @@ tool_use Read
 id: toolu_bdrk_01XXFdSTq6fHSupDq3YNnaWS
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/cmd/server/main.go"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/cmd/server/main.go"
 }
 ```
 
@@ -1939,7 +1939,7 @@ tool_use Read
 id: toolu_bdrk_019dFPo3CE5ssJKD6Qxy2L2y
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/api/server.go"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/api/server.go"
 }
 ```
 
@@ -2015,7 +2015,7 @@ tool_use Read
 id: toolu_bdrk_01GN8tv5Khc5iFXDyAGkYDKU
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/queue/river.go"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/queue/river.go"
 }
 ```
 
@@ -2024,7 +2024,7 @@ id: toolu_bdrk_01GN8tv5Khc5iFXDyAGkYDKU
 tool_result ERROR
 id: toolu_bdrk_01GN8tv5Khc5iFXDyAGkYDKU
 ```
-File does not exist. Note: your current working directory is /Users/pc/web3/ReleaseBeacon.
+File does not exist. Note: your current working directory is /home/<USER>/web3/ReleaseBeacon.
 ```
 
 > TOOL
@@ -2042,9 +2042,9 @@ id: toolu_bdrk_01MbRQvuGULDvvPAVVLJd3R7
 tool_result
 id: toolu_bdrk_01MbRQvuGULDvvPAVVLJd3R7
 ```
-/Users/pc/web3/ReleaseBeacon/internal/queue/client.go
-/Users/pc/web3/ReleaseBeacon/internal/queue/jobs_test.go
-/Users/pc/web3/ReleaseBeacon/internal/queue/jobs.go
+/home/<USER>/web3/ReleaseBeacon/internal/queue/client.go
+/home/<USER>/web3/ReleaseBeacon/internal/queue/jobs_test.go
+/home/<USER>/web3/ReleaseBeacon/internal/queue/jobs.go
 ```
 
 > TOOL
@@ -2053,7 +2053,7 @@ tool_use Read
 id: toolu_bdrk_01PiYER6BLEbCZMZZkfCXbme
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/queue/client.go"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/queue/client.go"
 }
 ```
 
@@ -2101,7 +2101,7 @@ tool_use Read
 id: toolu_bdrk_019TQW3veNjLjC29W21mucm3
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/agent/worker.go"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/agent/worker.go"
 }
 ```
 
@@ -2164,7 +2164,7 @@ tool_use Read
 id: toolu_bdrk_01NE2v2jEUj8VPQMCVfzEbjx
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/db/migrations.go"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/db/migrations.go"
 }
 ```
 
@@ -2231,7 +2231,7 @@ tool_use Bash
 id: toolu_bdrk_01FiZ3mEpNjPZpDo6Ba5W8xF
 ```json
 {
-  "command": "ls /Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/ 2>/dev/null || echo \"no plans dir\"",
+  "command": "ls /home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/ 2>/dev/null || echo \"no plans dir\"",
   "description": "Check plans directory"
 }
 ```
@@ -2254,7 +2254,7 @@ tool_use Write
 id: toolu_bdrk_0164FnypqQ5CxrcoUJUccFCj
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
   "content": "# Release Gate Implementation Plan\n\n> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.\n\n**Goal:** Add a release gate system that delays agent analysis and notifications until all required sources report a version, with configurable timeouts and version mapping.\n\n**Architecture:** A project-level `release_gate` config controls when the LLM agent runs for multi-source projects. A `GateCheckWorker` evaluates readiness on each release ingestion. A periodic `GateTimeoutWorker` sweeps expired gates. Existing `source_release` / `semantic_release` subscriptions remain unchanged.\n\n**Tech Stack:** Go 1.25, PostgreSQL (JSONB), River v0.31.0 job queue, existing test patterns (mock stores, table-driven tests)\n\n**Spec:** `docs/superpowers/specs/2026-03-23-release-gate-design.md`\n\n---\n\n## File Structure\n\n| File | Action | Responsibility |\n|------|--------|---------------|\n| `internal/models/release_gate.go` | Create | `ReleaseGate`, `VersionReadiness`, `GateEvent` structs |\n| `internal/gate/worker.go` | Create | `GateCheckWorker` — evaluates structured gate rules |\n| `internal/gate/worker_test.go` | Create | Unit tests for `GateCheckWorker` |\n| `internal/gate/nl_worker.go` | Create | `GateNLEvalWorker` — LLM evaluation of NL rules |\n| `internal/gate/nl_worker_test.go` | Create | Unit tests for `GateNLEvalWorker` |\n| `internal/gate/timeout_worker.go` | Create | `GateTimeoutWorker` — periodic sweep of expired gates |\n| `internal/gate/timeout_worker_test.go` | Create | Unit tests for `GateTimeoutWorker` |\n| `internal/gate/version.go` | Create | Version normalization logic (regex/template) […]
 
 > TOOL
@@ -2262,7 +2262,7 @@ id: toolu_bdrk_0164FnypqQ5CxrcoUJUccFCj
 tool_result
 id: toolu_bdrk_0164FnypqQ5CxrcoUJUccFCj
 ```
-File created successfully at: /Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md
+File created successfully at: /home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md
 ```
 
 > AGENT
@@ -2276,7 +2276,7 @@ id: toolu_bdrk_01LvABNTdAZdtb162VUy9iPZ
 ```json
 {
   "description": "Review release gate plan",
-  "prompt": "You are reviewing an implementation plan for technical correctness, completeness, and executability. This is a plan review, not a code review.\n\n**Plan file:** `/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md`\n**Spec file:** `/Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md`\n\n**Review criteria:**\n1. **Completeness:** Does the plan cover everything in the spec? Missing tasks?\n2. **Order:** Are tasks in the right dependency order? Can each be done independently after its prerequisites?\n3. **File paths:** Are all file paths correct and consistent with the existing codebase?\n4. **Code correctness:** Do the code snippets compile and follow existing patterns? Check imports, types, function signatures.\n5. **Test coverage:** Do tests cover the critical paths identified in the spec (concurrency, timeouts, NL rule failure)?\n6. **Missing steps:** Are there steps that an implementer would need but aren't documented?\n\nRead the plan, the spec, and spot-check relevant existing files to verify consistency. Output:\n- **APPROVED** if no blocking issues\n- **Issues Found** with specific, actionable items to fix\n\nFocus on substance — things that would block or confuse an implementer. Don't suggest style changes.",
+  "prompt": "You are reviewing an implementation plan for technical correctness, completeness, and executability. This is a plan review, not a code review.\n\n**Plan file:** `/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md`\n**Spec file:** `/home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md`\n\n**Review criteria:**\n1. **Completeness:** Does the plan cover everything in the spec? Missing tasks?\n2. **Order:** Are tasks in the right dependency order? Can each be done independently after its prerequisites?\n3. **File paths:** Are all file paths correct and consistent with the existing codebase?\n4. **Code correctness:** Do the code snippets compile and follow existing patterns? Check imports, types, function signatures.\n5. **Test coverage:** Do tests cover the critical paths identified in the spec (concurrency, timeouts, NL rule failure)?\n6. **Missing steps:** Are there steps that an implementer would need but aren't documented?\n\nRead the plan, the spec, and spot-check relevant existing files to verify consistency. Output:\n- **APPROVED** if no blocking issues\n- **Issues Found** with specific, actionable items to fix\n\nFocus on substance — things that would block or confuse an implementer. Don't suggest style changes.",
   "subagent_type": "superpowers:code-reviewer"
 }
 ```
@@ -2324,7 +2324,7 @@ timeoutPeriodic := river.NewPeriodicJob(
 )
 ```
 
-This is verified in `/Users/pc/go/pkg/mod/github.com/riverqueue/river@v0.31.0/periodic_job.go` lines 29-33 (fields are lowercase) and line 74 (`NewPeriodicJob` constructor).
+This is verified in `/home/<USER>/go/pkg/mod/github.com/riverqueue/river@v0.31.0/periodic_job.go` lines 29-33 (fields are lowercase) and line 74 (`NewPeriodicJob` constructor).
 
 The spec (lines 258-269) also uses the wrong API (`river.PeriodicJob{...}` struct literal with `ScheduleFunc` as a direct field). This needs to be corrected in both the spec […]
 
@@ -2338,7 +2338,7 @@ tool_use Read
 id: toolu_bdrk_01G6vUUNr5rYm1BLTaubx75f
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
   "offset": 1,
   "limit": 50
 }
@@ -2396,7 +2396,7 @@ tool_use Read
 id: toolu_bdrk_01A4v5mwxMXfz8B1YnnJqApv
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md"
 }
 ```
 
@@ -2406,7 +2406,7 @@ tool_result
 id: toolu_bdrk_01A4v5mwxMXfz8B1YnnJqApv
 ```
 <persisted-output>
-Output too large (59.7KB). Full output saved to: /Users/pc/.REDACTED.txt
+Output too large (59.7KB). Full output saved to: /home/<USER>/.REDACTED.txt
 
 Preview (first 2KB):
      1→# Release Gate Implementation Plan
@@ -2439,7 +2439,7 @@ tool_use Read
 id: toolu_bdrk_01H3RTx2zoFQDtozxxuVVFEW
 ```json
 {
-  "file_path": "/Users/pc/.REDACTED.txt"
+  "file_path": "/home/<USER>/.REDACTED.txt"
 }
 ```
 
@@ -2462,7 +2462,7 @@ id: toolu_bdrk_01DggLAEP7PU54tpYbJzGJCq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
   "old_string": "// NormalizeVersion applies a version mapping (regex + template) to a raw version\n// string. If no mapping is provided or the regex is invalid, it falls back to\n// stripping the \"v\"/\"V\" prefix and lowercasing.\nfunc NormalizeVersion(raw string, mapping *models.VersionMapping) string {\n\tif mapping != nil && mapping.Pattern != \"\" {\n\t\tre, err := regexp.Compile(mapping.Pattern)\n\t\tif err == nil {\n\t\t\tresult := re.ReplaceAllString(raw, mapping.Template)\n\t\t\tif result != \"\" {\n\t\t\t\treturn result\n\t\t\t}\n\t\t}\n\t}\n\t// Default: strip v/V prefix, lowercase.\n\tv := strings.TrimPrefix(raw, \"v\")\n\tv = strings.TrimPrefix(v, \"V\")\n\treturn strings.ToLower(v)\n}",
   "new_string": "// NormalizeVersion applies a version mapping (regex + template) to a raw version\n// string. If no mapping is provided or the regex is invalid, it falls back to\n// stripping the \"v\"/\"V\" prefix and lowercasing.\nfunc NormalizeVersion(raw string, mapping *models.VersionMapping) string {\n\tif mapping != nil && mapping.Pattern != \"\" {\n\t\tre, err := regexp.Compile(mapping.Pattern)\n\t\tif err == nil {\n\t\t\tmatches := re.FindStringSubmatch(raw)\n\t\t\tif len(matches) > 1 {\n\t\t\t\t// Apply template with capture group substitution.\n\t\t\t\tresult := mapping.Template\n\t\t\t\tfor i := 1; i < len(matches); i++ {\n\t\t\t\t\tplaceholder := fmt.Sprintf(\"$%d\", i)\n\t\t\t\t\tresult = strings.ReplaceAll(result, placeholder, matches[i])\n\t\t\t\t}\n\t\t\t\tif result != \"\" {\n\t\t\t\t\treturn result\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\t// Default: strip v/V prefix, lowercase.\n\tv := strings.TrimPrefix(raw, \"v\")\n\tv = strings.TrimPrefix(v, \"V\")\n\treturn strings.ToLower(v)\n}"
 }
@@ -2473,7 +2473,7 @@ id: toolu_bdrk_01DggLAEP7PU54tpYbJzGJCq
 tool_result
 id: toolu_bdrk_01DggLAEP7PU54tpYbJzGJCq
 ```
-The file /Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md has been updated successfully.
 ```
 
 > AGENT
@@ -2487,7 +2487,7 @@ id: toolu_bdrk_01H9anaftqXSJJjLxkhd87Au
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
   "old_string": "```go\npackage gate\n\nimport (\n\t\"regexp\"\n\t\"strings\"\n\n\t\"github.com/sentioxyz/changelogue/internal/models\"\n)",
   "new_string": "```go\npackage gate\n\nimport (\n\t\"fmt\"\n\t\"regexp\"\n\t\"strings\"\n\n\t\"github.com/sentioxyz/changelogue/internal/models\"\n)"
 }
@@ -2498,7 +2498,7 @@ id: toolu_bdrk_01H9anaftqXSJJjLxkhd87Au
 tool_result
 id: toolu_bdrk_01H9anaftqXSJJjLxkhd87Au
 ```
-The file /Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md has been updated successfully.
 ```
 
 > AGENT
@@ -2512,7 +2512,7 @@ id: toolu_bdrk_01SLhuwX9e4nA6uatzGgfzmK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
   "old_string": "    status VARCHAR(20) NOT NULL DEFAULT 'pending',",
   "new_string": "    status VARCHAR(20) NOT NULL DEFAULT 'pending'\n        CHECK (status IN ('pending', 'ready', 'timed_out')),"
 }
@@ -2523,7 +2523,7 @@ id: toolu_bdrk_01SLhuwX9e4nA6uatzGgfzmK
 tool_result
 id: toolu_bdrk_01SLhuwX9e4nA6uatzGgfzmK
 ```
-The file /Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md has been updated successfully.
 ```
 
 > AGENT
@@ -2537,7 +2537,7 @@ id: toolu_bdrk_017dLs7EvhetBhftmtvEorQa
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
   "old_string": "// GateCheckWorker evaluates release gate readiness when a new release is ingested.\ntype GateCheckWorker struct {\n\triver.WorkerDefaults[queue.GateCheckJobArgs]\n\tstore GateStore\n\triver *river.Client[pgx.Tx] // for enqueuing NL eval jobs\n}",
   "new_string": "// GateCheckWorker evaluates release gate readiness when a new release is ingested.\ntype GateCheckWorker struct {\n\triver.WorkerDefaults[queue.GateCheckJobArgs]\n\tstore       GateStore\n\triverClient *river.Client[pgx.Tx] // for enqueuing NL eval jobs\n}"
 }
@@ -2548,7 +2548,7 @@ id: toolu_bdrk_017dLs7EvhetBhftmtvEorQa
 tool_result
 id: toolu_bdrk_017dLs7EvhetBhftmtvEorQa
 ```
-The file /Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md has been updated successfully.
 ```
 
 > TOOL
@@ -2558,7 +2558,7 @@ id: toolu_bdrk_01JcxDwExfitPEMXzNTYyfAT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
   "old_string": "// NewGateCheckWorker creates a new GateCheckWorker.\nfunc NewGateCheckWorker(store GateStore, riverClient *river.Client[pgx.Tx]) *GateCheckWorker {\n\treturn &GateCheckWorker{store: store, river: riverClient}\n}",
   "new_string": "// NewGateCheckWorker creates a new GateCheckWorker.\nfunc NewGateCheckWorker(store GateStore, riverClient *river.Client[pgx.Tx]) *GateCheckWorker {\n\treturn &GateCheckWorker{store: store, riverClient: riverClient}\n}"
 }
@@ -2569,7 +2569,7 @@ id: toolu_bdrk_01JcxDwExfitPEMXzNTYyfAT
 tool_result
 id: toolu_bdrk_01JcxDwExfitPEMXzNTYyfAT
 ```
-The file /Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md has been updated successfully.
 ```
 
 > TOOL
@@ -2579,7 +2579,7 @@ id: toolu_bdrk_01FT77VNGytdb9rJLz9XeF6R
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
   "old_string": "\t\tif w.river != nil {\n\t\t\t\t_, err := w.river.Insert(ctx, queue.GateNLEvalJobArgs{",
   "new_string": "\t\tif w.riverClient != nil {\n\t\t\t\t_, err := w.riverClient.Insert(ctx, queue.GateNLEvalJobArgs{"
 }
@@ -2590,12 +2590,12 @@ id: toolu_bdrk_01FT77VNGytdb9rJLz9XeF6R
 tool_result
 id: toolu_bdrk_01FT77VNGytdb9rJLz9XeF6R
 ```
-The file /Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md has been updated successfully.
 ```
 
 > AGENT
 
-API Error: 500 {"error":{"message":"Chat provider for model copilot/claude-opus-4.6 is not registered.","type":"internal_server_error","log_file":"/Users/pc/web3/tennisconcrete/2026-03-16_21-52-34-836-debug.log"}}
+API Error: 500 {"error":{"message":"Chat provider for model copilot/claude-opus-4.6 is not registered.","type":"internal_server_error","log_file":"/home/<USER>/web3/tennisconcrete/2026-03-16_21-52-34-836-debug.log"}}
 
 > DEVELOPER
 
@@ -2603,7 +2603,7 @@ continue
 
 > AGENT
 
-API Error: 500 {"error":{"message":"Chat provider for model copilot/claude-opus-4.6 is not registered.","type":"internal_server_error","log_file":"/Users/pc/web3/tennisconcrete/2026-03-16_21-52-34-836-debug.log"}}
+API Error: 500 {"error":{"message":"Chat provider for model copilot/claude-opus-4.6 is not registered.","type":"internal_server_error","log_file":"/home/<USER>/web3/tennisconcrete/2026-03-16_21-52-34-836-debug.log"}}
 
 > DEVELOPER
 
@@ -2616,7 +2616,7 @@ id: toolu_bdrk_01H5W9mTaBZhsdrJz8BiW19g
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
   "old_string": "func (w *GateCheckWorker) SetRiverClient(c *river.Client[pgx.Tx]) {\n    w.river = c\n}",
   "new_string": "func (w *GateCheckWorker) SetRiverClient(c *river.Client[pgx.Tx]) {\n    w.riverClient = c\n}"
 }
@@ -2627,7 +2627,7 @@ id: toolu_bdrk_01H5W9mTaBZhsdrJz8BiW19g
 tool_result
 id: toolu_bdrk_01H5W9mTaBZhsdrJz8BiW19g
 ```
-The file /Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md has been updated successfully.
 ```
 
 > AGENT
@@ -2641,7 +2641,7 @@ id: toolu_bdrk_01EdwrbUz6RMrnmi5a13D82g
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
   "old_string": "Query: JOIN `sources` → `release_gates` via `project_id`. Return `nil, nil` if no row.",
   "new_string": "Query: JOIN `sources` → `release_gates` via `project_id`. Return `nil, nil` if no row. Use `errors.Is(err, pgx.ErrNoRows)` for the no-row check (consistent with newer codebase patterns at `pgstore.go:1577`)."
 }
@@ -2652,7 +2652,7 @@ id: toolu_bdrk_01EdwrbUz6RMrnmi5a13D82g
 tool_result
 id: toolu_bdrk_01EdwrbUz6RMrnmi5a13D82g
 ```
-The file /Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md has been updated successfully.
 ```
 
 > TOOL
@@ -2662,7 +2662,7 @@ id: toolu_bdrk_01JpTaprpMKeYDVvMS3i6nwJ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
   "old_string": "\tif err != nil {\n\t\tif err.Error() == \"no rows in result set\" {\n\t\t\treturn nil, nil\n\t\t}\n\t\treturn nil, err\n\t}",
   "new_string": "\tif err != nil {\n\t\tif errors.Is(err, pgx.ErrNoRows) {\n\t\t\treturn nil, nil\n\t\t}\n\t\treturn nil, err\n\t}"
 }
@@ -2673,7 +2673,7 @@ id: toolu_bdrk_01JpTaprpMKeYDVvMS3i6nwJ
 tool_result
 id: toolu_bdrk_01JpTaprpMKeYDVvMS3i6nwJ
 ```
-The file /Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md has been updated successfully.
 ```
 
 > AGENT
@@ -2687,7 +2687,7 @@ id: toolu_bdrk_01Dta8PG25usRRw1kVyvq1rR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
   "old_string": "\tif !found {\n\t\tt.Fatal(\"gate_timed_out event should have been recorded\")\n\t}\n}",
   "new_string": "\tif !found {\n\t\tt.Fatal(\"gate_timed_out event should have been recorded\")\n\t}\n\tif !store.agentRunEnqueued {\n\t\tt.Fatal(\"agent should have been enqueued after timeout\")\n\t}\n}"
 }
@@ -2698,7 +2698,7 @@ id: toolu_bdrk_01Dta8PG25usRRw1kVyvq1rR
 tool_result
 id: toolu_bdrk_01Dta8PG25usRRw1kVyvq1rR
 ```
-The file /Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md has been updated successfully.
 ```
 
 > AGENT
@@ -2712,7 +2712,7 @@ id: toolu_bdrk_019E7dJyKFWT6ogoc3MuG4xq
 ```json
 {
   "pattern": "TestGateCheckWorker_PendingWaitsForMore",
-  "path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
+  "path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
   "output_mode": "content",
   "-n": true
 }
@@ -2732,7 +2732,7 @@ tool_use Read
 id: toolu_bdrk_012aca7r3sUeNubKsV4r7GbM
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
   "offset": 641,
   "limit": 40
 }
@@ -2794,7 +2794,7 @@ id: toolu_bdrk_01J5FrPzCEZ41xquhEfKf5PR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
   "old_string": "\tif store.agentRunEnqueued {\n\t\tt.Fatal(\"agent should NOT be enqueued when gate is still pending\")\n\t}\n}",
   "new_string": "\tif store.agentRunEnqueued {\n\t\tt.Fatal(\"agent should NOT be enqueued when gate is still pending\")\n\t}\n}\n\nfunc TestGateCheckWorker_NLRuleEnqueuesEval(t *testing.T) {\n\tstore := &mockGateStore{\n\t\tgate: &models.ReleaseGate{\n\t\t\tID:              \"gate-1\",\n\t\t\tProjectID:       \"proj-1\",\n\t\t\tRequiredSources: []string{\"src-1\"},\n\t\t\tTimeoutHours:    168,\n\t\t\tNLRule:          \"Docker image must have 100 pulls\",\n\t\t\tEnabled:         true,\n\t\t},\n\t\tupsertReady: true, // structured rules pass\n\t}\n\t// Pass nil river client — the worker should NOT open the gate (NL rule pending).\n\tw := NewGateCheckWorker(store, nil)\n\tjob := &river.Job[queue.GateCheckJobArgs]{\n\t\tArgs: queue.GateCheckJobArgs{SourceID: \"src-1\", ReleaseID: \"rel-1\", Version: \"v1.0.0\"},\n\t}\n\tif err := w.Work(context.Background(), job); err != nil {\n\t\tt.Fatalf(\"unexpected error: %v\", err)\n\t}\n\tif store.gateOpened {\n\t\tt.Fatal(\"gate should NOT be opened when NL rule is pending evaluation\")\n\t}\n\tif store.agentRunEnqueued {\n\t\tt.Fatal(\"agent should NOT be enqueued when NL rule is pending\")\n\t}\n}"
 }
@@ -2805,7 +2805,7 @@ id: toolu_bdrk_01J5FrPzCEZ41xquhEfKf5PR
 tool_result
 id: toolu_bdrk_01J5FrPzCEZ41xquhEfKf5PR
 ```
-The file /Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md has been updated successfully.
 ```
 
 > AGENT
@@ -2819,7 +2819,7 @@ id: toolu_bdrk_01HZxVQSF1QA1fYN7bvn1PHU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
   "old_string": "- [ ] **Step 3: Add UpsertVersionReadiness**\n\nUses `INSERT ... ON CONFLICT` with JSONB array append. Returns `(row, allMet, error)`.\n\n```go\nfunc (s *PgStore) UpsertVersionReadiness(ctx context.Context, projectID, version, sourceID string, requiredSources []string, timeoutHours int) (*models.VersionReadiness, bool, error) {\n\t// Atomic upsert: add sourceID to sources_met, recalculate sources_missing.\n\t// Uses ON CONFLICT (project_id, version) DO UPDATE with JSONB containment check.\n\t// Returns the updated row.\n}\n```",
   "new_string": "- [ ] **Step 3: Add UpsertVersionReadiness**\n\nUses `INSERT ... ON CONFLICT` with JSONB array append. The store method receives the full `requiredSources` list and computes `sources_missing` internally (as `required - met`). Returns `(row, allMet, error)` where `allMet` is true when `sources_missing` is empty after the upsert.\n\n```go\nfunc (s *PgStore) UpsertVersionReadiness(ctx context.Context, projectID, version, sourceID string, requiredSources []string, timeoutHours int) (*models.VersionReadiness, bool, error) {\n\t// 1. Build JSONB arrays for required and the new source.\n\t// 2. INSERT ... ON CONFLICT (project_id, version) DO UPDATE:\n\t//    - Append sourceID to sources_met if not already present (JSONB containment check)\n\t//    - Recompute sources_missing = requiredSources ∖ sources_met (done in SQL or Go)\n\t//    - Only update rows WHERE status = 'pending'\n\t// 3. RETURNING id, sources_met, sources_missing, status\n\t// 4. allMet = len(sources_missing) == 0\n}\n```"
 }
@@ -2830,7 +2830,7 @@ id: toolu_bdrk_01HZxVQSF1QA1fYN7bvn1PHU
 tool_result
 id: toolu_bdrk_01HZxVQSF1QA1fYN7bvn1PHU
 ```
-The file /Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md has been updated successfully.
 ```
 
 > AGENT
@@ -2844,7 +2844,7 @@ id: toolu_bdrk_01AFsYZVCF4D9qPCeXv99Xvm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
   "old_string": "Pass the periodic job to `NewRiverClient`:\n\n```go\ntimeoutPeriodic := &river.PeriodicJob{\n    ConstructorFunc: func() (river.JobArgs, *river.InsertOpts) {\n        return queue.GateTimeoutJobArgs{}, nil\n    },\n    RunOnStart: true,\n    ScheduleFunc: func(t time.Time) time.Time {\n        return t.Add(15 * time.Minute)\n    },\n}\nriverClient, err := queue.NewRiverClient(pool, workers, timeoutPeriodic)",
   "new_string": "Pass the periodic job to `NewRiverClient`:\n\n```go\ntimeoutPeriodic := river.NewPeriodicJob(\n    river.PeriodicInterval(15 * time.Minute),\n    func() (river.JobArgs, *river.InsertOpts) {\n        return queue.GateTimeoutJobArgs{}, nil\n    },\n    &river.PeriodicJobOpts{RunOnStart: true},\n)\nriverClient, err := queue.NewRiverClient(pool, workers, timeoutPeriodic)"
 }
@@ -2855,7 +2855,7 @@ id: toolu_bdrk_01AFsYZVCF4D9qPCeXv99Xvm
 tool_result
 id: toolu_bdrk_01AFsYZVCF4D9qPCeXv99Xvm
 ```
-The file /Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md has been updated successfully.
 ```
 
 > AGENT
@@ -2870,7 +2870,7 @@ id: toolu_bdrk_01JYQBpAPXGNEb1NoEqM1VnV
 {
   "-n": true,
   "output_mode": "content",
-  "path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
+  "path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
   "pattern": "^## Task 11:|^## Task 14:|^## Task 15:"
 }
 ```
@@ -2891,7 +2891,7 @@ tool_use Read
 id: toolu_bdrk_01UoV1h8DoZuzYgh6nLpaHLL
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
   "limit": 30,
   "offset": 1357
 }
@@ -2946,7 +2946,7 @@ id: toolu_bdrk_016513mnFiAacdcqAqepXTAc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
   "old_string": "- [ ] **Step 3: Modify checkAgentRules to skip when gate exists**\n\nAt the beginning of `checkAgentRules` (line 172), after loading the project, add:\n\n```go\n// If the project has an active release gate, skip agent rule checking here.\n// The gate worker handles agent triggering.\nhasGate, err := w.store.HasReleaseGate(ctx, source.ProjectID)\nif err != nil {\n    slog.Error(\"check release gate\", \"project_id\", source.ProjectID, \"err\", err)\n    return\n}\nif hasGate {\n    slog.Debug(\"agent rules skipped — project has release gate\", \"project_id\", source.ProjectID)\n    return\n}\n```",
   "new_string": "- [ ] **Step 3: Modify checkAgentRules to skip when gate exists**\n\nInsert after the `GetProject` error check in `checkAgentRules` at `internal/routing/worker.go:177` (after the `return` in the error block for `GetProject`):\n\n```go\n// If the project has an active release gate, skip agent rule checking here.\n// The gate worker handles agent triggering.\nhasGate, err := w.store.HasReleaseGate(ctx, source.ProjectID)\nif err != nil {\n    slog.Error(\"check release gate\", \"project_id\", source.ProjectID, \"err\", err)\n    return\n}\nif hasGate {\n    slog.Debug(\"agent rules skipped — project has release gate\", \"project_id\", source.ProjectID)\n    return\n}\n```"
 }
@@ -2957,7 +2957,7 @@ id: toolu_bdrk_016513mnFiAacdcqAqepXTAc
 tool_result
 id: toolu_bdrk_016513mnFiAacdcqAqepXTAc
 ```
-The file /Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md has been updated successfully.
 ```
 
 > AGENT
@@ -2970,7 +2970,7 @@ tool_use Read
 id: toolu_bdrk_01B8WUbyzQzQyJFNsdVx6yvo
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
   "limit": 50,
   "offset": 1559
 }
@@ -3024,7 +3024,7 @@ id: toolu_bdrk_01YSgqAgFyjBwBtzuhLpSfMJ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
   "old_string": "## Task 14: Enriched Semantic Notifications\n\n**Files:**\n- Modify: `internal/agent/orchestrator.go` — where notifications are sent after semantic release creation\n\n- [ ] **Step 1: Add version readiness context to semantic notifications**\n\nIn the `Orchestrator.RunAgent` method, after creating the semantic release and before sending project notifications, load the `version_readiness` for this project+version (if any) and include source availability info in the notification body.\n\nThe agent orchestrator's `sendProjectNotifications` (or equivalent) should check for `version_readiness` and append:\n- `Sources: GitHub ✓, Docker Hub ✓` (when all met)\n- `Sources: GitHub ✓, Docker Hub ✗ (not yet available)` (when timed out)\n\nThis requires adding a method to `OrchestratorStore`:\n\n```go\nGetVersionReadinessByVersion(ctx context.Context, projectID, version string) (*models.VersionReadiness, error)\n```\n\n- [ ] **Step 2: Implement the enrichment in notification building**\n\nWhen building the `Notification` for semantic release subscribers, if a `VersionReadiness` exists, append source status lines to the body.\n\n- [ ] **Step 3: Verify existing tests still pass**\n\nRun: `go test ./internal/agent/... -v`\nExpected: PASS\n\n- [ ] **Step 4: Commit**\n\n```bash\ngit add internal/agent/orchestrator.go internal/api/pgstore.go\ngit commit -m \"feat(gate): enrich semantic notifications with source availability status\"\n```\n\n---\n\n## Task 15: Integration Smoke Test",
   "new_string": "## Task 14: Enriched Semantic Notifications\n\n**Files:**\n- Modify: `internal/agent/orchestrator.go:236-266` — `RunAgent` method\n- Modify: `internal/agent/orchestrator.go:32-43` — `OrchestratorStore` interface\n- Modify: `internal/api/pgstore.go` — add `GetVersionReadinessByVersion`\n\n- […]
 
@@ -3033,7 +3033,7 @@ id: toolu_bdrk_01YSgqAgFyjBwBtzuhLpSfMJ
 tool_result
 id: toolu_bdrk_01YSgqAgFyjBwBtzuhLpSfMJ
 ```
-The file /Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md has been updated successfully.
 ```
 
 > AGENT
@@ -3047,7 +3047,7 @@ id: toolu_bdrk_01BvRfoLponPDdG23KiMnfBW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
   "old_string": "| `cmd/server/main.go` | Modify | Register `GateCheckWorker`, `GateNLEvalWorker`, `GateTimeoutWorker`, periodic job |",
   "new_string": "| `cmd/server/main.go` | Modify | Register `GateCheckWorker`, `GateNLEvalWorker`, `GateTimeoutWorker`, periodic job |\n| `DESIGN.md` | Modify | Update subscription type names, add release gate documentation |"
 }
@@ -3058,7 +3058,7 @@ id: toolu_bdrk_01BvRfoLponPDdG23KiMnfBW
 tool_result
 id: toolu_bdrk_01BvRfoLponPDdG23KiMnfBW
 ```
-The file /Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md has been updated successfully.
 ```
 
 > AGENT
@@ -3072,7 +3072,7 @@ id: toolu_bdrk_01QgLGwQioGoMJagzJtv6vRB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
   "old_string": "- [ ] **Step 1: Define the GateStore interface**",
   "new_string": "- [ ] **Step 1: Define the GateStore interface**\n\nThe interface includes methods that already exist on `api.PgStore` (`GetSource`, `GetProject`, `ListSourcesByProject`, `EnqueueAgentRun`). The implementer should verify the existing method signatures match before adding new ones. New methods to implement: `GetReleaseGateBySource`, `GetReleaseGate`, `UpsertVersionReadiness`, `OpenGate`, `MarkAgentTriggered`, `RecordGateEvent`, `ListExpiredGates`, `GetVersionReadiness`, `UpdateNLRulePassed`."
 }
@@ -3083,7 +3083,7 @@ id: toolu_bdrk_01QgLGwQioGoMJagzJtv6vRB
 tool_result
 id: toolu_bdrk_01QgLGwQioGoMJagzJtv6vRB
 ```
-The file /Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md has been updated successfully.
 ```
 
 > AGENT
@@ -3097,7 +3097,7 @@ id: toolu_bdrk_0142UugHKMroVocDsh49WVu1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md",
   "old_string": "**Registration:** Uses River's `PeriodicJob` API:\n\n```go\nriver.PeriodicJob{\n    ScheduleFunc: river.PeriodicScheduleFunc(func(time.Time) time.Time {\n        return time.Now().Add(15 * time.Minute)\n    }),\n    ConstructorFunc: func() (river.JobArgs, *river.InsertOpts) {\n        return GateTimeoutJobArgs{}, nil\n    },\n}",
   "new_string": "**Registration:** Uses River's `NewPeriodicJob` API:\n\n```go\nriver.NewPeriodicJob(\n    river.PeriodicInterval(15 * time.Minute),\n    func() (river.JobArgs, *river.InsertOpts) {\n        return GateTimeoutJobArgs{}, nil\n    },\n    &river.PeriodicJobOpts{RunOnStart: true},\n)"
 }
@@ -3108,7 +3108,7 @@ id: toolu_bdrk_0142UugHKMroVocDsh49WVu1
 tool_result
 id: toolu_bdrk_0142UugHKMroVocDsh49WVu1
 ```
-The file /Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md has been updated successfully.
 ```
 
 > TOOL
@@ -3117,7 +3117,7 @@ tool_use Bash
 id: toolu_bdrk_01166eA3H42SydswRumkNBtV
 ```json
 {
-  "command": "git add docs/superpowers/plans/2026-03-23-release-gate.md docs/superpowers/specs/2026-03-23-release-gate-design.md && git commit -m \"$(cat <<'EOF'\ndocs: address plan review findings for release gate\n\nFix all review issues:\n- Use FindStringSubmatch instead of ReplaceAllString for version normalization\n- Fix River PeriodicJob API to use NewPeriodicJob() (spec + plan)\n- Use errors.Is(err, pgx.ErrNoRows) instead of string match\n- Add CHECK constraint on version_readiness.status\n- Add NL rule enqueue path test for GateCheckWorker\n- Add agent enqueue assertion to GateTimeoutWorker test\n- Clarify sources_missing computation in UpsertVersionReadiness\n- Rename river field to riverClient to avoid package name collision\n- Add Task 15: WaitForAllSources deprecation migration\n- Add Task 16: DESIGN.md update\n- Expand Task 14 with detailed implementation steps\n- Note PgStore interface compatibility for GateStore\n- Specify exact insertion point for checkAgentRules guard\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add docs/superpowers/plans/2026-03-23-release-gate.md docs/superpowers/specs/2026-03-23-release-gate-design.md && git commit -m \"$(cat <<'EOF'\ndocs: address plan review findings for release gate\n\nFix all review issues:\n- Use FindStringSubmatch instead of ReplaceAllString for version normalization\n- Fix River PeriodicJob API to use NewPeriodicJob() (spec + plan)\n- Use errors.Is(err, pgx.ErrNoRows) instead of string match\n- Add CHECK constraint on version_readiness.status\n- Add NL rule enqueue path test for GateCheckWorker\n- Add agent enqueue assertion to GateTimeoutWorker test\n- Clarify sources_missing computation in UpsertVersionReadiness\n- Rename river field to riverClient to avoid package name collision\n- Add Task 15: WaitForAllSources deprecation migration\n- Add Task 16: DESIGN.md update\n- Expand Task 14 with detailed implementation steps\n- Note PgStore interface compatibility for GateStore\n- Specify exact insertion point for checkAgentRules guard\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit the revised plan and spec"
 }
 ```
@@ -3215,7 +3215,7 @@ tool_use Read
 id: toolu_bdrk_018sskMxSn52mVYXM2FgvyNV
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md",
   "limit": 40,
   "offset": 1
 }
@@ -3412,7 +3412,7 @@ tool_use Read
 id: toolu_bdrk_014ZWs4avhjdsDVbbaMTeLzi
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-23-release-gate.md"
 }
 ```
 
@@ -3434,7 +3434,7 @@ tool_result
 id: toolu_bdrk_014ZWs4avhjdsDVbbaMTeLzi
 ```
 <persisted-output>
-Output too large (67.3KB). Full output saved to: /Users/pc/.REDACTED.txt
+Output too large (67.3KB). Full output saved to: /home/<USER>/.REDACTED.txt
 
 Preview (first 2KB):
      1→# Release Gate Implementation Plan
@@ -3471,7 +3471,7 @@ tool_use Read
 id: toolu_bdrk_01UjCfimRnTzFzswXPwgjLGD
 ```json
 {
-  "file_path": "/Users/pc/.REDACTED.txt"
+  "file_path": "/home/<USER>/.REDACTED.txt"
 }
 ```
 
@@ -3489,7 +3489,7 @@ tool_use Read
 id: toolu_bdrk_01UxujsnJ1AZtMPAKdvsJTmD
 ```json
 {
-  "file_path": "/Users/pc/.REDACTED.txt",
+  "file_path": "/home/<USER>/.REDACTED.txt",
   "limit": 500,
   "offset": 1
 }
@@ -3533,7 +3533,7 @@ tool_use Read
 id: toolu_bdrk_01LN1do8uhFCtwLxn8MWw1vs
 ```json
 {
-  "file_path": "/Users/pc/.REDACTED.txt",
+  "file_path": "/home/<USER>/.REDACTED.txt",
   "limit": 500,
   "offset": 501
 }
@@ -3545,7 +3545,7 @@ tool_use Read
 id: toolu_bdrk_01Qup4fXz5dKzMYyPbx2DJqf
 ```json
 {
-  "file_path": "/Users/pc/.REDACTED.txt",
+  "file_path": "/home/<USER>/.REDACTED.txt",
   "limit": 500,
   "offset": 1001
 }
@@ -3659,7 +3659,7 @@ tool_use Read
 id: toolu_bdrk_011rmYHV7DVqrAumvhSayAa9
 ```json
 {
-  "file_path": "/Users/pc/.REDACTED.txt",
+  "file_path": "/home/<USER>/.REDACTED.txt",
   "limit": 500,
   "offset": 1501
 }
@@ -4344,7 +4344,7 @@ tool_use Read
 id: toolu_bdrk_01TH4dNeSBescW9UKPTGwEXV
 ```json
 {
-  "file_path": "/Users/pc/.claude/plugins/cache/superpowers-marketplace/superpowers/5.0.5/skills/subagent-driven-development/implementer-prompt.md"
+  "file_path": "/home/<USER>/.claude/plugins/cache/superpowers-marketplace/superpowers/5.0.5/skills/subagent-driven-development/implementer-prompt.md"
 }
 ```
 
@@ -4430,7 +4430,7 @@ id: toolu_bdrk_016qrkE16tz73aQrY3CfGhz3
 
 **What was implemented:**
 
-Created `/Users/pc/web3/ReleaseBeacon/internal/models/release_gate.go` with three structs that model the Release Gate feature:
+Created `/home/<USER>/web3/ReleaseBeacon/internal/models/release_gate.go` with three structs that model the Release Gate feature:
 
 - `VersionMapping` — per-source regex/template pair for normalizing version strings across different upstream registries.
 - `ReleaseGate` — project-level gate configuration specifying which sources are required, a timeout, optional version mapping overrides per source, a natural-language rule, and an enabled flag.
@@ -4514,7 +4514,7 @@ id: toolu_bdrk_019MYfcY32o3jZBs96acPEED
 
 **What was implemented:**
 
-Appended three new SQL table definitions (plus associated indexes) to the `schema` constant in `/Users/pc/web3/ReleaseBeacon/internal/db/migrations.go`, immediately before the closing backtick at line 210.
+Appended three new SQL table definitions (plus associated indexes) to the `schema` constant in `/home/<USER>/web3/ReleaseBeacon/internal/db/migrations.go`, immediately before the closing backtick at line 210.
 
 **Tables added (lines 211–256):**
 
@@ -4524,7 +4524,7 @@ Appended three new SQL table definitions (plus associated indexes) to the `schem
 
 **Files changed:**
 
-- `/Users/pc/web3/ReleaseBeacon/internal/db/migrations.go` — 47 lines inserted
+- `/home/<USER>/web3/ReleaseBeacon/internal/db/migrations.go` — 47 lines inserted
 
 **Verification:**
 
@@ -4589,7 +4589,7 @@ id: toolu_bdrk_014Hp8UCgQk1VfoejZDgdDXT
 {
   "description": "Implement Task 3: Queue Jobs",
   "model": "sonnet",
-  "prompt": "You are implementing Task 3: Queue Jobs — GateCheck, GateNLEval, GateTimeout\n\n## Task Description\n\n**Files:**\n- Modify: `internal/queue/jobs.go`\n\n- [ ] **Step 1: Add the three new job types**\n\nAppend to `internal/queue/jobs.go` after the existing job types:\n\n```go\n// GateCheckJobArgs is enqueued when a release is ingested for any project.\n// The worker checks if a release gate exists and evaluates readiness.\ntype GateCheckJobArgs struct {\n\tSourceID  string `json:\"source_id\"`\n\tReleaseID string `json:\"release_id\"`\n\tVersion   string `json:\"version\"` // raw version from source\n}\n\nfunc (GateCheckJobArgs) Kind() string { return \"gate_check\" }\n\nvar _ river.JobArgs = GateCheckJobArgs{}\n\n// GateNLEvalJobArgs is enqueued when structured gate rules pass and an NL rule\n// needs LLM evaluation.\ntype GateNLEvalJobArgs struct {\n\tVersionReadinessID string `json:\"version_readiness_id\"`\n\tProjectID          string `json:\"project_id\"`\n\tVersion            string `json:\"version\"`\n}\n\nfunc (GateNLEvalJobArgs) Kind() string { return \"gate_nl_eval\" }\n\nvar _ river.JobArgs = GateNLEvalJobArgs{}\n\n// GateTimeoutJobArgs is a periodic job that sweeps expired pending gates.\ntype GateTimeoutJobArgs struct{}\n\nfunc (GateTimeoutJobArgs) Kind() string { return \"gate_timeout\" }\n\nvar _ river.JobArgs = GateTimeoutJobArgs{}\n```\n\n- [ ] **Step 2: Verify compilation**\n\nRun: `go vet ./internal/queue/...`\nExpected: no errors\n\n- [ ] **Step 3: Commit**\n\n```bash\ngit add internal/queue/jobs.go\ngit commit -m \"feat(gate): add GateCheck, GateNLEval, GateTimeout job types\"\n```\n\n## Context\n\nThis is the Changelogue project at `/Users/pc/web3/ReleaseBeacon`, Go module `github.com/sentioxyz/changelogue`.\n\n`internal/queue/jobs.go` currently defines three existing job types: `NotifyJobArgs`, `AgentJobArgs`, `ScanDependenciesJobArgs`. Each follows […]
+  "prompt": "You are implementing Task 3: Queue Jobs — GateCheck, GateNLEval, GateTimeout\n\n## Task Description\n\n**Files:**\n- Modify: `internal/queue/jobs.go`\n\n- [ ] **Step 1: Add the three new job types**\n\nAppend to `internal/queue/jobs.go` after the existing job types:\n\n```go\n// GateCheckJobArgs is enqueued when a release is ingested for any project.\n// The worker checks if a release gate exists and evaluates readiness.\ntype GateCheckJobArgs struct {\n\tSourceID  string `json:\"source_id\"`\n\tReleaseID string `json:\"release_id\"`\n\tVersion   string `json:\"version\"` // raw version from source\n}\n\nfunc (GateCheckJobArgs) Kind() string { return \"gate_check\" }\n\nvar _ river.JobArgs = GateCheckJobArgs{}\n\n// GateNLEvalJobArgs is enqueued when structured gate rules pass and an NL rule\n// needs LLM evaluation.\ntype GateNLEvalJobArgs struct {\n\tVersionReadinessID string `json:\"version_readiness_id\"`\n\tProjectID          string `json:\"project_id\"`\n\tVersion            string `json:\"version\"`\n}\n\nfunc (GateNLEvalJobArgs) Kind() string { return \"gate_nl_eval\" }\n\nvar _ river.JobArgs = GateNLEvalJobArgs{}\n\n// GateTimeoutJobArgs is a periodic job that sweeps expired pending gates.\ntype GateTimeoutJobArgs struct{}\n\nfunc (GateTimeoutJobArgs) Kind() string { return \"gate_timeout\" }\n\nvar _ river.JobArgs = GateTimeoutJobArgs{}\n```\n\n- [ ] **Step 2: Verify compilation**\n\nRun: `go vet ./internal/queue/...`\nExpected: no errors\n\n- [ ] **Step 3: Commit**\n\n```bash\ngit add internal/queue/jobs.go\ngit commit -m \"feat(gate): add GateCheck, GateNLEval, GateTimeout job types\"\n```\n\n## Context\n\nThis is the Changelogue project at `/home/<USER>/web3/ReleaseBeacon`, Go module `github.com/sentioxyz/changelogue`.\n\n`internal/queue/jobs.go` currently defines three existing job types: `NotifyJobArgs`, `AgentJobArgs`, `ScanDependenciesJobArgs`. Each follows […]
 
 > TOOL
 
@@ -4602,7 +4602,7 @@ id: toolu_bdrk_014Hp8UCgQk1VfoejZDgdDXT
 
 **What was implemented**
 
-Three new River job types were appended to `/Users/pc/web3/ReleaseBeacon/internal/queue/jobs.go`, following the exact same pattern as the existing three job types (struct with JSON tags, `Kind() string` method, `var _ river.JobArgs = Type{}` compile-time interface check):
+Three new River job types were appended to `/home/<USER>/web3/ReleaseBeacon/internal/queue/jobs.go`, following the exact same pattern as the existing three job types (struct with JSON tags, `Kind() string` method, `var _ river.JobArgs = Type{}` compile-time interface check):
 
 - `GateCheckJobArgs` — fields `SourceID`, `ReleaseID`, `Version`; kind `"gate_check"`
 - `GateNLEvalJobArgs` — fields `VersionReadinessID`, `ProjectID`, `Version`; kind `"gate_nl_eval"`
@@ -4610,7 +4610,7 @@ Three new River job types were appended to `/Users/pc/web3/ReleaseBeacon/interna
 
 **Files changed**
 
-- `/Users/pc/web3/ReleaseBeacon/internal/queue/jobs.go` — 31 lines added
+- `/home/<USER>/web3/ReleaseBeacon/internal/queue/jobs.go` — 31 lines added
 
 **Self-review findings**
 
@@ -4688,12 +4688,12 @@ id: toolu_bdrk_01226xW7j3QV9heXkXZe977z
 
 Created the `internal/gate` package with two new files implementing version normalization logic for the GateCheckWorker.
 
-**`/Users/pc/web3/ReleaseBeacon/internal/gate/version.go`** — Two exported functions:
+**`/home/<USER>/web3/ReleaseBeacon/internal/gate/version.go`** — Two exported functions:
 
 - `NormalizeVersion(raw string, mapping *models.VersionMapping) string` — applies regex/template mapping using `FindStringSubmatch` with manual `$1`/`$2` placeholder substitution. Falls back to stripping `v`/`V` prefix + lowercasing when no mapping is provided, the pattern is empty, the regex is invalid, or no capture groups match.
 - `NormalizeVersionForSource(raw string, sourceID string, mappings map[string]models.VersionMapping) string` — convenience wrapper that looks up per-source mapping by ID, then delegates to `NormalizeVersion`.
 
-**`/Users/pc/web3/ReleaseBeacon/internal/gate/version_test.go`** — 6 table-driven tests covering:
+**`/home/<USER>/web3/ReleaseBeacon/internal/gate/version_test.go`** — 6 table-driven tests covering:
 1. No mapping, strips `v` prefix
 2. No mapping, strips `V` prefix and lowercases
 3. No mapping, no prefix to strip
@@ -4715,8 +4715,8 @@ PASS  ok  github.com/sentioxyz/changelogue/internal/gate  0.623s
 ```
 
 **Files changed:**
-- Created: `/Users/pc/web3/ReleaseBeacon/internal/gate/version.go`
-- Created: `/Users/pc/web3/ReleaseBeacon/internal/gate/version_test.go`
+- Created: `/home/<USER>/web3/ReleaseBeacon/internal/gate/version.go`
+- Created: `/home/<USER>/web3/ReleaseBeacon/internal/gate/version_test.go`
 - Commit: `5d1271a feat(gate): add version normalization with regex/template mapping`
 
 **Self-review findings:** The implementation […]
@@ -4784,11 +4784,11 @@ id: toolu_bdrk_01KwZGyUz9tjHerrvgToHYuh
 
 **What was implemented:**
 
-Created `/Users/pc/web3/ReleaseBeacon/internal/gate/store.go` — the `GateStore` interface used by all three gate workers. It defines 13 methods covering gate config lookup, version readiness tracking, gate state transitions, event recording, expired gate scanning, and delegated queries for sources/projects/agent runs.
+Created `/home/<USER>/web3/ReleaseBeacon/internal/gate/store.go` — the `GateStore` interface used by all three gate workers. It defines 13 methods covering gate config lookup, version readiness tracking, gate state transitions, event recording, expired gate scanning, and delegated queries for sources/projects/agent runs.
 
 **Files changed:**
 
-- `/Users/pc/web3/ReleaseBeacon/internal/gate/store.go` (new, 56 lines)
+- `/home/<USER>/web3/ReleaseBeacon/internal/gate/store.go` (new, 56 lines)
 
 **Self-review findings:**
 
@@ -4983,9 +4983,9 @@ All 11 tests in `internal/gate/...` pass:
 
 ## Files changed
 
-- **Created:** `/Users/pc/web3/ReleaseBeacon/internal/gate/timeout_worker.go`
-- **Created:** `/Users/pc/web3/ReleaseBeacon/internal/gate/timeout_worker_test.go`
-- **Modified:** `/Users/pc/web3/ReleaseBeacon/internal/gate/worker_test.go` — `OpenGate` mock updated to set `gateOpened = true` when `openResult` is true; this was a latent bug where the field existed in the struct but was never set by the mock method, causing the timeout worker test assertion to fail.
+- **Created:** `/home/<USER>/web3/ReleaseBeacon/internal/gate/timeout_worker.go`
+- **Created:** `/home/<USER>/web3/ReleaseBeacon/internal/gate/timeout_worker_test.go`
+- **Modified:** `/home/<USER>/web3/ReleaseBeacon/internal/gate/worker_test.go` — `OpenGate` mock updated to set `gateOpened = true` when `openResult` is true; this was a latent bug where the field existed in the struct but was never set by the mock method, causing the timeout worker test assertion to fail.
 
 ## Self-review findings
 
@@ -5160,7 +5160,7 @@ id: toolu_bdrk_01L1XUyWtLH2S5TSWeLbhBFd
 
 **What was implemented:**
 
-All 18 gate-related database methods were added to `PgStore` in `/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go`, organized under a `// --- Release Gate Operations ---` section header and a `// --- Release Gate API CRUD ---` subsection:
+All 18 gate-related database methods were added to `PgStore` in `/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go`, organized under a `// --- Release Gate Operations ---` section header and a `// --- Release Gate API CRUD ---` subsection:
 
 **GateStore interface methods (for workers):**
 1. `GetReleaseGateBySource` -- JOIN sources to release_gates, nil/nil on no rows
@@ -5235,7 +5235,7 @@ id: toolu_bdrk_01JMEuR5LqNn9nQg4WvVYpm6
 {
   "description": "Implement Task 10: Modify IngestRelease",
   "model": "sonnet",
-  "prompt": "You are implementing Task 10: Modify IngestRelease — Enqueue GateCheckJob\n\n## Task Description\n\n**Files:**\n- Modify: `internal/ingestion/pgstore.go`\n\n### Step 1: Add GateCheckJobArgs enqueue alongside NotifyJobArgs\n\nRead `internal/ingestion/pgstore.go` first. In the `IngestRelease` method, after the existing `river.InsertTx(NotifyJobArgs)` call, add an unconditional enqueue of `GateCheckJobArgs`:\n\n```go\n_, err = s.river.InsertTx(ctx, tx, queue.GateCheckJobArgs{\n    SourceID:  sourceID,\n    ReleaseID: releaseID,\n    Version:   result.RawVersion,\n}, nil)\nif err != nil {\n    return fmt.Errorf(\"enqueue gate check: %w\", err)\n}\n```\n\nIMPORTANT: Check what field holds the raw version in the `IngestionResult` struct. It might be `RawVersion`, `Version`, or something else. Read the ingestion result type first.\n\nThis is unconditional — the GateCheckWorker short-circuits for non-gated projects.\n\n### Step 2: Verify compilation\n\nRun: `go vet ./internal/ingestion/...`\nExpected: no errors\n\n### Step 3: Run existing tests\n\nRun: `go test ./internal/ingestion/... -v`\nExpected: PASS (tests shouldn't break — the mock river client should handle the extra insert)\n\n### Step 4: Commit\n\n```bash\ngit add internal/ingestion/pgstore.go\ngit commit -m \"feat(gate): enqueue GateCheckJob unconditionally on release ingestion\"\n```\n\n## Context\n\nThis is the Changelogue project at `/Users/pc/web3/ReleaseBeacon`, Go module `github.com/sentioxyz/changelogue`.\n\nThe `IngestRelease` method in `internal/ingestion/pgstore.go` is the transactional outbox: it INSERTs a release and enqueues jobs in the same PostgreSQL transaction. Currently it enqueues `NotifyJobArgs`. We need to add `GateCheckJobArgs` to the same transaction.\n\nThe `queue` package […]
+  "prompt": "You are implementing Task 10: Modify IngestRelease — Enqueue GateCheckJob\n\n## Task Description\n\n**Files:**\n- Modify: `internal/ingestion/pgstore.go`\n\n### Step 1: Add GateCheckJobArgs enqueue alongside NotifyJobArgs\n\nRead `internal/ingestion/pgstore.go` first. In the `IngestRelease` method, after the existing `river.InsertTx(NotifyJobArgs)` call, add an unconditional enqueue of `GateCheckJobArgs`:\n\n```go\n_, err = s.river.InsertTx(ctx, tx, queue.GateCheckJobArgs{\n    SourceID:  sourceID,\n    ReleaseID: releaseID,\n    Version:   result.RawVersion,\n}, nil)\nif err != nil {\n    return fmt.Errorf(\"enqueue gate check: %w\", err)\n}\n```\n\nIMPORTANT: Check what field holds the raw version in the `IngestionResult` struct. It might be `RawVersion`, `Version`, or something else. Read the ingestion result type first.\n\nThis is unconditional — the GateCheckWorker short-circuits for non-gated projects.\n\n### Step 2: Verify compilation\n\nRun: `go vet ./internal/ingestion/...`\nExpected: no errors\n\n### Step 3: Run existing tests\n\nRun: `go test ./internal/ingestion/... -v`\nExpected: PASS (tests shouldn't break — the mock river client should handle the extra insert)\n\n### Step 4: Commit\n\n```bash\ngit add internal/ingestion/pgstore.go\ngit commit -m \"feat(gate): enqueue GateCheckJob unconditionally on release ingestion\"\n```\n\n## Context\n\nThis is the Changelogue project at `/home/<USER>/web3/ReleaseBeacon`, Go module `github.com/sentioxyz/changelogue`.\n\nThe `IngestRelease` method in `internal/ingestion/pgstore.go` is the transactional outbox: it INSERTs a release and enqueues jobs in the same PostgreSQL transaction. Currently it enqueues `NotifyJobArgs`. We need to add `GateCheckJobArgs` to the same transaction.\n\nThe `queue` package […]
 
 > TOOL
 
@@ -5252,7 +5252,7 @@ Added an unconditional enqueue of `queue.GateCheckJobArgs` inside `PgStore.Inges
 
 ## Files changed
 
-**`/Users/pc/web3/ReleaseBeacon/internal/ingestion/pgstore.go`** — added 9 lines:
+**`/home/<USER>/web3/ReleaseBeacon/internal/ingestion/pgstore.go`** — added 9 lines:
 
 ```go
 _, err = s.river.InsertTx(ctx, tx, queue.GateCheckJobArgs{
@@ -5267,8 +5267,8 @@ if err != nil {
 
 ## Self-review findings
 
-- **Field name confirmed:** `IngestionResult.RawVersion` is the correct field (verified in `/Users/pc/web3/ReleaseBeacon/internal/ingestion/source.go`). The existing `INSERT INTO releases` already uses `result.RawVersion`, so this is consistent.
-- **`GateCheckJobArgs` struct confirmed:** Fields `SourceID`, `ReleaseID`, `Version` match exactly what is defined in `/Users/pc/web3/ReleaseBeacon/internal/queue/jobs.go` (lines 40–44).
+- **Field name confirmed:** `IngestionResult.RawVersion` is the correct field (verified in `/home/<USER>/web3/ReleaseBeacon/internal/ingestion/source.go`). The existing `INSERT INTO releases` already uses `result.RawVersion`, so this is consistent.
+- **`GateCheckJobArgs` struct confirmed:** Fields `SourceID`, `ReleaseID`, `Version` match exactly what is defined in `/home/<USER>/web3/ReleaseBeacon/internal/queue/jobs.go` (lines 40–44).
 - **No import changes needed:** The `queue` package was already imported for `NotifyJobArgs`.
 - **`go vet` output:** clean, no errors.
 - **Tests:** All 20 tests in `./internal/ingestion/...` pass. The service-level tests use a `mockStore` that stubs the entire `ReleaseStore` interface, so the new river call is never reached in unit tests — this is correct; the real path is exercised in integration tests.
@@ -5340,7 +5340,7 @@ id: toolu_bdrk_018X5cerVFRu1ogqDeoKRMZC
 
 ### Step 1 — Added `HasReleaseGate` to `NotifyStore` interface
 
-In `/Users/pc/web3/ReleaseBeacon/internal/routing/worker.go`, line 28:
+In `/home/<USER>/web3/ReleaseBeacon/internal/routing/worker.go`, line 28:
 
 ```go
 HasReleaseGate(ctx context.Context, projectID string) (bool, error)
@@ -5366,7 +5366,7 @@ if hasGate {
 
 ### Step 3 — Updated mock store in test file
 
-In `/Users/pc/web3/ReleaseBeacon/internal/routing/worker_test.go`, added after `CreateReleaseTodo`:
+In `/home/<USER>/web3/ReleaseBeacon/internal/routing/worker_test.go`, added after `CreateReleaseTodo`:
 
 ```go
 func (m *mockNotifyStore) HasReleaseGate(_ context.Context, _ string) (bool, error) {
@@ -5387,8 +5387,8 @@ All 67 tests in the routing package pass.
 
 ## Files Changed
 
-- `/Users/pc/web3/ReleaseBeacon/internal/routing/worker.go` — interface addition + gate check logic (13 lines added)
-- `/Users/pc/web3/ReleaseBeacon/internal/routing/worker_test.go` — mock method addition […]
+- `/home/<USER>/web3/ReleaseBeacon/internal/routing/worker.go` — interface addition + gate check logic (13 lines added)
+- `/home/<USER>/web3/ReleaseBeacon/internal/routing/worker_test.go` — mock method addition […]
 
 > AGENT
 
@@ -5455,7 +5455,7 @@ id: toolu_bdrk_012TauGqFaZLgnnPNpaYHD3c
 
 ### Files changed
 
-**Created: `/Users/pc/web3/ReleaseBeacon/internal/api/gates.go`**
+**Created: `/home/<USER>/web3/ReleaseBeacon/internal/api/gates.go`**
 
 Defines `GatesStore` interface with 8 methods covering gate CRUD and paginated queries for version readiness and gate events. Implements `GatesHandler` with 7 handler methods:
 
@@ -5467,12 +5467,12 @@ Defines `GatesStore` interface with 8 methods covering gate CRUD and paginated q
 - `ListEvents` — paginated gate events by project
 - `ListEventsByVersion` — paginated gate events by project+version
 
-**Modified: `/Users/pc/web3/ReleaseBeacon/internal/api/server.go`**
+**Modified: `/home/<USER>/web3/ReleaseBeacon/internal/api/server.go`**
 
 - Added `GatesStore GatesStore` field to the `Dependencies` struct
 - Registered 7 gate routes under `/api/v1/projects/{id}/...` after the Onboard block
 
-**Modified: `/Users/pc/web3/ReleaseBeacon/cmd/server/main.go`**
+**Modified: `/home/<USER>/web3/ReleaseBeacon/cmd/server/main.go`**
 
 - Added `GatesStore: pgStore,` to the `api.Dependencies{}` literal
 
@@ -5565,8 +5565,8 @@ id: toolu_bdrk_01KC8ibKyfqFKBxEdH5PrQUe
 
 ## Files changed
 
-- `/Users/pc/web3/ReleaseBeacon/internal/queue/client.go`
-- `/Users/pc/web3/ReleaseBeacon/cmd/server/main.go`
+- `/home/<USER>/web3/ReleaseBeacon/internal/queue/client.go`
+- `/home/<USER>/web3/ReleaseBeacon/cmd/server/main.go`
 
 ## Self-review findings
 
@@ -5734,7 +5734,7 @@ id: toolu_bdrk_01H7NU189jSS17BXKgBRasbP
 {
   "description": "Implement Task 15: WaitForAllSources migration",
   "model": "sonnet",
-  "prompt": "You are implementing Task 15: WaitForAllSources Deprecation Migration\n\n## Task Description\n\n**Files:**\n- Modify: `internal/db/migrations.go`\n\n### Step 1: Add one-time migration for existing WaitForAllSources projects\n\nRead `internal/db/migrations.go`. Append a new migration block to the `RunMigrations` function, after the existing migration blocks (but before the final `return nil`):\n\n```go\n// Auto-create release_gates for projects with WaitForAllSources enabled.\nif _, err := pool.Exec(ctx, `\n    INSERT INTO release_gates (project_id, timeout_hours, enabled)\n    SELECT p.id, 168, true\n    FROM projects p\n    WHERE p.agent_rules->>'wait_for_all_sources' = 'true'\n    ON CONFLICT (project_id) DO NOTHING\n`); err != nil {\n    return fmt.Errorf(\"wait_for_all_sources migration: %w\", err)\n}\n```\n\nThis is idempotent (ON CONFLICT DO NOTHING) and safe to run on every startup. It creates a release gate with:\n- `timeout_hours = 168` (7 days)\n- `required_sources = NULL` (means all sources)\n- `enabled = true`\n\n### Step 2: Verify migration compiles\n\nRun: `go vet ./internal/db/...`\nExpected: no errors\n\n### Step 3: Commit\n\n```bash\ngit add internal/db/migrations.go\ngit commit -m \"feat(gate): auto-migrate WaitForAllSources projects to release gates\"\n```\n\n## Context\n\nThis is the Changelogue project at `/Users/pc/web3/ReleaseBeacon`, Go module `github.com/sentioxyz/changelogue`.\n\nThe existing `WaitForAllSources` field in `AgentRules` (on the `projects` table as JSONB `agent_rules`) uses a snooze-based mechanism in `internal/agent/worker.go`. The release gate supersedes this. This migration auto-creates gates for existing projects that had `WaitForAllSources […]
+  "prompt": "You are implementing Task 15: WaitForAllSources Deprecation Migration\n\n## Task Description\n\n**Files:**\n- Modify: `internal/db/migrations.go`\n\n### Step 1: Add one-time migration for existing WaitForAllSources projects\n\nRead `internal/db/migrations.go`. Append a new migration block to the `RunMigrations` function, after the existing migration blocks (but before the final `return nil`):\n\n```go\n// Auto-create release_gates for projects with WaitForAllSources enabled.\nif _, err := pool.Exec(ctx, `\n    INSERT INTO release_gates (project_id, timeout_hours, enabled)\n    SELECT p.id, 168, true\n    FROM projects p\n    WHERE p.agent_rules->>'wait_for_all_sources' = 'true'\n    ON CONFLICT (project_id) DO NOTHING\n`); err != nil {\n    return fmt.Errorf(\"wait_for_all_sources migration: %w\", err)\n}\n```\n\nThis is idempotent (ON CONFLICT DO NOTHING) and safe to run on every startup. It creates a release gate with:\n- `timeout_hours = 168` (7 days)\n- `required_sources = NULL` (means all sources)\n- `enabled = true`\n\n### Step 2: Verify migration compiles\n\nRun: `go vet ./internal/db/...`\nExpected: no errors\n\n### Step 3: Commit\n\n```bash\ngit add internal/db/migrations.go\ngit commit -m \"feat(gate): auto-migrate WaitForAllSources projects to release gates\"\n```\n\n## Context\n\nThis is the Changelogue project at `/home/<USER>/web3/ReleaseBeacon`, Go module `github.com/sentioxyz/changelogue`.\n\nThe existing `WaitForAllSources` field in `AgentRules` (on the `projects` table as JSONB `agent_rules`) uses a snooze-based mechanism in `internal/agent/worker.go`. The release gate supersedes this. This migration auto-creates gates for existing projects that had `WaitForAllSources […]
 
 > TOOL
 
@@ -5747,7 +5747,7 @@ id: toolu_bdrk_01H7NU189jSS17BXKgBRasbP
 
 **What was implemented:**
 
-A new idempotent migration block was appended to `RunMigrations` in `/Users/pc/web3/ReleaseBeacon/internal/db/migrations.go`, placed after the `exclude_prereleases` migration and before `return nil`. The block runs:
+A new idempotent migration block was appended to `RunMigrations` in `/home/<USER>/web3/ReleaseBeacon/internal/db/migrations.go`, placed after the `exclude_prereleases` migration and before `return nil`. The block runs:
 
 ```sql
 INSERT INTO release_gates (project_id, timeout_hours, enabled)
@@ -5761,7 +5761,7 @@ This auto-creates a `release_gates` row for every project whose `agent_rules` JS
 
 **Files changed:**
 
-- `/Users/pc/web3/ReleaseBeacon/internal/db/migrations.go` — 12 lines added (the new migration block)
+- `/home/<USER>/web3/ReleaseBeacon/internal/db/migrations.go` — 12 lines added (the new migration block)
 
 **Self-review findings:**
 
@@ -5822,7 +5822,7 @@ id: toolu_bdrk_01N6zF9uHacZQQws979xZKC7
 {
   "description": "Implement Task 16: Update DESIGN.md",
   "model": "sonnet",
-  "prompt": "You are implementing Task 16: Update DESIGN.md\n\n## Task Description\n\n**Files:**\n- Modify: `DESIGN.md`\n\n### Step 1: Update subscription type names\n\nRead `DESIGN.md` first. Find references to old subscription type values (`type = 'source'` / `type = 'project'`) and update them to `'source_release'` / `'semantic_release'` to match the actual migration and database schema.\n\n### Step 2: Add Release Gate section\n\nAdd a section about the release gate feature. Keep it concise and factual. Include:\n\n1. **Release Gates**: Per-project configuration that delays agent analysis until all required sources report a version\n2. **Tables**: `release_gates` (config), `version_readiness` (per-version state), `gate_events` (audit log)\n3. **Flow**: Release ingested → GateCheckWorker evaluates → if all sources met and NL rules pass → gate opens → agent triggered; if timeout → gate opens with partial flag → agent triggered\n4. **Workers**: GateCheckWorker (per-release), GateTimeoutWorker (periodic 15min sweep), GateNLEvalWorker (NL rule evaluation)\n5. **Version Mapping**: Per-source regex/template for normalizing versions across registries\n6. **Integration**: When a project has an active release gate, NotifyWorker skips agent rule checking (the gate handles timing)\n\n### Step 3: Commit\n\n```bash\ngit add DESIGN.md\ngit commit -m \"docs: update DESIGN.md with release gate and correct subscription types\"\n```\n\n## Context\n\nThis is the Changelogue project at `/Users/pc/web3/ReleaseBeacon`.\n\nThe […]
+  "prompt": "You are implementing Task 16: Update DESIGN.md\n\n## Task Description\n\n**Files:**\n- Modify: `DESIGN.md`\n\n### Step 1: Update subscription type names\n\nRead `DESIGN.md` first. Find references to old subscription type values (`type = 'source'` / `type = 'project'`) and update them to `'source_release'` / `'semantic_release'` to match the actual migration and database schema.\n\n### Step 2: Add Release Gate section\n\nAdd a section about the release gate feature. Keep it concise and factual. Include:\n\n1. **Release Gates**: Per-project configuration that delays agent analysis until all required sources report a version\n2. **Tables**: `release_gates` (config), `version_readiness` (per-version state), `gate_events` (audit log)\n3. **Flow**: Release ingested → GateCheckWorker evaluates → if all sources met and NL rules pass → gate opens → agent triggered; if timeout → gate opens with partial flag → agent triggered\n4. **Workers**: GateCheckWorker (per-release), GateTimeoutWorker (periodic 15min sweep), GateNLEvalWorker (NL rule evaluation)\n5. **Version Mapping**: Per-source regex/template for normalizing versions across registries\n6. **Integration**: When a project has an active release gate, NotifyWorker skips agent rule checking (the gate handles timing)\n\n### Step 3: Commit\n\n```bash\ngit add DESIGN.md\ngit commit -m \"docs: update DESIGN.md with release gate and correct subscription types\"\n```\n\n## Context\n\nThis is the Changelogue project at `/home/<USER>/web3/ReleaseBeacon`.\n\nThe […]
 
 > TOOL
 
@@ -5837,7 +5837,7 @@ id: toolu_bdrk_01N6zF9uHacZQQws979xZKC7
 
 **Step 1 — Fixed subscription type names (2 locations)**
 
-- `/Users/pc/web3/ReleaseBeacon/DESIGN.md` line 228: `CHECK (type IN ('source', 'project'))` → `CHECK (type IN ('source_release', 'semantic_release'))`
+- `/home/<USER>/web3/ReleaseBeacon/DESIGN.md` line 228: `CHECK (type IN ('source', 'project'))` → `CHECK (type IN ('source_release', 'semantic_release'))`
 - Same section lines 234-235: inline CHECK constraint values updated from `'source'`/`'project'` → `'source_release'`/`'semantic_release'`
 - Line 279 (schema design notes prose): updated the two mentions of `'source'` and `'project'` subscription types to `'source_release'` and `'semantic_release'`
 
@@ -5857,7 +5857,7 @@ Commit `d812237` on branch `main`: `docs: update DESIGN.md with release gate and
 
 ### Files changed
 
-- `/Users/pc/web3/ReleaseBeacon/DESIGN.md` — 1 file, +49/-5 lines
+- `/home/<USER>/web3/ReleaseBeacon/DESIGN.md` — 1 file, +49/-5 lines
 
 ### Self-review
 
@@ -6092,7 +6092,7 @@ id: toolu_bdrk_01LLWsgBdnmBTwhAXWJcZyBx
   "description": "Explore frontend for gate UX",
   "model": "sonnet",
   "subagent_type": "Explore",
-  "prompt": "Explore the frontend code in /Users/pc/web3/ReleaseBeacon/web/ to understand:\n\n1. What pages exist? Look at `web/src/app/` or `web/app/` for route structure\n2. How are project settings/details displayed? Find the project detail page\n3. Is there any existing UI for configuring sources, agent rules, or subscriptions on a project?\n4. What UI components/patterns are used (e.g., forms, modals, tabs)?\n5. What API client/hooks are used to talk to the backend?\n6. Is there i18n (internationalization) and if so how does it work?\n7. What's the general tech stack (Next.js App Router vs Pages, Tailwind, component library)?\n\nBe thorough - look at the full directory structure, key pages, components, and API integration patterns. I need to understand where a \"Release Gate\" configuration UI would fit in the existing UX."
+  "prompt": "Explore the frontend code in /home/<USER>/web3/ReleaseBeacon/web/ to understand:\n\n1. What pages exist? Look at `web/src/app/` or `web/app/` for route structure\n2. How are project settings/details displayed? Find the project detail page\n3. Is there any existing UI for configuring sources, agent rules, or subscriptions on a project?\n4. What UI components/patterns are used (e.g., forms, modals, tabs)?\n5. What API client/hooks are used to talk to the backend?\n6. Is there i18n (internationalization) and if so how does it work?\n7. What's the general tech stack (Next.js App Router vs Pages, Tailwind, component library)?\n\nBe thorough - look at the full directory structure, key pages, components, and API integration patterns. I need to understand where a \"Release Gate\" configuration UI would fit in the existing UX."
 }
 ```
 
@@ -6138,7 +6138,7 @@ tool_use Read
 id: toolu_bdrk_01BRDj3xjzEBvWig8J4d1XQH
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/projects/project-detail.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/projects/project-detail.tsx",
   "limit": 100
 }
 ```
@@ -6149,7 +6149,7 @@ tool_use Read
 id: toolu_bdrk_01A9AAaqpLyCpd2a2ArkRH7K
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/api/client.ts",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/api/client.ts",
   "limit": 50
 }
 ```
@@ -6160,7 +6160,7 @@ tool_use Read
 id: toolu_bdrk_01RDWseKvTpHEL5gSFgkE55s
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/api/types.ts"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/api/types.ts"
 }
 ```
 
@@ -6354,7 +6354,7 @@ tool_use Read
 id: toolu_bdrk_01RwaXzAgbwLpyFFLZyNwqXf
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/projects/project-detail.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/projects/project-detail.tsx",
   "offset": 100
 }
 ```
@@ -6663,7 +6663,7 @@ Excellent. Now I have all the information needed. Let me compile a comprehensive
 
 ### 1. **project-detail.tsx Component — Tab Pattern**
 
-Location: `/Users/pc/web3/ReleaseBeacon/web/components/projects/project-detail.tsx`
+Location: `/home/<USER>/web3/ReleaseBeacon/web/components/projects/project-detail.tsx`
 
 **TabKey Type & Tab Array:**
 ```typescript
@@ -6753,7 +6753,7 @@ tool_use Read
 id: toolu_bdrk_01KZLY1TCLJPC9h9uW7bAJRr
 ```json
 {
-  "file_path": "/Users/pc/.claude/plugins/cache/superpowers-marketplace/superpowers/5.0.5/skills/brainstorming/visual-companion.md"
+  "file_path": "/home/<USER>/.claude/plugins/cache/superpowers-marketplace/superpowers/5.0.5/skills/brainstorming/visual-companion.md"
 }
 ```
 
@@ -6798,7 +6798,7 @@ tool_use Bash
 id: toolu_bdrk_01HHBS5BjNt93DVV6rNC5s4r
 ```json
 {
-  "command": "ls /Users/pc/.claude/plugins/cache/superpowers-marketplace/superpowers/5.0.5/skills/brainstorming/scripts/start-server.sh",
+  "command": "ls /home/<USER>/.claude/plugins/cache/superpowers-marketplace/superpowers/5.0.5/skills/brainstorming/scripts/start-server.sh",
   "description": "Check if visual companion server script exists"
 }
 ```
@@ -6808,7 +6808,7 @@ id: toolu_bdrk_01HHBS5BjNt93DVV6rNC5s4r
 tool_result
 id: toolu_bdrk_01HHBS5BjNt93DVV6rNC5s4r
 ```
-/Users/pc/.claude/plugins/cache/superpowers-marketplace/superpowers/5.0.5/skills/brainstorming/scripts/start-server.sh
+/home/<USER>/.claude/plugins/cache/superpowers-marketplace/superpowers/5.0.5/skills/brainstorming/scripts/start-server.sh
 ```
 
 > TOOL
@@ -6817,7 +6817,7 @@ tool_use Bash
 id: toolu_bdrk_017WqsfC1QZYAhZ558yjKihc
 ```json
 {
-  "command": "cd /Users/pc/.claude/plugins/cache/superpowers-marketplace/superpowers/5.0.5/skills/brainstorming && scripts/start-server.sh --project-dir /Users/pc/web3/ReleaseBeacon",
+  "command": "cd /home/<USER>/.claude/plugins/cache/superpowers-marketplace/superpowers/5.0.5/skills/brainstorming && scripts/start-server.sh --project-dir /home/<USER>/web3/ReleaseBeacon",
   "description": "Start visual companion server with project persistence"
 }
 ```
@@ -6827,8 +6827,8 @@ id: toolu_bdrk_017WqsfC1QZYAhZ558yjKihc
 tool_result
 id: toolu_bdrk_017WqsfC1QZYAhZ558yjKihc
 ```
-{"type":"server-started","port":62957,"host":"127.0.0.1","url_host":"localhost","url":"http://localhost:62957","screen_dir":"/Users/pc/web3/ReleaseBeacon/.superpowers/brainstorm/30630-1774402856"}
-Shell cwd was reset to /Users/pc/web3/ReleaseBeacon
+{"type":"server-started","port":62957,"host":"127.0.0.1","url_host":"localhost","url":"http://localhost:62957","screen_dir":"/home/<USER>/web3/ReleaseBeacon/.superpowers/brainstorm/30630-1774402856"}
+Shell cwd was reset to /home/<USER>/web3/ReleaseBeacon
 ```
 
 > AGENT
@@ -6842,7 +6842,7 @@ id: toolu_bdrk_01TSvDgy16oT6T4bDBJt4Ean
 ```json
 {
   "pattern": "\\.superpowers",
-  "path": "/Users/pc/web3/ReleaseBeacon/.gitignore",
+  "path": "/home/<USER>/web3/ReleaseBeacon/.gitignore",
   "output_mode": "content"
 }
 ```
@@ -6861,7 +6861,7 @@ tool_use Read
 id: toolu_bdrk_01GouES6jTfV7g8KHx4g2De3
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/.gitignore"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/.gitignore"
 }
 ```
 
@@ -6936,7 +6936,7 @@ id: toolu_bdrk_01KHDrLWmEB4E6cHerhRzAhn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/.gitignore",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/.gitignore",
   "old_string": ".playwright-mcp/",
   "new_string": ".playwright-mcp/\n.superpowers/"
 }
@@ -6947,7 +6947,7 @@ id: toolu_bdrk_01KHDrLWmEB4E6cHerhRzAhn
 tool_result
 id: toolu_bdrk_01KHDrLWmEB4E6cHerhRzAhn
 ```
-The file /Users/pc/web3/ReleaseBeacon/.gitignore has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/.gitignore has been updated successfully.
 ```
 
 > AGENT
@@ -7092,7 +7092,7 @@ tool_use Bash
 id: toolu_bdrk_01PhumfdP4UYQbxapG8eBWGq
 ```json
 {
-  "command": "test -f /Users/pc/web3/ReleaseBeacon/.superpowers/brainstorm/30630-1774402856/.server-info && echo \"server alive\"",
+  "command": "test -f /home/<USER>/web3/ReleaseBeacon/.superpowers/brainstorm/30630-1774402856/.server-info && echo \"server alive\"",
   "description": "Check visual companion server is still running"
 }
 ```
@@ -7111,7 +7111,7 @@ tool_use Write
 id: toolu_bdrk_01BvdC2pJCXEi9bqsKGWA4J4
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/.REDACTED.html",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/.REDACTED.html",
   "content": "<h2>Release Gate Tab Layout</h2>\n<p class=\"subtitle\">How should the configuration and monitoring sections be arranged?</p>\n\n<div class=\"options\">\n  <div class=\"option\" data-choice=\"a\" onclick=\"toggleSelect(this)\">\n    <div class=\"letter\">A</div>\n    <div class=\"content\">\n      <h3>Stacked Sections</h3>\n      <p>Configuration card on top, version readiness table below, gate events log at the bottom. Single scrolling column — matches the existing Agent tab pattern.</p>\n      <div class=\"mockup\" style=\"margin-top: 12px;\">\n        <div class=\"mockup-body\" style=\"padding: 16px; font-size: 13px;\">\n          <div style=\"border: 1px solid #444; border-radius: 8px; padding: 12px; margin-bottom: 12px;\">\n            <div style=\"font-weight: 600; margin-bottom: 8px;\">⚙️ Gate Configuration</div>\n            <div style=\"display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 12px; color: #888;\">\n              <div>☐ Enabled toggle</div>\n              <div>⏱ Timeout hours</div>\n              <div>📋 Required sources</div>\n              <div>📝 NL rule</div>\n              <div style=\"grid-column: 1/-1;\">🔀 Version mapping per source</div>\n            </div>\n          </div>\n          <div style=\"border: 1px solid #444; border-radius: 8px; padding: 12px; margin-bottom: 12px;\">\n            <div style=\"font-weight: 600; margin-bottom: 8px;\">📊 Version Readiness</div>\n            <div style=\"font-size: 12px; color: #888;\">\n              <div style=\"display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 4px; padding: 4px 0; border-bottom: 1px solid #333;\">\n                <div>Version</div><div>Status</div><div>Sources Met</div><div>Timeout</div>\n              </div>\n              <div style=\"display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 4px; padding: 4px 0;\">\n                <div>v2.1.0</div><div style=\"color: #f59e0b;\">⏳ pending</div><div>2/3</div><div>4h left</div>\n              </div>\n              <div style=\"display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 4px; padding: 4px 0;\">\n                <div>v2.0.0</div><div style=\"color: #22c55e;\">✅ ready</div><div>3/3</div><div>—</div>\n              </div>\n            </div>\n          </div>\n […]
 
 > TOOL
@@ -7119,7 +7119,7 @@ id: toolu_bdrk_01BvdC2pJCXEi9bqsKGWA4J4
 tool_result
 id: toolu_bdrk_01BvdC2pJCXEi9bqsKGWA4J4
 ```
-File created successfully at: /Users/pc/web3/ReleaseBeacon/.REDACTED.html
+File created successfully at: /home/<USER>/web3/ReleaseBeacon/.REDACTED.html
 ```
 
 > AGENT
@@ -7146,7 +7146,7 @@ tool_use Bash
 id: toolu_bdrk_012dZshYEX9u2xyTcEkYL6id
 ```json
 {
-  "command": "cat /Users/pc/web3/ReleaseBeacon/.superpowers/brainstorm/30630-1774402856/.events 2>/dev/null || echo \"no events\"",
+  "command": "cat /home/<USER>/web3/ReleaseBeacon/.superpowers/brainstorm/30630-1774402856/.events 2>/dev/null || echo \"no events\"",
   "description": "Check for browser click events"
 }
 ```
@@ -7251,7 +7251,7 @@ tool_use Write
 id: toolu_bdrk_01FrgzdYkFJVsqhEQoe7v4fs
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/.REDACTED.html",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/.REDACTED.html",
   "content": "<div style=\"display:flex;align-items:center;justify-content:center;min-height:60vh\">\n  <p class=\"subtitle\">Continuing in terminal...</p>\n</div>\n"
 }
 ```
@@ -7261,7 +7261,7 @@ id: toolu_bdrk_01FrgzdYkFJVsqhEQoe7v4fs
 tool_result
 id: toolu_bdrk_01FrgzdYkFJVsqhEQoe7v4fs
 ```
-File created successfully at: /Users/pc/web3/ReleaseBeacon/.REDACTED.html
+File created successfully at: /home/<USER>/web3/ReleaseBeacon/.REDACTED.html
 ```
 
 > AGENT
@@ -7379,7 +7379,7 @@ tool_use Write
 id: toolu_bdrk_016ABqMam9HzsderaFWgvAyP
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/.REDACTED.html",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/.REDACTED.html",
   "content": "<h2>Release Gate Tab — Full Design</h2>\n<p class=\"subtitle\">Stacked layout: Configuration → Version Readiness → Gate Events</p>\n\n<div class=\"mockup\">\n  <div class=\"mockup-header\">Project Detail — Release Gate Tab</div>\n  <div class=\"mockup-body\" style=\"padding: 0; background: #0a0a0a; color: #e5e5e5;\">\n    <!-- Tab bar -->\n    <div style=\"display: flex; gap: 0; border-bottom: 1px solid #262626; padding: 0 24px; font-size: 14px;\">\n      <div style=\"padding: 12px 16px; color: #888;\">Sources</div>\n      <div style=\"padding: 12px 16px; color: #888;\">Context Sources</div>\n      <div style=\"padding: 12px 16px; color: #888;\">Semantic Release</div>\n      <div style=\"padding: 12px 16px; border-bottom: 2px solid #3b82f6; color: #fff; font-weight: 600;\">Release Gate</div>\n    </div>\n\n    <div style=\"padding: 24px; display: flex; flex-direction: column; gap: 24px;\">\n\n      <!-- Section 1: Gate Configuration Card -->\n      <div style=\"border: 1px solid #262626; border-radius: 12px; padding: 20px; background: #111;\">\n        <div style=\"display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;\">\n          <div>\n            <div style=\"font-weight: 600; font-size: 16px;\">Gate Configuration</div>\n            <div style=\"font-size: 13px; color: #888; margin-top: 2px;\">Delay agent analysis until all required sources release the same version</div>\n          </div>\n          <div style=\"display: flex; align-items: center; gap: 8px;\">\n            <span style=\"font-size: 13px; color: #888;\">Enabled</span>\n            <div style=\"width: 40px; height: 22px; background: #3b82f6; border-radius: 11px; position: relative;\">\n              <div style=\"width: 18px; height: 18px; background: white; border-radius: 50%; position: absolute; right: 2px; top: 2px;\"></div>\n            </div>\n          </div>\n        </div>\n\n        <!-- Required Sources -->\n        <div style=\"margin-bottom: […]
 
 > TOOL
@@ -7387,7 +7387,7 @@ id: toolu_bdrk_016ABqMam9HzsderaFWgvAyP
 tool_result
 id: toolu_bdrk_016ABqMam9HzsderaFWgvAyP
 ```
-File created successfully at: /Users/pc/web3/ReleaseBeacon/.REDACTED.html
+File created successfully at: /home/<USER>/web3/ReleaseBeacon/.REDACTED.html
 ```
 
 > AGENT
@@ -7471,7 +7471,7 @@ tool_use Write
 id: toolu_bdrk_01YPJBLQdhVdbuM4oodSLYFe
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/.REDACTED.html",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/.REDACTED.html",
   "content": "<div style=\"display:flex;align-items:center;justify-content:center;min-height:60vh\">\n  <p class=\"subtitle\">Continuing in terminal...</p>\n</div>\n"
 }
 ```
@@ -7481,7 +7481,7 @@ id: toolu_bdrk_01YPJBLQdhVdbuM4oodSLYFe
 tool_result
 id: toolu_bdrk_01YPJBLQdhVdbuM4oodSLYFe
 ```
-File created successfully at: /Users/pc/web3/ReleaseBeacon/.REDACTED.html
+File created successfully at: /home/<USER>/web3/ReleaseBeacon/.REDACTED.html
 ```
 
 > AGENT
@@ -7494,7 +7494,7 @@ tool_use Read
 id: toolu_bdrk_01Fn6YzVWztsYVpb1iVJkkjz
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/models/release_gate.go"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/models/release_gate.go"
 }
 ```
 
@@ -7504,7 +7504,7 @@ tool_use Read
 id: toolu_bdrk_014kKpdMirvgWZwsD3jBAK7x
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/api/gates.go"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/api/gates.go"
 }
 ```
 
@@ -7514,7 +7514,7 @@ tool_use Read
 id: toolu_bdrk_011hbHmano91V4ReJpno8Jtm
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/api/types.ts"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/api/types.ts"
 }
 ```
 
@@ -7707,7 +7707,7 @@ tool_use Read
 id: toolu_bdrk_017vCNBw56wJFWvBykJDooiS
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json",
   "limit": 50
 }
 ```
@@ -7778,7 +7778,7 @@ id: toolu_bdrk_01VqXoX9L78vyPvPoH4etprf
 ```json
 {
   "pattern": "projects\\.detail\\.",
-  "path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json",
+  "path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json",
   "output_mode": "content"
 }
 ```
@@ -7839,7 +7839,7 @@ tool_use Bash
 id: toolu_bdrk_01Rq6Rwb4P2aT3p6o29ePm13
 ```json
 {
-  "command": "ls /Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/",
+  "command": "ls /home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/",
   "description": "List existing spec files"
 }
 ```
@@ -7863,7 +7863,7 @@ tool_use Write
 id: toolu_bdrk_011YLLUjJJkgfpXJA3Pi3TmS
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md",
   "content": "# Release Gate UX Design\n\n## Goal\n\nAdd a \"Release Gate\" tab to the project detail page that lets users configure release gates and monitor version readiness status and gate events.\n\n## Context\n\nThe release gate backend is fully implemented (17 tasks completed). The backend provides:\n- `GET/PUT/DELETE /api/v1/projects/{id}/release-gate` — gate CRUD\n- `GET /api/v1/projects/{id}/version-readiness` — paginated list\n- `GET /api/v1/projects/{id}/version-readiness/{version}` — single version\n- `GET /api/v1/projects/{id}/version-readiness/{version}/events` — events for a version\n- `GET /api/v1/projects/{id}/gate-events` — all gate events, paginated\n\nThis spec covers the frontend only — TypeScript types, API client, i18n, and the new tab component.\n\n## Architecture\n\nA new extracted component `<ReleaseGateTab>` renders inside the project detail page when the \"Release Gate\" tab is active. The parent (`project-detail.tsx`) adds the tab key and passes `projectId` and `sources` as props. All gate-specific state and data fetching lives inside the child component.\n\n### File Structure\n\n| File | Action | Purpose |\n|------|--------|---------|\n| `web/lib/api/types.ts` | Modify | Add `ReleaseGate`, `VersionMapping`, `VersionReadiness`, `GateEvent`, `ReleaseGateInput` types |\n| `web/lib/api/client.ts` | Modify | Add `gates` namespace with 7 methods |\n| `web/lib/i18n/messages/en.json` | Modify | Add `projects.detail.tabGates` and ~30 gate-related i18n keys |\n| `web/lib/i18n/messages/zh.json` | Modify | Add corresponding Chinese translations |\n| `web/components/projects/release-gate-tab.tsx` | Create | New component — gate config […]
 
 > TOOL
@@ -7871,7 +7871,7 @@ id: toolu_bdrk_011YLLUjJJkgfpXJA3Pi3TmS
 tool_result
 id: toolu_bdrk_011YLLUjJJkgfpXJA3Pi3TmS
 ```
-File created successfully at: /Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md
+File created successfully at: /home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md
 ```
 
 > TOOL
@@ -7880,7 +7880,7 @@ tool_use Bash
 id: toolu_bdrk_01Umuxt6AcUHouVdRM5Wt8UG
 ```json
 {
-  "command": "git add docs/superpowers/specs/2026-03-25-release-gate-ux-design.md .gitignore && git commit -m \"$(cat <<'EOF'\ndocs: add Release Gate UX design spec\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add docs/superpowers/specs/2026-03-25-release-gate-ux-design.md .gitignore && git commit -m \"$(cat <<'EOF'\ndocs: add Release Gate UX design spec\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit the spec and gitignore update"
 }
 ```
@@ -7943,7 +7943,7 @@ tool_use Read
 id: toolu_bdrk_01E1WAV9MwyxYMTSuZxdD2mV
 ```json
 {
-  "file_path": "/Users/pc/.claude/plugins/cache/superpowers-marketplace/superpowers/5.0.5/skills/brainstorming/spec-document-reviewer-prompt.md"
+  "file_path": "/home/<USER>/.claude/plugins/cache/superpowers-marketplace/superpowers/5.0.5/skills/brainstorming/spec-document-reviewer-prompt.md"
 }
 ```
 
@@ -7992,14 +7992,14 @@ id: toolu_bdrk_0119rAw66XLZagNnJo4XkKjG
 ```json
 {
   "description": "Review spec document",
-  "prompt": "You are a spec document reviewer. Verify this spec is complete and ready for planning.\n\n**Spec to review:** /Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md\n\n**Additional context for review:**\n- This is a frontend-only spec — the backend is already fully implemented\n- The backend spec is at: /Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md\n- The existing project detail page is at: /Users/pc/web3/ReleaseBeacon/web/components/projects/project-detail.tsx\n- The existing types are at: /Users/pc/web3/ReleaseBeacon/web/lib/api/types.ts\n- The existing API client is at: /Users/pc/web3/ReleaseBeacon/web/lib/api/client.ts\n- The backend API handlers are at: /Users/pc/web3/ReleaseBeacon/internal/api/gates.go\n- The backend models are at: /Users/pc/web3/ReleaseBeacon/internal/models/release_gate.go\n\n## What to Check\n\n| Category | What to Look For |\n|----------|------------------|\n| Completeness | TODOs, placeholders, \"TBD\", incomplete sections |\n| Consistency | Internal contradictions, conflicting requirements |\n| Clarity | Requirements ambiguous enough to cause someone to build the wrong thing |\n| Scope | Focused enough for a single plan — not covering multiple independent subsystems |\n| YAGNI | Unrequested features, over-engineering |\n\nAlso verify:\n- TypeScript types match the backend Go models exactly (field names, types, optionality)\n- API client methods match the backend routes exactly\n- The component design is feasible given the existing codebase patterns\n\n## Calibration\n\n**Only flag issues that would cause real problems during implementation planning.**\nA missing section, a contradiction, or a requirement so ambiguous it could be\ninterpreted two different […]
+  "prompt": "You are a spec document reviewer. Verify this spec is complete and ready for planning.\n\n**Spec to review:** /home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md\n\n**Additional context for review:**\n- This is a frontend-only spec — the backend is already fully implemented\n- The backend spec is at: /home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md\n- The existing project detail page is at: /home/<USER>/web3/ReleaseBeacon/web/components/projects/project-detail.tsx\n- The existing types are at: /home/<USER>/web3/ReleaseBeacon/web/lib/api/types.ts\n- The existing API client is at: /home/<USER>/web3/ReleaseBeacon/web/lib/api/client.ts\n- The backend API handlers are at: /home/<USER>/web3/ReleaseBeacon/internal/api/gates.go\n- The backend models are at: /home/<USER>/web3/ReleaseBeacon/internal/models/release_gate.go\n\n## What to Check\n\n| Category | What to Look For |\n|----------|------------------|\n| Completeness | TODOs, placeholders, \"TBD\", incomplete sections |\n| Consistency | Internal contradictions, conflicting requirements |\n| Clarity | Requirements ambiguous enough to cause someone to build the wrong thing |\n| Scope | Focused enough for a single plan — not covering multiple independent subsystems |\n| YAGNI | Unrequested features, over-engineering |\n\nAlso verify:\n- TypeScript types match the backend Go models exactly (field names, types, optionality)\n- API client methods match the backend routes exactly\n- The component design is feasible given the existing codebase patterns\n\n## Calibration\n\n**Only flag issues that would cause real problems during implementation planning.**\nA missing section, a contradiction, or a requirement so ambiguous it could be\ninterpreted two different […]
 
 > TOOL
 
 tool_result
 id: toolu_bdrk_0119rAw66XLZagNnJo4XkKjG
 ```
-API Error: 500 {"error":{"message":"Chat provider for model copilot/claude-opus-4.6 is not registered.","type":"internal_server_error","log_file":"/Users/pc/web3/tennisconcrete/2026-03-24_21-58-51-489-debug.log"}}
+API Error: 500 {"error":{"message":"Chat provider for model copilot/claude-opus-4.6 is not registered.","type":"internal_server_error","log_file":"/home/<USER>/web3/tennisconcrete/2026-03-24_21-58-51-489-debug.log"}}
 agentId: ad2ddbef1a3a4bd7e (for resuming to continue this agent's work if needed)
 <usage>total_tokens: 0
 tool_uses: 12
@@ -8008,7 +8008,7 @@ duration_ms: 6768723</usage>
 
 > AGENT
 
-API Error: 500 {"error":{"message":"Chat provider for model copilot/claude-opus-4.6 is not registered.","type":"internal_server_error","log_file":"/Users/pc/web3/tennisconcrete/2026-03-24_21-58-51-489-debug.log"}}
+API Error: 500 {"error":{"message":"Chat provider for model copilot/claude-opus-4.6 is not registered.","type":"internal_server_error","log_file":"/home/<USER>/web3/tennisconcrete/2026-03-24_21-58-51-489-debug.log"}}
 
 > DEVELOPER
 
@@ -8026,7 +8026,7 @@ id: toolu_bdrk_01RHECikr5QAcjgYPhHpkvsW
 {
   "description": "Review spec document",
   "model": "sonnet",
-  "prompt": "You are a spec document reviewer. Verify this spec is complete and ready for planning.\n\n**Spec to review:** /Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md\n\n**Additional context for review:**\n- This is a frontend-only spec — the backend is already fully implemented\n- The backend spec is at: /Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md\n- The existing project detail page is at: /Users/pc/web3/ReleaseBeacon/web/components/projects/project-detail.tsx\n- The existing types are at: /Users/pc/web3/ReleaseBeacon/web/lib/api/types.ts\n- The existing API client is at: /Users/pc/web3/ReleaseBeacon/web/lib/api/client.ts\n- The backend API handlers are at: /Users/pc/web3/ReleaseBeacon/internal/api/gates.go\n- The backend models are at: /Users/pc/web3/ReleaseBeacon/internal/models/release_gate.go\n\n## What to Check\n\n| Category | What to Look For |\n|----------|------------------|\n| Completeness | TODOs, placeholders, \"TBD\", incomplete sections |\n| Consistency | Internal contradictions, conflicting requirements |\n| Clarity | Requirements ambiguous enough to cause someone to build the wrong thing |\n| Scope | Focused enough for a single plan — not covering multiple independent subsystems |\n| YAGNI | Unrequested features, over-engineering |\n\nAlso verify:\n- TypeScript types match the backend Go models exactly (field names, types, optionality)\n- API client methods match the backend routes exactly\n- The component design is feasible given the existing codebase patterns\n\n## Calibration\n\n**Only flag issues that would cause real problems during implementation planning.**\nA missing section, a contradiction, or a requirement so ambiguous it could be\ninterpreted […]
+  "prompt": "You are a spec document reviewer. Verify this spec is complete and ready for planning.\n\n**Spec to review:** /home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md\n\n**Additional context for review:**\n- This is a frontend-only spec — the backend is already fully implemented\n- The backend spec is at: /home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md\n- The existing project detail page is at: /home/<USER>/web3/ReleaseBeacon/web/components/projects/project-detail.tsx\n- The existing types are at: /home/<USER>/web3/ReleaseBeacon/web/lib/api/types.ts\n- The existing API client is at: /home/<USER>/web3/ReleaseBeacon/web/lib/api/client.ts\n- The backend API handlers are at: /home/<USER>/web3/ReleaseBeacon/internal/api/gates.go\n- The backend models are at: /home/<USER>/web3/ReleaseBeacon/internal/models/release_gate.go\n\n## What to Check\n\n| Category | What to Look For |\n|----------|------------------|\n| Completeness | TODOs, placeholders, \"TBD\", incomplete sections |\n| Consistency | Internal contradictions, conflicting requirements |\n| Clarity | Requirements ambiguous enough to cause someone to build the wrong thing |\n| Scope | Focused enough for a single plan — not covering multiple independent subsystems |\n| YAGNI | Unrequested features, over-engineering |\n\nAlso verify:\n- TypeScript types match the backend Go models exactly (field names, types, optionality)\n- API client methods match the backend routes exactly\n- The component design is feasible given the existing codebase patterns\n\n## Calibration\n\n**Only flag issues that would cause real problems during implementation planning.**\nA missing section, a contradiction, or a requirement so ambiguous it could be\ninterpreted […]
 
 > TOOL
 
@@ -8048,7 +8048,7 @@ id: toolu_bdrk_01M3BACoqHwamK47jkMPLu3J
 {
   "description": "Review spec document",
   "model": "opus",
-  "prompt": "You are a spec document reviewer. Verify this spec is complete and ready for planning.\n\n**Spec to review:** /Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md\n\n**Additional context for review:**\n- This is a frontend-only spec — the backend is already fully implemented\n- The backend spec is at: /Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md\n- The existing project detail page is at: /Users/pc/web3/ReleaseBeacon/web/components/projects/project-detail.tsx\n- The existing types are at: /Users/pc/web3/ReleaseBeacon/web/lib/api/types.ts\n- The existing API client is at: /Users/pc/web3/ReleaseBeacon/web/lib/api/client.ts\n- The backend API handlers are at: /Users/pc/web3/ReleaseBeacon/internal/api/gates.go\n- The backend models are at: /Users/pc/web3/ReleaseBeacon/internal/models/release_gate.go\n\n## What to Check\n\n| Category | What to Look For |\n|----------|------------------|\n| Completeness | TODOs, placeholders, \"TBD\", incomplete sections |\n| Consistency | Internal contradictions, conflicting requirements |\n| Clarity | Requirements ambiguous enough to cause someone to build the wrong thing |\n| Scope | Focused enough for a single plan — not covering multiple independent subsystems |\n| YAGNI | Unrequested features, over-engineering |\n\nAlso verify:\n- TypeScript types match the backend Go models exactly (field names, types, optionality)\n- API client methods match the backend routes exactly\n- The component design is feasible given the existing codebase patterns\n\n## Calibration\n\n**Only flag issues that would cause real problems during implementation planning.**\nA missing section, a contradiction, or a requirement so ambiguous it could be\ninterpreted […]
+  "prompt": "You are a spec document reviewer. Verify this spec is complete and ready for planning.\n\n**Spec to review:** /home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md\n\n**Additional context for review:**\n- This is a frontend-only spec — the backend is already fully implemented\n- The backend spec is at: /home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md\n- The existing project detail page is at: /home/<USER>/web3/ReleaseBeacon/web/components/projects/project-detail.tsx\n- The existing types are at: /home/<USER>/web3/ReleaseBeacon/web/lib/api/types.ts\n- The existing API client is at: /home/<USER>/web3/ReleaseBeacon/web/lib/api/client.ts\n- The backend API handlers are at: /home/<USER>/web3/ReleaseBeacon/internal/api/gates.go\n- The backend models are at: /home/<USER>/web3/ReleaseBeacon/internal/models/release_gate.go\n\n## What to Check\n\n| Category | What to Look For |\n|----------|------------------|\n| Completeness | TODOs, placeholders, \"TBD\", incomplete sections |\n| Consistency | Internal contradictions, conflicting requirements |\n| Clarity | Requirements ambiguous enough to cause someone to build the wrong thing |\n| Scope | Focused enough for a single plan — not covering multiple independent subsystems |\n| YAGNI | Unrequested features, over-engineering |\n\nAlso verify:\n- TypeScript types match the backend Go models exactly (field names, types, optionality)\n- API client methods match the backend routes exactly\n- The component design is feasible given the existing codebase patterns\n\n## Calibration\n\n**Only flag issues that would cause real problems during implementation planning.**\nA missing section, a contradiction, or a requirement so ambiguous it could be\ninterpreted […]
 
 > TOOL
 
@@ -8063,7 +8063,7 @@ I now have all the information needed for a thorough review. Let me cross-check 
 
 **Issues:**
 
-1. **[TypeScript Types - GateEvent.details]**: The spec defines `details` as `Record<string, unknown>` but the Go model uses `json.RawMessage` (`/Users/pc/web3/ReleaseBeacon/internal/models/release_gate.go`, line 52). When `json.RawMessage` is serialized to JSON, it produces the raw JSON value, which could be `null` when empty. The TypeScript type `Record<string, unknown>` does not accommodate `null`. It should be `details?: Record<string, unknown> | null` or simply keep `details?: Record<string, unknown>` with the understanding that `omitempty` on the Go side means it will be absent when nil. Since the Go tag is `json:"details,omitempty"`, the field will be omitted from JSON when nil, so `details?: Record<string, unknown>` is correct. **No issue after all** -- the optional `?` handles the omitted case.
+1. **[TypeScript Types - GateEvent.details]**: The spec defines `details` as `Record<string, unknown>` but the Go model uses `json.RawMessage` (`/home/<USER>/web3/ReleaseBeacon/internal/models/release_gate.go`, line 52). When `json.RawMessage` is serialized to JSON, it produces the raw JSON value, which could be `null` when empty. The TypeScript type `Record<string, unknown>` does not accommodate `null`. It should be `details?: Record<string, unknown> | null` or simply keep `details?: Record<string, unknown>` with the understanding that `omitempty` on the Go side means it will be absent when nil. Since the Go tag is `json:"details,omitempty"`, the field will be omitted from JSON when nil, so `details?: Record<string, unknown>` is correct. **No issue after all** -- the optional `?` handles the omitted case.
 
    Actually, on closer inspection, `json.RawMessage` with `omitempty` will omit the field when the value is `nil`, but if the database stores an empty JSONB value (e.g., `{}`), it will serialize as `{}` which maps to `Record<string, unknown>`. The spec is correct here.
 
@@ -8079,7 +8079,7 @@ tool_use Read
 id: toolu_bdrk_0154xvqtxjbRMeeQaZeMDqEg
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md",
   "limit": 30,
   "offset": 50
 }
@@ -8131,7 +8131,7 @@ id: toolu_bdrk_01K8z3WRZZ8UJHoXrfPyQeu6
 {
   "output_mode": "content",
   "pattern": "EventType|event_type.*=",
-  "path": "/Users/pc/web3/ReleaseBeacon/internal/gate"
+  "path": "/home/<USER>/web3/ReleaseBeacon/internal/gate"
 }
 ```
 
@@ -8151,7 +8151,7 @@ id: toolu_bdrk_01HgkxkwdgnzUsNhFdTBXGGB
 {
   "output_mode": "content",
   "pattern": "EventType",
-  "path": "/Users/pc/web3/ReleaseBeacon/internal"
+  "path": "/home/<USER>/web3/ReleaseBeacon/internal"
 }
 ```
 
@@ -8172,7 +8172,7 @@ id: toolu_bdrk_0112GH8cW7hWJNGY6hPMBfVk
 ```json
 {
   "output_mode": "content",
-  "path": "/Users/pc/web3/ReleaseBeacon/internal",
+  "path": "/home/<USER>/web3/ReleaseBeacon/internal",
   "pattern": "event_type|EventType.*:\"",
   "context": 2
 }
@@ -8183,35 +8183,35 @@ id: toolu_bdrk_0112GH8cW7hWJNGY6hPMBfVk
 tool_result
 id: toolu_bdrk_0112GH8cW7hWJNGY6hPMBfVk
 ```
-/Users/pc/web3/ReleaseBeacon/internal/db/migrations.go-248-    project_id UUID NOT NULL REFERENCES projects(id) ON DELETE CASCADE,
-/Users/pc/web3/ReleaseBeacon/internal/db/migrations.go-249-    version VARCHAR(100) NOT NULL,
+/home/<USER>/web3/ReleaseBeacon/internal/db/migrations.go-248-    project_id UUID NOT NULL REFERENCES projects(id) ON DELETE CASCADE,
+/home/<USER>/web3/ReleaseBeacon/internal/db/migrations.go-249-    version VARCHAR(100) NOT NULL,
 internal/db/migrations.go:250:    event_type VARCHAR(30) NOT NULL,
-/Users/pc/web3/ReleaseBeacon/internal/db/migrations.go-251-    source_id UUID,
-/Users/pc/web3/ReleaseBeacon/internal/db/migrations.go-252-    details JSONB,
+/home/<USER>/web3/ReleaseBeacon/internal/db/migrations.go-251-    source_id UUID,
+/home/<USER>/web3/ReleaseBeacon/internal/db/migrations.go-252-    details JSONB,
 --
 internal/gate/nl_worker.go-74-	details, _ := json.Marshal(map[string]string{"reason": reason})
 internal/gate/nl_worker.go-75-	if recErr := w.store.RecordGateEvent(ctx, readinessID, projectID, version, eventType, nil, details); recErr != nil {
 internal/gate/nl_worker.go:76:		slog.Error("record nl_eval event", "event_type", eventType, "err", recErr)
-/Users/pc/web3/ReleaseBeacon/internal/gate/nl_worker.go-77-	}
-/Users/pc/web3/ReleaseBeacon/internal/gate/nl_worker.go-78-
+/home/<USER>/web3/ReleaseBeacon/internal/gate/nl_worker.go-77-	}
+/home/<USER>/web3/ReleaseBeacon/internal/gate/nl_worker.go-78-
 --
-/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go-1788-func (s *PgStore) RecordGateEvent(ctx context.Context, readinessID, projectID, version, eventType string, sourceID *string, details json.RawMessage) error {
+/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go-1788-func (s *PgStore) RecordGateEvent(ctx context.Context, readinessID, projectID, version, eventType string, sourceID *string, details json.RawMessage) error {
 internal/api/pgstore.go-1789-	_, err := s.pool.Exec(ctx, `
 internal/api/pgstore.go:1790:		INSERT INTO gate_events (version_readiness_id, project_id, version, event_type, source_id, details)
-/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go-1791-		VALUES ($1, $2, $3, $4, $5, $6)
-/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go-1792-	`, readinessID, projectID, version, eventType, sourceID, details)
+/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go-1791-		VALUES ($1, $2, $3, $4, $5, $6)
+/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go-1792-	`, readinessID, projectID, version, eventType, sourceID, details)
 --
 internal/api/pgstore.go-1980-	offset := (page - 1) * perPage
 internal/api/pgstore.go-1981-	rows, err := s.pool.Query(ctx, `
 internal/api/pgstore.go:1982:		SELECT id, version_readiness_id, project_id, version, event_type, source_id, details, created_at
-/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go-1983-		FROM gate_events
-/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go-1984-		WHERE project_id = $1
+/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go-1983-		FROM gate_events
+/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go-1984-		WHERE project_id = $1
 --
 internal/api/pgstore.go-2019-	rows, err := s.pool.Query(ctx, `
-/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go-2020-		SELECT ge.id, ge.version_readiness_id, ge.project_id, ge.version,
+/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go-2020-		SELECT ge.id, ge.version_readiness_id, ge.project_id, ge.version,
 internal/api/pgstore.go:2021:		       ge.event_type, ge.source_id, ge.details, ge.created_at
-/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go-2022-		FROM gate_events ge
-/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go-2023-		JOIN version_readiness vr ON ge.version_readiness_id = vr.id
+/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go-2022-		FROM gate_events ge
+/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go-2023-		JOIN version_readiness vr ON ge.version_readiness_id = vr.id
 --
 internal/models/release_gate.go-48-	ProjectID          string          `json:"project_id"`
 internal/models/release_gate.go-49-	Version            string          `json:"version"`
@@ -8227,7 +8227,7 @@ id: toolu_bdrk_01Q8YDEbDh2yz8jPQmadNE6x
 ```json
 {
   "output_mode": "content",
-  "path": "/Users/pc/web3/ReleaseBeacon/internal/gate",
+  "path": "/home/<USER>/web3/ReleaseBeacon/internal/gate",
   "pattern": "\"source_met|\"gate_opened|\"gate_timed|\"nl_eval|\"agent_trigger|\"notified|RecordGateEvent\""
 }
 ```
@@ -8269,7 +8269,7 @@ tool_use Read
 id: toolu_bdrk_01WzEZcTiCE8svzmMfBXn6TR
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md"
 }
 ```
 
@@ -8320,7 +8320,7 @@ id: toolu_bdrk_013uDnBBmVtPCVGYQ9UMT2ev
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md",
   "old_string": "3. **Timeout (hours)**: `<Input type=\"number\">` with label. Default: 24.",
   "new_string": "3. **Timeout (hours)**: `<Input type=\"number\">` with label. Default: 168 (7 days), matching the database default."
 }
@@ -8331,7 +8331,7 @@ id: toolu_bdrk_013uDnBBmVtPCVGYQ9UMT2ev
 tool_result
 id: toolu_bdrk_013uDnBBmVtPCVGYQ9UMT2ev
 ```
-The file /Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md has been updated successfully.
 ```
 
 > AGENT
@@ -8345,7 +8345,7 @@ id: toolu_bdrk_01N5aTJ3m2X1YpGetrSr2mLW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md",
   "old_string": "**Data fetching**: `useSWR` with key `project-${projectId}-gate` calling `gates.get(projectId)`. The SWR hook should not throw on 404 (no gate exists yet) — treat 404 as null (no gate configured).",
   "new_string": "**Data fetching**: `useSWR` with key `project-${projectId}-gate` calling `gates.get(projectId)`. The standard `request()` function throws on 404. To handle the \"no gate\" case, the `gates.get` method must catch 404 errors and return `null` instead of throwing. Implement this by wrapping the `request` call in a try/catch that checks for \"404\" in the error message and returns `{ data: null }` on 404. The SWR data will then be `null` when no gate exists."
 }
@@ -8356,7 +8356,7 @@ id: toolu_bdrk_01N5aTJ3m2X1YpGetrSr2mLW
 tool_result
 id: toolu_bdrk_01N5aTJ3m2X1YpGetrSr2mLW
 ```
-The file /Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md has been updated successfully.
 ```
 
 > AGENT
@@ -8370,7 +8370,7 @@ id: toolu_bdrk_013RAAKgEbKCmCfaAdZiwVke
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md",
   "old_string": "```typescript\nexport const gates = {\n  get: (projectId: string) =>\n    request<ApiResponse<ReleaseGate>>(`/projects/${projectId}/release-gate`),",
   "new_string": "```typescript\nexport const gates = {\n  get: async (projectId: string) => {\n    try {\n      return await request<ApiResponse<ReleaseGate>>(`/projects/${projectId}/release-gate`);\n    } catch (e) {\n      if (e instanceof Error && e.message.includes(\"404\")) {\n        return { data: null as unknown as ReleaseGate };\n      }\n      throw e;\n    }\n  },"
 }
@@ -8381,7 +8381,7 @@ id: toolu_bdrk_013RAAKgEbKCmCfaAdZiwVke
 tool_result
 id: toolu_bdrk_013RAAKgEbKCmCfaAdZiwVke
 ```
-The file /Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md has been updated successfully.
 ```
 
 > AGENT
@@ -8395,7 +8395,7 @@ id: toolu_bdrk_012uqo3iieQXSJaNZvAueJTp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md",
   "old_string": "- **Colored dot** on the left (green for `gate_ready`, blue for `source_release`, amber for `timeout`, gray for other)",
   "new_string": "- **Colored dot** on the left — color mapped by backend `event_type` values:\n  - `gate_opened` → green dot (gate ready, all sources met)\n  - `source_met` → blue dot (a source released its version)\n  - `gate_timed_out` → amber dot (gate timed out waiting)\n  - `nl_eval_passed` → green dot\n  - `nl_eval_failed` → red dot\n  - `nl_eval_started` → gray dot\n  - `agent_triggered` → blue dot\n  - Any other `event_type` → gray dot"
 }
@@ -8406,7 +8406,7 @@ id: toolu_bdrk_012uqo3iieQXSJaNZvAueJTp
 tool_result
 id: toolu_bdrk_012uqo3iieQXSJaNZvAueJTp
 ```
-The file /Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md has been updated successfully.
 ```
 
 > AGENT
@@ -8420,7 +8420,7 @@ id: toolu_bdrk_01U9pam4Do1uQDKiWgHwLy9A
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md",
   "old_string": "\"projects.detail.gateEventReady\": \"Gate opened: all sources ready\",\n\"projects.detail.gateEventSourceRelease\": \"Source released: {source}\",\n\"projects.detail.gateEventTimeout\": \"Gate timed out\",\n\"projects.detail.gateEventNLPass\": \"NL rule passed\",\n\"projects.detail.gateEventNLFail\": \"NL rule failed\"",
   "new_string": "\"projects.detail.gateEventGateOpened\": \"Gate opened: all sources ready\",\n\"projects.detail.gateEventSourceMet\": \"Source released: {source}\",\n\"projects.detail.gateEventTimedOut\": \"Gate timed out\",\n\"projects.detail.gateEventNLStarted\": \"NL rule evaluation started\",\n\"projects.detail.gateEventNLPassed\": \"NL rule passed\",\n\"projects.detail.gateEventNLFailed\": \"NL rule failed\",\n\"projects.detail.gateEventAgentTriggered\": \"Agent analysis triggered\""
 }
@@ -8431,7 +8431,7 @@ id: toolu_bdrk_01U9pam4Do1uQDKiWgHwLy9A
 tool_result
 id: toolu_bdrk_01U9pam4Do1uQDKiWgHwLy9A
 ```
-The file /Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md has been updated successfully.
 ```
 
 > AGENT
@@ -8445,7 +8445,7 @@ id: toolu_bdrk_011wL7hhzqkwiPuUaKBAQCt8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md",
   "old_string": "- **404 on GET gate**: Treat as \"no gate configured\" — show empty config form with defaults (enabled=false, timeout=24, empty sources).",
   "new_string": "- **404 on GET gate**: Treat as \"no gate configured\" — show empty config form with defaults (enabled=false, timeout=168, empty sources). The `gates.get` method handles this by catching 404 and returning null data."
 }
@@ -8456,7 +8456,7 @@ id: toolu_bdrk_011wL7hhzqkwiPuUaKBAQCt8
 tool_result
 id: toolu_bdrk_011wL7hhzqkwiPuUaKBAQCt8
 ```
-The file /Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md has been updated successfully.
 ```
 
 > AGENT
@@ -8469,7 +8469,7 @@ tool_use Bash
 id: toolu_bdrk_0162zfZQHcNhS8ienZAKvhFM
 ```json
 {
-  "command": "git add docs/superpowers/specs/2026-03-25-release-gate-ux-design.md && git commit -m \"$(cat <<'EOF'\ndocs: fix spec review issues in Release Gate UX design\n\n- Fix timeout default to 168h (matching DB schema)\n- Specify 404 handling approach for gates.get API client method\n- Correct event_type values to match backend (source_met, gate_opened, etc.)\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add docs/superpowers/specs/2026-03-25-release-gate-ux-design.md && git commit -m \"$(cat <<'EOF'\ndocs: fix spec review issues in Release Gate UX design\n\n- Fix timeout default to 168h (matching DB schema)\n- Specify 404 handling approach for gates.get API client method\n- Correct event_type values to match backend (source_met, gate_opened, etc.)\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit spec fixes"
 }
 ```
@@ -8495,7 +8495,7 @@ id: toolu_bdrk_014xm3PrYJLqjCbGG7Gxhn11
 {
   "description": "Re-review spec document",
   "model": "opus",
-  "prompt": "You are a spec document reviewer. This is a re-review after fixes were applied.\n\n**Spec to review:** /Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md\n\n**Previous issues that were fixed:**\n1. Timeout default was 24h, should be 168h to match DB schema — FIXED\n2. 404 handling for gates.get was ambiguous — FIXED, now specifies try/catch with null return\n3. Event type strings mismatched backend values — FIXED, now uses source_met, gate_opened, gate_timed_out, etc.\n\n**Context files (for cross-referencing):**\n- Backend models: /Users/pc/web3/ReleaseBeacon/internal/models/release_gate.go\n- Backend handlers: /Users/pc/web3/ReleaseBeacon/internal/api/gates.go\n- Backend workers (for event_type values): /Users/pc/web3/ReleaseBeacon/internal/gate/worker.go, /Users/pc/web3/ReleaseBeacon/internal/gate/timeout_worker.go, /Users/pc/web3/ReleaseBeacon/internal/gate/nl_worker.go\n\nVerify the 3 previous issues are properly fixed and check for any remaining issues.\n\n## Output Format\n\n## Spec Review\n\n**Status:** Approved | Issues Found\n\n**Issues (if any):**\n- [Section X]: [specific issue] - [why it matters for planning]\n\n**Recommendations (advisory, do not block approval):**\n- [suggestions for improvement]",
+  "prompt": "You are a spec document reviewer. This is a re-review after fixes were applied.\n\n**Spec to review:** /home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md\n\n**Previous issues that were fixed:**\n1. Timeout default was 24h, should be 168h to match DB schema — FIXED\n2. 404 handling for gates.get was ambiguous — FIXED, now specifies try/catch with null return\n3. Event type strings mismatched backend values — FIXED, now uses source_met, gate_opened, gate_timed_out, etc.\n\n**Context files (for cross-referencing):**\n- Backend models: /home/<USER>/web3/ReleaseBeacon/internal/models/release_gate.go\n- Backend handlers: /home/<USER>/web3/ReleaseBeacon/internal/api/gates.go\n- Backend workers (for event_type values): /home/<USER>/web3/ReleaseBeacon/internal/gate/worker.go, /home/<USER>/web3/ReleaseBeacon/internal/gate/timeout_worker.go, /home/<USER>/web3/ReleaseBeacon/internal/gate/nl_worker.go\n\nVerify the 3 previous issues are properly fixed and check for any remaining issues.\n\n## Output Format\n\n## Spec Review\n\n**Status:** Approved | Issues Found\n\n**Issues (if any):**\n- [Section X]: [specific issue] - [why it matters for planning]\n\n**Recommendations (advisory, do not block approval):**\n- [suggestions for improvement]",
   "subagent_type": "general-purpose"
 }
 ```
@@ -8554,7 +8554,7 @@ tool_use Read
 id: toolu_bdrk_01BoZre9QnoHLf86uJcMRUHd
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/api/client.ts",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/api/client.ts",
   "limit": 15,
   "offset": 33
 }
@@ -8598,7 +8598,7 @@ id: toolu_bdrk_01HdKbbpbdT8QBpmq1qx9v6Z
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md",
   "old_string": "```typescript\nexport const gates = {\n  get: async (projectId: string) => {\n    try {\n      return await request<ApiResponse<ReleaseGate>>(`/projects/${projectId}/release-gate`);\n    } catch (e) {\n      if (e instanceof Error && e.message.includes(\"404\")) {\n        return { data: null as unknown as ReleaseGate };\n      }\n      throw e;\n    }\n  },",
   "new_string": "```typescript\nexport const gates = {\n  get: async (projectId: string): Promise<ApiResponse<ReleaseGate | null>> => {\n    const res = await fetch(`${BASE}/projects/${projectId}/release-gate`, {\n      headers: { \"Content-Type\": \"application/json\" },\n    });\n    if (res.status === 404) {\n      return { data: null };\n    }\n    if (!res.ok) {\n      const body = await res.json().catch(() => null);\n      throw new Error(body?.error?.message ?? `Request failed: ${res.status}`);\n    }\n    return res.json();\n  },"
 }
@@ -8609,7 +8609,7 @@ id: toolu_bdrk_01HdKbbpbdT8QBpmq1qx9v6Z
 tool_result
 id: toolu_bdrk_01HdKbbpbdT8QBpmq1qx9v6Z
 ```
-The file /Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md has been updated successfully.
 ```
 
 > AGENT
@@ -8623,7 +8623,7 @@ id: toolu_bdrk_01VbKHuv55w5pJ4hKV5THJYH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md",
   "old_string": "**Data fetching**: `useSWR` with key `project-${projectId}-gate` calling `gates.get(projectId)`. The standard `request()` function throws on 404. To handle the \"no gate\" case, the `gates.get` method must catch 404 errors and return `null` instead of throwing. Implement this by wrapping the `request` call in a try/catch that checks for \"404\" in the error message and returns `{ data: null }` on 404. The SWR data will then be `null` when no gate exists.",
   "new_string": "**Data fetching**: `useSWR` with key `project-${projectId}-gate` calling `gates.get(projectId)`. The `gates.get` method uses `fetch` directly (not the shared `request()` helper) to check `res.status === 404` and return `{ data: null }` instead of throwing. This way SWR receives null data when no gate exists, rather than an error."
 }
@@ -8634,7 +8634,7 @@ id: toolu_bdrk_01VbKHuv55w5pJ4hKV5THJYH
 tool_result
 id: toolu_bdrk_01VbKHuv55w5pJ4hKV5THJYH
 ```
-The file /Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md has been updated successfully.
 ```
 
 > TOOL
@@ -8643,7 +8643,7 @@ tool_use Bash
 id: toolu_bdrk_01LHhsYDBiPiCCNMWqd6ieTH
 ```json
 {
-  "command": "git add docs/superpowers/specs/2026-03-25-release-gate-ux-design.md && git commit -m \"$(cat <<'EOF'\ndocs: fix gates.get 404 handling to use fetch directly\n\nUse fetch directly instead of request() wrapper so we can check\nres.status === 404 reliably, rather than matching error message strings.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add docs/superpowers/specs/2026-03-25-release-gate-ux-design.md && git commit -m \"$(cat <<'EOF'\ndocs: fix gates.get 404 handling to use fetch directly\n\nUse fetch directly instead of request() wrapper so we can check\nres.status === 404 reliably, rather than matching error message strings.\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit the 404 handling fix"
 }
 ```
@@ -8781,7 +8781,7 @@ tool_use Read
 id: toolu_bdrk_01GssPB9NHZne3Hi2Kmvx7cW
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md"
 }
 ```
 
@@ -8829,7 +8829,7 @@ tool_use Read
 id: toolu_bdrk_01S6KJ85WfQ8KSPbc1jhcKuG
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/api/types.ts",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/api/types.ts",
   "limit": 20,
   "offset": 325
 }
@@ -8841,7 +8841,7 @@ tool_use Read
 id: toolu_bdrk_01LhBebrAPMh9pK5Gsyeaytp
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/api/client.ts",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/api/client.ts",
   "limit": 10,
   "offset": 286
 }
@@ -8853,7 +8853,7 @@ tool_use Read
 id: toolu_bdrk_016UKZxdpVe5ouT6VmbHFQc2
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json",
   "limit": 10,
   "offset": 310
 }
@@ -8930,7 +8930,7 @@ tool_use Read
 id: toolu_bdrk_01MsbNUSDDPoy1rVvZyJ4RSt
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/projects/project-detail.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/projects/project-detail.tsx",
   "limit": 45,
   "offset": 1
 }
@@ -8942,7 +8942,7 @@ tool_use Read
 id: toolu_bdrk_01PC3jsiLkEFbTiiocXw6yBY
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/projects/project-detail.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/projects/project-detail.tsx",
   "limit": 15,
   "offset": 55
 }
@@ -9029,7 +9029,7 @@ tool_use Read
 id: toolu_bdrk_01BB3eHh2jQBPffj43QSgtjy
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/projects/project-detail.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/projects/project-detail.tsx",
   "limit": 30,
   "offset": 830
 }
@@ -9042,7 +9042,7 @@ id: toolu_bdrk_01WifQ8oYShc5CWucWNoFjM4
 ```json
 {
   "output_mode": "content",
-  "path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
+  "path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
   "pattern": "projects\\.detail\\.tab"
 }
 ```
@@ -9104,7 +9104,7 @@ tool_use Read
 id: toolu_bdrk_01QvvAMA6uKjfTRxPjCUvJzs
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
   "limit": 20,
   "offset": 305
 }
@@ -9152,7 +9152,7 @@ tool_use Read
 id: toolu_bdrk_01DHz4MK3pWgFYcu5nDgZ9Xi
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/ui/switch.tsx"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/ui/switch.tsx"
 }
 ```
 
@@ -9162,7 +9162,7 @@ tool_use Read
 id: toolu_bdrk_01G26B4NCxQLNvS2qovf14BR
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/ui/checkbox.tsx"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/ui/checkbox.tsx"
 }
 ```
 
@@ -9172,7 +9172,7 @@ tool_use Read
 id: toolu_bdrk_01HW33QHnKBXjd8dgW9CnZDW
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/ui/badge.tsx"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/ui/badge.tsx"
 }
 ```
 
@@ -9337,7 +9337,7 @@ tool_use Write
 id: toolu_bdrk_01ViYbTSbzi57Q2sffLerTcy
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md",
   "content": "# Release Gate UX Implementation Plan\n\n> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.\n\n**Goal:** Add a \"Release Gate\" tab to the project detail page with gate configuration, version readiness monitoring, and gate events timeline.\n\n**Architecture:** A new `<ReleaseGateTab>` component renders inside the project detail page as a 4th tab. It receives `projectId` and `sources` as props, manages its own SWR data fetching and form state. The API client gets a `gates` namespace, and TypeScript types + i18n keys are added for all gate-related models.\n\n**Tech Stack:** Next.js (React 19), TypeScript, SWR v2, Radix UI (Switch, Checkbox, Select), Tailwind CSS v4, i18n (en/zh)\n\n---\n\n## File Structure\n\n| File | Action | Responsibility |\n|------|--------|----------------|\n| `web/lib/api/types.ts` | Modify | Add `VersionMapping`, `ReleaseGate`, `ReleaseGateInput`, `VersionReadiness`, `GateEvent` |\n| `web/lib/api/client.ts` | Modify | Add `gates` namespace (7 methods, `get` uses `fetch` directly for 404 handling) |\n| `web/lib/i18n/messages/en.json` | Modify | Add ~40 gate-related i18n keys |\n| `web/lib/i18n/messages/zh.json` | Modify | Add corresponding Chinese translations |\n| `web/components/projects/release-gate-tab.tsx` | Create | Gate config form + version readiness table + events timeline |\n| `web/components/projects/project-detail.tsx` | Modify | Add […]
 
 > TOOL
@@ -9345,7 +9345,7 @@ id: toolu_bdrk_01ViYbTSbzi57Q2sffLerTcy
 tool_result
 id: toolu_bdrk_01ViYbTSbzi57Q2sffLerTcy
 ```
-File created successfully at: /Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md
+File created successfully at: /home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md
 ```
 
 > AGENT
@@ -9358,7 +9358,7 @@ tool_use Read
 id: toolu_bdrk_012339djmiyJF1dbz3h6aQH1
 ```json
 {
-  "file_path": "/Users/pc/.claude/plugins/cache/superpowers-marketplace/superpowers/5.0.5/skills/writing-plans/plan-document-reviewer-prompt.md"
+  "file_path": "/home/<USER>/.claude/plugins/cache/superpowers-marketplace/superpowers/5.0.5/skills/writing-plans/plan-document-reviewer-prompt.md"
 }
 ```
 
@@ -9409,7 +9409,7 @@ id: toolu_bdrk_015ZykHUCcD3EpWDdvwp7xjg
 {
   "description": "Review plan document",
   "model": "opus",
-  "prompt": "You are a plan document reviewer. Verify this plan is complete and ready for implementation.\n\n**Plan to review:** /Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md\n**Spec for reference:** /Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md\n\nAlso check these existing files to ensure the plan's code is compatible:\n- /Users/pc/web3/ReleaseBeacon/web/lib/api/client.ts (existing API client — check that the plan uses the existing `BASE` const, not a new `BASE_URL`)\n- /Users/pc/web3/ReleaseBeacon/web/lib/api/types.ts (existing types — check plan appends cleanly)\n- /Users/pc/web3/ReleaseBeacon/web/components/projects/project-detail.tsx (existing component — check plan's insertion points are correct)\n- /Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json (check insertion point)\n\n## What to Check\n\n| Category | What to Look For |\n|----------|------------------|\n| Completeness | TODOs, placeholders, incomplete tasks, missing steps |\n| Spec Alignment | Plan covers spec requirements, no major scope creep |\n| Task Decomposition | Tasks have clear boundaries, steps are actionable |\n| Buildability | Could an engineer follow this plan without getting stuck? |\n\nAlso cross-check:\n- Does the plan's `gates.get` method use the existing `BASE` const from line 31 of client.ts (not a new `BASE_URL`)?\n- Do the plan's line number references match the actual files?\n- Does the plan cover ALL spec requirements (types, client, i18n, component sections 1-3, parent integration)?\n- Are the component imports correct for the actual UI primitives?\n\n## Calibration\n\n**Only flag issues that would cause […]
+  "prompt": "You are a plan document reviewer. Verify this plan is complete and ready for implementation.\n\n**Plan to review:** /home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md\n**Spec for reference:** /home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md\n\nAlso check these existing files to ensure the plan's code is compatible:\n- /home/<USER>/web3/ReleaseBeacon/web/lib/api/client.ts (existing API client — check that the plan uses the existing `BASE` const, not a new `BASE_URL`)\n- /home/<USER>/web3/ReleaseBeacon/web/lib/api/types.ts (existing types — check plan appends cleanly)\n- /home/<USER>/web3/ReleaseBeacon/web/components/projects/project-detail.tsx (existing component — check plan's insertion points are correct)\n- /home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json (check insertion point)\n\n## What to Check\n\n| Category | What to Look For |\n|----------|------------------|\n| Completeness | TODOs, placeholders, incomplete tasks, missing steps |\n| Spec Alignment | Plan covers spec requirements, no major scope creep |\n| Task Decomposition | Tasks have clear boundaries, steps are actionable |\n| Buildability | Could an engineer follow this plan without getting stuck? |\n\nAlso cross-check:\n- Does the plan's `gates.get` method use the existing `BASE` const from line 31 of client.ts (not a new `BASE_URL`)?\n- Do the plan's line number references match the actual files?\n- Does the plan cover ALL spec requirements (types, client, i18n, component sections 1-3, parent integration)?\n- Are the component imports correct for the actual UI primitives?\n\n## Calibration\n\n**Only flag issues that would cause […]
 
 > TOOL
 
@@ -9439,7 +9439,7 @@ tool_use Read
 id: toolu_bdrk_01PUXaRQktKmyZ8mCg1Ng9xJ
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md",
   "limit": 50,
   "offset": 120
 }
@@ -9508,7 +9508,7 @@ id: toolu_bdrk_01LWzp2uTmhAQY6hNiZgD1S3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md",
   "old_string": "```typescript\n// --- Release Gates ---\n\nconst BASE_URL = process.env.NEXT_PUBLIC_API_URL || \"/api/v1\";\n\nexport const gates = {\n  get: async (projectId: string): Promise<ApiResponse<ReleaseGate | null>> => {\n    const res = await fetch(`${BASE_URL}/projects/${projectId}/release-gate`, {",
   "new_string": "```typescript\n// --- Release Gates ---\n\nexport const gates = {\n  get: async (projectId: string): Promise<ApiResponse<ReleaseGate | null>> => {\n    const res = await fetch(`${BASE}/projects/${projectId}/release-gate`, {"
 }
@@ -9519,7 +9519,7 @@ id: toolu_bdrk_01LWzp2uTmhAQY6hNiZgD1S3
 tool_result
 id: toolu_bdrk_01LWzp2uTmhAQY6hNiZgD1S3
 ```
-The file /Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md has been updated successfully.
 ```
 
 > AGENT
@@ -9532,7 +9532,7 @@ tool_use Read
 id: toolu_bdrk_01Ukx3X2A2caSU4qhRYCHH6M
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md"
 }
 ```
 
@@ -9581,7 +9581,7 @@ id: toolu_bdrk_01SHqpkv9um1pYgLVWJ5dsfF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md",
   "old_string": "In `web/components/projects/release-gate-tab.tsx`, add the following imports at the top (alongside existing imports):\n\n```tsx\nimport { Badge } from \"@/components/ui/badge\";\nimport type { VersionReadiness } from \"@/lib/api/types\";\n```\n\nAdd this SWR hook inside the component function, after the existing `mutateGate` hook:\n\n```tsx\n  // --- Version readiness data ---\n  const {\n    data: readinessData,\n    mutate: mutateReadiness,\n  } = useSWR(\n    gate?.enabled ? `project-${projectId}-readiness` : null,\n    () => gatesApi.listReadiness(projectId)\n  );\n  const readinessItems = readinessData?.data ?? [];\n```",
   "new_string": "In `web/components/projects/release-gate-tab.tsx`, add the following import at the top (alongside existing imports):\n\n```tsx\nimport type { VersionReadiness } from \"@/lib/api/types\";\n```\n\nAdd this state and SWR hook inside the component function, after the existing `mutateGate` hook:\n\n```tsx\n  // --- Version readiness data (with pagination) ---\n  const [readinessPage, setReadinessPage] = useState(1);\n  const {\n    data: readinessData,\n    mutate: mutateReadiness,\n  } = useSWR(\n    gate?.enabled ? `project-${projectId}-readiness-${readinessPage}` : null,\n    () => gatesApi.listReadiness(projectId, readinessPage)\n  );\n  const readinessItems = readinessData?.data ?? [];\n  const hasMoreReadiness = readinessItems.length === 25; // perPage default\n```"
 }
@@ -9592,7 +9592,7 @@ id: toolu_bdrk_01SHqpkv9um1pYgLVWJ5dsfF
 tool_result
 id: toolu_bdrk_01SHqpkv9um1pYgLVWJ5dsfF
 ```
-The file /Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md has been updated successfully.
 ```
 
 > AGENT
@@ -9606,7 +9606,7 @@ id: toolu_bdrk_01JFPMHDLSmpJkcoffLBFbVJ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md",
   "old_string": "                <div className=\"text-xs\">\n                  {formatTimeRemaining(vr.timeout_at, vr.status)}\n                </div>\n              </div>\n            ))}\n          </div>\n        )}\n      </div>\n\n      {/* Section 3 placeholder — will be added in Task 6 */}",
   "new_string": "                <div className=\"text-xs\">\n                  {formatTimeRemaining(vr.timeout_at, vr.status)}\n                </div>\n              </div>\n            ))}\n          </div>\n        )}\n\n        {hasMoreReadiness && (\n          <div className=\"mt-3 text-center\">\n            <Button\n              variant=\"outline\"\n              size=\"sm\"\n              onClick={() => setReadinessPage((p) => p + 1)}\n            >\n              {t(\"projects.detail.loadMore\")}\n            </Button>\n          </div>\n        )}\n      </div>\n\n      {/* Section 3 placeholder — will be added in Task 6 */}"
 }
@@ -9617,7 +9617,7 @@ id: toolu_bdrk_01JFPMHDLSmpJkcoffLBFbVJ
 tool_result
 id: toolu_bdrk_01JFPMHDLSmpJkcoffLBFbVJ
 ```
-The file /Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md has been updated successfully.
 ```
 
 > AGENT
@@ -9631,7 +9631,7 @@ id: toolu_bdrk_01W5tYCqnDRBeQMEkEfPcKiJ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md",
   "old_string": "Add this SWR hook inside the component function, after the readiness hook:\n\n```tsx\n  // --- Gate events data ---\n  const { data: eventsData } = useSWR(\n    gate ? `project-${projectId}-gate-events` : null,\n    () => gatesApi.listEvents(projectId)\n  );\n  const eventItems = eventsData?.data ?? [];\n```",
   "new_string": "Add this SWR hook with pagination state inside the component function, after the readiness hook:\n\n```tsx\n  // --- Gate events data (with pagination) ---\n  const [eventsPage, setEventsPage] = useState(1);\n  const { data: eventsData } = useSWR(\n    gate ? `project-${projectId}-gate-events-${eventsPage}` : null,\n    () => gatesApi.listEvents(projectId, eventsPage)\n  );\n  const eventItems = eventsData?.data ?? [];\n  const hasMoreEvents = eventItems.length === 25; // perPage default\n```"
 }
@@ -9642,7 +9642,7 @@ id: toolu_bdrk_01W5tYCqnDRBeQMEkEfPcKiJ
 tool_result
 id: toolu_bdrk_01W5tYCqnDRBeQMEkEfPcKiJ
 ```
-The file /Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md has been updated successfully.
 ```
 
 > AGENT
@@ -9656,7 +9656,7 @@ id: toolu_bdrk_012TddzkyDoRijc8e5eMM8gz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md",
   "old_string": "            {eventItems.map((ev) => (\n              <div\n                key={ev.id}\n                className=\"flex gap-3 py-2.5 border-b last:border-b-0 items-start\"\n              >\n                <div\n                  className={`size-2 rounded-full mt-1.5 shrink-0 ${eventDotColor(ev.event_type)}`}\n                />\n                <div className=\"flex-1 min-w-0\">\n                  <div className=\"text-sm\">\n                    <span className=\"font-medium\">{ev.version}</span>\n                    {\" — \"}\n                    {eventDescription(ev)}\n                  </div>\n                  <div className=\"text-xs text-muted-foreground mt-0.5\">\n                    {ev.event_type} • {relativeTime(ev.created_at)}\n                  </div>\n                </div>\n              </div>\n            ))}\n          </div>\n        )}\n      </div>",
   "new_string": "            {eventItems.map((ev) => (\n              <div\n                key={ev.id}\n                className=\"flex gap-3 py-2.5 border-b last:border-b-0 items-start\"\n              >\n                <div\n                  className={`size-2 rounded-full mt-1.5 shrink-0 ${eventDotColor(ev.event_type)}`}\n                />\n                <div className=\"flex-1 min-w-0\">\n                  <div className=\"text-sm\">\n                    <span className=\"font-medium\">{ev.version}</span>\n                    {\" — \"}\n                    {eventDescription(ev)}\n                  </div>\n                  <div className=\"text-xs text-muted-foreground mt-0.5\">\n                    {ev.event_type} • {relativeTime(ev.created_at)}\n                  </div>\n                </div>\n              </div>\n            ))}\n          </div>\n        )}\n\n        {hasMoreEvents && (\n          <div className=\"mt-3 text-center\">\n            <Button\n              variant=\"outline\"\n              size=\"sm\"\n              onClick={() => setEventsPage((p) => p + 1)}\n            >\n              {t(\"projects.detail.loadMore\")}\n            </Button>\n          </div>\n        )}\n      </div>"
 }
@@ -9667,7 +9667,7 @@ id: toolu_bdrk_012TddzkyDoRijc8e5eMM8gz
 tool_result
 id: toolu_bdrk_012TddzkyDoRijc8e5eMM8gz
 ```
-The file /Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md has been updated successfully.
 ```
 
 > AGENT
@@ -9680,7 +9680,7 @@ tool_use Bash
 id: toolu_bdrk_01ENM87bXjy5rxDtGEUeotZg
 ```json
 {
-  "command": "git add docs/superpowers/plans/2026-03-25-release-gate-ux.md && git commit -m \"$(cat <<'EOF'\ndocs: add Release Gate UX implementation plan\n\n8-task plan covering types, API client, i18n, component (3 sections),\nintegration, and smoke test. Includes Load More pagination for readiness\ntable and events timeline.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add docs/superpowers/plans/2026-03-25-release-gate-ux.md && git commit -m \"$(cat <<'EOF'\ndocs: add Release Gate UX implementation plan\n\n8-task plan covering types, API client, i18n, component (3 sections),\nintegration, and smoke test. Includes Load More pagination for readiness\ntable and events timeline.\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit the implementation plan"
 }
 ```
@@ -9708,7 +9708,7 @@ id: toolu_bdrk_013Eo5HWwDyMpjjCgK4DEoAg
   "description": "Review implementation plan",
   "subagent_type": "general-purpose",
   "model": "opus",
-  "prompt": "You are a plan document reviewer. Review the implementation plan at `/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md` against the spec at `/Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md`.\n\nRead both files completely.\n\nCheck for these categories of issues:\n\n**Blocking issues** (must fix before execution):\n1. Code in plan that won't compile (wrong variable names, missing imports, type errors)\n2. Spec requirements that are missing from the plan\n3. Plan steps that contradict the spec\n4. Missing pagination for readiness table and events timeline (spec requires \"Load more\")\n\n**Advisory** (nice to fix but not blocking):\n1. Unclear instructions that could be misinterpreted\n2. Missing edge case handling mentioned in the spec\n3. Import statements that need to be merged with existing imports\n\nFor each issue found, cite the specific plan task/step AND the spec section.\n\nOutput format:\n- If blocking issues: `❌ Issues Found` with numbered list\n- If only advisory: `✅ Approved` with advisory notes\n- If clean: `✅ Approved`\n\nBe thorough and precise. This is the SECOND review — the first review found: (1) BASE_URL conflict with existing BASE constant, (2) missing Load More pagination in Tasks 5 and 6, (3) unused Badge import in Task 5. All three should now be fixed."
+  "prompt": "You are a plan document reviewer. Review the implementation plan at `/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md` against the spec at `/home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md`.\n\nRead both files completely.\n\nCheck for these categories of issues:\n\n**Blocking issues** (must fix before execution):\n1. Code in plan that won't compile (wrong variable names, missing imports, type errors)\n2. Spec requirements that are missing from the plan\n3. Plan steps that contradict the spec\n4. Missing pagination for readiness table and events timeline (spec requires \"Load more\")\n\n**Advisory** (nice to fix but not blocking):\n1. Unclear instructions that could be misinterpreted\n2. Missing edge case handling mentioned in the spec\n3. Import statements that need to be merged with existing imports\n\nFor each issue found, cite the specific plan task/step AND the spec section.\n\nOutput format:\n- If blocking issues: `❌ Issues Found` with numbered list\n- If only advisory: `✅ Approved` with advisory notes\n- If clean: `✅ Approved`\n\nBe thorough and precise. This is the SECOND review — the first review found: (1) BASE_URL conflict with existing BASE constant, (2) missing Load More pagination in Tasks 5 and 6, (3) unused Badge import in Task 5. All three should now be fixed."
 }
 ```
 
@@ -9755,7 +9755,7 @@ tool_use Read
 id: toolu_bdrk_01EcmmbH92jtH29PeN1bGKXL
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md",
   "offset": 704,
   "limit": 150
 }
@@ -9812,7 +9812,7 @@ tool_use Read
 id: toolu_bdrk_01KkPUd91vMnmGXkiecoZB17
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md",
   "limit": 120,
   "offset": 853
 }
@@ -9886,7 +9886,7 @@ id: toolu_bdrk_01MCE7U2fvSYJp7g9jxRfWn8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md",
   "old_string": "Add this state and SWR hook inside the component function, after the existing `mutateGate` hook:\n\n```tsx\n  // --- Version readiness data (with pagination) ---\n  const [readinessPage, setReadinessPage] = useState(1);\n  const {\n    data: readinessData,\n    mutate: mutateReadiness,\n  } = useSWR(\n    gate?.enabled ? `project-${projectId}-readiness-${readinessPage}` : null,\n    () => gatesApi.listReadiness(projectId, readinessPage)\n  );\n  const readinessItems = readinessData?.data ?? [];\n  const hasMoreReadiness = readinessItems.length === 25; // perPage default\n```",
   "new_string": "Add this state and SWR hook inside the component function, after the existing `mutateGate` hook:\n\n```tsx\n  // --- Version readiness data (with Load More accumulation) ---\n  const [readinessPage, setReadinessPage] = useState(1);\n  const [allReadiness, setAllReadiness] = useState<VersionReadiness[]>([]);\n  const {\n    data: readinessData,\n  } = useSWR(\n    gate?.enabled ? `project-${projectId}-readiness-${readinessPage}` : null,\n    () => gatesApi.listReadiness(projectId, readinessPage)\n  );\n\n  // Accumulate pages\n  useEffect(() => {\n    if (readinessData?.data) {\n      setAllReadiness((prev) =>\n        readinessPage === 1 ? readinessData.data! : [...prev, ...readinessData.data!]\n      );\n    }\n  }, [readinessData, readinessPage]);\n\n  // Reset on gate toggle\n  useEffect(() => {\n    if (!gate?.enabled) {\n      setAllReadiness([]);\n      setReadinessPage(1);\n    }\n  }, [gate?.enabled]);\n\n  const hasMoreReadiness = (readinessData?.data?.length ?? 0) === 25;\n```"
 }
@@ -9897,7 +9897,7 @@ id: toolu_bdrk_01MCE7U2fvSYJp7g9jxRfWn8
 tool_result
 id: toolu_bdrk_01MCE7U2fvSYJp7g9jxRfWn8
 ```
-The file /Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md has been updated successfully.
 ```
 
 > AGENT
@@ -9911,7 +9911,7 @@ id: toolu_bdrk_01Vcb9Sp5FKissuYdXGfD1ZN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md",
   "old_string": "        {!gate?.enabled ? (\n          <p className=\"text-sm text-muted-foreground italic\">\n            {t(\"projects.detail.gateDisabled\")}\n          </p>\n        ) : readinessItems.length === 0 ? (\n          <p className=\"text-sm text-muted-foreground italic\">\n            {t(\"projects.detail.vrEmpty\")}\n          </p>\n        ) : (\n          <div className=\"rounded-md border overflow-hidden\">\n            <div className=\"grid grid-cols-[1.5fr_1fr_2fr_2fr_1.5fr] gap-2 px-3 py-2 text-xs text-muted-foreground bg-muted/30 border-b\">\n              <div>{t(\"projects.detail.vrVersion\")}</div>\n              <div>{t(\"projects.detail.vrStatus\")}</div>\n              <div>{t(\"projects.detail.vrSourcesMet\")}</div>\n              <div>{t(\"projects.detail.vrSourcesMissing\")}</div>\n              <div>{t(\"projects.detail.vrTimeout\")}</div>\n            </div>\n            {readinessItems.map((vr) => (\n              <div\n                key={vr.id}\n                className=\"grid grid-cols-[1.5fr_1fr_2fr_2fr_1.5fr] gap-2 px-3 py-2 items-center border-b last:border-b-0 text-sm\"\n              >\n                <div className=\"font-medium\">{vr.version}</div>\n                <div>{statusBadge(vr.status)}</div>\n                <div className=\"text-xs truncate\">\n                  {vr.sources_met.map((id) => sourceNames[id] ?? id.slice(0, 8)).join(\", \") || \"—\"}\n                </div>\n                <div className=\"text-xs text-muted-foreground truncate\">\n                  {vr.sources_missing.map((id) => sourceNames[id] ?? id.slice(0, 8)).join(\", \") || \"—\"}\n                </div>\n                <div className=\"text-xs\">\n                  {formatTimeRemaining(vr.timeout_at, vr.status)}\n                </div>\n              </div>\n            ))}\n          </div>\n        )}",
   "new_string": "        {!gate?.enabled ? (\n          <p className=\"text-sm text-muted-foreground italic\">\n            {t(\"projects.detail.gateDisabled\")}\n          </p>\n        ) : allReadiness.length === 0 ? (\n          <p className=\"text-sm text-muted-foreground italic\">\n            {t(\"projects.detail.vrEmpty\")}\n          </p>\n        ) : (\n          <div className=\"rounded-md border overflow-hidden\">\n            <div className=\"grid grid-cols-[1.5fr_1fr_2fr_2fr_1fr_0.5fr] gap-2 px-3 py-2 text-xs text-muted-foreground bg-muted/30 border-b\">\n              <div>{t(\"projects.detail.vrVersion\")}</div>\n              <div>{t(\"projects.detail.vrStatus\")}</div>\n              <div>{t(\"projects.detail.vrSourcesMet\")}</div>\n              <div>{t(\"projects.detail.vrSourcesMissing\")}</div>\n              <div>{t(\"projects.detail.vrTimeout\")}</div>\n              <div />\n            </div>\n            {allReadiness.map((vr) => (\n              <div\n                key={vr.id}\n                className=\"grid grid-cols-[1.5fr_1fr_2fr_2fr_1fr_0.5fr] gap-2 px-3 py-2 items-center border-b last:border-b-0 text-sm\"\n              >\n                <div className=\"font-medium\">{vr.version}</div>\n                <div>{statusBadge(vr.status)}</div>\n                <div className=\"text-xs truncate\">\n                  {vr.sources_met.map((id) => sourceNames[id] ?? id.slice(0, 8)).join(\", \") || \"—\"}\n                </div>\n                <div className=\"text-xs text-muted-foreground truncate\">\n                  {vr.sources_missing.map((id) => sourceNames[id] ?? id.slice(0, […]
 
@@ -9920,7 +9920,7 @@ id: toolu_bdrk_01Vcb9Sp5FKissuYdXGfD1ZN
 tool_result
 id: toolu_bdrk_01Vcb9Sp5FKissuYdXGfD1ZN
 ```
-The file /Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md has been updated successfully.
 ```
 
 > AGENT
@@ -9934,7 +9934,7 @@ id: toolu_bdrk_019NKADYoyPRSWn2gQecWmeZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md",
   "old_string": "  const hasMoreReadiness = (readinessData?.data?.length ?? 0) === 25;\n```",
   "new_string": "  const hasMoreReadiness = (readinessData?.data?.length ?? 0) === 25;\n\n  // --- Events version filter (set by readiness table \"Events\" button) ---\n  const [eventsVersionFilter, setEventsVersionFilter] = useState<string | null>(null);\n```"
 }
@@ -9945,7 +9945,7 @@ id: toolu_bdrk_019NKADYoyPRSWn2gQecWmeZ
 tool_result
 id: toolu_bdrk_019NKADYoyPRSWn2gQecWmeZ
 ```
-The file /Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md has been updated successfully.
 ```
 
 > AGENT
@@ -9959,7 +9959,7 @@ id: toolu_bdrk_01TPBpDSN1BZFMMkSPwEcxQq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md",
   "old_string": "Add this SWR hook with pagination state inside the component function, after the readiness hook:\n\n```tsx\n  // --- Gate events data (with pagination) ---\n  const [eventsPage, setEventsPage] = useState(1);\n  const { data: eventsData } = useSWR(\n    gate ? `project-${projectId}-gate-events-${eventsPage}` : null,\n    () => gatesApi.listEvents(projectId, eventsPage)\n  );\n  const eventItems = eventsData?.data ?? [];\n  const hasMoreEvents = eventItems.length === 25; // perPage default\n```",
   "new_string": "Add this SWR hook with pagination accumulation inside the component function, after the readiness hook:\n\n```tsx\n  // --- Gate events data (with Load More accumulation) ---\n  const [eventsPage, setEventsPage] = useState(1);\n  const [allEvents, setAllEvents] = useState<GateEvent[]>([]);\n  const { data: eventsData } = useSWR(\n    gate\n      ? eventsVersionFilter\n        ? `project-${projectId}-gate-events-v-${eventsVersionFilter}-${eventsPage}`\n        : `project-${projectId}-gate-events-${eventsPage}`\n      : null,\n    () =>\n      eventsVersionFilter\n        ? gatesApi.listEventsByVersion(projectId, eventsVersionFilter, eventsPage)\n        : gatesApi.listEvents(projectId, eventsPage)\n  );\n\n  // Accumulate event pages\n  useEffect(() => {\n    if (eventsData?.data) {\n      setAllEvents((prev) =>\n        eventsPage === 1 ? eventsData.data! : [...prev, ...eventsData.data!]\n      );\n    }\n  }, [eventsData, eventsPage]);\n\n  // Reset events when filter changes\n  useEffect(() => {\n    setAllEvents([]);\n    setEventsPage(1);\n  }, [eventsVersionFilter]);\n\n  const hasMoreEvents = (eventsData?.data?.length ?? 0) === 25;\n```"
 }
@@ -9970,7 +9970,7 @@ id: toolu_bdrk_01TPBpDSN1BZFMMkSPwEcxQq
 tool_result
 id: toolu_bdrk_01TPBpDSN1BZFMMkSPwEcxQq
 ```
-The file /Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md has been updated successfully.
 ```
 
 > AGENT
@@ -9984,7 +9984,7 @@ id: toolu_bdrk_018mxFBy2Cp4KA33JqGWmvVM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md",
   "old_string": "        {!gate ? (\n          <p className=\"text-sm text-muted-foreground italic\">\n            {t(\"projects.detail.gateNoConfig\")}\n          </p>\n        ) : eventItems.length === 0 ? (\n          <p className=\"text-sm text-muted-foreground italic\">\n            {t(\"projects.detail.gateEventsEmpty\")}\n          </p>\n        ) : (\n          <div className=\"flex flex-col\">\n            {eventItems.map((ev) => (",
   "new_string": "        {!gate ? (\n          <p className=\"text-sm text-muted-foreground italic\">\n            {t(\"projects.detail.gateNoConfig\")}\n          </p>\n        ) : allEvents.length === 0 ? (\n          <p className=\"text-sm text-muted-foreground italic\">\n            {t(\"projects.detail.gateEventsEmpty\")}\n          </p>\n        ) : (\n          <div className=\"flex flex-col\">\n            {eventsVersionFilter && (\n              <div className=\"flex items-center gap-2 mb-2 text-sm text-muted-foreground\">\n                <span>Filtered: {eventsVersionFilter}</span>\n                <Button\n                  variant=\"ghost\"\n                  size=\"sm\"\n                  className=\"h-5 px-1\"\n                  onClick={() => setEventsVersionFilter(null)}\n                >\n                  <X className=\"size-3\" />\n                </Button>\n              </div>\n            )}\n            {allEvents.map((ev) => ("
 }
@@ -9995,7 +9995,7 @@ id: toolu_bdrk_018mxFBy2Cp4KA33JqGWmvVM
 tool_result
 id: toolu_bdrk_018mxFBy2Cp4KA33JqGWmvVM
 ```
-The file /Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md has been updated successfully.
 ```
 
 > AGENT
@@ -10009,7 +10009,7 @@ id: toolu_bdrk_01SosiWUTDEsMJ5xGQCLYwqF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md",
   "old_string": "In `web/components/projects/release-gate-tab.tsx`, add the following import at the top (alongside existing imports):\n\n```tsx\nimport type { VersionReadiness } from \"@/lib/api/types\";\n```",
   "new_string": "In `web/components/projects/release-gate-tab.tsx`, add `VersionReadiness` to the existing type import from `\"@/lib/api/types\"` (merge into the block added in Task 4):\n\n```tsx\nimport type {\n  Source,\n  ReleaseGate,\n  ReleaseGateInput,\n  VersionMapping,\n  VersionReadiness,\n} from \"@/lib/api/types\";\n```"
 }
@@ -10020,7 +10020,7 @@ id: toolu_bdrk_01SosiWUTDEsMJ5xGQCLYwqF
 tool_result
 id: toolu_bdrk_01SosiWUTDEsMJ5xGQCLYwqF
 ```
-The file /Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md has been updated successfully.
 ```
 
 > TOOL
@@ -10030,7 +10030,7 @@ id: toolu_bdrk_012KLrtTf672redMVviVBHfS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md",
   "old_string": "Add this import at the top (alongside existing imports):\n\n```tsx\nimport type { GateEvent } from \"@/lib/api/types\";\n```",
   "new_string": "Add `GateEvent` to the existing type import from `\"@/lib/api/types\"` (merge into the block, which now includes `VersionReadiness` from Task 5):\n\n```tsx\nimport type {\n  Source,\n  ReleaseGate,\n  ReleaseGateInput,\n  VersionMapping,\n  VersionReadiness,\n  GateEvent,\n} from \"@/lib/api/types\";\n```"
 }
@@ -10041,7 +10041,7 @@ id: toolu_bdrk_012KLrtTf672redMVviVBHfS
 tool_result
 id: toolu_bdrk_012KLrtTf672redMVviVBHfS
 ```
-The file /Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md has been updated successfully.
 ```
 
 > AGENT
@@ -10054,7 +10054,7 @@ tool_use Bash
 id: toolu_bdrk_015UJhj6avVbmuMv51HmHJf4
 ```json
 {
-  "command": "git add docs/superpowers/plans/2026-03-25-release-gate-ux.md && git commit -m \"$(cat <<'EOF'\nfix(plan): accumulate Load More pages and add Events column\n\n- Readiness and events pagination now accumulates items across pages\n  instead of replacing with the next page\n- Added 6th column (Actions/Events) to readiness table per spec\n- Events section supports version filtering from readiness \"Events\" button\n- Fixed import merging instructions for VersionReadiness and GateEvent\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add docs/superpowers/plans/2026-03-25-release-gate-ux.md && git commit -m \"$(cat <<'EOF'\nfix(plan): accumulate Load More pages and add Events column\n\n- Readiness and events pagination now accumulates items across pages\n  instead of replacing with the next page\n- Added 6th column (Actions/Events) to readiness table per spec\n- Events section supports version filtering from readiness \"Events\" button\n- Fixed import merging instructions for VersionReadiness and GateEvent\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit plan fixes for pagination and Events column"
 }
 ```
@@ -10080,7 +10080,7 @@ id: toolu_bdrk_01T2kQP9ykbkfz1cE1QPQdsa
 {
   "description": "Final plan review pass",
   "model": "opus",
-  "prompt": "You are a plan document reviewer. Review the implementation plan at `/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md` against the spec at `/Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md`.\n\nRead both files completely.\n\nThis is the THIRD review. Previous reviews found and the author fixed:\n1. BASE_URL conflict with existing BASE constant ✅ fixed\n2. Missing Load More pagination in Tasks 5 and 6 ✅ fixed (now accumulates pages)\n3. Unused Badge import ✅ fixed (removed)\n4. Pagination replaces instead of appending ✅ fixed (useEffect accumulates pages)\n5. Missing Actions/Events column in readiness table ✅ fixed (6th column added)\n6. Import merging instructions ✅ fixed (now shows full merged import blocks)\n\nCheck ONLY for blocking issues — things that would cause the implementation to fail or miss spec requirements. Be strict but fair.\n\nOutput format:\n- If blocking issues: `❌ Issues Found` with numbered list\n- If clean: `✅ Approved`",
+  "prompt": "You are a plan document reviewer. Review the implementation plan at `/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-25-release-gate-ux.md` against the spec at `/home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-25-release-gate-ux-design.md`.\n\nRead both files completely.\n\nThis is the THIRD review. Previous reviews found and the author fixed:\n1. BASE_URL conflict with existing BASE constant ✅ fixed\n2. Missing Load More pagination in Tasks 5 and 6 ✅ fixed (now accumulates pages)\n3. Unused Badge import ✅ fixed (removed)\n4. Pagination replaces instead of appending ✅ fixed (useEffect accumulates pages)\n5. Missing Actions/Events column in readiness table ✅ fixed (6th column added)\n6. Import merging instructions ✅ fixed (now shows full merged import blocks)\n\nCheck ONLY for blocking issues — things that would cause the implementation to fail or miss spec requirements. Be strict but fair.\n\nOutput format:\n- If blocking issues: `❌ Issues Found` with numbered list\n- If clean: `✅ Approved`",
   "subagent_type": "general-purpose"
 }
 ```

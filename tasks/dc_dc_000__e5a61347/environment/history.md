@@ -19,7 +19,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "dataclaw status",
-  "workdir": "/Users/user_c042661f/Documents/dataclaw",
+  "workdir": "/home/<USER>/Documents/dataclaw",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -51,7 +51,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "PYENV_VERSION=3.11.11 dataclaw status",
-  "workdir": "/Users/user_c042661f/Documents/dataclaw",
+  "workdir": "/home/<USER>/Documents/dataclaw",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -106,7 +106,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "PYENV_VERSION=3.11.11 dataclaw prep",
-  "workdir": "/Users/user_c042661f/Documents/dataclaw",
+  "workdir": "/home/<USER>/Documents/dataclaw",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -152,7 +152,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "PYENV_VERSION=3.11.11 dataclaw export --no-push --output dataclaw_export.jsonl",
-  "workdir": "/Users/user_c042661f/Documents/dataclaw",
+  "workdir": "/home/<USER>/Documents/dataclaw",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }

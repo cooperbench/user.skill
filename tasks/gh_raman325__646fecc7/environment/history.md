@@ -51,7 +51,7 @@ tool_use Read
 id: toolu_016cxJwBbrrV1zHZpErNxV1T
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py",
   "offset": 260,
   "limit": 220
 }
@@ -165,7 +165,7 @@ tool_use Read
 id: toolu_01JqzYAMFzGNtXLcuy4K4Auf
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "offset": 130,
   "limit": 30
 }
@@ -257,7 +257,7 @@ tool_use Bash
 id: toolu_01CxVB95QM1QfKUEppRwFAkk
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\necho \"=== base class hard_refresh_interval history ===\"\ngit log --oneline -L '/hard_refresh_interval/',+12:custom_components/lock_code_manager/providers/_base.py 2>/dev/null | grep -E \"^[0-9a-f]{7,}\" | head -20\necho \"\"\necho \"=== Did pre-1227 zwave_js.py mention refresh/poll/scan_interval? ===\"\ngit show 4f1e4946^:custom_components/lock_code_manager/providers/zwave_js.py 2>/dev/null | grep -niE \"refresh|interval|poll|scan\" | head -30",
+  "command": "cd /home/<USER>/projects/lock_code_manager\necho \"=== base class hard_refresh_interval history ===\"\ngit log --oneline -L '/hard_refresh_interval/',+12:custom_components/lock_code_manager/providers/_base.py 2>/dev/null | grep -E \"^[0-9a-f]{7,}\" | head -20\necho \"\"\necho \"=== Did pre-1227 zwave_js.py mention refresh/poll/scan_interval? ===\"\ngit show 4f1e4946^:custom_components/lock_code_manager/providers/zwave_js.py 2>/dev/null | grep -niE \"refresh|interval|poll|scan\" | head -30",
   "description": "Check base class history and pre-1227 zwave_js"
 }
 ```
@@ -300,7 +300,7 @@ tool_use Bash
 id: toolu_01GcXvoDp3MyD9Jy9osRmJMv
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\necho \"=== pre-1227 zwave_js hard_refresh_interval ===\"\ngit show 4f1e4946^:custom_components/lock_code_manager/providers/zwave_js.py 2>/dev/null | grep -n -A8 \"def hard_refresh_interval\"\necho \"\"\necho \"=== base class default hard_refresh_interval (current) ===\"\nsed -n '480,505p' custom_components/lock_code_manager/providers/_base.py",
+  "command": "cd /home/<USER>/projects/lock_code_manager\necho \"=== pre-1227 zwave_js hard_refresh_interval ===\"\ngit show 4f1e4946^:custom_components/lock_code_manager/providers/zwave_js.py 2>/dev/null | grep -n -A8 \"def hard_refresh_interval\"\necho \"\"\necho \"=== base class default hard_refresh_interval (current) ===\"\nsed -n '480,505p' custom_components/lock_code_manager/providers/_base.py",
   "description": "Check pre-1227 zwave interval and base default"
 }
 ```
@@ -351,7 +351,7 @@ tool_use Bash
 id: toolu_01HfE5revz4UBLj6MwEiwdmw
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\necho \"=== base default hard_refresh_interval at pre-1227 ===\"\ngit show 4f1e4946^:custom_components/lock_code_manager/providers/_base.py 2>/dev/null | grep -n -A8 \"def hard_refresh_interval\"\necho \"\"\necho \"=== which 'entire' CLI? ===\"\nwhich entire 2>/dev/null && entire --help 2>&1 | head -20 || echo \"not found in PATH\"",
+  "command": "cd /home/<USER>/projects/lock_code_manager\necho \"=== base default hard_refresh_interval at pre-1227 ===\"\ngit show 4f1e4946^:custom_components/lock_code_manager/providers/_base.py 2>/dev/null | grep -n -A8 \"def hard_refresh_interval\"\necho \"\"\necho \"=== which 'entire' CLI? ===\"\nwhich entire 2>/dev/null && entire --help 2>&1 | head -20 || echo \"not found in PATH\"",
   "description": "Check pre-1227 base default and entire CLI"
 }
 ```
@@ -373,7 +373,7 @@ id: toolu_01HfE5revz4UBLj6MwEiwdmw
 417-        return None
 
 === which 'entire' CLI? ===
-/Users/raman/.local/bin/entire
+/home/<USER>/.local/bin/entire
 The command-line interface for Entire
 
 Getting Started:
@@ -406,7 +406,7 @@ tool_use Bash
 id: toolu_015en9DSCVGWvfzbnNNgjz8V
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\necho \"=== entire subcommands ===\"\nentire --help 2>&1 | sed -n '/Available Commands/,/Flags/p'\necho \"\"\necho \"=== PR #1227 body (refresh/drift/push mentions) ===\"\ngh pr view 1227 --json title,body 2>/dev/null | python3 -c \"import json,sys; d=json.load(sys.stdin); print(d['title']); print(); print(d['body'])\" 2>/dev/null | grep -niE \"refresh|drift|push|event|notif|unreadable|backstop|hourly|stale\" | head -40",
+  "command": "cd /home/<USER>/projects/lock_code_manager\necho \"=== entire subcommands ===\"\nentire --help 2>&1 | sed -n '/Available Commands/,/Flags/p'\necho \"\"\necho \"=== PR #1227 body (refresh/drift/push mentions) ===\"\ngh pr view 1227 --json title,body 2>/dev/null | python3 -c \"import json,sys; d=json.load(sys.stdin); print(d['title']); print(); print(d['body'])\" 2>/dev/null | grep -niE \"refresh|drift|push|event|notif|unreadable|backstop|hourly|stale\" | head -40",
   "description": "Inspect entire CLI and PR 1227 body"
 }
 ```
@@ -451,7 +451,7 @@ tool_use Bash
 id: toolu_01UawPfzRGxRR9L7bD8mP5y4
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\necho \"=== entire status ===\"\nACCESSIBLE=1 entire status 2>&1 | head -20\necho \"\"\necho \"=== entire explain (commit 4f1e4946 = PR #1227) ===\"\nACCESSIBLE=1 entire explain 4f1e4946 2>&1 | head -60",
+  "command": "cd /home/<USER>/projects/lock_code_manager\necho \"=== entire status ===\"\nACCESSIBLE=1 entire status 2>&1 | head -20\necho \"\"\necho \"=== entire explain (commit 4f1e4946 = PR #1227) ===\"\nACCESSIBLE=1 entire explain 4f1e4946 2>&1 | head -60",
   "description": "Try entire status and explain on PR 1227 commit"
 }
 ```
@@ -490,7 +490,7 @@ tool_use Bash
 id: toolu_012DNz7vsvrH5Jk3N2BRtaZj
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\nACCESSIBLE=1 entire explain --commit 4f1e4946 2>&1 | head -80",
+  "command": "cd /home/<USER>/projects/lock_code_manager\nACCESSIBLE=1 entire explain --commit 4f1e4946 2>&1 | head -80",
   "description": "Explain commit via entire with correct flag"
 }
 ```
@@ -546,7 +546,7 @@ tool_use Bash
 id: toolu_011QFPLw4J6ykDNDK937CB7N
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\necho \"=== coordinator drift refresh callback ===\"\nsed -n '78,135p' custom_components/lock_code_manager/domain/coordinator.py",
+  "command": "cd /home/<USER>/projects/lock_code_manager\necho \"=== coordinator drift refresh callback ===\"\nsed -n '78,135p' custom_components/lock_code_manager/domain/coordinator.py",
   "description": "Read coordinator drift refresh callback"
 }
 ```
@@ -621,7 +621,7 @@ tool_use Bash
 id: toolu_01WGkDy4tksKomvVCUk7XALz
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\necho \"=== _async_drift_check ===\"\ngrep -n \"_async_drift_check\\|_apply_read\\b\" custom_components/lock_code_manager/domain/coordinator.py\necho \"--- body ---\"\nsed -n '/async def _async_drift_check/,/^    [a-z@]/p' custom_components/lock_code_manager/domain/coordinator.py | head -50",
+  "command": "cd /home/<USER>/projects/lock_code_manager\necho \"=== _async_drift_check ===\"\ngrep -n \"_async_drift_check\\|_apply_read\\b\" custom_components/lock_code_manager/domain/coordinator.py\necho \"--- body ---\"\nsed -n '/async def _async_drift_check/,/^    [a-z@]/p' custom_components/lock_code_manager/domain/coordinator.py | head -50",
   "description": "Read drift check body"
 }
 ```
@@ -691,7 +691,7 @@ tool_use Bash
 id: toolu_01NsrWoNGbLAKeMsghao3E7z
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\necho \"=== push/event handlers in zwave_js.py ===\"\ngrep -n \"credential\\|_handle\\|node_event\\|value.*event\\|unreadable\\|readable\\|on_event\\|subscribe\\|async_refresh\\|_push\" custom_components/lock_code_manager/providers/zwave_js.py | head -50",
+  "command": "cd /home/<USER>/projects/lock_code_manager\necho \"=== push/event handlers in zwave_js.py ===\"\ngrep -n \"credential\\|_handle\\|node_event\\|value.*event\\|unreadable\\|readable\\|on_event\\|subscribe\\|async_refresh\\|_push\" custom_components/lock_code_manager/providers/zwave_js.py | head -50",
   "description": "Find push event handlers in zwave_js"
 }
 ```
@@ -731,7 +731,7 @@ tool_use Bash
 id: toolu_01JPK19Rt17V1XMJRxBKgzA7
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\necho \"=== event subscription / handler ===\"\ngrep -rn \"on_credential\\|credential added\\|credential modified\\|notification\\|async_register_node\\|\\.on(\\|_event_handler\\|_handle_credential\\|register_updates\\|subscribe\" custom_components/lock_code_manager/providers/zwave_js.py custom_components/lock_code_manager/providers/_zwave_js*.py | head -40",
+  "command": "cd /home/<USER>/projects/lock_code_manager\necho \"=== event subscription / handler ===\"\ngrep -rn \"on_credential\\|credential added\\|credential modified\\|notification\\|async_register_node\\|\\.on(\\|_event_handler\\|_handle_credential\\|register_updates\\|subscribe\" custom_components/lock_code_manager/providers/zwave_js.py custom_components/lock_code_manager/providers/_zwave_js*.py | head -40",
   "description": "Find access-control event subscription handler"
 }
 ```
@@ -774,7 +774,7 @@ tool_use Read
 id: toolu_01CJeqDjxbaq31KT2FjP8emm
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "offset": 586,
   "limit": 30
 }
@@ -827,7 +827,7 @@ tool_use Bash
 id: toolu_01WtbXDBmHbB1aRHzYSAgzdF
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\ngrep -rn \"unreadable\\|is_unreadable\\|in_sync\\|matches\\|def.*sync\" custom_components/lock_code_manager/domain/credentials.py custom_components/lock_code_manager/domain/sync.py | grep -iE \"unreadable|in_sync|def \" | head -40",
+  "command": "cd /home/<USER>/projects/lock_code_manager\ngrep -rn \"unreadable\\|is_unreadable\\|in_sync\\|matches\\|def.*sync\" custom_components/lock_code_manager/domain/credentials.py custom_components/lock_code_manager/domain/sync.py | grep -iE \"unreadable|in_sync|def \" | head -40",
   "description": "Find how sync treats unreadable observed state"
 }
 ```
@@ -870,7 +870,7 @@ tool_use Read
 id: toolu_013dQhjv8AjvAaXoFhg2LZQE
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/domain/sync.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/domain/sync.py",
   "offset": 393,
   "limit": 45
 }

@@ -18,7 +18,7 @@ id: toolu_01SC6ikhKvvqMgemfAsmCtny
 tool_result
 id: toolu_01SC6ikhKvvqMgemfAsmCtny
 ```
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-bottom-padding-for-post-detail
+/home/<USER>/fediverse/hackerspub-android-worktrees/fix-bottom-padding-for-post-detail
 app
 docs
 fastlane
@@ -72,7 +72,7 @@ tool_use Read
 id: toolu_01Wq3HgC8qF7mL5izHfrPvJP
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-bottom-padding-for-post-detail/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt"
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-bottom-padding-for-post-detail/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt"
 }
 ```
 
@@ -209,7 +209,7 @@ tool_use Read
 id: toolu_018Y4FmEsHix2JuHbL9bvjD1
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-bottom-padding-for-post-detail/app/src/main/java/pub/hackers/android/ui/screens/timeline/TimelineScreen.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-bottom-padding-for-post-detail/app/src/main/java/pub/hackers/android/ui/screens/timeline/TimelineScreen.kt",
   "offset": 100,
   "limit": 200
 }
@@ -274,7 +274,7 @@ tool_use Read
 id: toolu_011E644QddqXmaKiR6hW6xP7
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-bottom-padding-for-post-detail/app/src/main/java/pub/hackers/android/ui/screens/compose/ComposeScreen.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-bottom-padding-for-post-detail/app/src/main/java/pub/hackers/android/ui/screens/compose/ComposeScreen.kt",
   "offset": 340,
   "limit": 40
 }
@@ -340,7 +340,7 @@ id: toolu_016rnhWsRD937knHKvk9hTap
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-bottom-padding-for-post-detail/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-bottom-padding-for-post-detail/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
   "old_string": "import androidx.compose.foundation.layout.Arrangement\nimport androidx.compose.foundation.layout.Box\nimport androidx.compose.foundation.layout.Column\nimport androidx.compose.foundation.layout.Row\nimport androidx.compose.foundation.layout.Spacer\nimport androidx.compose.foundation.layout.WindowInsets\nimport androidx.compose.foundation.layout.fillMaxHeight\nimport androidx.compose.foundation.layout.fillMaxSize\nimport androidx.compose.foundation.layout.fillMaxWidth\nimport androidx.compose.foundation.layout.height\nimport androidx.compose.foundation.layout.padding\nimport androidx.compose.foundation.layout.size\nimport androidx.compose.foundation.layout.width",
   "new_string": "import androidx.compose.foundation.layout.Arrangement\nimport androidx.compose.foundation.layout.Box\nimport androidx.compose.foundation.layout.Column\nimport androidx.compose.foundation.layout.PaddingValues\nimport androidx.compose.foundation.layout.Row\nimport androidx.compose.foundation.layout.Spacer\nimport androidx.compose.foundation.layout.WindowInsets\nimport androidx.compose.foundation.layout.asPaddingValues\nimport androidx.compose.foundation.layout.fillMaxHeight\nimport androidx.compose.foundation.layout.fillMaxSize\nimport androidx.compose.foundation.layout.fillMaxWidth\nimport androidx.compose.foundation.layout.height\nimport androidx.compose.foundation.layout.navigationBars\nimport androidx.compose.foundation.layout.padding\nimport androidx.compose.foundation.layout.size\nimport androidx.compose.foundation.layout.width"
 }
@@ -351,7 +351,7 @@ id: toolu_016rnhWsRD937knHKvk9hTap
 tool_result
 id: toolu_016rnhWsRD937knHKvk9hTap
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-bottom-padding-for-post-detail/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/fix-bottom-padding-for-post-detail/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt has been updated successfully.
 ```
 
 > TOOL
@@ -361,7 +361,7 @@ id: toolu_01Lh9YuspBGVXF1GHbChcfnS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-bottom-padding-for-post-detail/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-bottom-padding-for-post-detail/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
   "old_string": "    val dateFormatter = remember {\n        DateTimeFormatter.ofPattern(\"MMM d, yyyy 'at' h:mm a\")\n            .withZone(ZoneId.systemDefault())\n    }\n\n    LazyColumn {",
   "new_string": "    val dateFormatter = remember {\n        DateTimeFormatter.ofPattern(\"MMM d, yyyy 'at' h:mm a\")\n            .withZone(ZoneId.systemDefault())\n    }\n\n    val navBarBottom = WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding()\n\n    LazyColumn(\n        contentPadding = PaddingValues(bottom = navBarBottom + 96.dp)\n    ) {"
 }
@@ -372,7 +372,7 @@ id: toolu_01Lh9YuspBGVXF1GHbChcfnS
 tool_result
 id: toolu_01Lh9YuspBGVXF1GHbChcfnS
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-bottom-padding-for-post-detail/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/fix-bottom-padding-for-post-detail/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt has been updated successfully.
 ```
 
 > AGENT
@@ -457,18 +457,18 @@ tool_result
 id: toolu_01FWN6G9srkWo6zXamxrWf1U
 ```
 See https://youtrack.jetbrains.com/issue/KT-73255 for more details.
-w: file:///Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-bottom-padding-for-post-detail/app/src/main/java/pub/hackers/android/ui/screens/compose/ComposeScreen.kt:93:35 'fun <reified VM : ViewModel> hiltViewModel(viewModelStoreOwner: ViewModelStoreOwner = ..., key: String? = ...): VM' is deprecated. Moved to package: androidx.hilt.lifecycle.viewmodel.compose.
-w: file:///Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-bottom-padding-for-post-detail/app/src/main/java/pub/hackers/android/ui/screens/compose/ComposeViewModel.kt:53:5 This annotation is currently applied to the value parameter only, but in the future it will also be applied to field.
+w: file:///home/<USER>/fediverse/hackerspub-android-worktrees/fix-bottom-padding-for-post-detail/app/src/main/java/pub/hackers/android/ui/screens/compose/ComposeScreen.kt:93:35 'fun <reified VM : ViewModel> hiltViewModel(viewModelStoreOwner: ViewModelStoreOwner = ..., key: String? = ...): VM' is deprecated. Moved to package: androidx.hilt.lifecycle.viewmodel.compose.
+w: file:///home/<USER>/fediverse/hackerspub-android-worktrees/fix-bottom-padding-for-post-detail/app/src/main/java/pub/hackers/android/ui/screens/compose/ComposeViewModel.kt:53:5 This annotation is currently applied to the value parameter only, but in the future it will also be applied to field.
 - To opt in to applying to both value parameter and field, add '-Xannotation-default-target=param-property' to your compiler arguments.
 - To keep applying to the value parameter only, use the '@param:' annotation target.
 
 See https://youtrack.jetbrains.com/issue/KT-73255 for more details.
-w: file:///Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-bottom-padding-for-post-detail/app/src/main/java/pub/hackers/android/ui/screens/drafts/DraftsScreen.kt:56:34 'fun <reified VM : ViewModel> hiltViewModel(viewModelStoreOwner: ViewModelStoreOwner = ..., key: String? = ...): VM' is deprecated. Moved to package: androidx.hilt.lifecycle.viewmodel.compose.
-w: file:///Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-bottom-padding-for-post-detail/app/src/main/java/pub/hackers/android/ui/screens/explore/ExploreScreen.kt:56:35 'fun <reified VM : ViewModel> hiltViewModel(viewModelStoreOwner: ViewModelStoreOwner = ..., key: String? = ...): VM' is deprecated. Moved to package: androidx.hilt.lifecycle.viewmodel.compose.
-w: file:///Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-bottom-padding-for-post-detail/app/src/main/java/pub/hackers/android/ui/screens/notifications/NotificationsScreen.kt:63:41 'fun <reified VM : ViewModel> hiltViewModel(viewModelStoreOwner: ViewModelStoreOwner = ..., key: String? = ...): VM' is deprecated. Moved to package: androidx.hilt.lifecycle.viewmodel.compose.
-w: file:///Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-bottom-padding-for-post-detail/app/src/main/java/pub/hackers/android/ui/screens/notifications/NotificationsScreen.kt:162:27 'val Icons.Filled.Reply: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Filled.Reply.
-w: file:///Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-bottom-padding-for-post-detail/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostByUrlResolverScreen.kt:31:45 'fun <reified VM : ViewModel> hiltViewModel(viewModelStoreOwner: ViewModelStoreOwner = ..., key: String? = ...): VM' is deprecated. Moved to package: androidx.hilt.lifecycle.viewmodel.compose.
-w: file:///Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-bottom-padding-for-post-detail/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt:127:38 'fun <reified VM : ViewModel> hiltViewModel(viewModelStoreOwner: […]
+w: file:///home/<USER>/fediverse/hackerspub-android-worktrees/fix-bottom-padding-for-post-detail/app/src/main/java/pub/hackers/android/ui/screens/drafts/DraftsScreen.kt:56:34 'fun <reified VM : ViewModel> hiltViewModel(viewModelStoreOwner: ViewModelStoreOwner = ..., key: String? = ...): VM' is deprecated. Moved to package: androidx.hilt.lifecycle.viewmodel.compose.
+w: file:///home/<USER>/fediverse/hackerspub-android-worktrees/fix-bottom-padding-for-post-detail/app/src/main/java/pub/hackers/android/ui/screens/explore/ExploreScreen.kt:56:35 'fun <reified VM : ViewModel> hiltViewModel(viewModelStoreOwner: ViewModelStoreOwner = ..., key: String? = ...): VM' is deprecated. Moved to package: androidx.hilt.lifecycle.viewmodel.compose.
+w: file:///home/<USER>/fediverse/hackerspub-android-worktrees/fix-bottom-padding-for-post-detail/app/src/main/java/pub/hackers/android/ui/screens/notifications/NotificationsScreen.kt:63:41 'fun <reified VM : ViewModel> hiltViewModel(viewModelStoreOwner: ViewModelStoreOwner = ..., key: String? = ...): VM' is deprecated. Moved to package: androidx.hilt.lifecycle.viewmodel.compose.
+w: file:///home/<USER>/fediverse/hackerspub-android-worktrees/fix-bottom-padding-for-post-detail/app/src/main/java/pub/hackers/android/ui/screens/notifications/NotificationsScreen.kt:162:27 'val Icons.Filled.Reply: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Filled.Reply.
+w: file:///home/<USER>/fediverse/hackerspub-android-worktrees/fix-bottom-padding-for-post-detail/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostByUrlResolverScreen.kt:31:45 'fun <reified VM : ViewModel> hiltViewModel(viewModelStoreOwner: ViewModelStoreOwner = ..., key: String? = ...): VM' is deprecated. Moved to package: androidx.hilt.lifecycle.viewmodel.compose.
+w: file:///home/<USER>/fediverse/hackerspub-android-worktrees/fix-bottom-padding-for-post-detail/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt:127:38 'fun <reified VM : ViewModel> hiltViewModel(viewModelStoreOwner: […]
 
 > AGENT
 
@@ -532,7 +532,7 @@ tool_use Bash
 id: toolu_01CFyZNCpEGrJHa8t9CP4AGr
 ```json
 {
-  "command": "git commit -m \"$(cat <<'EOF'\nAdd bottom padding to post detail list\n\nThe last reply was being obscured by the floating action button\nand the system navigation bar since the LazyColumn had no bottom\ncontent padding and the Scaffold disables default window insets.\n\nCo-authored-by: Claude Code <noreply@anthropic.com>\nAssisted-By: Claude Code(claude-opus-4-7)\nEOF\n)\" && git log -1 --oneline",
+  "command": "git commit -m \"$(cat <<'EOF'\nAdd bottom padding to post detail list\n\nThe last reply was being obscured by the floating action button\nand the system navigation bar since the LazyColumn had no bottom\ncontent padding and the Scaffold disables default window insets.\n\nCo-authored-by: Claude Code <<REDACTED_EMAIL>>\nAssisted-By: Claude Code(claude-opus-4-7)\nEOF\n)\" && git log -1 --oneline",
   "description": "Create commit"
 }
 ```
@@ -567,10 +567,10 @@ id: toolu_017WCGP5511HBgYs8TwtwEBr
 tool_result
 id: toolu_017WCGP5511HBgYs8TwtwEBr
 ```
-origin	git@github.com:malkoG/hackerspub-android.git (fetch)
-origin	git@github.com:malkoG/hackerspub-android.git (push)
-upstream	git@github.com:hackers-pub/android.git (fetch)
-upstream	git@github.com:hackers-pub/android.git (push)
+origin	<REDACTED_EMAIL>:malkoG/hackerspub-android.git (fetch)
+origin	<REDACTED_EMAIL>:malkoG/hackerspub-android.git (push)
+upstream	<REDACTED_EMAIL>:hackers-pub/android.git (fetch)
+upstream	<REDACTED_EMAIL>:hackers-pub/android.git (push)
 ---
 fix/bottom-padding-for-post-detail
 ---

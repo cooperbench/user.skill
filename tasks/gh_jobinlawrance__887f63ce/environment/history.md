@@ -31,7 +31,7 @@ tool_use Read
 id: toolu_01BUwEdRMeGGPS1wpqRicNqC
 ```json
 {
-  "file_path": "/Users/jobinlawrance/.claude/PAI/ALGORITHM/LATEST"
+  "file_path": "/home/<USER>/.claude/PAI/ALGORITHM/LATEST"
 }
 ```
 
@@ -50,7 +50,7 @@ tool_use Read
 id: toolu_01VHhKkT9pKHmoLmGebYiMpj
 ```json
 {
-  "file_path": "/Users/jobinlawrance/.claude/PAI/ALGORITHM/v6.3.0.md"
+  "file_path": "/home/<USER>/.claude/PAI/ALGORITHM/v6.3.0.md"
 }
 ```
 
@@ -166,7 +166,7 @@ tool_use Read
 id: toolu_019j4b8TRRADrGWA3ETyAKqW
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/site/app/page.tsx"
+  "file_path": "/home/<USER>/Project/tiny/site/app/page.tsx"
 }
 ```
 
@@ -237,7 +237,7 @@ id: toolu_01JfyG4Fr7eD8p6Vz4raEZEg
 tool_result
 id: toolu_01JfyG4Fr7eD8p6Vz4raEZEg
 ```
-/Users/jobinlawrance/Project/tiny/site
+/home/<USER>/Project/tiny/site
 === components/site ===
 total 128
 drwxr-xr-x@ 14 jobinlawrance  staff   448 Jul  1 23:00 .
@@ -286,7 +286,7 @@ tool_use Read
 id: toolu_01QEBy47PGgMCK4VXN1sirqe
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/site/app/globals.css"
+  "file_path": "/home/<USER>/Project/tiny/site/app/globals.css"
 }
 ```
 
@@ -379,7 +379,7 @@ tool_result
 id: toolu_018Ti5YZbo1XPGXuJyUA7Sd7
 ```
 <persisted-output>
-Output too large (29.5KB). Full output saved to: /Users/jobinlawrance/.REDACTED.txt
+Output too large (29.5KB). Full output saved to: /home/<USER>/.REDACTED.txt
 
 Preview (first 2KB):
 ===== nav.tsx =====
@@ -449,7 +449,7 @@ tool_use Read
 id: toolu_01EPghUodebRQimm51rL6KeU
 ```json
 {
-  "file_path": "/Users/jobinlawrance/.REDACTED.txt"
+  "file_path": "/home/<USER>/.REDACTED.txt"
 }
 ```
 
@@ -611,7 +611,7 @@ tool_result
 id: toolu_019JSpD3NjbnuuXZqJJU9UNU
 ```
   warning: skill is from graphify 0.8.37, package is 0.9.5. Run 'graphify install' to update.
-error: graph file not found: /Users/jobinlawrance/Project/tiny/site/graphify-out/graph.json
+error: graph file not found: /home/<USER>/Project/tiny/site/graphify-out/graph.json
 ```
 
 > TOOL
@@ -620,7 +620,7 @@ tool_use Bash
 id: toolu_01MDohcWSmSRj1nR2mTrPGyX
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny && graphify query \"What is TinyRaven's core identity, positioning, and the single most distinctive thing about it versus Tinybird? What is the raven/ravencloak theme?\" 2>&1 | grep -v \"warning: skill\" | head -70",
+  "command": "cd /home/<USER>/Project/tiny && graphify query \"What is TinyRaven's core identity, positioning, and the single most distinctive thing about it versus Tinybird? What is the raven/ravencloak theme?\" 2>&1 | grep -v \"warning: skill\" | head -70",
   "description": "Query graph from repo root"
 }
 ```
@@ -673,7 +673,7 @@ tool_use Bash
 id: toolu_01SfnPW92DwihwgKrjZS4e3y
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny/site && echo \"=== button.tsx ===\" && cat components/ui/button.tsx && echo \"=== badge.tsx ===\" && cat components/ui/badge.tsx && echo \"=== hardcoded chart colors ===\" && rg -n \"#a78bfa|#818cf8|violet|indigo|a78bfa|818cf8\" components/site/*.tsx | head",
+  "command": "cd /home/<USER>/Project/tiny/site && echo \"=== button.tsx ===\" && cat components/ui/button.tsx && echo \"=== badge.tsx ===\" && cat components/ui/badge.tsx && echo \"=== hardcoded chart colors ===\" && rg -n \"#a78bfa|#818cf8|violet|indigo|a78bfa|818cf8\" components/site/*.tsx | head",
   "description": "Read button/badge variants + find hardcoded chart colors"
 }
 ```
@@ -758,7 +758,7 @@ tool_use Write
 id: toolu_01QkpStLbTkswd5kyT3X2NdH
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/site/app/globals.css",
+  "file_path": "/home/<USER>/Project/tiny/site/app/globals.css",
   "content": "@import \"tailwindcss\";\n@import \"tw-animate-css\";\n@import \"shadcn/tailwind.css\";\n\n@custom-variant dark (&:is(.dark *));\n\n@theme inline {\n  --color-background: var(--background);\n  --color-foreground: var(--foreground);\n\n  /* Instrument identity utilities (TinyRaven) */\n  --color-ink: var(--ink);\n  --color-panel: var(--panel);\n  --color-bone: var(--bone);\n  --color-bone-dim: var(--bone-dim);\n  --color-bone-mute: var(--bone-mute);\n  --color-ember: var(--ember);\n  --color-ember-deep: var(--ember-deep);\n  --color-trace: var(--trace);\n  --color-line: var(--line);\n\n  --font-sans: var(--font-sans);\n  --font-mono: var(--font-mono);\n  --font-display: var(--font-display);\n  --font-heading: var(--font-display);\n\n  --color-sidebar-ring: var(--sidebar-ring);\n  --color-sidebar-border: var(--sidebar-border);\n  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);\n  --color-sidebar-accent: var(--sidebar-accent);\n  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);\n  --color-sidebar-primary: var(--sidebar-primary);\n  --color-sidebar-foreground: var(--sidebar-foreground);\n  --color-sidebar: var(--sidebar);\n  --color-chart-5: var(--chart-5);\n  --color-chart-4: var(--chart-4);\n  --color-chart-3: var(--chart-3);\n  --color-chart-2: var(--chart-2);\n  --color-chart-1: var(--chart-1);\n  --color-ring: var(--ring);\n  --color-input: var(--input);\n  --color-border: var(--border);\n  --color-destructive: var(--destructive);\n  --color-accent-foreground: var(--accent-foreground);\n  --color-accent: var(--accent);\n  --color-muted-foreground: var(--muted-foreground);\n  --color-muted: var(--muted);\n  --color-secondary-foreground: var(--secondary-foreground);\n  --color-secondary: var(--secondary);\n  --color-primary-foreground: var(--primary-foreground);\n  --color-primary: var(--primary);\n  --color-popover-foreground: var(--popover-foreground);\n  --color-popover: var(--popover);\n  --color-card-foreground: var(--card-foreground);\n  --color-card: var(--card);\n  --radius-sm: calc(var(--radius) * 0.6);\n  --radius-md: calc(var(--radius) * 0.8);\n  --radius-lg: var(--radius);\n  --radius-xl: calc(var(--radius) * 1.4);\n  --radius-2xl: calc(var(--radius) * 1.8);\n  --radius-3xl: calc(var(--radius) * 2.2);\n  --radius-4xl: calc(var(--radius) * 2.6);\n  --color-chart-scale-pattern-color: var(----chart-scale-pattern-color);\n  --color-chart-scale-05: var(----chart-scale-05);\n  --color-chart-scale-04: var(----chart-scale-04);\n  --color-chart-scale-03: var(----chart-scale-03);\n  --color-chart-scale-02: var(----chart-scale-02);\n  --color-chart-scale-01: var(----chart-scale-01);\n  --color-chart-label: var(----chart-label);\n  --color-chart-marker-foreground: var(----chart-marker-foreground);\n  --color-chart-marker-border: var(----chart-marker-border);\n  --color-chart-marker-background: var(----chart-marker-background);\n  --color-chart-tooltip-muted: var(----chart-tooltip-muted);\n  --color-chart-tooltip-foreground: var(----chart-tooltip-foreground);\n  --color-chart-tooltip-background: var(----chart-tooltip-background);\n  --chart-brush-border: var(----chart-brush-border);\n  --color-chart-grid: var(----chart-grid);\n  --color-chart-crosshair: var(----chart-crosshair);\n  --chart-line-secondary: var(----chart-line-secondary);\n  --chart-line-primary: var(----chart-line-primary);\n  --color-chart-foreground-muted: var(----chart-foreground-muted);\n  --color-chart-foreground: var(----chart-foreground);\n  --color-chart-background: var(----chart-background);\n}\n\n/*\n  TinyRaven runs dark-only by design — the site is a monitoring instrument, and\n  an instrument panel is lit against a […]
 
 > TOOL
@@ -766,7 +766,7 @@ id: toolu_01QkpStLbTkswd5kyT3X2NdH
 tool_result
 id: toolu_01QkpStLbTkswd5kyT3X2NdH
 ```
-The file /Users/jobinlawrance/Project/tiny/site/app/globals.css has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/site/app/globals.css has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -779,7 +779,7 @@ tool_use Read
 id: toolu_01KBYmHbRrC1phcQsTFiMJV8
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/site/app/layout.tsx"
+  "file_path": "/home/<USER>/Project/tiny/site/app/layout.tsx"
 }
 ```
 
@@ -841,7 +841,7 @@ id: toolu_01Heh6yJ4h8FhVSzaEiS2xtF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/site/app/layout.tsx",
+  "file_path": "/home/<USER>/Project/tiny/site/app/layout.tsx",
   "old_string": "import type { Metadata } from \"next\";\nimport { Geist, Geist_Mono } from \"next/font/google\";\nimport \"./globals.css\";\n\nconst geistSans = Geist({\n  variable: \"--font-sans\",\n  subsets: [\"latin\"],\n});\n\nconst geistMono = Geist_Mono({\n  variable: \"--font-geist-mono\",\n  subsets: [\"latin\"],\n});",
   "new_string": "import type { Metadata } from \"next\";\nimport { Bricolage_Grotesque, Inter_Tight, JetBrains_Mono } from \"next/font/google\";\nimport \"./globals.css\";\n\n// Display: Bricolage Grotesque — a characterful optical-sized grotesque, warmer\n// and more opinionated than Geist. Body: Inter Tight. Mono is not a utility face\n// here — it is the instrument readout, so JetBrains Mono carries real weight.\nconst display = Bricolage_Grotesque({\n  variable: \"--font-display\",\n  subsets: [\"latin\"],\n  display: \"swap\",\n});\n\nconst sans = Inter_Tight({\n  variable: \"--font-sans\",\n  subsets: [\"latin\"],\n  display: \"swap\",\n});\n\nconst mono = JetBrains_Mono({\n  variable: \"--font-mono\",\n  subsets: [\"latin\"],\n  display: \"swap\",\n});"
 }
@@ -852,7 +852,7 @@ id: toolu_01Heh6yJ4h8FhVSzaEiS2xtF
 tool_result
 id: toolu_01Heh6yJ4h8FhVSzaEiS2xtF
 ```
-The file /Users/jobinlawrance/Project/tiny/site/app/layout.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/site/app/layout.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -861,7 +861,7 @@ tool_use Read
 id: toolu_01XDrW8ufBWDC2J7cTMYmd6s
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/site/app/layout.tsx",
+  "file_path": "/home/<USER>/Project/tiny/site/app/layout.tsx",
   "offset": 24
 }
 ```
@@ -912,7 +912,7 @@ id: toolu_013z9Mm8v221ofWA8X7Mm6VC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/site/app/layout.tsx",
+  "file_path": "/home/<USER>/Project/tiny/site/app/layout.tsx",
   "old_string": "      className={`dark ${geistSans.variable} ${geistMono.variable} h-full antialiased`}",
   "new_string": "      className={`dark ${display.variable} ${sans.variable} ${mono.variable} h-full antialiased`}"
 }
@@ -923,7 +923,7 @@ id: toolu_013z9Mm8v221ofWA8X7Mm6VC
 tool_result
 id: toolu_013z9Mm8v221ofWA8X7Mm6VC
 ```
-The file /Users/jobinlawrance/Project/tiny/site/app/layout.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/site/app/layout.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -936,7 +936,7 @@ tool_use Bash
 id: toolu_01K8FRNKz6r3BhTBU9AZxtKv
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny/site/components/site && perl -pi -e '\ns{bg-white text-zinc-900 hover:bg-zinc-200}{bg-ember font-medium text-[oklch(0.19_0.02_60)] hover:bg-ember-deep}g;\ns{border-white/15 bg-transparent text-zinc-100 hover:bg-white/5 hover:text-white}{border-line bg-transparent text-bone hover:bg-bone/[0.05] hover:text-bone}g;\ns{text-violet-300/80}{text-ember/80}g;\ns{text-violet-300}{text-ember}g;\ns{text-violet-400}{text-ember}g;\ns{text-violet-200}{text-ember}g;\ns{bg-violet-500/15}{bg-ember/15}g;\ns{bg-violet-500/10}{bg-ember/12}g;\ns{bg-violet-400}{bg-ember}g;\ns{ring-violet-500/30}{ring-ember/35}g;\ns{ring-violet-500/20}{ring-ember/25}g;\ns{bg-emerald-400}{bg-trace}g;\ns{bg-zinc-950/80}{bg-ink}g;\ns{bg-zinc-950/40}{bg-panel}g;\ns{bg-zinc-500}{bg-bone-mute}g;\ns{bg-zinc-700}{bg-line}g;\ns{text-zinc-100}{text-bone}g;\ns{text-zinc-200}{text-bone}g;\ns{text-zinc-300}{text-bone-dim}g;\ns{text-zinc-400}{text-bone-mute}g;\ns{text-zinc-500}{text-bone-mute}g;\ns{text-zinc-600}{text-bone-mute/60}g;\ns{hover:text-zinc-100}{hover:text-bone}g;\ns{hover:text-zinc-300}{hover:text-bone-dim}g;\ns{hover:text-white}{hover:text-bone}g;\ns{hover:border-white/20}{hover:border-bone/25}g;\ns{border-white/10}{border-line}g;\ns{border-white/15}{border-line}g;\ns{border-white/5}{border-line}g;\ns{hover:bg-white/\\[0.02\\]}{hover:bg-bone/[0.02]}g;\ns{hover:bg-white/\\[0.03\\]}{hover:bg-bone/[0.03]}g;\ns{hover:bg-white/5}{hover:bg-bone/[0.05]}g;\ns{bg-white/\\[0.02\\]}{bg-bone/[0.02]}g;\ns{bg-white/\\[0.03\\]}{bg-bone/[0.03]}g;\ns{bg-white/10}{bg-bone/10}g;\ns{bg-white/5}{bg-bone/[0.04]}g;\n' features.tsx migration.tsx pricing.tsx benchmark.tsx footer.tsx use-cases.tsx section.tsx code-block.tsx live-dashboard.tsx nav.tsx hero.tsx\necho \"sed done\"; echo \"=== leftover violet/zinc/white overlays ===\"; rg -n \"violet|indigo|zinc-|bg-white|border-white|text-white\" *.tsx | grep -v emerald | head -40",
+  "command": "cd /home/<USER>/Project/tiny/site/components/site && perl -pi -e '\ns{bg-white text-zinc-900 hover:bg-zinc-200}{bg-ember font-medium text-[oklch(0.19_0.02_60)] hover:bg-ember-deep}g;\ns{border-white/15 bg-transparent text-zinc-100 hover:bg-white/5 hover:text-white}{border-line bg-transparent text-bone hover:bg-bone/[0.05] hover:text-bone}g;\ns{text-violet-300/80}{text-ember/80}g;\ns{text-violet-300}{text-ember}g;\ns{text-violet-400}{text-ember}g;\ns{text-violet-200}{text-ember}g;\ns{bg-violet-500/15}{bg-ember/15}g;\ns{bg-violet-500/10}{bg-ember/12}g;\ns{bg-violet-400}{bg-ember}g;\ns{ring-violet-500/30}{ring-ember/35}g;\ns{ring-violet-500/20}{ring-ember/25}g;\ns{bg-emerald-400}{bg-trace}g;\ns{bg-zinc-950/80}{bg-ink}g;\ns{bg-zinc-950/40}{bg-panel}g;\ns{bg-zinc-500}{bg-bone-mute}g;\ns{bg-zinc-700}{bg-line}g;\ns{text-zinc-100}{text-bone}g;\ns{text-zinc-200}{text-bone}g;\ns{text-zinc-300}{text-bone-dim}g;\ns{text-zinc-400}{text-bone-mute}g;\ns{text-zinc-500}{text-bone-mute}g;\ns{text-zinc-600}{text-bone-mute/60}g;\ns{hover:text-zinc-100}{hover:text-bone}g;\ns{hover:text-zinc-300}{hover:text-bone-dim}g;\ns{hover:text-white}{hover:text-bone}g;\ns{hover:border-white/20}{hover:border-bone/25}g;\ns{border-white/10}{border-line}g;\ns{border-white/15}{border-line}g;\ns{border-white/5}{border-line}g;\ns{hover:bg-white/\\[0.02\\]}{hover:bg-bone/[0.02]}g;\ns{hover:bg-white/\\[0.03\\]}{hover:bg-bone/[0.03]}g;\ns{hover:bg-white/5}{hover:bg-bone/[0.05]}g;\ns{bg-white/\\[0.02\\]}{bg-bone/[0.02]}g;\ns{bg-white/\\[0.03\\]}{bg-bone/[0.03]}g;\ns{bg-white/10}{bg-bone/10}g;\ns{bg-white/5}{bg-bone/[0.04]}g;\n' features.tsx migration.tsx pricing.tsx benchmark.tsx footer.tsx use-cases.tsx section.tsx code-block.tsx live-dashboard.tsx nav.tsx hero.tsx\necho \"sed done\"; echo \"=== leftover violet/zinc/white overlays ===\"; rg -n \"violet|indigo|zinc-|bg-white|border-white|text-white\" *.tsx | grep -v emerald | head -40",
   "description": "Retoken all site components via perl"
 }
 ```
@@ -986,7 +986,7 @@ tool_use Write
 id: toolu_01Hmr9nhgcBt1u6A2PHpv2X9
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/site/components/site/live-dashboard.tsx",
+  "file_path": "/home/<USER>/Project/tiny/site/components/site/live-dashboard.tsx",
   "content": "\"use client\";\n\nimport NumberFlow from \"@number-flow/react\";\nimport { useEffect, useState } from \"react\";\nimport { Area } from \"@/components/charts/area\";\nimport { AreaChart } from \"@/components/charts/area-chart\";\nimport { Bar } from \"@/components/charts/bar\";\nimport { BarChart } from \"@/components/charts/bar-chart\";\nimport { BarXAxis } from \"@/components/charts/bar-x-axis\";\nimport { BarYAxis } from \"@/components/charts/bar-y-axis\";\nimport { Grid } from \"@/components/charts/grid\";\nimport { XAxis } from \"@/components/charts/x-axis\";\n\n// Live prod endpoints + read-only demo token (scope READ:top_pages,\n// READ:views_over_time — 403 on anything else). Public by design.\nconst DEMO_API = \"https://tiny-api.ravencloak.org/v0/pipes\";\nconst DEMO_TOKEN = \"REDACTED\";\n\ntype Row = Record<string, unknown>;\ntype Status = \"loading\" | \"ready\" | \"error\";\n\nasync function fetchPipe(pathAndQuery: string): Promise<Row[]> {\n  const res = await fetch(`${DEMO_API}/${pathAndQuery}&token=${DEMO_TOKEN}`);\n  if (!res.ok) throw new Error(`${pathAndQuery}: ${res.status}`);\n  const json = (await res.json()) as { data: Row[] };\n  return json.data ?? [];\n}\n\nexport function LiveDashboard() {\n  const [status, setStatus] = useState<Status>(\"loading\");\n  const [pages, setPages] = useState<{ name: string; value: number }[]>([]);\n  const [series, setSeries] = useState<{ date: Date; value: number }[]>([]);\n\n  useEffect(() => {\n    let alive = true;\n    (async () => {\n      try {\n        const [top, hourly] = await Promise.all([\n          fetchPipe(\"top_pages.json?limit=6\"),\n          fetchPipe(\"views_over_time.json?\"),\n        ]);\n        if (!alive) return;\n        setPages(\n          top.map((r) => ({\n            name: String(r.path) === \"/\" ? \"home\" : String(r.path).replace(/^\\//, \"\"),\n            value: Number(r.views),\n          })),\n        );\n        setSeries(\n          hourly.map((r) => ({\n            // […]
 
 > TOOL
@@ -1003,7 +1003,7 @@ tool_use Read
 id: toolu_01BZYU1SrpL578zhzoNr8XJ8
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/site/components/site/live-dashboard.tsx",
+  "file_path": "/home/<USER>/Project/tiny/site/components/site/live-dashboard.tsx",
   "limit": 5
 }
 ```
@@ -1026,7 +1026,7 @@ tool_use Write
 id: toolu_01HntdzGb3t6NuFUyHYY168K
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/site/components/site/live-dashboard.tsx",
+  "file_path": "/home/<USER>/Project/tiny/site/components/site/live-dashboard.tsx",
   "content": "\"use client\";\n\nimport NumberFlow from \"@number-flow/react\";\nimport { useEffect, useState } from \"react\";\nimport { Area } from \"@/components/charts/area\";\nimport { AreaChart } from \"@/components/charts/area-chart\";\nimport { Bar } from \"@/components/charts/bar\";\nimport { BarChart } from \"@/components/charts/bar-chart\";\nimport { BarXAxis } from \"@/components/charts/bar-x-axis\";\nimport { BarYAxis } from \"@/components/charts/bar-y-axis\";\nimport { Grid } from \"@/components/charts/grid\";\nimport { XAxis } from \"@/components/charts/x-axis\";\n\n// Live prod endpoints + read-only demo token (scope READ:top_pages,\n// READ:views_over_time — 403 on anything else). Public by design.\nconst DEMO_API = \"https://tiny-api.ravencloak.org/v0/pipes\";\nconst DEMO_TOKEN = \"REDACTED\";\n\ntype Row = Record<string, unknown>;\ntype Status = \"loading\" | \"ready\" | \"error\";\n\nasync function fetchPipe(pathAndQuery: string): Promise<Row[]> {\n  const res = await fetch(`${DEMO_API}/${pathAndQuery}&token=${DEMO_TOKEN}`);\n  if (!res.ok) throw new Error(`${pathAndQuery}: ${res.status}`);\n  const json = (await res.json()) as { data: Row[] };\n  return json.data ?? [];\n}\n\nexport function LiveDashboard() {\n  const [status, setStatus] = useState<Status>(\"loading\");\n  const [pages, setPages] = useState<{ name: string; value: number }[]>([]);\n  const [series, setSeries] = useState<{ date: Date; value: number }[]>([]);\n\n  useEffect(() => {\n    let alive = true;\n    (async () => {\n      try {\n        const [top, hourly] = await Promise.all([\n          fetchPipe(\"top_pages.json?limit=6\"),\n          fetchPipe(\"views_over_time.json?\"),\n        ]);\n        if (!alive) return;\n        setPages(\n          top.map((r) => ({\n            name: String(r.path) === \"/\" ? \"home\" : String(r.path).replace(/^\\//, \"\"),\n            value: Number(r.views),\n          })),\n        );\n        setSeries(\n          hourly.map((r) => ({\n            // […]
 
 > TOOL
@@ -1034,7 +1034,7 @@ id: toolu_01HntdzGb3t6NuFUyHYY168K
 tool_result
 id: toolu_01HntdzGb3t6NuFUyHYY168K
 ```
-The file /Users/jobinlawrance/Project/tiny/site/components/site/live-dashboard.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/site/components/site/live-dashboard.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1047,7 +1047,7 @@ tool_use Read
 id: toolu_01C7qXPvCmm7CVUAKyAReTi4
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/site/components/site/hero.tsx",
+  "file_path": "/home/<USER>/Project/tiny/site/components/site/hero.tsx",
   "limit": 4
 }
 ```
@@ -1069,7 +1069,7 @@ tool_use Write
 id: toolu_01Mi5D7UYtZgjBCo2NtBt8VU
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/site/components/site/hero.tsx",
+  "file_path": "/home/<USER>/Project/tiny/site/components/site/hero.tsx",
   "content": "import { Button } from \"@/components/ui/button\";\nimport { links } from \"@/lib/data\";\nimport { ArrowRightIcon, GitHubIcon } from \"./icons\";\nimport { LiveDashboard } from \"./live-dashboard\";\n\nexport function Hero() {\n  return (\n    <section id=\"top\" className=\"relative overflow-hidden\">\n      <div className=\"mx-auto max-w-6xl px-6 pb-16 pt-16 md:pt-24\">\n        <div className=\"mx-auto max-w-3xl text-center\">\n          <p className=\"font-mono text-[11px] uppercase tracking-[0.2em] text-bone-mute\">\n            Self-hosted · Apache 2.0 · Single Go binary\n          </p>\n\n          <h1 className=\"mt-5 text-balance font-display text-4xl font-semibold leading-[1.02] tracking-tight sm:text-5xl md:text-6xl\">\n            Tinybird&apos;s API,\n            <br className=\"hidden sm:block\" /> running on{\" \"}\n            <span className=\"text-ember\">a box you own.</span>\n          </h1>\n\n          <p className=\"mx-auto mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-bone-mute\">\n            TinyRaven speaks Tinybird&apos;s{\" \"}\n            <code className=\"font-mono text-ember\">/v0</code> API and reads the same{\" \"}\n            <code className=\"font-mono text-ember\">.datasource</code>/\n            <code className=\"font-mono text-ember\">.pipe</code> files — written in Go over\n            OSS ClickHouse. Repoint one environment variable and keep shipping.\n          </p>\n\n          {/* the migration, compressed to a single true line */}\n          <div className=\"mx-auto mt-8 w-fit rounded-lg border border-line bg-panel/50 px-4 py-3 text-left font-mono text-[13px] leading-relaxed\">\n            <div className=\"text-bone-mute/70 line-through decoration-destructive/40\">\n              <span className=\"select-none text-destructive/70\">- </span>\n              TINYBIRD_HOST=api.tinybird.co\n            </div>\n            <div className=\"text-trace\">\n              <span className=\"select-none text-trace\">+ </span>\n              TINYBIRD_HOST=tiny.ravencloak.org\n            </div>\n          </div>\n\n          <div className=\"mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row\">\n            <Button\n              render={<a href={links.github} target=\"_blank\" rel=\"noreferrer\" />}\n              size=\"lg\"\n              className=\"bg-ember font-medium text-[oklch(0.19_0.02_60)] hover:bg-ember-deep\"\n            >\n              <GitHubIcon className=\"h-4 w-4\" […]
 
 > TOOL
@@ -1077,7 +1077,7 @@ id: toolu_01Mi5D7UYtZgjBCo2NtBt8VU
 tool_result
 id: toolu_01Mi5D7UYtZgjBCo2NtBt8VU
 ```
-The file /Users/jobinlawrance/Project/tiny/site/components/site/hero.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/site/components/site/hero.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1170,7 +1170,7 @@ id: toolu_01XWAiSyKnM1Vj4gf5g7ZutJ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/site/components/site/section.tsx",
+  "file_path": "/home/<USER>/Project/tiny/site/components/site/section.tsx",
   "old_string": "      {eyebrow ? (\n        <p className=\"text-sm font-medium uppercase tracking-widest text-ember/80\">\n          {eyebrow}\n        </p>\n      ) : null}\n      <h2 className=\"mt-3 text-3xl font-semibold tracking-tight sm:text-4xl\">\n        {title}\n      </h2>",
   "new_string": "      {eyebrow ? (\n        <p\n          className={cn(\n            \"flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-ember\",\n            align === \"center\" && \"justify-center\",\n          )}\n        >\n          <span aria-hidden className=\"h-1 w-1 rounded-full bg-ember\" />\n          {eyebrow}\n        </p>\n      ) : null}\n      <h2 className=\"mt-4 font-display text-3xl font-semibold tracking-tight sm:text-4xl\">\n        {title}\n      </h2>"
 }
@@ -1181,7 +1181,7 @@ id: toolu_01XWAiSyKnM1Vj4gf5g7ZutJ
 tool_result
 id: toolu_01XWAiSyKnM1Vj4gf5g7ZutJ
 ```
-The file /Users/jobinlawrance/Project/tiny/site/components/site/section.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/site/components/site/section.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1190,7 +1190,7 @@ tool_use Read
 id: toolu_01SfB9EtVY3vv7wyV2E763Dh
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/site/components/site/code-block.tsx"
+  "file_path": "/home/<USER>/Project/tiny/site/components/site/code-block.tsx"
 }
 ```
 
@@ -1258,7 +1258,7 @@ id: toolu_018X83TkYte3wDxPBif19r3m
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/site/components/site/code-block.tsx",
+  "file_path": "/home/<USER>/Project/tiny/site/components/site/code-block.tsx",
   "old_string": "const variantClass: Record<NonNullable<CodeLine[\"variant\"]>, string> = {\n  default: \"text-bone\",\n  added: \"text-emerald-300\",\n  removed: \"text-rose-300/70 line-through decoration-rose-400/40\",\n  comment: \"text-bone-mute\",\n};\n\nexport function CodeBlock({ lines, label, className }: CodeBlockProps) {\n  return (\n    <div\n      className={cn(\n        \"overflow-hidden rounded-xl border border-line bg-ink shadow-2xl shadow-black/40 backdrop-blur\",\n        className,\n      )}\n    >\n      <div className=\"flex items-center gap-2 border-b border-line px-4 py-2.5\">\n        <span className=\"h-3 w-3 rounded-full bg-rose-500/70\" />\n        <span className=\"h-3 w-3 rounded-full bg-amber-400/70\" />\n        <span className=\"h-3 w-3 rounded-full bg-emerald-500/70\" />\n        {label ? (\n          <span className=\"ml-2 font-mono text-xs text-bone-mute\">{label}</span>\n        ) : null}\n      </div>",
   "new_string": "const variantClass: Record<NonNullable<CodeLine[\"variant\"]>, string> = {\n  default: \"text-bone\",\n  added: \"text-trace\",\n  removed: \"text-bone-mute/70 line-through decoration-destructive/40\",\n  comment: \"text-bone-mute\",\n};\n\nexport function CodeBlock({ lines, label, className }: CodeBlockProps) {\n  return (\n    <div\n      className={cn(\n        \"overflow-hidden rounded-xl border border-line bg-ink shadow-2xl shadow-black/40 backdrop-blur\",\n        className,\n      )}\n    >\n      {/* instrument header — a labelled panel, not a fake window chrome */}\n      <div className=\"flex items-center gap-2 border-b border-line px-4 py-2.5\">\n        <span aria-hidden className=\"h-1.5 w-1.5 rounded-full bg-ember\" />\n        <span className=\"font-mono text-[11px] uppercase tracking-wider text-bone-mute\">\n          {label ?? \"shell\"}\n        </span>\n      </div>"
 }
@@ -1269,7 +1269,7 @@ id: toolu_018X83TkYte3wDxPBif19r3m
 tool_result
 id: toolu_018X83TkYte3wDxPBif19r3m
 ```
-The file /Users/jobinlawrance/Project/tiny/site/components/site/code-block.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/site/components/site/code-block.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1279,7 +1279,7 @@ id: toolu_014eVsM9dDc1HpvZvGTUgBCo
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/site/components/site/nav.tsx",
+  "file_path": "/home/<USER>/Project/tiny/site/components/site/nav.tsx",
   "old_string": "          <span className=\"grid h-8 w-8 place-items-center rounded-lg bg-ember/15 text-ember ring-1 ring-ember/35\">\n            <RavenMark className=\"h-5 w-5\" />\n          </span>\n          <span className=\"text-[15px] font-semibold tracking-tight\">\n            Tiny<span className=\"text-ember\">Raven</span>\n          </span>",
   "new_string": "          <span className=\"grid h-8 w-8 place-items-center rounded-md bg-ember/12 text-ember ring-1 ring-ember/30\">\n            <RavenMark className=\"h-5 w-5\" />\n          </span>\n          <span className=\"font-display text-[15px] font-semibold tracking-tight\">\n            Tiny<span className=\"text-ember\">Raven</span>\n          </span>"
 }
@@ -1290,7 +1290,7 @@ id: toolu_014eVsM9dDc1HpvZvGTUgBCo
 tool_result
 id: toolu_014eVsM9dDc1HpvZvGTUgBCo
 ```
-The file /Users/jobinlawrance/Project/tiny/site/components/site/nav.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/site/components/site/nav.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1303,7 +1303,7 @@ tool_use Read
 id: toolu_01FGCNCxJtTAmfAjQPWSp1cg
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/site/components/site/benchmark.tsx"
+  "file_path": "/home/<USER>/Project/tiny/site/components/site/benchmark.tsx"
 }
 ```
 
@@ -1359,7 +1359,7 @@ id: toolu_011WJcyW1d4DDukMgBfBtYPL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/site/components/site/benchmark.tsx",
+  "file_path": "/home/<USER>/Project/tiny/site/components/site/benchmark.tsx",
   "old_string": "\"use client\";\n\nimport { Bar } from \"@/components/charts/bar\";\nimport { BarChart } from \"@/components/charts/bar-chart\";\nimport { BarXAxis } from \"@/components/charts/bar-x-axis\";\nimport { BarYAxis } from \"@/components/charts/bar-y-axis\";\nimport { Grid } from \"@/components/charts/grid\";\nimport { benchmark } from \"@/lib/data\";\nimport { SectionHeading } from \"./section\";\n\nconst tr = benchmark.tinyraven;",
   "new_string": "\"use client\";\n\nimport NumberFlow from \"@number-flow/react\";\nimport { useEffect, useState } from \"react\";\nimport { Bar } from \"@/components/charts/bar\";\nimport { BarChart } from \"@/components/charts/bar-chart\";\nimport { BarXAxis } from \"@/components/charts/bar-x-axis\";\nimport { BarYAxis } from \"@/components/charts/bar-y-axis\";\nimport { Grid } from \"@/components/charts/grid\";\nimport { benchmark } from \"@/lib/data\";\nimport { SectionHeading } from \"./section\";\n\nconst tr = benchmark.tinyraven;\nconst throughputM = Number((tr.throughput / 1e6).toFixed(2));"
 }
@@ -1370,7 +1370,7 @@ id: toolu_011WJcyW1d4DDukMgBfBtYPL
 tool_result
 id: toolu_011WJcyW1d4DDukMgBfBtYPL
 ```
-The file /Users/jobinlawrance/Project/tiny/site/components/site/benchmark.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/site/components/site/benchmark.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1379,7 +1379,7 @@ tool_use Read
 id: toolu_014jXUFVtsviZq8LN3cMke6Q
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/site/components/site/benchmark.tsx",
+  "file_path": "/home/<USER>/Project/tiny/site/components/site/benchmark.tsx",
   "offset": 28,
   "limit": 30
 }
@@ -1429,7 +1429,7 @@ id: toolu_01QgbfwNndoMJCnzvQ2HMYcn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/site/components/site/benchmark.tsx",
+  "file_path": "/home/<USER>/Project/tiny/site/components/site/benchmark.tsx",
   "old_string": "          {/* Throughput — single measured figure */}\n          <div className=\"flex flex-col justify-center rounded-2xl border border-line bg-panel p-8\">\n            <span className=\"text-xs font-medium uppercase tracking-widest text-ember/80\">\n              Ingest throughput\n            </span>\n            <div className=\"mt-4 flex items-baseline gap-2 font-mono\">\n              <span className=\"text-5xl font-semibold text-bone\">\n                {(tr.throughput / 1e6).toFixed(2)}M\n              </span>\n              <span className=\"text-lg text-bone-mute\">events / sec</span>\n            </div>\n            <p className=\"mt-5 text-sm leading-relaxed text-bone-mute\">{tr.note}</p>\n          </div>",
   "new_string": "          {/* Throughput — single measured figure */}\n          <div className=\"flex flex-col justify-center rounded-2xl border border-line bg-panel p-8\">\n            <span className=\"font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-ember\">\n              Ingest throughput\n            </span>\n            <div className=\"mt-4 flex items-baseline gap-2 font-mono\">\n              <span className=\"text-5xl font-semibold tabular text-bone\">\n                <Throughput />M\n              </span>\n              <span className=\"text-lg text-bone-mute\">events / sec</span>\n            </div>\n            <p className=\"mt-5 text-sm leading-relaxed text-bone-mute\">{tr.note}</p>\n          </div>"
 }
@@ -1440,7 +1440,7 @@ id: toolu_01QgbfwNndoMJCnzvQ2HMYcn
 tool_result
 id: toolu_01QgbfwNndoMJCnzvQ2HMYcn
 ```
-The file /Users/jobinlawrance/Project/tiny/site/components/site/benchmark.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/site/components/site/benchmark.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1449,7 +1449,7 @@ tool_use Read
 id: toolu_01Ks3vz1fnKwEXbGU5D43Wwd
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/site/components/site/benchmark.tsx",
+  "file_path": "/home/<USER>/Project/tiny/site/components/site/benchmark.tsx",
   "offset": 58,
   "limit": 45
 }
@@ -1509,7 +1509,7 @@ id: toolu_01QbBRL4H4GkTfhidYMcEQW8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/site/components/site/benchmark.tsx",
+  "file_path": "/home/<USER>/Project/tiny/site/components/site/benchmark.tsx",
   "old_string": "                <div\n                  key={d.name}\n                  className=\"rounded-lg border border-line bg-bone/[0.02] px-3 py-2\"\n                >\n                  <div className=\"text-xs text-bone-mute\">{d.name}</div>\n                  <div className=\"mt-1 font-mono text-lg font-semibold text-bone\">\n                    {d.value} ms\n                  </div>\n                </div>",
   "new_string": "                <div\n                  key={d.name}\n                  className=\"rounded-lg border border-line bg-bone/[0.02] px-3 py-2\"\n                >\n                  <div className=\"font-mono text-[11px] uppercase tracking-wider text-bone-mute\">\n                    {d.name}\n                  </div>\n                  <div className=\"mt-1 font-mono text-lg font-semibold tabular text-bone\">\n                    {d.value} ms\n                  </div>\n                </div>"
 }
@@ -1520,7 +1520,7 @@ id: toolu_01QbBRL4H4GkTfhidYMcEQW8
 tool_result
 id: toolu_01QbBRL4H4GkTfhidYMcEQW8
 ```
-The file /Users/jobinlawrance/Project/tiny/site/components/site/benchmark.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/site/components/site/benchmark.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1529,7 +1529,7 @@ tool_use Read
 id: toolu_01VjCvPQ8zSy5YgZrSJWhEwE
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/site/components/site/benchmark.tsx",
+  "file_path": "/home/<USER>/Project/tiny/site/components/site/benchmark.tsx",
   "offset": 86,
   "limit": 20
 }
@@ -1563,7 +1563,7 @@ id: toolu_01HDPgxSoEfcVFNnfjJEKSZp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/site/components/site/benchmark.tsx",
+  "file_path": "/home/<USER>/Project/tiny/site/components/site/benchmark.tsx",
   "old_string": "        <p className=\"mt-8 text-center text-xs text-bone-mute\">\n          Source: {benchmark.source}\n        </p>\n      </div>\n    </section>\n  );\n}",
   "new_string": "        <p className=\"mt-8 text-center text-xs text-bone-mute\">\n          Source: {benchmark.source}\n        </p>\n      </div>\n    </section>\n  );\n}\n\n// Ticks up from zero on view — the number reads like an instrument spinning up,\n// not a static marketing figure.\nfunction Throughput() {\n  const [value, setValue] = useState(0);\n  useEffect(() => {\n    const t = setTimeout(() => setValue(throughputM), 150);\n    return () => clearTimeout(t);\n  }, []);\n  return <NumberFlow value={value} format={{ minimumFractionDigits: 2, maximumFractionDigits: 2 }} />;\n}"
 }
@@ -1574,7 +1574,7 @@ id: toolu_01HDPgxSoEfcVFNnfjJEKSZp
 tool_result
 id: toolu_01HDPgxSoEfcVFNnfjJEKSZp
 ```
-The file /Users/jobinlawrance/Project/tiny/site/components/site/benchmark.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/site/components/site/benchmark.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1588,7 +1588,7 @@ id: toolu_013CZxjc2eU1aCAWS7p3JmvP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/site/components/site/footer.tsx",
+  "file_path": "/home/<USER>/Project/tiny/site/components/site/footer.tsx",
   "old_string": "          <h2 className=\"text-3xl font-semibold tracking-tight sm:text-4xl\">\n            Own your real-time analytics\n          </h2>",
   "new_string": "          <h2 className=\"font-display text-3xl font-semibold tracking-tight sm:text-4xl\">\n            Own your real-time analytics\n          </h2>"
 }
@@ -1599,7 +1599,7 @@ id: toolu_013CZxjc2eU1aCAWS7p3JmvP
 tool_result
 id: toolu_013CZxjc2eU1aCAWS7p3JmvP
 ```
-The file /Users/jobinlawrance/Project/tiny/site/components/site/footer.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/site/components/site/footer.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1612,7 +1612,7 @@ tool_use Bash
 id: toolu_01WqHReaF4dY9tm4SwWPCHvL
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny/site && (bun dev > /tmp/tr-dev.log 2>&1 &) ; sleep 1; echo \"started\"",
+  "command": "cd /home/<USER>/Project/tiny/site && (bun dev > /tmp/tr-dev.log 2>&1 &) ; sleep 1; echo \"started\"",
   "description": "Start Next dev server in background"
 }
 ```
@@ -1863,7 +1863,7 @@ tool_use Write
 id: toolu_01MEE6LprBQ7yWZSRDUGtjaz
 ```json
 {
-  "file_path": "/Users/jobinlawrance/.claude/projects/-Users-jobinlawrance-Project-tiny/memory/tinyraven-site-design-system.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-jobinlawrance-Project-tiny/memory/tinyraven-site-design-system.md",
   "content": "---\nname: tinyraven-site-design-system\ndescription: TinyRaven marketing site (site/) design identity — tokens, type, and the live-console-as-hero bet\nmetadata:\n  type: project\n---\n\nThe `site/` (Next 16 static export) was redesigned 2026-07-03 away from the generic dark-shadcn + violet/indigo gradient default into a **\"live field instrument you own\"** identity. Do not regress to violet gradients or Geist.\n\n**Tokens (in `app/globals.css`, dark-only — `:root` and `.dark` share the palette):**\n- `--ink` warm near-black (chroma ~0.008, NOT cold zinc), `--panel` raised, `--bone`/`--bone-dim`/`--bone-mute` warm off-white text.\n- `--ember` (amber, `oklch(0.76 0.158 58)`) = the ONE identity accent — marks, one headline word, mono eyebrows, CTAs, bar charts. `--ember-deep` for hover.\n- `--trace` (cyan) reserved EXCLUSIVELY for live data (the area chart, live LED, the migration `+` line). Never decorative.\n- Utilities exposed via `@theme inline`: `bg-ember/text-ember/bg-panel/bg-ink/text-bone*/border-line/bg-trace/font-display`.\n\n**Type:** Bricolage Grotesque (`--font-display`, headings), Inter Tight (`--font-sans`), JetBrains Mono (`--font-mono`, used as instrument-readout not just code). Mono panel labels everywhere numbers/status are read; `.tabular` class for tabular-nums.\n\n**The bet (signature):** the hero IS the `LiveDashboard` component wired to `tiny-api.ravencloak.org` real prod pipes — ticking NumberFlow readouts + live charts, captioned \"Not a mockup.\" The most distinctive true thing about TinyRaven is that the demo is real; the redesign makes that the […]
 
 > TOOL
@@ -1871,7 +1871,7 @@ id: toolu_01MEE6LprBQ7yWZSRDUGtjaz
 tool_result
 id: toolu_01MEE6LprBQ7yWZSRDUGtjaz
 ```
-File created successfully at: /Users/jobinlawrance/.claude/projects/-Users-jobinlawrance-Project-tiny/memory/tinyraven-site-design-system.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-Users-jobinlawrance-Project-tiny/memory/tinyraven-site-design-system.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1881,7 +1881,7 @@ id: toolu_01PBZttnPEbUJV6oY5YCnmxF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/.REDACTED.md",
+  "file_path": "/home/<USER>/.REDACTED.md",
   "old_string": "- [apple container vs colima](apple-container-vs-colima.md)",
   "new_string": "- [tinyraven site design system](tinyraven-site-design-system.md) — site/ redesign: warm-ink + ember(identity)/cyan(live-only), Bricolage/Inter Tight/JetBrains, hero = real live prod console (no violet, no Geist)\n- [apple container vs colima](apple-container-vs-colima.md)"
 }
@@ -1892,7 +1892,7 @@ id: toolu_01PBZttnPEbUJV6oY5YCnmxF
 tool_result
 id: toolu_01PBZttnPEbUJV6oY5YCnmxF
 ```
-The file /Users/jobinlawrance/.REDACTED.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.REDACTED.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

@@ -37,7 +37,7 @@ tool_use Bash
 id: toolu_017zQFTp6nnMDm4DuhuHRikX
 ```json
 {
-  "command": "ls /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/ | grep -iE \"menu|wp.menu\"",
+  "command": "ls /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/ | grep -iE \"menu|wp.menu\"",
   "description": "List menu-related mu-plugins"
 }
 ```
@@ -48,7 +48,7 @@ tool_use Bash
 id: toolu_01LtdJEvqpsdQxnJ5ATjL3KV
 ```json
 {
-  "command": "ls /Users/dcambria/scripts/server-tools/v2/docker-dev/common/mu-plugins/ | grep -iE \"menu\"",
+  "command": "ls /home/<USER>/scripts/server-tools/v2/docker-dev/common/mu-plugins/ | grep -iE \"menu\"",
   "description": "List menu mu-plugins in common"
 }
 ```
@@ -89,7 +89,7 @@ tool_use Bash
 id: toolu_013gBmmqG1nJXzp1M4ojeusR
 ```json
 {
-  "command": "find /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins -type d -name \"wp-menu*\" 2>/dev/null; find /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins -type f -name \"wp-menu*\" 2>/dev/null | head -20",
+  "command": "find /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins -type d -name \"wp-menu*\" 2>/dev/null; find /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins -type f -name \"wp-menu*\" 2>/dev/null | head -20",
   "description": "Find wp-menu widget files in Elementor Pro"
 }
 ```
@@ -108,7 +108,7 @@ tool_use Bash
 id: toolu_01XjEwFneivGkXvweds5omqv
 ```json
 {
-  "command": "find /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro -type f \\( -name \"*.php\" \\) 2>/dev/null | xargs grep -l \"wp-menu\\|'wp_menu'\\|WP_Menu\" 2>/dev/null | head -10",
+  "command": "find /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro -type f \\( -name \"*.php\" \\) 2>/dev/null | xargs grep -l \"wp-menu\\|'wp_menu'\\|WP_Menu\" 2>/dev/null | head -10",
   "description": "Search for WP menu widget class"
 }
 ```
@@ -118,8 +118,8 @@ id: toolu_01XjEwFneivGkXvweds5omqv
 tool_result
 id: toolu_01XjEwFneivGkXvweds5omqv
 ```
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/license/editor-one-menu-items/editor-one-renew-menu-item.php
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/editor-one/module.php
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/license/editor-one-menu-items/editor-one-renew-menu-item.php
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/editor-one/module.php
 ```
 
 > TOOL
@@ -128,7 +128,7 @@ tool_use Bash
 id: toolu_01Le4P7h41cCGKUTCJmBuJwe
 ```json
 {
-  "command": "find /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro -type d -name \"*menu*\" 2>/dev/null",
+  "command": "find /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro -type d -name \"*menu*\" 2>/dev/null",
   "description": "Find menu module dir"
 }
 ```
@@ -138,23 +138,23 @@ id: toolu_01Le4P7h41cCGKUTCJmBuJwe
 tool_result
 id: toolu_01Le4P7h41cCGKUTCJmBuJwe
 ```
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/license/editor-one-menu-items
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/mega-menu
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/assets/lib/smartmenus
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/tiers/admin-menu-items
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/custom-css/admin-menu-items
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/notes/editor-one-menu-items
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/popup/editor-one-menu-items
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/popup/admin-menu-items
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/theme-builder/editor-one-menu-items
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/theme-builder/admin-menu-items
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/custom-code/editor-one-menu-items
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/custom-code/admin-menu-items
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/assets-manager/asset-types/editor-one-menu-items
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/assets-manager/asset-types/admin-menu-items
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/forms/submissions/editor-one-menu-items
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/forms/submissions/admin-menu-items
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/license/editor-one-menu-items
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/mega-menu
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/assets/lib/smartmenus
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/tiers/admin-menu-items
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/custom-css/admin-menu-items
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/notes/editor-one-menu-items
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/popup/editor-one-menu-items
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/popup/admin-menu-items
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/theme-builder/editor-one-menu-items
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/theme-builder/admin-menu-items
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/custom-code/editor-one-menu-items
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/custom-code/admin-menu-items
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/assets-manager/asset-types/editor-one-menu-items
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/assets-manager/asset-types/admin-menu-items
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/forms/submissions/editor-one-menu-items
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/forms/submissions/admin-menu-items
 ```
 
 > TOOL
@@ -163,7 +163,7 @@ tool_use Bash
 id: toolu_016QwfA4F1W958MD1bz8k2zi
 ```json
 {
-  "command": "ls /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/",
+  "command": "ls /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/",
   "description": "List nav-menu module contents"
 }
 ```
@@ -184,7 +184,7 @@ tool_use Bash
 id: toolu_01XhtotrYHs7UGxFuxCnQWfs
 ```json
 {
-  "command": "ls /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/",
+  "command": "ls /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/",
   "description": "List nav-menu widget files"
 }
 ```
@@ -207,7 +207,7 @@ tool_use Bash
 id: toolu_011SmBA1aH5N7SnNnkjZvu9V
 ```json
 {
-  "command": "find /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor* -type f -name \"*.php\" 2>/dev/null | xargs grep -l \"get_name.*wp-menu\\|'wp-menu'\" 2>/dev/null | head -5",
+  "command": "find /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor* -type f -name \"*.php\" 2>/dev/null | xargs grep -l \"get_name.*wp-menu\\|'wp-menu'\" 2>/dev/null | head -5",
   "description": "Locate wp-menu widget"
 }
 ```
@@ -226,7 +226,7 @@ tool_use Bash
 id: toolu_01LtxhzMMznFyWGqyG6c7LXf
 ```json
 {
-  "command": "grep -rn \"Menu do WordPress\\|WordPress Menu\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor*/  2>/dev/null | grep -v \"\\.po\\|\\.mo\\|\\.json\" | head -10",
+  "command": "grep -rn \"Menu do WordPress\\|WordPress Menu\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor*/  2>/dev/null | grep -v \"\\.po\\|\\.mo\\|\\.json\" | head -10",
   "description": "Find WordPress Menu widget label"
 }
 ```
@@ -236,16 +236,16 @@ id: toolu_01LtxhzMMznFyWGqyG6c7LXf
 tool_result
 id: toolu_01LtxhzMMznFyWGqyG6c7LXf
 ```
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/changelog.txt:96:* Tweak: Removed dropdown indicator icons from the accessibility tree in WordPress Menu widget
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/changelog.txt:104:* Security Fix: Improved code security enforcement in WordPress Menu widget
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/changelog.txt:174:* Fix: Focus color is not applied correctly for accessibility in WordPress Menu widget ([#24239](https://github.com/elementor/elementor/issues/24239))
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/changelog.txt:233:* Fix: Hide content on responsive breakpoint option is not working on WordPress Menu widget when Optimized Markup experiment is activated
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/changelog.txt:427:* Tweak: Added the ability to set `aria-label` for WordPress Menu widget
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/changelog.txt:568:* Tweak: Implemented CSS logical properties in WordPress Menu widget
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/changelog.txt:599:* Tweak: Added additional units to Horizontal and Vertical padding for Dropdown in WordPress Menu widget
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/changelog.txt:740:* Tweak: Added keyboard accessibility to Toggle Button in WordPress Menu widget ([#2348](https://github.com/orgs/elementor/discussions/2348))
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/changelog.txt:781:* Tweak: Changed Nav Menu widget name to WordPress Menu widget
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/nav-menu.php:27:		return esc_html__( 'WordPress Menu', 'elementor-pro' );
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/changelog.txt:96:* Tweak: Removed dropdown indicator icons from the accessibility tree in WordPress Menu widget
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/changelog.txt:104:* Security Fix: Improved code security enforcement in WordPress Menu widget
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/changelog.txt:174:* Fix: Focus color is not applied correctly for accessibility in WordPress Menu widget ([#24239](https://github.com/elementor/elementor/issues/24239))
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/changelog.txt:233:* Fix: Hide content on responsive breakpoint option is not working on WordPress Menu widget when Optimized Markup experiment is activated
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/changelog.txt:427:* Tweak: Added the ability to set `aria-label` for WordPress Menu widget
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/changelog.txt:568:* Tweak: Implemented CSS logical properties in WordPress Menu widget
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/changelog.txt:599:* Tweak: Added additional units to Horizontal and Vertical padding for Dropdown in WordPress Menu widget
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/changelog.txt:740:* Tweak: Added keyboard accessibility to Toggle Button in WordPress Menu widget ([#2348](https://github.com/orgs/elementor/discussions/2348))
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/changelog.txt:781:* Tweak: Changed Nav Menu widget name to WordPress Menu widget
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/nav-menu.php:27:		return esc_html__( 'WordPress Menu', 'elementor-pro' );
 ```
 
 > AGENT
@@ -258,7 +258,7 @@ tool_use Bash
 id: toolu_01LNdHtqYQTWLjYjZQkWvHkx
 ```json
 {
-  "command": "wc -l /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/nav-menu.php",
+  "command": "wc -l /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/nav-menu.php",
   "description": "Check file size"
 }
 ```
@@ -268,7 +268,7 @@ id: toolu_01LNdHtqYQTWLjYjZQkWvHkx
 tool_result
 id: toolu_01LNdHtqYQTWLjYjZQkWvHkx
 ```
-    1718 /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/nav-menu.php
+    1718 /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/nav-menu.php
 ```
 
 > TOOL
@@ -277,7 +277,7 @@ tool_use Bash
 id: toolu_017PFAL8SYoC3HeyfCmmLghE
 ```json
 {
-  "command": "grep -n \"start_controls_section\\|end_controls_section\\|start_controls_tabs\\|end_controls_tabs\\|start_controls_tab\\|end_controls_tab\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/nav-menu.php",
+  "command": "grep -n \"start_controls_section\\|end_controls_section\\|start_controls_tabs\\|end_controls_tabs\\|start_controls_tab\\|end_controls_tab\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/nav-menu.php",
   "description": "List section structure"
 }
 ```
@@ -339,7 +339,7 @@ tool_use Read
 id: toolu_01BS979Ma2gAjXkK3syPGtve
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/nav-menu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/nav-menu.php",
   "offset": 589,
   "limit": 410
 }
@@ -433,7 +433,7 @@ tool_use Read
 id: toolu_01V8hFHu4vTpZBeKK6gSapgP
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/nav-menu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/nav-menu.php",
   "offset": 990,
   "limit": 295
 }
@@ -534,7 +534,7 @@ tool_use Bash
 id: toolu_011XbKJeFY83pAAyQQRyZgbW
 ```json
 {
-  "command": "grep -rln \"elementor/element/nav-menu\\|section_style_main-menu\\|section_style_dropdown\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/ 2>/dev/null",
+  "command": "grep -rln \"elementor/element/nav-menu\\|section_style_main-menu\\|section_style_dropdown\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/ 2>/dev/null",
   "description": "Check existing nav-menu mu-plugin extensions"
 }
 ```
@@ -562,7 +562,7 @@ tool_use Read
 id: toolu_01MMhYkF65QvT1G1BnsuJ2PT
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-dropdown-btn.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-dropdown-btn.php",
   "limit": 20
 }
 ```
@@ -604,7 +604,7 @@ tool_use Write
 id: toolu_01DRxAYi4NezYcm6kosvpk35
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
   "content": "<?php\n/**\n * Plugin Name: BIT Nav Menu Extra Controls\n * Description: Estende o widget \"Menu do WordPress\" (Elementor Pro nav-menu) com\n *              controles ausentes no nativo:\n *              - Lista suspensa: padding dimensional (top/right/bottom/left)\n *              - Menu principal: tipografia individual por estado (Normal/Hover/Ativo)\n * Version:     1.0.0\n * Author:      Bureau IT\n * Network:     true\n */\n\nif ( ! defined( 'ABSPATH' ) ) {\n\texit;\n}\n\n/**\n * Menu principal — tipografia por estado (Normal/Hover/Ativo).\n *\n * O widget nativo só expõe uma `menu_typography` global (aplicada ao seletor\n * `.elementor-nav-menu .elementor-item`). Aqui injetamos um Group_Control_Typography\n * dentro de cada tab das tabs `tabs_menu_item_style`, com seletor refinado para o\n * estado correspondente. O CSS resultante sobrescreve a tipografia global apenas\n * quando o estado está ativo.\n */\nadd_action(\n\t'elementor/element/nav-menu/section_style_main-menu/before_section_end',\n\tfunction ( $element, $args ) {\n\t\t// Normal — sobrescreve apenas itens não-hover/active\n\t\t$element->add_group_control(\n\t\t\t\\Elementor\\Group_Control_Typography::get_type(),\n\t\t\t[\n\t\t\t\t'name'      => 'bit_menu_typography_normal',\n\t\t\t\t'label'     => esc_html__( 'Tipografia (Normal)', 'bit' ),\n\t\t\t\t'selector'  => '{{WRAPPER}} .elementor-nav-menu--main .elementor-item',\n\t\t\t\t'separator' => 'before',\n\t\t\t]\n\t\t);\n\n\t\t$element->add_group_control(\n\t\t\t\\Elementor\\Group_Control_Typography::get_type(),\n\t\t\t[\n\t\t\t\t'name'     => 'bit_menu_typography_hover',\n\t\t\t\t'label'    => esc_html__( 'Tipografia (Hover)', 'bit' ),\n\t\t\t\t'selector' => '{{WRAPPER}} .elementor-nav-menu--main .elementor-item:hover,\n\t\t\t\t\t{{WRAPPER}} .elementor-nav-menu--main .elementor-item:focus,\n\t\t\t\t\t{{WRAPPER}} .elementor-nav-menu--main .elementor-item.highlighted',\n\t\t\t]\n\t\t);\n\n\t\t$element->add_group_control(\n\t\t\t\\Elementor\\Group_Control_Typography::get_type(),\n\t\t\t[\n\t\t\t\t'name'     => 'bit_menu_typography_active',\n\t\t\t\t'label'    => esc_html__( 'Tipografia (Ativo)', 'bit' ),\n\t\t\t\t'selector' => '{{WRAPPER}} .elementor-nav-menu--main .elementor-item.elementor-item-active',\n\t\t\t]\n\t\t);\n\t},\n\t10,\n\t2\n);\n\n/**\n * Lista suspensa — padding dimensional (top/right/bottom/left).\n *\n * O widget nativo expõe `padding_horizontal_dropdown_item` e\n * `padding_vertical_dropdown_item` (apenas sliders […]
 
 > TOOL
@@ -612,7 +612,7 @@ id: toolu_01DRxAYi4NezYcm6kosvpk35
 tool_result
 id: toolu_01DRxAYi4NezYcm6kosvpk35
 ```
-File created successfully at: /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -625,7 +625,7 @@ tool_use Bash
 id: toolu_013Z9fCQTakLrNGBEXkgwdVT
 ```json
 {
-  "command": "cp /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php /Users/dcambria/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-nav-menu-extra-controls.php",
+  "command": "cp /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php /home/<USER>/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-nav-menu-extra-controls.php",
   "description": "Copy mu-plugin to common canonical"
 }
 ```
@@ -636,7 +636,7 @@ tool_use Bash
 id: toolu_01XWaWZdmTgneBHsYDgRDjoL
 ```json
 {
-  "command": "/Users/dcambria/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh cache-flush 2>&1 | tail -20",
+  "command": "/home/<USER>/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh cache-flush 2>&1 | tail -20",
   "description": "Flush dev caches"
 }
 ```
@@ -663,7 +663,7 @@ tool_use Bash
 id: toolu_018xxgqMf6QMYEPpj99APJ9n
 ```json
 {
-  "command": "/Users/dcambria/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh wp elementor flush-css 2>&1 | tail -20",
+  "command": "/home/<USER>/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh wp elementor flush-css 2>&1 | tail -20",
   "description": "Flush Elementor CSS cache"
 }
 ```
@@ -851,7 +851,7 @@ tool_use Bash
 id: toolu_01LapbMhQYYy65wufmsduFWn
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2 && git status docker-dev/common/mu-plugins/bit-nav-menu-extra-controls.php 2>&1",
+  "command": "cd /home/<USER>/scripts/server-tools/v2 && git status docker-dev/common/mu-plugins/bit-nav-menu-extra-controls.php 2>&1",
   "description": "Check git status of new mu-plugin"
 }
 ```
@@ -870,7 +870,7 @@ Untracked files:
 	docker-dev/common/mu-plugins/bit-nav-menu-extra-controls.php
 
 nothing added to commit but untracked files present (use "git add" to track)
-Shell cwd was reset to /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao
+Shell cwd was reset to /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao
 ```
 
 > AGENT
@@ -902,7 +902,7 @@ tool_use Bash
 id: toolu_01RpUr2YAENmKtD4BZ7cWybV
 ```json
 {
-  "command": "grep -rn \"elementor/element/.*tab_menu_item\\|do_action_ref_array.*tab_menu_item\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/ /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/ 2>/dev/null | head -5",
+  "command": "grep -rn \"elementor/element/.*tab_menu_item\\|do_action_ref_array.*tab_menu_item\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/ /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/ 2>/dev/null | head -5",
   "description": "Look for tab-level hooks"
 }
 ```
@@ -913,7 +913,7 @@ tool_use Bash
 id: toolu_01XBAXNraVuXFTG5eBUZhWV5
 ```json
 {
-  "command": "grep -rn \"do_action.*start_controls_tab\\|elementor/controls/.*after\\|elementor/element.*before_section\\|start_controls_tab.*action\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/ 2>/dev/null | head -20",
+  "command": "grep -rn \"do_action.*start_controls_tab\\|elementor/controls/.*after\\|elementor/element.*before_section\\|start_controls_tab.*action\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/ 2>/dev/null | head -20",
   "description": "Investigate tab hook availability"
 }
 ```
@@ -931,21 +931,21 @@ id: toolu_01RpUr2YAENmKtD4BZ7cWybV
 tool_result
 id: toolu_01XBAXNraVuXFTG5eBUZhWV5
 ```
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php:1565:		do_action( 'elementor/element/before_section_start', $this, $section_id, $args );
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php:1579:		do_action( "elementor/element/{$stack_name}/{$section_id}/before_section_start", $this, $args );
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php:1582:			do_action( "elementor/element/common/{$section_id}/before_section_start", $this, $args );
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php:1663:		do_action( 'elementor/element/before_section_end', $this, $section_id, $args );
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php:1677:		do_action( "elementor/element/{$stack_name}/{$section_id}/before_section_end", $this, $args );
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php:1680:			do_action( "elementor/element/common/{$section_id}/before_section_end", $this, $args );
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php:1724:	 * Third-party developers may have used hooks like 'elementor/element/common/_section_background/before_section_end'
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php:1565:		do_action( 'elementor/element/before_section_start', $this, $section_id, $args );
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php:1579:		do_action( "elementor/element/{$stack_name}/{$section_id}/before_section_start", $this, $args );
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php:1582:			do_action( "elementor/element/common/{$section_id}/before_section_start", $this, $args );
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php:1663:		do_action( 'elementor/element/before_section_end', $this, $section_id, $args );
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php:1677:		do_action( "elementor/element/{$stack_name}/{$section_id}/before_section_end", $this, $args );
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php:1680:			do_action( "elementor/element/common/{$section_id}/before_section_end", $this, $args );
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php:1724:	 * Third-party developers may have used hooks like 'elementor/element/common/_section_background/before_section_end'
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/skin-base.php:90:	 * `add_action( 'elementor/element/{widget_id}/{section_id}/before_section_end', [ $this, 'register_controls' ] );`
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php:1565:		do_action( 'elementor/element/before_section_start', $this, $section_id, $args );
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php:1579:		do_action( "elementor/element/{$stack_name}/{$section_id}/before_section_start", $this, $args );
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php:1582:			do_action( "elementor/element/common/{$section_id}/before_section_start", $this, $args );
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php:1663:		do_action( 'elementor/element/before_section_end', $this, $section_id, $args );
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php:1677:		do_action( "elementor/element/{$stack_name}/{$section_id}/before_section_end", $this, $args );
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php:1680:			do_action( "elementor/element/common/{$section_id}/before_section_end", $this, $args );
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php:1724:	 * Third-party developers may have used hooks like 'elementor/element/common/_section_background/before_section_end'
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php:1565:		do_action( 'elementor/element/before_section_start', $this, $section_id, $args );
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php:1579:		do_action( "elementor/element/{$stack_name}/{$section_id}/before_section_start", $this, $args );
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php:1582:			do_action( "elementor/element/common/{$section_id}/before_section_start", $this, $args );
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php:1663:		do_action( 'elementor/element/before_section_end', $this, $section_id, $args );
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php:1677:		do_action( "elementor/element/{$stack_name}/{$section_id}/before_section_end", $this, $args );
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php:1680:			do_action( "elementor/element/common/{$section_id}/before_section_end", $this, $args );
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php:1724:	 * Third-party developers may have used hooks like 'elementor/element/common/_section_background/before_section_end'
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/skin-base.php:90:	 * `add_action( 'elementor/element/{widget_id}/{section_id}/before_section_end', [ $this, 'register_controls' ] );`
 ```
 
 > AGENT
@@ -962,7 +962,7 @@ tool_use Bash
 id: toolu_01Dd7tc5xTk2NMt2wapQQ8sR
 ```json
 {
-  "command": "grep -n \"position.*of\\|insert_control_to_stack\\|add_control_to_stack\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php 2>/dev/null | head -20",
+  "command": "grep -n \"position.*of\\|insert_control_to_stack\\|add_control_to_stack\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php 2>/dev/null | head -20",
   "description": "Find position parameter handling"
 }
 ```
@@ -982,7 +982,7 @@ tool_use Read
 id: toolu_01BRh15mNJVfkc6YgkiVRckV
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php",
   "offset": 580,
   "limit": 90
 }
@@ -1037,7 +1037,7 @@ tool_use Read
 id: toolu_01LAULXpBATNzGP8kWRhpMfE
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php",
   "offset": 669,
   "limit": 30
 }
@@ -1094,7 +1094,7 @@ tool_use Write
 id: toolu_0147soB6faoiyTx15SuvtAQj
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
   "content": "<?php\n/**\n * Plugin Name: BIT Nav Menu Extra Controls\n * Description: Estende o widget \"Menu do WordPress\" (Elementor Pro nav-menu) com\n *              controles ausentes no nativo:\n *              - Lista suspensa: padding dimensional (top/right/bottom/left)\n *              - Menu principal: tipografia individual DENTRO de cada tab\n *                (Normal/Hover/Ativo), via injeção canônica `position` do Elementor\n * Version:     1.1.0\n * Author:      Bureau IT\n * Network:     true\n */\n\nif ( ! defined( 'ABSPATH' ) ) {\n\texit;\n}\n\n/**\n * Menu principal — tipografia por estado, injetada DENTRO de cada tab.\n *\n * Usa o argumento `position` do Elementor (`'of' => '<control_id>'`) que detecta\n * automaticamente `tabs_wrapper` + `inner_tab` do controle alvo e posiciona o\n * novo controle no mesmo tab. Sem isso, controles caem fora das tabs.\n *\n * Alvos:\n *   - `color_menu_item`        → tab Normal\n *   - `color_menu_item_hover`  → tab Hover\n *   - `color_menu_item_active` → tab Ativo\n */\nadd_action(\n\t'elementor/element/nav-menu/section_style_main-menu/before_section_end',\n\tfunction ( $element, $args ) {\n\t\t$element->add_group_control(\n\t\t\t\\Elementor\\Group_Control_Typography::get_type(),\n\t\t\t[\n\t\t\t\t'name'     => 'bit_menu_typography_normal',\n\t\t\t\t'label'    => esc_html__( 'Tipografia', 'bit' ),\n\t\t\t\t'selector' => '{{WRAPPER}} .elementor-nav-menu--main .elementor-item',\n\t\t\t\t'position' => [\n\t\t\t\t\t'type' => 'control',\n\t\t\t\t\t'at'   => 'after',\n\t\t\t\t\t'of'   => 'color_menu_item',\n\t\t\t\t],\n\t\t\t]\n\t\t);\n\n\t\t$element->add_group_control(\n\t\t\t\\Elementor\\Group_Control_Typography::get_type(),\n\t\t\t[\n\t\t\t\t'name'     => 'bit_menu_typography_hover',\n\t\t\t\t'label'    => esc_html__( 'Tipografia', 'bit' ),\n\t\t\t\t'selector' => '{{WRAPPER}} .elementor-nav-menu--main .elementor-item:hover,\n\t\t\t\t\t{{WRAPPER}} .elementor-nav-menu--main .elementor-item:focus,\n\t\t\t\t\t{{WRAPPER}} .elementor-nav-menu--main .elementor-item.highlighted',\n\t\t\t\t'position' => [\n\t\t\t\t\t'type' => 'control',\n\t\t\t\t\t'at'   => 'after',\n\t\t\t\t\t'of'   => 'pointer_color_menu_item_hover',\n\t\t\t\t\t'fallback' => [\n\t\t\t\t\t\t'type' => 'control',\n\t\t\t\t\t\t'at' […]
 
 > TOOL
@@ -1102,7 +1102,7 @@ id: toolu_0147soB6faoiyTx15SuvtAQj
 tool_result
 id: toolu_0147soB6faoiyTx15SuvtAQj
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1111,7 +1111,7 @@ tool_use Bash
 id: toolu_01CRWRo9GEqrqgCH16yN7nK1
 ```json
 {
-  "command": "cp /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php /Users/dcambria/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-nav-menu-extra-controls.php && docker exec -u www-data concertacao-dev-wordpress wp --url=https://cambrasmax.local:8484 elementor flush-css 2>&1 | tail -3",
+  "command": "cp /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php /home/<USER>/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-nav-menu-extra-controls.php && docker exec -u www-data concertacao-dev-wordpress wp --url=https://cambrasmax.local:8484 elementor flush-css 2>&1 | tail -3",
   "description": "Sync canonical and flush Elementor CSS"
 }
 ```
@@ -1144,7 +1144,7 @@ tool_use Bash
 id: toolu_0169QzXxcegi7B9nQuDCCb7i
 ```json
 {
-  "command": "grep -n \"tabs_wrapper\\|inner_tab\\|position\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/controls/groups/base.php 2>/dev/null | head -30",
+  "command": "grep -n \"tabs_wrapper\\|inner_tab\\|position\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/controls/groups/base.php 2>/dev/null | head -30",
   "description": "Check how group controls handle tabs/position"
 }
 ```
@@ -1165,7 +1165,7 @@ tool_use Read
 id: toolu_01KXYE1zbFXXCUVPUNv5doHC
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/controls/groups/base.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/controls/groups/base.php",
   "offset": 90,
   "limit": 40
 }
@@ -1228,7 +1228,7 @@ tool_use Bash
 id: toolu_019CCjJxUYpvDzKv41HAmbCP
 ```json
 {
-  "command": "grep -n \"function start_injection\\|function end_injection\\|injection_point\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php",
+  "command": "grep -n \"function start_injection\\|function end_injection\\|injection_point\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php",
   "description": "Find start_injection definition"
 }
 ```
@@ -1268,7 +1268,7 @@ tool_use Read
 id: toolu_012qQZKo8aQvdM96Gj1gs3aj
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php",
   "offset": 2440,
   "limit": 25
 }
@@ -1596,7 +1596,7 @@ tool_use Bash
 id: toolu_01FYvMBWv2Xra9ZAjS7iTYpm
 ```json
 {
-  "command": "grep -rln \"remove_control\\|nav-menu\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/ 2>/dev/null",
+  "command": "grep -rln \"remove_control\\|nav-menu\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/ 2>/dev/null",
   "description": "Find code removing nav-menu controls"
 }
 ```
@@ -1606,11 +1606,11 @@ id: toolu_01FYvMBWv2Xra9ZAjS7iTYpm
 tool_result
 id: toolu_01FYvMBWv2Xra9ZAjS7iTYpm
 ```
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-crossblog-elementor-menus.php
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-crossblog-menu-source.php
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-crossblog-elementor-menus.php
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-crossblog-menu-source.php
 ```
 
 > TOOL
@@ -1619,7 +1619,7 @@ tool_use Bash
 id: toolu_01XrjyBBVSGT4SRU473vqEii
 ```json
 {
-  "command": "grep -n \"remove_control\\|nav-menu\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-crossblog-elementor-menus.php /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-crossblog-menu-source.php",
+  "command": "grep -n \"remove_control\\|nav-menu\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-crossblog-elementor-menus.php /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-crossblog-menu-source.php",
   "description": "Check nav-menu references in mu-plugins"
 }
 ```
@@ -1629,16 +1629,16 @@ id: toolu_01XrjyBBVSGT4SRU473vqEii
 tool_result
 id: toolu_01XrjyBBVSGT4SRU473vqEii
 ```
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-crossblog-elementor-menus.php:5: *              no widget nav-menu do Elementor Pro. Os menus do blog de origem
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-crossblog-menu-source.php:16:add_action( 'load-nav-menus.php', function () {
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-crossblog-menu-source.php:57:				'nav-menus',
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-crossblog-menu-source.php:160:				<a href="<?php echo esc_url( admin_url( 'nav-menus.php?page-tab=all&selectall=1#' . $tab_id ) ); ?>"
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php:57:    widget.querySelectorAll('.elementor-nav-menu > li > a.elementor-item').forEach(function(a) {
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php:128:      '.elementor-nav-menu > li.menu-item-has-children'
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php:139:      '.elementor-nav-menu > li.menu-item-has-children.current-menu-ancestor,' +
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php:140:      '.elementor-nav-menu > li.menu-item-has-children.current-menu-parent,' +
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php:141:      '.elementor-nav-menu > li.menu-item-has-children.current-menu-item'
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php:151:        '.elementor-nav-menu > li.menu-item-has-children'
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-crossblog-elementor-menus.php:5: *              no widget nav-menu do Elementor Pro. Os menus do blog de origem
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-crossblog-menu-source.php:16:add_action( 'load-nav-menus.php', function () {
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-crossblog-menu-source.php:57:				'nav-menus',
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-crossblog-menu-source.php:160:				<a href="<?php echo esc_url( admin_url( 'nav-menus.php?page-tab=all&selectall=1#' . $tab_id ) ); ?>"
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php:57:    widget.querySelectorAll('.elementor-nav-menu > li > a.elementor-item').forEach(function(a) {
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php:128:      '.elementor-nav-menu > li.menu-item-has-children'
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php:139:      '.elementor-nav-menu > li.menu-item-has-children.current-menu-ancestor,' +
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php:140:      '.elementor-nav-menu > li.menu-item-has-children.current-menu-parent,' +
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php:141:      '.elementor-nav-menu > li.menu-item-has-children.current-menu-item'
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php:151:        '.elementor-nav-menu > li.menu-item-has-children'
 ```
 
 > AGENT
@@ -1651,7 +1651,7 @@ tool_use Bash
 id: toolu_0196Q4RB4uBKPPoRai9Xk6WL
 ```json
 {
-  "command": "grep -rln \"register_controls\\|remove_control\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/ 2>/dev/null",
+  "command": "grep -rln \"register_controls\\|remove_control\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/ 2>/dev/null",
   "description": "Check child theme for control modifications"
 }
 ```
@@ -1670,7 +1670,7 @@ tool_use Bash
 id: toolu_01UzrZi4UGB8g6Zc42DK8PFe
 ```json
 {
-  "command": "grep -rln \"section_style_main-menu\\|color_menu_item\\|nav-menu.*controls\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/ 2>/dev/null | grep -v elementor-pro/modules/nav-menu | head -10",
+  "command": "grep -rln \"section_style_main-menu\\|color_menu_item\\|nav-menu.*controls\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/ 2>/dev/null | grep -v elementor-pro/modules/nav-menu | head -10",
   "description": "Find plugins modifying nav-menu controls"
 }
 ```
@@ -1718,7 +1718,7 @@ tool_use Bash
 id: toolu_01JELPwqtUKr6yQAAqAVKtTv
 ```json
 {
-  "command": "grep -cE \"^\\s*\\\\\\$this->add_(responsive_)?control|^\\s*\\\\\\$this->add_group_control\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/nav-menu.php",
+  "command": "grep -cE \"^\\s*\\\\\\$this->add_(responsive_)?control|^\\s*\\\\\\$this->add_group_control\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/nav-menu.php",
   "description": "Count control registrations in source"
 }
 ```
@@ -1908,7 +1908,7 @@ tool_use Read
 id: toolu_016k974uRYohvdgecDmMXtSh
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/nav-menu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/nav-menu.php",
   "offset": 75,
   "limit": 25
 }
@@ -1952,7 +1952,7 @@ tool_use Bash
 id: toolu_01TRn6fzBxfbmWMckkfpdGXH
 ```json
 {
-  "command": "grep -n \"register_controls\\|return;\\|throw\\|conditional\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/nav-menu.php | head -20",
+  "command": "grep -n \"register_controls\\|return;\\|throw\\|conditional\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/nav-menu.php | head -20",
   "description": "Check for early returns in register_controls"
 }
 ```
@@ -1974,7 +1974,7 @@ tool_use Read
 id: toolu_01Dy2CXfY9sVWd9Sq5TpTbNv
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/nav-menu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/nav-menu.php",
   "offset": 1450,
   "limit": 15
 }
@@ -2021,7 +2021,7 @@ id: toolu_01NzKii6EPGAK5dj38z1W75P
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
   "old_string": "add_action(\n\t'elementor/element/nav-menu/section_style_main-menu/before_section_end',\n\tfunction ( $element, $args ) {\n\t\t$element->add_group_control(\n\t\t\t\\Elementor\\Group_Control_Typography::get_type(),\n\t\t\t[\n\t\t\t\t'name'     => 'bit_menu_typography_normal',\n\t\t\t\t'label'    => esc_html__( 'Tipografia', 'bit' ),\n\t\t\t\t'selector' => '{{WRAPPER}} .elementor-nav-menu--main .elementor-item',\n\t\t\t\t'position' => [\n\t\t\t\t\t'type' => 'control',\n\t\t\t\t\t'at'   => 'after',\n\t\t\t\t\t'of'   => 'color_menu_item',\n\t\t\t\t],\n\t\t\t]\n\t\t);",
   "new_string": "add_action(\n\t'elementor/element/nav-menu/section_style_main-menu/before_section_end',\n\tfunction ( $element, $args ) {\n\t\t// DEBUG: log what controls are visible at this point\n\t\tif ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {\n\t\t\t$all = array_keys( $element->get_controls() );\n\t\t\t$relevant = array_filter( $all, function ( $k ) {\n\t\t\t\treturn strpos( $k, 'menu_item' ) !== false || strpos( $k, 'color_menu' ) !== false;\n\t\t\t} );\n\t\t\terror_log( 'BIT NAV MENU DEBUG (main): ' . implode( ',', $relevant ) );\n\t\t}\n\n\t\t$element->add_group_control(\n\t\t\t\\Elementor\\Group_Control_Typography::get_type(),\n\t\t\t[\n\t\t\t\t'name'     => 'bit_menu_typography_normal',\n\t\t\t\t'label'    => esc_html__( 'Tipografia', 'bit' ),\n\t\t\t\t'selector' => '{{WRAPPER}} .elementor-nav-menu--main .elementor-item',\n\t\t\t\t'position' => [\n\t\t\t\t\t'type' => 'control',\n\t\t\t\t\t'at'   => 'after',\n\t\t\t\t\t'of'   => 'color_menu_item',\n\t\t\t\t],\n\t\t\t]\n\t\t);"
 }
@@ -2032,7 +2032,7 @@ id: toolu_01NzKii6EPGAK5dj38z1W75P
 tool_result
 id: toolu_01NzKii6EPGAK5dj38z1W75P
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2041,7 +2041,7 @@ tool_use Bash
 id: toolu_01CC2cczadDBut7sDXvXR8hb
 ```json
 {
-  "command": "cp /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php /Users/dcambria/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-nav-menu-extra-controls.php && docker exec concertacao-dev-wordpress wp config get WP_DEBUG --type=constant 2>&1 | tail -3",
+  "command": "cp /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php /home/<USER>/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-nav-menu-extra-controls.php && docker exec concertacao-dev-wordpress wp config get WP_DEBUG --type=constant 2>&1 | tail -3",
   "description": "Sync and check WP_DEBUG"
 }
 ```
@@ -2104,7 +2104,7 @@ tool_use Write
 id: toolu_01QA1H8b4jYaDryRHExxA2Bn
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
   "content": "<?php\n/**\n * Plugin Name: BIT Nav Menu Extra Controls\n * Description: Estende o widget \"Menu do WordPress\" (Elementor Pro nav-menu) com\n *              controles ausentes no nativo:\n *              - Lista suspensa: padding dimensional (top/right/bottom/left)\n *              - Menu principal: tipografia individual DENTRO de cada tab\n *                (Normal/Hover/Ativo), via detecção dinâmica do último controle\n *                de cada tab + injeção canônica `position` do Elementor\n * Version:     1.2.0\n * Author:      Bureau IT\n * Network:     true\n */\n\nif ( ! defined( 'ABSPATH' ) ) {\n\texit;\n}\n\n/**\n * Localiza o ID do último controle dentro de uma tab específica.\n *\n * O Elementor expõe `tabs_wrapper` e `inner_tab` em cada controle registrado\n * dentro de uma tab. Percorremos todos os controles do widget e retornamos\n * o ÚLTIMO que pertence à tab (`inner_tab` == $tab_id) — esse é o alvo seguro\n * para injetar controles novos via `position` `at => after`.\n *\n * Retorna null se nada for encontrado (ex: tab vazia ou nome de tab errado).\n */\nfunction bit_nav_menu_last_control_in_tab( $element, $tab_id ) {\n\t$controls = $element->get_controls();\n\t$last     = null;\n\tforeach ( $controls as $id => $control ) {\n\t\tif ( isset( $control['inner_tab'] ) && $control['inner_tab'] === $tab_id ) {\n\t\t\t$last = $id;\n\t\t}\n\t}\n\treturn $last;\n}\n\n/**\n * Menu […]
 
 > TOOL
@@ -2112,7 +2112,7 @@ id: toolu_01QA1H8b4jYaDryRHExxA2Bn
 tool_result
 id: toolu_01QA1H8b4jYaDryRHExxA2Bn
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2125,7 +2125,7 @@ tool_use Bash
 id: toolu_01NZz7ZoLUasWrUFH5Ruqpgc
 ```json
 {
-  "command": "grep -n \"inner_tab\\|current_tab\\b\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php | head -30",
+  "command": "grep -n \"inner_tab\\|current_tab\\b\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php | head -30",
   "description": "Investigate inner_tab mechanism"
 }
 ```
@@ -2160,7 +2160,7 @@ tool_use Read
 id: toolu_01CVVBt1i2YtgkvGJ7e5i44X
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php",
   "offset": 2445,
   "limit": 25
 }
@@ -2212,7 +2212,7 @@ tool_use Bash
 id: toolu_01T1wUdFJmpuPt4JYJiV5tX1
 ```json
 {
-  "command": "cp /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php /Users/dcambria/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-nav-menu-extra-controls.php && docker exec -u www-data concertacao-dev-wordpress wp --url=https://cambrasmax.local:8484 elementor flush-css 2>&1 | tail -3",
+  "command": "cp /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php /home/<USER>/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-nav-menu-extra-controls.php && docker exec -u www-data concertacao-dev-wordpress wp --url=https://cambrasmax.local:8484 elementor flush-css 2>&1 | tail -3",
   "description": "Sync canonical and flush Elementor CSS"
 }
 ```
@@ -2252,7 +2252,7 @@ tool_use Bash
 id: toolu_01Pd5KPFoZfhKDnC4BNAMX9E
 ```json
 {
-  "command": "grep -n \"function add_control\\|function add_responsive_control\\|function add_group_control\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php | head -10",
+  "command": "grep -n \"function add_control\\|function add_responsive_control\\|function add_group_control\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php | head -10",
   "description": "Check add_control signatures"
 }
 ```
@@ -2273,7 +2273,7 @@ tool_use Read
 id: toolu_01CwJHFHPDVETzdCvicMBjgA
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php",
   "offset": 774,
   "limit": 30
 }
@@ -2326,7 +2326,7 @@ tool_use Read
 id: toolu_01Nz8g8Q7G4dwnWGibinZM1X
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/controls/groups/base.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/controls/groups/base.php",
   "offset": 60,
   "limit": 50
 }
@@ -2393,7 +2393,7 @@ tool_use Write
 id: toolu_01P6fvE44mP7BwzAg1KdeZDr
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
   "content": "<?php\n/**\n * Plugin Name: BIT Nav Menu Extra Controls\n * Description: Estende o widget \"Menu do WordPress\" (Elementor Pro nav-menu) com\n *              controles ausentes no nativo:\n *              - Lista suspensa: padding dimensional (top/right/bottom/left)\n *              - Menu principal: tipografia individual DENTRO de cada tab\n *                (Normal/Hover/Ativo), via detecção dinâmica do último controle\n *                de cada tab + injeção canônica `position` via $options (3º arg)\n * Version:     1.3.0\n * Author:      Bureau IT\n * Network:     true\n */\n\nif ( ! defined( 'ABSPATH' ) ) {\n\texit;\n}\n\n/**\n * Localiza o ID do último controle dentro de uma tab específica.\n *\n * O Elementor marca todo controle declarado entre start_controls_tab/end_controls_tab\n * com `tabs_wrapper` e `inner_tab`. Percorremos os controles e retornamos o último\n * que pertence à tab — alvo seguro para `position` `at => after`.\n */\nfunction bit_nav_menu_last_control_in_tab( $element, $tab_id ) {\n\t$controls = $element->get_controls();\n\t$last     = null;\n\tforeach ( $controls as $id => $control ) {\n\t\tif ( isset( $control['inner_tab'] ) && $control['inner_tab'] === $tab_id ) {\n\t\t\t$last = $id;\n\t\t}\n\t}\n\treturn $last;\n}\n\n/**\n * Menu principal — tipografia por estado, dentro de cada tab.\n *\n * IMPORTANTE: para `add_group_control`, o `position` DEVE ir no 3º argumento\n * (`$options`), não no 2º (`$args`). O Group_Control_Base::add_controls lê\n […]
 
 > TOOL
@@ -2401,7 +2401,7 @@ id: toolu_01P6fvE44mP7BwzAg1KdeZDr
 tool_result
 id: toolu_01P6fvE44mP7BwzAg1KdeZDr
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2410,7 +2410,7 @@ tool_use Bash
 id: toolu_01MWyuAKbi84YMEJzeR2Rv4c
 ```json
 {
-  "command": "cp /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php /Users/dcambria/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-nav-menu-extra-controls.php && docker exec -u www-data concertacao-dev-wordpress wp --url=https://cambrasmax.local:8484 elementor flush-css 2>&1 | tail -3",
+  "command": "cp /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php /home/<USER>/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-nav-menu-extra-controls.php && docker exec -u www-data concertacao-dev-wordpress wp --url=https://cambrasmax.local:8484 elementor flush-css 2>&1 | tail -3",
   "description": "Sync canonical and flush"
 }
 ```
@@ -2490,7 +2490,7 @@ tool_use Bash
 id: toolu_01XcNKYM9dn3CP9mQUbb2Lop
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2 && git log --oneline -20 --all -- docker-dev/common/mu-plugins/ 2>&1 | grep -iE \"menu|hover|stuck|pink\" | head -10",
+  "command": "cd /home/<USER>/scripts/server-tools/v2 && git log --oneline -20 --all -- docker-dev/common/mu-plugins/ 2>&1 | grep -iE \"menu|hover|stuck|pink\" | head -10",
   "description": "Recent menu/hover commits in server-tools"
 }
 ```
@@ -2501,7 +2501,7 @@ tool_result
 id: toolu_01XcNKYM9dn3CP9mQUbb2Lop
 ```
 190273746 sync(mu-plugin): bit-inline-submenu v1.5.0 — escopa position:static para desktop
-Shell cwd was reset to /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao
+Shell cwd was reset to /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao
 ```
 
 > AGENT
@@ -2527,7 +2527,7 @@ tool_result
 id: toolu_0156818yUdpGTs8EuYqRAKz4
 ```
 commit 4a8329e196801177a652cdf5136f497a310bf3eb
-Author: Daniel Cambría <daniel.cambria@bureau-it.com>
+Author: Daniel Cambría <<REDACTED_EMAIL>>
 Date:   Mon May 18 18:21:22 2026 -0300
 
     fix(menu): destrava cores mobile no Elementor + corrige stuck-pink desktop — v2.2.28
@@ -2566,7 +2566,7 @@ id: toolu_01UUNDRmdEKuCix1vCQ2JLLZ
     Validado em dev + prod via Playwright headed: PINK=[] após exit, :hover normal
     funciona, cor default consistente entre items normais e highlighted-residual.
     
-    Co-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>
+    Co-Authored-By: Claude Opus 4.7 <<REDACTED_EMAIL>>
     Entire-Checkpoint: e4c16d4efa5e
 
  .../hello-elementor-child/css/header-menu.css      | 56 +++++++++-------------
@@ -2591,7 +2591,7 @@ tool_result
 id: toolu_01185bg4quD61sXRvLeK6eQ8
 ```
 commit 4a8329e196801177a652cdf5136f497a310bf3eb
-Author: Daniel Cambría <daniel.cambria@bureau-it.com>
+Author: Daniel Cambría <<REDACTED_EMAIL>>
 Date:   Mon May 18 18:21:22 2026 -0300
 
     fix(menu): destrava cores mobile no Elementor + corrige stuck-pink desktop — v2.2.28
@@ -2613,7 +2613,7 @@ Date:   Mon May 18 18:21:22 2026 -0300
     Validado em dev + prod via Playwright headed: PINK=[] após exit, :hover normal
     funciona, cor default consistente entre items normais e highlighted-residual.
     
-    Co-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>
+    Co-Authored-By: Claude Opus 4.7 <<REDACTED_EMAIL>>
     Entire-Checkpoint: e4c16d4efa5e
 
 diff --git a/wordpress/wp-content/themes/hello-elementor-child/css/header-menu.css b/wordpress/wp-content/themes/hello-elementor-child/css/header-menu.css
@@ -2649,7 +2649,7 @@ tool_use Bash
 id: toolu_01U6Uv4RSre7d6xKi7ZquNEf
 ```json
 {
-  "command": "grep -n \"highlighted\\|stuck-pink\\|9\\.5\\|9\\.4\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/header-menu.css /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/style.css 2>&1 | head -20",
+  "command": "grep -n \"highlighted\\|stuck-pink\\|9\\.5\\|9\\.4\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/header-menu.css /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/style.css 2>&1 | head -20",
   "description": "Find stuck-pink override in current files"
 }
 ```
@@ -2659,14 +2659,14 @@ id: toolu_01U6Uv4RSre7d6xKi7ZquNEf
 tool_result
 id: toolu_01U6Uv4RSre7d6xKi7ZquNEf
 ```
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/style.css:225:    --ucpa-lupa: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' style='width:100px;height:auto;fill:%23262626' viewBox='0 0 12.7 12.93'%3E%3Cpath d='M5.5 11.01c-3.03 0-5.5-2.47-5.5-5.5C0 2.47 2.47 0 5.51 0c3.04 0 5.51 2.47 5.51 5.51 0 3.04-2.47 5.5-5.51 5.5ZM5.5.58C2.79.58.58 2.79.58 5.51c0 2.71 2.21 4.92 4.92 4.92s4.93-2.21 4.93-4.92C10.43 2.79 8.22.59 5.5.59Z' class='cls-1'/%3E%3Cpath d='M12.41 12.93c-.07 0-.15-.03-.21-.09L8.96 9.6c-.11-.11-.11-.3 0-.41.11-.11.3-.11.41 0l3.24 3.24c.11.11.11.3 0 .41-.06.06-.13.09-.21.09Z' /%3E%3C/svg%3E");
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/header-menu.css:153:    /* --- 9.5 Fix bug stuck-pink no menu desktop ---
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/header-menu.css:155:     * .highlighted + aria-expanded="true" quando o mouse passa rápido entre
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/header-menu.css:157:     * chegou a abrir. CSS gerado pelo Elementor trata .highlighted como
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/header-menu.css:160:     * Fix: forçar cor herdada quando .highlighted está presente mas o item
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/header-menu.css:161:     * NÃO está sendo hovered no momento — :hover é o estado real, .highlighted
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/header-menu.css:166:    .elementor-location-header .elementor-nav-menu--main a.elementor-item.highlighted:not(:hover):not(:focus):not(.elementor-item-active) {
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/header-menu.css:172:/* --- 9.4 Mobile / Tablet ---
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/style.css:225:    --ucpa-lupa: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' style='width:100px;height:auto;fill:%23262626' viewBox='0 0 12.7 12.93'%3E%3Cpath d='M5.5 11.01c-3.03 0-5.5-2.47-5.5-5.5C0 2.47 2.47 0 5.51 0c3.04 0 5.51 2.47 5.51 5.51 0 3.04-2.47 5.5-5.51 5.5ZM5.5.58C2.79.58.58 2.79.58 5.51c0 2.71 2.21 4.92 4.92 4.92s4.93-2.21 4.93-4.92C10.43 2.79 8.22.59 5.5.59Z' class='cls-1'/%3E%3Cpath d='M12.41 12.93c-.07 0-.15-.03-.21-.09L8.96 9.6c-.11-.11-.11-.3 0-.41.11-.11.3-.11.41 0l3.24 3.24c.11.11.11.3 0 .41-.06.06-.13.09-.21.09Z' /%3E%3C/svg%3E");
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/header-menu.css:153:    /* --- 9.5 Fix bug stuck-pink no menu desktop ---
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/header-menu.css:155:     * .highlighted + aria-expanded="true" quando o mouse passa rápido entre
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/header-menu.css:157:     * chegou a abrir. CSS gerado pelo Elementor trata .highlighted como
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/header-menu.css:160:     * Fix: forçar cor herdada quando .highlighted está presente mas o item
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/header-menu.css:161:     * NÃO está sendo hovered no momento — :hover é o estado real, .highlighted
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/header-menu.css:166:    .elementor-location-header .elementor-nav-menu--main a.elementor-item.highlighted:not(:hover):not(:focus):not(.elementor-item-active) {
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/header-menu.css:172:/* --- 9.4 Mobile / Tablet ---
 ```
 
 > AGENT
@@ -2679,7 +2679,7 @@ tool_use Read
 id: toolu_01R9CkYTqukdRhnNPV7pCCQ8
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/header-menu.css",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/header-menu.css",
   "offset": 140,
   "limit": 50
 }
@@ -2740,7 +2740,7 @@ tool_use Bash
 id: toolu_01KkgYgqKB3Wct6P3faQNTYZ
 ```json
 {
-  "command": "grep -rn \"style.css\\|header-menu.css\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/functions.php 2>&1 | head -10",
+  "command": "grep -rn \"style.css\\|header-menu.css\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/functions.php 2>&1 | head -10",
   "description": "Find CSS enqueue version"
 }
 ```
@@ -2750,10 +2750,10 @@ id: toolu_01KkgYgqKB3Wct6P3faQNTYZ
 tool_result
 id: toolu_01KkgYgqKB3Wct6P3faQNTYZ
 ```
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/functions.php:36:        get_template_directory_uri() . '/style.css'
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/functions.php:42:        get_stylesheet_directory_uri() . '/style.css',
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/functions.php:58:        "$theme_uri/css/header-menu.css",
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/functions.php:382:    wp_enqueue_style('bureau-it-admin-css', get_stylesheet_directory_uri() . '/admin-style.css');
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/functions.php:36:        get_template_directory_uri() . '/style.css'
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/functions.php:42:        get_stylesheet_directory_uri() . '/style.css',
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/functions.php:58:        "$theme_uri/css/header-menu.css",
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/functions.php:382:    wp_enqueue_style('bureau-it-admin-css', get_stylesheet_directory_uri() . '/admin-style.css');
 ```
 
 > TOOL
@@ -2762,7 +2762,7 @@ tool_use Read
 id: toolu_0196Htazfgav29WFiYJWVavT
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/functions.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/functions.php",
   "offset": 50,
   "limit": 25
 }
@@ -2806,7 +2806,7 @@ tool_use Bash
 id: toolu_01Aot9RxFjL7p1wkgwzwJ259
 ```json
 {
-  "command": "grep -n \"Version:\\|\\$ver = \\|theme_version\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/functions.php /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/style.css 2>&1 | head -10",
+  "command": "grep -n \"Version:\\|\\$ver = \\|theme_version\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/functions.php /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/style.css 2>&1 | head -10",
   "description": "Find theme version"
 }
 ```
@@ -2816,7 +2816,7 @@ id: toolu_01Aot9RxFjL7p1wkgwzwJ259
 tool_result
 id: toolu_01Aot9RxFjL7p1wkgwzwJ259
 ```
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/style.css:5:Version: 2.2.28
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/style.css:5:Version: 2.2.28
 ```
 
 > TOOL
@@ -2825,7 +2825,7 @@ tool_use Bash
 id: toolu_01HqPErQVowacTFZuXaamGHB
 ```json
 {
-  "command": "grep -n \"ver = \\|\\\\\\$ver\\|wp_get_theme\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/functions.php 2>&1 | head -10",
+  "command": "grep -n \"ver = \\|\\\\\\$ver\\|wp_get_theme\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/functions.php 2>&1 | head -10",
   "description": "Find version variable"
 }
 ```
@@ -3084,7 +3084,7 @@ id: toolu_01MTpxZqNS1FvaUUXieLy8SY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
   "old_string": "\t\tif ( $last_hover ) {\n\t\t\t$element->add_group_control(\n\t\t\t\t\\Elementor\\Group_Control_Typography::get_type(),\n\t\t\t\t[\n\t\t\t\t\t'name'     => 'bit_menu_typography_hover',\n\t\t\t\t\t'label'    => esc_html__( 'Tipografia', 'bit' ),\n\t\t\t\t\t'selector' => '{{WRAPPER}} .elementor-nav-menu--main .elementor-item:hover,\n\t\t\t\t\t\t{{WRAPPER}} .elementor-nav-menu--main .elementor-item:focus,\n\t\t\t\t\t\t{{WRAPPER}} .elementor-nav-menu--main .elementor-item.highlighted',\n\t\t\t\t],",
   "new_string": "\t\tif ( $last_hover ) {\n\t\t\t$element->add_group_control(\n\t\t\t\t\\Elementor\\Group_Control_Typography::get_type(),\n\t\t\t\t[\n\t\t\t\t\t'name'     => 'bit_menu_typography_hover',\n\t\t\t\t\t'label'    => esc_html__( 'Tipografia', 'bit' ),\n\t\t\t\t\t// Inclui :hover/:focus e .highlighted SOMENTE quando também em hover/focus —\n\t\t\t\t\t// evita ativar tipografia hover em items com .highlighted stuck (bug do\n\t\t\t\t\t// SmartMenus que o Elementor Pro usa). Override 9.5 do header-menu.css\n\t\t\t\t\t// neutraliza color/fill nesse mesmo cenário; aqui evitamos contaminar\n\t\t\t\t\t// font-family/size/weight/etc na mesma situação.\n\t\t\t\t\t'selector' => '{{WRAPPER}} .elementor-nav-menu--main .elementor-item:hover,\n\t\t\t\t\t\t{{WRAPPER}} .elementor-nav-menu--main .elementor-item:focus,\n\t\t\t\t\t\t{{WRAPPER}} .elementor-nav-menu--main .elementor-item.highlighted:hover,\n\t\t\t\t\t\t{{WRAPPER}} .elementor-nav-menu--main .elementor-item.highlighted:focus',\n\t\t\t\t],"
 }
@@ -3095,7 +3095,7 @@ id: toolu_01MTpxZqNS1FvaUUXieLy8SY
 tool_result
 id: toolu_01MTpxZqNS1FvaUUXieLy8SY
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3105,7 +3105,7 @@ id: toolu_01RwxV4WUZYjcsF6U7YaZwEW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
   "old_string": " * Version:     1.3.0",
   "new_string": " * Version:     1.3.1"
 }
@@ -3116,7 +3116,7 @@ id: toolu_01RwxV4WUZYjcsF6U7YaZwEW
 tool_result
 id: toolu_01RwxV4WUZYjcsF6U7YaZwEW
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3125,7 +3125,7 @@ tool_use Bash
 id: toolu_01DtKgQULmQDfJDTiCkxiZNP
 ```json
 {
-  "command": "cp /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php /Users/dcambria/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-nav-menu-extra-controls.php && docker exec -u www-data concertacao-dev-wordpress wp --url=https://cambrasmax.local:8484 elementor flush-css 2>&1 | tail -2 && docker exec -u www-data concertacao-dev-wordpress wp --url=https://cambrasmax.local:8484 eval \"(new \\Elementor\\Core\\Files\\CSS\\Post(39359))->update();\" 2>&1 | tail -2",
+  "command": "cp /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php /home/<USER>/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-nav-menu-extra-controls.php && docker exec -u www-data concertacao-dev-wordpress wp --url=https://cambrasmax.local:8484 elementor flush-css 2>&1 | tail -2 && docker exec -u www-data concertacao-dev-wordpress wp --url=https://cambrasmax.local:8484 eval \"(new \\Elementor\\Core\\Files\\CSS\\Post(39359))->update();\" 2>&1 | tail -2",
   "description": "Sync canonical, flush all CSS, regen menu CSS"
 }
 ```
@@ -3184,7 +3184,7 @@ tool_use Bash
 id: toolu_01RTWKwX4a7kWTtvAsryHvDh
 ```json
 {
-  "command": "grep -n \"submenu\\|sub-menu\\|nav-menu--dropdown\\|elementor-sub-item\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/header-menu.css | head -30",
+  "command": "grep -n \"submenu\\|sub-menu\\|nav-menu--dropdown\\|elementor-sub-item\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/header-menu.css | head -30",
   "description": "Find submenu CSS rules"
 }
 ```
@@ -3195,7 +3195,7 @@ tool_use Bash
 id: toolu_011DJEEAaa1o9thjabuM22FB
 ```json
 {
-  "command": "cat /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php | head -80",
+  "command": "cat /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php | head -80",
   "description": "Read inline submenu mu-plugin"
 }
 ```
@@ -3311,7 +3311,7 @@ tool_use Bash
 id: toolu_013of4rvb62o1nfoNzQxk2Ce
 ```json
 {
-  "command": "grep -rn \"\\-\\-bis-\\|--bit-submenu-height\\|--bit-submenu-top\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/ 2>/dev/null | head -40",
+  "command": "grep -rn \"\\-\\-bis-\\|--bit-submenu-height\\|--bit-submenu-top\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/ 2>/dev/null | head -40",
   "description": "Find all bis-* CSS var definitions and usages"
 }
 ```
@@ -3321,41 +3321,41 @@ id: toolu_013of4rvb62o1nfoNzQxk2Ce
 tool_result
 id: toolu_013of4rvb62o1nfoNzQxk2Ce
 ```
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:8: *     --bis-bg:                 #0F4C5C;
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:9: *     --bis-text:               rgba(255,252,247,0.75);
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:10: *     --bis-text-hover:         #FFFCF7;
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:11: *     --bis-text-hover-weight:  600;
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:12: *     --bis-text-active:        #FFFCF7;
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:13: *     --bis-border-active:      rgba(255,252,247,0.70);
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:54:  --bis-bg:                 var(--e-global-color-96a86ed);  /* Color Extra 1 */
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:55:  --bis-bg-hover:           var(--e-global-color-96a86ed);  /* Color Extra 1 */
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:56:  --bis-text:               var(--e-global-color-4a4a8de);  /* Header Submenu txt */
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:57:  --bis-text-hover:         var(--e-global-color-accent);   /* Accent color */
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:58:  --bis-text-hover-weight:  700;
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:59:  --bis-text-active:        var(--e-global-color-accent);   /* Accent color */
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:60:  --bis-border-active:      var(--e-global-color-accent);   /* Accent color */
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:61:  --bis-diamond:            var(--bis-bg);
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:69:  top: var(--bit-submenu-top, 80px);
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:81:  height: var(--bit-submenu-height, 72px);
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:86:  background: var(--bis-bg);
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:123:  background: var(--bis-diamond);
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:135:  background: var(--bis-bg);
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:136:  height: var(--bit-submenu-height, 72px);
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:163:  height: var(--bit-submenu-height, 72px);
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:164:  color: var(--bis-text);
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:177:  font-weight: var(--bis-text-hover-weight, 700);
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:190:  color: var(--bis-text-hover);
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:191:  font-weight: var(--bis-text-hover-weight, 700);
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:192:  background-color: var(--bis-bg-hover);
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:197:  color: var(--bis-text-active);
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:198:  font-weight: var(--bis-text-hover-weight, 700);
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:200:  border-bottom: 2px solid var(--bis-border-active);
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:204:  color: var(--bis-text-active);
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:205:  font-weight: var(--bis-text-hover-weight, 700);
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:207:  border-bottom: 2px solid var(--bis-border-active);
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:221:    font-weight: var(--bis-text-hover-weight, 700);
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:233:    font-weight: var(--bis-text-hover-weight, 700) !important;
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:247:  font-weight: var(--bis-text-hover-weight, 700) !important;
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:8: *     --bis-bg:                 #0F4C5C;
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:9: *     --bis-text:               rgba(255,252,247,0.75);
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:10: *     --bis-text-hover:         #FFFCF7;
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:11: *     --bis-text-hover-weight:  600;
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:12: *     --bis-text-active:        #FFFCF7;
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:13: *     --bis-border-active:      rgba(255,252,247,0.70);
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:54:  --bis-bg:                 var(--e-global-color-96a86ed);  /* Color Extra 1 */
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:55:  --bis-bg-hover:           var(--e-global-color-96a86ed);  /* Color Extra 1 */
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:56:  --bis-text:               var(--e-global-color-4a4a8de);  /* Header Submenu txt */
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:57:  --bis-text-hover:         var(--e-global-color-accent);   /* Accent color */
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:58:  --bis-text-hover-weight:  700;
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:59:  --bis-text-active:        var(--e-global-color-accent);   /* Accent color */
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:60:  --bis-border-active:      var(--e-global-color-accent);   /* Accent color */
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:61:  --bis-diamond:            var(--bis-bg);
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:69:  top: var(--bit-submenu-top, 80px);
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:81:  height: var(--bit-submenu-height, 72px);
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:86:  background: var(--bis-bg);
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:123:  background: var(--bis-diamond);
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:135:  background: var(--bis-bg);
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:136:  height: var(--bit-submenu-height, 72px);
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:163:  height: var(--bit-submenu-height, 72px);
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:164:  color: var(--bis-text);
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:177:  font-weight: var(--bis-text-hover-weight, 700);
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:190:  color: var(--bis-text-hover);
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:191:  font-weight: var(--bis-text-hover-weight, 700);
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:192:  background-color: var(--bis-bg-hover);
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:197:  color: var(--bis-text-active);
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:198:  font-weight: var(--bis-text-hover-weight, 700);
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:200:  border-bottom: 2px solid var(--bis-border-active);
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:204:  color: var(--bis-text-active);
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:205:  font-weight: var(--bis-text-hover-weight, 700);
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:207:  border-bottom: 2px solid var(--bis-border-active);
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:221:    font-weight: var(--bis-text-hover-weight, 700);
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:233:    font-weight: var(--bis-text-hover-weight, 700) !important;
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css:247:  font-weight: var(--bis-text-hover-weight, 700) !important;
 ```
 
 > TOOL
@@ -3364,7 +3364,7 @@ tool_use Read
 id: toolu_01BcZHao7LATVUvyA64TKDPU
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css",
   "offset": 1,
   "limit": 80
 }
@@ -3487,7 +3487,7 @@ tool_use Read
 id: toolu_019HBe1dHoUe3xyGiDxVhFdR
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css",
   "offset": 80,
   "limit": 260
 }
@@ -3630,7 +3630,7 @@ tool_use Read
 id: toolu_01B5Trpg3JqYez5VQPCPhVuF
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
   "offset": 100,
   "limit": 50
 }
@@ -3705,7 +3705,7 @@ tool_use Bash
 id: toolu_011PXLKR5xAd55Vxzi82DFJg
 ```json
 {
-  "command": "grep -n \"start_controls_section\\|end_controls_section\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/nav-menu.php | tail -10",
+  "command": "grep -n \"start_controls_section\\|end_controls_section\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/nav-menu.php | tail -10",
   "description": "Find last style section in nav-menu"
 }
 ```
@@ -3735,7 +3735,7 @@ tool_use Bash
 id: toolu_01FaaDLxbNPtEebQHHCe1cqt
 ```json
 {
-  "command": "grep -n \"after_section_end\\|after_section_start\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php | head -10",
+  "command": "grep -n \"after_section_end\\|after_section_start\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/base/controls-stack.php | head -10",
   "description": "Check after_section_end hook"
 }
 ```
@@ -3764,7 +3764,7 @@ id: toolu_01QXqEDKpyzG77D6hzqUPqhL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
   "old_string": " * Version:     1.3.1",
   "new_string": " * Version:     1.4.0"
 }
@@ -3775,7 +3775,7 @@ id: toolu_01QXqEDKpyzG77D6hzqUPqhL
 tool_result
 id: toolu_01QXqEDKpyzG77D6hzqUPqhL
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3785,7 +3785,7 @@ id: toolu_013ahjKNqXKDieYkdvgNcvX9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
   "old_string": "add_action(\n\t'elementor/element/nav-menu/section_style_dropdown/before_section_end',\n\tfunction ( $element, $args ) {\n\t\t$element->add_responsive_control(\n\t\t\t'bit_dropdown_item_padding',\n\t\t\t[\n\t\t\t\t'label'      => esc_html__( 'Padding da lista suspensa', 'bit' ),\n\t\t\t\t'type'       => \\Elementor\\Controls_Manager::DIMENSIONS,\n\t\t\t\t'size_units' => [ 'px', 'em', 'rem', '%', 'custom' ],\n\t\t\t\t'selectors'  => [\n\t\t\t\t\t'{{WRAPPER}} .elementor-nav-menu--dropdown a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',\n\t\t\t\t],\n\t\t\t],\n\t\t\t[\n\t\t\t\t'position' => [\n\t\t\t\t\t'type' => 'control',\n\t\t\t\t\t'at'   => 'after',\n\t\t\t\t\t'of'   => 'padding_vertical_dropdown_item',\n\t\t\t\t],\n\t\t\t]\n\t\t);\n\t},\n\t10,\n\t2\n);",
   "new_string": "add_action(\n\t'elementor/element/nav-menu/section_style_dropdown/before_section_end',\n\tfunction ( $element, $args ) {\n\t\t$element->add_responsive_control(\n\t\t\t'bit_dropdown_item_padding',\n\t\t\t[\n\t\t\t\t'label'      => esc_html__( 'Padding da lista suspensa', 'bit' ),\n\t\t\t\t'type'       => \\Elementor\\Controls_Manager::DIMENSIONS,\n\t\t\t\t'size_units' => [ 'px', 'em', 'rem', '%', 'custom' ],\n\t\t\t\t'selectors'  => [\n\t\t\t\t\t'{{WRAPPER}} .elementor-nav-menu--dropdown a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',\n\t\t\t\t],\n\t\t\t],\n\t\t\t[\n\t\t\t\t'position' => [\n\t\t\t\t\t'type' => 'control',\n\t\t\t\t\t'at'   => 'after',\n\t\t\t\t\t'of'   => 'padding_vertical_dropdown_item',\n\t\t\t\t],\n\t\t\t]\n\t\t);\n\t},\n\t10,\n\t2\n);\n\n/**\n * Submenu Inline (Desktop) — nova seção de estilo.\n *\n * Controla a barra horizontal de submenu (.bit-hover-bar + .bit-subnav-bar)\n * renderizada pelo mu-plugin bit-inline-submenu quando o widget tem a CSS\n * class `menu-submenu-inline`.\n *\n * Os controles emitem CSS vars `--bis-*` no wrapper do widget; o CSS do\n * mu-plugin (bit-inline-submenu.css) consome essas vars. As vars têm fallback\n * via JS (bit-inline-submenu.php copia computed style do widget para\n * .bit-hover-bar no body — mantém isolamento de cada widget).\n *\n * Hook: after_section_end de `style_toggle` (última seção de estilo do widget).\n */\nadd_action(\n\t'elementor/element/nav-menu/style_toggle/after_section_end',\n\tfunction ( $element, $args ) {\n\t\t$element->start_controls_section(\n\t\t\t'bit_section_style_submenu_inline',\n\t\t\t[\n\t\t\t\t'label' => esc_html__( 'Submenu Inline (Desktop)', 'bit' ),\n\t\t\t\t'tab' […]
 
@@ -3794,7 +3794,7 @@ id: toolu_013ahjKNqXKDieYkdvgNcvX9
 tool_result
 id: toolu_013ahjKNqXKDieYkdvgNcvX9
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3854,7 +3854,7 @@ id: toolu_01WY1N23LK1e169Ns5Y9RGsx
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
   "old_string": "add_action(\n\t'elementor/element/nav-menu/section_style_main-menu/before_section_end',\n\tfunction ( $element, $args ) {\n\t\t$last_normal = bit_nav_menu_last_control_in_tab( $element, 'tab_menu_item_normal' );\n\t\t$last_hover  = bit_nav_menu_last_control_in_tab( $element, 'tab_menu_item_hover' );\n\t\t$last_active = bit_nav_menu_last_control_in_tab( $element, 'tab_menu_item_active' );",
   "new_string": "add_action(\n\t'elementor/element/nav-menu/section_style_main-menu/before_section_end',\n\tfunction ( $element, $args ) {\n\t\t// Esconde a Tipografia global nativa — redundante com as por estado abaixo.\n\t\t// `update_control` preserva valores salvos no banco; usuário não perde nada.\n\t\t$element->update_control( 'menu_typography_typography', [\n\t\t\t'type' => \\Elementor\\Controls_Manager::HIDDEN,\n\t\t] );\n\t\tforeach ( [ 'font_family', 'font_size', 'font_weight', 'text_transform', 'font_style', 'text_decoration', 'line_height', 'letter_spacing', 'word_spacing' ] as $field ) {\n\t\t\t$element->update_control( 'menu_typography_' . $field, [\n\t\t\t\t'type' => \\Elementor\\Controls_Manager::HIDDEN,\n\t\t\t] );\n\t\t}\n\n\t\t$last_normal = bit_nav_menu_last_control_in_tab( $element, 'tab_menu_item_normal' );\n\t\t$last_hover  = bit_nav_menu_last_control_in_tab( $element, 'tab_menu_item_hover' );\n\t\t$last_active = bit_nav_menu_last_control_in_tab( $element, 'tab_menu_item_active' );"
 }
@@ -3865,7 +3865,7 @@ id: toolu_01WY1N23LK1e169Ns5Y9RGsx
 tool_result
 id: toolu_01WY1N23LK1e169Ns5Y9RGsx
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3875,7 +3875,7 @@ id: toolu_01JugRJPLfzgkCMqwdMdZR7v
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
   "old_string": " * Version:     1.4.0",
   "new_string": " * Version:     1.4.1"
 }
@@ -3886,7 +3886,7 @@ id: toolu_01JugRJPLfzgkCMqwdMdZR7v
 tool_result
 id: toolu_01JugRJPLfzgkCMqwdMdZR7v
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3895,7 +3895,7 @@ tool_use Bash
 id: toolu_01Hfj6oZNUKW8GZUG8v8Zwja
 ```json
 {
-  "command": "cp /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php /Users/dcambria/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-nav-menu-extra-controls.php && docker exec -u www-data concertacao-dev-wordpress wp --url=https://cambrasmax.local:8484 elementor flush-css 2>&1 | tail -2",
+  "command": "cp /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php /home/<USER>/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-nav-menu-extra-controls.php && docker exec -u www-data concertacao-dev-wordpress wp --url=https://cambrasmax.local:8484 elementor flush-css 2>&1 | tail -2",
   "description": "Sync canonical + flush"
 }
 ```
@@ -4129,7 +4129,7 @@ id: toolu_01NN5e1N9uUJH8czS6Kk3VBZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css",
   "old_string": "/* ── 3. Variáveis de cores (pareadas com Global Colors do Elementor) ───────── */\n.menu-submenu-inline {\n  --bis-bg:                 var(--e-global-color-96a86ed);  /* Color Extra 1 */\n  --bis-bg-hover:           var(--e-global-color-96a86ed);  /* Color Extra 1 */\n  --bis-text:               var(--e-global-color-4a4a8de);  /* Header Submenu txt */\n  --bis-text-hover:         var(--e-global-color-accent);   /* Accent color */\n  --bis-text-hover-weight:  700;\n  --bis-text-active:        var(--e-global-color-accent);   /* Accent color */\n  --bis-border-active:      var(--e-global-color-accent);   /* Accent color */\n  --bis-diamond:            var(--bis-bg);\n}",
   "new_string": "/* ── 3. Variáveis de cores ─────────────────────────────────────────────────────\n * Os defaults agora vêm dos controles do painel Elementor\n * (bit-nav-menu-extra-controls.php v1.4.0+ → \"Submenu Inline (Desktop)\"):\n *\n *   --bis-bg / --bis-bg-hover / --bis-text / --bis-text-hover / --bis-text-active\n *   --bis-text-hover-weight / --bis-border-active / --bis-diamond\n *   --bit-submenu-height\n *\n * Os controles ativam Global Colors do Elementor por default. CSS estático\n * só sobrevive como FALLBACK para o caso de o widget não ter os controles\n * configurados (ex: instalação nova) — usa Global Colors via var() direto.\n */\n.menu-submenu-inline:not([style*=\"--bis-bg\"]) {\n  --bis-bg:                 var(--e-global-color-96a86ed);\n  --bis-bg-hover:           var(--e-global-color-96a86ed);\n  --bis-text:               var(--e-global-color-4a4a8de);\n  --bis-text-hover:         var(--e-global-color-accent);\n  --bis-text-hover-weight:  700;\n  --bis-text-active:        var(--e-global-color-accent);\n  --bis-border-active:      var(--e-global-color-accent);\n  --bis-diamond:            var(--bis-bg);\n}"
 }
@@ -4140,7 +4140,7 @@ id: toolu_01NN5e1N9uUJH8czS6Kk3VBZ
 tool_result
 id: toolu_01NN5e1N9uUJH8czS6Kk3VBZ
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4156,7 +4156,7 @@ id: toolu_018aZL7SWypYroCtHKFgqZoJ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css",
   "old_string": ".menu-submenu-inline:not([style*=\"--bis-bg\"]) {\n  --bis-bg:                 var(--e-global-color-96a86ed);\n  --bis-bg-hover:           var(--e-global-color-96a86ed);\n  --bis-text:               var(--e-global-color-4a4a8de);\n  --bis-text-hover:         var(--e-global-color-accent);\n  --bis-text-hover-weight:  700;\n  --bis-text-active:        var(--e-global-color-accent);\n  --bis-border-active:      var(--e-global-color-accent);\n  --bis-diamond:            var(--bis-bg);\n}",
   "new_string": ".menu-submenu-inline {\n  --bis-bg:                 var(--e-global-color-96a86ed);\n  --bis-bg-hover:           var(--e-global-color-96a86ed);\n  --bis-text:               var(--e-global-color-4a4a8de);\n  --bis-text-hover:         var(--e-global-color-accent);\n  --bis-text-hover-weight:  700;\n  --bis-text-active:        var(--e-global-color-accent);\n  --bis-border-active:      var(--e-global-color-accent);\n  --bis-diamond:            var(--bis-bg);\n}"
 }
@@ -4167,7 +4167,7 @@ id: toolu_018aZL7SWypYroCtHKFgqZoJ
 tool_result
 id: toolu_018aZL7SWypYroCtHKFgqZoJ
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4252,7 +4252,7 @@ id: toolu_01Rw3Xwjy5FnQta2pfHSomzR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
   "old_string": " * Version:     1.5.0",
   "new_string": " * Version:     1.6.0"
 }
@@ -4273,7 +4273,7 @@ id: toolu_016RWHzjBBKtb6bJfy5ifENA
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
   "old_string": "define( 'BIT_INLINE_SUBMENU_VERSION', '1.5.0' );",
   "new_string": "define( 'BIT_INLINE_SUBMENU_VERSION', '1.6.0' );"
 }
@@ -4293,7 +4293,7 @@ tool_use Read
 id: toolu_015UooLwcdubyqSrj8TYSvkd
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
   "offset": 1,
   "limit": 25
 }
@@ -4338,7 +4338,7 @@ id: toolu_01XS8hG6ENpdxgYeqrACE2GT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
   "old_string": " * Version:     1.5.0\n * Author:      Bureau IT\n */\n\nif ( ! defined( 'ABSPATH' ) ) {\n    exit;\n}\n\ndefine( 'BIT_INLINE_SUBMENU_VERSION', '1.5.0' );",
   "new_string": " * Version:     1.6.0\n * Author:      Bureau IT\n */\n\nif ( ! defined( 'ABSPATH' ) ) {\n    exit;\n}\n\ndefine( 'BIT_INLINE_SUBMENU_VERSION', '1.6.0' );"
 }
@@ -4349,7 +4349,7 @@ id: toolu_01XS8hG6ENpdxgYeqrACE2GT
 tool_result
 id: toolu_01XS8hG6ENpdxgYeqrACE2GT
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4396,7 +4396,7 @@ tool_use Bash
 id: toolu_0172ati5Qb1JSMG1CnjHwsLF
 ```json
 {
-  "command": "cp /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php /Users/dcambria/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-inline-submenu.php && cp /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css /Users/dcambria/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-inline-submenu.css && docker exec -u www-data concertacao-dev-wordpress wp --url=https://cambrasmax.local:8484 elementor flush-css 2>&1 | tail -2 && docker exec -u www-data concertacao-dev-wordpress wp --url=https://cambrasmax.local:8484 eval \"(new \\Elementor\\Core\\Files\\CSS\\Post(39359))->update();\" 2>&1 | tail -2",
+  "command": "cp /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php /home/<USER>/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-inline-submenu.php && cp /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css /home/<USER>/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-inline-submenu.css && docker exec -u www-data concertacao-dev-wordpress wp --url=https://cambrasmax.local:8484 elementor flush-css 2>&1 | tail -2 && docker exec -u www-data concertacao-dev-wordpress wp --url=https://cambrasmax.local:8484 eval \"(new \\Elementor\\Core\\Files\\CSS\\Post(39359))->update();\" 2>&1 | tail -2",
   "description": "Sync canonical + flush all caches + regen template CSS"
 }
 ```
@@ -4474,7 +4474,7 @@ tool_use Bash
 id: toolu_011x5ZYWDj9BB9TzeTEE5H3n
 ```json
 {
-  "command": "grep -n \"wp_footer\\|wp_enqueue_scripts\\|editor\\|preview\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php | head -20",
+  "command": "grep -n \"wp_footer\\|wp_enqueue_scripts\\|editor\\|preview\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php | head -20",
   "description": "Find hooks in inline-submenu plugin"
 }
 ```
@@ -4494,7 +4494,7 @@ tool_use Read
 id: toolu_01UrpK1fz8zcf93osUDXC3jf
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
   "offset": 22,
   "limit": 220
 }
@@ -4572,7 +4572,7 @@ id: toolu_01R93tFjDdHku7UZsPKtsgLE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
   "old_string": "// ── CSS ──────────────────────────────────────────────────────────────────────\nadd_action( 'wp_enqueue_scripts', function () {\n    wp_enqueue_style(\n        'bit-inline-submenu',\n        WPMU_PLUGIN_URL . '/bit-inline-submenu.css',\n        [],\n        filemtime( WPMU_PLUGIN_DIR . '/bit-inline-submenu.css' )\n    );\n} );",
   "new_string": "// ── CSS ──────────────────────────────────────────────────────────────────────\nadd_action( 'wp_enqueue_scripts', function () {\n    wp_enqueue_style(\n        'bit-inline-submenu',\n        WPMU_PLUGIN_URL . '/bit-inline-submenu.css',\n        [],\n        filemtime( WPMU_PLUGIN_DIR . '/bit-inline-submenu.css' )\n    );\n} );\n\n// CSS também no editor Elementor (preview iframe usa enqueue separado)\nadd_action( 'elementor/editor/after_enqueue_styles', function () {\n    wp_enqueue_style(\n        'bit-inline-submenu-editor',\n        WPMU_PLUGIN_URL . '/bit-inline-submenu.css',\n        [],\n        filemtime( WPMU_PLUGIN_DIR . '/bit-inline-submenu.css' )\n    );\n} );\nadd_action( 'elementor/preview/enqueue_styles', function () {\n    wp_enqueue_style(\n        'bit-inline-submenu-preview',\n        WPMU_PLUGIN_URL . '/bit-inline-submenu.css',\n        [],\n        filemtime( WPMU_PLUGIN_DIR . '/bit-inline-submenu.css' )\n    );\n} );"
 }
@@ -4583,7 +4583,7 @@ id: toolu_01R93tFjDdHku7UZsPKtsgLE
 tool_result
 id: toolu_01R93tFjDdHku7UZsPKtsgLE
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4599,7 +4599,7 @@ id: toolu_01CHo75wKUcjyqnCLx288Kev
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
   "old_string": "// ── JS ───────────────────────────────────────────────────────────────────────\nadd_action( 'wp_footer', function () { ?>\n<script id=\"bit-inline-submenu-js\">\n(function () {\n  function init() {\n    var widget = document.querySelector('.menu-submenu-inline');\n    if (!widget) return;\n\n    // ── Calcular posição top = base do header ─────────────────────────────\n    var header = document.querySelector('.elementor-location-header');\n    function updateTop() {\n      if (!header) return;\n      var bottom = header.getBoundingClientRect().bottom;\n      document.documentElement.style.setProperty(\n        '--bit-submenu-top',\n        bottom + 'px'\n      );\n    }\n    updateTop();\n\n    if (window.ResizeObserver && header) {\n      new ResizeObserver(updateTop).observe(header);\n    }",
   "new_string": "// ── JS ───────────────────────────────────────────────────────────────────────\nadd_action( 'wp_footer', function () {\n    // No editor Elementor (modo \"edit\"), o canvas é outro iframe — o wp_footer\n    // do CANVAS dispara em elementor/preview, então o script roda também lá.\n    // No iframe do PAINEL (admin do editor), não queremos o script.\n    if ( did_action( 'elementor/loaded' ) && isset( $_GET['action'] ) && 'elementor' === $_GET['action'] ) {\n        return;\n    }\n    bit_inline_submenu_print_script();\n} );\n\n// Preview (canvas do editor): script enfileirado via hook próprio do Elementor\nadd_action( 'elementor/preview/footer', 'bit_inline_submenu_print_script' );\n\nfunction bit_inline_submenu_print_script() { ?>\n<script id=\"bit-inline-submenu-js\">\n(function () {\n  var isEditor = !!(window.elementorFrontend && window.elementorFrontend.isEditMode && window.elementorFrontend.isEditMode());\n\n  function init() {\n    var widget = document.querySelector('.menu-submenu-inline');\n    if (!widget) return;\n\n    // ── Calcular posição top = base do header ─────────────────────────────\n    // No frontend: âncora = .elementor-location-header (fixed/sticky).\n    // No editor: header não existe […]
 
@@ -4608,7 +4608,7 @@ id: toolu_01CHo75wKUcjyqnCLx288Kev
 tool_result
 id: toolu_01CHo75wKUcjyqnCLx288Kev
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4622,7 +4622,7 @@ id: toolu_01WYmS12XK7EPh16ZuvtKCED
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
   "old_string": "    if (!activeParent) return;\n\n    // Injetar barra in-flow após o header (rola com a página — não é sticky)\n    var activeSub = activeParent.querySelector('.sub-menu');\n    if (activeSub && header) {\n      var bar = document.createElement('div');\n      bar.className = 'bit-subnav-bar';\n\n      // Clonar itens do sub-menu para a barra in-flow\n      var ul = document.createElement('ul');\n      activeSub.querySelectorAll('li').forEach(function(li) {\n        var cloned = li.cloneNode(true);\n        var a = cloned.querySelector('a');\n        if (a) { a.dataset.text = a.textContent.trim(); }\n        ul.appendChild(cloned);\n      });\n      bar.appendChild(ul);\n\n      // Herdar CSS vars do widget\n      ['--bis-bg','--bis-bg-hover','--bis-text','--bis-text-hover','--bis-text-hover-weight',\n       '--bis-text-active','--bis-border-active','--bit-submenu-height'].forEach(function(v) {\n        var val = wComputed.getPropertyValue(v).trim();\n        if (val) bar.style.setProperty(v, val);\n      });\n\n      // Inserir após o header (in-flow — rola com a página naturalmente)\n      header.insertAdjacentElement('afterend', bar);\n    }\n  }\n\n  if (document.readyState !== 'loading') {\n    init();\n  } else {\n    document.addEventListener('DOMContentLoaded', init);\n  }\n})();\n</script>\n<?php }, 20 );",
   "new_string": "    // No editor: forçar exibição do primeiro item-com-filhos como \"ativo\"\n    // mesmo sem URL match — assim o preview sempre mostra a barra in-flow.\n    if (!activeParent && isEditor) {\n      activeParent = widget.querySelector('.elementor-nav-menu > li.menu-item-has-children');\n    }\n\n    if (!activeParent) return;\n\n    // Injetar barra in-flow após o header (rola com a página — não é sticky)\n    var activeSub = activeParent.querySelector('.sub-menu');\n    if (activeSub && header) {\n      // Remover barra antiga (re-init no editor após […]
 
@@ -4631,7 +4631,7 @@ id: toolu_01WYmS12XK7EPh16ZuvtKCED
 tool_result
 id: toolu_01WYmS12XK7EPh16ZuvtKCED
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4680,7 +4680,7 @@ id: toolu_011GJnUVM4kZe6GzLUie2B67
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
   "old_string": " * Version:     1.6.0\n * Author:      Bureau IT\n */\n\nif ( ! defined( 'ABSPATH' ) ) {\n    exit;\n}\n\ndefine( 'BIT_INLINE_SUBMENU_VERSION', '1.6.0' );",
   "new_string": " * Version:     1.7.0\n * Author:      Bureau IT\n */\n\nif ( ! defined( 'ABSPATH' ) ) {\n    exit;\n}\n\ndefine( 'BIT_INLINE_SUBMENU_VERSION', '1.7.0' );"
 }
@@ -4691,7 +4691,7 @@ id: toolu_011GJnUVM4kZe6GzLUie2B67
 tool_result
 id: toolu_011GJnUVM4kZe6GzLUie2B67
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4723,7 +4723,7 @@ tool_use Bash
 id: toolu_0164YfT1yBtYYiJnvAoT17uJ
 ```json
 {
-  "command": "cp /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php /Users/dcambria/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-inline-submenu.php && docker exec -u www-data concertacao-dev-wordpress wp --url=https://cambrasmax.local:8484 elementor flush-css 2>&1 | tail -2",
+  "command": "cp /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php /home/<USER>/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-inline-submenu.php && docker exec -u www-data concertacao-dev-wordpress wp --url=https://cambrasmax.local:8484 elementor flush-css 2>&1 | tail -2",
   "description": "Sync to canonical and flush"
 }
 ```
@@ -4791,7 +4791,7 @@ tool_use Bash
 id: toolu_017VUHhJsCGF2E9knKEFkyCj
 ```json
 {
-  "command": "grep -rn \"preview/footer\\|preview/enqueue_styles\\|preview_footer\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/ 2>/dev/null | head -10",
+  "command": "grep -rn \"preview/footer\\|preview/enqueue_styles\\|preview_footer\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/ 2>/dev/null | head -10",
   "description": "Verify Elementor preview/footer hook exists"
 }
 ```
@@ -4801,10 +4801,10 @@ id: toolu_017VUHhJsCGF2E9knKEFkyCj
 tool_result
 id: toolu_017VUHhJsCGF2E9knKEFkyCj
 ```
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/core/kits/manager.php:452:		add_action( 'elementor/preview/enqueue_styles', [ $this, 'preview_enqueue_styles' ], 0 );
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/preview.php:281:		do_action( 'elementor/preview/enqueue_styles' );
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/modules/styleguide/module.php:25:		add_action( 'elementor/preview/enqueue_styles', [ $this, 'enqueue_styles' ] );
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/modules/ai/module.php:110:		add_action( 'elementor/preview/enqueue_styles', function() {
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/core/kits/manager.php:452:		add_action( 'elementor/preview/enqueue_styles', [ $this, 'preview_enqueue_styles' ], 0 );
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/preview.php:281:		do_action( 'elementor/preview/enqueue_styles' );
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/modules/styleguide/module.php:25:		add_action( 'elementor/preview/enqueue_styles', [ $this, 'enqueue_styles' ] );
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/modules/ai/module.php:110:		add_action( 'elementor/preview/enqueue_styles', function() {
 ```
 
 > AGENT
@@ -4817,7 +4817,7 @@ tool_use Bash
 id: toolu_01FHeX5SaNFLtXMt11KXFQXo
 ```json
 {
-  "command": "grep -rn \"is_preview_mode\\|preview_url\\|elementor-preview\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/preview.php 2>/dev/null | head -10",
+  "command": "grep -rn \"is_preview_mode\\|preview_url\\|elementor-preview\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/preview.php 2>/dev/null | head -10",
   "description": "Find preview detection methods"
 }
 ```
@@ -4827,11 +4827,11 @@ id: toolu_01FHeX5SaNFLtXMt11KXFQXo
 tool_result
 id: toolu_01FHeX5SaNFLtXMt11KXFQXo
 ```
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/preview.php:78:		if ( is_admin() || ! $this->is_preview_mode() ) {
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/preview.php:86:					echo '<div id="elementor-preview-debug-error"><pre>';
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/preview.php:177:	public function is_preview_mode( $post_id = 0 ) {
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/preview.php:178:		if ( ! isset( $_GET['elementor-preview'] ) ) {
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/preview.php:190:		if ( $post_id !== (int) $_GET['elementor-preview'] ) {
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/preview.php:78:		if ( is_admin() || ! $this->is_preview_mode() ) {
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/preview.php:86:					echo '<div id="elementor-preview-debug-error"><pre>';
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/preview.php:177:	public function is_preview_mode( $post_id = 0 ) {
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/preview.php:178:		if ( ! isset( $_GET['elementor-preview'] ) ) {
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/includes/preview.php:190:		if ( $post_id !== (int) $_GET['elementor-preview'] ) {
 ```
 
 > AGENT
@@ -4847,7 +4847,7 @@ id: toolu_019a32w3bCvBSPehUKvfnv16
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
   "old_string": "// ── JS ───────────────────────────────────────────────────────────────────────\nadd_action( 'wp_footer', function () {\n    // No editor Elementor (modo \"edit\"), o canvas é outro iframe — o wp_footer\n    // do CANVAS dispara em elementor/preview, então o script roda também lá.\n    // No iframe do PAINEL (admin do editor), não queremos o script.\n    if ( did_action( 'elementor/loaded' ) && isset( $_GET['action'] ) && 'elementor' === $_GET['action'] ) {\n        return;\n    }\n    bit_inline_submenu_print_script();\n} );\n\n// Preview (canvas do editor): script enfileirado via hook próprio do Elementor\nadd_action( 'elementor/preview/footer', 'bit_inline_submenu_print_script' );\n\nfunction bit_inline_submenu_print_script() { ?>",
   "new_string": "// ── JS ───────────────────────────────────────────────────────────────────────\n// wp_footer dispara em frontend, em preview iframe (?elementor-preview=ID) e\n// também no canvas. Não dispara no iframe do painel admin (?action=elementor).\nadd_action( 'wp_footer', 'bit_inline_submenu_print_script' );\n\nfunction bit_inline_submenu_print_script() { ?>"
 }
@@ -4858,7 +4858,7 @@ id: toolu_019a32w3bCvBSPehUKvfnv16
 tool_result
 id: toolu_019a32w3bCvBSPehUKvfnv16
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4875,7 +4875,7 @@ tool_use Read
 id: toolu_018NnWuHjZqrc5TRUocmpiSa
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
   "offset": 200,
   "limit": 40
 }
@@ -4933,7 +4933,7 @@ tool_use Read
 id: toolu_0194JEzn8cLEnGKjufzqMqt2
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
   "offset": 238,
   "limit": 35
 }
@@ -4980,7 +4980,7 @@ id: toolu_01A7zruAd2maGypnEueqNr7X
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
   "old_string": "  if (document.readyState !== 'loading') {\n    init();\n  } else {\n    document.addEventListener('DOMContentLoaded', init);\n  }\n\n  // No editor: re-rodar quando o widget Nav Menu re-renderiza\n  if (isEditor && window.elementorFrontend) {\n    window.elementorFrontend.hooks.addAction(\n      'frontend/element_ready/nav-menu.default',\n      function () { setTimeout(reinit, 50); }\n    );\n  }\n})();",
   "new_string": "  if (document.readyState !== 'loading') {\n    init();\n  } else {\n    document.addEventListener('DOMContentLoaded', init);\n  }\n\n  // No editor: o widget é renderizado VIA JS pelo Elementor depois do\n  // DOMContentLoaded — o init inicial pode rodar antes do widget existir.\n  // Esperar elementorFrontend ficar disponível e registrar re-render hook.\n  function attachEditorHooks() {\n    if (!window.elementorFrontend || !window.elementorFrontend.hooks) {\n      return setTimeout(attachEditorHooks, 200);\n    }\n    window.elementorFrontend.hooks.addAction(\n      'frontend/element_ready/nav-menu.default',\n      function () { setTimeout(reinit, 100); }\n    );\n    // Forçar primeira renderização caso o widget já esteja no DOM\n    setTimeout(reinit, 200);\n  }\n\n  // Detectar editor por: contexto isEditor OU URL contém elementor-preview\n  // (window.elementorFrontend pode não estar pronto ao avaliar `isEditor` inicial)\n  if (window.location.search.indexOf('elementor-preview') !== -1 ||\n      window.parent !== window) {\n    attachEditorHooks();\n  }\n})();"
 }
@@ -4991,7 +4991,7 @@ id: toolu_01A7zruAd2maGypnEueqNr7X
 tool_result
 id: toolu_01A7zruAd2maGypnEueqNr7X
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5009,7 +5009,7 @@ id: toolu_014mjRJeJK3xiCsnfk35nvm7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
   "old_string": "function bit_inline_submenu_print_script() { ?>\n<script id=\"bit-inline-submenu-js\">\n(function () {\n  var isEditor = !!(window.elementorFrontend && window.elementorFrontend.isEditMode && window.elementorFrontend.isEditMode());",
   "new_string": "function bit_inline_submenu_print_script() { ?>\n<script id=\"bit-inline-submenu-js\">\nconsole.log('[bit-inline-submenu] script loaded, URL=', window.location.href);\n(function () {\n  var isEditor = !!(window.elementorFrontend && window.elementorFrontend.isEditMode && window.elementorFrontend.isEditMode());\n  console.log('[bit-inline-submenu] isEditor=', isEditor, 'frontend=', !!window.elementorFrontend);"
 }
@@ -5020,7 +5020,7 @@ id: toolu_014mjRJeJK3xiCsnfk35nvm7
 tool_result
 id: toolu_014mjRJeJK3xiCsnfk35nvm7
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5030,7 +5030,7 @@ id: toolu_01CUqHm5EmzMXP9FUivBFXSz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
   "old_string": "  function init() {\n    var widget = document.querySelector('.menu-submenu-inline');\n    if (!widget) return;",
   "new_string": "  function init() {\n    var widget = document.querySelector('.menu-submenu-inline');\n    console.log('[bit-inline-submenu] init() widget=', widget);\n    if (!widget) return;"
 }
@@ -5041,7 +5041,7 @@ id: toolu_01CUqHm5EmzMXP9FUivBFXSz
 tool_result
 id: toolu_01CUqHm5EmzMXP9FUivBFXSz
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5050,7 +5050,7 @@ tool_use Bash
 id: toolu_01Hfhxp1XurZvU1iVWX8xi4M
 ```json
 {
-  "command": "cp /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php /Users/dcambria/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-inline-submenu.php && docker exec concertacao-dev-wordpress php -l /var/www/html/wp-content/mu-plugins/bit-inline-submenu.php 2>&1 | tail -2",
+  "command": "cp /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php /home/<USER>/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-inline-submenu.php && docker exec concertacao-dev-wordpress php -l /var/www/html/wp-content/mu-plugins/bit-inline-submenu.php 2>&1 | tail -2",
   "description": "Sync + PHP lint"
 }
 ```
@@ -5172,7 +5172,7 @@ id: toolu_01MQJgMhjrdovE3PSh6PTAt3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
   "old_string": "    // ── Calcular posição top = base do header ─────────────────────────────\n    // No frontend: âncora = .elementor-location-header (fixed/sticky).\n    // No editor: header não existe — usar o próprio widget como âncora.\n    var header = document.querySelector('.elementor-location-header') || widget.closest('.elementor-section, .e-con') || widget;",
   "new_string": "    // ── Calcular posição top = base do header ─────────────────────────────\n    // No frontend: âncora = .elementor-location-header (fixed/sticky) — a barra\n    // in-flow é inserida APÓS o header (afterend), ficando logo abaixo dele.\n    // No editor: header não existe — usar o próprio widget como âncora, assim\n    // a barra in-flow aparece colada abaixo do menu, não no fim do container.\n    var headerEl = document.querySelector('.elementor-location-header');\n    var anchorEl = headerEl || widget;\n    var header = anchorEl; // mantido para compat. com resto do script"
 }
@@ -5183,7 +5183,7 @@ id: toolu_01MQJgMhjrdovE3PSh6PTAt3
 tool_result
 id: toolu_01MQJgMhjrdovE3PSh6PTAt3
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5197,7 +5197,7 @@ id: toolu_01291SPZxGGUhgRJTCEFJhhu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
   "old_string": "function bit_inline_submenu_print_script() { ?>\n<script id=\"bit-inline-submenu-js\">\nconsole.log('[bit-inline-submenu] script loaded, URL=', window.location.href);\n(function () {\n  var isEditor = !!(window.elementorFrontend && window.elementorFrontend.isEditMode && window.elementorFrontend.isEditMode());\n  console.log('[bit-inline-submenu] isEditor=', isEditor, 'frontend=', !!window.elementorFrontend);",
   "new_string": "function bit_inline_submenu_print_script() { ?>\n<script id=\"bit-inline-submenu-js\">\n(function () {\n  var isEditor = !!(window.elementorFrontend && window.elementorFrontend.isEditMode && window.elementorFrontend.isEditMode());"
 }
@@ -5208,7 +5208,7 @@ id: toolu_01291SPZxGGUhgRJTCEFJhhu
 tool_result
 id: toolu_01291SPZxGGUhgRJTCEFJhhu
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5218,7 +5218,7 @@ id: toolu_018UEgfkZ9MCioZztsRwYNrM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
   "old_string": "  function init() {\n    var widget = document.querySelector('.menu-submenu-inline');\n    console.log('[bit-inline-submenu] init() widget=', widget);\n    if (!widget) return;",
   "new_string": "  function init() {\n    var widget = document.querySelector('.menu-submenu-inline');\n    if (!widget) return;"
 }
@@ -5229,7 +5229,7 @@ id: toolu_018UEgfkZ9MCioZztsRwYNrM
 tool_result
 id: toolu_018UEgfkZ9MCioZztsRwYNrM
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5239,7 +5239,7 @@ id: toolu_01WgfuHWX2U3Eh47Zj8X2kkr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
   "old_string": " * Version:     1.7.0\n * Author:      Bureau IT\n */\n\nif ( ! defined( 'ABSPATH' ) ) {\n    exit;\n}\n\ndefine( 'BIT_INLINE_SUBMENU_VERSION', '1.7.0' );",
   "new_string": " * Version:     1.7.1\n * Author:      Bureau IT\n */\n\nif ( ! defined( 'ABSPATH' ) ) {\n    exit;\n}\n\ndefine( 'BIT_INLINE_SUBMENU_VERSION', '1.7.1' );"
 }
@@ -5250,7 +5250,7 @@ id: toolu_01WgfuHWX2U3Eh47Zj8X2kkr
 tool_result
 id: toolu_01WgfuHWX2U3Eh47Zj8X2kkr
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5259,7 +5259,7 @@ tool_use Bash
 id: toolu_01GcQsEKSbsM6Mjvwq3C9zSd
 ```json
 {
-  "command": "cp /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php /Users/dcambria/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-inline-submenu.php && docker exec concertacao-dev-wordpress php -l /var/www/html/wp-content/mu-plugins/bit-inline-submenu.php 2>&1 | tail -2 && docker exec -u www-data concertacao-dev-wordpress wp --url=https://cambrasmax.local:8484 elementor flush-css 2>&1 | tail -2",
+  "command": "cp /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php /home/<USER>/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-inline-submenu.php && docker exec concertacao-dev-wordpress php -l /var/www/html/wp-content/mu-plugins/bit-inline-submenu.php 2>&1 | tail -2 && docker exec -u www-data concertacao-dev-wordpress wp --url=https://cambrasmax.local:8484 elementor flush-css 2>&1 | tail -2",
   "description": "Sync + lint + flush"
 }
 ```
@@ -5336,7 +5336,7 @@ id: toolu_01YUcd2eL1dHqUBAcUneKZbr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
   "old_string": " * Version:     1.4.1",
   "new_string": " * Version:     1.5.0"
 }
@@ -5347,7 +5347,7 @@ id: toolu_01YUcd2eL1dHqUBAcUneKZbr
 tool_result
 id: toolu_01YUcd2eL1dHqUBAcUneKZbr
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5435,7 +5435,7 @@ tool_use Read
 id: toolu_01L6SKb8Z9AC1vwbGXY92sBN
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
   "offset": 160,
   "limit": 200
 }
@@ -5494,7 +5494,7 @@ id: toolu_01KYGzYRcPAEXiD5DbcEu7cX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
   "old_string": "/**\n * Submenu Inline (Desktop) — nova seção de estilo.\n *\n * Controla a barra horizontal de submenu (.bit-hover-bar + .bit-subnav-bar)\n * renderizada pelo mu-plugin bit-inline-submenu quando o widget tem a CSS\n * class `menu-submenu-inline`.\n *\n * Os controles emitem CSS vars `--bis-*` no wrapper do widget; o CSS do\n * mu-plugin (bit-inline-submenu.css) consome essas vars. As vars têm fallback\n * via JS (bit-inline-submenu.php copia computed style do widget para\n * .bit-hover-bar no body — mantém isolamento de cada widget).\n *\n * Hook: after_section_end de `style_toggle` (última seção de estilo do widget).\n */\nadd_action(\n\t'elementor/element/nav-menu/style_toggle/after_section_end',\n\tfunction ( $element, $args ) {\n\t\t$element->start_controls_section(\n\t\t\t'bit_section_style_submenu_inline',\n\t\t\t[\n\t\t\t\t'label' => esc_html__( 'Submenu Inline (Desktop)', 'bit' ),\n\t\t\t\t'tab'   => \\Elementor\\Controls_Manager::TAB_STYLE,\n\t\t\t]\n\t\t);\n\n\t\t// ── Layout ────────────────────────────────────────────────────────\n\t\t$element->add_responsive_control(\n\t\t\t'bit_submenu_height',\n\t\t\t[\n\t\t\t\t'label'      => esc_html__( 'Altura da barra', 'bit' ),\n\t\t\t\t'type'       => \\Elementor\\Controls_Manager::SLIDER,\n\t\t\t\t'size_units' => [ 'px', 'em', 'rem' ],\n\t\t\t\t'range'      => [\n\t\t\t\t\t'px' => [ 'min' => 40, 'max' => 160 ],\n\t\t\t\t\t'em' => [ 'min' => 2, 'max' => 10 ],\n\t\t\t\t],\n\t\t\t\t'default'    => [ 'unit' => 'px', 'size' => 72 ],\n\t\t\t\t'selectors'  => [\n\t\t\t\t\t'{{WRAPPER}}' => '--bit-submenu-height: {{SIZE}}{{UNIT}};',\n\t\t\t\t],\n\t\t\t]\n\t\t);\n\n\t\t$element->add_control(\n\t\t\t'bit_submenu_bg',\n\t\t\t[\n\t\t\t\t'label'     => esc_html__( 'Cor de fundo da barra', 'bit' ),\n\t\t\t\t'type'      => \\Elementor\\Controls_Manager::COLOR,\n\t\t\t\t'global'    => [ 'default' => \\Elementor\\Core\\Kits\\Documents\\Tabs\\Global_Colors::COLOR_PRIMARY ],\n\t\t\t\t'selectors' => [\n\t\t\t\t\t'{{WRAPPER}}' => '--bis-bg: {{VALUE}}; --bis-diamond: {{VALUE}};',\n\t\t\t\t],\n\t\t\t]\n\t\t);\n\n\t\t$element->add_control(\n\t\t\t'bit_submenu_diamond',\n\t\t\t[\n\t\t\t\t'label'       => esc_html__( 'Cor do diamante', 'bit' […]
 
 > TOOL
@@ -5502,7 +5502,7 @@ id: toolu_01KYGzYRcPAEXiD5DbcEu7cX
 tool_result
 id: toolu_01KYGzYRcPAEXiD5DbcEu7cX
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5523,7 +5523,7 @@ id: toolu_01PuZwYZvv5F9mXtF2JoXvFX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
   "old_string": "\t\t$element->add_group_control(\n\t\t\t\\Elementor\\Group_Control_Typography::get_type(),\n\t\t\t[\n\t\t\t\t'name'     => 'bit_submenu_typography_normal',\n\t\t\t\t'label'    => esc_html__( 'Tipografia', 'bit' ),\n\t\t\t\t'selector' => '{{WRAPPER}} .bit-subnav-bar li a, {{WRAPPER}} .bit-hover-bar li a, .bit-hover-bar.bit-from-{{ID}} li a',\n\t\t\t\t'fields_options' => [\n\t\t\t\t\t'typography'  => [ 'default' => 'custom' ],\n\t\t\t\t\t'font_family' => [ 'default' => 'Roboto' ],\n\t\t\t\t\t'font_size'   => [ 'default' => [ 'unit' => 'rem', 'size' => 0.875 ] ],\n\t\t\t\t\t'font_weight' => [ 'default' => '400' ],\n\t\t\t\t],\n\t\t\t]\n\t\t);\n\n\t\t$element->end_controls_tab();",
   "new_string": "\t\t$element->add_control(\n\t\t\t'bit_submenu_font_family',\n\t\t\t[\n\t\t\t\t'label'     => esc_html__( 'Família da fonte', 'bit' ),\n\t\t\t\t'type'      => \\Elementor\\Controls_Manager::FONT,\n\t\t\t\t'default'   => 'Roboto',\n\t\t\t\t'selectors' => [\n\t\t\t\t\t'{{WRAPPER}}' => '--bis-font-family: \"{{VALUE}}\", sans-serif;',\n\t\t\t\t],\n\t\t\t]\n\t\t);\n\n\t\t$element->add_responsive_control(\n\t\t\t'bit_submenu_font_size',\n\t\t\t[\n\t\t\t\t'label'      => esc_html__( 'Tamanho da fonte', 'bit' ),\n\t\t\t\t'type'       => \\Elementor\\Controls_Manager::SLIDER,\n\t\t\t\t'size_units' => [ 'px', 'rem', 'em' ],\n\t\t\t\t'range'      => [\n\t\t\t\t\t'px'  => [ 'min' => 10, 'max' => 32 ],\n\t\t\t\t\t'rem' => [ 'min' => 0.5, 'max' => 2, 'step' => 0.05 ],\n\t\t\t\t],\n\t\t\t\t'default'    => [ 'unit' => 'rem', 'size' => 0.875 ],\n\t\t\t\t'selectors'  => [\n\t\t\t\t\t'{{WRAPPER}}' => '--bis-font-size: {{SIZE}}{{UNIT}};',\n\t\t\t\t],\n\t\t\t]\n\t\t);\n\n\t\t$element->add_control(\n\t\t\t'bit_submenu_font_weight_normal',\n\t\t\t[\n\t\t\t\t'label'   => esc_html__( 'Peso da fonte', 'bit' ),\n\t\t\t\t'type'    => \\Elementor\\Controls_Manager::SELECT,\n\t\t\t\t'default' => '400',\n\t\t\t\t'options' => [\n\t\t\t\t\t'300' => '300 — Light',\n\t\t\t\t\t'400' => '400 — Normal',\n\t\t\t\t\t'500' => '500 — Medium',\n\t\t\t\t\t'600' => '600 — Semibold',\n\t\t\t\t\t'700' => '700 — Bold',\n\t\t\t\t\t'800' => '800 — Extra Bold',\n\t\t\t\t\t'900' => '900 — Black',\n\t\t\t\t],\n\t\t\t\t'selectors' => [\n\t\t\t\t\t'{{WRAPPER}}' => '--bis-font-weight: {{VALUE}};',\n\t\t\t\t],\n\t\t\t]\n\t\t);\n\n\t\t$element->end_controls_tab();"
 }
@@ -5534,7 +5534,7 @@ id: toolu_01PuZwYZvv5F9mXtF2JoXvFX
 tool_result
 id: toolu_01PuZwYZvv5F9mXtF2JoXvFX
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5544,7 +5544,7 @@ id: toolu_013cpCYH3B7iJ5QnbKzPzFkR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
   "old_string": "\t\t$element->add_group_control(\n\t\t\t\\Elementor\\Group_Control_Typography::get_type(),\n\t\t\t[\n\t\t\t\t'name'     => 'bit_submenu_typography_hover',\n\t\t\t\t'label'    => esc_html__( 'Tipografia', 'bit' ),\n\t\t\t\t'selector' => '{{WRAPPER}} .bit-subnav-bar li a:hover, {{WRAPPER}} .bit-hover-bar li a:hover, .bit-hover-bar.bit-from-{{ID}} li a:hover',\n\t\t\t\t'fields_options' => [\n\t\t\t\t\t'typography'  => [ 'default' => 'custom' ],\n\t\t\t\t\t'font_family' => [ 'default' => 'Roboto' ],\n\t\t\t\t\t'font_size'   => [ 'default' => [ 'unit' => 'rem', 'size' => 0.875 ] ],\n\t\t\t\t\t'font_weight' => [ 'default' => '700' ],\n\t\t\t\t],\n\t\t\t]\n\t\t);\n\n\t\t$element->end_controls_tab();\n\n\t\t// ─── Ativo ───────────────────────────────────────────────────────",
   "new_string": "\t\t$element->add_control(\n\t\t\t'bit_submenu_font_weight_hover',\n\t\t\t[\n\t\t\t\t'label'   => esc_html__( 'Peso da fonte', 'bit' ),\n\t\t\t\t'type'    => \\Elementor\\Controls_Manager::SELECT,\n\t\t\t\t'default' => '700',\n\t\t\t\t'options' => [\n\t\t\t\t\t'300' => '300 — Light',\n\t\t\t\t\t'400' => '400 — Normal',\n\t\t\t\t\t'500' => '500 — Medium',\n\t\t\t\t\t'600' => '600 — Semibold',\n\t\t\t\t\t'700' => '700 — Bold',\n\t\t\t\t\t'800' => '800 — Extra Bold',\n\t\t\t\t\t'900' => '900 — Black',\n\t\t\t\t],\n\t\t\t\t'selectors' => [\n\t\t\t\t\t'{{WRAPPER}}' => '--bis-text-hover-weight: {{VALUE}};',\n\t\t\t\t],\n\t\t\t]\n\t\t);\n\n\t\t$element->end_controls_tab();\n\n\t\t// ─── Ativo ───────────────────────────────────────────────────────"
 }
@@ -5555,7 +5555,7 @@ id: toolu_013cpCYH3B7iJ5QnbKzPzFkR
 tool_result
 id: toolu_013cpCYH3B7iJ5QnbKzPzFkR
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5565,7 +5565,7 @@ id: toolu_01DB4PkreSHoJf3oic8AnHLE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
   "old_string": "\t\t$element->add_group_control(\n\t\t\t\\Elementor\\Group_Control_Typography::get_type(),\n\t\t\t[\n\t\t\t\t'name'     => 'bit_submenu_typography_active',\n\t\t\t\t'label'    => esc_html__( 'Tipografia', 'bit' ),\n\t\t\t\t'selector' => '{{WRAPPER}} .bit-subnav-bar li.current-menu-item a, .bit-hover-bar.bit-from-{{ID}} li.current-menu-item a',\n\t\t\t\t'fields_options' => [\n\t\t\t\t\t'typography'  => [ 'default' => 'custom' ],\n\t\t\t\t\t'font_family' => [ 'default' => 'Roboto' ],\n\t\t\t\t\t'font_size'   => [ 'default' => [ 'unit' => 'rem', 'size' => 0.875 ] ],\n\t\t\t\t\t'font_weight' => [ 'default' => '700' ],\n\t\t\t\t],\n\t\t\t]\n\t\t);\n\n\t\t$element->end_controls_tab();",
   "new_string": "\t\t$element->add_control(\n\t\t\t'bit_submenu_font_weight_active',\n\t\t\t[\n\t\t\t\t'label'   => esc_html__( 'Peso da fonte', 'bit' ),\n\t\t\t\t'type'    => \\Elementor\\Controls_Manager::SELECT,\n\t\t\t\t'default' => '700',\n\t\t\t\t'options' => [\n\t\t\t\t\t'300' => '300 — Light',\n\t\t\t\t\t'400' => '400 — Normal',\n\t\t\t\t\t'500' => '500 — Medium',\n\t\t\t\t\t'600' => '600 — Semibold',\n\t\t\t\t\t'700' => '700 — Bold',\n\t\t\t\t\t'800' => '800 — Extra Bold',\n\t\t\t\t\t'900' => '900 — Black',\n\t\t\t\t],\n\t\t\t\t'selectors' => [\n\t\t\t\t\t'{{WRAPPER}}' => '--bis-text-active-weight: {{VALUE}};',\n\t\t\t\t],\n\t\t\t]\n\t\t);\n\n\t\t$element->end_controls_tab();"
 }
@@ -5576,7 +5576,7 @@ id: toolu_01DB4PkreSHoJf3oic8AnHLE
 tool_result
 id: toolu_01DB4PkreSHoJf3oic8AnHLE
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5630,7 +5630,7 @@ tool_use Read
 id: toolu_019AXMMFRJkj24DQmZhPbroP
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css",
   "offset": 155,
   "limit": 100
 }
@@ -5707,7 +5707,7 @@ id: toolu_015ETYVYAvJ4hooUqpz54sWU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css",
   "old_string": "/* ── 3. Variáveis de cores ─────────────────────────────────────────────────────\n * Os defaults agora vêm dos controles do painel Elementor\n * (bit-nav-menu-extra-controls.php v1.4.0+ → \"Submenu Inline (Desktop)\"):\n *\n *   --bis-bg / --bis-bg-hover / --bis-text / --bis-text-hover / --bis-text-active\n *   --bis-text-hover-weight / --bis-border-active / --bis-diamond\n *   --bit-submenu-height\n *\n * Os controles ativam Global Colors do Elementor por default. CSS estático\n * só sobrevive como FALLBACK para o caso de o widget não ter os controles\n * configurados (ex: instalação nova) — usa Global Colors via var() direto.\n */\n.menu-submenu-inline {\n  --bis-bg:                 var(--e-global-color-96a86ed);\n  --bis-bg-hover:           var(--e-global-color-96a86ed);\n  --bis-text:               var(--e-global-color-4a4a8de);\n  --bis-text-hover:         var(--e-global-color-accent);\n  --bis-text-hover-weight:  700;\n  --bis-text-active:        var(--e-global-color-accent);\n  --bis-border-active:      var(--e-global-color-accent);\n  --bis-diamond:            var(--bis-bg);\n}",
   "new_string": "/* ── 3. Variáveis CSS ────────────────────────────────────────────────────────\n * TODAS as variáveis (--bis-* e --bit-submenu-height) são injetadas pelos\n * controles do painel Elementor (bit-nav-menu-extra-controls.php v1.5.0+\n * → \"Submenu Inline (Desktop)\"). Sem fallback estático aqui — se os\n * controles não estão registrados, o submenu inline simplesmente não\n * renderiza com cores (esperado).\n *\n * Vars consumidas:\n *   Layout:     --bit-submenu-height\n *   Cores:      --bis-bg, --bis-bg-hover, --bis-diamond\n *               --bis-text, --bis-text-hover, --bis-text-active, --bis-border-active\n *   Tipografia: --bis-font-family, --bis-font-size, --bis-font-weight\n *               --bis-text-hover-weight, --bis-text-active-weight\n */"
 }
@@ -5718,7 +5718,7 @@ id: toolu_015ETYVYAvJ4hooUqpz54sWU
 tool_result
 id: toolu_015ETYVYAvJ4hooUqpz54sWU
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5732,7 +5732,7 @@ id: toolu_01LGsn4QpLDXZ3LBthkiwV9z
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css",
   "old_string": "/* ── 7. Itens das barras (hover e in-flow) ──────────────────────────────────── */\n.bit-hover-bar li a,\n.bit-subnav-bar li a {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 0 16px;\n  height: var(--bit-submenu-height, 72px);\n  color: var(--bis-text);\n  font-size: 0.875rem;\n  font-family: var(--e-global-typography-text-font-family, Roboto), sans-serif;\n  font-weight: 400;\n  white-space: nowrap;\n  text-decoration: none;\n  transition: color 0.15s ease;\n}\n\n/* Ghost text — reserva espaço do texto bold sem exibi-lo, eliminando layout shift no hover */\n.bit-hover-bar li a::after,\n.bit-subnav-bar li a::after {\n  content: attr(data-text);\n  font-weight: var(--bis-text-hover-weight, 700);\n  font-family: var(--e-global-typography-text-font-family, Roboto), sans-serif;\n  font-size: 0.875rem;\n  height: 0;\n  overflow: hidden;\n  visibility: hidden;\n  pointer-events: none;\n  user-select: none;\n  white-space: nowrap;\n}\n\n.bit-hover-bar li a:hover,\n.bit-subnav-bar li a:hover {\n  color: var(--bis-text-hover);\n  font-weight: var(--bis-text-hover-weight, 700);\n  background-color: var(--bis-bg-hover);\n}\n\n.bit-hover-bar li.current-menu-item a,\n.bit-hover-bar li.current_page_item a {\n  color: var(--bis-text-active);\n  font-weight: var(--bis-text-hover-weight, 700);\n  background-color: transparent !important;\n  border-bottom: 2px solid var(--bis-border-active);\n}\n\n.bit-subnav-bar li.current-menu-item a {\n  color: var(--bis-text-active);\n  font-weight: var(--bis-text-hover-weight, 700);\n  background-color: transparent;\n  border-bottom: 2px solid var(--bis-border-active);\n}",
   "new_string": "/* ── 7. Itens das barras (hover e in-flow) ──────────────────────────────────── */\n.bit-hover-bar li a,\n.bit-subnav-bar li a {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 0 16px;\n  height: var(--bit-submenu-height);\n  color: var(--bis-text);\n  font-family: var(--bis-font-family);\n  font-size: var(--bis-font-size);\n  font-weight: var(--bis-font-weight);\n  white-space: nowrap;\n  text-decoration: none;\n  transition: color 0.15s ease;\n}\n\n/* Ghost text — reserva espaço do texto bold […]
 
@@ -5741,7 +5741,7 @@ id: toolu_01LGsn4QpLDXZ3LBthkiwV9z
 tool_result
 id: toolu_01LGsn4QpLDXZ3LBthkiwV9z
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5796,7 +5796,7 @@ tool_use Read
 id: toolu_01M3Zsc6gWjvRNZo8XfAQdbU
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
   "offset": 80,
   "limit": 35
 }
@@ -5855,7 +5855,7 @@ id: toolu_01JNHPsWJR3gF6ASkWmXw4xi
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
   "old_string": "    // Herdar CSS vars do widget (cores configuradas pelo child theme)\n    var wComputed = getComputedStyle(widget);\n    ['--bis-bg','--bis-bg-hover','--bis-text','--bis-text-hover','--bis-text-hover-weight',\n     '--bis-text-active','--bis-border-active','--bis-diamond','--bit-submenu-height'].forEach(function(v) {\n      var val = wComputed.getPropertyValue(v).trim();\n      if (val) hoverBar.style.setProperty(v, val);\n    });",
   "new_string": "    // Herdar CSS vars do widget — copia computed style do {{WRAPPER}} do\n    // Elementor para a hover-bar no body (que está fora do escopo do widget).\n    // Lista completa de vars que o CSS do submenu consome.\n    var BIS_VARS = [\n      '--bit-submenu-height',\n      '--bis-bg','--bis-bg-hover','--bis-diamond',\n      '--bis-text','--bis-text-hover','--bis-text-active','--bis-border-active',\n      '--bis-font-family','--bis-font-size','--bis-font-weight',\n      '--bis-text-hover-weight','--bis-text-active-weight'\n    ];\n    function copyVars(target) {\n      var wComputed = getComputedStyle(widget);\n      BIS_VARS.forEach(function(v) {\n        var val = wComputed.getPropertyValue(v).trim();\n        if (val) target.style.setProperty(v, val);\n      });\n    }\n    var wComputed = getComputedStyle(widget);\n    copyVars(hoverBar);"
 }
@@ -5866,7 +5866,7 @@ id: toolu_01JNHPsWJR3gF6ASkWmXw4xi
 tool_result
 id: toolu_01JNHPsWJR3gF6ASkWmXw4xi
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5880,7 +5880,7 @@ id: toolu_019JY7sStrAJyPKEM3pQMsdC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
   "old_string": "      // Herdar CSS vars do widget\n      ['--bis-bg','--bis-bg-hover','--bis-text','--bis-text-hover','--bis-text-hover-weight',\n       '--bis-text-active','--bis-border-active','--bit-submenu-height'].forEach(function(v) {\n        var val = wComputed.getPropertyValue(v).trim();\n        if (val) bar.style.setProperty(v, val);\n      });",
   "new_string": "      // Herdar CSS vars do widget — mesma lista BIS_VARS da hover-bar\n      copyVars(bar);"
 }
@@ -5891,7 +5891,7 @@ id: toolu_019JY7sStrAJyPKEM3pQMsdC
 tool_result
 id: toolu_019JY7sStrAJyPKEM3pQMsdC
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5911,7 +5911,7 @@ id: toolu_01S8mvASvLD1KBjBwo2M9N1A
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
   "old_string": " * Version:     1.7.1\n * Author:      Bureau IT\n */\n\nif ( ! defined( 'ABSPATH' ) ) {\n    exit;\n}\n\ndefine( 'BIT_INLINE_SUBMENU_VERSION', '1.7.1' );",
   "new_string": " * Version:     1.8.0\n * Author:      Bureau IT\n */\n\nif ( ! defined( 'ABSPATH' ) ) {\n    exit;\n}\n\ndefine( 'BIT_INLINE_SUBMENU_VERSION', '1.8.0' );"
 }
@@ -5922,7 +5922,7 @@ id: toolu_01S8mvASvLD1KBjBwo2M9N1A
 tool_result
 id: toolu_01S8mvASvLD1KBjBwo2M9N1A
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5931,7 +5931,7 @@ tool_use Bash
 id: toolu_01XMuxQbiToWGe48nUT7P5G1
 ```json
 {
-  "command": "cp /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php /Users/dcambria/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-inline-submenu.php && cp /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css /Users/dcambria/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-inline-submenu.css && cp /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php /Users/dcambria/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-nav-menu-extra-controls.php && docker exec concertacao-dev-wordpress php -l /var/www/html/wp-content/mu-plugins/bit-inline-submenu.php 2>&1 | tail -1 && docker exec concertacao-dev-wordpress php -l /var/www/html/wp-content/mu-plugins/bit-nav-menu-extra-controls.php 2>&1 | tail -1 && docker exec -u www-data concertacao-dev-wordpress wp --url=https://cambrasmax.local:8484 elementor flush-css 2>&1 | tail -2",
+  "command": "cp /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php /home/<USER>/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-inline-submenu.php && cp /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css /home/<USER>/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-inline-submenu.css && cp /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php /home/<USER>/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-nav-menu-extra-controls.php && docker exec concertacao-dev-wordpress php -l /var/www/html/wp-content/mu-plugins/bit-inline-submenu.php 2>&1 | tail -1 && docker exec concertacao-dev-wordpress php -l /var/www/html/wp-content/mu-plugins/bit-nav-menu-extra-controls.php 2>&1 | tail -1 && docker exec -u www-data concertacao-dev-wordpress wp --url=https://cambrasmax.local:8484 elementor flush-css 2>&1 | tail -2",
   "description": "Sync all 3 files + lint + flush"
 }
 ```
@@ -6005,7 +6005,7 @@ tool_use Bash
 id: toolu_0141BeF4rcxRe4GVNkWR17k1
 ```json
 {
-  "command": "grep -rn \"nav-menu--dropdown.*padding\\|nav-menu--dropdown.*a {\\|dropdown a {\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/ 2>/dev/null | head -10",
+  "command": "grep -rn \"nav-menu--dropdown.*padding\\|nav-menu--dropdown.*a {\\|dropdown a {\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/ 2>/dev/null | head -10",
   "description": "Find dropdown padding overrides in theme"
 }
 ```
@@ -6024,7 +6024,7 @@ tool_use Bash
 id: toolu_01EN5YwoXoebgZ3xLzXpXzo3
 ```json
 {
-  "command": "grep -rn \"Espaçamento horizontal\\|padding_horizontal_dropdown\\|padding_vertical_dropdown\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/ 2>/dev/null | head -10",
+  "command": "grep -rn \"Espaçamento horizontal\\|padding_horizontal_dropdown\\|padding_vertical_dropdown\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/ 2>/dev/null | head -10",
   "description": "Check native dropdown padding selectors"
 }
 ```
@@ -6034,8 +6034,8 @@ id: toolu_01EN5YwoXoebgZ3xLzXpXzo3
 tool_result
 id: toolu_01EN5YwoXoebgZ3xLzXpXzo3
 ```
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/nav-menu.php:1166:			'padding_horizontal_dropdown_item',
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/nav-menu.php:1186:			'padding_vertical_dropdown_item',
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/nav-menu.php:1166:			'padding_horizontal_dropdown_item',
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/nav-menu.php:1186:			'padding_vertical_dropdown_item',
 ```
 
 > TOOL
@@ -6044,7 +6044,7 @@ tool_use Bash
 id: toolu_01PdLcsh4R1SC4tkDgrn8XtJ
 ```json
 {
-  "command": "grep -rn \"elementor-sub-item\\|elementor-nav-menu--dropdown\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/header-menu.css 2>/dev/null | head -20",
+  "command": "grep -rn \"elementor-sub-item\\|elementor-nav-menu--dropdown\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/header-menu.css 2>/dev/null | head -20",
   "description": "Find sub-item rules"
 }
 ```
@@ -6054,10 +6054,10 @@ id: toolu_01PdLcsh4R1SC4tkDgrn8XtJ
 tool_result
 id: toolu_01PdLcsh4R1SC4tkDgrn8XtJ
 ```
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/header-menu.css:88:    .elementor-39359 .elementor-element.elementor-element-27229d66 .elementor-nav-menu--dropdown .elementor-item,
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/header-menu.css:89:    .elementor-39359 .elementor-element.elementor-element-27229d66 .elementor-nav-menu--dropdown .elementor-sub-item,
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/header-menu.css:90:    .elementor-89307 .elementor-element.elementor-element-27229d66 .elementor-nav-menu--dropdown .elementor-item,
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/header-menu.css:91:    .elementor-89307 .elementor-element.elementor-element-27229d66 .elementor-nav-menu--dropdown .elementor-sub-item {
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/header-menu.css:88:    .elementor-39359 .elementor-element.elementor-element-27229d66 .elementor-nav-menu--dropdown .elementor-item,
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/header-menu.css:89:    .elementor-39359 .elementor-element.elementor-element-27229d66 .elementor-nav-menu--dropdown .elementor-sub-item,
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/header-menu.css:90:    .elementor-89307 .elementor-element.elementor-element-27229d66 .elementor-nav-menu--dropdown .elementor-item,
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/header-menu.css:91:    .elementor-89307 .elementor-element.elementor-element-27229d66 .elementor-nav-menu--dropdown .elementor-sub-item {
 ```
 
 > TOOL
@@ -6066,7 +6066,7 @@ tool_use Read
 id: toolu_019ejPc33xbTyAwuMeti8Tim
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/header-menu.css",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/header-menu.css",
   "offset": 85,
   "limit": 25
 }
@@ -6152,7 +6152,7 @@ id: toolu_01ACvnYApUSiR1T4msaVgbNo
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
   "old_string": "\t\t$element->add_responsive_control(\n\t\t\t'bit_dropdown_item_padding',\n\t\t\t[\n\t\t\t\t'label'      => esc_html__( 'Padding da lista suspensa', 'bit' ),\n\t\t\t\t'type'       => \\Elementor\\Controls_Manager::DIMENSIONS,\n\t\t\t\t'size_units' => [ 'px', 'em', 'rem', '%', 'custom' ],\n\t\t\t\t'selectors'  => [\n\t\t\t\t\t'{{WRAPPER}} .elementor-nav-menu--dropdown a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',\n\t\t\t\t],\n\t\t\t],\n\t\t\t[\n\t\t\t\t'position' => [\n\t\t\t\t\t'type' => 'control',\n\t\t\t\t\t'at'   => 'after',\n\t\t\t\t\t'of'   => 'padding_vertical_dropdown_item',\n\t\t\t\t],\n\t\t\t]\n\t\t);",
   "new_string": "\t\t$element->add_responsive_control(\n\t\t\t'bit_dropdown_item_padding',\n\t\t\t[\n\t\t\t\t'label'       => esc_html__( 'Padding da lista suspensa', 'bit' ),\n\t\t\t\t'description' => esc_html__( 'Sobrescreve \"Espaçamento horizontal\" e \"Espaçamento vertical\" acima (que ficam descartados quando este controle tem valor).', 'bit' ),\n\t\t\t\t'type'        => \\Elementor\\Controls_Manager::DIMENSIONS,\n\t\t\t\t'size_units'  => [ 'px', 'em', 'rem', '%', 'custom' ],\n\t\t\t\t// !important necessário: os controles nativos padding_horizontal_dropdown_item\n\t\t\t\t// e padding_vertical_dropdown_item são registrados ANTES no stack mas o CSS\n\t\t\t\t// gerado pelo Elementor preserva a ordem do source, fazendo os nativos virem\n\t\t\t\t// DEPOIS no CSS final e vencerem por cascata. !important garante precedência.\n\t\t\t\t'selectors'   => [\n\t\t\t\t\t'{{WRAPPER}} .elementor-nav-menu--dropdown a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}} !important;',\n\t\t\t\t],\n\t\t\t],\n\t\t\t[\n\t\t\t\t'position' => [\n\t\t\t\t\t'type' => 'control',\n\t\t\t\t\t'at'   => 'after',\n\t\t\t\t\t'of'   => 'padding_vertical_dropdown_item',\n\t\t\t\t],\n\t\t\t]\n\t\t);"
 }
@@ -6163,7 +6163,7 @@ id: toolu_01ACvnYApUSiR1T4msaVgbNo
 tool_result
 id: toolu_01ACvnYApUSiR1T4msaVgbNo
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6215,7 +6215,7 @@ tool_use Bash
 id: toolu_014HRoCvmyJPPj3UkWVrzvpN
 ```json
 {
-  "command": "cp /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php /Users/dcambria/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-nav-menu-extra-controls.php && docker exec -u www-data concertacao-dev-wordpress wp --url=https://cambrasmax.local:8484 elementor flush-css 2>&1 | tail -2 && docker exec -u www-data concertacao-dev-wordpress wp --url=https://cambrasmax.local:8484 eval \"(new \\Elementor\\Core\\Files\\CSS\\Post(39359))->update();\" 2>&1 | tail -1",
+  "command": "cp /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php /home/<USER>/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-nav-menu-extra-controls.php && docker exec -u www-data concertacao-dev-wordpress wp --url=https://cambrasmax.local:8484 elementor flush-css 2>&1 | tail -2 && docker exec -u www-data concertacao-dev-wordpress wp --url=https://cambrasmax.local:8484 eval \"(new \\Elementor\\Core\\Files\\CSS\\Post(39359))->update();\" 2>&1 | tail -1",
   "description": "Sync canonical + regen CSS"
 }
 ```
@@ -6259,7 +6259,7 @@ tool_use Bash
 id: toolu_01B4kExcC8bxdRJNt7LjDdkR
 ```json
 {
-  "command": "grep -A3 \"bit_dropdown_item_padding\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php | head -15",
+  "command": "grep -A3 \"bit_dropdown_item_padding\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php | head -15",
   "description": "Confirm file has !important"
 }
 ```
@@ -6281,7 +6281,7 @@ tool_use Bash
 id: toolu_016VQ1uk3666FcssjJ59apjF
 ```json
 {
-  "command": "grep -A2 \"important\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php | head -10",
+  "command": "grep -A2 \"important\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php | head -10",
   "description": "Find important keyword"
 }
 ```
@@ -6336,7 +6336,7 @@ tool_use Bash
 id: toolu_01SWYNy8GvzrsaVUurW7JDBC
 ```json
 {
-  "command": "grep -rn \"important.*selectors\\|preg_replace.*important\\|str_replace.*important\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/core/files/css/ 2>/dev/null | head -5",
+  "command": "grep -rn \"important.*selectors\\|preg_replace.*important\\|str_replace.*important\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor/core/files/css/ 2>/dev/null | head -5",
   "description": "Check Elementor CSS generation handling of !important"
 }
 ```
@@ -6355,7 +6355,7 @@ tool_use Bash
 id: toolu_01GLsMDPJ5km1FSVDzqqUjWj
 ```json
 {
-  "command": "grep -rn \"!important\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/nav-menu.php | head -5",
+  "command": "grep -rn \"!important\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/nav-menu.php | head -5",
   "description": "Check native uses of !important in nav-menu"
 }
 ```
@@ -6365,7 +6365,7 @@ id: toolu_01GLsMDPJ5km1FSVDzqqUjWj
 tool_result
 id: toolu_01GLsMDPJ5km1FSVDzqqUjWj
 ```
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/nav-menu.php:1277:					'{{WRAPPER}} .elementor-nav-menu--main > .elementor-nav-menu > li > .elementor-nav-menu--dropdown, {{WRAPPER}} .elementor-nav-menu__container.elementor-nav-menu--dropdown' => 'margin-top: {{SIZE}}{{UNIT}} !important',
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/plugins/elementor-pro/modules/nav-menu/widgets/nav-menu.php:1277:					'{{WRAPPER}} .elementor-nav-menu--main > .elementor-nav-menu > li > .elementor-nav-menu--dropdown, {{WRAPPER}} .elementor-nav-menu__container.elementor-nav-menu--dropdown' => 'margin-top: {{SIZE}}{{UNIT}} !important',
 ```
 
 > AGENT
@@ -6479,7 +6479,7 @@ id: toolu_01CJBczppvpHtCfn3Z3siYiU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
   "old_string": "add_action(\n\t'elementor/element/nav-menu/section_style_dropdown/before_section_end',\n\tfunction ( $element, $args ) {\n\t\t$element->add_responsive_control(\n\t\t\t'bit_dropdown_item_padding',\n\t\t\t[\n\t\t\t\t'label'       => esc_html__( 'Padding da lista suspensa', 'bit' ),\n\t\t\t\t'description' => esc_html__( 'Sobrescreve \"Espaçamento horizontal\" e \"Espaçamento vertical\" acima (que ficam descartados quando este controle tem valor).', 'bit' ),\n\t\t\t\t'type'        => \\Elementor\\Controls_Manager::DIMENSIONS,\n\t\t\t\t'size_units'  => [ 'px', 'em', 'rem', '%', 'custom' ],\n\t\t\t\t// !important necessário: os controles nativos padding_horizontal_dropdown_item\n\t\t\t\t// e padding_vertical_dropdown_item são registrados ANTES no stack mas o CSS\n\t\t\t\t// gerado pelo Elementor preserva a ordem do source, fazendo os nativos virem\n\t\t\t\t// DEPOIS no CSS final e vencerem por cascata. !important garante precedência.\n\t\t\t\t'selectors'   => [\n\t\t\t\t\t'{{WRAPPER}} .elementor-nav-menu--dropdown a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}} !important;',\n\t\t\t\t],\n\t\t\t],\n\t\t\t[\n\t\t\t\t'position' => [\n\t\t\t\t\t'type' => 'control',\n\t\t\t\t\t'at'   => 'after',\n\t\t\t\t\t'of'   => 'padding_vertical_dropdown_item',\n\t\t\t\t],\n\t\t\t]\n\t\t);\n\t},\n\t10,\n\t2\n);",
   "new_string": "add_action(\n\t'elementor/element/nav-menu/section_style_dropdown/before_section_end',\n\tfunction ( $element, $args ) {\n\t\t// Esconde os 2 controles nativos de padding (Horizontal/Vertical) — substituídos\n\t\t// pelo controle DIMENSIONS unificado abaixo. update_control preserva valores\n\t\t// salvos no banco (não perde config existente) mas remove da UI.\n\t\t$element->update_control( 'padding_horizontal_dropdown_item', [\n\t\t\t'type' => \\Elementor\\Controls_Manager::HIDDEN,\n\t\t] );\n\t\t$element->update_control( 'padding_vertical_dropdown_item', [\n\t\t\t'type' => \\Elementor\\Controls_Manager::HIDDEN,\n\t\t] );\n\n\t\t$element->add_responsive_control(\n\t\t\t'bit_dropdown_item_padding',\n\t\t\t[\n\t\t\t\t'label'      => esc_html__( 'Padding da lista suspensa', 'bit' ),\n\t\t\t\t'type'       => \\Elementor\\Controls_Manager::DIMENSIONS,\n\t\t\t\t'size_units' => [ 'px', 'em', 'rem', '%', 'custom' ],\n\t\t\t\t// !important: para precedência sobre valores antigos de\n\t\t\t\t// padding_horizontal/vertical_dropdown_item que estejam salvos no banco\n\t\t\t\t// (controle ficou hidden mas valores antigos ainda emitem CSS).\n\t\t\t\t'selectors'  => [\n\t\t\t\t\t'{{WRAPPER}} […]
 
@@ -6488,7 +6488,7 @@ id: toolu_01CJBczppvpHtCfn3Z3siYiU
 tool_result
 id: toolu_01CJBczppvpHtCfn3Z3siYiU
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6498,7 +6498,7 @@ id: toolu_017eQWKrG84sVn5SqLiPdrZQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
   "old_string": " * Version:     1.5.0",
   "new_string": " * Version:     1.5.1"
 }
@@ -6509,7 +6509,7 @@ id: toolu_017eQWKrG84sVn5SqLiPdrZQ
 tool_result
 id: toolu_017eQWKrG84sVn5SqLiPdrZQ
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6518,7 +6518,7 @@ tool_use Bash
 id: toolu_01VAUSL3T3ejn91gqH9dVmGg
 ```json
 {
-  "command": "cp /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php /Users/dcambria/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-nav-menu-extra-controls.php && docker exec concertacao-dev-wordpress php -l /var/www/html/wp-content/mu-plugins/bit-nav-menu-extra-controls.php 2>&1 | tail -1 && docker exec -u www-data concertacao-dev-wordpress wp --url=https://cambrasmax.local:8484 elementor flush-css 2>&1 | tail -1",
+  "command": "cp /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php /home/<USER>/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-nav-menu-extra-controls.php && docker exec concertacao-dev-wordpress php -l /var/www/html/wp-content/mu-plugins/bit-nav-menu-extra-controls.php 2>&1 | tail -1 && docker exec -u www-data concertacao-dev-wordpress wp --url=https://cambrasmax.local:8484 elementor flush-css 2>&1 | tail -1",
   "description": "Sync, lint, flush"
 }
 ```
@@ -6564,7 +6564,7 @@ id: toolu_01JJiczFZgyhMuXdKE2qNA8M
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
   "old_string": "add_action(\n\t'elementor/element/nav-menu/section_style_dropdown/before_section_end',\n\tfunction ( $element, $args ) {\n\t\t// Esconde os 2 controles nativos de padding (Horizontal/Vertical) — substituídos\n\t\t// pelo controle DIMENSIONS unificado abaixo. update_control preserva valores\n\t\t// salvos no banco (não perde config existente) mas remove da UI.\n\t\t$element->update_control( 'padding_horizontal_dropdown_item', [\n\t\t\t'type' => \\Elementor\\Controls_Manager::HIDDEN,\n\t\t] );\n\t\t$element->update_control( 'padding_vertical_dropdown_item', [\n\t\t\t'type' => \\Elementor\\Controls_Manager::HIDDEN,\n\t\t] );\n\n\t\t$element->add_responsive_control(\n\t\t\t'bit_dropdown_item_padding',\n\t\t\t[\n\t\t\t\t'label'      => esc_html__( 'Padding da lista suspensa', 'bit' ),\n\t\t\t\t'type'       => \\Elementor\\Controls_Manager::DIMENSIONS,\n\t\t\t\t'size_units' => [ 'px', 'em', 'rem', '%', 'custom' ],\n\t\t\t\t// !important: para precedência sobre valores antigos de\n\t\t\t\t// padding_horizontal/vertical_dropdown_item que estejam salvos no banco\n\t\t\t\t// (controle ficou hidden mas valores antigos ainda emitem CSS).\n\t\t\t\t'selectors'  => [\n\t\t\t\t\t'{{WRAPPER}} .elementor-nav-menu--dropdown a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}} !important;',\n\t\t\t\t],\n\t\t\t],\n\t\t\t[\n\t\t\t\t'position' => [\n\t\t\t\t\t'type' => 'control',\n\t\t\t\t\t'at'   => 'after',\n\t\t\t\t\t'of'   => 'padding_vertical_dropdown_item',\n\t\t\t\t],\n\t\t\t]\n\t\t);\n\t},\n\t10,\n\t2\n);",
   "new_string": "add_action(\n\t'elementor/element/nav-menu/section_style_dropdown/before_section_end',\n\tfunction ( $element, $args ) {\n\t\t$element->add_responsive_control(\n\t\t\t'bit_dropdown_item_padding',\n\t\t\t[\n\t\t\t\t'label'       => esc_html__( 'Padding do bloco do submenu', 'bit' ),\n\t\t\t\t'description' => esc_html__( 'Espaçamento externo do bloco inteiro de itens (acima, abaixo, esquerda, direita do conjunto). Não confundir com \"Espaçamento horizontal/vertical\" acima, que controlam o padding INTERNO de cada item.', 'bit' ),\n\t\t\t\t'type'        => \\Elementor\\Controls_Manager::DIMENSIONS,\n\t\t\t\t'size_units'  => [ 'px', 'em', 'rem', '%', 'custom' ],\n\t\t\t\t'selectors'   => [\n\t\t\t\t\t'{{WRAPPER}} nav.elementor-nav-menu--dropdown ul.elementor-nav-menu' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',\n\t\t\t\t],\n\t\t\t],\n\t\t\t[\n\t\t\t\t'position' => [\n\t\t\t\t\t'type' => 'control',\n\t\t\t\t\t'at'   => 'after',\n\t\t\t\t\t'of'   => 'padding_vertical_dropdown_item',\n\t\t\t\t],\n\t\t\t]\n\t\t);\n\t},\n\t10,\n\t2\n);"
 }
@@ -6575,7 +6575,7 @@ id: toolu_01JJiczFZgyhMuXdKE2qNA8M
 tool_result
 id: toolu_01JJiczFZgyhMuXdKE2qNA8M
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6585,7 +6585,7 @@ id: toolu_01Uyf3hRTWeVgJnDwBuHB1f5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php",
   "old_string": " * Version:     1.5.1",
   "new_string": " * Version:     1.6.0"
 }
@@ -6596,7 +6596,7 @@ id: toolu_01Uyf3hRTWeVgJnDwBuHB1f5
 tool_result
 id: toolu_01Uyf3hRTWeVgJnDwBuHB1f5
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6605,7 +6605,7 @@ tool_use Bash
 id: toolu_01J7QP9zbfACdQL9FhFW6iCd
 ```json
 {
-  "command": "cp /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php /Users/dcambria/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-nav-menu-extra-controls.php && docker exec concertacao-dev-wordpress php -l /var/www/html/wp-content/mu-plugins/bit-nav-menu-extra-controls.php 2>&1 | tail -1 && docker exec -u www-data concertacao-dev-wordpress wp --url=https://cambrasmax.local:8484 elementor flush-css 2>&1 | tail -1",
+  "command": "cp /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-nav-menu-extra-controls.php /home/<USER>/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-nav-menu-extra-controls.php && docker exec concertacao-dev-wordpress php -l /var/www/html/wp-content/mu-plugins/bit-nav-menu-extra-controls.php 2>&1 | tail -1 && docker exec -u www-data concertacao-dev-wordpress wp --url=https://cambrasmax.local:8484 elementor flush-css 2>&1 | tail -1",
   "description": "Sync + lint + flush"
 }
 ```
@@ -6644,7 +6644,7 @@ tool_use Bash
 id: toolu_01C66jUPBpMnjgF4KUmtDYGG
 ```json
 {
-  "command": "grep -rn \"header\\|39359\\|89307\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php 2>/dev/null | head -15",
+  "command": "grep -rn \"header\\|39359\\|89307\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php 2>/dev/null | head -15",
   "description": "Check shared menu plugin"
 }
 ```
@@ -6663,7 +6663,7 @@ tool_use Bash
 id: toolu_019QBF2ADfMnVBSv7Vsninrz
 ```json
 {
-  "command": "grep -rn \"header\\|nav-menu\\|Header Main\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-crossblog-elementor-menus.php 2>/dev/null | head -15",
+  "command": "grep -rn \"header\\|nav-menu\\|Header Main\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-crossblog-elementor-menus.php 2>/dev/null | head -15",
   "description": "Check crossblog menus plugin"
 }
 ```
@@ -6673,7 +6673,7 @@ id: toolu_019QBF2ADfMnVBSv7Vsninrz
 tool_result
 id: toolu_019QBF2ADfMnVBSv7Vsninrz
 ```
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-crossblog-elementor-menus.php:5: *              no widget nav-menu do Elementor Pro. Os menus do blog de origem
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-crossblog-elementor-menus.php:5: *              no widget nav-menu do Elementor Pro. Os menus do blog de origem
 ```
 
 > TOOL
@@ -6682,7 +6682,7 @@ tool_use Read
 id: toolu_01NLCTkHgtUa2whqmLib1rTT
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php",
   "limit": 40
 }
 ```
@@ -6728,7 +6728,7 @@ tool_use Read
 id: toolu_015GWmfHHrJ31BY6pdQ816qn
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-crossblog-elementor-menus.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-crossblog-elementor-menus.php",
   "limit": 40
 }
 ```
@@ -7192,7 +7192,7 @@ tool_use Bash
 id: toolu_017Jfzpa7urBZKMo9HaUPrwo
 ```json
 {
-  "command": "grep -n \"bit-subnav-bar\\|bit-hover-bar\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css | head -20",
+  "command": "grep -n \"bit-subnav-bar\\|bit-hover-bar\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css | head -20",
   "description": "Find subnav-bar CSS rules"
 }
 ```
@@ -7230,7 +7230,7 @@ tool_use Read
 id: toolu_01VMRZJxXydEHFN8gVHbh4GW
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css",
   "offset": 255,
   "limit": 10
 }
@@ -7259,7 +7259,7 @@ tool_use Read
 id: toolu_01G6BaNmH3gxLqFGjxYdY4mb
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css",
   "offset": 115,
   "limit": 30
 }
@@ -7318,7 +7318,7 @@ tool_use Bash
 id: toolu_01Dn9xXeT6bP8gX5oLEmsDiS
 ```json
 {
-  "command": "grep -rn \"min-height\\|height.*400\\|elementor-theme-builder-content-area\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/ 2>/dev/null | head -10",
+  "command": "grep -rn \"min-height\\|height.*400\\|elementor-theme-builder-content-area\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/ 2>/dev/null | head -10",
   "description": "Find header content area height"
 }
 ```
@@ -7328,13 +7328,13 @@ id: toolu_01Dn9xXeT6bP8gX5oLEmsDiS
 tool_result
 id: toolu_01Dn9xXeT6bP8gX5oLEmsDiS
 ```
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/functions.php:928: * min-height de 600px → 700px (views-skeleton.css). Correção: adicionar a
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/functions.php:962://   - Shift do container (padding 19.5px→42px, min-height 0→700px)
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/functions.php:1001:    /* --- views-skeleton.css: l-container min-height e padding ---
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/functions.php:1002:       Base: min-height 600px, padding-top 64px, padding-bottom 80px
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/functions.php:1003:       Final: min-height 0 (override), padding-top 96px, padding-bottom 0 */
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/functions.php:1005:        min-height: 0 !important;
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/functions.php:1010:        min-height: 0 !important;
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/functions.php:928: * min-height de 600px → 700px (views-skeleton.css). Correção: adicionar a
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/functions.php:962://   - Shift do container (padding 19.5px→42px, min-height 0→700px)
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/functions.php:1001:    /* --- views-skeleton.css: l-container min-height e padding ---
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/functions.php:1002:       Base: min-height 600px, padding-top 64px, padding-bottom 80px
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/functions.php:1003:       Final: min-height 0 (override), padding-top 96px, padding-bottom 0 */
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/functions.php:1005:        min-height: 0 !important;
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/functions.php:1010:        min-height: 0 !important;
 ```
 
 > AGENT
@@ -7406,7 +7406,7 @@ tool_result ERROR
 id: toolu_01VjmWpNr7jZPTRmYRaER6QU
 ```
 ### Error
-Error: Browser is already in use for /Users/dcambria/Library/Caches/ms-playwright/mcp-chrome-ff60370, use --isolated to run multiple instances of the same browser
+Error: Browser is already in use for /home/<USER>/Library/Caches/ms-playwright/mcp-chrome-ff60370, use --isolated to run multiple instances of the same browser
 ```
 
 > TOOL
@@ -7423,7 +7423,7 @@ tool_result ERROR
 id: toolu_01A916UUa2pet3VdfrYfcTBS
 ```
 ### Error
-Error: Browser is already in use for /Users/dcambria/Library/Caches/ms-playwright/mcp-chrome-ff60370, use --isolated to run multiple instances of the same browser
+Error: Browser is already in use for /home/<USER>/Library/Caches/ms-playwright/mcp-chrome-ff60370, use --isolated to run multiple instances of the same browser
 ```
 
 > AGENT
@@ -7532,7 +7532,7 @@ tool_use Read
 id: toolu_01Kq2Tx281uucRb4DAyaK75g
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css",
   "offset": 260,
   "limit": 10
 }
@@ -7569,7 +7569,7 @@ id: toolu_01HZzUkaPGdKGUbJzf96ghpi
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css",
   "old_string": "/* ── 9. Ocultar barra in-flow durante hover ─────────────────────────────── */\n/* Evita \"duas barras verdes\" simultâneas. visibility:hidden preserva o layout. */\nbody:has(.bit-hover-bar--active) .bit-subnav-bar {\n  visibility: hidden;\n}",
   "new_string": "/* ── 9. Ocultar items da barra in-flow durante hover ───────────────────────\n * Evita \"duas barras verdes\" simultâneas. ANTES usávamos `visibility:hidden`\n * na .bit-subnav-bar inteira → mostrava o fundo branco do body atrás dela\n * (porque visibility:hidden preserva o layout mas não pinta o background).\n *\n * AGORA escondemos apenas os ITEMS internos (ul li) — o background verde da\n * barra continua pintado, sem revelar o body branco. Glitch eliminado.\n */\nbody:has(.bit-hover-bar--active) .bit-subnav-bar > ul {\n  visibility: hidden;\n}"
 }
@@ -7580,7 +7580,7 @@ id: toolu_01HZzUkaPGdKGUbJzf96ghpi
 tool_result
 id: toolu_01HZzUkaPGdKGUbJzf96ghpi
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7602,7 +7602,7 @@ id: toolu_017dGf6d3Z17s4fWJg9Q1cpx
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php",
   "old_string": " * Version:     1.8.0\n * Author:      Bureau IT\n */\n\nif ( ! defined( 'ABSPATH' ) ) {\n    exit;\n}\n\ndefine( 'BIT_INLINE_SUBMENU_VERSION', '1.8.0' );",
   "new_string": " * Version:     1.8.1\n * Author:      Bureau IT\n */\n\nif ( ! defined( 'ABSPATH' ) ) {\n    exit;\n}\n\ndefine( 'BIT_INLINE_SUBMENU_VERSION', '1.8.1' );"
 }
@@ -7613,7 +7613,7 @@ id: toolu_017dGf6d3Z17s4fWJg9Q1cpx
 tool_result
 id: toolu_017dGf6d3Z17s4fWJg9Q1cpx
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7622,7 +7622,7 @@ tool_use Bash
 id: toolu_01PCM1zZLiTVhkWBHj2J6oyR
 ```json
 {
-  "command": "cp /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css /Users/dcambria/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-inline-submenu.css && cp /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php /Users/dcambria/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-inline-submenu.php && docker exec -u www-data concertacao-dev-wordpress wp --url=https://cambrasmax.local:8484 cache flush 2>&1 | tail -1",
+  "command": "cp /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.css /home/<USER>/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-inline-submenu.css && cp /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-inline-submenu.php /home/<USER>/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-inline-submenu.php && docker exec -u www-data concertacao-dev-wordpress wp --url=https://cambrasmax.local:8484 cache flush 2>&1 | tail -1",
   "description": "Sync canonical + cache flush"
 }
 ```
@@ -7831,7 +7831,7 @@ tool_use Bash
 id: toolu_01URv71FZoe7ESuAVssXBydV
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2 && git status docker-dev/common/mu-plugins/bit-nav-menu-extra-controls.php docker-dev/common/mu-plugins/bit-inline-submenu.php docker-dev/common/mu-plugins/bit-inline-submenu.css 2>&1",
+  "command": "cd /home/<USER>/scripts/server-tools/v2 && git status docker-dev/common/mu-plugins/bit-nav-menu-extra-controls.php docker-dev/common/mu-plugins/bit-inline-submenu.php docker-dev/common/mu-plugins/bit-inline-submenu.css 2>&1",
   "description": "Check git status of new mu-plugins"
 }
 ```
@@ -7842,7 +7842,7 @@ tool_use Bash
 id: toolu_01St6osVHet8ZjT1vhP1q6us
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2 && git diff --stat docker-dev/common/mu-plugins/ 2>&1 | tail -10",
+  "command": "cd /home/<USER>/scripts/server-tools/v2 && git diff --stat docker-dev/common/mu-plugins/ 2>&1 | tail -10",
   "description": "Diff stat for mu-plugins"
 }
 ```
@@ -7853,7 +7853,7 @@ tool_use Bash
 id: toolu_016M7qDdFPzMtpB5EUA6CpGt
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2 && git log --oneline -3 2>&1",
+  "command": "cd /home/<USER>/scripts/server-tools/v2 && git log --oneline -3 2>&1",
   "description": "Recent commits for style reference"
 }
 ```
@@ -7877,7 +7877,7 @@ Untracked files:
 	docker-dev/common/mu-plugins/bit-nav-menu-extra-controls.php
 
 no changes added to commit (use "git add" and/or "git commit -a")
-Shell cwd was reset to /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao
+Shell cwd was reset to /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao
 ```
 
 > TOOL
@@ -7890,7 +7890,7 @@ id: toolu_01St6osVHet8ZjT1vhP1q6us
  .../common/mu-plugins/bit-wix-events-sync.php      |  13 ++-
  .../common/mu-plugins/bit-wix-forms-relay.php      |  20 ++--
  4 files changed, 156 insertions(+), 50 deletions(-)
-Shell cwd was reset to /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao
+Shell cwd was reset to /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao
 ```
 
 > TOOL
@@ -7901,7 +7901,7 @@ id: toolu_016M7qDdFPzMtpB5EUA6CpGt
 304dde3d5 sync(mu-plugin): bureau-a11y v2.5.22 — auto-contém Plus Jakarta Sans
 982ae1076 feat(post-deploy): 09-importdatabase v2.6.0 — search-replace de paths legados s3-uploads
 2233bcd3f sync(mu-plugin): bit-crossblog-attachment-fix v1.5.2 — WPML orphan resolver
-Shell cwd was reset to /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao
+Shell cwd was reset to /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao
 ```
 
 > AGENT
@@ -7914,7 +7914,7 @@ tool_use Bash
 id: toolu_01CNJGFgntQSuuVoZNUneu6d
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2 && git diff docker-dev/common/mu-plugins/bit-wix-events-sync.php docker-dev/common/mu-plugins/bit-wix-forms-relay.php 2>&1 | head -30",
+  "command": "cd /home/<USER>/scripts/server-tools/v2 && git diff docker-dev/common/mu-plugins/bit-wix-events-sync.php docker-dev/common/mu-plugins/bit-wix-forms-relay.php 2>&1 | head -30",
   "description": "Check what wix files changed"
 }
 ```
@@ -7953,7 +7953,7 @@ index 37ee854ab..3617f8834 100644
 -		update_post_meta( $post_id, 'link_externo', 'https://www.musicfrombrasil.com.br/event/' . $event['slug'] );
 +		update_post_meta( $post_id, 'link_externo', 'https://www.bma.org.br/event-details/' . $event['slug'] );
  	}
-Shell cwd was reset to /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao
+Shell cwd was reset to /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao
 ```
 
 > AGENT
@@ -7966,7 +7966,7 @@ tool_use Bash
 id: toolu_017iSKMm1tbpf4rkBTUiw4jv
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2 && git add docker-dev/common/mu-plugins/bit-nav-menu-extra-controls.php docker-dev/common/mu-plugins/bit-inline-submenu.php docker-dev/common/mu-plugins/bit-inline-submenu.css && git status --short docker-dev/common/mu-plugins/ 2>&1",
+  "command": "cd /home/<USER>/scripts/server-tools/v2 && git add docker-dev/common/mu-plugins/bit-nav-menu-extra-controls.php docker-dev/common/mu-plugins/bit-inline-submenu.php docker-dev/common/mu-plugins/bit-inline-submenu.css && git status --short docker-dev/common/mu-plugins/ 2>&1",
   "description": "Stage 3 menu mu-plugins"
 }
 ```
@@ -7983,7 +7983,7 @@ A  docker-dev/common/mu-plugins/bit-nav-menu-extra-controls.php
  M docker-dev/common/mu-plugins/bit-wix-forms-relay.php
 ?? docker-dev/common/mu-plugins/bit-en-404-redirects.php
 ?? docker-dev/common/mu-plugins/bit-jsf-query-count-sync.php
-Shell cwd was reset to /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao
+Shell cwd was reset to /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao
 ```
 
 > AGENT
@@ -7996,7 +7996,7 @@ tool_use Bash
 id: toolu_01SqGrooLNPdLsKvqccQBH76
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2 && git commit -m \"$(cat <<'EOF'\nfeat(menu): extra controls + submenu inline editável no widget Nav Menu\n\nbit-nav-menu-extra-controls.php v1.6.0 (novo):\n- Tipografia individual por estado (Normal/Hover/Ativo) no Menu Principal,\n  injetada DENTRO das tabs nativas via `position` em $options de add_group_control\n  (não em $args — fix do bug que jogava controles fora das tabs).\n- Esconde Tipografia global redundante no topo (Controls_Manager::HIDDEN).\n- Novo controle DIMENSIONS \"Padding do bloco do submenu\" — padding externo do\n  container <ul> do dropdown; complementa os 2 sliders nativos de padding\n  interno dos items (que controlam apenas espaço por item).\n- Nova seção \"Submenu Inline (Desktop)\" com tabs Normal/Hover/Ativo:\n  altura, cor de fundo da barra, cor do diamante, cor de texto por estado,\n  cor de fundo do item em hover, cor da borda inferior do item ativo,\n  família/tamanho/peso da fonte. Defaults HEX explícitos — sem hardcoded\n  em CSS externo.\n- v1.3.1: seletor do typography Hover exclui .highlighted standalone para\n  preservar fix stuck-pink (Override 9.5 do header-menu.css).\n\nbit-inline-submenu v1.8.1:\n- Suporte ao editor Elementor: CSS via elementor/preview/enqueue_styles;\n  JS roda no canvas iframe (?elementor-preview) via wp_footer; detecção de\n  isEditor + re-init via frontend/element_ready/nav-menu.default; âncora\n  alternativa (próprio widget) quando .elementor-location-header não existe.\n- Lista BIS_VARS central + função copyVars() — […]
+  "command": "cd /home/<USER>/scripts/server-tools/v2 && git commit -m \"$(cat <<'EOF'\nfeat(menu): extra controls + submenu inline editável no widget Nav Menu\n\nbit-nav-menu-extra-controls.php v1.6.0 (novo):\n- Tipografia individual por estado (Normal/Hover/Ativo) no Menu Principal,\n  injetada DENTRO das tabs nativas via `position` em $options de add_group_control\n  (não em $args — fix do bug que jogava controles fora das tabs).\n- Esconde Tipografia global redundante no topo (Controls_Manager::HIDDEN).\n- Novo controle DIMENSIONS \"Padding do bloco do submenu\" — padding externo do\n  container <ul> do dropdown; complementa os 2 sliders nativos de padding\n  interno dos items (que controlam apenas espaço por item).\n- Nova seção \"Submenu Inline (Desktop)\" com tabs Normal/Hover/Ativo:\n  altura, cor de fundo da barra, cor do diamante, cor de texto por estado,\n  cor de fundo do item em hover, cor da borda inferior do item ativo,\n  família/tamanho/peso da fonte. Defaults HEX explícitos — sem hardcoded\n  em CSS externo.\n- v1.3.1: seletor do typography Hover exclui .highlighted standalone para\n  preservar fix stuck-pink (Override 9.5 do header-menu.css).\n\nbit-inline-submenu v1.8.1:\n- Suporte ao editor Elementor: CSS via elementor/preview/enqueue_styles;\n  JS roda no canvas iframe (?elementor-preview) via wp_footer; detecção de\n  isEditor + re-init via frontend/element_ready/nav-menu.default; âncora\n  alternativa (próprio widget) quando .elementor-location-header não existe.\n- Lista BIS_VARS central + função copyVars() — […]
 
 > TOOL
 
@@ -8006,7 +8006,7 @@ id: toolu_01SqGrooLNPdLsKvqccQBH76
 [main d8ef1beff] feat(menu): extra controls + submenu inline editável no widget Nav Menu
  3 files changed, 543 insertions(+), 41 deletions(-)
  create mode 100644 docker-dev/common/mu-plugins/bit-nav-menu-extra-controls.php
-Shell cwd was reset to /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao
+Shell cwd was reset to /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao
 ```
 
 > TOOL
@@ -8015,7 +8015,7 @@ tool_use Bash
 id: toolu_01HJu3ALZPtbQVZJcyJtwMrr
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2 && git push origin main 2>&1 | tail -10",
+  "command": "cd /home/<USER>/scripts/server-tools/v2 && git push origin main 2>&1 | tail -10",
   "description": "Push to remote"
 }
 ```
@@ -9619,7 +9619,7 @@ tool_use Bash
 id: toolu_01AHqgobU1Jpv1XepwC8vDsG
 ```json
 {
-  "command": "grep -n \"principal-en\\|principal\\b\\|wpml\\|language\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php | head -30",
+  "command": "grep -n \"principal-en\\|principal\\b\\|wpml\\|language\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php | head -30",
   "description": "Find WPML logic in shared-menu plugin"
 }
 ```
@@ -9651,7 +9651,7 @@ tool_use Read
 id: toolu_01FZPiBkAQDrBBb3GexfErmm
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php",
   "offset": 140,
   "limit": 100
 }
@@ -10080,7 +10080,7 @@ tool_use Read
 id: toolu_01BXmosgm6dormTFiwdrGSxu
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php",
   "offset": 215,
   "limit": 25
 }
@@ -10129,7 +10129,7 @@ id: toolu_01UKGzmsr4Ar1YfkxBTVUbwN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php",
   "old_string": "    if ( in_array( $menu->slug, [ 'principal', 'principal-en', 'concertacao-lp' ], true ) ) {\n        $blog1_items = concertacao_pull_menu_from_blog1( $menu->slug );\n        return $blog1_items ?: $items;\n    }",
   "new_string": "    if ( in_array( $menu->slug, [ 'principal', 'principal-en', 'concertacao-lp' ], true ) ) {\n        // WPML não troca o slug do menu automaticamente em subsites (blog > 1)\n        // quando o widget Elementor pede 'principal' num contexto EN.\n        // Mapear manualmente: se idioma EN e slug é 'principal', usar 'principal-en'.\n        $slug = $menu->slug;\n        if ( $slug === 'principal' && function_exists( 'apply_filters' ) ) {\n            $current_lang = apply_filters( 'wpml_current_language', null );\n            if ( $current_lang && $current_lang !== 'pt-br' ) {\n                $candidate = 'principal-' . $current_lang;\n                if ( wp_get_nav_menu_object( $candidate ) ) {\n                    $slug = $candidate;\n                }\n            }\n        }\n        $blog1_items = concertacao_pull_menu_from_blog1( $slug );\n        return $blog1_items ?: $items;\n    }"
 }
@@ -10140,7 +10140,7 @@ id: toolu_01UKGzmsr4Ar1YfkxBTVUbwN
 tool_result
 id: toolu_01UKGzmsr4Ar1YfkxBTVUbwN
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -10154,7 +10154,7 @@ id: toolu_01QF4iZs7tHrVPfQpAe9pHhx
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php",
   "old_string": " * Version:     2.0.0",
   "new_string": " * Version:     2.1.0"
 }
@@ -10165,7 +10165,7 @@ id: toolu_01QF4iZs7tHrVPfQpAe9pHhx
 tool_result
 id: toolu_01QF4iZs7tHrVPfQpAe9pHhx
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10174,7 +10174,7 @@ tool_use Bash
 id: toolu_01CuXYgKAaR5VZVFaHJLXXCD
 ```json
 {
-  "command": "cp /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php /Users/dcambria/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-concertacao-shared-menu.php 2>&1 | tail -1; docker exec concertacao-dev-wordpress php -l /var/www/html/wp-content/mu-plugins/bit-concertacao-shared-menu.php 2>&1 | tail -1 && docker exec -u www-data concertacao-dev-wordpress wp cache flush --path=/var/www/html 2>&1 | tail -1",
+  "command": "cp /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php /home/<USER>/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-concertacao-shared-menu.php 2>&1 | tail -1; docker exec concertacao-dev-wordpress php -l /var/www/html/wp-content/mu-plugins/bit-concertacao-shared-menu.php 2>&1 | tail -1 && docker exec -u www-data concertacao-dev-wordpress wp cache flush --path=/var/www/html 2>&1 | tail -1",
   "description": "Sync canonical + lint + flush"
 }
 ```
@@ -10380,7 +10380,7 @@ id: toolu_01BhGgEaunrazwSNFVLdip31
 {
   "description": "Auditoria de segurança",
   "subagent_type": "general-purpose",
-  "prompt": "Faça uma auditoria de SEGURANÇA do arquivo PHP `/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` (versão atual 2.1.0).\n\n**Contexto:** É um mu-plugin WordPress de um site multisite (Concertação Amazônica) que sincroniza menus 'principal', 'principal-en' e 'footer' entre blog 1 (raiz) e blogs subsites (>1). Roda em produção. Há também versões PT/EN dos menus via WPML.\n\n**Foco da sua auditoria — SEGURANÇA:**\n- XSS, escapamento de output: todos os echos/prints estão escapando corretamente? (esc_html, esc_url, esc_attr)\n- Injection: alguma query SQL direta? Inputs não sanitizados de `$_GET/$_POST/$_REQUEST`?\n- Privilege escalation: alguma operação que ignora capabilities check?\n- CSRF: hooks com side effects sem nonce verification?\n- Race conditions: o `static $cache` em `concertacao_pull_menu_from_blog1` é seguro entre requests concorrentes?\n- Switch_to_blog/restore_current_blog: todos os switches são restaurados? Algum early return que esquece o restore?\n- Object/array access: `$item->property` sem checagem `isset`/`is_object` pode causar warnings que vazam paths em produção\n- WPML hooks: o uso de `apply_filters('wpml_current_language', null)` é seguro se WPML estiver desativado?\n\n**Entregue um report curto (até 200 palavras) listando:**\n1. CRÍTICO — bugs de segurança que precisam ser fixados imediatamente\n2. ATENÇÃO — práticas frágeis ou potencialmente exploráveis\n3. OK — o que está bem feito\nUse o estilo: [SEVERIDADE] linha XX: descrição"
+  "prompt": "Faça uma auditoria de SEGURANÇA do arquivo PHP `/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` (versão atual 2.1.0).\n\n**Contexto:** É um mu-plugin WordPress de um site multisite (Concertação Amazônica) que sincroniza menus 'principal', 'principal-en' e 'footer' entre blog 1 (raiz) e blogs subsites (>1). Roda em produção. Há também versões PT/EN dos menus via WPML.\n\n**Foco da sua auditoria — SEGURANÇA:**\n- XSS, escapamento de output: todos os echos/prints estão escapando corretamente? (esc_html, esc_url, esc_attr)\n- Injection: alguma query SQL direta? Inputs não sanitizados de `$_GET/$_POST/$_REQUEST`?\n- Privilege escalation: alguma operação que ignora capabilities check?\n- CSRF: hooks com side effects sem nonce verification?\n- Race conditions: o `static $cache` em `concertacao_pull_menu_from_blog1` é seguro entre requests concorrentes?\n- Switch_to_blog/restore_current_blog: todos os switches são restaurados? Algum early return que esquece o restore?\n- Object/array access: `$item->property` sem checagem `isset`/`is_object` pode causar warnings que vazam paths em produção\n- WPML hooks: o uso de `apply_filters('wpml_current_language', null)` é seguro se WPML estiver desativado?\n\n**Entregue um report curto (até 200 palavras) listando:**\n1. CRÍTICO — bugs de segurança que precisam ser fixados imediatamente\n2. ATENÇÃO — práticas frágeis ou potencialmente exploráveis\n3. OK — o que está bem feito\nUse o estilo: [SEVERIDADE] linha XX: descrição"
 }
 ```
 
@@ -10392,7 +10392,7 @@ id: toolu_01JqTcLk5c1rGg2Enie4crjy
 {
   "description": "Auditoria WPML/i18n",
   "subagent_type": "general-purpose",
-  "prompt": "Faça uma auditoria de **WPML/i18n/multilang** do arquivo PHP `/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` (versão atual 2.1.0).\n\n**Contexto:** mu-plugin WordPress multisite Concertação Amazônica. WPML ativo nos blogs 1 (raiz) e 2 (/cultura/). Idiomas: pt-br (default) e en. Mu-plugin sincroniza menus 'principal' (PT), 'principal-en' (EN) e 'footer' do blog 1 para subsites. RECENTEMENTE adicionado fix v2.1.0 que mapeia slug 'principal' → 'principal-{lang}' quando idioma WPML não é pt-br no contexto subsite.\n\n**Foco — WPML e i18n:**\n- O fix v2.1.0 (linhas ~226-241) cobre todos os casos? Funciona para EN, ES, FR? E se WPML adicionar novo idioma?\n- Slug `principal-en` é hardcoded no array (linha 226). Se houver mais idiomas, o filter não os interceptaria. Bug?\n- `apply_filters('wpml_current_language', null)` retorna o idioma do FRONTEND ou do switch_to_blog? Se um plugin já fez switch_to_blog(1), o WPML retorna o idioma certo?\n- `footer` (linha 230): não trata idioma — sempre retorna mesmo footer? E se houver menu `footer-en`?\n- `concertacao_pull_menu_from_blog1`: faz `switch_to_blog(1)` e busca menu — o contexto WPML é preservado/restaurado durante o switch?\n- `wp_get_nav_menu_object` no contexto pos-switch retorna menu correto?\n- Cache estático `$cache[$slug]` é por-slug — múltiplos idiomas geram entradas distintas, OK. Mas e se um request chamar primeiro PT e depois […]
+  "prompt": "Faça uma auditoria de **WPML/i18n/multilang** do arquivo PHP `/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` (versão atual 2.1.0).\n\n**Contexto:** mu-plugin WordPress multisite Concertação Amazônica. WPML ativo nos blogs 1 (raiz) e 2 (/cultura/). Idiomas: pt-br (default) e en. Mu-plugin sincroniza menus 'principal' (PT), 'principal-en' (EN) e 'footer' do blog 1 para subsites. RECENTEMENTE adicionado fix v2.1.0 que mapeia slug 'principal' → 'principal-{lang}' quando idioma WPML não é pt-br no contexto subsite.\n\n**Foco — WPML e i18n:**\n- O fix v2.1.0 (linhas ~226-241) cobre todos os casos? Funciona para EN, ES, FR? E se WPML adicionar novo idioma?\n- Slug `principal-en` é hardcoded no array (linha 226). Se houver mais idiomas, o filter não os interceptaria. Bug?\n- `apply_filters('wpml_current_language', null)` retorna o idioma do FRONTEND ou do switch_to_blog? Se um plugin já fez switch_to_blog(1), o WPML retorna o idioma certo?\n- `footer` (linha 230): não trata idioma — sempre retorna mesmo footer? E se houver menu `footer-en`?\n- `concertacao_pull_menu_from_blog1`: faz `switch_to_blog(1)` e busca menu — o contexto WPML é preservado/restaurado durante o switch?\n- `wp_get_nav_menu_object` no contexto pos-switch retorna menu correto?\n- Cache estático `$cache[$slug]` é por-slug — múltiplos idiomas geram entradas distintas, OK. Mas e se um request chamar primeiro PT e depois […]
 
 > TOOL
 
@@ -10402,7 +10402,7 @@ id: toolu_01Whk4HCb7fepzQWS7Ph65oX
 {
   "description": "Auditoria performance/cache",
   "subagent_type": "general-purpose",
-  "prompt": "Faça uma auditoria de **PERFORMANCE e CACHING** do arquivo PHP `/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` (versão 2.1.0).\n\n**Contexto:** mu-plugin que sincroniza menus entre blogs de multisite via `switch_to_blog()`. Roda em todas as requests de subsites (blog > 1) que renderizam o menu. Site tem WP Rocket + Redis em produção.\n\n**Foco — Performance:**\n- Custo de `switch_to_blog(1)`: dispara `wpdb->select`, reset de cache de objeto, queries adicionais. É feito a cada chamada de `concertacao_pull_menu_from_blog1` — quantas vezes por request? O cache estático mitiga?\n- Cache estático `$cache[$slug]`: vive só por request. Sem cache persistente entre requests. Considerando que menu mudaria raramente, faltaria usar `wp_cache_set` ou transient?\n- `wp_get_nav_menu_items` retorna objetos hidratados — em loops é caro. O filter está no hook `wp_get_nav_menu_items` (prioridade 10) — quantas vezes esse hook dispara por page-load? Múltiplos menus? Recursão?\n- Remoção/adição do próprio filter (linhas 176-178) para evitar recursão — funciona em todos os PHP/WP supported? O `remove_filter` com prioridade 10 é robusto?\n- Loop foreach que faz `is_object`, sets de propriedades — todos os items são processados mesmo se já foi feito antes? Idempotência.\n- `concertacao_footer_menu_items()` (linha 231) — não vi a definição mas é chamada toda vez que menu footer é renderizado em […]
+  "prompt": "Faça uma auditoria de **PERFORMANCE e CACHING** do arquivo PHP `/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` (versão 2.1.0).\n\n**Contexto:** mu-plugin que sincroniza menus entre blogs de multisite via `switch_to_blog()`. Roda em todas as requests de subsites (blog > 1) que renderizam o menu. Site tem WP Rocket + Redis em produção.\n\n**Foco — Performance:**\n- Custo de `switch_to_blog(1)`: dispara `wpdb->select`, reset de cache de objeto, queries adicionais. É feito a cada chamada de `concertacao_pull_menu_from_blog1` — quantas vezes por request? O cache estático mitiga?\n- Cache estático `$cache[$slug]`: vive só por request. Sem cache persistente entre requests. Considerando que menu mudaria raramente, faltaria usar `wp_cache_set` ou transient?\n- `wp_get_nav_menu_items` retorna objetos hidratados — em loops é caro. O filter está no hook `wp_get_nav_menu_items` (prioridade 10) — quantas vezes esse hook dispara por page-load? Múltiplos menus? Recursão?\n- Remoção/adição do próprio filter (linhas 176-178) para evitar recursão — funciona em todos os PHP/WP supported? O `remove_filter` com prioridade 10 é robusto?\n- Loop foreach que faz `is_object`, sets de propriedades — todos os items são processados mesmo se já foi feito antes? Idempotência.\n- `concertacao_footer_menu_items()` (linha 231) — não vi a definição mas é chamada toda vez que menu footer é renderizado em […]
 
 > TOOL
 
@@ -10412,7 +10412,7 @@ id: toolu_01FT4b5TyHs2TrjDVAN3X5ZK
 {
   "description": "Auditoria multisite/cross-blog",
   "subagent_type": "general-purpose",
-  "prompt": "Faça uma auditoria de **MULTISITE e CROSS-BLOG** do arquivo PHP `/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` (versão 2.1.0).\n\n**Contexto:** WordPress Multisite Concertação Amazônica. Blog 1 (raiz, `cambrasmax.local:8484`) é fonte da verdade. Blog 2 (`/cultura/`) e outros subsites leem menus do blog 1 via `switch_to_blog(1)`. Houve INCIDENTE em 2026-05-05 (\"Hugo Leonardo\") onde cross-blog ID collision em `wp_posts` vs `wp_2_posts` causou items de menu mostrando título errado. Fix usou `$item->type = 'custom'` e `$item->object_id = (string)$item->ID` (self-ref) para evitar re-resolução de título no walker do blog destino.\n\n**Foco — Multisite:**\n- O fix de cross-blog ID collision (linhas 182-197) cobre TODOS os caminhos de re-resolução? Walkers JetEngine, WPML, mega menus, custom theme nav walkers podem ignorar `type=custom`?\n- Hardcoded `switch_to_blog(1)` (linha 174) — site assume blog principal é sempre ID 1. E se MainSite muda?\n- `restore_current_blog()` (linha 198) — está sempre alcançável? Algum exception no foreach poderia escapar sem restore?\n- `get_current_blog_id() === 1` (linha 223) — early return só para blog 1 deixa de processar legítimos casos de \"blog 1 query rodando dentro de switch_to_blog(2)\" se algum plugin fizer isso?\n- WP Rocket: cada blog tem cache separado por hostname. O fix v2.1.0 mudou comportamento — pode haver inconsistência entre […]
+  "prompt": "Faça uma auditoria de **MULTISITE e CROSS-BLOG** do arquivo PHP `/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` (versão 2.1.0).\n\n**Contexto:** WordPress Multisite Concertação Amazônica. Blog 1 (raiz, `cambrasmax.local:8484`) é fonte da verdade. Blog 2 (`/cultura/`) e outros subsites leem menus do blog 1 via `switch_to_blog(1)`. Houve INCIDENTE em 2026-05-05 (\"Hugo Leonardo\") onde cross-blog ID collision em `wp_posts` vs `wp_2_posts` causou items de menu mostrando título errado. Fix usou `$item->type = 'custom'` e `$item->object_id = (string)$item->ID` (self-ref) para evitar re-resolução de título no walker do blog destino.\n\n**Foco — Multisite:**\n- O fix de cross-blog ID collision (linhas 182-197) cobre TODOS os caminhos de re-resolução? Walkers JetEngine, WPML, mega menus, custom theme nav walkers podem ignorar `type=custom`?\n- Hardcoded `switch_to_blog(1)` (linha 174) — site assume blog principal é sempre ID 1. E se MainSite muda?\n- `restore_current_blog()` (linha 198) — está sempre alcançável? Algum exception no foreach poderia escapar sem restore?\n- `get_current_blog_id() === 1` (linha 223) — early return só para blog 1 deixa de processar legítimos casos de \"blog 1 query rodando dentro de switch_to_blog(2)\" se algum plugin fizer isso?\n- WP Rocket: cada blog tem cache separado por hostname. O fix v2.1.0 mudou comportamento — pode haver inconsistência entre […]
 
 > TOOL
 
@@ -10422,7 +10422,7 @@ id: toolu_01GV623XJFewCTswfJkJYh7p
 {
   "description": "Auditoria code quality",
   "subagent_type": "general-purpose",
-  "prompt": "Faça uma auditoria de **QUALIDADE DE CÓDIGO** do arquivo PHP `/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` (versão 2.1.0). É um mu-plugin WordPress de 200+ linhas.\n\n**Foco — Code Quality:**\n- Naming consistency: `concertacao_*` vs uso de globals/constantes? Prefixo correto? PSR/WPCS compliance?\n- Funções com side effects vs puras: estão claramente separadas?\n- Acoplamento: o filter `concertacao_shared_menu_filter` depende de `concertacao_pull_menu_from_blog1` e `concertacao_footer_menu_items` (não vista). Coesão OK?\n- DRY: alguma duplicação de lógica? Loops repetidos?\n- Magic numbers/strings hardcoded: `'principal'`, `'principal-en'`, `'pt-br'`, `1` (blog ID) — deveriam ser constantes/filtros?\n- Documentação: docblocks têm `@param`, `@return`, `@since`? Cobertura adequada?\n- Error handling: o que acontece se `wp_get_nav_menu_object` retorna falsy? Tratado?\n- Testability: alguma função é testável unitariamente sem WP global state?\n- Hooks deprecated ou substituídos por novos APIs?\n- O fix v2.1.0 introduziu lógica que poderia ser função separada (mapeamento slug → slug-lang)?\n- Reusabilidade: o arquivo serve só este site ou poderia ser generalizado para outros multisites BIT? Hardcodes que impedem reuso?\n- PHP 8.x compatibility: `?? ''`, `match`, named args usados? Há features deprecated?\n- Tamanho de funções: alguma > 30 linhas que deveria ser quebrada?\n- Comments vs code: comentários explicam WHY (não WHAT)? Ratio adequado?\n\n**Entregue report curto (≤200 palavras) com top 5-7 problemas de qualidade […]
+  "prompt": "Faça uma auditoria de **QUALIDADE DE CÓDIGO** do arquivo PHP `/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` (versão 2.1.0). É um mu-plugin WordPress de 200+ linhas.\n\n**Foco — Code Quality:**\n- Naming consistency: `concertacao_*` vs uso de globals/constantes? Prefixo correto? PSR/WPCS compliance?\n- Funções com side effects vs puras: estão claramente separadas?\n- Acoplamento: o filter `concertacao_shared_menu_filter` depende de `concertacao_pull_menu_from_blog1` e `concertacao_footer_menu_items` (não vista). Coesão OK?\n- DRY: alguma duplicação de lógica? Loops repetidos?\n- Magic numbers/strings hardcoded: `'principal'`, `'principal-en'`, `'pt-br'`, `1` (blog ID) — deveriam ser constantes/filtros?\n- Documentação: docblocks têm `@param`, `@return`, `@since`? Cobertura adequada?\n- Error handling: o que acontece se `wp_get_nav_menu_object` retorna falsy? Tratado?\n- Testability: alguma função é testável unitariamente sem WP global state?\n- Hooks deprecated ou substituídos por novos APIs?\n- O fix v2.1.0 introduziu lógica que poderia ser função separada (mapeamento slug → slug-lang)?\n- Reusabilidade: o arquivo serve só este site ou poderia ser generalizado para outros multisites BIT? Hardcodes que impedem reuso?\n- PHP 8.x compatibility: `?? ''`, `match`, named args usados? Há features deprecated?\n- Tamanho de funções: alguma > 30 linhas que deveria ser quebrada?\n- Comments vs code: comentários explicam WHY (não WHAT)? Ratio adequado?\n\n**Entregue report curto (≤200 palavras) com top 5-7 problemas de qualidade […]
 
 > TOOL
 
@@ -10618,7 +10618,7 @@ id: toolu_0131gXAsvvD3wRVqkAzzidfT
 {
   "description": "Validação dos achados ciclo 1",
   "subagent_type": "general-purpose",
-  "prompt": "Faça **VALIDAÇÃO EMPÍRICA** dos achados do primeiro ciclo de auditoria do arquivo `/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` (versão 2.1.0).\n\n**Contexto:** É um mu-plugin de multisite WordPress (Concertação Amazônica). Tem environment dev em Docker (`concertacao-dev-wordpress`), site multilíngue (WPML pt-br + en), blog 1 raiz + blog 2 /cultura/. Você pode executar `wp eval-file` via `docker exec -u www-data concertacao-dev-wordpress` para validar hipóteses.\n\n**Achados do ciclo 1 que precisam VALIDAÇÃO empírica (confirmar ou refutar com evidência real):**\n\n1. **Achado**: \"linha 235 `wp_get_nav_menu_object($candidate)` chamado ANTES de switch_to_blog — menu `principal-en` vive no blog 1, lookup no contexto subsite retorna false\"\n   - TESTE: criar script PHP que rode no contexto blog 2 EN e chame `wp_get_nav_menu_object('principal-en')` — retorna o menu ou false?\n   - Se retornar menu, o achado é FALSO POSITIVO (menus de multisite são per-blog mas WPML/Concertação podem ter espelhado)\n\n2. **Achado**: \"linha 226 array hardcoded não cobre ES/FR\" — TESTE: WPML do site tem outros idiomas além de pt-br/en? Listar via `apply_filters('wpml_active_languages', null)`.\n\n3. **Achado**: \"footer (linha 230) ignora idioma — `concertacao_footer_menu_items()` retorna sempre PT\" — leia a função `concertacao_footer_menu_items()` no arquivo e confirme/refute.\n\n4. **Achado**: \"linha 194 `$item->object_id = (string)$item->ID` quebra REST `menu-items` (espera integer)\" — […]
+  "prompt": "Faça **VALIDAÇÃO EMPÍRICA** dos achados do primeiro ciclo de auditoria do arquivo `/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` (versão 2.1.0).\n\n**Contexto:** É um mu-plugin de multisite WordPress (Concertação Amazônica). Tem environment dev em Docker (`concertacao-dev-wordpress`), site multilíngue (WPML pt-br + en), blog 1 raiz + blog 2 /cultura/. Você pode executar `wp eval-file` via `docker exec -u www-data concertacao-dev-wordpress` para validar hipóteses.\n\n**Achados do ciclo 1 que precisam VALIDAÇÃO empírica (confirmar ou refutar com evidência real):**\n\n1. **Achado**: \"linha 235 `wp_get_nav_menu_object($candidate)` chamado ANTES de switch_to_blog — menu `principal-en` vive no blog 1, lookup no contexto subsite retorna false\"\n   - TESTE: criar script PHP que rode no contexto blog 2 EN e chame `wp_get_nav_menu_object('principal-en')` — retorna o menu ou false?\n   - Se retornar menu, o achado é FALSO POSITIVO (menus de multisite são per-blog mas WPML/Concertação podem ter espelhado)\n\n2. **Achado**: \"linha 226 array hardcoded não cobre ES/FR\" — TESTE: WPML do site tem outros idiomas além de pt-br/en? Listar via `apply_filters('wpml_active_languages', null)`.\n\n3. **Achado**: \"footer (linha 230) ignora idioma — `concertacao_footer_menu_items()` retorna sempre PT\" — leia a função `concertacao_footer_menu_items()` no arquivo e confirme/refute.\n\n4. **Achado**: \"linha 194 `$item->object_id = (string)$item->ID` quebra REST `menu-items` (espera integer)\" — […]
 
 > TOOL
 
@@ -10628,7 +10628,7 @@ id: toolu_01Ga5MboPeQsTBf8cbMrsq5D
 {
   "description": "Edge cases não cobertos",
   "subagent_type": "general-purpose",
-  "prompt": "Faça uma análise focada em **EDGE CASES e CENÁRIOS NÃO COBERTOS** do arquivo `/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` (versão 2.1.0).\n\n**Contexto:** mu-plugin WordPress multisite. Sincroniza menus 'principal' e 'principal-en' entre blog 1 (raiz) e blog 2 (/cultura/). Fix v2.1.0 mapeia slug 'principal' → 'principal-{lang}' em subsites quando idioma WPML ≠ pt-br.\n\n**Foco — Edge cases SEM evaluar achados anteriores (procure NOVOS):**\n\n1. **WP-CLI commands**: rodar `wp menu list --allow-root` ou `wp menu item list principal` em context do blog 2 — o filter intervém? Quais consequências?\n\n2. **REST API**: a chamada `/wp-json/wp/v2/menu-items?menus=X` no blog 2 EN: o filter modifica a resposta JSON? Como interage com `_menu_item_object_id` no postmeta vs runtime?\n\n3. **AJAX no admin**: ao editar um menu via wp-admin do blog 2 e salvar, o filter é chamado? Pode corromper dados ao salvar?\n\n4. **Customizer**: live preview do Customizer renderiza menus via JS. O fix funciona ali?\n\n5. **Block Editor (Gutenberg)**: blocos `wp/navigation` consomem `wp_get_nav_menu_items`? Quebra a edição?\n\n6. **Mobile vs Desktop**: o widget Elementor renderiza menu duas vezes (uma full, uma dropdown mobile). Cache estático ajuda mas com chave `slug` apenas — quando idioma muda no meio do request (raro mas possível com Ajax interno), 2ª […]
+  "prompt": "Faça uma análise focada em **EDGE CASES e CENÁRIOS NÃO COBERTOS** do arquivo `/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` (versão 2.1.0).\n\n**Contexto:** mu-plugin WordPress multisite. Sincroniza menus 'principal' e 'principal-en' entre blog 1 (raiz) e blog 2 (/cultura/). Fix v2.1.0 mapeia slug 'principal' → 'principal-{lang}' em subsites quando idioma WPML ≠ pt-br.\n\n**Foco — Edge cases SEM evaluar achados anteriores (procure NOVOS):**\n\n1. **WP-CLI commands**: rodar `wp menu list --allow-root` ou `wp menu item list principal` em context do blog 2 — o filter intervém? Quais consequências?\n\n2. **REST API**: a chamada `/wp-json/wp/v2/menu-items?menus=X` no blog 2 EN: o filter modifica a resposta JSON? Como interage com `_menu_item_object_id` no postmeta vs runtime?\n\n3. **AJAX no admin**: ao editar um menu via wp-admin do blog 2 e salvar, o filter é chamado? Pode corromper dados ao salvar?\n\n4. **Customizer**: live preview do Customizer renderiza menus via JS. O fix funciona ali?\n\n5. **Block Editor (Gutenberg)**: blocos `wp/navigation` consomem `wp_get_nav_menu_items`? Quebra a edição?\n\n6. **Mobile vs Desktop**: o widget Elementor renderiza menu duas vezes (uma full, uma dropdown mobile). Cache estático ajuda mas com chave `slug` apenas — quando idioma muda no meio do request (raro mas possível com Ajax interno), 2ª […]
 
 > TOOL
 
@@ -10638,7 +10638,7 @@ id: toolu_01TUWXyZhUrK61dcPgGJwA3V
 {
   "description": "Testabilidade e refatoração",
   "subagent_type": "general-purpose",
-  "prompt": "Faça uma análise de **TESTABILIDADE, REFATORAÇÃO e MANUTENIBILIDADE** do arquivo `/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` (versão 2.1.0).\n\n**Contexto:** mu-plugin WordPress de 280+ linhas. Sincroniza menus entre blog 1 e subsites do multisite. Tem WPML, integra com Elementor. Hoje não tem testes unitários nem integração.\n\n**Análise solicitada — não repita achados óbvios já cobertos (DRY, prefixos):**\n\n1. **Pontos de injeção de dependências**: o código usa funções globais WP diretamente (`switch_to_blog`, `wp_get_nav_menu_object`, `apply_filters`). Como introduzir testes sem refatorar tudo? Sugira o mínimo de wrappers/abstrações.\n\n2. **Estado mutável**: `static $cache` torna a função impura. Como tornar testável mantendo memoization? Padrão: factory + dependency injection vs filter para reset.\n\n3. **Funções privadas vs públicas**: identifique funções que deveriam ser `private` (helpers) vs `public` (API). Hoje TODAS são funções globais.\n\n4. **Arquitetura preferível**: classe + Singleton vs namespace + funções? Vantagens/desvantagens neste mu-plugin específico (com `add_filter` em escopo global).\n\n5. **Mock points**: para testar `concertacao_shared_menu_filter`, quais funções precisam ser mockáveis? (`get_current_blog_id`, `wp_get_nav_menu_object`, `apply_filters('wpml_current_language')`).\n\n6. **Logging para observabilidade**: o mu-plugin é silencioso. Quando algo falha (menu não encontrado, switch falha), não há trail. Sugerir hooks de log condicionais (`if WP_DEBUG`).\n\n7. **Feature flags via filter**: hoje todo comportamento é hardcoded. Quais decisões deveriam ser configuráveis via […]
+  "prompt": "Faça uma análise de **TESTABILIDADE, REFATORAÇÃO e MANUTENIBILIDADE** do arquivo `/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` (versão 2.1.0).\n\n**Contexto:** mu-plugin WordPress de 280+ linhas. Sincroniza menus entre blog 1 e subsites do multisite. Tem WPML, integra com Elementor. Hoje não tem testes unitários nem integração.\n\n**Análise solicitada — não repita achados óbvios já cobertos (DRY, prefixos):**\n\n1. **Pontos de injeção de dependências**: o código usa funções globais WP diretamente (`switch_to_blog`, `wp_get_nav_menu_object`, `apply_filters`). Como introduzir testes sem refatorar tudo? Sugira o mínimo de wrappers/abstrações.\n\n2. **Estado mutável**: `static $cache` torna a função impura. Como tornar testável mantendo memoization? Padrão: factory + dependency injection vs filter para reset.\n\n3. **Funções privadas vs públicas**: identifique funções que deveriam ser `private` (helpers) vs `public` (API). Hoje TODAS são funções globais.\n\n4. **Arquitetura preferível**: classe + Singleton vs namespace + funções? Vantagens/desvantagens neste mu-plugin específico (com `add_filter` em escopo global).\n\n5. **Mock points**: para testar `concertacao_shared_menu_filter`, quais funções precisam ser mockáveis? (`get_current_blog_id`, `wp_get_nav_menu_object`, `apply_filters('wpml_current_language')`).\n\n6. **Logging para observabilidade**: o mu-plugin é silencioso. Quando algo falha (menu não encontrado, switch falha), não há trail. Sugerir hooks de log condicionais (`if WP_DEBUG`).\n\n7. **Feature flags via filter**: hoje todo comportamento é hardcoded. Quais decisões deveriam ser configuráveis via […]
 
 > TOOL
 
@@ -10648,7 +10648,7 @@ id: toolu_0188k65Y4mAwCVE77JZLXZhC
 {
   "description": "Integração JetEngine + Elementor",
   "subagent_type": "general-purpose",
-  "prompt": "Faça uma análise de **INTEGRAÇÃO** entre o arquivo `/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` (v2.1.0) e os principais plugins/sistemas do site Concertação Amazônica.\n\n**Contexto:** site multisite tem ATIVOS: Elementor Pro (widget Nav Menu), JetEngine (listings + glossaries), WPML 4.8.6, WP Rocket, Redis, S3 Uploads, Network Media Library, mu-plugins BIT (bit-crossblog-elementor-menus, bit-nav-menu-extra-controls, bit-inline-submenu, etc).\n\n**Pode rodar `docker exec -u www-data concertacao-dev-wordpress wp ...` ou ler outros arquivos `/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/*.php` para investigar.**\n\n**Foco — integração com:**\n\n1. **`bit-crossblog-elementor-menus.php`** (1.1.0): também adiciona menus do blog 1 nas opções do dropdown Elementor. Sobreposição de responsabilidade com `shared-menu`? Conflito? Cache duplicado?\n\n2. **`bit-nav-menu-extra-controls.php`** (1.6.0): adiciona controles no widget Nav Menu. Os settings do widget incluem `menu_slug` — esse settings nunca é traduzido pelo WPML. Como o fix v2.1.0 do shared-menu interage com o widget recém-modificado?\n\n3. **`bit-inline-submenu.php`** (1.8.1): renderiza `.bit-subnav-bar` via JS clonando items do `<ul.sub-menu>`. Se shared-menu retorna items errados, subnav-bar fica errada. Como sincronizar?\n\n4. **Elementor Pro Nav Menu widget**: lê `wp_nav_menu(['menu' => $settings['menu']])` que internamente chama `wp_get_nav_menu_items($settings['menu'])`. O filter intervém aí. Mas e o **CSS gerado** pelo Elementor — ele cacheia HTML do menu? Se sim, swap de idioma pode quebrar.\n\n5. **WPML String Translation**: shared-menu retorna items com `title` literal (PT). […]
+  "prompt": "Faça uma análise de **INTEGRAÇÃO** entre o arquivo `/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` (v2.1.0) e os principais plugins/sistemas do site Concertação Amazônica.\n\n**Contexto:** site multisite tem ATIVOS: Elementor Pro (widget Nav Menu), JetEngine (listings + glossaries), WPML 4.8.6, WP Rocket, Redis, S3 Uploads, Network Media Library, mu-plugins BIT (bit-crossblog-elementor-menus, bit-nav-menu-extra-controls, bit-inline-submenu, etc).\n\n**Pode rodar `docker exec -u www-data concertacao-dev-wordpress wp ...` ou ler outros arquivos `/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/*.php` para investigar.**\n\n**Foco — integração com:**\n\n1. **`bit-crossblog-elementor-menus.php`** (1.1.0): também adiciona menus do blog 1 nas opções do dropdown Elementor. Sobreposição de responsabilidade com `shared-menu`? Conflito? Cache duplicado?\n\n2. **`bit-nav-menu-extra-controls.php`** (1.6.0): adiciona controles no widget Nav Menu. Os settings do widget incluem `menu_slug` — esse settings nunca é traduzido pelo WPML. Como o fix v2.1.0 do shared-menu interage com o widget recém-modificado?\n\n3. **`bit-inline-submenu.php`** (1.8.1): renderiza `.bit-subnav-bar` via JS clonando items do `<ul.sub-menu>`. Se shared-menu retorna items errados, subnav-bar fica errada. Como sincronizar?\n\n4. **Elementor Pro Nav Menu widget**: lê `wp_nav_menu(['menu' => $settings['menu']])` que internamente chama `wp_get_nav_menu_items($settings['menu'])`. O filter intervém aí. Mas e o **CSS gerado** pelo Elementor — ele cacheia HTML do menu? Se sim, swap de idioma pode quebrar.\n\n5. **WPML String Translation**: shared-menu retorna items com `title` literal (PT). […]
 
 > TOOL
 
@@ -10658,7 +10658,7 @@ id: toolu_01HnhFouFjxn1qLi6Uhr8MXr
 {
   "description": "Histórico git e patterns BIT",
   "subagent_type": "general-purpose",
-  "prompt": "Faça uma análise **HISTÓRICA e DE PADRÕES BIT** do arquivo `/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` (versão 2.1.0).\n\n**Você pode rodar `git log`, `git blame`, `git diff` etc no repositório `/Users/dcambria/scripts/server-tools/v2/` para fazer essa análise.**\n\n**Foco:**\n\n1. **Histórico do arquivo**: rodar `git log --follow --oneline docker-dev/common/mu-plugins/bit-concertacao-shared-menu.php` (canonical) e do site path. Quantos commits? Qual a evolução? Há padrões de bugfix recorrentes?\n\n2. **Bugs recorrentes**: ler mensagens de commits — quais classes de bugs apareceram mais? (cache, multisite, i18n, performance). Isso indica fragilidade arquitetural?\n\n3. **Outros mu-plugins BIT similares**: rodar `ls docker-dev/common/mu-plugins/bit-*.php` e identificar outros mu-plugins do mesmo padrão (bit-*). Há algum similar (multisite + i18n) que poderia servir de referência? `bit-multisite-menu-url.php`, `bit-crossblog-*.php`?\n\n4. **Padrões de naming/estrutura**: outros mu-plugins BIT usam classes? Namespaces? Funções globais? Constantes? Há um padrão BIT consolidado vs ad-hoc?\n\n5. **Documentação BIT**: ler `/Users/dcambria/scripts/server-tools/v2/CLAUDE.md` e similares — há guidelines explícitos para mu-plugins (versionamento, sync para canonical, prefixos)?\n\n6. **Memória do projeto**: arquivos em `/Users/dcambria/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/MEMORY.md` — há aprendizados relevantes sobre menus, WPML, multisite?\n\n7. **Sync entre site e canonical**: verificar se `docker-dev/common/mu-plugins/bit-concertacao-shared-menu.php` e `docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` estão sincronizados (`diff` entre eles).\n\n8. **Outros sites BIT que poderiam usar**: o mu-plugin é Concertação-only mas funcionalidade é genérica (compartilhar menu entre subsites […]
+  "prompt": "Faça uma análise **HISTÓRICA e DE PADRÕES BIT** do arquivo `/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` (versão 2.1.0).\n\n**Você pode rodar `git log`, `git blame`, `git diff` etc no repositório `/home/<USER>/scripts/server-tools/v2/` para fazer essa análise.**\n\n**Foco:**\n\n1. **Histórico do arquivo**: rodar `git log --follow --oneline docker-dev/common/mu-plugins/bit-concertacao-shared-menu.php` (canonical) e do site path. Quantos commits? Qual a evolução? Há padrões de bugfix recorrentes?\n\n2. **Bugs recorrentes**: ler mensagens de commits — quais classes de bugs apareceram mais? (cache, multisite, i18n, performance). Isso indica fragilidade arquitetural?\n\n3. **Outros mu-plugins BIT similares**: rodar `ls docker-dev/common/mu-plugins/bit-*.php` e identificar outros mu-plugins do mesmo padrão (bit-*). Há algum similar (multisite + i18n) que poderia servir de referência? `bit-multisite-menu-url.php`, `bit-crossblog-*.php`?\n\n4. **Padrões de naming/estrutura**: outros mu-plugins BIT usam classes? Namespaces? Funções globais? Constantes? Há um padrão BIT consolidado vs ad-hoc?\n\n5. **Documentação BIT**: ler `/home/<USER>/scripts/server-tools/v2/CLAUDE.md` e similares — há guidelines explícitos para mu-plugins (versionamento, sync para canonical, prefixos)?\n\n6. **Memória do projeto**: arquivos em `/home/<USER>/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/MEMORY.md` — há aprendizados relevantes sobre menus, WPML, multisite?\n\n7. **Sync entre site e canonical**: verificar se `docker-dev/common/mu-plugins/bit-concertacao-shared-menu.php` e `docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` estão sincronizados (`diff` entre eles).\n\n8. **Outros sites BIT que poderiam usar**: o mu-plugin é Concertação-only mas funcionalidade é genérica (compartilhar menu entre subsites […]
 
 > TOOL
 
@@ -10872,7 +10872,7 @@ id: toolu_012HdAL3XHVczdvtciWv4hbk
 {
   "description": "Comparação outros mu-plugins BIT",
   "subagent_type": "general-purpose",
-  "prompt": "Compare o arquivo `/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` (v2.1.0) com os outros mu-plugins BIT que lidam com multisite/menus para identificar **incoerências de padrão** e **oportunidades de unificação**.\n\n**Mu-plugins similares a inspecionar:**\n- `/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-multisite-menu-url.php`\n- `/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-crossblog-elementor-menus.php`\n- `/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-crossblog-menu-source.php`\n- `/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-crossblog-attachment-fix.php` (referência de tratamento cross-blog ID collision)\n\n**Analise:**\n1. Quais padrões cada um usa? (classe vs função global, namespaces, filtros de config, prefixos)\n2. Há funções equivalentes duplicadas? (ex: ambos fazem `switch_to_blog(1)` com cache estático)\n3. O `bit-crossblog-attachment-fix.php` evoluiu para `v1.5.2` com hooks numerados 1-13 — esse padrão poderia ser aplicado em `shared-menu`?\n4. `bit-multisite-menu-url.php` tem filtros `bit_multisite_*` configuráveis — qual é a abordagem dele para extensibilidade?\n5. Há algum mu-plugin que JÁ resolve cross-blog menu via abordagem diferente (mais elegante)?\n\n**Entregue (≤300 palavras):**\n- Tabela comparativa: feature por feature\n- Top 3 inconsistências (mesmo problema, soluções diferentes)\n- 1 proposta de arquitetura unificada (qual seria o \"BIT Way\" canônico)"
+  "prompt": "Compare o arquivo `/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` (v2.1.0) com os outros mu-plugins BIT que lidam com multisite/menus para identificar **incoerências de padrão** e **oportunidades de unificação**.\n\n**Mu-plugins similares a inspecionar:**\n- `/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-multisite-menu-url.php`\n- `/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-crossblog-elementor-menus.php`\n- `/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-crossblog-menu-source.php`\n- `/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-crossblog-attachment-fix.php` (referência de tratamento cross-blog ID collision)\n\n**Analise:**\n1. Quais padrões cada um usa? (classe vs função global, namespaces, filtros de config, prefixos)\n2. Há funções equivalentes duplicadas? (ex: ambos fazem `switch_to_blog(1)` com cache estático)\n3. O `bit-crossblog-attachment-fix.php` evoluiu para `v1.5.2` com hooks numerados 1-13 — esse padrão poderia ser aplicado em `shared-menu`?\n4. `bit-multisite-menu-url.php` tem filtros `bit_multisite_*` configuráveis — qual é a abordagem dele para extensibilidade?\n5. Há algum mu-plugin que JÁ resolve cross-blog menu via abordagem diferente (mais elegante)?\n\n**Entregue (≤300 palavras):**\n- Tabela comparativa: feature por feature\n- Top 3 inconsistências (mesmo problema, soluções diferentes)\n- 1 proposta de arquitetura unificada (qual seria o \"BIT Way\" canônico)"
 }
 ```
 
@@ -10884,7 +10884,7 @@ id: toolu_01Mgmm7G8wVw93zGVyoMyjjc
 {
   "description": "OWASP Top 10 audit",
   "subagent_type": "general-purpose",
-  "prompt": "Faça uma auditoria **OWASP Top 10 (2021)** específica do arquivo `/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` (v2.1.0).\n\n**Contexto:** mu-plugin WordPress multisite production-ready. Roda em frontend, admin, REST, AJAX. Recebe input via WP hooks (`$menu`, `$args`).\n\n**Para cada categoria OWASP, dê veredito CONFIRMADO/REFUTADO/N/A com linha:**\n\nA01 — Broken Access Control: o filter ignora capabilities? Pode expor menus restritos?\nA02 — Cryptographic Failures: o plugin armazena/transmite segredos? (improvável)\nA03 — Injection: SQL/HTML/JS injection vectors? Cuidado com `$menu->slug` vindo de user input via REST `?menus={slug}`\nA04 — Insecure Design: arquitetura tem flaws inerentes? (ex: confiança implícita em blog 1)\nA05 — Security Misconfiguration: hardcoded credentials/IDs? Default behavior arriscado?\nA06 — Vulnerable & Outdated Components: usa APIs deprecated? Dependências fora de suporte?\nA07 — Authentication Failures: ignora `is_user_logged_in()`? Bypass de menus privados?\nA08 — Software & Data Integrity Failures: roda `eval`, `unserialize` em dados não-confiáveis? Cache estático corruptível?\nA09 — Security Logging Failures: erros silenciosos sem log? Eventos de segurança não capturados?\nA10 — Server-Side Request Forgery: faz `wp_remote_*` ou similar com input do usuário?\n\n**Bonus:** OWASP WordPress-specific:\n- Nonce verification em ações sensíveis\n- `current_user_can` antes de operações admin\n- Escape de output: `esc_html`, `esc_attr`, `esc_url`, `wp_kses`\n- `sanitize_*` em input\n\n**Entregue (≤300 palavras):**\n- Tabela: categoria → veredito → linha/evidência\n- Top 3 […]
+  "prompt": "Faça uma auditoria **OWASP Top 10 (2021)** específica do arquivo `/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` (v2.1.0).\n\n**Contexto:** mu-plugin WordPress multisite production-ready. Roda em frontend, admin, REST, AJAX. Recebe input via WP hooks (`$menu`, `$args`).\n\n**Para cada categoria OWASP, dê veredito CONFIRMADO/REFUTADO/N/A com linha:**\n\nA01 — Broken Access Control: o filter ignora capabilities? Pode expor menus restritos?\nA02 — Cryptographic Failures: o plugin armazena/transmite segredos? (improvável)\nA03 — Injection: SQL/HTML/JS injection vectors? Cuidado com `$menu->slug` vindo de user input via REST `?menus={slug}`\nA04 — Insecure Design: arquitetura tem flaws inerentes? (ex: confiança implícita em blog 1)\nA05 — Security Misconfiguration: hardcoded credentials/IDs? Default behavior arriscado?\nA06 — Vulnerable & Outdated Components: usa APIs deprecated? Dependências fora de suporte?\nA07 — Authentication Failures: ignora `is_user_logged_in()`? Bypass de menus privados?\nA08 — Software & Data Integrity Failures: roda `eval`, `unserialize` em dados não-confiáveis? Cache estático corruptível?\nA09 — Security Logging Failures: erros silenciosos sem log? Eventos de segurança não capturados?\nA10 — Server-Side Request Forgery: faz `wp_remote_*` ou similar com input do usuário?\n\n**Bonus:** OWASP WordPress-specific:\n- Nonce verification em ações sensíveis\n- `current_user_can` antes de operações admin\n- Escape de output: `esc_html`, `esc_attr`, `esc_url`, `wp_kses`\n- `sanitize_*` em input\n\n**Entregue (≤300 palavras):**\n- Tabela: categoria → veredito → linha/evidência\n- Top 3 […]
 
 > TOOL
 
@@ -10894,7 +10894,7 @@ id: toolu_01R54qaTcnpqvBbmdcMJJRfP
 {
   "description": "PHPStan + tipos PHP 8",
   "subagent_type": "general-purpose",
-  "prompt": "Faça uma análise estática nível PHPStan/Psalm do arquivo `/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` (v2.1.0). Simule mentalmente o que `phpstan analyze --level 8` reportaria.\n\n**Foco — Tipos, null safety, e PHP 8.x:**\n\n1. **Return types**: cada função declara `: type`? Quais retornam union types não declarados (`array|false|null`)?\n2. **Param types**: cada parâmetro tem type hint? Hooks WP passam tipos imprevisíveis (`$items` pode ser `false`, `null`, `array`).\n3. **Null safety**: `$item->url`, `$item->title`, `$item->type` — onde se assume não-null sem checar?\n4. **Array access**: `$args[0]` ou similar sem `isset`?\n5. **String operations**: `strpos`, `str_replace` em variável que pode ser null/false?\n6. **PHP 8.x features ainda não usados que melhorariam o código**: `match`, `enum`, named args, `readonly`, `first-class callable`, `null-safe operator ?->`?\n7. **Erros que `declare(strict_types=1)` exporia**: coerções implícitas tipo `int(1) === \"1\"` ou similar?\n8. **Generics simulados via PHPDoc**: `@return array<string, mixed>` vs `@return array`?\n9. **Dead code paths**: condições impossíveis, returns inalcançáveis?\n10. **Type narrowing**: `if ($x !== null)` que poderia ser inferido?\n11. **Variance issues**: function callbacks com assinaturas incompatíveis?\n12. **`final`/`abstract`**: nada é classe, então não aplicável — mas se virar classe?\n\n**Output esperado:**\n- Lista numerada de \"warnings/errors\" no estilo PHPStan: `Line N: <code> — <message>`\n- Severidade por linha: ERROR / WARNING / […]
+  "prompt": "Faça uma análise estática nível PHPStan/Psalm do arquivo `/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` (v2.1.0). Simule mentalmente o que `phpstan analyze --level 8` reportaria.\n\n**Foco — Tipos, null safety, e PHP 8.x:**\n\n1. **Return types**: cada função declara `: type`? Quais retornam union types não declarados (`array|false|null`)?\n2. **Param types**: cada parâmetro tem type hint? Hooks WP passam tipos imprevisíveis (`$items` pode ser `false`, `null`, `array`).\n3. **Null safety**: `$item->url`, `$item->title`, `$item->type` — onde se assume não-null sem checar?\n4. **Array access**: `$args[0]` ou similar sem `isset`?\n5. **String operations**: `strpos`, `str_replace` em variável que pode ser null/false?\n6. **PHP 8.x features ainda não usados que melhorariam o código**: `match`, `enum`, named args, `readonly`, `first-class callable`, `null-safe operator ?->`?\n7. **Erros que `declare(strict_types=1)` exporia**: coerções implícitas tipo `int(1) === \"1\"` ou similar?\n8. **Generics simulados via PHPDoc**: `@return array<string, mixed>` vs `@return array`?\n9. **Dead code paths**: condições impossíveis, returns inalcançáveis?\n10. **Type narrowing**: `if ($x !== null)` que poderia ser inferido?\n11. **Variance issues**: function callbacks com assinaturas incompatíveis?\n12. **`final`/`abstract`**: nada é classe, então não aplicável — mas se virar classe?\n\n**Output esperado:**\n- Lista numerada de \"warnings/errors\" no estilo PHPStan: `Line N: <code> — <message>`\n- Severidade por linha: ERROR / WARNING / […]
 
 > TOOL
 
@@ -10904,7 +10904,7 @@ id: toolu_017qAPHDwTHYWWhn9gtvQEDA
 {
   "description": "Observabilidade e debugging",
   "subagent_type": "general-purpose",
-  "prompt": "Analise **OBSERVABILIDADE e DEBUGGING** do arquivo `/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` (v2.1.0).\n\n**Contexto:** mu-plugin que roda em prod. Site tem WP_DEBUG=false em prod. Site usa Redis, WP Rocket, está em CloudFront. Há mu-plugins de logging customizados (talvez `bit-loopback-svg.php` ou outros, verifique).\n\n**Analise:**\n\n1. **Pontos cegos de debugging**: em quais cenários hoje seria IMPOSSÍVEL diagnosticar um bug? (ex: cache hit retorna versão antiga sem indicar source)\n2. **Pontos críticos sem logging**:\n   - linha 200: `$cache[$slug] = $items` — sem log de cache hit/miss\n   - linha 177: `wp_get_nav_menu_items` pode retornar `null`/`false` — sem log\n   - linha 224: early return blog 1 — sem visibilidade\n   - linha 198: `restore_current_blog` falha silenciosa\n   - linha 235: `wp_get_nav_menu_object($candidate)` miss — sem log\n3. **Métricas que faltam**: quantas vezes o filter dispara por request? Quantos cache hits vs misses? Latência?\n4. **Identificadores de contexto**: como rastrear UM request específico que deu problema? (request ID, blog ID, lang, slug — tudo é \"ambiente\" implícito)\n5. **Integração com Query Monitor**: a site tem Query Monitor ativo? O plugin poderia expor métricas via `add_action('qm/info', ...)` ou similar?\n6. **Logging para incidentes**: caso \"Hugo Leonardo\" em 2026-05-05 levou 1 dia para descobrir — que log teria reduzido para 30 min?\n7. […]
+  "prompt": "Analise **OBSERVABILIDADE e DEBUGGING** do arquivo `/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` (v2.1.0).\n\n**Contexto:** mu-plugin que roda em prod. Site tem WP_DEBUG=false em prod. Site usa Redis, WP Rocket, está em CloudFront. Há mu-plugins de logging customizados (talvez `bit-loopback-svg.php` ou outros, verifique).\n\n**Analise:**\n\n1. **Pontos cegos de debugging**: em quais cenários hoje seria IMPOSSÍVEL diagnosticar um bug? (ex: cache hit retorna versão antiga sem indicar source)\n2. **Pontos críticos sem logging**:\n   - linha 200: `$cache[$slug] = $items` — sem log de cache hit/miss\n   - linha 177: `wp_get_nav_menu_items` pode retornar `null`/`false` — sem log\n   - linha 224: early return blog 1 — sem visibilidade\n   - linha 198: `restore_current_blog` falha silenciosa\n   - linha 235: `wp_get_nav_menu_object($candidate)` miss — sem log\n3. **Métricas que faltam**: quantas vezes o filter dispara por request? Quantos cache hits vs misses? Latência?\n4. **Identificadores de contexto**: como rastrear UM request específico que deu problema? (request ID, blog ID, lang, slug — tudo é \"ambiente\" implícito)\n5. **Integração com Query Monitor**: a site tem Query Monitor ativo? O plugin poderia expor métricas via `add_action('qm/info', ...)` ou similar?\n6. **Logging para incidentes**: caso \"Hugo Leonardo\" em 2026-05-05 levou 1 dia para descobrir — que log teria reduzido para 30 min?\n7. […]
 
 > TOOL
 
@@ -10914,7 +10914,7 @@ id: toolu_01KhrEtZTdK8aYFFRRL4cGM6
 {
   "description": "REST/headless impact",
   "subagent_type": "general-purpose",
-  "prompt": "Faça uma análise específica do **IMPACTO em REST API, HEADLESS e BLOCK EDITOR** do mu-plugin `/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` (v2.1.0).\n\n**Pode rodar comandos para validar:**\n```bash\ndocker exec -u www-data concertacao-dev-wordpress wp eval-file /tmp/script.php --url=https://cambrasmax.local:8484/cultura/en/ --path=/var/www/html\ndocker exec -u www-data concertacao-dev-wordpress curl ...\n```\n\n**Cenários a investigar:**\n\n1. **REST `/wp-json/wp/v2/menu-items`**: testar GET no blog 2 EN — qual estrutura retornada? `object_id` é integer ou string? `type` é 'custom' (filter aplicado) ou tipo original?\n\n2. **REST `/wp-json/wp-api-menus/v2/menus/{id}/items`**: se ativo, mesma análise.\n\n3. **Block Editor `wp/navigation` block**: como o block consome menu items? Via REST ou via `wp_get_nav_menu_items` server-side?\n\n4. **GraphQL via WPGraphQL** (se instalado): query `menuItems` retorna items filtrados ou pré-filtro?\n\n5. **Gutenberg classic menus**: a tela `wp-admin/nav-menus.php` no blog 2 — como mostra os items? Filter intercepta?\n\n6. **Customizer preview**: live preview de menus no Customizer dispara o filter? Funciona?\n\n7. **`/feed/` RSS**: feeds incluem menu? Filter aplica?\n\n8. **Sitemap XML (`/sitemap.xml`)**: menu items entram no sitemap? Filter aplica?\n\n9. **AJAX `wp_ajax_add-menu-item` / `wp_ajax_update-widget`**: filter dispara em chamadas AJAX admin?\n\n10. **REST `/wp-json/wp/v2/menu-items/{id}` (single)**: GET no item específico — filter aplica em endpoint singular?\n\n11. **PUT/PATCH em `/wp-json/wp/v2/menu-items/{id}`**: tentativa de UPDATE em item fake (ID 90000+) — falha como? Erro 404 ou silent fail?\n\n12. **DELETE em `/wp-json/wp/v2/menu-items/{id}`**: idem.\n\n13. […]
+  "prompt": "Faça uma análise específica do **IMPACTO em REST API, HEADLESS e BLOCK EDITOR** do mu-plugin `/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` (v2.1.0).\n\n**Pode rodar comandos para validar:**\n```bash\ndocker exec -u www-data concertacao-dev-wordpress wp eval-file /tmp/script.php --url=https://cambrasmax.local:8484/cultura/en/ --path=/var/www/html\ndocker exec -u www-data concertacao-dev-wordpress curl ...\n```\n\n**Cenários a investigar:**\n\n1. **REST `/wp-json/wp/v2/menu-items`**: testar GET no blog 2 EN — qual estrutura retornada? `object_id` é integer ou string? `type` é 'custom' (filter aplicado) ou tipo original?\n\n2. **REST `/wp-json/wp-api-menus/v2/menus/{id}/items`**: se ativo, mesma análise.\n\n3. **Block Editor `wp/navigation` block**: como o block consome menu items? Via REST ou via `wp_get_nav_menu_items` server-side?\n\n4. **GraphQL via WPGraphQL** (se instalado): query `menuItems` retorna items filtrados ou pré-filtro?\n\n5. **Gutenberg classic menus**: a tela `wp-admin/nav-menus.php` no blog 2 — como mostra os items? Filter intercepta?\n\n6. **Customizer preview**: live preview de menus no Customizer dispara o filter? Funciona?\n\n7. **`/feed/` RSS**: feeds incluem menu? Filter aplica?\n\n8. **Sitemap XML (`/sitemap.xml`)**: menu items entram no sitemap? Filter aplica?\n\n9. **AJAX `wp_ajax_add-menu-item` / `wp_ajax_update-widget`**: filter dispara em chamadas AJAX admin?\n\n10. **REST `/wp-json/wp/v2/menu-items/{id}` (single)**: GET no item específico — filter aplica em endpoint singular?\n\n11. **PUT/PATCH em `/wp-json/wp/v2/menu-items/{id}`**: tentativa de UPDATE em item fake (ID 90000+) — falha como? Erro 404 ou silent fail?\n\n12. **DELETE em `/wp-json/wp/v2/menu-items/{id}`**: idem.\n\n13. […]
 
 > TOOL
 
@@ -10924,7 +10924,7 @@ id: toolu_016vQBoGkU7hfP16oeDytWnc
 {
   "description": "Walker chain inspection",
   "subagent_type": "general-purpose",
-  "prompt": "Investigue a **CHAIN DE WALKERS e FILTROS** que o output do mu-plugin `/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` (v2.1.0) atravessa.\n\n**Pode rodar comandos para validar via `wp eval`:**\n```bash\ndocker exec -u www-data concertacao-dev-wordpress wp eval-file /tmp/script.php --url=https://cambrasmax.local:8484/cultura/en/ --path=/var/www/html\n```\n\n**Cenário:** request a `https://cambrasmax.local:8484/cultura/en/` renderiza o Header template via Elementor → widget Nav Menu → `wp_nav_menu(['menu' => 'principal'])` → cadeia de hooks.\n\n**Mapear a chain:**\n\n1. `wp_nav_menu()` interno chama qual sequência de hooks?\n2. `wp_get_nav_menu_items` filter (priority 10) → nosso plugin intervém aqui\n3. `wp_setup_nav_menu_item` filter por item\n4. `wp_nav_menu_objects` filter (acessa array completo)\n5. `wp_nav_menu_args` filter\n6. `nav_menu_css_class` por item\n7. `walker_nav_menu_start_el` por item\n8. Walker classes registrados — quais são? (`Walker_Nav_Menu`, Elementor custom walker)\n\n**Para cada hook na chain, listar:**\n- Plugins/mu-plugins registrados em cada filter (rodar `wp eval` que itera `$wp_filter`)\n- Prioridade de cada hook\n- Quais MUTAM o output (vs apenas leem)\n\n**Investigar especificamente:**\n- `bit-multisite-menu-url.php` está em qual prioridade? Modifica `$item->url` — pode quebrar o freeze do nosso plugin?\n- WPML `WPML_Menus` registra hooks? Em quais prioridades?\n- Elementor Pro `Nav_Menu` widget tem walker custom?\n- Há algum plugin que faz `pre_wp_nav_menu` short-circuit?\n\n**Output:**\n- Diagrama ASCII da chain\n- Tabela: hook → prioridade → callback → muta? → impacto\n- 1 cenário crítico: \"se Plugin X muda comportamento do hook Y, nosso […]
+  "prompt": "Investigue a **CHAIN DE WALKERS e FILTROS** que o output do mu-plugin `/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` (v2.1.0) atravessa.\n\n**Pode rodar comandos para validar via `wp eval`:**\n```bash\ndocker exec -u www-data concertacao-dev-wordpress wp eval-file /tmp/script.php --url=https://cambrasmax.local:8484/cultura/en/ --path=/var/www/html\n```\n\n**Cenário:** request a `https://cambrasmax.local:8484/cultura/en/` renderiza o Header template via Elementor → widget Nav Menu → `wp_nav_menu(['menu' => 'principal'])` → cadeia de hooks.\n\n**Mapear a chain:**\n\n1. `wp_nav_menu()` interno chama qual sequência de hooks?\n2. `wp_get_nav_menu_items` filter (priority 10) → nosso plugin intervém aqui\n3. `wp_setup_nav_menu_item` filter por item\n4. `wp_nav_menu_objects` filter (acessa array completo)\n5. `wp_nav_menu_args` filter\n6. `nav_menu_css_class` por item\n7. `walker_nav_menu_start_el` por item\n8. Walker classes registrados — quais são? (`Walker_Nav_Menu`, Elementor custom walker)\n\n**Para cada hook na chain, listar:**\n- Plugins/mu-plugins registrados em cada filter (rodar `wp eval` que itera `$wp_filter`)\n- Prioridade de cada hook\n- Quais MUTAM o output (vs apenas leem)\n\n**Investigar especificamente:**\n- `bit-multisite-menu-url.php` está em qual prioridade? Modifica `$item->url` — pode quebrar o freeze do nosso plugin?\n- WPML `WPML_Menus` registra hooks? Em quais prioridades?\n- Elementor Pro `Nav_Menu` widget tem walker custom?\n- Há algum plugin que faz `pre_wp_nav_menu` short-circuit?\n\n**Output:**\n- Diagrama ASCII da chain\n- Tabela: hook → prioridade → callback → muta? → impacto\n- 1 cenário crítico: \"se Plugin X muda comportamento do hook Y, nosso […]
 
 > TOOL
 
@@ -10934,7 +10934,7 @@ id: toolu_013u9nZfdND47UXurXtjDffm
 {
   "description": "Fuzzing inputs",
   "subagent_type": "general-purpose",
-  "prompt": "Faça uma análise de **FUZZING / INPUT EDGE CASES** do mu-plugin `/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` (v2.1.0).\n\n**Foco:** o que acontece quando o filter recebe INPUTS INVÁLIDOS ou MALFORMADOS via `$items`, `$menu`, `$args`?\n\n**Inputs anômalos a considerar:**\n\n1. `$menu = null` (não há `isset($menu->slug)` check em alguns paths?)\n2. `$menu = false` (WP retorna false quando menu não encontrado)\n3. `$menu = WP_Error` \n4. `$menu = stdClass` sem propriedade `slug`\n5. `$menu = stdClass` com `slug = \"\"` (string vazia)\n6. `$menu = stdClass` com `slug = null`\n7. `$menu = stdClass` com `slug` contendo unicode, espaços, tags HTML\n8. `$menu->slug = \"principal\\0\"` (null byte injection)\n9. `$menu->slug = \"principal'; DROP TABLE--\"` (SQL injection tentativa)\n10. `$items = null`\n11. `$items = false`\n12. `$items = []` (array vazio)\n13. `$items = WP_Error`\n14. `$items = [non-object]` (array de strings)\n15. `$items` contendo item sem propriedades essenciais (`->ID` ausente)\n16. `$args = null`\n17. `$args = string` (alguém passou só o menu como string)\n18. `apply_filters('wpml_current_language', null)` retornando `false`, array, ou número\n19. `get_current_blog_id()` retornando `0` (cenário improvável mas...)\n20. `switch_to_blog(1)` falhando silenciosamente\n\n**Para cada input anômalo:**\n- O código atual lida bem? (graceful degrade)\n- Ou quebra com fatal error / warning / wrong output?\n\n**Investigar especialmente:**\n- Linha 184: `foreach ($items as $item) ... if (!is_object($item)) […]
+  "prompt": "Faça uma análise de **FUZZING / INPUT EDGE CASES** do mu-plugin `/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` (v2.1.0).\n\n**Foco:** o que acontece quando o filter recebe INPUTS INVÁLIDOS ou MALFORMADOS via `$items`, `$menu`, `$args`?\n\n**Inputs anômalos a considerar:**\n\n1. `$menu = null` (não há `isset($menu->slug)` check em alguns paths?)\n2. `$menu = false` (WP retorna false quando menu não encontrado)\n3. `$menu = WP_Error` \n4. `$menu = stdClass` sem propriedade `slug`\n5. `$menu = stdClass` com `slug = \"\"` (string vazia)\n6. `$menu = stdClass` com `slug = null`\n7. `$menu = stdClass` com `slug` contendo unicode, espaços, tags HTML\n8. `$menu->slug = \"principal\\0\"` (null byte injection)\n9. `$menu->slug = \"principal'; DROP TABLE--\"` (SQL injection tentativa)\n10. `$items = null`\n11. `$items = false`\n12. `$items = []` (array vazio)\n13. `$items = WP_Error`\n14. `$items = [non-object]` (array de strings)\n15. `$items` contendo item sem propriedades essenciais (`->ID` ausente)\n16. `$args = null`\n17. `$args = string` (alguém passou só o menu como string)\n18. `apply_filters('wpml_current_language', null)` retornando `false`, array, ou número\n19. `get_current_blog_id()` retornando `0` (cenário improvável mas...)\n20. `switch_to_blog(1)` falhando silenciosamente\n\n**Para cada input anômalo:**\n- O código atual lida bem? (graceful degrade)\n- Ou quebra com fatal error / warning / wrong output?\n\n**Investigar especialmente:**\n- Linha 184: `foreach ($items as $item) ... if (!is_object($item)) […]
 
 > TOOL
 
@@ -10944,7 +10944,7 @@ id: toolu_01T2B4KG4soCTAHReezrARdq
 {
   "description": "A/B do fix v2.1.0",
   "subagent_type": "general-purpose",
-  "prompt": "Analise especificamente o **FIX v2.1.0** introduzido recentemente no arquivo `/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php`.\n\n**O fix (linhas ~226-241):**\n```php\nif ( in_array( $menu->slug, [ 'principal', 'principal-en', 'concertacao-lp' ], true ) ) {\n    $slug = $menu->slug;\n    if ( $slug === 'principal' && function_exists( 'apply_filters' ) ) {\n        $current_lang = apply_filters( 'wpml_current_language', null );\n        if ( $current_lang && $current_lang !== 'pt-br' ) {\n            $candidate = 'principal-' . $current_lang;\n            if ( wp_get_nav_menu_object( $candidate ) ) {\n                $slug = $candidate;\n            }\n        }\n    }\n    $blog1_items = concertacao_pull_menu_from_blog1( $slug );\n    return $blog1_items ?: $items;\n}\n```\n\n**Compare A vs B:**\n\n**A) Comportamento ANTES do fix (v2.0.0):**\n- Slug literal `principal` → buscava sempre `principal` do blog 1\n- Em contexto EN no blog 2: mostrava menu PT (bug)\n\n**B) Comportamento DEPOIS do fix (v2.1.0):**\n- Slug literal `principal` no blog 2 EN → busca `principal-en` do blog 1 → mostra menu EN\n- Slug literal `principal-en` no blog 2 EN (direto) → busca `principal-en` (sem mapping)\n\n**Questione o fix:**\n\n1. **Cobertura**: o fix cobre TODOS os casos onde slug PT é pedido em contexto EN? (apenas `principal` foi tratado — `concertacao-lp` em EN é ignorado, `footer` em EN é ignorado)\n\n2. **Symmetric design**: por que SÓ mapear `pt-br → en`? E […]
+  "prompt": "Analise especificamente o **FIX v2.1.0** introduzido recentemente no arquivo `/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php`.\n\n**O fix (linhas ~226-241):**\n```php\nif ( in_array( $menu->slug, [ 'principal', 'principal-en', 'concertacao-lp' ], true ) ) {\n    $slug = $menu->slug;\n    if ( $slug === 'principal' && function_exists( 'apply_filters' ) ) {\n        $current_lang = apply_filters( 'wpml_current_language', null );\n        if ( $current_lang && $current_lang !== 'pt-br' ) {\n            $candidate = 'principal-' . $current_lang;\n            if ( wp_get_nav_menu_object( $candidate ) ) {\n                $slug = $candidate;\n            }\n        }\n    }\n    $blog1_items = concertacao_pull_menu_from_blog1( $slug );\n    return $blog1_items ?: $items;\n}\n```\n\n**Compare A vs B:**\n\n**A) Comportamento ANTES do fix (v2.0.0):**\n- Slug literal `principal` → buscava sempre `principal` do blog 1\n- Em contexto EN no blog 2: mostrava menu PT (bug)\n\n**B) Comportamento DEPOIS do fix (v2.1.0):**\n- Slug literal `principal` no blog 2 EN → busca `principal-en` do blog 1 → mostra menu EN\n- Slug literal `principal-en` no blog 2 EN (direto) → busca `principal-en` (sem mapping)\n\n**Questione o fix:**\n\n1. **Cobertura**: o fix cobre TODOS os casos onde slug PT é pedido em contexto EN? (apenas `principal` foi tratado — `concertacao-lp` em EN é ignorado, `footer` em EN é ignorado)\n\n2. **Symmetric design**: por que SÓ mapear `pt-br → en`? E […]
 
 > TOOL
 
@@ -10973,7 +10973,7 @@ id: toolu_018oPmJDmkgJa91RuXpt4z2m
 {
   "description": "Plano de migração arquitetural",
   "subagent_type": "general-purpose",
-  "prompt": "Crie um **PLANO DE MIGRAÇÃO ARQUITETURAL** detalhado para evoluir o mu-plugin `/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` (v2.1.0) de seu estado atual (funções globais ad-hoc) para um padrão BIT consolidado, generalizável e testável.\n\n**Estado-alvo (visão):**\n- Mu-plugin generic: `bit-shared-nav-menus.php` em `docker-dev/common/mu-plugins/`\n- Classe `Bureau\\SharedNavMenus\\SharedMenu` com `boot()` estático\n- Configuração 100% via filtros `bit/shared_menu/*`\n- Site Concertação contribui apenas um adapter pequeno (`bit-concertacao-shared-menu-adapter.php`) que registra os filtros de config\n- Reusável em www-concertacao, mombak, futuros multisites\n- Backward compatible (não quebra templates do tema que referenciam `concertacao_resolve_url`)\n- Cobertura de testes unitários\n\n**Entregue um plano em 5 fases:**\n\n### Fase 1 — Refactor não-breaking (semana 1)\n- Sub-passos concretos\n- Risco\n- Validação\n\n### Fase 2 — Extração para mu-plugin genérico\n- Como manter retrocompatibilidade\n- Como dividir entre site-specific e generic\n- Naming\n- Filtros a expor\n\n### Fase 3 — Adicionar testes\n- Quais testes priorizar (unit, integration, E2E)\n- Framework (PHPUnit + Brain Monkey? Pest?)\n- Onde rodar (CI/local)\n\n### Fase 4 — Migrar Concertação (cutover)\n- Sequência exata\n- Como validar sem regressão\n- Plano de rollback\n\n### Fase 5 — Aplicar em outros sites BIT (escalabilidade)\n- Inventário de sites candidatos (`ls docker-dev/sites/`)\n- Onboarding de cada site (config)\n- Métricas de sucesso\n\n**Para cada fase:**\n- Estimativa de horas (range)\n- Pré-requisitos\n- Quem precisa aprovar (você é quem aprova, […]
+  "prompt": "Crie um **PLANO DE MIGRAÇÃO ARQUITETURAL** detalhado para evoluir o mu-plugin `/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` (v2.1.0) de seu estado atual (funções globais ad-hoc) para um padrão BIT consolidado, generalizável e testável.\n\n**Estado-alvo (visão):**\n- Mu-plugin generic: `bit-shared-nav-menus.php` em `docker-dev/common/mu-plugins/`\n- Classe `Bureau\\SharedNavMenus\\SharedMenu` com `boot()` estático\n- Configuração 100% via filtros `bit/shared_menu/*`\n- Site Concertação contribui apenas um adapter pequeno (`bit-concertacao-shared-menu-adapter.php`) que registra os filtros de config\n- Reusável em www-concertacao, mombak, futuros multisites\n- Backward compatible (não quebra templates do tema que referenciam `concertacao_resolve_url`)\n- Cobertura de testes unitários\n\n**Entregue um plano em 5 fases:**\n\n### Fase 1 — Refactor não-breaking (semana 1)\n- Sub-passos concretos\n- Risco\n- Validação\n\n### Fase 2 — Extração para mu-plugin genérico\n- Como manter retrocompatibilidade\n- Como dividir entre site-specific e generic\n- Naming\n- Filtros a expor\n\n### Fase 3 — Adicionar testes\n- Quais testes priorizar (unit, integration, E2E)\n- Framework (PHPUnit + Brain Monkey? Pest?)\n- Onde rodar (CI/local)\n\n### Fase 4 — Migrar Concertação (cutover)\n- Sequência exata\n- Como validar sem regressão\n- Plano de rollback\n\n### Fase 5 — Aplicar em outros sites BIT (escalabilidade)\n- Inventário de sites candidatos (`ls docker-dev/sites/`)\n- Onboarding de cada site (config)\n- Métricas de sucesso\n\n**Para cada fase:**\n- Estimativa de horas (range)\n- Pré-requisitos\n- Quem precisa aprovar (você é quem aprova, […]
 
 > TOOL
 
@@ -11027,7 +11027,7 @@ id: toolu_01SmctcqgYVKUZk5CRDVEc5K
 {
   "description": "Performance benchmarks reais",
   "subagent_type": "general-purpose",
-  "prompt": "Faça **BENCHMARKS REAIS DE PERFORMANCE** do mu-plugin `/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` (v2.1.0).\n\n**Pode rodar comandos para medir:**\n```bash\ndocker exec -u www-data concertacao-dev-wordpress wp eval-file /tmp/bench.php --url=... --path=/var/www/html\ndocker exec concertacao-dev-wordpress time wp ...\n```\n\n**Medições a fazer:**\n\n1. **Latência cold do filter**: 1ª chamada de `concertacao_shared_menu_filter` no request — medir microseconds via `microtime(true)`\n2. **Latência warm**: 2ª chamada do mesmo slug (cache hit)\n3. **Custo de `switch_to_blog(1) + wp_get_nav_menu_items + restore`**: isoladamente\n4. **Custo da iteração foreach que congela items** (linhas 182-197)\n5. **Custo de `wp_get_nav_menu_object($candidate)` no fix v2.1.0** — quanto adiciona em queries SQL\n6. **Memory footprint**: peakmem antes vs depois do filter\n\n**Cenários a benchmark:**\n- A) `wp_get_nav_menu_items('principal')` no blog 1 (filter early-returns)\n- B) `wp_get_nav_menu_items('principal')` no blog 2 PT (filter ativa, cache miss)\n- C) `wp_get_nav_menu_items('principal')` no blog 2 PT (cache hit, 2ª chamada)\n- D) `wp_get_nav_menu_items('principal')` no blog 2 EN (mapping para principal-en, cache miss)\n- E) `wp_get_nav_menu_items('footer')` no blog 2 EN\n\n**Para cada cenário, rodar 100 iterações e reportar:**\n- Min/Mean/P95/Max latência (ms)\n- Queries SQL contadas\n- Memory delta\n\n**Comparar com baseline:** o que custaria SEM o mu-plugin (apenas `wp_get_nav_menu_items` nativo no blog 2 retornando seu próprio menu).\n\n**Entregue (≤400 palavras):**\n- Tabela: cenário × min/mean/P95/queries/memory\n- Top 3 gargalos com microsegundos exatos\n- Estimativa de impacto agregado: site tem […]
+  "prompt": "Faça **BENCHMARKS REAIS DE PERFORMANCE** do mu-plugin `/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` (v2.1.0).\n\n**Pode rodar comandos para medir:**\n```bash\ndocker exec -u www-data concertacao-dev-wordpress wp eval-file /tmp/bench.php --url=... --path=/var/www/html\ndocker exec concertacao-dev-wordpress time wp ...\n```\n\n**Medições a fazer:**\n\n1. **Latência cold do filter**: 1ª chamada de `concertacao_shared_menu_filter` no request — medir microseconds via `microtime(true)`\n2. **Latência warm**: 2ª chamada do mesmo slug (cache hit)\n3. **Custo de `switch_to_blog(1) + wp_get_nav_menu_items + restore`**: isoladamente\n4. **Custo da iteração foreach que congela items** (linhas 182-197)\n5. **Custo de `wp_get_nav_menu_object($candidate)` no fix v2.1.0** — quanto adiciona em queries SQL\n6. **Memory footprint**: peakmem antes vs depois do filter\n\n**Cenários a benchmark:**\n- A) `wp_get_nav_menu_items('principal')` no blog 1 (filter early-returns)\n- B) `wp_get_nav_menu_items('principal')` no blog 2 PT (filter ativa, cache miss)\n- C) `wp_get_nav_menu_items('principal')` no blog 2 PT (cache hit, 2ª chamada)\n- D) `wp_get_nav_menu_items('principal')` no blog 2 EN (mapping para principal-en, cache miss)\n- E) `wp_get_nav_menu_items('footer')` no blog 2 EN\n\n**Para cada cenário, rodar 100 iterações e reportar:**\n- Min/Mean/P95/Max latência (ms)\n- Queries SQL contadas\n- Memory delta\n\n**Comparar com baseline:** o que custaria SEM o mu-plugin (apenas `wp_get_nav_menu_items` nativo no blog 2 retornando seu próprio menu).\n\n**Entregue (≤400 palavras):**\n- Tabela: cenário × min/mean/P95/queries/memory\n- Top 3 gargalos com microsegundos exatos\n- Estimativa de impacto agregado: site tem […]
 
 > TOOL
 
@@ -11037,7 +11037,7 @@ id: toolu_01EMLN8ku9CfzKFxfXroi26j
 {
   "description": "Consolidação final + ROI",
   "subagent_type": "general-purpose",
-  "prompt": "Faça a **CONSOLIDAÇÃO META** do mu-plugin `/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` (v2.1.0) considerando que houve 2 ciclos anteriores de auditoria.\n\n**Sua tarefa:** ler o código E os 2 commits mais recentes do arquivo (rodar `git log -p` no path), e propor uma **PRIORIZAÇÃO ROI** definitiva.\n\n**Não preciso de mais findings novos — preciso de PRIORIZAÇÃO e DECISÃO.**\n\nPara isso considere:\n\n1. **Impacto user-facing real (validado empiricamente):**\n   - Footer EN mostra labels PT (CONFIRMADO no ciclo 2)\n   - Site funciona com fix v2.1.0 no resto (validado via curl)\n\n2. **Bugs latentes ainda não causaram incidente:**\n   - WP-CLI/wp-admin/Block Editor com items 90000+\n   - `try/finally` em `restore_current_blog`\n   - Cache estático sem namespace blog_id/lang\n   - REST/headless edge cases\n\n3. **Dívida técnica:**\n   - Refatoração para classe + filtros configuráveis\n   - Prefixo `concertacao_*` vs `bit_*`\n   - Testes unitários\n\n4. **Riscos de regressão se mexer:**\n   - Templates do tema podem referenciar funções globais\n   - Outros mu-plugins dependem do output (`bit-inline-submenu`, `bit-crossblog-elementor-menus`)\n   - Site está em prod\n\n**Entregue uma matriz de decisão (Markdown):**\n\n| # | Mudança | Impacto user-facing | Esforço (h) | Risco regressão | ROI | Quando |\n|---|---------|---------------------|-------------|-----------------|-----|--------|\n| 1 | ... | ... | ... | ... | ... | now/sprint/backlog/never |\n\n**Top 3 ações […]
+  "prompt": "Faça a **CONSOLIDAÇÃO META** do mu-plugin `/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` (v2.1.0) considerando que houve 2 ciclos anteriores de auditoria.\n\n**Sua tarefa:** ler o código E os 2 commits mais recentes do arquivo (rodar `git log -p` no path), e propor uma **PRIORIZAÇÃO ROI** definitiva.\n\n**Não preciso de mais findings novos — preciso de PRIORIZAÇÃO e DECISÃO.**\n\nPara isso considere:\n\n1. **Impacto user-facing real (validado empiricamente):**\n   - Footer EN mostra labels PT (CONFIRMADO no ciclo 2)\n   - Site funciona com fix v2.1.0 no resto (validado via curl)\n\n2. **Bugs latentes ainda não causaram incidente:**\n   - WP-CLI/wp-admin/Block Editor com items 90000+\n   - `try/finally` em `restore_current_blog`\n   - Cache estático sem namespace blog_id/lang\n   - REST/headless edge cases\n\n3. **Dívida técnica:**\n   - Refatoração para classe + filtros configuráveis\n   - Prefixo `concertacao_*` vs `bit_*`\n   - Testes unitários\n\n4. **Riscos de regressão se mexer:**\n   - Templates do tema podem referenciar funções globais\n   - Outros mu-plugins dependem do output (`bit-inline-submenu`, `bit-crossblog-elementor-menus`)\n   - Site está em prod\n\n**Entregue uma matriz de decisão (Markdown):**\n\n| # | Mudança | Impacto user-facing | Esforço (h) | Risco regressão | ROI | Quando |\n|---|---------|---------------------|-------------|-----------------|-----|--------|\n| 1 | ... | ... | ... | ... | ... | now/sprint/backlog/never |\n\n**Top 3 ações […]
 
 > TOOL
 
@@ -11388,7 +11388,7 @@ tool_use Bash
 id: toolu_019sfmHQcTJkTc7ZW5ZvuMLm
 ```json
 {
-  "command": "grep -n \"Sobre nós\\|switch_to_blog\\|static \\$cache\\|restore_current_blog\\|concertacao_footer_menu_items\\|concertacao_resolve_url\\|Plugin Name\\|Version:\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php",
+  "command": "grep -n \"Sobre nós\\|switch_to_blog\\|static \\$cache\\|restore_current_blog\\|concertacao_footer_menu_items\\|concertacao_resolve_url\\|Plugin Name\\|Version:\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php",
   "description": "Locate key sections"
 }
 ```
@@ -11426,7 +11426,7 @@ tool_use Read
 id: toolu_017DTvANqrWkN8X2Xd44F4nC
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php",
   "offset": 95,
   "limit": 45
 }
@@ -11482,7 +11482,7 @@ tool_use Read
 id: toolu_01X5rACVG5BFWbrQ69ACj9H5
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php",
   "offset": 163,
   "limit": 45
 }
@@ -11536,7 +11536,7 @@ id: toolu_01HcUzECAu2t1n45xpX1STn3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php",
   "old_string": "    $def = [\n        [ 'Sobre nós',    concertacao_resolve_url( 'sobre-nos' )    ],\n        [ 'Atuação',      concertacao_resolve_url( 'atuacao' )      ],\n        [ 'Conhecimento', concertacao_resolve_url( 'conhecimento' ) ],\n        [ 'Cultura',      concertacao_resolve_url( '', 2 )          ],\n        [ 'Contato',      concertacao_resolve_url( 'contato' )      ],\n    ];\n\n    $items = concertacao_build_menu_items( $def, 91000 );\n    return $items;\n}",
   "new_string": "    // Labels passam por __() com text-domain \"concertacao\" — quando WPML String\n    // Translation registrar essas strings (via wpml_register_single_string ou\n    // i18n scan do tema), labels do footer ficam traduzíveis. Sem WPML, __()\n    // é no-op e retorna o original PT. Resolve bug ciclo 2/3: footer EN mostrava PT.\n    $def = [\n        [ __( 'Sobre nós',    'concertacao' ), concertacao_resolve_url( 'sobre-nos' )    ],\n        [ __( 'Atuação',      'concertacao' ), concertacao_resolve_url( 'atuacao' )      ],\n        [ __( 'Conhecimento', 'concertacao' ), concertacao_resolve_url( 'conhecimento' ) ],\n        [ __( 'Cultura',      'concertacao' ), concertacao_resolve_url( '', 2 )          ],\n        [ __( 'Contato',      'concertacao' ), concertacao_resolve_url( 'contato' )      ],\n    ];\n\n    $items = concertacao_build_menu_items( $def, 91000 );\n    return $items;\n}\n\n/**\n * Registra strings do footer para WPML String Translation.\n *\n * Sem isso, labels do __() ficam só com o original PT mesmo em contexto EN.\n * O WPML escaneia chamadas __() em runtime […]
 
@@ -11545,7 +11545,7 @@ id: toolu_01HcUzECAu2t1n45xpX1STn3
 tool_result
 id: toolu_01HcUzECAu2t1n45xpX1STn3
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11559,7 +11559,7 @@ id: toolu_01Y1YmqjqYDbmnEE9oDmKqt5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php",
   "old_string": "function concertacao_resolve_url( string $path, int $blog = 1 ): string {\n    $switched = false;\n    if ( function_exists( 'is_multisite' ) && is_multisite() && get_current_blog_id() !== $blog ) {\n        switch_to_blog( $blog );\n        $switched = true;\n    }\n\n    $path = trim( $path, '/' );\n    if ( $path === '' ) {\n        $url = trailingslashit( home_url( '/' ) );\n    } else {\n        $page = get_page_by_path( $path );\n        $url  = $page ? get_permalink( $page->ID ) : trailingslashit( home_url( '/' . $path ) );\n    }\n\n    if ( $switched ) {\n        restore_current_blog();\n    }\n    return $url;\n}",
   "new_string": "function concertacao_resolve_url( string $path, int $blog = 1 ): string {\n    $switched = false;\n    if ( function_exists( 'is_multisite' ) && is_multisite() && get_current_blog_id() !== $blog ) {\n        switch_to_blog( $blog );\n        $switched = true;\n    }\n\n    // try/finally garante restore_current_blog mesmo se hook em get_page_by_path/\n    // get_permalink lançar exception. Sem isso, blog stack fica corrompido\n    // pelo resto do request (todas as queries vão para o blog errado).\n    try {\n        $path = trim( $path, '/' );\n        if ( $path === '' ) {\n            $url = trailingslashit( home_url( '/' ) );\n        } else {\n            $page = get_page_by_path( $path );\n            $url  = ( $page instanceof […]
 
@@ -11568,7 +11568,7 @@ id: toolu_01Y1YmqjqYDbmnEE9oDmKqt5
 tool_result
 id: toolu_01Y1YmqjqYDbmnEE9oDmKqt5
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11582,7 +11582,7 @@ id: toolu_016bVjyp19cRnFsMdBhSReup
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php",
   "old_string": "function concertacao_pull_menu_from_blog1( string $slug ) {\n    static $cache = [];\n    if ( isset( $cache[ $slug ] ) ) {\n        return $cache[ $slug ];\n    }\n\n    if ( ! function_exists( 'is_multisite' ) || ! is_multisite() ) {\n        return false;\n    }\n\n    switch_to_blog( 1 );\n    // Pegar items SEM disparar o nosso próprio filtro (para evitar recursão).\n    remove_filter( 'wp_get_nav_menu_items', 'concertacao_shared_menu_filter', 10 );\n    $items = wp_get_nav_menu_items( $slug );\n    add_filter( 'wp_get_nav_menu_items', 'concertacao_shared_menu_filter', 10, 3 );\n\n    // Congelar title/url resolvidos no contexto blog 1 e neutralizar object_id\n    // para evitar cross-blog ID collision em re-resoluções subsequentes.\n    if ( is_array( $items ) ) {\n        foreach ( $items as $item ) {\n            if ( ! is_object( $item ) ) continue;\n            // Snapshot da URL (já resolvida pelo nav walker do blog 1)\n            if ( empty( $item->url ) || strpos( $item->url, 'http' ) !== 0 ) {\n                // wp_setup_nav_menu_item já preencheu — fallback seguro\n                $item->url = $item->url ?: '#';\n            }\n            // Title só é re-resolvido pelo walker quando type=post_type/taxonomy.\n            // Forçar custom: hooks posteriores respeitam $item->title literal.\n            $item->type        = 'custom';\n            $item->object      = 'custom';\n            $item->object_id   = (string) $item->ID;  // Self-ref evita lookup cross-blog\n            $item->type_label  = 'Link';\n        }\n    }\n    restore_current_blog();\n\n    $cache[ […]
 
 > TOOL
@@ -11590,7 +11590,7 @@ id: toolu_016bVjyp19cRnFsMdBhSReup
 tool_result
 id: toolu_016bVjyp19cRnFsMdBhSReup
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11604,7 +11604,7 @@ id: toolu_01GmZhR4fKyu8a6q6oBH4hQV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php",
   "old_string": " * Version:     2.1.0",
   "new_string": " * Version:     2.1.1"
 }
@@ -11615,7 +11615,7 @@ id: toolu_01GmZhR4fKyu8a6q6oBH4hQV
 tool_result
 id: toolu_01GmZhR4fKyu8a6q6oBH4hQV
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11624,7 +11624,7 @@ tool_use Bash
 id: toolu_01WqYRNsDsWSUWDN7mWLnkkC
 ```json
 {
-  "command": "cp /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php /Users/dcambria/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-concertacao-shared-menu.php && docker exec concertacao-dev-wordpress php -l /var/www/html/wp-content/mu-plugins/bit-concertacao-shared-menu.php 2>&1 | tail -1 && docker exec -u www-data concertacao-dev-wordpress wp cache flush --path=/var/www/html 2>&1 | tail -1",
+  "command": "cp /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php /home/<USER>/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-concertacao-shared-menu.php && docker exec concertacao-dev-wordpress php -l /var/www/html/wp-content/mu-plugins/bit-concertacao-shared-menu.php 2>&1 | tail -1 && docker exec -u www-data concertacao-dev-wordpress wp cache flush --path=/var/www/html 2>&1 | tail -1",
   "description": "Sync canonical + lint + flush"
 }
 ```
@@ -11844,7 +11844,7 @@ tool_use Bash
 id: toolu_01AouUD4hrshAVsu8EyP5TUv
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2 && git status docker-dev/common/mu-plugins/bit-concertacao-shared-menu.php 2>&1 | tail -5",
+  "command": "cd /home/<USER>/scripts/server-tools/v2 && git status docker-dev/common/mu-plugins/bit-concertacao-shared-menu.php 2>&1 | tail -5",
   "description": "Git status"
 }
 ```
@@ -11859,7 +11859,7 @@ id: toolu_01AouUD4hrshAVsu8EyP5TUv
 	modified:   docker-dev/common/mu-plugins/bit-concertacao-shared-menu.php
 
 no changes added to commit (use "git add" and/or "git commit -a")
-Shell cwd was reset to /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao
+Shell cwd was reset to /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao
 ```
 
 > TOOL
@@ -11868,7 +11868,7 @@ tool_use Bash
 id: toolu_011DQmKgks5Aot2L6XBjpvD2
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2 && git add docker-dev/common/mu-plugins/bit-concertacao-shared-menu.php && git commit -m \"$(cat <<'EOF'\nfix(menu): bit-concertacao-shared-menu v2.1.1 — footer i18n + try/finally + cache namespaced\n\nAplica 3 correções cirúrgicas identificadas em auditoria (3 ciclos, 20 agentes):\n\n1. **Footer i18n via __()**: labels do footer (\"Sobre nós\", \"Atuação\", \"Conhecimento\",\n   \"Cultura\", \"Contato\") agora passam por __() com text-domain \"concertacao\". Adiciona\n   icl_register_string em init priority 20 para registrar no WPML String Translation.\n   Resolve bug confirmado: footer EN renderizava labels em PT (concertacao_footer_menu_items\n   era 100% monolíngue). Validado via curl: /cultura/en/ agora mostra \"About us / Activities /\n   Knowledge / Culture / Contact\" no footer.\n\n2. **try/finally em switch_to_blog**: em concertacao_resolve_url e concertacao_pull_menu_from_blog1.\n   Garante restore_current_blog() mesmo se walker terceiro (Mega Menu, JetMenu, theme custom)\n   ou get_permalink lançar exception. Sem isso, blog stack ficaria corrompido pelo resto do\n   request — todas queries subsequentes iriam para o blog errado. Risco latente sem incidente\n   documentado, mas defensivo barato (3 linhas).\n\n3. **Cache key namespaced [slug|blog_id|lang]**: era apenas [slug]. Protege contra contaminação\n   cross-context em workers long-running (WP-CLI multi-blog, cron-control loops) onde o mesmo\n   PHP process serve requests com blog_id/lang diferentes — 1ª chamada poderia poisonar entradas\n   subsequentes. Custo: 1 string concat + 1 chamada apply_filters('wpml_current_language').\n\nHardening incluído: get_page_by_path agora valida […]
+  "command": "cd /home/<USER>/scripts/server-tools/v2 && git add docker-dev/common/mu-plugins/bit-concertacao-shared-menu.php && git commit -m \"$(cat <<'EOF'\nfix(menu): bit-concertacao-shared-menu v2.1.1 — footer i18n + try/finally + cache namespaced\n\nAplica 3 correções cirúrgicas identificadas em auditoria (3 ciclos, 20 agentes):\n\n1. **Footer i18n via __()**: labels do footer (\"Sobre nós\", \"Atuação\", \"Conhecimento\",\n   \"Cultura\", \"Contato\") agora passam por __() com text-domain \"concertacao\". Adiciona\n   icl_register_string em init priority 20 para registrar no WPML String Translation.\n   Resolve bug confirmado: footer EN renderizava labels em PT (concertacao_footer_menu_items\n   era 100% monolíngue). Validado via curl: /cultura/en/ agora mostra \"About us / Activities /\n   Knowledge / Culture / Contact\" no footer.\n\n2. **try/finally em switch_to_blog**: em concertacao_resolve_url e concertacao_pull_menu_from_blog1.\n   Garante restore_current_blog() mesmo se walker terceiro (Mega Menu, JetMenu, theme custom)\n   ou get_permalink lançar exception. Sem isso, blog stack ficaria corrompido pelo resto do\n   request — todas queries subsequentes iriam para o blog errado. Risco latente sem incidente\n   documentado, mas defensivo barato (3 linhas).\n\n3. **Cache key namespaced [slug|blog_id|lang]**: era apenas [slug]. Protege contra contaminação\n   cross-context em workers long-running (WP-CLI multi-blog, cron-control loops) onde o mesmo\n   PHP process serve requests com blog_id/lang diferentes — 1ª chamada poderia poisonar entradas\n   subsequentes. Custo: 1 string concat + 1 chamada apply_filters('wpml_current_language').\n\nHardening incluído: get_page_by_path agora valida […]
 
 > TOOL
 
@@ -11877,7 +11877,7 @@ id: toolu_011DQmKgks5Aot2L6XBjpvD2
 ```
 [main 011e7d354] fix(menu): bit-concertacao-shared-menu v2.1.1 — footer i18n + try/finally + cache namespaced
  1 file changed, 98 insertions(+), 40 deletions(-)
-Shell cwd was reset to /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao
+Shell cwd was reset to /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao
 ```
 
 > TOOL
@@ -11939,7 +11939,7 @@ tool_use Bash
 id: toolu_01TuHudiWZ6xKrS2swZU6XwY
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2 && git log --oneline origin/main..HEAD 2>&1 | head -5",
+  "command": "cd /home/<USER>/scripts/server-tools/v2 && git log --oneline origin/main..HEAD 2>&1 | head -5",
   "description": "Check pending commits"
 }
 ```
@@ -11954,7 +11954,7 @@ id: toolu_01TuHudiWZ6xKrS2swZU6XwY
 934a11097 fix(phase7): WP_REDIS_PREFIX=prod: na green pos-cutover v1.7.0
 af5d4c0af feat(bit-crossblog): dev-notice mu-plugin DEV-ONLY
 3327b7fdf feat(share-deploy): --source-file=PATH para deploy 100% não-interativo (v2.14.0)
-Shell cwd was reset to /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao
+Shell cwd was reset to /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao
 ```
 
 > AGENT
@@ -11967,7 +11967,7 @@ tool_use Bash
 id: toolu_01RxVViFUeUiH1otutjximiV
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2 && git push origin main 2>&1 | tail -10",
+  "command": "cd /home/<USER>/scripts/server-tools/v2 && git push origin main 2>&1 | tail -10",
   "description": "Push to origin/main"
 }
 ```
@@ -11979,7 +11979,7 @@ id: toolu_01RxVViFUeUiH1otutjximiV
 ```
 To github.com:Bureau-IT/server-tools.git
    304dde3d5..011e7d354  main -> main
-Shell cwd was reset to /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao
+Shell cwd was reset to /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao
 ```
 
 > AGENT
@@ -12035,7 +12035,7 @@ id: toolu_01G8NbZa2mTyKRjUsJ6eWDDu
 {
   "description": "Validar v2.1.1 empiricamente",
   "subagent_type": "general-purpose",
-  "prompt": "Faça uma **VALIDAÇÃO EMPÍRICA do fix v2.1.1** que acabou de ser aplicado em `/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php`.\n\n**O que foi feito em v2.1.1 (commit 011e7d354):**\n1. `concertacao_footer_menu_items()` — labels agora passam por `__('Sobre nós', 'concertacao')` em vez de literal\n2. Adicionado `add_action('init', ...)` priority 20 que chama `icl_register_string` para 5 labels do footer\n3. `concertacao_resolve_url()` envolveu o bloco em `try { ... } finally { restore_current_blog(); }`\n4. `concertacao_pull_menu_from_blog1()` mudou cache key de `$slug` para `$slug . '|' . get_current_blog_id() . '|' . $lang`\n5. Idem `try/finally` na função\n6. Hardening: `instanceof WP_Post` + `is_string($item->url)` checks\n\n**Tarefa:** ambiente Docker `concertacao-dev-wordpress`. Você pode rodar:\n```bash\ndocker exec -u www-data concertacao-dev-wordpress wp eval-file /tmp/script.php --path=/var/www/html\ndocker exec -u www-data concertacao-dev-wordpress wp eval-file /tmp/script.php --url=https://cambrasmax.local:8484/cultura/en/ --path=/var/www/html\ncurl -sk https://cambrasmax.local:8484/cultura/en/\n```\n\n**Validações específicas:**\n\n1. **WPML String Translation funciona**: rodar `wp eval` que chama `icl_t('concertacao', 'footer:sobre-nos', 'Sobre nós')` no contexto EN — retorna 'About us' (se tradução existe) ou 'Sobre nós' (se ainda não criada)?\n\n2. **Strings registradas**: query DB `SELECT * FROM wp_icl_strings WHERE context='concertacao'` — as 5 strings aparecem?\n\n3. **`__()` em contexto EN** retorna PT-BR original (esperado se string ainda não traduzida no painel WPML), ou já tenta resolver?\n\n4. **Cache key composto**: criar script que chama `concertacao_pull_menu_from_blog1('principal')` 2x no […]
+  "prompt": "Faça uma **VALIDAÇÃO EMPÍRICA do fix v2.1.1** que acabou de ser aplicado em `/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php`.\n\n**O que foi feito em v2.1.1 (commit 011e7d354):**\n1. `concertacao_footer_menu_items()` — labels agora passam por `__('Sobre nós', 'concertacao')` em vez de literal\n2. Adicionado `add_action('init', ...)` priority 20 que chama `icl_register_string` para 5 labels do footer\n3. `concertacao_resolve_url()` envolveu o bloco em `try { ... } finally { restore_current_blog(); }`\n4. `concertacao_pull_menu_from_blog1()` mudou cache key de `$slug` para `$slug . '|' . get_current_blog_id() . '|' . $lang`\n5. Idem `try/finally` na função\n6. Hardening: `instanceof WP_Post` + `is_string($item->url)` checks\n\n**Tarefa:** ambiente Docker `concertacao-dev-wordpress`. Você pode rodar:\n```bash\ndocker exec -u www-data concertacao-dev-wordpress wp eval-file /tmp/script.php --path=/var/www/html\ndocker exec -u www-data concertacao-dev-wordpress wp eval-file /tmp/script.php --url=https://cambrasmax.local:8484/cultura/en/ --path=/var/www/html\ncurl -sk https://cambrasmax.local:8484/cultura/en/\n```\n\n**Validações específicas:**\n\n1. **WPML String Translation funciona**: rodar `wp eval` que chama `icl_t('concertacao', 'footer:sobre-nos', 'Sobre nós')` no contexto EN — retorna 'About us' (se tradução existe) ou 'Sobre nós' (se ainda não criada)?\n\n2. **Strings registradas**: query DB `SELECT * FROM wp_icl_strings WHERE context='concertacao'` — as 5 strings aparecem?\n\n3. **`__()` em contexto EN** retorna PT-BR original (esperado se string ainda não traduzida no painel WPML), ou já tenta resolver?\n\n4. **Cache key composto**: criar script que chama `concertacao_pull_menu_from_blog1('principal')` 2x no […]
 
 > TOOL
 
@@ -12045,7 +12045,7 @@ id: toolu_01NdHethTquGiPr1z72PMRXT
 {
   "description": "WPML String Translation integration",
   "subagent_type": "general-purpose",
-  "prompt": "Análise específica da **INTEGRAÇÃO WPML STRING TRANSLATION** introduzida no v2.1.1 do `/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php`.\n\n**Código novo (v2.1.1):**\n```php\nadd_action( 'init', function () {\n    if ( ! function_exists( 'icl_register_string' ) ) return;\n    foreach ( [ 'Sobre nós', 'Atuação', 'Conhecimento', 'Cultura', 'Contato' ] as $label ) {\n        icl_register_string( 'concertacao', 'footer:' . sanitize_title( $label ), $label );\n    }\n}, 20 );\n```\n\nE os usos: `__( 'Sobre nós', 'concertacao' )`, etc.\n\n**Questione:**\n\n1. **API correta?** `icl_register_string` é a API legacy do WPML. A nova API é `wpml_register_single_string` (action) ou `do_action('wpml_register_single_string', ...)`. Qual é a recomendada hoje (WPML 4.8.6)?\n\n2. **Performance de `icl_register_string` em todo init**: dispara queries de INSERT/UPDATE se a string mudar? Custa muito por request? Pode causar deadlock se concurrent?\n\n3. **Sanitização do nome**: `'footer:' . sanitize_title( $label )` — `sanitize_title('Sobre nós')` retorna `sobre-nos`. Mas e `'Atuação'` → `atuacao` (perde \"ç\"). OK ou problema?\n\n4. **Context \"concertacao\"**: contexto único? Outras strings BIT usam `bit` ou similar? Convenção?\n\n5. **`__()` lookup**: `__('Sobre nós', 'concertacao')` — WPML intercepta esse texto? Requer text domain carregado (`load_plugin_textdomain` / `load_theme_textdomain`)? Mu-plugins não rodam `load_*_textdomain` automaticamente.\n\n6. **Workflow do admin**: após push para prod, como o admin sabe que tem strings novas para traduzir? WPML mostra um aviso? […]
+  "prompt": "Análise específica da **INTEGRAÇÃO WPML STRING TRANSLATION** introduzida no v2.1.1 do `/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php`.\n\n**Código novo (v2.1.1):**\n```php\nadd_action( 'init', function () {\n    if ( ! function_exists( 'icl_register_string' ) ) return;\n    foreach ( [ 'Sobre nós', 'Atuação', 'Conhecimento', 'Cultura', 'Contato' ] as $label ) {\n        icl_register_string( 'concertacao', 'footer:' . sanitize_title( $label ), $label );\n    }\n}, 20 );\n```\n\nE os usos: `__( 'Sobre nós', 'concertacao' )`, etc.\n\n**Questione:**\n\n1. **API correta?** `icl_register_string` é a API legacy do WPML. A nova API é `wpml_register_single_string` (action) ou `do_action('wpml_register_single_string', ...)`. Qual é a recomendada hoje (WPML 4.8.6)?\n\n2. **Performance de `icl_register_string` em todo init**: dispara queries de INSERT/UPDATE se a string mudar? Custa muito por request? Pode causar deadlock se concurrent?\n\n3. **Sanitização do nome**: `'footer:' . sanitize_title( $label )` — `sanitize_title('Sobre nós')` retorna `sobre-nos`. Mas e `'Atuação'` → `atuacao` (perde \"ç\"). OK ou problema?\n\n4. **Context \"concertacao\"**: contexto único? Outras strings BIT usam `bit` ou similar? Convenção?\n\n5. **`__()` lookup**: `__('Sobre nós', 'concertacao')` — WPML intercepta esse texto? Requer text domain carregado (`load_plugin_textdomain` / `load_theme_textdomain`)? Mu-plugins não rodam `load_*_textdomain` automaticamente.\n\n6. **Workflow do admin**: após push para prod, como o admin sabe que tem strings novas para traduzir? WPML mostra um aviso? […]
 
 > TOOL
 
@@ -12055,7 +12055,7 @@ id: toolu_01Hpi9veU1WchxZwVchCZC6S
 {
   "description": "Comparação BIT — adoção do fix em outros sites",
   "subagent_type": "general-purpose",
-  "prompt": "Analise se o **fix v2.1.1** aplicado em `/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` poderia/deveria ser aplicado em **outros sites BIT** com problemas similares.\n\n**Sites BIT a investigar** (rode `ls /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/`):\n\nPara cada site BIT que tenha multisite + WPML, identifique:\n1. Tem mu-plugin similar de menu compartilhado?\n2. Tem mesmos problemas (footer i18n, cache cross-blog, switch_to_blog sem try/finally)?\n3. Qual seria o esforço de aplicar o mesmo fix?\n\n**Foque em** (mas explore outros):\n- `mombak/` — multisite WPML?\n- `www-concertacao/` — multisite?\n- `cop30casamazonia/` — ?\n- `bureau-it/` — multisite?\n\n**Para cada site relevante:**\n- Listar mu-plugins relacionados a menu/multisite (`ls .../wp-content/mu-plugins/bit-*`)\n- Identificar se há padrão similar de `switch_to_blog(1)` + footer hardcoded\n- Estimar esforço de portar o fix v2.1.1 (em horas)\n- Existe risco se NÃO portar? (bug latente que pode causar incidente)\n\n**Bonus:**\n- Sites BIT com WPML mas single-site (não multisite) — eles têm hardcoded labels de footer/menu? Mesmo problema de i18n existe?\n- Há um mu-plugin \"common\" que deveria centralizar essa lógica em vez de duplicar?\n\n**Entregue (≤400 palavras):**\n- Tabela: site → multisite? → tem shared-menu? → tem bug i18n? → esforço\n- Top 3 sites prioritários para aplicar fix similar\n- Recomendação: \"extrair generic já\" vs \"esperar 2º site precisar\"\n- Estimativa […]
+  "prompt": "Analise se o **fix v2.1.1** aplicado em `/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` poderia/deveria ser aplicado em **outros sites BIT** com problemas similares.\n\n**Sites BIT a investigar** (rode `ls /home/<USER>/scripts/server-tools/v2/docker-dev/sites/`):\n\nPara cada site BIT que tenha multisite + WPML, identifique:\n1. Tem mu-plugin similar de menu compartilhado?\n2. Tem mesmos problemas (footer i18n, cache cross-blog, switch_to_blog sem try/finally)?\n3. Qual seria o esforço de aplicar o mesmo fix?\n\n**Foque em** (mas explore outros):\n- `mombak/` — multisite WPML?\n- `www-concertacao/` — multisite?\n- `cop30casamazonia/` — ?\n- `bureau-it/` — multisite?\n\n**Para cada site relevante:**\n- Listar mu-plugins relacionados a menu/multisite (`ls .../wp-content/mu-plugins/bit-*`)\n- Identificar se há padrão similar de `switch_to_blog(1)` + footer hardcoded\n- Estimar esforço de portar o fix v2.1.1 (em horas)\n- Existe risco se NÃO portar? (bug latente que pode causar incidente)\n\n**Bonus:**\n- Sites BIT com WPML mas single-site (não multisite) — eles têm hardcoded labels de footer/menu? Mesmo problema de i18n existe?\n- Há um mu-plugin \"common\" que deveria centralizar essa lógica em vez de duplicar?\n\n**Entregue (≤400 palavras):**\n- Tabela: site → multisite? → tem shared-menu? → tem bug i18n? → esforço\n- Top 3 sites prioritários para aplicar fix similar\n- Recomendação: \"extrair generic já\" vs \"esperar 2º site precisar\"\n- Estimativa […]
 
 > TOOL
 
@@ -12065,7 +12065,7 @@ id: toolu_01Scd74yxQzS6vHPSrzS9PTD
 {
   "description": "Smoke regression testing",
   "subagent_type": "general-purpose",
-  "prompt": "Você é um **QA Engineer**. Sua tarefa é desenhar um **PLANO DE TESTES DE REGRESSÃO** para o mu-plugin `/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` v2.1.1 antes do deploy em produção.\n\n**Ambiente:** site Concertação Amazônica. Tem skill `/smoke` que roda bateria completa de testes (gates 1-36) em prod vs green. O smoke já valida muita coisa, mas pode não cobrir menu compartilhado especificamente.\n\n**Investigue o que o `/smoke` já cobre** (ler `/Users/dcambria/.claude/skills/smoke/SKILL.md` ou similar):\n- Gates relacionados a menus\n- Gates relacionados a header/footer\n- Gates relacionados a WPML/i18n\n\n**Identifique gaps:**\n- Onde o smoke atual NÃO valida funcionalidade do mu-plugin?\n- Que novo gate específico para `bit-concertacao-shared-menu` faria sentido?\n\n**Crie a especificação de um novo gate** (ex: gate 37):\n- Nome: `shared_menu_parity` ou similar\n- O que testa\n- URLs a curl\n- Assertions exatas (jq queries em HTML scrape, ou regex)\n- Critério de PASS/FAIL\n- Estimativa de tempo de execução (segundos)\n\n**Teste cases específicos pós-v2.1.1:**\n\n1. Footer EN tem labels em inglês (validar via curl + regex)\n2. Footer PT tem labels em português (validar)\n3. Menu principal blog 1 PT vs EN — não tem cross-contamination\n4. Menu principal blog 2 PT vs EN — funciona\n5. Subnav-bar (`.bit-subnav-bar` do `bit-inline-submenu`) — items batem com submenu Culture\n6. wp-admin/nav-menus.php no blog […]
+  "prompt": "Você é um **QA Engineer**. Sua tarefa é desenhar um **PLANO DE TESTES DE REGRESSÃO** para o mu-plugin `/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` v2.1.1 antes do deploy em produção.\n\n**Ambiente:** site Concertação Amazônica. Tem skill `/smoke` que roda bateria completa de testes (gates 1-36) em prod vs green. O smoke já valida muita coisa, mas pode não cobrir menu compartilhado especificamente.\n\n**Investigue o que o `/smoke` já cobre** (ler `/home/<USER>/.claude/skills/smoke/SKILL.md` ou similar):\n- Gates relacionados a menus\n- Gates relacionados a header/footer\n- Gates relacionados a WPML/i18n\n\n**Identifique gaps:**\n- Onde o smoke atual NÃO valida funcionalidade do mu-plugin?\n- Que novo gate específico para `bit-concertacao-shared-menu` faria sentido?\n\n**Crie a especificação de um novo gate** (ex: gate 37):\n- Nome: `shared_menu_parity` ou similar\n- O que testa\n- URLs a curl\n- Assertions exatas (jq queries em HTML scrape, ou regex)\n- Critério de PASS/FAIL\n- Estimativa de tempo de execução (segundos)\n\n**Teste cases específicos pós-v2.1.1:**\n\n1. Footer EN tem labels em inglês (validar via curl + regex)\n2. Footer PT tem labels em português (validar)\n3. Menu principal blog 1 PT vs EN — não tem cross-contamination\n4. Menu principal blog 2 PT vs EN — funciona\n5. Subnav-bar (`.bit-subnav-bar` do `bit-inline-submenu`) — items batem com submenu Culture\n6. wp-admin/nav-menus.php no blog […]
 
 > TOOL
 
@@ -12075,7 +12075,7 @@ id: toolu_01FbrXiDF2DAewfo7fVCN9rc
 {
   "description": "Deployment plan prod",
   "subagent_type": "general-purpose",
-  "prompt": "Crie um **PLANO DE DEPLOYMENT PARA PRODUÇÃO** do fix v2.1.1 do `/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php`.\n\n**Contexto:** site Concertação está em produção (concertacaoamazonia.com.br). Usa Blue/Green deploy via `phase1-prepare` → `phase3-stage` → `phase5-validate` → `phase7-cutover`. Tem WP Rocket + Redis + CloudFront. Tunnel Cloudflare permite acesso à HML.\n\n**O fix v2.1.1 está commitado em `main` (`011e7d354`) e pushado para origin/main.**\n\n**Crie o plano com:**\n\n### 1. Pré-deploy (validação local)\n- Smoke completo em DEV\n- Lint PHP (`php -l`)\n- Diff revisão (`git diff 304dde3d5..011e7d354 -- docker-dev/common/mu-plugins/`)\n- Backup dos arquivos a serem sobrescritos em prod\n\n### 2. Deploy via blue-green\n- Fase exata onde os mu-plugins são copiados (phase3? phase7?)\n- O blue-green do Concertação faz sync do `docker-dev/common/mu-plugins/` → EC2 prod automaticamente? Ou requer step manual?\n- Como validar green antes do cutover\n\n### 3. Cutover\n- O que executar\n- Como verificar\n- Quanto tempo total\n\n### 4. Pós-cutover\n- WP Rocket flush (qual o comando cirúrgico)\n- CloudFront invalidate (paths exatos)\n- Validação visual em prod (URLs a testar)\n\n### 5. Rollback (se algo der errado)\n- Como detectar problema rápido (smoke gates, monitoring CloudWatch)\n- Procedimento exato de rollback\n- Tempo estimado para rollback completo\n\n### 6. Riscos específicos\n- v2.1.1 pode introduzir warnings PHP (try/finally em PHP 7.0+ — qual a versão […]
+  "prompt": "Crie um **PLANO DE DEPLOYMENT PARA PRODUÇÃO** do fix v2.1.1 do `/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php`.\n\n**Contexto:** site Concertação está em produção (concertacaoamazonia.com.br). Usa Blue/Green deploy via `phase1-prepare` → `phase3-stage` → `phase5-validate` → `phase7-cutover`. Tem WP Rocket + Redis + CloudFront. Tunnel Cloudflare permite acesso à HML.\n\n**O fix v2.1.1 está commitado em `main` (`011e7d354`) e pushado para origin/main.**\n\n**Crie o plano com:**\n\n### 1. Pré-deploy (validação local)\n- Smoke completo em DEV\n- Lint PHP (`php -l`)\n- Diff revisão (`git diff 304dde3d5..011e7d354 -- docker-dev/common/mu-plugins/`)\n- Backup dos arquivos a serem sobrescritos em prod\n\n### 2. Deploy via blue-green\n- Fase exata onde os mu-plugins são copiados (phase3? phase7?)\n- O blue-green do Concertação faz sync do `docker-dev/common/mu-plugins/` → EC2 prod automaticamente? Ou requer step manual?\n- Como validar green antes do cutover\n\n### 3. Cutover\n- O que executar\n- Como verificar\n- Quanto tempo total\n\n### 4. Pós-cutover\n- WP Rocket flush (qual o comando cirúrgico)\n- CloudFront invalidate (paths exatos)\n- Validação visual em prod (URLs a testar)\n\n### 5. Rollback (se algo der errado)\n- Como detectar problema rápido (smoke gates, monitoring CloudWatch)\n- Procedimento exato de rollback\n- Tempo estimado para rollback completo\n\n### 6. Riscos específicos\n- v2.1.1 pode introduzir warnings PHP (try/finally em PHP 7.0+ — qual a versão […]
 
 > TOOL
 
@@ -12085,7 +12085,7 @@ id: toolu_01JGwJp44CNpC4QBdsnHXw4p
 {
   "description": "Análise dos warnings PHPStan introduzidos/resolvidos",
   "subagent_type": "general-purpose",
-  "prompt": "Analise os **WARNINGS PHPSTAN/PSALM** especificamente no diff v2.1.0 → v2.1.1 do arquivo `/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php`.\n\n**Diff:**\n```bash\ncd /Users/dcambria/scripts/server-tools/v2 && git diff HEAD~1 HEAD -- docker-dev/common/mu-plugins/bit-concertacao-shared-menu.php\n```\n\nO fix v2.1.1 introduziu:\n1. `try { ... } finally { ... }` (PHP 5.5+)\n2. `$page instanceof WP_Post` narrowing\n3. `( $url === false )` check para `get_permalink()` retorno\n4. `is_string($item->url)` check antes de strpos\n5. `function_exists('apply_filters')` guard (mantido)\n6. `if ( ! is_string( $lang ) || $lang === '' )` fallback\n7. `(string) $item->url` cast\n\n**Para cada mudança, analise:**\n\n1. Resolveu warnings/erros PHPStan vs introduziu novos?\n2. Está alinhado com PSR-12 / WPCS?\n3. PHP 8.0+ features que poderiam simplificar?\n\n**Especificamente:**\n\n- `instanceof WP_Post`: bom, mas e `WP_Error`? `get_page_by_path` pode retornar WP_Error?\n- `try/finally`: o `finally` executa mesmo com `return`, mas e com `exit`/`die`? E com fatal error?\n- Cache key string concat: `$slug . '|' . get_current_blog_id() . '|' . $lang` — `get_current_blog_id()` retorna int — concatenation funciona? Performance vs `sprintf`?\n- `apply_filters('wpml_current_language', 'pt-br')` com default — retorno é sempre string? Ou pode ser `null` se filter retornar `null` literal?\n- `(string) $item->url`: `$item->url` pode ser `null` em PHP 8.1+ — `(string) null` retorna `\"\"`, ok? Causa warning?\n\n**Calcule:**\n\n- PHPStan level que `bit-concertacao-shared-menu.php` v2.1.1 passa hoje (estimativa)\n- Quantos warnings remanescentes […]
+  "prompt": "Analise os **WARNINGS PHPSTAN/PSALM** especificamente no diff v2.1.0 → v2.1.1 do arquivo `/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php`.\n\n**Diff:**\n```bash\ncd /home/<USER>/scripts/server-tools/v2 && git diff HEAD~1 HEAD -- docker-dev/common/mu-plugins/bit-concertacao-shared-menu.php\n```\n\nO fix v2.1.1 introduziu:\n1. `try { ... } finally { ... }` (PHP 5.5+)\n2. `$page instanceof WP_Post` narrowing\n3. `( $url === false )` check para `get_permalink()` retorno\n4. `is_string($item->url)` check antes de strpos\n5. `function_exists('apply_filters')` guard (mantido)\n6. `if ( ! is_string( $lang ) || $lang === '' )` fallback\n7. `(string) $item->url` cast\n\n**Para cada mudança, analise:**\n\n1. Resolveu warnings/erros PHPStan vs introduziu novos?\n2. Está alinhado com PSR-12 / WPCS?\n3. PHP 8.0+ features que poderiam simplificar?\n\n**Especificamente:**\n\n- `instanceof WP_Post`: bom, mas e `WP_Error`? `get_page_by_path` pode retornar WP_Error?\n- `try/finally`: o `finally` executa mesmo com `return`, mas e com `exit`/`die`? E com fatal error?\n- Cache key string concat: `$slug . '|' . get_current_blog_id() . '|' . $lang` — `get_current_blog_id()` retorna int — concatenation funciona? Performance vs `sprintf`?\n- `apply_filters('wpml_current_language', 'pt-br')` com default — retorno é sempre string? Ou pode ser `null` se filter retornar `null` literal?\n- `(string) $item->url`: `$item->url` pode ser `null` em PHP 8.1+ — `(string) null` retorna `\"\"`, ok? Causa warning?\n\n**Calcule:**\n\n- PHPStan level que `bit-concertacao-shared-menu.php` v2.1.1 passa hoje (estimativa)\n- Quantos warnings remanescentes […]
 
 > TOOL
 
@@ -12095,7 +12095,7 @@ id: toolu_01JwMsREtaFnK4qSCQez75yu
 {
   "description": "Observability v2.1.1 inspect",
   "subagent_type": "general-purpose",
-  "prompt": "Reanalise **OBSERVABILIDADE** do `/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` v2.1.1 considerando que o fix **NÃO incluiu logging** (decidido como \"nice to have, não bloqueia deploy\").\n\n**Foco no que v2.1.1 mudou e como observar:**\n\n1. **`try/finally` agora gerencia restore_current_blog**: se uma exception ocorrer no `try`, o `finally` chama `restore_current_blog`. Mas a exception **é silenciada**? Bubble up? Onde aparece? Como saber que isso aconteceu?\n\n2. **Cache key mudou**: agora é `slug|blog_id|lang`. Como saber se cache hit rate caiu (mais variantes = mais misses)? Sem métricas é cego.\n\n3. **`icl_register_string` no init priority 20**: roda em TODO request. Custa cada init em DB? Como medir?\n\n4. **Footer i18n via `__()`**: quando WPML não tem a string traduzida, retorna PT. Sem aviso. Como detectar \"footer EN está PT silenciosamente\"?\n\n5. **`$lang = 'pt-br'` fallback**: se `apply_filters` retornar tipo inesperado, cai no fallback. Pode mascarar bug WPML. Sem log = invisível.\n\n**Proponha um patch v2.1.2 que adicione observabilidade ZERO COST em prod (não polui logs em condições normais):**\n\n```php\n// Wrapper de logging condicional\nfunction bit_csm_log( string $event, array $ctx = [], string $level = 'debug' ): void {\n    if ( $level === 'debug' && ! ( defined( 'BIT_CSM_DEBUG' ) && BIT_CSM_DEBUG ) ) return;\n    if ( […]
+  "prompt": "Reanalise **OBSERVABILIDADE** do `/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` v2.1.1 considerando que o fix **NÃO incluiu logging** (decidido como \"nice to have, não bloqueia deploy\").\n\n**Foco no que v2.1.1 mudou e como observar:**\n\n1. **`try/finally` agora gerencia restore_current_blog**: se uma exception ocorrer no `try`, o `finally` chama `restore_current_blog`. Mas a exception **é silenciada**? Bubble up? Onde aparece? Como saber que isso aconteceu?\n\n2. **Cache key mudou**: agora é `slug|blog_id|lang`. Como saber se cache hit rate caiu (mais variantes = mais misses)? Sem métricas é cego.\n\n3. **`icl_register_string` no init priority 20**: roda em TODO request. Custa cada init em DB? Como medir?\n\n4. **Footer i18n via `__()`**: quando WPML não tem a string traduzida, retorna PT. Sem aviso. Como detectar \"footer EN está PT silenciosamente\"?\n\n5. **`$lang = 'pt-br'` fallback**: se `apply_filters` retornar tipo inesperado, cai no fallback. Pode mascarar bug WPML. Sem log = invisível.\n\n**Proponha um patch v2.1.2 que adicione observabilidade ZERO COST em prod (não polui logs em condições normais):**\n\n```php\n// Wrapper de logging condicional\nfunction bit_csm_log( string $event, array $ctx = [], string $level = 'debug' ): void {\n    if ( $level === 'debug' && ! ( defined( 'BIT_CSM_DEBUG' ) && BIT_CSM_DEBUG ) ) return;\n    if ( […]
 
 > TOOL
 
@@ -12105,7 +12105,7 @@ id: toolu_01AX9Dgnq4EnBQ14AQaAh1sR
 {
   "description": "A11y/SEO impact menu structure",
   "subagent_type": "general-purpose",
-  "prompt": "Faça uma análise de **ACESSIBILIDADE (a11y) e SEO** do output gerado pelo `/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` v2.1.1.\n\n**Você pode usar:**\n```bash\ncurl -sk https://cambrasmax.local:8484/cultura/ -o /tmp/cultura-pt.html\ncurl -sk https://cambrasmax.local:8484/cultura/en/ -o /tmp/cultura-en.html\ndocker exec -u www-data concertacao-dev-wordpress wp eval-file /tmp/script.php --path=/var/www/html\n```\n\n**Foco do impacto a11y/SEO:**\n\n### A11y (WCAG 2.1 AA)\n\n1. **Items com `type=custom` e `object_id=ID` (self-ref)**: o walker WP renderiza `<a href=\"URL\">` — mas perde semantic markup como `aria-current=\"page\"` que normalmente é adicionado quando WP detecta página atual via `object_id` real.\n\n2. **Submenu structure**: `.menu-item-has-children` → `<ul class=\"sub-menu\">` — atributos ARIA presentes? `role=\"menu\"`, `aria-haspopup`, `aria-expanded`?\n\n3. **Skip links**: o site tem skip-to-content? Menu interfere?\n\n4. **Keyboard navigation**: tab order dentro do menu funciona com items custom?\n\n5. **Screen reader**: items com URLs de domínios diferentes (cambrasmax vs concertacao.bureau-it.com) confundem SR? `target=\"_blank\"` aplicado?\n\n6. **Outline HTML5**: gate 31 do smoke verifica isso — o menu agora não quebra outline?\n\n7. **`hreflang`**: items de menu cross-blog (Culture → /cultura/en/) deveriam ter `hreflang=\"en\"` quando lang current é PT?\n\n### SEO\n\n1. **Internal linking**: os items cross-blog com URLs `concertacao.bureau-it.com/cultura/` em vez de `cambrasmax.local:8484/cultura/` — em prod isso é OK (mesmo domínio), mas em dev causa URL inconsistente. Google em prod indexa normal?\n\n2. **Crawl budget**: menus repetidos em TODA […]
+  "prompt": "Faça uma análise de **ACESSIBILIDADE (a11y) e SEO** do output gerado pelo `/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` v2.1.1.\n\n**Você pode usar:**\n```bash\ncurl -sk https://cambrasmax.local:8484/cultura/ -o /tmp/cultura-pt.html\ncurl -sk https://cambrasmax.local:8484/cultura/en/ -o /tmp/cultura-en.html\ndocker exec -u www-data concertacao-dev-wordpress wp eval-file /tmp/script.php --path=/var/www/html\n```\n\n**Foco do impacto a11y/SEO:**\n\n### A11y (WCAG 2.1 AA)\n\n1. **Items com `type=custom` e `object_id=ID` (self-ref)**: o walker WP renderiza `<a href=\"URL\">` — mas perde semantic markup como `aria-current=\"page\"` que normalmente é adicionado quando WP detecta página atual via `object_id` real.\n\n2. **Submenu structure**: `.menu-item-has-children` → `<ul class=\"sub-menu\">` — atributos ARIA presentes? `role=\"menu\"`, `aria-haspopup`, `aria-expanded`?\n\n3. **Skip links**: o site tem skip-to-content? Menu interfere?\n\n4. **Keyboard navigation**: tab order dentro do menu funciona com items custom?\n\n5. **Screen reader**: items com URLs de domínios diferentes (cambrasmax vs concertacao.bureau-it.com) confundem SR? `target=\"_blank\"` aplicado?\n\n6. **Outline HTML5**: gate 31 do smoke verifica isso — o menu agora não quebra outline?\n\n7. **`hreflang`**: items de menu cross-blog (Culture → /cultura/en/) deveriam ter `hreflang=\"en\"` quando lang current é PT?\n\n### SEO\n\n1. **Internal linking**: os items cross-blog com URLs `concertacao.bureau-it.com/cultura/` em vez de `cambrasmax.local:8484/cultura/` — em prod isso é OK (mesmo domínio), mas em dev causa URL inconsistente. Google em prod indexa normal?\n\n2. **Crawl budget**: menus repetidos em TODA […]
 
 > TOOL
 
@@ -12115,7 +12115,7 @@ id: toolu_01PTyTS83EDmTuVr4drhJu2M
 {
   "description": "Memory leak inspection",
   "subagent_type": "general-purpose",
-  "prompt": "Investigue possíveis **MEMORY LEAKS** ou **MEMORY USAGE EXCESSIVO** no mu-plugin `/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` v2.1.1.\n\n**Pode rodar:**\n```bash\ndocker exec -u www-data concertacao-dev-wordpress wp eval-file /tmp/bench.php --path=/var/www/html\n```\n\n**Foco específico:**\n\n1. **`static $cache` em `concertacao_pull_menu_from_blog1`**: chave agora é composta `[slug|blog|lang]`. Quantas entries possíveis? Em workers long-running (queue worker, WP-CLI multi-blog), pode crescer indefinidamente?\n\n2. **`static $items` em `concertacao_footer_menu_items`**: armazena array de 5 items. Tamanho fixo, ok.\n\n3. **`$cache` em `bit_resolve_localized_menu_slug`** (se existir): tamanho?\n\n4. **`wp_get_nav_menu_items()` interno**: retorna array de stdClass objects (~5KB por menu de 24 items). Cached em static = persiste pelo request. Multiplicar por N slugs distintos = pode chegar a MBs?\n\n5. **Vazamento via `WP_Filter`**: o `remove_filter`/`add_filter` interno é seguro? Pode deixar callbacks duplicados se exception entre eles?\n\n6. **Foreach freeze de items**: modifica items in-place — sem leak. Mas se WP cacheia esses items globalmente (via `wp_cache_*`) e nossa modificação polui o cache global?\n\n7. **`switch_to_blog` e WPDB**: `switch_to_blog` troca prefix do `$wpdb`. Restore volta. Memory ok? Em PHP-FPM persistente, há acumulação?\n\n8. **`apply_filters('wpml_current_language')` chamado a cada cache lookup**: trivial, mas multiplica por N invocações por request.\n\n9. **Footer items: `concertacao_build_menu_items($def, 91000)`**: cria 5 stdClass por request — descartados? OK.\n\n10. **`icl_register_string` em init**: armazena strings em DB. Em workers long-running […]
+  "prompt": "Investigue possíveis **MEMORY LEAKS** ou **MEMORY USAGE EXCESSIVO** no mu-plugin `/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` v2.1.1.\n\n**Pode rodar:**\n```bash\ndocker exec -u www-data concertacao-dev-wordpress wp eval-file /tmp/bench.php --path=/var/www/html\n```\n\n**Foco específico:**\n\n1. **`static $cache` em `concertacao_pull_menu_from_blog1`**: chave agora é composta `[slug|blog|lang]`. Quantas entries possíveis? Em workers long-running (queue worker, WP-CLI multi-blog), pode crescer indefinidamente?\n\n2. **`static $items` em `concertacao_footer_menu_items`**: armazena array de 5 items. Tamanho fixo, ok.\n\n3. **`$cache` em `bit_resolve_localized_menu_slug`** (se existir): tamanho?\n\n4. **`wp_get_nav_menu_items()` interno**: retorna array de stdClass objects (~5KB por menu de 24 items). Cached em static = persiste pelo request. Multiplicar por N slugs distintos = pode chegar a MBs?\n\n5. **Vazamento via `WP_Filter`**: o `remove_filter`/`add_filter` interno é seguro? Pode deixar callbacks duplicados se exception entre eles?\n\n6. **Foreach freeze de items**: modifica items in-place — sem leak. Mas se WP cacheia esses items globalmente (via `wp_cache_*`) e nossa modificação polui o cache global?\n\n7. **`switch_to_blog` e WPDB**: `switch_to_blog` troca prefix do `$wpdb`. Restore volta. Memory ok? Em PHP-FPM persistente, há acumulação?\n\n8. **`apply_filters('wpml_current_language')` chamado a cada cache lookup**: trivial, mas multiplica por N invocações por request.\n\n9. **Footer items: `concertacao_build_menu_items($def, 91000)`**: cria 5 stdClass por request — descartados? OK.\n\n10. **`icl_register_string` em init**: armazena strings em DB. Em workers long-running […]
 
 > TOOL
 
@@ -12146,7 +12146,7 @@ id: toolu_01JiSSw6sXCNYioSQebtudMK
 {
   "description": "Compatibilidade WordPress + PHP versões",
   "subagent_type": "general-purpose",
-  "prompt": "Faça uma análise de **COMPATIBILIDADE** do `/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` v2.1.1 com:\n\n1. **PHP versões**: 7.4, 8.0, 8.1, 8.2, 8.3, 8.4\n2. **WordPress versões**: 6.5+, 6.6, 6.7, 6.8, 6.9 (atual)\n3. **WPML versões**: 4.6+, 4.7, 4.8 (atual), 4.9 (futuro?)\n4. **Elementor Pro versões**: principais\n\n**Features novas em v2.1.1 a analisar:**\n\n- `try { } finally { }` — PHP 5.5+, OK\n- `__('string', 'context')` — WP nativo\n- `icl_register_string` — WPML legacy API\n- `instanceof WP_Post` — funciona em PHP 5.0+, OK\n- `(string)` cast — funciona em todas as versões PHP\n- `is_string($lang)` — funciona em todas\n\n**Investigue:**\n\n1. PHP 8.4 (lançado 2024): há deprecations que afetam? `dynamic properties` em `WP_Post`?\n\n2. WordPress 6.9 (atual): `wp_get_nav_menu_items` mudou de signature? Retorno?\n\n3. WPML 4.8: `icl_register_string` ainda é canônica ou tem alternativa moderna?\n\n4. `apply_filters('wpml_current_language', null)` — quando WPML não está ativo, retorna `null`. Em alguns plugins de tradução alternativa (Polylang, TranslatePress), esse filtro NÃO existe e o `apply_filters` retorna o default (null/pt-br). OK.\n\n5. **PHP 8.1+ deprecation**: `strpos($item->url, 'http')` quando `$item->url` é null → deprecation warning. v2.1.1 adicionou `is_string` guard — resolve.\n\n6. **PHP 8.2+ deprecation**: `dynamic properties on stdClass` — não aplicável (stdClass aceita dynamic).\n\n7. **WordPress 7.0** (hipotético): se WP eventualmente forçar autoload PSR-4 ou […]
+  "prompt": "Faça uma análise de **COMPATIBILIDADE** do `/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` v2.1.1 com:\n\n1. **PHP versões**: 7.4, 8.0, 8.1, 8.2, 8.3, 8.4\n2. **WordPress versões**: 6.5+, 6.6, 6.7, 6.8, 6.9 (atual)\n3. **WPML versões**: 4.6+, 4.7, 4.8 (atual), 4.9 (futuro?)\n4. **Elementor Pro versões**: principais\n\n**Features novas em v2.1.1 a analisar:**\n\n- `try { } finally { }` — PHP 5.5+, OK\n- `__('string', 'context')` — WP nativo\n- `icl_register_string` — WPML legacy API\n- `instanceof WP_Post` — funciona em PHP 5.0+, OK\n- `(string)` cast — funciona em todas as versões PHP\n- `is_string($lang)` — funciona em todas\n\n**Investigue:**\n\n1. PHP 8.4 (lançado 2024): há deprecations que afetam? `dynamic properties` em `WP_Post`?\n\n2. WordPress 6.9 (atual): `wp_get_nav_menu_items` mudou de signature? Retorno?\n\n3. WPML 4.8: `icl_register_string` ainda é canônica ou tem alternativa moderna?\n\n4. `apply_filters('wpml_current_language', null)` — quando WPML não está ativo, retorna `null`. Em alguns plugins de tradução alternativa (Polylang, TranslatePress), esse filtro NÃO existe e o `apply_filters` retorna o default (null/pt-br). OK.\n\n5. **PHP 8.1+ deprecation**: `strpos($item->url, 'http')` quando `$item->url` é null → deprecation warning. v2.1.1 adicionou `is_string` guard — resolve.\n\n6. **PHP 8.2+ deprecation**: `dynamic properties on stdClass` — não aplicável (stdClass aceita dynamic).\n\n7. **WordPress 7.0** (hipotético): se WP eventualmente forçar autoload PSR-4 ou […]
 
 > TOOL
 
@@ -12156,7 +12156,7 @@ id: toolu_019fE3fzRfWz7CkZNKg2mvx2
 {
   "description": "Final consolidation — go/no-go",
   "subagent_type": "general-purpose",
-  "prompt": "Você é o **CTO técnico** revisando o último commit (`011e7d354` — v2.1.1) do mu-plugin `/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php`. Sua tarefa: dar **GO/NO-GO para deploy em prod**.\n\n**Contexto:** 3 ciclos de auditoria (20 agentes paralelos) levaram a essa v2.1.1. O commit já foi pushado para `origin/main`. O CTO (você) precisa decidir se pode deployar AGORA em produção via blue-green ou se precisa de mais validação.\n\n**Você pode:**\n```bash\ngit log --oneline -5\ngit diff HEAD~1 HEAD -- docker-dev/common/mu-plugins/bit-concertacao-shared-menu.php\ngit show HEAD --stat\ndocker exec -u www-data concertacao-dev-wordpress wp eval-file /tmp/...\ncurl -sk https://cambrasmax.local:8484/...\n```\n\n**Sua avaliação deve cobrir:**\n\n### 1. RISK ASSESSMENT\n- O que pode dar errado em prod que não deu em dev?\n- Probabilidade × Impacto\n- Mitigations já em vigor (rollback fácil?)\n\n### 2. CONFIDENCE LEVEL\n- Empírica: o quê foi VALIDADO em dev?\n- Teórica: o quê é hipótese?\n- Range de confiança (50-95%)\n\n### 3. BUSINESS IMPACT\n- Bug fixado (footer EN → trad correta) — impacta quantos usuários?\n- Improvements latentes (cache, try/finally) — qual o ganho prático?\n- Custo de NÃO deployar (manter v2.1.0 com bug visível em footer EN)\n\n### 4. DEPLOY DECISION\n- **GO NOW**: deploy hoje, durante janela normal\n- **GO SCHEDULED**: deploy hoje, mas em horário de baixo tráfego\n- **GO AFTER VALIDATION**: precisa […]
+  "prompt": "Você é o **CTO técnico** revisando o último commit (`011e7d354` — v2.1.1) do mu-plugin `/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php`. Sua tarefa: dar **GO/NO-GO para deploy em prod**.\n\n**Contexto:** 3 ciclos de auditoria (20 agentes paralelos) levaram a essa v2.1.1. O commit já foi pushado para `origin/main`. O CTO (você) precisa decidir se pode deployar AGORA em produção via blue-green ou se precisa de mais validação.\n\n**Você pode:**\n```bash\ngit log --oneline -5\ngit diff HEAD~1 HEAD -- docker-dev/common/mu-plugins/bit-concertacao-shared-menu.php\ngit show HEAD --stat\ndocker exec -u www-data concertacao-dev-wordpress wp eval-file /tmp/...\ncurl -sk https://cambrasmax.local:8484/...\n```\n\n**Sua avaliação deve cobrir:**\n\n### 1. RISK ASSESSMENT\n- O que pode dar errado em prod que não deu em dev?\n- Probabilidade × Impacto\n- Mitigations já em vigor (rollback fácil?)\n\n### 2. CONFIDENCE LEVEL\n- Empírica: o quê foi VALIDADO em dev?\n- Teórica: o quê é hipótese?\n- Range de confiança (50-95%)\n\n### 3. BUSINESS IMPACT\n- Bug fixado (footer EN → trad correta) — impacta quantos usuários?\n- Improvements latentes (cache, try/finally) — qual o ganho prático?\n- Custo de NÃO deployar (manter v2.1.0 com bug visível em footer EN)\n\n### 4. DEPLOY DECISION\n- **GO NOW**: deploy hoje, durante janela normal\n- **GO SCHEDULED**: deploy hoje, mas em horário de baixo tráfego\n- **GO AFTER VALIDATION**: precisa […]
 
 > TOOL
 
@@ -12272,7 +12272,7 @@ Vou montar o report final.
 
 ## Report — Validação Empírica v2.1.1
 
-**Arquivo:** `/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` (v2.1.1 confirmado no container)
+**Arquivo:** `/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php` (v2.1.1 confirmado no container)
 
 ### Resultados
 
@@ -12391,7 +12391,7 @@ Now I'll write the deployment plan.
 
 ```bash
 # 1. Sync repo
-cd /Users/dcambria/scripts/server-tools/v2 && git pull --ff-only
+cd /home/<USER>/scripts/server-tools/v2 && git pull --ff-only
 
 # 2. Lint
 php -l docker-dev/common/mu-plugins/bit-concertacao-shared-menu.php   # já PASS
@@ -12474,7 +12474,7 @@ tool_use Bash
 id: toolu_016UeCEJKggmppF3husHgs7i
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2 && git status docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php 2>&1 | tail -5",
+  "command": "cd /home/<USER>/scripts/server-tools/v2 && git status docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php 2>&1 | tail -5",
   "description": "Confirm site file uncommitted"
 }
 ```
@@ -12489,7 +12489,7 @@ Your branch is ahead of 'origin/main' by 1 commit.
   (use "git push" to publish your local commits)
 
 nothing to commit, working tree clean
-Shell cwd was reset to /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao
+Shell cwd was reset to /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao
 ```
 
 > AGENT
@@ -12502,7 +12502,7 @@ tool_use Bash
 id: toolu_01TYZiGRmaP2HtnA26U16MSw
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2 && git log --oneline origin/main..HEAD 2>&1 | head -3",
+  "command": "cd /home/<USER>/scripts/server-tools/v2 && git log --oneline origin/main..HEAD 2>&1 | head -3",
   "description": "Check what's ahead"
 }
 ```
@@ -12513,7 +12513,7 @@ tool_result
 id: toolu_01TYZiGRmaP2HtnA26U16MSw
 ```
 f7c0c60ec feat(blue-green): phase7 v1.8.0 (multisite fix + CF gate) + helper + checklist
-Shell cwd was reset to /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao
+Shell cwd was reset to /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao
 ```
 
 > AGENT
@@ -12625,7 +12625,7 @@ tool_use Read
 id: toolu_01SSAL7eWTAKJVUEb6JeBnj9
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php",
   "offset": 120,
   "limit": 85
 }
@@ -12678,7 +12678,7 @@ tool_use Read
 id: toolu_01PEwaogtTsPwXQY9rQN6Z49
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php",
   "offset": 204,
   "limit": 50
 }
@@ -12730,7 +12730,7 @@ id: toolu_013LRVBbvNkJGD9GH6FQ1KcF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php",
   "old_string": "    // Labels passam por __() com text-domain \"concertacao\" — quando WPML String\n    // Translation registrar essas strings (via wpml_register_single_string ou\n    // i18n scan do tema), labels do footer ficam traduzíveis. Sem WPML, __()\n    // é no-op e retorna o original PT. Resolve bug ciclo 2/3: footer EN mostrava PT.\n    $def = [\n        [ __( 'Sobre nós',    'concertacao' ), concertacao_resolve_url( 'sobre-nos' )    ],\n        [ __( 'Atuação',      'concertacao' ), concertacao_resolve_url( 'atuacao' )      ],\n        [ __( 'Conhecimento', 'concertacao' ), concertacao_resolve_url( 'conhecimento' ) ],\n        [ __( 'Cultura',      'concertacao' ), concertacao_resolve_url( '', 2 )          ],\n        [ __( 'Contato',      'concertacao' ), concertacao_resolve_url( 'contato' )      ],\n    ];\n\n    $items = concertacao_build_menu_items( $def, 91000 );\n    return $items;\n}\n\n/**\n * Registra strings do footer para WPML String Translation.\n *\n * Sem isso, labels do __() ficam só com o original PT mesmo em contexto EN.\n * O WPML escaneia chamadas __() em runtime mas pode pular mu-plugins; registro\n * explícito garante presença no painel WPML → String Translation → concertacao.\n */\nadd_action( 'init', function () {\n    if ( ! function_exists( 'icl_register_string' ) ) {\n        return;\n    }\n    foreach ( [ 'Sobre nós', 'Atuação', 'Conhecimento', 'Cultura', 'Contato' ] as $label ) {\n […]
 
 > TOOL
@@ -12738,7 +12738,7 @@ id: toolu_013LRVBbvNkJGD9GH6FQ1KcF
 tool_result
 id: toolu_013LRVBbvNkJGD9GH6FQ1KcF
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -12752,7 +12752,7 @@ id: toolu_01A5DdK2vik7rERAuvwzY9BP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php",
   "old_string": "    switch_to_blog( 1 );\n    // try/finally garante restore_current_blog mesmo se walker terceiro\n    // (Mega Menu, JetMenu, theme custom) lançar exception. Sem isso, request\n    // inteiro fica preso no blog 1 (todas as queries subsequentes erradas).\n    try {\n        // Pegar items SEM disparar o nosso próprio filtro (para evitar recursão).\n        remove_filter( 'wp_get_nav_menu_items', 'concertacao_shared_menu_filter', 10 );\n        $items = wp_get_nav_menu_items( $slug );\n        add_filter( 'wp_get_nav_menu_items', 'concertacao_shared_menu_filter', 10, 3 );\n\n        // Congelar title/url resolvidos no contexto blog 1 e neutralizar object_id\n        // para evitar cross-blog ID collision em re-resoluções subsequentes.\n        if ( is_array( $items ) ) {\n            foreach ( $items as $item ) {\n                if ( ! is_object( $item ) ) continue;\n                // Snapshot da URL (já resolvida pelo nav walker do blog 1)\n                if ( empty( $item->url ) || ! is_string( $item->url ) || strpos( $item->url, 'http' ) !== 0 ) {\n                    // wp_setup_nav_menu_item já preencheu — fallback seguro\n                    $item->url = ! empty( $item->url ) ? (string) $item->url : '#';\n                }\n                // Title só é re-resolvido pelo walker quando type=post_type/taxonomy.\n                // Forçar custom: hooks posteriores respeitam $item->title literal.\n                $item->type        = 'custom';\n                $item->object      = 'custom';\n                $item->object_id   = (string) $item->ID;  // Self-ref evita lookup cross-blog\n […]
 
 > TOOL
@@ -12760,7 +12760,7 @@ id: toolu_01A5DdK2vik7rERAuvwzY9BP
 tool_result
 id: toolu_01A5DdK2vik7rERAuvwzY9BP
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -12774,7 +12774,7 @@ id: toolu_013pH5qN2PJeCUkw36uDAb82
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php",
   "old_string": " * Version:     2.1.1",
   "new_string": " * Version:     2.1.2"
 }
@@ -12785,7 +12785,7 @@ id: toolu_013pH5qN2PJeCUkw36uDAb82
 tool_result
 id: toolu_013pH5qN2PJeCUkw36uDAb82
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -12794,7 +12794,7 @@ tool_use Bash
 id: toolu_01CKFkd6bCddYUP5J55ZyCKA
 ```json
 {
-  "command": "cp /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php /Users/dcambria/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-concertacao-shared-menu.php && docker exec concertacao-dev-wordpress php -l /var/www/html/wp-content/mu-plugins/bit-concertacao-shared-menu.php 2>&1 | tail -1 && docker exec -u www-data concertacao-dev-wordpress wp cache flush --path=/var/www/html 2>&1 | tail -1 && docker exec -u www-data concertacao-dev-wordpress wp transient delete concertacao_wpml_strings_registered_v1 --path=/var/www/html 2>&1 | tail -1",
+  "command": "cp /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-concertacao-shared-menu.php /home/<USER>/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-concertacao-shared-menu.php && docker exec concertacao-dev-wordpress php -l /var/www/html/wp-content/mu-plugins/bit-concertacao-shared-menu.php 2>&1 | tail -1 && docker exec -u www-data concertacao-dev-wordpress wp cache flush --path=/var/www/html 2>&1 | tail -1 && docker exec -u www-data concertacao-dev-wordpress wp transient delete concertacao_wpml_strings_registered_v1 --path=/var/www/html 2>&1 | tail -1",
   "description": "Sync canonical + lint + flush + reset transient"
 }
 ```
@@ -12901,7 +12901,7 @@ tool_use Bash
 id: toolu_01SHNFbxAPUeKRjiTfYRgnJh
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2 && git add docker-dev/common/mu-plugins/bit-concertacao-shared-menu.php && git commit -m \"$(cat <<'EOF'\nfix(menu): bit-concertacao-shared-menu v2.1.2 — concertacao_t() helper + add_filter no finally + transient guard\n\n3 fixes do ciclo 4 de auditoria:\n\n1. **concertacao_t() helper** substitui __() inerte (bug real validado pelo Agente 2):\n   __('Sobre nós', 'concertacao') NUNCA traduz porque WPML intercepta gettext\n   apenas se .mo file carregar o domain — mu-plugins não chamam load_textdomain.\n   Novo helper chama apply_filters('wpml_translate_single_string') que é o\n   caminho real do WPML String Translation. Fallback retorna PT (mesmo\n   comportamento anterior se WPML inativo ou string não registrada).\n\n2. **add_filter movido para finally** (bug latente do Agente 8 do ciclo 4):\n   remove_filter → wp_get_nav_menu_items → add_filter eram 3 statements\n   sequenciais. Se wp_get_nav_menu_items lançar exception, add_filter\n   nunca executava, deixando o hook desregistrado pelo resto do request.\n   Agora remove ANTES do try, re-adiciona no finally garante simetria\n   mesmo em cenário de exception.\n\n3. **Transient guard no icl_register_string** (Agente 2 ciclo 4):\n   Era custo de 5 SELECTs + possíveis UPDATEs em wp_icl_strings em TODA\n   request (hook em init priority 20). Agora roda 1x/dia via transient\n   concertacao_wpml_strings_registered_v1. Bump do nome quando adicionar\n   strings. Hook movido para after_setup_theme priority 20 (mais cedo,\n   após WPML carregado).\n\nValidação:\n- concertacao_t() exists: YES\n- 5 strings […]
+  "command": "cd /home/<USER>/scripts/server-tools/v2 && git add docker-dev/common/mu-plugins/bit-concertacao-shared-menu.php && git commit -m \"$(cat <<'EOF'\nfix(menu): bit-concertacao-shared-menu v2.1.2 — concertacao_t() helper + add_filter no finally + transient guard\n\n3 fixes do ciclo 4 de auditoria:\n\n1. **concertacao_t() helper** substitui __() inerte (bug real validado pelo Agente 2):\n   __('Sobre nós', 'concertacao') NUNCA traduz porque WPML intercepta gettext\n   apenas se .mo file carregar o domain — mu-plugins não chamam load_textdomain.\n   Novo helper chama apply_filters('wpml_translate_single_string') que é o\n   caminho real do WPML String Translation. Fallback retorna PT (mesmo\n   comportamento anterior se WPML inativo ou string não registrada).\n\n2. **add_filter movido para finally** (bug latente do Agente 8 do ciclo 4):\n   remove_filter → wp_get_nav_menu_items → add_filter eram 3 statements\n   sequenciais. Se wp_get_nav_menu_items lançar exception, add_filter\n   nunca executava, deixando o hook desregistrado pelo resto do request.\n   Agora remove ANTES do try, re-adiciona no finally garante simetria\n   mesmo em cenário de exception.\n\n3. **Transient guard no icl_register_string** (Agente 2 ciclo 4):\n   Era custo de 5 SELECTs + possíveis UPDATEs em wp_icl_strings em TODA\n   request (hook em init priority 20). Agora roda 1x/dia via transient\n   concertacao_wpml_strings_registered_v1. Bump do nome quando adicionar\n   strings. Hook movido para after_setup_theme priority 20 (mais cedo,\n   após WPML carregado).\n\nValidação:\n- concertacao_t() exists: YES\n- 5 strings […]
 
 > TOOL
 
@@ -12912,7 +12912,7 @@ id: toolu_01SHNFbxAPUeKRjiTfYRgnJh
  1 file changed, 57 insertions(+), 19 deletions(-)
 To github.com:Bureau-IT/server-tools.git
    011e7d354..40608a67c  main -> main
-Shell cwd was reset to /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao
+Shell cwd was reset to /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao
 ```
 
 > AGENT
@@ -13236,7 +13236,7 @@ tool_result
 id: toolu_01UMQF4TvxU25hFwpn3M11mB
 ```
 <persisted-output>
-Output too large (50KB). Full output saved to: /Users/dcambria/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/6f0847f9-28b0-4cba-b914-7eabc8f72ca3/tool-results/bxsd26yrl.txt
+Output too large (50KB). Full output saved to: /home/<USER>/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/6f0847f9-28b0-4cba-b914-7eabc8f72ca3/tool-results/bxsd26yrl.txt
 
 Preview (first 2KB):
 		<header data-elementor-type="header" data-elementor-id="89307" class="elementor elementor-89307 elementor-location-header" data-elementor-post-type="elementor_library">
@@ -13602,7 +13602,7 @@ tool_use Bash
 id: toolu_0173tNPRyaMdhHeHKVZRUNzK
 ```json
 {
-  "command": "find /Users/dcambria/scripts/server-tools/v2/docker-dev -name \"bit-elementor-svg-widget*\" -type f 2>/dev/null | head -5",
+  "command": "find /home/<USER>/scripts/server-tools/v2/docker-dev -name \"bit-elementor-svg-widget*\" -type f 2>/dev/null | head -5",
   "description": "Find bureau_svg widget source"
 }
 ```
@@ -13612,11 +13612,11 @@ id: toolu_0173tNPRyaMdhHeHKVZRUNzK
 tool_result
 id: toolu_0173tNPRyaMdhHeHKVZRUNzK
 ```
-/Users/dcambria/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-elementor-svg-widget.php
-/Users/dcambria/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-elementor-svg-widget/bit-elementor-svg-widget.php
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-elementor-svg-widget.php
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/www-concertacao/wordpress/wp-content/mu-plugins/bit-elementor-svg-widget.php
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/totem-concertacao/wordpress/wp-content/mu-plugins/bit-elementor-svg-widget.php
+/home/<USER>/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-elementor-svg-widget.php
+/home/<USER>/scripts/server-tools/v2/docker-dev/common/mu-plugins/bit-elementor-svg-widget/bit-elementor-svg-widget.php
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-elementor-svg-widget.php
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/www-concertacao/wordpress/wp-content/mu-plugins/bit-elementor-svg-widget.php
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/totem-concertacao/wordpress/wp-content/mu-plugins/bit-elementor-svg-widget.php
 ```
 
 > TOOL
@@ -13625,7 +13625,7 @@ tool_use Bash
 id: toolu_019ePh3nMrt1hGtE579EjuD7
 ```json
 {
-  "command": "grep -n \"href\\|home_url\\|<a\\|link_to\\|wp-content\\|svg\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-elementor-svg-widget/bit-elementor-svg-widget.php | head -30",
+  "command": "grep -n \"href\\|home_url\\|<a\\|link_to\\|wp-content\\|svg\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-elementor-svg-widget/bit-elementor-svg-widget.php | head -30",
   "description": "Find href logic in svg widget"
 }
 ```
@@ -13669,7 +13669,7 @@ tool_use Read
 id: toolu_01DBGF7JEUTUQUScMguKcg7R
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-elementor-svg-widget/bit-elementor-svg-widget.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-elementor-svg-widget/bit-elementor-svg-widget.php",
   "offset": 210,
   "limit": 50
 }
@@ -14036,7 +14036,7 @@ tool_use Read
 id: toolu_01C8DqL4vw8tqiJRn6HfH9PC
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-elementor-svg-widget/bit-elementor-svg-widget.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-elementor-svg-widget/bit-elementor-svg-widget.php",
   "offset": 239,
   "limit": 80
 }
@@ -14674,7 +14674,7 @@ tool_use Bash
 id: toolu_0188hgG9cUHasuXRsJKTCK1s
 ```json
 {
-  "command": "/Users/dcambria/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh cache-flush --prod /cultura/ 2>&1 | tail -5",
+  "command": "/home/<USER>/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh cache-flush --prod /cultura/ 2>&1 | tail -5",
   "description": "WP Rocket flush cirúrgico /cultura/ PT"
 }
 ```
@@ -14697,7 +14697,7 @@ tool_use Bash
 id: toolu_01GVcyR19toPzVBZ76XN1wT7
 ```json
 {
-  "command": "/Users/dcambria/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh cache-flush --prod /cultura/en/ 2>&1 | tail -5",
+  "command": "/home/<USER>/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh cache-flush --prod /cultura/en/ 2>&1 | tail -5",
   "description": "WP Rocket flush cirúrgico /cultura/en/"
 }
 ```
@@ -14724,7 +14724,7 @@ tool_use Bash
 id: toolu_01GPmwrRZhxYDbVn7e8yWVob
 ```json
 {
-  "command": "/Users/dcambria/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh cache-flush --prod /cultura/galeria/ 2>&1 | tail -3\n/Users/dcambria/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh cache-flush --prod /cultura/linha-do-tempo/ 2>&1 | tail -3\n/Users/dcambria/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh cache-flush --prod /cultura/atlas-cultural-das-amazonias/ 2>&1 | tail -3\n/Users/dcambria/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh cache-flush --prod /cultura/en/timeline/ 2>&1 | tail -3",
+  "command": "/home/<USER>/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh cache-flush --prod /cultura/galeria/ 2>&1 | tail -3\n/home/<USER>/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh cache-flush --prod /cultura/linha-do-tempo/ 2>&1 | tail -3\n/home/<USER>/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh cache-flush --prod /cultura/atlas-cultural-das-amazonias/ 2>&1 | tail -3\n/home/<USER>/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh cache-flush --prod /cultura/en/timeline/ 2>&1 | tail -3",
   "description": "Flush a few interior /cultura/ pages"
 }
 ```
@@ -14946,7 +14946,7 @@ tool_use Bash
 id: toolu_01SfSfGnNK9wmBcCBm5Qtr9J
 ```json
 {
-  "command": "/Users/dcambria/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh cache-flush --prod /cultura/ 2>&1 | tail -3 && /Users/dcambria/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh cache-flush --prod /cultura/en/ 2>&1 | tail -3",
+  "command": "/home/<USER>/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh cache-flush --prod /cultura/ 2>&1 | tail -3 && /home/<USER>/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh cache-flush --prod /cultura/en/ 2>&1 | tail -3",
   "description": "Re-flush blog 2 root pages after element cache purge"
 }
 ```
@@ -15046,7 +15046,7 @@ tool_use Bash
 id: toolu_015RQTts67LwW4gjetDEGjXv
 ```json
 {
-  "command": "/Users/dcambria/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh cache-flush --prod /cultura/ 2>&1 | tail -3",
+  "command": "/home/<USER>/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh cache-flush --prod /cultura/ 2>&1 | tail -3",
   "description": "Flush cultura PT after FPM reload"
 }
 ```
@@ -15247,7 +15247,7 @@ tool_use Bash
 id: toolu_014TLSigqo13ncg169yXf4UY
 ```json
 {
-  "command": "grep -n \"Version:\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-elementor-svg-widget/bit-elementor-svg-widget.php | head -3",
+  "command": "grep -n \"Version:\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/bit-elementor-svg-widget/bit-elementor-svg-widget.php | head -3",
   "description": "Dev version"
 }
 ```
@@ -15362,7 +15362,7 @@ tool_use Bash
 id: toolu_0134XjU9qTsrhcVpHJRSRVDs
 ```json
 {
-  "command": "/Users/dcambria/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh cache-flush --prod /cultura/ 2>&1 | tail -3 && /Users/dcambria/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh cache-flush --prod /cultura/en/ 2>&1 | tail -3 && /Users/dcambria/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh cache-flush --prod /cultura/galeria/ 2>&1 | tail -3",
+  "command": "/home/<USER>/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh cache-flush --prod /cultura/ 2>&1 | tail -3 && /home/<USER>/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh cache-flush --prod /cultura/en/ 2>&1 | tail -3 && /home/<USER>/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh cache-flush --prod /cultura/galeria/ 2>&1 | tail -3",
   "description": "Sequential cache flush 3 main /cultura URLs"
 }
 ```
@@ -15774,7 +15774,7 @@ tool_use Bash
 id: toolu_01CS1HpMq5MNXGX86hb5ZPHK
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2 && git log --since=\"2026-05-21 18:00:00\" --until=\"2026-05-22 01:00:00\" --pretty=format:\"%h %ad %s\" --date=iso 2>&1 | head -10",
+  "command": "cd /home/<USER>/scripts/server-tools/v2 && git log --since=\"2026-05-21 18:00:00\" --until=\"2026-05-22 01:00:00\" --pretty=format:\"%h %ad %s\" --date=iso 2>&1 | head -10",
   "description": "Git commits in alarm timeframe"
 }
 ```
@@ -15791,7 +15791,7 @@ f7c0c60ec 2026-05-21 21:01:57 -0300 feat(blue-green): phase7 v1.8.0 (multisite f
 90df60aad 2026-05-21 20:07:20 -0300 fix(post-deploy): Gate env-drift c1-validate v1.1.0 + CSP cleanup v1.18.3
 934a11097 2026-05-21 18:42:51 -0300 fix(phase7): WP_REDIS_PREFIX=prod: na green pos-cutover v1.7.0
 af5d4c0af 2026-05-21 18:11:02 -0300 feat(bit-crossblog): dev-notice mu-plugin DEV-ONLY
-Shell cwd was reset to /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao
+Shell cwd was reset to /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao
 ```
 
 > AGENT
@@ -16170,7 +16170,7 @@ id: toolu_01C5i69UaisYu3rhBPGjFSe5
 
 > AGENT
 
-**AwarioBot 498 reqs / meta-externalagent 31** — esses bots batendo /cultura/* — **mu-plugin já bloqueia ambos com 429** ([memória feedback_awariobot_blocked](file:///Users/dcambria/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/feedback_awariobot_blocked.md)). Vou ver as URIs específicas e os 404:
+**AwarioBot 498 reqs / meta-externalagent 31** — esses bots batendo /cultura/* — **mu-plugin já bloqueia ambos com 429** ([memória feedback_awariobot_blocked](file:///home/<USER>/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/feedback_awariobot_blocked.md)). Vou ver as URIs específicas e os 404:
 
 > TOOL
 
@@ -16357,7 +16357,7 @@ id: toolu_01VyEUmaAKBbiYTiQaFt1Zd6
     391 curl/8.7.1
     297 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
     288 Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
-    260 Mozilla/5.0 (compatible; DotBot/1.2; +https://opensiteexplorer.org/dotbot; help@moz.com)
+    260 Mozilla/5.0 (compatible; DotBot/1.2; +https://opensiteexplorer.org/dotbot; <REDACTED_EMAIL>)
     239 Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15 (Applebot/0.1; +http://www.apple.com/go/applebot)
     172 Mozilla/5.0 (X11; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0
     159 Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.7778.96 Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
@@ -18353,9 +18353,9 @@ content-security-policy: default-src 'self'; script-src 'self' 'unsafe-inline' '
 === Plugin sitemap ativo? ===
 
 === UA / referer dos 404 em /wp-sitemap.xml ===
-     17 https://concertacaoamazonia.com.br/sitemap.xml | Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
+     17 https://concertacaoamazonia.com.br/sitemap.xml | Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; ClaudeBot/1.0; +<REDACTED_EMAIL>)
       5 - | Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm) Chrome/116.0.1938.76 Safari/537.36
-      3 - | Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
+      3 - | Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; ClaudeBot/1.0; +<REDACTED_EMAIL>)
       2 - | Mozilla/5.0 (iPhone; CPU iPhone OS 18_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.4 Mobile/15E148 Safari/604.1
       1 - | Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
       1 - | Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0
@@ -18424,7 +18424,7 @@ tool_use Bash
 id: toolu_0167WPmxWX5YHLUzwXeibr6K
 ```json
 {
-  "command": "ls /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/ 2>&1 | head -20",
+  "command": "ls /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/ 2>&1 | head -20",
   "description": "List bit-waf skill contents"
 }
 ```
@@ -18449,7 +18449,7 @@ tool_use Bash
 id: toolu_01EJbcwpfyvSus6jentU2WG7
 ```json
 {
-  "command": "ls /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/ /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/helpers/ 2>&1 | head -30",
+  "command": "ls /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/ /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/helpers/ 2>&1 | head -30",
   "description": "List templates + helpers"
 }
 ```
@@ -18459,12 +18459,12 @@ id: toolu_01EJbcwpfyvSus6jentU2WG7
 tool_result
 id: toolu_01EJbcwpfyvSus6jentU2WG7
 ```
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/helpers/:
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/helpers/:
 apply-rule.sh
 enable-waf-logs.sh
 snapshot-acl.sh
 
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/:
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/:
 ipsets/
 manifest.yaml
 patterns/
@@ -18478,7 +18478,7 @@ tool_use Bash
 id: toolu_01A8e7eNX1DF7ARXwsbPCXsv
 ```json
 {
-  "command": "ls /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/rules/ /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/patterns/ 2>&1 | head -20",
+  "command": "ls /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/rules/ /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/patterns/ 2>&1 | head -20",
   "description": "List rules and patterns templates"
 }
 ```
@@ -18488,10 +18488,10 @@ id: toolu_01A8e7eNX1DF7ARXwsbPCXsv
 tool_result
 id: toolu_01A8e7eNX1DF7ARXwsbPCXsv
 ```
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/patterns/:
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/patterns/:
 bot-uas.txt
 
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/rules/:
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/rules/:
 allow-admin-ajax.json
 allow-devteam-wpadmin.json
 aws-managed-wordpress.json
@@ -18513,7 +18513,7 @@ tool_use Bash
 id: toolu_01CZAVSzpHCewbiD7Yuj7ytM
 ```json
 {
-  "command": "cat /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/rules/block-aggressive-bots.json /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/patterns/bot-uas.txt 2>&1 | head -100",
+  "command": "cat /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/rules/block-aggressive-bots.json /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/patterns/bot-uas.txt 2>&1 | head -100",
   "description": "Inspect bot-block template + UA pattern"
 }
 ```
@@ -18587,7 +18587,7 @@ tool_use Bash
 id: toolu_01TJ115nfU1edjZarRWqBs1w
 ```json
 {
-  "command": "grep -oE '\"_pattern\": \"[^\"]*\"' /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/rules/block-aggressive-bots.json | sort -u",
+  "command": "grep -oE '\"_pattern\": \"[^\"]*\"' /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/rules/block-aggressive-bots.json | sort -u",
   "description": "List patterns in template"
 }
 ```
@@ -18690,7 +18690,7 @@ tool_use Bash
 id: toolu_01BkMCAfsLKq5AeZB9WpCM8o
 ```json
 {
-  "command": "cat /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/helpers/apply-rule.sh | head -80",
+  "command": "cat /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/helpers/apply-rule.sh | head -80",
   "description": "Inspect apply-rule helper"
 }
 ```
@@ -18757,7 +18757,7 @@ tool_use Bash
 id: toolu_017nrXFFDTkTy9CCW5ZkJdiM
 ```json
 {
-  "command": "cat /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/patterns/bot-uas.txt",
+  "command": "cat /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/patterns/bot-uas.txt",
   "description": "Current bot patterns file"
 }
 ```
@@ -19388,7 +19388,7 @@ id: toolu_01JGaS629mCu7yMQ9ofR46TF
      61 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.6943.141 Safari/537.36
      50 Mozilla/5.0 (compatible; SERankingBacklinksBot/1.0; +https://seranking.com/backlinks-crawler)
      30 Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15 (Applebot/0.1; +http://www.apple.com/go/applebot)
-     27 Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36; ClaudeBot/1.0; +claudebot@anthropic.com)
+     27 Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36; ClaudeBot/1.0; +<REDACTED_EMAIL>)
 ```
 
 > AGENT
@@ -20756,7 +20756,7 @@ tool_use Bash
 id: toolu_01YTXoDmycDe8vN1gf4njU4z
 ```json
 {
-  "command": "SKILL_DIR=/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf\nls \"$SKILL_DIR/templates/rules/\" | head -10\necho \"\"\nfor tpl in \"$SKILL_DIR\"/templates/rules/*.json; do\n  name=$(basename \"$tpl\" .json)\n  reviewed=$(jq -r '._meta.last_reviewed // \"(none)\"' \"$tpl\")\n  echo \"  $name | last_reviewed=$reviewed\"\ndone",
+  "command": "SKILL_DIR=/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf\nls \"$SKILL_DIR/templates/rules/\" | head -10\necho \"\"\nfor tpl in \"$SKILL_DIR\"/templates/rules/*.json; do\n  name=$(basename \"$tpl\" .json)\n  reviewed=$(jq -r '._meta.last_reviewed // \"(none)\"' \"$tpl\")\n  echo \"  $name | last_reviewed=$reviewed\"\ndone",
   "description": "Templates last_reviewed"
 }
 ```
@@ -20801,7 +20801,7 @@ tool_use Write
 id: toolu_0129vpom7HRYxvT6nVg1U95H
 ```json
 {
-  "file_path": "/Users/dcambria/.claude/plans/hashed-meandering-pelican.md",
+  "file_path": "/home/<USER>/.claude/plans/hashed-meandering-pelican.md",
   "content": "# Auditoria WAF Concertação — Recomendações de Remediação\n\n## Context\n\nAuditoria proativa da Web ACL `ACL-WPAdminHML` (CloudFront E2F1QD7E7YOYEB,\ndistribution `concertacaoamazonia.com.br`) executada em 2026-05-22 02:55 BRT,\nseguindo a skill `audit-acl`. Última auditoria registrada: nenhuma formal — esta\né a primeira após o deploy de hoje (3 patterns novos no `Block-AggressiveBots`).\n\n**Saúde geral:** 🟢 OK\n- 18 rules, 362/1500 WCU (**24% capacity**)\n- WAF logs ATIVOS no S3 (último objeto 30s atrás)\n- 0 priorities duplicadas, 0 statements duplicados, 0 dead origins CF\n- 0 refs ao bucket legacy us-east-1 (decomissionado hoje)\n- 4 ALB target groups todos healthy\n\n**5 issues acionáveis identificadas**, classificadas abaixo.\n\n---\n\n## Issues por severidade\n\n### 🔴 CRÍTICAS (2)\n\n#### C1. AttackerRanges-2026-03-31 contém ranges AWS CloudFront/EC2\n\n**Evidência empírica:**\n```\nIPSet ID: d84444a2-8020-4c42-b20f-9c18060a9b42\nConteúdo (4 CIDRs):\n  64.252.67.0/24  → AWS service=EC2/CLOUDFRONT_ORIGIN_FACING, us-east-1\n  64.252.66.0/24  → AWS service=EC2/CLOUDFRONT_ORIGIN_FACING, us-east-1\n  64.252.68.0/24  → AWS service=EC2/CLOUDFRONT_ORIGIN_FACING, us-east-1\n  3.172.105.0/24  → AWS service=AMAZON/CLOUDFRONT (overlap em 3.172.64.0/18)\n```\n\nEsses CIDRs são **edges CloudFront fazendo origin requests**, não atacantes\nreais. Esse é o **antipattern #3** mencionado na skill (`playbooks/audit-acl.md`):\num IP que ataca via CDN fronting NÃO aparece com IP da CDN — aparece com o IP\ndo edge final, mas o tráfego é forward-proxy.\n\n**Estado atual de uso:** 0 blocks last 30d. Rule existe (priority 15) mas\nnunca disparou. **Sem impacto operacional hoje** — falso […]
 
 > TOOL
@@ -20809,7 +20809,7 @@ id: toolu_0129vpom7HRYxvT6nVg1U95H
 tool_result
 id: toolu_0129vpom7HRYxvT6nVg1U95H
 ```
-File created successfully at: /Users/dcambria/.claude/plans/hashed-meandering-pelican.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/plans/hashed-meandering-pelican.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -20864,7 +20864,7 @@ tool_use Bash
 id: toolu_01PGiRVMc6veRWHETdVFSC2Y
 ```json
 {
-  "command": "grep -ri \"AttackerRanges\\|attacker_ranges\\|incidente.*03-31\\|cdn.fronting\\|2026-03-31\" /Users/dcambria/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/ 2>/dev/null | head -10",
+  "command": "grep -ri \"AttackerRanges\\|attacker_ranges\\|incidente.*03-31\\|cdn.fronting\\|2026-03-31\" /home/<USER>/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/ 2>/dev/null | head -10",
   "description": "Search memory for AttackerRanges context"
 }
 ```
@@ -20874,11 +20874,11 @@ id: toolu_01PGiRVMc6veRWHETdVFSC2Y
 tool_result
 id: toolu_01PGiRVMc6veRWHETdVFSC2Y
 ```
-/Users/dcambria/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/feedback_share_deploy_new_post_type.md:- `flock` foi adicionado em 2026-03-31 sem testar no macOS
-/Users/dcambria/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/feedback_share_deploy_automated.md:**EC2 — pré-requisito:** O diretório `/var/www/tmp_backups/backups/` deve existir com `chown www-data:www-data`. Criado em 2026-03-31.
-/Users/dcambria/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/MEMORY.md:- [project_concertacao_cache_deploy.md](project_concertacao_cache_deploy.md) — HISTÓRICO (2026-03-31): WP Rocket config fix, TEC query strings, scripts bumped; instância antiga substituída
-/Users/dcambria/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/project_concertacao_cache_deploy.md:description: HISTÓRICO (2026-03-31) — Correções de cache WP Rocket, TEC query strings e scripts de deploy. Instância referenciada já foi substituída.
-/Users/dcambria/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/project_concertacao_cache_deploy.md:**Nota:** Registro histórico do incidente de 2026-03-31. A instância i-0c8178fe7ee985cc9 foi substituída pela i-059febbd720286cd4 no blue-green deploy de 2026-04-08. Procedimentos de cache abaixo continuam válidos.
+/home/<USER>/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/feedback_share_deploy_new_post_type.md:- `flock` foi adicionado em 2026-03-31 sem testar no macOS
+/home/<USER>/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/feedback_share_deploy_automated.md:**EC2 — pré-requisito:** O diretório `/var/www/tmp_backups/backups/` deve existir com `chown www-data:www-data`. Criado em 2026-03-31.
+/home/<USER>/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/MEMORY.md:- [project_concertacao_cache_deploy.md](project_concertacao_cache_deploy.md) — HISTÓRICO (2026-03-31): WP Rocket config fix, TEC query strings, scripts bumped; instância antiga substituída
+/home/<USER>/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/project_concertacao_cache_deploy.md:description: HISTÓRICO (2026-03-31) — Correções de cache WP Rocket, TEC query strings e scripts de deploy. Instância referenciada já foi substituída.
+/home/<USER>/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/project_concertacao_cache_deploy.md:**Nota:** Registro histórico do incidente de 2026-03-31. A instância i-0c8178fe7ee985cc9 foi substituída pela i-059febbd720286cd4 no blue-green deploy de 2026-04-08. Procedimentos de cache abaixo continuam válidos.
 ```
 
 > TOOL
@@ -20887,7 +20887,7 @@ tool_use Bash
 id: toolu_01SiGyRjyrxcsxFfehP7GtCx
 ```json
 {
-  "command": "grep -ri \"cutover\\|blue.green\\|18/05\\|2026-05-18\\|0f1e6e093d31aa9c5\" /Users/dcambria/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/ 2>/dev/null | head -10",
+  "command": "grep -ri \"cutover\\|blue.green\\|18/05\\|2026-05-18\\|0f1e6e093d31aa9c5\" /home/<USER>/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/ 2>/dev/null | head -10",
   "description": "Search memory for cutover 18/05 context"
 }
 ```
@@ -20897,16 +20897,16 @@ id: toolu_01SiGyRjyrxcsxFfehP7GtCx
 tool_result
 id: toolu_01SiGyRjyrxcsxFfehP7GtCx
 ```
-/Users/dcambria/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/feedback_wprocket_min_stale_404_breaks_layout.md:**Why:** ocorreu em prod concertação 2026-05-18 21:30 BRT — `post-2461.css` (home) e `post-74762.css` (header/footer template) faltavam em `cache/min/1/`. Provavelmente um `rocket_clean_minify('css')` rodou sem warmup completo, ou versão `?ver=` no HTML divergiu do cache regenerado.
-/Users/dcambria/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/feedback_cf_oac_green_to_assets_swap.md:name: cf-oac-swap-s3-uploads-bucket-green-assets-p-s-cutover
-/Users/dcambria/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/feedback_cf_oac_green_to_assets_swap.md:description: Cutover blue-green com CF-OAC tem 2 swaps necessários — wp config (S3_UPLOADS_BUCKET prefix) E CF behavior (TargetOriginId). Esquecer um dos 2 = drift silencioso que só aparece via Playwright/console
-/Users/dcambria/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/feedback_cf_oac_green_to_assets_swap.md:**Rule:** Pós-cutover blue-green em sites com CF-OAC, validar **DOIS swaps**:
-/Users/dcambria/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/feedback_cf_oac_green_to_assets_swap.md:- Detectado 2026-05-02 — preloader Elementor sumiu de prod. Causa identificada: WP config `S3_UPLOADS_BUCKET=...prd-sa/green` permanente pós-cutover.
-/Users/dcambria/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/feedback_cf_oac_green_to_assets_swap.md:- `phase7-cutover.sh v1.6.0+` faz auto-detect APENAS do swap WP (item 1). **Item 2 (CF behaviors) nunca foi automatizado.**
-/Users/dcambria/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/feedback_cf_oac_green_to_assets_swap.md:**Validação pós-cutover** (2 checks obrigatórios):
-/Users/dcambria/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/feedback_form_email_port_drift.md:Concertação 2026-05-18 21:56 BRT: **106 forms afetados em 918 posts** (blogs 1 + 2 do multisite), incluindo template global Footer do Site (post 72234) que renderiza Newsletter em toda página do site. Tempo: indeterminado — provavelmente desde último deploy major.
-/Users/dcambria/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/feedback_requestly_canary_validation.md:description: "Para validação visual manual da green no browser real durante stage blue-green, usar Requestly + ModHeader para reescrever paths de uploads para _oac-canary/"
-/Users/dcambria/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/feedback_cf_cache_stale_during_stage.md:- Para teste de validação genérico pré-cutover: invalidar paths que serão testados (`/`, `/sobre-nos/`, `/cultura/*`, etc.)
+/home/<USER>/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/feedback_wprocket_min_stale_404_breaks_layout.md:**Why:** ocorreu em prod concertação 2026-05-18 21:30 BRT — `post-2461.css` (home) e `post-74762.css` (header/footer template) faltavam em `cache/min/1/`. Provavelmente um `rocket_clean_minify('css')` rodou sem warmup completo, ou versão `?ver=` no HTML divergiu do cache regenerado.
+/home/<USER>/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/feedback_cf_oac_green_to_assets_swap.md:name: cf-oac-swap-s3-uploads-bucket-green-assets-p-s-cutover
+/home/<USER>/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/feedback_cf_oac_green_to_assets_swap.md:description: Cutover blue-green com CF-OAC tem 2 swaps necessários — wp config (S3_UPLOADS_BUCKET prefix) E CF behavior (TargetOriginId). Esquecer um dos 2 = drift silencioso que só aparece via Playwright/console
+/home/<USER>/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/feedback_cf_oac_green_to_assets_swap.md:**Rule:** Pós-cutover blue-green em sites com CF-OAC, validar **DOIS swaps**:
+/home/<USER>/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/feedback_cf_oac_green_to_assets_swap.md:- Detectado 2026-05-02 — preloader Elementor sumiu de prod. Causa identificada: WP config `S3_UPLOADS_BUCKET=...prd-sa/green` permanente pós-cutover.
+/home/<USER>/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/feedback_cf_oac_green_to_assets_swap.md:- `phase7-cutover.sh v1.6.0+` faz auto-detect APENAS do swap WP (item 1). **Item 2 (CF behaviors) nunca foi automatizado.**
+/home/<USER>/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/feedback_cf_oac_green_to_assets_swap.md:**Validação pós-cutover** (2 checks obrigatórios):
+/home/<USER>/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/feedback_form_email_port_drift.md:Concertação 2026-05-18 21:56 BRT: **106 forms afetados em 918 posts** (blogs 1 + 2 do multisite), incluindo template global Footer do Site (post 72234) que renderiza Newsletter em toda página do site. Tempo: indeterminado — provavelmente desde último deploy major.
+/home/<USER>/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/feedback_requestly_canary_validation.md:description: "Para validação visual manual da green no browser real durante stage blue-green, usar Requestly + ModHeader para reescrever paths de uploads para _oac-canary/"
+/home/<USER>/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/feedback_cf_cache_stale_during_stage.md:- Para teste de validação genérico pré-cutover: invalidar paths que serão testados (`/`, `/sobre-nos/`, `/cultura/*`, etc.)
 ```
 
 > TOOL
@@ -21119,7 +21119,8 @@ id: toolu_01K4XWEF7CHDBFLHCfxKH26S
 ```
 === Pegando 1 log recente WAF S3 e procurando minha req ao apex /wp-admin/ ===
 Log: AWSLogs/379590274801/WAFLogs/cloudfront/ACL-WPAdminHML/2026/05/22/04/10/REDACTED.log.gz
-Completed 5.9 KiB/5.9 KiB (5.0 KiB/s) with 1 file(s) remainingdownload: s3://aws-waf-logs-concertacao-prd-use1/AWSLogs/379590274801/WAFLogs/cloudfront/ACL-WPAdminHML/2026/05/22/04/10/REDACTED.log.gz to ../../../../../../../../tmp/wafl.gz
+Completed 5.9 KiB/5.9 KiB (5.0 KiB/s) with 1 file(s) remaining
+download: s3://aws-waf-logs-concertacao-prd-use1/AWSLogs/379590274801/WAFLogs/cloudfront/ACL-WPAdminHML/2026/05/22/04/10/REDACTED.log.gz to ../../../../../../../../tmp/wafl.gz
 zcat: can't stat: /tmp/wafl.gz (/tmp/wafl.gz.Z): No such file or directory
 ```
 
@@ -21590,7 +21591,7 @@ tool_use Write
 id: toolu_01DexhNNXZph8q9uK5tnzp5h
 ```json
 {
-  "file_path": "/Users/dcambria/.claude/plans/hashed-meandering-pelican.md",
+  "file_path": "/home/<USER>/.claude/plans/hashed-meandering-pelican.md",
   "content": "# Auditoria WAF Concertação — Recomendações (revisado pós-validação)\n\n## Context\n\nAuditoria proativa em 2026-05-22 02:55 BRT, com **3 validações adicionais**\nsolicitadas pelo usuário:\n1. Memórias do incidente 2026-03-31 (origem do `AttackerRanges`)\n2. Validação do cutover 18/05 explicando a tag `Environment=Hml`\n3. Teste empírico do bloqueio wp-admin no apex (de IP fora vs dentro do IPSet)\n\n**Veredict global:** dos 5 issues originais, **2 são reais e acionáveis**, **2 são\nfenômenos esperados** (não issues), e **1 é mais grave do que originalmente\nclassificado**.\n\n---\n\n## ✅ Validações empíricas que mudaram o plano\n\n### V1. AttackerRanges-2026-03-31 — sem memória registrada\n\n- `grep` em todas memórias por \"AttackerRanges|incidente.*03-31|cdn.fronting\":\n  nenhum hit relacionado. Memórias de 2026-03-31 são sobre WP Rocket cache,\n  TEC, scripts deploy — **NÃO sobre incidente DDoS/CDN-fronting** que motivasse criar IPSet\n- Mantém recomendação C1: ranges são realmente AWS CloudFront/EC2\n\n### V2. Tag `Environment=Hml` é DRIFT real\n\n- Instância `i-0f1e6e093d31aa9c5`, LaunchTime: **2026-05-16 02:36 UTC**\n- Memória `feedback_wprocket_min_stale_404_breaks_layout`: incidente em prod 2026-05-18 21:30 BRT\n- Memória `feedback_cf_oac_green_to_assets_swap`: blue-green tem **2 swaps**, segundo (CF behaviors) **nunca foi automatizado**\n- Confirma: instância nasceu como HML (16/05) e foi promovida a PROD via blue-green em 18/05, mas tag não foi atualizada\n- Memória `feedback_blue_green_tg_cleanup` já documenta: \"Pós-cutover green→prod: desregistrar nova-prod da green-tg\"\n- **Drift sistêmico do processo**, não dessa instância […]
 
 > TOOL
@@ -21598,7 +21599,7 @@ id: toolu_01DexhNNXZph8q9uK5tnzp5h
 tool_result
 id: toolu_01DexhNNXZph8q9uK5tnzp5h
 ```
-The file /Users/dcambria/.claude/plans/hashed-meandering-pelican.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/hashed-meandering-pelican.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -22617,7 +22618,7 @@ tool_use Bash
 id: toolu_012EaUGri87fPbFQavztJHkt
 ```json
 {
-  "command": "grep -h \"hml.concertacao\\|HML.*resolved\\|hml subdomain\" /Users/dcambria/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/*.md 2>/dev/null | head -10\necho \"---\"\necho \"=== Existe um vhost hml no nginx? ===\"\nssh concertacaoamazonia.com.br-prod-sa \"sudo nginx -T 2>/dev/null | grep -B1 'server_name.*hml'\" 2>&1 | head -10",
+  "command": "grep -h \"hml.concertacao\\|HML.*resolved\\|hml subdomain\" /home/<USER>/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/*.md 2>/dev/null | head -10\necho \"---\"\necho \"=== Existe um vhost hml no nginx? ===\"\nssh concertacaoamazonia.com.br-prod-sa \"sudo nginx -T 2>/dev/null | grep -B1 'server_name.*hml'\" 2>&1 | head -10",
   "description": "HML context"
 }
 ```
@@ -22641,7 +22642,7 @@ tool_use Write
 id: toolu_01AvsnABs7YeAK9v3bLHwySR
 ```json
 {
-  "file_path": "/Users/dcambria/.claude/plans/hashed-meandering-pelican.md",
+  "file_path": "/home/<USER>/.claude/plans/hashed-meandering-pelican.md",
   "content": "# Auditoria WAF Concertação — Revisão Minuciosa Final\n\n## Context\n\n3ª revisão da auditoria — questionando cada conclusão das versões anteriores\ncom testes empíricos. Esta versão **inverte conclusões erradas**, **degrada\nseveridades infladas** e **confirma com dados objetivos** as recomendações\nfinais.\n\n## ✅ Testes que invalidaram conclusões anteriores\n\n### T1. C3 — ALB dead code: PARCIALMENTE inválido\n\n**Conclusão anterior**: \"ALB P200/P210 são dead code porque source-ip ALB = CF edge\".\n\n**Teste empírico**:\n```\nALB direto (bypass CF) com Host=concertacao + meu IP NordVPN:\n  → HTTP/2 302 server: nginx  ✅ Source-ip P210 funcionou!\n\nALB direto com Host=random:\n  → HTTP/2 403 server: awselb/2.0 ✅ Default fixed-response funciona\n\nVia CF (apex /wp-admin/):\n  → HTTP/2 403 server: AmazonS3 (error-403.html via CF CustomErrorResponse)\n  ↑ ALB retornou 403 (P230), CF substituiu pelo error page\n```\n\n**Veredict revisado**: P200/P210 NÃO são totalmente dead — funcionam **se acessado direto no ALB**. **São dead apenas via CF** (que stripa source-ip cliente). Time pode acessar wp-admin no apex via VPN→ALB direto.\n\n**Mas**: dado que HML não existe mais (confirmação do usuário), nenhum dev deveria estar acessando apex via VPN direto. O uso real é `www./wp-admin/` que passa pelo CF e funciona via WAF.\n\n**Severidade rebaixada**: 🔴 CRITICAL → 🟡 WARNING (não há gap de segurança, apenas configuração arquitetural confusa).\n\n### […]
 
 > TOOL
@@ -22649,7 +22650,7 @@ id: toolu_01AvsnABs7YeAK9v3bLHwySR
 tool_result
 id: toolu_01AvsnABs7YeAK9v3bLHwySR
 ```
-The file /Users/dcambria/.claude/plans/hashed-meandering-pelican.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/hashed-meandering-pelican.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -23118,7 +23119,7 @@ tool_use Read
 id: toolu_019dVyTsdFYnP3sKZE7pQFry
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/rules/block-aggressive-bots.json",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/rules/block-aggressive-bots.json",
   "offset": 1,
   "limit": 30
 }
@@ -23206,7 +23207,7 @@ tool_use Bash
 id: toolu_01Y1eHK3ApKrNRSt1LXrsP2r
 ```json
 {
-  "command": "cp /tmp/audit-acl-revisao/block-aggressive-bots-NEW.json /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/rules/block-aggressive-bots.json\necho \"Template atualizado ✅\"\necho \"\"\necho \"=== Atualizar bot-uas.txt com os patterns novos ===\"\nhead -30 /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/patterns/bot-uas.txt | tail -20",
+  "command": "cp /tmp/audit-acl-revisao/block-aggressive-bots-NEW.json /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/rules/block-aggressive-bots.json\necho \"Template atualizado ✅\"\necho \"\"\necho \"=== Atualizar bot-uas.txt com os patterns novos ===\"\nhead -30 /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/patterns/bot-uas.txt | tail -20",
   "description": "Write new template"
 }
 ```
@@ -23248,7 +23249,7 @@ id: toolu_017w7LtGufnyiPezmqDsT7JB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/patterns/bot-uas.txt",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/patterns/bot-uas.txt",
   "old_string": "# Last reviewed: 2026-05-04\n# Source incidents:\n#   - feedback_meta_crawler_block (meta-externalagent satura FPM)\n#   - feedback_referer_literal_bot_block (fake-Firefox/142, Chrome/147)\n#   - feedback_tec_crawler_traps (events-calendar saturation)",
   "new_string": "# Last reviewed: 2026-05-25\n# Source incidents:\n#   - feedback_meta_crawler_block (meta-externalagent satura FPM)\n#   - feedback_referer_literal_bot_block (fake-Firefox/142, Chrome/147)\n#   - feedback_tec_crawler_traps (events-calendar saturation)\n#   - feedback_awariobot_blocked (8.4k reqs/dia, deploy 2026-05-22)"
 }
@@ -23268,7 +23269,7 @@ tool_use Read
 id: toolu_0194sSHajgjNWdtngMiiG3m9
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/patterns/bot-uas.txt"
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/patterns/bot-uas.txt"
 }
 ```
 
@@ -23313,7 +23314,7 @@ id: toolu_01SPFXQYVXJKy1Uxx8kVVNww
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/patterns/bot-uas.txt",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/patterns/bot-uas.txt",
   "old_string": "# Last reviewed: 2026-05-04\n# Source incidents:\n#   - feedback_meta_crawler_block (meta-externalagent satura FPM)\n#   - feedback_referer_literal_bot_block (fake-Firefox/142, Chrome/147)\n#   - feedback_tec_crawler_traps (events-calendar saturation)\n\n# === Search/SEO crawlers que ignoram robots.txt ou nao tem assinatura ativa ===\nSemrushBot                 # SEO scraper, nao temos assinatura Semrush\nAhrefsBot                  # SEO scraper, nao temos assinatura Ahrefs\nMJ12bot                    # Majestic SEO, agressivo em sites pequenos\nDotBot                     # Moz, agressivo\nPetalBot                   # Huawei search, agressivo BR",
   "new_string": "# Last reviewed: 2026-05-25\n# Source incidents:\n#   - feedback_meta_crawler_block (meta-externalagent satura FPM)\n#   - feedback_referer_literal_bot_block (fake-Firefox/142, Chrome/147)\n#   - feedback_tec_crawler_traps (events-calendar saturation)\n#   - feedback_awariobot_blocked (8.4k reqs/dia, deploy 2026-05-22)\n\n# === Search/SEO crawlers que ignoram robots.txt ou nao tem assinatura ativa ===\nSemrushBot                 # SEO scraper, nao temos assinatura Semrush\nAhrefsBot                  # SEO scraper, nao temos assinatura Ahrefs\nMJ12bot                    # Majestic SEO, agressivo em sites pequenos\nDotBot                     # Moz, agressivo\nPetalBot                   # Huawei search, agressivo BR\nBacklinksExtendedBot       # SEO link-graph builder, adicionado 2026-05-22 (135 reqs/dia)\nDataForSeoBot              # SEO data collection\nBaiduspider                # Baidu search, agressivo\nYandexImages               # Yandex image crawler\nIbouBot                    # SEO scraper, baixa identificacao\nAliyunSecBot               # Alibaba security scanner"
 }
@@ -23324,7 +23325,7 @@ id: toolu_01SPFXQYVXJKy1Uxx8kVVNww
 tool_result
 id: toolu_01SPFXQYVXJKy1Uxx8kVVNww
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/patterns/bot-uas.txt has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/patterns/bot-uas.txt has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -23338,7 +23339,7 @@ id: toolu_01KjRZoscDSDAiAqVwodR75d
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/patterns/bot-uas.txt",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/patterns/bot-uas.txt",
   "old_string": "# === Social media crawlers que saturam ===\nmeta-externalagent         # Facebook, ignora robots, satura FPM (incidente 2026-05-01)\n# facebookexternalhit      # MANTER - usado por share buttons legitimos",
   "new_string": "# === Social media crawlers que saturam ===\nmeta-externalagent         # Facebook, ignora robots, satura FPM (incidente 2026-05-01)\n# facebookexternalhit      # MANTER - usado por share buttons legitimos\n\n# === Brand monitoring / social listening ===\nAwarioBot                  # Awario social listening, 8.4k reqs/dia (incidente 2026-05-22)\n\n# === AI bots adicionados em prod (revisar caso-a-caso) ===\nGPTBot                     # OpenAI scraper - ATIVO em prod desde antes\n# Concertacao manteve GPTBot bloqueado (decisao revisar em proxima auditoria)"
 }
@@ -23349,7 +23350,7 @@ id: toolu_01KjRZoscDSDAiAqVwodR75d
 tool_result
 id: toolu_01KjRZoscDSDAiAqVwodR75d
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/patterns/bot-uas.txt has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/patterns/bot-uas.txt has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -23580,7 +23581,7 @@ tool_use Write
 id: toolu_01C4eUQg7KoABNZJKRKrmFZK
 ```json
 {
-  "file_path": "/Users/dcambria/.claude/plans/hashed-meandering-pelican.md",
+  "file_path": "/home/<USER>/.claude/plans/hashed-meandering-pelican.md",
   "content": "# Auditoria WAF Concertação — Pós-execução + Revisão Final\n\n## Context\n\nAuditoria executada em 2026-05-22, revisada 2 vezes, **ações aplicadas em\n2026-05-25**. Este documento agora reflete o **estado final** + revisão\npós-execução com novos achados.\n\n---\n\n## ✅ Ações aplicadas em 2026-05-25 BRT\n\n| # | Ação | Status | Detalhe |\n|---|---|---|---|\n| C1 | Atualizar template `block-aggressive-bots` | ✅ DONE | v1.0.0 → v1.1.0, 14 patterns sincronizados com prod (incluindo IbouBot e AliyunSecBot adicionados em sessão anterior). `last_reviewed: 2026-05-25` |\n| C1 | Atualizar `bot-uas.txt` | ✅ DONE | Adicionados BacklinksExtendedBot, Baiduspider, YandexImages, IbouBot, AliyunSecBot, AwarioBot, GPTBot |\n| W1 | Deletar 4 rules HML | ✅ DONE | Allow-DevTeam-WPAdmin/WPLogin + Block-NonDev-WPAdmin/WPLogin (P0-P3) |\n| W2 | Deletar Block-AttackerRanges-2026-03-31 (rule + IPSet) | ✅ DONE | Rule P15 deletada; IPSet deletado |\n| W3 | Fix tag Environment=Prod na instância PROD | ✅ DONE | `i-0f1e6e093d31aa9c5` agora `Environment=Prod` |\n\n**Total**: 5 rules deletadas, 1 IPSet deletado, 1 template atualizado, 1 tag corrigida.\n\n**Métricas antes → depois**:\n- Rules: 18 → 13 (-28%)\n- WCU: 382 → 361 (-5%)\n- IPSets: 3 → 2 (-33%)\n\n---\n\n## 🔍 Nova revisão pós-execução\n\n### Validações empíricas pós-mudança\n\n| Check | Resultado | Status |\n|---|---|---|\n| Site público apex (/, /cultura/, /sobre-nos/) | HTTP 200 | […]
 
 > TOOL
@@ -23588,7 +23589,7 @@ id: toolu_01C4eUQg7KoABNZJKRKrmFZK
 tool_result
 id: toolu_01C4eUQg7KoABNZJKRKrmFZK
 ```
-The file /Users/dcambria/.claude/plans/hashed-meandering-pelican.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/hashed-meandering-pelican.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -23601,7 +23602,7 @@ tool_use Bash
 id: toolu_01A5QHSRzrp3c3XojCfe7VmU
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2 && git status .claude/skills/bit-waf/ docker-dev/sites/concertacao/.claude/skills/bit-waf/ 2>&1 | tail -10",
+  "command": "cd /home/<USER>/scripts/server-tools/v2 && git status .claude/skills/bit-waf/ docker-dev/sites/concertacao/.claude/skills/bit-waf/ 2>&1 | tail -10",
   "description": "Check uncommitted skill changes"
 }
 ```
@@ -23615,7 +23616,7 @@ On branch main
 Your branch is up to date with 'origin/main'.
 
 nothing to commit, working tree clean
-Shell cwd was reset to /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao
+Shell cwd was reset to /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao
 ```
 
 > AGENT
@@ -23976,7 +23977,7 @@ id: toolu_01E6ZsbP13jXqqBondRN4Ar1
 {
   "description": "Audit process and methodology",
   "subagent_type": "general-purpose",
-  "prompt": "Você é um auditor de processos DevOps revisando **a metodologia** usada na auditoria/limpeza WAF feita hoje (2026-05-25) no site Concertação.\n\n**Plan file disponível**: `/Users/dcambria/.claude/plans/hashed-meandering-pelican.md` — contém o histórico completo da auditoria (4 versões, evoluindo confiança 70% → 95% → 97%).\n\n**Skill usada**: `/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/` (audit-acl.md + playbooks)\n\n**O que foi feito (cronologia):**\n1. Skill `audit-acl` invocada — identificou 5 issues iniciais (2 críticas, 3 warnings)\n2. Usuário pediu \"taxa de confiança\" — agente revisou e reportou ~70% com lacunas honestas\n3. Usuário autorizou validações adicionais — agente fez 3 testes empíricos que INVALIDARAM 2 conclusões anteriores (severidade rebaixada)\n4. Usuário pediu \"nova revisão minuciosa\" — agente fez mais 6 testes que REFINARAM ainda mais o entendimento (incluindo descoberta de HML deprecated)\n5. Usuário autorizou aplicar — 5 rules deletadas, 1 IPSet deletado, 1 tag fixada, 1 template skill atualizado\n6. Pós-execução, agente afirmou \"0 órfãos\" → usuário perguntou \"tem certeza?\"\n7. Validação revelou que body `BIT-Recurso-Indisponivel` estava órfão E 2 rules de prod tinham CustomResponse SEM body\n8. Agente adicionou body às 2 rules, resolvendo órfão E melhorando UX dos bots (403 com mensagem)\n\n**Audite a METODOLOGIA, não os comandos AWS:**\n\n1. **Calibração de confiança**: o agente foi honesto/preciso ao […]
+  "prompt": "Você é um auditor de processos DevOps revisando **a metodologia** usada na auditoria/limpeza WAF feita hoje (2026-05-25) no site Concertação.\n\n**Plan file disponível**: `/home/<USER>/.claude/plans/hashed-meandering-pelican.md` — contém o histórico completo da auditoria (4 versões, evoluindo confiança 70% → 95% → 97%).\n\n**Skill usada**: `/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/` (audit-acl.md + playbooks)\n\n**O que foi feito (cronologia):**\n1. Skill `audit-acl` invocada — identificou 5 issues iniciais (2 críticas, 3 warnings)\n2. Usuário pediu \"taxa de confiança\" — agente revisou e reportou ~70% com lacunas honestas\n3. Usuário autorizou validações adicionais — agente fez 3 testes empíricos que INVALIDARAM 2 conclusões anteriores (severidade rebaixada)\n4. Usuário pediu \"nova revisão minuciosa\" — agente fez mais 6 testes que REFINARAM ainda mais o entendimento (incluindo descoberta de HML deprecated)\n5. Usuário autorizou aplicar — 5 rules deletadas, 1 IPSet deletado, 1 tag fixada, 1 template skill atualizado\n6. Pós-execução, agente afirmou \"0 órfãos\" → usuário perguntou \"tem certeza?\"\n7. Validação revelou que body `BIT-Recurso-Indisponivel` estava órfão E 2 rules de prod tinham CustomResponse SEM body\n8. Agente adicionou body às 2 rules, resolvendo órfão E melhorando UX dos bots (403 com mensagem)\n\n**Audite a METODOLOGIA, não os comandos AWS:**\n\n1. **Calibração de confiança**: o agente foi honesto/preciso ao […]
 
 > TOOL
 
@@ -24075,7 +24076,7 @@ id: toolu_01Faapb8kvoR4mwxtSTTmfwp
 {
   "description": "Methodology coordination 2 agents",
   "subagent_type": "general-purpose",
-  "prompt": "Você é um auditor de PROCESSOS DEVOPS. Analise a coordenação (ou falta dela) entre 2 agentes operando em PARALELO na mesma Web ACL WAF do site Concertação.\n\n**Contexto:**\n- Agente A (eu) e Agente B trabalharam **simultaneamente** no WAF `ACL-WPAdminHML` hoje\n- Agente A documentou tudo em `/Users/dcambria/.claude/plans/hashed-meandering-pelican.md` (auditoria + 4 revisões + execução)\n- Agente B fez fixes não-coordenados (usuário mencionou ao final)\n- Nenhum dos 2 sabia do outro durante execução\n\n**Sua tarefa:**\n\n1. **Investigar logs do agente B**:\n   - `find ~/.claude/projects -name \"*.md\" -newer /tmp/audit-acl-revisao/acl-before.json 2>/dev/null | head -10`\n   - `cat ~/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/MEMORY.md | head -30`\n   - Procurar plan files recentes do agente B em `/Users/dcambria/.claude/plans/`\n\n2. **CloudTrail forense**:\n   ```bash\n   aws cloudtrail lookup-events --profile Concertação --region us-east-1 \\\n     --start-time $(date -u -v-6H +%Y-%m-%dT%H:%M:%SZ) \\\n     --lookup-attributes AttributeKey=EventName,AttributeValue=UpdateWebACL \\\n     --max-results 20\n   ```\n   Identificar todos os UpdateWebACL, seus timestamps, e qual user ARN executou.\n\n3. **Avaliar a metodologia DOS DOIS AGENTES juntos**:\n   - Houve lock contention (alguém ficou com LockToken inválido)?\n   - Houve sobrescritura silenciosa (agente B sobrescreveu mudança do agente A ou vice-versa)?\n   - O LockToken AWS WAF v2 evitou conflito ou apenas falhou?\n   - Há evidência de retries / erros entre os 2?\n\n4. **Risco […]
+  "prompt": "Você é um auditor de PROCESSOS DEVOPS. Analise a coordenação (ou falta dela) entre 2 agentes operando em PARALELO na mesma Web ACL WAF do site Concertação.\n\n**Contexto:**\n- Agente A (eu) e Agente B trabalharam **simultaneamente** no WAF `ACL-WPAdminHML` hoje\n- Agente A documentou tudo em `/home/<USER>/.claude/plans/hashed-meandering-pelican.md` (auditoria + 4 revisões + execução)\n- Agente B fez fixes não-coordenados (usuário mencionou ao final)\n- Nenhum dos 2 sabia do outro durante execução\n\n**Sua tarefa:**\n\n1. **Investigar logs do agente B**:\n   - `find ~/.claude/projects -name \"*.md\" -newer /tmp/audit-acl-revisao/acl-before.json 2>/dev/null | head -10`\n   - `cat ~/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/MEMORY.md | head -30`\n   - Procurar plan files recentes do agente B em `/home/<USER>/.claude/plans/`\n\n2. **CloudTrail forense**:\n   ```bash\n   aws cloudtrail lookup-events --profile Concertação --region us-east-1 \\\n     --start-time $(date -u -v-6H +%Y-%m-%dT%H:%M:%SZ) \\\n     --lookup-attributes AttributeKey=EventName,AttributeValue=UpdateWebACL \\\n     --max-results 20\n   ```\n   Identificar todos os UpdateWebACL, seus timestamps, e qual user ARN executou.\n\n3. **Avaliar a metodologia DOS DOIS AGENTES juntos**:\n   - Houve lock contention (alguém ficou com LockToken inválido)?\n   - Houve sobrescritura silenciosa (agente B sobrescreveu mudança do agente A ou vice-versa)?\n   - O LockToken AWS WAF v2 evitou conflito ou apenas falhou?\n   - Há evidência de retries / erros entre os 2?\n\n4. **Risco […]
 
 > TOOL
 
@@ -24364,7 +24365,7 @@ tool_use Bash
 id: toolu_01RRBubnSU9dMJTzLzAKHdDF
 ```json
 {
-  "command": "echo \"=== Últimos 7 dias detalhados ===\"\nSTART7=$(date -u -v-7d +%Y-%m-%dT%H:%M:%SZ)\nEND=$(date -u +%Y-%m-%dT%H:%M:%SZ)\naws cloudwatch get-metric-statistics --profile Concertação --region us-east-1 \\\n  --namespace AWS/WAFV2 --metric-name BlockedRequests \\\n  --dimensions Name=WebACL,Value=ACL-WPAdminHML Name=Rule,Value=RateLimit-300-Block \\\n  --start-time \"$START7\" --end-time \"$END\" --period 86400 --statistics Sum 2>&1 \\\n  | jq -r '.Datapoints | sort_by(.Timestamp) | .[] | \"\\(.Timestamp[:10]): \\(.Sum)\"'\necho \"\"\necho \"=== Histórico do nome — git log do template ===\"\ngrep -rn \"RateLimit\\|rate-limit\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/ 2>/dev/null | head -10\necho \"\"\necho \"=== Template rate-limit-generic.json ===\"\ncat /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/rules/rate-limit-generic.json 2>&1 | head -40",
+  "command": "echo \"=== Últimos 7 dias detalhados ===\"\nSTART7=$(date -u -v-7d +%Y-%m-%dT%H:%M:%SZ)\nEND=$(date -u +%Y-%m-%dT%H:%M:%SZ)\naws cloudwatch get-metric-statistics --profile Concertação --region us-east-1 \\\n  --namespace AWS/WAFV2 --metric-name BlockedRequests \\\n  --dimensions Name=WebACL,Value=ACL-WPAdminHML Name=Rule,Value=RateLimit-300-Block \\\n  --start-time \"$START7\" --end-time \"$END\" --period 86400 --statistics Sum 2>&1 \\\n  | jq -r '.Datapoints | sort_by(.Timestamp) | .[] | \"\\(.Timestamp[:10]): \\(.Sum)\"'\necho \"\"\necho \"=== Histórico do nome — git log do template ===\"\ngrep -rn \"RateLimit\\|rate-limit\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/ 2>/dev/null | head -10\necho \"\"\necho \"=== Template rate-limit-generic.json ===\"\ncat /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/rules/rate-limit-generic.json 2>&1 | head -40",
   "description": "Recent activity + template defaults"
 }
 ```
@@ -24377,16 +24378,16 @@ id: toolu_01RRBubnSU9dMJTzLzAKHdDF
 === Últimos 7 dias detalhados ===
 
 === Histórico do nome — git log do template ===
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/README.md:48:.claude/skills/bit-waf/helpers/apply-rule.sh concertacao rate-limit-generic --dry-run
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/README.md:51:.claude/skills/bit-waf/helpers/apply-rule.sh concertacao rate-limit-generic
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/README.md:111:- `feedback_waf_ratelimit_static_paths.md` — antipattern de rate-limit sem scope-down
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/SKILL.md:58:3. Se `edge-anomaly` por rate-limit: ver `playbooks/incident-diagnose.md`
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/CHANGELOG.md:74:Teste --dry-run com template `rate-limit-generic`:
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/CHANGELOG.md:118:- RateLimit-300-Block = 0 (fix de hoje confirmado em producao)
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/CHANGELOG.md:141:  sintoma + fix correto + source: rate-limit sem scope-down, Allow priority 0
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/CHANGELOG.md:157:- `templates/rules/rate-limit-generic.json` — rate-based 600/5min com scope-down WP completo (CRITICAL — sem isso WP satura)
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/CHANGELOG.md:158:- `templates/rules/rate-limit-wplogin-post.json` — anti-brute-force POST /wp-login.php 50/5min via FORWARDED_IP
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/docs/anti-templates.md:20:logs mostram `terminatingRuleId: RateLimit-300-Block` em IPs residenciais
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/README.md:48:.claude/skills/bit-waf/helpers/apply-rule.sh concertacao rate-limit-generic --dry-run
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/README.md:51:.claude/skills/bit-waf/helpers/apply-rule.sh concertacao rate-limit-generic
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/README.md:111:- `feedback_waf_ratelimit_static_paths.md` — antipattern de rate-limit sem scope-down
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/SKILL.md:58:3. Se `edge-anomaly` por rate-limit: ver `playbooks/incident-diagnose.md`
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/CHANGELOG.md:74:Teste --dry-run com template `rate-limit-generic`:
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/CHANGELOG.md:118:- RateLimit-300-Block = 0 (fix de hoje confirmado em producao)
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/CHANGELOG.md:141:  sintoma + fix correto + source: rate-limit sem scope-down, Allow priority 0
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/CHANGELOG.md:157:- `templates/rules/rate-limit-generic.json` — rate-based 600/5min com scope-down WP completo (CRITICAL — sem isso WP satura)
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/CHANGELOG.md:158:- `templates/rules/rate-limit-wplogin-post.json` — anti-brute-force POST /wp-login.php 50/5min via FORWARDED_IP
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/docs/anti-templates.md:20:logs mostram `terminatingRuleId: RateLimit-300-Block` em IPs residenciais
 
 === Template rate-limit-generic.json ===
 {
@@ -24436,7 +24437,7 @@ tool_use Bash
 id: toolu_01Wy1kBiJqu4GhGaFiW1N6Uf
 ```json
 {
-  "command": "grep -h \"RateLimit-300\\|RateLimit-600\\|rate-limit-generic\\|Limit.*600\\|Limit.*300\" /Users/dcambria/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/*.md 2>/dev/null | head -10",
+  "command": "grep -h \"RateLimit-300\\|RateLimit-600\\|rate-limit-generic\\|Limit.*600\\|Limit.*300\" /home/<USER>/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/*.md 2>/dev/null | head -10",
   "description": "Memory references to RateLimit"
 }
 ```
@@ -24579,7 +24580,7 @@ tool_use Read
 id: toolu_01WAes3hXCD6vNAiD6R9LSwi
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/rules/rate-limit-generic.json",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/rules/rate-limit-generic.json",
   "offset": 1,
   "limit": 30
 }
@@ -24629,7 +24630,7 @@ id: toolu_01TUaCDbRyp5BwVyWecSsn7d
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/rules/rate-limit-generic.json",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/rules/rate-limit-generic.json",
   "old_string": "    \"name\": \"rate-limit-generic\",\n    \"version\": \"1.0.0\",\n    \"description\": \"Rate-based rule per-IP com scope-down para WordPress: exclui paths estaticos (wp-content, wp-includes, favicon, robots.txt) e DevTeam IPSet. Limit 600/5min cobre navegacao humana intensa (10 paginas em 5min com cache parcial).\",\n    \"source_incident\": \"feedback_waf_ratelimit_static_paths\",\n    \"wcu_estimate\": 8,\n    \"applies_to\": [\"wordpress\", \"elementor\"],\n    \"last_reviewed\": \"2026-05-04\",\n    \"placeholders\": {\n      \"{{DEV_IPSET_ARN}}\": \"ARN do IPSet do DevTeam (waf-sites.yaml: dev_ipset_arn)\"\n    },\n    \"notes\": [\n      \"Nao alterar Limit abaixo de 600 — WordPress + Elementor + JetEngine geram volume alto em navegacao real\",\n      \"Action mantida como Block (nao Challenge) para evitar quebrar AJAX automatico (instant-page)\",\n      \"Para Concertacao: replicar exatamente este template (testado em prod 2026-05-04)\"\n    ]\n  },\n  \"rule\": {\n    \"Name\": \"RateLimit-300-Block\",",
   "new_string": "    \"name\": \"rate-limit-generic\",\n    \"version\": \"1.1.0\",\n    \"description\": \"Rate-based rule per-IP com scope-down para WordPress: exclui paths estaticos (wp-content, wp-includes, favicon, robots.txt) e DevTeam IPSet. Limit 600/5min cobre navegacao humana intensa (10 paginas em 5min com cache parcial).\",\n    \"source_incident\": \"feedback_waf_ratelimit_static_paths\",\n    \"wcu_estimate\": 8,\n    \"applies_to\": [\"wordpress\", \"elementor\"],\n    \"last_reviewed\": \"2026-05-25\",\n    \"placeholders\": {\n      \"{{DEV_IPSET_ARN}}\": \"ARN do IPSet do DevTeam (waf-sites.yaml: dev_ipset_arn)\"\n    },\n    \"notes\": [\n      \"v1.1.0 (2026-05-25): renomeado Name de RateLimit-300-Block → RateLimit-600-Block para refletir Limit real. Auditoria detectou drift nome×valor (era 300 antes do incidente 2026-05-04, subiu pra 600 sem […]
 
@@ -24638,7 +24639,7 @@ id: toolu_01TUaCDbRyp5BwVyWecSsn7d
 tool_result
 id: toolu_01TUaCDbRyp5BwVyWecSsn7d
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/rules/rate-limit-generic.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/rules/rate-limit-generic.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -24651,7 +24652,7 @@ tool_use Bash
 id: toolu_012rKexg4H14ufAFgWoVzWn1
 ```json
 {
-  "command": "grep -n \"MetricName\\|RateLimit-300\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/rules/rate-limit-generic.json",
+  "command": "grep -n \"MetricName\\|RateLimit-300\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/rules/rate-limit-generic.json",
   "description": "Check remaining 300 references in template"
 }
 ```
@@ -24671,7 +24672,7 @@ tool_use Read
 id: toolu_01K3iKMJxoEBa34pBnixGWwo
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/rules/rate-limit-generic.json",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/rules/rate-limit-generic.json",
   "offset": 78,
   "limit": 10
 }
@@ -24701,7 +24702,7 @@ id: toolu_0171H6GXDEAq6hNyWAWEk3dU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/rules/rate-limit-generic.json",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/rules/rate-limit-generic.json",
   "old_string": "      \"MetricName\": \"RateLimit-300-Block\"",
   "new_string": "      \"MetricName\": \"RateLimit-600-Block\""
 }
@@ -24712,7 +24713,7 @@ id: toolu_0171H6GXDEAq6hNyWAWEk3dU
 tool_result
 id: toolu_0171H6GXDEAq6hNyWAWEk3dU
 ```
-The file /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/rules/rate-limit-generic.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/rules/rate-limit-generic.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -24725,7 +24726,7 @@ tool_use Bash
 id: toolu_01CoNyHqjMGrdwwBnNUZSNE9
 ```json
 {
-  "command": "echo \"=== Refs a RateLimit-300-Block ===\"\ngrep -rln \"RateLimit-300-Block\" /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/ /Users/dcambria/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/ 2>/dev/null\necho \"\"\necho \"=== Alarmes CloudWatch que usam o MetricName? ===\"\naws cloudwatch describe-alarms --profile Concertação --region us-east-1 2>&1 | jq -r '.MetricAlarms[] | select(.MetricName == \"RateLimit-300-Block\" or (.Metrics[]?.MetricStat.Metric.MetricName == \"RateLimit-300-Block\")) | .AlarmName'\necho \"(vazio = nenhum alarme dependia desse MetricName)\"",
+  "command": "echo \"=== Refs a RateLimit-300-Block ===\"\ngrep -rln \"RateLimit-300-Block\" /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/ /home/<USER>/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/ 2>/dev/null\necho \"\"\necho \"=== Alarmes CloudWatch que usam o MetricName? ===\"\naws cloudwatch describe-alarms --profile Concertação --region us-east-1 2>&1 | jq -r '.MetricAlarms[] | select(.MetricName == \"RateLimit-300-Block\" or (.Metrics[]?.MetricStat.Metric.MetricName == \"RateLimit-300-Block\")) | .AlarmName'\necho \"(vazio = nenhum alarme dependia desse MetricName)\"",
   "description": "Check stale references"
 }
 ```
@@ -24736,17 +24737,17 @@ tool_result
 id: toolu_01CoNyHqjMGrdwwBnNUZSNE9
 ```
 === Refs a RateLimit-300-Block ===
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/worktrees/feat-footer-form-unified-part1/docs/superpowers/specs/2026-05-04-adr-cloudfront-error-caching-ttl.md
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/worktrees/feat-footer-form-unified-part1/docs/superpowers/specs/2026-05-06-prod-incidentes-mitigation-plan.md
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/worktrees/feat-footer-form-unified-part1/aws/waf-acl.json
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/commands/diagnose-edge.md
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/playbooks/incident-diagnose.md
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/commands/audit-acl.md
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/docs/managed-rule-groups.md
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/CHANGELOG.md
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/rules/rate-limit-generic.json
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/docs/anti-templates.md
-/Users/dcambria/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/feedback_waf_ratelimit_static_paths.md
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/worktrees/feat-footer-form-unified-part1/docs/superpowers/specs/2026-05-04-adr-cloudfront-error-caching-ttl.md
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/worktrees/feat-footer-form-unified-part1/docs/superpowers/specs/2026-05-06-prod-incidentes-mitigation-plan.md
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/worktrees/feat-footer-form-unified-part1/aws/waf-acl.json
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/commands/diagnose-edge.md
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/playbooks/incident-diagnose.md
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/commands/audit-acl.md
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/docs/managed-rule-groups.md
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/CHANGELOG.md
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/templates/rules/rate-limit-generic.json
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.claude/skills/bit-waf/docs/anti-templates.md
+/home/<USER>/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/feedback_waf_ratelimit_static_paths.md
 
 === Alarmes CloudWatch que usam o MetricName? ===
 (vazio = nenhum alarme dependia desse MetricName)
@@ -24764,7 +24765,7 @@ tool_use Bash
 id: toolu_01D3dUqWXbjFPEceMrib7TRa
 ```json
 {
-  "command": "grep -A2 \"RateLimit-300-Block\" /Users/dcambria/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/feedback_waf_ratelimit_static_paths.md | head -10",
+  "command": "grep -A2 \"RateLimit-300-Block\" /home/<USER>/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/feedback_waf_ratelimit_static_paths.md | head -10",
   "description": "Get memory context"
 }
 ```
@@ -24785,7 +24786,7 @@ tool_use Read
 id: toolu_01GiH14igxw2DKt2JbqBoVsQ
 ```json
 {
-  "file_path": "/Users/dcambria/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/feedback_waf_ratelimit_static_paths.md"
+  "file_path": "/home/<USER>/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/feedback_waf_ratelimit_static_paths.md"
 }
 ```
 
@@ -24816,7 +24817,7 @@ id: toolu_01C539G56Wd4pax1BgpDGfkW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/feedback_waf_ratelimit_static_paths.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/feedback_waf_ratelimit_static_paths.md",
   "old_string": "**Why:** Incidente 2026-05-04 em concertacaoamazonia.com.br. 5h+ investigando hipótese errada (`OnSourceDDoSProtectionConfig`) até habilitar WAF logs S3 e descobrir empiricamente: 11 dos 11 blocks do usuário `186.220.197.37` (Claro NXT BR, navegação humana legítima) vinham da rule `RateLimit-300-Block` (Limit 300, EvaluationWindowSec 300, AggregateKeyType IP). Console do browser confirmou: `instant-page.min.js` disparando GET ABORTED 403 em /atuacao/, /conhecimento/, /cultura/* etc — prefetch automático colidindo com rate limit.",
   "new_string": "**Why:** Incidente 2026-05-04 em concertacaoamazonia.com.br. 5h+ investigando hipótese errada (`OnSourceDDoSProtectionConfig`) até habilitar WAF logs S3 e descobrir empiricamente: 11 dos 11 blocks do usuário `186.220.197.37` (Claro NXT BR, navegação humana legítima) vinham da rule `RateLimit-300-Block` (Limit 300, EvaluationWindowSec 300, AggregateKeyType IP). Console do browser confirmou: `instant-page.min.js` disparando GET ABORTED 403 em /atuacao/, /conhecimento/, /cultura/* etc — prefetch automático colidindo com rate limit.\n\n**Update 2026-05-25:** rule renomeada de `RateLimit-300-Block` → `RateLimit-600-Block` (auditoria detectou drift nome×valor: nome sugeria 300 mas Limit real era 600 pós-fix). MetricName também atualizado. Sem dependentes (zero CloudWatch alarms usavam o MetricName antigo). Template `rate-limit-generic.json` v1.0.0 → v1.1.0."
 }
@@ -24827,7 +24828,7 @@ id: toolu_01C539G56Wd4pax1BgpDGfkW
 tool_result
 id: toolu_01C539G56Wd4pax1BgpDGfkW
 ```
-The file /Users/dcambria/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/feedback_waf_ratelimit_static_paths.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/feedback_waf_ratelimit_static_paths.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -24965,7 +24966,7 @@ id: toolu_01MSaDKvsNdND9Az9ESpUE3S
 
 === Top UAs nessa janela ===
     284 Amazon CloudFront
-     30 Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
+     30 Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; ClaudeBot/1.0; +<REDACTED_EMAIL>)
      19 Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.7778.96 Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
      19 Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Amazonbot/0.1; +https://developer.amazon.com/support/amazonbot) Chrome/119.0.6045.214 Safari/537.36
      16 Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
@@ -27327,10 +27328,10 @@ id: toolu_01RtP4bzDAyqajDbW5fhGs4t
 tool_result
 id: toolu_01RtP4bzDAyqajDbW5fhGs4t
 ```
-Snapshot: /Users/dcambria/scripts/reports/concertacao/waf-snapshot-pre-promote-block-20260528-162433.json
+Snapshot: /home/<USER>/scripts/reports/concertacao/waf-snapshot-pre-promote-block-20260528-162433.json
 
 === Estado atual das 2 rules (Action + Override) ===
-jq: error (at /Users/dcambria/scripts/reports/concertacao/waf-snapshot-pre-promote-block-20260528-162433.json:1356): string ("n/a") has no keys
+jq: error (at /home/<USER>/scripts/reports/concertacao/waf-snapshot-pre-promote-block-20260528-162433.json:1356): string ("n/a") has no keys
 15 | Block-PHP-Scan | Action=Count | OverrideAction=—
 
 === LockToken + Capacity ===
@@ -27355,7 +27356,7 @@ id: toolu_01PgRZteER2DMeEYoJCwgtNe
 tool_result
 id: toolu_01PgRZteER2DMeEYoJCwgtNe
 ```
-Snapshot lido: /Users/dcambria/scripts/reports/concertacao/waf-snapshot-pre-promote-block-20260528-162433.json
+Snapshot lido: /home/<USER>/scripts/reports/concertacao/waf-snapshot-pre-promote-block-20260528-162433.json
 LockToken: REDACTED
 Capacity: 663 WCU
 Rules total: 15
@@ -27613,7 +27614,7 @@ tool_use Write
 id: toolu_019jzo4qMYarnP64ETaZYfws
 ```json
 {
-  "file_path": "/Users/dcambria/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/project_waf_php_scan_kbi_promoted_block.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/project_waf_php_scan_kbi_promoted_block.md",
   "content": "---\nname: waf-php-scan-kbi-promoted-block\ndescription: WAF Concertação — rules Block-PHP-Scan (P15, custom) e AWS-KnownBadInputs (P20, managed) promovidas de Count→Block em 2026-05-28 após 7 dias de Count com zero falso positivo\nmetadata:\n  type: project\n---\n\nEm **2026-05-28** as duas rules WAF deployadas em Count (2026-05-25) na ACL `ACL-WPAdminHML` (CLOUDFRONT, id `05522267-513d-4346-8e56-ba18b11e950b`, profile `Concertação`, us-east-1) foram **promovidas para Block**:\n\n- **Block-PHP-Scan** (P15, custom, 62 WCU): bloqueia scanner `.php` (`/rip.php`, `/goods.php`, `/wp-conf.php`, `e/install/index.php?enews=setdb` etc). Whitelist v2 cobre paths legítimos (admin-ajax, wp-login, wp-cron, xmlrpc, /wp-admin/, plugins/themes). `Action: Block{}`.\n- **AWS-KnownBadInputs-Count** (P20, managed ~200 WCU): bloqueia `.env` enumeration via sub-rule `ExploitablePaths_URIPATH`. `OverrideAction: None{}` (era `Count{}`).\n\nACL final: 15 rules, 663 WCU (44%).\n\n**Why:** 7 dias em Count provaram volume saudável e 100% scanner traffic. Block-PHP-Scan: 26→43→145/dia (214 em 7d, onda de scanner crescente). KBI: ~12/dia estável (44 em 7d). Samples = zero falso positivo em todas as janelas. Bloquear no edge CF poupa origem (cada hit seria 404 + boot WP).\n\n**How to apply:**\n- Validação de promoção bem-sucedida = scanner `.php` vira **404→403** (em Count passa ao origin e dá 404; em Block morre no edge). `.env` já dava 403 antes (outra camada).\n- `update-web-acl` falha com `Invalid length for Description` se o ACL não tem Description e […]
 
 > TOOL
@@ -27621,7 +27622,7 @@ id: toolu_019jzo4qMYarnP64ETaZYfws
 tool_result
 id: toolu_019jzo4qMYarnP64ETaZYfws
 ```
-File created successfully at: /Users/dcambria/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/project_waf_php_scan_kbi_promoted_block.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/project_waf_php_scan_kbi_promoted_block.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -27630,7 +27631,7 @@ tool_use Read
 id: toolu_01EbAFZXrBfp2kMEmqC3xN8n
 ```json
 {
-  "file_path": "/Users/dcambria/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/MEMORY.md",
   "offset": 1,
   "limit": 20
 }
@@ -27658,7 +27659,7 @@ id: toolu_01Dwe3zF3jUL9EfVZRRCjCEk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dcambria/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/MEMORY.md",
   "old_string": "## Project\n- [project_publicacoes_destaque_deployed.md](project_publicacoes_destaque_deployed.md)",
   "new_string": "## Project\n- [project_waf_php_scan_kbi_promoted_block.md](project_waf_php_scan_kbi_promoted_block.md) — WAF Concertação: Block-PHP-Scan (P15 custom) + AWS-KnownBadInputs (P20 managed) promovidas Count→Block em 2026-05-28 após 7d Count zero-FP. Gotcha update-web-acl: omitir Description vazia; custom usa .Action, managed usa .OverrideAction. Prova de Block = scanner .php vira 404→403\n- [project_publicacoes_destaque_deployed.md](project_publicacoes_destaque_deployed.md)"
 }
@@ -27669,7 +27670,7 @@ id: toolu_01Dwe3zF3jUL9EfVZRRCjCEk
 tool_result
 id: toolu_01Dwe3zF3jUL9EfVZRRCjCEk
 ```
-The file /Users/dcambria/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-dcambria-scripts-server-tools-v2-docker-dev-sites-concertacao/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

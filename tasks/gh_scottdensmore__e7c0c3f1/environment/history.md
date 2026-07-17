@@ -14,7 +14,7 @@ id: toolu_01UYUfT4XzNFqCn2g6BmevxA
 {
   "subagent_type": "Explore",
   "description": "Explore session file loading",
-  "prompt": "I'm working in the agent-brain-visualizer project at /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer. \n\nI need to understand how the app currently loads agent session data from local files. Please explore thoroughly (medium breadth) and report back:\n\n1. How are agent session/trajectory files currently loaded? Find the code that reads local files from disk. What file formats (JSON, JSONL, etc.)? What directory/paths?\n2. What is the overall architecture — is this a frontend-only app, does it have a backend/server, what framework (Next.js, Vite, Express, etc.)? Check package.json.\n3. Where is the data model / types for a \"session\" or \"trajectory\" defined?\n4. How does the app configure things today (the recent .env commit #39)? What config exists?\n5. Any existing data-access layer, API routes, or abstraction over file reading that would be the natural seam to swap in persistent storage?\n\nReport specific file paths and code snippets. Do not write any code — this is exploration only."
+  "prompt": "I'm working in the agent-brain-visualizer project at /home/<USER>/Developer/scottdensmore/agent-brain-visualizer. \n\nI need to understand how the app currently loads agent session data from local files. Please explore thoroughly (medium breadth) and report back:\n\n1. How are agent session/trajectory files currently loaded? Find the code that reads local files from disk. What file formats (JSON, JSONL, etc.)? What directory/paths?\n2. What is the overall architecture — is this a frontend-only app, does it have a backend/server, what framework (Next.js, Vite, Express, etc.)? Check package.json.\n3. Where is the data model / types for a \"session\" or \"trajectory\" defined?\n4. How does the app configure things today (the recent .env commit #39)? What config exists?\n5. Any existing data-access layer, API routes, or abstraction over file reading that would be the natural seam to swap in persistent storage?\n\nReport specific file paths and code snippets. Do not write any code — this is exploration only."
 }
 ```
 
@@ -39,7 +39,7 @@ id: toolu_01C9jCJ7DvhAe76CNYAz5FK2
 {
   "subagent_type": "Explore",
   "description": "Explore data structures and tech stack",
-  "prompt": "I'm working in the agent-brain-visualizer project at /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer.\n\nI need to understand the tech stack and deployment shape of this app so I can plan adding persistent storage (e.g. a database or cloud object store) to replace local file reading of agent session trajectories.\n\nPlease explore thoroughly (medium breadth) and report back:\n1. Full tech stack: languages, frameworks, package manager, build tooling. Read package.json, and any config files (vite/next/tsconfig, docker, etc.).\n2. Is there any existing database, ORM, or persistence layer already present? Search for prisma, drizzle, sqlite, postgres, sequelize, mongoose, etc.\n3. Is there any server-side runtime, or is it purely a static/client app? How is it run (README, scripts)?\n4. How large are the session files typically and what is their structure? Find sample data files.\n5. Are there existing tests and what testing framework is used?\n6. The README mentions Java 25/mise — is there a Java/JVM component too? Clarify the languages involved.\n\nReport specific file paths and findings. Do not write any code — exploration only."
+  "prompt": "I'm working in the agent-brain-visualizer project at /home/<USER>/Developer/scottdensmore/agent-brain-visualizer.\n\nI need to understand the tech stack and deployment shape of this app so I can plan adding persistent storage (e.g. a database or cloud object store) to replace local file reading of agent session trajectories.\n\nPlease explore thoroughly (medium breadth) and report back:\n1. Full tech stack: languages, frameworks, package manager, build tooling. Read package.json, and any config files (vite/next/tsconfig, docker, etc.).\n2. Is there any existing database, ORM, or persistence layer already present? Search for prisma, drizzle, sqlite, postgres, sequelize, mongoose, etc.\n3. Is there any server-side runtime, or is it purely a static/client app? How is it run (README, scripts)?\n4. How large are the session files typically and what is their structure? Find sample data files.\n5. Are there existing tests and what testing framework is used?\n6. The README mentions Java 25/mise — is there a Java/JVM component too? Clarify the languages involved.\n\nReport specific file paths and findings. Do not write any code — exploration only."
 }
 ```
 
@@ -66,7 +66,7 @@ tool_use Bash
 id: toolu_019acFFTcToQGWDqBi4ffkwi
 ```json
 {
-  "command": "cat /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/package.json 2>/dev/null; echo \"---README---\"; head -60 /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/README.md 2>/dev/null",
+  "command": "cat /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/package.json 2>/dev/null; echo \"---README---\"; head -60 /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/README.md 2>/dev/null",
   "description": "Read package.json and README head"
 }
 ```
@@ -122,7 +122,7 @@ tool_use Bash
 id: toolu_01AqJ6jxRyok8jtsKs4btXJQ
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer; echo \"===README tail===\"; tail -n +60 README.md | head -120; echo \"===TOP LEVEL===\"; ls -la; echo \"===find build.gradle/pom===\"; find . -maxdepth 3 -name \"build.gradle*\" -o -maxdepth 3 -name \"pom.xml\" 2>/dev/null | grep -v node_modules",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer; echo \"===README tail===\"; tail -n +60 README.md | head -120; echo \"===TOP LEVEL===\"; ls -la; echo \"===find build.gradle/pom===\"; find . -maxdepth 3 -name \"build.gradle*\" -o -maxdepth 3 -name \"pom.xml\" 2>/dev/null | grep -v node_modules",
   "description": "Read README backend section and repo layout"
 }
 ```
@@ -163,7 +163,7 @@ tool_use Bash
 id: toolu_01UccJByPW1j4BDMwwDuNdtb
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer; echo \"===Java sources===\"; find src -name \"*.java\" | grep -v build | sort; echo; echo \"===build.gradle deps===\"; sed -n '/dependencies/,/^}/p' build.gradle",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer; echo \"===Java sources===\"; find src -name \"*.java\" | grep -v build | sort; echo; echo \"===build.gradle deps===\"; sed -n '/dependencies/,/^}/p' build.gradle",
   "description": "List Java sources and gradle deps"
 }
 ```
@@ -296,7 +296,7 @@ tool_use Read
 id: toolu_01Dc5E8o8HUzciCayDHB7C4Z
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/SessionCollector.java"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/SessionCollector.java"
 }
 ```
 
@@ -347,7 +347,7 @@ tool_use Read
 id: toolu_01Y1fFTynbvvTbDGJ7qgniQs
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/SummaryCache.java"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/SummaryCache.java"
 }
 ```
 
@@ -395,7 +395,7 @@ tool_use Read
 id: toolu_016KR4KW1sj62yahvsa69jFy
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/BrainController.java"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/BrainController.java"
 }
 ```
 
@@ -460,7 +460,7 @@ tool_use Read
 id: toolu_013EAMEiRRCX1YRJnbC6zBqP
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/SessionSource.java"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/SessionSource.java"
 }
 ```
 
@@ -507,7 +507,7 @@ tool_use Read
 id: toolu_01S1YXoPMztNhdhFNs2XnCYr
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/ClaudeCodeAdapter.java"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/ClaudeCodeAdapter.java"
 }
 ```
 
@@ -555,7 +555,7 @@ tool_use Read
 id: toolu_01MEXDYNBo3SurtsMi2SHWaP
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/EvalRunStore.java"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/EvalRunStore.java"
 }
 ```
 
@@ -607,7 +607,7 @@ tool_use Read
 id: toolu_016AjvAGK4yEY19osoYEFndL
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AiConfig.java"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AiConfig.java"
 }
 ```
 
@@ -656,7 +656,7 @@ tool_use Read
 id: toolu_01WL996iQDTW6JAMxf2EujLb
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AntigravityPaths.java"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AntigravityPaths.java"
 }
 ```
 
@@ -700,7 +700,7 @@ tool_use Read
 id: toolu_01C58GuF4n7AKyoKSaBug9Ka
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/ClaudeCodeSessionReader.java"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/ClaudeCodeSessionReader.java"
 }
 ```
 
@@ -813,8 +813,8 @@ I now have a complete picture of the architecture. Here is my report.
 
 This is **NOT a frontend-only app and NOT a Node/Next/Vite app**. It is a **Micronaut (Java) web server** with a zero-build vanilla-JS frontend.
 
-- **Backend:** Micronaut framework, Java. Build system is **Gradle** (`build.gradle`, `gradlew`, `micronaut-cli.yml`, `settings.gradle`), Java 25 via `mise` (`mise.toml`). Also has GraalVM native-image config (`reachability-metadata.json`). Entry point: `/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/Application.java` (`Micronaut.run(...)`).
-- **Frontend:** static vanilla JS served from classpath. `application.yml` maps `classpath:public` to `/**`. Source at `/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/` (`app.js`, `index.html`, `style.css`, plus ES modules in `public/modules/`). The frontend talks to the backend purely over `/api/...` REST endpoints (e.g. `app.js` line 243 `fetch("/api/brain/conversations?flavor=${flavor}")`).
+- **Backend:** Micronaut framework, Java. Build system is **Gradle** (`build.gradle`, `gradlew`, `micronaut-cli.yml`, `settings.gradle`), Java 25 via `mise` (`mise.toml`). Also has GraalVM native-image config (`reachability-metadata.json`). Entry point: `/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/Application.java` (`Micronaut.run(...)`).
+- **Frontend:** static vanilla JS served from classpath. `application.yml` maps `classpath:public` to `/**`. Source at `/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/` (`app.js`, `index.html`, `style.css`, plus ES modules in `public/modules/`). The frontend talks to the backend purely over `/api/...` REST endpoints (e.g. `app.js` line 243 `fetch("/api/brain/conversations?flavor=${flavor}")`).
 - **The `package.json` is a red herring** — it is `agy-brain-visualizer-frontend-tests`, a dev-only Vitest/Playwright harness for the JS modules. It has no runtime role.
 - **REST controllers** (all under `/api`): `BrainController` (`/api/brain`), `AnalysisController` (`/api/analysis`), `InsightsController` (`/api/insights`), `MineController` (`/api/mine`), `EvalController` (`/api/eval`), `OptimizeController` (`/api/optimize`).
 
@@ -860,7 +860,7 @@ This is a **Java (Micronaut) backend serving a zero-build vanilla-JS frontend**,
 
 ### 1. Full tech stack
 
-**Backend (the real app)** — `/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/build.gradle`
+**Backend (the real app)** — `/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/build.gradle`
 - **Language**: Java 25 (`sourceCompatibility`/`targetCompatibility` = 25; requires a Java 25 JVM)
 - **Framework**: Micronaut 5 (netty runtime), `micronaut-serde-jackson` for JSON
 - **AI layer**: LangChain4j 1.16.1 (BOM) with Google GenAI (Gemini) and Ollama integrations, plus `micronaut-langchain4j`
@@ -933,7 +933,7 @@ id: toolu_01Fj3WYfGhavFeUaX8Bm55LJ
 {
   "subagent_type": "Plan",
   "description": "Design Postgres storage backend",
-  "prompt": "Design a detailed implementation plan for adding a shared Postgres persistent store to the \"agent-brain-visualizer\" app at /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer. Do NOT write any code — produce a design/plan only. Read the relevant files to ground your design.\n\n## Product decisions already made (do not re-litigate)\n- Store: **Postgres** (local for dev, hosted like Neon/Supabase/Cloud SQL for multi-machine sharing).\n- **Remote is the source of truth**: after ingest, the app READS sessions/summaries/eval-runs only from Postgres. Local agent files (`~/.gemini`, `~/.codex`, `~/.claude`) become just an INGEST source, run per-machine.\n- **Single user across their own machines**: one shared connection string, no per-user auth/isolation needed.\n- Goal: capture a trajectory on computer A, run ingest, and see it on computer B pointed at the same DB.\n\n## Architecture facts (already explored — trust these)\n- Backend: **Micronaut 5, Java 25**, Gradle, `com.gradleup.shadow` fat jar, `io.micronaut.aot`, and **GraalVM `nativeCompile`** (reachability metadata at `src/main/resources/META-INF/native-image/.../reachability-metadata.json`). Native binary is a shipped artifact — the Postgres JDBC driver will need native-image reachability config; call this out.\n- Package: `io.github.glaforge.agybrainviz`. All Java under `src/main/java/io/github/glaforge/agybrainviz/`.\n- Config today: `.env` file parsed by `DotEnv.java`; precedence real env var > `.env` > default. `AiConfig.java` is the pattern for […]
+  "prompt": "Design a detailed implementation plan for adding a shared Postgres persistent store to the \"agent-brain-visualizer\" app at /home/<USER>/Developer/scottdensmore/agent-brain-visualizer. Do NOT write any code — produce a design/plan only. Read the relevant files to ground your design.\n\n## Product decisions already made (do not re-litigate)\n- Store: **Postgres** (local for dev, hosted like Neon/Supabase/Cloud SQL for multi-machine sharing).\n- **Remote is the source of truth**: after ingest, the app READS sessions/summaries/eval-runs only from Postgres. Local agent files (`~/.gemini`, `~/.codex`, `~/.claude`) become just an INGEST source, run per-machine.\n- **Single user across their own machines**: one shared connection string, no per-user auth/isolation needed.\n- Goal: capture a trajectory on computer A, run ingest, and see it on computer B pointed at the same DB.\n\n## Architecture facts (already explored — trust these)\n- Backend: **Micronaut 5, Java 25**, Gradle, `com.gradleup.shadow` fat jar, `io.micronaut.aot`, and **GraalVM `nativeCompile`** (reachability metadata at `src/main/resources/META-INF/native-image/.../reachability-metadata.json`). Native binary is a shipped artifact — the Postgres JDBC driver will need native-image reachability config; call this out.\n- Package: `io.github.glaforge.agybrainviz`. All Java under `src/main/java/io/github/glaforge/agybrainviz/`.\n- Config today: `.env` file parsed by `DotEnv.java`; precedence real env var > `.env` > default. `AiConfig.java` is the pattern for […]
 
 > TOOL
 
@@ -958,7 +958,7 @@ tool_use Read
 id: toolu_011Cgb6w8KH1q4tYvRRJdF1t
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/Application.java"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/Application.java"
 }
 ```
 
@@ -1013,7 +1013,7 @@ tool_use Read
 id: toolu_01P2Za5z7ppKVURX95R2B1Dc
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java"
 }
 ```
 
@@ -1128,7 +1128,7 @@ tool_use Write
 id: toolu_016G5FxVULFCXX7EkdKEVi19
 ```json
 {
-  "file_path": "/Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md",
+  "file_path": "/home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md",
   "content": "# Plan: Shared Postgres store for agent trajectories\n\n## Context\n\nThe Agent Brain Visualizer (Micronaut/Java 25 backend + zero-build vanilla-JS\nfrontend) today reads agent session transcripts **directly off the local\nfilesystem** on whatever machine you launch it from — Antigravity from\n`~/.gemini/<flavor>/brain/**`, Codex from `~/.codex/sessions/**`, Claude Code\nfrom `~/.claude/projects/**`. AI summaries and eval-run history are also cached\nto local disk (`SummaryCache`, per-session `summary.json`, `~/.agybrainviz/eval-runs.jsonl`).\n\nBecause everything is machine-local, a trajectory captured on computer A is\ninvisible on computer B. This plan adds a **shared Postgres database** so\ntrajectories, summaries, and eval runs live in one place and are visible from\nany machine pointed at the same DB.\n\n**Decisions (confirmed with you):**\n- **Store:** Postgres — local for dev, a hosted URL (Neon/Supabase/Cloud SQL) for sharing.\n- **Remote is the source of truth:** after ingest, the app **reads only from Postgres**.\n  Local agent files become an **ingest source**, run per-machine.\n- **Single user across your own machines:** one shared connection string, no per-user auth.\n\n**End-to-end goal:** capture a trajectory on computer A → run *Sync* (ingest) →\nsee it on computer B pointed at the same DB.\n\n## Guiding shape\n\nToday each read is a per-flavor file scan (`SessionSource` for Codex/Claude,\ninline `Files` calls for Antigravity). We invert this to:\n\n```\nlocal files ──Ingest──▶ […]
 
 > TOOL
@@ -1136,7 +1136,7 @@ id: toolu_016G5FxVULFCXX7EkdKEVi19
 tool_result
 id: toolu_016G5FxVULFCXX7EkdKEVi19
 ```
-File created successfully at: /Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1214,7 +1214,7 @@ tool_use Read
 id: toolu_013MfyuVfKfdpJBbMPcVyoNj
 ```json
 {
-  "file_path": "/Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md",
+  "file_path": "/home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md",
   "offset": 1,
   "limit": 20
 }
@@ -1254,7 +1254,7 @@ id: toolu_01VMPYN285ywazPZkN7Zd1Ke
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md",
+  "file_path": "/home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md",
   "old_string": "**Decisions (confirmed with you):**\n- **Store:** Postgres — local for dev, a hosted URL (Neon/Supabase/Cloud SQL) for sharing.\n- **Remote is the source of truth:** after ingest, the app **reads only from Postgres**.\n  Local agent files become an **ingest source**, run per-machine.\n- **Single user across your own machines:** one shared connection string, no per-user auth.\n\n**End-to-end goal:** capture a trajectory on computer A → run *Sync* (ingest) →\nsee it on computer B pointed at the same DB.",
   "new_string": "**Decisions (confirmed with you):**\n- **Store:** Postgres — local for dev, a hosted URL (Neon/Supabase/Cloud SQL) for sharing.\n- **Remote is the source of truth:** after ingest, the app **reads only from Postgres**.\n  Local agent files become an **ingest source**.\n- **Push-based ingest via a Go CLI:** a small Go binary runs on any machine, scans\n  local trajectories, and **pushes them to the app over HTTP**. The app normalizes and\n  upserts into Postgres. Any client can send trajectories this way — the app+Postgres\n  can live centrally while clients push from wherever the agents ran.\n- **Stable IDs so nothing duplicates:** every trajectory has a stable `(source, id)`\n  identity + a content hash, so re-pushing the same session is […]
 
@@ -1263,7 +1263,7 @@ id: toolu_01VMPYN285ywazPZkN7Zd1Ke
 tool_result
 id: toolu_01VMPYN285ywazPZkN7Zd1Ke
 ```
-The file /Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1277,7 +1277,7 @@ id: toolu_01HG5eZADz1cr8GxMyGpT7Bh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md",
+  "file_path": "/home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md",
   "old_string": "Today each read is a per-flavor file scan (`SessionSource` for Codex/Claude,\ninline `Files` calls for Antigravity). We invert this to:\n\n```\nlocal files ──Ingest──▶ Postgres ──▶ all reads\n```\n\n`flavor` stops selecting a `SessionSource` and becomes a **`source` column\nfilter**. The local readers survive only as ingest adapters.",
   "new_string": "Today each read is a per-flavor file scan (`SessionSource` for Codex/Claude,\ninline `Files` calls for Antigravity). We invert this to:\n\n```\n                          any machine                    central\n  local agent files ──▶ agy-ingest (Go CLI) ──HTTP push──▶ app ──normalize──▶ Postgres ──▶ all reads\n```\n\n`flavor` stops selecting a `SessionSource` and becomes a **`source` column\nfilter**. Filesystem scanning moves out of the Java app into the Go CLI; the\nexisting tool-native adapters stay in Java and are invoked by the push endpoint\n(the CLI stays \"dumb\" and never reimplements the schemas)."
 }
@@ -1288,7 +1288,7 @@ id: toolu_01HG5eZADz1cr8GxMyGpT7Bh
 tool_result
 id: toolu_01HG5eZADz1cr8GxMyGpT7Bh
 ```
-The file /Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1302,7 +1302,7 @@ id: toolu_01KQKDQb3vndFPDLLzVXjqBB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md",
+  "file_path": "/home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md",
   "old_string": "## 5. Ingest (per-machine)\n\nNew **`Ingestor.java`** (`@Singleton`) + **`IngestController.java`**\n(`@Controller(\"/api/ingest\")`, `POST` → `{scanned, ingested, skipped}` per source).\n\nRefactor the readers behind a slim **`IngestReader`** interface (today's\n`SessionSource` minus cache methods): `source()`, `list()` → `(id, title, mtime,\nrawText)`, `toSteps(rawText)` → normalized array. `ClaudeCodeSessionReader` /\n`CodexSessionReader` already do this via their adapters — trim them to it. Add\n**`AntigravityIngestReader.java`** walking `~/.gemini/<flavor>/brain/**` via\n`AntigravityPaths` (reusing the transcript-vs-`transcript_full` selection and the\nUSER_INPUT summary-derivation logic lifted from the deleted `BrainController`\nbranch), for `antigravity-cli` and `antigravity-ide`.\n\nAlgorithm per source: list `(id, mtime)` cheaply; one `existingMtimes(source)`\nquery; for each candidate newer-than-stored (or absent) read + normalize, hash\n(SHA-256 of raw bytes), `upsert` (the `WHERE content_hash <>` guard makes an\nunchanged re-read a no-op). Idempotent, skip-if-unchanged, keyed `(source, id)`.\n\n**Trigger — both, Sync-button primary:** `POST /api/ingest` wired to a **\"Sync\"\nbutton** in the frontend (explicit, shows counts) as the main path; an optional\non-startup scan gated by `AGY_INGEST_ON_STARTUP` (default `false`) via an\n`ApplicationEventListener<StartupEvent>`. On first ingest, optionally import any\npre-existing on-disk Antigravity `summary.json`/`short_title.txt` into `summaries`\nso historical summaries aren't lost.",
   "new_string": "## 5. Ingest API (server side — normalize + upsert)\n\nThe app becomes an **ingest server**. Filesystem scanning moves to the Go CLI\n(§5b); the server accepts pushed **raw tool-native** trajectories, normalizes\nthem with the existing adapters, and upserts […]
 
@@ -1311,7 +1311,7 @@ id: toolu_01KQKDQb3vndFPDLLzVXjqBB
 tool_result
 id: toolu_01KQKDQb3vndFPDLLzVXjqBB
 ```
-The file /Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1325,7 +1325,7 @@ id: toolu_015dCJsTZkXt33ExBqvpGvmS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md",
+  "file_path": "/home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md",
   "old_string": "`.env.example` additions: `DATABASE_URL`, `POSTGRES_USER`, `POSTGRES_PASSWORD`\n(+ commented `POSTGRES_SSLMODE`, `AGY_INGEST_ON_STARTUP`).",
   "new_string": "`.env.example` additions: `DATABASE_URL`, `POSTGRES_USER`, `POSTGRES_PASSWORD`\n(+ commented `POSTGRES_SSLMODE`, `INGEST_TOKEN`). `StorageConfig` also exposes\n`ingestToken()` for the auth guard (§5)."
 }
@@ -1336,7 +1336,7 @@ id: toolu_015dCJsTZkXt33ExBqvpGvmS
 tool_result
 id: toolu_015dCJsTZkXt33ExBqvpGvmS
 ```
-The file /Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1346,7 +1346,7 @@ id: toolu_01U22Kx3uQrupJZ7oDPKXoma
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md",
+  "file_path": "/home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md",
   "old_string": "**New:** `db/schema.sql`, `StorageConfig.java`, `SessionRepository.java`,\n`SummaryRepository.java`, `EvalRunRepository.java`, `SchemaBootstrap.java`,\n`IngestReader.java`, `AntigravityIngestReader.java`, `Ingestor.java`,\n`IngestController.java` (+ a \"Sync\" button in `public/app.js` / `public/index.html`).",
   "new_string": "**New (Java):** `db/schema.sql`, `StorageConfig.java`, `SessionRepository.java`,\n`SummaryRepository.java`, `EvalRunRepository.java`, `SchemaBootstrap.java`,\n`SourceNormalizer.java` (+ per-source impls), `Ingestor.java`,\n`IngestController.java`, an ingest-auth filter.\n\n**New (Go CLI):** `cli/go.mod`, `cli/main.go`, `cli/internal/scan/…` (per-source\nlocators + stable-id derivation), `cli/internal/client/…` (manifest + push HTTP\nclient), `cli/README.md`."
 }
@@ -1357,7 +1357,7 @@ id: toolu_01U22Kx3uQrupJZ7oDPKXoma
 tool_result
 id: toolu_01U22Kx3uQrupJZ7oDPKXoma
 ```
-The file /Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1367,7 +1367,7 @@ id: toolu_01CyYGwP5eAL8xrF5WFBzTJg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md",
+  "file_path": "/home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md",
   "old_string": "3. **Ingest, writes only** — `IngestReader` refactor + `AntigravityIngestReader`,\n   `Ingestor` + `/api/ingest` + Sync button, optional startup scan. Reads still local; DB fills.\n4. **Flip reads to DB** — `SessionRepository`/`SummaryRepository`; reshape\n   `BrainController`/`AnalysisController`/`SessionCollector` to query by `source`;\n   remove Antigravity read special-casing + `SessionSource` registry injection.\n   Rework `BrainControllerTest`; add Postgres to e2e. **This is the source-of-truth flip.**\n5. **Delete dead write paths** — `SummaryCache`, Antigravity in-session summary\n   writes, file `EvalRunStore`, `SessionSource` cache methods. Update docs.",
   "new_string": "3. **Ingest API, writes only** — `SourceNormalizer` (adapter reuse), `Ingestor`,\n   `POST /api/ingest/sessions` + `GET /api/ingest/manifest`, `INGEST_TOKEN` auth\n   guard. Reads still come from local files; DB starts filling. Testable server-side\n   with synthetic push payloads.\n4. **Go CLI `agy-ingest`** — `cli/` module: scan → stable id → manifest-skip →\n   push. End-to-end: run it against the app, watch rows appear. Ship a build target.\n5. **Flip reads to DB** — `SessionRepository`/`SummaryRepository`; reshape\n   `BrainController`/`AnalysisController`/`SessionCollector` to query by `source`;\n   remove Antigravity read special-casing + `SessionSource` registry injection.\n   Rework `BrainControllerTest`; add Postgres to e2e. **This is the source-of-truth flip.**\n6. **Delete dead write paths** — `SummaryCache`, Antigravity in-session summary\n   writes, file `EvalRunStore`, `SessionSource` cache methods, and the readers'\n   filesystem-walk code now superseded by the CLI. Update […]
 
@@ -1376,7 +1376,7 @@ id: toolu_01CyYGwP5eAL8xrF5WFBzTJg
 tool_result
 id: toolu_01CyYGwP5eAL8xrF5WFBzTJg
 ```
-The file /Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1390,7 +1390,7 @@ id: toolu_01N297VbbuCdRv8p2BVWgwum
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md",
+  "file_path": "/home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md",
   "old_string": "- **e2e:** add a Postgres service container to the `e2e` CI job; set\n  `DATABASE_URL`/`POSTGRES_*` in Playwright `webServer.env`; add a seed step calling\n  `POST /api/ingest` in `global-setup.mjs` so the seeded `build/e2e-home` fixtures\n  flow into the DB (also smoke-tests ingest end-to-end). Keep `-Duser.home` +\n  `-Ddotenv.enabled=false`.\n- **Manual multi-machine proof:** start local Postgres (`docker run postgres`), point\n  `DATABASE_URL` at it, run *Sync*, confirm sessions render from the DB. Then point a\n  second checkout at the same DB (no local agent files) and confirm the same\n  trajectories appear — this is the whole point of the change.",
   "new_string": "- **Ingest API:** unit-test `SourceNormalizer` per source against the existing\n  `e2e/fixtures.mjs` shapes; integration-test `POST /api/ingest/sessions` +\n  `GET /api/ingest/manifest` against Testcontainers Postgres, asserting idempotency\n  (push twice → one row, second reports `skipped`) and the `INGEST_TOKEN` guard\n  (401 without token when set).\n- **Go CLI:** `go test` in `cli/` for stable-id derivation and manifest-diff/skip\n  logic (table-driven, using `--home` fixtures); a small end-to-end test that runs\n  the CLI against a stub HTTP server and asserts the pushed batch. Wire `go build`\n  + `go test ./cli/...` into CI as a separate job.\n- **e2e:** add a Postgres service container to the `e2e` […]
 
@@ -1399,7 +1399,7 @@ id: toolu_01N297VbbuCdRv8p2BVWgwum
 tool_result
 id: toolu_01N297VbbuCdRv8p2BVWgwum
 ```
-The file /Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1412,7 +1412,7 @@ tool_use Read
 id: toolu_016sWFTX3S6FQ6BZMG7YH77w
 ```json
 {
-  "file_path": "/Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md",
+  "file_path": "/home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md",
   "offset": 176,
   "limit": 18
 }
@@ -1449,7 +1449,7 @@ tool_use Read
 id: toolu_014EkypnUmddVtnNLBmC8fMk
 ```json
 {
-  "file_path": "/Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md",
+  "file_path": "/home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md",
   "offset": 230,
   "limit": 22
 }
@@ -1490,7 +1490,7 @@ tool_use Read
 id: toolu_011wyy3QfXemTCEfQnQQpeDt
 ```json
 {
-  "file_path": "/Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md",
+  "file_path": "/home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md",
   "offset": 251,
   "limit": 12
 }
@@ -1522,7 +1522,7 @@ id: toolu_01CUY8s8CURn3k4ijQgaLXxj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md",
+  "file_path": "/home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md",
   "old_string": "`reachability-metadata.json` (register `db/schema.sql` + any pgjdbc gaps),\n`README.md` / `AGENTS.md`.\n\n**Remove (final step):** `SummaryCache.java`, `EvalRunStore.java`, the\n`SessionSource` cache methods and Antigravity in-session summary writes.",
   "new_string": "`reachability-metadata.json` (register `db/schema.sql` + any pgjdbc gaps),\n`.github/workflows/ci.yml` (Postgres service for backend/e2e jobs + a Go\nbuild/test job), `README.md` / `AGENTS.md` (document the CLI + DB setup).\n\n**Remove (final step):** `SummaryCache.java`, `EvalRunStore.java`, the\n`SessionSource` cache methods, the Antigravity in-session summary writes, and the\nfilesystem-walk code in `ClaudeCodeSessionReader`/`CodexSessionReader` now\nsuperseded by the CLI (keeping their adapter-invoking `SourceNormalizer` logic)."
 }
@@ -1533,7 +1533,7 @@ id: toolu_01CUY8s8CURn3k4ijQgaLXxj
 tool_result
 id: toolu_01CUY8s8CURn3k4ijQgaLXxj
 ```
-The file /Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1583,7 +1583,7 @@ tool_use Bash
 id: toolu_019nz51uaiHyENctLM8CknN7
 ```json
 {
-  "command": "cd /Users/scottdensmore/.claude/plans && grep -n \"agy-ingest\" the-app-today-uses-adaptive-reddy.md",
+  "command": "cd /home/<USER>/.claude/plans && grep -n \"agy-ingest\" the-app-today-uses-adaptive-reddy.md",
   "description": "Find agy-ingest occurrences"
 }
 ```
@@ -1600,7 +1600,7 @@ id: toolu_019nz51uaiHyENctLM8CknN7
 272:4. **Go CLI `agy-ingest`** — `cli/` module: scan → stable id → manifest-skip →
 325:  `agy-ingest` (or a direct `POST /api/ingest/sessions`) against the seeded
 330:  `agy-ingest --server http://localhost:8080`, confirm sessions render in the app.
-Shell cwd was reset to /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer
+Shell cwd was reset to /home/<USER>/Developer/scottdensmore/agent-brain-visualizer
 ```
 
 > TOOL
@@ -1609,7 +1609,7 @@ tool_use Bash
 id: toolu_01XnbJNkKPkWt2bTwq4qZrkj
 ```json
 {
-  "command": "cd /Users/scottdensmore/.claude/plans && sed -i '' 's/agy-ingest/agent-ingest/g' the-app-today-uses-adaptive-reddy.md && grep -n \"agent-ingest\\|agy-ingest\" the-app-today-uses-adaptive-reddy.md",
+  "command": "cd /home/<USER>/.claude/plans && sed -i '' 's/agy-ingest/agent-ingest/g' the-app-today-uses-adaptive-reddy.md && grep -n \"agent-ingest\\|agy-ingest\" the-app-today-uses-adaptive-reddy.md",
   "description": "Rename agy-ingest to agent-ingest"
 }
 ```
@@ -1626,7 +1626,7 @@ id: toolu_01XnbJNkKPkWt2bTwq4qZrkj
 272:4. **Go CLI `agent-ingest`** — `cli/` module: scan → stable id → manifest-skip →
 325:  `agent-ingest` (or a direct `POST /api/ingest/sessions`) against the seeded
 330:  `agent-ingest --server http://localhost:8080`, confirm sessions render in the app.
-Shell cwd was reset to /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer
+Shell cwd was reset to /home/<USER>/Developer/scottdensmore/agent-brain-visualizer
 ```
 
 > AGENT

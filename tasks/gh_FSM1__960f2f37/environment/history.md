@@ -8,7 +8,7 @@ tool_use Read
 id: toolu_01W1FRJfr4fuiZDu7JKrKuFx
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/workflows/plan-phase.md"
+  "file_path": "/home/<USER>/Code/random/cipher-box/.claude/gsd-core/workflows/plan-phase.md"
 }
 ```
 
@@ -33,11 +33,11 @@ id: toolu_01W1FRJfr4fuiZDu7JKrKuFx
 12	<required_reading>
 13	Read all files referenced by the invoking prompt's execution_context before starting.
 14	
-15	@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/ui-brand.md
-16	@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/revision-loop.md
-17	@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/gate-prompts.md
-18	@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/agent-contracts.md
-19	@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/gates.md
+15	@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/ui-brand.md
+16	@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/revision-loop.md
+17	@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/gate-prompts.md
+18	@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/agent-contracts.md
+19	@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/gates.md
 20	</required_reading>
 21	
 22	<available_agent_types>
@@ -127,7 +127,7 @@ tool_use Read
 id: toolu_01HJG5TiZF5PNBm8ix7EEYZ1
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/workflows/plan-phase.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.claude/gsd-core/workflows/plan-phase.md",
   "offset": 915,
   "limit": 914
 }
@@ -158,7 +158,7 @@ tool_use Bash
 id: toolu_011ZxJu5PBjYvZK7qPvqa8oV
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nGSD_TOOLS=\".claude/gsd-core/bin/gsd-tools.cjs\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nINIT=$(gsd_run query init.plan-phase \"70.1\")\nif [[ \"$INIT\" == @file:* ]]; then INIT=$(cat \"${INIT#@file:}\"); fi\necho \"$INIT\" | node -e \"const o=JSON.parse(require('fs').readFileSync(0,'utf8')); const keys=['researcher_model','planner_model','checker_model','research_enabled','plan_checker_enabled','nyquist_validation_enabled','commit_docs','text_mode','phase_found','phase_dir','phase_number','phase_name','phase_slug','padded_phase','has_research','has_context','has_reviews','has_plans','plan_count','phase_status','planning_exists','roadmap_exists','phase_req_ids','response_language','granularity','context_path','research_path','patterns_path','state_path','roadmap_path','requirements_path','verification_path','uat_path','reviews_path']; for (const k of keys) console.log(k+':', JSON.stringify(o[k]));\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nGSD_TOOLS=\".claude/gsd-core/bin/gsd-tools.cjs\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nINIT=$(gsd_run query init.plan-phase \"70.1\")\nif [[ \"$INIT\" == @file:* ]]; then INIT=$(cat \"${INIT#@file:}\"); fi\necho \"$INIT\" | node -e \"const o=JSON.parse(require('fs').readFileSync(0,'utf8')); const keys=['researcher_model','planner_model','checker_model','research_enabled','plan_checker_enabled','nyquist_validation_enabled','commit_docs','text_mode','phase_found','phase_dir','phase_number','phase_name','phase_slug','padded_phase','has_research','has_context','has_reviews','has_plans','plan_count','phase_status','planning_exists','roadmap_exists','phase_req_ids','response_language','granularity','context_path','research_path','patterns_path','state_path','roadmap_path','requirements_path','verification_path','uat_path','reviews_path']; for (const k of keys) console.log(k+':', JSON.stringify(o[k]));\"",
   "description": "Run plan-phase init query and parse key fields"
 }
 ```
@@ -215,7 +215,7 @@ tool_use Read
 id: toolu_01Lz3vgGfpqBV1VeX9BH4jiW
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/phases/70.1-rotation-read-plane-durability-and-deep-crash-resume-soundne/70.1-CONTEXT.md"
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/phases/70.1-rotation-read-plane-durability-and-deep-crash-resume-soundne/70.1-CONTEXT.md"
 }
 ```
 
@@ -256,7 +256,7 @@ tool_use Bash
 id: toolu_01Djsvn6y43qBG1NHi9EpuM4
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nGSD_TOOLS=\".claude/gsd-core/bin/gsd-tools.cjs\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\necho \"=== ROADMAP phase 70.1 section ===\"\ngsd_run query roadmap.get-phase \"70.1\" --pick section 2>/dev/null | head -120",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nGSD_TOOLS=\".claude/gsd-core/bin/gsd-tools.cjs\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\necho \"=== ROADMAP phase 70.1 section ===\"\ngsd_run query roadmap.get-phase \"70.1\" --pick section 2>/dev/null | head -120",
   "description": "Read roadmap phase 70.1 section"
 }
 ```
@@ -330,7 +330,7 @@ tool_use Bash
 id: toolu_01TWfJjSVDYbiVPcv6YDzGm6
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nGSD_TOOLS=\".claude/gsd-core/bin/gsd-tools.cjs\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\necho \"=== teams-status check ===\"\ngsd_run query teams-status --active >/dev/null 2>&1 && echo \"TEAMS ACTIVE (warn)\" || echo \"teams not active (ok)\"\necho \"\"\necho \"=== PLAN_PRE_HOOKS activeHooks summary ===\"\nPLAN_PRE_HOOKS_JSON=$(gsd_run loop render-hooks plan:pre --raw)\necho \"$PLAN_PRE_HOOKS_JSON\" > \"$CLAUDE_JOB_DIR/tmp/plan_pre_hooks.json\"\necho \"$PLAN_PRE_HOOKS_JSON\" | node -e \"\nconst o=JSON.parse(require('fs').readFileSync(0,'utf8'));\nconst hooks=o.activeHooks||o.hooks||[];\nconsole.log('total activeHooks:', hooks.length);\nfor (const h of hooks) {\n  console.log('- capId='+(h.capId||'?'), 'kind='+(h.kind||'?'), 'ref='+(JSON.stringify(h.ref)||'?'), 'into='+(h.into||''), 'check='+(h.check?JSON.stringify(h.check):''));\n}\n\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nGSD_TOOLS=\".claude/gsd-core/bin/gsd-tools.cjs\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\necho \"=== teams-status check ===\"\ngsd_run query teams-status --active >/dev/null 2>&1 && echo \"TEAMS ACTIVE (warn)\" || echo \"teams not active (ok)\"\necho \"\"\necho \"=== PLAN_PRE_HOOKS activeHooks summary ===\"\nPLAN_PRE_HOOKS_JSON=$(gsd_run loop render-hooks plan:pre --raw)\necho \"$PLAN_PRE_HOOKS_JSON\" > \"$CLAUDE_JOB_DIR/tmp/plan_pre_hooks.json\"\necho \"$PLAN_PRE_HOOKS_JSON\" | node -e \"\nconst o=JSON.parse(require('fs').readFileSync(0,'utf8'));\nconst hooks=o.activeHooks||o.hooks||[];\nconsole.log('total activeHooks:', hooks.length);\nfor (const h of hooks) {\n  console.log('- capId='+(h.capId||'?'), 'kind='+(h.kind||'?'), 'ref='+(JSON.stringify(h.ref)||'?'), 'into='+(h.into||''), 'check='+(h.check?JSON.stringify(h.check):''));\n}\n\"",
   "description": "Render plan:pre hooks and list active hooks"
 }
 ```
@@ -373,7 +373,7 @@ tool_use Bash
 id: toolu_01BH7nJso8573391sVEio2cE
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nF=\"$CLAUDE_JOB_DIR/tmp/plan_pre_hooks.json\"\necho \"=== first 3 lines ===\"; head -3 \"$F\"; echo \"\"\necho \"=== size ===\"; wc -c \"$F\"\necho \"\"\necho \"=== try python json parse (tolerant of nothing, but let's see error loc) / fallback grep ===\"\nnode -e \"\nconst fs=require('fs');\nlet raw=fs.readFileSync(process.argv[1],'utf8');\n// strip leading non-json (warnings) up to first {\nconst i=raw.indexOf('{');\nraw=raw.slice(i);\nlet o;\ntry { o=JSON.parse(raw); } catch(e){\n  // tolerant: the tool emitted raw newlines inside strings; try a light repair is risky.\n  console.log('PARSE_FAILED', e.message);\n  process.exit(2);\n}\nconst hooks=o.activeHooks||o.hooks||[];\nconsole.log('total activeHooks:', hooks.length);\nfor (const h of hooks) console.log('- capId='+(h.capId||'?'),'kind='+(h.kind||'?'),'ref='+JSON.stringify(h.ref||''),'into='+(h.into||''));\n\" \"$F\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nF=\"$CLAUDE_JOB_DIR/tmp/plan_pre_hooks.json\"\necho \"=== first 3 lines ===\"; head -3 \"$F\"; echo \"\"\necho \"=== size ===\"; wc -c \"$F\"\necho \"\"\necho \"=== try python json parse (tolerant of nothing, but let's see error loc) / fallback grep ===\"\nnode -e \"\nconst fs=require('fs');\nlet raw=fs.readFileSync(process.argv[1],'utf8');\n// strip leading non-json (warnings) up to first {\nconst i=raw.indexOf('{');\nraw=raw.slice(i);\nlet o;\ntry { o=JSON.parse(raw); } catch(e){\n  // tolerant: the tool emitted raw newlines inside strings; try a light repair is risky.\n  console.log('PARSE_FAILED', e.message);\n  process.exit(2);\n}\nconst hooks=o.activeHooks||o.hooks||[];\nconsole.log('total activeHooks:', hooks.length);\nfor (const h of hooks) console.log('- capId='+(h.capId||'?'),'kind='+(h.kind||'?'),'ref='+JSON.stringify(h.ref||''),'into='+(h.into||''));\n\" \"$F\"",
   "description": "Inspect hook JSON file structure"
 }
 ```
@@ -390,7 +390,7 @@ Exit code 2
   "activeHooks": [
 
 === size ===
-   11725 /Users/myankelev/.claude/jobs/1df3ecfc/tmp/plan_pre_hooks.json
+   11725 /home/<USER>/.claude/jobs/1df3ecfc/tmp/plan_pre_hooks.json
 
 === try python json parse (tolerant of nothing, but let's see error loc) / fallback grep ===
 PARSE_FAILED Bad control character in string literal in JSON at position 460 (line 23 column 31)
@@ -406,7 +406,7 @@ tool_use Read
 id: toolu_01KkMkwckxWH8xhkcbUBhprs
 ```json
 {
-  "file_path": "/Users/myankelev/.claude/jobs/1df3ecfc/tmp/plan_pre_hooks.json"
+  "file_path": "/home/<USER>/.claude/jobs/1df3ecfc/tmp/plan_pre_hooks.json"
 }
 ```
 
@@ -483,7 +483,7 @@ tool_use Bash
 id: toolu_01DpPUmziG2HouN14heJt6Wy
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== .planning/config.json ===\"; cat .planning/config.json\necho \"\"\nGSD_TOOLS=\".claude/gsd-core/bin/gsd-tools.cjs\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\necho \"=== resolved config flags ===\"\nfor k in workflow.research workflow.pattern_mapper workflow.schema_push_detection workflow.tdd_mode intel.enabled workflow.plan_drift_precheck workflow.nyquist_validation workflow.context_coverage_gate workflow.post_planning_gaps; do\n  printf \"%s = %s\\n\" \"$k\" \"$(gsd_run query config-get \"$k\" 2>/dev/null)\"\ndone",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== .planning/config.json ===\"; cat .planning/config.json\necho \"\"\nGSD_TOOLS=\".claude/gsd-core/bin/gsd-tools.cjs\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\necho \"=== resolved config flags ===\"\nfor k in workflow.research workflow.pattern_mapper workflow.schema_push_detection workflow.tdd_mode intel.enabled workflow.plan_drift_precheck workflow.nyquist_validation workflow.context_coverage_gate workflow.post_planning_gaps; do\n  printf \"%s = %s\\n\" \"$k\" \"$(gsd_run query config-get \"$k\" 2>/dev/null)\"\ndone",
   "description": "Read config.json and resolve orchestration flags"
 }
 ```
@@ -566,7 +566,7 @@ tool_use Bash
 id: toolu_01G33oBBbupGu9Wyqx9QnJSC
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nGSD_TOOLS=\".claude/gsd-core/bin/gsd-tools.cjs\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\ngsd_run query agent-skills gsd-phase-researcher > \"$CLAUDE_JOB_DIR/tmp/skills_researcher.txt\" 2>/dev/null\necho \"=== researcher skills size ===\"; wc -c \"$CLAUDE_JOB_DIR/tmp/skills_researcher.txt\"\necho \"=== content ===\"; cat \"$CLAUDE_JOB_DIR/tmp/skills_researcher.txt\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nGSD_TOOLS=\".claude/gsd-core/bin/gsd-tools.cjs\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\ngsd_run query agent-skills gsd-phase-researcher > \"$CLAUDE_JOB_DIR/tmp/skills_researcher.txt\" 2>/dev/null\necho \"=== researcher skills size ===\"; wc -c \"$CLAUDE_JOB_DIR/tmp/skills_researcher.txt\"\necho \"=== content ===\"; cat \"$CLAUDE_JOB_DIR/tmp/skills_researcher.txt\"",
   "description": "Fetch researcher agent skills"
 }
 ```
@@ -577,7 +577,7 @@ tool_result
 id: toolu_01G33oBBbupGu9Wyqx9QnJSC
 ```
 === researcher skills size ===
-       0 /Users/myankelev/.claude/jobs/1df3ecfc/tmp/skills_researcher.txt
+       0 /home/<USER>/.claude/jobs/1df3ecfc/tmp/skills_researcher.txt
 === content ===
 ```
 
@@ -681,7 +681,7 @@ id: toolu_01BgiPKMDZmQMutdZbkx48ru
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/phases/70.1-rotation-read-plane-durability-and-deep-crash-resume-soundne/70.1-CONTEXT.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/phases/70.1-rotation-read-plane-durability-and-deep-crash-resume-soundne/70.1-CONTEXT.md",
   "old_string": "- `packages/sdk-core/src/rotation/engine.ts` — dirty-frontier consumption depth-awareness, normal-branch ordering, already-rotated-dirty-node handling, ECIES key-checkpoint on mint.\n- `crates/sdk` (`floor_store.rs`, `rotation/high_water.rs`) + `packages/sdk/src/state/rotation-high-water.ts` — fail-closed write propagation, atomic cross-store bumps, shared durable plane.\n- `packages/sdk/src/client.ts` `reconcileFolderSequence` — freshly-resolved generation gate.\n- `tests/sdk-e2e/src/suites/rotation-crash-safety.test.ts` — depth-2/3 mid-walk-crash coverage.\n\n**Out of scope:** the write plane (Phase 72), the API/web layers, any rotation UX beyond what the e2e asserts. No new capabilities — this hardens what Phase 70 shipped.",
   "new_string": "- `packages/sdk-core/src/rotation/engine.ts` — dirty-frontier consumption depth-awareness, normal-branch ordering, already-rotated-dirty-node handling, ECIES key-checkpoint on mint.\n- `crates/sdk/src/rotation/engine.rs` — the desktop FUSE/WinFsp Rust rotation-engine twin: same depth-aware consumption + already-rotated-dirty-node convergence + ECIES key-checkpoint soundness as `engine.ts`, PLUS the structural catch-up it needs (recursive `verify_subtree_clean`, missing-root treated as dirty not clean). **Added to scope 2026-07-08 (D-11..D-13) — see decisions.**\n- `crates/sdk` (`floor_store.rs`, `rotation/high_water.rs`) + `packages/sdk/src/state/rotation-high-water.ts` — fail-closed write propagation, atomic cross-store bumps, shared durable plane.\n- `packages/sdk/src/client.ts` `reconcileFolderSequence` — freshly-resolved generation gate.\n- `tests/sdk-e2e/src/suites/rotation-crash-safety.test.ts` (+ a Rust-path crash-resume test) — depth-2/3 mid-walk-crash coverage for BOTH engines.\n\n**Out of scope:** the write plane (Phase 72), the API/web layers, any rotation UX beyond what the e2e asserts. No new capabilities — this hardens what Phase 70 shipped."
 }
@@ -692,7 +692,7 @@ id: toolu_01BgiPKMDZmQMutdZbkx48ru
 tool_result
 id: toolu_01BgiPKMDZmQMutdZbkx48ru
 ```
-The file /Users/myankelev/Code/random/cipher-box/.planning/phases/70.1-rotation-read-plane-durability-and-deep-crash-resume-soundne/70.1-CONTEXT.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/.planning/phases/70.1-rotation-read-plane-durability-and-deep-crash-resume-soundne/70.1-CONTEXT.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -702,7 +702,7 @@ id: toolu_01DeK5WsU98sjw2bfaphew6w
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/phases/70.1-rotation-read-plane-durability-and-deep-crash-resume-soundne/70.1-CONTEXT.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/phases/70.1-rotation-read-plane-durability-and-deep-crash-resume-soundne/70.1-CONTEXT.md",
   "old_string": "### Claude's Discretion\n- Exact naming of the typed fallback error, the wrapped-key record schema/key layout, and the fault-injection hook shape are left to research/planning, within the decisions above.\n- Whether the depth-2 and depth-3 cases are one parameterized test or two is an implementation detail.",
   "new_string": "### SC#7 — Desktop Rust rotation-engine twin parity (scope expansion 2026-07-08)\n\nResearch (70.1-RESEARCH.md, Open Question 1) surfaced that `crates/sdk/src/rotation/engine.rs` is a full Rust twin of the TS rotation engine (used by desktop FUSE/WinFsp) carrying the **identical depth-1-only consumption bug**, and is structurally further behind. User decided 2026-07-08 to fix both engines in this phase.\n\n- **D-11 (Rust twin in scope):** `crates/sdk/src/rotation/engine.rs` is IN SCOPE for 70.1. It must receive the same read-plane soundness fixes as `engine.ts`: depth-aware dirty-frontier consumption (SC#1), normal-branch ordering (SC#2), already-rotated-dirty-node convergence + ECIES key-checkpoint (SC#3), fed from the shared durable plane (SC#4/D-06/D-07). The two engines must converge to the same soundness contract.\n- **D-12 (Rust twin extra structural catch-up):** the Rust twin is further behind than `engine.ts` and additionally needs `verify_subtree_clean` made **recursive** (currently non-recursive) and a **missing root treated as dirty** (currently treated as \"clean\"). These are prerequisites for depth>=2 soundness on […]
 
@@ -711,7 +711,7 @@ id: toolu_01DeK5WsU98sjw2bfaphew6w
 tool_result
 id: toolu_01DeK5WsU98sjw2bfaphew6w
 ```
-The file /Users/myankelev/Code/random/cipher-box/.planning/phases/70.1-rotation-read-plane-durability-and-deep-crash-resume-soundne/70.1-CONTEXT.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/.planning/phases/70.1-rotation-read-plane-durability-and-deep-crash-resume-soundne/70.1-CONTEXT.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -724,7 +724,7 @@ tool_use Bash
 id: toolu_01DKApJmb2wzeA6qPk7JvfLq
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nGSD_TOOLS=\".claude/gsd-core/bin/gsd-tools.cjs\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\ngsd_run query commit \"docs(70.1): record Rust engine-twin scope decision (D-11..D-13)\" --files \".planning/phases/70.1-rotation-read-plane-durability-and-deep-crash-resume-soundne/70.1-CONTEXT.md\" 2>&1 | tail -3\necho \"\"\necho \"=== RESEARCH.md section headers ===\"\ngrep -n \"^## \\|^### \" \".planning/phases/70.1-rotation-read-plane-durability-and-deep-crash-resume-soundne/70.1-RESEARCH.md\"\necho \"\"\necho \"=== RESEARCH.md size ===\"\nwc -l \".planning/phases/70.1-rotation-read-plane-durability-and-deep-crash-resume-soundne/70.1-RESEARCH.md\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nGSD_TOOLS=\".claude/gsd-core/bin/gsd-tools.cjs\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\ngsd_run query commit \"docs(70.1): record Rust engine-twin scope decision (D-11..D-13)\" --files \".planning/phases/70.1-rotation-read-plane-durability-and-deep-crash-resume-soundne/70.1-CONTEXT.md\" 2>&1 | tail -3\necho \"\"\necho \"=== RESEARCH.md section headers ===\"\ngrep -n \"^## \\|^### \" \".planning/phases/70.1-rotation-read-plane-durability-and-deep-crash-resume-soundne/70.1-RESEARCH.md\"\necho \"\"\necho \"=== RESEARCH.md size ===\"\nwc -l \".planning/phases/70.1-rotation-read-plane-durability-and-deep-crash-resume-soundne/70.1-RESEARCH.md\"",
   "description": "Commit CONTEXT, inspect RESEARCH.md headers"
 }
 ```
@@ -769,7 +769,7 @@ tool_use Bash
 id: toolu_01Usioo4pkSP7aMPiW8JkWgg
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== recent commits ===\"; git log --oneline -4\necho \"\"; echo \"=== working tree status ===\"; git status --short",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== recent commits ===\"; git log --oneline -4\necho \"\"; echo \"=== working tree status ===\"; git status --short",
   "description": "Verify commit landed via git log"
 }
 ```
@@ -794,7 +794,7 @@ tool_use Read
 id: toolu_014wNt4U8PDErwBySzC9Mift
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/phases/70.1-rotation-read-plane-durability-and-deep-crash-resume-soundne/70.1-RESEARCH.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/phases/70.1-rotation-read-plane-durability-and-deep-crash-resume-soundne/70.1-RESEARCH.md",
   "offset": 379,
   "limit": 70
 }
@@ -849,7 +849,7 @@ tool_use Bash
 id: toolu_01R93AsopZpZ7S6i5WGbQwnJ
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nGSD_TOOLS=\".claude/gsd-core/bin/gsd-tools.cjs\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\ngsd_run intel api-surface 2>&1 | tail -8\necho \"---\"\nls -la .planning/intel/API-SURFACE.md 2>/dev/null && echo \"API_SURFACE_PATH=.planning/intel/API-SURFACE.md\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nGSD_TOOLS=\".claude/gsd-core/bin/gsd-tools.cjs\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\ngsd_run intel api-surface 2>&1 | tail -8\necho \"---\"\nls -la .planning/intel/API-SURFACE.md 2>/dev/null && echo \"API_SURFACE_PATH=.planning/intel/API-SURFACE.md\"",
   "description": "Regenerate API-SURFACE.md intel"
 }
 ```
@@ -861,7 +861,7 @@ id: toolu_01R93AsopZpZ7S6i5WGbQwnJ
 ```
 gsd-tools: warning: unknown config key(s) in .planning/config.json: created, notes — these will be ignored
 {
-  "written": "/Users/myankelev/Code/random/cipher-box/.planning/intel/API-SURFACE.md",
+  "written": "/home/<USER>/Code/random/cipher-box/.planning/intel/API-SURFACE.md",
   "symbolCount": 0,
   "stale": true
 }---
@@ -895,7 +895,7 @@ tool_use Bash
 id: toolu_01TQE6XdxHMCQVVaMneB5Xdb
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== RESEARCH.md new section present? ===\"\ngrep -n \"Sharp Question 6\\|## Validation Architecture\\|## Open Questions\" \".planning/phases/70.1-rotation-read-plane-durability-and-deep-crash-resume-soundne/70.1-RESEARCH.md\"\necho \"\"; echo \"=== new line count ===\"; wc -l \".planning/phases/70.1-rotation-read-plane-durability-and-deep-crash-resume-soundne/70.1-RESEARCH.md\"\necho \"\"; echo \"=== git status ===\"; git status --short\necho \"\"; echo \"=== VALIDATION template exists? ===\"; ls -la .claude/gsd-core/templates/VALIDATION.md 2>/dev/null && echo \"---template---\" && cat .claude/gsd-core/templates/VALIDATION.md",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== RESEARCH.md new section present? ===\"\ngrep -n \"Sharp Question 6\\|## Validation Architecture\\|## Open Questions\" \".planning/phases/70.1-rotation-read-plane-durability-and-deep-crash-resume-soundne/70.1-RESEARCH.md\"\necho \"\"; echo \"=== new line count ===\"; wc -l \".planning/phases/70.1-rotation-read-plane-durability-and-deep-crash-resume-soundne/70.1-RESEARCH.md\"\necho \"\"; echo \"=== git status ===\"; git status --short\necho \"\"; echo \"=== VALIDATION template exists? ===\"; ls -la .claude/gsd-core/templates/VALIDATION.md 2>/dev/null && echo \"---template---\" && cat .claude/gsd-core/templates/VALIDATION.md",
   "description": "Verify RESEARCH extension and read VALIDATION template"
 }
 ```
@@ -924,7 +924,7 @@ tool_use Read
 id: toolu_011YCwCeXpqs7g8gFaytm2jJ
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/phases/70.1-rotation-read-plane-durability-and-deep-crash-resume-soundne/70.1-RESEARCH.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/phases/70.1-rotation-read-plane-durability-and-deep-crash-resume-soundne/70.1-RESEARCH.md",
   "offset": 569,
   "limit": 60
 }
@@ -963,7 +963,7 @@ tool_use Bash
 id: toolu_01MxYWYSp7WVQWRu4Qobs75y
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nGSD_TOOLS=\".claude/gsd-core/bin/gsd-tools.cjs\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\ngsd_run query commit \"docs(70.1): extend research with Rust engine-twin grounding (SQ6, D-11..D-13)\" --files \".planning/phases/70.1-rotation-read-plane-durability-and-deep-crash-resume-soundne/70.1-RESEARCH.md\" 2>&1 | grep -o '\"reason\":\"[^\"]*\"\\|committed\\|Committed' | head -2\necho \"verify:\"; git log --oneline -1; git status --short",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nGSD_TOOLS=\".claude/gsd-core/bin/gsd-tools.cjs\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\ngsd_run query commit \"docs(70.1): extend research with Rust engine-twin grounding (SQ6, D-11..D-13)\" --files \".planning/phases/70.1-rotation-read-plane-durability-and-deep-crash-resume-soundne/70.1-RESEARCH.md\" 2>&1 | grep -o '\"reason\":\"[^\"]*\"\\|committed\\|Committed' | head -2\necho \"verify:\"; git log --oneline -1; git status --short",
   "description": "Commit RESEARCH.md extension"
 }
 ```
@@ -988,7 +988,7 @@ tool_use Write
 id: toolu_01CrjFLxK9WSMXGUurMxjdU3
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/phases/70.1-rotation-read-plane-durability-and-deep-crash-resume-soundne/70.1-VALIDATION.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/phases/70.1-rotation-read-plane-durability-and-deep-crash-resume-soundne/70.1-VALIDATION.md",
   "content": "---\nphase: 70.1\nslug: rotation-read-plane-durability-and-deep-crash-resume-soundne\nstatus: draft\nnyquist_compliant: false\nwave_0_complete: false\ncreated: 2026-07-08\n---\n\n# Phase 70.1 — Validation Strategy\n\n> Per-phase validation contract for feedback sampling during execution.\n> Source SC→test mapping: `70.1-RESEARCH.md` § \"Validation Architecture\" (authoritative). This file scaffolds the per-task map; the planner/executor assigns task IDs.\n\n---\n\n## Test Infrastructure\n\n| Property | Value |\n|----------|-------|\n| **Framework (TS unit)** | Vitest — `packages/sdk-core/vitest.config.ts`, `packages/sdk/vitest.config.ts` (coverage excludes `src/**/index.ts`; `engine.ts` must stay out of any barrel) |\n| **Framework (Rust unit)** | `cargo test` / `#[tokio::test]` — `crates/sdk` (`rotation/engine.rs` via `FakeDeps`, `rotation/high_water.rs`, `floor_store.rs`) |\n| **Framework (e2e)** | Vitest live-stack — `tests/sdk-e2e/src/suites/rotation-crash-safety.test.ts` (requires docker stack) |\n| **Quick run command** | `pnpm --filter @cipherbox/sdk-core test -- rotation/engine && cargo test -p cipherbox-sdk rotation` |\n| **Full suite command** | full `sdk-core`/`sdk` vitest + `cargo test -p cipherbox-sdk` + `pnpm --filter sdk-e2e test -- rotation-crash-safety` |\n| **Estimated runtime** | unit ~seconds; Rust ~seconds; sdk-e2e ~minutes (docker stack) |\n\n---\n\n## Sampling Rate\n\n- **After every task commit:** Run `pnpm --filter @cipherbox/sdk-core test -- rotation` + `cargo test -p cipherbox-sdk rotation`\n- **After every plan wave:** Run full `sdk-core`/`sdk` vitest + full `cargo test -p cipherbox-sdk` + sdk-e2e `rotation-crash-safety`\n- **Before `/gsd-verify-work`:** Full sdk-e2e suite green (all pre-existing scenarios + the new depth-3 scenario) — […]
 
 > TOOL
@@ -996,7 +996,7 @@ id: toolu_01CrjFLxK9WSMXGUurMxjdU3
 tool_result
 id: toolu_01CrjFLxK9WSMXGUurMxjdU3
 ```
-File created successfully at: /Users/myankelev/Code/random/cipher-box/.planning/phases/70.1-rotation-read-plane-durability-and-deep-crash-resume-soundne/70.1-VALIDATION.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Code/random/cipher-box/.planning/phases/70.1-rotation-read-plane-durability-and-deep-crash-resume-soundne/70.1-VALIDATION.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1017,7 +1017,7 @@ tool_use Bash
 id: toolu_01Mcw5iberMSFxUJK26nDPjp
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nGSD_TOOLS=\".claude/gsd-core/bin/gsd-tools.cjs\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\ngsd_run query commit \"docs(70.1): add nyquist validation strategy\" --files \".planning/phases/70.1-rotation-read-plane-durability-and-deep-crash-resume-soundne/70.1-VALIDATION.md\" 2>&1 | grep -o 'committed\\|\"reason\":\"[^\"]*\"' | head -1\ngit log --oneline -1; git status --short",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nGSD_TOOLS=\".claude/gsd-core/bin/gsd-tools.cjs\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\ngsd_run query commit \"docs(70.1): add nyquist validation strategy\" --files \".planning/phases/70.1-rotation-read-plane-durability-and-deep-crash-resume-soundne/70.1-VALIDATION.md\" 2>&1 | grep -o 'committed\\|\"reason\":\"[^\"]*\"' | head -1\ngit log --oneline -1; git status --short",
   "description": "Commit VALIDATION.md"
 }
 ```
@@ -1077,7 +1077,7 @@ tool_use Bash
 id: toolu_0197SjZANiY9z7EJdDdueV1o
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nGSD_TOOLS=\".claude/gsd-core/bin/gsd-tools.cjs\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nPHASE_DIR=\".planning/phases/70.1-rotation-read-plane-durability-and-deep-crash-resume-soundne\"\ngsd_run query commit \"docs(70.1): map file patterns for planning\" --files \"${PHASE_DIR}/70.1-PATTERNS.md\" 2>&1 | grep -o 'committed\\|\"reason\":\"[^\"]*\"' | head -1\ngit log --oneline -1\necho \"\"\necho \"=== SPEC file (excluding AI/UI variants) ===\"\nls \"${PHASE_DIR}\"/*-SPEC.md 2>/dev/null | grep -Ev -- '-(AI|UI)-SPEC\\.md$' || echo \"no SPEC (expected)\"\necho \"\"\necho \"=== drift precheck (non-blocking) ===\"\ngsd_run verify codebase-drift 2>/dev/null | node -e \"try{const o=JSON.parse(require('fs').readFileSync(0,'utf8'));console.log('skipped:',o.skipped,'action_required:',o.action_required);if(o.action_required)console.log(o.message||'');}catch(e){console.log('drift check unparseable/skipped')}\" 2>/dev/null || echo \"drift check skipped\"\necho \"\"\necho \"=== planner agent skills size ===\"\ngsd_run query agent-skills gsd-planner > \"$CLAUDE_JOB_DIR/tmp/skills_planner.txt\" 2>/dev/null\nwc -c \"$CLAUDE_JOB_DIR/tmp/skills_planner.txt\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nGSD_TOOLS=\".claude/gsd-core/bin/gsd-tools.cjs\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nPHASE_DIR=\".planning/phases/70.1-rotation-read-plane-durability-and-deep-crash-resume-soundne\"\ngsd_run query commit \"docs(70.1): map file patterns for planning\" --files \"${PHASE_DIR}/70.1-PATTERNS.md\" 2>&1 | grep -o 'committed\\|\"reason\":\"[^\"]*\"' | head -1\ngit log --oneline -1\necho \"\"\necho \"=== SPEC file (excluding AI/UI variants) ===\"\nls \"${PHASE_DIR}\"/*-SPEC.md 2>/dev/null | grep -Ev -- '-(AI|UI)-SPEC\\.md$' || echo \"no SPEC (expected)\"\necho \"\"\necho \"=== drift precheck (non-blocking) ===\"\ngsd_run verify codebase-drift 2>/dev/null | node -e \"try{const o=JSON.parse(require('fs').readFileSync(0,'utf8'));console.log('skipped:',o.skipped,'action_required:',o.action_required);if(o.action_required)console.log(o.message||'');}catch(e){console.log('drift check unparseable/skipped')}\" 2>/dev/null || echo \"drift check skipped\"\necho \"\"\necho \"=== planner agent skills size ===\"\ngsd_run query agent-skills gsd-planner > \"$CLAUDE_JOB_DIR/tmp/skills_planner.txt\" 2>/dev/null\nwc -c \"$CLAUDE_JOB_DIR/tmp/skills_planner.txt\"",
   "description": "Commit PATTERNS, check SPEC, drift precheck, planner skills"
 }
 ```
@@ -1189,7 +1189,7 @@ tool_use Bash
 id: toolu_018kMrREALQWmKFPLbvH3Ahz
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== todos mentioning FUSE rotation / RotationDeps / desktop rotation wiring ===\"\ngrep -rliE \"rotationdeps|fuse.*rotat|rotat.*fuse|desktop.*rotat|rotat.*wir|grant_scope\" .planning/todos/ 2>/dev/null || echo \"no todo matches\"\necho \"\"\necho \"=== all pending todo filenames ===\"\nls .planning/todos/pending/ 2>/dev/null\necho \"\"\necho \"=== impl RotationDeps across workspace ===\"\ngrep -rn \"impl RotationDeps\\|RotationDeps for\\|trait RotationDeps\" crates/ 2>/dev/null\necho \"\"\necho \"=== grant_scope.rs fail-closed site ===\"\nsed -n '255,300p' crates/fuse/src/write_ops/grant_scope.rs 2>/dev/null || echo \"file not found; searching\"\n",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== todos mentioning FUSE rotation / RotationDeps / desktop rotation wiring ===\"\ngrep -rliE \"rotationdeps|fuse.*rotat|rotat.*fuse|desktop.*rotat|rotat.*wir|grant_scope\" .planning/todos/ 2>/dev/null || echo \"no todo matches\"\necho \"\"\necho \"=== all pending todo filenames ===\"\nls .planning/todos/pending/ 2>/dev/null\necho \"\"\necho \"=== impl RotationDeps across workspace ===\"\ngrep -rn \"impl RotationDeps\\|RotationDeps for\\|trait RotationDeps\" crates/ 2>/dev/null\necho \"\"\necho \"=== grant_scope.rs fail-closed site ===\"\nsed -n '255,300p' crates/fuse/src/write_ops/grant_scope.rs 2>/dev/null || echo \"file not found; searching\"\n",
   "description": "Search todos and RotationDeps wiring state"
 }
 ```
@@ -1298,7 +1298,7 @@ tool_use Read
 id: toolu_01K3kfzSfYbzTYSCLDSWA8zx
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/todos/pending/2026-07-07-fuse-shared-scope-exit-rotation-live-wiring.md"
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/todos/pending/2026-07-07-fuse-shared-scope-exit-rotation-live-wiring.md"
 }
 ```
 

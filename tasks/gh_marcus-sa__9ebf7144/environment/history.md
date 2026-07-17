@@ -2,7 +2,7 @@
 
 <system_instruction>
 You are working inside Conductor, a Mac app that lets the user run many coding agents in parallel.
-Your work should take place in the /Users/marcus/conductor/workspaces/brain-v1/munich-v2 directory (unless otherwise directed), which has been set up for you to work in.
+Your work should take place in the /home/<USER>/conductor/workspaces/brain-v1/munich-v2 directory (unless otherwise directed), which has been set up for you to work in.
 Each workspace has a .context directory (gitignored) where you can save files to collaborate with other agents.
 The target branch for this workspace is main. Use this for actions like creating new PRs, bisecting, etc., unless you're told otherwise.
 
@@ -22,7 +22,7 @@ id: toolu_01MiN7VmouSndgMZwvv9Lur3
 ```json
 {
   "skill": "nw-bugfix",
-  "args": "when i assign a task to a sandboxed agent, then it fails with:\n\nfrontend:\n{\"error\":\"internal server error\"}\n\nbackend:\n[withTracing] orchestrator.assign error: MCP auth intent is \"pending_veto\" (expected \"authorized\") Error: MCP auth intent is \"pending_veto\" (expected \"authorized\")\n    at <anonymous> (/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server/orchestrator/routes.ts:465:17)\n    at processTicksAndRejections (native:7:39)"
+  "args": "when i assign a task to a sandboxed agent, then it fails with:\n\nfrontend:\n{\"error\":\"internal server error\"}\n\nbackend:\n[withTracing] orchestrator.assign error: MCP auth intent is \"pending_veto\" (expected \"authorized\") Error: MCP auth intent is \"pending_veto\" (expected \"authorized\")\n    at <anonymous> (/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server/orchestrator/routes.ts:465:17)\n    at processTicksAndRejections (native:7:39)"
 }
 ```
 
@@ -87,7 +87,7 @@ tool_use Read
 id: toolu_015UHAQviyZWUp9ufEpbWnXb
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server/orchestrator/routes.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server/orchestrator/routes.ts",
   "offset": 440,
   "limit": 50
 }
@@ -156,7 +156,7 @@ tool_use Read
 id: toolu_012NE68PwZir3US5eoDFkRJH
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server/orchestrator/routes.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server/orchestrator/routes.ts",
   "offset": 420,
   "limit": 25
 }
@@ -201,7 +201,7 @@ id: toolu_01Tpx1NohAGwHdN66jvQAEvK
 ```json
 {
   "pattern": "pending_veto",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server",
   "output_mode": "content",
   "-n": true
 }
@@ -245,7 +245,7 @@ tool_use Read
 id: toolu_01BZqzV5TH3URL7FusbHqnJ7
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server/mcp/create-intent-handler.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server/mcp/create-intent-handler.ts",
   "offset": 240,
   "limit": 80
 }
@@ -311,7 +311,7 @@ id: toolu_012mCt7i8Tuep8crJTE5dG2m
 ```json
 {
   "pattern": "submitIntentForAuthorization",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server",
   "output_mode": "content",
   "-n": true
 }
@@ -334,7 +334,7 @@ tool_use Read
 id: toolu_016bqoFydw4u3fXcws1eF2tx
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server/oauth/intent-submission.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server/oauth/intent-submission.ts",
   "offset": 162,
   "limit": 60
 }
@@ -406,7 +406,7 @@ tool_use Read
 id: toolu_01DyARRPnCsLrHBQwS98bnNW
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server/oauth/intent-submission.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server/oauth/intent-submission.ts",
   "offset": 220,
   "limit": 60
 }
@@ -477,7 +477,7 @@ tool_use Read
 id: toolu_019YRvTXvsd7PtubQ9ZcFsm6
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server/oauth/intent-submission.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server/oauth/intent-submission.ts",
   "offset": 280,
   "limit": 50
 }
@@ -546,7 +546,7 @@ tool_use Read
 id: toolu_01YFGCYicpH5GL67giHBaFjb
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server/intent/intent-evaluation.ts"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server/intent/intent-evaluation.ts"
 }
 ```
 
@@ -621,7 +621,7 @@ tool_use Read
 id: toolu_01D7LP4uJq3ugAYk9hzhWEwX
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server/intent/risk-router.ts"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server/intent/risk-router.ts"
 }
 ```
 
@@ -724,7 +724,7 @@ id: toolu_014dqc47Q7qzswsEXwLAnq5v
 ```json
 {
   "pattern": "human_veto_required",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server/intent",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server/intent",
   "output_mode": "content",
   "-n": true
 }
@@ -755,7 +755,7 @@ tool_use Read
 id: toolu_01S8EBU1YxLYLpj6ZwMXPzwH
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server/intent/authorizer.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server/intent/authorizer.ts",
   "offset": 140,
   "limit": 100
 }
@@ -831,7 +831,7 @@ tool_use Read
 id: toolu_018rVigppehMvhRdq97UeAtx
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server/intent/authorizer.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server/intent/authorizer.ts",
   "offset": 240,
   "limit": 140
 }
@@ -890,7 +890,7 @@ id: toolu_01VbNQSg36mceL7ZY8LinaUp
 ```json
 {
   "pattern": "requester_type|requesterType",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server/intent/authorizer.ts",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server/intent/authorizer.ts",
   "output_mode": "content",
   "-n": true
 }
@@ -912,7 +912,7 @@ id: toolu_01NQj6rspTLiRBCP5vCfjPsn
 ```json
 {
   "pattern": "requester_type",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server/policy",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server/policy",
   "output_mode": "content",
   "-n": true
 }
@@ -933,7 +933,7 @@ id: toolu_017jyv4pzvgyWT6MoC1sfrQq
 ```json
 {
   "pattern": "human_veto_required",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server/policy",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server/policy",
   "output_mode": "content",
   "-n": true
 }
@@ -965,7 +965,7 @@ tool_use Read
 id: toolu_01KG1TqNkEobQqk9ShDdZexY
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server/policy/policy-gate.ts"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server/policy/policy-gate.ts"
 }
 ```
 
@@ -1051,7 +1051,7 @@ id: toolu_018AJ98gua6Jp1DgUQuaK3ub
 ```json
 {
   "pattern": "identityId|resolveIdentity",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server/orchestrator/routes.ts",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server/orchestrator/routes.ts",
   "output_mode": "content",
   "-n": true
 }
@@ -1078,7 +1078,7 @@ tool_use Read
 id: toolu_019nAZjoCjAwypNKL9qiAfwa
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server/orchestrator/routes.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server/orchestrator/routes.ts",
   "offset": 355,
   "limit": 65
 }
@@ -1131,7 +1131,7 @@ id: toolu_01QzNE6vSczGQdDjBvqDa4tU
 ```json
 {
   "pattern": "type.*person|type.*agent|identity.*type",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/schema/surreal-schema.surql",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/schema/surreal-schema.surql",
   "output_mode": "content",
   "-n": true
 }
@@ -1198,7 +1198,7 @@ tool_use Read
 id: toolu_01MqgdzL645HT6EeN6AWnGJp
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server/intent/authorizer.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server/intent/authorizer.ts",
   "offset": 185,
   "limit": 10
 }
@@ -1240,7 +1240,7 @@ id: toolu_01C5h261MXkBi5VPz7urnuR8
 tool_result
 id: toolu_01C5h261MXkBi5VPz7urnuR8
 ```
-/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/unit/intent/authorizer.test.ts
+/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/unit/intent/authorizer.test.ts
 ```
 
 > TOOL
@@ -1249,7 +1249,7 @@ tool_use Read
 id: toolu_01P54Ld3avs9c6ydugB5j4bg
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/unit/intent/authorizer.test.ts"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/unit/intent/authorizer.test.ts"
 }
 ```
 
@@ -1316,7 +1316,7 @@ tool_use Read
 id: toolu_01Nnm3zqi4o4PczRFagQQFfZ
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server/intent/authorizer.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server/intent/authorizer.ts",
   "offset": 55,
   "limit": 35
 }
@@ -1377,7 +1377,7 @@ id: toolu_01EEbaxYDRuxkNuj378hQMSh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/unit/intent/authorizer.test.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/unit/intent/authorizer.test.ts",
   "old_string": "  describe(\"evaluation timeout produces high-risk fallback for human review\", () => {",
   "new_string": "  describe(\"human requester satisfies human_veto_required\", () => {\n    test(\"human_veto_required is false when requesterType is 'human' even if policy sets it\", async () => {\n      // Policy with human_veto_required: true\n      const vetoPolicy = {\n        id: new RecordId(\"policy\", \"veto-policy\"),\n        title: \"Require Human Veto\",\n        version: 1,\n        status: \"active\",\n        selector: {},\n        rules: [{\n          id: \"allow_all\",\n          condition: { field: \"goal\", operator: \"exists\", value: true },\n          effect: \"allow\",\n          priority: 1,\n        }],\n        human_veto_required: true,\n        created_by: mockIdentityId,\n        workspace: mockWorkspaceId,\n        created_at: new Date(),\n      };\n      const vetoPolicySurreal = {\n        query: async () => [[{ policies: [vetoPolicy] }]],\n      } as unknown as EvaluateIntentInput[\"surreal\"];\n\n      const result = await evaluateIntent(makeInput({\n        surreal: vetoPolicySurreal,\n        requesterType: \"human\",\n        llmEvaluator: makeLlmEvaluator(approvedLlmResult),\n      }));\n\n      expect(result.decision).toBe(\"APPROVE\");\n      expect(result.human_veto_required).toBe(false);\n    });\n\n    test(\"human_veto_required is true when requesterType is 'agent' and policy sets it\", async () => {\n      const vetoPolicy = {\n        id: new RecordId(\"policy\", \"veto-policy\"),\n        title: \"Require Human Veto\",\n        version: 1,\n        status: \"active\",\n        selector: {},\n        rules: [{\n          id: \"allow_all\",\n          condition: { field: \"goal\", operator: \"exists\", value: true },\n          effect: \"allow\",\n          priority: 1,\n        }],\n        human_veto_required: true,\n        created_by: mockIdentityId,\n        workspace: mockWorkspaceId,\n        created_at: new Date(),\n      };\n      const vetoPolicySurreal = {\n        query: async () => […]
 
@@ -1386,7 +1386,7 @@ id: toolu_01EEbaxYDRuxkNuj378hQMSh
 tool_result
 id: toolu_01EEbaxYDRuxkNuj378hQMSh
 ```
-The file /Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/unit/intent/authorizer.test.ts has been updated successfully.
+The file /home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/unit/intent/authorizer.test.ts has been updated successfully.
 ```
 
 > AGENT
@@ -1424,7 +1424,7 @@ error: expect(received).toBe(expected)
 Expected: false
 Received: true
 
-      at <anonymous> (/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/unit/intent/authorizer.test.ts:248:42)
+      at <anonymous> (/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/unit/intent/authorizer.test.ts:248:42)
 (fail) evaluateIntent > human requester satisfies human_veto_required > human_veto_required is false when requesterType is 'human' even if policy sets it [0.21ms]
 
  10 pass
@@ -1444,7 +1444,7 @@ id: toolu_01NSdVT26BAvTNXsh54oMmbG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server/intent/authorizer.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server/intent/authorizer.ts",
   "old_string": "  const humanVetoRequired = gateResult.human_veto_required;",
   "new_string": "  // Human veto exists so a person can review agent actions. When the\n  // requester IS a human the veto requirement is inherently satisfied.\n  const humanVetoRequired =\n    gateResult.human_veto_required && input.requesterType !== \"human\";"
 }
@@ -1455,7 +1455,7 @@ id: toolu_01NSdVT26BAvTNXsh54oMmbG
 tool_result
 id: toolu_01NSdVT26BAvTNXsh54oMmbG
 ```
-The file /Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server/intent/authorizer.ts has been updated successfully.
+The file /home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server/intent/authorizer.ts has been updated successfully.
 ```
 
 > AGENT

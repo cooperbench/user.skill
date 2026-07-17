@@ -38,7 +38,7 @@ tool_use Bash
 
 tool_result Bash
 ```
-/Users/user_c042661f/Documents/Veas
+/home/<USER>/Documents/Veas
 Procfile
 README.md
 __pycache__
@@ -199,7 +199,7 @@ tool_use Bash
 
 tool_result Bash
 ```
-/Users/user_c042661f/.nvm/versions/node/v20.19.4/bin/railway
+/home/<USER>/.nvm/versions/node/v20.19.4/bin/railway
 railway 4.12.0
 ```
 
@@ -539,7 +539,7 @@ tool_result Bash
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/tools/write_tools.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/tools/write_tools.py",
   "limit": 50,
   "offset": 155
 }
@@ -1178,7 +1178,7 @@ app/services/hot_context_solo.py:1091:    lines += ["", "## New reactions since 
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/hot_context_solo.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/hot_context_solo.py",
   "offset": 670,
   "limit": 40
 }
@@ -1524,7 +1524,7 @@ validation
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/migrations/0038_commitments_events.sql",
+  "file_path": "/home/<USER>/Documents/Veas/migrations/0038_commitments_events.sql",
   "limit": 30
 }
 ```
@@ -1570,7 +1570,7 @@ tool_result Read
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/tools/write_tools.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/tools/write_tools.py",
   "offset": 1,
   "limit": 200
 }
@@ -1646,7 +1646,7 @@ tool_result Read
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/tools/read_tools.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/tools/read_tools.py",
   "offset": 1,
   "limit": 120
 }
@@ -1732,7 +1732,7 @@ tool_result Read
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/tools/registry.py"
+  "file_path": "/home/<USER>/Documents/Veas/app/services/tools/registry.py"
 }
 ```
 
@@ -1984,7 +1984,7 @@ Updated task #1 status
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/migrations/0038_commitments_events.down.sql"
+  "file_path": "/home/<USER>/Documents/Veas/migrations/0038_commitments_events.down.sql"
 }
 ```
 
@@ -2007,7 +2007,7 @@ tool_result Read
 tool_use Write
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/migrations/0039_tool_calls_audit.sql",
+  "file_path": "/home/<USER>/Documents/Veas/migrations/0039_tool_calls_audit.sql",
   "content": "-- 0039_tool_calls_audit: Add kind + summary columns to tool_calls so the\n-- agent can audit its own past decisions (read vs. write tools, with a\n-- short human-readable summary line per call).\nBEGIN;\n\nALTER TABLE mediator.tool_calls\n  ADD COLUMN kind text NOT NULL DEFAULT 'write'\n    CHECK (kind IN ('read', 'write')),\n  ADD COLUMN summary text;\n\n-- Existing rows are all writes (only write_tools.py logged before this).\n-- The default above covers them; nothing else to backfill.\n\nCREATE INDEX idx_tool_calls_turn_kind\n  ON mediator.tool_calls (turn_id, kind);\n\nCOMMIT;\n"
 }
 ```
@@ -2016,7 +2016,7 @@ tool_use Write
 
 tool_result Write
 ```
-File created successfully at: /Users/user_c042661f/Documents/Veas/migrations/0039_tool_calls_audit.sql (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Documents/Veas/migrations/0039_tool_calls_audit.sql (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2024,7 +2024,7 @@ File created successfully at: /Users/user_c042661f/Documents/Veas/migrations/003
 tool_use Write
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/migrations/0039_tool_calls_audit.down.sql",
+  "file_path": "/home/<USER>/Documents/Veas/migrations/0039_tool_calls_audit.down.sql",
   "content": "-- 0039_tool_calls_audit down: Drop the audit columns and index.\nBEGIN;\n\nDROP INDEX IF EXISTS mediator.idx_tool_calls_turn_kind;\n\nALTER TABLE mediator.tool_calls\n  DROP COLUMN IF EXISTS summary,\n  DROP COLUMN IF EXISTS kind;\n\nCOMMIT;\n"
 }
 ```
@@ -2033,7 +2033,7 @@ tool_use Write
 
 tool_result Write
 ```
-File created successfully at: /Users/user_c042661f/Documents/Veas/migrations/0039_tool_calls_audit.down.sql (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Documents/Veas/migrations/0039_tool_calls_audit.down.sql (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2069,14 +2069,14 @@ Now create the shared audit module with summarizers.
 tool_use Write
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/tools/audit.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/tools/audit.py",
   "content": "\"\"\"Shared tool-call audit logger.\n\nPersists every tool invocation (read or write) to mediator.tool_calls so\nthe agent can introspect its own past decisions. Each row carries:\n  - kind: 'read' or 'write'\n  - arguments + result: full payloads (jsonb)\n  - summary: a short human-readable highlight for the renderer\n\nSummaries are generated by `TOOL_SUMMARIZERS` keyed on tool_name. Tools\nwithout a summarizer get `None`; the renderer falls back to a truncated\nJSON view.\n\"\"\"\n\nfrom __future__ import annotations\n\nimport json\nfrom datetime import UTC, datetime\nfrom typing import Any, Callable\n\nfrom pydantic import BaseModel\n\nfrom app.services.turn_context import TurnContext\n\n\ndef _jsonb_payload(value: BaseModel | dict[str, Any]) -> dict[str, Any]:\n    if isinstance(value, BaseModel):\n        return json.loads(value.model_dump_json())\n    return value\n\n\ndef _as_dict(value: BaseModel | dict[str, Any]) -> dict[str, Any]:\n    return _jsonb_payload(value)\n\n\n# ── Per-tool summarizers ────────────────────────────────────────────────\n#\n# Each summarizer receives (args_dict, result_dict) and returns a short\n# string. Keep them well under ~200 chars; the renderer composes many\n# summaries into the silent-turns hot-context block.\n#\n# Skip tools where args+result are already self-explanatory and short.\n\ndef _trunc(text: str | None, n: int = 80) -> str:\n    if not text:\n        return \"\"\n    text = text.replace(\"\\n\", \" \").strip()\n    return text if len(text) <= n else text[: n - 1] + \"…\"\n\n\ndef _summary_schedule_task(args: dict[str, Any], result: dict[str, Any]) -> str | None:\n    action = result.get(\"action\")\n    when […]
 
 > TOOL
 
 tool_result Write
 ```
-File created successfully at: /Users/user_c042661f/Documents/Veas/app/services/tools/audit.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Documents/Veas/app/services/tools/audit.py (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2123,7 +2123,7 @@ tool_use Edit
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/tools/write_tools.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/tools/write_tools.py",
   "old_string": "from app.services.tools.common import current_scheduled_task\nfrom app.services.tools.scope_guard import (",
   "new_string": "from app.services.tools.audit import log_tool_call as _log_tool_call_shared\nfrom app.services.tools.common import current_scheduled_task\nfrom app.services.tools.scope_guard import ("
 }
@@ -2133,7 +2133,7 @@ tool_use Edit
 
 tool_result Edit
 ```
-The file /Users/user_c042661f/Documents/Veas/app/services/tools/write_tools.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Documents/Veas/app/services/tools/write_tools.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2142,7 +2142,7 @@ tool_use Edit
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/tools/write_tools.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/tools/write_tools.py",
   "old_string": "async def _log_tool_call(\n    ctx: TurnContext,\n    name: str,\n    args: BaseModel,\n    started_at: datetime,\n    result: BaseModel | dict[str, Any],\n) -> None:\n    duration_ms = max(0, int((datetime.now(UTC) - started_at).total_seconds() * 1000))\n    await ctx.pool.execute(\n        \"\"\"\n        INSERT INTO tool_calls (turn_id, tool_name, arguments, result, called_at, duration_ms)\n        VALUES ($1, $2, $3::jsonb, $4::jsonb, $5, $6)\n        \"\"\",\n        ctx.turn_id,\n        name,\n        _jsonb_payload(args),\n        _jsonb_payload(result),\n        started_at,\n        duration_ms,\n    )",
   "new_string": "async def _log_tool_call(\n    ctx: TurnContext,\n    name: str,\n    args: BaseModel,\n    started_at: datetime,\n    result: BaseModel | dict[str, Any],\n) -> None:\n    \"\"\"Back-compat shim: delegate to the shared audit logger as a write.\"\"\"\n    await _log_tool_call_shared(\n        ctx, name, args, started_at, result, kind=\"write\"\n    )"
 }
@@ -2152,7 +2152,7 @@ tool_use Edit
 
 tool_result Edit
 ```
-The file /Users/user_c042661f/Documents/Veas/app/services/tools/write_tools.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Documents/Veas/app/services/tools/write_tools.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2265,7 +2265,7 @@ tool_use Edit
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/tools/write_tools.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/tools/write_tools.py",
   "old_string": "    result = ListScheduledTasksOutput(\n        tasks=[_scheduled_task_row(row, ctx) for row in rows]\n    )\n    await _log_tool_call(ctx, \"list_scheduled_tasks\", args, started, result)\n    return result",
   "new_string": "    result = ListScheduledTasksOutput(\n        tasks=[_scheduled_task_row(row, ctx) for row in rows]\n    )\n    await _log_tool_call_shared(\n        ctx, \"list_scheduled_tasks\", args, started, result, kind=\"read\"\n    )\n    return result"
 }
@@ -2275,7 +2275,7 @@ tool_use Edit
 
 tool_result Edit
 ```
-The file /Users/user_c042661f/Documents/Veas/app/services/tools/write_tools.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Documents/Veas/app/services/tools/write_tools.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2287,7 +2287,7 @@ Now wire read-tool logging in `registry.py`. Cleanest: log at the success path f
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/tools/registry.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/tools/registry.py",
   "offset": 630,
   "limit": 28
 }
@@ -2333,7 +2333,7 @@ tool_use Edit
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/tools/registry.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/tools/registry.py",
   "old_string": "from app.services.tools import read_tools, write_tools\nfrom app.services.tools.write_tools import ToolCallRejected",
   "new_string": "from app.services.tools import read_tools, write_tools\nfrom app.services.tools.audit import log_tool_call as _log_tool_call_audit\nfrom app.services.tools.write_tools import ToolCallRejected"
 }
@@ -2343,7 +2343,7 @@ tool_use Edit
 
 tool_result Edit
 ```
-The file /Users/user_c042661f/Documents/Veas/app/services/tools/registry.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Documents/Veas/app/services/tools/registry.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2372,7 +2372,7 @@ tool_use Edit
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/tools/registry.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/tools/registry.py",
   "old_string": "READ_PHASE_TOOLS = {",
   "new_string": "# Tools whose implementation already calls audit.log_tool_call themselves\n# (everything in write_tools.py + list_scheduled_tasks). The central\n# call_tool dispatcher uses this set to avoid double-logging.\n_SELF_LOGGING_TOOLS: frozenset[str] = frozenset({\n    # write_tools.py tools — all self-log\n    \"update_user_style_notes\",\n    \"set_partner_sharing\",\n    \"create_bridge_candidate\",\n    \"update_bridge_candidate\",\n    \"send_bridge_candidate\",\n    \"add_memory\",\n    \"update_memory\",\n    \"supersede_memory\",\n    \"create_theme\",\n    \"update_theme\",\n    \"add_watch_item\",\n    \"update_watch_item\",\n    \"address_watch_item\",\n    \"log_observation\",\n    \"update_observation\",\n    \"add_distillation\",\n    \"update_distillation\",\n    \"revise_distillation\",\n    \"add_oob\",\n    \"update_oob\",\n    \"lift_oob\",\n    \"schedule_checkin\",\n    \"cancel_scheduled_checkin\",\n    \"schedule_task\",\n    \"update_scheduled_task\",\n    \"cancel_scheduled_task\",\n    \"schedule_partner_checkin\",\n    \"cancel_partner_nudge\",\n    \"escalate_to_partner\",\n    \"edit_outbound_message\",\n    \"delete_outbound_message\",\n    \"react_to_message\",\n    \"explain_media_item\",\n    \"log_feedback\",\n    \"set_topic_status\",\n    \"set_pregnancy_edd\",\n    \"correct_pregnancy_edd\",\n    \"end_pregnancy\",\n    \"create_commitment\",\n    \"update_commitment\",\n    \"close_commitment\",\n    \"log_event\",\n    # read-shaped but lives in write_tools.py and self-logs\n    \"list_scheduled_tasks\",\n})\n\n\nREAD_PHASE_TOOLS = {"
 }
@@ -2382,7 +2382,7 @@ tool_use Edit
 
 tool_result Edit
 ```
-The file /Users/user_c042661f/Documents/Veas/app/services/tools/registry.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Documents/Veas/app/services/tools/registry.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2395,7 +2395,7 @@ tool_use Edit
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/tools/registry.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/tools/registry.py",
   "old_string": "    if name != \"update_turn_plan\":\n        ctx.tool_call_log.append(name)\n        _record_visible_tool_call(\n            tool_name=name,\n            args=args.model_dump(mode=\"json\"),\n            result=result_dict,\n            phase=phase,\n            started_at=started,\n        )\n    return result_dict",
   "new_string": "    if name != \"update_turn_plan\":\n        ctx.tool_call_log.append(name)\n        _record_visible_tool_call(\n            tool_name=name,\n            args=args.model_dump(mode=\"json\"),\n            result=result_dict,\n            phase=phase,\n            started_at=started,\n        )\n        # Persist read-tool calls to mediator.tool_calls so the agent can\n        # introspect its own past decisions. Write tools self-log inside\n        # their handlers (tracked in _SELF_LOGGING_TOOLS).\n        if name not in _SELF_LOGGING_TOOLS:\n            try:\n                await _log_tool_call_audit(\n                    ctx, name, args, started, result_dict, kind=\"read\"\n                )\n            except Exception:\n                # Audit logging must never break tool execution.\n                pass\n    return result_dict"
 }
@@ -2405,7 +2405,7 @@ tool_use Edit
 
 tool_result Edit
 ```
-The file /Users/user_c042661f/Documents/Veas/app/services/tools/registry.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Documents/Veas/app/services/tools/registry.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2486,7 +2486,7 @@ tool_result Bash
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/tool_schemas.py",
+  "file_path": "/home/<USER>/Documents/Veas/tool_schemas.py",
   "offset": 703,
   "limit": 40
 }
@@ -2543,7 +2543,7 @@ tool_result Read
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/tools/read_tools.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/tools/read_tools.py",
   "offset": 1082,
   "limit": 90
 }
@@ -2613,7 +2613,7 @@ tool_result Read
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/tool_schemas.py",
+  "file_path": "/home/<USER>/Documents/Veas/tool_schemas.py",
   "offset": 2180,
   "limit": 90
 }
@@ -2675,7 +2675,7 @@ tool_use Edit
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/user_c042661f/Documents/Veas/tool_schemas.py",
+  "file_path": "/home/<USER>/Documents/Veas/tool_schemas.py",
   "old_string": "class GetBotActionsOutput(BaseModel):\n    actions: list[BotAction]\n\n\n# ---------------------------------------------------------------------------\n# WRITE TOOLS",
   "new_string": "class GetBotActionsOutput(BaseModel):\n    actions: list[BotAction]\n\n\n# --- get_tool_call ---\n\nclass GetToolCallInput(BaseModel):\n    tool_call_id: UUID = Field(\n        description=\"The id of the tool_calls row to fetch — usually surfaced from a recent-turn summary or get_bot_actions output.\"\n    )\n\n\nclass ToolCallDetail(BaseModel):\n    id: UUID\n    turn_id: UUID\n    tool_name: str\n    kind: str\n    summary: str | None\n    arguments: dict\n    result: dict\n    called_at: datetime\n    called_at_time: TemporalReference | None = None\n    duration_ms: int | None\n\n\nclass GetToolCallOutput(BaseModel):\n    tool_call: ToolCallDetail | None = None\n\n\n# ---------------------------------------------------------------------------\n# WRITE TOOLS"
 }
@@ -2685,7 +2685,7 @@ tool_use Edit
 
 tool_result Edit
 ```
-The file /Users/user_c042661f/Documents/Veas/tool_schemas.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Documents/Veas/tool_schemas.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2694,7 +2694,7 @@ tool_use Edit
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/user_c042661f/Documents/Veas/tool_schemas.py",
+  "file_path": "/home/<USER>/Documents/Veas/tool_schemas.py",
   "old_string": "    \"get_bot_actions\": (GetBotActionsInput, GetBotActionsOutput),",
   "new_string": "    \"get_bot_actions\": (GetBotActionsInput, GetBotActionsOutput),\n    \"get_tool_call\": (GetToolCallInput, GetToolCallOutput),"
 }
@@ -2704,7 +2704,7 @@ tool_use Edit
 
 tool_result Edit
 ```
-The file /Users/user_c042661f/Documents/Veas/tool_schemas.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Documents/Veas/tool_schemas.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2716,7 +2716,7 @@ Now add `get_tool_call` implementation in read_tools.py.
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/tools/read_tools.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/tools/read_tools.py",
   "offset": 130,
   "limit": 40
 }
@@ -2774,7 +2774,7 @@ tool_use Edit
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/tools/read_tools.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/tools/read_tools.py",
   "old_string": "    GetSelfModelInput,\n    GetSelfModelOutput,",
   "new_string": "    GetSelfModelInput,\n    GetSelfModelOutput,\n    GetToolCallInput,\n    GetToolCallOutput,\n    ToolCallDetail,"
 }
@@ -2784,7 +2784,7 @@ tool_use Edit
 
 tool_result Edit
 ```
-The file /Users/user_c042661f/Documents/Veas/app/services/tools/read_tools.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Documents/Veas/app/services/tools/read_tools.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2796,7 +2796,7 @@ Now append the `get_tool_call` implementation. Let me find a good insertion poin
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/tools/read_tools.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/tools/read_tools.py",
   "offset": 1160,
   "limit": 25
 }
@@ -2839,7 +2839,7 @@ tool_use Edit
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/tools/read_tools.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/tools/read_tools.py",
   "old_string": "                audit_events=_with_audit_event_times(\n                    list(row.get(\"audit_events\") or []), ctx\n                ),\n            )\n            for row in rows\n        ]\n    )\n\n\n# NOTE (Critique flag 6): the symmetric write-tool `list_scheduled_tasks`",
   "new_string": "                audit_events=_with_audit_event_times(\n                    list(row.get(\"audit_events\") or []), ctx\n                ),\n            )\n            for row in rows\n        ]\n    )\n\n\nasync def get_tool_call(\n    ctx: TurnContext, args: GetToolCallInput\n) -> GetToolCallOutput:\n    \"\"\"Fetch full arguments + result for a single past tool call by id.\n\n    Surfaces from the silent-turns hot-context block and from\n    get_bot_actions tool_calls listings. Use when the highlight summary\n    isn't specific enough.\n    \"\"\"\n    logger.info(\n        \"read tool get_tool_call turn_id=%s target_tool_call_id=%s\",\n        ctx.turn_id,\n        args.tool_call_id,\n    )\n    row = await ctx.pool.fetchrow(\n        \"\"\"\n        SELECT id, turn_id, tool_name, kind, summary,\n               arguments, result, called_at, duration_ms\n        FROM tool_calls\n        WHERE id = $1\n        \"\"\",\n        args.tool_call_id,\n    )\n    if row is None:\n        return GetToolCallOutput(tool_call=None)\n    return GetToolCallOutput(\n        tool_call=ToolCallDetail(\n            id=row[\"id\"],\n            turn_id=row[\"turn_id\"],\n            tool_name=row[\"tool_name\"],\n            kind=row[\"kind\"],\n            summary=row[\"summary\"],\n            arguments=dict(row[\"arguments\"] or {}),\n            result=dict(row[\"result\"] or {}),\n            called_at=row[\"called_at\"],\n            called_at_time=_time(row[\"called_at\"], ctx),\n            duration_ms=row[\"duration_ms\"],\n        )\n    )\n\n\n# NOTE (Critique flag 6): the symmetric write-tool `list_scheduled_tasks`"
 }
@@ -2849,7 +2849,7 @@ tool_use Edit
 
 tool_result Edit
 ```
-The file /Users/user_c042661f/Documents/Veas/app/services/tools/read_tools.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Documents/Veas/app/services/tools/read_tools.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2936,7 +2936,7 @@ tool_use Edit
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/tools/registry.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/tools/registry.py",
   "old_string": "    \"get_bot_actions\": \"Audit what the assistant did or why for questions about your own past actions; do not reconstruct from memory. Example: answer 'why did you tell her that?'\",",
   "new_string": "    \"get_bot_actions\": \"Audit what the assistant did or why for questions about your own past actions; do not reconstruct from memory. Use this when the user asks 'did you do X this morning?', 'what have you been up to?', 'why did you tell her that?' — silent turns (scheduled tasks that fired but sent no message) only exist here, not in the message timeline. Each returned turn carries its tool_calls; drill into one with `get_tool_call(tool_call_id)` for full arguments and result.\",\n    \"get_tool_call\": \"Fetch full arguments + result for one past tool_call by id. Surfaced from the silent-turns hot-context block and from get_bot_actions tool_calls listings. Use when the highlight summary in context isn't specific enough to answer the question — for example to inspect exactly which messages a prior `search_messages` returned, or what brief a prior `schedule_task` set.\","
 }
@@ -2946,7 +2946,7 @@ tool_use Edit
 
 tool_result Edit
 ```
-The file /Users/user_c042661f/Documents/Veas/app/services/tools/registry.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Documents/Veas/app/services/tools/registry.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2955,7 +2955,7 @@ tool_use Edit
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/tools/registry.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/tools/registry.py",
   "old_string": "    \"get_bot_actions\": read_tools.get_bot_actions,",
   "new_string": "    \"get_bot_actions\": read_tools.get_bot_actions,\n    \"get_tool_call\": read_tools.get_tool_call,"
 }
@@ -2965,7 +2965,7 @@ tool_use Edit
 
 tool_result Edit
 ```
-The file /Users/user_c042661f/Documents/Veas/app/services/tools/registry.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Documents/Veas/app/services/tools/registry.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2974,7 +2974,7 @@ tool_use Edit
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/tools/registry.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/tools/registry.py",
   "old_string": "    \"get_bot_actions\",\n    \"send_message_part\",",
   "new_string": "    \"get_bot_actions\",\n    \"get_tool_call\",\n    \"send_message_part\","
 }
@@ -2984,7 +2984,7 @@ tool_use Edit
 
 tool_result Edit
 ```
-The file /Users/user_c042661f/Documents/Veas/app/services/tools/registry.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Documents/Veas/app/services/tools/registry.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3107,7 +3107,7 @@ tool_result Bash
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/hot_context_solo.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/hot_context_solo.py",
   "offset": 1075,
   "limit": 90
 }
@@ -3185,7 +3185,7 @@ Your tool call was malformed and could not be parsed. Please retry.
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/hot_context_solo.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/hot_context_solo.py",
   "offset": 30,
   "limit": 60
 }
@@ -3250,7 +3250,7 @@ tool_use Edit
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/hot_context_solo.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/hot_context_solo.py",
   "old_string": "    recent_reactions: list[dict[str, Any]] = field(default_factory=list)\n    topic_status: dict[str, Any] | None = None",
   "new_string": "    recent_reactions: list[dict[str, Any]] = field(default_factory=list)\n    silent_turns: list[dict[str, Any]] = field(default_factory=list)\n    topic_status: dict[str, Any] | None = None"
 }
@@ -3260,7 +3260,7 @@ tool_use Edit
 
 tool_result Edit
 ```
-The file /Users/user_c042661f/Documents/Veas/app/services/hot_context_solo.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Documents/Veas/app/services/hot_context_solo.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3272,7 +3272,7 @@ Now find the build function and add silent-turn fetching. Let me look at how rec
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/hot_context_solo.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/hot_context_solo.py",
   "offset": 630,
   "limit": 80
 }
@@ -3342,7 +3342,7 @@ tool_use Edit
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/hot_context_solo.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/hot_context_solo.py",
   "old_string": "    cross_topic_peek: list[dict[str, Any]] = []\n    if allow_cross_topic_peek:",
   "new_string": "    # Silent turns since the user's last inbound message — turns where the\n    # agent did something (e.g. fired a scheduled task) but sent no outbound\n    # message, so the message timeline has no record. Without this section\n    # the agent has no way to know it already ran a check this morning.\n    silent_turns_rows = await pool.fetch(\n        \"\"\"\\\n        WITH last_inbound AS (\n            SELECT MAX(sent_at) AS sent_at\n            FROM messages\n            WHERE direction = 'inbound'\n              AND sender_id = $1\n        ),\n        floor_ts AS (\n            SELECT COALESCE(\n                (SELECT sent_at FROM last_inbound),\n                $2::timestamptz - INTERVAL '24 hours'\n            ) AS ts\n        )\n        SELECT bt.id AS turn_id,\n               bt.started_at,\n               bt.completed_at,\n               bt.bot_id,\n               bt.reasoning,\n               COALESCE(\n                 jsonb_agg(\n                   jsonb_build_object(\n                     'id', tc.id,\n                     'tool_name', tc.tool_name,\n                     'kind', tc.kind,\n                     'summary', tc.summary,\n                     'called_at', tc.called_at\n                   )\n                   ORDER BY tc.called_at\n                 ) FILTER (WHERE tc.id IS NOT NULL),\n                 '[]'::jsonb\n               ) AS tool_calls,\n               (\n                 SELECT context\n                 FROM scheduled_jobs sj\n                 WHERE sj.id = ANY(bt.triggering_message_ids::text::uuid[])\n                 LIMIT 1\n               ) AS scheduled_job_context\n        FROM bot_turns bt\n        LEFT JOIN tool_calls tc ON tc.turn_id = bt.id\n        WHERE bt.user_in_context = $1\n          AND bt.completed_at IS NOT NULL\n          AND bt.completed_at > (SELECT ts FROM floor_ts)\n          AND bt.completed_at <= $2\n          AND bt.final_output_message_id IS NULL\n […]
 
@@ -3350,7 +3350,7 @@ tool_use Edit
 
 tool_result Edit
 ```
-The file /Users/user_c042661f/Documents/Veas/app/services/hot_context_solo.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Documents/Veas/app/services/hot_context_solo.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3359,7 +3359,7 @@ tool_use Edit
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/hot_context_solo.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/hot_context_solo.py",
   "old_string": "               COALESCE(\n                 jsonb_agg(\n                   jsonb_build_object(\n                     'id', tc.id,\n                     'tool_name', tc.tool_name,\n                     'kind', tc.kind,\n                     'summary', tc.summary,\n                     'called_at', tc.called_at\n                   )\n                   ORDER BY tc.called_at\n                 ) FILTER (WHERE tc.id IS NOT NULL),\n                 '[]'::jsonb\n               ) AS tool_calls,\n               (\n                 SELECT context\n                 FROM scheduled_jobs sj\n                 WHERE sj.id = ANY(bt.triggering_message_ids::text::uuid[])\n                 LIMIT 1\n               ) AS scheduled_job_context\n        FROM bot_turns bt",
   "new_string": "               COALESCE(\n                 jsonb_agg(\n                   jsonb_build_object(\n                     'id', tc.id,\n                     'tool_name', tc.tool_name,\n                     'kind', tc.kind,\n                     'summary', tc.summary,\n                     'called_at', tc.called_at\n                   )\n                   ORDER BY tc.called_at\n                 ) FILTER (WHERE tc.id IS NOT NULL),\n                 '[]'::jsonb\n               ) AS tool_calls\n        FROM bot_turns bt"
 }
@@ -3369,7 +3369,7 @@ tool_use Edit
 
 tool_result Edit
 ```
-The file /Users/user_c042661f/Documents/Veas/app/services/hot_context_solo.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Documents/Veas/app/services/hot_context_solo.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3399,7 +3399,7 @@ tool_result Bash
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/hot_context_solo.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/hot_context_solo.py",
   "offset": 810,
   "limit": 35
 }
@@ -3452,7 +3452,7 @@ tool_use Edit
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/hot_context_solo.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/hot_context_solo.py",
   "old_string": "        recent_reactions=recent_reactions,\n        recent_messages=recent_messages,",
   "new_string": "        recent_reactions=recent_reactions,\n        silent_turns=silent_turns,\n        recent_messages=recent_messages,"
 }
@@ -3462,7 +3462,7 @@ tool_use Edit
 
 tool_result Edit
 ```
-The file /Users/user_c042661f/Documents/Veas/app/services/hot_context_solo.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Documents/Veas/app/services/hot_context_solo.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3470,7 +3470,7 @@ The file /Users/user_c042661f/Documents/Veas/app/services/hot_context_solo.py ha
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/hot_context_solo.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/hot_context_solo.py",
   "offset": 1220,
   "limit": 45
 }
@@ -3533,7 +3533,7 @@ tool_use Edit
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/hot_context_solo.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/hot_context_solo.py",
   "old_string": "        recent_reactions=list(hc.recent_reactions),\n        recent_messages=list(hc.recent_messages),",
   "new_string": "        recent_reactions=list(hc.recent_reactions),\n        silent_turns=list(hc.silent_turns),\n        recent_messages=list(hc.recent_messages),"
 }
@@ -3543,7 +3543,7 @@ tool_use Edit
 
 tool_result Edit
 ```
-The file /Users/user_c042661f/Documents/Veas/app/services/hot_context_solo.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Documents/Veas/app/services/hot_context_solo.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3556,7 +3556,7 @@ tool_use Edit
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/hot_context_solo.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/hot_context_solo.py",
   "old_string": "    lines += [\"\", \"## New reactions since previous turn\"]",
   "new_string": "    # Silent agent turns since the user's last message — work the agent\n    # already did that did NOT produce an outbound message (e.g. a fired\n    # scheduled_task that decided to stay quiet). Without this section,\n    # the message timeline gives the agent no record of these turns.\n    lines += [\"\", \"## Your silent turns since the user's last message\"]\n    if hc.silent_turns:\n        for turn in hc.silent_turns:\n            started_label = _time_label(turn, \"started_at\") or turn.get(\"started_at\")\n            reasoning = _clip(\n                (turn.get(\"reasoning\") or \"\").strip().splitlines()[0]\n                if turn.get(\"reasoning\")\n                else \"\",\n                clip_limit,\n            )\n            lines.append(\n                f\"- {started_label} turn_id={turn['turn_id']}\"\n                f\"{' bot=' + turn['bot_id'] if turn.get('bot_id') else ''}\"\n                f\" — {reasoning or '[no reasoning recorded]'}\"\n            )\n            for tc in turn.get(\"tool_calls\") or []:\n                summary = tc.get(\"summary\") or f\"{tc.get('tool_name')} (no summary)\"\n                lines.append(\n                    f\"    · tool_call_id={tc.get('id')} {_clip(summary, clip_limit)}\"\n                )\n        lines.append(\n            \"- Use these to answer 'did you do X this morning?' truthfully.\"\n            \" Drill into a specific tool call with get_tool_call(tool_call_id)\"\n            \" when the summary isn't enough.\"\n        )\n    else:\n        lines.append(\"- none\")\n    lines += [\"\", \"## New reactions since previous turn\"]"
 }
@@ -3566,7 +3566,7 @@ tool_use Edit
 
 tool_result Edit
 ```
-The file /Users/user_c042661f/Documents/Veas/app/services/hot_context_solo.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Documents/Veas/app/services/hot_context_solo.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3613,7 +3613,7 @@ tool_result Bash
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/hot_context.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/hot_context.py",
   "offset": 38,
   "limit": 25
 }
@@ -3656,7 +3656,7 @@ tool_use Edit
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/hot_context.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/hot_context.py",
   "old_string": "    recent_reactions: list[dict[str, Any]] = field(default_factory=list)\n    topic_status: dict[str, Any] | None = None",
   "new_string": "    recent_reactions: list[dict[str, Any]] = field(default_factory=list)\n    silent_turns: list[dict[str, Any]] = field(default_factory=list)\n    topic_status: dict[str, Any] | None = None"
 }
@@ -3666,7 +3666,7 @@ tool_use Edit
 
 tool_result Edit
 ```
-The file /Users/user_c042661f/Documents/Veas/app/services/hot_context.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Documents/Veas/app/services/hot_context.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3693,7 +3693,7 @@ tool_result Bash
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/hot_context.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/hot_context.py",
   "offset": 860,
   "limit": 100
 }
@@ -3758,7 +3758,7 @@ tool_use Edit
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/hot_context.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/hot_context.py",
   "old_string": "    cross_topic_peek: list[dict[str, Any]] = []\n    if allow_cross_topic_peek:",
   "new_string": "    # Silent agent turns since the user's last message in this dyad/bot —\n    # turns that did work (e.g. fired a scheduled task) but produced no\n    # outbound message. The message timeline can't show these.\n    silent_turns_rows = await pool.fetch(\n        \"\"\"\\\n        WITH last_inbound AS (\n            SELECT MAX(sent_at) AS sent_at\n            FROM messages\n            WHERE direction = 'inbound'\n              AND sender_id = $1\n              AND bot_id = $3\n              AND topic_id = $4\n        ),\n        floor_ts AS (\n            SELECT COALESCE(\n                (SELECT sent_at FROM last_inbound),\n                $2::timestamptz - INTERVAL '24 hours'\n            ) AS ts\n        )\n        SELECT bt.id AS turn_id,\n               bt.started_at,\n               bt.completed_at,\n               bt.bot_id,\n               bt.reasoning,\n               COALESCE(\n                 jsonb_agg(\n                   jsonb_build_object(\n                     'id', tc.id,\n                     'tool_name', tc.tool_name,\n                     'kind', tc.kind,\n                     'summary', tc.summary,\n                     'called_at', tc.called_at\n                   )\n                   ORDER BY tc.called_at\n                 ) FILTER (WHERE tc.id IS NOT NULL),\n                 '[]'::jsonb\n               ) AS tool_calls\n        FROM bot_turns bt\n        LEFT JOIN tool_calls tc ON tc.turn_id = bt.id\n        WHERE bt.user_in_context = $1\n          AND bt.completed_at IS NOT NULL\n          AND bt.completed_at > (SELECT ts FROM floor_ts)\n          AND bt.completed_at <= $2\n          AND bt.final_output_message_id IS NULL\n          AND bt.failure_reason IS NULL\n          AND bt.bot_id = $3\n          AND bt.topic_id = $4\n        GROUP BY bt.id\n        ORDER BY bt.completed_at DESC\n        LIMIT 5\n        \"\"\",\n        user.id,\n        now_utc,\n        bot_id,\n […]
 
@@ -3766,7 +3766,7 @@ tool_use Edit
 
 tool_result Edit
 ```
-The file /Users/user_c042661f/Documents/Veas/app/services/hot_context.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Documents/Veas/app/services/hot_context.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3775,7 +3775,7 @@ tool_use Edit
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/hot_context.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/hot_context.py",
   "old_string": "        recent_reactions=recent_reactions,\n        recent_messages=recent_messages,",
   "new_string": "        recent_reactions=recent_reactions,\n        silent_turns=silent_turns,\n        recent_messages=recent_messages,"
 }
@@ -3785,7 +3785,7 @@ tool_use Edit
 
 tool_result Edit
 ```
-The file /Users/user_c042661f/Documents/Veas/app/services/hot_context.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Documents/Veas/app/services/hot_context.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3794,7 +3794,7 @@ tool_use Edit
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/hot_context.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/hot_context.py",
   "old_string": "        recent_reactions=list(hc.recent_reactions),",
   "new_string": "        recent_reactions=list(hc.recent_reactions),\n        silent_turns=list(hc.silent_turns),"
 }
@@ -3804,7 +3804,7 @@ tool_use Edit
 
 tool_result Edit
 ```
-The file /Users/user_c042661f/Documents/Veas/app/services/hot_context.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Documents/Veas/app/services/hot_context.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3812,7 +3812,7 @@ The file /Users/user_c042661f/Documents/Veas/app/services/hot_context.py has bee
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/hot_context.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/hot_context.py",
   "offset": 1340,
   "limit": 25
 }
@@ -3855,7 +3855,7 @@ tool_use Edit
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/hot_context.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/hot_context.py",
   "old_string": "    if truncations.get(\"recent_messages\"):\n        lines.append(f\"- [truncated, {truncations['recent_messages']} more]\")\n    lines += [\"\", \"## New reactions since previous turn\"]",
   "new_string": "    if truncations.get(\"recent_messages\"):\n        lines.append(f\"- [truncated, {truncations['recent_messages']} more]\")\n    # Silent agent turns since the user's last message — work the agent\n    # already did that produced no outbound message. The message timeline\n    # cannot show these; this section is the only record.\n    lines += [\"\", \"## Your silent turns since the user's last message\"]\n    if hc.silent_turns:\n        for turn in hc.silent_turns:\n            started_label = _time_label(turn, \"started_at\") or turn.get(\"started_at\")\n            reasoning_text = (turn.get(\"reasoning\") or \"\").strip()\n            first_line = reasoning_text.splitlines()[0] if reasoning_text else \"\"\n            reasoning = _clip(first_line, clip_limit)\n            lines.append(\n                f\"- {started_label} turn_id={turn['turn_id']}\"\n                f\"{' bot=' + turn['bot_id'] if turn.get('bot_id') else ''}\"\n                f\" — {reasoning or '[no reasoning recorded]'}\"\n            )\n            for tc in turn.get(\"tool_calls\") or []:\n                summary = tc.get(\"summary\") or f\"{tc.get('tool_name')} (no summary)\"\n                lines.append(\n                    f\"    · tool_call_id={tc.get('id')} {_clip(summary, clip_limit)}\"\n                )\n        lines.append(\n            \"- Use these to answer 'did you do X this morning?' truthfully.\"\n            \" Drill into a specific tool call with get_tool_call(tool_call_id)\"\n            \" when the summary isn't enough.\"\n        )\n    else:\n        lines.append(\"- none\")\n    lines += [\"\", \"## New reactions since previous turn\"]"
 }
@@ -3865,7 +3865,7 @@ tool_use Edit
 
 tool_result Edit
 ```
-The file /Users/user_c042661f/Documents/Veas/app/services/hot_context.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Documents/Veas/app/services/hot_context.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3929,7 +3929,7 @@ app/services/prompts.py:146:- Audit questions ("why did you tell her that?", "wh
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/prompts.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/prompts.py",
   "offset": 140,
   "limit": 12
 }
@@ -3959,7 +3959,7 @@ tool_use Edit
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/prompts.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/prompts.py",
   "old_string": "- Audit questions (\"why did you tell her that?\", \"what did you do?\") go through `get_bot_actions`, not memory.",
   "new_string": "- Audit questions (\"why did you tell her that?\", \"what did you do?\", \"did you do X this morning?\") go through `get_bot_actions`, not memory. The `## Your silent turns since the user's last message` hot-context block already lists scheduled-task firings and other turns that produced no outbound message — check it before answering, and never say \"I didn't do that\" if a matching silent turn is listed there. For one-off questions where the highlighted summary isn't enough (e.g. \"exactly which messages did you search?\"), drill into a specific row with `get_tool_call(tool_call_id)`."
 }
@@ -3969,7 +3969,7 @@ tool_use Edit
 
 tool_result Edit
 ```
-The file /Users/user_c042661f/Documents/Veas/app/services/prompts.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Documents/Veas/app/services/prompts.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3977,7 +3977,7 @@ The file /Users/user_c042661f/Documents/Veas/app/services/prompts.py has been up
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/prompts_solo.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/prompts_solo.py",
   "offset": 215,
   "limit": 18
 }
@@ -4013,7 +4013,7 @@ tool_use Edit
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/prompts_solo.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/prompts_solo.py",
   "old_string": "- Audit questions (\"why did you tell me that?\", \"what did you do?\") go\n  through `get_bot_actions`, not memory.",
   "new_string": "- Audit questions (\"why did you tell me that?\", \"what did you do?\", \"did you\n  do X this morning?\") go through `get_bot_actions`, not memory. The\n  `## Your silent turns since the user's last message` hot-context block\n  already lists scheduled-task firings and other turns that produced no\n  outbound message — check it before answering, and never say \"I didn't do\n  that\" if a matching silent turn is listed there. For one-off questions\n  where the highlighted summary isn't enough (e.g. \"exactly which messages\n  did you search?\"), drill into a specific row with\n  `get_tool_call(tool_call_id)`."
 }
@@ -4023,7 +4023,7 @@ tool_use Edit
 
 tool_result Edit
 ```
-The file /Users/user_c042661f/Documents/Veas/app/services/prompts_solo.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Documents/Veas/app/services/prompts_solo.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4184,7 +4184,7 @@ tool_result Bash
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/tests/conftest.py",
+  "file_path": "/home/<USER>/Documents/Veas/tests/conftest.py",
   "offset": 3783,
   "limit": 30
 }
@@ -4232,7 +4232,7 @@ tool_use Edit
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/user_c042661f/Documents/Veas/tests/conftest.py",
+  "file_path": "/home/<USER>/Documents/Veas/tests/conftest.py",
   "old_string": "        if compact.startswith(\"INSERT INTO tool_calls\"):\n            turn_id, tool_name, arguments, result, called_at, duration_ms = args\n            self.tool_calls.append(\n                {\n                    \"turn_id\": turn_id,\n                    \"tool_name\": tool_name,\n                    \"arguments\": _coerce_jsonb(arguments),\n                    \"result\": _coerce_jsonb(result),\n                    \"called_at\": called_at,\n                    \"duration_ms\": duration_ms,\n                }\n            )\n            return \"INSERT 0 1\"",
   "new_string": "        if compact.startswith(\"INSERT INTO tool_calls\"):\n            # New schema (migration 0039) adds kind + summary; old call\n            # sites still pass 6 args, so handle both shapes.\n            if len(args) == 8:\n                (\n                    turn_id,\n                    tool_name,\n                    arguments,\n                    result,\n                    called_at,\n                    duration_ms,\n                    kind,\n                    summary,\n                ) = args\n            else:\n                turn_id, tool_name, arguments, result, called_at, duration_ms = args\n                kind, summary = \"write\", None\n            self.tool_calls.append(\n                {\n                    \"turn_id\": turn_id,\n                    \"tool_name\": tool_name,\n                    \"arguments\": _coerce_jsonb(arguments),\n                    \"result\": _coerce_jsonb(result),\n                    \"called_at\": called_at,\n                    \"duration_ms\": duration_ms,\n                    \"kind\": kind,\n                    \"summary\": summary,\n                }\n            )\n            return \"INSERT 0 1\""
 }
@@ -4242,7 +4242,7 @@ tool_use Edit
 
 tool_result Edit
 ```
-The file /Users/user_c042661f/Documents/Veas/tests/conftest.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Documents/Veas/tests/conftest.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4250,7 +4250,7 @@ The file /Users/user_c042661f/Documents/Veas/tests/conftest.py has been updated 
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/tests/conftest.py",
+  "file_path": "/home/<USER>/Documents/Veas/tests/conftest.py",
   "offset": 645,
   "limit": 25
 }
@@ -4318,7 +4318,7 @@ tool_use Bash
 
 tool_result Bash
 ```
-pyenv: version `3.8.10' is not installed (set by /Users/user_c042661f/.pyenv/version)
+pyenv: version `3.8.10' is not installed (set by /home/<USER>/.pyenv/version)
 pyenv: python: command not found
 
 The `python' command exists in these Python versions:
@@ -4430,7 +4430,7 @@ tool_result Bash
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/tests/test_hot_context.py",
+  "file_path": "/home/<USER>/Documents/Veas/tests/test_hot_context.py",
   "offset": 160,
   "limit": 90
 }
@@ -4497,7 +4497,7 @@ tool_result Read
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/tests/test_hot_context.py",
+  "file_path": "/home/<USER>/Documents/Veas/tests/test_hot_context.py",
   "offset": 250,
   "limit": 120
 }
@@ -4576,7 +4576,7 @@ tool_result Bash
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/tests/test_hot_context.py",
+  "file_path": "/home/<USER>/Documents/Veas/tests/test_hot_context.py",
   "offset": 368,
   "limit": 15
 }
@@ -4609,7 +4609,7 @@ tool_use Edit
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/user_c042661f/Documents/Veas/tests/test_hot_context.py",
+  "file_path": "/home/<USER>/Documents/Veas/tests/test_hot_context.py",
   "old_string": "            return list(reversed(scoped_rows[-20:]))\n        raise AssertionError(compact)",
   "new_string": "            return list(reversed(scoped_rows[-20:]))\n        if \"FROM bot_turns bt\" in compact and \"final_output_message_id IS NULL\" in compact:\n            # Silent-turns hot-context block. The real query joins\n            # tool_calls; the fake pool doesn't track silent turns, so\n            # default to no silent turns. Tests that exercise the block\n            # should construct rows directly.\n            return []\n        raise AssertionError(compact)"
 }
@@ -4619,7 +4619,7 @@ tool_use Edit
 
 tool_result Edit
 ```
-The file /Users/user_c042661f/Documents/Veas/tests/test_hot_context.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Documents/Veas/tests/test_hot_context.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4724,7 +4724,7 @@ FAILED tests/test_hot_context.py::test_build_hot_context_returns_expected_fields
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/tests/test_hot_context.py",
+  "file_path": "/home/<USER>/Documents/Veas/tests/test_hot_context.py",
   "offset": 370,
   "limit": 12
 }
@@ -4754,7 +4754,7 @@ tool_use Edit
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/user_c042661f/Documents/Veas/tests/test_hot_context.py",
+  "file_path": "/home/<USER>/Documents/Veas/tests/test_hot_context.py",
   "old_string": "        if \"FROM messages\" in compact and \"WHERE id = ANY\" in compact:",
   "new_string": "        if \"FROM bot_turns bt\" in compact and \"final_output_message_id IS NULL\" in compact:\n            # Silent-turns hot-context block. The real query joins\n            # tool_calls; the fake pool doesn't track silent turns, so\n            # default to no silent turns. Tests that exercise the block\n            # should construct rows directly.\n            return []\n        if \"FROM messages\" in compact and \"WHERE id = ANY\" in compact:"
 }
@@ -4764,7 +4764,7 @@ tool_use Edit
 
 tool_result Edit
 ```
-The file /Users/user_c042661f/Documents/Veas/tests/test_hot_context.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Documents/Veas/tests/test_hot_context.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4773,7 +4773,7 @@ tool_use Edit
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/user_c042661f/Documents/Veas/tests/test_hot_context.py",
+  "file_path": "/home/<USER>/Documents/Veas/tests/test_hot_context.py",
   "old_string": "            return list(reversed(scoped_rows[-20:]))\n        if \"FROM bot_turns bt\" in compact and \"final_output_message_id IS NULL\" in compact:\n            # Silent-turns hot-context block. The real query joins\n            # tool_calls; the fake pool doesn't track silent turns, so\n            # default to no silent turns. Tests that exercise the block\n            # should construct rows directly.\n            return []\n        raise AssertionError(compact)",
   "new_string": "            return list(reversed(scoped_rows[-20:]))\n        raise AssertionError(compact)"
 }
@@ -4783,7 +4783,7 @@ tool_use Edit
 
 tool_result Edit
 ```
-The file /Users/user_c042661f/Documents/Veas/tests/test_hot_context.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Documents/Veas/tests/test_hot_context.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4834,7 +4834,7 @@ tool_result Bash
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/tests/conftest.py",
+  "file_path": "/home/<USER>/Documents/Veas/tests/conftest.py",
   "offset": 28,
   "limit": 15
 }
@@ -4883,7 +4883,7 @@ tool_result Bash
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/tests/test_hot_context.py",
+  "file_path": "/home/<USER>/Documents/Veas/tests/test_hot_context.py",
   "offset": 420,
   "limit": 80
 }
@@ -5192,7 +5192,7 @@ FAILED tests/test_agentic.py::test_agentic_why_query_uses_get_bot_actions - T...
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/tests/test_agentic.py",
+  "file_path": "/home/<USER>/Documents/Veas/tests/test_agentic.py",
   "offset": 95,
   "limit": 35
 }
@@ -5245,7 +5245,7 @@ tool_use Edit
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/user_c042661f/Documents/Veas/tests/test_agentic.py",
+  "file_path": "/home/<USER>/Documents/Veas/tests/test_agentic.py",
   "old_string": "        if \"FROM bot_turns bt\" in compact and \"LEFT JOIN tool_calls\" in compact:\n            self.mark(\"read:get_bot_actions\")",
   "new_string": "        if (\n            \"FROM bot_turns bt\" in compact\n            and \"final_output_message_id IS NULL\" in compact\n        ):\n            # Silent-turns hot-context block. No silent turns in fake state.\n            return []\n        if \"FROM bot_turns bt\" in compact and \"LEFT JOIN tool_calls\" in compact:\n            self.mark(\"read:get_bot_actions\")"
 }
@@ -5255,7 +5255,7 @@ tool_use Edit
 
 tool_result Edit
 ```
-The file /Users/user_c042661f/Documents/Veas/tests/test_agentic.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Documents/Veas/tests/test_agentic.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5359,7 +5359,7 @@ tool_result Bash
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/tests/test_agentic.py",
+  "file_path": "/home/<USER>/Documents/Veas/tests/test_agentic.py",
   "offset": 418,
   "limit": 40
 }
@@ -5417,7 +5417,7 @@ tool_use Edit
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/user_c042661f/Documents/Veas/tests/test_agentic.py",
+  "file_path": "/home/<USER>/Documents/Veas/tests/test_agentic.py",
   "old_string": "    assert turn[\"tool_call_count\"] == 7\n    assert [row[\"tool_name\"] for row in pool.tool_calls] == [\n        \"update_observation\",\n        \"add_watch_item\",\n        \"schedule_checkin\",\n    ]",
   "new_string": "    assert turn[\"tool_call_count\"] == 7\n    # Reads are also persisted to tool_calls now (kind='read'). Filter to\n    # write-side rows to assert the write trail; the full sequence is\n    # checked indirectly via tool_call_count above.\n    assert [\n        row[\"tool_name\"]\n        for row in pool.tool_calls\n        if row.get(\"kind\", \"write\") == \"write\"\n    ] == [\n        \"update_observation\",\n        \"add_watch_item\",\n        \"schedule_checkin\",\n    ]"
 }
@@ -5427,7 +5427,7 @@ tool_use Edit
 
 tool_result Edit
 ```
-The file /Users/user_c042661f/Documents/Veas/tests/test_agentic.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Documents/Veas/tests/test_agentic.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5498,7 +5498,7 @@ tool_result Bash
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/tests/test_evals_capture.py",
+  "file_path": "/home/<USER>/Documents/Veas/tests/test_evals_capture.py",
   "offset": 25,
   "limit": 80
 }
@@ -5568,7 +5568,7 @@ tool_use Edit
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/user_c042661f/Documents/Veas/tests/test_evals_capture.py",
+  "file_path": "/home/<USER>/Documents/Veas/tests/test_evals_capture.py",
   "old_string": "    assert \"observations\" in read_result\n    assert write_result[\"id\"] == str(observation_id)\n    assert [call.tool_name for call in transcript.calls] == [\"get_observations\", \"update_observation\"]\n    assert [call.phase for call in transcript.calls] == [\"read\", \"record\"]\n    assert len(fake_pool.tool_calls) == 1\n    assert fake_pool.tool_calls[0][\"tool_name\"] == \"update_observation\"",
   "new_string": "    assert \"observations\" in read_result\n    assert write_result[\"id\"] == str(observation_id)\n    assert [call.tool_name for call in transcript.calls] == [\"get_observations\", \"update_observation\"]\n    assert [call.phase for call in transcript.calls] == [\"read\", \"record\"]\n    # Migration 0039: reads are persisted too, with kind='read'. Writes\n    # still self-log as kind='write'. No duplicate rows for either.\n    assert [\n        (row[\"tool_name\"], row.get(\"kind\", \"write\"))\n        for row in fake_pool.tool_calls\n    ] == [\n        (\"get_observations\", \"read\"),\n        (\"update_observation\", \"write\"),\n    ]"
 }
@@ -5578,7 +5578,7 @@ tool_use Edit
 
 tool_result Edit
 ```
-The file /Users/user_c042661f/Documents/Veas/tests/test_evals_capture.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Documents/Veas/tests/test_evals_capture.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5634,7 +5634,7 @@ tool_result Bash
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/tests/test_evals_capture.py",
+  "file_path": "/home/<USER>/Documents/Veas/tests/test_evals_capture.py",
   "offset": 1,
   "limit": 24
 }
@@ -5679,14 +5679,14 @@ Now write a focused new test file for the silent-turn / audit additions.
 tool_use Write
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/tests/test_tool_audit.py",
+  "file_path": "/home/<USER>/Documents/Veas/tests/test_tool_audit.py",
   "content": "\"\"\"Tests for the read/write tool_calls audit trail and the silent-turn\nself-introspection path (migration 0039 + hot_context silent_turns block).\n\nCovers:\n  - Read tools persist to mediator.tool_calls with kind='read' and a summary.\n  - Write tools persist with kind='write' and use the same shared logger.\n  - get_tool_call read tool returns full args + result for a given id.\n  - audit.summarize_tool_call produces sensible highlights.\n\"\"\"\nfrom __future__ import annotations\n\nfrom datetime import UTC, datetime\nfrom uuid import uuid4\n\nimport pytest\n\nfrom app.models.user import User\nfrom app.services.turn_context import TurnContext\nfrom app.services.tools.audit import summarize_tool_call\nfrom app.services.tools.registry import call_tool\nfrom tests.conftest import FakePool\n\npytestmark = pytest.mark.anyio\n\n\ndef _ctx(pool: FakePool, *, current_step: str) -> TurnContext:\n    user = User(uuid4(), \"Maya\", \"15555550100\", \"UTC\")\n    partner = User(uuid4(), \"Ben\", \"15555550101\", \"UTC\")\n    pool.users[user.id] = {\n        \"id\": user.id,\n        \"name\": user.name,\n        \"phone\": user.phone,\n        \"timezone\": user.timezone,\n    }\n    pool.users[partner.id] = {\n        \"id\": partner.id,\n        \"name\": partner.name,\n        \"phone\": partner.phone,\n        \"timezone\": partner.timezone,\n    }\n    return TurnContext(\n        uuid4(), pool, user, partner, [uuid4()], current_step=current_step\n    )\n\n\nasync def test_read_tool_persists_with_kind_read(fake_pool: FakePool) -> None:\n    \"\"\"get_observations is a pure read; it must land in tool_calls as 'read'.\"\"\"\n    ctx = _ctx(fake_pool, current_step=\"read\")\n    obs_id = uuid4()\n    fake_pool.observations[obs_id] = {\n        \"id\": obs_id,\n        \"about_user_id\": ctx.user.id,\n        \"content\": \"Maya prefers in-person repair.\",\n        \"confidence\": \"medium\",\n        \"significance\": 3,\n        \"status\": \"active\",\n        \"related_theme_ids\": [],\n        \"supporting_message_ids\": [],\n        \"created_at\": datetime.now(UTC),\n        \"last_reinforced_at\": None,\n        \"surfaced_count\": 0,\n    }\n\n    result = […]
 
 > TOOL
 
 tool_result Write
 ```
-File created successfully at: /Users/user_c042661f/Documents/Veas/tests/test_tool_audit.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Documents/Veas/tests/test_tool_audit.py (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6046,7 +6046,7 @@ tool_result Bash
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/tests/test_hot_context_join_cutover.py",
+  "file_path": "/home/<USER>/Documents/Veas/tests/test_hot_context_join_cutover.py",
   "offset": 130,
   "limit": 15
 }
@@ -6079,7 +6079,7 @@ tool_use Edit
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/user_c042661f/Documents/Veas/tests/test_hot_context_join_cutover.py",
+  "file_path": "/home/<USER>/Documents/Veas/tests/test_hot_context_join_cutover.py",
   "old_string": "    \"## Recent messages\\n\"\n    \"\\n\"\n    \"## New reactions since previous turn\\n\"\n    \"- none\\n\"\n    \"\\n\"\n    \"## Trigger\\n\"",
   "new_string": "    \"## Recent messages\\n\"\n    \"\\n\"\n    \"## Your silent turns since the user's last message\\n\"\n    \"- none\\n\"\n    \"\\n\"\n    \"## New reactions since previous turn\\n\"\n    \"- none\\n\"\n    \"\\n\"\n    \"## Trigger\\n\""
 }
@@ -6089,7 +6089,7 @@ tool_use Edit
 
 tool_result Edit
 ```
-The file /Users/user_c042661f/Documents/Veas/tests/test_hot_context_join_cutover.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Documents/Veas/tests/test_hot_context_join_cutover.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL

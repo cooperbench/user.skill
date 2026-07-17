@@ -14,7 +14,7 @@ id: toolu_01AQRtpiebCD3coBqib21hwk
 {
   "description": "Audit information leakage",
   "subagent_type": "general-purpose",
-  "prompt": "You are auditing a NeurIPS 2026 submission code repository at /Users/hungpq2412/neuralips26 for **information leakage that would break double-blind review** or expose secrets. NeurIPS 2026 is double-blind: reviewers should not be able to identify authors, institutions, or infrastructure.\n\nFind and list every concrete instance (file_path:line_number when possible) of the following classes of leakage:\n\n1. **Author / personal identifying info** in source files (Python, shell, LaTeX, Markdown, JSON config), including:\n   - Personal names (\"Hung\", \"Henry\", \"Phan\", \"hungpq\", \"hpq2412\", any author name)\n   - Personal email addresses (gmail, outlook, etc.)\n   - Personal GitHub usernames or repo URLs\n   - Author affiliations (university name, lab name) — for example RMIT, the supervisor's name, team names\n\n2. **Institution / infrastructure identifiers** that would deanonymize:\n   - \"RMIT\", \"RACE\", \"race.rmit.edu.au\"\n   - AWS hostnames (`ec2-...amazonaws.com`)\n   - Internal IPs\n   - SSH key filenames (`hungphanphd.pem`)\n   - Internal URLs, Slack/Linear references\n\n3. **Credentials / secrets** even if benign-looking:\n   - API keys (OpenAI, Anthropic, HuggingFace, AWS, etc.)\n   - `.env` files with values\n   - Tokens in code\n   - Hardcoded passwords\n   - Any `.pem`, `.key`, `id_rsa` etc. checked into the repo\n\n4. **Hardcoded user paths** like `/Users/hungpq2412/` or `/home/ec2-user/` that scream a single author's machine. These don't strictly […]
+  "prompt": "You are auditing a NeurIPS 2026 submission code repository at /home/<USER>/neuralips26 for **information leakage that would break double-blind review** or expose secrets. NeurIPS 2026 is double-blind: reviewers should not be able to identify authors, institutions, or infrastructure.\n\nFind and list every concrete instance (file_path:line_number when possible) of the following classes of leakage:\n\n1. **Author / personal identifying info** in source files (Python, shell, LaTeX, Markdown, JSON config), including:\n   - Personal names (\"Hung\", \"Henry\", \"Phan\", \"hungpq\", \"hpq2412\", any author name)\n   - Personal email addresses (gmail, outlook, etc.)\n   - Personal GitHub usernames or repo URLs\n   - Author affiliations (university name, lab name) — for example RMIT, the supervisor's name, team names\n\n2. **Institution / infrastructure identifiers** that would deanonymize:\n   - \"RMIT\", \"RACE\", \"race.rmit.edu.au\"\n   - AWS hostnames (`ec2-...amazonaws.com`)\n   - Internal IPs\n   - SSH key filenames (`hungphanphd.pem`)\n   - Internal URLs, Slack/Linear references\n\n3. **Credentials / secrets** even if benign-looking:\n   - API keys (OpenAI, Anthropic, HuggingFace, AWS, etc.)\n   - `.env` files with values\n   - Tokens in code\n   - Hardcoded passwords\n   - Any `.pem`, `.key`, `id_rsa` etc. checked into the repo\n\n4. **Hardcoded user paths** like `/home/<USER>/` or `/home/<USER>/` that scream a single author's machine. These don't strictly […]
 
 > TOOL
 
@@ -24,7 +24,7 @@ id: toolu_011Z82qifSvuSCjqoQHBvxt6
 {
   "description": "Audit code submission structure",
   "subagent_type": "general-purpose",
-  "prompt": "You are auditing a NeurIPS 2026 submission code repository at /Users/hungpq2412/neuralips26 for **submission readiness in terms of structure, reproducibility, and code hygiene**. The paper is the \"RR-MoA\" (Raw-Routed Mixture of Adapters) paper, complete and ready for submission. The deadline is May 4-6, 2026 (today is May 5).\n\nBackground context (from the project's CLAUDE.md):\n- Active library: `feasibility/`\n- Experiment runners: `scripts/` (Python files like `run_rr_moa.py`, `run_adamix.py`, etc., plus shell orchestrators `run_*_race.sh`)\n- Legacy code archive: `scripts/legacy/` and a few legacy modules in `feasibility/` (`evolution.py`, `code_evolution.py`, `modal_app.py`, `proxy_gp.py`, `scores.py`, `features.py`, `viz.py`, `statistics.py`)\n- Verification: `evidence_vm/verify.py` — should exit 0 with \"PASS: 107 numeric claims\"\n- Paper: `main.tex`\n- Vendored legacy: `template_code/`\n- Datasets: `data/`, results: `results/`, figures: `figures/`\n\nYour task: produce a structured readiness assessment covering the items below. Be specific with file paths and line numbers.\n\n## 1. Repository structure & cleanliness\n- List the top-level directory tree (one level deep, plus a second level for `feasibility/` and `scripts/`). Use `ls -la` and `tree -L 2 -I '.git|__pycache__|.venv|venv|node_modules|data|results'`.\n- Is there a `README.md` at repo root? Does it explain what the code does, dependencies, how to reproduce key results, and how to run `verify.py`? If absent or thin, […]
+  "prompt": "You are auditing a NeurIPS 2026 submission code repository at /home/<USER>/neuralips26 for **submission readiness in terms of structure, reproducibility, and code hygiene**. The paper is the \"RR-MoA\" (Raw-Routed Mixture of Adapters) paper, complete and ready for submission. The deadline is May 4-6, 2026 (today is May 5).\n\nBackground context (from the project's CLAUDE.md):\n- Active library: `feasibility/`\n- Experiment runners: `scripts/` (Python files like `run_rr_moa.py`, `run_adamix.py`, etc., plus shell orchestrators `run_*_race.sh`)\n- Legacy code archive: `scripts/legacy/` and a few legacy modules in `feasibility/` (`evolution.py`, `code_evolution.py`, `modal_app.py`, `proxy_gp.py`, `scores.py`, `features.py`, `viz.py`, `statistics.py`)\n- Verification: `evidence_vm/verify.py` — should exit 0 with \"PASS: 107 numeric claims\"\n- Paper: `main.tex`\n- Vendored legacy: `template_code/`\n- Datasets: `data/`, results: `results/`, figures: `figures/`\n\nYour task: produce a structured readiness assessment covering the items below. Be specific with file paths and line numbers.\n\n## 1. Repository structure & cleanliness\n- List the top-level directory tree (one level deep, plus a second level for `feasibility/` and `scripts/`). Use `ls -la` and `tree -L 2 -I '.git|__pycache__|.venv|venv|node_modules|data|results'`.\n- Is there a `README.md` at repo root? Does it explain what the code does, dependencies, how to reproduce key results, and how to run `verify.py`? If absent or thin, […]
 
 > TOOL
 
@@ -37,13 +37,13 @@ I have enough to produce the final report.
 
 ## CRITICAL
 
-- **CRITICAL — `/Users/hungpq2412/neuralips26/.env`** — Contains live API keys: `REDACTED...` (real OpenAI project key) and `GEMINI_API_KEY=AIzaSyCAep...` (real Google Gemini key). Although `.env` is `.gitignore`'d (line 6 of `.gitignore`) and is NOT git-tracked, these are live secrets sitting on disk. **Fix:** rotate both keys immediately at OpenAI/Google consoles, regardless of whether the repo gets uploaded.
+- **CRITICAL — `/home/<USER>/neuralips26/.env`** — Contains live API keys: `REDACTED...` (real OpenAI project key) and `GEMINI_API_KEY=AIzaSyCAep...` (real Google Gemini key). Although `.env` is `.gitignore`'d (line 6 of `.gitignore`) and is NOT git-tracked, these are live secrets sitting on disk. **Fix:** rotate both keys immediately at OpenAI/Google consoles, regardless of whether the repo gets uploaded.
 
-- **CRITICAL — `/Users/hungpq2412/neuralips26/hungphanphd.pem`** — A 3294-byte SSH private key in the repo root, filename embeds the author's personal identifier. Not git-tracked (covered by `*.pem` rule in `.gitignore`), but: (a) the filename itself deanonymizes if the directory is ever zipped, and (b) the key's existence on the same machine is a security risk. **Fix:** move out of the repo to `~/.ssh/` and rename; rotate the key on the server.
+- **CRITICAL — `/home/<USER>/neuralips26/hungphanphd.pem`** — A 3294-byte SSH private key in the repo root, filename embeds the author's personal identifier. Not git-tracked (covered by `*.pem` rule in `.gitignore`), but: (a) the filename itself deanonymizes if the directory is ever zipped, and (b) the key's existence on the same machine is a security risk. **Fix:** move out of the repo to `~/.ssh/` and rename; rotate the key on the server.
 
 ## HIGH
 
-- **HIGH — `scripts/race_quick_connect.sh:6-7`** — Tracked file containing `KEY="hungphanphd.pem"` and `HOST="ec2-user@ec2-13-238-161-176.ap-southeast-2.compute.amazonaws.com"`. This single file leaks the author's name (`hungphanphd`), the institution (RMIT RACE — see HIGH below), the AWS region (`ap-southeast-2` = Sydney, narrows institution geography), and a public IP. **Fix:** `git rm scripts/race_quick_connect.sh` and add to `.gitignore`.
+- **HIGH — `scripts/race_quick_connect.sh:6-7`** — Tracked file containing `KEY="hungphanphd.pem"` and `HOST="<REDACTED_EMAIL>"`. This single file leaks the author's name (`hungphanphd`), the institution (RMIT RACE — see HIGH below), the AWS region (`ap-southeast-2` = Sydney, narrows institution geography), and a public IP. **Fix:** `git rm scripts/race_quick_connect.sh` and add to `.gitignore`.
 
 - **HIGH — `scripts/race_whitelist_ip.sh:1-58`** — […]
 
@@ -58,7 +58,7 @@ All evidence in. Generating the report now.
 
 # RR-MoA Submission Readiness Audit
 
-Repository at `/Users/hungpq2412/neuralips26`, audit date 2026-05-05 (T-1).
+Repository at `/home/<USER>/neuralips26`, audit date 2026-05-05 (T-1).
 
 **Important context for the verdicts below:** `.gitignore` is unusually aggressive — `*.md`, `*.pdf`, `*.log`, `*.pem`, `.env`, `data/`, `results/`, `*.pptx`, `*.docx`, `*.html`, `slide_images/`, `experiments/finetune_training_data.json`, `experiments/sft_dataset.jsonl`, and `evidence_vm_private/` are all excluded. The on-disk working tree contains many scratch artifacts but **only 675 files are git-tracked**. I distinguish "in working tree" vs "tracked" throughout, since only the latter ships if the user pushes/zips from `git ls-files`.
 
@@ -126,7 +126,7 @@ tool_use Read
 id: toolu_01TNjHsxwckHnVoX9CEF7qPW
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 35,
   "limit": 25
 }
@@ -144,15 +144,15 @@ id: toolu_01TNjHsxwckHnVoX9CEF7qPW
 39	\author{
 40	  Anonymous Author 1 \\
 41	  Anonymous Institution\\
-42	  \texttt{author1@example.com}
+42	  \texttt{<REDACTED_EMAIL>}
 43	  \And
 44	  Anonymous Author 2 \\
 45	  Anonymous Institution\\
-46	  \texttt{author2@example.com}
+46	  \texttt{<REDACTED_EMAIL>}
 47	  \And
 48	  Anonymous Author 3 \\
 49	  Anonymous Institution\\
-50	  \texttt{author3@example.com}
+50	  \texttt{<REDACTED_EMAIL>}
 51	}
 52	
 53	\begin{document}
@@ -173,7 +173,7 @@ id: toolu_01TNjHsxwckHnVoX9CEF7qPW
 - **DELETE: `scripts/race_quick_connect.sh`, `scripts/race_whitelist_ip.sh`** (both tracked) — contain `hungphanphd.pem`, `ec2-13-238-161-176.ap-southeast-2.compute.amazonaws.com`, your IP, and "the professor must also whitelist…". This is a single grep from full deanonymization.
 - **RENAME: 58 tracked `*_race.sh` filenames** → `*_vm.sh`. "RACE" is the public name of RMIT's HPC service (`race.rmit.edu.au`); reviewers running `git ls-files | grep race` recover the institution instantly.
 - **SED comments**: ~25 tracked scripts contain "RACE VM", "RMIT", or "the professor" in comments/docstrings/echoes (e.g. `run_freeze_ablation.py:8`, `finetune_qwen.py:3`, `run_local_evolution.py:3`, `legacy/compare_results.py:102`, `run_strengthening_race.sh:7-8,122-144`). Bulk-replace to neutral language ("GPU VM", "remote GPU").
-- **FIX path**: `scripts/build_bib_verification.py:135` — `out = "/Users/hungpq2412/neuralips26/bib_verification.xlsx"` → relative path.
+- **FIX path**: `scripts/build_bib_verification.py:135` — `out = "/home/<USER>/neuralips26/bib_verification.xlsx"` → relative path.
 
 ### Workspace landmines — gitignored but on disk
 

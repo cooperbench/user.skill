@@ -133,7 +133,7 @@ tool_result
 id: toolu_01CnnqF1FTWYDjW8f34fYs5v
 ```
 commit 04b7b9f15f3020879d0148ebf4d8eea3bef8b889
-Author: Fabien Penso <gpg@pen.so>
+Author: Fabien Penso <<REDACTED_EMAIL>>
 Date:   Mon Apr 20 22:53:25 2026 +0100
 
     fix(providers): disable strict tools for Fireworks Kimi router (#812)
@@ -218,7 +218,7 @@ tool_result
 id: toolu_01CZHkmPWH2YrfDcpGEJhSbL
 ```
 commit 04b7b9f15f3020879d0148ebf4d8eea3bef8b889
-Author: Fabien Penso <gpg@pen.so>
+Author: Fabien Penso <<REDACTED_EMAIL>>
 Date:   Mon Apr 20 22:53:25 2026 +0100
 
     fix(providers): disable strict tools for Fireworks Kimi router (#812)
@@ -437,7 +437,7 @@ tool_use Read
 id: toolu_01Dmxj6PSSTntUywqpWFhu58
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/pointy-bike/crates/providers/tests/fireworks_integration.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/pointy-bike/crates/providers/tests/fireworks_integration.rs",
   "limit": 30
 }
 ```
@@ -486,7 +486,7 @@ id: toolu_01WqkH1q5GHZdrmZxBj3RPWy
 ```json
 {
   "pattern": "fn make_provider",
-  "path": "/Users/penso/.superset/worktrees/moltis/pointy-bike/crates/providers/tests/fireworks_integration.rs",
+  "path": "/home/<USER>/.superset/worktrees/moltis/pointy-bike/crates/providers/tests/fireworks_integration.rs",
   "output_mode": "content",
   "-A": 15
 }
@@ -558,7 +558,7 @@ tool_use Read
 id: toolu_01D4NKLzPxVHu22ujBxE4Njg
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/pointy-bike/crates/providers/tests/fireworks_integration.rs"
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/pointy-bike/crates/providers/tests/fireworks_integration.rs"
 }
 ```
 
@@ -635,7 +635,7 @@ id: toolu_01DhbzRMWx7XtnZGWEM66Jw5
 ```json
 {
   "pattern": "pub(\\(crate\\))? fn is_fireworks_kimi_router",
-  "path": "/Users/penso/.superset/worktrees/moltis/pointy-bike/crates/providers/src",
+  "path": "/home/<USER>/.superset/worktrees/moltis/pointy-bike/crates/providers/src",
   "output_mode": "content"
 }
 ```
@@ -655,7 +655,7 @@ id: toolu_01CZ5uXXfq6eRCcG4Vvbv4fM
 ```json
 {
   "pattern": "pub fn with_strict_tools|pub fn with_reasoning_content",
-  "path": "/Users/penso/.superset/worktrees/moltis/pointy-bike/crates/providers/src/openai/provider/core.rs",
+  "path": "/home/<USER>/.superset/worktrees/moltis/pointy-bike/crates/providers/src/openai/provider/core.rs",
   "output_mode": "content"
 }
 ```
@@ -680,7 +680,7 @@ id: toolu_01F5eGdmVW6jSjqkDsgnmVWg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/pointy-bike/crates/providers/tests/fireworks_integration.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/pointy-bike/crates/providers/tests/fireworks_integration.rs",
   "old_string": "fn make_provider(model: &str) -> OpenAiProvider {\n    OpenAiProvider::new_with_name(\n        api_key(),\n        model.to_string(),\n        FIREWORKS_BASE_URL.to_string(),\n        \"fireworks\".to_string(),\n    )\n}",
   "new_string": "fn make_provider(model: &str) -> OpenAiProvider {\n    let mut p = OpenAiProvider::new_with_name(\n        api_key(),\n        model.to_string(),\n        FIREWORKS_BASE_URL.to_string(),\n        \"fireworks\".to_string(),\n    );\n\n    // Mirror the registration overrides from `register_openai_compatible_providers`\n    // for Fireworks Fire Pass Kimi routers (issue #810).\n    if model.contains(\"/routers/\") && model.contains(\"kimi\") {\n        p = p.with_strict_tools(false).with_reasoning_content(true);\n    }\n\n    p\n}"
 }
@@ -691,7 +691,7 @@ id: toolu_01F5eGdmVW6jSjqkDsgnmVWg
 tool_result
 id: toolu_01F5eGdmVW6jSjqkDsgnmVWg
 ```
-The file /Users/penso/.superset/worktrees/moltis/pointy-bike/crates/providers/tests/fireworks_integration.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/pointy-bike/crates/providers/tests/fireworks_integration.rs has been updated successfully.
 ```
 
 > AGENT
@@ -768,14 +768,14 @@ id: toolu_011M7QMBvFsCY9F23Ftzbbnh
 <exit_code>0</exit_code>
 
 <output>
-   Compiling moltis-skills v0.1.0 (/Users/penso/.superset/worktrees/moltis/pointy-bike/crates/skills)
+   Compiling moltis-skills v0.1.0 (/home/<USER>/.superset/worktrees/moltis/pointy-bike/crates/skills)
    Compiling genai v0.5.3
    Compiling async-openai v0.32.4
-   Compiling moltis-sessions v0.1.0 (/Users/penso/.superset/worktrees/moltis/pointy-bike/crates/sessions)
-   Compiling moltis-oauth v0.1.0 (/Users/penso/.superset/worktrees/moltis/pointy-bike/crates/oauth)
-   Compiling moltis-agents v0.1.0 (/Users/penso/.superset/worktrees/moltis/pointy-bike/crates/agents)
+   Compiling moltis-sessions v0.1.0 (/home/<USER>/.superset/worktrees/moltis/pointy-bike/crates/sessions)
+   Compiling moltis-oauth v0.1.0 (/home/<USER>/.superset/worktrees/moltis/pointy-bike/crates/oauth)
+   Compiling moltis-agents v0.1.0 (/home/<USER>/.superset/worktrees/moltis/pointy-bike/crates/agents)
    Compiling llama-cpp-2 v0.1.133
-   Compiling moltis-providers v0.1.0 (/Users/penso/.superset/worktrees/moltis/pointy-bike/crates/providers)
+   Compiling moltis-providers v0.1.0 (/home/<USER>/.superset/worktrees/moltis/pointy-bike/crates/providers)
     Finished `test` profile [unoptimized + debuginfo] target(s) in 3m 52s
   Executable tests/fireworks_integration.rs (target/debug/deps/fireworks_integration-f8b7684d78b9d291)
 </output>

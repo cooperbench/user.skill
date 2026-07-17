@@ -67,14 +67,14 @@ tool_result
 id: toolu_01NVVKxdU6JxJ5Pqbm5PvwmC
 ```
 <persisted-output>
-Output too large (165.1KB). Full output saved to: /Users/anton/.claude/projects/-Users-anton-src-drain-cycle/6d19145b-86d2-4b0d-9077-624706537065/tool-results/b42391o6k.txt
+Output too large (165.1KB). Full output saved to: /home/<USER>/.claude/projects/-Users-anton-src-drain-cycle/6d19145b-86d2-4b0d-9077-624706537065/tool-results/b42391o6k.txt
 
 Preview (first 2KB):
 Binary file ./drain_cycle/__pycache__/grade.cpython-314.pyc matches
 ./drain_cycle/grade.py:108:                f"drain-cycle grade: warning: {issue} is a draft — excluded from rate",
 Binary file ./.worktrees/ABA-334/drain_cycle/__pycache__/grade.cpython-312.pyc matches
 ./.worktrees/ABA-334/drain_cycle/grade.py:108:                f"drain-cycle grade: warning: {issue} is a draft — excluded from rate",
-./.worktrees/ABA-334/.entire/metadata/51c362f7-1d19-487b-a57d-f83ee5dd1961/full.jsonl:182:{"parentUuid":"88225320-3cfe-4ab1-bb6f-db2839314ea3","isSidechain":false,"message":{"model":"claude-sonnet-4-6","id":"msg_01AgYS8KAfuXvaKEFhWKhmPQ","type":"message","role":"assistant","content":[{"type":"tool_use","id":"toolu_013bi4uDppPLWK7kuLnBFQuQ","name":"Write","input":{"file_path":"/Users/anton/src/drain-cycle/.worktrees/ABA-334/drain_cycle/grade.py","content":"\"\"\"``drain-cycle grade``: initiative health from confirmed grade files.\n\nReads every grade file at ``~/.drain-cycle/grades/*.md``, separates\nconfirmed from draft, and reports:\n\n1. Total tickets graded (confirmed count).\n2. Pass-rate: confirmed entries without a silent-Done violation,\n   expressed as ``N/D (P%)``.\n3. Silent-Done violations: confirmed Done entries where the outcome\n   verifier never ran (``outcome_verdict == null`` in the run log).\n4. Draft files are warned about on stderr and excluded from the count.\n\nA *silent-Done violation* is the condition the halt-on-fail gate (ABA-328)\nis supposed to prevent: a ticket reaches Done in Linear without the outcome\nverifier running. Only ``outcome_verdict == null`` counts — a verdict of any\nkind (pass or fail) clears the violation.\n\nExit code: 0 if no violations; 1 if any silent-Done violation is found.\n\"\"\"\nfrom __future__ import annotations\n\nimport json\nimport sys\nfrom pathlib import Path\nfrom typing import Any\n\nfrom . import grade_draft, runlog\n\n\ndef default_grades_dir() -> Path:\n    return grade_draft.grades_dir()\n\n\ndef default
+./.worktrees/ABA-334/.entire/metadata/51c362f7-1d19-487b-a57d-f83ee5dd1961/full.jsonl:182:{"parentUuid":"88225320-3cfe-4ab1-bb6f-db2839314ea3","isSidechain":false,"message":{"model":"claude-sonnet-4-6","id":"msg_01AgYS8KAfuXvaKEFhWKhmPQ","type":"message","role":"assistant","content":[{"type":"tool_use","id":"toolu_013bi4uDppPLWK7kuLnBFQuQ","name":"Write","input":{"file_path":"/home/<USER>/src/drain-cycle/.worktrees/ABA-334/drain_cycle/grade.py","content":"\"\"\"``drain-cycle grade``: initiative health from confirmed grade files.\n\nReads every grade file at ``~/.drain-cycle/grades/*.md``, separates\nconfirmed from draft, and reports:\n\n1. Total tickets graded (confirmed count).\n2. Pass-rate: confirmed entries without a silent-Done violation,\n   expressed as ``N/D (P%)``.\n3. Silent-Done violations: confirmed Done entries where the outcome\n   verifier never ran (``outcome_verdict == null`` in the run log).\n4. Draft files are warned about on stderr and excluded from the count.\n\nA *silent-Done violation* is the condition the halt-on-fail gate (ABA-328)\nis supposed to prevent: a ticket reaches Done in Linear without the outcome\nverifier running. Only ``outcome_verdict == null`` counts — a verdict of any\nkind (pass or fail) clears the violation.\n\nExit code: 0 if no violations; 1 if any silent-Done violation is found.\n\"\"\"\nfrom __future__ import annotations\n\nimport json\nimport sys\nfrom pathlib import Path\nfrom typing import Any\n\nfrom . import grade_draft, runlog\n\n\ndef default_grades_dir() -> Path:\n    return grade_draft.grades_dir()\n\n\ndef default
 ...
 </persisted-output>
 ```
@@ -89,7 +89,7 @@ tool_use Read
 id: toolu_01Q2E3MHusYMwuA4TLnZgep6
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/grade.py",
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/grade.py",
   "offset": 80,
   "limit": 50
 }
@@ -176,7 +176,7 @@ id: toolu_013CA93yFNnYrbjHdvGN4Aj3
 tool_result
 id: toolu_013CA93yFNnYrbjHdvGN4Aj3
 ```
-644  /Users/anton/.drain-cycle/grades/ABA-406.md  432B
+644  /home/<USER>/.drain-cycle/grades/ABA-406.md  432B
 --- head ---
 ---
 issue: ABA-406
@@ -268,7 +268,7 @@ tool_use Read
 id: toolu_01E7r97wWCoDeeHDKf8k5AM9
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/grade_draft.py",
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/grade_draft.py",
   "offset": 58,
   "limit": 40
 }
@@ -361,7 +361,7 @@ tool_use Bash
 id: toolu_01SJgPEqy1zgsUK2huy56TLj
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle; echo \"=== runlog.py ===\"; cat drain_cycle/runlog.py 2>/dev/null | head -120",
+  "command": "cd /home/<USER>/src/drain-cycle; echo \"=== runlog.py ===\"; cat drain_cycle/runlog.py 2>/dev/null | head -120",
   "description": "Read runlog module"
 }
 ```
@@ -433,7 +433,7 @@ tool_use Bash
 id: toolu_01X81mrC6xsms5W4vgWHR2ds
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle; grep -rln \"outcome_verdict\\|correctness\\|pass-rate\\|pass_rate\\|quality\\|scorecard\\|KR1\\|KR2\" docs/ drain_cycle/ 2>/dev/null | head -30",
+  "command": "cd /home/<USER>/src/drain-cycle; grep -rln \"outcome_verdict\\|correctness\\|pass-rate\\|pass_rate\\|quality\\|scorecard\\|KR1\\|KR2\" docs/ drain_cycle/ 2>/dev/null | head -30",
   "description": "Find quality/KR references"
 }
 ```
@@ -553,7 +553,7 @@ tool_use Bash
 id: toolu_01KCzuBgEPTMA6P4cvL9GzRY
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle; echo \"=== run-log/exec-state writers ===\"; grep -rn \"outcome_verdict\\|prep_verdict\\|review_verdict\\|review_verdict\\|exec-state\\|exec_state\" drain_cycle/*.py | grep -iv \"def test\" | head -40",
+  "command": "cd /home/<USER>/src/drain-cycle; echo \"=== run-log/exec-state writers ===\"; grep -rn \"outcome_verdict\\|prep_verdict\\|review_verdict\\|review_verdict\\|exec-state\\|exec_state\" drain_cycle/*.py | grep -iv \"def test\" | head -40",
   "description": "Find verdict writers in source"
 }
 ```
@@ -602,7 +602,7 @@ id: toolu_0191rpnaDJMhtaZA6Lnu6ZUd
 {
   "description": "Map verdict production pipeline",
   "subagent_type": "Explore",
-  "prompt": "I'm planning to automate a per-run \"scorecard\" in the drain-cycle repo (/Users/anton/src/drain-cycle) that derives a correctness verdict from three signals already meant to be captured per run: the outcome verifier verdict, the multi-persona review GO/NO-GO verdict, and the PR-prep routing verdict.\n\nI need a precise map of WHERE each of these verdicts is produced and whether it actually gets persisted into the run-log / exec-state.json pipeline. Be thorough and quote file:line.\n\nSpecifically investigate:\n\n1. `drain_cycle/handoff.py` — full read. How does it parse exec-state.json? What sections exist (verify, finish, prep, review)? It maps the `verify` section to `outcome_verdict`. Does it produce a `prep_verdict`? Does it read any `review` section? Quote the relevant code.\n\n2. The exec-state.json schema/producers. Search for where exec-state.json is WRITTEN (not just read) — which skill or which part of the exec:* workflow writes the `verify` / `finish` / `prep` / `review` sections. Look in the skills under any `shape-exec-*` / `pr-prepare` / `pr-finishing` skill directories (search the repo and ~/.claude for skill markdown that writes exec-state.json sections). \n\n3. The exec:review skill (shape-exec-review / shape:exec:review) — does it emit a GO/NO-GO verdict to exec-state.json or anywhere machine-readable, or […]
+  "prompt": "I'm planning to automate a per-run \"scorecard\" in the drain-cycle repo (/home/<USER>/src/drain-cycle) that derives a correctness verdict from three signals already meant to be captured per run: the outcome verifier verdict, the multi-persona review GO/NO-GO verdict, and the PR-prep routing verdict.\n\nI need a precise map of WHERE each of these verdicts is produced and whether it actually gets persisted into the run-log / exec-state.json pipeline. Be thorough and quote file:line.\n\nSpecifically investigate:\n\n1. `drain_cycle/handoff.py` — full read. How does it parse exec-state.json? What sections exist (verify, finish, prep, review)? It maps the `verify` section to `outcome_verdict`. Does it produce a `prep_verdict`? Does it read any `review` section? Quote the relevant code.\n\n2. The exec-state.json schema/producers. Search for where exec-state.json is WRITTEN (not just read) — which skill or which part of the exec:* workflow writes the `verify` / `finish` / `prep` / `review` sections. Look in the skills under any `shape-exec-*` / `pr-prepare` / `pr-finishing` skill directories (search the repo and ~/.claude for skill markdown that writes exec-state.json sections). \n\n3. The exec:review skill (shape-exec-review / shape:exec:review) — does it emit a GO/NO-GO verdict to exec-state.json or anywhere machine-readable, or […]
 
 > TOOL
 
@@ -612,7 +612,7 @@ id: toolu_01CNFze7bhNAjihWDWiKNrsx
 {
   "description": "Map grade command surface",
   "subagent_type": "Explore",
-  "prompt": "In the drain-cycle repo (/Users/anton/src/drain-cycle), I'm planning to (a) automate away a manual draft→confirmed gate and (b) rename the `grade` command/concept to `scorecard`. I need a complete map of the current \"grade\" surface so nothing is missed in the rename/rework.\n\nInvestigate and report with file:line:\n\n1. `drain_cycle/grade.py` — full read. What does `run()` do end to end? How does it consume confirmed vs draft files? What does it print? Exit codes?\n\n2. `drain_cycle/grade_draft.py` — full read. When/where is `write_draft_from_entry` and `run()` called from? Who triggers draft creation? What is the `## KR check` manual checkbox block and `status: draft` for?\n\n3. `drain_cycle/kr2_check.py` — full read. What does it check and where is it invoked?\n\n4. CLI wiring: find the argparse/click/typer dispatch (likely `drain_cycle/cli.py` or `__main__.py`). Where is the `grade` subcommand registered? Are `grade-draft` / `kr2-check` also subcommands? List every subcommand name and the function it dispatches to.\n\n5. Search the whole repo (docs/, tests/, README, AGENTS.md) for references to the word \"grade\"/\"grading\"/\"grade-draft\"/\"self-grading\" so I know everything that a rename to \"scorecard\" would touch. Distinguish code references from doc/prose references.\n\n6. Tests: which test files cover grade.py / grade_draft.py / kr2_check.py? List paths and […]
+  "prompt": "In the drain-cycle repo (/home/<USER>/src/drain-cycle), I'm planning to (a) automate away a manual draft→confirmed gate and (b) rename the `grade` command/concept to `scorecard`. I need a complete map of the current \"grade\" surface so nothing is missed in the rename/rework.\n\nInvestigate and report with file:line:\n\n1. `drain_cycle/grade.py` — full read. What does `run()` do end to end? How does it consume confirmed vs draft files? What does it print? Exit codes?\n\n2. `drain_cycle/grade_draft.py` — full read. When/where is `write_draft_from_entry` and `run()` called from? Who triggers draft creation? What is the `## KR check` manual checkbox block and `status: draft` for?\n\n3. `drain_cycle/kr2_check.py` — full read. What does it check and where is it invoked?\n\n4. CLI wiring: find the argparse/click/typer dispatch (likely `drain_cycle/cli.py` or `__main__.py`). Where is the `grade` subcommand registered? Are `grade-draft` / `kr2-check` also subcommands? List every subcommand name and the function it dispatches to.\n\n5. Search the whole repo (docs/, tests/, README, AGENTS.md) for references to the word \"grade\"/\"grading\"/\"grade-draft\"/\"self-grading\" so I know everything that a rename to \"scorecard\" would touch. Distinguish code references from doc/prose references.\n\n6. Tests: which test files cover grade.py / grade_draft.py / kr2_check.py? List paths and […]
 
 > TOOL
 
@@ -640,19 +640,19 @@ Based on thorough investigation of the codebase, here's the precise map of the t
 ```
 
 **Persisted:** YES  
-**Evidence:** `/Users/anton/src/drain-cycle/tests/fixtures/exec-state.json:34-39`
+**Evidence:** `/home/<USER>/src/drain-cycle/tests/fixtures/exec-state.json:34-39`
 
 **Read by orchestrator:** YES  
-**Mapping code:** `/Users/anton/src/drain-cycle/drain_cycle/handoff.py:95-120` (_verify_to_outcome)
+**Mapping code:** `/home/<USER>/src/drain-cycle/drain_cycle/handoff.py:95-120` (_verify_to_outcome)
 - Maps `verify.verdict` to `outcome_verdict.result` ("pass" or "fail")
 - Extracts failing AC items to `outcome_verdict.findings`
 
 **Reaches run-log:** YES  
 **Evidence:**
-- `/Users/anton/src/drain-cycle/drain_cycle/orchestrator.py:688` (read from handoff)
-- `/Users/anton/src/drain-cycle/drain_cycle/orchestrator.py:691-692` (fallback to handoff if M2+ didn't populate)
-- `/Users/anton/src/drain-cycle/drain_cycle/orchestrator.py:973-974` (appended to run-log entry)
-- `/Users/anton/src/drain-cycle/drain_cycle/runlog.py:49` (schema: `outcome_verdict: null | {"result": "pass"|"fail", "findings": [...], "invoked_at": "<iso-8601>"}`)
+- `/home/<USER>/src/drain-cycle/drain_cycle/orchestrator.py:688` (read from handoff)
+- `/home/<USER>/src/drain-cycle/drain_cycle/orchestrator.py:691-692` (fallback to handoff if M2+ didn't populate)
+- `/home/<USER>/src/drain-cycle/drain_cycle/orchestrator.py:973-974` (appended to run-log entry)
+- `/home/<USER>/src/drain-cycle/drain_cycle/runlog.py:49` (schema: `outcome_verdict: null | {"result": "pass"|"fail", "findings": [...], "invoked_at": "<iso-8601>"}`)
 
 **Status:** COMPLETE — fully produced, persisted, and reaches run-log
 
@@ -673,7 +673,7 @@ Based on thorough investigation of the codebase, here's the precise map of the t
 ```
 
 **Persisted:** YES (in fixture)  
-**Evidence:** `/Users/anton/src/drain-cycle/tests/fixtures/exec-state.json:30-33`
+**Evidence:** `/home/<USER>/src/drain-cycle/tests/fixtures/exec-state.json:30-33`
 
 **Read by orchestrator:** CURRENT STATUS IS […]
 
@@ -688,7 +688,7 @@ Excellent! Now I have all the information. Let me compile the complete map:
 
 ### 1. **drain_cycle/grade.py** — Full Analysis
 
-**File:** `/Users/anton/src/drain-cycle/drain_cycle/grade.py`
+**File:** `/home/<USER>/src/drain-cycle/drain_cycle/grade.py`
 
 **Purpose:** Reads every grade file at `~/.drain-cycle/grades/*.md`, separates confirmed from draft, and reports health metrics including pass-rate and silent-Done violations (a core safety guarantee: Done entries with `outcome_verdict == null`).
 
@@ -722,7 +722,7 @@ tool_use Read
 id: toolu_01GrQPcZ445Z93fiy5tTpVYJ
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/handoff.py"
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/handoff.py"
 }
 ```
 
@@ -759,7 +759,7 @@ tool_use Read
 id: toolu_01PYjVPTLjGpACkavy2bVBNz
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/tests/fixtures/exec-state.json"
+  "file_path": "/home/<USER>/src/drain-cycle/tests/fixtures/exec-state.json"
 }
 ```
 
@@ -827,7 +827,7 @@ tool_use Read
 id: toolu_01P6Su9sf8fCaXsx2R3F4REs
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/grade.py",
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/grade.py",
   "offset": 129,
   "limit": 40
 }
@@ -869,7 +869,7 @@ tool_use Read
 id: toolu_01KqHBjvsissrjedZ1A7CfCE
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/orchestrator.py",
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/orchestrator.py",
   "offset": 960,
   "limit": 35
 }
@@ -982,7 +982,7 @@ tool_use Write
 id: toolu_01NBpvurcUrrqKYeWVnZFKJz
 ```json
 {
-  "file_path": "/Users/anton/.claude/plans/composed-watching-cerf.md",
+  "file_path": "/home/<USER>/.claude/plans/composed-watching-cerf.md",
   "content": "# Automate run-quality measurement: replace manual \"grade\" with `scorecard`\n\n## Context\n\nToday, measuring the quality of a drain-cycle run is half-manual and the wrong\nshape:\n\n- After each issue completes, the orchestrator auto-writes a markdown draft to\n  `~/.drain-cycle/grades/<issue>.md` with `status: draft` and an empty\n  `## KR check` checkbox list (`grade_draft.py`).\n- A human must tick the boxes and flip `status: draft` → `status: confirmed`.\n- `drain-cycle grade` only counts `confirmed` files, warns on drafts\n  (`warning: ABA-406 is a draft — excluded from rate`), and reports a\n  \"pass-rate\".\n\nTwo problems:\n\n1. **It isn't automated.** The draft/confirmed step is manual, so the warning\n   the user hit is just \"you haven't hand-confirmed ABA-406 yet.\"\n2. **The \"pass-rate\" doesn't measure correctness.** `grade.py:131` counts a run\n   as a pass if it's confirmed, has a run-log entry, and isn't silent-Done — it\n   never reads `outcome_verdict.result`. A **FAIL** verdict counts as a pass.\n\nWe want each run measured automatically on three dimensions —\n**duration, cost, correctness** — with no human gate. Duration and cost are\nalready captured per run-log entry (`duration_seconds`, `cost_usd`,\n`usage.cumulative`). Correctness should be derived from verdicts already (mostly)\ncaptured. \"Grade\" is also the wrong word; the concept is renamed **scorecard**.\n\n**Decided scope (phased, in-repo only):**\n- Correctness = `outcome_verdict.result == \"pass\"` […]
 
 > TOOL
@@ -990,7 +990,7 @@ id: toolu_01NBpvurcUrrqKYeWVnZFKJz
 tool_result
 id: toolu_01NBpvurcUrrqKYeWVnZFKJz
 ```
-File created successfully at: /Users/anton/.claude/plans/composed-watching-cerf.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/plans/composed-watching-cerf.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1052,7 +1052,7 @@ id: toolu_011HjfQ3NKCPiuLeRncSM9iB
 tool_result ERROR
 id: toolu_011HjfQ3NKCPiuLeRncSM9iB
 ```
-Plan review feedback — revise the plan to address the review comments. Comments are in /Users/anton/.crit/plans/automate-run-quality-measurement-replace-manual-grade-with-scorecard-2026-06-18/.crit/review.json — grouped per file with start_line/end_line referencing the source. Each comment has a scope field: "line" for inline comments, "file" for file-level, or "review" for review-level comments. Read the file, revise the plan to address each comment. If you are running under Codex, re-emit the revised plan inside <proposed_plan>...</proposed_plan> so Crit can review the new version. To reply to comments, use `crit comment --plan automate-run-quality-measurement-replace-manual-grade-with-scorecard-2026-06-18 --reply-to <id> --author <your-name> "<explanation>"`.
+Plan review feedback — revise the plan to address the review comments. Comments are in /home/<USER>/.crit/plans/automate-run-quality-measurement-replace-manual-grade-with-scorecard-2026-06-18/.crit/review.json — grouped per file with start_line/end_line referencing the source. Each comment has a scope field: "line" for inline comments, "file" for file-level, or "review" for review-level comments. Read the file, revise the plan to address each comment. If you are running under Codex, re-emit the revised plan inside <proposed_plan>...</proposed_plan> so Crit can review the new version. To reply to comments, use `crit comment --plan automate-run-quality-measurement-replace-manual-grade-with-scorecard-2026-06-18 --reply-to <id> --author <your-name> "<explanation>"`.
 ```
 
 > TOOL
@@ -1061,7 +1061,7 @@ tool_use Read
 id: toolu_01LdBi16KzZmkbtohmYqL25D
 ```json
 {
-  "file_path": "/Users/anton/.crit/plans/automate-run-quality-measurement-replace-manual-grade-with-scorecard-2026-06-18/.crit/review.json"
+  "file_path": "/home/<USER>/.crit/plans/automate-run-quality-measurement-replace-manual-grade-with-scorecard-2026-06-18/.crit/review.json"
 }
 ```
 
@@ -1090,7 +1090,7 @@ id: toolu_01LdBi16KzZmkbtohmYqL25D
 18	    }
 19	  ],
 20	  "cli_args": [
-21	    "/Users/anton/.crit/plans/automate-run-quality-measurement-replace-manual-grade-with-scorecard-2026-06-18/current.md"
+21	    "/home/<USER>/.crit/plans/automate-run-quality-measurement-replace-manual-grade-with-scorecard-2026-06-18/current.md"
 22	  ],
 23	  "files": {}
 24	}
@@ -1167,7 +1167,7 @@ tool_result
 id: toolu_017xMxuVcPwCJ7ikgGAVq1LK
 ```
 <persisted-output>
-Output too large (54.3KB). Full output saved to: /Users/anton/.claude/projects/-Users-anton-src-drain-cycle/6d19145b-86d2-4b0d-9077-624706537065/tool-results/REDACTED.json
+Output too large (54.3KB). Full output saved to: /home/<USER>/.claude/projects/-Users-anton-src-drain-cycle/6d19145b-86d2-4b0d-9077-624706537065/tool-results/REDACTED.json
 
 Preview (first 2KB):
 [
@@ -1184,7 +1184,7 @@ tool_use Bash
 id: toolu_01VFhPbBgpjycPjx3U38Lsr3
 ```json
 {
-  "command": "cd /Users/anton/.claude/projects/-Users-anton-src-drain-cycle/6d19145b-86d2-4b0d-9077-624706537065/tool-results/; python3 -c \"\nimport json\ndata=json.load(open('REDACTED.json'))\nprojs=json.loads(data[0]['text'])['projects']\nfor p in projs:\n    print(p['status']['name'].ljust(11), p['id'], p['name'])\n    for m in p.get('milestones',[]):\n        print('      milestone:', m.get('name'))\n\"",
+  "command": "cd /home/<USER>/.claude/projects/-Users-anton-src-drain-cycle/6d19145b-86d2-4b0d-9077-624706537065/tool-results/; python3 -c \"\nimport json\ndata=json.load(open('REDACTED.json'))\nprojs=json.loads(data[0]['text'])['projects']\nfor p in projs:\n    print(p['status']['name'].ljust(11), p['id'], p['name'])\n    for m in p.get('milestones',[]):\n        print('      milestone:', m.get('name'))\n\"",
   "description": "List projects with status and milestones"
 }
 ```
@@ -1285,7 +1285,7 @@ tool_use Write
 id: toolu_0192xwdgNrt2xDH11mqCJNpW
 ```json
 {
-  "file_path": "/Users/anton/.claude/plans/composed-watching-cerf.md",
+  "file_path": "/home/<USER>/.claude/plans/composed-watching-cerf.md",
   "content": "# Delivery plan: Automated run scorecard (replace manual \"grade\")\n\n## Context\n\nMeasuring the quality of a drain-cycle run is currently half-manual and the wrong\nshape. After each issue the orchestrator writes a markdown draft to\n`~/.drain-cycle/grades/<issue>.md` with `status: draft` and an empty `## KR check`\nchecklist; a human must tick the boxes and flip `status` to `confirmed` before\n`drain-cycle grade` counts it. That manual gate is why the user hits\n`warning: ABA-406 is a draft — excluded from rate`. Worse, the reported\n\"pass-rate\" never reads `outcome_verdict.result` (`grade.py:131`), so a **FAIL**\nverdict counts as a pass.\n\nWe want each run measured **automatically** on duration, cost, and correctness,\nwith no human gate, and the concept renamed from \"grade\" to **scorecard**.\nDuration and cost are already in every run-log entry (`duration_seconds`,\n`cost_usd`, `usage.cumulative`). Correctness will be derived from verdicts already\n(mostly) captured.\n\n**Decided scope (phased, in-repo only):** correctness = `outcome_verdict.result\n== \"pass\"` AND `review_verdict == \"GO\"`. `prep_verdict.route` is shown as an\nadvisory column but does **not** gate correctness (no producer yet — would need a\ncross-repo change to the `pr-prepare` skill in `agent-skills-shaper`). The manual\nmarkdown draft/confirmed flow is deleted; the scorecard reads run-log JSON\ndirectly.\n\nThis plan **creates the Linear delivery plan** for that work — a project, one\nmilestone, five ordered issues, and a […]
 
 > TOOL
@@ -1293,7 +1293,7 @@ id: toolu_0192xwdgNrt2xDH11mqCJNpW
 tool_result
 id: toolu_0192xwdgNrt2xDH11mqCJNpW
 ```
-The file /Users/anton/.claude/plans/composed-watching-cerf.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/composed-watching-cerf.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1314,7 +1314,7 @@ id: toolu_01C3148zZcWrhrVQX9iXLXuH
 tool_result ERROR
 id: toolu_01C3148zZcWrhrVQX9iXLXuH
 ```
-Plan review feedback — revise the plan to address the review comments. Comments are in /Users/anton/.crit/plans/automate-run-quality-measurement-replace-manual-grade-with-scorecard-2026-06-18/.crit/review.json — grouped per file with start_line/end_line referencing the source. Each comment has a scope field: "line" for inline comments, "file" for file-level, or "review" for review-level comments. Read the file, revise the plan to address each comment. If you are running under Codex, re-emit the revised plan inside <proposed_plan>...</proposed_plan> so Crit can review the new version. To reply to comments, use `crit comment --plan automate-run-quality-measurement-replace-manual-grade-with-scorecard-2026-06-18 --reply-to <id> --author <your-name> "<explanation>"`.
+Plan review feedback — revise the plan to address the review comments. Comments are in /home/<USER>/.crit/plans/automate-run-quality-measurement-replace-manual-grade-with-scorecard-2026-06-18/.crit/review.json — grouped per file with start_line/end_line referencing the source. Each comment has a scope field: "line" for inline comments, "file" for file-level, or "review" for review-level comments. Read the file, revise the plan to address each comment. If you are running under Codex, re-emit the revised plan inside <proposed_plan>...</proposed_plan> so Crit can review the new version. To reply to comments, use `crit comment --plan automate-run-quality-measurement-replace-manual-grade-with-scorecard-2026-06-18 --reply-to <id> --author <your-name> "<explanation>"`.
 ```
 
 > TOOL
@@ -1323,7 +1323,7 @@ tool_use Bash
 id: toolu_01FwqLyvM93tMDTS72v3ZX5x
 ```json
 {
-  "command": "cd /Users/anton/.crit/plans/automate-run-quality-measurement-replace-manual-grade-with-scorecard-2026-06-18/.crit/; python3 -c \"\nimport json\nd=json.load(open('review.json'))\nprint('round', d.get('review_round'))\nfor c in d['review_comments']:\n    print('---', c['id'], 'scope=', c['scope'], 'lines', c['start_line'],'-',c['end_line'])\n    print(c['body'])\n\"",
+  "command": "cd /home/<USER>/.crit/plans/automate-run-quality-measurement-replace-manual-grade-with-scorecard-2026-06-18/.crit/; python3 -c \"\nimport json\nd=json.load(open('review.json'))\nprint('round', d.get('review_round'))\nfor c in d['review_comments']:\n    print('---', c['id'], 'scope=', c['scope'], 'lines', c['start_line'],'-',c['end_line'])\n    print(c['body'])\n\"",
   "description": "Read latest review comments"
 }
 ```
@@ -1338,7 +1338,7 @@ round 2
 this plan should be about creating a delivery plan in linear (project or just issues depending on how many tasks there are)
 --- r_d9b3de scope= review lines 0 - 0
 use /shape:delivery to check if you've followed all the right conventions
-Shell cwd was reset to /Users/anton/src/drain-cycle
+Shell cwd was reset to /home/<USER>/src/drain-cycle
 ```
 
 > AGENT
@@ -1352,7 +1352,7 @@ id: toolu_0157GkDGDFPMDW2F1LNrXbmj
 ```json
 {
   "skill": "shape:delivery",
-  "args": "Automated run scorecard — replace the manual \"grade\" draft/confirmed flow with an automatic per-run scorecard measuring duration, cost, and correctness (correctness = outcome_verdict pass AND review GO; prep-route advisory). In-repo (drain-cycle) only. Plan draft at /Users/anton/.claude/plans/composed-watching-cerf.md"
+  "args": "Automated run scorecard — replace the manual \"grade\" draft/confirmed flow with an automatic per-run scorecard measuring duration, cost, and correctness (correctness = outcome_verdict pass AND review GO; prep-route advisory). In-repo (drain-cycle) only. Plan draft at /home/<USER>/.claude/plans/composed-watching-cerf.md"
 }
 ```
 
@@ -1371,7 +1371,7 @@ id: toolu_01DN5dWVwZta2XvzhbZvYYvU
 ```json
 {
   "skill": "shape-delivery",
-  "args": "Automated run scorecard — replace the manual \"grade\" draft/confirmed flow with an automatic per-run scorecard measuring duration, cost, and correctness (correctness = outcome_verdict pass AND review GO; prep-route advisory). In-repo (drain-cycle) only. Plan draft at /Users/anton/.claude/plans/composed-watching-cerf.md"
+  "args": "Automated run scorecard — replace the manual \"grade\" draft/confirmed flow with an automatic per-run scorecard measuring duration, cost, and correctness (correctness = outcome_verdict pass AND review GO; prep-route advisory). In-repo (drain-cycle) only. Plan draft at /home/<USER>/.claude/plans/composed-watching-cerf.md"
 }
 ```
 
@@ -1393,7 +1393,7 @@ tool_use Bash
 id: toolu_01KfsrBT5MAGB2Bn7TPsGkgi
 ```json
 {
-  "command": "cd /Users/anton/.claude/skills/shape-delivery; echo \"=== contract ===\"; cat docs/delivery-shape-contract.md 2>/dev/null; echo; echo \"=== task-sizing ===\"; cat references/task-sizing.md 2>/dev/null",
+  "command": "cd /home/<USER>/.claude/skills/shape-delivery; echo \"=== contract ===\"; cat docs/delivery-shape-contract.md 2>/dev/null; echo; echo \"=== task-sizing ===\"; cat references/task-sizing.md 2>/dev/null",
   "description": "Read delivery contract and sizing rubric"
 }
 ```
@@ -1415,7 +1415,7 @@ tool_use Bash
 id: toolu_019pViJ7MJHu8jx4J8Go3eFx
 ```json
 {
-  "command": "cd /Users/anton/.claude/skills/shape-delivery; find . -maxdepth 2 -type f | head -50",
+  "command": "cd /home/<USER>/.claude/skills/shape-delivery; find . -maxdepth 2 -type f | head -50",
   "description": "List skill files"
 }
 ```
@@ -1426,7 +1426,7 @@ tool_result
 id: toolu_019pViJ7MJHu8jx4J8Go3eFx
 ```
 ./SKILL.md
-Shell cwd was reset to /Users/anton/src/drain-cycle
+Shell cwd was reset to /home/<USER>/src/drain-cycle
 ```
 
 > TOOL
@@ -1435,7 +1435,7 @@ tool_use Bash
 id: toolu_01NMt5ALBz5jumy856Bb17fb
 ```json
 {
-  "command": "find /Users/anton/src/agent-skills-shaper /Users/anton/.claude -name \"delivery-shape-contract.md\" -o -name \"task-sizing.md\" -o -name \"walk-delivery-plan\" 2>/dev/null | head; echo \"=== drain-cycle existing delivery plans ===\"; ls -R /Users/anton/src/drain-cycle/docs/delivery-plans/ 2>/dev/null | head -40",
+  "command": "find /home/<USER>/src/agent-skills-shaper /home/<USER>/.claude -name \"delivery-shape-contract.md\" -o -name \"task-sizing.md\" -o -name \"walk-delivery-plan\" 2>/dev/null | head; echo \"=== drain-cycle existing delivery plans ===\"; ls -R /home/<USER>/src/drain-cycle/docs/delivery-plans/ 2>/dev/null | head -40",
   "description": "Locate contract and example plans"
 }
 ```
@@ -1445,12 +1445,12 @@ id: toolu_01NMt5ALBz5jumy856Bb17fb
 tool_result
 id: toolu_01NMt5ALBz5jumy856Bb17fb
 ```
-/Users/anton/src/agent-skills-shaper/bin/walk-delivery-plan
-/Users/anton/src/agent-skills-shaper/references/task-sizing.md
-/Users/anton/src/agent-skills-shaper/docs/delivery-shape-contract.md
-/Users/anton/src/agent-skills-shaper/.worktrees/ABA-374/bin/walk-delivery-plan
-/Users/anton/src/agent-skills-shaper/.worktrees/ABA-374/references/task-sizing.md
-/Users/anton/src/agent-skills-shaper/.worktrees/ABA-374/docs/delivery-shape-contract.md
+/home/<USER>/src/agent-skills-shaper/bin/walk-delivery-plan
+/home/<USER>/src/agent-skills-shaper/references/task-sizing.md
+/home/<USER>/src/agent-skills-shaper/docs/delivery-shape-contract.md
+/home/<USER>/src/agent-skills-shaper/.worktrees/ABA-374/bin/walk-delivery-plan
+/home/<USER>/src/agent-skills-shaper/.worktrees/ABA-374/references/task-sizing.md
+/home/<USER>/src/agent-skills-shaper/.worktrees/ABA-374/docs/delivery-shape-contract.md
 === drain-cycle existing delivery plans ===
 exec-state-file-rename/
 live-execution-swimlanes/
@@ -1471,7 +1471,7 @@ tool_use Read
 id: toolu_01PiDudJBQnLvP6kUsscYRXY
 ```json
 {
-  "file_path": "/Users/anton/src/agent-skills-shaper/docs/delivery-shape-contract.md"
+  "file_path": "/home/<USER>/src/agent-skills-shaper/docs/delivery-shape-contract.md"
 }
 ```
 
@@ -1514,7 +1514,7 @@ tool_use Bash
 id: toolu_013uFM9nPAAEyFNms8Yq2fRP
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle/docs/delivery-plans/exec-state-file-rename; echo \"=== README.md ===\"; cat README.md; echo; echo \"=== _deliverable.md ===\"; cat D1-one-pack-owned-execution-state-file/_deliverable.md; echo; echo \"=== N01 ===\"; cat D1-one-pack-owned-execution-state-file/N01-amend-thin-supervisor-contract.md",
+  "command": "cd /home/<USER>/src/drain-cycle/docs/delivery-plans/exec-state-file-rename; echo \"=== README.md ===\"; cat README.md; echo; echo \"=== _deliverable.md ===\"; cat D1-one-pack-owned-execution-state-file/_deliverable.md; echo; echo \"=== N01 ===\"; cat D1-one-pack-owned-execution-state-file/N01-amend-thin-supervisor-contract.md",
   "description": "Read example delivery plan"
 }
 ```
@@ -1558,7 +1558,7 @@ tool_use Read
 id: toolu_01VRErSaeMqN5ojxbu9Lrpe8
 ```json
 {
-  "file_path": "/Users/anton/src/agent-skills-shaper/references/task-sizing.md"
+  "file_path": "/home/<USER>/src/agent-skills-shaper/references/task-sizing.md"
 }
 ```
 
@@ -1594,7 +1594,7 @@ tool_use Write
 id: toolu_01MmAy4nESG9PXDD6fa22Eah
 ```json
 {
-  "file_path": "/Users/anton/.claude/plans/composed-watching-cerf.md",
+  "file_path": "/home/<USER>/.claude/plans/composed-watching-cerf.md",
   "content": "# Delivery plan — Automated run scorecard\n\n## Context\n\nMeasuring the quality of a drain-cycle run is half-manual and the wrong shape. After each issue the\norchestrator writes a markdown draft to `~/.drain-cycle/grades/<issue>.md` with `status: draft` and\nan empty `## KR check` checklist (`grade_draft.py`); a human ticks the boxes and flips `status` to\n`confirmed` before `drain-cycle grade` counts it. That manual gate is why the user hits\n`warning: ABA-406 is a draft — excluded from rate`. Worse, the \"pass-rate\" never reads\n`outcome_verdict.result` (`grade.py:131`), so a **FAIL** verdict counts as a pass.\n\nWe want each run measured **automatically** on duration, cost, and correctness, with no human gate,\nand the concept renamed from \"grade\" to **scorecard**. Duration and cost already live in every\nrun-log entry (`duration_seconds`, `cost_usd`, `usage.cumulative`). Correctness is derived from\nverdicts already (mostly) captured.\n\n**Decided scope (confirmed with the user):**\n- Correctness = `outcome_verdict.result == \"pass\"` AND `review_verdict == \"GO\"`.\n- `prep_verdict.route` is shown advisory-only; it does not gate correctness (no producer yet — needs\n  a cross-repo `pr-prepare` change in `agent-skills-shaper`).\n- The manual markdown draft/confirmed flow is deleted; the scorecard reads run-log JSON directly.\n- Shaped as a **new Linear project + one milestone**, structured via `shape:delivery` conventions\n  (`docs/delivery-shape-contract.md`).\n\nThis plan defines the delivery-plan file-set to emit […]
 
 > TOOL
@@ -1602,7 +1602,7 @@ id: toolu_01MmAy4nESG9PXDD6fa22Eah
 tool_result
 id: toolu_01MmAy4nESG9PXDD6fa22Eah
 ```
-The file /Users/anton/.claude/plans/composed-watching-cerf.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/composed-watching-cerf.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1633,7 +1633,7 @@ id: toolu_011BLDsJrmpevbCwVtHaQ4Bp
 tool_result ERROR
 id: toolu_011BLDsJrmpevbCwVtHaQ4Bp
 ```
-Plan review feedback — revise the plan to address the review comments. Comments are in /Users/anton/.crit/plans/automate-run-quality-measurement-replace-manual-grade-with-scorecard-2026-06-18/.crit/review.json — grouped per file with start_line/end_line referencing the source. Each comment has a scope field: "line" for inline comments, "file" for file-level, or "review" for review-level comments. Read the file, revise the plan to address each comment. If you are running under Codex, re-emit the revised plan inside <proposed_plan>...</proposed_plan> so Crit can review the new version. To reply to comments, use `crit comment --plan automate-run-quality-measurement-replace-manual-grade-with-scorecard-2026-06-18 --reply-to <id> --author <your-name> "<explanation>"`.
+Plan review feedback — revise the plan to address the review comments. Comments are in /home/<USER>/.crit/plans/automate-run-quality-measurement-replace-manual-grade-with-scorecard-2026-06-18/.crit/review.json — grouped per file with start_line/end_line referencing the source. Each comment has a scope field: "line" for inline comments, "file" for file-level, or "review" for review-level comments. Read the file, revise the plan to address each comment. If you are running under Codex, re-emit the revised plan inside <proposed_plan>...</proposed_plan> so Crit can review the new version. To reply to comments, use `crit comment --plan automate-run-quality-measurement-replace-manual-grade-with-scorecard-2026-06-18 --reply-to <id> --author <your-name> "<explanation>"`.
 ```
 
 > TOOL
@@ -1642,7 +1642,7 @@ tool_use Bash
 id: toolu_01DbtB5LndMx9tPAbnuojwTY
 ```json
 {
-  "command": "cd /Users/anton/.crit/plans/automate-run-quality-measurement-replace-manual-grade-with-scorecard-2026-06-18/.crit/; python3 -c \"\nimport json\nd=json.load(open('review.json'))\nprint('round', d.get('review_round'))\nfor c in d['review_comments']:\n    print('---', c['id'], 'scope=', c['scope'], 'lines', c['start_line'],'-',c['end_line'], 'author=', c.get('author'))\n    print(c['body'])\n\"",
+  "command": "cd /home/<USER>/.crit/plans/automate-run-quality-measurement-replace-manual-grade-with-scorecard-2026-06-18/.crit/; python3 -c \"\nimport json\nd=json.load(open('review.json'))\nprint('round', d.get('review_round'))\nfor c in d['review_comments']:\n    print('---', c['id'], 'scope=', c['scope'], 'lines', c['start_line'],'-',c['end_line'], 'author=', c.get('author'))\n    print(c['body'])\n\"",
   "description": "Read latest review comments"
 }
 ```
@@ -1661,7 +1661,7 @@ use /shape:delivery to check if you've followed all the right conventions
 review the plan using the /writing-refinement skill
 
 delete anything unnecessary or what would clash with the exec:breakdown skill
-Shell cwd was reset to /Users/anton/src/drain-cycle
+Shell cwd was reset to /home/<USER>/src/drain-cycle
 ```
 
 > AGENT
@@ -1675,7 +1675,7 @@ id: toolu_01V77iPE4qnzCgbTaVqE12uw
 ```json
 {
   "skill": "shape-writing-refinement",
-  "args": "Tighten the delivery plan at /Users/anton/.claude/plans/composed-watching-cerf.md; remove pre-authored task/Model breakdowns that belong to exec:breakdown at pickup."
+  "args": "Tighten the delivery plan at /home/<USER>/.claude/plans/composed-watching-cerf.md; remove pre-authored task/Model breakdowns that belong to exec:breakdown at pickup."
 }
 ```
 
@@ -1697,7 +1697,7 @@ tool_use Write
 id: toolu_01FsH4NWu3JW9JYXYZELd1cK
 ```json
 {
-  "file_path": "/Users/anton/.claude/plans/composed-watching-cerf.md",
+  "file_path": "/home/<USER>/.claude/plans/composed-watching-cerf.md",
   "content": "# Delivery plan — Automated run scorecard\n\nCreate a Linear project that replaces the manual `grade` draft/confirmed gate with an automatic\n`scorecard` scoring every run on duration, cost, and correctness — where correctness =\n`outcome_verdict pass AND review GO`. One deliverable, five issues; `exec:breakdown` expands each\nissue into tasks at pickup.\n\n## Why\n\nAfter each issue the orchestrator writes a markdown draft to `~/.drain-cycle/grades/<issue>.md` with\n`status: draft`; a human ticks `## KR check` boxes and flips it to `confirmed` before\n`drain-cycle grade` counts it. That manual gate is why the user hits\n`warning: ABA-406 is a draft — excluded from rate`. And the \"pass-rate\" never reads\n`outcome_verdict.result` (`grade.py:131`), so a **FAIL** verdict counts as a pass.\n\nDuration and cost already live in every run-log entry (`duration_seconds`, `cost_usd`,\n`usage.cumulative`); correctness comes from verdicts the pipeline already (mostly) records. The fix\nis to score each run straight from the run-log JSON and delete the markdown gate.\n\n### Signal readiness (verified against source)\n\n| Signal | Produced | Reaches run log | Action |\n|---|---|---|---|\n| `outcome_verdict` (exec:verify) | yes | yes | none |\n| `review` GO/NO-GO (exec:review) | yes — `review` section, `tests/fixtures/exec-state.json:30` | no — `handoff.py` never reads it | wire it (N02) |\n| `prep_verdict.route` (pr-prepare) | no producer […]
 
 > TOOL
@@ -1705,7 +1705,7 @@ id: toolu_01FsH4NWu3JW9JYXYZELd1cK
 tool_result
 id: toolu_01FsH4NWu3JW9JYXYZELd1cK
 ```
-The file /Users/anton/.claude/plans/composed-watching-cerf.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/composed-watching-cerf.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1737,7 +1737,7 @@ id: toolu_01239RuJV6fm5rVw7Q2vCUnJ
 ```
 User has approved your plan. You can now start coding. Start with updating your todo list if applicable
 
-Your plan has been saved to: /Users/anton/.claude/plans/composed-watching-cerf.md
+Your plan has been saved to: /home/<USER>/.claude/plans/composed-watching-cerf.md
 You can refer back to it if needed during implementation.
 
 ## Approved Plan (edited by user):
@@ -1794,7 +1794,7 @@ tool_use Bash
 id: toolu_01H3jZ6k5M9He7cAaUMmP5vZ
 ```json
 {
-  "command": "cd /Users/anton/src/agent-skills-shaper; echo \"=== walk-delivery-plan ===\"; cat bin/walk-delivery-plan; echo; echo \"=== check-plan-framing ===\"; cat bin/check-plan-framing",
+  "command": "cd /home/<USER>/src/agent-skills-shaper; echo \"=== walk-delivery-plan ===\"; cat bin/walk-delivery-plan; echo; echo \"=== check-plan-framing ===\"; cat bin/check-plan-framing",
   "description": "Read delivery-plan gate scripts"
 }
 ```
@@ -1805,7 +1805,7 @@ tool_result
 id: toolu_01H3jZ6k5M9He7cAaUMmP5vZ
 ```
 <persisted-output>
-Output too large (36.8KB). Full output saved to: /Users/anton/.claude/projects/-Users-anton-src-drain-cycle/6d19145b-86d2-4b0d-9077-624706537065/tool-results/by9iihlmp.txt
+Output too large (36.8KB). Full output saved to: /home/<USER>/.claude/projects/-Users-anton-src-drain-cycle/6d19145b-86d2-4b0d-9077-624706537065/tool-results/by9iihlmp.txt
 
 Preview (first 2KB):
 === walk-delivery-plan ===
@@ -1842,7 +1842,7 @@ tool_use Read
 id: toolu_019FPmXvV71NyEUn39i5JD8A
 ```json
 {
-  "file_path": "/Users/anton/.claude/projects/-Users-anton-src-drain-cycle/6d19145b-86d2-4b0d-9077-624706537065/tool-results/by9iihlmp.txt"
+  "file_path": "/home/<USER>/.claude/projects/-Users-anton-src-drain-cycle/6d19145b-86d2-4b0d-9077-624706537065/tool-results/by9iihlmp.txt"
 }
 ```
 
@@ -1952,7 +1952,7 @@ tool_use Write
 id: toolu_0149nmYw9ySnuYfh8PxsDYWL
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/docs/delivery-plans/scorecard/README.md",
+  "file_path": "/home/<USER>/src/drain-cycle/docs/delivery-plans/scorecard/README.md",
   "content": "# Delivery plan — Automated run scorecard\n\nReplace the manual `grade` draft/confirmed gate with an automatic `scorecard` that scores every\ndrain-cycle run on duration, cost, and correctness — where correctness is `outcome_verdict` pass\nAND review GO.\n\n## Goal\n\nEvery drain-cycle run is scored automatically on duration, cost, and correctness, with no manual\nconfirmation step.\n\n## KR1\n\n`drain-cycle scorecard` derives correctness from verdicts (outcome pass AND review GO); a FAIL\nverdict is never counted correct; the draft-confirmation warning is gone; silent-Done (a Done entry\nwith a null outcome verdict) still exits nonzero.\n\n## Why now\n\nAfter each issue the orchestrator writes a markdown draft to `~/.drain-cycle/grades/<issue>.md` with\n`status: draft`; a human ticks `## KR check` boxes and flips it to `confirmed` before\n`drain-cycle grade` counts it — the gate behind the `… is a draft — excluded from rate` warning. The\nreported pass-rate never reads `outcome_verdict.result` (`grade.py:131`), so a FAIL verdict counts as\na pass. Duration and cost already live in every run-log entry; correctness comes from verdicts the\npipeline already records, except the review GO/NO-GO verdict, which `handoff.py` writes nowhere the\nrun log can see. The fix scores each run from the run-log JSON and deletes the markdown gate.\n\n## How to read\n\nStart here, then read `D1-scorecard-replaces-manual-grade/_deliverable.md` for the milestone, […]
 
 > TOOL
@@ -1960,7 +1960,7 @@ id: toolu_0149nmYw9ySnuYfh8PxsDYWL
 tool_result
 id: toolu_0149nmYw9ySnuYfh8PxsDYWL
 ```
-File created successfully at: /Users/anton/src/drain-cycle/docs/delivery-plans/scorecard/README.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/src/drain-cycle/docs/delivery-plans/scorecard/README.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1969,7 +1969,7 @@ tool_use Write
 id: toolu_01FM1bodjwWAPBpFWPZZbBPi
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/docs/delivery-plans/scorecard/D1-scorecard-replaces-manual-grade/_deliverable.md",
+  "file_path": "/home/<USER>/src/drain-cycle/docs/delivery-plans/scorecard/D1-scorecard-replaces-manual-grade/_deliverable.md",
   "content": "---\nlayer: deliverable\nid: D1\ntitle: Scorecard replaces manual grade\nparent: ..\nserves_kr: KR1\nmaps_to: linear-milestone\ncompletion:\n  form: kr-observed\n  criterion: >\n    KR1 holds — drain-cycle scorecard scores each run on duration, cost, and\n    correctness (outcome pass AND review GO) straight from the run log, no\n    markdown confirmation flow exists, and silent-Done still exits nonzero.\n---\n\n# D1 — Scorecard replaces manual grade\n\n**Serves:** KR1 — automatic per-run scoring on duration, cost, and correctness (see the README,\n\"Goal\" and \"KR1\", for the full claim).\n\nThis deliverable maps onto a new Linear milestone. Rule A1 (`design-doc` trigger) does not fire — the\nchange is reversible, single-repo, and additive to the run-log schema — so there is no `design-doc`\nnode. The one architectural decision (remove the human gate; define automated correctness) lands in\nan `adr` node placed first and blocking the build nodes.\n\n## Nodes\n\n- [N01 — Record the scorecard correctness contract](N01-record-the-scorecard-correctness-contract.md) · `adr`\n- [N02 — Review verdict reaches the run log](N02-review-verdict-reaches-the-run-log.md) · `story` · `skeleton`\n- [N03 — Scorecard computes and reports per-run quality](N03-scorecard-computes-and-reports-per-run-quality.md) · `story`\n- [N04 — CLI exposes scorecard; manual draft flow removed](N04-cli-exposes-scorecard-manual-draft-flow-removed.md) · `story`\n- [N05 — Retire stale grade references](N05-retire-stale-grade-references.md) · `ktlo`\n\n## Done when\n\nKR1 is observed: `drain-cycle scorecard` scores each run on duration, cost, and correctness derived\nfrom […]
 
 > TOOL
@@ -1977,7 +1977,7 @@ id: toolu_01FM1bodjwWAPBpFWPZZbBPi
 tool_result
 id: toolu_01FM1bodjwWAPBpFWPZZbBPi
 ```
-File created successfully at: /Users/anton/src/drain-cycle/docs/delivery-plans/scorecard/D1-scorecard-replaces-manual-grade/_deliverable.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/src/drain-cycle/docs/delivery-plans/scorecard/D1-scorecard-replaces-manual-grade/_deliverable.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1986,7 +1986,7 @@ tool_use Write
 id: toolu_01HsxhdDBT6rzy8XghLFVGFR
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/docs/delivery-plans/scorecard/D1-scorecard-replaces-manual-grade/N01-record-the-scorecard-correctness-contract.md",
+  "file_path": "/home/<USER>/src/drain-cycle/docs/delivery-plans/scorecard/D1-scorecard-replaces-manual-grade/N01-record-the-scorecard-correctness-contract.md",
   "content": "---\nlayer: node\nid: N01\ntype: adr\ntitle: Record the scorecard correctness contract\nparent: D1\nserves_kr: KR1\nmaps_to: linear-issue\nexternal_window: none\ncompletion:\n  form: decision-record\ndelegates_to: ADR discipline (Rule A3 + D3 living ADRs) — plan-review gate fires on the gate-removal and correctness-definition decision\n---\n\n# N01 — Record the scorecard correctness contract\n\n**Type:** `adr`. The build nodes encode this contract, so it is decided before they are picked up.\n\n> **▶ On pickup — before N02–N05:** record the decision through the ADR discipline and run the\n> plan-review gate.\n> **Blocks:** N02, N03, N04, N05 — their task breakdown waits until this is accepted.\n\n## What\n\nRecord an ADR for the automated-quality contract: remove the manual draft/confirmed gate; define run\ncorrectness as `outcome_verdict` pass AND review GO; keep silent-Done as the hard violation; add\n`review_verdict` to the run log as an additive field; treat `prep_verdict.route` as advisory until a\nproducer exists.\n\n## Why\n\nBuilding the correctness rule before its semantics are fixed risks re-encoding today's bug, where a\nFAIL verdict counts as a pass. The bet is that two already-recorded verdicts (outcome and review) are\na strong enough correctness signal to retire the human gate. Rejected alternatives: outcome-only\ncorrectness, where the agent grades its own work with no second signal; and a full prep-gated\ncomposite now, which blocks […]
 
 > TOOL
@@ -1994,7 +1994,7 @@ id: toolu_01HsxhdDBT6rzy8XghLFVGFR
 tool_result
 id: toolu_01HsxhdDBT6rzy8XghLFVGFR
 ```
-File created successfully at: /Users/anton/src/drain-cycle/docs/delivery-plans/scorecard/D1-scorecard-replaces-manual-grade/N01-record-the-scorecard-correctness-contract.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/src/drain-cycle/docs/delivery-plans/scorecard/D1-scorecard-replaces-manual-grade/N01-record-the-scorecard-correctness-contract.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2003,7 +2003,7 @@ tool_use Write
 id: toolu_01QQSCWeAyFKPk2zhw5UPnoT
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/docs/delivery-plans/scorecard/D1-scorecard-replaces-manual-grade/N02-review-verdict-reaches-the-run-log.md",
+  "file_path": "/home/<USER>/src/drain-cycle/docs/delivery-plans/scorecard/D1-scorecard-replaces-manual-grade/N02-review-verdict-reaches-the-run-log.md",
   "content": "---\nlayer: node\nid: N02\ntype: story\ntitle: Review verdict reaches the run log\nparent: D1\nserves_kr: KR1\nmaps_to: linear-issue\nskeleton: true\nexternal_window: none\ncompletion:\n  form: acceptance-criteria\ndelegates_to: at-pickup task breakdown (exec:breakdown)\n---\n\n# N02 — Review verdict reaches the run log\n\n**Type:** `story`. This is the deliverable's walking skeleton — the thinnest end-to-end slice through\nthe real seam.\n\n> **Blocked by:** N01 — task breakdown waits until the correctness contract is accepted.\n\n## What\n\nAs the supervisor, I want each worker's review GO/NO-GO verdict recorded in the run log, so that the\nscorecard can gate correctness on the review outcome.\n\n## Why\n\nexec:review already writes a `review` section to `exec-state.json`, but `handoff.py` never reads it,\nso the verdict never reaches the run log. This is the real integration seam — `exec-state.json` →\n`handoff.py` → `orchestrator.py` → `runlog.py` — and the thinnest end-to-end slice of the\ndeliverable, which is why it is the skeleton. The change mirrors the existing `outcome_verdict` path\n(`_verify_to_outcome`, handoff.py:95). Rejected alternative: re-deriving review state from PR status,\nwhich lags real time and needs external lookups.\n\n## Completion\n\n- **Done when:** `handoff.read` maps the `exec-state.json` `review` section to a `review_verdict`\n  (`{\"result\": \"go\"|\"no-go\", \"findings\": [...]}`); an unrecognised verdict drops to null.\n- **Done when:** a run-log entry written from `tests/fixtures/exec-state.json` carries\n  `review_verdict {\"result\": \"go\", \"findings\": []}`.\n- **Done when:** […]
 
 > TOOL
@@ -2011,7 +2011,7 @@ id: toolu_01QQSCWeAyFKPk2zhw5UPnoT
 tool_result
 id: toolu_01QQSCWeAyFKPk2zhw5UPnoT
 ```
-File created successfully at: /Users/anton/src/drain-cycle/docs/delivery-plans/scorecard/D1-scorecard-replaces-manual-grade/N02-review-verdict-reaches-the-run-log.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/src/drain-cycle/docs/delivery-plans/scorecard/D1-scorecard-replaces-manual-grade/N02-review-verdict-reaches-the-run-log.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2020,7 +2020,7 @@ tool_use Write
 id: toolu_012CVSxQYCSyjiyMYEqBGWTk
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/docs/delivery-plans/scorecard/D1-scorecard-replaces-manual-grade/N03-scorecard-computes-and-reports-per-run-quality.md",
+  "file_path": "/home/<USER>/src/drain-cycle/docs/delivery-plans/scorecard/D1-scorecard-replaces-manual-grade/N03-scorecard-computes-and-reports-per-run-quality.md",
   "content": "---\nlayer: node\nid: N03\ntype: story\ntitle: Scorecard computes and reports per-run quality\nparent: D1\nserves_kr: KR1\nmaps_to: linear-issue\nexternal_window: none\ncompletion:\n  form: acceptance-criteria\ndelegates_to: at-pickup task breakdown (exec:breakdown)\n---\n\n# N03 — Scorecard computes and reports per-run quality\n\n**Type:** `story`.\n\n> **Blocked by:** N01 (the correctness contract) and N02 (`review_verdict` in the run log).\n\n## What\n\nAs an operator, I want `drain-cycle scorecard` to read the run log and report each run's duration,\ncost, and correctness, so that I can measure run quality without confirming anything by hand.\n\n## Why\n\nThis replaces the markdown draft/confirmed flow and fixes the bug where a FAIL verdict counts as a\npass — `grade.py:131` never reads `outcome_verdict.result`. It reuses `_find_run_entry`\n(grade.py:57) and reads run-log JSON directly. Rejected alternative: keep the markdown files and\nauto-confirm drafts, which leaves a second source of truth that drifts from the run log.\n\n## Completion\n\n- **Done when:** `scorecard` prints one row per run grouped by `cycle_id`, each with duration, cost,\n  and tokens.\n- **Done when:** correctness = outcome pass AND review GO; a FAIL outcome and a NO-GO review each\n  yield not-correct; a missing review verdict yields not-correct but is not a violation.\n- **Done when:** a Done entry with a null `outcome_verdict` exits 1 and is listed; a clean run exits 0\n […]
 
 > TOOL
@@ -2028,7 +2028,7 @@ id: toolu_012CVSxQYCSyjiyMYEqBGWTk
 tool_result
 id: toolu_012CVSxQYCSyjiyMYEqBGWTk
 ```
-File created successfully at: /Users/anton/src/drain-cycle/docs/delivery-plans/scorecard/D1-scorecard-replaces-manual-grade/N03-scorecard-computes-and-reports-per-run-quality.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/src/drain-cycle/docs/delivery-plans/scorecard/D1-scorecard-replaces-manual-grade/N03-scorecard-computes-and-reports-per-run-quality.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2037,7 +2037,7 @@ tool_use Write
 id: toolu_01D7Xs9PdERtoY1xgxdiwQhb
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/docs/delivery-plans/scorecard/D1-scorecard-replaces-manual-grade/N04-cli-exposes-scorecard-manual-draft-flow-removed.md",
+  "file_path": "/home/<USER>/src/drain-cycle/docs/delivery-plans/scorecard/D1-scorecard-replaces-manual-grade/N04-cli-exposes-scorecard-manual-draft-flow-removed.md",
   "content": "---\nlayer: node\nid: N04\ntype: story\ntitle: CLI exposes scorecard; manual draft flow removed\nparent: D1\nserves_kr: KR1\nmaps_to: linear-issue\nexternal_window: none\ncompletion:\n  form: acceptance-criteria\ndelegates_to: at-pickup task breakdown (exec:breakdown)\n---\n\n# N04 — CLI exposes scorecard; manual draft flow removed\n\n**Type:** `story`.\n\n> **Blocked by:** N03 — the scorecard module must exist before the CLI exposes it.\n\n## What\n\nAs an operator, I want `drain-cycle scorecard` to be the only quality command, with no markdown\ndrafts to confirm, so that run quality is measured automatically end to end.\n\n## Why\n\nThis retires the manual gate entirely: the markdown draft writer, the orchestrator's auto-draft\nwrite, and the `grade-draft` subcommand all go. `kr2_check`'s `prep_verdict` requirement\n(kr2_check.py:35) can never hold — no producer writes it — so it is dropped. Rejected alternative:\nkeep `grade-draft` as an alias, which preserves the dead flow.\n\n## Completion\n\n- **Done when:** `drain-cycle scorecard` dispatches, and `grade` / `grade-draft` are unknown\n  invocations (exit 2).\n- **Done when:** `grade_draft.py` and the orchestrator auto-draft write (orchestrator.py:980-988) are\n  gone, and no code references `grade_draft`.\n- **Done when:** `kr2_check` requires only `outcome_verdict` on Done entries; its tests pass an entry\n  with `outcome_verdict` and no `prep_verdict`.\n- **Done when:** the test suite is green and renamed `test_scorecard_*`, including a regression test\n  that a FAIL verdict is not counted correct.\n\n## […]
 
 > TOOL
@@ -2045,7 +2045,7 @@ id: toolu_01D7Xs9PdERtoY1xgxdiwQhb
 tool_result
 id: toolu_01D7Xs9PdERtoY1xgxdiwQhb
 ```
-File created successfully at: /Users/anton/src/drain-cycle/docs/delivery-plans/scorecard/D1-scorecard-replaces-manual-grade/N04-cli-exposes-scorecard-manual-draft-flow-removed.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/src/drain-cycle/docs/delivery-plans/scorecard/D1-scorecard-replaces-manual-grade/N04-cli-exposes-scorecard-manual-draft-flow-removed.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2054,7 +2054,7 @@ tool_use Write
 id: toolu_012AoHxZZ4F4ck3sYujQ8pJq
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/docs/delivery-plans/scorecard/D1-scorecard-replaces-manual-grade/N05-retire-stale-grade-references.md",
+  "file_path": "/home/<USER>/src/drain-cycle/docs/delivery-plans/scorecard/D1-scorecard-replaces-manual-grade/N05-retire-stale-grade-references.md",
   "content": "---\nlayer: node\nid: N05\ntype: ktlo\ntitle: Retire stale grade references\nparent: D1\nserves_kr: KR1\nmaps_to: linear-issue\nexternal_window: none\ncompletion:\n  form: none\ndelegates_to: ops slot — KTLO carve-out, no outcome framing\n---\n\n# N05 — Retire stale `grade` references\n\n**Type:** `ktlo`.\n\n> **Blocked by:** N04 — rename the surface before retiring references to the old name.\n\n## What\n\nReplace stale `grade` / `grade-draft` mentions in code comments and current docs with `scorecard`,\npreserving behaviour. Historical ADRs keep their original language.\n\n## Why\n\nA renamed command surface drifts from comments that still say `grade`, misleading the next reader.\nThis is housekeeping with no behaviour change — a KTLO carve-out, so it carries no outcome framing.\n\n## Completion\n\nNone — KTLO carve-out. Behaviour is unchanged; the node is done when grepping `grade` under\n`drain_cycle/` and `docs/` returns only historical ADRs (e.g. comments at `runlog.py:74-76` and\n`progress.py:6` now read `scorecard`).\n\n## Assumptions\n\n- Historical ADRs are intentionally left untouched. *(verified)*\n\n## Key Risks\n\n- **Risk:** a doc reference is missed and keeps pointing at the old command.\n  *Mitigation:* the completion grep is the falsifier — it must return only historical ADRs.\n"
 }
 ```
@@ -2064,7 +2064,7 @@ id: toolu_012AoHxZZ4F4ck3sYujQ8pJq
 tool_result
 id: toolu_012AoHxZZ4F4ck3sYujQ8pJq
 ```
-File created successfully at: /Users/anton/src/drain-cycle/docs/delivery-plans/scorecard/D1-scorecard-replaces-manual-grade/N05-retire-stale-grade-references.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/src/drain-cycle/docs/delivery-plans/scorecard/D1-scorecard-replaces-manual-grade/N05-retire-stale-grade-references.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2077,7 +2077,7 @@ tool_use Bash
 id: toolu_01Cae5Zc2zQSJcef6MRQQVQH
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle; PLAN=docs/delivery-plans/scorecard; echo \"=== walk-delivery-plan ===\"; python3 /Users/anton/src/agent-skills-shaper/bin/walk-delivery-plan \"$PLAN\"; echo \"exit: $?\"; echo; echo \"=== check-plan-framing ===\"; python3 /Users/anton/src/agent-skills-shaper/bin/check-plan-framing \"$PLAN\"; echo \"exit: $?\"",
+  "command": "cd /home/<USER>/src/drain-cycle; PLAN=docs/delivery-plans/scorecard; echo \"=== walk-delivery-plan ===\"; python3 /home/<USER>/src/agent-skills-shaper/bin/walk-delivery-plan \"$PLAN\"; echo \"exit: $?\"; echo; echo \"=== check-plan-framing ===\"; python3 /home/<USER>/src/agent-skills-shaper/bin/check-plan-framing \"$PLAN\"; echo \"exit: $?\"",
   "description": "Run both delivery-plan gates"
 }
 ```

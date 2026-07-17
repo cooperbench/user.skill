@@ -43,7 +43,7 @@ tool_use Read
 id: toolu_01FNsPXDBDTiydWUP1f9iebQ
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/.claude/plans/dreamy-jingling-thacker.md"
+  "file_path": "/home/<USER>/dev/cohezion/.claude/plans/dreamy-jingling-thacker.md"
 }
 ```
 
@@ -52,7 +52,7 @@ id: toolu_01FNsPXDBDTiydWUP1f9iebQ
 tool_result ERROR
 id: toolu_01FNsPXDBDTiydWUP1f9iebQ
 ```
-File does not exist. Note: your current working directory is /home/mike-anderson/dev/cohezion.
+File does not exist. Note: your current working directory is /home/<USER>/dev/cohezion.
 ```
 
 > TOOL
@@ -61,7 +61,7 @@ tool_use Bash
 id: toolu_01DnCz14rcjMGWVt5ZRgYiyS
 ```json
 {
-  "command": "ls -la /home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/ 2>&1 | head -30",
+  "command": "ls -la /home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/ 2>&1 | head -30",
   "description": "List worktree directory"
 }
 ```
@@ -85,7 +85,7 @@ drwxrwxr-x  2 mike-anderson mike-anderson      2 Apr 18 20:14 anthropic-delivery
 -rw-rw-r--  1 mike-anderson mike-anderson  17013 Apr 18 20:14 BIDIRECTIONAL_LINKING.md
 -rw-rw-r--  1 mike-anderson mike-anderson   3065 Apr 18 21:28 BIOS_RESUME_INSTRUCTIONS.md
 -rw-rw-r--  1 mike-anderson mike-anderson      8 Apr 18 20:14 birdclef_pid.txt
-lrwxrwxrwx  1 mike-anderson mike-anderson     39 Apr 18 20:14 .cache -> /home/mike-anderson/dev/cohezion/.cache
+lrwxrwxrwx  1 mike-anderson mike-anderson     39 Apr 18 20:14 .cache -> /home/<USER>/dev/cohezion/.cache
 -rw-rw-r--  1 mike-anderson mike-anderson   1288 Apr 18 20:14 CHANGELOG.md
 drwxrwxr-x  2 mike-anderson mike-anderson      3 Apr 18 21:27 .claude
 -rw-rw-r--  1 mike-anderson mike-anderson  25790 Apr 18 20:14 CLAUDE.md
@@ -101,7 +101,7 @@ tool_use Bash
 id: toolu_01LH6g1N2s1BiUr3QKGZFqLr
 ```json
 {
-  "command": "find /home/mike-anderson/dev/cohezion/.claude/plans/ -type f -name \"*.md\" 2>&1 | head -20 && echo \"---\" && find /home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/.claude/plans/ -type f 2>&1 | head -20",
+  "command": "find /home/<USER>/dev/cohezion/.claude/plans/ -type f -name \"*.md\" 2>&1 | head -20 && echo \"---\" && find /home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/.claude/plans/ -type f 2>&1 | head -20",
   "description": "Find plan files in both locations"
 }
 ```
@@ -111,9 +111,9 @@ id: toolu_01LH6g1N2s1BiUr3QKGZFqLr
 tool_result
 id: toolu_01LH6g1N2s1BiUr3QKGZFqLr
 ```
-find: ‘/home/mike-anderson/dev/cohezion/.claude/plans/’: No such file or directory
+find: ‘/home/<USER>/dev/cohezion/.claude/plans/’: No such file or directory
 ---
-find: ‘/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/.claude/plans/’: No such file or directory
+find: ‘/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/.claude/plans/’: No such file or directory
 ```
 
 > TOOL
@@ -122,7 +122,7 @@ tool_use Bash
 id: toolu_01FT1sBXZGQMoGFBpJGmKCHo
 ```json
 {
-  "command": "find /home/mike-anderson -name \"dreamy-jingling-thacker*\" -type f 2>/dev/null | head -10",
+  "command": "find /home/<USER> -name \"dreamy-jingling-thacker*\" -type f 2>/dev/null | head -10",
   "description": "Search for plan file in home directory"
 }
 ```
@@ -141,7 +141,7 @@ tool_use Bash
 id: toolu_01KtxVAhuEAxWTTTmjKgcSJF
 ```json
 {
-  "command": "ls /home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/.claude/ 2>&1 && echo \"---BIOS INSTRUCTIONS---\" && cat /home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/BIOS_RESUME_INSTRUCTIONS.md",
+  "command": "ls /home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/.claude/ 2>&1 && echo \"---BIOS INSTRUCTIONS---\" && cat /home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/BIOS_RESUME_INSTRUCTIONS.md",
   "description": "Check worktree .claude/ and read BIOS instructions"
 }
 ```
@@ -210,7 +210,7 @@ tool_use Bash
 id: toolu_01MRkWWT9z4NJJTc2SjJbFof
 ```json
 {
-  "command": "find /home/mike-anderson -name \"dreamy-jingling-thacker.md\" -type f 2>/dev/null",
+  "command": "find /home/<USER> -name \"dreamy-jingling-thacker.md\" -type f 2>/dev/null",
   "description": "Locate plan file"
 }
 ```
@@ -256,7 +256,7 @@ id: toolu_016TDSZ87XH7q6PFQUjUZmsu
 ```json
 {
   "pattern": "**/dreamy-jingling-thacker.md",
-  "path": "/home/mike-anderson/.claude"
+  "path": "/home/<USER>/.claude"
 }
 ```
 
@@ -265,7 +265,7 @@ id: toolu_016TDSZ87XH7q6PFQUjUZmsu
 tool_result
 id: toolu_016TDSZ87XH7q6PFQUjUZmsu
 ```
-/home/mike-anderson/.claude/plans/dreamy-jingling-thacker.md
+/home/<USER>/.claude/plans/dreamy-jingling-thacker.md
 ```
 
 > TOOL
@@ -275,7 +275,7 @@ id: toolu_014hFaqiLBoQPxxmK74EU4Ud
 ```json
 {
   "pattern": "**/check_bios_state.py",
-  "path": "/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker"
+  "path": "/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker"
 }
 ```
 
@@ -293,7 +293,7 @@ tool_use Read
 id: toolu_01Mjd3YvdxFiKhM1Ev63CXp4
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/plans/dreamy-jingling-thacker.md"
+  "file_path": "/home/<USER>/.claude/plans/dreamy-jingling-thacker.md"
 }
 ```
 
@@ -329,7 +329,7 @@ tool_use Read
 id: toolu_014nSNhrQkH7EtA8wFwvz5y9
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/scripts/check_bios_state.py"
+  "file_path": "/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/scripts/check_bios_state.py"
 }
 ```
 
@@ -394,7 +394,7 @@ id: toolu_01RR12it5Ed8jTzhf1pYJaoP
 tool_result
 id: toolu_01RR12it5Ed8jTzhf1pYJaoP
 ```
-{"message":"Successfully stopped task: blywu3moz (find /home/mike-anderson -name \"dreamy-jingling-thacker*\" -type f 2>/dev/null | head -10)","task_id":"blywu3moz","task_type":"local_bash","command":"find /home/mike-anderson -name \"dreamy-jingling-thacker*\" -type f 2>/dev/null | head -10"}
+{"message":"Successfully stopped task: blywu3moz (find /home/<USER> -name \"dreamy-jingling-thacker*\" -type f 2>/dev/null | head -10)","task_id":"blywu3moz","task_type":"local_bash","command":"find /home/<USER> -name \"dreamy-jingling-thacker*\" -type f 2>/dev/null | head -10"}
 ```
 
 > TOOL
@@ -412,7 +412,7 @@ id: toolu_01Tpbf2W7g7JNzuLMfLsWXB3
 tool_result
 id: toolu_01Tpbf2W7g7JNzuLMfLsWXB3
 ```
-{"message":"Successfully stopped task: bqobuxtfi (find /home/mike-anderson -name \"dreamy-jingling-thacker.md\" -type f 2>/dev/null)","task_id":"bqobuxtfi","task_type":"local_bash","command":"find /home/mike-anderson -name \"dreamy-jingling-thacker.md\" -type f 2>/dev/null"}
+{"message":"Successfully stopped task: bqobuxtfi (find /home/<USER> -name \"dreamy-jingling-thacker.md\" -type f 2>/dev/null)","task_id":"bqobuxtfi","task_type":"local_bash","command":"find /home/<USER> -name \"dreamy-jingling-thacker.md\" -type f 2>/dev/null"}
 ```
 
 > AGENT
@@ -431,7 +431,7 @@ tool_use Bash
 id: toolu_01GuT6JMJGBJn1WeK6HPAPy6
 ```json
 {
-  "command": "cd /home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker && ls .venv/bin/python 2>&1 | head -2 && echo \"---\" && .venv/bin/python scripts/check_bios_state.py 2>&1 || uv run python scripts/check_bios_state.py 2>&1",
+  "command": "cd /home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker && ls .venv/bin/python 2>&1 | head -2 && echo \"---\" && .venv/bin/python scripts/check_bios_state.py 2>&1 || uv run python scripts/check_bios_state.py 2>&1",
   "description": "Run read-only BIOS state probe"
 }
 ```
@@ -464,7 +464,7 @@ Things this probe CANNOT check (verify manually in BIOS):
 Verdict: at least one item below target. BIOS visit and/or
 kernel/firmware/ROCm work required — see plan Phase 0a.
 warning: Resolving despite existing lockfile due to fork markers being disjoint with `requires-python`: `python_full_version >= '3.13'` vs `python_full_version == '3.11.*'`
-error: Distribution not found at: file:///home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/cloud-vault-mcp
+error: Distribution not found at: file:///home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/cloud-vault-mcp
 ```
 
 > AGENT
@@ -527,15 +527,15 @@ tool_use Write
 id: toolu_012Ckkes8vKhsNJs5Amm3rM7
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/plans/i-did-what-was-mutable-valley.md",
-  "content": "# Phase 0a Wrap-up + Pivot to Phase 0b (64 GB Ceiling, Reboot-Free Path)\n\n**Plan created:** 2026-04-18\n**Parent plan:** `/home/mike-anderson/.claude/plans/dreamy-jingling-thacker.md`\n**Worktree:** `.claude/worktrees/dreamy-jingling-thacker`\n**Branch:** `spec/dreamy-jingling-thacker`\n**Committed so far:** `5bcae51a0` (Phases 0–2), `4f2f0b2bc` (BIOS probe)\n\n---\n\n## Context\n\n**Why this plan exists.** The user completed the BIOS step from\n`BIOS_RESUME_INSTRUCTIONS.md` and reported that two of the three prescribed BIOS\ntoggles (**AI Max Performance Mode**, **PCIe Gen5**) are **not exposed by the\ncurrent Framework Desktop BIOS**, and the UMA Frame Buffer has **no \"Auto\"\noption — 64 GB is the highest fixed preset available**. A fresh run of\n`scripts/check_bios_state.py` confirms:\n\n```\n[✗] Kernel                       6.17.0-1017-oem — BELOW TARGET (6.18.4+)\n[✓] GPU target (gfx1151)         gfx1151 detected via rocminfo\n[✗] VRAM allocation (UMA)        device: 64.0 GB — LOW — BIOS UMA likely set to a fixed small value\n[✗] PCIe link speed              lspci -vv did not expose LnkSta (may need sudo for this device)\n[✓] CPU features                 AVX-512 / VNNI / BF16 — OK\n[✓] ROCm version                 /opt/rocm/.info/version = 7.2.1\n[✓] User groups                  groups: render video — OK\n```\n\n**User constraints for the remainder of Phase 0a:**\n1. The BIOS firmware update path (to unlock Auto-UMA + missing toggles) is\n   **out of scope** this session — 64 GB is the hard ceiling we plan against.\n2. **No more reboots unless strictly required […]
+  "file_path": "/home/<USER>/.claude/plans/i-did-what-was-mutable-valley.md",
+  "content": "# Phase 0a Wrap-up + Pivot to Phase 0b (64 GB Ceiling, Reboot-Free Path)\n\n**Plan created:** 2026-04-18\n**Parent plan:** `/home/<USER>/.claude/plans/dreamy-jingling-thacker.md`\n**Worktree:** `.claude/worktrees/dreamy-jingling-thacker`\n**Branch:** `spec/dreamy-jingling-thacker`\n**Committed so far:** `5bcae51a0` (Phases 0–2), `4f2f0b2bc` (BIOS probe)\n\n---\n\n## Context\n\n**Why this plan exists.** The user completed the BIOS step from\n`BIOS_RESUME_INSTRUCTIONS.md` and reported that two of the three prescribed BIOS\ntoggles (**AI Max Performance Mode**, **PCIe Gen5**) are **not exposed by the\ncurrent Framework Desktop BIOS**, and the UMA Frame Buffer has **no \"Auto\"\noption — 64 GB is the highest fixed preset available**. A fresh run of\n`scripts/check_bios_state.py` confirms:\n\n```\n[✗] Kernel                       6.17.0-1017-oem — BELOW TARGET (6.18.4+)\n[✓] GPU target (gfx1151)         gfx1151 detected via rocminfo\n[✗] VRAM allocation (UMA)        device: 64.0 GB — LOW — BIOS UMA likely set to a fixed small value\n[✗] PCIe link speed              lspci -vv did not expose LnkSta (may need sudo for this device)\n[✓] CPU features                 AVX-512 / VNNI / BF16 — OK\n[✓] ROCm version                 /opt/rocm/.info/version = 7.2.1\n[✓] User groups                  groups: render video — OK\n```\n\n**User constraints for the remainder of Phase 0a:**\n1. The BIOS firmware update path (to unlock Auto-UMA + missing toggles) is\n   **out of scope** this session — 64 GB is the hard ceiling we plan against.\n2. **No more reboots unless strictly required […]
 
 > TOOL
 
 tool_result
 id: toolu_012Ckkes8vKhsNJs5Amm3rM7
 ```
-File created successfully at: /home/mike-anderson/.claude/plans/i-did-what-was-mutable-valley.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/plans/i-did-what-was-mutable-valley.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -554,15 +554,15 @@ tool_use Write
 id: toolu_015bcXETjb6TMsWJNHQGDYHc
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/plans/i-did-what-was-mutable-valley.md",
-  "content": "# Phase 0a Completion: Kernel + Firmware + ROCm → Phase 0b Probe (the TurboQuant Unlock)\n\n**Plan created:** 2026-04-18\n**Parent plan:** `/home/mike-anderson/.claude/plans/dreamy-jingling-thacker.md`\n**Worktree:** `.claude/worktrees/dreamy-jingling-thacker`\n**Branch:** `spec/dreamy-jingling-thacker`\n**Committed so far:** `5bcae51a0` (Phases 0–2), `4f2f0b2bc` (BIOS probe)\n\n---\n\n## Context\n\n**Why this plan exists.** The goal is and has always been **unlocking\nTurboQuant on the Strix Halo host** — the parent plan's end state. The BIOS\nstep has partially completed: VRAM moved from 0.5 GB → 64 GB after the user's\nBIOS visit, but the user's current Framework BIOS revision **has no \"Auto\"\nUMA option, no AI Max Performance toggle, and no PCIe Gen5 toggle** (those\nappear only on Framework BIOS v3.05+, which the user opted not to flash this\nsession). The user explicitly stated: *\"If we need the kernel upgrade for\nTurboQuant then let's do it. I'll just need another email. The goal has been\nunlocking TurboQuant.\"* That reverses the earlier \"no reboots\" constraint\nand puts the kernel / firmware / ROCm upgrades back on the critical path,\nwith the affordance that each reboot-gated step gets an email-formatted\n`*_RESUME_INSTRUCTIONS.md` handoff so the user can pick up from anywhere.\n\n**Fresh probe (2026-04-18, post-BIOS):**\n```\n[✗] Kernel                       6.17.0-1017-oem — BELOW TARGET (6.18.4+)\n[✓] GPU target (gfx1151)         gfx1151 detected via rocminfo\n[✗] VRAM allocation (UMA)        device: 64.0 GB — […]
+  "file_path": "/home/<USER>/.claude/plans/i-did-what-was-mutable-valley.md",
+  "content": "# Phase 0a Completion: Kernel + Firmware + ROCm → Phase 0b Probe (the TurboQuant Unlock)\n\n**Plan created:** 2026-04-18\n**Parent plan:** `/home/<USER>/.claude/plans/dreamy-jingling-thacker.md`\n**Worktree:** `.claude/worktrees/dreamy-jingling-thacker`\n**Branch:** `spec/dreamy-jingling-thacker`\n**Committed so far:** `5bcae51a0` (Phases 0–2), `4f2f0b2bc` (BIOS probe)\n\n---\n\n## Context\n\n**Why this plan exists.** The goal is and has always been **unlocking\nTurboQuant on the Strix Halo host** — the parent plan's end state. The BIOS\nstep has partially completed: VRAM moved from 0.5 GB → 64 GB after the user's\nBIOS visit, but the user's current Framework BIOS revision **has no \"Auto\"\nUMA option, no AI Max Performance toggle, and no PCIe Gen5 toggle** (those\nappear only on Framework BIOS v3.05+, which the user opted not to flash this\nsession). The user explicitly stated: *\"If we need the kernel upgrade for\nTurboQuant then let's do it. I'll just need another email. The goal has been\nunlocking TurboQuant.\"* That reverses the earlier \"no reboots\" constraint\nand puts the kernel / firmware / ROCm upgrades back on the critical path,\nwith the affordance that each reboot-gated step gets an email-formatted\n`*_RESUME_INSTRUCTIONS.md` handoff so the user can pick up from anywhere.\n\n**Fresh probe (2026-04-18, post-BIOS):**\n```\n[✗] Kernel                       6.17.0-1017-oem — BELOW TARGET (6.18.4+)\n[✓] GPU target (gfx1151)         gfx1151 detected via rocminfo\n[✗] VRAM allocation (UMA)        device: 64.0 GB — […]
 
 > TOOL
 
 tool_result
 id: toolu_015bcXETjb6TMsWJNHQGDYHc
 ```
-The file /home/mike-anderson/.claude/plans/i-did-what-was-mutable-valley.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/i-did-what-was-mutable-valley.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -578,7 +578,7 @@ tool_use ExitPlanMode
 id: toolu_012xEidB9FRsAfjZqeSptrZA
 ```json
 {
-  "plan": "# Phase 0a Completion: Kernel + Firmware + ROCm → Phase 0b Probe (the TurboQuant Unlock)\n\n**Plan created:** 2026-04-18\n**Parent plan:** `/home/mike-anderson/.claude/plans/dreamy-jingling-thacker.md`\n**Worktree:** `.claude/worktrees/dreamy-jingling-thacker`\n**Branch:** `spec/dreamy-jingling-thacker`\n**Committed so far:** `5bcae51a0` (Phases 0–2), `4f2f0b2bc` (BIOS probe)\n\n---\n\n## Context\n\n**Why this plan exists.** The goal is and has always been **unlocking\nTurboQuant on the Strix Halo host** — the parent plan's end state. The BIOS\nstep has partially completed: VRAM moved from 0.5 GB → 64 GB after the user's\nBIOS visit, but the user's current Framework BIOS revision **has no \"Auto\"\nUMA option, no AI Max Performance toggle, and no PCIe Gen5 toggle** (those\nappear only on Framework BIOS v3.05+, which the user opted not to flash this\nsession). The user explicitly stated: *\"If we need the kernel upgrade for\nTurboQuant then let's do it. I'll just need another email. The goal has been\nunlocking TurboQuant.\"* That reverses the earlier \"no reboots\" constraint\nand puts the kernel / firmware / ROCm upgrades back on the critical path,\nwith the affordance that each reboot-gated step gets an email-formatted\n`*_RESUME_INSTRUCTIONS.md` handoff so the user can pick up from anywhere.\n\n**Fresh probe (2026-04-18, post-BIOS):**\n```\n[✗] Kernel                       6.17.0-1017-oem — BELOW TARGET (6.18.4+)\n[✓] GPU target (gfx1151)         gfx1151 detected via rocminfo\n[✗] VRAM allocation (UMA)        device: 64.0 GB — LOW\n[✗] PCIe […]
+  "plan": "# Phase 0a Completion: Kernel + Firmware + ROCm → Phase 0b Probe (the TurboQuant Unlock)\n\n**Plan created:** 2026-04-18\n**Parent plan:** `/home/<USER>/.claude/plans/dreamy-jingling-thacker.md`\n**Worktree:** `.claude/worktrees/dreamy-jingling-thacker`\n**Branch:** `spec/dreamy-jingling-thacker`\n**Committed so far:** `5bcae51a0` (Phases 0–2), `4f2f0b2bc` (BIOS probe)\n\n---\n\n## Context\n\n**Why this plan exists.** The goal is and has always been **unlocking\nTurboQuant on the Strix Halo host** — the parent plan's end state. The BIOS\nstep has partially completed: VRAM moved from 0.5 GB → 64 GB after the user's\nBIOS visit, but the user's current Framework BIOS revision **has no \"Auto\"\nUMA option, no AI Max Performance toggle, and no PCIe Gen5 toggle** (those\nappear only on Framework BIOS v3.05+, which the user opted not to flash this\nsession). The user explicitly stated: *\"If we need the kernel upgrade for\nTurboQuant then let's do it. I'll just need another email. The goal has been\nunlocking TurboQuant.\"* That reverses the earlier \"no reboots\" constraint\nand puts the kernel / firmware / ROCm upgrades back on the critical path,\nwith the affordance that each reboot-gated step gets an email-formatted\n`*_RESUME_INSTRUCTIONS.md` handoff so the user can pick up from anywhere.\n\n**Fresh probe (2026-04-18, post-BIOS):**\n```\n[✗] Kernel                       6.17.0-1017-oem — BELOW TARGET (6.18.4+)\n[✓] GPU target (gfx1151)         gfx1151 detected via rocminfo\n[✗] VRAM allocation (UMA)        device: 64.0 GB — LOW\n[✗] PCIe […]
 
 > TOOL
 
@@ -600,7 +600,7 @@ id: toolu_01QYwVui7Pm5EJJU7SzsQhJS
 ```json
 {
   "pattern": "COHEZION_SMTP|smtp_host|send_email|sendmail",
-  "path": "/home/mike-anderson/dev/cohezion",
+  "path": "/home/<USER>/dev/cohezion",
   "output_mode": "files_with_matches",
   "head_limit": 30
 }
@@ -645,7 +645,7 @@ tool_use Bash
 id: toolu_01VJKJpAGdTx7MHu6vUtnigw
 ```json
 {
-  "command": "env | grep -iE 'smtp|email|mail' 2>&1 | head -10 && echo \"---\" && ls /home/mike-anderson/dev/cohezion/scripts/*mail* /home/mike-anderson/dev/cohezion/scripts/*email* /home/mike-anderson/dev/cohezion/scripts/*notify* 2>/dev/null | head -10",
+  "command": "env | grep -iE 'smtp|email|mail' 2>&1 | head -10 && echo \"---\" && ls /home/<USER>/dev/cohezion/scripts/*mail* /home/<USER>/dev/cohezion/scripts/*email* /home/<USER>/dev/cohezion/scripts/*notify* 2>/dev/null | head -10",
   "description": "Check SMTP env vars and email-related scripts"
 }
 ```
@@ -656,16 +656,16 @@ tool_result
 id: toolu_01VJKJpAGdTx7MHu6vUtnigw
 ```
 ---
-/home/mike-anderson/dev/cohezion/scripts/notify_mining_start.py
-/home/mike-anderson/dev/cohezion/scripts/read_research_email.py
-/home/mike-anderson/dev/cohezion/scripts/read_research_email.py
-/home/mike-anderson/dev/cohezion/scripts/send_ascension_email.py
-/home/mike-anderson/dev/cohezion/scripts/send_ascension_email.py
-/home/mike-anderson/dev/cohezion/scripts/send_milestone_email.py
-/home/mike-anderson/dev/cohezion/scripts/send_milestone_email.py
-/home/mike-anderson/dev/cohezion/scripts/send_sprint_5_email.py
-/home/mike-anderson/dev/cohezion/scripts/send_sprint_5_email.py
-/home/mike-anderson/dev/cohezion/scripts/send_sprint_complete_email.py
+/home/<USER>/dev/cohezion/scripts/notify_mining_start.py
+/home/<USER>/dev/cohezion/scripts/read_research_email.py
+/home/<USER>/dev/cohezion/scripts/read_research_email.py
+/home/<USER>/dev/cohezion/scripts/send_ascension_email.py
+/home/<USER>/dev/cohezion/scripts/send_ascension_email.py
+/home/<USER>/dev/cohezion/scripts/send_milestone_email.py
+/home/<USER>/dev/cohezion/scripts/send_milestone_email.py
+/home/<USER>/dev/cohezion/scripts/send_sprint_5_email.py
+/home/<USER>/dev/cohezion/scripts/send_sprint_5_email.py
+/home/<USER>/dev/cohezion/scripts/send_sprint_complete_email.py
 ```
 
 > TOOL
@@ -674,7 +674,7 @@ tool_use Read
 id: toolu_01JeDprfYuhnYHs96MKtAcNS
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/scripts/send_summary_email.py",
+  "file_path": "/home/<USER>/dev/cohezion/scripts/send_summary_email.py",
   "limit": 60
 }
 ```
@@ -685,7 +685,7 @@ tool_result
 id: toolu_01JeDprfYuhnYHs96MKtAcNS
 ```
 1	#!/usr/bin/env python3
-2	"""Send the application summary email to manderson240@gmail.com.
+2	"""Send the application summary email to <REDACTED_EMAIL>.
 3	
 4	Usage:
 5	    # Set your Gmail App Password first (NOT your regular password):
@@ -716,8 +716,8 @@ id: toolu_01JeDprfYuhnYHs96MKtAcNS
 30	        print("  4. python scripts/send_summary_email.py")
 31	        return
 32	
-33	    sender = "manderson240@gmail.com"
-34	    recipient = "manderson240@gmail.com"
+33	    sender = "<REDACTED_EMAIL>"
+34	    recipient = "<REDACTED_EMAIL>"
 35	
 36	    msg = MIMEMultipart("alternative")
 37	    msg["Subject"] = "Cohezion — Anthropic Application Package Ready"
@@ -736,7 +736,7 @@ tool_use Bash
 id: toolu_01Jif1hriX9JdCSqZ6mUhg6y
 ```json
 {
-  "command": "grep -l 'smtplib\\|msmtp\\|mailutils' /home/mike-anderson/dev/cohezion/scripts/send_*.py 2>&1 | head -5 && echo \"---\" && grep -hE '(SMTP_HOST|SMTP_PORT|SMTP_USER|FROM_EMAIL|TO_EMAIL|EMAIL_TO|smtp\\.)' /home/mike-anderson/dev/cohezion/scripts/send_*.py 2>&1 | sort -u | head -20 && echo \"--- .env ---\" && [ -f /home/mike-anderson/dev/cohezion/.env ] && grep -iE 'smtp|email|mail' /home/mike-anderson/dev/cohezion/.env 2>&1 | sed 's/=.*/=<redacted>/' | head -10",
+  "command": "grep -l 'smtplib\\|msmtp\\|mailutils' /home/<USER>/dev/cohezion/scripts/send_*.py 2>&1 | head -5 && echo \"---\" && grep -hE '(SMTP_HOST|SMTP_PORT|SMTP_USER|FROM_EMAIL|TO_EMAIL|EMAIL_TO|smtp\\.)' /home/<USER>/dev/cohezion/scripts/send_*.py 2>&1 | sort -u | head -20 && echo \"--- .env ---\" && [ -f /home/<USER>/dev/cohezion/.env ] && grep -iE 'smtp|email|mail' /home/<USER>/dev/cohezion/.env 2>&1 | sed 's/=.*/=<redacted>/' | head -10",
   "description": "Inspect email send patterns and env config"
 }
 ```
@@ -746,7 +746,7 @@ id: toolu_01Jif1hriX9JdCSqZ6mUhg6y
 tool_result
 id: toolu_01Jif1hriX9JdCSqZ6mUhg6y
 ```
-/home/mike-anderson/dev/cohezion/scripts/send_summary_email.py
+/home/<USER>/dev/cohezion/scripts/send_summary_email.py
 ---
     with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
 --- .env ---
@@ -780,7 +780,7 @@ SMTP_HOST: UNSET
 EMAIL_TO: UNSET
 ---
 ---
-/home/mike-anderson/.local/bin/bw
+/home/<USER>/.local/bin/bw
 bitwarden-cli available
 no pass
 no op
@@ -792,7 +792,7 @@ tool_use Read
 id: toolu_01Vd4Pd4ApQJZsDfY6EK5EkV
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/scripts/send_phone_instructions.py",
+  "file_path": "/home/<USER>/dev/cohezion/scripts/send_phone_instructions.py",
   "limit": 80
 }
 ```
@@ -854,7 +854,7 @@ id: toolu_01HyVYzHeUVXf4nPV6GVz28Q
 ```json
 {
   "pattern": "**/email_notifier.py",
-  "path": "/home/mike-anderson/dev/cohezion"
+  "path": "/home/<USER>/dev/cohezion"
 }
 ```
 
@@ -873,7 +873,7 @@ id: toolu_013cZjKhpW9mJaQ4My63cwBB
 ```json
 {
   "pattern": "class EmailNotifier",
-  "path": "/home/mike-anderson/dev/cohezion",
+  "path": "/home/<USER>/dev/cohezion",
   "output_mode": "files_with_matches"
 }
 ```
@@ -892,7 +892,7 @@ tool_use Bash
 id: toolu_01TmFSYKbDB6Fs92iGArwS3E
 ```json
 {
-  "command": "find /home/mike-anderson/dev/cohezion -type f \\( -name 'email_notifier*' -o -name '*notifier*.py' \\) 2>/dev/null | head -10",
+  "command": "find /home/<USER>/dev/cohezion -type f \\( -name 'email_notifier*' -o -name '*notifier*.py' \\) 2>/dev/null | head -10",
   "description": "Find EmailNotifier file by alt name"
 }
 ```
@@ -911,7 +911,7 @@ tool_use Bash
 id: toolu_01PA9Tv4LmsQYJxjiCnXVXdr
 ```json
 {
-  "command": "find /home/mike-anderson/dev/cohezion -type d -name 'mcp' 2>/dev/null | head -10 && echo \"---\" && find /home/mike-anderson/dev/cohezion -type f -name '*.py' -exec grep -l 'class EmailNotifier\\|EmailNotifier(' {} \\; 2>/dev/null | head -10",
+  "command": "find /home/<USER>/dev/cohezion -type d -name 'mcp' 2>/dev/null | head -10 && echo \"---\" && find /home/<USER>/dev/cohezion -type f -name '*.py' -exec grep -l 'class EmailNotifier\\|EmailNotifier(' {} \\; 2>/dev/null | head -10",
   "description": "Locate EmailNotifier"
 }
 ```
@@ -950,27 +950,27 @@ id: toolu_01AB4NWmZPdfodYUSwtLPmNM
 <status>running</status>
 
 <output>
-/home/mike-anderson/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.11/site-packages/mcp
-/home/mike-anderson/dev/cohezion/.mypy_cache/3.11/mcp
-/home/mike-anderson/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/.venv/lib/python3.13/site-packages/mcp
-/home/mike-anderson/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/tests/mcp
-/home/mike-anderson/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/src/web/anima_dashboard/tests/mcp
-/home/mike-anderson/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/src/cohezion-archive/mcp
-/home/mike-anderson/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/src/cohezion/mcp
-/home/mike-anderson/dev/cohezion/.worktrees/gemini-mcp-fix/tests/mcp
-/home/mike-anderson/dev/cohezion/.worktrees/gemini-mcp-fix/src/cohezion/mcp
-/home/mike-anderson/dev/cohezion/.worktrees/gemini-mcp-fix/src/cohezion-archive/mcp
+/home/<USER>/dev/cohezion/cloud-vault-mcp/.venv/lib/python3.11/site-packages/mcp
+/home/<USER>/dev/cohezion/.mypy_cache/3.11/mcp
+/home/<USER>/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/.venv/lib/python3.13/site-packages/mcp
+/home/<USER>/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/tests/mcp
+/home/<USER>/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/src/web/anima_dashboard/tests/mcp
+/home/<USER>/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/src/cohezion-archive/mcp
+/home/<USER>/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/src/cohezion/mcp
+/home/<USER>/dev/cohezion/.worktrees/gemini-mcp-fix/tests/mcp
+/home/<USER>/dev/cohezion/.worktrees/gemini-mcp-fix/src/cohezion/mcp
+/home/<USER>/dev/cohezion/.worktrees/gemini-mcp-fix/src/cohezion-archive/mcp
 ---
-/home/mike-anderson/dev/cohezion/overnight_driver.py
-/home/mike-anderson/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/overnight_driver.py
-/home/mike-anderson/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/scripts/notify_mining_start.py
-/home/mike-anderson/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/scripts/universe_driver.py
-/home/mike-anderson/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/scripts/send_milestone.py
-/home/mike-anderson/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/scripts/send_ascension_email.py
-/home/mike-anderson/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/scripts/send_technical_report.py
-/home/mike-anderson/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/scripts/mission_finalizer.py
-/home/mike-anderson/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/scripts/send_phone_instructions.py
-/home/mike-anderson/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/scripts/phone_orchestrator.py
+/home/<USER>/dev/cohezion/overnight_driver.py
+/home/<USER>/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/overnight_driver.py
+/home/<USER>/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/scripts/notify_mining_start.py
+/home/<USER>/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/scripts/universe_driver.py
+/home/<USER>/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/scripts/send_milestone.py
+/home/<USER>/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/scripts/send_ascension_email.py
+/home/<USER>/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/scripts/send_technical_report.py
+/home/<USER>/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/scripts/mission_finalizer.py
+/home/<USER>/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/scripts/send_phone_instructions.py
+/home/<USER>/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/scripts/phone_orchestrator.py
 </output>
 ```
 
@@ -989,7 +989,7 @@ id: toolu_01A8DTYSrRhnZLDjgvoyuHb8
 tool_result
 id: toolu_01A8DTYSrRhnZLDjgvoyuHb8
 ```
-{"message":"Successfully stopped task: bfxv77xh6 (find /home/mike-anderson/dev/cohezion -type d -name 'mcp' 2>/dev/null | head -10 && echo \"---\" && find /home/mike-anderson/dev/cohezion -type f -name '*.py' -exec grep -l 'class EmailNotifier\\|EmailNotifier(' {} \\; 2>/dev/null | head -10)","task_id":"bfxv77xh6","task_type":"local_bash","command":"find /home/mike-anderson/dev/cohezion -type d -name 'mcp' 2>/dev/null | head -10 && echo \"---\" && find /home/mike-anderson/dev/cohezion -type f -name '*.py' -exec grep -l 'class EmailNotifier\\|EmailNotifier(' {} \\; 2>/dev/null | head -10"}
+{"message":"Successfully stopped task: bfxv77xh6 (find /home/<USER>/dev/cohezion -type d -name 'mcp' 2>/dev/null | head -10 && echo \"---\" && find /home/<USER>/dev/cohezion -type f -name '*.py' -exec grep -l 'class EmailNotifier\\|EmailNotifier(' {} \\; 2>/dev/null | head -10)","task_id":"bfxv77xh6","task_type":"local_bash","command":"find /home/<USER>/dev/cohezion -type d -name 'mcp' 2>/dev/null | head -10 && echo \"---\" && find /home/<USER>/dev/cohezion -type f -name '*.py' -exec grep -l 'class EmailNotifier\\|EmailNotifier(' {} \\; 2>/dev/null | head -10"}
 ```
 
 > TOOL
@@ -999,7 +999,7 @@ id: toolu_01SaNFthxzrzHzm2PwFAP16F
 ```json
 {
   "pattern": "**/email_notifier.py",
-  "path": "/home/mike-anderson/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/src/cohezion/mcp"
+  "path": "/home/<USER>/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/src/cohezion/mcp"
 }
 ```
 
@@ -1017,7 +1017,7 @@ tool_use Bash
 id: toolu_01AsxNw74FdMHt5w7epHiNiE
 ```json
 {
-  "command": "ls /home/mike-anderson/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/src/cohezion/mcp/ 2>&1 | grep -iE 'email|notif' | head -5\necho \"---\"\nls /home/mike-anderson/dev/cohezion/src/cohezion/mcp/ 2>&1 | grep -iE 'email|notif' | head -5\necho \"---\"\n# Look for EmailNotifier class specifically in tracked code\ngrep -rn 'class EmailNotifier' /home/mike-anderson/dev/cohezion/src /home/mike-anderson/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/src 2>/dev/null | head -5",
+  "command": "ls /home/<USER>/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/src/cohezion/mcp/ 2>&1 | grep -iE 'email|notif' | head -5\necho \"---\"\nls /home/<USER>/dev/cohezion/src/cohezion/mcp/ 2>&1 | grep -iE 'email|notif' | head -5\necho \"---\"\n# Look for EmailNotifier class specifically in tracked code\ngrep -rn 'class EmailNotifier' /home/<USER>/dev/cohezion/src /home/<USER>/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/src 2>/dev/null | head -5",
   "description": "Locate EmailNotifier class definition"
 }
 ```
@@ -1053,7 +1053,7 @@ id: toolu_01AqyZUno4GCkmoJaL551PTb
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/i-did-what-was-mutable-valley.md",
+  "file_path": "/home/<USER>/.claude/plans/i-did-what-was-mutable-valley.md",
   "old_string": "## Recommended approach\n\nA four-step sudo-gated sequence, each with its own email-style handoff, then\nthe Phase 0b probe. The user pastes the re-probe output into the next Claude\nsession after each reboot; the agent advances.\n\n### Step 1 — Kernel 6.17 → 6.18.4 (reboot, produces VRAM verdict)",
   "new_string": "## Recommended approach\n\nA **Step 0 email-delivery test** followed by four sudo-gated upgrades, each\nwith an actual email handoff (not just a file), then the Phase 0b probe. The\nuser pastes the re-probe output into the next Claude session after each\nreboot; the agent advances.\n\n### Step 0 — Prove email delivery works before depending on it\n\n**Problem state as of this session:** (verified)\n- `GMAIL_APP_PASSWORD` is UNSET in the running shell.\n- `EmailNotifier` is imported by 5+ scripts but has no class definition in\n  tracked code — an orphaned import; those scripts silently no-op.\n- Only working email send in the codebase is the direct\n  `smtplib.SMTP_SSL(\"smtp.gmail.com\", 465)` pattern in\n  `scripts/send_summary_email.py`, which requires `GMAIL_APP_PASSWORD` set.\n- Bitwarden CLI (`bw`) is installed, so the credential can be pulled lazily\n  from the vault rather than pasted into a shell or `.env`.\n\n**Step 0 tasks:**\n1. **Retrieve the Gmail App Password.** Preference order: (a) if Bitwarden\n   vault has an item […]
 
@@ -1062,7 +1062,7 @@ id: toolu_01AqyZUno4GCkmoJaL551PTb
 tool_result
 id: toolu_01AqyZUno4GCkmoJaL551PTb
 ```
-The file /home/mike-anderson/.claude/plans/i-did-what-was-mutable-valley.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/i-did-what-was-mutable-valley.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1072,7 +1072,7 @@ id: toolu_013JoFWU14QRNvvKi5qX3ghs
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/i-did-what-was-mutable-valley.md",
+  "file_path": "/home/<USER>/.claude/plans/i-did-what-was-mutable-valley.md",
   "old_string": "### Create\n| Path | Purpose |\n|---|---|\n| `.claude/worktrees/dreamy-jingling-thacker/KERNEL_RESUME_INSTRUCTIONS.md` | Email-style handoff for Step 1 reboot |\n| `.claude/worktrees/dreamy-jingling-thacker/FIRMWARE_RESUME_INSTRUCTIONS.md` | Email-style handoff for Step 2 reboot |\n| `.claude/worktrees/dreamy-jingling-thacker/ROCM_RESUME_INSTRUCTIONS.md` | Conditional — only if ROCm upgrade triggers a DKMS reboot |\n| `.claude/worktrees/dreamy-jingling-thacker/scripts/probe_backend.py` | Phase 0b two-arm bake-off; < 120 lines |\n| `.claude/worktrees/dreamy-jingling-thacker/benchmarks/backend_probe_2026-04-18.md` | Probe outcome + primary backend recommendation |",
   "new_string": "### Create\n| Path | Purpose |\n|---|---|\n| `.claude/worktrees/dreamy-jingling-thacker/scripts/send_handoff.py` | **Step 0** — consolidated Gmail SMTP sender with preflight check; < 80 lines |\n| `.claude/worktrees/dreamy-jingling-thacker/EMAIL_TEST_2026-04-18.md` | **Step 0** — tiny payload for the round-trip email test |\n| `.claude/worktrees/dreamy-jingling-thacker/KERNEL_RESUME_INSTRUCTIONS.md` | Email-sent handoff for Step 1 reboot |\n| `.claude/worktrees/dreamy-jingling-thacker/FIRMWARE_RESUME_INSTRUCTIONS.md` | Email-sent handoff for Step 2 reboot |\n| `.claude/worktrees/dreamy-jingling-thacker/ROCM_RESUME_INSTRUCTIONS.md` | Conditional — only if ROCm upgrade triggers a DKMS reboot |\n| `.claude/worktrees/dreamy-jingling-thacker/scripts/probe_backend.py` | Phase 0b two-arm bake-off; < 120 lines |\n| `.claude/worktrees/dreamy-jingling-thacker/benchmarks/backend_probe_2026-04-18.md` | Probe outcome + primary backend recommendation |"
 }
@@ -1083,7 +1083,7 @@ id: toolu_013JoFWU14QRNvvKi5qX3ghs
 tool_result
 id: toolu_013JoFWU14QRNvvKi5qX3ghs
 ```
-The file /home/mike-anderson/.claude/plans/i-did-what-was-mutable-valley.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/i-did-what-was-mutable-valley.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1093,9 +1093,9 @@ id: toolu_011cKbVFbGoyhApeymop2TeR
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/i-did-what-was-mutable-valley.md",
+  "file_path": "/home/<USER>/.claude/plans/i-did-what-was-mutable-valley.md",
   "old_string": "## Verification\n\n**After Step 1 (kernel upgrade + reboot):**",
-  "new_string": "## Verification\n\n**After Step 0 (email delivery):**\n```bash\ncd /home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker\ntest -n \"$GMAIL_APP_PASSWORD\" || echo \"ABORT: credential not in env\"\npython scripts/send_handoff.py --subject '[Cohezion] Email delivery test' \\\n  --body-file EMAIL_TEST_2026-04-18.md\n# Then: user confirms the message appeared in their inbox within ~60 seconds.\n# If no arrival: fall back to file-only handoffs (see Step 0 decision gate).\n```\n\n**After Step 1 (kernel upgrade + reboot):**"
+  "new_string": "## Verification\n\n**After Step 0 (email delivery):**\n```bash\ncd /home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker\ntest -n \"$GMAIL_APP_PASSWORD\" || echo \"ABORT: credential not in env\"\npython scripts/send_handoff.py --subject '[Cohezion] Email delivery test' \\\n  --body-file EMAIL_TEST_2026-04-18.md\n# Then: user confirms the message appeared in their inbox within ~60 seconds.\n# If no arrival: fall back to file-only handoffs (see Step 0 decision gate).\n```\n\n**After Step 1 (kernel upgrade + reboot):**"
 }
 ```
 
@@ -1104,7 +1104,7 @@ id: toolu_011cKbVFbGoyhApeymop2TeR
 tool_result
 id: toolu_011cKbVFbGoyhApeymop2TeR
 ```
-The file /home/mike-anderson/.claude/plans/i-did-what-was-mutable-valley.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/i-did-what-was-mutable-valley.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1114,9 +1114,9 @@ id: toolu_017qusmBwpXcRUqouf7ZdeXG
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/i-did-what-was-mutable-valley.md",
+  "file_path": "/home/<USER>/.claude/plans/i-did-what-was-mutable-valley.md",
   "old_string": "**Acceptance criteria:**\n1. `uname -r` reports 6.18.4+ and the probe's kernel row is ✓.\n2. `strix_halo*` firmware blobs are loaded per dmesg.\n3. ROCm version reads 7.2.2 from `/opt/rocm/.info/version`.\n4. `benchmarks/backend_probe_2026-04-18.md` names a primary backend and lists the exact CLI flags that served a 32k-token prompt without OOM/crash.\n5. `HARDWARE_PROFILE_PRIME.md` reflects the actual post-upgrade numbers, not the target numbers.\n6. Each reboot was preceded by an `*_RESUME_INSTRUCTIONS.md` email-style handoff so the user could pick up in a new Claude session.",
-  "new_string": "**Acceptance criteria:**\n1. **Step 0 test email arrived in `manderson240@gmail.com` inbox** (or, failing that, an explicit \"file-only fallback\" note in `HARDWARE_PROFILE_PRIME.md`).\n2. `uname -r` reports 6.18.4+ and the probe's kernel row is ✓.\n3. `strix_halo*` firmware blobs are loaded per dmesg.\n4. ROCm version reads 7.2.2 from `/opt/rocm/.info/version`.\n5. `benchmarks/backend_probe_2026-04-18.md` names a primary backend and lists the exact CLI flags that served a 32k-token prompt without OOM/crash.\n6. `HARDWARE_PROFILE_PRIME.md` reflects the actual post-upgrade numbers, not the target numbers.\n7. Each reboot was preceded by an actual email (not just a file) so the user could resume from anywhere, **unless** Step 0 determined email delivery is unavailable and we explicitly fell back to file-only handoffs."
+  "new_string": "**Acceptance criteria:**\n1. **Step 0 test email arrived in `<REDACTED_EMAIL>` inbox** (or, failing that, an explicit \"file-only fallback\" note in `HARDWARE_PROFILE_PRIME.md`).\n2. `uname -r` reports 6.18.4+ and the probe's kernel row is ✓.\n3. `strix_halo*` firmware blobs are loaded per dmesg.\n4. ROCm version reads 7.2.2 from `/opt/rocm/.info/version`.\n5. `benchmarks/backend_probe_2026-04-18.md` names a primary backend and lists the exact CLI flags that served a 32k-token prompt without OOM/crash.\n6. `HARDWARE_PROFILE_PRIME.md` reflects the actual post-upgrade numbers, not the target numbers.\n7. Each reboot was preceded by an actual email (not just a file) so the user could resume from anywhere, **unless** Step 0 determined email delivery is unavailable and we explicitly fell back to file-only handoffs."
 }
 ```
 
@@ -1125,7 +1125,7 @@ id: toolu_017qusmBwpXcRUqouf7ZdeXG
 tool_result
 id: toolu_017qusmBwpXcRUqouf7ZdeXG
 ```
-The file /home/mike-anderson/.claude/plans/i-did-what-was-mutable-valley.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/i-did-what-was-mutable-valley.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1135,7 +1135,7 @@ id: toolu_01AEcfFPfqkJ3b4Dis9KQyLd
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/i-did-what-was-mutable-valley.md",
+  "file_path": "/home/<USER>/.claude/plans/i-did-what-was-mutable-valley.md",
   "old_string": "## Effort estimate\n\n| Step | Wall-clock |\n|---|---|\n| Step 1 — Kernel 6.17 → 6.18.4 + reboot + re-probe | 20–30 min (apt + mainline install + reboot + verification) |\n| Step 2 — Firmware refresh + reboot + re-probe | 15–20 min |\n| Step 3 — ROCm 7.2.2 upgrade (± reboot) | 15–25 min |\n| Step 4 — Amend `HARDWARE_PROFILE_PRIME.md` | 5 min |\n| Step 5 — Phase 0b probe (venv + install + two 32k runs) | 25–40 min |\n| Step 6 — Update parent plan | 5 min |\n| **Total** | **~90–125 min, 2–3 reboots, 3 email handoffs** |",
   "new_string": "## Effort estimate\n\n| Step | Wall-clock |\n|---|---|\n| Step 0 — Build `send_handoff.py` + round-trip email test | 10–15 min (Bitwarden unlock + App Password retrieval + send + user confirms) |\n| Step 1 — Kernel 6.17 → 6.18.4 + reboot + re-probe | 20–30 min |\n| Step 2 — Firmware refresh + reboot + re-probe | 15–20 min |\n| Step 3 — ROCm 7.2.2 upgrade (± reboot) | 15–25 min |\n| Step 4 — Amend `HARDWARE_PROFILE_PRIME.md` | 5 min |\n| Step 5 — Phase 0b probe (venv […]
 
@@ -1144,7 +1144,7 @@ id: toolu_01AEcfFPfqkJ3b4Dis9KQyLd
 tool_result
 id: toolu_01AEcfFPfqkJ3b4Dis9KQyLd
 ```
-The file /home/mike-anderson/.claude/plans/i-did-what-was-mutable-valley.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/i-did-what-was-mutable-valley.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1157,7 +1157,7 @@ tool_use ExitPlanMode
 id: toolu_01Mzb1zk2mEDTHMDz7CmhJ5q
 ```json
 {
-  "plan": "# Phase 0a Completion: Kernel + Firmware + ROCm → Phase 0b Probe (the TurboQuant Unlock)\n\n**Plan created:** 2026-04-18\n**Parent plan:** `/home/mike-anderson/.claude/plans/dreamy-jingling-thacker.md`\n**Worktree:** `.claude/worktrees/dreamy-jingling-thacker`\n**Branch:** `spec/dreamy-jingling-thacker`\n**Committed so far:** `5bcae51a0` (Phases 0–2), `4f2f0b2bc` (BIOS probe)\n\n---\n\n## Context\n\n**Why this plan exists.** The goal is and has always been **unlocking\nTurboQuant on the Strix Halo host** — the parent plan's end state. The BIOS\nstep has partially completed: VRAM moved from 0.5 GB → 64 GB after the user's\nBIOS visit, but the user's current Framework BIOS revision **has no \"Auto\"\nUMA option, no AI Max Performance toggle, and no PCIe Gen5 toggle** (those\nappear only on Framework BIOS v3.05+, which the user opted not to flash this\nsession). The user explicitly stated: *\"If we need the kernel upgrade for\nTurboQuant then let's do it. I'll just need another email. The goal has been\nunlocking TurboQuant.\"* That reverses the earlier \"no reboots\" constraint\nand puts the kernel / firmware / ROCm upgrades back on the critical path,\nwith the affordance that each reboot-gated step gets an email-formatted\n`*_RESUME_INSTRUCTIONS.md` handoff so the user can pick up from anywhere.\n\n**Fresh probe (2026-04-18, post-BIOS):**\n```\n[✗] Kernel                       6.17.0-1017-oem — BELOW TARGET (6.18.4+)\n[✓] GPU target (gfx1151)         gfx1151 detected via rocminfo\n[✗] VRAM allocation (UMA)        device: 64.0 GB — LOW\n[✗] PCIe […]
+  "plan": "# Phase 0a Completion: Kernel + Firmware + ROCm → Phase 0b Probe (the TurboQuant Unlock)\n\n**Plan created:** 2026-04-18\n**Parent plan:** `/home/<USER>/.claude/plans/dreamy-jingling-thacker.md`\n**Worktree:** `.claude/worktrees/dreamy-jingling-thacker`\n**Branch:** `spec/dreamy-jingling-thacker`\n**Committed so far:** `5bcae51a0` (Phases 0–2), `4f2f0b2bc` (BIOS probe)\n\n---\n\n## Context\n\n**Why this plan exists.** The goal is and has always been **unlocking\nTurboQuant on the Strix Halo host** — the parent plan's end state. The BIOS\nstep has partially completed: VRAM moved from 0.5 GB → 64 GB after the user's\nBIOS visit, but the user's current Framework BIOS revision **has no \"Auto\"\nUMA option, no AI Max Performance toggle, and no PCIe Gen5 toggle** (those\nappear only on Framework BIOS v3.05+, which the user opted not to flash this\nsession). The user explicitly stated: *\"If we need the kernel upgrade for\nTurboQuant then let's do it. I'll just need another email. The goal has been\nunlocking TurboQuant.\"* That reverses the earlier \"no reboots\" constraint\nand puts the kernel / firmware / ROCm upgrades back on the critical path,\nwith the affordance that each reboot-gated step gets an email-formatted\n`*_RESUME_INSTRUCTIONS.md` handoff so the user can pick up from anywhere.\n\n**Fresh probe (2026-04-18, post-BIOS):**\n```\n[✗] Kernel                       6.17.0-1017-oem — BELOW TARGET (6.18.4+)\n[✓] GPU target (gfx1151)         gfx1151 detected via rocminfo\n[✗] VRAM allocation (UMA)        device: 64.0 GB — LOW\n[✗] PCIe […]
 
 > TOOL
 
@@ -1166,7 +1166,7 @@ id: toolu_01Mzb1zk2mEDTHMDz7CmhJ5q
 ```
 User has approved your plan. You can now start coding. Start with updating your todo list if applicable
 
-Your plan has been saved to: /home/mike-anderson/.claude/plans/i-did-what-was-mutable-valley.md
+Your plan has been saved to: /home/<USER>/.claude/plans/i-did-what-was-mutable-valley.md
 You can refer back to it if needed during implementation.
 
 If this plan can be broken down into multiple independent tasks, consider using the TeamCreate tool to create a team and parallelize the work.
@@ -1175,7 +1175,7 @@ If this plan can be broken down into multiple independent tasks, consider using 
 # Phase 0a Completion: Kernel + Firmware + ROCm → Phase 0b Probe (the TurboQuant Unlock)
 
 **Plan created:** 2026-04-18
-**Parent plan:** `/home/mike-anderson/.claude/plans/dreamy-jingling-thacker.md`
+**Parent plan:** `/home/<USER>/.claude/plans/dreamy-jingling-thacker.md`
 **Worktree:** `.claude/worktrees/dreamy-jingling-thacker`
 **Branch:** `spec/dreamy-jingling-thacker`
 **Committed so far:** `5bcae51a0` (Phases 0–2), `4f2f0b2bc` (BIOS probe)
@@ -1264,7 +1264,7 @@ id: toolu_01BWdH6k8zfz1qHeMh8w2VqA
 ```json
 {
   "subject": "Step 0: round-trip send + user confirms receipt",
-  "description": "Run scripts/send_handoff.py with the test subject and body. Wait for user to confirm the message arrived in manderson240@gmail.com within ~60s. If it fails, record \"file-only fallback\" in HARDWARE_PROFILE_PRIME.md and proceed to Step 1 without email handoffs.",
+  "description": "Run scripts/send_handoff.py with the test subject and body. Wait for user to confirm the message arrived in <REDACTED_EMAIL> within ~60s. If it fails, record \"file-only fallback\" in HARDWARE_PROFILE_PRIME.md and proceed to Step 1 without email handoffs.",
   "activeForm": "Sending test email &amp; confirming receipt"
 }
 ```
@@ -1302,7 +1302,7 @@ tool_use Read
 id: toolu_01Sf3AZPsfRYynnwWs3oKs86
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/scripts/send_summary_email.py"
+  "file_path": "/home/<USER>/dev/cohezion/scripts/send_summary_email.py"
 }
 ```
 
@@ -1312,7 +1312,7 @@ tool_result
 id: toolu_01Sf3AZPsfRYynnwWs3oKs86
 ```
 1	#!/usr/bin/env python3
-2	"""Send the application summary email to manderson240@gmail.com.
+2	"""Send the application summary email to <REDACTED_EMAIL>.
 3	
 4	Usage:
 5	    # Set your Gmail App Password first (NOT your regular password):
@@ -1343,8 +1343,8 @@ id: toolu_01Sf3AZPsfRYynnwWs3oKs86
 30	        print("  4. python scripts/send_summary_email.py")
 31	        return
 32	
-33	    sender = "manderson240@gmail.com"
-34	    recipient = "manderson240@gmail.com"
+33	    sender = "<REDACTED_EMAIL>"
+34	    recipient = "<REDACTED_EMAIL>"
 35	
 36	    msg = MIMEMultipart("alternative")
 37	    msg["Subject"] = "Cohezion — Anthropic Application Package Ready"
@@ -1373,15 +1373,15 @@ tool_use Write
 id: toolu_01JkNvVRKjntstct7Rv9sDu1
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/scripts/send_handoff.py",
-  "content": "#!/usr/bin/env python3\n\"\"\"Send a handoff markdown file as an email via Gmail SMTP.\n\nReplaces the sprint-specific send_* scripts with one parameterized path.\n\nUsage:\n    export GMAIL_APP_PASSWORD='xxxx xxxx xxxx xxxx'  # from myaccount.google.com/apppasswords\n    python scripts/send_handoff.py \\\\\n        --subject '[Cohezion] Kernel reboot needed' \\\\\n        --body-file KERNEL_RESUME_INSTRUCTIONS.md\n\nExits non-zero (SystemExit 2) if GMAIL_APP_PASSWORD is missing, rather than\nsilently no-opping. No secrets are logged.\n\"\"\"\n\nfrom __future__ import annotations\n\nimport argparse\nimport os\nimport smtplib\nimport ssl\nimport sys\nfrom email.mime.multipart import MIMEMultipart\nfrom email.mime.text import MIMEText\nfrom pathlib import Path\n\nDEFAULT_TO = \"manderson240@gmail.com\"\nDEFAULT_FROM = \"manderson240@gmail.com\"\n\n\nclass EmailNotConfigured(SystemExit):\n    def __init__(self) -> None:\n        msg = (\n            \"GMAIL_APP_PASSWORD is not set.\\n\"\n            \"  1. Create an App Password: https://myaccount.google.com/apppasswords\\n\"\n            \"  2. Export it in the current shell (do not commit):\\n\"\n            \"       export GMAIL_APP_PASSWORD='xxxx xxxx xxxx xxxx'\\n\"\n            \"  3. Re-run this command.\"\n        )\n        super().__init__(msg)\n        self.code = 2\n\n\ndef _to_html(markdown_text: str) -> str:\n    try:\n        import markdown2  # type: ignore\n\n        return markdown2.markdown(markdown_text, extras=[\"fenced-code-blocks\", \"tables\"])\n    except ImportError:\n        return f\"<pre style='font-family:monospace;white-space:pre-wrap'>{markdown_text}</pre>\"\n\n\ndef send(subject: str, body_path: Path, to: str, sender: str) -> None:\n    password = os.environ.get(\"GMAIL_APP_PASSWORD\")\n    if not password:\n        raise EmailNotConfigured()\n    if not body_path.exists():\n        raise SystemExit(f\"body file not found: {body_path}\")\n\n    body_md = body_path.read_text()\n    msg = MIMEMultipart(\"alternative\")\n    msg[\"Subject\"] = subject\n    msg[\"From\"] = sender\n    msg[\"To\"] = to\n    msg.attach(MIMEText(body_md, \"plain\"))\n    msg.attach(MIMEText(_to_html(body_md), \"html\"))\n\n    context = ssl.create_default_context()\n    with smtplib.SMTP_SSL(\"smtp.gmail.com\", 465, […]
+  "file_path": "/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/scripts/send_handoff.py",
+  "content": "#!/usr/bin/env python3\n\"\"\"Send a handoff markdown file as an email via Gmail SMTP.\n\nReplaces the sprint-specific send_* scripts with one parameterized path.\n\nUsage:\n    export GMAIL_APP_PASSWORD='xxxx xxxx xxxx xxxx'  # from myaccount.google.com/apppasswords\n    python scripts/send_handoff.py \\\\\n        --subject '[Cohezion] Kernel reboot needed' \\\\\n        --body-file KERNEL_RESUME_INSTRUCTIONS.md\n\nExits non-zero (SystemExit 2) if GMAIL_APP_PASSWORD is missing, rather than\nsilently no-opping. No secrets are logged.\n\"\"\"\n\nfrom __future__ import annotations\n\nimport argparse\nimport os\nimport smtplib\nimport ssl\nimport sys\nfrom email.mime.multipart import MIMEMultipart\nfrom email.mime.text import MIMEText\nfrom pathlib import Path\n\nDEFAULT_TO = \"<REDACTED_EMAIL>\"\nDEFAULT_FROM = \"<REDACTED_EMAIL>\"\n\n\nclass EmailNotConfigured(SystemExit):\n    def __init__(self) -> None:\n        msg = (\n            \"GMAIL_APP_PASSWORD is not set.\\n\"\n            \"  1. Create an App Password: https://myaccount.google.com/apppasswords\\n\"\n            \"  2. Export it in the current shell (do not commit):\\n\"\n            \"       export GMAIL_APP_PASSWORD='xxxx xxxx xxxx xxxx'\\n\"\n            \"  3. Re-run this command.\"\n        )\n        super().__init__(msg)\n        self.code = 2\n\n\ndef _to_html(markdown_text: str) -> str:\n    try:\n        import markdown2  # type: ignore\n\n        return markdown2.markdown(markdown_text, extras=[\"fenced-code-blocks\", \"tables\"])\n    except ImportError:\n        return f\"<pre style='font-family:monospace;white-space:pre-wrap'>{markdown_text}</pre>\"\n\n\ndef send(subject: str, body_path: Path, to: str, sender: str) -> None:\n    password = os.environ.get(\"GMAIL_APP_PASSWORD\")\n    if not password:\n        raise EmailNotConfigured()\n    if not body_path.exists():\n        raise SystemExit(f\"body file not found: {body_path}\")\n\n    body_md = body_path.read_text()\n    msg = MIMEMultipart(\"alternative\")\n    msg[\"Subject\"] = subject\n    msg[\"From\"] = sender\n    msg[\"To\"] = to\n    msg.attach(MIMEText(body_md, \"plain\"))\n    msg.attach(MIMEText(_to_html(body_md), \"html\"))\n\n    context = ssl.create_default_context()\n    with smtplib.SMTP_SSL(\"smtp.gmail.com\", 465, […]
 
 > TOOL
 
 tool_result
 id: toolu_01JkNvVRKjntstct7Rv9sDu1
 ```
-File created successfully at: /home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/scripts/send_handoff.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/scripts/send_handoff.py (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1390,7 +1390,7 @@ tool_use Bash
 id: toolu_01M9dfEbjaQisUVZqa76HWv8
 ```json
 {
-  "command": "wc -l /home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/scripts/send_handoff.py && chmod +x /home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/scripts/send_handoff.py",
+  "command": "wc -l /home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/scripts/send_handoff.py && chmod +x /home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/scripts/send_handoff.py",
   "description": "Check line count and mark executable"
 }
 ```
@@ -1400,7 +1400,7 @@ id: toolu_01M9dfEbjaQisUVZqa76HWv8
 tool_result
 id: toolu_01M9dfEbjaQisUVZqa76HWv8
 ```
-90 /home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/scripts/send_handoff.py
+90 /home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/scripts/send_handoff.py
 ```
 
 > TOOL
@@ -1451,8 +1451,8 @@ tool_use Write
 id: toolu_013cTZSezuK42os8xvoSByUa
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/EMAIL_TEST_2026-04-18.md",
-  "content": "# Cohezion Email Delivery Test — 2026-04-18\n\nThis message confirms the **email-handoff path** is working ahead of the\nTurboQuant / Strix Halo Phase 0a reboots.\n\n- **Plan:** `/home/mike-anderson/.claude/plans/i-did-what-was-mutable-valley.md`\n- **Worktree:** `~/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker`\n- **Sender:** `scripts/send_handoff.py` (new; consolidates the sprint-specific\n  `send_*.py` scripts under one preflight-checked entry point)\n- **Reason for this test:** the old `EmailNotifier` abstraction imported by 5+\n  scripts has no class definition in tracked code — it silently no-oped. This\n  test proves the Gmail SMTP path actually delivers before we depend on it\n  for `KERNEL_RESUME_INSTRUCTIONS.md`, `FIRMWARE_RESUME_INSTRUCTIONS.md`, and\n  `ROCM_RESUME_INSTRUCTIONS.md`.\n\n## What to do now\n\nIf this landed in your inbox, reply with **ack** (or just acknowledge in the\nactive Claude session). The next step is the **kernel 6.17 → 6.18.4**\nupgrade, which will trigger a reboot; `KERNEL_RESUME_INSTRUCTIONS.md` will\narrive in this same channel once the upgrade command fires.\n\n## What to do if this did NOT arrive\n\nCheck Gmail spam / Promotions. If still missing after ~5 minutes, tell\nClaude \"email failed\" — we'll fall back to file-only handoffs in the\nworktree directory and continue with the plan.\n"
+  "file_path": "/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/EMAIL_TEST_2026-04-18.md",
+  "content": "# Cohezion Email Delivery Test — 2026-04-18\n\nThis message confirms the **email-handoff path** is working ahead of the\nTurboQuant / Strix Halo Phase 0a reboots.\n\n- **Plan:** `/home/<USER>/.claude/plans/i-did-what-was-mutable-valley.md`\n- **Worktree:** `~/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker`\n- **Sender:** `scripts/send_handoff.py` (new; consolidates the sprint-specific\n  `send_*.py` scripts under one preflight-checked entry point)\n- **Reason for this test:** the old `EmailNotifier` abstraction imported by 5+\n  scripts has no class definition in tracked code — it silently no-oped. This\n  test proves the Gmail SMTP path actually delivers before we depend on it\n  for `KERNEL_RESUME_INSTRUCTIONS.md`, `FIRMWARE_RESUME_INSTRUCTIONS.md`, and\n  `ROCM_RESUME_INSTRUCTIONS.md`.\n\n## What to do now\n\nIf this landed in your inbox, reply with **ack** (or just acknowledge in the\nactive Claude session). The next step is the **kernel 6.17 → 6.18.4**\nupgrade, which will trigger a reboot; `KERNEL_RESUME_INSTRUCTIONS.md` will\narrive in this same channel once the upgrade command fires.\n\n## What to do if this did NOT arrive\n\nCheck Gmail spam / Promotions. If still missing after ~5 minutes, tell\nClaude \"email failed\" — we'll fall back to file-only handoffs in the\nworktree directory and continue with the plan.\n"
 }
 ```
 
@@ -1461,7 +1461,7 @@ id: toolu_013cTZSezuK42os8xvoSByUa
 tool_result
 id: toolu_013cTZSezuK42os8xvoSByUa
 ```
-File created successfully at: /home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/EMAIL_TEST_2026-04-18.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/EMAIL_TEST_2026-04-18.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1586,10 +1586,10 @@ id: toolu_018wP8h2eEveB8naMFcds5rz
 ```json
 {
   "to": [
-    "manderson240@gmail.com"
+    "<REDACTED_EMAIL>"
   ],
   "subject": "[Cohezion] Email delivery test — TurboQuant Phase 0a handoff path",
-  "body": "Cohezion Email Delivery Test — 2026-04-18\n\nThis message confirms the email-handoff path is working ahead of the\nTurboQuant / Strix Halo Phase 0a reboots.\n\nPlan:     /home/mike-anderson/.claude/plans/i-did-what-was-mutable-valley.md\nWorktree: ~/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker\nSender:   Gmail MCP create_draft (sidesteps the old EmailNotifier which silently no-oped)\n\nWhy this test exists\n--------------------\nThe old `EmailNotifier` abstraction imported by 5+ scripts has no class\ndefinition in tracked code — it silently no-oped. Before we rely on email\nfor KERNEL_RESUME_INSTRUCTIONS.md / FIRMWARE_RESUME_INSTRUCTIONS.md /\nROCM_RESUME_INSTRUCTIONS.md, we prove the path actually delivers.\n\nWhat to do now\n--------------\nIf this appears in your Gmail Drafts folder (web or phone), reply \"ack\" in\nthe active Claude session — Step 1 (kernel 6.17 → 6.18.4 upgrade) will\nthen fire, and the next handoff draft will arrive in this same channel.\n\nIf it did NOT appear\n--------------------\nTell Claude \"gmail draft failed\" — we fall back to file-only handoffs in\nthe worktree and continue with the plan.\n\n— sent via Gmail MCP create_draft, 2026-04-18"
+  "body": "Cohezion Email Delivery Test — 2026-04-18\n\nThis message confirms the email-handoff path is working ahead of the\nTurboQuant / Strix Halo Phase 0a reboots.\n\nPlan:     /home/<USER>/.claude/plans/i-did-what-was-mutable-valley.md\nWorktree: ~/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker\nSender:   Gmail MCP create_draft (sidesteps the old EmailNotifier which silently no-oped)\n\nWhy this test exists\n--------------------\nThe old `EmailNotifier` abstraction imported by 5+ scripts has no class\ndefinition in tracked code — it silently no-oped. Before we rely on email\nfor KERNEL_RESUME_INSTRUCTIONS.md / FIRMWARE_RESUME_INSTRUCTIONS.md /\nROCM_RESUME_INSTRUCTIONS.md, we prove the path actually delivers.\n\nWhat to do now\n--------------\nIf this appears in your Gmail Drafts folder (web or phone), reply \"ack\" in\nthe active Claude session — Step 1 (kernel 6.17 → 6.18.4 upgrade) will\nthen fire, and the next handoff draft will arrive in this same channel.\n\nIf it did NOT appear\n--------------------\nTell Claude \"gmail draft failed\" — we fall back to file-only handoffs in\nthe worktree and continue with the plan.\n\n— sent via Gmail MCP create_draft, 2026-04-18"
 }
 ```
 
@@ -1765,15 +1765,15 @@ tool_use Write
 id: toolu_01Bf1KPB5ex3a9Fr1wY2W82n
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/KERNEL_RESUME_INSTRUCTIONS.md",
-  "content": "# Kernel 6.17 → 6.18.4 — Reboot & Resume Handoff\n\n**Plan file:** `/home/mike-anderson/.claude/plans/i-did-what-was-mutable-valley.md`\n**Parent plan:** `/home/mike-anderson/.claude/plans/dreamy-jingling-thacker.md`\n**Worktree:** `~/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker`\n**Step:** 1 of 5 (Phase 0a kernel upgrade)\n\n---\n\n## Before you reboot\n\nClaude has just finished:\n- Adding `ppa:cappelikan/ppa` to apt sources.\n- Installing the `mainline` CLI kernel installer.\n- Running `sudo mainline install 6.18.4` (or the closest `6.18.x` if 6.18.4 exact is unavailable — check Claude's last output).\n- Running `sudo update-grub` so the new kernel is bootable.\n\nThe current running kernel is **still `6.17.0-1017-oem`**. The new kernel\nis installed but not active. A clean reboot is required.\n\n## Rollback safety\n\nGRUB retains the **6.17.0-1017-oem** entry. If the 6.18.x kernel hangs on\nboot, Wi-Fi breaks, or anything else goes wrong:\n\n1. Hard-reboot (hold power button).\n2. At the GRUB menu, press Down Arrow → \"Advanced options for Ubuntu\" →\n   select the `6.17.0-1017-oem` entry.\n3. Boot into the old kernel. Then run:\n   ```bash\n   sudo mainline uninstall 6.18.4        # or whichever 6.18.x was installed\n   sudo update-grub\n   ```\n4. Tell Claude \"kernel 6.18 broke boot, rolled back to 6.17\" — we'll skip\n   the kernel step and continue with firmware + ROCm on 6.17 instead.\n\n## Reboot procedure\n\n```bash\nsudo reboot\n```\n\nExpected: the host powers down, restarts, and boots into 6.18.4 by default.\n\n## After reboot — verification\n\nOpen a fresh […]
+  "file_path": "/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/KERNEL_RESUME_INSTRUCTIONS.md",
+  "content": "# Kernel 6.17 → 6.18.4 — Reboot & Resume Handoff\n\n**Plan file:** `/home/<USER>/.claude/plans/i-did-what-was-mutable-valley.md`\n**Parent plan:** `/home/<USER>/.claude/plans/dreamy-jingling-thacker.md`\n**Worktree:** `~/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker`\n**Step:** 1 of 5 (Phase 0a kernel upgrade)\n\n---\n\n## Before you reboot\n\nClaude has just finished:\n- Adding `ppa:cappelikan/ppa` to apt sources.\n- Installing the `mainline` CLI kernel installer.\n- Running `sudo mainline install 6.18.4` (or the closest `6.18.x` if 6.18.4 exact is unavailable — check Claude's last output).\n- Running `sudo update-grub` so the new kernel is bootable.\n\nThe current running kernel is **still `6.17.0-1017-oem`**. The new kernel\nis installed but not active. A clean reboot is required.\n\n## Rollback safety\n\nGRUB retains the **6.17.0-1017-oem** entry. If the 6.18.x kernel hangs on\nboot, Wi-Fi breaks, or anything else goes wrong:\n\n1. Hard-reboot (hold power button).\n2. At the GRUB menu, press Down Arrow → \"Advanced options for Ubuntu\" →\n   select the `6.17.0-1017-oem` entry.\n3. Boot into the old kernel. Then run:\n   ```bash\n   sudo mainline uninstall 6.18.4        # or whichever 6.18.x was installed\n   sudo update-grub\n   ```\n4. Tell Claude \"kernel 6.18 broke boot, rolled back to 6.17\" — we'll skip\n   the kernel step and continue with firmware + ROCm on 6.17 instead.\n\n## Reboot procedure\n\n```bash\nsudo reboot\n```\n\nExpected: the host powers down, restarts, and boots into 6.18.4 by default.\n\n## After reboot — verification\n\nOpen a fresh […]
 
 > TOOL
 
 tool_result
 id: toolu_01Bf1KPB5ex3a9Fr1wY2W82n
 ```
-File created successfully at: /home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/KERNEL_RESUME_INSTRUCTIONS.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/KERNEL_RESUME_INSTRUCTIONS.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1783,10 +1783,10 @@ id: toolu_01NWzYXfAy64XourahTZhHLe
 ```json
 {
   "to": [
-    "manderson240@gmail.com"
+    "<REDACTED_EMAIL>"
   ],
   "subject": "[Cohezion] Kernel 6.17 → 6.18.x staged — REBOOT REQUIRED to continue TurboQuant",
-  "body": "Kernel 6.17 → 6.18.x — Reboot & Resume Handoff\n\nPlan file:   /home/mike-anderson/.claude/plans/i-did-what-was-mutable-valley.md\nParent plan: /home/mike-anderson/.claude/plans/dreamy-jingling-thacker.md\nWorktree:    ~/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker\nStep:        1 of 5 (Phase 0a kernel upgrade)\n\nBEFORE YOU REBOOT\n-----------------\nClaude has just finished:\n- Adding ppa:cappelikan/ppa to apt sources\n- Installing the mainline CLI kernel installer\n- Running `sudo mainline install 6.18.4` (or closest 6.18.x available)\n- Running `sudo update-grub` so the new kernel is bootable\n\nCurrent running kernel is STILL 6.17.0-1017-oem. The new kernel is\ninstalled but not active. A clean reboot is required.\n\nROLLBACK SAFETY\n---------------\nGRUB retains the 6.17.0-1017-oem entry. If 6.18.x hangs on boot or\nbreaks Wi-Fi:\n  1. Hard-reboot (hold power button)\n  2. At GRUB menu: Down → Advanced options → select the 6.17.0-1017-oem entry\n  3. Boot into old kernel, then:\n       sudo mainline uninstall 6.18.4       # or whichever 6.18.x installed\n       sudo update-grub\n  4. Tell Claude \"kernel 6.18 broke boot, rolled back to 6.17\"\n\nREBOOT PROCEDURE\n----------------\n  sudo reboot\n\nAFTER REBOOT — VERIFICATION\n---------------------------\nOpen a fresh terminal and paste:\n\n  cd ~/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker\n  uname -r                                                  # expect 6.18.x\n  .venv/bin/python scripts/check_bios_state.py             # kernel row ✓\n  cat /sys/class/drm/card0/device/mem_info_vram_total       # is it > 64 GB?\n\nRESUME PROMPT — paste into a new Claude session\n------------------------------------------------\n  continue the turboquant plan from Step […]
+  "body": "Kernel 6.17 → 6.18.x — Reboot & Resume Handoff\n\nPlan file:   /home/<USER>/.claude/plans/i-did-what-was-mutable-valley.md\nParent plan: /home/<USER>/.claude/plans/dreamy-jingling-thacker.md\nWorktree:    ~/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker\nStep:        1 of 5 (Phase 0a kernel upgrade)\n\nBEFORE YOU REBOOT\n-----------------\nClaude has just finished:\n- Adding ppa:cappelikan/ppa to apt sources\n- Installing the mainline CLI kernel installer\n- Running `sudo mainline install 6.18.4` (or closest 6.18.x available)\n- Running `sudo update-grub` so the new kernel is bootable\n\nCurrent running kernel is STILL 6.17.0-1017-oem. The new kernel is\ninstalled but not active. A clean reboot is required.\n\nROLLBACK SAFETY\n---------------\nGRUB retains the 6.17.0-1017-oem entry. If 6.18.x hangs on boot or\nbreaks Wi-Fi:\n  1. Hard-reboot (hold power button)\n  2. At GRUB menu: Down → Advanced options → select the 6.17.0-1017-oem entry\n  3. Boot into old kernel, then:\n       sudo mainline uninstall 6.18.4       # or whichever 6.18.x installed\n       sudo update-grub\n  4. Tell Claude \"kernel 6.18 broke boot, rolled back to 6.17\"\n\nREBOOT PROCEDURE\n----------------\n  sudo reboot\n\nAFTER REBOOT — VERIFICATION\n---------------------------\nOpen a fresh terminal and paste:\n\n  cd ~/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker\n  uname -r                                                  # expect 6.18.x\n  .venv/bin/python scripts/check_bios_state.py             # kernel row ✓\n  cat /sys/class/drm/card0/device/mem_info_vram_total       # is it > 64 GB?\n\nRESUME PROMPT — paste into a new Claude session\n------------------------------------------------\n  continue the turboquant plan from Step […]
 
 > TOOL
 
@@ -2047,16 +2047,16 @@ id: toolu_01ANUvsp7VHyfrZkJPaGCFmD
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/KERNEL_RESUME_INSTRUCTIONS.md",
-  "old_string": "# Kernel 6.17 → 6.18.4 — Reboot & Resume Handoff\n\n**Plan file:** `/home/mike-anderson/.claude/plans/i-did-what-was-mutable-valley.md`\n**Parent plan:** `/home/mike-anderson/.claude/plans/dreamy-jingling-thacker.md`\n**Worktree:** `~/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker`\n**Step:** 1 of 5 (Phase 0a kernel upgrade)\n\n---\n\n## Before you reboot\n\nClaude has just finished:\n- Adding `ppa:cappelikan/ppa` to apt sources.\n- Installing the `mainline` CLI kernel installer.\n- Running `sudo mainline install 6.18.4` (or the closest `6.18.x` if 6.18.4 exact is unavailable — check Claude's last output).\n- Running `sudo update-grub` so the new kernel is bootable.\n\nThe current running kernel is **still `6.17.0-1017-oem`**. The new kernel\nis installed but not active. A clean reboot is required.",
-  "new_string": "# Kernel 6.17 → 6.18.23 — Reboot & Resume Handoff\n\n**Plan file:** `/home/mike-anderson/.claude/plans/i-did-what-was-mutable-valley.md`\n**Parent plan:** `/home/mike-anderson/.claude/plans/dreamy-jingling-thacker.md`\n**Worktree:** `~/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker`\n**Step:** 1 of 5 (Phase 0a kernel upgrade)\n\n**Target kernel:** `6.18.23-061823-generic` — the latest **longterm** 6.18\nrelease per kernel.org (newer and more stable than the 6.18.4 originally\nnamed in the plan, which had a failed mainline build).\n\n---\n\n## Before you reboot\n\nClaude has just finished:\n- Downloading four `.deb` files from\n  `https://kernel.ubuntu.com/mainline/v6.18.23/amd64/` to `/tmp/kernel-6.18.23/`:\n  - `linux-image-unsigned-6.18.23-061823-generic_*.deb`\n  - `linux-modules-6.18.23-061823-generic_*.deb`\n  - `linux-headers-6.18.23-061823-generic_*.deb`\n  - `linux-headers-6.18.23-061823_*_all.deb`\n- Installing them with `sudo dpkg -i /tmp/kernel-6.18.23/*.deb`.\n- Running `sudo update-grub` so the new kernel is bootable.\n\nNo third-party apt source was added; the `.deb` files came directly from\nthe Ubuntu kernel team's mainline build server.\n\nThe […]
+  "file_path": "/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/KERNEL_RESUME_INSTRUCTIONS.md",
+  "old_string": "# Kernel 6.17 → 6.18.4 — Reboot & Resume Handoff\n\n**Plan file:** `/home/<USER>/.claude/plans/i-did-what-was-mutable-valley.md`\n**Parent plan:** `/home/<USER>/.claude/plans/dreamy-jingling-thacker.md`\n**Worktree:** `~/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker`\n**Step:** 1 of 5 (Phase 0a kernel upgrade)\n\n---\n\n## Before you reboot\n\nClaude has just finished:\n- Adding `ppa:cappelikan/ppa` to apt sources.\n- Installing the `mainline` CLI kernel installer.\n- Running `sudo mainline install 6.18.4` (or the closest `6.18.x` if 6.18.4 exact is unavailable — check Claude's last output).\n- Running `sudo update-grub` so the new kernel is bootable.\n\nThe current running kernel is **still `6.17.0-1017-oem`**. The new kernel\nis installed but not active. A clean reboot is required.",
+  "new_string": "# Kernel 6.17 → 6.18.23 — Reboot & Resume Handoff\n\n**Plan file:** `/home/<USER>/.claude/plans/i-did-what-was-mutable-valley.md`\n**Parent plan:** `/home/<USER>/.claude/plans/dreamy-jingling-thacker.md`\n**Worktree:** `~/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker`\n**Step:** 1 of 5 (Phase 0a kernel upgrade)\n\n**Target kernel:** `6.18.23-061823-generic` — the latest **longterm** 6.18\nrelease per kernel.org (newer and more stable than the 6.18.4 originally\nnamed in the plan, which had a failed mainline build).\n\n---\n\n## Before you reboot\n\nClaude has just finished:\n- Downloading four `.deb` files from\n  `https://kernel.ubuntu.com/mainline/v6.18.23/amd64/` to `/tmp/kernel-6.18.23/`:\n  - `linux-image-unsigned-6.18.23-061823-generic_*.deb`\n  - `linux-modules-6.18.23-061823-generic_*.deb`\n  - `linux-headers-6.18.23-061823-generic_*.deb`\n  - `linux-headers-6.18.23-061823_*_all.deb`\n- Installing them with `sudo dpkg -i /tmp/kernel-6.18.23/*.deb`.\n- Running `sudo update-grub` so the new kernel is bootable.\n\nNo third-party apt source was added; the `.deb` files came directly from\nthe Ubuntu kernel team's mainline build server.\n\nThe […]
 
 > TOOL
 
 tool_result
 id: toolu_01ANUvsp7VHyfrZkJPaGCFmD
 ```
-The file /home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/KERNEL_RESUME_INSTRUCTIONS.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/KERNEL_RESUME_INSTRUCTIONS.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2066,7 +2066,7 @@ id: toolu_01PtSYQCMe1udFDxSMAyiRJA
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/KERNEL_RESUME_INSTRUCTIONS.md",
+  "file_path": "/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/KERNEL_RESUME_INSTRUCTIONS.md",
   "old_string": "3. Boot into the old kernel. Then run:\n   ```bash\n   sudo mainline uninstall 6.18.4        # or whichever 6.18.x was installed\n   sudo update-grub\n   ```\n4. Tell Claude \"kernel 6.18 broke boot, rolled back to 6.17\" — we'll skip\n   the kernel step and continue with firmware + ROCm on 6.17 instead.",
   "new_string": "3. Boot into the old kernel. Then run:\n   ```bash\n   sudo apt remove --purge \\\n     linux-image-unsigned-6.18.23-061823-generic \\\n     linux-modules-6.18.23-061823-generic \\\n     linux-headers-6.18.23-061823-generic \\\n     linux-headers-6.18.23-061823\n   sudo update-grub\n   ```\n4. Tell Claude \"kernel 6.18.23 broke boot, rolled back to 6.17\" — we'll\n   skip the kernel step and continue with firmware + ROCm on 6.17 instead."
 }
@@ -2077,7 +2077,7 @@ id: toolu_01PtSYQCMe1udFDxSMAyiRJA
 tool_result
 id: toolu_01PtSYQCMe1udFDxSMAyiRJA
 ```
-The file /home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/KERNEL_RESUME_INSTRUCTIONS.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/KERNEL_RESUME_INSTRUCTIONS.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2087,7 +2087,7 @@ id: toolu_012LFdF4tHPKwXDzXayUVcuy
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/KERNEL_RESUME_INSTRUCTIONS.md",
+  "file_path": "/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/KERNEL_RESUME_INSTRUCTIONS.md",
   "old_string": "```bash\ncd ~/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker\nuname -r                                                   # expect 6.18.4 or nearby\n.venv/bin/python scripts/check_bios_state.py              # kernel row should flip to ✓\ncat /sys/class/drm/card0/device/mem_info_vram_total        # VRAM in bytes — is it > 64 GB?\n```",
   "new_string": "```bash\ncd ~/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker\nuname -r                                                   # expect 6.18.23-061823-generic\n.venv/bin/python scripts/check_bios_state.py              # kernel row should flip to ✓\ncat /sys/class/drm/card0/device/mem_info_vram_total        # VRAM in bytes — is it > 64 GB?\n```"
 }
@@ -2098,7 +2098,7 @@ id: toolu_012LFdF4tHPKwXDzXayUVcuy
 tool_result
 id: toolu_012LFdF4tHPKwXDzXayUVcuy
 ```
-The file /home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/KERNEL_RESUME_INSTRUCTIONS.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/KERNEL_RESUME_INSTRUCTIONS.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2162,7 +2162,7 @@ tool_use Bash
 id: toolu_01NPFpJ3nC6UNMjjACBGu6Xe
 ```json
 {
-  "command": "echo '== Gemini-related dirs and session artifacts =='\nls -la ~/.gemini 2>&1 | head -10 || echo 'no ~/.gemini'\necho\nfind /home/mike-anderson/dev/cohezion -maxdepth 3 -type d -iname '*gemini*' 2>/dev/null | head -10\necho\necho '== GEMINI.md anywhere? =='\nfind /home/mike-anderson/dev/cohezion -maxdepth 4 -name 'GEMINI.md' 2>/dev/null | head -5\necho\necho '== Worktree top-level files that look like session notes =='\nls /home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/*.md 2>&1 | grep -iE 'gemini|session|continue|handoff|resume' | head -10\necho\necho '== Very recently modified files in worktree (last 24h) =='\nfind /home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker -maxdepth 2 -type f -mtime -1 2>/dev/null | head -20",
+  "command": "echo '== Gemini-related dirs and session artifacts =='\nls -la ~/.gemini 2>&1 | head -10 || echo 'no ~/.gemini'\necho\nfind /home/<USER>/dev/cohezion -maxdepth 3 -type d -iname '*gemini*' 2>/dev/null | head -10\necho\necho '== GEMINI.md anywhere? =='\nfind /home/<USER>/dev/cohezion -maxdepth 4 -name 'GEMINI.md' 2>/dev/null | head -5\necho\necho '== Worktree top-level files that look like session notes =='\nls /home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/*.md 2>&1 | grep -iE 'gemini|session|continue|handoff|resume' | head -10\necho\necho '== Very recently modified files in worktree (last 24h) =='\nfind /home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker -maxdepth 2 -type f -mtime -1 2>/dev/null | head -20",
   "description": "Check for Gemini session artifacts and recent activity"
 }
 ```
@@ -2184,54 +2184,54 @@ drwxrwxr-x 13 mike-anderson mike-anderson   14 Apr 17 14:11 extensions
 -rw-r--r--  1 mike-anderson mike-anderson 9549 Apr 15 01:06 GEMINI.md
 -rw-rw-r--  1 mike-anderson mike-anderson   53 Feb  2 09:50 google_accounts.json
 
-/home/mike-anderson/dev/cohezion/.gemini
-/home/mike-anderson/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/.gemini
-/home/mike-anderson/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/.gemini_security
-/home/mike-anderson/dev/cohezion/.worktrees/gemini-mcp-fix
-/home/mike-anderson/dev/cohezion/.worktrees/gemini-mcp-fix/.gemini
-/home/mike-anderson/dev/cohezion/.worktrees/gemini-mcp-fix/.gemini_security
-/home/mike-anderson/dev/cohezion/.worktrees/spec-genesis-engine-395e48851/.gemini
-/home/mike-anderson/dev/cohezion/.worktrees/spec-genesis-engine-395e48851/.gemini_security
-/home/mike-anderson/dev/cohezion/.worktrees/luma-breakthrough-sprint/.gemini
-/home/mike-anderson/dev/cohezion/.worktrees/luma-breakthrough-sprint/.gemini_security
+/home/<USER>/dev/cohezion/.gemini
+/home/<USER>/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/.gemini
+/home/<USER>/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/.gemini_security
+/home/<USER>/dev/cohezion/.worktrees/gemini-mcp-fix
+/home/<USER>/dev/cohezion/.worktrees/gemini-mcp-fix/.gemini
+/home/<USER>/dev/cohezion/.worktrees/gemini-mcp-fix/.gemini_security
+/home/<USER>/dev/cohezion/.worktrees/spec-genesis-engine-395e48851/.gemini
+/home/<USER>/dev/cohezion/.worktrees/spec-genesis-engine-395e48851/.gemini_security
+/home/<USER>/dev/cohezion/.worktrees/luma-breakthrough-sprint/.gemini
+/home/<USER>/dev/cohezion/.worktrees/luma-breakthrough-sprint/.gemini_security
 
 == GEMINI.md anywhere? ==
-/home/mike-anderson/dev/cohezion/docs/archive/GEMINI.md
-/home/mike-anderson/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/GEMINI.md
-/home/mike-anderson/dev/cohezion/.worktrees/gemini-mcp-fix/GEMINI.md
-/home/mike-anderson/dev/cohezion/.worktrees/spec-genesis-engine-395e48851/GEMINI.md
-/home/mike-anderson/dev/cohezion/.worktrees/luma-breakthrough-sprint/GEMINI.md
+/home/<USER>/dev/cohezion/docs/archive/GEMINI.md
+/home/<USER>/dev/cohezion/.worktrees/spec-phase1-stabilize-dbd0043ee/GEMINI.md
+/home/<USER>/dev/cohezion/.worktrees/gemini-mcp-fix/GEMINI.md
+/home/<USER>/dev/cohezion/.worktrees/spec-genesis-engine-395e48851/GEMINI.md
+/home/<USER>/dev/cohezion/.worktrees/luma-breakthrough-sprint/GEMINI.md
 
 == Worktree top-level files that look like session notes ==
-/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/BIOS_RESUME_INSTRUCTIONS.md
-/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/CONTINUE.md
-/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/GEMINI.md
-/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/HANDOFF_2026-04-18.md
-/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/KERNEL_RESUME_INSTRUCTIONS.md
-/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/SESSION_ALIGNMENT_TRACEABILITY_REPORT.md
-/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/SESSION_HANDOFF_2026-04-18_TURBOQUANT.md
+/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/BIOS_RESUME_INSTRUCTIONS.md
+/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/CONTINUE.md
+/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/GEMINI.md
+/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/HANDOFF_2026-04-18.md
+/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/KERNEL_RESUME_INSTRUCTIONS.md
+/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/SESSION_ALIGNMENT_TRACEABILITY_REPORT.md
+/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/SESSION_HANDOFF_2026-04-18_TURBOQUANT.md
 
 == Very recently modified files in worktree (last 24h) ==
-/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/.mcp.json.example
-/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/IDENTITY
-/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/tests/test_budget_enforcer.py
-/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/tests/test_gemma4_provider.py
-/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/tests/verify_translator.py
-/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/tests/test_gemini_provider.py
-/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/tests/test_fabric.py
-/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/tests/__init__.py
-/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/tests/verify_resource_monitor.py
-/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/tests/check_surreal_data.py
-/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/tests/test_rl_training.py
-/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/tests/test_template_pipeline.py
-/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/tests/test_journey_tracker.py
-/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/tests/test_recovery.py
-/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/tests/test_concierge.py
-/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/tests/conftest.py
-/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/tests/demo_output.txt
-/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/tests/test_executable_agents.py
-/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/tests/test_team_execution.py
-/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/tests/verify_context.py
+/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/.mcp.json.example
+/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/IDENTITY
+/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/tests/test_budget_enforcer.py
+/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/tests/test_gemma4_provider.py
+/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/tests/verify_translator.py
+/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/tests/test_gemini_provider.py
+/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/tests/test_fabric.py
+/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/tests/__init__.py
+/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/tests/verify_resource_monitor.py
+/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/tests/check_surreal_data.py
+/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/tests/test_rl_training.py
+/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/tests/test_template_pipeline.py
+/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/tests/test_journey_tracker.py
+/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/tests/test_recovery.py
+/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/tests/test_concierge.py
+/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/tests/conftest.py
+/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/tests/demo_output.txt
+/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/tests/test_executable_agents.py
+/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/tests/test_team_execution.py
+/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/tests/verify_context.py
 ```
 
 > AGENT
@@ -2244,7 +2244,7 @@ tool_use Read
 id: toolu_01FY6TCe8f9yzgJmEaf5dgRs
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/SESSION_HANDOFF_2026-04-18_TURBOQUANT.md"
+  "file_path": "/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/SESSION_HANDOFF_2026-04-18_TURBOQUANT.md"
 }
 ```
 
@@ -2291,7 +2291,7 @@ tool_use Read
 id: toolu_014D2wkvCtiXLvL74HwaWqkc
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/HANDOFF_2026-04-18.md"
+  "file_path": "/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/HANDOFF_2026-04-18.md"
 }
 ```
 
@@ -2344,7 +2344,7 @@ tool_use Read
 id: toolu_01HSikh5tqw4jxnj8PTnqrog
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/CONTINUE.md"
+  "file_path": "/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/CONTINUE.md"
 }
 ```
 
@@ -2358,7 +2358,7 @@ id: toolu_01HSikh5tqw4jxnj8PTnqrog
 3	## Quick Start (After Reboot)
 4	
 5	```bash
-6	cd /home/mike-anderson/dev/cohezion
+6	cd /home/<USER>/dev/cohezion
 7	./resume-session.sh
 8	```
 9	
@@ -2405,7 +2405,7 @@ tool_use Read
 id: toolu_01S6SC3WGQFXqLp5dkgpq9Yr
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/GEMINI.md"
+  "file_path": "/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/GEMINI.md"
 }
 ```
 
@@ -2457,7 +2457,7 @@ tool_use Bash
 id: toolu_016p8dtXjgQz9ehpv38TvpMf
 ```json
 {
-  "command": "echo '== apt history in last 14 days (kernel/rocm/amdgpu related only) =='\nzgrep -hE '(install|remove)' /var/log/apt/history.log* 2>/dev/null | grep -iE 'linux-(image|headers|modules)|rocm|amdgpu|vllm|triton|mainline' | head -30\necho\necho '== /tmp/kernel* any recent staging =='\nls -la /tmp/kernel* /tmp/rocm* /tmp/linux-firmware* 2>/dev/null | head -20 || echo 'no staging dirs in /tmp'\necho\necho '== Existing vllm wheels or venvs =='\nls -la ~/.venvs/tbq_probe 2>/dev/null || echo 'no ~/.venvs/tbq_probe'\nls -la ~/.venvs/cohezion_vllm 2>/dev/null || echo 'no ~/.venvs/cohezion_vllm'\nfind /home/mike-anderson -maxdepth 4 -name 'vllm*.whl' 2>/dev/null | head -5\necho\necho '== .gemini project-level config =='\ncat /home/mike-anderson/dev/cohezion/.gemini/settings.json 2>/dev/null | head -40 || echo 'no .gemini/settings.json'",
+  "command": "echo '== apt history in last 14 days (kernel/rocm/amdgpu related only) =='\nzgrep -hE '(install|remove)' /var/log/apt/history.log* 2>/dev/null | grep -iE 'linux-(image|headers|modules)|rocm|amdgpu|vllm|triton|mainline' | head -30\necho\necho '== /tmp/kernel* any recent staging =='\nls -la /tmp/kernel* /tmp/rocm* /tmp/linux-firmware* 2>/dev/null | head -20 || echo 'no staging dirs in /tmp'\necho\necho '== Existing vllm wheels or venvs =='\nls -la ~/.venvs/tbq_probe 2>/dev/null || echo 'no ~/.venvs/tbq_probe'\nls -la ~/.venvs/cohezion_vllm 2>/dev/null || echo 'no ~/.venvs/cohezion_vllm'\nfind /home/<USER> -maxdepth 4 -name 'vllm*.whl' 2>/dev/null | head -5\necho\necho '== .gemini project-level config =='\ncat /home/<USER>/dev/cohezion/.gemini/settings.json 2>/dev/null | head -40 || echo 'no .gemini/settings.json'",
   "description": "Check apt history + staging dirs + existing vllm venvs + project Gemini config"
 }
 ```
@@ -2468,7 +2468,7 @@ tool_result
 id: toolu_016p8dtXjgQz9ehpv38TvpMf
 ```
 <persisted-output>
-Output too large (95.5KB). Full output saved to: /home/mike-anderson/.claude/projects/-home-mike-anderson-dev-cohezion/3faa6e41-1022-409f-b13d-ff910507edf7/tool-results/b9soxijib.txt
+Output too large (95.5KB). Full output saved to: /home/<USER>/.claude/projects/-home-mike-anderson-dev-cohezion/3faa6e41-1022-409f-b13d-ff910507edf7/tool-results/b9soxijib.txt
 
 Preview (first 2KB):
 == apt history in last 14 days (kernel/rocm/amdgpu related only) ==
@@ -2489,7 +2489,7 @@ tool_use Bash
 id: toolu_01AzSqyXw9tszW4YDNHypEEs
 ```json
 {
-  "command": "zgrep -hE '^Commandline' /var/log/apt/history.log* 2>/dev/null | grep -iE 'linux-(image|headers|modules)|rocm|amdgpu|mainline|llama|vllm|triton' | sort -u | head -30\necho '---'\n# Is amdgpu-install already present?\ndpkg -l amdgpu-install 2>&1 | tail -2 | head -1\necho '---'\n# Is there an amdgpu repo already configured?\ngrep -rh '^deb' /etc/apt/sources.list.d/ 2>/dev/null | grep -iE 'rocm|amdgpu|radeon' | head -10 || echo 'no amd/rocm/radeon apt sources'\necho '---'\n# Check the project .gemini config \nls -la /home/mike-anderson/dev/cohezion/.gemini/ 2>&1 | head -10",
+  "command": "zgrep -hE '^Commandline' /var/log/apt/history.log* 2>/dev/null | grep -iE 'linux-(image|headers|modules)|rocm|amdgpu|mainline|llama|vllm|triton' | sort -u | head -30\necho '---'\n# Is amdgpu-install already present?\ndpkg -l amdgpu-install 2>&1 | tail -2 | head -1\necho '---'\n# Is there an amdgpu repo already configured?\ngrep -rh '^deb' /etc/apt/sources.list.d/ 2>/dev/null | grep -iE 'rocm|amdgpu|radeon' | head -10 || echo 'no amd/rocm/radeon apt sources'\necho '---'\n# Check the project .gemini config \nls -la /home/<USER>/dev/cohezion/.gemini/ 2>&1 | head -10",
   "description": "Concise apt install history + AMD repo state"
 }
 ```
@@ -2500,7 +2500,7 @@ tool_result
 id: toolu_01AzSqyXw9tszW4YDNHypEEs
 ```
 <persisted-output>
-Output too large (44.8KB). Full output saved to: /home/mike-anderson/.claude/projects/-home-mike-anderson-dev-cohezion/3faa6e41-1022-409f-b13d-ff910507edf7/tool-results/ba9hy0752.txt
+Output too large (44.8KB). Full output saved to: /home/<USER>/.claude/projects/-home-mike-anderson-dev-cohezion/3faa6e41-1022-409f-b13d-ff910507edf7/tool-results/ba9hy0752.txt
 
 Preview (first 2KB):
 Commandline: apt-get install -y linux-headers-6.17.0-1008-oem
@@ -2517,7 +2517,7 @@ tool_use Read
 id: toolu_01DzYch5XRoPZkngshKC2S9b
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/projects/-home-mike-anderson-dev-cohezion/3faa6e41-1022-409f-b13d-ff910507edf7/tool-results/ba9hy0752.txt",
+  "file_path": "/home/<USER>/.claude/projects/-home-mike-anderson-dev-cohezion/3faa6e41-1022-409f-b13d-ff910507edf7/tool-results/ba9hy0752.txt",
   "limit": 60,
   "offset": 1
 }
@@ -2537,7 +2537,7 @@ tool_use Bash
 id: toolu_01GCxznKvmLNAjimDmpcPTCd
 ```json
 {
-  "command": "# Just grab the last 10 apt-get install lines AND the amdgpu/rocm state\nzgrep -h '^Commandline: apt' /var/log/apt/history.log* 2>/dev/null | grep -E 'install|remove' | tail -15\necho '====='\ndpkg -l | grep -E '^ii +(amdgpu-install|amdgpu-dkms|rocm-core|rocminfo) ' | head -10\necho '====='\ngrep -rh '^deb' /etc/apt/sources.list.d/ 2>/dev/null | grep -iE 'rocm|amdgpu|radeon'\necho '====='\nls /home/mike-anderson/dev/cohezion/.gemini/ 2>&1 | head -15",
+  "command": "# Just grab the last 10 apt-get install lines AND the amdgpu/rocm state\nzgrep -h '^Commandline: apt' /var/log/apt/history.log* 2>/dev/null | grep -E 'install|remove' | tail -15\necho '====='\ndpkg -l | grep -E '^ii +(amdgpu-install|amdgpu-dkms|rocm-core|rocminfo) ' | head -10\necho '====='\ngrep -rh '^deb' /etc/apt/sources.list.d/ 2>/dev/null | grep -iE 'rocm|amdgpu|radeon'\necho '====='\nls /home/<USER>/dev/cohezion/.gemini/ 2>&1 | head -15",
   "description": "Minimal summary of relevant apt history + ROCm package state"
 }
 ```
@@ -2806,7 +2806,7 @@ tool_use Bash
 id: toolu_014Dg9pD5oaNwKHgjwHWKxBU
 ```json
 {
-  "command": "echo '== disk free (relevant mounts) =='\ndf -BG /home /tmp / 2>&1 | awk 'NR==1 || /^\\/dev/'\necho\necho '== existing Llama/Gemma model files anywhere =='\nfind /home/mike-anderson -type f \\( -iname '*llama*70b*.gguf' -o -iname '*llama*3.1*.gguf' -o -iname '*llama*3.3*.gguf' -o -iname '*q4_k_m*.gguf' -o -iname '*Q4_K_M*.gguf' \\) 2>/dev/null | head -10\necho\necho '== ollama models on disk =='\n[ -d /usr/share/ollama ] && ls -la /usr/share/ollama/.ollama/models/blobs 2>/dev/null | head -5\nollama list 2>/dev/null | head -20 || echo 'ollama CLI not available or daemon not running'\necho\necho '== HuggingFace hub cache =='\nls -la ~/.cache/huggingface/hub 2>/dev/null | head -20 || echo 'no HF hub cache'\necho\necho '== any GGUFs > 1 GB anywhere in home =='\nfind /home/mike-anderson -type f -name '*.gguf' -size +1G 2>/dev/null | head -10",
+  "command": "echo '== disk free (relevant mounts) =='\ndf -BG /home /tmp / 2>&1 | awk 'NR==1 || /^\\/dev/'\necho\necho '== existing Llama/Gemma model files anywhere =='\nfind /home/<USER> -type f \\( -iname '*llama*70b*.gguf' -o -iname '*llama*3.1*.gguf' -o -iname '*llama*3.3*.gguf' -o -iname '*q4_k_m*.gguf' -o -iname '*Q4_K_M*.gguf' \\) 2>/dev/null | head -10\necho\necho '== ollama models on disk =='\n[ -d /usr/share/ollama ] && ls -la /usr/share/ollama/.ollama/models/blobs 2>/dev/null | head -5\nollama list 2>/dev/null | head -20 || echo 'ollama CLI not available or daemon not running'\necho\necho '== HuggingFace hub cache =='\nls -la ~/.cache/huggingface/hub 2>/dev/null | head -20 || echo 'no HF hub cache'\necho\necho '== any GGUFs > 1 GB anywhere in home =='\nfind /home/<USER> -type f -name '*.gguf' -size +1G 2>/dev/null | head -10",
   "description": "Disk space + existing model inventory"
 }
 ```
@@ -2871,7 +2871,7 @@ id: toolu_01Rwp3kdxiXp8ZD95s1e9Nmu
 tool_result
 id: toolu_01Rwp3kdxiXp8ZD95s1e9Nmu
 ```
-{"message":"Successfully stopped task: bxepvjcgr (echo '== disk free (relevant mounts) =='\ndf -BG /home /tmp / 2>&1 | awk 'NR==1 || /^\\/dev/'\necho\necho '== existing Llama/Gemma model files anywhere =='\nfind /home/mike-anderson -type f \\( -iname '*llama*70b*.gguf' -o -iname '*llama*3.1*.gguf' -o -iname '*llama*3.3*.gguf' -o -iname '*q4_k_m*.gguf' -o -iname '*Q4_K_M*.gguf' \\) 2>/dev/null | head -10\necho\necho '== ollama models on disk =='\n[ -d /usr/share/ollama ] && ls -la /usr/share/ollama/.ollama/models/blobs 2>/dev/null | head -5\nollama list 2>/dev/null | head -20 || echo 'ollama CLI not available or daemon not running'\necho\necho '== HuggingFace hub cache =='\nls -la ~/.cache/huggingface/hub 2>/dev/null | head -20 || echo 'no HF hub cache'\necho\necho '== any GGUFs > 1 GB anywhere in home =='\nfind /home/mike-anderson -type f -name '*.gguf' -size +1G 2>/dev/null | head -10)","task_id":"bxepvjcgr","task_type":"local_bash","command":"echo '== disk free (relevant mounts) =='\ndf -BG /home /tmp / 2>&1 | awk 'NR==1 || /^\\/dev/'\necho\necho '== existing Llama/Gemma model files anywhere =='\nfind /home/mike-anderson -type f \\( -iname '*llama*70b*.gguf' -o -iname '*llama*3.1*.gguf' -o -iname '*llama*3.3*.gguf' -o -iname '*q4_k_m*.gguf' -o -iname '*Q4_K_M*.gguf' \\) 2>/dev/null | head -10\necho\necho '== ollama models on disk =='\n[ -d /usr/share/ollama ] && ls -la /usr/share/ollama/.ollama/models/blobs 2>/dev/null | head -5\nollama list 2>/dev/null | head -20 || echo 'ollama CLI not available or […]
+{"message":"Successfully stopped task: bxepvjcgr (echo '== disk free (relevant mounts) =='\ndf -BG /home /tmp / 2>&1 | awk 'NR==1 || /^\\/dev/'\necho\necho '== existing Llama/Gemma model files anywhere =='\nfind /home/<USER> -type f \\( -iname '*llama*70b*.gguf' -o -iname '*llama*3.1*.gguf' -o -iname '*llama*3.3*.gguf' -o -iname '*q4_k_m*.gguf' -o -iname '*Q4_K_M*.gguf' \\) 2>/dev/null | head -10\necho\necho '== ollama models on disk =='\n[ -d /usr/share/ollama ] && ls -la /usr/share/ollama/.ollama/models/blobs 2>/dev/null | head -5\nollama list 2>/dev/null | head -20 || echo 'ollama CLI not available or daemon not running'\necho\necho '== HuggingFace hub cache =='\nls -la ~/.cache/huggingface/hub 2>/dev/null | head -20 || echo 'no HF hub cache'\necho\necho '== any GGUFs > 1 GB anywhere in home =='\nfind /home/<USER> -type f -name '*.gguf' -size +1G 2>/dev/null | head -10)","task_id":"bxepvjcgr","task_type":"local_bash","command":"echo '== disk free (relevant mounts) =='\ndf -BG /home /tmp / 2>&1 | awk 'NR==1 || /^\\/dev/'\necho\necho '== existing Llama/Gemma model files anywhere =='\nfind /home/<USER> -type f \\( -iname '*llama*70b*.gguf' -o -iname '*llama*3.1*.gguf' -o -iname '*llama*3.3*.gguf' -o -iname '*q4_k_m*.gguf' -o -iname '*Q4_K_M*.gguf' \\) 2>/dev/null | head -10\necho\necho '== ollama models on disk =='\n[ -d /usr/share/ollama ] && ls -la /usr/share/ollama/.ollama/models/blobs 2>/dev/null | head -5\nollama list 2>/dev/null | head -20 || echo 'ollama CLI not available or […]
 
 > TOOL
 
@@ -2933,12 +2933,12 @@ kimi-k2.5:cloud                 6d1c3246c608    -         2 months ago
   models--unsloth--gemma-4-E4B-it-GGUF
   models--unsloth--Qwen3.5-35B-A3B-GGUF
 == HF hub size ==
-122G	/home/mike-anderson/.cache/huggingface/hub
+122G	/home/<USER>/.cache/huggingface/hub
 =====
 =====
--- /home/mike-anderson/models --
-/home/mike-anderson/models/holo3/holo3-35b-a3b-q4_k_m.gguf
-/home/mike-anderson/models/holo3/holo3-35b-a3b-f16.gguf
+-- /home/<USER>/models --
+/home/<USER>/models/holo3/holo3-35b-a3b-q4_k_m.gguf
+/home/<USER>/models/holo3/holo3-35b-a3b-f16.gguf
 ```
 
 > AGENT
@@ -2999,7 +2999,7 @@ tool_use Bash
 id: toolu_015AVkjwXJuYFSxncM2owV4D
 ```json
 {
-  "command": "# First: does the scratch venv already exist from a prior session?\nls -la ~/.venvs/tbq_probe 2>/dev/null | head -5 || echo 'no ~/.venvs/tbq_probe'\necho '====='\n# Is there a vllm-rocm wheel available for our platform? Quick HEAD check\ncurl -fsI 'https://download.pytorch.org/whl/nightly/rocm7.2/' 2>&1 | head -5 || echo 'pytorch nightly rocm7.2 unreachable'\necho '====='\n# Is uv available?\nwhich uv\nuv --version 2>&1 | head -1\necho '====='\n# existing active cohezion venv — does it already have vllm?\nls /home/mike-anderson/dev/cohezion/.venv/lib/python*/site-packages/vllm* 2>/dev/null | head -5 || echo 'no vllm in main cohezion .venv'\necho '====='\n# Is there a 'vllm' binary anywhere we can short-circuit to?\nwhich vllm 2>&1",
+  "command": "# First: does the scratch venv already exist from a prior session?\nls -la ~/.venvs/tbq_probe 2>/dev/null | head -5 || echo 'no ~/.venvs/tbq_probe'\necho '====='\n# Is there a vllm-rocm wheel available for our platform? Quick HEAD check\ncurl -fsI 'https://download.pytorch.org/whl/nightly/rocm7.2/' 2>&1 | head -5 || echo 'pytorch nightly rocm7.2 unreachable'\necho '====='\n# Is uv available?\nwhich uv\nuv --version 2>&1 | head -1\necho '====='\n# existing active cohezion venv — does it already have vllm?\nls /home/<USER>/dev/cohezion/.venv/lib/python*/site-packages/vllm* 2>/dev/null | head -5 || echo 'no vllm in main cohezion .venv'\necho '====='\n# Is there a 'vllm' binary anywhere we can short-circuit to?\nwhich vllm 2>&1",
   "description": "Check for pre-existing vllm install + uv availability before scratch-venv install"
 }
 ```
@@ -3017,10 +3017,10 @@ content-length: 9669
 date: Sun, 19 Apr 2026 02:32:06 GMT
 last-modified: Sun, 19 Apr 2026 01:47:08 GMT
 =====
-/home/mike-anderson/.local/bin/uv
+/home/<USER>/.local/bin/uv
 uv 0.10.8
 =====
-/home/mike-anderson/dev/cohezion/.venv/lib/python3.11/site-packages/vllm:
+/home/<USER>/dev/cohezion/.venv/lib/python3.11/site-packages/vllm:
 _aiter_ops.py
 assets
 beam_search.py
@@ -3038,7 +3038,7 @@ tool_use Bash
 id: toolu_01QnVwGejC8xajb3CjULGpRi
 ```json
 {
-  "command": "cd /home/mike-anderson/dev/cohezion\necho '== vllm version =='\n.venv/bin/python -c \"import vllm; print('vllm', vllm.__version__)\" 2>&1 | head -3\necho '====='\necho '== vllm platform sanity =='\n.venv/bin/python -c \"\nimport vllm\nfrom vllm import envs\nprint('is_rocm:', getattr(envs, 'VLLM_ROCM_CUSTOM_OPS', '?'))\nimport torch\nprint('torch', torch.__version__)\nprint('hip_available:', torch.version.hip if hasattr(torch.version, 'hip') else 'n/a')\nprint('device_count:', torch.cuda.device_count() if torch.cuda.is_available() else 0)\nif torch.cuda.is_available():\n    print('device_name:', torch.cuda.get_device_name(0))\n\" 2>&1 | head -20\necho '====='\necho '== vllm serve --help | grep kv-cache (is tbq4 documented?) =='\n.venv/bin/python -m vllm serve --help 2>&1 | grep -i -A2 'kv.cache' | head -40 || echo 'vllm serve help failed'",
+  "command": "cd /home/<USER>/dev/cohezion\necho '== vllm version =='\n.venv/bin/python -c \"import vllm; print('vllm', vllm.__version__)\" 2>&1 | head -3\necho '====='\necho '== vllm platform sanity =='\n.venv/bin/python -c \"\nimport vllm\nfrom vllm import envs\nprint('is_rocm:', getattr(envs, 'VLLM_ROCM_CUSTOM_OPS', '?'))\nimport torch\nprint('torch', torch.__version__)\nprint('hip_available:', torch.version.hip if hasattr(torch.version, 'hip') else 'n/a')\nprint('device_count:', torch.cuda.device_count() if torch.cuda.is_available() else 0)\nif torch.cuda.is_available():\n    print('device_name:', torch.cuda.get_device_name(0))\n\" 2>&1 | head -20\necho '====='\necho '== vllm serve --help | grep kv-cache (is tbq4 documented?) =='\n.venv/bin/python -m vllm serve --help 2>&1 | grep -i -A2 'kv.cache' | head -40 || echo 'vllm serve help failed'",
   "description": "Verify installed vLLM version, ROCm detection, and kv-cache-dtype support",
   "timeout": 60000
 }
@@ -3072,7 +3072,7 @@ tool_use Bash
 id: toolu_01TW5HjGUojfFD8knUyVw3SS
 ```json
 {
-  "command": "cd /home/mike-anderson/dev/cohezion\necho '== vllm kv-cache-dtype accepted values (via Literal inspection) =='\n.venv/bin/python -c \"\nimport vllm.config as cfg\nimport inspect, typing\n# Look for CacheConfig / kv_cache_dtype literal\nsrc = inspect.getsource(cfg)\nimport re\nfor m in re.finditer(r'kv_cache_dtype[^\\n]*(?:Literal|\\\"[a-zA-Z0-9_]+\\\")[^\\n]*', src):\n    print(m.group(0)[:200])\n\" 2>&1 | head -20\necho '====='\necho \"== grep tbq / turbo in vllm package ==\"\ngrep -rlE 'tbq4?|turbo.?quant|TurboQuant' /home/mike-anderson/dev/cohezion/.venv/lib/python3.11/site-packages/vllm 2>/dev/null | head -10 || echo '  none found'\necho '====='\necho '== vllm-specific kv-cache implementations =='\ngrep -rE 'def.*kv_cache_dtype|elif.*==.*\"(fp8|fp16|auto|int8|tbq)' /home/mike-anderson/dev/cohezion/.venv/lib/python3.11/site-packages/vllm/config.py 2>/dev/null | head -10",
+  "command": "cd /home/<USER>/dev/cohezion\necho '== vllm kv-cache-dtype accepted values (via Literal inspection) =='\n.venv/bin/python -c \"\nimport vllm.config as cfg\nimport inspect, typing\n# Look for CacheConfig / kv_cache_dtype literal\nsrc = inspect.getsource(cfg)\nimport re\nfor m in re.finditer(r'kv_cache_dtype[^\\n]*(?:Literal|\\\"[a-zA-Z0-9_]+\\\")[^\\n]*', src):\n    print(m.group(0)[:200])\n\" 2>&1 | head -20\necho '====='\necho \"== grep tbq / turbo in vllm package ==\"\ngrep -rlE 'tbq4?|turbo.?quant|TurboQuant' /home/<USER>/dev/cohezion/.venv/lib/python3.11/site-packages/vllm 2>/dev/null | head -10 || echo '  none found'\necho '====='\necho '== vllm-specific kv-cache implementations =='\ngrep -rE 'def.*kv_cache_dtype|elif.*==.*\"(fp8|fp16|auto|int8|tbq)' /home/<USER>/dev/cohezion/.venv/lib/python3.11/site-packages/vllm/config.py 2>/dev/null | head -10",
   "description": "Check if installed vllm supports --kv-cache-dtype tbq4",
   "timeout": 30000
 }
@@ -3086,11 +3086,11 @@ id: toolu_01TW5HjGUojfFD8knUyVw3SS
 == vllm kv-cache-dtype accepted values (via Literal inspection) ==
 Traceback (most recent call last):
   File "<string>", line 2, in <module>
-  File "/home/mike-anderson/dev/cohezion/.venv/lib/python3.11/site-packages/vllm/config/__init__.py", line 6, in <module>
+  File "/home/<USER>/dev/cohezion/.venv/lib/python3.11/site-packages/vllm/config/__init__.py", line 6, in <module>
     from vllm.config.compilation import (
-  File "/home/mike-anderson/dev/cohezion/.venv/lib/python3.11/site-packages/vllm/config/compilation.py", line 14, in <module>
+  File "/home/<USER>/dev/cohezion/.venv/lib/python3.11/site-packages/vllm/config/compilation.py", line 14, in <module>
     from vllm.compilation.passes.inductor_pass import CallableInductorPass, InductorPass
-  File "/home/mike-anderson/dev/cohezion/.venv/lib/python3.11/site-packages/vllm/compilation/passes/inductor_pass.py", line 22, in <module>
+  File "/home/<USER>/dev/cohezion/.venv/lib/python3.11/site-packages/vllm/compilation/passes/inductor_pass.py", line 22, in <module>
     from torch._inductor.custom_graph_pass import CustomGraphPass
 ModuleNotFoundError: No module named 'torch._inductor.custom_graph_pass'
 =====
@@ -3115,7 +3115,7 @@ tool_use Bash
 id: toolu_016jvT4KZvsc1ivFV1BrvumJ
 ```json
 {
-  "command": "echo '== existing llama.cpp installs on this host =='\nfind /home/mike-anderson -maxdepth 5 -type d -name 'llama.cpp' 2>/dev/null | head -10\necho\nfind /home/mike-anderson -maxdepth 5 -type f -name 'llama-server' 2>/dev/null | head -10\necho\nwhich llama-server llama-cli 2>&1 | head\necho\necho '== Is hipcc available for GGML_HIP=1 build? =='\nwhich hipcc\nhipcc --version 2>&1 | head -3\necho\necho '== Local unsloth/gemma-4-31B-it-GGUF contents =='\nls /home/mike-anderson/.cache/huggingface/hub/models--unsloth--gemma-4-31B-it-GGUF/snapshots/*/  2>/dev/null | head -15",
+  "command": "echo '== existing llama.cpp installs on this host =='\nfind /home/<USER> -maxdepth 5 -type d -name 'llama.cpp' 2>/dev/null | head -10\necho\nfind /home/<USER> -maxdepth 5 -type f -name 'llama-server' 2>/dev/null | head -10\necho\nwhich llama-server llama-cli 2>&1 | head\necho\necho '== Is hipcc available for GGML_HIP=1 build? =='\nwhich hipcc\nhipcc --version 2>&1 | head -3\necho\necho '== Local unsloth/gemma-4-31B-it-GGUF contents =='\nls /home/<USER>/.cache/huggingface/hub/models--unsloth--gemma-4-31B-it-GGUF/snapshots/*/  2>/dev/null | head -15",
   "description": "Survey existing llama.cpp installs + hipcc availability + local GGUFs",
   "timeout": 30000
 }
@@ -3127,9 +3127,9 @@ tool_result
 id: toolu_016jvT4KZvsc1ivFV1BrvumJ
 ```
 == existing llama.cpp installs on this host ==
-/home/mike-anderson/src/llama.cpp
+/home/<USER>/src/llama.cpp
 
-/home/mike-anderson/src/llama.cpp/build/bin/llama-server
+/home/<USER>/src/llama.cpp/build/bin/llama-server
 
 
 == Is hipcc available for GGML_HIP=1 build? ==
@@ -3154,7 +3154,7 @@ tool_use Bash
 id: toolu_015wEhEAxp5KniynbwR2fs6m
 ```json
 {
-  "command": "cd /home/mike-anderson/src/llama.cpp 2>&1 || { echo 'cannot cd'; exit 1; }\necho '== current branch / commit =='\ngit branch --show-current 2>/dev/null\ngit log -1 --oneline 2>/dev/null\ngit status --short 2>/dev/null | head -5\necho\necho '== remote =='\ngit remote -v 2>/dev/null | head -3\necho\necho '== list local branches =='\ngit branch --all 2>/dev/null | head -20\necho\necho '== llama-server kv-cache options =='\n./build/bin/llama-server --help 2>&1 | grep -iE 'kv[- _]cache|cache[- _]type' | head -20\necho\necho '== does binary know about turbo / tbq? =='\n./build/bin/llama-server --help 2>&1 | grep -iE 'turbo|tbq|tq[0-9]' || echo 'no turbo/tbq in --help'\necho\n# Fast CPU-only check that binary runs\necho '== binary version =='\n./build/bin/llama-server --version 2>&1 | head -3",
+  "command": "cd /home/<USER>/src/llama.cpp 2>&1 || { echo 'cannot cd'; exit 1; }\necho '== current branch / commit =='\ngit branch --show-current 2>/dev/null\ngit log -1 --oneline 2>/dev/null\ngit status --short 2>/dev/null | head -5\necho\necho '== remote =='\ngit remote -v 2>/dev/null | head -3\necho\necho '== list local branches =='\ngit branch --all 2>/dev/null | head -20\necho\necho '== llama-server kv-cache options =='\n./build/bin/llama-server --help 2>&1 | grep -iE 'kv[- _]cache|cache[- _]type' | head -20\necho\necho '== does binary know about turbo / tbq? =='\n./build/bin/llama-server --help 2>&1 | grep -iE 'turbo|tbq|tq[0-9]' || echo 'no turbo/tbq in --help'\necho\n# Fast CPU-only check that binary runs\necho '== binary version =='\n./build/bin/llama-server --version 2>&1 | head -3",
   "description": "Check llama.cpp branch + TurboQuant flag availability",
   "timeout": 30000
 }
@@ -3198,7 +3198,7 @@ no turbo/tbq in --help
 ggml_cuda_init: found 1 ROCm devices (Total VRAM: 32041 MiB):
   Device 0: AMD Radeon Graphics, gfx1151 (0x1151), VMM: no, Wave Size: 32, VRAM: 32041 MiB
 version: 1 (b863507)
-Shell cwd was reset to /home/mike-anderson/dev/cohezion
+Shell cwd was reset to /home/<USER>/dev/cohezion
 ```
 
 > AGENT
@@ -3216,7 +3216,7 @@ tool_use Bash
 id: toolu_01WqK8Gp2XQFp34bgPohGH4b
 ```json
 {
-  "command": "# Check what ROCm sees when we explicitly set the HSA override\necho '== with HSA_OVERRIDE_GFX_VERSION=11.5.0 =='\nHSA_OVERRIDE_GFX_VERSION=11.5.0 /home/mike-anderson/src/llama.cpp/build/bin/llama-server --version 2>&1 | head -6\necho\necho '== rocm-smi memory usage =='\ncommand -v rocm-smi && rocm-smi --showmeminfo all 2>&1 | head -30 | sed 's/^/  /' || echo 'rocm-smi not available'\necho\necho '== rocminfo: all Memory segments for GPU =='\nrocminfo 2>/dev/null | awk '/Agent 2/,/Agent 3|ISA Info/' | grep -iE 'segment|size|kind|name:' | head -40\necho\necho '== sysfs VRAM total/used =='\nfor p in /sys/class/drm/card*/device/mem_info_vram_total /sys/class/drm/card*/device/mem_info_vram_used /sys/class/drm/card*/device/mem_info_gtt_total; do\n  [ -f \"$p\" ] && echo \"  $p = $(cat \"$p\") bytes\"\ndone",
+  "command": "# Check what ROCm sees when we explicitly set the HSA override\necho '== with HSA_OVERRIDE_GFX_VERSION=11.5.0 =='\nHSA_OVERRIDE_GFX_VERSION=11.5.0 /home/<USER>/src/llama.cpp/build/bin/llama-server --version 2>&1 | head -6\necho\necho '== rocm-smi memory usage =='\ncommand -v rocm-smi && rocm-smi --showmeminfo all 2>&1 | head -30 | sed 's/^/  /' || echo 'rocm-smi not available'\necho\necho '== rocminfo: all Memory segments for GPU =='\nrocminfo 2>/dev/null | awk '/Agent 2/,/Agent 3|ISA Info/' | grep -iE 'segment|size|kind|name:' | head -40\necho\necho '== sysfs VRAM total/used =='\nfor p in /sys/class/drm/card*/device/mem_info_vram_total /sys/class/drm/card*/device/mem_info_vram_used /sys/class/drm/card*/device/mem_info_gtt_total; do\n  [ -f \"$p\" ] && echo \"  $p = $(cat \"$p\") bytes\"\ndone",
   "description": "Investigate the 31 vs 64 GB VRAM discrepancy",
   "timeout": 30000
 }
@@ -3359,7 +3359,7 @@ tool_use Bash
 id: toolu_01EoeLBFJGMNiARAcgYYDXVJ
 ```json
 {
-  "command": "MODEL=/home/mike-anderson/.cache/huggingface/hub/models--unsloth--gemma-4-31B-it-GGUF/snapshots/*/gemma-4-31B-it-Q4_K_M.gguf\necho '== resolved model path =='\nls -la $MODEL 2>&1 | head -3\necho '== llama.cpp supported KV cache dtypes (-ctk valid values) =='\n/home/mike-anderson/src/llama.cpp/build/bin/llama-cli --help 2>&1 | grep -iA1 'cache.type' | head -20\necho '== short smoke test: load model, 1-token response, check VRAM +HSA =='\nexport HSA_OVERRIDE_GFX_VERSION=11.5.0\nexport GGML_VK_VISIBLE_DEVICES=0\n(rocm-smi --showmeminfo vram 2>&1 | grep 'Used Memory') > /tmp/probe_vram_pre.txt\necho '[pre-load]' && cat /tmp/probe_vram_pre.txt\necho\ntimeout 60 /home/mike-anderson/src/llama.cpp/build/bin/llama-cli \\\n  -m $(echo $MODEL | head -1) \\\n  -ngl 99 -c 4096 -n 8 --no-warmup \\\n  -p \"Reply 'ok'.\" 2>&1 | tail -20\necho\n(rocm-smi --showmeminfo vram 2>&1 | grep 'Used Memory') > /tmp/probe_vram_post.txt\necho '[post-load]' && cat /tmp/probe_vram_post.txt",
+  "command": "MODEL=/home/<USER>/.cache/huggingface/hub/models--unsloth--gemma-4-31B-it-GGUF/snapshots/*/gemma-4-31B-it-Q4_K_M.gguf\necho '== resolved model path =='\nls -la $MODEL 2>&1 | head -3\necho '== llama.cpp supported KV cache dtypes (-ctk valid values) =='\n/home/<USER>/src/llama.cpp/build/bin/llama-cli --help 2>&1 | grep -iA1 'cache.type' | head -20\necho '== short smoke test: load model, 1-token response, check VRAM +HSA =='\nexport HSA_OVERRIDE_GFX_VERSION=11.5.0\nexport GGML_VK_VISIBLE_DEVICES=0\n(rocm-smi --showmeminfo vram 2>&1 | grep 'Used Memory') > /tmp/probe_vram_pre.txt\necho '[pre-load]' && cat /tmp/probe_vram_pre.txt\necho\ntimeout 60 /home/<USER>/src/llama.cpp/build/bin/llama-cli \\\n  -m $(echo $MODEL | head -1) \\\n  -ngl 99 -c 4096 -n 8 --no-warmup \\\n  -p \"Reply 'ok'.\" 2>&1 | tail -20\necho\n(rocm-smi --showmeminfo vram 2>&1 | grep 'Used Memory') > /tmp/probe_vram_post.txt\necho '[post-load]' && cat /tmp/probe_vram_post.txt",
   "description": "Smoke test: can llama.cpp load Gemma-4-31B on the iGPU and produce tokens at all?",
   "timeout": 120000
 }
@@ -3371,13 +3371,13 @@ tool_result
 id: toolu_01EoeLBFJGMNiARAcgYYDXVJ
 ```
 == resolved model path ==
--rw-rw-r-- 1 mike-anderson mike-anderson 18323726560 Apr 10 00:26 /home/mike-anderson/.cache/huggingface/hub/models--unsloth--gemma-4-31B-it-GGUF/snapshots/399165656108b2e8b051d601d79dcaf30b1ed786/gemma-4-31B-it-Q4_K_M.gguf
+-rw-rw-r-- 1 mike-anderson mike-anderson 18323726560 Apr 10 00:26 /home/<USER>/.cache/huggingface/hub/models--unsloth--gemma-4-31B-it-GGUF/snapshots/399165656108b2e8b051d601d79dcaf30b1ed786/gemma-4-31B-it-Q4_K_M.gguf
 == llama.cpp supported KV cache dtypes (-ctk valid values) ==
 == short smoke test: load model, 1-token response, check VRAM +HSA ==
 [pre-load]
 GPU[0]		: VRAM Total Used Memory (B): 453390336
 
-timeout: failed to run command ‘/home/mike-anderson/src/llama.cpp/build/bin/llama-cli’: No such file or directory
+timeout: failed to run command ‘/home/<USER>/src/llama.cpp/build/bin/llama-cli’: No such file or directory
 
 [post-load]
 GPU[0]		: VRAM Total Used Memory (B): 453390336
@@ -3389,7 +3389,7 @@ tool_use Bash
 id: toolu_019X3raBarGiYh4qhnNA2JDh
 ```json
 {
-  "command": "ls /home/mike-anderson/src/llama.cpp/build/bin/ 2>&1 | head -20\necho '====='\n# Check cache-type options in llama-server\n/home/mike-anderson/src/llama.cpp/build/bin/llama-server --help 2>&1 | grep -B1 -A2 'cache-type-k TYPE' | head -10",
+  "command": "ls /home/<USER>/src/llama.cpp/build/bin/ 2>&1 | head -20\necho '====='\n# Check cache-type options in llama-server\n/home/<USER>/src/llama.cpp/build/bin/llama-server --help 2>&1 | grep -B1 -A2 'cache-type-k TYPE' | head -10",
   "description": "List llama.cpp build binaries; confirm cache-type-k accepted values",
   "timeout": 15000
 }
@@ -3436,7 +3436,7 @@ tool_use Bash
 id: toolu_016ieNZ3ayMGiCa3ued1XW83
 ```json
 {
-  "command": "MODEL=/home/mike-anderson/.cache/huggingface/hub/models--unsloth--gemma-4-31B-it-GGUF/snapshots/399165656108b2e8b051d601d79dcaf30b1ed786/gemma-4-31B-it-Q4_K_M.gguf\nmkdir -p /tmp/cohezion-probe\necho \"Starting llama-server in background with Q4 KV @ 32k context...\"\nHSA_OVERRIDE_GFX_VERSION=11.5.0 \\\n/home/mike-anderson/src/llama.cpp/build/bin/llama-server \\\n  -m \"$MODEL\" \\\n  -ngl 99 \\\n  -c 32768 \\\n  -ctk q4_0 -ctv q4_0 \\\n  --port 13399 \\\n  --host 127.0.0.1 \\\n  --no-webui \\\n  --jinja \\\n  > /tmp/cohezion-probe/server_qkv_compressed.log 2>&1 &\necho \"server PID: $!\"\necho $! > /tmp/cohezion-probe/server.pid",
+  "command": "MODEL=/home/<USER>/.cache/huggingface/hub/models--unsloth--gemma-4-31B-it-GGUF/snapshots/399165656108b2e8b051d601d79dcaf30b1ed786/gemma-4-31B-it-Q4_K_M.gguf\nmkdir -p /tmp/cohezion-probe\necho \"Starting llama-server in background with Q4 KV @ 32k context...\"\nHSA_OVERRIDE_GFX_VERSION=11.5.0 \\\n/home/<USER>/src/llama.cpp/build/bin/llama-server \\\n  -m \"$MODEL\" \\\n  -ngl 99 \\\n  -c 32768 \\\n  -ctk q4_0 -ctv q4_0 \\\n  --port 13399 \\\n  --host 127.0.0.1 \\\n  --no-webui \\\n  --jinja \\\n  > /tmp/cohezion-probe/server_qkv_compressed.log 2>&1 &\necho \"server PID: $!\"\necho $! > /tmp/cohezion-probe/server.pid",
   "description": "Launch llama-server with Gemma-4-31B + 32k ctx + Q4 KV cache in background",
   "run_in_background": true
 }
@@ -3500,7 +3500,7 @@ init: using 31 threads for HTTP server
 Web UI is disabled
 start: binding port with default address family
 main: loading model
-srv    load_model: loading model '/home/mike-anderson/.cache/huggingface/hub/models--unsloth--gemma-4-31B-it-GGUF/snapshots/399165656108b2e8b051d601d79dcaf30b1ed786/gemma-4-31B-it-Q4_K_M.gguf'
+srv    load_model: loading model '/home/<USER>/.cache/huggingface/hub/models--unsloth--gemma-4-31B-it-GGUF/snapshots/399165656108b2e8b051d601d79dcaf30b1ed786/gemma-4-31B-it-Q4_K_M.gguf'
 common_init_result: fitting params to device memory, for bugs during this step try to reproduce them with -fit off, or provide --verbose logs if the bug only occurs with -fit on
 ```
 
@@ -3539,7 +3539,7 @@ init: using 31 threads for HTTP server
 Web UI is disabled
 start: binding port with default address family
 main: loading model
-srv    load_model: loading model '/home/mike-anderson/.cache/huggingface/hub/models--unsloth--gemma-4-31B-it-GGUF/snapshots/399165656108b2e8b051d601d79dcaf30b1ed786/gemma-4-31B-it-Q4_K_M.gguf'
+srv    load_model: loading model '/home/<USER>/.cache/huggingface/hub/models--unsloth--gemma-4-31B-it-GGUF/snapshots/399165656108b2e8b051d601d79dcaf30b1ed786/gemma-4-31B-it-Q4_K_M.gguf'
 common_init_result: fitting params to device memory, for bugs during this step try to reproduce them with -fit off, or provide --verbose logs if the bug only occurs with -fit on
 ```
 
@@ -3637,7 +3637,7 @@ tool_use Bash
 id: toolu_01UMfnDFTjP3ujR9BVLoBDST
 ```json
 {
-  "command": "mkdir -p /home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/benchmarks",
+  "command": "mkdir -p /home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/benchmarks",
   "description": "Ensure benchmarks dir exists"
 }
 ```
@@ -3656,7 +3656,7 @@ tool_use Write
 id: toolu_01Ge9xEn9oVz67QZ4zGKaZiN
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/benchmarks/backend_probe_2026-04-18.md",
+  "file_path": "/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/benchmarks/backend_probe_2026-04-18.md",
   "content": "# Backend Probe — KV Compression on Current Baseline (2026-04-18)\n\n**Goal:** Empirically decide whether KV-cache compression is usable on the\ncurrent Strix Halo baseline (**kernel 6.17.0-1017-oem, ROCm 7.2.1, 64 GB\nUMA reservation, HSA per-process ceiling ~31 GB**) *before* spending\n90–120 minutes on the kernel+firmware+ROCm upgrade sequence the parent\nplan prescribed.\n\n**Outcome:** _(pending; populated by `scripts/probe_backend.py`)_\n\n---\n\n## Baseline (pre-probe)\n\n| Component | Value | Source |\n|---|---|---|\n| Kernel | `6.17.0-1017-oem` | `uname -r` |\n| ROCm | `7.2.1` | `/opt/rocm/.info/version` |\n| GPU | gfx1151 (AMD Radeon Graphics, 40 CU) | `rocminfo` |\n| UMA reservation | 64 GB | `/sys/class/drm/card1/device/mem_info_vram_total` |\n| HSA per-process ceiling | ~31 GB | `rocminfo` GLOBAL segment |\n| GTT (system-memory spill) | 128 GB | `rocm-smi --showmeminfo all` |\n| llama.cpp binary | `master` @ `b863507` (stock, no TurboQuant PR) | `git log -1` in `~/src/llama.cpp` |\n| Test model | `unsloth/gemma-4-31B-it-Q4_K_M.gguf` (18.3 GB) | HF hub cache |\n\n---\n\n## Why *this* probe instead of vLLM + tbq4\n\n1. The pre-existing `cohezion/.venv` has **vLLM 0.19.0** but torch\n   `2.5.1+rocm6.2` — a version skew that breaks `vllm.config` import\n   (`ModuleNotFoundError: torch._inductor.custom_graph_pass`). Rebuilding\n   from a fresh scratch venv was an option, but:\n2. **TurboQuant support (`--kv-cache-dtype tbq4`) is not in mainline vLLM.**\n   It lives in the vLLM-rocm fork […]
 
 > TOOL
@@ -3664,7 +3664,7 @@ id: toolu_01Ge9xEn9oVz67QZ4zGKaZiN
 tool_result
 id: toolu_01Ge9xEn9oVz67QZ4zGKaZiN
 ```
-File created successfully at: /home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/benchmarks/backend_probe_2026-04-18.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/benchmarks/backend_probe_2026-04-18.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3736,7 +3736,7 @@ tool_use Bash
 id: toolu_01HQ3TFBtkR9d5LxUcpKuVeu
 ```json
 {
-  "command": "SERVER_PID=$(cat /tmp/cohezion-probe/server.pid)\nkill $SERVER_PID 2>/dev/null\nsleep 1\nkill -9 $SERVER_PID 2>/dev/null\n# confirm dead\nkill -0 $SERVER_PID 2>/dev/null && echo 'STILL ALIVE' || echo 'DEAD'\necho '---'\n# verify llama-server supports -fit off\n/home/mike-anderson/src/llama.cpp/build/bin/llama-server --help 2>&1 | grep -B1 -A2 -- '-fit\\|--fit\\|fit.*off\\|no.*fit' | head -20\necho '---'\n# what does -ngl default to now?\n/home/mike-anderson/src/llama.cpp/build/bin/llama-server --help 2>&1 | grep -B1 -A1 -- '--n-gpu-layers\\|-ngl' | head -10",
+  "command": "SERVER_PID=$(cat /tmp/cohezion-probe/server.pid)\nkill $SERVER_PID 2>/dev/null\nsleep 1\nkill -9 $SERVER_PID 2>/dev/null\n# confirm dead\nkill -0 $SERVER_PID 2>/dev/null && echo 'STILL ALIVE' || echo 'DEAD'\necho '---'\n# verify llama-server supports -fit off\n/home/<USER>/src/llama.cpp/build/bin/llama-server --help 2>&1 | grep -B1 -A2 -- '-fit\\|--fit\\|fit.*off\\|no.*fit' | head -20\necho '---'\n# what does -ngl default to now?\n/home/<USER>/src/llama.cpp/build/bin/llama-server --help 2>&1 | grep -B1 -A1 -- '--n-gpu-layers\\|-ngl' | head -10",
   "description": "Kill stuck server, check -fit flag support",
   "timeout": 15000
 }
@@ -3780,7 +3780,7 @@ tool_use Bash
 id: toolu_01KEccS82ZyWHz44CWxDQhmZ
 ```json
 {
-  "command": "ls /home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/scripts/launch_fleet*.sh 2>/dev/null\necho '---'\nls /home/mike-anderson/dev/cohezion/scripts/launch_fleet*.sh 2>/dev/null\necho '---'\ngrep -l 'llama-server\\|llama_server' /home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/scripts/*.sh 2>/dev/null | head -5\ngrep -l 'llama-server\\|llama_server' /home/mike-anderson/dev/cohezion/scripts/*.sh 2>/dev/null | head -5\necho '---'\n# Check parent repo too\nfind /home/mike-anderson/dev/cohezion -maxdepth 4 -name 'launch_fleet*.sh' -not -path '*/.worktrees/*' 2>/dev/null | head -5",
+  "command": "ls /home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/scripts/launch_fleet*.sh 2>/dev/null\necho '---'\nls /home/<USER>/dev/cohezion/scripts/launch_fleet*.sh 2>/dev/null\necho '---'\ngrep -l 'llama-server\\|llama_server' /home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/scripts/*.sh 2>/dev/null | head -5\ngrep -l 'llama-server\\|llama_server' /home/<USER>/dev/cohezion/scripts/*.sh 2>/dev/null | head -5\necho '---'\n# Check parent repo too\nfind /home/<USER>/dev/cohezion -maxdepth 4 -name 'launch_fleet*.sh' -not -path '*/.worktrees/*' 2>/dev/null | head -5",
   "description": "Find existing llama.cpp launcher scripts",
   "timeout": 15000
 }
@@ -3791,14 +3791,14 @@ id: toolu_01KEccS82ZyWHz44CWxDQhmZ
 tool_result
 id: toolu_01KEccS82ZyWHz44CWxDQhmZ
 ```
-/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/scripts/launch_fleet_safe.sh
+/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/scripts/launch_fleet_safe.sh
 ---
-/home/mike-anderson/dev/cohezion/scripts/launch_fleet_safe.sh
+/home/<USER>/dev/cohezion/scripts/launch_fleet_safe.sh
 ---
-/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/scripts/launch_fleet_safe.sh
-/home/mike-anderson/dev/cohezion/scripts/launch_fleet_safe.sh
+/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/scripts/launch_fleet_safe.sh
+/home/<USER>/dev/cohezion/scripts/launch_fleet_safe.sh
 ---
-/home/mike-anderson/dev/cohezion/scripts/launch_fleet_safe.sh
+/home/<USER>/dev/cohezion/scripts/launch_fleet_safe.sh
 ```
 
 > TOOL
@@ -3807,7 +3807,7 @@ tool_use Read
 id: toolu_013MENutbBum9uZjungcKbFu
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/scripts/launch_fleet_safe.sh"
+  "file_path": "/home/<USER>/dev/cohezion/.claude/worktrees/dreamy-jingling-thacker/scripts/launch_fleet_safe.sh"
 }
 ```
 
@@ -3916,7 +3916,7 @@ tool_use Bash
 id: toolu_01KxiqXCgkuGWdBvdjgbh5La
 ```json
 {
-  "command": "ls /home/mike-anderson/.cache/huggingface/hub/models--unsloth--gemma-4-E4B-it-GGUF/snapshots/*/ 2>/dev/null | head -10\necho '---'\n# How many *.gguf files in E4B?\nfind /home/mike-anderson/.cache/huggingface/hub/models--unsloth--gemma-4-E4B-it-GGUF/ -name '*.gguf' -size +500M 2>/dev/null | head -5",
+  "command": "ls /home/<USER>/.cache/huggingface/hub/models--unsloth--gemma-4-E4B-it-GGUF/snapshots/*/ 2>/dev/null | head -10\necho '---'\n# How many *.gguf files in E4B?\nfind /home/<USER>/.cache/huggingface/hub/models--unsloth--gemma-4-E4B-it-GGUF/ -name '*.gguf' -size +500M 2>/dev/null | head -5",
   "description": "Locate gemma-4-E4B GGUF",
   "timeout": 10000
 }
@@ -3931,8 +3931,8 @@ config.json
 gemma-4-E4B-it-Q4_K_M.gguf
 mmproj-F16.gguf
 ---
-/home/mike-anderson/.cache/huggingface/hub/models--unsloth--gemma-4-E4B-it-GGUF/snapshots/960a8cd001a5ec7a679e2c5d93f9916238e76d10/gemma-4-E4B-it-Q4_K_M.gguf
-/home/mike-anderson/.cache/huggingface/hub/models--unsloth--gemma-4-E4B-it-GGUF/snapshots/960a8cd001a5ec7a679e2c5d93f9916238e76d10/mmproj-F16.gguf
+/home/<USER>/.cache/huggingface/hub/models--unsloth--gemma-4-E4B-it-GGUF/snapshots/960a8cd001a5ec7a679e2c5d93f9916238e76d10/gemma-4-E4B-it-Q4_K_M.gguf
+/home/<USER>/.cache/huggingface/hub/models--unsloth--gemma-4-E4B-it-GGUF/snapshots/960a8cd001a5ec7a679e2c5d93f9916238e76d10/mmproj-F16.gguf
 ```
 
 > TOOL
@@ -3941,7 +3941,7 @@ tool_use Bash
 id: toolu_01HaoikBpEbqWLvUiNsYcoiu
 ```json
 {
-  "command": "MODEL=/home/mike-anderson/.cache/huggingface/hub/models--unsloth--gemma-4-E4B-it-GGUF/snapshots/960a8cd001a5ec7a679e2c5d93f9916238e76d10/gemma-4-E4B-it-Q4_K_M.gguf\necho \"Model size: $(ls -l $MODEL | awk '{print $5/1024/1024/1024 \" GB\"}')\"\necho 'Launching with -fit off, --parallel 1, -c 16384, -ctk q4_0 -ctv q4_0'\nHSA_OVERRIDE_GFX_VERSION=11.5.1 \\\nPYTORCH_ROCM_ARCH=gfx1151 \\\nTRITON_AMD_WMMA=1 \\\n/home/mike-anderson/src/llama.cpp/build/bin/llama-server \\\n  -m \"$MODEL\" \\\n  -ngl 99 \\\n  --parallel 1 \\\n  -fa 1 \\\n  -c 16384 \\\n  -ctk q4_0 -ctv q4_0 \\\n  -fit off \\\n  --port 13399 \\\n  --host 127.0.0.1 \\\n  --no-webui \\\n  --jinja \\\n  > /tmp/cohezion-probe/server_e4b_q4kv.log 2>&1 &\nSERVER_PID=$!\necho \"server PID: $SERVER_PID\"\necho $SERVER_PID > /tmp/cohezion-probe/server.pid",
+  "command": "MODEL=/home/<USER>/.cache/huggingface/hub/models--unsloth--gemma-4-E4B-it-GGUF/snapshots/960a8cd001a5ec7a679e2c5d93f9916238e76d10/gemma-4-E4B-it-Q4_K_M.gguf\necho \"Model size: $(ls -l $MODEL | awk '{print $5/1024/1024/1024 \" GB\"}')\"\necho 'Launching with -fit off, --parallel 1, -c 16384, -ctk q4_0 -ctv q4_0'\nHSA_OVERRIDE_GFX_VERSION=11.5.1 \\\nPYTORCH_ROCM_ARCH=gfx1151 \\\nTRITON_AMD_WMMA=1 \\\n/home/<USER>/src/llama.cpp/build/bin/llama-server \\\n  -m \"$MODEL\" \\\n  -ngl 99 \\\n  --parallel 1 \\\n  -fa 1 \\\n  -c 16384 \\\n  -ctk q4_0 -ctv q4_0 \\\n  -fit off \\\n  --port 13399 \\\n  --host 127.0.0.1 \\\n  --no-webui \\\n  --jinja \\\n  > /tmp/cohezion-probe/server_e4b_q4kv.log 2>&1 &\nSERVER_PID=$!\necho \"server PID: $SERVER_PID\"\necho $SERVER_PID > /tmp/cohezion-probe/server.pid",
   "description": "Quick probe with smaller model + -fit off + --parallel 1 + Q4 KV",
   "run_in_background": true
 }

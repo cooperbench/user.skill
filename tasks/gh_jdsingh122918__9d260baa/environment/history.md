@@ -335,14 +335,14 @@ This is a detailed technical summary of the Forge orchestrator's runtime archite
 
 **Sequential (Runner-based) Execution:**
 - Primary: `src/orchestrator/runner.rs` (ClaudeRunner) implements single-phase sequential execution
-- File: `/Users/jdsingh/Projects/AI/forge/src/orchestrator/runner.rs` (70.7 KB)
+- File: `/home/<USER>/Projects/AI/forge/src/orchestrator/runner.rs` (70.7 KB)
 - Pattern: Single phase → iterate with budget until `<promise>DONE</promise>` or budget exhausted
 - Command spawning: `tokio::process::Command` at line 511-559
 - stdin writing: direct prompt injection via pipe
 - stdout parsing: line-by-line streaming with signal extraction
 
 **DAG-based Parallel Execution:**
-- File: `/Users/jdsingh/Projects/AI/forge/src/dag/executor.rs` (57.2 KB)
+- File: `/home/<USER>/Projects/AI/forge/src/dag/executor.rs` (57.2 KB)
 - Architecture: `DagScheduler` (computes dependency waves) + `DagExecutor` (spawns async tasks)
 - Concurrency model: **Semaphore-gated with max_parallel limit** (default: 4)
   - Not wave-based barriers — waves are for reporting only
@@ -352,7 +352,7 @@ This is a detailed technical summary of the Forge orchestrator's runtime archite
 - Configuration: `DagConfig` with max_parallel, fail_fast, swarm_enabled, review settings
 
 **Swarm (Multi-agent) Execution:**
-- File: `/Users/jdsingh/Projects/AI/forge/src/swarm/executor.rs` (150 lines)
+- File: `/home/<USER>/Projects/AI/forge/src/swarm/executor.rs` (150 lines)
 - Purpose: Delegate a phase to Claude Code swarm for parallel micro-tasks
 - Flow:
   1. […]

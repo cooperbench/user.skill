@@ -14,7 +14,7 @@ The alerting bucket for W2 is complete:
 #659 — #416: enriched Slack/email alerts (deep link, run metadata, expected-vs-observed) via a new shared pure alerting/render.py.
 #662 — #661: fully tabular email (run-details + failing-checks tables) + owner name across Slack/email/Teams (Teams card brought to #416 parity: metadata facts + "View run" action).
 Key operational learnings (saved to memory)
-Alerting IS configured + delivering in prod — Slack (channel-slack-webhook) + Gmail email (theurgicduke771@gmail.com, channel-email-password) + PUBLIC_BASE_URL. Teams is implemented […]
+Alerting IS configured + delivering in prod — Slack (channel-slack-webhook) + Gmail email (<REDACTED_EMAIL>, channel-email-password) + PUBLIC_BASE_URL. Teams is implemented […]
 
 > AGENT
 
@@ -80,7 +80,7 @@ tool_use Read
 id: toolu_01SFdVk2FMXjfoL1kcejjSW5
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Profile.tsx"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Profile.tsx"
 }
 ```
 
@@ -90,7 +90,7 @@ tool_use Read
 id: toolu_01UAWyUsCci2aTe4oTzyMuoQ
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Settings.tsx"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Settings.tsx"
 }
 ```
 
@@ -172,7 +172,7 @@ tool_use Bash
 id: toolu_0153i7c2A16MZEfyY4QQfqXG
 ```json
 {
-  "command": "grep -rn \"MSAL\" /Users/arijit/Coding/Python/DataQ/frontend/src /Users/arijit/Coding/Python/DataQ/frontend/tests 2>/dev/null; git -C /Users/arijit/Coding/Python/DataQ checkout -b fix/issue-618-oidc-auth-label",
+  "command": "grep -rn \"MSAL\" /home/<USER>/Coding/Python/DataQ/frontend/src /home/<USER>/Coding/Python/DataQ/frontend/tests 2>/dev/null; git -C /home/<USER>/Coding/Python/DataQ checkout -b fix/issue-618-oidc-auth-label",
   "description": "Find MSAL references and create branch"
 }
 ```
@@ -182,16 +182,16 @@ id: toolu_0153i7c2A16MZEfyY4QQfqXG
 tool_result
 id: toolu_0153i7c2A16MZEfyY4QQfqXG
 ```
-/Users/arijit/Coding/Python/DataQ/frontend/src/auth/authClient.ts:17: * Generic OIDC auth client (ADR 0028 / #504) — replaces the Azure-specific MSAL
-/Users/arijit/Coding/Python/DataQ/frontend/src/auth/authClient.ts:21: * silent renew (offline_access), session-storage cache (matches the old MSAL
-/Users/arijit/Coding/Python/DataQ/frontend/src/auth/config.ts:18: *                    client (MSAL today; a generic OIDC client next — #504) drives
-/Users/arijit/Coding/Python/DataQ/frontend/src/auth/MeProvider.tsx:12: * real-auth mode we wait until MSAL has an account — otherwise the request would
-/Users/arijit/Coding/Python/DataQ/frontend/src/components/ErrorBoundary.tsx:16: * only covers the pre-render MSAL bootstrap; this covers everything after the
-/Users/arijit/Coding/Python/DataQ/frontend/src/components/suites/SharePanel.tsx:67:  // Best-effort UX lock on the signed-in user's own row (MSAL UPN ≈ their share
-/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Settings.tsx:67:        <Descriptions.Item label="Authentication">Azure AD (MSAL)</Descriptions.Item>
-/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Profile.tsx:62:          <Descriptions.Item label="Authentication">Azure AD (MSAL)</Descriptions.Item>
-/Users/arijit/Coding/Python/DataQ/frontend/tests/components/SharePanel.test.tsx:141:    // MSAL username (UPN) matches the share email case-insensitively → self row.
-/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Profile.test.tsx:52:    expect(screen.getByText('Azure AD (MSAL)')).toBeInTheDocument();
+/home/<USER>/Coding/Python/DataQ/frontend/src/auth/authClient.ts:17: * Generic OIDC auth client (ADR 0028 / #504) — replaces the Azure-specific MSAL
+/home/<USER>/Coding/Python/DataQ/frontend/src/auth/authClient.ts:21: * silent renew (offline_access), session-storage cache (matches the old MSAL
+/home/<USER>/Coding/Python/DataQ/frontend/src/auth/config.ts:18: *                    client (MSAL today; a generic OIDC client next — #504) drives
+/home/<USER>/Coding/Python/DataQ/frontend/src/auth/MeProvider.tsx:12: * real-auth mode we wait until MSAL has an account — otherwise the request would
+/home/<USER>/Coding/Python/DataQ/frontend/src/components/ErrorBoundary.tsx:16: * only covers the pre-render MSAL bootstrap; this covers everything after the
+/home/<USER>/Coding/Python/DataQ/frontend/src/components/suites/SharePanel.tsx:67:  // Best-effort UX lock on the signed-in user's own row (MSAL UPN ≈ their share
+/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Settings.tsx:67:        <Descriptions.Item label="Authentication">Azure AD (MSAL)</Descriptions.Item>
+/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Profile.tsx:62:          <Descriptions.Item label="Authentication">Azure AD (MSAL)</Descriptions.Item>
+/home/<USER>/Coding/Python/DataQ/frontend/tests/components/SharePanel.test.tsx:141:    // MSAL username (UPN) matches the share email case-insensitively → self row.
+/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Profile.test.tsx:52:    expect(screen.getByText('Azure AD (MSAL)')).toBeInTheDocument();
 Switched to a new branch 'fix/issue-618-oidc-auth-label'
 ```
 
@@ -206,7 +206,7 @@ id: toolu_01VhGxxXRigX3X3b9K58tTRv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Profile.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Profile.tsx",
   "old_string": "          <Descriptions.Item label=\"Authentication\">Azure AD (MSAL)</Descriptions.Item>",
   "new_string": "          <Descriptions.Item label=\"Authentication\">OIDC (SSO)</Descriptions.Item>"
 }
@@ -217,7 +217,7 @@ id: toolu_01VhGxxXRigX3X3b9K58tTRv
 tool_result
 id: toolu_01VhGxxXRigX3X3b9K58tTRv
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/pages/Profile.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/pages/Profile.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -227,7 +227,7 @@ id: toolu_01SGmF1CsMEMChczz1aACSV6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Settings.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Settings.tsx",
   "old_string": "        <Descriptions.Item label=\"Authentication\">Azure AD (MSAL)</Descriptions.Item>",
   "new_string": "        <Descriptions.Item label=\"Authentication\">OIDC (SSO)</Descriptions.Item>"
 }
@@ -238,7 +238,7 @@ id: toolu_01SGmF1CsMEMChczz1aACSV6
 tool_result
 id: toolu_01SGmF1CsMEMChczz1aACSV6
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/pages/Settings.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/pages/Settings.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -269,7 +269,7 @@ tool_use Read
 id: toolu_018omJ5UG6GF3jFjNPjUGZSJ
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Profile.test.tsx"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Profile.test.tsx"
 }
 ```
 
@@ -304,7 +304,7 @@ id: toolu_018omJ5UG6GF3jFjNPjUGZSJ
 24	  data: {
 25	    id: 'u-1',
 26	    aad_object_id: 'oid-1',
-27	    email: 'ada@dataq.io',
+27	    email: '<REDACTED_EMAIL>',
 28	    display_name: 'Ada Lovelace',
 29	    last_seen_at: '2026-06-26T10:00:00Z',
 30	    is_workspace_admin: false,
@@ -387,7 +387,7 @@ id: toolu_01HbBRxXc89DMvHWUrh3NmvG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Profile.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Profile.test.tsx",
   "old_string": "    expect(screen.getByText('Azure AD (MSAL)')).toBeInTheDocument();",
   "new_string": "    expect(screen.getByText('OIDC (SSO)')).toBeInTheDocument();"
 }
@@ -398,7 +398,7 @@ id: toolu_01HbBRxXc89DMvHWUrh3NmvG
 tool_result
 id: toolu_01HbBRxXc89DMvHWUrh3NmvG
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Profile.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Profile.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -407,7 +407,7 @@ tool_use Bash
 id: toolu_01Chsd6v24Wqthmi3X6XjG1w
 ```json
 {
-  "command": "grep -rn \"Azure AD\" /Users/arijit/Coding/Python/DataQ/frontend/tests /Users/arijit/Coding/Python/DataQ/frontend/src 2>/dev/null",
+  "command": "grep -rn \"Azure AD\" /home/<USER>/Coding/Python/DataQ/frontend/tests /home/<USER>/Coding/Python/DataQ/frontend/src 2>/dev/null",
   "description": "Check remaining Azure AD label references"
 }
 ```
@@ -417,8 +417,8 @@ id: toolu_01Chsd6v24Wqthmi3X6XjG1w
 tool_result
 id: toolu_01Chsd6v24Wqthmi3X6XjG1w
 ```
-/Users/arijit/Coding/Python/DataQ/frontend/src/auth/authClient.ts:18: * client. Any standards-compliant IdP works: Azure AD, Cognito, GCP Identity
-/Users/arijit/Coding/Python/DataQ/frontend/src/auth/authClient.ts:53:    // Trailing slash matches the registered SPA redirect URI (Azure AD requires a
+/home/<USER>/Coding/Python/DataQ/frontend/src/auth/authClient.ts:18: * client. Any standards-compliant IdP works: Azure AD, Cognito, GCP Identity
+/home/<USER>/Coding/Python/DataQ/frontend/src/auth/authClient.ts:53:    // Trailing slash matches the registered SPA redirect URI (Azure AD requires a
 ```
 
 > AGENT
@@ -431,7 +431,7 @@ tool_use Bash
 id: toolu_01THEySMYNRzxVSKZ5uS3Q6V
 ```json
 {
-  "command": "grep -n \"General\\|Authentication\\|OIDC\" /Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx 2>/dev/null | head; ls /Users/arijit/Coding/Python/DataQ/frontend/tests/pages/ | head -30",
+  "command": "grep -n \"General\\|Authentication\\|OIDC\" /home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx 2>/dev/null | head; ls /home/<USER>/Coding/Python/DataQ/frontend/tests/pages/ | head -30",
   "description": "Check Settings test coverage of the label"
 }
 ```
@@ -467,7 +467,7 @@ tool_use Read
 id: toolu_01HEEZ2DDgbUxxDk5dAnV8H2
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx",
   "offset": 40,
   "limit": 30
 }
@@ -517,7 +517,7 @@ id: toolu_011S2hiuNcrc8nqJUJy2a8LL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx",
   "old_string": "    // General tab is default-active: workspace facts visible.\n    expect(screen.getByText('Single tenant')).toBeInTheDocument();",
   "new_string": "    // General tab is default-active: workspace facts visible.\n    expect(screen.getByText('Single tenant')).toBeInTheDocument();\n    // Provider-neutral auth label (ADR 0028 — MSAL retired for generic OIDC).\n    expect(screen.getByText('OIDC (SSO)')).toBeInTheDocument();"
 }
@@ -528,7 +528,7 @@ id: toolu_011S2hiuNcrc8nqJUJy2a8LL
 tool_result
 id: toolu_011S2hiuNcrc8nqJUJy2a8LL
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -537,7 +537,7 @@ tool_use Bash
 id: toolu_01Y9XGgkHA6LDge9RdqxdeX4
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ/frontend && pnpm exec prettier --check src/pages/Profile.tsx src/pages/Settings.tsx tests/pages/Profile.test.tsx tests/pages/Settings.test.tsx && pnpm exec eslint src/pages/Profile.tsx src/pages/Settings.tsx tests/pages/Profile.test.tsx tests/pages/Settings.test.tsx && pnpm vitest run tests/pages/Profile.test.tsx tests/pages/Settings.test.tsx 2>&1 | tail -15",
+  "command": "cd /home/<USER>/Coding/Python/DataQ/frontend && pnpm exec prettier --check src/pages/Profile.tsx src/pages/Settings.tsx tests/pages/Profile.test.tsx tests/pages/Settings.test.tsx && pnpm exec eslint src/pages/Profile.tsx src/pages/Settings.tsx tests/pages/Profile.test.tsx tests/pages/Settings.test.tsx && pnpm vitest run tests/pages/Profile.test.tsx tests/pages/Settings.test.tsx 2>&1 | tail -15",
   "description": "Run prettier, eslint, and targeted vitest for #618"
 }
 ```
@@ -550,7 +550,7 @@ id: toolu_01Y9XGgkHA6LDge9RdqxdeX4
 Checking formatting...
 All matched files use Prettier code style!
 
- RUN  v4.1.8 /Users/arijit/Coding/Python/DataQ/frontend
+ RUN  v4.1.8 /home/<USER>/Coding/Python/DataQ/frontend
 
 
  Test Files  2 passed (2)
@@ -569,7 +569,7 @@ tool_use Bash
 id: toolu_012X1eoMPN7ZuNypZhNab8Th
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ && git add frontend/src/pages/Profile.tsx frontend/src/pages/Settings.tsx frontend/tests/pages/Profile.test.tsx frontend/tests/pages/Settings.test.tsx && git commit -m \"fix(frontend): replace stale 'Azure AD (MSAL)' auth label with provider-neutral 'OIDC (SSO)' (#618)\n\nMSAL was retired for a generic oidc-client-ts in the ADR 0028 cloud-neutral\ncutover; Profile and Workspace Settings still hardcoded the old library name.\nUse the provider-neutral label on both pages and assert it in both page tests.\n\nFixes #618\n\nCo-Authored-By: Claude Fable 5 <noreply@anthropic.com>\" && git push -u origin fix/issue-618-oidc-auth-label",
+  "command": "cd /home/<USER>/Coding/Python/DataQ && git add frontend/src/pages/Profile.tsx frontend/src/pages/Settings.tsx frontend/tests/pages/Profile.test.tsx frontend/tests/pages/Settings.test.tsx && git commit -m \"fix(frontend): replace stale 'Azure AD (MSAL)' auth label with provider-neutral 'OIDC (SSO)' (#618)\n\nMSAL was retired for a generic oidc-client-ts in the ADR 0028 cloud-neutral\ncutover; Profile and Workspace Settings still hardcoded the old library name.\nUse the provider-neutral label on both pages and assert it in both page tests.\n\nFixes #618\n\nCo-Authored-By: Claude Fable 5 <<REDACTED_EMAIL>>\" && git push -u origin fix/issue-618-oidc-auth-label",
   "description": "Commit and push #618 fix"
 }
 ```
@@ -636,7 +636,7 @@ id: toolu_01Wxefye99djvTD2TtjcXfDU
 ```json
 {
   "description": "Correctness finder PR 679",
-  "prompt": "You are a code-review finder agent for repo /Users/arijit/Coding/Python/DataQ, reviewing PR #679 (branch fix/issue-618-oidc-auth-label vs main). Run `git -C /Users/arijit/Coding/Python/DataQ diff main...HEAD` to see the diff (it is small: replacing hardcoded 'Azure AD (MSAL)' auth labels with 'OIDC (SSO)' in frontend/src/pages/Profile.tsx and Settings.tsx, plus test assertion updates in frontend/tests/pages/Profile.test.tsx and Settings.test.tsx).\n\nCover three correctness angles:\nA) Line-by-line: read each hunk and the enclosing function; any input/state that makes a changed line wrong.\nB) Removed-behavior: for each deleted/replaced line, what invariant did it enforce and is it re-established?\nC) Cross-file tracer: grep the repo (frontend/src, frontend/tests, frontend/e2e*, backend, docs) for other references to the old label 'Azure AD (MSAL)' or assertions that would now fail (e.g. Playwright specs in frontend/e2e or e2e-live asserting the old text), or other UI surfaces still showing the stale label that this PR claims to fix (issue #618 names exactly Profile.tsx:61 and Settings.tsx:67).\n\nReturn up to 6 candidate findings as a JSON array of {file, line, summary, failure_scenario}. Return [] if none. Your final message is raw data, not prose.",
+  "prompt": "You are a code-review finder agent for repo /home/<USER>/Coding/Python/DataQ, reviewing PR #679 (branch fix/issue-618-oidc-auth-label vs main). Run `git -C /home/<USER>/Coding/Python/DataQ diff main...HEAD` to see the diff (it is small: replacing hardcoded 'Azure AD (MSAL)' auth labels with 'OIDC (SSO)' in frontend/src/pages/Profile.tsx and Settings.tsx, plus test assertion updates in frontend/tests/pages/Profile.test.tsx and Settings.test.tsx).\n\nCover three correctness angles:\nA) Line-by-line: read each hunk and the enclosing function; any input/state that makes a changed line wrong.\nB) Removed-behavior: for each deleted/replaced line, what invariant did it enforce and is it re-established?\nC) Cross-file tracer: grep the repo (frontend/src, frontend/tests, frontend/e2e*, backend, docs) for other references to the old label 'Azure AD (MSAL)' or assertions that would now fail (e.g. Playwright specs in frontend/e2e or e2e-live asserting the old text), or other UI surfaces still showing the stale label that this PR claims to fix (issue #618 names exactly Profile.tsx:61 and Settings.tsx:67).\n\nReturn up to 6 candidate findings as a JSON array of {file, line, summary, failure_scenario}. Return [] if none. Your final message is raw data, not prose.",
   "run_in_background": false
 }
 ```
@@ -648,7 +648,7 @@ id: toolu_015KXQg64RusQUAUHT4GxacN
 ```json
 {
   "description": "Cleanup finder PR 679",
-  "prompt": "You are a code-review finder agent for repo /Users/arijit/Coding/Python/DataQ, reviewing PR #679 (branch fix/issue-618-oidc-auth-label vs main). Run `git -C /Users/arijit/Coding/Python/DataQ diff main...HEAD` to see the diff (small: replacing hardcoded 'Azure AD (MSAL)' labels with 'OIDC (SSO)' in frontend/src/pages/Profile.tsx + Settings.tsx and updating two tests).\n\nCover reuse / simplification / efficiency angles on the changed code: e.g. the same literal string now duplicated in two components (is there a shared constant/config it should derive from, such as runtime DATAQ_AUTH_* config or an existing constants module? Check frontend/src for existing auth config like src/auth/config.ts), redundant state, dead code left behind (any now-stale comments in the touched files or auth modules referencing MSAL that this PR should have cleaned).\n\nReturn up to 6 candidate findings as a JSON array of {file, line, summary, failure_scenario} where failure_scenario states the concrete maintenance cost. Return [] if none. Your final message is raw data, not prose.",
+  "prompt": "You are a code-review finder agent for repo /home/<USER>/Coding/Python/DataQ, reviewing PR #679 (branch fix/issue-618-oidc-auth-label vs main). Run `git -C /home/<USER>/Coding/Python/DataQ diff main...HEAD` to see the diff (small: replacing hardcoded 'Azure AD (MSAL)' labels with 'OIDC (SSO)' in frontend/src/pages/Profile.tsx + Settings.tsx and updating two tests).\n\nCover reuse / simplification / efficiency angles on the changed code: e.g. the same literal string now duplicated in two components (is there a shared constant/config it should derive from, such as runtime DATAQ_AUTH_* config or an existing constants module? Check frontend/src for existing auth config like src/auth/config.ts), redundant state, dead code left behind (any now-stale comments in the touched files or auth modules referencing MSAL that this PR should have cleaned).\n\nReturn up to 6 candidate findings as a JSON array of {file, line, summary, failure_scenario} where failure_scenario states the concrete maintenance cost. Return [] if none. Your final message is raw data, not prose.",
   "run_in_background": false
 }
 ```
@@ -660,7 +660,7 @@ id: toolu_016Ha4ZxSFYgHsanKdzog8V6
 ```json
 {
   "description": "Altitude+conventions finder PR 679",
-  "prompt": "You are a code-review finder agent for repo /Users/arijit/Coding/Python/DataQ, reviewing PR #679 (branch fix/issue-618-oidc-auth-label vs main). Run `git -C /Users/arijit/Coding/Python/DataQ diff main...HEAD` to see the diff (small: replacing hardcoded 'Azure AD (MSAL)' auth labels with 'OIDC (SSO)' in frontend/src/pages/Profile.tsx + Settings.tsx and updating two page tests).\n\nTwo angles:\n1) Altitude: is a hardcoded string in two pages the right depth, or should the label derive from runtime auth config (check frontend/src/auth/config.ts and how DATAQ_AUTH_* runtime config works per ADR 0028 at docs/adr/0028-*.md)? Note the issue #618 explicitly allowed either \"a provider-neutral label (e.g. 'OIDC (SSO)')\" or deriving from runtime config — flag only if hardcoding creates a concrete future-wrongness risk.\n2) Conventions: read /Users/arijit/Coding/Python/DataQ/CLAUDE.md (repo root) and check the diff for clear violations, quoting the exact rule. Only flag with exact rule + exact violating line.\n\nReturn up to 6 candidate findings as a JSON array of {file, line, summary, failure_scenario}. Return [] if none. Your final message is raw data, not prose.",
+  "prompt": "You are a code-review finder agent for repo /home/<USER>/Coding/Python/DataQ, reviewing PR #679 (branch fix/issue-618-oidc-auth-label vs main). Run `git -C /home/<USER>/Coding/Python/DataQ diff main...HEAD` to see the diff (small: replacing hardcoded 'Azure AD (MSAL)' auth labels with 'OIDC (SSO)' in frontend/src/pages/Profile.tsx + Settings.tsx and updating two page tests).\n\nTwo angles:\n1) Altitude: is a hardcoded string in two pages the right depth, or should the label derive from runtime auth config (check frontend/src/auth/config.ts and how DATAQ_AUTH_* runtime config works per ADR 0028 at docs/adr/0028-*.md)? Note the issue #618 explicitly allowed either \"a provider-neutral label (e.g. 'OIDC (SSO)')\" or deriving from runtime config — flag only if hardcoding creates a concrete future-wrongness risk.\n2) Conventions: read /home/<USER>/Coding/Python/DataQ/CLAUDE.md (repo root) and check the diff for clear violations, quoting the exact rule. Only flag with exact rule + exact violating line.\n\nReturn up to 6 candidate findings as a JSON array of {file, line, summary, failure_scenario}. Return [] if none. Your final message is raw data, not prose.",
   "run_in_background": false
 }
 ```
@@ -721,7 +721,7 @@ tool_use Read
 id: toolu_01H4cQX2nnBuUXA1otTNp2P5
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/auth/config.ts"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/auth/config.ts"
 }
 ```
 
@@ -795,7 +795,7 @@ tool_use Bash
 id: toolu_018h8TbNk9c95j8kzs8hGTPa
 ```json
 {
-  "command": "grep -rn \"auth/config\\|authMode\" /Users/arijit/Coding/Python/DataQ/frontend/tests /Users/arijit/Coding/Python/DataQ/frontend/vitest.setup* /Users/arijit/Coding/Python/DataQ/frontend/vitest.config* 2>/dev/null | head -20; ls /Users/arijit/Coding/Python/DataQ/frontend/tests/auth/ 2>/dev/null",
+  "command": "grep -rn \"auth/config\\|authMode\" /home/<USER>/Coding/Python/DataQ/frontend/tests /home/<USER>/Coding/Python/DataQ/frontend/vitest.setup* /home/<USER>/Coding/Python/DataQ/frontend/vitest.config* 2>/dev/null | head -20; ls /home/<USER>/Coding/Python/DataQ/frontend/tests/auth/ 2>/dev/null",
   "description": "Check how tests handle auth config"
 }
 ```
@@ -805,7 +805,7 @@ id: toolu_018h8TbNk9c95j8kzs8hGTPa
 tool_result
 id: toolu_018h8TbNk9c95j8kzs8hGTPa
 ```
-(eval):1: no matches found: /Users/arijit/Coding/Python/DataQ/frontend/vitest.setup*
+(eval):1: no matches found: /home/<USER>/Coding/Python/DataQ/frontend/vitest.setup*
 AuthGate.test.tsx
 AuthProvider.test.tsx
 CurrentUserProvider.test.tsx
@@ -820,7 +820,7 @@ tool_use Read
 id: toolu_01Jx9mRA6ahvtPQwwS8WBT58
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/auth/config.test.ts"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/auth/config.test.ts"
 }
 ```
 
@@ -876,7 +876,7 @@ id: toolu_01Q8AxqCgK7R3J9Mgfz1VZrT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/auth/config.ts",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/auth/config.ts",
   "old_string": " * - 'real'         — `mode:'oidc'` with authority + clientId present. The auth\n *                    client (MSAL today; a generic OIDC client next — #504) drives\n *                    redirect-flow login + token acquisition.",
   "new_string": " * - 'real'         — `mode:'oidc'` with authority + clientId present. The generic\n *                    OIDC auth client (oidc-client-ts — ADR 0028/#504) drives\n *                    redirect-flow login + token acquisition."
 }
@@ -887,7 +887,7 @@ id: toolu_01Q8AxqCgK7R3J9Mgfz1VZrT
 tool_result
 id: toolu_01Q8AxqCgK7R3J9Mgfz1VZrT
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/auth/config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/auth/config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -897,7 +897,7 @@ id: toolu_012JxPXKt7WjeNR8TqEaXqmS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/auth/config.ts",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/auth/config.ts",
   "old_string": "export const DEV_USER = {",
   "new_string": "/** Human-readable auth-method label per mode (Profile + Settings \"Authentication\" rows). */\nexport const AUTH_METHOD_LABELS: Record<AuthMode, string> = {\n  real: 'OIDC (SSO)',\n  dev_bypass: 'Dev bypass (no IdP)',\n  unconfigured: 'Not configured',\n};\n\n/** The label for the mode this deployment is actually running in. */\nexport const authMethodLabel = AUTH_METHOD_LABELS[authMode];\n\nexport const DEV_USER = {"
 }
@@ -908,7 +908,7 @@ id: toolu_012JxPXKt7WjeNR8TqEaXqmS
 tool_result
 id: toolu_012JxPXKt7WjeNR8TqEaXqmS
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/auth/config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/auth/config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -922,7 +922,7 @@ id: toolu_01P5jhb4Ffx69TtycDYJfjLe
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Profile.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Profile.tsx",
   "old_string": "import { useMe } from '../auth/useMe';",
   "new_string": "import { authMethodLabel } from '../auth/config';\nimport { useMe } from '../auth/useMe';"
 }
@@ -933,7 +933,7 @@ id: toolu_01P5jhb4Ffx69TtycDYJfjLe
 tool_result
 id: toolu_01P5jhb4Ffx69TtycDYJfjLe
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/pages/Profile.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/pages/Profile.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -943,7 +943,7 @@ id: toolu_01CbEVjpp8KdZKXAujvUkGR1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Profile.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Profile.tsx",
   "old_string": "          <Descriptions.Item label=\"Authentication\">OIDC (SSO)</Descriptions.Item>",
   "new_string": "          <Descriptions.Item label=\"Authentication\">{authMethodLabel}</Descriptions.Item>"
 }
@@ -954,7 +954,7 @@ id: toolu_01CbEVjpp8KdZKXAujvUkGR1
 tool_result
 id: toolu_01CbEVjpp8KdZKXAujvUkGR1
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/pages/Profile.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/pages/Profile.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -964,7 +964,7 @@ id: toolu_01SeGgnpgr1ypGyAHMis7r1e
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Settings.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Settings.tsx",
   "old_string": "import { type AdminWebhook, listAdminWebhooks } from '../api/admin';",
   "new_string": "import { type AdminWebhook, listAdminWebhooks } from '../api/admin';\nimport { authMethodLabel } from '../auth/config';"
 }
@@ -975,7 +975,7 @@ id: toolu_01SeGgnpgr1ypGyAHMis7r1e
 tool_result
 id: toolu_01SeGgnpgr1ypGyAHMis7r1e
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/pages/Settings.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/pages/Settings.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -985,7 +985,7 @@ id: toolu_01XkeiHET9VPvHszwFTmuwaF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Settings.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Settings.tsx",
   "old_string": "        <Descriptions.Item label=\"Authentication\">OIDC (SSO)</Descriptions.Item>",
   "new_string": "        <Descriptions.Item label=\"Authentication\">{authMethodLabel}</Descriptions.Item>"
 }
@@ -996,7 +996,7 @@ id: toolu_01XkeiHET9VPvHszwFTmuwaF
 tool_result
 id: toolu_01XkeiHET9VPvHszwFTmuwaF
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/pages/Settings.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/pages/Settings.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1005,7 +1005,7 @@ tool_use Read
 id: toolu_01P7sjMpfiRKx27XQhicSoWt
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/auth/MeProvider.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/auth/MeProvider.tsx",
   "offset": 1,
   "limit": 25
 }
@@ -1046,7 +1046,7 @@ tool_use Read
 id: toolu_01WvXfR91jw9sjadUYFoFFJD
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/components/ErrorBoundary.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/components/ErrorBoundary.tsx",
   "offset": 1,
   "limit": 25
 }
@@ -1090,7 +1090,7 @@ tool_use Read
 id: toolu_01HpEiF5uDjrP1tbJJh2fTTG
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/components/suites/SharePanel.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/components/suites/SharePanel.tsx",
   "offset": 60,
   "limit": 15
 }
@@ -1125,7 +1125,7 @@ id: toolu_01TZTnUvdBdXVmttQFZVUBp2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/auth/MeProvider.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/auth/MeProvider.tsx",
   "old_string": " * The fetch is gated on `useCurrentUser()` (not done on bare mount) so that in\n * real-auth mode we wait until MSAL has an account — otherwise the request would\n * race ahead of the bearer token and 401. In dev-bypass the user is present",
   "new_string": " * The fetch is gated on `useCurrentUser()` (not done on bare mount) so that in\n * real-auth mode we wait until the OIDC client has a signed-in user — otherwise\n * the request would race ahead of the bearer token and 401. In dev-bypass the user is present"
 }
@@ -1136,7 +1136,7 @@ id: toolu_01TZTnUvdBdXVmttQFZVUBp2
 tool_result
 id: toolu_01TZTnUvdBdXVmttQFZVUBp2
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/auth/MeProvider.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/auth/MeProvider.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1146,7 +1146,7 @@ id: toolu_01EYqXdnJ6mabF2vxDgNDynM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/components/ErrorBoundary.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/components/ErrorBoundary.tsx",
   "old_string": " * fallback instead of React's blank screen. (main.tsx's bootstrap `.catch`\n * only covers the pre-render MSAL bootstrap; this covers everything after the\n * first paint.)",
   "new_string": " * fallback instead of React's blank screen. (main.tsx's bootstrap `.catch`\n * only covers the pre-render OIDC-client bootstrap; this covers everything after\n * the first paint.)"
 }
@@ -1157,7 +1157,7 @@ id: toolu_01EYqXdnJ6mabF2vxDgNDynM
 tool_result
 id: toolu_01EYqXdnJ6mabF2vxDgNDynM
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/components/ErrorBoundary.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/components/ErrorBoundary.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1167,7 +1167,7 @@ id: toolu_019RXnBUp34519oWSPrgTpKH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/components/suites/SharePanel.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/components/suites/SharePanel.tsx",
   "old_string": "  // Best-effort UX lock on the signed-in user's own row (MSAL UPN ≈ their share",
   "new_string": "  // Best-effort UX lock on the signed-in user's own row (OIDC UPN ≈ their share"
 }
@@ -1178,7 +1178,7 @@ id: toolu_019RXnBUp34519oWSPrgTpKH
 tool_result
 id: toolu_019RXnBUp34519oWSPrgTpKH
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/components/suites/SharePanel.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/components/suites/SharePanel.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1188,7 +1188,7 @@ id: toolu_01Hv5MZRC6WnEyArAeY5FjtV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Profile.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Profile.test.tsx",
   "old_string": "import type { MeResponse } from '../../src/api/me';\nimport { MeContext } from '../../src/auth/meContext';",
   "new_string": "import type { MeResponse } from '../../src/api/me';\nimport { authMethodLabel } from '../../src/auth/config';\nimport { MeContext } from '../../src/auth/meContext';"
 }
@@ -1199,7 +1199,7 @@ id: toolu_01Hv5MZRC6WnEyArAeY5FjtV
 tool_result
 id: toolu_01Hv5MZRC6WnEyArAeY5FjtV
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Profile.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Profile.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1209,7 +1209,7 @@ id: toolu_013Kn8V3XGKUyDtBa9QBZ66R
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Profile.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Profile.test.tsx",
   "old_string": "    expect(screen.getByText('OIDC (SSO)')).toBeInTheDocument();",
   "new_string": "    // The auth label derives from the runtime authMode (never a hardcoded\n    // provider/library name — ADR 0028; per-mode wording pinned in config.test.ts).\n    expect(screen.getByText(authMethodLabel)).toBeInTheDocument();"
 }
@@ -1220,7 +1220,7 @@ id: toolu_013Kn8V3XGKUyDtBa9QBZ66R
 tool_result
 id: toolu_013Kn8V3XGKUyDtBa9QBZ66R
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Profile.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Profile.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1230,7 +1230,7 @@ id: toolu_012FHdp1XTmUMDAgeKYPFcS3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx",
   "old_string": "    // Provider-neutral auth label (ADR 0028 — MSAL retired for generic OIDC).\n    expect(screen.getByText('OIDC (SSO)')).toBeInTheDocument();",
   "new_string": "    // Provider-neutral auth label derived from the runtime authMode (ADR 0028 —\n    // MSAL retired for generic OIDC; per-mode wording pinned in config.test.ts).\n    expect(screen.getByText(authMethodLabel)).toBeInTheDocument();"
 }
@@ -1241,7 +1241,7 @@ id: toolu_012FHdp1XTmUMDAgeKYPFcS3
 tool_result
 id: toolu_012FHdp1XTmUMDAgeKYPFcS3
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1250,7 +1250,7 @@ tool_use Bash
 id: toolu_011AxLDQAKkcE2XYFw3kCuuG
 ```json
 {
-  "command": "grep -n \"authMethodLabel\\|import\" /Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx | head -12",
+  "command": "grep -n \"authMethodLabel\\|import\" /home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx | head -12",
   "description": "Check Settings.test.tsx imports"
 }
 ```
@@ -1278,7 +1278,7 @@ id: toolu_01LjpBPR1i8wQqqn4NdvJMBy
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx",
   "old_string": "import type { MeResponse } from '../../src/api/me';\nimport { MeContext } from '../../src/auth/meContext';",
   "new_string": "import type { MeResponse } from '../../src/api/me';\nimport { authMethodLabel } from '../../src/auth/config';\nimport { MeContext } from '../../src/auth/meContext';"
 }
@@ -1289,7 +1289,7 @@ id: toolu_01LjpBPR1i8wQqqn4NdvJMBy
 tool_result
 id: toolu_01LjpBPR1i8wQqqn4NdvJMBy
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1303,7 +1303,7 @@ id: toolu_01Ns3nEMZziFc7FEhcRLaL91
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/auth/config.test.ts",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/auth/config.test.ts",
   "old_string": "describe('authConfig (runtime config)', () => {",
   "new_string": "describe('authMethodLabel (#618 — derived from the runtime mode, never hardcoded)', () => {\n  it(\"labels real OIDC sign-in 'OIDC (SSO)' — provider-neutral, no library name\", async () => {\n    inject({ mode: 'oidc', authority: 'https://issuer.example/v2.0', clientId: 'spa-1' });\n    const { authMethodLabel } = await loadConfig();\n    expect(authMethodLabel).toBe('OIDC (SSO)');\n  });\n\n  it('is honest about dev-bypass — never claims SSO when no IdP is involved', async () => {\n    inject({ mode: 'bypass' });\n    const { authMethodLabel } = await loadConfig();\n    expect(authMethodLabel).toBe('Dev bypass (no IdP)');\n  });\n\n  it(\"labels an unconfigured deployment 'Not configured'\", async () => {\n    inject({});\n    const { authMethodLabel } = await loadConfig();\n    expect(authMethodLabel).toBe('Not configured');\n  });\n});\n\ndescribe('authConfig (runtime config)', () => {"
 }
@@ -1314,7 +1314,7 @@ id: toolu_01Ns3nEMZziFc7FEhcRLaL91
 tool_result
 id: toolu_01Ns3nEMZziFc7FEhcRLaL91
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/tests/auth/config.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/tests/auth/config.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1323,7 +1323,7 @@ tool_use Bash
 id: toolu_01BWN2i5y24XNWtvHM6Bmz3E
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ/frontend && pnpm exec prettier --check src tests 2>&1 | tail -2 && pnpm exec eslint src/auth/config.ts src/pages/Profile.tsx src/pages/Settings.tsx src/auth/MeProvider.tsx src/components/ErrorBoundary.tsx src/components/suites/SharePanel.tsx tests/pages/Profile.test.tsx tests/pages/Settings.test.tsx tests/auth/config.test.ts && pnpm vitest run tests/pages/Profile.test.tsx tests/pages/Settings.test.tsx tests/auth/config.test.ts tests/auth tests/components/SharePanel.test.tsx 2>&1 | tail -8",
+  "command": "cd /home/<USER>/Coding/Python/DataQ/frontend && pnpm exec prettier --check src tests 2>&1 | tail -2 && pnpm exec eslint src/auth/config.ts src/pages/Profile.tsx src/pages/Settings.tsx src/auth/MeProvider.tsx src/components/ErrorBoundary.tsx src/components/suites/SharePanel.tsx tests/pages/Profile.test.tsx tests/pages/Settings.test.tsx tests/auth/config.test.ts && pnpm vitest run tests/pages/Profile.test.tsx tests/pages/Settings.test.tsx tests/auth/config.test.ts tests/auth tests/components/SharePanel.test.tsx 2>&1 | tail -8",
   "description": "Prettier, eslint, vitest for review fixes"
 }
 ```
@@ -1376,7 +1376,7 @@ tool_use Bash
 id: toolu_01X8jLXFCqirGSazMBpHWbup
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ && git add frontend/src frontend/tests && git commit -m \"fixup: derive the auth label from runtime authMode + scrub stale MSAL comments (review findings)\n\n/code-review on #679 found the replacement label was still a hardcoded literal\n(false in the ADR-0028 dev_bypass/unconfigured runtime modes, duplicated across\ntwo pages) and four stale MSAL comments surviving the #504 cutover. The label\nnow derives from authMode via one shared export; per-mode wording pinned in\nconfig.test.ts.\n\nCo-Authored-By: Claude Fable 5 <noreply@anthropic.com>\" && git push",
+  "command": "cd /home/<USER>/Coding/Python/DataQ && git add frontend/src frontend/tests && git commit -m \"fixup: derive the auth label from runtime authMode + scrub stale MSAL comments (review findings)\n\n/code-review on #679 found the replacement label was still a hardcoded literal\n(false in the ADR-0028 dev_bypass/unconfigured runtime modes, duplicated across\ntwo pages) and four stale MSAL comments surviving the #504 cutover. The label\nnow derives from authMode via one shared export; per-mode wording pinned in\nconfig.test.ts.\n\nCo-Authored-By: Claude Fable 5 <<REDACTED_EMAIL>>\" && git push",
   "description": "Commit and push review fixes"
 }
 ```
@@ -1448,7 +1448,7 @@ tool_use Bash
 id: toolu_01P5Sg6d2hRptmSpkCaahNXc
 ```json
 {
-  "command": "grep -n \"webhook_configs\\|ORCHESTRATION_PROVIDERS\" /Users/arijit/Coding/Python/DataQ/backend/app/services/admin_service.py | head; grep -rn \"ORCHESTRATION_PROVIDERS =\" /Users/arijit/Coding/Python/DataQ/backend/app | head -3",
+  "command": "grep -n \"webhook_configs\\|ORCHESTRATION_PROVIDERS\" /home/<USER>/Coding/Python/DataQ/backend/app/services/admin_service.py | head; grep -rn \"ORCHESTRATION_PROVIDERS =\" /home/<USER>/Coding/Python/DataQ/backend/app | head -3",
   "description": "Locate webhook_configs and provider tuple"
 }
 ```
@@ -1462,7 +1462,7 @@ id: toolu_01P5Sg6d2hRptmSpkCaahNXc
 183:def webhook_configs(
 196:        .where(Connection.type.in_(ORCHESTRATION_PROVIDERS))
 203:    for provider in ORCHESTRATION_PROVIDERS:
-/Users/arijit/Coding/Python/DataQ/backend/app/db/models.py:68:ORCHESTRATION_PROVIDERS = ("adf", "airflow", "dbt")
+/home/<USER>/Coding/Python/DataQ/backend/app/db/models.py:68:ORCHESTRATION_PROVIDERS = ("adf", "airflow", "dbt")
 ```
 
 > TOOL
@@ -1471,7 +1471,7 @@ tool_use Read
 id: toolu_01AH1GcGNjUFKJw2bUx5Drvd
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/admin_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/admin_service.py",
   "offset": 150,
   "limit": 100
 }
@@ -1524,7 +1524,7 @@ tool_use Bash
 id: toolu_01USaVUtnr4wdFhyX4BpWW2x
 ```json
 {
-  "command": "grep -n \"dbt_webhook_secret_name\\|airflow_webhook_secret_name\" /Users/arijit/Coding/Python/DataQ/backend/app/core/config.py; grep -rn \"X-DataQ-Signature\\|dbt\" /Users/arijit/Coding/Python/DataQ/backend/app/api/v1/orchestration_events.py 2>/dev/null | head -15; ls /Users/arijit/Coding/Python/DataQ/backend/app/api/v1/ | grep -i orch",
+  "command": "grep -n \"dbt_webhook_secret_name\\|airflow_webhook_secret_name\" /home/<USER>/Coding/Python/DataQ/backend/app/core/config.py; grep -rn \"X-DataQ-Signature\\|dbt\" /home/<USER>/Coding/Python/DataQ/backend/app/api/v1/orchestration_events.py 2>/dev/null | head -15; ls /home/<USER>/Coding/Python/DataQ/backend/app/api/v1/ | grep -i orch",
   "description": "Find dbt secret config and event route auth"
 }
 ```
@@ -1545,7 +1545,7 @@ tool_use Bash
 id: toolu_01J1Efbr3kY6QWjK3ukozwE4
 ```json
 {
-  "command": "grep -n \"events/dbt\\|events/airflow\\|X-DataQ-Signature\\|dbt\" /Users/arijit/Coding/Python/DataQ/backend/app/api/v1/orchestration.py | head -20",
+  "command": "grep -n \"events/dbt\\|events/airflow\\|X-DataQ-Signature\\|dbt\" /home/<USER>/Coding/Python/DataQ/backend/app/api/v1/orchestration.py | head -20",
   "description": "Check dbt event route and signature header"
 }
 ```
@@ -1585,7 +1585,7 @@ tool_use Bash
 id: toolu_01G9ixPXxm7r4PNAFo41KrUY
 ```json
 {
-  "command": "grep -n \"webhook\" /Users/arijit/Coding/Python/DataQ/backend/tests/api/test_admin.py | head -20",
+  "command": "grep -n \"webhook\" /home/<USER>/Coding/Python/DataQ/backend/tests/api/test_admin.py | head -20",
   "description": "Find webhook tests in test_admin.py"
 }
 ```
@@ -1617,7 +1617,7 @@ tool_use Read
 id: toolu_01ProocDj2pWKMbMFvPcVBnB
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/api/test_admin.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/api/test_admin.py",
   "offset": 177,
   "limit": 130
 }
@@ -1683,7 +1683,7 @@ tool_use Bash
 id: toolu_0124ksY3RMbs6rtRUPU1xSDY
 ```json
 {
-  "command": "grep -rn \"dbt\" /Users/arijit/Coding/Python/DataQ/backend/app/datasources/registry.py 2>/dev/null | head -5; grep -rln \"class DbtAdapter\\|dbt\" /Users/arijit/Coding/Python/DataQ/backend/app/datasources/*.py | head; grep -rn \"artifact\\|config\" /Users/arijit/Coding/Python/DataQ/backend/app/datasources/dbt.py 2>/dev/null | head -15",
+  "command": "grep -rn \"dbt\" /home/<USER>/Coding/Python/DataQ/backend/app/datasources/registry.py 2>/dev/null | head -5; grep -rln \"class DbtAdapter\\|dbt\" /home/<USER>/Coding/Python/DataQ/backend/app/datasources/*.py | head; grep -rn \"artifact\\|config\" /home/<USER>/Coding/Python/DataQ/backend/app/datasources/dbt.py 2>/dev/null | head -15",
   "description": "Find dbt connection config shape"
 }
 ```
@@ -1693,10 +1693,10 @@ id: toolu_0124ksY3RMbs6rtRUPU1xSDY
 tool_result
 id: toolu_0124ksY3RMbs6rtRUPU1xSDY
 ```
-/Users/arijit/Coding/Python/DataQ/backend/app/datasources/registry.py:26:from backend.app.orchestration.dbt import DbtConnectionAdapter
-/Users/arijit/Coding/Python/DataQ/backend/app/datasources/registry.py:35:# only datasources get a `CheckRunner`. ADF, Airflow, and dbt are orchestration
-/Users/arijit/Coding/Python/DataQ/backend/app/datasources/registry.py:45:    "dbt": DbtConnectionAdapter(),
-/Users/arijit/Coding/Python/DataQ/backend/app/datasources/registry.py
+/home/<USER>/Coding/Python/DataQ/backend/app/datasources/registry.py:26:from backend.app.orchestration.dbt import DbtConnectionAdapter
+/home/<USER>/Coding/Python/DataQ/backend/app/datasources/registry.py:35:# only datasources get a `CheckRunner`. ADF, Airflow, and dbt are orchestration
+/home/<USER>/Coding/Python/DataQ/backend/app/datasources/registry.py:45:    "dbt": DbtConnectionAdapter(),
+/home/<USER>/Coding/Python/DataQ/backend/app/datasources/registry.py
 ```
 
 > TOOL
@@ -1705,7 +1705,7 @@ tool_use Bash
 id: toolu_01K8qMrbA6Sv5JBeCEsEsptz
 ```json
 {
-  "command": "grep -n \"class DbtConnectionAdapter\" -A 40 /Users/arijit/Coding/Python/DataQ/backend/app/orchestration/dbt.py | head -55",
+  "command": "grep -n \"class DbtConnectionAdapter\" -A 40 /home/<USER>/Coding/Python/DataQ/backend/app/orchestration/dbt.py | head -55",
   "description": "Read DbtConnectionAdapter config shape"
 }
 ```
@@ -1752,7 +1752,7 @@ tool_use Bash
 id: toolu_01HGGcXuZps1RheibaJiMD2M
 ```json
 {
-  "command": "grep -n \"class DbtConfig\" -A 25 /Users/arijit/Coding/Python/DataQ/backend/app/orchestration/dbt.py | head -30",
+  "command": "grep -n \"class DbtConfig\" -A 25 /home/<USER>/Coding/Python/DataQ/backend/app/orchestration/dbt.py | head -30",
   "description": "Read DbtConfig fields"
 }
 ```
@@ -1801,7 +1801,7 @@ id: toolu_017sytbXyNfJmXjxvhyHVsU7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/admin_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/admin_service.py",
   "old_string": "    `inbound_url` is ready to paste into the provider's webhook field. For ADF it\n    embeds the shared secret as the `?token=` query param (ADR 0006) — so this row\n    is **secret-bearing**, only returned behind `require_workspace_admin`, and must\n    never be logged. Airflow carries no URL secret (HMAC header, ADR 0007); the\n    signing key lives in Key Vault under `signing_secret_name` and is configured in\n    the DAG callback snippet, not the URL.\n    \"\"\"",
   "new_string": "    `inbound_url` is ready to paste into the provider's webhook field. For ADF it\n    embeds the shared secret as the `?token=` query param (ADR 0006) — so this row\n    is **secret-bearing**, only returned behind `require_workspace_admin`, and must\n    never be logged. Airflow (ADR 0007) and dbt (ADR 0029) carry no URL secret\n    (HMAC signature header); the signing key lives in the secret store under\n    `signing_secret_name` and is configured in the callback snippet, not the URL.\n    \"\"\""
 }
@@ -1812,7 +1812,7 @@ id: toolu_017sytbXyNfJmXjxvhyHVsU7
 tool_result
 id: toolu_017sytbXyNfJmXjxvhyHVsU7
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/services/admin_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/services/admin_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1822,7 +1822,7 @@ id: toolu_018vHtmUHV717Ama6C2HNfrs
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/admin_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/admin_service.py",
   "old_string": "    settings = get_settings()\n    rows: list[WebhookConfigRow] = []\n    for provider in ORCHESTRATION_PROVIDERS:\n        names = names_by_provider.get(provider, [])\n        if not names:\n            continue\n        if provider == \"adf\":",
   "new_string": "    settings = get_settings()\n    # The HMAC-callback providers share a row shape; only the signing key and the\n    # ADR differ. A future provider missing here fails loudly (KeyError) instead\n    # of being silently mislabeled as another provider (#647).\n    hmac_providers: dict[str, tuple[str, str]] = {\n        \"airflow\": (settings.airflow_webhook_secret_name, \"ADR 0007\"),\n        \"dbt\": (settings.dbt_webhook_secret_name, \"ADR 0029\"),\n    }\n    rows: list[WebhookConfigRow] = []\n    for provider in ORCHESTRATION_PROVIDERS:\n        names = names_by_provider.get(provider, [])\n        if not names:\n            continue\n        if provider == \"adf\":"
 }
@@ -1833,7 +1833,7 @@ id: toolu_018vHtmUHV717Ama6C2HNfrs
 tool_result
 id: toolu_018vHtmUHV717Ama6C2HNfrs
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/services/admin_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/services/admin_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1843,7 +1843,7 @@ id: toolu_01Hg4vb9PsT66oU3hUJ1EEnv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/admin_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/admin_service.py",
   "old_string": "        else:  # airflow\n            rows.append(\n                WebhookConfigRow(\n                    provider=\"airflow\",\n                    auth=\"HMAC-SHA256 signature header (X-DataQ-Signature) — ADR 0007\",\n                    inbound_url=f\"{base}/api/v1/orchestration/events/airflow\",\n                    token_configured=True,\n                    signing_secret_name=settings.airflow_webhook_secret_name,\n                    connection_names=names,\n                )\n            )\n    return rows",
   "new_string": "        else:  # HMAC-signed callback providers (airflow, dbt)\n            signing_secret_name, adr = hmac_providers[provider]\n            rows.append(\n                WebhookConfigRow(\n                    provider=provider,\n                    auth=f\"HMAC-SHA256 signature header (X-DataQ-Signature) — {adr}\",\n                    inbound_url=f\"{base}/api/v1/orchestration/events/{provider}\",\n                    token_configured=True,\n                    signing_secret_name=signing_secret_name,\n                    connection_names=names,\n                )\n            )\n    return rows"
 }
@@ -1854,7 +1854,7 @@ id: toolu_01Hg4vb9PsT66oU3hUJ1EEnv
 tool_result
 id: toolu_01Hg4vb9PsT66oU3hUJ1EEnv
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/services/admin_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/services/admin_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1867,7 +1867,7 @@ tool_use Bash
 id: toolu_01PvLpJTU7tqode8Nqa633ER
 ```json
 {
-  "command": "grep -n \"WEBHOOK_SECRET_NAME\" /Users/arijit/Coding/Python/DataQ/.env.app.example",
+  "command": "grep -n \"WEBHOOK_SECRET_NAME\" /home/<USER>/Coding/Python/DataQ/.env.app.example",
   "description": "Find webhook secret names in env template"
 }
 ```
@@ -1889,7 +1889,7 @@ tool_use Read
 id: toolu_01YYUEe87pV5qyTQKhuxofYJ
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/.env.app.example",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/.env.app.example",
   "offset": 82,
   "limit": 18
 }
@@ -1927,7 +1927,7 @@ id: toolu_011MjGJ1dy8z5ZKPZGcAjpAt
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/.env.app.example",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/.env.app.example",
   "old_string": "# ── Orchestration webhook secret NAMES (not values) ─────────────────────────────\n# SecretStore *keys* (not the secrets themselves) for the ADF webhook shared\n# secret (ADR 0006) and the Airflow callback HMAC signing key (ADR 0007). The\n# values resolve via the SecretStore (KV_SECRET_<NAME> in env mode; the KV secret\n# of the same name in azure_key_vault mode).\nREDACTED\nREDACTED",
   "new_string": "# ── Orchestration webhook secret NAMES (not values) ─────────────────────────────\n# SecretStore *keys* (not the secrets themselves) for the ADF webhook shared\n# secret (ADR 0006) and the Airflow / dbt callback HMAC signing keys (ADR 0007 /\n# ADR 0029). The values resolve via the SecretStore (KV_SECRET_<NAME> in env\n# mode; the KV secret of the same name in azure_key_vault mode).\nREDACTED\nREDACTED\nREDACTED"
 }
@@ -1938,7 +1938,7 @@ id: toolu_011MjGJ1dy8z5ZKPZGcAjpAt
 tool_result
 id: toolu_011MjGJ1dy8z5ZKPZGcAjpAt
 ```
-The file /Users/arijit/Coding/Python/DataQ/.env.app.example has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/.env.app.example has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1948,7 +1948,7 @@ id: toolu_01PqJu3jyqXfMpxhKDfjiLgF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/api/test_admin.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/api/test_admin.py",
   "old_string": "def _orch_connection(db_session: Any, owner: User, *, ctype: str, name: str) -> Connection:\n    config = (\n        {\"factory_name\": name}\n        if ctype == \"adf\"\n        else {\"base_url\": f\"https://{name}.example.com\", \"auth_type\": \"token\"}\n    )",
   "new_string": "def _orch_connection(db_session: Any, owner: User, *, ctype: str, name: str) -> Connection:\n    configs: dict[str, dict[str, Any]] = {\n        \"adf\": {\"factory_name\": name},\n        \"airflow\": {\"base_url\": f\"https://{name}.example.com\", \"auth_type\": \"token\"},\n        \"dbt\": {\"project_name\": name, \"artifacts_uri\": f\"file:///tmp/{name}\", \"jobs\": [\"nightly\"]},\n    }\n    config = configs[ctype]"
 }
@@ -1959,7 +1959,7 @@ id: toolu_01PqJu3jyqXfMpxhKDfjiLgF
 tool_result
 id: toolu_01PqJu3jyqXfMpxhKDfjiLgF
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/api/test_admin.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/api/test_admin.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1969,9 +1969,9 @@ id: toolu_018THuar11nG8R4FgKwANt7y
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/api/test_admin.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/api/test_admin.py",
   "old_string": "def test_admin_webhooks_marks_missing_secret(",
-  "new_string": "def test_admin_webhooks_dbt_row_is_not_mislabeled_as_airflow(\n    client: TestClient, db_session: Any, monkeypatch: pytest.MonkeyPatch\n) -> None:\n    # #647: the two-provider if/else dropped dbt connections into the airflow\n    # branch — wrong provider label, wrong inbound endpoint, wrong signing key.\n    owner = _user(db_session, \"owner@x.io\")\n    _orch_connection(db_session, owner, ctype=\"dbt\", name=\"analytics-dbt\")\n    db_session.commit()\n    _grant_admin(monkeypatch)\n    _with_store(client, _FakeStore())\n\n    rows = {r[\"provider\"]: r for r in client.get(\"/api/v1/admin/orchestration/webhooks\").json()}\n    assert set(rows) == {\"dbt\"}\n    dbt = rows[\"dbt\"]\n    assert dbt[\"inbound_url\"].endswith(\"/api/v1/orchestration/events/dbt\")\n    assert \"token=\" not in dbt[\"inbound_url\"]\n    assert dbt[\"signing_secret_name\"] == \"dbt-webhook-secret\"\n    assert \"ADR 0029\" in dbt[\"auth\"]\n    assert \"analytics-dbt\" in dbt[\"connection_names\"]\n\n\n@pytest.mark.parametrize(\"ctype\", ORCHESTRATION_PROVIDERS)\ndef test_admin_webhooks_every_provider_yields_its_own_row(\n    ctype: str, client: TestClient, db_session: Any, monkeypatch: pytest.MonkeyPatch\n) -> None:\n    # Guards the next provider addition: a connection of each registered provider\n    # must surface as a row of the SAME provider with its own events endpoint —\n    # never fall through to another provider's config (#647).\n    owner = _user(db_session, \"owner@x.io\")\n    _orch_connection(db_session, owner, ctype=ctype, name=f\"{ctype}-conn\")\n    db_session.commit()\n    _grant_admin(monkeypatch)\n    _with_store(client, _FakeStore())\n\n    rows = client.get(\"/api/v1/admin/orchestration/webhooks\").json()\n    assert [r[\"provider\"] for r in rows] == [ctype]\n    assert f\"/api/v1/orchestration/events/{ctype}\" in rows[0][\"inbound_url\"]\n\n\ndef test_admin_webhooks_marks_missing_secret("
+  "new_string": "def test_admin_webhooks_dbt_row_is_not_mislabeled_as_airflow(\n    client: TestClient, db_session: Any, monkeypatch: pytest.MonkeyPatch\n) -> None:\n    # #647: the two-provider if/else dropped dbt connections into the airflow\n    # branch — wrong provider label, wrong inbound endpoint, wrong signing key.\n    owner = _user(db_session, \"<REDACTED_EMAIL>\")\n    _orch_connection(db_session, owner, ctype=\"dbt\", name=\"analytics-dbt\")\n    db_session.commit()\n    _grant_admin(monkeypatch)\n    _with_store(client, _FakeStore())\n\n    rows = {r[\"provider\"]: r for r in client.get(\"/api/v1/admin/orchestration/webhooks\").json()}\n    assert set(rows) == {\"dbt\"}\n    dbt = rows[\"dbt\"]\n    assert dbt[\"inbound_url\"].endswith(\"/api/v1/orchestration/events/dbt\")\n    assert \"token=\" not in dbt[\"inbound_url\"]\n    assert dbt[\"signing_secret_name\"] == \"dbt-webhook-secret\"\n    assert \"ADR 0029\" in dbt[\"auth\"]\n    assert \"analytics-dbt\" in dbt[\"connection_names\"]\n\n\<REDACTED_EMAIL>(\"ctype\", ORCHESTRATION_PROVIDERS)\ndef test_admin_webhooks_every_provider_yields_its_own_row(\n    ctype: str, client: TestClient, db_session: Any, monkeypatch: pytest.MonkeyPatch\n) -> None:\n    # Guards the next provider addition: a connection of each registered provider\n    # must surface as a row of the SAME provider with its own events endpoint —\n    # never fall through to another provider's config (#647).\n    owner = _user(db_session, \"<REDACTED_EMAIL>\")\n    _orch_connection(db_session, owner, ctype=ctype, name=f\"{ctype}-conn\")\n    db_session.commit()\n    _grant_admin(monkeypatch)\n    _with_store(client, _FakeStore())\n\n    rows = client.get(\"/api/v1/admin/orchestration/webhooks\").json()\n    assert [r[\"provider\"] for r in rows] == [ctype]\n    assert f\"/api/v1/orchestration/events/{ctype}\" in rows[0][\"inbound_url\"]\n\n\ndef test_admin_webhooks_marks_missing_secret("
 }
 ```
 
@@ -1980,7 +1980,7 @@ id: toolu_018THuar11nG8R4FgKwANt7y
 tool_result
 id: toolu_018THuar11nG8R4FgKwANt7y
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/api/test_admin.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/api/test_admin.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1989,7 +1989,7 @@ tool_use Bash
 id: toolu_016P9pkQuj8HwxNDe7nu4AeZ
 ```json
 {
-  "command": "grep -n \"^from backend.app.db.models import\\|^from backend\" /Users/arijit/Coding/Python/DataQ/backend/tests/api/test_admin.py | head -8",
+  "command": "grep -n \"^from backend.app.db.models import\\|^from backend\" /home/<USER>/Coding/Python/DataQ/backend/tests/api/test_admin.py | head -8",
   "description": "Check test imports"
 }
 ```
@@ -2013,7 +2013,7 @@ id: toolu_017KeKk6drxuMQUpAop3LQum
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/api/test_admin.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/api/test_admin.py",
   "old_string": "from backend.app.db.models import Check, Connection, Share, Suite, User",
   "new_string": "from backend.app.db.models import ORCHESTRATION_PROVIDERS, Check, Connection, Share, Suite, User"
 }
@@ -2024,7 +2024,7 @@ id: toolu_017KeKk6drxuMQUpAop3LQum
 tool_result
 id: toolu_017KeKk6drxuMQUpAop3LQum
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/api/test_admin.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/api/test_admin.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2201,7 +2201,7 @@ tool_use Bash
 id: toolu_01Gcgqu3V4tn7Vk8gpvRVerA
 ```json
 {
-  "command": "git add backend/app/services/admin_service.py backend/tests/api/test_admin.py .env.app.example && git commit -m \"fix(admin): dispatch webhook-config rows per provider — dbt no longer mislabeled as airflow (#647)\n\nwebhook_configs() still carried the two-provider if adf / else-airflow shape\nfrom #490; a dbt connection (ADR 0029) fell into the else branch and was\nemitted with provider=\\\"airflow\\\", the airflow events endpoint, and the airflow\nsigning-key name. The HMAC providers now dispatch through an explicit\nper-provider map — a future provider missing from it fails loudly (KeyError)\ninstead of impersonating another provider. Adds the dbt row test + a test\nparametrized over ORCHESTRATION_PROVIDERS, and documents\nDBT_WEBHOOK_SECRET_NAME in .env.app.example alongside its siblings.\n\nFixes #647\n\nCo-Authored-By: Claude Fable 5 <noreply@anthropic.com>\" && git push -u origin fix/issue-647-dbt-webhook-config && gh pr create --title \"fix(admin): webhook-config rows dispatch per provider — dbt no longer mislabeled as airflow (#647)\" --milestone \"v1.1 Week 2 — Portability: OTel logs, secrets lifecycle, dry-run depth\" --body \"## Summary\n- \\`admin_service.webhook_configs()\\` kept the #490 two-provider \\`if adf / else airflow\\` shape after ADR 0029 widened \\`ORCHESTRATION_PROVIDERS\\` to include dbt — so a dbt connection surfaced in the admin Webhooks tab as \\`provider=\\\"airflow\\\"\\` with the **wrong inbound endpoint** and **wrong signing-secret name**.\n- HMAC-callback providers (airflow, dbt) now dispatch through an explicit per-provider map carrying […]
+  "command": "git add backend/app/services/admin_service.py backend/tests/api/test_admin.py .env.app.example && git commit -m \"fix(admin): dispatch webhook-config rows per provider — dbt no longer mislabeled as airflow (#647)\n\nwebhook_configs() still carried the two-provider if adf / else-airflow shape\nfrom #490; a dbt connection (ADR 0029) fell into the else branch and was\nemitted with provider=\\\"airflow\\\", the airflow events endpoint, and the airflow\nsigning-key name. The HMAC providers now dispatch through an explicit\nper-provider map — a future provider missing from it fails loudly (KeyError)\ninstead of impersonating another provider. Adds the dbt row test + a test\nparametrized over ORCHESTRATION_PROVIDERS, and documents\nDBT_WEBHOOK_SECRET_NAME in .env.app.example alongside its siblings.\n\nFixes #647\n\nCo-Authored-By: Claude Fable 5 <<REDACTED_EMAIL>>\" && git push -u origin fix/issue-647-dbt-webhook-config && gh pr create --title \"fix(admin): webhook-config rows dispatch per provider — dbt no longer mislabeled as airflow (#647)\" --milestone \"v1.1 Week 2 — Portability: OTel logs, secrets lifecycle, dry-run depth\" --body \"## Summary\n- \\`admin_service.webhook_configs()\\` kept the #490 two-provider \\`if adf / else airflow\\` shape after ADR 0029 widened \\`ORCHESTRATION_PROVIDERS\\` to include dbt — so a dbt connection surfaced in the admin Webhooks tab as \\`provider=\\\"airflow\\\"\\` with the **wrong inbound endpoint** and **wrong signing-secret name**.\n- HMAC-callback providers (airflow, dbt) now dispatch through an explicit per-provider map carrying […]
 
 > TOOL
 
@@ -2232,7 +2232,7 @@ id: toolu_01Nc7ZaEAMyUQCN56C3n2U8U
 ```json
 {
   "description": "Correctness finder PR 680",
-  "prompt": "You are a code-review finder for repo /Users/arijit/Coding/Python/DataQ, reviewing PR #680 (branch fix/issue-647-dbt-webhook-config vs main). Run `git -C /Users/arijit/Coding/Python/DataQ diff main...fix/issue-647-dbt-webhook-config` for the diff. It fixes issue #647: backend/app/services/admin_service.py webhook_configs() previously emitted dbt connections as airflow rows; now HMAC providers (airflow, dbt) dispatch via a per-provider map {provider: (signing_secret_name, ADR)}. Also touches backend/tests/api/test_admin.py (new dbt + parametrized tests) and .env.app.example.\n\nAngles: (A) line-by-line on each hunk + enclosing function (read backend/app/services/admin_service.py fully); (B) removed-behavior — the old else-branch hardcoded airflow values; is every behavior preserved for airflow rows exactly (auth string, URL, token_configured, signing_secret_name)?; (C) cross-file tracer — find consumers of webhook_configs / GET /admin/orchestration/webhooks (backend/app/api/v1/admin.py schema, frontend/src/api/admin.ts, frontend/src/pages/Settings.tsx WebhookRow which branches on provider === 'adf' and has PROVIDER_LABELS missing dbt — check whether the frontend renders a dbt row acceptably or misleadingly, e.g. the DAG-callback helper text shown for dbt rows), and the dbt events route (/api/v1/orchestration/events/dbt) to confirm URL + secret name + header match what the receiver actually validates. Also check the KeyError risk: can ORCHESTRATION_PROVIDERS contain a provider not in the map today?\n\nReturn up to 6 candidates as JSON [{file, line, summary, failure_scenario}]. [] if […]
+  "prompt": "You are a code-review finder for repo /home/<USER>/Coding/Python/DataQ, reviewing PR #680 (branch fix/issue-647-dbt-webhook-config vs main). Run `git -C /home/<USER>/Coding/Python/DataQ diff main...fix/issue-647-dbt-webhook-config` for the diff. It fixes issue #647: backend/app/services/admin_service.py webhook_configs() previously emitted dbt connections as airflow rows; now HMAC providers (airflow, dbt) dispatch via a per-provider map {provider: (signing_secret_name, ADR)}. Also touches backend/tests/api/test_admin.py (new dbt + parametrized tests) and .env.app.example.\n\nAngles: (A) line-by-line on each hunk + enclosing function (read backend/app/services/admin_service.py fully); (B) removed-behavior — the old else-branch hardcoded airflow values; is every behavior preserved for airflow rows exactly (auth string, URL, token_configured, signing_secret_name)?; (C) cross-file tracer — find consumers of webhook_configs / GET /admin/orchestration/webhooks (backend/app/api/v1/admin.py schema, frontend/src/api/admin.ts, frontend/src/pages/Settings.tsx WebhookRow which branches on provider === 'adf' and has PROVIDER_LABELS missing dbt — check whether the frontend renders a dbt row acceptably or misleadingly, e.g. the DAG-callback helper text shown for dbt rows), and the dbt events route (/api/v1/orchestration/events/dbt) to confirm URL + secret name + header match what the receiver actually validates. Also check the KeyError risk: can ORCHESTRATION_PROVIDERS contain a provider not in the map today?\n\nReturn up to 6 candidates as JSON [{file, line, summary, failure_scenario}]. [] if […]
 
 > TOOL
 
@@ -2254,7 +2254,7 @@ id: toolu_01Sf9UU7tnfYbXfemU8QVTuY
 ```json
 {
   "description": "Cleanup+conventions finder PR 680",
-  "prompt": "You are a code-review finder for repo /Users/arijit/Coding/Python/DataQ, reviewing PR #680 (branch fix/issue-647-dbt-webhook-config vs main). Run `git -C /Users/arijit/Coding/Python/DataQ diff main...fix/issue-647-dbt-webhook-config` for the diff (backend/app/services/admin_service.py per-provider dispatch map, backend/tests/api/test_admin.py new tests, .env.app.example DBT_WEBHOOK_SECRET_NAME).\n\nAngles: reuse (is there an existing per-provider registry/config mapping elsewhere — e.g. backend/app/orchestration/registry or settings — that this new hmac_providers dict duplicates? grep for airflow_webhook_secret_name/dbt_webhook_secret_name usages), simplification (redundant test overlap: does the new parametrized test make the dedicated dbt/airflow tests redundant, or vice versa? dead code, derivable state), efficiency (map rebuilt per call — matters?), altitude (is a dict-in-function the right depth vs provider metadata on the OrchestrationProvider classes themselves? CLAUDE.md says never hardcode provider branching in service code — read CLAUDE.md §4/§11 and judge whether this per-provider map in admin_service violates the 'always go through the OrchestrationProvider abstraction' rule and whether a deeper fix belongs on the provider interface), conventions (read /Users/arijit/Coding/Python/DataQ/CLAUDE.md; quote exact rule + exact line for any violation, e.g. the no-credentials-in-tracked-files rule vs the .env.app.example change — note the rule allows non-secret config defaults/identifiers; secret NAMES are non-secret).\n\nReturn up to 6 candidates as JSON [{file, line, summary, failure_scenario}]. [] if none. Final […]
+  "prompt": "You are a code-review finder for repo /home/<USER>/Coding/Python/DataQ, reviewing PR #680 (branch fix/issue-647-dbt-webhook-config vs main). Run `git -C /home/<USER>/Coding/Python/DataQ diff main...fix/issue-647-dbt-webhook-config` for the diff (backend/app/services/admin_service.py per-provider dispatch map, backend/tests/api/test_admin.py new tests, .env.app.example DBT_WEBHOOK_SECRET_NAME).\n\nAngles: reuse (is there an existing per-provider registry/config mapping elsewhere — e.g. backend/app/orchestration/registry or settings — that this new hmac_providers dict duplicates? grep for airflow_webhook_secret_name/dbt_webhook_secret_name usages), simplification (redundant test overlap: does the new parametrized test make the dedicated dbt/airflow tests redundant, or vice versa? dead code, derivable state), efficiency (map rebuilt per call — matters?), altitude (is a dict-in-function the right depth vs provider metadata on the OrchestrationProvider classes themselves? CLAUDE.md says never hardcode provider branching in service code — read CLAUDE.md §4/§11 and judge whether this per-provider map in admin_service violates the 'always go through the OrchestrationProvider abstraction' rule and whether a deeper fix belongs on the provider interface), conventions (read /home/<USER>/Coding/Python/DataQ/CLAUDE.md; quote exact rule + exact line for any violation, e.g. the no-credentials-in-tracked-files rule vs the .env.app.example change — note the rule allows non-secret config defaults/identifiers; secret NAMES are non-secret).\n\nReturn up to 6 candidates as JSON [{file, line, summary, failure_scenario}]. [] if none. Final […]
 
 > TOOL
 
@@ -2389,7 +2389,7 @@ tool_use Read
 id: toolu_01XvU8mM6wtNFSohG3ayBnuu
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Results.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Results.tsx",
   "offset": 300,
   "limit": 160
 }
@@ -2439,7 +2439,7 @@ tool_use Bash
 id: toolu_01Tn7PjUeo1ATsJX4KrGkEoN
 ```json
 {
-  "command": "sed -n '70,90p;130,145p' /Users/arijit/Coding/Python/DataQ/frontend/src/api/runs.ts; grep -rn \"PROVIDER_LABELS\\|ORCHESTRATION_PROVIDERS\" /Users/arijit/Coding/Python/DataQ/frontend/src --include=\"*.tsx\" --include=\"*.ts\" | grep -v triggerBindings.ts",
+  "command": "sed -n '70,90p;130,145p' /home/<USER>/Coding/Python/DataQ/frontend/src/api/runs.ts; grep -rn \"PROVIDER_LABELS\\|ORCHESTRATION_PROVIDERS\" /home/<USER>/Coding/Python/DataQ/frontend/src --include=\"*.tsx\" --include=\"*.ts\" | grep -v triggerBindings.ts",
   "description": "Read runs.ts provider types and find PROVIDER_LABELS users"
 }
 ```
@@ -2484,12 +2484,12 @@ export async function listPipelineRuns(params?: {
   const { data } = await api.get<PipelineRun[]>('/pipeline_runs', { params });
   return data;
 }
-/Users/arijit/Coding/Python/DataQ/frontend/src/components/suites/TriggersPanel.tsx:24:  ORCHESTRATION_PROVIDERS,
-/Users/arijit/Coding/Python/DataQ/frontend/src/components/suites/TriggersPanel.tsx:26:  PROVIDER_LABELS,
-/Users/arijit/Coding/Python/DataQ/frontend/src/components/suites/TriggersPanel.tsx:179:            {PROVIDER_LABELS[binding.provider]}
-/Users/arijit/Coding/Python/DataQ/frontend/src/components/suites/TriggersPanel.tsx:219:        options={ORCHESTRATION_PROVIDERS.map((p) => ({ value: p, label: PROVIDER_LABELS[p] }))}
-/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Settings.tsx:145:const PROVIDER_LABELS: Record<string, string> = { adf: 'Azure Data Factory', airflow: 'Airflow' };
-/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Settings.tsx:164:            {PROVIDER_LABELS[webhook.provider] ?? webhook.provider}
+/home/<USER>/Coding/Python/DataQ/frontend/src/components/suites/TriggersPanel.tsx:24:  ORCHESTRATION_PROVIDERS,
+/home/<USER>/Coding/Python/DataQ/frontend/src/components/suites/TriggersPanel.tsx:26:  PROVIDER_LABELS,
+/home/<USER>/Coding/Python/DataQ/frontend/src/components/suites/TriggersPanel.tsx:179:            {PROVIDER_LABELS[binding.provider]}
+/home/<USER>/Coding/Python/DataQ/frontend/src/components/suites/TriggersPanel.tsx:219:        options={ORCHESTRATION_PROVIDERS.map((p) => ({ value: p, label: PROVIDER_LABELS[p] }))}
+/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Settings.tsx:145:const PROVIDER_LABELS: Record<string, string> = { adf: 'Azure Data Factory', airflow: 'Airflow' };
+/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Settings.tsx:164:            {PROVIDER_LABELS[webhook.provider] ?? webhook.provider}
 ```
 
 > TOOL
@@ -2498,7 +2498,7 @@ tool_use Read
 id: toolu_01TzaZ2PFEHMwFs94EdBUEgT
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/components/suites/TriggersPanel.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/components/suites/TriggersPanel.tsx",
   "offset": 160,
   "limit": 80
 }
@@ -2563,7 +2563,7 @@ tool_use Bash
 id: toolu_01JMgbxhMt8tcBKBoBREVpYk
 ```json
 {
-  "command": "ls /Users/arijit/Coding/Python/DataQ/frontend/tests/components/ | grep -i \"trigger\\|results\" ; grep -n \"provider\\|Airflow\\|ADF\" /Users/arijit/Coding/Python/DataQ/frontend/tests/components/TriggersPanel.test.tsx 2>/dev/null | head -15",
+  "command": "ls /home/<USER>/Coding/Python/DataQ/frontend/tests/components/ | grep -i \"trigger\\|results\" ; grep -n \"provider\\|Airflow\\|ADF\" /home/<USER>/Coding/Python/DataQ/frontend/tests/components/TriggersPanel.test.tsx 2>/dev/null | head -15",
   "description": "Find TriggersPanel and Results tests"
 }
 ```
@@ -2591,7 +2591,7 @@ id: toolu_016bTx233b55WshtrjC1oadq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/api/triggerBindings.ts",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/api/triggerBindings.ts",
   "old_string": "export const ORCHESTRATION_PROVIDERS = ['adf', 'airflow'] as const;\nexport type OrchestrationProvider = (typeof ORCHESTRATION_PROVIDERS)[number];\n\nexport const PROVIDER_LABELS: Record<OrchestrationProvider, string> = {\n  adf: 'Azure Data Factory',\n  airflow: 'Apache Airflow',\n};",
   "new_string": "/** Mirrors the backend `ORCHESTRATION_PROVIDERS` tuple (db/models.py, ADR 0029). */\nexport const ORCHESTRATION_PROVIDERS = ['adf', 'airflow', 'dbt'] as const;\nexport type OrchestrationProvider = (typeof ORCHESTRATION_PROVIDERS)[number];\n\nexport const PROVIDER_LABELS: Record<OrchestrationProvider, string> = {\n  adf: 'Azure Data Factory',\n  airflow: 'Apache Airflow',\n  dbt: 'dbt',\n};"
 }
@@ -2611,7 +2611,7 @@ tool_use Read
 id: toolu_01P4R514TnpZMh4EJxpopgeC
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/api/triggerBindings.ts"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/api/triggerBindings.ts"
 }
 ```
 
@@ -2668,7 +2668,7 @@ id: toolu_01GFWAPvnr74q8MwFBD57BwQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/api/triggerBindings.ts",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/api/triggerBindings.ts",
   "old_string": "export const ORCHESTRATION_PROVIDERS = ['adf', 'airflow'] as const;\nexport type OrchestrationProvider = (typeof ORCHESTRATION_PROVIDERS)[number];\n\nexport const PROVIDER_LABELS: Record<OrchestrationProvider, string> = {\n  adf: 'Azure Data Factory',\n  airflow: 'Apache Airflow',\n};",
   "new_string": "/** Mirrors the backend `ORCHESTRATION_PROVIDERS` tuple (db/models.py — ADR 0029). */\nexport const ORCHESTRATION_PROVIDERS = ['adf', 'airflow', 'dbt'] as const;\nexport type OrchestrationProvider = (typeof ORCHESTRATION_PROVIDERS)[number];\n\nexport const PROVIDER_LABELS: Record<OrchestrationProvider, string> = {\n  adf: 'Azure Data Factory',\n  airflow: 'Apache Airflow',\n  dbt: 'dbt',\n};"
 }
@@ -2679,7 +2679,7 @@ id: toolu_01GFWAPvnr74q8MwFBD57BwQ
 tool_result
 id: toolu_01GFWAPvnr74q8MwFBD57BwQ
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/api/triggerBindings.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/api/triggerBindings.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2692,7 +2692,7 @@ tool_use Read
 id: toolu_01TqMTMuj4Z2NaFBr4PjpEEk
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/api/runs.ts",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/api/runs.ts",
   "offset": 1,
   "limit": 20
 }
@@ -2732,7 +2732,7 @@ id: toolu_01Wci8yTZDs6ahTR7kEV52PM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/api/runs.ts",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/api/runs.ts",
   "old_string": "import { api } from './client';\n\n/**\n * Runs / results / pipeline-runs API — the read surface behind the Results page",
   "new_string": "import { api } from './client';\nimport type { OrchestrationProvider } from './triggerBindings';\n\n/**\n * Runs / results / pipeline-runs API — the read surface behind the Results page"
 }
@@ -2743,7 +2743,7 @@ id: toolu_01Wci8yTZDs6ahTR7kEV52PM
 tool_result
 id: toolu_01Wci8yTZDs6ahTR7kEV52PM
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/api/runs.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/api/runs.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2753,7 +2753,7 @@ id: toolu_018NiXaG9vRw1Aj9aSG9jMu5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/api/runs.ts",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/api/runs.ts",
   "old_string": "export interface PipelineRun {\n  id: string;\n  provider: 'adf' | 'airflow';",
   "new_string": "export interface PipelineRun {\n  id: string;\n  provider: OrchestrationProvider;"
 }
@@ -2764,7 +2764,7 @@ id: toolu_018NiXaG9vRw1Aj9aSG9jMu5
 tool_result
 id: toolu_018NiXaG9vRw1Aj9aSG9jMu5
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/api/runs.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/api/runs.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2774,7 +2774,7 @@ id: toolu_014B6izoVtD3bsZWCszY7EiF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/api/runs.ts",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/api/runs.ts",
   "old_string": "export async function listPipelineRuns(params?: {\n  provider?: 'adf' | 'airflow';",
   "new_string": "export async function listPipelineRuns(params?: {\n  provider?: OrchestrationProvider;"
 }
@@ -2785,7 +2785,7 @@ id: toolu_014B6izoVtD3bsZWCszY7EiF
 tool_result
 id: toolu_014B6izoVtD3bsZWCszY7EiF
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/api/runs.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/api/runs.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2795,7 +2795,7 @@ id: toolu_014h73gck9bBj4JeKgQhTjnd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Results.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Results.tsx",
   "old_string": "  const [provider, setProvider] = useState<'all' | 'adf' | 'airflow'>('all');",
   "new_string": "  const [provider, setProvider] = useState<'all' | OrchestrationProvider>('all');"
 }
@@ -2806,7 +2806,7 @@ id: toolu_014h73gck9bBj4JeKgQhTjnd
 tool_result
 id: toolu_014h73gck9bBj4JeKgQhTjnd
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/pages/Results.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/pages/Results.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2816,7 +2816,7 @@ id: toolu_01AM85XBkkGyGZtzVPxknb9n
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Results.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Results.tsx",
   "old_string": "        <Filter label=\"Provider\">\n          <Select<'all' | 'adf' | 'airflow'>\n            value={provider}\n            onChange={setProvider}\n            style={{ width: 160 }}\n            options={[\n              { value: 'all', label: 'All' },\n              { value: 'adf', label: 'ADF' },\n              { value: 'airflow', label: 'Airflow' },\n            ]}\n          />\n        </Filter>",
   "new_string": "        <Filter label=\"Provider\">\n          <Select<'all' | OrchestrationProvider>\n            value={provider}\n            onChange={setProvider}\n            style={{ width: 180 }}\n            options={[\n              { value: 'all', label: 'All' },\n              ...ORCHESTRATION_PROVIDERS.map((p) => ({ value: p, label: PROVIDER_LABELS[p] })),\n            ]}\n          />\n        </Filter>"
 }
@@ -2827,7 +2827,7 @@ id: toolu_01AM85XBkkGyGZtzVPxknb9n
 tool_result
 id: toolu_01AM85XBkkGyGZtzVPxknb9n
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/pages/Results.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/pages/Results.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2836,7 +2836,7 @@ tool_use Bash
 id: toolu_0175nxaiLC4t6Eqr9DoM5yKk
 ```json
 {
-  "command": "grep -n \"^import\\|from '\\.\\./api\" /Users/arijit/Coding/Python/DataQ/frontend/src/pages/Results.tsx | head -12",
+  "command": "grep -n \"^import\\|from '\\.\\./api\" /home/<USER>/Coding/Python/DataQ/frontend/src/pages/Results.tsx | head -12",
   "description": "Check Results.tsx imports"
 }
 ```
@@ -2867,7 +2867,7 @@ id: toolu_013PfWm8HwJ84xWg99ZT8rur
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Results.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Results.tsx",
   "old_string": "import { listSuites } from '../api/suites';",
   "new_string": "import { listSuites } from '../api/suites';\nimport {\n  ORCHESTRATION_PROVIDERS,\n  type OrchestrationProvider,\n  PROVIDER_LABELS,\n} from '../api/triggerBindings';"
 }
@@ -2878,7 +2878,7 @@ id: toolu_013PfWm8HwJ84xWg99ZT8rur
 tool_result
 id: toolu_013PfWm8HwJ84xWg99ZT8rur
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/pages/Results.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/pages/Results.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2888,7 +2888,7 @@ id: toolu_012XSqHPLiBHWVENCyQXyTzJ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Settings.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Settings.tsx",
   "old_string": "const PROVIDER_LABELS: Record<string, string> = { adf: 'Azure Data Factory', airflow: 'Airflow' };\n\n/** One provider's webhook URL. ADF embeds a secret, so it's masked behind a reveal\n *  toggle; copy always copies the real URL. */\nfunction WebhookRow({ webhook }: { webhook: AdminWebhook }) {",
   "new_string": "/** One provider's webhook URL. ADF embeds a secret, so it's masked behind a reveal\n *  toggle; copy always copies the real URL. */\nfunction WebhookRow({ webhook }: { webhook: AdminWebhook }) {"
 }
@@ -2899,7 +2899,7 @@ id: toolu_012XSqHPLiBHWVENCyQXyTzJ
 tool_result
 id: toolu_012XSqHPLiBHWVENCyQXyTzJ
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/pages/Settings.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/pages/Settings.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2909,7 +2909,7 @@ id: toolu_019Pai5DbLRJAsAZNJvkTx3o
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Settings.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Settings.tsx",
   "old_string": "        {secretBearing ? (\n          <Typography.Text type=\"secondary\" style={{ fontSize: 12 }}>\n            Paste into Azure Monitor → Action Group → Webhook. Live delivery also needs the\n            Common-Alert-Schema payload mapping (#492).\n          </Typography.Text>\n        ) : (\n          <Typography.Text type=\"secondary\" style={{ fontSize: 12 }}>\n            Configured in the DAG callback snippet (HMAC); signing key in Key Vault:{' '}\n            <Typography.Text code>{webhook.signing_secret_name}</Typography.Text>.\n          </Typography.Text>\n        )}",
   "new_string": "        {secretBearing ? (\n          <Typography.Text type=\"secondary\" style={{ fontSize: 12 }}>\n            Paste into Azure Monitor → Action Group → Webhook. Live delivery also needs the\n            Common-Alert-Schema payload mapping (#492).\n          </Typography.Text>\n        ) : (\n          <Typography.Text type=\"secondary\" style={{ fontSize: 12 }}>\n            Configured in the {webhook.provider === 'dbt' ? 'post-build' : 'DAG'} callback snippet\n            (HMAC); signing key in the secret store:{' '}\n            <Typography.Text code>{webhook.signing_secret_name}</Typography.Text>.\n          </Typography.Text>\n        )}"
 }
@@ -2920,7 +2920,7 @@ id: toolu_019Pai5DbLRJAsAZNJvkTx3o
 tool_result
 id: toolu_019Pai5DbLRJAsAZNJvkTx3o
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/pages/Settings.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/pages/Settings.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2930,7 +2930,7 @@ id: toolu_013mYGuia1fRLz6Jq14DhZDb
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Settings.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Settings.tsx",
   "old_string": "import { type AdminWebhook, listAdminWebhooks } from '../api/admin';\nimport { authMethodLabel } from '../auth/config';",
   "new_string": "import { type AdminWebhook, listAdminWebhooks } from '../api/admin';\nimport { PROVIDER_LABELS } from '../api/triggerBindings';\nimport { authMethodLabel } from '../auth/config';"
 }
@@ -2953,7 +2953,7 @@ id: toolu_01HHtRBjynjzgDvVD2mrAcx5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Settings.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Settings.tsx",
   "old_string": "          <Tag color={secretBearing ? 'geekblue' : 'cyan'}>\n            {PROVIDER_LABELS[webhook.provider] ?? webhook.provider}\n          </Tag>\n          {secretBearing && !webhook.token_configured && (\n            <Tag color=\"error\">webhook secret not set</Tag>\n          )}",
   "new_string": "          <Tag color={secretBearing ? 'geekblue' : 'cyan'}>\n            {PROVIDER_LABELS[webhook.provider as keyof typeof PROVIDER_LABELS] ?? webhook.provider}\n          </Tag>\n          {!webhook.token_configured && <Tag color=\"error\">webhook secret not set</Tag>}"
 }
@@ -2964,7 +2964,7 @@ id: toolu_01HHtRBjynjzgDvVD2mrAcx5
 tool_result
 id: toolu_01HHtRBjynjzgDvVD2mrAcx5
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/pages/Settings.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/pages/Settings.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2974,7 +2974,7 @@ id: toolu_0114KSUg8Az98fhoLWaUyWZ5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Settings.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Settings.tsx",
   "old_string": "import { type AdminWebhook, listAdminWebhooks } from '../api/admin';\nimport { useMe } from '../auth/useMe';",
   "new_string": "import { type AdminWebhook, listAdminWebhooks } from '../api/admin';\nimport { PROVIDER_LABELS } from '../api/triggerBindings';\nimport { useMe } from '../auth/useMe';"
 }
@@ -2985,7 +2985,7 @@ id: toolu_0114KSUg8Az98fhoLWaUyWZ5
 tool_result
 id: toolu_0114KSUg8Az98fhoLWaUyWZ5
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/pages/Settings.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/pages/Settings.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2998,7 +2998,7 @@ tool_use Read
 id: toolu_01DJgADzvoKZWUNisP26X7ta
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/components/TriggersPanel.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/components/TriggersPanel.test.tsx",
   "offset": 1,
   "limit": 110
 }
@@ -3070,7 +3070,7 @@ id: toolu_01Njz8gtnZxhWQ24Tc4qVVCS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/components/TriggersPanel.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/components/TriggersPanel.test.tsx",
   "old_string": "import {\n  createTriggerBinding,\n  deleteTriggerBinding,\n  listTriggerBindings,\n  setTriggerBindingEnabled,\n  type TriggerBinding,\n} from '../../src/api/triggerBindings';",
   "new_string": "import {\n  createTriggerBinding,\n  deleteTriggerBinding,\n  listTriggerBindings,\n  ORCHESTRATION_PROVIDERS,\n  PROVIDER_LABELS,\n  setTriggerBindingEnabled,\n  type TriggerBinding,\n} from '../../src/api/triggerBindings';"
 }
@@ -3081,7 +3081,7 @@ id: toolu_01Njz8gtnZxhWQ24Tc4qVVCS
 tool_result
 id: toolu_01Njz8gtnZxhWQ24Tc4qVVCS
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/tests/components/TriggersPanel.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/tests/components/TriggersPanel.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3091,7 +3091,7 @@ id: toolu_01U6XY1pXcy9yuZJFFtf3xTF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/components/TriggersPanel.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/components/TriggersPanel.test.tsx",
   "old_string": "  it('adds a binding from the provider/pipeline/env form', async () => {",
   "new_string": "  it('offers every orchestration provider in the add-form dropdown (#652 — incl. dbt)', async () => {\n    // Parametrized over the shared tuple so the NEXT provider addition is caught\n    // here too, not just dbt (the ADR-0029 gap this guards against).\n    mockList.mockResolvedValue([]);\n    const user = userEvent.setup();\n    renderPanel();\n    await screen.findByText(/No triggers/);\n\n    const [providerSelect] = screen.getAllByRole('combobox');\n    await user.click(providerSelect);\n    for (const provider of ORCHESTRATION_PROVIDERS) {\n      expect(\n        await screen.findByRole('option', { name: PROVIDER_LABELS[provider] }),\n      ).toBeInTheDocument();\n    }\n    expect(ORCHESTRATION_PROVIDERS).toContain('dbt');\n  });\n\n  it('adds a binding from the provider/pipeline/env form', async () => {"
 }
@@ -3102,7 +3102,7 @@ id: toolu_01U6XY1pXcy9yuZJFFtf3xTF
 tool_result
 id: toolu_01U6XY1pXcy9yuZJFFtf3xTF
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/tests/components/TriggersPanel.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/tests/components/TriggersPanel.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3115,7 +3115,7 @@ tool_use Bash
 id: toolu_01HR1anuHaUGRGJpDdNAsikX
 ```json
 {
-  "command": "grep -n \"Pipeline runs\\|provider\\|PipelineRun\\|filter\" /Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Results.test.tsx | head -25",
+  "command": "grep -n \"Pipeline runs\\|provider\\|PipelineRun\\|filter\" /home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Results.test.tsx | head -25",
   "description": "Find pipeline-runs tests in Results.test.tsx"
 }
 ```
@@ -3158,7 +3158,7 @@ tool_use Read
 id: toolu_01X4YJ3ZQPntf7RUmFtXR9tj
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Results.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Results.test.tsx",
   "offset": 100,
   "limit": 60
 }
@@ -3225,7 +3225,7 @@ tool_use Read
 id: toolu_01U4G9Ls8ohfQAqpUWZsoBDN
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Results.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Results.test.tsx",
   "offset": 277,
   "limit": 60
 }
@@ -3290,7 +3290,7 @@ id: toolu_01T4uJonHVvuzGVv5wJFAbdW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Results.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Results.test.tsx",
   "old_string": "  it('correlates a pipeline run to the DQ run it triggered', async () => {",
   "new_string": "  it('offers every orchestration provider in the pipeline-runs filter and filters by it (#652)', async () => {\n    const dbtRun: PipelineRun = {\n      ...pipelineRun,\n      id: 'p2',\n      provider: 'dbt',\n      provider_run_id: 'inv-0001',\n      pipeline_or_dag_id: 'analytics_build',\n    };\n    mockListRuns.mockResolvedValue([]);\n    mockListSuites.mockResolvedValue([]);\n    mockListConnections.mockResolvedValue([]);\n    mockListPipelineRuns.mockResolvedValue([pipelineRun, dbtRun]);\n\n    renderResults();\n    const user = userEvent.setup();\n    await user.click(screen.getByRole('tab', { name: 'Pipeline runs' }));\n    await waitFor(() => expect(screen.getByText('analytics_build')).toBeInTheDocument());\n\n    // Provider filter is the first Select on the tab; it must offer the full\n    // shared tuple (guards the next ADR-0029-style provider addition too).\n    await user.click(screen.getAllByRole('combobox')[0]);\n    for (const provider of ORCHESTRATION_PROVIDERS) {\n      expect(\n        await screen.findByRole('option', { name: PROVIDER_LABELS[provider] }),\n      ).toBeInTheDocument();\n    }\n    await user.click(await screen.findByTitle(PROVIDER_LABELS.dbt));\n\n    // Only the dbt pipeline run remains.\n    await waitFor(() => expect(screen.queryByText('daily_orders_load')).not.toBeInTheDocument());\n    expect(screen.getByText('analytics_build')).toBeInTheDocument();\n  });\n\n  it('correlates a pipeline run to the DQ run it triggered', async () => {"
 }
@@ -3301,7 +3301,7 @@ id: toolu_01T4uJonHVvuzGVv5wJFAbdW
 tool_result
 id: toolu_01T4uJonHVvuzGVv5wJFAbdW
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Results.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Results.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3311,7 +3311,7 @@ id: toolu_013qVezdYjRsmE1s9G5jR62d
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Results.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Results.test.tsx",
   "old_string": "import { listPipelineRuns, listRuns, type PipelineRun, type Run } from '../../src/api/runs';",
   "new_string": "import { listPipelineRuns, listRuns, type PipelineRun, type Run } from '../../src/api/runs';\nimport { ORCHESTRATION_PROVIDERS, PROVIDER_LABELS } from '../../src/api/triggerBindings';"
 }
@@ -3322,7 +3322,7 @@ id: toolu_013qVezdYjRsmE1s9G5jR62d
 tool_result
 id: toolu_013qVezdYjRsmE1s9G5jR62d
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Results.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Results.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3331,7 +3331,7 @@ tool_use Read
 id: toolu_01KKppuD5f9bDJNcTu2QBhYd
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx",
   "offset": 1,
   "limit": 40
 }
@@ -3373,7 +3373,7 @@ id: toolu_01KKppuD5f9bDJNcTu2QBhYd
 29	  data: {
 30	    id: 'u-1',
 31	    aad_object_id: 'oid-1',
-32	    email: 'admin@dataq.io',
+32	    email: '<REDACTED_EMAIL>',
 33	    display_name: 'Ada Admin',
 34	    last_seen_at: null,
 35	    is_workspace_admin: true,
@@ -3391,7 +3391,7 @@ id: toolu_011HfHrpuAwndZsCnBZjJH5j
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx",
   "old_string": "const WEBHOOKS: AdminWebhook[] = [\n  {\n    provider: 'adf',\n    auth: 'Shared secret in the URL (?token=…)',\n    inbound_url: 'https://dataq.example.com/api/v1/orchestration/events/adf?token=abc123',\n    token_configured: true,\n    signing_secret_name: null,\n    connection_names: ['prod-factory'],\n  },\n];",
   "new_string": "const WEBHOOKS: AdminWebhook[] = [\n  {\n    provider: 'adf',\n    auth: 'Shared secret in the URL (?token=…)',\n    inbound_url: 'https://dataq.example.com/api/v1/orchestration/events/adf?token=abc123',\n    token_configured: true,\n    signing_secret_name: null,\n    connection_names: ['prod-factory'],\n  },\n  {\n    provider: 'dbt',\n    auth: 'HMAC-SHA256 signature header (X-DataQ-Signature) — ADR 0029',\n    inbound_url: 'https://dataq.example.com/api/v1/orchestration/events/dbt',\n    token_configured: true,\n    signing_secret_name: 'dbt-webhook-secret',\n    connection_names: ['analytics-dbt'],\n  },\n];"
 }
@@ -3402,7 +3402,7 @@ id: toolu_011HfHrpuAwndZsCnBZjJH5j
 tool_result
 id: toolu_011HfHrpuAwndZsCnBZjJH5j
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3411,7 +3411,7 @@ tool_use Read
 id: toolu_018EP7rWzN1j1RtuFV2D6FKf
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx",
   "offset": 68,
   "limit": 30
 }
@@ -3443,7 +3443,7 @@ id: toolu_016oZyKpFi244JHc61HBvSsC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx",
   "old_string": "  it('shows the inbound-webhooks config on the Webhooks tab', async () => {\n    renderSettings(adminMe);\n    fireEvent.click(screen.getByRole('tab', { name: 'Webhooks' }));\n    expect(await screen.findByText('Azure Data Factory')).toBeInTheDocument();\n  });",
   "new_string": "  it('shows the inbound-webhooks config on the Webhooks tab', async () => {\n    renderSettings(adminMe);\n    fireEvent.click(screen.getByRole('tab', { name: 'Webhooks' }));\n    expect(await screen.findByText('Azure Data Factory')).toBeInTheDocument();\n  });\n\n  it('renders a dbt webhook row with its own label and post-build copy (#652/#647)', async () => {\n    renderSettings(adminMe);\n    fireEvent.click(screen.getByRole('tab', { name: 'Webhooks' }));\n    // Labeled via the shared PROVIDER_LABELS (not the raw provider fallback).\n    expect(await screen.findByText('dbt')).toBeInTheDocument();\n    expect(screen.getByText('dbt-webhook-secret')).toBeInTheDocument();\n    // dbt is a post-build callback (ADR 0029), not an Airflow DAG callback.\n    expect(screen.getByText(/post-build callback snippet/)).toBeInTheDocument();\n  });\n\n  it('flags a webhook row whose secret is not provisioned', async () => {\n    mockWebhooks.mockResolvedValue([\n      { ...WEBHOOKS[1], token_configured: false }, // HMAC rows flag too, not just ADF\n    ]);\n    renderSettings(adminMe);\n    fireEvent.click(screen.getByRole('tab', { name: 'Webhooks' }));\n    expect(await screen.findByText('webhook secret not set')).toBeInTheDocument();\n  });"
 }
@@ -3454,7 +3454,7 @@ id: toolu_016oZyKpFi244JHc61HBvSsC
 tool_result
 id: toolu_016oZyKpFi244JHc61HBvSsC
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3463,7 +3463,7 @@ tool_use Bash
 id: toolu_0176dDwyoqQNXHvxytzuWdHe
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ/frontend && pnpm exec prettier --write src/api/triggerBindings.ts src/api/runs.ts src/pages/Results.tsx src/pages/Settings.tsx tests/components/TriggersPanel.test.tsx tests/pages/Results.test.tsx tests/pages/Settings.test.tsx > /dev/null && pnpm exec eslint src/api/triggerBindings.ts src/api/runs.ts src/pages/Results.tsx src/pages/Settings.tsx tests/components/TriggersPanel.test.tsx tests/pages/Results.test.tsx tests/pages/Settings.test.tsx && pnpm exec tsc --noEmit && pnpm vitest run tests/components/TriggersPanel.test.tsx tests/pages/Results.test.tsx tests/pages/Settings.test.tsx 2>&1 | tail -8",
+  "command": "cd /home/<USER>/Coding/Python/DataQ/frontend && pnpm exec prettier --write src/api/triggerBindings.ts src/api/runs.ts src/pages/Results.tsx src/pages/Settings.tsx tests/components/TriggersPanel.test.tsx tests/pages/Results.test.tsx tests/pages/Settings.test.tsx > /dev/null && pnpm exec eslint src/api/triggerBindings.ts src/api/runs.ts src/pages/Results.tsx src/pages/Settings.tsx tests/components/TriggersPanel.test.tsx tests/pages/Results.test.tsx tests/pages/Settings.test.tsx && pnpm exec tsc --noEmit && pnpm vitest run tests/components/TriggersPanel.test.tsx tests/pages/Results.test.tsx tests/pages/Settings.test.tsx 2>&1 | tail -8",
   "description": "Format, lint, typecheck, test #652 changes"
 }
 ```
@@ -3573,7 +3573,7 @@ id: toolu_01QToYNFLE3Q4FcVdf8BPhBP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Results.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Results.tsx",
   "old_string": "          <Select<'all' | OrchestrationProvider>\n            value={provider}\n            onChange={setProvider}\n            style={{ width: 180 }}\n            options={[\n              { value: 'all', label: 'All' },\n              ...ORCHESTRATION_PROVIDERS.map((p) => ({ value: p, label: PROVIDER_LABELS[p] })),\n            ]}\n          />",
   "new_string": "          <Select<'all' | OrchestrationProvider>\n            value={provider}\n            onChange={setProvider}\n            style={{ width: 180 }}\n            aria-label=\"Provider\"\n            options={[\n              { value: 'all', label: 'All' },\n              ...ORCHESTRATION_PROVIDERS.map((p) => ({ value: p, label: PROVIDER_LABELS[p] })),\n            ]}\n          />"
 }
@@ -3584,7 +3584,7 @@ id: toolu_01QToYNFLE3Q4FcVdf8BPhBP
 tool_result
 id: toolu_01QToYNFLE3Q4FcVdf8BPhBP
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/pages/Results.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/pages/Results.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3594,7 +3594,7 @@ id: toolu_01AXY2cxpmvSEwA61eN3GDmR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Results.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Results.test.tsx",
   "old_string": "    // Provider filter is the first Select on the tab; it must offer the full\n    // shared tuple (guards the next ADR-0029-style provider addition too).\n    await user.click(screen.getAllByRole('combobox')[0]);",
   "new_string": "    // The provider filter must offer the full shared tuple (guards the next\n    // ADR-0029-style provider addition too).\n    await user.click(screen.getByRole('combobox', { name: 'Provider' }));"
 }
@@ -3605,7 +3605,7 @@ id: toolu_01AXY2cxpmvSEwA61eN3GDmR
 tool_result
 id: toolu_01AXY2cxpmvSEwA61eN3GDmR
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Results.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Results.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3672,7 +3672,7 @@ tool_use Bash
 id: toolu_01Et6vgso5MdH7gDGDbr9Fxk
 ```json
 {
-  "command": "cat > /private/tmp/claude-501/-Users-arijit-Coding-Python-DataQ/74593251-a4f7-4bd8-bfce-b1f68dc047fe/scratchpad/debug-options.test.tsx <<'EOF'\nimport { render, screen } from '@testing-library/react';\nimport userEvent from '@testing-library/user-event';\nimport { MemoryRouter, Route, Routes } from 'react-router-dom';\nimport { expect, it, vi } from 'vitest';\n\nimport { listPipelineRuns, listRuns } from '../../Coding/Python/DataQ/frontend/src/api/runs';\nEOF\necho skip-debug-file; grep -rn \"function Filter\" /Users/arijit/Coding/Python/DataQ/frontend/src/pages/Results.tsx",
+  "command": "cat > /private/tmp/claude-501/-Users-arijit-Coding-Python-DataQ/74593251-a4f7-4bd8-bfce-b1f68dc047fe/scratchpad/debug-options.test.tsx <<'EOF'\nimport { render, screen } from '@testing-library/react';\nimport userEvent from '@testing-library/user-event';\nimport { MemoryRouter, Route, Routes } from 'react-router-dom';\nimport { expect, it, vi } from 'vitest';\n\nimport { listPipelineRuns, listRuns } from '../../Coding/Python/DataQ/frontend/src/api/runs';\nEOF\necho skip-debug-file; grep -rn \"function Filter\" /home/<USER>/Coding/Python/DataQ/frontend/src/pages/Results.tsx",
   "description": "Locate Filter helper in Results.tsx"
 }
 ```
@@ -3683,7 +3683,7 @@ tool_result
 id: toolu_01Et6vgso5MdH7gDGDbr9Fxk
 ```
 skip-debug-file
-/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Results.tsx:69:function Filter({ label, children }: { label: string; children: React.ReactNode }) {
+/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Results.tsx:69:function Filter({ label, children }: { label: string; children: React.ReactNode }) {
 ```
 
 > TOOL
@@ -3736,7 +3736,7 @@ id: toolu_01UgtgDuKSLfVKKauz7pgnH7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Results.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Results.test.tsx",
   "old_string": "    await user.click(screen.getByRole('combobox', { name: 'Provider' }));\n    for (const provider of ORCHESTRATION_PROVIDERS) {\n      expect(\n        await screen.findByRole('option', { name: PROVIDER_LABELS[provider] }),\n      ).toBeInTheDocument();\n    }",
   "new_string": "    await user.click(screen.getByRole('combobox', { name: 'Provider' }));\n    await screen.findByRole('option', { name: 'All' });\n    // eslint-disable-next-line no-console\n    console.log(\n      'OPTIONS:',\n      screen.getAllByRole('option').map((o) => o.textContent),\n    );\n    for (const provider of ORCHESTRATION_PROVIDERS) {\n      expect(\n        await screen.findByRole('option', { name: PROVIDER_LABELS[provider] }),\n      ).toBeInTheDocument();\n    }"
 }
@@ -3747,7 +3747,7 @@ id: toolu_01UgtgDuKSLfVKKauz7pgnH7
 tool_result
 id: toolu_01UgtgDuKSLfVKKauz7pgnH7
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Results.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Results.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3949,7 +3949,7 @@ id: toolu_012PZaSwnFBWb1LCzpuTR4x6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Results.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Results.test.tsx",
   "old_string": "    // eslint-disable-next-line no-console\n    console.log(\n      'OPTIONS:',\n      screen.getAllByRole('option').map((o) => o.textContent),\n    );",
   "new_string": "    // eslint-disable-next-line no-console\n    console.log(\n      'OPTIONS:',\n      screen.getAllByRole('option').map((o) => [o.textContent, o.getAttribute('title')]),\n      'DROPDOWNS:',\n      document.querySelectorAll('.ant-select-dropdown').length,\n      'ITEMS:',\n      document.querySelectorAll('.ant-select-item-option').length,\n    );"
 }
@@ -3960,7 +3960,7 @@ id: toolu_012PZaSwnFBWb1LCzpuTR4x6
 tool_result
 id: toolu_012PZaSwnFBWb1LCzpuTR4x6
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Results.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Results.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3994,7 +3994,7 @@ id: toolu_013FnumaWmchvRvWL7VQa3ix
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Results.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Results.test.tsx",
   "old_string": "    await user.click(screen.getByRole('combobox', { name: 'Provider' }));\n    await screen.findByRole('option', { name: 'All' });\n    // eslint-disable-next-line no-console\n    console.log(\n      'OPTIONS:',\n      screen.getAllByRole('option').map((o) => [o.textContent, o.getAttribute('title')]),\n      'DROPDOWNS:',\n      document.querySelectorAll('.ant-select-dropdown').length,\n      'ITEMS:',\n      document.querySelectorAll('.ant-select-item-option').length,\n    );\n    for (const provider of ORCHESTRATION_PROVIDERS) {\n      expect(\n        await screen.findByRole('option', { name: PROVIDER_LABELS[provider] }),\n      ).toBeInTheDocument();\n    }\n    await user.click(await screen.findByTitle(PROVIDER_LABELS.dbt));",
   "new_string": "    await user.click(screen.getByRole('combobox', { name: 'Provider' }));\n    for (const provider of ORCHESTRATION_PROVIDERS) {\n      // findByTitle, matching pickFilter above: AntD's role=option list is a\n      // truncated a11y mirror; the real items carry the label as `title`.\n      expect(await screen.findByTitle(PROVIDER_LABELS[provider])).toBeInTheDocument();\n    }\n    await user.click(await screen.findByTitle(PROVIDER_LABELS.dbt));"
 }
@@ -4005,7 +4005,7 @@ id: toolu_013FnumaWmchvRvWL7VQa3ix
 tool_result
 id: toolu_013FnumaWmchvRvWL7VQa3ix
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Results.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Results.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4070,7 +4070,7 @@ id: toolu_01PxMKJ9nwhhaDuqeFyVRZLe
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/components/TriggersPanel.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/components/TriggersPanel.test.tsx",
   "old_string": "    const [providerSelect] = screen.getAllByRole('combobox');\n    await user.click(providerSelect);\n    for (const provider of ORCHESTRATION_PROVIDERS) {\n      expect(\n        await screen.findByRole('option', { name: PROVIDER_LABELS[provider] }),\n      ).toBeInTheDocument();\n    }\n    expect(ORCHESTRATION_PROVIDERS).toContain('dbt');",
   "new_string": "    const [providerSelect] = screen.getAllByRole('combobox');\n    await user.click(providerSelect);\n    for (const provider of ORCHESTRATION_PROVIDERS) {\n      // findByTitle: AntD's role=option list is a truncated a11y mirror; the\n      // real dropdown items carry the label as `title`.\n      expect(await screen.findByTitle(PROVIDER_LABELS[provider])).toBeInTheDocument();\n    }\n    expect(ORCHESTRATION_PROVIDERS).toContain('dbt');"
 }
@@ -4081,7 +4081,7 @@ id: toolu_01PxMKJ9nwhhaDuqeFyVRZLe
 tool_result
 id: toolu_01PxMKJ9nwhhaDuqeFyVRZLe
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/tests/components/TriggersPanel.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/tests/components/TriggersPanel.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4136,7 +4136,7 @@ tool_use Bash
 id: toolu_01AvGB4e4r99bbkPACMdrh6y
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ && git add frontend/src frontend/tests && git commit -m \"fix(frontend): surface the dbt orchestration provider across Triggers, Pipeline-runs filter, and admin Webhooks (#652)\n\nADR 0029 added dbt as the third OrchestrationProvider but three frontend\nsurfaces still hardcoded the original two: the Suite Triggers provider\ndropdown (a suite could not be bound to a dbt build from the UI), the\nPipeline-runs provider filter, and the PipelineRun/listPipelineRuns types.\nThe provider tuple + labels are now single-sourced from\napi/triggerBindings.ts (mirroring the backend tuple), the Results filter\nbuilds its options from it, and Settings' webhook rows reuse the shared\nlabels — with dbt-correct 'post-build callback' copy and the\nmissing-secret tag no longer ADF-only (pairs with the #680 backend fix).\nTests iterate the shared tuple so the next provider addition is caught.\n\nFixes #652\n\nCo-Authored-By: Claude Fable 5 <noreply@anthropic.com>\" && git push -u origin fix/issue-652-dbt-frontend-parity && gh pr create --title \"fix(frontend): dbt provider in Triggers dropdown, Pipeline-runs filter + admin Webhooks (#652)\" --milestone \"v1.1 Week 2 — Portability: OTel logs, secrets lifecycle, dry-run depth\" --body \"## Summary\n- \\`ORCHESTRATION_PROVIDERS\\` / \\`PROVIDER_LABELS\\` in \\`api/triggerBindings.ts\\` now include **dbt** (mirroring the backend tuple, ADR 0029) — the Suite Triggers provider dropdown offers it, so a suite can finally be bound to a […]
+  "command": "cd /home/<USER>/Coding/Python/DataQ && git add frontend/src frontend/tests && git commit -m \"fix(frontend): surface the dbt orchestration provider across Triggers, Pipeline-runs filter, and admin Webhooks (#652)\n\nADR 0029 added dbt as the third OrchestrationProvider but three frontend\nsurfaces still hardcoded the original two: the Suite Triggers provider\ndropdown (a suite could not be bound to a dbt build from the UI), the\nPipeline-runs provider filter, and the PipelineRun/listPipelineRuns types.\nThe provider tuple + labels are now single-sourced from\napi/triggerBindings.ts (mirroring the backend tuple), the Results filter\nbuilds its options from it, and Settings' webhook rows reuse the shared\nlabels — with dbt-correct 'post-build callback' copy and the\nmissing-secret tag no longer ADF-only (pairs with the #680 backend fix).\nTests iterate the shared tuple so the next provider addition is caught.\n\nFixes #652\n\nCo-Authored-By: Claude Fable 5 <<REDACTED_EMAIL>>\" && git push -u origin fix/issue-652-dbt-frontend-parity && gh pr create --title \"fix(frontend): dbt provider in Triggers dropdown, Pipeline-runs filter + admin Webhooks (#652)\" --milestone \"v1.1 Week 2 — Portability: OTel logs, secrets lifecycle, dry-run depth\" --body \"## Summary\n- \\`ORCHESTRATION_PROVIDERS\\` / \\`PROVIDER_LABELS\\` in \\`api/triggerBindings.ts\\` now include **dbt** (mirroring the backend tuple, ADR 0029) — the Suite Triggers provider dropdown offers it, so a suite can finally be bound to a […]
 
 > TOOL
 
@@ -4197,7 +4197,7 @@ tool_use Read
 id: toolu_012tafHPaTVUKE1CMtpDxzXs
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/deploy/.env.app.prod.example",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/deploy/.env.app.prod.example",
   "offset": 58,
   "limit": 14
 }
@@ -4230,7 +4230,7 @@ tool_use Read
 id: toolu_012DNbDegY57hHNLqsiDYVs7
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/deploy/terraform/azure/containerapps.tf",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/deploy/terraform/azure/containerapps.tf",
   "offset": 55,
   "limit": 20
 }
@@ -4266,7 +4266,7 @@ id: toolu_01E6XiW1kz1LG8PCexU4QTv2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/deploy/.env.app.prod.example",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/deploy/.env.app.prod.example",
   "old_string": "# ── Webhook secret names (Key Vault keys, not values) ────────────────────────\nREDACTED\nREDACTED",
   "new_string": "# ── Webhook secret names (Key Vault keys, not values) ────────────────────────\nREDACTED\nREDACTED\nREDACTED"
 }
@@ -4277,7 +4277,7 @@ id: toolu_01E6XiW1kz1LG8PCexU4QTv2
 tool_result
 id: toolu_01E6XiW1kz1LG8PCexU4QTv2
 ```
-The file /Users/arijit/Coding/Python/DataQ/deploy/.env.app.prod.example has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/deploy/.env.app.prod.example has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4287,7 +4287,7 @@ id: toolu_01A6PVNpLK8HqEEsDpc6tesn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/deploy/terraform/azure/containerapps.tf",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/deploy/terraform/azure/containerapps.tf",
   "old_string": "    { name = \"ADF_WEBHOOK_SECRET_NAME\", value = \"adf-webhook-secret\" },\n    { name = \"AIRFLOW_WEBHOOK_SECRET_NAME\", value = \"airflow-webhook-secret\" },",
   "new_string": "    { name = \"ADF_WEBHOOK_SECRET_NAME\", value = \"adf-webhook-secret\" },\n    { name = \"AIRFLOW_WEBHOOK_SECRET_NAME\", value = \"airflow-webhook-secret\" },\n    { name = \"DBT_WEBHOOK_SECRET_NAME\", value = \"dbt-webhook-secret\" },"
 }
@@ -4298,7 +4298,7 @@ id: toolu_01A6PVNpLK8HqEEsDpc6tesn
 tool_result
 id: toolu_01A6PVNpLK8HqEEsDpc6tesn
 ```
-The file /Users/arijit/Coding/Python/DataQ/deploy/terraform/azure/containerapps.tf has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/deploy/terraform/azure/containerapps.tf has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4312,7 +4312,7 @@ id: toolu_01TLxCtRrY3585hhapB4oTak
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/admin_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/admin_service.py",
   "old_string": "        else:  # HMAC-signed callback providers (airflow, dbt)\n            signing_secret_name, adr = hmac_providers[provider]\n            rows.append(\n                WebhookConfigRow(\n                    provider=provider,\n                    auth=f\"HMAC-SHA256 signature header (X-DataQ-Signature) — {adr}\",\n                    inbound_url=f\"{base}/api/v1/orchestration/events/{provider}\",\n                    token_configured=True,\n                    signing_secret_name=signing_secret_name,\n                    connection_names=names,\n                )\n            )\n    return rows",
   "new_string": "        else:  # HMAC-signed callback providers (airflow, dbt)\n            signing_secret_name, adr = hmac_providers[provider]\n            # Honest configured-state: the old hardcoded True hid an unprovisioned\n            # signing key until callbacks started failing auth at the receiver.\n            signing_key = _safe_secret(secret_store, signing_secret_name)\n            rows.append(\n                WebhookConfigRow(\n                    provider=provider,\n                    auth=f\"HMAC-SHA256 signature header (X-DataQ-Signature) — {adr}\",\n                    inbound_url=f\"{base}/api/v1/orchestration/events/{provider}\",\n                    token_configured=bool(signing_key),\n                    signing_secret_name=signing_secret_name,\n                    connection_names=names,\n                )\n            )\n    return rows"
 }
@@ -4332,7 +4332,7 @@ tool_use Read
 id: toolu_01EhKALC1MbWx7v2g32ZQBwu
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/admin_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/admin_service.py",
   "offset": 200,
   "limit": 55
 }
@@ -4387,7 +4387,7 @@ id: toolu_01Y85uKrLzy3fMfLgypDKHG5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/admin_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/admin_service.py",
   "old_string": "        else:  # HMAC-signed callback providers (airflow, dbt)\n            signing_secret_name, adr = hmac_providers[provider]\n            rows.append(\n                WebhookConfigRow(\n                    provider=provider,\n                    auth=f\"HMAC-SHA256 signature header (X-DataQ-Signature) — {adr}\",\n                    inbound_url=f\"{base}/api/v1/orchestration/events/{provider}\",\n                    token_configured=True,\n                    signing_secret_name=signing_secret_name,\n                    connection_names=names,\n                )\n            )\n    return rows",
   "new_string": "        else:  # HMAC-signed callback providers (airflow, dbt)\n            signing_secret_name, adr = hmac_providers[provider]\n            # Honest configured-state: a hardcoded True here hid an unprovisioned\n            # signing key until callbacks started failing auth at the receiver.\n            signing_key = _safe_secret(secret_store, signing_secret_name)\n            rows.append(\n                WebhookConfigRow(\n                    provider=provider,\n                    auth=f\"HMAC-SHA256 signature header (X-DataQ-Signature) — {adr}\",\n                    inbound_url=f\"{base}/api/v1/orchestration/events/{provider}\",\n                    token_configured=bool(signing_key),\n                    signing_secret_name=signing_secret_name,\n                    connection_names=names,\n                )\n            )\n    return rows"
 }
@@ -4398,7 +4398,7 @@ id: toolu_01Y85uKrLzy3fMfLgypDKHG5
 tool_result
 id: toolu_01Y85uKrLzy3fMfLgypDKHG5
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/services/admin_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/services/admin_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4407,7 +4407,7 @@ tool_use Read
 id: toolu_01Pe9ma6cYXJEwcw4c687DP1
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/api/test_admin.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/api/test_admin.py",
   "offset": 258,
   "limit": 60
 }
@@ -4421,7 +4421,7 @@ id: toolu_01Pe9ma6cYXJEwcw4c687DP1
 258	def test_admin_webhooks_airflow_carries_no_url_token(
 259	    client: TestClient, db_session: Any, monkeypatch: pytest.MonkeyPatch
 260	) -> None:
-261	    owner = _user(db_session, "owner@x.io")
+261	    owner = _user(db_session, "<REDACTED_EMAIL>")
 262	    _orch_connection(db_session, owner, ctype="airflow", name="airflow-prod")
 263	    db_session.commit()
 264	    _grant_admin(monkeypatch)
@@ -4439,7 +4439,7 @@ id: toolu_01Pe9ma6cYXJEwcw4c687DP1
 276	) -> None:
 277	    # #647: the two-provider if/else dropped dbt connections into the airflow
 278	    # branch — wrong provider label, wrong inbound endpoint, wrong signing key.
-279	    owner = _user(db_session, "owner@x.io")
+279	    owner = _user(db_session, "<REDACTED_EMAIL>")
 280	    _orch_connection(db_session, owner, ctype="dbt", name="analytics-dbt")
 281	    db_session.commit()
 282	    _grant_admin(monkeypatch)
@@ -4469,7 +4469,7 @@ id: toolu_011ishXKr9Wh5GdgJCgsnMV2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/api/test_admin.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/api/test_admin.py",
   "old_string": "    airflow = rows[\"airflow\"]\n    assert airflow[\"inbound_url\"].endswith(\"/api/v1/orchestration/events/airflow\")\n    assert \"token=\" not in airflow[\"inbound_url\"]\n    assert airflow[\"signing_secret_name\"] == \"airflow-webhook-secret\"",
   "new_string": "    airflow = rows[\"airflow\"]\n    assert airflow[\"inbound_url\"].endswith(\"/api/v1/orchestration/events/airflow\")\n    assert \"token=\" not in airflow[\"inbound_url\"]\n    assert airflow[\"signing_secret_name\"] == \"airflow-webhook-secret\"\n    assert airflow[\"token_configured\"] is True  # signing key provisioned in the store"
 }
@@ -4480,7 +4480,7 @@ id: toolu_011ishXKr9Wh5GdgJCgsnMV2
 tool_result
 id: toolu_011ishXKr9Wh5GdgJCgsnMV2
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/api/test_admin.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/api/test_admin.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4490,9 +4490,9 @@ id: toolu_01XZiSagf1sGGzESZTZHnwCa
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/api/test_admin.py",
-  "old_string": "def test_admin_webhooks_marks_missing_secret(\n    client: TestClient, db_session: Any, monkeypatch: pytest.MonkeyPatch\n) -> None:\n    owner = _user(db_session, \"owner@x.io\")\n    _orch_connection(db_session, owner, ctype=\"adf\", name=\"prod-factory\")",
-  "new_string": "@pytest.mark.parametrize(\"ctype\", [\"airflow\", \"dbt\"])\ndef test_admin_webhooks_hmac_rows_mark_missing_signing_secret(\n    ctype: str, client: TestClient, db_session: Any, monkeypatch: pytest.MonkeyPatch\n) -> None:\n    # token_configured must reflect the signing key's actual presence in the\n    # store — a hardcoded True hid the misconfiguration until callbacks 401'd.\n    owner = _user(db_session, \"owner@x.io\")\n    _orch_connection(db_session, owner, ctype=ctype, name=f\"{ctype}-conn\")\n    db_session.commit()\n    _grant_admin(monkeypatch)\n    _with_store(client, _FakeStore(token=None))  # signing key not provisioned\n\n    [row] = client.get(\"/api/v1/admin/orchestration/webhooks\").json()\n    assert row[\"token_configured\"] is False\n\n\ndef test_admin_webhooks_marks_missing_secret(\n    client: TestClient, db_session: Any, monkeypatch: pytest.MonkeyPatch\n) -> None:\n    owner = _user(db_session, \"owner@x.io\")\n    _orch_connection(db_session, owner, ctype=\"adf\", name=\"prod-factory\")"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/api/test_admin.py",
+  "old_string": "def test_admin_webhooks_marks_missing_secret(\n    client: TestClient, db_session: Any, monkeypatch: pytest.MonkeyPatch\n) -> None:\n    owner = _user(db_session, \"<REDACTED_EMAIL>\")\n    _orch_connection(db_session, owner, ctype=\"adf\", name=\"prod-factory\")",
+  "new_string": "@pytest.mark.parametrize(\"ctype\", [\"airflow\", \"dbt\"])\ndef test_admin_webhooks_hmac_rows_mark_missing_signing_secret(\n    ctype: str, client: TestClient, db_session: Any, monkeypatch: pytest.MonkeyPatch\n) -> None:\n    # token_configured must reflect the signing key's actual presence in the\n    # store — a hardcoded True hid the misconfiguration until callbacks 401'd.\n    owner = _user(db_session, \"<REDACTED_EMAIL>\")\n    _orch_connection(db_session, owner, ctype=ctype, name=f\"{ctype}-conn\")\n    db_session.commit()\n    _grant_admin(monkeypatch)\n    _with_store(client, _FakeStore(token=None))  # signing key not provisioned\n\n    [row] = client.get(\"/api/v1/admin/orchestration/webhooks\").json()\n    assert row[\"token_configured\"] is False\n\n\ndef test_admin_webhooks_marks_missing_secret(\n    client: TestClient, db_session: Any, monkeypatch: pytest.MonkeyPatch\n) -> None:\n    owner = _user(db_session, \"<REDACTED_EMAIL>\")\n    _orch_connection(db_session, owner, ctype=\"adf\", name=\"prod-factory\")"
 }
 ```
 
@@ -4501,7 +4501,7 @@ id: toolu_01XZiSagf1sGGzESZTZHnwCa
 tool_result
 id: toolu_01XZiSagf1sGGzESZTZHnwCa
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/api/test_admin.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/api/test_admin.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4539,7 +4539,7 @@ tool_use Bash
 id: toolu_01SvCzPLZjGdQ9KVEmUwvfMr
 ```json
 {
-  "command": "git add backend/app/services/admin_service.py backend/tests/api/test_admin.py deploy/.env.app.prod.example deploy/terraform/azure/containerapps.tf && git commit -m \"fixup: honest token_configured for HMAC rows + DBT_WEBHOOK_SECRET_NAME in prod template/TF (review findings)\n\n/code-review on #680: (1) token_configured was hardcoded True for HMAC\nproviders, hiding an unprovisioned signing key until callbacks failed auth\nat the receiver — it now reflects the secret store; (2) the dev template\ngot DBT_WEBHOOK_SECRET_NAME but the prod reference and the Terraform env\nblock did not.\n\nCo-Authored-By: Claude Fable 5 <noreply@anthropic.com>\" && git push",
+  "command": "git add backend/app/services/admin_service.py backend/tests/api/test_admin.py deploy/.env.app.prod.example deploy/terraform/azure/containerapps.tf && git commit -m \"fixup: honest token_configured for HMAC rows + DBT_WEBHOOK_SECRET_NAME in prod template/TF (review findings)\n\n/code-review on #680: (1) token_configured was hardcoded True for HMAC\nproviders, hiding an unprovisioned signing key until callbacks failed auth\nat the receiver — it now reflects the secret store; (2) the dev template\ngot DBT_WEBHOOK_SECRET_NAME but the prod reference and the Terraform env\nblock did not.\n\nCo-Authored-By: Claude Fable 5 <<REDACTED_EMAIL>>\" && git push",
   "description": "Commit and push PR-680 review fixes"
 }
 ```
@@ -4678,7 +4678,7 @@ id: toolu_01XA3prvytnjs2S1gBWRbTG1
 ```json
 {
   "description": "Correctness finder PR 681",
-  "prompt": "You are a code-review finder for repo /Users/arijit/Coding/Python/DataQ, reviewing PR #681 (branch fix/issue-652-dbt-frontend-parity vs main). Run `git -C /Users/arijit/Coding/Python/DataQ diff main...fix/issue-652-dbt-frontend-parity` for the diff. It adds the dbt orchestration provider to frontend surfaces (issue #652): api/triggerBindings.ts tuple+labels, api/runs.ts types, pages/Results.tsx pipeline-runs provider filter (now built from the shared tuple, aria-label added), pages/Settings.tsx (shared PROVIDER_LABELS import, post-build vs DAG callback copy, missing-secret tag no longer ADF-only), plus tests.\n\nAngles: (A) line-by-line each hunk + enclosing components; (B) removed behavior — old filter had short labels 'ADF'/'Airflow' and width 160→180, old Settings had its own PROVIDER_LABELS with 'Airflow' (not 'Apache Airflow') — any consumer/test depending on the old strings? grep for 'ADF'/'Airflow' label assertions in frontend/tests and frontend/e2e (Playwright specs!) that could break; (C) cross-file tracer — other places typed against 'adf' | 'airflow' unions or hardcoding two providers (grep frontend/src for \\\"'airflow'\\\" and 'adf'), e.g. Dashboard widgets, RunDetail trigger rendering, e2e specs; also check backend trigger_binding_service accepts 'dbt' for the create path the Triggers dropdown now offers (backend/app/services/trigger_binding_service.py _validate_provider_env) so the UI isn't offering something the API 422s; also confirm the Settings 'webhook secret not set' tag change won't false-flag […]
+  "prompt": "You are a code-review finder for repo /home/<USER>/Coding/Python/DataQ, reviewing PR #681 (branch fix/issue-652-dbt-frontend-parity vs main). Run `git -C /home/<USER>/Coding/Python/DataQ diff main...fix/issue-652-dbt-frontend-parity` for the diff. It adds the dbt orchestration provider to frontend surfaces (issue #652): api/triggerBindings.ts tuple+labels, api/runs.ts types, pages/Results.tsx pipeline-runs provider filter (now built from the shared tuple, aria-label added), pages/Settings.tsx (shared PROVIDER_LABELS import, post-build vs DAG callback copy, missing-secret tag no longer ADF-only), plus tests.\n\nAngles: (A) line-by-line each hunk + enclosing components; (B) removed behavior — old filter had short labels 'ADF'/'Airflow' and width 160→180, old Settings had its own PROVIDER_LABELS with 'Airflow' (not 'Apache Airflow') — any consumer/test depending on the old strings? grep for 'ADF'/'Airflow' label assertions in frontend/tests and frontend/e2e (Playwright specs!) that could break; (C) cross-file tracer — other places typed against 'adf' | 'airflow' unions or hardcoding two providers (grep frontend/src for \\\"'airflow'\\\" and 'adf'), e.g. Dashboard widgets, RunDetail trigger rendering, e2e specs; also check backend trigger_binding_service accepts 'dbt' for the create path the Triggers dropdown now offers (backend/app/services/trigger_binding_service.py _validate_provider_env) so the UI isn't offering something the API 422s; also confirm the Settings 'webhook secret not set' tag change won't false-flag […]
 
 > TOOL
 
@@ -4700,7 +4700,7 @@ id: toolu_01694aKf8LVHoaCEhWx4yUkx
 ```json
 {
   "description": "Cleanup+conventions finder PR 681",
-  "prompt": "You are a code-review finder for repo /Users/arijit/Coding/Python/DataQ, reviewing PR #681 (branch fix/issue-652-dbt-frontend-parity vs main). Run `git -C /Users/arijit/Coding/Python/DataQ diff main...fix/issue-652-dbt-frontend-parity` for the diff (frontend dbt provider parity: shared tuple/labels in api/triggerBindings.ts, typed runs.ts, Results filter from tuple, Settings shared labels + copy, tests).\n\nAngles: reuse (any OTHER frontend module still hardcoding provider lists/labels that should now import the shared ones — grep frontend/src for 'Azure Data Factory', 'Apache Airflow', \\\"'adf'\\\"), simplification (the `webhook.provider === 'dbt' ? 'post-build' : 'DAG'` ternary in Settings.tsx — is provider-branched copy in the component the right shape vs deriving from the backend `auth` string or a per-provider copy map? judge concretely), efficiency (trivial here — only flag real waste), altitude (does anything in this diff paper over a deeper gap, e.g. should PROVIDER_LABELS/tuple come from a backend-driven endpoint instead of a mirrored constant? weigh against the repo's existing mirrored-constant convention — RUN_STATUSES etc. in api/runs.ts), conventions (read /Users/arijit/Coding/Python/DataQ/CLAUDE.md; quote exact rule + line for any clear violation).\n\nReturn up to 6 candidates as JSON [{file, line, summary, failure_scenario}]. [] if none. Final message = raw data only."
+  "prompt": "You are a code-review finder for repo /home/<USER>/Coding/Python/DataQ, reviewing PR #681 (branch fix/issue-652-dbt-frontend-parity vs main). Run `git -C /home/<USER>/Coding/Python/DataQ diff main...fix/issue-652-dbt-frontend-parity` for the diff (frontend dbt provider parity: shared tuple/labels in api/triggerBindings.ts, typed runs.ts, Results filter from tuple, Settings shared labels + copy, tests).\n\nAngles: reuse (any OTHER frontend module still hardcoding provider lists/labels that should now import the shared ones — grep frontend/src for 'Azure Data Factory', 'Apache Airflow', \\\"'adf'\\\"), simplification (the `webhook.provider === 'dbt' ? 'post-build' : 'DAG'` ternary in Settings.tsx — is provider-branched copy in the component the right shape vs deriving from the backend `auth` string or a per-provider copy map? judge concretely), efficiency (trivial here — only flag real waste), altitude (does anything in this diff paper over a deeper gap, e.g. should PROVIDER_LABELS/tuple come from a backend-driven endpoint instead of a mirrored constant? weigh against the repo's existing mirrored-constant convention — RUN_STATUSES etc. in api/runs.ts), conventions (read /home/<USER>/Coding/Python/DataQ/CLAUDE.md; quote exact rule + line for any clear violation).\n\nReturn up to 6 candidates as JSON [{file, line, summary, failure_scenario}]. [] if none. Final message = raw data only."
 }
 ```
 
@@ -4794,7 +4794,7 @@ tool_use Read
 id: toolu_01Gidj1sefLfbXGd1M7HYSpu
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/components/checks/CheckHistoryDrawer.tsx"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/components/checks/CheckHistoryDrawer.tsx"
 }
 ```
 
@@ -4885,7 +4885,7 @@ tool_use Read
 id: toolu_01NSAcr6RJC1gvdpDPHKoxym
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/ConnectionEdit.tsx"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/ConnectionEdit.tsx"
 }
 ```
 
@@ -4965,7 +4965,7 @@ tool_use Read
 id: toolu_01PxYSTkXd9croe2X9bM3mRA
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/api/connections.ts",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/api/connections.ts",
   "offset": 100,
   "limit": 80
 }
@@ -5024,7 +5024,7 @@ id: toolu_01WD7jbfsWpixvKXW2gzpRDG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/api/connections.ts",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/api/connections.ts",
   "old_string": "/** Rotate the credential and verify it in one step (bad credential → error). */\nexport async function reauthConnection(id: string, secret: string): Promise<{ ok: boolean }> {\n  const { data } = await api.post<{ ok: boolean }>(`/connections/${id}/reauth`, { secret });\n  return data;\n}",
   "new_string": "/** Rotate the credential and verify it in one step (bad credential → error). */\nexport async function reauthConnection(id: string, secret: string): Promise<{ ok: boolean }> {\n  const { data } = await api.post<{ ok: boolean }>(`/connections/${id}/reauth`, { secret });\n  return data;\n}\n\n/**\n * Mirrors the backend `ConnectionVersionRead` — one immutable snapshot in a\n * connection's edit history (#654). Only the editable, non-secret fields are\n * versioned; no credential is ever present. `changed_by_name` is resolved\n * server-side (null for a system actor / removed user).\n */\nexport interface ConnectionVersion {\n  version_no: number;\n  name: string;\n  type: ConnectionType;\n  env: ConnectionEnv;\n  config: Record<string, unknown>;\n  changed_by: string | null;\n  changed_by_name: string | null;\n  created_at: string;\n}\n\n/** A connection's version history, newest first. */\nexport async function listConnectionVersions(id: string): Promise<ConnectionVersion[]> {\n  const { data } = await api.get<ConnectionVersion[]>(`/connections/${id}/versions`);\n  return data;\n}"
 }
@@ -5035,7 +5035,7 @@ id: toolu_01WD7jbfsWpixvKXW2gzpRDG
 tool_result
 id: toolu_01WD7jbfsWpixvKXW2gzpRDG
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/api/connections.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/api/connections.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5044,7 +5044,7 @@ tool_use Write
 id: toolu_01S6LxkxTRvTswEQG2mGDMmP
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/components/connections/ConnectionHistoryDrawer.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/components/connections/ConnectionHistoryDrawer.tsx",
   "content": "import { Alert, Descriptions, Drawer, Empty, Flex, Spin, Tag, Typography } from 'antd';\nimport SimpleList from '../SimpleList';\n\nimport {\n  CONNECTION_TYPE_LABELS,\n  type ConnectionVersion,\n  listConnectionVersions,\n} from '../../api/connections';\nimport { ENV_COLORS, envLabel } from '../connectionMeta';\nimport { formatTimestamp } from '../results/resultsFormat';\nimport { useAsyncData } from '../../hooks/useAsyncData';\n\n/**\n * Read-only history of a connection's saved configurations (#654) — the\n * connection twin of the check-history drawer (#280), same \"see previous config\n * before overwriting\" purpose and the same UX shape. Each version is an\n * immutable, credential-free snapshot the backend records on create and on\n * every real edit; newest first. v1 is view-only (no restore). Mounted only\n * while open (`destroyOnHidden`) so it refetches each time.\n */\nexport function ConnectionHistoryDrawer({\n  open,\n  connection,\n  onClose,\n}: {\n  open: boolean;\n  /** The connection whose history to show; null while none is loaded. */\n  connection: { id: string; name: string } | null;\n  onClose: () => void;\n}) {\n  return (\n    <Drawer\n      title={connection ? `History — “${connection.name}”` : 'History'}\n      open={open}\n      onClose={onClose}\n      size={520}\n      destroyOnHidden\n    >\n      {connection && <ConnectionHistoryBody connectionId={connection.id} />}\n    </Drawer>\n  );\n}\n\nfunction ConnectionHistoryBody({ connectionId }: { connectionId: string }) {\n  const { state } = useAsyncData(() => listConnectionVersions(connectionId));\n\n  if (state.status === 'loading') {\n    return <Spin description=\"Loading history…\" […]
 
 > TOOL
@@ -5052,7 +5052,7 @@ id: toolu_01S6LxkxTRvTswEQG2mGDMmP
 tool_result
 id: toolu_01S6LxkxTRvTswEQG2mGDMmP
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ/frontend/src/components/connections/ConnectionHistoryDrawer.tsx (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ/frontend/src/components/connections/ConnectionHistoryDrawer.tsx (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5155,7 +5155,7 @@ id: toolu_01F9rBxJbXZg1oqAakUbnaGc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/components/connections/ConnectionHistoryDrawer.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/components/connections/ConnectionHistoryDrawer.tsx",
   "old_string": "import {\n  CONNECTION_TYPE_LABELS,\n  type ConnectionVersion,\n  listConnectionVersions,\n} from '../../api/connections';\nimport { ENV_COLORS, envLabel } from '../connectionMeta';\nimport { formatTimestamp } from '../results/resultsFormat';",
   "new_string": "import {\n  CONNECTION_TYPE_LABELS,\n  type ConnectionVersion,\n  ENV_COLORS,\n  envLabel,\n  listConnectionVersions,\n} from '../../api/connections';\nimport { formatTimestamp } from '../results/resultsFormat';"
 }
@@ -5166,7 +5166,7 @@ id: toolu_01F9rBxJbXZg1oqAakUbnaGc
 tool_result
 id: toolu_01F9rBxJbXZg1oqAakUbnaGc
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/components/connections/ConnectionHistoryDrawer.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/components/connections/ConnectionHistoryDrawer.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5176,7 +5176,7 @@ id: toolu_01KjkjQgFxnZDxfrra7EgpR2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/ConnectionEdit.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/ConnectionEdit.tsx",
   "old_string": "import { Alert, Button, Card, Flex, Spin, Typography } from 'antd';\nimport { useNavigate, useParams } from 'react-router-dom';\n\nimport { CONNECTION_TYPE_LABELS, getConnection } from '../api/connections';\nimport { Page } from '../components/layout/Page';\nimport { ConnectionForm } from '../components/connections/ConnectionForm';\nimport { useAsyncData } from '../hooks/useAsyncData';",
   "new_string": "import { HistoryOutlined } from '@ant-design/icons';\nimport { Alert, Button, Card, Flex, Spin, Typography } from 'antd';\nimport { useState } from 'react';\nimport { useNavigate, useParams } from 'react-router-dom';\n\nimport { CONNECTION_TYPE_LABELS, getConnection } from '../api/connections';\nimport { Page } from '../components/layout/Page';\nimport { ConnectionForm } from '../components/connections/ConnectionForm';\nimport { ConnectionHistoryDrawer } from '../components/connections/ConnectionHistoryDrawer';\nimport { useAsyncData } from '../hooks/useAsyncData';"
 }
@@ -5187,7 +5187,7 @@ id: toolu_01KjkjQgFxnZDxfrra7EgpR2
 tool_result
 id: toolu_01KjkjQgFxnZDxfrra7EgpR2
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/pages/ConnectionEdit.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/pages/ConnectionEdit.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5197,7 +5197,7 @@ id: toolu_01LWJygvcZpzKNdxcXa2Et7Y
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/ConnectionEdit.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/ConnectionEdit.tsx",
   "old_string": "function ConnectionEditView({ connectionId }: { connectionId?: string }) {\n  const navigate = useNavigate();\n  const { state } = useAsyncData(() => {\n    if (!connectionId) throw new Error('no connection');\n    return getConnection(connectionId);\n  });\n\n  return (\n    <Page width={'form'}>\n      <Flex justify=\"space-between\" align=\"center\" gap={12}>\n        <Typography.Title level={3} style={{ margin: 0 }}>\n          {state.status === 'ok'\n            ? `Edit ${CONNECTION_TYPE_LABELS[state.data.type]} connection`\n            : 'Edit connection'}\n        </Typography.Title>\n        <Button onClick={() => navigate('/connections')}>Cancel</Button>\n      </Flex>",
   "new_string": "function ConnectionEditView({ connectionId }: { connectionId?: string }) {\n  const navigate = useNavigate();\n  const [historyOpen, setHistoryOpen] = useState(false);\n  const { state } = useAsyncData(() => {\n    if (!connectionId) throw new Error('no connection');\n    return getConnection(connectionId);\n  });\n\n  return (\n    <Page width={'form'}>\n      <Flex justify=\"space-between\" align=\"center\" gap={12}>\n        <Typography.Title level={3} style={{ margin: 0 }}>\n          {state.status === 'ok'\n            ? `Edit ${CONNECTION_TYPE_LABELS[state.data.type]} connection`\n            : 'Edit connection'}\n        </Typography.Title>\n        <Flex gap={8}>\n          {state.status === 'ok' && (\n            <Button icon={<HistoryOutlined />} onClick={() => setHistoryOpen(true)}>\n              History\n            </Button>\n          )}\n          <Button onClick={() => navigate('/connections')}>Cancel</Button>\n        </Flex>\n      </Flex>"
 }
@@ -5208,7 +5208,7 @@ id: toolu_01LWJygvcZpzKNdxcXa2Et7Y
 tool_result
 id: toolu_01LWJygvcZpzKNdxcXa2Et7Y
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/pages/ConnectionEdit.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/pages/ConnectionEdit.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5218,7 +5218,7 @@ id: toolu_01JjGCwAnBUSWFkq1Xqz7Ct8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/ConnectionEdit.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/ConnectionEdit.tsx",
   "old_string": "      {state.status === 'ok' && (\n        <Card size=\"small\">\n          <ConnectionForm\n            type={state.data.type}\n            connection={state.data}\n            onCancel={() => navigate('/connections')}\n            onSaved={() => navigate('/connections')}\n          />\n        </Card>\n      )}\n    </Page>\n  );\n}",
   "new_string": "      {state.status === 'ok' && (\n        <Card size=\"small\">\n          <ConnectionForm\n            type={state.data.type}\n            connection={state.data}\n            onCancel={() => navigate('/connections')}\n            onSaved={() => navigate('/connections')}\n          />\n        </Card>\n      )}\n\n      <ConnectionHistoryDrawer\n        open={historyOpen}\n        connection={state.status === 'ok' ? state.data : null}\n        onClose={() => setHistoryOpen(false)}\n      />\n    </Page>\n  );\n}"
 }
@@ -5229,7 +5229,7 @@ id: toolu_01JjGCwAnBUSWFkq1Xqz7Ct8
 tool_result
 id: toolu_01JjGCwAnBUSWFkq1Xqz7Ct8
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/pages/ConnectionEdit.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/pages/ConnectionEdit.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5242,7 +5242,7 @@ tool_use Read
 id: toolu_01V4oTYvr8m2KA4B1qiwG1np
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/ConnectionEdit.test.tsx"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/ConnectionEdit.test.tsx"
 }
 ```
 
@@ -5309,7 +5309,7 @@ id: toolu_01SYfWDt1aPTdnd8psXT44rR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/ConnectionEdit.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/ConnectionEdit.test.tsx",
   "old_string": "import { type Connection, getConnection, updateConnection } from '../../src/api/connections';\nimport { ConnectionEdit } from '../../src/pages/ConnectionEdit';\n\nvi.mock('../../src/api/connections', async (importOriginal) => {\n  const actual = await importOriginal<typeof import('../../src/api/connections')>();\n  return { ...actual, getConnection: vi.fn(), updateConnection: vi.fn() };\n});\n\nconst mockGet = vi.mocked(getConnection);\nconst mockUpdate = vi.mocked(updateConnection);",
   "new_string": "import {\n  type Connection,\n  type ConnectionVersion,\n  getConnection,\n  listConnectionVersions,\n  updateConnection,\n} from '../../src/api/connections';\nimport { ConnectionEdit } from '../../src/pages/ConnectionEdit';\n\nvi.mock('../../src/api/connections', async (importOriginal) => {\n  const actual = await importOriginal<typeof import('../../src/api/connections')>();\n  return {\n    ...actual,\n    getConnection: vi.fn(),\n    updateConnection: vi.fn(),\n    listConnectionVersions: vi.fn(),\n  };\n});\n\nconst mockGet = vi.mocked(getConnection);\nconst mockUpdate = vi.mocked(updateConnection);\nconst mockVersions = vi.mocked(listConnectionVersions);"
 }
@@ -5320,7 +5320,7 @@ id: toolu_01SYfWDt1aPTdnd8psXT44rR
 tool_result
 id: toolu_01SYfWDt1aPTdnd8psXT44rR
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/tests/pages/ConnectionEdit.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/tests/pages/ConnectionEdit.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5330,7 +5330,7 @@ id: toolu_012m6YzgWJrMWLW34iYZ7JGX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/ConnectionEdit.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/ConnectionEdit.test.tsx",
   "old_string": "  it('surfaces a load error', async () => {",
   "new_string": "  it('opens the version-history drawer from the History button (#654)', async () => {\n    const user = userEvent.setup();\n    mockGet.mockResolvedValue(existing);\n    const versions: ConnectionVersion[] = [\n      {\n        version_no: 2,\n        name: 'sf-dev',\n        type: 'snowflake',\n        env: 'dev',\n        config: { account: 'acc1' },\n        changed_by: 'u1',\n        changed_by_name: 'Ada Lovelace',\n        created_at: '2026-07-01T10:00:00Z',\n      },\n      {\n        version_no: 1,\n        name: 'sf-dev-old',\n        type: 'snowflake',\n        env: 'dev',\n        config: { account: 'acc0' },\n        changed_by: null,\n        changed_by_name: null,\n        created_at: '2026-06-01T10:00:00Z',\n      },\n    ];\n    mockVersions.mockResolvedValue(versions);\n    renderPage();\n\n    await waitFor(() => expect(screen.getByLabelText('Account')).toHaveValue('acc1'));\n    await user.click(screen.getByRole('button', { name: /History/ }));\n\n    expect(await screen.findByText('History — “sf-dev”')).toBeInTheDocument();\n    expect(mockVersions).toHaveBeenCalledWith('c1');\n    // Newest first: v2 is tagged Current; the older snapshot shows its author gap.\n    expect(screen.getByText('v2')).toBeInTheDocument();\n    expect(screen.getByText('Current')).toBeInTheDocument();\n    expect(screen.getByText('sf-dev-old')).toBeInTheDocument();\n    expect(screen.getByText(/Unknown/)).toBeInTheDocument();\n    // Snapshots are credential-free — config renders as JSON.\n    expect(screen.getByText(/\"account\": \"acc0\"/)).toBeInTheDocument();\n  });\n\n  it('shows an empty history state for a pre-versioning connection (#654)', async () => {\n    const user = userEvent.setup();\n    mockGet.mockResolvedValue(existing);\n    mockVersions.mockResolvedValue([]);\n    renderPage();\n\n    await waitFor(() => expect(screen.getByLabelText('Account')).toHaveValue('acc1'));\n    await user.click(screen.getByRole('button', { name: /History/ }));\n\n    expect(\n      await screen.findByText('No history yet — recording starts from the next save.'),\n    ).toBeInTheDocument();\n  });\n\n  it('surfaces a load error', async () => {"
 }
@@ -5341,7 +5341,7 @@ id: toolu_012m6YzgWJrMWLW34iYZ7JGX
 tool_result
 id: toolu_012m6YzgWJrMWLW34iYZ7JGX
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/tests/pages/ConnectionEdit.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/tests/pages/ConnectionEdit.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5375,7 +5375,7 @@ tool_use Bash
 id: toolu_01K7dTHmmDLTk5gHdCiMpJZn
 ```json
 {
-  "command": "pnpm vitest run 2>&1 | tail -3 && cd .. && git add frontend/src frontend/tests && git commit -m \"feat(frontend): connection version-history drawer on the edit page (#654)\n\nConnections have had a version-history read API since W4 with zero frontend\ncallers — asymmetric with checks, whose #280 history drawer ships a working\nHistory button in the editor. Adds the ConnectionVersion client +\nlistConnectionVersions, a ConnectionHistoryDrawer mirroring the check\ndrawer's UX (newest-first immutable snapshots, Current tag, credential-free\nconfig JSON, empty state for pre-versioning rows), and a History button on\nthe connection edit page.\n\nFixes #654\n\nCo-Authored-By: Claude Fable 5 <noreply@anthropic.com>\" && git push -u origin feature/issue-654-connection-history-ui && gh pr create --title \"feat(frontend): connection version-history drawer on the edit page (#654)\" --milestone \"v1.1 Week 2 — Portability: OTel logs, secrets lifecycle, dry-run depth\" --body \"## Summary\n- Adds the missing frontend surface for \\`GET /connections/{id}/versions\\` (#654): a **History** button + drawer on the connection edit page, mirroring the check-version-history drawer (#280) for UI/UX consistency — same newest-first snapshot list, \\`Current\\` tag, author + timestamp line, and pretty-printed credential-free config JSON.\n- \\`api/connections.ts\\` gains \\`ConnectionVersion\\` (mirrors \\`ConnectionVersionRead\\`) + \\`listConnectionVersions\\`.\n- Pre-versioning connections get an explicit \\\"No history yet\\\" empty state rather than implying they're unconfigured.\n\n## Test plan\n- [x] […]
+  "command": "pnpm vitest run 2>&1 | tail -3 && cd .. && git add frontend/src frontend/tests && git commit -m \"feat(frontend): connection version-history drawer on the edit page (#654)\n\nConnections have had a version-history read API since W4 with zero frontend\ncallers — asymmetric with checks, whose #280 history drawer ships a working\nHistory button in the editor. Adds the ConnectionVersion client +\nlistConnectionVersions, a ConnectionHistoryDrawer mirroring the check\ndrawer's UX (newest-first immutable snapshots, Current tag, credential-free\nconfig JSON, empty state for pre-versioning rows), and a History button on\nthe connection edit page.\n\nFixes #654\n\nCo-Authored-By: Claude Fable 5 <<REDACTED_EMAIL>>\" && git push -u origin feature/issue-654-connection-history-ui && gh pr create --title \"feat(frontend): connection version-history drawer on the edit page (#654)\" --milestone \"v1.1 Week 2 — Portability: OTel logs, secrets lifecycle, dry-run depth\" --body \"## Summary\n- Adds the missing frontend surface for \\`GET /connections/{id}/versions\\` (#654): a **History** button + drawer on the connection edit page, mirroring the check-version-history drawer (#280) for UI/UX consistency — same newest-first snapshot list, \\`Current\\` tag, author + timestamp line, and pretty-printed credential-free config JSON.\n- \\`api/connections.ts\\` gains \\`ConnectionVersion\\` (mirrors \\`ConnectionVersionRead\\`) + \\`listConnectionVersions\\`.\n- Pre-versioning connections get an explicit \\\"No history yet\\\" empty state rather than implying they're unconfigured.\n\n## Test plan\n- [x] […]
 
 > TOOL
 
@@ -5511,7 +5511,7 @@ tool_use Bash
 id: toolu_01QL1ptTJScoonYDStsg3kbj
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ && grep -rn \"Airflow\" frontend/e2e --include=\"*.ts\" | head -8; grep -rn \"'Airflow'\" frontend/src frontend/tests | head -8",
+  "command": "cd /home/<USER>/Coding/Python/DataQ && grep -rn \"Airflow\" frontend/e2e --include=\"*.ts\" | head -8; grep -rn \"'Airflow'\" frontend/src frontend/tests | head -8",
   "description": "Find Airflow label assertions in e2e and src"
 }
 ```
@@ -5586,7 +5586,7 @@ tool_use Read
 id: toolu_019yw9TNuirBgYCutdQCGrnM
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/e2e/admin.spec.ts",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/e2e/admin.spec.ts",
   "offset": 20,
   "limit": 25
 }
@@ -5606,7 +5606,7 @@ tool_result
 id: toolu_019yw9TNuirBgYCutdQCGrnM
 ```
 20	    await expect(main.getByText('Orders quality').first()).toBeVisible();
-21	    await expect(main.getByText('dev-bypass@dataq.local').first()).toBeVisible();
+21	    await expect(main.getByText('<REDACTED_EMAIL>').first()).toBeVisible();
 22	  });
 23	
 24	  test('settings exposes the inbound orchestration webhook config', async ({ page }) => {
@@ -5637,7 +5637,7 @@ id: toolu_01FivoBXm9j8Qk4ogxuorwUa
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/e2e/admin.spec.ts",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/e2e/admin.spec.ts",
   "old_string": "    await expect(page.getByText('Azure Data Factory', { exact: true })).toBeVisible();\n    await expect(page.getByText('Airflow', { exact: true })).toBeVisible();",
   "new_string": "    await expect(page.getByText('Azure Data Factory', { exact: true })).toBeVisible();\n    await expect(page.getByText('Apache Airflow', { exact: true })).toBeVisible();"
 }
@@ -5648,7 +5648,7 @@ id: toolu_01FivoBXm9j8Qk4ogxuorwUa
 tool_result
 id: toolu_01FivoBXm9j8Qk4ogxuorwUa
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/e2e/admin.spec.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/e2e/admin.spec.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5658,7 +5658,7 @@ id: toolu_01D1eNiQtzWEt9KHEG3TGtTw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/api/triggerBindings.ts",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/api/triggerBindings.ts",
   "old_string": "export const PROVIDER_LABELS: Record<OrchestrationProvider, string> = {\n  adf: 'Azure Data Factory',\n  airflow: 'Apache Airflow',\n  dbt: 'dbt',\n};",
   "new_string": "export const PROVIDER_LABELS: Record<OrchestrationProvider, string> = {\n  adf: 'Azure Data Factory',\n  airflow: 'Apache Airflow',\n  dbt: 'dbt',\n};\n\n/**\n * What each provider's DataQ callback snippet hooks into — used in setup copy\n * (\"Configured in the <noun> callback snippet\"). Exhaustive over the tuple so a\n * new provider is a compile error here, not silently inherited Airflow wording\n * (the #647 mislabeling class, one layer up). ADF authenticates via URL token\n * (no snippet), so its entry is only for exhaustiveness.\n */\nexport const PROVIDER_CALLBACK_NOUNS: Record<OrchestrationProvider, string> = {\n  adf: 'pipeline',\n  airflow: 'DAG',\n  dbt: 'post-build',\n};"
 }
@@ -5678,7 +5678,7 @@ tool_use Read
 id: toolu_01MUqaLwY2rXdoRfaFeg5JmJ
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/api/triggerBindings.ts",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/api/triggerBindings.ts",
   "offset": 1,
   "limit": 25
 }
@@ -5723,7 +5723,7 @@ id: toolu_01GWRZXpu3Vru3Tg3Q3LWnWQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/api/triggerBindings.ts",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/api/triggerBindings.ts",
   "old_string": "export const PROVIDER_LABELS: Record<OrchestrationProvider, string> = {\n  adf: 'Azure Data Factory',\n  airflow: 'Apache Airflow',\n  dbt: 'dbt',\n};\n\n/** Mirrors the backend `TriggerBindingRead`. */",
   "new_string": "export const PROVIDER_LABELS: Record<OrchestrationProvider, string> = {\n  adf: 'Azure Data Factory',\n  airflow: 'Apache Airflow',\n  dbt: 'dbt',\n};\n\n/**\n * What each provider's DataQ callback snippet hooks into — used in setup copy\n * (\"Configured in the <noun> callback snippet\"). Exhaustive over the tuple so a\n * new provider is a compile error here, not silently inherited Airflow wording\n * (the #647 mislabeling class, one layer up). ADF authenticates via URL token\n * (no snippet), so its entry is only for exhaustiveness.\n */\nexport const PROVIDER_CALLBACK_NOUNS: Record<OrchestrationProvider, string> = {\n  adf: 'pipeline',\n  airflow: 'DAG',\n  dbt: 'post-build',\n};\n\n/** Mirrors the backend `TriggerBindingRead`. */"
 }
@@ -5734,7 +5734,7 @@ id: toolu_01GWRZXpu3Vru3Tg3Q3LWnWQ
 tool_result
 id: toolu_01GWRZXpu3Vru3Tg3Q3LWnWQ
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/api/triggerBindings.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/api/triggerBindings.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5801,7 +5801,7 @@ id: toolu_011mksG8KbDLmcohqo2hQPAa
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/api/admin.ts",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/api/admin.ts",
   "old_string": "import { api } from './client';",
   "new_string": "import { api } from './client';\nimport type { OrchestrationProvider } from './triggerBindings';"
 }
@@ -5812,7 +5812,7 @@ id: toolu_011mksG8KbDLmcohqo2hQPAa
 tool_result
 id: toolu_011mksG8KbDLmcohqo2hQPAa
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/api/admin.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/api/admin.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5822,7 +5822,7 @@ id: toolu_01QLoUn1Kjd19x2XFfPUPceg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/api/admin.ts",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/api/admin.ts",
   "old_string": "export interface AdminWebhook {\n  provider: string;",
   "new_string": "export interface AdminWebhook {\n  provider: OrchestrationProvider;"
 }
@@ -5833,7 +5833,7 @@ id: toolu_01QLoUn1Kjd19x2XFfPUPceg
 tool_result
 id: toolu_01QLoUn1Kjd19x2XFfPUPceg
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/api/admin.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/api/admin.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5842,7 +5842,7 @@ tool_use Read
 id: toolu_0192rE7Ck4MvGx3vtYz1Sa3e
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Settings.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Settings.tsx",
   "offset": 113,
   "limit": 95
 }
@@ -5897,7 +5897,7 @@ id: toolu_01TdzjH1gPJyRWYAFAxwcP6n
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Settings.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Settings.tsx",
   "old_string": "/** Inbound orchestration-webhook URLs (#490) — copy-paste targets for ADF / Airflow\n *  to notify DataQ on pipeline completion. Admin-only (the page is already gated). */\nfunction WebhooksTab() {",
   "new_string": "/** Inbound orchestration-webhook URLs (#490) — one copy-paste target per\n *  orchestration provider (ADF / Airflow / dbt) to notify DataQ on pipeline\n *  completion. Admin-only (the page is already gated). */\nfunction WebhooksTab() {"
 }
@@ -5908,7 +5908,7 @@ id: toolu_01TdzjH1gPJyRWYAFAxwcP6n
 tool_result
 id: toolu_01TdzjH1gPJyRWYAFAxwcP6n
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/pages/Settings.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/pages/Settings.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5918,7 +5918,7 @@ id: toolu_01WLfhYEeKr57MFTaoavKBqe
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Settings.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Settings.tsx",
   "old_string": "          <Tag color={secretBearing ? 'geekblue' : 'cyan'}>\n            {PROVIDER_LABELS[webhook.provider as keyof typeof PROVIDER_LABELS] ?? webhook.provider}\n          </Tag>",
   "new_string": "          <Tag color={secretBearing ? 'geekblue' : 'cyan'}>{PROVIDER_LABELS[webhook.provider]}</Tag>"
 }
@@ -5929,7 +5929,7 @@ id: toolu_01WLfhYEeKr57MFTaoavKBqe
 tool_result
 id: toolu_01WLfhYEeKr57MFTaoavKBqe
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/pages/Settings.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/pages/Settings.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5939,7 +5939,7 @@ id: toolu_01957ZvaqCzdms9g84Dkzhn8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Settings.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Settings.tsx",
   "old_string": "            Configured in the {webhook.provider === 'dbt' ? 'post-build' : 'DAG'} callback snippet\n            (HMAC); signing key in the secret store:{' '}",
   "new_string": "            Configured in the {PROVIDER_CALLBACK_NOUNS[webhook.provider]} callback snippet (HMAC);\n            signing key in the secret store:{' '}"
 }
@@ -5950,7 +5950,7 @@ id: toolu_01957ZvaqCzdms9g84Dkzhn8
 tool_result
 id: toolu_01957ZvaqCzdms9g84Dkzhn8
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/pages/Settings.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/pages/Settings.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5960,7 +5960,7 @@ id: toolu_01D49moGAy4YfEf61BFpD283
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Settings.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Settings.tsx",
   "old_string": "import { PROVIDER_LABELS } from '../api/triggerBindings';",
   "new_string": "import { PROVIDER_CALLBACK_NOUNS, PROVIDER_LABELS } from '../api/triggerBindings';"
 }
@@ -5971,7 +5971,7 @@ id: toolu_01D49moGAy4YfEf61BFpD283
 tool_result
 id: toolu_01D49moGAy4YfEf61BFpD283
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/pages/Settings.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/pages/Settings.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5985,7 +5985,7 @@ id: toolu_01XMJxdNag4Ud2CZZ2Hr2JVv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Results.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Results.tsx",
   "old_string": "    { title: 'Provider', dataIndex: 'provider', width: 110, render: (p: string) => <Tag>{p}</Tag> },",
   "new_string": "    {\n      title: 'Provider',\n      dataIndex: 'provider',\n      width: 140,\n      render: (p: OrchestrationProvider) => <Tag>{PROVIDER_LABELS[p]}</Tag>,\n    },"
 }
@@ -6054,7 +6054,7 @@ tool_use Read
 id: toolu_01AzFpAhwGwyFu1rFaopr6Eh
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Results.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Results.tsx",
   "offset": 365,
   "limit": 8
 }
@@ -6082,7 +6082,7 @@ id: toolu_01EW4fyhk1SMyCQNG87NsdpC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Results.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Results.tsx",
   "old_string": "    { title: 'Provider', dataIndex: 'provider', width: 110, render: (p: string) => <Tag>{p}</Tag> },",
   "new_string": "    {\n      title: 'Provider',\n      dataIndex: 'provider',\n      width: 140,\n      render: (p: OrchestrationProvider) => <Tag>{PROVIDER_LABELS[p]}</Tag>,\n    },"
 }
@@ -6093,7 +6093,7 @@ id: toolu_01EW4fyhk1SMyCQNG87NsdpC
 tool_result
 id: toolu_01EW4fyhk1SMyCQNG87NsdpC
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/pages/Results.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/pages/Results.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6103,7 +6103,7 @@ id: toolu_01ThG3BtEeF6mt7Sm91NNx4F
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/api/v1/runs.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/api/v1/runs.py",
   "old_string": "    provider: str  # adf | airflow",
   "new_string": "    provider: str  # one of ORCHESTRATION_PROVIDERS (db/models.py — adf | airflow | dbt)"
 }
@@ -6123,7 +6123,7 @@ tool_use Read
 id: toolu_01C6ix8VMg4xDvDmHBjZxSS8
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/api/v1/runs.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/api/v1/runs.py",
   "offset": 108,
   "limit": 15
 }
@@ -6158,7 +6158,7 @@ id: toolu_014WqYNqNdvCKyUB4rK95BK2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/api/v1/runs.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/api/v1/runs.py",
   "old_string": "    provider: str  # adf | airflow",
   "new_string": "    provider: str  # one of ORCHESTRATION_PROVIDERS (db/models.py — adf | airflow | dbt)"
 }
@@ -6169,7 +6169,7 @@ id: toolu_014WqYNqNdvCKyUB4rK95BK2
 tool_result
 id: toolu_014WqYNqNdvCKyUB4rK95BK2
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/api/v1/runs.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/api/v1/runs.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6183,7 +6183,7 @@ id: toolu_01SKEAKG1MX7A943WK5DhNfP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx",
   "old_string": "  {\n    provider: 'dbt',\n    auth: 'HMAC-SHA256 signature header (X-DataQ-Signature) — ADR 0029',\n    inbound_url: 'https://dataq.example.com/api/v1/orchestration/events/dbt',\n    token_configured: true,\n    signing_secret_name: 'dbt-webhook-secret',\n    connection_names: ['analytics-dbt'],\n  },\n];",
   "new_string": "  {\n    provider: 'airflow',\n    auth: 'HMAC-SHA256 signature header (X-DataQ-Signature) — ADR 0007',\n    inbound_url: 'https://dataq.example.com/api/v1/orchestration/events/airflow',\n    token_configured: true,\n    signing_secret_name: 'airflow-webhook-secret',\n    connection_names: ['airflow-prod'],\n  },\n  {\n    provider: 'dbt',\n    auth: 'HMAC-SHA256 signature header (X-DataQ-Signature) — ADR 0029',\n    inbound_url: 'https://dataq.example.com/api/v1/orchestration/events/dbt',\n    token_configured: true,\n    signing_secret_name: 'dbt-webhook-secret',\n    connection_names: ['analytics-dbt'],\n  },\n];"
 }
@@ -6204,7 +6204,7 @@ id: toolu_014f3a17fh8TrbYjGhg2MRvH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx",
   "old_string": "  it('renders a dbt webhook row with its own label and post-build copy (#652/#647)', async () => {\n    renderSettings(adminMe);\n    fireEvent.click(screen.getByRole('tab', { name: 'Webhooks' }));\n    // Labeled via the shared PROVIDER_LABELS (not the raw provider fallback).\n    expect(await screen.findByText('dbt')).toBeInTheDocument();\n    expect(screen.getByText('dbt-webhook-secret')).toBeInTheDocument();\n    // dbt is a post-build callback (ADR 0029), not an Airflow DAG callback.\n    expect(screen.getByText(/post-build callback snippet/)).toBeInTheDocument();\n  });",
   "new_string": "  it('renders per-provider labels and callback copy — dbt is post-build, not DAG (#652/#647)', async () => {\n    renderSettings(adminMe);\n    fireEvent.click(screen.getByRole('tab', { name: 'Webhooks' }));\n    // 'Apache Airflow' differs from the raw code 'airflow', so this genuinely\n    // asserts the shared-PROVIDER_LABELS path (dbt's label equals its code).\n    expect(await screen.findByText('Apache Airflow')).toBeInTheDocument();\n    expect(screen.getByText('dbt')).toBeInTheDocument();\n    expect(screen.getByText('dbt-webhook-secret')).toBeInTheDocument();\n    // Per-provider callback noun: dbt is a post-build callback (ADR 0029),\n    // Airflow a DAG callback — dbt must not inherit the Airflow wording.\n    expect(screen.getByText(/post-build callback snippet/)).toBeInTheDocument();\n    expect(screen.getByText(/DAG callback snippet/)).toBeInTheDocument();\n  });"
 }
@@ -6224,7 +6224,7 @@ tool_use Read
 id: toolu_01PBQiQa4UmcmrYYLgCvge4R
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx",
   "offset": 14,
   "limit": 100
 }
@@ -6261,7 +6261,7 @@ id: toolu_01PBQiQa4UmcmrYYLgCvge4R
 37	  data: {
 38	    id: 'u-1',
 39	    aad_object_id: 'oid-1',
-40	    email: 'admin@dataq.io',
+40	    email: '<REDACTED_EMAIL>',
 41	    display_name: 'Ada Admin',
 42	    last_seen_at: null,
 43	    is_workspace_admin: true,
@@ -6298,7 +6298,7 @@ id: toolu_01NSH4XyNbti19gyK4n3mCS1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx",
   "old_string": "  {\n    provider: 'dbt',\n    auth: 'HMAC-SHA256 signature header (X-DataQ-Signature) — ADR 0029',\n    inbound_url: 'https://dataq.example.com/api/v1/orchestration/events/dbt',\n    token_configured: true,\n    signing_secret_name: 'dbt-webhook-secret',\n    connection_names: ['analytics-dbt'],\n  },\n];",
   "new_string": "  {\n    provider: 'airflow',\n    auth: 'HMAC-SHA256 signature header (X-DataQ-Signature) — ADR 0007',\n    inbound_url: 'https://dataq.example.com/api/v1/orchestration/events/airflow',\n    token_configured: true,\n    signing_secret_name: 'airflow-webhook-secret',\n    connection_names: ['airflow-prod'],\n  },\n  {\n    provider: 'dbt',\n    auth: 'HMAC-SHA256 signature header (X-DataQ-Signature) — ADR 0029',\n    inbound_url: 'https://dataq.example.com/api/v1/orchestration/events/dbt',\n    token_configured: true,\n    signing_secret_name: 'dbt-webhook-secret',\n    connection_names: ['analytics-dbt'],\n  },\n];"
 }
@@ -6309,7 +6309,7 @@ id: toolu_01NSH4XyNbti19gyK4n3mCS1
 tool_result
 id: toolu_01NSH4XyNbti19gyK4n3mCS1
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6319,7 +6319,7 @@ id: toolu_017fF4fx7DA6LA46L3dCJNHt
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx",
   "old_string": "  it('renders a dbt webhook row with its own label and post-build copy (#652/#647)', async () => {\n    renderSettings(adminMe);\n    fireEvent.click(screen.getByRole('tab', { name: 'Webhooks' }));\n    // Labeled via the shared PROVIDER_LABELS (not the raw provider fallback).\n    expect(await screen.findByText('dbt')).toBeInTheDocument();\n    expect(screen.getByText('dbt-webhook-secret')).toBeInTheDocument();\n    // dbt is a post-build callback (ADR 0029), not an Airflow DAG callback.\n    expect(screen.getByText(/post-build callback snippet/)).toBeInTheDocument();\n  });",
   "new_string": "  it('renders per-provider labels and callback copy — dbt is post-build, not DAG (#652/#647)', async () => {\n    renderSettings(adminMe);\n    fireEvent.click(screen.getByRole('tab', { name: 'Webhooks' }));\n    // 'Apache Airflow' differs from the raw code 'airflow', so this genuinely\n    // asserts the shared-PROVIDER_LABELS path (dbt's label equals its code).\n    expect(await screen.findByText('Apache Airflow')).toBeInTheDocument();\n    expect(screen.getByText('dbt')).toBeInTheDocument();\n    expect(screen.getByText('dbt-webhook-secret')).toBeInTheDocument();\n    // Per-provider callback noun: dbt is a post-build callback (ADR 0029),\n    // Airflow a DAG callback — dbt must not inherit the Airflow wording.\n    expect(screen.getByText(/post-build callback snippet/)).toBeInTheDocument();\n    expect(screen.getByText(/DAG callback snippet/)).toBeInTheDocument();\n  });"
 }
@@ -6330,7 +6330,7 @@ id: toolu_017fF4fx7DA6LA46L3dCJNHt
 tool_result
 id: toolu_017fF4fx7DA6LA46L3dCJNHt
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Settings.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6401,7 +6401,7 @@ id: toolu_01DyFyXeAzw3QcrYJwEtJD9z
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Results.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Results.test.tsx",
   "old_string": "    expect(screen.getByText('adf')).toBeInTheDocument();",
   "new_string": "    // Provider renders its human label (shared PROVIDER_LABELS), not the raw code.\n    expect(screen.getByText('Azure Data Factory')).toBeInTheDocument();"
 }
@@ -6446,7 +6446,7 @@ tool_use Read
 id: toolu_01AHm5jwBvjYTuzXm5rY8hGz
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Results.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Results.test.tsx",
   "offset": 288,
   "limit": 6
 }
@@ -6472,7 +6472,7 @@ id: toolu_01DkWmrpnxKpRrqVSqL7PNN6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Results.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Results.test.tsx",
   "old_string": "    // Provider + status render as tags in the row.\n    expect(screen.getByText('adf')).toBeInTheDocument();\n    expect(screen.getByText('succeeded')).toBeInTheDocument();",
   "new_string": "    // Provider renders its human label (shared PROVIDER_LABELS), not the raw code.\n    expect(screen.getByText('Azure Data Factory')).toBeInTheDocument();\n    expect(screen.getByText('succeeded')).toBeInTheDocument();"
 }
@@ -6483,7 +6483,7 @@ id: toolu_01DkWmrpnxKpRrqVSqL7PNN6
 tool_result
 id: toolu_01DkWmrpnxKpRrqVSqL7PNN6
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Results.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Results.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6531,7 +6531,7 @@ tool_use Bash
 id: toolu_01NCNvqPLZH9vbxUMG7ACyoc
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ && git add frontend backend/app/api/v1/runs.py && git commit -m \"fixup: e2e label fix + per-provider callback nouns + typed AdminWebhook.provider (review findings)\n\n/code-review on #681: admin.spec.ts asserted the old exact 'Airflow' label\n(would fail the required e2e gate against the shared 'Apache Airflow');\nthe dbt-vs-DAG copy ternary silently defaulted future providers to 'DAG'\n(now an exhaustive PROVIDER_CALLBACK_NOUNS map — compile error on tuple\ngrowth); AdminWebhook.provider was a bare string forcing a cast + dead\nfallback; the pipeline-runs Provider column still rendered raw codes next\nto the label-driven filter; stale two-provider comments in WebhooksTab and\nPipelineRunRead.\n\nCo-Authored-By: Claude Fable 5 <noreply@anthropic.com>\" && git push && gh pr comment 681 --body \"## /code-review findings (high effort, 2 grouped finder agents + source verification)\n\n**Fixed in the fixup commit:**\n1. **CONFIRMED — CI blocker:** \\`frontend/e2e/admin.spec.ts:34\\` asserted \\`getByText('Airflow', { exact: true })\\`, which the shared-label change ('Apache Airflow') would fail in the required e2e gate. Spec updated.\n2. **CONFIRMED — #647-class recurrence:** the \\`provider === 'dbt' ? 'post-build' : 'DAG'\\` ternary made 'DAG' the silent default for any future HMAC provider. Replaced with an exhaustive \\`PROVIDER_CALLBACK_NOUNS: Record<OrchestrationProvider, string>\\` — a tuple addition without a noun is now a compile error.\n3. **CONFIRMED — typing:** \\`AdminWebhook.provider\\` was \\`string\\`, forcing […]
+  "command": "cd /home/<USER>/Coding/Python/DataQ && git add frontend backend/app/api/v1/runs.py && git commit -m \"fixup: e2e label fix + per-provider callback nouns + typed AdminWebhook.provider (review findings)\n\n/code-review on #681: admin.spec.ts asserted the old exact 'Airflow' label\n(would fail the required e2e gate against the shared 'Apache Airflow');\nthe dbt-vs-DAG copy ternary silently defaulted future providers to 'DAG'\n(now an exhaustive PROVIDER_CALLBACK_NOUNS map — compile error on tuple\ngrowth); AdminWebhook.provider was a bare string forcing a cast + dead\nfallback; the pipeline-runs Provider column still rendered raw codes next\nto the label-driven filter; stale two-provider comments in WebhooksTab and\nPipelineRunRead.\n\nCo-Authored-By: Claude Fable 5 <<REDACTED_EMAIL>>\" && git push && gh pr comment 681 --body \"## /code-review findings (high effort, 2 grouped finder agents + source verification)\n\n**Fixed in the fixup commit:**\n1. **CONFIRMED — CI blocker:** \\`frontend/e2e/admin.spec.ts:34\\` asserted \\`getByText('Airflow', { exact: true })\\`, which the shared-label change ('Apache Airflow') would fail in the required e2e gate. Spec updated.\n2. **CONFIRMED — #647-class recurrence:** the \\`provider === 'dbt' ? 'post-build' : 'DAG'\\` ternary made 'DAG' the silent default for any future HMAC provider. Replaced with an exhaustive \\`PROVIDER_CALLBACK_NOUNS: Record<OrchestrationProvider, string>\\` — a tuple addition without a noun is now a compile error.\n3. **CONFIRMED — typing:** \\`AdminWebhook.provider\\` was \\`string\\`, forcing […]
 
 > TOOL
 
@@ -6553,7 +6553,7 @@ id: toolu_01Qcas5wzqGuoqBB5d73fJTS
 ```json
 {
   "description": "Review finder PR 683",
-  "prompt": "You are a code-review finder for repo /Users/arijit/Coding/Python/DataQ, reviewing PR #683 (branch feature/issue-654-connection-history-ui vs main). CRITICAL: do NOT run `git checkout` or otherwise change the repo's HEAD/working tree — the main session is working in the same directory. Read branch files only via `git show feature/issue-654-connection-history-ui:<path>` and diffs via `git diff main...feature/issue-654-connection-history-ui`.\n\nThe PR adds a connection version-history drawer (#654): api/connections.ts gains ConnectionVersion + listConnectionVersions; new components/connections/ConnectionHistoryDrawer.tsx (mirrors components/checks/CheckHistoryDrawer.tsx); pages/ConnectionEdit.tsx gets a History button + drawer; tests in tests/pages/ConnectionEdit.test.tsx.\n\nCover ALL angles in one pass (correctness line-by-line, removed behavior, cross-file, reuse/simplification, conventions vs CLAUDE.md):\n- Does ConnectionVersion faithfully mirror backend ConnectionVersionRead (backend/app/api/v1/connections.py ~line 205-238)? Field names/nullability.\n- Backend authz: does GET /connections/{id}/versions leak anything (config could contain non-secret but sensitive identifiers) or 404 vs 403 semantics worth flagging? Read backend/app/services/connection_service.py list_connection_versions.\n- Drawer component: any divergence from CheckHistoryDrawer conventions that matters; ENV_COLORS/envLabel import correctness (they live in api/connections.ts); JSON.stringify of config — any risk of rendering secrets (versions are documented credential-free — verify in the backend model backend/app/db/models.py ConnectionVersion or similar that no secret field is versioned).\n- ConnectionEdit: History button only when state ok — drawer receives null connection otherwise; open-state handling on […]
+  "prompt": "You are a code-review finder for repo /home/<USER>/Coding/Python/DataQ, reviewing PR #683 (branch feature/issue-654-connection-history-ui vs main). CRITICAL: do NOT run `git checkout` or otherwise change the repo's HEAD/working tree — the main session is working in the same directory. Read branch files only via `git show feature/issue-654-connection-history-ui:<path>` and diffs via `git diff main...feature/issue-654-connection-history-ui`.\n\nThe PR adds a connection version-history drawer (#654): api/connections.ts gains ConnectionVersion + listConnectionVersions; new components/connections/ConnectionHistoryDrawer.tsx (mirrors components/checks/CheckHistoryDrawer.tsx); pages/ConnectionEdit.tsx gets a History button + drawer; tests in tests/pages/ConnectionEdit.test.tsx.\n\nCover ALL angles in one pass (correctness line-by-line, removed behavior, cross-file, reuse/simplification, conventions vs CLAUDE.md):\n- Does ConnectionVersion faithfully mirror backend ConnectionVersionRead (backend/app/api/v1/connections.py ~line 205-238)? Field names/nullability.\n- Backend authz: does GET /connections/{id}/versions leak anything (config could contain non-secret but sensitive identifiers) or 404 vs 403 semantics worth flagging? Read backend/app/services/connection_service.py list_connection_versions.\n- Drawer component: any divergence from CheckHistoryDrawer conventions that matters; ENV_COLORS/envLabel import correctness (they live in api/connections.ts); JSON.stringify of config — any risk of rendering secrets (versions are documented credential-free — verify in the backend model backend/app/db/models.py ConnectionVersion or similar that no secret field is versioned).\n- ConnectionEdit: History button only when state ok — drawer receives null connection otherwise; open-state handling on […]
 
 > TOOL
 
@@ -6870,7 +6870,7 @@ tool_use Read
 id: toolu_01RqVcuxPsj6b9fAY7R4FYJE
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Suites.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Suites.tsx",
   "offset": 440,
   "limit": 140
 }
@@ -6950,7 +6950,7 @@ tool_use Read
 id: toolu_01EXzqoe1GEQFm8oc52dKjmw
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/api/suites.ts",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/api/suites.ts",
   "offset": 106,
   "limit": 65
 }
@@ -7008,7 +7008,7 @@ id: toolu_01Gkb9LPSdWAduUPfaaJdU3y
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/api/suites.ts",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/api/suites.ts",
   "old_string": "/** Mirrors the backend `CheckRead` schema (read-only here — editor is a later slice). */\nexport interface Check {\n  id: string;\n  suite_id: string;\n  name: string;\n  kind: string;\n  expectation_type: string;\n  config: Record<string, unknown>;\n  warn_threshold: number | null;\n  fail_threshold: number | null;\n  critical_threshold: number | null;\n}",
   "new_string": "/** Mirrors the backend `CheckRead` schema (read-only here — editor is a later slice). */\nexport interface Check {\n  id: string;\n  suite_id: string;\n  name: string;\n  kind: string;\n  expectation_type: string;\n  config: Record<string, unknown>;\n  warn_threshold: number | null;\n  fail_threshold: number | null;\n  critical_threshold: number | null;\n  /** Alert suppression (#370): in the future = alerts muted until then; null /\n   *  past = active. Set via the snooze endpoints, never PATCH. */\n  alert_snoozed_until: string | null;\n}"
 }
@@ -7019,7 +7019,7 @@ id: toolu_01Gkb9LPSdWAduUPfaaJdU3y
 tool_result
 id: toolu_01Gkb9LPSdWAduUPfaaJdU3y
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/api/suites.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/api/suites.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7029,7 +7029,7 @@ id: toolu_012fMk89V7Ae7kc2peb2gmsL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/api/suites.ts",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/api/suites.ts",
   "old_string": "export async function deleteCheck(suiteId: string, checkId: string): Promise<void> {\n  await api.delete(`/suites/${suiteId}/checks/${checkId}`);\n}",
   "new_string": "export async function deleteCheck(suiteId: string, checkId: string): Promise<void> {\n  await api.delete(`/suites/${suiteId}/checks/${checkId}`);\n}\n\n/** Mute a noisy check's alerts for N hours (edit-gated; backend caps at 720h). */\nexport async function snoozeCheck(\n  suiteId: string,\n  checkId: string,\n  hours: number,\n): Promise<Check> {\n  const { data } = await api.post<Check>(`/suites/${suiteId}/checks/${checkId}/snooze`, { hours });\n  return data;\n}\n\n/** Clear a check's alert snooze — alerts fire again immediately (edit-gated). */\nexport async function clearCheckSnooze(suiteId: string, checkId: string): Promise<Check> {\n  const { data } = await api.delete<Check>(`/suites/${suiteId}/checks/${checkId}/snooze`);\n  return data;\n}"
 }
@@ -7040,7 +7040,7 @@ id: toolu_012fMk89V7Ae7kc2peb2gmsL
 tool_result
 id: toolu_012fMk89V7Ae7kc2peb2gmsL
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/api/suites.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/api/suites.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7108,7 +7108,7 @@ id: toolu_01J1osebSaKLxUzMX77sn87o
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Suites.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Suites.tsx",
   "old_string": "import { PlayCircleOutlined } from '@ant-design/icons';\nimport { App, Alert, Button, Card, Empty, Flex, Spin, Tag, Tooltip, Typography } from 'antd';",
   "new_string": "import { PlayCircleOutlined } from '@ant-design/icons';\nimport { App, Alert, Button, Card, Dropdown, Empty, Flex, Spin, Tag, Tooltip, Typography } from 'antd';"
 }
@@ -7119,7 +7119,7 @@ id: toolu_01J1osebSaKLxUzMX77sn87o
 tool_result
 id: toolu_01J1osebSaKLxUzMX77sn87o
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/pages/Suites.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/pages/Suites.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7129,7 +7129,7 @@ id: toolu_01TdUkgonWkunzbH83cqjMHL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Suites.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Suites.tsx",
   "old_string": "import {\n  canManageSuite,\n  canRunSuite,\n  type Check,\n  deleteCheck,\n  deleteSuite,\n  exportSuite,\n  listChecks,\n  listSuites,\n  type Suite,\n} from '../api/suites';",
   "new_string": "import {\n  canManageSuite,\n  canRunSuite,\n  type Check,\n  clearCheckSnooze,\n  deleteCheck,\n  deleteSuite,\n  exportSuite,\n  listChecks,\n  listSuites,\n  snoozeCheck,\n  type Suite,\n} from '../api/suites';\nimport { formatTimestamp } from '../components/results/resultsFormat';"
 }
@@ -7140,7 +7140,7 @@ id: toolu_01TdUkgonWkunzbH83cqjMHL
 tool_result
 id: toolu_01TdUkgonWkunzbH83cqjMHL
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/pages/Suites.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/pages/Suites.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7154,7 +7154,7 @@ id: toolu_01P44hSH19JzyrJzihuNod3Y
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Suites.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Suites.tsx",
   "old_string": "function ChecksList({\n  suiteId,\n  state,\n  onAdd,\n  onEdit,\n  onChanged,\n}: {\n  suiteId: string;\n  state: AsyncState<Check[]>;\n  onAdd: () => void;\n  onEdit: (check: Check) => void;\n  onChanged: () => void;\n}) {\n  const { message, modal } = App.useApp();\n\n  const onDelete = (check: Check) => {\n    modal.confirm({\n      title: `Delete “${check.name}”?`,\n      okText: 'Delete',\n      okType: 'danger',\n      onOk: async () => {\n        try {\n          await deleteCheck(suiteId, check.id);\n          message.success(`${check.name} deleted`);\n          onChanged();\n        } catch (err) {\n          message.error(`Delete failed: ${err instanceof Error ? err.message : 'unknown error'}`);\n          throw err; // keep the confirm modal open on failure\n        }\n      },\n    });\n  };",
   "new_string": "/** Snooze duration presets — hours, capped well under the backend's 720h max. */\nconst SNOOZE_PRESETS = [\n  { key: '1', label: '1 hour', hours: 1 },\n  { key: '24', label: '24 hours', hours: 24 },\n  { key: '168', label: '7 days', hours: 168 },\n] as const;\n\n/** A check is snoozed only while the timestamp is in the future (#370). */\nconst isSnoozed = (check: Check): boolean =>\n  check.alert_snoozed_until !== null && new Date(check.alert_snoozed_until) > new Date();\n\nfunction ChecksList({\n  suiteId,\n  state,\n  onAdd,\n  onEdit,\n  onChanged,\n}: {\n  suiteId: string;\n  state: AsyncState<Check[]>;\n  onAdd: () => void;\n  onEdit: (check: Check) => void;\n  onChanged: () => void;\n}) […]
 
@@ -7163,7 +7163,7 @@ id: toolu_01P44hSH19JzyrJzihuNod3Y
 tool_result
 id: toolu_01P44hSH19JzyrJzihuNod3Y
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/pages/Suites.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/pages/Suites.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7173,7 +7173,7 @@ id: toolu_01UvFmnoUyxFiX4eQw3USxR8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Suites.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Suites.tsx",
   "old_string": "          renderItem={(check) => (\n            <SimpleList.Item\n              actions={[\n                <Button key=\"edit\" type=\"link\" size=\"small\" onClick={() => onEdit(check)}>\n                  Edit\n                </Button>,\n                <Button\n                  key=\"delete\"\n                  type=\"link\"\n                  size=\"small\"\n                  danger\n                  onClick={() => onDelete(check)}\n                >\n                  Delete\n                </Button>,\n              ]}\n            >\n              <Flex vertical gap={2}>\n                <Typography.Text strong>{check.name}</Typography.Text>\n                <Typography.Text type=\"secondary\" style={{ fontSize: 12 }}>\n                  {check.expectation_type}\n                </Typography.Text>\n              </Flex>\n            </SimpleList.Item>\n          )}",
   "new_string": "          renderItem={(check) => (\n            <SimpleList.Item\n              actions={[\n                isSnoozed(check) ? (\n                  <Button key=\"snooze\" type=\"link\" size=\"small\" onClick={() => onUnsnooze(check)}>\n                    Unsnooze\n                  </Button>\n                ) : (\n                  <Dropdown\n                    key=\"snooze\"\n                    menu={{\n                      items: SNOOZE_PRESETS.map((p) => ({ key: p.key, label: p.label })),\n                      onClick: ({ key }) => {\n                        const preset = SNOOZE_PRESETS.find((p) => p.key === key);\n                        if (preset) void onSnooze(check, preset.hours, preset.label);\n                      },\n                    }}\n                    trigger={['click']}\n                  >\n                    <Button type=\"link\" size=\"small\">\n                      Snooze\n                    </Button>\n                  </Dropdown>\n                ),\n                <Button key=\"edit\" type=\"link\" size=\"small\" onClick={() => onEdit(check)}>\n                  Edit\n                </Button>,\n                <Button\n                  key=\"delete\"\n                  type=\"link\"\n                  size=\"small\"\n                  danger\n                  onClick={() => onDelete(check)}\n                >\n                  Delete\n                </Button>,\n              ]}\n            >\n              <Flex vertical gap={2}>\n                <Flex gap={8} align=\"center\" wrap>\n                  <Typography.Text strong>{check.name}</Typography.Text>\n                  {isSnoozed(check) && (\n                    <Tooltip title=\"Alerts for this check are muted until then; results still record.\">\n                      <Tag color=\"orange\" style={{ marginInlineEnd: 0 }}>\n                        Snoozed until {formatTimestamp(check.alert_snoozed_until)}\n                      </Tag>\n                    </Tooltip>\n                  )}\n                </Flex>\n                <Typography.Text type=\"secondary\" style={{ fontSize: 12 }}>\n                  {check.expectation_type}\n                </Typography.Text>\n              </Flex>\n            </SimpleList.Item>\n          )}"
 }
@@ -7184,7 +7184,7 @@ id: toolu_01UvFmnoUyxFiX4eQw3USxR8
 tool_result
 id: toolu_01UvFmnoUyxFiX4eQw3USxR8
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/pages/Suites.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/pages/Suites.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7304,7 +7304,7 @@ tool_use Bash
 id: toolu_01SXu1oUJSuaNgYM1yWkY6Nj
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ && python3 - <<'EOF'\nimport re\nfor path, anchor in [\n    (\"frontend/tests/pages/Suites.test.tsx\", \"    critical_threshold: null,\\n    ...overrides,\"),\n    (\"frontend/tests/pages/CheckEdit.test.tsx\", \"  warn_threshold: 5,\\n  fail_threshold: 10,\\n  critical_threshold: null,\\n};\"),\n    (\"frontend/tests/pages/RunDetail.test.tsx\", None),\n]:\n    src = open(path).read()\n    if path.endswith(\"Suites.test.tsx\"):\n        src = src.replace(\"    critical_threshold: null,\\n    ...overrides,\", \"    critical_threshold: null,\\n    alert_snoozed_until: null,\\n    ...overrides,\", 1)\n    elif path.endswith(\"CheckEdit.test.tsx\"):\n        src = src.replace(\"  warn_threshold: 5,\\n  fail_threshold: 10,\\n  critical_threshold: null,\\n};\", \"  warn_threshold: 5,\\n  fail_threshold: 10,\\n  critical_threshold: null,\\n  alert_snoozed_until: null,\\n};\", 1)\n    else:\n        src = src.replace(\"  warn_threshold: null,\\n  fail_threshold: null,\\n  critical_threshold: null,\", \"  warn_threshold: null,\\n  fail_threshold: null,\\n  critical_threshold: null,\\n  alert_snoozed_until: null,\", 1)\n    open(path, \"w\").write(src)\nprint(\"done\")\nEOF\ncd frontend && pnpm exec tsc --noEmit 2>&1 | head -5; echo \"tsc-exit:$?\"",
+  "command": "cd /home/<USER>/Coding/Python/DataQ && python3 - <<'EOF'\nimport re\nfor path, anchor in [\n    (\"frontend/tests/pages/Suites.test.tsx\", \"    critical_threshold: null,\\n    ...overrides,\"),\n    (\"frontend/tests/pages/CheckEdit.test.tsx\", \"  warn_threshold: 5,\\n  fail_threshold: 10,\\n  critical_threshold: null,\\n};\"),\n    (\"frontend/tests/pages/RunDetail.test.tsx\", None),\n]:\n    src = open(path).read()\n    if path.endswith(\"Suites.test.tsx\"):\n        src = src.replace(\"    critical_threshold: null,\\n    ...overrides,\", \"    critical_threshold: null,\\n    alert_snoozed_until: null,\\n    ...overrides,\", 1)\n    elif path.endswith(\"CheckEdit.test.tsx\"):\n        src = src.replace(\"  warn_threshold: 5,\\n  fail_threshold: 10,\\n  critical_threshold: null,\\n};\", \"  warn_threshold: 5,\\n  fail_threshold: 10,\\n  critical_threshold: null,\\n  alert_snoozed_until: null,\\n};\", 1)\n    else:\n        src = src.replace(\"  warn_threshold: null,\\n  fail_threshold: null,\\n  critical_threshold: null,\", \"  warn_threshold: null,\\n  fail_threshold: null,\\n  critical_threshold: null,\\n  alert_snoozed_until: null,\", 1)\n    open(path, \"w\").write(src)\nprint(\"done\")\nEOF\ncd frontend && pnpm exec tsc --noEmit 2>&1 | head -5; echo \"tsc-exit:$?\"",
   "description": "Add alert_snoozed_until to test fixtures"
 }
 ```
@@ -7366,7 +7366,7 @@ tool_use Read
 id: toolu_01JuztHwD6obzRfH7MWZpDcg
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Suites.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Suites.test.tsx",
   "offset": 1,
   "limit": 55
 }
@@ -7423,7 +7423,7 @@ tool_use Read
 id: toolu_01VtMnkXUbsfEKce2EKVTx49
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Suites.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Suites.test.tsx",
   "offset": 190,
   "limit": 25
 }
@@ -7468,7 +7468,7 @@ id: toolu_01WgevMSPo11K6DiAbsB4Vmv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Suites.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Suites.test.tsx",
   "old_string": "import {\n  type Check,\n  deleteCheck,\n  deleteSuite,\n  listChecks,\n  listSuites,\n  type Suite,\n} from '../../src/api/suites';",
   "new_string": "import {\n  type Check,\n  clearCheckSnooze,\n  deleteCheck,\n  deleteSuite,\n  listChecks,\n  listSuites,\n  snoozeCheck,\n  type Suite,\n} from '../../src/api/suites';"
 }
@@ -7479,7 +7479,7 @@ id: toolu_01WgevMSPo11K6DiAbsB4Vmv
 tool_result
 id: toolu_01WgevMSPo11K6DiAbsB4Vmv
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Suites.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Suites.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7489,7 +7489,7 @@ id: toolu_016KbpzooqtuJHUzZDNhejSa
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Suites.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Suites.test.tsx",
   "old_string": "    listSuites: vi.fn(),\n    listChecks: vi.fn(),\n    deleteSuite: vi.fn(),\n    deleteCheck: vi.fn(),\n  };\n});",
   "new_string": "    listSuites: vi.fn(),\n    listChecks: vi.fn(),\n    deleteSuite: vi.fn(),\n    deleteCheck: vi.fn(),\n    snoozeCheck: vi.fn(),\n    clearCheckSnooze: vi.fn(),\n  };\n});"
 }
@@ -7500,7 +7500,7 @@ id: toolu_016KbpzooqtuJHUzZDNhejSa
 tool_result
 id: toolu_016KbpzooqtuJHUzZDNhejSa
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Suites.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Suites.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7510,7 +7510,7 @@ id: toolu_01F58jvi9ZmicYzo3PhXLtxn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Suites.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Suites.test.tsx",
   "old_string": "const mockDeleteCheck = vi.mocked(deleteCheck);",
   "new_string": "const mockDeleteCheck = vi.mocked(deleteCheck);\nconst mockSnoozeCheck = vi.mocked(snoozeCheck);\nconst mockClearSnooze = vi.mocked(clearCheckSnooze);"
 }
@@ -7521,7 +7521,7 @@ id: toolu_01F58jvi9ZmicYzo3PhXLtxn
 tool_result
 id: toolu_01F58jvi9ZmicYzo3PhXLtxn
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Suites.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Suites.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7531,7 +7531,7 @@ id: toolu_017d3NcFNa7wEeoRcV8HCphL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Suites.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Suites.test.tsx",
   "old_string": "  it('deletes a suite via the detail panel after confirming', async () => {",
   "new_string": "  it('snoozes a check from the detail panel and refreshes the list (#653)', async () => {\n    const user = userEvent.setup();\n    mockListConnections.mockResolvedValue([connection]);\n    mockListSuites.mockResolvedValue([suite()]);\n    const active = check();\n    const snoozed = check({ alert_snoozed_until: '2099-01-01T00:00:00Z' });\n    mockListChecks.mockResolvedValueOnce([active]).mockResolvedValueOnce([snoozed]);\n    mockSnoozeCheck.mockResolvedValue(snoozed);\n\n    renderPage();\n    await user.click(await screen.findByText('orders-suite'));\n    await screen.findByText('order_id not null');\n\n    await user.click(screen.getByRole('button', { name: 'Snooze' }));\n    await user.click(await screen.findByText('24 hours'));\n\n    await waitFor(() => expect(mockSnoozeCheck).toHaveBeenCalledWith('s1', 'chk1', 24));\n    // The list refetches and the row now carries the snoozed badge.\n    expect(await screen.findByText(/Snoozed until/)).toBeInTheDocument();\n  });\n\n  it('unsnoozes a snoozed check (badge + Unsnooze action) (#653)', async () => {\n    const user = userEvent.setup();\n    mockListConnections.mockResolvedValue([connection]);\n    mockListSuites.mockResolvedValue([suite()]);\n    const snoozed = check({ alert_snoozed_until: '2099-01-01T00:00:00Z' });\n    mockListChecks.mockResolvedValueOnce([snoozed]).mockResolvedValueOnce([check()]);\n    mockClearSnooze.mockResolvedValue(check());\n\n    renderPage();\n    await user.click(await screen.findByText('orders-suite'));\n    await screen.findByText(/Snoozed until/);\n\n    await user.click(screen.getByRole('button', { name: 'Unsnooze' }));\n\n    await waitFor(() => expect(mockClearSnooze).toHaveBeenCalledWith('s1', 'chk1'));\n    await waitFor(() => expect(screen.queryByText(/Snoozed until/)).not.toBeInTheDocument());\n  });\n\n  it('treats an expired snooze as active — no badge, Snooze offered (#653)', async () => {\n    const user = userEvent.setup();\n    mockListConnections.mockResolvedValue([connection]);\n    mockListSuites.mockResolvedValue([suite()]);\n    mockListChecks.mockResolvedValue([check({ alert_snoozed_until: '2020-01-01T00:00:00Z' })]);\n\n    renderPage();\n    await user.click(await screen.findByText('orders-suite'));\n    await screen.findByText('order_id not null');\n\n    expect(screen.queryByText(/Snoozed until/)).not.toBeInTheDocument();\n    expect(screen.getByRole('button', { name: 'Snooze' })).toBeInTheDocument();\n  });\n\n  it('deletes a suite via […]
 
@@ -7540,7 +7540,7 @@ id: toolu_017d3NcFNa7wEeoRcV8HCphL
 tool_result
 id: toolu_017d3NcFNa7wEeoRcV8HCphL
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Suites.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Suites.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7571,7 +7571,7 @@ tool_use Bash
 id: toolu_011R6n17rnUt4FU4or6MczbM
 ```json
 {
-  "command": "pnpm vitest run 2>&1 | grep -E \"Tests \" ; cd /Users/arijit/Coding/Python/DataQ && git add frontend/src frontend/tests && git commit -m \"feat(frontend): per-check alert snooze/unsnooze in the suite detail panel (#653)\n\nThe #370 backend snooze (POST/DELETE .../checks/{id}/snooze) had zero\nfrontend surface — no in-app way to mute a noisy check. Adds\nalert_snoozed_until to the Check client type (every checks response already\nreturned it), snoozeCheck/clearCheckSnooze client calls, a Snooze dropdown\n(1h / 24h / 7d) + Unsnooze action on each check row, and an orange\n'Snoozed until …' badge while the suppression is active (an expired\ntimestamp reads as active — matching the backend semantics).\n\nFixes #653\n\nCo-Authored-By: Claude Fable 5 <noreply@anthropic.com>\" && git push -u origin feature/issue-653-snooze-ui && gh pr create --title \"feat(frontend): per-check alert snooze/unsnooze UI (#653)\" --milestone \"v1.1 Week 2 — Portability: OTel logs, secrets lifecycle, dry-run depth\" --body \"## Summary\n- Exposes the Week-6 backend per-check alert snooze (#370) in the UI: each check row in the suite detail panel gets a **Snooze** dropdown (1 hour / 24 hours / 7 days — well under the backend's 720h cap) or an **Unsnooze** action when already snoozed, plus an orange **Snoozed until <ts>** badge with a tooltip clarifying results still record.\n- […]
+  "command": "pnpm vitest run 2>&1 | grep -E \"Tests \" ; cd /home/<USER>/Coding/Python/DataQ && git add frontend/src frontend/tests && git commit -m \"feat(frontend): per-check alert snooze/unsnooze in the suite detail panel (#653)\n\nThe #370 backend snooze (POST/DELETE .../checks/{id}/snooze) had zero\nfrontend surface — no in-app way to mute a noisy check. Adds\nalert_snoozed_until to the Check client type (every checks response already\nreturned it), snoozeCheck/clearCheckSnooze client calls, a Snooze dropdown\n(1h / 24h / 7d) + Unsnooze action on each check row, and an orange\n'Snoozed until …' badge while the suppression is active (an expired\ntimestamp reads as active — matching the backend semantics).\n\nFixes #653\n\nCo-Authored-By: Claude Fable 5 <<REDACTED_EMAIL>>\" && git push -u origin feature/issue-653-snooze-ui && gh pr create --title \"feat(frontend): per-check alert snooze/unsnooze UI (#653)\" --milestone \"v1.1 Week 2 — Portability: OTel logs, secrets lifecycle, dry-run depth\" --body \"## Summary\n- Exposes the Week-6 backend per-check alert snooze (#370) in the UI: each check row in the suite detail panel gets a **Snooze** dropdown (1 hour / 24 hours / 7 days — well under the backend's 720h cap) or an **Unsnooze** action when already snoozed, plus an orange **Snoozed until <ts>** badge with a tooltip clarifying results still record.\n- […]
 
 > TOOL
 
@@ -7623,7 +7623,7 @@ tool_use Write
 id: toolu_01U2XCi3nbet374qWHx3WfBb
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/components/HistoryDrawer.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/components/HistoryDrawer.tsx",
   "content": "import { Alert, Drawer, Empty, Flex, Spin, Tag, Typography } from 'antd';\nimport type { ReactNode } from 'react';\nimport SimpleList from './SimpleList';\n\nimport { formatTimestamp } from './results/resultsFormat';\nimport { useAsyncData } from '../hooks/useAsyncData';\n\n/** The header fields every immutable version snapshot shares (check #280,\n *  connection #654) — the entity-specific detail rows come from `renderDetails`. */\nexport interface HistoryVersion {\n  version_no: number;\n  name: string;\n  changed_by_name: string | null;\n  created_at: string;\n}\n\n/**\n * Read-only version-history drawer shared by checks (#280) and connections\n * (#654) — \"see previous config before overwriting\". Each version is an\n * immutable snapshot the backend records on create and on every real edit;\n * newest first. v1 is view-only (no restore). Mounted only while open\n * (`destroyOnHidden`) so it refetches each time.\n */\nexport function HistoryDrawer<V extends HistoryVersion>({\n  open,\n  subject,\n  fetchVersions,\n  renderDetails,\n  onClose,\n}: {\n  open: boolean;\n  /** The entity whose history to show; null while none is selected/loaded. */\n  subject: { name: string } | null;\n  /** Fetches the subject's versions, newest first (close over the ids). */\n  fetchVersions: () => Promise<V[]>;\n  /** Entity-specific detail block (a `<Descriptions>`) under the shared header. */\n  renderDetails: (version: V) => ReactNode;\n  onClose: () => void;\n}) {\n  return […]
 
 > TOOL
@@ -7631,7 +7631,7 @@ id: toolu_01U2XCi3nbet374qWHx3WfBb
 tool_result
 id: toolu_01U2XCi3nbet374qWHx3WfBb
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ/frontend/src/components/HistoryDrawer.tsx (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ/frontend/src/components/HistoryDrawer.tsx (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7640,7 +7640,7 @@ tool_use Write
 id: toolu_01JLxYCAEGzE1LzJPCZPWkcM
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/components/connections/ConnectionHistoryDrawer.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/components/connections/ConnectionHistoryDrawer.tsx",
   "content": "import { Descriptions, Tag } from 'antd';\n\nimport {\n  CONNECTION_TYPE_LABELS,\n  type ConnectionVersion,\n  ENV_COLORS,\n  envLabel,\n  listConnectionVersions,\n} from '../../api/connections';\nimport { ConfigJson, HistoryDrawer } from '../HistoryDrawer';\n\n/**\n * Connection version history (#654) — the connection twin of the check-history\n * drawer (#280), on the shared `HistoryDrawer` shell. Snapshots are\n * credential-free: only the editable, non-secret fields are versioned.\n */\nexport function ConnectionHistoryDrawer({\n  open,\n  connection,\n  onClose,\n}: {\n  open: boolean;\n  /** The connection whose history to show; null while none is loaded. */\n  connection: { id: string; name: string } | null;\n  onClose: () => void;\n}) {\n  return (\n    <HistoryDrawer<ConnectionVersion>\n      open={open}\n      subject={connection}\n      onClose={onClose}\n      fetchVersions={() => listConnectionVersions(connection!.id)}\n      renderDetails={(version) => (\n        <Descriptions size=\"small\" column={1} bordered styles={{ label: { width: 120 } }}>\n          <Descriptions.Item label=\"Type\">\n            {/* Historical snapshots may carry values outside today's union\n                (renamed/retired types or envs) — fall back to the raw value;\n                an unknown env just renders an uncoloured tag. */}\n            {CONNECTION_TYPE_LABELS[version.type] ?? version.type}\n          </Descriptions.Item>\n          <Descriptions.Item label=\"Environment\">\n            <Tag color={ENV_COLORS[version.env]}>{envLabel(version.env)}</Tag>\n          </Descriptions.Item>\n          <Descriptions.Item label=\"Config\">\n            <ConfigJson config={version.config} />\n          </Descriptions.Item>\n        </Descriptions>\n      )}\n    />\n  );\n}\n"
 }
 ```
@@ -7650,7 +7650,7 @@ id: toolu_01JLxYCAEGzE1LzJPCZPWkcM
 tool_result
 id: toolu_01JLxYCAEGzE1LzJPCZPWkcM
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/components/connections/ConnectionHistoryDrawer.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/components/connections/ConnectionHistoryDrawer.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7659,7 +7659,7 @@ tool_use Write
 id: toolu_01D7HZHxh4WS71R1Cmqtgc5D
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/components/checks/CheckHistoryDrawer.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/components/checks/CheckHistoryDrawer.tsx",
   "content": "import { Descriptions } from 'antd';\n\nimport { type CheckVersion, listCheckVersions } from '../../api/suites';\nimport { ConfigJson, HistoryDrawer } from '../HistoryDrawer';\nimport { EXPECTATION_BY_TYPE } from './expectationCatalog';\n\n/**\n * Check version history (#280) — \"see previous config before overwriting\", on\n * the shared `HistoryDrawer` shell (also used by connections, #654).\n */\nexport function CheckHistoryDrawer({\n  open,\n  suiteId,\n  check,\n  onClose,\n}: {\n  open: boolean;\n  suiteId: string;\n  /** The check whose history to show; null while none is selected. */\n  check: { id: string; name: string } | null;\n  onClose: () => void;\n}) {\n  return (\n    <HistoryDrawer<CheckVersion>\n      open={open}\n      subject={check}\n      onClose={onClose}\n      fetchVersions={() => listCheckVersions(suiteId, check!.id)}\n      renderDetails={(version) => (\n        <Descriptions size=\"small\" column={1} bordered styles={{ label: { width: 120 } }}>\n          <Descriptions.Item label=\"Expectation\">\n            {EXPECTATION_BY_TYPE[version.expectation_type]?.label ?? version.expectation_type}\n          </Descriptions.Item>\n          <Descriptions.Item label=\"Config\">\n            <ConfigJson config={version.config} />\n          </Descriptions.Item>\n          <Descriptions.Item label=\"Thresholds\">{formatThresholds(version)}</Descriptions.Item>\n        </Descriptions>\n      )}\n    />\n  );\n}\n\n/** Compact threshold line, or an em dash when the check is plain pass/fail. Labels\n *  mirror the editor's `Warn ≥ / Fail ≥ / Critical ≥` fields (SeverityThresholdFields). */\nfunction formatThresholds(version: CheckVersion): string {\n  const parts: string[] = [];\n  if (version.warn_threshold !== null) parts.push(`Warn ≥ ${version.warn_threshold}`);\n  if (version.fail_threshold !== null) parts.push(`Fail ≥ ${version.fail_threshold}`);\n  if (version.critical_threshold !== null) parts.push(`Critical ≥ ${version.critical_threshold}`);\n  return parts.length > 0 ? […]
 
 > TOOL
@@ -7667,7 +7667,7 @@ id: toolu_01D7HZHxh4WS71R1Cmqtgc5D
 tool_result
 id: toolu_01D7HZHxh4WS71R1Cmqtgc5D
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/components/checks/CheckHistoryDrawer.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/components/checks/CheckHistoryDrawer.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7677,7 +7677,7 @@ id: toolu_01T8xYt6fAS8ShSY2cYe2xq7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/ConnectionEdit.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/ConnectionEdit.test.tsx",
   "old_string": "  it('shows an empty history state for a pre-versioning connection (#654)', async () => {",
   "new_string": "  it('surfaces a history load error inside the drawer (#654)', async () => {\n    const user = userEvent.setup();\n    mockGet.mockResolvedValue(existing);\n    mockVersions.mockRejectedValue(new Error('versions down'));\n    renderPage();\n\n    await waitFor(() => expect(screen.getByLabelText('Account')).toHaveValue('acc1'));\n    await user.click(screen.getByRole('button', { name: /History/ }));\n\n    expect(await screen.findByText('Failed to load history')).toBeInTheDocument();\n    expect(screen.getByText('versions down')).toBeInTheDocument();\n  });\n\n  it('shows an empty history state for a pre-versioning connection (#654)', async () => {"
 }
@@ -7688,7 +7688,7 @@ id: toolu_01T8xYt6fAS8ShSY2cYe2xq7
 tool_result
 id: toolu_01T8xYt6fAS8ShSY2cYe2xq7
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/tests/pages/ConnectionEdit.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/tests/pages/ConnectionEdit.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7709,10 +7709,10 @@ id: toolu_01Sz5VY4Bzmzf94mn7sm5Qhq
 ```
 Exit code 1
 
-/Users/arijit/Coding/Python/DataQ/frontend/src/components/checks/CheckHistoryDrawer.tsx
+/home/<USER>/Coding/Python/DataQ/frontend/src/components/checks/CheckHistoryDrawer.tsx
   28:55  error  Forbidden non-null assertion  @typescript-eslint/no-non-null-assertion
 
-/Users/arijit/Coding/Python/DataQ/frontend/src/components/connections/ConnectionHistoryDrawer.tsx
+/home/<USER>/Coding/Python/DataQ/frontend/src/components/connections/ConnectionHistoryDrawer.tsx
   32:51  error  Forbidden non-null assertion  @typescript-eslint/no-non-null-assertion
 
 ✖ 2 problems (2 errors, 0 warnings)
@@ -7725,7 +7725,7 @@ id: toolu_01LC96pCbVNvb8awoNrcY7PX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/components/checks/CheckHistoryDrawer.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/components/checks/CheckHistoryDrawer.tsx",
   "old_string": "      fetchVersions={() => listCheckVersions(suiteId, check!.id)}",
   "new_string": "      // The body only mounts with a subject, so the null branch never fetches.\n      fetchVersions={() => (check ? listCheckVersions(suiteId, check.id) : Promise.resolve([]))}"
 }
@@ -7736,7 +7736,7 @@ id: toolu_01LC96pCbVNvb8awoNrcY7PX
 tool_result
 id: toolu_01LC96pCbVNvb8awoNrcY7PX
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/components/checks/CheckHistoryDrawer.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/components/checks/CheckHistoryDrawer.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7746,7 +7746,7 @@ id: toolu_01WGmu5myi2L23jusZCPybrE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/components/connections/ConnectionHistoryDrawer.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/components/connections/ConnectionHistoryDrawer.tsx",
   "old_string": "      fetchVersions={() => listConnectionVersions(connection!.id)}",
   "new_string": "      // The body only mounts with a subject, so the null branch never fetches.\n      fetchVersions={() =>\n        connection ? listConnectionVersions(connection.id) : Promise.resolve([])\n      }"
 }
@@ -7757,7 +7757,7 @@ id: toolu_01WGmu5myi2L23jusZCPybrE
 tool_result
 id: toolu_01WGmu5myi2L23jusZCPybrE
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/components/connections/ConnectionHistoryDrawer.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/components/connections/ConnectionHistoryDrawer.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7795,25 +7795,25 @@ id: toolu_013NDfNqSpLhzsPgneN5AJaP
 tool_result
 id: toolu_013NDfNqSpLhzsPgneN5AJaP
 ```
-[ERR_PNPM_NO_PKG_MANIFEST] No package.json found in /Users/arijit/Coding/Python/DataQ
-[ERROR] Command failed with exit code 1: /Users/arijit/.local/share/fnm/node-versions/v24.17.0/installation/bin/node /Users/arijit/.cache/node/corepack/v1/pnpm/11.8.0/bin/pnpm.mjs install
+[ERR_PNPM_NO_PKG_MANIFEST] No package.json found in /home/<USER>/Coding/Python/DataQ
+[ERROR] Command failed with exit code 1: /home/<USER>/.local/share/fnm/node-versions/v24.17.0/installation/bin/node /home/<USER>/.cache/node/corepack/v1/pnpm/11.8.0/bin/pnpm.mjs install
 
-pnpm: Command failed with exit code 1: /Users/arijit/.local/share/fnm/node-versions/v24.17.0/installation/bin/node /Users/arijit/.cache/node/corepack/v1/pnpm/11.8.0/bin/pnpm.mjs install
-    at getFinalError (file:///Users/arijit/.cache/node/corepack/v1/pnpm/11.8.0/dist/pnpm.mjs:34109:14)
-    at makeError (file:///Users/arijit/.cache/node/corepack/v1/pnpm/11.8.0/dist/pnpm.mjs:36416:21)
-    at getSyncResult (file:///Users/arijit/.cache/node/corepack/v1/pnpm/11.8.0/dist/pnpm.mjs:38260:10)
-    at spawnSubprocessSync (file:///Users/arijit/.cache/node/corepack/v1/pnpm/11.8.0/dist/pnpm.mjs:38220:14)
-    at execaCoreSync (file:///Users/arijit/.cache/node/corepack/v1/pnpm/11.8.0/dist/pnpm.mjs:38150:23)
-    at callBoundExeca (file:///Users/arijit/.cache/node/corepack/v1/pnpm/11.8.0/dist/pnpm.mjs:40678:23)
-    at boundExeca (file:///Users/arijit/.cache/node/corepack/v1/pnpm/11.8.0/dist/pnpm.mjs:40655:49)
-    at sync (file:///Users/arijit/.cache/node/corepack/v1/pnpm/11.8.0/dist/pnpm.mjs:40814:10)
-    at runPnpmCli (file:///Users/arijit/.cache/node/corepack/v1/pnpm/11.8.0/dist/pnpm.mjs:246476:5)
-    at runDepsStatusCheck (file:///Users/arijit/.cache/node/corepack/v1/pnpm/11.8.0/dist/pnpm.mjs:248210:7)
+pnpm: Command failed with exit code 1: /home/<USER>/.local/share/fnm/node-versions/v24.17.0/installation/bin/node /home/<USER>/.cache/node/corepack/v1/pnpm/11.8.0/bin/pnpm.mjs install
+    at getFinalError (file:///home/<USER>/.cache/node/corepack/v1/pnpm/11.8.0/dist/pnpm.mjs:34109:14)
+    at makeError (file:///home/<USER>/.cache/node/corepack/v1/pnpm/11.8.0/dist/pnpm.mjs:36416:21)
+    at getSyncResult (file:///home/<USER>/.cache/node/corepack/v1/pnpm/11.8.0/dist/pnpm.mjs:38260:10)
+    at spawnSubprocessSync (file:///home/<USER>/.cache/node/corepack/v1/pnpm/11.8.0/dist/pnpm.mjs:38220:14)
+    at execaCoreSync (file:///home/<USER>/.cache/node/corepack/v1/pnpm/11.8.0/dist/pnpm.mjs:38150:23)
+    at callBoundExeca (file:///home/<USER>/.cache/node/corepack/v1/pnpm/11.8.0/dist/pnpm.mjs:40678:23)
+    at boundExeca (file:///home/<USER>/.cache/node/corepack/v1/pnpm/11.8.0/dist/pnpm.mjs:40655:49)
+    at sync (file:///home/<USER>/.cache/node/corepack/v1/pnpm/11.8.0/dist/pnpm.mjs:40814:10)
+    at runPnpmCli (file:///home/<USER>/.cache/node/corepack/v1/pnpm/11.8.0/dist/pnpm.mjs:246476:5)
+    at runDepsStatusCheck (file:///home/<USER>/.cache/node/corepack/v1/pnpm/11.8.0/dist/pnpm.mjs:248210:7)
 tsc:1
-    at boundExeca (file:///Users/arijit/.cache/node/corepack/v1/pnpm/11.8.0/dist/pnpm.mjs:40655:49)
-    at sync (file:///Users/arijit/.cache/node/corepack/v1/pnpm/11.8.0/dist/pnpm.mjs:40814:10)
-    at runPnpmCli (file:///Users/arijit/.cache/node/corepack/v1/pnpm/11.8.0/dist/pnpm.mjs:246476:5)
-    at runDepsStatusCheck (file:///Users/arijit/.cache/node/corepack/v1/pnpm/11.8.0/dist/pnpm.mjs:248210:7)
+    at boundExeca (file:///home/<USER>/.cache/node/corepack/v1/pnpm/11.8.0/dist/pnpm.mjs:40655:49)
+    at sync (file:///home/<USER>/.cache/node/corepack/v1/pnpm/11.8.0/dist/pnpm.mjs:40814:10)
+    at runPnpmCli (file:///home/<USER>/.cache/node/corepack/v1/pnpm/11.8.0/dist/pnpm.mjs:246476:5)
+    at runDepsStatusCheck (file:///home/<USER>/.cache/node/corepack/v1/pnpm/11.8.0/dist/pnpm.mjs:248210:7)
 ```
 
 > TOOL
@@ -7822,7 +7822,7 @@ tool_use Bash
 id: toolu_01MVVFggsP1ZjZKU7fWoZiPi
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ/frontend && pnpm exec tsc --noEmit && pnpm vitest run 2>&1 | tail -3",
+  "command": "cd /home/<USER>/Coding/Python/DataQ/frontend && pnpm exec tsc --noEmit && pnpm vitest run 2>&1 | tail -3",
   "description": "Typecheck + full tests from frontend dir"
 }
 ```
@@ -7862,7 +7862,7 @@ tool_use Bash
 id: toolu_015quBQ1oK98zLNkkrTj8xP4
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ && git add frontend && git commit -m \"fixup: extract shared HistoryDrawer + error-state test + snapshot fallbacks (review findings)\n\n/code-review on #683: the connection drawer was a ~100-line near-verbatim\ncopy of CheckHistoryDrawer (second instance → extract): both now render\nthrough one generic HistoryDrawer shell (shared header/states) with an\nentity-specific renderDetails block. Adds the missing history-load-error\ntest (parity with the check drawer's coverage) and documents the\nout-of-union fallback treatment for historical type/env snapshot values.\n\nCo-Authored-By: Claude Fable 5 <noreply@anthropic.com>\" && git push && gh pr merge 683 --squash --delete-branch --auto 2>&1 | tail -1; gh pr comment 683 --body \"## /code-review findings (high effort, grouped finder agent + source verification)\n\n**Fixed in the fixup commit:**\n1. **CONFIRMED — reuse (two-instance rule):** ConnectionHistoryDrawer was a ~100-line near-verbatim copy of CheckHistoryDrawer. Extracted a generic \\`HistoryDrawer<V extends HistoryVersion>\\` (shared Drawer shell, loading/error/empty states, version header row, ConfigJson cell); both drawers now pass only their entity-specific \\`<Descriptions>\\` block. Net: the shared shell has one home for future fixes.\n2. **CONFIRMED — test parity:** the connection drawer had no error-state coverage (the check drawer does). Added the \\`listConnectionVersions\\`-rejects → 'Failed to load history' test.\n3. **Addressed via comment:** the Type row defended against out-of-union historical values but […]
+  "command": "cd /home/<USER>/Coding/Python/DataQ && git add frontend && git commit -m \"fixup: extract shared HistoryDrawer + error-state test + snapshot fallbacks (review findings)\n\n/code-review on #683: the connection drawer was a ~100-line near-verbatim\ncopy of CheckHistoryDrawer (second instance → extract): both now render\nthrough one generic HistoryDrawer shell (shared header/states) with an\nentity-specific renderDetails block. Adds the missing history-load-error\ntest (parity with the check drawer's coverage) and documents the\nout-of-union fallback treatment for historical type/env snapshot values.\n\nCo-Authored-By: Claude Fable 5 <<REDACTED_EMAIL>>\" && git push && gh pr merge 683 --squash --delete-branch --auto 2>&1 | tail -1; gh pr comment 683 --body \"## /code-review findings (high effort, grouped finder agent + source verification)\n\n**Fixed in the fixup commit:**\n1. **CONFIRMED — reuse (two-instance rule):** ConnectionHistoryDrawer was a ~100-line near-verbatim copy of CheckHistoryDrawer. Extracted a generic \\`HistoryDrawer<V extends HistoryVersion>\\` (shared Drawer shell, loading/error/empty states, version header row, ConfigJson cell); both drawers now pass only their entity-specific \\`<Descriptions>\\` block. Net: the shared shell has one home for future fixes.\n2. **CONFIRMED — test parity:** the connection drawer had no error-state coverage (the check drawer does). Added the \\`listConnectionVersions\\`-rejects → 'Failed to load history' test.\n3. **Addressed via comment:** the Type row defended against out-of-union historical values but […]
 
 > TOOL
 
@@ -7908,7 +7908,7 @@ id: toolu_01DPoTicnSNKUEUFbi1ZoRrx
 ```json
 {
   "description": "Post-merge review PR 684",
-  "prompt": "You are a code-review finder for repo /Users/arijit/Coding/Python/DataQ, reviewing the ALREADY-MERGED PR #684 (per-check alert snooze/unsnooze UI, issue #653). CRITICAL: do NOT run `git checkout` or mutate the working tree — the main session works in this directory. Inspect via `git show <sha>` / `git diff`.\n\nGet the diff: `gh pr view 684 --json mergeCommit -q .mergeCommit.oid` then `git fetch origin main --quiet && git show <mergeCommit>` (or `gh pr diff 684`).\n\nScope: frontend/src/api/suites.ts (Check.alert_snoozed_until + snoozeCheck/clearCheckSnooze), frontend/src/pages/Suites.tsx (SNOOZE_PRESETS, isSnoozed, Snooze Dropdown + Unsnooze + badge in ChecksList), fixture updates in three test files, new tests in Suites.test.tsx.\n\nAll angles in one pass: correctness (isSnoozed date parsing — backend datetime serialization format vs new Date(); Dropdown onClick key typing; void onSnooze error handling; the badge in a Flex wrap inside SimpleList — layout at narrow widths), cross-file (does the CheckEdit page or check editor ALSO need the snooze state surfaced per the issue's 'wherever checks are listed'? does e2e (frontend/e2e/*.spec.ts) touch check rows in ways the new actions break — e.g. getAllByRole button counts or row action assertions), removed behavior, reuse (existing relative-time/timestamp helpers), conventions (CLAUDE.md).\n\nAlso verify the backend serializes alert_snoozed_until […]
+  "prompt": "You are a code-review finder for repo /home/<USER>/Coding/Python/DataQ, reviewing the ALREADY-MERGED PR #684 (per-check alert snooze/unsnooze UI, issue #653). CRITICAL: do NOT run `git checkout` or mutate the working tree — the main session works in this directory. Inspect via `git show <sha>` / `git diff`.\n\nGet the diff: `gh pr view 684 --json mergeCommit -q .mergeCommit.oid` then `git fetch origin main --quiet && git show <mergeCommit>` (or `gh pr diff 684`).\n\nScope: frontend/src/api/suites.ts (Check.alert_snoozed_until + snoozeCheck/clearCheckSnooze), frontend/src/pages/Suites.tsx (SNOOZE_PRESETS, isSnoozed, Snooze Dropdown + Unsnooze + badge in ChecksList), fixture updates in three test files, new tests in Suites.test.tsx.\n\nAll angles in one pass: correctness (isSnoozed date parsing — backend datetime serialization format vs new Date(); Dropdown onClick key typing; void onSnooze error handling; the badge in a Flex wrap inside SimpleList — layout at narrow widths), cross-file (does the CheckEdit page or check editor ALSO need the snooze state surfaced per the issue's 'wherever checks are listed'? does e2e (frontend/e2e/*.spec.ts) touch check rows in ways the new actions break — e.g. getAllByRole button counts or row action assertions), removed behavior, reuse (existing relative-time/timestamp helpers), conventions (CLAUDE.md).\n\nAlso verify the backend serializes alert_snoozed_until […]
 
 > TOOL
 
@@ -8009,7 +8009,7 @@ tool_use Read
 id: toolu_01T3u6fdDusyd2kbBGe2CW7W
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/check_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/check_service.py",
   "offset": 85,
   "limit": 160
 }
@@ -8104,7 +8104,7 @@ tool_use Read
 id: toolu_0145W3isYj392DJA8zUE3jJp
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/datasources/gx_runner.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/datasources/gx_runner.py",
   "offset": 30,
   "limit": 40
 }
@@ -8331,7 +8331,7 @@ tool_use Read
 id: toolu_0133xYruJTD58shAT693qKw6
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/check_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/check_service.py",
   "offset": 267,
   "limit": 75
 }
@@ -8442,7 +8442,7 @@ tool_use Read
 id: toolu_01XG6aq6tXrN3mxehcHdf7Cx
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/suite_io_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/suite_io_service.py",
   "offset": 95,
   "limit": 75
 }
@@ -8595,7 +8595,7 @@ tool_use Read
 id: toolu_0145XBPE4vQEFKVpjhqcdyya
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/check_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/check_service.py",
   "offset": 1,
   "limit": 60
 }
@@ -8642,7 +8642,7 @@ id: toolu_01AHupUEkYoaSywRWCzhceZT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/check_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/check_service.py",
   "old_string": "\"\"\"Check CRUD — checks are GX expectations nested under a suite.\n\nA check belongs to exactly one suite (FK + cascade). This layer validates the\nsuite exists, enforces the v1 monitor-kind limit, and treats the check's\n`config` (the GX expectation kwargs) as free-form JSONB — per-expectation\nschema validation against live data is the check dry-run path (a later Week-3\ntask), not CRUD.",
   "new_string": "\"\"\"Check CRUD — checks are GX expectations nested under a suite.\n\nA check belongs to exactly one suite (FK + cascade). This layer validates the\nsuite exists, enforces the v1 monitor-kind limit, and validates the check's\n`config` at author time: expectation-kind checks resolve + construct their GX\nexpectation class (#651 — the same translation the runner performs, pulled\nforward so garbage 422s instead of persisting and only failing at run time);\nvalidation against live data remains the dry-run path, not CRUD."
 }
@@ -8653,7 +8653,7 @@ id: toolu_01AHupUEkYoaSywRWCzhceZT
 tool_result
 id: toolu_01AHupUEkYoaSywRWCzhceZT
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/services/check_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/services/check_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8663,7 +8663,7 @@ id: toolu_014a1BPaNvkByeHEBq2C2sU3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/check_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/check_service.py",
   "old_string": "def _has_positive_threshold(fail: Decimal | None, critical: Decimal | None) -> bool:\n    \"\"\"Whether a fail or critical threshold is set to a positive value.\"\"\"\n    return (fail is not None and fail > 0) or (critical is not None and critical > 0)",
   "new_string": "def _has_positive_threshold(fail: Decimal | None, critical: Decimal | None) -> bool:\n    \"\"\"Whether a fail or critical threshold is set to a positive value.\"\"\"\n    return (fail is not None and fail > 0) or (critical is not None and critical > 0)\n\n\n# Longest string allowed anywhere in an expectation config. Generous for real\n# kwargs (column names, value-set members, regexes) while blocking the\n# 100KB-column-name class of junk GX itself accepts (#651). Custom-SQL queries\n# are validated (and bounded) separately and never reach this walk.\n_CONFIG_STRING_MAX_CHARS = 1_000\n\n\ndef _find_oversized_string(value: Any, path: str = \"config\") -> str | None:\n    \"\"\"Depth-first search for a string over the cap; returns its path, or None.\"\"\"\n    if isinstance(value, str):\n        return path if len(value) > _CONFIG_STRING_MAX_CHARS else None\n    if isinstance(value, dict):\n        for key, item in value.items():\n            found = _find_oversized_string(item, f\"{path}.{key}\")\n            if found:\n                return found\n    if isinstance(value, list):\n        for i, item in enumerate(value):\n            found = _find_oversized_string(item, f\"{path}[{i}]\")\n            if found:\n […]
 
@@ -8672,7 +8672,7 @@ id: toolu_014a1BPaNvkByeHEBq2C2sU3
 tool_result
 id: toolu_014a1BPaNvkByeHEBq2C2sU3
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/services/check_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/services/check_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8726,7 +8726,7 @@ id: toolu_01CpLV375NhPRDHCYcm9te2U
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/check_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/check_service.py",
   "old_string": "    elif is_custom_sql(expectation_type):\n        validate_custom_sql_check(\n            expectation_type=expectation_type,\n            config=config,\n            connection_type=_connection_type(session, suite),\n        )\n\n    check = Check(",
   "new_string": "    elif is_custom_sql(expectation_type):\n        validate_custom_sql_check(\n            expectation_type=expectation_type,\n            config=config,\n            connection_type=_connection_type(session, suite),\n        )\n    else:\n        validate_expectation_check(expectation_type, config)\n\n    check = Check("
 }
@@ -8737,7 +8737,7 @@ id: toolu_01CpLV375NhPRDHCYcm9te2U
 tool_result
 id: toolu_01CpLV375NhPRDHCYcm9te2U
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/services/check_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/services/check_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8747,7 +8747,7 @@ id: toolu_01JT84SKneH9UcW2BtLNvwpo
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/check_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/check_service.py",
   "old_string": "    elif is_custom_sql(check.expectation_type):\n        suite = get_suite(session, suite_id)\n        validate_custom_sql_check(\n            expectation_type=check.expectation_type,\n            config=check.config,\n            connection_type=_connection_type(session, suite),\n        )",
   "new_string": "    elif is_custom_sql(check.expectation_type):\n        suite = get_suite(session, suite_id)\n        validate_custom_sql_check(\n            expectation_type=check.expectation_type,\n            config=check.config,\n            connection_type=_connection_type(session, suite),\n        )\n    else:\n        validate_expectation_check(check.expectation_type, check.config)"
 }
@@ -8758,7 +8758,7 @@ id: toolu_01JT84SKneH9UcW2BtLNvwpo
 tool_result
 id: toolu_01JT84SKneH9UcW2BtLNvwpo
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/services/check_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/services/check_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8768,7 +8768,7 @@ id: toolu_01KgK16jWhfvEX4PFTr9wi14
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/suite_io_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/suite_io_service.py",
   "old_string": "        else:\n            validate_custom_sql_check(\n                expectation_type=c[\"expectation_type\"],\n                config=c[\"config\"],\n                connection_type=connection.type,\n            )",
   "new_string": "        elif is_custom_sql(c[\"expectation_type\"]):\n            validate_custom_sql_check(\n                expectation_type=c[\"expectation_type\"],\n                config=c[\"config\"],\n                connection_type=connection.type,\n            )\n        else:\n            # Same author-time GX validation as check CRUD (#651) — an imported\n            # document must not smuggle in checks a direct POST would 422.\n            validate_expectation_check(c[\"expectation_type\"], c[\"config\"])"
 }
@@ -8779,7 +8779,7 @@ id: toolu_01KgK16jWhfvEX4PFTr9wi14
 tool_result
 id: toolu_01KgK16jWhfvEX4PFTr9wi14
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/services/suite_io_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/services/suite_io_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8827,7 +8827,7 @@ id: toolu_012wjssExF75ZgLSKDLdWt9S
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/suite_io_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/suite_io_service.py",
   "old_string": "from backend.app.services.check_service import (\n    record_check_version,\n    validate_kind,\n    validate_monitor_check,\n)\nfrom backend.app.services.custom_sql import validate_custom_sql_check",
   "new_string": "from backend.app.services.check_service import (\n    record_check_version,\n    validate_expectation_check,\n    validate_kind,\n    validate_monitor_check,\n)\nfrom backend.app.services.custom_sql import is_custom_sql, validate_custom_sql_check"
 }
@@ -8838,7 +8838,7 @@ id: toolu_012wjssExF75ZgLSKDLdWt9S
 tool_result
 id: toolu_012wjssExF75ZgLSKDLdWt9S
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/services/suite_io_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/services/suite_io_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8965,7 +8965,7 @@ tool_use Read
 id: toolu_01Er7UeYUzrPpsTFPzKrWHk4
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/api/test_checks.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/api/test_checks.py",
   "offset": 33,
   "limit": 90
 }
@@ -8982,7 +8982,7 @@ id: toolu_01Er7UeYUzrPpsTFPzKrWHk4
 36	    `conn_type` lets a test pick the datasource (e.g. 's3' to exercise custom-SQL
 37	    datasource gating); defaults to Snowflake.
 38	    """
-39	    owner = User(aad_object_id=uuid.uuid4().hex, email="owner@example.com")
+39	    owner = User(aad_object_id=uuid.uuid4().hex, email="<REDACTED_EMAIL>")
 40	    db_session.add(owner)
 41	    db_session.flush()
 42	    config = {"account": "ab12345.eu-west-1"} if conn_type == "snowflake" else {}
@@ -9032,7 +9032,7 @@ id: toolu_018s84eeGX1RNnDatCt7hsSt
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/api/test_checks.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/api/test_checks.py",
   "old_string": "# ───────────────────────── custom-SQL (ADR 0019) ───────────────────",
   "new_string": "# ───────────────────────── expectation-kind validation (#651) ──────\n\n\ndef test_create_rejects_unknown_expectation_type(client: TestClient, db_session: Any) -> None:\n    # Not a GX expectation → 422, never 201 (previously persisted silently).\n    sid = _suite_id(client, db_session)\n    resp = client.post(\n        f\"/api/v1/suites/{sid}/checks\",\n        json=_payload(expectation_type=\"expect_totally_made_up_thing\"),\n    )\n    assert resp.status_code == 422\n    assert resp.json()[\"error\"][\"code\"] == \"check_config_invalid\"\n    assert \"expect_totally_made_up_thing\" in resp.json()[\"error\"][\"message\"]\n\n\ndef test_create_rejects_missing_required_config_keys(client: TestClient, db_session: Any) -> None:\n    # expect_column_values_to_be_between with an empty config lacks the\n    # required `column` (and both bounds) — GX construction fails → 422.\n    sid = _suite_id(client, db_session)\n    resp = client.post(\n        f\"/api/v1/suites/{sid}/checks\",\n        json=_payload(expectation_type=\"expect_column_values_to_be_between\", config={}),\n    )\n    assert resp.status_code == 422\n    assert resp.json()[\"error\"][\"code\"] == \"check_config_invalid\"\n\n\ndef test_create_rejects_both_bounds_missing(client: TestClient, db_session: Any) -> None:\n    # GX's own root validator: min_value and max_value cannot both be None.\n    sid = _suite_id(client, db_session)\n    resp = client.post(\n        f\"/api/v1/suites/{sid}/checks\",\n        json=_payload(\n            expectation_type=\"expect_column_values_to_be_between\", config={\"column\": \"amount\"}\n        ),\n    )\n    assert resp.status_code == 422\n\n\ndef test_create_rejects_wrong_typed_config_values(client: TestClient, db_session: Any) -> None:\n    sid = _suite_id(client, db_session)\n    resp = client.post(\n        f\"/api/v1/suites/{sid}/checks\",\n        json=_payload(\n            expectation_type=\"expect_column_values_to_be_between\",\n            config={\"column\": \"amount\", \"min_value\": \"not-a-number\", \"max_value\": []},\n        ),\n    )\n    assert resp.status_code == 422\n    assert resp.json()[\"error\"][\"code\"] == \"check_config_invalid\"\n\n\ndef test_create_rejects_unknown_config_keys(client: TestClient, db_session: Any) -> None:\n    # GX expectations forbid extra kwargs — a typo'd key must not persist.\n    sid = _suite_id(client, db_session)\n […]
 
@@ -9041,7 +9041,7 @@ id: toolu_018s84eeGX1RNnDatCt7hsSt
 tool_result
 id: toolu_018s84eeGX1RNnDatCt7hsSt
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/api/test_checks.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/api/test_checks.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9165,7 +9165,7 @@ id: toolu_01YQfefotyB4gjYMC9hccDvu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/api/test_checks.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/api/test_checks.py",
   "old_string": "def test_import_rejects_invalid_expectation_check(client: TestClient, db_session: Any) -> None:\n    # The import path must not smuggle in a check a direct POST would 422.\n    sid = _suite_id(client, db_session)\n    exported = client.get(f\"/api/v1/suites/{sid}/export\").json()\n    exported[\"suite\"][\"checks\"] = [\n        {\n            \"name\": \"junk\",\n            \"kind\": \"expectation\",\n            \"expectation_type\": \"expect_totally_made_up_thing\",\n            \"config\": {},\n            \"warn_threshold\": None,\n            \"fail_threshold\": None,\n            \"critical_threshold\": None,\n        }\n    ]\n    resp = client.post(\n        \"/api/v1/suites/import\",\n        json={\"document\": exported, \"connection_id\": exported[\"suite\"][\"connection_id\"]},\n    )\n    assert resp.status_code == 422",
   "new_string": "def test_import_rejects_invalid_expectation_check(client: TestClient, db_session: Any) -> None:\n    # The import path must not smuggle in a check a direct POST would 422 —\n    # and it is atomic, so the bad document writes no suite at all.\n    sid = _suite_id(client, db_session)\n    suite = client.get(f\"/api/v1/suites/{sid}\").json()\n    document = {\n        \"version\": 1,\n        \"name\": \"smuggled\",\n        \"description\": None,\n        \"checks\": [\n            {\n                \"name\": \"junk\",\n                \"kind\": \"expectation\",\n                \"expectation_type\": \"expect_totally_made_up_thing\",\n                \"config\": {},\n            }\n        ],\n    }\n    resp = client.post(\n        \"/api/v1/suites/import\",\n        json={\"document\": document, \"connection_id\": suite[\"connection_id\"]},\n    )\n    assert resp.status_code == 422\n    names = [s[\"name\"] for s in client.get(\"/api/v1/suites\").json()]\n    assert \"smuggled\" not in names"
 }
@@ -9176,7 +9176,7 @@ id: toolu_01YQfefotyB4gjYMC9hccDvu
 tool_result
 id: toolu_01YQfefotyB4gjYMC9hccDvu
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/api/test_checks.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/api/test_checks.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9243,7 +9243,7 @@ id: toolu_01TEvohpoz2TcMiCFWygEbTa
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/check_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/check_service.py",
   "old_string": "    check = get_check(session, suite_id, check_id)\n    if name is not None:\n        check.name = name\n    if expectation_type is not None:\n        check.expectation_type = expectation_type\n    if config is not None:\n        check.config = config\n    if warn_threshold is not None:\n        check.warn_threshold = warn_threshold\n    if fail_threshold is not None:\n        check.fail_threshold = fail_threshold\n    if critical_threshold is not None:\n        check.critical_threshold = critical_threshold\n    # Re-validate against the post-patch state: a PATCH may change only the config\n    # or only a threshold, so guard the effective check before commit (a rejected\n    # update persists nothing). `kind` is immutable on update, so it's read off the\n    # existing check.\n    if check.kind in MONITOR_KINDS:\n        suite = get_suite(session, suite_id)\n        validate_monitor_check(\n            check.kind,\n            check.config,\n            expectation_type=check.expectation_type,\n            connection_type=_connection_type(session, suite),\n            fail_threshold=check.fail_threshold,\n            critical_threshold=check.critical_threshold,\n        )\n    elif is_custom_sql(check.expectation_type):\n        suite = get_suite(session, suite_id)\n        validate_custom_sql_check(\n            expectation_type=check.expectation_type,\n            config=check.config,\n            connection_type=_connection_type(session, suite),\n        )\n    else:\n        validate_expectation_check(check.expectation_type, check.config)",
   "new_string": "    check = get_check(session, suite_id, check_id)\n    # Compute the effective post-patch values and validate them BEFORE touching\n    # the ORM object: a rejected update must leave nothing dirty in the session\n    # (mutate-then-raise would let a later commit on the same session persist\n    # the invalid state). `kind` is immutable on update, so it's read off the\n    # […]
 
@@ -9252,7 +9252,7 @@ id: toolu_01TEvohpoz2TcMiCFWygEbTa
 tool_result
 id: toolu_01TEvohpoz2TcMiCFWygEbTa
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/services/check_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/services/check_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9334,7 +9334,7 @@ tool_use Bash
 id: toolu_013fdGb5PqnortcbBJUECkCG
 ```json
 {
-  "command": "git add backend/app backend/tests && git commit -m \"fix(checks): validate expectation-kind checks against the GX registry at author time (#651)\n\nkind='expectation' authoring (the default, hand-authored path) persisted\ngarbage with 201: unknown expectation_type, missing/wrong-typed/extra\nconfig keys, and 100KB string values — all only failing later on the\nworker. validate_expectation_check now resolves + constructs the GX\nexpectation exactly like the runner (gx_runner's class translation; GX\nexpectations are pydantic models, so construction IS the schema check),\nbehind a per-string size cap GX doesn't enforce, with GX imported lazily\n(heavy import, authoring-only paths). Wired into create, update, and\nsuite-import — import can't smuggle what POST 422s.\n\nupdate_check now validates the effective post-patch values BEFORE mutating\nthe ORM object: the old mutate-then-raise left a rejected PATCH dirty in\nthe session (caught by the new regression test).\n\nFixes #651\n\nCo-Authored-By: Claude Fable 5 <noreply@anthropic.com>\" && git push -u origin fix/issue-651-expectation-validation && gh pr create --title \"fix(checks): author-time GX validation for expectation-kind checks (#651)\" --milestone \"v1.1 Week 2 — Portability: OTel logs, secrets lifecycle, dry-run depth\" --body \"## Summary\n- \\`kind='expectation'\\` authoring now validates at create/update/import instead of persisting garbage that only fails on the worker (#651, P1): \\`validate_expectation_check\\` resolves the GX class through the **same** \\`gx_runner\\` translation the run path uses and constructs it […]
+  "command": "git add backend/app backend/tests && git commit -m \"fix(checks): validate expectation-kind checks against the GX registry at author time (#651)\n\nkind='expectation' authoring (the default, hand-authored path) persisted\ngarbage with 201: unknown expectation_type, missing/wrong-typed/extra\nconfig keys, and 100KB string values — all only failing later on the\nworker. validate_expectation_check now resolves + constructs the GX\nexpectation exactly like the runner (gx_runner's class translation; GX\nexpectations are pydantic models, so construction IS the schema check),\nbehind a per-string size cap GX doesn't enforce, with GX imported lazily\n(heavy import, authoring-only paths). Wired into create, update, and\nsuite-import — import can't smuggle what POST 422s.\n\nupdate_check now validates the effective post-patch values BEFORE mutating\nthe ORM object: the old mutate-then-raise left a rejected PATCH dirty in\nthe session (caught by the new regression test).\n\nFixes #651\n\nCo-Authored-By: Claude Fable 5 <<REDACTED_EMAIL>>\" && git push -u origin fix/issue-651-expectation-validation && gh pr create --title \"fix(checks): author-time GX validation for expectation-kind checks (#651)\" --milestone \"v1.1 Week 2 — Portability: OTel logs, secrets lifecycle, dry-run depth\" --body \"## Summary\n- \\`kind='expectation'\\` authoring now validates at create/update/import instead of persisting garbage that only fails on the worker (#651, P1): \\`validate_expectation_check\\` resolves the GX class through the **same** \\`gx_runner\\` translation the run path uses and constructs it […]
 
 > TOOL
 
@@ -9365,7 +9365,7 @@ id: toolu_011vvjQRk5mV2FhwGj3X1Kig
 ```json
 {
   "description": "Correctness finder PR 686",
-  "prompt": "You are a code-review finder for repo /Users/arijit/Coding/Python/DataQ, reviewing PR #686 (branch fix/issue-651-expectation-validation vs main). CRITICAL: do NOT run `git checkout` or mutate HEAD/working tree — inspect via `git diff main...fix/issue-651-expectation-validation` and `git show fix/issue-651-expectation-validation:<path>`.\n\nThe PR adds author-time GX validation for kind='expectation' checks (issue #651): backend/app/services/check_service.py gains _find_oversized_string + validate_expectation_check (lazy-imports great_expectations, resolves class via gx_runner._expectation_class_name, issubclass(Expectation) guard, constructs cls(**config), 422 on failure, 500-char truncated message); wired into create_check/update_check else-branches and suite_io_service.py import loop; update_check refactored to validate effective post-patch values BEFORE mutating the ORM object; 8 new tests in backend/tests/api/test_checks.py.\n\nAngles (all in one pass):\n(A) Line-by-line: the update_check refactor — any behavior change for the monitor/custom-SQL paths (e.g. thresholds: old code validated check.fail_threshold AFTER assignment; new code computes new_fail = fail_threshold if not None else check.fail_threshold — is that identical? note the PATCH convention 'None means not provided'); the _find_oversized_string walk (dict values only — are dict KEYS a vector? a 100KB config KEY);\n(B) Existing-callers: who else calls create_check/update_check (MCP tools! backend/app/mcp/ — do MCP check-authoring tools exist and now surface 422s reasonably? dry-run service? seed scripts — scripts/ or backend demo seed creating checks with types that […]
+  "prompt": "You are a code-review finder for repo /home/<USER>/Coding/Python/DataQ, reviewing PR #686 (branch fix/issue-651-expectation-validation vs main). CRITICAL: do NOT run `git checkout` or mutate HEAD/working tree — inspect via `git diff main...fix/issue-651-expectation-validation` and `git show fix/issue-651-expectation-validation:<path>`.\n\nThe PR adds author-time GX validation for kind='expectation' checks (issue #651): backend/app/services/check_service.py gains _find_oversized_string + validate_expectation_check (lazy-imports great_expectations, resolves class via gx_runner._expectation_class_name, issubclass(Expectation) guard, constructs cls(**config), 422 on failure, 500-char truncated message); wired into create_check/update_check else-branches and suite_io_service.py import loop; update_check refactored to validate effective post-patch values BEFORE mutating the ORM object; 8 new tests in backend/tests/api/test_checks.py.\n\nAngles (all in one pass):\n(A) Line-by-line: the update_check refactor — any behavior change for the monitor/custom-SQL paths (e.g. thresholds: old code validated check.fail_threshold AFTER assignment; new code computes new_fail = fail_threshold if not None else check.fail_threshold — is that identical? note the PATCH convention 'None means not provided'); the _find_oversized_string walk (dict values only — are dict KEYS a vector? a 100KB config KEY);\n(B) Existing-callers: who else calls create_check/update_check (MCP tools! backend/app/mcp/ — do MCP check-authoring tools exist and now surface 422s reasonably? dry-run service? seed scripts — scripts/ or backend demo seed creating checks with types that […]
 
 > TOOL
 
@@ -9423,7 +9423,7 @@ tool_use Read
 id: toolu_01ES94Xn3Fxhq8dDQADhVfis
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/RunDetail.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/RunDetail.tsx",
   "offset": 100,
   "limit": 80
 }
@@ -9556,7 +9556,7 @@ tool_use Write
 id: toolu_01DcyowKQ7ousXNqLL7Diapa
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/components/checks/snooze.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/components/checks/snooze.tsx",
   "content": "import { Tag, Tooltip } from 'antd';\n\nimport type { Check } from '../../api/suites';\nimport { formatTimestamp } from '../results/resultsFormat';\n\n/** A check is snoozed only while the timestamp is in the future (#370).\n *  `now` is injected so list views can re-evaluate on a ticker (an expiry\n *  passing while the page is open must drop the badge). */\nexport function isSnoozed(check: Check, now: number = Date.now()): boolean {\n  return check.alert_snoozed_until !== null && new Date(check.alert_snoozed_until).getTime() > now;\n}\n\n/**\n * The \"Snoozed until …\" badge, shared by every surface that lists checks\n * (suite detail, run detail). The copy is careful about the backend semantics\n * (#370): suppression is decided per RUN — an alert is muted only when every\n * failing check is snoozed, so one snoozed check doesn't silence a run alert\n * that other failures trigger.\n */\nexport function SnoozedTag({ check, now }: { check: Check; now?: number }) {\n  if (!isSnoozed(check, now)) return null;\n  return (\n    <Tooltip title=\"This check won't trigger alerts by itself; a run alert still fires (and may list it) if other checks fail. Results keep recording.\">\n      <Tag color=\"orange\" style={{ marginInlineEnd: 0 }}>\n        Snoozed until {formatTimestamp(check.alert_snoozed_until)}\n      </Tag>\n    </Tooltip>\n  );\n}\n" […]
 
 > TOOL
@@ -9564,7 +9564,7 @@ id: toolu_01DcyowKQ7ousXNqLL7Diapa
 tool_result
 id: toolu_01DcyowKQ7ousXNqLL7Diapa
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ/frontend/src/components/checks/snooze.tsx (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ/frontend/src/components/checks/snooze.tsx (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -9577,7 +9577,7 @@ tool_use Read
 id: toolu_018AzVYxU3AuPFGSpgsgrqt3
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Suites.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Suites.tsx",
   "offset": 495,
   "limit": 125
 }
@@ -9635,7 +9635,7 @@ tool_use Read
 id: toolu_011LHHdcvdtSYNCwrbmUK8be
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Suites.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Suites.tsx",
   "offset": 619,
   "limit": 40
 }
@@ -9683,7 +9683,7 @@ id: toolu_01NSQa6BGgssjqG6JH4oe3qT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Suites.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Suites.tsx",
   "old_string": "/** Snooze duration presets — hours, capped well under the backend's 720h max. */\nconst SNOOZE_PRESETS = [\n  { key: '1', label: '1 hour', hours: 1 },\n  { key: '24', label: '24 hours', hours: 24 },\n  { key: '168', label: '7 days', hours: 168 },\n] as const;\n\n/** A check is snoozed only while the timestamp is in the future (#370). */\nconst isSnoozed = (check: Check): boolean =>\n  check.alert_snoozed_until !== null && new Date(check.alert_snoozed_until) > new Date();\n\nfunction ChecksList({\n  suiteId,\n  state,\n  onAdd,\n  onEdit,\n  onChanged,\n}: {\n  suiteId: string;\n  state: AsyncState<Check[]>;\n  onAdd: () => void;\n  onEdit: (check: Check) => void;\n  onChanged: () => void;\n}) {\n  const { message, modal } = App.useApp();",
   "new_string": "/** Snooze duration presets — hours, capped well under the backend's 720h max. */\nconst SNOOZE_PRESETS = [\n  { key: '1', label: '1 hour', hours: 1 },\n  { key: '24', label: '24 hours', hours: 24 },\n  { key: '168', label: '7 days', hours: 168 },\n] as const;\n\n/** How often the checks list re-evaluates snooze expiry — a lapsed snooze must\n *  drop its badge/action without a manual refresh (minute granularity is plenty). */\nconst SNOOZE_TICK_MS = 60_000;\n\nfunction ChecksList({\n  suiteId,\n  state,\n  canSnooze,\n  onAdd,\n  onEdit,\n […]
 
@@ -9692,7 +9692,7 @@ id: toolu_01NSQa6BGgssjqG6JH4oe3qT
 tool_result
 id: toolu_01NSQa6BGgssjqG6JH4oe3qT
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/pages/Suites.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/pages/Suites.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9702,7 +9702,7 @@ id: toolu_01AwC4kJX7YGBRkA25LFRp3R
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Suites.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Suites.tsx",
   "old_string": "            <SimpleList.Item\n              actions={[\n                isSnoozed(check) ? (\n                  <Button key=\"snooze\" type=\"link\" size=\"small\" onClick={() => onUnsnooze(check)}>\n                    Unsnooze\n                  </Button>\n                ) : (\n                  <Dropdown\n                    key=\"snooze\"\n                    menu={{\n                      items: SNOOZE_PRESETS.map((p) => ({ key: p.key, label: p.label })),\n                      onClick: ({ key }) => {\n                        const preset = SNOOZE_PRESETS.find((p) => p.key === key);\n                        if (preset) void onSnooze(check, preset.hours, preset.label);\n                      },\n                    }}\n                    trigger={['click']}\n                  >\n                    <Button type=\"link\" size=\"small\">\n                      Snooze\n                    </Button>\n                  </Dropdown>\n                ),\n                <Button key=\"edit\" type=\"link\" size=\"small\" onClick={() => onEdit(check)}>\n                  Edit\n                </Button>,",
   "new_string": "            <SimpleList.Item\n              actions={[\n                // Snooze/unsnooze are edit-gated (backend 403s a viewer), so the\n                // control renders only with the capability — like TriggersPanel.\n                ...(!canSnooze\n                  ? []\n                  : isSnoozed(check, now)\n                    ? [\n                        <Button\n                          key=\"snooze\"\n                          type=\"link\"\n                          size=\"small\"\n                          onClick={() => onUnsnooze(check)}\n                        >\n                          Unsnooze\n                        </Button>,\n                      ]\n                    : [\n                        <Dropdown\n                          key=\"snooze\"\n                          menu={{\n                            items: SNOOZE_PRESETS.map((p) => ({ key: p.key, label: p.label })),\n                            onClick: ({ key }) => {\n                              const preset = SNOOZE_PRESETS.find((p) => p.key === key);\n                              if (preset) void onSnooze(check, preset.hours, preset.label);\n                            },\n                          }}\n                          trigger={['click']}\n                        >\n                          <Button type=\"link\" size=\"small\">\n                            Snooze\n                          </Button>\n                        </Dropdown>,\n                      ]),\n                <Button key=\"edit\" type=\"link\" size=\"small\" onClick={() => onEdit(check)}>\n                  Edit\n                </Button>,"
 }
@@ -9713,7 +9713,7 @@ id: toolu_01AwC4kJX7YGBRkA25LFRp3R
 tool_result
 id: toolu_01AwC4kJX7YGBRkA25LFRp3R
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/pages/Suites.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/pages/Suites.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9723,7 +9723,7 @@ id: toolu_01Pb3aogxHTWXViMkFAx3hPy
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Suites.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Suites.tsx",
   "old_string": "              <Flex vertical gap={2}>\n                <Flex gap={8} align=\"center\" wrap>\n                  <Typography.Text strong>{check.name}</Typography.Text>\n                  {isSnoozed(check) && (\n                    <Tooltip title=\"Alerts for this check are muted until then; results still record.\">\n                      <Tag color=\"orange\" style={{ marginInlineEnd: 0 }}>\n                        Snoozed until {formatTimestamp(check.alert_snoozed_until)}\n                      </Tag>\n                    </Tooltip>\n                  )}\n                </Flex>",
   "new_string": "              <Flex vertical gap={2}>\n                <Flex gap={8} align=\"center\" wrap>\n                  <Typography.Text strong>{check.name}</Typography.Text>\n                  <SnoozedTag check={check} now={now} />\n                </Flex>"
 }
@@ -9734,7 +9734,7 @@ id: toolu_01Pb3aogxHTWXViMkFAx3hPy
 tool_result
 id: toolu_01Pb3aogxHTWXViMkFAx3hPy
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/pages/Suites.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/pages/Suites.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9744,7 +9744,7 @@ id: toolu_01APNbh2aWF2K7cKs3CDZAuD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Suites.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Suites.tsx",
   "old_string": "import SimpleList from '../components/SimpleList';\nimport { useState } from 'react';",
   "new_string": "import SimpleList from '../components/SimpleList';\nimport { useEffect, useState } from 'react';"
 }
@@ -9755,7 +9755,7 @@ id: toolu_01APNbh2aWF2K7cKs3CDZAuD
 tool_result
 id: toolu_01APNbh2aWF2K7cKs3CDZAuD
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/pages/Suites.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/pages/Suites.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9765,7 +9765,7 @@ id: toolu_015fgPtYezjkscmSkpdWs6Un
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Suites.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Suites.tsx",
   "old_string": "import { formatTimestamp } from '../components/results/resultsFormat';\nimport { ConnectionTypeAvatar } from '../components/connections/connectionVisuals';",
   "new_string": "import { isSnoozed, SnoozedTag } from '../components/checks/snooze';\nimport { ConnectionTypeAvatar } from '../components/connections/connectionVisuals';"
 }
@@ -9776,7 +9776,7 @@ id: toolu_015fgPtYezjkscmSkpdWs6Un
 tool_result
 id: toolu_015fgPtYezjkscmSkpdWs6Un
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/pages/Suites.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/pages/Suites.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9786,7 +9786,7 @@ id: toolu_01W5THF452TwLCnLKGpPAvY4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Suites.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Suites.tsx",
   "old_string": "      <ChecksList\n        suiteId={suite.id}\n        state={state}\n        onAdd={() => navigate(`/suites/${suite.id}/checks/new`)}\n        onEdit={(check) => navigate(`/suites/${suite.id}/checks/${check.id}/edit`)}\n        onChanged={reload}\n      />",
   "new_string": "      <ChecksList\n        suiteId={suite.id}\n        state={state}\n        canSnooze={canRun}\n        onAdd={() => navigate(`/suites/${suite.id}/checks/new`)}\n        onEdit={(check) => navigate(`/suites/${suite.id}/checks/${check.id}/edit`)}\n        onChanged={reload}\n      />"
 }
@@ -9797,7 +9797,7 @@ id: toolu_01W5THF452TwLCnLKGpPAvY4
 tool_result
 id: toolu_01W5THF452TwLCnLKGpPAvY4
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/pages/Suites.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/pages/Suites.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -9811,7 +9811,7 @@ id: toolu_01UUNXKxgR1Q9ceVWPvuLNyW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/RunDetail.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/RunDetail.tsx",
   "old_string": "  const columns: ColumnsType<Result> = [\n    {\n      title: 'Check',\n      dataIndex: 'check_id',\n      render: (id: string) =>\n        checks.get(id)?.name ?? <Typography.Text code>{id.slice(0, 8)}</Typography.Text>,\n    },",
   "new_string": "  const columns: ColumnsType<Result> = [\n    {\n      title: 'Check',\n      dataIndex: 'check_id',\n      render: (id: string) => {\n        const check = checks.get(id);\n        if (!check) return <Typography.Text code>{id.slice(0, 8)}</Typography.Text>;\n        return (\n          <Flex gap={8} align=\"center\" wrap>\n            {check.name}\n            {/* Failure triage happens here — a muted check must say so, or the\n                operator wastes time asking why no alert arrived (#653). */}\n            <SnoozedTag check={check} />\n          </Flex>\n        );\n      },\n    },"
 }
@@ -9822,7 +9822,7 @@ id: toolu_01UUNXKxgR1Q9ceVWPvuLNyW
 tool_result
 id: toolu_01UUNXKxgR1Q9ceVWPvuLNyW
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/pages/RunDetail.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/pages/RunDetail.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9860,7 +9860,7 @@ id: toolu_01Bmdj5gSP6XYtni6FGYJ4X2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/RunDetail.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/RunDetail.tsx",
   "old_string": "import { CheckTrend } from '../components/checks/CheckTrend';",
   "new_string": "import { CheckTrend } from '../components/checks/CheckTrend';\nimport { SnoozedTag } from '../components/checks/snooze';"
 }
@@ -9871,7 +9871,7 @@ id: toolu_01Bmdj5gSP6XYtni6FGYJ4X2
 tool_result
 id: toolu_01Bmdj5gSP6XYtni6FGYJ4X2
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/pages/RunDetail.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/pages/RunDetail.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -9924,7 +9924,7 @@ tool_use Read
 id: toolu_01MJDj78rdFT1CUccLijjrYV
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Suites.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Suites.test.tsx",
   "offset": 258,
   "limit": 18
 }
@@ -9962,7 +9962,7 @@ id: toolu_015Gup6Vqi1ZicxU2nU4LaMq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Suites.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Suites.test.tsx",
   "old_string": "    expect(screen.queryByText(/Snoozed until/)).not.toBeInTheDocument();\n    expect(screen.getByRole('button', { name: 'Snooze' })).toBeInTheDocument();\n  });\n\n  it('deletes a suite via the detail panel after confirming', async () => {",
   "new_string": "    expect(screen.queryByText(/Snoozed until/)).not.toBeInTheDocument();\n    expect(screen.getByRole('button', { name: 'Snooze' })).toBeInTheDocument();\n  });\n\n  it('hides snooze controls (but keeps the badge) for a view-only user', async () => {\n    // Snooze/unsnooze are edit-gated on the backend — a viewer must not be\n    // offered a control that can only 403 (matches the sibling panels).\n    const user = userEvent.setup();\n    mockListConnections.mockResolvedValue([connection]);\n    mockListSuites.mockResolvedValue([suite({ my_permission: 'view' })]);\n    mockListChecks.mockResolvedValue([check({ alert_snoozed_until: '2099-01-01T00:00:00Z' })]);\n\n    renderPage();\n    await user.click(await screen.findByText('orders-suite'));\n    await screen.findByText('order_id not null');\n\n    expect(screen.getByText(/Snoozed until/)).toBeInTheDocument();\n    expect(screen.queryByRole('button', { name: 'Snooze' })).not.toBeInTheDocument();\n    expect(screen.queryByRole('button', { name: 'Unsnooze' })).not.toBeInTheDocument();\n  });\n\n  it('deletes a suite via the detail panel after confirming', async () => {"
 }
@@ -9973,7 +9973,7 @@ id: toolu_015Gup6Vqi1ZicxU2nU4LaMq
 tool_result
 id: toolu_015Gup6Vqi1ZicxU2nU4LaMq
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/tests/pages/Suites.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/tests/pages/Suites.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10008,7 +10008,7 @@ tool_use Read
 id: toolu_01Mkf6p452qeh4KfKK7dpXmN
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/RunDetail.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/RunDetail.test.tsx",
   "offset": 96,
   "limit": 35
 }
@@ -10063,7 +10063,7 @@ id: toolu_01MDgcM6hvGXR6VHMw8HWht3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/pages/RunDetail.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/pages/RunDetail.test.tsx",
   "old_string": "  it('still renders when the suite name and checks fail to load', async () => {",
   "new_string": "  it('marks a snoozed check in the results table (#653 — triage surface)', async () => {\n    mockGetRun.mockResolvedValue(runDetail);\n    mockGetSuite.mockResolvedValue(suite);\n    mockListChecks.mockResolvedValue([{ ...check, alert_snoozed_until: '2099-01-01T00:00:00Z' }]);\n\n    renderAt('r1');\n\n    expect(await screen.findByText('order_id not null')).toBeInTheDocument();\n    expect(screen.getByText(/Snoozed until/)).toBeInTheDocument();\n  });\n\n  it('still renders when the suite name and checks fail to load', async () => {"
 }
@@ -10074,7 +10074,7 @@ id: toolu_01MDgcM6hvGXR6VHMw8HWht3
 tool_result
 id: toolu_01MDgcM6hvGXR6VHMw8HWht3
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/tests/pages/RunDetail.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/tests/pages/RunDetail.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10093,7 +10093,7 @@ id: toolu_01273qEEUSsEEGwn7bF2WK2t
 tool_result
 id: toolu_01273qEEUSsEEGwn7bF2WK2t
 ```
-/Users/arijit/Coding/Python/DataQ/frontend/src/components/checks/snooze.tsx
+/home/<USER>/Coding/Python/DataQ/frontend/src/components/checks/snooze.tsx
   9:17  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
 
 ✖ 1 problem (0 errors, 1 warning)
@@ -10130,7 +10130,7 @@ id: toolu_01W6GG1K9EDzd9RVt1VoB5nm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/components/checks/snooze.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/components/checks/snooze.tsx",
   "old_string": "/** A check is snoozed only while the timestamp is in the future (#370).\n *  `now` is injected so list views can re-evaluate on a ticker (an expiry\n *  passing while the page is open must drop the badge). */\nexport function isSnoozed(check: Check, now: number = Date.now()): boolean {",
   "new_string": "/** A check is snoozed only while the timestamp is in the future (#370).\n *  `now` is injected so list views can re-evaluate on a ticker (an expiry\n *  passing while the page is open must drop the badge). */\n// eslint-disable-next-line react-refresh/only-export-components -- helper + its badge belong together (SimpleList precedent)\nexport function isSnoozed(check: Check, now: number = Date.now()): boolean {"
 }
@@ -10141,7 +10141,7 @@ id: toolu_01W6GG1K9EDzd9RVt1VoB5nm
 tool_result
 id: toolu_01W6GG1K9EDzd9RVt1VoB5nm
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/components/checks/snooze.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/components/checks/snooze.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10150,7 +10150,7 @@ tool_use Bash
 id: toolu_01WTtNJvVG1fe2mwTCv9XZsv
 ```json
 {
-  "command": "pnpm exec eslint src/components/checks/snooze.tsx && pnpm vitest run 2>&1 | grep -E \"Tests |failed\" && cd /Users/arijit/Coding/Python/DataQ && git add frontend && git commit -m \"fix(frontend): snooze UI follow-ups — honest copy, edit-gating, expiry ticker, run-detail badge (#653)\n\nPost-merge /code-review on #684 (four confirmed findings):\n1. The badge tooltip claimed the check's alerts are 'muted until then' —\n   suppression is decided per run (an alert is muted only when EVERY failing\n   check is snoozed), so the copy now says a run alert still fires if other\n   checks fail.\n2. Snooze/Unsnooze are edit-gated on the backend but rendered for view-only\n   users; ChecksList now takes the edit capability and hides them (matching\n   the sibling Triggers/Schedules panels). Badge stays visible to viewers.\n3. A snooze expiring while the page stayed open kept its badge/Unsnooze\n   until a manual refresh; a 60s ticker re-evaluates expiry.\n4. Run detail — the failure-triage surface — now shows the snoozed badge on\n   each check row (isSnoozed/SnoozedTag extracted to a shared module).\n\nCo-Authored-By: Claude Fable 5 <noreply@anthropic.com>\" && git push -u origin fix/snooze-ui-review-followups && gh pr create --title \"fix(frontend): snooze UI follow-ups from the #684 post-merge review (#653)\" --milestone \"v1.1 Week 2 — Portability: OTel logs, secrets lifecycle, […]
+  "command": "pnpm exec eslint src/components/checks/snooze.tsx && pnpm vitest run 2>&1 | grep -E \"Tests |failed\" && cd /home/<USER>/Coding/Python/DataQ && git add frontend && git commit -m \"fix(frontend): snooze UI follow-ups — honest copy, edit-gating, expiry ticker, run-detail badge (#653)\n\nPost-merge /code-review on #684 (four confirmed findings):\n1. The badge tooltip claimed the check's alerts are 'muted until then' —\n   suppression is decided per run (an alert is muted only when EVERY failing\n   check is snoozed), so the copy now says a run alert still fires if other\n   checks fail.\n2. Snooze/Unsnooze are edit-gated on the backend but rendered for view-only\n   users; ChecksList now takes the edit capability and hides them (matching\n   the sibling Triggers/Schedules panels). Badge stays visible to viewers.\n3. A snooze expiring while the page stayed open kept its badge/Unsnooze\n   until a manual refresh; a 60s ticker re-evaluates expiry.\n4. Run detail — the failure-triage surface — now shows the snoozed badge on\n   each check row (isSnoozed/SnoozedTag extracted to a shared module).\n\nCo-Authored-By: Claude Fable 5 <<REDACTED_EMAIL>>\" && git push -u origin fix/snooze-ui-review-followups && gh pr create --title \"fix(frontend): snooze UI follow-ups from the #684 post-merge review (#653)\" --milestone \"v1.1 Week 2 — Portability: OTel logs, secrets lifecycle, […]
 
 > TOOL
 
@@ -10263,7 +10263,7 @@ tool_use Read
 id: toolu_01CfCWQtpaB9BjbGRuu2trco
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/App.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/App.tsx",
   "offset": 1,
   "limit": 99
 }
@@ -10317,7 +10317,7 @@ id: toolu_0198fFa3U3KSsBfoLAjV5Yop
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/App.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/App.tsx",
   "old_string": "import {\n  ApiOutlined,\n  BarChartOutlined,\n  ContainerOutlined,\n  DashboardOutlined,\n  DownOutlined,\n  LogoutOutlined,\n  ReadOutlined,\n  SafetyOutlined,\n  SettingOutlined,\n  UserOutlined,\n} from '@ant-design/icons';\nimport { Avatar, Dropdown, Flex, Layout, Menu, Spin, Tag, Typography } from 'antd';\nimport type { MenuProps } from 'antd';\nimport { lazy, Suspense } from 'react';",
   "new_string": "import {\n  ApiOutlined,\n  BarChartOutlined,\n  ContainerOutlined,\n  DashboardOutlined,\n  DownOutlined,\n  LogoutOutlined,\n  MenuOutlined,\n  ReadOutlined,\n  SafetyOutlined,\n  SettingOutlined,\n  UserOutlined,\n} from '@ant-design/icons';\nimport { Avatar, Button, Dropdown, Flex, Layout, Menu, Spin, Tag, Typography } from 'antd';\nimport type { MenuProps } from 'antd';\nimport { lazy, Suspense, useState } from 'react';"
 }
@@ -10328,7 +10328,7 @@ id: toolu_0198fFa3U3KSsBfoLAjV5Yop
 tool_result
 id: toolu_0198fFa3U3KSsBfoLAjV5Yop
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/App.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/App.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10338,7 +10338,7 @@ id: toolu_01YFDYwAnTz8eGtL1ZmNKAKy
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/App.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/App.tsx",
   "old_string": "export function App() {\n  const location = useLocation();\n  const isAdmin = useIsWorkspaceAdmin();\n  const footerItems = isAdmin ? [...ADMIN_FOOTER_ITEMS, DOC_ITEM] : [DOC_ITEM];",
   "new_string": "export function App() {\n  const location = useLocation();\n  const isAdmin = useIsWorkspaceAdmin();\n  // Narrow-viewport nav (#617): below the `lg` breakpoint the Sider collapses to\n  // zero width. AntD's built-in zero-width trigger floats over every page's\n  // heading, so it's disabled (`trigger={null}`) and replaced by a ☰ toggle in\n  // the Header, which has reserved space.\n  const [navCollapsed, setNavCollapsed] = useState(false);\n  const [narrow, setNarrow] = useState(false);\n  const footerItems = isAdmin ? [...ADMIN_FOOTER_ITEMS, DOC_ITEM] : [DOC_ITEM];"
 }
@@ -10349,7 +10349,7 @@ id: toolu_01YFDYwAnTz8eGtL1ZmNKAKy
 tool_result
 id: toolu_01YFDYwAnTz8eGtL1ZmNKAKy
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/App.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/App.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10359,7 +10359,7 @@ id: toolu_017aPBbs3qppVjjjjKmRG2Ec
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/App.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/App.tsx",
   "old_string": "          <Link to=\"/\" aria-label=\"DataQ home\" style={{ flex: 1 }}>\n            <Flex align=\"center\" gap={10}>\n              <BrandMark />\n              <Typography.Text strong style={{ fontSize: 17, color: BRAND.ink }}>\n                DataQ\n              </Typography.Text>\n            </Flex>\n          </Link>\n          <UserMenu />\n        </Header>",
   "new_string": "          {narrow && (\n            <Button\n              type=\"text\"\n              icon={<MenuOutlined />}\n              aria-label=\"Toggle navigation\"\n              onClick={() => setNavCollapsed((c) => !c)}\n              style={{ marginInlineStart: -8 }}\n            />\n          )}\n          <Link to=\"/\" aria-label=\"DataQ home\" style={{ flex: 1 }}>\n            <Flex align=\"center\" gap={10}>\n              <BrandMark />\n              <Typography.Text strong style={{ fontSize: 17, color: BRAND.ink }}>\n                DataQ\n              </Typography.Text>\n            </Flex>\n          </Link>\n          <UserMenu />\n        </Header>"
 }
@@ -10370,7 +10370,7 @@ id: toolu_017aPBbs3qppVjjjjKmRG2Ec
 tool_result
 id: toolu_017aPBbs3qppVjjjjKmRG2Ec
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/App.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/App.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10380,7 +10380,7 @@ id: toolu_01AFASbAcs1Rcw9B4Gvi2md1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/App.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/App.tsx",
   "old_string": "          <Sider\n            width={SHELL.siderWidth}\n            theme=\"light\"\n            breakpoint=\"lg\"\n            collapsedWidth={0}\n            style={{ borderInlineEnd: `1px solid ${BRAND.border}`, height: '100%' }}\n          >",
   "new_string": "          <Sider\n            width={SHELL.siderWidth}\n            theme=\"light\"\n            breakpoint=\"lg\"\n            collapsedWidth={0}\n            trigger={null}\n            collapsed={navCollapsed}\n            onBreakpoint={(broken) => {\n              setNarrow(broken);\n              setNavCollapsed(broken);\n            }}\n            style={{ borderInlineEnd: `1px solid ${BRAND.border}`, height: '100%' }}\n          >"
 }
@@ -10391,7 +10391,7 @@ id: toolu_01AFASbAcs1Rcw9B4Gvi2md1
 tool_result
 id: toolu_01AFASbAcs1Rcw9B4Gvi2md1
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/App.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/App.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10401,7 +10401,7 @@ id: toolu_01ECkCqqtLqQ5fc2i7vc5mmm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/App.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/App.tsx",
   "old_string": "              <Menu\n                mode=\"inline\"\n                selectedKeys={selectedKeys}\n                items={NAV_ITEMS}\n                style={{",
   "new_string": "              <Menu\n                mode=\"inline\"\n                selectedKeys={selectedKeys}\n                items={NAV_ITEMS}\n                onClick={() => narrow && setNavCollapsed(true)}\n                style={{"
 }
@@ -10412,7 +10412,7 @@ id: toolu_01ECkCqqtLqQ5fc2i7vc5mmm
 tool_result
 id: toolu_01ECkCqqtLqQ5fc2i7vc5mmm
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/App.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/App.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10422,7 +10422,7 @@ id: toolu_01Bm3D9GvkJsEyE31fWAGmJx
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/App.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/App.tsx",
   "old_string": "              <Menu\n                mode=\"inline\"\n                selectedKeys={selectedKeys}\n                items={footerItems}\n                style={{",
   "new_string": "              <Menu\n                mode=\"inline\"\n                selectedKeys={selectedKeys}\n                items={footerItems}\n                onClick={() => narrow && setNavCollapsed(true)}\n                style={{"
 }
@@ -10433,7 +10433,7 @@ id: toolu_01Bm3D9GvkJsEyE31fWAGmJx
 tool_result
 id: toolu_01Bm3D9GvkJsEyE31fWAGmJx
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/App.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/App.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -10446,7 +10446,7 @@ tool_use Read
 id: toolu_01DD2Dfo6SN6uWe5GxtVPkHF
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Suites.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Suites.tsx",
   "offset": 226,
   "limit": 45
 }
@@ -10511,7 +10511,7 @@ id: toolu_01DqztaWQJvSQMtzZREKKvnH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Suites.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Suites.tsx",
   "old_string": "function SuitesBody({\n  state,\n  connections,\n  selectedId,\n  onSelect,\n  onEdit,\n  onDeleted,\n}: {\n  state: AsyncState<Suite[]>;\n  connections: Connection[];\n  selectedId: string | null;\n  onSelect: (id: string) => void;\n  onEdit: (suite: Suite) => void;\n  onDeleted: () => void;\n}) {\n  if (state.status === 'loading') {",
   "new_string": "function SuitesBody({\n  state,\n  connections,\n  selectedId,\n  onSelect,\n  onEdit,\n  onDeleted,\n}: {\n  state: AsyncState<Suite[]>;\n  connections: Connection[];\n  selectedId: string | null;\n  onSelect: (id: string) => void;\n  onEdit: (suite: Suite) => void;\n  onDeleted: () => void;\n}) {\n  // Below `md` the side-by-side master-detail leaves ~0px for the detail pane\n  // (title wraps one char per line — #617 bug 1), so it stacks vertically.\n  // `=== false` (not `!screens.md`): useBreakpoint returns {} on the first\n  // render, and desktop must not flash the stacked layout.\n  const screens = Grid.useBreakpoint();\n  const stacked = screens.md === false;\n  if (state.status === 'loading') {"
 }
@@ -10522,7 +10522,7 @@ id: toolu_01DqztaWQJvSQMtzZREKKvnH
 tool_result
 id: toolu_01DqztaWQJvSQMtzZREKKvnH
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/pages/Suites.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/pages/Suites.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10532,7 +10532,7 @@ id: toolu_01SyntuBc2jEnroPYb4iCDtE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Suites.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Suites.tsx",
   "old_string": "  return (\n    <Flex gap={24} align=\"flex-start\">\n      <Card size=\"small\" style={{ width: 320, flexShrink: 0 }} styles={{ body: { padding: 0 } }}>",
   "new_string": "  return (\n    <Flex gap={24} align={stacked ? 'stretch' : 'flex-start'} vertical={stacked}>\n      <Card\n        size=\"small\"\n        style={{ width: stacked ? '100%' : 320, flexShrink: 0 }}\n        styles={{ body: { padding: 0 } }}\n      >"
 }
@@ -10543,7 +10543,7 @@ id: toolu_01SyntuBc2jEnroPYb4iCDtE
 tool_result
 id: toolu_01SyntuBc2jEnroPYb4iCDtE
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/pages/Suites.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/pages/Suites.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10553,7 +10553,7 @@ id: toolu_01G27Sq1FNfZFQuQYS3AK4fX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Suites.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Suites.tsx",
   "old_string": "import {\n  App,\n  Alert,\n  Button,\n  Card,\n  Dropdown,\n  Empty,\n  Flex,\n  Spin,\n  Tag,\n  Tooltip,\n  Typography,\n} from 'antd';",
   "new_string": "import {\n  App,\n  Alert,\n  Button,\n  Card,\n  Dropdown,\n  Empty,\n  Flex,\n  Grid,\n  Spin,\n  Tag,\n  Tooltip,\n  Typography,\n} from 'antd';"
 }
@@ -10564,7 +10564,7 @@ id: toolu_01G27Sq1FNfZFQuQYS3AK4fX
 tool_result
 id: toolu_01G27Sq1FNfZFQuQYS3AK4fX
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/pages/Suites.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/pages/Suites.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10908,7 +10908,7 @@ tool_use Read
 id: toolu_01RpZEsVWqT3oprNAxZrkDHR
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/components/ColumnProfilePanel.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/components/ColumnProfilePanel.test.tsx",
   "offset": 80,
   "limit": 12
 }
@@ -10940,7 +10940,7 @@ id: toolu_01E4k4KNKmqFUvMPC5TaGEZc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/components/ColumnProfilePanel.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/components/ColumnProfilePanel.test.tsx",
   "old_string": "    expect(screen.getByText('Top value')).toBeInTheDocument();",
   "new_string": "    // getAllByText: with horizontal scroll (#617) antd renders a fixed-header\n    // table structure that duplicates the header cells.\n    expect(screen.getAllByText('Top value').length).toBeGreaterThan(0);"
 }
@@ -10951,7 +10951,7 @@ id: toolu_01E4k4KNKmqFUvMPC5TaGEZc
 tool_result
 id: toolu_01E4k4KNKmqFUvMPC5TaGEZc
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/tests/components/ColumnProfilePanel.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/tests/components/ColumnProfilePanel.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10984,7 +10984,7 @@ tool_use Bash
 id: toolu_016V6tSL9bh9QS1dJ5NXZCA2
 ```json
 {
-  "command": "docker compose -f /Users/arijit/Coding/Python/DataQ/docker-compose.yml ps --format '{{.Service}} {{.State}}' 2>/dev/null; curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173/ 2>/dev/null; echo \" (vite)\"; curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8000/healthz 2>/dev/null; echo \" (api)\"",
+  "command": "docker compose -f /home/<USER>/Coding/Python/DataQ/docker-compose.yml ps --format '{{.Service}} {{.State}}' 2>/dev/null; curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173/ 2>/dev/null; echo \" (vite)\"; curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8000/healthz 2>/dev/null; echo \" (api)\"",
   "description": "Check local stack status"
 }
 ```
@@ -11009,7 +11009,7 @@ tool_use Bash
 id: toolu_01Nwojz5hJWMNvnvPmVbNGuL
 ```json
 {
-  "command": "docker compose -f /Users/arijit/Coding/Python/DataQ/docker-compose.yml port frontend 5173 2>/dev/null; docker compose -f /Users/arijit/Coding/Python/DataQ/docker-compose.yml config --services 2>/dev/null | head; curl -s -o /dev/null -w \"%{http_code}\\n\" http://localhost:3000/ 2>/dev/null",
+  "command": "docker compose -f /home/<USER>/Coding/Python/DataQ/docker-compose.yml port frontend 5173 2>/dev/null; docker compose -f /home/<USER>/Coding/Python/DataQ/docker-compose.yml config --services 2>/dev/null | head; curl -s -o /dev/null -w \"%{http_code}\\n\" http://localhost:3000/ 2>/dev/null",
   "description": "Find frontend port"
 }
 ```
@@ -11053,7 +11053,7 @@ tool_use Bash
 id: toolu_01CCAiYsLkoR98Y7B1Ns6Gd6
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ && grep -n -A14 \"^  frontend:\" docker-compose.yml",
+  "command": "cd /home/<USER>/Coding/Python/DataQ && grep -n -A14 \"^  frontend:\" docker-compose.yml",
   "description": "Check frontend service config"
 }
 ```
@@ -11413,7 +11413,7 @@ tool_use Read
 id: toolu_01Bofn5zUzYEDqZTrYkhrnrn
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Suites.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Suites.tsx",
   "offset": 425,
   "limit": 55
 }
@@ -11483,7 +11483,7 @@ id: toolu_01K3NRz53XeNBRakR2vNdb1Z
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Suites.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Suites.tsx",
   "old_string": "      <Flex justify=\"space-between\" align=\"flex-start\" gap={12}>\n        <Flex vertical gap={6}>\n          <Typography.Title level={4} style={{ margin: 0 }}>\n            {suite.name}\n          </Typography.Title>",
   "new_string": "      {/* `wrap` + minWidth: on a narrow viewport the action buttons drop to\n          their own line instead of squeezing the title to char-per-line (#617). */}\n      <Flex justify=\"space-between\" align=\"flex-start\" gap={12} wrap>\n        <Flex vertical gap={6} style={{ minWidth: 200 }}>\n          <Typography.Title level={4} style={{ margin: 0 }}>\n            {suite.name}\n          </Typography.Title>"
 }
@@ -11494,7 +11494,7 @@ id: toolu_01K3NRz53XeNBRakR2vNdb1Z
 tool_result
 id: toolu_01K3NRz53XeNBRakR2vNdb1Z
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/pages/Suites.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/pages/Suites.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11504,7 +11504,7 @@ id: toolu_017gDNRcdKKNap8GS946DRDh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/pages/Suites.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/pages/Suites.tsx",
   "old_string": "        <Flex gap={8}>\n          {canRun &&\n            (suite.target ? (",
   "new_string": "        <Flex gap={8} wrap>\n          {canRun &&\n            (suite.target ? ("
 }
@@ -11515,7 +11515,7 @@ id: toolu_017gDNRcdKKNap8GS946DRDh
 tool_result
 id: toolu_017gDNRcdKKNap8GS946DRDh
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/pages/Suites.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/pages/Suites.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11674,7 +11674,7 @@ tool_use Bash
 id: toolu_01VqVbWNog5omQs1qKZ4UAPF
 ```json
 {
-  "command": "tail -5 /Users/arijit/Coding/Python/DataQ/.playwright-mcp/console-2026-07-07T00-22-51-775Z.log 2>/dev/null || find /Users/arijit/Coding/Python/DataQ -name \"console-2026-07-07*\" -path \"*playwright*\" 2>/dev/null | head -2",
+  "command": "tail -5 /home/<USER>/Coding/Python/DataQ/.playwright-mcp/console-2026-07-07T00-22-51-775Z.log 2>/dev/null || find /home/<USER>/Coding/Python/DataQ -name \"console-2026-07-07*\" -path \"*playwright*\" 2>/dev/null | head -2",
   "description": "Check console error content"
 }
 ```
@@ -11781,7 +11781,7 @@ tool_use Bash
 id: toolu_01UcVC2GogZA3AiPLM9QiUsb
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ && git add frontend && git commit -m \"fix(frontend): responsive layouts for narrow viewports (#617)\n\nFour grouped fixes from the 390x844 sweep, all verified live against the\ndev stack at mobile + desktop:\n\n1. Suite-detail master-detail stacks below md (Grid.useBreakpoint,\n   '=== false' so desktop never flashes stacked), and the detail header\n   row wraps with a min-width title block — the primary char-per-line\n   report came from BOTH the squeezed pane and the non-wrapping\n   title+actions row.\n2. Every data table gets scroll={{ x: 'max-content' }} (Results runs +\n   pipeline-runs, run-detail results + sample rows, Admin, dashboard\n   recent-runs, schedules, column profiler, API keys) — clipped columns\n   now scroll inside the table instead of vanishing.\n3. AntD's zero-width Sider trigger (floated over every page heading) is\n   replaced by a header hamburger: trigger={null}, controlled collapse,\n   onBreakpoint drives visibility, and a nav click re-collapses on\n   narrow screens.\n4. Page-header title+actions rows wrap on all pages.\n\nFixes #617\n\nCo-Authored-By: Claude Fable 5 <noreply@anthropic.com>\" && git push -u origin fix/issue-617-mobile-responsive && gh pr create --title \"fix(frontend): responsive layouts for narrow viewports (#617)\" --milestone \"v1.1 Week 2 — Portability: OTel logs, secrets lifecycle, dry-run depth\" --body \"## Summary\nAll four bugs from the #617 mobile sweep, verified live against […]
+  "command": "cd /home/<USER>/Coding/Python/DataQ && git add frontend && git commit -m \"fix(frontend): responsive layouts for narrow viewports (#617)\n\nFour grouped fixes from the 390x844 sweep, all verified live against the\ndev stack at mobile + desktop:\n\n1. Suite-detail master-detail stacks below md (Grid.useBreakpoint,\n   '=== false' so desktop never flashes stacked), and the detail header\n   row wraps with a min-width title block — the primary char-per-line\n   report came from BOTH the squeezed pane and the non-wrapping\n   title+actions row.\n2. Every data table gets scroll={{ x: 'max-content' }} (Results runs +\n   pipeline-runs, run-detail results + sample rows, Admin, dashboard\n   recent-runs, schedules, column profiler, API keys) — clipped columns\n   now scroll inside the table instead of vanishing.\n3. AntD's zero-width Sider trigger (floated over every page heading) is\n   replaced by a header hamburger: trigger={null}, controlled collapse,\n   onBreakpoint drives visibility, and a nav click re-collapses on\n   narrow screens.\n4. Page-header title+actions rows wrap on all pages.\n\nFixes #617\n\nCo-Authored-By: Claude Fable 5 <<REDACTED_EMAIL>>\" && git push -u origin fix/issue-617-mobile-responsive && gh pr create --title \"fix(frontend): responsive layouts for narrow viewports (#617)\" --milestone \"v1.1 Week 2 — Portability: OTel logs, secrets lifecycle, dry-run depth\" --body \"## Summary\nAll four bugs from the #617 mobile sweep, verified live against […]
 
 > TOOL
 
@@ -11812,7 +11812,7 @@ id: toolu_01V7Th2tMRouWWebu6qrZFiJ
 ```json
 {
   "description": "Review finder PR 688",
-  "prompt": "You are a code-review finder for repo /Users/arijit/Coding/Python/DataQ, reviewing PR #688 (branch fix/issue-617-mobile-responsive vs main). CRITICAL: do NOT run `git checkout` or mutate HEAD/working tree — inspect via `git diff main...fix/issue-617-mobile-responsive` and `git show fix/issue-617-mobile-responsive:<path>`.\n\nThe PR fixes #617 (mobile layouts): App.tsx (Sider trigger={null} + controlled collapsed + header hamburger + onBreakpoint + nav-click collapse), Suites.tsx (Grid.useBreakpoint stacking of the master-detail below md + detail-header wrap + minWidth 200 title block), scroll={{x:'max-content'}} added to 9 tables across pages/components, `wrap` added to 9 page-header Flex rows, one test assertion updated (duplicated header cells under scroll).\n\nAngles, one pass:\n(A) App.tsx state logic: initial state navCollapsed=false + narrow=false — on a mobile first paint BEFORE onBreakpoint fires, is the sider briefly expanded overlapping content? onBreakpoint timing; does toggling on desktop (narrow=false) ever strand the sider collapsed with no hamburger to reopen (e.g. resize narrow→collapse→resize wide: does onBreakpoint(false) fire and un-collapse? my code sets setNavCollapsed(broken) on every breakpoint event — verify both directions); controlled `collapsed` + breakpoint interplay per antd Sider semantics (check antd docs knowledge / typical pitfalls).\n(B) Suites.tsx: Grid.useBreakpoint hook placement before early returns (rules of hooks OK?); `screens.md === false` on […]
+  "prompt": "You are a code-review finder for repo /home/<USER>/Coding/Python/DataQ, reviewing PR #688 (branch fix/issue-617-mobile-responsive vs main). CRITICAL: do NOT run `git checkout` or mutate HEAD/working tree — inspect via `git diff main...fix/issue-617-mobile-responsive` and `git show fix/issue-617-mobile-responsive:<path>`.\n\nThe PR fixes #617 (mobile layouts): App.tsx (Sider trigger={null} + controlled collapsed + header hamburger + onBreakpoint + nav-click collapse), Suites.tsx (Grid.useBreakpoint stacking of the master-detail below md + detail-header wrap + minWidth 200 title block), scroll={{x:'max-content'}} added to 9 tables across pages/components, `wrap` added to 9 page-header Flex rows, one test assertion updated (duplicated header cells under scroll).\n\nAngles, one pass:\n(A) App.tsx state logic: initial state navCollapsed=false + narrow=false — on a mobile first paint BEFORE onBreakpoint fires, is the sider briefly expanded overlapping content? onBreakpoint timing; does toggling on desktop (narrow=false) ever strand the sider collapsed with no hamburger to reopen (e.g. resize narrow→collapse→resize wide: does onBreakpoint(false) fire and un-collapse? my code sets setNavCollapsed(broken) on every breakpoint event — verify both directions); controlled `collapsed` + breakpoint interplay per antd Sider semantics (check antd docs knowledge / typical pitfalls).\n(B) Suites.tsx: Grid.useBreakpoint hook placement before early returns (rules of hooks OK?); `screens.md === false` on […]
 
 > TOOL
 
@@ -11861,7 +11861,7 @@ tool_use Read
 id: toolu_01Xz1CEqVbjTbZMfKt25S3G2
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/check_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/check_service.py",
   "offset": 160,
   "limit": 80
 }
@@ -11913,7 +11913,7 @@ id: toolu_011hCvfD6m47egNxegmesLp9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/check_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/check_service.py",
   "old_string": "# Longest string allowed anywhere in an expectation config. Generous for real\n# kwargs (column names, value-set members, regexes) while blocking the\n# 100KB-column-name class of junk GX itself accepts (#651). Custom-SQL queries\n# are validated (and bounded) separately and never reach this walk.\n_CONFIG_STRING_MAX_CHARS = 1_000\n\n\ndef _find_oversized_string(value: Any, path: str = \"config\") -> str | None:\n    \"\"\"Depth-first search for a string over the cap; returns its path, or None.\"\"\"\n    if isinstance(value, str):\n        return path if len(value) > _CONFIG_STRING_MAX_CHARS else None\n    if isinstance(value, dict):\n        for key, item in value.items():\n            found = _find_oversized_string(item, f\"{path}.{key}\")\n            if found:\n                return found\n    if isinstance(value, list):\n        for i, item in enumerate(value):\n            found = _find_oversized_string(item, f\"{path}[{i}]\")\n            if found:\n                return found\n    return None",
   "new_string": "# Longest string allowed anywhere in an expectation config (keys AND values).\n# Generous for real kwargs — a long regex or value-set member runs fine on the\n# worker, so the cap must not reject anything the runner would execute — while\n# still blocking the 100KB-column-name class of junk GX itself accepts (#651).\n# Custom-SQL queries are validated (and bounded) separately, never by this walk.\n_CONFIG_STRING_MAX_CHARS = 10_000\n\n# The reported path/type in a 422 is bounded too — the error […]
 
@@ -11922,7 +11922,7 @@ id: toolu_011hCvfD6m47egNxegmesLp9
 tool_result
 id: toolu_011hCvfD6m47egNxegmesLp9
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/services/check_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/services/check_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11932,7 +11932,7 @@ id: toolu_01BxTtnAKqPU1uMMYhf4HAX3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/check_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/check_service.py",
   "old_string": "    if expectation_cls is None or not (\n        isinstance(expectation_cls, type) and issubclass(expectation_cls, Expectation)\n    ):\n        raise CheckConfigInvalidError(\n            f\"unknown expectation_type {expectation_type!r} — not a Great Expectations \"\n            \"expectation\",\n            detail={\"expectation_type\": expectation_type},\n        )",
   "new_string": "    if expectation_cls is None or not (\n        isinstance(expectation_cls, type) and issubclass(expectation_cls, Expectation)\n    ):\n        # Bounded echo: REST caps expectation_type at 128 chars, but the MCP\n        # tools don't — never round-trip an unbounded string through the 422\n        # envelope and the error log.\n        raise CheckConfigInvalidError(\n            f\"unknown expectation_type {expectation_type[:_ERROR_ECHO_MAX_CHARS]!r} — \"\n            \"not a Great Expectations expectation\",\n            detail={\"expectation_type\": expectation_type[:_ERROR_ECHO_MAX_CHARS]},\n        )"
 }
@@ -11943,7 +11943,7 @@ id: toolu_01BxTtnAKqPU1uMMYhf4HAX3
 tool_result
 id: toolu_01BxTtnAKqPU1uMMYhf4HAX3
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/services/check_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/services/check_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11953,7 +11953,7 @@ id: toolu_017kZsEUwXYjDXhouJnnNV7C
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/check_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/check_service.py",
   "old_string": "        raise CheckConfigInvalidError(\n            f\"invalid config for {expectation_type}: {str(exc)[:500]}\",\n            detail={\"expectation_type\": expectation_type},\n        ) from exc",
   "new_string": "        raise CheckConfigInvalidError(\n            f\"invalid config for {expectation_type[:_ERROR_ECHO_MAX_CHARS]}: {str(exc)[:500]}\",\n            detail={\"expectation_type\": expectation_type[:_ERROR_ECHO_MAX_CHARS]},\n        ) from exc"
 }
@@ -11964,7 +11964,7 @@ id: toolu_017kZsEUwXYjDXhouJnnNV7C
 tool_result
 id: toolu_017kZsEUwXYjDXhouJnnNV7C
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/services/check_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/services/check_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11977,7 +11977,7 @@ tool_use Read
 id: toolu_01BWtkQr7Zkjpo6d8seiSFoi
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/check_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/check_service.py",
   "offset": 378,
   "limit": 50
 }
@@ -12039,7 +12039,7 @@ id: toolu_01DPN1zRQgCSjCZ9S21ZkotM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/check_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/check_service.py",
   "old_string": "    else:\n        validate_expectation_check(new_expectation_type, new_config)\n\n    if name is not None:\n        check.name = name",
   "new_string": "    elif expectation_type is not None or config is not None:\n        # GX-validate only when the PATCH touches the expectation itself: a\n        # rename or threshold tweak must stay possible on a pre-#651 check whose\n        # stored config today's pinned GX rejects (there is no config backfill —\n        # such a row would otherwise be un-editable until delete-and-recreate).\n        validate_expectation_check(new_expectation_type, new_config)\n\n    if name is not None:\n        check.name = name"
 }
@@ -12050,7 +12050,7 @@ id: toolu_01DPN1zRQgCSjCZ9S21ZkotM
 tool_result
 id: toolu_01DPN1zRQgCSjCZ9S21ZkotM
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/services/check_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/services/check_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -12064,7 +12064,7 @@ id: toolu_01PLTfhfqbkBXerWFgn5YKMh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/api/test_checks.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/api/test_checks.py",
   "old_string": "def test_update_revalidates_expectation_config(client: TestClient, db_session: Any) -> None:",
   "new_string": "def test_create_accepts_long_but_legitimate_config_string(\n    client: TestClient, db_session: Any\n) -> None:\n    # The cap must never reject what the runner would execute: a 1.5K regex is\n    # valid GX and runs fine on the worker (the cap targets 100KB-class junk).\n    sid = _suite_id(client, db_session)\n    resp = client.post(\n        f\"/api/v1/suites/{sid}/checks\",\n        json=_payload(\n            expectation_type=\"expect_column_values_to_match_regex\",\n            config={\"column\": \"sku\", \"regex\": \"(a|b)\" * 250},\n        ),\n    )\n    assert resp.status_code == 201\n\n\ndef test_create_rejects_oversized_config_key_with_bounded_echo(\n    client: TestClient, db_session: Any\n) -> None:\n    # Dict KEYS are capped too, and the 422 must not round-trip the oversized\n    # input through the error envelope / logs.\n    sid = _suite_id(client, db_session)\n    huge_key = \"K\" * 200_000\n    resp = client.post(\n        f\"/api/v1/suites/{sid}/checks\", json=_payload(config={huge_key: {\"x\": \"y\"}})\n    )\n    assert resp.status_code == 422\n    assert len(resp.text) < 2_000\n\n\ndef test_update_name_only_allowed_on_legacy_invalid_config(\n    client: TestClient, db_session: Any\n) -> None:\n    # A pre-#651 row whose stored config GX rejects must stay renamable /\n    # threshold-tweakable — only a PATCH that touches the expectation itself\n    # re-runs GX validation (there is no config backfill).\n    sid = _suite_id(client, db_session)\n    legacy = Check(\n        suite_id=uuid.UUID(sid),\n        name=\"legacy junk\",\n        expectation_type=\"expect_totally_made_up_thing\",\n        config={\"colunm\": \"x\" * 50_000},\n    )\n    db_session.add(legacy)\n    db_session.commit()\n\n    renamed = client.patch(f\"/api/v1/suites/{sid}/checks/{legacy.id}\", json={\"name\": \"renamed\"})\n    assert renamed.status_code == 200\n    assert […]
 
@@ -12103,7 +12103,7 @@ tool_use Read
 id: toolu_01HNqFtH56DtyPtcLjuGbLfM
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/api/test_checks.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/api/test_checks.py",
   "offset": 193,
   "limit": 10
 }

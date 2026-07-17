@@ -1,6 +1,6 @@
 > SYSTEM
 
-# AGENTS.md instructions for /Users/hedde/code/evorto
+# AGENTS.md instructions for /home/<USER>/code/evorto
 
 <INSTRUCTIONS>
 # Repository Guidelines
@@ -60,7 +60,7 @@ id: call_LoM8r6Zq5a3NSCcsysy7UdAF
 ```json
 {
   "cmd": "pwd && git status --short --branch",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -72,8 +72,8 @@ tool_use exec_command
 id: call_3v0Nmke6oJrlRBuoFyoNES8E
 ```json
 {
-  "cmd": "rg -n \"Conservative branch sync|git fetch --no-tags|git town sync|latest changes|branch sync|FETCH_HEAD\" /Users/hedde/.codex/memories/MEMORY.md",
-  "workdir": "/Users/hedde/code/evorto",
+  "cmd": "rg -n \"Conservative branch sync|git fetch --no-tags|git town sync|latest changes|branch sync|FETCH_HEAD\" /home/<USER>/.codex/memories/MEMORY.md",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -86,7 +86,7 @@ id: call_homYq57rdYn6elZrkcqQnpVP
 ```json
 {
   "cmd": "find .. -name AGENTS.md -print",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -102,7 +102,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 15
 Output:
-/Users/hedde/code/evorto
+/home/<USER>/code/evorto
 ## main...origin/main [behind 2]
 
 ```
@@ -120,7 +120,7 @@ Output:
 116:- bun outdated --json, angular-22, typescript-6, node-24.15.0, @types/pg, TS7016, git rebase --onto FETCH_HEAD, codex/pr62-split-06-browser-transport-blocker, PR 76, chore: refresh dependencies and vendored sources
 139:- For stacked PRs, check `git rev-parse`/`merge-base` before rebasing; when the base has advanced, `git rebase --onto FETCH_HEAD <old-base-commit>` is the safe shape for replaying only the dependency-refresh commit onto the fetched PR62 tip. [Task 1]
 147:- Symptom: rebasing onto the refreshed PR62 base replays the old base commit and creates conflicts. Cause: a broad/plain rebase targeted the wrong commit range. Fix: abort and rebase only the dependency-refresh commit with `git rebase --onto FETCH_HEAD <old-base-commit>`. [Task 1]
-417:scope: Neon branch cleanup, root-cause forensics for unexpected branch growth, and the repo-specific mitigation/push workflow for `/Users/hedde/code/evorto`; use when Neon Local or Neon branch state is involved, not for generic git branch sync tasks.
+417:scope: Neon branch cleanup, root-cause forensics for unexpected branch growth, and the repo-specific mitigation/push workflow for `/home/<USER>/code/evorto`; use when Neon Local or Neon branch state is involved, not for generic git branch sync tasks.
 
 ```
 
@@ -160,8 +160,8 @@ tool_use exec_command
 id: call_pgXYvkSjeWO89NWuHmnGXfzM
 ```json
 {
-  "cmd": "rg -n \"update-evorto-branch|Conservative branch sync|git fetch --no-tags|FETCH_HEAD|latest changes|origin sync\" /Users/hedde/.codex/memories/MEMORY.md",
-  "workdir": "/Users/hedde/code/evorto",
+  "cmd": "rg -n \"update-evorto-branch|Conservative branch sync|git fetch --no-tags|FETCH_HEAD|latest changes|origin sync\" /home/<USER>/.codex/memories/MEMORY.md",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -174,7 +174,7 @@ id: call_t9EJFO1mlYJ3pt5l9RPkLWyQ
 ```json
 {
   "cmd": "rg --files -g 'AGENTS.md' -g 'README.md' -g 'PRODUCT.md' -g 'ARCHITECTURE.md' -g 'QUALITY.md'",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -287,7 +287,7 @@ id: call_2j3th133ZXUzfOahLTFTOcLh
 ```json
 {
   "cmd": "git remote -v",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -300,7 +300,7 @@ id: call_RqY1U8sjL6QAySrjDYkYVSlu
 ```json
 {
   "cmd": "git branch --show-current && git rev-parse --abbrev-ref --symbolic-full-name @{u}",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -343,7 +343,7 @@ id: call_N8sknq59j2stxGz4M5CRINQG
 ```json
 {
   "cmd": "git fetch --no-tags origin main",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -375,7 +375,7 @@ id: call_ZFvRB6AdB9kbeRr4jIVkoFgo
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -388,7 +388,7 @@ id: call_lhTQbVKW9z8Tr4Zj1os82y65
 ```json
 {
   "cmd": "git rev-list --left-right --count HEAD...origin/main",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -401,7 +401,7 @@ id: call_q63cEHqZaZG2bvFzr1ENcp4o
 ```json
 {
   "cmd": "git log --oneline --decorate --max-count=5 HEAD..origin/main",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -461,7 +461,7 @@ id: call_oqnKirhk7lozQGJjOT3V5Dub
 ```json
 {
   "cmd": "git merge --ff-only origin/main",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -536,7 +536,7 @@ id: call_Ng0OySpfGeoZMzdarjnUMArj
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -549,7 +549,7 @@ id: call_2zKgyLF0mSWTUbUnRp9UUiTP
 ```json
 {
   "cmd": "git rev-parse --short HEAD && git log --oneline --decorate --max-count=3",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -562,7 +562,7 @@ id: call_Ufh9rZIrOBie2f9Al6tujUQk
 ```json
 {
   "cmd": "git rev-list --left-right --count HEAD...origin/main",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -615,7 +615,7 @@ Output:
 
 > AGENT
 
-Updated `/Users/hedde/code/evorto` from remote.
+Updated `/home/<USER>/code/evorto` from remote.
 
 `main` fast-forwarded from `c1edf30384f` to `70215b09fb2`, bringing in 2 commits from `origin/main`. Final status is clean and aligned with remote: `HEAD...origin/main` is `0 0`.
 

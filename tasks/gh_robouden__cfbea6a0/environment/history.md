@@ -19,7 +19,7 @@ tool_use Bash
 id: toolu_0184EFXDjg7f4rXXCk4yBdfo
 ```json
 {
-  "command": "ls -la /home/rob/Documents/Safecast/AnyType-VPS/ 2>/dev/null && echo \"---\" && ls /home/rob/Documents/Safecast/GrooveGO/ 2>/dev/null",
+  "command": "ls -la /home/<USER>/Documents/Safecast/AnyType-VPS/ 2>/dev/null && echo \"---\" && ls /home/<USER>/Documents/Safecast/GrooveGO/ 2>/dev/null",
   "description": "Check AnyType-VPS and GrooveGO directories"
 }
 ```
@@ -53,7 +53,7 @@ tool_use Read
 id: toolu_01VqcpY5qb2P2oqTFL7MvnUM
 ```json
 {
-  "file_path": "/home/rob/.claude/projects/-home-rob-Documents-Safecast-GrooveGO/memory/project_groovego.md"
+  "file_path": "/home/<USER>/.claude/projects/-home-rob-Documents-Safecast-GrooveGO/memory/project_groovego.md"
 }
 ```
 
@@ -69,7 +69,7 @@ id: toolu_01VqcpY5qb2P2oqTFL7MvnUM
 4	type: project
 5	---
 6	
-7	GrooveGO lives at `/home/rob/Documents/Safecast/GrooveGO/groove-go/` (module: `github.com/safecast/groove-go`).
+7	GrooveGO lives at `/home/<USER>/Documents/Safecast/GrooveGO/groove-go/` (module: `github.com/safecast/groove-go`).
 8	
 9	## Vision
 10	Decentralized P2P groupware (shared workspaces, real-time sync, offline capability, presence, E2E encryption) — no central server for core functionality. Inspired by Microsoft Groove. Built in Go using libp2p.
@@ -90,7 +90,7 @@ tool_use Read
 id: toolu_013QcEG1ovnzwkTnqys4ESt3
 ```json
 {
-  "file_path": "/home/rob/Documents/Safecast/AnyType-VPS/README.md"
+  "file_path": "/home/<USER>/Documents/Safecast/AnyType-VPS/README.md"
 }
 ```
 
@@ -146,7 +146,7 @@ tool_use Read
 id: toolu_01M36UfRPLmYqWn5W1yJXBRV
 ```json
 {
-  "file_path": "/home/rob/Documents/Safecast/AnyType-VPS/anytype-selfhosting-guide.md"
+  "file_path": "/home/<USER>/Documents/Safecast/AnyType-VPS/anytype-selfhosting-guide.md"
 }
 ```
 
@@ -208,7 +208,7 @@ tool_use Read
 id: toolu_017kjWqiXbnGXE7GSwVMRsjm
 ```json
 {
-  "file_path": "/home/rob/Documents/Safecast/AnyType-VPS/anytype-setup-complete.md"
+  "file_path": "/home/<USER>/Documents/Safecast/AnyType-VPS/anytype-setup-complete.md"
 }
 ```
 
@@ -237,7 +237,7 @@ id: toolu_017kjWqiXbnGXE7GSwVMRsjm
 18	## Prerequisites
 19	
 20	- VPS: Ubuntu 24.04.4 LTS (x86_64)
-21	- SSH access: `ssh root@simplemap.safecast.org`
+21	- SSH access: `ssh <REDACTED_EMAIL>`
 22	- Domain: simplemap.safecast.org → 65.108.24.131
 23	
 24	---
@@ -247,7 +247,7 @@ id: toolu_017kjWqiXbnGXE7GSwVMRsjm
 28	### Step 1: System Update
 29	
 30	```bash
-31	ssh root@simplemap.safecast.org "sudo apt update && sudo apt upgrade -y"
+31	ssh <REDACTED_EMAIL> "sudo apt update && sudo apt upgrade -y"
 32	```
 33	
 34	---
@@ -256,13 +256,13 @@ id: toolu_017kjWqiXbnGXE7GSwVMRsjm
 37	
 38	```bash
 39	# Add MongoDB GPG key
-40	ssh root@simplemap.safecast.org "curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | sudo gpg --dearmor -o /usr/share/keyrings/mongodb-server-7.0.gpg"
+40	ssh <REDACTED_EMAIL> "curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | sudo gpg --dearmor -o /usr/share/keyrings/mongodb-server-7.0.gpg"
 41	
 42	# Add MongoDB repository
-43	ssh root@simplemap.safecast.org "echo 'deb [ arch=amd64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse' | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list"
+43	ssh <REDACTED_EMAIL> "echo 'deb [ arch=amd64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse' | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list"
 44	
 45	# Install MongoDB
-46	ssh root@simplemap.safecast.org "sudo apt update && sudo apt install -y mongodb-org"
+46	ssh <REDACTED_EMAIL> "sudo apt update && sudo apt install -y mongodb-org"
 47	
 48 […]
 
@@ -272,7 +272,7 @@ tool_use Read
 id: toolu_01QMcSTZM6zBbnXnqZeTsugb
 ```json
 {
-  "file_path": "/home/rob/Documents/Safecast/AnyType-VPS/Anytype + Claude MCP Setup (Self-Hosted).md"
+  "file_path": "/home/<USER>/Documents/Safecast/AnyType-VPS/Anytype + Claude MCP Setup (Self-Hosted).md"
 }
 ```
 
@@ -320,7 +320,7 @@ tool_use Bash
 id: toolu_01N51wyoaxugMfb3YFJwgBiW
 ```json
 {
-  "command": "ls /home/rob/Documents/Safecast/GrooveGO/groove-go/ 2>/dev/null && echo \"---ARCH---\" && head -100 /home/rob/Documents/Safecast/GrooveGO/ARCHITECTURE.md 2>/dev/null",
+  "command": "ls /home/<USER>/Documents/Safecast/GrooveGO/groove-go/ 2>/dev/null && echo \"---ARCH---\" && head -100 /home/<USER>/Documents/Safecast/GrooveGO/ARCHITECTURE.md 2>/dev/null",
   "description": "List groove-go contents and view architecture"
 }
 ```

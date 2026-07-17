@@ -1,6 +1,6 @@
 > SYSTEM
 
-# AGENTS.md instructions for /Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS
+# AGENTS.md instructions for /home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS
 
 <INSTRUCTIONS>
 # Codex Configuration
@@ -31,7 +31,7 @@ id: call_nOeIzHnYmGrSEhHeRus0FH7V
 ```json
 {
   "command": "git submodule status --recursive",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -43,7 +43,7 @@ id: call_ZE71Qq9hFMyIPgUoRqlgdQAD
 ```json
 {
   "command": "git config --file .gitmodules --get-regexp 'submodule\\..*\\.(path|url)' || true",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -55,7 +55,7 @@ id: call_CTYRkAfx1GtgDGwV8cmctPS5
 ```json
 {
   "command": "ls -ld Faber2026 2>/dev/null || true",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -106,7 +106,7 @@ id: call_a5wJlcOW1Cb5s0h12EX2nyoV
 ```json
 {
   "command": "rtk ls -ld Faber2026 2>/dev/null || true",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -118,7 +118,7 @@ id: call_LKcP6l6vyi93VxWK7ZZEnZNS
 ```json
 {
   "command": "rg --files -g '.gitmodules' -g '*Faber2026*' -g '!*.png' -g '!*.jpg'",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -158,7 +158,7 @@ id: call_To2nuE1cxBCWOPs6WYEkVo6X
 ```json
 {
   "command": "rtk grep --files -g '.gitmodules' -g '*Faber2026*' -g '!*.png' -g '!*.jpg'",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -170,7 +170,7 @@ id: call_zjsegtATta0kn2aWAfTgH0VF
 ```json
 {
   "command": "git ls-files --stage | grep -F 'Faber2026' || true",
-  "workdir": "/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
+  "workdir": "/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS",
   "timeout_ms": 10000
 }
 ```
@@ -206,7 +206,7 @@ Output:
 
 `Faber2026` is **not present as a submodule** in this checkout.
 
-Checks run from `/Users/jakobfaber/Developer/repos/github.com/jakobtfaber/dsa110-FLITS`:
+Checks run from `/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS`:
 
 - `git submodule status --recursive` returned no entries.
 - `.gitmodules` has no registered submodules.

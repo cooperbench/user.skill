@@ -1,6 +1,6 @@
 > DEVELOPER
 
-proceed: '/Users/noahdolevelixir/Code/rune/instructions/gap-closure-handoff.md'
+proceed: '/home/<USER>/Code/rune/instructions/gap-closure-handoff.md'
 
 > TOOL
 
@@ -8,7 +8,7 @@ tool_use Read
 id: toolu_01JU9f5vLtHnCaCCma1WXimK
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/gap-closure-handoff.md"
+  "file_path": "/home/<USER>/Code/rune/instructions/gap-closure-handoff.md"
 }
 ```
 
@@ -80,7 +80,7 @@ tool_use Read
 id: toolu_012zVgMkXgq2MZnzjyNpM6ax
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_data.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_data.py",
   "offset": 670,
   "limit": 80
 }
@@ -148,7 +148,7 @@ tool_use Read
 id: toolu_01J3dEkpzmGUtCEJ8oVhGUiH
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_data.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_data.py",
   "offset": 748,
   "limit": 100
 }
@@ -212,7 +212,7 @@ id: toolu_01HpCKL9SfV4Zhb25YY6c8Ec
 ```json
 {
   "pattern": "test_normalize_mined_pairs_single_commit_produces_step0",
-  "path": "/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_d2l_data.py",
+  "path": "/home/<USER>/Code/rune/libs/model-training/tests/test_d2l_data.py",
   "output_mode": "content",
   "-n": true,
   "-C": 5
@@ -243,7 +243,7 @@ tool_use Read
 id: toolu_01HT3WU5z3sqMMVQijZoEWRe
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_d2l_data.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/tests/test_d2l_data.py",
   "offset": 540,
   "limit": 90
 }
@@ -318,7 +318,7 @@ tool_use Read
 id: toolu_015qkeEyeMsNSd1TD4LAdKNM
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/encoder_pretrain/augment.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/encoder_pretrain/augment.py",
   "offset": 1,
   "limit": 130
 }
@@ -516,7 +516,7 @@ id: toolu_01QoZ464tJd7GUVe78pzpZnc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_d2l_data.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/tests/test_d2l_data.py",
   "old_string": "def test_normalize_mined_pairs_single_commit_produces_step0() -> None:\n    \"\"\"A single-commit PR produces one step_0 pair.\"\"\"\n    from model_training.d2l_data import normalize_mined_pairs\n\n    trajectory = _make_mined_trajectory()\n    pairs = normalize_mined_pairs(trajectory)\n\n    assert len(pairs) == 1\n    assert pairs[0][\"task_id\"] == \"pr_owner/repo_42\"\n    assert pairs[0][\"metadata\"][\"step_index\"] == 0\n    assert \"Add widget support\" in pairs[0][\"activation_text\"]\n    assert \"+def widget(): pass\" in pairs[0][\"teacher_text\"]\n    assert \"## Implementation\" in pairs[0][\"teacher_text\"]\n\n\ndef test_normalize_mined_pairs_review_revision_cycle() -> None:",
   "new_string": "def test_normalize_mined_pairs_single_commit_produces_step0() -> None:\n    \"\"\"A single-commit PR produces one step_0 pair.\"\"\"\n    from model_training.d2l_data import normalize_mined_pairs\n\n    trajectory = _make_mined_trajectory()\n    pairs = normalize_mined_pairs(trajectory)\n\n    assert len(pairs) == 1\n    assert pairs[0][\"task_id\"] == \"pr_owner/repo_42\"\n    assert pairs[0][\"metadata\"][\"step_index\"] == 0\n    assert \"Add widget support\" in pairs[0][\"activation_text\"]\n    assert \"+def widget(): pass\" in pairs[0][\"teacher_text\"]\n    assert \"## Implementation\" in pairs[0][\"teacher_text\"]\n\n\ndef test_normalize_mined_pairs_propagates_task_description() -> None:\n    \"\"\"Each pair record carries the trajectory's task_description.\n\n    Plan B gate: augment_corpus drops pairs without task_description and\n    enforces MIN_RETENTION_RATIO = 0.80. Propagating the authentic\n    PR-title + body (or issue title + body) into each pair keeps retention\n    at 100% for well-formed trajectories.\n    \"\"\"\n    from model_training.d2l_data import normalize_mined_pairs\n\n    trajectory = _make_mined_trajectory(\n        task_description=\"Add widget support\",\n        steps=[\n            {\"type\": \"commit\", \"description\": \"V1\", \"content\": \"+v1\"},\n            {\n                \"type\": \"review\",\n                \"description\": \"Review comment\",\n                \"content\": \"rename to Gadget\",\n            },\n            {\"type\": \"commit\", \"description\": \"V2\", \"content\": \"+v2 Gadget\"},\n        ],\n    )\n    pairs = normalize_mined_pairs(trajectory)\n\n […]
 
@@ -525,7 +525,7 @@ id: toolu_01QoZ464tJd7GUVe78pzpZnc
 tool_result
 id: toolu_01QoZ464tJd7GUVe78pzpZnc
 ```
-The file /Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_d2l_data.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/libs/model-training/tests/test_d2l_data.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -638,7 +638,7 @@ id: toolu_01Vs7RvQanPHRGTq6wirrYV1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_data.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_data.py",
   "old_string": "def _make_pair_record(\n    task_id: str,\n    outcome: str,\n    language: str | None,\n    idx: int,\n    activation: str,\n    teacher: str,\n) -> dict[str, Any]:\n    \"\"\"Build a single training pair record.\"\"\"\n    return {\n        \"task_id\": task_id,\n        \"activation_text\": activation,\n        \"teacher_text\": teacher,\n        \"metadata\": {\n            \"outcome\": outcome,\n            \"step_index\": idx,\n            \"language\": language,\n            \"source_task_id\": task_id,\n        },\n    }",
   "new_string": "def _make_pair_record(\n    task_id: str,\n    outcome: str,\n    language: str | None,\n    idx: int,\n    activation: str,\n    teacher: str,\n    task_description: str = \"\",\n) -> dict[str, Any]:\n    \"\"\"Build a single training pair record.\"\"\"\n    return {\n        \"task_id\": task_id,\n        \"task_description\": task_description,\n        \"activation_text\": activation,\n        \"teacher_text\": teacher,\n        \"metadata\": {\n            \"outcome\": outcome,\n            \"step_index\": idx,\n            \"language\": language,\n            \"source_task_id\": task_id,\n        },\n    }"
 }
@@ -649,7 +649,7 @@ id: toolu_01Vs7RvQanPHRGTq6wirrYV1
 tool_result
 id: toolu_01Vs7RvQanPHRGTq6wirrYV1
 ```
-The file /Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_data.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_data.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -663,7 +663,7 @@ id: toolu_01CvigNFYebDSJirBcA9MsTk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_data.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_data.py",
   "old_string": "    def _record(idx: int, activation: str, teacher: str) -> dict[str, Any]:\n        return _make_pair_record(task_id, outcome, language, idx, activation, teacher)",
   "new_string": "    def _record(idx: int, activation: str, teacher: str) -> dict[str, Any]:\n        return _make_pair_record(\n            task_id,\n            outcome,\n            language,\n            idx,\n            activation,\n            teacher,\n            task_description=task_desc,\n        )"
 }
@@ -674,7 +674,7 @@ id: toolu_01CvigNFYebDSJirBcA9MsTk
 tool_result
 id: toolu_01CvigNFYebDSJirBcA9MsTk
 ```
-The file /Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_data.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_data.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -774,7 +774,7 @@ id: toolu_01DTpfVqr3YtpvE1uaoGM2wx
 ```
 ============================= test session starts ==============================
 platform darwin -- Python 3.12.12, pytest-9.0.2, pluggy-1.6.0
-rootdir: /Users/noahdolevelixir/Code/rune
+rootdir: /home/<USER>/Code/rune
 configfile: pyproject.toml
 plugins: anyio-4.12.1, jaxtyping-0.3.9, xdist-3.8.0, asyncio-1.3.0, langsmith-0.7.9, requests-mock-1.12.1, cov-7.0.0
 asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
@@ -880,7 +880,7 @@ id: toolu_01LUeiCEv1u2sqRDEEZXJvAU
 tool_result
 id: toolu_01LUeiCEv1u2sqRDEEZXJvAU
 ```
-rootdir: /Users/noahdolevelixir/Code/rune
+rootdir: /home/<USER>/Code/rune
 configfile: pyproject.toml
 plugins: anyio-4.12.1, jaxtyping-0.3.9, xdist-3.8.0, asyncio-1.3.0, langsmith-0.7.9, requests-mock-1.12.1, cov-7.0.0
 asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
@@ -1116,7 +1116,7 @@ tool_use Bash
 id: toolu_01H8oqjGyk5ztHPhaTAP4fYA
 ```json
 {
-  "command": "git commit -m \"$(cat <<'EOF'\nfeat(training): propagate task_description through mined pair records (gap 6)\n\n_make_pair_record now includes task_description in the returned dict, and\nnormalize_mined_pairs passes the trajectory-level task_desc (already local)\ninto every record via the _record closure. This unblocks the Plan B\naugment_corpus retention gate (MIN_RETENTION_RATIO = 0.80): previously every\nmined pair was dropped by _select_task_desc because the field was absent,\nforcing retention to 0% and raising RuntimeError.\n\nThe upstream trajectory already carries authentic task_description —\nmine_pr_diff_chains sets it to \"title\\n\\nbody\" (PR title + body) and\nmine_issue_commit_chains does the same for issues — so no new GitHub API\ncalls are required. The fix is purely about propagating an existing field\nthrough the pair-record serializer.\n\nAdded test_normalize_mined_pairs_propagates_task_description asserting\nevery pair in a review-revision trajectory carries the task description.\n\nCo-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>\nEOF\n)\" && git status",
+  "command": "git commit -m \"$(cat <<'EOF'\nfeat(training): propagate task_description through mined pair records (gap 6)\n\n_make_pair_record now includes task_description in the returned dict, and\nnormalize_mined_pairs passes the trajectory-level task_desc (already local)\ninto every record via the _record closure. This unblocks the Plan B\naugment_corpus retention gate (MIN_RETENTION_RATIO = 0.80): previously every\nmined pair was dropped by _select_task_desc because the field was absent,\nforcing retention to 0% and raising RuntimeError.\n\nThe upstream trajectory already carries authentic task_description —\nmine_pr_diff_chains sets it to \"title\\n\\nbody\" (PR title + body) and\nmine_issue_commit_chains does the same for issues — so no new GitHub API\ncalls are required. The fix is purely about propagating an existing field\nthrough the pair-record serializer.\n\nAdded test_normalize_mined_pairs_propagates_task_description asserting\nevery pair in a review-revision trajectory carries the task description.\n\nCo-Authored-By: Claude Opus 4.7 <<REDACTED_EMAIL>>\nEOF\n)\" && git status",
   "description": "Commit gap 6 fix"
 }
 ```
@@ -1177,7 +1177,7 @@ id: toolu_017RwDBCddN9nke7CxRUzpKZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/gap-closure-handoff.md",
+  "file_path": "/home/<USER>/Code/rune/instructions/gap-closure-handoff.md",
   "old_string": "# Gap Closure Handoff — 2026-04-23 (session 3)\n\nResuming work on `instructions/gaps.md`. Branch `feat/training-upgrade`.\n\n## Closed so far (7 commits across 3 sessions)\n\n| # | Gap | Commit | Status |\n|---|-----|--------|--------|\n| 1 | Workspace mypy config gap (pandas-stubs, inference/shared/evaluation globs) | `917150e` | ✅ |\n| 2 | APPS stratification parity (Plan A `load_problems` delegation from Plan C) | `917150e` | ✅ |\n| 3 | SWE-Bench-Lite `score()` implementation (env-gated clone/apply/pytest) | `683553c` | ✅ |\n| 4 | Oracle validation runner (`scripts/validate_oracles.py`, \"≥3% over base\" gate) | `98b8713` | ✅ |\n| 5 | Kill-switch wiring into hypernetwork training loop (Plan A follow-up) | `510464f` | ✅ |\n| 7 | **S3 manifest upload** (Plan C follow-up) | `07fe208` | ✅ |\n| 8 | **GPU-distributed corpus generation** (`--shard`, `--cuda-visible-devices`) | `d1fe8a5` | ✅ |",
   "new_string": "# Gap Closure Handoff — 2026-04-23 (session 4)\n\nResuming work on `instructions/gaps.md`. Branch `feat/training-upgrade`.\n\n## Closed so far (8 commits across 4 sessions)\n\n| # | Gap | Commit | Status |\n|---|-----|--------|--------|\n| 1 | Workspace mypy config gap (pandas-stubs, inference/shared/evaluation globs) | `917150e` | ✅ |\n| 2 | APPS stratification parity (Plan A `load_problems` delegation from Plan C) | `917150e` | ✅ |\n| […]
 
@@ -1186,7 +1186,7 @@ id: toolu_017RwDBCddN9nke7CxRUzpKZ
 tool_result
 id: toolu_017RwDBCddN9nke7CxRUzpKZ
 ```
-The file /Users/noahdolevelixir/Code/rune/instructions/gap-closure-handoff.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/instructions/gap-closure-handoff.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1196,7 +1196,7 @@ id: toolu_01HhojvcD6qwTBP6r9qehHse
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/gap-closure-handoff.md",
+  "file_path": "/home/<USER>/Code/rune/instructions/gap-closure-handoff.md",
   "old_string": "## Remaining gaps (from `instructions/gaps.md`)\n\n### 6. GitHub issue/PR `task_description` mining  (Plan B gate) — **IN PROGRESS, diagnosed**\n\n**Root cause found this session:**\n\n- `libs/model-training/src/model_training/d2l_data.py:684` — `_make_pair_record` does NOT include `task_description` in the returned pair dict. It returns `{task_id, activation_text, teacher_text, metadata}` only.\n- `libs/model-training/src/model_training/encoder_pretrain/augment.py:78` — `_select_task_desc(pair)` reads `pair[\"task_description\"]`. Missing → pair dropped.\n- Result: the pipeline that calls `normalize_mined_pairs → augment_pairs_with_task_desc` drops 100% of pairs for missing `task_description`, so `augment_corpus` hits 0% retention and raises `RuntimeError` (the `MIN_RETENTION_RATIO = 0.80` gate).\n\n**The upstream trajectory ALREADY has authentic `task_description`:**\n- `mine_pr_diff_chains` (d2l_mining.py:228) sets `task_description = f\"{title}\\n\\n{body}\".strip()` (PR title + body)\n- `mine_issue_commit_chains` (d2l_mining.py:321) sets `task_description = f\"{title}\\n\\n{body}\".strip()` (issue title + body)\n\nSo no new GitHub API calls are needed. The bug is purely that `normalize_mined_pairs → _make_pair_record` drops it on the floor.\n\n**Minimal fix (~3 lines):**\n\n1. `_make_pair_record(task_id, outcome, language, idx, activation, teacher, task_description)` — add kwarg.\n2. Include `\"task_description\": task_description` in the returned dict.\n3. In `normalize_mined_pairs`, `_record` closure passes `task_desc` (already local at line 735) to `_make_pair_record`.\n\n**TDD (the test I wrote this session — reverted so working tree is clean, but copy/paste it into `libs/model-training/tests/test_d2l_data.py` after `test_normalize_mined_pairs_single_commit_produces_step0`):**\n\n```python\ndef test_normalize_mined_pairs_propagates_task_description() -> None:\n    \"\"\"Each pair record carries the trajectory's task_description.\n\n    Plan B gate: […]
 
 > TOOL
@@ -1204,7 +1204,7 @@ id: toolu_01HhojvcD6qwTBP6r9qehHse
 tool_result
 id: toolu_01HhojvcD6qwTBP6r9qehHse
 ```
-The file /Users/noahdolevelixir/Code/rune/instructions/gap-closure-handoff.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/instructions/gap-closure-handoff.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1214,7 +1214,7 @@ id: toolu_01C9KLj9aqM498FxqZnbUyGh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/gap-closure-handoff.md",
+  "file_path": "/home/<USER>/Code/rune/instructions/gap-closure-handoff.md",
   "old_string": "## Repo state\n\n- Branch: `feat/training-upgrade` (ahead of `origin/feat/training-upgrade` by 56 commits as of `d1fe8a5`)\n- No uncommitted changes after `d1fe8a5` (the session-3 RED test I wrote for gap 6 was reverted to keep the working tree clean)\n- `uv.lock` regenerated with `pandas-stubs` added (run `uv sync --all-packages` to materialize)",
   "new_string": "## Repo state\n\n- Branch: `feat/training-upgrade` (ahead of `origin/feat/training-upgrade` by 57 commits as of `d710005`)\n- No uncommitted changes to tracked source/test files after `d710005`; pre-existing deletions in `docs/superpowers/{handoffs,plans,specs}/` remain in the working tree unstaged (inherited from a prior session, unrelated to gap-closure work).\n- `uv.lock` regenerated with `pandas-stubs` added (run `uv sync --all-packages` to materialize)\n- Gap 6 verification (commit `d710005`): 147 model-training tests pass, 138 handoff-regression tests pass, ruff + mypy clean on `d2l_data.py`."
 }
@@ -1225,7 +1225,7 @@ id: toolu_01C9KLj9aqM498FxqZnbUyGh
 tool_result
 id: toolu_01C9KLj9aqM498FxqZnbUyGh
 ```
-The file /Users/noahdolevelixir/Code/rune/instructions/gap-closure-handoff.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/instructions/gap-closure-handoff.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1524,7 +1524,7 @@ id: toolu_01EdYWAD3MPiWYyVNyKjNdso
 {
   "description": "Explore round-2 training architecture",
   "subagent_type": "Explore",
-  "prompt": "I am writing an implementation plan for Gap 9 from `/Users/noahdolevelixir/Code/rune/instructions/gap-closure-handoff.md`: a **round-2 hypernetwork training loop** in the rune codebase.\n\nThe round-2 loop is a Plan C follow-up. After the 25 per-bin oracle adapters are trained (via `train_and_register`), we need to run a second pass of hypernetwork training that incorporates them as teacher signals.\n\nI need a VERY THOROUGH understanding of the existing round-1 training code so I can write a plan that fits cleanly. Please survey and report on:\n\n**Core files to read and summarize:**\n1. `libs/model-training/src/model_training/hypernetwork.py` — class structure, forward signature, how it is currently trained. Quote the key method signatures (class name, `__init__` params, `forward` signature, any training / fit helpers).\n2. `libs/model-training/src/model_training/d2l_train.py` — the round-1 training loop. Summarize: main function name(s), how it loads pairs (d2l_data), how it constructs the optimizer + loss, where the kill-switch hooks in (per commit 510464f), checkpoint/save behavior, MLflow hooks.\n3. `libs/model-training/src/model_training/trainer.py` — find `train_and_register` (or equivalent). Summarize: signature, what it does, how it registers adapters into the AdapterRegistry, what artifacts it produces on disk.\n4. `libs/model-training/src/model_training/sakana_d2l.py` — summarize the Sakana Doc-to-LoRA perceiver: input/output shapes, how a \"task embedding\" or \"doc embedding\" maps to […]
+  "prompt": "I am writing an implementation plan for Gap 9 from `/home/<USER>/Code/rune/instructions/gap-closure-handoff.md`: a **round-2 hypernetwork training loop** in the rune codebase.\n\nThe round-2 loop is a Plan C follow-up. After the 25 per-bin oracle adapters are trained (via `train_and_register`), we need to run a second pass of hypernetwork training that incorporates them as teacher signals.\n\nI need a VERY THOROUGH understanding of the existing round-1 training code so I can write a plan that fits cleanly. Please survey and report on:\n\n**Core files to read and summarize:**\n1. `libs/model-training/src/model_training/hypernetwork.py` — class structure, forward signature, how it is currently trained. Quote the key method signatures (class name, `__init__` params, `forward` signature, any training / fit helpers).\n2. `libs/model-training/src/model_training/d2l_train.py` — the round-1 training loop. Summarize: main function name(s), how it loads pairs (d2l_data), how it constructs the optimizer + loss, where the kill-switch hooks in (per commit 510464f), checkpoint/save behavior, MLflow hooks.\n3. `libs/model-training/src/model_training/trainer.py` — find `train_and_register` (or equivalent). Summarize: signature, what it does, how it registers adapters into the AdapterRegistry, what artifacts it produces on disk.\n4. `libs/model-training/src/model_training/sakana_d2l.py` — summarize the Sakana Doc-to-LoRA perceiver: input/output shapes, how a \"task embedding\" or \"doc embedding\" maps to […]
 
 > TOOL
 
@@ -1877,7 +1877,7 @@ tool_use Read
 id: toolu_01TNgYP2e13sZviWKR18gT3x
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/adapter-registry/src/adapter_registry/models.py"
+  "file_path": "/home/<USER>/Code/rune/libs/adapter-registry/src/adapter_registry/models.py"
 }
 ```
 
@@ -2135,7 +2135,7 @@ tool_use Write
 id: toolu_01DyVTjW5AZZFCxQdeKmzDYq
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
+  "file_path": "/home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
   "content": "# Round-2 Hypernetwork Training Loop Implementation Plan\n\n> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.\n\n**Goal:** Build a second-pass distillation loop (`train_d2l_qwen3_round2`) that trains the Sakana HyperLoRA hypernetwork using per-bin oracle adapters as teacher signals instead of the bare base model, so the hypernetwork learns a compressed policy that already knows each phase × benchmark bin's behaviour.\n\n**Architecture:** Reuse the existing round-1 two-pass teacher/student training step from `d2l_train.py`, but replace the bare-base-model teacher forward with a per-record oracle-adapter teacher forward routed through an LRU-cached `OracleAdapterCache`. Each JSONL record's `metadata.phase` + `metadata.benchmark` fields map deterministically to one of the 25 bin keys (`decompose_humaneval`, `plan_mbpp`, …, `diagnose_pooled`); the `AdapterRegistry` resolves the bin key to `oracle_<bin_key>`'s on-disk path; the cache loads the oracle as a `PeftModel` against the same base model and runs it under `torch.no_grad()` for teacher logits. Records whose bin has no registered oracle fall back to the bare base model (matching round-1 behaviour); a startup audit blocks training when coverage < `min_oracle_coverage`.\n\n**Tech Stack:** Python 3.12, `uv`, `pydantic` (config), `torch` + `transformers` + `peft` (deferred imports, INFRA-05 pattern), […]
 
 > TOOL
@@ -2143,7 +2143,7 @@ id: toolu_01DyVTjW5AZZFCxQdeKmzDYq
 tool_result
 id: toolu_01DyVTjW5AZZFCxQdeKmzDYq
 ```
-File created successfully at: /Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2220,7 +2220,7 @@ tool_use Read
 id: toolu_01CtyoA2pUPV5eQQ6DbZEpqG
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_train.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_train.py",
   "offset": 492,
   "limit": 130
 }
@@ -2275,7 +2275,7 @@ id: toolu_01QJ7ct2emB6EfMQLHxKXAmz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
+  "file_path": "/home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
   "old_string": "def _setup_training(config: Any) -> dict[str, Any]:\n    \"\"\"Load base model, tokenizer, hypernet, hc — same as round-1.\n\n    Delegates to :mod:`model_training.d2l_train` internals so both rounds\n    share a single setup codepath. Returns a dict of handles consumed by\n    the training loop.\n    \"\"\"\n    from model_training.d2l_train import (  # noqa: PLC0415\n        _build_hypernet,\n        _load_base_model,\n        _load_probe_cache,\n    )\n\n    base_model, tokenizer = _load_base_model(config)\n    hc, hypernet = _build_hypernet(config)\n    probe = _load_probe_cache(config)\n    return {\n        \"base_model\": base_model,\n        \"tokenizer\": tokenizer,\n        \"hypernet\": hypernet,\n        \"hc\": hc,\n        \"probe\": probe,\n    }",
   "new_string": "def _setup_training(config: Any) -> dict[str, Any]:\n    \"\"\"Load base model, tokenizer, hypernet, hc.\n\n    Mirrors the inline setup block in :func:`model_training.d2l_train.train_d2l_qwen3`\n    (lines 563–594 as of commit d710005). Duplicating the block keeps round-1\n    untouched; a future refactor can factor these into shared helpers.\n    Returns a dict of handles consumed by :func:`_run_training_loop`.\n    \"\"\"\n    import torch  # noqa: PLC0415\n    from ctx_to_lora.modeling.hypernet import HyperLoRA  # noqa: PLC0415\n    from transformers import AutoModelForCausalLM, AutoTokenizer  # noqa: PLC0415\n\n    from model_training.d2l_config import build_hypernet_config  # noqa: PLC0415\n    from model_training.d2l_train import _require_probe_cache  # noqa: PLC0415\n    from model_training.sakana_d2l import (  # noqa: PLC0415\n        get_aggregator_config,\n        transfer_aggregator_weights,\n    )\n    from shared.hardware import get_best_device  # noqa: PLC0415\n\n    _require_probe_cache(config.model_config_name)\n\n    tokenizer = AutoTokenizer.from_pretrained(config.base_model_name)\n    base_model = AutoModelForCausalLM.from_pretrained(\n        config.base_model_name,\n        output_hidden_states=True,\n    ).eval()\n\n    hc = build_hypernet_config(\n        config.model_config_name,\n […]
 
@@ -2284,7 +2284,7 @@ id: toolu_01QJ7ct2emB6EfMQLHxKXAmz
 tool_result
 id: toolu_01QJ7ct2emB6EfMQLHxKXAmz
 ```
-The file /Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2308,7 +2308,7 @@ tool_use Read
 id: toolu_01AVHmTQhBLH149CErLtn8Rm
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
+  "file_path": "/home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
   "offset": 1,
   "limit": 50
 }
@@ -2325,7 +2325,7 @@ id: toolu_01QiuMJXM6sJvokrBeKUAYpZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
+  "file_path": "/home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
   "old_string": "    \"\"\"Inner training loop: optimizer, scheduler, checkpoint, kill-switch.\"\"\"\n    import torch  # noqa: PLC0415\n\n    from model_training.d2l_train import (  # noqa: PLC0415\n        _build_optimizer_and_scheduler,\n        _save_checkpoint,\n        _setup_mlflow,\n    )\n    from model_training.kill_switch import (  # noqa: PLC0415\n        KillSwitchConfig,\n        KillSwitchState,\n        maybe_run_kill_switch,\n    )\n\n    _setup_mlflow(config)\n    optimizer, scheduler = _build_optimizer_and_scheduler(hypernet, config)",
   "new_string": "    \"\"\"Inner training loop: optimizer, scheduler, checkpoint, kill-switch.\"\"\"\n    import torch  # noqa: PLC0415\n    from torch.optim import AdamW  # noqa: PLC0415\n    from torch.optim.lr_scheduler import (  # noqa: PLC0415\n        CosineAnnealingLR,\n        LinearLR,\n        SequentialLR,\n    )\n\n    from model_training.d2l_train import (  # noqa: PLC0415\n        _save_checkpoint,\n        _setup_mlflow,\n    )\n    from model_training.kill_switch import (  # noqa: PLC0415\n        KillSwitchConfig,\n        KillSwitchState,\n        maybe_run_kill_switch,\n    )\n\n    _setup_mlflow(config)\n\n    trainable_params = [p for p in hypernet.parameters() if p.requires_grad]\n    optimizer = AdamW(trainable_params, lr=config.lr)\n    scheduler = SequentialLR(\n        optimizer,\n        schedulers=[\n            LinearLR(optimizer, start_factor=0.01, total_iters=config.warmup_steps),\n            CosineAnnealingLR(\n                optimizer,\n                T_max=max(1, config.num_steps - config.warmup_steps),\n                eta_min=1e-6,\n            ),\n        ],\n        milestones=[config.warmup_steps],\n    )"
 }
@@ -2336,7 +2336,7 @@ id: toolu_01QiuMJXM6sJvokrBeKUAYpZ
 tool_result
 id: toolu_01QiuMJXM6sJvokrBeKUAYpZ
 ```
-The file /Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2345,7 +2345,7 @@ tool_use Read
 id: toolu_0192S5QQvAWFRFg76AjjeV1d
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
+  "file_path": "/home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
   "offset": 900,
   "limit": 50
 }
@@ -2432,7 +2432,7 @@ tool_use Read
 id: toolu_01RqLBqm24WUzpFFipfEWdth
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
+  "file_path": "/home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
   "offset": 1835,
   "limit": 25
 }
@@ -2477,7 +2477,7 @@ id: toolu_01JbU5VLRVyj9icn2UEgy1nN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
+  "file_path": "/home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
   "old_string": "**Note on `_build_optimizer_and_scheduler`:** the round-1 module `d2l_train.py` does not export this helper at the time of writing. If mypy complains about the import, inline the optimizer+scheduler construction in `_run_training_loop` using the exact code from `d2l_train.py:train_d2l_qwen3`:\n\n```python\noptimizer = torch.optim.AdamW(hypernet.parameters(), lr=config.lr)\nscheduler = torch.optim.lr_scheduler.LambdaLR(\n    optimizer,\n    lr_lambda=lambda s: min(1.0, (s + 1) / max(1, config.warmup_steps)),\n)\n```\n\n- [ ] **Step 8.6: Commit**",
   "new_string": "**Note on reused helpers:** the round-1 module `d2l_train.py` exports only `_setup_mlflow`, `_save_checkpoint`, `_dry_run_validate_shapes`, `_require_probe_cache`, `_compute_kl_ce_loss`, and `_training_step` as module-level callables. Setup code (model load, hypernet build, device placement, optimizer, scheduler) is inlined inside `train_d2l_qwen3` in round-1. This plan mirrors the relevant blocks in `_setup_training` and `_run_training_loop` rather than touching round-1. A future refactor can factor them out; doing so is out of scope here.\n\n- [ ] **Step 8.6: Commit**"
 }
@@ -2488,7 +2488,7 @@ id: toolu_01JbU5VLRVyj9icn2UEgy1nN
 tool_result
 id: toolu_01JbU5VLRVyj9icn2UEgy1nN
 ```
-The file /Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2629,7 +2629,7 @@ tool_use Read
 id: toolu_01Stz9gDCqC97cyBRHr9VAhf
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
+  "file_path": "/home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
   "offset": 495,
   "limit": 10
 }
@@ -2659,7 +2659,7 @@ id: toolu_01SFthQFwNWQkQn3phecAYKa
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
+  "file_path": "/home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
   "old_string": "    from adapter_registry.registry import AdapterNotFoundError",
   "new_string": "    from adapter_registry.exceptions import AdapterNotFoundError"
 }
@@ -2670,7 +2670,7 @@ id: toolu_01SFthQFwNWQkQn3phecAYKa
 tool_result
 id: toolu_01SFthQFwNWQkQn3phecAYKa
 ```
-The file /Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md has been updated. All occurrences were successfully replaced. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md has been updated. All occurrences were successfully replaced. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2679,7 +2679,7 @@ tool_use Read
 id: toolu_01YLRYsjutemxDwisaEuKg7T
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
+  "file_path": "/home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
   "offset": 540,
   "limit": 10
 }
@@ -2810,7 +2810,7 @@ tool_use Read
 id: toolu_01VdjTKiD4ifk8i8BzmyvRsV
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
+  "file_path": "/home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
   "offset": 113,
   "limit": 160
 }
@@ -2883,7 +2883,7 @@ id: toolu_01LJvsdRaneepaFy1tbsKdLd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
+  "file_path": "/home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
   "old_string": "    assert cfg.max_loaded_oracles == DEFAULT_MAX_LOADED_ORACLES\n    assert cfg.min_oracle_coverage == DEFAULT_MIN_ORACLE_COVERAGE\n    assert cfg.oracle_fallback == \"base_model\"\n    assert cfg.sakana_checkpoint_path == \"/tmp/fake.bin\"\n    assert cfg.oracle_registry_url == \"sqlite:///fake.db\"",
   "new_string": "    assert cfg.max_loaded_oracles == DEFAULT_MAX_LOADED_ORACLES\n    assert cfg.min_oracle_coverage == DEFAULT_MIN_ORACLE_COVERAGE\n    assert cfg.oracle_fallback == \"skip\"\n    assert cfg.sakana_checkpoint_path == \"/tmp/fake.bin\"\n    assert cfg.oracle_registry_url == \"sqlite:///fake.db\""
 }
@@ -2894,7 +2894,7 @@ id: toolu_01LJvsdRaneepaFy1tbsKdLd
 tool_result
 id: toolu_01LJvsdRaneepaFy1tbsKdLd
 ```
-The file /Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2903,7 +2903,7 @@ tool_use Read
 id: toolu_018t9CzpjwuKH1v7aCQVW8ic
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
+  "file_path": "/home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
   "offset": 204,
   "limit": 30
 }
@@ -2953,7 +2953,7 @@ id: toolu_01CLGbN6dr8kvgZMb97kVTMA
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
+  "file_path": "/home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
   "old_string": "        max_loaded_oracles: LRU cache cap for simultaneously loaded oracle\n            PeftModels. Each oracle is ~50–150 MB on Qwen3.5-9B; keep small\n            to bound GPU memory.\n        min_oracle_coverage: Minimum fraction of training records that must\n            route to a registered oracle. When the startup audit reports less\n            than this, training aborts.\n        oracle_fallback: What to do when a record's bin has no registered\n            oracle. ``\"base_model\"`` uses the bare base model (round-1\n            behaviour); ``\"skip\"`` drops the record from the epoch.\n        checkpoint_dir: Overrides parent default so round-2 does not clobber\n            round-1 checkpoints.\n        experiment_name: Overrides parent default so MLflow separates the runs.\n    \"\"\"\n\n    oracle_registry_url: str\n    max_loaded_oracles: int = Field(default=DEFAULT_MAX_LOADED_ORACLES)\n    min_oracle_coverage: float = Field(default=DEFAULT_MIN_ORACLE_COVERAGE)\n    oracle_fallback: Literal[\"base_model\", \"skip\"] = Field(default=\"base_model\")",
   "new_string": "        max_loaded_oracles: LRU cache cap for simultaneously cached oracle\n            LoRA dicts (functional-LoRA format: ``{module: {A, B}}``). Each\n            entry is lightweight (tensors only, no model wrappers); this bound\n            mostly limits the rate of disk reads.\n        min_oracle_coverage: Minimum fraction of training records that must\n            route to a registered oracle. When the startup audit reports less\n            than this, training aborts. Effectively mandatory because the\n            default fallback (``\"skip\"``) means below-coverage runs make no\n            training progress.\n        oracle_fallback: What to do when a record's bin […]
 
@@ -2962,7 +2962,7 @@ id: toolu_01CLGbN6dr8kvgZMb97kVTMA
 tool_result
 id: toolu_01CLGbN6dr8kvgZMb97kVTMA
 ```
-The file /Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2999,7 +2999,7 @@ tool_use Read
 id: toolu_0164CJzq8Lr75LLzvs79VR94
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
+  "file_path": "/home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
   "offset": 752,
   "limit": 230
 }
@@ -3071,7 +3071,7 @@ id: toolu_01SKTg3bqrZqRYuCUNP9CCjL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
+  "file_path": "/home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
   "old_string": "## Task 5 — `OracleAdapterCache` LRU cache (depends on Tasks 2, 3)\n\n**Files:**\n- Modify: `libs/model-training/src/model_training/oracle_cache.py` (add class)\n- Modify: `libs/model-training/tests/test_oracle_cache.py` (add tests)\n\n### Steps\n\n- [ ] **Step 5.1: Write failing test**\n\nAppend to `libs/model-training/tests/test_oracle_cache.py`:\n\n```python\nfrom model_training.oracle_cache import OracleAdapterCache\n\n\ndef _fake_peft_module() -> MagicMock:\n    \"\"\"Build a fake peft module with PeftModel.from_pretrained returning a MagicMock.\"\"\"\n    peft_mock = MagicMock()\n    peft_mock.PeftModel.from_pretrained.side_effect = lambda base, path, **kw: (\n        MagicMock(name=f\"peft({path})\")\n    )\n    return peft_mock\n\n\ndef test_oracle_cache_loads_once_per_bin(monkeypatch: pytest.MonkeyPatch) -> None:\n    \"\"\"Second .get() for the same bin returns the cached PeftModel (no reload).\"\"\"\n    peft_mock = _fake_peft_module()\n    monkeypatch.setitem(__import__(\"sys\").modules, \"peft\", peft_mock)\n\n    registry = MagicMock()\n    registry.retrieve_by_id.return_value = _fake_record(\n        adapter_id=\"oracle_decompose_humaneval\",\n        file_path=\"/a/oracle_decompose_humaneval\",\n    )\n    base_model = MagicMock(name=\"base\")\n\n    cache = OracleAdapterCache(base_model=base_model, registry=registry, max_loaded=4)\n\n    first = cache.get(\"decompose_humaneval\")\n    second = cache.get(\"decompose_humaneval\")\n\n    assert first is second\n    assert peft_mock.PeftModel.from_pretrained.call_count == 1\n\n\ndef test_oracle_cache_returns_none_when_bin_missing(\n    monkeypatch: pytest.MonkeyPatch,\n) -> None:\n    \"\"\"Unregistered bins return None; no peft call is made.\"\"\"\n    from adapter_registry.exceptions import AdapterNotFoundError\n\n    peft_mock = _fake_peft_module()\n    monkeypatch.setitem(__import__(\"sys\").modules, \"peft\", peft_mock)\n\n    registry = MagicMock()\n    registry.retrieve_by_id.side_effect = AdapterNotFoundError(\"missing\")\n\n    cache = OracleAdapterCache(\n        base_model=MagicMock(), registry=registry, max_loaded=4\n    )\n    assert cache.get(\"plan_mbpp\") is None\n    peft_mock.PeftModel.from_pretrained.assert_not_called()\n\n\ndef test_oracle_cache_evicts_lru_when_full(monkeypatch: pytest.MonkeyPatch) -> None:\n    \"\"\"Filling past max_loaded evicts the least-recently-used bin.\"\"\"\n    peft_mock = _fake_peft_module()\n    monkeypatch.setitem(__import__(\"sys\").modules, \"peft\", peft_mock)\n\n    registry = MagicMock()\n    registry.retrieve_by_id.side_effect = lambda aid: _fake_record(\n        adapter_id=aid, file_path=f\"/a/{aid}\"\n    )\n\n    cache = OracleAdapterCache(\n        base_model=MagicMock(), registry=registry, max_loaded=2\n […]
 
 > TOOL
@@ -3079,7 +3079,7 @@ id: toolu_01SKTg3bqrZqRYuCUNP9CCjL
 tool_result
 id: toolu_01SKTg3bqrZqRYuCUNP9CCjL
 ```
-The file /Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3115,7 +3115,7 @@ tool_use Read
 id: toolu_01NgHzfjvZYvykUJBWuMJheX
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
+  "file_path": "/home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
   "offset": 1091,
   "limit": 160
 }
@@ -3191,7 +3191,7 @@ id: toolu_01KoS3xBiysYdjLsV7RWJ3YY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
+  "file_path": "/home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
   "old_string": "## Task 6 — `_teacher_forward_with_oracle` helper (depends on Task 5)\n\n**Files:**\n- Create: `libs/model-training/src/model_training/round2_train.py`\n- Create: `libs/model-training/tests/test_round2_train.py`\n\n### Steps\n\n- [ ] **Step 6.1: Write failing test**\n\nCreate `libs/model-training/tests/test_round2_train.py`:\n\n```python\n\"\"\"CPU-only unit tests for round2_train module.\"\"\"\n\nfrom __future__ import annotations\n\nfrom unittest.mock import MagicMock\n\nimport pytest\n\nfrom model_training.round2_train import _teacher_forward_with_oracle\n\n\nclass _StubLogits:\n    \"\"\"Stand-in for the ``.logits`` attribute of an HF model output.\"\"\"\n\n    def __init__(self, marker: str) -> None:\n        self.marker = marker\n\n\nclass _StubOutput:\n    def __init__(self, marker: str) -> None:\n        self.logits = _StubLogits(marker)\n\n\ndef test_teacher_forward_uses_oracle_when_provided() -> None:\n    \"\"\"oracle(...) is called, base_model(...) is not.\"\"\"\n    base = MagicMock(name=\"base\")\n    oracle = MagicMock(name=\"oracle\")\n    oracle.return_value = _StubOutput(\"from_oracle\")\n    inputs = {\"input_ids\": MagicMock(), \"attention_mask\": MagicMock()}\n\n    logits = _teacher_forward_with_oracle(\n        base_model=base,\n        oracle=oracle,\n        inputs=inputs,\n    )\n    assert logits.marker == \"from_oracle\"\n    base.assert_not_called()\n    oracle.assert_called_once_with(**inputs, output_hidden_states=False)\n\n\ndef test_teacher_forward_falls_back_to_base_when_oracle_is_none() -> None:\n    \"\"\"oracle=None → bare base model teacher (round-1 behaviour).\"\"\"\n    base = MagicMock(name=\"base\")\n    base.return_value = _StubOutput(\"from_base\")\n    inputs = {\"input_ids\": MagicMock(), \"attention_mask\": MagicMock()}\n\n    logits = _teacher_forward_with_oracle(\n        base_model=base,\n        oracle=None,\n        inputs=inputs,\n    )\n    assert logits.marker == \"from_base\"\n    base.assert_called_once_with(**inputs, output_hidden_states=False)\n```\n\n- [ ] **Step 6.2: Verify tests fail**\n\nRun: `uv run pytest libs/model-training/tests/test_round2_train.py -v`\nExpected: 2 tests FAIL with `ModuleNotFoundError: No module named 'model_training.round2_train'`.\n\n- [ ] **Step 6.3: Implement `_teacher_forward_with_oracle`**\n\nCreate `libs/model-training/src/model_training/round2_train.py`:\n\n```python\n\"\"\"Round-2 hypernetwork training: per-bin oracle teacher distillation.\n\nThis module mirrors :mod:`model_training.d2l_train`'s two-pass teacher/student\nstep but replaces the bare-base-model teacher forward with a […]
 
 > TOOL
@@ -3199,7 +3199,7 @@ id: toolu_01KoS3xBiysYdjLsV7RWJ3YY
 tool_result
 id: toolu_01KoS3xBiysYdjLsV7RWJ3YY
 ```
-The file /Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3235,7 +3235,7 @@ tool_use Read
 id: toolu_01ABsoeWuqAVEGwzyd1ELg75
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
+  "file_path": "/home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
   "offset": 1327,
   "limit": 298
 }
@@ -3308,7 +3308,7 @@ id: toolu_01WQ8npphm6HueFa6jo3GkmW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
+  "file_path": "/home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
   "old_string": "def test_training_step_round2_routes_to_oracle_cache(\n    monkeypatch: pytest.MonkeyPatch,\n) -> None:\n    \"\"\"_training_step_round2 asks cache.get(bin_key) and passes the oracle through.\"\"\"\n    from model_training import round2_train\n\n    # Stub the cache\n    cache = MagicMock()\n    oracle_model = MagicMock(name=\"oracle_model\")\n    cache.get.return_value = oracle_model\n\n    # Stub the round-1 internals we reuse: extract_activations + apply_functional_lora\n    # + _compute_kl_ce_loss. We stub at the round2_train import site.\n    fake_features = MagicMock(name=\"features\")\n    fake_mask = MagicMock(name=\"mask\")\n\n    monkeypatch.setattr(\n        round2_train,\n        \"_extract_activations_with_model\",\n        lambda **_kw: (fake_features, fake_mask),\n    )\n\n    class _FakeCtxMgr:\n        def __enter__(self) -> None: return None\n        def __exit__(self, *exc: object) -> None: return None\n\n    monkeypatch.setattr(\n        round2_train, \"_apply_functional_lora\", lambda *a, **kw: _FakeCtxMgr()\n    )\n\n    fake_loss = MagicMock(name=\"loss_tensor\")\n    fake_metrics = {\"total_loss\": 0.42, \"kl_loss\": 0.2, \"ce_loss\": 0.22}\n    monkeypatch.setattr(\n        round2_train,\n        \"_compute_kl_ce_loss\",\n        lambda s, t, start, cfg: (fake_loss, fake_metrics),\n    )\n\n    # Stub the no_grad context used by the teacher pass\n    class _NoGrad(_FakeCtxMgr): ...\n    monkeypatch.setattr(round2_train, \"_torch_no_grad\", lambda: _NoGrad())\n\n    hypernet = MagicMock()\n    hypernet.generate_weights.return_value = (MagicMock(name=\"lora_dict\"), None)\n\n    tokenizer = MagicMock()\n    tokenizer.return_value = {\"input_ids\": MagicMock(), \"attention_mask\": MagicMock()}\n    tokenizer.side_effect = None  # allow both call forms\n\n    base = MagicMock(name=\"base\")\n    base.return_value.logits = MagicMock(name=\"student_logits\")\n    base.parameters.return_value = iter([MagicMock(device=\"cpu\")])\n\n    config = MagicMock(max_length=512, oracle_fallback=\"base_model\")\n    hc = MagicMock(layer_indices=[0, 1])\n\n    loss, metrics = _training_step_round2(\n        record=_make_record(),\n        base_model=base,\n        tokenizer=tokenizer,\n        hypernet=hypernet,\n        hc=hc,\n        config=config,\n        oracle_cache=cache,\n    )\n\n    cache.get.assert_called_once_with(\"decompose_humaneval\")\n    assert loss is fake_loss\n    assert metrics[\"total_loss\"] == […]
 
 > TOOL
@@ -3316,7 +3316,7 @@ id: toolu_01WQ8npphm6HueFa6jo3GkmW
 tool_result
 id: toolu_01WQ8npphm6HueFa6jo3GkmW
 ```
-The file /Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3329,7 +3329,7 @@ tool_use Read
 id: toolu_012aTHxy1MJj1ZURnzGMbbkK
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
+  "file_path": "/home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
   "offset": 1515,
   "limit": 170
 }
@@ -3389,7 +3389,7 @@ id: toolu_01MzNym3JQ46UvaLn28g4zM2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
+  "file_path": "/home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
   "old_string": "- [ ] **Step 7.2: Verify tests fail**\n\nRun: `uv run pytest libs/model-training/tests/test_round2_train.py -v`\nExpected: 2 new tests FAIL with `ImportError: cannot import name '_training_step_round2'`.\n\n- [ ] **Step 7.3: Implement `_training_step_round2`**\n\nAppend to `libs/model-training/src/model_training/round2_train.py`:\n\n```python\n# -----------------------------------------------------------------------------\n# Round-1 internals reused here. Bound to module-scope names so tests can\n# monkeypatch them cleanly (avoids shadowing the `torch` name in every test).\n# -----------------------------------------------------------------------------\n\n\ndef _extract_activations_with_model(**kwargs: Any) -> Any:\n    \"\"\"Thin wrapper so tests can monkeypatch activation extraction.\"\"\"\n    from model_training.d2l_probe import (  # noqa: PLC0415\n        extract_activations_with_model,\n    )\n\n    return extract_activations_with_model(**kwargs)\n\n\ndef _apply_functional_lora(*args: Any, **kwargs: Any) -> Any:\n    \"\"\"Thin wrapper so tests can monkeypatch functional LoRA injection.\"\"\"\n    from model_training.d2l_lora import apply_functional_lora  # noqa: PLC0415\n\n    return apply_functional_lora(*args, **kwargs)\n\n\ndef _compute_kl_ce_loss(*args: Any, **kwargs: Any) -> Any:\n    \"\"\"Thin wrapper so tests can monkeypatch the loss function.\"\"\"\n    from model_training.d2l_train import _compute_kl_ce_loss as _impl  # noqa: PLC0415\n\n    return _impl(*args, **kwargs)\n\n\ndef _torch_no_grad() -> Any:\n    \"\"\"Thin wrapper so tests can monkeypatch torch.no_grad().\"\"\"\n    import torch  # noqa: PLC0415\n\n    return torch.no_grad()\n\n\ndef _training_step_round2(\n    *,\n    record: dict[str, Any],\n    base_model: Any,\n    tokenizer: Any,\n    hypernet: Any,\n    hc: Any,\n    config: Any,\n    oracle_cache: Any,\n) -> tuple[Any, dict[str, float]]:\n    \"\"\"Single round-2 training step.\n\n    Mirrors :func:`model_training.d2l_train._training_step` but replaces the\n    teacher forward pass with a per-record oracle-adapter forward. When the\n    record's bin […]
 
 > TOOL
@@ -3397,7 +3397,7 @@ id: toolu_01MzNym3JQ46UvaLn28g4zM2
 tool_result
 id: toolu_01MzNym3JQ46UvaLn28g4zM2
 ```
-The file /Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3437,7 +3437,7 @@ tool_use Read
 id: toolu_01FrTpwihVoGETy9XxCen1ZQ
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
+  "file_path": "/home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
   "offset": 1935,
   "limit": 25
 }
@@ -3482,7 +3482,7 @@ id: toolu_01ANoDxrKeWExK6kz7XZsdHR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
+  "file_path": "/home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
   "old_string": "    oracle_cache = OracleAdapterCache(\n        base_model=base_model,\n        registry=registry,\n        max_loaded=config.max_loaded_oracles,\n    )",
   "new_string": "    oracle_cache = OracleAdapterCache(\n        registry=registry,\n        hc=hc,\n        max_loaded=config.max_loaded_oracles,\n    )"
 }
@@ -3493,7 +3493,7 @@ id: toolu_01ANoDxrKeWExK6kz7XZsdHR
 tool_result
 id: toolu_01ANoDxrKeWExK6kz7XZsdHR
 ```
-The file /Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3532,7 +3532,7 @@ tool_use Read
 id: toolu_01LLdb675NJA7gcRTDcpmB9y
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
+  "file_path": "/home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
   "offset": 2490,
   "limit": 90
 }
@@ -3601,7 +3601,7 @@ id: toolu_016a73K63KB6Qm9Nq5DMFRAE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
+  "file_path": "/home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
   "old_string": "---\n\n## Post-merge verification checklist\n\nAfter all tasks land, run the full handoff-regression suite to confirm no cross-phase regressions:\n\n```bash\nuv sync --all-packages\n\nuv run pytest \\\n    libs/corpus-producer/tests/ \\\n    tests/corpus_producer/ \\\n    libs/model-training/tests/test_kill_switch.py \\\n    libs/model-training/tests/test_d2l_train.py \\\n    libs/model-training/tests/test_d2l_data.py \\\n    libs/model-training/tests/test_oracle_cache.py \\\n    libs/model-training/tests/test_round2_config.py \\\n    libs/model-training/tests/test_round2_train.py \\\n    libs/evaluation/tests/test_load_problems.py \\\n    libs/evaluation/tests/test_swe_bench_adapter.py \\\n    tests/test_validate_oracles.py -v",
   "new_string": "---\n\n## Task 11 — Success gate: benchmark round-2 vs round-1 baseline (depends on Task 10)\n\n**Goal:** Produce a go/no-go verdict for the round-2 run against the success bar:\n> **Strict:** round-2 ≥ round-1 baseline + 2% Pass@1 on at least **4 of 6**\n> benchmarks (HumanEval, MBPP, APPS, BigCodeBench, DS-1000, LiveCodeBench),\n> AND no regression > 1% on any single benchmark.\n\n**Files:**\n- Create: `libs/model-training/src/model_training/round2_gate.py`\n- Create: `libs/model-training/tests/test_round2_gate.py`\n- Create: `scripts/evaluate_round2.py`\n\n### Steps\n\n- [ ] **Step 11.1: Write failing tests for the gate logic**\n\nCreate `libs/model-training/tests/test_round2_gate.py`:\n\n```python\n\"\"\"CPU-only unit tests for evaluate_round2_gate (no benchmark runs).\"\"\"\n\nfrom __future__ import annotations\n\nimport pytest\n\nfrom model_training.round2_gate import (\n    STRICT_IMPROVEMENT_MIN,\n    STRICT_MAX_REGRESSION,\n    STRICT_MIN_IMPROVED,\n    evaluate_round2_gate,\n)\n\n\ndef _make_scores(**pairs: tuple[float, float]) -> dict[str, dict[str, float]]:\n    \"\"\"{bench: {\"baseline\": x, \"round2\": y}}.\"\"\"\n    return {k: {\"baseline\": v[0], \"round2\": v[1]} for k, v in pairs.items()}\n\n\ndef test_gate_passes_when_strict_criteria_met() -> None:\n    \"\"\"4 of 6 benchmarks improved by >= 2%, no regression > 1%.\"\"\"\n    scores = _make_scores(\n        humaneval=(0.60, 0.64),          # +4.0 ✓ improved\n        mbpp=(0.50, 0.53),                # […]
 
@@ -3610,7 +3610,7 @@ id: toolu_016a73K63KB6Qm9Nq5DMFRAE
 tool_result
 id: toolu_016a73K63KB6Qm9Nq5DMFRAE
 ```
-The file /Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3647,7 +3647,7 @@ tool_use Read
 id: toolu_014LYhaRpFrfHaxucXNbxBeC
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
+  "file_path": "/home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
   "offset": 2857,
   "limit": 35
 }
@@ -3681,7 +3681,7 @@ id: toolu_014fqEHgf1bHXzSEiZoD7DLC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
+  "file_path": "/home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md",
   "old_string": "- **Mean-teacher alternative (TIES/DARE merge).** Approach (b) from the architecture survey is not implemented here; sticking to per-bin routing keeps the signal precise. A future plan can add a `--teacher-mode mean` flag backed by `merging.ties_merge`.\n- **Benchmark-harness integration of round-2 output.** Evaluating round-2 adapters against HumanEval/MBPP/etc. uses the existing Plan A benchmark harness; no new wiring needed beyond `task_type='round2_hypernet'` query support (already present).\n- **Documentation updates.** Per CLAUDE.md (no docs unless requested), this plan does not write `docs/` updates. Fold into a future docs-refresh pass if operators need narrative instructions.\n\n---\n\n## Risk notes for the executing engineer\n\n1. **GPU memory.** `max_loaded_oracles=4` on Qwen3.5-9B at rank 64 (oracles) uses ~400 MB for oracle LoRA params + the shared base model + the student's functional LoRA overhead. On a 24 GB card with batch size 1 this fits; on smaller cards drop `max_loaded_oracles` to 2.\n\n2. **`peft.PeftModel.from_pretrained` mutates `base_model`.** Loading an oracle attaches it as a named adapter on the base model. The simplest safe pattern is to use `peft.PeftModel.from_pretrained(base_model, path, adapter_name=bin_key)` and then `base_model.set_adapter(bin_key)` at teacher-forward time (and unset/disable before the student pass). If the task 7 test suite starts flaking because the oracle adapter […]
 
 > TOOL
@@ -3689,7 +3689,7 @@ id: toolu_014fqEHgf1bHXzSEiZoD7DLC
 tool_result
 id: toolu_014fqEHgf1bHXzSEiZoD7DLC
 ```
-The file /Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3789,7 +3789,7 @@ tool_use Read
 id: toolu_01SV9u13qJ6hzR4wwa8Uaz2c
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/subagent-driven-development/implementer-prompt.md"
+  "file_path": "/home/<USER>/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/subagent-driven-development/implementer-prompt.md"
 }
 ```
 
@@ -3892,7 +3892,7 @@ id: toolu_01JVz41XVssRWsVDJVpEhzDn
 {
   "description": "Implement Task 1: Round2TrainConfig",
   "subagent_type": "general-purpose",
-  "prompt": "You are implementing Task 1 of the round-2 hypernetwork training plan for the `rune` codebase.\n\n## Project Context\n\nRune is a local-first coding agent that encodes coding trajectories into LoRA adapters. Round-1 training (in `libs/model-training/src/model_training/d2l_train.py`) trains a Sakana HyperLoRA hypernetwork against the bare base model as teacher. Round-2 (this plan, Task 1 is step 1) uses per-bin oracle adapters as teachers instead. You are only doing Task 1 — the config Pydantic model. Nothing else.\n\n## Working directory\n\n`/Users/noahdolevelixir/Code/rune`\n\n## Codebase conventions (from CLAUDE.md)\n\n- **Python launcher:** always `uv run` for every python command. NEVER `python foo.py`.\n- Google-style docstrings, ruff line-length 88, mypy strict-ish.\n- Deferred GPU imports (torch/peft/transformers inside function bodies) for CPU-only importability (INFRA-05 pattern).\n- Conventional commits with `Co-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>` trailer.\n- Do not commit `uv.lock`.\n\nThe round-1 module `libs/model-training/src/model_training/d2l_train.py` defines `D2LTrainConfig` as a `pydantic.BaseModel`. You will inherit from it. The parent exposes: `sakana_checkpoint_path`, `num_steps`, `lr`, `alpha`, `temperature`, `checkpoint_every`, `full_checkpoint_every`, `checkpoint_dir`, `experiment_name`, `dry_run`, `smoke_test`, `dataset_path`, `grad_clip`, `warmup_steps`, `lora_r`, `max_length`, plus kill-switch fields. You don't need to duplicate them — inheritance gives you all of them.\n\n## Task 1 — Full spec to implement\n\n**Files:**\n- Create: `libs/model-training/src/model_training/round2_config.py`\n- Test: `libs/model-training/tests/test_round2_config.py`\n\n### Steps (follow TDD strictly: […]
+  "prompt": "You are implementing Task 1 of the round-2 hypernetwork training plan for the `rune` codebase.\n\n## Project Context\n\nRune is a local-first coding agent that encodes coding trajectories into LoRA adapters. Round-1 training (in `libs/model-training/src/model_training/d2l_train.py`) trains a Sakana HyperLoRA hypernetwork against the bare base model as teacher. Round-2 (this plan, Task 1 is step 1) uses per-bin oracle adapters as teachers instead. You are only doing Task 1 — the config Pydantic model. Nothing else.\n\n## Working directory\n\n`/home/<USER>/Code/rune`\n\n## Codebase conventions (from CLAUDE.md)\n\n- **Python launcher:** always `uv run` for every python command. NEVER `python foo.py`.\n- Google-style docstrings, ruff line-length 88, mypy strict-ish.\n- Deferred GPU imports (torch/peft/transformers inside function bodies) for CPU-only importability (INFRA-05 pattern).\n- Conventional commits with `Co-Authored-By: Claude Opus 4.7 <<REDACTED_EMAIL>>` trailer.\n- Do not commit `uv.lock`.\n\nThe round-1 module `libs/model-training/src/model_training/d2l_train.py` defines `D2LTrainConfig` as a `pydantic.BaseModel`. You will inherit from it. The parent exposes: `sakana_checkpoint_path`, `num_steps`, `lr`, `alpha`, `temperature`, `checkpoint_every`, `full_checkpoint_every`, `checkpoint_dir`, `experiment_name`, `dry_run`, `smoke_test`, `dataset_path`, `grad_clip`, `warmup_steps`, `lora_r`, `max_length`, plus kill-switch fields. You don't need to duplicate them — inheritance gives you all of them.\n\n## Task 1 — Full spec to implement\n\n**Files:**\n- Create: `libs/model-training/src/model_training/round2_config.py`\n- Test: `libs/model-training/tests/test_round2_config.py`\n\n### Steps (follow TDD strictly: […]
 
 > TOOL
 
@@ -3928,7 +3928,7 @@ tool_use Read
 id: toolu_01UqeAqjfeV7usPXpnMLY7Aj
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/subagent-driven-development/spec-reviewer-prompt.md"
+  "file_path": "/home/<USER>/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/subagent-driven-development/spec-reviewer-prompt.md"
 }
 ```
 
@@ -3985,7 +3985,7 @@ id: toolu_01H47qUsFL4jSFVTwUD9p8sm
 {
   "description": "Spec review Task 1",
   "subagent_type": "general-purpose",
-  "prompt": "You are reviewing whether an implementation of Task 1 (Round2TrainConfig Pydantic model) in the `rune` codebase matches its spec.\n\n## What was requested\n\n### Files to create\n1. `/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/round2_config.py`\n2. `/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_round2_config.py`\n\n### The implementation (code) must contain\n\n**Module-level constants:**\n- `DEFAULT_MAX_LOADED_ORACLES: int = 4`\n- `DEFAULT_MIN_ORACLE_COVERAGE: float = 0.8`\n- `DEFAULT_ROUND2_CHECKPOINT_DIR: str = \"./checkpoints/round2\"`\n- `DEFAULT_ROUND2_EXPERIMENT_NAME: str = \"d2l-qwen3-round2\"`\n\n**Class `Round2TrainConfig`** inheriting from `model_training.d2l_train.D2LTrainConfig`, with Pydantic fields:\n- `oracle_registry_url: str` — required (no default)\n- `max_loaded_oracles: int` — default `DEFAULT_MAX_LOADED_ORACLES`\n- `min_oracle_coverage: float` — default `DEFAULT_MIN_ORACLE_COVERAGE`\n- `oracle_fallback: Literal[\"base_model\", \"skip\"]` — default `\"skip\"`  ⬅ MUST be `\"skip\"`, not `\"base_model\"`\n- `checkpoint_dir: str` — default `DEFAULT_ROUND2_CHECKPOINT_DIR`\n- `experiment_name: str` — default `DEFAULT_ROUND2_EXPERIMENT_NAME`\n\n**Validators:**\n- `_validate_max_loaded`: rejects `v < 1` with message matching `\"max_loaded_oracles must be >= 1\"`\n- `_validate_coverage`: rejects `v < 0.0 or v > 1.0` with message matching `\"min_oracle_coverage must be in\"`\n\n**Docstrings:** Google-style, attribute-by-attribute.\n\n### The test file must contain 5 tests\n\n1. `test_round2_config_defaults_are_sane` — asserts all defaults including `cfg.oracle_fallback == \"skip\"`\n2. `test_round2_config_rejects_non_positive_max_loaded` — asserts `max_loaded_oracles=0` raises ValueError matching `\"max_loaded_oracles must be >= 1\"`\n3. `test_round2_config_rejects_coverage_out_of_range` — asserts `min_oracle_coverage=1.5` AND `-0.1` both raise ValueError matching `\"min_oracle_coverage must be in\"`\n4. `test_round2_config_rejects_unknown_fallback` — asserts `oracle_fallback=\"nope\"` raises ValueError\n5. `test_round2_config_inherits_d2l_fields` — asserts inherited `lr`, `alpha`, and default `temperature=2.0`\n\n## What implementer claims they […]
+  "prompt": "You are reviewing whether an implementation of Task 1 (Round2TrainConfig Pydantic model) in the `rune` codebase matches its spec.\n\n## What was requested\n\n### Files to create\n1. `/home/<USER>/Code/rune/libs/model-training/src/model_training/round2_config.py`\n2. `/home/<USER>/Code/rune/libs/model-training/tests/test_round2_config.py`\n\n### The implementation (code) must contain\n\n**Module-level constants:**\n- `DEFAULT_MAX_LOADED_ORACLES: int = 4`\n- `DEFAULT_MIN_ORACLE_COVERAGE: float = 0.8`\n- `DEFAULT_ROUND2_CHECKPOINT_DIR: str = \"./checkpoints/round2\"`\n- `DEFAULT_ROUND2_EXPERIMENT_NAME: str = \"d2l-qwen3-round2\"`\n\n**Class `Round2TrainConfig`** inheriting from `model_training.d2l_train.D2LTrainConfig`, with Pydantic fields:\n- `oracle_registry_url: str` — required (no default)\n- `max_loaded_oracles: int` — default `DEFAULT_MAX_LOADED_ORACLES`\n- `min_oracle_coverage: float` — default `DEFAULT_MIN_ORACLE_COVERAGE`\n- `oracle_fallback: Literal[\"base_model\", \"skip\"]` — default `\"skip\"`  ⬅ MUST be `\"skip\"`, not `\"base_model\"`\n- `checkpoint_dir: str` — default `DEFAULT_ROUND2_CHECKPOINT_DIR`\n- `experiment_name: str` — default `DEFAULT_ROUND2_EXPERIMENT_NAME`\n\n**Validators:**\n- `_validate_max_loaded`: rejects `v < 1` with message matching `\"max_loaded_oracles must be >= 1\"`\n- `_validate_coverage`: rejects `v < 0.0 or v > 1.0` with message matching `\"min_oracle_coverage must be in\"`\n\n**Docstrings:** Google-style, attribute-by-attribute.\n\n### The test file must contain 5 tests\n\n1. `test_round2_config_defaults_are_sane` — asserts all defaults including `cfg.oracle_fallback == \"skip\"`\n2. `test_round2_config_rejects_non_positive_max_loaded` — asserts `max_loaded_oracles=0` raises ValueError matching `\"max_loaded_oracles must be >= 1\"`\n3. `test_round2_config_rejects_coverage_out_of_range` — asserts `min_oracle_coverage=1.5` AND `-0.1` both raise ValueError matching `\"min_oracle_coverage must be in\"`\n4. `test_round2_config_rejects_unknown_fallback` — asserts `oracle_fallback=\"nope\"` raises ValueError\n5. `test_round2_config_inherits_d2l_fields` — asserts inherited `lr`, `alpha`, and default `temperature=2.0`\n\n## What implementer claims they […]
 
 > TOOL
 
@@ -4023,7 +4023,7 @@ tool_use Read
 id: toolu_01T8zbTcXU8d6sCZzaFGW9cW
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/subagent-driven-development/code-quality-reviewer-prompt.md"
+  "file_path": "/home/<USER>/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/subagent-driven-development/code-quality-reviewer-prompt.md"
 }
 ```
 
@@ -4069,7 +4069,7 @@ id: toolu_01AQXV9ARPjtPdEZ5tbt1H29
 {
   "description": "Code quality review Task 1",
   "subagent_type": "superpowers:code-reviewer",
-  "prompt": "You are reviewing code quality (not spec compliance — that already passed) for Task 1 of the round-2 hypernetwork training plan.\n\n## What was implemented\n\nTask 1 of the plan at `/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md`: a Pydantic `Round2TrainConfig` model that inherits from `model_training.d2l_train.D2LTrainConfig` and adds oracle-routing fields. Task 1 is intentionally small and scaffolding-only.\n\n## Base / head SHAs\n\n- BASE_SHA: `d710005` (commit just before Task 1)\n- HEAD_SHA: `2a007ed` (Task 1 commit)\n\nDiff command: `git show 2a007ed --stat` and `git show 2a007ed`.\n\n## Plan / requirements\n\nSee `/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md` — \"Task 1 — `Round2TrainConfig` Pydantic model\". You may read it for context.\n\n## Files to review\n\n- `libs/model-training/src/model_training/round2_config.py` (new, ~67 lines)\n- `libs/model-training/tests/test_round2_config.py` (new, ~58 lines)\n\n## What to check\n\nStandard code-quality concerns plus:\n- Does each file have one clear responsibility with a well-defined interface?\n- Are units decomposed so they can be understood and tested independently?\n- Is the implementation following the file structure from the plan?\n- Did this change create new files that are already large? (They shouldn't be — Task 1 is small.)\n- Project conventions (from `/Users/noahdolevelixir/Code/rune/CLAUDE.md`):\n  - Google-style docstrings\n  - ruff line-length 88, target py312\n  - mypy strict-ish\n  - No deferred GPU imports needed here (no torch)\n  - No […]
+  "prompt": "You are reviewing code quality (not spec compliance — that already passed) for Task 1 of the round-2 hypernetwork training plan.\n\n## What was implemented\n\nTask 1 of the plan at `/home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md`: a Pydantic `Round2TrainConfig` model that inherits from `model_training.d2l_train.D2LTrainConfig` and adds oracle-routing fields. Task 1 is intentionally small and scaffolding-only.\n\n## Base / head SHAs\n\n- BASE_SHA: `d710005` (commit just before Task 1)\n- HEAD_SHA: `2a007ed` (Task 1 commit)\n\nDiff command: `git show 2a007ed --stat` and `git show 2a007ed`.\n\n## Plan / requirements\n\nSee `/home/<USER>/Code/rune/instructions/2026-04-23-round2-hypernetwork-training.md` — \"Task 1 — `Round2TrainConfig` Pydantic model\". You may read it for context.\n\n## Files to review\n\n- `libs/model-training/src/model_training/round2_config.py` (new, ~67 lines)\n- `libs/model-training/tests/test_round2_config.py` (new, ~58 lines)\n\n## What to check\n\nStandard code-quality concerns plus:\n- Does each file have one clear responsibility with a well-defined interface?\n- Are units decomposed so they can be understood and tested independently?\n- Is the implementation following the file structure from the plan?\n- Did this change create new files that are already large? (They shouldn't be — Task 1 is small.)\n- Project conventions (from `/home/<USER>/Code/rune/CLAUDE.md`):\n  - Google-style docstrings\n  - ruff line-length 88, target py312\n  - mypy strict-ish\n  - No deferred GPU imports needed here (no torch)\n  - No […]
 
 > TOOL
 
@@ -4115,7 +4115,7 @@ id: toolu_019FwzFANJmYExw47ZZWwycV
 {
   "description": "Fix Task 1 review issues",
   "subagent_type": "general-purpose",
-  "prompt": "You are fixing three test-coverage gaps flagged by code review for Task 1 of the round-2 plan. The production code is fine; only the test file needs patches.\n\n## Working directory\n\n`/Users/noahdolevelixir/Code/rune`\n\n## File to modify\n\n`libs/model-training/tests/test_round2_config.py`\n\nCurrent contents as of commit `2a007ed` — read it first with `Read`.\n\n## Changes required\n\n### Change 1 (Important) — add `match=` to the unknown-fallback test\n\nUpdate `test_round2_config_rejects_unknown_fallback` to match the expected error source. Pydantic's Literal validator emits messages like `\"Input should be 'base_model' or 'skip'\"`. Use:\n\n```python\ndef test_round2_config_rejects_unknown_fallback() -> None:\n    \"\"\"oracle_fallback must be 'base_model' or 'skip'.\"\"\"\n    with pytest.raises(ValueError, match=\"'base_model'|'skip'\"):\n        Round2TrainConfig(**_minimal_kwargs(oracle_fallback=\"nope\"))\n```\n\nThe regex `\"'base_model'|'skip'\"` matches either literal value appearing in the message, which is robust against Pydantic future-version formatting changes.\n\n### Change 2 (Minor) — parametrize max_loaded_oracles rejection to cover negative values\n\nReplace the existing single-value test with a parametrized version:\n\n```python\n@pytest.mark.parametrize(\"bad_value\", [0, -1, -100])\ndef test_round2_config_rejects_non_positive_max_loaded(bad_value: int) -> None:\n    \"\"\"max_loaded_oracles must be >= 1.\"\"\"\n    with pytest.raises(ValueError, match=\"max_loaded_oracles must be >= 1\"):\n        Round2TrainConfig(**_minimal_kwargs(max_loaded_oracles=bad_value))\n```\n\n### Change 3 (Minor) — assert checkpoint_dir + experiment_name overrides in defaults test\n\nExtend `test_round2_config_defaults_are_sane` to also assert the overridden parent defaults. You'll need to import the two additional constants. The test becomes:\n\n```python\nfrom model_training.round2_config import (\n    DEFAULT_MAX_LOADED_ORACLES,\n    DEFAULT_MIN_ORACLE_COVERAGE,\n    DEFAULT_ROUND2_CHECKPOINT_DIR,\n    DEFAULT_ROUND2_EXPERIMENT_NAME,\n    Round2TrainConfig,\n)\n```\n\n```python\ndef […]
+  "prompt": "You are fixing three test-coverage gaps flagged by code review for Task 1 of the round-2 plan. The production code is fine; only the test file needs patches.\n\n## Working directory\n\n`/home/<USER>/Code/rune`\n\n## File to modify\n\n`libs/model-training/tests/test_round2_config.py`\n\nCurrent contents as of commit `2a007ed` — read it first with `Read`.\n\n## Changes required\n\n### Change 1 (Important) — add `match=` to the unknown-fallback test\n\nUpdate `test_round2_config_rejects_unknown_fallback` to match the expected error source. Pydantic's Literal validator emits messages like `\"Input should be 'base_model' or 'skip'\"`. Use:\n\n```python\ndef test_round2_config_rejects_unknown_fallback() -> None:\n    \"\"\"oracle_fallback must be 'base_model' or 'skip'.\"\"\"\n    with pytest.raises(ValueError, match=\"'base_model'|'skip'\"):\n        Round2TrainConfig(**_minimal_kwargs(oracle_fallback=\"nope\"))\n```\n\nThe regex `\"'base_model'|'skip'\"` matches either literal value appearing in the message, which is robust against Pydantic future-version formatting changes.\n\n### Change 2 (Minor) — parametrize max_loaded_oracles rejection to cover negative values\n\nReplace the existing single-value test with a parametrized version:\n\n```python\<REDACTED_EMAIL>(\"bad_value\", [0, -1, -100])\ndef test_round2_config_rejects_non_positive_max_loaded(bad_value: int) -> None:\n    \"\"\"max_loaded_oracles must be >= 1.\"\"\"\n    with pytest.raises(ValueError, match=\"max_loaded_oracles must be >= 1\"):\n        Round2TrainConfig(**_minimal_kwargs(max_loaded_oracles=bad_value))\n```\n\n### Change 3 (Minor) — assert checkpoint_dir + experiment_name overrides in defaults test\n\nExtend `test_round2_config_defaults_are_sane` to also assert the overridden parent defaults. You'll need to import the two additional constants. The test becomes:\n\n```python\nfrom model_training.round2_config import (\n    DEFAULT_MAX_LOADED_ORACLES,\n    DEFAULT_MIN_ORACLE_COVERAGE,\n    DEFAULT_ROUND2_CHECKPOINT_DIR,\n    DEFAULT_ROUND2_EXPERIMENT_NAME,\n    Round2TrainConfig,\n)\n```\n\n```python\ndef […]
 
 > TOOL
 
@@ -4147,7 +4147,7 @@ id: toolu_01CCbaQxWdGfcYJK8m3va57x
 {
   "description": "Re-review Task 1 fixes",
   "subagent_type": "superpowers:code-reviewer",
-  "prompt": "You are re-reviewing Task 1 of the round-2 hypernetwork training plan after fixes were applied to address earlier code-review feedback.\n\n## Previous feedback (to confirm fixed)\n\n1. **Important:** `test_round2_config_rejects_unknown_fallback` lacked a `match=` regex, making it inconsistent with the other validator tests and unable to distinguish wrong-cause validation errors.\n2. **Minor:** `max_loaded_oracles` rejection test only covered `0`, not negative values.\n3. **Minor:** `test_round2_config_defaults_are_sane` did not assert `checkpoint_dir` and `experiment_name` were overridden from parent defaults.\n\n## Base / head SHAs\n\n- Previous (first impl): `2a007ed`\n- Fix commit: `f19b34d`\n- Both files of interest in the diff: `libs/model-training/tests/test_round2_config.py`\n\nUse: `git show f19b34d` and `git show f19b34d --stat`.\n\n## Files to review\n\n- `libs/model-training/tests/test_round2_config.py` (only change in this commit)\n\n## What to check\n\n1. Are all three issues actually fixed?\n2. Run the test file and verify it is still green:\n   - `uv run pytest libs/model-training/tests/test_round2_config.py -v` — expect 7 passed.\n   - `uv run ruff check libs/model-training/tests/test_round2_config.py` — must be clean.\n3. Production code (`round2_config.py`) should be UNCHANGED in this commit. Verify.\n4. Any regressions or new issues introduced?\n\nWorking directory: `/Users/noahdolevelixir/Code/rune`.\n\nReturn: ✅ Approved or ❌ Issues remaining (with file:line references)."
+  "prompt": "You are re-reviewing Task 1 of the round-2 hypernetwork training plan after fixes were applied to address earlier code-review feedback.\n\n## Previous feedback (to confirm fixed)\n\n1. **Important:** `test_round2_config_rejects_unknown_fallback` lacked a `match=` regex, making it inconsistent with the other validator tests and unable to distinguish wrong-cause validation errors.\n2. **Minor:** `max_loaded_oracles` rejection test only covered `0`, not negative values.\n3. **Minor:** `test_round2_config_defaults_are_sane` did not assert `checkpoint_dir` and `experiment_name` were overridden from parent defaults.\n\n## Base / head SHAs\n\n- Previous (first impl): `2a007ed`\n- Fix commit: `f19b34d`\n- Both files of interest in the diff: `libs/model-training/tests/test_round2_config.py`\n\nUse: `git show f19b34d` and `git show f19b34d --stat`.\n\n## Files to review\n\n- `libs/model-training/tests/test_round2_config.py` (only change in this commit)\n\n## What to check\n\n1. Are all three issues actually fixed?\n2. Run the test file and verify it is still green:\n   - `uv run pytest libs/model-training/tests/test_round2_config.py -v` — expect 7 passed.\n   - `uv run ruff check libs/model-training/tests/test_round2_config.py` — must be clean.\n3. Production code (`round2_config.py`) should be UNCHANGED in this commit. Verify.\n4. Any regressions or new issues introduced?\n\nWorking directory: `/home/<USER>/Code/rune`.\n\nReturn: ✅ Approved or ❌ Issues remaining (with file:line references)."
 }
 ```
 
@@ -4252,7 +4252,7 @@ id: toolu_01MPQtzhBvZJMySwiMzcyqvj
 {
   "description": "Implement Task 2: _bin_key_for_record",
   "subagent_type": "general-purpose",
-  "prompt": "You are implementing Task 2 of the round-2 hypernetwork training plan for the `rune` codebase.\n\n## Project context\n\nRune is a local-first coding agent. Round-2 training uses per-bin oracle adapters (one per `<phase>_<benchmark>` combination, plus one pooled `diagnose_pooled`) as teacher signals for the Sakana HyperLoRA hypernetwork. This task creates the first piece of `oracle_cache.py` — a pure helper that maps a JSONL training record to the oracle bin key.\n\nTask 1 already landed (commits `2a007ed`, `f19b34d`) creating `Round2TrainConfig`. You are only doing Task 2.\n\n## Working directory\n\n`/Users/noahdolevelixir/Code/rune`\n\n## Codebase conventions (from CLAUDE.md)\n\n- Always `uv run` for python. Never bare `python`.\n- Google docstrings, ruff line-length 88, mypy strict-ish.\n- Deferred GPU imports (INFRA-05). No torch imports here anyway.\n- Conventional commits with `Co-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>` trailer.\n- Do not commit `uv.lock`.\n- Repo has pre-existing deletions in `docs/superpowers/{handoffs,plans,specs}/` — LEAVE THEM ALONE. Only stage files listed below.\n\n## Task 2 — Full spec to implement\n\n**Files:**\n- Create: `libs/model-training/src/model_training/oracle_cache.py` (start with only this function)\n- Create: `libs/model-training/tests/test_oracle_cache.py`\n\n### Step 2.1: Write failing test\n\nCreate `libs/model-training/tests/test_oracle_cache.py`:\n\n```python\n\"\"\"Unit tests for oracle_cache module (CPU-only).\"\"\"\n\nfrom __future__ import annotations\n\nimport pytest\n\nfrom model_training.oracle_cache import (\n    DIAGNOSE_BIN_KEY,\n    ORACLE_ID_PREFIX,\n    _bin_key_for_record,\n)\n\n\ndef test_bin_key_from_metadata_phase_and_benchmark() -> None:\n    \"\"\"Bin key = '<phase>_<benchmark>' when both metadata […]
+  "prompt": "You are implementing Task 2 of the round-2 hypernetwork training plan for the `rune` codebase.\n\n## Project context\n\nRune is a local-first coding agent. Round-2 training uses per-bin oracle adapters (one per `<phase>_<benchmark>` combination, plus one pooled `diagnose_pooled`) as teacher signals for the Sakana HyperLoRA hypernetwork. This task creates the first piece of `oracle_cache.py` — a pure helper that maps a JSONL training record to the oracle bin key.\n\nTask 1 already landed (commits `2a007ed`, `f19b34d`) creating `Round2TrainConfig`. You are only doing Task 2.\n\n## Working directory\n\n`/home/<USER>/Code/rune`\n\n## Codebase conventions (from CLAUDE.md)\n\n- Always `uv run` for python. Never bare `python`.\n- Google docstrings, ruff line-length 88, mypy strict-ish.\n- Deferred GPU imports (INFRA-05). No torch imports here anyway.\n- Conventional commits with `Co-Authored-By: Claude Opus 4.7 <<REDACTED_EMAIL>>` trailer.\n- Do not commit `uv.lock`.\n- Repo has pre-existing deletions in `docs/superpowers/{handoffs,plans,specs}/` — LEAVE THEM ALONE. Only stage files listed below.\n\n## Task 2 — Full spec to implement\n\n**Files:**\n- Create: `libs/model-training/src/model_training/oracle_cache.py` (start with only this function)\n- Create: `libs/model-training/tests/test_oracle_cache.py`\n\n### Step 2.1: Write failing test\n\nCreate `libs/model-training/tests/test_oracle_cache.py`:\n\n```python\n\"\"\"Unit tests for oracle_cache module (CPU-only).\"\"\"\n\nfrom __future__ import annotations\n\nimport pytest\n\nfrom model_training.oracle_cache import (\n    DIAGNOSE_BIN_KEY,\n    ORACLE_ID_PREFIX,\n    _bin_key_for_record,\n)\n\n\ndef test_bin_key_from_metadata_phase_and_benchmark() -> None:\n    \"\"\"Bin key = '<phase>_<benchmark>' when both metadata […]
 
 > TOOL
 
@@ -4369,7 +4369,7 @@ id: toolu_017BNgZjMa51L68U1wih8UKh
 {
   "description": "Fix Task 2 partial-metadata test gap",
   "subagent_type": "general-purpose",
-  "prompt": "You are adding one parametrized test to close a coverage gap flagged by code review for Task 2 of the round-2 plan.\n\nWorking directory: `/Users/noahdolevelixir/Code/rune`.\n\n## File to modify\n\n`libs/model-training/tests/test_oracle_cache.py` — add one new parametrized test at the bottom of the file (before the `test_oracle_id_prefix_constant` test, or at end — your choice, keep related tests grouped).\n\nRead the current file first before editing.\n\n## Code to add\n\n```python\n@pytest.mark.parametrize(\n    \"record,expected\",\n    [\n        # phase in metadata, benchmark from task_id\n        (\n            {\"task_id\": \"humaneval/HE-1/code\", \"metadata\": {\"phase\": \"plan\"}},\n            \"plan_humaneval\",\n        ),\n        # benchmark in metadata, phase from task_id\n        (\n            {\"task_id\": \"mbpp/BCB-3/integrate\", \"metadata\": {\"benchmark\": \"mbpp\"}},\n            \"integrate_mbpp\",\n        ),\n    ],\n)\ndef test_bin_key_partial_metadata_fills_from_task_id(\n    record: dict[str, object], expected: str,\n) -> None:\n    \"\"\"Partial metadata is supplemented by task_id parsing.\n\n    Exercises the branch where only one of ``metadata.phase`` /\n    ``metadata.benchmark`` is supplied; the missing field is filled from\n    ``task_id`` parts.\n    \"\"\"\n    assert _bin_key_for_record(record) == expected\n```\n\n## Verification\n\n- `uv run pytest libs/model-training/tests/test_oracle_cache.py -v` → expect 8 passed (6 original + 2 parametrized).\n- `uv run ruff check libs/model-training/tests/test_oracle_cache.py` → clean.\n- `uv run mypy libs/model-training/src/model_training/oracle_cache.py` → clean (no change expected since only test modified).\n\n## Commit\n\nStage ONLY the test file. Do NOT touch `docs/superpowers/` deletions.\n\n```bash\ngit add libs/model-training/tests/test_oracle_cache.py\ngit commit -m […]
+  "prompt": "You are adding one parametrized test to close a coverage gap flagged by code review for Task 2 of the round-2 plan.\n\nWorking directory: `/home/<USER>/Code/rune`.\n\n## File to modify\n\n`libs/model-training/tests/test_oracle_cache.py` — add one new parametrized test at the bottom of the file (before the `test_oracle_id_prefix_constant` test, or at end — your choice, keep related tests grouped).\n\nRead the current file first before editing.\n\n## Code to add\n\n```python\<REDACTED_EMAIL>(\n    \"record,expected\",\n    [\n        # phase in metadata, benchmark from task_id\n        (\n            {\"task_id\": \"humaneval/HE-1/code\", \"metadata\": {\"phase\": \"plan\"}},\n            \"plan_humaneval\",\n        ),\n        # benchmark in metadata, phase from task_id\n        (\n            {\"task_id\": \"mbpp/BCB-3/integrate\", \"metadata\": {\"benchmark\": \"mbpp\"}},\n            \"integrate_mbpp\",\n        ),\n    ],\n)\ndef test_bin_key_partial_metadata_fills_from_task_id(\n    record: dict[str, object], expected: str,\n) -> None:\n    \"\"\"Partial metadata is supplemented by task_id parsing.\n\n    Exercises the branch where only one of ``metadata.phase`` /\n    ``metadata.benchmark`` is supplied; the missing field is filled from\n    ``task_id`` parts.\n    \"\"\"\n    assert _bin_key_for_record(record) == expected\n```\n\n## Verification\n\n- `uv run pytest libs/model-training/tests/test_oracle_cache.py -v` → expect 8 passed (6 original + 2 parametrized).\n- `uv run ruff check libs/model-training/tests/test_oracle_cache.py` → clean.\n- `uv run mypy libs/model-training/src/model_training/oracle_cache.py` → clean (no change expected since only test modified).\n\n## Commit\n\nStage ONLY the test file. Do NOT touch `docs/superpowers/` deletions.\n\n```bash\ngit add libs/model-training/tests/test_oracle_cache.py\ngit commit -m […]
 
 > TOOL
 
@@ -4398,7 +4398,7 @@ id: toolu_01QaeXDc5eRhqRwS1v7gzwHh
 {
   "description": "Re-review Task 2 fix",
   "subagent_type": "superpowers:code-reviewer",
-  "prompt": "Re-review after Task 2 test-coverage fix. Previous review flagged: \"partial-metadata branch (phase-only or benchmark-only) was correct but untested.\"\n\nFix commit: `646e271`. Verify:\n\n1. The two new parametrized cases in `libs/model-training/tests/test_oracle_cache.py` cover the partial-metadata branch.\n2. Suite is still green: `uv run pytest libs/model-training/tests/test_oracle_cache.py -v` → 8 passed.\n3. Ruff + mypy still clean.\n4. Production code `libs/model-training/src/model_training/oracle_cache.py` unchanged in this commit (`git show 646e271 --stat`).\n5. No regressions, no new issues.\n\nWorking directory: `/Users/noahdolevelixir/Code/rune`.\n\nReturn: ✅ Approved or ❌ Issues remaining."
+  "prompt": "Re-review after Task 2 test-coverage fix. Previous review flagged: \"partial-metadata branch (phase-only or benchmark-only) was correct but untested.\"\n\nFix commit: `646e271`. Verify:\n\n1. The two new parametrized cases in `libs/model-training/tests/test_oracle_cache.py` cover the partial-metadata branch.\n2. Suite is still green: `uv run pytest libs/model-training/tests/test_oracle_cache.py -v` → 8 passed.\n3. Ruff + mypy still clean.\n4. Production code `libs/model-training/src/model_training/oracle_cache.py` unchanged in this commit (`git show 646e271 --stat`).\n5. No regressions, no new issues.\n\nWorking directory: `/home/<USER>/Code/rune`.\n\nReturn: ✅ Approved or ❌ Issues remaining."
 }
 ```
 
@@ -4502,7 +4502,7 @@ id: toolu_011V6kjRLrjsN8i7s2rdM5pb
 {
   "description": "Implement Task 3: lookup_oracle_path",
   "subagent_type": "general-purpose",
-  "prompt": "You are implementing Task 3 of the round-2 hypernetwork training plan.\n\n## Project context\n\nTask 2 just landed `_bin_key_for_record` in `oracle_cache.py` (commits `0180025`, `646e271`). Task 3 adds `lookup_oracle_path` — resolves a bin key to the on-disk path of its registered oracle adapter via `AdapterRegistry`. Returns `None` when missing or archived.\n\n## Working directory\n\n`/Users/noahdolevelixir/Code/rune`\n\n## Conventions\n\n- `uv run` for all Python.\n- Google docstrings, ruff line-length 88, mypy strict-ish.\n- Deferred imports (INFRA-05).\n- Conventional commits with `Co-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>`.\n- Don't touch `docs/superpowers/` deletions.\n\n## Key existing API\n\n- `adapter_registry.registry.AdapterRegistry.retrieve_by_id(adapter_id: str) -> AdapterRecord` — raises `AdapterNotFoundError` when missing.\n- `AdapterNotFoundError` lives at `adapter_registry.exceptions.AdapterNotFoundError`.\n- `AdapterRecord.file_path: str`, `AdapterRecord.is_archived: bool`.\n- Oracle IDs follow `f\"oracle_{bin_key}\"` (scheme from `corpus_producer/trainer_bridge.py`).\n\n## Task 3 — spec\n\n**Files:**\n- Modify: `libs/model-training/src/model_training/oracle_cache.py` (append function at the end)\n- Modify: `libs/model-training/tests/test_oracle_cache.py` (append tests)\n\n### Step 3.1: Write failing test (append to test file)\n\nAppend to `libs/model-training/tests/test_oracle_cache.py`:\n\n```python\nfrom unittest.mock import MagicMock\n\nfrom model_training.oracle_cache import lookup_oracle_path\n\n\ndef _fake_record(\n    adapter_id: str,\n    file_path: str,\n    is_archived: bool = False,\n) -> MagicMock:\n    \"\"\"Build a fake AdapterRecord with the fields lookup_oracle_path reads.\"\"\"\n    rec = MagicMock()\n    rec.id = adapter_id\n    rec.file_path = file_path\n    rec.is_archived = is_archived\n    return rec\n\n\ndef test_lookup_oracle_path_returns_file_path() -> None:\n    \"\"\"Returns the registered file_path when the oracle exists.\"\"\"\n    registry = MagicMock()\n    registry.retrieve_by_id.return_value […]
+  "prompt": "You are implementing Task 3 of the round-2 hypernetwork training plan.\n\n## Project context\n\nTask 2 just landed `_bin_key_for_record` in `oracle_cache.py` (commits `0180025`, `646e271`). Task 3 adds `lookup_oracle_path` — resolves a bin key to the on-disk path of its registered oracle adapter via `AdapterRegistry`. Returns `None` when missing or archived.\n\n## Working directory\n\n`/home/<USER>/Code/rune`\n\n## Conventions\n\n- `uv run` for all Python.\n- Google docstrings, ruff line-length 88, mypy strict-ish.\n- Deferred imports (INFRA-05).\n- Conventional commits with `Co-Authored-By: Claude Opus 4.7 <<REDACTED_EMAIL>>`.\n- Don't touch `docs/superpowers/` deletions.\n\n## Key existing API\n\n- `adapter_registry.registry.AdapterRegistry.retrieve_by_id(adapter_id: str) -> AdapterRecord` — raises `AdapterNotFoundError` when missing.\n- `AdapterNotFoundError` lives at `adapter_registry.exceptions.AdapterNotFoundError`.\n- `AdapterRecord.file_path: str`, `AdapterRecord.is_archived: bool`.\n- Oracle IDs follow `f\"oracle_{bin_key}\"` (scheme from `corpus_producer/trainer_bridge.py`).\n\n## Task 3 — spec\n\n**Files:**\n- Modify: `libs/model-training/src/model_training/oracle_cache.py` (append function at the end)\n- Modify: `libs/model-training/tests/test_oracle_cache.py` (append tests)\n\n### Step 3.1: Write failing test (append to test file)\n\nAppend to `libs/model-training/tests/test_oracle_cache.py`:\n\n```python\nfrom unittest.mock import MagicMock\n\nfrom model_training.oracle_cache import lookup_oracle_path\n\n\ndef _fake_record(\n    adapter_id: str,\n    file_path: str,\n    is_archived: bool = False,\n) -> MagicMock:\n    \"\"\"Build a fake AdapterRecord with the fields lookup_oracle_path reads.\"\"\"\n    rec = MagicMock()\n    rec.id = adapter_id\n    rec.file_path = file_path\n    rec.is_archived = is_archived\n    return rec\n\n\ndef test_lookup_oracle_path_returns_file_path() -> None:\n    \"\"\"Returns the registered file_path when the oracle exists.\"\"\"\n    registry = MagicMock()\n    registry.retrieve_by_id.return_value […]
 
 > TOOL
 
@@ -4516,8 +4516,8 @@ Done.
 **Test count:** 11 passed (8 existing + 3 new).
 
 **Files changed:**
-- `/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/oracle_cache.py` — appended `lookup_oracle_path`
-- `/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_oracle_cache.py` — appended 3 tests + moved imports to top
+- `/home/<USER>/Code/rune/libs/model-training/src/model_training/oracle_cache.py` — appended `lookup_oracle_path`
+- `/home/<USER>/Code/rune/libs/model-training/tests/test_oracle_cache.py` — appended 3 tests + moved imports to top
 
 **Ruff/mypy:** clean.
 
@@ -4536,7 +4536,7 @@ id: toolu_01SrZL4k6VRL2DtZunKqCTt4
 {
   "description": "Spec review Task 3",
   "subagent_type": "general-purpose",
-  "prompt": "Verify Task 3 of the round-2 plan matches spec. Implementer claims DONE at commit `b4b266e`.\n\n## What was requested\n\nAppend to `libs/model-training/src/model_training/oracle_cache.py`:\n- Function `lookup_oracle_path(bin_key: str, registry: Any) -> str | None`\n- Uses `ORACLE_ID_PREFIX` constant from the module for adapter_id = `f\"oracle_{bin_key}\"`\n- Catches `adapter_registry.exceptions.AdapterNotFoundError` (imported inside function body per INFRA-05)\n- Logs warnings on missing/archived, returns `None`\n- Returns `str(record.file_path)` on success\n\nAppend to `libs/model-training/tests/test_oracle_cache.py`:\n- `_fake_record` helper\n- `test_lookup_oracle_path_returns_file_path`\n- `test_lookup_oracle_path_returns_none_when_missing` — uses `AdapterNotFoundError` side_effect\n- `test_lookup_oracle_path_returns_none_when_archived`\n\n**Must NOT add:** `OracleAdapterCache`, `audit_oracle_coverage`, or any other helpers.\n\n## Implementer's report\n\nStatus: DONE, commit `b4b266e`, 11 passed (8 existing + 3 new), ruff + mypy clean. Noted a wrinkle: they moved `from unittest.mock import MagicMock` and `from model_training.oracle_cache import lookup_oracle_path` to the top-level import block.\n\n## Verify independently\n\n1. Read `libs/model-training/src/model_training/oracle_cache.py` — confirm only the one new function was added, no other symbols.\n2. Read `libs/model-training/tests/test_oracle_cache.py` — confirm 3 new tests + helper.\n3. Run `git show b4b266e` — diff should be limited to these two files.\n4. Run `uv run pytest libs/model-training/tests/test_oracle_cache.py -v` — 11 pass.\n5. Run `uv run ruff check ...` and `uv run mypy ...` — clean.\n\nWorking directory: `/Users/noahdolevelixir/Code/rune`.\n\nReturn: ✅ Spec compliant or ❌ Issues found."
+  "prompt": "Verify Task 3 of the round-2 plan matches spec. Implementer claims DONE at commit `b4b266e`.\n\n## What was requested\n\nAppend to `libs/model-training/src/model_training/oracle_cache.py`:\n- Function `lookup_oracle_path(bin_key: str, registry: Any) -> str | None`\n- Uses `ORACLE_ID_PREFIX` constant from the module for adapter_id = `f\"oracle_{bin_key}\"`\n- Catches `adapter_registry.exceptions.AdapterNotFoundError` (imported inside function body per INFRA-05)\n- Logs warnings on missing/archived, returns `None`\n- Returns `str(record.file_path)` on success\n\nAppend to `libs/model-training/tests/test_oracle_cache.py`:\n- `_fake_record` helper\n- `test_lookup_oracle_path_returns_file_path`\n- `test_lookup_oracle_path_returns_none_when_missing` — uses `AdapterNotFoundError` side_effect\n- `test_lookup_oracle_path_returns_none_when_archived`\n\n**Must NOT add:** `OracleAdapterCache`, `audit_oracle_coverage`, or any other helpers.\n\n## Implementer's report\n\nStatus: DONE, commit `b4b266e`, 11 passed (8 existing + 3 new), ruff + mypy clean. Noted a wrinkle: they moved `from unittest.mock import MagicMock` and `from model_training.oracle_cache import lookup_oracle_path` to the top-level import block.\n\n## Verify independently\n\n1. Read `libs/model-training/src/model_training/oracle_cache.py` — confirm only the one new function was added, no other symbols.\n2. Read `libs/model-training/tests/test_oracle_cache.py` — confirm 3 new tests + helper.\n3. Run `git show b4b266e` — diff should be limited to these two files.\n4. Run `uv run pytest libs/model-training/tests/test_oracle_cache.py -v` — 11 pass.\n5. Run `uv run ruff check ...` and `uv run mypy ...` — clean.\n\nWorking directory: `/home/<USER>/Code/rune`.\n\nReturn: ✅ Spec compliant or ❌ Issues found."
 }
 ```
 
@@ -4548,7 +4548,7 @@ id: toolu_01L69Yt7FpmfZBgZoZBjeawx
 {
   "description": "Code quality review Task 3",
   "subagent_type": "superpowers:code-reviewer",
-  "prompt": "Code-quality review Task 3 of round-2 plan. Spec review runs in parallel — focus on quality.\n\n## What was implemented\n\n`lookup_oracle_path(bin_key, registry) -> str | None` added to `oracle_cache.py`. Uses `ORACLE_ID_PREFIX` to build `oracle_<bin_key>` adapter_id, calls `registry.retrieve_by_id()`, catches `AdapterNotFoundError`, returns `None` when missing or archived. Plus 3 tests and `_fake_record` helper.\n\n## Base / head SHAs\n\n- BASE_SHA: `646e271` (Task 2 fix commit)\n- HEAD_SHA: `b4b266e` (Task 3)\n\nDiff: `git show b4b266e` and `git show b4b266e --stat`.\n\n## Files to review\n\n- `libs/model-training/src/model_training/oracle_cache.py`\n- `libs/model-training/tests/test_oracle_cache.py`\n\n## What to check\n\n- Only the one new function added to `oracle_cache.py` — no sneak-in of `OracleAdapterCache` or `audit_oracle_coverage`.\n- Deferred import of `AdapterNotFoundError` inside function body (INFRA-05 pattern).\n- Google docstrings, ruff line-length 88.\n- Logging is at WARNING level (operator notices missing oracles without drowning in INFO).\n- Error-path testing: does the test suite cover both the missing and archived branches independently? (It should.)\n- `str(record.file_path)` coercion: is the `str()` call defensive-programming cruft, or does `AdapterRecord.file_path` really need coercion? (`AdapterRecord.file_path: str` per SQLModel — so `str()` is redundant but harmless.)\n\nRun:\n- `uv run pytest libs/model-training/tests/test_oracle_cache.py -v`\n- `uv run ruff check libs/model-training/src/model_training/oracle_cache.py libs/model-training/tests/test_oracle_cache.py`\n- `uv run mypy libs/model-training/src/model_training/oracle_cache.py`\n\nWorking directory: `/Users/noahdolevelixir/Code/rune`.\n\nReturn: Strengths, Issues (Critical/Important/Minor), Assessment."
+  "prompt": "Code-quality review Task 3 of round-2 plan. Spec review runs in parallel — focus on quality.\n\n## What was implemented\n\n`lookup_oracle_path(bin_key, registry) -> str | None` added to `oracle_cache.py`. Uses `ORACLE_ID_PREFIX` to build `oracle_<bin_key>` adapter_id, calls `registry.retrieve_by_id()`, catches `AdapterNotFoundError`, returns `None` when missing or archived. Plus 3 tests and `_fake_record` helper.\n\n## Base / head SHAs\n\n- BASE_SHA: `646e271` (Task 2 fix commit)\n- HEAD_SHA: `b4b266e` (Task 3)\n\nDiff: `git show b4b266e` and `git show b4b266e --stat`.\n\n## Files to review\n\n- `libs/model-training/src/model_training/oracle_cache.py`\n- `libs/model-training/tests/test_oracle_cache.py`\n\n## What to check\n\n- Only the one new function added to `oracle_cache.py` — no sneak-in of `OracleAdapterCache` or `audit_oracle_coverage`.\n- Deferred import of `AdapterNotFoundError` inside function body (INFRA-05 pattern).\n- Google docstrings, ruff line-length 88.\n- Logging is at WARNING level (operator notices missing oracles without drowning in INFO).\n- Error-path testing: does the test suite cover both the missing and archived branches independently? (It should.)\n- `str(record.file_path)` coercion: is the `str()` call defensive-programming cruft, or does `AdapterRecord.file_path` really need coercion? (`AdapterRecord.file_path: str` per SQLModel — so `str()` is redundant but harmless.)\n\nRun:\n- `uv run pytest libs/model-training/tests/test_oracle_cache.py -v`\n- `uv run ruff check libs/model-training/src/model_training/oracle_cache.py libs/model-training/tests/test_oracle_cache.py`\n- `uv run mypy libs/model-training/src/model_training/oracle_cache.py`\n\nWorking directory: `/home/<USER>/Code/rune`.\n\nReturn: Strengths, Issues (Critical/Important/Minor), Assessment."
 }
 ```
 
@@ -4705,7 +4705,7 @@ id: toolu_01G9T6nP3HooaqhzemCaRf7v
 {
   "description": "Implement Task 4: audit_oracle_coverage",
   "subagent_type": "general-purpose",
-  "prompt": "You are implementing Task 4 of the round-2 hypernetwork training plan.\n\n## Project context\n\nTask 3 just landed `lookup_oracle_path` in `oracle_cache.py` (commit `b4b266e`). Task 4 adds `audit_oracle_coverage(records, registry) -> (ratio, bin_counts)` for the startup gate: round-2 aborts when coverage < `min_oracle_coverage` (default 0.8).\n\n## Working directory\n\n`/Users/noahdolevelixir/Code/rune`\n\n## Conventions\n\n- `uv run` for all Python.\n- Google docstrings, ruff line-length 88, mypy strict-ish.\n- Deferred imports (INFRA-05).\n- Conventional commits with `Co-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>`.\n- Don't touch `docs/superpowers/` deletions.\n\n## Task 4 — spec\n\n**Files:**\n- Modify: `libs/model-training/src/model_training/oracle_cache.py` (append function)\n- Modify: `libs/model-training/tests/test_oracle_cache.py` (append tests)\n\n### Step 4.1: Write failing test\n\nAppend to `libs/model-training/tests/test_oracle_cache.py`:\n\n```python\nfrom model_training.oracle_cache import audit_oracle_coverage\n\n\ndef test_audit_oracle_coverage_full_coverage() -> None:\n    \"\"\"Every record has a registered oracle → ratio 1.0.\"\"\"\n    registry = MagicMock()\n    registry.retrieve_by_id.return_value = _fake_record(\n        adapter_id=\"irrelevant\", file_path=\"/any/path\"\n    )\n\n    records = [\n        {\"metadata\": {\"phase\": \"decompose\", \"benchmark\": \"humaneval\"}},\n        {\"metadata\": {\"phase\": \"plan\", \"benchmark\": \"mbpp\"}},\n        {\"metadata\": {\"phase\": \"diagnose\", \"benchmark\": \"apps\"}},\n    ]\n    ratio, counts = audit_oracle_coverage(records, registry)\n\n    assert ratio == pytest.approx(1.0)\n    assert counts == {\n        \"decompose_humaneval\": 1,\n        \"plan_mbpp\": 1,\n        \"diagnose_pooled\": 1,\n    }\n\n\ndef test_audit_oracle_coverage_partial() -> None:\n    \"\"\"Unregistered bins subtract from the coverage ratio.\"\"\"\n    from adapter_registry.exceptions import AdapterNotFoundError\n\n    registry = MagicMock()\n\n    def _fake_lookup(adapter_id: str) -> MagicMock:\n        if adapter_id == \"oracle_plan_mbpp\":\n            raise AdapterNotFoundError(\"missing\")\n        return _fake_record(adapter_id=adapter_id, file_path=f\"/a/{adapter_id}\")\n\n    registry.retrieve_by_id.side_effect = […]
+  "prompt": "You are implementing Task 4 of the round-2 hypernetwork training plan.\n\n## Project context\n\nTask 3 just landed `lookup_oracle_path` in `oracle_cache.py` (commit `b4b266e`). Task 4 adds `audit_oracle_coverage(records, registry) -> (ratio, bin_counts)` for the startup gate: round-2 aborts when coverage < `min_oracle_coverage` (default 0.8).\n\n## Working directory\n\n`/home/<USER>/Code/rune`\n\n## Conventions\n\n- `uv run` for all Python.\n- Google docstrings, ruff line-length 88, mypy strict-ish.\n- Deferred imports (INFRA-05).\n- Conventional commits with `Co-Authored-By: Claude Opus 4.7 <<REDACTED_EMAIL>>`.\n- Don't touch `docs/superpowers/` deletions.\n\n## Task 4 — spec\n\n**Files:**\n- Modify: `libs/model-training/src/model_training/oracle_cache.py` (append function)\n- Modify: `libs/model-training/tests/test_oracle_cache.py` (append tests)\n\n### Step 4.1: Write failing test\n\nAppend to `libs/model-training/tests/test_oracle_cache.py`:\n\n```python\nfrom model_training.oracle_cache import audit_oracle_coverage\n\n\ndef test_audit_oracle_coverage_full_coverage() -> None:\n    \"\"\"Every record has a registered oracle → ratio 1.0.\"\"\"\n    registry = MagicMock()\n    registry.retrieve_by_id.return_value = _fake_record(\n        adapter_id=\"irrelevant\", file_path=\"/any/path\"\n    )\n\n    records = [\n        {\"metadata\": {\"phase\": \"decompose\", \"benchmark\": \"humaneval\"}},\n        {\"metadata\": {\"phase\": \"plan\", \"benchmark\": \"mbpp\"}},\n        {\"metadata\": {\"phase\": \"diagnose\", \"benchmark\": \"apps\"}},\n    ]\n    ratio, counts = audit_oracle_coverage(records, registry)\n\n    assert ratio == pytest.approx(1.0)\n    assert counts == {\n        \"decompose_humaneval\": 1,\n        \"plan_mbpp\": 1,\n        \"diagnose_pooled\": 1,\n    }\n\n\ndef test_audit_oracle_coverage_partial() -> None:\n    \"\"\"Unregistered bins subtract from the coverage ratio.\"\"\"\n    from adapter_registry.exceptions import AdapterNotFoundError\n\n    registry = MagicMock()\n\n    def _fake_lookup(adapter_id: str) -> MagicMock:\n        if adapter_id == \"oracle_plan_mbpp\":\n            raise AdapterNotFoundError(\"missing\")\n        return _fake_record(adapter_id=adapter_id, file_path=f\"/a/{adapter_id}\")\n\n    registry.retrieve_by_id.side_effect = […]
 
 > TOOL
 
@@ -4719,8 +4719,8 @@ Done.
 **Test count:** 14 passed (11 existing + 3 new).
 
 **What landed:**
-- `audit_oracle_coverage(records, registry) -> (float, dict[str, int])` appended to `/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/oracle_cache.py`
-- 3 new tests appended to `/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_oracle_cache.py` — full coverage, partial (0.5 ratio with duplicate bin), and empty-records edge case
+- `audit_oracle_coverage(records, registry) -> (float, dict[str, int])` appended to `/home/<USER>/Code/rune/libs/model-training/src/model_training/oracle_cache.py`
+- 3 new tests appended to `/home/<USER>/Code/rune/libs/model-training/tests/test_oracle_cache.py` — full coverage, partial (0.5 ratio with duplicate bin), and empty-records edge case
 
 **Ruff/mypy:** Both clean. One ruff issue required moving the import to the top of the test file (E402) and trimming a comment to stay under 88 chars (E501).
 
@@ -4752,7 +4752,7 @@ tool_result
 id: toolu_01UMnvvLCcmFkBhw3ASn5n7u
 ```
 commit 95e35f355fd9f90aca6276583f09ff3c2418f5e8
-Author: Noah Dolev <noah@elixirtrials.com>
+Author: Noah Dolev <<REDACTED_EMAIL>>
 Date:   Thu Apr 23 14:04:40 2026 +0200
 
     feat(training): add audit_oracle_coverage for round-2 startup gate (gap 9)
@@ -4761,7 +4761,7 @@ Date:   Thu Apr 23 14:04:40 2026 +0200
     can block startup when coverage < min_oracle_coverage. Caches per-bin
     registry lookups to avoid redundant queries.
     
-    Co-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>
+    Co-Authored-By: Claude Opus 4.7 <<REDACTED_EMAIL>>
     Entire-Checkpoint: 4930cc0bc288
 
  .../src/model_training/oracle_cache.py             | 43 ++++++++++++++++
@@ -4808,7 +4808,7 @@ id: toolu_01Wectff2xj7um4QDG2MGddm
 {
   "description": "Code quality review Task 4",
   "subagent_type": "superpowers:code-reviewer",
-  "prompt": "Code-quality review Task 4 of the round-2 plan. Spec was pre-verified in main thread (only `audit_oracle_coverage` appended to `oracle_cache.py` + 3 tests). Focus on quality.\n\n## What was implemented\n\n`audit_oracle_coverage(records, registry) -> (ratio, bin_counts)` in `oracle_cache.py`. Iterates JSONL records, derives bin_key via `_bin_key_for_record`, looks up each bin in the registry (memoized), returns fraction covered + per-bin counts. Used by round-2 startup gate when coverage < `min_oracle_coverage`.\n\n## Base / head SHAs\n\n- BASE_SHA: `b4b266e` (Task 3)\n- HEAD_SHA: `95e35f3` (Task 4)\n\n## Files\n\n- `libs/model-training/src/model_training/oracle_cache.py`\n- `libs/model-training/tests/test_oracle_cache.py`\n\n## What to check\n\n- Division-by-zero guard (empty records).\n- Error handling for unroutable records (ValueError from `_bin_key_for_record`) — skipped with warning, not propagated.\n- Per-bin lookup memoization actually prevents repeated registry queries when the same bin appears multiple times.\n- Test coverage:\n  - Full coverage (ratio 1.0).\n  - Partial coverage (ratio 0.5, duplicate unregistered bin).\n  - Empty records edge case.\n  - Is there a test for unroutable records (records that raise ValueError)? If not, flag as a gap.\n- Type annotations are tight.\n- Project conventions (Google docstrings, ruff 88, py312 target).\n\nRun:\n- `uv run pytest libs/model-training/tests/test_oracle_cache.py -v`\n- `uv run ruff check libs/model-training/src/model_training/oracle_cache.py libs/model-training/tests/test_oracle_cache.py`\n- `uv run mypy libs/model-training/src/model_training/oracle_cache.py`\n\nWorking directory: `/Users/noahdolevelixir/Code/rune`.\n\nReturn: Strengths, Issues (Critical/Important/Minor), […]
+  "prompt": "Code-quality review Task 4 of the round-2 plan. Spec was pre-verified in main thread (only `audit_oracle_coverage` appended to `oracle_cache.py` + 3 tests). Focus on quality.\n\n## What was implemented\n\n`audit_oracle_coverage(records, registry) -> (ratio, bin_counts)` in `oracle_cache.py`. Iterates JSONL records, derives bin_key via `_bin_key_for_record`, looks up each bin in the registry (memoized), returns fraction covered + per-bin counts. Used by round-2 startup gate when coverage < `min_oracle_coverage`.\n\n## Base / head SHAs\n\n- BASE_SHA: `b4b266e` (Task 3)\n- HEAD_SHA: `95e35f3` (Task 4)\n\n## Files\n\n- `libs/model-training/src/model_training/oracle_cache.py`\n- `libs/model-training/tests/test_oracle_cache.py`\n\n## What to check\n\n- Division-by-zero guard (empty records).\n- Error handling for unroutable records (ValueError from `_bin_key_for_record`) — skipped with warning, not propagated.\n- Per-bin lookup memoization actually prevents repeated registry queries when the same bin appears multiple times.\n- Test coverage:\n  - Full coverage (ratio 1.0).\n  - Partial coverage (ratio 0.5, duplicate unregistered bin).\n  - Empty records edge case.\n  - Is there a test for unroutable records (records that raise ValueError)? If not, flag as a gap.\n- Type annotations are tight.\n- Project conventions (Google docstrings, ruff 88, py312 target).\n\nRun:\n- `uv run pytest libs/model-training/tests/test_oracle_cache.py -v`\n- `uv run ruff check libs/model-training/src/model_training/oracle_cache.py libs/model-training/tests/test_oracle_cache.py`\n- `uv run mypy libs/model-training/src/model_training/oracle_cache.py`\n\nWorking directory: `/home/<USER>/Code/rune`.\n\nReturn: Strengths, Issues (Critical/Important/Minor), […]
 
 > TOOL
 
@@ -4851,7 +4851,7 @@ id: toolu_016ejh67ygtUPEeikCEfvyzu
 {
   "description": "Fix Task 4 coverage gap",
   "subagent_type": "general-purpose",
-  "prompt": "You are patching Task 4 of the round-2 plan to close a code-review gap: the `except ValueError` branch of `audit_oracle_coverage` in `libs/model-training/src/model_training/oracle_cache.py` has no test, and the docstring does not specify how unroutable records affect the returned ratio + bin_counts.\n\n## Working directory\n\n`/Users/noahdolevelixir/Code/rune`\n\n## Intended semantics (authoritative)\n\n1. **Denominator:** `len(records)` — the **original** list length, not the routable-only count. Unroutable records therefore penalise coverage. This is intentional: corrupt records represent a data quality failure and should suppress training until fixed.\n2. **bin_counts:** contains entries only for routable bins. Unroutable records do not appear in `bin_counts`, so `sum(bin_counts.values())` may be less than `len(records)`.\n\n## Changes\n\n### Change 1 — tighten the docstring\n\nRead `libs/model-training/src/model_training/oracle_cache.py` first. Update the `audit_oracle_coverage` docstring's `Returns:` section to explicitly state the denominator semantics and the bin_counts exclusion. Replace the existing Returns block with:\n\n```\n    Returns:\n        Tuple ``(coverage_ratio, bin_counts)`` where:\n        - ``coverage_ratio`` is ``covered / len(records)`` (using the\n          **original** record count as the denominator). Unroutable records\n          — those raising ``ValueError`` from :func:`_bin_key_for_record` —\n          are logged and skipped, but still count against the denominator.\n          Returns ``0.0`` when ``records`` is empty.\n        - ``bin_counts`` maps bin_key → record count for *routable* records\n          only; unroutable […]
+  "prompt": "You are patching Task 4 of the round-2 plan to close a code-review gap: the `except ValueError` branch of `audit_oracle_coverage` in `libs/model-training/src/model_training/oracle_cache.py` has no test, and the docstring does not specify how unroutable records affect the returned ratio + bin_counts.\n\n## Working directory\n\n`/home/<USER>/Code/rune`\n\n## Intended semantics (authoritative)\n\n1. **Denominator:** `len(records)` — the **original** list length, not the routable-only count. Unroutable records therefore penalise coverage. This is intentional: corrupt records represent a data quality failure and should suppress training until fixed.\n2. **bin_counts:** contains entries only for routable bins. Unroutable records do not appear in `bin_counts`, so `sum(bin_counts.values())` may be less than `len(records)`.\n\n## Changes\n\n### Change 1 — tighten the docstring\n\nRead `libs/model-training/src/model_training/oracle_cache.py` first. Update the `audit_oracle_coverage` docstring's `Returns:` section to explicitly state the denominator semantics and the bin_counts exclusion. Replace the existing Returns block with:\n\n```\n    Returns:\n        Tuple ``(coverage_ratio, bin_counts)`` where:\n        - ``coverage_ratio`` is ``covered / len(records)`` (using the\n          **original** record count as the denominator). Unroutable records\n          — those raising ``ValueError`` from :func:`_bin_key_for_record` —\n          are logged and skipped, but still count against the denominator.\n          Returns ``0.0`` when ``records`` is empty.\n        - ``bin_counts`` maps bin_key → record count for *routable* records\n          only; unroutable […]
 
 > TOOL
 
@@ -4947,7 +4947,7 @@ id: toolu_016YGAC9xnzwvCndxxtVfNok
 {
   "description": "Implement Task 5: OracleAdapterCache",
   "subagent_type": "general-purpose",
-  "prompt": "You are implementing Task 5 of the round-2 hypernetwork training plan.\n\n## Project context\n\nTasks 1-4 are done (`Round2TrainConfig`, `_bin_key_for_record`, `lookup_oracle_path`, `audit_oracle_coverage`). Task 5 adds the centerpiece of `oracle_cache.py`: `OracleAdapterCache` (LRU-capped cache of functional-LoRA dicts) and the private loader `_load_oracle_as_lora_dict` that parses a PEFT safetensors adapter and reshapes it to the `{module: {A, B}}` format consumed by `apply_functional_lora`.\n\n**Critical architecture decision (already made in the plan):** the cache stores lightweight tensor dicts, NOT `PeftModel` wrappers. The teacher pass in round-2 applies oracles via the SAME `apply_functional_lora` context manager that the student pass uses — so the base model is never structurally mutated. This eliminates PEFT hook-leakage between teacher and student passes.\n\n## Working directory\n\n`/Users/noahdolevelixir/Code/rune`\n\n## Conventions\n\n- `uv run` for all Python.\n- Google docstrings, ruff line-length 88, mypy strict-ish.\n- Deferred GPU imports inside function bodies (INFRA-05). `torch`, `safetensors` stay out of module top level.\n- Conventional commits with `Co-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>`.\n- Don't touch `docs/superpowers/` deletions.\n\n## Task 5 — full spec\n\n**Files:**\n- Modify: `libs/model-training/src/model_training/oracle_cache.py` (append loader + class + `LoraDict` type alias + regex constant)\n- Modify: `libs/model-training/tests/test_oracle_cache.py` (append 4 new tests + `_fake_lora_dict` helper)\n\n### Step 5.1: Write failing test\n\nAppend to `libs/model-training/tests/test_oracle_cache.py`:\n\n```python\nfrom model_training.oracle_cache import […]
+  "prompt": "You are implementing Task 5 of the round-2 hypernetwork training plan.\n\n## Project context\n\nTasks 1-4 are done (`Round2TrainConfig`, `_bin_key_for_record`, `lookup_oracle_path`, `audit_oracle_coverage`). Task 5 adds the centerpiece of `oracle_cache.py`: `OracleAdapterCache` (LRU-capped cache of functional-LoRA dicts) and the private loader `_load_oracle_as_lora_dict` that parses a PEFT safetensors adapter and reshapes it to the `{module: {A, B}}` format consumed by `apply_functional_lora`.\n\n**Critical architecture decision (already made in the plan):** the cache stores lightweight tensor dicts, NOT `PeftModel` wrappers. The teacher pass in round-2 applies oracles via the SAME `apply_functional_lora` context manager that the student pass uses — so the base model is never structurally mutated. This eliminates PEFT hook-leakage between teacher and student passes.\n\n## Working directory\n\n`/home/<USER>/Code/rune`\n\n## Conventions\n\n- `uv run` for all Python.\n- Google docstrings, ruff line-length 88, mypy strict-ish.\n- Deferred GPU imports inside function bodies (INFRA-05). `torch`, `safetensors` stay out of module top level.\n- Conventional commits with `Co-Authored-By: Claude Opus 4.7 <<REDACTED_EMAIL>>`.\n- Don't touch `docs/superpowers/` deletions.\n\n## Task 5 — full spec\n\n**Files:**\n- Modify: `libs/model-training/src/model_training/oracle_cache.py` (append loader + class + `LoraDict` type alias + regex constant)\n- Modify: `libs/model-training/tests/test_oracle_cache.py` (append 4 new tests + `_fake_lora_dict` helper)\n\n### Step 5.1: Write failing test\n\nAppend to `libs/model-training/tests/test_oracle_cache.py`:\n\n```python\nfrom model_training.oracle_cache import […]
 
 > TOOL
 
@@ -5054,7 +5054,7 @@ The implementation is clean and well-reasoned. The architectural decision to sto
 
 **Item 1: Regex uses `.search()` without a `^` anchor**
 
-`_PEFT_LORA_KEY_RE` is applied via `.search(key)` at line 187 of `/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/oracle_cache.py`. Without a `^` start anchor, any key with `model.layers.<N>.<module>.lora_<AB>.weight` appearing *anywhere* in a longer string will match. In practice PEFT keys are flat and well-formed, so the real-world risk is negligible — but the intent is clearly to match the full key. The regex should use `re.fullmatch()` (and drop the trailing `$`) or add a `^` anchor and switch to `.match()`. Current behavior is correct only by accident of the PEFT key format.
+`_PEFT_LORA_KEY_RE` is applied via `.search(key)` at line 187 of `/home/<USER>/Code/rune/libs/model-training/src/model_training/oracle_cache.py`. Without a `^` start anchor, any key with `model.layers.<N>.<module>.lora_<AB>.weight` appearing *anywhere* in a longer string will match. In practice PEFT keys are flat and well-formed, so the real-world risk is negligible — but the intent is clearly to match the full key. The regex should use `re.fullmatch()` (and drop the trailing `$`) or add a `^` anchor and switch to `.match()`. Current behavior is correct only by accident of the PEFT key format.
 
 **Item 2: No test for miss memoization (second call hits registry only once)** […]
 
@@ -5070,7 +5070,7 @@ id: toolu_01FZdEqPDxggWV26E4d4mGaG
 {
   "description": "Fix Task 5 review issues",
   "subagent_type": "general-purpose",
-  "prompt": "You are fixing Task 5 code-review findings in `libs/model-training/src/model_training/oracle_cache.py` and its tests. Work in `/Users/noahdolevelixir/Code/rune`.\n\nRead both files first:\n- `libs/model-training/src/model_training/oracle_cache.py`\n- `libs/model-training/tests/test_oracle_cache.py`\n\nApply all five fixes below in ONE commit.\n\n## Fix 1 (Important) — regex anchor\n\nThe regex `_PEFT_LORA_KEY_RE` is applied via `.search(key)`. It has a `$` end anchor but no start anchor, so in principle a key with extra prefix cruft could match. Change the call site from `.search(key)` to `.fullmatch(key)` AND drop the trailing `$` from the pattern (fullmatch implies both anchors).\n\nFinal regex:\n```python\n_PEFT_LORA_KEY_RE = re.compile(\n    r\"(?:base_model\\.model\\.)?model\\.layers\\.(?P<layer>\\d+)\\.\"\n    r\".*?\\.(?P<module>[a-z_]+_proj)\\.lora_(?P<ab>[AB])\\.weight\"\n)\n```\n\nFinal call site (inside `_load_oracle_as_lora_dict`):\n```python\nm = _PEFT_LORA_KEY_RE.fullmatch(key)\n```\n\n## Fix 2 (Important) — test miss memoization\n\nThe existing `test_oracle_cache_returns_none_when_bin_missing` only calls `cache.get(\"plan_mbpp\")` once. Extend it to call twice and assert the registry was only hit once (`_missing` set memoizes misses). Keep the existing assertions.\n\nAfter the existing `assert cache.get(\"plan_mbpp\") is None` and `assert called == []`, add:\n\n```python\n    # Second lookup should hit the _missing set, not the registry.\n    assert cache.get(\"plan_mbpp\") is None\n    registry.retrieve_by_id.assert_called_once()\n    assert called == []\n```\n\n## Fix 3 (Minor) — redundant move_to_end\n\nIn `OracleAdapterCache.get`, on the miss→load path, the code does:\n\n```python\n        self._cache[bin_key] = lora_dict\n        self._cache.move_to_end(bin_key)\n```\n\n`OrderedDict` inserts new keys at the end by default, so `move_to_end` […]
+  "prompt": "You are fixing Task 5 code-review findings in `libs/model-training/src/model_training/oracle_cache.py` and its tests. Work in `/home/<USER>/Code/rune`.\n\nRead both files first:\n- `libs/model-training/src/model_training/oracle_cache.py`\n- `libs/model-training/tests/test_oracle_cache.py`\n\nApply all five fixes below in ONE commit.\n\n## Fix 1 (Important) — regex anchor\n\nThe regex `_PEFT_LORA_KEY_RE` is applied via `.search(key)`. It has a `$` end anchor but no start anchor, so in principle a key with extra prefix cruft could match. Change the call site from `.search(key)` to `.fullmatch(key)` AND drop the trailing `$` from the pattern (fullmatch implies both anchors).\n\nFinal regex:\n```python\n_PEFT_LORA_KEY_RE = re.compile(\n    r\"(?:base_model\\.model\\.)?model\\.layers\\.(?P<layer>\\d+)\\.\"\n    r\".*?\\.(?P<module>[a-z_]+_proj)\\.lora_(?P<ab>[AB])\\.weight\"\n)\n```\n\nFinal call site (inside `_load_oracle_as_lora_dict`):\n```python\nm = _PEFT_LORA_KEY_RE.fullmatch(key)\n```\n\n## Fix 2 (Important) — test miss memoization\n\nThe existing `test_oracle_cache_returns_none_when_bin_missing` only calls `cache.get(\"plan_mbpp\")` once. Extend it to call twice and assert the registry was only hit once (`_missing` set memoizes misses). Keep the existing assertions.\n\nAfter the existing `assert cache.get(\"plan_mbpp\") is None` and `assert called == []`, add:\n\n```python\n    # Second lookup should hit the _missing set, not the registry.\n    assert cache.get(\"plan_mbpp\") is None\n    registry.retrieve_by_id.assert_called_once()\n    assert called == []\n```\n\n## Fix 3 (Minor) — redundant move_to_end\n\nIn `OracleAdapterCache.get`, on the miss→load path, the code does:\n\n```python\n        self._cache[bin_key] = lora_dict\n        self._cache.move_to_end(bin_key)\n```\n\n`OrderedDict` inserts new keys at the end by default, so `move_to_end` […]
 
 > TOOL
 
@@ -5209,7 +5209,7 @@ id: toolu_01FGYPHfi9LKta7pNbPSqai4
 {
   "description": "Implement Task 6: _teacher_forward_with_oracle",
   "subagent_type": "general-purpose",
-  "prompt": "You are implementing Task 6 of the round-2 hypernetwork training plan.\n\n## Project context\n\nTasks 1-5 done. Now creating the round-2 training module. Task 6 creates `libs/model-training/src/model_training/round2_train.py` with only one helper: `_teacher_forward_with_oracle`. The key design decision: apply the oracle via the SAME `apply_functional_lora` context manager used for the student pass (so the base model stays structurally pristine — no PeftModel wrappers, no LoraLayer mutations). This eliminates hook leakage.\n\n## Working directory\n\n`/Users/noahdolevelixir/Code/rune`\n\n## Conventions\n\n- `uv run` always.\n- Google docstrings, ruff 88, mypy strict-ish.\n- Deferred GPU imports inside function bodies (INFRA-05).\n- Conventional commits with `Co-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>` trailer.\n- Don't touch `docs/superpowers/` deletions.\n\n## Task 6 — spec\n\n**Files:**\n- Create: `libs/model-training/src/model_training/round2_train.py`\n- Create: `libs/model-training/tests/test_round2_train.py`\n\n### Step 6.1: Write failing test\n\nCreate `libs/model-training/tests/test_round2_train.py`:\n\n```python\n\"\"\"CPU-only unit tests for round2_train module.\"\"\"\n\nfrom __future__ import annotations\n\nfrom unittest.mock import MagicMock\n\nimport pytest\n\nfrom model_training.round2_train import _teacher_forward_with_oracle\n\n\nclass _StubLogits:\n    \"\"\"Stand-in for the ``.logits`` attribute of an HF model output.\"\"\"\n\n    def __init__(self, marker: str) -> None:\n        self.marker = marker\n\n\nclass _StubOutput:\n    def __init__(self, marker: str) -> None:\n        self.logits = _StubLogits(marker)\n\n\nclass _FakeCtxMgr:\n    \"\"\"Context manager that tracks enter/exit counts via outer closure.\"\"\"\n\n    def __init__(self, enter_log: list, exit_log: list, name: str) -> None:\n        self._enter_log = enter_log\n        self._exit_log = exit_log\n        self._name = name\n\n […]
+  "prompt": "You are implementing Task 6 of the round-2 hypernetwork training plan.\n\n## Project context\n\nTasks 1-5 done. Now creating the round-2 training module. Task 6 creates `libs/model-training/src/model_training/round2_train.py` with only one helper: `_teacher_forward_with_oracle`. The key design decision: apply the oracle via the SAME `apply_functional_lora` context manager used for the student pass (so the base model stays structurally pristine — no PeftModel wrappers, no LoraLayer mutations). This eliminates hook leakage.\n\n## Working directory\n\n`/home/<USER>/Code/rune`\n\n## Conventions\n\n- `uv run` always.\n- Google docstrings, ruff 88, mypy strict-ish.\n- Deferred GPU imports inside function bodies (INFRA-05).\n- Conventional commits with `Co-Authored-By: Claude Opus 4.7 <<REDACTED_EMAIL>>` trailer.\n- Don't touch `docs/superpowers/` deletions.\n\n## Task 6 — spec\n\n**Files:**\n- Create: `libs/model-training/src/model_training/round2_train.py`\n- Create: `libs/model-training/tests/test_round2_train.py`\n\n### Step 6.1: Write failing test\n\nCreate `libs/model-training/tests/test_round2_train.py`:\n\n```python\n\"\"\"CPU-only unit tests for round2_train module.\"\"\"\n\nfrom __future__ import annotations\n\nfrom unittest.mock import MagicMock\n\nimport pytest\n\nfrom model_training.round2_train import _teacher_forward_with_oracle\n\n\nclass _StubLogits:\n    \"\"\"Stand-in for the ``.logits`` attribute of an HF model output.\"\"\"\n\n    def __init__(self, marker: str) -> None:\n        self.marker = marker\n\n\nclass _StubOutput:\n    def __init__(self, marker: str) -> None:\n        self.logits = _StubLogits(marker)\n\n\nclass _FakeCtxMgr:\n    \"\"\"Context manager that tracks enter/exit counts via outer closure.\"\"\"\n\n    def __init__(self, enter_log: list, exit_log: list, name: str) -> None:\n        self._enter_log = enter_log\n        self._exit_log = exit_log\n        self._name = name\n\n […]
 
 > TOOL
 
@@ -5223,8 +5223,8 @@ Done.
 **Tests:** 2 passed (0.14s, CPU-only).
 
 **Files created:**
-- `/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/round2_train.py` — module docstring explains the no-PeftModel rationale; `_apply_functional_lora` thin wrapper for monkeypatching; `_teacher_forward_with_oracle` routes through `apply_functional_lora` context when oracle dict is present, bare base model when `None`.
-- `/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_round2_train.py` — two tests covering both branches; one `E501` line fixed in the `_must_not_call` docstring, import sort auto-fixed by `ruff --fix`.
+- `/home/<USER>/Code/rune/libs/model-training/src/model_training/round2_train.py` — module docstring explains the no-PeftModel rationale; `_apply_functional_lora` thin wrapper for monkeypatching; `_teacher_forward_with_oracle` routes through `apply_functional_lora` context when oracle dict is present, bare base model when `None`.
+- `/home/<USER>/Code/rune/libs/model-training/tests/test_round2_train.py` — two tests covering both branches; one `E501` line fixed in the `_must_not_call` docstring, import sort auto-fixed by `ruff --fix`.
 
 **No concerns.** Ruff and mypy both clean. The 88% coverage on `round2_train.py` reflects lines 37-39 (`_apply_functional_lora`'s inner import) which are unreachable in CPU-only tests — expected and fine.
 agentId: a4fe8a5541904828d (use SendMessage with to: 'a4fe8a5541904828d' to continue this agent)
@@ -5296,8 +5296,8 @@ Now I have everything needed for the review.
 
 ### What was delivered
 
-- `/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/round2_train.py` — 77 lines, two helpers
-- `/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_round2_train.py` — 103 lines, 2 tests
+- `/home/<USER>/Code/rune/libs/model-training/src/model_training/round2_train.py` — 77 lines, two helpers
+- `/home/<USER>/Code/rune/libs/model-training/tests/test_round2_train.py` — 103 lines, 2 tests
 
 All three quality gates passed clean: 2/2 tests green, ruff clean, mypy clean.
 
@@ -5327,7 +5327,7 @@ id: toolu_01GA2SonA56UcyZZdYuzT7zN
 {
   "description": "Fix Task 6 docstring warning",
   "subagent_type": "general-purpose",
-  "prompt": "Small patch to address Task 6 code review.\n\nWorking directory: `/Users/noahdolevelixir/Code/rune`.\n\n## Change\n\nRead `libs/model-training/src/model_training/round2_train.py` first. Then update the `_apply_functional_lora` docstring to protect the monkeypatch seam from future \"simplification\". Currently:\n\n```python\ndef _apply_functional_lora(base_model: Any, lora_dict: Any, hc: Any) -> Any:\n    \"\"\"Thin wrapper so tests can monkeypatch functional LoRA injection.\"\"\"\n    from model_training.d2l_lora import apply_functional_lora  # noqa: PLC0415\n\n    return apply_functional_lora(base_model, lora_dict, hc)\n```\n\nReplace the docstring with a longer version that explains the architectural role:\n\n```python\ndef _apply_functional_lora(base_model: Any, lora_dict: Any, hc: Any) -> Any:\n    \"\"\"Sole injection point for functional LoRA in the round-2 training path.\n\n    Tests monkeypatch this module-level name to verify routing without GPU\n    tensors (see :mod:`test_round2_train`). Do NOT inline the\n    ``apply_functional_lora`` import at call sites — that would silently\n    break testability by routing around the monkeypatch seam.\n\n    Args:\n        base_model: Base language model.\n        lora_dict: Functional-LoRA tensors (``{module: {A, B}}``).\n        hc: HypernetConfig passed through to ``apply_functional_lora``.\n\n    Returns:\n        Context manager from :func:`model_training.d2l_lora.apply_functional_lora`\n        that monkey-patches base_model weights on enter and restores on exit.\n    \"\"\"\n    from model_training.d2l_lora import apply_functional_lora  # noqa: PLC0415\n\n    return apply_functional_lora(base_model, lora_dict, hc)\n```\n\n## Verification\n\n- `uv run pytest libs/model-training/tests/test_round2_train.py -v` → 2 pass (unchanged).\n- `uv run ruff check libs/model-training/src/model_training/round2_train.py` → clean.\n- `uv run mypy libs/model-training/src/model_training/round2_train.py` → […]
+  "prompt": "Small patch to address Task 6 code review.\n\nWorking directory: `/home/<USER>/Code/rune`.\n\n## Change\n\nRead `libs/model-training/src/model_training/round2_train.py` first. Then update the `_apply_functional_lora` docstring to protect the monkeypatch seam from future \"simplification\". Currently:\n\n```python\ndef _apply_functional_lora(base_model: Any, lora_dict: Any, hc: Any) -> Any:\n    \"\"\"Thin wrapper so tests can monkeypatch functional LoRA injection.\"\"\"\n    from model_training.d2l_lora import apply_functional_lora  # noqa: PLC0415\n\n    return apply_functional_lora(base_model, lora_dict, hc)\n```\n\nReplace the docstring with a longer version that explains the architectural role:\n\n```python\ndef _apply_functional_lora(base_model: Any, lora_dict: Any, hc: Any) -> Any:\n    \"\"\"Sole injection point for functional LoRA in the round-2 training path.\n\n    Tests monkeypatch this module-level name to verify routing without GPU\n    tensors (see :mod:`test_round2_train`). Do NOT inline the\n    ``apply_functional_lora`` import at call sites — that would silently\n    break testability by routing around the monkeypatch seam.\n\n    Args:\n        base_model: Base language model.\n        lora_dict: Functional-LoRA tensors (``{module: {A, B}}``).\n        hc: HypernetConfig passed through to ``apply_functional_lora``.\n\n    Returns:\n        Context manager from :func:`model_training.d2l_lora.apply_functional_lora`\n        that monkey-patches base_model weights on enter and restores on exit.\n    \"\"\"\n    from model_training.d2l_lora import apply_functional_lora  # noqa: PLC0415\n\n    return apply_functional_lora(base_model, lora_dict, hc)\n```\n\n## Verification\n\n- `uv run pytest libs/model-training/tests/test_round2_train.py -v` → 2 pass (unchanged).\n- `uv run ruff check libs/model-training/src/model_training/round2_train.py` → clean.\n- `uv run mypy libs/model-training/src/model_training/round2_train.py` → […]
 
 > TOOL
 
@@ -5416,7 +5416,7 @@ id: toolu_01RLtF1ZTAE1BTBWUtf6dijR
 {
   "description": "Implement Task 7: _training_step_round2",
   "subagent_type": "general-purpose",
-  "prompt": "You are implementing Task 7 of the round-2 hypernetwork training plan.\n\n## Project context\n\nTasks 1-6 done. Task 7 adds `_training_step_round2` — mirrors `model_training.d2l_train._training_step` but routes the teacher pass through a per-record oracle LoRA dict (via `_teacher_forward_with_oracle` from Task 6 and `OracleAdapterCache` from Task 5). When the bin has no registered oracle and `config.oracle_fallback == \"skip\"` (the default), the function returns `(None, {})` so the caller skips this record's gradient step.\n\n## Working directory\n\n`/Users/noahdolevelixir/Code/rune`\n\n## Conventions (from CLAUDE.md)\n\n- `uv run` always.\n- Google docstrings, ruff 88, mypy strict-ish.\n- Deferred GPU imports inside function bodies (INFRA-05).\n- Conventional commits with `Co-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>`.\n- Don't touch `docs/superpowers/` deletions.\n\n## Task 7 — full spec\n\n**Files:**\n- Modify: `libs/model-training/src/model_training/round2_train.py` (append helpers + function)\n- Modify: `libs/model-training/tests/test_round2_train.py` (append 3 tests)\n\n### Step 7.1: Write failing tests\n\nAppend to `libs/model-training/tests/test_round2_train.py`:\n\n```python\nfrom model_training.round2_train import _training_step_round2\n\n\ndef _make_record() -> dict[str, object]:\n    return {\n        \"task_id\": \"humaneval/HE-0/decompose\",\n        \"activation_text\": \"## Task\\nwrite X\",\n        \"teacher_text\": \"## Task\\nwrite X\\n\\n## Implementation\\nreturn 0\",\n        \"metadata\": {\n            \"phase\": \"decompose\",\n            \"benchmark\": \"humaneval\",\n            \"problem_id\": \"HE-0\",\n        },\n    }\n\n\ndef test_training_step_round2_routes_to_oracle_cache(\n    monkeypatch: pytest.MonkeyPatch,\n) -> None:\n    \"\"\"_training_step_round2 asks cache.get(bin_key) and plumbs lora_dict through.\"\"\"\n    from model_training import round2_train\n\n    cache = MagicMock()\n    oracle_lora_dict = {\"q_proj\": {\"A\": MagicMock(), \"B\": MagicMock()}}\n    cache.get.return_value = oracle_lora_dict\n\n    fake_features […]
+  "prompt": "You are implementing Task 7 of the round-2 hypernetwork training plan.\n\n## Project context\n\nTasks 1-6 done. Task 7 adds `_training_step_round2` — mirrors `model_training.d2l_train._training_step` but routes the teacher pass through a per-record oracle LoRA dict (via `_teacher_forward_with_oracle` from Task 6 and `OracleAdapterCache` from Task 5). When the bin has no registered oracle and `config.oracle_fallback == \"skip\"` (the default), the function returns `(None, {})` so the caller skips this record's gradient step.\n\n## Working directory\n\n`/home/<USER>/Code/rune`\n\n## Conventions (from CLAUDE.md)\n\n- `uv run` always.\n- Google docstrings, ruff 88, mypy strict-ish.\n- Deferred GPU imports inside function bodies (INFRA-05).\n- Conventional commits with `Co-Authored-By: Claude Opus 4.7 <<REDACTED_EMAIL>>`.\n- Don't touch `docs/superpowers/` deletions.\n\n## Task 7 — full spec\n\n**Files:**\n- Modify: `libs/model-training/src/model_training/round2_train.py` (append helpers + function)\n- Modify: `libs/model-training/tests/test_round2_train.py` (append 3 tests)\n\n### Step 7.1: Write failing tests\n\nAppend to `libs/model-training/tests/test_round2_train.py`:\n\n```python\nfrom model_training.round2_train import _training_step_round2\n\n\ndef _make_record() -> dict[str, object]:\n    return {\n        \"task_id\": \"humaneval/HE-0/decompose\",\n        \"activation_text\": \"## Task\\nwrite X\",\n        \"teacher_text\": \"## Task\\nwrite X\\n\\n## Implementation\\nreturn 0\",\n        \"metadata\": {\n            \"phase\": \"decompose\",\n            \"benchmark\": \"humaneval\",\n            \"problem_id\": \"HE-0\",\n        },\n    }\n\n\ndef test_training_step_round2_routes_to_oracle_cache(\n    monkeypatch: pytest.MonkeyPatch,\n) -> None:\n    \"\"\"_training_step_round2 asks cache.get(bin_key) and plumbs lora_dict through.\"\"\"\n    from model_training import round2_train\n\n    cache = MagicMock()\n    oracle_lora_dict = {\"q_proj\": {\"A\": MagicMock(), \"B\": MagicMock()}}\n    cache.get.return_value = oracle_lora_dict\n\n    fake_features […]
 
 > TOOL
 
@@ -5524,7 +5524,7 @@ id: toolu_01NPNoTgBAfEYQMRrRdtXYKF
 {
   "description": "Fix Task 7 device placement",
   "subagent_type": "general-purpose",
-  "prompt": "Code review flagged that `_training_step_round2` in `libs/model-training/src/model_training/round2_train.py` diverges from round-1's device placement pattern. Patch it to match round-1 exactly.\n\nWorking directory: `/Users/noahdolevelixir/Code/rune`.\n\n## Reference — round-1's pattern\n\nFrom `libs/model-training/src/model_training/d2l_train.py` around lines 289-293:\n\n```python\n    try:\n        device = next(base_model.parameters()).device\n    except StopIteration:\n        device = torch.device(\"cpu\")\n    teacher_inputs = {k: v.to(device) for k, v in teacher_inputs.items()}\n```\n\n## Current code in round2_train.py (wrong)\n\n```python\n    try:\n        device = next(base_model.parameters()).device\n    except StopIteration:\n        device = None\n    if device is not None:\n        teacher_inputs = {k: v.to(device) for k, v in teacher_inputs.items()}\n```\n\n## Fix\n\nRead `libs/model-training/src/model_training/round2_train.py` first. Replace the divergent block with round-1's pattern. Since `torch` must not be imported at module top level (INFRA-05), the `torch.device(\"cpu\")` call needs an inline `import torch`. The block becomes:\n\n```python\n    try:\n        device = next(base_model.parameters()).device\n    except StopIteration:\n        import torch  # noqa: PLC0415\n\n        device = torch.device(\"cpu\")\n    teacher_inputs = {k: v.to(device) for k, v in teacher_inputs.items()}\n```\n\n## Test update\n\nThe existing test mocks use `base.parameters.return_value = iter([MagicMock(device=\"cpu\")])`. That branch (successful `next(...)`) is already covered. Add a new test that covers the `StopIteration` branch explicitly:\n\nRead `libs/model-training/tests/test_round2_train.py` first. Append this test at the bottom of the file:\n\n```python\ndef test_training_step_round2_falls_back_to_cpu_when_no_params(\n    monkeypatch: pytest.MonkeyPatch,\n) -> None:\n    \"\"\"base_model with no parameters → tensors moved to CPU via torch.device('cpu').\n\n    Matches round-1's […]
+  "prompt": "Code review flagged that `_training_step_round2` in `libs/model-training/src/model_training/round2_train.py` diverges from round-1's device placement pattern. Patch it to match round-1 exactly.\n\nWorking directory: `/home/<USER>/Code/rune`.\n\n## Reference — round-1's pattern\n\nFrom `libs/model-training/src/model_training/d2l_train.py` around lines 289-293:\n\n```python\n    try:\n        device = next(base_model.parameters()).device\n    except StopIteration:\n        device = torch.device(\"cpu\")\n    teacher_inputs = {k: v.to(device) for k, v in teacher_inputs.items()}\n```\n\n## Current code in round2_train.py (wrong)\n\n```python\n    try:\n        device = next(base_model.parameters()).device\n    except StopIteration:\n        device = None\n    if device is not None:\n        teacher_inputs = {k: v.to(device) for k, v in teacher_inputs.items()}\n```\n\n## Fix\n\nRead `libs/model-training/src/model_training/round2_train.py` first. Replace the divergent block with round-1's pattern. Since `torch` must not be imported at module top level (INFRA-05), the `torch.device(\"cpu\")` call needs an inline `import torch`. The block becomes:\n\n```python\n    try:\n        device = next(base_model.parameters()).device\n    except StopIteration:\n        import torch  # noqa: PLC0415\n\n        device = torch.device(\"cpu\")\n    teacher_inputs = {k: v.to(device) for k, v in teacher_inputs.items()}\n```\n\n## Test update\n\nThe existing test mocks use `base.parameters.return_value = iter([MagicMock(device=\"cpu\")])`. That branch (successful `next(...)`) is already covered. Add a new test that covers the `StopIteration` branch explicitly:\n\nRead `libs/model-training/tests/test_round2_train.py` first. Append this test at the bottom of the file:\n\n```python\ndef test_training_step_round2_falls_back_to_cpu_when_no_params(\n    monkeypatch: pytest.MonkeyPatch,\n) -> None:\n    \"\"\"base_model with no parameters → tensors moved to CPU via torch.device('cpu').\n\n    Matches round-1's […]
 
 > TOOL
 
@@ -5538,8 +5538,8 @@ Done.
 **Tests:** 6 passed (5 existing + 1 new)
 
 **Changes:**
-- `/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/round2_train.py` — replaced the `device = None` / conditional `.to()` block with the round-1 pattern: `StopIteration` now falls back to `import torch; torch.device("cpu")` and the `.to()` is unconditional.
-- `/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_round2_train.py` — appended `test_training_step_round2_falls_back_to_cpu_when_no_params`. One adaptation from the spec was required: the tokenizer mock needed a `side_effect` to return a real list on the first call (used by `len()` for `answer_start`) and `_FakeTensor` instances on the second call (the teacher-inputs path under test). Without this, `len(_FakeTensor())` raises `TypeError`. The assertion logic (`len(moved_to) == 2`, `str(dev) == "cpu"`) is unchanged from the spec.
+- `/home/<USER>/Code/rune/libs/model-training/src/model_training/round2_train.py` — replaced the `device = None` / conditional `.to()` block with the round-1 pattern: `StopIteration` now falls back to `import torch; torch.device("cpu")` and the `.to()` is unconditional.
+- `/home/<USER>/Code/rune/libs/model-training/tests/test_round2_train.py` — appended `test_training_step_round2_falls_back_to_cpu_when_no_params`. One adaptation from the spec was required: the tokenizer mock needed a `side_effect` to return a real list on the first call (used by `len()` for `answer_start`) and `_FakeTensor` instances on the second call (the teacher-inputs path under test). Without this, `len(_FakeTensor())` raises `TypeError`. The assertion logic (`len(moved_to) == 2`, `str(dev) == "cpu"`) is unchanged from the spec.
 agentId: a749bedbdaf869b79 (use SendMessage with to: 'a749bedbdaf869b79' to continue this agent)
 <usage>total_tokens: 33146
 tool_uses: 11
@@ -5616,7 +5616,7 @@ id: toolu_01QvzXEHAD6AimYQGu1osBP2
 {
   "description": "Implement Task 8: train_d2l_qwen3_round2",
   "subagent_type": "general-purpose",
-  "prompt": "You are implementing Task 8 of the round-2 hypernetwork training plan.\n\n## Project context\n\nTasks 1-7 done. Task 8 adds the main driver `train_d2l_qwen3_round2` plus an inner `_run_training_loop`. The driver:\n1. Loads records from `config.dataset_path`.\n2. Opens AdapterRegistry, runs `audit_oracle_coverage`, aborts when coverage < `min_oracle_coverage`.\n3. `config.dry_run=True` → return report dict without training.\n4. Otherwise: calls `_setup_training` (inline-mirrors round-1's inline setup — see spec) → builds `OracleAdapterCache` → calls `_run_training_loop`.\n5. Inner loop: optimizer, scheduler (linear warmup + cosine), per-step call of `_training_step_round2`, skip sentinels advance counter without optimizer step, checkpoint cadence, kill-switch.\n\nRound-1's `train_d2l_qwen3` in `libs/model-training/src/model_training/d2l_train.py` does setup INLINE (no helpers exist like `_build_hypernet`). We mirror the relevant blocks in `_setup_training` rather than touching round-1.\n\n## Working directory\n\n`/Users/noahdolevelixir/Code/rune`\n\n## Conventions\n\n- `uv run` always.\n- Google docstrings, ruff 88, mypy strict-ish.\n- Deferred GPU imports (INFRA-05).\n- Conventional commits + Co-Authored-By trailer.\n- Don't touch `docs/superpowers/` deletions.\n\n## Task 8 — spec\n\n**Files:**\n- Modify: `libs/model-training/src/model_training/round2_train.py` (append 3 helpers + `train_d2l_qwen3_round2` + `_run_training_loop`)\n- Modify: `libs/model-training/tests/test_round2_train.py` (append 2 tests)\n\n### Step 8.1: Write failing tests\n\nAppend to `libs/model-training/tests/test_round2_train.py`:\n\n```python\nfrom model_training.round2_train import train_d2l_qwen3_round2\n\n\ndef test_train_round2_aborts_when_coverage_below_threshold(\n    tmp_path: object, monkeypatch: pytest.MonkeyPatch,\n) -> None:\n    \"\"\"coverage < min_oracle_coverage → RuntimeError before any training.\"\"\"\n    from model_training import round2_train\n    from model_training.round2_config import Round2TrainConfig\n\n    # Stub […]
+  "prompt": "You are implementing Task 8 of the round-2 hypernetwork training plan.\n\n## Project context\n\nTasks 1-7 done. Task 8 adds the main driver `train_d2l_qwen3_round2` plus an inner `_run_training_loop`. The driver:\n1. Loads records from `config.dataset_path`.\n2. Opens AdapterRegistry, runs `audit_oracle_coverage`, aborts when coverage < `min_oracle_coverage`.\n3. `config.dry_run=True` → return report dict without training.\n4. Otherwise: calls `_setup_training` (inline-mirrors round-1's inline setup — see spec) → builds `OracleAdapterCache` → calls `_run_training_loop`.\n5. Inner loop: optimizer, scheduler (linear warmup + cosine), per-step call of `_training_step_round2`, skip sentinels advance counter without optimizer step, checkpoint cadence, kill-switch.\n\nRound-1's `train_d2l_qwen3` in `libs/model-training/src/model_training/d2l_train.py` does setup INLINE (no helpers exist like `_build_hypernet`). We mirror the relevant blocks in `_setup_training` rather than touching round-1.\n\n## Working directory\n\n`/home/<USER>/Code/rune`\n\n## Conventions\n\n- `uv run` always.\n- Google docstrings, ruff 88, mypy strict-ish.\n- Deferred GPU imports (INFRA-05).\n- Conventional commits + Co-Authored-By trailer.\n- Don't touch `docs/superpowers/` deletions.\n\n## Task 8 — spec\n\n**Files:**\n- Modify: `libs/model-training/src/model_training/round2_train.py` (append 3 helpers + `train_d2l_qwen3_round2` + `_run_training_loop`)\n- Modify: `libs/model-training/tests/test_round2_train.py` (append 2 tests)\n\n### Step 8.1: Write failing tests\n\nAppend to `libs/model-training/tests/test_round2_train.py`:\n\n```python\nfrom model_training.round2_train import train_d2l_qwen3_round2\n\n\ndef test_train_round2_aborts_when_coverage_below_threshold(\n    tmp_path: object, monkeypatch: pytest.MonkeyPatch,\n) -> None:\n    \"\"\"coverage < min_oracle_coverage → RuntimeError before any training.\"\"\"\n    from model_training import round2_train\n    from model_training.round2_config import Round2TrainConfig\n\n    # Stub […]
 
 > TOOL
 
@@ -5649,7 +5649,7 @@ id: toolu_01HKyaoPJ4qWhZAw7Skm15J8
 {
   "description": "Spec review Task 8",
   "subagent_type": "general-purpose",
-  "prompt": "Verify Task 8 of the round-2 hypernetwork training plan at commit `6c99a29`.\n\nWorking directory: `/Users/noahdolevelixir/Code/rune`.\n\n## What was requested\n\nAppend to `libs/model-training/src/model_training/round2_train.py`:\n\n### Three infrastructure wrappers (monkeypatch seams)\n\n1. `_load_records(dataset_path: str) -> list[dict[str, Any]]` — defers import of `load_jsonl` from `model_training.d2l_data`, returns `list(load_jsonl(dataset_path))`.\n2. `_open_registry(url: str) -> Any` — defers imports of `sqlmodel.create_engine` + `adapter_registry.registry.AdapterRegistry`, returns `AdapterRegistry(engine=create_engine(url))`.\n3. `_setup_training(config) -> dict[str, Any]` — mirrors round-1's inline setup from `d2l_train.py:563-594`; deferred imports of torch, ctx_to_lora, transformers, build_hypernet_config, sakana_d2l, shared.hardware; calls `_require_probe_cache(config.model_config_name)`; loads base_model + tokenizer; builds hc + hypernet; transfers aggregator weights; moves to best device. Returns dict with keys `base_model, tokenizer, hypernet, hc, device`.\n\n### Main driver\n\n`train_d2l_qwen3_round2(config, *, kill_switch_evaluate_fn=None) -> dict[str, Any]`:\n- Raises `ValueError` when `config.dataset_path` is falsy.\n- `records = _load_records(config.dataset_path)`.\n- `registry = _open_registry(config.oracle_registry_url)`.\n- `coverage_ratio, bin_counts = audit_oracle_coverage(records, registry)` — imported inside body.\n- Logs coverage.\n- Raises `RuntimeError` when `coverage_ratio < config.min_oracle_coverage`. Message MUST contain the word \"coverage\".\n- If `config.dry_run`: return dict `{\"dry_run\": True, \"coverage_ratio\", \"bin_counts\", \"num_records\"}` — does NOT call `_setup_training`.\n- Otherwise: calls `_setup_training(config)`, builds `OracleAdapterCache(registry=registry, hc=hc, max_loaded=config.max_loaded_oracles)`, delegates to `_run_training_loop`.\n\n### Inner loop\n\n`_run_training_loop(*, config, records, base_model, tokenizer, hypernet, hc, oracle_cache, kill_switch_evaluate_fn, coverage_ratio, bin_counts) -> dict[str, Any]`:\n- Deferred imports of torch + optimizer/scheduler + d2l_train […]
+  "prompt": "Verify Task 8 of the round-2 hypernetwork training plan at commit `6c99a29`.\n\nWorking directory: `/home/<USER>/Code/rune`.\n\n## What was requested\n\nAppend to `libs/model-training/src/model_training/round2_train.py`:\n\n### Three infrastructure wrappers (monkeypatch seams)\n\n1. `_load_records(dataset_path: str) -> list[dict[str, Any]]` — defers import of `load_jsonl` from `model_training.d2l_data`, returns `list(load_jsonl(dataset_path))`.\n2. `_open_registry(url: str) -> Any` — defers imports of `sqlmodel.create_engine` + `adapter_registry.registry.AdapterRegistry`, returns `AdapterRegistry(engine=create_engine(url))`.\n3. `_setup_training(config) -> dict[str, Any]` — mirrors round-1's inline setup from `d2l_train.py:563-594`; deferred imports of torch, ctx_to_lora, transformers, build_hypernet_config, sakana_d2l, shared.hardware; calls `_require_probe_cache(config.model_config_name)`; loads base_model + tokenizer; builds hc + hypernet; transfers aggregator weights; moves to best device. Returns dict with keys `base_model, tokenizer, hypernet, hc, device`.\n\n### Main driver\n\n`train_d2l_qwen3_round2(config, *, kill_switch_evaluate_fn=None) -> dict[str, Any]`:\n- Raises `ValueError` when `config.dataset_path` is falsy.\n- `records = _load_records(config.dataset_path)`.\n- `registry = _open_registry(config.oracle_registry_url)`.\n- `coverage_ratio, bin_counts = audit_oracle_coverage(records, registry)` — imported inside body.\n- Logs coverage.\n- Raises `RuntimeError` when `coverage_ratio < config.min_oracle_coverage`. Message MUST contain the word \"coverage\".\n- If `config.dry_run`: return dict `{\"dry_run\": True, \"coverage_ratio\", \"bin_counts\", \"num_records\"}` — does NOT call `_setup_training`.\n- Otherwise: calls `_setup_training(config)`, builds `OracleAdapterCache(registry=registry, hc=hc, max_loaded=config.max_loaded_oracles)`, delegates to `_run_training_loop`.\n\n### Inner loop\n\n`_run_training_loop(*, config, records, base_model, tokenizer, hypernet, hc, oracle_cache, kill_switch_evaluate_fn, coverage_ratio, bin_counts) -> dict[str, Any]`:\n- Deferred imports of torch + optimizer/scheduler + d2l_train […]
 
 > TOOL
 
@@ -5724,7 +5724,7 @@ id: toolu_016ZDvM1RCnHUDvLUd9tXaxq
 {
   "description": "Fix Task 8 issues",
   "subagent_type": "general-purpose",
-  "prompt": "You are fixing three Important issues flagged by code review on Task 8 commit `6c99a29`.\n\nWorking directory: `/Users/noahdolevelixir/Code/rune`.\n\nRead `libs/model-training/src/model_training/round2_train.py` first.\n\n## Fix 1 — `steps_completed` off-by-one on kill-switch\n\nIn `_run_training_loop`, `steps_completed = step` is placed AFTER the kill-switch `break` block. When the kill-switch fires, the step where it fired is not counted in the return report.\n\nRestructure the loop so `steps_completed = step` happens BEFORE the kill-switch check. The current structure is roughly:\n\n```python\nfor step in range(1, config.num_steps + 1):\n    ...\n    if loss is None:\n        continue\n    ...optimizer step + checkpoint...\n    if kill_switch ...:\n        triggered = True\n        break\n    steps_completed = step   # ← moved\n```\n\nChange to:\n\n```python\nfor step in range(1, config.num_steps + 1):\n    ...\n    if loss is None:\n        continue\n    ...optimizer step + checkpoint...\n    steps_completed = step   # ← moved BEFORE kill-switch\n    if kill_switch ...:\n        triggered = True\n        break\n```\n\nThis way a kill-switch trigger at step N correctly reports `steps_completed == N`.\n\n## Fix 2 — gate `_require_probe_cache` on smoke_test\n\n`_setup_training` calls `_require_probe_cache(config.model_config_name)` unconditionally. Round-1 gates this on `not config.smoke_test`. `Round2TrainConfig` inherits `smoke_test` from `D2LTrainConfig`. Match round-1:\n\n```python\nif not config.smoke_test:\n    _require_probe_cache(config.model_config_name)\n```\n\n## Fix 3 — restore trainable-params log\n\nRound-1 logs the trainable parameter count immediately after building the optimizer. Round-2 lost […]
+  "prompt": "You are fixing three Important issues flagged by code review on Task 8 commit `6c99a29`.\n\nWorking directory: `/home/<USER>/Code/rune`.\n\nRead `libs/model-training/src/model_training/round2_train.py` first.\n\n## Fix 1 — `steps_completed` off-by-one on kill-switch\n\nIn `_run_training_loop`, `steps_completed = step` is placed AFTER the kill-switch `break` block. When the kill-switch fires, the step where it fired is not counted in the return report.\n\nRestructure the loop so `steps_completed = step` happens BEFORE the kill-switch check. The current structure is roughly:\n\n```python\nfor step in range(1, config.num_steps + 1):\n    ...\n    if loss is None:\n        continue\n    ...optimizer step + checkpoint...\n    if kill_switch ...:\n        triggered = True\n        break\n    steps_completed = step   # ← moved\n```\n\nChange to:\n\n```python\nfor step in range(1, config.num_steps + 1):\n    ...\n    if loss is None:\n        continue\n    ...optimizer step + checkpoint...\n    steps_completed = step   # ← moved BEFORE kill-switch\n    if kill_switch ...:\n        triggered = True\n        break\n```\n\nThis way a kill-switch trigger at step N correctly reports `steps_completed == N`.\n\n## Fix 2 — gate `_require_probe_cache` on smoke_test\n\n`_setup_training` calls `_require_probe_cache(config.model_config_name)` unconditionally. Round-1 gates this on `not config.smoke_test`. `Round2TrainConfig` inherits `smoke_test` from `D2LTrainConfig`. Match round-1:\n\n```python\nif not config.smoke_test:\n    _require_probe_cache(config.model_config_name)\n```\n\n## Fix 3 — restore trainable-params log\n\nRound-1 logs the trainable parameter count immediately after building the optimizer. Round-2 lost […]
 
 > TOOL
 
@@ -5735,7 +5735,7 @@ Done.
 
 - Commit SHA: `5604c25`
 - 8/8 tests pass, ruff clean, mypy clean
-- All three fixes applied to `/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/round2_train.py`:
+- All three fixes applied to `/home/<USER>/Code/rune/libs/model-training/src/model_training/round2_train.py`:
   1. `steps_completed = step` moved before the kill-switch block (lines ~495-499)
   2. `_require_probe_cache` gated on `not config.smoke_test` (line ~262)
   3. `logger.info("Round-2 trainable params: %d", ...)` added after building `trainable_params` (lines ~425-428)
@@ -5817,7 +5817,7 @@ id: toolu_01H3PLxDrCMj9hHnDjkA4Ey1
 {
   "description": "Implement Task 9: train_round2 CLI",
   "subagent_type": "general-purpose",
-  "prompt": "You are implementing Task 9 of the round-2 hypernetwork training plan: a CLI script `scripts/train_round2.py` that wraps `train_d2l_qwen3_round2`.\n\n## Project context\n\nTask 8 landed `train_d2l_qwen3_round2` (commit `5604c25`). Task 9 exposes it via argparse. One test confirms argv parsing via the script's `build_config(argv)` helper.\n\n## Working directory\n\n`/Users/noahdolevelixir/Code/rune`\n\n## Conventions\n\n- `uv run` always.\n- Google docstrings, ruff 88.\n- Deferred imports not needed here (argparse is stdlib).\n- Conventional commits + Co-Authored-By trailer.\n- Don't touch `docs/superpowers/` deletions.\n\n## Task 9 — spec\n\n**Files:**\n- Create: `scripts/train_round2.py`\n- Modify: `libs/model-training/tests/test_round2_train.py` (append 1 test)\n\n### Step 9.1: Write failing test\n\nAppend to `libs/model-training/tests/test_round2_train.py`:\n\n```python\ndef test_cli_build_config_parses_flags(\n    tmp_path: object, monkeypatch: pytest.MonkeyPatch,\n) -> None:\n    \"\"\"CLI argv → Round2TrainConfig via build_config().\"\"\"\n    import importlib.util\n\n    script = (\n        __import__(\"pathlib\").Path(__file__).resolve().parents[3]\n        / \"scripts\"\n        / \"train_round2.py\"\n    )\n    spec = importlib.util.spec_from_file_location(\"train_round2\", script)\n    assert spec is not None and spec.loader is not None\n    module = importlib.util.module_from_spec(spec)\n    spec.loader.exec_module(module)\n\n    argv = [\n        \"--sakana-checkpoint-path\", \"/tmp/fake.bin\",\n        \"--oracle-registry-url\", \"sqlite:///tmp.db\",\n        \"--dataset-path\", \"/tmp/x.jsonl\",\n        \"--num-steps\", \"5\",\n        \"--dry-run\",\n    ]\n    cfg = module.build_config(argv)\n    assert cfg.num_steps == 5\n    assert cfg.dry_run is True\n    assert cfg.oracle_registry_url == \"sqlite:///tmp.db\"\n```\n\n### Step 9.2: Verify it fails\n\n`uv run pytest libs/model-training/tests/test_round2_train.py::test_cli_build_config_parses_flags -v` → FAIL (`FileNotFoundError` because `scripts/train_round2.py` doesn't exist).\n\n### Step 9.3: Implement the CLI\n\nCreate `scripts/train_round2.py`:\n\n```python\n\"\"\"CLI entrypoint for round-2 (oracle-teacher) hypernetwork training.\n\nUsage:\n    uv […]
+  "prompt": "You are implementing Task 9 of the round-2 hypernetwork training plan: a CLI script `scripts/train_round2.py` that wraps `train_d2l_qwen3_round2`.\n\n## Project context\n\nTask 8 landed `train_d2l_qwen3_round2` (commit `5604c25`). Task 9 exposes it via argparse. One test confirms argv parsing via the script's `build_config(argv)` helper.\n\n## Working directory\n\n`/home/<USER>/Code/rune`\n\n## Conventions\n\n- `uv run` always.\n- Google docstrings, ruff 88.\n- Deferred imports not needed here (argparse is stdlib).\n- Conventional commits + Co-Authored-By trailer.\n- Don't touch `docs/superpowers/` deletions.\n\n## Task 9 — spec\n\n**Files:**\n- Create: `scripts/train_round2.py`\n- Modify: `libs/model-training/tests/test_round2_train.py` (append 1 test)\n\n### Step 9.1: Write failing test\n\nAppend to `libs/model-training/tests/test_round2_train.py`:\n\n```python\ndef test_cli_build_config_parses_flags(\n    tmp_path: object, monkeypatch: pytest.MonkeyPatch,\n) -> None:\n    \"\"\"CLI argv → Round2TrainConfig via build_config().\"\"\"\n    import importlib.util\n\n    script = (\n        __import__(\"pathlib\").Path(__file__).resolve().parents[3]\n        / \"scripts\"\n        / \"train_round2.py\"\n    )\n    spec = importlib.util.spec_from_file_location(\"train_round2\", script)\n    assert spec is not None and spec.loader is not None\n    module = importlib.util.module_from_spec(spec)\n    spec.loader.exec_module(module)\n\n    argv = [\n        \"--sakana-checkpoint-path\", \"/tmp/fake.bin\",\n        \"--oracle-registry-url\", \"sqlite:///tmp.db\",\n        \"--dataset-path\", \"/tmp/x.jsonl\",\n        \"--num-steps\", \"5\",\n        \"--dry-run\",\n    ]\n    cfg = module.build_config(argv)\n    assert cfg.num_steps == 5\n    assert cfg.dry_run is True\n    assert cfg.oracle_registry_url == \"sqlite:///tmp.db\"\n```\n\n### Step 9.2: Verify it fails\n\n`uv run pytest libs/model-training/tests/test_round2_train.py::test_cli_build_config_parses_flags -v` → FAIL (`FileNotFoundError` because `scripts/train_round2.py` doesn't exist).\n\n### Step 9.3: Implement the CLI\n\nCreate `scripts/train_round2.py`:\n\n```python\n\"\"\"CLI entrypoint for round-2 (oracle-teacher) hypernetwork training.\n\nUsage:\n    uv […]
 
 > TOOL
 
@@ -5831,8 +5831,8 @@ Done.
 **Test count:** 9 passed (8 existing + 1 new `test_cli_build_config_parses_flags`).
 
 **Files changed:**
-- `/Users/noahdolevelixir/Code/rune/scripts/train_round2.py` — new CLI; `build_config(argv)` maps all 25 `Round2TrainConfig` fields to argparse flags, `main()` returns int
-- `/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_round2_train.py` — appended CLI parsing test
+- `/home/<USER>/Code/rune/scripts/train_round2.py` — new CLI; `build_config(argv)` maps all 25 `Round2TrainConfig` fields to argparse flags, `main()` returns int
+- `/home/<USER>/Code/rune/libs/model-training/tests/test_round2_train.py` — appended CLI parsing test
 
 **Ruff:** clean. No concerns.
 agentId: aa0cf8b3ad20f1817 (use SendMessage with to: 'aa0cf8b3ad20f1817' to continue this agent)
@@ -5862,7 +5862,7 @@ tool_result
 id: toolu_015bnDz5AzNXW237CSWVEBnC
 ```
 commit 93cd48cb2d8e62758cb3ee744341c7aac09c3323
-Author: Noah Dolev <noah@elixirtrials.com>
+Author: Noah Dolev <<REDACTED_EMAIL>>
 Date:   Thu Apr 23 14:40:12 2026 +0200
 
     feat(scripts): add scripts/train_round2.py CLI for round-2 training (gap 9)
@@ -5872,7 +5872,7 @@ Date:   Thu Apr 23 14:40:12 2026 +0200
     parsing without running the training loop. Default --oracle-fallback is
     "skip" to match the config default.
     
-    Co-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>
+    Co-Authored-By: Claude Opus 4.7 <<REDACTED_EMAIL>>
     Entire-Checkpoint: 89f772b838ba
 
  libs/model-training/tests/test_round2_train.py | 29 ++++++++
@@ -5927,7 +5927,7 @@ id: toolu_011CSeoVyioe3ZxwQ149Qza8
 {
   "description": "Code quality review Task 9",
   "subagent_type": "superpowers:code-reviewer",
-  "prompt": "Code-quality review Task 9: `scripts/train_round2.py` CLI wrapper.\n\n## What was implemented\n\nArgparse wrapper around `train_d2l_qwen3_round2`. Exposes every `Round2TrainConfig` field as a CLI flag. `build_config(argv)` is a pure function (testable without running training). `main(argv)` returns int.\n\n## Base / head SHAs\n\n- BASE_SHA: `5604c25` (Task 8 fix)\n- HEAD_SHA: `93cd48c` (Task 9)\n\nDiff: `git show 93cd48c`.\n\n## Files\n\n- `scripts/train_round2.py` (new)\n- `libs/model-training/tests/test_round2_train.py` (added 1 test)\n\n## What to check\n\n- `build_config(argv)` is importable without side effects (no argv parsed at import time).\n- `main()` configures logging BEFORE calling `train_d2l_qwen3_round2` so coverage-audit logs surface.\n- Every `Round2TrainConfig` field is exposed (24 flags).\n- `--oracle-fallback` default = `\"skip\"` (matches config default — critical since the semantics changed in earlier review).\n- Script is executable directly (`if __name__ == \"__main__\":`).\n- No argparse anti-patterns (e.g., mutable default list).\n- File size is reasonable for a CLI wrapper (~100 lines expected).\n\nRun:\n- `uv run pytest libs/model-training/tests/test_round2_train.py::test_cli_build_config_parses_flags -v`\n- `uv run ruff check scripts/train_round2.py`\n\nWorking directory: `/Users/noahdolevelixir/Code/rune`.\n\nReturn: Strengths, Issues (Critical/Important/Minor), Assessment."
+  "prompt": "Code-quality review Task 9: `scripts/train_round2.py` CLI wrapper.\n\n## What was implemented\n\nArgparse wrapper around `train_d2l_qwen3_round2`. Exposes every `Round2TrainConfig` field as a CLI flag. `build_config(argv)` is a pure function (testable without running training). `main(argv)` returns int.\n\n## Base / head SHAs\n\n- BASE_SHA: `5604c25` (Task 8 fix)\n- HEAD_SHA: `93cd48c` (Task 9)\n\nDiff: `git show 93cd48c`.\n\n## Files\n\n- `scripts/train_round2.py` (new)\n- `libs/model-training/tests/test_round2_train.py` (added 1 test)\n\n## What to check\n\n- `build_config(argv)` is importable without side effects (no argv parsed at import time).\n- `main()` configures logging BEFORE calling `train_d2l_qwen3_round2` so coverage-audit logs surface.\n- Every `Round2TrainConfig` field is exposed (24 flags).\n- `--oracle-fallback` default = `\"skip\"` (matches config default — critical since the semantics changed in earlier review).\n- Script is executable directly (`if __name__ == \"__main__\":`).\n- No argparse anti-patterns (e.g., mutable default list).\n- File size is reasonable for a CLI wrapper (~100 lines expected).\n\nRun:\n- `uv run pytest libs/model-training/tests/test_round2_train.py::test_cli_build_config_parses_flags -v`\n- `uv run ruff check scripts/train_round2.py`\n\nWorking directory: `/home/<USER>/Code/rune`.\n\nReturn: Strengths, Issues (Critical/Important/Minor), Assessment."
 }
 ```
 
@@ -5968,7 +5968,7 @@ id: toolu_01KfWSLG9XVGUhwTt6dVzkgh
 {
   "description": "Fix Task 9 CLI issues",
   "subagent_type": "general-purpose",
-  "prompt": "Patch three issues in `scripts/train_round2.py` flagged by code review.\n\nWorking directory: `/Users/noahdolevelixir/Code/rune`.\n\nRead `scripts/train_round2.py` first.\n\n## Fix 1 (Critical) — expose 3 missing parent-class fields\n\nAdd three flags right after `--dataset-path` (before `--num-steps`):\n\n```python\n    parser.add_argument(\"--model-config-name\", default=\"qwen3.5-9b\")\n    parser.add_argument(\"--base-model-name\", default=\"\")\n    parser.add_argument(\"--lora-r\", type=int, default=8)\n```\n\nAnd pass them through in the `Round2TrainConfig(...)` constructor call. Add these three keyword arguments (alongside the others):\n\n```python\n        model_config_name=ns.model_config_name,\n        base_model_name=ns.base_model_name,\n        lora_r=ns.lora_r,\n```\n\n## Fix 2 (Important) — relax `--dataset-path` required\n\nChange:\n\n```python\n    parser.add_argument(\"--dataset-path\", required=True)\n```\n\nto:\n\n```python\n    parser.add_argument(\"--dataset-path\", default=None)\n```\n\nSo smoke-test runs without a dataset path work. The training loop's internal guard (`if not config.dataset_path: raise ValueError`) still fires on a real (non-smoke/non-dry) run without a dataset.\n\nIn the `Round2TrainConfig(...)` call, this field becomes `dataset_path=ns.dataset_path` (unchanged — it accepts `None`).\n\n## Fix 3 (Important) — wrap main() in try/except for clean int return\n\nChange `main(argv)` to catch `ValueError` and `RuntimeError`, log, and return 1:\n\n```python\ndef main(argv: Sequence[str]) -> int:\n    logging.basicConfig(level=logging.INFO, format=\"%(asctime)s %(levelname)s %(message)s\")\n    try:\n        config = build_config(argv)\n        report = train_d2l_qwen3_round2(config)\n    except (ValueError, RuntimeError) as exc:\n        logging.error(\"%s\", exc)\n        return 1\n    logging.info(\"Round-2 run report: %s\", report)\n    return 0\n```\n\n## Test update\n\nRead `libs/model-training/tests/test_round2_train.py` first. In `test_cli_build_config_parses_flags`, also assert:\n- `cfg.oracle_fallback == \"skip\"` (default when omitted)\n- `cfg.lora_r == 8` (default, new flag)\n\nAfter the existing assertions add:\n\n```python\n    # Default propagation\n […]
+  "prompt": "Patch three issues in `scripts/train_round2.py` flagged by code review.\n\nWorking directory: `/home/<USER>/Code/rune`.\n\nRead `scripts/train_round2.py` first.\n\n## Fix 1 (Critical) — expose 3 missing parent-class fields\n\nAdd three flags right after `--dataset-path` (before `--num-steps`):\n\n```python\n    parser.add_argument(\"--model-config-name\", default=\"qwen3.5-9b\")\n    parser.add_argument(\"--base-model-name\", default=\"\")\n    parser.add_argument(\"--lora-r\", type=int, default=8)\n```\n\nAnd pass them through in the `Round2TrainConfig(...)` constructor call. Add these three keyword arguments (alongside the others):\n\n```python\n        model_config_name=ns.model_config_name,\n        base_model_name=ns.base_model_name,\n        lora_r=ns.lora_r,\n```\n\n## Fix 2 (Important) — relax `--dataset-path` required\n\nChange:\n\n```python\n    parser.add_argument(\"--dataset-path\", required=True)\n```\n\nto:\n\n```python\n    parser.add_argument(\"--dataset-path\", default=None)\n```\n\nSo smoke-test runs without a dataset path work. The training loop's internal guard (`if not config.dataset_path: raise ValueError`) still fires on a real (non-smoke/non-dry) run without a dataset.\n\nIn the `Round2TrainConfig(...)` call, this field becomes `dataset_path=ns.dataset_path` (unchanged — it accepts `None`).\n\n## Fix 3 (Important) — wrap main() in try/except for clean int return\n\nChange `main(argv)` to catch `ValueError` and `RuntimeError`, log, and return 1:\n\n```python\ndef main(argv: Sequence[str]) -> int:\n    logging.basicConfig(level=logging.INFO, format=\"%(asctime)s %(levelname)s %(message)s\")\n    try:\n        config = build_config(argv)\n        report = train_d2l_qwen3_round2(config)\n    except (ValueError, RuntimeError) as exc:\n        logging.error(\"%s\", exc)\n        return 1\n    logging.info(\"Round-2 run report: %s\", report)\n    return 0\n```\n\n## Test update\n\nRead `libs/model-training/tests/test_round2_train.py` first. In `test_cli_build_config_parses_flags`, also assert:\n- `cfg.oracle_fallback == \"skip\"` (default when omitted)\n- `cfg.lora_r == 8` (default, new flag)\n\nAfter the existing assertions add:\n\n```python\n    # Default propagation\n […]
 
 > TOOL
 
@@ -5981,12 +5981,12 @@ Done.
 
 **What was applied:**
 
-- `/Users/noahdolevelixir/Code/rune/scripts/train_round2.py`
+- `/home/<USER>/Code/rune/scripts/train_round2.py`
   - Fix 1: Added `--model-config-name`, `--base-model-name`, `--lora-r` args after `--dataset-path`; wired all three into the `Round2TrainConfig(...)` constructor.
   - Fix 2: `--dataset-path` changed from `required=True` to `default=None`.
   - Fix 3: `main()` body wrapped in `try/except (ValueError, RuntimeError)` — logs error and returns 1 on failure.
 
-- `/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_round2_train.py`
+- `/home/<USER>/Code/rune/libs/model-training/tests/test_round2_train.py`
   - `test_cli_build_config_parses_flags` extended with `assert cfg.oracle_fallback == "skip"` and `assert cfg.lora_r == 8`.
 
 **Tests:** 9/9 passed in 1.13s. Ruff clean. No concerns.
@@ -6066,7 +6066,7 @@ id: toolu_01QbUzNzsq6AF39GmVKoYc5q
 {
   "description": "Implement Task 10: register_round2_adapter",
   "subagent_type": "general-purpose",
-  "prompt": "You are implementing Task 10 of the round-2 hypernetwork training plan: `register_round2_adapter` — writes the final round-2 adapter to `AdapterRegistry` with lineage tracking.\n\n## Project context\n\nTasks 1-9 done. Task 10 adds registry write-back: after training finishes, a final checkpoint is saved and registered with `parent_ids = sorted oracle IDs` and `generation = 2`.\n\n## Working directory\n\n`/Users/noahdolevelixir/Code/rune`\n\n## Conventions\n\n- `uv run` always.\n- Google docstrings, ruff 88, mypy strict-ish.\n- Deferred imports (INFRA-05).\n- Conventional commits + Co-Authored-By trailer.\n- Don't touch `docs/superpowers/` deletions.\n\n## Context on AdapterRecord\n\n`libs/adapter-registry/src/adapter_registry/models.py` has `AdapterRecord` SQLModel with fields: id, version, task_type, base_model_id, rank, created_at, file_path, file_hash, file_size_bytes, pass_rate, fitness_score, source, session_id, is_archived, parent_ids (JSON string), generation (int, default 0), training_task_hash, agent_id.\n\n## Task 10 — spec\n\n**Files:**\n- Modify: `libs/model-training/src/model_training/round2_train.py` (append `register_round2_adapter` + wire into `_run_training_loop` return path)\n- Modify: `libs/model-training/tests/test_round2_train.py` (append test)\n\n### Step 10.1: Write failing test\n\nAppend to `libs/model-training/tests/test_round2_train.py`:\n\n```python\nfrom model_training.round2_train import register_round2_adapter\n\n\ndef test_register_round2_adapter_writes_lineage(monkeypatch: pytest.MonkeyPatch) -> None:\n    \"\"\"Round-2 adapter registers with parent_ids = sorted oracle_ids and generation=2.\"\"\"\n    import json\n\n    registry = MagicMock()\n    bin_counts = {\"plan_mbpp\": 3, \"decompose_humaneval\": 5, \"diagnose_pooled\": 2}\n    adapter_id = register_round2_adapter(\n        registry=registry,\n        bin_counts=bin_counts,\n        adapter_file_path=\"/adapters/round2_run_42\",\n        base_model_id=\"Qwen/Qwen3.5-9B\",\n        rank=8,\n    )\n    assert adapter_id.startswith(\"round2_\")\n    (stored_record,) = [c.args[0] for c in registry.store.call_args_list]\n    assert stored_record.source == \"distillation\"\n    assert stored_record.generation […]
+  "prompt": "You are implementing Task 10 of the round-2 hypernetwork training plan: `register_round2_adapter` — writes the final round-2 adapter to `AdapterRegistry` with lineage tracking.\n\n## Project context\n\nTasks 1-9 done. Task 10 adds registry write-back: after training finishes, a final checkpoint is saved and registered with `parent_ids = sorted oracle IDs` and `generation = 2`.\n\n## Working directory\n\n`/home/<USER>/Code/rune`\n\n## Conventions\n\n- `uv run` always.\n- Google docstrings, ruff 88, mypy strict-ish.\n- Deferred imports (INFRA-05).\n- Conventional commits + Co-Authored-By trailer.\n- Don't touch `docs/superpowers/` deletions.\n\n## Context on AdapterRecord\n\n`libs/adapter-registry/src/adapter_registry/models.py` has `AdapterRecord` SQLModel with fields: id, version, task_type, base_model_id, rank, created_at, file_path, file_hash, file_size_bytes, pass_rate, fitness_score, source, session_id, is_archived, parent_ids (JSON string), generation (int, default 0), training_task_hash, agent_id.\n\n## Task 10 — spec\n\n**Files:**\n- Modify: `libs/model-training/src/model_training/round2_train.py` (append `register_round2_adapter` + wire into `_run_training_loop` return path)\n- Modify: `libs/model-training/tests/test_round2_train.py` (append test)\n\n### Step 10.1: Write failing test\n\nAppend to `libs/model-training/tests/test_round2_train.py`:\n\n```python\nfrom model_training.round2_train import register_round2_adapter\n\n\ndef test_register_round2_adapter_writes_lineage(monkeypatch: pytest.MonkeyPatch) -> None:\n    \"\"\"Round-2 adapter registers with parent_ids = sorted oracle_ids and generation=2.\"\"\"\n    import json\n\n    registry = MagicMock()\n    bin_counts = {\"plan_mbpp\": 3, \"decompose_humaneval\": 5, \"diagnose_pooled\": 2}\n    adapter_id = register_round2_adapter(\n        registry=registry,\n        bin_counts=bin_counts,\n        adapter_file_path=\"/adapters/round2_run_42\",\n        base_model_id=\"Qwen/Qwen3.5-9B\",\n        rank=8,\n    )\n    assert adapter_id.startswith(\"round2_\")\n    (stored_record,) = [c.args[0] for c in registry.store.call_args_list]\n    assert stored_record.source == \"distillation\"\n    assert stored_record.generation […]
 
 > TOOL
 
@@ -6113,7 +6113,7 @@ tool_result
 id: toolu_01GnkdW32iQScEyGgf7eNHC4
 ```
 commit a622a671b74e486c73791b408a634bf232275c98
-Author: Noah Dolev <noah@elixirtrials.com>
+Author: Noah Dolev <<REDACTED_EMAIL>>
 Date:   Thu Apr 23 14:46:14 2026 +0200
 
     feat(training): add register_round2_adapter with oracle lineage (gap 9)
@@ -6128,7 +6128,7 @@ Date:   Thu Apr 23 14:46:14 2026 +0200
     path is deferred to an integration task so the unit tests for the
     training loop stay isolated.
     
-    Co-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>
+    Co-Authored-By: Claude Opus 4.7 <<REDACTED_EMAIL>>
     Entire-Checkpoint: 08b25bb8c276
 
  .../src/model_training/round2_train.py             | 77 ++++++++++++++++++++++
@@ -6190,7 +6190,7 @@ id: toolu_01SS37aREYRbn8HHyaknqhQC
 {
   "description": "Fix Task 10: wire register + datetime style",
   "subagent_type": "general-purpose",
-  "prompt": "Apply two fixes to `libs/model-training/src/model_training/round2_train.py` based on Task 10 code review.\n\nWorking directory: `/Users/noahdolevelixir/Code/rune`.\n\nRead `libs/model-training/src/model_training/round2_train.py` first.\n\n## Fix 1 — datetime kwarg consistency\n\nChange:\n```python\ncreated_at=datetime.now(timezone.utc).isoformat()\n```\nto:\n```python\ncreated_at=datetime.now(tz=timezone.utc).isoformat()\n```\n\nMatches the existing convention in `libs/model-training/src/model_training/trainer.py:795`.\n\n## Fix 2 — wire `register_round2_adapter` into `_run_training_loop`\n\nFind the `return` block at the end of `_run_training_loop` (the one that builds the final report dict). Immediately BEFORE that return, add the final checkpoint + registry write-back. Structure:\n\n```python\n    # --- Final checkpoint + registry write-back (only when training ran) ---\n    round2_adapter_id: str | None = None\n    if steps_completed > 0:\n        final_ckpt = _save_checkpoint(\n            step=steps_completed,\n            hypernet=hypernet,\n            optimizer=optimizer,\n            scheduler=scheduler,\n            config=config,\n            hc=hc,\n            best_loss=best_loss,\n            full=True,\n        )\n        round2_adapter_id = register_round2_adapter(\n            registry=_open_registry(config.oracle_registry_url),\n            bin_counts=bin_counts,\n            adapter_file_path=str(final_ckpt),\n            base_model_id=config.base_model_name,\n            rank=config.lora_r,\n        )\n\n    return {\n        \"dry_run\": False,\n        \"coverage_ratio\": coverage_ratio,\n        \"bin_counts\": bin_counts,\n        \"num_records\": len(records),\n        \"final_loss\": last_loss,\n        \"best_loss\": best_loss,\n        \"steps_completed\": steps_completed,\n        \"kill_switch_triggered\": triggered,\n        \"round2_adapter_id\": round2_adapter_id,\n    }\n```\n\nThe `if steps_completed > 0:` guard prevents writing the registry when the kill-switch fired before any step completed (in which case `final_ckpt` would be undefined and there's nothing meaningful to register).\n\nPlace the guard right before the existing `return { ... }` block. Preserve the existing return dict's keys and values; just add `round2_adapter_id` as a new key in […]
+  "prompt": "Apply two fixes to `libs/model-training/src/model_training/round2_train.py` based on Task 10 code review.\n\nWorking directory: `/home/<USER>/Code/rune`.\n\nRead `libs/model-training/src/model_training/round2_train.py` first.\n\n## Fix 1 — datetime kwarg consistency\n\nChange:\n```python\ncreated_at=datetime.now(timezone.utc).isoformat()\n```\nto:\n```python\ncreated_at=datetime.now(tz=timezone.utc).isoformat()\n```\n\nMatches the existing convention in `libs/model-training/src/model_training/trainer.py:795`.\n\n## Fix 2 — wire `register_round2_adapter` into `_run_training_loop`\n\nFind the `return` block at the end of `_run_training_loop` (the one that builds the final report dict). Immediately BEFORE that return, add the final checkpoint + registry write-back. Structure:\n\n```python\n    # --- Final checkpoint + registry write-back (only when training ran) ---\n    round2_adapter_id: str | None = None\n    if steps_completed > 0:\n        final_ckpt = _save_checkpoint(\n            step=steps_completed,\n            hypernet=hypernet,\n            optimizer=optimizer,\n            scheduler=scheduler,\n            config=config,\n            hc=hc,\n            best_loss=best_loss,\n            full=True,\n        )\n        round2_adapter_id = register_round2_adapter(\n            registry=_open_registry(config.oracle_registry_url),\n            bin_counts=bin_counts,\n            adapter_file_path=str(final_ckpt),\n            base_model_id=config.base_model_name,\n            rank=config.lora_r,\n        )\n\n    return {\n        \"dry_run\": False,\n        \"coverage_ratio\": coverage_ratio,\n        \"bin_counts\": bin_counts,\n        \"num_records\": len(records),\n        \"final_loss\": last_loss,\n        \"best_loss\": best_loss,\n        \"steps_completed\": steps_completed,\n        \"kill_switch_triggered\": triggered,\n        \"round2_adapter_id\": round2_adapter_id,\n    }\n```\n\nThe `if steps_completed > 0:` guard prevents writing the registry when the kill-switch fired before any step completed (in which case `final_ckpt` would be undefined and there's nothing meaningful to register).\n\nPlace the guard right before the existing `return { ... }` block. Preserve the existing return dict's keys and values; just add `round2_adapter_id` as a new key in […]
 
 > TOOL
 
@@ -6205,7 +6205,7 @@ Done.
 - **Tests:** 10/10 pass (unchanged)
 - **ruff:** clean
 - **mypy:** clean
-- **File:** `/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/round2_train.py`
+- **File:** `/home/<USER>/Code/rune/libs/model-training/src/model_training/round2_train.py`
 
 No concerns. The `steps_completed > 0` guard correctly handles the kill-switch-before-first-step edge case, and `_open_registry` is called fresh inside the guard so there's no stale handle issue from the earlier audit call.
 agentId: af5b9c94b6a96201f (use SendMessage with to: 'af5b9c94b6a96201f' to continue this agent)
@@ -6284,7 +6284,7 @@ id: toolu_01C7NV7dMpGpXx1ERpWgEtTD
 {
   "description": "Implement Task 11: success gate",
   "subagent_type": "general-purpose",
-  "prompt": "You are implementing Task 11 — the final task — of the round-2 hypernetwork training plan.\n\n## Project context\n\nTasks 1-10 done. Task 11 is the success gate: after round-2 training finishes, run HumanEval + MBPP + APPS + BigCodeBench + DS-1000 + LiveCodeBench, compare round-2 Pass@1 vs a round-1 baseline, apply the strict pass bar:\n\n> **Strict:** round-2 ≥ round-1 baseline + 2.0% Pass@1 on at least 4 of 6 benchmarks, AND no regression > 1.0% on any single benchmark.\n\n## Working directory\n\n`/Users/noahdolevelixir/Code/rune`\n\n## Conventions\n\n- `uv run` always.\n- Google docstrings, ruff 88, mypy strict-ish.\n- Conventional commits + Co-Authored-By trailer.\n- Don't touch `docs/superpowers/` deletions.\n\n## Task 11 — spec\n\n**Files:**\n- Create: `libs/model-training/src/model_training/round2_gate.py`\n- Create: `libs/model-training/tests/test_round2_gate.py`\n- Create: `scripts/evaluate_round2.py`\n\n### Step 11.1: Write failing tests for the gate logic\n\nCreate `libs/model-training/tests/test_round2_gate.py`:\n\n```python\n\"\"\"CPU-only unit tests for evaluate_round2_gate (no benchmark runs).\"\"\"\n\nfrom __future__ import annotations\n\nimport pytest\n\nfrom model_training.round2_gate import (\n    STRICT_IMPROVEMENT_MIN,\n    STRICT_MAX_REGRESSION,\n    STRICT_MIN_IMPROVED,\n    evaluate_round2_gate,\n)\n\n\ndef _make_scores(**pairs: tuple[float, float]) -> dict[str, dict[str, float]]:\n    \"\"\"{bench: {\"baseline\": x, \"round2\": y}}.\"\"\"\n    return {k: {\"baseline\": v[0], \"round2\": v[1]} for k, v in pairs.items()}\n\n\ndef test_gate_passes_when_strict_criteria_met() -> None:\n    \"\"\"4 of 6 benchmarks improved by >= 2%, no regression > 1%.\"\"\"\n    scores = _make_scores(\n        humaneval=(0.60, 0.64),          # +4.0 ✓ improved\n        mbpp=(0.50, […]
+  "prompt": "You are implementing Task 11 — the final task — of the round-2 hypernetwork training plan.\n\n## Project context\n\nTasks 1-10 done. Task 11 is the success gate: after round-2 training finishes, run HumanEval + MBPP + APPS + BigCodeBench + DS-1000 + LiveCodeBench, compare round-2 Pass@1 vs a round-1 baseline, apply the strict pass bar:\n\n> **Strict:** round-2 ≥ round-1 baseline + 2.0% Pass@1 on at least 4 of 6 benchmarks, AND no regression > 1.0% on any single benchmark.\n\n## Working directory\n\n`/home/<USER>/Code/rune`\n\n## Conventions\n\n- `uv run` always.\n- Google docstrings, ruff 88, mypy strict-ish.\n- Conventional commits + Co-Authored-By trailer.\n- Don't touch `docs/superpowers/` deletions.\n\n## Task 11 — spec\n\n**Files:**\n- Create: `libs/model-training/src/model_training/round2_gate.py`\n- Create: `libs/model-training/tests/test_round2_gate.py`\n- Create: `scripts/evaluate_round2.py`\n\n### Step 11.1: Write failing tests for the gate logic\n\nCreate `libs/model-training/tests/test_round2_gate.py`:\n\n```python\n\"\"\"CPU-only unit tests for evaluate_round2_gate (no benchmark runs).\"\"\"\n\nfrom __future__ import annotations\n\nimport pytest\n\nfrom model_training.round2_gate import (\n    STRICT_IMPROVEMENT_MIN,\n    STRICT_MAX_REGRESSION,\n    STRICT_MIN_IMPROVED,\n    evaluate_round2_gate,\n)\n\n\ndef _make_scores(**pairs: tuple[float, float]) -> dict[str, dict[str, float]]:\n    \"\"\"{bench: {\"baseline\": x, \"round2\": y}}.\"\"\"\n    return {k: {\"baseline\": v[0], \"round2\": v[1]} for k, v in pairs.items()}\n\n\ndef test_gate_passes_when_strict_criteria_met() -> None:\n    \"\"\"4 of 6 benchmarks improved by >= 2%, no regression > 1%.\"\"\"\n    scores = _make_scores(\n        humaneval=(0.60, 0.64),          # +4.0 ✓ improved\n        mbpp=(0.50, […]
 
 > TOOL
 
@@ -6298,9 +6298,9 @@ Done.
 Commit SHA: `6d55369`
 
 **Files created (3):**
-- `/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/round2_gate.py` — gate logic with `STRICT_IMPROVEMENT_MIN=0.02`, `STRICT_MAX_REGRESSION=0.01`, `STRICT_MIN_IMPROVED=4`, `REQUIRED_BENCHMARKS` (6 entries), `evaluate_round2_gate()` raising `ValueError("missing required benchmarks: [...]")` on missing keys
-- `/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_round2_gate.py` — 5 tests, all pass
-- `/Users/noahdolevelixir/Code/rune/scripts/evaluate_round2.py` — CLI; returns 0 on PASS / 1 on FAIL, writes `json.dumps(..., indent=2, sort_keys=True)` report
+- `/home/<USER>/Code/rune/libs/model-training/src/model_training/round2_gate.py` — gate logic with `STRICT_IMPROVEMENT_MIN=0.02`, `STRICT_MAX_REGRESSION=0.01`, `STRICT_MIN_IMPROVED=4`, `REQUIRED_BENCHMARKS` (6 entries), `evaluate_round2_gate()` raising `ValueError("missing required benchmarks: [...]")` on missing keys
+- `/home/<USER>/Code/rune/libs/model-training/tests/test_round2_gate.py` — 5 tests, all pass
+- `/home/<USER>/Code/rune/scripts/evaluate_round2.py` — CLI; returns 0 on PASS / 1 on FAIL, writes `json.dumps(..., indent=2, sort_keys=True)` report
 
 **Test count:** 5 passed (0.15s, CPU-only)
 
@@ -6467,7 +6467,7 @@ tool_use Read
 id: toolu_01WxzWnxcJmLtKrYbXPrhAvc
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/evaluation/src/evaluation/benchmarks/runner.py",
+  "file_path": "/home/<USER>/Code/rune/libs/evaluation/src/evaluation/benchmarks/runner.py",
   "offset": 120,
   "limit": 80
 }
@@ -6564,7 +6564,7 @@ tool_use Read
 id: toolu_01Kgdch2SL1rVMc57BM12c6R
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/evaluation/src/evaluation/benchmarks/adapter_stack.py"
+  "file_path": "/home/<USER>/Code/rune/libs/evaluation/src/evaluation/benchmarks/adapter_stack.py"
 }
 ```
 
@@ -6758,7 +6758,7 @@ tool_use Read
 id: toolu_012cAM2dDtyjjaJCSc5vLDxy
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/scripts/validate_oracles.py",
+  "file_path": "/home/<USER>/Code/rune/scripts/validate_oracles.py",
   "offset": 155,
   "limit": 40
 }
@@ -6923,7 +6923,7 @@ id: toolu_016rT4itCqhZMH9oo7RebjHB
 {
   "description": "Fix Task 11 CLI run_benchmark API",
   "subagent_type": "general-purpose",
-  "prompt": "The `scripts/evaluate_round2.py` CLI from Task 11 commit `6d55369` cannot run — it calls `run_benchmark` with the wrong signature and accesses the result as a dict instead of a dataclass. Patch it to match the real API.\n\nWorking directory: `/Users/noahdolevelixir/Code/rune`.\n\nRead `scripts/evaluate_round2.py` first. Also reference `scripts/validate_oracles.py` for the load_adapter_stack + run_benchmark pattern.\n\n## Real API\n\n`evaluation.benchmarks.run_benchmark` signature:\n```python\ndef run_benchmark(\n    adapter_stack: AdapterStack,\n    benchmark_id: str,\n    problem_ids: list[str] | None = None,\n    max_samples: int | None = None,\n    config: BenchmarkConfig | None = None,\n) -> BenchmarkResult\n```\n\n`BenchmarkResult` is a dataclass with a `.pass_at_1` attribute (not subscriptable).\n\n`load_adapter_stack(base_model, adapter_ids, provider, registry) -> AdapterStack` — all four args required.\n\n`inference.factory.get_provider()` — returns a default `InferenceProvider`.\n\n## Patch\n\nRewrite `scripts/evaluate_round2.py` entirely. The new version keeps the gate-application, report-writing, and exit-code logic but:\n\n1. Adds `--base-model` (default `\"Qwen/Qwen3.5-9B\"`) and `--oracle-registry-url` (required) CLI args.\n2. Opens the registry via `sqlmodel.create_engine` + `AdapterRegistry`.\n3. Constructs an `InferenceProvider` via `inference.factory.get_provider()`.\n4. Calls `load_adapter_stack(base_model=..., adapter_ids=[adapter_id], provider=provider, registry=registry)`.\n5. Calls `run_benchmark(adapter_stack=stack, benchmark_id=bench)` and reads `result.pass_at_1`.\n\nFull replacement for `scripts/evaluate_round2.py`:\n\n```python\n\"\"\"Run all 6 benchmarks for round-2 adapter vs round-1 baseline, apply gate.\n\nUsage:\n    uv run scripts/evaluate_round2.py \\\\\n        --round2-adapter-id round2_<hex8> \\\\\n        --base-model Qwen/Qwen3.5-9B \\\\\n        --oracle-registry-url sqlite:///~/.rune/adapters.db \\\\\n        --baseline-report path/to/round1_scores.json \\\\\n        --output-report path/to/round2_report.json\n\nThe baseline report is expected to […]
+  "prompt": "The `scripts/evaluate_round2.py` CLI from Task 11 commit `6d55369` cannot run — it calls `run_benchmark` with the wrong signature and accesses the result as a dict instead of a dataclass. Patch it to match the real API.\n\nWorking directory: `/home/<USER>/Code/rune`.\n\nRead `scripts/evaluate_round2.py` first. Also reference `scripts/validate_oracles.py` for the load_adapter_stack + run_benchmark pattern.\n\n## Real API\n\n`evaluation.benchmarks.run_benchmark` signature:\n```python\ndef run_benchmark(\n    adapter_stack: AdapterStack,\n    benchmark_id: str,\n    problem_ids: list[str] | None = None,\n    max_samples: int | None = None,\n    config: BenchmarkConfig | None = None,\n) -> BenchmarkResult\n```\n\n`BenchmarkResult` is a dataclass with a `.pass_at_1` attribute (not subscriptable).\n\n`load_adapter_stack(base_model, adapter_ids, provider, registry) -> AdapterStack` — all four args required.\n\n`inference.factory.get_provider()` — returns a default `InferenceProvider`.\n\n## Patch\n\nRewrite `scripts/evaluate_round2.py` entirely. The new version keeps the gate-application, report-writing, and exit-code logic but:\n\n1. Adds `--base-model` (default `\"Qwen/Qwen3.5-9B\"`) and `--oracle-registry-url` (required) CLI args.\n2. Opens the registry via `sqlmodel.create_engine` + `AdapterRegistry`.\n3. Constructs an `InferenceProvider` via `inference.factory.get_provider()`.\n4. Calls `load_adapter_stack(base_model=..., adapter_ids=[adapter_id], provider=provider, registry=registry)`.\n5. Calls `run_benchmark(adapter_stack=stack, benchmark_id=bench)` and reads `result.pass_at_1`.\n\nFull replacement for `scripts/evaluate_round2.py`:\n\n```python\n\"\"\"Run all 6 benchmarks for round-2 adapter vs round-1 baseline, apply gate.\n\nUsage:\n    uv run scripts/evaluate_round2.py \\\\\n        --round2-adapter-id round2_<hex8> \\\\\n        --base-model Qwen/Qwen3.5-9B \\\\\n        --oracle-registry-url sqlite:///~/.rune/adapters.db \\\\\n        --baseline-report path/to/round1_scores.json \\\\\n        --output-report path/to/round2_report.json\n\nThe baseline report is expected to […]
 
 > TOOL
 
@@ -7054,7 +7054,7 @@ id: toolu_016118EZXUgiae6wayx4fUjb
 ```
 ============================= test session starts ==============================
 platform darwin -- Python 3.12.12, pytest-9.0.2, pluggy-1.6.0
-rootdir: /Users/noahdolevelixir/Code/rune
+rootdir: /home/<USER>/Code/rune
 configfile: pyproject.toml
 plugins: anyio-4.12.1, jaxtyping-0.3.9, xdist-3.8.0, asyncio-1.3.0, langsmith-0.7.9, requests-mock-1.12.1, cov-7.0.0
 asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
@@ -7094,7 +7094,7 @@ tool_use Read
 id: toolu_013MbXkjN8wmCJfrR2EjsGmA
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/scripts/evaluate_round2.py",
+  "file_path": "/home/<USER>/Code/rune/scripts/evaluate_round2.py",
   "offset": 70,
   "limit": 12
 }
@@ -7126,7 +7126,7 @@ id: toolu_01LbWk4ANMHeoCwc9Ln9Rbmk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/scripts/evaluate_round2.py",
+  "file_path": "/home/<USER>/Code/rune/scripts/evaluate_round2.py",
   "old_string": "    result: dict[str, float] = {}\n    for bench in REQUIRED_BENCHMARKS:\n        logger.info(\"Evaluating %s on %s\", adapter_id, bench)\n        out = run_benchmark(adapter_stack=stack, benchmark_id=bench)\n        result[bench] = float(out.pass_at_1)\n    return result",
   "new_string": "    result: dict[str, float] = {}\n    for bench in REQUIRED_BENCHMARKS:\n        logger.info(\"Evaluating %s on %s\", adapter_id, bench)\n        out = run_benchmark(adapter_stack=stack, benchmark_id=bench)  # type: ignore[operator]\n        result[bench] = float(out.pass_at_1)\n    return result"
 }
@@ -7137,7 +7137,7 @@ id: toolu_01LbWk4ANMHeoCwc9Ln9Rbmk
 tool_result
 id: toolu_01LbWk4ANMHeoCwc9Ln9Rbmk
 ```
-The file /Users/noahdolevelixir/Code/rune/scripts/evaluate_round2.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/scripts/evaluate_round2.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7166,7 +7166,7 @@ tool_use Bash
 id: toolu_01BSBTN1BXaVzyo6GobWQeks
 ```json
 {
-  "command": "git add scripts/evaluate_round2.py && git commit -m \"$(cat <<'EOF'\nfix(scripts): suppress mypy false-positive on deferred run_benchmark call (gap 9)\n\nmypy cannot resolve the deferred `from evaluation.benchmarks import\nrun_benchmark` import inside _run_benchmarks_for_adapter and reports\n\"object not callable\" on the call site. This is a known INFRA-05\nlimitation (deferred imports for CPU-safety). Narrow type-ignore on\nthe single call resolves the false positive without relaxing the\nimport-at-top-of-file constraint.\n\nCo-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add scripts/evaluate_round2.py && git commit -m \"$(cat <<'EOF'\nfix(scripts): suppress mypy false-positive on deferred run_benchmark call (gap 9)\n\nmypy cannot resolve the deferred `from evaluation.benchmarks import\nrun_benchmark` import inside _run_benchmarks_for_adapter and reports\n\"object not callable\" on the call site. This is a known INFRA-05\nlimitation (deferred imports for CPU-safety). Narrow type-ignore on\nthe single call resolves the false positive without relaxing the\nimport-at-top-of-file constraint.\n\nCo-Authored-By: Claude Opus 4.7 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit mypy suppression"
 }
 ```
@@ -7358,7 +7358,7 @@ tool_use Read
 id: toolu_014saHjiDuteuwJpf3CHiTbf
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/gaps.md"
+  "file_path": "/home/<USER>/Code/rune/instructions/gaps.md"
 }
 ```
 
@@ -7426,7 +7426,7 @@ tool_use Read
 id: toolu_0166SxNvT8Qz3PFfu7AEddQR
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/gap-closure-handoff.md"
+  "file_path": "/home/<USER>/Code/rune/instructions/gap-closure-handoff.md"
 }
 ```
 
@@ -7466,7 +7466,7 @@ tool_use Write
 id: toolu_01Cjto251E3uJVFxLBGU3hRA
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/gap-closure-handoff.md",
+  "file_path": "/home/<USER>/Code/rune/instructions/gap-closure-handoff.md",
   "content": "# Gap Closure Handoff — 2026-04-23 (session 5)\n\nResuming work on `instructions/gaps.md`. Branch `feat/training-upgrade`.\n**All 9 code gaps are closed.** What remains is operator-driven (GPU runs) plus\none working-tree housekeeping item unrelated to gap work.\n\n## Closed gaps (30 commits across 5 sessions)\n\n| # | Gap | Commit(s) | Status |\n|---|-----|-----------|--------|\n| 1 | Workspace mypy config gap (pandas-stubs, inference/shared/evaluation globs) | `917150e` | ✅ |\n| 2 | APPS stratification parity (Plan A `load_problems` delegation from Plan C) | `917150e` | ✅ |\n| 3 | SWE-Bench-Lite `score()` implementation (env-gated clone/apply/pytest) | `683553c` | ✅ |\n| 4 | Oracle validation runner (`scripts/validate_oracles.py`, \"≥3% over base\" gate) | `98b8713` | ✅ |\n| 5 | Kill-switch wiring into hypernetwork training loop (Plan A follow-up) | `510464f` | ✅ |\n| 6 | `task_description` propagation through `_make_pair_record` (Plan B gate) | `d710005` | ✅ |\n| 7 | S3 manifest upload (Plan C follow-up) | `07fe208` | ✅ |\n| 8 | GPU-distributed corpus generation (`--shard`, `--cuda-visible-devices`) | `d1fe8a5` | ✅ |\n| 9 | **Round-2 hypernetwork training loop (22 commits, full plan implemented)** | `2a007ed`–`e74f6a5` | ✅ |\n\n## Verify the full closed work is green\n\n```bash\nuv sync --all-packages\n\nuv run pytest \\\n    libs/corpus-producer/tests/ \\\n    tests/corpus_producer/ […]
 
 > TOOL
@@ -7474,7 +7474,7 @@ id: toolu_01Cjto251E3uJVFxLBGU3hRA
 tool_result
 id: toolu_01Cjto251E3uJVFxLBGU3hRA
 ```
-The file /Users/noahdolevelixir/Code/rune/instructions/gap-closure-handoff.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/instructions/gap-closure-handoff.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7572,7 +7572,7 @@ tool_use Bash
 id: toolu_01BBbbzYFPpx8aXUz2MderKM
 ```json
 {
-  "command": "git commit -m \"$(cat <<'EOF'\nchore(docs): drop superseded round-0 plans, specs, and handoffs\n\nPlans A/B/C (benchmark harness library, trajectory encoder pretraining,\nphase corpus producer) and the two pivot handoffs are superseded:\n- Plans A/B/C have shipped (gaps 1-9 in instructions/gap-closure-handoff.md).\n- Round-2 work landed via instructions/2026-04-23-round2-hypernetwork-training.md.\n- Specs and handoffs described the interim pivot state, no longer current.\n\nRemoving from the tree; full history remains accessible via git log for\nanyone who wants to reconstruct the rationale.\n\nCo-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>\nEOF\n)\" && git status",
+  "command": "git commit -m \"$(cat <<'EOF'\nchore(docs): drop superseded round-0 plans, specs, and handoffs\n\nPlans A/B/C (benchmark harness library, trajectory encoder pretraining,\nphase corpus producer) and the two pivot handoffs are superseded:\n- Plans A/B/C have shipped (gaps 1-9 in instructions/gap-closure-handoff.md).\n- Round-2 work landed via instructions/2026-04-23-round2-hypernetwork-training.md.\n- Specs and handoffs described the interim pivot state, no longer current.\n\nRemoving from the tree; full history remains accessible via git log for\nanyone who wants to reconstruct the rationale.\n\nCo-Authored-By: Claude Opus 4.7 <<REDACTED_EMAIL>>\nEOF\n)\" && git status",
   "description": "Commit the cleanup"
 }
 ```
@@ -7722,10 +7722,10 @@ tool_result
 id: toolu_01KJWmpBmzAtGPK2mFg8fxKE
 ```
 <persisted-output>
-Output too large (94.6KB). Full output saved to: /Users/noahdolevelixir/.claude/projects/-Users-noahdolevelixir-Code-rune/75235fdc-862b-4c31-b3c3-125c150d57e3/tool-results/br4dl1vyz.txt
+Output too large (94.6KB). Full output saved to: /home/<USER>/.claude/projects/-Users-noahdolevelixir-Code-rune/75235fdc-862b-4c31-b3c3-125c150d57e3/tool-results/br4dl1vyz.txt
 
 Preview (first 2KB):
-{"additions":18408,"commits":[{"authoredDate":"2026-04-01T09:27:55Z","authors":[{"email":"noah@elixirtrials.com","id":"U_kgDODYdVwQ","login":"ET-NoahDolev","name":"Noah Dolev"},{"email":"noreply@anthropic.com","id":"MDQ6VXNlcjgxODQ3","login":"claude","name":"Claude Sonnet 4.6"}],"committedDate":"2026-04-01T11:40:24Z","messageBody":"Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>\nEntire-Checkpoint: 03104916cb6f","messageHeadline":"feat: add d2l_diff module for RTK-style diff compression","oid":"cd9f51d71985ed55cc5345f7f3d22fc828f127c4"},{"authoredDate":"2026-04-01T09:33:01Z","authors":[{"email":"noah@elixirtrials.com","id":"U_kgDODYdVwQ","login":"ET-NoahDolev","name":"Noah Dolev"},{"email":"noreply@anthropic.com","id":"MDQ6VXNlcjgxODQ3","login":"claude","name":"Claude Sonnet 4.6"}],"committedDate":"2026-04-01T11:40:25Z","messageBody":"…lock\n\nFormat test_d2l_diff.py to satisfy ruff and add the deferred-import\ncomment entry for d2l_diff.compress_diff to keep the __init__.py\nconvention consistent with other d2l_* modules.\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>\nEntire-Checkpoint: 86ad69e83dd4","messageHeadline":"fix: ruff format test_d2l_diff and add d2l_diff to __init__ comment b…","oid":"aa3cb2f7a20f4636b739593bdfe17cfb9a3fb9c5"},{"authoredDate":"2026-04-01T09:37:53Z","authors":[{"email":"noah@elixirtrials.com","id":"U_kgDODYdVwQ","login":"ET-NoahDolev","name":"Noah Dolev"},{"email":"noreply@anthropic.com","id":"MDQ6VXNlcjgxODQ3","login":"claude","name":"Claude Sonnet 4.6"}],"committedDate":"2026-04-01T11:40:25Z","messageBody":"Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>\nEntire-Checkpoint: 25bdc6b41c17","messageHeadline":"feat: add normalize_mined_pairs for per-step training pair extraction","oid":"2e33bd4fbbb3c73c1dc6fe6e352edb8b3e790093"},{"authoredDate":"2026-04-01T09:43:44Z","authors":[{"email":"noah@elixirtrials.com","id":"U_kgDODYdVwQ","login":"ET-NoahDolev","name":"Noah Dolev"},{"email":"noreply@anthropic.com"
+{"additions":18408,"commits":[{"authoredDate":"2026-04-01T09:27:55Z","authors":[{"email":"<REDACTED_EMAIL>","id":"U_kgDODYdVwQ","login":"ET-NoahDolev","name":"Noah Dolev"},{"email":"<REDACTED_EMAIL>","id":"MDQ6VXNlcjgxODQ3","login":"claude","name":"Claude Sonnet 4.6"}],"committedDate":"2026-04-01T11:40:24Z","messageBody":"Co-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>\nEntire-Checkpoint: 03104916cb6f","messageHeadline":"feat: add d2l_diff module for RTK-style diff compression","oid":"cd9f51d71985ed55cc5345f7f3d22fc828f127c4"},{"authoredDate":"2026-04-01T09:33:01Z","authors":[{"email":"<REDACTED_EMAIL>","id":"U_kgDODYdVwQ","login":"ET-NoahDolev","name":"Noah Dolev"},{"email":"<REDACTED_EMAIL>","id":"MDQ6VXNlcjgxODQ3","login":"claude","name":"Claude Sonnet 4.6"}],"committedDate":"2026-04-01T11:40:25Z","messageBody":"…lock\n\nFormat test_d2l_diff.py to satisfy ruff and add the deferred-import\ncomment entry for d2l_diff.compress_diff to keep the __init__.py\nconvention consistent with other d2l_* modules.\n\nCo-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>\nEntire-Checkpoint: 86ad69e83dd4","messageHeadline":"fix: ruff format test_d2l_diff and add d2l_diff to __init__ comment b…","oid":"aa3cb2f7a20f4636b739593bdfe17cfb9a3fb9c5"},{"authoredDate":"2026-04-01T09:37:53Z","authors":[{"email":"<REDACTED_EMAIL>","id":"U_kgDODYdVwQ","login":"ET-NoahDolev","name":"Noah Dolev"},{"email":"<REDACTED_EMAIL>","id":"MDQ6VXNlcjgxODQ3","login":"claude","name":"Claude Sonnet 4.6"}],"committedDate":"2026-04-01T11:40:25Z","messageBody":"Co-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>\nEntire-Checkpoint: 25bdc6b41c17","messageHeadline":"feat: add normalize_mined_pairs for per-step training pair extraction","oid":"2e33bd4fbbb3c73c1dc6fe6e352edb8b3e790093"},{"authoredDate":"2026-04-01T09:43:44Z","authors":[{"email":"<REDACTED_EMAIL>","id":"U_kgDODYdVwQ","login":"ET-NoahDolev","name":"Noah Dolev"},{"email":"<REDACTED_EMAIL>"
 ...
 </persisted-output>
 ```
@@ -8402,7 +8402,7 @@ id: toolu_011XcUydmLDXSEWath47W9fy
 {
   "description": "Fix ruff errors in tests/corpus_producer/",
   "subagent_type": "general-purpose",
-  "prompt": "CI is failing on PR #28 with 24 ruff errors in `tests/corpus_producer/`. Fix them all and commit.\n\nWorking directory: `/Users/noahdolevelixir/Code/rune`.\n\n## Conventions\n\n- `uv run` for all commands.\n- ruff line-length 88.\n- Conventional commits with `Co-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>` trailer.\n\n## Errors to fix\n\nRun `uv run ruff check tests/corpus_producer/` to see them all. Summary:\n\n- `tests/corpus_producer/test_binning.py:19:89` — E501 line too long\n- `tests/corpus_producer/test_integration.py:27` + `:28` — I001 import-block-unformatted\n- `tests/corpus_producer/test_integration.py` — 15× E501 (lines 92, 97, 99, 115, 120, 125, 135, 142, 172, 179, 202, 230, 235, 249, 256)\n- `tests/corpus_producer/test_pipeline_runner.py` — 4× E501 (lines 29, 38, 44, 57)\n- `tests/corpus_producer/test_rationalization.py:102` — F841 unused `new = star_rationalize(...)` assignment\n- `tests/corpus_producer/test_rationalization.py:124` — E501\n\n## Approach\n\nFor each E501, wrap the long line using one of:\n- Splitting function call args across multiple lines.\n- Breaking a long string across adjacent string literals.\n- Extracting a local variable for a long expression.\n\nFor F841 `new = star_rationalize(...)` at line 102 of `test_rationalization.py`: the variable is unused. Either\n- Replace `new = star_rationalize(...)` with a bare `star_rationalize(...)` call (if the return value isn't needed in the test body), OR\n- If the test intends to assert against `new`, add the missing assertion.\n\nRead the function context before […]
+  "prompt": "CI is failing on PR #28 with 24 ruff errors in `tests/corpus_producer/`. Fix them all and commit.\n\nWorking directory: `/home/<USER>/Code/rune`.\n\n## Conventions\n\n- `uv run` for all commands.\n- ruff line-length 88.\n- Conventional commits with `Co-Authored-By: Claude Opus 4.7 <<REDACTED_EMAIL>>` trailer.\n\n## Errors to fix\n\nRun `uv run ruff check tests/corpus_producer/` to see them all. Summary:\n\n- `tests/corpus_producer/test_binning.py:19:89` — E501 line too long\n- `tests/corpus_producer/test_integration.py:27` + `:28` — I001 import-block-unformatted\n- `tests/corpus_producer/test_integration.py` — 15× E501 (lines 92, 97, 99, 115, 120, 125, 135, 142, 172, 179, 202, 230, 235, 249, 256)\n- `tests/corpus_producer/test_pipeline_runner.py` — 4× E501 (lines 29, 38, 44, 57)\n- `tests/corpus_producer/test_rationalization.py:102` — F841 unused `new = star_rationalize(...)` assignment\n- `tests/corpus_producer/test_rationalization.py:124` — E501\n\n## Approach\n\nFor each E501, wrap the long line using one of:\n- Splitting function call args across multiple lines.\n- Breaking a long string across adjacent string literals.\n- Extracting a local variable for a long expression.\n\nFor F841 `new = star_rationalize(...)` at line 102 of `test_rationalization.py`: the variable is unused. Either\n- Replace `new = star_rationalize(...)` with a bare `star_rationalize(...)` call (if the return value isn't needed in the test body), OR\n- If the test intends to assert against `new`, add the missing assertion.\n\nRead the function context before […]
 
 > TOOL
 
@@ -8453,7 +8453,7 @@ tool_use Read
 id: toolu_01Gg5hE2hQCYTDiZZfC1aaRW
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/diff_loss.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/diff_loss.py",
   "offset": 370,
   "limit": 60
 }
@@ -8508,7 +8508,7 @@ tool_use Read
 id: toolu_015H42NczVZfTbNhhbvQbZKm
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/scripts/optimization/run_training_hpo.py",
+  "file_path": "/home/<USER>/Code/rune/scripts/optimization/run_training_hpo.py",
   "offset": 452,
   "limit": 50
 }
@@ -8574,7 +8574,7 @@ id: toolu_015Hyv3NCT1fRK8RmgiipAJc
 {
   "description": "Fix qodo review bugs + docstrings",
   "subagent_type": "general-purpose",
-  "prompt": "Address 7 PR review comments on PR #28. Make 2 separate commits.\n\nWorking directory: `/Users/noahdolevelixir/Code/rune`.\n\nConventions: ruff line-length 88, Google docstrings, `uv run` for every command, Co-Authored-By trailer on commits.\n\n## Commit 1 — Bug fixes (items 7, 8)\n\n### Bug 7: `libs/model-training/src/model_training/diff_loss.py:412-418`\n\nThe non-hunk fallback path calls `compute_diff_loss_weights(changed_ids=set(), ...)` which silently reduces to uniform unchanged_weight for all labeled tokens. The warning says \"set-based diff loss weights\" but no diff is computed.\n\nRead the file first, specifically lines 380-425.\n\n**Fix:** when `use_hunk_path` is False, replace the current `compute_diff_loss_weights(changed_ids=set(), ...)` with identity weights — 1.0 for non-IGNORE_INDEX labels, 0.0 for IGNORE_INDEX positions. This way enabling diff-aware loss doesn't silently change the training objective when the diff can't be computed.\n\nLook for `IGNORE_INDEX` constant (or `-100` if that's the convention) in `diff_loss.py` or its imports. If not exported, define/use the transformers `-100` convention.\n\nReplace:\n```python\n            if use_hunk_path:\n                w = self._weights_via_hunk_path(ids_seq, lab_seq, pre, post)\n            else:\n                w = compute_diff_loss_weights(\n                    input_ids=ids_seq,\n                    labels=lab_seq,\n                    changed_ids=set(),\n                    changed_weight=self.changed_weight,\n                    unchanged_weight=self.unchanged_weight,\n                )\n```\n\nWith:\n```python\n            if use_hunk_path:\n                w = self._weights_via_hunk_path(ids_seq, lab_seq, pre, post)\n            else:\n                # Identity fallback: 1.0 for labeled tokens, 0.0 for IGNORE_INDEX.\n                # Avoids silently reducing the training objective to a uniform\n                # rescale when the […]
+  "prompt": "Address 7 PR review comments on PR #28. Make 2 separate commits.\n\nWorking directory: `/home/<USER>/Code/rune`.\n\nConventions: ruff line-length 88, Google docstrings, `uv run` for every command, Co-Authored-By trailer on commits.\n\n## Commit 1 — Bug fixes (items 7, 8)\n\n### Bug 7: `libs/model-training/src/model_training/diff_loss.py:412-418`\n\nThe non-hunk fallback path calls `compute_diff_loss_weights(changed_ids=set(), ...)` which silently reduces to uniform unchanged_weight for all labeled tokens. The warning says \"set-based diff loss weights\" but no diff is computed.\n\nRead the file first, specifically lines 380-425.\n\n**Fix:** when `use_hunk_path` is False, replace the current `compute_diff_loss_weights(changed_ids=set(), ...)` with identity weights — 1.0 for non-IGNORE_INDEX labels, 0.0 for IGNORE_INDEX positions. This way enabling diff-aware loss doesn't silently change the training objective when the diff can't be computed.\n\nLook for `IGNORE_INDEX` constant (or `-100` if that's the convention) in `diff_loss.py` or its imports. If not exported, define/use the transformers `-100` convention.\n\nReplace:\n```python\n            if use_hunk_path:\n                w = self._weights_via_hunk_path(ids_seq, lab_seq, pre, post)\n            else:\n                w = compute_diff_loss_weights(\n                    input_ids=ids_seq,\n                    labels=lab_seq,\n                    changed_ids=set(),\n                    changed_weight=self.changed_weight,\n                    unchanged_weight=self.unchanged_weight,\n                )\n```\n\nWith:\n```python\n            if use_hunk_path:\n                w = self._weights_via_hunk_path(ids_seq, lab_seq, pre, post)\n            else:\n                # Identity fallback: 1.0 for labeled tokens, 0.0 for IGNORE_INDEX.\n                # Avoids silently reducing the training objective to a uniform\n                # rescale when the […]
 
 > TOOL
 
@@ -9262,7 +9262,7 @@ tool_use Read
 id: toolu_01FvfmAR8YELuwCUYWKqDjvu
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/scripts/validate_oracles.py",
+  "file_path": "/home/<USER>/Code/rune/scripts/validate_oracles.py",
   "offset": 140,
   "limit": 60
 }
@@ -9363,7 +9363,7 @@ tool_use Read
 id: toolu_01L2hBtzEy1WRJ3ztxWaoWWf
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/scripts/validate_oracles.py",
+  "file_path": "/home/<USER>/Code/rune/scripts/validate_oracles.py",
   "offset": 74,
   "limit": 70
 }
@@ -9447,7 +9447,7 @@ tool_use Read
 id: toolu_01EDVC2XQfjkEHSxh4M5c7Jq
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/scripts/validate_oracles.py",
+  "file_path": "/home/<USER>/Code/rune/scripts/validate_oracles.py",
   "offset": 196,
   "limit": 100
 }
@@ -9547,7 +9547,7 @@ tool_use Read
 id: toolu_011a1A2r3Bs9uaFznCbnug5x
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/tests/test_validate_oracles.py",
+  "file_path": "/home/<USER>/Code/rune/tests/test_validate_oracles.py",
   "offset": 40,
   "limit": 50
 }
@@ -9622,7 +9622,7 @@ id: toolu_01U7sgijPEgYLM5YG2K49kgE
 {
   "description": "Fix validate_oracles.py mypy errors",
   "subagent_type": "general-purpose",
-  "prompt": "Fix 4 mypy errors in `scripts/validate_oracles.py`:\n\n```\nscripts/validate_oracles.py:169: error: Missing positional arguments \"provider\", \"registry\" in call to \"load_adapter_stack\"  [call-arg]\nscripts/validate_oracles.py:170: error: Missing positional arguments \"provider\", \"registry\" in call to \"load_adapter_stack\"  [call-arg]\nscripts/validate_oracles.py:172: error: \"object\" not callable  [operator]\nscripts/validate_oracles.py:178: error: \"object\" not callable  [operator]\n```\n\nWorking directory: `/Users/noahdolevelixir/Code/rune`.\n\n## Context\n\n`evaluation.benchmarks.adapter_stack.load_adapter_stack` requires 4 args: `base_model`, `adapter_ids`, `provider`, `registry`. The script currently calls it with only the first two — a pre-existing bug from gap 4 (commit `98b8713`), undetected because the test suite monkeypatches `_evaluate_one` away.\n\nThe `run_benchmark` \"object not callable\" errors at lines 172/178 are a known INFRA-05 limitation (mypy can't resolve deferred imports inside function bodies).\n\n## Reference — existing pattern\n\n`scripts/evaluate_round2.py` (commit `eb4b38c`, fixed with the same constraint earlier) does it correctly:\n\n```python\ndef _open_registry(url: str) -> Any:\n    from sqlmodel import create_engine  # noqa: PLC0415\n    from adapter_registry.registry import AdapterRegistry  # noqa: PLC0415\n    engine = create_engine(url)\n    return AdapterRegistry(engine=engine)\n\n# Inside the main worker:\nfrom inference.factory import get_provider  # noqa: PLC0415\nprovider = get_provider()\nstack = load_adapter_stack(\n    base_model=base_model,\n    adapter_ids=[adapter_id],\n    provider=provider,\n    registry=registry,\n)\n```\n\n## Fix\n\nRead `scripts/validate_oracles.py` first. Apply these changes:\n\n### 1. Add CLI arg `--oracle-registry-url`\n\nIn `_build_parser()`, add a new argument (place it right after `--base-model`):\n\n```python\n    parser.add_argument(\n        \"--oracle-registry-url\",\n        default=\"\",\n        help=(\n            \"SQLAlchemy URL for the AdapterRegistry SQLite DB holding the […]
+  "prompt": "Fix 4 mypy errors in `scripts/validate_oracles.py`:\n\n```\nscripts/validate_oracles.py:169: error: Missing positional arguments \"provider\", \"registry\" in call to \"load_adapter_stack\"  [call-arg]\nscripts/validate_oracles.py:170: error: Missing positional arguments \"provider\", \"registry\" in call to \"load_adapter_stack\"  [call-arg]\nscripts/validate_oracles.py:172: error: \"object\" not callable  [operator]\nscripts/validate_oracles.py:178: error: \"object\" not callable  [operator]\n```\n\nWorking directory: `/home/<USER>/Code/rune`.\n\n## Context\n\n`evaluation.benchmarks.adapter_stack.load_adapter_stack` requires 4 args: `base_model`, `adapter_ids`, `provider`, `registry`. The script currently calls it with only the first two — a pre-existing bug from gap 4 (commit `98b8713`), undetected because the test suite monkeypatches `_evaluate_one` away.\n\nThe `run_benchmark` \"object not callable\" errors at lines 172/178 are a known INFRA-05 limitation (mypy can't resolve deferred imports inside function bodies).\n\n## Reference — existing pattern\n\n`scripts/evaluate_round2.py` (commit `eb4b38c`, fixed with the same constraint earlier) does it correctly:\n\n```python\ndef _open_registry(url: str) -> Any:\n    from sqlmodel import create_engine  # noqa: PLC0415\n    from adapter_registry.registry import AdapterRegistry  # noqa: PLC0415\n    engine = create_engine(url)\n    return AdapterRegistry(engine=engine)\n\n# Inside the main worker:\nfrom inference.factory import get_provider  # noqa: PLC0415\nprovider = get_provider()\nstack = load_adapter_stack(\n    base_model=base_model,\n    adapter_ids=[adapter_id],\n    provider=provider,\n    registry=registry,\n)\n```\n\n## Fix\n\nRead `scripts/validate_oracles.py` first. Apply these changes:\n\n### 1. Add CLI arg `--oracle-registry-url`\n\nIn `_build_parser()`, add a new argument (place it right after `--base-model`):\n\n```python\n    parser.add_argument(\n        \"--oracle-registry-url\",\n        default=\"\",\n        help=(\n            \"SQLAlchemy URL for the AdapterRegistry SQLite DB holding the […]
 
 > TOOL
 
@@ -9637,7 +9637,7 @@ Done.
 - ruff: `All checks passed!`
 - tests: `6/6 passed`
 
-**Changes made to `/Users/noahdolevelixir/Code/rune/scripts/validate_oracles.py`:**
+**Changes made to `/home/<USER>/Code/rune/scripts/validate_oracles.py`:**
 
 1. `_build_parser()` — added `--oracle-registry-url` arg after `--base-model`
 2. `_evaluate_one` — added `oracle_registry_url: str` param, guard (`ValueError` if empty), deferred imports for `AdapterRegistry`/`create_engine`/`get_provider`, passes all four required args to `load_adapter_stack`, added `# type: ignore[operator]` on both `run_benchmark` calls
@@ -9738,9 +9738,9 @@ id: toolu_01ChmuJ4rjAm8iSuhMPWJXGp
 tool_result
 id: toolu_01ChmuJ4rjAm8iSuhMPWJXGp
 ```
-  /Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_encoder_roundtrip.py:91: PytestUnknownMarkWarning: Unknown pytest.mark.slow - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+  /home/<USER>/Code/rune/libs/model-training/tests/test_encoder_roundtrip.py:91: PytestUnknownMarkWarning: Unknown pytest.mark.slow - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
     @pytest.mark.slow
-  /Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_encoder_roundtrip.py:142: PytestUnknownMarkWarning: Unknown pytest.mark.slow - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+  /home/<USER>/Code/rune/libs/model-training/tests/test_encoder_roundtrip.py:142: PytestUnknownMarkWarning: Unknown pytest.mark.slow - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
     @pytest.mark.slow
 ```
 
@@ -9750,7 +9750,7 @@ tool_use Read
 id: toolu_01CaGtsgfJ5EPisT8iBYeAyE
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/pyproject.toml",
+  "file_path": "/home/<USER>/Code/rune/pyproject.toml",
   "offset": 240,
   "limit": 15
 }
@@ -9814,7 +9814,7 @@ tool_result
 id: toolu_01FjUhk7ntbS8Bui1mDBwWTh
 ```
 <persisted-output>
-Output too large (656.1KB). Full output saved to: /Users/noahdolevelixir/.claude/projects/-Users-noahdolevelixir-Code-rune/75235fdc-862b-4c31-b3c3-125c150d57e3/tool-results/b70l02499.txt
+Output too large (656.1KB). Full output saved to: /home/<USER>/.claude/projects/-Users-noahdolevelixir-Code-rune/75235fdc-862b-4c31-b3c3-125c150d57e3/tool-results/b70l02499.txt
 
 Preview (first 2KB):
 libs/evaluation/.mypy_cache/3.12/pytest/__init__.data.json:1:{".class":"MypyFile","_fullname":"pytest","future_import_flags":["annotations"],"is_partial_stub_package":false,"is_stub":false,"names":{".class":"SymbolTable","Cache":{".class":"SymbolTableNode","cross_ref":"_pytest.cacheprovider.Cache","kind":"Gdef"},"CallInfo":{".class":"SymbolTableNode","cross_ref":"_pytest.runner.CallInfo","kind":"Gdef"},"CaptureFixture":{".class":"SymbolTableNode","cross_ref":"_pytest.capture.CaptureFixture","kind":"Gdef"},"Class":{".class":"SymbolTableNode","cross_ref":"_pytest.python.Class","kind":"Gdef"},"CollectReport":{".class":"SymbolTableNode","cross_ref":"_pytest.reports.CollectReport","kind":"Gdef"},"Collector":{".class":"SymbolTableNode","cross_ref":"_pytest.nodes.Collector","kind":"Gdef"},"Config":{".class":"SymbolTableNode","cross_ref":"_pytest.config.Config","kind":"Gdef"},"Dir":{".class":"SymbolTableNode","cross_ref":"_pytest.main.Dir","kind":"Gdef"},"Directory":{".class":"SymbolTableNode","cross_ref":"_pytest.nodes.Directory","kind":"Gdef"},"DoctestItem":{".class":"SymbolTableNode","cross_ref":"_pytest.doctest.DoctestItem","kind":"Gdef"},"ExceptionInfo":{".class":"SymbolTableNode","cross_ref":"_pytest._code.code.ExceptionInfo","kind":"Gdef"},"ExitCode":{".class":"SymbolTableNode","cross_ref":"_pytest.config.ExitCode","kind":"Gdef"},"File":{".class":"SymbolTableNode","cross_ref":"_pytest.nodes.File","kind":"Gdef"},"FixtureDef":{".class":"SymbolTableNode","cross_ref":"_pytest.fixtures.FixtureDef","kind":"Gdef"},"FixtureLookupError":{".class":"SymbolTableNode","cross_ref":"_pytest.fixtures.FixtureLookupError","kind":"Gdef"},"FixtureRequest":{".class":"SymbolTableNode","cross_ref":"_pytest.fixtures.FixtureRequest","kind":"Gdef"},"Function":{".class":"SymbolTableNode","cross_ref":"_pytest.python.Function","kind":"Gdef"},"HIDDEN_PARAM":{".class":"SymbolTableNode","cross_ref":"_pytest.mark.structures.HIDDEN_PARAM","kind":"Gdef"},"HookRecorder":{".class":"SymbolTableNode","cro
@@ -9861,7 +9861,7 @@ id: toolu_011RXmzrojWsmBiVBDxKeeVD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/pyproject.toml",
+  "file_path": "/home/<USER>/Code/rune/pyproject.toml",
   "old_string": "markers = [\n    \"e2e: end-to-end API workflow tests\",\n    \"integration: marks tests as integration tests\",\n    \"requires_gpu: test requires GPU libraries (torch, peft, trl)\",\n]",
   "new_string": "markers = [\n    \"e2e: end-to-end API workflow tests\",\n    \"integration: marks tests as integration tests\",\n    \"requires_gpu: test requires GPU libraries (torch, peft, trl)\",\n    \"slow: test is slow; opt-in via -m slow (e.g. encoder round-trip GPU tests)\",\n]"
 }
@@ -9872,7 +9872,7 @@ id: toolu_011RXmzrojWsmBiVBDxKeeVD
 tool_result
 id: toolu_011RXmzrojWsmBiVBDxKeeVD
 ```
-The file /Users/noahdolevelixir/Code/rune/pyproject.toml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/pyproject.toml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9892,7 +9892,7 @@ tool_result
 id: toolu_01QMQtP8MuFmxe4XFKcxTwy2
 ```
 libs/model-training/tests/test_encoder_roundtrip.py:142
-  /Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_encoder_roundtrip.py:142: PytestUnknownMarkWarning: Unknown pytest.mark.slow - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+  /home/<USER>/Code/rune/libs/model-training/tests/test_encoder_roundtrip.py:142: PytestUnknownMarkWarning: Unknown pytest.mark.slow - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
     @pytest.mark.slow
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
@@ -9928,7 +9928,7 @@ tool_use Read
 id: toolu_019qVC6xR1AsN1ofYZv7eGUw
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/pyproject.toml",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/pyproject.toml",
   "offset": 40,
   "limit": 30
 }
@@ -9961,7 +9961,7 @@ id: toolu_0121PDZ1uoHu456n7CZw7whJ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/pyproject.toml",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/pyproject.toml",
   "old_string": "[tool.pytest.ini_options]\npythonpath = [\"src\", \"../shared/src\"]\ntestpaths = [\"tests\"]\naddopts = \"--cov=model_training --cov-branch --cov-report=term-missing\"",
   "new_string": "[tool.pytest.ini_options]\npythonpath = [\"src\", \"../shared/src\"]\ntestpaths = [\"tests\"]\naddopts = \"--cov=model_training --cov-branch --cov-report=term-missing\"\nmarkers = [\n    \"slow: test is slow; opt-in via -m slow (e.g. encoder round-trip GPU tests)\",\n    \"requires_gpu: test requires GPU libraries (torch, peft, trl)\",\n]"
 }
@@ -9972,7 +9972,7 @@ id: toolu_0121PDZ1uoHu456n7CZw7whJ
 tool_result
 id: toolu_0121PDZ1uoHu456n7CZw7whJ
 ```
-The file /Users/noahdolevelixir/Code/rune/libs/model-training/pyproject.toml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/libs/model-training/pyproject.toml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10007,7 +10007,7 @@ tool_use Bash
 id: toolu_014QB613By79vLWC4kugK3YA
 ```json
 {
-  "command": "git add pyproject.toml libs/model-training/pyproject.toml && git commit -m \"$(cat <<'EOF'\nchore(tests): register pytest 'slow' marker to silence warnings\n\nPytestUnknownMarkWarning fired 24× per test session because @pytest.mark.slow\n(used by test_encoder_roundtrip.py) was not registered. Added it to both the\nroot pyproject.toml and libs/model-training/pyproject.toml (sub-workspace\nconfig that pytest picks up when running from that directory).\n\nxfails left as-is — the 10 xfails are intentional stub-endpoint markers\n(strict=True) in services/{evolution-svc,api-service}/tests that guard\nagainst unplanned implementation of NotImplemented routes.\n\nCo-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>\nEOF\n)\" && git push origin feat/training-upgrade 2>&1 | tail -5",
+  "command": "git add pyproject.toml libs/model-training/pyproject.toml && git commit -m \"$(cat <<'EOF'\nchore(tests): register pytest 'slow' marker to silence warnings\n\nPytestUnknownMarkWarning fired 24× per test session because @pytest.mark.slow\n(used by test_encoder_roundtrip.py) was not registered. Added it to both the\nroot pyproject.toml and libs/model-training/pyproject.toml (sub-workspace\nconfig that pytest picks up when running from that directory).\n\nxfails left as-is — the 10 xfails are intentional stub-endpoint markers\n(strict=True) in services/{evolution-svc,api-service}/tests that guard\nagainst unplanned implementation of NotImplemented routes.\n\nCo-Authored-By: Claude Opus 4.7 <<REDACTED_EMAIL>>\nEOF\n)\" && git push origin feat/training-upgrade 2>&1 | tail -5",
   "description": "Commit marker + push all unpushed"
 }
 ```
@@ -10231,7 +10231,7 @@ lint-and-type-check	Lint with ruff	﻿2026-04-23T15:35:17.5918117Z ##[group]Run 
 lint-and-type-check	Lint with ruff	2026-04-23T15:35:17.5918419Z [36;1muv run ruff check .[0m
 lint-and-type-check	Lint with ruff	2026-04-23T15:35:17.5977273Z shell: /usr/bin/bash -e {0}
 lint-and-type-check	Lint with ruff	2026-04-23T15:35:17.5977532Z env:
-lint-and-type-check	Lint with ruff	2026-04-23T15:35:17.5977789Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+lint-and-type-check	Lint with ruff	2026-04-23T15:35:17.5977789Z   UV_CACHE_DIR: /home/<USER>/work/_temp/setup-uv-cache
 lint-and-type-check	Lint with ruff	2026-04-23T15:35:17.5978106Z ##[endgroup]
 lint-and-type-check	Lint with ruff	2026-04-23T15:35:17.9597261Z F401 [*] `pytest` imported but unused
 lint-and-type-check	Lint with ruff	2026-04-23T15:35:17.9597879Z  --> tests/corpus_producer/test_models.py:3:8
@@ -10255,7 +10255,7 @@ tool_use Read
 id: toolu_01KkfEQqM5tFSqhMErHnDowj
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/tests/corpus_producer/test_models.py"
+  "file_path": "/home/<USER>/Code/rune/tests/corpus_producer/test_models.py"
 }
 ```
 
@@ -10409,7 +10409,7 @@ id: toolu_01FbBxS9JiDeEkkgyi1hnUpS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/tests/corpus_producer/test_models.py",
+  "file_path": "/home/<USER>/Code/rune/tests/corpus_producer/test_models.py",
   "old_string": "\"\"\"Tests for corpus_producer.models.PhaseArtifact.\"\"\"\n\nimport pytest\nfrom corpus_producer.models import PhaseArtifact",
   "new_string": "\"\"\"Tests for corpus_producer.models.PhaseArtifact.\"\"\"\n\nfrom corpus_producer.models import PhaseArtifact"
 }
@@ -10429,7 +10429,7 @@ tool_use Read
 id: toolu_01JmuFAqT2DHM3Gi23uWcvrc
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/tests/corpus_producer/test_models.py",
+  "file_path": "/home/<USER>/Code/rune/tests/corpus_producer/test_models.py",
   "offset": 1,
   "limit": 6
 }
@@ -10455,7 +10455,7 @@ id: toolu_017VYx1PekSJviSYAQSo4otg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/tests/corpus_producer/test_models.py",
+  "file_path": "/home/<USER>/Code/rune/tests/corpus_producer/test_models.py",
   "old_string": "\"\"\"Tests for corpus_producer.models.PhaseArtifact.\"\"\"\n\nimport pytest\nfrom corpus_producer.models import PhaseArtifact",
   "new_string": "\"\"\"Tests for corpus_producer.models.PhaseArtifact.\"\"\"\n\nfrom corpus_producer.models import PhaseArtifact"
 }
@@ -10466,7 +10466,7 @@ id: toolu_017VYx1PekSJviSYAQSo4otg
 tool_result
 id: toolu_017VYx1PekSJviSYAQSo4otg
 ```
-The file /Users/noahdolevelixir/Code/rune/tests/corpus_producer/test_models.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/tests/corpus_producer/test_models.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10499,7 +10499,7 @@ tool_use Bash
 id: toolu_016qMPLdbdhCnyS2nX75rd3t
 ```json
 {
-  "command": "git add tests/corpus_producer/test_models.py && git commit -m \"$(cat <<'EOF'\nstyle(tests): remove unused pytest import in test_models.py\n\nPre-CI linter rule catches this F401 that the earlier bulk ruff fix\nmissed. The file uses plain `def test_*` functions with no pytest\ndecorators/fixtures, so the import was dead.\n\nCo-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>\nEOF\n)\" && git push origin feat/training-upgrade 2>&1 | tail -5",
+  "command": "git add tests/corpus_producer/test_models.py && git commit -m \"$(cat <<'EOF'\nstyle(tests): remove unused pytest import in test_models.py\n\nPre-CI linter rule catches this F401 that the earlier bulk ruff fix\nmissed. The file uses plain `def test_*` functions with no pytest\ndecorators/fixtures, so the import was dead.\n\nCo-Authored-By: Claude Opus 4.7 <<REDACTED_EMAIL>>\nEOF\n)\" && git push origin feat/training-upgrade 2>&1 | tail -5",
   "description": "Commit + push fix"
 }
 ```
@@ -10852,7 +10852,7 @@ tool_use Bash
 id: toolu_011jqjVGKLo6xfMZduwpk3PN
 ```json
 {
-  "command": "git add -u && git commit -m \"$(cat <<'EOF'\nstyle: apply ruff format across 41 files for CI Format check\n\nCI (lint-and-type-check) runs \\`uv run ruff format --check .\\` as a\nseparate step beyond \\`ruff check\\`. 41 files carried long-standing\nformatting drift (whitespace, line breaks inside function calls,\ntrailing commas) that \\`ruff check\\` alone did not catch.\n\nNo logic changes — pure formatting. 776 tests pass unchanged, mypy\nclean.\n\nCo-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>\nEOF\n)\" && git push origin feat/training-upgrade 2>&1 | tail -3",
+  "command": "git add -u && git commit -m \"$(cat <<'EOF'\nstyle: apply ruff format across 41 files for CI Format check\n\nCI (lint-and-type-check) runs \\`uv run ruff format --check .\\` as a\nseparate step beyond \\`ruff check\\`. 41 files carried long-standing\nformatting drift (whitespace, line breaks inside function calls,\ntrailing commas) that \\`ruff check\\` alone did not catch.\n\nNo logic changes — pure formatting. 776 tests pass unchanged, mypy\nclean.\n\nCo-Authored-By: Claude Opus 4.7 <<REDACTED_EMAIL>>\nEOF\n)\" && git push origin feat/training-upgrade 2>&1 | tail -3",
   "description": "Commit format + push"
 }
 ```
@@ -11071,7 +11071,7 @@ lint-and-type-check	Type check	2026-04-23T15:41:46.6129611Z [36;1mPY_DIRS=$(for
 lint-and-type-check	Type check	2026-04-23T15:41:46.6130179Z [36;1muv run mypy $PY_DIRS[0m
 lint-and-type-check	Type check	2026-04-23T15:41:46.6150694Z shell: /usr/bin/bash -e {0}
 lint-and-type-check	Type check	2026-04-23T15:41:46.6150939Z env:
-lint-and-type-check	Type check	2026-04-23T15:41:46.6151483Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+lint-and-type-check	Type check	2026-04-23T15:41:46.6151483Z   UV_CACHE_DIR: /home/<USER>/work/_temp/setup-uv-cache
 lint-and-type-check	Type check	2026-04-23T15:41:46.6151910Z ##[endgroup]
 lint-and-type-check	Type check	2026-04-23T15:42:51.7791932Z libs/model-training/src/model_training/diff_loss.py:469: error: Module "trl" has no attribute "DataCollatorForCompletionOnlyLM"  [attr-defined]
 lint-and-type-check	Type check	2026-04-23T15:42:52.1711749Z Found 1 error in 1 file (checked 121 source files)
@@ -11084,7 +11084,7 @@ tool_use Read
 id: toolu_01S1TXgA83LbuUiKJSWLP2b2
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/diff_loss.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/diff_loss.py",
   "offset": 460,
   "limit": 25
 }
@@ -11155,7 +11155,7 @@ id: toolu_01XUF5qKiPCLvy7U2dKst3ah
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/diff_loss.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/diff_loss.py",
   "old_string": "    from trl import DataCollatorForCompletionOnlyLM, SFTTrainer",
   "new_string": "    from trl import (  # type: ignore[attr-defined]\n        DataCollatorForCompletionOnlyLM,\n        SFTTrainer,\n    )"
 }
@@ -11166,7 +11166,7 @@ id: toolu_01XUF5qKiPCLvy7U2dKst3ah
 tool_result
 id: toolu_01XUF5qKiPCLvy7U2dKst3ah
 ```
-The file /Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/diff_loss.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/libs/model-training/src/model_training/diff_loss.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11195,7 +11195,7 @@ tool_use Bash
 id: toolu_01UGu6FGiXgYigZ3BuxV65ZP
 ```json
 {
-  "command": "git add libs/model-training/src/model_training/diff_loss.py && git commit -m \"$(cat <<'EOF'\nfix(diff-loss): suppress trl attr-defined mypy false positive\n\nCI Type check step (running mypy with trl installed) reports\n\"Module 'trl' has no attribute 'DataCollatorForCompletionOnlyLM'\"\neven though the symbol exists at runtime. Narrow type-ignore on the\ndeferred import line resolves the false positive without relaxing\ntype checking elsewhere.\n\nCo-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>\nEOF\n)\" && git push origin feat/training-upgrade 2>&1 | tail -3",
+  "command": "git add libs/model-training/src/model_training/diff_loss.py && git commit -m \"$(cat <<'EOF'\nfix(diff-loss): suppress trl attr-defined mypy false positive\n\nCI Type check step (running mypy with trl installed) reports\n\"Module 'trl' has no attribute 'DataCollatorForCompletionOnlyLM'\"\neven though the symbol exists at runtime. Narrow type-ignore on the\ndeferred import line resolves the false positive without relaxing\ntype checking elsewhere.\n\nCo-Authored-By: Claude Opus 4.7 <<REDACTED_EMAIL>>\nEOF\n)\" && git push origin feat/training-upgrade 2>&1 | tail -3",
   "description": "Commit + push trl fix"
 }
 ```
@@ -11310,11 +11310,11 @@ test	Run tests	2026-04-23T15:51:38.6477391Z             text=True,
 test	Run tests	2026-04-23T15:51:38.6477771Z         )
 test	Run tests	2026-04-23T15:51:38.6477986Z >       assert result.returncode == 0
 test	Run tests	2026-04-23T15:51:38.6478236Z E       assert 1 == 0
-test	Run tests	2026-04-23T15:51:38.6479151Z E        +  where 1 = CompletedProcess(args=['/home/runner/work/rune/rune/.venv/bin/python', '-m', 'model_training.encoder_pretrain.cli', '-...ule specification for 'model_training.encoder_pretrain.cli' (ModuleNotFoundError: No module named 'model_training')\n").returncode
+test	Run tests	2026-04-23T15:51:38.6479151Z E        +  where 1 = CompletedProcess(args=['/home/<USER>/work/rune/rune/.venv/bin/python', '-m', 'model_training.encoder_pretrain.cli', '-...ule specification for 'model_training.encoder_pretrain.cli' (ModuleNotFoundError: No module named 'model_training')\n").returncode
 test	Run tests	2026-04-23T15:51:38.6480010Z 
 test	Run tests	2026-04-23T15:51:38.6480190Z libs/model-training/tests/test_encoder_cli.py:83: AssertionError
 test	Run tests	2026-04-23T15:51:38.6480626Z ___________________ test_missing_required_arg_exits_nonzero ____________________
-test	Run tests	2026-04-23T15:51:38.6481062Z [gw0] linux -- Python 3.12.3 /home/runner/work/rune/rune/.venv/bin/python
+test	Run tests	2026-04-23T15:51:38.6481062Z [gw0] linux -- Python 3.12.3 /home/<USER>/work/rune/rune/.venv/bin/python
 test	Run tests	2026-04-23T15:51:38.6481324Z 
 test	Run tests	2026-04-23T15:51:38.6481463Z     def test_missing_required_arg_exits_nonzero() -> None:
 test	Run tests	2026-04-23T15:51:38.6481855Z         """Missing --augmented-dir or --output-dir exits with code 2."""
@@ -11325,7 +11325,7 @@ test	Run tests	2026-04-23T15:51:38.6483090Z             text=True,
 test	Run tests	2026-04-23T15:51:38.6483278Z         )
 test	Run tests	2026-04-23T15:51:38.6483471Z >       assert result.returncode == 2
 test	Run tests	2026-04-23T15:51:38.6483723Z E       assert 1 == 2
-test	Run tests	2026-04-23T15:51:38.6484631Z E        +  where 1 = CompletedProcess(args=['/home/runner/work/rune/rune/.venv/bin/python', '-m', 'model_training.encoder_pretrain.cli'], r...ule specification for 'model_training.encoder_pretrain.cli' (ModuleNotFoundError: […]
+test	Run tests	2026-04-23T15:51:38.6484631Z E        +  where 1 = CompletedProcess(args=['/home/<USER>/work/rune/rune/.venv/bin/python', '-m', 'model_training.encoder_pretrain.cli'], r...ule specification for 'model_training.encoder_pretrain.cli' (ModuleNotFoundError: […]
 
 > TOOL
 
@@ -11394,7 +11394,7 @@ id: toolu_01FaM1s3FJes5PxTRdxqirR4
 {
   "description": "Fix subprocess PYTHONPATH in CLI tests",
   "subagent_type": "general-purpose",
-  "prompt": "Fix 5 CI test failures caused by subprocess tests not inheriting pytest's pythonpath.\n\nWorking directory: `/Users/noahdolevelixir/Code/rune`.\n\n## Failing tests\n\nAll in:\n- `libs/model-training/tests/test_encoder_cli.py` (4 tests)\n- `libs/model-training/tests/test_reconstruction_cli.py` (1 test)\n\nEach calls `subprocess.run([sys.executable, \"-m\", \"model_training.<submodule>.cli\", ...])` which fails in CI with `ModuleNotFoundError: No module named 'model_training'` because the subprocess inherits `.venv/bin/python` but not the pytest pythonpath that makes `libs/model-training/src` + `libs/shared/src` importable.\n\nTests pass locally via `uv run pytest` because the uv-managed env has the workspace installed; CI's `.venv` doesn't.\n\n## Fix\n\nRead both files first. Then for every `subprocess.run([sys.executable, \"-m\", \"model_training.*\", ...])` call, add an `env=` kwarg that extends `PYTHONPATH` with the workspace source paths.\n\nRecommended approach: add a small helper at the top of each test file that constructs the env:\n\n```python\nimport os\nimport subprocess\nimport sys\nfrom pathlib import Path\n\n_REPO_ROOT = Path(__file__).resolve().parents[3]\n_SRC_PATHS = [\n    str(_REPO_ROOT / \"libs\" / \"model-training\" / \"src\"),\n    str(_REPO_ROOT / \"libs\" / \"shared\" / \"src\"),\n    str(_REPO_ROOT / \"libs\" / \"adapter-registry\" / \"src\"),\n    str(_REPO_ROOT / \"libs\" / \"inference\" / \"src\"),\n]\n\n\ndef _subprocess_env() -> dict[str, str]:\n    \"\"\"Return env dict with PYTHONPATH covering the workspace source tree.\n\n    Subprocess `python -m model_training.*` calls rely on this because\n    the runner's .venv may not have the workspace installed in\n    site-packages […]
+  "prompt": "Fix 5 CI test failures caused by subprocess tests not inheriting pytest's pythonpath.\n\nWorking directory: `/home/<USER>/Code/rune`.\n\n## Failing tests\n\nAll in:\n- `libs/model-training/tests/test_encoder_cli.py` (4 tests)\n- `libs/model-training/tests/test_reconstruction_cli.py` (1 test)\n\nEach calls `subprocess.run([sys.executable, \"-m\", \"model_training.<submodule>.cli\", ...])` which fails in CI with `ModuleNotFoundError: No module named 'model_training'` because the subprocess inherits `.venv/bin/python` but not the pytest pythonpath that makes `libs/model-training/src` + `libs/shared/src` importable.\n\nTests pass locally via `uv run pytest` because the uv-managed env has the workspace installed; CI's `.venv` doesn't.\n\n## Fix\n\nRead both files first. Then for every `subprocess.run([sys.executable, \"-m\", \"model_training.*\", ...])` call, add an `env=` kwarg that extends `PYTHONPATH` with the workspace source paths.\n\nRecommended approach: add a small helper at the top of each test file that constructs the env:\n\n```python\nimport os\nimport subprocess\nimport sys\nfrom pathlib import Path\n\n_REPO_ROOT = Path(__file__).resolve().parents[3]\n_SRC_PATHS = [\n    str(_REPO_ROOT / \"libs\" / \"model-training\" / \"src\"),\n    str(_REPO_ROOT / \"libs\" / \"shared\" / \"src\"),\n    str(_REPO_ROOT / \"libs\" / \"adapter-registry\" / \"src\"),\n    str(_REPO_ROOT / \"libs\" / \"inference\" / \"src\"),\n]\n\n\ndef _subprocess_env() -> dict[str, str]:\n    \"\"\"Return env dict with PYTHONPATH covering the workspace source tree.\n\n    Subprocess `python -m model_training.*` calls rely on this because\n    the runner's .venv may not have the workspace installed in\n    site-packages […]
 
 > TOOL
 
@@ -11629,7 +11629,7 @@ tool_use Write
 id: toolu_019C781TPHk57HydeYuV2M37
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-pr-28-summary.md",
+  "file_path": "/home/<USER>/Code/rune/instructions/2026-04-23-pr-28-summary.md",
   "content": "# PR #28 — Training Infrastructure Upgrade + 9-Gap Closure + Round-2 Distillation\n\n**Branch:** `feat/training-upgrade` → `main`\n**PR:** https://github.com/ElixirTrials/rune/pull/28\n**Stats:** +18,408 / -64 lines across 100+ commits, 105 commits ahead of `main`\n**Test state at HEAD:** 776 passed, 2 skipped, 10 xfailed, 0 warnings; ruff clean, mypy clean (155 files)\n**CI state at HEAD:** all green (test, lint-and-type-check, CodeQL, Analyze, GitGuardian, claude-review, copilot-review).\n\nThis document summarises **every concrete, documented-in-docs change** introduced by this PR. Use it as the source of truth when revising project documentation.\n\n---\n\n## Part A — Training infrastructure overhaul (original PR scope)\n\n### Diff-aware loss\n\n- **New:** `libs/model-training/src/model_training/diff_loss.py`\n  - `DiffWeightedDataCollator` wraps an inner `trl.DataCollatorForCompletionOnlyLM` and adds a `loss_weights` tensor per batch.\n  - `DiffAwareSFTTrainer` subclass of `trl.SFTTrainer` that multiplies token loss by the weights tensor, identity-under-uniform-weights (regression-guarded).\n  - Hunk path: when `pre_code` / `post_code` side-channels are present AND a tokenizer is configured, computes per-line hunk ranges and assigns `changed_weight` to hunk tokens, `unchanged_weight` to context tokens.\n  - **Fallback path (PR review fix):** when side-channels or tokenizer are missing, emits identity weights (`1.0` for labeled tokens, `0.0` for `IGNORE_INDEX=-100`). Previous behaviour was a silent uniform rescale via `compute_diff_loss_weights(changed_ids=set())` — changed to a no-op on the objective. Warning message updated.\n\n### […]
 
 > TOOL
@@ -11637,7 +11637,7 @@ id: toolu_019C781TPHk57HydeYuV2M37
 tool_result
 id: toolu_019C781TPHk57HydeYuV2M37
 ```
-File created successfully at: /Users/noahdolevelixir/Code/rune/instructions/2026-04-23-pr-28-summary.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Code/rune/instructions/2026-04-23-pr-28-summary.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11652,7 +11652,7 @@ id: toolu_017z9ASft7QmcA2uEJrUPuyv
 {
   "description": "Audit root + per-lib READMEs",
   "subagent_type": "general-purpose",
-  "prompt": "Audit the root-level and per-library README files against PR #28's changes. Identify specific sections that need revision.\n\nWorking directory: `/Users/noahdolevelixir/Code/rune`.\n\n## Source of truth for the PR changes\n\nRead `/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-pr-28-summary.md` first — it's the authoritative summary of every concrete change.\n\n## Files to audit\n\nRead each of these and identify what needs revision:\n\n1. `/Users/noahdolevelixir/Code/rune/README.md`\n2. `/Users/noahdolevelixir/Code/rune/CLAUDE.md` (the committed project CLAUDE.md at repo root)\n3. `/Users/noahdolevelixir/Code/rune/infra/README.md`\n4. `/Users/noahdolevelixir/Code/rune/libs/model-training/README.md`\n5. `/Users/noahdolevelixir/Code/rune/libs/shared/README.md`\n6. `/Users/noahdolevelixir/Code/rune/libs/inference/README.md`\n7. `/Users/noahdolevelixir/Code/rune/libs/evaluation/README.md`\n8. `/Users/noahdolevelixir/Code/rune/libs/adapter-registry/README.md`\n9. `/Users/noahdolevelixir/Code/rune/libs/events-py/README.md`\n10. `/Users/noahdolevelixir/Code/rune/services/api-service/README.md`\n11. `/Users/noahdolevelixir/Code/rune/services/evolution-svc/README.md`\n12. `/Users/noahdolevelixir/Code/rune/services/training-svc/README.md`\n13. `/Users/noahdolevelixir/Code/rune/services/rune-agent/README.md`\n\n**Also check if `libs/corpus-producer/README.md` exists and audit it if so.**\n\n## What to flag\n\nFor each file, produce a structured report:\n\n- **No changes needed** — state this explicitly and stop.\n- **Changes needed** — list each section that should be revised:\n  - Quote the current stale text (or describe briefly).\n  - State what should replace/supplement it based on the PR (reference gap #, new module, new CLI, etc.).\n  - Give the file path + rough line anchor.\n\n## Key PR-introduced elements to check references for\n\n- New modules in `libs/model-training/src/model_training/`: `diff_loss.py`, `kill_switch.py`, `training_common.py`, `round2_config.py`, `oracle_cache.py`, `round2_train.py`, `round2_gate.py`, `d2l_diff.py`.\n- Modified `d2l_data.py` — new `normalize_mined_pairs`, `pairs_to_chat_messages`, `task_description` propagation through `_make_pair_record`.\n- New CLIs: `scripts/train_round2.py`, `scripts/evaluate_round2.py`, `scripts/validate_oracles.py`.\n- Modified CLIs: `scripts/phase_corpus_producer.py` (new `--shard`, `--cuda-visible-devices`, `--s3-bucket`, `--s3-prefix`), `scripts/optimization/run_training_hpo.py`.\n- New […]
+  "prompt": "Audit the root-level and per-library README files against PR #28's changes. Identify specific sections that need revision.\n\nWorking directory: `/home/<USER>/Code/rune`.\n\n## Source of truth for the PR changes\n\nRead `/home/<USER>/Code/rune/instructions/2026-04-23-pr-28-summary.md` first — it's the authoritative summary of every concrete change.\n\n## Files to audit\n\nRead each of these and identify what needs revision:\n\n1. `/home/<USER>/Code/rune/README.md`\n2. `/home/<USER>/Code/rune/CLAUDE.md` (the committed project CLAUDE.md at repo root)\n3. `/home/<USER>/Code/rune/infra/README.md`\n4. `/home/<USER>/Code/rune/libs/model-training/README.md`\n5. `/home/<USER>/Code/rune/libs/shared/README.md`\n6. `/home/<USER>/Code/rune/libs/inference/README.md`\n7. `/home/<USER>/Code/rune/libs/evaluation/README.md`\n8. `/home/<USER>/Code/rune/libs/adapter-registry/README.md`\n9. `/home/<USER>/Code/rune/libs/events-py/README.md`\n10. `/home/<USER>/Code/rune/services/api-service/README.md`\n11. `/home/<USER>/Code/rune/services/evolution-svc/README.md`\n12. `/home/<USER>/Code/rune/services/training-svc/README.md`\n13. `/home/<USER>/Code/rune/services/rune-agent/README.md`\n\n**Also check if `libs/corpus-producer/README.md` exists and audit it if so.**\n\n## What to flag\n\nFor each file, produce a structured report:\n\n- **No changes needed** — state this explicitly and stop.\n- **Changes needed** — list each section that should be revised:\n  - Quote the current stale text (or describe briefly).\n  - State what should replace/supplement it based on the PR (reference gap #, new module, new CLI, etc.).\n  - Give the file path + rough line anchor.\n\n## Key PR-introduced elements to check references for\n\n- New modules in `libs/model-training/src/model_training/`: `diff_loss.py`, `kill_switch.py`, `training_common.py`, `round2_config.py`, `oracle_cache.py`, `round2_train.py`, `round2_gate.py`, `d2l_diff.py`.\n- Modified `d2l_data.py` — new `normalize_mined_pairs`, `pairs_to_chat_messages`, `task_description` propagation through `_make_pair_record`.\n- New CLIs: `scripts/train_round2.py`, `scripts/evaluate_round2.py`, `scripts/validate_oracles.py`.\n- Modified CLIs: `scripts/phase_corpus_producer.py` (new `--shard`, `--cuda-visible-devices`, `--s3-bucket`, `--s3-prefix`), `scripts/optimization/run_training_hpo.py`.\n- New […]
 
 > TOOL
 
@@ -11662,7 +11662,7 @@ id: toolu_01FUDWaxv5sSTHsmyoikGfRZ
 {
   "description": "Audit docs/ architecture + top-level",
   "subagent_type": "general-purpose",
-  "prompt": "Audit the MkDocs site documents (non-article sections) against PR #28's changes. Identify specific sections that need revision.\n\nWorking directory: `/Users/noahdolevelixir/Code/rune`.\n\n## Source of truth for the PR changes\n\nRead `/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-pr-28-summary.md` first — it's the authoritative summary.\n\n## Files to audit\n\n1. `/Users/noahdolevelixir/Code/rune/docs/index.md`\n2. `/Users/noahdolevelixir/Code/rune/docs/components-overview.md`\n3. `/Users/noahdolevelixir/Code/rune/docs/swarm-architecture.md`\n4. `/Users/noahdolevelixir/Code/rune/docs/implementation-plan.md` (largest — may need the most revision)\n5. `/Users/noahdolevelixir/Code/rune/docs/architecture/monorepo-mapping.md`\n6. `/Users/noahdolevelixir/Code/rune/docs/architecture/multi-gpu-strategy.md`\n7. `/Users/noahdolevelixir/Code/rune/docs/architecture/adapter-storage.md`\n8. `/Users/noahdolevelixir/Code/rune/docs/architecture/recursive-loop.md`\n9. `/Users/noahdolevelixir/Code/rune/docs/appendices/build-order.md`\n10. `/Users/noahdolevelixir/Code/rune/docs/appendices/risk-matrix.md`\n\n## What to flag\n\nFor each file:\n\n- **No changes needed** — state explicitly.\n- **Changes needed** — list each section that should be revised:\n  - Quote or describe current stale/missing content.\n  - State what should replace/supplement it (reference PR elements).\n  - Give the file path + rough line anchor.\n\n## Key PR-introduced elements to audit against\n\nRefer to the summary doc for the full list. High-signal elements for architecture docs:\n\n- **Round-1 vs Round-2 distillation** — round-1 trains the hypernet against the bare base model; round-2 trains the hypernet against **per-bin oracle adapters as teacher signals** (25 bins: 4 phases × 6 benchmarks + 1 pooled diagnose). This is new architecture.\n- **Oracle adapter ID scheme:** `oracle_<bin_key>` where bin_key is `<phase>_<benchmark>` or `diagnose_pooled`.\n- **Round-2 adapter ID scheme:** `round2_<uuid[:8]>`, `task_type=\"round2_hypernet\"`, `generation=2`, `parent_ids = json.dumps(sorted(oracle_ids))`.\n- **Functional-LoRA teacher mechanism:** oracle applied via […]
+  "prompt": "Audit the MkDocs site documents (non-article sections) against PR #28's changes. Identify specific sections that need revision.\n\nWorking directory: `/home/<USER>/Code/rune`.\n\n## Source of truth for the PR changes\n\nRead `/home/<USER>/Code/rune/instructions/2026-04-23-pr-28-summary.md` first — it's the authoritative summary.\n\n## Files to audit\n\n1. `/home/<USER>/Code/rune/docs/index.md`\n2. `/home/<USER>/Code/rune/docs/components-overview.md`\n3. `/home/<USER>/Code/rune/docs/swarm-architecture.md`\n4. `/home/<USER>/Code/rune/docs/implementation-plan.md` (largest — may need the most revision)\n5. `/home/<USER>/Code/rune/docs/architecture/monorepo-mapping.md`\n6. `/home/<USER>/Code/rune/docs/architecture/multi-gpu-strategy.md`\n7. `/home/<USER>/Code/rune/docs/architecture/adapter-storage.md`\n8. `/home/<USER>/Code/rune/docs/architecture/recursive-loop.md`\n9. `/home/<USER>/Code/rune/docs/appendices/build-order.md`\n10. `/home/<USER>/Code/rune/docs/appendices/risk-matrix.md`\n\n## What to flag\n\nFor each file:\n\n- **No changes needed** — state explicitly.\n- **Changes needed** — list each section that should be revised:\n  - Quote or describe current stale/missing content.\n  - State what should replace/supplement it (reference PR elements).\n  - Give the file path + rough line anchor.\n\n## Key PR-introduced elements to audit against\n\nRefer to the summary doc for the full list. High-signal elements for architecture docs:\n\n- **Round-1 vs Round-2 distillation** — round-1 trains the hypernet against the bare base model; round-2 trains the hypernet against **per-bin oracle adapters as teacher signals** (25 bins: 4 phases × 6 benchmarks + 1 pooled diagnose). This is new architecture.\n- **Oracle adapter ID scheme:** `oracle_<bin_key>` where bin_key is `<phase>_<benchmark>` or `diagnose_pooled`.\n- **Round-2 adapter ID scheme:** `round2_<uuid[:8]>`, `task_type=\"round2_hypernet\"`, `generation=2`, `parent_ids = json.dumps(sorted(oracle_ids))`.\n- **Functional-LoRA teacher mechanism:** oracle applied via […]
 
 > TOOL
 
@@ -11672,7 +11672,7 @@ id: toolu_01SsW55w2YGpPrPXn6E9mtvB
 {
   "description": "Audit docs/article/*",
   "subagent_type": "general-purpose",
-  "prompt": "Audit the MkDocs article documents (research paper content) against PR #28's changes. Identify specific sections that need revision.\n\nWorking directory: `/Users/noahdolevelixir/Code/rune`.\n\n## Source of truth for the PR changes\n\nRead `/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-pr-28-summary.md` first — it's the authoritative summary.\n\n## Files to audit\n\n1. `/Users/noahdolevelixir/Code/rune/docs/article/index.md`\n2. `/Users/noahdolevelixir/Code/rune/docs/article/abstract.md`\n3. `/Users/noahdolevelixir/Code/rune/docs/article/background.md`\n4. `/Users/noahdolevelixir/Code/rune/docs/article/methods.md`\n5. `/Users/noahdolevelixir/Code/rune/docs/article/results.md`\n6. `/Users/noahdolevelixir/Code/rune/docs/article/discussion.md`\n7. `/Users/noahdolevelixir/Code/rune/docs/article/references.md`\n\n## What to flag\n\nFor each file:\n\n- **No changes needed** — state explicitly with reasoning (e.g., the article is stable research prose that doesn't reference specific implementation modules).\n- **Changes needed** — list each section that should be revised:\n  - Quote or describe current stale content.\n  - State what should replace/supplement it.\n  - Give file path + rough line anchor.\n\n## Key PR-introduced elements that might affect an article\n\nResearch/paper content is often more stable than implementation docs, but these PR-introduced elements may require paper-level updates:\n\n**Methods-level changes:**\n- **Round-2 distillation with oracle teachers** (gap 9) — the methodology now includes a second training pass that uses per-bin oracle adapters as teacher signals. 25 bins (4 phases × 6 benchmarks + diagnose_pooled).\n- **Strict success gate:** ≥4 of 6 benchmarks improved ≥2% Pass@1, no regression >1% on any (threshold published in the code).\n- **Functional-LoRA teacher mechanism:** teacher-side oracle application via `apply_functional_lora` context, […]
+  "prompt": "Audit the MkDocs article documents (research paper content) against PR #28's changes. Identify specific sections that need revision.\n\nWorking directory: `/home/<USER>/Code/rune`.\n\n## Source of truth for the PR changes\n\nRead `/home/<USER>/Code/rune/instructions/2026-04-23-pr-28-summary.md` first — it's the authoritative summary.\n\n## Files to audit\n\n1. `/home/<USER>/Code/rune/docs/article/index.md`\n2. `/home/<USER>/Code/rune/docs/article/abstract.md`\n3. `/home/<USER>/Code/rune/docs/article/background.md`\n4. `/home/<USER>/Code/rune/docs/article/methods.md`\n5. `/home/<USER>/Code/rune/docs/article/results.md`\n6. `/home/<USER>/Code/rune/docs/article/discussion.md`\n7. `/home/<USER>/Code/rune/docs/article/references.md`\n\n## What to flag\n\nFor each file:\n\n- **No changes needed** — state explicitly with reasoning (e.g., the article is stable research prose that doesn't reference specific implementation modules).\n- **Changes needed** — list each section that should be revised:\n  - Quote or describe current stale content.\n  - State what should replace/supplement it.\n  - Give file path + rough line anchor.\n\n## Key PR-introduced elements that might affect an article\n\nResearch/paper content is often more stable than implementation docs, but these PR-introduced elements may require paper-level updates:\n\n**Methods-level changes:**\n- **Round-2 distillation with oracle teachers** (gap 9) — the methodology now includes a second training pass that uses per-bin oracle adapters as teacher signals. 25 bins (4 phases × 6 benchmarks + diagnose_pooled).\n- **Strict success gate:** ≥4 of 6 benchmarks improved ≥2% Pass@1, no regression >1% on any (threshold published in the code).\n- **Functional-LoRA teacher mechanism:** teacher-side oracle application via `apply_functional_lora` context, […]
 
 > TOOL
 
@@ -11687,7 +11687,7 @@ No `README.md` for corpus-producer. Now I have all the information needed. Let m
 
 ---
 
-### 1. `/Users/noahdolevelixir/Code/rune/README.md`
+### 1. `/home/<USER>/Code/rune/README.md`
 
 **Changes needed.**
 
@@ -11754,7 +11754,7 @@ Now I have everything needed for the audit. Here is the full report.
 
 ---
 
-### 1. `/Users/noahdolevelixir/Code/rune/docs/index.md`
+### 1. `/home/<USER>/Code/rune/docs/index.md`
 
 **Changes needed.**
 
@@ -11776,7 +11776,7 @@ No changes needed to the link table itself — the correct pages are all listed.
 
 ---
 
-### 2. `/Users/noahdolevelixir/Code/rune/docs/components-overview.md`
+### 2. `/home/<USER>/Code/rune/docs/components-overview.md`
 
 **Changes needed.**
 
@@ -11800,7 +11800,7 @@ tool_use Read
 id: toolu_01S64cCw3bPvBtKZVm4M3dtd
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-pr-28-summary.md",
+  "file_path": "/home/<USER>/Code/rune/instructions/2026-04-23-pr-28-summary.md",
   "offset": 235,
   "limit": 15
 }
@@ -11873,7 +11873,7 @@ id: toolu_01Pq4GYNxHgU3yPMA4besaCz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-pr-28-summary.md",
+  "file_path": "/home/<USER>/Code/rune/instructions/2026-04-23-pr-28-summary.md",
   "old_string": "## Repo state at PR head\n\n- Branch head: `6c475b8` (or later — check `git log -1`).\n- 105 commits ahead of `main` when the PR opened (and growing as fixes landed).\n- All CI checks green.\n- All 8 qodo review threads resolved.\n- `instructions/gap-closure-handoff.md` and `instructions/2026-04-23-round2-hypernetwork-training.md` track the detailed plan + closure; both in the gitignored `instructions/` dir.",
   "new_string": "## Repo state at PR head\n\n- Branch head: `6c475b8` (or later — check `git log -1`).\n- 105 commits ahead of `main` when the PR opened (and growing as fixes landed).\n- All CI checks green.\n- All 8 qodo review threads resolved.\n- `instructions/gap-closure-handoff.md` and `instructions/2026-04-23-round2-hypernetwork-training.md` track the detailed plan + closure; both in the gitignored `instructions/` dir.\n\n---\n\n## Documentation revision checklist (consolidated audit findings)\n\nThree parallel audits covered (1) root + per-library READMEs, (2) `docs/` architecture + top-level, and (3) `docs/article/*`. Findings below are grouped by priority and ordered so an editor can work top-down.\n\n### Priority legend\n\n- **Critical** — file is the documented home for something the PR materially changed; missing content would mislead an operator or reader.\n- **Important** — file references specific modules, CLIs, or benchmarks that now drift from reality.\n- **Minor** — stale counts, dates, […]
 
@@ -11882,7 +11882,7 @@ id: toolu_01Pq4GYNxHgU3yPMA4besaCz
 tool_result
 id: toolu_01Pq4GYNxHgU3yPMA4besaCz
 ```
-The file /Users/noahdolevelixir/Code/rune/instructions/2026-04-23-pr-28-summary.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/instructions/2026-04-23-pr-28-summary.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL

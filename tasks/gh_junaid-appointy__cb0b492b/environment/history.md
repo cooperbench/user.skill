@@ -12,7 +12,7 @@ tool_use Bash
 id: toolu_012Zai4hixUeQj7fQT9VLvpT
 ```json
 {
-  "command": "cd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension && git status 2>/dev/null | head -5; echo \"---\"; ls -la",
+  "command": "cd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension && git status 2>/dev/null | head -5; echo \"---\"; ls -la",
   "description": "Check extension folder structure"
 }
 ```
@@ -23,7 +23,7 @@ tool_use Bash
 id: toolu_01MvXVhW3QGV4vMW5VaCc644
 ```json
 {
-  "command": "cd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension && find . -type f -not -path '*/node_modules/*' -not -path '*/.git/*' -not -path '*/dist/*' | head -60",
+  "command": "cd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension && find . -type f -not -path '*/node_modules/*' -not -path '*/.git/*' -not -path '*/dist/*' | head -60",
   "description": "List source files"
 }
 ```
@@ -133,7 +133,7 @@ tool_use Read
 id: toolu_015RSykYgbGRzsbvAo2Ebmh7
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx"
 }
 ```
 
@@ -186,7 +186,7 @@ tool_use Read
 id: toolu_01CJxupho8t48bVE2G7EdBk8
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/CLAUDE.md"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/CLAUDE.md"
 }
 ```
 
@@ -215,7 +215,7 @@ tool_use Read
 id: toolu_01XmFHCNhVxUbiCNcHhcN32V
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx"
 }
 ```
 
@@ -283,7 +283,7 @@ tool_use Read
 id: toolu_01JNmQRqefBjsk9LHcATzgef
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/hooks.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/hooks.ts"
 }
 ```
 
@@ -348,7 +348,7 @@ tool_use Read
 id: toolu_01RKenftDUMcqe6mxQkB9oTa
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/types.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/types.ts"
 }
 ```
 
@@ -420,7 +420,7 @@ tool_use Read
 id: toolu_01KHQvUWemynkn9VearLZHtU
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/engine.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/engine.ts"
 }
 ```
 
@@ -482,7 +482,7 @@ tool_use Bash
 id: toolu_0195BVsfiUsJpgyTr2WVpPG5
 ```json
 {
-  "command": "cd /Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine && grep -rln \"patch\" src --include=*.ts -i | grep -i \"draft\\|visit\\|addon\\|calendar\" | head",
+  "command": "cd /home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine && grep -rln \"patch\" src --include=*.ts -i | grep -i \"draft\\|visit\\|addon\\|calendar\" | head",
   "description": "Find engine draft patch handler"
 }
 ```
@@ -545,7 +545,7 @@ tool_use Read
 id: toolu_01KpepJyvRBhnxeN6BZzooQw
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/visit-drafts.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/visit-drafts.ts",
   "offset": 674,
   "limit": 60
 }
@@ -600,7 +600,7 @@ tool_use Bash
 id: toolu_01QcEttQF342sHJciZdhcSAK
 ```json
 {
-  "command": "cd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension && grep -n \"guest\" design/global.css",
+  "command": "cd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension && grep -n \"guest\" design/global.css",
   "description": "Find guest CSS classes"
 }
 ```
@@ -632,7 +632,7 @@ tool_use Read
 id: toolu_01FxKj8cGLK7KKQPL4D6eGzp
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/design/components/index.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/design/components/index.ts"
 }
 ```
 
@@ -659,7 +659,7 @@ tool_use Read
 id: toolu_01VJh35KPVTVobFww6qiLDby
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/design/global.css",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/design/global.css",
   "offset": 336,
   "limit": 60
 }
@@ -723,7 +723,7 @@ tool_use Read
 id: toolu_01UP8o6oTzCjrtDhmBQrXtMe
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/design/components/IconButton.tsx"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/design/components/IconButton.tsx"
 }
 ```
 
@@ -766,7 +766,7 @@ tool_use Read
 id: toolu_01UTnq5Xs8LkUibFKRfEckcj
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/design/components/Button.tsx"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/design/components/Button.tsx"
 }
 ```
 
@@ -823,7 +823,7 @@ tool_use Read
 id: toolu_01X7dQAA8k1Muh4sinvdWoe3
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/design/components/TextField.tsx"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/design/components/TextField.tsx"
 }
 ```
 
@@ -931,7 +931,7 @@ id: toolu_014wugymTqqY7CHJL9391bSM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx",
   "old_string": "import { useEffect, useState } from 'react';\nimport { Phone, User } from 'lucide-react';\nimport { Chip, Switch, TextField } from '@/design/components';\nimport type { DraftGuest } from '@/lib/types';",
   "new_string": "import { useEffect, useState } from 'react';\nimport { Check, Pencil, Phone, User } from 'lucide-react';\nimport { Chip, Switch, TextField } from '@/design/components';\nimport type { DraftGuest } from '@/lib/types';"
 }
@@ -942,7 +942,7 @@ id: toolu_014wugymTqqY7CHJL9391bSM
 tool_result
 id: toolu_014wugymTqqY7CHJL9391bSM
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -952,7 +952,7 @@ id: toolu_01NR7LJ7seLewuycGgwupTDS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx",
   "old_string": "  const [name, setName] = useState(guest.name);\n  const [phone, setPhone] = useState(guest.phone ?? '');\n\n  // Keep local inputs in sync when the server reconciles the row.\n  useEffect(() => setName(guest.name), [guest.name]);\n  useEffect(() => setPhone(guest.phone ?? ''), [guest.phone]);\n\n  const sent = guest.status === 'sent';\n  const cancelled = guest.status === 'cancelled';\n  const display = guest.name || guest.email;\n  const editable = guest.include && !sent;\n\n  return (",
   "new_string": "  const [name, setName] = useState(guest.name);\n  const [phone, setPhone] = useState(guest.phone ?? '');\n  // Details stay collapsed by default so each card is compact; the host opens\n  // them only to make a correction. Sent guests are editable too — re-sending\n  // pushes the change onto the already-issued pass.\n  const [editing, setEditing] = useState(false);\n\n  // Keep local inputs in sync when the server reconciles the row.\n  useEffect(() => setName(guest.name), [guest.name]);\n  useEffect(() => setPhone(guest.phone ?? ''), [guest.phone]);\n\n  const sent = guest.status === 'sent';\n  const cancelled = guest.status === 'cancelled';\n  const display = guest.name || guest.email;\n  // Anyone we'd actually send/update a pass for can be corrected — included\n  // guests whether or not their pass has already gone out.\n  const editable = guest.include && !cancelled;\n\n  return ("
 } […]
@@ -962,7 +962,7 @@ id: toolu_01NR7LJ7seLewuycGgwupTDS
 tool_result
 id: toolu_01NR7LJ7seLewuycGgwupTDS
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -976,7 +976,7 @@ id: toolu_0177zvGShXjaNFHsUrxCyjgM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx",
   "old_string": "      {editable ? (\n        <div className=\"guest__form\">\n          <TextField\n            label=\"Visitor name\"\n            value={name}\n            leadingIcon={<User size={16} strokeWidth={2} />}\n            onChange={(e) => setName(e.target.value)}\n            onBlur={() => name !== guest.name && onChange({ name })}\n            placeholder=\"Full name\"\n          />\n          <TextField\n            label=\"Phone (for WhatsApp pass)\"\n            value={phone}\n            inputMode=\"tel\"\n            leadingIcon={<Phone size={16} strokeWidth={2} />}\n            onChange={(e) => setPhone(e.target.value)}\n            onBlur={() => phone !== (guest.phone ?? '') && onChange({ phone })}\n            placeholder=\"+91…\"\n          />\n        </div>\n      ) : (\n        !guest.include &&\n        !cancelled && (\n          <div className=\"guest__hint type-label-sm\">Won’t receive a pass — toggle on to invite</div>\n        )\n      )}",
   "new_string": "      {editable ? (\n        editing ? (\n          <div className=\"guest__form\">\n            <TextField\n              label=\"Visitor name\"\n              value={name}\n              leadingIcon={<User size={16} strokeWidth={2} />}\n              onChange={(e) => setName(e.target.value)}\n              onBlur={() => name !== guest.name && onChange({ name })}\n              placeholder=\"Full name\"\n            />\n            <TextField\n              label=\"Phone (for WhatsApp pass)\"\n              value={phone}\n              inputMode=\"tel\"\n              leadingIcon={<Phone size={16} strokeWidth={2} />}\n              onChange={(e) => setPhone(e.target.value)}\n              onBlur={() => phone !== (guest.phone ?? '') && onChange({ phone })}\n              placeholder=\"+91…\"\n            />\n            {sent && (\n              <div className=\"type-label-sm text-muted\">\n                Re-send to update the pass that’s already been issued.\n              </div>\n            )}\n            <button type=\"button\" className=\"guest__done\" onClick={() => setEditing(false)}>\n              <Check size={14} strokeWidth={2.5} />\n              Done\n            </button>\n          </div>\n        ) : (\n          <div className=\"guest__summary\">\n            {guest.phone && (\n              <span className=\"guest__phone type-label-sm text-muted\">\n                <Phone size={13} strokeWidth={2} />\n                <span className=\"row__ellipsis\">{guest.phone}</span>\n              </span>\n            )}\n            <button […]
 
@@ -985,7 +985,7 @@ id: toolu_0177zvGShXjaNFHsUrxCyjgM
 tool_result
 id: toolu_0177zvGShXjaNFHsUrxCyjgM
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -999,7 +999,7 @@ id: toolu_01XUczNeysSeNcEs3yEkVFCk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/design/global.css",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/design/global.css",
   "old_string": ".guest__hint {\n  margin: var(--space-xs) 0 0 calc(36px + var(--space-md));\n  color: var(--color-on-surface-variant);\n  font-weight: 500;\n}\n@keyframes guest-expand {\n  from { opacity: 0; transform: translateY(-4px); }\n  to { opacity: 1; transform: none; }\n}",
   "new_string": ".guest__hint {\n  margin: var(--space-xs) 0 0 calc(36px + var(--space-md));\n  color: var(--color-on-surface-variant);\n  font-weight: 500;\n}\n@keyframes guest-expand {\n  from { opacity: 0; transform: translateY(-4px); }\n  to { opacity: 1; transform: none; }\n}\n\n/* Collapsed details row: a compact phone glimpse + an inline \"Edit\" affordance,\n   aligned under the name so it reads as this guest's detail. Keeps cards short\n   until the host actually wants to correct something. */\n.guest__summary {\n  display: flex;\n  align-items: center;\n  gap: var(--space-sm);\n  min-width: 0;\n  margin: var(--space-xs) 0 0 calc(36px + var(--space-md));\n}\n.guest__phone {\n  display: inline-flex;\n  align-items: center;\n  gap: 4px;\n  min-width: 0;\n}\n.guest__edit,\n.guest__done {\n  display: inline-flex;\n  align-items: center;\n  gap: 4px;\n  flex: 0 0 auto;\n  background: none;\n  border: none;\n  cursor: pointer;\n  font: inherit;\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--color-primary);\n  padding: 4px 8px;\n  border-radius: var(--radius-sm);\n  transition: background-color var(--motion-base) var(--motion-easing);\n}\n.guest__edit:hover,\n.guest__done:hover { background: var(--color-surface-high); }\n.guest__done { justify-self: start; margin-right: auto; }"
 }
@@ -1010,7 +1010,7 @@ id: toolu_01XUczNeysSeNcEs3yEkVFCk
 tool_result
 id: toolu_01XUczNeysSeNcEs3yEkVFCk
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/design/global.css has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/design/global.css has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1023,7 +1023,7 @@ tool_use Read
 id: toolu_011pJmcVvnSz31ViqsdV5LqQ
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json"
 }
 ```
 
@@ -1074,7 +1074,7 @@ id: toolu_01JVK3fJ6ik7MAHJPntZuV1G
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
   "old_string": "  \"version\": \"0.1.1\",",
   "new_string": "  \"version\": \"0.2.0\","
 }
@@ -1085,7 +1085,7 @@ id: toolu_01JVK3fJ6ik7MAHJPntZuV1G
 tool_result
 id: toolu_01JVK3fJ6ik7MAHJPntZuV1G
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1118,7 +1118,7 @@ tool_use Read
 id: toolu_019niso1E84bqbwLSsGHUuMS
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx",
   "offset": 40,
   "limit": 75
 }

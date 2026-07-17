@@ -209,37 +209,37 @@ id: toolu_01766CFghCGWhUFEADfXRuZX
 tool_result
 id: toolu_01766CFghCGWhUFEADfXRuZX
 ```
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/CLAUDE.md-67-## Web UI (TypeScript + Preact + Vite)
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/CLAUDE.md-68-
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/CLAUDE.md-69-TypeScript/TSX source in `crates/web/ui/src/`, built with Vite to `crates/web/src/assets/dist/`.
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/CLAUDE.md-67-## Web UI (TypeScript + Preact + Vite)
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/CLAUDE.md-68-
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/CLAUDE.md-69-TypeScript/TSX source in `crates/web/ui/src/`, built with Vite to `crates/web/src/assets/dist/`.
 CLAUDE.md:70:CSS and static assets in `crates/web/src/assets/`. Release mode embeds via `include_dir!`.
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/CLAUDE.md-71-Both `dist/` and `style.css` are committed (unminified) so `cargo build` works without Node.js
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/CLAUDE.md-72-and diffs merge cleanly. See `docs/src/frontend.md` for the full architecture guide.
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/CLAUDE.md-73-
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/CLAUDE.md-71-Both `dist/` and `style.css` are committed (unminified) so `cargo build` works without Node.js
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/CLAUDE.md-72-and diffs merge cleanly. See `docs/src/frontend.md` for the full architecture guide.
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/CLAUDE.md-73-
 --
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/docs/src/frontend.md-135-1. **Dev filesystem** — `MOLTIS_ASSETS_DIR` env var or auto-detected
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/docs/src/frontend.md-136-   from the crate source tree (`cargo run` dev mode)
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/docs/src/frontend.md-137-2. **External share dir** — `share_dir()/web/` for packaged deployments
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/docs/src/frontend.md-135-1. **Dev filesystem** — `MOLTIS_ASSETS_DIR` env var or auto-detected
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/docs/src/frontend.md-136-   from the crate source tree (`cargo run` dev mode)
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/docs/src/frontend.md-137-2. **External share dir** — `share_dir()/web/` for packaged deployments
 docs/src/frontend.md:138:3. **Embedded fallback** — `include_dir!` compiled into the binary
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/docs/src/frontend.md-139-
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/docs/src/frontend.md-139-
 docs/src/frontend.md-140-HTML templates are rendered by [Askama](https://github.com/djc/askama)
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/docs/src/frontend.md-141-with server-injected data (`window.__MOLTIS__`, the "gon" pattern).
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/docs/src/frontend.md-141-with server-injected data (`window.__MOLTIS__`, the "gon" pattern).
 --
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/assets.rs-4-//!    the crate source tree when running via `cargo run`.
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/assets.rs-5-//! 2. **External share dir** — `share_dir()/web/` for packaged deployments
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/assets.rs-6-//!    (Debian, RPM, Docker) where assets live outside the binary.
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/assets.rs-4-//!    the crate source tree when running via `cargo run`.
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/assets.rs-5-//! 2. **External share dir** — `share_dir()/web/` for packaged deployments
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/assets.rs-6-//!    (Debian, RPM, Docker) where assets live outside the binary.
 crates/web/src/assets.rs:7://! 3. **Embedded fallback** — `include_dir!` compiled into the binary (only
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/assets.rs-8-//!    available when the `embedded-assets` feature is enabled).
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/assets.rs-9-
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/assets.rs-8-//!    available when the `embedded-assets` feature is enabled).
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/assets.rs-9-
 crates/web/src/assets.rs-10-use std::{
 --
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/assets.rs-23-// ── Embedded assets (feature-gated) ─────────────────────────────────────────
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/assets.rs-24-
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/assets.rs-25-#[cfg(feature = "embedded-assets")]
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/assets.rs-23-// ── Embedded assets (feature-gated) ─────────────────────────────────────────
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/assets.rs-24-
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/assets.rs-25-#[cfg(feature = "embedded-assets")]
 crates/web/src/assets.rs:26:static ASSETS: include_dir::Dir = include_dir::include_dir!("$CARGO_MANIFEST_DIR/src/assets");
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/assets.rs-27-
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/assets.rs-28-// Fail compilation with a clear message if style.css hasn't been generated.
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/assets.rs-29-// Run `just build-css` (or `cd crates/web/ui && […]
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/assets.rs-27-
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/assets.rs-28-// Fail compilation with a clear message if style.css hasn't been generated.
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/assets.rs-29-// Run `just build-css` (or `cd crates/web/ui && […]
 
 > TOOL
 
@@ -247,7 +247,7 @@ tool_use Read
 id: toolu_01Qp31hWgLdB6reJGexbzMPw
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/discover.rs"
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/discover.rs"
 }
 ```
 
@@ -307,7 +307,7 @@ tool_use Read
 id: toolu_01HKJr3YFmMaBxe8y8wQW3zh
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/types.rs"
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/types.rs"
 }
 ```
 
@@ -380,7 +380,7 @@ tool_use Read
 id: toolu_01DJwpJS3LHHTo2Hifqq5GfU
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/assets.rs"
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/assets.rs"
 }
 ```
 
@@ -439,7 +439,7 @@ tool_use Read
 id: toolu_012zn4RxvBK1zL2zKmP29hvE
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/prompt_gen.rs"
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/prompt_gen.rs"
 }
 ```
 
@@ -492,7 +492,7 @@ tool_use Read
 id: toolu_018jkM2Fpz55kp2qJ8X313UC
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/parse.rs"
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/parse.rs"
 }
 ```
 
@@ -554,7 +554,7 @@ tool_use Read
 id: toolu_012qNsgvAiFUKDg3qJ6t8HxY
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/Cargo.toml"
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/Cargo.toml"
 }
 ```
 
@@ -609,7 +609,7 @@ tool_use Read
 id: toolu_01VxgfKcMqXzSZnMNjiFU46H
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/lib.rs"
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/lib.rs"
 }
 ```
 
@@ -658,7 +658,7 @@ tool_use Read
 id: toolu_0162QYPRbdwK6NXyn9HnmC9s
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/src/skill_tools.rs"
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/src/skill_tools.rs"
 }
 ```
 
@@ -802,7 +802,7 @@ id: toolu_014pi9i6UJqx9ouiRyw5ebov
 ```json
 {
   "pattern": "include_dir",
-  "path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/Cargo.toml",
+  "path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/Cargo.toml",
   "output_mode": "content"
 }
 ```
@@ -822,7 +822,7 @@ id: toolu_01XhXvDA8m8CPM8Z4SuziQSV
 ```json
 {
   "pattern": "moltis-skills",
-  "path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/Cargo.toml",
+  "path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/Cargo.toml",
   "output_mode": "content"
 }
 ```
@@ -866,7 +866,7 @@ id: toolu_01RrNmaxkcJeTT1KNxGa3YvA
 ```json
 {
   "pattern": "ReadSkillTool|FsSkillDiscoverer|SkillDiscoverer",
-  "path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/server/prepare_core/post_state.rs",
+  "path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/server/prepare_core/post_state.rs",
   "output_mode": "content",
   "-C": 5
 }
@@ -911,7 +911,7 @@ id: toolu_01Ge1ch2EGed4WsLfAN3ozCb
 ```json
 {
   "pattern": "ReadSkillTool|FsSkillDiscoverer|SkillDiscoverer",
-  "path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/services.rs",
+  "path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/services.rs",
   "output_mode": "content",
   "-C": 5
 }
@@ -970,7 +970,7 @@ tool_use Read
 id: toolu_012SnjZLfRotTUAXwHQwXXoj
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/Cargo.toml",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/Cargo.toml",
   "limit": 80
 }
 ```
@@ -981,7 +981,7 @@ tool_use Read
 id: toolu_01XUFC5qR2kyHRPSLqb2vd6d
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/Cargo.toml"
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/Cargo.toml"
 }
 ```
 
@@ -1079,7 +1079,7 @@ id: toolu_01JNeErZ89ucr3GpdEeuDM3o
 ```json
 {
   "pattern": "\\[features\\]",
-  "path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/Cargo.toml",
+  "path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/Cargo.toml",
   "output_mode": "content",
   "-A": 30
 }
@@ -1130,7 +1130,7 @@ id: toolu_012ki1vpB421znPRayVDwzYc
 ```json
 {
   "pattern": "\\[features\\]",
-  "path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/cli/Cargo.toml",
+  "path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/cli/Cargo.toml",
   "output_mode": "content",
   "-A": 40
 }
@@ -1190,7 +1190,7 @@ tool_use Read
 id: toolu_011yyMN7dcCrHeT1RareKiwq
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/cli/Cargo.toml",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/cli/Cargo.toml",
   "offset": 143,
   "limit": 50
 }
@@ -1313,7 +1313,7 @@ id: toolu_01D5gbyDy1TMyYchqr6p2FuN
 ```json
 {
   "pattern": "file-watcher|skills",
-  "path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/Cargo.toml",
+  "path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/Cargo.toml",
   "output_mode": "content",
   "-C": 1
 }
@@ -1347,7 +1347,7 @@ tool_use Read
 id: toolu_01GGEV6d9MuwBkEJrJvxVPKQ
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/registry.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/registry.rs",
   "limit": 40
 }
 ```
@@ -1411,7 +1411,7 @@ tool_use Read
 id: toolu_017ajHepBjVRRHzSuY21WaHC
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/types.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/types.rs",
   "offset": 125,
   "limit": 65
 }
@@ -1471,7 +1471,7 @@ id: toolu_01XhsM1aQbhXHEydArHxuLLW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/types.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/types.rs",
   "old_string": "/// Where a skill was discovered from.\n#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]\n#[serde(rename_all = \"lowercase\")]\npub enum SkillSource {\n    /// Project-local: `<data_dir>/.moltis/skills/`\n    Project,\n    /// Personal: `<data_dir>/skills/`\n    Personal,\n    /// Bundled inside a plugin directory.\n    Plugin,\n    /// Installed from a registry (e.g. skills.sh).\n    Registry,\n}",
   "new_string": "/// Where a skill was discovered from.\n#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]\n#[serde(rename_all = \"lowercase\")]\npub enum SkillSource {\n    /// Project-local: `<data_dir>/.moltis/skills/`\n    Project,\n    /// Personal: `<data_dir>/skills/`\n    Personal,\n    /// Bundled inside a plugin directory.\n    Plugin,\n    /// Installed from a registry (e.g. skills.sh).\n    Registry,\n    /// Embedded in the binary at compile time from `crates/skills/src/assets/`.\n    Bundled,\n}"
 }
@@ -1482,7 +1482,7 @@ id: toolu_01XhsM1aQbhXHEydArHxuLLW
 tool_result
 id: toolu_01XhsM1aQbhXHEydArHxuLLW
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/types.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/types.rs has been updated successfully.
 ```
 
 > TOOL
@@ -1492,7 +1492,7 @@ id: toolu_012UAMpTD7U815szohbS4EBi
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/types.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/types.rs",
   "old_string": "    /// Binary/tool requirements for this skill.\n    #[serde(default)]\n    pub requires: SkillRequirements,\n    /// Filesystem path to the skill directory.\n    #[serde(skip)]\n    pub path: PathBuf,\n    /// Where this skill was discovered.\n    #[serde(skip)]\n    pub source: Option<SkillSource>,\n}",
   "new_string": "    /// Binary/tool requirements for this skill.\n    #[serde(default)]\n    pub requires: SkillRequirements,\n    /// Provenance of a bundled or imported skill (upstream repo, commit, date).\n    #[serde(default)]\n    pub origin: Option<SkillOrigin>,\n    /// Filesystem path to the skill directory.\n    #[serde(skip)]\n    pub path: PathBuf,\n    /// Where this skill was discovered.\n    #[serde(skip)]\n    pub source: Option<SkillSource>,\n}\n\n// ── Skill origin ────────────────────────────────────────────────────────────\n\n/// Provenance information for a skill copied from an external source.\n#[derive(Debug, Clone, Default, Serialize, Deserialize)]\npub struct SkillOrigin {\n    /// Upstream project name (e.g. `\"hermes-agent\"`).\n    #[serde(default)]\n    pub source: Option<String>,\n    /// URL of the upstream repository.\n    #[serde(default)]\n    pub url: Option<String>,\n    /// Commit SHA or version tag at which the skill was copied.\n    #[serde(default)]\n    pub version: Option<String>,\n}"
 }
@@ -1503,7 +1503,7 @@ id: toolu_012UAMpTD7U815szohbS4EBi
 tool_result
 id: toolu_012UAMpTD7U815szohbS4EBi
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/types.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/types.rs has been updated successfully.
 ```
 
 > AGENT
@@ -1517,7 +1517,7 @@ id: toolu_01Qc43KSLGXsa4mTsoRoJYcX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/Cargo.toml",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/Cargo.toml",
   "old_string": "[dependencies]\nasync-trait           = { workspace = true }\nflate2                = { workspace = true }\nmoltis-config         = { workspace = true }\nmoltis-metrics        = { optional = true, workspace = true }\nnotify-debouncer-full = { optional = true, workspace = true }\nreqwest               = { workspace = true }\nserde                 = { workspace = true }\nserde_json            = { workspace = true }\nserde_yaml            = { workspace = true }\ntar                   = { workspace = true }\nthiserror             = { workspace = true }\ntokio                 = { workspace = true }\ntracing               = { workspace = true }\nwalkdir               = { workspace = true }\n\n[features]\ndefault      = []\nfile-watcher = [\"dep:notify-debouncer-full\"]\nmetrics      = [\"dep:moltis-metrics\"]",
   "new_string": "[dependencies]\nasync-trait           = { workspace = true }\nflate2                = { workspace = true }\ninclude_dir           = { optional = true, workspace = true }\nmoltis-config         = { workspace = true }\nmoltis-metrics        = { optional = true, workspace = true }\nnotify-debouncer-full = { optional = true, workspace = true }\nreqwest               = { workspace = true }\nserde                 = { workspace = true }\nserde_json            = { workspace = true }\nserde_yaml            = { workspace = true }\ntar                   = { workspace = true }\nthiserror             = { workspace = true }\ntokio                 = { workspace = true }\ntracing               = { workspace […]
 
@@ -1526,7 +1526,7 @@ id: toolu_01Qc43KSLGXsa4mTsoRoJYcX
 tool_result
 id: toolu_01Qc43KSLGXsa4mTsoRoJYcX
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/Cargo.toml has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/Cargo.toml has been updated successfully.
 ```
 
 > AGENT
@@ -1540,7 +1540,7 @@ id: toolu_01N45P2RyEiZJ1pdYdkYT8B1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/lib.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/lib.rs",
   "old_string": "pub use error::Error;\n\n/// Canonical list of sidecar subdirectories a skill directory may contain,",
   "new_string": "#[cfg(feature = \"bundled-skills\")]\npub mod bundled;\n\npub use error::Error;\n\n/// Canonical list of sidecar subdirectories a skill directory may contain,"
 }
@@ -1551,7 +1551,7 @@ id: toolu_01N45P2RyEiZJ1pdYdkYT8B1
 tool_result
 id: toolu_01N45P2RyEiZJ1pdYdkYT8B1
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/lib.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/lib.rs has been updated successfully.
 ```
 
 > AGENT
@@ -1565,7 +1565,7 @@ id: toolu_01SJ6SEPJSDN6v3v6HAr9vvp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/prompt_gen.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/prompt_gen.rs",
   "old_string": "        let source = if skill.source.as_ref() == Some(&SkillSource::Plugin) {\n            \"plugin\"\n        } else {\n            \"skill\"\n        };",
   "new_string": "        let source = match skill.source.as_ref() {\n            Some(SkillSource::Plugin) => \"plugin\",\n            Some(SkillSource::Bundled) => \"bundled\",\n            _ => \"skill\",\n        };"
 }
@@ -1576,7 +1576,7 @@ id: toolu_01SJ6SEPJSDN6v3v6HAr9vvp
 tool_result
 id: toolu_01SJ6SEPJSDN6v3v6HAr9vvp
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/prompt_gen.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/prompt_gen.rs has been updated successfully.
 ```
 
 > AGENT
@@ -1589,7 +1589,7 @@ tool_use Bash
 id: toolu_018pQqJHxhn7G4PKT4ip1Tkx
 ```json
 {
-  "command": "ls /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/",
+  "command": "ls /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/",
   "description": "List skills src directory"
 }
 ```
@@ -1622,7 +1622,7 @@ tool_use Bash
 id: toolu_017UhLYAMDhzVDPKWegw8wEa
 ```json
 {
-  "command": "mkdir -p /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/research/arxiv",
+  "command": "mkdir -p /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/research/arxiv",
   "description": "Create bundled skills assets directory"
 }
 ```
@@ -1645,7 +1645,7 @@ tool_use Write
 id: toolu_01Azxv1Pu9JUJmqyPnDXfyuq
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/research/arxiv/SKILL.md",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/research/arxiv/SKILL.md",
   "content": "---\nname: arxiv\ndescription: Search and retrieve academic papers from arXiv using their free REST API. No API key needed. Search by keyword, author, category, or ID.\norigin:\n  source: hermes-agent\n  url: https://github.com/nousresearch/hermes-agent\n  version: 9f22977f\nallowed-tools:\n  - exec\n  - web_fetch\n---\n\n# arXiv Paper Search\n\nSearch and retrieve academic papers from arXiv's free REST API. No API key required.\n\n## Quick Reference\n\n| Action | Method |\n|--------|--------|\n| Search papers | GET `http://export.arxiv.org/api/query?search_query=...` |\n| Get by ID | GET `http://export.arxiv.org/api/query?id_list=2301.07041` |\n| Read abstract | Parse `<summary>` from Atom XML response |\n| Read PDF | Fetch `https://arxiv.org/pdf/{id}` |\n\n## Search API\n\nBase URL: `http://export.arxiv.org/api/query`\n\n### Query syntax\n\n| Prefix | Searches | Example |\n|--------|----------|---------|\n| `all:` | All fields | `all:transformer` |\n| `ti:` | Title | `ti:attention+mechanism` |\n| `au:` | Author | `au:vaswani` |\n| `abs:` | Abstract | `abs:large+language+model` |\n| `cat:` | Category | `cat:cs.AI` |\n\n### Boolean operators\n\n- `AND` — both terms: `ti:attention AND au:vaswani`\n- `OR` — either term: `cat:cs.CL OR cat:cs.AI`\n- `ANDNOT` — exclude: `ti:transformer ANDNOT ti:vision`\n- Exact phrase: `ti:\"chain of thought\"`\n\n### Pagination\n\n- `start=0` — offset (default 0)\n- `max_results=10` — results per page (default 10, max 100)\n- `sortBy=submittedDate` — sort field (`relevance`, `lastUpdatedDate`, `submittedDate`)\n- `sortOrder=descending` — sort direction\n\n### Example: search for recent LLM papers\n\n```bash\ncurl -s 'http://export.arxiv.org/api/query?search_query=ti:large+language+model&sortBy=submittedDate&sortOrder=descending&max_results=5'\n```\n\nThe response […]
 
 > TOOL
@@ -1653,7 +1653,7 @@ id: toolu_01Azxv1Pu9JUJmqyPnDXfyuq
 tool_result
 id: toolu_01Azxv1Pu9JUJmqyPnDXfyuq
 ```
-File created successfully at: /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/research/arxiv/SKILL.md
+File created successfully at: /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/research/arxiv/SKILL.md
 ```
 
 > AGENT
@@ -1666,7 +1666,7 @@ tool_use Write
 id: toolu_01N53JzkkPrKEmWy83zcUCAB
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs",
   "content": "//! Bundled skills embedded in the binary at compile time.\n//!\n//! Skills live in `crates/skills/src/assets/<category>/<name>/SKILL.md` and are\n//! committed to the repository. In dev mode (`cargo run`) the module reads\n//! directly from the filesystem for instant iteration; in release builds it\n//! serves from the [`include_dir!`] embedded copy.\n//!\n//! This mirrors the three-tier asset strategy in `crates/web/src/assets.rs`.\n\nuse std::path::{Path, PathBuf};\n\nuse crate::{\n    parse,\n    types::{SkillMetadata, SkillSource},\n};\n\n// ── Embedded assets ─────────────────────────────────────────────────────────\n\nstatic BUNDLED_ASSETS: include_dir::Dir<'static> =\n    include_dir::include_dir!(\"$CARGO_MANIFEST_DIR/src/assets\");\n\n// ── Asset source resolution ─────────────────────────────────────────────────\n\nenum AssetSource {\n    /// Read from the filesystem (dev mode: `cargo run`).\n    Filesystem(PathBuf),\n    /// Read from the compile-time embedded directory.\n    Embedded,\n}\n\n/// Store for bundled skills. Shared (via `Arc`) between the composite\n/// discoverer and the `ReadSkillTool`.\npub struct BundledSkillStore {\n    source: AssetSource,\n}\n\nimpl BundledSkillStore {\n    /// Create a new store, preferring the filesystem in dev mode.\n    #[must_use]\n    pub fn new() -> Self {\n        let cargo_dir = PathBuf::from(env!(\"CARGO_MANIFEST_DIR\")).join(\"src/assets\");\n        let source = if cargo_dir.is_dir() {\n            tracing::debug!(path = %cargo_dir.display(), \"bundled skills: using filesystem (dev mode)\");\n            AssetSource::Filesystem(cargo_dir)\n        } else {\n            tracing::debug!(\"bundled skills: using embedded assets\");\n            AssetSource::Embedded\n        };\n        Self { source }\n    }\n\n    /// Discover metadata for all bundled skills.\n    ///\n    /// Walks the assets directory two levels deep (`<category>/<skill>/SKILL.md`),\n    /// parses frontmatter, and tags each with [`SkillSource::Bundled`].\n […]
 
 > TOOL
@@ -1674,7 +1674,7 @@ id: toolu_01N53JzkkPrKEmWy83zcUCAB
 tool_result
 id: toolu_01N53JzkkPrKEmWy83zcUCAB
 ```
-File created successfully at: /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs
+File created successfully at: /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs
 ```
 
 > AGENT
@@ -1687,7 +1687,7 @@ tool_use Read
 id: toolu_01SQCQbt5La1uwAweqE61PN6
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/discover.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/discover.rs",
   "offset": 82,
   "limit": 5
 }
@@ -1712,7 +1712,7 @@ id: toolu_017n62LdLJ6o6oUn3q7JH636
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/discover.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/discover.rs",
   "old_string": "use std::path::{Path, PathBuf};\n\nuse async_trait::async_trait;\n\nuse crate::{\n    error::Result,\n    formats::PluginFormat,\n    manifest::ManifestStore,\n    parse,\n    types::{SkillMetadata, SkillSource},\n};",
   "new_string": "use std::{path::{Path, PathBuf}, sync::Arc};\n\nuse async_trait::async_trait;\n\nuse crate::{\n    error::Result,\n    formats::PluginFormat,\n    manifest::ManifestStore,\n    parse,\n    types::{SkillMetadata, SkillSource},\n};"
 }
@@ -1723,7 +1723,7 @@ id: toolu_017n62LdLJ6o6oUn3q7JH636
 tool_result
 id: toolu_017n62LdLJ6o6oUn3q7JH636
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/discover.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/discover.rs has been updated successfully.
 ```
 
 > AGENT
@@ -1737,7 +1737,7 @@ id: toolu_01MX8QwJXHV2K8djK4iSweyZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/discover.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/discover.rs",
   "old_string": "/// Scan one level deep for SKILL.md dirs (project/personal sources).",
   "new_string": "// ── Composite discoverer (fs + bundled) ─────────────────────────────────────\n\n/// Discoverer that merges filesystem-discovered skills with bundled skills.\n///\n/// Bundled skills are appended at lowest priority: any user skill with the\n/// same name takes precedence. This ensures users can override or shadow a\n/// bundled skill by creating one with the same name in their personal or\n/// project skills directory.\n#[cfg(feature = \"bundled-skills\")]\npub struct CompositeSkillDiscoverer {\n    inner: Box<dyn SkillDiscoverer>,\n    bundled: Arc<crate::bundled::BundledSkillStore>,\n}\n\n#[cfg(feature = \"bundled-skills\")]\nimpl CompositeSkillDiscoverer {\n    pub fn new(\n        inner: Box<dyn SkillDiscoverer>,\n        bundled: Arc<crate::bundled::BundledSkillStore>,\n    ) -> Self {\n        Self { inner, bundled }\n    }\n}\n\n#[cfg(feature = \"bundled-skills\")]\n#[async_trait]\nimpl SkillDiscoverer for CompositeSkillDiscoverer {\n    async fn discover(&self) -> Result<Vec<SkillMetadata>> {\n        let mut skills = self.inner.discover().await?;\n        let seen: std::collections::HashSet<String> =\n            skills.iter().map(|s| s.name.clone()).collect();\n        for bundled in self.bundled.discover() {\n            if !seen.contains(&bundled.name) {\n                skills.push(bundled);\n            }\n        }\n        Ok(skills)\n    }\n}\n\n// ── Filesystem scanning helpers ─────────────────────────────────────────────\n\n/// Scan one level deep for SKILL.md dirs (project/personal sources)."
 }
@@ -1748,7 +1748,7 @@ id: toolu_01MX8QwJXHV2K8djK4iSweyZ
 tool_result
 id: toolu_01MX8QwJXHV2K8djK4iSweyZ
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/discover.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/discover.rs has been updated successfully.
 ```
 
 > AGENT
@@ -1762,7 +1762,7 @@ id: toolu_01HzEPkUdZPtB5LmRpQwn9hQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/Cargo.toml",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/Cargo.toml",
   "old_string": "[features]\ndefault       = [\"firecrawl\", \"fs-tools\", \"metrics\", \"wasm\"]",
   "new_string": "[features]\nbundled-skills = [\"moltis-skills/bundled-skills\"]\ndefault        = [\"firecrawl\", \"fs-tools\", \"metrics\", \"wasm\"]"
 }
@@ -1773,7 +1773,7 @@ id: toolu_01HzEPkUdZPtB5LmRpQwn9hQ
 tool_result
 id: toolu_01HzEPkUdZPtB5LmRpQwn9hQ
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/Cargo.toml has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/Cargo.toml has been updated successfully.
 ```
 
 > AGENT
@@ -1786,7 +1786,7 @@ tool_use Read
 id: toolu_01NXSxju8Ex54YVULZcnQ3nY
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/Cargo.toml",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/Cargo.toml",
   "offset": 92,
   "limit": 50
 }
@@ -1856,7 +1856,7 @@ id: toolu_016bk6GJJ3F5f88YevE875zg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/Cargo.toml",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/Cargo.toml",
   "old_string": "agent = []\ncaldav = [\"dep:moltis-caldav\"]\ndefault = [\n  \"agent\",\n  \"caldav\",\n  \"code-index-builtin\",\n  \"file-watcher\",\n  \"firecrawl\",\n  \"fs-tools\",\n  \"graphql\",\n  \"local-llm\",\n  \"local-llm-metal\",\n  \"matrix\",\n  \"mdns\",\n  \"metrics\",\n  \"nostr\",\n  \"openclaw-import\",\n  \"prometheus\",\n  \"push-notifications\",\n  \"qmd\",\n  \"slack\",\n  \"tailscale\",\n  \"tls\",\n  \"trusted-network\",\n  \"vault\",\n  \"voice\",\n  \"wasm\",\n  \"web-ui\",\n  \"whatsapp\",\n]\ncode-index-builtin = [\"moltis-code-index/builtin\"]",
   "new_string": "agent = []\nbundled-skills = [\"moltis-skills/bundled-skills\", \"moltis-tools/bundled-skills\"]\ncaldav = [\"dep:moltis-caldav\"]\ndefault = [\n  \"agent\",\n  \"bundled-skills\",\n  \"caldav\",\n  \"code-index-builtin\",\n  \"file-watcher\",\n  \"firecrawl\",\n  \"fs-tools\",\n  \"graphql\",\n  \"local-llm\",\n  \"local-llm-metal\",\n  \"matrix\",\n  \"mdns\",\n  \"metrics\",\n  \"nostr\",\n  \"openclaw-import\",\n  \"prometheus\",\n  \"push-notifications\",\n  \"qmd\",\n  \"slack\",\n  \"tailscale\",\n  \"tls\",\n  \"trusted-network\",\n  \"vault\",\n  \"voice\",\n  \"wasm\",\n  \"web-ui\",\n  \"whatsapp\",\n]\ncode-index-builtin = [\"moltis-code-index/builtin\"]"
 }
@@ -1867,7 +1867,7 @@ id: toolu_016bk6GJJ3F5f88YevE875zg
 tool_result
 id: toolu_016bk6GJJ3F5f88YevE875zg
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/Cargo.toml has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/Cargo.toml has been updated successfully.
 ```
 
 > AGENT
@@ -1881,7 +1881,7 @@ id: toolu_01Ma2By3nR9cQXxGob6bWrUp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/cli/Cargo.toml",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/cli/Cargo.toml",
   "old_string": "default = [\n  \"agent\",\n  \"caldav\",\n  \"code-splitter\",\n  \"file-watcher\",\n  \"firecrawl\",\n  \"fs-tools\",\n  \"graphql\",\n  \"jemalloc\",\n  \"llm-compaction\",\n  \"local-llm\",\n  \"local-llm-metal\",\n  \"matrix\",\n  \"mdns\",\n  \"metrics\",\n  \"ngrok\",\n  \"nostr\",\n  \"openclaw-import\",\n  \"prometheus\",\n  \"push-notifications\",\n  \"qmd\",\n  \"slack\",\n  \"tailscale\",\n  \"tls\",\n  \"trusted-network\",\n  \"vault\",\n  \"voice\",\n  \"web-ui\",\n  \"whatsapp\",\n]",
   "new_string": "default = [\n  \"agent\",\n  \"bundled-skills\",\n  \"caldav\",\n  \"code-splitter\",\n  \"file-watcher\",\n  \"firecrawl\",\n  \"fs-tools\",\n  \"graphql\",\n  \"jemalloc\",\n  \"llm-compaction\",\n  \"local-llm\",\n  \"local-llm-metal\",\n  \"matrix\",\n  \"mdns\",\n  \"metrics\",\n  \"ngrok\",\n  \"nostr\",\n  \"openclaw-import\",\n  \"prometheus\",\n  \"push-notifications\",\n  \"qmd\",\n  \"slack\",\n  \"tailscale\",\n  \"tls\",\n  \"trusted-network\",\n  \"vault\",\n  \"voice\",\n  \"web-ui\",\n  \"whatsapp\",\n]"
 }
@@ -1892,7 +1892,7 @@ id: toolu_01Ma2By3nR9cQXxGob6bWrUp
 tool_result
 id: toolu_01Ma2By3nR9cQXxGob6bWrUp
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/cli/Cargo.toml has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/cli/Cargo.toml has been updated successfully.
 ```
 
 > AGENT
@@ -1906,7 +1906,7 @@ id: toolu_01HJFFYhNPSQoau5s1ucrHMM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/cli/Cargo.toml",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/cli/Cargo.toml",
   "old_string": "llm-compaction = [\"moltis-gateway/llm-compaction\"]",
   "new_string": "bundled-skills  = [\"moltis-gateway/bundled-skills\"]\nllm-compaction = [\"moltis-gateway/llm-compaction\"]"
 }
@@ -1917,7 +1917,7 @@ id: toolu_01HJFFYhNPSQoau5s1ucrHMM
 tool_result
 id: toolu_01HJFFYhNPSQoau5s1ucrHMM
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/cli/Cargo.toml has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/cli/Cargo.toml has been updated successfully.
 ```
 
 > AGENT
@@ -1931,7 +1931,7 @@ id: toolu_01PycLjuj2XoPEc1UcP93egy
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/src/skill_tools.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/src/skill_tools.rs",
   "old_string": "/// Tool that reads a skill's body (and optionally a sidecar file) using the\n/// same discoverer that the `<available_skills>` prompt block was built from.\n///\n/// This is the read-side mirror of [`WriteSkillFilesTool`] and replaces the\n/// previous expectation that the model would use an external filesystem MCP\n/// server to load `SKILL.md` by absolute path.\npub struct ReadSkillTool {\n    discoverer: Arc<dyn SkillDiscoverer>,\n}\n\nimpl ReadSkillTool {\n    /// Construct a `ReadSkillTool` backed by the given discoverer.\n    ///\n    /// The discoverer should be the same one used to build the\n    /// `<available_skills>` prompt block so names listed there always resolve.\n    #[must_use]\n    pub fn new(discoverer: Arc<dyn SkillDiscoverer>) -> Self {\n        Self { discoverer }\n    }\n\n    /// Convenience constructor that uses\n    /// [`FsSkillDiscoverer::default_paths`](moltis_skills::discover::FsSkillDiscoverer::default_paths).\n    ///\n    /// Useful for tests and for call sites that already rely on the default\n    /// filesystem layout.\n    #[must_use]\n    pub fn with_default_paths() -> Self {\n        use moltis_skills::discover::FsSkillDiscoverer;\n        let discoverer = Arc::new(FsSkillDiscoverer::new(FsSkillDiscoverer::default_paths()));\n        Self { discoverer }\n    }\n}",
   "new_string": "/// Tool that reads a skill's body (and optionally a sidecar file) using the\n/// same discoverer that the `<available_skills>` prompt block was built from.\n///\n/// This is the read-side mirror of [`WriteSkillFilesTool`] and replaces the\n/// previous expectation that the model […]
 
@@ -1940,7 +1940,7 @@ id: toolu_01PycLjuj2XoPEc1UcP93egy
 tool_result
 id: toolu_01PycLjuj2XoPEc1UcP93egy
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/src/skill_tools.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/src/skill_tools.rs has been updated successfully.
 ```
 
 > AGENT
@@ -1954,7 +1954,7 @@ id: toolu_01JuzQLk9oqy12Newkw1gHvw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/src/skill_tools.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/src/skill_tools.rs",
   "old_string": "        if let Some(rel) = file_path {\n            // Plugin-backed skills can be a single `.md` file rather than\n            // a directory containing SKILL.md. Reject sidecar requests on\n            // such skills with a clear error — otherwise `read_sidecar`\n            // would canonicalise the `.md` file and join the relative\n            // path, producing nonsense like `/plugin/demo.md/references/api.md`\n            // that would fail with an opaque I/O error.\n            if meta.source.as_ref() == Some(&SkillSource::Plugin)\n                && tokio::fs::metadata(&meta.path)\n                    .await\n                    .map(|m| m.is_file())\n                    .unwrap_or(false)\n            {\n                return Err(Error::message(format!(\n                    \"plugin skill '{name}' is a single .md file and has no \\\n                     sidecar directory; omit file_path to read the body\"\n                ))\n                .into());\n            }\n            return read_sidecar(name, &meta.path, rel).await;\n        }\n\n        read_primary(name, meta).await",
   "new_string": "        // Bundled skills are served from the embedded store, not the filesystem.\n        #[cfg(feature = \"bundled-skills\")]\n        if meta.source.as_ref() == Some(&SkillSource::Bundled) {\n            if let Some(ref store) = self.bundled_store {\n                return read_bundled(name, meta, store, file_path);\n            }\n        }\n\n        if let Some(rel) = file_path {\n            // Plugin-backed skills can be a single `.md` file rather than\n            // a directory containing SKILL.md. Reject sidecar requests on\n            // such skills with a clear error — otherwise `read_sidecar`\n            // would canonicalise the `.md` file and join the relative\n            // path, […]
 
@@ -1963,7 +1963,7 @@ id: toolu_01JuzQLk9oqy12Newkw1gHvw
 tool_result
 id: toolu_01JuzQLk9oqy12Newkw1gHvw
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/src/skill_tools.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/src/skill_tools.rs has been updated successfully.
 ```
 
 > AGENT
@@ -1977,7 +1977,7 @@ id: toolu_01BScGjbGAwMdk2iercDDcH9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/src/skill_tools.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/src/skill_tools.rs",
   "old_string": "    let source_label = match meta.source.as_ref() {\n        Some(SkillSource::Project) => \"project\",\n        Some(SkillSource::Personal) => \"personal\",\n        Some(SkillSource::Plugin) => \"plugin\",\n        Some(SkillSource::Registry) => \"registry\",\n        None => \"unknown\",\n    };",
   "new_string": "    let source_label = match meta.source.as_ref() {\n        Some(SkillSource::Project) => \"project\",\n        Some(SkillSource::Personal) => \"personal\",\n        Some(SkillSource::Plugin) => \"plugin\",\n        Some(SkillSource::Registry) => \"registry\",\n        Some(SkillSource::Bundled) => \"bundled\",\n        None => \"unknown\",\n    };"
 }
@@ -1988,7 +1988,7 @@ id: toolu_01BScGjbGAwMdk2iercDDcH9
 tool_result
 id: toolu_01BScGjbGAwMdk2iercDDcH9
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/src/skill_tools.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/src/skill_tools.rs has been updated successfully.
 ```
 
 > AGENT
@@ -2002,7 +2002,7 @@ id: toolu_01LjbmGiC1dVFkc6dMjECxbg
 ```json
 {
   "pattern": "^/// Read the main SKILL.md body",
-  "path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/src/skill_tools.rs",
+  "path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/src/skill_tools.rs",
   "output_mode": "content",
   "-n": true
 }
@@ -2023,7 +2023,7 @@ id: toolu_01Av1aJ7TyXM56kRfkCsknZ3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/src/skill_tools.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/src/skill_tools.rs",
   "old_string": "/// Read the main SKILL.md body (or the plugin's `.md` file) plus the list of",
   "new_string": "/// Read a bundled skill from the embedded store (no filesystem I/O).\n#[cfg(feature = \"bundled-skills\")]\nfn read_bundled(\n    name: &str,\n    meta: &moltis_skills::types::SkillMetadata,\n    store: &moltis_skills::bundled::BundledSkillStore,\n    file_path: Option<&str>,\n) -> anyhow::Result<Value> {\n    if let Some(rel) = file_path {\n        // Sidecar read from bundled store.\n        return match store.read_sidecar(name, rel) {\n            Some((bytes, true)) => {\n                let text = String::from_utf8_lossy(&bytes);\n                Ok(json!({\n                    \"name\": name,\n                    \"file_path\": rel,\n                    \"bytes\": bytes.len(),\n                    \"content\": text,\n                    \"is_binary\": false,\n                }))\n            },\n            Some((bytes, false)) => Ok(json!({\n                \"name\": name,\n                \"file_path\": rel,\n                \"bytes\": bytes.len(),\n                \"is_binary\": true,\n                \"note\": format!(\"Binary file ({} bytes). Contents omitted.\", bytes.len()),\n            })),\n            None => {\n                let available = store.list_sidecars(name);\n                let hint = if available.is_empty() {\n                    \"(none)\".to_string()\n                } else {\n                    available\n                        .iter()\n                        .map(|(p, _)| p.as_str())\n                        .collect::<Vec<_>>()\n                        .join(\", \")\n                };\n                Err(Error::message(format!(\n                    \"sidecar file '{rel}' not found in bundled skill '{name}'. \\\n                     Available sidecar files: {hint}\"\n                ))\n                .into())\n            },\n        };\n    }\n\n    // Primary read from bundled store.\n    let body = store.read_skill(name).ok_or_else(|| {\n        Error::message(format!(\"bundled skill '{name}' body not readable\"))\n    })?;\n\n    let linked: Vec<Value> = store\n        .list_sidecars(name)\n        .into_iter()\n        .map(|(path, bytes)| json!({\"path\": path, \"bytes\": bytes}))\n        .collect();\n\n    let mut response = serde_json::Map::new();\n    response.insert(\"name\".into(), json!(name));\n    response.insert(\"description\".into(), json!(meta.description));\n    response.insert(\"source\".into(), […]
 
@@ -2032,7 +2032,7 @@ id: toolu_01Av1aJ7TyXM56kRfkCsknZ3
 tool_result
 id: toolu_01Av1aJ7TyXM56kRfkCsknZ3
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/src/skill_tools.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/src/skill_tools.rs has been updated successfully.
 ```
 
 > AGENT
@@ -2045,7 +2045,7 @@ tool_use Read
 id: toolu_01HrjeMraPU74Q629vneV4Lq
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/server/prepare_core/post_state.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/server/prepare_core/post_state.rs",
   "offset": 1046,
   "limit": 35
 }
@@ -2100,7 +2100,7 @@ id: toolu_018iH5H9LTPffrip539czVv2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/server/prepare_core/post_state.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/server/prepare_core/post_state.rs",
   "old_string": "        {\n            use moltis_skills::discover::FsSkillDiscoverer;\n\n            tool_registry.register(Box::new(moltis_tools::skill_tools::CreateSkillTool::new(\n                data_dir.clone(),\n            )));\n            tool_registry.register(Box::new(moltis_tools::skill_tools::UpdateSkillTool::new(\n                data_dir.clone(),\n            )));\n            tool_registry.register(Box::new(moltis_tools::skill_tools::DeleteSkillTool::new(\n                data_dir.clone(),\n            )));\n            let read_discoverer = Arc::new(FsSkillDiscoverer::new(\n                FsSkillDiscoverer::default_paths_for(&data_dir),\n            ));\n            tool_registry.register(Box::new(moltis_tools::skill_tools::ReadSkillTool::new(\n                read_discoverer,\n            )));\n            if config.skills.enable_agent_sidecar_files {\n                tool_registry.register(Box::new(\n                    moltis_tools::skill_tools::WriteSkillFilesTool::new(data_dir.clone()),\n                ));\n            }\n        }",
   "new_string": "        {\n            use moltis_skills::discover::FsSkillDiscoverer;\n\n            tool_registry.register(Box::new(moltis_tools::skill_tools::CreateSkillTool::new(\n                data_dir.clone(),\n            )));\n            tool_registry.register(Box::new(moltis_tools::skill_tools::UpdateSkillTool::new(\n                data_dir.clone(),\n            )));\n            tool_registry.register(Box::new(moltis_tools::skill_tools::DeleteSkillTool::new(\n                data_dir.clone(),\n            )));\n\n            let fs_discoverer = FsSkillDiscoverer::new(\n                FsSkillDiscoverer::default_paths_for(&data_dir),\n            );\n\n            #[cfg(feature = \"bundled-skills\")]\n            {\n                let bundled_store =\n                    Arc::new(moltis_skills::bundled::BundledSkillStore::new());\n                let read_discoverer: Arc<dyn moltis_skills::discover::SkillDiscoverer> =\n                    Arc::new(moltis_skills::discover::CompositeSkillDiscoverer::new(\n                        Box::new(fs_discoverer),\n                        Arc::clone(&bundled_store),\n                    ));\n                tool_registry.register(Box::new(\n                    moltis_tools::skill_tools::ReadSkillTool::with_bundled(\n                        read_discoverer,\n                        bundled_store,\n                    ),\n                ));\n            }\n            #[cfg(not(feature = \"bundled-skills\"))]\n            {\n                let read_discoverer = Arc::new(fs_discoverer);\n                tool_registry.register(Box::new(\n                    moltis_tools::skill_tools::ReadSkillTool::new(read_discoverer),\n                ));\n            }\n\n            if config.skills.enable_agent_sidecar_files {\n                tool_registry.register(Box::new(\n                    moltis_tools::skill_tools::WriteSkillFilesTool::new(data_dir.clone()),\n                ));\n            }\n        }"
 }
@@ -2111,7 +2111,7 @@ id: toolu_018iH5H9LTPffrip539czVv2
 tool_result
 id: toolu_018iH5H9LTPffrip539czVv2
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/server/prepare_core/post_state.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/server/prepare_core/post_state.rs has been updated successfully.
 ```
 
 > AGENT
@@ -2124,7 +2124,7 @@ tool_use Read
 id: toolu_01Dram93qht72hKneSQUu5wu
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/services.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/services.rs",
   "offset": 233,
   "limit": 25
 }
@@ -2169,7 +2169,7 @@ id: toolu_017pomFSihQxmMTQ27v4bT15
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/services.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/services.rs",
   "old_string": "    async fn list(&self) -> ServiceResult {\n        use moltis_skills::{\n            discover::{FsSkillDiscoverer, SkillDiscoverer},\n            requirements::check_requirements,\n        };\n        let search_paths = FsSkillDiscoverer::default_paths();\n        let discoverer = FsSkillDiscoverer::new(search_paths);\n        let skills = discoverer.discover().await.map_err(ServiceError::message)?;",
   "new_string": "    async fn list(&self) -> ServiceResult {\n        use moltis_skills::{\n            discover::{FsSkillDiscoverer, SkillDiscoverer},\n            requirements::check_requirements,\n        };\n        let fs_discoverer = FsSkillDiscoverer::new(FsSkillDiscoverer::default_paths());\n\n        #[cfg(feature = \"bundled-skills\")]\n        let skills = {\n            let bundled = std::sync::Arc::new(moltis_skills::bundled::BundledSkillStore::new());\n            let composite = moltis_skills::discover::CompositeSkillDiscoverer::new(\n                Box::new(fs_discoverer),\n                bundled,\n            );\n            composite.discover().await.map_err(ServiceError::message)?\n        };\n        #[cfg(not(feature = \"bundled-skills\"))]\n        let skills = fs_discoverer.discover().await.map_err(ServiceError::message)?;"
 }
@@ -2180,7 +2180,7 @@ id: toolu_017pomFSihQxmMTQ27v4bT15
 tool_result
 id: toolu_017pomFSihQxmMTQ27v4bT15
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/services.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/services.rs has been updated successfully.
 ```
 
 > AGENT
@@ -2193,7 +2193,7 @@ tool_use Read
 id: toolu_01TPN7nH9p8m1e9TT1qvADcF
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/services.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/services.rs",
   "offset": 848,
   "limit": 30
 }
@@ -2242,7 +2242,7 @@ tool_use Read
 id: toolu_01Ujfpjs2nZiCJDv5vhjDsD8
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/services.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/services.rs",
   "offset": 877,
   "limit": 10
 }
@@ -2272,7 +2272,7 @@ id: toolu_01VKu2Ei9uR152UouW5LG8e5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/services.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/services.rs",
   "old_string": "        // Discover the skill to get its requirements\n        let search_paths = FsSkillDiscoverer::default_paths();\n        let discoverer = FsSkillDiscoverer::new(search_paths);\n        let skills = discoverer.discover().await.map_err(ServiceError::message)?;",
   "new_string": "        // Discover the skill to get its requirements\n        let fs_discoverer = FsSkillDiscoverer::new(FsSkillDiscoverer::default_paths());\n\n        #[cfg(feature = \"bundled-skills\")]\n        let skills = {\n            let bundled = std::sync::Arc::new(moltis_skills::bundled::BundledSkillStore::new());\n            let composite = moltis_skills::discover::CompositeSkillDiscoverer::new(\n                Box::new(fs_discoverer),\n                bundled,\n            );\n            composite.discover().await.map_err(ServiceError::message)?\n        };\n        #[cfg(not(feature = \"bundled-skills\"))]\n        let skills = fs_discoverer.discover().await.map_err(ServiceError::message)?;"
 }
@@ -2283,7 +2283,7 @@ id: toolu_01VKu2Ei9uR152UouW5LG8e5
 tool_result
 id: toolu_01VKu2Ei9uR152UouW5LG8e5
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/services.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/services.rs has been updated successfully.
 ```
 
 > AGENT
@@ -2330,7 +2330,7 @@ id: toolu_01Gv8GvGWb28iArEL3HRCBAT
 ```json
 {
   "pattern": "SkillSource::",
-  "path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/api.rs",
+  "path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/api.rs",
   "output_mode": "content",
   "-C": 3
 }
@@ -2361,7 +2361,7 @@ id: toolu_01KhHqFaCy3WDm1YpRwUtYjw
 ```json
 {
   "pattern": "SkillSource::",
-  "path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/portability.rs",
+  "path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/portability.rs",
   "output_mode": "content",
   "-C": 3
 }
@@ -2388,7 +2388,7 @@ id: toolu_01HoehSB6fVULw6HFLL8djdM
 ```json
 {
   "pattern": "SkillSource::",
-  "path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/install.rs",
+  "path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/install.rs",
   "output_mode": "content",
   "-C": 3
 }
@@ -2423,7 +2423,7 @@ id: toolu_013yz77NqsCPvnDFJ3SjYKdJ
 ```json
 {
   "pattern": "SkillSource::",
-  "path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/src/skill_tools/read.rs",
+  "path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/src/skill_tools/read.rs",
   "output_mode": "content",
   "-C": 3
 }
@@ -2510,7 +2510,7 @@ tool_use Read
 id: toolu_01CMSsZDNZheTzFwuMK3CE5q
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/services.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/services.rs",
   "offset": 248,
   "limit": 30
 }
@@ -2641,7 +2641,7 @@ id: toolu_017nsAmUE5AmjPn19zxETY2e
     Checking rustls-platform-verifier v0.6.2
     Checking hyper-rustls v0.27.7
     Checking reqwest v0.13.2
-    Checking moltis-skills v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills)
+    Checking moltis-skills v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills)
 error[E0004]: non-exhaustive patterns: `&SkillSource::Bundled` not covered
    --> crates/skills/src/discover.rs:66:19
     |
@@ -2677,7 +2677,7 @@ tool_use Read
 id: toolu_013Sjz6wgyYkqyFaHeX8VWif
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/discover.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/discover.rs",
   "offset": 60,
   "limit": 25
 }
@@ -2722,7 +2722,7 @@ id: toolu_01Mp6rGMDHPruzzP7Xj6rhyw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/discover.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/discover.rs",
   "old_string": "            match source {\n                // Project/Personal: scan one level deep (always enabled).\n                SkillSource::Project | SkillSource::Personal => {\n                    discover_flat(base_path, source, &mut skills);\n                },\n                // Registry: use manifest to filter by enabled state.\n                SkillSource::Registry => {\n                    discover_registry(base_path, &mut skills);\n                },\n                // Plugin: use plugins manifest to filter by enabled state.\n                SkillSource::Plugin => {\n                    discover_plugins(base_path, &mut skills);\n                },\n            }",
   "new_string": "            match source {\n                // Project/Personal: scan one level deep (always enabled).\n                SkillSource::Project | SkillSource::Personal => {\n                    discover_flat(base_path, source, &mut skills);\n                },\n                // Registry: use manifest to filter by enabled state.\n                SkillSource::Registry => {\n                    discover_registry(base_path, &mut skills);\n                },\n                // Plugin: use plugins manifest to filter by enabled state.\n                SkillSource::Plugin => {\n                    discover_plugins(base_path, &mut skills);\n                },\n                // Bundled skills are handled by CompositeSkillDiscoverer,\n                // not by filesystem path scanning.\n                SkillSource::Bundled => {},\n            }"
 }
@@ -2733,7 +2733,7 @@ id: toolu_01Mp6rGMDHPruzzP7Xj6rhyw
 tool_result
 id: toolu_01Mp6rGMDHPruzzP7Xj6rhyw
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/discover.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/discover.rs has been updated successfully.
 ```
 
 > TOOL
@@ -2753,7 +2753,7 @@ id: toolu_01EP4YMPmhzhymrFrEQjjx3R
 tool_result
 id: toolu_01EP4YMPmhzhymrFrEQjjx3R
 ```
-    Checking moltis-skills v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills)
+    Checking moltis-skills v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.83s
 ```
 
@@ -2782,21 +2782,21 @@ id: toolu_01Sci1pTxakbK5qxrrAD6fn7
     Checking reqwest v0.12.28
     Checking reqwest-eventsource v0.6.0
     Checking async-openai v0.32.4
-    Checking moltis-common v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/common)
-    Checking moltis-skills v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills)
+    Checking moltis-common v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/common)
+    Checking moltis-skills v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills)
     Checking genai v0.5.3
-    Checking moltis-sessions v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/sessions)
-    Checking moltis-oauth v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/oauth)
-    Checking moltis-media v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/media)
-    Checking moltis-agents v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/agents)
+    Checking moltis-sessions v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/sessions)
+    Checking moltis-oauth v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/oauth)
+    Checking moltis-media v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/media)
+    Checking moltis-agents v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/agents)
     Checking wiggle v36.0.7
     Checking wasmtime-wasi-io v36.0.7
     Checking wasmtime-wasi v36.0.7
-    Checking moltis-cron v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/cron)
-    Checking moltis-providers v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/providers)
+    Checking moltis-cron v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/cron)
+    Checking moltis-providers v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/providers)
     Checking chromiumoxide v0.8.0
-    Checking moltis-browser v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/browser)
-    Checking moltis-tools v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/tools)
+    Checking moltis-browser v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/browser)
+    Checking moltis-tools v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/tools)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 54.17s
 ```
 
@@ -2854,7 +2854,7 @@ id: toolu_01LZhuuC8cmM5hj1Aoq3DXYy
 ```json
 {
   "pattern": "match source",
-  "path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src",
+  "path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src",
   "output_mode": "content",
   "-n": true
 }
@@ -2875,7 +2875,7 @@ tool_use Read
 id: toolu_014zXz3r7Boz1ec2wniTGHWa
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/watcher.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/watcher.rs",
   "offset": 75,
   "limit": 15
 }
@@ -2910,7 +2910,7 @@ id: toolu_01M4AqzhjHWuaMkd68sWTKvi
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/watcher.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/watcher.rs",
   "old_string": "        match source {\n            SkillSource::Project | SkillSource::Personal => {\n                insert_watch_spec(&mut specs, path.clone(), RecursiveMode::Recursive);\n            },\n            SkillSource::Registry | SkillSource::Plugin => {},\n        }",
   "new_string": "        match source {\n            SkillSource::Project | SkillSource::Personal => {\n                insert_watch_spec(&mut specs, path.clone(), RecursiveMode::Recursive);\n            },\n            // Registry, Plugin, and Bundled skills are not watched for changes.\n            SkillSource::Registry | SkillSource::Plugin | SkillSource::Bundled => {},\n        }"
 }
@@ -2921,7 +2921,7 @@ id: toolu_01M4AqzhjHWuaMkd68sWTKvi
 tool_result
 id: toolu_01M4AqzhjHWuaMkd68sWTKvi
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/watcher.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/watcher.rs has been updated successfully.
 ```
 
 > TOOL
@@ -2990,7 +2990,7 @@ id: toolu_013yqqNgY34xJWsLjVaPbCRb
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/services.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/services.rs",
   "old_string": "            let bundled = std::sync::Arc::new(moltis_skills::bundled::BundledSkillStore::new());",
   "new_string": "            let bundled = Arc::new(moltis_skills::bundled::BundledSkillStore::new());"
 }
@@ -3001,7 +3001,7 @@ id: toolu_013yqqNgY34xJWsLjVaPbCRb
 tool_result
 id: toolu_013yqqNgY34xJWsLjVaPbCRb
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/services.rs has been updated. All occurrences were successfully replaced.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/services.rs has been updated. All occurrences were successfully replaced.
 ```
 
 > AGENT
@@ -3015,7 +3015,7 @@ id: toolu_014rAbYW8hu1tz8b4Cj2bUbA
 ```json
 {
   "pattern": "use std::sync::Arc",
-  "path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/services.rs",
+  "path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/services.rs",
   "output_mode": "content"
 }
 ```
@@ -3035,7 +3035,7 @@ id: toolu_01F63KsAZCHdWRqkjTWnf7SX
 ```json
 {
   "pattern": "^use.*Arc",
-  "path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/services.rs",
+  "path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/services.rs",
   "output_mode": "content"
 }
 ```
@@ -3058,7 +3058,7 @@ tool_use Read
 id: toolu_019bNzpvLXAau3YZBn2qLPyf
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/services.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/services.rs",
   "limit": 15
 }
 ```
@@ -3091,7 +3091,7 @@ tool_use Read
 id: toolu_01K1RQEiTVc4BYeyMoX7PeKq
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/services.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/services.rs",
   "offset": 14,
   "limit": 15
 }
@@ -3140,7 +3140,7 @@ id: toolu_017y3hKHJA514Q5ogMGLQbgG
 tool_result
 id: toolu_017y3hKHJA514Q5ogMGLQbgG
 ```
-    Checking moltis-gateway v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway)
+    Checking moltis-gateway v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 25.52s
 ```
 
@@ -3263,7 +3263,7 @@ id: toolu_01H6jiWvhEGgP3k6ZDhfr5JQ
 ```json
 {
   "pattern": "^name",
-  "path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/cli/Cargo.toml",
+  "path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/cli/Cargo.toml",
   "output_mode": "content"
 }
 ```
@@ -3296,15 +3296,15 @@ id: toolu_014jKwxPTAcSRFZG8mCn6Rva
 tool_result
 id: toolu_014jKwxPTAcSRFZG8mCn6Rva
 ```
-    Checking moltis-qmd v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/qmd)
-    Checking moltis-chat v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/chat)
+    Checking moltis-qmd v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/qmd)
+    Checking moltis-chat v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/chat)
     Checking matrix-sdk v0.16.0
-    Checking moltis-code-index v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/code-index)
-    Checking moltis-matrix v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/matrix)
-    Checking moltis-gateway v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway)
-    Checking moltis-httpd v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/httpd)
-    Checking moltis-web v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web)
-    Checking moltis v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/cli)
+    Checking moltis-code-index v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/code-index)
+    Checking moltis-matrix v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/matrix)
+    Checking moltis-gateway v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway)
+    Checking moltis-httpd v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/httpd)
+    Checking moltis-web v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web)
+    Checking moltis v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/cli)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 3m 23s
 ```
 
@@ -3329,7 +3329,7 @@ id: toolu_01Kz27VeZmntcc8kYfhbtcG8
 tool_result
 id: toolu_01Kz27VeZmntcc8kYfhbtcG8
 ```
-  error: error opening 'CMakeFiles/llama.dir/llama-impl.cpp.o.d': /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/target/debug/build/llama-cpp-sys-2-b5f36ec0250abfa8/out/build/src/CMakeFiles/llama.dir/llama-impl.cpp.o.d: No space left on device
+  error: error opening 'CMakeFiles/llama.dir/llama-impl.cpp.o.d': /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/target/debug/build/llama-cpp-sys-2-b5f36ec0250abfa8/out/build/src/CMakeFiles/llama.dir/llama-impl.cpp.o.d: No space left on device
   1 error generated.
   fatal error: error in backend: IO failure on output stream: No space left on device
   make[2]: *** [src/CMakeFiles/llama.dir/llama-impl.cpp.o] Error 1
@@ -3342,16 +3342,16 @@ id: toolu_01Kz27VeZmntcc8kYfhbtcG8
   make[1]: *** [src/CMakeFiles/llama.dir/all] Error 2
   make: *** [all] Error 2
 
-  thread 'main' (367837200) panicked at /Users/penso/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cmake-0.1.57/src/lib.rs:1132:5:
+  thread 'main' (367837200) panicked at /home/<USER>/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cmake-0.1.57/src/lib.rs:1132:5:
 
   command did not execute successfully, got: exit status: 2
 
   build script failed, must exit now
   note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
-error: failed to write to `/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/target/debug/deps/rmetaqkzKAz/full.rmeta`: No space left on device (os error 28)
+error: failed to write to `/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/target/debug/deps/rmetaqkzKAz/full.rmeta`: No space left on device (os error 28)
 
 error: could not compile `matrix-sdk-crypto` (lib) due to 1 previous error
-error: failed to write to `/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/target/debug/deps/rmetasNU235/full.rmeta`: No space left on device (os error 28)
+error: failed to write to `/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/target/debug/deps/rmetasNU235/full.rmeta`: No space left on device (os error 28)
 
 error: could not compile `wasmtime-wasi` (lib) due to 1 previous error
 ```
@@ -3453,7 +3453,7 @@ id: toolu_0115NzbRb5qT8bcf1X5J4dRC
 tool_result
 id: toolu_0115NzbRb5qT8bcf1X5J4dRC
 ```
-Diff in /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/server/prepare_core/post_state.rs:1060:
+Diff in /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/server/prepare_core/post_state.rs:1060:
                  data_dir.clone(),
              )));
  
@@ -3465,14 +3465,14 @@ Diff in /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/gatewa
 (B[m 
              #[cfg(feature = "bundled-skills")]
              {
-Diff in /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/server/prepare_core/post_state.rs:1069:
+Diff in /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/server/prepare_core/post_state.rs:1069:
 [31m-                let bundled_store =
 (B[m[31m-                    Arc::new(moltis_skills::bundled::BundledSkillStore::new());
 (B[m[32m+                let bundled_store = Arc::new(moltis_skills::bundled::BundledSkillStore::new());
 (B[m                 let read_discoverer: Arc<dyn moltis_skills::discover::SkillDiscoverer> =
                      Arc::new(moltis_skills::discover::CompositeSkillDiscoverer::new(
                          Box::new(fs_discoverer),
-Diff in /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/server/prepare_core/post_state.rs:1083:
+Diff in /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/server/prepare_core/post_state.rs:1083:
              #[cfg(not(feature = "bundled-skills"))]
              {
                  let read_discoverer = Arc::new(fs_discoverer);
@@ -3550,30 +3550,30 @@ id: toolu_019iD1axkdPTBaZnb1Vv9Nz2
 tool_result
 id: toolu_019iD1axkdPTBaZnb1Vv9Nz2
 ```
-    Checking moltis-skills v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills)
+    Checking moltis-skills v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 2.13s
-    Checking moltis-skills v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills)
-    Checking moltis-agents v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/agents)
-    Checking moltis-cron v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/cron)
-    Checking moltis-providers v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/providers)
-    Checking moltis-tools v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/tools)
+    Checking moltis-skills v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills)
+    Checking moltis-agents v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/agents)
+    Checking moltis-cron v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/cron)
+    Checking moltis-providers v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/providers)
+    Checking moltis-tools v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/tools)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 9.22s
-    Checking moltis-skills v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills)
-    Checking moltis-agents v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/agents)
-    Checking moltis-providers v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/providers)
-    Checking moltis-cron v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/cron)
-    Checking moltis-auto-reply v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/auto-reply)
-    Checking moltis-mcp-agent-bridge v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/mcp-agent-bridge)
-    Checking moltis-caldav v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/caldav)
-    Checking moltis-telegram v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/telegram)
-    Checking moltis-tools v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/tools)
-    Checking moltis-provider-setup v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/provider-setup)
-    Checking moltis-memory v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/memory)
-    Checking moltis-auth v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/auth)
-    Checking moltis-qmd v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/qmd)
-    Checking moltis-chat v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/chat)
-    Checking moltis-code-index v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/code-index)
-    Checking moltis-gateway v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway)
+    Checking moltis-skills v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills)
+    Checking moltis-agents v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/agents)
+    Checking moltis-providers v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/providers)
+    Checking moltis-cron v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/cron)
+    Checking moltis-auto-reply v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/auto-reply)
+    Checking moltis-mcp-agent-bridge v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/mcp-agent-bridge)
+    Checking moltis-caldav v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/caldav)
+    Checking moltis-telegram v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/telegram)
+    Checking moltis-tools v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/tools)
+    Checking moltis-provider-setup v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/provider-setup)
+    Checking moltis-memory v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/memory)
+    Checking moltis-auth v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/auth)
+    Checking moltis-qmd v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/qmd)
+    Checking moltis-chat v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/chat)
+    Checking moltis-code-index v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/code-index)
+    Checking moltis-gateway v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 14.27s
 test formats::tests::test_claude_code_marketplace_scan ... ok
 test requirements::tests::test_missing_bin_is_blocked ... ok
@@ -3877,77 +3877,77 @@ id: toolu_019fVgEas9Cp8KGrj6pdYNyt
 tool_result
 id: toolu_019fVgEas9Cp8KGrj6pdYNyt
 ```
-/Users/penso/code/hermes-agent/skills/apple/apple-notes/SKILL.md
-/Users/penso/code/hermes-agent/skills/apple/apple-reminders/SKILL.md
-/Users/penso/code/hermes-agent/skills/apple/findmy/SKILL.md
-/Users/penso/code/hermes-agent/skills/apple/imessage/SKILL.md
-/Users/penso/code/hermes-agent/skills/autonomous-ai-agents/claude-code/SKILL.md
-/Users/penso/code/hermes-agent/skills/autonomous-ai-agents/codex/SKILL.md
-/Users/penso/code/hermes-agent/skills/autonomous-ai-agents/hermes-agent/SKILL.md
-/Users/penso/code/hermes-agent/skills/autonomous-ai-agents/opencode/SKILL.md
-/Users/penso/code/hermes-agent/skills/creative/architecture-diagram/SKILL.md
-/Users/penso/code/hermes-agent/skills/creative/ascii-art/SKILL.md
-/Users/penso/code/hermes-agent/skills/creative/ascii-video/SKILL.md
-/Users/penso/code/hermes-agent/skills/creative/baoyu-infographic/SKILL.md
-/Users/penso/code/hermes-agent/skills/creative/creative-ideation/SKILL.md
-/Users/penso/code/hermes-agent/skills/creative/excalidraw/SKILL.md
-/Users/penso/code/hermes-agent/skills/creative/manim-video/SKILL.md
-/Users/penso/code/hermes-agent/skills/creative/p5js/SKILL.md
-/Users/penso/code/hermes-agent/skills/creative/pixel-art/SKILL.md
-/Users/penso/code/hermes-agent/skills/creative/popular-web-designs/SKILL.md
-/Users/penso/code/hermes-agent/skills/creative/songwriting-and-ai-music/SKILL.md
-/Users/penso/code/hermes-agent/skills/data-science/jupyter-live-kernel/SKILL.md
-/Users/penso/code/hermes-agent/skills/devops/webhook-subscriptions/SKILL.md
-/Users/penso/code/hermes-agent/skills/dogfood/SKILL.md
-/Users/penso/code/hermes-agent/skills/email/himalaya/SKILL.md
-/Users/penso/code/hermes-agent/skills/gaming/minecraft-modpack-server/SKILL.md
-/Users/penso/code/hermes-agent/skills/gaming/pokemon-player/SKILL.md
-/Users/penso/code/hermes-agent/skills/github/codebase-inspection/SKILL.md
-/Users/penso/code/hermes-agent/skills/github/github-auth/SKILL.md
-/Users/penso/code/hermes-agent/skills/github/github-code-review/SKILL.md
-/Users/penso/code/hermes-agent/skills/github/github-issues/SKILL.md
-/Users/penso/code/hermes-agent/skills/github/github-pr-workflow/SKILL.md
-/Users/penso/code/hermes-agent/skills/github/github-repo-management/SKILL.md
-/Users/penso/code/hermes-agent/skills/mcp/native-mcp/SKILL.md
-/Users/penso/code/hermes-agent/skills/media/gif-search/SKILL.md
-/Users/penso/code/hermes-agent/skills/media/heartmula/SKILL.md
-/Users/penso/code/hermes-agent/skills/media/songsee/SKILL.md
-/Users/penso/code/hermes-agent/skills/media/youtube-content/SKILL.md
-/Users/penso/code/hermes-agent/skills/mlops/evaluation/lm-evaluation-harness/SKILL.md
-/Users/penso/code/hermes-agent/skills/mlops/evaluation/weights-and-biases/SKILL.md
-/Users/penso/code/hermes-agent/skills/mlops/huggingface-hub/SKILL.md
-/Users/penso/code/hermes-agent/skills/mlops/inference/llama-cpp/SKILL.md
-/Users/penso/code/hermes-agent/skills/mlops/inference/obliteratus/SKILL.md
-/Users/penso/code/hermes-agent/skills/mlops/inference/outlines/SKILL.md
-/Users/penso/code/hermes-agent/skills/mlops/inference/vllm/SKILL.md
-/Users/penso/code/hermes-agent/skills/mlops/models/audiocraft/SKILL.md
-/Users/penso/code/hermes-agent/skills/mlops/models/segment-anything/SKILL.md
-/Users/penso/code/hermes-agent/skills/mlops/research/dspy/SKILL.md
-/Users/penso/code/hermes-agent/skills/mlops/training/axolotl/SKILL.md
-/Users/penso/code/hermes-agent/skills/mlops/training/trl-fine-tuning/SKILL.md
-/Users/penso/code/hermes-agent/skills/mlops/training/unsloth/SKILL.md
-/Users/penso/code/hermes-agent/skills/note-taking/obsidian/SKILL.md
-/Users/penso/code/hermes-agent/skills/productivity/google-workspace/SKILL.md
-/Users/penso/code/hermes-agent/skills/productivity/linear/SKILL.md
-/Users/penso/code/hermes-agent/skills/productivity/maps/SKILL.md
-/Users/penso/code/hermes-agent/skills/productivity/nano-pdf/SKILL.md
-/Users/penso/code/hermes-agent/skills/productivity/notion/SKILL.md
-/Users/penso/code/hermes-agent/skills/productivity/ocr-and-documents/SKILL.md
-/Users/penso/code/hermes-agent/skills/productivity/powerpoint/SKILL.md
-/Users/penso/code/hermes-agent/skills/red-teaming/godmode/SKILL.md
-/Users/penso/code/hermes-agent/skills/research/arxiv/SKILL.md
-/Users/penso/code/hermes-agent/skills/research/blogwatcher/SKILL.md
-/Users/penso/code/hermes-agent/skills/research/llm-wiki/SKILL.md
-/Users/penso/code/hermes-agent/skills/research/polymarket/SKILL.md
-/Users/penso/code/hermes-agent/skills/research/research-paper-writing/SKILL.md
-/Users/penso/code/hermes-agent/skills/smart-home/openhue/SKILL.md
-/Users/penso/code/hermes-agent/skills/social-media/xurl/SKILL.md
-/Users/penso/code/hermes-agent/skills/software-development/plan/SKILL.md
-/Users/penso/code/hermes-agent/skills/software-development/requesting-code-review/SKILL.md
-/Users/penso/code/hermes-agent/skills/software-development/subagent-driven-development/SKILL.md
-/Users/penso/code/hermes-agent/skills/software-development/systematic-debugging/SKILL.md
-/Users/penso/code/hermes-agent/skills/software-development/test-driven-development/SKILL.md
-/Users/penso/code/hermes-agent/skills/software-development/writing-plans/SKILL.md
+/home/<USER>/code/hermes-agent/skills/apple/apple-notes/SKILL.md
+/home/<USER>/code/hermes-agent/skills/apple/apple-reminders/SKILL.md
+/home/<USER>/code/hermes-agent/skills/apple/findmy/SKILL.md
+/home/<USER>/code/hermes-agent/skills/apple/imessage/SKILL.md
+/home/<USER>/code/hermes-agent/skills/autonomous-ai-agents/claude-code/SKILL.md
+/home/<USER>/code/hermes-agent/skills/autonomous-ai-agents/codex/SKILL.md
+/home/<USER>/code/hermes-agent/skills/autonomous-ai-agents/hermes-agent/SKILL.md
+/home/<USER>/code/hermes-agent/skills/autonomous-ai-agents/opencode/SKILL.md
+/home/<USER>/code/hermes-agent/skills/creative/architecture-diagram/SKILL.md
+/home/<USER>/code/hermes-agent/skills/creative/ascii-art/SKILL.md
+/home/<USER>/code/hermes-agent/skills/creative/ascii-video/SKILL.md
+/home/<USER>/code/hermes-agent/skills/creative/baoyu-infographic/SKILL.md
+/home/<USER>/code/hermes-agent/skills/creative/creative-ideation/SKILL.md
+/home/<USER>/code/hermes-agent/skills/creative/excalidraw/SKILL.md
+/home/<USER>/code/hermes-agent/skills/creative/manim-video/SKILL.md
+/home/<USER>/code/hermes-agent/skills/creative/p5js/SKILL.md
+/home/<USER>/code/hermes-agent/skills/creative/pixel-art/SKILL.md
+/home/<USER>/code/hermes-agent/skills/creative/popular-web-designs/SKILL.md
+/home/<USER>/code/hermes-agent/skills/creative/songwriting-and-ai-music/SKILL.md
+/home/<USER>/code/hermes-agent/skills/data-science/jupyter-live-kernel/SKILL.md
+/home/<USER>/code/hermes-agent/skills/devops/webhook-subscriptions/SKILL.md
+/home/<USER>/code/hermes-agent/skills/dogfood/SKILL.md
+/home/<USER>/code/hermes-agent/skills/email/himalaya/SKILL.md
+/home/<USER>/code/hermes-agent/skills/gaming/minecraft-modpack-server/SKILL.md
+/home/<USER>/code/hermes-agent/skills/gaming/pokemon-player/SKILL.md
+/home/<USER>/code/hermes-agent/skills/github/codebase-inspection/SKILL.md
+/home/<USER>/code/hermes-agent/skills/github/github-auth/SKILL.md
+/home/<USER>/code/hermes-agent/skills/github/github-code-review/SKILL.md
+/home/<USER>/code/hermes-agent/skills/github/github-issues/SKILL.md
+/home/<USER>/code/hermes-agent/skills/github/github-pr-workflow/SKILL.md
+/home/<USER>/code/hermes-agent/skills/github/github-repo-management/SKILL.md
+/home/<USER>/code/hermes-agent/skills/mcp/native-mcp/SKILL.md
+/home/<USER>/code/hermes-agent/skills/media/gif-search/SKILL.md
+/home/<USER>/code/hermes-agent/skills/media/heartmula/SKILL.md
+/home/<USER>/code/hermes-agent/skills/media/songsee/SKILL.md
+/home/<USER>/code/hermes-agent/skills/media/youtube-content/SKILL.md
+/home/<USER>/code/hermes-agent/skills/mlops/evaluation/lm-evaluation-harness/SKILL.md
+/home/<USER>/code/hermes-agent/skills/mlops/evaluation/weights-and-biases/SKILL.md
+/home/<USER>/code/hermes-agent/skills/mlops/huggingface-hub/SKILL.md
+/home/<USER>/code/hermes-agent/skills/mlops/inference/llama-cpp/SKILL.md
+/home/<USER>/code/hermes-agent/skills/mlops/inference/obliteratus/SKILL.md
+/home/<USER>/code/hermes-agent/skills/mlops/inference/outlines/SKILL.md
+/home/<USER>/code/hermes-agent/skills/mlops/inference/vllm/SKILL.md
+/home/<USER>/code/hermes-agent/skills/mlops/models/audiocraft/SKILL.md
+/home/<USER>/code/hermes-agent/skills/mlops/models/segment-anything/SKILL.md
+/home/<USER>/code/hermes-agent/skills/mlops/research/dspy/SKILL.md
+/home/<USER>/code/hermes-agent/skills/mlops/training/axolotl/SKILL.md
+/home/<USER>/code/hermes-agent/skills/mlops/training/trl-fine-tuning/SKILL.md
+/home/<USER>/code/hermes-agent/skills/mlops/training/unsloth/SKILL.md
+/home/<USER>/code/hermes-agent/skills/note-taking/obsidian/SKILL.md
+/home/<USER>/code/hermes-agent/skills/productivity/google-workspace/SKILL.md
+/home/<USER>/code/hermes-agent/skills/productivity/linear/SKILL.md
+/home/<USER>/code/hermes-agent/skills/productivity/maps/SKILL.md
+/home/<USER>/code/hermes-agent/skills/productivity/nano-pdf/SKILL.md
+/home/<USER>/code/hermes-agent/skills/productivity/notion/SKILL.md
+/home/<USER>/code/hermes-agent/skills/productivity/ocr-and-documents/SKILL.md
+/home/<USER>/code/hermes-agent/skills/productivity/powerpoint/SKILL.md
+/home/<USER>/code/hermes-agent/skills/red-teaming/godmode/SKILL.md
+/home/<USER>/code/hermes-agent/skills/research/arxiv/SKILL.md
+/home/<USER>/code/hermes-agent/skills/research/blogwatcher/SKILL.md
+/home/<USER>/code/hermes-agent/skills/research/llm-wiki/SKILL.md
+/home/<USER>/code/hermes-agent/skills/research/polymarket/SKILL.md
+/home/<USER>/code/hermes-agent/skills/research/research-paper-writing/SKILL.md
+/home/<USER>/code/hermes-agent/skills/smart-home/openhue/SKILL.md
+/home/<USER>/code/hermes-agent/skills/social-media/xurl/SKILL.md
+/home/<USER>/code/hermes-agent/skills/software-development/plan/SKILL.md
+/home/<USER>/code/hermes-agent/skills/software-development/requesting-code-review/SKILL.md
+/home/<USER>/code/hermes-agent/skills/software-development/subagent-driven-development/SKILL.md
+/home/<USER>/code/hermes-agent/skills/software-development/systematic-debugging/SKILL.md
+/home/<USER>/code/hermes-agent/skills/software-development/test-driven-development/SKILL.md
+/home/<USER>/code/hermes-agent/skills/software-development/writing-plans/SKILL.md
 ```
 
 > AGENT
@@ -3970,26 +3970,26 @@ id: toolu_012TBNg3DWefxrW4R5Qg6dpc
 tool_result
 id: toolu_012TBNg3DWefxrW4R5Qg6dpc
 ```
-/Users/penso/code/hermes-agent/skills/research/polymarket/references
-/Users/penso/code/hermes-agent/skills/research/polymarket/scripts
-/Users/penso/code/hermes-agent/skills/research/arxiv/scripts
-/Users/penso/code/hermes-agent/skills/research/research-paper-writing/references
-/Users/penso/code/hermes-agent/skills/research/research-paper-writing/templates
-/Users/penso/code/hermes-agent/skills/mlops/research/dspy/references
-/Users/penso/code/hermes-agent/skills/mlops/training/trl-fine-tuning/references
-/Users/penso/code/hermes-agent/skills/mlops/training/trl-fine-tuning/templates
-/Users/penso/code/hermes-agent/skills/mlops/training/axolotl/references
-/Users/penso/code/hermes-agent/skills/mlops/training/unsloth/references
-/Users/penso/code/hermes-agent/skills/mlops/models/audiocraft/references
-/Users/penso/code/hermes-agent/skills/mlops/models/segment-anything/references
-/Users/penso/code/hermes-agent/skills/mlops/inference/vllm/references
-/Users/penso/code/hermes-agent/skills/mlops/inference/obliteratus/references
-/Users/penso/code/hermes-agent/skills/mlops/inference/obliteratus/templates
-/Users/penso/code/hermes-agent/skills/mlops/inference/llama-cpp/references
-/Users/penso/code/hermes-agent/skills/mlops/inference/outlines/references
-/Users/penso/code/hermes-agent/skills/mlops/evaluation/lm-evaluation-harness/references
-/Users/penso/code/hermes-agent/skills/mlops/evaluation/weights-and-biases/references
-/Users/penso/code/hermes-agent/skills/github/github-auth/scripts
+/home/<USER>/code/hermes-agent/skills/research/polymarket/references
+/home/<USER>/code/hermes-agent/skills/research/polymarket/scripts
+/home/<USER>/code/hermes-agent/skills/research/arxiv/scripts
+/home/<USER>/code/hermes-agent/skills/research/research-paper-writing/references
+/home/<USER>/code/hermes-agent/skills/research/research-paper-writing/templates
+/home/<USER>/code/hermes-agent/skills/mlops/research/dspy/references
+/home/<USER>/code/hermes-agent/skills/mlops/training/trl-fine-tuning/references
+/home/<USER>/code/hermes-agent/skills/mlops/training/trl-fine-tuning/templates
+/home/<USER>/code/hermes-agent/skills/mlops/training/axolotl/references
+/home/<USER>/code/hermes-agent/skills/mlops/training/unsloth/references
+/home/<USER>/code/hermes-agent/skills/mlops/models/audiocraft/references
+/home/<USER>/code/hermes-agent/skills/mlops/models/segment-anything/references
+/home/<USER>/code/hermes-agent/skills/mlops/inference/vllm/references
+/home/<USER>/code/hermes-agent/skills/mlops/inference/obliteratus/references
+/home/<USER>/code/hermes-agent/skills/mlops/inference/obliteratus/templates
+/home/<USER>/code/hermes-agent/skills/mlops/inference/llama-cpp/references
+/home/<USER>/code/hermes-agent/skills/mlops/inference/outlines/references
+/home/<USER>/code/hermes-agent/skills/mlops/evaluation/lm-evaluation-harness/references
+/home/<USER>/code/hermes-agent/skills/mlops/evaluation/weights-and-biases/references
+/home/<USER>/code/hermes-agent/skills/github/github-auth/scripts
 ```
 
 > TOOL
@@ -4031,21 +4031,21 @@ id: toolu_018jnksdtsiYdWjogC4ETRZ4
 tool_result
 id: toolu_018jnksdtsiYdWjogC4ETRZ4
 ```
-==> /Users/penso/code/hermes-agent/skills/dogfood/SKILL.md <==
+==> /home/<USER>/code/hermes-agent/skills/dogfood/SKILL.md <==
 ---
 name: dogfood
 description: Systematic exploratory QA testing of web applications — find bugs, capture evidence, and generate structured reports
 version: 1.0.0
 metadata:
 
-==> /Users/penso/code/hermes-agent/skills/autonomous-ai-agents/hermes-agent/SKILL.md <==
+==> /home/<USER>/code/hermes-agent/skills/autonomous-ai-agents/hermes-agent/SKILL.md <==
 ---
 name: hermes-agent
 description: Complete guide to using and extending Hermes Agent — CLI usage, setup, configuration, spawning additional agents, gateway platforms, skills, voice, tools, profiles, and a concise contributor reference. Load this skill when helping users configure Hermes, troubleshoot issues, spawn agent instances, or make code contributions.
 version: 2.0.0
 author: Hermes Agent + Teknium
 
-==> /Users/penso/code/hermes-agent/skills/mcp/native-mcp/SKILL.md <==
+==> /home/<USER>/code/hermes-agent/skills/mcp/native-mcp/SKILL.md <==
 ---
 name: native-mcp
 description: Built-in MCP (Model Context Protocol) client that connects to external MCP servers, discovers their tools, and registers them as native Hermes Agent tools. Supports stdio and HTTP transports with automatic reconnection, security filtering, and zero-config tool injection.
@@ -4065,7 +4065,7 @@ tool_use Read
 id: toolu_01EY7WY2W688o8Wr4ocgZ3qY
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs",
   "offset": 96,
   "limit": 30
 }
@@ -4119,7 +4119,7 @@ id: toolu_011UHKFV1irKjRa8i9quS4tS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs",
   "old_string": "/// Walk `assets/<category>/<skill>/SKILL.md` on the filesystem.\nfn discover_from_fs(assets_dir: &Path) -> Vec<SkillMetadata> {\n    let mut skills = Vec::new();\n    let Ok(categories) = std::fs::read_dir(assets_dir) else {\n        return skills;\n    };\n    for cat_entry in categories.flatten() {\n        if !cat_entry.path().is_dir() {\n            continue;\n        }\n        let Ok(skill_dirs) = std::fs::read_dir(cat_entry.path()) else {\n            continue;\n        };\n        for skill_entry in skill_dirs.flatten() {\n            let skill_dir = skill_entry.path();\n            if !skill_dir.is_dir() {\n                continue;\n            }\n            let skill_md = skill_dir.join(\"SKILL.md\");\n            let Ok(content) = std::fs::read_to_string(&skill_md) else {\n                continue;\n            };\n            match parse::parse_metadata(&content, &skill_dir) {\n                Ok(mut meta) => {\n                    meta.source = Some(SkillSource::Bundled);\n                    skills.push(meta);\n                },\n                Err(e) => {\n                    tracing::warn!(path = %skill_md.display(), %e, \"failed to parse bundled SKILL.md\");\n                },\n            }\n        }\n    }\n    skills\n}",
   "new_string": "/// Recursively walk the assets directory for SKILL.md files on the filesystem.\n/// Supports arbitrary nesting (e.g. `mlops/training/axolotl/SKILL.md`).\nfn discover_from_fs(assets_dir: &Path) -> Vec<SkillMetadata> {\n    let mut skills = Vec::new();\n    discover_from_fs_recursive(assets_dir, &mut skills);\n    skills\n}\n\nfn discover_from_fs_recursive(dir: &Path, skills: &mut Vec<SkillMetadata>) {\n    let Ok(entries) = std::fs::read_dir(dir) else {\n        return;\n    };\n    for entry in entries.flatten() {\n        let path = entry.path();\n        if !path.is_dir() {\n            continue;\n        }\n        let skill_md = path.join(\"SKILL.md\");\n        if skill_md.is_file() {\n            let Ok(content) = std::fs::read_to_string(&skill_md) else {\n                continue;\n            };\n            match parse::parse_metadata(&content, &path) {\n                Ok(mut meta) => {\n                    meta.source = Some(SkillSource::Bundled);\n                    skills.push(meta);\n                },\n                Err(e) => […]
 
@@ -4128,7 +4128,7 @@ id: toolu_011UHKFV1irKjRa8i9quS4tS
 tool_result
 id: toolu_011UHKFV1irKjRa8i9quS4tS
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs has been updated successfully.
 ```
 
 > AGENT
@@ -4142,7 +4142,7 @@ id: toolu_01Vqi3nGZ6sAwk5RF7S6UHbq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs",
   "old_string": "/// Walk the embedded `include_dir!` tree for SKILL.md files.\nfn discover_from_embedded() -> Vec<SkillMetadata> {\n    let mut skills = Vec::new();\n    for category_dir in BUNDLED_ASSETS.dirs() {\n        for skill_dir in category_dir.dirs() {\n            let Some(skill_md) = skill_dir.get_file(\"SKILL.md\") else {\n                continue;\n            };\n            let Ok(content) = std::str::from_utf8(skill_md.contents()) else {\n                continue;\n            };\n            // Use a synthetic path for the skill directory (never hits filesystem).\n            let synthetic_path =\n                PathBuf::from(\"__bundled__\").join(skill_dir.path().to_string_lossy().as_ref());\n            match parse::parse_metadata(content, &synthetic_path) {\n                Ok(mut meta) => {\n                    meta.source = Some(SkillSource::Bundled);\n                    skills.push(meta);\n                },\n                Err(e) => {\n                    tracing::warn!(\n                        path = %skill_dir.path().display(),\n                        %e,\n                        \"failed to parse embedded bundled SKILL.md\"\n                    );\n                },\n            }\n        }\n    }\n    skills\n}",
   "new_string": "/// Recursively walk the embedded `include_dir!` tree for SKILL.md files.\nfn discover_from_embedded() -> Vec<SkillMetadata> {\n    let mut skills = Vec::new();\n    discover_from_embedded_recursive(&BUNDLED_ASSETS, &mut skills);\n    skills\n}\n\nfn discover_from_embedded_recursive(\n    dir: &include_dir::Dir<'static>,\n    skills: &mut Vec<SkillMetadata>,\n) {\n    for sub_dir in dir.dirs() {\n        if let Some(skill_md) = sub_dir.get_file(\"SKILL.md\") {\n            let Ok(content) = std::str::from_utf8(skill_md.contents()) else {\n                continue;\n            };\n            let synthetic_path =\n                PathBuf::from(\"__bundled__\").join(sub_dir.path().to_string_lossy().as_ref());\n            match parse::parse_metadata(content, &synthetic_path) {\n                Ok(mut meta) => {\n                    meta.source = Some(SkillSource::Bundled);\n                    skills.push(meta);\n                },\n                Err(e) => {\n                    tracing::warn!(\n                        path = %sub_dir.path().display(),\n                        %e,\n                        \"failed to parse embedded bundled SKILL.md\"\n                    );\n                },\n            }\n        } else {\n            // No SKILL.md here — recurse into subdirectories.\n            discover_from_embedded_recursive(sub_dir, […]
 
@@ -4151,7 +4151,7 @@ id: toolu_01Vqi3nGZ6sAwk5RF7S6UHbq
 tool_result
 id: toolu_01Vqi3nGZ6sAwk5RF7S6UHbq
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs has been updated successfully.
 ```
 
 > AGENT
@@ -4165,7 +4165,7 @@ id: toolu_016a5YgkHzcgUqKJ6rSHgjeo
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs",
   "old_string": "/// Find a skill directory by name under the two-level `<category>/<skill>/` layout.\nfn find_skill_dir_fs(assets_dir: &Path, name: &str) -> Option<PathBuf> {\n    let categories = std::fs::read_dir(assets_dir).ok()?;\n    for cat_entry in categories.flatten() {\n        if !cat_entry.path().is_dir() {\n            continue;\n        }\n        let candidate = cat_entry.path().join(name);\n        if candidate.is_dir() && candidate.join(\"SKILL.md\").is_file() {\n            return Some(candidate);\n        }\n    }\n    None\n}",
   "new_string": "/// Recursively find a skill directory by name under the assets tree.\nfn find_skill_dir_fs(dir: &Path, name: &str) -> Option<PathBuf> {\n    let entries = std::fs::read_dir(dir).ok()?;\n    for entry in entries.flatten() {\n        let path = entry.path();\n        if !path.is_dir() {\n            continue;\n        }\n        let dir_name = path.file_name().and_then(|n| n.to_str()).unwrap_or(\"\");\n        if dir_name == name && path.join(\"SKILL.md\").is_file() {\n            return Some(path);\n        }\n        // Recurse into subdirectories (category nesting).\n        if let Some(found) = find_skill_dir_fs(&path, name) {\n            return Some(found);\n        }\n    }\n    None\n}"
 }
@@ -4176,7 +4176,7 @@ id: toolu_016a5YgkHzcgUqKJ6rSHgjeo
 tool_result
 id: toolu_016a5YgkHzcgUqKJ6rSHgjeo
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs has been updated successfully.
 ```
 
 > TOOL
@@ -4186,7 +4186,7 @@ id: toolu_01G8WjWzw1QaxzwJ7rgoY2ty
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs",
   "old_string": "/// Find a skill subdirectory by name in the embedded two-level layout.\nfn find_skill_dir_embedded(name: &str) -> Option<&'static include_dir::Dir<'static>> {\n    for category_dir in BUNDLED_ASSETS.dirs() {\n        for skill_dir in category_dir.dirs() {\n            // Match on the directory name (last path component).\n            let dir_name = skill_dir\n                .path()\n                .file_name()\n                .and_then(|n| n.to_str())\n                .unwrap_or(\"\");\n            if dir_name == name && skill_dir.get_file(\"SKILL.md\").is_some() {\n                return Some(skill_dir);\n            }\n        }\n    }\n    None\n}",
   "new_string": "/// Recursively find a skill subdirectory by name in the embedded tree.\nfn find_skill_dir_embedded(name: &str) -> Option<&'static include_dir::Dir<'static>> {\n    find_skill_dir_embedded_recursive(&BUNDLED_ASSETS, name)\n}\n\nfn find_skill_dir_embedded_recursive(\n    dir: &'static include_dir::Dir<'static>,\n    name: &str,\n) -> Option<&'static include_dir::Dir<'static>> {\n    for sub_dir in dir.dirs() {\n        let dir_name = sub_dir\n            .path()\n            .file_name()\n            .and_then(|n| n.to_str())\n            .unwrap_or(\"\");\n        if dir_name == name && sub_dir.get_file(\"SKILL.md\").is_some() {\n            return Some(sub_dir);\n        }\n        if let Some(found) = find_skill_dir_embedded_recursive(sub_dir, name) {\n            return Some(found);\n        }\n    }\n    None\n}"
 }
@@ -4197,7 +4197,7 @@ id: toolu_01G8WjWzw1QaxzwJ7rgoY2ty
 tool_result
 id: toolu_01G8WjWzw1QaxzwJ7rgoY2ty
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs has been updated successfully.
 ```
 
 > AGENT
@@ -4210,7 +4210,7 @@ tool_use Bash
 id: toolu_01AcoY6Mq61WbprpQbLqMY2q
 ```json
 {
-  "command": "rm -rf /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/research/arxiv",
+  "command": "rm -rf /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/research/arxiv",
   "description": "Remove manually created arxiv skill"
 }
 ```
@@ -4233,7 +4233,7 @@ tool_use Bash
 id: toolu_01HGURaZufDsVe9MHSNckZnJ
 ```json
 {
-  "command": "rsync -av --exclude='.git' \\\n  --exclude='autonomous-ai-agents/hermes-agent' \\\n  --exclude='mcp/native-mcp' \\\n  --exclude='index-cache' \\\n  --exclude='inference-sh' \\\n  --exclude='diagramming' \\\n  --exclude='gifs' \\\n  --exclude='feeds' \\\n  --exclude='domain' \\\n  ~/code/hermes-agent/skills/ \\\n  /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/ 2>&1 | tail -20",
+  "command": "rsync -av --exclude='.git' \\\n  --exclude='autonomous-ai-agents/hermes-agent' \\\n  --exclude='mcp/native-mcp' \\\n  --exclude='index-cache' \\\n  --exclude='inference-sh' \\\n  --exclude='diagramming' \\\n  --exclude='gifs' \\\n  --exclude='feeds' \\\n  --exclude='domain' \\\n  ~/code/hermes-agent/skills/ \\\n  /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/ 2>&1 | tail -20",
   "description": "Copy all Hermes skills to bundled assets"
 }
 ```
@@ -4271,7 +4271,7 @@ tool_use Bash
 id: toolu_01Kg1pgoBvG4MqXPxBXcYcBH
 ```json
 {
-  "command": "find /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets -name \"SKILL.md\" | wc -l",
+  "command": "find /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets -name \"SKILL.md\" | wc -l",
   "description": "Count copied skills"
 }
 ```
@@ -4294,7 +4294,7 @@ tool_use Bash
 id: toolu_01J99dwMWaciC9uhRww3Y82t
 ```json
 {
-  "command": "find /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets -maxdepth 2 -name \"DESCRIPTION.md\" -o -name \"README.md\" -o -name \"*.py\" -not -path \"*/scripts/*\" | head -20",
+  "command": "find /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets -maxdepth 2 -name \"DESCRIPTION.md\" -o -name \"README.md\" -o -name \"*.py\" -not -path \"*/scripts/*\" | head -20",
   "description": "Find non-skill files at category level"
 }
 ```
@@ -4304,21 +4304,21 @@ id: toolu_01J99dwMWaciC9uhRww3Y82t
 tool_result
 id: toolu_01J99dwMWaciC9uhRww3Y82t
 ```
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/apple/DESCRIPTION.md
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/research/DESCRIPTION.md
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/gaming/DESCRIPTION.md
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/social-media/DESCRIPTION.md
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/data-science/DESCRIPTION.md
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/mlops/DESCRIPTION.md
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/mcp/DESCRIPTION.md
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/github/DESCRIPTION.md
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/note-taking/DESCRIPTION.md
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/creative/DESCRIPTION.md
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/email/DESCRIPTION.md
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/smart-home/DESCRIPTION.md
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/autonomous-ai-agents/DESCRIPTION.md
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/productivity/DESCRIPTION.md
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/media/DESCRIPTION.md
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/apple/DESCRIPTION.md
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/research/DESCRIPTION.md
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/gaming/DESCRIPTION.md
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/social-media/DESCRIPTION.md
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/data-science/DESCRIPTION.md
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/mlops/DESCRIPTION.md
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/mcp/DESCRIPTION.md
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/github/DESCRIPTION.md
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/note-taking/DESCRIPTION.md
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/creative/DESCRIPTION.md
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/email/DESCRIPTION.md
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/smart-home/DESCRIPTION.md
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/autonomous-ai-agents/DESCRIPTION.md
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/productivity/DESCRIPTION.md
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/media/DESCRIPTION.md
 ```
 
 > TOOL
@@ -4327,7 +4327,7 @@ tool_use Bash
 id: toolu_01PpEL8qXEhRhkXDw3JW8DbS
 ```json
 {
-  "command": "find /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets -maxdepth 2 -name \"DESCRIPTION.md\" -delete && echo \"Cleaned DESCRIPTION.md files\"",
+  "command": "find /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets -maxdepth 2 -name \"DESCRIPTION.md\" -delete && echo \"Cleaned DESCRIPTION.md files\"",
   "description": "Remove category-level DESCRIPTION.md files"
 }
 ```
@@ -4350,7 +4350,7 @@ tool_use Bash
 id: toolu_01BnTNf2Q6X5Zaqsav97xLXy
 ```json
 {
-  "command": "find /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets -type d -empty | sort",
+  "command": "find /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets -type d -empty | sort",
   "description": "Find empty directories"
 }
 ```
@@ -4360,7 +4360,7 @@ id: toolu_01BnTNf2Q6X5Zaqsav97xLXy
 tool_result
 id: toolu_01BnTNf2Q6X5Zaqsav97xLXy
 ```
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/mcp
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/mcp
 ```
 
 > TOOL
@@ -4369,7 +4369,7 @@ tool_use Bash
 id: toolu_015sq5qgw7QCyZqiLN6icepn
 ```json
 {
-  "command": "rmdir /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/mcp",
+  "command": "rmdir /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/mcp",
   "description": "Remove empty mcp directory"
 }
 ```
@@ -4507,7 +4507,7 @@ tool_use Bash
 id: toolu_01KfTC3ThaZU1kngVUvm5SkH
 ```json
 {
-  "command": "rm -rf /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/* && rsync -av --exclude='.git' \\\n  --exclude='autonomous-ai-agents/hermes-agent' \\\n  --exclude='mcp/native-mcp' \\\n  --exclude='index-cache' \\\n  --exclude='inference-sh' \\\n  --exclude='diagramming' \\\n  --exclude='gifs' \\\n  --exclude='feeds' \\\n  --exclude='domain' \\\n  ~/code/hermes-agent/skills/ \\\n  /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/ 2>&1 | tail -5",
+  "command": "rm -rf /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/* && rsync -av --exclude='.git' \\\n  --exclude='autonomous-ai-agents/hermes-agent' \\\n  --exclude='mcp/native-mcp' \\\n  --exclude='index-cache' \\\n  --exclude='inference-sh' \\\n  --exclude='diagramming' \\\n  --exclude='gifs' \\\n  --exclude='feeds' \\\n  --exclude='domain' \\\n  ~/code/hermes-agent/skills/ \\\n  /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/ 2>&1 | tail -5",
   "description": "Re-copy all Hermes skills"
 }
 ```
@@ -4665,7 +4665,7 @@ id: toolu_017eagdGrmqyuswVo98n4reV
 tool_result
 id: toolu_017eagdGrmqyuswVo98n4reV
 ```
-    Checking moltis-skills v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills)
+    Checking moltis-skills v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.39s
 ```
 
@@ -4686,7 +4686,7 @@ id: toolu_01Qh5pui3vDjqZP8rEUVmPTw
 tool_result
 id: toolu_01Qh5pui3vDjqZP8rEUVmPTw
 ```
-   Compiling moltis-skills v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills)
+   Compiling moltis-skills v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills)
     Finished `test` profile [unoptimized + debuginfo] target(s) in 1.55s
      Running unittests src/lib.rs (target/debug/deps/moltis_skills-6284adebb6dc4e68)
 
@@ -4898,10 +4898,10 @@ id: toolu_01SWD7Uz8iEc39CLViX9b2fj
 tool_result
 id: toolu_01SWD7Uz8iEc39CLViX9b2fj
 ```
-    Checking moltis-qmd v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/qmd)
-    Checking moltis-chat v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/chat)
-    Checking moltis-code-index v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/code-index)
-    Checking moltis-gateway v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway)
+    Checking moltis-qmd v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/qmd)
+    Checking moltis-chat v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/chat)
+    Checking moltis-code-index v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/code-index)
+    Checking moltis-gateway v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 11.33s
 ```
 
@@ -5093,7 +5093,7 @@ tool_result
 id: toolu_01XRbaZFC2sc3syJpJjHna7B
 ```
 <persisted-output>
-Output too large (39.5KB). Full output saved to: /Users/penso/.claude/projects/-Users-penso--superset-worktrees-moltis-stealth-hovercraft/ed791c89-3b1f-46b9-8e56-2d948f24f0e5/tool-results/bc03zmhdd.txt
+Output too large (39.5KB). Full output saved to: /home/<USER>/.claude/projects/-Users-penso--superset-worktrees-moltis-stealth-hovercraft/ed791c89-3b1f-46b9-8e56-2d948f24f0e5/tool-results/bc03zmhdd.txt
 
 Preview (first 2KB):
 [stealth-hovercraft d59d0df3] feat(skills): bundle all 69 Hermes Agent skills
@@ -5169,7 +5169,7 @@ tool_use Read
 id: toolu_01Wijj2gkHc5JRxCDB6oV5qs
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/devops/webhook-subscriptions/SKILL.md"
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/devops/webhook-subscriptions/SKILL.md"
 }
 ```
 
@@ -5311,7 +5311,7 @@ tool_use Read
 id: toolu_01BbFYurQdn6BXA1htYUw67Q
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/devops/webhook-subscriptions/SKILL.md"
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/devops/webhook-subscriptions/SKILL.md"
 }
 ```
 
@@ -5379,7 +5379,7 @@ tool_use Write
 id: toolu_01KacyxYMELboNm4J844BJGu
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/devops/webhook-subscriptions/SKILL.md",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/devops/webhook-subscriptions/SKILL.md",
   "content": "---\nname: webhook-subscriptions\ndescription: Create and manage webhook subscriptions for event-driven agent activation. Use when the user wants external services (GitHub, GitLab, Stripe, Linear, PagerDuty, Sentry, or any generic source) to trigger agent runs by POSTing events to a URL.\nversion: 2.0.0\norigin:\n  source: hermes-agent\n  url: https://github.com/nousresearch/hermes-agent\n  version: 9f22977f\n---\n\n# Webhook Subscriptions\n\nCreate webhook subscriptions so external services can trigger agent runs by POSTing events to Moltis.\n\nWebhooks are available as soon as the Moltis gateway is running — no extra setup needed.\n\n## Ingress Endpoint\n\nEach webhook gets a unique URL:\n\n```\nPOST https://<moltis-host>/api/webhooks/ingest/{public_id}\n```\n\nThe `public_id` is a high-entropy identifier like `wh_a1b2c3d4...` assigned at creation.\n\n## Managing Webhooks\n\nWebhooks are managed via RPC or the web UI. The RPC namespace is `webhooks.*`.\n\n### Create a webhook\n\n```json\n// RPC: webhooks.create\n{\n  \"name\": \"github-issues\",\n  \"description\": \"Triage new GitHub issues\",\n  \"source_profile\": \"github\",\n  \"auth_mode\": \"github_hmac_sha256\",\n  \"auth_config\": { \"secret\": \"your-github-webhook-secret\" },\n  \"event_filter\": { \"allow\": [\"issues.opened\", \"issues.reopened\"] },\n  \"session_mode\": \"per_entity\",\n  \"system_prompt_suffix\": \"Triage this issue: assign a priority label and suggest next steps.\"\n}\n```\n\nReturns the webhook with its `public_id` (the URL slug) and all configuration.\n\n### List webhooks\n\n```json\n// RPC: webhooks.list\n```\n\n### Get webhook details\n\n```json\n// RPC: webhooks.get\n{ \"id\": 123 }\n```\n\n### Update a webhook\n\n```json\n// RPC: webhooks.update\n{\n  \"id\": 123,\n  \"patch\": {\n    \"enabled\": false,\n    \"event_filter\": { \"allow\": [\"issues.opened\"], \"deny\": [\"issues.closed\"] }\n […]
 
 > TOOL
@@ -5387,7 +5387,7 @@ id: toolu_01KacyxYMELboNm4J844BJGu
 tool_result
 id: toolu_01KacyxYMELboNm4J844BJGu
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/devops/webhook-subscriptions/SKILL.md has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/devops/webhook-subscriptions/SKILL.md has been updated successfully.
 ```
 
 > TOOL
@@ -5623,8 +5623,8 @@ id: toolu_01LodZu44kSMzpTqecdKMqF8
     hermes:
 === creative/pixel-art/SKILL.md === body_hermes_refs=4
     hermes:
-  sys.path.insert(0, "/home/teknium/.hermes/skills/creative/pixel-art/scripts")
-  cd /home/teknium/.hermes/skills/creative/pixel-art/scripts
+  sys.path.insert(0, "/home/<USER>/.hermes/skills/creative/pixel-art/scripts")
+  cd /home/<USER>/.hermes/skills/creative/pixel-art/scripts
 === creative/popular-web-designs/SKILL.md === body_hermes_refs=2
   Each template includes a **Hermes Implementation Notes** block at the top with:
     <!-- Paste the Google Fonts <link> from the template's Hermes notes -->
@@ -5719,7 +5719,7 @@ tool_use Read
 id: toolu_013b6NcVM4nB37pRtvaHdxA3
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/types.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/types.rs",
   "offset": 200,
   "limit": 60
 }
@@ -6220,8 +6220,8 @@ id: toolu_01697ZfPzC1xJsYS6UckGzug
   L38: "source": "hermes-agent",
 
 === creative/pixel-art/SKILL.md (3 refs) ===
-  L142: sys.path.insert(0, "/home/teknium/.hermes/skills/creative/pixel-art/scripts")
-  L164: cd /home/teknium/.hermes/skills/creative/pixel-art/scripts
+  L142: sys.path.insert(0, "/home/<USER>/.hermes/skills/creative/pixel-art/scripts")
+  L164: cd /home/<USER>/.hermes/skills/creative/pixel-art/scripts
   L195: - ffmpeg on PATH (only needed for video — Hermes installs package this)
 
 === creative/popular-web-designs/SKILL.md (2 refs) ===
@@ -6907,36 +6907,36 @@ id: toolu_01P6axy1K9ygF2KFNAYXuz1k
 tool_result
 id: toolu_01P6axy1K9ygF2KFNAYXuz1k
 ```
-/Users/penso/code/openclaw/.agents/skills/parallels-discord-roundtrip/SKILL.md
-/Users/penso/code/openclaw/.agents/skills/openclaw-test-heap-leaks/SKILL.md
-/Users/penso/code/openclaw/.agents/skills/openclaw-pr-maintainer/SKILL.md
-/Users/penso/code/openclaw/.agents/skills/security-triage/SKILL.md
-/Users/penso/code/openclaw/.agents/skills/openclaw-ghsa-maintainer/SKILL.md
-/Users/penso/code/openclaw/.agents/skills/openclaw-release-maintainer/SKILL.md
-/Users/penso/code/openclaw/.agents/skills/openclaw-parallels-smoke/SKILL.md
-/Users/penso/code/openclaw/extensions/open-prose/skills/prose/SKILL.md
-/Users/penso/code/openclaw/extensions/feishu/skills/feishu-perm/SKILL.md
-/Users/penso/code/openclaw/extensions/feishu/skills/feishu-wiki/SKILL.md
-/Users/penso/code/openclaw/extensions/feishu/skills/feishu-drive/SKILL.md
-/Users/penso/code/openclaw/extensions/feishu/skills/feishu-doc/SKILL.md
-/Users/penso/code/openclaw/extensions/lobster/SKILL.md
-/Users/penso/code/openclaw/extensions/acpx/skills/acp-router/SKILL.md
-/Users/penso/code/openclaw/extensions/qqbot/skills/qqbot-channel/SKILL.md
-/Users/penso/code/openclaw/extensions/qqbot/skills/qqbot-remind/SKILL.md
-/Users/penso/code/openclaw/extensions/qqbot/skills/qqbot-media/SKILL.md
-/Users/penso/code/openclaw/extensions/diffs/skills/diffs/SKILL.md
-/Users/penso/code/openclaw/extensions/tavily/skills/tavily/SKILL.md
-/Users/penso/code/openclaw/skills/nano-pdf/SKILL.md
-/Users/penso/code/openclaw/skills/himalaya/SKILL.md
-/Users/penso/code/openclaw/skills/bear-notes/SKILL.md
-/Users/penso/code/openclaw/skills/peekaboo/SKILL.md
-/Users/penso/code/openclaw/skills/model-usage/SKILL.md
-/Users/penso/code/openclaw/skills/blogwatcher/SKILL.md
-/Users/penso/code/openclaw/skills/discord/SKILL.md
-/Users/penso/code/openclaw/skills/coding-agent/SKILL.md
-/Users/penso/code/openclaw/skills/openhue/SKILL.md
-/Users/penso/code/openclaw/skills/gemini/SKILL.md
-/Users/penso/code/openclaw/skills/gifgrep/SKILL.md
+/home/<USER>/code/openclaw/.agents/skills/parallels-discord-roundtrip/SKILL.md
+/home/<USER>/code/openclaw/.agents/skills/openclaw-test-heap-leaks/SKILL.md
+/home/<USER>/code/openclaw/.agents/skills/openclaw-pr-maintainer/SKILL.md
+/home/<USER>/code/openclaw/.agents/skills/security-triage/SKILL.md
+/home/<USER>/code/openclaw/.agents/skills/openclaw-ghsa-maintainer/SKILL.md
+/home/<USER>/code/openclaw/.agents/skills/openclaw-release-maintainer/SKILL.md
+/home/<USER>/code/openclaw/.agents/skills/openclaw-parallels-smoke/SKILL.md
+/home/<USER>/code/openclaw/extensions/open-prose/skills/prose/SKILL.md
+/home/<USER>/code/openclaw/extensions/feishu/skills/feishu-perm/SKILL.md
+/home/<USER>/code/openclaw/extensions/feishu/skills/feishu-wiki/SKILL.md
+/home/<USER>/code/openclaw/extensions/feishu/skills/feishu-drive/SKILL.md
+/home/<USER>/code/openclaw/extensions/feishu/skills/feishu-doc/SKILL.md
+/home/<USER>/code/openclaw/extensions/lobster/SKILL.md
+/home/<USER>/code/openclaw/extensions/acpx/skills/acp-router/SKILL.md
+/home/<USER>/code/openclaw/extensions/qqbot/skills/qqbot-channel/SKILL.md
+/home/<USER>/code/openclaw/extensions/qqbot/skills/qqbot-remind/SKILL.md
+/home/<USER>/code/openclaw/extensions/qqbot/skills/qqbot-media/SKILL.md
+/home/<USER>/code/openclaw/extensions/diffs/skills/diffs/SKILL.md
+/home/<USER>/code/openclaw/extensions/tavily/skills/tavily/SKILL.md
+/home/<USER>/code/openclaw/skills/nano-pdf/SKILL.md
+/home/<USER>/code/openclaw/skills/himalaya/SKILL.md
+/home/<USER>/code/openclaw/skills/bear-notes/SKILL.md
+/home/<USER>/code/openclaw/skills/peekaboo/SKILL.md
+/home/<USER>/code/openclaw/skills/model-usage/SKILL.md
+/home/<USER>/code/openclaw/skills/blogwatcher/SKILL.md
+/home/<USER>/code/openclaw/skills/discord/SKILL.md
+/home/<USER>/code/openclaw/skills/coding-agent/SKILL.md
+/home/<USER>/code/openclaw/skills/openhue/SKILL.md
+/home/<USER>/code/openclaw/skills/gemini/SKILL.md
+/home/<USER>/code/openclaw/skills/gifgrep/SKILL.md
 ```
 
 > TOOL
@@ -6957,78 +6957,78 @@ id: toolu_014VytxADgaHAStWy28m22cy
 ```
       72
 ---
-/Users/penso/code/openclaw/.agents/skills/openclaw-ghsa-maintainer/SKILL.md
-/Users/penso/code/openclaw/.agents/skills/openclaw-parallels-smoke/SKILL.md
-/Users/penso/code/openclaw/.agents/skills/openclaw-pr-maintainer/SKILL.md
-/Users/penso/code/openclaw/.agents/skills/openclaw-release-maintainer/SKILL.md
-/Users/penso/code/openclaw/.agents/skills/openclaw-test-heap-leaks/SKILL.md
-/Users/penso/code/openclaw/.agents/skills/parallels-discord-roundtrip/SKILL.md
-/Users/penso/code/openclaw/.agents/skills/security-triage/SKILL.md
-/Users/penso/code/openclaw/extensions/acpx/skills/acp-router/SKILL.md
-/Users/penso/code/openclaw/extensions/diffs/skills/diffs/SKILL.md
-/Users/penso/code/openclaw/extensions/feishu/skills/feishu-doc/SKILL.md
-/Users/penso/code/openclaw/extensions/feishu/skills/feishu-drive/SKILL.md
-/Users/penso/code/openclaw/extensions/feishu/skills/feishu-perm/SKILL.md
-/Users/penso/code/openclaw/extensions/feishu/skills/feishu-wiki/SKILL.md
-/Users/penso/code/openclaw/extensions/lobster/SKILL.md
-/Users/penso/code/openclaw/extensions/open-prose/skills/prose/SKILL.md
-/Users/penso/code/openclaw/extensions/qqbot/skills/qqbot-channel/SKILL.md
-/Users/penso/code/openclaw/extensions/qqbot/skills/qqbot-media/SKILL.md
-/Users/penso/code/openclaw/extensions/qqbot/skills/qqbot-remind/SKILL.md
-/Users/penso/code/openclaw/extensions/tavily/skills/tavily/SKILL.md
-/Users/penso/code/openclaw/skills/1password/SKILL.md
-/Users/penso/code/openclaw/skills/apple-notes/SKILL.md
-/Users/penso/code/openclaw/skills/apple-reminders/SKILL.md
-/Users/penso/code/openclaw/skills/bear-notes/SKILL.md
-/Users/penso/code/openclaw/skills/blogwatcher/SKILL.md
-/Users/penso/code/openclaw/skills/blucli/SKILL.md
-/Users/penso/code/openclaw/skills/bluebubbles/SKILL.md
-/Users/penso/code/openclaw/skills/camsnap/SKILL.md
-/Users/penso/code/openclaw/skills/canvas/SKILL.md
-/Users/penso/code/openclaw/skills/clawflow-inbox-triage/SKILL.md
-/Users/penso/code/openclaw/skills/clawflow/SKILL.md
-/Users/penso/code/openclaw/skills/clawhub/SKILL.md
-/Users/penso/code/openclaw/skills/coding-agent/SKILL.md
-/Users/penso/code/openclaw/skills/discord/SKILL.md
-/Users/penso/code/openclaw/skills/eightctl/SKILL.md
-/Users/penso/code/openclaw/skills/gemini/SKILL.md
-/Users/penso/code/openclaw/skills/gh-issues/SKILL.md
-/Users/penso/code/openclaw/skills/gifgrep/SKILL.md
-/Users/penso/code/openclaw/skills/github/SKILL.md
-/Users/penso/code/openclaw/skills/gog/SKILL.md
-/Users/penso/code/openclaw/skills/goplaces/SKILL.md
-/Users/penso/code/openclaw/skills/healthcheck/SKILL.md
-/Users/penso/code/openclaw/skills/himalaya/SKILL.md
-/Users/penso/code/openclaw/skills/imsg/SKILL.md
-/Users/penso/code/openclaw/skills/mcporter/SKILL.md
-/Users/penso/code/openclaw/skills/model-usage/SKILL.md
-/Users/penso/code/openclaw/skills/nano-pdf/SKILL.md
-/Users/penso/code/openclaw/skills/node-connect/SKILL.md
-/Users/penso/code/openclaw/skills/notion/SKILL.md
-/Users/penso/code/openclaw/skills/obsidian/SKILL.md
-/Users/penso/code/openclaw/skills/openai-whisper-api/SKILL.md
-/Users/penso/code/openclaw/skills/openai-whisper/SKILL.md
-/Users/penso/code/openclaw/skills/openhue/SKILL.md
-/Users/penso/code/openclaw/skills/oracle/SKILL.md
-/Users/penso/code/openclaw/skills/ordercli/SKILL.md
-/Users/penso/code/openclaw/skills/peekaboo/SKILL.md
-/Users/penso/code/openclaw/skills/sag/SKILL.md
-/Users/penso/code/openclaw/skills/session-logs/SKILL.md
-/Users/penso/code/openclaw/skills/sherpa-onnx-tts/SKILL.md
-/Users/penso/code/openclaw/skills/skill-creator/SKILL.md
-/Users/penso/code/openclaw/skills/slack/SKILL.md
-/Users/penso/code/openclaw/skills/songsee/SKILL.md
-/Users/penso/code/openclaw/skills/sonoscli/SKILL.md
-/Users/penso/code/openclaw/skills/spotify-player/SKILL.md
-/Users/penso/code/openclaw/skills/summarize/SKILL.md
-/Users/penso/code/openclaw/skills/things-mac/SKILL.md
-/Users/penso/code/openclaw/skills/tmux/SKILL.md
-/Users/penso/code/openclaw/skills/trello/SKILL.md
-/Users/penso/code/openclaw/skills/video-frames/SKILL.md
-/Users/penso/code/openclaw/skills/voice-call/SKILL.md
-/Users/penso/code/openclaw/skills/wacli/SKILL.md
-/Users/penso/code/openclaw/skills/weather/SKILL.md
-/Users/penso/code/openclaw/skills/xurl/SKILL.md
+/home/<USER>/code/openclaw/.agents/skills/openclaw-ghsa-maintainer/SKILL.md
+/home/<USER>/code/openclaw/.agents/skills/openclaw-parallels-smoke/SKILL.md
+/home/<USER>/code/openclaw/.agents/skills/openclaw-pr-maintainer/SKILL.md
+/home/<USER>/code/openclaw/.agents/skills/openclaw-release-maintainer/SKILL.md
+/home/<USER>/code/openclaw/.agents/skills/openclaw-test-heap-leaks/SKILL.md
+/home/<USER>/code/openclaw/.agents/skills/parallels-discord-roundtrip/SKILL.md
+/home/<USER>/code/openclaw/.agents/skills/security-triage/SKILL.md
+/home/<USER>/code/openclaw/extensions/acpx/skills/acp-router/SKILL.md
+/home/<USER>/code/openclaw/extensions/diffs/skills/diffs/SKILL.md
+/home/<USER>/code/openclaw/extensions/feishu/skills/feishu-doc/SKILL.md
+/home/<USER>/code/openclaw/extensions/feishu/skills/feishu-drive/SKILL.md
+/home/<USER>/code/openclaw/extensions/feishu/skills/feishu-perm/SKILL.md
+/home/<USER>/code/openclaw/extensions/feishu/skills/feishu-wiki/SKILL.md
+/home/<USER>/code/openclaw/extensions/lobster/SKILL.md
+/home/<USER>/code/openclaw/extensions/open-prose/skills/prose/SKILL.md
+/home/<USER>/code/openclaw/extensions/qqbot/skills/qqbot-channel/SKILL.md
+/home/<USER>/code/openclaw/extensions/qqbot/skills/qqbot-media/SKILL.md
+/home/<USER>/code/openclaw/extensions/qqbot/skills/qqbot-remind/SKILL.md
+/home/<USER>/code/openclaw/extensions/tavily/skills/tavily/SKILL.md
+/home/<USER>/code/openclaw/skills/1password/SKILL.md
+/home/<USER>/code/openclaw/skills/apple-notes/SKILL.md
+/home/<USER>/code/openclaw/skills/apple-reminders/SKILL.md
+/home/<USER>/code/openclaw/skills/bear-notes/SKILL.md
+/home/<USER>/code/openclaw/skills/blogwatcher/SKILL.md
+/home/<USER>/code/openclaw/skills/blucli/SKILL.md
+/home/<USER>/code/openclaw/skills/bluebubbles/SKILL.md
+/home/<USER>/code/openclaw/skills/camsnap/SKILL.md
+/home/<USER>/code/openclaw/skills/canvas/SKILL.md
+/home/<USER>/code/openclaw/skills/clawflow-inbox-triage/SKILL.md
+/home/<USER>/code/openclaw/skills/clawflow/SKILL.md
+/home/<USER>/code/openclaw/skills/clawhub/SKILL.md
+/home/<USER>/code/openclaw/skills/coding-agent/SKILL.md
+/home/<USER>/code/openclaw/skills/discord/SKILL.md
+/home/<USER>/code/openclaw/skills/eightctl/SKILL.md
+/home/<USER>/code/openclaw/skills/gemini/SKILL.md
+/home/<USER>/code/openclaw/skills/gh-issues/SKILL.md
+/home/<USER>/code/openclaw/skills/gifgrep/SKILL.md
+/home/<USER>/code/openclaw/skills/github/SKILL.md
+/home/<USER>/code/openclaw/skills/gog/SKILL.md
+/home/<USER>/code/openclaw/skills/goplaces/SKILL.md
+/home/<USER>/code/openclaw/skills/healthcheck/SKILL.md
+/home/<USER>/code/openclaw/skills/himalaya/SKILL.md
+/home/<USER>/code/openclaw/skills/imsg/SKILL.md
+/home/<USER>/code/openclaw/skills/mcporter/SKILL.md
+/home/<USER>/code/openclaw/skills/model-usage/SKILL.md
+/home/<USER>/code/openclaw/skills/nano-pdf/SKILL.md
+/home/<USER>/code/openclaw/skills/node-connect/SKILL.md
+/home/<USER>/code/openclaw/skills/notion/SKILL.md
+/home/<USER>/code/openclaw/skills/obsidian/SKILL.md
+/home/<USER>/code/openclaw/skills/openai-whisper-api/SKILL.md
+/home/<USER>/code/openclaw/skills/openai-whisper/SKILL.md
+/home/<USER>/code/openclaw/skills/openhue/SKILL.md
+/home/<USER>/code/openclaw/skills/oracle/SKILL.md
+/home/<USER>/code/openclaw/skills/ordercli/SKILL.md
+/home/<USER>/code/openclaw/skills/peekaboo/SKILL.md
+/home/<USER>/code/openclaw/skills/sag/SKILL.md
+/home/<USER>/code/openclaw/skills/session-logs/SKILL.md
+/home/<USER>/code/openclaw/skills/sherpa-onnx-tts/SKILL.md
+/home/<USER>/code/openclaw/skills/skill-creator/SKILL.md
+/home/<USER>/code/openclaw/skills/slack/SKILL.md
+/home/<USER>/code/openclaw/skills/songsee/SKILL.md
+/home/<USER>/code/openclaw/skills/sonoscli/SKILL.md
+/home/<USER>/code/openclaw/skills/spotify-player/SKILL.md
+/home/<USER>/code/openclaw/skills/summarize/SKILL.md
+/home/<USER>/code/openclaw/skills/things-mac/SKILL.md
+/home/<USER>/code/openclaw/skills/tmux/SKILL.md
+/home/<USER>/code/openclaw/skills/trello/SKILL.md
+/home/<USER>/code/openclaw/skills/video-frames/SKILL.md
+/home/<USER>/code/openclaw/skills/voice-call/SKILL.md
+/home/<USER>/code/openclaw/skills/wacli/SKILL.md
+/home/<USER>/code/openclaw/skills/weather/SKILL.md
+/home/<USER>/code/openclaw/skills/xurl/SKILL.md
 ```
 
 > AGENT
@@ -7469,7 +7469,7 @@ tool_use Read
 id: toolu_01Ry347Ubm89t4FNm6xipESY
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/types.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/types.rs",
   "offset": 147,
   "limit": 30
 }
@@ -7519,7 +7519,7 @@ id: toolu_01ArXHsESd9Jo7UWW4cVxVrx
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/types.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/types.rs",
   "old_string": "    /// Filesystem path to the skill directory.\n    #[serde(skip)]\n    pub path: PathBuf,\n    /// Where this skill was discovered.\n    #[serde(skip)]\n    pub source: Option<SkillSource>,",
   "new_string": "    /// Category for grouping in the UI (e.g. \"research\", \"creative\", \"mlops\").\n    /// Derived from the parent directory name for bundled skills.\n    #[serde(skip)]\n    pub category: Option<String>,\n    /// Filesystem path to the skill directory.\n    #[serde(skip)]\n    pub path: PathBuf,\n    /// Where this skill was discovered.\n    #[serde(skip)]\n    pub source: Option<SkillSource>,"
 }
@@ -7530,7 +7530,7 @@ id: toolu_01ArXHsESd9Jo7UWW4cVxVrx
 tool_result
 id: toolu_01ArXHsESd9Jo7UWW4cVxVrx
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/types.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/types.rs has been updated successfully.
 ```
 
 > AGENT
@@ -7543,7 +7543,7 @@ tool_use Read
 id: toolu_01B4g5kG9bDwSSFhEKwgZWYQ
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs",
   "offset": 96,
   "limit": 40
 }
@@ -7607,7 +7607,7 @@ id: toolu_01RLFzVLDSqGEFkym2Ay1oS4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs",
   "old_string": "/// Recursively walk the assets directory for SKILL.md files on the filesystem.\n/// Supports arbitrary nesting (e.g. `mlops/training/axolotl/SKILL.md`).\nfn discover_from_fs(assets_dir: &Path) -> Vec<SkillMetadata> {\n    let mut skills = Vec::new();\n    discover_from_fs_recursive(assets_dir, &mut skills);\n    skills\n}\n\nfn discover_from_fs_recursive(dir: &Path, skills: &mut Vec<SkillMetadata>) {\n    let Ok(entries) = std::fs::read_dir(dir) else {\n        return;\n    };\n    for entry in entries.flatten() {\n        let path = entry.path();\n        if !path.is_dir() {\n            continue;\n        }\n        let skill_md = path.join(\"SKILL.md\");\n        if skill_md.is_file() {\n            let Ok(content) = std::fs::read_to_string(&skill_md) else {\n                continue;\n            };\n            match parse::parse_metadata(&content, &path) {\n                Ok(mut meta) => {\n                    meta.source = Some(SkillSource::Bundled);\n                    skills.push(meta);\n                },\n                Err(e) => {\n                    tracing::warn!(path = %skill_md.display(), %e, \"failed to parse bundled SKILL.md\");\n                },\n            }\n        } else {\n            // No SKILL.md here — recurse into subdirectories (category nesting).\n            discover_from_fs_recursive(&path, skills);\n        }\n    }\n}",
   "new_string": "/// Recursively walk the assets directory for SKILL.md files on the filesystem.\n/// Supports arbitrary nesting (e.g. `mlops/training/axolotl/SKILL.md`).\nfn discover_from_fs(assets_dir: &Path) -> Vec<SkillMetadata> {\n    let mut skills = Vec::new();\n    discover_from_fs_recursive(assets_dir, assets_dir, &mut skills);\n    skills\n}\n\nfn discover_from_fs_recursive(\n    assets_root: &Path,\n    dir: &Path,\n    skills: &mut Vec<SkillMetadata>,\n) {\n    let Ok(entries) = std::fs::read_dir(dir) else {\n        return;\n    };\n    for entry in entries.flatten() {\n        let path = entry.path();\n        if !path.is_dir() {\n            continue;\n        }\n        let skill_md = path.join(\"SKILL.md\");\n        if skill_md.is_file() {\n […]
 
@@ -7616,7 +7616,7 @@ id: toolu_01RLFzVLDSqGEFkym2Ay1oS4
 tool_result
 id: toolu_01RLFzVLDSqGEFkym2Ay1oS4
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs has been updated successfully.
 ```
 
 > AGENT
@@ -7630,7 +7630,7 @@ id: toolu_01REAAMsmXBsn1MYbC4i55zW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs",
   "old_string": "fn discover_from_embedded_recursive(\n    dir: &include_dir::Dir<'static>,\n    skills: &mut Vec<SkillMetadata>,\n) {\n    for sub_dir in dir.dirs() {\n        if let Some(skill_md) = sub_dir.get_file(\"SKILL.md\") {\n            let Ok(content) = std::str::from_utf8(skill_md.contents()) else {\n                continue;\n            };\n            let synthetic_path =\n                PathBuf::from(\"__bundled__\").join(sub_dir.path().to_string_lossy().as_ref());\n            match parse::parse_metadata(content, &synthetic_path) {\n                Ok(mut meta) => {\n                    meta.source = Some(SkillSource::Bundled);\n                    skills.push(meta);\n                },\n                Err(e) => {\n                    tracing::warn!(\n                        path = %sub_dir.path().display(),\n                        %e,\n                        \"failed to parse embedded bundled SKILL.md\"\n                    );\n                },\n            }\n        } else {\n            // No SKILL.md here — recurse into subdirectories.\n            discover_from_embedded_recursive(sub_dir, skills);\n        }\n    }\n}",
   "new_string": "fn discover_from_embedded_recursive(\n    dir: &include_dir::Dir<'static>,\n    skills: &mut Vec<SkillMetadata>,\n) {\n    for sub_dir in dir.dirs() {\n        if let Some(skill_md) = sub_dir.get_file(\"SKILL.md\") {\n            let Ok(content) = std::str::from_utf8(skill_md.contents()) else {\n                continue;\n            };\n            let synthetic_path =\n                PathBuf::from(\"__bundled__\").join(sub_dir.path().to_string_lossy().as_ref());\n            match parse::parse_metadata(content, &synthetic_path) {\n                Ok(mut meta) => {\n                    meta.source = Some(SkillSource::Bundled);\n                    // Extract category from first path component (e.g. \"research/arxiv\" → \"research\").\n                    meta.category = sub_dir\n                        .path()\n                        .components()\n                        .next()\n                        .and_then(|c| c.as_os_str().to_str())\n                        .map(String::from);\n                    skills.push(meta);\n                },\n                Err(e) => {\n                    tracing::warn!(\n                        path = %sub_dir.path().display(),\n                        %e,\n                        \"failed to parse embedded bundled SKILL.md\"\n                    );\n                },\n            }\n        } else {\n            // No SKILL.md here — recurse into subdirectories.\n            discover_from_embedded_recursive(sub_dir, skills);\n        }\n    }\n}"
 }
@@ -7641,7 +7641,7 @@ id: toolu_01REAAMsmXBsn1MYbC4i55zW
 tool_result
 id: toolu_01REAAMsmXBsn1MYbC4i55zW
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs has been updated successfully.
 ```
 
 > AGENT
@@ -7655,7 +7655,7 @@ id: toolu_01GLYdvpH21vNHTuJNYHnMNX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/prompt_gen.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/prompt_gen.rs",
   "old_string": "        let source = match skill.source.as_ref() {\n            Some(SkillSource::Plugin) => \"plugin\",\n            Some(SkillSource::Bundled) => \"bundled\",\n            _ => \"skill\",\n        };\n        out.push_str(&format!(\n            \"<skill name=\\\"{}\\\" source=\\\"{}\\\">\\n{}\\n</skill>\\n\",\n            skill.name, source, skill.description,\n        ));",
   "new_string": "        let source = match skill.source.as_ref() {\n            Some(SkillSource::Plugin) => \"plugin\",\n            Some(SkillSource::Bundled) => \"bundled\",\n            _ => \"skill\",\n        };\n        let category_attr = skill\n            .category\n            .as_deref()\n            .map(|c| format!(\" category=\\\"{c}\\\"\"))\n            .unwrap_or_default();\n        out.push_str(&format!(\n            \"<skill name=\\\"{}\\\" source=\\\"{}\\\"{category_attr}>\\n{}\\n</skill>\\n\",\n            skill.name, source, skill.description,\n        ));"
 }
@@ -7666,7 +7666,7 @@ id: toolu_01GLYdvpH21vNHTuJNYHnMNX
 tool_result
 id: toolu_01GLYdvpH21vNHTuJNYHnMNX
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/prompt_gen.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/prompt_gen.rs has been updated successfully.
 ```
 
 > AGENT
@@ -7679,7 +7679,7 @@ tool_use Read
 id: toolu_01U5fSAnKesQ8451PnVvw8sG
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/services.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/services.rs",
   "offset": 254,
   "limit": 30
 }
@@ -7729,7 +7729,7 @@ id: toolu_01H56Zw5d83JqQqnwLNJ4ByR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/services.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/services.rs",
   "old_string": "                serde_json::json!({\n                    \"name\": s.name,\n                    \"description\": s.description,\n                    \"license\": s.license,\n                    \"allowed_tools\": s.allowed_tools,\n                    \"path\": s.path.to_string_lossy(),\n                    \"source\": s.source,\n                    \"protected\": protected,\n                    \"eligible\": elig.eligible,\n                    \"missing_bins\": elig.missing_bins,\n                    \"install_options\": elig.install_options,\n                })",
   "new_string": "                serde_json::json!({\n                    \"name\": s.name,\n                    \"description\": s.description,\n                    \"category\": s.category,\n                    \"license\": s.license,\n                    \"allowed_tools\": s.allowed_tools,\n                    \"path\": s.path.to_string_lossy(),\n                    \"source\": s.source,\n                    \"protected\": protected,\n                    \"eligible\": elig.eligible,\n                    \"missing_bins\": elig.missing_bins,\n                    \"install_options\": elig.install_options,\n                })"
 }
@@ -7740,7 +7740,7 @@ id: toolu_01H56Zw5d83JqQqnwLNJ4ByR
 tool_result
 id: toolu_01H56Zw5d83JqQqnwLNJ4ByR
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/services.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/src/services.rs has been updated successfully.
 ```
 
 > AGENT
@@ -7754,7 +7754,7 @@ id: toolu_01RxE9oMKBhifFC8k6BrL7rF
 ```json
 {
   "pattern": "\"source\".into\\(\\), json!\\(\"bundled\"\\)",
-  "path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/src/skill_tools.rs",
+  "path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/src/skill_tools.rs",
   "output_mode": "content",
   "-C": 2
 }
@@ -7779,7 +7779,7 @@ id: toolu_01HebG24nZZiynxCsa8jmVVx
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/src/skill_tools.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/src/skill_tools.rs",
   "old_string": "    response.insert(\"name\".into(), json!(name));\n    response.insert(\"description\".into(), json!(meta.description));\n    response.insert(\"source\".into(), json!(\"bundled\"));\n    response.insert(\"body\".into(), json!(body));\n    response.insert(\"bytes\".into(), json!(body.len()));",
   "new_string": "    response.insert(\"name\".into(), json!(name));\n    response.insert(\"description\".into(), json!(meta.description));\n    response.insert(\"source\".into(), json!(\"bundled\"));\n    if let Some(ref cat) = meta.category {\n        response.insert(\"category\".into(), json!(cat));\n    }\n    response.insert(\"body\".into(), json!(body));\n    response.insert(\"bytes\".into(), json!(body.len()));"
 }
@@ -7790,7 +7790,7 @@ id: toolu_01HebG24nZZiynxCsa8jmVVx
 tool_result
 id: toolu_01HebG24nZZiynxCsa8jmVVx
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/src/skill_tools.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/src/skill_tools.rs has been updated successfully.
 ```
 
 > AGENT
@@ -7814,36 +7814,36 @@ id: toolu_016z2qHsN2dC31cjyDJvU1bD
 tool_result
 id: toolu_016z2qHsN2dC31cjyDJvU1bD
 ```
-    Checking moltis-skills v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills)
+    Checking moltis-skills v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.53s
-    Checking moltis-sessions v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/sessions)
-    Checking moltis-skills v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills)
-    Checking moltis-channels v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/channels)
-    Checking moltis-routing v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/routing)
-    Checking moltis-plugins v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/plugins)
-    Checking moltis-discord v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/discord)
-    Checking moltis-nostr v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/nostr)
-    Checking moltis-msteams v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/msteams)
-    Checking moltis-whatsapp v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/whatsapp)
-    Checking moltis-matrix v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/matrix)
-    Checking moltis-slack v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/slack)
-    Checking moltis-agents v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/agents)
-    Checking moltis-providers v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/providers)
-    Checking moltis-cron v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/cron)
-    Checking moltis-auto-reply v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/auto-reply)
-    Checking moltis-mcp-agent-bridge v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/mcp-agent-bridge)
-    Checking moltis-caldav v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/caldav)
-    Checking moltis-telegram v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/telegram)
-    Checking moltis-tools v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/tools)
-    Checking moltis-provider-setup v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/provider-setup)
-    Checking moltis-memory v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/memory)
-    Checking moltis-auth v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/auth)
-    Checking moltis-qmd v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/qmd)
-    Checking moltis-chat v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/chat)
-    Checking moltis-code-index v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/code-index)
-    Checking moltis-gateway v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway)
+    Checking moltis-sessions v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/sessions)
+    Checking moltis-skills v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills)
+    Checking moltis-channels v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/channels)
+    Checking moltis-routing v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/routing)
+    Checking moltis-plugins v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/plugins)
+    Checking moltis-discord v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/discord)
+    Checking moltis-nostr v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/nostr)
+    Checking moltis-msteams v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/msteams)
+    Checking moltis-whatsapp v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/whatsapp)
+    Checking moltis-matrix v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/matrix)
+    Checking moltis-slack v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/slack)
+    Checking moltis-agents v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/agents)
+    Checking moltis-providers v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/providers)
+    Checking moltis-cron v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/cron)
+    Checking moltis-auto-reply v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/auto-reply)
+    Checking moltis-mcp-agent-bridge v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/mcp-agent-bridge)
+    Checking moltis-caldav v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/caldav)
+    Checking moltis-telegram v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/telegram)
+    Checking moltis-tools v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/tools)
+    Checking moltis-provider-setup v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/provider-setup)
+    Checking moltis-memory v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/memory)
+    Checking moltis-auth v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/auth)
+    Checking moltis-qmd v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/qmd)
+    Checking moltis-chat v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/chat)
+    Checking moltis-code-index v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/code-index)
+    Checking moltis-gateway v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 42.11s
-   Compiling moltis-skills v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills)
+   Compiling moltis-skills v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills)
     Finished `test` profile [unoptimized + debuginfo] target(s) in 2.34s
      Running unittests src/lib.rs (target/debug/deps/moltis_skills-6284adebb6dc4e68)
 
@@ -7892,7 +7892,7 @@ tool_use Read
 id: toolu_01GtBTqiDFnZtCuwiVmypzJv
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/ui/src/pages/SkillsPage.tsx"
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/ui/src/pages/SkillsPage.tsx"
 }
 ```
 
@@ -7960,7 +7960,7 @@ id: toolu_016xQy35ET4ZfaET5x496Ppe
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/ui/src/pages/SkillsPage.tsx",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/ui/src/pages/SkillsPage.tsx",
   "old_string": "interface SkillSummary {\n\tname: string;\n\tdescription?: string;\n\tsource?: string;\n\tenabled?: boolean;\n\tprotected?: boolean;\n\tdisplay_name?: string;\n\tquarantined?: boolean;\n\ttrusted?: boolean;\n\tdrifted?: boolean;\n\teligible?: boolean;\n}",
   "new_string": "interface SkillSummary {\n\tname: string;\n\tdescription?: string;\n\tcategory?: string;\n\tsource?: string;\n\tenabled?: boolean;\n\tprotected?: boolean;\n\tdisplay_name?: string;\n\tquarantined?: boolean;\n\ttrusted?: boolean;\n\tdrifted?: boolean;\n\teligible?: boolean;\n}"
 }
@@ -7971,7 +7971,7 @@ id: toolu_016xQy35ET4ZfaET5x496Ppe
 tool_result
 id: toolu_016xQy35ET4ZfaET5x496Ppe
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/ui/src/pages/SkillsPage.tsx has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/ui/src/pages/SkillsPage.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -7985,7 +7985,7 @@ id: toolu_01Y4dEEoGdv2rsHSNCzWpe6X
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/ui/src/pages/SkillsPage.tsx",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/ui/src/pages/SkillsPage.tsx",
   "old_string": "function EnabledSkillsTable(): VNode | null {\n\tconst s = enabledSkills.value;\n\tconst map = skillRepoMap.value;\n\tconst activeDetail = useSignal<SkillDetail | null>(null);\n\tconst detailLoading = useSignal(false);\n\tconst pending = useSignal<string | null>(null);\n\tif (!s?.length) return null;\n\tfunction isDisc(sk: SkillSummary): boolean {\n\t\treturn sk.source === \"personal\" || sk.source === \"project\";\n\t}\n\tfunction doDisable(sk: SkillSummary): void {\n\t\tpending.value = sk.name;\n\t\tsendRpc(\"skills.skill.disable\", { source: map[sk.name] || sk.source, skill: sk.name }).then((r) => {\n\t\t\tpending.value = null;\n\t\t\tif (r?.ok) {\n\t\t\t\tactiveDetail.value = null;\n\t\t\t\tshowToast(isDisc(sk) ? `Deleted ${sk.name}` : `Disabled ${sk.name}`, \"success\");\n\t\t\t\tfetchAll();\n\t\t\t} else showToast(`Failed: ${r?.error || \"unknown\"}`, \"error\");\n\t\t});\n\t}\n\tfunction onDisable(sk: SkillSummary): void {\n\t\tif (pending.value) return;\n\t\tif (isDisc(sk) && sk.protected) {\n\t\t\tshowToast(\"Protected\", \"error\");\n\t\t\treturn;\n\t\t}\n\t\tif (isDisc(sk)) {\n\t\t\trequestConfirm(`Delete \"${sk.name}\"?`, { confirmLabel: \"Delete\", danger: true }).then((y) => {\n\t\t\t\tif (y) doDisable(sk);\n\t\t\t});\n\t\t\treturn;\n\t\t}\n\t\tdoDisable(sk);\n\t}\n\tfunction loadDetail(sk: SkillSummary): void {\n\t\tif (activeDetail.value?.name === sk.name) {\n\t\t\tactiveDetail.value = null;\n\t\t\treturn;\n\t\t}\n\t\tdetailLoading.value = true;\n\t\tsendRpc(\"skills.skill.detail\", { source: map[sk.name] || sk.source, skill: sk.name }).then((r) => {\n\t\t\tdetailLoading.value = false;\n\t\t\tif (r?.ok) activeDetail.value = r.payload as SkillDetail;\n\t\t});\n\t}\n\treturn (\n\t\t<div className=\"skills-section\">\n\t\t\t<h3 className=\"skills-section-title\">Enabled Skills</h3>\n\t\t\t<div className=\"skills-table-wrap\">\n\t\t\t\t<table style={{ width: \"100%\", borderCollapse: \"collapse\", fontSize: \".82rem\" }}>\n\t\t\t\t\t<thead>\n\t\t\t\t\t\t<tr style={{ borderBottom: \"1px solid var(--border)\", background: \"var(--surface)\" }}>\n\t\t\t\t\t\t\t<th\n\t\t\t\t\t\t\t\tstyle={{\n\t\t\t\t\t\t\t\t\ttextAlign: \"left\",\n\t\t\t\t\t\t\t\t\tpadding: \"8px 12px\",\n\t\t\t\t\t\t\t\t\tfontWeight: 500,\n\t\t\t\t\t\t\t\t\tcolor: \"var(--muted)\",\n\t\t\t\t\t\t\t\t\tfontSize: \".75rem\",\n\t\t\t\t\t\t\t\t\ttextTransform: \"uppercase\",\n\t\t\t\t\t\t\t\t}}\n\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\tName\n\t\t\t\t\t\t\t</th>\n\t\t\t\t\t\t\t<th\n\t\t\t\t\t\t\t\tstyle={{\n\t\t\t\t\t\t\t\t\ttextAlign: \"left\",\n\t\t\t\t\t\t\t\t\tpadding: \"8px 12px\",\n\t\t\t\t\t\t\t\t\tfontWeight: 500,\n\t\t\t\t\t\t\t\t\tcolor: \"var(--muted)\",\n\t\t\t\t\t\t\t\t\tfontSize: \".75rem\",\n\t\t\t\t\t\t\t\t\ttextTransform: \"uppercase\",\n\t\t\t\t\t\t\t\t}}\n\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\tDescription\n\t\t\t\t\t\t\t</th>\n\t\t\t\t\t\t\t<th\n\t\t\t\t\t\t\t\tstyle={{\n\t\t\t\t\t\t\t\t\ttextAlign: \"left\",\n\t\t\t\t\t\t\t\t\tpadding: \"8px 12px\",\n\t\t\t\t\t\t\t\t\tfontWeight: 500,\n\t\t\t\t\t\t\t\t\tcolor: \"var(--muted)\",\n\t\t\t\t\t\t\t\t\tfontSize: \".75rem\",\n\t\t\t\t\t\t\t\t\ttextTransform: \"uppercase\",\n\t\t\t\t\t\t\t\t}}\n\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\tSource\n\t\t\t\t\t\t\t</th>\n\t\t\t\t\t\t\t<th />\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t</thead>\n\t\t\t\t\t<tbody>\n\t\t\t\t\t\t{s.map((sk) => (\n\t\t\t\t\t\t\t<tr\n\t\t\t\t\t\t\t\tkey={sk.name}\n\t\t\t\t\t\t\t\tclassName=\"cursor-pointer\"\n\t\t\t\t\t\t\t\tstyle={{ borderBottom: \"1px solid var(--border)\" }}\n\t\t\t\t\t\t\t\tonClick={() => loadDetail(sk)}\n\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t<td\n\t\t\t\t\t\t\t\t\tstyle={{\n\t\t\t\t\t\t\t\t\t\tpadding: \"8px 12px\",\n\t\t\t\t\t\t\t\t\t\tfontWeight: 500,\n\t\t\t\t\t\t\t\t\t\tcolor: \"var(--accent)\",\n\t\t\t\t\t\t\t\t\t\tfontFamily: \"var(--font-mono)\",\n\t\t\t\t\t\t\t\t\t}}\n\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t{sk.name}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t<td style={{ padding: \"8px 12px\" […]
 
 > TOOL
@@ -7993,7 +7993,7 @@ id: toolu_01Y4dEEoGdv2rsHSNCzWpe6X
 tool_result
 id: toolu_01Y4dEEoGdv2rsHSNCzWpe6X
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/ui/src/pages/SkillsPage.tsx has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/ui/src/pages/SkillsPage.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -8048,7 +8048,7 @@ id: toolu_018XKNKpz1udgKHBEz1kjpRF
 ```json
 {
   "pattern": "skills-\"",
-  "path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/assets/css/components.css",
+  "path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/assets/css/components.css",
   "output_mode": "content",
   "-n": true
 }
@@ -8090,7 +8090,7 @@ id: toolu_01CUPdne8eP6fTDpVH7LP5e1
 ```json
 {
   "pattern": "\\.skills-\"",
-  "path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/assets/css/components.css",
+  "path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/assets/css/components.css",
   "output_mode": "content",
   "-n": true
 }
@@ -8111,7 +8111,7 @@ id: toolu_01UJKFaPRGWpeeYkJbxRozg8
 ```json
 {
   "pattern": "skills-section",
-  "path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/assets/css/components.css",
+  "path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/assets/css/components.css",
   "output_mode": "content",
   "-n": true,
   "-C": 1
@@ -8138,7 +8138,7 @@ tool_use Read
 id: toolu_016a6PDE3XPbgSYSYTRr3rpn
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/assets/css/components.css",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/assets/css/components.css",
   "offset": 789,
   "limit": 50
 }
@@ -8207,7 +8207,7 @@ tool_use Read
 id: toolu_01Re4GEVj22A4WhUHtbWsbgy
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/assets/css/components.css",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/assets/css/components.css",
   "offset": 838,
   "limit": 60
 }
@@ -8290,7 +8290,7 @@ tool_use Read
 id: toolu_01T2TGCyst7fZogJLRZswKvS
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/assets/css/components.css",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/assets/css/components.css",
   "offset": 897,
   "limit": 40
 }
@@ -8350,7 +8350,7 @@ id: toolu_01VCBSexJbB939ZzU1ywJ6no
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/assets/css/components.css",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/assets/css/components.css",
   "old_string": ".skills-ac-item:hover {\n  background: var(--bg-hover);\n}\n\n.skill-editor-form {",
   "new_string": ".skills-ac-item:hover {\n  background: var(--bg-hover);\n}\n\n.skills-category-pill {\n  padding: 3px 10px;\n  border: 1px solid var(--border);\n  border-radius: 999px;\n  background: var(--surface);\n  color: var(--muted);\n  font-size: 0.72rem;\n  font-weight: 500;\n  cursor: pointer;\n  transition: background 0.15s, color 0.15s, border-color 0.15s;\n}\n\n.skills-category-pill:hover {\n  background: var(--bg-hover);\n  color: var(--text);\n}\n\n.skills-category-pill.active {\n  background: var(--accent);\n  color: #fff;\n  border-color: var(--accent);\n}\n\n.skills-category-badge {\n  display: inline-block;\n  margin-left: 6px;\n  padding: 1px 6px;\n  border-radius: 999px;\n  background: var(--surface2);\n  color: var(--muted);\n  font-size: 0.65rem;\n  font-weight: 400;\n  font-family: var(--font-sans, sans-serif);\n  vertical-align: middle;\n}\n\n.skill-editor-form {"
 }
@@ -8361,7 +8361,7 @@ id: toolu_01VCBSexJbB939ZzU1ywJ6no
 tool_result
 id: toolu_01VCBSexJbB939ZzU1ywJ6no
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/assets/css/components.css has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/assets/css/components.css has been updated successfully.
 ```
 
 > AGENT
@@ -8443,7 +8443,7 @@ tool_use Bash
 id: toolu_01TpMmZtkNPc8BSJHobV2cD6
 ```json
 {
-  "command": "ls /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/ui/package.json && npx tsc --noEmit 2>&1 | tail -10",
+  "command": "ls /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/ui/package.json && npx tsc --noEmit 2>&1 | tail -10",
   "description": "Type-check from correct directory",
   "timeout": 60000
 }
@@ -8454,7 +8454,7 @@ id: toolu_01TpMmZtkNPc8BSJHobV2cD6
 tool_result
 id: toolu_01TpMmZtkNPc8BSJHobV2cD6
 ```
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/ui/package.json
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/ui/package.json
 
 [41m                                                                               [0m
 [41m[37m                This is not the tsc command you are looking for                [0m
@@ -8472,7 +8472,7 @@ tool_use Bash
 id: toolu_01VCFJdTLuezB4psmw36YLNp
 ```json
 {
-  "command": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/ui/node_modules/.bin/tsc --noEmit --project /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/ui/tsconfig.json 2>&1 | tail -10",
+  "command": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/ui/node_modules/.bin/tsc --noEmit --project /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/ui/tsconfig.json 2>&1 | tail -10",
   "description": "Type-check with local tsc",
   "timeout": 60000
 }
@@ -8483,7 +8483,7 @@ id: toolu_01VCFJdTLuezB4psmw36YLNp
 tool_result
 id: toolu_01VCFJdTLuezB4psmw36YLNp
 ```
-(eval):1: no such file or directory: /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/ui/node_modules/.bin/tsc
+(eval):1: no such file or directory: /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/ui/node_modules/.bin/tsc
 ```
 
 > TOOL
@@ -8492,7 +8492,7 @@ tool_use Bash
 id: toolu_016swjRja27W7mmruDebvVak
 ```json
 {
-  "command": "ls /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/ui/node_modules/.bin/ | grep tsc",
+  "command": "ls /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/ui/node_modules/.bin/ | grep tsc",
   "description": "Find tsc binary"
 }
 ```
@@ -8502,7 +8502,7 @@ id: toolu_016swjRja27W7mmruDebvVak
 tool_result
 id: toolu_016swjRja27W7mmruDebvVak
 ```
-ls: /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/ui/node_modules/.bin/: No such file or directory
+ls: /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/ui/node_modules/.bin/: No such file or directory
 ```
 
 > AGENT
@@ -8515,7 +8515,7 @@ tool_use Bash
 id: toolu_01Vtm78FvB3ZRMFrRL7m9wbk
 ```json
 {
-  "command": "npm --prefix /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/ui install 2>&1 | tail -5",
+  "command": "npm --prefix /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/ui install 2>&1 | tail -5",
   "description": "Install node dependencies",
   "timeout": 60000
 }
@@ -8538,7 +8538,7 @@ tool_use Bash
 id: toolu_01BxKLas6xpMZcsb945KaFE1
 ```json
 {
-  "command": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/ui/node_modules/.bin/tsc --noEmit --project /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/ui/tsconfig.json 2>&1 | tail -10",
+  "command": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/ui/node_modules/.bin/tsc --noEmit --project /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/ui/tsconfig.json 2>&1 | tail -10",
   "description": "Type-check TypeScript",
   "timeout": 60000
 }
@@ -8562,7 +8562,7 @@ tool_use Bash
 id: toolu_014Sw1QwJvqfZxzPS3kTastr
 ```json
 {
-  "command": "npm --prefix /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/ui run build 2>&1 | tail -10",
+  "command": "npm --prefix /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/ui run build 2>&1 | tail -10",
   "description": "Build Vite frontend",
   "timeout": 60000
 }
@@ -8591,7 +8591,7 @@ tool_use Bash
 id: toolu_016t5skbxrUY6PQB2LsH8cMg
 ```json
 {
-  "command": "npm --prefix /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/ui run build:css 2>&1 | tail -5",
+  "command": "npm --prefix /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/ui run build:css 2>&1 | tail -5",
   "description": "Build Tailwind CSS",
   "timeout": 60000
 }
@@ -8731,7 +8731,7 @@ tool_use Bash
 id: toolu_01Gkh9UCMycz8kN3NProsC3R
 ```json
 {
-  "command": "git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft add crates/skills/src/ crates/gateway/src/services.rs crates/tools/src/skill_tools.rs crates/web/ui/src/pages/SkillsPage.tsx crates/web/src/assets/css/components.css crates/web/src/assets/css/style.css crates/web/src/assets/dist/ && git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft diff --cached --stat | tail -5",
+  "command": "git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft add crates/skills/src/ crates/gateway/src/services.rs crates/tools/src/skill_tools.rs crates/web/ui/src/pages/SkillsPage.tsx crates/web/src/assets/css/components.css crates/web/src/assets/css/style.css crates/web/src/assets/dist/ && git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft diff --cached --stat | tail -5",
   "description": "Stage and check diff"
 }
 ```
@@ -8754,7 +8754,7 @@ tool_use Bash
 id: toolu_01CabvsFdB8kS8nXDY2V9w8Y
 ```json
 {
-  "command": "git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft commit -m \"$(cat <<'EOF'\nfeat(skills): add 32 openclaw skills, category metadata, and web UI categories\n\nAdd 32 portable general-purpose skills from openclaw (commit 90eb5b073f):\naudio (4), media (3), messaging (4), productivity (7), research (2),\nsmart-home (5), software-development (7). Total bundled: 101 skills.\n\nAdd `category` field to `SkillMetadata`, derived from the top-level\ndirectory name in the assets tree (e.g. research/arxiv → \"research\",\nmlops/training/axolotl → \"mlops\"). Exposed in:\n- System prompt: `<skill category=\"research\">` attribute\n- Skills API: `category` field in list response\n- ReadSkillTool: `category` in bundled skill response\n\nWeb UI: add category filter pills to the Enabled Skills table. Clicking\na category filters the table; clicking again shows all. Each skill row\nshows a category badge when unfiltered. CSS: `.skills-category-pill`\nand `.skills-category-badge` in components.css.\nEOF\n)\"",
+  "command": "git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft commit -m \"$(cat <<'EOF'\nfeat(skills): add 32 openclaw skills, category metadata, and web UI categories\n\nAdd 32 portable general-purpose skills from openclaw (commit 90eb5b073f):\naudio (4), media (3), messaging (4), productivity (7), research (2),\nsmart-home (5), software-development (7). Total bundled: 101 skills.\n\nAdd `category` field to `SkillMetadata`, derived from the top-level\ndirectory name in the assets tree (e.g. research/arxiv → \"research\",\nmlops/training/axolotl → \"mlops\"). Exposed in:\n- System prompt: `<skill category=\"research\">` attribute\n- Skills API: `category` field in list response\n- ReadSkillTool: `category` in bundled skill response\n\nWeb UI: add category filter pills to the Enabled Skills table. Clicking\na category filters the table; clicking again shows all. Each skill row\nshows a category badge when unfiltered. CSS: `.skills-category-pill`\nand `.skills-category-badge` in components.css.\nEOF\n)\"",
   "description": "Commit everything"
 }
 ```
@@ -8817,7 +8817,7 @@ tool_use Bash
 id: toolu_01A9ie4DPZuY3SW3dZCDBzRQ
 ```json
 {
-  "command": "git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft push 2>&1",
+  "command": "git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft push 2>&1",
   "description": "Push to remote",
   "timeout": 30000
 }
@@ -8870,7 +8870,7 @@ tool_use Read
 id: toolu_01UFsNTi79jhpfYvSSFEFgVy
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs",
   "offset": 260
 }
 ```
@@ -8941,7 +8941,7 @@ id: toolu_01RSCDww7Fd46v4k2XcYCeNY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs",
   "old_string": "#[cfg(test)]\nmod tests {\n    use super::*;\n\n    #[test]\n    fn bundled_skills_are_discovered() {\n        let store = BundledSkillStore::new();\n        let skills = store.discover();\n        assert!(\n            !skills.is_empty(),\n            \"bundled skills directory should contain at least one skill\"\n        );\n        for skill in &skills {\n            assert_eq!(skill.source, Some(SkillSource::Bundled));\n            assert!(!skill.name.is_empty());\n            assert!(!skill.description.is_empty());\n        }\n    }\n\n    #[test]\n    fn bundled_skill_content_readable() {\n        let store = BundledSkillStore::new();\n        let skills = store.discover();\n        let first = skills.first().expect(\"need at least one bundled skill\");\n        let body = store.read_skill(&first.name);\n        assert!(body.is_some(), \"should be able to read skill body\");\n        assert!(\n            !body.as_ref().map_or(true, String::is_empty),\n            \"skill body should not be empty\"\n        );\n    }\n\n    #[test]\n    fn bundled_skill_origin_deserialized() {\n        let store = BundledSkillStore::new();\n        let skills = store.discover();\n        // At least one bundled skill should have origin metadata.\n        let has_origin = skills.iter().any(|s| s.origin.is_some());\n        assert!(\n            has_origin,\n            \"at least one bundled skill should have origin metadata\"\n        );\n    }\n\n    #[test]\n    fn missing_skill_returns_none() {\n        let store = BundledSkillStore::new();\n        assert!(store.read_skill(\"nonexistent-skill-xyz\").is_none());\n    }\n}",
   "new_string": "#[cfg(test)]\nmod tests {\n    use super::*;\n\n    fn store() -> BundledSkillStore {\n        BundledSkillStore::new()\n    }\n\n    // ── Discovery ───────────────────────────────────────────────────────\n\n    #[test]\n    fn bundled_skills_are_discovered() {\n        let skills = store().discover();\n        assert!(\n            skills.len() >= 90,\n            \"expected ≥90 bundled skills, got {}\",\n            skills.len()\n        );\n        for skill in &skills {\n            assert_eq!(skill.source, Some(SkillSource::Bundled));\n            assert!(!skill.name.is_empty(), \"skill has empty name\");\n            assert!(!skill.description.is_empty(), \"skill {} has empty description\", […]
 
@@ -8950,7 +8950,7 @@ id: toolu_01RSCDww7Fd46v4k2XcYCeNY
 tool_result
 id: toolu_01RSCDww7Fd46v4k2XcYCeNY
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs has been updated successfully.
 ```
 
 > TOOL
@@ -8971,7 +8971,7 @@ tool_result ERROR
 id: toolu_01HcjjfuG5YTY2gwVRrR2HhL
 ```
 Exit code 1
-Diff in /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs:340:
+Diff in /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs:340:
          for skill in &skills {
              assert_eq!(skill.source, Some(SkillSource::Bundled));
              assert!(!skill.name.is_empty(), "skill has empty name");
@@ -8984,7 +8984,7 @@ Diff in /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills
 (B[m         }
      }
  
-Diff in /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs:391:
+Diff in /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs:391:
      #[test]
      fn known_categories_present() {
          let skills = store().discover();
@@ -9006,7 +9006,7 @@ Diff in /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills
 (B[m             assert!(
                  cats.contains(expected),
                  "expected category '{}' not found in {:?}",
-Diff in /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs:460:
+Diff in /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs:460:
          let skills = s.discover();
          for skill in &skills {
              let body = s.read_skill(&skill.name);
@@ -9038,7 +9038,7 @@ id: toolu_01TX5U6iikMEBcmhmbh1qX54
 tool_result
 id: toolu_01TX5U6iikMEBcmhmbh1qX54
 ```
-   Compiling moltis-skills v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills)
+   Compiling moltis-skills v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills)
 error: unnecessary qualification
    --> crates/skills/src/bundled.rs:369:17
     |
@@ -9062,7 +9062,7 @@ id: toolu_01DYb22PmmevmBk2BwQPoxH7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs",
   "old_string": "                crate::parse::validate_name(&skill.name),",
   "new_string": "                parse::validate_name(&skill.name),"
 }
@@ -9073,7 +9073,7 @@ id: toolu_01DYb22PmmevmBk2BwQPoxH7
 tool_result
 id: toolu_01DYb22PmmevmBk2BwQPoxH7
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/bundled.rs has been updated successfully.
 ```
 
 > TOOL
@@ -9150,7 +9150,7 @@ tool_use Bash
 id: toolu_014nZ4KLPc4U41mLXCtNy6F1
 ```json
 {
-  "command": "grep -r \"name: fine-tuning-with-trl\" /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/",
+  "command": "grep -r \"name: fine-tuning-with-trl\" /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/",
   "description": "Find fine-tuning-with-trl skill"
 }
 ```
@@ -9160,7 +9160,7 @@ id: toolu_014nZ4KLPc4U41mLXCtNy6F1
 tool_result
 id: toolu_014nZ4KLPc4U41mLXCtNy6F1
 ```
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/mlops/training/trl-fine-tuning/SKILL.md:name: fine-tuning-with-trl
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/mlops/training/trl-fine-tuning/SKILL.md:name: fine-tuning-with-trl
 ```
 
 > AGENT
@@ -9173,7 +9173,7 @@ tool_use Bash
 id: toolu_01Mab7oFeGmEZoAuZHguRvrt
 ```json
 {
-  "command": "find /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets -name \"SKILL.md\" | while read f; do\n  dir_name=$(basename $(dirname \"$f\"))\n  fm_name=$(grep \"^name:\" \"$f\" | head -1 | sed 's/name:\\s*//' | tr -d '\"' | tr -d \"'\" | xargs)\n  if [ \"$dir_name\" != \"$fm_name\" ]; then\n    echo \"MISMATCH: dir=$dir_name fm=$fm_name ($f)\"\n  fi\ndone",
+  "command": "find /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets -name \"SKILL.md\" | while read f; do\n  dir_name=$(basename $(dirname \"$f\"))\n  fm_name=$(grep \"^name:\" \"$f\" | head -1 | sed 's/name:\\s*//' | tr -d '\"' | tr -d \"'\" | xargs)\n  if [ \"$dir_name\" != \"$fm_name\" ]; then\n    echo \"MISMATCH: dir=$dir_name fm=$fm_name ($f)\"\n  fi\ndone",
   "description": "Find name/directory mismatches"
 }
 ```
@@ -9183,12 +9183,12 @@ id: toolu_01Mab7oFeGmEZoAuZHguRvrt
 tool_result
 id: toolu_01Mab7oFeGmEZoAuZHguRvrt
 ```
-MISMATCH: dir=trl-fine-tuning fm=fine-tuning-with-trl (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/mlops/training/trl-fine-tuning/SKILL.md)
-MISMATCH: dir=audiocraft fm=audiocraft-audio-generation (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/mlops/models/audiocraft/SKILL.md)
-MISMATCH: dir=segment-anything fm=segment-anything-model (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/mlops/models/segment-anything/SKILL.md)
-MISMATCH: dir=vllm fm=serving-llms-vllm (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/mlops/inference/vllm/SKILL.md)
-MISMATCH: dir=lm-evaluation-harness fm=evaluating-llms-harness (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/mlops/evaluation/lm-evaluation-harness/SKILL.md)
-MISMATCH: dir=creative-ideation fm=ideation (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/creative/creative-ideation/SKILL.md)
+MISMATCH: dir=trl-fine-tuning fm=fine-tuning-with-trl (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/mlops/training/trl-fine-tuning/SKILL.md)
+MISMATCH: dir=audiocraft fm=audiocraft-audio-generation (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/mlops/models/audiocraft/SKILL.md)
+MISMATCH: dir=segment-anything fm=segment-anything-model (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/mlops/models/segment-anything/SKILL.md)
+MISMATCH: dir=vllm fm=serving-llms-vllm (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/mlops/inference/vllm/SKILL.md)
+MISMATCH: dir=lm-evaluation-harness fm=evaluating-llms-harness (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/mlops/evaluation/lm-evaluation-harness/SKILL.md)
+MISMATCH: dir=creative-ideation fm=ideation (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/creative/creative-ideation/SKILL.md)
 ```
 
 > AGENT
@@ -9203,7 +9203,7 @@ tool_use Bash
 id: toolu_014XuzYVA4MoQ4AubsyibiA3
 ```json
 {
-  "command": "BASE=/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets\nmv \"$BASE/mlops/training/trl-fine-tuning\" \"$BASE/mlops/training/fine-tuning-with-trl\"\nmv \"$BASE/mlops/models/audiocraft\" \"$BASE/mlops/models/audiocraft-audio-generation\"\nmv \"$BASE/mlops/models/segment-anything\" \"$BASE/mlops/models/segment-anything-model\"\nmv \"$BASE/mlops/inference/vllm\" \"$BASE/mlops/inference/serving-llms-vllm\"\nmv \"$BASE/mlops/evaluation/lm-evaluation-harness\" \"$BASE/mlops/evaluation/evaluating-llms-harness\"\nmv \"$BASE/creative/creative-ideation\" \"$BASE/creative/ideation\"\necho \"Renamed 6 directories\"",
+  "command": "BASE=/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets\nmv \"$BASE/mlops/training/trl-fine-tuning\" \"$BASE/mlops/training/fine-tuning-with-trl\"\nmv \"$BASE/mlops/models/audiocraft\" \"$BASE/mlops/models/audiocraft-audio-generation\"\nmv \"$BASE/mlops/models/segment-anything\" \"$BASE/mlops/models/segment-anything-model\"\nmv \"$BASE/mlops/inference/vllm\" \"$BASE/mlops/inference/serving-llms-vllm\"\nmv \"$BASE/mlops/evaluation/lm-evaluation-harness\" \"$BASE/mlops/evaluation/evaluating-llms-harness\"\nmv \"$BASE/creative/creative-ideation\" \"$BASE/creative/ideation\"\necho \"Renamed 6 directories\"",
   "description": "Rename directories to match frontmatter names"
 }
 ```
@@ -9233,9 +9233,9 @@ id: toolu_014QVPm4AXzPYSHQkCzLhwP5
 tool_result
 id: toolu_014QVPm4AXzPYSHQkCzLhwP5
 ```
-   Compiling moltis-skills v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills)
+   Compiling moltis-skills v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills)
     Finished `test` profile [unoptimized + debuginfo] target(s) in 2.25s
-     Running unittests src/lib.rs (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/target/debug/deps/moltis_skills-6284adebb6dc4e68)
+     Running unittests src/lib.rs (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/target/debug/deps/moltis_skills-6284adebb6dc4e68)
 
 running 15 tests
 test bundled::tests::missing_sidecar_returns_none ... ok
@@ -9267,7 +9267,7 @@ tool_use Bash
 id: toolu_01P1C8q1jGb96Agq6oHMjBw4
 ```json
 {
-  "command": "git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft add crates/skills/src/ && git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft commit -m \"$(cat <<'EOF'\ntest(skills): add comprehensive bundled skills test suite\n\n15 tests covering discovery, categories, origin, content reading, and\nspecific skill smoke tests.\n\nTests caught 6 directory/name mismatches where the SKILL.md frontmatter\n`name` differed from the directory name (e.g. `vllm/` vs\n`serving-llms-vllm`). The agent calls `read_skill(\"serving-llms-vllm\")`\nbut lookup searched by directory name, so the read silently failed.\nFixed by renaming directories to match frontmatter names.\n\nTest categories:\n- Discovery: count ≥90, no duplicates, all names pass validation\n- Category: every skill has one, known categories present, derived from\n  top-level directory (mlops/training/axolotl → \"mlops\")\n- Origin: every skill has origin, all sources are known (hermes-agent\n  or openclaw)\n- Content: every skill body is readable and non-empty, missing\n  skill/sidecar returns None\n- Smoke tests: arxiv metadata, weather metadata, himalaya requires,\n  webhook-subscriptions is Moltis-native (no Hermes CLI references)\nEOF\n)\"",
+  "command": "git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft add crates/skills/src/ && git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft commit -m \"$(cat <<'EOF'\ntest(skills): add comprehensive bundled skills test suite\n\n15 tests covering discovery, categories, origin, content reading, and\nspecific skill smoke tests.\n\nTests caught 6 directory/name mismatches where the SKILL.md frontmatter\n`name` differed from the directory name (e.g. `vllm/` vs\n`serving-llms-vllm`). The agent calls `read_skill(\"serving-llms-vllm\")`\nbut lookup searched by directory name, so the read silently failed.\nFixed by renaming directories to match frontmatter names.\n\nTest categories:\n- Discovery: count ≥90, no duplicates, all names pass validation\n- Category: every skill has one, known categories present, derived from\n  top-level directory (mlops/training/axolotl → \"mlops\")\n- Origin: every skill has origin, all sources are known (hermes-agent\n  or openclaw)\n- Content: every skill body is readable and non-empty, missing\n  skill/sidecar returns None\n- Smoke tests: arxiv metadata, weather metadata, himalaya requires,\n  webhook-subscriptions is Moltis-native (no Hermes CLI references)\nEOF\n)\"",
   "description": "Commit tests and directory renames"
 }
 ```
@@ -9312,7 +9312,7 @@ tool_use Bash
 id: toolu_016DSuBjz1DnLguEQM7TKKc2
 ```json
 {
-  "command": "git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft push 2>&1",
+  "command": "git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft push 2>&1",
   "description": "Push to remote",
   "timeout": 30000
 }
@@ -9387,7 +9387,7 @@ Based on my thorough exploration of the hermes-agent codebase, here's a detailed
 
 ### 1. **System Prompt Assembly & Skills Placement**
 
-**File:** `/Users/penso/code/hermes-agent/run_agent.py` (lines 3845-4010)
+**File:** `/home/<USER>/code/hermes-agent/run_agent.py` (lines 3845-4010)
 
 The system prompt is built in a **strict 12-layer order**:
 
@@ -9419,7 +9419,7 @@ I've thoroughly explored the openclaw codebase to understand how skills are inje
 
 ### 1. **System Prompt Building Architecture**
 
-The system prompt is built in `/Users/penso/code/openclaw/src/agents/system-prompt.ts` via the `buildAgentSystemPrompt()` function. Skills are injected as a parameter (`skillsPrompt`) that gets embedded in the prompt at line 21-36, which calls `buildSkillsSection()`:
+The system prompt is built in `/home/<USER>/code/openclaw/src/agents/system-prompt.ts` via the `buildAgentSystemPrompt()` function. Skills are injected as a parameter (`skillsPrompt`) that gets embedded in the prompt at line 21-36, which calls `buildSkillsSection()`:
 
 ```typescript
 function buildSkillsSection(params: { skillsPrompt?: string; readToolName: string }) {
@@ -9440,7 +9440,7 @@ function buildSkillsSection(params: { skillsPrompt?: string; readToolName: strin
 
 ### 2. **Skills Prompt Resolution & Limits**
 
-The skills prompt is built separately in `/Users/penso/code/openclaw/src/agents/skills/workspace.ts`:
+The skills prompt is built separately in `/home/<USER>/code/openclaw/src/agents/skills/workspace.ts`:
 
 **Key function:** `buildWorkspaceSkillsPrompt()` (line 634)
 
@@ -9477,7 +9477,7 @@ tool_use Read
 id: toolu_01XbEzDm8H2sBzGX95n5xEby
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/prompt_gen.rs"
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/prompt_gen.rs"
 }
 ```
 
@@ -9633,7 +9633,7 @@ id: toolu_01Kvgi4NLBR8pbxTkoBEMMAp
 ```json
 {
   "pattern": "prompt_gen|generate_skills_prompt",
-  "path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft",
+  "path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft",
   "glob": "*.rs",
   "output_mode": "files_with_matches"
 }
@@ -9645,13 +9645,13 @@ tool_result
 id: toolu_01Kvgi4NLBR8pbxTkoBEMMAp
 ```
 Found 7 files
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/src/skill_tools.rs
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/prompt_gen.rs
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/discover.rs
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/lib.rs
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/metrics/src/definitions.rs
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/tests/read_skill_tool.rs
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/agents/src/prompt/builder.rs
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/src/skill_tools.rs
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/prompt_gen.rs
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/discover.rs
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/lib.rs
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/metrics/src/definitions.rs
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway/tests/read_skill_tool.rs
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/agents/src/prompt/builder.rs
 ```
 
 > TOOL
@@ -9661,7 +9661,7 @@ id: toolu_01SyeuerXHy29JRJfyDpPGGn
 ```json
 {
   "pattern": "generate_skills_prompt\"",
-  "path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/agents/src/prompt/builder.rs",
+  "path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/agents/src/prompt/builder.rs",
   "output_mode": "content",
   "-C": 5
 }
@@ -9682,7 +9682,7 @@ id: toolu_01FW5vcEjLLJJDezcE7BeHgY
 ```json
 {
   "pattern": "skills\"",
-  "path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/agents/src/prompt/builder.rs",
+  "path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/agents/src/prompt/builder.rs",
   "output_mode": "content",
   "-n": true,
   "-C": 2
@@ -9704,7 +9704,7 @@ id: toolu_01QGs7sK6PRpKk2TD7XahJJY
 ```json
 {
   "pattern": "skill",
-  "path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/agents/src/prompt/builder.rs",
+  "path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/agents/src/prompt/builder.rs",
   "output_mode": "content",
   "-n": true,
   "-C": 2
@@ -9777,7 +9777,7 @@ tool_use Write
 id: toolu_013acdSa8Lr8cJ5jaoLL2eEM
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/prompt_gen.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/prompt_gen.rs",
   "content": "use crate::{\n    SIDECAR_SUBDIRS,\n    types::{SkillMetadata, SkillSource},\n};\n\n/// Name of the native read tool advertised in the activation instruction.\n/// Kept as a constant so the gateway can assert a parity invariant between\n/// this string and the registered tool's [`AgentTool::name`] at test time.\npub const READ_SKILL_TOOL_NAME: &str = \"read_skill\";\n\n/// Default character budget for the skills prompt block. At ~4 chars/token\n/// this is ~7,500 tokens — generous for 100+ skills in full format.\nconst DEFAULT_MAX_CHARS: usize = 30_000;\n\n/// Generate the `<available_skills>` XML block for injection into the system prompt.\n///\n/// Uses a two-tier format strategy with a character budget (default 30 KB):\n///\n/// 1. **Full format** — each skill gets `name`, `source`, `category`, and\n///    description. Used when all skills fit within the budget.\n/// 2. **Compact format** — drops descriptions, keeps only `name`, `source`,\n///    and `category`. Triggered when full format exceeds the budget. Preserves\n///    awareness of all skills before dropping any.\n///\n/// If even compact format exceeds the budget, skills are truncated (lowest\n/// priority last — bundled skills are appended after user skills).\npub fn generate_skills_prompt(skills: &[SkillMetadata]) -> String {\n    generate_skills_prompt_with_budget(skills, DEFAULT_MAX_CHARS)\n}\n\n/// Generate the skills prompt with an explicit character budget.\npub fn generate_skills_prompt_with_budget(skills: &[SkillMetadata], max_chars: usize) -> String {\n    if skills.is_empty() {\n        return […]
 
 > TOOL
@@ -9785,7 +9785,7 @@ id: toolu_013acdSa8Lr8cJ5jaoLL2eEM
 tool_result
 id: toolu_013acdSa8Lr8cJ5jaoLL2eEM
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/prompt_gen.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/prompt_gen.rs has been updated successfully.
 ```
 
 > TOOL
@@ -9805,9 +9805,9 @@ id: toolu_01XcjPWfu5k8VEdJgJSoA3mw
 tool_result
 id: toolu_01XcjPWfu5k8VEdJgJSoA3mw
 ```
-   Compiling moltis-skills v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills)
+   Compiling moltis-skills v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills)
     Finished `test` profile [unoptimized + debuginfo] target(s) in 2.19s
-     Running unittests src/lib.rs (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/target/debug/deps/moltis_skills-6284adebb6dc4e68)
+     Running unittests src/lib.rs (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/target/debug/deps/moltis_skills-6284adebb6dc4e68)
 
 running 12 tests
 test prompt_gen::tests::test_empty_skills_produces_empty_string ... ok
@@ -9847,10 +9847,10 @@ id: toolu_0189AL6L2vpmJfXYW2JChMB4
 tool_result
 id: toolu_0189AL6L2vpmJfXYW2JChMB4
 ```
-    Checking moltis-qmd v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/qmd)
-    Checking moltis-chat v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/chat)
-    Checking moltis-code-index v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/code-index)
-    Checking moltis-gateway v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway)
+    Checking moltis-qmd v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/qmd)
+    Checking moltis-chat v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/chat)
+    Checking moltis-code-index v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/code-index)
+    Checking moltis-gateway v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 26.26s
 ```
 
@@ -9860,7 +9860,7 @@ tool_use Bash
 id: toolu_01LNV4t6jpagH4iBgmSvPPe5
 ```json
 {
-  "command": "git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft add crates/skills/src/prompt_gen.rs && git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft commit -m \"$(cat <<'EOF'\nfeat(skills): add compact format fallback for skills prompt\n\nWhen the skills index exceeds the character budget (default 30KB,\n~7,500 tokens), the prompt generator now degrades gracefully:\n\n1. Full format — name + source + category + description (default)\n2. Compact format — self-closing XML tags, no descriptions\n3. Truncation — binary search for largest prefix that fits compact\n\nThis mirrors OpenClaw's two-tier strategy. With 101 bundled skills and\nmoderate descriptions, full format uses ~4-5KB — well within budget.\nThe fallback activates when users install many additional skills or\ndescriptions are unusually long.\n\nNew public API: `generate_skills_prompt_with_budget(skills, max_chars)`\nfor callers that want to control the budget explicitly.\n\n12 prompt_gen tests (4 new for format fallback).\nEOF\n)\"",
+  "command": "git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft add crates/skills/src/prompt_gen.rs && git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft commit -m \"$(cat <<'EOF'\nfeat(skills): add compact format fallback for skills prompt\n\nWhen the skills index exceeds the character budget (default 30KB,\n~7,500 tokens), the prompt generator now degrades gracefully:\n\n1. Full format — name + source + category + description (default)\n2. Compact format — self-closing XML tags, no descriptions\n3. Truncation — binary search for largest prefix that fits compact\n\nThis mirrors OpenClaw's two-tier strategy. With 101 bundled skills and\nmoderate descriptions, full format uses ~4-5KB — well within budget.\nThe fallback activates when users install many additional skills or\ndescriptions are unusually long.\n\nNew public API: `generate_skills_prompt_with_budget(skills, max_chars)`\nfor callers that want to control the budget explicitly.\n\n12 prompt_gen tests (4 new for format fallback).\nEOF\n)\"",
   "description": "Commit format fallback"
 }
 ```
@@ -9880,7 +9880,7 @@ tool_use Bash
 id: toolu_01FneYdi7DZ4uAUkmX7baWJ1
 ```json
 {
-  "command": "git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft push 2>&1",
+  "command": "git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft push 2>&1",
   "description": "Push to remote",
   "timeout": 30000
 }
@@ -9928,7 +9928,7 @@ tool_use Bash
 id: toolu_01EAPRGSHpAbSrReLgNPHSkA
 ```json
 {
-  "command": "git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft log --oneline -5",
+  "command": "git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft log --oneline -5",
   "description": "Show recent commits"
 }
 ```
@@ -9951,7 +9951,7 @@ tool_use Bash
 id: toolu_01KM2FcCyyz7ai7CsLgNRw9v
 ```json
 {
-  "command": "git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft status",
+  "command": "git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft status",
   "description": "Show working tree status"
 }
 ```
@@ -10007,7 +10007,7 @@ tool_use Read
 id: toolu_01RaExaa7uf4vVTum91ibZiS
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/src/skill_tools.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/src/skill_tools.rs",
   "offset": 490,
   "limit": 15
 }
@@ -10042,7 +10042,7 @@ id: toolu_01JEUiYAqAY3QgDpQofB7bqn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/src/skill_tools.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/src/skill_tools.rs",
   "old_string": "    if let Some(rel) = file_path {\n        // Sidecar read from bundled store.\n        return match store.read_sidecar(name, rel) {",
   "new_string": "    if let Some(rel) = file_path {\n        // Validate + normalise the sidecar path the same way the FS path does.\n        // In embedded mode include_dir returns None for traversal attempts, but\n        // the dev-mode filesystem fallback uses a weaker starts_with guard.\n        let rel_normalized = normalize_relative_skill_file_path(rel)\n            .map_err(|e| Error::message(format!(\"invalid file_path: {e}\")))?;\n        let rel = rel_normalized.to_str().unwrap_or(rel);\n\n        // Sidecar read from bundled store.\n        return match store.read_sidecar(name, rel) {"
 }
@@ -10053,7 +10053,7 @@ id: toolu_01JEUiYAqAY3QgDpQofB7bqn
 tool_result
 id: toolu_01JEUiYAqAY3QgDpQofB7bqn
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/src/skill_tools.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/tools/src/skill_tools.rs has been updated successfully.
 ```
 
 > AGENT
@@ -10066,7 +10066,7 @@ tool_use Read
 id: toolu_018ecumJ619FdZ8xufCtZLz5
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/discover.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/discover.rs",
   "offset": 114,
   "limit": 15
 }
@@ -10101,7 +10101,7 @@ id: toolu_0165ghpBRMy1ub9qBvgZnUmM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/discover.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/discover.rs",
   "old_string": "    async fn discover(&self) -> Result<Vec<SkillMetadata>> {\n        let mut skills = self.inner.discover().await?;\n        let seen: std::collections::HashSet<String> =\n            skills.iter().map(|s| s.name.clone()).collect();\n        for bundled in self.bundled.discover() {\n            if !seen.contains(&bundled.name) {\n                skills.push(bundled);\n            }\n        }\n        Ok(skills)",
   "new_string": "    async fn discover(&self) -> Result<Vec<SkillMetadata>> {\n        let mut skills = self.inner.discover().await?;\n        let mut seen: std::collections::HashSet<String> =\n            skills.iter().map(|s| s.name.clone()).collect();\n        for bundled in self.bundled.discover() {\n            if seen.insert(bundled.name.clone()) {\n                skills.push(bundled);\n            }\n        }\n        Ok(skills)"
 }
@@ -10112,7 +10112,7 @@ id: toolu_0165ghpBRMy1ub9qBvgZnUmM
 tool_result
 id: toolu_0165ghpBRMy1ub9qBvgZnUmM
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/discover.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/discover.rs has been updated successfully.
 ```
 
 > TOOL
@@ -10132,29 +10132,29 @@ id: toolu_015PND3VLKpqvMAstffkFmur
 tool_result
 id: toolu_015PND3VLKpqvMAstffkFmur
 ```
-    Checking moltis-sessions v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/sessions)
-    Checking moltis-skills v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills)
-    Checking moltis-agents v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/agents)
-    Checking moltis-cron v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/cron)
-    Checking moltis-providers v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/providers)
-    Checking moltis-tools v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/tools)
+    Checking moltis-sessions v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/sessions)
+    Checking moltis-skills v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills)
+    Checking moltis-agents v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/agents)
+    Checking moltis-cron v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/cron)
+    Checking moltis-providers v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/providers)
+    Checking moltis-tools v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/tools)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 11.38s
-    Checking moltis-skills v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills)
-    Checking moltis-agents v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/agents)
-    Checking moltis-providers v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/providers)
-    Checking moltis-cron v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/cron)
-    Checking moltis-auto-reply v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/auto-reply)
-    Checking moltis-mcp-agent-bridge v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/mcp-agent-bridge)
-    Checking moltis-caldav v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/caldav)
-    Checking moltis-telegram v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/telegram)
-    Checking moltis-tools v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/tools)
-    Checking moltis-provider-setup v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/provider-setup)
-    Checking moltis-memory v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/memory)
-    Checking moltis-auth v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/auth)
-    Checking moltis-qmd v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/qmd)
-    Checking moltis-chat v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/chat)
-    Checking moltis-code-index v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/code-index)
-    Checking moltis-gateway v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway)
+    Checking moltis-skills v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills)
+    Checking moltis-agents v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/agents)
+    Checking moltis-providers v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/providers)
+    Checking moltis-cron v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/cron)
+    Checking moltis-auto-reply v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/auto-reply)
+    Checking moltis-mcp-agent-bridge v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/mcp-agent-bridge)
+    Checking moltis-caldav v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/caldav)
+    Checking moltis-telegram v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/telegram)
+    Checking moltis-tools v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/tools)
+    Checking moltis-provider-setup v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/provider-setup)
+    Checking moltis-memory v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/memory)
+    Checking moltis-auth v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/auth)
+    Checking moltis-qmd v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/qmd)
+    Checking moltis-chat v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/chat)
+    Checking moltis-code-index v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/code-index)
+    Checking moltis-gateway v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 9.00s
 test bundled::tests::every_bundled_skill_body_is_readable ... ok
 
@@ -10177,7 +10177,7 @@ tool_use Bash
 id: toolu_01CsjADGkSeaf3sN9syEqnrU
 ```json
 {
-  "command": "git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft add crates/tools/src/skill_tools.rs crates/skills/src/discover.rs && git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft commit -m \"$(cat <<'EOF'\nfix(skills): normalize bundled sidecar paths, deduplicate within bundled set\n\nAddress PR review feedback:\n\n1. Apply normalize_relative_skill_file_path() to bundled sidecar reads.\n   The embedded path returns None for traversal attempts, but the\n   dev-mode filesystem fallback used a weaker starts_with guard.\n   Now both bundled and FS paths go through the same validation.\n\n2. Use seen.insert() in CompositeSkillDiscoverer to also deduplicate\n   within the bundled set itself, not just between FS and bundled.\n   Prevents duplicate entries if two category directories ever contain\n   a skill with the same frontmatter name.\nEOF\n)\" && git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft push 2>&1",
+  "command": "git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft add crates/tools/src/skill_tools.rs crates/skills/src/discover.rs && git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft commit -m \"$(cat <<'EOF'\nfix(skills): normalize bundled sidecar paths, deduplicate within bundled set\n\nAddress PR review feedback:\n\n1. Apply normalize_relative_skill_file_path() to bundled sidecar reads.\n   The embedded path returns None for traversal attempts, but the\n   dev-mode filesystem fallback used a weaker starts_with guard.\n   Now both bundled and FS paths go through the same validation.\n\n2. Use seen.insert() in CompositeSkillDiscoverer to also deduplicate\n   within the bundled set itself, not just between FS and bundled.\n   Prevents duplicate entries if two category directories ever contain\n   a skill with the same frontmatter name.\nEOF\n)\" && git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft push 2>&1",
   "description": "Commit and push PR fixes",
   "timeout": 30000
 }
@@ -10216,7 +10216,7 @@ tool_use Bash
 id: toolu_01UDfSp1Y6531q6xZtsrBzyE
 ```json
 {
-  "command": "git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft log --oneline -3 && git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft status",
+  "command": "git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft log --oneline -3 && git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft status",
   "description": "Verify commit and push status"
 }
 ```
@@ -10242,7 +10242,7 @@ tool_use Bash
 id: toolu_01WnuzmiK22HMV2RFW6NZMz2
 ```json
 {
-  "command": "git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft push 2>&1",
+  "command": "git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft push 2>&1",
   "description": "Push the commit",
   "timeout": 30000
 }
@@ -10441,7 +10441,7 @@ tool_result
 id: toolu_011oJAFtfxU1RH1EBRxff1ng
 ```
 <persisted-output>
-Output too large (58.6KB). Full output saved to: /Users/penso/.claude/projects/-Users-penso--superset-worktrees-moltis-stealth-hovercraft/ed791c89-3b1f-46b9-8e56-2d948f24f0e5/tool-results/bek52skf1.txt
+Output too large (58.6KB). Full output saved to: /home/<USER>/.claude/projects/-Users-penso--superset-worktrees-moltis-stealth-hovercraft/ed791c89-3b1f-46b9-8e56-2d948f24f0e5/tool-results/bek52skf1.txt
 
 Preview (first 2KB):
 16:42:54 Waiting for Greptile check to appear...
@@ -10558,7 +10558,7 @@ tool_use Bash
 id: toolu_01BWjtsgBvf2R5xre5jVcJK9
 ```json
 {
-  "command": "rm -rf /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/red-teaming && echo \"Removed red-teaming category\"",
+  "command": "rm -rf /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/red-teaming && echo \"Removed red-teaming category\"",
   "description": "Remove red-teaming skills from bundled assets"
 }
 ```
@@ -10581,7 +10581,7 @@ tool_use Bash
 id: toolu_01W6z59Tyz3XZM2v8fQV7q1Q
 ```json
 {
-  "command": "BASE=/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets\n\n# 1. maps_client.py: remove unused import os and unused variable os_\nsed -i '' '/^import os$/d' \"$BASE/productivity/maps/scripts/maps_client.py\"\nsed -i '' 's/^    os_ = offset_info.get(\"seconds\", 0)$/    _ = offset_info.get(\"seconds\", 0)  # unused but preserved for API shape/' \"$BASE/productivity/maps/scripts/maps_client.py\"\n\n# 2. polymarket.py: unused variable ts\nsed -i '' 's/^        ts = t\\[\"t\"\\]/        _ = t[\"t\"]  # timestamp available but unused/' \"$BASE/research/polymarket/scripts/polymarket.py\"\n\n# 3. powerpoint clean.py: empty except blocks — add comments\nsed -i '' '/except.*:/{n;s/^            pass$/            pass  # intentionally ignored/;}' \"$BASE/productivity/powerpoint/scripts/clean.py\"\n\n# 4. test_package_skill.py: dual import style\nsed -i '' 's/^from package_skill import package_skill$/# package_skill imported via \"import package_skill\" below/' \"$BASE/software-development/skill-creator/scripts/test_package_skill.py\"\n\necho \"Fixed Python quality issues\"",
+  "command": "BASE=/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets\n\n# 1. maps_client.py: remove unused import os and unused variable os_\nsed -i '' '/^import os$/d' \"$BASE/productivity/maps/scripts/maps_client.py\"\nsed -i '' 's/^    os_ = offset_info.get(\"seconds\", 0)$/    _ = offset_info.get(\"seconds\", 0)  # unused but preserved for API shape/' \"$BASE/productivity/maps/scripts/maps_client.py\"\n\n# 2. polymarket.py: unused variable ts\nsed -i '' 's/^        ts = t\\[\"t\"\\]/        _ = t[\"t\"]  # timestamp available but unused/' \"$BASE/research/polymarket/scripts/polymarket.py\"\n\n# 3. powerpoint clean.py: empty except blocks — add comments\nsed -i '' '/except.*:/{n;s/^            pass$/            pass  # intentionally ignored/;}' \"$BASE/productivity/powerpoint/scripts/clean.py\"\n\n# 4. test_package_skill.py: dual import style\nsed -i '' 's/^from package_skill import package_skill$/# package_skill imported via \"import package_skill\" below/' \"$BASE/software-development/skill-creator/scripts/test_package_skill.py\"\n\necho \"Fixed Python quality issues\"",
   "description": "Fix Python code quality issues"
 }
 ```
@@ -10604,7 +10604,7 @@ tool_use Read
 id: toolu_012a5tVXrBdGCodL4pdN61Wa
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/creative/p5js/templates/viewer.html",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/creative/p5js/templates/viewer.html",
   "offset": 25,
   "limit": 10
 }
@@ -10634,7 +10634,7 @@ id: toolu_014YWUdUbQGvPEyKmhpcMDk2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/creative/p5js/templates/viewer.html",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/creative/p5js/templates/viewer.html",
   "old_string": "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.3/p5.min.js\"></script>",
   "new_string": "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.3/p5.min.js\" integrity=\"REDACTED/REDACTED/MFm+M6VcIyA==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"></script>"
 }
@@ -10645,7 +10645,7 @@ id: toolu_014YWUdUbQGvPEyKmhpcMDk2
 tool_result
 id: toolu_014YWUdUbQGvPEyKmhpcMDk2
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/creative/p5js/templates/viewer.html has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/assets/creative/p5js/templates/viewer.html has been updated successfully.
 ```
 
 > AGENT
@@ -10686,7 +10686,7 @@ tool_use Bash
 id: toolu_0169PT3BoKnWgBwAAmnMPuz2
 ```json
 {
-  "command": "git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft add -A crates/skills/src/assets/ && git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft commit -m \"$(cat <<'EOF'\nfix(skills): address PR review feedback — remove godmode, fix code quality\n\nSecurity:\n- Remove red-teaming/godmode from bundled assets. The skill includes\n  automation that modifies user config files and trains the agent to\n  prefer less-filtered outputs. Not appropriate for default-on bundling.\n  Users who need it can install it as a personal skill.\n\nCode quality fixes in vendored sidecar scripts:\n- p5js/viewer.html: add SRI integrity hash to CDN script tag\n- maps_client.py: remove unused `import os`, mark unused variable\n- polymarket.py: mark unused variable `ts`\n- powerpoint/clean.py: add comments to intentional empty except blocks\n- skill-creator/test_package_skill.py: fix dual import style\nEOF\n)\" && git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft push 2>&1",
+  "command": "git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft add -A crates/skills/src/assets/ && git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft commit -m \"$(cat <<'EOF'\nfix(skills): address PR review feedback — remove godmode, fix code quality\n\nSecurity:\n- Remove red-teaming/godmode from bundled assets. The skill includes\n  automation that modifies user config files and trains the agent to\n  prefer less-filtered outputs. Not appropriate for default-on bundling.\n  Users who need it can install it as a personal skill.\n\nCode quality fixes in vendored sidecar scripts:\n- p5js/viewer.html: add SRI integrity hash to CDN script tag\n- maps_client.py: remove unused `import os`, mark unused variable\n- polymarket.py: mark unused variable `ts`\n- powerpoint/clean.py: add comments to intentional empty except blocks\n- skill-creator/test_package_skill.py: fix dual import style\nEOF\n)\" && git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft push 2>&1",
   "description": "Commit and push fixes",
   "timeout": 30000
 }
@@ -10819,7 +10819,7 @@ tool_use Bash
 id: toolu_01GAAstS7DzNsEi7ZAXVE1Ng
 ```json
 {
-  "command": "git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft fetch origin main && git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft merge origin/main --no-edit 2>&1",
+  "command": "git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft fetch origin main && git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft merge origin/main --no-edit 2>&1",
   "description": "Merge main into stealth-hovercraft"
 }
 ```
@@ -10850,7 +10850,7 @@ tool_use Read
 id: toolu_01Eg2evd59rAJoKSRQKr5t7a
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/prompt_gen.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/prompt_gen.rs",
   "limit": 30
 }
 ```
@@ -10895,7 +10895,7 @@ tool_use Bash
 id: toolu_01QNhzDRH9Zp4qBdErtEHxCz
 ```json
 {
-  "command": "grep -n \"<<<<<<\\|======\\|>>>>>>\" /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/prompt_gen.rs",
+  "command": "grep -n \"<<<<<<\\|======\\|>>>>>>\" /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/prompt_gen.rs",
   "description": "Find conflict markers"
 }
 ```
@@ -10916,7 +10916,7 @@ tool_use Read
 id: toolu_01BpKsxpSnidEcdtZ1HK8AoS
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/prompt_gen.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/prompt_gen.rs",
   "offset": 245,
   "limit": 110
 }
@@ -10998,7 +10998,7 @@ id: toolu_01NEg8Q217xv2YjxWVRxhu9V
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/prompt_gen.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/prompt_gen.rs",
   "old_string": "<<<<<<< HEAD\n\n    #[test]\n    fn test_category_attribute() {\n        let skills = vec![SkillMetadata {\n            name: \"arxiv\".into(),\n            description: \"Search papers\".into(),\n            category: Some(\"research\".into()),\n            path: PathBuf::from(\"/a\"),\n            source: Some(SkillSource::Bundled),\n            ..Default::default()\n        }];\n        let prompt = generate_skills_prompt(&skills);\n        assert!(prompt.contains(\"category=\\\"research\\\"\"));\n        assert!(prompt.contains(\"source=\\\"bundled\\\"\"));\n    }\n\n    // ── Format fallback tests ───────────────────────────────────────\n\n    #[test]\n    fn full_format_within_budget() {\n        let skills = vec![skill(\"a\", \"desc a\"), skill(\"b\", \"desc b\")];\n        let prompt = generate_skills_prompt_with_budget(&skills, 10_000);\n        // Full format includes descriptions.\n        assert!(prompt.contains(\"desc a\"));\n        assert!(prompt.contains(\"desc b\"));\n        assert!(prompt.contains(\"## Available Skills\\n\"));\n        assert!(!prompt.contains(\"compact\"));\n    }\n\n    #[test]\n    fn compact_fallback_when_full_exceeds_budget() {\n        let skills: Vec<_> = (0..50)\n            .map(|i| skill(&format!(\"skill-{i}\"), &\"x\".repeat(200)))\n            .collect();\n        // Tiny budget forces compact.\n        let prompt = generate_skills_prompt_with_budget(&skills, 3_000);\n        assert!(prompt.contains(\"compact\"));\n        // Compact uses self-closing tags, no descriptions.\n        assert!(prompt.contains(\"/>\"));\n        assert!(!prompt.contains(&\"x\".repeat(200)));\n        // All skills still present.\n        assert!(prompt.contains(\"skill-0\"));\n        assert!(prompt.contains(\"skill-49\"));\n    }\n\n    #[test]\n    fn truncation_when_compact_still_exceeds_budget() {\n        let skills: Vec<_> = (0..200)\n            .map(|i| skill(&format!(\"skill-{i:03}\"), \"d\"))\n            .collect();\n        // Very tiny budget.\n        let prompt = generate_skills_prompt_with_budget(&skills, 1_500);\n        assert!(prompt.contains(\"compact\"));\n        assert!(prompt.contains(\"showing\"));\n        assert!(prompt.contains(\"of 200\"));\n        // First skill present, last skill truncated.\n        assert!(prompt.contains(\"skill-000\"));\n    }\n\n    #[test]\n    fn default_budget_fits_100_skills() {\n        let skills: Vec<_> = (0..100)\n            .map(|i| {\n                skill(\n                    &format!(\"skill-{i}\"),\n                    &format!(\"Description of skill {i} that is moderately long\"),\n                )\n            })\n            .collect();\n        let prompt = generate_skills_prompt(&skills);\n        // With default 30KB budget, 100 skills should fit in full format.\n        assert!(!prompt.contains(\"compact\"));\n        assert!(prompt.contains(\"skill-0\"));\n        assert!(prompt.contains(\"skill-99\"));\n    }\n||||||| […]
 
 > TOOL
@@ -11006,7 +11006,7 @@ id: toolu_01NEg8Q217xv2YjxWVRxhu9V
 tool_result
 id: toolu_01NEg8Q217xv2YjxWVRxhu9V
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/prompt_gen.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills/src/prompt_gen.rs has been updated successfully.
 ```
 
 > TOOL
@@ -11026,10 +11026,10 @@ id: toolu_01LstBAQPDs2eJmLSHH9Ldop
 tool_result
 id: toolu_01LstBAQPDs2eJmLSHH9Ldop
 ```
-    Checking moltis-qmd v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/qmd)
-    Checking moltis-chat v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/chat)
-    Checking moltis-code-index v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/code-index)
-    Checking moltis-gateway v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway)
+    Checking moltis-qmd v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/qmd)
+    Checking moltis-chat v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/chat)
+    Checking moltis-code-index v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/code-index)
+    Checking moltis-gateway v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/gateway)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 32.34s
 
 running 0 tests
@@ -11047,7 +11047,7 @@ tool_use Bash
 id: toolu_01RB5YVngVF1XArdBq3MkBMN
 ```json
 {
-  "command": "git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft add -A && git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft commit --no-edit -m \"Merge origin/main into stealth-hovercraft\" && git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft push 2>&1",
+  "command": "git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft add -A && git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft commit --no-edit -m \"Merge origin/main into stealth-hovercraft\" && git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft push 2>&1",
   "description": "Commit merge and push",
   "timeout": 30000
 }
@@ -11075,7 +11075,7 @@ id: toolu_015XNetLhYunamhvAA3UuYkd
 {
   "pattern": "/api/skills",
   "glob": "**/*.rs",
-  "path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates",
+  "path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates",
   "output_mode": "content",
   "-n": true,
   "head_limit": 10
@@ -11087,11 +11087,11 @@ id: toolu_015XNetLhYunamhvAA3UuYkd
 tool_result
 id: toolu_015XNetLhYunamhvAA3UuYkd
 ```
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/templates.rs:964:        assert!(!is_known_spa_route("/api/skills"));
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/httpd/tests/auth_middleware/more.rs:421:    let blocked_resp = reqwest::get(format!("http://{addr}/api/skills"))
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/httpd/tests/auth_middleware/more.rs:452:    let blocked_resp = reqwest::get(format!("http://{addr}/api/skills"))
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/lib.rs:65:        .route("/api/skills", get(api::api_skills_handler))
-/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/lib.rs:66:        .route("/api/skills/search", get(api::api_skills_search_handler))
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/templates.rs:964:        assert!(!is_known_spa_route("/api/skills"));
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/httpd/tests/auth_middleware/more.rs:421:    let blocked_resp = reqwest::get(format!("http://{addr}/api/skills"))
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/httpd/tests/auth_middleware/more.rs:452:    let blocked_resp = reqwest::get(format!("http://{addr}/api/skills"))
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/lib.rs:65:        .route("/api/skills", get(api::api_skills_handler))
+/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/lib.rs:66:        .route("/api/skills/search", get(api::api_skills_search_handler))
 
 [Showing results with pagination = limit: 10, offset: 0]
 ```
@@ -11103,7 +11103,7 @@ id: toolu_01A8J8jwshtCps5mytVhqcNi
 ```json
 {
   "pattern": "api_skills_handler",
-  "path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/api.rs",
+  "path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/api.rs",
   "output_mode": "content",
   "-n": true,
   "-C": 30
@@ -11184,7 +11184,7 @@ tool_use Read
 id: toolu_01EJexR9hG2egaZbFQEBxm1T
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/api.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/api.rs",
   "offset": 590,
   "limit": 40
 }
@@ -11248,7 +11248,7 @@ id: toolu_012LryXZ5EtUoSdsHaLoBQ5U
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/api.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/api.rs",
   "old_string": "    {\n        use moltis_skills::discover::{FsSkillDiscoverer, SkillDiscoverer};\n        let data_dir = moltis_config::data_dir();\n        let search_paths = vec![\n            (\n                data_dir.join(\"skills\"),\n                moltis_skills::types::SkillSource::Personal,\n            ),\n            (\n                data_dir.join(\".moltis/skills\"),\n                moltis_skills::types::SkillSource::Project,\n            ),\n        ];\n        let discoverer = FsSkillDiscoverer::new(search_paths);\n        if let Ok(discovered) = discoverer.discover().await {\n            for s in discovered {\n                let protected = moltis_gateway::services::is_protected_discovered_skill(&s.name);\n                skills.push(serde_json::json!({\n                    \"name\": s.name,\n                    \"description\": s.description,\n                    \"source\": s.source,\n                    \"enabled\": true,\n                    \"protected\": protected,\n                }));\n            }\n        }\n    }",
   "new_string": "    {\n        use moltis_skills::discover::{FsSkillDiscoverer, SkillDiscoverer};\n        let data_dir = moltis_config::data_dir();\n        let search_paths = vec![\n            (\n                data_dir.join(\"skills\"),\n                moltis_skills::types::SkillSource::Personal,\n            ),\n            (\n                data_dir.join(\".moltis/skills\"),\n                moltis_skills::types::SkillSource::Project,\n            ),\n        ];\n        let fs_discoverer = FsSkillDiscoverer::new(search_paths);\n\n        #[cfg(feature = \"bundled-skills\")]\n        let discovered = {\n            let bundled =\n                std::sync::Arc::new(moltis_skills::bundled::BundledSkillStore::new());\n            let composite = moltis_skills::discover::CompositeSkillDiscoverer::new(\n                Box::new(fs_discoverer),\n                bundled,\n            );\n            composite.discover().await\n        };\n        #[cfg(not(feature = \"bundled-skills\"))]\n        let discovered = fs_discoverer.discover().await;\n\n        if let Ok(discovered) = discovered {\n            for s in discovered {\n                let protected = moltis_gateway::services::is_protected_discovered_skill(&s.name);\n                skills.push(serde_json::json!({\n                    \"name\": s.name,\n                    \"description\": s.description,\n                    \"category\": s.category,\n                    \"source\": s.source,\n                    \"enabled\": true,\n                    \"protected\": protected,\n                }));\n            }\n        }\n    }"
 }
@@ -11259,7 +11259,7 @@ id: toolu_012LryXZ5EtUoSdsHaLoBQ5U
 tool_result
 id: toolu_012LryXZ5EtUoSdsHaLoBQ5U
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/api.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/api.rs has been updated successfully.
 ```
 
 > AGENT
@@ -11273,7 +11273,7 @@ id: toolu_01Y3RM3Rqe8W29aUdprPi4Qh
 ```json
 {
   "pattern": "moltis-skills",
-  "path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/Cargo.toml",
+  "path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/Cargo.toml",
   "output_mode": "content",
   "-C": 1
 }
@@ -11296,7 +11296,7 @@ id: toolu_014cVGoHuG1tUopZpJcHLPLt
 ```json
 {
   "pattern": "\\[features\\]",
-  "path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/Cargo.toml",
+  "path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/Cargo.toml",
   "output_mode": "content",
   "-A": 20
 }
@@ -11339,7 +11339,7 @@ id: toolu_0149rbfMKhqFatQ6hpCkHhfv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/Cargo.toml",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/Cargo.toml",
   "old_string": "agent              = [\"moltis-gateway/agent\"]\ndefault            = [\"embedded-assets\"]",
   "new_string": "agent              = [\"moltis-gateway/agent\"]\nbundled-skills     = [\"moltis-skills/bundled-skills\"]\ndefault            = [\"embedded-assets\"]"
 }
@@ -11359,7 +11359,7 @@ tool_use Read
 id: toolu_01UgvmoGXDHcP1U1maBwrxGw
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/Cargo.toml"
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/Cargo.toml"
 }
 ```
 
@@ -11408,7 +11408,7 @@ id: toolu_01J1rxvr5S9aTFourE1bh3ii
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/Cargo.toml",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/Cargo.toml",
   "old_string": "agent              = [\"moltis-gateway/agent\"]\ndefault            = [\"embedded-assets\"]",
   "new_string": "agent              = [\"moltis-gateway/agent\"]\nbundled-skills     = [\"moltis-skills/bundled-skills\"]\ndefault            = [\"embedded-assets\"]"
 }
@@ -11419,7 +11419,7 @@ id: toolu_01J1rxvr5S9aTFourE1bh3ii
 tool_result
 id: toolu_01J1rxvr5S9aTFourE1bh3ii
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/Cargo.toml has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/Cargo.toml has been updated successfully.
 ```
 
 > AGENT
@@ -11432,7 +11432,7 @@ tool_use Read
 id: toolu_01JwACoRtibLfExnB5q56L99
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/cli/Cargo.toml",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/cli/Cargo.toml",
   "offset": 138,
   "limit": 5
 }
@@ -11457,7 +11457,7 @@ id: toolu_01KmK9p78sZ8x7HtFhzD3DTF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/cli/Cargo.toml",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/cli/Cargo.toml",
   "old_string": "bundled-skills  = [\"moltis-gateway/bundled-skills\"]",
   "new_string": "bundled-skills  = [\"moltis-gateway/bundled-skills\", \"moltis-web?/bundled-skills\"]"
 }
@@ -11468,7 +11468,7 @@ id: toolu_01KmK9p78sZ8x7HtFhzD3DTF
 tool_result
 id: toolu_01KmK9p78sZ8x7HtFhzD3DTF
 ```
-The file /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/cli/Cargo.toml has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/cli/Cargo.toml has been updated successfully.
 ```
 
 > TOOL
@@ -11489,8 +11489,8 @@ tool_result
 id: toolu_01C4cnMjEwfQG6zw9mBxvPLm
 ```
 warning: `moltis-gateway` (lib) generated 47 warnings (run `cargo fix --lib -p moltis-gateway` to apply 6 suggestions)
-    Checking moltis-httpd v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/httpd)
-    Checking moltis-web v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web)
+    Checking moltis-httpd v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/httpd)
+    Checking moltis-web v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 36.02s
 ```
 
@@ -11504,7 +11504,7 @@ tool_use Bash
 id: toolu_0115RQhAdnbm3qpojzNhQjji
 ```json
 {
-  "command": "git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft add crates/web/src/api.rs crates/web/Cargo.toml crates/cli/Cargo.toml crates/skills/src/prompt_gen.rs && git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft commit -m \"$(cat <<'EOF'\nfix(web): show bundled skills in the web UI skills page\n\nThe /api/skills endpoint created its own FsSkillDiscoverer with only\nPersonal + Project paths, so bundled skills never appeared. Now uses\nCompositeSkillDiscoverer (same as the gateway) when bundled-skills\nfeature is enabled.\n\nAlso forwards bundled-skills feature through moltis-web and fixes\nthe merge conflict in prompt_gen.rs tests.\nEOF\n)\" && git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft push 2>&1",
+  "command": "git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft add crates/web/src/api.rs crates/web/Cargo.toml crates/cli/Cargo.toml crates/skills/src/prompt_gen.rs && git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft commit -m \"$(cat <<'EOF'\nfix(web): show bundled skills in the web UI skills page\n\nThe /api/skills endpoint created its own FsSkillDiscoverer with only\nPersonal + Project paths, so bundled skills never appeared. Now uses\nCompositeSkillDiscoverer (same as the gateway) when bundled-skills\nfeature is enabled.\n\nAlso forwards bundled-skills feature through moltis-web and fixes\nthe merge conflict in prompt_gen.rs tests.\nEOF\n)\" && git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft push 2>&1",
   "description": "Commit and push web UI fix",
   "timeout": 30000
 }
@@ -11545,7 +11545,7 @@ tool_use Bash
 id: toolu_01E6d37BL1uD6UF4N7EKaqSD
 ```json
 {
-  "command": "git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft status",
+  "command": "git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft status",
   "description": "Verify clean state"
 }
 ```
@@ -11579,7 +11579,7 @@ tool_use Bash
 id: toolu_019T8U9sCr41HjfPcAr7nfce
 ```json
 {
-  "command": "git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft fetch origin main && git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft merge origin/main --no-edit 2>&1",
+  "command": "git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft fetch origin main && git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft merge origin/main --no-edit 2>&1",
   "description": "Merge main into stealth-hovercraft"
 }
 ```
@@ -11605,7 +11605,7 @@ tool_use Bash
 id: toolu_012C2jhRhYMTHkqgK4ksThfE
 ```json
 {
-  "command": "git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft stash && git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft merge origin/main --no-edit 2>&1",
+  "command": "git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft stash && git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft merge origin/main --no-edit 2>&1",
   "description": "Stash local changes and merge main"
 }
 ```
@@ -11629,7 +11629,7 @@ tool_use Bash
 id: toolu_016CKezB3YducVibo8WB2y4J
 ```json
 {
-  "command": "grep -n \"<<<<<<\\|======\\|>>>>>>\" /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/assets/css/style.css | head -10",
+  "command": "grep -n \"<<<<<<\\|======\\|>>>>>>\" /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/src/assets/css/style.css | head -10",
   "description": "Find conflict markers in style.css"
 }
 ```
@@ -11654,7 +11654,7 @@ tool_use Bash
 id: toolu_019v1htue7KsRHfxAneg9Zsp
 ```json
 {
-  "command": "# Take theirs (main's version) as base, then rebuild with our CSS additions\ngit -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft checkout --theirs crates/web/src/assets/css/style.css && npm --prefix /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/ui run build:css 2>&1 | tail -5",
+  "command": "# Take theirs (main's version) as base, then rebuild with our CSS additions\ngit -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft checkout --theirs crates/web/src/assets/css/style.css && npm --prefix /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/ui run build:css 2>&1 | tail -5",
   "description": "Resolve style.css by regenerating from Tailwind",
   "timeout": 30000
 }
@@ -11679,7 +11679,7 @@ tool_use Bash
 id: toolu_01WP2mnAS5KjKCZTvDJW3s7P
 ```json
 {
-  "command": "git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft add -A && git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft commit --no-edit -m \"Merge origin/main into stealth-hovercraft\" && git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft stash pop 2>&1 | head -5 && git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft push 2>&1",
+  "command": "git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft add -A && git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft commit --no-edit -m \"Merge origin/main into stealth-hovercraft\" && git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft stash pop 2>&1 | head -5 && git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft push 2>&1",
   "description": "Commit merge, pop stash, push",
   "timeout": 30000
 }
@@ -11715,7 +11715,7 @@ tool_use Bash
 id: toolu_01MmG8uNxksKUhKmJz4dFMbX
 ```json
 {
-  "command": "git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft stash drop 2>/dev/null; git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft checkout -- crates/web/src/assets/style.css 2>/dev/null; git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft status",
+  "command": "git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft stash drop 2>/dev/null; git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft checkout -- crates/web/src/assets/style.css 2>/dev/null; git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft status",
   "description": "Clean up stash leftovers"
 }
 ```
@@ -11743,7 +11743,7 @@ tool_use Bash
 id: toolu_01HSmxFXcVMSRQxFFQfUeMky
 ```json
 {
-  "command": "# Regenerate the file cleanly\nnpm --prefix /Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/web/ui run build:css 2>&1 | tail -3 && git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft add crates/web/src/assets/style.css && git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft status",
+  "command": "# Regenerate the file cleanly\nnpm --prefix /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/web/ui run build:css 2>&1 | tail -3 && git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft add crates/web/src/assets/style.css && git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft status",
   "description": "Regenerate style.css and stage",
   "timeout": 30000
 }
@@ -11780,7 +11780,7 @@ tool_use Bash
 id: toolu_01CxLBp7tNeZBfLtEfgAw4RZ
 ```json
 {
-  "command": "git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft add -A && git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft commit -m \"fix: regenerate style.css after merge conflict\" && git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft push 2>&1",
+  "command": "git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft add -A && git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft commit -m \"fix: regenerate style.css after merge conflict\" && git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft push 2>&1",
   "description": "Commit regenerated CSS and push",
   "timeout": 30000
 }
@@ -11807,7 +11807,7 @@ tool_use Bash
 id: toolu_0157Zvh1dCsqvcLL6RcYARdT
 ```json
 {
-  "command": "git -C /Users/penso/.superset/worktrees/moltis/stealth-hovercraft status",
+  "command": "git -C /home/<USER>/.superset/worktrees/moltis/stealth-hovercraft status",
   "description": "Verify clean state"
 }
 ```

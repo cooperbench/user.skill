@@ -32,7 +32,7 @@ id: toolu_01AFZhDhSKNPvKutVKr4nBzx
 ```json
 {
   "description": "Explore project structure and tests",
-  "prompt": "Explore the project at /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer thoroughly. I need a complete picture of:\n\n1. **Project type & stack**: What language(s), frameworks, build tools (e.g. Maven/Gradle for Java, package.json for JS). Read the build files (pom.xml, build.gradle, package.json, etc.) and the README.md.\n\n2. **Architecture & modules**: List the main source directories and modules. What are the main components/services/classes? Identify the entry points.\n\n3. **Critical user journeys / features**: Based on the code and README, what does this app DO? What are the main user-facing features and flows? (e.g. \"user uploads X\", \"user analyzes Y\", \"AI generates Z\"). Mention the AnalyzerService, AI/LangChain4j integration, UI, session timeline that I saw referenced in recent commits.\n\n4. **Existing tests**: Find ALL existing test files. What testing frameworks are used (JUnit, Jest, etc.)? What's already covered and what's the test directory structure? How are tests run (commands)?\n\n5. **Test infrastructure**: Any test config, fixtures, mocks, CI setup (.github/workflows), test runner config.\n\nReport back with: the tech stack, a map of source modules with their responsibilities, a list of critical user journeys, the current test coverage situation (which files have tests, which don't), and the exact commands to run lint/build/test. Include […]
+  "prompt": "Explore the project at /home/<USER>/Developer/scottdensmore/agent-brain-visualizer thoroughly. I need a complete picture of:\n\n1. **Project type & stack**: What language(s), frameworks, build tools (e.g. Maven/Gradle for Java, package.json for JS). Read the build files (pom.xml, build.gradle, package.json, etc.) and the README.md.\n\n2. **Architecture & modules**: List the main source directories and modules. What are the main components/services/classes? Identify the entry points.\n\n3. **Critical user journeys / features**: Based on the code and README, what does this app DO? What are the main user-facing features and flows? (e.g. \"user uploads X\", \"user analyzes Y\", \"AI generates Z\"). Mention the AnalyzerService, AI/LangChain4j integration, UI, session timeline that I saw referenced in recent commits.\n\n4. **Existing tests**: Find ALL existing test files. What testing frameworks are used (JUnit, Jest, etc.)? What's already covered and what's the test directory structure? How are tests run (commands)?\n\n5. **Test infrastructure**: Any test config, fixtures, mocks, CI setup (.github/workflows), test runner config.\n\nReport back with: the tech stack, a map of source modules with their responsibilities, a list of critical user journeys, the current test coverage situation (which files have tests, which don't), and the exact commands to run lint/build/test. Include […]
 
 > TOOL
 
@@ -60,7 +60,7 @@ Now I have all the information needed. Let me create a comprehensive summary.
 - **CI/CD:** GitHub Actions (release workflow for multi-platform native binaries: macOS arm64, Linux amd64, Windows amd64)
 
 **Key Build Files:**
-- `/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/build.gradle` - Gradle configuration with LangChain4j BOM, Micronaut plugins, AOT optimizations
+- `/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/build.gradle` - Gradle configuration with LangChain4j BOM, Micronaut plugins, AOT optimizations
 - `gradle.properties` and `settings.gradle` - Version and project metadata
 - `spotless.license` - Apache 2.0 license header for code formatting
 
@@ -78,7 +78,7 @@ tool_use Read
 id: toolu_01Qyg2tHddfi472SmXAr3DJ8
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/BrainController.java"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/BrainController.java"
 }
 ```
 
@@ -136,7 +136,7 @@ tool_use Read
 id: toolu_01HSzJni4TsjeUetqJ74E1oV
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java"
 }
 ```
 
@@ -196,7 +196,7 @@ tool_use Read
 id: toolu_01P2o7ek8nfmc8XhQ49SvAaL
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/VisualizerTest.java"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/VisualizerTest.java"
 }
 ```
 
@@ -252,7 +252,7 @@ tool_use Read
 id: toolu_01SQG6TCCrv8mhahcMr3VL7Y
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalyzerService.java"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalyzerService.java"
 }
 ```
 
@@ -299,7 +299,7 @@ tool_use Read
 id: toolu_01M3r2wbhuuzQw3h86tqgJ3v
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/ChatModelFactory.java"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/ChatModelFactory.java"
 }
 ```
 
@@ -361,7 +361,7 @@ tool_use Read
 id: toolu_01D2ixkJdMXVRz5944qyMsR9
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/Application.java"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/Application.java"
 }
 ```
 
@@ -416,7 +416,7 @@ tool_use Read
 id: toolu_014UxB4XsiqzesuPHckFowT6
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/build.gradle"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/build.gradle"
 }
 ```
 
@@ -566,7 +566,7 @@ tool_use Read
 id: toolu_01CB4XyptPJaSog4m9Vh3M9t
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/modules/utils.js"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/modules/utils.js"
 }
 ```
 
@@ -576,7 +576,7 @@ tool_use Read
 id: toolu_01DVLBXYRHC6JwFiojfbXofn
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/modules/stats.js"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/modules/stats.js"
 }
 ```
 
@@ -708,7 +708,7 @@ tool_use Read
 id: toolu_01QfwnQ1vQBkXp9166769kq8
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/modules/timeline.js"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/modules/timeline.js"
 }
 ```
 
@@ -717,7 +717,7 @@ id: toolu_01QfwnQ1vQBkXp9166769kq8
 tool_result
 id: toolu_01PbovhJsWVUjSZSiqyT4oNh
 ```
-[Incubating] Problems report is available at: file:///Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/build/reports/problems/problems-report.html
+[Incubating] Problems report is available at: file:///home/<USER>/Developer/scottdensmore/agent-brain-visualizer/build/reports/problems/problems-report.html
 
 FAILURE: Build failed with an exception.
 
@@ -833,8 +833,8 @@ tool_result
 id: toolu_01Gap6kv1ip51PMdG6B2tzCJ
 ```
 --- which java ---
-/Users/scottdensmore/.local/share/mise/installs/java/21/bin/java
-/Users/scottdensmore/.local/share/mise/installs/java/21.0.2/bin/java
+/home/<USER>/.local/share/mise/installs/java/21/bin/java
+/home/<USER>/.local/share/mise/installs/java/21.0.2/bin/java
 --- JAVA_HOME ---
 
 --- brew ---
@@ -888,7 +888,7 @@ mise java@temurin-25.0.3+9.0.LTS [1/3] checksum OpenJDK25U-jdk_aarch64_mac_hotsp
 mise java@temurin-25.0.3+9.0.LTS [2/3] extract OpenJDK25U-jdk_aarch64_mac_hotspot_25.0.3_9.tar.gz
 mise To enable macOS integration, run the following commands:
 sudo mkdir /Library/Java/JavaVirtualMachines/temurin-25.0.3+9.0.LTS.jdk
-sudo ln -s /Users/scottdensmore/.local/share/mise/installs/java/temurin-25.0.3+9.0.LTS/Contents /Library/Java/JavaVirtualMachines/temurin-25.0.3+9.0.LTS.jdk/Contents
+sudo ln -s /home/<USER>/.local/share/mise/installs/java/temurin-25.0.3+9.0.LTS/Contents /Library/Java/JavaVirtualMachines/temurin-25.0.3+9.0.LTS.jdk/Contents
 
 mise java@temurin-25.0.3+9.0.LTS [3/3] java -version
 openjdk version "25.0.3" 2026-04-21 LTS
@@ -907,7 +907,7 @@ tool_use Bash
 id: toolu_01V8ZxmdUpHp42fNRxKrF5Cr
 ```json
 {
-  "command": "export JAVA_HOME=/Users/scottdensmore/.local/share/mise/installs/java/temurin-25.0.3+9.0.LTS/Contents/Home\nexport PATH=\"$JAVA_HOME/bin:$PATH\"\njava -version 2>&1\necho \"--- gradle test ---\"\n./gradlew test --console=plain 2>&1 | tail -25",
+  "command": "export JAVA_HOME=/home/<USER>/.local/share/mise/installs/java/temurin-25.0.3+9.0.LTS/Contents/Home\nexport PATH=\"$JAVA_HOME/bin:$PATH\"\njava -version 2>&1\necho \"--- gradle test ---\"\n./gradlew test --console=plain 2>&1 | tail -25",
   "description": "Run baseline test with JDK 25",
   "timeout": 600000
 }
@@ -937,7 +937,7 @@ Note: Recompile with -Xlint:unchecked for details.
 > Task :testClasses
 > Task :test
 
-[Incubating] Problems report is available at: file:///Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/build/reports/problems/problems-report.html
+[Incubating] Problems report is available at: file:///home/<USER>/Developer/scottdensmore/agent-brain-visualizer/build/reports/problems/problems-report.html
 
 Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
 
@@ -959,7 +959,7 @@ tool_use Read
 id: toolu_01P4MpynyhR66kdZhZa3y4Xy
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/modules/analysis.js"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/modules/analysis.js"
 }
 ```
 
@@ -1013,7 +1013,7 @@ tool_use Read
 id: toolu_01HCV4yhegLdd8h4gWbgncEm
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/app.js"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/app.js"
 }
 ```
 
@@ -1068,7 +1068,7 @@ tool_use Read
 id: toolu_01VFHZaXFpKWaGKSR2Ho4Pmc
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisResponse.java"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisResponse.java"
 }
 ```
 
@@ -1119,7 +1119,7 @@ tool_use Read
 id: toolu_01RWE5uavQMXM3JpHG6wVERP
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AgentAction.java"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AgentAction.java"
 }
 ```
 
@@ -1164,7 +1164,7 @@ tool_use Read
 id: toolu_01N1YW46GXdtDw3YvGJdEVxB
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/Issue.java"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/Issue.java"
 }
 ```
 
@@ -1213,7 +1213,7 @@ tool_use Read
 id: toolu_01HJAdKUHbXsyxmV6Zy2RxjA
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/spotless.license"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/spotless.license"
 }
 ```
 
@@ -1246,7 +1246,7 @@ tool_use Read
 id: toolu_01UxQMz2Njd8KiBEViCfVsmr
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/modules/ui.js"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/modules/ui.js"
 }
 ```
 
@@ -1325,7 +1325,7 @@ tool_use Write
 id: toolu_01GnvS7VVT2nvGk9phLP7aQE
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/GeminiConfig.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/GeminiConfig.java",
   "content": "/*\n * Copyright 2026 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage io.github.glaforge.agybrainviz;\n\nimport jakarta.inject.Singleton;\nimport java.util.Optional;\n\n/**\n * Injectable accessor for the Gemini API key. Reading the key through a bean (rather than calling\n * {@code System.getenv} inline) gives tests a seam to supply a deterministic value without touching\n * process environment variables.\n */\n@Singleton\npublic class GeminiConfig {\n\n    /**\n     * @return the configured Gemini API key, or {@link Optional#empty()} when the\n     *     {@code GEMINI_API_KEY} environment variable is unset or blank.\n     */\n    public Optional<String> apiKey() {\n        String key = System.getenv(\"GEMINI_API_KEY\");\n        if (key == null || key.isEmpty()) {\n            return Optional.empty();\n        }\n        return Optional.of(key);\n    }\n}\n"
 }
 ```
@@ -1335,7 +1335,7 @@ id: toolu_01GnvS7VVT2nvGk9phLP7aQE
 tool_result
 id: toolu_01GnvS7VVT2nvGk9phLP7aQE
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/GeminiConfig.java (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/GeminiConfig.java (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1344,7 +1344,7 @@ tool_use Write
 id: toolu_018qqW8d2XtsMykHM8jmivVa
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/TokenCounter.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/TokenCounter.java",
   "content": "/*\n * Copyright 2026 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage io.github.glaforge.agybrainviz;\n\nimport dev.langchain4j.model.TokenCountEstimator;\nimport dev.langchain4j.model.google.genai.GoogleGenAiTokenCountEstimator;\nimport jakarta.inject.Inject;\nimport jakarta.inject.Singleton;\n\n/**\n * Estimates the number of tokens in a piece of text using the Google GenAI tokenizer.\n *\n * <p>The underlying {@link TokenCountEstimator} is built lazily on first use so that constructing\n * the bean (e.g. at application startup) never performs network I/O. Wrapping the estimator in a\n * bean lets tests replace token counting with a deterministic stub.\n */\n@Singleton\npublic class TokenCounter {\n\n    private final GeminiConfig config;\n    private volatile TokenCountEstimator estimator;\n\n    @Inject\n    public TokenCounter(GeminiConfig config) {\n        this.config = config;\n    }\n\n    /**\n     * @param text the text to measure\n     * @return […]
 
 > TOOL
@@ -1352,7 +1352,7 @@ id: toolu_018qqW8d2XtsMykHM8jmivVa
 tool_result
 id: toolu_018qqW8d2XtsMykHM8jmivVa
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/TokenCounter.java (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/TokenCounter.java (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1361,7 +1361,7 @@ tool_use Write
 id: toolu_011Ez6QsNEUQHp4p9zVtMPHk
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/TranscriptParser.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/TranscriptParser.java",
   "content": "/*\n * Copyright 2026 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage io.github.glaforge.agybrainviz;\n\nimport com.fasterxml.jackson.databind.JsonNode;\nimport com.fasterxml.jackson.databind.ObjectMapper;\nimport java.util.ArrayList;\nimport java.util.List;\nimport java.util.function.ToIntFunction;\n\n/**\n * Pure transcript-processing helpers used by {@link AnalysisController}.\n *\n * <p>This logic is intentionally free of any I/O, network, or framework dependencies so it can be\n * unit-tested directly: it turns raw JSONL transcript lines into condensed, de-duplicated\n * \"sequences\" of human-readable summary lines, and splits those lines into chunks that fit within a\n * token budget.\n */\nfinal class TranscriptParser {\n\n    private TranscriptParser() {}\n\n    /**\n     * Condenses raw JSONL transcript lines into a list of sequences. A new sequence is started at\n     * every user input; within a […]
 
 > TOOL
@@ -1369,7 +1369,7 @@ id: toolu_011Ez6QsNEUQHp4p9zVtMPHk
 tool_result
 id: toolu_011Ez6QsNEUQHp4p9zVtMPHk
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/TranscriptParser.java (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/TranscriptParser.java (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1383,7 +1383,7 @@ id: toolu_01B9wNTmuYuexU2vdiHAKyMk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
   "old_string": "import com.fasterxml.jackson.databind.JsonNode;\nimport com.fasterxml.jackson.databind.ObjectMapper;\nimport dev.langchain4j.model.TokenCountEstimator;\nimport dev.langchain4j.model.chat.ChatModel;\nimport dev.langchain4j.model.google.genai.GoogleGenAiTokenCountEstimator;\nimport dev.langchain4j.service.AiServices;\nimport io.micronaut.http.annotation.Controller;",
   "new_string": "import com.fasterxml.jackson.databind.ObjectMapper;\nimport io.micronaut.http.annotation.Controller;"
 }
@@ -1394,7 +1394,7 @@ id: toolu_01B9wNTmuYuexU2vdiHAKyMk
 tool_result
 id: toolu_01B9wNTmuYuexU2vdiHAKyMk
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1404,7 +1404,7 @@ id: toolu_01QkfTKf4BmDXQrD3bdmxCQa
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
   "old_string": "import java.util.concurrent.atomic.AtomicBoolean;\nimport java.util.concurrent.atomic.AtomicInteger;",
   "new_string": "import java.util.concurrent.atomic.AtomicBoolean;\nimport java.util.concurrent.atomic.AtomicInteger;\nimport java.util.function.ToIntFunction;"
 }
@@ -1415,7 +1415,7 @@ id: toolu_01QkfTKf4BmDXQrD3bdmxCQa
 tool_result
 id: toolu_01QkfTKf4BmDXQrD3bdmxCQa
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1425,7 +1425,7 @@ id: toolu_015voBq2ofBHXeaEtWWfJLGY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
   "old_string": "    private final AnalyzerService analyzerService;\n    private final ExecutorService executor;\n\n    @Inject\n    public AnalysisController(\n        AnalyzerService analyzerService,\n        @Named(TaskExecutors.IO) ExecutorService executor\n    ) {\n        this.analyzerService = analyzerService;\n        this.executor = executor;\n    }\n\n    private void splitIntoSafeChunks(\n        List<String> lines,\n        TokenCountEstimator estimator,\n        int maxTokens,\n        List<List<String>> safeChunks\n    ) {\n        if (lines.isEmpty()) return;\n        String text = String.join(\"\\n\", lines);\n        try {\n            int tokens = estimator.estimateTokenCountInText(text);\n            if (tokens <= maxTokens || lines.size() == 1) {\n                safeChunks.add(lines);\n            } else {\n                int mid = lines.size() / 2;\n                splitIntoSafeChunks(lines.subList(0, mid), estimator, maxTokens, safeChunks);\n                splitIntoSafeChunks(\n                    lines.subList(mid, lines.size()),\n                    estimator,\n                    maxTokens,\n                    safeChunks\n                );\n            }\n        } catch (Exception e) {\n            int fallbackTokens = text.length() / 2;\n            if (fallbackTokens <= maxTokens || lines.size() == 1) {\n                safeChunks.add(lines);\n            } else {\n                int mid = lines.size() / 2;\n                splitIntoSafeChunks(lines.subList(0, mid), estimator, maxTokens, safeChunks);\n                splitIntoSafeChunks(\n                    lines.subList(mid, lines.size()),\n                    estimator,\n                    maxTokens,\n                    safeChunks\n                );\n            }\n        }\n    }\n\n    private static final Map<String, Object> runningTasks = new ConcurrentHashMap<>();",
   "new_string": "    private final AnalyzerService analyzerService;\n    private final ExecutorService executor;\n    private final GeminiConfig geminiConfig;\n    private final TokenCounter tokenCounter;\n\n    @Inject\n    public AnalysisController(\n        AnalyzerService analyzerService,\n        @Named(TaskExecutors.IO) ExecutorService executor,\n        GeminiConfig geminiConfig,\n        TokenCounter tokenCounter\n    ) {\n        this.analyzerService = analyzerService;\n        this.executor = executor;\n        this.geminiConfig = geminiConfig;\n        this.tokenCounter = tokenCounter;\n    }\n\n    private static final Map<String, Object> […]
 
@@ -1434,7 +1434,7 @@ id: toolu_015voBq2ofBHXeaEtWWfJLGY
 tool_result
 id: toolu_015voBq2ofBHXeaEtWWfJLGY
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1448,7 +1448,7 @@ id: toolu_0117fWkooJv6kskDexvuKaK7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
   "old_string": "        String apiKey = System.getenv(\"GEMINI_API_KEY\");\n        if (apiKey == null || apiKey.isEmpty()) {\n            return \"{\\\"summary\\\": \\\"Error: GEMINI_API_KEY environment variable is not set. Cannot use LangChain4j analysis.\\\"}\";\n        }",
   "new_string": "        if (geminiConfig.apiKey().isEmpty()) {\n            return \"{\\\"summary\\\": \\\"Error: GEMINI_API_KEY environment variable is not set. Cannot use LangChain4j analysis.\\\"}\";\n        }"
 }
@@ -1459,7 +1459,7 @@ id: toolu_0117fWkooJv6kskDexvuKaK7
 tool_result
 id: toolu_0117fWkooJv6kskDexvuKaK7
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1469,7 +1469,7 @@ id: toolu_01G6p2D7syEQ31A4MTwyLUPv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
   "old_string": "                List<String> allLines = Files.readAllLines(transcriptPath);\n                List<List<String>> sequences = new ArrayList<>();\n                List<String> currentSequence = new ArrayList<>();\n\n                for (String line : allLines) {\n                    if (line.trim().isEmpty()) continue;\n                    try {\n                        JsonNode node = mapper.readTree(line);\n                        String type = node.path(\"type\").asText(\"\");\n                        if (\n                            \"USER_INPUT\".equals(type) ||\n                            \"USER_EXPLICIT\".equals(node.path(\"source\").asText(\"\"))\n                        ) {\n                            if (!currentSequence.isEmpty()) {\n                                sequences.add(deduplicateSequence(currentSequence));\n                                currentSequence = new ArrayList<>();\n                            }\n                            String content = node.path(\"content\").asText(\"\");\n                            currentSequence.add(\n                                \"USER REQUEST: \" +\n                                content.substring(0, Math.min(2000, content.length()))\n                            );\n                        } else if (\n                            \"PLANNER_RESPONSE\".equals(type) ||\n                            \"MODEL\".equals(node.path(\"source\").asText(\"\"))\n                        ) {\n                            JsonNode tools = node.path(\"tool_calls\");\n                            if (!tools.isMissingNode() && tools.isArray()) {\n                                for (JsonNode tool : tools) {\n                                    String name = tool.path(\"name\").asText(\"unknown\");\n                                    String action = tool\n                                        .path(\"arguments\")\n                                        .path(\"toolAction\")\n                                        .asText(\"\");\n                                    String tgt = tool\n                                        .path(\"arguments\")\n                                        .path(\"TargetFile\")\n                                        .asText(\"\");\n                                    if (tgt.isEmpty()) tgt =\n                                        tool.path(\"arguments\").path(\"CommandLine\").asText(\"\");\n                                    currentSequence.add(\n                                        \"AGENT ACTION: [\" + name + \"] \" + action + \" -> \" + tgt\n                                    );\n                                }\n                            }\n                        } else if (\n                            node.has(\"error\") ||\n                            (\n                                node.has(\"content\") &&\n                                node.path(\"content\").asText(\"\").contains(\"Exception\")\n                            )\n                        ) {\n                            String err = node.path(\"content\").asText(\"\");\n                            currentSequence.add(\n                                \"SYSTEM EVENT/ERROR: \" +\n                                err.substring(0, Math.min(500, err.length()))\n                            );\n                        }\n                    } catch (Exception e) {\n                        // skip malformed\n                    }\n                }\n                if (!currentSequence.isEmpty()) {\n                    sequences.add(deduplicateSequence(currentSequence));\n                }\n\n                TokenCountEstimator estimator = GoogleGenAiTokenCountEstimator\n                    .builder()\n                    .apiKey(apiKey)\n                    .modelName(\"gemini-3.5-flash\")\n                    .build();\n\n                progressMap.put(id, new ProgressState(5, \"Estimating Tokens & Chunking...\")); // Phase […]
 
 > TOOL
@@ -1477,7 +1477,7 @@ id: toolu_01G6p2D7syEQ31A4MTwyLUPv
 tool_result
 id: toolu_01G6p2D7syEQ31A4MTwyLUPv
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1487,7 +1487,7 @@ id: toolu_018JhwR4eiNwMtYgbEDrYTMm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
   "old_string": "                    try {\n                        responseObj =\n                            recursivelyConsolidate(seqResponses, estimator, mapper, 500_000);\n                    } finally {",
   "new_string": "                    try {\n                        responseObj =\n                            recursivelyConsolidate(seqResponses, tokenFn, mapper, 500_000);\n                    } finally {"
 }
@@ -1498,7 +1498,7 @@ id: toolu_018JhwR4eiNwMtYgbEDrYTMm
 tool_result
 id: toolu_018JhwR4eiNwMtYgbEDrYTMm
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1508,7 +1508,7 @@ id: toolu_018TtXvfe47YshiqmMY7PvZY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
   "old_string": "    private AnalysisResponse recursivelyConsolidate(\n        List<AnalysisResponse> responses,\n        TokenCountEstimator estimator,\n        ObjectMapper mapper,\n        int maxTokens\n    ) throws Exception {\n        String json = mapper.writeValueAsString(responses);\n        try {\n            int tokens = estimator.estimateTokenCountInText(json);\n            if (tokens <= maxTokens) {\n                return analyzerService.consolidateAnalysis(json);\n            }\n        } catch (Exception e) {\n            // fallback\n        }\n\n        int mid = responses.size() / 2;\n        AnalysisResponse r1 = recursivelyConsolidate(\n            responses.subList(0, mid),\n            estimator,\n            mapper,\n            maxTokens\n        );\n        AnalysisResponse r2 = recursivelyConsolidate(\n            responses.subList(mid, responses.size()),\n            estimator,\n            mapper,\n            maxTokens\n        );\n        return analyzerService.consolidateAnalysis(mapper.writeValueAsString(List.of(r1, r2)));\n    }\n\n    private List<String> deduplicateSequence(List<String> sequence) {\n        if (sequence.isEmpty()) return sequence;\n        List<String> deduped = new ArrayList<>();\n        String lastLine = null;\n        int count = 0;\n        for (String line : sequence) {\n            if (line.equals(lastLine)) {\n                count++;\n            } else {\n                if (count > 1) {\n                    deduped.set(deduped.size() - 1, lastLine + \" (repeated \" + count + \" times)\");\n                }\n                deduped.add(line);\n                lastLine = line;\n                count = 1;\n            }\n        }\n        if (count > 1) {\n            deduped.set(deduped.size() - 1, lastLine + \" (repeated \" + count + \" times)\");\n        }\n        return deduped;\n    }\n}",
   "new_string": "    private AnalysisResponse recursivelyConsolidate(\n        List<AnalysisResponse> responses,\n        ToIntFunction<String> tokenFn,\n        ObjectMapper mapper,\n        int maxTokens\n    ) throws Exception {\n        String json = mapper.writeValueAsString(responses);\n        try {\n            int tokens = tokenFn.applyAsInt(json);\n            if (tokens <= maxTokens) {\n […]
 
@@ -1517,7 +1517,7 @@ id: toolu_018TtXvfe47YshiqmMY7PvZY
 tool_result
 id: toolu_018TtXvfe47YshiqmMY7PvZY
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1530,7 +1530,7 @@ tool_use Bash
 id: toolu_013GSzJGL2Xs1CSDxDyNNFy4
 ```json
 {
-  "command": "export JAVA_HOME=/Users/scottdensmore/.local/share/mise/installs/java/temurin-25.0.3+9.0.LTS/Contents/Home\nexport PATH=\"$JAVA_HOME/bin:$PATH\"\n./gradlew compileJava --console=plain 2>&1 | tail -20",
+  "command": "export JAVA_HOME=/home/<USER>/.local/share/mise/installs/java/temurin-25.0.3+9.0.LTS/Contents/Home\nexport PATH=\"$JAVA_HOME/bin:$PATH\"\n./gradlew compileJava --console=plain 2>&1 | tail -20",
   "description": "Compile main sources after refactor",
   "timeout": 300000
 }
@@ -1547,7 +1547,7 @@ id: toolu_013GSzJGL2Xs1CSDxDyNNFy4
 Note: Some input files use unchecked or unsafe operations.
 Note: Recompile with -Xlint:unchecked for details.
 
-[Incubating] Problems report is available at: file:///Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/build/reports/problems/problems-report.html
+[Incubating] Problems report is available at: file:///home/<USER>/Developer/scottdensmore/agent-brain-visualizer/build/reports/problems/problems-report.html
 
 BUILD SUCCESSFUL in 1s
 2 actionable tasks: 1 executed, 1 up-to-date
@@ -1564,7 +1564,7 @@ tool_use Write
 id: toolu_01QFaNNYrvAanAHNfKovY5Xn
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/TranscriptParserTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/TranscriptParserTest.java",
   "content": "/*\n * Copyright 2026 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage io.github.glaforge.agybrainviz;\n\nimport static org.junit.jupiter.api.Assertions.assertEquals;\nimport static org.junit.jupiter.api.Assertions.assertTrue;\n\nimport java.util.ArrayList;\nimport java.util.List;\nimport java.util.function.ToIntFunction;\nimport org.junit.jupiter.api.Test;\n\n/** Unit tests for the pure transcript-processing logic in {@link TranscriptParser}. */\nclass TranscriptParserTest {\n\n    // ----- deduplicateSequence -----\n\n    @Test\n    void deduplicateCollapsesConsecutiveDuplicates() {\n        List<String> result = TranscriptParser.deduplicateSequence(\n            List.of(\"a\", \"a\", \"a\", \"b\")\n        );\n        assertEquals(List.of(\"a (repeated 3 times)\", \"b\"), result);\n    }\n\n    @Test\n    void deduplicateLeavesNonConsecutiveDuplicatesIntact() {\n        List<String> result = TranscriptParser.deduplicateSequence(List.of(\"a\", \"b\", \"a\"));\n        assertEquals(List.of(\"a\", \"b\", \"a\"), result);\n    }\n\n    @Test\n    void deduplicateHandlesTrailingRun() {\n        List<String> result = TranscriptParser.deduplicateSequence(List.of(\"x\", \"y\", \"y\"));\n        assertEquals(List.of(\"x\", \"y (repeated 2 times)\"), result);\n    }\n\n    @Test\n    void deduplicateReturnsEmptyForEmpty() {\n        assertTrue(TranscriptParser.deduplicateSequence(new ArrayList<>()).isEmpty());\n    }\n\n    // ----- parseSequences -----\n\n    @Test\n    void parseSequencesEmitsNothingForEmptyInput() {\n        assertTrue(TranscriptParser.parseSequences(List.of()).isEmpty());\n […]
 
 > TOOL
@@ -1572,7 +1572,7 @@ id: toolu_01QFaNNYrvAanAHNfKovY5Xn
 tool_result
 id: toolu_01QFaNNYrvAanAHNfKovY5Xn
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/TranscriptParserTest.java (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/TranscriptParserTest.java (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1585,7 +1585,7 @@ tool_use Write
 id: toolu_01RDSmZdoF346d3Mh2x2Gc5X
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java",
   "content": "/*\n * Copyright 2026 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage io.github.glaforge.agybrainviz;\n\nimport static org.junit.jupiter.api.Assertions.assertEquals;\nimport static org.junit.jupiter.api.Assertions.assertThrows;\nimport static org.junit.jupiter.api.Assertions.assertTrue;\n\nimport com.fasterxml.jackson.databind.JsonNode;\nimport com.fasterxml.jackson.databind.ObjectMapper;\nimport io.micronaut.http.HttpStatus;\nimport io.micronaut.http.client.HttpClient;\nimport io.micronaut.http.client.annotation.Client;\nimport io.micronaut.http.client.exceptions.HttpClientResponseException;\nimport io.micronaut.test.extensions.junit5.annotation.MicronautTest;\nimport jakarta.inject.Inject;\nimport java.io.IOException;\nimport java.nio.file.Files;\nimport java.nio.file.Path;\nimport org.junit.jupiter.api.AfterAll;\nimport org.junit.jupiter.api.BeforeAll;\nimport org.junit.jupiter.api.Test;\n\n/**\n * Integration tests for {@link BrainController}, covering the \"browse sessions\", \"load transcript\",\n * and \"preview file\" user journeys. A temporary {@code user.home} is used so the controller scans a\n * controlled fake {@code ~/.gemini} directory tree.\n */\n@MicronautTest\nclass BrainControllerTest {\n\n    @Inject\n    @Client(\"/\")\n    HttpClient client;\n\n    private static String originalUserHome;\n    private static Path tempHome;\n\n    private static final ObjectMapper MAPPER = new ObjectMapper();\n\n    @BeforeAll\n    static void setUpHome() throws IOException {\n        originalUserHome = System.getProperty(\"user.home\");\n        tempHome = Files.createTempDirectory(\"agy-brain-test-home\");\n        System.setProperty(\"user.home\", […]
 
 > TOOL
@@ -1593,7 +1593,7 @@ id: toolu_01RDSmZdoF346d3Mh2x2Gc5X
 tool_result
 id: toolu_01RDSmZdoF346d3Mh2x2Gc5X
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1606,7 +1606,7 @@ tool_use Write
 id: toolu_01P2WaQGWuLkmi9L2Kufrvjb
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
   "content": "/*\n * Copyright 2026 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage io.github.glaforge.agybrainviz;\n\nimport static org.junit.jupiter.api.Assertions.assertEquals;\nimport static org.junit.jupiter.api.Assertions.assertTrue;\n\nimport com.fasterxml.jackson.databind.JsonNode;\nimport com.fasterxml.jackson.databind.ObjectMapper;\nimport io.micronaut.http.client.HttpClient;\nimport io.micronaut.http.client.annotation.Client;\nimport io.micronaut.test.annotation.MockBean;\nimport io.micronaut.test.extensions.junit5.annotation.MicronautTest;\nimport jakarta.inject.Inject;\nimport java.io.IOException;\nimport java.nio.file.Files;\nimport java.nio.file.Path;\nimport java.util.Collections;\nimport java.util.List;\nimport java.util.Optional;\nimport java.util.concurrent.CopyOnWriteArrayList;\nimport java.util.concurrent.atomic.AtomicInteger;\nimport java.util.concurrent.atomic.AtomicReference;\nimport org.junit.jupiter.api.AfterAll;\nimport org.junit.jupiter.api.BeforeAll;\nimport org.junit.jupiter.api.BeforeEach;\nimport org.junit.jupiter.api.Test;\n\n/**\n * Integration tests for {@link AnalysisController}, covering the \"generate AI analysis\" journey. The\n * LLM ({@link AnalyzerService}), the API-key accessor ({@link GeminiConfig}) and the token estimator\n * ({@link TokenCounter}) are replaced with deterministic mock beans so the orchestration, caching,\n * and error paths are exercised without any network access.\n */\n@MicronautTest\nclass AnalysisControllerTest {\n\n    @Inject\n    @Client(\"/\")\n    HttpClient client;\n\n    private static final ObjectMapper MAPPER = new ObjectMapper();\n\n    // Controllable mock state, shared […]
 
 > TOOL
@@ -1614,7 +1614,7 @@ id: toolu_01P2WaQGWuLkmi9L2Kufrvjb
 tool_result
 id: toolu_01P2WaQGWuLkmi9L2Kufrvjb
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1628,7 +1628,7 @@ id: toolu_01XiBgQcebSV872cMpnoLxGB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
   "old_string": "import java.nio.file.Path;\nimport java.util.Collections;\nimport java.util.List;",
   "new_string": "import java.nio.file.Path;\nimport java.util.List;"
 }
@@ -1639,7 +1639,7 @@ id: toolu_01XiBgQcebSV872cMpnoLxGB
 tool_result
 id: toolu_01XiBgQcebSV872cMpnoLxGB
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1648,7 +1648,7 @@ tool_use Write
 id: toolu_01EGEicuUowhu5qprzr4dESu
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisResponseSerdeTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisResponseSerdeTest.java",
   "content": "/*\n * Copyright 2026 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage io.github.glaforge.agybrainviz;\n\nimport static org.junit.jupiter.api.Assertions.assertEquals;\n\nimport com.fasterxml.jackson.databind.JsonNode;\nimport com.fasterxml.jackson.databind.ObjectMapper;\nimport java.util.List;\nimport org.junit.jupiter.api.Test;\n\n/**\n * Verifies that the analysis DTO records serialize and deserialize correctly with Jackson, which is\n * how {@link AnalysisController} writes summaries to disk and back over the wire.\n */\nclass AnalysisResponseSerdeTest {\n\n    private static final ObjectMapper MAPPER = new ObjectMapper();\n\n    @Test\n    void serializesAllFieldsIncludingNestedRecords() throws Exception {\n        AnalysisResponse response = new AnalysisResponse(\n            \"My Title\",\n            List.of(\"step one\", \"step two\"),\n            List.of(new AgentAction(\"edit\", \"edited a file\")),\n            List.of(new Issue(\"it broke\", \"restarted it\")),\n            List.of(\"add a CLI tool\"),\n            \"all went fine\"\n        );\n\n        JsonNode node = MAPPER.readTree(MAPPER.writeValueAsString(response));\n\n        assertEquals(\"My Title\", node.get(\"shortTitle\").asText());\n        assertEquals(\"step one\", node.get(\"flow\").get(0).asText());\n        assertEquals(\"edit\", node.get(\"agentActions\").get(0).get(\"action\").asText());\n        assertEquals(\"edited […]
 
 > TOOL
@@ -1656,7 +1656,7 @@ id: toolu_01EGEicuUowhu5qprzr4dESu
 tool_result
 id: toolu_01EGEicuUowhu5qprzr4dESu
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisResponseSerdeTest.java (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisResponseSerdeTest.java (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1669,7 +1669,7 @@ tool_use Bash
 id: toolu_01RJZP94dRm3n9xJmXRYwGyu
 ```json
 {
-  "command": "export JAVA_HOME=/Users/scottdensmore/.local/share/mise/installs/java/temurin-25.0.3+9.0.LTS/Contents/Home\nexport PATH=\"$JAVA_HOME/bin:$PATH\"\n./gradlew test --console=plain 2>&1 | tail -45",
+  "command": "export JAVA_HOME=/home/<USER>/.local/share/mise/installs/java/temurin-25.0.3+9.0.LTS/Contents/Home\nexport PATH=\"$JAVA_HOME/bin:$PATH\"\n./gradlew test --console=plain 2>&1 | tail -45",
   "description": "Run backend test suite",
   "timeout": 600000
 }
@@ -1705,7 +1705,7 @@ tool_use Bash
 id: toolu_016iXqFBhPwY4nefAm3RCgkB
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\necho \"--- result xml files ---\"\nls build/test-results/test/*.xml 2>/dev/null\necho \"--- totals ---\"\ngrep -h -o 'tests=\"[0-9]*\" skipped=\"[0-9]*\" failures=\"[0-9]*\" errors=\"[0-9]*\"' build/test-results/test/*.xml 2>/dev/null\necho \"--- per class ---\"\nfor f in build/test-results/test/*.xml; do grep -o 'testsuite name=\"[^\"]*\" tests=\"[0-9]*\"' \"$f\"; done 2>/dev/null",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\necho \"--- result xml files ---\"\nls build/test-results/test/*.xml 2>/dev/null\necho \"--- totals ---\"\ngrep -h -o 'tests=\"[0-9]*\" skipped=\"[0-9]*\" failures=\"[0-9]*\" errors=\"[0-9]*\"' build/test-results/test/*.xml 2>/dev/null\necho \"--- per class ---\"\nfor f in build/test-results/test/*.xml; do grep -o 'testsuite name=\"[^\"]*\" tests=\"[0-9]*\"' \"$f\"; done 2>/dev/null",
   "description": "Inspect test result counts"
 }
 ```
@@ -1745,7 +1745,7 @@ tool_use Bash
 id: toolu_01AKXaEUJ98iAF6PdzFCJV1L
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer; cat .gitignore 2>/dev/null",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer; cat .gitignore 2>/dev/null",
   "description": "Read gitignore"
 }
 ```
@@ -1828,7 +1828,7 @@ id: toolu_018KdyUMzJLiTC6Ym6dydXuU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/.gitignore",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/.gitignore",
   "old_string": "# OS specific\nThumbs.db",
   "new_string": "# OS specific\nThumbs.db\n\n# Node / frontend tests\nnode_modules/\nnpm-debug.log*\ncoverage/"
 }
@@ -1848,7 +1848,7 @@ tool_use Read
 id: toolu_01CHfeVZo9J38yNuCgAYqfW3
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/.gitignore",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/.gitignore",
   "offset": 60,
   "limit": 20
 }
@@ -1870,7 +1870,7 @@ id: toolu_01LAZ7TTnY4yVfSkNePckNk8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/.gitignore",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/.gitignore",
   "old_string": "Thumbs.db",
   "new_string": "Thumbs.db\n\n# Node / frontend tests\nnode_modules/\nnpm-debug.log*\ncoverage/"
 }
@@ -1881,7 +1881,7 @@ id: toolu_01LAZ7TTnY4yVfSkNePckNk8
 tool_result
 id: toolu_01LAZ7TTnY4yVfSkNePckNk8
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/.gitignore has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/.gitignore has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1890,7 +1890,7 @@ tool_use Write
 id: toolu_01JGboDKiD68bqEPUVaxizti
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/package.json",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/package.json",
   "content": "{\n  \"name\": \"agy-brain-visualizer-frontend-tests\",\n  \"version\": \"0.0.0\",\n  \"private\": true,\n  \"description\": \"Dev-only test harness for the Antigravity Brain Visualizer vanilla-JS frontend modules. The application ships with no build step; these dependencies are used only to run the unit tests.\",\n  \"type\": \"module\",\n  \"scripts\": {\n    \"test\": \"vitest run\"\n  },\n  \"devDependencies\": {\n    \"jsdom\": \"^25.0.1\",\n    \"vitest\": \"^2.1.8\"\n  }\n}\n"
 }
 ```
@@ -1900,7 +1900,7 @@ id: toolu_01JGboDKiD68bqEPUVaxizti
 tool_result
 id: toolu_01JGboDKiD68bqEPUVaxizti
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/package.json (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/package.json (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1909,7 +1909,7 @@ tool_use Write
 id: toolu_01DSotmbDPzywzCmVPJFrzdQ
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/vitest.config.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/vitest.config.js",
   "content": "import { defineConfig } from \"vitest/config\";\n\n// The frontend is plain ES-module JavaScript that runs in the browser. We test it under jsdom and\n// pin the timezone so locale/time assertions are deterministic across machines.\nprocess.env.TZ = process.env.TZ || \"UTC\";\n\nexport default defineConfig({\n  test: {\n    environment: \"jsdom\",\n    include: [\"src/test/js/**/*.test.js\"],\n    setupFiles: [\"src/test/js/setup.js\"],\n  },\n});\n"
 }
 ```
@@ -1919,7 +1919,7 @@ id: toolu_01DSotmbDPzywzCmVPJFrzdQ
 tool_result
 id: toolu_01DSotmbDPzywzCmVPJFrzdQ
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/vitest.config.js (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/vitest.config.js (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1928,7 +1928,7 @@ tool_use Write
 id: toolu_01N9xK11CDUUwiqaozYUCLh5
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/js/setup.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/js/setup.js",
   "content": "// Global stubs for browser-only libraries loaded via CDN <script> tags in index.html.\n// The frontend modules reference these as ambient globals.\n\n// `marked` (markdown renderer) — stub with an identity-ish parser so rendering logic is testable.\nglobalThis.marked = {\n  parse: (text) => (text == null ? \"\" : String(text)),\n};\n\n// `hljs` (syntax highlighter) — stub so calls are no-ops in tests.\nglobalThis.hljs = {\n  highlightElement: () => {},\n};\n"
 }
 ```
@@ -1938,7 +1938,7 @@ id: toolu_01N9xK11CDUUwiqaozYUCLh5
 tool_result
 id: toolu_01N9xK11CDUUwiqaozYUCLh5
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/js/setup.js (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/js/setup.js (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1951,7 +1951,7 @@ tool_use Write
 id: toolu_0134sBMMKj7CEBFzX6o91fxh
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/js/utils.test.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/js/utils.test.js",
   "content": "import { beforeEach, describe, expect, it } from \"vitest\";\nimport {\n  state,\n  escapeHtml,\n  syntaxHighlight,\n  formatTime,\n  updateTranscriptFilter,\n} from \"../../main/resources/public/modules/utils.js\";\n\nbeforeEach(() => {\n  // Reset shared singleton state between tests.\n  state.activeFilters = {\n    userQueries: false,\n    toolsCalled: false,\n    outcomeErrors: false,\n    modelResponses: false,\n  };\n  state.spansMultipleDays = false;\n  document.body.innerHTML = \"\";\n});\n\ndescribe(\"escapeHtml\", () => {\n  it(\"escapes HTML-significant characters\", () => {\n    expect(escapeHtml('<a href=\"x\">b & c\\'d</a>')).toBe(\n      \"&lt;a href=&quot;x&quot;&gt;b &amp; c&#039;d&lt;/a&gt;\"\n    );\n  });\n\n  it(\"returns empty string for falsy input\", () => {\n    expect(escapeHtml(\"\")).toBe(\"\");\n    expect(escapeHtml(null)).toBe(\"\");\n    expect(escapeHtml(undefined)).toBe(\"\");\n  });\n});\n\ndescribe(\"syntaxHighlight\", () => {\n  it(\"wraps each JSON token type in a classed span\", () => {\n    const html = syntaxHighlight({ a: 1, b: \"x\", c: true, d: null });\n    expect(html).toContain('class=\"json-key\"');\n    expect(html).toContain('class=\"json-number\"');\n    expect(html).toContain('class=\"json-string\"');\n    expect(html).toContain('class=\"json-boolean\"');\n    expect(html).toContain('class=\"json-null\"');\n  });\n\n  it(\"accepts a pre-stringified JSON string\", () => {\n    const html = syntaxHighlight('{\"n\": 42}');\n    expect(html).toContain('<span class=\"json-number\">42</span>');\n  });\n});\n\ndescribe(\"formatTime\", () => {\n  it(\"returns empty string for missing input\", () => {\n    expect(formatTime(\"\")).toBe(\"\");\n    expect(formatTime(null)).toBe(\"\");\n  });\n\n  it(\"renders a 24-hour time for a single-day session\", () => {\n    const out = formatTime(\"2026-06-19T09:05:00Z\");\n    expect(out).toMatch(/^\\d{2}:\\d{2}$/);\n  });\n\n  it(\"prepends the date when the session spans multiple days\", () => {\n    state.spansMultipleDays = true;\n    const out = formatTime(\"2026-06-19T09:05:00Z\");\n    // e.g. \"Jun 19, 09:05\"\n    expect(out).toMatch(/[A-Za-z]{3}\\s+\\d{1,2},\\s+\\d{2}:\\d{2}/);\n  });\n});\n\ndescribe(\"updateTranscriptFilter\", () => {\n  function buildTranscript() {\n    document.body.innerHTML […]
 
 > TOOL
@@ -1959,7 +1959,7 @@ id: toolu_0134sBMMKj7CEBFzX6o91fxh
 tool_result
 id: toolu_0134sBMMKj7CEBFzX6o91fxh
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/js/utils.test.js (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/js/utils.test.js (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1972,7 +1972,7 @@ tool_use Write
 id: toolu_01PiCBwKtb1U2e3oDeAfkdRe
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/js/stats.test.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/js/stats.test.js",
   "content": "import { beforeEach, describe, expect, it } from \"vitest\";\nimport { renderStats } from \"../../main/resources/public/modules/stats.js\";\n\nbeforeEach(() => {\n  document.body.innerHTML = '<div id=\"session-stats-container\" class=\"hidden\"></div>';\n});\n\nfunction statValue(id) {\n  return document\n    .querySelector(`#${id} .stat-value`)\n    .textContent.trim();\n}\n\ndescribe(\"renderStats\", () => {\n  it(\"hides the container when there are no steps\", () => {\n    renderStats([]);\n    const container = document.getElementById(\"session-stats-container\");\n    expect(container.classList.contains(\"hidden\")).toBe(true);\n  });\n\n  it(\"counts user queries, tool calls, model responses and errors\", () => {\n    const steps = [\n      { type: \"USER_INPUT\", content: \"hi\", created_at: \"2026-06-19T10:00:00Z\" },\n      {\n        source: \"MODEL\",\n        type: \"PLANNER_RESPONSE\",\n        content: \"here is the answer\",\n        created_at: \"2026-06-19T10:00:05Z\",\n      },\n      {\n        source: \"MODEL\",\n        type: \"PLANNER_RESPONSE\",\n        tool_calls: [{ name: \"edit\" }],\n        created_at: \"2026-06-19T10:00:10Z\",\n      },\n      {\n        type: \"ERROR_MESSAGE\",\n        status: \"ERROR\",\n        content: \"boom\",\n        created_at: \"2026-06-19T10:00:20Z\",\n      },\n    ];\n\n    renderStats(steps);\n\n    expect(statValue(\"user-queries-stat-card\")).toBe(\"1\");\n    expect(statValue(\"tools-stat-card\")).toBe(\"1\");\n    expect(statValue(\"model-responses-stat-card\")).toBe(\"1\");\n    expect(document.getElementById(\"session-stats-container\").classList.contains(\"hidden\")).toBe(\n      false\n    );\n    // OUTCOME card reflects the error.\n    expect(statValue(\"errors-stat-card\")).toBe(\"Issues Detected\");\n  });\n\n  it(\"reports success when there are no errors\", () => {\n    const steps = [\n      { type: \"USER_INPUT\", content: \"hi\", created_at: \"2026-06-19T10:00:00Z\" },\n    ];\n    renderStats(steps);\n    expect(statValue(\"errors-stat-card\")).toBe(\"Succeeded\");\n  });\n\n  it(\"counts tool steps that use a tool-like type without a tool_calls array\", () => {\n    const steps = [\n      { type: \"USER_INPUT\", content: \"hi\", created_at: \"2026-06-19T10:00:00Z\" },\n      { type: \"VIEW_FILE\", content: \"...\", created_at: \"2026-06-19T10:00:01Z\" },\n      { type: \"RUN_COMMAND\", content: […]
 
 > TOOL
@@ -1980,7 +1980,7 @@ id: toolu_01PiCBwKtb1U2e3oDeAfkdRe
 tool_result
 id: toolu_01PiCBwKtb1U2e3oDeAfkdRe
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/js/stats.test.js (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/js/stats.test.js (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1993,7 +1993,7 @@ tool_use Write
 id: toolu_01Hx4qP92DvpKZxDJYL2oXyn
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/js/timeline.test.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/js/timeline.test.js",
   "content": "import { beforeEach, describe, expect, it } from \"vitest\";\nimport { renderTranscript } from \"../../main/resources/public/modules/timeline.js\";\n\nlet container;\n\nbeforeEach(() => {\n  document.body.innerHTML = '<div id=\"transcript-container\"></div>';\n  container = document.getElementById(\"transcript-container\");\n});\n\ndescribe(\"renderTranscript\", () => {\n  it(\"shows an empty state when there are no steps\", () => {\n    renderTranscript([], container);\n    expect(container.querySelector(\".empty-state\")).not.toBeNull();\n  });\n\n  it(\"classifies cards by role via data attributes\", () => {\n    const steps = [\n      { source: \"USER_EXPLICIT\", type: \"USER_INPUT\", content: \"hi\", created_at: \"2026-06-19T10:00:00Z\" },\n      { source: \"MODEL\", type: \"VIEW_FILE\", content: \"file body\", created_at: \"2026-06-19T10:00:01Z\" },\n      { source: \"MODEL\", type: \"PLANNER_RESPONSE\", content: \"the answer\", created_at: \"2026-06-19T10:00:02Z\" },\n      { type: \"ERROR_MESSAGE\", status: \"ERROR\", content: \"boom\", created_at: \"2026-06-19T10:00:03Z\" },\n    ];\n\n    renderTranscript(steps, container);\n    const cards = container.querySelectorAll(\".step-card\");\n    expect(cards).toHaveLength(4);\n\n    expect(cards[0].dataset.isUser).toBe(\"true\");\n    expect(cards[1].dataset.isTool).toBe(\"true\");\n    expect(cards[2].dataset.isModel).toBe(\"true\");\n    expect(cards[3].dataset.isError).toBe(\"true\");\n  });\n\n  it(\"starts a new sequence wrapper at each user step\", () => {\n    const steps = [\n      { source: \"USER_EXPLICIT\", type: \"USER_INPUT\", content: \"q1\", created_at: \"2026-06-19T10:00:00Z\" },\n      { source: \"MODEL\", type: \"VIEW_FILE\", content: \"x\", created_at: \"2026-06-19T10:00:01Z\" },\n      { source: \"USER_EXPLICIT\", type: \"USER_INPUT\", content: \"q2\", created_at: \"2026-06-19T10:01:00Z\" },\n      { source: \"MODEL\", type: \"PLANNER_RESPONSE\", content: \"done\", created_at: \"2026-06-19T10:01:05Z\" },\n    ];\n\n    renderTranscript(steps, container);\n    expect(container.querySelectorAll(\".sequence-wrapper\")).toHaveLength(2);\n  });\n\n  it(\"appends a bottom timeline marker and fires the transcriptLoaded event\", () => {\n    let fired = false;\n    const […]
 
 > TOOL
@@ -2001,7 +2001,7 @@ id: toolu_01Hx4qP92DvpKZxDJYL2oXyn
 tool_result
 id: toolu_01Hx4qP92DvpKZxDJYL2oXyn
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/js/timeline.test.js (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/js/timeline.test.js (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2014,7 +2014,7 @@ tool_use Write
 id: toolu_01DU95XPbWHs1DPEuJeaJEHR
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/js/analysis.test.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/js/analysis.test.js",
   "content": "import { afterEach, beforeEach, describe, expect, it, vi } from \"vitest\";\nimport { triggerAnalysis } from \"../../main/resources/public/modules/analysis.js\";\nimport { state } from \"../../main/resources/public/modules/utils.js\";\n\nconst SUMMARY_DATA = {\n  shortTitle: \"Fixed The Bug\",\n  summary: \"All good in the end\",\n  flow: [\"did a thing\"],\n  agentActions: [{ action: \"edit\", description: \"edited a file\" }],\n  issues: [{ error: \"it broke\", circumvention: \"restarted\" }],\n  recommendations: [\"add a CLI tool\"],\n};\n\nbeforeEach(() => {\n  document.body.innerHTML = `\n    <select id=\"flavor-select\"><option value=\"antigravity-cli\" selected>cli</option></select>\n    <button id=\"summarize-btn\"></button>\n    <div id=\"ai-summary-container\" class=\"hidden\"></div>\n    <div id=\"ai-summary-content\" class=\"collapsed\"></div>\n    <div id=\"ai-summary-header\"><span class=\"chevron\"></span></div>\n    <div id=\"ai-summary-text\"></div>\n    <div id=\"current-session-title\"></div>\n  `;\n  state.summaryCache = {};\n  state.currentPollSessionId = null;\n});\n\nafterEach(() => {\n  vi.restoreAllMocks();\n});\n\ndescribe(\"triggerAnalysis\", () => {\n  it(\"fetches and renders all analysis sections, then caches the result\", async () => {\n    global.fetch = vi.fn((url) => {\n      if (url.includes(\"/progress\")) {\n        return Promise.resolve({\n          ok: true,\n          json: () => Promise.resolve({ progress: 50, phase: \"Working\" }),\n        });\n      }\n      return Promise.resolve({ ok: true, json: () => Promise.resolve(SUMMARY_DATA) });\n    });\n\n    await triggerAnalysis(\"session-123\", true);\n\n    const text = document.getElementById(\"ai-summary-text\").innerHTML;\n    expect(text).toContain(\"All good in the end\");\n    expect(text).toContain(\"Conversation Flow\");\n    expect(text).toContain(\"Agent Actions Breakdown\");\n    expect(text).toContain(\"Issues &amp; Circumventions\");\n    expect(text).toContain(\"Future Recommendations\");\n\n    // The summarize endpoint was requested.\n    expect(global.fetch).toHaveBeenCalledWith(\n      expect.stringContaining(\"/api/analysis/conversations/session-123/summarize\")\n    );\n    // Result cached for next time.\n    expect(state.summaryCache[\"session-123\"]).toContain(\"All good in the end\");\n    // Session title updated from […]
 
 > TOOL
@@ -2022,7 +2022,7 @@ id: toolu_01DU95XPbWHs1DPEuJeaJEHR
 tool_result
 id: toolu_01DU95XPbWHs1DPEuJeaJEHR
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/js/analysis.test.js (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/js/analysis.test.js (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2035,7 +2035,7 @@ tool_use Bash
 id: toolu_01FBcoTr8ug8Rj3kMjsfTU9H
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nnpm install 2>&1 | tail -8\necho \"=== RUN TESTS ===\"\nnpm test 2>&1 | tail -50",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nnpm install 2>&1 | tail -8\necho \"=== RUN TESTS ===\"\nnpm test 2>&1 | tail -50",
   "description": "Install deps and run frontend tests",
   "timeout": 300000
 }
@@ -2060,7 +2060,7 @@ Run `npm audit` for details.
 > vitest run
 
 
- RUN  v2.1.9 /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer
+ RUN  v2.1.9 /home/<USER>/Developer/scottdensmore/agent-brain-visualizer
 
  ✓ src/test/js/analysis.test.js (3 tests) 39ms
  ✓ src/test/js/utils.test.js (9 tests) 43ms
@@ -2085,7 +2085,7 @@ tool_use Write
 id: toolu_01L9VqUHGeThhwYUr2VeGwsK
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/mise.toml",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/mise.toml",
   "content": "[tools]\n# The Micronaut 5 Gradle plugins and the project's source compatibility require a Java 25 JVM.\njava = \"temurin-25\"\n"
 }
 ```
@@ -2095,7 +2095,7 @@ id: toolu_01L9VqUHGeThhwYUr2VeGwsK
 tool_result
 id: toolu_01L9VqUHGeThhwYUr2VeGwsK
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/mise.toml (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/mise.toml (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2104,7 +2104,7 @@ tool_use Bash
 id: toolu_01AFZ2Ju2tbxGAsq4YEAzAod
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\necho \"--- java resolved via mise project pin ---\"\nmise exec -- java -version 2>&1 | head -1\necho \"--- gradle test using mise-provided java (no manual JAVA_HOME) ---\"\nunset JAVA_HOME\nmise exec -- ./gradlew test --console=plain 2>&1 | tail -8",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\necho \"--- java resolved via mise project pin ---\"\nmise exec -- java -version 2>&1 | head -1\necho \"--- gradle test using mise-provided java (no manual JAVA_HOME) ---\"\nunset JAVA_HOME\nmise exec -- ./gradlew test --console=plain 2>&1 | tail -8",
   "description": "Verify gradle builds via project mise pin",
   "timeout": 600000
 }
@@ -2138,7 +2138,7 @@ tool_use Bash
 id: toolu_01R1sJsRQLXMhRfVZQHVXmby
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\necho \"=== spotlessApply (auto-format java + js) ===\"\nmise exec -- ./gradlew spotlessApply --console=plain 2>&1 | tail -6\necho \"=== git diff stat after formatting ===\"\ngit diff --stat",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\necho \"=== spotlessApply (auto-format java + js) ===\"\nmise exec -- ./gradlew spotlessApply --console=plain 2>&1 | tail -6\necho \"=== git diff stat after formatting ===\"\ngit diff --stat",
   "description": "Auto-format and show what changed",
   "timeout": 300000
 }
@@ -2172,7 +2172,7 @@ tool_use Bash
 id: toolu_01PVLbzSs66fJp3eZ1Z6EBCq
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\necho \"=== ./gradlew build (spotlessCheck + test + assemble) ===\"\nmise exec -- ./gradlew build --console=plain 2>&1 | tail -20",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\necho \"=== ./gradlew build (spotlessCheck + test + assemble) ===\"\nmise exec -- ./gradlew build --console=plain 2>&1 | tail -20",
   "description": "Full Gradle build with checks",
   "timeout": 600000
 }
@@ -2216,7 +2216,7 @@ tool_use Bash
 id: toolu_01S6nc551GwRBbi9zNsBCXSE
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit add -A\ngit status --short\necho \"--- diff stat ---\"\ngit diff --cached --stat",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit add -A\ngit status --short\necho \"--- diff stat ---\"\ngit diff --cached --stat",
   "description": "Stage all changes and show status"
 }
 ```
@@ -2273,7 +2273,7 @@ id: toolu_01DL23raDuk2TSA9xUagZncS
 ```json
 {
   "description": "Code review the test PR diff",
-  "prompt": "You are a senior code reviewer. Review the staged git diff in the repository at /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer. This change adds a unit + integration test suite for critical user journeys and introduces small testability refactors.\n\nRun `git diff --cached` to see the full staged change. Key files:\n- Production refactor (must preserve behavior): src/main/java/.../AnalysisController.java, and new seams GeminiConfig.java, TokenCounter.java, TranscriptParser.java\n- Backend tests: BrainControllerTest, AnalysisControllerTest, TranscriptParserTest, AnalysisResponseSerdeTest\n- Frontend tests (Vitest+jsdom): src/test/js/*.test.js, setup.js, vitest.config.js, package.json\n- Build config: mise.toml (pins JDK 25), .gitignore\n\nFocus your review on:\n1. **Behavior preservation**: Did the extraction of transcript parsing/chunking/dedup logic from AnalysisController into TranscriptParser, and the introduction of GeminiConfig (API key) and TokenCounter (token estimation) seams, change any observable behavior vs the original inline code? Compare carefully. The original built a GoogleGenAiTokenCountEstimator inline with the env API key; now TokenCounter wraps it lazily. The original read System.getenv(\"GEMINI_API_KEY\") directly. Flag any subtle differences (null handling, ordering, exception handling, the fallback in splitIntoSafeChunks).\n2. **Test correctness**: Are the tests actually asserting meaningful behavior? Any tests that could pass trivially or are flaky (timezone, timing, ordering, shared static state across tests)? Note: the integration tests mutate System.setProperty(\"user.home\") and use static mutable […]
+  "prompt": "You are a senior code reviewer. Review the staged git diff in the repository at /home/<USER>/Developer/scottdensmore/agent-brain-visualizer. This change adds a unit + integration test suite for critical user journeys and introduces small testability refactors.\n\nRun `git diff --cached` to see the full staged change. Key files:\n- Production refactor (must preserve behavior): src/main/java/.../AnalysisController.java, and new seams GeminiConfig.java, TokenCounter.java, TranscriptParser.java\n- Backend tests: BrainControllerTest, AnalysisControllerTest, TranscriptParserTest, AnalysisResponseSerdeTest\n- Frontend tests (Vitest+jsdom): src/test/js/*.test.js, setup.js, vitest.config.js, package.json\n- Build config: mise.toml (pins JDK 25), .gitignore\n\nFocus your review on:\n1. **Behavior preservation**: Did the extraction of transcript parsing/chunking/dedup logic from AnalysisController into TranscriptParser, and the introduction of GeminiConfig (API key) and TokenCounter (token estimation) seams, change any observable behavior vs the original inline code? Compare carefully. The original built a GoogleGenAiTokenCountEstimator inline with the env API key; now TokenCounter wraps it lazily. The original read System.getenv(\"GEMINI_API_KEY\") directly. Flag any subtle differences (null handling, ordering, exception handling, the fallback in splitIntoSafeChunks).\n2. **Test correctness**: Are the tests actually asserting meaningful behavior? Any tests that could pass trivially or are flaky (timezone, timing, ordering, shared static state across tests)? Note: the integration tests mutate System.setProperty(\"user.home\") and use static mutable […]
 
 > TOOL
 
@@ -2308,7 +2308,7 @@ id: toolu_01Sd4mtm5UCQeUf8o2LcYxH7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/js/analysis.test.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/js/analysis.test.js",
   "old_string": "beforeEach(() => {\n  document.body.innerHTML = `",
   "new_string": "beforeEach(() => {\n  // Fake timers so the detached progress-polling loop's setTimeout never lingers past the test.\n  vi.useFakeTimers();\n  document.body.innerHTML = `"
 }
@@ -2319,7 +2319,7 @@ id: toolu_01Sd4mtm5UCQeUf8o2LcYxH7
 tool_result
 id: toolu_01Sd4mtm5UCQeUf8o2LcYxH7
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/js/analysis.test.js has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/js/analysis.test.js has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2329,7 +2329,7 @@ id: toolu_01E7ZrM2bwH7eaXPHHxUbNEU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/js/analysis.test.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/js/analysis.test.js",
   "old_string": "afterEach(() => {\n  vi.restoreAllMocks();\n});",
   "new_string": "afterEach(() => {\n  vi.useRealTimers();\n  vi.restoreAllMocks();\n});"
 }
@@ -2340,7 +2340,7 @@ id: toolu_01E7ZrM2bwH7eaXPHHxUbNEU
 tool_result
 id: toolu_01E7ZrM2bwH7eaXPHHxUbNEU
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/js/analysis.test.js has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/js/analysis.test.js has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2350,7 +2350,7 @@ id: toolu_014tfnXfT33BEYL1cY2RUKs6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/package.json",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/package.json",
   "old_string": "  \"scripts\": {\n    \"test\": \"vitest run\"\n  },",
   "new_string": "  \"scripts\": {\n    \"test\": \"TZ=UTC vitest run\"\n  },"
 }
@@ -2361,7 +2361,7 @@ id: toolu_014tfnXfT33BEYL1cY2RUKs6
 tool_result
 id: toolu_014tfnXfT33BEYL1cY2RUKs6
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2371,7 +2371,7 @@ id: toolu_01Hmcoep6Nm55bY5jYKRCpMt
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/vitest.config.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/vitest.config.js",
   "old_string": "// The frontend is plain ES-module JavaScript that runs in the browser. We test it under jsdom and\n// pin the timezone so locale/time assertions are deterministic across machines.\nprocess.env.TZ = process.env.TZ || \"UTC\";",
   "new_string": "// The frontend is plain ES-module JavaScript that runs in the browser. We test it under jsdom.\n// The timezone is pinned to UTC via the `test` npm script (TZ=UTC) so that any locale/time\n// assertions are deterministic across machines; this fallback covers direct `vitest` invocations.\nprocess.env.TZ = process.env.TZ || \"UTC\";"
 }
@@ -2382,7 +2382,7 @@ id: toolu_01Hmcoep6Nm55bY5jYKRCpMt
 tool_result
 id: toolu_01Hmcoep6Nm55bY5jYKRCpMt
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/vitest.config.js has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/vitest.config.js has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2396,7 +2396,7 @@ id: toolu_012Xrc6Hqm8ucbqh9VLATC2G
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java",
   "old_string": "import org.junit.jupiter.api.AfterAll;\nimport org.junit.jupiter.api.BeforeAll;\nimport org.junit.jupiter.api.Test;\n\n/**\n * Integration tests for {@link BrainController}, covering the \"browse sessions\", \"load transcript\",\n * and \"preview file\" user journeys. A temporary {@code user.home} is used so the controller scans a\n * controlled fake {@code ~/.gemini} directory tree.\n */\n@MicronautTest\nclass BrainControllerTest {",
   "new_string": "import org.junit.jupiter.api.AfterAll;\nimport org.junit.jupiter.api.BeforeAll;\nimport org.junit.jupiter.api.Test;\nimport org.junit.jupiter.api.parallel.ResourceLock;\n\n/**\n * Integration tests for {@link BrainController}, covering the \"browse sessions\", \"load transcript\",\n * and \"preview file\" user journeys. A temporary {@code user.home} is used so the controller scans a\n * controlled fake {@code ~/.gemini} directory tree.\n *\n * <p>These tests mutate the process-global {@code user.home} system property, so they declare a\n * resource lock on it to stay correct if test parallelism is ever enabled.\n */\n@MicronautTest\n@ResourceLock(\"user.home\")\nclass BrainControllerTest {"
 }
@@ -2407,7 +2407,7 @@ id: toolu_012Xrc6Hqm8ucbqh9VLATC2G
 tool_result
 id: toolu_012Xrc6Hqm8ucbqh9VLATC2G
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2417,7 +2417,7 @@ id: toolu_0185G27UgEoX5C837TY4DjxW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java",
   "old_string": "    @Test\n    void fileNotFoundForMissingFileInsideGeminiDir() {",
   "new_string": "    @Test\n    void fileIsUnauthorizedForPathTraversalEscapingGeminiDir() throws IOException {\n        Path outside = tempHome.resolve(\"outside-secret.txt\");\n        Files.writeString(outside, \"secret\");\n        // A ../ traversal that resolves out of ~/.gemini must be rejected after normalization.\n        String traversal = tempHome.resolve(\".gemini\").resolve(\"..\").resolve(\"outside-secret.txt\") +\n        \"\";\n\n        HttpClientResponseException ex = assertThrows(\n            HttpClientResponseException.class,\n            () -> get(\"/api/brain/file?path=\" + traversal)\n        );\n        assertEquals(HttpStatus.UNAUTHORIZED, ex.getStatus());\n    }\n\n    @Test\n    void fileIsUnauthorizedForSiblingDirectoryWithGeminiPrefix() throws IOException {\n        // \".gemini-evil\" shares a string prefix with \".gemini\" but is a distinct path component, so\n        // the component-wise Path.startsWith check must still reject it.\n        Path siblingFile = tempHome.resolve(\".gemini-evil\").resolve(\"loot.txt\");\n        Files.createDirectories(siblingFile.getParent());\n        Files.writeString(siblingFile, \"loot\");\n\n        HttpClientResponseException ex = assertThrows(\n            HttpClientResponseException.class,\n            () -> get(\"/api/brain/file?path=\" + siblingFile)\n        );\n        assertEquals(HttpStatus.UNAUTHORIZED, ex.getStatus());\n    }\n\n    @Test\n    void fileNotFoundForMissingFileInsideGeminiDir() {"
 }
@@ -2428,7 +2428,7 @@ id: toolu_0185G27UgEoX5C837TY4DjxW
 tool_result
 id: toolu_0185G27UgEoX5C837TY4DjxW
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2438,7 +2438,7 @@ id: toolu_01TDDEGyZToqzoE217CxTKF4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java",
   "old_string": "        // A ../ traversal that resolves out of ~/.gemini must be rejected after normalization.\n        String traversal = tempHome.resolve(\".gemini\").resolve(\"..\").resolve(\"outside-secret.txt\") +\n        \"\";",
   "new_string": "        // A ../ traversal that resolves out of ~/.gemini must be rejected after normalization.\n        String traversal = tempHome\n            .resolve(\".gemini\")\n            .resolve(\"..\")\n            .resolve(\"outside-secret.txt\")\n            .toString();"
 }
@@ -2449,7 +2449,7 @@ id: toolu_01TDDEGyZToqzoE217CxTKF4
 tool_result
 id: toolu_01TDDEGyZToqzoE217CxTKF4
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2459,7 +2459,7 @@ id: toolu_0156SUmujBBmdEJmR9QmC1uL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
   "old_string": "import org.junit.jupiter.api.AfterAll;\nimport org.junit.jupiter.api.BeforeAll;\nimport org.junit.jupiter.api.BeforeEach;\nimport org.junit.jupiter.api.Test;\n\n/**\n * Integration tests for {@link AnalysisController}, covering the \"generate AI analysis\" journey. The\n * LLM ({@link AnalyzerService}), the API-key accessor ({@link GeminiConfig}) and the token estimator\n * ({@link TokenCounter}) are replaced with deterministic mock beans so the orchestration, caching,\n * and error paths are exercised without any network access.\n */\n@MicronautTest\nclass AnalysisControllerTest {",
   "new_string": "import org.junit.jupiter.api.AfterAll;\nimport org.junit.jupiter.api.BeforeAll;\nimport org.junit.jupiter.api.BeforeEach;\nimport org.junit.jupiter.api.Test;\nimport org.junit.jupiter.api.parallel.ResourceLock;\n\n/**\n * Integration tests for {@link AnalysisController}, covering the \"generate AI analysis\" journey. The\n * LLM ({@link AnalyzerService}), the API-key accessor ({@link GeminiConfig}) and the token estimator\n * ({@link TokenCounter}) are replaced with deterministic mock beans so the orchestration, caching,\n * and error paths are exercised without any network access.\n *\n * <p>These tests mutate the process-global {@code user.home} system property, so they declare a\n * resource lock on it to stay correct if test parallelism is ever enabled.\n */\n@MicronautTest\n@ResourceLock(\"user.home\")\nclass AnalysisControllerTest {"
 }
@@ -2470,7 +2470,7 @@ id: toolu_0156SUmujBBmdEJmR9QmC1uL
 tool_result
 id: toolu_0156SUmujBBmdEJmR9QmC1uL
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2484,7 +2484,7 @@ id: toolu_01J48M1eY7C2qPiF1dhnybpv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/TokenCounter.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/TokenCounter.java",
   "old_string": " * <p>The underlying {@link TokenCountEstimator} is built lazily on first use so that constructing\n * the bean (e.g. at application startup) never performs network I/O. Wrapping the estimator in a\n * bean lets tests replace token counting with a deterministic stub.\n */",
   "new_string": " * <p>The underlying {@link TokenCountEstimator} is built lazily on first use so that constructing\n * the bean (e.g. at application startup) never performs network I/O. Wrapping the estimator in a\n * bean lets tests replace token counting with a deterministic stub.\n *\n * <p>Because the estimator is built on first {@link #estimate(String)} call — which the analysis\n * pipeline invokes inside a try/catch that falls back to a character-length heuristic — a failure to\n * build the estimator (or to estimate) degrades to that heuristic rather than aborting the analysis.\n */"
 }
@@ -2495,7 +2495,7 @@ id: toolu_01J48M1eY7C2qPiF1dhnybpv
 tool_result
 id: toolu_01J48M1eY7C2qPiF1dhnybpv
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/TokenCounter.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/TokenCounter.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2505,7 +2505,7 @@ id: toolu_018ahMwYzg7wAXE6AysZsSQC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/TranscriptParserTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/TranscriptParserTest.java",
   "old_string": "    @Test\n    void parseSequencesDeduplicatesWithinASequence() {",
   "new_string": "    @Test\n    void parseSequencesIgnoresAgentResponseWhenToolCallsNotAnArray() {\n        List<String> lines = List.of(\n            \"{\\\"type\\\":\\\"USER_INPUT\\\",\\\"content\\\":\\\"go\\\"}\",\n            \"{\\\"type\\\":\\\"PLANNER_RESPONSE\\\",\\\"tool_calls\\\":\\\"not-an-array\\\"}\"\n        );\n        List<List<String>> sequences = TranscriptParser.parseSequences(lines);\n        assertEquals(1, sequences.size());\n        // Only the user request line; the malformed tool_calls is ignored.\n        assertEquals(1, sequences.get(0).size());\n    }\n\n    @Test\n    void parseSequencesIgnoresUnrelatedLines() {\n        List<String> lines = List.of(\n            \"{\\\"type\\\":\\\"USER_INPUT\\\",\\\"content\\\":\\\"go\\\"}\",\n            \"{\\\"type\\\":\\\"SOMETHING_ELSE\\\",\\\"source\\\":\\\"SYSTEM\\\",\\\"content\\\":\\\"noise\\\"}\"\n        );\n        List<List<String>> sequences = TranscriptParser.parseSequences(lines);\n        assertEquals(1, sequences.size());\n        assertEquals(1, sequences.get(0).size());\n    }\n\n    @Test\n    void parseSequencesDeduplicatesWithinASequence() {"
 }
@@ -2516,7 +2516,7 @@ id: toolu_018ahMwYzg7wAXE6AysZsSQC
 tool_result
 id: toolu_018ahMwYzg7wAXE6AysZsSQC
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/TranscriptParserTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/TranscriptParserTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2529,7 +2529,7 @@ tool_use Bash
 id: toolu_018P832F2mp8szEByN29bATW
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -10\necho \"=== JS TESTS ===\"\nnpm test 2>&1 | tail -12",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -10\necho \"=== JS TESTS ===\"\nnpm test 2>&1 | tail -12",
   "description": "Re-verify build + JS tests after fixes",
   "timeout": 600000
 }
@@ -2545,13 +2545,13 @@ id: toolu_018P832F2mp8szEByN29bATW
 > Task :check
 > Task :build
 
-[Incubating] Problems report is available at: file:///Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/build/reports/problems/problems-report.html
+[Incubating] Problems report is available at: file:///home/<USER>/Developer/scottdensmore/agent-brain-visualizer/build/reports/problems/problems-report.html
 
 BUILD SUCCESSFUL in 15s
 37 actionable tasks: 28 executed, 9 up-to-date
 Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.5.1/userguide/configuration_cache_enabling.html
 === JS TESTS ===
- RUN  v2.1.9 /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer
+ RUN  v2.1.9 /home/<USER>/Developer/scottdensmore/agent-brain-visualizer
 
  ✓ src/test/js/utils.test.js (9 tests) 36ms
  ✓ src/test/js/analysis.test.js (3 tests) 39ms
@@ -2574,7 +2574,7 @@ tool_use Bash
 id: toolu_019KxXsEvWtuAmDxP2w7ruZc
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ntotal=0\nfor f in build/test-results/test/*.xml; do\n  n=$(grep -o 'testsuite name=\"[^\"]*\" tests=\"[0-9]*\"' \"$f\" | sed 's/.*tests=\"//;s/\"//')\n  name=$(basename \"$f\" | sed 's/TEST-io.github.glaforge.agybrainviz.//;s/.xml//')\n  echo \"$name: $n\"\n  total=$((total+n))\ndone\necho \"TOTAL backend tests: $total\"",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ntotal=0\nfor f in build/test-results/test/*.xml; do\n  n=$(grep -o 'testsuite name=\"[^\"]*\" tests=\"[0-9]*\"' \"$f\" | sed 's/.*tests=\"//;s/\"//')\n  name=$(basename \"$f\" | sed 's/TEST-io.github.glaforge.agybrainviz.//;s/.xml//')\n  echo \"$name: $n\"\n  total=$((total+n))\ndone\necho \"TOTAL backend tests: $total\"",
   "description": "Final backend test counts"
 }
 ```
@@ -2602,7 +2602,7 @@ tool_use Bash
 id: toolu_019j7o7PD41SgAiyrDB5PVgw
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit add -A\ngit status --short\necho \"--- remote ---\"\ngit remote -v | head -2",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit add -A\ngit status --short\necho \"--- remote ---\"\ngit remote -v | head -2",
   "description": "Stage all and check remote"
 }
 ```
@@ -2641,7 +2641,7 @@ tool_use Bash
 id: toolu_0143jd5R2RjmC3DSUuxbT96c
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit commit -q -F - <<'EOF'\ntest: add unit & integration coverage for critical user journeys\n\nEstablish a real test foundation so the codebase can be changed with\nconfidence. Adds 42 backend (JUnit 5 + Micronaut) and 22 frontend\n(Vitest + jsdom) tests covering every critical user journey, plus the\nsmall testability seams those tests need.\n\nBackend journeys covered:\n- Browse sessions: BrainController.listConversations (summary derivation\n  from short_title.txt / USER_REQUEST, empty/missing-transcript filtering,\n  recency sorting).\n- Load transcript: getTranscript (JSONL->JSON array, transcript_full\n  preference, empty fallback).\n- File preview security: getFileContent (in/out of ~/.gemini, ../ path\n  traversal, .gemini-prefixed sibling dir, missing file, directory).\n- AI analysis: AnalysisController progress sentinel, missing-key and\n  missing-transcript guards, cached-summary short-circuit, and the full\n  single-chunk and multi-chunk-consolidation pipelines (LLM, API key, and\n  token estimator mocked — no network).\n- DTO (de)serialization of AnalysisResponse/AgentAction/Issue.\n- TranscriptParser parsing/dedup/chunking logic (pure unit tests).\n\nFrontend journeys covered (vanilla JS modules):\n- utils: escapeHtml, syntaxHighlight, formatTime, updateTranscriptFilter.\n- stats: session statistics counting and sequence segmentation.\n- timeline: transcript card classification and sequence grouping.\n- analysis: AI summary rendering, caching, and error handling.\n\nTestability refactors (behavior-preserving):\n- Extract transcript parsing/dedup/chunking from AnalysisController into a\n  pure TranscriptParser.\n- Add GeminiConfig (API-key accessor) and TokenCounter (lazy token\n  estimator) seams so analysis can be tested without env vars or network.\n\nTooling:\n- […]
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit commit -q -F - <<'EOF'\ntest: add unit & integration coverage for critical user journeys\n\nEstablish a real test foundation so the codebase can be changed with\nconfidence. Adds 42 backend (JUnit 5 + Micronaut) and 22 frontend\n(Vitest + jsdom) tests covering every critical user journey, plus the\nsmall testability seams those tests need.\n\nBackend journeys covered:\n- Browse sessions: BrainController.listConversations (summary derivation\n  from short_title.txt / USER_REQUEST, empty/missing-transcript filtering,\n  recency sorting).\n- Load transcript: getTranscript (JSONL->JSON array, transcript_full\n  preference, empty fallback).\n- File preview security: getFileContent (in/out of ~/.gemini, ../ path\n  traversal, .gemini-prefixed sibling dir, missing file, directory).\n- AI analysis: AnalysisController progress sentinel, missing-key and\n  missing-transcript guards, cached-summary short-circuit, and the full\n  single-chunk and multi-chunk-consolidation pipelines (LLM, API key, and\n  token estimator mocked — no network).\n- DTO (de)serialization of AnalysisResponse/AgentAction/Issue.\n- TranscriptParser parsing/dedup/chunking logic (pure unit tests).\n\nFrontend journeys covered (vanilla JS modules):\n- utils: escapeHtml, syntaxHighlight, formatTime, updateTranscriptFilter.\n- stats: session statistics counting and sequence segmentation.\n- timeline: transcript card classification and sequence grouping.\n- analysis: AI summary rendering, caching, and error handling.\n\nTestability refactors (behavior-preserving):\n- Extract transcript parsing/dedup/chunking from AnalysisController into a\n  pure TranscriptParser.\n- Add GeminiConfig (API-key accessor) and TokenCounter (lazy token\n  estimator) seams so analysis can be tested without env vars or network.\n\nTooling:\n- […]
 
 > TOOL
 
@@ -2657,7 +2657,7 @@ tool_use Bash
 id: toolu_01HjND7yHBLSf2Buu834qkuj
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit push -u origin test/critical-user-journey-coverage 2>&1 | tail -8",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit push -u origin test/critical-user-journey-coverage 2>&1 | tail -8",
   "description": "Push branch to origin"
 }
 ```
@@ -2682,7 +2682,7 @@ tool_use Bash
 id: toolu_01Qm9J3J8LaiPvabk59UB6ob
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh pr create --base main --head test/critical-user-journey-coverage \\\n  --title \"test: add unit & integration coverage for critical user journeys\" \\\n  --body \"$(cat <<'EOF'\n## What & why\n\nThe project had a single app-boot test. This PR establishes a real test foundation — **64 tests (42 backend, 22 frontend)** covering every critical user journey — so we can start making changes with confidence.\n\n## Critical journeys covered\n\n**Backend (JUnit 5 + Micronaut HTTP client):**\n- **Browse sessions** — `BrainController.listConversations`: summary from `short_title.txt`/`USER_REQUEST`, filtering of empty/missing transcripts, recency sorting.\n- **Load transcript** — `getTranscript`: JSONL→JSON array, `transcript_full.jsonl` preference, empty fallback.\n- **File-preview security** — `getFileContent`: paths in/out of `~/.gemini`, `../` traversal, `.gemini`-prefixed sibling dir, missing file, directory.\n- **AI analysis** — `AnalysisController`: progress sentinel, missing-key/missing-transcript guards, cached-summary short-circuit, and the full **single-chunk** and **multi-chunk consolidation** pipelines.\n- **DTO (de)serialization** of `AnalysisResponse`/`AgentAction`/`Issue`.\n- **`TranscriptParser`** parsing/dedup/chunking (pure unit tests).\n\n**Frontend (Vitest + jsdom):** `utils` (escape/highlight/time/filter), `stats` (counts + segmentation), `timeline` (card classification + sequence grouping), `analysis` (render/cache/error).\n\n## Testability refactors (behavior-preserving)\n- Extracted transcript parsing/dedup/chunking from `AnalysisController` into a pure `TranscriptParser` (controller shrank ~145 lines).\n- Added `GeminiConfig` (API-key accessor) and `TokenCounter` (lazy token estimator) seams so the analysis pipeline is tested with the **LLM, API key, and token estimator […]
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh pr create --base main --head test/critical-user-journey-coverage \\\n  --title \"test: add unit & integration coverage for critical user journeys\" \\\n  --body \"$(cat <<'EOF'\n## What & why\n\nThe project had a single app-boot test. This PR establishes a real test foundation — **64 tests (42 backend, 22 frontend)** covering every critical user journey — so we can start making changes with confidence.\n\n## Critical journeys covered\n\n**Backend (JUnit 5 + Micronaut HTTP client):**\n- **Browse sessions** — `BrainController.listConversations`: summary from `short_title.txt`/`USER_REQUEST`, filtering of empty/missing transcripts, recency sorting.\n- **Load transcript** — `getTranscript`: JSONL→JSON array, `transcript_full.jsonl` preference, empty fallback.\n- **File-preview security** — `getFileContent`: paths in/out of `~/.gemini`, `../` traversal, `.gemini`-prefixed sibling dir, missing file, directory.\n- **AI analysis** — `AnalysisController`: progress sentinel, missing-key/missing-transcript guards, cached-summary short-circuit, and the full **single-chunk** and **multi-chunk consolidation** pipelines.\n- **DTO (de)serialization** of `AnalysisResponse`/`AgentAction`/`Issue`.\n- **`TranscriptParser`** parsing/dedup/chunking (pure unit tests).\n\n**Frontend (Vitest + jsdom):** `utils` (escape/highlight/time/filter), `stats` (counts + segmentation), `timeline` (card classification + sequence grouping), `analysis` (render/cache/error).\n\n## Testability refactors (behavior-preserving)\n- Extracted transcript parsing/dedup/chunking from `AnalysisController` into a pure `TranscriptParser` (controller shrank ~145 lines).\n- Added `GeminiConfig` (API-key accessor) and `TokenCounter` (lazy token estimator) seams so the analysis pipeline is tested with the **LLM, API key, and token estimator […]
 
 > TOOL
 
@@ -2704,7 +2704,7 @@ tool_use Bash
 id: toolu_01LnTvveZDmesPtmsMZadEoE
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh pr checks 1 2>&1 | head -10 || echo \"(no checks configured)\"",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh pr checks 1 2>&1 | head -10 || echo \"(no checks configured)\"",
   "description": "Check PR CI status"
 }
 ```
@@ -2812,7 +2812,7 @@ id: toolu_01TNhgZBAm4cARNEToDEowSh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/app.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/app.js",
   "old_string": "async function loadConversations() {\n  const list = document.getElementById(\"conversations-list\");",
   "new_string": "export function filterAndSortConversations(conversations, searchTerm, descending) {\n  let filtered = [...conversations];\n  const term = (searchTerm || \"\").toLowerCase();\n  if (term) {\n    filtered = filtered.filter(\n      (c) =>\n        c.summary.toLowerCase().includes(term) ||\n        c.id.toLowerCase().includes(term)\n    );\n  }\n  if (!descending) {\n    filtered.reverse();\n  }\n  return filtered;\n}\n\nexport async function loadConversations() {\n  const list = document.getElementById(\"conversations-list\");"
 }
@@ -2823,7 +2823,7 @@ id: toolu_01TNhgZBAm4cARNEToDEowSh
 tool_result
 id: toolu_01TNhgZBAm4cARNEToDEowSh
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/app.js has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/app.js has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2833,7 +2833,7 @@ id: toolu_01PX9GrhPgQAJPTjcpktmpGM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/app.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/app.js",
   "old_string": "function renderConversationsList() {\n  const list = document.getElementById(\"conversations-list\");\n  list.innerHTML = \"\";\n\n  let filtered = [...allConversations];\n  const searchTerm =\n    document.getElementById(\"conversation-search\")?.value.toLowerCase() || \"\";\n\n  if (searchTerm) {\n    filtered = filtered.filter(\n      (c) =>\n        c.summary.toLowerCase().includes(searchTerm) ||\n        c.id.toLowerCase().includes(searchTerm)\n    );\n  }\n\n  if (!sortDescending) {\n    filtered.reverse();\n  }\n\n  if (filtered.length === 0) {",
   "new_string": "export function renderConversationsList() {\n  const list = document.getElementById(\"conversations-list\");\n  list.innerHTML = \"\";\n\n  const searchTerm =\n    document.getElementById(\"conversation-search\")?.value || \"\";\n  const filtered = filterAndSortConversations(\n    allConversations,\n    searchTerm,\n    sortDescending\n  );\n\n  if (filtered.length === 0) {"
 }
@@ -2844,7 +2844,7 @@ id: toolu_01PX9GrhPgQAJPTjcpktmpGM
 tool_result
 id: toolu_01PX9GrhPgQAJPTjcpktmpGM
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/app.js has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/app.js has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2854,7 +2854,7 @@ id: toolu_016XRGWzdzka2C1kt6asyeCC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/app.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/app.js",
   "old_string": "async function selectConversation(id, element) {",
   "new_string": "export async function selectConversation(id, element) {"
 }
@@ -2865,7 +2865,7 @@ id: toolu_016XRGWzdzka2C1kt6asyeCC
 tool_result
 id: toolu_016XRGWzdzka2C1kt6asyeCC
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/app.js has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/app.js has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2879,7 +2879,7 @@ id: toolu_01XBb58ddK1WLr5yRHSLW5kt
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/modules/ui.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/modules/ui.js",
   "old_string": "import { escapeHtml, formatTime } from \"./utils.js\";\n\nlet modal, modalTitle, modalContent;\n\nexport function initUI() {\n  modal = document.getElementById(\"file-modal\");\n  modalTitle = document.getElementById(\"file-modal-title\");\n  modalContent = document.getElementById(\"file-modal-content\");\n  const closeBtn = document.getElementById(\"close-modal-btn\");\n\n  if (closeBtn) {\n    closeBtn.addEventListener(\"click\", () => {\n      modal.classList.add(\"hidden\");\n    });\n  }\n\n  if (modal) {\n    modal.addEventListener(\"click\", (e) => {\n      if (e.target === modal) {\n        modal.classList.add(\"hidden\");\n      }\n    });\n  }\n\n  // Intercept file:// links using event delegation\n  document.addEventListener(\"click\", async (e) => {\n    const link = e.target.closest(\"a\");\n    if (link && link.href && link.href.startsWith(\"file://\")) {\n      e.preventDefault();\n\n      let path = link.href.replace(\"file://\", \"\");\n      path = path.split(\"#\")[0]; // Strip line numbers hash like #L10-L20\n      path = decodeURIComponent(path);\n\n      try {\n        const res = await fetch(\n          `/api/brain/file?path=${encodeURIComponent(path)}`\n        );\n        if (!res.ok) {\n          if (res.status === 404) throw new Error(\"File not found\");\n          throw new Error(\"Failed to load file\");\n        }\n        const content = await res.text();\n\n        modalTitle.innerText = path;\n\n        const ext = path.split(\".\").pop().toLowerCase();\n        const supportedExts = [\n          \"js\",\n          \"json\",\n          \"java\",\n          \"html\",\n          \"css\",\n          \"md\",\n          \"sh\",\n          \"bash\",\n          \"yaml\",\n          \"yml\",\n          \"xml\",\n          \"sql\",\n          \"kt\",\n          \"kts\",\n          \"gradle\",\n          \"properties\",\n          \"py\",\n          \"go\",\n          \"rs\",\n          \"cpp\",\n          \"c\",\n          \"ts\",\n          \"jsx\",\n          \"tsx\",\n        ];\n        let langClass = \"\";\n        if (supportedExts.includes(ext)) {\n          langClass = `language-${ext}`;\n        }\n\n        modalContent.className = langClass;\n        modalContent.innerHTML = escapeHtml(content);\n\n        if (langClass && window.hljs) {\n          delete modalContent.dataset.highlighted;\n          hljs.highlightElement(modalContent);\n        }\n\n […]
 
 > TOOL
@@ -2887,7 +2887,7 @@ id: toolu_01XBb58ddK1WLr5yRHSLW5kt
 tool_result
 id: toolu_01XBb58ddK1WLr5yRHSLW5kt
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/modules/ui.js has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/modules/ui.js has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2901,7 +2901,7 @@ id: toolu_01FZq7XqsMJRBALGSkG5R8SR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/js/setup.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/js/setup.js",
   "old_string": "// `hljs` (syntax highlighter) — stub so calls are no-ops in tests.\nglobalThis.hljs = {\n  highlightElement: () => {},\n};",
   "new_string": "// `hljs` (syntax highlighter) — stub so calls are no-ops in tests.\nglobalThis.hljs = {\n  highlightElement: () => {},\n};\n\n// jsdom does not implement these layout/scroll APIs; stub them so code that calls them runs.\nif (!Element.prototype.scrollIntoView) {\n  Element.prototype.scrollIntoView = () => {};\n}\nif (!Element.prototype.scrollTo) {\n  Element.prototype.scrollTo = () => {};\n}\n\n// jsdom does not implement IntersectionObserver (used by the timeline scrubber).\nif (!globalThis.IntersectionObserver) {\n  globalThis.IntersectionObserver = class {\n    observe() {}\n    unobserve() {}\n    disconnect() {}\n    takeRecords() {\n      return [];\n    }\n  };\n}"
 }
@@ -2912,7 +2912,7 @@ id: toolu_01FZq7XqsMJRBALGSkG5R8SR
 tool_result
 id: toolu_01FZq7XqsMJRBALGSkG5R8SR
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/js/setup.js has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/js/setup.js has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2925,15 +2925,15 @@ tool_use Write
 id: toolu_01SBLQNBzeX7ydGSu6LAbdAF
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/js/ui.test.js",
-  "content": "import { afterEach, beforeEach, describe, expect, it, vi } from \"vitest\";\nimport {\n  languageClassFor,\n  pathFromFileLink,\n  openFilePreview,\n  closeFileModal,\n} from \"../../main/resources/public/modules/ui.js\";\n\nbeforeEach(() => {\n  document.body.innerHTML = `\n    <div id=\"file-modal\" class=\"hidden\">\n      <div id=\"file-modal-title\"></div>\n      <pre id=\"file-modal-content\"></pre>\n      <button id=\"close-modal-btn\"></button>\n    </div>\n  `;\n});\n\nafterEach(() => {\n  vi.restoreAllMocks();\n});\n\ndescribe(\"languageClassFor\", () => {\n  it(\"maps supported extensions to a highlight.js class\", () => {\n    expect(languageClassFor(\"/a/b/Main.java\")).toBe(\"language-java\");\n    expect(languageClassFor(\"script.JS\")).toBe(\"language-js\");\n  });\n\n  it(\"returns empty string for unsupported extensions\", () => {\n    expect(languageClassFor(\"/a/b/photo.png\")).toBe(\"\");\n  });\n});\n\ndescribe(\"pathFromFileLink\", () => {\n  it(\"strips the scheme, the line-number hash and percent-encoding\", () => {\n    expect(pathFromFileLink(\"file:///home/u/My%20File.txt#L10-L20\")).toBe(\n      \"/home/u/My File.txt\"\n    );\n  });\n});\n\ndescribe(\"openFilePreview\", () => {\n  it(\"loads file content into the modal with a language class and highlights it\", async () => {\n    global.fetch = vi.fn(() =>\n      Promise.resolve({ ok: true, text: () => Promise.resolve(\"class A {}\") })\n    );\n    const hl = vi.spyOn(globalThis.hljs, \"highlightElement\");\n\n    await openFilePreview(\"/home/u/.gemini/A.java\");\n\n    const modal = document.getElementById(\"file-modal\");\n    expect(modal.classList.contains(\"hidden\")).toBe(false);\n    expect(document.getElementById(\"file-modal-title\").innerText).toBe(\n      \"/home/u/.gemini/A.java\"\n    );\n    const content = document.getElementById(\"file-modal-content\");\n    expect(content.className).toBe(\"language-java\");\n    expect(content.innerHTML).toBe(\"class A {}\");\n    expect(hl).toHaveBeenCalledTimes(1);\n  });\n\n  it(\"escapes file content to prevent HTML injection\", async () => {\n    global.fetch = vi.fn(() =>\n      Promise.resolve({\n        ok: true,\n        text: () => Promise.resolve(\"<script>alert(1)</script>\"),\n      })\n    );\n\n    await openFilePreview(\"/home/u/.gemini/notes.txt\");\n\n    const content = document.getElementById(\"file-modal-content\");\n    expect(content.innerHTML).toBe(\"&lt;script&gt;alert(1)&lt;/script&gt;\");\n    // Unsupported extension -> no language class, no highlight.\n    expect(content.className).toBe(\"\");\n  });\n\n  it(\"alerts and leaves the modal hidden […]
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/js/ui.test.js",
+  "content": "import { afterEach, beforeEach, describe, expect, it, vi } from \"vitest\";\nimport {\n  languageClassFor,\n  pathFromFileLink,\n  openFilePreview,\n  closeFileModal,\n} from \"../../main/resources/public/modules/ui.js\";\n\nbeforeEach(() => {\n  document.body.innerHTML = `\n    <div id=\"file-modal\" class=\"hidden\">\n      <div id=\"file-modal-title\"></div>\n      <pre id=\"file-modal-content\"></pre>\n      <button id=\"close-modal-btn\"></button>\n    </div>\n  `;\n});\n\nafterEach(() => {\n  vi.restoreAllMocks();\n});\n\ndescribe(\"languageClassFor\", () => {\n  it(\"maps supported extensions to a highlight.js class\", () => {\n    expect(languageClassFor(\"/a/b/Main.java\")).toBe(\"language-java\");\n    expect(languageClassFor(\"script.JS\")).toBe(\"language-js\");\n  });\n\n  it(\"returns empty string for unsupported extensions\", () => {\n    expect(languageClassFor(\"/a/b/photo.png\")).toBe(\"\");\n  });\n});\n\ndescribe(\"pathFromFileLink\", () => {\n  it(\"strips the scheme, the line-number hash and percent-encoding\", () => {\n    expect(pathFromFileLink(\"file:///home/<USER>/My%20File.txt#L10-L20\")).toBe(\n      \"/home/<USER>/My File.txt\"\n    );\n  });\n});\n\ndescribe(\"openFilePreview\", () => {\n  it(\"loads file content into the modal with a language class and highlights it\", async () => {\n    global.fetch = vi.fn(() =>\n      Promise.resolve({ ok: true, text: () => Promise.resolve(\"class A {}\") })\n    );\n    const hl = vi.spyOn(globalThis.hljs, \"highlightElement\");\n\n    await openFilePreview(\"/home/<USER>/.gemini/A.java\");\n\n    const modal = document.getElementById(\"file-modal\");\n    expect(modal.classList.contains(\"hidden\")).toBe(false);\n    expect(document.getElementById(\"file-modal-title\").innerText).toBe(\n      \"/home/<USER>/.gemini/A.java\"\n    );\n    const content = document.getElementById(\"file-modal-content\");\n    expect(content.className).toBe(\"language-java\");\n    expect(content.innerHTML).toBe(\"class A {}\");\n    expect(hl).toHaveBeenCalledTimes(1);\n  });\n\n  it(\"escapes file content to prevent HTML injection\", async () => {\n    global.fetch = vi.fn(() =>\n      Promise.resolve({\n        ok: true,\n        text: () => Promise.resolve(\"<script>alert(1)</script>\"),\n      })\n    );\n\n    await openFilePreview(\"/home/<USER>/.gemini/notes.txt\");\n\n    const content = document.getElementById(\"file-modal-content\");\n    expect(content.innerHTML).toBe(\"&lt;script&gt;alert(1)&lt;/script&gt;\");\n    // Unsupported extension -> no language class, no highlight.\n    expect(content.className).toBe(\"\");\n  });\n\n  it(\"alerts and leaves the modal hidden […]
 
 > TOOL
 
 tool_result
 id: toolu_01SBLQNBzeX7ydGSu6LAbdAF
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/js/ui.test.js (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/js/ui.test.js (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2946,7 +2946,7 @@ tool_use Write
 id: toolu_01HFKFt74PdKY1XwptPQwdWf
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/js/app.test.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/js/app.test.js",
   "content": "import { afterEach, beforeEach, describe, expect, it, vi } from \"vitest\";\nimport {\n  filterAndSortConversations,\n  loadConversations,\n  selectConversation,\n} from \"../../main/resources/public/app.js\";\n\nconst flush = async () => {\n  for (let i = 0; i < 15; i++) await Promise.resolve();\n};\n\ndescribe(\"filterAndSortConversations\", () => {\n  const convs = [\n    { id: \"aaa111\", summary: \"Fix the parser\" },\n    { id: \"bbb222\", summary: \"Add a feature\" },\n  ];\n\n  it(\"filters by summary, case-insensitively\", () => {\n    const out = filterAndSortConversations(convs, \"PARSER\", true);\n    expect(out).toHaveLength(1);\n    expect(out[0].id).toBe(\"aaa111\");\n  });\n\n  it(\"filters by id\", () => {\n    const out = filterAndSortConversations(convs, \"bbb\", true);\n    expect(out).toHaveLength(1);\n    expect(out[0].summary).toBe(\"Add a feature\");\n  });\n\n  it(\"returns nothing when no conversation matches\", () => {\n    expect(filterAndSortConversations(convs, \"nothing-here\", true)).toHaveLength(0);\n  });\n\n  it(\"reverses order when not descending and preserves it when descending\", () => {\n    expect(filterAndSortConversations(convs, \"\", true).map((c) => c.id)).toEqual([\n      \"aaa111\",\n      \"bbb222\",\n    ]);\n    expect(filterAndSortConversations(convs, \"\", false).map((c) => c.id)).toEqual([\n      \"bbb222\",\n      \"aaa111\",\n    ]);\n  });\n});\n\ndescribe(\"session browsing and selection (integration)\", () => {\n  beforeEach(() => {\n    vi.useFakeTimers();\n    window.location.hash = \"\";\n    document.body.innerHTML = `\n      <select id=\"flavor-select\"><option value=\"antigravity-cli\" selected>cli</option></select>\n      <input id=\"conversation-search\" value=\"\" />\n      <div id=\"conversations-list\"></div>\n      <div id=\"conv-popover\" class=\"hidden\">\n        <span id=\"popover-title\"></span><span id=\"popover-id\"></span><span id=\"popover-time\"></span>\n      </div>\n      <div id=\"current-session-title\"></div>\n      <div id=\"current-session-id\"></div>\n      <button id=\"summarize-btn\" disabled></button>\n      <div id=\"transcript-container\"></div>\n      <div id=\"session-stats-container\" class=\"hidden\"></div>\n      <div id=\"ai-summary-container\" class=\"hidden\"></div>\n      <div id=\"ai-summary-content\" class=\"collapsed\"></div>\n      <div id=\"ai-summary-header\"><span class=\"chevron\"></span></div>\n      <div […]
 
 > TOOL
@@ -2954,7 +2954,7 @@ id: toolu_01HFKFt74PdKY1XwptPQwdWf
 tool_result
 id: toolu_01HFKFt74PdKY1XwptPQwdWf
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/js/app.test.js (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/js/app.test.js (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2968,7 +2968,7 @@ id: toolu_01JqUuMdk3gDHXYjq5PqNPgP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/js/timeline.test.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/js/timeline.test.js",
   "old_string": "import { beforeEach, describe, expect, it } from \"vitest\";\nimport { renderTranscript } from \"../../main/resources/public/modules/timeline.js\";",
   "new_string": "import { afterEach, beforeEach, describe, expect, it, vi } from \"vitest\";\nimport { renderTranscript } from \"../../main/resources/public/modules/timeline.js\";"
 }
@@ -2979,7 +2979,7 @@ id: toolu_01JqUuMdk3gDHXYjq5PqNPgP
 tool_result
 id: toolu_01JqUuMdk3gDHXYjq5PqNPgP
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/js/timeline.test.js has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/js/timeline.test.js has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2989,7 +2989,7 @@ id: toolu_01KE66ZgLoSjQZp3ETzMqpmm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/js/timeline.test.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/js/timeline.test.js",
   "old_string": "  it(\"appends a bottom timeline marker and fires the transcriptLoaded event\", () => {",
   "new_string": "  it(\"renders tool calls with their name and arguments\", () => {\n    const steps = [\n      {\n        source: \"MODEL\",\n        type: \"RUN_TOOL\",\n        tool_calls: [{ name: \"edit_file\", args: { path: \"/a.txt\" } }],\n        created_at: \"2026-06-19T10:00:00Z\",\n      },\n    ];\n    renderTranscript(steps, container);\n    const toolCall = container.querySelector(\".tool-call\");\n    expect(toolCall).not.toBeNull();\n    expect(toolCall.querySelector(\".tool-name\").textContent).toContain(\"edit_file\");\n    expect(toolCall.textContent).toContain(\"/a.txt\");\n  });\n\n  it(\"renders an explicit error box for steps carrying an error\", () => {\n    const steps = [\n      {\n        type: \"ERROR_MESSAGE\",\n        status: \"ERROR\",\n        error: \"Boom: stack trace here\",\n        created_at: \"2026-06-19T10:00:00Z\",\n      },\n    ];\n    renderTranscript(steps, container);\n    const errorBox = container.querySelector(\".code-block\");\n    expect(errorBox).not.toBeNull();\n    expect(errorBox.innerHTML).toContain(\"ERROR:\");\n    expect(errorBox.textContent).toContain(\"Boom: stack trace here\");\n  });\n\n  it(\"splits a tagged user request into request and system-context blocks\", () => {\n    const steps = [\n      {\n        type: \"USER_INPUT\",\n        source: \"USER_EXPLICIT\",\n        content:\n          \"<USER_REQUEST>\\nPlease do X\\n</USER_REQUEST><CURRENT_FILE>secret.txt</CURRENT_FILE>\",\n        created_at: \"2026-06-19T10:00:00Z\",\n      },\n    ];\n    renderTranscript(steps, container);\n    const requestBlock = container.querySelector(\".user-request-block\");\n    const contextBlock = container.querySelector(\".system-context-block\");\n    expect(requestBlock.textContent).toContain(\"Please do X\");\n    expect(contextBlock.textContent).toContain(\"secret.txt\");\n  });\n\n  it(\"appends a bottom timeline marker and fires the transcriptLoaded event\", () => {"
 }
@@ -3000,7 +3000,7 @@ id: toolu_01KE66ZgLoSjQZp3ETzMqpmm
 tool_result
 id: toolu_01KE66ZgLoSjQZp3ETzMqpmm
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/js/timeline.test.js has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/js/timeline.test.js has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3010,7 +3010,7 @@ id: toolu_0195Dvt3Wc4wJ5FbfjF3JDRP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/js/timeline.test.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/js/timeline.test.js",
   "old_string": "    window.removeEventListener(\"transcriptLoaded\", handler);\n    expect(container.querySelector(\"#timeline-bottom-marker\")).not.toBeNull();\n    expect(fired).toBe(true);\n  });\n});",
   "new_string": "    window.removeEventListener(\"transcriptLoaded\", handler);\n    expect(container.querySelector(\"#timeline-bottom-marker\")).not.toBeNull();\n    expect(fired).toBe(true);\n  });\n});\n\ndescribe(\"scrollToTime\", () => {\n  afterEach(() => {\n    vi.useRealTimers();\n  });\n\n  it(\"highlights the step card nearest the target time\", () => {\n    vi.useFakeTimers();\n    const steps = [\n      { type: \"USER_INPUT\", content: \"q1\", created_at: \"2026-06-19T10:00:00Z\" },\n      { type: \"USER_INPUT\", content: \"q2\", created_at: \"2026-06-19T10:05:00Z\" },\n    ];\n    renderTranscript(steps, container);\n\n    const target = new Date(\"2026-06-19T10:05:00Z\").getTime();\n    window.scrollToTime(target);\n\n    const cards = container.querySelectorAll(\".step-card\");\n    // The second card matches the target timestamp and receives the highlight box-shadow.\n    expect(cards[1].style.boxShadow).toContain(\"accent-blue\");\n    expect(cards[0].style.boxShadow).toBe(\"\");\n  });\n});"
 }
@@ -3021,7 +3021,7 @@ id: toolu_0195Dvt3Wc4wJ5FbfjF3JDRP
 tool_result
 id: toolu_0195Dvt3Wc4wJ5FbfjF3JDRP
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/js/timeline.test.js has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/js/timeline.test.js has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3035,7 +3035,7 @@ id: toolu_0188DjWTeLwbuLGw7z7yPie6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/js/stats.test.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/js/stats.test.js",
   "old_string": "    // The DURATION card sub-label reports the number of active segments.\n    const sub = document.querySelector(\"#duration-stat-card .stat-sub\").textContent;\n    expect(sub).toContain(\"2 active segments\");\n  });\n});",
   "new_string": "    // The DURATION card sub-label reports the number of active segments.\n    const sub = document.querySelector(\"#duration-stat-card .stat-sub\").textContent;\n    expect(sub).toContain(\"2 active segments\");\n  });\n\n  it(\"renders the tool distribution chart with tool names and counts\", () => {\n    const steps = [\n      { type: \"USER_INPUT\", content: \"hi\", created_at: \"2026-06-19T10:00:00Z\" },\n      { source: \"MODEL\", type: \"RUN_TOOL\", tool_calls: [{ name: \"edit\" }], created_at: \"2026-06-19T10:00:01Z\" },\n      { source: \"MODEL\", type: \"RUN_TOOL\", tool_calls: [{ name: \"edit\" }], created_at: \"2026-06-19T10:00:02Z\" },\n      { source: \"MODEL\", type: \"RUN_TOOL\", tool_calls: [{ name: \"run\" }], created_at: \"2026-06-19T10:00:03Z\" },\n    ];\n    renderStats(steps);\n    const chart = document.getElementById(\"tools-chart\");\n    expect(chart.innerHTML).toContain(\"edit\");\n    expect(chart.innerHTML).toContain(\"run\");\n  });\n\n  it(\"renders the issues breakdown chart with the error message\", () => {\n    const steps = [\n      { type: \"USER_INPUT\", content: \"hi\", created_at: \"2026-06-19T10:00:00Z\" },\n      {\n        type: \"ERROR_MESSAGE\",\n        status: \"ERROR\",\n        error: \"Something failed badly\",\n        created_at: \"2026-06-19T10:00:01Z\",\n      },\n    ];\n    renderStats(steps);\n    const chart = document.getElementById(\"errors-chart\");\n    expect(chart.innerHTML).toContain(\"Something failed badly\");\n  });\n\n  it(\"renders the session timeline chart with a position indicator\", () => {\n    const steps = [\n      { type: \"USER_INPUT\", content: \"q1\", created_at: \"2026-06-19T10:00:00Z\" },\n      { source: \"MODEL\", […]
 
@@ -3044,7 +3044,7 @@ id: toolu_0188DjWTeLwbuLGw7z7yPie6
 tool_result
 id: toolu_0188DjWTeLwbuLGw7z7yPie6
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/js/stats.test.js has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/js/stats.test.js has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3054,7 +3054,7 @@ id: toolu_01VGXvUqrDo9Wd9ykCpHubtd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/js/analysis.test.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/js/analysis.test.js",
   "old_string": "  it(\"renders from cache without fetching when not forced\", async () => {",
   "new_string": "  it(\"marks issues as resolved or unresolved based on the circumvention field\", async () => {\n    const data = {\n      summary: \"s\",\n      issues: [\n        { error: \"broke A\", circumvention: \"restarted the service\" },\n        { error: \"broke B\", circumvention: \"none\" },\n      ],\n    };\n    global.fetch = vi.fn((url) =>\n      url.includes(\"/progress\")\n        ? Promise.resolve({ ok: true, json: () => Promise.resolve({ progress: 100, phase: \"x\" }) })\n        : Promise.resolve({ ok: true, json: () => Promise.resolve(data) })\n    );\n\n    await triggerAnalysis(\"issues-session\", true);\n\n    const html = document.getElementById(\"ai-summary-text\").innerHTML;\n    expect(html).toContain(\"RESOLUTION\");\n    expect(html).toContain(\"restarted the service\");\n    expect(html).toContain(\"UNRESOLVED\");\n  });\n\n  it(\"renders from cache without fetching when not forced\", async () => {"
 }
@@ -3065,7 +3065,7 @@ id: toolu_01VGXvUqrDo9Wd9ykCpHubtd
 tool_result
 id: toolu_01VGXvUqrDo9Wd9ykCpHubtd
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/js/analysis.test.js has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/js/analysis.test.js has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3079,7 +3079,7 @@ id: toolu_01BhZQMsXh57asShQgbB4o8i
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
   "old_string": "import java.util.List;\nimport java.util.Optional;\nimport java.util.concurrent.CopyOnWriteArrayList;\nimport java.util.concurrent.atomic.AtomicInteger;\nimport java.util.concurrent.atomic.AtomicReference;",
   "new_string": "import java.util.List;\nimport java.util.Optional;\nimport java.util.concurrent.CopyOnWriteArrayList;\nimport java.util.concurrent.CountDownLatch;\nimport java.util.concurrent.ExecutorService;\nimport java.util.concurrent.Executors;\nimport java.util.concurrent.Future;\nimport java.util.concurrent.TimeUnit;\nimport java.util.concurrent.atomic.AtomicInteger;\nimport java.util.concurrent.atomic.AtomicReference;"
 }
@@ -3090,7 +3090,7 @@ id: toolu_01BhZQMsXh57asShQgbB4o8i
 tool_result
 id: toolu_01BhZQMsXh57asShQgbB4o8i
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3100,7 +3100,7 @@ id: toolu_01RDBtvuhusUrHoHx8bHUyu8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
   "old_string": "    private static final AtomicInteger TOKEN_RESULT = new AtomicInteger(10);\n    private static final List<String> ANALYZE_CALLS = new CopyOnWriteArrayList<>();\n    private static final AtomicInteger CONSOLIDATE_CALLS = new AtomicInteger(0);",
   "new_string": "    private static final AtomicInteger TOKEN_RESULT = new AtomicInteger(10);\n    private static final List<String> ANALYZE_CALLS = new CopyOnWriteArrayList<>();\n    private static final AtomicInteger CONSOLIDATE_CALLS = new AtomicInteger(0);\n\n    // Optional latches to deterministically hold an in-flight analyze() call (concurrency test).\n    private static final AtomicReference<CountDownLatch> ANALYZE_STARTED = new AtomicReference<>();\n    private static final AtomicReference<CountDownLatch> ANALYZE_RELEASE = new AtomicReference<>();"
 }
@@ -3111,7 +3111,7 @@ id: toolu_01RDBtvuhusUrHoHx8bHUyu8
 tool_result
 id: toolu_01RDBtvuhusUrHoHx8bHUyu8
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3121,7 +3121,7 @@ id: toolu_01PczRr5w4YS7H34bYPdz1bC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
   "old_string": "        API_KEY.set(Optional.of(\"test-key\"));\n        TOKEN_RESULT.set(10);\n        ANALYZE_CALLS.clear();\n        CONSOLIDATE_CALLS.set(0);\n    }",
   "new_string": "        API_KEY.set(Optional.of(\"test-key\"));\n        TOKEN_RESULT.set(10);\n        ANALYZE_CALLS.clear();\n        CONSOLIDATE_CALLS.set(0);\n        ANALYZE_STARTED.set(null);\n        ANALYZE_RELEASE.set(null);\n    }"
 }
@@ -3132,7 +3132,7 @@ id: toolu_01PczRr5w4YS7H34bYPdz1bC
 tool_result
 id: toolu_01PczRr5w4YS7H34bYPdz1bC
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3142,7 +3142,7 @@ id: toolu_012LHRqjCYL4i7xQ5vtjwHdv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
   "old_string": "            @Override\n            public AnalysisResponse analyze(String transcript) {\n                ANALYZE_CALLS.add(transcript);\n                return new AnalysisResponse(\n                    \"Chunk Title\",",
   "new_string": "            @Override\n            public AnalysisResponse analyze(String transcript) {\n                ANALYZE_CALLS.add(transcript);\n                CountDownLatch started = ANALYZE_STARTED.get();\n                if (started != null) {\n                    started.countDown();\n                    try {\n                        ANALYZE_RELEASE.get().await(10, TimeUnit.SECONDS);\n                    } catch (InterruptedException e) {\n                        Thread.currentThread().interrupt();\n                    }\n                }\n                return new AnalysisResponse(\n                    \"Chunk Title\","
 }
@@ -3153,7 +3153,7 @@ id: toolu_012LHRqjCYL4i7xQ5vtjwHdv
 tool_result
 id: toolu_012LHRqjCYL4i7xQ5vtjwHdv
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3167,7 +3167,7 @@ id: toolu_018GDneTzzoor4hJ91wHvgnS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
   "old_string": "        assertEquals(3, ANALYZE_CALLS.size());\n        assertTrue(CONSOLIDATE_CALLS.get() >= 1);\n    }\n}",
   "new_string": "        assertEquals(3, ANALYZE_CALLS.size());\n        assertTrue(CONSOLIDATE_CALLS.get() >= 1);\n    }\n\n    @Test\n    void forceRecomputeOverwritesAnExistingCachedSummary() throws IOException {\n        String id = \"force-session\";\n        writeTranscript(id, \"{\\\"type\\\":\\\"USER_INPUT\\\",\\\"content\\\":\\\"go\\\"}\\n\");\n        Files.writeString(logsDir(id).resolve(\"summary.json\"), \"{\\\"summary\\\":\\\"stale\\\"}\");\n\n        String body = get(\"/api/analysis/conversations/\" + id + \"/summarize?force=true\");\n        JsonNode node = MAPPER.readTree(body);\n\n        assertEquals(\"chunk summary\", node.get(\"summary\").asText());\n        // The LLM was invoked even though a cached summary existed.\n        assertEquals(1, ANALYZE_CALLS.size());\n        // The cache file was overwritten with the freshly computed result.\n        assertTrue(\n            Files.readString(logsDir(id).resolve(\"summary.json\")).contains(\"chunk summary\")\n        );\n    }\n\n    @Test\n    void summarizeReportsAlreadyRunningForAConcurrentRequest() throws Exception {\n        String id = \"concurrent-session\";\n        writeTranscript(id, \"{\\\"type\\\":\\\"USER_INPUT\\\",\\\"content\\\":\\\"go\\\"}\\n\");\n\n        CountDownLatch started = new CountDownLatch(1);\n        CountDownLatch release = new CountDownLatch(1);\n        ANALYZE_STARTED.set(started);\n        ANALYZE_RELEASE.set(release);\n\n        ExecutorService background = Executors.newSingleThreadExecutor();\n        try {\n            Future<String> first = background.submit(() ->\n                get(\"/api/analysis/conversations/\" + id + \"/summarize?force=true\")\n            );\n            // Wait until the first request is inside analyze() and holding the per-id lock.\n            assertTrue(started.await(5, TimeUnit.SECONDS), \"first analysis did not start\");\n\n            String second = get(\"/api/analysis/conversations/\" + id + \"/summarize?force=true\");\n            assertTrue(\n                second.contains(\"already running\"),\n                \"concurrent request should be rejected, got: \" + second\n            );\n\n            release.countDown();\n            String firstResult = first.get(10, TimeUnit.SECONDS);\n            assertTrue(firstResult.contains(\"chunk summary\"));\n        } finally {\n            release.countDown();\n            background.shutdownNow();\n        }\n    }\n}"
 }
@@ -3178,7 +3178,7 @@ id: toolu_018GDneTzzoor4hJ91wHvgnS
 tool_result
 id: toolu_018GDneTzzoor4hJ91wHvgnS
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3191,7 +3191,7 @@ tool_use Bash
 id: toolu_01VZF7amKznK4X62msJEtMTx
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\necho \"=== Backend: spotlessApply + build ===\"\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -14\necho \"=== Frontend: npm test ===\"\nnpm test 2>&1 | tail -14",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\necho \"=== Backend: spotlessApply + build ===\"\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -14\necho \"=== Frontend: npm test ===\"\nnpm test 2>&1 | tail -14",
   "description": "Full re-verification round 2",
   "timeout": 600000
 }
@@ -3218,7 +3218,7 @@ BUILD SUCCESSFUL in 13s
 37 actionable tasks: 29 executed, 8 up-to-date
 Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.5.1/userguide/configuration_cache_enabling.html
 === Frontend: npm test ===
- RUN  v2.1.9 /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer
+ RUN  v2.1.9 /home/<USER>/Developer/scottdensmore/agent-brain-visualizer
 
  ✓ src/test/js/ui.test.js (7 tests) 11ms
  ✓ src/test/js/utils.test.js (9 tests) 38ms
@@ -3243,7 +3243,7 @@ tool_use Bash
 id: toolu_01AGSFKjMuiLUUYrcY2JRVhK
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ntotal=0\nfor f in build/test-results/test/*.xml; do\n  n=$(grep -o 'testsuite name=\"[^\"]*\" tests=\"[0-9]*\"' \"$f\" | sed 's/.*tests=\"//;s/\"//')\n  name=$(basename \"$f\" | sed 's/TEST-io.github.glaforge.agybrainviz.//;s/.xml//')\n  echo \"$name: $n\"; total=$((total+n))\ndone\necho \"TOTAL backend: $total\"",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ntotal=0\nfor f in build/test-results/test/*.xml; do\n  n=$(grep -o 'testsuite name=\"[^\"]*\" tests=\"[0-9]*\"' \"$f\" | sed 's/.*tests=\"//;s/\"//')\n  name=$(basename \"$f\" | sed 's/TEST-io.github.glaforge.agybrainviz.//;s/.xml//')\n  echo \"$name: $n\"; total=$((total+n))\ndone\necho \"TOTAL backend: $total\"",
   "description": "Final backend test counts round 2"
 }
 ```
@@ -3267,7 +3267,7 @@ tool_use Bash
 id: toolu_01X9KSQvixNCAKWovT5XX3v4
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit add -A\ngit diff --cached --stat HEAD 2>/dev/null | tail -25",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit add -A\ngit diff --cached --stat HEAD 2>/dev/null | tail -25",
   "description": "Stage round 2 and show diff stat"
 }
 ```
@@ -3303,7 +3303,7 @@ tool_use Bash
 id: toolu_01GPd9EuJVGX2hb83s1CcmKP
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit restore --staged .claude .entire 2>/dev/null\necho \"--- staged for commit ---\"\ngit diff --cached --name-only\necho \"--- left untracked (not mine) ---\"\ngit status --short --untracked-files=all | grep -E '\\.claude|\\.entire' || echo \"(none)\"",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit restore --staged .claude .entire 2>/dev/null\necho \"--- staged for commit ---\"\ngit diff --cached --name-only\necho \"--- left untracked (not mine) ---\"\ngit status --short --untracked-files=all | grep -E '\\.claude|\\.entire' || echo \"(none)\"",
   "description": "Unstage unrelated files"
 }
 ```
@@ -3341,7 +3341,7 @@ id: toolu_01Hz3VTjX9vC7MHX3VoPnTKY
 ```json
 {
   "description": "Review round-2 test additions",
-  "prompt": "You are a senior code reviewer. Review the STAGED git diff in /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer (run `git diff --cached`). This is round 2 of a test-coverage effort, adding coverage for previously-untested frontend journeys plus two backend edge cases.\n\nStaged files:\n- Production refactors (must preserve behavior): src/main/resources/public/app.js (extracted `filterAndSortConversations`, exported `loadConversations`/`renderConversationsList`/`selectConversation`), src/main/resources/public/modules/ui.js (extracted `openFilePreview`/`closeFileModal`/`languageClassFor`/`pathFromFileLink` from initUI).\n- New/extended tests: src/test/js/{app,ui,timeline,stats,analysis}.test.js, src/test/js/setup.js (added jsdom stubs for scrollIntoView/scrollTo/IntersectionObserver), and AnalysisControllerTest.java (added concurrency \"already running\" test using CountDownLatch, and force-recompute overwrite test).\n\nFocus on:\n1. **Behavior preservation** in app.js and ui.js refactors vs the original inline code — especially the file:// link interception path (path extraction, language class, escaping, hljs call, alert on error) and renderConversationsList (search/sort/empty/auto-select). Flag any semantic drift.\n2. **Test reliability**: flakiness or non-determinism. Pay special attention to: the concurrency test in AnalysisControllerTest (latch handshake, IO thread-pool assumptions, could it deadlock or hang?); the app.test.js integration test that relies on `await Promise.resolve()` microtask flushing with fake timers; jsdom stub-based tests (are they testing real behavior or just the stubs?).\n3. **Tests that could pass trivially** or assert the wrong thing.\n4. **Bugs** in new code.\n\nDo NOT modify files. Report MUST-FIX / SHOULD-FIX / NICE-TO-HAVE with file:line and concrete […]
+  "prompt": "You are a senior code reviewer. Review the STAGED git diff in /home/<USER>/Developer/scottdensmore/agent-brain-visualizer (run `git diff --cached`). This is round 2 of a test-coverage effort, adding coverage for previously-untested frontend journeys plus two backend edge cases.\n\nStaged files:\n- Production refactors (must preserve behavior): src/main/resources/public/app.js (extracted `filterAndSortConversations`, exported `loadConversations`/`renderConversationsList`/`selectConversation`), src/main/resources/public/modules/ui.js (extracted `openFilePreview`/`closeFileModal`/`languageClassFor`/`pathFromFileLink` from initUI).\n- New/extended tests: src/test/js/{app,ui,timeline,stats,analysis}.test.js, src/test/js/setup.js (added jsdom stubs for scrollIntoView/scrollTo/IntersectionObserver), and AnalysisControllerTest.java (added concurrency \"already running\" test using CountDownLatch, and force-recompute overwrite test).\n\nFocus on:\n1. **Behavior preservation** in app.js and ui.js refactors vs the original inline code — especially the file:// link interception path (path extraction, language class, escaping, hljs call, alert on error) and renderConversationsList (search/sort/empty/auto-select). Flag any semantic drift.\n2. **Test reliability**: flakiness or non-determinism. Pay special attention to: the concurrency test in AnalysisControllerTest (latch handshake, IO thread-pool assumptions, could it deadlock or hang?); the app.test.js integration test that relies on `await Promise.resolve()` microtask flushing with fake timers; jsdom stub-based tests (are they testing real behavior or just the stubs?).\n3. **Tests that could pass trivially** or assert the wrong thing.\n4. **Bugs** in new code.\n\nDo NOT modify files. Report MUST-FIX / SHOULD-FIX / NICE-TO-HAVE with file:line and concrete […]
 
 > TOOL
 
@@ -3380,7 +3380,7 @@ id: toolu_011a8815rstZaLoWpjrxatxa
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/js/stats.test.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/js/stats.test.js",
   "old_string": "    renderStats(steps);\n    const chart = document.getElementById(\"tools-chart\");\n    expect(chart.innerHTML).toContain(\"edit\");\n    expect(chart.innerHTML).toContain(\"run\");\n  });",
   "new_string": "    renderStats(steps);\n    const chart = document.getElementById(\"tools-chart\");\n    // Assert on the row label (title attribute) rather than a bare substring to avoid passing on\n    // incidental markup.\n    expect(chart.innerHTML).toContain('title=\"edit\"');\n    expect(chart.innerHTML).toContain('title=\"run\"');\n  });"
 }
@@ -3391,7 +3391,7 @@ id: toolu_011a8815rstZaLoWpjrxatxa
 tool_result
 id: toolu_011a8815rstZaLoWpjrxatxa
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/js/stats.test.js has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/js/stats.test.js has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3401,7 +3401,7 @@ id: toolu_01PLLtgXxLD4Xyge3kZTZMRM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/js/app.test.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/js/app.test.js",
   "old_string": "const flush = async () => {\n  for (let i = 0; i < 15; i++) await Promise.resolve();\n};",
   "new_string": "// The browse→select cascade chains several un-awaited promises (renderConversationsList ->\n// click -> selectConversation -> transcript fetch). Flushing the microtask queue a number of times\n// lets that chain settle. The detached progress-polling loop in triggerAnalysis uses a (faked)\n// setTimeout that never fires; it stays pending on purpose and is harmless to the assertions.\nconst flush = async () => {\n  for (let i = 0; i < 15; i++) await Promise.resolve();\n};"
 }
@@ -3412,7 +3412,7 @@ id: toolu_01PLLtgXxLD4Xyge3kZTZMRM
 tool_result
 id: toolu_01PLLtgXxLD4Xyge3kZTZMRM
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/js/app.test.js has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/js/app.test.js has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3422,7 +3422,7 @@ id: toolu_011S8v1s1YsFAvhtsi6d1U5X
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
   "old_string": "        CountDownLatch started = new CountDownLatch(1);\n        CountDownLatch release = new CountDownLatch(1);\n        ANALYZE_STARTED.set(started);\n        ANALYZE_RELEASE.set(release);",
   "new_string": "        // Note: this test assumes the IO executor is the default unbounded/cached pool — request #1\n        // holds one thread on f.get(), its chunk task holds a second on the release latch, and\n        // request #2 needs a third. If the IO pool is ever pinned to a small fixed size this would\n        // block until the 10s latch timeout rather than asserting cleanly.\n        CountDownLatch started = new CountDownLatch(1);\n        CountDownLatch release = new CountDownLatch(1);\n        ANALYZE_STARTED.set(started);\n        ANALYZE_RELEASE.set(release);"
 }
@@ -3433,7 +3433,7 @@ id: toolu_011S8v1s1YsFAvhtsi6d1U5X
 tool_result
 id: toolu_011S8v1s1YsFAvhtsi6d1U5X
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3446,7 +3446,7 @@ tool_use Bash
 id: toolu_01BXqMYtokjWKg9GYrDEooW8
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -5\necho \"=== JS ===\"\nnpm test 2>&1 | tail -6",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -5\necho \"=== JS ===\"\nnpm test 2>&1 | tail -6",
   "description": "Final verification after review fixes",
   "timeout": 600000
 }
@@ -3476,7 +3476,7 @@ tool_use Bash
 id: toolu_016phhr4f4sVsjLALxxdBHgq
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit add src/ \ngit status --short | grep -vE '\\.claude|\\.entire'\ngit commit -q -F - <<'EOF'\ntest: cover frontend interaction journeys and backend edge cases\n\nClose the coverage gaps left by the first round so every critical user\njourney now has tests (+25 tests: 87 total — 44 backend, 43 frontend).\n\nFrontend journeys now covered:\n- Browse / search / sort / select sessions (app.js): extracted a pure\n  filterAndSortConversations and exported loadConversations /\n  renderConversationsList / selectConversation; tests cover search by\n  summary & id, sort order, empty results, the full load->render->\n  auto-select->transcript cascade, and the transcript-error path.\n- File-preview modal (ui.js): extracted openFilePreview / closeFileModal /\n  languageClassFor / pathFromFileLink from initUI; tests cover path\n  parsing, language detection, content escaping, highlight wiring, the\n  404 alert path, and modal close.\n- Timeline rich rendering (timeline.js): tool-call rendering, error box,\n  tagged user-request / system-context blocks, and scrollToTime\n  click-to-jump highlighting.\n- Session stats charts (stats.js): tool distribution, issues breakdown,\n  and the session-timeline indicator.\n- Analysis (analysis.js): resolved vs. unresolved issue rendering.\n\nBackend edge cases (AnalysisController):\n- force=true overwrites an existing cached summary (recomputes via LLM).\n- Concurrent summarize for the same conversation returns \"already\n  running\" (deterministic via CountDownLatch handshake).\n\nThe ui.js / app.js extractions are behavior-preserving; the originals\nwere inline in initUI […]
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit add src/ \ngit status --short | grep -vE '\\.claude|\\.entire'\ngit commit -q -F - <<'EOF'\ntest: cover frontend interaction journeys and backend edge cases\n\nClose the coverage gaps left by the first round so every critical user\njourney now has tests (+25 tests: 87 total — 44 backend, 43 frontend).\n\nFrontend journeys now covered:\n- Browse / search / sort / select sessions (app.js): extracted a pure\n  filterAndSortConversations and exported loadConversations /\n  renderConversationsList / selectConversation; tests cover search by\n  summary & id, sort order, empty results, the full load->render->\n  auto-select->transcript cascade, and the transcript-error path.\n- File-preview modal (ui.js): extracted openFilePreview / closeFileModal /\n  languageClassFor / pathFromFileLink from initUI; tests cover path\n  parsing, language detection, content escaping, highlight wiring, the\n  404 alert path, and modal close.\n- Timeline rich rendering (timeline.js): tool-call rendering, error box,\n  tagged user-request / system-context blocks, and scrollToTime\n  click-to-jump highlighting.\n- Session stats charts (stats.js): tool distribution, issues breakdown,\n  and the session-timeline indicator.\n- Analysis (analysis.js): resolved vs. unresolved issue rendering.\n\nBackend edge cases (AnalysisController):\n- force=true overwrites an existing cached summary (recomputes via LLM).\n- Concurrent summarize for the same conversation returns \"already\n  running\" (deterministic via CountDownLatch handshake).\n\nThe ui.js / app.js extractions are behavior-preserving; the originals\nwere inline in initUI […]
 
 > TOOL
 
@@ -3527,7 +3527,7 @@ tool_use Bash
 id: toolu_019ST5qMda1DobZXmV58en4E
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nfor f in .claude/settings.json .claude/agents/entire-search.md .entire/settings.json .entire/.gitignore; do\n  echo \"===== $f =====\"; cat \"$f\"; echo\ndone",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nfor f in .claude/settings.json .claude/agents/entire-search.md .entire/settings.json .entire/.gitignore; do\n  echo \"===== $f =====\"; cat \"$f\"; echo\ndone",
   "description": "Inspect .claude and .entire contents"
 }
 ```
@@ -3611,7 +3611,7 @@ tool_use Bash
 id: toolu_01Sk8msRUbYnEPo3Ajkwt4bC
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit add .claude .entire\ngit status --short\ngit commit -q -F - <<'EOF'\nchore: add Entire + Claude Code tooling config\n\nCheck in the Entire integration config and the Claude Code hooks/agent it\ninstalls:\n- .claude/settings.json — Claude Code hooks that invoke `entire` (no-op\n  when the CLI is absent) and a deny rule for .entire/metadata.\n- .claude/agents/entire-search.md — the Entire history-search subagent.\n- .entire/settings.json — enables the Entire integration.\n- .entire/.gitignore — ignores local/transient Entire state (metadata,\n  logs, tmp, local settings).\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\ngit push 2>&1 | tail -4",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit add .claude .entire\ngit status --short\ngit commit -q -F - <<'EOF'\nchore: add Entire + Claude Code tooling config\n\nCheck in the Entire integration config and the Claude Code hooks/agent it\ninstalls:\n- .claude/settings.json — Claude Code hooks that invoke `entire` (no-op\n  when the CLI is absent) and a deny rule for .entire/metadata.\n- .claude/agents/entire-search.md — the Entire history-search subagent.\n- .entire/settings.json — enables the Entire integration.\n- .entire/.gitignore — ignores local/transient Entire state (metadata,\n  logs, tmp, local settings).\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\ngit push 2>&1 | tail -4",
   "description": "Commit and push tooling config"
 }
 ```
@@ -3641,7 +3641,7 @@ tool_use Bash
 id: toolu_011Z86hGjS9PHgWRKhu84NT7
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit commit -q -F - <<'EOF'\nchore: add Entire + Claude Code tooling config\n\nCheck in the Entire integration config and the Claude Code hooks/agent it\ninstalls:\n- .claude/settings.json — Claude Code hooks that invoke `entire` (no-op\n  when the CLI is absent) and a deny rule for .entire/metadata.\n- .claude/agents/entire-search.md — the Entire history-search subagent.\n- .entire/settings.json — enables the Entire integration.\n- .entire/.gitignore — ignores local/transient Entire state (metadata,\n  logs, tmp, local settings).\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\necho \"exit: $?\"",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit commit -q -F - <<'EOF'\nchore: add Entire + Claude Code tooling config\n\nCheck in the Entire integration config and the Claude Code hooks/agent it\ninstalls:\n- .claude/settings.json — Claude Code hooks that invoke `entire` (no-op\n  when the CLI is absent) and a deny rule for .entire/metadata.\n- .claude/agents/entire-search.md — the Entire history-search subagent.\n- .entire/settings.json — enables the Entire integration.\n- .entire/.gitignore — ignores local/transient Entire state (metadata,\n  logs, tmp, local settings).\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\necho \"exit: $?\"",
   "description": "Retry the commit"
 }
 ```
@@ -3667,7 +3667,7 @@ tool_use Bash
 id: toolu_016vtuCCe9hTsBC5NhcFoK7t
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\necho \"commit.gpgsign: $(git config --get commit.gpgsign)\"\necho \"gpg.format:    $(git config --get gpg.format)\"\necho \"signingkey:    $(git config --get user.signingkey)\"\necho \"gpg.ssh.program: $(git config --get gpg.ssh.program)\"",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\necho \"commit.gpgsign: $(git config --get commit.gpgsign)\"\necho \"gpg.format:    $(git config --get gpg.format)\"\necho \"signingkey:    $(git config --get user.signingkey)\"\necho \"gpg.ssh.program: $(git config --get gpg.ssh.program)\"",
   "description": "Check git signing config"
 }
 ```
@@ -3731,7 +3731,7 @@ tool_use Bash
 id: toolu_01DhWTwLg7eM7KDvtpwaK1Em
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit commit -q -F - <<'EOF'\nchore: add Entire + Claude Code tooling config\n\nCheck in the Entire integration config and the Claude Code hooks/agent it\ninstalls:\n- .claude/settings.json — Claude Code hooks that invoke `entire` (no-op\n  when the CLI is absent) and a deny rule for .entire/metadata.\n- .claude/agents/entire-search.md — the Entire history-search subagent.\n- .entire/settings.json — enables the Entire integration.\n- .entire/.gitignore — ignores local/transient Entire state (metadata,\n  logs, tmp, local settings).\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\necho \"exit: $?\"",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit commit -q -F - <<'EOF'\nchore: add Entire + Claude Code tooling config\n\nCheck in the Entire integration config and the Claude Code hooks/agent it\ninstalls:\n- .claude/settings.json — Claude Code hooks that invoke `entire` (no-op\n  when the CLI is absent) and a deny rule for .entire/metadata.\n- .claude/agents/entire-search.md — the Entire history-search subagent.\n- .entire/settings.json — enables the Entire integration.\n- .entire/.gitignore — ignores local/transient Entire state (metadata,\n  logs, tmp, local settings).\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\necho \"exit: $?\"",
   "description": "Retry signed commit"
 }
 ```
@@ -3750,7 +3750,7 @@ tool_use Bash
 id: toolu_01TkTCeNawttgYah3q5epb97
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit log --show-signature -1 --format='%h %s%n  sig: %G? by %GS' 2>&1 | head -6\necho \"--- push ---\"\ngit push 2>&1 | tail -4",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit log --show-signature -1 --format='%h %s%n  sig: %G? by %GS' 2>&1 | head -6\necho \"--- push ---\"\ngit push 2>&1 | tail -4",
   "description": "Verify signature and push"
 }
 ```
@@ -3893,7 +3893,7 @@ tool_use Bash
 id: toolu_01HU5YGAddQB2epdi8dE6pg1
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew shadowJar -x test --console=plain 2>&1 | tail -6\necho \"--- jar(s) ---\"\nls -1 build/libs/*.jar 2>/dev/null",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew shadowJar -x test --console=plain 2>&1 | tail -6\necho \"--- jar(s) ---\"\nls -1 build/libs/*.jar 2>/dev/null",
   "description": "Build shadow jar",
   "timeout": 600000
 }
@@ -3930,7 +3930,7 @@ tool_use Bash
 id: toolu_01UmdY5cDQJrviMFVP5ARXbT
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nHOME_DIR=\"$PWD/build/e2e-smoke-home\"\nLOGS=\"$HOME_DIR/.gemini/antigravity-cli/brain/sess-0001/.system_generated/logs\"\nrm -rf \"$HOME_DIR\"; mkdir -p \"$LOGS\"\nprintf '%s\\n' '{\"type\":\"USER_INPUT\",\"source\":\"USER_EXPLICIT\",\"content\":\"<USER_REQUEST>\\nFix the parser\\n</USER_REQUEST>\",\"created_at\":\"2026-06-19T10:00:00Z\"}' '{\"source\":\"MODEL\",\"type\":\"PLANNER_RESPONSE\",\"content\":\"Working on it\",\"created_at\":\"2026-06-19T10:00:05Z\"}' > \"$LOGS/transcript.jsonl\"\nprintf 'Fix the parser bug' > \"$LOGS/short_title.txt\"\nJAR=$(ls build/libs/*-all.jar | head -1)\necho \"Booting $JAR with user.home=$HOME_DIR\"\nmise exec -- java -Duser.home=\"$HOME_DIR\" -Dmicronaut.server.port=8099 -jar \"$JAR\" >/tmp/agy-e2e-smoke.log 2>&1 &\nSRV=$!\n# wait for up\nfor i in $(seq 1 30); do curl -sf http://localhost:8099/api/brain/conversations >/dev/null 2>&1 && break; sleep 1; done\necho \"--- /api/brain/conversations ---\"\ncurl -s http://localhost:8099/api/brain/conversations\necho; echo \"--- index.html (first line) ---\"\ncurl -s http://localhost:8099/ | head -1\necho \"--- transcript ---\"\ncurl -s \"http://localhost:8099/api/brain/conversations/sess-0001/transcript\"\nkill $SRV 2>/dev/null\necho; echo \"(server stopped)\"",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nHOME_DIR=\"$PWD/build/e2e-smoke-home\"\nLOGS=\"$HOME_DIR/.gemini/antigravity-cli/brain/sess-0001/.system_generated/logs\"\nrm -rf \"$HOME_DIR\"; mkdir -p \"$LOGS\"\nprintf '%s\\n' '{\"type\":\"USER_INPUT\",\"source\":\"USER_EXPLICIT\",\"content\":\"<USER_REQUEST>\\nFix the parser\\n</USER_REQUEST>\",\"created_at\":\"2026-06-19T10:00:00Z\"}' '{\"source\":\"MODEL\",\"type\":\"PLANNER_RESPONSE\",\"content\":\"Working on it\",\"created_at\":\"2026-06-19T10:00:05Z\"}' > \"$LOGS/transcript.jsonl\"\nprintf 'Fix the parser bug' > \"$LOGS/short_title.txt\"\nJAR=$(ls build/libs/*-all.jar | head -1)\necho \"Booting $JAR with user.home=$HOME_DIR\"\nmise exec -- java -Duser.home=\"$HOME_DIR\" -Dmicronaut.server.port=8099 -jar \"$JAR\" >/tmp/agy-e2e-smoke.log 2>&1 &\nSRV=$!\n# wait for up\nfor i in $(seq 1 30); do curl -sf http://localhost:8099/api/brain/conversations >/dev/null 2>&1 && break; sleep 1; done\necho \"--- /api/brain/conversations ---\"\ncurl -s http://localhost:8099/api/brain/conversations\necho; echo \"--- index.html (first line) ---\"\ncurl -s http://localhost:8099/ | head -1\necho \"--- transcript ---\"\ncurl -s \"http://localhost:8099/api/brain/conversations/sess-0001/transcript\"\nkill $SRV 2>/dev/null\necho; echo \"(server stopped)\"",
   "description": "Smoke-test server boot against fixture home",
   "timeout": 120000
 }
@@ -3941,7 +3941,7 @@ id: toolu_01UmdY5cDQJrviMFVP5ARXbT
 tool_result
 id: toolu_01UmdY5cDQJrviMFVP5ARXbT
 ```
-Booting build/libs/agybrainviz-0.1-SNAPSHOT-all.jar with user.home=/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/build/e2e-smoke-home
+Booting build/libs/agybrainviz-0.1-SNAPSHOT-all.jar with user.home=/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/build/e2e-smoke-home
 --- /api/brain/conversations ---
 [{"summary":"Fix the parser bug","id":"sess-0001","updatedAt":"1781920203381"}]
 --- index.html (first line) ---
@@ -3961,7 +3961,7 @@ tool_use Read
 id: toolu_01Tgkv33zMPwFemmS11xQUYe
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/index.html"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/index.html"
 }
 ```
 
@@ -4015,7 +4015,7 @@ tool_use Write
 id: toolu_016kKaLVhwiDmk3NTq6KxSFs
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/fixtures.mjs",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/fixtures.mjs",
   "content": "// Seeds a fake ~/.gemini brain directory tree used by the end-to-end tests. The Micronaut server is\n// launched with -Duser.home pointed at this directory, so the controllers read these files as if\n// they were a real user's Antigravity sessions.\n//\n// Every session is given a cached summary.json so that selecting it serves the analysis from cache\n// (the server runs with a dummy GEMINI_API_KEY) and never calls the real LLM.\n\nimport fs from \"node:fs\";\nimport path from \"node:path\";\n\nfunction writeSession(brainDir, id, { transcript, shortTitle, summary }) {\n  const logs = path.join(brainDir, id, \".system_generated\", \"logs\");\n  fs.mkdirSync(logs, { recursive: true });\n  fs.writeFileSync(path.join(logs, \"transcript.jsonl\"), transcript);\n  fs.writeFileSync(path.join(logs, \"short_title.txt\"), shortTitle);\n  fs.writeFileSync(path.join(logs, \"summary.json\"), JSON.stringify(summary));\n}\n\nfunction jsonl(lines) {\n  return lines.map((l) => JSON.stringify(l)).join(\"\\n\") + \"\\n\";\n}\n\nexport function seedFixtures(home) {\n  // Start clean so re-runs are deterministic.\n  const gemini = path.join(home, \".gemini\");\n  fs.rmSync(home, { recursive: true, force: true });\n  fs.mkdirSync(gemini, { recursive: true });\n\n  // A real file inside ~/.gemini that the file-preview modal can load.\n  const configPath = path.join(gemini, \"config.txt\");\n  fs.writeFileSync(configPath, \"parser.mode = strict\\nparser.maxDepth = 32\\n\");\n\n  // ---- flavor: antigravity-cli ----\n  const cliBrain = path.join(gemini, \"antigravity-cli\", \"brain\");\n\n  writeSession(cliBrain, \"sess-0001-parser\", {\n    shortTitle: \"Fix the parser bug\",\n    transcript: jsonl([\n      {\n        type: \"USER_INPUT\",\n        source: \"USER_EXPLICIT\",\n        content:\n          \"<USER_REQUEST>\\nPlease fix the […]
 
 > TOOL
@@ -4023,7 +4023,7 @@ id: toolu_016kKaLVhwiDmk3NTq6KxSFs
 tool_result
 id: toolu_016kKaLVhwiDmk3NTq6KxSFs
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/fixtures.mjs (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/fixtures.mjs (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4032,7 +4032,7 @@ tool_use Write
 id: toolu_01EMP2ddX52qLeDqdNTM6R2i
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/global-setup.mjs",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/global-setup.mjs",
   "content": "// Playwright global setup: seed the fixture brain directory that the server reads via -Duser.home,\n// and fail early with a helpful message if the runnable jar hasn't been built yet.\n\nimport fs from \"node:fs\";\nimport path from \"node:path\";\nimport { fileURLToPath } from \"node:url\";\nimport { seedFixtures } from \"./fixtures.mjs\";\n\nconst projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), \"..\");\n\nexport default function globalSetup() {\n  const home = path.join(projectRoot, \"build\", \"e2e-home\");\n  seedFixtures(home);\n\n  const libs = path.join(projectRoot, \"build\", \"libs\");\n  const hasJar =\n    fs.existsSync(libs) && fs.readdirSync(libs).some((f) => f.endsWith(\"-all.jar\"));\n  if (!hasJar) {\n    throw new Error(\n      \"No runnable jar found in build/libs (expected *-all.jar).\\n\" +\n        \"Build it first, e.g.:  mise exec -- ./gradlew shadowJar -x test\"\n    );\n  }\n}\n"
 }
 ```
@@ -4042,7 +4042,7 @@ id: toolu_01EMP2ddX52qLeDqdNTM6R2i
 tool_result
 id: toolu_01EMP2ddX52qLeDqdNTM6R2i
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/global-setup.mjs (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/global-setup.mjs (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4051,7 +4051,7 @@ tool_use Write
 id: toolu_012rfwsfi8cHKszdBhyQmou2
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/playwright.config.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/playwright.config.js",
   "content": "import { defineConfig, devices } from \"@playwright/test\";\nimport path from \"node:path\";\nimport { fileURLToPath } from \"node:url\";\n\nconst projectRoot = path.dirname(fileURLToPath(import.meta.url));\nconst PORT = 8099;\nconst E2E_HOME = path.join(projectRoot, \"build\", \"e2e-home\");\n\n// Launch the prebuilt fat jar with user.home pointed at the seeded fixtures. A dummy GEMINI_API_KEY\n// lets the cached-analysis path run without contacting the real LLM (the cache lookup is gated\n// behind the key check). The single quotes keep the glob from being expanded before sh runs it.\nconst serverCommand =\n  `sh -c 'java -Duser.home=\"${E2E_HOME}\" -Dmicronaut.server.port=${PORT} ` +\n  `-jar $(ls build/libs/*-all.jar | head -1)'`;\n\nexport default defineConfig({\n  testDir: \"./e2e\",\n  globalSetup: \"./e2e/global-setup.mjs\",\n  timeout: 30_000,\n  expect: { timeout: 7_000 },\n  fullyParallel: false,\n  workers: 1,\n  forbidOnly: !!process.env.CI,\n  retries: process.env.CI ? 1 : 0,\n  reporter: process.env.CI ? \"github\" : \"list\",\n  use: {\n    baseURL: `http://localhost:${PORT}`,\n    trace: \"on-first-retry\",\n  },\n  projects: [{ name: \"chromium\", use: { ...devices[\"Desktop Chrome\"] } }],\n  webServer: {\n    command: serverCommand,\n    url: `http://localhost:${PORT}/api/brain/conversations`,\n    reuseExistingServer: !process.env.CI,\n    timeout: 90_000,\n    env: { GEMINI_API_KEY: \"dummy-e2e-key\" },\n  },\n});\n"
 }
 ```
@@ -4061,7 +4061,7 @@ id: toolu_012rfwsfi8cHKszdBhyQmou2
 tool_result
 id: toolu_012rfwsfi8cHKszdBhyQmou2
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/playwright.config.js (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/playwright.config.js (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4075,7 +4075,7 @@ id: toolu_011jtfduQGom7D54n7XURDbH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/fixtures.mjs",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/fixtures.mjs",
   "old_string": "function writeSession(brainDir, id, { transcript, shortTitle, summary }) {\n  const logs = path.join(brainDir, id, \".system_generated\", \"logs\");\n  fs.mkdirSync(logs, { recursive: true });\n  fs.writeFileSync(path.join(logs, \"transcript.jsonl\"), transcript);\n  fs.writeFileSync(path.join(logs, \"short_title.txt\"), shortTitle);\n  fs.writeFileSync(path.join(logs, \"summary.json\"), JSON.stringify(summary));\n}",
   "new_string": "function writeSession(brainDir, id, { transcript, shortTitle, summary, mtime }) {\n  const logs = path.join(brainDir, id, \".system_generated\", \"logs\");\n  fs.mkdirSync(logs, { recursive: true });\n  const transcriptPath = path.join(logs, \"transcript.jsonl\");\n  fs.writeFileSync(transcriptPath, transcript);\n  fs.writeFileSync(path.join(logs, \"short_title.txt\"), shortTitle);\n  fs.writeFileSync(path.join(logs, \"summary.json\"), JSON.stringify(summary));\n  // The session list sorts by transcript mtime, so pin it for deterministic ordering.\n  if (mtime) {\n    const t = mtime.getTime() / 1000;\n    fs.utimesSync(transcriptPath, t, t);\n  }\n}"
 }
@@ -4086,7 +4086,7 @@ id: toolu_011jtfduQGom7D54n7XURDbH
 tool_result
 id: toolu_011jtfduQGom7D54n7XURDbH
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/fixtures.mjs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/fixtures.mjs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4096,7 +4096,7 @@ id: toolu_01PJS48mKpFJ1stvAHiWSCbw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/fixtures.mjs",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/fixtures.mjs",
   "old_string": "      {\n        source: \"MODEL\",\n        type: \"PLANNER_RESPONSE\",\n        content: \"All fixed! The parser now handles null input.\",\n        created_at: \"2026-06-19T10:00:15Z\",\n      },\n    ]),\n    summary: {\n      shortTitle: \"Fix the parser bug\",",
   "new_string": "      {\n        source: \"MODEL\",\n        type: \"PLANNER_RESPONSE\",\n        content:\n          \"All fixed! The parser now handles null input. See [the config](file://\" +\n          configPath +\n          \") for details.\",\n        created_at: \"2026-06-19T10:00:15Z\",\n      },\n    ]),\n    mtime: new Date(\"2026-06-19T10:00:00Z\"),\n    summary: {\n      shortTitle: \"Fix the parser bug\","
 }
@@ -4107,7 +4107,7 @@ id: toolu_01PJS48mKpFJ1stvAHiWSCbw
 tool_result
 id: toolu_01PJS48mKpFJ1stvAHiWSCbw
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/fixtures.mjs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/fixtures.mjs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4117,7 +4117,7 @@ id: toolu_01Ucyu7oSVmwaMpkedCgczc5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/fixtures.mjs",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/fixtures.mjs",
   "old_string": "        content: \"Added a dark mode toggle to the settings.\",\n        created_at: \"2026-06-19T11:00:05Z\",\n      },\n    ]),\n    summary: {\n      shortTitle: \"Add dark mode\",",
   "new_string": "        content: \"Added a dark mode toggle to the settings.\",\n        created_at: \"2026-06-19T11:00:05Z\",\n      },\n    ]),\n    mtime: new Date(\"2026-06-19T11:00:00Z\"),\n    summary: {\n      shortTitle: \"Add dark mode\","
 }
@@ -4128,7 +4128,7 @@ id: toolu_01Ucyu7oSVmwaMpkedCgczc5
 tool_result
 id: toolu_01Ucyu7oSVmwaMpkedCgczc5
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/fixtures.mjs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/fixtures.mjs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4141,7 +4141,7 @@ tool_use Write
 id: toolu_01W8xZ8fTnSJBhFdrvRbXzoo
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/sessions.spec.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/sessions.spec.js",
   "content": "import { test, expect } from \"@playwright/test\";\n\ntest.describe(\"session browsing\", () => {\n  test(\"lists the seeded sessions\", async ({ page }) => {\n    await page.goto(\"/\");\n    const items = page.locator(\"#conversations-list .conv-item\");\n    await expect(items).toHaveCount(2);\n    await expect(page.locator(\".conv-item\", { hasText: \"Fix the parser bug\" })).toBeVisible();\n    await expect(page.locator(\".conv-item\", { hasText: \"Add dark mode\" })).toBeVisible();\n  });\n\n  test(\"search filters the list\", async ({ page }) => {\n    await page.goto(\"/\");\n    await expect(page.locator(\"#conversations-list .conv-item\")).toHaveCount(2);\n    await page.fill(\"#conversation-search\", \"parser\");\n    await expect(page.locator(\"#conversations-list .conv-item\")).toHaveCount(1);\n    await expect(page.locator(\"#conversations-list .conv-item\")).toContainText(\n      \"Fix the parser bug\"\n    );\n  });\n\n  test(\"sort toggle reverses the order (newest-first by default)\", async ({ page }) => {\n    await page.goto(\"/\");\n    await expect(page.locator(\"#conversations-list .conv-item\").first()).toContainText(\n      \"Add dark mode\"\n    );\n    await page.click(\"#sort-conversations-btn\");\n    await expect(page.locator(\"#conversations-list .conv-item\").first()).toContainText(\n      \"Fix the parser bug\"\n    );\n  });\n\n  test(\"switching flavor loads that flavor's sessions\", async ({ page }) => {\n    await page.goto(\"/\");\n    await expect(page.locator(\"#conversations-list .conv-item\")).toHaveCount(2);\n    await page.selectOption(\"#flavor-select\", \"antigravity-ide\");\n    await expect(page.locator(\"#conversations-list .conv-item\")).toHaveCount(1);\n    await expect(page.locator(\"#conversations-list .conv-item\")).toContainText(\n      \"IDE refactor session\"\n    );\n  });\n});\n"
 }
 ```
@@ -4151,7 +4151,7 @@ id: toolu_01W8xZ8fTnSJBhFdrvRbXzoo
 tool_result
 id: toolu_01W8xZ8fTnSJBhFdrvRbXzoo
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/sessions.spec.js (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/sessions.spec.js (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4160,7 +4160,7 @@ tool_use Write
 id: toolu_01S3o24FgepsZHZTw5H5UarR
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/transcript.spec.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/transcript.spec.js",
   "content": "import { test, expect } from \"@playwright/test\";\n\nasync function openParserSession(page) {\n  await page.goto(\"/\");\n  await page.click('.conv-item:has-text(\"Fix the parser bug\")');\n}\n\ntest.describe(\"transcript & stats\", () => {\n  test(\"selecting a session renders its transcript\", async ({ page }) => {\n    await openParserSession(page);\n    const tc = page.locator(\"#transcript-container\");\n    await expect(tc.locator(\".sequence-wrapper\").first()).toBeVisible();\n    await expect(tc.locator(\".step-card\")).toHaveCount(4);\n    await expect(page.locator(\"#current-session-title\")).toContainText(\"Fix the parser bug\");\n  });\n\n  test(\"renders accurate session statistics\", async ({ page }) => {\n    await openParserSession(page);\n    await expect(page.locator(\"#session-stats-container\")).toBeVisible();\n    await expect(page.locator(\"#user-queries-stat-card .stat-value\")).toHaveText(\"1\");\n    await expect(page.locator(\"#tools-stat-card .stat-value\")).toHaveText(\"2\");\n    await expect(page.locator(\"#model-responses-stat-card .stat-value\")).toHaveText(\"1\");\n    await expect(page.locator(\"#errors-stat-card .stat-value\")).toContainText(\"Issues Detected\");\n  });\n\n  test(\"the tools stat card reveals the tool distribution chart\", async ({ page }) => {\n    await openParserSession(page);\n    await page.click(\"#tools-stat-card\");\n    const chart = page.locator(\"#tools-chart\");\n    await expect(chart).toBeVisible();\n    await expect(chart).toContainText(\"edit_file\");\n    await expect(chart).toContainText(\"run_command\");\n  });\n\n  test(\"user-query filter hides non-user cards\", async ({ page }) => {\n    await openParserSession(page);\n    await page.click(\"#user-queries-stat-card\");\n    // Only the user card stays displayed.\n    const visibleCards = page.locator(\"#transcript-container .step-card:visible\");\n    await expect(visibleCards).toHaveCount(1);\n  });\n});\n"
 }
 ```
@@ -4170,7 +4170,7 @@ id: toolu_01S3o24FgepsZHZTw5H5UarR
 tool_result
 id: toolu_01S3o24FgepsZHZTw5H5UarR
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/transcript.spec.js (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/transcript.spec.js (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4179,7 +4179,7 @@ tool_use Write
 id: toolu_01S2157nhUWMs4GWtPLUpjB6
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/file-preview.spec.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/file-preview.spec.js",
   "content": "import { test, expect } from \"@playwright/test\";\n\ntest.describe(\"file preview modal\", () => {\n  test(\"clicking a file link opens, renders, and closes the modal\", async ({ page }) => {\n    await page.goto(\"/\");\n    await page.click('.conv-item:has-text(\"Fix the parser bug\")');\n\n    // The file link lives in a collapsed step body — expand the card that contains it.\n    const linkCard = page.locator(\"#transcript-container .step-card\", {\n      has: page.locator('a[href^=\"file://\"]'),\n    });\n    await linkCard.locator(\".step-header\").first().click();\n\n    const link = linkCard.locator('a[href^=\"file://\"]').first();\n    await expect(link).toBeVisible();\n    await link.click();\n\n    const modal = page.locator(\"#file-modal\");\n    await expect(modal).toBeVisible();\n    await expect(page.locator(\"#file-modal-title\")).toContainText(\"config.txt\");\n    await expect(page.locator(\"#file-modal-content\")).toContainText(\"parser.mode = strict\");\n\n    await page.keyboard.press(\"Escape\");\n    await expect(modal).toBeHidden();\n  });\n});\n"
 }
 ```
@@ -4189,7 +4189,7 @@ id: toolu_01S2157nhUWMs4GWtPLUpjB6
 tool_result
 id: toolu_01S2157nhUWMs4GWtPLUpjB6
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/file-preview.spec.js (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/file-preview.spec.js (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4198,7 +4198,7 @@ tool_use Write
 id: toolu_013HjoPG53UqnfQbEW3KsaKu
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/analysis.spec.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/analysis.spec.js",
   "content": "import { test, expect } from \"@playwright/test\";\n\ntest.describe(\"AI analysis\", () => {\n  test(\"auto-loads the cached analysis for a session\", async ({ page }) => {\n    await page.goto(\"/\");\n    await page.click('.conv-item:has-text(\"Fix the parser bug\")');\n\n    const ai = page.locator(\"#ai-summary-text\");\n    await expect(ai).toContainText(\"null-pointer bug in the parser\");\n    await expect(ai).toContainText(\"Conversation Flow\");\n    await expect(ai).toContainText(\"Issues & Circumventions\");\n    await expect(ai).toContainText(\"Added a null check\");\n    await expect(ai).toContainText(\"Future Recommendations\");\n  });\n\n  test(\"recompute fetches and renders a fresh analysis\", async ({ page }) => {\n    // Stub the LLM-backed endpoints so recompute never hits the real model.\n    await page.route(\"**/api/analysis/conversations/*/summarize**\", (route) =>\n      route.fulfill({\n        json: {\n          shortTitle: \"Recomputed\",\n          summary: \"Freshly recomputed summary text\",\n          flow: [\"new step\"],\n          agentActions: [],\n          issues: [],\n          recommendations: [],\n        },\n      })\n    );\n    await page.route(\"**/api/analysis/conversations/*/progress**\", (route) =>\n      route.fulfill({ json: { phase: \"Done\", progress: 100 } })\n    );\n\n    await page.goto(\"/\");\n    await page.click('.conv-item:has-text(\"Fix the parser bug\")');\n    await page.click(\"#summarize-btn\");\n\n    await expect(page.locator(\"#ai-summary-text\")).toContainText(\n      \"Freshly recomputed summary text\"\n    );\n  });\n});\n"
 }
 ```
@@ -4208,7 +4208,7 @@ id: toolu_013HjoPG53UqnfQbEW3KsaKu
 tool_result
 id: toolu_013HjoPG53UqnfQbEW3KsaKu
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/analysis.spec.js (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/analysis.spec.js (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4217,7 +4217,7 @@ tool_use Write
 id: toolu_01VFx7QJTkzp897zFfZEcgDf
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/layout.spec.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/layout.spec.js",
   "content": "import { test, expect } from \"@playwright/test\";\n\ntest.describe(\"layout & navigation chrome\", () => {\n  test(\"toggling the sidebar collapses and expands it\", async ({ page }) => {\n    await page.goto(\"/\");\n    const sidebar = page.locator(\".sidebar\");\n    await expect(sidebar).not.toHaveClass(/collapsed/);\n    await page.click(\"#sidebar-toggle-btn\");\n    await expect(sidebar).toHaveClass(/collapsed/);\n    await page.click(\"#sidebar-toggle-btn\");\n    await expect(sidebar).not.toHaveClass(/collapsed/);\n  });\n\n  test(\"dragging the resizer changes the sidebar width\", async ({ page }) => {\n    await page.goto(\"/\");\n    const resizer = page.locator(\"#sidebar-resizer\");\n    const box = await resizer.boundingBox();\n    await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2);\n    await page.mouse.down();\n    await page.mouse.move(360, box.y + box.height / 2, { steps: 8 });\n    await page.mouse.up();\n\n    const width = await page.evaluate(() =>\n      getComputedStyle(document.documentElement).getPropertyValue(\"--sidebar-width\").trim()\n    );\n    const px = parseInt(width, 10);\n    expect(px).toBeGreaterThanOrEqual(200);\n    expect(px).toBeLessThanOrEqual(800);\n  });\n\n  test(\"the timeline scrubber thumb tracks transcript scrolling\", async ({ page }) => {\n    await page.setViewportSize({ width: 1200, height: 320 });\n    await page.goto(\"/\");\n    await page.click('.conv-item:has-text(\"Fix the parser bug\")');\n\n    // Expand every card so the transcript overflows its container and becomes scrollable.\n    for (const header of await page.locator(\"#transcript-container .step-header\").all()) {\n      await header.click();\n    }\n\n    const tc = page.locator(\"#transcript-container\");\n    const scrollable = await tc.evaluate((el) => el.scrollHeight > el.clientHeight + 5);\n    test.skip(!scrollable, \"transcript does not overflow in this viewport\");\n\n    const thumb = page.locator(\"#timeline-thumb\");\n    const before = await […]
 
 > TOOL
@@ -4225,7 +4225,7 @@ id: toolu_01VFx7QJTkzp897zFfZEcgDf
 tool_result
 id: toolu_01VFx7QJTkzp897zFfZEcgDf
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/layout.spec.js (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/layout.spec.js (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4239,7 +4239,7 @@ id: toolu_01ESVN2su3Qfgdy757qFRFr2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/package.json",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/package.json",
   "old_string": "  \"scripts\": {\n    \"test\": \"TZ=UTC vitest run\"\n  },\n  \"devDependencies\": {\n    \"jsdom\": \"^25.0.1\",\n    \"vitest\": \"^2.1.8\"\n  }",
   "new_string": "  \"scripts\": {\n    \"test\": \"TZ=UTC vitest run\",\n    \"e2e\": \"playwright test\",\n    \"e2e:report\": \"playwright show-report\"\n  },\n  \"devDependencies\": {\n    \"@playwright/test\": \"^1.49.1\",\n    \"jsdom\": \"^25.0.1\",\n    \"vitest\": \"^2.1.8\"\n  }"
 }
@@ -4250,7 +4250,7 @@ id: toolu_01ESVN2su3Qfgdy757qFRFr2
 tool_result
 id: toolu_01ESVN2su3Qfgdy757qFRFr2
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4259,7 +4259,7 @@ tool_use Bash
 id: toolu_01Fsnw6FWvNfdQqzuioRbkSd
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nnpm install 2>&1 | tail -5\necho \"=== install chromium ===\"\nnpx playwright install chromium 2>&1 | tail -8",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nnpm install 2>&1 | tail -5\necho \"=== install chromium ===\"\nnpx playwright install chromium 2>&1 | tail -8",
   "description": "Install Playwright + chromium browser",
   "timeout": 600000
 }
@@ -4282,7 +4282,7 @@ Run `npm audit` for details.
 |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 93.5 MiB
 |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 93.5 MiB
 |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 93.5 MiB
-Chrome Headless Shell 149.0.7827.55 (playwright chromium-headless-shell v1228) downloaded to /Users/scottdensmore/Library/Caches/ms-playwright/chromium_headless_shell-1228
+Chrome Headless Shell 149.0.7827.55 (playwright chromium-headless-shell v1228) downloaded to /home/<USER>/Library/Caches/ms-playwright/chromium_headless_shell-1228
 ```
 
 > AGENT
@@ -4295,7 +4295,7 @@ tool_use Bash
 id: toolu_01K9JHQCvD9YjVm4YVfXMkEz
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- npx playwright test 2>&1 | tail -45",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- npx playwright test 2>&1 | tail -45",
   "description": "Run Playwright E2E suite",
   "timeout": 300000
 }
@@ -4331,7 +4331,7 @@ id: toolu_01Hiuu5Pqkuk8HWsXhY8uVNU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/.gitignore",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/.gitignore",
   "old_string": "# Node / frontend tests\nnode_modules/\nnpm-debug.log*\ncoverage/",
   "new_string": "# Node / frontend tests\nnode_modules/\nnpm-debug.log*\ncoverage/\n\n# Playwright (E2E)\n/test-results/\n/playwright-report/\n/blob-report/\n/playwright/.cache/\n.last-run.json"
 }
@@ -4342,7 +4342,7 @@ id: toolu_01Hiuu5Pqkuk8HWsXhY8uVNU
 tool_result
 id: toolu_01Hiuu5Pqkuk8HWsXhY8uVNU
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/.gitignore has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/.gitignore has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4351,7 +4351,7 @@ tool_use Write
 id: toolu_01732Hz3Hj6a4hsYCQcvs2nW
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/.github/workflows/e2e.yml",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/.github/workflows/e2e.yml",
   "content": "name: E2E Tests\n\non:\n  pull_request:\n  push:\n    branches: [main]\n  workflow_dispatch:\n\njobs:\n  e2e:\n    runs-on: ubuntu-latest\n    timeout-minutes: 20\n    steps:\n      - uses: actions/checkout@v4\n\n      - name: Set up JDK 25\n        uses: actions/setup-java@v4\n        with:\n          distribution: temurin\n          java-version: \"25\"\n\n      - name: Set up Node\n        uses: actions/setup-node@v4\n        with:\n          node-version: \"22\"\n          cache: npm\n\n      - name: Install npm dependencies\n        run: npm ci\n\n      - name: Build the application jar\n        run: ./gradlew shadowJar -x test --no-daemon\n\n      - name: Install Playwright browser\n        run: npx playwright install --with-deps chromium\n\n      - name: Run Playwright E2E tests\n        run: npx playwright test\n\n      - name: Upload Playwright report\n        if: ${{ !cancelled() }}\n        uses: actions/upload-artifact@v4\n        with:\n          name: playwright-report\n          path: playwright-report/\n          retention-days: 7\n"
 }
 ```
@@ -4361,7 +4361,7 @@ id: toolu_01732Hz3Hj6a4hsYCQcvs2nW
 tool_result
 id: toolu_01732Hz3Hj6a4hsYCQcvs2nW
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/.github/workflows/e2e.yml (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/.github/workflows/e2e.yml (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4374,7 +4374,7 @@ tool_use Bash
 id: toolu_015SmkEr6woTZbrZ2Ladg3yV
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nrm -rf build/e2e-smoke-home\necho \"=== vitest (unit) still green? ===\"\nnpm test 2>&1 | tail -6\necho \"=== git status (new files) ===\"\ngit status --short | grep -vE '\\.claude|\\.entire'",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nrm -rf build/e2e-smoke-home\necho \"=== vitest (unit) still green? ===\"\nnpm test 2>&1 | tail -6\necho \"=== git status (new files) ===\"\ngit status --short | grep -vE '\\.claude|\\.entire'",
   "description": "Verify vitest, clean smoke dir, check status",
   "timeout": 120000
 }
@@ -4411,7 +4411,7 @@ tool_use Bash
 id: toolu_01DheSQzvJY62A1QWEhMgxFm
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit add .github e2e playwright.config.js package.json package-lock.json .gitignore\ngit status --short | grep -vE '\\.claude|\\.entire'",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit add .github e2e playwright.config.js package.json package-lock.json .gitignore\ngit status --short | grep -vE '\\.claude|\\.entire'",
   "description": "Stage E2E harness"
 }
 ```
@@ -4442,7 +4442,7 @@ id: toolu_01WA8bAitVbFAxYjZyqtfTHc
 ```json
 {
   "description": "Review Playwright E2E harness",
-  "prompt": "You are a senior code reviewer focused on end-to-end test reliability and CI. Review the STAGED git diff in /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer (run `git diff --cached`). This adds a Playwright E2E suite plus a GitHub Actions workflow for a Micronaut + vanilla-JS app.\n\nContext that matters:\n- The backend reads `~/.gemini/{flavor}/brain` from System.getProperty(\"user.home\"). The E2E server is the prebuilt shadow jar launched via playwright.config.js `webServer` with `-Duser.home=<repo>/build/e2e-home` and env `GEMINI_API_KEY=dummy-e2e-key`.\n- e2e/global-setup.mjs seeds fixtures into build/e2e-home and errors if no *-all.jar exists.\n- The AnalysisController checks the API key BEFORE the cache lookup, so a dummy key + seeded summary.json is what makes the cached-analysis path return without calling the real LLM. The recompute test stubs the summarize/progress routes via page.route.\n- index.html loads marked.js and highlight.js from CDNs.\n- Tests ran green locally (14 passed).\n\nReview for:\n1. **Flakiness / race conditions** that could fail intermittently in CI but not locally: webServer vs globalSetup ordering (does the server start before fixtures are seeded? is that safe given the server reads the FS per-request?); the scrubber scroll test; auto-select cascade timing; any reliance on animations/timeouts.\n2. **CI workflow correctness**: `.github/workflows/e2e.yml` — JDK 25 availability in actions/setup-java, gradlew permissions, the […]
+  "prompt": "You are a senior code reviewer focused on end-to-end test reliability and CI. Review the STAGED git diff in /home/<USER>/Developer/scottdensmore/agent-brain-visualizer (run `git diff --cached`). This adds a Playwright E2E suite plus a GitHub Actions workflow for a Micronaut + vanilla-JS app.\n\nContext that matters:\n- The backend reads `~/.gemini/{flavor}/brain` from System.getProperty(\"user.home\"). The E2E server is the prebuilt shadow jar launched via playwright.config.js `webServer` with `-Duser.home=<repo>/build/e2e-home` and env `GEMINI_API_KEY=dummy-e2e-key`.\n- e2e/global-setup.mjs seeds fixtures into build/e2e-home and errors if no *-all.jar exists.\n- The AnalysisController checks the API key BEFORE the cache lookup, so a dummy key + seeded summary.json is what makes the cached-analysis path return without calling the real LLM. The recompute test stubs the summarize/progress routes via page.route.\n- index.html loads marked.js and highlight.js from CDNs.\n- Tests ran green locally (14 passed).\n\nReview for:\n1. **Flakiness / race conditions** that could fail intermittently in CI but not locally: webServer vs globalSetup ordering (does the server start before fixtures are seeded? is that safe given the server reads the FS per-request?); the scrubber scroll test; auto-select cascade timing; any reliance on animations/timeouts.\n2. **CI workflow correctness**: `.github/workflows/e2e.yml` — JDK 25 availability in actions/setup-java, gradlew permissions, the […]
 
 > TOOL
 
@@ -4475,7 +4475,7 @@ tool_use Bash
 id: toolu_01EsN2UVjypg8NHpAvG9FcY5
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nmkdir -p e2e/vendor\ncurl -sSL \"https://cdn.jsdelivr.net/npm/marked@12/marked.min.js\" -o e2e/vendor/marked.min.js\necho \"bytes: $(wc -c < e2e/vendor/marked.min.js)\"\nhead -c 120 e2e/vendor/marked.min.js; echo\n# sanity: it defines a global marked with parse\ngrep -c \"parse\" e2e/vendor/marked.min.js >/dev/null && echo \"contains parse: yes\"",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nmkdir -p e2e/vendor\ncurl -sSL \"https://cdn.jsdelivr.net/npm/marked@12/marked.min.js\" -o e2e/vendor/marked.min.js\necho \"bytes: $(wc -c < e2e/vendor/marked.min.js)\"\nhead -c 120 e2e/vendor/marked.min.js; echo\n# sanity: it defines a global marked with parse\ngrep -c \"parse\" e2e/vendor/marked.min.js >/dev/null && echo \"contains parse: yes\"",
   "description": "Vendor marked.min.js for deterministic tests"
 }
 ```
@@ -4499,7 +4499,7 @@ tool_use Write
 id: toolu_01TeMMhKLeCywXkbR7LdiPm4
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/test-base.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/test-base.js",
   "content": "import { test as base, expect } from \"@playwright/test\";\nimport path from \"node:path\";\nimport { fileURLToPath } from \"node:url\";\n\nconst dir = path.dirname(fileURLToPath(import.meta.url));\n\n// index.html loads marked.js from a CDN. To keep E2E runs deterministic and offline (a CDN\n// hiccup would otherwise make renderTranscript throw and render zero cards), serve a vendored\n// copy of the real library for any marked*.js request. highlight.js is intentionally left to the\n// CDN — it is used behind a `window.hljs` guard, so its absence degrades gracefully.\nexport const test = base.extend({\n  page: async ({ page }, use) => {\n    await page.route(/marked.*\\.js(\\?.*)?$/, (route) =>\n      route.fulfill({\n        path: path.join(dir, \"vendor\", \"marked.min.js\"),\n        contentType: \"application/javascript\",\n      })\n    );\n    await use(page);\n  },\n});\n\nexport { expect };\n"
 }
 ```
@@ -4509,7 +4509,7 @@ id: toolu_01TeMMhKLeCywXkbR7LdiPm4
 tool_result
 id: toolu_01TeMMhKLeCywXkbR7LdiPm4
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/test-base.js (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/test-base.js (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4522,7 +4522,7 @@ tool_use Bash
 id: toolu_01WRxiwXYQ3yozW7cj5FeZ7y
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nfor f in e2e/sessions.spec.js e2e/transcript.spec.js e2e/file-preview.spec.js e2e/analysis.spec.js e2e/layout.spec.js; do\n  perl -0pi -e 's{import \\{ test, expect \\} from \"\\@playwright/test\";}{import { test, expect } from \"./test-base.js\";}' \"$f\"\n  head -1 \"$f\"\ndone",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nfor f in e2e/sessions.spec.js e2e/transcript.spec.js e2e/file-preview.spec.js e2e/analysis.spec.js e2e/layout.spec.js; do\n  perl -0pi -e 's{import \\{ test, expect \\} from \"\\@playwright/test\";}{import { test, expect } from \"./test-base.js\";}' \"$f\"\n  head -1 \"$f\"\ndone",
   "description": "Repoint spec imports to test-base"
 }
 ```
@@ -4550,7 +4550,7 @@ id: toolu_01Hd8BJowvFfNU5uRxi3LoC9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/modules/analysis.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/modules/analysis.js",
   "old_string": "    aiText.innerHTML =\n      html || \"<span style='color:red;'>Failed to parse analysis data.</span>\";\n    state.summaryCache[sessionId] = aiText.innerHTML;",
   "new_string": "    // A newer session selection may have superseded this request while it was in flight (the user\n    // clicked another session). If so, don't clobber the now-current analysis.\n    if (state.currentPollSessionId !== sessionId) return;\n\n    aiText.innerHTML =\n      html || \"<span style='color:red;'>Failed to parse analysis data.</span>\";\n    state.summaryCache[sessionId] = aiText.innerHTML;"
 }
@@ -4561,7 +4561,7 @@ id: toolu_01Hd8BJowvFfNU5uRxi3LoC9
 tool_result
 id: toolu_01Hd8BJowvFfNU5uRxi3LoC9
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/modules/analysis.js has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/modules/analysis.js has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4575,7 +4575,7 @@ id: toolu_01QtHMes6Eec7gQMuUr7QDEi
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/js/analysis.test.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/js/analysis.test.js",
   "old_string": "  it(\"renders from cache without fetching when not forced\", async () => {",
   "new_string": "  it(\"does not clobber the view when a newer session selection supersedes the request\", async () => {\n    let resolveSummarize;\n    global.fetch = vi.fn((url) =>\n      url.includes(\"/progress\")\n        ? Promise.resolve({ ok: true, json: () => Promise.resolve({ progress: 100, phase: \"x\" }) })\n        : new Promise((resolve) => {\n            resolveSummarize = () =>\n              resolve({ ok: true, json: () => Promise.resolve({ summary: \"stale result\" }) });\n          })\n    );\n\n    const pending = triggerAnalysis(\"old-session\", true);\n    // The user selects a different session before the first request resolves.\n    state.currentPollSessionId = \"new-session\";\n    resolveSummarize();\n    await pending;\n\n    expect(document.getElementById(\"ai-summary-text\").innerHTML).not.toContain(\"stale result\");\n  });\n\n  it(\"renders from cache without fetching when not forced\", async () => {"
 }
@@ -4586,7 +4586,7 @@ id: toolu_01QtHMes6Eec7gQMuUr7QDEi
 tool_result
 id: toolu_01QtHMes6Eec7gQMuUr7QDEi
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/js/analysis.test.js has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/js/analysis.test.js has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4596,7 +4596,7 @@ id: toolu_01QNpK5qaWNUhorJoYqbsWqU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/analysis.spec.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/analysis.spec.js",
   "old_string": "  test(\"recompute fetches and renders a fresh analysis\", async ({ page }) => {\n    // Stub the LLM-backed endpoints so recompute never hits the real model.\n    await page.route(\"**/api/analysis/conversations/*/summarize**\", (route) =>\n      route.fulfill({\n        json: {\n          shortTitle: \"Recomputed\",\n          summary: \"Freshly recomputed summary text\",\n          flow: [\"new step\"],\n          agentActions: [],\n          issues: [],\n          recommendations: [],\n        },\n      })\n    );\n    await page.route(\"**/api/analysis/conversations/*/progress**\", (route) =>\n      route.fulfill({ json: { phase: \"Done\", progress: 100 } })\n    );\n\n    await page.goto(\"/\");\n    await page.click('.conv-item:has-text(\"Fix the parser bug\")');\n    await page.click(\"#summarize-btn\");\n\n    await expect(page.locator(\"#ai-summary-text\")).toContainText(\n      \"Freshly recomputed summary text\"\n    );\n  });",
   "new_string": "  test(\"recompute fetches and renders a fresh analysis\", async ({ page }) => {\n    // Stub the LLM-backed endpoints so recompute never hits the real model. The body differs by\n    // whether force=true is present, so we can prove the button triggered a *recompute* rather than\n    // just re-showing what auto-load already rendered.\n    await page.route(\"**/api/analysis/conversations/*/summarize**\", (route) => {\n      const isForce = route.request().url().includes(\"force=true\");\n      route.fulfill({\n        json: {\n          shortTitle: isForce ? \"Recomputed\" : \"Cached\",\n          summary: isForce ? \"Freshly recomputed summary text\" : \"Cached summary text\",\n          flow: [],\n          agentActions: [],\n          issues: [],\n          recommendations: [],\n        },\n      });\n    });\n    await page.route(\"**/api/analysis/conversations/*/progress**\", (route) =>\n      route.fulfill({ json: { phase: \"Done\", progress: 100 } […]
 
@@ -4605,7 +4605,7 @@ id: toolu_01QNpK5qaWNUhorJoYqbsWqU
 tool_result
 id: toolu_01QNpK5qaWNUhorJoYqbsWqU
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/analysis.spec.js has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/analysis.spec.js has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4615,7 +4615,7 @@ id: toolu_01MQgyEQ4yf6bdNjx2x7q6Pk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/layout.spec.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/layout.spec.js",
   "old_string": "    const tc = page.locator(\"#transcript-container\");\n    const scrollable = await tc.evaluate((el) => el.scrollHeight > el.clientHeight + 5);\n    test.skip(!scrollable, \"transcript does not overflow in this viewport\");",
   "new_string": "    const tc = page.locator(\"#transcript-container\");\n    // Fail loudly if the transcript didn't render at all (e.g. marked failed to load), rather than\n    // letting the scrollability skip below mask it.\n    await expect(tc.locator(\".step-card\").first()).toBeVisible();\n\n    const scrollable = await tc.evaluate((el) => el.scrollHeight > el.clientHeight + 5);\n    test.skip(!scrollable, \"transcript does not overflow in this viewport\");"
 }
@@ -4626,7 +4626,7 @@ id: toolu_01MQgyEQ4yf6bdNjx2x7q6Pk
 tool_result
 id: toolu_01MQgyEQ4yf6bdNjx2x7q6Pk
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/layout.spec.js has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/layout.spec.js has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4636,7 +4636,7 @@ id: toolu_015qru77g4ZJzmQat1md7QE7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/playwright.config.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/playwright.config.js",
   "old_string": "  webServer: {\n    command: serverCommand,\n    url: `http://localhost:${PORT}/api/brain/conversations`,\n    reuseExistingServer: !process.env.CI,\n    timeout: 90_000,\n    env: { GEMINI_API_KEY: \"dummy-e2e-key\" },\n  },",
   "new_string": "  webServer: {\n    command: serverCommand,\n    url: `http://localhost:${PORT}/api/brain/conversations`,\n    // Locally reuse a running server for speed. Note: globalSetup re-seeds the fixture files (the\n    // controllers read them per-request) but does NOT restart the server, so if you change the jar\n    // or the -Duser.home target, kill the server on :8099 first. CI always starts fresh.\n    reuseExistingServer: !process.env.CI,\n    timeout: 90_000,\n    env: { GEMINI_API_KEY: \"dummy-e2e-key\", TZ: \"UTC\" },\n  },"
 }
@@ -4647,7 +4647,7 @@ id: toolu_015qru77g4ZJzmQat1md7QE7
 tool_result
 id: toolu_015qru77g4ZJzmQat1md7QE7
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/playwright.config.js has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/playwright.config.js has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4657,7 +4657,7 @@ id: toolu_01VhWx3U1bmg39TeyfurU5yZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/.github/workflows/e2e.yml",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/.github/workflows/e2e.yml",
   "old_string": "      - name: Set up JDK 25\n        uses: actions/setup-java@v4\n        with:\n          distribution: temurin\n          java-version: \"25\"",
   "new_string": "      - name: Set up JDK 25\n        uses: actions/setup-java@v4\n        with:\n          distribution: temurin\n          java-version: \"25\"\n          cache: gradle"
 }
@@ -4668,7 +4668,7 @@ id: toolu_01VhWx3U1bmg39TeyfurU5yZ
 tool_result
 id: toolu_01VhWx3U1bmg39TeyfurU5yZ
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/.github/workflows/e2e.yml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/.github/workflows/e2e.yml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4678,7 +4678,7 @@ id: toolu_01V2ah43sgYrdiuMUcdwNWn4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/global-setup.mjs",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/global-setup.mjs",
   "old_string": "    throw new Error(\n      \"No runnable jar found in build/libs (expected *-all.jar).\\n\" +\n        \"Build it first, e.g.:  mise exec -- ./gradlew shadowJar -x test\"\n    );",
   "new_string": "    throw new Error(\n      \"No runnable jar found in build/libs (expected *-all.jar).\\n\" +\n        \"Build it first with:  ./gradlew shadowJar -x test\\n\" +\n        \"(locally, run gradle under the project's JDK 25, e.g. via mise)\"\n    );"
 }
@@ -4689,7 +4689,7 @@ id: toolu_01V2ah43sgYrdiuMUcdwNWn4
 tool_result
 id: toolu_01V2ah43sgYrdiuMUcdwNWn4
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/global-setup.mjs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/global-setup.mjs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4702,7 +4702,7 @@ tool_use Bash
 id: toolu_01UBNwiHf2UyySasJjGjyYsH
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\necho \"=== spotlessApply + build (formats JS, rebuilds jar, runs backend tests) ===\"\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -6\necho \"=== vitest (unit) ===\"\nnpm test 2>&1 | tail -6",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\necho \"=== spotlessApply + build (formats JS, rebuilds jar, runs backend tests) ===\"\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -6\necho \"=== vitest (unit) ===\"\nnpm test 2>&1 | tail -6",
   "description": "Format, build jar, backend + unit tests",
   "timeout": 600000
 }
@@ -4738,7 +4738,7 @@ tool_use Bash
 id: toolu_01WqX3jfemXJiPsVmeL1uMEQ
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\n# kill any lingering e2e server so the rebuilt jar is used\nlsof -ti tcp:8099 | xargs kill -9 2>/dev/null; sleep 1\nmise exec -- npx playwright test 2>&1 | tail -25",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\n# kill any lingering e2e server so the rebuilt jar is used\nlsof -ti tcp:8099 | xargs kill -9 2>/dev/null; sleep 1\nmise exec -- npx playwright test 2>&1 | tail -25",
   "description": "Run E2E against rebuilt jar",
   "timeout": 300000
 }
@@ -4778,7 +4778,7 @@ tool_use Bash
 id: toolu_013j5m9pxoGuahsAxXERp4fM
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit add e2e playwright.config.js .github/workflows/e2e.yml package.json package-lock.json .gitignore \\\n  src/main/resources/public/modules/analysis.js src/test/js/analysis.test.js\ngit status --short | grep -vE '\\.claude|\\.entire'",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit add e2e playwright.config.js .github/workflows/e2e.yml package.json package-lock.json .gitignore \\\n  src/main/resources/public/modules/analysis.js src/test/js/analysis.test.js\ngit status --short | grep -vE '\\.claude|\\.entire'",
   "description": "Stage E2E + fixes"
 }
 ```
@@ -4812,7 +4812,7 @@ tool_use Bash
 id: toolu_01MVKett4rTLiaH1fV9xaWP5
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit commit -q -F - <<'EOF'\ntest(e2e): add Playwright end-to-end suite + CI, fix stale-analysis race\n\nAdd a broad browser-level E2E layer that drives the real Micronaut server\nagainst seeded fixtures, covering the journeys jsdom can't reach.\n\nHarness:\n- playwright.config.js launches the prebuilt shadow jar with\n  -Duser.home pointed at a seeded fixture tree (build/e2e-home) and a\n  dummy GEMINI_API_KEY so the cached-analysis path runs without the LLM.\n- e2e/fixtures.mjs + global-setup.mjs seed sessions (transcripts,\n  short_title, summary.json) across two flavors, with pinned mtimes for\n  deterministic ordering and a real ~/.gemini file for the preview modal.\n- e2e/test-base.js serves a vendored marked.min.js for any CDN marked\n  request, so runs are deterministic/offline (a CDN hiccup would\n  otherwise blank the transcript).\n\nSpecs (14 tests): session browse/search/sort/flavor-switch; transcript +\nstats rendering and stat-card filters; file-preview modal open/render/\nclose; cached-analysis auto-load and force recompute; sidebar\ntoggle/resize and scrubber scroll-tracking.\n\nCI: .github/workflows/e2e.yml runs on PRs/main — JDK 25, Node 22, builds\nthe jar, installs Chromium, runs Playwright, uploads the report.\n\nApp fix (found in review): guard the final analysis render with\nstate.currentPollSessionId so a stale in-flight request can't clobber the\nanalysis after the user selects a different session. Covered by a new\nunit test.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\necho \"commit exit: $?\"\ngit push 2>&1 | tail -4",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit commit -q -F - <<'EOF'\ntest(e2e): add Playwright end-to-end suite + CI, fix stale-analysis race\n\nAdd a broad browser-level E2E layer that drives the real Micronaut server\nagainst seeded fixtures, covering the journeys jsdom can't reach.\n\nHarness:\n- playwright.config.js launches the prebuilt shadow jar with\n  -Duser.home pointed at a seeded fixture tree (build/e2e-home) and a\n  dummy GEMINI_API_KEY so the cached-analysis path runs without the LLM.\n- e2e/fixtures.mjs + global-setup.mjs seed sessions (transcripts,\n  short_title, summary.json) across two flavors, with pinned mtimes for\n  deterministic ordering and a real ~/.gemini file for the preview modal.\n- e2e/test-base.js serves a vendored marked.min.js for any CDN marked\n  request, so runs are deterministic/offline (a CDN hiccup would\n  otherwise blank the transcript).\n\nSpecs (14 tests): session browse/search/sort/flavor-switch; transcript +\nstats rendering and stat-card filters; file-preview modal open/render/\nclose; cached-analysis auto-load and force recompute; sidebar\ntoggle/resize and scrubber scroll-tracking.\n\nCI: .github/workflows/e2e.yml runs on PRs/main — JDK 25, Node 22, builds\nthe jar, installs Chromium, runs Playwright, uploads the report.\n\nApp fix (found in review): guard the final analysis render with\nstate.currentPollSessionId so a stale in-flight request can't clobber the\nanalysis after the user selects a different session. Covered by a new\nunit test.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\necho \"commit exit: $?\"\ngit push 2>&1 | tail -4",
   "description": […]
 
 > TOOL
@@ -4836,7 +4836,7 @@ tool_use Bash
 id: toolu_01W9ehkUPDwfCioemfmuCPGv
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nsleep 5\ngh pr checks 1 2>&1 | head -20 || echo \"(no checks yet)\"\necho \"--- recent runs ---\"\ngh run list --branch test/critical-user-journey-coverage --limit 3 2>&1 | head -5",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nsleep 5\ngh pr checks 1 2>&1 | head -20 || echo \"(no checks yet)\"\necho \"--- recent runs ---\"\ngh run list --branch test/critical-user-journey-coverage --limit 3 2>&1 | head -5",
   "description": "Check CI status on the PR"
 }
 ```
@@ -4861,7 +4861,7 @@ tool_use Bash
 id: toolu_01SFeKFG5yZC5QQ7ofSqkRHB
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh run watch 27856992677 --exit-status --interval 15 2>&1 | tail -30; echo \"watch exit: $?\"",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh run watch 27856992677 --exit-status --interval 15 2>&1 | tail -30; echo \"watch exit: $?\"",
   "description": "Watch the E2E CI run to completion",
   "timeout": 600000
 }
@@ -4914,7 +4914,7 @@ tool_use Bash
 id: toolu_01MtqhburzmifiFnhLKSmWH2
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh run view 27856992677 --log-failed 2>&1 | grep -iE \"playwright|webserver|error|exception|exit code|java|jar|caused by|gemini|port\" | head -50",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh run view 27856992677 --log-failed 2>&1 | grep -iE \"playwright|webserver|error|exception|exit code|java|jar|caused by|gemini|port\" | head -50",
   "description": "Inspect failed step log"
 }
 ```
@@ -4954,7 +4954,7 @@ id: toolu_01Cfm3i4umuvqqhELLfcpUMk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/playwright.config.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/playwright.config.js",
   "old_string": "// Launch the prebuilt fat jar with user.home pointed at the seeded fixtures. A dummy GEMINI_API_KEY\n// lets the cached-analysis path run without contacting the real LLM (the cache lookup is gated\n// behind the key check). The single quotes keep the glob from being expanded before sh runs it.\nconst serverCommand =\n  `sh -c 'java -Duser.home=\"${E2E_HOME}\" -Dmicronaut.server.port=${PORT} ` +\n  `-jar $(ls build/libs/*-all.jar | head -1)'`;",
   "new_string": "// Launch the prebuilt fat jar with user.home pointed at the seeded fixtures. A dummy GEMINI_API_KEY\n// lets the cached-analysis path run without contacting the real LLM (the cache lookup is gated\n// behind the key check). `find` (not a top-level glob) locates the jar even when the project\n// version embeds a slash — e.g. a PR's GITHUB_REF_NAME of \"1/merge\" nests the jar in a subdir.\nconst serverCommand =\n  `sh -c 'java -Duser.home=\"${E2E_HOME}\" -Dmicronaut.server.port=${PORT} ` +\n  `-jar \"$(find build/libs -name \"*-all.jar\" | head -1)\"'`;"
 }
@@ -4965,7 +4965,7 @@ id: toolu_01Cfm3i4umuvqqhELLfcpUMk
 tool_result
 id: toolu_01Cfm3i4umuvqqhELLfcpUMk
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/playwright.config.js has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/playwright.config.js has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4975,7 +4975,7 @@ id: toolu_01QKWuMM9qfC2ZCBaNYyXhey
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/playwright.config.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/playwright.config.js",
   "old_string": "  reporter: process.env.CI ? \"github\" : \"list\",",
   "new_string": "  reporter: process.env.CI\n    ? [[\"github\"], [\"html\", { open: \"never\" }]]\n    : \"list\","
 }
@@ -4986,7 +4986,7 @@ id: toolu_01QKWuMM9qfC2ZCBaNYyXhey
 tool_result
 id: toolu_01QKWuMM9qfC2ZCBaNYyXhey
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/playwright.config.js has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/playwright.config.js has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4996,7 +4996,7 @@ id: toolu_01RWV6kCotMNrr1177882zGR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/global-setup.mjs",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/global-setup.mjs",
   "old_string": "  const libs = path.join(projectRoot, \"build\", \"libs\");\n  const hasJar =\n    fs.existsSync(libs) && fs.readdirSync(libs).some((f) => f.endsWith(\"-all.jar\"));",
   "new_string": "  const libs = path.join(projectRoot, \"build\", \"libs\");\n  const hasJar =\n    fs.existsSync(libs) &&\n    fs.readdirSync(libs, { recursive: true }).some((f) => String(f).endsWith(\"-all.jar\"));"
 }
@@ -5007,7 +5007,7 @@ id: toolu_01RWV6kCotMNrr1177882zGR
 tool_result
 id: toolu_01RWV6kCotMNrr1177882zGR
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/global-setup.mjs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/global-setup.mjs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5021,7 +5021,7 @@ id: toolu_01YVPEaoZfQfdiTR4kWVKaRA
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/.github/workflows/e2e.yml",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/.github/workflows/e2e.yml",
   "old_string": "      - name: Build the application jar\n        run: ./gradlew shadowJar -x test --no-daemon",
   "new_string": "      - name: Build the application jar\n        # Override GITHUB_REF_NAME so the project version (and thus the jar filename) has no slash;\n        # a PR ref like \"1/merge\" would otherwise nest the jar in a subdirectory.\n        env:\n          GITHUB_REF_NAME: e2e\n        run: ./gradlew shadowJar -x test --no-daemon"
 }
@@ -5032,7 +5032,7 @@ id: toolu_01YVPEaoZfQfdiTR4kWVKaRA
 tool_result
 id: toolu_01YVPEaoZfQfdiTR4kWVKaRA
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/.github/workflows/e2e.yml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/.github/workflows/e2e.yml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5045,7 +5045,7 @@ tool_use Bash
 id: toolu_01K8eZM9SjQ5HwwZfrghLLsN
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\necho \"find resolves jar: $(find build/libs -name '*-all.jar' | head -1)\"\nlsof -ti tcp:8099 | xargs kill -9 2>/dev/null; sleep 1\nmise exec -- npx playwright test 2>&1 | tail -5",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\necho \"find resolves jar: $(find build/libs -name '*-all.jar' | head -1)\"\nlsof -ti tcp:8099 | xargs kill -9 2>/dev/null; sleep 1\nmise exec -- npx playwright test 2>&1 | tail -5",
   "description": "Re-run E2E locally after config changes",
   "timeout": 300000
 }
@@ -5074,7 +5074,7 @@ tool_use Bash
 id: toolu_01LXqPr9e7WtK7CZb4qBhVKo
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit add playwright.config.js e2e/global-setup.mjs .github/workflows/e2e.yml\ngit commit -q -F - <<'EOF'\nfix(e2e): make CI jar discovery robust and emit an HTML report\n\nThe first CI run failed: on a pull_request the GITHUB_REF_NAME is\n\"<pr>/merge\", which build.gradle bakes into the project version and thus\nthe jar filename, nesting the jar in a subdirectory so the top-level glob\n`build/libs/*-all.jar` matched nothing and the webServer couldn't start.\n\n- Locate the jar with `find build/libs -name '*-all.jar'` (handles the\n  nested path) in both playwright.config.js and global-setup.mjs.\n- Pin GITHUB_REF_NAME=e2e for the CI build step so the version/filename\n  has no slash in the first place.\n- Add the HTML reporter under CI so the uploaded playwright-report\n  artifact actually has contents.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\necho \"exit: $?\"\ngit push 2>&1 | tail -3",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit add playwright.config.js e2e/global-setup.mjs .github/workflows/e2e.yml\ngit commit -q -F - <<'EOF'\nfix(e2e): make CI jar discovery robust and emit an HTML report\n\nThe first CI run failed: on a pull_request the GITHUB_REF_NAME is\n\"<pr>/merge\", which build.gradle bakes into the project version and thus\nthe jar filename, nesting the jar in a subdirectory so the top-level glob\n`build/libs/*-all.jar` matched nothing and the webServer couldn't start.\n\n- Locate the jar with `find build/libs -name '*-all.jar'` (handles the\n  nested path) in both playwright.config.js and global-setup.mjs.\n- Pin GITHUB_REF_NAME=e2e for the CI build step so the version/filename\n  has no slash in the first place.\n- Add the HTML reporter under CI so the uploaded playwright-report\n  artifact actually has contents.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\necho \"exit: $?\"\ngit push 2>&1 | tail -3",
   "description": "Commit and push CI fixes"
 }
 ```
@@ -5096,7 +5096,7 @@ tool_use Bash
 id: toolu_01C5MsrgTkBkw4cHzbuvw1Sx
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nsleep 8\nRUN=$(gh run list --branch test/critical-user-journey-coverage --workflow \"E2E Tests\" --limit 1 --json databaseId --jq '.[0].databaseId')\necho \"watching run $RUN\"\ngh run watch \"$RUN\" --exit-status --interval 15 2>&1 | tail -20; echo \"exit: $?\"",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nsleep 8\nRUN=$(gh run list --branch test/critical-user-journey-coverage --workflow \"E2E Tests\" --limit 1 --json databaseId --jq '.[0].databaseId')\necho \"watching run $RUN\"\ngh run watch \"$RUN\" --exit-status --interval 15 2>&1 | tail -20; echo \"exit: $?\"",
   "description": "Watch the new CI run",
   "timeout": 600000
 }
@@ -5160,7 +5160,7 @@ tool_use Write
 id: toolu_01LpibLQmYNYQBKAqH5PrD5q
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/.github/workflows/ci.yml",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/.github/workflows/ci.yml",
   "content": "name: CI\n\non:\n  pull_request:\n  push:\n    branches: [main]\n  workflow_dispatch:\n\njobs:\n  backend:\n    name: Backend (JUnit + Spotless)\n    runs-on: ubuntu-latest\n    timeout-minutes: 20\n    # A PR's GITHUB_REF_NAME is \"<pr>/merge\"; the slash leaks into the project version and artifact\n    # names. Pin a clean value for a tidy build.\n    env:\n      GITHUB_REF_NAME: ci\n    steps:\n      - uses: actions/checkout@v4\n\n      - name: Set up JDK 25\n        uses: actions/setup-java@v4\n        with:\n          distribution: temurin\n          java-version: \"25\"\n          cache: gradle\n\n      - name: Build, format-check and test\n        run: ./gradlew build --no-daemon\n\n  frontend-unit:\n    name: Frontend unit (Vitest)\n    runs-on: ubuntu-latest\n    timeout-minutes: 10\n    steps:\n      - uses: actions/checkout@v4\n\n      - name: Set up Node\n        uses: actions/setup-node@v4\n        with:\n          node-version: \"22\"\n          cache: npm\n\n      - name: Install npm dependencies\n        run: npm ci\n\n      - name: Run Vitest\n        run: npm test\n\n  e2e:\n    name: End-to-end (Playwright)\n    runs-on: ubuntu-latest\n    timeout-minutes: 20\n    steps:\n      - uses: actions/checkout@v4\n\n      - name: Set up JDK 25\n        uses: actions/setup-java@v4\n        with:\n          distribution: temurin\n          java-version: \"25\"\n          cache: gradle\n\n      - name: Set up Node\n        uses: actions/setup-node@v4\n        with:\n          node-version: \"22\"\n          cache: npm\n\n      - name: Install npm dependencies\n        run: npm ci\n\n      - name: Build the application jar\n        # Override GITHUB_REF_NAME so the project version (and thus the jar filename) has no slash;\n        # a PR ref like \"1/merge\" would otherwise nest […]
 
 > TOOL
@@ -5168,7 +5168,7 @@ id: toolu_01LpibLQmYNYQBKAqH5PrD5q
 tool_result
 id: toolu_01LpibLQmYNYQBKAqH5PrD5q
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/.github/workflows/ci.yml (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/.github/workflows/ci.yml (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5177,7 +5177,7 @@ tool_use Bash
 id: toolu_01TJVK3MLYXWhHedrs27HBEw
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit rm -q .github/workflows/e2e.yml\ngit add .github/workflows/ci.yml\ngit status --short | grep -vE '\\.claude|\\.entire'",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit rm -q .github/workflows/e2e.yml\ngit add .github/workflows/ci.yml\ngit status --short | grep -vE '\\.claude|\\.entire'",
   "description": "Remove e2e.yml, stage ci.yml"
 }
 ```
@@ -5196,7 +5196,7 @@ tool_use Bash
 id: toolu_01Kcvqn3fEJ36jqtJR5Z1cyh
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit commit -q -F - <<'EOF'\nci: run backend, frontend-unit, and e2e suites on every PR\n\nReplace the e2e-only workflow with a single CI workflow that runs all\nthree test layers as parallel jobs on pull_request and main:\n- backend: ./gradlew build (Spotless format check + JUnit tests + assemble)\n- frontend-unit: npm test (Vitest + jsdom)\n- e2e: Playwright against the booted server (unchanged)\n\nBoth JVM jobs pin GITHUB_REF_NAME to a slash-free value so the project\nversion and artifact names stay clean on PR refs like \"1/merge\".\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\necho \"exit: $?\"\ngit push 2>&1 | tail -3",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit commit -q -F - <<'EOF'\nci: run backend, frontend-unit, and e2e suites on every PR\n\nReplace the e2e-only workflow with a single CI workflow that runs all\nthree test layers as parallel jobs on pull_request and main:\n- backend: ./gradlew build (Spotless format check + JUnit tests + assemble)\n- frontend-unit: npm test (Vitest + jsdom)\n- e2e: Playwright against the booted server (unchanged)\n\nBoth JVM jobs pin GITHUB_REF_NAME to a slash-free value so the project\nversion and artifact names stay clean on PR refs like \"1/merge\".\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\necho \"exit: $?\"\ngit push 2>&1 | tail -3",
   "description": "Commit and push consolidated CI"
 }
 ```
@@ -5218,7 +5218,7 @@ tool_use Bash
 id: toolu_01Xred8cuPCXnoaZwuekh8Lq
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nsleep 8\nRUN=$(gh run list --branch test/critical-user-journey-coverage --workflow \"CI\" --limit 1 --json databaseId --jq '.[0].databaseId')\necho \"watching CI run $RUN\"\ngh run watch \"$RUN\" --exit-status --interval 15 2>&1 | tail -25; echo \"exit: $?\"",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nsleep 8\nRUN=$(gh run list --branch test/critical-user-journey-coverage --workflow \"CI\" --limit 1 --json databaseId --jq '.[0].databaseId')\necho \"watching CI run $RUN\"\ngh run watch \"$RUN\" --exit-status --interval 15 2>&1 | tail -25; echo \"exit: $?\"",
   "description": "Watch the consolidated CI run",
   "timeout": 600000
 }
@@ -5268,7 +5268,7 @@ tool_use Bash
 id: toolu_01HTv1e19mPug8gxo4wzAHAw
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh run view 27859033954 --json jobs --jq '.jobs[] | \"\\(.conclusion)\\t\\(.name)\"'\necho \"--- PR checks ---\"\ngh pr checks 1 2>&1 | head",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh run view 27859033954 --json jobs --jq '.jobs[] | \"\\(.conclusion)\\t\\(.name)\"'\necho \"--- PR checks ---\"\ngh pr checks 1 2>&1 | head",
   "description": "Confirm per-job CI conclusions"
 }
 ```
@@ -5348,7 +5348,7 @@ id: toolu_01NusgNxFjgGapfW8Br2EzMz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/.github/workflows/ci.yml",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/.github/workflows/ci.yml",
   "old_string": "      - uses: actions/checkout@v4\n\n      - name: Set up JDK 25\n        uses: actions/setup-java@v4\n        with:\n          distribution: temurin\n          java-version: \"25\"\n          cache: gradle\n\n      - name: Build, format-check and test",
   "new_string": "      - uses: actions/checkout@v7\n\n      - name: Set up JDK 25\n        uses: actions/setup-java@v5\n        with:\n          distribution: temurin\n          java-version: \"25\"\n          cache: gradle\n\n      - name: Build, format-check and test"
 }
@@ -5359,7 +5359,7 @@ id: toolu_01NusgNxFjgGapfW8Br2EzMz
 tool_result
 id: toolu_01NusgNxFjgGapfW8Br2EzMz
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/.github/workflows/ci.yml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/.github/workflows/ci.yml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5369,7 +5369,7 @@ id: toolu_015K82E8oZKTCgicaQkZFsAP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/.github/workflows/ci.yml",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/.github/workflows/ci.yml",
   "old_string": "      - uses: actions/checkout@v4\n\n      - name: Set up Node\n        uses: actions/setup-node@v4\n        with:\n          node-version: \"22\"\n          cache: npm\n\n      - name: Install npm dependencies\n        run: npm ci\n\n      - name: Run Vitest\n        run: npm test",
   "new_string": "      - uses: actions/checkout@v7\n\n      - name: Set up Node\n        uses: actions/setup-node@v6\n        with:\n          node-version: \"22\"\n          cache: npm\n\n      - name: Install npm dependencies\n        run: npm ci\n\n      - name: Run Vitest\n        run: npm test"
 }
@@ -5380,7 +5380,7 @@ id: toolu_015K82E8oZKTCgicaQkZFsAP
 tool_result
 id: toolu_015K82E8oZKTCgicaQkZFsAP
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/.github/workflows/ci.yml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/.github/workflows/ci.yml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5390,7 +5390,7 @@ id: toolu_01Vo1q1dLFmbzyiwBDJ5Zi1A
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/.github/workflows/ci.yml",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/.github/workflows/ci.yml",
   "old_string": "      - uses: actions/checkout@v4\n\n      - name: Set up JDK 25\n        uses: actions/setup-java@v4\n        with:\n          distribution: temurin\n          java-version: \"25\"\n          cache: gradle\n\n      - name: Set up Node\n        uses: actions/setup-node@v4\n        with:\n          node-version: \"22\"\n          cache: npm",
   "new_string": "      - uses: actions/checkout@v7\n\n      - name: Set up JDK 25\n        uses: actions/setup-java@v5\n        with:\n          distribution: temurin\n          java-version: \"25\"\n          cache: gradle\n\n      - name: Set up Node\n        uses: actions/setup-node@v6\n        with:\n          node-version: \"22\"\n          cache: npm"
 }
@@ -5401,7 +5401,7 @@ id: toolu_01Vo1q1dLFmbzyiwBDJ5Zi1A
 tool_result
 id: toolu_01Vo1q1dLFmbzyiwBDJ5Zi1A
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/.github/workflows/ci.yml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/.github/workflows/ci.yml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5411,7 +5411,7 @@ id: toolu_012AUNvJ9MRMVAvP3tuN3YEJ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/.github/workflows/ci.yml",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/.github/workflows/ci.yml",
   "old_string": "        uses: actions/upload-artifact@v4\n        with:\n          name: playwright-report",
   "new_string": "        uses: actions/upload-artifact@v7\n        with:\n          name: playwright-report"
 }
@@ -5422,7 +5422,7 @@ id: toolu_012AUNvJ9MRMVAvP3tuN3YEJ
 tool_result
 id: toolu_012AUNvJ9MRMVAvP3tuN3YEJ
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/.github/workflows/ci.yml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/.github/workflows/ci.yml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5435,7 +5435,7 @@ tool_use Bash
 id: toolu_01GqV4kNsh9P1A75P13qwcpS
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\necho \"--- remaining action versions ---\"\ngrep -nE 'uses: actions/' .github/workflows/ci.yml\necho \"--- any v4 left? ---\"\ngrep -n '@v4' .github/workflows/ci.yml || echo \"(none)\"",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\necho \"--- remaining action versions ---\"\ngrep -nE 'uses: actions/' .github/workflows/ci.yml\necho \"--- any v4 left? ---\"\ngrep -n '@v4' .github/workflows/ci.yml || echo \"(none)\"",
   "description": "Verify action version bumps"
 }
 ```
@@ -5464,7 +5464,7 @@ tool_use Bash
 id: toolu_017LDX7Qg5HB4DwVqj8ZmWGh
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit add .github/workflows/ci.yml\ngit commit -q -F - <<'EOF'\nci: bump actions to Node 24 majors to clear deprecation warnings\n\nUpdate to the current major versions (checkout v7, setup-java v5,\nsetup-node v6, upload-artifact v7), which run on Node 24, removing the\n\"Node.js 20 is deprecated\" annotations.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\necho \"exit: $?\"\ngit push 2>&1 | tail -3",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit add .github/workflows/ci.yml\ngit commit -q -F - <<'EOF'\nci: bump actions to Node 24 majors to clear deprecation warnings\n\nUpdate to the current major versions (checkout v7, setup-java v5,\nsetup-node v6, upload-artifact v7), which run on Node 24, removing the\n\"Node.js 20 is deprecated\" annotations.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\necho \"exit: $?\"\ngit push 2>&1 | tail -3",
   "description": "Commit and push action bumps"
 }
 ```
@@ -5486,7 +5486,7 @@ tool_use Bash
 id: toolu_017MVDToYE6hVkSLUjredG5E
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nsleep 8\nRUN=$(gh run list --branch test/critical-user-journey-coverage --workflow \"CI\" --limit 1 --json databaseId --jq '.[0].databaseId')\necho \"watching CI run $RUN\"\ngh run watch \"$RUN\" --exit-status --interval 15 >/dev/null 2>&1; echo \"watch exit: $?\"\necho \"--- per-job conclusions ---\"\ngh run view \"$RUN\" --json jobs --jq '.jobs[] | \"\\(.conclusion)\\t\\(.name)\"'\necho \"--- annotations (should be empty) ---\"\ngh run view \"$RUN\" --json jobs --jq '.jobs[].steps[].name' >/dev/null\ngh api repos/scottdensmore/antigravity-brain-visualizer/actions/runs/$RUN/jobs --jq '.jobs[] | .annotations? // empty' 2>/dev/null\ngh run view \"$RUN\" 2>&1 | grep -i \"deprecat\" || echo \"(no deprecation annotations)\"",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nsleep 8\nRUN=$(gh run list --branch test/critical-user-journey-coverage --workflow \"CI\" --limit 1 --json databaseId --jq '.[0].databaseId')\necho \"watching CI run $RUN\"\ngh run watch \"$RUN\" --exit-status --interval 15 >/dev/null 2>&1; echo \"watch exit: $?\"\necho \"--- per-job conclusions ---\"\ngh run view \"$RUN\" --json jobs --jq '.jobs[] | \"\\(.conclusion)\\t\\(.name)\"'\necho \"--- annotations (should be empty) ---\"\ngh run view \"$RUN\" --json jobs --jq '.jobs[].steps[].name' >/dev/null\ngh api repos/scottdensmore/antigravity-brain-visualizer/actions/runs/$RUN/jobs --jq '.jobs[] | .annotations? // empty' 2>/dev/null\ngh run view \"$RUN\" 2>&1 | grep -i \"deprecat\" || echo \"(no deprecation annotations)\"",
   "description": "Watch CI and check annotations cleared",
   "timeout": 600000
 }
@@ -5601,7 +5601,7 @@ tool_use Bash
 id: toolu_01TFGazKdidz6ykECsr37izq
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh api repos/scottdensmore/antigravity-brain-visualizer \\\n  --jq '{allow_merge_commit, allow_squash_merge, allow_rebase_merge, allow_auto_merge, delete_branch_on_merge, squash_merge_commit_title, squash_merge_commit_message}'",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh api repos/scottdensmore/antigravity-brain-visualizer \\\n  --jq '{allow_merge_commit, allow_squash_merge, allow_rebase_merge, allow_auto_merge, delete_branch_on_merge, squash_merge_commit_title, squash_merge_commit_message}'",
   "description": "Check current repo merge settings"
 }
 ```
@@ -5624,7 +5624,7 @@ tool_use Bash
 id: toolu_017Zeex8rE1XGTVRXnbb2GAU
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh api repos/scottdensmore/antigravity-brain-visualizer --method PATCH \\\n  -F allow_squash_merge=true \\\n  -F allow_merge_commit=false \\\n  -F allow_rebase_merge=false \\\n  -F delete_branch_on_merge=true \\\n  -f squash_merge_commit_title=PR_TITLE \\\n  -f squash_merge_commit_message=PR_BODY \\\n  --jq '{allow_merge_commit, allow_squash_merge, allow_rebase_merge, delete_branch_on_merge, squash_merge_commit_title, squash_merge_commit_message}'",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh api repos/scottdensmore/antigravity-brain-visualizer --method PATCH \\\n  -F allow_squash_merge=true \\\n  -F allow_merge_commit=false \\\n  -F allow_rebase_merge=false \\\n  -F delete_branch_on_merge=true \\\n  -f squash_merge_commit_title=PR_TITLE \\\n  -f squash_merge_commit_message=PR_BODY \\\n  --jq '{allow_merge_commit, allow_squash_merge, allow_rebase_merge, delete_branch_on_merge, squash_merge_commit_title, squash_merge_commit_message}'",
   "description": "Set repo to squash-only merge"
 }
 ```
@@ -5677,7 +5677,7 @@ tool_use Bash
 id: toolu_019kWhMpKX9375Nz3T2MMy8D
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\necho \"--- candidate docs ---\"\nls -1 AGENTS.md CONTRIBUTING.md docs/ .github/*.md 2>/dev/null\necho \"--- grep for merge/workflow mentions ---\"\ngrep -rniE 'gh pr merge|squash|--merge|merge & clean|workflow|pull request' AGENTS.md CONTRIBUTING.md README.md .github 2>/dev/null | head -30",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\necho \"--- candidate docs ---\"\nls -1 AGENTS.md CONTRIBUTING.md docs/ .github/*.md 2>/dev/null\necho \"--- grep for merge/workflow mentions ---\"\ngrep -rniE 'gh pr merge|squash|--merge|merge & clean|workflow|pull request' AGENTS.md CONTRIBUTING.md README.md .github 2>/dev/null | head -30",
   "description": "Find where the workflow is documented"
 }
 ```
@@ -5705,7 +5705,7 @@ tool_use Read
 id: toolu_01LFoy3HEUbq66EL7NWg7LNd
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/AGENTS.md",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/AGENTS.md",
   "offset": 78,
   "limit": 60
 }
@@ -5736,7 +5736,7 @@ tool_use Bash
 id: toolu_01SB9w9ntYw1kFUsbCi9NM2n
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\necho \"--- git status ---\"; git status --short | grep -vE '\\.claude|\\.entire' || echo \"(clean)\"\necho \"--- current branch ---\"; git branch --show-current\necho \"--- memory dir ---\"; ls -1 /Users/scottdensmore/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-agent-brain-visualizer/memory/ 2>/dev/null || echo \"(empty/none)\"",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\necho \"--- git status ---\"; git status --short | grep -vE '\\.claude|\\.entire' || echo \"(clean)\"\necho \"--- current branch ---\"; git branch --show-current\necho \"--- memory dir ---\"; ls -1 /home/<USER>/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-agent-brain-visualizer/memory/ 2>/dev/null || echo \"(empty/none)\"",
   "description": "Check git state and memory dir"
 }
 ```
@@ -5764,7 +5764,7 @@ tool_use Bash
 id: toolu_011Mfcw45VWz1PmQ9zmox6dU
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit checkout main 2>&1 | tail -2\ngit pull --ff-only 2>&1 | tail -2\ngit checkout -b docs/squash-merge-workflow 2>&1 | tail -1",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit checkout main 2>&1 | tail -2\ngit pull --ff-only 2>&1 | tail -2\ngit checkout -b docs/squash-merge-workflow 2>&1 | tail -1",
   "description": "Branch docs change off main"
 }
 ```
@@ -5790,7 +5790,7 @@ tool_use Read
 id: toolu_017gWBczwvQbbRMqLQNLsEdL
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/AGENTS.md",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/AGENTS.md",
   "offset": 81,
   "limit": 10
 }
@@ -5815,7 +5815,7 @@ id: toolu_01TAvEA4YdAoy1arqet8oNYJ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/AGENTS.md",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/AGENTS.md",
   "old_string": "## Pull Request & Git Requirements\n- Ensure all code is formatted (`./gradlew spotlessApply`).\n- Do not commit any sensitive data or API keys (e.g. `GEMINI_API_KEY`).\n- Use Conventional Commits (`feat:`, `fix:`, `chore:`, `refactor:`).",
   "new_string": "## Pull Request & Git Requirements\n- Ensure all code is formatted (`./gradlew spotlessApply`).\n- Do not commit any sensitive data or API keys (e.g. `GEMINI_API_KEY`).\n- Use Conventional Commits (`feat:`, `fix:`, `chore:`, `refactor:`).\n- Always **squash and merge** pull requests — the repository is configured\n  squash-only (merge commits and rebase merges are disabled, and the branch is\n  deleted on merge). Merge with `gh pr merge <n> --squash --delete-branch`,\n  never `--merge` or `--rebase`. The squashed commit takes the PR title and\n  body, so keep both clean and descriptive."
 }
@@ -5826,7 +5826,7 @@ id: toolu_01TAvEA4YdAoy1arqet8oNYJ
 tool_result
 id: toolu_01TAvEA4YdAoy1arqet8oNYJ
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/AGENTS.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/AGENTS.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5839,7 +5839,7 @@ tool_use Bash
 id: toolu_01QHAR26timL4NZ4sdgTcxAi
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit add AGENTS.md\ngit commit -q -F - <<'EOF'\ndocs: require squash-and-merge for pull requests\n\nDocument the merge policy in AGENTS.md: PRs are always squash-merged\n(`gh pr merge <n> --squash --delete-branch`). The repository is configured\nsquash-only — merge commits and rebase merges are disabled and branches are\ndeleted on merge — so this records the standing convention for contributors.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\necho \"commit exit: $?\"\ngit push -u origin docs/squash-merge-workflow 2>&1 | tail -4",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit add AGENTS.md\ngit commit -q -F - <<'EOF'\ndocs: require squash-and-merge for pull requests\n\nDocument the merge policy in AGENTS.md: PRs are always squash-merged\n(`gh pr merge <n> --squash --delete-branch`). The repository is configured\nsquash-only — merge commits and rebase merges are disabled and branches are\ndeleted on merge — so this records the standing convention for contributors.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\necho \"commit exit: $?\"\ngit push -u origin docs/squash-merge-workflow 2>&1 | tail -4",
   "description": "Commit and push docs branch"
 }
 ```
@@ -5862,7 +5862,7 @@ tool_use Bash
 id: toolu_01Jy3tYNgJ6j2a2tkRdYaMCk
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh pr create --base main --head docs/squash-merge-workflow \\\n  --title \"docs: require squash-and-merge for pull requests\" \\\n  --body \"$(cat <<'EOF'\n## What & why\n\nDocuments the merge policy in `AGENTS.md`: pull requests are **always squash-merged**.\n\nThe repository has been configured squash-only:\n- ✅ Allow squash merging\n- ❌ Allow merge commits\n- ❌ Allow rebase merging\n- ✅ Automatically delete head branches on merge\n- Squash commit title = PR title, message = PR body\n\nSo the merge step of the workflow is now `gh pr merge <n> --squash --delete-branch` (replacing `--merge`).\n\n## How it was tested\n\nDocumentation-only change. No code affected.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\nEOF\n)\" 2>&1 | tail -3",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh pr create --base main --head docs/squash-merge-workflow \\\n  --title \"docs: require squash-and-merge for pull requests\" \\\n  --body \"$(cat <<'EOF'\n## What & why\n\nDocuments the merge policy in `AGENTS.md`: pull requests are **always squash-merged**.\n\nThe repository has been configured squash-only:\n- ✅ Allow squash merging\n- ❌ Allow merge commits\n- ❌ Allow rebase merging\n- ✅ Automatically delete head branches on merge\n- Squash commit title = PR title, message = PR body\n\nSo the merge step of the workflow is now `gh pr merge <n> --squash --delete-branch` (replacing `--merge`).\n\n## How it was tested\n\nDocumentation-only change. No code affected.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\nEOF\n)\" 2>&1 | tail -3",
   "description": "Open docs PR"
 }
 ```
@@ -5885,7 +5885,7 @@ tool_use Write
 id: toolu_014skoPWHccpxHW2ALHq7M9g
 ```json
 {
-  "file_path": "/Users/scottdensmore/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-agent-brain-visualizer/memory/squash-merge-prs.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-agent-brain-visualizer/memory/squash-merge-prs.md",
   "content": "---\nname: squash-merge-prs\ndescription: This project always squash-merges PRs; the GitHub repo is configured squash-only.\nmetadata:\n  type: feedback\n---\n\nAlways merge pull requests for agent-brain-visualizer with **squash merge**, never a merge commit or rebase merge.\n\n**Why:** The user set this as the project's merge policy. The GitHub repo (scottdensmore/antigravity-brain-visualizer) is configured squash-only: `allow_merge_commit=false`, `allow_rebase_merge=false`, `allow_squash_merge=true`, `delete_branch_on_merge=true`, with squash commit title=PR_TITLE and message=PR_BODY. It's also documented in `AGENTS.md` under \"Pull Request & Git Requirements\".\n\n**How to apply:** Use `gh pr merge <n> --squash --delete-branch`, then `git checkout main && git pull --ff-only`. This replaces the `--merge` step in the [[project-dev-workflow]]. Because the squash commit takes the PR title and body, keep both clean and descriptive.\n"
 }
 ```
@@ -5895,7 +5895,7 @@ id: toolu_014skoPWHccpxHW2ALHq7M9g
 tool_result
 id: toolu_014skoPWHccpxHW2ALHq7M9g
 ```
-File created successfully at: /Users/scottdensmore/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-agent-brain-visualizer/memory/squash-merge-prs.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-agent-brain-visualizer/memory/squash-merge-prs.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5904,7 +5904,7 @@ tool_use Write
 id: toolu_014vfJnXHTT9PYrePok1U5sT
 ```json
 {
-  "file_path": "/Users/scottdensmore/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-agent-brain-visualizer/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-agent-brain-visualizer/memory/MEMORY.md",
   "content": "# Memory index\n\n- [Squash-merge PRs](squash-merge-prs.md) — always `gh pr merge --squash --delete-branch`; repo is squash-only.\n"
 }
 ```
@@ -5914,7 +5914,7 @@ id: toolu_014vfJnXHTT9PYrePok1U5sT
 tool_result
 id: toolu_014vfJnXHTT9PYrePok1U5sT
 ```
-File created successfully at: /Users/scottdensmore/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-agent-brain-visualizer/memory/MEMORY.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-agent-brain-visualizer/memory/MEMORY.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5947,7 +5947,7 @@ tool_use Bash
 id: toolu_011YeBvg1rsVMGW455fJLMoW
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\necho \"--- PR #1 state & mergeability ---\"\ngh pr view 1 --json state,mergeStateStatus,reviewDecision --jq '{state, mergeStateStatus, reviewDecision}'\necho \"--- PR #1 checks ---\"\ngh pr checks 1 2>&1 | head",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\necho \"--- PR #1 state & mergeability ---\"\ngh pr view 1 --json state,mergeStateStatus,reviewDecision --jq '{state, mergeStateStatus, reviewDecision}'\necho \"--- PR #1 checks ---\"\ngh pr checks 1 2>&1 | head",
   "description": "Check PR #1 CI and mergeability"
 }
 ```
@@ -5975,7 +5975,7 @@ tool_use Bash
 id: toolu_01WuJmvPKnSyUzSLZs7QyQrm
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh pr merge 1 --squash --delete-branch 2>&1 | tail -5\necho \"--- PR #1 state ---\"\ngh pr view 1 --json state,mergedAt --jq '{state, mergedAt}'",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh pr merge 1 --squash --delete-branch 2>&1 | tail -5\necho \"--- PR #1 state ---\"\ngh pr view 1 --json state,mergedAt --jq '{state, mergedAt}'",
   "description": "Squash-merge PR #1"
 }
 ```
@@ -5999,7 +5999,7 @@ tool_use Bash
 id: toolu_018QKJwYUrmfghn23AP6ff8w
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit checkout main 2>&1 | tail -1\ngit pull --ff-only 2>&1 | tail -3\ngit fetch --prune 2>&1 | tail -1\n# delete local test branch if it still exists\ngit branch -d test/critical-user-journey-coverage 2>&1 || echo \"(test branch already gone)\"\necho \"--- local branches ---\"; git branch\necho \"--- latest main log ---\"; git log --oneline -3",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit checkout main 2>&1 | tail -1\ngit pull --ff-only 2>&1 | tail -3\ngit fetch --prune 2>&1 | tail -1\n# delete local test branch if it still exists\ngit branch -d test/critical-user-journey-coverage 2>&1 || echo \"(test branch already gone)\"\necho \"--- local branches ---\"; git branch\necho \"--- latest main log ---\"; git log --oneline -3",
   "description": "Sync main and clean up merged branch"
 }
 ```
@@ -6038,7 +6038,7 @@ tool_use Bash
 id: toolu_01QLVGBF79TJkr42VFVtnvZn
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh pr view 2 --json state,mergeStateStatus --jq '{state, mergeStateStatus}'\ngh pr checks 2 2>&1 | head",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh pr view 2 --json state,mergeStateStatus --jq '{state, mergeStateStatus}'\ngh pr checks 2 2>&1 | head",
   "description": "Check PR #2 status"
 }
 ```
@@ -6108,7 +6108,7 @@ tool_use Bash
 id: toolu_01SHF8KN556RbA5oYnVnHAgP
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh pr update-branch 2 2>&1 | tail -5\nsleep 10\necho \"--- run list for docs branch ---\"\ngh run list --branch docs/squash-merge-workflow --workflow \"CI\" --limit 1 --json databaseId,status --jq '.[0]'",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh pr update-branch 2 2>&1 | tail -5\nsleep 10\necho \"--- run list for docs branch ---\"\ngh run list --branch docs/squash-merge-workflow --workflow \"CI\" --limit 1 --json databaseId,status --jq '.[0]'",
   "description": "Update PR #2 branch to trigger CI"
 }
 ```
@@ -6129,7 +6129,7 @@ tool_use Bash
 id: toolu_013Dd3zYScskj1REH5QDvX5S
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh run watch 27859731788 --exit-status --interval 15 >/dev/null 2>&1; echo \"watch exit: $?\"\ngh run view 27859731788 --json jobs --jq '.jobs[] | \"\\(.conclusion)\\t\\(.name)\"'",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh run watch 27859731788 --exit-status --interval 15 >/dev/null 2>&1; echo \"watch exit: $?\"\ngh run view 27859731788 --json jobs --jq '.jobs[] | \"\\(.conclusion)\\t\\(.name)\"'",
   "description": "Watch PR #2 CI to completion",
   "timeout": 600000
 }
@@ -6152,7 +6152,7 @@ tool_use Bash
 id: toolu_01PwV2cPJq2ghj8ZLigbFXsf
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nsleep 5\ngh run view 27859731788 --json status,conclusion --jq '{status, conclusion}'\ngh run view 27859731788 --json jobs --jq '.jobs[] | \"\\(.conclusion // .status)\\t\\(.name)\"'",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nsleep 5\ngh run view 27859731788 --json status,conclusion --jq '{status, conclusion}'\ngh run view 27859731788 --json jobs --jq '.jobs[] | \"\\(.conclusion // .status)\\t\\(.name)\"'",
   "description": "Re-check PR #2 CI job results"
 }
 ```
@@ -6178,7 +6178,7 @@ tool_use Bash
 id: toolu_01NS1t3Peipc3dYhko4i4j8X
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh run watch 27859731788 --exit-status --interval 20 >/dev/null 2>&1; echo \"watch exit: $?\"\ngh run view 27859731788 --json status,conclusion --jq '{status, conclusion}'\ngh run view 27859731788 --json jobs --jq '.jobs[] | \"\\(.conclusion // .status)\\t\\(.name)\"'",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh run watch 27859731788 --exit-status --interval 20 >/dev/null 2>&1; echo \"watch exit: $?\"\ngh run view 27859731788 --json status,conclusion --jq '{status, conclusion}'\ngh run view 27859731788 --json jobs --jq '.jobs[] | \"\\(.conclusion // .status)\\t\\(.name)\"'",
   "description": "Wait for PR #2 CI completion",
   "timeout": 600000
 }
@@ -6206,7 +6206,7 @@ tool_use Bash
 id: toolu_01XRfK8QZJ3bDcoMgqBDbeRC
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh pr merge 2 --squash --delete-branch 2>&1 | tail -3\ngh pr view 2 --json state,mergedAt --jq '{state, mergedAt}'\necho \"--- sync main + prune ---\"\ngit checkout main 2>&1 | tail -1\ngit pull --ff-only 2>&1 | tail -2\ngit fetch --prune 2>&1 | tail -1\ngit branch -d docs/squash-merge-workflow 2>&1 || echo \"(docs branch already gone)\"\necho \"--- branches ---\"; git branch\necho \"--- main log ---\"; git log --oneline -3",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh pr merge 2 --squash --delete-branch 2>&1 | tail -3\ngh pr view 2 --json state,mergedAt --jq '{state, mergedAt}'\necho \"--- sync main + prune ---\"\ngit checkout main 2>&1 | tail -1\ngit pull --ff-only 2>&1 | tail -2\ngit fetch --prune 2>&1 | tail -1\ngit branch -d docs/squash-merge-workflow 2>&1 || echo \"(docs branch already gone)\"\necho \"--- branches ---\"; git branch\necho \"--- main log ---\"; git log --oneline -3",
   "description": "Merge PR #2 and clean up"
 }
 ```
@@ -6261,7 +6261,7 @@ tool_use Bash
 id: toolu_01LPH7rX8WKfwMEGsn6jJUiv
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\necho \"--- enable auto-merge on repo ---\"\ngh api repos/scottdensmore/antigravity-brain-visualizer --method PATCH \\\n  -F allow_auto_merge=true --jq '{allow_auto_merge, allow_squash_merge, allow_merge_commit, allow_rebase_merge}'\necho \"--- branch off main ---\"\ngit checkout main 2>&1 | tail -1\ngit pull --ff-only 2>&1 | tail -1\ngit checkout -b chore/auto-merge-on-green 2>&1 | tail -1",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\necho \"--- enable auto-merge on repo ---\"\ngh api repos/scottdensmore/antigravity-brain-visualizer --method PATCH \\\n  -F allow_auto_merge=true --jq '{allow_auto_merge, allow_squash_merge, allow_merge_commit, allow_rebase_merge}'\necho \"--- branch off main ---\"\ngit checkout main 2>&1 | tail -1\ngit pull --ff-only 2>&1 | tail -1\ngit checkout -b chore/auto-merge-on-green 2>&1 | tail -1",
   "description": "Enable auto-merge and branch"
 }
 ```
@@ -6289,7 +6289,7 @@ tool_use Read
 id: toolu_01DBfMhPScoKzN6fPcQzHUjM
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/AGENTS.md",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/AGENTS.md",
   "offset": 81,
   "limit": 12
 }
@@ -6319,7 +6319,7 @@ id: toolu_01JgYxUAHBNFchXUdEWCqGB7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/AGENTS.md",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/AGENTS.md",
   "old_string": "- Always **squash and merge** pull requests — the repository is configured\n  squash-only (merge commits and rebase merges are disabled, and the branch is\n  deleted on merge). Merge with `gh pr merge <n> --squash --delete-branch`,\n  never `--merge` or `--rebase`. The squashed commit takes the PR title and\n  body, so keep both clean and descriptive.",
   "new_string": "- Always **squash and merge** pull requests — the repository is configured\n  squash-only (merge commits and rebase merges are disabled, and the branch is\n  deleted on merge). Merge with `gh pr merge <n> --squash --delete-branch`,\n  never `--merge` or `--rebase`. The squashed commit takes the PR title and\n  body, so keep both clean and descriptive.\n- **Merge as soon as all PR checks are green** — once every required CI check\n  (Backend, Frontend unit, End-to-end) passes, proceed with the squash merge\n  without waiting for further approval. To let GitHub merge automatically when\n  the checks pass, queue it with `gh pr merge <n> --squash --auto --delete-branch`\n  (repository auto-merge is enabled)."
 }
@@ -6330,7 +6330,7 @@ id: toolu_01JgYxUAHBNFchXUdEWCqGB7
 tool_result
 id: toolu_01JgYxUAHBNFchXUdEWCqGB7
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/AGENTS.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/AGENTS.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6344,7 +6344,7 @@ id: toolu_0146mtc9UYnbUPvKRkm5A4mp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-agent-brain-visualizer/memory/squash-merge-prs.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-agent-brain-visualizer/memory/squash-merge-prs.md",
   "old_string": "---\nname: squash-merge-prs\ndescription: This project always squash-merges PRs; the GitHub repo is configured squash-only.\nmetadata:\n  type: feedback\n---\n\nAlways merge pull requests for agent-brain-visualizer with **squash merge**, never a merge commit or rebase merge.\n\n**Why:** The user set this as the project's merge policy. The GitHub repo (scottdensmore/antigravity-brain-visualizer) is configured squash-only: `allow_merge_commit=false`, `allow_rebase_merge=false`, `allow_squash_merge=true`, `delete_branch_on_merge=true`, with squash commit title=PR_TITLE and message=PR_BODY. It's also documented in `AGENTS.md` under \"Pull Request & Git Requirements\".\n\n**How to apply:** Use `gh pr merge <n> --squash --delete-branch`, then `git checkout main && git pull --ff-only`. This replaces the `--merge` step in the [[project-dev-workflow]]. Because the squash commit takes the PR title and body, keep both clean and descriptive.",
   "new_string": "---\nname: squash-merge-prs\ndescription: Squash-merge PRs once CI is green, without asking first; repo is squash-only + auto-merge enabled.\nmetadata:\n  type: feedback\n---\n\nAlways merge pull requests for agent-brain-visualizer with **squash merge**, never a merge commit or rebase merge. **Merge as soon as all PR checks are green — do not wait for separate per-PR approval** (the user granted standing authorization to merge on green).\n\n**Why:** The user set this as the project's merge policy. The GitHub repo (scottdensmore/antigravity-brain-visualizer) is configured squash-only with auto-merge: `allow_merge_commit=false`, `allow_rebase_merge=false`, `allow_squash_merge=true`, […]
 
@@ -6378,7 +6378,7 @@ tool_use Read
 id: toolu_019iMygBP3c4xEX4RKgD24ve
 ```json
 {
-  "file_path": "/Users/scottdensmore/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-agent-brain-visualizer/memory/squash-merge-prs.md"
+  "file_path": "/home/<USER>/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-agent-brain-visualizer/memory/squash-merge-prs.md"
 }
 ```
 
@@ -6411,7 +6411,7 @@ id: toolu_01XTDGA1N9rsiQHMjCHcgZYD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-agent-brain-visualizer/memory/squash-merge-prs.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-agent-brain-visualizer/memory/squash-merge-prs.md",
   "old_string": "description: This project always squash-merges PRs; the GitHub repo is configured squash-only.",
   "new_string": "description: Squash-merge PRs once CI is green, without asking first; repo is squash-only + auto-merge enabled."
 }
@@ -6422,7 +6422,7 @@ id: toolu_01XTDGA1N9rsiQHMjCHcgZYD
 tool_result
 id: toolu_01XTDGA1N9rsiQHMjCHcgZYD
 ```
-The file /Users/scottdensmore/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-agent-brain-visualizer/memory/squash-merge-prs.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-agent-brain-visualizer/memory/squash-merge-prs.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6432,7 +6432,7 @@ id: toolu_015cRq5CfX4wg4xFJv51LsPm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-agent-brain-visualizer/memory/squash-merge-prs.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-agent-brain-visualizer/memory/squash-merge-prs.md",
   "old_string": "Always merge pull requests for agent-brain-visualizer with **squash merge**, never a merge commit or rebase merge.\n\n**Why:** The user set this as the project's merge policy. The GitHub repo (scottdensmore/antigravity-brain-visualizer) is configured squash-only: `allow_merge_commit=false`, `allow_rebase_merge=false`, `allow_squash_merge=true`, `delete_branch_on_merge=true`, with squash commit title=PR_TITLE and message=PR_BODY. It's also documented in `AGENTS.md` under \"Pull Request & Git Requirements\".\n\n**How to apply:** Use `gh pr merge <n> --squash --delete-branch`, then `git checkout main && git pull --ff-only`. This replaces the `--merge` step in the [[project-dev-workflow]]. Because the squash commit takes the PR title and body, keep both clean and descriptive.",
   "new_string": "Always merge pull requests for agent-brain-visualizer with **squash merge**, never a merge commit or rebase merge. **Merge as soon as all PR checks are green — do not wait for separate per-PR approval** (the user granted standing authorization to merge on green).\n\n**Why:** The user set this as the project's merge policy. The GitHub repo (scottdensmore/antigravity-brain-visualizer) is configured squash-only with auto-merge: `allow_merge_commit=false`, `allow_rebase_merge=false`, `allow_squash_merge=true`, `allow_auto_merge=true`, `delete_branch_on_merge=true`, squash commit title=PR_TITLE, message=PR_BODY. Also documented in `AGENTS.md` under \"Pull Request & Git Requirements\".\n\n**How to apply:** When all CI checks (Backend, Frontend unit, End-to-end) are green, run `gh pr merge […]
 
@@ -6441,7 +6441,7 @@ id: toolu_015cRq5CfX4wg4xFJv51LsPm
 tool_result
 id: toolu_015cRq5CfX4wg4xFJv51LsPm
 ```
-The file /Users/scottdensmore/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-agent-brain-visualizer/memory/squash-merge-prs.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-agent-brain-visualizer/memory/squash-merge-prs.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6454,7 +6454,7 @@ tool_use Bash
 id: toolu_012dwYxiE5m7B22wqXX8yQ9z
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit add AGENTS.md\ngit commit -q -F - <<'EOF'\ndocs: squash-merge PRs as soon as CI checks are green\n\nExtend the merge policy in AGENTS.md: once all required CI checks pass\n(Backend, Frontend unit, End-to-end), squash-merge without waiting for\nfurther approval. Repository auto-merge is enabled, so a PR can be queued\nwith `gh pr merge <n> --squash --auto --delete-branch` to merge itself\nwhen the checks go green.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\necho \"commit exit: $?\"\ngit push -u origin chore/auto-merge-on-green 2>&1 | tail -3",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit add AGENTS.md\ngit commit -q -F - <<'EOF'\ndocs: squash-merge PRs as soon as CI checks are green\n\nExtend the merge policy in AGENTS.md: once all required CI checks pass\n(Backend, Frontend unit, End-to-end), squash-merge without waiting for\nfurther approval. Repository auto-merge is enabled, so a PR can be queued\nwith `gh pr merge <n> --squash --auto --delete-branch` to merge itself\nwhen the checks go green.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\necho \"commit exit: $?\"\ngit push -u origin chore/auto-merge-on-green 2>&1 | tail -3",
   "description": "Commit and push the policy doc change"
 }
 ```
@@ -6476,7 +6476,7 @@ tool_use Bash
 id: toolu_01Vn8N12a7VeVyCNYRV2HPHM
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh pr create --base main --head chore/auto-merge-on-green \\\n  --title \"docs: squash-merge PRs as soon as CI checks are green\" \\\n  --body \"$(cat <<'EOF'\n## What & why\n\nExtends the merge policy in `AGENTS.md`: once **all required CI checks pass** (Backend, Frontend unit, End-to-end), squash-merge the PR without waiting for separate approval.\n\nRepository **auto-merge is now enabled**, so a PR can be queued to merge itself when checks go green:\n\n```bash\ngh pr merge <n> --squash --auto --delete-branch\n```\n\nThis change is being merged via that exact flow as a demonstration.\n\n## How it was tested\n\nDocumentation/policy change only — no code affected. CI runs the full backend + frontend-unit + e2e suites.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\nEOF\n)\" 2>&1 | tail -2",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh pr create --base main --head chore/auto-merge-on-green \\\n  --title \"docs: squash-merge PRs as soon as CI checks are green\" \\\n  --body \"$(cat <<'EOF'\n## What & why\n\nExtends the merge policy in `AGENTS.md`: once **all required CI checks pass** (Backend, Frontend unit, End-to-end), squash-merge the PR without waiting for separate approval.\n\nRepository **auto-merge is now enabled**, so a PR can be queued to merge itself when checks go green:\n\n```bash\ngh pr merge <n> --squash --auto --delete-branch\n```\n\nThis change is being merged via that exact flow as a demonstration.\n\n## How it was tested\n\nDocumentation/policy change only — no code affected. CI runs the full backend + frontend-unit + e2e suites.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\nEOF\n)\" 2>&1 | tail -2",
   "description": "Open the policy PR"
 }
 ```
@@ -6499,7 +6499,7 @@ tool_use Bash
 id: toolu_01ABanXRBQnDUUUWZfG6T4RC
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nsleep 8\nRUN=$(gh run list --branch chore/auto-merge-on-green --workflow \"CI\" --limit 1 --json databaseId --jq '.[0].databaseId')\necho \"watching CI run $RUN for PR #3\"\ngh run watch \"$RUN\" --exit-status --interval 20 >/dev/null 2>&1; echo \"watch exit: $?\"\ngh run view \"$RUN\" --json status,conclusion --jq '{status, conclusion}'\ngh run view \"$RUN\" --json jobs --jq '.jobs[] | \"\\(.conclusion // .status)\\t\\(.name)\"'",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nsleep 8\nRUN=$(gh run list --branch chore/auto-merge-on-green --workflow \"CI\" --limit 1 --json databaseId --jq '.[0].databaseId')\necho \"watching CI run $RUN for PR #3\"\ngh run watch \"$RUN\" --exit-status --interval 20 >/dev/null 2>&1; echo \"watch exit: $?\"\ngh run view \"$RUN\" --json status,conclusion --jq '{status, conclusion}'\ngh run view \"$RUN\" --json jobs --jq '.jobs[] | \"\\(.conclusion // .status)\\t\\(.name)\"'",
   "description": "Watch PR #3 CI to completion",
   "timeout": 600000
 }
@@ -6528,7 +6528,7 @@ tool_use Bash
 id: toolu_013zVwDY1y9MiQjKKGnSfuqP
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh pr merge 3 --squash --delete-branch 2>&1 | tail -3\ngh pr view 3 --json state,mergedAt --jq '{state, mergedAt}'\necho \"--- sync + prune ---\"\ngit checkout main 2>&1 | tail -1\ngit pull --ff-only 2>&1 | tail -2\ngit fetch --prune 2>&1 | tail -1\ngit branch -d chore/auto-merge-on-green 2>&1 || echo \"(branch already gone)\"\necho \"--- branches ---\"; git branch\necho \"--- main log ---\"; git log --oneline -3",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh pr merge 3 --squash --delete-branch 2>&1 | tail -3\ngh pr view 3 --json state,mergedAt --jq '{state, mergedAt}'\necho \"--- sync + prune ---\"\ngit checkout main 2>&1 | tail -1\ngit pull --ff-only 2>&1 | tail -2\ngit fetch --prune 2>&1 | tail -1\ngit branch -d chore/auto-merge-on-green 2>&1 || echo \"(branch already gone)\"\necho \"--- branches ---\"; git branch\necho \"--- main log ---\"; git log --oneline -3",
   "description": "Merge PR #3 and clean up"
 }
 ```
@@ -6598,7 +6598,7 @@ tool_use Bash
 id: toolu_01NW1N68PdDwApWD9Kv6tSiC
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit checkout -b feat/ollama-local-model 2>&1 | tail -1",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit checkout -b feat/ollama-local-model 2>&1 | tail -1",
   "description": "Create feature branch"
 }
 ```
@@ -6617,7 +6617,7 @@ tool_use Read
 id: toolu_01VNXWxE52hHSTFZMKi8sh44
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/ChatModelFactory.java"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/ChatModelFactory.java"
 }
 ```
 
@@ -6679,7 +6679,7 @@ tool_use Read
 id: toolu_01AYvTtAVyk6UaoZPSQFXF83
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/GeminiConfig.java"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/GeminiConfig.java"
 }
 ```
 
@@ -6726,7 +6726,7 @@ tool_use Read
 id: toolu_019yLyEYkd4JSE9WnUVWCN5X
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/TokenCounter.java"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/TokenCounter.java"
 }
 ```
 
@@ -6775,7 +6775,7 @@ tool_use Read
 id: toolu_014jMqGEzuYxVHjwgfPnxbEL
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
   "offset": 48,
   "limit": 90
 }
@@ -6846,7 +6846,7 @@ id: toolu_01K1mGVbnFq8FsYddtgVtomP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/build.gradle",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/build.gradle",
   "old_string": "    // LangChain4j Google GenAI\n    implementation(\"dev.langchain4j:langchain4j-google-genai\")\n    implementation(\"dev.langchain4j:langchain4j\")",
   "new_string": "    // LangChain4j Google GenAI\n    implementation(\"dev.langchain4j:langchain4j-google-genai\")\n    // LangChain4j Ollama (local models, e.g. Gemma)\n    implementation(\"dev.langchain4j:langchain4j-ollama\")\n    implementation(\"dev.langchain4j:langchain4j\")"
 }
@@ -6857,7 +6857,7 @@ id: toolu_01K1mGVbnFq8FsYddtgVtomP
 tool_result
 id: toolu_01K1mGVbnFq8FsYddtgVtomP
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/build.gradle has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/build.gradle has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6866,7 +6866,7 @@ tool_use Bash
 id: toolu_01P1BVVmZSFqoiGWurHbL117
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\n# resolve deps and locate the ollama jar\nJAR=$(mise exec -- ./gradlew -q dependencies --configuration runtimeClasspath 2>/dev/null | grep -oE 'langchain4j-ollama:[0-9.]+' | head -1)\necho \"resolved: $JAR\"\nOLLAMA_JAR=$(find ~/.gradle/caches -name 'langchain4j-ollama-*.jar' 2>/dev/null | head -1)\necho \"jar: $OLLAMA_JAR\"\necho \"=== OllamaChatModel builder methods ===\"\nmise exec -- javap -classpath \"$OLLAMA_JAR\" 'dev.langchain4j.model.ollama.OllamaChatModel$OllamaChatModelBuilder' 2>/dev/null | grep -iE 'baseUrl|modelName|temperature|timeout|format|responseFormat|logReq|build\\(' | head -40",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\n# resolve deps and locate the ollama jar\nJAR=$(mise exec -- ./gradlew -q dependencies --configuration runtimeClasspath 2>/dev/null | grep -oE 'langchain4j-ollama:[0-9.]+' | head -1)\necho \"resolved: $JAR\"\nOLLAMA_JAR=$(find ~/.gradle/caches -name 'langchain4j-ollama-*.jar' 2>/dev/null | head -1)\necho \"jar: $OLLAMA_JAR\"\necho \"=== OllamaChatModel builder methods ===\"\nmise exec -- javap -classpath \"$OLLAMA_JAR\" 'dev.langchain4j.model.ollama.OllamaChatModel$OllamaChatModelBuilder' 2>/dev/null | grep -iE 'baseUrl|modelName|temperature|timeout|format|responseFormat|logReq|build\\(' | head -40",
   "description": "Inspect OllamaChatModel builder API",
   "timeout": 300000
 }
@@ -6888,7 +6888,7 @@ tool_use Bash
 id: toolu_0136gvVScbVuKzL9Z6vjVkYi
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nOLLAMA_JAR=$(find ~/.gradle -path '*langchain4j-ollama*' -name '*.jar' 2>/dev/null | grep -v sources | head -1)\necho \"jar: $OLLAMA_JAR\"\nif [ -z \"$OLLAMA_JAR\" ]; then echo \"forcing download via build...\"; mise exec -- ./gradlew :compileJava -q 2>/dev/null; OLLAMA_JAR=$(find ~/.gradle -path '*langchain4j-ollama*' -name '*.jar' 2>/dev/null | grep -v sources | head -1); echo \"jar now: $OLLAMA_JAR\"; fi\necho \"=== builder methods ===\"\nmise exec -- javap -classpath \"$OLLAMA_JAR\" 'dev.langchain4j.model.ollama.OllamaChatModel$OllamaChatModelBuilder' 2>&1 | grep -iE 'baseUrl|modelName|temperature|timeout|format|responseFormat|logReq|think|build\\(|returnThinking' | head -40\necho \"=== confirm responseFormat enum usable (ResponseFormat) ===\"\nmise exec -- javap -classpath \"$OLLAMA_JAR\" 'dev.langchain4j.model.ollama.OllamaChatModel$OllamaChatModelBuilder' 2>&1 | grep -i 'responseformat'",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nOLLAMA_JAR=$(find ~/.gradle -path '*langchain4j-ollama*' -name '*.jar' 2>/dev/null | grep -v sources | head -1)\necho \"jar: $OLLAMA_JAR\"\nif [ -z \"$OLLAMA_JAR\" ]; then echo \"forcing download via build...\"; mise exec -- ./gradlew :compileJava -q 2>/dev/null; OLLAMA_JAR=$(find ~/.gradle -path '*langchain4j-ollama*' -name '*.jar' 2>/dev/null | grep -v sources | head -1); echo \"jar now: $OLLAMA_JAR\"; fi\necho \"=== builder methods ===\"\nmise exec -- javap -classpath \"$OLLAMA_JAR\" 'dev.langchain4j.model.ollama.OllamaChatModel$OllamaChatModelBuilder' 2>&1 | grep -iE 'baseUrl|modelName|temperature|timeout|format|responseFormat|logReq|think|build\\(|returnThinking' | head -40\necho \"=== confirm responseFormat enum usable (ResponseFormat) ===\"\nmise exec -- javap -classpath \"$OLLAMA_JAR\" 'dev.langchain4j.model.ollama.OllamaChatModel$OllamaChatModelBuilder' 2>&1 | grep -i 'responseformat'",
   "description": "Locate ollama jar and inspect builder",
   "timeout": 300000
 }
@@ -6901,7 +6901,7 @@ id: toolu_0136gvVScbVuKzL9Z6vjVkYi
 ```
 jar: 
 forcing download via build...
-jar now: /Users/scottdensmore/.gradle/caches/modules-2/files-2.1/dev.langchain4j/langchain4j-ollama/1.16.1/6494e6502f561df2aaaebefcdbaa93a864718bcd/langchain4j-ollama-1.16.1.jar
+jar now: /home/<USER>/.gradle/caches/modules-2/files-2.1/dev.langchain4j/langchain4j-ollama/1.16.1/6494e6502f561df2aaaebefcdbaa93a864718bcd/langchain4j-ollama-1.16.1.jar
 === builder methods ===
   public dev.langchain4j.model.ollama.OllamaChatModel build();
   public dev.langchain4j.model.ollama.OllamaBaseChatModel build();
@@ -6929,7 +6929,7 @@ tool_use Write
 id: toolu_0152LjsFWNn62MyiJwTczxP3
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AiConfig.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AiConfig.java",
   "content": "/*\n * Copyright 2026 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage io.github.glaforge.agybrainviz;\n\nimport jakarta.inject.Inject;\nimport jakarta.inject.Singleton;\nimport java.util.Optional;\n\n/**\n * Central configuration for the AI backend. Two providers are supported:\n *\n * <ul>\n *   <li>{@code GEMINI} (default) — the remote Google Gemini API, requiring {@code GEMINI_API_KEY}.\n *   <li>{@code OLLAMA} — a local model (e.g. Gemma) served by Ollama; no API key required.\n * </ul>\n *\n * <p>Selection and settings come from environment variables:\n *\n * <ul>\n *   <li>{@code AI_PROVIDER} — {@code gemini} (default) or {@code ollama}\n *   <li>{@code GEMINI_API_KEY}, {@code GEMINI_MODEL} (default {@code gemini-3.5-flash})\n *   <li>{@code OLLAMA_BASE_URL} (default {@code http://localhost:11434}),\n *       {@code OLLAMA_MODEL} (default {@code gemma3})\n * </ul>\n *\n […]
 
 > TOOL
@@ -6937,7 +6937,7 @@ id: toolu_0152LjsFWNn62MyiJwTczxP3
 tool_result
 id: toolu_0152LjsFWNn62MyiJwTczxP3
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AiConfig.java (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AiConfig.java (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6946,7 +6946,7 @@ tool_use Write
 id: toolu_01WMW4yVfDvyGHEnxM3YBo8M
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AiConfigTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AiConfigTest.java",
   "content": "/*\n * Copyright 2026 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage io.github.glaforge.agybrainviz;\n\nimport static org.junit.jupiter.api.Assertions.assertEquals;\nimport static org.junit.jupiter.api.Assertions.assertFalse;\nimport static org.junit.jupiter.api.Assertions.assertTrue;\n\nimport io.github.glaforge.agybrainviz.AiConfig.Provider;\nimport org.junit.jupiter.api.Test;\n\nclass AiConfigTest {\n\n    private AiConfig config(String provider, String key) {\n        return new AiConfig(provider, key, null, null, null);\n    }\n\n    @Test\n    void defaultsToGeminiWhenProviderUnset() {\n        assertEquals(Provider.GEMINI, config(null, \"k\").provider());\n        assertEquals(Provider.GEMINI, config(\"\", \"k\").provider());\n    }\n\n    @Test\n    void selectsOllamaCaseInsensitively() {\n        assertEquals(Provider.OLLAMA, config(\"ollama\", \"\").provider());\n        assertEquals(Provider.OLLAMA, config(\"OLLAMA\", \"\").provider());\n        assertEquals(Provider.OLLAMA, config(\" Ollama \", \"\").provider());\n    }\n\n    @Test\n    void geminiIsConfiguredOnlyWithAKey() {\n        assertFalse(config(\"gemini\", \"\").isConfigured());\n        assertFalse(config(\"gemini\", \"   \").isConfigured());\n        assertTrue(config(\"gemini\", \"secret\").isConfigured());\n    }\n\n    @Test\n    void ollamaIsConfiguredWithoutAKey() {\n        assertTrue(config(\"ollama\", \"\").isConfigured());\n        assertTrue(config(\"ollama\", null).isConfigured());\n    }\n\n    @Test\n    void notConfiguredMessageMentionsTheApiKey() {\n        assertTrue(config(\"gemini\", \"\").notConfiguredMessage().contains(\"GEMINI_API_KEY\"));\n    }\n\n    @Test\n    void appliesDefaultModelsAndUrlsWhenBlank() {\n        AiConfig c = new AiConfig(\"ollama\", \"\", \"\", \"\", \"\");\n […]
 
 > TOOL
@@ -6954,7 +6954,7 @@ id: toolu_01WMW4yVfDvyGHEnxM3YBo8M
 tool_result
 id: toolu_01WMW4yVfDvyGHEnxM3YBo8M
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AiConfigTest.java (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AiConfigTest.java (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6967,7 +6967,7 @@ tool_use Write
 id: toolu_01FvBqcLw5SreHtYp215aBFN
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/ChatModelFactory.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/ChatModelFactory.java",
   "content": "/*\n * Copyright 2026 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage io.github.glaforge.agybrainviz;\n\nimport dev.langchain4j.model.chat.ChatModel;\nimport dev.langchain4j.model.chat.request.ResponseFormat;\nimport dev.langchain4j.model.google.genai.GoogleGenAiChatModel;\nimport dev.langchain4j.model.ollama.OllamaChatModel;\nimport io.micronaut.context.annotation.Factory;\nimport jakarta.inject.Inject;\nimport jakarta.inject.Singleton;\nimport java.time.Duration;\n\n/**\n * Produces the {@link ChatModel} used by {@link AnalyzerService}, choosing between the remote Google\n * Gemini API and a local Ollama model based on {@link AiConfig#provider()}.\n */\n@Factory\npublic class ChatModelFactory {\n\n    private final AiConfig aiConfig;\n\n    @Inject\n    public ChatModelFactory(AiConfig aiConfig) {\n        this.aiConfig = aiConfig;\n    }\n\n    @Singleton\n    public ChatModel chatModel() {\n        if (aiConfig.provider() == AiConfig.Provider.OLLAMA) {\n            return OllamaChatModel\n                .builder()\n                .baseUrl(aiConfig.ollamaBaseUrl())\n                .modelName(aiConfig.ollamaModel())\n                .temperature(0.0)\n                // Local models can be slower than the hosted API, so allow more time per request.\n                .timeout(Duration.ofMinutes(5))\n                .responseFormat(ResponseFormat.JSON)\n                .build();\n        }\n\n        return GoogleGenAiChatModel\n            .builder()\n            .apiKey(aiConfig.geminiApiKey().orElse(\"dummy\"))\n            .modelName(aiConfig.geminiModel())\n            .temperature(0.0)\n […]
 
 > TOOL
@@ -6975,7 +6975,7 @@ id: toolu_01FvBqcLw5SreHtYp215aBFN
 tool_result
 id: toolu_01FvBqcLw5SreHtYp215aBFN
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/ChatModelFactory.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/ChatModelFactory.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6988,7 +6988,7 @@ tool_use Write
 id: toolu_01UXUPz9pRmWCZmrosWWX52Q
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/TokenCounter.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/TokenCounter.java",
   "content": "/*\n * Copyright 2026 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage io.github.glaforge.agybrainviz;\n\nimport dev.langchain4j.model.TokenCountEstimator;\nimport dev.langchain4j.model.google.genai.GoogleGenAiTokenCountEstimator;\nimport jakarta.inject.Inject;\nimport jakarta.inject.Singleton;\n\n/**\n * Estimates the number of tokens in a piece of text, used to size analysis chunks.\n *\n * <p>For the Gemini provider this delegates to the Google GenAI tokenizer (built lazily on first use\n * so constructing the bean never performs network I/O). For the Ollama provider there is no cheap\n * remote tokenizer, so a character-based heuristic (~4 chars per token) is used — entirely local.\n *\n * <p>The Gemini estimator is built on first {@link #estimate(String)} call, which the analysis\n * pipeline invokes inside a try/catch that […]
 
 > TOOL
@@ -6996,7 +6996,7 @@ id: toolu_01UXUPz9pRmWCZmrosWWX52Q
 tool_result
 id: toolu_01UXUPz9pRmWCZmrosWWX52Q
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/TokenCounter.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/TokenCounter.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7010,7 +7010,7 @@ id: toolu_01YPwunyuh1dmT7pB1knAXsS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
   "old_string": "    private final AnalyzerService analyzerService;\n    private final ExecutorService executor;\n    private final GeminiConfig geminiConfig;\n    private final TokenCounter tokenCounter;\n\n    @Inject\n    public AnalysisController(\n        AnalyzerService analyzerService,\n        @Named(TaskExecutors.IO) ExecutorService executor,\n        GeminiConfig geminiConfig,\n        TokenCounter tokenCounter\n    ) {\n        this.analyzerService = analyzerService;\n        this.executor = executor;\n        this.geminiConfig = geminiConfig;\n        this.tokenCounter = tokenCounter;\n    }",
   "new_string": "    private final AnalyzerService analyzerService;\n    private final ExecutorService executor;\n    private final AiConfig aiConfig;\n    private final TokenCounter tokenCounter;\n\n    @Inject\n    public AnalysisController(\n        AnalyzerService analyzerService,\n        @Named(TaskExecutors.IO) ExecutorService executor,\n        AiConfig aiConfig,\n        TokenCounter tokenCounter\n    ) {\n        this.analyzerService = analyzerService;\n        this.executor = executor;\n        this.aiConfig = aiConfig;\n        this.tokenCounter = tokenCounter;\n    }"
 }
@@ -7021,7 +7021,7 @@ id: toolu_01YPwunyuh1dmT7pB1knAXsS
 tool_result
 id: toolu_01YPwunyuh1dmT7pB1knAXsS
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7031,7 +7031,7 @@ id: toolu_01765jxtTEBDfLVTqMR7zsuW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
   "old_string": "        if (geminiConfig.apiKey().isEmpty()) {\n            return \"{\\\"summary\\\": \\\"Error: GEMINI_API_KEY environment variable is not set. Cannot use LangChain4j analysis.\\\"}\";\n        }",
   "new_string": "        if (!aiConfig.isConfigured()) {\n            return \"{\\\"summary\\\": \\\"\" + aiConfig.notConfiguredMessage() + \"\\\"}\";\n        }"
 }
@@ -7042,7 +7042,7 @@ id: toolu_01765jxtTEBDfLVTqMR7zsuW
 tool_result
 id: toolu_01765jxtTEBDfLVTqMR7zsuW
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7051,7 +7051,7 @@ tool_use Bash
 id: toolu_01Nmvibk4wHVsq7YDr36fGmz
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit rm -q src/main/java/io/github/glaforge/agybrainviz/GeminiConfig.java\necho \"removed GeminiConfig; remaining references:\"\ngrep -rn \"GeminiConfig\" src/ 2>/dev/null || echo \"(none in src)\"",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit rm -q src/main/java/io/github/glaforge/agybrainviz/GeminiConfig.java\necho \"removed GeminiConfig; remaining references:\"\ngrep -rn \"GeminiConfig\" src/ 2>/dev/null || echo \"(none in src)\"",
   "description": "Delete GeminiConfig, check references"
 }
 ```
@@ -7079,7 +7079,7 @@ tool_use Read
 id: toolu_01RjG3y5zZXF24hGKRGdWhT3
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
   "offset": 47,
   "limit": 130
 }
@@ -7128,7 +7128,7 @@ id: toolu_01Bc1uE96A8yBqxPKruRVwaU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
   "old_string": " * Integration tests for {@link AnalysisController}, covering the \"generate AI analysis\" journey. The\n * LLM ({@link AnalyzerService}), the API-key accessor ({@link GeminiConfig}) and the token estimator\n * ({@link TokenCounter}) are replaced with deterministic mock beans so the orchestration, caching,\n * and error paths are exercised without any network access.",
   "new_string": " * Integration tests for {@link AnalysisController}, covering the \"generate AI analysis\" journey. The\n * LLM ({@link AnalyzerService}), the provider config ({@link AiConfig}) and the token estimator\n * ({@link TokenCounter}) are replaced with deterministic mock beans so the orchestration, caching,\n * and error paths are exercised without any network access."
 }
@@ -7139,7 +7139,7 @@ id: toolu_01Bc1uE96A8yBqxPKruRVwaU
 tool_result
 id: toolu_01Bc1uE96A8yBqxPKruRVwaU
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7149,7 +7149,7 @@ id: toolu_01AjFDz95smUxgKFjCypHE9H
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
   "old_string": "    // Controllable mock state, shared with the @MockBean factory methods below.\n    private static final AtomicReference<Optional<String>> API_KEY = new AtomicReference<>(\n        Optional.of(\"test-key\")\n    );\n    private static final AtomicInteger TOKEN_RESULT = new AtomicInteger(10);",
   "new_string": "    // Controllable mock state, shared with the @MockBean factory methods below.\n    private static final AtomicReference<String> PROVIDER = new AtomicReference<>(\"gemini\");\n    private static final AtomicReference<Optional<String>> API_KEY = new AtomicReference<>(\n        Optional.of(\"test-key\")\n    );\n    private static final AtomicInteger TOKEN_RESULT = new AtomicInteger(10);"
 }
@@ -7160,7 +7160,7 @@ id: toolu_01AjFDz95smUxgKFjCypHE9H
 tool_result
 id: toolu_01AjFDz95smUxgKFjCypHE9H
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7170,7 +7170,7 @@ id: toolu_01BmU7SknVHVx2WQ1ZC1jxXE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
   "old_string": "    @BeforeEach\n    void resetMocks() {\n        API_KEY.set(Optional.of(\"test-key\"));\n        TOKEN_RESULT.set(10);\n        ANALYZE_CALLS.clear();\n        CONSOLIDATE_CALLS.set(0);\n        ANALYZE_STARTED.set(null);\n        ANALYZE_RELEASE.set(null);\n    }\n\n    @MockBean(GeminiConfig.class)\n    GeminiConfig geminiConfig() {\n        return new GeminiConfig() {\n            @Override\n            public Optional<String> apiKey() {\n                return API_KEY.get();\n            }\n        };\n    }\n\n    @MockBean(TokenCounter.class)\n    TokenCounter tokenCounter() {\n        return new TokenCounter(new GeminiConfig()) {\n            @Override\n            public int estimate(String text) {\n                return TOKEN_RESULT.get();\n            }\n        };\n    }",
   "new_string": "    @BeforeEach\n    void resetMocks() {\n        PROVIDER.set(\"gemini\");\n        API_KEY.set(Optional.of(\"test-key\"));\n        TOKEN_RESULT.set(10);\n        ANALYZE_CALLS.clear();\n        CONSOLIDATE_CALLS.set(0);\n        ANALYZE_STARTED.set(null);\n        ANALYZE_RELEASE.set(null);\n    }\n\n    @MockBean(AiConfig.class)\n    AiConfig aiConfig() {\n        return new AiConfig(\"gemini\", \"\", \"\", \"\", \"\") {\n            @Override\n            public Provider provider() {\n                return \"ollama\".equalsIgnoreCase(PROVIDER.get())\n                    ? Provider.OLLAMA\n                    : Provider.GEMINI;\n            }\n\n            @Override\n            public Optional<String> geminiApiKey() {\n                return API_KEY.get();\n            }\n        };\n    }\n\n    @MockBean(TokenCounter.class)\n    TokenCounter tokenCounter() {\n        return new TokenCounter(new AiConfig(\"gemini\", \"\", \"\", \"\", \"\")) {\n            @Override\n            public int estimate(String text) {\n                return TOKEN_RESULT.get();\n            }\n        };\n    }"
 }
@@ -7181,7 +7181,7 @@ id: toolu_01BmU7SknVHVx2WQ1ZC1jxXE
 tool_result
 id: toolu_01BmU7SknVHVx2WQ1ZC1jxXE
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7194,7 +7194,7 @@ tool_use Read
 id: toolu_01J59zuaCzsPhZYL4StRyZhx
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
   "offset": 210,
   "limit": 40
 }
@@ -7254,7 +7254,7 @@ id: toolu_01MuVEJXcodeBtS12Lomuat1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
   "old_string": "    @Test\n    void summarizeReturnsErrorWhenApiKeyMissing() throws IOException {\n        API_KEY.set(Optional.empty());\n        String body = get(\"/api/analysis/conversations/any-id/summarize\");\n        JsonNode node = MAPPER.readTree(body);\n        assertTrue(node.get(\"summary\").asText().contains(\"GEMINI_API_KEY\"));\n    }",
   "new_string": "    @Test\n    void summarizeReturnsErrorWhenApiKeyMissing() throws IOException {\n        API_KEY.set(Optional.empty());\n        String body = get(\"/api/analysis/conversations/any-id/summarize\");\n        JsonNode node = MAPPER.readTree(body);\n        assertTrue(node.get(\"summary\").asText().contains(\"GEMINI_API_KEY\"));\n    }\n\n    @Test\n    void summarizeRunsWithoutAnApiKeyWhenUsingOllama() throws IOException {\n        // Ollama needs no key: the guard must pass and serve the cached analysis.\n        PROVIDER.set(\"ollama\");\n        API_KEY.set(Optional.empty());\n        String id = \"ollama-session\";\n        writeTranscript(id, \"{\\\"type\\\":\\\"USER_INPUT\\\",\\\"content\\\":\\\"hi\\\"}\\n\");\n        Files.writeString(logsDir(id).resolve(\"summary.json\"), \"{\\\"summary\\\":\\\"local result\\\"}\");\n\n        String body = get(\"/api/analysis/conversations/\" + id + \"/summarize\");\n        JsonNode node = MAPPER.readTree(body);\n        assertEquals(\"local result\", node.get(\"summary\").asText());\n    }"
 }
@@ -7265,7 +7265,7 @@ id: toolu_01MuVEJXcodeBtS12Lomuat1
 tool_result
 id: toolu_01MuVEJXcodeBtS12Lomuat1
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7278,7 +7278,7 @@ tool_use Write
 id: toolu_01DhV41bHZ1spWGoLGLXq8Qq
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/ChatModelFactoryTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/ChatModelFactoryTest.java",
   "content": "/*\n * Copyright 2026 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage io.github.glaforge.agybrainviz;\n\nimport static org.junit.jupiter.api.Assertions.assertInstanceOf;\n\nimport dev.langchain4j.model.chat.ChatModel;\nimport dev.langchain4j.model.google.genai.GoogleGenAiChatModel;\nimport dev.langchain4j.model.ollama.OllamaChatModel;\nimport org.junit.jupiter.api.Test;\n\n/** Verifies {@link ChatModelFactory} picks the chat model implementation per the configured provider. */\nclass ChatModelFactoryTest {\n\n    private AiConfig config(String provider) {\n        return new AiConfig(provider, \"test-key\", null, null, null);\n    }\n\n    @Test\n    void buildsGeminiModelForTheGeminiProvider() {\n        ChatModel model = new ChatModelFactory(config(\"gemini\")).chatModel();\n        assertInstanceOf(GoogleGenAiChatModel.class, model);\n    }\n\n    @Test\n    void buildsOllamaModelForTheOllamaProvider() {\n        ChatModel model = new ChatModelFactory(config(\"ollama\")).chatModel();\n        assertInstanceOf(OllamaChatModel.class, model);\n    }\n}\n"
 }
 ```
@@ -7288,7 +7288,7 @@ id: toolu_01DhV41bHZ1spWGoLGLXq8Qq
 tool_result
 id: toolu_01DhV41bHZ1spWGoLGLXq8Qq
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/ChatModelFactoryTest.java (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/ChatModelFactoryTest.java (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7297,7 +7297,7 @@ tool_use Write
 id: toolu_01W5DEWsoBFX4USHys3huGZq
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/TokenCounterTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/TokenCounterTest.java",
   "content": "/*\n * Copyright 2026 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage io.github.glaforge.agybrainviz;\n\nimport static org.junit.jupiter.api.Assertions.assertEquals;\n\nimport org.junit.jupiter.api.Test;\n\n/**\n * Tests the Ollama token-estimation path, which must be a purely local character heuristic (no\n * network, no remote tokenizer). The Gemini path delegates to the Google tokenizer and is covered by\n * the integration tests with a mocked TokenCounter.\n */\nclass TokenCounterTest {\n\n    private TokenCounter ollamaCounter() {\n        return new TokenCounter(new AiConfig(\"ollama\", \"\", \"\", \"\", \"\"));\n    }\n\n    @Test\n    void ollamaUsesALocalCharacterHeuristic() {\n        // ~4 characters per token.\n        assertEquals(2, ollamaCounter().estimate(\"abcdefgh\"));\n        assertEquals(25, ollamaCounter().estimate(\"x\".repeat(100)));\n    }\n\n    @Test\n    void ollamaEstimateIsAtLeastOne() {\n        assertEquals(1, ollamaCounter().estimate(\"x\"));\n        assertEquals(1, ollamaCounter().estimate(\"\"));\n    }\n}\n"
 }
 ```
@@ -7307,7 +7307,7 @@ id: toolu_01W5DEWsoBFX4USHys3huGZq
 tool_result
 id: toolu_01W5DEWsoBFX4USHys3huGZq
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/TokenCounterTest.java (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/TokenCounterTest.java (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7320,7 +7320,7 @@ tool_use Bash
 id: toolu_01UNknr23aw6Db21YqiXo3T1
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew test --console=plain 2>&1 | tail -30",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew test --console=plain 2>&1 | tail -30",
   "description": "Compile and run backend tests",
   "timeout": 600000
 }
@@ -7345,7 +7345,7 @@ Note: Recompile with -Xlint:unchecked for details.
 > Task :testClasses
 > Task :test
 
-[Incubating] Problems report is available at: file:///Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/build/reports/problems/problems-report.html
+[Incubating] Problems report is available at: file:///home/<USER>/Developer/scottdensmore/agent-brain-visualizer/build/reports/problems/problems-report.html
 
 BUILD SUCCESSFUL in 3s
 6 actionable tasks: 4 executed, 2 up-to-date
@@ -7362,7 +7362,7 @@ tool_use Bash
 id: toolu_01DKgLVVUNX6eLaLn8nksCS5
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ntotal=0\nfor f in build/test-results/test/*.xml; do\n  n=$(grep -o 'testsuite name=\"[^\"]*\" tests=\"[0-9]*\"' \"$f\" | sed 's/.*tests=\"//;s/\"//')\n  name=$(basename \"$f\" | sed 's/TEST-io.github.glaforge.agybrainviz.//;s/.xml//')\n  echo \"$name: $n\"; total=$((total+n))\ndone\necho \"TOTAL backend: $total\"",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ntotal=0\nfor f in build/test-results/test/*.xml; do\n  n=$(grep -o 'testsuite name=\"[^\"]*\" tests=\"[0-9]*\"' \"$f\" | sed 's/.*tests=\"//;s/\"//')\n  name=$(basename \"$f\" | sed 's/TEST-io.github.glaforge.agybrainviz.//;s/.xml//')\n  echo \"$name: $n\"; total=$((total+n))\ndone\necho \"TOTAL backend: $total\"",
   "description": "Confirm backend test counts"
 }
 ```
@@ -7393,7 +7393,7 @@ tool_use Bash
 id: toolu_012PHBVb97zAaHwci4khPJ4U
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngrep -nE 'GEMINI_API_KEY|Environment|Usage|## |MICRONAUT_SERVER_PORT|export' README.md | head -40",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngrep -nE 'GEMINI_API_KEY|Environment|Usage|## |MICRONAUT_SERVER_PORT|export' README.md | head -40",
   "description": "Locate README config section"
 }
 ```
@@ -7426,7 +7426,7 @@ tool_use Read
 id: toolu_01FUBxjQ2ja9eTuira5Ea3ib
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/README.md",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/README.md",
   "offset": 72,
   "limit": 24
 }
@@ -7470,7 +7470,7 @@ id: toolu_01D59aAkaft85Uy8HDnedK81
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/README.md",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/README.md",
   "old_string": "## Running the Application (from Sources)\n\nTo run the application locally, you must provide your Gemini API key:\n\n```bash\nexport GEMINI_API_KEY=\"your-api-key-here\"\n./gradlew run\n```\n\nOnce the server starts, open your web browser and navigate to [http://localhost:8080](http://localhost:8080) to interact with the visualizer.",
   "new_string": "## Running the Application (from Sources)\n\nThe transcript analysis can be powered by either the remote **Google Gemini** API (default) or a\n**local model served by [Ollama](https://ollama.com/)** (e.g. Gemma) — no API key or network\nrequired.\n\n### Option A — Gemini (default)\n\nTo run with the hosted Gemini model, provide your API key:\n\n```bash\nexport GEMINI_API_KEY=\"your-api-key-here\"\n./gradlew run\n```\n\n### Option B — Local model via Ollama\n\nPull a model and make sure Ollama is running (`ollama serve`), then start the app with\n`AI_PROVIDER=ollama`:\n\n```bash\nollama pull gemma3            # or any Gemma tag you prefer\nexport AI_PROVIDER=ollama\nexport OLLAMA_MODEL=gemma3    # optional; defaults to gemma3\n./gradlew run\n```\n\nNo `GEMINI_API_KEY` is needed in this mode.\n\n#### AI configuration reference\n\n| Variable          | Applies to | Default                  | Description                                  |\n| ----------------- | ---------- | ------------------------ | -------------------------------------------- |\n| `AI_PROVIDER`     | both       | `gemini`                 | `gemini` or `ollama`                         |\n| `GEMINI_API_KEY`  | gemini     | _(required for gemini)_  | Google Gemini API key                        |\n| `GEMINI_MODEL`    | gemini     | `gemini-3.5-flash`       | Gemini model name                            |\n| `OLLAMA_BASE_URL` | ollama     | `http://localhost:11434` […]
 
@@ -7479,7 +7479,7 @@ id: toolu_01D59aAkaft85Uy8HDnedK81
 tool_result
 id: toolu_01D59aAkaft85Uy8HDnedK81
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7493,7 +7493,7 @@ id: toolu_01JZVkYGput6Gx4YDrauopsD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/AGENTS.md",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/AGENTS.md",
   "old_string": "- **AI Integration**: LangChain4j, Google Gemini models (Docs: https://docs.langchain4j.dev/integrations/language-models/google-genai/)",
   "new_string": "- **AI Integration**: LangChain4j, with a pluggable provider — Google Gemini (remote, default) or a local model via Ollama (e.g. Gemma). Selected with `AI_PROVIDER` (`gemini` | `ollama`). (Docs: https://docs.langchain4j.dev/integrations/language-models/google-genai/ and https://docs.langchain4j.dev/integrations/language-models/ollama/)"
 }
@@ -7504,7 +7504,7 @@ id: toolu_01JZVkYGput6Gx4YDrauopsD
 tool_result
 id: toolu_01JZVkYGput6Gx4YDrauopsD
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/AGENTS.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/AGENTS.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7517,7 +7517,7 @@ tool_use Bash
 id: toolu_01Pk4Gcmrba8pz2qQSsDHhUW
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\necho \"=== spotlessApply + build ===\"\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -8\necho \"=== frontend unit ===\"\nnpm test 2>&1 | tail -5\necho \"=== e2e (rebuild jar, run) ===\"\nmise exec -- ./gradlew shadowJar -x test --console=plain 2>&1 | tail -2\nlsof -ti tcp:8099 | xargs kill -9 2>/dev/null; sleep 1\nmise exec -- npx playwright test 2>&1 | tail -6",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\necho \"=== spotlessApply + build ===\"\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -8\necho \"=== frontend unit ===\"\nnpm test 2>&1 | tail -5\necho \"=== e2e (rebuild jar, run) ===\"\nmise exec -- ./gradlew shadowJar -x test --console=plain 2>&1 | tail -2\nlsof -ti tcp:8099 | xargs kill -9 2>/dev/null; sleep 1\nmise exec -- npx playwright test 2>&1 | tail -6",
   "description": "Full verification: build, unit, e2e",
   "timeout": 600000
 }
@@ -7564,7 +7564,7 @@ tool_use Bash
 id: toolu_01KDQ2AaYmvGXfA7GZXnqdmD
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit add -A\ngit status --short | grep -vE '\\.claude|\\.entire'",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit add -A\ngit status --short | grep -vE '\\.claude|\\.entire'",
   "description": "Stage feature changes"
 }
 ```
@@ -7595,7 +7595,7 @@ id: toolu_01H2pUG5B5eknjRryHe9C62B
 ```json
 {
   "description": "Review Ollama provider feature",
-  "prompt": "You are a senior code reviewer. Review the STAGED git diff in /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer (run `git diff --cached`). This feature adds support for a local model via Ollama as an alternative to the remote Google Gemini API, both selectable.\n\nContext:\n- New `AiConfig` bean (replaces `GeminiConfig`) selects provider via `AI_PROVIDER` env (gemini default | ollama) and holds gemini key/model + ollama base-url/model, read from env with a package-private constructor as a test seam.\n- `ChatModelFactory` now builds `GoogleGenAiChatModel` or `OllamaChatModel` (langchain4j-ollama added to build.gradle).\n- `TokenCounter` uses the Gemini tokenizer for gemini and a local char/4 heuristic for ollama (no network).\n- `AnalysisController` guard changed from \"GEMINI_API_KEY missing\" to `aiConfig.isConfigured()` (ollama needs no key).\n- Tests: AiConfigTest, ChatModelFactoryTest, TokenCounterTest (new), AnalysisControllerTest updated (mocks AiConfig; adds an ollama-without-key test). All 57 backend + 44 frontend + 14 e2e pass locally.\n\nFocus on:\n1. **Correctness/behavior**: Is provider selection, the isConfigured guard, and the token-counter switch correct? Any regression in the Gemini path vs before? The controller builds the not-configured error JSON by string-concatenating `aiConfig.notConfiguredMessage()` into a JSON string literal — is that safe (JSON injection / quotes)?\n2. **LangChain4j Ollama usage**: builder options correct/sane (responseFormat JSON, timeout)? Any obvious misuse […]
+  "prompt": "You are a senior code reviewer. Review the STAGED git diff in /home/<USER>/Developer/scottdensmore/agent-brain-visualizer (run `git diff --cached`). This feature adds support for a local model via Ollama as an alternative to the remote Google Gemini API, both selectable.\n\nContext:\n- New `AiConfig` bean (replaces `GeminiConfig`) selects provider via `AI_PROVIDER` env (gemini default | ollama) and holds gemini key/model + ollama base-url/model, read from env with a package-private constructor as a test seam.\n- `ChatModelFactory` now builds `GoogleGenAiChatModel` or `OllamaChatModel` (langchain4j-ollama added to build.gradle).\n- `TokenCounter` uses the Gemini tokenizer for gemini and a local char/4 heuristic for ollama (no network).\n- `AnalysisController` guard changed from \"GEMINI_API_KEY missing\" to `aiConfig.isConfigured()` (ollama needs no key).\n- Tests: AiConfigTest, ChatModelFactoryTest, TokenCounterTest (new), AnalysisControllerTest updated (mocks AiConfig; adds an ollama-without-key test). All 57 backend + 44 frontend + 14 e2e pass locally.\n\nFocus on:\n1. **Correctness/behavior**: Is provider selection, the isConfigured guard, and the token-counter switch correct? Any regression in the Gemini path vs before? The controller builds the not-configured error JSON by string-concatenating `aiConfig.notConfiguredMessage()` into a JSON string literal — is that safe (JSON injection / quotes)?\n2. **LangChain4j Ollama usage**: builder options correct/sane (responseFormat JSON, timeout)? Any obvious misuse […]
 
 > TOOL
 
@@ -7638,7 +7638,7 @@ id: toolu_01GnmxyS58PTty1H47uNrvsh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
   "old_string": "        if (!aiConfig.isConfigured()) {\n            return \"{\\\"summary\\\": \\\"\" + aiConfig.notConfiguredMessage() + \"\\\"}\";\n        }",
   "new_string": "        if (!aiConfig.isConfigured()) {\n            // Serialize via Jackson so the message is always valid JSON, regardless of its content.\n            return new ObjectMapper()\n                .writeValueAsString(Map.of(\"summary\", aiConfig.notConfiguredMessage()));\n        }"
 }
@@ -7649,7 +7649,7 @@ id: toolu_01GnmxyS58PTty1H47uNrvsh
 tool_result
 id: toolu_01GnmxyS58PTty1H47uNrvsh
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7662,7 +7662,7 @@ tool_use Bash
 id: toolu_01J9xyb7diMQhkXJwFbFuQRu
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -6",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -6",
   "description": "Re-verify after review fix",
   "timeout": 600000
 }
@@ -7673,7 +7673,7 @@ id: toolu_01J9xyb7diMQhkXJwFbFuQRu
 tool_result
 id: toolu_01J9xyb7diMQhkXJwFbFuQRu
 ```
-[Incubating] Problems report is available at: file:///Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/build/reports/problems/problems-report.html
+[Incubating] Problems report is available at: file:///home/<USER>/Developer/scottdensmore/agent-brain-visualizer/build/reports/problems/problems-report.html
 
 BUILD SUCCESSFUL in 13s
 37 actionable tasks: 27 executed, 10 up-to-date
@@ -7686,7 +7686,7 @@ tool_use Bash
 id: toolu_01MSCEtWjZYHkUa3nkBQunDu
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit add -A\ngit status --short | grep -vE '\\.claude|\\.entire'\ngit commit -q -F - <<'EOF'\nfeat(ai): support local Gemma via Ollama alongside remote Gemini\n\nMake the analysis backend pluggable between the hosted Google Gemini API\n(default) and a local model served by Ollama (e.g. Gemma) — no API key or\nnetwork required for the local path. Selected with AI_PROVIDER.\n\n- Add AiConfig: a single config bean (replacing GeminiConfig) that selects\n  the provider (AI_PROVIDER=gemini|ollama) and exposes gemini key/model and\n  ollama base-url/model, read from env with a package-private constructor as\n  a test seam. Defaults: gemini-3.5-flash, http://localhost:11434, gemma3.\n- ChatModelFactory builds a GoogleGenAiChatModel or an OllamaChatModel\n  (langchain4j-ollama added), both with JSON response format for the\n  structured @AiService output.\n- TokenCounter uses the Google tokenizer for Gemini and a purely local\n  ~4-chars/token heuristic for Ollama (no remote tokenizer).\n- AnalysisController's guard is now provider-aware (isConfigured): Ollama\n  needs no key. The not-configured error is serialized via Jackson so it is\n  always valid JSON.\n- README documents both modes + an env-var reference table; AGENTS.md notes\n  the pluggable provider.\n\nTests: AiConfigTest, ChatModelFactoryTest, TokenCounterTest, and an\nAnalysisController test proving Ollama runs without a key — 57 backend\ntests total, all green (plus 44 frontend unit + 14 e2e).\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\necho […]
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit add -A\ngit status --short | grep -vE '\\.claude|\\.entire'\ngit commit -q -F - <<'EOF'\nfeat(ai): support local Gemma via Ollama alongside remote Gemini\n\nMake the analysis backend pluggable between the hosted Google Gemini API\n(default) and a local model served by Ollama (e.g. Gemma) — no API key or\nnetwork required for the local path. Selected with AI_PROVIDER.\n\n- Add AiConfig: a single config bean (replacing GeminiConfig) that selects\n  the provider (AI_PROVIDER=gemini|ollama) and exposes gemini key/model and\n  ollama base-url/model, read from env with a package-private constructor as\n  a test seam. Defaults: gemini-3.5-flash, http://localhost:11434, gemma3.\n- ChatModelFactory builds a GoogleGenAiChatModel or an OllamaChatModel\n  (langchain4j-ollama added), both with JSON response format for the\n  structured @AiService output.\n- TokenCounter uses the Google tokenizer for Gemini and a purely local\n  ~4-chars/token heuristic for Ollama (no remote tokenizer).\n- AnalysisController's guard is now provider-aware (isConfigured): Ollama\n  needs no key. The not-configured error is serialized via Jackson so it is\n  always valid JSON.\n- README documents both modes + an env-var reference table; AGENTS.md notes\n  the pluggable provider.\n\nTests: AiConfigTest, ChatModelFactoryTest, TokenCounterTest, and an\nAnalysisController test proving Ollama runs without a key — 57 backend\ntests total, all green (plus 44 frontend unit + 14 e2e).\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\necho […]
 
 > TOOL
 
@@ -7717,7 +7717,7 @@ tool_use Bash
 id: toolu_01DD4ry5c2WSTVyJMbLB3tmw
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh pr create --base main --head feat/ollama-local-model \\\n  --title \"feat(ai): support local Gemma via Ollama alongside remote Gemini\" \\\n  --body \"$(cat <<'EOF'\n## What & why\n\nAdds the ability to run transcript analysis against a **local model served by [Ollama](https://ollama.com/)** (e.g. Gemma) as an alternative to the remote **Google Gemini** API. Both are supported; Gemini stays the default. The local path needs **no API key and no network**.\n\n## How it works\n\n- **`AiConfig`** (new, replaces `GeminiConfig`) — one config bean that selects the provider via `AI_PROVIDER` (`gemini` | `ollama`) and exposes the Gemini key/model and Ollama base-url/model. Read from env with a package-private constructor as a test seam.\n- **`ChatModelFactory`** builds a `GoogleGenAiChatModel` or an `OllamaChatModel` (added `langchain4j-ollama`), both with JSON response format for the structured `@AiService` output.\n- **`TokenCounter`** uses the Google tokenizer for Gemini and a purely local ~4-chars/token heuristic for Ollama (no remote tokenizer).\n- **`AnalysisController`** guard is now provider-aware (`isConfigured()`): Ollama needs no key. The not-configured error is serialized via Jackson (always valid JSON).\n\n## Configuration\n\n| Variable | Applies to | Default | Notes |\n|---|---|---|---|\n| `AI_PROVIDER` | both | `gemini` | `gemini` or `ollama` |\n| `GEMINI_API_KEY` | gemini | _(required for gemini)_ | |\n| `GEMINI_MODEL` […]
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh pr create --base main --head feat/ollama-local-model \\\n  --title \"feat(ai): support local Gemma via Ollama alongside remote Gemini\" \\\n  --body \"$(cat <<'EOF'\n## What & why\n\nAdds the ability to run transcript analysis against a **local model served by [Ollama](https://ollama.com/)** (e.g. Gemma) as an alternative to the remote **Google Gemini** API. Both are supported; Gemini stays the default. The local path needs **no API key and no network**.\n\n## How it works\n\n- **`AiConfig`** (new, replaces `GeminiConfig`) — one config bean that selects the provider via `AI_PROVIDER` (`gemini` | `ollama`) and exposes the Gemini key/model and Ollama base-url/model. Read from env with a package-private constructor as a test seam.\n- **`ChatModelFactory`** builds a `GoogleGenAiChatModel` or an `OllamaChatModel` (added `langchain4j-ollama`), both with JSON response format for the structured `@AiService` output.\n- **`TokenCounter`** uses the Google tokenizer for Gemini and a purely local ~4-chars/token heuristic for Ollama (no remote tokenizer).\n- **`AnalysisController`** guard is now provider-aware (`isConfigured()`): Ollama needs no key. The not-configured error is serialized via Jackson (always valid JSON).\n\n## Configuration\n\n| Variable | Applies to | Default | Notes |\n|---|---|---|---|\n| `AI_PROVIDER` | both | `gemini` | `gemini` or `ollama` |\n| `GEMINI_API_KEY` | gemini | _(required for gemini)_ | |\n| `GEMINI_MODEL` […]
 
 > TOOL
 
@@ -7737,7 +7737,7 @@ tool_use Bash
 id: toolu_01K6bkVmMRxz2JNFeaZpaV57
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nsleep 8\nRUN=$(gh run list --branch feat/ollama-local-model --workflow \"CI\" --limit 1 --json databaseId --jq '.[0].databaseId')\necho \"watching CI run $RUN\"\ngh run watch \"$RUN\" --exit-status --interval 20 >/dev/null 2>&1; echo \"watch exit: $?\"\ngh run view \"$RUN\" --json status,conclusion --jq '{status, conclusion}'\ngh run view \"$RUN\" --json jobs --jq '.jobs[] | \"\\(.conclusion // .status)\\t\\(.name)\"'",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nsleep 8\nRUN=$(gh run list --branch feat/ollama-local-model --workflow \"CI\" --limit 1 --json databaseId --jq '.[0].databaseId')\necho \"watching CI run $RUN\"\ngh run watch \"$RUN\" --exit-status --interval 20 >/dev/null 2>&1; echo \"watch exit: $?\"\ngh run view \"$RUN\" --json status,conclusion --jq '{status, conclusion}'\ngh run view \"$RUN\" --json jobs --jq '.jobs[] | \"\\(.conclusion // .status)\\t\\(.name)\"'",
   "description": "Watch PR #4 CI to completion",
   "timeout": 600000
 }
@@ -7766,7 +7766,7 @@ tool_use Bash
 id: toolu_01LJDhCfrdK7nuhcwHgUwAQ7
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh pr merge 4 --squash --delete-branch 2>&1 | tail -2\ngh pr view 4 --json state,mergedAt --jq '{state, mergedAt}'\necho \"--- sync + prune ---\"\ngit checkout main 2>&1 | tail -1\ngit pull --ff-only 2>&1 | tail -2\ngit fetch --prune 2>&1 | tail -1\ngit branch -d feat/ollama-local-model 2>&1 || echo \"(branch already gone)\"\necho \"--- branches ---\"; git branch\necho \"--- main log ---\"; git log --oneline -3",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh pr merge 4 --squash --delete-branch 2>&1 | tail -2\ngh pr view 4 --json state,mergedAt --jq '{state, mergedAt}'\necho \"--- sync + prune ---\"\ngit checkout main 2>&1 | tail -1\ngit pull --ff-only 2>&1 | tail -2\ngit fetch --prune 2>&1 | tail -1\ngit branch -d feat/ollama-local-model 2>&1 || echo \"(branch already gone)\"\necho \"--- branches ---\"; git branch\necho \"--- main log ---\"; git log --oneline -3",
   "description": "Merge PR #4 and clean up"
 }
 ```
@@ -7897,7 +7897,7 @@ tool_use Bash
 id: toolu_01ASzjgFMTsyCN3yewVgtVPA
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit checkout -b chore/default-ollama-gemma4 2>&1 | tail -1",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit checkout -b chore/default-ollama-gemma4 2>&1 | tail -1",
   "description": "Branch for default model change"
 }
 ```
@@ -7917,7 +7917,7 @@ id: toolu_01P69ZbsVWB355c987gMGDgZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AiConfig.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AiConfig.java",
   "old_string": "    static final String DEFAULT_OLLAMA_MODEL = \"gemma3\";",
   "new_string": "    static final String DEFAULT_OLLAMA_MODEL = \"gemma4\";"
 }
@@ -7928,7 +7928,7 @@ id: toolu_01P69ZbsVWB355c987gMGDgZ
 tool_result
 id: toolu_01P69ZbsVWB355c987gMGDgZ
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AiConfig.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AiConfig.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7938,7 +7938,7 @@ id: toolu_01J8Dg7iwKetfwHzT5Kqzfuy
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AiConfig.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AiConfig.java",
   "old_string": " *       {@code OLLAMA_MODEL} (default {@code gemma3})",
   "new_string": " *       {@code OLLAMA_MODEL} (default {@code gemma4})"
 }
@@ -7949,7 +7949,7 @@ id: toolu_01J8Dg7iwKetfwHzT5Kqzfuy
 tool_result
 id: toolu_01J8Dg7iwKetfwHzT5Kqzfuy
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AiConfig.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AiConfig.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7963,7 +7963,7 @@ id: toolu_013ic1cyvVpcayuMUq3N8hqG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AiConfigTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AiConfigTest.java",
   "old_string": "    @Test\n    void appliesDefaultModelsAndUrlsWhenBlank() {\n        AiConfig c = new AiConfig(\"ollama\", \"\", \"\", \"\", \"\");\n        assertEquals(AiConfig.DEFAULT_GEMINI_MODEL, c.geminiModel());\n        assertEquals(AiConfig.DEFAULT_OLLAMA_BASE_URL, c.ollamaBaseUrl());\n        assertEquals(AiConfig.DEFAULT_OLLAMA_MODEL, c.ollamaModel());\n    }",
   "new_string": "    @Test\n    void appliesDefaultModelsAndUrlsWhenBlank() {\n        AiConfig c = new AiConfig(\"ollama\", \"\", \"\", \"\", \"\");\n        assertEquals(\"gemini-3.5-flash\", c.geminiModel());\n        assertEquals(\"http://localhost:11434\", c.ollamaBaseUrl());\n        assertEquals(\"gemma4\", c.ollamaModel());\n    }"
 }
@@ -7974,7 +7974,7 @@ id: toolu_013ic1cyvVpcayuMUq3N8hqG
 tool_result
 id: toolu_013ic1cyvVpcayuMUq3N8hqG
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AiConfigTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AiConfigTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7988,7 +7988,7 @@ id: toolu_011aP6uRHVteCmxnU7wAxJy7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/README.md",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/README.md",
   "old_string": "```bash\nollama pull gemma3            # or any Gemma tag you prefer\nexport AI_PROVIDER=ollama\nexport OLLAMA_MODEL=gemma3    # optional; defaults to gemma3\n./gradlew run\n```",
   "new_string": "```bash\nollama pull gemma4            # or any Gemma tag you prefer\nexport AI_PROVIDER=ollama\nexport OLLAMA_MODEL=gemma4    # optional; defaults to gemma4\n./gradlew run\n```"
 }
@@ -7999,7 +7999,7 @@ id: toolu_011aP6uRHVteCmxnU7wAxJy7
 tool_result
 id: toolu_011aP6uRHVteCmxnU7wAxJy7
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8009,7 +8009,7 @@ id: toolu_011HZsdpvDDUe4qVfe2eJd3n
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/README.md",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/README.md",
   "old_string": "| `OLLAMA_MODEL`    | ollama     | `gemma3`                 | Local model tag to use                       |",
   "new_string": "| `OLLAMA_MODEL`    | ollama     | `gemma4`                 | Local model tag to use                       |"
 }
@@ -8020,7 +8020,7 @@ id: toolu_011HZsdpvDDUe4qVfe2eJd3n
 tool_result
 id: toolu_011HZsdpvDDUe4qVfe2eJd3n
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8033,7 +8033,7 @@ tool_use Bash
 id: toolu_018vnw8BUhgKGiegUJbQRh1s
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\necho \"--- remaining gemma3 refs ---\"\ngrep -rn \"gemma3\" --include='*.java' --include='*.md' --include='*.js' --include='*.gradle' . 2>/dev/null | grep -v node_modules | grep -v 'gemma3:27b' || echo \"(none, except the intentional explicit-override test example)\"\necho \"--- gemma3:27b (test example, intentional) ---\"\ngrep -rn \"gemma3:27b\" src/ 2>/dev/null || echo \"(none)\"",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\necho \"--- remaining gemma3 refs ---\"\ngrep -rn \"gemma3\" --include='*.java' --include='*.md' --include='*.js' --include='*.gradle' . 2>/dev/null | grep -v node_modules | grep -v 'gemma3:27b' || echo \"(none, except the intentional explicit-override test example)\"\necho \"--- gemma3:27b (test example, intentional) ---\"\ngrep -rn \"gemma3:27b\" src/ 2>/dev/null || echo \"(none)\"",
   "description": "Check for stray gemma3 references"
 }
 ```
@@ -8061,7 +8061,7 @@ id: toolu_01Nj63LLYCLzjpnKenb6VYcw
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AiConfigTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AiConfigTest.java",
   "old_string": "gemma3:27b",
   "new_string": "gemma4:31b"
 }
@@ -8072,7 +8072,7 @@ id: toolu_01Nj63LLYCLzjpnKenb6VYcw
 tool_result
 id: toolu_01Nj63LLYCLzjpnKenb6VYcw
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AiConfigTest.java has been updated. All occurrences were successfully replaced. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AiConfigTest.java has been updated. All occurrences were successfully replaced. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8081,7 +8081,7 @@ tool_use Bash
 id: toolu_01Aa5rd2jCaKgcngakgqMLmv
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -5",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -5",
   "description": "Verify build + tests",
   "timeout": 600000
 }
@@ -8092,7 +8092,7 @@ id: toolu_01Aa5rd2jCaKgcngakgqMLmv
 tool_result
 id: toolu_01Aa5rd2jCaKgcngakgqMLmv
 ```
-[Incubating] Problems report is available at: file:///Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/build/reports/problems/problems-report.html
+[Incubating] Problems report is available at: file:///home/<USER>/Developer/scottdensmore/agent-brain-visualizer/build/reports/problems/problems-report.html
 
 BUILD SUCCESSFUL in 14s
 37 actionable tasks: 28 executed, 9 up-to-date
@@ -8109,7 +8109,7 @@ tool_use Bash
 id: toolu_01PWZPduNpAZEuHgb9GPzqmj
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit add -A\ngit status --short | grep -vE '\\.claude|\\.entire'\ngit commit -q -F - <<'EOF'\nchore(ai): default Ollama model to gemma4\n\ngemma4 is now available on Ollama (https://ollama.com/library/gemma4), so\nmake it the default OLLAMA_MODEL instead of gemma3. Updates the AiConfig\ndefault, the pinned default-value test, and the README references.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\necho \"exit: $?\"\ngit push -u origin chore/default-ollama-gemma4 2>&1 | tail -3",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit add -A\ngit status --short | grep -vE '\\.claude|\\.entire'\ngit commit -q -F - <<'EOF'\nchore(ai): default Ollama model to gemma4\n\ngemma4 is now available on Ollama (https://ollama.com/library/gemma4), so\nmake it the default OLLAMA_MODEL instead of gemma3. Updates the AiConfig\ndefault, the pinned default-value test, and the README references.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\necho \"exit: $?\"\ngit push -u origin chore/default-ollama-gemma4 2>&1 | tail -3",
   "description": "Commit and push default change"
 }
 ```
@@ -8134,7 +8134,7 @@ tool_use Bash
 id: toolu_019xn7zczRULpCYWdUtVtBuD
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh pr create --base main --head chore/default-ollama-gemma4 \\\n  --title \"chore(ai): default Ollama model to gemma4\" \\\n  --body \"$(cat <<'EOF'\n## What & why\n\n`gemma4` is now available on Ollama ([library/gemma4](https://ollama.com/library/gemma4)), so it becomes the default `OLLAMA_MODEL` (was `gemma3`).\n\n- `AiConfig.DEFAULT_OLLAMA_MODEL` → `gemma4`\n- Default-value test pinned to `gemma4`\n- README pull example, env example, and reference table updated\n\nOverride with `OLLAMA_MODEL=<tag>` for a specific size (e.g. `gemma4:12b`, `gemma4:31b`).\n\n## How it was tested\n\n`./gradlew build` — all backend tests + Spotless green. Config/docs change only.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\nEOF\n)\" 2>&1 | tail -2",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh pr create --base main --head chore/default-ollama-gemma4 \\\n  --title \"chore(ai): default Ollama model to gemma4\" \\\n  --body \"$(cat <<'EOF'\n## What & why\n\n`gemma4` is now available on Ollama ([library/gemma4](https://ollama.com/library/gemma4)), so it becomes the default `OLLAMA_MODEL` (was `gemma3`).\n\n- `AiConfig.DEFAULT_OLLAMA_MODEL` → `gemma4`\n- Default-value test pinned to `gemma4`\n- README pull example, env example, and reference table updated\n\nOverride with `OLLAMA_MODEL=<tag>` for a specific size (e.g. `gemma4:12b`, `gemma4:31b`).\n\n## How it was tested\n\n`./gradlew build` — all backend tests + Spotless green. Config/docs change only.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\nEOF\n)\" 2>&1 | tail -2",
   "description": "Open PR for default change"
 }
 ```
@@ -8153,7 +8153,7 @@ tool_use Bash
 id: toolu_01YHSSLc1EpMRmovF7GgrXcs
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nsleep 8\nRUN=$(gh run list --branch chore/default-ollama-gemma4 --workflow \"CI\" --limit 1 --json databaseId --jq '.[0].databaseId')\necho \"watching CI run $RUN\"\ngh run watch \"$RUN\" --exit-status --interval 20 >/dev/null 2>&1; echo \"watch exit: $?\"\ngh run view \"$RUN\" --json jobs --jq '.jobs[] | \"\\(.conclusion // .status)\\t\\(.name)\"'",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nsleep 8\nRUN=$(gh run list --branch chore/default-ollama-gemma4 --workflow \"CI\" --limit 1 --json databaseId --jq '.[0].databaseId')\necho \"watching CI run $RUN\"\ngh run watch \"$RUN\" --exit-status --interval 20 >/dev/null 2>&1; echo \"watch exit: $?\"\ngh run view \"$RUN\" --json jobs --jq '.jobs[] | \"\\(.conclusion // .status)\\t\\(.name)\"'",
   "description": "Watch PR #5 CI",
   "timeout": 600000
 }
@@ -8181,7 +8181,7 @@ tool_use Bash
 id: toolu_01X1ESSFFQJMzmysKtybtKsq
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh pr merge 5 --squash --delete-branch 2>&1 | tail -2\ngh pr view 5 --json state --jq '{state}'\ngit checkout main 2>&1 | tail -1\ngit pull --ff-only 2>&1 | tail -2\ngit fetch --prune 2>&1 | tail -1\ngit branch -d chore/default-ollama-gemma4 2>&1 || echo \"(branch already gone)\"\necho \"--- main log ---\"; git log --oneline -2",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh pr merge 5 --squash --delete-branch 2>&1 | tail -2\ngh pr view 5 --json state --jq '{state}'\ngit checkout main 2>&1 | tail -1\ngit pull --ff-only 2>&1 | tail -2\ngit fetch --prune 2>&1 | tail -1\ngit branch -d chore/default-ollama-gemma4 2>&1 || echo \"(branch already gone)\"\necho \"--- main log ---\"; git log --oneline -2",
   "description": "Merge PR #5 and clean up"
 }
 ```
@@ -8273,7 +8273,7 @@ tool_use Bash
 id: toolu_011a5XaQAE1vtZzDEq2gVe5X
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit checkout -b feat/codex-visualizer 2>&1 | tail -1\necho \"=== ~/.codex layout ===\"\nls -la ~/.codex 2>/dev/null | head -20 || echo \"(no ~/.codex)\"\necho \"=== sessions tree (sample) ===\"\nfind ~/.codex/sessions -name '*.jsonl' 2>/dev/null | head -5\necho \"=== count ===\"\nfind ~/.codex/sessions -name '*.jsonl' 2>/dev/null | wc -l",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit checkout -b feat/codex-visualizer 2>&1 | tail -1\necho \"=== ~/.codex layout ===\"\nls -la ~/.codex 2>/dev/null | head -20 || echo \"(no ~/.codex)\"\necho \"=== sessions tree (sample) ===\"\nfind ~/.codex/sessions -name '*.jsonl' 2>/dev/null | head -5\necho \"=== count ===\"\nfind ~/.codex/sessions -name '*.jsonl' 2>/dev/null | wc -l",
   "description": "Check for local Codex sessions"
 }
 ```
@@ -8306,11 +8306,11 @@ drwxr-xr-x@   6 scottdensmore  staff        192 Jun 11 19:13 cache
 drwxr-xr-x@   4 scottdensmore  staff        128 Jun 20 09:46 computer-use
 -rw-r--r--@   1 scottdensmore  staff         18 May 15  2025 config.json
 === sessions tree (sample) ===
-/Users/scottdensmore/.codex/sessions/2026/03/05/rollout-2026-03-05T19-15-19-019cc124-7bb9-7ec0-8f9f-fcdd0cc4efd8.jsonl
-/Users/scottdensmore/.codex/sessions/2026/03/05/rollout-2026-03-05T19-10-32-019cc120-1b61-7de0-9d23-6581c43e28b8.jsonl
-/Users/scottdensmore/.codex/sessions/2026/03/02/rollout-2026-03-02T20-57-01-019cb20e-838c-70b2-b5d0-ad0c0e495b34.jsonl
-/Users/scottdensmore/.codex/sessions/2026/03/01/rollout-2026-03-01T20-53-27-019cace4-e21a-7072-9584-c3c9f3449847.jsonl
-/Users/scottdensmore/.codex/sessions/2026/03/01/rollout-2026-03-01T00-27-48-019ca882-c638-7693-b2a8-cc637612c4eb.jsonl
+/home/<USER>/.codex/sessions/2026/03/05/rollout-2026-03-05T19-15-19-019cc124-7bb9-7ec0-8f9f-fcdd0cc4efd8.jsonl
+/home/<USER>/.codex/sessions/2026/03/05/rollout-2026-03-05T19-10-32-019cc120-1b61-7de0-9d23-6581c43e28b8.jsonl
+/home/<USER>/.codex/sessions/2026/03/02/rollout-2026-03-02T20-57-01-019cb20e-838c-70b2-b5d0-ad0c0e495b34.jsonl
+/home/<USER>/.codex/sessions/2026/03/01/rollout-2026-03-01T20-53-27-019cace4-e21a-7072-9584-c3c9f3449847.jsonl
+/home/<USER>/.codex/sessions/2026/03/01/rollout-2026-03-01T00-27-48-019ca882-c638-7693-b2a8-cc637612c4eb.jsonl
 === count === […]
 
 > AGENT
@@ -8323,7 +8323,7 @@ tool_use Bash
 id: toolu_01CQ2jzqFqmcm3ome7sjiuEK
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nF=$(find ~/.codex/sessions -name '*.jsonl' 2>/dev/null | sort | tail -1)\necho \"file: $F\"; echo \"lines: $(wc -l < \"$F\")\"\necho \"=== top-level key sets per line (unique shapes) ===\"\njq -c 'keys' \"$F\" 2>/dev/null | sort | uniq -c | head -30\necho \"=== distribution of .type ===\"\njq -r '.type // \"(none)\"' \"$F\" 2>/dev/null | sort | uniq -c | sort -rn | head -30",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nF=$(find ~/.codex/sessions -name '*.jsonl' 2>/dev/null | sort | tail -1)\necho \"file: $F\"; echo \"lines: $(wc -l < \"$F\")\"\necho \"=== top-level key sets per line (unique shapes) ===\"\njq -c 'keys' \"$F\" 2>/dev/null | sort | uniq -c | head -30\necho \"=== distribution of .type ===\"\njq -r '.type // \"(none)\"' \"$F\" 2>/dev/null | sort | uniq -c | sort -rn | head -30",
   "description": "Inspect Codex rollout top-level schema"
 }
 ```
@@ -8333,7 +8333,7 @@ id: toolu_01CQ2jzqFqmcm3ome7sjiuEK
 tool_result
 id: toolu_01CQ2jzqFqmcm3ome7sjiuEK
 ```
-file: /Users/scottdensmore/.codex/sessions/2026/06/20/rollout-2026-06-20T12-48-24-019ee693-c532-7550-84a2-d4891a437c13.jsonl
+file: /home/<USER>/.codex/sessions/2026/06/20/rollout-2026-06-20T12-48-24-019ee693-c532-7550-84a2-d4891a437c13.jsonl
 lines:       56
 === top-level key sets per line (unique shapes) ===
   56 ["payload","timestamp","type"]
@@ -8350,7 +8350,7 @@ tool_use Bash
 id: toolu_018qWRpG8AjpkKfEmN2xho5i
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nF=$(find ~/.codex/sessions -name '*.jsonl' 2>/dev/null | sort | tail -1)\necho \"=== session_meta payload (keys + values, truncated) ===\"\njq -c 'select(.type==\"session_meta\") | .payload | {keys: keys, id, timestamp, cwd, originator, cli_version}' \"$F\" 2>/dev/null | head -1\necho \"=== payload.type distribution for response_item ===\"\njq -r 'select(.type==\"response_item\") | .payload.type' \"$F\" 2>/dev/null | sort | uniq -c\necho \"=== payload.type distribution for event_msg ===\"\njq -r 'select(.type==\"event_msg\") | .payload.type' \"$F\" 2>/dev/null | sort | uniq -c\necho \"=== turn_context payload keys ===\"\njq -c 'select(.type==\"turn_context\") | .payload | keys' \"$F\" 2>/dev/null | head -1",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nF=$(find ~/.codex/sessions -name '*.jsonl' 2>/dev/null | sort | tail -1)\necho \"=== session_meta payload (keys + values, truncated) ===\"\njq -c 'select(.type==\"session_meta\") | .payload | {keys: keys, id, timestamp, cwd, originator, cli_version}' \"$F\" 2>/dev/null | head -1\necho \"=== payload.type distribution for response_item ===\"\njq -r 'select(.type==\"response_item\") | .payload.type' \"$F\" 2>/dev/null | sort | uniq -c\necho \"=== payload.type distribution for event_msg ===\"\njq -r 'select(.type==\"event_msg\") | .payload.type' \"$F\" 2>/dev/null | sort | uniq -c\necho \"=== turn_context payload keys ===\"\njq -c 'select(.type==\"turn_context\") | .payload | keys' \"$F\" 2>/dev/null | head -1",
   "description": "Inspect payload shapes by type"
 }
 ```
@@ -8361,7 +8361,7 @@ tool_result
 id: toolu_018qWRpG8AjpkKfEmN2xho5i
 ```
 === session_meta payload (keys + values, truncated) ===
-{"keys":["agent_nickname","agent_role","base_instructions","cli_version","cwd","git","id","memory_mode","model_provider","multi_agent_version","originator","parent_thread_id","source","thread_source","timestamp"],"id":"019ee693-c532-7550-84a2-d4891a437c13","timestamp":"2026-06-20T19:48:24.520Z","cwd":"/Users/scottdensmore/Developer/scottdensmore/neos-private","originator":"Codex Desktop","cli_version":"0.142.0-alpha.6"}
+{"keys":["agent_nickname","agent_role","base_instructions","cli_version","cwd","git","id","memory_mode","model_provider","multi_agent_version","originator","parent_thread_id","source","thread_source","timestamp"],"id":"019ee693-c532-7550-84a2-d4891a437c13","timestamp":"2026-06-20T19:48:24.520Z","cwd":"/home/<USER>/Developer/scottdensmore/neos-private","originator":"Codex Desktop","cli_version":"0.142.0-alpha.6"}
 === payload.type distribution for response_item ===
   14 function_call
   13 function_call_output
@@ -8386,7 +8386,7 @@ tool_use Bash
 id: toolu_01Nx5pQTSig2ikzqpT5GaBuL
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nF=$(find ~/.codex/sessions -name '*.jsonl' 2>/dev/null | sort | tail -1)\ntrunc() { jq -c \"$1\" \"$F\" 2>/dev/null | head -1 | cut -c1-400; }\necho \"=== message (user) ===\"; trunc 'select(.type==\"response_item\" and .payload.type==\"message\" and .payload.role==\"user\") | {ts:.timestamp, role:.payload.role, content:.payload.content}'\necho \"=== message (assistant) ===\"; trunc 'select(.type==\"response_item\" and .payload.type==\"message\" and .payload.role==\"assistant\") | {ts:.timestamp, role:.payload.role, content:.payload.content}'\necho \"=== function_call ===\"; trunc 'select(.payload.type==\"function_call\") | {ts:.timestamp, name:.payload.name, args:.payload.arguments, call_id:.payload.call_id}'\necho \"=== function_call_output ===\"; trunc 'select(.payload.type==\"function_call_output\") | {ts:.timestamp, call_id:.payload.call_id, output:.payload.output}'\necho \"=== reasoning ===\"; trunc 'select(.payload.type==\"reasoning\") | {ts:.timestamp, keys:(.payload|keys), summary:.payload.summary}'\necho \"=== event_msg user_message ===\"; trunc 'select(.type==\"event_msg\" and .payload.type==\"user_message\") | {ts:.timestamp, payload:.payload}'",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nF=$(find ~/.codex/sessions -name '*.jsonl' 2>/dev/null | sort | tail -1)\ntrunc() { jq -c \"$1\" \"$F\" 2>/dev/null | head -1 | cut -c1-400; }\necho \"=== message (user) ===\"; trunc 'select(.type==\"response_item\" and .payload.type==\"message\" and .payload.role==\"user\") | {ts:.timestamp, role:.payload.role, content:.payload.content}'\necho \"=== message (assistant) ===\"; trunc 'select(.type==\"response_item\" and .payload.type==\"message\" and .payload.role==\"assistant\") | {ts:.timestamp, role:.payload.role, content:.payload.content}'\necho \"=== function_call ===\"; trunc 'select(.payload.type==\"function_call\") | {ts:.timestamp, name:.payload.name, args:.payload.arguments, call_id:.payload.call_id}'\necho \"=== function_call_output ===\"; trunc 'select(.payload.type==\"function_call_output\") | {ts:.timestamp, call_id:.payload.call_id, output:.payload.output}'\necho \"=== reasoning ===\"; trunc 'select(.payload.type==\"reasoning\") | {ts:.timestamp, keys:(.payload|keys), summary:.payload.summary}'\necho \"=== event_msg user_message ===\"; trunc 'select(.type==\"event_msg\" and .payload.type==\"user_message\") | {ts:.timestamp, payload:.payload}'",
   "description": "Dump representative Codex payload shapes"
 }
 ```
@@ -8397,11 +8397,11 @@ tool_result
 id: toolu_01Nx5pQTSig2ikzqpT5GaBuL
 ```
 === message (user) ===
-{"ts":"2026-06-20T19:51:13.373Z","role":"user","content":[{"type":"input_text","text":"# AGENTS.md instructions for /Users/scottdensmore/Developer/scottdensmore/neos-private\n\n<INSTRUCTIONS>\n# Repository Instructions\n\n## Required Workflow\n\n- Write code in TDD style: add or update a focused failing test before implementation when behavior or structure is testable.\n- Create a branch before ma
+{"ts":"2026-06-20T19:51:13.373Z","role":"user","content":[{"type":"input_text","text":"# AGENTS.md instructions for /home/<USER>/Developer/scottdensmore/neos-private\n\n<INSTRUCTIONS>\n# Repository Instructions\n\n## Required Workflow\n\n- Write code in TDD style: add or update a focused failing test before implementation when behavior or structure is testable.\n- Create a branch before ma
 === message (assistant) ===
 {"ts":"2026-06-20T19:51:21.937Z","role":"assistant","content":[{"type":"output_text","text":"I’ll review the branch diff against `main` only and include any staged, unstaged, or untracked files. I’ll start by checking repo status, merge base, and the changed files before reading the relevant diffs."}]}
 === function_call ===
-{"ts":"2026-06-20T19:51:21.937Z","name":"exec_command","args":"{\"cmd\":\"git status --short --branch\",\"workdir\":\"/Users/scottdensmore/Developer/scottdensmore/neos-private\",\"yield_time_ms\":1000,\"max_output_tokens\":12000}","call_id":"call_liGFXI0enQ8WE8f0VSNUKDft"}
+{"ts":"2026-06-20T19:51:21.937Z","name":"exec_command","args":"{\"cmd\":\"git status --short --branch\",\"workdir\":\"/home/<USER>/Developer/scottdensmore/neos-private\",\"yield_time_ms\":1000,\"max_output_tokens\":12000}","call_id":"call_liGFXI0enQ8WE8f0VSNUKDft"}
 === function_call_output ===
 {"ts":"2026-06-20T19:51:22.002Z","call_id":"call_liGFXI0enQ8WE8f0VSNUKDft","output":"Chunk ID: 48b81d\nWall time: 0.0000 seconds\nProcess exited with code 0\nOriginal token count: 68\nOutput:\n## scottdensmore/expand-home-content\n M Neos/AsteroidLayoutMetrics.swift\n M Neos/AsteroidPagerView.swift\n M Neos/ContentAsteroidStateView.swift\n M Neos/ContentLayoutView.swift\n M NeosTests/AsteroidPageL
 === reasoning ===
@@ -8420,7 +8420,7 @@ tool_use Write
 id: toolu_019taxEtg5ZtKZNhxWLB93hd
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexAdapter.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexAdapter.java",
   "content": "/*\n * Copyright 2026 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage io.github.glaforge.agybrainviz;\n\nimport com.fasterxml.jackson.databind.JsonNode;\nimport com.fasterxml.jackson.databind.ObjectMapper;\nimport com.fasterxml.jackson.databind.node.ArrayNode;\nimport com.fasterxml.jackson.databind.node.ObjectNode;\nimport java.util.ArrayList;\nimport java.util.List;\nimport java.util.Optional;\nimport java.util.regex.Matcher;\nimport java.util.regex.Pattern;\n\n/**\n * Adapts an OpenAI Codex CLI session \"rollout\" file into the step schema the frontend timeline\n * already understands (the same shape produced for Antigravity transcripts).\n *\n * <p>Each rollout line is {@code {type, timestamp, payload}}. The conversation is carried by\n * {@code response_item} lines (OpenAI Responses-API items): {@code message} (user/assistant),\n * {@code function_call}, {@code function_call_output}, and {@code reasoning}. Other line types\n * ({@code session_meta}, {@code turn_context}, {@code event_msg}) are not part of the rendered\n * timeline, though {@code event_msg/user_message} is used to derive […]
 
 > TOOL
@@ -8428,7 +8428,7 @@ id: toolu_019taxEtg5ZtKZNhxWLB93hd
 tool_result
 id: toolu_019taxEtg5ZtKZNhxWLB93hd
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexAdapter.java (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexAdapter.java (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8437,7 +8437,7 @@ tool_use Write
 id: toolu_013dvqaRTYizi62F5yDKWVwT
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/CodexAdapterTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/CodexAdapterTest.java",
   "content": "/*\n * Copyright 2026 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage io.github.glaforge.agybrainviz;\n\nimport static org.junit.jupiter.api.Assertions.assertEquals;\nimport static org.junit.jupiter.api.Assertions.assertFalse;\nimport static org.junit.jupiter.api.Assertions.assertTrue;\n\nimport com.fasterxml.jackson.databind.JsonNode;\nimport com.fasterxml.jackson.databind.ObjectMapper;\nimport com.fasterxml.jackson.databind.node.ObjectNode;\nimport java.util.List;\nimport org.junit.jupiter.api.Test;\n\n/** Unit tests for the Codex rollout → timeline-step adapter. */\nclass CodexAdapterTest {\n\n    private static final ObjectMapper MAPPER = new ObjectMapper();\n\n    private static final String SESSION_META =\n        \"{\\\"type\\\":\\\"session_meta\\\",\\\"timestamp\\\":\\\"2026-06-20T19:48:24.520Z\\\",\\\"payload\\\":{\\\"id\\\":\\\"abc\\\",\\\"cwd\\\":\\\"/repo\\\"}}\";\n    private static final String USER_MSG =\n        \"{\\\"type\\\":\\\"response_item\\\",\\\"timestamp\\\":\\\"2026-06-20T19:51:13.373Z\\\",\\\"payload\\\":{\\\"type\\\":\\\"message\\\",\\\"role\\\":\\\"user\\\",\\\"content\\\":[{\\\"type\\\":\\\"input_text\\\",\\\"text\\\":\\\"Fix the bug\\\"}]}}\";\n    private static final String ASSISTANT_MSG =\n        \"{\\\"type\\\":\\\"response_item\\\",\\\"timestamp\\\":\\\"2026-06-20T19:51:21.937Z\\\",\\\"payload\\\":{\\\"type\\\":\\\"message\\\",\\\"role\\\":\\\"assistant\\\",\\\"content\\\":[{\\\"type\\\":\\\"output_text\\\",\\\"text\\\":\\\"On it.\\\"}]}}\";\n    private static final String FUNCTION_CALL =\n        \"{\\\"type\\\":\\\"response_item\\\",\\\"timestamp\\\":\\\"2026-06-20T19:51:22.000Z\\\",\\\"payload\\\":{\\\"type\\\":\\\"function_call\\\",\\\"name\\\":\\\"exec_command\\\",\\\"arguments\\\":\\\"{\\\\\\\"cmd\\\\\\\":\\\\\\\"git status\\\\\\\"}\\\",\\\"call_id\\\":\\\"call_1\\\"}}\";\n    private static final String FUNCTION_OUTPUT_OK =\n        \"{\\\"type\\\":\\\"response_item\\\",\\\"timestamp\\\":\\\"2026-06-20T19:51:22.100Z\\\",\\\"payload\\\":{\\\"type\\\":\\\"function_call_output\\\",\\\"call_id\\\":\\\"call_1\\\",\\\"output\\\":\\\"Process exited with code 0\\\\nOutput:\\\\nclean\\\"}}\";\n    private static final String FUNCTION_OUTPUT_FAIL =\n        \"{\\\"type\\\":\\\"response_item\\\",\\\"timestamp\\\":\\\"2026-06-20T19:51:23.000Z\\\",\\\"payload\\\":{\\\"type\\\":\\\"function_call_output\\\",\\\"call_id\\\":\\\"call_2\\\",\\\"output\\\":\\\"Process exited with code 1\\\\nboom\\\"}}\";\n    private static final String EVENT_USER_MESSAGE =\n        \"{\\\"type\\\":\\\"event_msg\\\",\\\"timestamp\\\":\\\"2026-06-20T19:51:13.537Z\\\",\\\"payload\\\":{\\\"type\\\":\\\"user_message\\\",\\\"message\\\":\\\"Review the […]
 
 > TOOL
@@ -8445,7 +8445,7 @@ id: toolu_013dvqaRTYizi62F5yDKWVwT
 tool_result
 id: toolu_013dvqaRTYizi62F5yDKWVwT
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/CodexAdapterTest.java (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/CodexAdapterTest.java (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8458,7 +8458,7 @@ tool_use Write
 id: toolu_01KsDtHJ7kJu7wSbhgDzmZiP
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java",
   "content": "/*\n * Copyright 2026 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage io.github.glaforge.agybrainviz;\n\nimport jakarta.inject.Singleton;\nimport java.io.IOException;\nimport java.nio.file.Files;\nimport java.nio.file.Path;\nimport java.nio.file.Paths;\nimport java.util.ArrayList;\nimport java.util.HashMap;\nimport java.util.List;\nimport java.util.Map;\nimport java.util.stream.Stream;\n\n/**\n * Reads OpenAI Codex CLI sessions from {@code ~/.codex/sessions} and exposes them through the same\n * shape {@link BrainController} uses for Antigravity transcripts, so the existing frontend can render\n * them. Codex rollout files are converted to the timeline-step schema by {@link CodexAdapter}.\n */\n@Singleton\npublic class CodexSessionReader {\n\n    /** The flavor selector value the frontend sends for Codex sessions. */\n    public static final String FLAVOR = \"codex\";\n\n    private Path sessionsDir() {\n        return Paths.get(System.getProperty(\"user.home\"), \".codex\", \"sessions\");\n    }\n\n    /**\n     * @return one entry per Codex session […]
 
 > TOOL
@@ -8466,7 +8466,7 @@ id: toolu_01KsDtHJ7kJu7wSbhgDzmZiP
 tool_result
 id: toolu_01KsDtHJ7kJu7wSbhgDzmZiP
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8479,7 +8479,7 @@ tool_use Read
 id: toolu_014ghTY44YNdUv9yWSnsF5xC
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/BrainController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/BrainController.java",
   "offset": 16,
   "limit": 60
 }
@@ -8552,7 +8552,7 @@ id: toolu_01NPMrfKub1A6Q1vryPqMTPW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/BrainController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/BrainController.java",
   "old_string": "import io.micronaut.scheduling.TaskExecutors;\nimport io.micronaut.scheduling.annotation.ExecuteOn;\nimport java.io.BufferedReader;",
   "new_string": "import io.micronaut.scheduling.TaskExecutors;\nimport io.micronaut.scheduling.annotation.ExecuteOn;\nimport jakarta.inject.Inject;\nimport java.io.BufferedReader;"
 }
@@ -8563,7 +8563,7 @@ id: toolu_01NPMrfKub1A6Q1vryPqMTPW
 tool_result
 id: toolu_01NPMrfKub1A6Q1vryPqMTPW
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/BrainController.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/BrainController.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8573,7 +8573,7 @@ id: toolu_015FSuXY5Ykq4k11xZQdy7cD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/BrainController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/BrainController.java",
   "old_string": "@Controller(\"/api/brain\")\npublic class BrainController {\n\n    private Path getBrainPath(String flavor) {",
   "new_string": "@Controller(\"/api/brain\")\npublic class BrainController {\n\n    private final CodexSessionReader codexReader;\n\n    @Inject\n    public BrainController(CodexSessionReader codexReader) {\n        this.codexReader = codexReader;\n    }\n\n    private Path getBrainPath(String flavor) {"
 }
@@ -8584,7 +8584,7 @@ id: toolu_015FSuXY5Ykq4k11xZQdy7cD
 tool_result
 id: toolu_015FSuXY5Ykq4k11xZQdy7cD
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/BrainController.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/BrainController.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8594,7 +8594,7 @@ id: toolu_019JUChaa46EdT1t1D2KFXTT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/BrainController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/BrainController.java",
   "old_string": "    @ExecuteOn(TaskExecutors.IO)\n    @Get(\"/conversations\")\n    public List<Map<String, String>> listConversations(@QueryValue Optional<String> flavor) {\n        Path brainPath = getBrainPath(flavor.orElse(\"antigravity-cli\"));",
   "new_string": "    @ExecuteOn(TaskExecutors.IO)\n    @Get(\"/conversations\")\n    public List<Map<String, String>> listConversations(@QueryValue Optional<String> flavor) {\n        if (CodexSessionReader.FLAVOR.equals(flavor.orElse(\"\"))) {\n            return codexReader.listConversations();\n        }\n        Path brainPath = getBrainPath(flavor.orElse(\"antigravity-cli\"));"
 }
@@ -8605,7 +8605,7 @@ id: toolu_019JUChaa46EdT1t1D2KFXTT
 tool_result
 id: toolu_019JUChaa46EdT1t1D2KFXTT
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/BrainController.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/BrainController.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8615,7 +8615,7 @@ id: toolu_01V2czYCHV4eLnaaGcdZUKBn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/BrainController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/BrainController.java",
   "old_string": "    public String getTranscript(@PathVariable String id, @QueryValue Optional<String> flavor)\n        throws IOException {\n        Path brainPath = getBrainPath(flavor.orElse(\"antigravity-cli\"));",
   "new_string": "    public String getTranscript(@PathVariable String id, @QueryValue Optional<String> flavor)\n        throws IOException {\n        if (CodexSessionReader.FLAVOR.equals(flavor.orElse(\"\"))) {\n            return codexReader.transcriptJson(id);\n        }\n        Path brainPath = getBrainPath(flavor.orElse(\"antigravity-cli\"));"
 }
@@ -8626,7 +8626,7 @@ id: toolu_01V2czYCHV4eLnaaGcdZUKBn
 tool_result
 id: toolu_01V2czYCHV4eLnaaGcdZUKBn
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/BrainController.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/BrainController.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8640,7 +8640,7 @@ id: toolu_01QYoicWuyfy9d7Hb2Scv2ha
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/index.html",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/index.html",
   "old_string": "                        <option value=\"antigravity-cli\">Antigravity CLI</option>\n                        <option value=\"antigravity-ide\">Antigravity IDE</option>\n                        <option value=\"antigravity\">Antigravity Agent</option>\n                    </select>",
   "new_string": "                        <option value=\"antigravity-cli\">Antigravity CLI</option>\n                        <option value=\"antigravity-ide\">Antigravity IDE</option>\n                        <option value=\"antigravity\">Antigravity Agent</option>\n                        <option value=\"codex\">OpenAI Codex</option>\n                    </select>"
 }
@@ -8651,7 +8651,7 @@ id: toolu_01QYoicWuyfy9d7Hb2Scv2ha
 tool_result
 id: toolu_01QYoicWuyfy9d7Hb2Scv2ha
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/index.html has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/index.html has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8664,7 +8664,7 @@ tool_use Bash
 id: toolu_01GFdjbezSnPbXcxJSQWihw6
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngrep -n \"getFileContent\\|----- \\|private Path brainDir\\|private String get(\" src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java | head",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngrep -n \"getFileContent\\|----- \\|private Path brainDir\\|private String get(\" src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java | head",
   "description": "Find anchors in BrainControllerTest"
 }
 ```
@@ -8687,7 +8687,7 @@ tool_use Read
 id: toolu_01SoLkMzaXuR2bsAaQH78Ykn
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java",
   "offset": 73,
   "limit": 17
 }
@@ -8724,7 +8724,7 @@ id: toolu_018JgrUTLqCfAerTUN5fp1mh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java",
   "old_string": "    private String get(String uri) {\n        return client.toBlocking().retrieve(uri);\n    }",
   "new_string": "    private String get(String uri) {\n        return client.toBlocking().retrieve(uri);\n    }\n\n    private void writeCodexSession(String relPath, String content) throws IOException {\n        Path file = tempHome.resolve(\".codex\").resolve(\"sessions\").resolve(relPath);\n        Files.createDirectories(file.getParent());\n        Files.writeString(file, content);\n    }"
 }
@@ -8735,7 +8735,7 @@ id: toolu_018JgrUTLqCfAerTUN5fp1mh
 tool_result
 id: toolu_018JgrUTLqCfAerTUN5fp1mh
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8745,7 +8745,7 @@ id: toolu_01EGd7fpQUo1AN9WzsvfiPTN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java",
   "old_string": "    // ----- getFileContent -----",
   "new_string": "    // ----- codex flavor -----\n\n    @Test\n    void listsCodexSessionsWithSummaryFromUserMessage() throws IOException {\n        writeCodexSession(\n            \"2026/06/20/rollout-2026-06-20T12-00-00-codexsession1.jsonl\",\n            \"{\\\"type\\\":\\\"event_msg\\\",\\\"timestamp\\\":\\\"2026-06-20T12:00:00Z\\\",\\\"payload\\\":{\\\"type\\\":\\\"user_message\\\",\\\"message\\\":\\\"Refactor the parser\\\"}}\\n\"\n        );\n\n        String body = get(\"/api/brain/conversations?flavor=codex\");\n        JsonNode arr = MAPPER.readTree(body);\n        assertEquals(1, arr.size());\n        assertEquals(\n            \"rollout-2026-06-20T12-00-00-codexsession1\",\n            arr.get(0).get(\"id\").asText()\n        );\n        assertEquals(\"Refactor the parser\", arr.get(0).get(\"summary\").asText());\n    }\n\n    @Test\n    void codexTranscriptIsAdaptedToTheStepSchema() throws IOException {\n        String id = \"rollout-2026-06-20T13-00-00-codexsession2\";\n        writeCodexSession(\n            \"2026/06/20/\" + id + \".jsonl\",\n            \"{\\\"type\\\":\\\"response_item\\\",\\\"timestamp\\\":\\\"2026-06-20T13:00:00Z\\\",\\\"payload\\\":{\\\"type\\\":\\\"message\\\",\\\"role\\\":\\\"user\\\",\\\"content\\\":[{\\\"type\\\":\\\"input_text\\\",\\\"text\\\":\\\"hi\\\"}]}}\\n\" +\n            \"{\\\"type\\\":\\\"response_item\\\",\\\"timestamp\\\":\\\"2026-06-20T13:00:01Z\\\",\\\"payload\\\":{\\\"type\\\":\\\"function_call\\\",\\\"name\\\":\\\"exec_command\\\",\\\"arguments\\\":\\\"{\\\\\\\"cmd\\\\\\\":\\\\\\\"ls\\\\\\\"}\\\",\\\"call_id\\\":\\\"c1\\\"}}\\n\"\n        );\n\n        String body = get(\"/api/brain/conversations/\" + id + \"/transcript?flavor=codex\");\n        JsonNode arr = MAPPER.readTree(body);\n        assertEquals(2, arr.size());\n        assertEquals(\"USER_INPUT\", arr.get(0).get(\"type\").asText());\n        assertEquals(\"exec_command\", arr.get(1).get(\"tool_calls\").get(0).get(\"name\").asText());\n    }\n\n    @Test\n    void codexTranscriptReturnsEmptyArrayForUnknownId() {\n        String body = get(\"/api/brain/conversations/no-such-codex-id/transcript?flavor=codex\");\n        assertEquals(\"[]\", body.trim());\n    }\n\n    // ----- getFileContent -----"
 }
@@ -8756,7 +8756,7 @@ id: toolu_01EGd7fpQUo1AN9WzsvfiPTN
 tool_result
 id: toolu_01EGd7fpQUo1AN9WzsvfiPTN
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8769,7 +8769,7 @@ tool_use Bash
 id: toolu_015NbEoripHTjYMUCR1er8jU
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew test --console=plain 2>&1 | tail -20",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew test --console=plain 2>&1 | tail -20",
   "description": "Run backend tests with Codex support",
   "timeout": 600000
 }
@@ -8783,7 +8783,7 @@ id: toolu_015NbEoripHTjYMUCR1er8jU
 > Task :generateVersionClass UP-TO-DATE
 
 > Task :compileJava
-Note: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/BrainController.java uses unchecked or unsafe operations.
+Note: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/BrainController.java uses unchecked or unsafe operations.
 Note: Recompile with -Xlint:unchecked for details.
 
 > Task :processResources
@@ -8794,7 +8794,7 @@ Note: Recompile with -Xlint:unchecked for details.
 > Task :testClasses
 > Task :test
 
-[Incubating] Problems report is available at: file:///Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/build/reports/problems/problems-report.html
+[Incubating] Problems report is available at: file:///home/<USER>/Developer/scottdensmore/agent-brain-visualizer/build/reports/problems/problems-report.html
 
 BUILD SUCCESSFUL in 4s
 6 actionable tasks: 5 executed, 1 up-to-date
@@ -8811,7 +8811,7 @@ tool_use Bash
 id: toolu_01JKDEpPp5UwRnQTtgzivq77
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ntotal=0; for f in build/test-results/test/*.xml; do n=$(grep -o 'tests=\"[0-9]*\"' \"$f\" | head -1 | sed 's/tests=\"//;s/\"//'); total=$((total+n)); done; echo \"TOTAL backend: $total\"\necho \"--- CodexAdapterTest + codex BrainController counts ---\"\ngrep -c '@Test' src/test/java/io/github/glaforge/agybrainviz/CodexAdapterTest.java\necho \"--- tail fixtures.mjs ---\"\ntail -15 e2e/fixtures.mjs",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ntotal=0; for f in build/test-results/test/*.xml; do n=$(grep -o 'tests=\"[0-9]*\"' \"$f\" | head -1 | sed 's/tests=\"//;s/\"//'); total=$((total+n)); done; echo \"TOTAL backend: $total\"\necho \"--- CodexAdapterTest + codex BrainController counts ---\"\ngrep -c '@Test' src/test/java/io/github/glaforge/agybrainviz/CodexAdapterTest.java\necho \"--- tail fixtures.mjs ---\"\ntail -15 e2e/fixtures.mjs",
   "description": "Check counts and fixtures end"
 }
 ```
@@ -8853,7 +8853,7 @@ id: toolu_01Pza2upbUTTVVwNNMPtXfJ3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/fixtures.mjs",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/fixtures.mjs",
   "old_string": "  return { home, configPath };\n}",
   "new_string": "  // ---- OpenAI Codex sessions (flavor: codex) ----\n  const codexFile = path.join(\n    gemini,\n    \"..\",\n    \".codex\",\n    \"sessions\",\n    \"2026\",\n    \"06\",\n    \"20\",\n    \"rollout-2026-06-20T14-00-00-codexsession.jsonl\"\n  );\n  fs.mkdirSync(path.dirname(codexFile), { recursive: true });\n  fs.writeFileSync(\n    codexFile,\n    jsonl([\n      {\n        type: \"session_meta\",\n        timestamp: \"2026-06-20T14:00:00.000Z\",\n        payload: { id: \"codexsession\", cwd: \"/repo\" },\n      },\n      {\n        type: \"event_msg\",\n        timestamp: \"2026-06-20T14:00:00.100Z\",\n        payload: { type: \"user_message\", message: \"Investigate the flaky test\" },\n      },\n      {\n        type: \"response_item\",\n        timestamp: \"2026-06-20T14:00:00.100Z\",\n        payload: {\n          type: \"message\",\n          role: \"user\",\n          content: [{ type: \"input_text\", text: \"Investigate the flaky test\" }],\n        },\n      },\n      {\n        type: \"response_item\",\n        timestamp: \"2026-06-20T14:00:02.000Z\",\n        payload: {\n          type: \"message\",\n          role: \"assistant\",\n          content: [{ type: \"output_text\", text: \"Running the test suite to reproduce.\" }],\n        },\n      },\n      {\n        type: \"response_item\",\n        timestamp: \"2026-06-20T14:00:03.000Z\",\n        payload: {\n          type: \"function_call\",\n          name: \"exec_command\",\n          arguments: JSON.stringify({ cmd: \"npm test\" }),\n          call_id: \"call_codex_1\",\n        },\n      },\n      {\n        type: \"response_item\",\n        timestamp: \"2026-06-20T14:00:05.000Z\",\n        payload: {\n          type: \"function_call_output\",\n          call_id: \"call_codex_1\",\n          output: \"Process exited with code 0\\nOutput:\\nAll tests passed\",\n        },\n      },\n    ])\n  );\n\n  return { home, configPath };\n}"
 }
@@ -8864,7 +8864,7 @@ id: toolu_01Pza2upbUTTVVwNNMPtXfJ3
 tool_result
 id: toolu_01Pza2upbUTTVVwNNMPtXfJ3
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/fixtures.mjs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/fixtures.mjs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8873,7 +8873,7 @@ tool_use Write
 id: toolu_01C6wyUwutMyAdb9jzuYxyPt
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/codex.spec.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/codex.spec.js",
   "content": "import { test, expect } from \"./test-base.js\";\n\ntest.describe(\"OpenAI Codex sessions\", () => {\n  test(\"switching to the Codex flavor lists and renders a Codex session\", async ({ page }) => {\n    await page.goto(\"/\");\n\n    await page.selectOption(\"#flavor-select\", \"codex\");\n\n    // The Codex session is listed with a title derived from the user message.\n    const item = page.locator(\"#conversations-list .conv-item\", {\n      hasText: \"Investigate the flaky test\",\n    });\n    await expect(item).toBeVisible();\n    await item.click();\n\n    // The rollout is adapted into the timeline: user input, assistant message, and a tool call.\n    const tc = page.locator(\"#transcript-container\");\n    await expect(tc.locator(\".step-card\")).toHaveCount(4);\n    await expect(tc.locator(\".sequence-wrapper\").first()).toBeVisible();\n\n    // Expand the function-call card and confirm the tool name renders.\n    const toolCard = tc.locator(\".step-card\", { has: page.locator(\".tool-call\") });\n    await toolCard.locator(\".step-header\").first().click();\n    await expect(toolCard.locator(\".tool-name\")).toContainText(\"exec_command\");\n  });\n\n  test(\"Codex session statistics count the tool call and user query\", async ({ page }) => {\n    await page.goto(\"/\");\n    await page.selectOption(\"#flavor-select\", \"codex\");\n    await page.locator('.conv-item:has-text(\"Investigate the flaky test\")').click();\n\n    await expect(page.locator(\"#session-stats-container\")).toBeVisible();\n    await expect(page.locator(\"#user-queries-stat-card .stat-value\")).toHaveText(\"1\");\n    await expect(page.locator(\"#tools-stat-card .stat-value\")).toHaveText(\"1\");\n  });\n});\n"
 }
 ```
@@ -8883,7 +8883,7 @@ id: toolu_01C6wyUwutMyAdb9jzuYxyPt
 tool_result
 id: toolu_01C6wyUwutMyAdb9jzuYxyPt
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/codex.spec.js (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/codex.spec.js (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8896,7 +8896,7 @@ tool_use Bash
 id: toolu_01GvrFBLqCPG4CsCM3Z8GRW3
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\necho \"=== spotlessApply + build ===\"\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -6\necho \"=== frontend unit ===\"\nnpm test 2>&1 | tail -4\necho \"=== rebuild jar + e2e ===\"\nmise exec -- ./gradlew shadowJar -x test --console=plain 2>&1 | tail -2\nlsof -ti tcp:8099 | xargs kill -9 2>/dev/null; sleep 1\nmise exec -- npx playwright test 2>&1 | tail -22",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\necho \"=== spotlessApply + build ===\"\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -6\necho \"=== frontend unit ===\"\nnpm test 2>&1 | tail -4\necho \"=== rebuild jar + e2e ===\"\nmise exec -- ./gradlew shadowJar -x test --console=plain 2>&1 | tail -2\nlsof -ti tcp:8099 | xargs kill -9 2>/dev/null; sleep 1\nmise exec -- npx playwright test 2>&1 | tail -22",
   "description": "Full verification incl Codex e2e",
   "timeout": 600000
 }
@@ -8942,7 +8942,7 @@ tool_use Read
 id: toolu_01HN2LBUEtkoqN6R1X7HnL5d
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/README.md",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/README.md",
   "offset": 11,
   "limit": 40
 }
@@ -8973,7 +8973,7 @@ id: toolu_01JZCY619EegaPHk6AkdcRiv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/README.md",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/README.md",
   "old_string": "**Session Management**\n*   **Session Loading**: Parses local `.gemini/brain` directories to list past and active agent sessions.\n*   **Search & Filtering**: Includes a text search input to find sessions, and a dropdown to filter sessions by agent type (CLI, IDE, Agent).",
   "new_string": "**Session Management**\n*   **Session Loading**: Parses local `.gemini/brain` directories to list past and active agent sessions.\n*   **Multiple Sources**: In addition to Antigravity transcripts, the dropdown can render **OpenAI Codex** CLI sessions read from `~/.codex/sessions` (select \"OpenAI Codex\"). Codex rollout files are adapted into the same timeline view. *(AI summarization currently applies to Antigravity transcripts.)*\n*   **Search & Filtering**: Includes a text search input to find sessions, and a dropdown to filter sessions by source/agent type (Antigravity CLI, IDE, Agent, or OpenAI Codex)."
 }
@@ -8984,7 +8984,7 @@ id: toolu_01JZCY619EegaPHk6AkdcRiv
 tool_result
 id: toolu_01JZCY619EegaPHk6AkdcRiv
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8997,7 +8997,7 @@ tool_use Bash
 id: toolu_01GRfDjBtP85gaKQPCTNxiQM
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit add -A\ngit status --short | grep -vE '\\.claude|\\.entire'",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit add -A\ngit status --short | grep -vE '\\.claude|\\.entire'",
   "description": "Stage Codex feature"
 }
 ```
@@ -9025,7 +9025,7 @@ id: toolu_01HKagjfqoibFD7aAn1mZX1v
 ```json
 {
   "description": "Review Codex visualizer feature",
-  "prompt": "You are a senior code reviewer. Review the STAGED git diff in /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer (run `git diff --cached`). This feature adds OpenAI Codex CLI sessions as a new transcript source to visualize, alongside the existing Antigravity flavors.\n\nContext:\n- Codex rollout files live at `~/.codex/sessions/<YYYY>/<MM>/<DD>/rollout-*.jsonl`. Each line is `{type, timestamp, payload}` with types: `session_meta`, `turn_context`, `response_item` (payload.type = message/function_call/function_call_output/reasoning), `event_msg` (payload.type = user_message/agent_message/...).\n- `CodexAdapter` (pure) maps `response_item` lines into the existing frontend step schema (type/source/content/created_at/tool_calls/thinking/status) so the frontend renders them unchanged. `deriveSummary` picks the first `event_msg/user_message` (clean prompt) else the first user `response_item`.\n- `CodexSessionReader` (@Singleton) walks `~/.codex/sessions`, lists sessions (id = filename stem, summary, mtime), and reads a transcript by matching id against actual filenames (no path built from id).\n- `BrainController` routes `flavor=codex` to the reader; index.html adds the \"OpenAI Codex\" dropdown option.\n- Tests: CodexAdapterTest (pure, 12), BrainControllerTest codex integration (3), e2e codex.spec.js (2). All green: 72 backend + 44 frontend + 16 e2e.\n\nFocus on:\n1. **Correctness** of the adapter mapping (faithful to Codex format? edge cases: message content with non-text parts, output as object vs string, exit-code error detection, reasoning empty/encrypted). Any mismapping that would render wrong/misleading?\n2. **Security/robustness** of `CodexSessionReader`: path […]
+  "prompt": "You are a senior code reviewer. Review the STAGED git diff in /home/<USER>/Developer/scottdensmore/agent-brain-visualizer (run `git diff --cached`). This feature adds OpenAI Codex CLI sessions as a new transcript source to visualize, alongside the existing Antigravity flavors.\n\nContext:\n- Codex rollout files live at `~/.codex/sessions/<YYYY>/<MM>/<DD>/rollout-*.jsonl`. Each line is `{type, timestamp, payload}` with types: `session_meta`, `turn_context`, `response_item` (payload.type = message/function_call/function_call_output/reasoning), `event_msg` (payload.type = user_message/agent_message/...).\n- `CodexAdapter` (pure) maps `response_item` lines into the existing frontend step schema (type/source/content/created_at/tool_calls/thinking/status) so the frontend renders them unchanged. `deriveSummary` picks the first `event_msg/user_message` (clean prompt) else the first user `response_item`.\n- `CodexSessionReader` (@Singleton) walks `~/.codex/sessions`, lists sessions (id = filename stem, summary, mtime), and reads a transcript by matching id against actual filenames (no path built from id).\n- `BrainController` routes `flavor=codex` to the reader; index.html adds the \"OpenAI Codex\" dropdown option.\n- Tests: CodexAdapterTest (pure, 12), BrainControllerTest codex integration (3), e2e codex.spec.js (2). All green: 72 backend + 44 frontend + 16 e2e.\n\nFocus on:\n1. **Correctness** of the adapter mapping (faithful to Codex format? edge cases: message content with non-text parts, output as object vs string, exit-code error detection, reasoning empty/encrypted). Any mismapping that would render wrong/misleading?\n2. **Security/robustness** of `CodexSessionReader`: path […]
 
 > TOOL
 
@@ -9055,7 +9055,7 @@ id: toolu_01Bpbrq7BuneSroSps9G1iGX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexAdapter.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexAdapter.java",
   "old_string": "    private static final Pattern EXIT_CODE = Pattern.compile(\"Process exited with code (\\\\d+)\");",
   "new_string": "    // Anchored to line start (multiline) so command output that merely echoes the phrase doesn't\n    // get misread as a failure. Detection is a heuristic on Codex's exec-output framing.\n    private static final Pattern EXIT_CODE = Pattern.compile(\"(?m)^Process exited with code (\\\\d+)\");"
 }
@@ -9066,7 +9066,7 @@ id: toolu_01Bpbrq7BuneSroSps9G1iGX
 tool_result
 id: toolu_01Bpbrq7BuneSroSps9G1iGX
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexAdapter.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexAdapter.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9076,7 +9076,7 @@ id: toolu_01Gk2AcN6BQAtfeQoQo5B3aM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java",
   "old_string": "    private Map<String, String> describe(Path file) {\n        try {\n            String id = stripExtension(file.getFileName().toString());\n            List<String> lines = Files.readAllLines(file);\n            String summary = CodexAdapter\n                .deriveSummary(lines)\n                .orElse(\"Codex session \" + id.substring(0, Math.min(8, id.length())));\n            long modified = Files.getLastModifiedTime(file).toMillis();",
   "new_string": "    // Cap how many lines we scan per file when deriving a title for the list view. The clean user\n    // prompt is always near the top, so this avoids loading entire (possibly multi-MB) rollouts into\n    // memory just to populate the sidebar.\n    private static final int SUMMARY_SCAN_LINES = 256;\n\n    private Map<String, String> describe(Path file) {\n        try {\n            String id = stripExtension(file.getFileName().toString());\n            List<String> head;\n            try (Stream<String> lines = Files.lines(file)) {\n                head = lines.limit(SUMMARY_SCAN_LINES).toList();\n            }\n            String summary = CodexAdapter\n                .deriveSummary(head)\n                .orElse(\"Codex session \" + id.substring(0, Math.min(8, id.length())));\n            long modified = Files.getLastModifiedTime(file).toMillis();"
 }
@@ -9087,7 +9087,7 @@ id: toolu_01Gk2AcN6BQAtfeQoQo5B3aM
 tool_result
 id: toolu_01Gk2AcN6BQAtfeQoQo5B3aM
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -9101,7 +9101,7 @@ id: toolu_01Xin7ZPQPPBHeqvZkx4GkeL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/CodexAdapterTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/CodexAdapterTest.java",
   "old_string": "    @Test\n    void flagsNonZeroExitCodeAsError() {\n        ObjectNode s = steps(FUNCTION_OUTPUT_FAIL).get(0);\n        assertEquals(\"ERROR\", s.get(\"status\").asText());\n    }",
   "new_string": "    @Test\n    void flagsNonZeroExitCodeAsError() {\n        ObjectNode s = steps(FUNCTION_OUTPUT_FAIL).get(0);\n        assertEquals(\"ERROR\", s.get(\"status\").asText());\n    }\n\n    @Test\n    void doesNotFlagErrorWhenOutputMerelyEchoesTheExitPhrase() {\n        String echoed =\n            \"{\\\"type\\\":\\\"response_item\\\",\\\"timestamp\\\":\\\"t\\\",\\\"payload\\\":{\\\"type\\\":\\\"function_call_output\\\",\\\"call_id\\\":\\\"c\\\",\\\"output\\\":\\\"log: see 'Process exited with code 1' in docs\\\\nProcess exited with code 0\\\"}}\";\n        assertFalse(steps(echoed).get(0).has(\"status\"));\n    }\n\n    @Test\n    void stringifiesObjectFunctionOutput() {\n        String objOutput =\n            \"{\\\"type\\\":\\\"response_item\\\",\\\"timestamp\\\":\\\"t\\\",\\\"payload\\\":{\\\"type\\\":\\\"function_call_output\\\",\\\"call_id\\\":\\\"c\\\",\\\"output\\\":{\\\"stdout\\\":\\\"ok\\\"}}}\";\n        ObjectNode s = steps(objOutput).get(0);\n        assertTrue(s.get(\"content\").asText().contains(\"stdout\"));\n        assertTrue(s.get(\"content\").asText().contains(\"ok\"));\n    }"
 }
@@ -9112,7 +9112,7 @@ id: toolu_01Xin7ZPQPPBHeqvZkx4GkeL
 tool_result
 id: toolu_01Xin7ZPQPPBHeqvZkx4GkeL
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/CodexAdapterTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/CodexAdapterTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9122,7 +9122,7 @@ id: toolu_016fZG67yCoJBwnLbzHq1GGA
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java",
   "old_string": "    @Test\n    void codexTranscriptReturnsEmptyArrayForUnknownId() {\n        String body = get(\"/api/brain/conversations/no-such-codex-id/transcript?flavor=codex\");\n        assertEquals(\"[]\", body.trim());\n    }",
   "new_string": "    @Test\n    void codexTranscriptReturnsEmptyArrayForUnknownId() {\n        String body = get(\"/api/brain/conversations/no-such-codex-id/transcript?flavor=codex\");\n        assertEquals(\"[]\", body.trim());\n    }\n\n    @Test\n    void codexSessionsSortNewestFirstAndFallBackToDefaultTitle() throws IOException {\n        // A malformed rollout (no parseable user message) falls back to a generated title.\n        writeCodexSession(\"2026/06/19/rollout-older-codexolder.jsonl\", \"not valid json\\n\");\n        writeCodexSession(\n            \"2026/06/20/rollout-newer-codexnewer.jsonl\",\n            \"{\\\"type\\\":\\\"event_msg\\\",\\\"timestamp\\\":\\\"t\\\",\\\"payload\\\":{\\\"type\\\":\\\"user_message\\\",\\\"message\\\":\\\"newest\\\"}}\\n\"\n        );\n        Path newer = tempHome\n            .resolve(\".codex\")\n            .resolve(\"sessions\")\n            .resolve(\"2026/06/20/rollout-newer-codexnewer.jsonl\");\n        Files.setLastModifiedTime(\n            newer,\n            java.nio.file.attribute.FileTime.fromMillis(System.currentTimeMillis() + 60_000)\n        );\n\n        JsonNode arr = MAPPER.readTree(get(\"/api/brain/conversations?flavor=codex\"));\n        assertEquals(2, arr.size());\n        assertEquals(\"rollout-newer-codexnewer\", arr.get(0).get(\"id\").asText());\n        assertEquals(\"newest\", arr.get(0).get(\"summary\").asText());\n        // The malformed one still lists, with a generated fallback title.\n        assertTrue(arr.get(1).get(\"summary\").asText().startsWith(\"Codex session\"));\n    }"
 }
@@ -9133,7 +9133,7 @@ id: toolu_016fZG67yCoJBwnLbzHq1GGA
 tool_result
 id: toolu_016fZG67yCoJBwnLbzHq1GGA
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -9147,7 +9147,7 @@ id: toolu_0149dp6bH5xaD41JHBZ538R4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java",
   "old_string": "import java.io.IOException;\nimport java.nio.file.Files;\nimport java.nio.file.Path;\nimport org.junit.jupiter.api.AfterAll;",
   "new_string": "import java.io.IOException;\nimport java.nio.file.Files;\nimport java.nio.file.Path;\nimport java.util.Comparator;\nimport java.util.stream.Stream;\nimport org.junit.jupiter.api.AfterAll;"
 }
@@ -9158,7 +9158,7 @@ id: toolu_0149dp6bH5xaD41JHBZ538R4
 tool_result
 id: toolu_0149dp6bH5xaD41JHBZ538R4
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9168,7 +9168,7 @@ id: toolu_01QrmaabhN82EpD5ZpvYs9JG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java",
   "old_string": "    private void writeCodexSession(String relPath, String content) throws IOException {\n        Path file = tempHome.resolve(\".codex\").resolve(\"sessions\").resolve(relPath);\n        Files.createDirectories(file.getParent());\n        Files.writeString(file, content);\n    }",
   "new_string": "    private void writeCodexSession(String relPath, String content) throws IOException {\n        Path file = tempHome.resolve(\".codex\").resolve(\"sessions\").resolve(relPath);\n        Files.createDirectories(file.getParent());\n        Files.writeString(file, content);\n    }\n\n    // All Codex sessions share one ~/.codex/sessions tree (unlike the per-flavor Antigravity dirs),\n    // so list-count assertions must start from a clean slate.\n    private void resetCodexSessions() throws IOException {\n        Path dir = tempHome.resolve(\".codex\").resolve(\"sessions\");\n        if (!Files.exists(dir)) return;\n        try (Stream<Path> paths = Files.walk(dir)) {\n            paths\n                .sorted(Comparator.reverseOrder())\n                .forEach(p -> {\n                    try {\n                        Files.delete(p);\n                    } catch (IOException ignored) {}\n                });\n        }\n    }"
 }
@@ -9179,7 +9179,7 @@ id: toolu_01QrmaabhN82EpD5ZpvYs9JG
 tool_result
 id: toolu_01QrmaabhN82EpD5ZpvYs9JG
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9189,7 +9189,7 @@ id: toolu_01Wk1FDyfSCXJX7mSZL8JjtT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java",
   "old_string": "    void listsCodexSessionsWithSummaryFromUserMessage() throws IOException {\n        writeCodexSession(",
   "new_string": "    void listsCodexSessionsWithSummaryFromUserMessage() throws IOException {\n        resetCodexSessions();\n        writeCodexSession("
 }
@@ -9200,7 +9200,7 @@ id: toolu_01Wk1FDyfSCXJX7mSZL8JjtT
 tool_result
 id: toolu_01Wk1FDyfSCXJX7mSZL8JjtT
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9210,7 +9210,7 @@ id: toolu_016GmkaSE1ZU9xUEvLJKbbjM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java",
   "old_string": "    void codexSessionsSortNewestFirstAndFallBackToDefaultTitle() throws IOException {\n        // A malformed rollout (no parseable user message) falls back to a generated title.\n        writeCodexSession(\"2026/06/19/rollout-older-codexolder.jsonl\", \"not valid json\\n\");",
   "new_string": "    void codexSessionsSortNewestFirstAndFallBackToDefaultTitle() throws IOException {\n        resetCodexSessions();\n        // A malformed rollout (no parseable user message) falls back to a generated title.\n        writeCodexSession(\"2026/06/19/rollout-older-codexolder.jsonl\", \"not valid json\\n\");"
 }
@@ -9221,7 +9221,7 @@ id: toolu_016GmkaSE1ZU9xUEvLJKbbjM
 tool_result
 id: toolu_016GmkaSE1ZU9xUEvLJKbbjM
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -9234,7 +9234,7 @@ tool_use Bash
 id: toolu_01FPathpVCb1TNQExjLw4bL3
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -6\necho \"=== backend test count ===\"\ntotal=0; for f in build/test-results/test/*.xml; do n=$(grep -o 'tests=\"[0-9]*\"' \"$f\" | head -1 | sed 's/tests=\"//;s/\"//'); total=$((total+n)); done; echo \"TOTAL backend: $total\"\necho \"=== rebuild jar + e2e ===\"\nmise exec -- ./gradlew shadowJar -x test --console=plain 2>&1 | tail -2\nlsof -ti tcp:8099 | xargs kill -9 2>/dev/null; sleep 1\nmise exec -- npx playwright test 2>&1 | tail -5",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -6\necho \"=== backend test count ===\"\ntotal=0; for f in build/test-results/test/*.xml; do n=$(grep -o 'tests=\"[0-9]*\"' \"$f\" | head -1 | sed 's/tests=\"//;s/\"//'); total=$((total+n)); done; echo \"TOTAL backend: $total\"\necho \"=== rebuild jar + e2e ===\"\nmise exec -- ./gradlew shadowJar -x test --console=plain 2>&1 | tail -2\nlsof -ti tcp:8099 | xargs kill -9 2>/dev/null; sleep 1\nmise exec -- npx playwright test 2>&1 | tail -5",
   "description": "Re-verify after fixes",
   "timeout": 600000
 }
@@ -9245,7 +9245,7 @@ id: toolu_01FPathpVCb1TNQExjLw4bL3
 tool_result
 id: toolu_01FPathpVCb1TNQExjLw4bL3
 ```
-[Incubating] Problems report is available at: file:///Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/build/reports/problems/problems-report.html
+[Incubating] Problems report is available at: file:///home/<USER>/Developer/scottdensmore/agent-brain-visualizer/build/reports/problems/problems-report.html
 
 BUILD SUCCESSFUL in 14s
 37 actionable tasks: 27 executed, 10 up-to-date
@@ -9272,7 +9272,7 @@ tool_use Bash
 id: toolu_018pXufx91TmxggTMWhfeVNb
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit add -A\ngit status --short | grep -vE '\\.claude|\\.entire'\ngit commit -q -F - <<'EOF'\nfeat: visualize OpenAI Codex CLI sessions as a new source\n\nAdd OpenAI Codex sessions (~/.codex/sessions) as a selectable transcript\nsource alongside the Antigravity flavors, rendered in the existing\ntimeline UI.\n\n- CodexAdapter (pure): maps Codex rollout lines ({type,timestamp,payload})\n  into the frontend step schema. response_item message/function_call/\n  function_call_output/reasoning become user/model/tool/output steps with\n  created_at, tool_calls (parsed args), thinking, and an ERROR status for\n  non-zero exec exit codes (anchored heuristic). session_meta/turn_context/\n  event_msg are not timeline steps; event_msg/user_message yields a clean\n  session title.\n- CodexSessionReader (@Singleton): lists sessions (id = filename stem,\n  summary, mtime; newest first) and reads a transcript by matching the id\n  against real filenames (no path built from id). The list view scans only\n  the file head per session to avoid loading large rollouts into memory.\n- BrainController routes flavor=codex to the reader; index.html adds the\n  \"OpenAI Codex\" dropdown option. The /file preview and Antigravity paths\n  are untouched.\n\nTests: CodexAdapterTest (15), BrainController codex integration (4), and an\ne2e codex spec (2) — 75 backend + 44 frontend + 16 e2e, all green.\n\nKnown follow-up: AI summarization still targets Antigravity transcripts;\nfor Codex the analysis panel shows \"No transcript found\" (visualization\nworks). Native-image […]
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit add -A\ngit status --short | grep -vE '\\.claude|\\.entire'\ngit commit -q -F - <<'EOF'\nfeat: visualize OpenAI Codex CLI sessions as a new source\n\nAdd OpenAI Codex sessions (~/.codex/sessions) as a selectable transcript\nsource alongside the Antigravity flavors, rendered in the existing\ntimeline UI.\n\n- CodexAdapter (pure): maps Codex rollout lines ({type,timestamp,payload})\n  into the frontend step schema. response_item message/function_call/\n  function_call_output/reasoning become user/model/tool/output steps with\n  created_at, tool_calls (parsed args), thinking, and an ERROR status for\n  non-zero exec exit codes (anchored heuristic). session_meta/turn_context/\n  event_msg are not timeline steps; event_msg/user_message yields a clean\n  session title.\n- CodexSessionReader (@Singleton): lists sessions (id = filename stem,\n  summary, mtime; newest first) and reads a transcript by matching the id\n  against real filenames (no path built from id). The list view scans only\n  the file head per session to avoid loading large rollouts into memory.\n- BrainController routes flavor=codex to the reader; index.html adds the\n  \"OpenAI Codex\" dropdown option. The /file preview and Antigravity paths\n  are untouched.\n\nTests: CodexAdapterTest (15), BrainController codex integration (4), and an\ne2e codex spec (2) — 75 backend + 44 frontend + 16 e2e, all green.\n\nKnown follow-up: AI summarization still targets Antigravity transcripts;\nfor Codex the analysis panel shows \"No transcript found\" (visualization\nworks). Native-image […]
 
 > TOOL
 
@@ -9300,7 +9300,7 @@ tool_use Bash
 id: toolu_01FdQzn5UMUo8Z4F8Vfe38Tc
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh pr create --base main --head feat/codex-visualizer \\\n  --title \"feat: visualize OpenAI Codex CLI sessions as a new source\" \\\n  --body \"$(cat <<'EOF'\n## What & why\n\nAdds **OpenAI Codex** CLI sessions as a new transcript source to visualize, alongside the Antigravity flavors. Select **\"OpenAI Codex\"** in the sidebar dropdown to browse and render sessions from `~/.codex/sessions` in the existing timeline UI.\n\n## How it works\n\nCodex rollout files (`~/.codex/sessions/<date>/rollout-*.jsonl`) use the OpenAI Responses-API shape — each line is `{type, timestamp, payload}`. A pure **`CodexAdapter`** maps them into the *same step schema the frontend already renders*, so no frontend changes were needed beyond the dropdown option:\n\n| Codex `response_item` | → step |\n|---|---|\n| `message` (user) | USER_INPUT / USER_EXPLICIT |\n| `message` (assistant) | MESSAGE / MODEL |\n| `function_call` | tool call (name + parsed args) |\n| `function_call_output` | tool output (ERROR status on non-zero exit) |\n| `reasoning` (with text) | thinking step |\n\n- **`CodexSessionReader`** lists sessions (id = filename stem, title from the first user message, newest-first) and resolves a transcript by matching the id against real filenames (no path built from the id). The list view scans only each file's head to avoid loading large rollouts […]
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh pr create --base main --head feat/codex-visualizer \\\n  --title \"feat: visualize OpenAI Codex CLI sessions as a new source\" \\\n  --body \"$(cat <<'EOF'\n## What & why\n\nAdds **OpenAI Codex** CLI sessions as a new transcript source to visualize, alongside the Antigravity flavors. Select **\"OpenAI Codex\"** in the sidebar dropdown to browse and render sessions from `~/.codex/sessions` in the existing timeline UI.\n\n## How it works\n\nCodex rollout files (`~/.codex/sessions/<date>/rollout-*.jsonl`) use the OpenAI Responses-API shape — each line is `{type, timestamp, payload}`. A pure **`CodexAdapter`** maps them into the *same step schema the frontend already renders*, so no frontend changes were needed beyond the dropdown option:\n\n| Codex `response_item` | → step |\n|---|---|\n| `message` (user) | USER_INPUT / USER_EXPLICIT |\n| `message` (assistant) | MESSAGE / MODEL |\n| `function_call` | tool call (name + parsed args) |\n| `function_call_output` | tool output (ERROR status on non-zero exit) |\n| `reasoning` (with text) | thinking step |\n\n- **`CodexSessionReader`** lists sessions (id = filename stem, title from the first user message, newest-first) and resolves a transcript by matching the id against real filenames (no path built from the id). The list view scans only each file's head to avoid loading large rollouts […]
 
 > TOOL
 
@@ -9316,7 +9316,7 @@ tool_use Bash
 id: toolu_01Tvr8WpeQXkogqxHbDTe3ew
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nsleep 8\nRUN=$(gh run list --branch feat/codex-visualizer --workflow \"CI\" --limit 1 --json databaseId --jq '.[0].databaseId')\necho \"watching CI run $RUN\"\ngh run watch \"$RUN\" --exit-status --interval 20 >/dev/null 2>&1; echo \"watch exit: $?\"\ngh run view \"$RUN\" --json jobs --jq '.jobs[] | \"\\(.conclusion // .status)\\t\\(.name)\"'",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nsleep 8\nRUN=$(gh run list --branch feat/codex-visualizer --workflow \"CI\" --limit 1 --json databaseId --jq '.[0].databaseId')\necho \"watching CI run $RUN\"\ngh run watch \"$RUN\" --exit-status --interval 20 >/dev/null 2>&1; echo \"watch exit: $?\"\ngh run view \"$RUN\" --json jobs --jq '.jobs[] | \"\\(.conclusion // .status)\\t\\(.name)\"'",
   "description": "Watch PR #6 CI",
   "timeout": 600000
 }
@@ -9344,7 +9344,7 @@ tool_use Bash
 id: toolu_01XTNVCVNX1zPunSrQZVAQaj
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh pr merge 6 --squash --delete-branch 2>&1 | tail -2\ngh pr view 6 --json state --jq '{state}'\ngit checkout main 2>&1 | tail -1\ngit pull --ff-only 2>&1 | tail -2\ngit fetch --prune 2>&1 | tail -1\ngit branch -d feat/codex-visualizer 2>&1 || echo \"(branch already gone)\"\necho \"--- main log ---\"; git log --oneline -3",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh pr merge 6 --squash --delete-branch 2>&1 | tail -2\ngh pr view 6 --json state --jq '{state}'\ngit checkout main 2>&1 | tail -1\ngit pull --ff-only 2>&1 | tail -2\ngit fetch --prune 2>&1 | tail -1\ngit branch -d feat/codex-visualizer 2>&1 || echo \"(branch already gone)\"\necho \"--- main log ---\"; git log --oneline -3",
   "description": "Merge PR #6 and clean up"
 }
 ```
@@ -9398,7 +9398,7 @@ tool_use Read
 id: toolu_01EmYf3CvvGg6zfjDxri4ka7
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
   "offset": 90,
   "limit": 160
 }
@@ -9467,7 +9467,7 @@ tool_use Read
 id: toolu_01D4gNDPdyebs5TUJs45Sv9X
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
   "offset": 250,
   "limit": 70
 }
@@ -9547,7 +9547,7 @@ tool_use Bash
 id: toolu_01YAPSDn2mEmT6BgbhddHbu7
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\necho \"=== function_call tool names across recent sessions ===\"\nfind ~/.codex/sessions -name '*.jsonl' 2>/dev/null | sort | tail -40 | while read f; do\n  jq -r 'select(.payload.type==\"function_call\") | .payload.name' \"$f\" 2>/dev/null\ndone | sort | uniq -c | sort -rn | head -20",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\necho \"=== function_call tool names across recent sessions ===\"\nfind ~/.codex/sessions -name '*.jsonl' 2>/dev/null | sort | tail -40 | while read f; do\n  jq -r 'select(.payload.type==\"function_call\") | .payload.name' \"$f\" 2>/dev/null\ndone | sort | uniq -c | sort -rn | head -20",
   "description": "Survey Codex tool names for file-preview scoping"
 }
 ```
@@ -9576,7 +9576,7 @@ id: toolu_01QfSYddY3hAsdEXxXNYyoUf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexAdapter.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexAdapter.java",
   "old_string": "    /**\n     * Derives a short session title from the first clean user prompt ({@code event_msg/user_message}),\n     * falling back to the first user {@code response_item} message.",
   "new_string": "    /**\n     * Condenses a Codex rollout into LLM-analysis input: one list of short lines per user-initiated\n     * sequence, mirroring {@link TranscriptParser#parseSequences(List)} for Antigravity. User\n     * prompts, assistant messages, tool calls, and failed tool outputs are summarized; successful\n     * outputs and empty reasoning are omitted to keep the token footprint small.\n     *\n     * @param lines the raw JSONL lines of a Codex rollout file\n     * @return one list of summary lines per sequence\n     */\n    static List<List<String>> toAnalysisSequences(List<String> lines) {\n        List<List<String>> sequences = new ArrayList<>();\n        List<String> current = new ArrayList<>();\n        for (ObjectNode step : toSteps(lines)) {\n            String type = step.path(\"type\").asText(\"\");\n            String summaryLine = analysisLine(step, type);\n            if (summaryLine == null) continue;\n            if (\"USER_INPUT\".equals(type) && !current.isEmpty()) {\n                sequences.add(TranscriptParser.deduplicateSequence(current));\n                current = new ArrayList<>();\n            }\n            current.add(summaryLine);\n        }\n        if (!current.isEmpty()) {\n            sequences.add(TranscriptParser.deduplicateSequence(current));\n        }\n        return sequences;\n    }\n\n    private static String analysisLine(ObjectNode step, String type) {\n        switch (type) {\n            case \"USER_INPUT\":\n                return \"USER REQUEST: \" + truncate(step.path(\"content\").asText(\"\"), 2000);\n            case \"MESSAGE\":\n                return \"ASSISTANT: \" + truncate(step.path(\"content\").asText(\"\"), 2000);\n            case \"FUNCTION_CALL\": {\n                JsonNode […]
 
@@ -9585,7 +9585,7 @@ id: toolu_01QfSYddY3hAsdEXxXNYyoUf
 tool_result
 id: toolu_01QfSYddY3hAsdEXxXNYyoUf
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexAdapter.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexAdapter.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -9599,7 +9599,7 @@ id: toolu_01Aevgzwb29HppUSj7cbiqtS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java",
   "old_string": "    // Locate a session by matching its id against actual filenames (never build a path from the id,\n    // which would allow traversal).\n    private Path findById(String id) throws IOException {",
   "new_string": "    /**\n     * @return whether a Codex session with this id exists.\n     */\n    public boolean sessionExists(String id) throws IOException {\n        return findById(id) != null;\n    }\n\n    /**\n     * @return the condensed analysis input for a session (one list of lines per sequence), or empty\n     *     when the session is not found.\n     */\n    public List<List<String>> analysisSequences(String id) throws IOException {\n        Path file = findById(id);\n        if (file == null) return List.of();\n        return CodexAdapter.toAnalysisSequences(Files.readAllLines(file));\n    }\n\n    // Analysis summaries are cached in a tool-owned hidden directory under ~/.codex/sessions so we\n    // never write alongside (or into) the files Codex itself manages.\n    private Path cacheDir() {\n        return sessionsDir().resolve(\".agybrainviz\");\n    }\n\n    /**\n     * @return the cached summary JSON for a session, if present.\n     */\n    public Optional<String> cachedSummary(String id) throws IOException {\n        Path file = cacheDir().resolve(id + \".summary.json\");\n        return Files.exists(file) ? Optional.of(Files.readString(file)) : Optional.empty();\n    }\n\n    /** Deletes any cached summary and title for a session (used on forced recompute). */\n    public void deleteCache(String id) throws IOException […]
 
@@ -9608,7 +9608,7 @@ id: toolu_01Aevgzwb29HppUSj7cbiqtS
 tool_result
 id: toolu_01Aevgzwb29HppUSj7cbiqtS
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -9622,7 +9622,7 @@ id: toolu_01W8mLghEXMYR5ixVkuuLK8G
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
   "old_string": "    private final AnalyzerService analyzerService;\n    private final ExecutorService executor;\n    private final AiConfig aiConfig;\n    private final TokenCounter tokenCounter;\n\n    @Inject\n    public AnalysisController(\n        AnalyzerService analyzerService,\n        @Named(TaskExecutors.IO) ExecutorService executor,\n        AiConfig aiConfig,\n        TokenCounter tokenCounter\n    ) {\n        this.analyzerService = analyzerService;\n        this.executor = executor;\n        this.aiConfig = aiConfig;\n        this.tokenCounter = tokenCounter;\n    }",
   "new_string": "    private final AnalyzerService analyzerService;\n    private final ExecutorService executor;\n    private final AiConfig aiConfig;\n    private final TokenCounter tokenCounter;\n    private final CodexSessionReader codexReader;\n\n    @Inject\n    public AnalysisController(\n        AnalyzerService analyzerService,\n        @Named(TaskExecutors.IO) ExecutorService executor,\n        AiConfig aiConfig,\n        TokenCounter tokenCounter,\n        CodexSessionReader codexReader\n    ) {\n        this.analyzerService = analyzerService;\n        this.executor = executor;\n        this.aiConfig = aiConfig;\n        this.tokenCounter = tokenCounter;\n        this.codexReader = codexReader;\n    }"
 }
@@ -9633,7 +9633,7 @@ id: toolu_01W8mLghEXMYR5ixVkuuLK8G
 tool_result
 id: toolu_01W8mLghEXMYR5ixVkuuLK8G
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9643,7 +9643,7 @@ id: toolu_01DMqqYEvcVCzsnw28AmkoT5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
   "old_string": "            Path brainPath = getBrainPath(flavor.orElse(\"antigravity-cli\"));\n            Path transcriptPath = brainPath\n                .resolve(id)\n                .resolve(\".system_generated\")\n                .resolve(\"logs\")\n                .resolve(\"transcript.jsonl\");\n            if (!Files.exists(transcriptPath)) {\n                return \"{\\\"summary\\\": \\\"No transcript found.\\\"}\";\n            }\n\n            boolean forceRecompute = force.orElse(false);\n            Path summaryJsonPath = brainPath\n                .resolve(id)\n                .resolve(\".system_generated\")\n                .resolve(\"logs\")\n                .resolve(\"summary.json\");\n            Path shortTitlePath = brainPath\n                .resolve(id)\n                .resolve(\".system_generated\")\n                .resolve(\"logs\")\n                .resolve(\"short_title.txt\");\n\n            if (!forceRecompute && Files.exists(summaryJsonPath)) {\n                String json = Files.readString(summaryJsonPath);\n                return json;\n            } else if (forceRecompute) {\n                Files.deleteIfExists(summaryJsonPath);\n            }\n\n            ObjectMapper mapper = new ObjectMapper();\n            AnalysisResponse responseObj = null;\n\n            try {\n                List<String> allLines = Files.readAllLines(transcriptPath);\n                List<List<String>> sequences = TranscriptParser.parseSequences(allLines);",
   "new_string": "            boolean codex = CodexSessionReader.FLAVOR.equals(flavor.orElse(\"\"));\n            boolean forceRecompute = force.orElse(false);\n\n            // Antigravity caches the summary inside the agent's own brain dir; Codex caches via the\n            // CodexSessionReader. Antigravity paths are resolved up front; for Codex they stay null.\n            Path logsDir = codex\n                ? null\n                : getBrainPath(flavor.orElse(\"antigravity-cli\"))\n                    .resolve(id)\n                    .resolve(\".system_generated\")\n                    .resolve(\"logs\");\n            Path transcriptPath = codex ? null : logsDir.resolve(\"transcript.jsonl\");\n            Path summaryJsonPath = codex ? null : logsDir.resolve(\"summary.json\");\n            Path shortTitlePath = codex ? null : logsDir.resolve(\"short_title.txt\");\n\n            boolean exists = codex ? codexReader.sessionExists(id) : Files.exists(transcriptPath);\n            if (!exists) {\n                return \"{\\\"summary\\\": \\\"No transcript found.\\\"}\";\n            }\n\n            if (!forceRecompute) {\n                Optional<String> cached = codex\n                    ? codexReader.cachedSummary(id)\n                    : (Files.exists(summaryJsonPath)\n                        ? Optional.of(Files.readString(summaryJsonPath))\n                        : Optional.empty());\n                if (cached.isPresent()) {\n                    return cached.get();\n […]
 
@@ -9652,7 +9652,7 @@ id: toolu_01DMqqYEvcVCzsnw28AmkoT5
 tool_result
 id: toolu_01DMqqYEvcVCzsnw28AmkoT5
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9662,7 +9662,7 @@ id: toolu_01Li6zGAa2CUo6qdREGW2m9q
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
   "old_string": "                // Try to extract shortTitle for shortTitlePath caching\n                try {\n                    String title = responseObj.shortTitle();\n                    if (title != null && !title.isEmpty()) {\n                        Files.writeString(shortTitlePath, title.trim());\n                    }\n                } catch (Exception e) {}\n\n                try {\n                    Files.writeString(summaryJsonPath, jsonResponse);\n                    return jsonResponse;\n                } catch (Exception e) {\n                    throw new Exception(\"Invalid JSON response\");\n                }",
   "new_string": "                String title = responseObj.shortTitle();\n                try {\n                    if (codex) {\n                        codexReader.writeCache(id, jsonResponse, title);\n                    } else {\n                        if (title != null && !title.isEmpty()) {\n                            Files.writeString(shortTitlePath, title.trim());\n                        }\n                        Files.writeString(summaryJsonPath, jsonResponse);\n                    }\n                    return jsonResponse;\n                } catch (Exception e) {\n                    throw new Exception(\"Invalid JSON response\");\n                }"
 }
@@ -9673,7 +9673,7 @@ id: toolu_01Li6zGAa2CUo6qdREGW2m9q
 tool_result
 id: toolu_01Li6zGAa2CUo6qdREGW2m9q
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -9687,7 +9687,7 @@ id: toolu_015YUWi9iL3qfaoV2ihoNMfy
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/CodexAdapterTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/CodexAdapterTest.java",
   "old_string": "    @Test\n    void producesValidJsonArray() throws Exception {",
   "new_string": "    @Test\n    void buildsAnalysisSequencesGroupedByUserInput() {\n        List<List<String>> seqs = CodexAdapter.toAnalysisSequences(\n            List.of(USER_MSG, ASSISTANT_MSG, FUNCTION_CALL, FUNCTION_OUTPUT_OK, FUNCTION_OUTPUT_FAIL)\n        );\n        assertEquals(1, seqs.size());\n        List<String> lines = seqs.get(0);\n        assertTrue(lines.get(0).startsWith(\"USER REQUEST: Fix the bug\"));\n        assertTrue(lines.get(1).startsWith(\"ASSISTANT: On it.\"));\n        assertEquals(\"AGENT ACTION: [exec_command] git status\", lines.get(2));\n        // Successful output is omitted; the failed one becomes a SYSTEM EVENT/ERROR line.\n        assertTrue(lines.stream().anyMatch(l -> l.startsWith(\"SYSTEM EVENT/ERROR:\")));\n        assertFalse(lines.stream().anyMatch(l -> l.contains(\"clean\")));\n    }\n\n    @Test\n    void analysisSequencesSplitOnEachUserInput() {\n        String secondUser =\n            \"{\\\"type\\\":\\\"response_item\\\",\\\"timestamp\\\":\\\"t\\\",\\\"payload\\\":{\\\"type\\\":\\\"message\\\",\\\"role\\\":\\\"user\\\",\\\"content\\\":[{\\\"type\\\":\\\"input_text\\\",\\\"text\\\":\\\"again\\\"}]}}\";\n        List<List<String>> seqs = CodexAdapter.toAnalysisSequences(\n            List.of(USER_MSG, ASSISTANT_MSG, secondUser)\n        );\n        assertEquals(2, seqs.size());\n    }\n\n    @Test\n    void producesValidJsonArray() throws Exception {"
 }
@@ -9698,7 +9698,7 @@ id: toolu_015YUWi9iL3qfaoV2ihoNMfy
 tool_result
 id: toolu_015YUWi9iL3qfaoV2ihoNMfy
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/CodexAdapterTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/CodexAdapterTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -9711,7 +9711,7 @@ tool_use Read
 id: toolu_01LYKcY3qy3U2aDEhmAnR7FZ
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
   "offset": 180,
   "limit": 35
 }
@@ -9766,7 +9766,7 @@ id: toolu_01JegxiFJky22RxbUh3DXBpH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
   "old_string": "    private String get(String uri) {\n        return client.toBlocking().retrieve(uri);\n    }\n\n    // ----- progress endpoint -----",
   "new_string": "    private String get(String uri) {\n        return client.toBlocking().retrieve(uri);\n    }\n\n    private void writeCodexSession(String relPath, String content) throws IOException {\n        Path file = tempHome.resolve(\".codex\").resolve(\"sessions\").resolve(relPath);\n        Files.createDirectories(file.getParent());\n        Files.writeString(file, content);\n    }\n\n    // ----- progress endpoint -----"
 }
@@ -9777,7 +9777,7 @@ id: toolu_01JegxiFJky22RxbUh3DXBpH
 tool_result
 id: toolu_01JegxiFJky22RxbUh3DXBpH
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9787,7 +9787,7 @@ id: toolu_01XE8Zdgz6k7M13B6hEQPz8y
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
   "old_string": "    @Test\n    void summarizeReturnsNoTranscriptMessageWhenTranscriptMissing() throws IOException {\n        String body = get(\"/api/analysis/conversations/no-transcript-here/summarize\");\n        JsonNode node = MAPPER.readTree(body);\n        assertEquals(\"No transcript found.\", node.get(\"summary\").asText());\n    }",
   "new_string": "    @Test\n    void summarizeReturnsNoTranscriptMessageWhenTranscriptMissing() throws IOException {\n        String body = get(\"/api/analysis/conversations/no-transcript-here/summarize\");\n        JsonNode node = MAPPER.readTree(body);\n        assertEquals(\"No transcript found.\", node.get(\"summary\").asText());\n    }\n\n    // ----- codex source analysis -----\n\n    @Test\n    void summarizesCodexSessionAndCachesResult() throws IOException {\n        String id = \"rollout-2026-06-20T15-00-00-codexanalysis\";\n        writeCodexSession(\n            \"2026/06/20/\" + id + \".jsonl\",\n            \"{\\\"type\\\":\\\"response_item\\\",\\\"timestamp\\\":\\\"t\\\",\\\"payload\\\":{\\\"type\\\":\\\"message\\\",\\\"role\\\":\\\"user\\\",\\\"content\\\":[{\\\"type\\\":\\\"input_text\\\",\\\"text\\\":\\\"do it\\\"}]}}\\n\" +\n            \"{\\\"type\\\":\\\"response_item\\\",\\\"timestamp\\\":\\\"t\\\",\\\"payload\\\":{\\\"type\\\":\\\"function_call\\\",\\\"name\\\":\\\"exec_command\\\",\\\"arguments\\\":\\\"{\\\\\\\"cmd\\\\\\\":\\\\\\\"ls\\\\\\\"}\\\",\\\"call_id\\\":\\\"c1\\\"}}\\n\"\n        );\n\n        String body = get(\n            \"/api/analysis/conversations/\" + id + \"/summarize?flavor=codex&force=true\"\n        );\n        assertEquals(\"chunk summary\", MAPPER.readTree(body).get(\"summary\").asText());\n        assertEquals(1, ANALYZE_CALLS.size());\n\n        // A subsequent non-forced request is served from the Codex cache without re-invoking the LLM.\n        String again = get(\"/api/analysis/conversations/\" + id + \"/summarize?flavor=codex\");\n        assertEquals(\"Chunk Title\", MAPPER.readTree(again).get(\"shortTitle\").asText());\n        assertEquals(1, ANALYZE_CALLS.size());\n    }\n\n    @Test\n    void codexSummarizeReturnsNoTranscriptForUnknownId() throws IOException {\n        String body = get(\"/api/analysis/conversations/unknown-codex/summarize?flavor=codex\");\n        assertEquals(\"No transcript found.\", MAPPER.readTree(body).get(\"summary\").asText());\n    }"
 }
@@ -9798,7 +9798,7 @@ id: toolu_01XE8Zdgz6k7M13B6hEQPz8y
 tool_result
 id: toolu_01XE8Zdgz6k7M13B6hEQPz8y
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -9812,7 +9812,7 @@ id: toolu_01ULvTCLU9ou5QXica3K2rwQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/fixtures.mjs",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/fixtures.mjs",
   "old_string": "  return { home, configPath };\n}",
   "new_string": "  // Seed a cached Codex analysis so selecting the session serves it from cache (the e2e server runs\n  // with a dummy key and would otherwise attempt a real LLM call on auto-analysis).\n  const codexCacheDir = path.join(gemini, \"..\", \".codex\", \"sessions\", \".agybrainviz\");\n  fs.mkdirSync(codexCacheDir, { recursive: true });\n  fs.writeFileSync(\n    path.join(codexCacheDir, \"rollout-2026-06-20T14-00-00-codexsession.summary.json\"),\n    JSON.stringify({\n      shortTitle: \"Flaky test investigation\",\n      summary: \"The agent reproduced and analyzed a flaky test via the suite.\",\n      flow: [\"Ran the test suite\"],\n      agentActions: [{ action: \"run\", description: \"Ran npm test\" }],\n      issues: [],\n      recommendations: [],\n    })\n  );\n\n  return { home, configPath };\n}"
 }
@@ -9823,7 +9823,7 @@ id: toolu_01ULvTCLU9ou5QXica3K2rwQ
 tool_result
 id: toolu_01ULvTCLU9ou5QXica3K2rwQ
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/fixtures.mjs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/fixtures.mjs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9833,7 +9833,7 @@ id: toolu_01B96kBVoDw3LU6XczuPU1xH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/codex.spec.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/codex.spec.js",
   "old_string": "    await expect(page.locator(\"#session-stats-container\")).toBeVisible();\n    await expect(page.locator(\"#user-queries-stat-card .stat-value\")).toHaveText(\"1\");\n    await expect(page.locator(\"#tools-stat-card .stat-value\")).toHaveText(\"1\");\n  });\n});",
   "new_string": "    await expect(page.locator(\"#session-stats-container\")).toBeVisible();\n    await expect(page.locator(\"#user-queries-stat-card .stat-value\")).toHaveText(\"1\");\n    await expect(page.locator(\"#tools-stat-card .stat-value\")).toHaveText(\"1\");\n  });\n\n  test(\"shows the AI analysis for a Codex session\", async ({ page }) => {\n    await page.goto(\"/\");\n    await page.selectOption(\"#flavor-select\", \"codex\");\n    await page.locator('.conv-item:has-text(\"Investigate the flaky test\")').click();\n\n    await expect(page.locator(\"#ai-summary-text\")).toContainText(\n      \"reproduced and analyzed a flaky test\"\n    );\n  });\n});"
 }
@@ -9844,7 +9844,7 @@ id: toolu_01B96kBVoDw3LU6XczuPU1xH
 tool_result
 id: toolu_01B96kBVoDw3LU6XczuPU1xH
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/codex.spec.js has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/codex.spec.js has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9854,7 +9854,7 @@ id: toolu_011T4YuMdynTKstUn6D7JSqg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/README.md",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/README.md",
   "old_string": "*   **Multiple Sources**: In addition to Antigravity transcripts, the dropdown can render **OpenAI Codex** CLI sessions read from `~/.codex/sessions` (select \"OpenAI Codex\"). Codex rollout files are adapted into the same timeline view. *(AI summarization currently applies to Antigravity transcripts.)*",
   "new_string": "*   **Multiple Sources**: In addition to Antigravity transcripts, the dropdown can render **OpenAI Codex** CLI sessions read from `~/.codex/sessions` (select \"OpenAI Codex\"). Codex rollout files are adapted into the same timeline view, including AI summarization (cached under `~/.codex/sessions/.agybrainviz`)."
 }
@@ -9865,7 +9865,7 @@ id: toolu_011T4YuMdynTKstUn6D7JSqg
 tool_result
 id: toolu_011T4YuMdynTKstUn6D7JSqg
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -9878,7 +9878,7 @@ tool_use Bash
 id: toolu_01ECd6cSbunU6S2fQXttQkq7
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\necho \"=== spotlessApply + build ===\"\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -6\necho \"=== backend count ===\"\ntotal=0; for f in build/test-results/test/*.xml; do n=$(grep -o 'tests=\"[0-9]*\"' \"$f\" | head -1 | sed 's/tests=\"//;s/\"//'); total=$((total+n)); done; echo \"TOTAL backend: $total\"\necho \"=== rebuild jar + e2e ===\"\nmise exec -- ./gradlew shadowJar -x test --console=plain 2>&1 | tail -2\nlsof -ti tcp:8099 | xargs kill -9 2>/dev/null; sleep 1\nmise exec -- npx playwright test 2>&1 | tail -8",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\necho \"=== spotlessApply + build ===\"\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -6\necho \"=== backend count ===\"\ntotal=0; for f in build/test-results/test/*.xml; do n=$(grep -o 'tests=\"[0-9]*\"' \"$f\" | head -1 | sed 's/tests=\"//;s/\"//'); total=$((total+n)); done; echo \"TOTAL backend: $total\"\necho \"=== rebuild jar + e2e ===\"\nmise exec -- ./gradlew shadowJar -x test --console=plain 2>&1 | tail -2\nlsof -ti tcp:8099 | xargs kill -9 2>/dev/null; sleep 1\nmise exec -- npx playwright test 2>&1 | tail -8",
   "description": "Full verification of Codex analysis",
   "timeout": 600000
 }
@@ -9902,7 +9902,7 @@ TOTAL backend: 75
 BUILD FAILED in 845ms
 2 actionable tasks: 1 executed, 1 up-to-date
       45 |   });
-        at /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/codex.spec.js:42:52
+        at /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/codex.spec.js:42:52
 
     Error Context: test-results/codex-OpenAI-Codex-session-2abc0-nalysis-for-a-Codex-session-chromium/error-context.md
 
@@ -9921,7 +9921,7 @@ tool_use Bash
 id: toolu_017E298J58Xh1cXm6iWxjPii
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew compileJava compileTestJava --console=plain 2>&1 | grep -iE 'error|\\.java:' | head -30",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew compileJava compileTestJava --console=plain 2>&1 | grep -iE 'error|\\.java:' | head -30",
   "description": "Find the compile error",
   "timeout": 300000
 }
@@ -9932,11 +9932,11 @@ id: toolu_017E298J58Xh1cXm6iWxjPii
 tool_result
 id: toolu_017E298J58Xh1cXm6iWxjPii
 ```
-/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java:134: error: cannot find symbol
-/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java:35: warning: Bean definition generation [io.github.glaforge.agybrainviz.CodexSessionReader] skipped from processing because of prior error: [io.github.glaforge.agybrainviz.CodexSessionReader cachedSummary(java.lang.String)]. This error is normally due to missing classes on the classpath. Verify the compilation classpath is correct to resolve the problem.
+/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java:134: error: cannot find symbol
+/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java:35: warning: Bean definition generation [io.github.glaforge.agybrainviz.CodexSessionReader] skipped from processing because of prior error: [io.github.glaforge.agybrainviz.CodexSessionReader cachedSummary(java.lang.String)]. This error is normally due to missing classes on the classpath. Verify the compilation classpath is correct to resolve the problem.
 1 error
-  /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java:35: warning: Bean definition generation [io.github.glaforge.agybrainviz.CodexSessionReader] skipped from processing because of prior error: [io.github.glaforge.agybrainviz.CodexSessionReader cachedSummary(java.lang.String)]. This error is normally due to missing classes on the classpath. Verify the compilation classpath is correct to resolve the problem.
-  /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java:134: error: cannot find symbol
+  /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java:35: warning: Bean definition generation [io.github.glaforge.agybrainviz.CodexSessionReader] skipped from processing because of prior error: [io.github.glaforge.agybrainviz.CodexSessionReader cachedSummary(java.lang.String)]. This error is normally due to missing classes on the classpath. Verify the compilation classpath is correct to resolve the problem.
+  /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java:134: error: cannot find symbol
   1 error
 > Check your code and dependencies to fix the compilation error(s)
 ```
@@ -9952,7 +9952,7 @@ id: toolu_018NMGh5VrCpBuJDU8rszu3C
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java",
   "old_string": "import java.util.List;\nimport java.util.Map;\nimport java.util.stream.Stream;",
   "new_string": "import java.util.List;\nimport java.util.Map;\nimport java.util.Optional;\nimport java.util.stream.Stream;"
 }
@@ -9963,7 +9963,7 @@ id: toolu_018NMGh5VrCpBuJDU8rszu3C
 tool_result
 id: toolu_018NMGh5VrCpBuJDU8rszu3C
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9972,7 +9972,7 @@ tool_use Bash
 id: toolu_01UXjghh8V7a9AmVzWW2ijy2
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\necho \"=== spotlessApply + build ===\"\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -5\necho \"=== backend count ===\"\ntotal=0; for f in build/test-results/test/*.xml; do n=$(grep -o 'tests=\"[0-9]*\"' \"$f\" | head -1 | sed 's/tests=\"//;s/\"//'); total=$((total+n)); done; echo \"TOTAL backend: $total\"\necho \"=== rebuild jar + e2e ===\"\nmise exec -- ./gradlew shadowJar -x test --console=plain 2>&1 | tail -2\nlsof -ti tcp:8099 | xargs kill -9 2>/dev/null; sleep 1\nmise exec -- npx playwright test 2>&1 | tail -6",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\necho \"=== spotlessApply + build ===\"\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -5\necho \"=== backend count ===\"\ntotal=0; for f in build/test-results/test/*.xml; do n=$(grep -o 'tests=\"[0-9]*\"' \"$f\" | head -1 | sed 's/tests=\"//;s/\"//'); total=$((total+n)); done; echo \"TOTAL backend: $total\"\necho \"=== rebuild jar + e2e ===\"\nmise exec -- ./gradlew shadowJar -x test --console=plain 2>&1 | tail -2\nlsof -ti tcp:8099 | xargs kill -9 2>/dev/null; sleep 1\nmise exec -- npx playwright test 2>&1 | tail -6",
   "description": "Re-verify after fixing import",
   "timeout": 600000
 }
@@ -9984,7 +9984,7 @@ tool_result
 id: toolu_01UXjghh8V7a9AmVzWW2ijy2
 ```
 === spotlessApply + build ===
-[Incubating] Problems report is available at: file:///Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/build/reports/problems/problems-report.html
+[Incubating] Problems report is available at: file:///home/<USER>/Developer/scottdensmore/agent-brain-visualizer/build/reports/problems/problems-report.html
 
 BUILD SUCCESSFUL in 14s
 37 actionable tasks: 28 executed, 9 up-to-date
@@ -10012,7 +10012,7 @@ tool_use Bash
 id: toolu_01591NytqgDcX7jhyzABtGSx
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit add -A\ngit status --short | grep -vE '\\.claude|\\.entire'",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit add -A\ngit status --short | grep -vE '\\.claude|\\.entire'",
   "description": "Stage Codex analysis change"
 }
 ```
@@ -10039,7 +10039,7 @@ id: toolu_013LDHCZDnxWPGHoRHjVtXxT
 ```json
 {
   "description": "Review Codex analysis change",
-  "prompt": "You are a senior code reviewer. Review the STAGED git diff in /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer (run `git diff --cached`). This change wires AI summarization for the OpenAI Codex transcript source (previously analysis only worked for Antigravity).\n\nContext:\n- `AnalysisController.summarizeConversation` is now flavor-aware: for `flavor=codex` it gets analysis input + cache via `CodexSessionReader` instead of the `~/.gemini/.../logs` paths. The shared LLM pipeline (chunk → analyze → consolidate → progress) is unchanged. Antigravity behavior must be unchanged.\n- `CodexAdapter.toAnalysisSequences` condenses a rollout into per-user-input sequences (user/assistant/tool-call/failed-output lines), reusing `TranscriptParser.deduplicateSequence`.\n- `CodexSessionReader` adds `sessionExists`, `analysisSequences`, and a cache under `~/.codex/sessions/.agybrainviz/<id>.summary.json` (+ short_title), with `cachedSummary`/`deleteCache`/`writeCache`.\n- Tests: CodexAdapterTest (analysis sequences), AnalysisControllerTest (codex summarize+cache, codex no-transcript), e2e codex analysis spec. All green: 79 backend + 44 frontend + 17 e2e.\n\nFocus on:\n1. **Antigravity regression**: did the flavor-branch refactor change any Antigravity behavior (paths, \"No transcript found\", cache read/write, force-delete, error messages)? Compare carefully.\n2. **Correctness** of the codex branch: existence check, cache read/write/delete, sequence building. Any null-pointer risk from the `codex ? null : ...` path variables being used later?\n3. **Cache location** `~/.codex/sessions/.agybrainviz`: does it interfere with `listConversations`/`findById` (which walk that tree)? Could a cache file be mistaken for a session? Path-traversal […]
+  "prompt": "You are a senior code reviewer. Review the STAGED git diff in /home/<USER>/Developer/scottdensmore/agent-brain-visualizer (run `git diff --cached`). This change wires AI summarization for the OpenAI Codex transcript source (previously analysis only worked for Antigravity).\n\nContext:\n- `AnalysisController.summarizeConversation` is now flavor-aware: for `flavor=codex` it gets analysis input + cache via `CodexSessionReader` instead of the `~/.gemini/.../logs` paths. The shared LLM pipeline (chunk → analyze → consolidate → progress) is unchanged. Antigravity behavior must be unchanged.\n- `CodexAdapter.toAnalysisSequences` condenses a rollout into per-user-input sequences (user/assistant/tool-call/failed-output lines), reusing `TranscriptParser.deduplicateSequence`.\n- `CodexSessionReader` adds `sessionExists`, `analysisSequences`, and a cache under `~/.codex/sessions/.agybrainviz/<id>.summary.json` (+ short_title), with `cachedSummary`/`deleteCache`/`writeCache`.\n- Tests: CodexAdapterTest (analysis sequences), AnalysisControllerTest (codex summarize+cache, codex no-transcript), e2e codex analysis spec. All green: 79 backend + 44 frontend + 17 e2e.\n\nFocus on:\n1. **Antigravity regression**: did the flavor-branch refactor change any Antigravity behavior (paths, \"No transcript found\", cache read/write, force-delete, error messages)? Compare carefully.\n2. **Correctness** of the codex branch: existence check, cache read/write/delete, sequence building. Any null-pointer risk from the `codex ? null : ...` path variables being used later?\n3. **Cache location** `~/.codex/sessions/.agybrainviz`: does it interfere with `listConversations`/`findById` (which walk that tree)? Could a cache file be mistaken for a session? Path-traversal […]
 
 > TOOL
 
@@ -10077,7 +10077,7 @@ id: toolu_01QJARSGs7jr3efjBug3VuhX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
   "old_string": "                String title = responseObj.shortTitle();\n                try {\n                    if (codex) {\n                        codexReader.writeCache(id, jsonResponse, title);\n                    } else {\n                        if (title != null && !title.isEmpty()) {\n                            Files.writeString(shortTitlePath, title.trim());\n                        }\n                        Files.writeString(summaryJsonPath, jsonResponse);\n                    }\n                    return jsonResponse;\n                } catch (Exception e) {\n                    throw new Exception(\"Invalid JSON response\");\n                }",
   "new_string": "                String title = responseObj.shortTitle();\n                try {\n                    if (codex) {\n                        codexReader.writeCache(id, jsonResponse, title);\n                    } else {\n                        // The short title is best-effort; a failure here must not block caching or\n                        // returning the summary.\n                        try {\n                            if (title != null && !title.isEmpty()) {\n                                Files.writeString(shortTitlePath, title.trim());\n                            }\n                        } catch (Exception ignore) {}\n                        Files.writeString(summaryJsonPath, jsonResponse);\n                    }\n                    return jsonResponse;\n                } catch (Exception e) {\n                    throw new Exception(\"Invalid JSON response\");\n                }"
 }
@@ -10088,7 +10088,7 @@ id: toolu_01QJARSGs7jr3efjBug3VuhX
 tool_result
 id: toolu_01QJARSGs7jr3efjBug3VuhX
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10098,7 +10098,7 @@ id: toolu_01LeXfsPHi7LzECtse4LoNSM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java",
   "old_string": "    /**\n     * @return the cached summary JSON for a session, if present.\n     */\n    public Optional<String> cachedSummary(String id) throws IOException {\n        Path file = cacheDir().resolve(id + \".summary.json\");\n        return Files.exists(file) ? Optional.of(Files.readString(file)) : Optional.empty();\n    }\n\n    /** Deletes any cached summary and title for a session (used on forced recompute). */\n    public void deleteCache(String id) throws IOException {\n        Files.deleteIfExists(cacheDir().resolve(id + \".summary.json\"));\n        Files.deleteIfExists(cacheDir().resolve(id + \".short_title.txt\"));\n    }\n\n    /** Writes the computed summary JSON (and optional short title) to the cache. */\n    public void writeCache(String id, String summaryJson, String title) throws IOException {\n        Path dir = cacheDir();\n        Files.createDirectories(dir);\n        Files.writeString(dir.resolve(id + \".summary.json\"), summaryJson);\n        if (title != null && !title.isBlank()) {\n            Files.writeString(dir.resolve(id + \".short_title.txt\"), title.trim());\n        }\n    }",
   "new_string": "    // Resolve a cache file from an id, guarding against traversal even if a caller skips the\n    // sessionExists() gate (the id originates from a URL path variable).\n    private Path cacheFile(String id, String suffix) {\n        Path dir = cacheDir().normalize();\n        Path file = dir.resolve(id + suffix).normalize();\n        if (!file.startsWith(dir)) {\n            throw new IllegalArgumentException(\"Invalid session id: \" + id);\n        }\n        return file;\n    }\n\n    /**\n     * @return the cached summary JSON for a session, if present.\n     */\n    public Optional<String> cachedSummary(String id) […]
 
@@ -10107,7 +10107,7 @@ id: toolu_01LeXfsPHi7LzECtse4LoNSM
 tool_result
 id: toolu_01LeXfsPHi7LzECtse4LoNSM
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10116,7 +10116,7 @@ tool_use Bash
 id: toolu_01BiZUiJPRroA2tjEoZbqAWH
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -5\ntotal=0; for f in build/test-results/test/*.xml; do n=$(grep -o 'tests=\"[0-9]*\"' \"$f\" | head -1 | sed 's/tests=\"//;s/\"//'); total=$((total+n)); done; echo \"TOTAL backend: $total\"\nmise exec -- ./gradlew shadowJar -x test --console=plain 2>&1 | tail -1\nlsof -ti tcp:8099 | xargs kill -9 2>/dev/null; sleep 1\nmise exec -- npx playwright test 2>&1 | tail -4",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -5\ntotal=0; for f in build/test-results/test/*.xml; do n=$(grep -o 'tests=\"[0-9]*\"' \"$f\" | head -1 | sed 's/tests=\"//;s/\"//'); total=$((total+n)); done; echo \"TOTAL backend: $total\"\nmise exec -- ./gradlew shadowJar -x test --console=plain 2>&1 | tail -1\nlsof -ti tcp:8099 | xargs kill -9 2>/dev/null; sleep 1\nmise exec -- npx playwright test 2>&1 | tail -4",
   "description": "Re-verify after review fixes",
   "timeout": 600000
 }
@@ -10127,7 +10127,7 @@ id: toolu_01BiZUiJPRroA2tjEoZbqAWH
 tool_result
 id: toolu_01BiZUiJPRroA2tjEoZbqAWH
 ```
-[Incubating] Problems report is available at: file:///Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/build/reports/problems/problems-report.html
+[Incubating] Problems report is available at: file:///home/<USER>/Developer/scottdensmore/agent-brain-visualizer/build/reports/problems/problems-report.html
 
 BUILD SUCCESSFUL in 13s
 37 actionable tasks: 27 executed, 10 up-to-date
@@ -10150,7 +10150,7 @@ tool_use Bash
 id: toolu_01B1v7SRp8etAcXqvXbXc38m
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit checkout -b feat/codex-analysis 2>&1 | tail -1\ngit add -A\ngit status --short | grep -vE '\\.claude|\\.entire'\ngit commit -q -F - <<'EOF'\nfeat(ai): AI summarization for OpenAI Codex sessions\n\nWire the analysis pipeline for the Codex source so the summary panel works\nfor Codex sessions (previously it only read ~/.gemini and showed\n\"No transcript found\").\n\n- AnalysisController.summarize is now flavor-aware: for flavor=codex it\n  gets analysis input and cache via CodexSessionReader; the shared\n  chunk→analyze→consolidate pipeline is unchanged, and Antigravity behavior\n  is preserved (short-title write stays best-effort).\n- CodexAdapter.toAnalysisSequences condenses a rollout into per-user-input\n  sequences (user/assistant/tool-call/failed-output), reusing\n  TranscriptParser.deduplicateSequence.\n- CodexSessionReader caches summaries under ~/.codex/sessions/.agybrainviz\n  (tool-owned hidden dir), with traversal-guarded cache paths.\n\nTests: CodexAdapter analysis-sequence tests, AnalysisController codex\nsummarize+cache and no-transcript tests, and an e2e spec asserting the\nCodex analysis panel renders. 79 backend + 44 frontend + 17 e2e, all green.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\necho \"exit: $?\"\ngit push -u origin feat/codex-analysis 2>&1 | tail -3",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit checkout -b feat/codex-analysis 2>&1 | tail -1\ngit add -A\ngit status --short | grep -vE '\\.claude|\\.entire'\ngit commit -q -F - <<'EOF'\nfeat(ai): AI summarization for OpenAI Codex sessions\n\nWire the analysis pipeline for the Codex source so the summary panel works\nfor Codex sessions (previously it only read ~/.gemini and showed\n\"No transcript found\").\n\n- AnalysisController.summarize is now flavor-aware: for flavor=codex it\n  gets analysis input and cache via CodexSessionReader; the shared\n  chunk→analyze→consolidate pipeline is unchanged, and Antigravity behavior\n  is preserved (short-title write stays best-effort).\n- CodexAdapter.toAnalysisSequences condenses a rollout into per-user-input\n  sequences (user/assistant/tool-call/failed-output), reusing\n  TranscriptParser.deduplicateSequence.\n- CodexSessionReader caches summaries under ~/.codex/sessions/.agybrainviz\n  (tool-owned hidden dir), with traversal-guarded cache paths.\n\nTests: CodexAdapter analysis-sequence tests, AnalysisController codex\nsummarize+cache and no-transcript tests, and an e2e spec asserting the\nCodex analysis panel renders. 79 backend + 44 frontend + 17 e2e, all green.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\necho \"exit: $?\"\ngit push -u origin feat/codex-analysis 2>&1 | tail -3",
   "description": "Commit and push Codex analysis"
 }
 ```
@@ -10181,7 +10181,7 @@ tool_use Bash
 id: toolu_01UpjJiXGP9rMSHABrrUKK3d
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh pr create --base main --head feat/codex-analysis \\\n  --title \"feat(ai): AI summarization for OpenAI Codex sessions\" \\\n  --body \"$(cat <<'EOF'\n## What & why\n\nFixes the first Codex limitation: AI summarization now works for **OpenAI Codex** sessions. Previously the analysis pipeline only read `~/.gemini`, so selecting a Codex session showed \"No transcript found\" in the summary panel.\n\n## How\n\n- `AnalysisController.summarize` is **flavor-aware**: for `flavor=codex` it sources analysis input + cache from `CodexSessionReader`; the shared `chunk → analyze → consolidate` LLM pipeline is unchanged. Antigravity behavior is preserved (incl. the best-effort short-title write).\n- `CodexAdapter.toAnalysisSequences` condenses a rollout into per-user-input sequences (user prompt / assistant message / tool call / failed output), reusing `TranscriptParser.deduplicateSequence`.\n- `CodexSessionReader` caches summaries under `~/.codex/sessions/.agybrainviz/<id>.summary.json` (a tool-owned hidden dir — never written alongside Codex's own files), with traversal-guarded cache paths.\n\n## Tests\n- `CodexAdapterTest`: analysis-sequence grouping/omission, split-on-user-input.\n- `AnalysisControllerTest`: codex summarize + cache-hit (LLM invoked once, then served from cache), codex no-transcript.\n- e2e: Codex analysis panel renders (fixture seeds a cached summary so no real LLM call).\n- **79 backend + 44 frontend + 17 e2e**, all green.\n\nReview applied: restored best-effort short-title write (avoids an Antigravity regression) and hardened cache id→path resolution against traversal.\n\n🤖 Generated with [Claude […]
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh pr create --base main --head feat/codex-analysis \\\n  --title \"feat(ai): AI summarization for OpenAI Codex sessions\" \\\n  --body \"$(cat <<'EOF'\n## What & why\n\nFixes the first Codex limitation: AI summarization now works for **OpenAI Codex** sessions. Previously the analysis pipeline only read `~/.gemini`, so selecting a Codex session showed \"No transcript found\" in the summary panel.\n\n## How\n\n- `AnalysisController.summarize` is **flavor-aware**: for `flavor=codex` it sources analysis input + cache from `CodexSessionReader`; the shared `chunk → analyze → consolidate` LLM pipeline is unchanged. Antigravity behavior is preserved (incl. the best-effort short-title write).\n- `CodexAdapter.toAnalysisSequences` condenses a rollout into per-user-input sequences (user prompt / assistant message / tool call / failed output), reusing `TranscriptParser.deduplicateSequence`.\n- `CodexSessionReader` caches summaries under `~/.codex/sessions/.agybrainviz/<id>.summary.json` (a tool-owned hidden dir — never written alongside Codex's own files), with traversal-guarded cache paths.\n\n## Tests\n- `CodexAdapterTest`: analysis-sequence grouping/omission, split-on-user-input.\n- `AnalysisControllerTest`: codex summarize + cache-hit (LLM invoked once, then served from cache), codex no-transcript.\n- e2e: Codex analysis panel renders (fixture seeds a cached summary so no real LLM call).\n- **79 backend + 44 frontend + 17 e2e**, all green.\n\nReview applied: restored best-effort short-title write (avoids an Antigravity regression) and hardened cache id→path resolution against traversal.\n\n🤖 Generated with [Claude […]
 
 > TOOL
 
@@ -10197,7 +10197,7 @@ tool_use Bash
 id: toolu_01DUh3vymSLzhnzz2kxGRfBD
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nsleep 8\nRUN=$(gh run list --branch feat/codex-analysis --workflow \"CI\" --limit 1 --json databaseId --jq '.[0].databaseId')\necho \"watching CI run $RUN\"\ngh run watch \"$RUN\" --exit-status --interval 20 >/dev/null 2>&1; echo \"watch exit: $?\"\ngh run view \"$RUN\" --json jobs --jq '.jobs[] | \"\\(.conclusion // .status)\\t\\(.name)\"'",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nsleep 8\nRUN=$(gh run list --branch feat/codex-analysis --workflow \"CI\" --limit 1 --json databaseId --jq '.[0].databaseId')\necho \"watching CI run $RUN\"\ngh run watch \"$RUN\" --exit-status --interval 20 >/dev/null 2>&1; echo \"watch exit: $?\"\ngh run view \"$RUN\" --json jobs --jq '.jobs[] | \"\\(.conclusion // .status)\\t\\(.name)\"'",
   "description": "Watch PR #7 CI",
   "timeout": 600000
 }
@@ -10225,7 +10225,7 @@ tool_use Bash
 id: toolu_01BmTy7kBuqfZdoEnHs2JHqS
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh pr merge 7 --squash --delete-branch 2>&1 | tail -2\ngh pr view 7 --json state --jq '{state}'\ngit checkout main 2>&1 | tail -1\ngit pull --ff-only 2>&1 | tail -2\ngit fetch --prune 2>&1 | tail -1\ngit branch -d feat/codex-analysis 2>&1 || echo \"(gone)\"\ngit log --oneline -2",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh pr merge 7 --squash --delete-branch 2>&1 | tail -2\ngh pr view 7 --json state --jq '{state}'\ngit checkout main 2>&1 | tail -1\ngit pull --ff-only 2>&1 | tail -2\ngit fetch --prune 2>&1 | tail -1\ngit branch -d feat/codex-analysis 2>&1 || echo \"(gone)\"\ngit log --oneline -2",
   "description": "Merge PR #7 and clean up"
 }
 ```
@@ -10307,7 +10307,7 @@ tool_use Bash
 id: toolu_016vPmMEes2gQUFCrBp2WR5E
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngrep -niE 'file preview|file modal|file://|preview' README.md | head",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngrep -niE 'file preview|file modal|file://|preview' README.md | head",
   "description": "Find file-preview mentions in README"
 }
 ```
@@ -10330,7 +10330,7 @@ tool_use Read
 id: toolu_014rVug9mfrtY7tZsZGMsUaj
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/README.md",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/README.md",
   "offset": 26,
   "limit": 5
 }
@@ -10355,7 +10355,7 @@ id: toolu_01R7b5mCjXm9LgjsbdYjGLDq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/README.md",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/README.md",
   "old_string": "*   **Multiple Sources**: In addition to Antigravity transcripts, the dropdown can render **OpenAI Codex** CLI sessions read from `~/.codex/sessions` (select \"OpenAI Codex\"). Codex rollout files are adapted into the same timeline view, including AI summarization (cached under `~/.codex/sessions/.agybrainviz`).",
   "new_string": "*   **Multiple Sources**: In addition to Antigravity transcripts, the dropdown can render **OpenAI Codex** CLI sessions read from `~/.codex/sessions` (select \"OpenAI Codex\"). Codex rollout files are adapted into the same timeline view, including AI summarization (cached under `~/.codex/sessions/.agybrainviz`).\n    > **Note:** Inline file preview is available for Antigravity transcripts, which embed explicit file references. Codex sessions interact with files only through shell commands and contain no structured file references, so clickable file previews are not generated for them."
 }
@@ -10366,7 +10366,7 @@ id: toolu_01R7b5mCjXm9LgjsbdYjGLDq
 tool_result
 id: toolu_01R7b5mCjXm9LgjsbdYjGLDq
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -10379,7 +10379,7 @@ tool_use Bash
 id: toolu_016FdxhDcKHU6KRVeKKLDDpv
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit checkout -b docs/codex-file-preview-note 2>&1 | tail -1\ngit add README.md\ngit commit -q -F - <<'EOF'\ndocs: clarify file preview is Antigravity-only\n\nCodex sessions interact with files only via shell commands and contain no\nstructured file references, so inline file previews aren't generated for\nthem. Document this as an inherent format difference rather than an open\ngap. (Timeline, stats, and AI analysis all work for Codex.)\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\necho \"exit: $?\"\ngit push -u origin docs/codex-file-preview-note 2>&1 | tail -2\ngh pr create --base main --head docs/codex-file-preview-note \\\n  --title \"docs: clarify file preview is Antigravity-only\" \\\n  --body \"$(cat <<'EOF'\n## What & why\n\nDocuments that inline file preview is an Antigravity feature: Antigravity transcripts embed explicit file references (`@[file] is a [File]: <path>`), whereas Codex sessions interact with files only through shell commands and contain **no structured file references** — so clickable previews can't be generated for them without fragile path-guessing and a broader file-serving boundary.\n\nThis reframes the earlier \"file preview limitation\" as an inherent format difference. Codex sessions still render fully: timeline, statistics, and AI summarization.\n\n## How it was tested\nDocs-only change.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\nEOF\n)\" 2>&1 | tail -2",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit checkout -b docs/codex-file-preview-note 2>&1 | tail -1\ngit add README.md\ngit commit -q -F - <<'EOF'\ndocs: clarify file preview is Antigravity-only\n\nCodex sessions interact with files only via shell commands and contain no\nstructured file references, so inline file previews aren't generated for\nthem. Document this as an inherent format difference rather than an open\ngap. (Timeline, stats, and AI analysis all work for Codex.)\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\necho \"exit: $?\"\ngit push -u origin docs/codex-file-preview-note 2>&1 | tail -2\ngh pr create --base main --head docs/codex-file-preview-note \\\n  --title \"docs: clarify file preview is Antigravity-only\" \\\n  --body \"$(cat <<'EOF'\n## What & why\n\nDocuments that inline file preview is an Antigravity feature: Antigravity transcripts embed explicit file references (`@[file] is a [File]: <path>`), whereas Codex sessions interact with files only through shell commands and contain **no structured file references** — so clickable previews can't be generated for them without fragile path-guessing and a broader file-serving boundary.\n\nThis reframes the earlier \"file preview limitation\" as an inherent format difference. Codex sessions still render fully: timeline, statistics, and AI summarization.\n\n## How it was tested\nDocs-only change.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\nEOF\n)\" 2>&1 | tail -2",
   "description": "Branch, commit, push, open docs PR"
 }
 ```
@@ -10402,7 +10402,7 @@ tool_use Bash
 id: toolu_01PtHHrFjx7bb8vEK27t1Rvg
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nsleep 8\nRUN=$(gh run list --branch docs/codex-file-preview-note --workflow \"CI\" --limit 1 --json databaseId --jq '.[0].databaseId')\necho \"watching CI run $RUN\"\ngh run watch \"$RUN\" --exit-status --interval 20 >/dev/null 2>&1; echo \"watch exit: $?\"\ngh run view \"$RUN\" --json jobs --jq '.jobs[] | \"\\(.conclusion // .status)\\t\\(.name)\"'",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nsleep 8\nRUN=$(gh run list --branch docs/codex-file-preview-note --workflow \"CI\" --limit 1 --json databaseId --jq '.[0].databaseId')\necho \"watching CI run $RUN\"\ngh run watch \"$RUN\" --exit-status --interval 20 >/dev/null 2>&1; echo \"watch exit: $?\"\ngh run view \"$RUN\" --json jobs --jq '.jobs[] | \"\\(.conclusion // .status)\\t\\(.name)\"'",
   "description": "Watch PR #8 CI",
   "timeout": 600000
 }
@@ -10426,7 +10426,7 @@ tool_use Bash
 id: toolu_01SqgBGUovPPCwzfhLi8JkBP
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh pr merge 8 --squash --delete-branch 2>&1 | tail -2\ngh pr view 8 --json state --jq '{state}'\ngit checkout main 2>&1 | tail -1\ngit pull --ff-only 2>&1 | tail -2\ngit fetch --prune 2>&1 | tail -1\ngit branch -d docs/codex-file-preview-note 2>&1 || echo \"(gone)\"\ngit log --oneline -3",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh pr merge 8 --squash --delete-branch 2>&1 | tail -2\ngh pr view 8 --json state --jq '{state}'\ngit checkout main 2>&1 | tail -1\ngit pull --ff-only 2>&1 | tail -2\ngit fetch --prune 2>&1 | tail -1\ngit branch -d docs/codex-file-preview-note 2>&1 || echo \"(gone)\"\ngit log --oneline -3",
   "description": "Merge PR #8 and clean up"
 }
 ```
@@ -10493,7 +10493,7 @@ tool_use Read
 id: toolu_017UgJBa4gbzkynvmQGne1BU
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/application.yml"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/application.yml"
 }
 ```
 
@@ -10519,7 +10519,7 @@ tool_use Read
 id: toolu_012AiRWGvFzVsH5LVtD3j6MC
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/logback.xml"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/logback.xml"
 }
 ```
 
@@ -10557,7 +10557,7 @@ tool_use Bash
 id: toolu_01Psfk4RM4yJKegRmYbDH338
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew -q dependencies --configuration runtimeClasspath 2>/dev/null | grep -iE 'micronaut-core|micronaut-http-server-netty|micronaut-http\\b|micronaut-router' | sed 's/[|+\\\\ -]*//' | sort -u | head -20",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew -q dependencies --configuration runtimeClasspath 2>/dev/null | grep -iE 'micronaut-core|micronaut-http-server-netty|micronaut-http\\b|micronaut-router' | sed 's/[|+\\\\ -]*//' | sort -u | head -20",
   "description": "Find resolved Micronaut HTTP versions",
   "timeout": 300000
 }
@@ -10743,7 +10743,7 @@ tool_use Bash
 id: toolu_01GC4EseCPEKa3jR1ipPUVby
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\necho \"=== env ===\"\necho \"AI_PROVIDER=${AI_PROVIDER:-(unset)}\"\necho \"GEMINI_API_KEY set? $([ -n \"$GEMINI_API_KEY\" ] && echo yes || echo no)\"\necho \"OLLAMA_MODEL=${OLLAMA_MODEL:-(unset)}\"\necho \"=== ollama reachable? ===\"\ncurl -sf --max-time 3 http://localhost:11434/api/tags >/dev/null 2>&1 && echo \"ollama UP\" || echo \"ollama not reachable\"\ncurl -sf --max-time 3 http://localhost:11434/api/tags 2>/dev/null | jq -r '.models[].name' 2>/dev/null | head\necho \"=== smallest few codex sessions (lines) ===\"\nfind ~/.codex/sessions -name 'rollout-*.jsonl' 2>/dev/null | while read f; do echo \"$(wc -l < \"$f\") $f\"; done | sort -n | head -3",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\necho \"=== env ===\"\necho \"AI_PROVIDER=${AI_PROVIDER:-(unset)}\"\necho \"GEMINI_API_KEY set? $([ -n \"$GEMINI_API_KEY\" ] && echo yes || echo no)\"\necho \"OLLAMA_MODEL=${OLLAMA_MODEL:-(unset)}\"\necho \"=== ollama reachable? ===\"\ncurl -sf --max-time 3 http://localhost:11434/api/tags >/dev/null 2>&1 && echo \"ollama UP\" || echo \"ollama not reachable\"\ncurl -sf --max-time 3 http://localhost:11434/api/tags 2>/dev/null | jq -r '.models[].name' 2>/dev/null | head\necho \"=== smallest few codex sessions (lines) ===\"\nfind ~/.codex/sessions -name 'rollout-*.jsonl' 2>/dev/null | while read f; do echo \"$(wc -l < \"$f\") $f\"; done | sort -n | head -3",
   "description": "Check provider env, Ollama, smallest sessions"
 }
 ```
@@ -10761,9 +10761,9 @@ OLLAMA_MODEL=(unset)
 ollama UP
 gemma4:latest
 === smallest few codex sessions (lines) ===
-      12 /Users/scottdensmore/.codex/sessions/2026/06/08/rollout-2026-06-08T18-23-29-019ea9fa-3a5a-7a10-9ba6-0370e14b0070.jsonl
-      12 /Users/scottdensmore/.codex/sessions/2026/06/08/rollout-2026-06-08T20-14-57-019eaa60-493a-75d1-abc9-a0b18f09e0e6.jsonl
-      13 /Users/scottdensmore/.codex/sessions/2026/03/06/rollout-2026-03-06T18-13-17-019cc612-0c5b-7e21-9fac-d609d19a1871.jsonl
+      12 /home/<USER>/.codex/sessions/2026/06/08/rollout-2026-06-08T18-23-29-019ea9fa-3a5a-7a10-9ba6-0370e14b0070.jsonl
+      12 /home/<USER>/.codex/sessions/2026/06/08/rollout-2026-06-08T20-14-57-019eaa60-493a-75d1-abc9-a0b18f09e0e6.jsonl
+      13 /home/<USER>/.codex/sessions/2026/03/06/rollout-2026-03-06T18-13-17-019cc612-0c5b-7e21-9fac-d609d19a1871.jsonl
 ```
 
 > AGENT
@@ -10776,7 +10776,7 @@ tool_use Bash
 id: toolu_01GrGhAn2kX9zmM8BakXxnrX
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew shadowJar -x test --console=plain 2>&1 | tail -2\nJAR=$(find build/libs -name '*-all.jar' | head -1); echo \"jar: $JAR\"\nlsof -ti tcp:8097 | xargs kill -9 2>/dev/null; sleep 1\nAI_PROVIDER=ollama OLLAMA_MODEL=gemma4 mise exec -- java -Dmicronaut.server.port=8097 -jar \"$JAR\" >/tmp/agy-codex-diag.log 2>&1 &\necho \"server pid $!\"\nfor i in $(seq 1 30); do curl -sf http://localhost:8097/api/brain/conversations?flavor=codex >/dev/null 2>&1 && break; sleep 1; done\necho \"server up\"",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew shadowJar -x test --console=plain 2>&1 | tail -2\nJAR=$(find build/libs -name '*-all.jar' | head -1); echo \"jar: $JAR\"\nlsof -ti tcp:8097 | xargs kill -9 2>/dev/null; sleep 1\nAI_PROVIDER=ollama OLLAMA_MODEL=gemma4 mise exec -- java -Dmicronaut.server.port=8097 -jar \"$JAR\" >/tmp/agy-codex-diag.log 2>&1 &\necho \"server pid $!\"\nfor i in $(seq 1 30); do curl -sf http://localhost:8097/api/brain/conversations?flavor=codex >/dev/null 2>&1 && break; sleep 1; done\necho \"server up\"",
   "description": "Build jar and start server with Ollama provider",
   "timeout": 300000
 }
@@ -10834,7 +10834,7 @@ tool_use Bash
 id: toolu_01WqMuEnA1aNje8VK7t1L15q
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nID=\"rollout-2026-06-08T18-23-29-019ea9fa-3a5a-7a10-9ba6-0370e14b0070\"\necho \"=== transcript step count (codex) ===\"\ncurl -s \"http://localhost:8097/api/brain/conversations/$ID/transcript?flavor=codex\" | jq 'length' 2>/dev/null\necho \"=== summarize (force=true), timing, 120s cap ===\"\ntime curl -s --max-time 120 \"http://localhost:8097/api/analysis/conversations/$ID/summarize?flavor=codex&force=true\" | head -c 400\necho\necho \"=== exit: $? (28 = curl timeout) ===\"",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nID=\"rollout-2026-06-08T18-23-29-019ea9fa-3a5a-7a10-9ba6-0370e14b0070\"\necho \"=== transcript step count (codex) ===\"\ncurl -s \"http://localhost:8097/api/brain/conversations/$ID/transcript?flavor=codex\" | jq 'length' 2>/dev/null\necho \"=== summarize (force=true), timing, 120s cap ===\"\ntime curl -s --max-time 120 \"http://localhost:8097/api/analysis/conversations/$ID/summarize?flavor=codex&force=true\" | head -c 400\necho\necho \"=== exit: $? (28 = curl timeout) ===\"",
   "description": "Test Codex summarize timing on small session",
   "timeout": 180000
 }
@@ -10864,7 +10864,7 @@ tool_use Bash
 id: toolu_016UmVgtMuZUVMPPuA6U61Df
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\necho \"=== server log (last 40 lines) ===\"\ntail -40 /tmp/agy-codex-diag.log\necho \"=== is ollama actively generating? (ps) ===\"\ncurl -sf --max-time 3 http://localhost:11434/api/ps 2>/dev/null | jq -r '.models[]?.name' 2>/dev/null || echo \"(api/ps empty)\"",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\necho \"=== server log (last 40 lines) ===\"\ntail -40 /tmp/agy-codex-diag.log\necho \"=== is ollama actively generating? (ps) ===\"\ncurl -sf --max-time 3 http://localhost:11434/api/ps 2>/dev/null | jq -r '.models[]?.name' 2>/dev/null || echo \"(api/ps empty)\"",
   "description": "Inspect server log and Ollama activity"
 }
 ```
@@ -10896,7 +10896,7 @@ tool_use Bash
 id: toolu_01QfBufakEN78qRomv1j7RB9
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\necho \"=== plain gemma4 generate (tiny prompt) ===\"\ntime curl -s --max-time 90 http://localhost:11434/api/generate -d '{\"model\":\"gemma4\",\"prompt\":\"Say hello in one word.\",\"stream\":false}' | jq -r '.response // .error' 2>/dev/null | head -c 200\necho; echo \"=== gemma4 with JSON format (small structured ask) ===\"\ntime curl -s --max-time 90 http://localhost:11434/api/generate -d '{\"model\":\"gemma4\",\"format\":\"json\",\"stream\":false,\"prompt\":\"Return JSON with fields shortTitle (string), summary (string) describing: user asked to list files, agent ran ls.\"}' | jq -r '.response // .error' 2>/dev/null | head -c 300\necho",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\necho \"=== plain gemma4 generate (tiny prompt) ===\"\ntime curl -s --max-time 90 http://localhost:11434/api/generate -d '{\"model\":\"gemma4\",\"prompt\":\"Say hello in one word.\",\"stream\":false}' | jq -r '.response // .error' 2>/dev/null | head -c 200\necho; echo \"=== gemma4 with JSON format (small structured ask) ===\"\ntime curl -s --max-time 90 http://localhost:11434/api/generate -d '{\"model\":\"gemma4\",\"format\":\"json\",\"stream\":false,\"prompt\":\"Return JSON with fields shortTitle (string), summary (string) describing: user asked to list files, agent ran ls.\"}' | jq -r '.response // .error' 2>/dev/null | head -c 300\necho",
   "description": "Measure gemma4 baseline vs JSON mode",
   "timeout": 200000
 }
@@ -10930,7 +10930,7 @@ tool_use Bash
 id: toolu_0183MBze6eS9Y7jnHwYviBys
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\necho \"=== gemma4 capabilities/template ===\"\ncurl -sf --max-time 5 http://localhost:11434/api/show -d '{\"model\":\"gemma4\"}' 2>/dev/null | jq '{capabilities, parameters, details}' 2>/dev/null | head -40\necho \"=== generate with num_predict=40 + think disabled, 120s cap ===\"\ntime curl -s --max-time 120 http://localhost:11434/api/generate -d '{\"model\":\"gemma4\",\"prompt\":\"Say hello in one word.\",\"stream\":false,\"think\":false,\"options\":{\"num_predict\":40}}' | jq -r '{resp:.response, eval_count, total_ms:(.total_duration/1000000)}' 2>/dev/null",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\necho \"=== gemma4 capabilities/template ===\"\ncurl -sf --max-time 5 http://localhost:11434/api/show -d '{\"model\":\"gemma4\"}' 2>/dev/null | jq '{capabilities, parameters, details}' 2>/dev/null | head -40\necho \"=== generate with num_predict=40 + think disabled, 120s cap ===\"\ntime curl -s --max-time 120 http://localhost:11434/api/generate -d '{\"model\":\"gemma4\",\"prompt\":\"Say hello in one word.\",\"stream\":false,\"think\":false,\"options\":{\"num_predict\":40}}' | jq -r '{resp:.response, eval_count, total_ms:(.total_duration/1000000)}' 2>/dev/null",
   "description": "Check gemma4 capabilities and capped/no-think speed",
   "timeout": 200000
 }
@@ -10977,7 +10977,7 @@ tool_use Bash
 id: toolu_01RQQmRvFvxFEB1Uc69WpF5h
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nlsof -ti tcp:8097 | xargs kill -9 2>/dev/null\necho \"killed app server; waiting for ollama to drain...\"\nsleep 8\necho \"=== system load ===\"; uptime\necho \"=== clean gemma4 generate, num_predict=20, 180s cap ===\"\ntime curl -s --max-time 180 http://localhost:11434/api/generate -d '{\"model\":\"gemma4\",\"prompt\":\"Say hello.\",\"stream\":false,\"think\":false,\"options\":{\"num_predict\":20}}' | jq -r '{resp:.response, eval_count, load_ms:(.load_duration/1000000), eval_ms:(.eval_duration/1000000)}' 2>/dev/null",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nlsof -ti tcp:8097 | xargs kill -9 2>/dev/null\necho \"killed app server; waiting for ollama to drain...\"\nsleep 8\necho \"=== system load ===\"; uptime\necho \"=== clean gemma4 generate, num_predict=20, 180s cap ===\"\ntime curl -s --max-time 180 http://localhost:11434/api/generate -d '{\"model\":\"gemma4\",\"prompt\":\"Say hello.\",\"stream\":false,\"think\":false,\"options\":{\"num_predict\":20}}' | jq -r '{resp:.response, eval_count, load_ms:(.load_duration/1000000), eval_ms:(.eval_duration/1000000)}' 2>/dev/null",
   "description": "Measure gemma4 cleanly after killing app",
   "timeout": 200000
 }
@@ -11012,7 +11012,7 @@ tool_use Bash
 id: toolu_01DNY4aXg66BCYzFGcPEXr3r
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nsleep 3\nPROMPT=\"Analyze this Codex session and return structured JSON with shortTitle, flow (array), agentActions (array of {action,description}), issues (array), recommendations (array), summary. Transcript: USER REQUEST: list files. AGENT ACTION: [exec_command] ls. ASSISTANT: done.\"\necho \"=== UNBOUNDED (format json, no num_predict), 150s cap ===\"\ntime curl -s --max-time 150 http://localhost:11434/api/generate -d \"$(jq -nc --arg p \"$PROMPT\" '{model:\"gemma4\",prompt:$p,format:\"json\",stream:false}')\" | jq -r '{eval_count, total_s:(.total_duration/1000000000), done_reason}' 2>/dev/null || echo \"(timed out / no return)\"",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nsleep 3\nPROMPT=\"Analyze this Codex session and return structured JSON with shortTitle, flow (array), agentActions (array of {action,description}), issues (array), recommendations (array), summary. Transcript: USER REQUEST: list files. AGENT ACTION: [exec_command] ls. ASSISTANT: done.\"\necho \"=== UNBOUNDED (format json, no num_predict), 150s cap ===\"\ntime curl -s --max-time 150 http://localhost:11434/api/generate -d \"$(jq -nc --arg p \"$PROMPT\" '{model:\"gemma4\",prompt:$p,format:\"json\",stream:false}')\" | jq -r '{eval_count, total_s:(.total_duration/1000000000), done_reason}' 2>/dev/null || echo \"(timed out / no return)\"",
   "description": "Test unbounded gemma4 JSON generation",
   "timeout": 200000
 }
@@ -11043,7 +11043,7 @@ tool_use Bash
 id: toolu_01LyHWQgsFQzgWN6dhdHZMnY
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nsleep 2\nSCHEMA='{\"type\":\"object\",\"properties\":{\"shortTitle\":{\"type\":\"string\"},\"flow\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}},\"agentActions\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"action\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"}},\"required\":[\"action\",\"description\"]}},\"issues\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"error\":{\"type\":\"string\"},\"circumvention\":{\"type\":\"string\"}},\"required\":[\"error\",\"circumvention\"]}},\"recommendations\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}},\"summary\":{\"type\":\"string\"}},\"required\":[\"shortTitle\",\"flow\",\"agentActions\",\"issues\",\"recommendations\",\"summary\"]}'\nPROMPT=\"Analyze: USER REQUEST: list files. AGENT ACTION: [exec_command] ls. ASSISTANT: done.\"\necho \"=== format = JSON SCHEMA (structured/constrained), 150s cap ===\"\ntime curl -s --max-time 150 http://localhost:11434/api/generate -d \"$(jq -nc --arg p \"$PROMPT\" --argjson s \"$SCHEMA\" '{model:\"gemma4\",prompt:$p,format:$s,stream:false,options:{temperature:0}}')\" | jq -r '{eval_count, total_s:(.total_duration/1000000000), done_reason}' 2>/dev/null || echo \"(timed out)\"",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nsleep 2\nSCHEMA='{\"type\":\"object\",\"properties\":{\"shortTitle\":{\"type\":\"string\"},\"flow\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}},\"agentActions\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"action\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"}},\"required\":[\"action\",\"description\"]}},\"issues\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"error\":{\"type\":\"string\"},\"circumvention\":{\"type\":\"string\"}},\"required\":[\"error\",\"circumvention\"]}},\"recommendations\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}},\"summary\":{\"type\":\"string\"}},\"required\":[\"shortTitle\",\"flow\",\"agentActions\",\"issues\",\"recommendations\",\"summary\"]}'\nPROMPT=\"Analyze: USER REQUEST: list files. AGENT ACTION: [exec_command] ls. ASSISTANT: done.\"\necho \"=== format = JSON SCHEMA (structured/constrained), 150s cap ===\"\ntime curl -s --max-time 150 http://localhost:11434/api/generate -d \"$(jq -nc --arg p \"$PROMPT\" --argjson s \"$SCHEMA\" '{model:\"gemma4\",prompt:$p,format:$s,stream:false,options:{temperature:0}}')\" | jq -r '{eval_count, total_s:(.total_duration/1000000000), done_reason}' 2>/dev/null || echo \"(timed out)\"",
   "description": "Test gemma4 with constrained JSON-schema decoding",
   "timeout": 200000
 }
@@ -11074,7 +11074,7 @@ tool_use Bash
 id: toolu_01LQgJLFosTHHFG5pnFZtzCW
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nsleep 2\nMSGS='[{\"role\":\"user\",\"content\":\"Analyze: USER REQUEST: list files. AGENT ACTION: ls. ASSISTANT: done. Return JSON with shortTitle and summary.\"}]'\necho \"=== /api/chat think=TRUE, 150s cap ===\"\ntime curl -s --max-time 150 http://localhost:11434/api/chat -d \"$(jq -nc --argjson m \"$MSGS\" '{model:\"gemma4\",messages:$m,stream:false,think:true,format:\"json\"}')\" | jq -r '{eval_count, total_s:(.total_duration/1000000000), thinking_len:(.message.thinking|length), done_reason}' 2>/dev/null || echo \"(timed out)\"\necho \"=== /api/chat think=FALSE, 150s cap ===\"\ntime curl -s --max-time 150 http://localhost:11434/api/chat -d \"$(jq -nc --argjson m \"$MSGS\" '{model:\"gemma4\",messages:$m,stream:false,think:false,format:\"json\"}')\" | jq -r '{eval_count, total_s:(.total_duration/1000000000), done_reason}' 2>/dev/null || echo \"(timed out)\"",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nsleep 2\nMSGS='[{\"role\":\"user\",\"content\":\"Analyze: USER REQUEST: list files. AGENT ACTION: ls. ASSISTANT: done. Return JSON with shortTitle and summary.\"}]'\necho \"=== /api/chat think=TRUE, 150s cap ===\"\ntime curl -s --max-time 150 http://localhost:11434/api/chat -d \"$(jq -nc --argjson m \"$MSGS\" '{model:\"gemma4\",messages:$m,stream:false,think:true,format:\"json\"}')\" | jq -r '{eval_count, total_s:(.total_duration/1000000000), thinking_len:(.message.thinking|length), done_reason}' 2>/dev/null || echo \"(timed out)\"\necho \"=== /api/chat think=FALSE, 150s cap ===\"\ntime curl -s --max-time 150 http://localhost:11434/api/chat -d \"$(jq -nc --argjson m \"$MSGS\" '{model:\"gemma4\",messages:$m,stream:false,think:false,format:\"json\"}')\" | jq -r '{eval_count, total_s:(.total_duration/1000000000), done_reason}' 2>/dev/null || echo \"(timed out)\"",
   "description": "Compare gemma4 chat with thinking on vs off",
   "timeout": 350000
 }
@@ -11118,7 +11118,7 @@ tool_use Read
 id: toolu_0128E9d3KYjxjxNnSGFCpD4r
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/ChatModelFactory.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/ChatModelFactory.java",
   "offset": 40,
   "limit": 28
 }
@@ -11164,7 +11164,7 @@ tool_use Bash
 id: toolu_01UTG8hTDcKTJf2yPeKzNkJm
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit checkout -b fix/ollama-disable-thinking 2>&1 | tail -1",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit checkout -b fix/ollama-disable-thinking 2>&1 | tail -1",
   "description": "Branch for the fix"
 }
 ```
@@ -11184,7 +11184,7 @@ id: toolu_01TqUtJ8NMriJKBcM6yNsiod
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/ChatModelFactory.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/ChatModelFactory.java",
   "old_string": "        if (aiConfig.provider() == AiConfig.Provider.OLLAMA) {\n            return OllamaChatModel\n                .builder()\n                .baseUrl(aiConfig.ollamaBaseUrl())\n                .modelName(aiConfig.ollamaModel())\n                .temperature(0.0)\n                // Local models can be slower than the hosted API, so allow more time per request.\n                .timeout(Duration.ofMinutes(5))\n                .responseFormat(ResponseFormat.JSON)\n                .build();\n        }",
   "new_string": "        if (aiConfig.provider() == AiConfig.Provider.OLLAMA) {\n            return OllamaChatModel\n                .builder()\n                .baseUrl(aiConfig.ollamaBaseUrl())\n                .modelName(aiConfig.ollamaModel())\n                .temperature(0.0)\n                // Disable \"thinking\": for reasoning-capable local models (e.g. Gemma) Ollama would\n                // otherwise generate a long hidden chain-of-thought on every analysis call, which\n                // can take minutes per request and makes the analysis appear to hang. We only need\n                // the structured summary, not the reasoning.\n                .think(false)\n                .returnThinking(false)\n                // Local models can be slower than the hosted API, so allow more time per request.\n                .timeout(Duration.ofMinutes(5))\n                .responseFormat(ResponseFormat.JSON)\n                .build();\n        }"
 }
@@ -11195,7 +11195,7 @@ id: toolu_01TqUtJ8NMriJKBcM6yNsiod
 tool_result
 id: toolu_01TqUtJ8NMriJKBcM6yNsiod
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/ChatModelFactory.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/ChatModelFactory.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11208,7 +11208,7 @@ tool_use Bash
 id: toolu_01Vq4fK7oRXdbkMC6rWr9Ayp
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew shadowJar -x test --console=plain 2>&1 | tail -3\nJAR=$(find build/libs -name '*-all.jar' | head -1)\nlsof -ti tcp:8097 | xargs kill -9 2>/dev/null; sleep 1\nAI_PROVIDER=ollama OLLAMA_MODEL=gemma4 mise exec -- java -Dmicronaut.server.port=8097 -jar \"$JAR\" >/tmp/agy-codex-fix.log 2>&1 &\nfor i in $(seq 1 30); do curl -sf \"http://localhost:8097/api/brain/conversations\" >/dev/null 2>&1 && break; sleep 1; done\necho \"server up\"\nID=\"rollout-2026-06-08T18-23-29-019ea9fa-3a5a-7a10-9ba6-0370e14b0070\"\necho \"=== summarize (force=true) with fix, 120s cap ===\"\ntime curl -s --max-time 120 \"http://localhost:8097/api/analysis/conversations/$ID/summarize?flavor=codex&force=true\" | jq -r '{shortTitle, summary}' 2>/dev/null || echo \"(no/invalid json)\"",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew shadowJar -x test --console=plain 2>&1 | tail -3\nJAR=$(find build/libs -name '*-all.jar' | head -1)\nlsof -ti tcp:8097 | xargs kill -9 2>/dev/null; sleep 1\nAI_PROVIDER=ollama OLLAMA_MODEL=gemma4 mise exec -- java -Dmicronaut.server.port=8097 -jar \"$JAR\" >/tmp/agy-codex-fix.log 2>&1 &\nfor i in $(seq 1 30); do curl -sf \"http://localhost:8097/api/brain/conversations\" >/dev/null 2>&1 && break; sleep 1; done\necho \"server up\"\nID=\"rollout-2026-06-08T18-23-29-019ea9fa-3a5a-7a10-9ba6-0370e14b0070\"\necho \"=== summarize (force=true) with fix, 120s cap ===\"\ntime curl -s --max-time 120 \"http://localhost:8097/api/analysis/conversations/$ID/summarize?flavor=codex&force=true\" | jq -r '{shortTitle, summary}' 2>/dev/null || echo \"(no/invalid json)\"",
   "description": "Verify fix: Codex summarize completes",
   "timeout": 300000
 }
@@ -11242,7 +11242,7 @@ tool_use Bash
 id: toolu_013epaGfw9yzBVaKixEcHF3j
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nlsof -ti tcp:8097 | xargs kill -9 2>/dev/null\nunset JAVA_HOME\necho \"=== build + backend tests + spotless ===\"\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -5\necho \"=== frontend unit ===\"\nnpm test 2>&1 | tail -3\necho \"=== e2e (gemini/dummy provider; unaffected by ollama change) ===\"\nmise exec -- ./gradlew shadowJar -x test --console=plain 2>&1 | tail -1\nlsof -ti tcp:8099 | xargs kill -9 2>/dev/null; sleep 1\nmise exec -- npx playwright test 2>&1 | tail -4",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nlsof -ti tcp:8097 | xargs kill -9 2>/dev/null\nunset JAVA_HOME\necho \"=== build + backend tests + spotless ===\"\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -5\necho \"=== frontend unit ===\"\nnpm test 2>&1 | tail -3\necho \"=== e2e (gemini/dummy provider; unaffected by ollama change) ===\"\nmise exec -- ./gradlew shadowJar -x test --console=plain 2>&1 | tail -1\nlsof -ti tcp:8099 | xargs kill -9 2>/dev/null; sleep 1\nmise exec -- npx playwright test 2>&1 | tail -4",
   "description": "Full verification of the fix",
   "timeout": 600000
 }
@@ -11281,7 +11281,7 @@ tool_use Bash
 id: toolu_01RrYu3RGZebrrxH7MK4c8UF
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit add -A\ngit status --short | grep -vE '\\.claude|\\.entire'\ngit commit -q -F - <<'EOF'\nfix(ai): disable Ollama \"thinking\" so local-model analysis doesn't hang\n\nReasoning-capable local models (e.g. gemma4) generate a long hidden\nchain-of-thought on every /api/chat call when thinking is enabled. For a\nreal transcript chunk this balloons into minutes per request, so the\nconversation analysis appears to never finish — most visible on Codex\nsessions, which are never pre-cached and therefore always run a fresh\nanalysis.\n\nDisable it on the Ollama chat model (.think(false)/.returnThinking(false));\nwe only need the structured summary, not the reasoning. The Gemini path is\nunchanged.\n\nVerified against a real Codex session that previously did not complete in\n120s: it now returns a valid summary in ~7s. Measured directly against\nOllama: gemma4 /api/chat with think=true ~13s vs think=false ~1.5s for a\ntrivial prompt (the gap widens sharply with real input).\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\necho \"exit: $?\"\ngit push -u origin fix/ollama-disable-thinking 2>&1 | tail -3",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit add -A\ngit status --short | grep -vE '\\.claude|\\.entire'\ngit commit -q -F - <<'EOF'\nfix(ai): disable Ollama \"thinking\" so local-model analysis doesn't hang\n\nReasoning-capable local models (e.g. gemma4) generate a long hidden\nchain-of-thought on every /api/chat call when thinking is enabled. For a\nreal transcript chunk this balloons into minutes per request, so the\nconversation analysis appears to never finish — most visible on Codex\nsessions, which are never pre-cached and therefore always run a fresh\nanalysis.\n\nDisable it on the Ollama chat model (.think(false)/.returnThinking(false));\nwe only need the structured summary, not the reasoning. The Gemini path is\nunchanged.\n\nVerified against a real Codex session that previously did not complete in\n120s: it now returns a valid summary in ~7s. Measured directly against\nOllama: gemma4 /api/chat with think=true ~13s vs think=false ~1.5s for a\ntrivial prompt (the gap widens sharply with real input).\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\necho \"exit: $?\"\ngit push -u origin fix/ollama-disable-thinking 2>&1 | tail -3",
   "description": "Commit and push the fix"
 }
 ```
@@ -11304,7 +11304,7 @@ tool_use Bash
 id: toolu_01PR1skKE27hUs5Ja4ahuSbi
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh pr create --base main --head fix/ollama-disable-thinking \\\n  --title \"fix(ai): disable Ollama \\\"thinking\\\" so local-model analysis doesn't hang\" \\\n  --body \"$(cat <<'EOF'\n## Problem\n\nConversation analysis \"never finishes\" for Codex sessions when using a local Ollama model (`AI_PROVIDER=ollama`, e.g. `gemma4`).\n\n## Root cause\n\n`gemma4` is a **reasoning (\"thinking\") model**. The analysis goes through Ollama's `/api/chat`, and with thinking enabled the model emits a long hidden chain-of-thought on **every** call. For a real transcript chunk this grows into minutes per request, so the analysis spins indefinitely. It shows up on Codex specifically because Codex sessions are never pre-cached — they always run a fresh analysis (Antigravity sessions are usually served from `summary.json`).\n\n### Evidence (measured directly against Ollama)\n- `/api/chat` **think=true → ~13s** (1.9 KB of hidden thinking) for a *trivial* prompt\n- `/api/chat` **think=false → ~1.5s**\n- Free-form / schema JSON via `/api/generate` (no thinking): 7–10s — i.e. generation itself was never the bottleneck.\n\n## Fix\n\nDisable thinking on the Ollama chat model (`.think(false)` / `.returnThinking(false)`) — we only need the structured summary, not the reasoning. The Gemini path is unchanged.\n\n## Verification\n\nA real Codex session that previously did **not** complete in 120s now returns a valid summary in **~7s** end-to-end.\n\n> Note: this […]
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh pr create --base main --head fix/ollama-disable-thinking \\\n  --title \"fix(ai): disable Ollama \\\"thinking\\\" so local-model analysis doesn't hang\" \\\n  --body \"$(cat <<'EOF'\n## Problem\n\nConversation analysis \"never finishes\" for Codex sessions when using a local Ollama model (`AI_PROVIDER=ollama`, e.g. `gemma4`).\n\n## Root cause\n\n`gemma4` is a **reasoning (\"thinking\") model**. The analysis goes through Ollama's `/api/chat`, and with thinking enabled the model emits a long hidden chain-of-thought on **every** call. For a real transcript chunk this grows into minutes per request, so the analysis spins indefinitely. It shows up on Codex specifically because Codex sessions are never pre-cached — they always run a fresh analysis (Antigravity sessions are usually served from `summary.json`).\n\n### Evidence (measured directly against Ollama)\n- `/api/chat` **think=true → ~13s** (1.9 KB of hidden thinking) for a *trivial* prompt\n- `/api/chat` **think=false → ~1.5s**\n- Free-form / schema JSON via `/api/generate` (no thinking): 7–10s — i.e. generation itself was never the bottleneck.\n\n## Fix\n\nDisable thinking on the Ollama chat model (`.think(false)` / `.returnThinking(false)`) — we only need the structured summary, not the reasoning. The Gemini path is unchanged.\n\n## Verification\n\nA real Codex session that previously did **not** complete in 120s now returns a valid summary in **~7s** end-to-end.\n\n> Note: this […]
 
 > TOOL
 
@@ -11320,7 +11320,7 @@ tool_use Bash
 id: toolu_01Ti6iNe9F82nkqxfAyYfa2N
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nsleep 8\nRUN=$(gh run list --branch fix/ollama-disable-thinking --workflow \"CI\" --limit 1 --json databaseId --jq '.[0].databaseId')\necho \"watching CI run $RUN\"\ngh run watch \"$RUN\" --exit-status --interval 20 >/dev/null 2>&1; echo \"watch exit: $?\"\ngh run view \"$RUN\" --json jobs --jq '.jobs[] | \"\\(.conclusion // .status)\\t\\(.name)\"'",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nsleep 8\nRUN=$(gh run list --branch fix/ollama-disable-thinking --workflow \"CI\" --limit 1 --json databaseId --jq '.[0].databaseId')\necho \"watching CI run $RUN\"\ngh run watch \"$RUN\" --exit-status --interval 20 >/dev/null 2>&1; echo \"watch exit: $?\"\ngh run view \"$RUN\" --json jobs --jq '.jobs[] | \"\\(.conclusion // .status)\\t\\(.name)\"'",
   "description": "Watch PR #9 CI",
   "timeout": 600000
 }
@@ -11348,7 +11348,7 @@ tool_use Bash
 id: toolu_01SkTf3HooLSKT5QC2syQ2xK
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh pr merge 9 --squash --delete-branch 2>&1 | tail -2\ngh pr view 9 --json state --jq '{state}'\ngit checkout main 2>&1 | tail -1\ngit pull --ff-only 2>&1 | tail -2\ngit fetch --prune 2>&1 | tail -1\ngit branch -d fix/ollama-disable-thinking 2>&1 || echo \"(gone)\"\ngit log --oneline -2",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh pr merge 9 --squash --delete-branch 2>&1 | tail -2\ngh pr view 9 --json state --jq '{state}'\ngit checkout main 2>&1 | tail -1\ngit pull --ff-only 2>&1 | tail -2\ngit fetch --prune 2>&1 | tail -1\ngit branch -d fix/ollama-disable-thinking 2>&1 || echo \"(gone)\"\ngit log --oneline -2",
   "description": "Merge PR #9 and clean up"
 }
 ```
@@ -11404,7 +11404,7 @@ tool_use Bash
 id: toolu_01RbZZos9bRxWzt6E6z8iVaw
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit checkout -b feat/claude-code-visualizer 2>&1 | tail -1\necho \"=== ~/.claude/projects layout ===\"\nls -1 ~/.claude/projects 2>/dev/null | head -10\necho \"=== sample session files (count) ===\"\nfind ~/.claude/projects -name '*.jsonl' 2>/dev/null | wc -l\necho \"=== a few session files ===\"\nfind ~/.claude/projects -name '*.jsonl' 2>/dev/null | head -3",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit checkout -b feat/claude-code-visualizer 2>&1 | tail -1\necho \"=== ~/.claude/projects layout ===\"\nls -1 ~/.claude/projects 2>/dev/null | head -10\necho \"=== sample session files (count) ===\"\nfind ~/.claude/projects -name '*.jsonl' 2>/dev/null | wc -l\necho \"=== a few session files ===\"\nfind ~/.claude/projects -name '*.jsonl' 2>/dev/null | head -3",
   "description": "Inspect Claude Code projects layout"
 }
 ```
@@ -11429,9 +11429,9 @@ Switched to a new branch 'feat/claude-code-visualizer'
 === sample session files (count) ===
      214
 === a few session files ===
-/Users/scottdensmore/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-movieswiftui--claude-worktrees-elegant-cartwright-768d03/e17ad727-ac3b-407c-b9d9-fe05ac549dea.jsonl
-/Users/scottdensmore/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-agent-brain-visualizer/8619ea54-7ffc-44fb-96ff-4c199b70945e.jsonl
-/Users/scottdensmore/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-movieswiftui/cf4d666e-6b48-4888-87ac-5046a29f09b9.jsonl
+/home/<USER>/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-movieswiftui--claude-worktrees-elegant-cartwright-768d03/e17ad727-ac3b-407c-b9d9-fe05ac549dea.jsonl
+/home/<USER>/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-agent-brain-visualizer/8619ea54-7ffc-44fb-96ff-4c199b70945e.jsonl
+/home/<USER>/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-movieswiftui/cf4d666e-6b48-4888-87ac-5046a29f09b9.jsonl
 ```
 
 > AGENT
@@ -11444,7 +11444,7 @@ tool_use Bash
 id: toolu_01DdYBnq4aTFsYqmA8127ANJ
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nF=\"/Users/scottdensmore/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-contactmanager\"\nF=$(find \"$F\" -name '*.jsonl' 2>/dev/null | head -1)\n[ -z \"$F\" ] && F=$(find ~/.claude/projects -name '*.jsonl' | head -1)\necho \"file: $F\"; echo \"lines: $(wc -l < \"$F\")\"\necho \"=== top-level type distribution ===\"\njq -r '.type // \"(none)\"' \"$F\" 2>/dev/null | sort | uniq -c\necho \"=== keys present (sampled) ===\"\njq -c 'keys' \"$F\" 2>/dev/null | sort | uniq -c | sort -rn | head\necho \"=== user message content shape (truncated) ===\"\njq -c 'select(.type==\"user\") | {ts:.timestamp, role:.message.role, ctype:(.message.content|type), content:.message.content}' \"$F\" 2>/dev/null | head -1 | cut -c1-350\necho \"=== assistant message content block types ===\"\njq -r 'select(.type==\"assistant\") | .message.content[]? | .type' \"$F\" 2>/dev/null | sort | uniq -c",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nF=\"/home/<USER>/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-contactmanager\"\nF=$(find \"$F\" -name '*.jsonl' 2>/dev/null | head -1)\n[ -z \"$F\" ] && F=$(find ~/.claude/projects -name '*.jsonl' | head -1)\necho \"file: $F\"; echo \"lines: $(wc -l < \"$F\")\"\necho \"=== top-level type distribution ===\"\njq -r '.type // \"(none)\"' \"$F\" 2>/dev/null | sort | uniq -c\necho \"=== keys present (sampled) ===\"\njq -c 'keys' \"$F\" 2>/dev/null | sort | uniq -c | sort -rn | head\necho \"=== user message content shape (truncated) ===\"\njq -c 'select(.type==\"user\") | {ts:.timestamp, role:.message.role, ctype:(.message.content|type), content:.message.content}' \"$F\" 2>/dev/null | head -1 | cut -c1-350\necho \"=== assistant message content block types ===\"\njq -r 'select(.type==\"assistant\") | .message.content[]? | .type' \"$F\" 2>/dev/null | sort | uniq -c",
   "description": "Inspect Claude Code session schema"
 }
 ```
@@ -11454,7 +11454,7 @@ id: toolu_01DdYBnq4aTFsYqmA8127ANJ
 tool_result
 id: toolu_01DdYBnq4aTFsYqmA8127ANJ
 ```
-file: /Users/scottdensmore/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-contactmanager/b400d7ae-ba0d-4b65-b5d5-ba94f28f0cbc.jsonl
+file: /home/<USER>/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-contactmanager/b400d7ae-ba0d-4b65-b5d5-ba94f28f0cbc.jsonl
 lines:      193
 === top-level type distribution ===
  106 assistant
@@ -11492,7 +11492,7 @@ tool_use Bash
 id: toolu_014ZRgNBPCFBe12ZmHmheSW4
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nF=$(find ~/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-contactmanager -name '*.jsonl' 2>/dev/null | head -1)\necho \"=== assistant tool_use block ===\"\njq -c 'select(.type==\"assistant\") | .message.content[]? | select(.type==\"tool_use\") | {name, id, input:(.input|keys)}' \"$F\" 2>/dev/null | head -2\necho \"=== assistant thinking block keys ===\"\njq -c 'select(.type==\"assistant\") | .message.content[]? | select(.type==\"thinking\") | keys' \"$F\" 2>/dev/null | head -1\necho \"=== user tool_result block shape (truncated) ===\"\njq -c 'select(.type==\"user\" and (.message.content|type==\"array\")) | .message.content[]? | select(.type==\"tool_result\") | {is_error, ctype:(.content|type)}' \"$F\" 2>/dev/null | head -3\necho \"=== any summary-type lines across all sessions? ===\"\nfind ~/.claude/projects -name '*.jsonl' 2>/dev/null | head -40 | while read f; do jq -r 'select(.type==\"summary\") | .summary' \"$f\" 2>/dev/null; done | head -3\necho \"=== first user string prompt (title candidate, truncated) ===\"\njq -r 'select(.type==\"user\" and (.message.content|type==\"string\")) | .message.content' \"$F\" 2>/dev/null | head -1 | cut -c1-90",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nF=$(find ~/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-contactmanager -name '*.jsonl' 2>/dev/null | head -1)\necho \"=== assistant tool_use block ===\"\njq -c 'select(.type==\"assistant\") | .message.content[]? | select(.type==\"tool_use\") | {name, id, input:(.input|keys)}' \"$F\" 2>/dev/null | head -2\necho \"=== assistant thinking block keys ===\"\njq -c 'select(.type==\"assistant\") | .message.content[]? | select(.type==\"thinking\") | keys' \"$F\" 2>/dev/null | head -1\necho \"=== user tool_result block shape (truncated) ===\"\njq -c 'select(.type==\"user\" and (.message.content|type==\"array\")) | .message.content[]? | select(.type==\"tool_result\") | {is_error, ctype:(.content|type)}' \"$F\" 2>/dev/null | head -3\necho \"=== any summary-type lines across all sessions? ===\"\nfind ~/.claude/projects -name '*.jsonl' 2>/dev/null | head -40 | while read f; do jq -r 'select(.type==\"summary\") | .summary' \"$f\" 2>/dev/null; done | head -3\necho \"=== first user string prompt (title candidate, truncated) ===\"\njq -r 'select(.type==\"user\" and (.message.content|type==\"string\")) | .message.content' \"$F\" 2>/dev/null | head -1 | cut -c1-90",
   "description": "Inspect Claude Code tool/thinking/summary shapes"
 }
 ```
@@ -11526,7 +11526,7 @@ tool_use Write
 id: toolu_018hRSZTxdYU72vMARp8ZkP6
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/SessionSource.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/SessionSource.java",
   "content": "/*\n * Copyright 2026 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage io.github.glaforge.agybrainviz;\n\nimport java.io.IOException;\nimport java.util.List;\nimport java.util.Map;\nimport java.util.Optional;\n\n/**\n * A non-Antigravity transcript source (e.g. OpenAI Codex, Claude Code). Implementations adapt a\n * tool's own session files into the timeline-step schema the frontend renders and provide an\n * analysis cache, so both {@link BrainController} and {@link AnalysisController} can treat every\n * source uniformly via a registry rather than per-flavor branching.\n */\npublic interface SessionSource {\n\n    /**\n     * @param flavor the {@code flavor} selector value sent by the frontend\n     * @return whether this source serves that flavor\n     */\n    boolean handles(String flavor);\n\n    /** @return one entry per session ({@code id}, {@code […]
 
 > TOOL
@@ -11534,7 +11534,7 @@ id: toolu_018hRSZTxdYU72vMARp8ZkP6
 tool_result
 id: toolu_018hRSZTxdYU72vMARp8ZkP6
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/SessionSource.java (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/SessionSource.java (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11543,7 +11543,7 @@ tool_use Write
 id: toolu_01A2La72YDWcM1oP1iA3Ty9X
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/SummaryCache.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/SummaryCache.java",
   "content": "/*\n * Copyright 2026 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage io.github.glaforge.agybrainviz;\n\nimport java.io.IOException;\nimport java.nio.file.Files;\nimport java.nio.file.Path;\nimport java.util.Optional;\n\n/**\n * On-disk cache for analysis summaries of an external session source, stored in a tool-owned\n * directory as {@code <id>.summary.json} (and an optional {@code <id>.short_title.txt}). Cache file\n * paths are resolved with a traversal guard since the id originates from a request path variable.\n */\nfinal class SummaryCache {\n\n    private final Path dir;\n\n    SummaryCache(Path dir) {\n        this.dir = dir;\n    }\n\n    Optional<String> read(String id) throws IOException {\n        Path file = file(id, \".summary.json\");\n        return Files.exists(file) ? Optional.of(Files.readString(file)) : Optional.empty();\n    }\n\n    void delete(String id) throws IOException {\n        Files.deleteIfExists(file(id, \".summary.json\"));\n        Files.deleteIfExists(file(id, \".short_title.txt\"));\n    }\n\n    void […]
 
 > TOOL
@@ -11551,7 +11551,7 @@ id: toolu_01A2La72YDWcM1oP1iA3Ty9X
 tool_result
 id: toolu_01A2La72YDWcM1oP1iA3Ty9X
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/SummaryCache.java (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/SummaryCache.java (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11565,7 +11565,7 @@ id: toolu_01ENfc6mXzPwg4X6vX9Rbvqr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java",
   "old_string": "@Singleton\npublic class CodexSessionReader {\n\n    /** The flavor selector value the frontend sends for Codex sessions. */\n    public static final String FLAVOR = \"codex\";\n\n    private Path sessionsDir() {\n        return Paths.get(System.getProperty(\"user.home\"), \".codex\", \"sessions\");\n    }",
   "new_string": "@Singleton\npublic class CodexSessionReader implements SessionSource {\n\n    /** The flavor selector value the frontend sends for Codex sessions. */\n    public static final String FLAVOR = \"codex\";\n\n    @Override\n    public boolean handles(String flavor) {\n        return FLAVOR.equals(flavor);\n    }\n\n    private Path sessionsDir() {\n        return Paths.get(System.getProperty(\"user.home\"), \".codex\", \"sessions\");\n    }"
 }
@@ -11576,7 +11576,7 @@ id: toolu_01ENfc6mXzPwg4X6vX9Rbvqr
 tool_result
 id: toolu_01ENfc6mXzPwg4X6vX9Rbvqr
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11586,7 +11586,7 @@ id: toolu_014oiEyawFkJo294XPzfHhfo
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java",
   "old_string": "    // Analysis summaries are cached in a tool-owned hidden directory under ~/.codex/sessions so we\n    // never write alongside (or into) the files Codex itself manages.\n    private Path cacheDir() {\n        return sessionsDir().resolve(\".agybrainviz\");\n    }\n\n    // Resolve a cache file from an id, guarding against traversal even if a caller skips the\n    // sessionExists() gate (the id originates from a URL path variable).\n    private Path cacheFile(String id, String suffix) {\n        Path dir = cacheDir().normalize();\n        Path file = dir.resolve(id + suffix).normalize();\n        if (!file.startsWith(dir)) {\n            throw new IllegalArgumentException(\"Invalid session id: \" + id);\n        }\n        return file;\n    }\n\n    /**\n     * @return the cached summary JSON for a session, if present.\n     */\n    public Optional<String> cachedSummary(String id) throws IOException {\n        Path file = cacheFile(id, \".summary.json\");\n        return Files.exists(file) ? Optional.of(Files.readString(file)) : Optional.empty();\n    }\n\n    /** Deletes any cached summary and title for a session (used on forced recompute). */\n    public void deleteCache(String id) throws IOException {\n        Files.deleteIfExists(cacheFile(id, \".summary.json\"));\n        Files.deleteIfExists(cacheFile(id, \".short_title.txt\"));\n    }\n\n    /** Writes the computed summary JSON (and optional short title) to the cache. */\n    public void writeCache(String id, String summaryJson, String title) throws IOException {\n        Files.createDirectories(cacheDir());\n        Files.writeString(cacheFile(id, \".summary.json\"), summaryJson);\n        // The short title is best-effort and must […]
 
 > TOOL
@@ -11594,7 +11594,7 @@ id: toolu_014oiEyawFkJo294XPzfHhfo
 tool_result
 id: toolu_014oiEyawFkJo294XPzfHhfo
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11607,7 +11607,7 @@ tool_use Write
 id: toolu_01PhyzfNdR7nCpdrY8n7K2wN
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/NormalizedSteps.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/NormalizedSteps.java",
   "content": "/*\n * Copyright 2026 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage io.github.glaforge.agybrainviz;\n\nimport com.fasterxml.jackson.databind.JsonNode;\nimport com.fasterxml.jackson.databind.node.ObjectNode;\nimport java.util.ArrayList;\nimport java.util.List;\n\n/**\n * Shared logic for turning normalized timeline steps (the schema produced by the per-source adapters\n * such as {@link CodexAdapter} and {@link ClaudeCodeAdapter}) into condensed LLM-analysis input: one\n * list of short lines per user-initiated sequence, mirroring\n * {@link TranscriptParser#parseSequences(List)}. User prompts, assistant messages, tool calls, and\n * failed tool outputs are summarized; successful outputs and empty reasoning are omitted to keep the\n * token footprint small.\n */\nfinal class NormalizedSteps {\n\n    private NormalizedSteps() {}\n\n    static List<List<String>> toAnalysisSequences(List<ObjectNode> steps) {\n        List<List<String>> sequences = new ArrayList<>();\n        List<String> current = new ArrayList<>();\n […]
 
 > TOOL
@@ -11615,7 +11615,7 @@ id: toolu_01PhyzfNdR7nCpdrY8n7K2wN
 tool_result
 id: toolu_01PhyzfNdR7nCpdrY8n7K2wN
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/NormalizedSteps.java (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/NormalizedSteps.java (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11629,7 +11629,7 @@ id: toolu_01A8WqQkC7vUBLP6xKKoZyDY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexAdapter.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexAdapter.java",
   "old_string": "    static List<List<String>> toAnalysisSequences(List<String> lines) {\n        List<List<String>> sequences = new ArrayList<>();\n        List<String> current = new ArrayList<>();\n        for (ObjectNode step : toSteps(lines)) {\n            String type = step.path(\"type\").asText(\"\");\n            String summaryLine = analysisLine(step, type);\n            if (summaryLine == null) continue;\n            if (\"USER_INPUT\".equals(type) && !current.isEmpty()) {\n                sequences.add(TranscriptParser.deduplicateSequence(current));\n                current = new ArrayList<>();\n            }\n            current.add(summaryLine);\n        }\n        if (!current.isEmpty()) {\n            sequences.add(TranscriptParser.deduplicateSequence(current));\n        }\n        return sequences;\n    }\n\n    private static String analysisLine(ObjectNode step, String type) {\n        switch (type) {\n            case \"USER_INPUT\":\n                return \"USER REQUEST: \" + truncate(step.path(\"content\").asText(\"\"), 2000);\n            case \"MESSAGE\":\n                return \"ASSISTANT: \" + truncate(step.path(\"content\").asText(\"\"), 2000);\n            case \"FUNCTION_CALL\": {\n                JsonNode tool = step.path(\"tool_calls\").path(0);\n                String name = tool.path(\"name\").asText(\"unknown\");\n                return \"AGENT ACTION: [\" + name + \"] \" + argsSummary(tool.path(\"args\"));\n            }\n            case \"FUNCTION_OUTPUT\":\n                if (\"ERROR\".equals(step.path(\"status\").asText(\"\"))) {\n                    return \"SYSTEM EVENT/ERROR: \" + truncate(step.path(\"content\").asText(\"\"), 500);\n                }\n                return null;\n            default:\n                return null;\n        }\n    }\n\n    private static String argsSummary(JsonNode args) {\n        if (args == null || args.isMissingNode() || args.isNull()) return \"\";\n        JsonNode cmd = args.get(\"cmd\");\n        String text = (cmd != null && cmd.isTextual()) ? cmd.asText() : args.toString();\n        return truncate(text, 200);\n    }\n\n    private static String truncate(String text, int max) {\n        if (text == null) return \"\";\n        return text.length() > max ? text.substring(0, max) : text;\n    }\n\n    /**", […]
 
 > TOOL
@@ -11700,7 +11700,7 @@ tool_use Read
 id: toolu_01NUy8oC8vZe7e4dkEpGcVow
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexAdapter.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexAdapter.java",
   "offset": 149,
   "limit": 62
 }
@@ -11755,7 +11755,7 @@ id: toolu_01GoNwDXjdVqaPBq4S1FncEz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexAdapter.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexAdapter.java",
   "old_string": "    static List<List<String>> toAnalysisSequences(List<String> lines) {\n        List<List<String>> sequences = new ArrayList<>();\n        List<String> current = new ArrayList<>();\n        for (ObjectNode step : toSteps(lines)) {\n            String type = step.path(\"type\").asText(\"\");\n            String summaryLine = analysisLine(step, type);\n            if (summaryLine == null) continue;\n            if (\"USER_INPUT\".equals(type) && !current.isEmpty()) {\n                sequences.add(TranscriptParser.deduplicateSequence(current));\n                current = new ArrayList<>();\n            }\n            current.add(summaryLine);\n        }\n        if (!current.isEmpty()) {\n            sequences.add(TranscriptParser.deduplicateSequence(current));\n        }\n        return sequences;\n    }\n\n    private static String analysisLine(ObjectNode step, String type) {\n        switch (type) {\n            case \"USER_INPUT\":\n                return \"USER REQUEST: \" + truncate(step.path(\"content\").asText(\"\"), 2000);\n            case \"MESSAGE\":\n                return \"ASSISTANT: \" + truncate(step.path(\"content\").asText(\"\"), 2000);\n            case \"FUNCTION_CALL\":\n                {\n                    JsonNode tool = step.path(\"tool_calls\").path(0);\n                    String name = tool.path(\"name\").asText(\"unknown\");\n                    return \"AGENT ACTION: [\" + name + \"] \" + argsSummary(tool.path(\"args\"));\n                }\n            case \"FUNCTION_OUTPUT\":\n                if (\"ERROR\".equals(step.path(\"status\").asText(\"\"))) {\n                    return \"SYSTEM EVENT/ERROR: \" + truncate(step.path(\"content\").asText(\"\"), 500);\n                }\n                return null;\n            default:\n                return null;\n        }\n    }\n\n    private static String argsSummary(JsonNode args) {\n        if (args == null || args.isMissingNode() || args.isNull()) return \"\";\n        JsonNode cmd = args.get(\"cmd\");\n        String text = (cmd != null && cmd.isTextual()) ? cmd.asText() : args.toString();\n        return truncate(text, 200);\n    }\n\n    private static String truncate(String text, int max) {\n        if (text == null) return \"\";\n        return text.length() > max ? text.substring(0, max) : text;\n    }\n",
   "new_string": […]
 
@@ -11764,7 +11764,7 @@ id: toolu_01GoNwDXjdVqaPBq4S1FncEz
 tool_result
 id: toolu_01GoNwDXjdVqaPBq4S1FncEz
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexAdapter.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexAdapter.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11777,7 +11777,7 @@ tool_use Write
 id: toolu_01PV2D2asyEJXfsKHXRGMhNb
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/ClaudeCodeAdapter.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/ClaudeCodeAdapter.java",
   "content": "/*\n * Copyright 2026 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage io.github.glaforge.agybrainviz;\n\nimport com.fasterxml.jackson.databind.JsonNode;\nimport com.fasterxml.jackson.databind.ObjectMapper;\nimport com.fasterxml.jackson.databind.node.ArrayNode;\nimport com.fasterxml.jackson.databind.node.ObjectNode;\nimport java.util.ArrayList;\nimport java.util.List;\nimport java.util.Optional;\n\n/**\n * Adapts a Claude Code session transcript (JSONL under {@code ~/.claude/projects/<dir>/<uuid>.jsonl})\n * into the step schema the frontend timeline understands (the same shape used for Antigravity and\n * Codex).\n *\n * <p>Each line is {@code {type, message, timestamp, ...}}. Conversation lines are {@code user} and\n * {@code assistant}; a {@code user} message carries either a plain string (the human prompt) or an\n * array of {@code tool_result} blocks (results sent back to the model), while an {@code assistant}\n * message carries an array of {@code text} […]
 
 > TOOL
@@ -11785,7 +11785,7 @@ id: toolu_01PV2D2asyEJXfsKHXRGMhNb
 tool_result
 id: toolu_01PV2D2asyEJXfsKHXRGMhNb
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/ClaudeCodeAdapter.java (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/ClaudeCodeAdapter.java (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11798,7 +11798,7 @@ tool_use Write
 id: toolu_015Ez6SRxSp2RHYWiyLUZHE3
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/ClaudeCodeSessionReader.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/ClaudeCodeSessionReader.java",
   "content": "/*\n * Copyright 2026 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage io.github.glaforge.agybrainviz;\n\nimport jakarta.inject.Singleton;\nimport java.io.IOException;\nimport java.nio.file.Files;\nimport java.nio.file.Path;\nimport java.nio.file.Paths;\nimport java.util.HashMap;\nimport java.util.List;\nimport java.util.Map;\nimport java.util.Optional;\nimport java.util.stream.Stream;\n\n/**\n * Reads Claude Code sessions from {@code ~/.claude/projects/<dir>/<uuid>.jsonl} and exposes them\n * through {@link SessionSource}, so the existing frontend and analysis pipeline can render and\n * summarize them. Rollout lines are converted by {@link ClaudeCodeAdapter}.\n */\n@Singleton\npublic class ClaudeCodeSessionReader implements SessionSource {\n\n    /** The flavor selector value the frontend sends for Claude Code sessions. */\n    public static final String FLAVOR = \"claude-code\";\n\n    private static final int SUMMARY_SCAN_LINES = 256;\n\n    @Override\n    public boolean handles(String flavor) {\n        return FLAVOR.equals(flavor);\n    }\n\n    private Path projectsDir() {\n        return Paths.get(System.getProperty(\"user.home\"), […]
 
 > TOOL
@@ -11806,7 +11806,7 @@ id: toolu_015Ez6SRxSp2RHYWiyLUZHE3
 tool_result
 id: toolu_015Ez6SRxSp2RHYWiyLUZHE3
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/ClaudeCodeSessionReader.java (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/ClaudeCodeSessionReader.java (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11820,7 +11820,7 @@ id: toolu_01GvMeRLCaaLrVvNXWBvhCFF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/BrainController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/BrainController.java",
   "old_string": "    private final CodexSessionReader codexReader;\n\n    @Inject\n    public BrainController(CodexSessionReader codexReader) {\n        this.codexReader = codexReader;\n    }\n\n    private Path getBrainPath(String flavor) {",
   "new_string": "    private final List<SessionSource> sessionSources;\n\n    @Inject\n    public BrainController(List<SessionSource> sessionSources) {\n        this.sessionSources = sessionSources;\n    }\n\n    private Optional<SessionSource> sourceFor(String flavor) {\n        return sessionSources.stream().filter(s -> s.handles(flavor)).findFirst();\n    }\n\n    private Path getBrainPath(String flavor) {"
 }
@@ -11831,7 +11831,7 @@ id: toolu_01GvMeRLCaaLrVvNXWBvhCFF
 tool_result
 id: toolu_01GvMeRLCaaLrVvNXWBvhCFF
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/BrainController.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/BrainController.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11841,7 +11841,7 @@ id: toolu_01MTsDMAudDCt8raafRCAKvd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/BrainController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/BrainController.java",
   "old_string": "    public List<Map<String, String>> listConversations(@QueryValue Optional<String> flavor) {\n        if (CodexSessionReader.FLAVOR.equals(flavor.orElse(\"\"))) {\n            return codexReader.listConversations();\n        }\n        Path brainPath = getBrainPath(flavor.orElse(\"antigravity-cli\"));",
   "new_string": "    public List<Map<String, String>> listConversations(@QueryValue Optional<String> flavor) {\n        Optional<SessionSource> source = sourceFor(flavor.orElse(\"\"));\n        if (source.isPresent()) {\n            return source.get().listConversations();\n        }\n        Path brainPath = getBrainPath(flavor.orElse(\"antigravity-cli\"));"
 }
@@ -11852,7 +11852,7 @@ id: toolu_01MTsDMAudDCt8raafRCAKvd
 tool_result
 id: toolu_01MTsDMAudDCt8raafRCAKvd
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/BrainController.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/BrainController.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11862,7 +11862,7 @@ id: toolu_01GfmLuwQehqmRfpHyKViCS3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/BrainController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/BrainController.java",
   "old_string": "        throws IOException {\n        if (CodexSessionReader.FLAVOR.equals(flavor.orElse(\"\"))) {\n            return codexReader.transcriptJson(id);\n        }\n        Path brainPath = getBrainPath(flavor.orElse(\"antigravity-cli\"));",
   "new_string": "        throws IOException {\n        Optional<SessionSource> source = sourceFor(flavor.orElse(\"\"));\n        if (source.isPresent()) {\n            return source.get().transcriptJson(id);\n        }\n        Path brainPath = getBrainPath(flavor.orElse(\"antigravity-cli\"));"
 }
@@ -11873,7 +11873,7 @@ id: toolu_01GfmLuwQehqmRfpHyKViCS3
 tool_result
 id: toolu_01GfmLuwQehqmRfpHyKViCS3
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/BrainController.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/BrainController.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11887,7 +11887,7 @@ id: toolu_0196QwkEfFjGdqk2hKQUmujc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
   "old_string": "    private final AnalyzerService analyzerService;\n    private final ExecutorService executor;\n    private final AiConfig aiConfig;\n    private final TokenCounter tokenCounter;\n    private final CodexSessionReader codexReader;\n\n    @Inject\n    public AnalysisController(\n        AnalyzerService analyzerService,\n        @Named(TaskExecutors.IO) ExecutorService executor,\n        AiConfig aiConfig,\n        TokenCounter tokenCounter,\n        CodexSessionReader codexReader\n    ) {\n        this.analyzerService = analyzerService;\n        this.executor = executor;\n        this.aiConfig = aiConfig;\n        this.tokenCounter = tokenCounter;\n        this.codexReader = codexReader;\n    }",
   "new_string": "    private final AnalyzerService analyzerService;\n    private final ExecutorService executor;\n    private final AiConfig aiConfig;\n    private final TokenCounter tokenCounter;\n    private final List<SessionSource> sessionSources;\n\n    @Inject\n    public AnalysisController(\n        AnalyzerService analyzerService,\n        @Named(TaskExecutors.IO) ExecutorService executor,\n        AiConfig aiConfig,\n        TokenCounter tokenCounter,\n        List<SessionSource> sessionSources\n    ) {\n        this.analyzerService = analyzerService;\n        this.executor = executor;\n        this.aiConfig = aiConfig;\n        this.tokenCounter = tokenCounter;\n        this.sessionSources = sessionSources;\n    }\n\n    private Optional<SessionSource> sourceFor(String flavor) {\n        return sessionSources.stream().filter(s -> s.handles(flavor)).findFirst();\n    }"
 }
@@ -11898,7 +11898,7 @@ id: toolu_0196QwkEfFjGdqk2hKQUmujc
 tool_result
 id: toolu_0196QwkEfFjGdqk2hKQUmujc
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11912,7 +11912,7 @@ id: toolu_014BvQNnEWdJasEJjGC43bQ7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
   "old_string": "            boolean codex = CodexSessionReader.FLAVOR.equals(flavor.orElse(\"\"));\n            boolean forceRecompute = force.orElse(false);\n\n            // Antigravity caches the summary inside the agent's own brain dir; Codex caches via the\n            // CodexSessionReader. Antigravity paths are resolved up front; for Codex they stay null.\n            Path logsDir = codex\n                ? null\n                : getBrainPath(flavor.orElse(\"antigravity-cli\"))\n                    .resolve(id)\n                    .resolve(\".system_generated\")\n                    .resolve(\"logs\");\n            Path transcriptPath = codex ? null : logsDir.resolve(\"transcript.jsonl\");\n            Path summaryJsonPath = codex ? null : logsDir.resolve(\"summary.json\");\n            Path shortTitlePath = codex ? null : logsDir.resolve(\"short_title.txt\");\n\n            boolean exists = codex ? codexReader.sessionExists(id) : Files.exists(transcriptPath);\n            if (!exists) {\n                return \"{\\\"summary\\\": \\\"No transcript found.\\\"}\";\n            }\n\n            if (!forceRecompute) {\n                Optional<String> cached = codex\n                    ? codexReader.cachedSummary(id)\n                    : (\n                        Files.exists(summaryJsonPath)\n                            ? Optional.of(Files.readString(summaryJsonPath))\n                            : Optional.empty()\n                    );\n                if (cached.isPresent()) {\n                    return cached.get();\n                }\n            } else if (codex) {\n                codexReader.deleteCache(id);\n            } else {\n                Files.deleteIfExists(summaryJsonPath);\n            }\n\n            ObjectMapper mapper = new ObjectMapper();\n            AnalysisResponse responseObj = null;\n\n            try {\n                List<List<String>> sequences = codex\n                    ? codexReader.analysisSequences(id)\n                    : TranscriptParser.parseSequences(Files.readAllLines(transcriptPath));",
   "new_string": "            Optional<SessionSource> source = sourceFor(flavor.orElse(\"\"));\n            boolean external = source.isPresent();\n            boolean forceRecompute = force.orElse(false);\n\n            // Antigravity caches the summary inside the agent's own brain dir; external sources\n            // (Codex, Claude Code) cache via their SessionSource. Antigravity paths are resolved up\n            // front; for external sources they stay […]
 
@@ -11921,7 +11921,7 @@ id: toolu_014BvQNnEWdJasEJjGC43bQ7
 tool_result
 id: toolu_014BvQNnEWdJasEJjGC43bQ7
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11931,7 +11931,7 @@ id: toolu_01FtW831LHDbcmLDfKbmunwU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
   "old_string": "                String title = responseObj.shortTitle();\n                try {\n                    if (codex) {\n                        codexReader.writeCache(id, jsonResponse, title);\n                    } else {",
   "new_string": "                String title = responseObj.shortTitle();\n                try {\n                    if (external) {\n                        source.get().writeCache(id, jsonResponse, title);\n                    } else {"
 }
@@ -11942,7 +11942,7 @@ id: toolu_01FtW831LHDbcmLDfKbmunwU
 tool_result
 id: toolu_01FtW831LHDbcmLDfKbmunwU
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11956,7 +11956,7 @@ id: toolu_01RTbV8FFybbVJ7R1dSzYW6E
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/index.html",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/index.html",
   "old_string": "                        <option value=\"codex\">OpenAI Codex</option>\n                    </select>",
   "new_string": "                        <option value=\"codex\">OpenAI Codex</option>\n                        <option value=\"claude-code\">Claude Code</option>\n                    </select>"
 }
@@ -11967,7 +11967,7 @@ id: toolu_01RTbV8FFybbVJ7R1dSzYW6E
 tool_result
 id: toolu_01RTbV8FFybbVJ7R1dSzYW6E
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/index.html has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/index.html has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11980,7 +11980,7 @@ tool_use Bash
 id: toolu_01TyJyQuNXUvMX6ZsAHmvzYZ
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew compileJava compileTestJava --console=plain 2>&1 | grep -iE 'error|BUILD' | head -20",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew compileJava compileTestJava --console=plain 2>&1 | grep -iE 'error|BUILD' | head -20",
   "description": "Compile after refactor",
   "timeout": 300000
 }
@@ -11991,7 +11991,7 @@ id: toolu_01TyJyQuNXUvMX6ZsAHmvzYZ
 tool_result
 id: toolu_01TyJyQuNXUvMX6ZsAHmvzYZ
 ```
-[Incubating] Problems report is available at: file:///Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/build/reports/problems/problems-report.html
+[Incubating] Problems report is available at: file:///home/<USER>/Developer/scottdensmore/agent-brain-visualizer/build/reports/problems/problems-report.html
 BUILD SUCCESSFUL in 5s
 Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.5.1/userguide/configuration_cache_enabling.html
 ```
@@ -12006,7 +12006,7 @@ tool_use Write
 id: toolu_01Ni8xnwB4HwV7GWKuiCqXd1
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/ClaudeCodeAdapterTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/ClaudeCodeAdapterTest.java",
   "content": "/*\n * Copyright 2026 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage io.github.glaforge.agybrainviz;\n\nimport static org.junit.jupiter.api.Assertions.assertEquals;\nimport static org.junit.jupiter.api.Assertions.assertFalse;\nimport static org.junit.jupiter.api.Assertions.assertTrue;\n\nimport com.fasterxml.jackson.databind.JsonNode;\nimport com.fasterxml.jackson.databind.ObjectMapper;\nimport com.fasterxml.jackson.databind.node.ObjectNode;\nimport java.util.List;\nimport org.junit.jupiter.api.Test;\n\n/** Unit tests for the Claude Code transcript → timeline-step adapter. */\nclass ClaudeCodeAdapterTest {\n\n    private static final ObjectMapper MAPPER = new ObjectMapper();\n\n    private static final String SUMMARY =\n        \"{\\\"type\\\":\\\"summary\\\",\\\"summary\\\":\\\"Refactor the parser\\\",\\\"leafUuid\\\":\\\"x\\\"}\";\n    private static final String USER_STRING =\n        \"{\\\"type\\\":\\\"user\\\",\\\"timestamp\\\":\\\"2026-06-07T00:44:40.324Z\\\",\\\"message\\\":{\\\"role\\\":\\\"user\\\",\\\"content\\\":\\\"Fix the bug\\\"}}\";\n    private static final String ASSISTANT =\n        \"{\\\"type\\\":\\\"assistant\\\",\\\"timestamp\\\":\\\"2026-06-07T00:44:45.000Z\\\",\\\"message\\\":{\\\"role\\\":\\\"assistant\\\",\\\"content\\\":[\" +\n        \"{\\\"type\\\":\\\"thinking\\\",\\\"thinking\\\":\\\"Let me think\\\",\\\"signature\\\":\\\"s\\\"},\" +\n        \"{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"On it.\\\"},\" +\n        \"{\\\"type\\\":\\\"tool_use\\\",\\\"id\\\":\\\"toolu_1\\\",\\\"name\\\":\\\"Read\\\",\\\"input\\\":{\\\"file_path\\\":\\\"/a.txt\\\"}}]}}\";\n    private static final String TOOL_RESULT_OK =\n        \"{\\\"type\\\":\\\"user\\\",\\\"timestamp\\\":\\\"2026-06-07T00:44:46.000Z\\\",\\\"message\\\":{\\\"role\\\":\\\"user\\\",\\\"content\\\":[\" +\n        \"{\\\"type\\\":\\\"tool_result\\\",\\\"tool_use_id\\\":\\\"toolu_1\\\",\\\"content\\\":\\\"file contents\\\",\\\"is_error\\\":false}]}}\";\n    private static final String TOOL_RESULT_ERR =\n        \"{\\\"type\\\":\\\"user\\\",\\\"timestamp\\\":\\\"2026-06-07T00:44:47.000Z\\\",\\\"message\\\":{\\\"role\\\":\\\"user\\\",\\\"content\\\":[\" +\n        \"{\\\"type\\\":\\\"tool_result\\\",\\\"tool_use_id\\\":\\\"toolu_2\\\",\\\"content\\\":\\\"boom\\\",\\\"is_error\\\":true}]}}\";\n\n    private List<ObjectNode> steps(String... lines) {\n        return ClaudeCodeAdapter.toSteps(List.of(lines));\n    }\n\n […]
 
 > TOOL
@@ -12014,7 +12014,7 @@ id: toolu_01Ni8xnwB4HwV7GWKuiCqXd1
 tool_result
 id: toolu_01Ni8xnwB4HwV7GWKuiCqXd1
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/ClaudeCodeAdapterTest.java (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/ClaudeCodeAdapterTest.java (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -12027,7 +12027,7 @@ tool_use Bash
 id: toolu_01KeoGc52rdEWg3joyRhSH73
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngrep -n 'resetCodexSessions\\|codexSessionsSortNewestFirst\\|----- getFileContent\\|writeCodexSession' src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngrep -n 'resetCodexSessions\\|codexSessionsSortNewestFirst\\|----- getFileContent\\|writeCodexSession' src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java",
   "description": "Locate codex section anchors"
 }
 ```
@@ -12055,7 +12055,7 @@ tool_use Read
 id: toolu_01DaTobEKkspTpe2fCYaeUuS
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java",
   "offset": 92,
   "limit": 22
 }
@@ -12097,7 +12097,7 @@ id: toolu_011ixANiGXcYNe96foAiU1wu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java",
   "old_string": "    // All Codex sessions share one ~/.codex/sessions tree (unlike the per-flavor Antigravity dirs),\n    // so list-count assertions must start from a clean slate.\n    private void resetCodexSessions() throws IOException {\n        Path dir = tempHome.resolve(\".codex\").resolve(\"sessions\");\n        if (!Files.exists(dir)) return;\n        try (Stream<Path> paths = Files.walk(dir)) {\n            paths\n                .sorted(Comparator.reverseOrder())\n                .forEach(p -> {\n                    try {\n                        Files.delete(p);\n                    } catch (IOException ignored) {}\n                });\n        }\n    }",
   "new_string": "    private void writeClaudeCodeSession(String relPath, String content) throws IOException {\n        Path file = tempHome.resolve(\".claude\").resolve(\"projects\").resolve(relPath);\n        Files.createDirectories(file.getParent());\n        Files.writeString(file, content);\n    }\n\n    // Codex and Claude Code sessions each share one tree (unlike the per-flavor Antigravity dirs),\n    // so list-count assertions must start from a clean slate.\n    private void resetCodexSessions() throws IOException {\n        deleteTree(tempHome.resolve(\".codex\").resolve(\"sessions\"));\n    }\n\n    private void resetClaudeCodeSessions() throws IOException {\n        deleteTree(tempHome.resolve(\".claude\").resolve(\"projects\"));\n    }\n\n    private void deleteTree(Path dir) throws IOException {\n        if (!Files.exists(dir)) return;\n        try (Stream<Path> paths = Files.walk(dir)) {\n            paths\n                .sorted(Comparator.reverseOrder())\n                .forEach(p -> {\n                    try {\n                        Files.delete(p);\n                    } catch (IOException ignored) {}\n                });\n        }\n    }"
 }
@@ -12108,7 +12108,7 @@ id: toolu_011ixANiGXcYNe96foAiU1wu
 tool_result
 id: toolu_011ixANiGXcYNe96foAiU1wu
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -12118,7 +12118,7 @@ id: toolu_017uMP77aKc9dLgG6Ed1P28x
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java",
   "old_string": "    // ----- getFileContent -----",
   "new_string": "    // ----- claude-code flavor -----\n\n    @Test\n    void listsClaudeCodeSessionsWithSummaryFromUserPrompt() throws IOException {\n        resetClaudeCodeSessions();\n        writeClaudeCodeSession(\n            \"-Users-me-proj/11111111-2222-3333-4444-555555555555.jsonl\",\n            \"{\\\"type\\\":\\\"user\\\",\\\"timestamp\\\":\\\"2026-06-07T00:00:00Z\\\",\\\"message\\\":{\\\"role\\\":\\\"user\\\",\\\"content\\\":\\\"Refactor the parser\\\"}}\\n\"\n        );\n\n        JsonNode arr = MAPPER.readTree(get(\"/api/brain/conversations?flavor=claude-code\"));\n        assertEquals(1, arr.size());\n        assertEquals(\"11111111-2222-3333-4444-555555555555\", arr.get(0).get(\"id\").asText());\n        assertEquals(\"Refactor the parser\", arr.get(0).get(\"summary\").asText());\n    }\n\n    @Test\n    void claudeCodeTranscriptIsAdaptedToTheStepSchema() throws IOException {\n        resetClaudeCodeSessions();\n        String id = \"aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee\";\n        writeClaudeCodeSession(\n            \"-Users-me-proj/\" + id + \".jsonl\",\n            \"{\\\"type\\\":\\\"user\\\",\\\"timestamp\\\":\\\"t\\\",\\\"message\\\":{\\\"role\\\":\\\"user\\\",\\\"content\\\":\\\"hi\\\"}}\\n\" +\n            \"{\\\"type\\\":\\\"assistant\\\",\\\"timestamp\\\":\\\"t\\\",\\\"message\\\":{\\\"role\\\":\\\"assistant\\\",\\\"content\\\":[{\\\"type\\\":\\\"tool_use\\\",\\\"id\\\":\\\"u1\\\",\\\"name\\\":\\\"Bash\\\",\\\"input\\\":{\\\"command\\\":\\\"ls\\\"}}]}}\\n\"\n        );\n\n        JsonNode arr = MAPPER.readTree(\n            get(\"/api/brain/conversations/\" + id + \"/transcript?flavor=claude-code\")\n        );\n        assertEquals(2, arr.size());\n        assertEquals(\"USER_INPUT\", arr.get(0).get(\"type\").asText());\n        assertEquals(\"Bash\", arr.get(1).get(\"tool_calls\").get(0).get(\"name\").asText());\n    }\n\n    @Test\n    void claudeCodeTranscriptReturnsEmptyArrayForUnknownId() {\n        String body = get(\"/api/brain/conversations/no-such-cc-id/transcript?flavor=claude-code\");\n        assertEquals(\"[]\", body.trim());\n    }\n\n    // ----- getFileContent -----"
 }
@@ -12129,7 +12129,7 @@ id: toolu_017uMP77aKc9dLgG6Ed1P28x
 tool_result
 id: toolu_017uMP77aKc9dLgG6Ed1P28x
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/BrainControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -12143,7 +12143,7 @@ id: toolu_011XaYmsZVh4Jk6jrRf5iwgH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
   "old_string": "    private void writeCodexSession(String relPath, String content) throws IOException {\n        Path file = tempHome.resolve(\".codex\").resolve(\"sessions\").resolve(relPath);\n        Files.createDirectories(file.getParent());\n        Files.writeString(file, content);\n    }",
   "new_string": "    private void writeCodexSession(String relPath, String content) throws IOException {\n        Path file = tempHome.resolve(\".codex\").resolve(\"sessions\").resolve(relPath);\n        Files.createDirectories(file.getParent());\n        Files.writeString(file, content);\n    }\n\n    private void writeClaudeCodeSession(String relPath, String content) throws IOException {\n        Path file = tempHome.resolve(\".claude\").resolve(\"projects\").resolve(relPath);\n        Files.createDirectories(file.getParent());\n        Files.writeString(file, content);\n    }"
 }
@@ -12154,7 +12154,7 @@ id: toolu_011XaYmsZVh4Jk6jrRf5iwgH
 tool_result
 id: toolu_011XaYmsZVh4Jk6jrRf5iwgH
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -12164,7 +12164,7 @@ id: toolu_01Upk7sKtTPT3ztHhEcG3Psx
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
   "old_string": "    @Test\n    void codexSummarizeReturnsNoTranscriptForUnknownId() throws IOException {\n        String body = get(\"/api/analysis/conversations/unknown-codex/summarize?flavor=codex\");\n        assertEquals(\"No transcript found.\", MAPPER.readTree(body).get(\"summary\").asText());\n    }",
   "new_string": "    @Test\n    void codexSummarizeReturnsNoTranscriptForUnknownId() throws IOException {\n        String body = get(\"/api/analysis/conversations/unknown-codex/summarize?flavor=codex\");\n        assertEquals(\"No transcript found.\", MAPPER.readTree(body).get(\"summary\").asText());\n    }\n\n    // ----- claude-code source analysis -----\n\n    @Test\n    void summarizesClaudeCodeSessionAndCachesResult() throws IOException {\n        String id = \"12121212-3434-5656-7878-909090909090\";\n        writeClaudeCodeSession(\n            \"-Users-me-proj/\" + id + \".jsonl\",\n            \"{\\\"type\\\":\\\"user\\\",\\\"timestamp\\\":\\\"t\\\",\\\"message\\\":{\\\"role\\\":\\\"user\\\",\\\"content\\\":\\\"do it\\\"}}\\n\" +\n            \"{\\\"type\\\":\\\"assistant\\\",\\\"timestamp\\\":\\\"t\\\",\\\"message\\\":{\\\"role\\\":\\\"assistant\\\",\\\"content\\\":[{\\\"type\\\":\\\"tool_use\\\",\\\"id\\\":\\\"u1\\\",\\\"name\\\":\\\"Bash\\\",\\\"input\\\":{\\\"command\\\":\\\"ls\\\"}}]}}\\n\"\n        );\n\n        String body = get(\n            \"/api/analysis/conversations/\" + id + \"/summarize?flavor=claude-code&force=true\"\n        );\n        assertEquals(\"chunk summary\", MAPPER.readTree(body).get(\"summary\").asText());\n        assertEquals(1, ANALYZE_CALLS.size());\n\n        String again = get(\n            \"/api/analysis/conversations/\" + id + \"/summarize?flavor=claude-code\"\n        );\n        assertEquals(\"Chunk Title\", MAPPER.readTree(again).get(\"shortTitle\").asText());\n        assertEquals(1, ANALYZE_CALLS.size());\n    }"
 }
@@ -12175,7 +12175,7 @@ id: toolu_01Upk7sKtTPT3ztHhEcG3Psx
 tool_result
 id: toolu_01Upk7sKtTPT3ztHhEcG3Psx
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -12188,7 +12188,7 @@ tool_use Bash
 id: toolu_01Fq8gzuqkNK2sVPGUM6vk4N
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew test --console=plain 2>&1 | tail -20\ntotal=0; for f in build/test-results/test/*.xml; do n=$(grep -o 'tests=\"[0-9]*\"' \"$f\" | head -1 | sed 's/tests=\"//;s/\"//'); total=$((total+n)); done; echo \"TOTAL backend: $total\"",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew test --console=plain 2>&1 | tail -20\ntotal=0; for f in build/test-results/test/*.xml; do n=$(grep -o 'tests=\"[0-9]*\"' \"$f\" | head -1 | sed 's/tests=\"//;s/\"//'); total=$((total+n)); done; echo \"TOTAL backend: $total\"",
   "description": "Run backend tests with Claude Code support",
   "timeout": 600000
 }
@@ -12226,7 +12226,7 @@ id: toolu_01Si6TsaYgbN5bLM5ixYMRB5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/fixtures.mjs",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/fixtures.mjs",
   "old_string": "  return { home, configPath };\n}",
   "new_string": "  // ---- Claude Code sessions (flavor: claude-code) ----\n  const ccId = \"cc111111-2222-3333-4444-555555555555\";\n  const ccFile = path.join(\n    gemini,\n    \"..\",\n    \".claude\",\n    \"projects\",\n    \"-Users-me-proj\",\n    ccId + \".jsonl\"\n  );\n  fs.mkdirSync(path.dirname(ccFile), { recursive: true });\n  fs.writeFileSync(\n    ccFile,\n    jsonl([\n      { type: \"summary\", summary: \"Implement login flow\", leafUuid: \"x\" },\n      {\n        type: \"user\",\n        timestamp: \"2026-06-19T15:00:00.000Z\",\n        message: { role: \"user\", content: \"Implement login flow\" },\n      },\n      {\n        type: \"assistant\",\n        timestamp: \"2026-06-19T15:00:02.000Z\",\n        message: {\n          role: \"assistant\",\n          content: [\n            { type: \"text\", text: \"Reading the auth module.\" },\n            { type: \"tool_use\", id: \"u1\", name: \"Read\", input: { file_path: \"Auth.swift\" } },\n          ],\n        },\n      },\n      {\n        type: \"user\",\n        timestamp: \"2026-06-19T15:00:03.000Z\",\n        message: {\n          role: \"user\",\n          content: [\n            { type: \"tool_result\", tool_use_id: \"u1\", content: \"class Auth {}\", is_error: false },\n          ],\n        },\n      },\n    ])\n  );\n  const ccCacheDir = path.join(gemini, \"..\", \".claude\", \"projects\", \".agybrainviz\");\n  fs.mkdirSync(ccCacheDir, { recursive: true });\n  fs.writeFileSync(\n    path.join(ccCacheDir, ccId + \".summary.json\"),\n    JSON.stringify({\n      shortTitle: \"Login flow\",\n      summary: \"The agent implemented a login flow by reading and editing the auth module.\",\n      flow: [\"Read the auth module\"],\n      agentActions: [{ action: \"read\", description: \"Read Auth.swift\" }],\n      issues: [],\n      recommendations: [],\n    })\n  );\n\n  return { home, configPath […]
 
@@ -12235,7 +12235,7 @@ id: toolu_01Si6TsaYgbN5bLM5ixYMRB5
 tool_result
 id: toolu_01Si6TsaYgbN5bLM5ixYMRB5
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/fixtures.mjs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/fixtures.mjs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -12244,7 +12244,7 @@ tool_use Write
 id: toolu_01CJiLDVcJ6kii3P7Dp4SqTn
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/claude-code.spec.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/claude-code.spec.js",
   "content": "import { test, expect } from \"./test-base.js\";\n\ntest.describe(\"Claude Code sessions\", () => {\n  test(\"switching to the Claude Code flavor lists and renders a session\", async ({ page }) => {\n    await page.goto(\"/\");\n    await page.selectOption(\"#flavor-select\", \"claude-code\");\n\n    const item = page.locator(\"#conversations-list .conv-item\", {\n      hasText: \"Implement login flow\",\n    });\n    await expect(item).toBeVisible();\n    await item.click();\n\n    // user prompt + assistant message + tool call + tool result = 4 steps.\n    const tc = page.locator(\"#transcript-container\");\n    await expect(tc.locator(\".step-card\")).toHaveCount(4);\n\n    const toolCard = tc.locator(\".step-card\", { has: page.locator(\".tool-call\") });\n    await toolCard.locator(\".step-header\").first().click();\n    await expect(toolCard.locator(\".tool-name\")).toContainText(\"Read\");\n  });\n\n  test(\"Claude Code session statistics and cached analysis render\", async ({ page }) => {\n    await page.goto(\"/\");\n    await page.selectOption(\"#flavor-select\", \"claude-code\");\n    await page.locator('.conv-item:has-text(\"Implement login flow\")').click();\n\n    await expect(page.locator(\"#user-queries-stat-card .stat-value\")).toHaveText(\"1\");\n    await expect(page.locator(\"#tools-stat-card .stat-value\")).toHaveText(\"1\");\n    await expect(page.locator(\"#ai-summary-text\")).toContainText(\n      \"implemented a login flow\"\n    );\n  });\n});\n"
 }
 ```
@@ -12254,7 +12254,7 @@ id: toolu_01CJiLDVcJ6kii3P7Dp4SqTn
 tool_result
 id: toolu_01CJiLDVcJ6kii3P7Dp4SqTn
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/claude-code.spec.js (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/claude-code.spec.js (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -12268,7 +12268,7 @@ id: toolu_01GcXM6FhbEmE6yXUVfDADGA
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/README.md",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/README.md",
   "old_string": "*   **Multiple Sources**: In addition to Antigravity transcripts, the dropdown can render **OpenAI Codex** CLI sessions read from `~/.codex/sessions` (select \"OpenAI Codex\"). Codex rollout files are adapted into the same timeline view, including AI summarization (cached under `~/.codex/sessions/.agybrainviz`).\n    > **Note:** Inline file preview is available for Antigravity transcripts, which embed explicit file references. Codex sessions interact with files only through shell commands and contain no structured file references, so clickable file previews are not generated for them.\n*   **Search & Filtering**: Includes a text search input to find sessions, and a dropdown to filter sessions by source/agent type (Antigravity CLI, IDE, Agent, or OpenAI Codex).",
   "new_string": "*   **Multiple Sources**: In addition to Antigravity transcripts, the dropdown can render **OpenAI Codex** CLI sessions (`~/.codex/sessions`) and **Claude Code** sessions (`~/.claude/projects`). Each tool's own session files are adapted into the same timeline view, including AI summarization (cached in a tool-owned `.agybrainviz` directory next to each source's sessions).\n    > **Note:** Inline file preview is available for Antigravity transcripts, which embed explicit file references. Codex and Claude Code sessions reference files through shell/tool calls rather than the structured `file://` links Antigravity emits, so clickable file […]
 
@@ -12277,7 +12277,7 @@ id: toolu_01GcXM6FhbEmE6yXUVfDADGA
 tool_result
 id: toolu_01GcXM6FhbEmE6yXUVfDADGA
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -12286,7 +12286,7 @@ tool_use Bash
 id: toolu_01A4rXSEr9Urc5QPuUBLtSw4
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\necho \"=== spotlessApply + build ===\"\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -5\necho \"=== frontend unit ===\"\nnpm test 2>&1 | tail -3\necho \"=== rebuild jar + e2e ===\"\nmise exec -- ./gradlew shadowJar -x test --console=plain 2>&1 | tail -1\nlsof -ti tcp:8099 | xargs kill -9 2>/dev/null; sleep 1\nmise exec -- npx playwright test 2>&1 | tail -8",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\necho \"=== spotlessApply + build ===\"\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -5\necho \"=== frontend unit ===\"\nnpm test 2>&1 | tail -3\necho \"=== rebuild jar + e2e ===\"\nmise exec -- ./gradlew shadowJar -x test --console=plain 2>&1 | tail -1\nlsof -ti tcp:8099 | xargs kill -9 2>/dev/null; sleep 1\nmise exec -- npx playwright test 2>&1 | tail -8",
   "description": "Full verification of Claude Code support",
   "timeout": 600000
 }
@@ -12298,7 +12298,7 @@ tool_result
 id: toolu_01A4rXSEr9Urc5QPuUBLtSw4
 ```
 === spotlessApply + build ===
-[Incubating] Problems report is available at: file:///Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/build/reports/problems/problems-report.html
+[Incubating] Problems report is available at: file:///home/<USER>/Developer/scottdensmore/agent-brain-visualizer/build/reports/problems/problems-report.html
 
 BUILD SUCCESSFUL in 17s
 37 actionable tasks: 27 executed, 10 up-to-date
@@ -12329,7 +12329,7 @@ tool_use Bash
 id: toolu_01DGUnjNB1qku2e8zARGn8z3
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit add -A\ngit status --short | grep -vE '\\.claude/|\\.entire'",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit add -A\ngit status --short | grep -vE '\\.claude/|\\.entire'",
   "description": "Stage Claude Code feature"
 }
 ```
@@ -12364,7 +12364,7 @@ id: toolu_01EVJNb24iLXbveBCSTx1KxE
 ```json
 {
   "description": "Review Claude Code source feature",
-  "prompt": "You are a senior code reviewer. Review the STAGED git diff in /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer (run `git diff --cached`). This adds Claude Code sessions as a new transcript source AND refactors the two non-Antigravity sources behind a `SessionSource` registry.\n\nContext:\n- New `SessionSource` interface; `CodexSessionReader` and new `ClaudeCodeSessionReader` implement it. Controllers (`BrainController`, `AnalysisController`) now inject `List<SessionSource>` and route via `sourceFor(flavor)` instead of hardcoding `codex`. Antigravity remains the inline default/fallback.\n- Shared helpers extracted: `SummaryCache` (cache read/delete/write with traversal guard) and `NormalizedSteps` (steps→analysis-sequences). `CodexAdapter`/`CodexSessionReader` were refactored to use them — verify no behavior change.\n- `ClaudeCodeAdapter` maps Claude Code JSONL (`~/.claude/projects/<dir>/<uuid>.jsonl`; lines `{type,message,timestamp}`; user content string|array-of-tool_result; assistant content array of text/thinking/tool_use) into the normalized step schema.\n- `ClaudeCodeSessionReader` lists/reads/caches under `~/.claude/projects`, cache in `.agybrainviz`, head-bounded list scan, id matched against real filenames.\n- index.html adds the \"Claude Code\" option.\n- Tests: ClaudeCodeAdapterTest, BrainController claude-code tests, AnalysisController claude-code test, e2e spec. 94 backend + 44 frontend + 19 e2e all green.\n\nFocus on:\n1. **Regression risk from the registry refactor**: did routing change Antigravity or Codex behavior in either controller? Carefully compare the generalized `external`/`source` branch in AnalysisController.summarize vs the prior `codex` branch, and BrainController routing. Any flavor that now […]
+  "prompt": "You are a senior code reviewer. Review the STAGED git diff in /home/<USER>/Developer/scottdensmore/agent-brain-visualizer (run `git diff --cached`). This adds Claude Code sessions as a new transcript source AND refactors the two non-Antigravity sources behind a `SessionSource` registry.\n\nContext:\n- New `SessionSource` interface; `CodexSessionReader` and new `ClaudeCodeSessionReader` implement it. Controllers (`BrainController`, `AnalysisController`) now inject `List<SessionSource>` and route via `sourceFor(flavor)` instead of hardcoding `codex`. Antigravity remains the inline default/fallback.\n- Shared helpers extracted: `SummaryCache` (cache read/delete/write with traversal guard) and `NormalizedSteps` (steps→analysis-sequences). `CodexAdapter`/`CodexSessionReader` were refactored to use them — verify no behavior change.\n- `ClaudeCodeAdapter` maps Claude Code JSONL (`~/.claude/projects/<dir>/<uuid>.jsonl`; lines `{type,message,timestamp}`; user content string|array-of-tool_result; assistant content array of text/thinking/tool_use) into the normalized step schema.\n- `ClaudeCodeSessionReader` lists/reads/caches under `~/.claude/projects`, cache in `.agybrainviz`, head-bounded list scan, id matched against real filenames.\n- index.html adds the \"Claude Code\" option.\n- Tests: ClaudeCodeAdapterTest, BrainController claude-code tests, AnalysisController claude-code test, e2e spec. 94 backend + 44 frontend + 19 e2e all green.\n\nFocus on:\n1. **Regression risk from the registry refactor**: did routing change Antigravity or Codex behavior in either controller? Carefully compare the generalized `external`/`source` branch in AnalysisController.summarize vs the prior `codex` branch, and BrainController routing. Any flavor that now […]
 
 > TOOL
 
@@ -12398,7 +12398,7 @@ id: toolu_01VJRJ4pA1SrbbFJBgxmVL2o
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/ClaudeCodeSessionReader.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/ClaudeCodeSessionReader.java",
   "old_string": "        try (Stream<Path> paths = Files.walk(root)) {\n            return paths\n                .filter(Files::isRegularFile)\n                .filter(p -> stripExtension(p.getFileName().toString()).equals(id))\n                .findFirst()\n                .orElse(null);\n        }",
   "new_string": "        try (Stream<Path> paths = Files.walk(root)) {\n            return paths\n                .filter(Files::isRegularFile)\n                .filter(p -> p.getFileName().toString().endsWith(\".jsonl\"))\n                .filter(p -> stripExtension(p.getFileName().toString()).equals(id))\n                .findFirst()\n                .orElse(null);\n        }"
 }
@@ -12409,7 +12409,7 @@ id: toolu_01VJRJ4pA1SrbbFJBgxmVL2o
 tool_result
 id: toolu_01VJRJ4pA1SrbbFJBgxmVL2o
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/ClaudeCodeSessionReader.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/ClaudeCodeSessionReader.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -12418,7 +12418,7 @@ tool_use Read
 id: toolu_0163JqZr7fzfFRPFSGGxCTe1
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java",
   "offset": 110,
   "limit": 22
 }
@@ -12459,7 +12459,7 @@ tool_use Read
 id: toolu_01GZ4yBfwQQNYYSoHursSoKp
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java",
   "offset": 148,
   "limit": 20
 }
@@ -12499,7 +12499,7 @@ id: toolu_016kGDziRJwknrvGTws3Eq4F
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java",
   "old_string": "        try (Stream<Path> paths = Files.walk(root)) {\n            return paths\n                .filter(Files::isRegularFile)\n                .filter(p -> stripExtension(p.getFileName().toString()).equals(id))\n                .findFirst()\n                .orElse(null);\n        }",
   "new_string": "        try (Stream<Path> paths = Files.walk(root)) {\n            return paths\n                .filter(Files::isRegularFile)\n                .filter(p -> p.getFileName().toString().endsWith(\".jsonl\"))\n                .filter(p -> stripExtension(p.getFileName().toString()).equals(id))\n                .findFirst()\n                .orElse(null);\n        }"
 }
@@ -12510,7 +12510,7 @@ id: toolu_016kGDziRJwknrvGTws3Eq4F
 tool_result
 id: toolu_016kGDziRJwknrvGTws3Eq4F
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/CodexSessionReader.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -12524,7 +12524,7 @@ id: toolu_0128HG4k7T3G8FmqR52FXbFa
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/CodexAdapterTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/CodexAdapterTest.java",
   "old_string": "    @Test\n    void analysisSequencesSplitOnEachUserInput() {",
   "new_string": "    @Test\n    void analysisLineFallsBackToFullArgsWhenNoKnownField() {\n        // No cmd/command/file_path key -> the whole args object is summarized.\n        String fc =\n            \"{\\\"type\\\":\\\"response_item\\\",\\\"timestamp\\\":\\\"t\\\",\\\"payload\\\":{\\\"type\\\":\\\"function_call\\\",\\\"name\\\":\\\"grep\\\",\\\"arguments\\\":\\\"{\\\\\\\"pattern\\\\\\\":\\\\\\\"abc\\\\\\\"}\\\",\\\"call_id\\\":\\\"c\\\"}}\";\n        List<List<String>> seqs = CodexAdapter.toAnalysisSequences(List.of(USER_MSG, fc));\n        assertTrue(seqs.get(0).get(1).contains(\"pattern\"));\n    }\n\n    @Test\n    void analysisSequencesSplitOnEachUserInput() {"
 }
@@ -12535,7 +12535,7 @@ id: toolu_0128HG4k7T3G8FmqR52FXbFa
 tool_result
 id: toolu_0128HG4k7T3G8FmqR52FXbFa
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/CodexAdapterTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/CodexAdapterTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -12544,7 +12544,7 @@ tool_use Bash
 id: toolu_01RcFXWsgjTQqxKJ6PjdVqcY
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -5\ntotal=0; for f in build/test-results/test/*.xml; do n=$(grep -o 'tests=\"[0-9]*\"' \"$f\" | head -1 | sed 's/tests=\"//;s/\"//'); total=$((total+n)); done; echo \"TOTAL backend: $total\"\nmise exec -- ./gradlew shadowJar -x test --console=plain 2>&1 | tail -1\nlsof -ti tcp:8099 | xargs kill -9 2>/dev/null; sleep 1\nmise exec -- npx playwright test 2>&1 | tail -4",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -5\ntotal=0; for f in build/test-results/test/*.xml; do n=$(grep -o 'tests=\"[0-9]*\"' \"$f\" | head -1 | sed 's/tests=\"//;s/\"//'); total=$((total+n)); done; echo \"TOTAL backend: $total\"\nmise exec -- ./gradlew shadowJar -x test --console=plain 2>&1 | tail -1\nlsof -ti tcp:8099 | xargs kill -9 2>/dev/null; sleep 1\nmise exec -- npx playwright test 2>&1 | tail -4",
   "description": "Re-verify after review fixes",
   "timeout": 600000
 }
@@ -12578,7 +12578,7 @@ tool_use Bash
 id: toolu_01TZBJ4ezofV9eHFrP2JiEya
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit add -A\ngit status --short | grep -vE '\\.claude/|\\.entire'\ngit commit -q -F - <<'EOF'\nfeat: visualize Claude Code sessions as a new source\n\nAdd Claude Code sessions (~/.claude/projects/<dir>/<uuid>.jsonl) as a\nselectable transcript source alongside Antigravity and OpenAI Codex, with\nfull timeline rendering, stats, and AI summarization.\n\nTo support a second external source cleanly, route both controllers\nthrough a SessionSource registry instead of per-flavor branching:\n- SessionSource interface; CodexSessionReader and the new\n  ClaudeCodeSessionReader implement it. BrainController/AnalysisController\n  inject List<SessionSource> and dispatch via sourceFor(flavor); Antigravity\n  remains the inline default. (No behavior change for Antigravity/Codex.)\n- Shared helpers extracted: SummaryCache (traversal-guarded analysis cache)\n  and NormalizedSteps (steps -> analysis sequences), reused by both sources.\n\nClaudeCodeAdapter maps Claude Code JSONL into the existing step schema:\nuser string -> USER_INPUT; user tool_result -> FUNCTION_OUTPUT (is_error ->\nERROR); assistant text/thinking/tool_use -> MESSAGE/REASONING/FUNCTION_CALL.\nTitle comes from a summary line or the first user prompt. ClaudeCodeSessionReader\nlists/reads/caches under ~/.claude/projects (cache in .agybrainviz), with\nhead-bounded list scans and id matched against real .jsonl filenames.\n\nindex.html adds the \"Claude Code\" dropdown option.\n\nTests: ClaudeCodeAdapterTest, BrainController + AnalysisController\nclaude-code integration tests, and an e2e spec (list/render/stats/analysis).\n95 backend + 44 frontend + 19 e2e, all green.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\necho \"exit: $?\"\ngit push -u origin feat/claude-code-visualizer 2>&1 | tail -3",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit add -A\ngit status --short | grep -vE '\\.claude/|\\.entire'\ngit commit -q -F - <<'EOF'\nfeat: visualize Claude Code sessions as a new source\n\nAdd Claude Code sessions (~/.claude/projects/<dir>/<uuid>.jsonl) as a\nselectable transcript source alongside Antigravity and OpenAI Codex, with\nfull timeline rendering, stats, and AI summarization.\n\nTo support a second external source cleanly, route both controllers\nthrough a SessionSource registry instead of per-flavor branching:\n- SessionSource interface; CodexSessionReader and the new\n  ClaudeCodeSessionReader implement it. BrainController/AnalysisController\n  inject List<SessionSource> and dispatch via sourceFor(flavor); Antigravity\n  remains the inline default. (No behavior change for Antigravity/Codex.)\n- Shared helpers extracted: SummaryCache (traversal-guarded analysis cache)\n  and NormalizedSteps (steps -> analysis sequences), reused by both sources.\n\nClaudeCodeAdapter maps Claude Code JSONL into the existing step schema:\nuser string -> USER_INPUT; user tool_result -> FUNCTION_OUTPUT (is_error ->\nERROR); assistant text/thinking/tool_use -> MESSAGE/REASONING/FUNCTION_CALL.\nTitle comes from a summary line or the first user prompt. ClaudeCodeSessionReader\nlists/reads/caches under ~/.claude/projects (cache in .agybrainviz), with\nhead-bounded list scans and id matched against real .jsonl filenames.\n\nindex.html adds the \"Claude Code\" dropdown option.\n\nTests: ClaudeCodeAdapterTest, BrainController + AnalysisController\nclaude-code integration tests, and an e2e spec (list/render/stats/analysis).\n95 backend + 44 frontend + 19 e2e, all green.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\necho \"exit: $?\"\ngit push -u origin feat/claude-code-visualizer 2>&1 | tail -3",
   "description": "Commit and […]
 
 > TOOL
@@ -12615,7 +12615,7 @@ tool_use Bash
 id: toolu_01C1YtC2kESfwbDrFZzRab7s
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh pr create --base main --head feat/claude-code-visualizer \\\n  --title \"feat: visualize Claude Code sessions as a new source\" \\\n  --body \"$(cat <<'EOF'\n## What & why\n\nAdds **Claude Code** sessions as a new transcript source to visualize, alongside Antigravity and OpenAI Codex. Select **\"Claude Code\"** in the dropdown to browse/render sessions from `~/.claude/projects/<dir>/<uuid>.jsonl` — with timeline, stats, and AI summarization.\n\n## Design: SessionSource registry\n\nTo support a *second* external source without `if/else` sprawl, both controllers now route through a registry:\n- **`SessionSource`** interface — `CodexSessionReader` and the new `ClaudeCodeSessionReader` implement it. `BrainController`/`AnalysisController` inject `List<SessionSource>` and dispatch via `sourceFor(flavor)`; **Antigravity stays the inline default** (no behavior change for Antigravity or Codex).\n- Shared helpers extracted: **`SummaryCache`** (traversal-guarded analysis cache) and **`NormalizedSteps`** (steps → analysis sequences), reused by both sources.\n\n## ClaudeCodeAdapter\n\nMaps Claude Code JSONL (`{type, message, timestamp}`) into the existing step schema, so the frontend renders it unchanged:\n\n| Claude Code | → step |\n|---|---|\n| `user` string content | USER_INPUT |\n| `user` `tool_result` block | FUNCTION_OUTPUT (`is_error` → ERROR) |\n| `assistant` `text` / `thinking` / `tool_use` | MESSAGE / REASONING / FUNCTION_CALL |\n\nTitle from a `summary` line or the first user prompt. The reader lists/reads/caches under `~/.claude/projects` (cache in `.agybrainviz`), with […]
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh pr create --base main --head feat/claude-code-visualizer \\\n  --title \"feat: visualize Claude Code sessions as a new source\" \\\n  --body \"$(cat <<'EOF'\n## What & why\n\nAdds **Claude Code** sessions as a new transcript source to visualize, alongside Antigravity and OpenAI Codex. Select **\"Claude Code\"** in the dropdown to browse/render sessions from `~/.claude/projects/<dir>/<uuid>.jsonl` — with timeline, stats, and AI summarization.\n\n## Design: SessionSource registry\n\nTo support a *second* external source without `if/else` sprawl, both controllers now route through a registry:\n- **`SessionSource`** interface — `CodexSessionReader` and the new `ClaudeCodeSessionReader` implement it. `BrainController`/`AnalysisController` inject `List<SessionSource>` and dispatch via `sourceFor(flavor)`; **Antigravity stays the inline default** (no behavior change for Antigravity or Codex).\n- Shared helpers extracted: **`SummaryCache`** (traversal-guarded analysis cache) and **`NormalizedSteps`** (steps → analysis sequences), reused by both sources.\n\n## ClaudeCodeAdapter\n\nMaps Claude Code JSONL (`{type, message, timestamp}`) into the existing step schema, so the frontend renders it unchanged:\n\n| Claude Code | → step |\n|---|---|\n| `user` string content | USER_INPUT |\n| `user` `tool_result` block | FUNCTION_OUTPUT (`is_error` → ERROR) |\n| `assistant` `text` / `thinking` / `tool_use` | MESSAGE / REASONING / FUNCTION_CALL |\n\nTitle from a `summary` line or the first user prompt. The reader lists/reads/caches under `~/.claude/projects` (cache in `.agybrainviz`), with […]
 
 > TOOL
 
@@ -12631,7 +12631,7 @@ tool_use Bash
 id: toolu_01PPKY4XNVePkVoh2gWWqAsw
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nsleep 8\nRUN=$(gh run list --branch feat/claude-code-visualizer --workflow \"CI\" --limit 1 --json databaseId --jq '.[0].databaseId')\necho \"watching CI run $RUN\"\ngh run watch \"$RUN\" --exit-status --interval 20 >/dev/null 2>&1; echo \"watch exit: $?\"\ngh run view \"$RUN\" --json jobs --jq '.jobs[] | \"\\(.conclusion // .status)\\t\\(.name)\"'",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nsleep 8\nRUN=$(gh run list --branch feat/claude-code-visualizer --workflow \"CI\" --limit 1 --json databaseId --jq '.[0].databaseId')\necho \"watching CI run $RUN\"\ngh run watch \"$RUN\" --exit-status --interval 20 >/dev/null 2>&1; echo \"watch exit: $?\"\ngh run view \"$RUN\" --json jobs --jq '.jobs[] | \"\\(.conclusion // .status)\\t\\(.name)\"'",
   "description": "Watch PR #10 CI",
   "timeout": 600000
 }
@@ -12659,7 +12659,7 @@ tool_use Bash
 id: toolu_01RReX7MQMv9whxR46BTzpbp
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh pr merge 10 --squash --delete-branch 2>&1 | tail -2\ngh pr view 10 --json state --jq '{state}'\ngit checkout main 2>&1 | tail -1\ngit pull --ff-only 2>&1 | tail -2\ngit fetch --prune 2>&1 | tail -1\ngit branch -d feat/claude-code-visualizer 2>&1 || echo \"(gone)\"\ngit log --oneline -3",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh pr merge 10 --squash --delete-branch 2>&1 | tail -2\ngh pr view 10 --json state --jq '{state}'\ngit checkout main 2>&1 | tail -1\ngit pull --ff-only 2>&1 | tail -2\ngit fetch --prune 2>&1 | tail -1\ngit branch -d feat/claude-code-visualizer 2>&1 || echo \"(gone)\"\ngit log --oneline -3",
   "description": "Merge PR #10 and clean up"
 }
 ```
@@ -12711,7 +12711,7 @@ tool_use Bash
 id: toolu_016qsSP9wFgDVVVaxYuuXj2r
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\necho \"AI_PROVIDER=${AI_PROVIDER:-(unset → gemini)} ; GEMINI_API_KEY set? $([ -n \"$GEMINI_API_KEY\" ] && echo yes || echo no)\"\ncurl -sf --max-time 3 http://localhost:11434/api/tags >/dev/null 2>&1 && echo \"ollama UP ($(curl -sf --max-time 3 http://localhost:11434/api/tags | jq -r '.models[].name' | tr '\\n' ' '))\" || echo \"ollama not reachable\"\necho \"=== largest Claude Code sessions (lines) ===\"\nfind ~/.claude/projects -name '*.jsonl' 2>/dev/null | while read f; do echo \"$(wc -l < \"$f\") $f\"; done | sort -rn | head -3\necho \"=== smallest few (lines) ===\"\nfind ~/.claude/projects -name '*.jsonl' 2>/dev/null | while read f; do echo \"$(wc -l < \"$f\") $f\"; done | sort -n | head -3",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\necho \"AI_PROVIDER=${AI_PROVIDER:-(unset → gemini)} ; GEMINI_API_KEY set? $([ -n \"$GEMINI_API_KEY\" ] && echo yes || echo no)\"\ncurl -sf --max-time 3 http://localhost:11434/api/tags >/dev/null 2>&1 && echo \"ollama UP ($(curl -sf --max-time 3 http://localhost:11434/api/tags | jq -r '.models[].name' | tr '\\n' ' '))\" || echo \"ollama not reachable\"\necho \"=== largest Claude Code sessions (lines) ===\"\nfind ~/.claude/projects -name '*.jsonl' 2>/dev/null | while read f; do echo \"$(wc -l < \"$f\") $f\"; done | sort -rn | head -3\necho \"=== smallest few (lines) ===\"\nfind ~/.claude/projects -name '*.jsonl' 2>/dev/null | while read f; do echo \"$(wc -l < \"$f\") $f\"; done | sort -n | head -3",
   "description": "Check provider and Claude Code session sizes"
 }
 ```
@@ -12724,13 +12724,13 @@ id: toolu_016qsSP9wFgDVVVaxYuuXj2r
 AI_PROVIDER=(unset → gemini) ; GEMINI_API_KEY set? no
 ollama UP (gemma4:latest )
 === largest Claude Code sessions (lines) ===
-   28796 /Users/scottdensmore/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-movieswiftui/2cae28a4-28e8-4bfa-9225-7682543f3664.jsonl
-    5014 /Users/scottdensmore/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-contactmanager/5ea1dbe6-8812-489a-b85a-b1b21cf14a47.jsonl
-    4644 /Users/scottdensmore/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-contactmanager/a22e27bd-7ce5-4bdb-b1b8-083a9eedbb19.jsonl
+   28796 /home/<USER>/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-movieswiftui/2cae28a4-28e8-4bfa-9225-7682543f3664.jsonl
+    5014 /home/<USER>/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-contactmanager/5ea1dbe6-8812-489a-b85a-b1b21cf14a47.jsonl
+    4644 /home/<USER>/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-contactmanager/a22e27bd-7ce5-4bdb-b1b8-083a9eedbb19.jsonl
 === smallest few (lines) ===
-       2 /Users/scottdensmore/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-contactmanager/82e2b1e1-5c5d-4d69-98ae-2f752f65035a.jsonl
-       5 /Users/scottdensmore/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-movieswiftui/2cae28a4-28e8-4bfa-9225-7682543f3664/subagents/agent-ae267851af7f3785f.jsonl
-       7 /Users/scottdensmore/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-travel-app/0a8b81f8-f2c3-44fe-a694-c6c8e2f5f9f6/subagents/agent-a23820e39e793110a.jsonl
+       2 /home/<USER>/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-contactmanager/82e2b1e1-5c5d-4d69-98ae-2f752f65035a.jsonl
+       5 /home/<USER>/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-movieswiftui/2cae28a4-28e8-4bfa-9225-7682543f3664/subagents/agent-ae267851af7f3785f.jsonl
+       7 /home/<USER>/.claude/projects/-Users-scottdensmore-Developer-scottdensmore-travel-app/0a8b81f8-f2c3-44fe-a694-c6c8e2f5f9f6/subagents/agent-a23820e39e793110a.jsonl
 ```
 
 > AGENT
@@ -12743,7 +12743,7 @@ tool_use Bash
 id: toolu_012BcdBahUEN96kUfQrg864H
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nJAR=$(find build/libs -name '*-all.jar' | head -1)\nlsof -ti tcp:8097 | xargs kill -9 2>/dev/null; sleep 1\nAI_PROVIDER=ollama OLLAMA_MODEL=gemma4 mise exec -- java -Dmicronaut.server.port=8097 -jar \"$JAR\" >/tmp/agy-cc-diag.log 2>&1 &\nfor i in $(seq 1 30); do curl -sf \"http://localhost:8097/api/brain/conversations\" >/dev/null 2>&1 && break; sleep 1; done\necho \"server up\"\nID=\"5ea1dbe6-8812-489a-b85a-b1b21cf14a47\"   # 5014-line contactmanager session\necho \"=== transcript step count ===\"\ncurl -s \"http://localhost:8097/api/brain/conversations/$ID/transcript?flavor=claude-code\" | jq 'length' 2>/dev/null\necho \"=== trigger summarize (bg), then read chunk count from log ===\"\ncurl -s --max-time 8 \"http://localhost:8097/api/analysis/conversations/$ID/summarize?flavor=claude-code&force=true\" >/dev/null 2>&1 &\nsleep 9\ngrep -iE \"optimal chunks\" /tmp/agy-cc-diag.log | tail -3",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nJAR=$(find build/libs -name '*-all.jar' | head -1)\nlsof -ti tcp:8097 | xargs kill -9 2>/dev/null; sleep 1\nAI_PROVIDER=ollama OLLAMA_MODEL=gemma4 mise exec -- java -Dmicronaut.server.port=8097 -jar \"$JAR\" >/tmp/agy-cc-diag.log 2>&1 &\nfor i in $(seq 1 30); do curl -sf \"http://localhost:8097/api/brain/conversations\" >/dev/null 2>&1 && break; sleep 1; done\necho \"server up\"\nID=\"5ea1dbe6-8812-489a-b85a-b1b21cf14a47\"   # 5014-line contactmanager session\necho \"=== transcript step count ===\"\ncurl -s \"http://localhost:8097/api/brain/conversations/$ID/transcript?flavor=claude-code\" | jq 'length' 2>/dev/null\necho \"=== trigger summarize (bg), then read chunk count from log ===\"\ncurl -s --max-time 8 \"http://localhost:8097/api/analysis/conversations/$ID/summarize?flavor=claude-code&force=true\" >/dev/null 2>&1 &\nsleep 9\ngrep -iE \"optimal chunks\" /tmp/agy-cc-diag.log | tail -3",
   "description": "Measure chunk count for a moderate Claude Code session",
   "timeout": 120000
 }
@@ -12771,7 +12771,7 @@ tool_use Bash
 id: toolu_0166h8zLmGgCo2q7ts6NQgij
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nID=\"5ea1dbe6-8812-489a-b85a-b1b21cf14a47\"\necho \"=== analysis-input composition (count + estimated chars per type, using analyzer truncation) ===\"\ncurl -s \"http://localhost:8097/api/brain/conversations/$ID/transcript?flavor=claude-code\" 2>/dev/null | jq '\n  def cap(n): if (.|length) > n then n else (.|length) end;\n  [ .[] ] as $s\n  | {\n      user_count: ([$s[]|select(.type==\"USER_INPUT\")]|length),\n      user_chars: ([$s[]|select(.type==\"USER_INPUT\")| (.content // \"\"|cap(2000))]|add),\n      assistant_count: ([$s[]|select(.type==\"MESSAGE\")]|length),\n      assistant_chars: ([$s[]|select(.type==\"MESSAGE\")| (.content // \"\"|cap(2000))]|add),\n      toolcall_count: ([$s[]|select(.type==\"FUNCTION_CALL\")]|length),\n      erroroutput_count: ([$s[]|select(.type==\"FUNCTION_OUTPUT\" and .status==\"ERROR\")]|length),\n      okoutput_count: ([$s[]|select(.type==\"FUNCTION_OUTPUT\" and (.status//\"\")!=\"ERROR\")]|length),\n      reasoning_count: ([$s[]|select(.type==\"REASONING\")]|length)\n    }' 2>/dev/null\nlsof -ti tcp:8097 | xargs kill -9 2>/dev/null\necho \"(server stopped)\"",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nID=\"5ea1dbe6-8812-489a-b85a-b1b21cf14a47\"\necho \"=== analysis-input composition (count + estimated chars per type, using analyzer truncation) ===\"\ncurl -s \"http://localhost:8097/api/brain/conversations/$ID/transcript?flavor=claude-code\" 2>/dev/null | jq '\n  def cap(n): if (.|length) > n then n else (.|length) end;\n  [ .[] ] as $s\n  | {\n      user_count: ([$s[]|select(.type==\"USER_INPUT\")]|length),\n      user_chars: ([$s[]|select(.type==\"USER_INPUT\")| (.content // \"\"|cap(2000))]|add),\n      assistant_count: ([$s[]|select(.type==\"MESSAGE\")]|length),\n      assistant_chars: ([$s[]|select(.type==\"MESSAGE\")| (.content // \"\"|cap(2000))]|add),\n      toolcall_count: ([$s[]|select(.type==\"FUNCTION_CALL\")]|length),\n      erroroutput_count: ([$s[]|select(.type==\"FUNCTION_OUTPUT\" and .status==\"ERROR\")]|length),\n      okoutput_count: ([$s[]|select(.type==\"FUNCTION_OUTPUT\" and (.status//\"\")!=\"ERROR\")]|length),\n      reasoning_count: ([$s[]|select(.type==\"REASONING\")]|length)\n    }' 2>/dev/null\nlsof -ti tcp:8097 | xargs kill -9 2>/dev/null\necho \"(server stopped)\"",
   "description": "Measure analysis input composition by step type"
 }
 ```
@@ -12805,7 +12805,7 @@ tool_use Bash
 id: toolu_01UKvroGvpAdD3SQf3d3Udfx
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit checkout -b fix/analysis-drop-assistant-narration 2>&1 | tail -1",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit checkout -b fix/analysis-drop-assistant-narration 2>&1 | tail -1",
   "description": "Branch for the fix"
 }
 ```
@@ -12825,7 +12825,7 @@ id: toolu_01NtBxnJi2ZXcj2SfRsdEti1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/NormalizedSteps.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/NormalizedSteps.java",
   "old_string": " * Shared logic for turning normalized timeline steps (the schema produced by the per-source adapters\n * such as {@link CodexAdapter} and {@link ClaudeCodeAdapter}) into condensed LLM-analysis input: one\n * list of short lines per user-initiated sequence, mirroring\n * {@link TranscriptParser#parseSequences(List)}. User prompts, assistant messages, tool calls, and\n * failed tool outputs are summarized; successful outputs and empty reasoning are omitted to keep the\n * token footprint small.\n */",
   "new_string": " * Shared logic for turning normalized timeline steps (the schema produced by the per-source adapters\n * such as {@link CodexAdapter} and {@link ClaudeCodeAdapter}) into condensed LLM-analysis input: one\n * list of short lines per user-initiated sequence, mirroring\n * {@link TranscriptParser#parseSequences(List)}. User prompts, agent tool calls, and failed tool\n * outputs are summarized; assistant narration, successful outputs, and reasoning are omitted — this\n * keeps the token footprint small (assistant prose dominates verbose sessions) and matches what the\n * Antigravity analyzer feeds the model.\n */"
 }
@@ -12836,7 +12836,7 @@ id: toolu_01NtBxnJi2ZXcj2SfRsdEti1
 tool_result
 id: toolu_01NtBxnJi2ZXcj2SfRsdEti1
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/NormalizedSteps.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/NormalizedSteps.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -12846,7 +12846,7 @@ id: toolu_01HRmaKvPuPJGgMwLbknS2eM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/NormalizedSteps.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/NormalizedSteps.java",
   "old_string": "            case \"USER_INPUT\":\n                return \"USER REQUEST: \" + truncate(step.path(\"content\").asText(\"\"), 2000);\n            case \"MESSAGE\":\n                return \"ASSISTANT: \" + truncate(step.path(\"content\").asText(\"\"), 2000);\n            case \"FUNCTION_CALL\":",
   "new_string": "            case \"USER_INPUT\":\n                return \"USER REQUEST: \" + truncate(step.path(\"content\").asText(\"\"), 2000);\n            case \"FUNCTION_CALL\":"
 }
@@ -12857,7 +12857,7 @@ id: toolu_01HRmaKvPuPJGgMwLbknS2eM
 tool_result
 id: toolu_01HRmaKvPuPJGgMwLbknS2eM
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/NormalizedSteps.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/NormalizedSteps.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -12871,7 +12871,7 @@ id: toolu_013Wx4u5WxCKrp6zrDyptdNk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/CodexAdapterTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/CodexAdapterTest.java",
   "old_string": "        assertEquals(1, seqs.size());\n        List<String> lines = seqs.get(0);\n        assertTrue(lines.get(0).startsWith(\"USER REQUEST: Fix the bug\"));\n        assertTrue(lines.get(1).startsWith(\"ASSISTANT: On it.\"));\n        assertEquals(\"AGENT ACTION: [exec_command] git status\", lines.get(2));\n        // Successful output is omitted; the failed one becomes a SYSTEM EVENT/ERROR line.\n        assertTrue(lines.stream().anyMatch(l -> l.startsWith(\"SYSTEM EVENT/ERROR:\")));\n        assertFalse(lines.stream().anyMatch(l -> l.contains(\"clean\")));",
   "new_string": "        assertEquals(1, seqs.size());\n        List<String> lines = seqs.get(0);\n        assertTrue(lines.get(0).startsWith(\"USER REQUEST: Fix the bug\"));\n        assertEquals(\"AGENT ACTION: [exec_command] git status\", lines.get(1));\n        // Successful output is omitted; the failed one becomes a SYSTEM EVENT/ERROR line.\n        assertTrue(lines.stream().anyMatch(l -> l.startsWith(\"SYSTEM EVENT/ERROR:\")));\n        assertFalse(lines.stream().anyMatch(l -> l.contains(\"clean\")));\n        // Assistant narration is omitted to keep the analysis input compact.\n        assertFalse(lines.stream().anyMatch(l -> l.startsWith(\"ASSISTANT:\")));"
 }
@@ -12882,7 +12882,7 @@ id: toolu_013Wx4u5WxCKrp6zrDyptdNk
 tool_result
 id: toolu_013Wx4u5WxCKrp6zrDyptdNk
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/CodexAdapterTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/CodexAdapterTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -12892,7 +12892,7 @@ id: toolu_019g9wDdKvU6MS5phmdN861H
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/ClaudeCodeAdapterTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/ClaudeCodeAdapterTest.java",
   "old_string": "        assertEquals(1, seqs.size());\n        List<String> lines = seqs.get(0);\n        assertTrue(lines.contains(\"USER REQUEST: Fix the bug\"));\n        assertTrue(lines.contains(\"ASSISTANT: On it.\"));\n        assertEquals(\"AGENT ACTION: [Read] /a.txt\", lines.get(2));\n        assertTrue(lines.stream().anyMatch(l -> l.startsWith(\"SYSTEM EVENT/ERROR:\")));\n        // Successful tool output is omitted.\n        assertFalse(lines.stream().anyMatch(l -> l.contains(\"file contents\")));",
   "new_string": "        assertEquals(1, seqs.size());\n        List<String> lines = seqs.get(0);\n        assertTrue(lines.contains(\"USER REQUEST: Fix the bug\"));\n        assertEquals(\"AGENT ACTION: [Read] /a.txt\", lines.get(1));\n        assertTrue(lines.stream().anyMatch(l -> l.startsWith(\"SYSTEM EVENT/ERROR:\")));\n        // Successful tool output and assistant narration are omitted.\n        assertFalse(lines.stream().anyMatch(l -> l.contains(\"file contents\")));\n        assertFalse(lines.stream().anyMatch(l -> l.startsWith(\"ASSISTANT:\")));"
 }
@@ -12903,7 +12903,7 @@ id: toolu_019g9wDdKvU6MS5phmdN861H
 tool_result
 id: toolu_019g9wDdKvU6MS5phmdN861H
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/ClaudeCodeAdapterTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/ClaudeCodeAdapterTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -12916,7 +12916,7 @@ tool_use Bash
 id: toolu_011WKh96ETa1YFs4NdumZ3ND
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -4\necho \"=== rebuild jar + run, time summarize on the 5014-line session ===\"\nmise exec -- ./gradlew shadowJar -x test --console=plain 2>&1 | tail -1\nJAR=$(find build/libs -name '*-all.jar' | head -1)\nlsof -ti tcp:8097 | xargs kill -9 2>/dev/null; sleep 1\nAI_PROVIDER=ollama OLLAMA_MODEL=gemma4 mise exec -- java -Dmicronaut.server.port=8097 -jar \"$JAR\" >/tmp/agy-cc-fix.log 2>&1 &\nfor i in $(seq 1 30); do curl -sf \"http://localhost:8097/api/brain/conversations\" >/dev/null 2>&1 && break; sleep 1; done\nID=\"5ea1dbe6-8812-489a-b85a-b1b21cf14a47\"\ntime curl -s --max-time 300 \"http://localhost:8097/api/analysis/conversations/$ID/summarize?flavor=claude-code&force=true\" | jq -r '{shortTitle, summary}' 2>/dev/null || echo \"(timed out at 300s)\"\ngrep -iE \"optimal chunks\" /tmp/agy-cc-fix.log | tail -1\nlsof -ti tcp:8097 | xargs kill -9 2>/dev/null",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -4\necho \"=== rebuild jar + run, time summarize on the 5014-line session ===\"\nmise exec -- ./gradlew shadowJar -x test --console=plain 2>&1 | tail -1\nJAR=$(find build/libs -name '*-all.jar' | head -1)\nlsof -ti tcp:8097 | xargs kill -9 2>/dev/null; sleep 1\nAI_PROVIDER=ollama OLLAMA_MODEL=gemma4 mise exec -- java -Dmicronaut.server.port=8097 -jar \"$JAR\" >/tmp/agy-cc-fix.log 2>&1 &\nfor i in $(seq 1 30); do curl -sf \"http://localhost:8097/api/brain/conversations\" >/dev/null 2>&1 && break; sleep 1; done\nID=\"5ea1dbe6-8812-489a-b85a-b1b21cf14a47\"\ntime curl -s --max-time 300 \"http://localhost:8097/api/analysis/conversations/$ID/summarize?flavor=claude-code&force=true\" | jq -r '{shortTitle, summary}' 2>/dev/null || echo \"(timed out at 300s)\"\ngrep -iE \"optimal chunks\" /tmp/agy-cc-fix.log | tail -1\nlsof -ti tcp:8097 | xargs kill -9 2>/dev/null",
   "description": "Build, test, and time the fixed Claude Code summarize",
   "timeout": 600000
 }
@@ -12951,7 +12951,7 @@ tool_use Bash
 id: toolu_01TNEUQ5gvWSQ9Hge3dowV22
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\ntotal=0; for f in build/test-results/test/*.xml; do n=$(grep -o 'tests=\"[0-9]*\"' \"$f\" | head -1 | sed 's/tests=\"//;s/\"//'); total=$((total+n)); done; echo \"TOTAL backend: $total\"\necho \"=== frontend unit ===\"\nnpm test 2>&1 | tail -3\necho \"=== e2e ===\"\nlsof -ti tcp:8099 | xargs kill -9 2>/dev/null; sleep 1\nmise exec -- npx playwright test 2>&1 | tail -4",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\ntotal=0; for f in build/test-results/test/*.xml; do n=$(grep -o 'tests=\"[0-9]*\"' \"$f\" | head -1 | sed 's/tests=\"//;s/\"//'); total=$((total+n)); done; echo \"TOTAL backend: $total\"\necho \"=== frontend unit ===\"\nnpm test 2>&1 | tail -3\necho \"=== e2e ===\"\nlsof -ti tcp:8099 | xargs kill -9 2>/dev/null; sleep 1\nmise exec -- npx playwright test 2>&1 | tail -4",
   "description": "Confirm counts + frontend + e2e",
   "timeout": 300000
 }
@@ -12984,7 +12984,7 @@ tool_use Bash
 id: toolu_019xjXJ5N3FyUesu9cLKkRwx
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit add -A\ngit status --short | grep -vE '\\.claude/|\\.entire'\ngit commit -q -F - <<'EOF'\nperf(ai): drop assistant narration from analysis input\n\nConversation analysis was very slow for Claude Code sessions. They are far\nlarger than Codex/Antigravity sessions (thousands of lines), and the\ncondensed analysis input was dominated by assistant message text — for a\n5014-line session, 610 assistant messages = ~142 KB, more than half the\ninput — producing a single ~100k-token prompt that a local model has to\nprompt-eval for minutes.\n\nAlign the shared analysis-sequence builder (NormalizedSteps, used by Codex\nand Claude Code) with what the Antigravity analyzer already feeds the model:\ninclude user requests, agent tool calls, and failed tool outputs, but omit\nassistant narration (and successful outputs/reasoning). This roughly halves\nthe input with no loss of the \"what did the agent do / what went wrong\"\nsignal the summary is built from.\n\nMeasured on the 5014-line session (Ollama/gemma4): analysis input dropped\n~57% (~250 KB -> ~108 KB) and summarize went from not completing to ~2.5\nmin, still a single chunk. Smaller sessions are correspondingly quick.\n\nAdapter tests updated to assert assistant narration is omitted.\n95 backend + 44 frontend + 19 e2e, all green.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\necho \"exit: $?\"\ngit push -u origin fix/analysis-drop-assistant-narration 2>&1 | tail […]
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit add -A\ngit status --short | grep -vE '\\.claude/|\\.entire'\ngit commit -q -F - <<'EOF'\nperf(ai): drop assistant narration from analysis input\n\nConversation analysis was very slow for Claude Code sessions. They are far\nlarger than Codex/Antigravity sessions (thousands of lines), and the\ncondensed analysis input was dominated by assistant message text — for a\n5014-line session, 610 assistant messages = ~142 KB, more than half the\ninput — producing a single ~100k-token prompt that a local model has to\nprompt-eval for minutes.\n\nAlign the shared analysis-sequence builder (NormalizedSteps, used by Codex\nand Claude Code) with what the Antigravity analyzer already feeds the model:\ninclude user requests, agent tool calls, and failed tool outputs, but omit\nassistant narration (and successful outputs/reasoning). This roughly halves\nthe input with no loss of the \"what did the agent do / what went wrong\"\nsignal the summary is built from.\n\nMeasured on the 5014-line session (Ollama/gemma4): analysis input dropped\n~57% (~250 KB -> ~108 KB) and summarize went from not completing to ~2.5\nmin, still a single chunk. Smaller sessions are correspondingly quick.\n\nAdapter tests updated to assert assistant narration is omitted.\n95 backend + 44 frontend + 19 e2e, all green.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\necho \"exit: $?\"\ngit push -u origin fix/analysis-drop-assistant-narration 2>&1 | tail […]
 
 > TOOL
 
@@ -13006,7 +13006,7 @@ tool_use Bash
 id: toolu_01V14zDkQ8tkuFUWS1ZgXKzW
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh pr create --base main --head fix/analysis-drop-assistant-narration \\\n  --title \"perf(ai): drop assistant narration from analysis input\" \\\n  --body \"$(cat <<'EOF'\n## Problem\n\nConversation analysis was very slow for **Claude Code** sessions.\n\n## Root cause (measured)\n\nClaude Code sessions are far larger than Codex/Antigravity (thousands of lines). The condensed analysis input was dominated by **assistant message text**. For a real 5014-line session (2751 adapted steps):\n\n| Component | Count | ~chars |\n|---|---|---|\n| assistant text | 610 | **142,093** |\n| tool calls | 1048 | ~63k |\n| user requests | 49 | ~8k |\n\nThat's a single ~100k-token prompt, which a local model (gemma4 via Ollama) must prompt-eval for minutes.\n\n## Fix\n\nAlign the shared `NormalizedSteps` analysis builder (used by Codex + Claude Code) with what the **Antigravity** analyzer already feeds the model: keep **user requests, agent tool calls, and failed tool outputs**; omit assistant narration (plus successful outputs/reasoning). The summary is built from \"what the agent did / what went wrong,\" so this drops bulk without losing signal — and makes all sources consistent.\n\n## Result (Ollama/gemma4, 5014-line session)\n\n- Analysis input: **~250 KB → ~108 KB (≈57% smaller)**\n- Summarize: **did not complete → ~2.5 min** (still a single chunk); smaller sessions are […]
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh pr create --base main --head fix/analysis-drop-assistant-narration \\\n  --title \"perf(ai): drop assistant narration from analysis input\" \\\n  --body \"$(cat <<'EOF'\n## Problem\n\nConversation analysis was very slow for **Claude Code** sessions.\n\n## Root cause (measured)\n\nClaude Code sessions are far larger than Codex/Antigravity (thousands of lines). The condensed analysis input was dominated by **assistant message text**. For a real 5014-line session (2751 adapted steps):\n\n| Component | Count | ~chars |\n|---|---|---|\n| assistant text | 610 | **142,093** |\n| tool calls | 1048 | ~63k |\n| user requests | 49 | ~8k |\n\nThat's a single ~100k-token prompt, which a local model (gemma4 via Ollama) must prompt-eval for minutes.\n\n## Fix\n\nAlign the shared `NormalizedSteps` analysis builder (used by Codex + Claude Code) with what the **Antigravity** analyzer already feeds the model: keep **user requests, agent tool calls, and failed tool outputs**; omit assistant narration (plus successful outputs/reasoning). The summary is built from \"what the agent did / what went wrong,\" so this drops bulk without losing signal — and makes all sources consistent.\n\n## Result (Ollama/gemma4, 5014-line session)\n\n- Analysis input: **~250 KB → ~108 KB (≈57% smaller)**\n- Summarize: **did not complete → ~2.5 min** (still a single chunk); smaller sessions are […]
 
 > TOOL
 
@@ -13022,7 +13022,7 @@ tool_use Bash
 id: toolu_01APXTXBtKvYbzFxfPiyz2zX
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nsleep 8\nRUN=$(gh run list --branch fix/analysis-drop-assistant-narration --workflow \"CI\" --limit 1 --json databaseId --jq '.[0].databaseId')\necho \"watching CI run $RUN\"\ngh run watch \"$RUN\" --exit-status --interval 20 >/dev/null 2>&1; echo \"watch exit: $?\"\ngh run view \"$RUN\" --json jobs --jq '.jobs[] | \"\\(.conclusion // .status)\\t\\(.name)\"'",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nsleep 8\nRUN=$(gh run list --branch fix/analysis-drop-assistant-narration --workflow \"CI\" --limit 1 --json databaseId --jq '.[0].databaseId')\necho \"watching CI run $RUN\"\ngh run watch \"$RUN\" --exit-status --interval 20 >/dev/null 2>&1; echo \"watch exit: $?\"\ngh run view \"$RUN\" --json jobs --jq '.jobs[] | \"\\(.conclusion // .status)\\t\\(.name)\"'",
   "description": "Watch PR #11 CI",
   "timeout": 600000
 }
@@ -13050,7 +13050,7 @@ tool_use Bash
 id: toolu_01TZ7xamcT3UqkUynN4PybqY
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh pr merge 11 --squash --delete-branch 2>&1 | tail -2\ngh pr view 11 --json state --jq '{state}'\ngit checkout main 2>&1 | tail -1\ngit pull --ff-only 2>&1 | tail -2\ngit fetch --prune 2>&1 | tail -1\ngit branch -d fix/analysis-drop-assistant-narration 2>&1 || echo \"(gone)\"\ngit log --oneline -2",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh pr merge 11 --squash --delete-branch 2>&1 | tail -2\ngh pr view 11 --json state --jq '{state}'\ngit checkout main 2>&1 | tail -1\ngit pull --ff-only 2>&1 | tail -2\ngit fetch --prune 2>&1 | tail -1\ngit branch -d fix/analysis-drop-assistant-narration 2>&1 || echo \"(gone)\"\ngit log --oneline -2",
   "description": "Merge PR #11 and clean up"
 }
 ```
@@ -13125,7 +13125,7 @@ tool_use Read
 id: toolu_01X4v29txVuh9KCqGJYVCizB
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/NormalizedSteps.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/NormalizedSteps.java",
   "offset": 28,
   "limit": 52
 }
@@ -13185,7 +13185,7 @@ id: toolu_01Gvh9TAf9CuiJtyuHSpXQTw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/NormalizedSteps.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/NormalizedSteps.java",
   "old_string": " * outputs are summarized; assistant narration, successful outputs, and reasoning are omitted — this\n * keeps the token footprint small (assistant prose dominates verbose sessions) and matches what the\n * Antigravity analyzer feeds the model.\n */\nfinal class NormalizedSteps {\n\n    private NormalizedSteps() {}\n\n    static List<List<String>> toAnalysisSequences(List<ObjectNode> steps) {\n        List<List<String>> sequences = new ArrayList<>();\n        List<String> current = new ArrayList<>();\n        for (ObjectNode step : steps) {\n            String type = step.path(\"type\").asText(\"\");\n            String line = analysisLine(step, type);\n            if (line == null) continue;\n            if (\"USER_INPUT\".equals(type) && !current.isEmpty()) {\n                sequences.add(TranscriptParser.deduplicateSequence(current));\n                current = new ArrayList<>();\n            }\n            current.add(line);\n        }\n        if (!current.isEmpty()) {\n            sequences.add(TranscriptParser.deduplicateSequence(current));\n        }\n        return sequences;\n    }",
   "new_string": " * outputs are summarized; successful outputs and reasoning are omitted. Assistant narration is\n * mostly omitted because its prose dominates verbose sessions, but the <em>final</em> assistant\n * message (the agent's outcome/conclusion) is always kept, plus a small budget of earlier assistant\n * messages — this preserves the stated outcome for the summary while keeping the token footprint\n * small.\n */\nfinal class NormalizedSteps {\n\n    private NormalizedSteps() {}\n\n    // The final assistant message (outcome) is always included up to this length; earlier assistant\n    // messages share a small total budget […]
 
@@ -13194,7 +13194,7 @@ id: toolu_01Gvh9TAf9CuiJtyuHSpXQTw
 tool_result
 id: toolu_01Gvh9TAf9CuiJtyuHSpXQTw
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/NormalizedSteps.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/NormalizedSteps.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -13208,7 +13208,7 @@ id: toolu_01TeHyDUwYwqio9LXDJE6CQc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/CodexAdapterTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/CodexAdapterTest.java",
   "old_string": "        assertEquals(1, seqs.size());\n        List<String> lines = seqs.get(0);\n        assertTrue(lines.get(0).startsWith(\"USER REQUEST: Fix the bug\"));\n        assertEquals(\"AGENT ACTION: [exec_command] git status\", lines.get(1));\n        // Successful output is omitted; the failed one becomes a SYSTEM EVENT/ERROR line.\n        assertTrue(lines.stream().anyMatch(l -> l.startsWith(\"SYSTEM EVENT/ERROR:\")));\n        assertFalse(lines.stream().anyMatch(l -> l.contains(\"clean\")));\n        // Assistant narration is omitted to keep the analysis input compact.\n        assertFalse(lines.stream().anyMatch(l -> l.startsWith(\"ASSISTANT:\")));",
   "new_string": "        assertEquals(1, seqs.size());\n        List<String> lines = seqs.get(0);\n        assertTrue(lines.get(0).startsWith(\"USER REQUEST: Fix the bug\"));\n        // The final assistant message (the outcome) is kept.\n        assertTrue(lines.contains(\"ASSISTANT: On it.\"));\n        assertTrue(lines.contains(\"AGENT ACTION: [exec_command] git status\"));\n        // Successful output is omitted; the failed one becomes a SYSTEM EVENT/ERROR line.\n        assertTrue(lines.stream().anyMatch(l -> l.startsWith(\"SYSTEM EVENT/ERROR:\")));\n        assertFalse(lines.stream().anyMatch(l -> l.contains(\"clean\")));"
 }
@@ -13219,7 +13219,7 @@ id: toolu_01TeHyDUwYwqio9LXDJE6CQc
 tool_result
 id: toolu_01TeHyDUwYwqio9LXDJE6CQc
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/CodexAdapterTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/CodexAdapterTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -13229,7 +13229,7 @@ id: toolu_013WwHzHcYJywTXtNbms9K82
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/ClaudeCodeAdapterTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/ClaudeCodeAdapterTest.java",
   "old_string": "        assertEquals(1, seqs.size());\n        List<String> lines = seqs.get(0);\n        assertTrue(lines.contains(\"USER REQUEST: Fix the bug\"));\n        assertEquals(\"AGENT ACTION: [Read] /a.txt\", lines.get(1));\n        assertTrue(lines.stream().anyMatch(l -> l.startsWith(\"SYSTEM EVENT/ERROR:\")));\n        // Successful tool output and assistant narration are omitted.\n        assertFalse(lines.stream().anyMatch(l -> l.contains(\"file contents\")));\n        assertFalse(lines.stream().anyMatch(l -> l.startsWith(\"ASSISTANT:\")));",
   "new_string": "        assertEquals(1, seqs.size());\n        List<String> lines = seqs.get(0);\n        assertTrue(lines.contains(\"USER REQUEST: Fix the bug\"));\n        // The final assistant message (the outcome) is kept.\n        assertTrue(lines.contains(\"ASSISTANT: On it.\"));\n        assertTrue(lines.contains(\"AGENT ACTION: [Read] /a.txt\"));\n        assertTrue(lines.stream().anyMatch(l -> l.startsWith(\"SYSTEM EVENT/ERROR:\")));\n        // Successful tool output is omitted.\n        assertFalse(lines.stream().anyMatch(l -> l.contains(\"file contents\")));"
 }
@@ -13240,7 +13240,7 @@ id: toolu_013WwHzHcYJywTXtNbms9K82
 tool_result
 id: toolu_013WwHzHcYJywTXtNbms9K82
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/ClaudeCodeAdapterTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/ClaudeCodeAdapterTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -13253,7 +13253,7 @@ tool_use Write
 id: toolu_01GoHZPRG34gyY893BieyjCQ
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/NormalizedStepsTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/NormalizedStepsTest.java",
   "content": "/*\n * Copyright 2026 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage io.github.glaforge.agybrainviz;\n\nimport static org.junit.jupiter.api.Assertions.assertFalse;\nimport static org.junit.jupiter.api.Assertions.assertTrue;\n\nimport com.fasterxml.jackson.databind.ObjectMapper;\nimport com.fasterxml.jackson.databind.node.ObjectNode;\nimport java.util.ArrayList;\nimport java.util.List;\nimport java.util.stream.Collectors;\nimport org.junit.jupiter.api.Test;\n\n/** Tests the assistant-message budgeting in {@link NormalizedSteps#toAnalysisSequences(List)}. */\nclass NormalizedStepsTest {\n\n    private static final ObjectMapper MAPPER = new ObjectMapper();\n\n    private ObjectNode message(String content) {\n        ObjectNode step = MAPPER.createObjectNode();\n        step.put(\"type\", \"MESSAGE\");\n        step.put(\"source\", \"MODEL\");\n        step.put(\"content\", content);\n        return step;\n    }\n\n    private ObjectNode user(String content) {\n        ObjectNode step = MAPPER.createObjectNode();\n        step.put(\"type\", \"USER_INPUT\");\n        step.put(\"source\", \"USER_EXPLICIT\");\n        step.put(\"content\", content);\n        return step;\n    }\n\n    @Test\n    void keepsFinalAssistantMessageAndBudgetsEarlierOnes() {\n        List<ObjectNode> steps = new ArrayList<>();\n        steps.add(user(\"go\"));\n        // Nine non-final assistant messages, each long enough to consume the full per-message cap,\n        // then a final one. […]
 
 > TOOL
@@ -13261,7 +13261,7 @@ id: toolu_01GoHZPRG34gyY893BieyjCQ
 tool_result
 id: toolu_01GoHZPRG34gyY893BieyjCQ
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/NormalizedStepsTest.java (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/NormalizedStepsTest.java (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -13274,7 +13274,7 @@ tool_use Bash
 id: toolu_01MZaKrgqiXzteFjAU2a9cUF
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -6\ntotal=0; for f in build/test-results/test/*.xml; do n=$(grep -o 'tests=\"[0-9]*\"' \"$f\" | head -1 | sed 's/tests=\"//;s/\"//'); total=$((total+n)); done; echo \"TOTAL backend: $total\"",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -6\ntotal=0; for f in build/test-results/test/*.xml; do n=$(grep -o 'tests=\"[0-9]*\"' \"$f\" | head -1 | sed 's/tests=\"//;s/\"//'); total=$((total+n)); done; echo \"TOTAL backend: $total\"",
   "description": "Build + backend tests for budget change",
   "timeout": 600000
 }
@@ -13304,7 +13304,7 @@ tool_use Bash
 id: toolu_01FJGrwRz8iyr9TxKVqBwcEM
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nnpm test 2>&1 | tail -3\nmise exec -- ./gradlew shadowJar -x test --console=plain 2>&1 | tail -1\nlsof -ti tcp:8099 | xargs kill -9 2>/dev/null; sleep 1\nmise exec -- npx playwright test 2>&1 | tail -4",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nnpm test 2>&1 | tail -3\nmise exec -- ./gradlew shadowJar -x test --console=plain 2>&1 | tail -1\nlsof -ti tcp:8099 | xargs kill -9 2>/dev/null; sleep 1\nmise exec -- npx playwright test 2>&1 | tail -4",
   "description": "Frontend + e2e verification",
   "timeout": 300000
 }
@@ -13335,7 +13335,7 @@ tool_use Bash
 id: toolu_01PnutTdUG3dV2s7uQjndSfD
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit checkout -b feat/analysis-keep-final-assistant 2>&1 | tail -1\ngit add -A\ngit status --short | grep -vE '\\.claude/|\\.entire'\ngit commit -q -F - <<'EOF'\nfeat(ai): keep the final assistant message (and a budget) in analysis input\n\nThe previous change dropped all assistant narration from the analysis\ninput for speed, which could lose the agent's stated conclusion. Restore\nthe most valuable part without re-bloating verbose sessions:\n\n- Always include the FINAL assistant message (the outcome/conclusion),\n  truncated to 2000 chars.\n- Include earlier assistant messages only within a small shared budget\n  (2000 chars total, 500 each); the rest are still dropped.\n\nFor a large Claude Code session this adds back only ~a few KB (vs the\n~142 KB of full assistant prose), so summaries regain the outcome signal\nwhile staying fast.\n\nTests: NormalizedStepsTest covers final-message inclusion and budgeting;\nthe Codex/Claude Code adapter tests now assert the final message is kept.\n97 backend + 44 frontend + 19 e2e, all green.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\necho \"exit: $?\"\ngit push -u origin feat/analysis-keep-final-assistant 2>&1 | tail -3",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit checkout -b feat/analysis-keep-final-assistant 2>&1 | tail -1\ngit add -A\ngit status --short | grep -vE '\\.claude/|\\.entire'\ngit commit -q -F - <<'EOF'\nfeat(ai): keep the final assistant message (and a budget) in analysis input\n\nThe previous change dropped all assistant narration from the analysis\ninput for speed, which could lose the agent's stated conclusion. Restore\nthe most valuable part without re-bloating verbose sessions:\n\n- Always include the FINAL assistant message (the outcome/conclusion),\n  truncated to 2000 chars.\n- Include earlier assistant messages only within a small shared budget\n  (2000 chars total, 500 each); the rest are still dropped.\n\nFor a large Claude Code session this adds back only ~a few KB (vs the\n~142 KB of full assistant prose), so summaries regain the outcome signal\nwhile staying fast.\n\nTests: NormalizedStepsTest covers final-message inclusion and budgeting;\nthe Codex/Claude Code adapter tests now assert the final message is kept.\n97 backend + 44 frontend + 19 e2e, all green.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\necho \"exit: $?\"\ngit push -u origin feat/analysis-keep-final-assistant 2>&1 | tail -3",
   "description": "Commit and push the fidelity refinement"
 }
 ```
@@ -13362,7 +13362,7 @@ tool_use Bash
 id: toolu_017z5BDQpfGdLQs5UCVzukGX
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh pr create --base main --head feat/analysis-keep-final-assistant \\\n  --title \"feat(ai): keep the final assistant message (and a budget) in analysis input\" \\\n  --body \"$(cat <<'EOF'\n## Why\n\nThe prior perf change dropped *all* assistant narration from the analysis input, which could lose the agent's stated conclusion. This restores the most valuable part — the **outcome** — without re-bloating verbose sessions.\n\n## What\n\nIn the shared `NormalizedSteps` analysis builder:\n- **Always include the final assistant message** (the outcome/conclusion), truncated to 2000 chars.\n- Include earlier assistant messages only within a **small shared budget** (2000 chars total, 500 each); the rest stay dropped.\n\nFor a large Claude Code session this adds back only a few KB (vs the ~142 KB of full assistant prose measured earlier), so summaries regain the \"what was accomplished\" signal while staying fast.\n\n## Tests\n- New `NormalizedStepsTest`: final-message inclusion + budgeting (early kept, past-budget dropped, final always kept).\n- Codex/Claude Code adapter tests now assert the final message is kept.\n- **97 backend + 44 frontend + 19 e2e**, all green.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\nEOF\n)\" 2>&1 | tail -2",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh pr create --base main --head feat/analysis-keep-final-assistant \\\n  --title \"feat(ai): keep the final assistant message (and a budget) in analysis input\" \\\n  --body \"$(cat <<'EOF'\n## Why\n\nThe prior perf change dropped *all* assistant narration from the analysis input, which could lose the agent's stated conclusion. This restores the most valuable part — the **outcome** — without re-bloating verbose sessions.\n\n## What\n\nIn the shared `NormalizedSteps` analysis builder:\n- **Always include the final assistant message** (the outcome/conclusion), truncated to 2000 chars.\n- Include earlier assistant messages only within a **small shared budget** (2000 chars total, 500 each); the rest stay dropped.\n\nFor a large Claude Code session this adds back only a few KB (vs the ~142 KB of full assistant prose measured earlier), so summaries regain the \"what was accomplished\" signal while staying fast.\n\n## Tests\n- New `NormalizedStepsTest`: final-message inclusion + budgeting (early kept, past-budget dropped, final always kept).\n- Codex/Claude Code adapter tests now assert the final message is kept.\n- **97 backend + 44 frontend + 19 e2e**, all green.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\nEOF\n)\" 2>&1 | tail -2",
   "description": "Open the fidelity PR"
 }
 ```
@@ -13381,7 +13381,7 @@ tool_use Bash
 id: toolu_01HXiZbHCnmFyk65U7in5xU5
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nsleep 8\nRUN=$(gh run list --branch feat/analysis-keep-final-assistant --workflow \"CI\" --limit 1 --json databaseId --jq '.[0].databaseId')\necho \"watching CI run $RUN\"\ngh run watch \"$RUN\" --exit-status --interval 20 >/dev/null 2>&1; echo \"watch exit: $?\"\ngh run view \"$RUN\" --json jobs --jq '.jobs[] | \"\\(.conclusion // .status)\\t\\(.name)\"'",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nsleep 8\nRUN=$(gh run list --branch feat/analysis-keep-final-assistant --workflow \"CI\" --limit 1 --json databaseId --jq '.[0].databaseId')\necho \"watching CI run $RUN\"\ngh run watch \"$RUN\" --exit-status --interval 20 >/dev/null 2>&1; echo \"watch exit: $?\"\ngh run view \"$RUN\" --json jobs --jq '.jobs[] | \"\\(.conclusion // .status)\\t\\(.name)\"'",
   "description": "Watch PR #12 CI",
   "timeout": 600000
 }
@@ -13409,7 +13409,7 @@ tool_use Bash
 id: toolu_01MvKwWu464DgcQaU2H1q3cD
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh pr merge 12 --squash --delete-branch 2>&1 | tail -2\ngh pr view 12 --json state --jq '{state}'\ngit checkout main 2>&1 | tail -1\ngit pull --ff-only 2>&1 | tail -2\ngit fetch --prune 2>&1 | tail -1\ngit branch -d feat/analysis-keep-final-assistant 2>&1 || echo \"(gone)\"\ngit log --oneline -3",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh pr merge 12 --squash --delete-branch 2>&1 | tail -2\ngh pr view 12 --json state --jq '{state}'\ngit checkout main 2>&1 | tail -1\ngit pull --ff-only 2>&1 | tail -2\ngit fetch --prune 2>&1 | tail -1\ngit branch -d feat/analysis-keep-final-assistant 2>&1 || echo \"(gone)\"\ngit log --oneline -3",
   "description": "Merge PR #12 and clean up"
 }
 ```
@@ -13556,7 +13556,7 @@ tool_use Read
 id: toolu_01FcBci7fg7VrQD2EmmmhDhb
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/ChatModelFactory.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/ChatModelFactory.java",
   "offset": 54,
   "limit": 14
 }
@@ -13589,7 +13589,7 @@ tool_use Bash
 id: toolu_01QaeeUjeNQbFcrdGPVo2LA3
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit checkout -b fix/gemini-timeout-retries 2>&1 | tail -1",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit checkout -b fix/gemini-timeout-retries 2>&1 | tail -1",
   "description": "Branch for the fix"
 }
 ```
@@ -13609,7 +13609,7 @@ id: toolu_015tUaCXkMKiQbPV51x61Zmi
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/ChatModelFactory.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/ChatModelFactory.java",
   "old_string": "        return GoogleGenAiChatModel\n            .builder()\n            .apiKey(aiConfig.geminiApiKey().orElse(\"dummy\"))\n            .modelName(aiConfig.geminiModel())\n            .temperature(0.0)\n            .maxRetries(0)\n            .timeout(Duration.ofMinutes(2))\n            .responseFormat(ResponseFormat.JSON)\n            .build();",
   "new_string": "        return GoogleGenAiChatModel\n            .builder()\n            .apiKey(aiConfig.geminiApiKey().orElse(\"dummy\"))\n            .modelName(aiConfig.geminiModel())\n            .temperature(0.0)\n            // Retry transient API/network failures (e.g. HTTP timeouts on the large consolidation\n            // request) instead of failing the whole analysis after the per-chunk work succeeded.\n            .maxRetries(2)\n            .timeout(Duration.ofMinutes(3))\n            .responseFormat(ResponseFormat.JSON)\n            .build();"
 }
@@ -13620,7 +13620,7 @@ id: toolu_015tUaCXkMKiQbPV51x61Zmi
 tool_result
 id: toolu_015tUaCXkMKiQbPV51x61Zmi
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/ChatModelFactory.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/ChatModelFactory.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -13633,7 +13633,7 @@ tool_use Bash
 id: toolu_01Gc1Bb5cgD63MzMDX2SkZ7i
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -5\ntotal=0; for f in build/test-results/test/*.xml; do n=$(grep -o 'tests=\"[0-9]*\"' \"$f\" | head -1 | sed 's/tests=\"//;s/\"//'); total=$((total+n)); done; echo \"TOTAL backend: $total\"",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -5\ntotal=0; for f in build/test-results/test/*.xml; do n=$(grep -o 'tests=\"[0-9]*\"' \"$f\" | head -1 | sed 's/tests=\"//;s/\"//'); total=$((total+n)); done; echo \"TOTAL backend: $total\"",
   "description": "Build + backend tests for the resilience fix",
   "timeout": 600000
 }
@@ -13662,7 +13662,7 @@ tool_use Bash
 id: toolu_014R7G95tNpm3SH3Prea6rGe
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nnpm test 2>&1 | tail -3\nmise exec -- ./gradlew shadowJar -x test --console=plain 2>&1 | tail -1\nlsof -ti tcp:8099 | xargs kill -9 2>/dev/null; sleep 1\nmise exec -- npx playwright test 2>&1 | tail -3",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nnpm test 2>&1 | tail -3\nmise exec -- ./gradlew shadowJar -x test --console=plain 2>&1 | tail -1\nlsof -ti tcp:8099 | xargs kill -9 2>/dev/null; sleep 1\nmise exec -- npx playwright test 2>&1 | tail -3",
   "description": "Frontend + e2e verification",
   "timeout": 300000
 }
@@ -13692,7 +13692,7 @@ tool_use Bash
 id: toolu_014TxLaTynqKdHPXcYCftMqL
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit add -A\ngit status --short | grep -vE '\\.claude/|\\.entire'\ngit commit -q -F - <<'EOF'\nfix(ai): make Gemini analysis resilient to transient API timeouts\n\nA summarize run failed with GenAiIOException (okhttp InterruptedIOException:\ntimeout) on the final consolidation call. The Gemini chat model was built\nwith a 2-minute timeout and maxRetries(0), so a single slow/transient API\nresponse failed the whole analysis after all the per-chunk work had already\nsucceeded.\n\nGive the hosted model headroom: timeout 2 -> 3 minutes and maxRetries\n0 -> 2, so transient HTTP/network failures (especially on the large\nconsolidation request) are retried instead of aborting the analysis. The\nOllama path is unchanged.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\necho \"exit: $?\"\ngit push -u origin fix/gemini-timeout-retries 2>&1 | tail -3",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit add -A\ngit status --short | grep -vE '\\.claude/|\\.entire'\ngit commit -q -F - <<'EOF'\nfix(ai): make Gemini analysis resilient to transient API timeouts\n\nA summarize run failed with GenAiIOException (okhttp InterruptedIOException:\ntimeout) on the final consolidation call. The Gemini chat model was built\nwith a 2-minute timeout and maxRetries(0), so a single slow/transient API\nresponse failed the whole analysis after all the per-chunk work had already\nsucceeded.\n\nGive the hosted model headroom: timeout 2 -> 3 minutes and maxRetries\n0 -> 2, so transient HTTP/network failures (especially on the large\nconsolidation request) are retried instead of aborting the analysis. The\nOllama path is unchanged.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\necho \"exit: $?\"\ngit push -u origin fix/gemini-timeout-retries 2>&1 | tail -3",
   "description": "Commit and push the Gemini resilience fix"
 }
 ```
@@ -13715,7 +13715,7 @@ tool_use Bash
 id: toolu_01A6t6JkfJkkpLM9BkWXbtXx
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh pr create --base main --head fix/gemini-timeout-retries \\\n  --title \"fix(ai): make Gemini analysis resilient to transient API timeouts\" \\\n  --body \"$(cat <<'EOF'\n## Problem\n\nA summarize run failed with:\n```\nGenAiIOException: Failed to execute HTTP request\nCaused by: java.io.InterruptedIOException: timeout\n... AnalysisController.recursivelyConsolidate ...\n```\nThe Gemini chat model was built with a **2-minute timeout and `maxRetries(0)`**, so a single slow/transient API response on the final **consolidation** call aborted the entire analysis — after all the per-chunk LLM work had already succeeded.\n\n## Fix\n\nGive the hosted model headroom and transient-failure resilience:\n- timeout **2 → 3 min**\n- `maxRetries` **0 → 2**\n\nSo a transient HTTP/network hiccup (most likely on the large consolidation request) is retried rather than failing the whole run. The Ollama path is unchanged.\n\n## Notes\n- This is an external-model builder setting (no getter), so it's not unit-assertable; `ChatModelFactoryTest` still confirms the model builds. Backend + frontend + e2e all green.\n- If consolidation timeouts persist on very large sessions, the next lever is making consolidation failure *graceful* (return the partial per-chunk summary instead of erroring) and/or lowering the consolidation token threshold — happy to follow up.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\nEOF\n)\" 2>&1 | tail -2",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh pr create --base main --head fix/gemini-timeout-retries \\\n  --title \"fix(ai): make Gemini analysis resilient to transient API timeouts\" \\\n  --body \"$(cat <<'EOF'\n## Problem\n\nA summarize run failed with:\n```\nGenAiIOException: Failed to execute HTTP request\nCaused by: java.io.InterruptedIOException: timeout\n... AnalysisController.recursivelyConsolidate ...\n```\nThe Gemini chat model was built with a **2-minute timeout and `maxRetries(0)`**, so a single slow/transient API response on the final **consolidation** call aborted the entire analysis — after all the per-chunk LLM work had already succeeded.\n\n## Fix\n\nGive the hosted model headroom and transient-failure resilience:\n- timeout **2 → 3 min**\n- `maxRetries` **0 → 2**\n\nSo a transient HTTP/network hiccup (most likely on the large consolidation request) is retried rather than failing the whole run. The Ollama path is unchanged.\n\n## Notes\n- This is an external-model builder setting (no getter), so it's not unit-assertable; `ChatModelFactoryTest` still confirms the model builds. Backend + frontend + e2e all green.\n- If consolidation timeouts persist on very large sessions, the next lever is making consolidation failure *graceful* (return the partial per-chunk summary instead of erroring) and/or lowering the consolidation token threshold — happy to follow up.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\nEOF\n)\" 2>&1 | tail -2",
   "description": "Open the Gemini resilience PR"
 }
 ```
@@ -13734,7 +13734,7 @@ tool_use Bash
 id: toolu_01Xnramk7LWnoLxk1Abio2QK
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nsleep 8\nRUN=$(gh run list --branch fix/gemini-timeout-retries --workflow \"CI\" --limit 1 --json databaseId --jq '.[0].databaseId')\necho \"watching CI run $RUN\"\ngh run watch \"$RUN\" --exit-status --interval 20 >/dev/null 2>&1; echo \"watch exit: $?\"\ngh run view \"$RUN\" --json jobs --jq '.jobs[] | \"\\(.conclusion // .status)\\t\\(.name)\"'",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nsleep 8\nRUN=$(gh run list --branch fix/gemini-timeout-retries --workflow \"CI\" --limit 1 --json databaseId --jq '.[0].databaseId')\necho \"watching CI run $RUN\"\ngh run watch \"$RUN\" --exit-status --interval 20 >/dev/null 2>&1; echo \"watch exit: $?\"\ngh run view \"$RUN\" --json jobs --jq '.jobs[] | \"\\(.conclusion // .status)\\t\\(.name)\"'",
   "description": "Watch PR #13 CI",
   "timeout": 600000
 }
@@ -13762,7 +13762,7 @@ tool_use Bash
 id: toolu_018S85dKGa35mapsHpG1LvYX
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh pr merge 13 --squash --delete-branch 2>&1 | tail -2\ngh pr view 13 --json state --jq '{state}'\ngit checkout main 2>&1 | tail -1\ngit pull --ff-only 2>&1 | tail -2\ngit fetch --prune 2>&1 | tail -1\ngit branch -d fix/gemini-timeout-retries 2>&1 || echo \"(gone)\"\ngit log --oneline -2",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh pr merge 13 --squash --delete-branch 2>&1 | tail -2\ngh pr view 13 --json state --jq '{state}'\ngit checkout main 2>&1 | tail -1\ngit pull --ff-only 2>&1 | tail -2\ngit fetch --prune 2>&1 | tail -1\ngit branch -d fix/gemini-timeout-retries 2>&1 || echo \"(gone)\"\ngit log --oneline -2",
   "description": "Merge PR #13 and clean up"
 }
 ```
@@ -13818,7 +13818,7 @@ tool_use Read
 id: toolu_016NEFkuSS4ydfa2nfiJfakF
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
   "offset": 224,
   "limit": 45
 }
@@ -13882,7 +13882,7 @@ tool_use Read
 id: toolu_01JKckiJWyn7DirdXSwTHN9X
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
   "offset": 268,
   "limit": 20
 }
@@ -13926,7 +13926,7 @@ id: toolu_01AMQ3KAC6zLnFN59P9t7ozA
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
   "old_string": "                if (seqResponses.isEmpty()) {\n                    return \"{\\\"summary\\\": \\\"No transcript lines found.\\\"}\";\n                } else if (seqResponses.size() == 1) {",
   "new_string": "                if (seqResponses.isEmpty()) {\n                    // Distinguish \"nothing to analyze\" from \"the model failed for every chunk\".\n                    String msg = optimalChunks.isEmpty()\n                        ? \"No transcript lines found.\"\n                        : \"Analysis could not be generated: the model did not return a result for any part of this conversation. Please try again.\";\n                    return mapper.writeValueAsString(Map.of(\"summary\", msg));\n                } else if (seqResponses.size() == 1) {"
 }
@@ -13937,7 +13937,7 @@ id: toolu_01AMQ3KAC6zLnFN59P9t7ozA
 tool_result
 id: toolu_01AMQ3KAC6zLnFN59P9t7ozA
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -13947,7 +13947,7 @@ id: toolu_01FJV9h3KhVH7rhBA14vMVed
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
   "old_string": "                    try {\n                        responseObj =\n                            recursivelyConsolidate(seqResponses, tokenFn, mapper, 500_000);\n                    } finally {\n                        consolidationDone.set(true);\n                        fakeProgress.cancel(true);\n                    }",
   "new_string": "                    try {\n                        responseObj =\n                            recursivelyConsolidate(seqResponses, tokenFn, mapper, 500_000);\n                    } catch (Exception e) {\n                        // LLM consolidation failed (e.g. API timeout). Rather than discard all the\n                        // per-chunk work, merge the partial analyses locally so the user still gets\n                        // a usable summary.\n                        System.err.println(\n                            \"Consolidation failed; using local merge fallback: \" + e.getMessage()\n                        );\n                        responseObj = localMerge(seqResponses);\n                    } finally {\n                        consolidationDone.set(true);\n                        fakeProgress.cancel(true);\n                    }"
 }
@@ -13958,7 +13958,7 @@ id: toolu_01FJV9h3KhVH7rhBA14vMVed
 tool_result
 id: toolu_01FJV9h3KhVH7rhBA14vMVed
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -13972,7 +13972,7 @@ id: toolu_01BkgE27ksXWiugNf9jCqPqN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
   "old_string": "        String json = mapper.writeValueAsString(responses);\n        try {\n            int tokens = tokenFn.applyAsInt(json);\n            if (tokens <= maxTokens) {\n                return analyzerService.consolidateAnalysis(json);\n            }\n        } catch (Exception e) {\n            // fallback\n        }\n\n        int mid = responses.size() / 2;",
   "new_string": "        String json = mapper.writeValueAsString(responses);\n        boolean withinBudget;\n        try {\n            withinBudget = tokenFn.applyAsInt(json) <= maxTokens;\n        } catch (Exception e) {\n            // Only token estimation is best-effort here; fall back to a char-length heuristic so a\n            // failed estimate doesn't get mistaken for a failed consolidation.\n            withinBudget = (json.length() / 4) <= maxTokens;\n        }\n        // A consolidation failure below propagates to the caller (which falls back to a local merge).\n        if (withinBudget || responses.size() <= 1) {\n            return analyzerService.consolidateAnalysis(json);\n        }\n\n        int mid = responses.size() / 2;"
 }
@@ -13983,7 +13983,7 @@ id: toolu_01BkgE27ksXWiugNf9jCqPqN
 tool_result
 id: toolu_01BkgE27ksXWiugNf9jCqPqN
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -13996,7 +13996,7 @@ tool_use Read
 id: toolu_011QfrKCQhDLhoJMGiSPYiCA
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
   "offset": 320,
   "limit": 30
 }
@@ -14045,7 +14045,7 @@ tool_use Read
 id: toolu_01XkDtBXoFUYm5B9My5F1HEQ
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
   "offset": 357,
   "limit": 25
 }
@@ -14084,7 +14084,7 @@ id: toolu_01PNAPSfQVWNMDkvm5bNfFeb
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
   "old_string": "        return analyzerService.consolidateAnalysis(mapper.writeValueAsString(List.of(r1, r2)));\n    }\n}",
   "new_string": "        return analyzerService.consolidateAnalysis(mapper.writeValueAsString(List.of(r1, r2)));\n    }\n\n    /**\n     * Deterministically merges per-chunk analyses without calling the LLM. Used as a fallback when\n     * LLM consolidation fails, so the user still gets a usable (if less polished) summary instead of\n     * an error.\n     */\n    private AnalysisResponse localMerge(List<AnalysisResponse> responses) {\n        String shortTitle = \"Session analysis\";\n        StringBuilder summary = new StringBuilder();\n        List<String> flow = new ArrayList<>();\n        List<AgentAction> actions = new ArrayList<>();\n        List<Issue> issues = new ArrayList<>();\n        List<String> recommendations = new ArrayList<>();\n\n        for (AnalysisResponse r : responses) {\n            if (r == null) continue;\n            if (\n                \"Session analysis\".equals(shortTitle) &&\n                r.shortTitle() != null &&\n                !r.shortTitle().isBlank()\n            ) {\n                shortTitle = r.shortTitle();\n            }\n            if (r.summary() != null && !r.summary().isBlank()) {\n                if (summary.length() > 0) summary.append(\" \");\n                summary.append(r.summary().trim());\n            }\n            if (r.flow() != null) {\n                for (String f : r.flow()) if (f != null && !flow.contains(f)) flow.add(f);\n            }\n            if (r.agentActions() != null) actions.addAll(r.agentActions());\n            if (r.issues() != null) issues.addAll(r.issues());\n            if (r.recommendations() != null) {\n                for (String rec : r.recommendations()) {\n                    if (rec != null && !recommendations.contains(rec)) recommendations.add(rec);\n                }\n            }\n        }\n\n        String summaryText = summary.length() > 4000\n            ? summary.substring(0, 4000) + \"...\"\n            : summary.toString();\n        summaryText =\n            \"(Combined […]
 
@@ -14093,7 +14093,7 @@ id: toolu_01PNAPSfQVWNMDkvm5bNfFeb
 tool_result
 id: toolu_01PNAPSfQVWNMDkvm5bNfFeb
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -14107,7 +14107,7 @@ id: toolu_01VmcsMUHANprNoa1X6BWMDf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
   "old_string": "import java.util.concurrent.atomic.AtomicInteger;\nimport java.util.concurrent.atomic.AtomicReference;",
   "new_string": "import java.util.concurrent.atomic.AtomicBoolean;\nimport java.util.concurrent.atomic.AtomicInteger;\nimport java.util.concurrent.atomic.AtomicReference;"
 }
@@ -14118,7 +14118,7 @@ id: toolu_01VmcsMUHANprNoa1X6BWMDf
 tool_result
 id: toolu_01VmcsMUHANprNoa1X6BWMDf
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -14128,7 +14128,7 @@ id: toolu_01SqxqFqhs3XNpM4bg6ATufg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
   "old_string": "    // Optional latches to deterministically hold an in-flight analyze() call (concurrency test).\n    private static final AtomicReference<CountDownLatch> ANALYZE_STARTED = new AtomicReference<>();\n    private static final AtomicReference<CountDownLatch> ANALYZE_RELEASE = new AtomicReference<>();",
   "new_string": "    // Optional latches to deterministically hold an in-flight analyze() call (concurrency test).\n    private static final AtomicReference<CountDownLatch> ANALYZE_STARTED = new AtomicReference<>();\n    private static final AtomicReference<CountDownLatch> ANALYZE_RELEASE = new AtomicReference<>();\n\n    // Failure injection for the graceful-fallback tests.\n    private static final AtomicBoolean ANALYZE_FAILS = new AtomicBoolean(false);\n    private static final AtomicBoolean CONSOLIDATE_FAILS = new AtomicBoolean(false);"
 }
@@ -14139,7 +14139,7 @@ id: toolu_01SqxqFqhs3XNpM4bg6ATufg
 tool_result
 id: toolu_01SqxqFqhs3XNpM4bg6ATufg
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -14149,7 +14149,7 @@ id: toolu_01JgMD1FBg9x7bFaid1eEwV2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
   "old_string": "        ANALYZE_STARTED.set(null);\n        ANALYZE_RELEASE.set(null);\n    }",
   "new_string": "        ANALYZE_STARTED.set(null);\n        ANALYZE_RELEASE.set(null);\n        ANALYZE_FAILS.set(false);\n        CONSOLIDATE_FAILS.set(false);\n    }"
 }
@@ -14160,7 +14160,7 @@ id: toolu_01JgMD1FBg9x7bFaid1eEwV2
 tool_result
 id: toolu_01JgMD1FBg9x7bFaid1eEwV2
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -14170,7 +14170,7 @@ id: toolu_016bYoSnhhxD4wAEwGMU4rvs
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
   "old_string": "            @Override\n            public AnalysisResponse analyze(String transcript) {\n                ANALYZE_CALLS.add(transcript);\n                CountDownLatch started = ANALYZE_STARTED.get();",
   "new_string": "            @Override\n            public AnalysisResponse analyze(String transcript) {\n                ANALYZE_CALLS.add(transcript);\n                if (ANALYZE_FAILS.get()) throw new RuntimeException(\"analyze failed\");\n                CountDownLatch started = ANALYZE_STARTED.get();"
 }
@@ -14181,7 +14181,7 @@ id: toolu_016bYoSnhhxD4wAEwGMU4rvs
 tool_result
 id: toolu_016bYoSnhhxD4wAEwGMU4rvs
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -14191,7 +14191,7 @@ id: toolu_01XnmhPyrVdUdXtKqogw5gTe
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
   "old_string": "            @Override\n            public AnalysisResponse consolidateAnalysis(String combinedSummariesJson) {\n                CONSOLIDATE_CALLS.incrementAndGet();\n                return new AnalysisResponse(",
   "new_string": "            @Override\n            public AnalysisResponse consolidateAnalysis(String combinedSummariesJson) {\n                CONSOLIDATE_CALLS.incrementAndGet();\n                if (CONSOLIDATE_FAILS.get()) throw new RuntimeException(\"consolidation failed\");\n                return new AnalysisResponse("
 }
@@ -14202,7 +14202,7 @@ id: toolu_01XnmhPyrVdUdXtKqogw5gTe
 tool_result
 id: toolu_01XnmhPyrVdUdXtKqogw5gTe
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -14215,7 +14215,7 @@ tool_use Read
 id: toolu_01A3XsJtPg6tSdV2gEcdnpRM
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
   "offset": 300,
   "limit": 35
 }
@@ -14270,7 +14270,7 @@ id: toolu_019voXcWwMpEBFL7eg42i4ta
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
   "old_string": "    // ----- summarize: full pipeline -----",
   "new_string": "    // ----- graceful failure -----\n\n    @Test\n    void fallsBackToLocalMergeWhenConsolidationFails() throws IOException {\n        String id = \"consolidation-fallback\";\n        writeTranscript(\n            id,\n            \"{\\\"type\\\":\\\"USER_INPUT\\\",\\\"content\\\":\\\"go\\\"}\\n\" +\n            \"{\\\"type\\\":\\\"PLANNER_RESPONSE\\\",\\\"tool_calls\\\":[\" +\n            \"{\\\"name\\\":\\\"a\\\",\\\"arguments\\\":{\\\"CommandLine\\\":\\\"one\\\"}},\" +\n            \"{\\\"name\\\":\\\"b\\\",\\\"arguments\\\":{\\\"CommandLine\\\":\\\"two\\\"}}]}\\n\"\n        );\n        TOKEN_RESULT.set(100_001); // force multiple chunks -> consolidation\n        CONSOLIDATE_FAILS.set(true);\n\n        String body = get(\"/api/analysis/conversations/\" + id + \"/summarize?force=true\");\n        JsonNode node = MAPPER.readTree(body);\n        String summary = node.get(\"summary\").asText();\n\n        // Not a hard error; the partial chunk analyses are merged locally instead.\n        assertFalse(summary.startsWith(\"Error generating summary\"));\n        assertTrue(summary.contains(\"partial analyses\"));\n        assertTrue(summary.contains(\"chunk summary\"));\n        assertEquals(\"Chunk Title\", node.get(\"shortTitle\").asText());\n    }\n\n    @Test\n    void returnsClearMessageWhenTheModelFailsForEveryChunk() throws IOException {\n        String id = \"all-chunks-fail\";\n        writeTranscript(id, \"{\\\"type\\\":\\\"USER_INPUT\\\",\\\"content\\\":\\\"go\\\"}\\n\");\n        ANALYZE_FAILS.set(true);\n\n        String body = get(\"/api/analysis/conversations/\" + id + \"/summarize?force=true\");\n        String summary = MAPPER.readTree(body).get(\"summary\").asText();\n        assertFalse(summary.startsWith(\"Error generating summary\"));\n        assertTrue(summary.contains(\"could not be generated\"));\n    }\n\n    // ----- summarize: full pipeline -----"
 }
@@ -14281,7 +14281,7 @@ id: toolu_019voXcWwMpEBFL7eg42i4ta
 tool_result
 id: toolu_019voXcWwMpEBFL7eg42i4ta
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -14294,7 +14294,7 @@ tool_use Bash
 id: toolu_01FdXieEgL1MfjpdjkL2auKk
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -8\ntotal=0; for f in build/test-results/test/*.xml; do n=$(grep -o 'tests=\"[0-9]*\"' \"$f\" | head -1 | sed 's/tests=\"//;s/\"//'); total=$((total+n)); done; echo \"TOTAL backend: $total\"",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -8\ntotal=0; for f in build/test-results/test/*.xml; do n=$(grep -o 'tests=\"[0-9]*\"' \"$f\" | head -1 | sed 's/tests=\"//;s/\"//'); total=$((total+n)); done; echo \"TOTAL backend: $total\"",
   "description": "Build + backend tests for graceful failures",
   "timeout": 600000
 }
@@ -14322,7 +14322,7 @@ tool_use Bash
 id: toolu_01EYMYpuUrAiApJGhcRsSsqp
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew compileJava compileTestJava --console=plain 2>&1 | grep -iE '\\.java:[0-9]+|error:' | head -20",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew compileJava compileTestJava --console=plain 2>&1 | grep -iE '\\.java:[0-9]+|error:' | head -20",
   "description": "Show compile errors",
   "timeout": 300000
 }
@@ -14333,10 +14333,10 @@ id: toolu_01EYMYpuUrAiApJGhcRsSsqp
 tool_result
 id: toolu_01EYMYpuUrAiApJGhcRsSsqp
 ```
-/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java:353: error: cannot find symbol
-/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java:367: error: cannot find symbol
-  /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java:353: error: cannot find symbol
-  /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java:367: error: cannot find symbol
+/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java:353: error: cannot find symbol
+/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java:367: error: cannot find symbol
+  /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java:353: error: cannot find symbol
+  /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java:367: error: cannot find symbol
 ```
 
 > AGENT
@@ -14350,7 +14350,7 @@ id: toolu_01Vx37XyRNeCz8FBhA4irVxf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
   "old_string": "import static org.junit.jupiter.api.Assertions.assertEquals;\nimport static org.junit.jupiter.api.Assertions.assertTrue;",
   "new_string": "import static org.junit.jupiter.api.Assertions.assertEquals;\nimport static org.junit.jupiter.api.Assertions.assertFalse;\nimport static org.junit.jupiter.api.Assertions.assertTrue;"
 }
@@ -14361,7 +14361,7 @@ id: toolu_01Vx37XyRNeCz8FBhA4irVxf
 tool_result
 id: toolu_01Vx37XyRNeCz8FBhA4irVxf
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -14370,7 +14370,7 @@ tool_use Bash
 id: toolu_01DN15ELZE1smT8H35fXPpfH
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -5\ntotal=0; for f in build/test-results/test/*.xml; do n=$(grep -o 'tests=\"[0-9]*\"' \"$f\" | head -1 | sed 's/tests=\"//;s/\"//'); total=$((total+n)); done; echo \"TOTAL backend: $total\"\necho \"=== frontend + e2e ===\"\nnpm test 2>&1 | tail -3\nmise exec -- ./gradlew shadowJar -x test --console=plain 2>&1 | tail -1\nlsof -ti tcp:8099 | xargs kill -9 2>/dev/null; sleep 1\nmise exec -- npx playwright test 2>&1 | tail -3",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -5\ntotal=0; for f in build/test-results/test/*.xml; do n=$(grep -o 'tests=\"[0-9]*\"' \"$f\" | head -1 | sed 's/tests=\"//;s/\"//'); total=$((total+n)); done; echo \"TOTAL backend: $total\"\necho \"=== frontend + e2e ===\"\nnpm test 2>&1 | tail -3\nmise exec -- ./gradlew shadowJar -x test --console=plain 2>&1 | tail -1\nlsof -ti tcp:8099 | xargs kill -9 2>/dev/null; sleep 1\nmise exec -- npx playwright test 2>&1 | tail -3",
   "description": "Full verification after fixing import",
   "timeout": 600000
 }
@@ -14407,7 +14407,7 @@ tool_use Bash
 id: toolu_01Vivdt44eTjj3VEoxL79dH5
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit checkout -b feat/graceful-analysis-fallback 2>&1 | tail -1\ngit add -A\ngit status --short | grep -vE '\\.claude/|\\.entire'",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit checkout -b feat/graceful-analysis-fallback 2>&1 | tail -1\ngit add -A\ngit status --short | grep -vE '\\.claude/|\\.entire'",
   "description": "Branch + stage graceful fallback"
 }
 ```
@@ -14429,7 +14429,7 @@ id: toolu_01ByrH7jFmXdxMAU2AdC1u5Z
 ```json
 {
   "description": "Review graceful analysis fallback",
-  "prompt": "You are a senior code reviewer. Review the STAGED git diff in /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer (run `git diff --cached`). This adds graceful failure handling to AI analysis in `AnalysisController`.\n\nChanges:\n1. When the LLM consolidation (`recursivelyConsolidate`) fails, the controller now catches it and falls back to `localMerge(seqResponses)` — a deterministic, no-LLM merge of the per-chunk `AnalysisResponse`s — so the user gets a usable summary instead of \"Error generating summary\".\n2. `recursivelyConsolidate` was refactored: token-estimation failure now falls back to a char-length heuristic (instead of a catch that also swallowed consolidation errors), a `responses.size() <= 1` guard was added, and consolidation exceptions now propagate to the caller (so the fallback fires).\n3. Empty `seqResponses` now distinguishes \"No transcript lines found.\" (no chunks) from \"Analysis could not be generated...\" (chunks existed but the model failed for all).\n4. `localMerge` combines shortTitle/summary/flow/agentActions/issues/recommendations with dedup + caps, prefixing the summary with a \"(Combined from N partial analyses...)\" note.\n5. Tests added: consolidation-failure → local merge; all-chunks-fail → clear message. Failure injected via mock flags.\n\nFocus on:\n1. **Correctness of the fallback control flow**: does a consolidation timeout now reliably reach `localMerge`? Any path where it still throws to the outer \"Error generating […]
+  "prompt": "You are a senior code reviewer. Review the STAGED git diff in /home/<USER>/Developer/scottdensmore/agent-brain-visualizer (run `git diff --cached`). This adds graceful failure handling to AI analysis in `AnalysisController`.\n\nChanges:\n1. When the LLM consolidation (`recursivelyConsolidate`) fails, the controller now catches it and falls back to `localMerge(seqResponses)` — a deterministic, no-LLM merge of the per-chunk `AnalysisResponse`s — so the user gets a usable summary instead of \"Error generating summary\".\n2. `recursivelyConsolidate` was refactored: token-estimation failure now falls back to a char-length heuristic (instead of a catch that also swallowed consolidation errors), a `responses.size() <= 1` guard was added, and consolidation exceptions now propagate to the caller (so the fallback fires).\n3. Empty `seqResponses` now distinguishes \"No transcript lines found.\" (no chunks) from \"Analysis could not be generated...\" (chunks existed but the model failed for all).\n4. `localMerge` combines shortTitle/summary/flow/agentActions/issues/recommendations with dedup + caps, prefixing the summary with a \"(Combined from N partial analyses...)\" note.\n5. Tests added: consolidation-failure → local merge; all-chunks-fail → clear message. Failure injected via mock flags.\n\nFocus on:\n1. **Correctness of the fallback control flow**: does a consolidation timeout now reliably reach `localMerge`? Any path where it still throws to the outer \"Error generating […]
 
 > TOOL
 
@@ -14463,7 +14463,7 @@ tool_use Read
 id: toolu_01JNu4w7Keym412gkA8oKwdw
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
   "offset": 136,
   "limit": 10
 }
@@ -14492,7 +14492,7 @@ tool_use Read
 id: toolu_01DsXMsZL4psqPEcEoGWagvH
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
   "offset": 156,
   "limit": 12
 }
@@ -14524,7 +14524,7 @@ id: toolu_01XQTtztVvYFUcUZHjL55v7F
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
   "old_string": "            ObjectMapper mapper = new ObjectMapper();\n            AnalysisResponse responseObj = null;\n\n            try {\n                List<List<String>> sequences = external",
   "new_string": "            ObjectMapper mapper = new ObjectMapper();\n            AnalysisResponse responseObj = null;\n            boolean consolidationFellBack = false;\n\n            try {\n                List<List<String>> sequences = external"
 }
@@ -14535,7 +14535,7 @@ id: toolu_01XQTtztVvYFUcUZHjL55v7F
 tool_result
 id: toolu_01XQTtztVvYFUcUZHjL55v7F
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -14545,7 +14545,7 @@ id: toolu_014wo8HrVcZUnZ8RdcS3tGTM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
   "old_string": "                        System.err.println(\n                            \"Consolidation failed; using local merge fallback: \" + e.getMessage()\n                        );\n                        responseObj = localMerge(seqResponses);\n                    } finally {",
   "new_string": "                        System.err.println(\n                            \"Consolidation failed; using local merge fallback: \" + e.getMessage()\n                        );\n                        responseObj = localMerge(seqResponses);\n                        consolidationFellBack = true;\n                    } finally {"
 }
@@ -14556,7 +14556,7 @@ id: toolu_014wo8HrVcZUnZ8RdcS3tGTM
 tool_result
 id: toolu_014wo8HrVcZUnZ8RdcS3tGTM
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -14569,7 +14569,7 @@ tool_use Read
 id: toolu_01PrpcWn4hJkR1cnVfcK1UjZ
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
   "offset": 295,
   "limit": 25
 }
@@ -14614,7 +14614,7 @@ id: toolu_01FLyNLzkRHzjkuVA8DUAuEt
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java",
   "old_string": "                progressMap.put(id, new ProgressState(100, \"Done\"));\n\n                String jsonResponse = mapper.writeValueAsString(responseObj);\n\n                String title = responseObj.shortTitle();\n                try {",
   "new_string": "                progressMap.put(id, new ProgressState(100, \"Done\"));\n\n                String jsonResponse = mapper.writeValueAsString(responseObj);\n\n                // Don't persist a degraded local-merge fallback: the consolidation failure was\n                // likely transient, so a later (non-forced) load should retry the LLM rather than\n                // serve the cruder summary.\n                if (consolidationFellBack) {\n                    return jsonResponse;\n                }\n\n                String title = responseObj.shortTitle();\n                try {"
 }
@@ -14625,7 +14625,7 @@ id: toolu_01FLyNLzkRHzjkuVA8DUAuEt
 tool_result
 id: toolu_01FLyNLzkRHzjkuVA8DUAuEt
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -14639,7 +14639,7 @@ id: toolu_01Q39EqG8pJ7MLvkDEPcNz4C
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java",
   "old_string": "        assertTrue(summary.contains(\"partial analyses\"));\n        assertTrue(summary.contains(\"chunk summary\"));\n        assertEquals(\"Chunk Title\", node.get(\"shortTitle\").asText());\n    }",
   "new_string": "        assertTrue(summary.contains(\"partial analyses\"));\n        assertTrue(summary.contains(\"chunk summary\"));\n        assertEquals(\"Chunk Title\", node.get(\"shortTitle\").asText());\n        // A degraded fallback must NOT be cached, so a later load retries the real consolidation.\n        assertFalse(Files.exists(logsDir(id).resolve(\"summary.json\")));\n    }"
 }
@@ -14650,7 +14650,7 @@ id: toolu_01Q39EqG8pJ7MLvkDEPcNz4C
 tool_result
 id: toolu_01Q39EqG8pJ7MLvkDEPcNz4C
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AnalysisControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -14659,7 +14659,7 @@ tool_use Bash
 id: toolu_014B8SNTurZAuj8FWtbvwMxk
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -5\ntotal=0; for f in build/test-results/test/*.xml; do n=$(grep -o 'tests=\"[0-9]*\"' \"$f\" | head -1 | sed 's/tests=\"//;s/\"//'); total=$((total+n)); done; echo \"TOTAL backend: $total\"",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -5\ntotal=0; for f in build/test-results/test/*.xml; do n=$(grep -o 'tests=\"[0-9]*\"' \"$f\" | head -1 | sed 's/tests=\"//;s/\"//'); total=$((total+n)); done; echo \"TOTAL backend: $total\"",
   "description": "Re-verify after caching fix",
   "timeout": 600000
 }
@@ -14670,7 +14670,7 @@ id: toolu_014B8SNTurZAuj8FWtbvwMxk
 tool_result
 id: toolu_014B8SNTurZAuj8FWtbvwMxk
 ```
-[Incubating] Problems report is available at: file:///Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/build/reports/problems/problems-report.html
+[Incubating] Problems report is available at: file:///home/<USER>/Developer/scottdensmore/agent-brain-visualizer/build/reports/problems/problems-report.html
 
 BUILD SUCCESSFUL in 13s
 37 actionable tasks: 28 executed, 9 up-to-date
@@ -14688,7 +14688,7 @@ tool_use Bash
 id: toolu_01ReqKVKUuxoctFicHpENtc8
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nnpm test 2>&1 | tail -3\nmise exec -- ./gradlew shadowJar -x test --console=plain 2>&1 | tail -1\nlsof -ti tcp:8099 | xargs kill -9 2>/dev/null; sleep 1\nmise exec -- npx playwright test 2>&1 | tail -3",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nnpm test 2>&1 | tail -3\nmise exec -- ./gradlew shadowJar -x test --console=plain 2>&1 | tail -1\nlsof -ti tcp:8099 | xargs kill -9 2>/dev/null; sleep 1\nmise exec -- npx playwright test 2>&1 | tail -3",
   "description": "Frontend + e2e verification",
   "timeout": 300000
 }
@@ -14718,7 +14718,7 @@ tool_use Bash
 id: toolu_01USv8rNML78WDb2hwX8xp2w
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit add -A\ngit status --short | grep -vE '\\.claude/|\\.entire'\ngit commit -q -F - <<'EOF'\nfeat(ai): gracefully degrade analysis instead of erroring\n\nWhen LLM consolidation fails (e.g. an API timeout on the final merge), the\nanalysis previously aborted with \"Error generating summary\", discarding all\nthe successful per-chunk work. Now it degrades gracefully:\n\n- On consolidation failure, fall back to a deterministic local merge of the\n  per-chunk analyses (no LLM) so the user still gets a usable summary,\n  prefixed with a \"(Combined from N partial analyses...)\" note.\n- The degraded fallback is NOT cached, so a later (non-forced) load retries\n  the real LLM consolidation rather than serving the cruder summary.\n- recursivelyConsolidate now lets consolidation errors propagate (so the\n  fallback fires), uses a char-length heuristic only when token estimation\n  fails, and guards responses.size() <= 1 to prevent a possible infinite\n  recursion on a single oversized response.\n- When the model fails for every chunk, return a clear \"Analysis could not\n  be generated... please try again\" message instead of \"No transcript lines\n  found\".\n\nTests: consolidation-failure -> local merge (and not cached); all-chunks-\nfail -> clear message. 99 backend + 44 frontend + 19 e2e, all green.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\necho \"exit: $?\"\ngit push -u origin […]
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit add -A\ngit status --short | grep -vE '\\.claude/|\\.entire'\ngit commit -q -F - <<'EOF'\nfeat(ai): gracefully degrade analysis instead of erroring\n\nWhen LLM consolidation fails (e.g. an API timeout on the final merge), the\nanalysis previously aborted with \"Error generating summary\", discarding all\nthe successful per-chunk work. Now it degrades gracefully:\n\n- On consolidation failure, fall back to a deterministic local merge of the\n  per-chunk analyses (no LLM) so the user still gets a usable summary,\n  prefixed with a \"(Combined from N partial analyses...)\" note.\n- The degraded fallback is NOT cached, so a later (non-forced) load retries\n  the real LLM consolidation rather than serving the cruder summary.\n- recursivelyConsolidate now lets consolidation errors propagate (so the\n  fallback fires), uses a char-length heuristic only when token estimation\n  fails, and guards responses.size() <= 1 to prevent a possible infinite\n  recursion on a single oversized response.\n- When the model fails for every chunk, return a clear \"Analysis could not\n  be generated... please try again\" message instead of \"No transcript lines\n  found\".\n\nTests: consolidation-failure -> local merge (and not cached); all-chunks-\nfail -> clear message. 99 backend + 44 frontend + 19 e2e, all green.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\necho \"exit: $?\"\ngit push -u origin […]
 
 > TOOL
 
@@ -14739,7 +14739,7 @@ tool_use Bash
 id: toolu_01MVaakzjDbZPAjQ3mb6NPue
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh pr create --base main --head feat/graceful-analysis-fallback \\\n  --title \"feat(ai): gracefully degrade analysis instead of erroring\" \\\n  --body \"$(cat <<'EOF'\n## Why\n\nWhen LLM consolidation failed (e.g. the Gemini API timeout you hit on the final merge), the whole analysis aborted with \"Error generating summary\" — throwing away all the successful per-chunk work.\n\n## What\n\n- **Local-merge fallback**: on consolidation failure, deterministically merge the per-chunk `AnalysisResponse`s (no LLM) so the user still gets a usable summary, prefixed with `(Combined from N partial analyses; full consolidation was unavailable.)`.\n- **Don't cache the degraded result**: the failure is usually transient, so a later (non-forced) load retries the real consolidation rather than serving the cruder summary.\n- **`recursivelyConsolidate` hardening**: consolidation errors now propagate (so the fallback fires); a char-length heuristic is used only when token *estimation* fails; and a `responses.size() <= 1` guard prevents a possible infinite recursion on a single oversized response.\n- **Clear all-failed message**: when the model fails for every chunk, return \"Analysis could not be generated... please try again\" instead of the misleading \"No transcript lines found\".\n\n## Tests\n- consolidation-failure → local merge returned, and **not** cached (asserts the summary file isn't written).\n- all-chunks-fail → clear message.\n- **99 backend […]
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh pr create --base main --head feat/graceful-analysis-fallback \\\n  --title \"feat(ai): gracefully degrade analysis instead of erroring\" \\\n  --body \"$(cat <<'EOF'\n## Why\n\nWhen LLM consolidation failed (e.g. the Gemini API timeout you hit on the final merge), the whole analysis aborted with \"Error generating summary\" — throwing away all the successful per-chunk work.\n\n## What\n\n- **Local-merge fallback**: on consolidation failure, deterministically merge the per-chunk `AnalysisResponse`s (no LLM) so the user still gets a usable summary, prefixed with `(Combined from N partial analyses; full consolidation was unavailable.)`.\n- **Don't cache the degraded result**: the failure is usually transient, so a later (non-forced) load retries the real consolidation rather than serving the cruder summary.\n- **`recursivelyConsolidate` hardening**: consolidation errors now propagate (so the fallback fires); a char-length heuristic is used only when token *estimation* fails; and a `responses.size() <= 1` guard prevents a possible infinite recursion on a single oversized response.\n- **Clear all-failed message**: when the model fails for every chunk, return \"Analysis could not be generated... please try again\" instead of the misleading \"No transcript lines found\".\n\n## Tests\n- consolidation-failure → local merge returned, and **not** cached (asserts the summary file isn't written).\n- all-chunks-fail → clear message.\n- **99 backend […]
 
 > TOOL
 
@@ -14755,7 +14755,7 @@ tool_use Bash
 id: toolu_011sLYfXXtHTucGR6bZYaGpp
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nsleep 8\nRUN=$(gh run list --branch feat/graceful-analysis-fallback --workflow \"CI\" --limit 1 --json databaseId --jq '.[0].databaseId')\necho \"watching CI run $RUN\"\ngh run watch \"$RUN\" --exit-status --interval 20 >/dev/null 2>&1; echo \"watch exit: $?\"\ngh run view \"$RUN\" --json jobs --jq '.jobs[] | \"\\(.conclusion // .status)\\t\\(.name)\"'",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nsleep 8\nRUN=$(gh run list --branch feat/graceful-analysis-fallback --workflow \"CI\" --limit 1 --json databaseId --jq '.[0].databaseId')\necho \"watching CI run $RUN\"\ngh run watch \"$RUN\" --exit-status --interval 20 >/dev/null 2>&1; echo \"watch exit: $?\"\ngh run view \"$RUN\" --json jobs --jq '.jobs[] | \"\\(.conclusion // .status)\\t\\(.name)\"'",
   "description": "Watch PR #14 CI",
   "timeout": 600000
 }
@@ -14783,7 +14783,7 @@ tool_use Bash
 id: toolu_012aQxDkZZxJfPVGQs9wLFEj
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh pr merge 14 --squash --delete-branch 2>&1 | tail -2\ngh pr view 14 --json state --jq '{state}'\ngit checkout main 2>&1 | tail -1\ngit pull --ff-only 2>&1 | tail -2\ngit fetch --prune 2>&1 | tail -1\ngit branch -d feat/graceful-analysis-fallback 2>&1 || echo \"(gone)\"\ngit log --oneline -3",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh pr merge 14 --squash --delete-branch 2>&1 | tail -2\ngh pr view 14 --json state --jq '{state}'\ngit checkout main 2>&1 | tail -1\ngit pull --ff-only 2>&1 | tail -2\ngit fetch --prune 2>&1 | tail -1\ngit branch -d feat/graceful-analysis-fallback 2>&1 || echo \"(gone)\"\ngit log --oneline -3",
   "description": "Merge PR #14 and clean up"
 }
 ```
@@ -14836,7 +14836,7 @@ tool_use Bash
 id: toolu_01MGPxrBz2yTFVk7qV7H8Rtd
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\necho \"=== image files ===\"\nfind . -path ./node_modules -prune -o \\( -name '*.png' -o -name '*.jpg' -o -name '*.svg' -o -name '*.webp' \\) -print 2>/dev/null | grep -v node_modules\necho \"=== 'Antigravity Brain Visualizer' (display name) occurrences ===\"\ngrep -rn \"Antigravity Brain Visualizer\" --include='*.html' --include='*.md' --include='*.java' --include='*.yml' . 2>/dev/null | grep -v node_modules | head -30\necho \"=== logo / image references ===\"\ngrep -rn \"logo.png\\|<img\\|image\\b\\|imageName\\|baseImage\\|screenshot\" --include='*.html' --include='*.md' --include='*.gradle' . 2>/dev/null | grep -v node_modules | head -20",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\necho \"=== image files ===\"\nfind . -path ./node_modules -prune -o \\( -name '*.png' -o -name '*.jpg' -o -name '*.svg' -o -name '*.webp' \\) -print 2>/dev/null | grep -v node_modules\necho \"=== 'Antigravity Brain Visualizer' (display name) occurrences ===\"\ngrep -rn \"Antigravity Brain Visualizer\" --include='*.html' --include='*.md' --include='*.java' --include='*.yml' . 2>/dev/null | grep -v node_modules | head -30\necho \"=== logo / image references ===\"\ngrep -rn \"logo.png\\|<img\\|image\\b\\|imageName\\|baseImage\\|screenshot\" --include='*.html' --include='*.md' --include='*.gradle' . 2>/dev/null | grep -v node_modules | head -20",
   "description": "Inventory app-name strings and images"
 }
 ```
@@ -14882,7 +14882,7 @@ tool_use Read
 id: toolu_01MVrzbT3e2rr7Jy3ezuXDzR
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/logo.png"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/logo.png"
 }
 ```
 
@@ -14911,7 +14911,7 @@ tool_use Read
 id: toolu_01MJDP3Gokad8QnD5acSXMwK
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/Application.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/Application.java",
   "offset": 20,
   "limit": 35
 }
@@ -14970,7 +14970,7 @@ id: toolu_01KAwm3kEZ7HCmLq3Nhi8555
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/Application.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/Application.java",
   "old_string": "                System.out.println(\"Antigravity Brain Visualizer version \" + Version.VERSION);",
   "new_string": "                System.out.println(\"Agent Brain Visualizer version \" + Version.VERSION);"
 }
@@ -14981,7 +14981,7 @@ id: toolu_01KAwm3kEZ7HCmLq3Nhi8555
 tool_result
 id: toolu_01KAwm3kEZ7HCmLq3Nhi8555
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/Application.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/Application.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -14991,7 +14991,7 @@ id: toolu_01MLqYv2Q5z1zBJuLHzyfowQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/Application.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/Application.java",
   "old_string": "                Antigravity Brain Visualizer\n                ============================\n                A web interface for inspecting Antigravity AI agent execution transcripts.",
   "new_string": "                Agent Brain Visualizer\n                ======================\n                A web interface for inspecting AI agent execution transcripts."
 }
@@ -15002,7 +15002,7 @@ id: toolu_01MLqYv2Q5z1zBJuLHzyfowQ
 tool_result
 id: toolu_01MLqYv2Q5z1zBJuLHzyfowQ
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/Application.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/Application.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -15016,7 +15016,7 @@ id: toolu_013R5sdsshvQ7dmoV1QWWELX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/index.html",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/index.html",
   "old_string": "    <title>Antigravity Brain Visualizer</title>",
   "new_string": "    <title>Agent Brain Visualizer</title>"
 }
@@ -15027,7 +15027,7 @@ id: toolu_013R5sdsshvQ7dmoV1QWWELX
 tool_result
 id: toolu_013R5sdsshvQ7dmoV1QWWELX
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/index.html has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/index.html has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -15037,7 +15037,7 @@ id: toolu_01TrRscbzcKXv6U6gso61T25
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/index.html",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/index.html",
   "old_string": "                    <img src=\"logo.png\" alt=\"Antigravity Brain Visualizer\">",
   "new_string": "                    <img src=\"logo.svg\" alt=\"Agent Brain Visualizer\">"
 }
@@ -15048,7 +15048,7 @@ id: toolu_01TrRscbzcKXv6U6gso61T25
 tool_result
 id: toolu_01TrRscbzcKXv6U6gso61T25
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/index.html has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/index.html has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -15061,7 +15061,7 @@ tool_use Write
 id: toolu_01UBemLijiAuj9zUrZ8rFVEU
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/logo.svg",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/logo.svg",
   "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 640 180\" width=\"640\" height=\"180\" role=\"img\" aria-label=\"Agent Brain Visualizer\">\n  <defs>\n    <linearGradient id=\"abvGrad\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\">\n      <stop offset=\"0%\" stop-color=\"#a78bfa\"/>\n      <stop offset=\"50%\" stop-color=\"#60a5fa\"/>\n      <stop offset=\"100%\" stop-color=\"#34d399\"/>\n    </linearGradient>\n  </defs>\n\n  <rect x=\"0\" y=\"0\" width=\"640\" height=\"180\" rx=\"24\" fill=\"#0e1726\"/>\n\n  <!-- Brain-in-magnifier icon -->\n  <g fill=\"none\" stroke=\"url(#abvGrad)\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <circle cx=\"80\" cy=\"80\" r=\"46\" stroke-width=\"7\"/>\n    <line x1=\"113\" y1=\"113\" x2=\"150\" y2=\"150\" stroke-width=\"13\"/>\n    <!-- neural network edges -->\n    <g stroke-width=\"2.5\" opacity=\"0.85\">\n      <line x1=\"80\" y1=\"55\" x2=\"60\" y2=\"76\"/>\n      <line x1=\"80\" y1=\"55\" x2=\"100\" y2=\"76\"/>\n      <line x1=\"60\" y1=\"76\" x2=\"80\" y2=\"82\"/>\n      <line x1=\"100\" y1=\"76\" x2=\"80\" y2=\"82\"/>\n      <line x1=\"60\" y1=\"76\" x2=\"70\" y2=\"102\"/>\n      <line x1=\"100\" y1=\"76\" x2=\"95\" y2=\"102\"/>\n      <line x1=\"80\" y1=\"82\" x2=\"70\" y2=\"102\"/>\n      <line x1=\"80\" y1=\"82\" x2=\"95\" y2=\"102\"/>\n    </g>\n  </g>\n  <!-- neural network nodes -->\n  <g fill=\"url(#abvGrad)\">\n    <circle cx=\"80\" cy=\"55\" r=\"5\"/>\n    <circle cx=\"60\" cy=\"76\" r=\"5\"/>\n    <circle cx=\"100\" cy=\"76\" r=\"5\"/>\n    <circle cx=\"80\" cy=\"82\" r=\"5\"/>\n    <circle cx=\"70\" cy=\"102\" r=\"5\"/>\n    <circle cx=\"95\" cy=\"102\" r=\"5\"/>\n  </g>\n\n  <!-- Wordmark -->\n  <text x=\"184\" y=\"84\" font-family=\"'Segoe UI', Roboto, system-ui, -apple-system, Helvetica, Arial, sans-serif\"\n        font-size=\"52\" font-weight=\"700\" fill=\"#f8fafc\">Agent</text>\n  <text x=\"184\" y=\"138\" font-family=\"'Segoe UI', Roboto, system-ui, -apple-system, Helvetica, Arial, sans-serif\"\n        font-size=\"44\" font-weight=\"500\" fill=\"#cbd5e1\">Brain Visualizer</text>\n</svg>\n"
 }
 ```
@@ -15071,7 +15071,7 @@ id: toolu_01UBemLijiAuj9zUrZ8rFVEU
 tool_result
 id: toolu_01UBemLijiAuj9zUrZ8rFVEU
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/logo.svg (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/logo.svg (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -15084,7 +15084,7 @@ tool_use Bash
 id: toolu_01VBpAfUWN7AwKknKbWW4oGY
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit checkout -b chore/rename-to-agent-brain-visualizer 2>&1 | tail -1\ncp src/main/resources/public/logo.svg logo.svg\ngit rm -q logo.png src/main/resources/public/logo.png\necho \"--- files ---\"; ls logo.svg src/main/resources/public/logo.svg\ngit status --short | grep -vE '\\.claude/|\\.entire'",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit checkout -b chore/rename-to-agent-brain-visualizer 2>&1 | tail -1\ncp src/main/resources/public/logo.svg logo.svg\ngit rm -q logo.png src/main/resources/public/logo.png\necho \"--- files ---\"; ls logo.svg src/main/resources/public/logo.svg\ngit status --short | grep -vE '\\.claude/|\\.entire'",
   "description": "Branch, copy SVG to root, remove old PNG logos"
 }
 ```
@@ -15116,7 +15116,7 @@ tool_use Read
 id: toolu_01CiBfihqgFs1EETVHSbcY8v
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/README.md",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/README.md",
   "offset": 1,
   "limit": 14
 }
@@ -15150,7 +15150,7 @@ id: toolu_01SKfSFjzHQruL8ZgwdrjgKt
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/README.md",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/README.md",
   "old_string": "<p align=\"center\">\n  <img src=\"logo.png\" alt=\"Antigravity Brain Visualizer Logo\" width=\"800\"/>\n</p>\n\n# Antigravity Brain Visualizer\n\n<p align=\"center\">\n  <img src=\"screenshot.png\" alt=\"Antigravity Brain Visualizer Screenshot\" width=\"800\"/>\n</p>\n\n## What is this project?\nThe Antigravity Brain Visualizer is a dedicated companion tool for developers working with Antigravity AI agents. Antigravity agents construct complex reasoning chains, dispatch background tasks, spawn subagents, and execute system commands over long-running sessions. The agent records all of these interactions in detailed JSONL transcript files (the agent's \"brain\"). \n\nThis visualizer parses those raw JSONL brain transcripts and renders them in a scannable and interactive web interface, allowing developers to inspect the agent's exact decision-making process.",
   "new_string": "<p align=\"center\">\n  <img src=\"logo.svg\" alt=\"Agent Brain Visualizer Logo\" width=\"800\"/>\n</p>\n\n# Agent Brain Visualizer\n\n<p align=\"center\">\n  <img src=\"screenshot.png\" alt=\"Agent Brain Visualizer Screenshot\" width=\"800\"/>\n</p>\n\n## What is this project?\nThe Agent Brain Visualizer is a dedicated companion tool for developers working with AI coding agents. Agents construct complex reasoning chains, dispatch background tasks, spawn subagents, and execute system commands over long-running sessions, recording all of these interactions in detailed JSONL transcript files (the agent's \"brain\"). It reads sessions from Antigravity (CLI/IDE/Agent), OpenAI Codex, and Claude Code.\n\nThis visualizer parses those raw JSONL brain transcripts and renders […]
 
@@ -15159,7 +15159,7 @@ id: toolu_01SKfSFjzHQruL8ZgwdrjgKt
 tool_result
 id: toolu_01SKfSFjzHQruL8ZgwdrjgKt
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -15168,7 +15168,7 @@ tool_use Read
 id: toolu_0188vudgzMBhEgvPtWdcoyqp
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/README.md",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/README.md",
   "offset": 61,
   "limit": 4
 }
@@ -15192,7 +15192,7 @@ id: toolu_018LE9BzEy8eRSxZsrtSYeJQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/README.md",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/README.md",
   "old_string": "The easiest way to install and use the Antigravity Brain Visualizer is to download the pre-compiled native executable for your operating system.",
   "new_string": "The easiest way to install and use the Agent Brain Visualizer is to download the pre-compiled native executable for your operating system."
 }
@@ -15203,7 +15203,7 @@ id: toolu_018LE9BzEy8eRSxZsrtSYeJQ
 tool_result
 id: toolu_018LE9BzEy8eRSxZsrtSYeJQ
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -15217,7 +15217,7 @@ id: toolu_01PhMSGHQWCbaj427oJy4ZfM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/AGENTS.md",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/AGENTS.md",
   "old_string": "# Antigravity Brain Visualizer\n\nYou are an AI coding assistant working on the **Antigravity Brain Visualizer** project. ",
   "new_string": "# Agent Brain Visualizer\n\nYou are an AI coding assistant working on the **Agent Brain Visualizer** project. "
 }
@@ -15228,7 +15228,7 @@ id: toolu_01PhMSGHQWCbaj427oJy4ZfM
 tool_result
 id: toolu_01PhMSGHQWCbaj427oJy4ZfM
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/AGENTS.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/AGENTS.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -15241,7 +15241,7 @@ tool_use Bash
 id: toolu_01YDUNnQyaAje48pVCoYv9LQ
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\necho \"=== remaining 'Antigravity Brain Visualizer' (should be none) ===\"\ngrep -rn \"Antigravity Brain Visualizer\" --include='*.html' --include='*.md' --include='*.java' --include='*.yml' . 2>/dev/null | grep -v node_modules || echo \"(none)\"\necho \"=== render logo.svg to PNG to eyeball ===\"\nqlmanage -t -s 640 -o /tmp logo.svg >/dev/null 2>&1 && echo \"rendered: /tmp/logo.svg.png\" || echo \"(qlmanage unavailable)\"",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\necho \"=== remaining 'Antigravity Brain Visualizer' (should be none) ===\"\ngrep -rn \"Antigravity Brain Visualizer\" --include='*.html' --include='*.md' --include='*.java' --include='*.yml' . 2>/dev/null | grep -v node_modules || echo \"(none)\"\necho \"=== render logo.svg to PNG to eyeball ===\"\nqlmanage -t -s 640 -o /tmp logo.svg >/dev/null 2>&1 && echo \"rendered: /tmp/logo.svg.png\" || echo \"(qlmanage unavailable)\"",
   "description": "Verify rename completeness + render logo"
 }
 ```
@@ -15292,7 +15292,7 @@ tool_use Bash
 id: toolu_01RbFXx1cmmhVZeg3UaGuymM
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\necho \"=== spotlessApply + build ===\"\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -5\necho \"=== frontend unit ===\"\nnpm test 2>&1 | tail -3\necho \"=== rebuild jar + e2e (verify served logo.svg + renamed title) ===\"\nmise exec -- ./gradlew shadowJar -x test --console=plain 2>&1 | tail -1\nlsof -ti tcp:8099 | xargs kill -9 2>/dev/null; sleep 1\nmise exec -- npx playwright test 2>&1 | tail -3",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\necho \"=== spotlessApply + build ===\"\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -5\necho \"=== frontend unit ===\"\nnpm test 2>&1 | tail -3\necho \"=== rebuild jar + e2e (verify served logo.svg + renamed title) ===\"\nmise exec -- ./gradlew shadowJar -x test --console=plain 2>&1 | tail -1\nlsof -ti tcp:8099 | xargs kill -9 2>/dev/null; sleep 1\nmise exec -- npx playwright test 2>&1 | tail -3",
   "description": "Build + unit + e2e after rename",
   "timeout": 600000
 }
@@ -15330,7 +15330,7 @@ tool_use Bash
 id: toolu_01CjyP1qqx81zEs81Rk2vH1G
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit add -A\ngit status --short | grep -vE '\\.claude/|\\.entire'\ngit commit -q -F - <<'EOF'\nchore: rename app to \"Agent Brain Visualizer\" and refresh logo\n\nThe tool now visualizes sessions from multiple agents (Antigravity, OpenAI\nCodex, Claude Code), so the \"Antigravity\"-specific product name no longer\nfits. Rename the display name to \"Agent Brain Visualizer\" across the UI,\nREADME, AGENTS.md, and the CLI help/version output.\n\nReplace the old raster logo (which had the previous name baked in) with a\nnew scalable SVG logo (neural-network brain in a magnifier + wordmark),\nreferenced from both the app sidebar and the README; remove logo.png.\n\nNote: references to *Antigravity agents* / the antigravity-* flavors are\nleft intact — those name the transcript source, not the app. Internal\nidentifiers (Java package, native image name) are unchanged. The README\nscreenshot still shows the previous title and can be refreshed separately.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\necho \"exit: $?\"\ngit push -u origin chore/rename-to-agent-brain-visualizer 2>&1 | tail -3",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit add -A\ngit status --short | grep -vE '\\.claude/|\\.entire'\ngit commit -q -F - <<'EOF'\nchore: rename app to \"Agent Brain Visualizer\" and refresh logo\n\nThe tool now visualizes sessions from multiple agents (Antigravity, OpenAI\nCodex, Claude Code), so the \"Antigravity\"-specific product name no longer\nfits. Rename the display name to \"Agent Brain Visualizer\" across the UI,\nREADME, AGENTS.md, and the CLI help/version output.\n\nReplace the old raster logo (which had the previous name baked in) with a\nnew scalable SVG logo (neural-network brain in a magnifier + wordmark),\nreferenced from both the app sidebar and the README; remove logo.png.\n\nNote: references to *Antigravity agents* / the antigravity-* flavors are\nleft intact — those name the transcript source, not the app. Internal\nidentifiers (Java package, native image name) are unchanged. The README\nscreenshot still shows the previous title and can be refreshed separately.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\necho \"exit: $?\"\ngit push -u origin chore/rename-to-agent-brain-visualizer 2>&1 | tail -3",
   "description": "Commit and push the rename"
 }
 ```
@@ -15367,7 +15367,7 @@ tool_use Bash
 id: toolu_01JbXH7KaWGg2KV1TrfNc6WU
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit commit -q -F - <<'EOF'\nchore: rename app to \"Agent Brain Visualizer\" and refresh logo\n\nThe tool now visualizes sessions from multiple agents (Antigravity, OpenAI\nCodex, Claude Code), so the \"Antigravity\"-specific product name no longer\nfits. Rename the display name to \"Agent Brain Visualizer\" across the UI,\nREADME, AGENTS.md, and the CLI help/version output.\n\nReplace the old raster logo (which had the previous name baked in) with a\nnew scalable SVG logo (neural-network brain in a magnifier + wordmark),\nreferenced from both the app sidebar and the README; remove logo.png.\n\nNote: references to *Antigravity agents* / the antigravity-* flavors are\nleft intact — those name the transcript source, not the app. Internal\nidentifiers (Java package, native image name) are unchanged. The README\nscreenshot still shows the previous title and can be refreshed separately.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\necho \"exit: $?\"",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit commit -q -F - <<'EOF'\nchore: rename app to \"Agent Brain Visualizer\" and refresh logo\n\nThe tool now visualizes sessions from multiple agents (Antigravity, OpenAI\nCodex, Claude Code), so the \"Antigravity\"-specific product name no longer\nfits. Rename the display name to \"Agent Brain Visualizer\" across the UI,\nREADME, AGENTS.md, and the CLI help/version output.\n\nReplace the old raster logo (which had the previous name baked in) with a\nnew scalable SVG logo (neural-network brain in a magnifier + wordmark),\nreferenced from both the app sidebar and the README; remove logo.png.\n\nNote: references to *Antigravity agents* / the antigravity-* flavors are\nleft intact — those name the transcript source, not the app. Internal\nidentifiers (Java package, native image name) are unchanged. The README\nscreenshot still shows the previous title and can be refreshed separately.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\necho \"exit: $?\"",
   "description": "Retry the signed commit"
 }
 ```
@@ -15431,7 +15431,7 @@ tool_use Bash
 id: toolu_01MRwqY2zRZmcKTP9v18ewy8
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit commit -q -F - <<'EOF'\nchore: rename app to \"Agent Brain Visualizer\" and refresh logo\n\nThe tool now visualizes sessions from multiple agents (Antigravity, OpenAI\nCodex, Claude Code), so the \"Antigravity\"-specific product name no longer\nfits. Rename the display name to \"Agent Brain Visualizer\" across the UI,\nREADME, AGENTS.md, and the CLI help/version output.\n\nReplace the old raster logo (which had the previous name baked in) with a\nnew scalable SVG logo (neural-network brain in a magnifier + wordmark),\nreferenced from both the app sidebar and the README; remove logo.png.\n\nNote: references to *Antigravity agents* / the antigravity-* flavors are\nleft intact — those name the transcript source, not the app. Internal\nidentifiers (Java package, native image name) are unchanged. The README\nscreenshot still shows the previous title and can be refreshed separately.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\necho \"commit exit: $?\"\ngit push 2>&1 | tail -3",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit commit -q -F - <<'EOF'\nchore: rename app to \"Agent Brain Visualizer\" and refresh logo\n\nThe tool now visualizes sessions from multiple agents (Antigravity, OpenAI\nCodex, Claude Code), so the \"Antigravity\"-specific product name no longer\nfits. Rename the display name to \"Agent Brain Visualizer\" across the UI,\nREADME, AGENTS.md, and the CLI help/version output.\n\nReplace the old raster logo (which had the previous name baked in) with a\nnew scalable SVG logo (neural-network brain in a magnifier + wordmark),\nreferenced from both the app sidebar and the README; remove logo.png.\n\nNote: references to *Antigravity agents* / the antigravity-* flavors are\nleft intact — those name the transcript source, not the app. Internal\nidentifiers (Java package, native image name) are unchanged. The README\nscreenshot still shows the previous title and can be refreshed separately.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\necho \"commit exit: $?\"\ngit push 2>&1 | tail -3",
   "description": "Retry signed commit and push"
 }
 ```
@@ -15457,7 +15457,7 @@ tool_use Bash
 id: toolu_01WX1dFyraxZxcHnHBTj167r
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh pr create --base main --head chore/rename-to-agent-brain-visualizer \\\n  --title \"chore: rename app to \\\"Agent Brain Visualizer\\\" and refresh logo\" \\\n  --body \"$(cat <<'EOF'\n## What & why\n\nThe tool now visualizes sessions from multiple agents (Antigravity, OpenAI Codex, Claude Code), so the \"Antigravity\"-specific product name no longer fits. Rename the **display name** to **Agent Brain Visualizer**.\n\n- Renamed across the UI (`<title>`, sidebar alt), README (title, prose, alt text), `AGENTS.md`, and the CLI `--help` / `--version` output.\n- Replaced the old raster `logo.png` (which had the previous name baked in) with a new scalable **`logo.svg`** — a neural-network brain in a magnifier + wordmark — referenced from both the app sidebar and the README. Removed the PNGs.\n\n## Deliberately left unchanged\n- References to **Antigravity agents** and the `antigravity-*` flavors — those name the transcript *source*, not the app.\n- Internal identifiers (Java package `…agybrainviz`, native image name `agy-brain-viz`, repo name) — renaming those is out of scope and would churn the build/release.\n- `screenshot.png` still shows the old title; it can be refreshed with a fresh capture separately (offered).\n\n## Verification\nBuild + 99 backend + 44 frontend + 19 e2e all green; new logo renders correctly and is served by […]
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh pr create --base main --head chore/rename-to-agent-brain-visualizer \\\n  --title \"chore: rename app to \\\"Agent Brain Visualizer\\\" and refresh logo\" \\\n  --body \"$(cat <<'EOF'\n## What & why\n\nThe tool now visualizes sessions from multiple agents (Antigravity, OpenAI Codex, Claude Code), so the \"Antigravity\"-specific product name no longer fits. Rename the **display name** to **Agent Brain Visualizer**.\n\n- Renamed across the UI (`<title>`, sidebar alt), README (title, prose, alt text), `AGENTS.md`, and the CLI `--help` / `--version` output.\n- Replaced the old raster `logo.png` (which had the previous name baked in) with a new scalable **`logo.svg`** — a neural-network brain in a magnifier + wordmark — referenced from both the app sidebar and the README. Removed the PNGs.\n\n## Deliberately left unchanged\n- References to **Antigravity agents** and the `antigravity-*` flavors — those name the transcript *source*, not the app.\n- Internal identifiers (Java package `…agybrainviz`, native image name `agy-brain-viz`, repo name) — renaming those is out of scope and would churn the build/release.\n- `screenshot.png` still shows the old title; it can be refreshed with a fresh capture separately (offered).\n\n## Verification\nBuild + 99 backend + 44 frontend + 19 e2e all green; new logo renders correctly and is served by […]
 
 > TOOL
 
@@ -15482,7 +15482,7 @@ tool_use Bash
 id: toolu_01KVNNfbUrNHCPGpEz6NRmBc
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh pr merge 15 --squash --delete-branch 2>&1 | tail -2\ngh pr view 15 --json state --jq '{state}'\ngit checkout main 2>&1 | tail -1\ngit pull --ff-only 2>&1 | tail -2\ngit fetch --prune 2>&1 | tail -1\ngit branch -d chore/rename-to-agent-brain-visualizer 2>&1 || echo \"(gone)\"\ngit log --oneline -2",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh pr merge 15 --squash --delete-branch 2>&1 | tail -2\ngh pr view 15 --json state --jq '{state}'\ngit checkout main 2>&1 | tail -1\ngit pull --ff-only 2>&1 | tail -2\ngit fetch --prune 2>&1 | tail -1\ngit branch -d chore/rename-to-agent-brain-visualizer 2>&1 || echo \"(gone)\"\ngit log --oneline -2",
   "description": "Merge PR #15 and clean up"
 }
 ```
@@ -15535,7 +15535,7 @@ tool_use Bash
 id: toolu_01X6MWdkgsanLz7A8Gu82vv7
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew shadowJar -x test --console=plain 2>&1 | tail -1\ncat > /tmp/shot.mjs <<'JS'\nimport { chromium } from \"@playwright/test\";\nimport { seedFixtures } from \"./e2e/fixtures.mjs\";\nimport { spawn, execSync } from \"node:child_process\";\nimport path from \"node:path\";\n\nconst root = process.cwd();\nconst home = path.join(root, \"build\", \"e2e-home\");\nseedFixtures(home);\nconst jar = execSync(\"ls build/libs/*-all.jar\").toString().trim().split(\"\\n\")[0];\nconst PORT = 8097;\nconst srv = spawn(\n  \"java\",\n  [\"-Duser.home=\" + home, \"-Dmicronaut.server.port=\" + PORT, \"-jar\", jar],\n  { env: { ...process.env, GEMINI_API_KEY: \"dummy\", AI_PROVIDER: \"gemini\" }, stdio: \"ignore\" }\n);\nasync function waitUp() {\n  for (let i = 0; i < 60; i++) {\n    try { const r = await fetch(`http://localhost:${PORT}/api/brain/conversations`); if (r.ok) return; } catch {}\n    await new Promise((r) => setTimeout(r, 1000));\n  }\n  throw new Error(\"server not up\");\n}\nawait waitUp();\nconst browser = await chromium.launch();\nconst page = await browser.newPage({ viewport: { width: 1500, height: 950 }, deviceScaleFactor: 2 });\nawait page.route(/marked.*\\.js(\\?.*)?$/, (route) =>\n  route.fulfill({ path: path.join(root, \"e2e\", \"vendor\", \"marked.min.js\"), contentType: \"application/javascript\" })\n);\nawait page.goto(`http://localhost:${PORT}/`, { waitUntil: \"networkidle\" });\nawait page.click('.conv-item:has-text(\"Fix the parser bug\")');\nawait page.waitForSelector(\"#transcript-container .step-card\");\nawait page.waitForSelector(\"#ai-summary-text\");\nfor (const h of await page.locator(\"#transcript-container .step-header\").all()) { await h.click().catch(() => {}); }\nawait page.waitForTimeout(1000);\nawait page.screenshot({ path: \"screenshot.png\" });\nawait browser.close();\nsrv.kill(\"SIGKILL\");\nconsole.log(\"screenshot written\");\nJS\nlsof -ti tcp:8097 | xargs kill -9 2>/dev/null; sleep 1\nmise exec -- node /tmp/shot.mjs 2>&1 | tail -5\necho \"--- […]
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew shadowJar -x test --console=plain 2>&1 | tail -1\ncat > /tmp/shot.mjs <<'JS'\nimport { chromium } from \"@playwright/test\";\nimport { seedFixtures } from \"./e2e/fixtures.mjs\";\nimport { spawn, execSync } from \"node:child_process\";\nimport path from \"node:path\";\n\nconst root = process.cwd();\nconst home = path.join(root, \"build\", \"e2e-home\");\nseedFixtures(home);\nconst jar = execSync(\"ls build/libs/*-all.jar\").toString().trim().split(\"\\n\")[0];\nconst PORT = 8097;\nconst srv = spawn(\n  \"java\",\n  [\"-Duser.home=\" + home, \"-Dmicronaut.server.port=\" + PORT, \"-jar\", jar],\n  { env: { ...process.env, GEMINI_API_KEY: \"dummy\", AI_PROVIDER: \"gemini\" }, stdio: \"ignore\" }\n);\nasync function waitUp() {\n  for (let i = 0; i < 60; i++) {\n    try { const r = await fetch(`http://localhost:${PORT}/api/brain/conversations`); if (r.ok) return; } catch {}\n    await new Promise((r) => setTimeout(r, 1000));\n  }\n  throw new Error(\"server not up\");\n}\nawait waitUp();\nconst browser = await chromium.launch();\nconst page = await browser.newPage({ viewport: { width: 1500, height: 950 }, deviceScaleFactor: 2 });\nawait page.route(/marked.*\\.js(\\?.*)?$/, (route) =>\n  route.fulfill({ path: path.join(root, \"e2e\", \"vendor\", \"marked.min.js\"), contentType: \"application/javascript\" })\n);\nawait page.goto(`http://localhost:${PORT}/`, { waitUntil: \"networkidle\" });\nawait page.click('.conv-item:has-text(\"Fix the parser bug\")');\nawait page.waitForSelector(\"#transcript-container .step-card\");\nawait page.waitForSelector(\"#ai-summary-text\");\nfor (const h of await page.locator(\"#transcript-container .step-header\").all()) { await h.click().catch(() => {}); }\nawait page.waitForTimeout(1000);\nawait page.screenshot({ path: \"screenshot.png\" });\nawait browser.close();\nsrv.kill(\"SIGKILL\");\nconsole.log(\"screenshot written\");\nJS\nlsof -ti tcp:8097 | xargs kill -9 2>/dev/null; sleep 1\nmise exec -- node /tmp/shot.mjs 2>&1 | tail -5\necho \"--- […]
 
 > TOOL
 
@@ -15562,7 +15562,7 @@ tool_use Bash
 id: toolu_01R8KAwew5ZboGDHfsBxZTYf
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ncp /tmp/shot.mjs ./_capture.mjs\nlsof -ti tcp:8097 | xargs kill -9 2>/dev/null; sleep 1\nmise exec -- node _capture.mjs 2>&1 | tail -6\nrm -f _capture.mjs\necho \"--- size ---\"; ls -la screenshot.png | awk '{print $5, $9}'",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ncp /tmp/shot.mjs ./_capture.mjs\nlsof -ti tcp:8097 | xargs kill -9 2>/dev/null; sleep 1\nmise exec -- node _capture.mjs 2>&1 | tail -6\nrm -f _capture.mjs\necho \"--- size ---\"; ls -la screenshot.png | awk '{print $5, $9}'",
   "description": "Run capture script from repo root",
   "timeout": 300000
 }
@@ -15588,7 +15588,7 @@ tool_use Read
 id: toolu_01Px1qsVCYkx4ezSkc3mchnh
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/screenshot.png"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/screenshot.png"
 }
 ```
 
@@ -15617,7 +15617,7 @@ tool_use Bash
 id: toolu_01WJ9X1ik7BLT47YJpbLTR7U
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit checkout -b chore/refresh-readme-screenshot 2>&1 | tail -1\ngit status --short | grep -vE '\\.claude/|\\.entire'\ngit add screenshot.png\ngit commit -q -F - <<'EOF'\ndocs: refresh README screenshot for the renamed app\n\nRecapture the README screenshot from the running app so it reflects the\nnew \"Agent Brain Visualizer\" name and logo (the previous image still\nshowed the old title). Captured against the synthetic e2e fixtures — no\nreal session content — showing the source dropdown, AI analysis panel,\nstatistics, and transcript rendering.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\necho \"commit exit: $?\"\ngit push -u origin chore/refresh-readme-screenshot 2>&1 | tail -3",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit checkout -b chore/refresh-readme-screenshot 2>&1 | tail -1\ngit status --short | grep -vE '\\.claude/|\\.entire'\ngit add screenshot.png\ngit commit -q -F - <<'EOF'\ndocs: refresh README screenshot for the renamed app\n\nRecapture the README screenshot from the running app so it reflects the\nnew \"Agent Brain Visualizer\" name and logo (the previous image still\nshowed the old title). Captured against the synthetic e2e fixtures — no\nreal session content — showing the source dropdown, AI analysis panel,\nstatistics, and transcript rendering.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\necho \"commit exit: $?\"\ngit push -u origin chore/refresh-readme-screenshot 2>&1 | tail -3",
   "description": "Commit and push the refreshed screenshot"
 }
 ```
@@ -15645,7 +15645,7 @@ tool_use Bash
 id: toolu_01GphKxgN1GJ3fhFBJ9xzxhG
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh pr create --base main --head chore/refresh-readme-screenshot \\\n  --title \"docs: refresh README screenshot for the renamed app\" \\\n  --body \"$(cat <<'EOF'\nRecaptures the README screenshot from the running app so it reflects the new **Agent Brain Visualizer** name and logo (the previous image still showed the old title).\n\nCaptured against the synthetic e2e fixtures (no real session content), showing the source dropdown, the AI analysis panel, the statistics cards, and transcript rendering.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\nEOF\n)\" 2>&1 | tail -2\nsleep 8\nRUN=$(gh run list --branch chore/refresh-readme-screenshot --workflow \"CI\" --limit 1 --json databaseId --jq '.[0].databaseId')\necho \"watching CI run $RUN\"\ngh run watch \"$RUN\" --exit-status --interval 20 >/dev/null 2>&1; echo \"watch exit: $?\"\ngh run view \"$RUN\" --json jobs --jq '.jobs[] | \"\\(.conclusion // .status)\\t\\(.name)\"'",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh pr create --base main --head chore/refresh-readme-screenshot \\\n  --title \"docs: refresh README screenshot for the renamed app\" \\\n  --body \"$(cat <<'EOF'\nRecaptures the README screenshot from the running app so it reflects the new **Agent Brain Visualizer** name and logo (the previous image still showed the old title).\n\nCaptured against the synthetic e2e fixtures (no real session content), showing the source dropdown, the AI analysis panel, the statistics cards, and transcript rendering.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\nEOF\n)\" 2>&1 | tail -2\nsleep 8\nRUN=$(gh run list --branch chore/refresh-readme-screenshot --workflow \"CI\" --limit 1 --json databaseId --jq '.[0].databaseId')\necho \"watching CI run $RUN\"\ngh run watch \"$RUN\" --exit-status --interval 20 >/dev/null 2>&1; echo \"watch exit: $?\"\ngh run view \"$RUN\" --json jobs --jq '.jobs[] | \"\\(.conclusion // .status)\\t\\(.name)\"'",
   "description": "Open PR and watch CI",
   "timeout": 600000
 }
@@ -15674,7 +15674,7 @@ tool_use Bash
 id: toolu_018Y9AKGWp22YnLeogsK8sqr
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh pr merge 16 --squash --delete-branch 2>&1 | tail -2\ngh pr view 16 --json state --jq '{state}'\ngit checkout main 2>&1 | tail -1\ngit pull --ff-only 2>&1 | tail -2\ngit fetch --prune 2>&1 | tail -1\ngit branch -d chore/refresh-readme-screenshot 2>&1 || echo \"(gone)\"\necho \"--- untracked capture script cleaned? ---\"\nls _capture.mjs 2>/dev/null || echo \"(no stray script)\"\ngit log --oneline -3",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh pr merge 16 --squash --delete-branch 2>&1 | tail -2\ngh pr view 16 --json state --jq '{state}'\ngit checkout main 2>&1 | tail -1\ngit pull --ff-only 2>&1 | tail -2\ngit fetch --prune 2>&1 | tail -1\ngit branch -d chore/refresh-readme-screenshot 2>&1 || echo \"(gone)\"\necho \"--- untracked capture script cleaned? ---\"\nls _capture.mjs 2>/dev/null || echo \"(no stray script)\"\ngit log --oneline -3",
   "description": "Merge PR #16 and clean up"
 }
 ```
@@ -15807,7 +15807,7 @@ tool_use Bash
 id: toolu_017WhfeDW4sMjgGFccoABeyH
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit checkout -b feat/fleet-insights 2>&1 | tail -1",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit checkout -b feat/fleet-insights 2>&1 | tail -1",
   "description": "Create feature branch"
 }
 ```
@@ -15830,7 +15830,7 @@ tool_use Write
 id: toolu_01X4EqyeaLSywxRQDdc2JZyq
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/NameCount.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/NameCount.java",
   "content": "/*\n * Copyright 2026 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage io.github.glaforge.agybrainviz;\n\nimport io.micronaut.serde.annotation.Serdeable;\n\n/** A labelled tally used in {@link InsightsReport} (e.g. a tool name and how often it was called). */\n@Serdeable\npublic record NameCount(String name, int count) {}\n"
 }
 ```
@@ -15840,7 +15840,7 @@ id: toolu_01X4EqyeaLSywxRQDdc2JZyq
 tool_result
 id: toolu_01X4EqyeaLSywxRQDdc2JZyq
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/NameCount.java (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/NameCount.java (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -15849,7 +15849,7 @@ tool_use Write
 id: toolu_01KZW2qhp6fjHMWSDHJPANpW
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/InsightsReport.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/InsightsReport.java",
   "content": "/*\n * Copyright 2026 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage io.github.glaforge.agybrainviz;\n\nimport io.micronaut.serde.annotation.Serdeable;\nimport java.util.List;\n\n/**\n * Aggregate, cross-session analytics for one source (flavor): how many sessions, how often they hit\n * errors, the busiest tools, the most common failures, and a rolled-up backlog of the\n * recommendations and issues surfaced by the per-session AI analyses.\n *\n * @param sampledSessions how many sessions were actually scanned (the scan is capped for\n *     responsiveness; see {@code InsightsService})\n */\n@Serdeable\npublic record InsightsReport(\n    String flavor,\n    int sessionCount,\n    int sampledSessions,\n    int analyzedSessions,\n    int toolCallTotal,\n    int sessionsWithErrors,\n    int cleanSessions,\n    double avgToolsPerSession,\n    double avgDurationSeconds,\n    List<NameCount> topTools,\n    List<NameCount> topErrors,\n    List<NameCount> topRecommendations,\n    List<NameCount> topIssues\n) {}\n"
 } […]
 
@@ -15858,7 +15858,7 @@ id: toolu_01KZW2qhp6fjHMWSDHJPANpW
 tool_result
 id: toolu_01KZW2qhp6fjHMWSDHJPANpW
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/InsightsReport.java (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/InsightsReport.java (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -15871,7 +15871,7 @@ tool_use Write
 id: toolu_011pabZws6uaci89E37dhpPk
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/FleetInsights.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/FleetInsights.java",
   "content": "/*\n * Copyright 2026 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage io.github.glaforge.agybrainviz;\n\nimport com.fasterxml.jackson.databind.JsonNode;\nimport java.time.Instant;\nimport java.util.ArrayList;\nimport java.util.Comparator;\nimport java.util.LinkedHashMap;\nimport java.util.List;\nimport java.util.Map;\n\n/**\n * Pure aggregation of many sessions' normalized steps (plus any cached AI analysis) into an\n * {@link InsightsReport}. Works on the shared step schema, so it is source-agnostic and fully\n * unit-testable without any I/O.\n */\nfinal class FleetInsights {\n\n    private FleetInsights() {}\n\n    private static final int TOP_N = 10;\n\n    /** One session's input: its normalized timeline steps and (optionally) its cached analysis JSON. */\n    record Session(List<JsonNode> steps, JsonNode cachedSummary) {}\n\n    static InsightsReport aggregate(String flavor, int totalSessionCount, List<Session> sessions) {\n        Map<String, Integer> toolFreq = new LinkedHashMap<>();\n        Map<String, […]
 
 > TOOL
@@ -15879,7 +15879,7 @@ id: toolu_011pabZws6uaci89E37dhpPk
 tool_result
 id: toolu_011pabZws6uaci89E37dhpPk
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/FleetInsights.java (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/FleetInsights.java (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -15892,7 +15892,7 @@ tool_use Write
 id: toolu_014ibFSFp8ECvnRYpdQdRr2X
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/FleetInsightsTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/FleetInsightsTest.java",
   "content": "/*\n * Copyright 2026 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage io.github.glaforge.agybrainviz;\n\nimport static org.junit.jupiter.api.Assertions.assertEquals;\nimport static org.junit.jupiter.api.Assertions.assertTrue;\n\nimport com.fasterxml.jackson.databind.JsonNode;\nimport com.fasterxml.jackson.databind.ObjectMapper;\nimport com.fasterxml.jackson.databind.node.ObjectNode;\nimport java.util.List;\nimport org.junit.jupiter.api.Test;\n\n/** Unit tests for the source-agnostic fleet aggregator. */\nclass FleetInsightsTest {\n\n    private static final ObjectMapper M = new ObjectMapper();\n\n    private ObjectNode toolStep(String created, String toolName) {\n        ObjectNode step = M.createObjectNode();\n        step.put(\"created_at\", created);\n        step.putArray(\"tool_calls\").addObject().put(\"name\", toolName);\n        return step;\n    }\n\n    private ObjectNode errorStep(String created, String error) {\n        ObjectNode step = M.createObjectNode();\n        step.put(\"created_at\", created);\n        step.put(\"type\", \"ERROR_MESSAGE\");\n        step.put(\"status\", \"ERROR\");\n        step.put(\"error\", error);\n        return step;\n    }\n\n    private JsonNode summary(List<String> recommendations, List<String> issueErrors) {\n        ObjectNode s = M.createObjectNode();\n        var recs = s.putArray(\"recommendations\");\n        recommendations.forEach(recs::add);\n        var issues = s.putArray(\"issues\");\n        issueErrors.forEach(e -> issues.addObject().put(\"error\", e));\n        return s;\n […]
 
 > TOOL
@@ -15900,7 +15900,7 @@ id: toolu_014ibFSFp8ECvnRYpdQdRr2X
 tool_result
 id: toolu_014ibFSFp8ECvnRYpdQdRr2X
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/FleetInsightsTest.java (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/FleetInsightsTest.java (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -15913,7 +15913,7 @@ tool_use Write
 id: toolu_013cVfapGZVSKwzVY31wWxd7
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/InsightsService.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/InsightsService.java",
   "content": "/*\n * Copyright 2026 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage io.github.glaforge.agybrainviz;\n\nimport com.fasterxml.jackson.databind.JsonNode;\nimport com.fasterxml.jackson.databind.ObjectMapper;\nimport jakarta.inject.Inject;\nimport jakarta.inject.Singleton;\nimport java.io.IOException;\nimport java.nio.file.Files;\nimport java.nio.file.Path;\nimport java.nio.file.Paths;\nimport java.util.ArrayList;\nimport java.util.Comparator;\nimport java.util.List;\nimport java.util.Map;\nimport java.util.Optional;\nimport java.util.stream.Stream;\n\n/**\n * Builds the cross-session {@link InsightsReport} for a source by collecting each session's\n * normalized steps (and any cached analysis) and handing them to {@link FleetInsights}. Antigravity\n * is read from {@code ~/.gemini/<flavor>/brain}; other sources go through their {@link SessionSource}.\n *\n * <p>The scan is capped at the most recent {@link #MAX_SESSIONS} sessions so the endpoint stays\n * responsive even for very large session histories; {@link InsightsReport#sessionCount()} still\n * reports the true total.\n */\n@Singleton\npublic class InsightsService {\n\n    static final […]
 
 > TOOL
@@ -15921,7 +15921,7 @@ id: toolu_013cVfapGZVSKwzVY31wWxd7
 tool_result
 id: toolu_013cVfapGZVSKwzVY31wWxd7
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/InsightsService.java (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/InsightsService.java (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -15934,7 +15934,7 @@ tool_use Write
 id: toolu_01SUBWGBANXXPxK8dg49yh8N
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/InsightsController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/InsightsController.java",
   "content": "/*\n * Copyright 2026 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage io.github.glaforge.agybrainviz;\n\nimport io.micronaut.http.annotation.Controller;\nimport io.micronaut.http.annotation.Get;\nimport io.micronaut.http.annotation.QueryValue;\nimport io.micronaut.scheduling.TaskExecutors;\nimport io.micronaut.scheduling.annotation.ExecuteOn;\nimport jakarta.inject.Inject;\nimport java.io.IOException;\nimport java.util.Optional;\n\n/** Serves cross-session \"fleet\" analytics for a source. */\n@Controller(\"/api/insights\")\npublic class InsightsController {\n\n    private final InsightsService insightsService;\n\n    @Inject\n    public InsightsController(InsightsService insightsService) {\n        this.insightsService = insightsService;\n    }\n\n    @ExecuteOn(TaskExecutors.IO)\n    @Get(produces = \"application/json\")\n    public InsightsReport insights(@QueryValue Optional<String> flavor) throws IOException {\n        return insightsService.forFlavor(flavor.orElse(\"antigravity-cli\"));\n    }\n}\n"
 }
 ```
@@ -15944,7 +15944,7 @@ id: toolu_01SUBWGBANXXPxK8dg49yh8N
 tool_result
 id: toolu_01SUBWGBANXXPxK8dg49yh8N
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/InsightsController.java (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/InsightsController.java (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -15957,7 +15957,7 @@ tool_use Write
 id: toolu_01U3M7A7ugrvdFohREVdq5hu
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/InsightsControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/InsightsControllerTest.java",
   "content": "/*\n * Copyright 2026 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage io.github.glaforge.agybrainviz;\n\nimport static org.junit.jupiter.api.Assertions.assertEquals;\nimport static org.junit.jupiter.api.Assertions.assertTrue;\n\nimport com.fasterxml.jackson.databind.JsonNode;\nimport com.fasterxml.jackson.databind.ObjectMapper;\nimport io.micronaut.http.client.HttpClient;\nimport io.micronaut.http.client.annotation.Client;\nimport io.micronaut.test.extensions.junit5.annotation.MicronautTest;\nimport jakarta.inject.Inject;\nimport java.io.IOException;\nimport java.nio.file.Files;\nimport java.nio.file.Path;\nimport java.util.stream.StreamSupport;\nimport org.junit.jupiter.api.AfterAll;\nimport org.junit.jupiter.api.BeforeAll;\nimport org.junit.jupiter.api.Test;\nimport org.junit.jupiter.api.parallel.ResourceLock;\n\n/** Integration tests for the cross-session insights endpoint, over a temporary {@code user.home}. */\n@MicronautTest\n@ResourceLock(\"user.home\")\nclass InsightsControllerTest {\n\n    @Inject\n    @Client(\"/\")\n    HttpClient client;\n\n    private static final ObjectMapper MAPPER = new ObjectMapper();\n    private static String originalUserHome;\n    private static Path tempHome;\n\n    @BeforeAll\n    static void setUpHome() throws IOException {\n        originalUserHome = System.getProperty(\"user.home\");\n        tempHome = Files.createTempDirectory(\"agy-insights-test-home\");\n        System.setProperty(\"user.home\", tempHome.toString());\n    }\n\n    @AfterAll\n    static void restoreHome() {\n        if (originalUserHome != null) System.setProperty(\"user.home\", originalUserHome);\n    }\n\n    private void writeAntigravity(String id, String transcript, String summaryJson)\n        throws IOException {\n        Path […]
 
 > TOOL
@@ -15965,7 +15965,7 @@ id: toolu_01U3M7A7ugrvdFohREVdq5hu
 tool_result
 id: toolu_01U3M7A7ugrvdFohREVdq5hu
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/InsightsControllerTest.java (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/InsightsControllerTest.java (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -15978,7 +15978,7 @@ tool_use Bash
 id: toolu_01MtDULuHA99FLU4byPY2vY7
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew test --console=plain 2>&1 | tail -20\ntotal=0; for f in build/test-results/test/*.xml; do n=$(grep -o 'tests=\"[0-9]*\"' \"$f\" | head -1 | sed 's/tests=\"//;s/\"//'); total=$((total+n)); done; echo \"TOTAL backend: $total\"",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew test --console=plain 2>&1 | tail -20\ntotal=0; for f in build/test-results/test/*.xml; do n=$(grep -o 'tests=\"[0-9]*\"' \"$f\" | head -1 | sed 's/tests=\"//;s/\"//'); total=$((total+n)); done; echo \"TOTAL backend: $total\"",
   "description": "Run backend tests with insights",
   "timeout": 600000
 }
@@ -15996,13 +15996,13 @@ InsightsControllerTest > returnsEmptyReportForUnknownFlavor() FAILED
 
 104 tests completed, 1 failed
 
-[Incubating] Problems report is available at: file:///Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/build/reports/problems/problems-report.html
+[Incubating] Problems report is available at: file:///home/<USER>/Developer/scottdensmore/agent-brain-visualizer/build/reports/problems/problems-report.html
 
 FAILURE: Build failed with an exception.
 
 * What went wrong:
 Execution failed for task ':test'.
-> There were failing tests. See the report at: file:///Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/build/reports/tests/test/index.html
+> There were failing tests. See the report at: file:///home/<USER>/Developer/scottdensmore/agent-brain-visualizer/build/reports/tests/test/index.html
 
 * Try:
 > Run with --scan to get full insights from a Build Scan (powered by Develocity).
@@ -16022,7 +16022,7 @@ tool_use Read
 id: toolu_013cYsR21ySNALF6Rww5K3HQ
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/InsightsControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/InsightsControllerTest.java",
   "offset": 116,
   "limit": 10
 }
@@ -16055,7 +16055,7 @@ id: toolu_01LfkF16iHv5p51XaNqC4PV9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/InsightsControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/InsightsControllerTest.java",
   "old_string": "        JsonNode r = get(\"/api/insights?flavor=antigravity-ide\");\n        assertEquals(0, r.get(\"sessionCount\").asInt());\n        assertEquals(0, r.get(\"sampledSessions\").asInt());\n        assertTrue(r.get(\"topTools\").isEmpty());\n    }",
   "new_string": "        JsonNode r = get(\"/api/insights?flavor=antigravity-ide\");\n        assertEquals(0, r.get(\"sessionCount\").asInt());\n        assertEquals(0, r.get(\"sampledSessions\").asInt());\n        // Empty collections are omitted by serde; absent means \"no tools\".\n        JsonNode topTools = r.get(\"topTools\");\n        assertTrue(topTools == null || topTools.isEmpty());\n    }"
 }
@@ -16066,7 +16066,7 @@ id: toolu_01LfkF16iHv5p51XaNqC4PV9
 tool_result
 id: toolu_01LfkF16iHv5p51XaNqC4PV9
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/InsightsControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/InsightsControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -16075,7 +16075,7 @@ tool_use Bash
 id: toolu_019BNpa4vF5jzZCVpGv1CQL1
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew test --console=plain 2>&1 | tail -6\ntotal=0; for f in build/test-results/test/*.xml; do n=$(grep -o 'tests=\"[0-9]*\"' \"$f\" | head -1 | sed 's/tests=\"//;s/\"//'); total=$((total+n)); done; echo \"TOTAL backend: $total\"",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew test --console=plain 2>&1 | tail -6\ntotal=0; for f in build/test-results/test/*.xml; do n=$(grep -o 'tests=\"[0-9]*\"' \"$f\" | head -1 | sed 's/tests=\"//;s/\"//'); total=$((total+n)); done; echo \"TOTAL backend: $total\"",
   "description": "Re-run backend tests",
   "timeout": 600000
 }
@@ -16105,7 +16105,7 @@ tool_use Write
 id: toolu_01GMNNXWLdE1NsrRiiLPn2y5
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/modules/insights.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/modules/insights.js",
   "content": "/*\n * Copyright 2026 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\nimport { escapeHtml } from \"./utils.js\";\n\nconst FLAVOR_LABELS = {\n  \"antigravity-cli\": \"Antigravity CLI\",\n  \"antigravity-ide\": \"Antigravity IDE\",\n  antigravity: \"Antigravity Agent\",\n  codex: \"OpenAI Codex\",\n  \"claude-code\": \"Claude Code\",\n};\n\nfunction formatDuration(totalSeconds) {\n  const secs = Math.round(totalSeconds || 0);\n  const mins = Math.floor(secs / 60);\n  const hrs = Math.floor(mins / 60);\n  if (hrs > 0) return `${hrs}h ${mins % 60}m`;\n  if (mins > 0) return `${mins}m ${secs % 60}s`;\n  return `${secs}s`;\n}\n\nfunction statCard(label, value, sub) {\n  return `<div class=\"stat-card\">\n      <div class=\"stat-label\">${label}</div>\n      <div class=\"stat-value\">${escapeHtml(String(value))}</div>\n      <div class=\"stat-sub\">${escapeHtml(sub)}</div>\n    </div>`;\n}\n\nfunction barList(items, color, emptyText) {\n  if (!items || items.length === 0) {\n    return `<div class=\"stat-sub\">${escapeHtml(emptyText)}</div>`;\n  }\n  const max […]
 
 > TOOL
@@ -16113,7 +16113,7 @@ id: toolu_01GMNNXWLdE1NsrRiiLPn2y5
 tool_result
 id: toolu_01GMNNXWLdE1NsrRiiLPn2y5
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/modules/insights.js (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/modules/insights.js (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -16126,7 +16126,7 @@ tool_use Read
 id: toolu_016k1L8vCQEsA1MBVBDBSSx4
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/index.html",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/index.html",
   "offset": 54,
   "limit": 20
 }
@@ -16166,7 +16166,7 @@ id: toolu_011dwAXfspRNQjG6mD8hzWA4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/index.html",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/index.html",
   "old_string": "                        <div class=\"header-info\">\n                            <h2 id=\"current-session-title\">Select a session</h2>\n                            <div id=\"current-session-id\" class=\"session-id-subtitle\"></div>\n                        </div>\n                    </div>",
   "new_string": "                        <div class=\"header-info\">\n                            <h2 id=\"current-session-title\">Select a session</h2>\n                            <div id=\"current-session-id\" class=\"session-id-subtitle\"></div>\n                        </div>\n                    </div>\n                    <button id=\"insights-btn\" class=\"btn\" style=\"padding:6px 12px; font-size:0.85rem; white-space:nowrap; background:rgba(30,41,59,0.5); border:1px solid var(--border-color); color:var(--text-primary); cursor:pointer; border-radius:8px;\" title=\"Cross-session analytics for the selected source\">📊 Insights</button>"
 }
@@ -16177,7 +16177,7 @@ id: toolu_011dwAXfspRNQjG6mD8hzWA4
 tool_result
 id: toolu_011dwAXfspRNQjG6mD8hzWA4
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/index.html has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/index.html has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -16191,7 +16191,7 @@ id: toolu_01SXKpJyN8bE3pafivN5EiRE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/app.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/app.js",
   "old_string": "import { triggerAnalysis } from \"./modules/analysis.js\";\nimport { initUI } from \"./modules/ui.js\";",
   "new_string": "import { triggerAnalysis } from \"./modules/analysis.js\";\nimport { initUI } from \"./modules/ui.js\";\nimport { showInsights } from \"./modules/insights.js\";"
 }
@@ -16202,7 +16202,7 @@ id: toolu_01SXKpJyN8bE3pafivN5EiRE
 tool_result
 id: toolu_01SXKpJyN8bE3pafivN5EiRE
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/app.js has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/app.js has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -16212,7 +16212,7 @@ id: toolu_01JBxCXDfRxnejMr7EP6wp2d
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/app.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/app.js",
   "old_string": "  const refreshBtn = document.getElementById(\"refresh-conversations-btn\");",
   "new_string": "  const insightsBtn = document.getElementById(\"insights-btn\");\n  if (insightsBtn) {\n    insightsBtn.addEventListener(\"click\", () => {\n      showInsights(document.getElementById(\"flavor-select\").value);\n    });\n  }\n\n  const refreshBtn = document.getElementById(\"refresh-conversations-btn\");"
 }
@@ -16223,7 +16223,7 @@ id: toolu_01JBxCXDfRxnejMr7EP6wp2d
 tool_result
 id: toolu_01JBxCXDfRxnejMr7EP6wp2d
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/app.js has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/app.js has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -16236,7 +16236,7 @@ tool_use Write
 id: toolu_019CznJMJdcSH59jzNNmFqMe
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/js/insights.test.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/js/insights.test.js",
   "content": "import { afterEach, beforeEach, describe, expect, it, vi } from \"vitest\";\nimport { renderInsights, showInsights } from \"../../main/resources/public/modules/insights.js\";\n\nconst REPORT = {\n  flavor: \"codex\",\n  sessionCount: 10,\n  sampledSessions: 10,\n  analyzedSessions: 3,\n  toolCallTotal: 42,\n  sessionsWithErrors: 4,\n  cleanSessions: 6,\n  avgToolsPerSession: 4.2,\n  avgDurationSeconds: 150,\n  topTools: [\n    { name: \"Bash\", count: 20 },\n    { name: \"Read\", count: 10 },\n  ],\n  topErrors: [{ name: \"NullPointerException at X\", count: 3 }],\n  topRecommendations: [{ name: \"Add a lint rule\", count: 2 }],\n  topIssues: [{ name: \"Flaky test\", count: 1 }],\n};\n\nbeforeEach(() => {\n  document.body.innerHTML = '<div id=\"transcript-container\"></div>';\n});\n\nafterEach(() => {\n  vi.restoreAllMocks();\n});\n\ndescribe(\"renderInsights\", () => {\n  it(\"renders overview metrics, charts, and the backlog\", () => {\n    const c = document.getElementById(\"transcript-container\");\n    renderInsights(REPORT, c);\n    const html = c.innerHTML;\n    expect(html).toContain(\"Fleet Insights\");\n    expect(html).toContain(\"OpenAI Codex\");\n    expect(html).toContain(\"42\"); // tool calls total\n    expect(html).toContain(\"Bash\");\n    expect(html).toContain(\"NullPointerException at X\");\n    expect(html).toContain(\"Add a lint rule\");\n    expect(html).toContain(\"Flaky test\");\n    expect(html).toContain(\"2m 30s\"); // avg duration\n  });\n\n  it(\"shows placeholders for an empty report without crashing\", () => {\n    const c = document.getElementById(\"transcript-container\");\n    renderInsights({ flavor: \"codex\", sessionCount: 0, sampledSessions: 0 }, c);\n    const html = c.innerHTML;\n    expect(html).toContain(\"No tool calls recorded\");\n    expect(html).toContain(\"No errors detected\");\n    expect(html).toContain(\"No recommendations yet\");\n  });\n\n  it(\"escapes dynamic names\", () => {\n    const c = document.getElementById(\"transcript-container\");\n    renderInsights(\n      { ...REPORT, topErrors: [{ […]
 
 > TOOL
@@ -16244,7 +16244,7 @@ id: toolu_019CznJMJdcSH59jzNNmFqMe
 tool_result
 id: toolu_019CznJMJdcSH59jzNNmFqMe
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/js/insights.test.js (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/js/insights.test.js (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -16257,7 +16257,7 @@ tool_use Write
 id: toolu_01SX2rhJ7mRZgT6wCvu255JR
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/insights.spec.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/insights.spec.js",
   "content": "import { test, expect } from \"./test-base.js\";\n\ntest.describe(\"Fleet Insights\", () => {\n  test(\"the Insights button renders cross-session analytics for the source\", async ({ page }) => {\n    await page.goto(\"/\");\n    await page.click(\"#insights-btn\");\n\n    const tc = page.locator(\"#transcript-container\");\n    await expect(tc).toContainText(\"Fleet Insights\");\n    await expect(tc).toContainText(\"Antigravity CLI\");\n    // Overview cards: sessions / outcomes / tool calls / avg duration.\n    await expect(tc.locator(\".stat-card\")).toHaveCount(4);\n    // Tool usage and the recommendation backlog (from the seeded cached analysis).\n    await expect(tc).toContainText(\"edit_file\");\n    await expect(tc).toContainText(\"Add a lint rule\");\n  });\n\n  test(\"insights follow the selected source\", async ({ page }) => {\n    await page.goto(\"/\");\n    await page.selectOption(\"#flavor-select\", \"claude-code\");\n    await page.click(\"#insights-btn\");\n    await expect(page.locator(\"#transcript-container\")).toContainText(\"Claude Code\");\n  });\n});\n"
 }
 ```
@@ -16267,7 +16267,7 @@ id: toolu_01SX2rhJ7mRZgT6wCvu255JR
 tool_result
 id: toolu_01SX2rhJ7mRZgT6wCvu255JR
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/insights.spec.js (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/insights.spec.js (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -16280,7 +16280,7 @@ tool_use Bash
 id: toolu_017HGifQaRhorFXzK6wTmtnG
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\necho \"=== spotlessApply + build ===\"\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -5\necho \"=== frontend unit ===\"\nnpm test 2>&1 | tail -4\necho \"=== rebuild jar + e2e ===\"\nmise exec -- ./gradlew shadowJar -x test --console=plain 2>&1 | tail -1\nlsof -ti tcp:8099 | xargs kill -9 2>/dev/null; sleep 1\nmise exec -- npx playwright test 2>&1 | tail -8",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\necho \"=== spotlessApply + build ===\"\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -5\necho \"=== frontend unit ===\"\nnpm test 2>&1 | tail -4\necho \"=== rebuild jar + e2e ===\"\nmise exec -- ./gradlew shadowJar -x test --console=plain 2>&1 | tail -1\nlsof -ti tcp:8099 | xargs kill -9 2>/dev/null; sleep 1\nmise exec -- npx playwright test 2>&1 | tail -8",
   "description": "Full verification of Fleet Insights",
   "timeout": 600000
 }
@@ -16324,7 +16324,7 @@ tool_use Bash
 id: toolu_01LFRqY5aMSQWPUB9Wm7Sv1X
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nnpx vitest run src/test/js/insights.test.js 2>&1 | grep -A 15 -iE 'FAIL|×|AssertionError|expected' | head -40",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nnpx vitest run src/test/js/insights.test.js 2>&1 | grep -A 15 -iE 'FAIL|×|AssertionError|expected' | head -40",
   "description": "Show the failing insights frontend test",
   "timeout": 120000
 }
@@ -16378,7 +16378,7 @@ id: toolu_01GZMUdizrayLmL2kzTqXq9c
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/js/insights.test.js",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/js/insights.test.js",
   "old_string": "  it(\"escapes dynamic names\", () => {\n    const c = document.getElementById(\"transcript-container\");\n    renderInsights(\n      { ...REPORT, topErrors: [{ name: \"<script>x</script>\", count: 1 }] },\n      c\n    );\n    expect(c.innerHTML).toContain(\"&lt;script&gt;\");\n    expect(c.innerHTML).not.toContain(\"<script>x</script>\");\n  });",
   "new_string": "  it(\"escapes dynamic names so markup can't be injected\", () => {\n    const c = document.getElementById(\"transcript-container\");\n    renderInsights(\n      { ...REPORT, topErrors: [{ name: \"<script>x</script>\", count: 1 }] },\n      c\n    );\n    // No element is created from the malicious name; it stays inert text.\n    expect(c.querySelector(\"script\")).toBeNull();\n    expect(c.innerHTML).toContain(\"&lt;script&gt;\");\n  });"
 }
@@ -16389,7 +16389,7 @@ id: toolu_01GZMUdizrayLmL2kzTqXq9c
 tool_result
 id: toolu_01GZMUdizrayLmL2kzTqXq9c
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/js/insights.test.js has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/js/insights.test.js has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -16398,7 +16398,7 @@ tool_use Bash
 id: toolu_019D3W8rAAn5ixJ3CsEkn8L5
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nnpm test 2>&1 | tail -4",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nnpm test 2>&1 | tail -4",
   "description": "Re-run frontend unit tests",
   "timeout": 120000
 }
@@ -16425,7 +16425,7 @@ id: toolu_01YUvNQyFstkHSN4J8a3Nabj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/README.md",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/README.md",
   "old_string": "*   **Search & Filtering**: Includes a text search input to find sessions, and a dropdown to filter sessions by source/agent type (Antigravity CLI, IDE, Agent, OpenAI Codex, or Claude Code).",
   "new_string": "*   **Fleet Insights**: A **📊 Insights** button opens a cross-session dashboard for the selected source — session/outcome counts, busiest tools, the most common errors, average tool calls and duration, and a rolled-up backlog of the recommendations and issues surfaced by the per-session AI analyses.\n*   **Search & Filtering**: Includes a text search input to find sessions, and a dropdown to filter sessions by source/agent type (Antigravity CLI, IDE, Agent, OpenAI Codex, or Claude Code)."
 }
@@ -16436,7 +16436,7 @@ id: toolu_01YUvNQyFstkHSN4J8a3Nabj
 tool_result
 id: toolu_01YUvNQyFstkHSN4J8a3Nabj
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -16445,7 +16445,7 @@ tool_use Bash
 id: toolu_01K84phcBRojERjzEyWrxAJD
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew spotlessApply --console=plain 2>&1 | tail -2\ngit add -A\ngit status --short | grep -vE '\\.claude/|\\.entire'",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew spotlessApply --console=plain 2>&1 | tail -2\ngit add -A\ngit status --short | grep -vE '\\.claude/|\\.entire'",
   "description": "Format and stage Fleet Insights",
   "timeout": 300000
 }
@@ -16480,7 +16480,7 @@ id: toolu_019Ut3XZuFnVTnvJw54BVcQH
 ```json
 {
   "description": "Review Fleet Insights feature",
-  "prompt": "You are a senior code reviewer. Review the STAGED git diff in /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer (run `git diff --cached`). This adds a \"Fleet Insights\" feature: cross-session aggregate analytics for a transcript source.\n\nArchitecture:\n- `FleetInsights` (pure): aggregates many sessions' normalized steps (+ optional cached AI analysis JSON) into an `InsightsReport` (tool frequency, error frequency, outcomes, avg tools/duration, and rolled-up recommendations/issues from cached analyses). Source-agnostic, unit-tested.\n- `InsightsService` (@Singleton): gathers per-flavor sessions — Antigravity from `~/.gemini/<flavor>/brain`, other sources via the `SessionSource` registry — capped at MAX_SESSIONS=150 most-recent, then calls FleetInsights.\n- `InsightsController`: `GET /api/insights?flavor=` → InsightsReport (@Serdeable records NameCount/InsightsReport).\n- Frontend: `insights.js` (renderInsights/showInsights), a \"📊 Insights\" header button wired in app.js, rendered into the transcript container.\n- Tests: FleetInsightsTest (pure), InsightsControllerTest (integration), insights.test.js (vitest), e2e insights.spec.js. 104 backend + 49 frontend + 21 e2e all green.\n\nFocus on:\n1. **Correctness** of aggregation: tool counting (steps with tool_calls arrays — Antigravity packs multiple tools per step, Codex/Claude one per step), error detection (mirrors frontend isErrorStep), outcome counts (cleanSessions = sampled - withErrors), duration (first/last created_at), recommendation/issue rollup from cached summaries. Any miscount or NPE risk on missing fields?\n2. **InsightsService**: correctness of the Antigravity vs SessionSource split, the MAX_SESSIONS cap + […]
+  "prompt": "You are a senior code reviewer. Review the STAGED git diff in /home/<USER>/Developer/scottdensmore/agent-brain-visualizer (run `git diff --cached`). This adds a \"Fleet Insights\" feature: cross-session aggregate analytics for a transcript source.\n\nArchitecture:\n- `FleetInsights` (pure): aggregates many sessions' normalized steps (+ optional cached AI analysis JSON) into an `InsightsReport` (tool frequency, error frequency, outcomes, avg tools/duration, and rolled-up recommendations/issues from cached analyses). Source-agnostic, unit-tested.\n- `InsightsService` (@Singleton): gathers per-flavor sessions — Antigravity from `~/.gemini/<flavor>/brain`, other sources via the `SessionSource` registry — capped at MAX_SESSIONS=150 most-recent, then calls FleetInsights.\n- `InsightsController`: `GET /api/insights?flavor=` → InsightsReport (@Serdeable records NameCount/InsightsReport).\n- Frontend: `insights.js` (renderInsights/showInsights), a \"📊 Insights\" header button wired in app.js, rendered into the transcript container.\n- Tests: FleetInsightsTest (pure), InsightsControllerTest (integration), insights.test.js (vitest), e2e insights.spec.js. 104 backend + 49 frontend + 21 e2e all green.\n\nFocus on:\n1. **Correctness** of aggregation: tool counting (steps with tool_calls arrays — Antigravity packs multiple tools per step, Codex/Claude one per step), error detection (mirrors frontend isErrorStep), outcome counts (cleanSessions = sampled - withErrors), duration (first/last created_at), recommendation/issue rollup from cached summaries. Any miscount or NPE risk on missing fields?\n2. **InsightsService**: correctness of the Antigravity vs SessionSource split, the MAX_SESSIONS cap + […]
 
 > TOOL
 
@@ -16519,7 +16519,7 @@ id: toolu_01YUUPQDeCC5BkDCfgMqDSJj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/InsightsService.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/InsightsService.java",
   "old_string": "        List<FleetInsights.Session> sessions = new ArrayList<>();\n        for (Path dir : dirs) {\n            if (sessions.size() >= MAX_SESSIONS) break;\n            Path logs = dir.resolve(\".system_generated\").resolve(\"logs\");\n            List<JsonNode> steps = parseLines(Files.readAllLines(transcriptOf(dir)));\n            JsonNode summary = readJson(logs.resolve(\"summary.json\"));\n            sessions.add(new FleetInsights.Session(steps, summary));\n        }\n        return FleetInsights.aggregate(flavor, dirs.size(), sessions);\n    }\n\n    private Path transcriptOf(Path sessionDir) {\n        Path t = sessionDir\n            .resolve(\".system_generated\")\n            .resolve(\"logs\")\n            .resolve(\"transcript.jsonl\");\n        try {\n            return (Files.exists(t) && Files.size(t) > 0) ? t : null;\n        } catch (IOException e) {\n            return null;\n        }\n    }\n\n    private long lastModified(Path sessionDir) {\n        try {\n            return Files.getLastModifiedTime(transcriptOf(sessionDir)).toMillis();\n        } catch (Exception e) {\n            return 0L;\n        }\n    }",
   "new_string": "        List<FleetInsights.Session> sessions = new ArrayList<>();\n        for (Path dir : dirs) {\n            if (sessions.size() >= MAX_SESSIONS) break;\n            Path transcript = readableTranscript(dir);\n            if (transcript == null) continue;\n            try {\n                List<JsonNode> steps = parseLines(Files.readAllLines(transcript));\n                Path logs = dir.resolve(\".system_generated\").resolve(\"logs\");\n                JsonNode summary = readJson(logs.resolve(\"summary.json\"));\n                sessions.add(new FleetInsights.Session(steps, summary));\n            } catch (IOException e) {\n                // A session may be deleted/rotated mid-scan; skip it rather than failing the report.\n            }\n        }\n        return FleetInsights.aggregate(flavor, dirs.size(), sessions);\n    }\n\n    // A session is listed (and sorted) by its transcript.jsonl, mirroring BrainController.list.\n    private Path transcriptOf(Path sessionDir) {\n        return nonEmpty(\n            sessionDir.resolve(\".system_generated\").resolve(\"logs\").resolve(\"transcript.jsonl\")\n        );\n    }\n\n    // For reading, prefer transcript_full.jsonl when present, mirroring […]
 
@@ -16528,7 +16528,7 @@ id: toolu_01YUUPQDeCC5BkDCfgMqDSJj
 tool_result
 id: toolu_01YUUPQDeCC5BkDCfgMqDSJj
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/InsightsService.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/InsightsService.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -16538,7 +16538,7 @@ id: toolu_01J8hkyjhU8Dn4xB4D4T7JW5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/FleetInsights.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/FleetInsights.java",
   "old_string": "import com.fasterxml.jackson.databind.JsonNode;\nimport java.time.Instant;\nimport java.util.ArrayList;\nimport java.util.Comparator;\nimport java.util.LinkedHashMap;\nimport java.util.List;\nimport java.util.Map;",
   "new_string": "import com.fasterxml.jackson.databind.JsonNode;\nimport java.time.Instant;\nimport java.util.ArrayList;\nimport java.util.LinkedHashMap;\nimport java.util.List;\nimport java.util.Map;"
 }
@@ -16549,7 +16549,7 @@ id: toolu_01J8hkyjhU8Dn4xB4D4T7JW5
 tool_result
 id: toolu_01J8hkyjhU8Dn4xB4D4T7JW5
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/FleetInsights.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/FleetInsights.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -16559,7 +16559,7 @@ id: toolu_01Qf5DUuTnAbAHdMgdyn1GNv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/FleetInsights.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/FleetInsights.java",
   "old_string": "            totalToolCalls += sessionTools;\n            if (sessionHasError) sessionsWithErrors++;\n            if (maxTs > minTs) durations.add((maxTs - minTs) / 1000.0);",
   "new_string": "            totalToolCalls += sessionTools;\n            if (sessionHasError) sessionsWithErrors++;\n            // Zero-span sessions (single step / identical timestamps) are excluded from the average\n            // rather than counted as 0s, so trivial sessions don't drag the mean toward zero.\n            if (maxTs > minTs) durations.add((maxTs - minTs) / 1000.0);"
 }
@@ -16570,7 +16570,7 @@ id: toolu_01Qf5DUuTnAbAHdMgdyn1GNv
 tool_result
 id: toolu_01Qf5DUuTnAbAHdMgdyn1GNv
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/FleetInsights.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/FleetInsights.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -16583,7 +16583,7 @@ tool_use Write
 id: toolu_019SuAsufADQTAVN45fWr1Q8
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/InsightsServiceTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/InsightsServiceTest.java",
   "content": "/*\n * Copyright 2026 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage io.github.glaforge.agybrainviz;\n\nimport static org.junit.jupiter.api.Assertions.assertEquals;\nimport static org.junit.jupiter.api.Assertions.assertTrue;\n\nimport java.io.IOException;\nimport java.util.ArrayList;\nimport java.util.HashMap;\nimport java.util.LinkedHashMap;\nimport java.util.List;\nimport java.util.Map;\nimport java.util.Optional;\nimport org.junit.jupiter.api.Test;\n\n/** Tests the {@link SessionSource}-backed path (Codex/Claude Code) of {@link InsightsService}. */\nclass InsightsServiceTest {\n\n    /** Minimal in-memory SessionSource for the \"fake\" flavor. */\n    private static class FakeSource implements SessionSource {\n\n        private final Map<String, String> transcripts = new LinkedHashMap<>();\n        private final Map<String, String> summaries = new HashMap<>();\n\n        void add(String id, String transcriptJson, String summaryJson) {\n            transcripts.put(id, transcriptJson);\n            if (summaryJson != null) summaries.put(id, summaryJson);\n        }\n\n        @Override\n        public boolean handles(String flavor) {\n            return \"fake\".equals(flavor);\n        }\n\n        @Override\n        public List<Map<String, String>> listConversations() {\n            List<Map<String, String>> list = […]
 
 > TOOL
@@ -16591,7 +16591,7 @@ id: toolu_019SuAsufADQTAVN45fWr1Q8
 tool_result
 id: toolu_019SuAsufADQTAVN45fWr1Q8
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/InsightsServiceTest.java (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/InsightsServiceTest.java (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -16604,7 +16604,7 @@ tool_use Bash
 id: toolu_01Suo1dZHcp9t4QLmbgsu9ZZ
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -5\ntotal=0; for f in build/test-results/test/*.xml; do n=$(grep -o 'tests=\"[0-9]*\"' \"$f\" | head -1 | sed 's/tests=\"//;s/\"//'); total=$((total+n)); done; echo \"TOTAL backend: $total\"\necho \"=== rebuild jar + e2e ===\"\nmise exec -- ./gradlew shadowJar -x test --console=plain 2>&1 | tail -1\nlsof -ti tcp:8099 | xargs kill -9 2>/dev/null; sleep 1\nmise exec -- npx playwright test 2>&1 | tail -4",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\nunset JAVA_HOME\nmise exec -- ./gradlew spotlessApply build --console=plain 2>&1 | tail -5\ntotal=0; for f in build/test-results/test/*.xml; do n=$(grep -o 'tests=\"[0-9]*\"' \"$f\" | head -1 | sed 's/tests=\"//;s/\"//'); total=$((total+n)); done; echo \"TOTAL backend: $total\"\necho \"=== rebuild jar + e2e ===\"\nmise exec -- ./gradlew shadowJar -x test --console=plain 2>&1 | tail -1\nlsof -ti tcp:8099 | xargs kill -9 2>/dev/null; sleep 1\nmise exec -- npx playwright test 2>&1 | tail -4",
   "description": "Re-verify after review fixes",
   "timeout": 600000
 }
@@ -16639,7 +16639,7 @@ tool_use Bash
 id: toolu_01JWrWTtBERbR2NeBcgWokZ4
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngit add -A\ngit status --short | grep -vE '\\.claude/|\\.entire'\ngit commit -q -F - <<'EOF'\nfeat: cross-session Fleet Insights dashboard\n\nAdd a \"📊 Insights\" view that aggregates analytics across all of a source's\nsessions — turning the per-session viewer into a fleet-level analysis tool.\n\nBackend:\n- FleetInsights (pure, source-agnostic): aggregates many sessions' normalized\n  steps + cached AI analyses into an InsightsReport — tool-call frequency,\n  most common errors, outcomes (clean vs. errored), avg tools/duration, and a\n  rolled-up backlog of recommendations and issues from the per-session\n  analyses.\n- InsightsService: gathers a flavor's sessions (Antigravity from\n  ~/.gemini/<flavor>/brain, others via the SessionSource registry), capped at\n  the 150 most-recent for responsiveness while still reporting the true total.\n  Reads transcript_full.jsonl when present (matching the timeline) and skips\n  sessions that vanish mid-scan.\n- GET /api/insights?flavor= returns the report (InsightsController).\n\nFrontend:\n- insights.js renders an overview (sessions/outcomes/tool calls/avg duration),\n  top-tools and error bar charts, and the recommendation/issue backlog. A new\n  header button loads it for the selected source.\n\nTests: FleetInsightsTest, InsightsService (source path + cap), InsightsController\nintegration, insights.test.js, and an e2e spec. 106 backend + 49 frontend +\n21 e2e, all green.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\necho \"exit: $?\"\ngit push -u origin feat/fleet-insights 2>&1 | tail -3",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngit add -A\ngit status --short | grep -vE '\\.claude/|\\.entire'\ngit commit -q -F - <<'EOF'\nfeat: cross-session Fleet Insights dashboard\n\nAdd a \"📊 Insights\" view that aggregates analytics across all of a source's\nsessions — turning the per-session viewer into a fleet-level analysis tool.\n\nBackend:\n- FleetInsights (pure, source-agnostic): aggregates many sessions' normalized\n  steps + cached AI analyses into an InsightsReport — tool-call frequency,\n  most common errors, outcomes (clean vs. errored), avg tools/duration, and a\n  rolled-up backlog of recommendations and issues from the per-session\n  analyses.\n- InsightsService: gathers a flavor's sessions (Antigravity from\n  ~/.gemini/<flavor>/brain, others via the SessionSource registry), capped at\n  the 150 most-recent for responsiveness while still reporting the true total.\n  Reads transcript_full.jsonl when present (matching the timeline) and skips\n  sessions that vanish mid-scan.\n- GET /api/insights?flavor= returns the report (InsightsController).\n\nFrontend:\n- insights.js renders an overview (sessions/outcomes/tool calls/avg duration),\n  top-tools and error bar charts, and the recommendation/issue backlog. A new\n  header button loads it for the selected source.\n\nTests: FleetInsightsTest, InsightsService (source path + cap), InsightsController\nintegration, insights.test.js, and an e2e spec. 106 backend + 49 frontend +\n21 e2e, all green.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\necho \"exit: $?\"\ngit push -u origin feat/fleet-insights 2>&1 | tail -3",
   "description": "Commit and push Fleet Insights"
 } […]
 
@@ -16674,7 +16674,7 @@ tool_use Bash
 id: toolu_01Cs7VnMXxN5p3rSdXcdrBB2
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh pr create --base main --head feat/fleet-insights \\\n  --title \"feat: cross-session Fleet Insights dashboard\" \\\n  --body \"$(cat <<'EOF'\n## What & why\n\nThe first step in turning this from a *viewer* into an *improvement engine*: a **📊 Insights** view that aggregates analytics **across all of a source's sessions**, instead of one at a time.\n\n## What it shows\n- **Overview**: total sessions, clean vs. errored outcomes, total tool calls, avg tools/session, avg duration.\n- **Top tools** and **most common errors** (bar charts).\n- **Recommendation backlog** + **recurring issues** — rolled up and ranked from the per-session AI analyses (the `recommendations`/`issues` the analyzer already produces). This is effectively a prioritized, data-driven list of ways to improve the code, tooling, and `AGENTS.md`.\n\n## Design\n- **`FleetInsights`** (pure, source-agnostic): aggregates many sessions' normalized steps + cached analyses → `InsightsReport`. Fully unit-tested, no I/O.\n- **`InsightsService`**: gathers a flavor's sessions — Antigravity from `~/.gemini/<flavor>/brain`, other sources via the `SessionSource` registry — capped at the **150 most-recent** for responsiveness while still reporting the true total. Reads `transcript_full.jsonl` when present (matching the timeline) and skips sessions that disappear mid-scan.\n- **`GET /api/insights?flavor=`** → `InsightsReport`.\n- **`insights.js`** renders the dashboard into the main area; a header button loads it for […]
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh pr create --base main --head feat/fleet-insights \\\n  --title \"feat: cross-session Fleet Insights dashboard\" \\\n  --body \"$(cat <<'EOF'\n## What & why\n\nThe first step in turning this from a *viewer* into an *improvement engine*: a **📊 Insights** view that aggregates analytics **across all of a source's sessions**, instead of one at a time.\n\n## What it shows\n- **Overview**: total sessions, clean vs. errored outcomes, total tool calls, avg tools/session, avg duration.\n- **Top tools** and **most common errors** (bar charts).\n- **Recommendation backlog** + **recurring issues** — rolled up and ranked from the per-session AI analyses (the `recommendations`/`issues` the analyzer already produces). This is effectively a prioritized, data-driven list of ways to improve the code, tooling, and `AGENTS.md`.\n\n## Design\n- **`FleetInsights`** (pure, source-agnostic): aggregates many sessions' normalized steps + cached analyses → `InsightsReport`. Fully unit-tested, no I/O.\n- **`InsightsService`**: gathers a flavor's sessions — Antigravity from `~/.gemini/<flavor>/brain`, other sources via the `SessionSource` registry — capped at the **150 most-recent** for responsiveness while still reporting the true total. Reads `transcript_full.jsonl` when present (matching the timeline) and skips sessions that disappear mid-scan.\n- **`GET /api/insights?flavor=`** → `InsightsReport`.\n- **`insights.js`** renders the dashboard into the main area; a header button loads it for […]
 
 > TOOL
 
@@ -16699,7 +16699,7 @@ tool_use Bash
 id: toolu_01XYbKW3yUU4JstZuuRn2Tje
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\ngh pr merge 17 --squash --delete-branch 2>&1 | tail -2\ngh pr view 17 --json state --jq '{state}'\ngit checkout main 2>&1 | tail -1\ngit pull --ff-only 2>&1 | tail -2\ngit fetch --prune 2>&1 | tail -1\ngit branch -d feat/fleet-insights 2>&1 || echo \"(gone)\"\ngit log --oneline -2",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\ngh pr merge 17 --squash --delete-branch 2>&1 | tail -2\ngh pr view 17 --json state --jq '{state}'\ngit checkout main 2>&1 | tail -1\ngit pull --ff-only 2>&1 | tail -2\ngit fetch --prune 2>&1 | tail -1\ngit branch -d feat/fleet-insights 2>&1 || echo \"(gone)\"\ngit log --oneline -2",
   "description": "Merge PR #17 and clean up"
 }
 ```

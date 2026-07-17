@@ -8,7 +8,7 @@ tool_use Bash
 id: toolu_01MoyWYeevNeh2R78pWfuwFG
 ```json
 {
-  "command": "ls -la /Users/alisha/Projects/wt/external-agents/kiro-windows-bug/.github/workflows/ 2>/dev/null && echo \"---\" && ls /Users/alisha/Projects/wt/external-agents/kiro-windows-bug/",
+  "command": "ls -la /home/<USER>/Projects/wt/external-agents/kiro-windows-bug/.github/workflows/ 2>/dev/null && echo \"---\" && ls /home/<USER>/Projects/wt/external-agents/kiro-windows-bug/",
   "description": "List workflow files"
 }
 ```
@@ -42,7 +42,7 @@ tool_use Read
 id: toolu_01VJT4o4J5xcVdHj91YThWY2
 ```json
 {
-  "file_path": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/.github/workflows/ci.yml"
+  "file_path": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/.github/workflows/ci.yml"
 }
 ```
 
@@ -117,7 +117,7 @@ tool_use Read
 id: toolu_017nCezZvSdWm9Q5geWrJ5j2
 ```json
 {
-  "file_path": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/.github/workflows/protocol-compliance.yml"
+  "file_path": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/.github/workflows/protocol-compliance.yml"
 }
 ```
 
@@ -190,7 +190,7 @@ tool_use Read
 id: toolu_01P7q4Z2jsNFhVtVgi6vc7Ui
 ```json
 {
-  "file_path": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/.github/workflows/lint.yml"
+  "file_path": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/.github/workflows/lint.yml"
 }
 ```
 

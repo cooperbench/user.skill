@@ -1,6 +1,6 @@
 > SYSTEM
 
-# AGENTS.md instructions for /Users/tanishqpalandurkar/Projects/yyork
+# AGENTS.md instructions for /home/<USER>/Projects/yyork
 
 <INSTRUCTIONS>
 General instructions: follow these all the time.
@@ -15,11 +15,11 @@ General instructions: follow these all the time.
 
 </INSTRUCTIONS>
 <environment_context>
-  <cwd>/Users/tanishqpalandurkar/Projects/yyork</cwd>
+  <cwd>/home/<USER>/Projects/yyork</cwd>
   <shell>zsh</shell>
   <current_date>2026-06-09</current_date>
   <timezone>Asia/Kolkata</timezone>
-  <filesystem><workspace_roots><root>/Users/tanishqpalandurkar/Projects/yyork</root></workspace_roots><permission_profile type="disabled"><file_system type="unrestricted" /></permission_profile></filesystem>
+  <filesystem><workspace_roots><root>/home/<USER>/Projects/yyork</root></workspace_roots><permission_profile type="disabled"><file_system type="unrestricted" /></permission_profile></filesystem>
 </environment_context>
 
 > DEVELOPER
@@ -50,8 +50,8 @@ tool_use exec_command
 id: call_TSc3rXp6MxTl61bbyWDqL99E
 ```json
 {
-  "cmd": "rg -n \"terminal|5pcyw3|yyork.localhost|encodeURIComponent|dashboard\" /Users/tanishqpalandurkar/.codex/memories/MEMORY.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "rg -n \"terminal|5pcyw3|yyork.localhost|encodeURIComponent|dashboard\" /home/<USER>/.codex/memories/MEMORY.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -64,7 +64,7 @@ id: call_ZjeCf2qKhnJJlaNPTRAkJrXA
 ```json
 {
   "cmd": "rg -n \"terminal|Terminal|terminal/|sessionId|sessionID|preview|portless|yyork.localhost|encodeURIComponent|encode\" -S .",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -77,7 +77,7 @@ id: call_l2bBes1bZDxZXS4yF1zLT92d
 ```json
 {
   "cmd": "rg --files . | rg '(^|/)(package.json|portless.json|dashboard.go|.*terminal.*|.*route.*|.*routes.*|.*server.*|.*session.*|.*worker.*)'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -182,7 +182,7 @@ Output:
 ./web/e2e/live-terminal-smoke.mjs
 ./web/src/router.tsx
 ./web/src/route-tree.gen.ts
-./web/src/features/home/demo/session-workspace.fixtures.ts
+./web/src/features/home/<USER>/session-workspace.fixtures.ts
 ./internal/terminal/attach_emulator_test.go
 ./internal/terminal/manager.go
 ./internal/terminal/runner_test.go
@@ -193,22 +193,22 @@ Output:
 ./internal/terminal/runner.go
 ./internal/terminal/attach_emulator.go
 ./internal/terminal/attach_perclient.go
-./web/src/features/home/components/organisms/xterm-terminal.tsx
-./web/src/features/home/components/organisms/terminal-panel.tsx
-./web/src/features/home/components/organisms/terminal-connection.ts
-./web/src/features/home/components/organisms/terminal-connection.unit.spec.ts
-./web/src/features/home/components/organisms/terminal-panel.browser.spec.tsx
-./web/src/features/home/components/molecules/stop-session-confirm-dialog.tsx
-./web/src/features/home/domain/session-workspace-contract.generated.ts
-./web/src/features/home/domain/session-workspace.ts
-./web/src/features/home/domain/session-workspace.unit.spec.ts
-./web/src/features/home/pages/terminal-layout.tsx
-./web/src/features/home/pages/terminal.tsx
-./web/src/features/home/data/session-ide.unit.spec.ts
-./web/src/features/home/data/session-files.unit.spec.ts
-./web/src/features/home/data/session-files.ts
-./web/src/features/home/data/session-events-subscriber.tsx
-./web/src/features/home/data/session-ide.ts
+./web/src/features/home/<USER>/organisms/xterm-terminal.tsx
+./web/src/features/home/<USER>/organisms/terminal-panel.tsx
+./web/src/features/home/<USER>/organisms/terminal-connection.ts
+./web/src/features/home/<USER>/organisms/terminal-connection.unit.spec.ts
+./web/src/features/home/<USER>/organisms/terminal-panel.browser.spec.tsx
+./web/src/features/home/<USER>/molecules/stop-session-confirm-dialog.tsx
+./web/src/features/home/<USER>/session-workspace-contract.generated.ts
+./web/src/features/home/<USER>/session-workspace.ts
+./web/src/features/home/<USER>/session-workspace.unit.spec.ts
+./web/src/features/home/<USER>/terminal-layout.tsx
+./web/src/features/home/<USER>/terminal.tsx
+./web/src/features/home/<USER>/session-ide.unit.spec.ts
+./web/src/features/home/<USER>/session-files.unit.spec.ts
+./web/src/features/home/<USER>/session-files.ts
+./web/src/features/home/<USER>/session-events-subscriber.tsx
+./web/src/features/home/<USER>/session-ide.ts
 
 ```
 
@@ -223,7 +223,7 @@ id: call_HSfMaPMMoX1iJha2UFhpIaBX
 ```json
 {
   "cmd": "nl -ba 'web/src/routes/_app.terminal.$sessionId.tsx' | sed -n '1,220p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -235,8 +235,8 @@ tool_use exec_command
 id: call_RkERo1XRd6SHxifps2Lxcz4C
 ```json
 {
-  "cmd": "nl -ba web/src/features/home/pages/terminal.tsx | sed -n '1,260p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "nl -ba web/src/features/home/<USER>/terminal.tsx | sed -n '1,260p'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000
 }
@@ -248,8 +248,8 @@ tool_use exec_command
 id: call_2cF1CjNXj76xXDrraOwEPCfN
 ```json
 {
-  "cmd": "nl -ba web/src/features/home/domain/session-workspace.ts | sed -n '1,260p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "nl -ba web/src/features/home/<USER>/session-workspace.ts | sed -n '1,260p'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000
 }
@@ -262,7 +262,7 @@ id: call_hhFqGssNrYkJH8kKm6z3p557
 ```json
 {
   "cmd": "nl -ba internal/session/id_test.go | sed -n '1,220p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -280,7 +280,7 @@ Original token count: 68
 Output:
      1	import { createFileRoute } from '@tanstack/react-router';
      2	
-     3	import { TerminalPage } from '@/features/home/pages/terminal';
+     3	import { TerminalPage } from '@/features/home/<USER>/terminal';
      4	
      5	export const Route = createFileRoute('/_app/terminal/$sessionId')({
      6	  component: TerminalPage,
@@ -298,10 +298,10 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 351
 Output:
-     1	import { TerminalPanel } from '@/features/home/components/organisms/terminal-panel';
-     2	import { WorkspaceStatusView } from '@/features/home/components/organisms/workspace-status-view';
-     3	import { TerminalLayout } from '@/features/home/pages/terminal-layout';
-     4	import { useWorkspaceContext } from '@/features/home/pages/workspace-context';
+     1	import { TerminalPanel } from '@/features/home/<USER>/organisms/terminal-panel';
+     2	import { WorkspaceStatusView } from '@/features/home/<USER>/organisms/workspace-status-view';
+     3	import { TerminalLayout } from '@/features/home/<USER>/terminal-layout';
+     4	import { useWorkspaceContext } from '@/features/home/<USER>/workspace-context';
      5	
      6	export function TerminalPage() {
      7	  const context = useWorkspaceContext();
@@ -352,7 +352,7 @@ Output:
      3	  type SessionActivity,
      4	  toKanbanCardView,
      5	  type WorkerSessionRecord,
-     6	} from '@/features/home/domain/kanban-card-model';
+     6	} from '@/features/home/<USER>/kanban-card-model';
      7	import {
      8	  type SessionWorkspace,
      9	  type TerminalSessionKind,
@@ -360,13 +360,13 @@ Output:
     11	  type WorkerSession,
     12	  type WorkerSessionState,
     13	  workerSessionStates,
-    14	} from '@/features/home/domain/session-workspace-contract.generated';
+    14	} from '@/features/home/<USER>/session-workspace-contract.generated';
     15	
     16	export {
     17	  type SessionActivity,
     18	  sessionActivityStates,
     19	  type WorkerSessionRecord,
-    20	} from '@/features/home/domain/kanban-card-model';
+    20	} from '@/features/home/<USER>/kanban-card-model';
     21	export {
     22	  type ProjectOrchestrator,
     23	  type SessionWorkspace,
@@ -375,7 +375,7 @@ Output:
     26	  type WorkerSession,
     27	  type WorkerSessionState,
     28	  workerSessionStates,
-    29	} from '@/features/home/domain/session-workspace-contract.generated';
+    29	} from '@/features/home/<USER>/session-workspace-contract.generated';
     30	
     31	export interface KanbanCardData {
     32	  activity: SessionActivity;
@@ -450,8 +450,8 @@ tool_use exec_command
 id: call_1FIBIUeQm0085M9vnscDMfOy
 ```json
 {
-  "cmd": "nl -ba web/src/features/home/pages/workspace-context.tsx | sed -n '1,320p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "nl -ba web/src/features/home/<USER>/workspace-context.tsx | sed -n '1,320p'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 32000
 }
@@ -464,7 +464,7 @@ id: call_pjrNsBGFAVab999UtTUxC5Cs
 ```json
 {
   "cmd": "rg -n \"getWorkerSessionSelectionKey|selectionKey|selectedTerminalSession|terminal/\\$sessionId|to=\\\"/terminal|navigate\\(|Link\" web/src -S",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -477,7 +477,7 @@ id: call_IEV3DNeGLa2oq3Ng3CKXts4O
 ```json
 {
   "cmd": "nl -ba internal/session/session.go | sed -n '1,260p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -490,7 +490,7 @@ id: call_8Yr9zMFTM40gzZj6bpVfjZoH
 ```json
 {
   "cmd": "nl -ba internal/session/engine.go | sed -n '1,260p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 26000
 }
@@ -506,7 +506,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 21
 Output:
-nl: web/src/features/home/pages/workspace-context.tsx: No such file or directory
+nl: web/src/features/home/<USER>/workspace-context.tsx: No such file or directory
 
 ```
 
@@ -521,51 +521,51 @@ Process exited with code 0
 Original token count: 9462
 Output:
 web/src/hooks/use-navigate-back.ts:23:    router.navigate({
-web/src/features/home/domain/session-workspace.ts:46:  selectionKey: string;
-web/src/features/home/domain/session-workspace.ts:74:  selectionKey: string;
-web/src/features/home/domain/session-workspace.ts:114:    (session) => getWorkerSessionSelectionKey(session) === selectedSessionKey
-web/src/features/home/domain/session-workspace.ts:118:      ? getWorkerSessionSelectionKey(fallbackSession)
-web/src/features/home/domain/session-workspace.ts:123:    selected: getWorkerSessionSelectionKey(session) === nextSelectedSessionKey,
-web/src/features/home/domain/session-workspace.ts:127:export function getWorkerSessionSelectionKey(
-web/src/features/home/domain/session-workspace.ts:148:  selectionKey: string | undefined
-web/src/features/home/domain/session-workspace.ts:150:  if (!selectionKey) {
-web/src/features/home/domain/session-workspace.ts:155:    (session) => getWorkerSessionSelectionKey(session) === selectionKey
-web/src/features/home/domain/session-workspace.ts:204:      selectionKey: getWorkerSessionSelectionKey(session),
-web/src/features/home/domain/kanban-card-model.ts:55:    selectionKey: `${encodeURIComponent(session.project)}:${encodeURIComponent(session.id)}`,
-web/src/features/home/domain/session-workspace.unit.spec.ts:9:  getWorkerSessionSelectionKey,
-web/src/features/home/domain/session-workspace.unit.spec.ts:96:            selectionKey: 'agent-orchestrator:session-ao-1',
-web/src/features/home/domain/session-workspace.unit.spec.ts:114:            selectionKey: 'agent-orchestrator:session-ao-2',
-web/src/features/home/domain/session-workspace.unit.spec.ts:156:    const projectBKey = getWorkerSessionSelectionKey({
-web/src/features/home/domain/session-workspace.unit.spec.ts:180:    const selectionKey = getWorkerSessionSelectionKey(orchestrator);
-web/src/features/home/domain/session-workspace.unit.spec.ts:183:      getTerminalSession([orchestrator, ...workspace.sessions], selectionKey)
-web/src/features/home/pages/workspace-layout.tsx:59:  getWorkerSessionSelectionKey,
-web/src/features/home/pages/workspace-layout.tsx:73:  selectionKey: string;
-web/src/features/home/pages/workspace-layout.tsx:154:  const selectedTerminalSessionKey = params.sessionId;
-web/src/features/home/pages/workspace-layout.tsx:156:  const isTerminalRoute = Boolean(selectedTerminalSessionKey);
-web/src/features/home/pages/workspace-layout.tsx:222:      !hiddenTerminalSessionKeySet.has(getWorkerSessionSelectionKey(session))
-web/src/features/home/pages/workspace-layout.tsx:227:      !hiddenTerminalSessionKeySet.has(getWorkerSessionSelectionKey(session))
-web/src/features/home/pages/workspace-layout.tsx:231:    selectedTerminalSessionKey
-web/src/features/home/pages/workspace-layout.tsx:235:  const selectedTerminalSession = isTerminalRoute
-web/src/features/home/pages/workspace-layout.tsx:236:    ? (getTerminalSession(terminalSessions, selectedTerminalSessionKey) ??
-web/src/features/home/pages/workspace-layout.tsx:240:    selectedTerminalSession?.project ??
-web/src/features/home/pages/workspace-layout.tsx:248:  const canvasTarget: CanvasTargetSummary = selectedTerminalSession
-web/src/features/home/pages/workspace-layout.tsx:250:        cwd: selectedTerminalSession.cwd,
-web/src/features/home/pages/workspace-layout.tsx:251:        projectId: selectedTerminalSession.project,
-web/src/features/home/pages/workspace-layout.tsx:253:        sessionId: selectedTerminalSession.id,
-web/src/features/home/pages/workspace-layout.tsx:401:  const handleTerminalSessionPinToggle = (selectionKey: string) => {
-web/src/features/home/pages/workspace-layout.tsx:405:        selectionKey
-web/src/features/home/pages/workspace-layout.tsx:411:    selectionKey: string,
-web/src/features/home/pages/workspace-layout.tsx:418:    const sessionId = getSessionIdFromSelectionKey(selectionKey);
-web/src/features/home/pages/workspace-layout.tsx:453:  const executeTerminalSessionStop = (selectionKey: string) => {
-web/src/features/home/pages/workspace-layout.tsx:454:    const sessionId = getSessionIdFromSelectionKey(selectionKey);
-web/src/features/home/pages/workspace-layout.tsx:468:    if (selectedTerminalSessionKey === selectionKey) {
-web/src/features/home/pages/workspace-layout.tsx:469:      void navigate({ to: '/' });
-web/src/features/home/pages/workspace-layout.tsx:474:    selectionKey: string,
-web/src/features/home/pages/workspace-layout.tsx:478:      executeTerminalSessionStop(selectionKey);
-web/src/features/home/pages/workspace-layout.tsx:483:      pendingSessionStop: { label: currentLabel, selectionKey },
-web/src/features/home/pages/workspace-layout.tsx:499:    executeTerminalSessionStop(pendingSessionStop.selectionKey);
-web/src/features/home/pages/workspace-layout.tsx:504:    selectionKey: string,
-web/src/features/home/pages/workspace-layout.tsx:516:      hiddenTerminalSessionKeys: […]
+web/src/features/home/<USER>/session-workspace.ts:46:  selectionKey: string;
+web/src/features/home/<USER>/session-workspace.ts:74:  selectionKey: string;
+web/src/features/home/<USER>/session-workspace.ts:114:    (session) => getWorkerSessionSelectionKey(session) === selectedSessionKey
+web/src/features/home/<USER>/session-workspace.ts:118:      ? getWorkerSessionSelectionKey(fallbackSession)
+web/src/features/home/<USER>/session-workspace.ts:123:    selected: getWorkerSessionSelectionKey(session) === nextSelectedSessionKey,
+web/src/features/home/<USER>/session-workspace.ts:127:export function getWorkerSessionSelectionKey(
+web/src/features/home/<USER>/session-workspace.ts:148:  selectionKey: string | undefined
+web/src/features/home/<USER>/session-workspace.ts:150:  if (!selectionKey) {
+web/src/features/home/<USER>/session-workspace.ts:155:    (session) => getWorkerSessionSelectionKey(session) === selectionKey
+web/src/features/home/<USER>/session-workspace.ts:204:      selectionKey: getWorkerSessionSelectionKey(session),
+web/src/features/home/<USER>/kanban-card-model.ts:55:    selectionKey: `${encodeURIComponent(session.project)}:${encodeURIComponent(session.id)}`,
+web/src/features/home/<USER>/session-workspace.unit.spec.ts:9:  getWorkerSessionSelectionKey,
+web/src/features/home/<USER>/session-workspace.unit.spec.ts:96:            selectionKey: 'agent-orchestrator:session-ao-1',
+web/src/features/home/<USER>/session-workspace.unit.spec.ts:114:            selectionKey: 'agent-orchestrator:session-ao-2',
+web/src/features/home/<USER>/session-workspace.unit.spec.ts:156:    const projectBKey = getWorkerSessionSelectionKey({
+web/src/features/home/<USER>/session-workspace.unit.spec.ts:180:    const selectionKey = getWorkerSessionSelectionKey(orchestrator);
+web/src/features/home/<USER>/session-workspace.unit.spec.ts:183:      getTerminalSession([orchestrator, ...workspace.sessions], selectionKey)
+web/src/features/home/<USER>/workspace-layout.tsx:59:  getWorkerSessionSelectionKey,
+web/src/features/home/<USER>/workspace-layout.tsx:73:  selectionKey: string;
+web/src/features/home/<USER>/workspace-layout.tsx:154:  const selectedTerminalSessionKey = params.sessionId;
+web/src/features/home/<USER>/workspace-layout.tsx:156:  const isTerminalRoute = Boolean(selectedTerminalSessionKey);
+web/src/features/home/<USER>/workspace-layout.tsx:222:      !hiddenTerminalSessionKeySet.has(getWorkerSessionSelectionKey(session))
+web/src/features/home/<USER>/workspace-layout.tsx:227:      !hiddenTerminalSessionKeySet.has(getWorkerSessionSelectionKey(session))
+web/src/features/home/<USER>/workspace-layout.tsx:231:    selectedTerminalSessionKey
+web/src/features/home/<USER>/workspace-layout.tsx:235:  const selectedTerminalSession = isTerminalRoute
+web/src/features/home/<USER>/workspace-layout.tsx:236:    ? (getTerminalSession(terminalSessions, selectedTerminalSessionKey) ??
+web/src/features/home/<USER>/workspace-layout.tsx:240:    selectedTerminalSession?.project ??
+web/src/features/home/<USER>/workspace-layout.tsx:248:  const canvasTarget: CanvasTargetSummary = selectedTerminalSession
+web/src/features/home/<USER>/workspace-layout.tsx:250:        cwd: selectedTerminalSession.cwd,
+web/src/features/home/<USER>/workspace-layout.tsx:251:        projectId: selectedTerminalSession.project,
+web/src/features/home/<USER>/workspace-layout.tsx:253:        sessionId: selectedTerminalSession.id,
+web/src/features/home/<USER>/workspace-layout.tsx:401:  const handleTerminalSessionPinToggle = (selectionKey: string) => {
+web/src/features/home/<USER>/workspace-layout.tsx:405:        selectionKey
+web/src/features/home/<USER>/workspace-layout.tsx:411:    selectionKey: string,
+web/src/features/home/<USER>/workspace-layout.tsx:418:    const sessionId = getSessionIdFromSelectionKey(selectionKey);
+web/src/features/home/<USER>/workspace-layout.tsx:453:  const executeTerminalSessionStop = (selectionKey: string) => {
+web/src/features/home/<USER>/workspace-layout.tsx:454:    const sessionId = getSessionIdFromSelectionKey(selectionKey);
+web/src/features/home/<USER>/workspace-layout.tsx:468:    if (selectedTerminalSessionKey === selectionKey) {
+web/src/features/home/<USER>/workspace-layout.tsx:469:      void navigate({ to: '/' });
+web/src/features/home/<USER>/workspace-layout.tsx:474:    selectionKey: string,
+web/src/features/home/<USER>/workspace-layout.tsx:478:      executeTerminalSessionStop(selectionKey);
+web/src/features/home/<USER>/workspace-layout.tsx:483:      pendingSessionStop: { label: currentLabel, selectionKey },
+web/src/features/home/<USER>/workspace-layout.tsx:499:    executeTerminalSessionStop(pendingSessionStop.selectionKey);
+web/src/features/home/<USER>/workspace-layout.tsx:504:    selectionKey: string,
+web/src/features/home/<USER>/workspace-layout.tsx:516:      hiddenTerminalSessionKeys: […]
 
 > TOOL
 
@@ -685,8 +685,8 @@ tool_use exec_command
 id: call_OZkvu7M8mJLru0QFOZQFWn63
 ```json
 {
-  "cmd": "nl -ba web/src/features/home/pages/workspace-layout.tsx | sed -n '130,270p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "nl -ba web/src/features/home/<USER>/workspace-layout.tsx | sed -n '130,270p'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000
 }
@@ -698,8 +698,8 @@ tool_use exec_command
 id: call_1sruvrEaDaOeEHdg36vqufw2
 ```json
 {
-  "cmd": "nl -ba web/src/features/home/pages/workspace-layout.tsx | sed -n '390,630p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "nl -ba web/src/features/home/<USER>/workspace-layout.tsx | sed -n '390,630p'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -711,8 +711,8 @@ tool_use exec_command
 id: call_u0Mn1dOq2TJeswSwIy3JZdCy
 ```json
 {
-  "cmd": "nl -ba web/src/features/home/pages/workspace-layout.tsx | sed -n '850,900p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "nl -ba web/src/features/home/<USER>/workspace-layout.tsx | sed -n '850,900p'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -724,8 +724,8 @@ tool_use exec_command
 id: call_yioeOwmXqSVXXLU25HkCWZ06
 ```json
 {
-  "cmd": "nl -ba web/src/features/home/domain/kanban-card-model.ts | sed -n '1,90p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "nl -ba web/src/features/home/<USER>/kanban-card-model.ts | sed -n '1,90p'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -936,7 +936,7 @@ Output:
      2	  KanbanCardData,
      3	  WorkerSession,
      4	  WorkerSessionState,
-     5	} from '@/features/home/domain/session-workspace';
+     5	} from '@/features/home/<USER>/session-workspace';
      6	
      7	export const sessionActivityStates = [
      8	  'working',
@@ -992,7 +992,7 @@ id: call_qRWf0aTrcV1RZACOxoAfRbzC
 ```json
 {
   "cmd": "nl -ba internal/session/engine.go | sed -n '260,420p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -1005,7 +1005,7 @@ id: call_dclLIvf02CyJB6AZmJ0yDsHy
 ```json
 {
   "cmd": "rg -n \"idLength|idAlphabet|defaultNewID|branchNameFor|ZellijSession|zellij_session|Project\\(\" internal -S",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -1018,7 +1018,7 @@ id: call_LpglY4EDm3P6sjLLMU1etYFj
 ```json
 {
   "cmd": "nl -ba internal/session/workspace_source.go | sed -n '1,180p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -1031,7 +1031,7 @@ id: call_eE6cjicIgBFOZvj6qgDqei1C
 ```json
 {
   "cmd": "nl -ba internal/store/sessions.go | sed -n '1,260p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 26000
 }
@@ -1221,7 +1221,7 @@ id: call_ADCRUvydvPLu3bsDwzS0Q5Wr
 ```json
 {
   "cmd": "nl -ba internal/server/server.go | sed -n '430,520p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -1234,7 +1234,7 @@ id: call_ueBgJjZSsOKLwodxjjS0W9T0
 ```json
 {
   "cmd": "nl -ba internal/server/server_test.go | sed -n '100,165p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -1246,8 +1246,8 @@ tool_use exec_command
 id: call_oHBtsiKm5s3HZ53FTZTZ91dB
 ```json
 {
-  "cmd": "nl -ba web/src/features/home/components/organisms/terminal-connection.ts | sed -n '1,70p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "nl -ba web/src/features/home/<USER>/organisms/terminal-connection.ts | sed -n '1,70p'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -1259,8 +1259,8 @@ tool_use exec_command
 id: call_4Ui9vy1Pj4Hgps5MwxqzstwW
 ```json
 {
-  "cmd": "nl -ba web/src/features/home/domain/session-workspace.unit.spec.ts | sed -n '130,200p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "nl -ba web/src/features/home/<USER>/session-workspace.unit.spec.ts | sed -n '130,200p'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -1374,7 +1374,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 637
 Output:
-     1	import type { WorkerSession } from '@/features/home/domain/session-workspace';
+     1	import type { WorkerSession } from '@/features/home/<USER>/session-workspace';
      2	
      3	export const initialTerminalSize = {
      4	  cols: 100,
@@ -1496,7 +1496,7 @@ id: call_2zOQ3b5yGQ2T3F5ZyTjfRlxx
 ```json
 {
   "cmd": "rg -n \"terminalSessionForRequest|/api/sessions/|sessions/\\{session|terminal\" internal/server -S",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -1509,7 +1509,7 @@ id: call_9li6rpF8ZW5SurVhvqnKUJrY
 ```json
 {
   "cmd": "nl -ba internal/server/server.go | sed -n '1,170p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -1522,7 +1522,7 @@ id: call_SxoXlN8NEEKNZYQlOvBwoJoL
 ```json
 {
   "cmd": "nl -ba internal/server/server.go | sed -n '250,360p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -1535,7 +1535,7 @@ id: call_xL4JtexBTjmItooOzai6VFSk
 ```json
 {
   "cmd": "nl -ba internal/server/sessions.go | sed -n '1,240p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000
 }
@@ -1783,7 +1783,7 @@ id: call_SbFqqTElLMOYYjZXeqYNYi2E
 ```json
 {
   "cmd": "nl -ba internal/server/server.go | sed -n '190,248p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -1855,7 +1855,7 @@ Output:
 
 > AGENT
 
-One important nuance: if the frontend used the raw project path inside one route segment, the slashes would still have to be encoded. The current `%252F...%3A5pcyw3` is double-looking because the app pre-encodes `/Users/...` to `%2FUsers...`, and the router encodes the `%` characters again for the actual URL.
+One important nuance: if the frontend used the raw project path inside one route segment, the slashes would still have to be encoded. The current `%252F...%3A5pcyw3` is double-looking because the app pre-encodes `/home/<USER>` to `%2FUsers...`, and the router encodes the `%` characters again for the actual URL.
 
 > TOOL
 
@@ -1864,7 +1864,7 @@ id: call_n8HS7YqaVT6aHHKgvDhY0t43
 ```json
 {
   "cmd": "nl -ba internal/ao/workspace.go | sed -n '200,270p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -1877,7 +1877,7 @@ id: call_vANfR4c6mWvzBlbBldF6ia34
 ```json
 {
   "cmd": "nl -ba internal/ao/workspace_test.go | sed -n '90,130p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 7000
 }
@@ -1889,8 +1889,8 @@ tool_use exec_command
 id: call_rm5tjh8Mw2Iqy9G0Amu2o568
 ```json
 {
-  "cmd": "nl -ba web/src/features/home/domain/session-workspace-contract.generated.ts | sed -n '1,130p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "nl -ba web/src/features/home/<USER>/session-workspace-contract.generated.ts | sed -n '1,130p'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -1903,7 +1903,7 @@ id: call_FPMbD45hrk2DHxG9FjtvuGl6
 ```json
 {
   "cmd": "nl -ba api/workspace.schema.json | sed -n '1,160p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -2100,8 +2100,8 @@ tool_use exec_command
 id: call_IDB4ssmwgfVnrUk0hVEzCdNJ
 ```json
 {
-  "cmd": "nl -ba /Users/tanishqpalandurkar/.codex/memories/MEMORY.md | sed -n '850,900p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "nl -ba /home/<USER>/.codex/memories/MEMORY.md | sed -n '850,900p'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -2126,7 +2126,7 @@ Output:
    856	
    857	### rollout_summary_files
    858	
-   859	- rollout_summaries/REDACTED.md (cwd=/Users/tanishqpalandurkar/Projects/better-ao, rollout_path=/Users/tanishqpalandurkar/.codex/sessions/2026/05/27/rollout-2026-05-27T21-42-44-019e6a35-b345-7fb2-9205-f1a0ef427d67.jsonl, updated_at=2026-05-27T16:19:25+00:00, thread_id=019e6a35-b345-7fb2-9205-f1a0ef427d67, route-shell and project-specific Kanban answer)
+   859	- rollout_summaries/REDACTED.md (cwd=/home/<USER>/Projects/better-ao, rollout_path=/home/<USER>/.codex/sessions/2026/05/27/rollout-2026-05-27T21-42-44-019e6a35-b345-7fb2-9205-f1a0ef427d67.jsonl, updated_at=2026-05-27T16:19:25+00:00, thread_id=019e6a35-b345-7fb2-9205-f1a0ef427d67, route-shell and project-specific Kanban answer)
    860	
    861	### keywords
    862	
@@ -2136,7 +2136,7 @@ Output:
    866	
    867	### rollout_summary_files
    868	
-   869	- rollout_summaries/REDACTED.md (cwd=/Users/tanishqpalandurkar/Projects/better-ao, rollout_path=/Users/tanishqpalandurkar/.codex/sessions/2026/05/28/rollout-2026-05-28T02-31-57-019e6b3e-796e-73e3-acc1-44fe99cdd321.jsonl, updated_at=2026-05-27T21:58:49+00:00, thread_id=019e6b3e-796e-73e3-acc1-44fe99cdd321, exhaustive option request; outcome still undecided)
+   869	- rollout_summaries/REDACTED.md (cwd=/home/<USER>/Projects/better-ao, rollout_path=/home/<USER>/.codex/sessions/2026/05/28/rollout-2026-05-28T02-31-57-019e6b3e-796e-73e3-acc1-44fe99cdd321.jsonl, updated_at=2026-05-27T21:58:49+00:00, thread_id=019e6b3e-796e-73e3-acc1-44fe99cdd321, exhaustive option request; outcome still undecided)
    870	
    871	### keywords
    872	
@@ -2154,7 +2154,7 @@ What is happening:
 
 `/terminal/$sessionId` receives a frontend “selection key”, not just the session id. That key is built here:
 
-[session-workspace.ts](/Users/tanishqpalandurkar/Projects/yyork/web/src/features/home/domain/session-workspace.ts:127)
+[session-workspace.ts](/home/<USER>/Projects/yyork/web/src/features/home/<USER>/session-workspace.ts:127)
 
 ```ts
 `${encodeURIComponent(session.project)}:${encodeURIComponent(session.id)}`
@@ -2162,7 +2162,7 @@ What is happening:
 
 For this repo, `session.project` is the absolute project path, because the backend sets project IDs from `row.ProjectPath`:
 
-[workspace_source.go](/Users/tanishqpalandurkar/Projects/yyork/internal/session/workspace_source.go:47)
+[workspace_source.go](/home/<USER>/Projects/yyork/internal/session/workspace_source.go:47)
 
 So the route param becomes:
 
@@ -2174,20 +2174,20 @@ Then TanStack Router URL-encodes that whole param again, which is why the visibl
 
 The good reason: session IDs can collide across projects. The code and tests explicitly support project-scoped terminal lookup:
 
-[server.go](/Users/tanishqpalandurkar/Projects/yyork/internal/server/server.go:297)  
-[server_test.go](/Users/tanishqpalandurkar/Projects/yyork/internal/server/server_test.go:124)
+[server.go](/home/<USER>/Projects/yyork/internal/server/server.go:297)  
+[server_test.go](/home/<USER>/Projects/yyork/internal/server/server_test.go:124)
 
 The bad part: that project-qualified key leaked into the browser route. The backend terminal websocket already uses the cleaner shape:
 
-[terminal-connection.ts](/Users/tanishqpalandurkar/Projects/yyork/web/src/features/home/components/organisms/terminal-connection.ts:21)
+[terminal-connection.ts](/home/<USER>/Projects/yyork/web/src/features/home/<USER>/organisms/terminal-connection.ts:21)
 
 ```text
-/api/sessions/5pcyw3/terminal?project=/Users/...
+/api/sessions/5pcyw3/terminal?project=/home/<USER>
 ```
 
 So yes, `/terminal/5pcyw3` is reasonable, especially for native yyork sessions where IDs are generated as short 6-char IDs:
 
-[engine.go](/Users/tanishqpalandurkar/Projects/yyork/internal/session/engine.go:459)
+[engine.go](/home/<USER>/Projects/yyork/internal/session/engine.go:459)
 
 The cleaner design would be:
 
@@ -2198,7 +2198,7 @@ The cleaner design would be:
 and, only when needed for disambiguation:
 
 ```text
-/terminal/5pcyw3?project=/Users/tanishqpalandurkar/Projects/yyork
+/terminal/5pcyw3?project=/home/<USER>/Projects/yyork
 ```
 
 or use a short stable project slug instead of an absolute path. Current behavior is mostly implementation convenience, not a strong product reason.

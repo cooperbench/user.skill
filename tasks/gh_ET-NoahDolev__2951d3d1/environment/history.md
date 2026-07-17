@@ -1,6 +1,6 @@
 > DEVELOPER
 
-proceed: '/Users/noahdolevelixir/Code/rune/instructions/gap-closure-handoff.md'
+proceed: '/home/<USER>/Code/rune/instructions/gap-closure-handoff.md'
 
 > TOOL
 
@@ -8,7 +8,7 @@ tool_use Read
 id: toolu_01JU9f5vLtHnCaCCma1WXimK
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/gap-closure-handoff.md"
+  "file_path": "/home/<USER>/Code/rune/instructions/gap-closure-handoff.md"
 }
 ```
 
@@ -80,7 +80,7 @@ tool_use Read
 id: toolu_012zVgMkXgq2MZnzjyNpM6ax
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_data.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_data.py",
   "offset": 670,
   "limit": 80
 }
@@ -148,7 +148,7 @@ tool_use Read
 id: toolu_01J3dEkpzmGUtCEJ8oVhGUiH
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_data.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_data.py",
   "offset": 748,
   "limit": 100
 }
@@ -212,7 +212,7 @@ id: toolu_01HpCKL9SfV4Zhb25YY6c8Ec
 ```json
 {
   "pattern": "test_normalize_mined_pairs_single_commit_produces_step0",
-  "path": "/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_d2l_data.py",
+  "path": "/home/<USER>/Code/rune/libs/model-training/tests/test_d2l_data.py",
   "output_mode": "content",
   "-n": true,
   "-C": 5
@@ -243,7 +243,7 @@ tool_use Read
 id: toolu_01HT3WU5z3sqMMVQijZoEWRe
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_d2l_data.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/tests/test_d2l_data.py",
   "offset": 540,
   "limit": 90
 }
@@ -318,7 +318,7 @@ tool_use Read
 id: toolu_015qkeEyeMsNSd1TD4LAdKNM
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/encoder_pretrain/augment.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/encoder_pretrain/augment.py",
   "offset": 1,
   "limit": 130
 }
@@ -516,7 +516,7 @@ id: toolu_01QoZ464tJd7GUVe78pzpZnc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_d2l_data.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/tests/test_d2l_data.py",
   "old_string": "def test_normalize_mined_pairs_single_commit_produces_step0() -> None:\n    \"\"\"A single-commit PR produces one step_0 pair.\"\"\"\n    from model_training.d2l_data import normalize_mined_pairs\n\n    trajectory = _make_mined_trajectory()\n    pairs = normalize_mined_pairs(trajectory)\n\n    assert len(pairs) == 1\n    assert pairs[0][\"task_id\"] == \"pr_owner/repo_42\"\n    assert pairs[0][\"metadata\"][\"step_index\"] == 0\n    assert \"Add widget support\" in pairs[0][\"activation_text\"]\n    assert \"+def widget(): pass\" in pairs[0][\"teacher_text\"]\n    assert \"## Implementation\" in pairs[0][\"teacher_text\"]\n\n\ndef test_normalize_mined_pairs_review_revision_cycle() -> None:",
   "new_string": "def test_normalize_mined_pairs_single_commit_produces_step0() -> None:\n    \"\"\"A single-commit PR produces one step_0 pair.\"\"\"\n    from model_training.d2l_data import normalize_mined_pairs\n\n    trajectory = _make_mined_trajectory()\n    pairs = normalize_mined_pairs(trajectory)\n\n    assert len(pairs) == 1\n    assert pairs[0][\"task_id\"] == \"pr_owner/repo_42\"\n    assert pairs[0][\"metadata\"][\"step_index\"] == 0\n    assert \"Add widget support\" in pairs[0][\"activation_text\"]\n    assert \"+def widget(): pass\" in pairs[0][\"teacher_text\"]\n    assert \"## Implementation\" in pairs[0][\"teacher_text\"]\n\n\ndef test_normalize_mined_pairs_propagates_task_description() -> None:\n    \"\"\"Each pair record carries the trajectory's task_description.\n\n    Plan B gate: augment_corpus drops pairs without task_description and\n    enforces MIN_RETENTION_RATIO = 0.80. Propagating the authentic\n    PR-title + body (or issue title + body) into each pair keeps retention\n    at 100% for well-formed trajectories.\n    \"\"\"\n    from model_training.d2l_data import normalize_mined_pairs\n\n    trajectory = _make_mined_trajectory(\n        task_description=\"Add widget support\",\n        steps=[\n            {\"type\": \"commit\", \"description\": \"V1\", \"content\": \"+v1\"},\n            {\n                \"type\": \"review\",\n                \"description\": \"Review comment\",\n                \"content\": \"rename to Gadget\",\n            },\n            {\"type\": \"commit\", \"description\": \"V2\", \"content\": \"+v2 Gadget\"},\n        ],\n    )\n    pairs = normalize_mined_pairs(trajectory)\n\n […]
 
@@ -525,7 +525,7 @@ id: toolu_01QoZ464tJd7GUVe78pzpZnc
 tool_result
 id: toolu_01QoZ464tJd7GUVe78pzpZnc
 ```
-The file /Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_d2l_data.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/libs/model-training/tests/test_d2l_data.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -638,7 +638,7 @@ id: toolu_01Vs7RvQanPHRGTq6wirrYV1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_data.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_data.py",
   "old_string": "def _make_pair_record(\n    task_id: str,\n    outcome: str,\n    language: str | None,\n    idx: int,\n    activation: str,\n    teacher: str,\n) -> dict[str, Any]:\n    \"\"\"Build a single training pair record.\"\"\"\n    return {\n        \"task_id\": task_id,\n        \"activation_text\": activation,\n        \"teacher_text\": teacher,\n        \"metadata\": {\n            \"outcome\": outcome,\n            \"step_index\": idx,\n            \"language\": language,\n            \"source_task_id\": task_id,\n        },\n    }",
   "new_string": "def _make_pair_record(\n    task_id: str,\n    outcome: str,\n    language: str | None,\n    idx: int,\n    activation: str,\n    teacher: str,\n    task_description: str = \"\",\n) -> dict[str, Any]:\n    \"\"\"Build a single training pair record.\"\"\"\n    return {\n        \"task_id\": task_id,\n        \"task_description\": task_description,\n        \"activation_text\": activation,\n        \"teacher_text\": teacher,\n        \"metadata\": {\n            \"outcome\": outcome,\n            \"step_index\": idx,\n            \"language\": language,\n            \"source_task_id\": task_id,\n        },\n    }"
 }
@@ -649,7 +649,7 @@ id: toolu_01Vs7RvQanPHRGTq6wirrYV1
 tool_result
 id: toolu_01Vs7RvQanPHRGTq6wirrYV1
 ```
-The file /Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_data.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_data.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -663,7 +663,7 @@ id: toolu_01CvigNFYebDSJirBcA9MsTk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_data.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_data.py",
   "old_string": "    def _record(idx: int, activation: str, teacher: str) -> dict[str, Any]:\n        return _make_pair_record(task_id, outcome, language, idx, activation, teacher)",
   "new_string": "    def _record(idx: int, activation: str, teacher: str) -> dict[str, Any]:\n        return _make_pair_record(\n            task_id,\n            outcome,\n            language,\n            idx,\n            activation,\n            teacher,\n            task_description=task_desc,\n        )"
 }
@@ -674,7 +674,7 @@ id: toolu_01CvigNFYebDSJirBcA9MsTk
 tool_result
 id: toolu_01CvigNFYebDSJirBcA9MsTk
 ```
-The file /Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_data.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_data.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -774,7 +774,7 @@ id: toolu_01DTpfVqr3YtpvE1uaoGM2wx
 ```
 ============================= test session starts ==============================
 platform darwin -- Python 3.12.12, pytest-9.0.2, pluggy-1.6.0
-rootdir: /Users/noahdolevelixir/Code/rune
+rootdir: /home/<USER>/Code/rune
 configfile: pyproject.toml
 plugins: anyio-4.12.1, jaxtyping-0.3.9, xdist-3.8.0, asyncio-1.3.0, langsmith-0.7.9, requests-mock-1.12.1, cov-7.0.0
 asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
@@ -880,7 +880,7 @@ id: toolu_01LUeiCEv1u2sqRDEEZXJvAU
 tool_result
 id: toolu_01LUeiCEv1u2sqRDEEZXJvAU
 ```
-rootdir: /Users/noahdolevelixir/Code/rune
+rootdir: /home/<USER>/Code/rune
 configfile: pyproject.toml
 plugins: anyio-4.12.1, jaxtyping-0.3.9, xdist-3.8.0, asyncio-1.3.0, langsmith-0.7.9, requests-mock-1.12.1, cov-7.0.0
 asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
@@ -1116,7 +1116,7 @@ tool_use Bash
 id: toolu_01H8oqjGyk5ztHPhaTAP4fYA
 ```json
 {
-  "command": "git commit -m \"$(cat <<'EOF'\nfeat(training): propagate task_description through mined pair records (gap 6)\n\n_make_pair_record now includes task_description in the returned dict, and\nnormalize_mined_pairs passes the trajectory-level task_desc (already local)\ninto every record via the _record closure. This unblocks the Plan B\naugment_corpus retention gate (MIN_RETENTION_RATIO = 0.80): previously every\nmined pair was dropped by _select_task_desc because the field was absent,\nforcing retention to 0% and raising RuntimeError.\n\nThe upstream trajectory already carries authentic task_description —\nmine_pr_diff_chains sets it to \"title\\n\\nbody\" (PR title + body) and\nmine_issue_commit_chains does the same for issues — so no new GitHub API\ncalls are required. The fix is purely about propagating an existing field\nthrough the pair-record serializer.\n\nAdded test_normalize_mined_pairs_propagates_task_description asserting\nevery pair in a review-revision trajectory carries the task description.\n\nCo-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>\nEOF\n)\" && git status",
+  "command": "git commit -m \"$(cat <<'EOF'\nfeat(training): propagate task_description through mined pair records (gap 6)\n\n_make_pair_record now includes task_description in the returned dict, and\nnormalize_mined_pairs passes the trajectory-level task_desc (already local)\ninto every record via the _record closure. This unblocks the Plan B\naugment_corpus retention gate (MIN_RETENTION_RATIO = 0.80): previously every\nmined pair was dropped by _select_task_desc because the field was absent,\nforcing retention to 0% and raising RuntimeError.\n\nThe upstream trajectory already carries authentic task_description —\nmine_pr_diff_chains sets it to \"title\\n\\nbody\" (PR title + body) and\nmine_issue_commit_chains does the same for issues — so no new GitHub API\ncalls are required. The fix is purely about propagating an existing field\nthrough the pair-record serializer.\n\nAdded test_normalize_mined_pairs_propagates_task_description asserting\nevery pair in a review-revision trajectory carries the task description.\n\nCo-Authored-By: Claude Opus 4.7 <<REDACTED_EMAIL>>\nEOF\n)\" && git status",
   "description": "Commit gap 6 fix"
 }
 ```
@@ -1177,7 +1177,7 @@ id: toolu_017RwDBCddN9nke7CxRUzpKZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/gap-closure-handoff.md",
+  "file_path": "/home/<USER>/Code/rune/instructions/gap-closure-handoff.md",
   "old_string": "# Gap Closure Handoff — 2026-04-23 (session 3)\n\nResuming work on `instructions/gaps.md`. Branch `feat/training-upgrade`.\n\n## Closed so far (7 commits across 3 sessions)\n\n| # | Gap | Commit | Status |\n|---|-----|--------|--------|\n| 1 | Workspace mypy config gap (pandas-stubs, inference/shared/evaluation globs) | `917150e` | ✅ |\n| 2 | APPS stratification parity (Plan A `load_problems` delegation from Plan C) | `917150e` | ✅ |\n| 3 | SWE-Bench-Lite `score()` implementation (env-gated clone/apply/pytest) | `683553c` | ✅ |\n| 4 | Oracle validation runner (`scripts/validate_oracles.py`, \"≥3% over base\" gate) | `98b8713` | ✅ |\n| 5 | Kill-switch wiring into hypernetwork training loop (Plan A follow-up) | `510464f` | ✅ |\n| 7 | **S3 manifest upload** (Plan C follow-up) | `07fe208` | ✅ |\n| 8 | **GPU-distributed corpus generation** (`--shard`, `--cuda-visible-devices`) | `d1fe8a5` | ✅ |",
   "new_string": "# Gap Closure Handoff — 2026-04-23 (session 4)\n\nResuming work on `instructions/gaps.md`. Branch `feat/training-upgrade`.\n\n## Closed so far (8 commits across 4 sessions)\n\n| # | Gap | Commit | Status |\n|---|-----|--------|--------|\n| 1 | Workspace mypy config gap (pandas-stubs, inference/shared/evaluation globs) | `917150e` | ✅ |\n| 2 | APPS stratification parity (Plan A `load_problems` delegation from Plan C) | `917150e` | ✅ |\n| […]
 
@@ -1186,7 +1186,7 @@ id: toolu_017RwDBCddN9nke7CxRUzpKZ
 tool_result
 id: toolu_017RwDBCddN9nke7CxRUzpKZ
 ```
-The file /Users/noahdolevelixir/Code/rune/instructions/gap-closure-handoff.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/instructions/gap-closure-handoff.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1196,7 +1196,7 @@ id: toolu_01HhojvcD6qwTBP6r9qehHse
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/gap-closure-handoff.md",
+  "file_path": "/home/<USER>/Code/rune/instructions/gap-closure-handoff.md",
   "old_string": "## Remaining gaps (from `instructions/gaps.md`)\n\n### 6. GitHub issue/PR `task_description` mining  (Plan B gate) — **IN PROGRESS, diagnosed**\n\n**Root cause found this session:**\n\n- `libs/model-training/src/model_training/d2l_data.py:684` — `_make_pair_record` does NOT include `task_description` in the returned pair dict. It returns `{task_id, activation_text, teacher_text, metadata}` only.\n- `libs/model-training/src/model_training/encoder_pretrain/augment.py:78` — `_select_task_desc(pair)` reads `pair[\"task_description\"]`. Missing → pair dropped.\n- Result: the pipeline that calls `normalize_mined_pairs → augment_pairs_with_task_desc` drops 100% of pairs for missing `task_description`, so `augment_corpus` hits 0% retention and raises `RuntimeError` (the `MIN_RETENTION_RATIO = 0.80` gate).\n\n**The upstream trajectory ALREADY has authentic `task_description`:**\n- `mine_pr_diff_chains` (d2l_mining.py:228) sets `task_description = f\"{title}\\n\\n{body}\".strip()` (PR title + body)\n- `mine_issue_commit_chains` (d2l_mining.py:321) sets `task_description = f\"{title}\\n\\n{body}\".strip()` (issue title + body)\n\nSo no new GitHub API calls are needed. The bug is purely that `normalize_mined_pairs → _make_pair_record` drops it on the floor.\n\n**Minimal fix (~3 lines):**\n\n1. `_make_pair_record(task_id, outcome, language, idx, activation, teacher, task_description)` — add kwarg.\n2. Include `\"task_description\": task_description` in the returned dict.\n3. In `normalize_mined_pairs`, `_record` closure passes `task_desc` (already local at line 735) to `_make_pair_record`.\n\n**TDD (the test I wrote this session — reverted so working tree is clean, but copy/paste it into `libs/model-training/tests/test_d2l_data.py` after `test_normalize_mined_pairs_single_commit_produces_step0`):**\n\n```python\ndef test_normalize_mined_pairs_propagates_task_description() -> None:\n    \"\"\"Each pair record carries the trajectory's task_description.\n\n    Plan B gate: […]
 
 > TOOL
@@ -1204,7 +1204,7 @@ id: toolu_01HhojvcD6qwTBP6r9qehHse
 tool_result
 id: toolu_01HhojvcD6qwTBP6r9qehHse
 ```
-The file /Users/noahdolevelixir/Code/rune/instructions/gap-closure-handoff.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/instructions/gap-closure-handoff.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1214,7 +1214,7 @@ id: toolu_01C9KLj9aqM498FxqZnbUyGh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/gap-closure-handoff.md",
+  "file_path": "/home/<USER>/Code/rune/instructions/gap-closure-handoff.md",
   "old_string": "## Repo state\n\n- Branch: `feat/training-upgrade` (ahead of `origin/feat/training-upgrade` by 56 commits as of `d1fe8a5`)\n- No uncommitted changes after `d1fe8a5` (the session-3 RED test I wrote for gap 6 was reverted to keep the working tree clean)\n- `uv.lock` regenerated with `pandas-stubs` added (run `uv sync --all-packages` to materialize)",
   "new_string": "## Repo state\n\n- Branch: `feat/training-upgrade` (ahead of `origin/feat/training-upgrade` by 57 commits as of `d710005`)\n- No uncommitted changes to tracked source/test files after `d710005`; pre-existing deletions in `docs/superpowers/{handoffs,plans,specs}/` remain in the working tree unstaged (inherited from a prior session, unrelated to gap-closure work).\n- `uv.lock` regenerated with `pandas-stubs` added (run `uv sync --all-packages` to materialize)\n- Gap 6 verification (commit `d710005`): 147 model-training tests pass, 138 handoff-regression tests pass, ruff + mypy clean on `d2l_data.py`."
 }
@@ -1225,7 +1225,7 @@ id: toolu_01C9KLj9aqM498FxqZnbUyGh
 tool_result
 id: toolu_01C9KLj9aqM498FxqZnbUyGh
 ```
-The file /Users/noahdolevelixir/Code/rune/instructions/gap-closure-handoff.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/instructions/gap-closure-handoff.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

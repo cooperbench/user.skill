@@ -109,7 +109,7 @@ tool_result
 id: toolu_01LEQQmz2UyjAMQmAjEK5ort
 ```
 <persisted-output>
-Output too large (50.9KB). Full output saved to: /Users/anton/.claude/projects/-Users-anton-src-drain-cycle/75418cc5-ca2f-42e9-9cbf-74ba261dd2d7/tool-results/b54bipw77.txt
+Output too large (50.9KB). Full output saved to: /home/<USER>/.claude/projects/-Users-anton-src-drain-cycle/75418cc5-ca2f-42e9-9cbf-74ba261dd2d7/tool-results/b54bipw77.txt
 
 Preview (first 2KB):
 Binary file ./drain_cycle/__pycache__/orchestrator.cpython-312.pyc matches
@@ -134,7 +134,7 @@ tool_use Read
 id: toolu_01DVBt3KZbbzzaLntYenKqgT
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/orchestrator.py",
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/orchestrator.py",
   "offset": 680,
   "limit": 160
 }
@@ -308,7 +308,7 @@ tool_use Read
 id: toolu_01Vox4sZywnbGiNQtDRYVFif
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/stop_guard.py"
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/stop_guard.py"
 }
 ```
 
@@ -370,7 +370,7 @@ tool_use Read
 id: toolu_01Q5FgBeDU9zFbJdA22c1jkW
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/prompt.py",
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/prompt.py",
   "offset": 76,
   "limit": 70
 }
@@ -494,7 +494,7 @@ tool_use Read
 id: toolu_01M4ashdAjCa9urfkXwGwJqy
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/console.py",
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/console.py",
   "offset": 110,
   "limit": 60
 }
@@ -592,7 +592,7 @@ tool_use Read
 id: toolu_01Drn7DeTEmB6brhrECHWJjb
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/worker.py",
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/worker.py",
   "offset": 200,
   "limit": 140
 }
@@ -726,7 +726,7 @@ tool_use Read
 id: toolu_013X8MXGjUzRahqrfXjP8QQu
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/worker.py",
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/worker.py",
   "offset": 395,
   "limit": 60
 }
@@ -805,20 +805,20 @@ id: toolu_01SgSrmDMD9i4NVxUDyLDDtt
 644  repos.yml  377B
 644  limits.yml  135B
 644  .env  268B
-/Users/anton/.drain-cycle/runs/52563a03-080e-4db7-b003-ebd27759cf29-20260601T054139473320Z.json
-/Users/anton/.drain-cycle/runs/52563a03-080e-4db7-b003-ebd27759cf29-20260526T100729016200Z.json
-/Users/anton/.drain-cycle/runs/793fc9ea-08c7-40c1-8c1b-417efb20adbf-20260610T140220454364Z.json
-/Users/anton/.drain-cycle/runs/52563a03-080e-4db7-b003-ebd27759cf29-20260526T100700541279Z.json
-/Users/anton/.drain-cycle/runs/52563a03-080e-4db7-b003-ebd27759cf29-20260528T130032809057Z.json
-/Users/anton/.drain-cycle/runs/793fc9ea-08c7-40c1-8c1b-417efb20adbf-20260614T081115904202Z.json
-/Users/anton/.drain-cycle/runs/9e17380f-9527-40ef-8523-4e4358f12809-20260615T141442258554Z.json
-/Users/anton/.drain-cycle/runs/793fc9ea-08c7-40c1-8c1b-417efb20adbf-20260611T111842249473Z.json
-/Users/anton/.drain-cycle/runs/52563a03-080e-4db7-b003-ebd27759cf29-20260526T094355176586Z.json
-/Users/anton/.drain-cycle/runs/52563a03-080e-4db7-b003-ebd27759cf29-20260526T111721271333Z.json
+/home/<USER>/.drain-cycle/runs/52563a03-080e-4db7-b003-ebd27759cf29-20260601T054139473320Z.json
+/home/<USER>/.drain-cycle/runs/52563a03-080e-4db7-b003-ebd27759cf29-20260526T100729016200Z.json
+/home/<USER>/.drain-cycle/runs/793fc9ea-08c7-40c1-8c1b-417efb20adbf-20260610T140220454364Z.json
+/home/<USER>/.drain-cycle/runs/52563a03-080e-4db7-b003-ebd27759cf29-20260526T100700541279Z.json
+/home/<USER>/.drain-cycle/runs/52563a03-080e-4db7-b003-ebd27759cf29-20260528T130032809057Z.json
+/home/<USER>/.drain-cycle/runs/793fc9ea-08c7-40c1-8c1b-417efb20adbf-20260614T081115904202Z.json
+/home/<USER>/.drain-cycle/runs/9e17380f-9527-40ef-8523-4e4358f12809-20260615T141442258554Z.json
+/home/<USER>/.drain-cycle/runs/793fc9ea-08c7-40c1-8c1b-417efb20adbf-20260611T111842249473Z.json
+/home/<USER>/.drain-cycle/runs/52563a03-080e-4db7-b003-ebd27759cf29-20260526T094355176586Z.json
+/home/<USER>/.drain-cycle/runs/52563a03-080e-4db7-b003-ebd27759cf29-20260526T111721271333Z.json
 === limits config ===
 per_issue_tokens: 16000000 # 16 million, double the default
 per_issue_seconds: 1800 # 30 minutes, complex tasks can take 20-25 minutes
-(eval):1: no matches found: /Users/anton/.drain-cycle/config.*
+(eval):1: no matches found: /home/<USER>/.drain-cycle/config.*
 ./pyproject.toml
 ./mise.toml
 ./docs/limits.example.yml
@@ -916,7 +916,7 @@ started: None finished: None
 outcome/verdict: None
 -- entries --
   {'final_linear_state': 'Done', 'halt_reason': None, 'exit_code': 0, 'finishing_runs': [{'trigger': 'err-issue-not-done', 'started_at': '2026-06-18T06:43:10.245774+00:00', 'finished_at': '2026-06-18T06:50:35.392445+00:00', 'duration_seconds': 445.14038400002755, 'model': 'claude-sonnet-4-6', 'usage': {'input_tokens': 390, 'output_tokens': 1319, 'cache_creation_input_tokens': 64480, 'cache_read_input_tokens': 2644532, 'cumulative': 2710721, 'peak_context': 81343}, 'cost_usd': 1.4781996, 'num_turns': 57, 'session_id': '1ba3bb9a-30ae-4ddb-89a5-da1c748c70f7', 'is_error': False}]}
-Shell cwd was reset to /Users/anton/src/drain-cycle
+Shell cwd was reset to /home/<USER>/src/drain-cycle
 ```
 
 > AGENT

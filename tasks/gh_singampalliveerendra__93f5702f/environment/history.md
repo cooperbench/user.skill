@@ -8,7 +8,7 @@ tool_use Bash
 id: toolu_017RqBa4geRJjUcRjoqzAcwo
 ```json
 {
-  "command": "grep -rn \"Story/Quote\\|Story / Quote\\|Story\" /home/veerendra/farmer/yourfamilyfarmer/src/components/moderator/ModeratorFarmerForm.tsx",
+  "command": "grep -rn \"Story/Quote\\|Story / Quote\\|Story\" /home/<USER>/farmer/yourfamilyfarmer/src/components/moderator/ModeratorFarmerForm.tsx",
   "description": "Find Story/Quote text in moderator form"
 }
 ```
@@ -18,7 +18,7 @@ id: toolu_017RqBa4geRJjUcRjoqzAcwo
 tool_result
 id: toolu_017RqBa4geRJjUcRjoqzAcwo
 ```
-/home/veerendra/farmer/yourfamilyfarmer/src/components/moderator/ModeratorFarmerForm.tsx:325:      <Field label="Story / quote">
+/home/<USER>/farmer/yourfamilyfarmer/src/components/moderator/ModeratorFarmerForm.tsx:325:      <Field label="Story / quote">
 ```
 
 > TOOL
@@ -27,7 +27,7 @@ tool_use Read
 id: toolu_01Y651krhtyqBH6FJmpLNP7M
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/moderator/ModeratorFarmerForm.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/moderator/ModeratorFarmerForm.tsx",
   "offset": 320,
   "limit": 15
 }
@@ -62,7 +62,7 @@ id: toolu_01AFt1w4fgCzZm1RTf3PXDjP
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/moderator/ModeratorFarmerForm.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/moderator/ModeratorFarmerForm.tsx",
   "old_string": "      <Field label=\"Story / quote\">",
   "new_string": "      <Field label=\"How we grow\">"
 }
@@ -73,7 +73,7 @@ id: toolu_01AFt1w4fgCzZm1RTf3PXDjP
 tool_result
 id: toolu_01AFt1w4fgCzZm1RTf3PXDjP
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/components/moderator/ModeratorFarmerForm.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/components/moderator/ModeratorFarmerForm.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

@@ -126,7 +126,7 @@ tool_use Read
 id: toolu_01KWdE4A1kth28323EpTqBYh
 ```json
 {
-  "file_path": "/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/agent-sandbox/sandbox-template.yaml"
+  "file_path": "/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/agent-sandbox/sandbox-template.yaml"
 }
 ```
 
@@ -187,8 +187,8 @@ id: toolu_015FUAfDeQ7G3hX2wQf3F6Cb
 tool_result
 id: toolu_015FUAfDeQ7G3hX2wQf3F6Cb
 ```
-/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/agent-sandbox/sandbox-template.yaml
-/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/agent-sandbox/warm-pool.yaml
+/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/agent-sandbox/sandbox-template.yaml
+/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/agent-sandbox/warm-pool.yaml
 ```
 
 > AGENT
@@ -230,7 +230,7 @@ id: toolu_01LzKoQTsGsRG7Z5HbqAguRg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/agent-sandbox/sandbox-template.yaml",
+  "file_path": "/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/agent-sandbox/sandbox-template.yaml",
   "old_string": "    spec:\n      runtimeClassName: gvisor\n      containers:",
   "new_string": "    spec:\n      containers:"
 }
@@ -241,7 +241,7 @@ id: toolu_01LzKoQTsGsRG7Z5HbqAguRg
 tool_result
 id: toolu_01LzKoQTsGsRG7Z5HbqAguRg
 ```
-The file /Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/agent-sandbox/sandbox-template.yaml has been updated successfully.
+The file /home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/agent-sandbox/sandbox-template.yaml has been updated successfully.
 ```
 
 > AGENT
@@ -280,7 +280,7 @@ tool_use Bash
 id: toolu_01B4wzXcS4BpYSEZ99B3Rtbh
 ```json
 {
-  "command": "kubectl apply -f /Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/agent-sandbox/sandbox-template.yaml",
+  "command": "kubectl apply -f /home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/agent-sandbox/sandbox-template.yaml",
   "description": "Reapply sandbox template without gvisor RuntimeClass"
 }
 ```
@@ -327,7 +327,7 @@ tool_use Read
 id: toolu_01YFhucpfxjcsiNJCkQYm3tK
 ```json
 {
-  "file_path": "/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/agent-sandbox/warm-pool.yaml"
+  "file_path": "/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/agent-sandbox/warm-pool.yaml"
 }
 ```
 
@@ -542,8 +542,8 @@ id: toolu_01Gn9wbV8R68FXpHRoViTdL3
 tool_result
 id: toolu_01Gn9wbV8R68FXpHRoViTdL3
 ```
-/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/sidecar/Dockerfile
-/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/backend/Dockerfile
+/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/sidecar/Dockerfile
+/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/backend/Dockerfile
 ```
 
 > TOOL
@@ -553,7 +553,7 @@ id: toolu_01NWgmY3iCdK2yztZ9BMAdHt
 ```json
 {
   "pattern": "duckdb-agent-sidecar",
-  "path": "/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/Makefile",
+  "path": "/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/Makefile",
   "output_mode": "content"
 }
 ```
@@ -573,7 +573,7 @@ tool_use Read
 id: toolu_01958FgB4igcgC3xd5CN6fRV
 ```json
 {
-  "file_path": "/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/Makefile",
+  "file_path": "/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/Makefile",
   "offset": 55,
   "limit": 30
 }
@@ -706,7 +706,7 @@ tool_use Read
 id: toolu_01VJ4x7d359Sz3tyAhHsZHST
 ```json
 {
-  "file_path": "/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/agent-sandbox/sandbox-template.yaml"
+  "file_path": "/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/agent-sandbox/sandbox-template.yaml"
 }
 ```
 
@@ -758,7 +758,7 @@ id: toolu_01K3PyuLix3QJCUDKaFb9sGU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/agent-sandbox/sandbox-template.yaml",
+  "file_path": "/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/agent-sandbox/sandbox-template.yaml",
   "old_string": "        image: duckdb-agent-sidecar:latest",
   "new_string": "        image: duckdb-agent-sidecar:latest\n        imagePullPolicy: Never"
 }
@@ -769,7 +769,7 @@ id: toolu_01K3PyuLix3QJCUDKaFb9sGU
 tool_result
 id: toolu_01K3PyuLix3QJCUDKaFb9sGU
 ```
-The file /Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/agent-sandbox/sandbox-template.yaml has been updated successfully.
+The file /home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/agent-sandbox/sandbox-template.yaml has been updated successfully.
 ```
 
 > AGENT
@@ -782,7 +782,7 @@ tool_use Bash
 id: toolu_01ApN6PSkuVbfxbYstpRVgXC
 ```json
 {
-  "command": "kubectl apply -f /Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/agent-sandbox/sandbox-template.yaml && kubectl delete pods -l agent-sandbox.x-k8s.io/pool-name=duckdb-agent-sidecar-pool -n default",
+  "command": "kubectl apply -f /home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/agent-sandbox/sandbox-template.yaml && kubectl delete pods -l agent-sandbox.x-k8s.io/pool-name=duckdb-agent-sidecar-pool -n default",
   "description": "Reapply template and delete old pods to trigger recreation"
 }
 ```
@@ -914,7 +914,7 @@ node:fs:1386
   const result = binding.mkdir(
                          ^
 
-Error: ENOENT: no such file or directory, mkdir '/home/appuser/.claude/debug'
+Error: ENOENT: no such file or directory, mkdir '/home/<USER>/.claude/debug'
     at mkdirSync (node:fs:1386:26)
     at Object.<anonymous> (/app/dist/server.js:19:28)
     at Module._compile (node:internal/modules/cjs/loader:1521:14)
@@ -926,7 +926,7 @@ Error: ENOENT: no such file or directory, mkdir '/home/appuser/.claude/debug'
   errno: -2,
   code: 'ENOENT',
   syscall: 'mkdir',
-  path: '/home/appuser/.claude/debug'
+  path: '/home/<USER>/.claude/debug'
 }
 
 Node.js v20.20.0
@@ -934,7 +934,7 @@ Node.js v20.20.0
 
 > AGENT
 
-The pod crashes because `readOnlyRootFilesystem: true` prevents creating `/home/appuser/.claude/debug`. We need to add an `emptyDir` volume for the appuser's home directory.
+The pod crashes because `readOnlyRootFilesystem: true` prevents creating `/home/<USER>/.claude/debug`. We need to add an `emptyDir` volume for the appuser's home directory.
 
 > TOOL
 
@@ -943,9 +943,9 @@ id: toolu_01X1mQxw8ijLAMVrw4Bu5Fbq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/agent-sandbox/sandbox-template.yaml",
+  "file_path": "/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/agent-sandbox/sandbox-template.yaml",
   "old_string": "        securityContext:\n          readOnlyRootFilesystem: true\n          allowPrivilegeEscalation: false\n          capabilities:\n            drop: [\"ALL\"]",
-  "new_string": "        volumeMounts:\n        - name: claude-home\n          mountPath: /home/appuser/.claude\n        securityContext:\n          readOnlyRootFilesystem: true\n          allowPrivilegeEscalation: false\n          capabilities:\n            drop: [\"ALL\"]\n      volumes:\n      - name: claude-home\n        emptyDir: {}"
+  "new_string": "        volumeMounts:\n        - name: claude-home\n          mountPath: /home/<USER>/.claude\n        securityContext:\n          readOnlyRootFilesystem: true\n          allowPrivilegeEscalation: false\n          capabilities:\n            drop: [\"ALL\"]\n      volumes:\n      - name: claude-home\n        emptyDir: {}"
 }
 ```
 
@@ -954,7 +954,7 @@ id: toolu_01X1mQxw8ijLAMVrw4Bu5Fbq
 tool_result
 id: toolu_01X1mQxw8ijLAMVrw4Bu5Fbq
 ```
-The file /Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/agent-sandbox/sandbox-template.yaml has been updated successfully.
+The file /home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/agent-sandbox/sandbox-template.yaml has been updated successfully.
 ```
 
 > TOOL
@@ -963,7 +963,7 @@ tool_use Bash
 id: toolu_01VF95nAeN4JoWw3VfnMR8Xa
 ```json
 {
-  "command": "kubectl apply -f /Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/agent-sandbox/sandbox-template.yaml && kubectl delete pod duckdb-agent-sidecar-pool-jv8nm duckdb-agent-sidecar-pool-ql8xv -n default",
+  "command": "kubectl apply -f /home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/agent-sandbox/sandbox-template.yaml && kubectl delete pod duckdb-agent-sidecar-pool-jv8nm duckdb-agent-sidecar-pool-ql8xv -n default",
   "description": "Reapply template with volume mount and recreate pods"
 }
 ```
@@ -1008,7 +1008,7 @@ All pods are now `Running` and `READY 1/1`. Three fixes applied to `sandbox-temp
 
 1. **Removed `runtimeClassName: gvisor`** — not available on OrbStack
 2. **Added `imagePullPolicy: Never`** — use locally-built image
-3. **Added `emptyDir` volume at `/home/appuser/.claude`** — allows the app to write to its config directory despite `readOnlyRootFilesystem: true`
+3. **Added `emptyDir` volume at `/home/<USER>/.claude`** — allows the app to write to its config directory despite `readOnlyRootFilesystem: true`
 
 > DEVELOPER
 
@@ -1060,7 +1060,7 @@ tool_use Read
 id: toolu_01DjKiigazJzC8RwQNtYNd5Q
 ```json
 {
-  "file_path": "/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/backend/app/sandbox/__init__.py"
+  "file_path": "/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/backend/app/sandbox/__init__.py"
 }
 ```
 
@@ -1124,7 +1124,7 @@ id: toolu_01TFNbQL6H33sgBcDZrapE4z
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/backend/app/sandbox/__init__.py",
+  "file_path": "/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/backend/app/sandbox/__init__.py",
   "old_string": "    elif rt == \"k8s\":",
   "new_string": "    elif rt in (\"k8s\", \"kubernetes\"):"
 }
@@ -1135,7 +1135,7 @@ id: toolu_01TFNbQL6H33sgBcDZrapE4z
 tool_result
 id: toolu_01TFNbQL6H33sgBcDZrapE4z
 ```
-The file /Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/backend/app/sandbox/__init__.py has been updated successfully.
+The file /home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/backend/app/sandbox/__init__.py has been updated successfully.
 ```
 
 > AGENT
@@ -1244,7 +1244,7 @@ id: toolu_0119WWWtJH6uNXdqvhwSKiAp
 ```json
 {
   "pattern": "duckdb-data-agent-k8s|backend.*build|k8s.*deploy",
-  "path": "/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/Makefile",
+  "path": "/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/Makefile",
   "output_mode": "content"
 }
 ```
@@ -1268,7 +1268,7 @@ id: toolu_01PU6xY9qsgqS8QvFY2vueAt
 ```json
 {
   "pattern": "k8s-build",
-  "path": "/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/Makefile",
+  "path": "/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/Makefile",
   "output_mode": "content",
   "-C": 2
 }

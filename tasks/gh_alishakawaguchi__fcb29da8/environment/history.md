@@ -1,6 +1,6 @@
 > SYSTEM
 
-# AGENTS.md instructions for /Users/pfleidi/entire/skills
+# AGENTS.md instructions for /home/<USER>/entire/skills
 
 <INSTRUCTIONS>
 ## Workflow
@@ -35,8 +35,8 @@ tool_use exec_command
 id: call_U2zhOdquzcMeKiNpV4Kydbd6
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/pfleidi/.agents/skills/review/SKILL.md",
-  "workdir": "/Users/pfleidi/entire/skills",
+  "cmd": "sed -n '1,220p' /home/<USER>/.agents/skills/review/SKILL.md",
+  "workdir": "/home/<USER>/entire/skills",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -93,7 +93,7 @@ id: call_9nzhMXBhvmSjsuhbKFj7SUUX
 ```json
 {
   "cmd": "git merge-base main HEAD",
-  "workdir": "/Users/pfleidi/entire/skills",
+  "workdir": "/home/<USER>/entire/skills",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -106,7 +106,7 @@ id: call_WsBKMV6YDp1d08txGSz3GSfq
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/pfleidi/entire/skills",
+  "workdir": "/home/<USER>/entire/skills",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -119,7 +119,7 @@ id: call_vmCzsf5dOi2B0xPUK7I2wEBn
 ```json
 {
   "cmd": "rg --files plugins/entire/skills/what-happened",
-  "workdir": "/Users/pfleidi/entire/skills",
+  "workdir": "/home/<USER>/entire/skills",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -132,7 +132,7 @@ id: call_niC3jFWnsBM2zlz2tpYafj8M
 ```json
 {
   "cmd": "find plugins/entire/skills/what-happened -maxdepth 3 -type f",
-  "workdir": "/Users/pfleidi/entire/skills",
+  "workdir": "/home/<USER>/entire/skills",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -205,7 +205,7 @@ id: call_p5EeJ2U4gCMyllISTiR6pHF8
 ```json
 {
   "cmd": "nl -ba plugins/entire/skills/what-happened/SKILL.md",
-  "workdir": "/Users/pfleidi/entire/skills",
+  "workdir": "/home/<USER>/entire/skills",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -218,7 +218,7 @@ id: call_XIOAvUJL4d9qd5c3Y0Faedyp
 ```json
 {
   "cmd": "rg -n \"wat|What Happened|what happened|checkpoint|checkpoints|entire\" plugins/entire/skills plugins -g 'SKILL.md'",
-  "workdir": "/Users/pfleidi/entire/skills",
+  "workdir": "/home/<USER>/entire/skills",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -231,7 +231,7 @@ id: call_vWra62MrU7D8PT0R1huIPwen
 ```json
 {
   "cmd": "rg --files plugins/entire/skills",
-  "workdir": "/Users/pfleidi/entire/skills",
+  "workdir": "/home/<USER>/entire/skills",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -244,7 +244,7 @@ id: call_xqWzI9gdz6FanZ2Nd1wlnTnG
 ```json
 {
   "cmd": "git diff 667da6d27c43c04b92824c76d0fa7c40bf6ddaf1 --stat",
-  "workdir": "/Users/pfleidi/entire/skills",
+  "workdir": "/home/<USER>/entire/skills",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -354,7 +354,7 @@ id: call_GJLNglN0cBKOe9TeKoAmYwIg
 ```json
 {
   "cmd": "nl -ba plugins/entire/skills/search/SKILL.md",
-  "workdir": "/Users/pfleidi/entire/skills",
+  "workdir": "/home/<USER>/entire/skills",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -367,7 +367,7 @@ id: call_wWeG9rt2rwHJEn856Q62LVkl
 ```json
 {
   "cmd": "nl -ba plugins/entire/skills/session-handoff/SKILL.md",
-  "workdir": "/Users/pfleidi/entire/skills",
+  "workdir": "/home/<USER>/entire/skills",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -380,7 +380,7 @@ id: call_7W39GJImYtMXOCrBtBd3OuXR
 ```json
 {
   "cmd": "nl -ba plugins/entire/skills/explain/SKILL.md",
-  "workdir": "/Users/pfleidi/entire/skills",
+  "workdir": "/home/<USER>/entire/skills",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -393,7 +393,7 @@ id: call_e1CStJvfURv0b3tIpwSjWMSB
 ```json
 {
   "cmd": "rg -n \"name:|# |entire explain|entire status|raw-transcript|--json|checkpoint_remote|checkpoints/v1|no-pager\" plugins/entire/skills -g 'SKILL.md'",
-  "workdir": "/Users/pfleidi/entire/skills",
+  "workdir": "/home/<USER>/entire/skills",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -543,7 +543,7 @@ id: call_ftR39GJQNZn22yKk5q5sXGFZ
 ```json
 {
   "cmd": "rg --files plugins/entire | sort",
-  "workdir": "/Users/pfleidi/entire/skills",
+  "workdir": "/home/<USER>/entire/skills",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -556,7 +556,7 @@ id: call_jd1HwTQBxIFHhQW5U0jBUwg9
 ```json
 {
   "cmd": "rg -n \"argument-hint|name:|description:|skills|plugin|SKILL.md|what-happened|wat|What Happened\" -g 'SKILL.md' -g '*.json' -g '*.md' .",
-  "workdir": "/Users/pfleidi/entire/skills",
+  "workdir": "/home/<USER>/entire/skills",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -569,7 +569,7 @@ id: call_9Y0yfR4FKf1SkftZABnHlxbh
 ```json
 {
   "cmd": "entire explain --help",
-  "workdir": "/Users/pfleidi/entire/skills",
+  "workdir": "/home/<USER>/entire/skills",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -582,7 +582,7 @@ id: call_8AOOLUALnUsrP15BKLtjnhkG
 ```json
 {
   "cmd": "entire version",
-  "workdir": "/Users/pfleidi/entire/skills",
+  "workdir": "/home/<USER>/entire/skills",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -703,7 +703,7 @@ id: call_Xo1azDt4qjAbSnUUo2EXbdXo
 ```json
 {
   "cmd": "find plugins/entire -maxdepth 4 -type f",
-  "workdir": "/Users/pfleidi/entire/skills",
+  "workdir": "/home/<USER>/entire/skills",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -716,7 +716,7 @@ id: call_W5Ve4BewKi6LaAlYjU18vv8x
 ```json
 {
   "cmd": "nl -ba README.md",
-  "workdir": "/Users/pfleidi/entire/skills",
+  "workdir": "/home/<USER>/entire/skills",
   "yield_time_ms": 10000,
   "max_output_tokens": 26000
 }
@@ -729,7 +729,7 @@ id: call_0QH8u67gGVkDYLw2PEHtwWEA
 ```json
 {
   "cmd": "find . -maxdepth 4 -type f -name 'plugin.json' -o -name '*.json'",
-  "workdir": "/Users/pfleidi/entire/skills",
+  "workdir": "/home/<USER>/entire/skills",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -742,7 +742,7 @@ id: call_LCSTwU1Aln2MoPxth3h0kUP3
 ```json
 {
   "cmd": "rg -n \"what-happened|what happened|What Happened|wat|Explain Intent|Search Checkpoints|Hand-Off Session\" .",
-  "workdir": "/Users/pfleidi/entire/skills",
+  "workdir": "/home/<USER>/entire/skills",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -855,7 +855,7 @@ id: call_YnHe5YNOOpdeA4gFHoKVl9VT
 ```json
 {
   "cmd": "nl -ba plugins/entire/.codex-plugin/plugin.json",
-  "workdir": "/Users/pfleidi/entire/skills",
+  "workdir": "/home/<USER>/entire/skills",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -868,7 +868,7 @@ id: call_5IA6FHe65v7HTGUqlBa7hWWD
 ```json
 {
   "cmd": "nl -ba plugins/entire/.claude-plugin/plugin.json",
-  "workdir": "/Users/pfleidi/entire/skills",
+  "workdir": "/home/<USER>/entire/skills",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -881,7 +881,7 @@ id: call_nzOfsliu6IfhzdmqKnVKcPYd
 ```json
 {
   "cmd": "nl -ba .agents/plugins/marketplace.json",
-  "workdir": "/Users/pfleidi/entire/skills",
+  "workdir": "/home/<USER>/entire/skills",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -894,7 +894,7 @@ id: call_xeOXe5RsCMZBN1gPkxNF3e0g
 ```json
 {
   "cmd": "nl -ba .cursor-plugin/plugin.json",
-  "workdir": "/Users/pfleidi/entire/skills",
+  "workdir": "/home/<USER>/entire/skills",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -907,7 +907,7 @@ id: call_umJNwk2j9fEWG38YGShMVBIH
 ```json
 {
   "cmd": "nl -ba gemini-extension.json",
-  "workdir": "/Users/pfleidi/entire/skills",
+  "workdir": "/home/<USER>/entire/skills",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -1074,7 +1074,7 @@ id: call_hPgEQU8tLQrPGiNBVIGlbOHf
 ```json
 {
   "cmd": "git log --oneline -5",
-  "workdir": "/Users/pfleidi/entire/skills",
+  "workdir": "/home/<USER>/entire/skills",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1087,7 +1087,7 @@ id: call_8WQaWJcOSRbiTvci4wQglSjC
 ```json
 {
   "cmd": "git ls-files plugins/entire/skills",
-  "workdir": "/Users/pfleidi/entire/skills",
+  "workdir": "/home/<USER>/entire/skills",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1100,7 +1100,7 @@ id: call_wX7fnOWUumCIiUnPbClNmBij
 ```json
 {
   "cmd": "git blame --porcelain -L 1,20 -- plugins/entire/skills/session-handoff/SKILL.md",
-  "workdir": "/Users/pfleidi/entire/skills",
+  "workdir": "/home/<USER>/entire/skills",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -1113,7 +1113,7 @@ id: call_xv5J4x6RqxyJa62yZSAs7G7N
 ```json
 {
   "cmd": "rg -n \"checkpoint|entire explain|raw transcript|raw-transcript|no checkpoint|commit-only|search-all\" README.md plugins/entire/skills .entire -g '*.md' -g '*.json'",
-  "workdir": "/Users/pfleidi/entire/skills",
+  "workdir": "/home/<USER>/entire/skills",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -1165,11 +1165,11 @@ Original token count: 809
 Output:
 7121c367e2939c727958866239feb08bd7ae18ad 1 1 1
 author Alisha Kawaguchi
-author-mail <alisha@entire.io>
+author-mail <<REDACTED_EMAIL>>
 author-time 1775766529
 author-tz -0700
 committer Alisha Kawaguchi
-committer-mail <alisha@entire.io>
+committer-mail <<REDACTED_EMAIL>>
 committer-time 1775766529
 committer-tz -0700
 summary feat: add compaction-style structured summary to hand-off session skill
@@ -1184,11 +1184,11 @@ filename skills/hand-off-session/SKILL.md
 	
 0c0fe4d13d0769fc1ef3b1c5e05c153dcb7755b6 1 5 2
 author Alisha Kawaguchi
-author-mail <alisha@entire.io>
+author-mail <<REDACTED_EMAIL>>
 author-time 1775673575
 author-tz -0700
 committer Alisha Kawaguchi
-committer-mail <alisha@entire.io>
+committer-mail <<REDACTED_EMAIL>>
 committer-time 1775673575
 committer-tz -0700
 summary feat: scaffold hand-off-session repo structure
@@ -1198,11 +1198,11 @@ filename skills/hand-off-session/SKILL.md
 	
 667da6d27c43c04b92824c76d0fa7c40bf6ddaf1 7 7 11
 author alishakawaguchi
-author-mail <alisha@entire.io>
+author-mail <<REDACTED_EMAIL>>
 author-time 1776452232
 author-tz -0700
 committer GitHub
-committer-mail <noreply@github.com>
+committer-mail <<REDACTED_EMAIL>>
 committer-time 1776452232
 committer-tz -0700
 summary Add Entire header to skill responses (#1)
@@ -1255,7 +1255,7 @@ id: call_aNqbegus9GGbwhPf47OXYNdQ
 ```json
 {
   "cmd": "entire explain --commit 667da6d27c43c04b92824c76d0fa7c40bf6ddaf1 --no-pager",
-  "workdir": "/Users/pfleidi/entire/skills",
+  "workdir": "/home/<USER>/entire/skills",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -1268,7 +1268,7 @@ id: call_thqLn55COS3YSCYnWKSVb77a
 ```json
 {
   "cmd": "entire explain --commit 667da6d27c43c04b92824c76d0fa7c40bf6ddaf1 --short --no-pager",
-  "workdir": "/Users/pfleidi/entire/skills",
+  "workdir": "/home/<USER>/entire/skills",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -1281,7 +1281,7 @@ id: call_HtBncLgQqJPsJKPOSRmb4Ie0
 ```json
 {
   "cmd": "git show --no-patch --format=fuller 667da6d27c43c04b92824c76d0fa7c40bf6ddaf1",
-  "workdir": "/Users/pfleidi/entire/skills",
+  "workdir": "/home/<USER>/entire/skills",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1300,7 +1300,7 @@ Output:
 Checkpoint: 3fc8a587fcc7
 Session: 35ea950f-b370-4441-934d-e6a994c53fd3
 Created: 2026-04-17 18:36:50
-Author: Alisha Kawaguchi <alisha@entire.io>
+Author: Alisha Kawaguchi <<REDACTED_EMAIL>>
 Tokens: 3477929
 
 Commits: No commits found on this branch
@@ -1321,11 +1321,11 @@ Transcript (checkpoint scope):
 
 [Tool] Bash: List all skills and their contents
 
-[Tool] Read: /Users/alisha/Projects/skills/plugins/entire/skills/search/SKILL.md
+[Tool] Read: /home/<USER>/Projects/skills/plugins/entire/skills/search/SKILL.md
 
-[Tool] Read: /Users/alisha/Projects/skills/plugins/entire/skills/explain/SKILL.md
+[Tool] Read: /home/<USER>/Projects/skills/plugins/entire/skills/explain/SKILL.md
 
-[Tool] Read: /Users/alisha/Projects/skills/plugins/entire/skills/session-handoff/SKILL.md
+[Tool] Read: /home/<USER>/Projects/skills/plugins/entire/skills/session-handoff/SKILL.md
 
 [Assistant] Let me peek at the Marvin screenshot you referenced.
 
@@ -1348,7 +1348,7 @@ Output:
 Checkpoint: 3fc8a587fcc7
 Session: 35ea950f-b370-4441-934d-e6a994c53fd3
 Created: 2026-04-17 18:36:50
-Author: Alisha Kawaguchi <alisha@entire.io>
+Author: Alisha Kawaguchi <<REDACTED_EMAIL>>
 Tokens: 3477929
 
 Commits: No commits found on this branch
@@ -1369,9 +1369,9 @@ Process exited with code 0
 Original token count: 141
 Output:
 commit 667da6d27c43c04b92824c76d0fa7c40bf6ddaf1
-Author:     alishakawaguchi <alisha@entire.io>
+Author:     alishakawaguchi <<REDACTED_EMAIL>>
 AuthorDate: Fri Apr 17 11:57:12 2026 -0700
-Commit:     GitHub <noreply@github.com>
+Commit:     GitHub <<REDACTED_EMAIL>>
 CommitDate: Fri Apr 17 11:57:12 2026 -0700
 
     Add Entire header to skill responses (#1)
@@ -1397,7 +1397,7 @@ id: call_uPX7gTNiytDgQVkAPl9ZfrVN
 ```json
 {
   "cmd": "nl -ba GEMINI.md",
-  "workdir": "/Users/pfleidi/entire/skills",
+  "workdir": "/home/<USER>/entire/skills",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1424,7 +1424,7 @@ id: call_UdC2hVUKYWCLGl5PjzH3QfRq
 ```json
 {
   "cmd": "nl -ba package.json",
-  "workdir": "/Users/pfleidi/entire/skills",
+  "workdir": "/home/<USER>/entire/skills",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1437,7 +1437,7 @@ id: call_YVLAyFbwGKy3pII7VLddbPbY
 ```json
 {
   "cmd": "find .opencode -maxdepth 3 -type f -print",
-  "workdir": "/Users/pfleidi/entire/skills",
+  "workdir": "/home/<USER>/entire/skills",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1450,7 +1450,7 @@ id: call_Q1DKs3bpRwLmnQHBGOgxebBb
 ```json
 {
   "cmd": "nl -ba .opencode/plugins/entire.js",
-  "workdir": "/Users/pfleidi/entire/skills",
+  "workdir": "/home/<USER>/entire/skills",
   "yield_time_ms": 10000,
   "max_output_tokens": 26000
 }
@@ -1463,7 +1463,7 @@ id: call_1VpZRUHJe9DySodod4uTkwU7
 ```json
 {
   "cmd": "find . -maxdepth 3 -type f -name 'INSTALL.md' -print",
-  "workdir": "/Users/pfleidi/entire/skills",
+  "workdir": "/home/<USER>/entire/skills",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1561,7 +1561,7 @@ id: call_W7lrmdmPgKPTICD5CAz0FYct
 ```json
 {
   "cmd": "nl -ba .entire/settings.json",
-  "workdir": "/Users/pfleidi/entire/skills",
+  "workdir": "/home/<USER>/entire/skills",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1589,13 +1589,13 @@ Output:
 Reviewed current tree. The new skill is one untracked file: `plugins/entire/skills/what-happened/SKILL.md`. I did not edit anything.
 
 **Required**
-1. [SKILL.md](/Users/pfleidi/entire/skills/plugins/entire/skills/what-happened/SKILL.md:2) still declares `name: wat`, with `# Wat` at line 11 and `Wat:` in the response template at line 114. This should be renamed to `what-happened` / `What Happened` everywhere, and the trigger phrases should include the literal phrase “what happened”.
+1. [SKILL.md](/home/<USER>/entire/skills/plugins/entire/skills/what-happened/SKILL.md:2) still declares `name: wat`, with `# Wat` at line 11 and `Wat:` in the response template at line 114. This should be renamed to `what-happened` / `What Happened` everywhere, and the trigger phrases should include the literal phrase “what happened”.
 
-2. [SKILL.md](/Users/pfleidi/entire/skills/plugins/entire/skills/what-happened/SKILL.md:63) does not define what to do for untracked or uncommitted code. `git blame` can return “Not Committed Yet” / all-zero commits, or fail on untracked files, and the workflow would then try `entire explain --commit` on something that has no history. Add explicit early exits like the existing `explain` skill has.
+2. [SKILL.md](/home/<USER>/entire/skills/plugins/entire/skills/what-happened/SKILL.md:63) does not define what to do for untracked or uncommitted code. `git blame` can return “Not Committed Yet” / all-zero commits, or fail on untracked files, and the workflow would then try `entire explain --commit` on something that has no history. Add explicit early exits like the existing `explain` skill has.
 
-3. [SKILL.md](/Users/pfleidi/entire/skills/plugins/entire/skills/what-happened/SKILL.md:94) conflates “no checkpoint exists” with “checkpoint exists but is unavailable locally/auth failed/remote unavailable”. Add separate outcomes: no checkpoint referenced, checkpoint referenced but unavailable, and transcript unavailable after fallback. The final answer should name the checkpoint ID when known.
+3. [SKILL.md](/home/<USER>/entire/skills/plugins/entire/skills/what-happened/SKILL.md:94) conflates “no checkpoint exists” with “checkpoint exists but is unavailable locally/auth failed/remote unavailable”. Add separate outcomes: no checkpoint referenced, checkpoint referenced but unavailable, and transcript unavailable after fallback. The final answer should name the checkpoint ID when known.
 
 **Performance / Improvements**
-4. [SKILL.md](/Users/pfleidi/entire/skills/plugins/entire/skills/what-happened/SKILL.md:82) runs `entire explain` per matched block. That becomes N+1 work when several ranges blame to the same commit. Collect unique commit SHAs first, run `entire explain` once per commit, then map results back to ranges.
+4. [SKILL.md](/home/<USER>/entire/skills/plugins/entire/skills/what-happened/SKILL.md:82) runs `entire explain` per matched block. That becomes N+1 work when several ranges blame to the same commit. Collect unique commit SHAs first, run `entire explain` once per commit, then map results back to ranges.
 
-5. [SKILL.md](/Users/pfleidi/entire/skills/plugins/entire/skills/what-happened/SKILL.md:85) starts with the heavier commit view. […]
+5. [SKILL.md](/home/<USER>/entire/skills/plugins/entire/skills/what-happened/SKILL.md:85) starts with the heavier commit view. […]

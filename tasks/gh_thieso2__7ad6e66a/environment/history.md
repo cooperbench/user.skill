@@ -2,7 +2,16 @@
 
 my local resolver does has some issues:
 
-~/Projects/GitHub/Sandcastle % ping -c 1 tubu.sc.sandman.                                                       [codex/fix-caddy-ca-eperm]PING tubu.sc.sandman (10.206.10.3): 56 data bytes64 bytes from 10.206.10.3: icmp_seq=0 ttl=63 time=22.932 ms--- tubu.sc.sandman ping statistics ---1 packets transmitted, 1 packets received, 0.0% packet lossround-trip min/avg/max/stddev = 22.932/22.932/22.932/0.000 ms~/Projects/GitHub/Sandcastle % ping -c 1 tubu.sc.sandman                                                        [codex/fix-caddy-ca-eperm]ping: cannot resolve tubu.sc.sandman: Unknown host~/Projects/GitHub/Sandcastle %                                                                                  [codex/fix-caddy-ca-eperm]
+~/Projects/GitHub/Sandcastle % ping -c 1 tubu.sc.sandman.                                                       [codex/fix-caddy-ca-eperm]
+PING tubu.sc.sandman (10.206.10.3): 56 data bytes
+64 bytes from 10.206.10.3: icmp_seq=0 ttl=63 time=22.932 ms
+
+--- tubu.sc.sandman ping statistics ---
+1 packets transmitted, 1 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 22.932/22.932/22.932/0.000 ms
+~/Projects/GitHub/Sandcastle % ping -c 1 tubu.sc.sandman                                                        [codex/fix-caddy-ca-eperm]
+ping: cannot resolve tubu.sc.sandman: Unknown host
+~/Projects/GitHub/Sandcastle %                                                                                  [codex/fix-caddy-ca-eperm]
 
 > AGENT
 
@@ -427,7 +436,7 @@ tool_use Read
 id: toolu_01MvUsRkojyvnzCMrq8xxFb6
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go",
   "offset": 280,
   "limit": 80
 }
@@ -1025,7 +1034,7 @@ tool_use Read
 id: toolu_012WCNjWBnRF79ZN3GfgNoev
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go"
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go"
 }
 ```
 
@@ -1128,7 +1137,7 @@ tool_use Read
 id: toolu_01YaS7FYZXQdmWf9jrokixxp
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/api/types.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/api/types.go",
   "offset": 420,
   "limit": 35
 }
@@ -1235,7 +1244,7 @@ id: toolu_01Ah4pBgG3R7vQKGkzyGNR6R
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go",
   "old_string": "const resolverMarker = \"# Managed by sandcastle dns\"",
   "new_string": "const (\n\tresolverMarker  = \"# Managed by sandcastle dns\"\n\thostsBeginMark  = \"# BEGIN sandcastle-dns\"\n\thostsEndMark    = \"# END sandcastle-dns\"\n\thostsTargetPath = \"/etc/hosts\"\n)"
 }
@@ -1246,7 +1255,7 @@ id: toolu_01Ah4pBgG3R7vQKGkzyGNR6R
 tool_result
 id: toolu_01Ah4pBgG3R7vQKGkzyGNR6R
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1256,7 +1265,7 @@ id: toolu_01QyS45yHWYyPmPm1LLBxq1P
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go",
   "old_string": "\tdnsCmd.AddCommand(dnsSearchCmd)\n\n\tdnsInstallCmd.Flags().BoolVar(&dnsInstallSearch, \"search\", false, \"Also add the instance suffix to the macOS DNS search path\")",
   "new_string": "\tdnsCmd.AddCommand(dnsSearchCmd)\n\tdnsCmd.AddCommand(dnsHostsCmd)\n\n\tdnsHostsCmd.AddCommand(dnsHostsSyncCmd)\n\tdnsHostsCmd.AddCommand(dnsHostsClearCmd)\n\tdnsHostsCmd.AddCommand(dnsHostsStatusCmd)\n\n\tdnsInstallCmd.Flags().BoolVar(&dnsInstallSearch, \"search\", false, \"Also add the instance suffix to the macOS DNS search path\")"
 }
@@ -1267,7 +1276,7 @@ id: toolu_01QyS45yHWYyPmPm1LLBxq1P
 tool_result
 id: toolu_01QyS45yHWYyPmPm1LLBxq1P
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1281,7 +1290,7 @@ id: toolu_01KFNPRoQxc68kThN3n4TG1Q
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go",
   "old_string": "func requireDarwin() error {",
   "new_string": "var dnsHostsCmd = &cobra.Command{\n\tUse:   \"hosts\",\n\tShort: \"Manage /etc/hosts entries for Sandcastle sandboxes\",\n\tLong: \"Write a managed block of sandbox name→IP mappings into /etc/hosts.\\n\" +\n\t\t\"Useful when /etc/resolver-based DNS is unreliable (for example when the\\n\" +\n\t\t\"resolver is reached over Tailscale and macOS treats it as transient).\",\n}\n\nvar dnsHostsSyncCmd = &cobra.Command{\n\tUse:   \"sync\",\n\tShort: \"Write the current sandbox list into /etc/hosts\",\n\tRunE: func(cmd *cobra.Command, args []string) error {\n\t\tclient, err := api.NewClient()\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tprintServer(client)\n\n\t\tstatus, err := client.DNSStatus()\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tif len(status.Records) == 0 {\n\t\t\tfmt.Println(\"No DNS records returned by server; clearing managed block.\")\n\t\t\treturn clearHostsBlock()\n\t\t}\n\t\tif err := writeHostsBlock(status.Records); err != nil {\n\t\t\treturn err\n\t\t}\n\t\tfmt.Printf(\"Wrote %d entries to %s\\n\", len(status.Records), hostsTargetPath)\n\t\treturn nil\n\t},\n}\n\nvar dnsHostsClearCmd = &cobra.Command{\n\tUse:   \"clear\",\n\tShort: \"Remove the Sandcastle-managed block from /etc/hosts\",\n\tRunE: func(cmd *cobra.Command, args []string) error {\n\t\treturn clearHostsBlock()\n\t},\n}\n\nvar dnsHostsStatusCmd = &cobra.Command{\n\tUse:   \"status\",\n\tShort: \"Show the Sandcastle-managed block in /etc/hosts\",\n\tRunE: func(cmd *cobra.Command, args []string) error {\n\t\tblock, err := readHostsBlock()\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tif block == \"\" {\n\t\t\tfmt.Printf(\"No Sandcastle-managed block in %s\\n\", hostsTargetPath)\n\t\t\treturn nil\n\t\t}\n\t\tfmt.Print(block)\n\t\treturn nil\n\t},\n}\n\nfunc requireDarwin() error {"
 }
@@ -1292,7 +1301,7 @@ id: toolu_01KFNPRoQxc68kThN3n4TG1Q
 tool_result
 id: toolu_01KFNPRoQxc68kThN3n4TG1Q
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1306,7 +1315,7 @@ id: toolu_01UPpNx2pxcdKuNVEdDtFLzg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go",
   "old_string": "func resolverPath(suffix string) string {\n\treturn filepath.Join(\"/etc/resolver\", suffix)\n}",
   "new_string": "func resolverPath(suffix string) string {\n\treturn filepath.Join(\"/etc/resolver\", suffix)\n}\n\nfunc writeHostsBlock(records []api.DNSRecord) error {\n\tcurrent, err := os.ReadFile(hostsTargetPath)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"read %s: %w\", hostsTargetPath, err)\n\t}\n\tstripped, err := stripHostsBlock(current)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tvar block bytes.Buffer\n\tfmt.Fprintln(&block, hostsBeginMark)\n\tfor _, r := range records {\n\t\tif r.Name == \"\" || r.IP == \"\" {\n\t\t\tcontinue\n\t\t}\n\t\tif r.SandboxID != 0 {\n\t\t\tfmt.Fprintf(&block, \"%s\\t%s\\t# sandbox %d\\n\", r.IP, r.Name, r.SandboxID)\n\t\t} else {\n\t\t\tfmt.Fprintf(&block, \"%s\\t%s\\n\", r.IP, r.Name)\n\t\t}\n\t}\n\tfmt.Fprintln(&block, hostsEndMark)\n\n\tupdated := stripped\n\tif len(updated) > 0 && !bytes.HasSuffix(updated, []byte(\"\\n\")) {\n\t\tupdated = append(updated, '\\n')\n\t}\n\tupdated = append(updated, block.Bytes()...)\n\treturn writeHostsFile(updated)\n}\n\nfunc clearHostsBlock() error {\n\tcurrent, err := os.ReadFile(hostsTargetPath)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"read %s: %w\", hostsTargetPath, err)\n\t}\n\tstripped, err := stripHostsBlock(current)\n\tif err != nil {\n\t\treturn err\n\t}\n\tif bytes.Equal(stripped, current) {\n\t\treturn nil\n\t}\n\treturn writeHostsFile(stripped)\n}\n\nfunc readHostsBlock() (string, error) {\n\tcurrent, err := os.ReadFile(hostsTargetPath)\n\tif err != nil {\n\t\treturn \"\", fmt.Errorf(\"read %s: %w\", hostsTargetPath, err)\n\t}\n\tbegin := bytes.Index(current, []byte(hostsBeginMark))\n\tif begin < 0 {\n\t\treturn \"\", nil\n\t}\n\tend := bytes.Index(current[begin:], []byte(hostsEndMark))\n\tif end < 0 {\n\t\treturn \"\", fmt.Errorf(\"%s contains %q without matching %q\", hostsTargetPath, hostsBeginMark, hostsEndMark)\n\t}\n\tend += begin + len(hostsEndMark)\n\tif eol := bytes.IndexByte(current[end:], '\\n'); eol >= 0 {\n\t\tend += eol + 1\n\t}\n\treturn string(current[begin:end]), nil\n}\n\nfunc stripHostsBlock(data []byte) ([]byte, error) {\n\tbegin := bytes.Index(data, []byte(hostsBeginMark))\n\tif begin < 0 {\n\t\tif […]
 
@@ -1315,7 +1324,7 @@ id: toolu_01UPpNx2pxcdKuNVEdDtFLzg
 tool_result
 id: toolu_01UPpNx2pxcdKuNVEdDtFLzg
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1575,7 +1584,7 @@ id: toolu_014hjUCvy2x2GaiK4mWuyBNB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go",
   "old_string": "\tvar block bytes.Buffer\n\tfmt.Fprintln(&block, hostsBeginMark)\n\tfor _, r := range records {\n\t\tif r.Name == \"\" || r.IP == \"\" {\n\t\t\tcontinue\n\t\t}\n\t\tif r.SandboxID != 0 {\n\t\t\tfmt.Fprintf(&block, \"%s\\t%s\\t# sandbox %d\\n\", r.IP, r.Name, r.SandboxID)\n\t\t} else {\n\t\t\tfmt.Fprintf(&block, \"%s\\t%s\\n\", r.IP, r.Name)\n\t\t}\n\t}\n\tfmt.Fprintln(&block, hostsEndMark)",
   "new_string": "\tvar block bytes.Buffer\n\tfmt.Fprintln(&block, hostsBeginMark)\n\tfor _, r := range records {\n\t\tif r.Name == \"\" || r.IP == \"\" {\n\t\t\tcontinue\n\t\t}\n\t\tnames := hostsAliases(r.Name)\n\t\tfmt.Fprintf(&block, \"%s\\t%s\", r.IP, strings.Join(names, \" \"))\n\t\tif r.SandboxID != 0 {\n\t\t\tfmt.Fprintf(&block, \"\\t# sandbox %d\", r.SandboxID)\n\t\t}\n\t\tfmt.Fprintln(&block)\n\t}\n\tfmt.Fprintln(&block, hostsEndMark)"
 }
@@ -1586,7 +1595,7 @@ id: toolu_014hjUCvy2x2GaiK4mWuyBNB
 tool_result
 id: toolu_014hjUCvy2x2GaiK4mWuyBNB
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1596,7 +1605,7 @@ id: toolu_01584ageTKyUf6q65qYwpd1E
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go",
   "old_string": "func writeHostsFile(data []byte) error {",
   "new_string": "func hostsAliases(fqdn string) []string {\n\tparts := strings.Split(fqdn, \".\")\n\tout := make([]string, 0, len(parts))\n\tfor i := 1; i <= len(parts); i++ {\n\t\tout = append(out, strings.Join(parts[:i], \".\"))\n\t}\n\treturn out\n}\n\nfunc writeHostsFile(data []byte) error {"
 }
@@ -1607,7 +1616,7 @@ id: toolu_01584ageTKyUf6q65qYwpd1E
 tool_result
 id: toolu_01584ageTKyUf6q65qYwpd1E
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1680,7 +1689,7 @@ id: toolu_01A7oLhrfMLoWZg32zV36r4s
 {
   "description": "Map alias-feature surfaces",
   "subagent_type": "Explore",
-  "prompt": "I'm implementing a \"sandbox aliases\" feature for the Sandcastle project at /Users/thies/Projects/GitHub/Sandcastle. Each sandbox already has a name like `tubu` and an FQDN like `tubu.<project>.<instance>`. We want to let users attach extra hostnames to a sandbox:\n- subdomains: `admin.dev` (becomes `admin.dev.<project>.<instance>` when an alias is registered with type=sub for sandbox `dev`)\n- fqdns: `www.heise.de` (used verbatim)\n\nBoth kinds end up:\n1. Stored per-sandbox in the database\n2. Returned by the server's DNS records endpoint (the one the Go CLI calls via `client.DNSStatus()` returning records of `{Name, IP, SandboxID}`)\n3. Provisioned via mkcert so HTTPS routing works\n4. Manageable from the Rails web UI, the Go CLI, and a TUI\n\nI need a precise map of the surfaces I'll touch. Report concisely (under 400 words). I do NOT want you to write any code — just locate things.\n\nFind and report:\n\n1. **Sandbox model** — file path, key columns/associations, any existing alias-like field. Look in `app/models/`.\n2. **DNS records production** — what assembles the `records` array returned by the API's DNS status endpoint. Likely a service (`app/services/`) and a controller (`app/controllers/api/`). Show the file paths and the key method that builds the record list. Note how the FQDN is […]
+  "prompt": "I'm implementing a \"sandbox aliases\" feature for the Sandcastle project at /home/<USER>/Projects/GitHub/Sandcastle. Each sandbox already has a name like `tubu` and an FQDN like `tubu.<project>.<instance>`. We want to let users attach extra hostnames to a sandbox:\n- subdomains: `admin.dev` (becomes `admin.dev.<project>.<instance>` when an alias is registered with type=sub for sandbox `dev`)\n- fqdns: `www.heise.de` (used verbatim)\n\nBoth kinds end up:\n1. Stored per-sandbox in the database\n2. Returned by the server's DNS records endpoint (the one the Go CLI calls via `client.DNSStatus()` returning records of `{Name, IP, SandboxID}`)\n3. Provisioned via mkcert so HTTPS routing works\n4. Manageable from the Rails web UI, the Go CLI, and a TUI\n\nI need a precise map of the surfaces I'll touch. Report concisely (under 400 words). I do NOT want you to write any code — just locate things.\n\nFind and report:\n\n1. **Sandbox model** — file path, key columns/associations, any existing alias-like field. Look in `app/models/`.\n2. **DNS records production** — what assembles the `records` array returned by the API's DNS status endpoint. Likely a service (`app/services/`) and a controller (`app/controllers/api/`). Show the file paths and the key method that builds the record list. Note how the FQDN is […]
 
 > TOOL
 
@@ -1692,28 +1701,28 @@ Perfect. Now I have all the information I need. Let me compile the report:
 ## Surface Area Map for Sandbox Aliases Feature
 
 ### 1. Sandbox Model
-**File:** `/Users/thies/Projects/GitHub/Sandcastle/app/models/sandbox.rb`
+**File:** `/home/<USER>/Projects/GitHub/Sandcastle/app/models/sandbox.rb`
 - Key columns: `name`, `project_name`, `user_id`, `status`
 - Associations: `belongs_to :user`, `has_many :routes`
 - No existing alias field; will need new `has_many :sandbox_aliases` association
 
 ### 2. DNS Records Production
 **Files:**
-- Controller: `/Users/thies/Projects/GitHub/Sandcastle/app/controllers/api/dns_controller.rb` (calls `DnsManager.new.status()`)
-- Service: `/Users/thies/Projects/GitHub/Sandcastle/app/services/dns_manager.rb`
+- Controller: `/home/<USER>/Projects/GitHub/Sandcastle/app/controllers/api/dns_controller.rb` (calls `DnsManager.new.status()`)
+- Service: `/home/<USER>/Projects/GitHub/Sandcastle/app/services/dns_manager.rb`
 - Key method: `records_for(user)` (line 116) builds array of `Record` structs with `name`, `ip`, `sandbox_id`
 - FQDN composition: `fqdn_for(sandbox)` (line 233) assembles `"#{sandbox_label}.#{project_label}.#{instance_label}"` where labels are DNS-safe via `dns_label()`
 - Returns via API: `Api::DnsController#status` renders JSON with `records` array (line 33)
 
 ### 3. Cert Provisioning (mkcert/Caddy)
-**File:** `/Users/thies/Projects/GitHub/Sandcastle/app/services/caddy_certificate_authority.rb`
+**File:** `/home/<USER>/Projects/GitHub/Sandcastle/app/services/caddy_certificate_authority.rb`
 - mkcert integration: lines 124–133 (`run_mkcert` method)
 - Authority uses mkcert if available in PATH (line 135–139), falls back to OpenSSL
 - Certificate generation: `generate_mkcert_authority` (line 102) or `generate_openssl_authority` (line 116)
 - SANs for hostnames: mkcert is called with hardcoded test names ("sandcastle.local", "sandcastle-check.local") — no dynamic SAN list currently; Caddy reverse-proxy routes based on DNS records from DnsManager
 
 ### 4. CLI Sandbox Commands
-**File:** `/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/sandbox.go`
+**File:** `/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/sandbox.go`
 - Existing subcommands: `create`, `list`, `delete`, `start`, `stop`, `rebuild`, `use`, `set`, `rename`, `archive_restore`
 - Pattern for […]
 
@@ -1780,7 +1789,7 @@ tool_use Bash
 id: toolu_01NFVQcLCFdAaqTzM5xg3xAm
 ```json
 {
-  "command": "grep -rln -i 'mkcert\\|caddy' --include='*.rb' --include='*.erb' --include='*.go' --include='*.sh' --include='*.in' /Users/thies/Projects/GitHub/Sandcastle 2>/dev/null | head -40",
+  "command": "grep -rln -i 'mkcert\\|caddy' --include='*.rb' --include='*.erb' --include='*.go' --include='*.sh' --include='*.in' /home/<USER>/Projects/GitHub/Sandcastle 2>/dev/null | head -40",
   "description": "Find Caddy/mkcert across repo"
 }
 ```
@@ -1790,41 +1799,41 @@ id: toolu_01NFVQcLCFdAaqTzM5xg3xAm
 tool_result
 id: toolu_01NFVQcLCFdAaqTzM5xg3xAm
 ```
-/Users/thies/Projects/GitHub/Sandcastle/installer.sh
-/Users/thies/Projects/GitHub/Sandcastle/app/models/project.rb
-/Users/thies/Projects/GitHub/Sandcastle/app/controllers/projects_controller.rb
-/Users/thies/Projects/GitHub/Sandcastle/app/controllers/sandboxes_controller.rb
-/Users/thies/Projects/GitHub/Sandcastle/app/controllers/api/trust_controller.rb
-/Users/thies/Projects/GitHub/Sandcastle/app/controllers/api/sandboxes_controller.rb
-/Users/thies/Projects/GitHub/Sandcastle/app/controllers/api/base_controller.rb
-/Users/thies/Projects/GitHub/Sandcastle/app/views/sandboxes/new.html.erb
-/Users/thies/Projects/GitHub/Sandcastle/app/controllers/api/projects_controller.rb
-/Users/thies/Projects/GitHub/Sandcastle/app/views/sandboxes/show.html.erb
-/Users/thies/Projects/GitHub/Sandcastle/app/views/projects/_form.html.erb
-/Users/thies/Projects/GitHub/Sandcastle/app/services/caddy_certificate_authority.rb
-/Users/thies/Projects/GitHub/Sandcastle/app/services/vnc_manager.rb
-/Users/thies/Projects/GitHub/Sandcastle/app/views/pages/guide.html.erb
-/Users/thies/Projects/GitHub/Sandcastle/app/services/terminal_manager.rb
-/Users/thies/Projects/GitHub/Sandcastle/test/integration/sandbox_entrypoint_caddy_test.rb
-/Users/thies/Projects/GitHub/Sandcastle/app/services/sandbox_manager.rb
-/Users/thies/Projects/GitHub/Sandcastle/app/services/route_manager.rb
-/Users/thies/Projects/GitHub/Sandcastle/test/models/project_test.rb
-/Users/thies/Projects/GitHub/Sandcastle/test/controllers/api/trust_controller_test.rb
-/Users/thies/Projects/GitHub/Sandcastle/test/services/caddy_certificate_authority_test.rb
-/Users/thies/Projects/GitHub/Sandcastle/test/controllers/api/sandboxes_controller_test.rb
-/Users/thies/Projects/GitHub/Sandcastle/test/services/sandbox_manager_test.rb
-/Users/thies/Projects/GitHub/Sandcastle/scripts/generate-local-cert.sh
-/Users/thies/Projects/GitHub/Sandcastle/images/sandbox/entrypoint.sh
-/Users/thies/Projects/GitHub/Sandcastle/db/schema.rb
-/Users/thies/Projects/GitHub/Sandcastle/db/migrate/20260507131500_add_caddy_enabled_to_projects_and_sandboxes.rb
-/Users/thies/Projects/GitHub/Sandcastle/scripts/permission-repair-harness.sh
-/Users/thies/Projects/GitHub/Sandcastle/db/queue_schema.rb
-/Users/thies/Projects/GitHub/Sandcastle/installer/installer.sh.in
-/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/trust.go
-/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go
-/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/sandbox.go
-/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/project.go
-/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/api/types.go
+/home/<USER>/Projects/GitHub/Sandcastle/installer.sh
+/home/<USER>/Projects/GitHub/Sandcastle/app/models/project.rb
+/home/<USER>/Projects/GitHub/Sandcastle/app/controllers/projects_controller.rb
+/home/<USER>/Projects/GitHub/Sandcastle/app/controllers/sandboxes_controller.rb
+/home/<USER>/Projects/GitHub/Sandcastle/app/controllers/api/trust_controller.rb
+/home/<USER>/Projects/GitHub/Sandcastle/app/controllers/api/sandboxes_controller.rb
+/home/<USER>/Projects/GitHub/Sandcastle/app/controllers/api/base_controller.rb
+/home/<USER>/Projects/GitHub/Sandcastle/app/views/sandboxes/new.html.erb
+/home/<USER>/Projects/GitHub/Sandcastle/app/controllers/api/projects_controller.rb
+/home/<USER>/Projects/GitHub/Sandcastle/app/views/sandboxes/show.html.erb
+/home/<USER>/Projects/GitHub/Sandcastle/app/views/projects/_form.html.erb
+/home/<USER>/Projects/GitHub/Sandcastle/app/services/caddy_certificate_authority.rb
+/home/<USER>/Projects/GitHub/Sandcastle/app/services/vnc_manager.rb
+/home/<USER>/Projects/GitHub/Sandcastle/app/views/pages/guide.html.erb
+/home/<USER>/Projects/GitHub/Sandcastle/app/services/terminal_manager.rb
+/home/<USER>/Projects/GitHub/Sandcastle/test/integration/sandbox_entrypoint_caddy_test.rb
+/home/<USER>/Projects/GitHub/Sandcastle/app/services/sandbox_manager.rb
+/home/<USER>/Projects/GitHub/Sandcastle/app/services/route_manager.rb
+/home/<USER>/Projects/GitHub/Sandcastle/test/models/project_test.rb
+/home/<USER>/Projects/GitHub/Sandcastle/test/controllers/api/trust_controller_test.rb
+/home/<USER>/Projects/GitHub/Sandcastle/test/services/caddy_certificate_authority_test.rb
+/home/<USER>/Projects/GitHub/Sandcastle/test/controllers/api/sandboxes_controller_test.rb
+/home/<USER>/Projects/GitHub/Sandcastle/test/services/sandbox_manager_test.rb
+/home/<USER>/Projects/GitHub/Sandcastle/scripts/generate-local-cert.sh
+/home/<USER>/Projects/GitHub/Sandcastle/images/sandbox/entrypoint.sh
+/home/<USER>/Projects/GitHub/Sandcastle/db/schema.rb
+/home/<USER>/Projects/GitHub/Sandcastle/db/migrate/20260507131500_add_caddy_enabled_to_projects_and_sandboxes.rb
+/home/<USER>/Projects/GitHub/Sandcastle/scripts/permission-repair-harness.sh
+/home/<USER>/Projects/GitHub/Sandcastle/db/queue_schema.rb
+/home/<USER>/Projects/GitHub/Sandcastle/installer/installer.sh.in
+/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/trust.go
+/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go
+/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/sandbox.go
+/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/project.go
+/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/api/types.go
 ```
 
 > TOOL
@@ -1919,7 +1928,7 @@ drwxr-xr-x   3 thies  staff       96  9 Feb. 18:33 internal
 -rw-r--r--   1 thies  staff      703 10 Feb. 17:04 Makefile
 -rwxr-xr-x@  1 thies  staff  8399186  7 Mai  20:44 sandcastle
 ---
-/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli
+/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli
 ```
 
 > TOOL
@@ -1928,7 +1937,7 @@ tool_use Bash
 id: toolu_01FTgf9txzw9dB53W96dU5zU
 ```json
 {
-  "command": "cd /Users/thies/Projects/GitHub/Sandcastle && grep -nE 'mkcert|SAN|x509|cert.*host|sandbox.*cert|sandbox.*hostname' app/services/caddy_certificate_authority.rb app/services/sandbox_manager.rb app/services/route_manager.rb 2>/dev/null | head -60",
+  "command": "cd /home/<USER>/Projects/GitHub/Sandcastle && grep -nE 'mkcert|SAN|x509|cert.*host|sandbox.*cert|sandbox.*hostname' app/services/caddy_certificate_authority.rb app/services/sandbox_manager.rb app/services/route_manager.rb 2>/dev/null | head -60",
   "description": "Find how Caddy/mkcert receives sandbox hostnames"
 }
 ```
@@ -1981,7 +1990,7 @@ tool_use Read
 id: toolu_0182syLKyDnRtYHSptP2PFiq
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/app/services/route_manager.rb",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/app/services/route_manager.rb",
   "offset": 85,
   "limit": 160
 }
@@ -2076,7 +2085,7 @@ tool_use Read
 id: toolu_01EjAeKbVdaJGT6vpurD1aoZ
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/app/services/route_manager.rb",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/app/services/route_manager.rb",
   "offset": 259,
   "limit": 120
 }
@@ -2148,7 +2157,7 @@ tool_use Read
 id: toolu_013d6egQ99QH15FtSn4XvGYr
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/app/services/dns_manager.rb",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/app/services/dns_manager.rb",
   "offset": 100,
   "limit": 160
 }
@@ -2466,7 +2475,7 @@ tool_use Read
 id: toolu_0159JoWfMmJQUQSR7nds5rCx
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/db/migrate/20260507131500_add_caddy_enabled_to_projects_and_sandboxes.rb"
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/db/migrate/20260507131500_add_caddy_enabled_to_projects_and_sandboxes.rb"
 }
 ```
 
@@ -2490,7 +2499,7 @@ tool_use Read
 id: toolu_017n3AXhRdWaDWLMMGz9Sovm
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/app/models/sandbox.rb"
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/app/models/sandbox.rb"
 }
 ```
 
@@ -2571,7 +2580,7 @@ tool_use Write
 id: toolu_012NZGdQCyvwkmNisxaGRK7W
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/db/migrate/20260507140000_create_sandbox_aliases.rb",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/db/migrate/20260507140000_create_sandbox_aliases.rb",
   "content": "class CreateSandboxAliases < ActiveRecord::Migration[8.1]\n  def change\n    create_table :sandbox_aliases do |t|\n      t.references :sandbox, null: false, foreign_key: true\n      t.string :kind, null: false\n      t.string :value, null: false\n      t.timestamps\n    end\n\n    add_index :sandbox_aliases, [ :sandbox_id, :kind, :value ], unique: true\n    add_index :sandbox_aliases, :value, unique: true, where: \"kind = 'fqdn'\"\n  end\nend\n"
 }
 ```
@@ -2581,7 +2590,7 @@ id: toolu_012NZGdQCyvwkmNisxaGRK7W
 tool_result
 id: toolu_012NZGdQCyvwkmNisxaGRK7W
 ```
-File created successfully at: /Users/thies/Projects/GitHub/Sandcastle/db/migrate/20260507140000_create_sandbox_aliases.rb (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Projects/GitHub/Sandcastle/db/migrate/20260507140000_create_sandbox_aliases.rb (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2590,7 +2599,7 @@ tool_use Write
 id: toolu_01Jd8eptFmwbEW8HDPKtXatL
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/app/models/sandbox_alias.rb",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/app/models/sandbox_alias.rb",
   "content": "class SandboxAlias < ApplicationRecord\n  KINDS = %w[sub fqdn].freeze\n  LABEL = /\\A[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\z/\n\n  belongs_to :sandbox\n\n  before_validation :normalize\n\n  validates :kind, inclusion: { in: KINDS }\n  validates :value, presence: true,\n    uniqueness: { scope: [ :sandbox_id, :kind ], case_sensitive: false }\n  validate :validate_fqdn_globally_unique\n  validate :validate_value_format\n\n  def fqdn\n    case kind\n    when \"sub\"\n      base = sandbox && DnsManager.new.hostname_for(sandbox)\n      base.present? ? \"#{value}.#{base}\" : nil\n    when \"fqdn\"\n      value\n    end\n  end\n\n  private\n\n  def normalize\n    self.kind = kind.to_s.downcase.strip\n    self.value = value.to_s.downcase.strip.chomp(\".\")\n  end\n\n  def validate_value_format\n    return if value.blank? || !KINDS.include?(kind)\n\n    parts = value.split(\".\")\n    if parts.empty?\n      errors.add(:value, \"must contain at least one label\")\n      return\n    end\n    if kind == \"fqdn\" && parts.size < 2\n      errors.add(:value, \"must contain at least two labels for an fqdn\")\n      return\n    end\n    parts.each do |label|\n      unless label.match?(LABEL) && label.length <= 63\n        errors.add(:value, \"contains invalid DNS label #{label.inspect}\")\n        return\n      end\n    end\n  end\n\n  def validate_fqdn_globally_unique\n    return unless kind == \"fqdn\" && value.present?\n\n    scope = SandboxAlias.where(kind: \"fqdn\", value: value)\n    scope = scope.where.not(id: id) if persisted?\n    errors.add(:value, \"is already used by another sandbox\") if scope.exists?\n  end\nend\n"
 }
 ```
@@ -2600,7 +2609,7 @@ id: toolu_01Jd8eptFmwbEW8HDPKtXatL
 tool_result
 id: toolu_01Jd8eptFmwbEW8HDPKtXatL
 ```
-File created successfully at: /Users/thies/Projects/GitHub/Sandcastle/app/models/sandbox_alias.rb (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Projects/GitHub/Sandcastle/app/models/sandbox_alias.rb (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2610,7 +2619,7 @@ id: toolu_016eGu8PqocXkXSAsjNTWxPd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/app/models/sandbox.rb",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/app/models/sandbox.rb",
   "old_string": "  has_many :routes, dependent: :destroy\n  has_many :container_metrics, dependent: :delete_all\n  has_many :sandbox_mounts, dependent: :destroy",
   "new_string": "  has_many :routes, dependent: :destroy\n  has_many :container_metrics, dependent: :delete_all\n  has_many :sandbox_mounts, dependent: :destroy\n  has_many :aliases, class_name: \"SandboxAlias\", dependent: :destroy"
 }
@@ -2621,7 +2630,7 @@ id: toolu_016eGu8PqocXkXSAsjNTWxPd
 tool_result
 id: toolu_016eGu8PqocXkXSAsjNTWxPd
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/app/models/sandbox.rb has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/app/models/sandbox.rb has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2788,7 +2797,7 @@ tool_use Read
 id: toolu_01DKgz7iD6aB3Yk4gT3Kw1GK
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/app/services/dns_manager.rb",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/app/services/dns_manager.rb",
   "offset": 1,
   "limit": 115
 }
@@ -2860,7 +2869,7 @@ id: toolu_01NfcPoiw5EhZC15qfY5T7og
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/app/services/dns_manager.rb",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/app/services/dns_manager.rb",
   "old_string": "  def records_for(user)\n    records = []\n    seen = {}\n\n    dns_sandboxes(user).find_each do |sandbox|\n      ip = TailscaleManager.new.sandbox_tailscale_ip(sandbox: sandbox)\n      next if ip.blank?\n\n      name = fqdn_for(sandbox)\n      next if name.blank?\n\n      if seen.key?(name)\n        records.reject! { |r| r.name == name }\n        seen[name] = :duplicate\n        next\n      end\n\n      seen[name] = sandbox.id\n      records << Record.new(name: name, ip: ip, sandbox_id: sandbox.id)\n    end\n\n    records\n  end",
   "new_string": "  def records_for(user)\n    records = []\n    seen = {}\n\n    add_record = lambda do |name, ip, sandbox_id|\n      if seen.key?(name)\n        records.reject! { |r| r.name == name }\n        seen[name] = :duplicate\n        next\n      end\n      seen[name] = sandbox_id\n      records << Record.new(name: name, ip: ip, sandbox_id: sandbox_id)\n    end\n\n    dns_sandboxes(user).includes(:aliases).find_each do |sandbox|\n      ip = TailscaleManager.new.sandbox_tailscale_ip(sandbox: sandbox)\n      next if ip.blank?\n\n      name = fqdn_for(sandbox)\n      next if name.blank?\n\n      add_record.call(name, ip, sandbox.id)\n\n      sandbox.aliases.each do |a|\n        alias_name = alias_fqdn_for(sandbox, a, base: name)\n        next if alias_name.blank?\n        add_record.call(alias_name, ip, sandbox.id)\n      end\n    end\n\n    records\n  end"
 }
@@ -2871,7 +2880,7 @@ id: toolu_01NfcPoiw5EhZC15qfY5T7og
 tool_result
 id: toolu_01NfcPoiw5EhZC15qfY5T7og
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/app/services/dns_manager.rb has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/app/services/dns_manager.rb has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2885,7 +2894,7 @@ id: toolu_01Ctr4jgjgZFspk4cAZ6U6VW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/app/services/dns_manager.rb",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/app/services/dns_manager.rb",
   "old_string": "  def skipped_for(user)\n    skipped = []\n    names = Hash.new { |h, k| h[k] = [] }\n\n    dns_sandboxes(user).find_each do |sandbox|\n      name = fqdn_for(sandbox)\n      if name.blank?\n        skipped << SkippedRecord.new(name: sandbox.display_name, reason: \"invalid DNS label\", sandbox_id: sandbox.id)\n        next\n      end\n\n      ip = TailscaleManager.new.sandbox_tailscale_ip(sandbox: sandbox)\n      if ip.blank?\n        skipped << SkippedRecord.new(name: name, reason: \"no Tailscale network IP\", sandbox_id: sandbox.id)\n        next\n      end\n\n      names[name] << sandbox.id\n    end\n\n    names.each do |name, ids|\n      next unless ids.size > 1\n\n      ids.each do |id|\n        skipped << SkippedRecord.new(name: name, reason: \"duplicate DNS name\", sandbox_id: id)\n      end\n    end\n\n    skipped\n  end",
   "new_string": "  def skipped_for(user)\n    skipped = []\n    names = Hash.new { |h, k| h[k] = [] }\n\n    dns_sandboxes(user).includes(:aliases).find_each do |sandbox|\n      name = fqdn_for(sandbox)\n      if name.blank?\n        skipped << SkippedRecord.new(name: sandbox.display_name, reason: \"invalid DNS label\", sandbox_id: sandbox.id)\n        next\n      end\n\n      ip = TailscaleManager.new.sandbox_tailscale_ip(sandbox: sandbox)\n      if ip.blank?\n        skipped << SkippedRecord.new(name: name, reason: \"no Tailscale network IP\", sandbox_id: sandbox.id)\n        next\n      end\n\n      names[name] << sandbox.id\n\n      sandbox.aliases.each do |a|\n        alias_name = alias_fqdn_for(sandbox, a, base: name)\n        if alias_name.blank?\n          skipped << SkippedRecord.new(name: a.value, reason: \"invalid alias\", sandbox_id: sandbox.id)\n          next\n        end\n        names[alias_name] << sandbox.id\n      end\n    end\n\n    names.each do |name, ids|\n      next unless ids.uniq.size > 1\n\n      ids.uniq.each do |id|\n        skipped << SkippedRecord.new(name: name, reason: \"duplicate […]
 
@@ -2894,7 +2903,7 @@ id: toolu_01Ctr4jgjgZFspk4cAZ6U6VW
 tool_result
 id: toolu_01Ctr4jgjgZFspk4cAZ6U6VW
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/app/services/dns_manager.rb has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/app/services/dns_manager.rb has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2904,7 +2913,7 @@ id: toolu_0142CdcRA5txu4Hbq4zeC5TC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/app/services/dns_manager.rb",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/app/services/dns_manager.rb",
   "old_string": "  def fqdn_for(sandbox)",
   "new_string": "  def alias_fqdn_for(sandbox, sandbox_alias, base: nil)\n    case sandbox_alias.kind\n    when \"sub\"\n      base ||= fqdn_for(sandbox)\n      return nil if base.blank? || sandbox_alias.value.blank?\n      \"#{sandbox_alias.value}.#{base}\"\n    when \"fqdn\"\n      sandbox_alias.value.presence\n    end\n  end\n\n  def fqdn_for(sandbox)"
 }
@@ -2915,7 +2924,7 @@ id: toolu_0142CdcRA5txu4Hbq4zeC5TC
 tool_result
 id: toolu_0142CdcRA5txu4Hbq4zeC5TC
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/app/services/dns_manager.rb has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/app/services/dns_manager.rb has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3035,7 +3044,7 @@ tool_use Read
 id: toolu_01FWVCpcL4Eg7vWNxUUuJ694
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/config/routes.rb",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/config/routes.rb",
   "offset": 115,
   "limit": 55
 }
@@ -3102,7 +3111,7 @@ tool_use Read
 id: toolu_01FbUcEyZghHpvMzYw6hAp1C
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/app/controllers/api/routes_controller.rb"
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/app/controllers/api/routes_controller.rb"
 }
 ```
 
@@ -3194,7 +3203,7 @@ tool_use Write
 id: toolu_01W8HAfqH9BPqpoQ2jVfErk7
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/app/controllers/api/sandbox_aliases_controller.rb",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/app/controllers/api/sandbox_aliases_controller.rb",
   "content": "module Api\n  class SandboxAliasesController < BaseController\n    before_action :set_sandbox\n\n    def index\n      render json: @sandbox.aliases.order(:kind, :value).map { |a| alias_json(a) }\n    end\n\n    def create\n      a = @sandbox.aliases.build(kind: params[:kind], value: params[:value])\n      if a.save\n        DnsManager.publish_best_effort(@sandbox.user)\n        SandboxCertificateRefreshJob.perform_later(@sandbox.id) if defined?(SandboxCertificateRefreshJob)\n        render json: alias_json(a), status: :created\n      else\n        render json: { error: a.errors.full_messages.join(\", \") }, status: :unprocessable_entity\n      end\n    end\n\n    def destroy\n      a = @sandbox.aliases.find(params[:id])\n      a.destroy!\n      DnsManager.publish_best_effort(@sandbox.user)\n      SandboxCertificateRefreshJob.perform_later(@sandbox.id) if defined?(SandboxCertificateRefreshJob)\n      render json: { status: \"removed\" }\n    rescue ActiveRecord::RecordNotFound\n      render json: { error: \"Alias not found\" }, status: :not_found\n    end\n\n    private\n\n    def set_sandbox\n      @sandbox = current_user.sandboxes.active.find(params[:sandbox_id])\n    end\n\n    def alias_json(a)\n      {\n        id: a.id,\n        sandbox_id: a.sandbox_id,\n        kind: a.kind,\n        value: a.value,\n        fqdn: a.fqdn\n      }\n    end\n  end\nend\n"
 }
 ```
@@ -3204,7 +3213,7 @@ id: toolu_01W8HAfqH9BPqpoQ2jVfErk7
 tool_result
 id: toolu_01W8HAfqH9BPqpoQ2jVfErk7
 ```
-File created successfully at: /Users/thies/Projects/GitHub/Sandcastle/app/controllers/api/sandbox_aliases_controller.rb (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Projects/GitHub/Sandcastle/app/controllers/api/sandbox_aliases_controller.rb (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3214,7 +3223,7 @@ id: toolu_01N2rGR7SoVsrAMSFNdgSPAw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/config/routes.rb",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/config/routes.rb",
   "old_string": "      resources :routes, only: [ :index, :create, :destroy ]\n    end",
   "new_string": "      resources :routes, only: [ :index, :create, :destroy ]\n      resources :aliases, only: [ :index, :create, :destroy ], controller: \"sandbox_aliases\"\n    end"
 }
@@ -3225,7 +3234,7 @@ id: toolu_01N2rGR7SoVsrAMSFNdgSPAw
 tool_result
 id: toolu_01N2rGR7SoVsrAMSFNdgSPAw
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/config/routes.rb has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/config/routes.rb has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3324,7 +3333,7 @@ tool_use Read
 id: toolu_01FYPPRDVgb6sWSjXeVgeC39
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/api/client.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/api/client.go",
   "offset": 390,
   "limit": 40
 }
@@ -3383,7 +3392,7 @@ tool_use Read
 id: toolu_019jHeNEZVntgC2fRgUNmyZq
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/route.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/route.go",
   "offset": 1,
   "limit": 150
 }
@@ -3446,7 +3455,7 @@ tool_use Read
 id: toolu_01AhnjRYT3Kq4PiD53Sb9ymT
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/api/types.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/api/types.go",
   "offset": 1,
   "limit": 40
 }
@@ -3506,7 +3515,7 @@ id: toolu_01AThr1tfLzfAL6tqDYRN4sM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/api/types.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/api/types.go",
   "old_string": "type DNSRecord struct {",
   "new_string": "type SandboxAlias struct {\n\tID        int    `json:\"id\"`\n\tSandboxID int    `json:\"sandbox_id\"`\n\tKind      string `json:\"kind\"`\n\tValue     string `json:\"value\"`\n\tFQDN      string `json:\"fqdn\"`\n}\n\ntype SandboxAliasRequest struct {\n\tKind  string `json:\"kind\"`\n\tValue string `json:\"value\"`\n}\n\ntype DNSRecord struct {"
 }
@@ -3517,7 +3526,7 @@ id: toolu_01AThr1tfLzfAL6tqDYRN4sM
 tool_result
 id: toolu_01AThr1tfLzfAL6tqDYRN4sM
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/api/types.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/api/types.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3527,7 +3536,7 @@ id: toolu_01FMwLuiDoEyAGyVAkTBwd7E
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/api/client.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/api/client.go",
   "old_string": "// Snapshots",
   "new_string": "// Sandbox aliases\n\nfunc (c *Client) ListSandboxAliases(sandboxID int) ([]SandboxAlias, error) {\n\tvar aliases []SandboxAlias\n\terr := c.do(\"GET\", fmt.Sprintf(\"/api/sandboxes/%d/aliases\", sandboxID), nil, &aliases)\n\treturn aliases, err\n}\n\nfunc (c *Client) AddSandboxAlias(sandboxID int, req SandboxAliasRequest) (*SandboxAlias, error) {\n\tvar a SandboxAlias\n\terr := c.do(\"POST\", fmt.Sprintf(\"/api/sandboxes/%d/aliases\", sandboxID), req, &a)\n\treturn &a, err\n}\n\nfunc (c *Client) RemoveSandboxAliasByID(sandboxID, aliasID int) error {\n\treturn c.do(\"DELETE\", fmt.Sprintf(\"/api/sandboxes/%d/aliases/%d\", sandboxID, aliasID), nil, nil)\n}\n\n// Snapshots"
 }
@@ -3538,7 +3547,7 @@ id: toolu_01FMwLuiDoEyAGyVAkTBwd7E
 tool_result
 id: toolu_01FMwLuiDoEyAGyVAkTBwd7E
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/api/client.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/api/client.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3552,7 +3561,7 @@ id: toolu_01V3Dv29KsfSzMZAXh3jhGyP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go",
   "old_string": "\tdnsCmd.AddCommand(dnsHostsCmd)\n\n\tdnsHostsCmd.AddCommand(dnsHostsSyncCmd)\n\tdnsHostsCmd.AddCommand(dnsHostsClearCmd)\n\tdnsHostsCmd.AddCommand(dnsHostsStatusCmd)",
   "new_string": "\tdnsCmd.AddCommand(dnsHostsCmd)\n\tdnsCmd.AddCommand(dnsAliasCmd)\n\n\tdnsHostsCmd.AddCommand(dnsHostsSyncCmd)\n\tdnsHostsCmd.AddCommand(dnsHostsClearCmd)\n\tdnsHostsCmd.AddCommand(dnsHostsStatusCmd)\n\n\tdnsAliasCmd.AddCommand(dnsAliasAddCmd)\n\tdnsAliasCmd.AddCommand(dnsAliasRemoveCmd)\n\tdnsAliasCmd.AddCommand(dnsAliasListCmd)"
 }
@@ -3563,7 +3572,7 @@ id: toolu_01V3Dv29KsfSzMZAXh3jhGyP
 tool_result
 id: toolu_01V3Dv29KsfSzMZAXh3jhGyP
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3577,7 +3586,7 @@ id: toolu_011YNGC9kMYjkftv43WnCcLk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go",
   "old_string": "func requireDarwin() error {",
   "new_string": "var dnsAliasCmd = &cobra.Command{\n\tUse:   \"alias\",\n\tShort: \"Manage extra hostnames (aliases) for a sandbox\",\n\tLong: `Add additional hostnames that resolve to a sandbox.\n\nTwo kinds of alias:\n  sub  <value> <sandbox>   — value is prefixed onto the sandbox's FQDN.\n                             e.g. \"admin\" on sandbox \"dev\" → admin.dev.<project>.<host>\n  fqdn <value> <sandbox>   — value is used verbatim, e.g. www.example.com.\n\nAliases land in the server's DNS records and in /etc/hosts (after\n` + \"`sandcastle dns hosts sync`\" + `). FQDN aliases are also added to the\nmkcert SAN list so HTTPS works locally.`,\n}\n\nvar dnsAliasAddCmd = &cobra.Command{\n\tUse:   \"add <sub|fqdn> <value> <sandbox>\",\n\tShort: \"Add an alias to a sandbox\",\n\tArgs:  cobra.ExactArgs(3),\n\tRunE: func(cmd *cobra.Command, args []string) error {\n\t\tkind, value, sandboxName := args[0], args[1], args[2]\n\t\tif kind != \"sub\" && kind != \"fqdn\" {\n\t\t\treturn fmt.Errorf(\"kind must be \\\"sub\\\" or \\\"fqdn\\\" (got %q)\", kind)\n\t\t}\n\n\t\tclient, err := api.NewClient()\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tprintServer(client)\n\n\t\tsandbox, err := findSandboxByName(client, sandboxName)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\n\t\ta, err := client.AddSandboxAlias(sandbox.ID, api.SandboxAliasRequest{Kind: kind, Value: value})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tfmt.Printf(\"Added %s alias %q to sandbox %q.\\n\", a.Kind, a.Value, sandbox.Name)\n\t\tfmt.Printf(\"  FQDN: %s\\n\", a.FQDN)\n\t\tfmt.Println(\"Run `sandcastle dns hosts sync` to update /etc/hosts.\")\n\t\treturn nil\n\t},\n}\n\nvar dnsAliasRemoveCmd = &cobra.Command{\n\tUse:   \"remove <value> <sandbox>\",\n\tShort: \"Remove an alias from a […]
 
@@ -3586,7 +3595,7 @@ id: toolu_011YNGC9kMYjkftv43WnCcLk
 tool_result
 id: toolu_011YNGC9kMYjkftv43WnCcLk
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3595,7 +3604,7 @@ tool_use Bash
 id: toolu_01TES7WbyogYZE6Z2Vr4DyJa
 ```json
 {
-  "command": "cd /Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli && go build ./... 2>&1 | tail -10",
+  "command": "cd /home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli && go build ./... 2>&1 | tail -10",
   "description": "Compile-check CLI changes"
 }
 ```
@@ -3694,7 +3703,7 @@ tool_use Bash
 id: toolu_01FHFFEDGfZbEjWF6Cxrvend
 ```json
 {
-  "command": "cd /Users/thies/Projects/GitHub/Sandcastle && docker exec sandcastle-web ./bin/rails runner '\nsb = Sandbox.first\nuser = sb.user\ntoken = ApiToken.where(user: user).first\nif token.nil?\n  raw = SecureRandom.hex(24)\n  prefix = SecureRandom.hex(4)\n  ApiToken.create!(user: user, name: \"test-aliases\", prefix: prefix, secret_digest: BCrypt::Password.create(raw))\n  puts \"TOKEN=sc_#{prefix}_#{raw}\"\nelse\n  puts \"(using existing token id #{token.id})\"\nend\nputs \"SANDBOX_ID=#{sb.id}\"\n' 2>&1 | grep -E '^TOKEN=|^SANDBOX_ID=|using existing' | tail -3",
+  "command": "cd /home/<USER>/Projects/GitHub/Sandcastle && docker exec sandcastle-web ./bin/rails runner '\nsb = Sandbox.first\nuser = sb.user\ntoken = ApiToken.where(user: user).first\nif token.nil?\n  raw = SecureRandom.hex(24)\n  prefix = SecureRandom.hex(4)\n  ApiToken.create!(user: user, name: \"test-aliases\", prefix: prefix, secret_digest: BCrypt::Password.create(raw))\n  puts \"TOKEN=sc_#{prefix}_#{raw}\"\nelse\n  puts \"(using existing token id #{token.id})\"\nend\nputs \"SANDBOX_ID=#{sb.id}\"\n' 2>&1 | grep -E '^TOKEN=|^SANDBOX_ID=|using existing' | tail -3",
   "description": "Issue an API token for local testing"
 }
 ```
@@ -3908,7 +3917,7 @@ tool_use Read
 id: toolu_01H1XJpiRGKWitbCC7ozVHV3
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/app/views/sandboxes/show.html.erb",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/app/views/sandboxes/show.html.erb",
   "offset": 155,
   "limit": 110
 }
@@ -3992,7 +4001,7 @@ tool_use Read
 id: toolu_01FzyYqpbm5wCBCdTGntCn7y
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/app/controllers/routes_controller.rb"
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/app/controllers/routes_controller.rb"
 }
 ```
 
@@ -4042,7 +4051,7 @@ tool_use Write
 id: toolu_01FMoX6yizaNumqsAMJcqTPe
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/app/controllers/sandbox_aliases_controller.rb",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/app/controllers/sandbox_aliases_controller.rb",
   "content": "class SandboxAliasesController < ApplicationController\n  before_action :set_sandbox\n\n  def create\n    a = @sandbox.aliases.build(\n      kind: params.dig(:sandbox_alias, :kind).presence,\n      value: params.dig(:sandbox_alias, :value).presence&.strip\n    )\n    if a.save\n      DnsManager.publish_best_effort(@sandbox.user)\n      SandboxCertificateRefreshJob.perform_later(@sandbox.id) if defined?(SandboxCertificateRefreshJob)\n      redirect_to sandbox_path(@sandbox), notice: \"Alias added.\"\n    else\n      redirect_to sandbox_path(@sandbox), alert: a.errors.full_messages.to_sentence\n    end\n  end\n\n  def destroy\n    a = @sandbox.aliases.find(params[:id])\n    a.destroy!\n    DnsManager.publish_best_effort(@sandbox.user)\n    SandboxCertificateRefreshJob.perform_later(@sandbox.id) if defined?(SandboxCertificateRefreshJob)\n    redirect_to sandbox_path(@sandbox), notice: \"Alias removed.\"\n  rescue ActiveRecord::RecordNotFound\n    redirect_to sandbox_path(@sandbox), alert: \"Alias not found.\"\n  end\n\n  private\n\n  def set_sandbox\n    @sandbox = policy_scope(Sandbox).find(params[:sandbox_id])\n    authorize @sandbox, :show?\n  end\nend\n"
 }
 ```
@@ -4052,7 +4061,7 @@ id: toolu_01FMoX6yizaNumqsAMJcqTPe
 tool_result
 id: toolu_01FMoX6yizaNumqsAMJcqTPe
 ```
-File created successfully at: /Users/thies/Projects/GitHub/Sandcastle/app/controllers/sandbox_aliases_controller.rb (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Projects/GitHub/Sandcastle/app/controllers/sandbox_aliases_controller.rb (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4062,7 +4071,7 @@ id: toolu_01SFyXNbGsKncEhXrH3JGFNC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/config/routes.rb",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/config/routes.rb",
   "old_string": "    resources :routes, only: [ :create, :destroy ]",
   "new_string": "    resources :routes, only: [ :create, :destroy ]\n    resources :aliases, only: [ :create, :destroy ], controller: \"sandbox_aliases\""
 }
@@ -4073,7 +4082,7 @@ id: toolu_01SFyXNbGsKncEhXrH3JGFNC
 tool_result
 id: toolu_01SFyXNbGsKncEhXrH3JGFNC
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/config/routes.rb has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/config/routes.rb has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4116,7 +4125,7 @@ id: toolu_01TeT3KFiaN6HuJdRRCaGVso
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/app/controllers/sandboxes_controller.rb",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/app/controllers/sandboxes_controller.rb",
   "old_string": "    @routes = @sandbox.routes.order(:created_at)",
   "new_string": "    @routes = @sandbox.routes.order(:created_at)\n    @aliases = @sandbox.aliases.order(:kind, :value)"
 }
@@ -4136,7 +4145,7 @@ tool_use Read
 id: toolu_01CHEVbxMyvQgE8o9BsbCgcK
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/app/controllers/sandboxes_controller.rb",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/app/controllers/sandboxes_controller.rb",
   "offset": 1,
   "limit": 55
 }
@@ -4194,7 +4203,7 @@ id: toolu_01KVUra27gy4FgrD5fRUpQZe
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/app/controllers/sandboxes_controller.rb",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/app/controllers/sandboxes_controller.rb",
   "old_string": "    @routes = @sandbox.routes.order(:created_at)",
   "new_string": "    @routes = @sandbox.routes.order(:created_at)\n    @aliases = @sandbox.aliases.order(:kind, :value)"
 }
@@ -4205,7 +4214,7 @@ id: toolu_01KVUra27gy4FgrD5fRUpQZe
 tool_result
 id: toolu_01KVUra27gy4FgrD5fRUpQZe
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/app/controllers/sandboxes_controller.rb has been updated. All occurrences were successfully replaced. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/app/controllers/sandboxes_controller.rb has been updated. All occurrences were successfully replaced. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4219,7 +4228,7 @@ id: toolu_018j3LHdTguKDfq383Kg4ym5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/app/views/sandboxes/show.html.erb",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/app/views/sandboxes/show.html.erb",
   "old_string": "  <%# Settings %>\n  <% smb_ready = @sandbox.user.tailscale_enabled? && @sandbox.user.smb_password.present? %>",
   "new_string": "  <%# Aliases %>\n  <div class=\"bg-white rounded-lg border border-gray-200\">\n    <div class=\"px-6 py-4 border-b border-gray-200\">\n      <h2 class=\"text-base font-semibold text-gray-900\">Aliases</h2>\n      <p class=\"text-xs text-gray-500 mt-1\">\n        Extra hostnames that resolve to this sandbox. Pick <code>sub</code> for a prefix\n        (becomes <code>&lt;value&gt;.<%= @sandbox.name %>.&lt;project&gt;.&lt;host&gt;</code>) or\n        <code>fqdn</code> for a full hostname like <code>www.example.com</code>.\n      </p>\n    </div>\n\n    <% if @aliases.any? %>\n      <div class=\"overflow-x-auto\">\n        <table class=\"w-full text-sm\">\n          <thead class=\"bg-gray-50\">\n            <tr>\n              <th class=\"px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider\">Kind</th>\n              <th class=\"px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider\">Value</th>\n              <th class=\"px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider\">Resolves as</th>\n              <th class=\"px-4 sm:px-6 py-3\"></th>\n            </tr>\n          </thead>\n          <tbody class=\"divide-y divide-gray-100\">\n            <% @aliases.each do |a| %>\n              <tr>\n                <td class=\"px-4 sm:px-6 py-3\">\n                  <% if a.kind == \"fqdn\" %>\n                    <span class=\"inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-emerald-100 text-emerald-800\">FQDN</span>\n                  <% else %>\n                    <span class=\"inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-amber-100 text-amber-800\">SUB</span>\n                  <% end %>\n                </td>\n                <td class=\"px-4 sm:px-6 py-3 font-mono text-gray-900 break-all\"><%= a.value %></td>\n                <td class=\"px-4 sm:px-6 py-3 font-mono text-gray-600 break-all\"><%= a.fqdn %></td>\n                <td class=\"px-4 sm:px-6 py-3 text-right\">\n                  <%= button_to \"Remove\",\n                        sandbox_alias_path(@sandbox, a),\n                        method: :delete,\n                        data: { confirm: \"Remove […]
 
@@ -4228,7 +4237,7 @@ id: toolu_018j3LHdTguKDfq383Kg4ym5
 tool_result
 id: toolu_018j3LHdTguKDfq383Kg4ym5
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/app/views/sandboxes/show.html.erb has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/app/views/sandboxes/show.html.erb has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4314,7 +4323,7 @@ id: toolu_012qqBaAyX4Xq6xbvr8Atzmr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/app/views/sandboxes/show.html.erb",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/app/views/sandboxes/show.html.erb",
   "old_string": "      <%= form_with url: sandbox_aliases_path(@sandbox), method: :post, class: \"flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3\" do |f| %>\n        <%= f.select :\"sandbox_alias[kind]\",\n              [ [ \"sub\",  \"sub\" ], [ \"fqdn\", \"fqdn\" ] ],\n              { selected: \"sub\" },\n              class: \"px-3 py-1.5 border border-gray-300 rounded text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500\" %>\n        <%= f.text_field :\"sandbox_alias[value]\",\n              placeholder: \"admin   or   www.example.com\",\n              class: \"flex-1 min-w-0 px-3 py-1.5 border border-gray-300 rounded text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 font-mono\" %>\n        <%= f.submit \"Add Alias\",\n              class: \"px-3 py-1.5 bg-blue-600 text-white text-sm font-medium rounded hover:bg-blue-700 cursor-pointer whitespace-nowrap\" %>\n      <% end %>",
   "new_string": "      <%= form_with url: sandbox_aliases_path(@sandbox), method: :post, class: \"flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3\" do %>\n        <select name=\"sandbox_alias[kind]\" class=\"px-3 py-1.5 border border-gray-300 rounded text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500\">\n          <option value=\"sub\" selected>sub</option>\n          <option value=\"fqdn\">fqdn</option>\n        </select>\n        <input type=\"text\" name=\"sandbox_alias[value]\"\n               placeholder=\"admin   or   www.example.com\"\n               class=\"flex-1 min-w-0 px-3 py-1.5 border border-gray-300 rounded text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 font-mono\">\n        <button type=\"submit\" class=\"px-3 py-1.5 bg-blue-600 text-white text-sm font-medium rounded hover:bg-blue-700 cursor-pointer whitespace-nowrap\">Add Alias</button>\n      <% end %>"
 }
@@ -4325,7 +4334,7 @@ id: toolu_012qqBaAyX4Xq6xbvr8Atzmr
 tool_result
 id: toolu_012qqBaAyX4Xq6xbvr8Atzmr
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/app/views/sandboxes/show.html.erb has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/app/views/sandboxes/show.html.erb has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4403,7 +4412,7 @@ tool_use Read
 id: toolu_01GpXNC5Z3AvuF8C7YytVTTH
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/app/services/route_manager.rb",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/app/services/route_manager.rb",
   "offset": 221,
   "limit": 40
 }
@@ -4463,7 +4472,7 @@ id: toolu_011S6Nbmyh8U2qLohQEEZNgv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/app/services/route_manager.rb",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/app/services/route_manager.rb",
   "old_string": "  def ensure_mkcert_cert(cert_dir)\n    cert_path = File.join(cert_dir, \"cert.pem\")\n    key_path  = File.join(cert_dir, \"key.pem\")\n    return if File.exist?(cert_path) && File.exist?(key_path)\n\n    host = ENV.fetch(\"SANDCASTLE_HOST\", \"localhost\")\n    Rails.logger.info(\"RouteManager: generating mkcert certificate for #{host}\")\n\n    # Store CA alongside the certs so it survives container restarts\n    caroot = ENV.fetch(\"MKCERT_CAROOT\", cert_dir)\n    FileUtils.mkdir_p(cert_dir)\n\n    env = { \"CAROOT\" => caroot }\n    system(\n      env,\n      \"mkcert\",\n      \"-cert-file\", cert_path,\n      \"-key-file\",  key_path,\n      host, \"*.#{host}\", \"localhost\", \"127.0.0.1\", \"::1\"\n    ) or raise Error, \"mkcert certificate generation failed for #{host}\"\n\n    ca_source = File.join(caroot, \"rootCA.pem\")\n    ca_dest   = File.join(cert_dir, \"rootCA.pem\")\n    FileUtils.cp(ca_source, ca_dest) if File.exist?(ca_source) && File.expand_path(ca_source) != File.expand_path(ca_dest)\n\n    Rails.logger.info(\"RouteManager: mkcert certificate written to #{cert_path}\")\n  end",
   "new_string": "  def ensure_mkcert_cert(cert_dir)\n    cert_path = File.join(cert_dir, \"cert.pem\")\n    key_path  = File.join(cert_dir, \"key.pem\")\n    fingerprint_path = File.join(cert_dir, \"cert.fingerprint\")\n\n    host = ENV.fetch(\"SANDCASTLE_HOST\", \"localhost\")\n    sans = mkcert_san_list(host)\n    fingerprint = Digest::SHA256.hexdigest(sans.join(\"\\n\"))\n\n    if File.exist?(cert_path) && File.exist?(key_path) && safe_read(fingerprint_path) == fingerprint\n      return\n    end\n\n    Rails.logger.info(\"RouteManager: generating mkcert certificate for #{host} with #{sans.size} SANs\")\n\n    # Store CA alongside the certs so it survives container restarts\n    caroot = ENV.fetch(\"MKCERT_CAROOT\", cert_dir)\n    FileUtils.mkdir_p(cert_dir)\n\n    env = { \"CAROOT\" => caroot }\n    system(\n      env,\n      \"mkcert\",\n      \"-cert-file\", cert_path,\n      \"-key-file\",  key_path,\n      *sans\n    ) or raise Error, \"mkcert certificate generation failed for #{host}\"\n\n    File.write(fingerprint_path, fingerprint)\n\n    ca_source = File.join(caroot, \"rootCA.pem\")\n    ca_dest   = File.join(cert_dir, […]
 
@@ -4472,7 +4481,7 @@ id: toolu_011S6Nbmyh8U2qLohQEEZNgv
 tool_result
 id: toolu_011S6Nbmyh8U2qLohQEEZNgv
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/app/services/route_manager.rb has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/app/services/route_manager.rb has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4517,7 +4526,7 @@ tool_use Read
 id: toolu_01K1BZ81D6WNG2QpPBGVhvbu
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/app/jobs/application_job.rb"
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/app/jobs/application_job.rb"
 }
 ```
 
@@ -4555,7 +4564,7 @@ tool_use Write
 id: toolu_01KHdu1NdpCzi8eXw9v2FTAD
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/app/jobs/sandbox_certificate_refresh_job.rb",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/app/jobs/sandbox_certificate_refresh_job.rb",
   "content": "class SandboxCertificateRefreshJob < ApplicationJob\n  queue_as :default\n\n  def perform(_sandbox_id = nil)\n    return unless ENV[\"SANDCASTLE_TLS_MODE\"] == \"mkcert\"\n\n    cert_dir = File.join(RouteManager::DATA_DIR, \"traefik\", \"certs\")\n    fingerprint_path = File.join(cert_dir, \"cert.fingerprint\")\n\n    rm = RouteManager.new\n    host = ENV.fetch(\"SANDCASTLE_HOST\", \"localhost\")\n    desired_sans = rm.send(:mkcert_san_list, host)\n    desired_fp = Digest::SHA256.hexdigest(desired_sans.join(\"\\n\"))\n\n    on_disk_fp = File.exist?(fingerprint_path) ? File.read(fingerprint_path).strip : nil\n    return if on_disk_fp == desired_fp\n\n    Rails.logger.info(\"SandboxCertificateRefreshJob: SAN list changed (#{desired_sans.size} SANs), regenerating mkcert cert\")\n\n    [ \"cert.pem\", \"key.pem\", \"cert.fingerprint\" ].each do |name|\n      path = File.join(cert_dir, name)\n      File.delete(path) if File.exist?(path)\n    end\n\n    rm.write_rails_config(host: host)\n  rescue => e\n    Rails.logger.error(\"SandboxCertificateRefreshJob failed: #{e.class}: #{e.message}\")\n  end\nend\n"
 }
 ```
@@ -4565,7 +4574,7 @@ id: toolu_01KHdu1NdpCzi8eXw9v2FTAD
 tool_result
 id: toolu_01KHdu1NdpCzi8eXw9v2FTAD
 ```
-File created successfully at: /Users/thies/Projects/GitHub/Sandcastle/app/jobs/sandbox_certificate_refresh_job.rb (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Projects/GitHub/Sandcastle/app/jobs/sandbox_certificate_refresh_job.rb (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4874,7 +4883,7 @@ tool_use Bash
 id: toolu_01ERhnx81atpbtStSmfFrn3e
 ```json
 {
-  "command": "cd /Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli && go build ./... 2>&1 | tail -5; echo '---'; docker exec sandcastle-web ./bin/rubocop app/models/sandbox_alias.rb app/jobs/sandbox_certificate_refresh_job.rb app/controllers/api/sandbox_aliases_controller.rb app/controllers/sandbox_aliases_controller.rb app/services/dns_manager.rb app/services/route_manager.rb 2>&1 | tail -20",
+  "command": "cd /home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli && go build ./... 2>&1 | tail -5; echo '---'; docker exec sandcastle-web ./bin/rubocop app/models/sandbox_alias.rb app/jobs/sandbox_certificate_refresh_job.rb app/controllers/api/sandbox_aliases_controller.rb app/controllers/sandbox_aliases_controller.rb app/services/dns_manager.rb app/services/route_manager.rb 2>&1 | tail -20",
   "description": "Final compile + lint pass"
 }
 ```
@@ -4945,7 +4954,7 @@ tool_use Read
 id: toolu_01AvsKmXWn32iF29A7irhaKe
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go",
   "offset": 40,
   "limit": 160
 }
@@ -5028,7 +5037,7 @@ tool_use Read
 id: toolu_019cSTHzmZeQCUar1GwtmGJj
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go",
   "offset": 540,
   "limit": 200
 }
@@ -5101,7 +5110,7 @@ tool_use Read
 id: toolu_013Ki2hgfhD8sV2CCLraKw9Z
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go",
   "offset": 960,
   "limit": 130
 }
@@ -5166,7 +5175,7 @@ tool_use Read
 id: toolu_01R4s9r9gjWK6seQKxdPZDjM
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go",
   "offset": 1175,
   "limit": 160
 }
@@ -5244,7 +5253,7 @@ tool_use Bash
 id: toolu_01QULTZQvKpnekvfuPcWX81A
 ```json
 {
-  "command": "cd /Users/thies/Projects/GitHub/Sandcastle && grep -n 'newTUI\\|routeInputs\\[\\|spinner.New\\|textinput\\.\\|m\\.routeInputs' vendor/sandcastle-cli/cmd/tui.go | head -20",
+  "command": "cd /home/<USER>/Projects/GitHub/Sandcastle && grep -n 'newTUI\\|routeInputs\\[\\|spinner.New\\|textinput\\.\\|m\\.routeInputs' vendor/sandcastle-cli/cmd/tui.go | head -20",
   "description": "Find newTUI initialization"
 }
 ```
@@ -5282,7 +5291,7 @@ tool_use Read
 id: toolu_019U232VKQL8tn4e8QoxaDfF
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go",
   "offset": 328,
   "limit": 60
 }
@@ -5377,7 +5386,7 @@ id: toolu_01EHZNTYeaskbPELms1Ai4rx
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go",
   "old_string": "\tviewSandboxes tuiView = iota\n\tviewRoutes\n\tviewCreateSandbox\n\tviewCreateProject\n\tviewAddRoute\n\tviewConfirmDelete\n\tviewServers\n\tviewAddServer\n\tviewServerLogin\n\tviewConfirmRemoveServer\n\tviewSettings\n)",
   "new_string": "\tviewSandboxes tuiView = iota\n\tviewRoutes\n\tviewAliases\n\tviewCreateSandbox\n\tviewCreateProject\n\tviewAddRoute\n\tviewAddAlias\n\tviewConfirmDelete\n\tviewServers\n\tviewAddServer\n\tviewServerLogin\n\tviewConfirmRemoveServer\n\tviewSettings\n)"
 }
@@ -5388,7 +5397,7 @@ id: toolu_01EHZNTYeaskbPELms1Ai4rx
 tool_result
 id: toolu_01EHZNTYeaskbPELms1Ai4rx
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5398,7 +5407,7 @@ id: toolu_01TFqapR2eHy7etMtV9dTLPd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go",
   "old_string": "type routesLoadedMsg struct {\n\troutes []api.RouteResponse\n\terr    error\n}",
   "new_string": "type routesLoadedMsg struct {\n\troutes []api.RouteResponse\n\terr    error\n}\n\ntype aliasesLoadedMsg struct {\n\taliases []api.SandboxAlias\n\terr     error\n}"
 }
@@ -5409,7 +5418,7 @@ id: toolu_01TFqapR2eHy7etMtV9dTLPd
 tool_result
 id: toolu_01TFqapR2eHy7etMtV9dTLPd
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5419,7 +5428,7 @@ id: toolu_01KevH9G6WMozBSFRQe5yUuc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go",
   "old_string": "\t// add route\n\trouteInputs   [2]textinput.Model // domain, port\n\trouteFocusIdx int",
   "new_string": "\t// add route\n\trouteInputs   [2]textinput.Model // domain, port\n\trouteFocusIdx int\n\n\t// aliases\n\taliasSandbox  *api.Sandbox\n\taliases       []api.SandboxAlias\n\taliasCursor   int\n\taliasInput    textinput.Model // value\n\taliasKindIdx  int             // 0 = sub, 1 = fqdn"
 }
@@ -5430,7 +5439,7 @@ id: toolu_01KevH9G6WMozBSFRQe5yUuc
 tool_result
 id: toolu_01KevH9G6WMozBSFRQe5yUuc
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5440,7 +5449,7 @@ id: toolu_01Doh8yLGdF4hZKW1AitNeU8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go",
   "old_string": "\tdomainInput := makeTextInput(\"domain (e.g. app.example.com)\", 40)\n\tportInput := makeTextInput(\"port (default 8080)\", 10)\n\tportInput.CharLimit = 5\n\n\treturn tuiModel{\n\t\tclient:        client,\n\t\tspinner:       s,\n\t\tloading:       true,\n\t\tcreateFields:  buildCreateFields(),\n\t\tprojectFields: buildProjectFields(),\n\t\trouteInputs:   [2]textinput.Model{domainInput, portInput},\n\t}\n}",
   "new_string": "\tdomainInput := makeTextInput(\"domain (e.g. app.example.com)\", 40)\n\tportInput := makeTextInput(\"port (default 8080)\", 10)\n\tportInput.CharLimit = 5\n\n\taliasInput := makeTextInput(\"admin   or   www.example.com\", 40)\n\n\treturn tuiModel{\n\t\tclient:        client,\n\t\tspinner:       s,\n\t\tloading:       true,\n\t\tcreateFields:  buildCreateFields(),\n\t\tprojectFields: buildProjectFields(),\n\t\trouteInputs:   [2]textinput.Model{domainInput, portInput},\n\t\taliasInput:    aliasInput,\n\t}\n}"
 }
@@ -5451,7 +5460,7 @@ id: toolu_01Doh8yLGdF4hZKW1AitNeU8
 tool_result
 id: toolu_01Doh8yLGdF4hZKW1AitNeU8
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5461,7 +5470,7 @@ id: toolu_016SqFEfPhsNBjBztMCcrSgb
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go",
   "old_string": "func loadRoutes(client *api.Client, sandboxID int) tea.Cmd {\n\treturn func() tea.Msg {\n\t\troutes, err := client.ListRoutes(sandboxID)\n\t\treturn routesLoadedMsg{routes, err}\n\t}\n}",
   "new_string": "func loadRoutes(client *api.Client, sandboxID int) tea.Cmd {\n\treturn func() tea.Msg {\n\t\troutes, err := client.ListRoutes(sandboxID)\n\t\treturn routesLoadedMsg{routes, err}\n\t}\n}\n\nfunc loadAliases(client *api.Client, sandboxID int) tea.Cmd {\n\treturn func() tea.Msg {\n\t\taliases, err := client.ListSandboxAliases(sandboxID)\n\t\treturn aliasesLoadedMsg{aliases, err}\n\t}\n}"
 }
@@ -5472,7 +5481,7 @@ id: toolu_016SqFEfPhsNBjBztMCcrSgb
 tool_result
 id: toolu_016SqFEfPhsNBjBztMCcrSgb
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5485,7 +5494,7 @@ tool_use Read
 id: toolu_01SVoUFdmMEjLZuuWELQ3jXx
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go",
   "offset": 425,
   "limit": 50
 }
@@ -5554,7 +5563,7 @@ tool_use Read
 id: toolu_013y1ib2UwSUeDcjvv39vPZL
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go",
   "offset": 475,
   "limit": 75
 }
@@ -5620,7 +5629,7 @@ id: toolu_01Y9pu1rJXM89KczTboF5nSg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go",
   "old_string": "\t\tm.routes = msg.routes\n\t\tm.routeCursor = 0\n\t\treturn m, nil\n\n\tcase deviceCodeMsg:",
   "new_string": "\t\tm.routes = msg.routes\n\t\tm.routeCursor = 0\n\t\treturn m, nil\n\n\tcase aliasesLoadedMsg:\n\t\tm.loading = false\n\t\tif msg.err != nil {\n\t\t\tm.feedback = msg.err.Error()\n\t\t\tm.feedErr = true\n\t\t\tm.view = viewSandboxes\n\t\t\treturn m, nil\n\t\t}\n\t\tm.aliases = msg.aliases\n\t\tif m.aliasCursor >= len(m.aliases) {\n\t\t\tm.aliasCursor = max(0, len(m.aliases)-1)\n\t\t}\n\t\treturn m, nil\n\n\tcase deviceCodeMsg:"
 }
@@ -5631,7 +5640,7 @@ id: toolu_01Y9pu1rJXM89KczTboF5nSg
 tool_result
 id: toolu_01Y9pu1rJXM89KczTboF5nSg
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5644,7 +5653,7 @@ tool_use Read
 id: toolu_013zbkA7QWgtG3yKdn6MAvTx
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go",
   "offset": 555,
   "limit": 35
 }
@@ -5699,7 +5708,7 @@ id: toolu_01MvRPv1LoLpREo6RH71K8jr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go",
   "old_string": "\t\t// Reload context-appropriate data\n\t\tm.loading = true\n\t\tif m.view == viewRoutes && m.routeSandbox != nil {\n\t\t\treturn m, tea.Batch(m.spinner.Tick, loadRoutes(m.client, m.routeSandbox.ID))\n\t\t}\n\t\treturn m, tea.Batch(m.spinner.Tick, loadSandboxes(m.client), loadDNS(m.client))\n\t}",
   "new_string": "\t\t// Reload context-appropriate data\n\t\tm.loading = true\n\t\tif m.view == viewRoutes && m.routeSandbox != nil {\n\t\t\treturn m, tea.Batch(m.spinner.Tick, loadRoutes(m.client, m.routeSandbox.ID))\n\t\t}\n\t\tif m.view == viewAliases && m.aliasSandbox != nil {\n\t\t\treturn m, tea.Batch(m.spinner.Tick, loadAliases(m.client, m.aliasSandbox.ID))\n\t\t}\n\t\treturn m, tea.Batch(m.spinner.Tick, loadSandboxes(m.client), loadDNS(m.client))\n\t}"
 }
@@ -5710,7 +5719,7 @@ id: toolu_01MvRPv1LoLpREo6RH71K8jr
 tool_result
 id: toolu_01MvRPv1LoLpREo6RH71K8jr
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5720,7 +5729,7 @@ id: toolu_018NY2TGMWL2gbakx7ZWUThU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go",
   "old_string": "\tcase viewRoutes:\n\t\treturn m.updateRoutes(msg)\n\tcase viewCreateSandbox:\n\t\treturn m.updateCreate(msg)\n\tcase viewCreateProject:\n\t\treturn m.updateCreateProject(msg)\n\tcase viewAddRoute:\n\t\treturn m.updateAddRoute(msg)",
   "new_string": "\tcase viewRoutes:\n\t\treturn m.updateRoutes(msg)\n\tcase viewAliases:\n\t\treturn m.updateAliases(msg)\n\tcase viewCreateSandbox:\n\t\treturn m.updateCreate(msg)\n\tcase viewCreateProject:\n\t\treturn m.updateCreateProject(msg)\n\tcase viewAddRoute:\n\t\treturn m.updateAddRoute(msg)\n\tcase viewAddAlias:\n\t\treturn m.updateAddAlias(msg)"
 }
@@ -5731,7 +5740,7 @@ id: toolu_018NY2TGMWL2gbakx7ZWUThU
 tool_result
 id: toolu_018NY2TGMWL2gbakx7ZWUThU
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5745,7 +5754,7 @@ id: toolu_0182LvCt7VxMPep3qXsSSYTo
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go",
   "old_string": "\t\tcase key.Matches(msg, key.NewBinding(key.WithKeys(\"r\"))):\n\t\t\tif len(m.sandboxes) > 0 {\n\t\t\t\tm.loading = true\n\t\t\t\tm.feedback = \"\"\n\t\t\t\tsb := m.sandboxes[m.cursor]\n\t\t\t\tm.routeSandbox = &sb\n\t\t\t\tm.view = viewRoutes\n\t\t\t\treturn m, tea.Batch(m.spinner.Tick, loadRoutes(m.client, sb.ID))\n\t\t\t}",
   "new_string": "\t\tcase key.Matches(msg, key.NewBinding(key.WithKeys(\"r\"))):\n\t\t\tif len(m.sandboxes) > 0 {\n\t\t\t\tm.loading = true\n\t\t\t\tm.feedback = \"\"\n\t\t\t\tsb := m.sandboxes[m.cursor]\n\t\t\t\tm.routeSandbox = &sb\n\t\t\t\tm.view = viewRoutes\n\t\t\t\treturn m, tea.Batch(m.spinner.Tick, loadRoutes(m.client, sb.ID))\n\t\t\t}\n\t\tcase key.Matches(msg, key.NewBinding(key.WithKeys(\"A\"))):\n\t\t\tif len(m.sandboxes) > 0 {\n\t\t\t\tm.loading = true\n\t\t\t\tm.feedback = \"\"\n\t\t\t\tsb := m.sandboxes[m.cursor]\n\t\t\t\tm.aliasSandbox = &sb\n\t\t\t\tm.aliasCursor = 0\n\t\t\t\tm.view = viewAliases\n\t\t\t\treturn m, tea.Batch(m.spinner.Tick, loadAliases(m.client, sb.ID))\n\t\t\t}"
 }
@@ -5756,7 +5765,7 @@ id: toolu_0182LvCt7VxMPep3qXsSSYTo
 tool_result
 id: toolu_0182LvCt7VxMPep3qXsSSYTo
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5770,7 +5779,7 @@ id: toolu_01VzwfvUWvrFu8REQsbyyD2Q
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go",
   "old_string": "func (m tuiModel) updateConfirmDelete(msg tea.Msg) (tea.Model, tea.Cmd) {",
   "new_string": "func (m tuiModel) updateAliases(msg tea.Msg) (tea.Model, tea.Cmd) {\n\tswitch msg := msg.(type) {\n\tcase tea.KeyMsg:\n\t\tm.feedback = \"\"\n\t\tswitch {\n\t\tcase key.Matches(msg, key.NewBinding(key.WithKeys(\"q\", \"esc\"))):\n\t\t\tm.view = viewSandboxes\n\t\t\tm.aliases = nil\n\t\t\tm.aliasSandbox = nil\n\t\tcase key.Matches(msg, key.NewBinding(key.WithKeys(\"ctrl+c\"))):\n\t\t\treturn m, tea.Quit\n\t\tcase key.Matches(msg, key.NewBinding(key.WithKeys(\"up\", \"k\"))):\n\t\t\tif m.aliasCursor > 0 {\n\t\t\t\tm.aliasCursor--\n\t\t\t}\n\t\tcase key.Matches(msg, key.NewBinding(key.WithKeys(\"down\", \"j\"))):\n\t\t\tif m.aliasCursor < len(m.aliases)-1 {\n\t\t\t\tm.aliasCursor++\n\t\t\t}\n\t\tcase key.Matches(msg, key.NewBinding(key.WithKeys(\"a\"))):\n\t\t\tm.view = viewAddAlias\n\t\t\tm.aliasKindIdx = 0\n\t\t\tm.aliasInput.SetValue(\"\")\n\t\t\tm.aliasInput.Focus()\n\t\t\treturn m, m.aliasInput.Cursor.BlinkCmd()\n\t\tcase key.Matches(msg, key.NewBinding(key.WithKeys(\"d\"))):\n\t\t\tif len(m.aliases) > 0 {\n\t\t\t\ta := m.aliases[m.aliasCursor]\n\t\t\t\tsbID := m.aliasSandbox.ID\n\t\t\t\tm.loading = true\n\t\t\t\treturn m, tea.Batch(m.spinner.Tick, doAction(func() (string, error) {\n\t\t\t\t\terr := m.client.RemoveSandboxAliasByID(sbID, a.ID)\n\t\t\t\t\treturn fmt.Sprintf(\"Alias %q removed\", a.Value), err\n\t\t\t\t}))\n\t\t\t}\n\t\tcase key.Matches(msg, key.NewBinding(key.WithKeys(\"R\"))):\n\t\t\tif m.aliasSandbox != nil {\n\t\t\t\tm.loading = true\n\t\t\t\treturn m, tea.Batch(m.spinner.Tick, loadAliases(m.client, m.aliasSandbox.ID))\n\t\t\t}\n\t\t}\n\t}\n\treturn m, nil\n}\n\nfunc (m tuiModel) updateAddAlias(msg tea.Msg) (tea.Model, tea.Cmd) {\n\tswitch msg := msg.(type) {\n\tcase tea.KeyMsg:\n\t\tswitch msg.Type {\n\t\tcase tea.KeyEsc:\n\t\t\tm.view = viewAliases\n\t\t\treturn m, nil\n\t\tcase tea.KeyCtrlC:\n\t\t\treturn m, tea.Quit\n\t\tcase tea.KeyTab, tea.KeyShiftTab:\n\t\t\tm.aliasKindIdx = (m.aliasKindIdx + 1) % 2\n\t\t\treturn m, nil\n\t\tcase tea.KeyEnter:\n\t\t\tvalue := strings.TrimSpace(m.aliasInput.Value())\n\t\t\tif value == \"\" {\n\t\t\t\tm.feedback = \"value is required\"\n\t\t\t\tm.feedErr = true\n\t\t\t\treturn m, nil\n\t\t\t}\n\t\t\tkind := \"sub\"\n\t\t\tif m.aliasKindIdx == 1 {\n\t\t\t\tkind = \"fqdn\"\n\t\t\t}\n\t\t\tsbID := m.aliasSandbox.ID\n\t\t\tm.view = viewAliases\n\t\t\tm.loading = true\n\t\t\treturn m, tea.Batch(m.spinner.Tick, doAction(func() (string, error) {\n\t\t\t\ta, err := m.client.AddSandboxAlias(sbID, api.SandboxAliasRequest{Kind: kind, Value: value})\n\t\t\t\tif err != nil {\n\t\t\t\t\treturn \"\", err\n\t\t\t\t}\n\t\t\t\treturn fmt.Sprintf(\"Alias added: %s → %s\", a.Value, a.FQDN), nil\n\t\t\t}))\n\t\t}\n\t}\n\n\tvar cmd […]
 
@@ -5779,7 +5788,7 @@ id: toolu_01VzwfvUWvrFu8REQsbyyD2Q
 tool_result
 id: toolu_01VzwfvUWvrFu8REQsbyyD2Q
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5793,7 +5802,7 @@ id: toolu_016BYrXxpiFGugn3ikuN1KKs
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go",
   "old_string": "\tcase viewRoutes:\n\t\tm.viewRoutes(&b)\n\tcase viewCreateSandbox:\n\t\tm.viewCreate(&b)\n\tcase viewCreateProject:\n\t\tm.viewCreateProject(&b)\n\tcase viewAddRoute:\n\t\tm.viewAddRoute(&b)",
   "new_string": "\tcase viewRoutes:\n\t\tm.viewRoutes(&b)\n\tcase viewAliases:\n\t\tm.viewAliases(&b)\n\tcase viewCreateSandbox:\n\t\tm.viewCreate(&b)\n\tcase viewCreateProject:\n\t\tm.viewCreateProject(&b)\n\tcase viewAddRoute:\n\t\tm.viewAddRoute(&b)\n\tcase viewAddAlias:\n\t\tm.viewAddAlias(&b)"
 }
@@ -5804,7 +5813,7 @@ id: toolu_016BYrXxpiFGugn3ikuN1KKs
 tool_result
 id: toolu_016BYrXxpiFGugn3ikuN1KKs
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5814,7 +5823,7 @@ id: toolu_01NE5pwoQxAPe7J5uZenVGTx
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go",
   "old_string": "func (m tuiModel) viewAddRoute(b *strings.Builder) {",
   "new_string": "func (m tuiModel) viewAliases(b *strings.Builder) {\n\tb.WriteString(headerStyle.Render(fmt.Sprintf(\"  Aliases for %s\", m.aliasSandbox.DisplayName())) + \"\\n\\n\")\n\n\tif m.loading {\n\t\tb.WriteString(\"  \" + m.spinner.View() + \" Loading aliases...\\n\")\n\t\tb.WriteString(\"\\n\" + helpStyle.Render(\"  esc back  q quit\"))\n\t\treturn\n\t}\n\n\tif len(m.aliases) == 0 {\n\t\tb.WriteString(\"  No aliases. Press a to add one.\\n\")\n\t} else {\n\t\tb.WriteString(headerStyle.Render(fmt.Sprintf(\"  %-6s %-6s %-30s %s\", \"ID\", \"KIND\", \"VALUE\", \"FQDN\")) + \"\\n\")\n\t\tfor i, a := range m.aliases {\n\t\t\tvalue := a.Value\n\t\t\tif len(value) > 28 {\n\t\t\t\tvalue = value[:27] + \"…\"\n\t\t\t}\n\t\t\tfqdn := a.FQDN\n\t\t\tif len(fqdn) > 60 {\n\t\t\t\tfqdn = fqdn[:59] + \"…\"\n\t\t\t}\n\t\t\tline := fmt.Sprintf(\"  %-6d %-6s %-30s %s\", a.ID, a.Kind, value, fqdn)\n\t\t\tif i == m.aliasCursor {\n\t\t\t\tline = selectedStyle.Render(fmt.Sprintf(\"  %-6d %-6s %-30s %-60s\", a.ID, a.Kind, value, fqdn))\n\t\t\t}\n\t\t\tb.WriteString(line + \"\\n\")\n\t\t}\n\t}\n\n\tb.WriteString(\"\\n\")\n\tb.WriteString(helpStyle.Render(\"  a add  d delete  R refresh  esc/q back\"))\n\tb.WriteString(\"\\n\")\n}\n\nfunc (m tuiModel) viewAddAlias(b *strings.Builder) {\n\tb.WriteString(headerStyle.Render(fmt.Sprintf(\"  Add Alias to %s\", m.aliasSandbox.DisplayName())) + \"\\n\\n\")\n\n\tkinds := []string{\"sub\", \"fqdn\"}\n\tkindLabel := kinds[m.aliasKindIdx]\n\tdescriptions := []string{\n\t\t\"prefix → <value>.\" + m.aliasSandbox.Name + \".<project>.<host>\",\n\t\t\"verbatim → <value>\",\n\t}\n\tb.WriteString(\"  Kind:   \" + selectedStyle.Render(kindLabel) + \"  \" + helpStyle.Render(\"(tab to toggle)\") + \"\\n\")\n\tb.WriteString(\"          \" + helpStyle.Render(descriptions[m.aliasKindIdx]) + \"\\n\")\n\tb.WriteString(\"  Value:  \" + m.aliasInput.View() + \"\\n\")\n\tb.WriteString(\"\\n\")\n\tb.WriteString(helpStyle.Render(\"  tab toggle kind  enter confirm  esc cancel\"))\n\tb.WriteString(\"\\n\")\n}\n\nfunc (m tuiModel) viewAddRoute(b *strings.Builder) {"
 }
@@ -5825,7 +5834,7 @@ id: toolu_01NE5pwoQxAPe7J5uZenVGTx
 tool_result
 id: toolu_01NE5pwoQxAPe7J5uZenVGTx
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5858,7 +5867,7 @@ id: toolu_01VfhGmnXvEzc2mQD1xiBp7H
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go",
   "old_string": "\tb.WriteString(helpStyle.Render(\"  enter connect  c create sandbox  g create project  s start  x stop  d destroy  r routes  S servers  P prefs  R refresh  q quit\"))",
   "new_string": "\tb.WriteString(helpStyle.Render(\"  enter connect  c create sandbox  g create project  s start  x stop  d destroy  r routes  A aliases  S servers  P prefs  R refresh  q quit\"))"
 }
@@ -5869,7 +5878,7 @@ id: toolu_01VfhGmnXvEzc2mQD1xiBp7H
 tool_result
 id: toolu_01VfhGmnXvEzc2mQD1xiBp7H
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/tui.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5878,7 +5887,7 @@ tool_use Bash
 id: toolu_01Pc4FTZ8Wwx2tB7BfCervyx
 ```json
 {
-  "command": "cd /Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli && go build ./... 2>&1 | tail -10 && make build 2>&1 | tail -3",
+  "command": "cd /home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli && go build ./... 2>&1 | tail -10 && make build 2>&1 | tail -3",
   "description": "Compile-check + rebuild binary"
 }
 ```
@@ -5936,7 +5945,7 @@ tool_use Bash
 id: toolu_01AcnDSxxQBPzBzgF7kbnmm6
 ```json
 {
-  "command": "cd /Users/thies/Projects/GitHub/Sandcastle && grep -nE 'rootCmd.AddCommand|Use:.*\"tui\"|tea\\.NewProgram' vendor/sandcastle-cli/cmd/*.go | head",
+  "command": "cd /home/<USER>/Projects/GitHub/Sandcastle && grep -nE 'rootCmd.AddCommand|Use:.*\"tui\"|tea\\.NewProgram' vendor/sandcastle-cli/cmd/*.go | head",
   "description": "Find TUI launch command"
 }
 ```
@@ -5992,7 +6001,7 @@ tool_use Read
 id: toolu_01A7iAY88WFopVd6Tg2EPLK5
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/root.go"
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/root.go"
 }
 ```
 
@@ -6364,7 +6373,7 @@ tool_use Bash
 id: toolu_01HPatfwF4HwxGt79FGrPgiC
 ```json
 {
-  "command": "git commit -m \"$(cat <<'EOF'\nAdd /etc/hosts sync and per-sandbox aliases\n\nTwo related features so dotless `tubu.sc.sandman` resolves on macOS\nwhere the per-user CoreDNS resolver is reached over Tailscale (flagged\n\"Transient Connection\" by macOS' resolver framework, which then prefers\nthe primary resolver's NXDOMAIN over the per-domain answer).\n\nCLI: `sandcastle dns hosts sync|clear|status` writes a managed\n`# BEGIN sandcastle-dns` block to /etc/hosts with one line per sandbox\nlisting all cumulative-prefix forms (`tubu`, `tubu.sc`,\n`tubu.sc.sandman`). Bypasses DNS entirely so reachability flags don't\nmatter.\n\nAliases: each sandbox can carry extra hostnames of two kinds:\n  - sub:  prefixed onto the sandbox FQDN (admin → admin.<fqdn>)\n  - fqdn: used verbatim (www.example.com)\nAliases land in `/api/dns/status` records (so `dns hosts sync` picks\nthem up), and FQDN aliases extend the front Traefik mkcert SAN list\nwith a SHA256 fingerprint sidecar driving regeneration.\n\nSurfaces:\n  - DB: new sandbox_aliases table, SandboxAlias model\n  - API: nested /api/sandboxes/:id/aliases (index/create/destroy)\n  - Web: Aliases section on sandboxes#show with add form + delete\n  - CLI: `sandcastle dns alias add|remove|list <args>`\n  - TUI: A from sandbox list opens viewAliases (a/d/R keys mirror routes)\n  - Cert: SandboxCertificateRefreshJob regenerates the front cert when\n    the desired SAN list (host, *.host, localhost, loopbacks, all FQDN\n    aliases) differs from the on-disk fingerprint\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>\nEOF\n)\"", […]
+  "command": "git commit -m \"$(cat <<'EOF'\nAdd /etc/hosts sync and per-sandbox aliases\n\nTwo related features so dotless `tubu.sc.sandman` resolves on macOS\nwhere the per-user CoreDNS resolver is reached over Tailscale (flagged\n\"Transient Connection\" by macOS' resolver framework, which then prefers\nthe primary resolver's NXDOMAIN over the per-domain answer).\n\nCLI: `sandcastle dns hosts sync|clear|status` writes a managed\n`# BEGIN sandcastle-dns` block to /etc/hosts with one line per sandbox\nlisting all cumulative-prefix forms (`tubu`, `tubu.sc`,\n`tubu.sc.sandman`). Bypasses DNS entirely so reachability flags don't\nmatter.\n\nAliases: each sandbox can carry extra hostnames of two kinds:\n  - sub:  prefixed onto the sandbox FQDN (admin → admin.<fqdn>)\n  - fqdn: used verbatim (www.example.com)\nAliases land in `/api/dns/status` records (so `dns hosts sync` picks\nthem up), and FQDN aliases extend the front Traefik mkcert SAN list\nwith a SHA256 fingerprint sidecar driving regeneration.\n\nSurfaces:\n  - DB: new sandbox_aliases table, SandboxAlias model\n  - API: nested /api/sandboxes/:id/aliases (index/create/destroy)\n  - Web: Aliases section on sandboxes#show with add form + delete\n  - CLI: `sandcastle dns alias add|remove|list <args>`\n  - TUI: A from sandbox list opens viewAliases (a/d/R keys mirror routes)\n  - Cert: SandboxCertificateRefreshJob regenerates the front cert when\n    the desired SAN list (host, *.host, localhost, loopbacks, all FQDN\n    aliases) differs from the on-disk fingerprint\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\"", […]
 
 > TOOL
 

@@ -1,0 +1,66 @@
+{
+  "ts": "20260717T043909Z",
+  "targets": [
+    "eval",
+    "kevin",
+    "train",
+    "v2tasks"
+  ],
+  "trufflehog_unique_secrets": 6,
+  "trufflehog_by_detector": {
+    "TelegramBotToken": 3,
+    "Docker": 3
+  },
+  "presidio_enabled": true,
+  "presidio_train": true,
+  "model": "en_core_web_sm",
+  "train": {
+    "sessions": 11672,
+    "train_md_changed": 0,
+    "backup": "/data/swesimbench-v2-harbor/meta/pii_backups/clean_sessions.jsonl.20260717T043909Z.bak",
+    "presidio": true,
+    "presidio_roles": [
+      "user"
+    ]
+  },
+  "eval": {
+    "histories": 1520,
+    "history_changed": 1303,
+    "instruction_changed": 0,
+    "gold_changed": 155
+  },
+  "v2tasks": {
+    "tasks": 98,
+    "changed": {
+      "gold": 12,
+      "instruction": 25
+    }
+  },
+  "kevin": {
+    "tasks": 1520,
+    "history_changed": 1303,
+    "gold_changed": 155
+  },
+  "stats": {
+    "texts_seen": 4170148,
+    "texts_changed": 1293504,
+    "nl_texts": 299669,
+    "regex": {
+      "home_unix": 2065164,
+      "email": 64115,
+      "home_win": 619
+    },
+    "presidio": {
+      "presidio_PHONE_NUMBER": 67,
+      "presidio_EMAIL_ADDRESS": 52,
+      "presidio_PERSON": 17,
+      "presidio_URL": 2
+    },
+    "trufflehog": {
+      "TRUFFLEHOG_REDACTED_TELEGRAMBOTTOKEN": 643,
+      "TRUFFLEHOG_REDACTED_DOCKER": 28
+    },
+    "total_redactions": 2130707
+  },
+  "elapsed_sec": 6467.7
+}

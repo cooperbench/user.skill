@@ -106,4 +106,4 @@ The plugin file still has my earlier edit (it's likely gitignored). Let me rever
 
 > AGENT
 
-All changes are fully reverted. Now, what exactly would you like the `.opencode/plugins/entire.ts` file to use? Just to confirm: you want it to call `go run <this repo's path>/cmd/entire/main.go` instead of `entire` — so something like `go run /Users/pfleidi/entire/cli/cmd/entire/main.go`?
+All changes are fully reverted. Now, what exactly would you like the `.opencode/plugins/entire.ts` file to use? Just to confirm: you want it to call `go run <this repo's path>/cmd/entire/main.go` instead of `entire` — so something like `go run /home/<USER>/entire/cli/cmd/entire/main.go`?

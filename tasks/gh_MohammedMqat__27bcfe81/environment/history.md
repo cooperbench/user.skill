@@ -27,7 +27,7 @@ tool_use Read
 id: toolu_011eNeBvNkTvR1cYHpjWUDUx
 ```json
 {
-  "file_path": "/home/mohmqat/Work/week-5-project-express/public/detail/app.js"
+  "file_path": "/home/<USER>/Work/week-5-project-express/public/detail/app.js"
 }
 ```
 
@@ -36,7 +36,7 @@ id: toolu_011eNeBvNkTvR1cYHpjWUDUx
 tool_result ERROR
 id: toolu_011eNeBvNkTvR1cYHpjWUDUx
 ```
-File does not exist. Note: your current working directory is /home/mohmqat/Work/week-5-project-express.
+File does not exist. Note: your current working directory is /home/<USER>/Work/week-5-project-express.
 ```
 
 > TOOL
@@ -45,7 +45,7 @@ tool_use Read
 id: toolu_01TtnHXuDFkNJooPUyavDU3e
 ```json
 {
-  "file_path": "/home/mohmqat/Work/week-5-project-express/public/detail/index.html"
+  "file_path": "/home/<USER>/Work/week-5-project-express/public/detail/index.html"
 }
 ```
 
@@ -54,7 +54,7 @@ id: toolu_01TtnHXuDFkNJooPUyavDU3e
 tool_result ERROR
 id: toolu_01TtnHXuDFkNJooPUyavDU3e
 ```
-File does not exist. Note: your current working directory is /home/mohmqat/Work/week-5-project-express.
+File does not exist. Note: your current working directory is /home/<USER>/Work/week-5-project-express.
 ```
 
 > AGENT
@@ -87,7 +87,7 @@ tool_use Read
 id: toolu_01SKjN6v8XPDUVjtFhcRbKmf
 ```json
 {
-  "file_path": "/home/mohmqat/Work/week-5-project-express/public/entity/app.js"
+  "file_path": "/home/<USER>/Work/week-5-project-express/public/entity/app.js"
 }
 ```
 
@@ -154,7 +154,7 @@ tool_use Read
 id: toolu_01D231uD2fKjuZ2qkTNJYHrt
 ```json
 {
-  "file_path": "/home/mohmqat/Work/week-5-project-express/public/entity/index.html"
+  "file_path": "/home/<USER>/Work/week-5-project-express/public/entity/index.html"
 }
 ```
 
@@ -204,7 +204,7 @@ tool_use Read
 id: toolu_01Jz7JCLXXAzASzXPzE15QkC
 ```json
 {
-  "file_path": "/home/mohmqat/Work/week-5-project-express/src/router.js"
+  "file_path": "/home/<USER>/Work/week-5-project-express/src/router.js"
 }
 ```
 
@@ -288,7 +288,7 @@ tool_use Read
 id: toolu_01HtedLBwXnr1Z7YyJCRayXR
 ```json
 {
-  "file_path": "/home/mohmqat/Work/week-5-project-express/src/controllers/anime-details.js"
+  "file_path": "/home/<USER>/Work/week-5-project-express/src/controllers/anime-details.js"
 }
 ```
 
@@ -339,7 +339,7 @@ id: toolu_01QNPFN11HUXzeuiAMEA53b6
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mohmqat/Work/week-5-project-express/src/controllers/anime-details.js",
+  "file_path": "/home/<USER>/Work/week-5-project-express/src/controllers/anime-details.js",
   "old_string": "export const animeStreaming = (req, res) => {\n  const id = req.params.id;\n  const { entityType } = req.params;\n  if (![\"anime\", \"manga\"].includes(entityType)) {\n    return res.status(400).json(\"Only manga and anime are allowed values\");\n  }\n  fetch(`https://api.jikan.moe/v4/anime/${id}/streaming`)",
   "new_string": "export const animeStreaming = (req, res) => {\n  const id = req.params.id;\n  fetch(`https://api.jikan.moe/v4/anime/${id}/streaming`)"
 }
@@ -350,7 +350,7 @@ id: toolu_01QNPFN11HUXzeuiAMEA53b6
 tool_result
 id: toolu_01QNPFN11HUXzeuiAMEA53b6
 ```
-The file /home/mohmqat/Work/week-5-project-express/src/controllers/anime-details.js has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/week-5-project-express/src/controllers/anime-details.js has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -363,7 +363,7 @@ tool_use Read
 id: toolu_01XybRyywfTsrPht79YVwyHY
 ```json
 {
-  "file_path": "/home/mohmqat/Work/week-5-project-express/public/entity/style.css"
+  "file_path": "/home/<USER>/Work/week-5-project-express/public/entity/style.css"
 }
 ```
 
@@ -455,7 +455,7 @@ id: toolu_019ngyx9j2jT9NYcWMDEv3xp
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mohmqat/Work/week-5-project-express/public/entity/app.js",
+  "file_path": "/home/<USER>/Work/week-5-project-express/public/entity/app.js",
   "old_string": "  info.appendChild(btn);\n\n  card.appendChild(info);\n  card.appendChild(cover);\n\n  detailsContainer.appendChild(card);\n}\n\nfetchAnime().then(renderAnime);",
   "new_string": "  info.appendChild(btn);\n\n  card.appendChild(info);\n  card.appendChild(cover);\n\n  detailsContainer.appendChild(card);\n}\n\nfunction renderStreaming(data) {\n  const links = data.data;\n  if (!links || links.length === 0) return;\n\n  const container = document.querySelector(\".detail-info\");\n  if (!container) return;\n\n  const label = document.createElement(\"div\");\n  label.className = \"detail-synopsis-label\";\n  label.textContent = \"Streaming\";\n\n  const list = document.createElement(\"div\");\n  list.className = \"streaming-links\";\n\n  links.forEach(function (link) {\n    const a = document.createElement(\"a\");\n    a.href = link.url;\n    a.textContent = link.name;\n    a.target = \"_blank\";\n    a.rel = \"noopener noreferrer\";\n    a.className = \"streaming-link\";\n    list.appendChild(a);\n  });\n\n  // Insert before the favorites button\n  const btn = container.querySelector(\"button\");\n  container.insertBefore(label, btn);\n  container.insertBefore(list, btn);\n}\n\nfetchAnime().then(renderAnime);\n\nif (entityType === \"anime\") {\n  fetch(\"/api/anime/\" + encodeURIComponent(id) + \"/streaming\")\n    .then(function (response) { return response.json(); })\n    .then(renderStreaming)\n    .catch(function (err) { console.log(err); });\n}"
 }

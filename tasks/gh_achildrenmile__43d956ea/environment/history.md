@@ -172,7 +172,7 @@ id: toolu_01TJEEorLF1GSDCxQveibuUP
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/qslcardgenerator/public/generator.html",
+  "file_path": "/home/<USER>/qslcardgenerator/public/generator.html",
   "old_string": "      const link = document.createElement('a');\n      link.download = `${callsignVal.toUpperCase()}.png`;\n      link.href = canvas.toDataURL('image/png');\n      link.click();",
   "new_string": "      const link = document.createElement('a');\n      link.download = `${callsignVal.toUpperCase()}.png`;\n      link.href = canvas.toDataURL('image/png');\n      link.style.display = 'none';\n      document.body.appendChild(link);\n      link.click();\n      document.body.removeChild(link);"
 }
@@ -192,7 +192,7 @@ tool_use Read
 id: toolu_01F115JM97Ej9mCV97hjBqvY
 ```json
 {
-  "file_path": "/home/achildrenmile/qslcardgenerator/public/generator.html",
+  "file_path": "/home/<USER>/qslcardgenerator/public/generator.html",
   "offset": 815,
   "limit": 10
 }
@@ -222,7 +222,7 @@ id: toolu_01Xf4WrGGpu2ZbamtYMfkBGk
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/qslcardgenerator/public/generator.html",
+  "file_path": "/home/<USER>/qslcardgenerator/public/generator.html",
   "old_string": "      const link = document.createElement('a');\n      link.download = `${callsignVal.toUpperCase()}.png`;\n      link.href = canvas.toDataURL('image/png');\n      link.click();",
   "new_string": "      const link = document.createElement('a');\n      link.download = `${callsignVal.toUpperCase()}.png`;\n      link.href = canvas.toDataURL('image/png');\n      link.style.display = 'none';\n      document.body.appendChild(link);\n      link.click();\n      document.body.removeChild(link);"
 }
@@ -233,7 +233,7 @@ id: toolu_01Xf4WrGGpu2ZbamtYMfkBGk
 tool_result
 id: toolu_01Xf4WrGGpu2ZbamtYMfkBGk
 ```
-The file /home/achildrenmile/qslcardgenerator/public/generator.html has been updated successfully.
+The file /home/<USER>/qslcardgenerator/public/generator.html has been updated successfully.
 ```
 
 > AGENT

@@ -162,8 +162,8 @@ Current version: 2.1.105
 Checking for updates to latest version...
 
 Warning: Multiple installations found
-- npm-global at /home/linuxbrew/.linuxbrew/bin/claude (currently running)
-- native at /home/mike-anderson/.local/bin/claude
+- npm-global at /home/<USER>/.linuxbrew/bin/claude (currently running)
+- native at /home/<USER>/.local/bin/claude
 New version available: 2.1.112 (current: 2.1.105)
 Installing update...
 Using global installation update method...
@@ -178,8 +178,8 @@ One thing to note — the updater flagged **two installations**:
 
 | Installation | Path |
 |---|---|
-| **npm-global** (active) | `/home/linuxbrew/.linuxbrew/bin/claude` |
-| **native** | `/home/mike-anderson/.local/bin/claude` |
+| **npm-global** (active) | `/home/<USER>/.linuxbrew/bin/claude` |
+| **native** | `/home/<USER>/.local/bin/claude` |
 
 The npm-global one (Linuxbrew) is the one that was updated and is currently running. You may want to update or remove the native one at `~/.local/bin/claude` to avoid version confusion down the road.
 

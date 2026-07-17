@@ -42,7 +42,7 @@ Perfect! Now I have a comprehensive view of the Slack notification formatting co
 I've found the complete Slack notification formatting implementation in your Go project. Here's what you need to know:
 
 ### 1. Main Slack Sender Code
-**File:** `/Users/pc/web3/ReleaseBeacon/internal/routing/slack.go`
+**File:** `/home/<USER>/web3/ReleaseBeacon/internal/routing/slack.go`
 
 #### Core Slack Implementation (Lines 18-319)
 
@@ -73,7 +73,7 @@ tool_use Read
 id: toolu_bdrk_018Bbc457AuYH5voGTCRX4Hk
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/routing/sender.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/routing/sender.go",
   "offset": 110,
   "limit": 60
 }
@@ -85,7 +85,7 @@ tool_use Read
 id: toolu_bdrk_01DucGqgAYndftMyE2jRKx2j
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/routing/slack.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/routing/slack.go",
   "offset": 170,
   "limit": 130
 }
@@ -198,7 +198,7 @@ tool_use Read
 id: toolu_bdrk_01REYCG1cxtrBpJMtLthP8HC
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/routing/slack_test.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/routing/slack_test.go",
   "limit": 60,
   "offset": 287
 }
@@ -266,7 +266,7 @@ tool_use Read
 id: toolu_bdrk_01RzYJht1GjujzKjschi9PXd
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/routing/slack_test.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/routing/slack_test.go",
   "offset": 462
 }
 ```
@@ -400,7 +400,7 @@ tool_use Write
 id: toolu_bdrk_01Tae9dvovpjkYdW2vn14Rmi
 ```json
 {
-  "file_path": "/Users/pc/.claude/plans/scalable-coalescing-parnas.md",
+  "file_path": "/home/<USER>/.claude/plans/scalable-coalescing-parnas.md",
   "content": "# Fix: Setext-style headings not converted in Slack code blocks\n\n## Context\nCilium (and likely other projects) use Setext-style markdown headings where the title is on one line followed by a line of dashes:\n```\nSummary of Changes\n------------------\n```\nThis is valid Markdown (renders as `<h2>`), but `markdownToASCII()` only handles ATX-style headings (`## Title`). The Setext heading passes through unconverted, producing dashes only below the title instead of the expected ASCII box with dashes above AND below.\n\n## Changes\n\n### 1. Add Setext heading regex to `internal/routing/sender.go`\nAdd a new regex pattern after the existing `reHeading` (around line 117):\n```go\nreSetextH1 = regexp.MustCompile(`(?m)^(.+)\\n[=]{2,}$`)\nreSetextH2 = regexp.MustCompile(`(?m)^(.+)\\n[-]{2,}$`)\n```\n\n### 2. Handle Setext conversion in `markdownToASCII()` (same file, ~line 143)\nAdd Setext conversion **before** the existing ATX heading conversion:\n```go\n// Convert Setext headings (Title\\n====== or Title\\n------) to ASCII box\ns = reSetextH1.ReplaceAllStringFunc(s, func(match string) string {\n    parts := reSetextH1.FindStringSubmatch(match)\n    title := strings.TrimSpace(parts[1])\n    dashes := strings.Repeat(\"-\", len(title))\n    return dashes + \"\\n\" + title + \"\\n\" + dashes\n})\ns = reSetextH2.ReplaceAllStringFunc(s, func(match string) string {\n    parts := reSetextH2.FindStringSubmatch(match)\n    title := strings.TrimSpace(parts[1])\n    dashes := strings.Repeat(\"-\", len(title))\n    return dashes + \"\\n\" + title + \"\\n\" + dashes\n})\n```\n\n**Important**: This must run before other transformations (especially before bold/link stripping) since the title line could contain markdown formatting. […]
 
 > TOOL
@@ -408,7 +408,7 @@ id: toolu_bdrk_01Tae9dvovpjkYdW2vn14Rmi
 tool_result
 id: toolu_bdrk_01Tae9dvovpjkYdW2vn14Rmi
 ```
-File created successfully at: /Users/pc/.claude/plans/scalable-coalescing-parnas.md
+File created successfully at: /home/<USER>/.claude/plans/scalable-coalescing-parnas.md
 ```
 
 > TOOL
@@ -426,7 +426,7 @@ id: toolu_bdrk_01EWpq7KHZDcwBaBYSbmnHa8
 ```
 User has approved your plan. You can now start coding. Start with updating your todo list if applicable
 
-Your plan has been saved to: /Users/pc/.claude/plans/scalable-coalescing-parnas.md
+Your plan has been saved to: /home/<USER>/.claude/plans/scalable-coalescing-parnas.md
 You can refer back to it if needed during implementation.
 
 ## Approved Plan:
@@ -466,7 +466,7 @@ id: toolu_bdrk_013N65rMQLBdFr7iYtxakJZG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/routing/sender.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/routing/sender.go",
   "old_string": "\t// Headings ## Text → dashed ASCII box\n\treHeading = regexp.MustCompile(`(?m)^#{1,6}\\s+(.+)$`)",
   "new_string": "\t// Headings ## Text → dashed ASCII box\n\treHeading = regexp.MustCompile(`(?m)^#{1,6}\\s+(.+)$`)\n\t// Setext headings: Title\\n====== (h1) or Title\\n------ (h2)\n\treSetextH1 = regexp.MustCompile(`(?m)^(.+)\\n[=]{2,}$`)\n\treSetextH2 = regexp.MustCompile(`(?m)^(.+)\\n[-]{2,}$`)"
 }
@@ -477,7 +477,7 @@ id: toolu_bdrk_013N65rMQLBdFr7iYtxakJZG
 tool_result
 id: toolu_bdrk_013N65rMQLBdFr7iYtxakJZG
 ```
-The file /Users/pc/web3/ReleaseBeacon/internal/routing/sender.go has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/internal/routing/sender.go has been updated successfully.
 ```
 
 > AGENT
@@ -491,7 +491,7 @@ id: toolu_bdrk_01AK9xdSib63bufDrxXLpfmF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/routing/sender.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/routing/sender.go",
   "old_string": "\t// Convert headings to ASCII art with dashes\n\ts = reHeading.ReplaceAllStringFunc(s, func(match string) string {",
   "new_string": "\t// Convert Setext headings (Title\\n====== or Title\\n------) to ASCII box\n\ts = reSetextH1.ReplaceAllStringFunc(s, func(match string) string {\n\t\tparts := reSetextH1.FindStringSubmatch(match)\n\t\ttitle := strings.TrimSpace(parts[1])\n\t\tdashes := strings.Repeat(\"-\", len(title))\n\t\treturn dashes + \"\\n\" + title + \"\\n\" + dashes\n\t})\n\ts = reSetextH2.ReplaceAllStringFunc(s, func(match string) string {\n\t\tparts := reSetextH2.FindStringSubmatch(match)\n\t\ttitle := strings.TrimSpace(parts[1])\n\t\tdashes := strings.Repeat(\"-\", len(title))\n\t\treturn dashes + \"\\n\" + title + \"\\n\" + dashes\n\t})\n\n\t// Convert ATX headings to ASCII art with dashes\n\ts = reHeading.ReplaceAllStringFunc(s, func(match string) string {"
 }
@@ -502,7 +502,7 @@ id: toolu_bdrk_01AK9xdSib63bufDrxXLpfmF
 tool_result
 id: toolu_bdrk_01AK9xdSib63bufDrxXLpfmF
 ```
-The file /Users/pc/web3/ReleaseBeacon/internal/routing/sender.go has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/internal/routing/sender.go has been updated successfully.
 ```
 
 > AGENT
@@ -516,7 +516,7 @@ id: toolu_bdrk_012cZVDg9iAPW2GgFgvMhc6E
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/routing/slack_test.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/routing/slack_test.go",
   "old_string": "\t\t{\n\t\t\tname:  \"full changelog example\",",
   "new_string": "\t\t{\n\t\t\tname:     \"setext h2 heading (dashes)\",\n\t\t\tinput:    \"Summary of Changes\\n------------------\",\n\t\t\tcontains: []string{\"------------------\\nSummary of Changes\\n------------------\"},\n\t\t},\n\t\t{\n\t\t\tname:     \"setext h1 heading (equals)\",\n\t\t\tinput:    \"Release Notes\\n=============\",\n\t\t\tcontains: []string{\"-------------\\nRelease Notes\\n-------------\"},\n\t\t},\n\t\t{\n\t\t\tname:  \"cilium-style changelog with setext heading\",\n\t\t\tinput: \"Summary of Changes\\n------------------\\n\\n* Fixed a bug in endpoint routing\\n* Updated Hubble version to v1.2.3\",\n\t\t\tcontains: []string{\n\t\t\t\t\"------------------\\nSummary of Changes\\n------------------\",\n\t\t\t\t\"Fixed a bug in endpoint routing\",\n\t\t\t},\n\t\t},\n\t\t{\n\t\t\tname:  \"full changelog example\","
 }
@@ -527,7 +527,7 @@ id: toolu_bdrk_012cZVDg9iAPW2GgFgvMhc6E
 tool_result
 id: toolu_bdrk_012cZVDg9iAPW2GgFgvMhc6E
 ```
-The file /Users/pc/web3/ReleaseBeacon/internal/routing/slack_test.go has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/internal/routing/slack_test.go has been updated successfully.
 ```
 
 > AGENT

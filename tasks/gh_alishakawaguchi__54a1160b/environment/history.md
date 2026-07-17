@@ -1,6 +1,6 @@
 > DEVELOPER
 
-some of the agent installs aren't working like cursor. can we update the repo to follow the smae skills install as this one /Users/alisha/Projects/cc-skills-golang
+some of the agent installs aren't working like cursor. can we update the repo to follow the smae skills install as this one /home/<USER>/Projects/cc-skills-golang
 
 > AGENT
 
@@ -12,7 +12,7 @@ tool_use Bash
 id: toolu_011McThZGAKwmnS5cUEkQgqo
 ```json
 {
-  "command": "ls -la /Users/alisha/Projects/skills /Users/alisha/Projects/cc-skills-golang",
+  "command": "ls -la /home/<USER>/Projects/skills /home/<USER>/Projects/cc-skills-golang",
   "description": "List both repos"
 }
 ```
@@ -22,7 +22,7 @@ id: toolu_011McThZGAKwmnS5cUEkQgqo
 tool_result
 id: toolu_011McThZGAKwmnS5cUEkQgqo
 ```
-/Users/alisha/Projects/cc-skills-golang:
+/home/<USER>/Projects/cc-skills-golang:
 total 1800
 drwxr-xr-x@ 16 alisha  staff     512 Apr 24 09:46 .
 drwxr-xr-x@ 36 alisha  staff    1152 Apr 24 09:46 ..
@@ -41,7 +41,7 @@ drwxr-xr-x@  5 alisha  staff     160 Apr 24 09:46 .github
 -rw-r--r--@  1 alisha  staff     123 Apr 24 09:46 gemini-extension.json
 drwxr-xr-x@ 37 alisha  staff    1184 Apr 24 09:46 skills
 
-/Users/alisha/Projects/skills:
+/home/<USER>/Projects/skills:
 total 40
 drwxr-xr-x@ 17 alisha  staff   544 Apr 24 09:48 .
 drwxr-xr-x@ 36 alisha  staff  1152 Apr 24 09:46 ..
@@ -56,7 +56,7 @@ tool_use Bash
 id: toolu_01LEVgADSGj345R669K8Bqtu
 ```json
 {
-  "command": "ls -la /Users/alisha/Projects/cc-skills-golang/.claude-plugin /Users/alisha/Projects/cc-skills-golang/.cursor-plugin /Users/alisha/Projects/skills/.claude-plugin /Users/alisha/Projects/skills/.cursor-plugin",
+  "command": "ls -la /home/<USER>/Projects/cc-skills-golang/.claude-plugin /home/<USER>/Projects/cc-skills-golang/.cursor-plugin /home/<USER>/Projects/skills/.claude-plugin /home/<USER>/Projects/skills/.cursor-plugin",
   "description": "List plugin dirs in both repos"
 }
 ```
@@ -66,25 +66,25 @@ id: toolu_01LEVgADSGj345R669K8Bqtu
 tool_result
 id: toolu_01LEVgADSGj345R669K8Bqtu
 ```
-/Users/alisha/Projects/cc-skills-golang/.claude-plugin:
+/home/<USER>/Projects/cc-skills-golang/.claude-plugin:
 total 8
 drwxr-xr-x@  3 alisha  staff   96 Apr 24 09:46 .
 drwxr-xr-x@ 16 alisha  staff  512 Apr 24 09:46 ..
 -rw-r--r--@  1 alisha  staff  643 Apr 24 09:46 plugin.json
 
-/Users/alisha/Projects/cc-skills-golang/.cursor-plugin:
+/home/<USER>/Projects/cc-skills-golang/.cursor-plugin:
 total 8
 drwxr-xr-x@  3 alisha  staff   96 Apr 24 09:46 .
 drwxr-xr-x@ 16 alisha  staff  512 Apr 24 09:46 ..
 -rw-r--r--@  1 alisha  staff  657 Apr 24 09:46 plugin.json
 
-/Users/alisha/Projects/skills/.claude-plugin:
+/home/<USER>/Projects/skills/.claude-plugin:
 total 8
 drwxr-xr-x@  3 alisha  staff   96 Apr 10 13:31 .
 drwxr-xr-x@ 17 alisha  staff  544 Apr 24 09:48 ..
 -rw-r--r--@  1 alisha  staff  525 Apr 10 13:31 marketplace.json
 
-/Users/alisha/Projects/skills/.cursor-plugin:
+/home/<USER>/Projects/skills/.cursor-plugin:
 total 8
 drwxr-xr-x@  3 alisha  staff   96 Apr 24 09:48 .
 drwxr-xr-x@ 17 alisha  staff  544 Apr 24 09:48 ..
@@ -97,7 +97,7 @@ tool_use Read
 id: toolu_01WxC8gBkDGKfZMwCai5Bw6A
 ```json
 {
-  "file_path": "/Users/alisha/Projects/cc-skills-golang/.claude-plugin/plugin.json"
+  "file_path": "/home/<USER>/Projects/cc-skills-golang/.claude-plugin/plugin.json"
 }
 ```
 
@@ -112,7 +112,7 @@ id: toolu_01WxC8gBkDGKfZMwCai5Bw6A
 4	    "version": "1.2.5",
 5	    "author": {
 6	        "name": "Samuel Berthe",
-7	        "email": "hey@samuel-berthe.fr"
+7	        "email": "<REDACTED_EMAIL>"
 8	    },
 9	    "homepage": "https://github.com/samber/cc-skills-golang",
 10	    "repository": "https://github.com/samber/cc-skills-golang",
@@ -140,7 +140,7 @@ tool_use Read
 id: toolu_01Wbwp8FfgHHC6VYNxcqe5ka
 ```json
 {
-  "file_path": "/Users/alisha/Projects/cc-skills-golang/.cursor-plugin/plugin.json"
+  "file_path": "/home/<USER>/Projects/cc-skills-golang/.cursor-plugin/plugin.json"
 }
 ```
 
@@ -156,7 +156,7 @@ id: toolu_01Wbwp8FfgHHC6VYNxcqe5ka
 5	    "version": "1.2.5",
 6	    "author": {
 7	        "name": "Samuel Berthe",
-8	        "email": "hey@samuel-berthe.fr"
+8	        "email": "<REDACTED_EMAIL>"
 9	    },
 10	    "homepage": "https://github.com/samber/cc-skills-golang",
 11	    "repository": "https://github.com/samber/cc-skills-golang",
@@ -183,7 +183,7 @@ tool_use Read
 id: toolu_01F9XKhG9qVHL3h11Wfg5Jia
 ```json
 {
-  "file_path": "/Users/alisha/Projects/skills/.claude-plugin/marketplace.json"
+  "file_path": "/home/<USER>/Projects/skills/.claude-plugin/marketplace.json"
 }
 ```
 
@@ -221,7 +221,7 @@ tool_use Read
 id: toolu_015tSLi6688pP8FkRbpazvGv
 ```json
 {
-  "file_path": "/Users/alisha/Projects/skills/.cursor-plugin/plugin.json"
+  "file_path": "/home/<USER>/Projects/skills/.cursor-plugin/plugin.json"
 }
 ```
 
@@ -253,7 +253,7 @@ tool_use Read
 id: toolu_01W5eZUhbv658zxj9uAm7H3e
 ```json
 {
-  "file_path": "/Users/alisha/Projects/skills/README.md"
+  "file_path": "/home/<USER>/Projects/skills/README.md"
 }
 ```
 
@@ -301,7 +301,7 @@ tool_use Read
 id: toolu_01P1QDmWnmwKFcyKRgej2j5R
 ```json
 {
-  "file_path": "/Users/alisha/Projects/cc-skills-golang/README.md"
+  "file_path": "/home/<USER>/Projects/cc-skills-golang/README.md"
 }
 ```
 
@@ -356,7 +356,7 @@ tool_use Bash
 id: toolu_01QVWenPoAkaYGtxmu4XQoDZ
 ```json
 {
-  "command": "ls /Users/alisha/Projects/cc-skills-golang/skills/ | head -20 && echo \"---\" && ls /Users/alisha/Projects/skills/plugins/",
+  "command": "ls /home/<USER>/Projects/cc-skills-golang/skills/ | head -20 && echo \"---\" && ls /home/<USER>/Projects/skills/plugins/",
   "description": "Check skill directory structures"
 }
 ```
@@ -396,7 +396,7 @@ tool_use Bash
 id: toolu_01KWGkJbf69BCrWYfnYsAtMR
 ```json
 {
-  "command": "ls /Users/alisha/Projects/skills/plugins/entire/ && echo \"---\" && ls /Users/alisha/Projects/skills/plugins/entire/skills/ 2>/dev/null && echo \"---\" && find /Users/alisha/Projects/skills -maxdepth 4 -name \"*.json\" -o -name \"*.md\" | grep -v node_modules | grep -v \".git/\" | head -40",
+  "command": "ls /home/<USER>/Projects/skills/plugins/entire/ && echo \"---\" && ls /home/<USER>/Projects/skills/plugins/entire/skills/ 2>/dev/null && echo \"---\" && find /home/<USER>/Projects/skills -maxdepth 4 -name \"*.json\" -o -name \"*.md\" | grep -v node_modules | grep -v \".git/\" | head -40",
   "description": "Check skill directory structures"
 }
 ```
@@ -412,32 +412,32 @@ explain
 search
 session-handoff
 ---
-/Users/alisha/Projects/skills/gemini-extension.json
-/Users/alisha/Projects/skills/README.md
-/Users/alisha/Projects/skills/package.json
-/Users/alisha/Projects/skills/GEMINI.md
-/Users/alisha/Projects/skills/.cursor-plugin/plugin.json
-/Users/alisha/Projects/skills/.opencode/INSTALL.md
-/Users/alisha/Projects/skills/.claude/settings.json
-/Users/alisha/Projects/skills/.claude/settings.local.json
-/Users/alisha/Projects/skills/.codex/hooks.json
-/Users/alisha/Projects/skills/.claude-plugin/marketplace.json
-/Users/alisha/Projects/skills/.entire/settings.json
-/Users/alisha/Projects/skills/.agents/plugins/marketplace.json
-/Users/alisha/Projects/skills/.claude/agents/entire-search.md
-/Users/alisha/Projects/skills/plugins/entire/.claude-plugin/plugin.json
-/Users/alisha/Projects/skills/plugins/entire/.codex-plugin/plugin.json
-/Users/alisha/Projects/skills/docs/superpowers/plans/2026-04-17-entire-skill-response-header.md
-/Users/alisha/Projects/skills/docs/superpowers/specs/2026-04-17-entire-skill-response-header-design.md
-/Users/alisha/Projects/skills/.entire/tmp/pre-prompt-ba833b9a-5a6d-4987-baa5-2f1dd001ad2e.json
-/Users/alisha/Projects/skills/.entire/tmp/pre-prompt-3015d202-4959-4c66-9da5-a8eddaa630e7.json
-/Users/alisha/Projects/skills/.entire/tmp/REDACTED.json
-/Users/alisha/Projects/skills/.entire/tmp/pre-prompt-c5b3d2bd-c81b-487f-94a7-8fcb42d2abcb.json
-/Users/alisha/Projects/skills/.entire/tmp/pre-prompt-c609b17b-6e60-4668-9859-8b5d93621f88.json
-/Users/alisha/Projects/skills/.entire/tmp/pre-prompt-d74a0b14-40c3-4fa5-8888-153f902e94e7.json
-/Users/alisha/Projects/skills/.entire/tmp/pre-prompt-95047199-69f0-49a5-9432-18cba428ecec.json
-/Users/alisha/Projects/skills/.entire/tmp/pre-prompt-df990770-23b4-4652-a286-25ea441b647e.json
-/Users/alisha/Projects/skills/.entire/tmp/pre-prompt-0953ba2a-3a92-48a0-884e-ce8f7ebbe8ba.json
+/home/<USER>/Projects/skills/gemini-extension.json
+/home/<USER>/Projects/skills/README.md
+/home/<USER>/Projects/skills/package.json
+/home/<USER>/Projects/skills/GEMINI.md
+/home/<USER>/Projects/skills/.cursor-plugin/plugin.json
+/home/<USER>/Projects/skills/.opencode/INSTALL.md
+/home/<USER>/Projects/skills/.claude/settings.json
+/home/<USER>/Projects/skills/.claude/settings.local.json
+/home/<USER>/Projects/skills/.codex/hooks.json
+/home/<USER>/Projects/skills/.claude-plugin/marketplace.json
+/home/<USER>/Projects/skills/.entire/settings.json
+/home/<USER>/Projects/skills/.agents/plugins/marketplace.json
+/home/<USER>/Projects/skills/.claude/agents/entire-search.md
+/home/<USER>/Projects/skills/plugins/entire/.claude-plugin/plugin.json
+/home/<USER>/Projects/skills/plugins/entire/.codex-plugin/plugin.json
+/home/<USER>/Projects/skills/docs/superpowers/plans/2026-04-17-entire-skill-response-header.md
+/home/<USER>/Projects/skills/docs/superpowers/specs/2026-04-17-entire-skill-response-header-design.md
+/home/<USER>/Projects/skills/.entire/tmp/pre-prompt-ba833b9a-5a6d-4987-baa5-2f1dd001ad2e.json
+/home/<USER>/Projects/skills/.entire/tmp/pre-prompt-3015d202-4959-4c66-9da5-a8eddaa630e7.json
+/home/<USER>/Projects/skills/.entire/tmp/REDACTED.json
+/home/<USER>/Projects/skills/.entire/tmp/pre-prompt-c5b3d2bd-c81b-487f-94a7-8fcb42d2abcb.json
+/home/<USER>/Projects/skills/.entire/tmp/pre-prompt-c609b17b-6e60-4668-9859-8b5d93621f88.json
+/home/<USER>/Projects/skills/.entire/tmp/pre-prompt-d74a0b14-40c3-4fa5-8888-153f902e94e7.json
+/home/<USER>/Projects/skills/.entire/tmp/pre-prompt-95047199-69f0-49a5-9432-18cba428ecec.json
+/home/<USER>/Projects/skills/.entire/tmp/pre-prompt-df990770-23b4-4652-a286-25ea441b647e.json
+/home/<USER>/Projects/skills/.entire/tmp/pre-prompt-0953ba2a-3a92-48a0-884e-ce8f7ebbe8ba.json
 ```
 
 > TOOL
@@ -446,7 +446,7 @@ tool_use Read
 id: toolu_01Nwwr7f6aEsK6Zg5WnPn7g5
 ```json
 {
-  "file_path": "/Users/alisha/Projects/skills/plugins/entire/.claude-plugin/plugin.json"
+  "file_path": "/home/<USER>/Projects/skills/plugins/entire/.claude-plugin/plugin.json"
 }
 ```
 
@@ -482,7 +482,7 @@ tool_use Read
 id: toolu_01FSwXMgs9mRU8DEwFP2KUDY
 ```json
 {
-  "file_path": "/Users/alisha/Projects/skills/gemini-extension.json"
+  "file_path": "/home/<USER>/Projects/skills/gemini-extension.json"
 }
 ```
 
@@ -506,7 +506,7 @@ tool_use Read
 id: toolu_01UxtMVEWY6nJ1hMxMLZQJKs
 ```json
 {
-  "file_path": "/Users/alisha/Projects/cc-skills-golang/gemini-extension.json"
+  "file_path": "/home/<USER>/Projects/cc-skills-golang/gemini-extension.json"
 }
 ```
 
@@ -528,7 +528,7 @@ tool_use Read
 id: toolu_01Q6nERVSUmqqohUM5qq6bfL
 ```json
 {
-  "file_path": "/Users/alisha/Projects/skills/plugins/entire/.codex-plugin/plugin.json"
+  "file_path": "/home/<USER>/Projects/skills/plugins/entire/.codex-plugin/plugin.json"
 }
 ```
 
@@ -577,7 +577,7 @@ tool_use Read
 id: toolu_013Q56B125WNi7wL1LqxjGBn
 ```json
 {
-  "file_path": "/Users/alisha/Projects/skills/package.json"
+  "file_path": "/home/<USER>/Projects/skills/package.json"
 }
 ```
 
@@ -601,7 +601,7 @@ tool_use Read
 id: toolu_015sSLGLgxvoPeTaFzLyT2Qk
 ```json
 {
-  "file_path": "/Users/alisha/Projects/skills/.opencode/INSTALL.md"
+  "file_path": "/home/<USER>/Projects/skills/.opencode/INSTALL.md"
 }
 ```
 
@@ -650,7 +650,7 @@ tool_use Bash
 id: toolu_01MNd4149AvTm3JeZduZroRy
 ```json
 {
-  "command": "ls /Users/alisha/Projects/skills/.agents/ /Users/alisha/Projects/skills/.claude/ /Users/alisha/Projects/skills/.codex/ /Users/alisha/Projects/skills/.opencode/",
+  "command": "ls /home/<USER>/Projects/skills/.agents/ /home/<USER>/Projects/skills/.claude/ /home/<USER>/Projects/skills/.codex/ /home/<USER>/Projects/skills/.opencode/",
   "description": "List agent-specific dirs"
 }
 ```
@@ -660,20 +660,20 @@ id: toolu_01MNd4149AvTm3JeZduZroRy
 tool_result
 id: toolu_01MNd4149AvTm3JeZduZroRy
 ```
-/Users/alisha/Projects/skills/.agents/:
+/home/<USER>/Projects/skills/.agents/:
 plugins
 
-/Users/alisha/Projects/skills/.claude/:
+/home/<USER>/Projects/skills/.claude/:
 agents
 settings.json
 settings.local.json
 
-/Users/alisha/Projects/skills/.codex/:
+/home/<USER>/Projects/skills/.codex/:
 agents
 config.toml
 hooks.json
 
-/Users/alisha/Projects/skills/.opencode/:
+/home/<USER>/Projects/skills/.opencode/:
 INSTALL.md
 plugins
 ```
@@ -684,7 +684,7 @@ tool_use Read
 id: toolu_01Wfiebfo8QwGcKx9qnpWTwk
 ```json
 {
-  "file_path": "/Users/alisha/Projects/skills/.agents/plugins/marketplace.json"
+  "file_path": "/home/<USER>/Projects/skills/.agents/plugins/marketplace.json"
 }
 ```
 
@@ -722,7 +722,7 @@ tool_use Bash
 id: toolu_01NWGPjWvx22ksP4XvckMmUH
 ```json
 {
-  "command": "ls -la /Users/alisha/Projects/skills/.opencode/plugins/ /Users/alisha/Projects/skills/.codex/agents/ /Users/alisha/Projects/skills/.claude/agents/ 2>/dev/null",
+  "command": "ls -la /home/<USER>/Projects/skills/.opencode/plugins/ /home/<USER>/Projects/skills/.codex/agents/ /home/<USER>/Projects/skills/.claude/agents/ 2>/dev/null",
   "description": "Check agent dirs"
 }
 ```
@@ -732,19 +732,19 @@ id: toolu_01NWGPjWvx22ksP4XvckMmUH
 tool_result
 id: toolu_01NWGPjWvx22ksP4XvckMmUH
 ```
-/Users/alisha/Projects/skills/.claude/agents/:
+/home/<USER>/Projects/skills/.claude/agents/:
 total 8
 drwxr-x---@ 3 alisha  staff    96 Apr 10 12:53 .
 drwxr-xr-x@ 5 alisha  staff   160 Apr 10 12:53 ..
 -rw-------@ 1 alisha  staff  1517 Apr 10 12:53 entire-search.md
 
-/Users/alisha/Projects/skills/.codex/agents/:
+/home/<USER>/Projects/skills/.codex/agents/:
 total 8
 drwxr-x---@ 3 alisha  staff    96 Apr 10 12:53 .
 drwxr-x---@ 5 alisha  staff   160 Apr 10 12:53 ..
 -rw-------@ 1 alisha  staff  1563 Apr 10 12:53 entire-search.toml
 
-/Users/alisha/Projects/skills/.opencode/plugins/:
+/home/<USER>/Projects/skills/.opencode/plugins/:
 total 8
 drwxr-xr-x@ 3 alisha  staff   96 Apr 10 16:18 .
 drwxr-xr-x@ 4 alisha  staff  128 Apr 10 16:18 ..
@@ -757,7 +757,7 @@ tool_use Read
 id: toolu_011fmQQ353pMYoDz2FsBbCiM
 ```json
 {
-  "file_path": "/Users/alisha/Projects/skills/.opencode/plugins/entire.js"
+  "file_path": "/home/<USER>/Projects/skills/.opencode/plugins/entire.js"
 }
 ```
 
@@ -799,7 +799,7 @@ tool_use Bash
 id: toolu_01LaqsxrUembkA7fh2fYvmko
 ```json
 {
-  "command": "ls /Users/alisha/Projects/skills/plugins/entire/skills/ /Users/alisha/Projects/skills/plugins/entire/skills/session-handoff/ 2>/dev/null",
+  "command": "ls /home/<USER>/Projects/skills/plugins/entire/skills/ /home/<USER>/Projects/skills/plugins/entire/skills/session-handoff/ 2>/dev/null",
   "description": "Check skills structure"
 }
 ```
@@ -809,12 +809,12 @@ id: toolu_01LaqsxrUembkA7fh2fYvmko
 tool_result
 id: toolu_01LaqsxrUembkA7fh2fYvmko
 ```
-/Users/alisha/Projects/skills/plugins/entire/skills/:
+/home/<USER>/Projects/skills/plugins/entire/skills/:
 explain
 search
 session-handoff
 
-/Users/alisha/Projects/skills/plugins/entire/skills/session-handoff/:
+/home/<USER>/Projects/skills/plugins/entire/skills/session-handoff/:
 SKILL.md
 ```
 
@@ -824,7 +824,7 @@ tool_use Bash
 id: toolu_01KApnQfB8hwbybHiGLznHoF
 ```json
 {
-  "command": "ls /Users/alisha/Projects/skills/plugins/entire/ /Users/alisha/Projects/cc-skills-golang/skills/golang-code-style/ 2>/dev/null",
+  "command": "ls /home/<USER>/Projects/skills/plugins/entire/ /home/<USER>/Projects/cc-skills-golang/skills/golang-code-style/ 2>/dev/null",
   "description": "Compare structures"
 }
 ```
@@ -834,12 +834,12 @@ id: toolu_01KApnQfB8hwbybHiGLznHoF
 tool_result
 id: toolu_01KApnQfB8hwbybHiGLznHoF
 ```
-/Users/alisha/Projects/cc-skills-golang/skills/golang-code-style/:
+/home/<USER>/Projects/cc-skills-golang/skills/golang-code-style/:
 SKILL.md
 evals
 references
 
-/Users/alisha/Projects/skills/plugins/entire/:
+/home/<USER>/Projects/skills/plugins/entire/:
 skills
 ```
 
@@ -1183,7 +1183,7 @@ id: toolu_01TeJr4GhfKU1XPcFiWyP9jB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alisha/Projects/skills/.cursor-plugin/plugin.json",
+  "file_path": "/home/<USER>/Projects/skills/.cursor-plugin/plugin.json",
   "old_string": "  \"skills\": \"./plugins/entire/skills/\"",
   "new_string": "  \"skills\": \"./skills/\""
 }
@@ -1194,7 +1194,7 @@ id: toolu_01TeJr4GhfKU1XPcFiWyP9jB
 tool_result
 id: toolu_01TeJr4GhfKU1XPcFiWyP9jB
 ```
-The file /Users/alisha/Projects/skills/.cursor-plugin/plugin.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/skills/.cursor-plugin/plugin.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1204,7 +1204,7 @@ id: toolu_012MrxFAfqmLRTfqD97Kw9sy
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alisha/Projects/skills/.codex-plugin/plugin.json",
+  "file_path": "/home/<USER>/Projects/skills/.codex-plugin/plugin.json",
   "old_string": "  \"skills\": \"./skills/\",",
   "new_string": "  \"skills\": \"./skills/\",\n  \"_comment\": \"skills path is relative to repo root\","
 }
@@ -1228,7 +1228,7 @@ tool_use Read
 id: toolu_01UArhoZpXJwErjpGrnN2R9Q
 ```json
 {
-  "file_path": "/Users/alisha/Projects/skills/.codex-plugin/plugin.json"
+  "file_path": "/home/<USER>/Projects/skills/.codex-plugin/plugin.json"
 }
 ```
 
@@ -1282,7 +1282,7 @@ id: toolu_01BDuRcCoYwvTqSQ26x6ypwP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alisha/Projects/skills/.claude-plugin/marketplace.json",
+  "file_path": "/home/<USER>/Projects/skills/.claude-plugin/marketplace.json",
   "old_string": "      \"source\": \"./plugins/entire\",",
   "new_string": "      \"source\": \"./\","
 }
@@ -1293,7 +1293,7 @@ id: toolu_01BDuRcCoYwvTqSQ26x6ypwP
 tool_result
 id: toolu_01BDuRcCoYwvTqSQ26x6ypwP
 ```
-The file /Users/alisha/Projects/skills/.claude-plugin/marketplace.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/skills/.claude-plugin/marketplace.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1303,7 +1303,7 @@ id: toolu_01VSpj9Jd9s7cna9ZdCHsvQG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alisha/Projects/skills/.agents/plugins/marketplace.json",
+  "file_path": "/home/<USER>/Projects/skills/.agents/plugins/marketplace.json",
   "old_string": "      \"source\": {\n        \"source\": \"local\",\n        \"path\": \"./plugins/entire\"\n      },",
   "new_string": "      \"source\": {\n        \"source\": \"local\",\n        \"path\": \"./\"\n      },"
 }
@@ -1314,7 +1314,7 @@ id: toolu_01VSpj9Jd9s7cna9ZdCHsvQG
 tool_result
 id: toolu_01VSpj9Jd9s7cna9ZdCHsvQG
 ```
-The file /Users/alisha/Projects/skills/.agents/plugins/marketplace.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/skills/.agents/plugins/marketplace.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1324,7 +1324,7 @@ id: toolu_019wDyBQEAk6keafFfd2WjWa
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alisha/Projects/skills/.opencode/plugins/entire.js",
+  "file_path": "/home/<USER>/Projects/skills/.opencode/plugins/entire.js",
   "old_string": "  const skillsDir = path.resolve(__dirname, '../../plugins/entire/skills');",
   "new_string": "  const skillsDir = path.resolve(__dirname, '../../skills');"
 }
@@ -1335,7 +1335,7 @@ id: toolu_019wDyBQEAk6keafFfd2WjWa
 tool_result
 id: toolu_019wDyBQEAk6keafFfd2WjWa
 ```
-The file /Users/alisha/Projects/skills/.opencode/plugins/entire.js has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/skills/.opencode/plugins/entire.js has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1348,7 +1348,7 @@ tool_use Bash
 id: toolu_01EHuFEx8tD4gXV1pvf2wnDM
 ```json
 {
-  "command": "grep -rln \"plugins/entire\" /Users/alisha/Projects/skills --exclude-dir=.git --exclude-dir=.entire 2>&1",
+  "command": "grep -rln \"plugins/entire\" /home/<USER>/Projects/skills --exclude-dir=.git --exclude-dir=.entire 2>&1",
   "description": "Find remaining refs to old path"
 }
 ```
@@ -1358,10 +1358,10 @@ id: toolu_01EHuFEx8tD4gXV1pvf2wnDM
 tool_result
 id: toolu_01EHuFEx8tD4gXV1pvf2wnDM
 ```
-/Users/alisha/Projects/skills/README.md
-/Users/alisha/Projects/skills/package.json
-/Users/alisha/Projects/skills/GEMINI.md
-/Users/alisha/Projects/skills/.opencode/INSTALL.md
+/home/<USER>/Projects/skills/README.md
+/home/<USER>/Projects/skills/package.json
+/home/<USER>/Projects/skills/GEMINI.md
+/home/<USER>/Projects/skills/.opencode/INSTALL.md
 ```
 
 > TOOL
@@ -1370,7 +1370,7 @@ tool_use Read
 id: toolu_019VqZCATf2tkr6rjP55HBpP
 ```json
 {
-  "file_path": "/Users/alisha/Projects/skills/GEMINI.md"
+  "file_path": "/home/<USER>/Projects/skills/GEMINI.md"
 }
 ```
 
@@ -1390,7 +1390,7 @@ id: toolu_01F4NaX9AhayaxcnWZXKECkd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alisha/Projects/skills/GEMINI.md",
+  "file_path": "/home/<USER>/Projects/skills/GEMINI.md",
   "old_string": "@./plugins/entire/skills/session-handoff/SKILL.md",
   "new_string": "@./skills/session-handoff/SKILL.md"
 }
@@ -1401,7 +1401,7 @@ id: toolu_01F4NaX9AhayaxcnWZXKECkd
 tool_result
 id: toolu_01F4NaX9AhayaxcnWZXKECkd
 ```
-The file /Users/alisha/Projects/skills/GEMINI.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/skills/GEMINI.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1410,7 +1410,7 @@ tool_use Read
 id: toolu_01XBKhMnFdKUEpdpP3hfF65p
 ```json
 {
-  "file_path": "/Users/alisha/Projects/skills/package.json"
+  "file_path": "/home/<USER>/Projects/skills/package.json"
 }
 ```
 
@@ -1434,7 +1434,7 @@ tool_use Bash
 id: toolu_01FY6RyVvJXKAGedCE5HYZeK
 ```json
 {
-  "command": "grep -n \"plugins/entire\" /Users/alisha/Projects/skills/package.json /Users/alisha/Projects/skills/.opencode/INSTALL.md 2>&1",
+  "command": "grep -n \"plugins/entire\" /home/<USER>/Projects/skills/package.json /home/<USER>/Projects/skills/.opencode/INSTALL.md 2>&1",
   "description": "Check context"
 }
 ```
@@ -1444,10 +1444,10 @@ id: toolu_01FY6RyVvJXKAGedCE5HYZeK
 tool_result
 id: toolu_01FY6RyVvJXKAGedCE5HYZeK
 ```
-/Users/alisha/Projects/skills/package.json:5:  "main": ".opencode/plugins/entire.js"
-/Users/alisha/Projects/skills/.opencode/INSTALL.md:3:Enable Entire skills in OpenCode via native skill discovery from `plugins/entire/skills`.
-/Users/alisha/Projects/skills/.opencode/INSTALL.md:11:The published `skills` package installs the `entire` plugin from `plugins/entire`, which exposes the skills in `plugins/entire/skills`.
-/Users/alisha/Projects/skills/.opencode/INSTALL.md:29:Restart OpenCode. The plugin in `.opencode/plugins/entire.js` automatically registers the skills directory — no additional configuration needed.
+/home/<USER>/Projects/skills/package.json:5:  "main": ".opencode/plugins/entire.js"
+/home/<USER>/Projects/skills/.opencode/INSTALL.md:3:Enable Entire skills in OpenCode via native skill discovery from `plugins/entire/skills`.
+/home/<USER>/Projects/skills/.opencode/INSTALL.md:11:The published `skills` package installs the `entire` plugin from `plugins/entire`, which exposes the skills in `plugins/entire/skills`.
+/home/<USER>/Projects/skills/.opencode/INSTALL.md:29:Restart OpenCode. The plugin in `.opencode/plugins/entire.js` automatically registers the skills directory — no additional configuration needed.
 ```
 
 > AGENT
@@ -1461,7 +1461,7 @@ id: toolu_01PgBX5zD5zGmsci43Mic1Dv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alisha/Projects/skills/.opencode/INSTALL.md",
+  "file_path": "/home/<USER>/Projects/skills/.opencode/INSTALL.md",
   "old_string": "Enable Entire skills in OpenCode via native skill discovery from `plugins/entire/skills`.",
   "new_string": "Enable Entire skills in OpenCode via native skill discovery from `skills/`."
 }
@@ -1472,7 +1472,7 @@ id: toolu_01PgBX5zD5zGmsci43Mic1Dv
 tool_result
 id: toolu_01PgBX5zD5zGmsci43Mic1Dv
 ```
-The file /Users/alisha/Projects/skills/.opencode/INSTALL.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/skills/.opencode/INSTALL.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1482,7 +1482,7 @@ id: toolu_01VC6J9N6E9Hvxad7Yctio8X
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alisha/Projects/skills/.opencode/INSTALL.md",
+  "file_path": "/home/<USER>/Projects/skills/.opencode/INSTALL.md",
   "old_string": "The published `skills` package installs the `entire` plugin from `plugins/entire`, which exposes the skills in `plugins/entire/skills`.",
   "new_string": "The published `skills` package installs the `entire` plugin, which exposes the skills in `./skills/`."
 }
@@ -1493,7 +1493,7 @@ id: toolu_01VC6J9N6E9Hvxad7Yctio8X
 tool_result
 id: toolu_01VC6J9N6E9Hvxad7Yctio8X
 ```
-The file /Users/alisha/Projects/skills/.opencode/INSTALL.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/skills/.opencode/INSTALL.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1545,7 +1545,7 @@ id: toolu_013QBwkeXyMoCY9hhuPiWGF5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alisha/Projects/skills/README.md",
+  "file_path": "/home/<USER>/Projects/skills/README.md",
   "old_string": "## Installation\n\nInstall the agent that matches your workflow from its marketplace, manifest, or install-doc entrypoint:\n\n### Claude Code (via Plugin Marketplace)\n\nIn Claude Code, register the marketplace first:\n\n```bash\n/plugin marketplace add entireio/skills\n```\n\nThen install the plugin from this marketplace:\n\n```bash\n/plugin install entire \n```\n\n### Codex\n\nUse `plugins/entire/.codex-plugin/plugin.json`.\n\n### OpenCode\n\nUse the package-based flow in `.opencode/INSTALL.md`.\n\n### Cursor\n\nUse `.cursor-plugin/plugin.json`.\n\n### Gemini\n\n```bash\ngemini extensions install https://github.com/entireio/skills\n```",
   "new_string": "## Installation\n\nInstall with [skills](https://skills.sh/) CLI (universal, works with any [Agent Skills](https://agentskills.io)-compatible tool):\n\n```bash\nnpx skills add https://github.com/entireio/skills --all\n# or a single skill:\nnpx skills add https://github.com/entireio/skills --skill session-handoff\n```\n\n<!-- prettier-ignore-start -->\n\n<details>\n<summary>Claude Code</summary>\n\n```bash\n/plugin marketplace add entireio/skills\n/plugin install entire\n```\n\n</details>\n\n<details>\n<summary>Cursor</summary>\n\nCopy skills into the cross-client discovery directory:\n\n```bash\ngit clone https://github.com/entireio/skills.git ~/.cursor/skills/entire\n```\n\nCursor auto-discovers skills from `.agents/skills/` and `.cursor/skills/`.\n\n</details>\n\n<details>\n<summary>Gemini CLI</summary>\n\n```bash\ngemini extensions install https://github.com/entireio/skills\n```\n\nUpdate with `gemini extensions update entire`.\n\n</details>\n\n<details>\n<summary>OpenCode</summary>\n\nAdd to your OpenCode config:\n\n```json\n{\n  \"plugin\": [\"skills@git+https://github.com/entireio/skills.git\"]\n}\n```\n\nOpenCode auto-registers the skills directory via `.opencode/plugins/entire.js`. See [`.opencode/INSTALL.md`](.opencode/INSTALL.md) for details.\n\n</details>\n\n<details>\n<summary>Codex (OpenAI)</summary>\n\nClone into the cross-client discovery path:\n\n```bash\ngit clone https://github.com/entireio/skills.git ~/.agents/skills/entire\n```\n\nCodex auto-discovers skills from `~/.agents/skills/` and `.agents/skills/`. Update with `cd ~/.agents/skills/entire && git pull`.\n\n</details>\n\n<details>\n<summary>Copilot</summary>\n\n```bash\n/plugin install https://github.com/entireio/skills\n# or\ngit clone https://github.com/entireio/skills.git ~/.copilot/skills/entire\n```\n\nCopilot auto-discovers skills from `.copilot/skills/`.\n\n</details>\n\n<!-- prettier-ignore-end -->"
 }
@@ -1556,7 +1556,7 @@ id: toolu_013QBwkeXyMoCY9hhuPiWGF5
 tool_result
 id: toolu_013QBwkeXyMoCY9hhuPiWGF5
 ```
-The file /Users/alisha/Projects/skills/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/skills/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1636,7 +1636,7 @@ tool_use Bash
 id: toolu_01QrEFXAZiHvZNRgkEpqzxpQ
 ```json
 {
-  "command": "grep -rln \"plugins/entire\" /Users/alisha/Projects/skills --exclude-dir=.git --exclude-dir=.entire --exclude-dir=docs 2>&1",
+  "command": "grep -rln \"plugins/entire\" /home/<USER>/Projects/skills --exclude-dir=.git --exclude-dir=.entire --exclude-dir=docs 2>&1",
   "description": "Final check for stale path references"
 }
 ```
@@ -1646,9 +1646,9 @@ id: toolu_01QrEFXAZiHvZNRgkEpqzxpQ
 tool_result
 id: toolu_01QrEFXAZiHvZNRgkEpqzxpQ
 ```
-/Users/alisha/Projects/skills/README.md
-/Users/alisha/Projects/skills/package.json
-/Users/alisha/Projects/skills/.opencode/INSTALL.md
+/home/<USER>/Projects/skills/README.md
+/home/<USER>/Projects/skills/package.json
+/home/<USER>/Projects/skills/.opencode/INSTALL.md
 ```
 
 > TOOL
@@ -1786,7 +1786,7 @@ tool_use Read
 id: toolu_01VPB62hW4fFiUJSKAWps4Zp
 ```json
 {
-  "file_path": "/Users/alisha/Projects/skills/gemini-extension.json"
+  "file_path": "/home/<USER>/Projects/skills/gemini-extension.json"
 }
 ```
 
@@ -1866,7 +1866,7 @@ tool_use Bash
 id: toolu_017Q9EQpz8EpnxK6wF8LkEvq
 ```json
 {
-  "command": "git commit -m \"$(cat <<'EOF'\nFlatten repo layout to match cross-agent skills convention\n\nMove skills from plugins/entire/skills to top-level skills/ and lift\nplugin manifests to the repo root so Cursor, Codex, and other flat\nauto-discovery installs work via `git clone ... ~/.<agent>/skills/entire`.\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git commit -m \"$(cat <<'EOF'\nFlatten repo layout to match cross-agent skills convention\n\nMove skills from plugins/entire/skills to top-level skills/ and lift\nplugin manifests to the repo root so Cursor, Codex, and other flat\nauto-discovery installs work via `git clone ... ~/.<agent>/skills/entire`.\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit layout refactor"
 }
 ```
@@ -1905,9 +1905,9 @@ Three general strategies — pick based on agent:
 Skip install flows entirely; point each agent's auto-discovery dir at your working copy:
 
 ```bash
-ln -s /Users/alisha/Projects/skills ~/.cursor/skills/entire
-ln -s /Users/alisha/Projects/skills ~/.agents/skills/entire    # Codex / OpenCode fallback
-ln -s /Users/alisha/Projects/skills ~/.copilot/skills/entire
+ln -s /home/<USER>/Projects/skills ~/.cursor/skills/entire
+ln -s /home/<USER>/Projects/skills ~/.agents/skills/entire    # Codex / OpenCode fallback
+ln -s /home/<USER>/Projects/skills ~/.copilot/skills/entire
 ```
 
 Edit files → agent picks up changes immediately. Remove the symlink when done.
@@ -1932,9 +1932,9 @@ Then per-agent:
 ## C) Install from a local clone (offline, tests install mechanics)
 
 ```bash
-/plugin marketplace add /Users/alisha/Projects/skills   # Claude Code
-gemini extensions install /Users/alisha/Projects/skills # Gemini
-# OpenCode: "plugin": ["skills@file:/Users/alisha/Projects/skills"]
+/plugin marketplace add /home/<USER>/Projects/skills   # Claude Code
+gemini extensions install /home/<USER>/Projects/skills # Gemini
+# OpenCode: "plugin": ["skills@file:/home/<USER>/Projects/skills"]
 ```
 
 ## What I'd actually do

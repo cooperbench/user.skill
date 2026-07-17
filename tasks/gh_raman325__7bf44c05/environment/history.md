@@ -72,7 +72,7 @@ tool_use Bash
 id: toolu_01F5wqq2BVfgEEWR76UJSB48
 ```json
 {
-  "command": "cd /Users/raman/projects/home-assistant && git fetch upstream 2>&1 | tail -2 && git log upstream/dev --oneline -1",
+  "command": "cd /home/<USER>/projects/home-assistant && git fetch upstream 2>&1 | tail -2 && git log upstream/dev --oneline -1",
   "description": "Fetch HA core upstream and show latest commit"
 }
 ```
@@ -83,7 +83,7 @@ tool_use Bash
 id: toolu_01RTubupBkjmeHbJjKaUxJ2e
 ```json
 {
-  "command": "cd /Users/raman/projects/zwave-js-server-python && git fetch upstream 2>&1 | tail -2 && git log upstream/main --oneline -1",
+  "command": "cd /home/<USER>/projects/zwave-js-server-python && git fetch upstream 2>&1 | tail -2 && git log upstream/main --oneline -1",
   "description": "Fetch zwave-js-server-python upstream and show latest commit"
 }
 ```
@@ -94,7 +94,7 @@ tool_use Bash
 id: toolu_01QTshtAY6DY6LSykwghfesN
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && git fetch upstream 2>&1 | tail -2 && git log upstream/master --oneline -1",
+  "command": "cd /home/<USER>/projects/node-zwave-js && git fetch upstream 2>&1 | tail -2 && git log upstream/master --oneline -1",
   "description": "Fetch node-zwave-js upstream and show latest commit"
 }
 ```
@@ -185,7 +185,7 @@ id: toolu_01F5wqq2BVfgEEWR76UJSB48
  + c00921b9b10...65fd4005a5a yoto_sensors         -> upstream/yoto_sensors  (forced update)
  * [new tag]                 2026.6.2             -> 2026.6.2
 2e8e5c63e86 Fix Hue light level sensor crash on None value (#173532)
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -196,7 +196,7 @@ id: toolu_01RTubupBkjmeHbJjKaUxJ2e
  * [new tag]         0.71.0     -> 0.71.0
  * [new tag]         0.72.0     -> 0.72.0
 d3caf60 Bump codecov/codecov-action from 6.0.1 to 7.0.0 (#1448)
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -205,7 +205,7 @@ tool_result
 id: toolu_01QTshtAY6DY6LSykwghfesN
 ```
 007da492f fix: discard `NodeNamingAndLocationCC` reports with overlong payload (#8865)
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > AGENT
@@ -370,7 +370,7 @@ tool_use Bash
 id: toolu_01JUWuPNmQ1XDhqBUjumiq9h
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && git show upstream/master:packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts > /tmp/AccessControl.ts && wc -l /tmp/AccessControl.ts && grep -n \"usesUserCredentialCC\\|getCredentialCapabilitiesCached\\|ucCredentialType\\|supportedUsers\\|FIXME\" /tmp/AccessControl.ts",
+  "command": "cd /home/<USER>/projects/node-zwave-js && git show upstream/master:packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts > /tmp/AccessControl.ts && wc -l /tmp/AccessControl.ts && grep -n \"usesUserCredentialCC\\|getCredentialCapabilitiesCached\\|ucCredentialType\\|supportedUsers\\|FIXME\" /tmp/AccessControl.ts",
   "description": "Extract upstream AccessControl.ts and locate key symbols"
 }
 ```
@@ -434,7 +434,7 @@ tool_use Bash
 id: toolu_019jpmnXiP4tMYXrVnC6ui3g
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && git grep -l '\"User Credential\"' upstream/master -- packages/config/config/devices/ 2>/dev/null",
+  "command": "cd /home/<USER>/projects/node-zwave-js && git grep -l '\"User Credential\"' upstream/master -- packages/config/config/devices/ 2>/dev/null",
   "description": "Find device configs declaring User Credential CC"
 }
 ```
@@ -445,7 +445,7 @@ tool_use Bash
 id: toolu_01UZkFUsp9mWZTMbZxkqXmf6
 ```json
 {
-  "command": "cd /Users/raman/projects/home-assistant && git show upstream/dev:homeassistant/components/zwave_js/lock_helpers.py > /tmp/lock_helpers.py && wc -l /tmp/lock_helpers.py",
+  "command": "cd /home/<USER>/projects/home-assistant && git show upstream/dev:homeassistant/components/zwave_js/lock_helpers.py > /tmp/lock_helpers.py && wc -l /tmp/lock_helpers.py",
   "description": "Extract upstream lock_helpers.py"
 }
 ```
@@ -456,7 +456,7 @@ tool_result
 id: toolu_01UZkFUsp9mWZTMbZxkqXmf6
 ```
      522 /tmp/lock_helpers.py
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -473,7 +473,7 @@ tool_use Bash
 id: toolu_01Kb4Gb4ZiXSA3rA3HiGo7j6
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && git grep -l \"addCCs\\|removeCCs\" upstream/master -- packages/config/config/devices/ | head -20; echo \"---0x83/131 search---\"; git grep -ln '\"0x83\"\\|User Credential' upstream/master -- packages/config/config/devices/ | head",
+  "command": "cd /home/<USER>/projects/node-zwave-js && git grep -l \"addCCs\\|removeCCs\" upstream/master -- packages/config/config/devices/ | head -20; echo \"---0x83/131 search---\"; git grep -ln '\"0x83\"\\|User Credential' upstream/master -- packages/config/config/devices/ | head",
   "description": "Search device configs for CC declarations"
 }
 ```
@@ -506,7 +506,7 @@ tool_result
 id: toolu_01Kb4Gb4ZiXSA3rA3HiGo7j6
 ```
 ---0x83/131 search---
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -704,7 +704,7 @@ tool_use Bash
 id: toolu_015qFNdYs2sBSNykZA1QeB9i
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && git log upstream/master --oneline --follow -- packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts | head -40",
+  "command": "cd /home/<USER>/projects/node-zwave-js && git log upstream/master --oneline --follow -- packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts | head -40",
   "description": "History of AccessControl.ts"
 }
 ```
@@ -722,7 +722,7 @@ cca17b9a3 fix: separate U3C users from credential slots, improve error handling 
 604d368a7 refactor: make `endpoint.accessControl` `undefined` if unsupported (#8752)
 da5ba2f29 refactor: move credential API behind the `accessControl` namespace (#8750)
 7bbb8b4f8 feat: add unified API to manage users and credentials (#8738)
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -731,7 +731,7 @@ tool_use Bash
 id: toolu_01DNxN4rk39MT2qMyjuoTL21
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && git log upstream/master -S 'usesUserCredentialCC' --oneline -- packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts | tail -5; echo ---; git log upstream/master -S 'This is not implemented yet, so checking for U3C first is fine for now' --oneline | tail -3",
+  "command": "cd /home/<USER>/projects/node-zwave-js && git log upstream/master -S 'usesUserCredentialCC' --oneline -- packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts | tail -5; echo ---; git log upstream/master -S 'This is not implemented yet, so checking for U3C first is fine for now' --oneline | tail -3",
   "description": "Find commits introducing the dispatch and FIXME"
 }
 ```
@@ -748,7 +748,7 @@ cca17b9a3 fix: separate U3C users from credential slots, improve error handling 
 da5ba2f29 refactor: move credential API behind the `accessControl` namespace (#8750)
 ---
 7bbb8b4f8 feat: add unified API to manage users and credentials (#8738)
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -757,7 +757,7 @@ tool_use Bash
 id: toolu_01PUPLFug5XYHMCEZpuS4bDe
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && for c in 7bbb8b4f8 da5ba2f29 604d368a7 cca17b9a3 c97bdb7aa acc14813d b4beb5bc3 ebec1eea8; do echo \"$c -> $(git tag --contains $c | head -1)\"; done; echo \"--- latest tag:\"; git tag --sort=-v:refname | head -3",
+  "command": "cd /home/<USER>/projects/node-zwave-js && for c in 7bbb8b4f8 da5ba2f29 604d368a7 cca17b9a3 c97bdb7aa acc14813d b4beb5bc3 ebec1eea8; do echo \"$c -> $(git tag --contains $c | head -1)\"; done; echo \"--- latest tag:\"; git tag --sort=-v:refname | head -3",
   "description": "Map AccessControl.ts commits to release tags"
 }
 ```
@@ -779,7 +779,7 @@ ebec1eea8 -> v15.24.1
 v15.24.2
 v15.24.1
 v15.24.0
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -788,7 +788,7 @@ tool_use Bash
 id: toolu_01HUistLBQc1PeJc7cnADWFc
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && git show 7bbb8b4f8:packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts 2>/dev/null > /tmp/AccessControl_orig.ts || git show 7bbb8b4f8:packages/zwave-js/src/lib/node/AccessControl.ts > /tmp/AccessControl_orig.ts 2>/dev/null; ls -la /tmp/AccessControl_orig.ts 2>/dev/null; git show 7bbb8b4f8 --stat | head -30",
+  "command": "cd /home/<USER>/projects/node-zwave-js && git show 7bbb8b4f8:packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts 2>/dev/null > /tmp/AccessControl_orig.ts || git show 7bbb8b4f8:packages/zwave-js/src/lib/node/AccessControl.ts > /tmp/AccessControl_orig.ts 2>/dev/null; ls -la /tmp/AccessControl_orig.ts 2>/dev/null; git show 7bbb8b4f8 --stat | head -30",
   "description": "Get original AccessControl implementation from first commit"
 }
 ```
@@ -800,7 +800,7 @@ id: toolu_01HUistLBQc1PeJc7cnADWFc
 ```
 -rw-r--r--@ 1 raman  wheel  0 Jun 11 22:43 /tmp/AccessControl_orig.ts
 commit 7bbb8b4f82f7836a49392f172eb4a1b83e4068da
-Author: AlCalzone <dominic.griesel@nabucasa.com>
+Author: AlCalzone <<REDACTED_EMAIL>>
 Date:   Thu Apr 9 15:31:31 2026 +0200
 
     feat: add unified API to manage users and credentials (#8738)
@@ -821,7 +821,7 @@ Date:   Thu Apr 9 15:31:31 2026 +0200
  .../lib/test/node/accessControl.UserCode.test.ts   |  837 ++++++++++++++
  .../test/node/accessControl.UserCredential.test.ts | 1030 +++++++++++++++++
  15 files changed, 3869 insertions(+), 675 deletions(-)
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -830,7 +830,7 @@ tool_use Bash
 id: toolu_01C4rg81NQX3VcrB3ntwhr9G
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && git show 7bbb8b4f8:packages/zwave-js/src/lib/node/endpoint-mixins/05_AccessControl.ts > /tmp/AC_15.23.0.ts && grep -n \"usesUserCredentialCC\\|getCredentialCapabilitiesCached\\|supportedUsers\\|numberOfCredentialSlots\" /tmp/AC_15.23.0.ts | head -30",
+  "command": "cd /home/<USER>/projects/node-zwave-js && git show 7bbb8b4f8:packages/zwave-js/src/lib/node/endpoint-mixins/05_AccessControl.ts > /tmp/AC_15.23.0.ts && grep -n \"usesUserCredentialCC\\|getCredentialCapabilitiesCached\\|supportedUsers\\|numberOfCredentialSlots\" /tmp/AC_15.23.0.ts | head -30",
   "description": "Inspect v15.23.0 original implementation"
 }
 ```
@@ -870,7 +870,7 @@ id: toolu_01C4rg81NQX3VcrB3ntwhr9G
 964:		if (!this._usesUserCredentialCC) {
 975:		if (this._usesUserCredentialCC) {
 988:		if (this._usesUserCredentialCC) {
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -879,7 +879,7 @@ tool_use Bash
 id: toolu_01MAKK5ntZAooZ6p73edveg7
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && git show cca17b9a3 --stat | head -20; echo \"==== diff of getCredentialCapabilitiesCached in 8756 ====\"; git show cca17b9a3 -- packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts packages/zwave-js/src/lib/node/endpoint-mixins/05_AccessControl.ts | grep -A 60 \"getCredentialCapabilitiesCached\" | head -100",
+  "command": "cd /home/<USER>/projects/node-zwave-js && git show cca17b9a3 --stat | head -20; echo \"==== diff of getCredentialCapabilitiesCached in 8756 ====\"; git show cca17b9a3 -- packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts packages/zwave-js/src/lib/node/endpoint-mixins/05_AccessControl.ts | grep -A 60 \"getCredentialCapabilitiesCached\" | head -100",
   "description": "Inspect PR 8756 changes to capabilities"
 }
 ```
@@ -890,7 +890,7 @@ tool_result
 id: toolu_01MAKK5ntZAooZ6p73edveg7
 ```
 commit cca17b9a3563204ff7c938e776c5d9e87da6cbc4
-Author: AlCalzone <dominic.griesel@openhomefoundation.org>
+Author: AlCalzone <<REDACTED_EMAIL>>
 Date:   Tue Apr 21 10:13:04 2026 +0200
 
     fix: separate U3C users from credential slots, improve error handling (#8756)
@@ -1014,7 +1014,7 @@ tool_use Bash
 id: toolu_01KHTVNjhqc43RYLTK7sBYrZ
 ```json
 {
-  "command": "cd /Users/raman/projects/zwave-js-server-python && git show upstream/main:zwave_js_server/model/access_control.py > /tmp/access_control_py.py 2>/dev/null && grep -n \"number_of_credential_slots\\|class.*Capabilit\\|def \\|numberOfCredentialSlots\" /tmp/access_control_py.py | head -40; echo \"=== const ===\"; git show upstream/main:zwave_js_server/const/command_class/access_control.py 2>/dev/null | head -5; echo \"=== min server version ===\"; git grep -n \"MIN_SERVER_VERSION\\|minSchemaVersion\\|SCHEMA\" upstream/main -- zwave_js_server/const/__init__.py | head",
+  "command": "cd /home/<USER>/projects/zwave-js-server-python && git show upstream/main:zwave_js_server/model/access_control.py > /tmp/access_control_py.py 2>/dev/null && grep -n \"number_of_credential_slots\\|class.*Capabilit\\|def \\|numberOfCredentialSlots\" /tmp/access_control_py.py | head -40; echo \"=== const ===\"; git show upstream/main:zwave_js_server/const/command_class/access_control.py 2>/dev/null | head -5; echo \"=== min server version ===\"; git grep -n \"MIN_SERVER_VERSION\\|minSchemaVersion\\|SCHEMA\" upstream/main -- zwave_js_server/const/__init__.py | head",
   "description": "Inspect python client access_control model"
 }
 ```
@@ -1070,7 +1070,7 @@ tool_use Bash
 id: toolu_011H2SZyuikuEHLiHiaVSimz
 ```json
 {
-  "command": "cd /Users/raman/projects/home-assistant && git show upstream/dev:homeassistant/components/zwave_js/manifest.json | grep -A3 requirements; git show upstream/dev:homeassistant/components/zwave_js/const.py | grep -n \"DRIVER_VERSION\\|SERVER_VERSION\\|MIN_\" | head",
+  "command": "cd /home/<USER>/projects/home-assistant && git show upstream/dev:homeassistant/components/zwave_js/manifest.json | grep -A3 requirements; git show upstream/dev:homeassistant/components/zwave_js/const.py | grep -n \"DRIVER_VERSION\\|SERVER_VERSION\\|MIN_\" | head",
   "description": "Check HA zwave_js requirements and min server version"
 }
 ```
@@ -1084,7 +1084,7 @@ id: toolu_011H2SZyuikuEHLiHiaVSimz
   "usb": [
     {
       "known_devices": ["Aeotec Z-Stick Gen5+", "Z-WaveMe UZB"],
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -1385,7 +1385,7 @@ tool_use Bash
 id: toolu_01X9MRJUetbwEPWGF8USn3ry
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && git grep -c '\"compat\"' upstream/master -- 'packages/config/config/devices/*/[a-c]*.json' 2>/dev/null | head -3; echo \"=== addCCs anywhere ===\"; git grep -l 'addCCs' upstream/master 2>/dev/null | head -5; echo \"=== User Credential in config dir ===\"; git grep -il 'credential' upstream/master -- packages/config/config/devices/ 2>/dev/null | head -10",
+  "command": "cd /home/<USER>/projects/node-zwave-js && git grep -c '\"compat\"' upstream/master -- 'packages/config/config/devices/*/[a-c]*.json' 2>/dev/null | head -3; echo \"=== addCCs anywhere ===\"; git grep -l 'addCCs' upstream/master 2>/dev/null | head -5; echo \"=== User Credential in config dir ===\"; git grep -il 'credential' upstream/master -- packages/config/config/devices/ 2>/dev/null | head -10",
   "description": "Sanity-check config DB grep approach"
 }
 ```
@@ -1407,7 +1407,7 @@ upstream/master:packages/zwave-js/src/lib/node/Node.ts
 === User Credential in config dir ===
 upstream/master:packages/config/config/devices/0x0189/117001.json
 upstream/master:packages/config/config/devices/0x027e/g-240wz.json
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -1416,7 +1416,7 @@ tool_use Bash
 id: toolu_019kFMKsamjjsYBtSRUnjdZC
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && git show cca17b9a3 -- packages/cc/src/cc/_CCValues.generated.ts | grep -B3 -A25 \"credentialCapabilities\" | head -80",
+  "command": "cd /home/<USER>/projects/node-zwave-js && git show cca17b9a3 -- packages/cc/src/cc/_CCValues.generated.ts | grep -B3 -A25 \"credentialCapabilities\" | head -80",
   "description": "Check if 8756 changed credentialCapabilities value structure"
 }
 ```
@@ -1426,7 +1426,7 @@ id: toolu_019kFMKsamjjsYBtSRUnjdZC
 tool_result
 id: toolu_019kFMKsamjjsYBtSRUnjdZC
 ```
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -1435,7 +1435,7 @@ tool_use Bash
 id: toolu_01XvoEqKYLgG93h9a2rXT59D
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && git log --oneline -S '\"supportedUsers\"' upstream/master -- packages/cc/src/cc/UserCodeCC.ts | tail -5; git log upstream/master --oneline --diff-filter=A -- packages/cc/src/cc/UserCodeCC.ts | tail -2",
+  "command": "cd /home/<USER>/projects/node-zwave-js && git log --oneline -S '\"supportedUsers\"' upstream/master -- packages/cc/src/cc/UserCodeCC.ts | tail -5; git log upstream/master --oneline --diff-filter=A -- packages/cc/src/cc/UserCodeCC.ts | tail -2",
   "description": "History of UserCodeCC supportedUsers value"
 }
 ```
@@ -1448,7 +1448,7 @@ id: toolu_01XvoEqKYLgG93h9a2rXT59D
 20788b760 refactor: migrate legacy decorators to ES decorators (#7360)
 588555bc9 refactor: move CC implementations into separate package (#4668)
 588555bc9 refactor: move CC implementations into separate package (#4668)
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -1457,7 +1457,7 @@ tool_use Bash
 id: toolu_012qsJ6pTgQUDMzRCAco5A3N
 ```json
 {
-  "command": "cd /Users/raman/projects/home-assistant && git log upstream/dev --oneline --follow -- homeassistant/components/zwave_js/lock_helpers.py | head; echo ====; cd /Users/raman/projects/zwave-js-server-python && git show upstream/main:zwave_js_server/model/access_control.py | sed -n '590,680p'",
+  "command": "cd /home/<USER>/projects/home-assistant && git log upstream/dev --oneline --follow -- homeassistant/components/zwave_js/lock_helpers.py | head; echo ====; cd /home/<USER>/projects/zwave-js-server-python && git show upstream/main:zwave_js_server/model/access_control.py | sed -n '590,680p'",
   "description": "HA lock_helpers history and python client RPC confirmation"
 }
 ```
@@ -1815,7 +1815,7 @@ tool_use Bash
 id: toolu_01CWLgzZ1TwDEG5rFm4i4j9Y
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && git show upstream/master:packages/cc/src/cc/UserCredentialCC.ts | grep -n -i \"backwards\\|backward\\|User Code\" | head -10; echo ===docs===; git grep -in \"must also support\\|backwards compat\" upstream/master -- docs/ packages/cc/src/cc/UserCredentialCC.ts | head -5",
+  "command": "cd /home/<USER>/projects/node-zwave-js && git show upstream/master:packages/cc/src/cc/UserCredentialCC.ts | grep -n -i \"backwards\\|backward\\|User Code\" | head -10; echo ===docs===; git grep -in \"must also support\\|backwards compat\" upstream/master -- docs/ packages/cc/src/cc/UserCredentialCC.ts | head -5",
   "description": "Check spec notes on U3C / User Code coexistence"
 }
 ```
@@ -1842,7 +1842,7 @@ upstream/master:docs/api/valueid.md:110:- `allowed`: Defines the allowed values 
 upstream/master:docs/config-files/file-format.md:347:#### Backwards Compatibility
 upstream/master:docs/config-files/file-format.md:349:For backwards compatibility with applications that don't support `allowed`, Z-Wave JS automatically computes `minValue` and `maxValue` from the set of allowed values. Applications can use this envelope for basic validation, while applications that support `allowed` can perform more precise validation.
 upstream/master:docs/getting-started/migrating/v14.md:18:In input positions where Z-Wave JS previously accepted `Buffer`s, this change is backwards compatible, as `Buffer` is a subclass of `Uint8Array`. Applications can simply continue passing `Buffer` instances to Z-Wave JS.
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -1925,7 +1925,7 @@ tool_use Bash
 id: toolu_01LCHvERTEG3QTc49YWSe2pZ
 ```json
 {
-  "command": "cd /Users/raman/projects/zwave-js-server-python && git show 0.72.0:zwave_js_server/const.py 2>/dev/null | grep -n \"SCHEMA\" | head -5; git show 0.72.0:zwave_js_server/const/__init__.py 2>/dev/null | grep -n \"SCHEMA\" | head -5",
+  "command": "cd /home/<USER>/projects/zwave-js-server-python && git show 0.72.0:zwave_js_server/const.py 2>/dev/null | grep -n \"SCHEMA\" | head -5; git show 0.72.0:zwave_js_server/const/__init__.py 2>/dev/null | grep -n \"SCHEMA\" | head -5",
   "description": "Check schema versions in pinned client 0.72.0"
 }
 ```
@@ -1937,7 +1937,7 @@ id: toolu_01LCHvERTEG3QTc49YWSe2pZ
 ```
 14:MIN_SERVER_SCHEMA_VERSION = 49
 16:MAX_SERVER_SCHEMA_VERSION = 49
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -1946,7 +1946,7 @@ tool_use Bash
 id: toolu_01NG86KTw3ocDvaoVRJBaavE
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && git show v15.24.2:packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts | grep -n \"assertValidSlot\\|numberOfCredentialSlots: maxUsers\" | head; echo ====; git show v15.24.2:packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts | grep -c \"assertValidSlot\"",
+  "command": "cd /home/<USER>/projects/node-zwave-js && git show v15.24.2:packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts | grep -n \"assertValidSlot\\|numberOfCredentialSlots: maxUsers\" | head; echo ====; git show v15.24.2:packages/zwave-js/src/lib/node/feature-apis/AccessControl.ts | grep -c \"assertValidSlot\"",
   "description": "Confirm assert and UC semantics in v15.24.2"
 }
 ```
@@ -1968,7 +1968,7 @@ id: toolu_01NG86KTw3ocDvaoVRJBaavE
 1360:		this.#assertValidSlot(type, slot);
 ====
 10
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -1977,7 +1977,7 @@ tool_use Bash
 id: toolu_01Hv9X2aLjCZuUmZEXHbpZpV
 ```json
 {
-  "command": "gh api -X GET search/issues -f q='repo:home-assistant/core \"between 1 and 0\"' -q '.items[] | \"\\(.number) \\(.title) [\\(.state)] \\(.html_url)\"' 2>&1 | head; echo ====; cd /Users/raman/projects/node-zwave-js && for f in 0x0189/117001.json 0x027e/g-240wz.json; do echo \"== $f\"; git show upstream/master:packages/config/config/devices/$f | grep -i -B2 -A2 credential | head -8; done",
+  "command": "gh api -X GET search/issues -f q='repo:home-assistant/core \"between 1 and 0\"' -q '.items[] | \"\\(.number) \\(.title) [\\(.state)] \\(.html_url)\"' 2>&1 | head; echo ====; cd /home/<USER>/projects/node-zwave-js && for f in 0x0189/117001.json 0x027e/g-240wz.json; do echo \"== $f\"; git show upstream/master:packages/config/config/devices/$f | grep -i -B2 -A2 credential | head -8; done",
   "description": "HA core issue search and config file inspection"
 }
 ```
@@ -2018,7 +2018,7 @@ tool_use Bash
 id: toolu_01FLCm3eCFm2HHrdMGyDuvjm
 ```json
 {
-  "command": "cd /Users/raman/projects/home-assistant && git show upstream/dev:homeassistant/components/zwave_js/services.yaml | grep -B2 -A8 \"invoke_cc_api\"; git grep -n \"SERVICE_INVOKE_CC_API\" upstream/dev -- homeassistant/components/zwave_js/services.py | head -3; git show upstream/dev:homeassistant/components/zwave_js/services.py | grep -n \"supports_response\\|SupportsResponse\" | head",
+  "command": "cd /home/<USER>/projects/home-assistant && git show upstream/dev:homeassistant/components/zwave_js/services.yaml | grep -B2 -A8 \"invoke_cc_api\"; git grep -n \"SERVICE_INVOKE_CC_API\" upstream/dev -- homeassistant/components/zwave_js/services.py | head -3; git show upstream/dev:homeassistant/components/zwave_js/services.py | grep -n \"supports_response\\|SupportsResponse\" | head",
   "description": "Check invoke_cc_api response support"
 }
 ```
@@ -2060,7 +2060,7 @@ upstream/dev:homeassistant/components/zwave_js/services.py:547:            const
 135:        supports_response=SupportsResponse.ONLY,
 152:        supports_response=SupportsResponse.ONLY,
 603:            supports_response=SupportsResponse.ONLY,
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -2069,7 +2069,7 @@ tool_use Bash
 id: toolu_01BYL9VeSsbFjMLT7vKekuh7
 ```json
 {
-  "command": "cd /Users/raman/projects/home-assistant && git show upstream/dev:homeassistant/components/zwave_js/services.py | sed -n '540,610p'",
+  "command": "cd /home/<USER>/projects/home-assistant && git show upstream/dev:homeassistant/components/zwave_js/services.py | sed -n '540,610p'",
   "description": "Check invoke_cc_api registration"
 }
 ```
@@ -2150,7 +2150,7 @@ id: toolu_01BYL9VeSsbFjMLT7vKekuh7
             const.DOMAIN,
             const.SERVICE_SET_LOCK_USERCODE,
             entity_domain=LOCK_DOMAIN,
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -2159,7 +2159,7 @@ tool_use Bash
 id: toolu_01V8FJnLN43VyXuhCCCEDtjT
 ```json
 {
-  "command": "cd /Users/raman/projects/node-zwave-js && git show upstream/master:packages/cc/src/cc/UserCodeCC.ts > /tmp/UserCodeCC.ts && grep -n \"getUsersCount\\|UsersNumberReport\\|supportedUsers\" /tmp/UserCodeCC.ts | head -20",
+  "command": "cd /home/<USER>/projects/node-zwave-js && git show upstream/master:packages/cc/src/cc/UserCodeCC.ts > /tmp/UserCodeCC.ts && grep -n \"getUsersCount\\|UsersNumberReport\\|supportedUsers\" /tmp/UserCodeCC.ts | head -20",
   "description": "Confirm getUsersCount API and supportedUsers persistence"
 }
 ```
@@ -2189,7 +2189,7 @@ id: toolu_01V8FJnLN43VyXuhCCCEDtjT
 1640:export class UserCodeCCUsersNumberReport extends UserCodeCC {
 1642:		options: WithAddress<UserCodeCCUsersNumberReportOptions>,
 1646:		this.supportedUsers = options.supportedUsers;
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -2351,7 +2351,7 @@ tool_use Write
 id: toolu_0189fDmwv3rRogiiNNktDur5
 ```json
 {
-  "file_path": "/Users/raman/.claude/projects/-Users-raman-projects-lock-code-manager/memory/project_zwave_uc_zero_slots_root_cause.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-raman-projects-lock-code-manager/memory/project_zwave_uc_zero_slots_root_cause.md",
   "content": "---\nname: project-zwave-uc-zero-slots-root-cause\ndescription: Issue #1251 \"between 1 and 0\" — caps=0 originates in the driver; PR #1252's direct access_control bypass does NOT fix writes because the driver's #assertValidSlot enforces the same predicate\nmetadata:\n  type: project\n---\n\nInvestigation of issue #1251 (LCM 4.0.x, \"Credential slot for pin_code must be between 1 and 0\"), done 2026-06-11:\n\n- The error fires in HA `lock_helpers.async_set_credential` only when PIN_CODE IS present in caps with `number_of_credential_slots == 0`. If PIN were missing entirely the user would see `credential_type_not_supported` instead.\n- Caps are a pure pass-through: python client RPC → zwave-js-server → driver `AccessControlAPI.getCredentialCapabilitiesCached()`. The 0 is computed driver-side: UC branch returns `numberOfCredentialSlots: maxUsers` where `maxUsers = UserCodeCCValues.supportedUsers ?? 0`; U3C branch passes through stored per-type caps.\n- **PR #1252's bypass (call `node.access_control.set_credential` directly) does not unblock affected users**: the driver's `#assertValidSlot` (AccessControl.ts:1791) validates against the same cached caps inside `setCredential` (UC path line 1066, U3C line 1038) and `deleteCredential`. Affected locks get `ZWaveError: Credential slot N is out of range for credential type PINCode` → `FailedZWaveCommand` instead. The only write path that dodges the broken caps is the legacy User Code CC util (`zwave_js_server.util.lock.set_usercode` / `zwave_js.set_lock_usercode`, still present in HA).\n- Version matrix: HA 2026.6 […]
 
 > TOOL
@@ -2359,7 +2359,7 @@ id: toolu_0189fDmwv3rRogiiNNktDur5
 tool_result
 id: toolu_0189fDmwv3rRogiiNNktDur5
 ```
-File created successfully at: /Users/raman/.claude/projects/-Users-raman-projects-lock-code-manager/memory/project_zwave_uc_zero_slots_root_cause.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-Users-raman-projects-lock-code-manager/memory/project_zwave_uc_zero_slots_root_cause.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2368,7 +2368,7 @@ tool_use Bash
 id: toolu_012uBZJ7g58WGSw43BLRyf2w
 ```json
 {
-  "command": "echo '- [Zwave UC zero-slots root cause (#1251)](project_zwave_uc_zero_slots_root_cause.md) — caps=0 is driver-side; PR #1252 bypass cannot fix writes (driver asserts same predicate)' >> /Users/raman/.claude/projects/-Users-raman-projects-lock-code-manager/memory/MEMORY.md",
+  "command": "echo '- [Zwave UC zero-slots root cause (#1251)](project_zwave_uc_zero_slots_root_cause.md) — caps=0 is driver-side; PR #1252 bypass cannot fix writes (driver asserts same predicate)' >> /home/<USER>/.claude/projects/-Users-raman-projects-lock-code-manager/memory/MEMORY.md",
   "description": "Add memory index entry"
 }
 ```

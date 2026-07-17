@@ -63,7 +63,7 @@ tool_use Read
 id: toolu_0143sBFKf5TEynqUXirqfbjd
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/protocol.md"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/protocol.md"
 }
 ```
 
@@ -104,7 +104,7 @@ tool_use Read
 id: toolu_01VoKSu6rGR1Ls6d6ZBmyzic
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/online.md"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/online.md"
 }
 ```
 
@@ -150,7 +150,7 @@ tool_use Bash
 id: toolu_01C3hrTWDbQPB6FPibXULYhJ
 ```json
 {
-  "command": "grep -n \"multiplayer\\|Multiplayer\\|lib/net\" /Users/hutusi/workspace/ai/david/monecraft/docs/architecture.md | head -30",
+  "command": "grep -n \"multiplayer\\|Multiplayer\\|lib/net\" /home/<USER>/workspace/ai/david/monecraft/docs/architecture.md | head -30",
   "description": "Find multiplayer section in architecture.md"
 }
 ```
@@ -169,7 +169,7 @@ tool_use Bash
 id: toolu_019vf6xDXzs1dqsjudrqYSFf
 ```json
 {
-  "command": "sed -n '110,180p' /Users/hutusi/workspace/ai/david/monecraft/docs/architecture.md",
+  "command": "sed -n '110,180p' /home/<USER>/workspace/ai/david/monecraft/docs/architecture.md",
   "description": "Read multiplayer client section of architecture.md"
 }
 ```
@@ -191,7 +191,7 @@ tool_use Bash
 id: toolu_016bNjTiP2zDLj711bzkAFw8
 ```json
 {
-  "command": "sed -n \"$(grep -n 'Multiplayer' /Users/hutusi/workspace/ai/david/monecraft/docs/tuning.md | head -1 | cut -d: -f1),+60p\" /Users/hutusi/workspace/ai/david/monecraft/docs/tuning.md",
+  "command": "sed -n \"$(grep -n 'Multiplayer' /home/<USER>/workspace/ai/david/monecraft/docs/tuning.md | head -1 | cut -d: -f1),+60p\" /home/<USER>/workspace/ai/david/monecraft/docs/tuning.md",
   "description": "Read multiplayer networking section of tuning.md"
 }
 ```
@@ -230,7 +230,7 @@ tool_use Bash
 id: toolu_01FLJg3QnGSzN64X9wETitt5
 ```json
 {
-  "command": "grep -n \"region\\|primary\" /Users/hutusi/workspace/ai/david/monecraft/server/fly.toml",
+  "command": "grep -n \"region\\|primary\" /home/<USER>/workspace/ai/david/monecraft/server/fly.toml",
   "description": "Check Fly deploy region"
 }
 ```
@@ -326,7 +326,7 @@ tool_use Read
 id: toolu_01RAcEq6JQ6c6hQe3K8aVsnK
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
   "offset": 195,
   "limit": 60
 }
@@ -386,7 +386,7 @@ tool_use Read
 id: toolu_01WdZ8783eYyshgSFxYv119H
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/blockChanges.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/blockChanges.ts"
 }
 ```
 
@@ -426,7 +426,7 @@ tool_use Read
 id: toolu_01SVqb4LCyCa8nVFPNje7oLt
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/clock.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/clock.ts"
 }
 ```
 
@@ -507,7 +507,7 @@ tool_use Write
 id: toolu_01XJAsCT9Ea3CtLgpTC5cXnH
 ```json
 {
-  "file_path": "/Users/hutusi/.claude/plans/problem-high-multiplayer-latency-parsed-hamming.md",
+  "file_path": "/home/<USER>/.claude/plans/problem-high-multiplayer-latency-parsed-hamming.md",
   "content": "# Multiplayer latency optimization (`improve/mp-latency`)\n\n## Context\n\nCo-op players are split across continents with the game server in Fly `ord` (Chicago): NA players see 50–80 ms, the Asia player sees 700–1100 ms from session start. The ping badge measures pure network RTT (the server pongs synchronously in `server/room.ts:347` — no tick-queue delay in the number), so this is route latency, not server load.\n\nThe netcode already has client-owned movement, entity interpolation, and delta ticks. What breaks at high RTT:\n\n1. **Block place/break/attack are not predicted** — `placeBlock`/`attack` are sent up only (`lib/net/NetworkSession.ts:216-223`); mining is cosmetic (caps at 99%, real break arrives ~1 RTT later). Building at 700 ms feels awful.\n2. **Fixed 125 ms interpolation delay** (`lib/net/interpolation.ts:7`) underruns at high jitter → remote players/mobs freeze-and-snap.\n3. **Clock sync is a pure EWMA** on RTT *and* offset (`lib/net/clock.ts`) — jittery pongs wobble the render clock itself.\n4. **Uncompressed full-precision JSON** at 20 Hz (no permessage-deflate, 17-char doubles).\n5. **Geography**: no code fixes a 900 ms route. User decision: move region to **US West** (`sjc`).\n\nOutcome: block edits feel instant at any ping, remote entities stay smooth at high jitter, wire ~70–85% smaller, and the Asia route improves via the region move. […]
 
 > TOOL
@@ -515,7 +515,7 @@ id: toolu_01XJAsCT9Ea3CtLgpTC5cXnH
 tool_result
 id: toolu_01XJAsCT9Ea3CtLgpTC5cXnH
 ```
-File created successfully at: /Users/hutusi/.claude/plans/problem-high-multiplayer-latency-parsed-hamming.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/plans/problem-high-multiplayer-latency-parsed-hamming.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -573,7 +573,7 @@ id: toolu_01893nrGJkzxibKRbXagRn2H
 ```
 User has approved your plan. You can now start coding. Start with updating your todo list if applicable
 
-Your plan has been saved to: /Users/hutusi/.claude/plans/problem-high-multiplayer-latency-parsed-hamming.md
+Your plan has been saved to: /home/<USER>/.claude/plans/problem-high-multiplayer-latency-parsed-hamming.md
 You can refer back to it if needed during implementation.
 
 ## Approved Plan (edited by user):
@@ -804,7 +804,7 @@ tool_use Read
 id: toolu_01EJpZVWkfS1SJcVFPZQT4bt
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/codec.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/codec.ts"
 }
 ```
 
@@ -853,7 +853,7 @@ tool_use Bash
 id: toolu_017jSHAgGhNtW3hAWhBdjV8J
 ```json
 {
-  "command": "grep -n \"collectPlayerPoses\\|collectMobPoses\\|collectVehiclePoses\\|collectProjectilePoses\\|rosterEntry\\|buildSelfDelta\" /Users/hutusi/workspace/ai/david/monecraft/server/room.ts",
+  "command": "grep -n \"collectPlayerPoses\\|collectMobPoses\\|collectVehiclePoses\\|collectProjectilePoses\\|rosterEntry\\|buildSelfDelta\" /home/<USER>/workspace/ai/david/monecraft/server/room.ts",
   "description": "Locate pose collectors in room.ts"
 }
 ```
@@ -888,7 +888,7 @@ tool_use Read
 id: toolu_0177CP1ovCeKNomKj36rJm88
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/server/room.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/server/room.ts",
   "offset": 460,
   "limit": 170
 }
@@ -963,7 +963,7 @@ id: toolu_01TPNdr6msh2R7FWwgrCWFzb
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/codec.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/codec.ts",
   "old_string": "export function encodeServerMessage(message: ServerMessage): string {\n  return JSON.stringify(message);\n}",
   "new_string": "/**\n * Wire-size quantizers for replicated poses. Raw doubles serialize at up to\n * 17 chars (\"256.04500000000002\"); rounding before JSON.stringify keeps the\n * envelope shape identical while cutting pose payloads roughly in half.\n * Precision margins: 1 cm ≪ every movement clamp and deadband in play.\n */\nexport const qPos = (v: number): number => Math.round(v * 100) / 100;\n/** 3-decimal angle/velocity quantizer (~0.06° — invisible at render scale). */\nexport const qAng = (v: number): number => Math.round(v * 1000) / 1000;\n\nexport function encodeServerMessage(message: ServerMessage): string {\n  return JSON.stringify(message);\n}"
 }
@@ -974,7 +974,7 @@ id: toolu_01TPNdr6msh2R7FWwgrCWFzb
 tool_result
 id: toolu_01TPNdr6msh2R7FWwgrCWFzb
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/net/codec.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/net/codec.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -988,7 +988,7 @@ id: toolu_011RWnhV4xhUGwkQnj53HxGC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/server/room.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/server/room.ts",
   "old_string": "    return {\n      id: player.id,\n      name: conn.name,\n      skinId: conn.skinId,\n      x: player.position.x,\n      y: player.position.y,\n      z: player.position.z,\n      yaw: player.yaw\n    };\n  }",
   "new_string": "    return {\n      id: player.id,\n      name: conn.name,\n      skinId: conn.skinId,\n      x: qPos(player.position.x),\n      y: qPos(player.position.y),\n      z: qPos(player.position.z),\n      yaw: qAng(player.yaw)\n    };\n  }"
 }
@@ -999,7 +999,7 @@ id: toolu_011RWnhV4xhUGwkQnj53HxGC
 tool_result
 id: toolu_011RWnhV4xhUGwkQnj53HxGC
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/server/room.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/server/room.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1009,7 +1009,7 @@ id: toolu_01UeafjCBb8jtkCydgyfYpYK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/server/room.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/server/room.ts",
   "old_string": "      out.push({ id: player.id, x: player.position.x, y: player.position.y, z: player.position.z, yaw: player.yaw, pitch: player.pitch });",
   "new_string": "      out.push({ id: player.id, x: qPos(player.position.x), y: qPos(player.position.y), z: qPos(player.position.z), yaw: qAng(player.yaw), pitch: qAng(player.pitch) });"
 }
@@ -1020,7 +1020,7 @@ id: toolu_01UeafjCBb8jtkCydgyfYpYK
 tool_result
 id: toolu_01UeafjCBb8jtkCydgyfYpYK
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/server/room.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/server/room.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1030,7 +1030,7 @@ id: toolu_0132x8xS1dV9owRCrm3e1Bjq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/server/room.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/server/room.ts",
   "old_string": "      out.push({\n        id: mob.id,\n        kind: mob.kind,\n        hostile: mob.hostile,\n        x: mob.position.x,\n        y: mob.position.y,\n        z: mob.position.z,\n        yaw: mob.yaw,\n        hp: mob.hp,\n        moveSpeed: mob.moveSpeed\n      });",
   "new_string": "      out.push({\n        id: mob.id,\n        kind: mob.kind,\n        hostile: mob.hostile,\n        x: qPos(mob.position.x),\n        y: qPos(mob.position.y),\n        z: qPos(mob.position.z),\n        yaw: qAng(mob.yaw),\n        hp: mob.hp,\n        moveSpeed: mob.moveSpeed\n      });"
 }
@@ -1041,7 +1041,7 @@ id: toolu_0132x8xS1dV9owRCrm3e1Bjq
 tool_result
 id: toolu_0132x8xS1dV9owRCrm3e1Bjq
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/server/room.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/server/room.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1051,7 +1051,7 @@ id: toolu_01F9yVfTcjia4rzgGWS8dCFd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/server/room.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/server/room.ts",
   "old_string": "      out.push({ id: vehicle.id, kind: vehicle.kind, x: vehicle.position.x, y: vehicle.position.y, z: vehicle.position.z, yaw: vehicle.yaw, riderId });",
   "new_string": "      out.push({ id: vehicle.id, kind: vehicle.kind, x: qPos(vehicle.position.x), y: qPos(vehicle.position.y), z: qPos(vehicle.position.z), yaw: qAng(vehicle.yaw), riderId });"
 }
@@ -1062,7 +1062,7 @@ id: toolu_01F9yVfTcjia4rzgGWS8dCFd
 tool_result
 id: toolu_01F9yVfTcjia4rzgGWS8dCFd
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/server/room.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/server/room.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1072,7 +1072,7 @@ id: toolu_01A8fA7Tms3LsCHTZXcBAo4T
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/server/room.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/server/room.ts",
   "old_string": "    return this.engine.state.projectiles.map((p) => ({\n      id: p.id,\n      x: p.position.x,\n      y: p.position.y,\n      z: p.position.z,\n      vx: p.velocity.x,\n      vy: p.velocity.y,\n      vz: p.velocity.z\n    }));",
   "new_string": "    return this.engine.state.projectiles.map((p) => ({\n      id: p.id,\n      x: qPos(p.position.x),\n      y: qPos(p.position.y),\n      z: qPos(p.position.z),\n      vx: qAng(p.velocity.x),\n      vy: qAng(p.velocity.y),\n      vz: qAng(p.velocity.z)\n    }));"
 }
@@ -1083,7 +1083,7 @@ id: toolu_01A8fA7Tms3LsCHTZXcBAo4T
 tool_result
 id: toolu_01A8fA7Tms3LsCHTZXcBAo4T
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/server/room.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/server/room.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1093,7 +1093,7 @@ id: toolu_01B5TSr7pehTvF2H4By3WEmR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/server/room.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/server/room.ts",
   "old_string": "    if (mounted || mountChanged) {\n      delta.x = player.position.x;\n      delta.y = player.position.y;\n      delta.z = player.position.z;\n    }",
   "new_string": "    if (mounted || mountChanged) {\n      delta.x = qPos(player.position.x);\n      delta.y = qPos(player.position.y);\n      delta.z = qPos(player.position.z);\n    }"
 }
@@ -1104,7 +1104,7 @@ id: toolu_01B5TSr7pehTvF2H4By3WEmR
 tool_result
 id: toolu_01B5TSr7pehTvF2H4By3WEmR
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/server/room.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/server/room.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1117,7 +1117,7 @@ tool_use Bash
 id: toolu_01PJz5c8HRmbKLMqW91hSK5k
 ```json
 {
-  "command": "grep -n \"from \\\"@/lib/net\\|from \\\"\\./\\|import\" /Users/hutusi/workspace/ai/david/monecraft/server/room.ts | head -20",
+  "command": "grep -n \"from \\\"@/lib/net\\|from \\\"\\./\\|import\" /home/<USER>/workspace/ai/david/monecraft/server/room.ts | head -20",
   "description": "Show room.ts imports"
 }
 ```
@@ -1147,7 +1147,7 @@ id: toolu_01EatbpFkvznqJ7Zz17U1Lhg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/server/room.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/server/room.ts",
   "old_string": "import { encodeServerMessage, gzipWorldSync } from \"@/lib/net/codec\";",
   "new_string": "import { encodeServerMessage, gzipWorldSync, qAng, qPos } from \"@/lib/net/codec\";"
 }
@@ -1158,7 +1158,7 @@ id: toolu_01EatbpFkvznqJ7Zz17U1Lhg
 tool_result
 id: toolu_01EatbpFkvznqJ7Zz17U1Lhg
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/server/room.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/server/room.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1171,7 +1171,7 @@ tool_use Read
 id: toolu_01DacV1wXovA5S3zTh25y523
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
   "offset": 540,
   "limit": 110
 }
@@ -1233,7 +1233,7 @@ id: toolu_01BbdGZyhjauiskBwZXdLWGX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
   "old_string": "        pose: { x: self.position.x, y: self.position.y, z: self.position.z, yaw: self.yaw, pitch: self.pitch }",
   "new_string": "        pose: { x: qPos(self.position.x), y: qPos(self.position.y), z: qPos(self.position.z), yaw: qAng(self.yaw), pitch: qAng(self.pitch) }"
 }
@@ -1244,7 +1244,7 @@ id: toolu_01BbdGZyhjauiskBwZXdLWGX
 tool_result
 id: toolu_01BbdGZyhjauiskBwZXdLWGX
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1254,7 +1254,7 @@ id: toolu_0188agvjB2JLggQQuCuD7RiQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
   "old_string": "            t: \"pose\",\n            seq,\n            x: self.position.x,\n            y: self.position.y,\n            z: self.position.z,\n            yaw: self.yaw,\n            pitch: self.pitch,\n            onGround: self.onGround,",
   "new_string": "            t: \"pose\",\n            seq,\n            x: qPos(self.position.x),\n            y: qPos(self.position.y),\n            z: qPos(self.position.z),\n            yaw: qAng(self.yaw),\n            pitch: qAng(self.pitch),\n            onGround: self.onGround,"
 }
@@ -1265,7 +1265,7 @@ id: toolu_0188agvjB2JLggQQuCuD7RiQ
 tool_result
 id: toolu_0188agvjB2JLggQQuCuD7RiQ
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1274,7 +1274,7 @@ tool_use Bash
 id: toolu_01BNchrdPgQWupM6hXyb1TGn
 ```json
 {
-  "command": "grep -n \"from \\\"./codec\\\"\\|from './codec'\" /Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
+  "command": "grep -n \"from \\\"./codec\\\"\\|from './codec'\" /home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
   "description": "Check NetworkSession codec import"
 }
 ```
@@ -1294,7 +1294,7 @@ id: toolu_015AwPdvybaTx5qszg9drhpY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
   "old_string": "import { decodeServerFrame, encodeClientMessage, gunzipWorldSync } from \"./codec\";",
   "new_string": "import { decodeServerFrame, encodeClientMessage, gunzipWorldSync, qAng, qPos } from \"./codec\";"
 }
@@ -1305,7 +1305,7 @@ id: toolu_015AwPdvybaTx5qszg9drhpY
 tool_result
 id: toolu_015AwPdvybaTx5qszg9drhpY
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1314,7 +1314,7 @@ tool_use Read
 id: toolu_01QE1ANrcvuiZwaRh8XYvNkm
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/server/index.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/server/index.ts",
   "offset": 78,
   "limit": 45
 }
@@ -1375,7 +1375,7 @@ id: toolu_01DgmB1ZvbeW8CVJg7qrEvyw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/server/index.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/server/index.ts",
   "old_string": "  websocket: {\n    open(ws) {",
   "new_string": "  websocket: {\n    // Tick frames are ~1–4 KB of highly repetitive JSON keys — deflate gets\n    // 3–5× and browsers negotiate it automatically. Dedicated 16 KB windows:\n    // ≤24 sockets (8 players × MAX_ROOMS) costs ~1 MB, trivial on the VM.\n    perMessageDeflate: { compress: \"16KB\", decompress: true },\n    open(ws) {"
 }
@@ -1386,7 +1386,7 @@ id: toolu_01DgmB1ZvbeW8CVJg7qrEvyw
 tool_result
 id: toolu_01DgmB1ZvbeW8CVJg7qrEvyw
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/server/index.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/server/index.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1399,7 +1399,7 @@ tool_use Bash
 id: toolu_01FoZgxwkUyyjuU6GFm38yPN
 ```json
 {
-  "command": "ls /Users/hutusi/workspace/ai/david/monecraft/lib/net/*.test.ts /Users/hutusi/workspace/ai/david/monecraft/server/*.test.ts 2>/dev/null && grep -n \"position\\.\\|\\.x\\b\" /Users/hutusi/workspace/ai/david/monecraft/server/room.test.ts | head -20",
+  "command": "ls /home/<USER>/workspace/ai/david/monecraft/lib/net/*.test.ts /home/<USER>/workspace/ai/david/monecraft/server/*.test.ts 2>/dev/null && grep -n \"position\\.\\|\\.x\\b\" /home/<USER>/workspace/ai/david/monecraft/server/room.test.ts | head -20",
   "description": "List net/server tests and pose assertions in room.test.ts"
 }
 ```
@@ -1409,12 +1409,12 @@ id: toolu_01FoZgxwkUyyjuU6GFm38yPN
 tool_result
 id: toolu_01FoZgxwkUyyjuU6GFm38yPN
 ```
-/Users/hutusi/workspace/ai/david/monecraft/lib/net/interpolation.test.ts
-/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts
-/Users/hutusi/workspace/ai/david/monecraft/lib/net/protocol.test.ts
-/Users/hutusi/workspace/ai/david/monecraft/lib/net/tickets.test.ts
-/Users/hutusi/workspace/ai/david/monecraft/server/room.test.ts
-/Users/hutusi/workspace/ai/david/monecraft/server/server.e2e-smoke.test.ts
+/home/<USER>/workspace/ai/david/monecraft/lib/net/interpolation.test.ts
+/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts
+/home/<USER>/workspace/ai/david/monecraft/lib/net/protocol.test.ts
+/home/<USER>/workspace/ai/david/monecraft/lib/net/tickets.test.ts
+/home/<USER>/workspace/ai/david/monecraft/server/room.test.ts
+/home/<USER>/workspace/ai/david/monecraft/server/server.e2e-smoke.test.ts
 101:    expect(tickB?.ev.some((e) => e.type === "blockPlaced" && e.x === 5)).toBe(true);
 115:    expect(alice.position.x).toBeCloseTo(x + 0.4, 6);
 119:    expect(alice.position.x).toBeCloseTo(x + 0.4, 6); // unmoved
@@ -1434,7 +1434,7 @@ tool_use Read
 id: toolu_013beTa6tn3YP4QvQU5j38E9
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/server/room.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/server/room.test.ts",
   "offset": 1,
   "limit": 135
 }
@@ -1480,7 +1480,7 @@ id: toolu_01WaBGGSh6TFqZA93qrFsWYw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/server/room.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/server/room.test.ts",
   "old_string": "    // …and bob's tick carries alice's pose, not his own.\n    expect(tickB?.pp.some((p) => p.id === \"alice\")).toBe(true);\n    expect(tickB?.pp.some((p) => p.id === \"bob\")).toBe(false);\n  });",
   "new_string": "    // …and bob's tick carries alice's pose, not his own.\n    expect(tickB?.pp.some((p) => p.id === \"alice\")).toBe(true);\n    expect(tickB?.pp.some((p) => p.id === \"bob\")).toBe(false);\n    // Wire poses are quantized (re-quantizing is a no-op).\n    for (const p of tickB!.pp) {\n      expect(p.x).toBe(Math.round(p.x * 100) / 100);\n      expect(p.yaw).toBe(Math.round(p.yaw * 1000) / 1000);\n    }\n  });"
 }
@@ -1491,7 +1491,7 @@ id: toolu_01WaBGGSh6TFqZA93qrFsWYw
 tool_result
 id: toolu_01WaBGGSh6TFqZA93qrFsWYw
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/server/room.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/server/room.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1500,7 +1500,7 @@ tool_use Write
 id: toolu_012Ya8qqFrsExgDiGH2y38MX
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/codec.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/codec.test.ts",
   "content": "import { describe, expect, test } from \"bun:test\";\nimport { qAng, qPos } from \"./codec\";\n\ndescribe(\"pose quantizers\", () => {\n  test(\"qPos rounds to 2 decimals and shortens JSON output\", () => {\n    expect(qPos(256.04500000000002)).toBe(256.05);\n    expect(qPos(1 / 3)).toBe(0.33);\n    expect(qPos(-1 / 3)).toBe(-0.33);\n    expect(qPos(0)).toBe(0);\n    expect(JSON.stringify(qPos(128.00000000000003))).toBe(\"128\");\n    expect(JSON.stringify(qPos(1 / 3)).length).toBeLessThanOrEqual(6);\n  });\n\n  test(\"qAng rounds to 3 decimals\", () => {\n    expect(qAng(Math.PI)).toBe(3.142);\n    expect(qAng(-Math.PI / 2)).toBe(-1.571);\n    expect(qAng(0)).toBe(0);\n  });\n\n  test(\"quantization is idempotent (the wire assertion the room test relies on)\", () => {\n    for (const v of [12.345678, -0.005, 99.999, 0.1 + 0.2]) {\n      expect(qPos(qPos(v))).toBe(qPos(v));\n      expect(qAng(qAng(v))).toBe(qAng(v));\n    }\n  });\n});\n"
 }
 ```
@@ -1510,7 +1510,7 @@ id: toolu_012Ya8qqFrsExgDiGH2y38MX
 tool_result
 id: toolu_012Ya8qqFrsExgDiGH2y38MX
 ```
-File created successfully at: /Users/hutusi/workspace/ai/david/monecraft/lib/net/codec.test.ts (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/ai/david/monecraft/lib/net/codec.test.ts (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1549,7 +1549,7 @@ id: toolu_01CE761avFwF4R7KdWaRjycS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/protocol.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/protocol.md",
   "old_string": "WebSocket to the game server's `/ws`. Everything is a JSON text frame\ndiscriminated on `t`, except **one binary frame**: the world sync (join and\n`resync`), which is gzipped JSON — a fresh world's block diff is bytes, a\nterraformed one compresses >2×. Hot paths (pose/tick) can move to packed\nbinary later without renegotiating anything: the envelope shape is the\ncontract, not the encoding.",
   "new_string": "WebSocket to the game server's `/ws`. Everything is a JSON text frame\ndiscriminated on `t`, except **one binary frame**: the world sync (join and\n`resync`), which is gzipped JSON — a fresh world's block diff is bytes, a\nterraformed one compresses >2×. Hot paths (pose/tick) can move to packed\nbinary later without renegotiating anything: the envelope shape is the\ncontract, not the encoding.\n\nTwo wire-size measures keep the JSON hot path cheap (neither changes the\nenvelope, so no protocol bump):\n\n- **Pose quantization** (`qPos`/`qAng`, `lib/net/codec.ts`): every replicated\n  position rounds to 2 decimals (1 cm) and every angle/velocity to 3 before\n  serialization — well inside all movement clamps and deadbands. Applied at\n  the serialization sites only; server-side shadows keep full precision.\n- **permessage-deflate**: the server offers it (`server/index.ts`), browsers\n  negotiate automatically. Note `/rooms`' `kbOutPerSec` counts\n  **pre-compression** bytes, so it reflects […]
 
@@ -1558,7 +1558,7 @@ id: toolu_01CE761avFwF4R7KdWaRjycS
 tool_result
 id: toolu_01CE761avFwF4R7KdWaRjycS
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/protocol.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/protocol.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1568,7 +1568,7 @@ id: toolu_014Qep7jK7HKCnHmgXDgxfSv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/tuning.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/tuning.md",
   "old_string": "- **Backpressure** — `BACKPRESSURE_SOFT_BYTES` (256 KB → shed `pp`/`mp`),\n  `BACKPRESSURE_KICK_BYTES` (1 MB) + `BACKPRESSURE_KICK_STRIKES` (~5 s sustained\n  → `4008` kick).",
   "new_string": "- **Wire size** — replicated poses are quantized before serialization\n  (`qPos` 2 decimals, `qAng` 3 — `lib/net/codec.ts`) and the server offers\n  **permessage-deflate** (`server/index.ts`, dedicated 16 KB windows).\n  Caveat: `/rooms`' `kbOutPerSec` counts pre-compression bytes, so it shows\n  the quantization win only; verify deflate in DevTools or Fly egress.\n- **Backpressure** — `BACKPRESSURE_SOFT_BYTES` (256 KB → shed `pp`/`mp`),\n  `BACKPRESSURE_KICK_BYTES` (1 MB) + `BACKPRESSURE_KICK_STRIKES` (~5 s sustained\n  → `4008` kick)."
 }
@@ -1588,7 +1588,7 @@ tool_use Bash
 id: toolu_01MaA3nBxiSa5UWpUUexCUyv
 ```json
 {
-  "command": "sed -n \"$(grep -n '## Multiplayer networking' /Users/hutusi/workspace/ai/david/monecraft/docs/tuning.md | cut -d: -f1),+2p\" /Users/hutusi/workspace/ai/david/monecraft/docs/tuning.md; head -5 /Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md",
+  "command": "sed -n \"$(grep -n '## Multiplayer networking' /home/<USER>/workspace/ai/david/monecraft/docs/tuning.md | cut -d: -f1),+2p\" /home/<USER>/workspace/ai/david/monecraft/docs/tuning.md; head -5 /home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md",
   "description": "Re-anchor tuning.md section and peek CHANGELOG head"
 }
 ```
@@ -1614,7 +1614,7 @@ tool_use Read
 id: toolu_0118D9XXHaBgN7tfjMeqhwMg
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/tuning.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/tuning.md",
   "offset": 435,
   "limit": 45
 }
@@ -1660,7 +1660,7 @@ id: toolu_01T8VAguWYjXDKtdzPqYg1Kv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/tuning.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/tuning.md",
   "old_string": "- **Backpressure** — `BACKPRESSURE_SOFT_BYTES` (256 KB → shed `pp`/`mp`),\n  `BACKPRESSURE_KICK_BYTES` (1 MB) + `BACKPRESSURE_KICK_STRIKES` (~5 s sustained\n  → `4008` kick).",
   "new_string": "- **Wire size** — replicated poses quantize before serialization (`qPos` 2\n  decimals, `qAng` 3 — `lib/net/codec.ts`; margins sit well inside every\n  movement clamp and deadband) and the server offers **permessage-deflate**\n  (`server/index.ts`, dedicated 16 KB windows — ~1 MB across a full house).\n  Caveat: `/rooms`' `kbOutPerSec` counts pre-compression bytes, so it shows\n  the quantization win only; verify deflate via DevTools\n  (`Sec-WebSocket-Extensions` on the 101 response) or Fly egress metrics.\n- **Backpressure** — `BACKPRESSURE_SOFT_BYTES` (256 KB → shed `pp`/`mp`),\n  `BACKPRESSURE_KICK_BYTES` (1 MB) + `BACKPRESSURE_KICK_STRIKES` (~5 s sustained\n  → `4008` kick)."
 }
@@ -1671,7 +1671,7 @@ id: toolu_01T8VAguWYjXDKtdzPqYg1Kv
 tool_result
 id: toolu_01T8VAguWYjXDKtdzPqYg1Kv
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/tuning.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/tuning.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1680,7 +1680,7 @@ tool_use Read
 id: toolu_01TmzQge7EiGXjpJ1tEKr5iq
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md",
   "offset": 1,
   "limit": 30
 }
@@ -1713,7 +1713,7 @@ id: toolu_019dhDbryDUGNSoZGH2WLh4v
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md",
   "old_string": "### Changed\n\n- **Game server rightsized to its real usage**:",
   "new_string": "### Changed\n\n- **Multiplayer wire diet — quantized poses + compression**: replicated positions now round to 2 decimals and angles/velocities to 3 before hitting the wire (raw doubles serialized at up to 17 characters each), and the game server offers **permessage-deflate**, which browsers negotiate automatically — together cutting per-tick payloads several-fold on the same JSON envelope (no protocol bump; old and new clients interoperate). Groundwork for playing across continents, where every queued byte on a congested route adds delay.\n- **Game server rightsized to its real usage**:"
 }
@@ -1724,7 +1724,7 @@ id: toolu_019dhDbryDUGNSoZGH2WLh4v
 tool_result
 id: toolu_019dhDbryDUGNSoZGH2WLh4v
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1767,7 +1767,7 @@ id: toolu_01AYhxrjSV6fQmF9Ts4X9Zbr
 tool_result
 id: toolu_01AYhxrjSV6fQmF9Ts4X9Zbr
 ```
-/Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx
+/home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx
   136:28  warning  Do not call the 'set' function 'setAuthProbed' of 'useState' synchronously in an effect. This can lead to unnecessary re-renders and performance issues  @eslint-react/set-state-in-effect
   142:39  warning  Do not call the 'set' function 'setAuthProbed' of 'useState' synchronously in an effect. This can lead to unnecessary re-renders and performance issues  @eslint-react/set-state-in-effect
 
@@ -1843,7 +1843,7 @@ tool_use Read
 id: toolu_01X4DhQD35ysyxH1ZSyertqY
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
   "offset": 1,
   "limit": 195
 }
@@ -1894,7 +1894,7 @@ tool_use Read
 id: toolu_01XcgZVQVdQdbfcvmQ54WfP5
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
   "offset": 380,
   "limit": 160
 }
@@ -1950,7 +1950,7 @@ id: toolu_01VPxvjNeJ2Z5tyhiMdDVqja
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
   "old_string": "/** One player as the roster panel shows them. */\nexport type RosterMember = { id: PlayerId; name: string };",
   "new_string": "/** One player as the roster panel shows them. */\nexport type RosterMember = { id: PlayerId; name: string };\n\n/** Live connection stats for the F3 overlay (poll, don't subscribe). */\nexport type NetStats = {\n  rttMs: number;\n  /** Tick inter-arrival jitter (p90 deviation from the 50 ms nominal). */\n  jitterMs: number;\n  /** How far in the past remote entities currently render. */\n  interpDelayMs: number;\n  inKBps: number;\n  outKBps: number;\n  /** Optimistic block edits awaiting server confirmation. */\n  pendingPredictions: number;\n};"
 }
@@ -1961,7 +1961,7 @@ id: toolu_01VPxvjNeJ2Z5tyhiMdDVqja
 tool_result
 id: toolu_01VPxvjNeJ2Z5tyhiMdDVqja
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1971,7 +1971,7 @@ id: toolu_01MhKhKrP53jn628BnJsH6qn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
   "old_string": "  /** Debug knob: inject symmetric latency on every send/receive (0 disables). */\n  setSimulatedLatency(ms: number): void;\n  simulatedLatency(): number;",
   "new_string": "  /**\n   * Debug knob: inject symmetric latency on every send/receive (0 disables).\n   * `jitterMs` randomizes each message's delay by ±jitter (FIFO preserved —\n   * TCP never reorders); omitting it resets jitter to 0.\n   */\n  setSimulatedLatency(ms: number, jitterMs?: number): void;\n  simulatedLatency(): number;\n  simulatedJitter(): number;\n  /** Connection stats snapshot for the debug overlay. */\n  netStats(): NetStats;"
 }
@@ -1982,7 +1982,7 @@ id: toolu_01MhKhKrP53jn628BnJsH6qn
 tool_result
 id: toolu_01MhKhKrP53jn628BnJsH6qn
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1992,7 +1992,7 @@ id: toolu_01DwY6RZJxWQRZrcS4XsKB85
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
   "old_string": "  const makeSocket = options.makeSocket ?? ((u: string) => new WebSocket(u));\n  const envLatency = Number.parseInt(process.env.NEXT_PUBLIC_NET_SIM_LATENCY_MS ?? \"\", 10);\n  let simulatedLatencyMs = options.simulatedLatencyMs ?? (Number.isFinite(envLatency) ? envLatency : 0);",
   "new_string": "  const makeSocket = options.makeSocket ?? ((u: string) => new WebSocket(u));\n  const envLatency = Number.parseInt(process.env.NEXT_PUBLIC_NET_SIM_LATENCY_MS ?? \"\", 10);\n  const envJitter = Number.parseInt(process.env.NEXT_PUBLIC_NET_SIM_JITTER_MS ?? \"\", 10);\n  let simulatedLatencyMs = options.simulatedLatencyMs ?? (Number.isFinite(envLatency) ? envLatency : 0);\n  let simulatedJitterMs = Number.isFinite(envJitter) ? Math.max(0, envJitter) : 0;"
 }
@@ -2003,7 +2003,7 @@ id: toolu_01DwY6RZJxWQRZrcS4XsKB85
 tool_result
 id: toolu_01DwY6RZJxWQRZrcS4XsKB85
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2013,7 +2013,7 @@ id: toolu_01P6wnCdeLxAYftrpseBbTqT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
   "old_string": "  // Latency simulation wraps both directions symmetrically so `ms` reads as a\n  // one-way delay (round-trip ≈ 2×ms), matching how a player would set it.\n  const delayedSend = (data: string) => {\n    const socket = ws;\n    if (!socket || socket.readyState !== WebSocket.OPEN) return;\n    if (simulatedLatencyMs > 0) {\n      setTimeout(() => {\n        try {\n          if (socket.readyState === WebSocket.OPEN) socket.send(data);\n        } catch {\n          /* socket closed under us */\n        }\n      }, simulatedLatencyMs);\n      return;\n    }\n    socket.send(data);\n  };",
   "new_string": "  // Client-side traffic counters for the F3 overlay (2 s rolling window).\n  // Inbound counts post-decompression frame sizes — an approximation when\n  // permessage-deflate is negotiated, but the right number for \"what does the\n  // client have to process\".\n  const traffic = { inBytes: 0, outBytes: 0, windowStartMs: 0, inKBps: 0, outKBps: 0 };\n  const rollTrafficWindow = (nowMs: number) => {\n    if (traffic.windowStartMs === 0) traffic.windowStartMs = nowMs;\n    const elapsed = nowMs - traffic.windowStartMs;\n    if (elapsed < 2000) return;\n    traffic.inKBps = traffic.inBytes / 1024 / (elapsed / 1000);\n    traffic.outKBps = traffic.outBytes / 1024 / (elapsed / 1000);\n    traffic.inBytes = 0;\n    traffic.outBytes = 0;\n    traffic.windowStartMs = nowMs;\n  };\n\n  // Latency simulation wraps both […]
 
@@ -2022,7 +2022,7 @@ id: toolu_01P6wnCdeLxAYftrpseBbTqT
 tool_result
 id: toolu_01P6wnCdeLxAYftrpseBbTqT
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2032,7 +2032,7 @@ id: toolu_016k7WJr41UFksyhaudWz5LP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
   "old_string": "  // ── inbound frame processing (latency-shifted) ──────────────────────────────\n  const onServerFrame = (data: unknown) => {\n    if (simulatedLatencyMs > 0) {\n      setTimeout(() => void processServerFrame(data), simulatedLatencyMs);\n      return;\n    }\n    void processServerFrame(data);\n  };",
   "new_string": "  // ── inbound frame processing (latency-shifted) ──────────────────────────────\n  const onServerFrame = (data: unknown) => {\n    traffic.inBytes += typeof data === \"string\" ? data.length : ((data as ArrayBuffer).byteLength ?? 0);\n    if (simulatedLatencyMs > 0 || simulatedJitterMs > 0) {\n      const now = performance.now();\n      const deliverAt = Math.max(now + simDelayMs(), lastRecvDeliveryMs);\n      lastRecvDeliveryMs = deliverAt;\n      setTimeout(() => void processServerFrame(data), deliverAt - now);\n      return;\n    }\n    void processServerFrame(data);\n  };"
 }
@@ -2043,7 +2043,7 @@ id: toolu_016k7WJr41UFksyhaudWz5LP
 tool_result
 id: toolu_016k7WJr41UFksyhaudWz5LP
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2053,7 +2053,7 @@ id: toolu_01PTVUfGLMU6AzeGcTbtdxyr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
   "old_string": "    setSimulatedLatency(ms) {\n      simulatedLatencyMs = Math.max(0, Math.floor(ms));\n    },\n    simulatedLatency: () => simulatedLatencyMs,",
   "new_string": "    setSimulatedLatency(ms, jitterMs) {\n      simulatedLatencyMs = Math.max(0, Math.floor(ms));\n      simulatedJitterMs = Math.max(0, Math.floor(jitterMs ?? 0));\n    },\n    simulatedLatency: () => simulatedLatencyMs,\n    simulatedJitter: () => simulatedJitterMs,\n\n    netStats: () => ({\n      rttMs: clock.rttMs(),\n      jitterMs: 0, // adaptive-interpolation work fills this in\n      interpDelayMs: INTERPOLATION_DELAY_MS,\n      inKBps: traffic.inKBps,\n      outKBps: traffic.outKBps,\n      pendingPredictions: 0 // prediction-ledger work fills this in\n    }),"
 }
@@ -2064,7 +2064,7 @@ id: toolu_01PTVUfGLMU6AzeGcTbtdxyr
 tool_result
 id: toolu_01PTVUfGLMU6AzeGcTbtdxyr
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2074,7 +2074,7 @@ id: toolu_0114Eg5So8ryEDFosxtPpSEj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
   "old_string": "    afterFrame(nowMs) {\n      const open = ws?.readyState === WebSocket.OPEN;",
   "new_string": "    afterFrame(nowMs) {\n      rollTrafficWindow(nowMs);\n      const open = ws?.readyState === WebSocket.OPEN;"
 }
@@ -2085,7 +2085,7 @@ id: toolu_0114Eg5So8ryEDFosxtPpSEj
 tool_result
 id: toolu_0114Eg5So8ryEDFosxtPpSEj
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2094,7 +2094,7 @@ tool_use Read
 id: toolu_01DVmDKAXEqVxs7WeyRgeWwM
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/game/DebugOverlay.tsx"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/game/DebugOverlay.tsx"
 }
 ```
 
@@ -2150,7 +2150,7 @@ tool_use Bash
 id: toolu_017cp5mS9CDRUJ5qqt9UErvn
 ```json
 {
-  "command": "grep -n \"DebugOverlay\\|online\" /Users/hutusi/workspace/ai/david/monecraft/components/MinecraftGame.tsx | head -20",
+  "command": "grep -n \"DebugOverlay\\|online\" /home/<USER>/workspace/ai/david/monecraft/components/MinecraftGame.tsx | head -20",
   "description": "Find DebugOverlay usage in MinecraftGame"
 }
 ```
@@ -2176,7 +2176,7 @@ tool_use Write
 id: toolu_015dinzo2q1PQKphKyEKTwaB
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/game/DebugOverlay.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/game/DebugOverlay.tsx",
   "content": "import { useEffect, useState } from \"react\";\nimport type { DebugInfo } from \"@/lib/game/engine/state\";\nimport type { NetStats, NetworkSession } from \"@/lib/net/NetworkSession\";\n\ntype DebugOverlayProps = {\n  debug: DebugInfo | null;\n  passiveCount: number;\n  hostileCount: number;\n  daylightPercent: number;\n  /** Online sessions add two connection-stat lines (absent in single-player). */\n  net?: NetworkSession | null;\n};\n\n/**\n * F3-style debug readout. Position and daylight come from the engine's\n * throttled snapshot; FPS is counted here with a local rAF loop because it is\n * purely a rendering concern; net stats are polled (the session has no\n * subscription surface for them — this is a debug view, not gameplay).\n */\nexport default function DebugOverlay({ debug, passiveCount, hostileCount, daylightPercent, net }: DebugOverlayProps) {\n  const [fps, setFps] = useState(0);\n  const [netStats, setNetStats] = useState<NetStats | null>(null);\n\n  useEffect(() => {\n    let frames = 0;\n    let windowStart = performance.now();\n    let raf = 0;\n    const tick = () => {\n      frames += 1;\n      const now = performance.now();\n      if (now - windowStart >= 500) {\n        setFps(Math.round((frames * 1000) / (now - windowStart)));\n        frames = 0;\n        windowStart = now;\n      }\n      raf = requestAnimationFrame(tick);\n    };\n    raf = requestAnimationFrame(tick);\n    return () => cancelAnimationFrame(raf);\n  }, []);\n\n  useEffect(() => {\n    if (!net) […]
 
 > TOOL
@@ -2184,7 +2184,7 @@ id: toolu_015dinzo2q1PQKphKyEKTwaB
 tool_result
 id: toolu_015dinzo2q1PQKphKyEKTwaB
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/game/DebugOverlay.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/game/DebugOverlay.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2193,7 +2193,7 @@ tool_use Read
 id: toolu_01NJtgXk2xyAEawykNRLjyxE
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/MinecraftGame.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/MinecraftGame.tsx",
   "offset": 145,
   "limit": 5
 }
@@ -2218,7 +2218,7 @@ id: toolu_018DayB7Fc4xz7MMtY8VRzLL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/MinecraftGame.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/MinecraftGame.tsx",
   "old_string": "      {debugOpen ? <DebugOverlay debug={debug} passiveCount={passiveCount} hostileCount={hostileCount} daylightPercent={daylightPercent} /> : null}",
   "new_string": "      {debugOpen ? <DebugOverlay debug={debug} passiveCount={passiveCount} hostileCount={hostileCount} daylightPercent={daylightPercent} net={online ?? null} /> : null}"
 }
@@ -2229,7 +2229,7 @@ id: toolu_018DayB7Fc4xz7MMtY8VRzLL
 tool_result
 id: toolu_018DayB7Fc4xz7MMtY8VRzLL
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/MinecraftGame.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/MinecraftGame.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2238,7 +2238,7 @@ tool_use Bash
 id: toolu_015UpXNxyFRQ54K9aMZzAk6P
 ```json
 {
-  "command": "grep -n \"simulated\\|describe\\|test(\" /Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts | head -30",
+  "command": "grep -n \"simulated\\|describe\\|test(\" /home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts | head -30",
   "description": "List NetworkSession test names"
 }
 ```
@@ -2271,7 +2271,7 @@ tool_use Read
 id: toolu_01M2fNWxwjkBz9KTMZMkpsC9
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts",
   "offset": 1,
   "limit": 116
 }
@@ -2316,7 +2316,7 @@ tool_use Read
 id: toolu_01PvADFQ7XHzNauDP1eBAUSS
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts",
   "offset": 270,
   "limit": 65
 }
@@ -2369,7 +2369,7 @@ id: toolu_01MyEki3nZJs6DFhvDukwWAQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts",
   "old_string": "    session.setSimulatedLatency(40);\n    expect(session.simulatedLatency()).toBe(40);\n    const before = instances[0].sent.length;\n    session.sendChat(\"delayed\");\n    expect(instances[0].sent.length).toBe(before); // not yet — held by the latency timer\n    await new Promise((resolve) => setTimeout(resolve, 60));\n    expect(instances[0].sentTypes()).toContain(\"chat\");\n    session.dispose();\n  });",
   "new_string": "    session.setSimulatedLatency(40);\n    expect(session.simulatedLatency()).toBe(40);\n    const before = instances[0].sent.length;\n    session.sendChat(\"delayed\");\n    expect(instances[0].sent.length).toBe(before); // not yet — held by the latency timer\n    await new Promise((resolve) => setTimeout(resolve, 60));\n    expect(instances[0].sentTypes()).toContain(\"chat\");\n    session.dispose();\n  });\n\n  test(\"jittered simulated latency never reorders sends (FIFO cursor)\", async () => {\n    const { make, instances } = socketFactory();\n    const session = await connectNetworkSession(\"ws://game\", \"ticket-1\", {}, { makeSocket: make, worldSize: SMALL });\n    await pushWorldSync(instances[0], worldSync(WELCOME.players));\n\n    // Jitter larger than the base delay: naive per-message timers would swap\n    // neighbors constantly; the monotonic delivery cursor must not.\n    session.setSimulatedLatency(10, 30);\n    expect(session.simulatedJitter()).toBe(30);\n    const before = instances[0].sent.length;\n    for (let i = 0; i < 20; i += 1) session.sendChat(`m${i}`);\n    await new Promise((resolve) => setTimeout(resolve, 300));\n    const chats = instances[0].sent\n      .slice(before)\n      .map((s) => JSON.parse(s) as { t: string; text?: string })\n      .filter((m) => m.t === \"chat\")\n      .map((m) => m.text);\n    expect(chats).toEqual(Array.from({ length: 20 }, (_, i) => `m${i}`));\n    session.dispose();\n  });\n\n  test(\"netStats reports traffic over the rolling window\", async () => {\n    const { make, instances } = socketFactory();\n    const session […]
 
@@ -2378,7 +2378,7 @@ id: toolu_01MyEki3nZJs6DFhvDukwWAQ
 tool_result
 id: toolu_01MyEki3nZJs6DFhvDukwWAQ
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2411,7 +2411,7 @@ tool_use Bash
 id: toolu_01XcbuUY1Bxq4ZF83Dv3zVmb
 ```json
 {
-  "command": "grep -n \"setSimulatedLatency\\|NET_SIM\" /Users/hutusi/workspace/ai/david/monecraft/docs/*.md /Users/hutusi/workspace/ai/david/monecraft/.env.example /Users/hutusi/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts /Users/hutusi/workspace/ai/david/monecraft/components/*.tsx 2>/dev/null",
+  "command": "grep -n \"setSimulatedLatency\\|NET_SIM\" /home/<USER>/workspace/ai/david/monecraft/docs/*.md /home/<USER>/workspace/ai/david/monecraft/.env.example /home/<USER>/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts /home/<USER>/workspace/ai/david/monecraft/components/*.tsx 2>/dev/null",
   "description": "Find all sim-latency references"
 }
 ```
@@ -2421,12 +2421,12 @@ id: toolu_01XcbuUY1Bxq4ZF83Dv3zVmb
 tool_result
 id: toolu_01XcbuUY1Bxq4ZF83Dv3zVmb
 ```
-/Users/hutusi/workspace/ai/david/monecraft/docs/online.md:246:  `.setSimulatedLatency(ms)` injects delay to reproduce; set
-/Users/hutusi/workspace/ai/david/monecraft/docs/online.md:247:  `NEXT_PUBLIC_NET_SIM_LATENCY_MS` to bake it into a dev build.
-/Users/hutusi/workspace/ai/david/monecraft/docs/architecture.md:125:- **The replica outlives its socket**: a non-fatal drop runs a back-off reconnect ladder (`RECONNECT_DELAYS_MS`) that mints a fresh ticket (the `reconnect` callback → `requestJoinTicket`) and redoes the handshake — a reconnect is an ordinary join on a new socket, re-syncing the same engine in place, so nothing above the session (renderer/HUD/engine) is torn down. `setSimulatedLatency(ms)` injects symmetric send/receive delay for local testing (also `NEXT_PUBLIC_NET_SIM_LATENCY_MS`).
-/Users/hutusi/workspace/ai/david/monecraft/.env.example:21:# NEXT_PUBLIC_NET_SIM_LATENCY_MS=0
-/Users/hutusi/workspace/ai/david/monecraft/docs/tuning.md:494:- **Latency sim** — `NEXT_PUBLIC_NET_SIM_LATENCY_MS` (env, default `0`) seeds
-/Users/hutusi/workspace/ai/david/monecraft/docs/tuning.md:495:  the client's artificial one-way delay; `window.__monecraft.net.setSimulatedLatency(ms)`
+/home/<USER>/workspace/ai/david/monecraft/docs/online.md:246:  `.setSimulatedLatency(ms)` injects delay to reproduce; set
+/home/<USER>/workspace/ai/david/monecraft/docs/online.md:247:  `NEXT_PUBLIC_NET_SIM_LATENCY_MS` to bake it into a dev build.
+/home/<USER>/workspace/ai/david/monecraft/docs/architecture.md:125:- **The replica outlives its socket**: a non-fatal drop runs a back-off reconnect ladder (`RECONNECT_DELAYS_MS`) that mints a fresh ticket (the `reconnect` callback → `requestJoinTicket`) and redoes the handshake — a reconnect is an ordinary join on a new socket, re-syncing the same engine in place, so nothing above the session (renderer/HUD/engine) is torn down. `setSimulatedLatency(ms)` injects symmetric send/receive delay for local testing (also `NEXT_PUBLIC_NET_SIM_LATENCY_MS`).
+/home/<USER>/workspace/ai/david/monecraft/.env.example:21:# NEXT_PUBLIC_NET_SIM_LATENCY_MS=0
+/home/<USER>/workspace/ai/david/monecraft/docs/tuning.md:494:- **Latency sim** — `NEXT_PUBLIC_NET_SIM_LATENCY_MS` (env, default `0`) seeds
+/home/<USER>/workspace/ai/david/monecraft/docs/tuning.md:495:  the client's artificial one-way delay; `window.__monecraft.net.setSimulatedLatency(ms)`
 ```
 
 > TOOL
@@ -2435,7 +2435,7 @@ tool_use Bash
 id: toolu_01LM6NjHJ8P7zQe8dpEiaTQf
 ```json
 {
-  "command": "sed -n '490,500p' /Users/hutusi/workspace/ai/david/monecraft/docs/tuning.md; sed -n '15,25p' /Users/hutusi/workspace/ai/david/monecraft/.env.example",
+  "command": "sed -n '490,500p' /home/<USER>/workspace/ai/david/monecraft/docs/tuning.md; sed -n '15,25p' /home/<USER>/workspace/ai/david/monecraft/.env.example",
   "description": "Show tuning sim bullet and env example context"
 }
 ```
@@ -2492,7 +2492,7 @@ id: toolu_016iRoPF1Ggs7Z2rNHH8Mhof
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md",
   "old_string": "### Changed\n\n- **Multiplayer wire diet — quantized poses + compression**:",
   "new_string": "### Added\n\n- **Net debug tooling — jittered latency simulation + F3 connection stats**: `window.__monecraft.net.setSimulatedLatency(ms, jitterMs)` now takes an optional per-message jitter (delivery stays FIFO, like real TCP), seedable via `NEXT_PUBLIC_NET_SIM_JITTER_MS`, and the F3 overlay gains two lines while online — RTT/jitter/interpolation delay and in/out KB/s — so high-latency play can be reproduced and observed locally instead of across an ocean.\n\n### Changed\n\n- **Multiplayer wire diet — quantized poses + compression**:"
 }
@@ -2503,7 +2503,7 @@ id: toolu_016iRoPF1Ggs7Z2rNHH8Mhof
 tool_result
 id: toolu_016iRoPF1Ggs7Z2rNHH8Mhof
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2517,7 +2517,7 @@ id: toolu_017SvSG2SveZAdEJ2ksSeMNw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md",
   "old_string": "### Added\n\n- **Net debug tooling — jittered latency simulation + F3 connection stats**: `window.__monecraft.net.setSimulatedLatency(ms, jitterMs)` now takes an optional per-message jitter (delivery stays FIFO, like real TCP), seedable via `NEXT_PUBLIC_NET_SIM_JITTER_MS`, and the F3 overlay gains two lines while online — RTT/jitter/interpolation delay and in/out KB/s — so high-latency play can be reproduced and observed locally instead of across an ocean.\n\n### Changed\n\n- **Multiplayer wire diet — quantized poses + compression**:",
   "new_string": "### Changed\n\n- **Multiplayer wire diet — quantized poses + compression**:"
 }
@@ -2528,7 +2528,7 @@ id: toolu_017SvSG2SveZAdEJ2ksSeMNw
 tool_result
 id: toolu_017SvSG2SveZAdEJ2ksSeMNw
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2538,7 +2538,7 @@ id: toolu_01GANbBbxYzeCBExoo3K7wJb
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md",
   "old_string": "- **Zero-config local dev**: `bun run dev` with no `DATABASE_URL` now falls back to an ephemeral in-memory PGlite database (with a one-time console notice) instead of 500-ing on the first online request — the full accounts/cloud-saves stack works out of the box in dev, resetting on restart. Production still requires a real `DATABASE_URL`.",
   "new_string": "- **Zero-config local dev**: `bun run dev` with no `DATABASE_URL` now falls back to an ephemeral in-memory PGlite database (with a one-time console notice) instead of 500-ing on the first online request — the full accounts/cloud-saves stack works out of the box in dev, resetting on restart. Production still requires a real `DATABASE_URL`.\n- **Net debug tooling — jittered latency simulation + F3 connection stats**: `window.__monecraft.net.setSimulatedLatency(ms, jitterMs)` now takes an optional per-message jitter (delivery stays FIFO, like real TCP), seedable via `NEXT_PUBLIC_NET_SIM_JITTER_MS`, and the F3 overlay gains two lines while online — RTT/jitter/interpolation delay and in/out KB/s — so high-latency play can be reproduced and observed locally instead of across an ocean."
 }
@@ -2549,7 +2549,7 @@ id: toolu_01GANbBbxYzeCBExoo3K7wJb
 tool_result
 id: toolu_01GANbBbxYzeCBExoo3K7wJb
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2558,7 +2558,7 @@ tool_use Bash
 id: toolu_01UiDDMRV5bc9aYUEVhCe7qh
 ```json
 {
-  "command": "grep -rn \"__monecraft\" --include=\"*.ts\" --include=\"*.tsx\" /Users/hutusi/workspace/ai/david/monecraft/lib /Users/hutusi/workspace/ai/david/monecraft/components | grep -v test | head",
+  "command": "grep -rn \"__monecraft\" --include=\"*.ts\" --include=\"*.tsx\" /home/<USER>/workspace/ai/david/monecraft/lib /home/<USER>/workspace/ai/david/monecraft/components | grep -v test | head",
   "description": "Find __monecraft debug handle definition"
 }
 ```
@@ -2568,9 +2568,9 @@ id: toolu_01UiDDMRV5bc9aYUEVhCe7qh
 tool_result
 id: toolu_01UiDDMRV5bc9aYUEVhCe7qh
 ```
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts:82:    __monecraft?: { engine: GameEngine; renderer: GameRenderer; input: InputController; audio: AudioDirector; net?: NetworkSession };
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts:331:    window.__monecraft = { engine: gameEngine, renderer, input, audio, net: online ?? undefined };
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts:432:      delete window.__monecraft;
+/home/<USER>/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts:82:    __monecraft?: { engine: GameEngine; renderer: GameRenderer; input: InputController; audio: AudioDirector; net?: NetworkSession };
+/home/<USER>/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts:331:    window.__monecraft = { engine: gameEngine, renderer, input, audio, net: online ?? undefined };
+/home/<USER>/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts:432:      delete window.__monecraft;
 ```
 
 > TOOL
@@ -2637,7 +2637,7 @@ id: toolu_01VrWFTFZAuXNGFau3MQ5QWT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/game/DebugOverlay.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/game/DebugOverlay.tsx",
   "old_string": "  useEffect(() => {\n    if (!net) {\n      setNetStats(null);\n      return;\n    }\n    setNetStats(net.netStats());\n    const timer = setInterval(() => setNetStats(net.netStats()), 500);\n    return () => clearInterval(timer);\n  }, [net]);",
   "new_string": "  useEffect(() => {\n    if (!net) return;\n    // First readout lands on the first interval tick (sync setState in an\n    // effect body is a lint error); a 500 ms blank on a debug overlay is fine.\n    const timer = setInterval(() => setNetStats(net.netStats()), 500);\n    return () => clearInterval(timer);\n  }, [net]);"
 }
@@ -2648,7 +2648,7 @@ id: toolu_01VrWFTFZAuXNGFau3MQ5QWT
 tool_result
 id: toolu_01VrWFTFZAuXNGFau3MQ5QWT
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/game/DebugOverlay.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/game/DebugOverlay.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2658,7 +2658,7 @@ id: toolu_012STmzmXFZk9Qs6YQjdz1Rj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/game/DebugOverlay.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/game/DebugOverlay.tsx",
   "old_string": "    ...(netStats\n      ? [",
   "new_string": "    ...(net && netStats\n      ? ["
 }
@@ -2669,7 +2669,7 @@ id: toolu_012STmzmXFZk9Qs6YQjdz1Rj
 tool_result
 id: toolu_012STmzmXFZk9Qs6YQjdz1Rj
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/game/DebugOverlay.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/game/DebugOverlay.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2737,7 +2737,7 @@ tool_use Read
 id: toolu_01DAZZv9HdVxwbZaoKpk63mk
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/interpolation.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/interpolation.ts"
 }
 ```
 
@@ -2778,7 +2778,7 @@ tool_use Bash
 id: toolu_01SdURbwGvTpmMfmVJmSX7Jb
 ```json
 {
-  "command": "sed -n '85,125p' /Users/hutusi/workspace/ai/david/monecraft/lib/net/protocol.test.ts",
+  "command": "sed -n '85,125p' /home/<USER>/workspace/ai/david/monecraft/lib/net/protocol.test.ts",
   "description": "Show clock tests in protocol.test.ts"
 }
 ```
@@ -2829,7 +2829,7 @@ tool_use Bash
 id: toolu_016oxcEzBrgNp5WXkdebnG1n
 ```json
 {
-  "command": "grep -rn \"INTERPOLATION_DELAY_MS\" --include=\"*.ts\" --include=\"*.tsx\" /Users/hutusi/workspace/ai/david/monecraft/lib /Users/hutusi/workspace/ai/david/monecraft/components /Users/hutusi/workspace/ai/david/monecraft/server /Users/hutusi/workspace/ai/david/monecraft/e2e 2>/dev/null",
+  "command": "grep -rn \"INTERPOLATION_DELAY_MS\" --include=\"*.ts\" --include=\"*.tsx\" /home/<USER>/workspace/ai/david/monecraft/lib /home/<USER>/workspace/ai/david/monecraft/components /home/<USER>/workspace/ai/david/monecraft/server /home/<USER>/workspace/ai/david/monecraft/e2e 2>/dev/null",
   "description": "Find INTERPOLATION_DELAY_MS usages"
 }
 ```
@@ -2839,10 +2839,10 @@ id: toolu_016oxcEzBrgNp5WXkdebnG1n
 tool_result
 id: toolu_016oxcEzBrgNp5WXkdebnG1n
 ```
-/Users/hutusi/workspace/ai/david/monecraft/lib/net/interpolation.ts:7:export const INTERPOLATION_DELAY_MS = 125;
-/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts:12:import { createPoseBuffer, INTERPOLATION_DELAY_MS, type PoseBuffer } from "./interpolation";
-/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts:661:      interpDelayMs: INTERPOLATION_DELAY_MS,
-/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts:694:      const renderTime = (clock.ready() ? clock.estimatedServerTimeMs(nowMs) : serverTickTimeMs) - INTERPOLATION_DELAY_MS;
+/home/<USER>/workspace/ai/david/monecraft/lib/net/interpolation.ts:7:export const INTERPOLATION_DELAY_MS = 125;
+/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts:12:import { createPoseBuffer, INTERPOLATION_DELAY_MS, type PoseBuffer } from "./interpolation";
+/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts:661:      interpDelayMs: INTERPOLATION_DELAY_MS,
+/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts:694:      const renderTime = (clock.ready() ? clock.estimatedServerTimeMs(nowMs) : serverTickTimeMs) - INTERPOLATION_DELAY_MS;
 ```
 
 > TOOL
@@ -2851,7 +2851,7 @@ tool_use Write
 id: toolu_01HAynNHZUxAzbNaVSh5ZsDZ
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/clock.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/clock.ts",
   "content": "import { TICK_SECONDS } from \"@/lib/game/engine/tickDriver\";\n\n/**\n * Client-side server-clock estimation from ping/pong pairs. RTT is an EWMA\n * (display + prediction timeouts want \"typical\", not \"best\"). The OFFSET is\n * NTP-style: of the recent pongs, trust the one with the lowest RTT — the\n * sample least inflated by queueing, whose half-RTT split is most honest.\n * A pure EWMA offset wobbles with every jittery pong, and the interpolation\n * render clock wobbles with it; the min-RTT pick stays put. The applied\n * offset slews toward the target (no visible time-warp) and snaps only on\n * big discontinuities (first sample, reconnect).\n */\nexport type ClockSync = {\n  /** Feed one pong (echoes the ping's send time + the server's tick). */\n  onPong(sentMs: number, nowMs: number, serverTick: number): void;\n  /** Estimated server timeline position (ms on the tick clock) at local `nowMs`. Advances the slew — call it with monotonic times. */\n  estimatedServerTimeMs(nowMs: number): number;\n  /** Smoothed round-trip time (ms); 0 before the first pong. */\n  rttMs(): number;\n  /** True once at least one pong has been folded in. */\n  ready(): boolean;\n};\n\n/** Pong samples considered for the min-RTT offset pick (16 × 1 […]
 
 > TOOL
@@ -2859,7 +2859,7 @@ id: toolu_01HAynNHZUxAzbNaVSh5ZsDZ
 tool_result
 id: toolu_01HAynNHZUxAzbNaVSh5ZsDZ
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/net/clock.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/net/clock.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2869,7 +2869,7 @@ id: toolu_013xixMZxwQefbXBBUg2xKgg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/interpolation.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/interpolation.ts",
   "old_string": "/**\n * Entity interpolation: remote players and mobs render ~125 ms in the past,\n * lerped between the two authoritative samples that bracket the target time.\n * Pure math over per-entity ring buffers — no engine, no sockets.\n */\n\nexport const INTERPOLATION_DELAY_MS = 125;\nconst BUFFER_SIZE = 32; // ~1.6s of 20 Hz samples",
   "new_string": "/**\n * Entity interpolation: remote players and mobs render in the past, lerped\n * between the two authoritative samples that bracket the target time. How FAR\n * in the past is adaptive: a fixed delay sized for LAN jitter underruns on a\n * jittery long-haul link — ticks arrive in bursts, the buffer runs dry, and\n * remote entities freeze-and-snap. The DelayController measures tick\n * inter-arrival jitter and sizes the delay to absorb it, slewing gradually so\n * remote timelines never visibly warp. Pure math over per-entity ring\n * buffers — no engine, no sockets.\n */\n\n/** The floor (the old fixed delay) — what clean links converge to. */\nexport const INTERPOLATION_DELAY_MIN_MS = 125;\nexport const INTERPOLATION_DELAY_MAX_MS = 450;\n/** Delay target = nominal tick interval + this × the p90 arrival deviation. */\nexport const INTERPOLATION_JITTER_MULT = 2;\n/** How […]
 
@@ -2878,7 +2878,7 @@ id: toolu_013xixMZxwQefbXBBUg2xKgg
 tool_result
 id: toolu_013xixMZxwQefbXBBUg2xKgg
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/net/interpolation.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/net/interpolation.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2888,7 +2888,7 @@ id: toolu_01W9PZB1WWMXqzgESM1nfAG4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/interpolation.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/interpolation.ts",
   "old_string": "    latest() {\n      return samples[samples.length - 1] ?? null;\n    }\n  };\n}",
   "new_string": "    latest() {\n      return samples[samples.length - 1] ?? null;\n    }\n  };\n}\n\nexport type DelayController = {\n  /** Feed one tick frame's arrival (client wall clock + server tick number). */\n  onTickArrival(nowMs: number, tickN: number): void;\n  /** Slewed effective delay for this frame — call once per rAF (it advances the slew). */\n  effectiveDelayMs(nowMs: number): number;\n  /** The current effective delay without advancing the slew (for stats). */\n  currentDelayMs(): number;\n  /** p90 |inter-arrival − nominal| over the window (for stats). */\n  jitterMs(): number;\n  /** Forget arrival history (reconnect/world-sync — the gap isn't jitter). Keeps the effective delay. */\n  reset(): void;\n};\n\nexport function createDelayController(nominalMs = 50): DelayController {\n  const deviations: number[] = [];\n  let lastArrivalMs: number | null = null;\n  let lastTickN = 0;\n  let effective = INTERPOLATION_DELAY_MIN_MS;\n  let lastSlewMs: number | null = null;\n\n  const p90 = (): number => {\n    if (deviations.length === 0) return 0;\n    const sorted = [...deviations].sort((a, b) => a - b);\n    return sorted[Math.min(sorted.length - 1, Math.floor(sorted.length * 0.9))];\n  };\n\n  return {\n    onTickArrival(nowMs, tickN) {\n      // Non-increasing tick numbers are dupes/reordered frames, not jitter.\n      if (lastTickN […]
 
@@ -2897,7 +2897,7 @@ id: toolu_01W9PZB1WWMXqzgESM1nfAG4
 tool_result
 id: toolu_01W9PZB1WWMXqzgESM1nfAG4
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/net/interpolation.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/net/interpolation.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2907,7 +2907,7 @@ id: toolu_011Kr2L5m1ouWu3LvEzZwQh5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
   "old_string": "import { createPoseBuffer, INTERPOLATION_DELAY_MS, type PoseBuffer } from \"./interpolation\";",
   "new_string": "import { createDelayController, createPoseBuffer, type PoseBuffer } from \"./interpolation\";"
 }
@@ -2918,7 +2918,7 @@ id: toolu_011Kr2L5m1ouWu3LvEzZwQh5
 tool_result
 id: toolu_011Kr2L5m1ouWu3LvEzZwQh5
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2928,7 +2928,7 @@ id: toolu_015aJbCQjZbMU9mqAwPPtBMH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
   "old_string": "  const clock = createClockSync();\n  const pendingEvents: GameEvent[] = [];",
   "new_string": "  const clock = createClockSync();\n  const delayCtl = createDelayController();\n  const pendingEvents: GameEvent[] = [];"
 }
@@ -2939,7 +2939,7 @@ id: toolu_015aJbCQjZbMU9mqAwPPtBMH
 tool_result
 id: toolu_015aJbCQjZbMU9mqAwPPtBMH
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2949,7 +2949,7 @@ id: toolu_017XE8hALCaziwg5U6XUeob9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
   "old_string": "    switch (message.t) {\n      case \"tick\": {\n        serverTickTimeMs = message.n * TICK_SECONDS * 1000;",
   "new_string": "    switch (message.t) {\n      case \"tick\": {\n        delayCtl.onTickArrival(performance.now(), message.n);\n        serverTickTimeMs = message.n * TICK_SECONDS * 1000;"
 }
@@ -2960,7 +2960,7 @@ id: toolu_017XE8hALCaziwg5U6XUeob9
 tool_result
 id: toolu_017XE8hALCaziwg5U6XUeob9
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2970,7 +2970,7 @@ id: toolu_01XgTdwde4wSa9wwExqHUNud
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
   "old_string": "    netStats: () => ({\n      rttMs: clock.rttMs(),\n      jitterMs: 0, // adaptive-interpolation work fills this in\n      interpDelayMs: INTERPOLATION_DELAY_MS,\n      inKBps: traffic.inKBps,\n      outKBps: traffic.outKBps,\n      pendingPredictions: 0 // prediction-ledger work fills this in\n    }),",
   "new_string": "    netStats: () => ({\n      rttMs: clock.rttMs(),\n      jitterMs: delayCtl.jitterMs(),\n      interpDelayMs: delayCtl.currentDelayMs(),\n      inKBps: traffic.inKBps,\n      outKBps: traffic.outKBps,\n      pendingPredictions: 0 // prediction-ledger work fills this in\n    }),"
 }
@@ -2981,7 +2981,7 @@ id: toolu_01XgTdwde4wSa9wwExqHUNud
 tool_result
 id: toolu_01XgTdwde4wSa9wwExqHUNud
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2991,7 +2991,7 @@ id: toolu_01F85VFrrsGNMRijpuZHHrqG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
   "old_string": "      // Interpolation: remote entities render ~125ms in the past.\n      const renderTime = (clock.ready() ? clock.estimatedServerTimeMs(nowMs) : serverTickTimeMs) - INTERPOLATION_DELAY_MS;",
   "new_string": "      // Interpolation: remote entities render in the past, far enough to\n      // absorb the measured arrival jitter (adaptive, slewed — no warping).\n      const renderTime = (clock.ready() ? clock.estimatedServerTimeMs(nowMs) : serverTickTimeMs) - delayCtl.effectiveDelayMs(nowMs);"
 }
@@ -3002,7 +3002,7 @@ id: toolu_01F85VFrrsGNMRijpuZHHrqG
 tool_result
 id: toolu_01F85VFrrsGNMRijpuZHHrqG
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3016,7 +3016,7 @@ id: toolu_01YbQdnt773uwAgAz5eKRyYE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
   "old_string": "const HANDSHAKE_TIMEOUT_MS = 15000;",
   "new_string": "const HANDSHAKE_TIMEOUT_MS = 15000;\n\n/** Ping cadence — 1 Hz keeps the clock's min-RTT window (~16 samples) fresh at ~40 B/s. */\nconst PING_INTERVAL_MS = 1000;"
 }
@@ -3027,7 +3027,7 @@ id: toolu_01YbQdnt773uwAgAz5eKRyYE
 tool_result
 id: toolu_01YbQdnt773uwAgAz5eKRyYE
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3037,7 +3037,7 @@ id: toolu_013BKeTHdgda1FCXw3Q6zvjK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
   "old_string": "      if (open && nowMs - lastPingMs >= 2000) {\n        lastPingMs = nowMs;\n        delayedSend(encodeClientMessage({ t: \"ping\", id: seq, tMs: nowMs }));\n      }",
   "new_string": "      if (open && nowMs - lastPingMs >= PING_INTERVAL_MS) {\n        lastPingMs = nowMs;\n        delayedSend(encodeClientMessage({ t: \"ping\", id: seq, tMs: nowMs }));\n      }"
 }
@@ -3048,7 +3048,7 @@ id: toolu_013BKeTHdgda1FCXw3Q6zvjK
 tool_result
 id: toolu_013BKeTHdgda1FCXw3Q6zvjK
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3058,7 +3058,7 @@ id: toolu_01RCuREV75jZ1Uhr6VPL3tdB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
   "old_string": "  const applyWorldSync = (sync: WorldSync) => {\n    state.blockChanges.applySavedChanges(sync.changes);\n    state.worldMeshDirty = true;\n    state.dayClock = sync.dayClock;\n    serverTickTimeMs = sync.tick * TICK_SECONDS * 1000;",
   "new_string": "  const applyWorldSync = (sync: WorldSync) => {\n    // A (re)sync follows a gap that is not jitter — don't let it poison the window.\n    delayCtl.reset();\n    state.blockChanges.applySavedChanges(sync.changes);\n    state.worldMeshDirty = true;\n    state.dayClock = sync.dayClock;\n    serverTickTimeMs = sync.tick * TICK_SECONDS * 1000;"
 }
@@ -3069,7 +3069,7 @@ id: toolu_01RCuREV75jZ1Uhr6VPL3tdB
 tool_result
 id: toolu_01RCuREV75jZ1Uhr6VPL3tdB
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3082,7 +3082,7 @@ tool_use Bash
 id: toolu_01XkPqTWj8fEptM5UAdb6wXm
 ```json
 {
-  "command": "grep -n \"createClockSync\\|describe(\" /Users/hutusi/workspace/ai/david/monecraft/lib/net/protocol.test.ts",
+  "command": "grep -n \"createClockSync\\|describe(\" /home/<USER>/workspace/ai/david/monecraft/lib/net/protocol.test.ts",
   "description": "Locate clock describe in protocol.test.ts"
 }
 ```
@@ -3105,7 +3105,7 @@ tool_use Bash
 id: toolu_01C9PDhKTybmYeMiobTTHjAi
 ```json
 {
-  "command": "sed -n '1,5p' /Users/hutusi/workspace/ai/david/monecraft/lib/net/protocol.test.ts",
+  "command": "sed -n '1,5p' /home/<USER>/workspace/ai/david/monecraft/lib/net/protocol.test.ts",
   "description": "Show protocol.test.ts imports"
 }
 ```
@@ -3158,7 +3158,7 @@ tool_use Bash
 id: toolu_0159HZ3QsfTXymNcD9UVu5vg
 ```json
 {
-  "command": "grep -n \"INTERPOLATION_DELAY_MS\\|import\" /Users/hutusi/workspace/ai/david/monecraft/lib/net/interpolation.test.ts | head",
+  "command": "grep -n \"INTERPOLATION_DELAY_MS\\|import\" /home/<USER>/workspace/ai/david/monecraft/lib/net/interpolation.test.ts | head",
   "description": "Check interpolation.test.ts imports"
 }
 ```
@@ -3178,7 +3178,7 @@ tool_use Write
 id: toolu_01DBvwA3gP7z9yYWGAU6Kyzo
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/clock.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/clock.test.ts",
   "content": "import { describe, expect, test } from \"bun:test\";\nimport { createClockSync } from \"./clock\";\n\n/**\n * The min-RTT clock against scripted pongs. Scenario convention: the true\n * relation is serverMs = localMs + 48_000; a pong sent at `s` takes `up` ms to\n * the server (which stamps its tick there) and `down` ms back. The estimator\n * only ever sees (sentMs, nowMs, serverTick) — the asymmetry is what it must\n * survive.\n */\n\nconst TRUE_OFFSET = 48_000;\n\nfunction pong(clock: ReturnType<typeof createClockSync>, sentMs: number, up: number, down: number): void {\n  const serverMs = sentMs + up + TRUE_OFFSET;\n  if (serverMs % 50 !== 0) throw new Error(`test bug: serverMs ${serverMs} not on a tick`);\n  clock.onPong(sentMs, sentMs + up + down, serverMs / 50);\n}\n\ndescribe(\"clock sync\", () => {\n  test(\"seeds from the first pong and keeps rttMs an EWMA\", () => {\n    const clock = createClockSync();\n    expect(clock.ready()).toBe(false);\n    pong(clock, 960, 40, 40); // rtt 80, symmetric — offset sample is exact\n    expect(clock.ready()).toBe(true);\n    expect(clock.rttMs()).toBeCloseTo(80, 5);\n    expect(clock.estimatedServerTimeMs(1040)).toBeCloseTo(1040 + TRUE_OFFSET, 5);\n    pong(clock, 2010, 40, 440); // rtt 480\n    expect(clock.rttMs()).toBeCloseTo(80 * 0.8 + 480 * 0.2, 5);\n  });\n\n  test(\"min-RTT pick holds the offset through asymmetric jitter (where an EWMA drifts)\", () => […]
 
 > TOOL
@@ -3186,7 +3186,7 @@ id: toolu_01DBvwA3gP7z9yYWGAU6Kyzo
 tool_result
 id: toolu_01DBvwA3gP7z9yYWGAU6Kyzo
 ```
-File created successfully at: /Users/hutusi/workspace/ai/david/monecraft/lib/net/clock.test.ts (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/ai/david/monecraft/lib/net/clock.test.ts (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3200,7 +3200,7 @@ id: toolu_015KgykZz8ud2cUJQYfdQZRE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/clock.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/clock.test.ts",
   "old_string": "  test(\"a small target change slews at OFFSET_SLEW_MS_PER_SEC, not instantly\", () => {\n    const clock = createClockSync();\n    pong(clock, 950, 50, 50); // rtt 100 → applied offset 48_000\n    expect(clock.estimatedServerTimeMs(1050)).toBeCloseTo(1050 + 48_000, 5);\n    // A new best sample (rtt 80) whose asymmetry shifts the target +100.\n    pong(clock, 1960, 140, -60 + 20); // up 140/down -40 is nonsense — build directly below instead\n    expect(true).toBe(true);\n  });",
   "new_string": "  test(\"a small target change slews at OFFSET_SLEW_MS_PER_SEC, not instantly\", () => {\n    const clock = createClockSync();\n    pong(clock, 950, 50, 50); // rtt 100 → applied offset 48_000\n    expect(clock.estimatedServerTimeMs(1050)).toBeCloseTo(1050 + 48_000, 5);\n    // A new best sample (rtt 80) whose offset lands at 48_100: +100 target\n    // shift, under the snap threshold. serverMs = 48_100 - 40 + 2_040 = 50_100.\n    clock.onPong(1960, 2040, 50_100 / 50);\n    // 40 ms of correction per second: 48_040 after 1 s, 48_080 after 2 s,\n    // capped at the 48_100 target on the half-second that overshoots.\n    expect(clock.estimatedServerTimeMs(2050)).toBeCloseTo(2050 + 48_040, 5);\n    expect(clock.estimatedServerTimeMs(3050)).toBeCloseTo(3050 + 48_080, 5);\n    expect(clock.estimatedServerTimeMs(3550)).toBeCloseTo(3550 + 48_100, 5);\n    expect(clock.estimatedServerTimeMs(9999)).toBeCloseTo(9999 + 48_100, 5); // stays converged\n  });"
 }
@@ -3211,7 +3211,7 @@ id: toolu_015KgykZz8ud2cUJQYfdQZRE
 tool_result
 id: toolu_015KgykZz8ud2cUJQYfdQZRE
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/net/clock.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/net/clock.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3220,7 +3220,7 @@ tool_use Bash
 id: toolu_014Wsh7rUMhqtbke2e99Ettv
 ```json
 {
-  "command": "tail -20 /Users/hutusi/workspace/ai/david/monecraft/lib/net/interpolation.test.ts",
+  "command": "tail -20 /home/<USER>/workspace/ai/david/monecraft/lib/net/interpolation.test.ts",
   "description": "See end of interpolation.test.ts"
 }
 ```
@@ -3258,7 +3258,7 @@ tool_use Bash
 id: toolu_01BLynqtLMJjSGBmR6Sd7X2L
 ```json
 {
-  "command": "cat >> /Users/hutusi/workspace/ai/david/monecraft/lib/net/interpolation.test.ts <<'EOF'\n\ndescribe(\"delay controller\", () => {\n  test(\"clean 20 Hz arrivals sit on the floor\", () => {\n    const ctl = createDelayController();\n    for (let n = 1; n <= 40; n += 1) ctl.onTickArrival(n * 50, n);\n    expect(ctl.jitterMs()).toBe(0);\n    ctl.effectiveDelayMs(2000);\n    expect(ctl.effectiveDelayMs(10_000)).toBe(INTERPOLATION_DELAY_MIN_MS);\n  });\n\n  test(\"jittery arrivals raise the delay toward the cap, slew-bounded\", () => {\n    const ctl = createDelayController();\n    // Alternating ±150 ms arrival error: per-gap deviation ~300 ms → target\n    // clamps at the max.\n    for (let n = 1; n <= 40; n += 1) ctl.onTickArrival(n * 50 + (n % 2 === 0 ? 150 : -150), n);\n    expect(ctl.jitterMs()).toBeGreaterThan(200);\n    const first = ctl.effectiveDelayMs(10_000);\n    expect(first).toBe(INTERPOLATION_DELAY_MIN_MS); // slew starts on the second call\n    const oneSecondLater = ctl.effectiveDelayMs(11_000);\n    expect(oneSecondLater - first).toBeLessThanOrEqual(DELAY_SLEW_MS_PER_SEC + 1e-9);\n    expect(oneSecondLater).toBeGreaterThan(first);\n    // Given time, it converges to the cap and stays there.\n    expect(ctl.effectiveDelayMs(60_000)).toBe(INTERPOLATION_DELAY_MAX_MS);\n    expect(ctl.currentDelayMs()).toBe(INTERPOLATION_DELAY_MAX_MS);\n  });\n\n  test(\"a coalesced burst after a stall counts once (tick-number-aware)\", () => {\n    const ctl = createDelayController();\n    ctl.onTickArrival(500, 10);\n    // Frames for ticks 10→12 arriving 100 ms apart is exactly on schedule.\n    ctl.onTickArrival(600, 12);\n    expect(ctl.jitterMs()).toBe(0);\n  });\n\n  test(\"dupes and reordered ticks are ignored\", () => {\n    const ctl = createDelayController();\n    ctl.onTickArrival(500, 10);\n    ctl.onTickArrival(550, 11);\n    ctl.onTickArrival(9999, 11); // dupe\n […]
+  "command": "cat >> /home/<USER>/workspace/ai/david/monecraft/lib/net/interpolation.test.ts <<'EOF'\n\ndescribe(\"delay controller\", () => {\n  test(\"clean 20 Hz arrivals sit on the floor\", () => {\n    const ctl = createDelayController();\n    for (let n = 1; n <= 40; n += 1) ctl.onTickArrival(n * 50, n);\n    expect(ctl.jitterMs()).toBe(0);\n    ctl.effectiveDelayMs(2000);\n    expect(ctl.effectiveDelayMs(10_000)).toBe(INTERPOLATION_DELAY_MIN_MS);\n  });\n\n  test(\"jittery arrivals raise the delay toward the cap, slew-bounded\", () => {\n    const ctl = createDelayController();\n    // Alternating ±150 ms arrival error: per-gap deviation ~300 ms → target\n    // clamps at the max.\n    for (let n = 1; n <= 40; n += 1) ctl.onTickArrival(n * 50 + (n % 2 === 0 ? 150 : -150), n);\n    expect(ctl.jitterMs()).toBeGreaterThan(200);\n    const first = ctl.effectiveDelayMs(10_000);\n    expect(first).toBe(INTERPOLATION_DELAY_MIN_MS); // slew starts on the second call\n    const oneSecondLater = ctl.effectiveDelayMs(11_000);\n    expect(oneSecondLater - first).toBeLessThanOrEqual(DELAY_SLEW_MS_PER_SEC + 1e-9);\n    expect(oneSecondLater).toBeGreaterThan(first);\n    // Given time, it converges to the cap and stays there.\n    expect(ctl.effectiveDelayMs(60_000)).toBe(INTERPOLATION_DELAY_MAX_MS);\n    expect(ctl.currentDelayMs()).toBe(INTERPOLATION_DELAY_MAX_MS);\n  });\n\n  test(\"a coalesced burst after a stall counts once (tick-number-aware)\", () => {\n    const ctl = createDelayController();\n    ctl.onTickArrival(500, 10);\n    // Frames for ticks 10→12 arriving 100 ms apart is exactly on schedule.\n    ctl.onTickArrival(600, 12);\n    expect(ctl.jitterMs()).toBe(0);\n  });\n\n  test(\"dupes and reordered ticks are ignored\", () => {\n    const ctl = createDelayController();\n    ctl.onTickArrival(500, 10);\n    ctl.onTickArrival(550, 11);\n    ctl.onTickArrival(9999, 11); // dupe\n […]
 
 > TOOL
 
@@ -3302,7 +3302,7 @@ tool_use Bash
 id: toolu_01XK4Rtxvmp4mXehtuZsJosL
 ```json
 {
-  "command": "grep -n \"125\\|clock.ts\\|interpolation\" /Users/hutusi/workspace/ai/david/monecraft/docs/architecture.md | head; grep -n \"interpolation\\|clock\\|lib/net\" /Users/hutusi/workspace/ai/david/monecraft/docs/testing.md | head",
+  "command": "grep -n \"125\\|clock.ts\\|interpolation\" /home/<USER>/workspace/ai/david/monecraft/docs/architecture.md | head; grep -n \"interpolation\\|clock\\|lib/net\" /home/<USER>/workspace/ai/david/monecraft/docs/testing.md | head",
   "description": "Find doc lines to update"
 }
 ```
@@ -3358,7 +3358,7 @@ id: toolu_016QKNYWDeNvMojHaSbvAJv7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md",
   "old_string": "### Changed\n\n- **Multiplayer wire diet — quantized poses + compression**:",
   "new_string": "### Changed\n\n- **Smooth remote players/mobs on jittery connections — adaptive interpolation + hardened clock sync**: the interpolation delay (how far in the past remote entities render) is no longer a fixed 125 ms — it now sizes itself from measured tick-arrival jitter (125–450 ms, drifting at most 60 ms/s so nothing visibly warps). On a clean LAN nothing changes; on a jittery long-haul link remote players stop freeze-and-snapping. The server-clock estimate switches from a pure EWMA to an NTP-style min-RTT pick (the pong least inflated by queueing anchors the offset; slewed, snapping only on reconnect-sized jumps), and pings tighten from 2 s to 1 s to keep that window fresh.\n\n### Changed\n\n- **Multiplayer wire diet — quantized poses + compression**:"
 }
@@ -3369,7 +3369,7 @@ id: toolu_016QKNYWDeNvMojHaSbvAJv7
 tool_result
 id: toolu_016QKNYWDeNvMojHaSbvAJv7
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3379,7 +3379,7 @@ id: toolu_01XCRSpKgMiqEVeZ4F7YrZLB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md",
   "old_string": "- **Smooth remote players/mobs on jittery connections — adaptive interpolation + hardened clock sync**: the interpolation delay (how far in the past remote entities render) is no longer a fixed 125 ms — it now sizes itself from measured tick-arrival jitter (125–450 ms, drifting at most 60 ms/s so nothing visibly warps). On a clean LAN nothing changes; on a jittery long-haul link remote players stop freeze-and-snapping. The server-clock estimate switches from a pure EWMA to an NTP-style min-RTT pick (the pong least inflated by queueing anchors the offset; slewed, snapping only on reconnect-sized jumps), and pings tighten from 2 s to 1 s to keep that window fresh.\n\n### Changed\n\n- **Multiplayer wire diet — quantized poses + compression**:",
   "new_string": "- **Smooth remote players/mobs on jittery connections — adaptive interpolation + hardened clock sync**: the interpolation delay (how far in the past remote entities render) is no longer a fixed 125 ms — it now sizes itself from measured tick-arrival jitter (125–450 ms, drifting at most 60 ms/s so nothing visibly warps). On a clean LAN nothing changes; on a jittery long-haul link remote players stop freeze-and-snapping. The server-clock estimate […]
 
@@ -3388,7 +3388,7 @@ id: toolu_01XCRSpKgMiqEVeZ4F7YrZLB
 tool_result
 id: toolu_01XCRSpKgMiqEVeZ4F7YrZLB
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3478,7 +3478,7 @@ tool_use Bash
 id: toolu_017cnTF94ZgkX4gHyi2CCcaY
 ```json
 {
-  "command": "grep -n \"actingPlayer\\|private emit\\|consumeEvents\\|events:\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts | head -20",
+  "command": "grep -n \"actingPlayer\\|private emit\\|consumeEvents\\|events:\" /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts | head -20",
   "description": "Locate emit/actingPlayer in GameEngine"
 }
 ```
@@ -3509,7 +3509,7 @@ tool_use Read
 id: toolu_01GfXrsgmKu1jxAwg75SrR5E
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "offset": 1175,
   "limit": 55
 }
@@ -3557,7 +3557,7 @@ tool_use Bash
 id: toolu_01WtfGpGoyQJTpRZirYzqShj
 ```json
 {
-  "command": "grep -n \"authority\\b\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts | head -8; grep -n \"export type GameEvent\\|export type PlayerId\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts",
+  "command": "grep -n \"authority\\b\" /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts | head -8; grep -n \"export type GameEvent\\|export type PlayerId\" /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts",
   "description": "Find authority field and GameEvent type"
 }
 ```
@@ -3585,7 +3585,7 @@ tool_use Read
 id: toolu_01C9cLQjygmV3ef1Vw8FD6kX
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts",
   "offset": 520,
   "limit": 45
 }
@@ -3627,7 +3627,7 @@ tool_use Bash
 id: toolu_01E1UjhMsYwBE4WsxeT7r1Fa
 ```json
 {
-  "command": "grep -n \"advancementUnlocked\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts | head -3; grep -n \"ev:\" /Users/hutusi/workspace/ai/david/monecraft/lib/net/protocol.ts",
+  "command": "grep -n \"advancementUnlocked\" /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts | head -3; grep -n \"ev:\" /home/<USER>/workspace/ai/david/monecraft/lib/net/protocol.ts",
   "description": "Check advancement event + tick ev typing"
 }
 ```

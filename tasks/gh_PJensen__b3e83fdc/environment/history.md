@@ -1,9 +1,9 @@
 > SYSTEM
 
-# AGENTS.md instructions for /home/pjensen/Repos/JSHack
+# AGENTS.md instructions for /home/<USER>/Repos/JSHack
 
 <INSTRUCTIONS>
-@/home/pjensen/.codex/RTK.md
+@/home/<USER>/.codex/RTK.md
 
 --- project-doc ---
 
@@ -66,8 +66,8 @@ tool_use exec_command
 id: call_hnc3wU7U4VyTYGpVfhW9lI5s
 ```json
 {
-  "cmd": "sed -n '1,220p' /home/pjensen/Repos/JSHack/.agents/skills/using-entire/SKILL.md",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "cmd": "sed -n '1,220p' /home/<USER>/Repos/JSHack/.agents/skills/using-entire/SKILL.md",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -80,7 +80,7 @@ id: call_GaGVHBrCUA2WYdbH7VxFd7mf
 ```json
 {
   "cmd": "rg -n \"defineInteractable|defineItem|defineMonster|rift|Rift|lighting|light|quest|Quest\" src tests docs .agents --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -162,8 +162,8 @@ tool_use exec_command
 id: call_SpfClTf3JB4FFpEaLH6aysl2
 ```json
 {
-  "cmd": "sed -n '1,220p' /home/pjensen/.codex/RTK.md",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/RTK.md",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -176,7 +176,7 @@ id: call_UNONWKr0SDEUGPE8E2HyHiHh
 ```json
 {
   "cmd": "entire status",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -189,7 +189,7 @@ id: call_8qS4TMGOvllXbKVebmylyVm9
 ```json
 {
   "cmd": "entire dispatch --no-pager --json",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -202,7 +202,7 @@ id: call_CTrmnWadJMhqukntJFwTWU2W
 ```json
 {
   "cmd": "rg --files src/rules/content src/content src/rules/quests src/rules/utils src/rules/systems src/display/lighting tests docs | rg \"(interact|quest|rift|light|monster|item|CONTENT|PROGRESSION)\"",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -449,7 +449,7 @@ id: call_vk5ZwirS4TG6gV5nQuMYeGLR
 ```json
 {
   "cmd": "rtk entire dispatch --help",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -462,7 +462,7 @@ id: call_lpoeGgtCoMPqwYdzhrvVK02G
 ```json
 {
   "cmd": "rtk entire recap --help",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -475,7 +475,7 @@ id: call_Cp9NZT3t19h3oCcjvKiyCKgX
 ```json
 {
   "cmd": "rtk sed -n '1,220p' docs/PROGRESSION_RESONANCE_PLAN.md",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -488,7 +488,7 @@ id: call_2pWLqvFM4Oi3W5gmIgRz6BlL
 ```json
 {
   "cmd": "rtk sed -n '1,190p' docs/CONTENT-MIGRATION-ROADMAP.md",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -650,7 +650,7 @@ id: call_3Fl5z96q2esBvV537BTz8hko
 ```json
 {
   "cmd": "rtk entire recap --week --static --color never",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -663,7 +663,7 @@ id: call_mTcoKWqwYRzYGJLxB8QQrne9
 ```json
 {
   "cmd": "rtk sed -n '220,480p' docs/PROGRESSION_RESONANCE_PLAN.md",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -676,7 +676,7 @@ id: call_dA7UGeRbby48w3iZgo4H9k9j
 ```json
 {
   "cmd": "rtk sed -n '1,220p' src/content/define.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -689,7 +689,7 @@ id: call_9hFIcgHgozx9uUlS9cvxMiDv
 ```json
 {
   "cmd": "rtk sed -n '1,220p' src/rules/systems/interactionSystem.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -875,7 +875,7 @@ id: call_8gpNWtwi0WeOaQdw8R36JMWL
 ```json
 {
   "cmd": "rtk find src/content/interactables -maxdepth 3 -type f -name '*.js' -print",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -888,7 +888,7 @@ id: call_yl0k5zKFWfXYaLZbDqOPEzSv
 ```json
 {
   "cmd": "rtk sed -n '1,220p' src/rules/content/interaction/interactPayloads.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -901,7 +901,7 @@ id: call_IuZ9ZqGHFSlU8BV4wSIqNGhy
 ```json
 {
   "cmd": "rtk rg -n \"defineInteractable\\(|registerInteractable\\(|Interactable,|action: \\\"|action: '\" src tests --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -914,7 +914,7 @@ id: call_deb7ZP1Pgf8UDXZScS5rtaT0
 ```json
 {
   "cmd": "rtk rg -n \"defineMonster\\(|registerMonster\\(|export const MONSTERS|export const TOWNFOLK|defineItem\\(\" src/content src/rules/data tests --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -1099,7 +1099,7 @@ id: call_mQQSg1zV8zEANEFjXmwlKNgN
 ```json
 {
   "cmd": "rtk sed -n '1,120p' src/rules/data/monsters.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1112,7 +1112,7 @@ id: call_qmivEmEj5EYFU7LqPKfF6VAS
 ```json
 {
   "cmd": "rtk sed -n '1,120p' src/rules/data/townfolk.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1125,7 +1125,7 @@ id: call_vrlQ3DoBECVl8MytAiC5Nmd5
 ```json
 {
   "cmd": "rtk rg -n \"const .*Payload|export const|toggleDoor:|openChest:|fountain:|prayAltar:|readTownBulletin|readText:|harvestNode:|openShop:|returnPortal|riftPortal|openEnchantressServices|openGemVendor|openBookVendor|talkToNPC\" src/rules/content/interaction/interactPayloads.js src/rules/content/interaction/actionMenus.js src/content/interactables",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -1138,7 +1138,7 @@ id: call_TSk2TgE8ffuQEZbaLWZClBrL
 ```json
 {
   "cmd": "rtk sed -n '1,240p' src/rules/utils/riftRuntime.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -1389,7 +1389,7 @@ id: call_MqV8Bjnq5VCVFshIzHTkjjgV
 ```json
 {
   "cmd": "rtk rg -n \"^  [A-Za-z0-9_]+: \\{\" src/rules/content/interaction/interactPayloads.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1402,7 +1402,7 @@ id: call_IUr7XlLzQg0dvR1GJv7qU078
 ```json
 {
   "cmd": "rtk sed -n '1,220p' src/content/interactables/rift/index.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -1415,7 +1415,7 @@ id: call_w01IbWlgHoqKErGGv8bOsOUk
 ```json
 {
   "cmd": "rtk sed -n '1,220p' src/rules/quests/localGenerator.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -1428,7 +1428,7 @@ id: call_2wLfD4z5fSRdR89IVKlBlkq2
 ```json
 {
   "cmd": "rtk sed -n '1,220p' src/rules/quests/definitions/runContract.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -1637,7 +1637,7 @@ id: call_g3nDgaG0JcGO9FrRcS3QO3fe
 ```json
 {
   "cmd": "rtk rg -n \"RiftEnterRequested|RiftOpened|RiftClosed|riftPlaneId|activeRiftRecord|RiftState|temporalPattern: \\\"rift\\\"|temporalPattern: 'rift'\" src tests events --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -1650,7 +1650,7 @@ id: call_cVoeGDi5jRx8ioyGsUYiK1nM
 ```json
 {
   "cmd": "rtk rg -n \"LightEmitter|lightEmit|temporalPattern|voidStrength|baseColor|getLightSources|lighting\" src/rules src/display src/bridge tests --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -1663,7 +1663,7 @@ id: call_Q2jG7RSMrjb7AOurRxcDC2LC
 ```json
 {
   "cmd": "rtk sed -n '1,220p' src/display/lighting/sources/index.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -1676,7 +1676,7 @@ id: call_29GiH1SRnqzgYXYGGZHqhnUU
 ```json
 {
   "cmd": "rtk sed -n '1,220p' src/rules/quests/definitions/graveyardWatch.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -1869,7 +1869,7 @@ id: call_Gq16zsd8utPB3pIeflsdhxlb
 ```json
 {
   "cmd": "rtk sed -n '1,360p' src/rules/quests/definitions/ratInfestation.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 26000
 }
@@ -1882,7 +1882,7 @@ id: call_FmNtXgrxlBsdSgImkpCSeuKO
 ```json
 {
   "cmd": "rtk sed -n '220,520p' src/rules/quests/definitions/runContract.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 26000
 }
@@ -1895,7 +1895,7 @@ id: call_P12IB1filEyiFdkFmL6vPolv
 ```json
 {
   "cmd": "rtk sed -n '220,520p' src/rules/quests/localGenerator.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 26000
 }
@@ -1908,7 +1908,7 @@ id: call_jjZVqiPPvckWLlCfBIsvFW5H
 ```json
 {
   "cmd": "rtk sed -n '1,180p' src/display/lighting/sources/temporalPatterns.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -2115,7 +2115,7 @@ id: call_1Lm4bUF2ztsfsgqOdYpQ3A3f
 ```json
 {
   "cmd": "rtk entire recap --week --static --color never",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000,
   "sandbox_permissions": "require_escalated",
@@ -2175,7 +2175,7 @@ id: call_DHrHzokMoCwCl1qZHTafZjAw
 ```json
 {
   "cmd": "rtk entire checkpoint --help",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2188,7 +2188,7 @@ id: call_vJ3cyp8xPBRuJ5jMUpTaBd41
 ```json
 {
   "cmd": "rtk git log --oneline --decorate -20",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2201,7 +2201,7 @@ id: call_QTIK8M7zS2FzcpOw9c2Ap9No
 ```json
 {
   "cmd": "rtk git status --short",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2306,7 +2306,7 @@ id: call_hpwXmQFZKO4zurSOx64WOlgQ
 ```json
 {
   "cmd": "rtk entire checkpoint list --help",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2319,7 +2319,7 @@ id: call_EK6kjKPVIUXEjEoWEsoz5Idr
 ```json
 {
   "cmd": "rtk entire checkpoint search \"interactable affordance defineInteractable rift quest lighting defineMonster defineItem\"",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000,
   "sandbox_permissions": "require_escalated",
@@ -2340,7 +2340,7 @@ id: call_pRpt5V1chLlh9YVnxqE0qtNr
 ```json
 {
   "cmd": "rtk git log --format='%h %s%n%b' -12",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -2453,7 +2453,7 @@ id: call_Okv8cFh5hlSSLkTx4FmnkWWG
 ```json
 {
   "cmd": "rtk entire checkpoint explain eac554e48e45 --no-pager",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000,
   "sandbox_permissions": "require_escalated",
@@ -2474,7 +2474,7 @@ id: call_d0yrgY0v8WMYDRotvuyALpIW
 ```json
 {
   "cmd": "rtk entire checkpoint explain 8d0bae19f536 --no-pager",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000,
   "sandbox_permissions": "require_escalated",
@@ -2495,7 +2495,7 @@ id: call_fBMH9LRBsnxa1gRvzT2VTBub
 ```json
 {
   "cmd": "rtk entire checkpoint explain 74e761b4e2fe --no-pager",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000,
   "sandbox_permissions": "require_escalated",
@@ -2516,7 +2516,7 @@ id: call_wMTuKhKJ9ORQMXNjC9JG1Pqe
 ```json
 {
   "cmd": "rtk entire checkpoint explain 6490c6c05f12 --no-pager",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000,
   "sandbox_permissions": "require_escalated",
@@ -2543,7 +2543,7 @@ Output:
 ● Checkpoint eac554e48e45
   session  019f143d-ed19-77e1-8b7f-3e99ea2db79f
   created  2026-06-29 16:57:16
-  author   Pete Jensen <jensen.petej@gmail.com>
+  author   Pete Jensen <<REDACTED_EMAIL>>
   tokens   1126.8k
   commits  bcfc9a6 feat: mailbox state ++ glyph changed on interaction
 ────────────────────────────────────────────────────────────
@@ -2589,7 +2589,7 @@ Output:
 ● Checkpoint 8d0bae19f536
   session  019f1443-2e25-7431-9ee3-6ebbfc559008
   created  2026-06-29 16:52:53
-  author   Pete Jensen <jensen.petej@gmail.com>
+  author   Pete Jensen <<REDACTED_EMAIL>>
   commits  eb758bb vfx: portals and rifts, long awaited improvements to particles and glyph fx here.
 ────────────────────────────────────────────────────────────
 ## Intent
@@ -2638,7 +2638,7 @@ Output:
 ● Checkpoint 74e761b4e2fe
   session  019f139e-6fdb-73d1-b113-0fd0610ef720
   created  2026-06-29 13:51:16
-  author   Pete Jensen <jensen.petej@gmail.com>
+  author   Pete Jensen <<REDACTED_EMAIL>>
   tokens   781.5k
   commits  114f467 ux: interactable affordance and 'enter' key
 ────────────────────────────────────────────────────────────
@@ -2689,7 +2689,7 @@ Output:
 ● Checkpoint 6490c6c05f12
   session  019f00a0-2b9d-7762-926a-0096ef5e6ddf
   created  2026-06-29 13:34:10
-  author   Pete Jensen <jensen.petej@gmail.com>
+  author   Pete Jensen <<REDACTED_EMAIL>>
   commits  6390269 ux: interactable now has an affordance to prevent constant bespoke wiring
 ────────────────────────────────────────────────────────────
 ## Intent
@@ -2814,7 +2814,7 @@ id: call_9gcmljSJ07Ncgj7mCKOLaw9Q
 ```json
 {
   "cmd": "rtk rg -n \"examine|inspect|readText|discover|checklist|quest:advanced|quest:progress|dialog:reported|defineVerbRule|affordance|ObjectState|Tombstone|Engraving|Hydraulics|RunObjectiveTarget\" src tests --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -2827,7 +2827,7 @@ id: call_ixpMWTVBkX1Gox7JdcqTcTRo
 ```json
 {
   "cmd": "rtk sed -n '1,260p' src/rules/quests/runtime.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -2840,7 +2840,7 @@ id: call_LKQkFwue8PvROW9igngFNuIW
 ```json
 {
   "cmd": "rtk sed -n '1,180p' src/rules/quests/actions.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -2853,7 +2853,7 @@ id: call_y4zIEYrweCfnOCRxmQC5UArt
 ```json
 {
   "cmd": "rtk sed -n '1,180p' src/rules/interaction/interactRunner.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -3066,7 +3066,7 @@ id: call_aOjT3tSurmxxcJFD5XtwluFm
 ```json
 {
   "cmd": "rtk sed -n '1,230p' src/rules/systems/searchSystem.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -3079,7 +3079,7 @@ id: call_dH6h4EMuSUK7mtCKbpZwGJQ0
 ```json
 {
   "cmd": "rtk sed -n '140,190p' src/main/ui/hudFeeds.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 10000
 }
@@ -3092,7 +3092,7 @@ id: call_AzShIjBTiCWmSRIbesuxjKof
 ```json
 {
   "cmd": "rtk sed -n '990,1045p' src/main/ui/inventoryDataProvider.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3105,7 +3105,7 @@ id: call_GWZplptN5GO84iMWitDqAefk
 ```json
 {
   "cmd": "rtk sed -n '1,80p' src/rules/components/Dungeon.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 10000
 }

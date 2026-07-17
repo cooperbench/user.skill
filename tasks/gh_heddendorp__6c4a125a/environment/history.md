@@ -6,7 +6,7 @@ Here is a list of plugins that are available but not installed. If the user's qu
 - Atlassian Rovo (atlassian-rovo@openai-curated-remote)
 - Slack (slack@openai-curated-remote)
 </recommended_plugins>
-# AGENTS.md instructions for /Users/hedde/.codex/worktrees/55d7/evorto
+# AGENTS.md instructions for /home/<USER>/.codex/worktrees/55d7/evorto
 
 <INSTRUCTIONS>
 # Repository Guidelines
@@ -33,7 +33,7 @@ Keep these files concise. Put implementation-specific guidance in the nearest mo
 > DEVELOPER
 
 /goal Update us to the latest main and review the full application for compliance with our base product documents and [STABILIZATION.md](STABILIZATION.md) . While you are going through the code folder by folder you can save your findings in a new file to prepare them for being worked on later.
-Review our code with [$effect-ts](/Users/hedde/code/evorto/.agents/skills/effect-ts/SKILL.md) and [$uncodixfy](/Users/hedde/code/evorto/.agents/skills/uncodixfy/SKILL.md) as well as [$material-3:material-3](/Users/hedde/code/evorto/.agents/skills/material-3/SKILL.md) 
+Review our code with [$effect-ts](/home/<USER>/code/evorto/.agents/skills/effect-ts/SKILL.md) and [$uncodixfy](/home/<USER>/code/evorto/.agents/skills/uncodixfy/SKILL.md) as well as [$material-3:material-3](/home/<USER>/code/evorto/.agents/skills/material-3/SKILL.md) 
 Remember that we use angular material so not all material guidance may apply.
 Also collect any open questions that have to be cleared up in your file.
 
@@ -406,13 +406,13 @@ The unrelated formatter change is gone. I’m running the final lint and a targe
 
 Rebased onto latest `origin/main` (`9545a2c`) and completed the audit in about 15 minutes.
 
-The prioritized backlog, evidence, deferred scope, and open decisions are in [APPLICATION_COMPLIANCE_AUDIT.md](/Users/hedde/.codex/worktrees/55d7/evorto/APPLICATION_COMPLIANCE_AUDIT.md:1).
+The prioritized backlog, evidence, deferred scope, and open decisions are in [APPLICATION_COMPLIANCE_AUDIT.md](/home/<USER>/.codex/worktrees/55d7/evorto/APPLICATION_COMPLIANCE_AUDIT.md:1).
 
 Key release blockers include QR scanning being globally disabled by `camera=()` policy ([MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/camera)), payment approval/webhook integrity gaps, missing required notification flows, unavailable paid transfers, stale stabilization claims, and finance docs excluded from CI.
 
 Validated with `bun run lint` and the docs test inventory (31 tests across 19 files). Only the new audit document is uncommitted on `codex/full-application-compliance-audit`.
 
-::git-create-branch{cwd="/Users/hedde/.codex/worktrees/55d7/evorto" branch="codex/full-application-compliance-audit"}
+::git-create-branch{cwd="/home/<USER>/.codex/worktrees/55d7/evorto" branch="codex/full-application-compliance-audit"}
 
 <oai-mem-citation>
 <citation_entries>
@@ -488,15 +488,15 @@ id: call_uMEy96pRSHysvt8Q5WEnOXaG
 
 > AGENT
 
-Your intuition is right for the active issue backlog: [APPLICATION_COMPLIANCE_AUDIT.md](/Users/hedde/.codex/worktrees/55d7/evorto/APPLICATION_COMPLIANCE_AUDIT.md:179) should replace `STABILIZATION.md` as release truth.
+Your intuition is right for the active issue backlog: [APPLICATION_COMPLIANCE_AUDIT.md](/home/<USER>/.codex/worktrees/55d7/evorto/APPLICATION_COMPLIANCE_AUDIT.md:179) should replace `STABILIZATION.md` as release truth.
 
 Don’t delete the old file quite yet. It uniquely contains:
 
-- Product and architecture decisions not fully promoted into the base documents, such as scanner, review, profile, and global-admin policy ([STABILIZATION.md](/Users/hedde/.codex/worktrees/55d7/evorto/STABILIZATION.md:22)).
-- The manual Browser review queue ([STABILIZATION.md](/Users/hedde/.codex/worktrees/55d7/evorto/STABILIZATION.md:2333)).
+- Product and architecture decisions not fully promoted into the base documents, such as scanner, review, profile, and global-admin policy ([STABILIZATION.md](/home/<USER>/.codex/worktrees/55d7/evorto/STABILIZATION.md:22)).
+- The manual Browser review queue ([STABILIZATION.md](/home/<USER>/.codex/worktrees/55d7/evorto/STABILIZATION.md:2333)).
 - Historical “fixes applied” provenance, which should be archived rather than treated as current status.
 
-Also, [its source-guard test](/Users/hedde/.codex/worktrees/55d7/evorto/helpers/testing/stabilization-source.spec.ts:35) reads that file, so deleting it now would break validation.
+Also, [its source-guard test](/home/<USER>/.codex/worktrees/55d7/evorto/helpers/testing/stabilization-source.spec.ts:35) reads that file, so deleting it now would break validation.
 
 I recommend: promote confirmed decisions to `PRODUCT.md`/`ARCHITECTURE.md`, move the Browser queue to `QUALITY.md` (and repoint the test), then archive or delete `STABILIZATION.md`. I would not preserve its `Review Next` section verbatim—it contains stale claims, including receipt notifications being manual.
 
@@ -628,7 +628,7 @@ id: call_si1WxZvkhnOsnu2Vcq2g2M9I
 tool_result
 id: call_si1WxZvkhnOsnu2Vcq2g2M9I
 ```
-{"agents":[{"agent_name":"/root","agent_status":"running","last_task_message":"Main thread"},{"agent_name":"/root/decision_gap_analysis","agent_status":"running","last_task_message":null},{"agent_name":"/root/stabilization_cleanup_plan","agent_status":"running","last_task_message":null},{"agent_name":"/root/stabilization_overlap","agent_status":{"completed":"Retire it as active guidance, but don’t delete it before a small migration.\n\n`APPLICATION_COMPLIANCE_AUDIT.md` supersedes it for current release truth and backlog. `STABILIZATION.md` still uniquely contains:\n\n- Confirmed-but-not-yet-promoted product/architecture decisions, especially review rules, scanner semantics, global-admin identity, and profile policies ([STABILIZATION.md](/Users/hedde/.codex/worktrees/55d7/evorto/STABILIZATION.md:29)).\n- The detailed Browser review queue and live ESNcard procedure ([STABILIZATION.md](/Users/hedde/.codex/worktrees/55d7/evorto/STABILIZATION.md:2333)).\n- Historical stabilization/fix provenance.\n\nAlso, [stabilization-source.spec.ts](/Users/hedde/.codex/worktrees/55d7/evorto/helpers/testing/stabilization-source.spec.ts:40) currently reads the file, so direct deletion breaks its source guard.\n\nRecommended disposition:\n\n1. Keep the new audit as the active compliance backlog.\n2. Move confirmed decisions into `PRODUCT.md`/`ARCHITECTURE.md`.\n3. Move the Browser queue into `QUALITY.md` or a focused manual-review document, then repoint its source guard.\n4. Archive the old document as historical provenance—or delete it after that migration, relying on Git history.\n\nDo not carry over its `Review Next` section verbatim: it includes stale claims, including that receipt notification remains manual."},"last_task_message":null}]}
+{"agents":[{"agent_name":"/root","agent_status":"running","last_task_message":"Main thread"},{"agent_name":"/root/decision_gap_analysis","agent_status":"running","last_task_message":null},{"agent_name":"/root/stabilization_cleanup_plan","agent_status":"running","last_task_message":null},{"agent_name":"/root/stabilization_overlap","agent_status":{"completed":"Retire it as active guidance, but don’t delete it before a small migration.\n\n`APPLICATION_COMPLIANCE_AUDIT.md` supersedes it for current release truth and backlog. `STABILIZATION.md` still uniquely contains:\n\n- Confirmed-but-not-yet-promoted product/architecture decisions, especially review rules, scanner semantics, global-admin identity, and profile policies ([STABILIZATION.md](/home/<USER>/.codex/worktrees/55d7/evorto/STABILIZATION.md:29)).\n- The detailed Browser review queue and live ESNcard procedure ([STABILIZATION.md](/home/<USER>/.codex/worktrees/55d7/evorto/STABILIZATION.md:2333)).\n- Historical stabilization/fix provenance.\n\nAlso, [stabilization-source.spec.ts](/home/<USER>/.codex/worktrees/55d7/evorto/helpers/testing/stabilization-source.spec.ts:40) currently reads the file, so direct deletion breaks its source guard.\n\nRecommended disposition:\n\n1. Keep the new audit as the active compliance backlog.\n2. Move confirmed decisions into `PRODUCT.md`/`ARCHITECTURE.md`.\n3. Move the Browser queue into `QUALITY.md` or a focused manual-review document, then repoint its source guard.\n4. Archive the old document as historical provenance—or delete it after that migration, relying on Git history.\n\nDo not carry over its `Review Next` section verbatim: it includes stale claims, including that receipt notification remains manual."},"last_task_message":null}]}
 ```
 
 > TOOL
@@ -912,9 +912,9 @@ id: call_rsYAfzW1Qw7aj78Rqb04ecO8
 
 > AGENT
 
-Done. `STABILIZATION.md` is deleted—no archive or redirect—and its live content now lives in [PRODUCT.md](/Users/hedde/.codex/worktrees/55d7/evorto/PRODUCT.md:41), [ARCHITECTURE.md](/Users/hedde/.codex/worktrees/55d7/evorto/ARCHITECTURE.md:176), and the compact [manual review queue](/Users/hedde/.codex/worktrees/55d7/evorto/QUALITY.md:186). Its source guard is now [quality-source.spec.ts](/Users/hedde/.codex/worktrees/55d7/evorto/helpers/testing/quality-source.spec.ts:40).
+Done. `STABILIZATION.md` is deleted—no archive or redirect—and its live content now lives in [PRODUCT.md](/home/<USER>/.codex/worktrees/55d7/evorto/PRODUCT.md:41), [ARCHITECTURE.md](/home/<USER>/.codex/worktrees/55d7/evorto/ARCHITECTURE.md:176), and the compact [manual review queue](/home/<USER>/.codex/worktrees/55d7/evorto/QUALITY.md:186). Its source guard is now [quality-source.spec.ts](/home/<USER>/.codex/worktrees/55d7/evorto/helpers/testing/quality-source.spec.ts:40).
 
-I also updated the audit with the accepted policy gaps: event rejection, tenant onboarding/home tenant, tenant formatting, and platform-admin authority ([audit](/Users/hedde/.codex/worktrees/55d7/evorto/APPLICATION_COMPLIANCE_AUDIT.md:197)).
+I also updated the audit with the accepted policy gaps: event rejection, tenant onboarding/home tenant, tenant formatting, and platform-admin authority ([audit](/home/<USER>/.codex/worktrees/55d7/evorto/APPLICATION_COMPLIANCE_AUDIT.md:197)).
 
 QR tickets: today, the QR image requires the owner or an authorized organizer to be signed in. The QR itself only links to a scanner route; scanning/check-in still requires organizer authorization. So it is safe from unauthenticated registration lookup, but it cannot be a real QR ticket delivered by email or printed.
 
@@ -945,11 +945,11 @@ The policy is now consistent: authenticated ticket links can keep using the regi
 
 Yes: Angular ships `en-DE`—not `de-EN`. It keeps English locale data while formatting numbers/currency German-style (`1.234,50 €`). Its short date is `09/07/2026`; use `de-DE` instead if you want `09.07.26`. Angular locale IDs follow CLDR/BCP-47 conventions, and `LOCALE_ID` drives Angular’s formatting pipes. [Angular locale IDs](https://angular.dev/guide/i18n/locale-id), [formatting behavior](https://angular.dev/guide/i18n/format-data-locale)
 
-I recorded fixed `en-DE` formatting, with currency and timezone remaining tenant-specific in [PRODUCT.md](/Users/hedde/.codex/worktrees/55d7/evorto/PRODUCT.md:355) and [ARCHITECTURE.md](/Users/hedde/.codex/worktrees/55d7/evorto/ARCHITECTURE.md:84). The full SSR/browser/Luxon wiring is still an explicit P1 implementation item in [TEN-001](/Users/hedde/.codex/worktrees/55d7/evorto/APPLICATION_COMPLIANCE_AUDIT.md:212); I have not falsely claimed it is already applied.
+I recorded fixed `en-DE` formatting, with currency and timezone remaining tenant-specific in [PRODUCT.md](/home/<USER>/.codex/worktrees/55d7/evorto/PRODUCT.md:355) and [ARCHITECTURE.md](/home/<USER>/.codex/worktrees/55d7/evorto/ARCHITECTURE.md:84). The full SSR/browser/Luxon wiring is still an explicit P1 implementation item in [TEN-001](/home/<USER>/.codex/worktrees/55d7/evorto/APPLICATION_COMPLIANCE_AUDIT.md:212); I have not falsely claimed it is already applied.
 
 You’re also right about tickets: with login required, the registration ID is only an opaque locator, not an authorization token. The server still verifies authentication, tenant, confirmation status, and owner/organizer access before rendering it; scanner actions independently require organizer authorization. I changed the policy to an authenticated ticket link and removed the unnecessary token work from the audit.
 
-The Browser queue is just a six-step manual smoke-test checklist in [QUALITY.md](/Users/hedde/.codex/worktrees/55d7/evorto/QUALITY.md:186): flows a human should inspect when an in-app Browser walkthrough is explicitly requested. It is not a release backlog and we do not have to keep it. I recommend retaining the compact version because it prevents manual checks from becoming improvised, but I can remove it and its […]
+The Browser queue is just a six-step manual smoke-test checklist in [QUALITY.md](/home/<USER>/.codex/worktrees/55d7/evorto/QUALITY.md:186): flows a human should inspect when an in-app Browser walkthrough is explicitly requested. It is not a release backlog and we do not have to keep it. I recommend retaining the compact version because it prevents manual checks from becoming improvised, but I can remove it and its […]
 
 > DEVELOPER
 
@@ -973,7 +973,7 @@ Formatting surfaced one unrelated vendored skill-file reflow, which I restored. 
 
 > AGENT
 
-`de-DE` is now the fixed formatting policy in [PRODUCT.md](/Users/hedde/.codex/worktrees/55d7/evorto/PRODUCT.md:355), [ARCHITECTURE.md](/Users/hedde/.codex/worktrees/55d7/evorto/ARCHITECTURE.md:84), and the [audit](/Users/hedde/.codex/worktrees/55d7/evorto/APPLICATION_COMPLIANCE_AUDIT.md:212). UI text remains English; currency and timezone remain tenant-specific. Applying them at runtime is still tracked as `TEN-001`.
+`de-DE` is now the fixed formatting policy in [PRODUCT.md](/home/<USER>/.codex/worktrees/55d7/evorto/PRODUCT.md:355), [ARCHITECTURE.md](/home/<USER>/.codex/worktrees/55d7/evorto/ARCHITECTURE.md:84), and the [audit](/home/<USER>/.codex/worktrees/55d7/evorto/APPLICATION_COMPLIANCE_AUDIT.md:212). UI text remains English; currency and timezone remain tenant-specific. Applying them at runtime is still tracked as `TEN-001`.
 
 The remaining decisions worth taking are:
 

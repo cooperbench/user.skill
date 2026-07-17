@@ -127,7 +127,7 @@ tool_use Read
 id: toolu_01KhbxEBN88Exi5HUvqyiqiV
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/ROADMAP.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/ROADMAP.md",
   "offset": 755,
   "limit": 40
 }
@@ -172,7 +172,7 @@ id: toolu_011A1Exv3RLGZCiZXPvcNGrX
 ```json
 {
   "description": "Read phase 71 source todos",
-  "prompt": "Read these 8 todo files in the cipher-box repo and report back a concise per-todo summary. For each, tell me: (a) what the fix is, (b) whether the todo already records a DECISION/chosen approach or leaves an open question requiring a judgment call, and (c) any explicit \"D-XX decision\" markers or unresolved options it lists.\n\nFiles (under /Users/myankelev/Code/random/cipher-box/.planning/todos/pending/):\n- 2026-06-30-share-invite-validate-root-ownership.md\n- 2026-06-30-share-invite-reclaim-apply-later-grant.md\n- 2026-06-30-share-invites-claim-count-check-constraint.md\n- 2026-06-30-ipns-records-root-uniqueness-index.md\n- 2026-06-30-ipns-first-publish-insert-race.md\n- 2026-06-30-ipns-idempotent-same-seq-cid-equivocation.md\n- 2026-06-30-shares-bulk-revoke-direct-delete.md\n- 2026-06-30-restore-shares-module-unit-coverage.md\n\nBe terse. Quote the specific open-question or decision lines verbatim where present. Do not modify anything.",
+  "prompt": "Read these 8 todo files in the cipher-box repo and report back a concise per-todo summary. For each, tell me: (a) what the fix is, (b) whether the todo already records a DECISION/chosen approach or leaves an open question requiring a judgment call, and (c) any explicit \"D-XX decision\" markers or unresolved options it lists.\n\nFiles (under /home/<USER>/Code/random/cipher-box/.planning/todos/pending/):\n- 2026-06-30-share-invite-validate-root-ownership.md\n- 2026-06-30-share-invite-reclaim-apply-later-grant.md\n- 2026-06-30-share-invites-claim-count-check-constraint.md\n- 2026-06-30-ipns-records-root-uniqueness-index.md\n- 2026-06-30-ipns-first-publish-insert-race.md\n- 2026-06-30-ipns-idempotent-same-seq-cid-equivocation.md\n- 2026-06-30-shares-bulk-revoke-direct-delete.md\n- 2026-06-30-restore-shares-module-unit-coverage.md\n\nBe terse. Quote the specific open-question or decision lines verbatim where present. Do not modify anything.",
   "subagent_type": "Explore",
   "run_in_background": false
 }
@@ -224,7 +224,7 @@ tool_use Bash
 id: toolu_016tRunoiNcVvy6692HVfpoG
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== Local branches mentioning 71 ===\"\ngit branch -a | grep -i '71\\|share-invite\\|ipns'\necho \"=== Remote branches mentioning 71 ===\"\ngit branch -r | grep -i '71\\|share-invite\\|ipns'\necho \"=== Any 71 discussion/context files across all branches ===\"\ngit log --all --oneline --name-only 2>/dev/null | grep -i '71.*DISCUSS\\|71.*CONTEXT\\|phases/71' | head -20",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== Local branches mentioning 71 ===\"\ngit branch -a | grep -i '71\\|share-invite\\|ipns'\necho \"=== Remote branches mentioning 71 ===\"\ngit branch -r | grep -i '71\\|share-invite\\|ipns'\necho \"=== Any 71 discussion/context files across all branches ===\"\ngit log --all --oneline --name-only 2>/dev/null | grep -i '71.*DISCUSS\\|71.*CONTEXT\\|phases/71' | head -20",
   "description": "Search branches and history for phase 71 discussion"
 }
 ```
@@ -281,7 +281,7 @@ tool_use Bash
 id: toolu_01YYq7vPzcTpuhPXnHGxUUwZ
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== branch state ===\"\ngit log --oneline main..feat/phase-71-share-invite-security 2>/dev/null | head -20\necho \"=== files in phase 71 dir on that branch ===\"\ngit ls-tree -r --name-only feat/phase-71-share-invite-security -- .planning/phases/71-share-invite-security-and-ipns-data-integrity-api/ 2>/dev/null",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== branch state ===\"\ngit log --oneline main..feat/phase-71-share-invite-security 2>/dev/null | head -20\necho \"=== files in phase 71 dir on that branch ===\"\ngit ls-tree -r --name-only feat/phase-71-share-invite-security -- .planning/phases/71-share-invite-security-and-ipns-data-integrity-api/ 2>/dev/null",
   "description": "Inspect phase 71 branch commits and files"
 }
 ```
@@ -308,7 +308,7 @@ tool_use Bash
 id: toolu_01WURGN9YLnB1uQwUSQiVVSx
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\ngit show feat/phase-71-share-invite-security:.planning/phases/71-share-invite-security-and-ipns-data-integrity-api/71-DISCUSSION-LOG.md",
+  "command": "cd /home/<USER>/Code/random/cipher-box\ngit show feat/phase-71-share-invite-security:.planning/phases/71-share-invite-security-and-ipns-data-integrity-api/71-DISCUSSION-LOG.md",
   "description": "Read phase 71 discussion log"
 }
 ```
@@ -384,7 +384,8 @@ Want me to run that, then proceed with the SC#3 ROADMAP trim + `/gsd-plan-phase 
 
 > TOOL
 
-<bash-stdout>Rebasing (1/1)Successfully rebased and updated refs/heads/feat/phase-71-share-invite-security.</bash-stdout><bash-stderr></bash-stderr>
+<bash-stdout>Rebasing (1/1)
+Successfully rebased and updated refs/heads/feat/phase-71-share-invite-security.</bash-stdout><bash-stderr></bash-stderr>
 
 > AGENT
 
@@ -396,7 +397,7 @@ tool_use Bash
 id: toolu_01JDHjQRnaAMrsQ656JcGRPM
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\ngrep -n \"root uniqueness\\|root-uniqueness\\|partial unique index\\|is_root\\|claim_count\\|CHECK constraint\\|ipns-records-root-uniqueness\" .planning/ROADMAP.md",
+  "command": "cd /home/<USER>/Code/random/cipher-box\ngrep -n \"root uniqueness\\|root-uniqueness\\|partial unique index\\|is_root\\|claim_count\\|CHECK constraint\\|ipns-records-root-uniqueness\" .planning/ROADMAP.md",
   "description": "Find ROADMAP lines referencing root uniqueness index and claim_count"
 }
 ```
@@ -449,7 +450,7 @@ tool_use Read
 id: toolu_012kAJFZZXvf2tzUcZc3Fvxx
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/workflows/plan-phase.md"
+  "file_path": "/home/<USER>/Code/random/cipher-box/.claude/gsd-core/workflows/plan-phase.md"
 }
 ```
 
@@ -472,11 +473,11 @@ id: toolu_012kAJFZZXvf2tzUcZc3Fvxx
 12	<required_reading>
 13	Read all files referenced by the invoking prompt's execution_context before starting.
 14	
-15	@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/ui-brand.md
-16	@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/revision-loop.md
-17	@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/gate-prompts.md
-18	@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/agent-contracts.md
-19	@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/gates.md
+15	@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/ui-brand.md
+16	@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/revision-loop.md
+17	@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/gate-prompts.md
+18	@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/agent-contracts.md
+19	@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/gates.md
 20	</required_reading>
 21	
 22	<available_agent_types>
@@ -499,7 +500,7 @@ tool_use Read
 id: toolu_01J7gxQAzxayfSzJj3KjF6pK
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/workflows/plan-phase.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.claude/gsd-core/workflows/plan-phase.md",
   "offset": 915,
   "limit": 914
 }
@@ -530,7 +531,7 @@ tool_use Bash
 id: toolu_01KHukbsA37rbpdDj2dTGehR
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"; _GSD_RUNTIME_ROOT=\"$(git rev-parse --show-toplevel 2>/dev/null || pwd)\"; GSD_TOOLS=\"${_GSD_RUNTIME_ROOT}/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\nif [ ! -f \"$GSD_TOOLS\" ]; then GSD_TOOLS=\"${_GSD_RUNTIME_ROOT}/gsd-core/bin/${_GSD_SHIM_NAME}\"; fi\necho \"GSD_TOOLS=$GSD_TOOLS\"\ntest -f \"$GSD_TOOLS\" && echo \"FOUND\" || echo \"MISSING\"\nINIT=$(node \"$GSD_TOOLS\" query init.plan-phase \"71\")\nif [[ \"$INIT\" == @file:* ]]; then INIT=$(cat \"${INIT#@file:}\"); fi\necho \"$INIT\" > /private/tmp/claude-501/-Users-myankelev-Code-random-cipher-box/982eaacf-e163-496a-b611-eb3a6d0b51c4/scratchpad/init-71.json\necho \"--- init written, keys: ---\"\nnode -e \"const o=JSON.parse(require('fs').readFileSync('/private/tmp/claude-501/-Users-myankelev-Code-random-cipher-box/982eaacf-e163-496a-b611-eb3a6d0b51c4/scratchpad/init-71.json','utf8')); console.log(JSON.stringify({phase_found:o.phase_found,phase_dir:o.phase_dir,phase_number:o.phase_number,phase_name:o.phase_name,phase_slug:o.phase_slug,padded_phase:o.padded_phase,phase_status:o.phase_status,has_research:o.has_research,has_context:o.has_context,has_plans:o.has_plans,plan_count:o.plan_count,context_path:o.context_path,research_path:o.research_path,phase_req_ids:o.phase_req_ids,research_enabled:o.research_enabled,plan_checker_enabled:o.plan_checker_enabled,nyquist_validation_enabled:o.nyquist_validation_enabled,commit_docs:o.commit_docs,planner_model:o.planner_model,researcher_model:o.researcher_model,checker_model:o.checker_model,granularity:o.granularity,planning_exists:o.planning_exists},null,2))\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"; _GSD_RUNTIME_ROOT=\"$(git rev-parse --show-toplevel 2>/dev/null || pwd)\"; GSD_TOOLS=\"${_GSD_RUNTIME_ROOT}/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\nif [ ! -f \"$GSD_TOOLS\" ]; then GSD_TOOLS=\"${_GSD_RUNTIME_ROOT}/gsd-core/bin/${_GSD_SHIM_NAME}\"; fi\necho \"GSD_TOOLS=$GSD_TOOLS\"\ntest -f \"$GSD_TOOLS\" && echo \"FOUND\" || echo \"MISSING\"\nINIT=$(node \"$GSD_TOOLS\" query init.plan-phase \"71\")\nif [[ \"$INIT\" == @file:* ]]; then INIT=$(cat \"${INIT#@file:}\"); fi\necho \"$INIT\" > /private/tmp/claude-501/-Users-myankelev-Code-random-cipher-box/982eaacf-e163-496a-b611-eb3a6d0b51c4/scratchpad/init-71.json\necho \"--- init written, keys: ---\"\nnode -e \"const o=JSON.parse(require('fs').readFileSync('/private/tmp/claude-501/-Users-myankelev-Code-random-cipher-box/982eaacf-e163-496a-b611-eb3a6d0b51c4/scratchpad/init-71.json','utf8')); console.log(JSON.stringify({phase_found:o.phase_found,phase_dir:o.phase_dir,phase_number:o.phase_number,phase_name:o.phase_name,phase_slug:o.phase_slug,padded_phase:o.padded_phase,phase_status:o.phase_status,has_research:o.has_research,has_context:o.has_context,has_plans:o.has_plans,plan_count:o.plan_count,context_path:o.context_path,research_path:o.research_path,phase_req_ids:o.phase_req_ids,research_enabled:o.research_enabled,plan_checker_enabled:o.plan_checker_enabled,nyquist_validation_enabled:o.nyquist_validation_enabled,commit_docs:o.commit_docs,planner_model:o.planner_model,researcher_model:o.researcher_model,checker_model:o.checker_model,granularity:o.granularity,planning_exists:o.planning_exists},null,2))\"",
   "description": "Run plan-phase init query for phase 71"
 }
 ```
@@ -540,7 +541,7 @@ id: toolu_01KHukbsA37rbpdDj2dTGehR
 tool_result
 id: toolu_01KHukbsA37rbpdDj2dTGehR
 ```
-GSD_TOOLS=/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/bin/gsd-tools.cjs
+GSD_TOOLS=/home/<USER>/Code/random/cipher-box/.claude/gsd-core/bin/gsd-tools.cjs
 FOUND
 gsd-tools: warning: unknown config key(s) in .planning/config.json: created, notes — these will be ignored
 --- init written, keys: ---
@@ -580,7 +581,7 @@ tool_use Bash
 id: toolu_011PFF4npqto47etcdcFo9f8
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\ncat \".planning/phases/71-share-invite-security-and-ipns-data-integrity-api/71-CONTEXT.md\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\ncat \".planning/phases/71-share-invite-security-and-ipns-data-integrity-api/71-CONTEXT.md\"",
   "description": "Read phase 71 CONTEXT.md"
 }
 ```
@@ -665,7 +666,7 @@ tool_use Bash
 id: toolu_013yCVNXbxe2RjZbfQ7o2CjC
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nGSD_TOOLS=\"/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/bin/gsd-tools.cjs\"\nSCRATCH=\"/private/tmp/claude-501/-Users-myankelev-Code-random-cipher-box/982eaacf-e163-496a-b611-eb3a6d0b51c4/scratchpad\"\nnode \"$GSD_TOOLS\" query agent-skills gsd-phase-researcher > \"$SCRATCH/skills-researcher.txt\" 2>/dev/null\nnode \"$GSD_TOOLS\" loop render-hooks plan:pre --raw > \"$SCRATCH/plan-pre-hooks.json\" 2>/dev/null\nnode \"$GSD_TOOLS\" query roadmap.get-phase \"71\" --pick section > \"$SCRATCH/phase-71-section.txt\" 2>/dev/null\necho \"=== researcher skills (bytes): $(wc -c < \"$SCRATCH/skills-researcher.txt\") ===\"\necho \"=== active hooks in plan:pre ===\"\nnode -e \"const o=JSON.parse(require('fs').readFileSync('$SCRATCH/plan-pre-hooks.json','utf8')); const hooks=(o.activeHooks||o.hooks||[]); console.log(JSON.stringify(hooks.map(h=>({capId:h.capId,kind:h.kind,agent:h.ref&&h.ref.agent,skill:h.ref&&h.ref.skill,into:h.into,hasFragment:!!(h.fragment&&h.fragment.inline)})),null,2))\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nGSD_TOOLS=\"/home/<USER>/Code/random/cipher-box/.claude/gsd-core/bin/gsd-tools.cjs\"\nSCRATCH=\"/private/tmp/claude-501/-Users-myankelev-Code-random-cipher-box/982eaacf-e163-496a-b611-eb3a6d0b51c4/scratchpad\"\nnode \"$GSD_TOOLS\" query agent-skills gsd-phase-researcher > \"$SCRATCH/skills-researcher.txt\" 2>/dev/null\nnode \"$GSD_TOOLS\" loop render-hooks plan:pre --raw > \"$SCRATCH/plan-pre-hooks.json\" 2>/dev/null\nnode \"$GSD_TOOLS\" query roadmap.get-phase \"71\" --pick section > \"$SCRATCH/phase-71-section.txt\" 2>/dev/null\necho \"=== researcher skills (bytes): $(wc -c < \"$SCRATCH/skills-researcher.txt\") ===\"\necho \"=== active hooks in plan:pre ===\"\nnode -e \"const o=JSON.parse(require('fs').readFileSync('$SCRATCH/plan-pre-hooks.json','utf8')); const hooks=(o.activeHooks||o.hooks||[]); console.log(JSON.stringify(hooks.map(h=>({capId:h.capId,kind:h.kind,agent:h.ref&&h.ref.agent,skill:h.ref&&h.ref.skill,into:h.into,hasFragment:!!(h.fragment&&h.fragment.inline)})),null,2))\"",
   "description": "Fetch researcher skills, plan:pre hooks, phase section"
 }
 ```
@@ -721,7 +722,7 @@ tool_use Bash
 id: toolu_01EhyN82dcpiKEXMMGUG8boS
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nSCRATCH=\"/private/tmp/claude-501/-Users-myankelev-Code-random-cipher-box/982eaacf-e163-496a-b611-eb3a6d0b51c4/scratchpad\"\nnode -e \"const o=JSON.parse(require('fs').readFileSync('$SCRATCH/plan-pre-hooks.json','utf8')); const hooks=(o.activeHooks||o.hooks||[]); const r=hooks.find(h=>h.capId==='research'); console.log(r.fragment.inline)\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nSCRATCH=\"/private/tmp/claude-501/-Users-myankelev-Code-random-cipher-box/982eaacf-e163-496a-b611-eb3a6d0b51c4/scratchpad\"\nnode -e \"const o=JSON.parse(require('fs').readFileSync('$SCRATCH/plan-pre-hooks.json','utf8')); const hooks=(o.activeHooks||o.hooks||[]); const r=hooks.find(h=>h.capId==='research'); console.log(r.fragment.inline)\"",
   "description": "Print research hook fragment template"
 }
 ```
@@ -763,7 +764,7 @@ tool_use Bash
 id: toolu_018c3TiBuWuJkXQcTkWQyZJR
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nSCRATCH=\"/private/tmp/claude-501/-Users-myankelev-Code-random-cipher-box/982eaacf-e163-496a-b611-eb3a6d0b51c4/scratchpad\"\nnode -e \"const o=JSON.parse(require('fs').readFileSync('$SCRATCH/init-71.json','utf8')); console.log('state_path='+o.state_path); console.log('requirements_path='+o.requirements_path); console.log('roadmap_path='+o.roadmap_path);\"\necho \"=== section (first 30 lines) ===\"\nhead -30 \"$SCRATCH/phase-71-section.txt\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nSCRATCH=\"/private/tmp/claude-501/-Users-myankelev-Code-random-cipher-box/982eaacf-e163-496a-b611-eb3a6d0b51c4/scratchpad\"\nnode -e \"const o=JSON.parse(require('fs').readFileSync('$SCRATCH/init-71.json','utf8')); console.log('state_path='+o.state_path); console.log('requirements_path='+o.requirements_path); console.log('roadmap_path='+o.roadmap_path);\"\necho \"=== section (first 30 lines) ===\"\nhead -30 \"$SCRATCH/phase-71-section.txt\"",
   "description": "Get paths and phase section for researcher prompt"
 }
 ```
@@ -858,7 +859,7 @@ tool_use Bash
 id: toolu_01NYu2HvEFZLSan3yG2qfaEz
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nSCRATCH=\"/private/tmp/claude-501/-Users-myankelev-Code-random-cipher-box/982eaacf-e163-496a-b611-eb3a6d0b51c4/scratchpad\"\nPHASE_DIR=\".planning/phases/71-share-invite-security-and-ipns-data-integrity-api\"\necho \"=== Validation Architecture heading present? ===\"\ngrep -n \"## Validation Architecture\" \"$PHASE_DIR\"/*-RESEARCH.md 2>/dev/null || echo \"NOT FOUND\"\necho \"=== VALIDATION template exists? ===\"\nls -la /Users/myankelev/Code/random/cipher-box/.claude/gsd-core/templates/VALIDATION.md 2>/dev/null && echo \"---template head---\" && head -40 /Users/myankelev/Code/random/cipher-box/.claude/gsd-core/templates/VALIDATION.md\necho \"=== current date ===\"\nnode -e \"console.log(new Date().toISOString().slice(0,10))\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nSCRATCH=\"/private/tmp/claude-501/-Users-myankelev-Code-random-cipher-box/982eaacf-e163-496a-b611-eb3a6d0b51c4/scratchpad\"\nPHASE_DIR=\".planning/phases/71-share-invite-security-and-ipns-data-integrity-api\"\necho \"=== Validation Architecture heading present? ===\"\ngrep -n \"## Validation Architecture\" \"$PHASE_DIR\"/*-RESEARCH.md 2>/dev/null || echo \"NOT FOUND\"\necho \"=== VALIDATION template exists? ===\"\nls -la /home/<USER>/Code/random/cipher-box/.claude/gsd-core/templates/VALIDATION.md 2>/dev/null && echo \"---template head---\" && head -40 /home/<USER>/Code/random/cipher-box/.claude/gsd-core/templates/VALIDATION.md\necho \"=== current date ===\"\nnode -e \"console.log(new Date().toISOString().slice(0,10))\"",
   "description": "Verify Validation Architecture section and read VALIDATION template"
 }
 ```
@@ -871,7 +872,7 @@ id: toolu_01NYu2HvEFZLSan3yG2qfaEz
 === Validation Architecture heading present? ===
 674:## Validation Architecture
 === VALIDATION template exists? ===
--rw-r--r--@ 1 myankelev  staff  2176 Jun 28 19:40 /Users/myankelev/Code/random/cipher-box/.claude/gsd-core/templates/VALIDATION.md
+-rw-r--r--@ 1 myankelev  staff  2176 Jun 28 19:40 /home/<USER>/Code/random/cipher-box/.claude/gsd-core/templates/VALIDATION.md
 ---template head---
 ---
 phase: {N}
@@ -923,7 +924,7 @@ tool_use Bash
 id: toolu_01UMFPFVT2U532TP1Byp9CAN
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nPHASE_DIR=\".planning/phases/71-share-invite-security-and-ipns-data-integrity-api\"\necho \"=== FULL VALIDATION TEMPLATE ===\"\ncat /Users/myankelev/Code/random/cipher-box/.claude/gsd-core/templates/VALIDATION.md\necho \"\"\necho \"=== RESEARCH Validation Architecture section (from line 674) ===\"\nsed -n '674,900p' \"$PHASE_DIR\"/71-RESEARCH.md",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nPHASE_DIR=\".planning/phases/71-share-invite-security-and-ipns-data-integrity-api\"\necho \"=== FULL VALIDATION TEMPLATE ===\"\ncat /home/<USER>/Code/random/cipher-box/.claude/gsd-core/templates/VALIDATION.md\necho \"\"\necho \"=== RESEARCH Validation Architecture section (from line 674) ===\"\nsed -n '674,900p' \"$PHASE_DIR\"/71-RESEARCH.md",
   "description": "Read full VALIDATION template and research validation section"
 }
 ```
@@ -988,7 +989,7 @@ tool_use Write
 id: toolu_01NgxfPBSdLWqBCFnB2RdyU4
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/phases/71-share-invite-security-and-ipns-data-integrity-api/71-VALIDATION.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/phases/71-share-invite-security-and-ipns-data-integrity-api/71-VALIDATION.md",
   "content": "---\nphase: 71\nslug: share-invite-security-and-ipns-data-integrity-api\nstatus: draft\nnyquist_compliant: false\nwave_0_complete: false\ncreated: 2026-07-09\n---\n\n# Phase 71 — Validation Strategy\n\n> Per-phase validation contract for feedback sampling during execution.\n> Derived from `71-RESEARCH.md` § Validation Architecture. Anchored to Success\n> Criteria SC#1–SC#6 (SC#3 amended per D-03) and decisions D-01…D-09 — this is a\n> todo-driven phase with no mapped REQ-IDs (`phase_req_ids: null`).\n\n---\n\n## Test Infrastructure\n\n| Property | Value |\n|----------|-------|\n| **Framework** | Jest (`ts-jest`) for `apps/api` unit tests; Vitest for `tests/sdk-e2e` integration |\n| **Config file** | `apps/api/jest.config.js` (rootDir `src`, testRegex `.*\\.spec\\.ts$`, coverage 85% lines/stmt/fn, 78% branch); `tests/sdk-e2e/vitest.config.ts` |\n| **Quick run command** | `pnpm --filter @cipherbox/api test -- --testPathPattern=\"share-invite\\|shares\\.service\\|ipns\\.service\"` |\n| **Full suite command** | `pnpm --filter @cipherbox/api test` (unit — all repos/DataSource mocked, no live services) |\n| **Live-stack suite** | `pnpm --filter sdk-e2e test` (D-06 first-publish race — REQUIRES `docker compose -f docker/docker-compose.yml up -d` + `pnpm --filter @cipherbox/api dev` + `migration:run`) |\n| **Estimated runtime** | ~seconds (unit); minutes + manual bootstrap (sdk-e2e) |\n\n> Note: `apps/api` Jest coverage thresholds are **global** (85% lines); there is **no** per-file\n> threshold on `share-invite.service.ts`. D-09's coverage lift is a completeness goal, not a\n> CI-gating one.\n\n---\n\n## Sampling Rate\n\n- **After every task commit:** `pnpm --filter @cipherbox/api test -- --testPathPattern=<touched-file-basename>`\n- **After every plan […]
 
 > TOOL
@@ -996,7 +997,7 @@ id: toolu_01NgxfPBSdLWqBCFnB2RdyU4
 tool_result
 id: toolu_01NgxfPBSdLWqBCFnB2RdyU4
 ```
-File created successfully at: /Users/myankelev/Code/random/cipher-box/.planning/phases/71-share-invite-security-and-ipns-data-integrity-api/71-VALIDATION.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Code/random/cipher-box/.planning/phases/71-share-invite-security-and-ipns-data-integrity-api/71-VALIDATION.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1009,7 +1010,7 @@ tool_use Bash
 id: toolu_01WRUUjk82pLxZ1iMMMu8CRL
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nGSD_TOOLS=\"/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/bin/gsd-tools.cjs\"\nPHASE_DIR=\".planning/phases/71-share-invite-security-and-ipns-data-integrity-api\"\ntest -f \"$PHASE_DIR/71-VALIDATION.md\" && echo \"VALIDATION_CREATED=true\" || echo \"VALIDATION_CREATED=false\"\necho \"=== commit VALIDATION.md ===\"\nnode \"$GSD_TOOLS\" query commit \"docs(71): add validation strategy\" --files \"$PHASE_DIR/71-VALIDATION.md\" 2>&1 | tail -5\necho \"=== UI plan gate ===\"\nnode \"$GSD_TOOLS\" check ui-plan-gate \"71\" --raw 2>/dev/null || echo \"(no ui gate result)\"\necho \"=== drift check (non-blocking) ===\"\nnode \"$GSD_TOOLS\" verify codebase-drift 2>/dev/null | node -e \"let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{try{const o=JSON.parse(s);console.log(JSON.stringify({skipped:o.skipped,action_required:o.action_required,message:o.message?String(o.message).slice(0,200):undefined}))}catch(e){console.log('(unparseable/skipped)')}})\" || echo \"(drift skipped)\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nGSD_TOOLS=\"/home/<USER>/Code/random/cipher-box/.claude/gsd-core/bin/gsd-tools.cjs\"\nPHASE_DIR=\".planning/phases/71-share-invite-security-and-ipns-data-integrity-api\"\ntest -f \"$PHASE_DIR/71-VALIDATION.md\" && echo \"VALIDATION_CREATED=true\" || echo \"VALIDATION_CREATED=false\"\necho \"=== commit VALIDATION.md ===\"\nnode \"$GSD_TOOLS\" query commit \"docs(71): add validation strategy\" --files \"$PHASE_DIR/71-VALIDATION.md\" 2>&1 | tail -5\necho \"=== UI plan gate ===\"\nnode \"$GSD_TOOLS\" check ui-plan-gate \"71\" --raw 2>/dev/null || echo \"(no ui gate result)\"\necho \"=== drift check (non-blocking) ===\"\nnode \"$GSD_TOOLS\" verify codebase-drift 2>/dev/null | node -e \"let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{try{const o=JSON.parse(s);console.log(JSON.stringify({skipped:o.skipped,action_required:o.action_required,message:o.message?String(o.message).slice(0,200):undefined}))}catch(e){console.log('(unparseable/skipped)')}})\" || echo \"(drift skipped)\"",
   "description": "Verify+commit VALIDATION.md, run UI and drift gates"
 }
 ```
@@ -1045,7 +1046,7 @@ tool_use Bash
 id: toolu_01DnFxTWuy277foZbwzcHMkN
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== recent commits ===\"\ngit log --oneline -4\necho \"=== is VALIDATION.md committed / working tree clean? ===\"\ngit status --porcelain \".planning/phases/71-share-invite-security-and-ipns-data-integrity-api/71-VALIDATION.md\"\ngit ls-files \".planning/phases/71-share-invite-security-and-ipns-data-integrity-api/71-VALIDATION.md\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== recent commits ===\"\ngit log --oneline -4\necho \"=== is VALIDATION.md committed / working tree clean? ===\"\ngit status --porcelain \".planning/phases/71-share-invite-security-and-ipns-data-integrity-api/71-VALIDATION.md\"\ngit ls-files \".planning/phases/71-share-invite-security-and-ipns-data-integrity-api/71-VALIDATION.md\"",
   "description": "Verify VALIDATION.md commit landed"
 }
 ```
@@ -1076,7 +1077,7 @@ tool_use Bash
 id: toolu_017igpVyQpAzzt2tMy6EpA2n
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nGSD_TOOLS=\"/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/bin/gsd-tools.cjs\"\nSCRATCH=\"/private/tmp/claude-501/-Users-myankelev-Code-random-cipher-box/982eaacf-e163-496a-b611-eb3a6d0b51c4/scratchpad\"\necho \"=== intel api-surface ===\"\nnode \"$GSD_TOOLS\" intel api-surface 2>&1 | tail -3\ntest -f \".planning/intel/API-SURFACE.md\" && echo \"API_SURFACE_PATH=.planning/intel/API-SURFACE.md\" || echo \"API_SURFACE missing\"\necho \"=== pattern-mapper fragment ===\"\nnode -e \"const o=JSON.parse(require('fs').readFileSync('$SCRATCH/plan-pre-hooks.json','utf8')); const hooks=(o.activeHooks||o.hooks||[]); const p=hooks.find(h=>h.capId==='pattern-mapper'); console.log(p.fragment.inline)\" 2>/dev/null || echo \"(no pattern-mapper fragment)\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nGSD_TOOLS=\"/home/<USER>/Code/random/cipher-box/.claude/gsd-core/bin/gsd-tools.cjs\"\nSCRATCH=\"/private/tmp/claude-501/-Users-myankelev-Code-random-cipher-box/982eaacf-e163-496a-b611-eb3a6d0b51c4/scratchpad\"\necho \"=== intel api-surface ===\"\nnode \"$GSD_TOOLS\" intel api-surface 2>&1 | tail -3\ntest -f \".planning/intel/API-SURFACE.md\" && echo \"API_SURFACE_PATH=.planning/intel/API-SURFACE.md\" || echo \"API_SURFACE missing\"\necho \"=== pattern-mapper fragment ===\"\nnode -e \"const o=JSON.parse(require('fs').readFileSync('$SCRATCH/plan-pre-hooks.json','utf8')); const hooks=(o.activeHooks||o.hooks||[]); const p=hooks.find(h=>h.capId==='pattern-mapper'); console.log(p.fragment.inline)\" 2>/dev/null || echo \"(no pattern-mapper fragment)\"",
   "description": "Run intel api-surface and print pattern-mapper fragment"
 }
 ```
@@ -1158,7 +1159,7 @@ id: toolu_01AaxUt2yxRpyVp8pwEscwVz
 ### Resolved open question
 RESEARCH.md's Open Question 2 (idempotent `ADD CONSTRAINT` convention) is now settled: `1740300000000-SharesPartialUniqueIndex.ts` uses a `DO $$ ... EXCEPTION WHEN duplicate_object THEN NULL; END $$;` guard — reuse that shape for D-04.
 
-File written: `/Users/myankelev/Code/random/cipher-box/.planning/phases/71-share-invite-security-and-ipns-data-integrity-api/71-PATTERNS.md`
+File written: `/home/<USER>/Code/random/cipher-box/.planning/phases/71-share-invite-security-and-ipns-data-integrity-api/71-PATTERNS.md`
 
 Ready for planning. […]
 
@@ -1174,7 +1175,7 @@ tool_use Bash
 id: toolu_0167ENVpHaNBKbXevfKmowCC
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nGSD_TOOLS=\"/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/bin/gsd-tools.cjs\"\nSCRATCH=\"/private/tmp/claude-501/-Users-myankelev-Code-random-cipher-box/982eaacf-e163-496a-b611-eb3a6d0b51c4/scratchpad\"\nPHASE_DIR=\".planning/phases/71-share-invite-security-and-ipns-data-integrity-api\"\necho \"=== commit PATTERNS.md ===\"\nnode \"$GSD_TOOLS\" query commit \"docs(71): map implementation patterns\" --files \"$PHASE_DIR/71-PATTERNS.md\" 2>&1 | grep -E '\"committed\"|\"reason\"' || true\necho \"=== verify via git log ===\"\ngit log --oneline -1\ngit ls-files \"$PHASE_DIR/71-PATTERNS.md\"\necho \"=== planner skills (bytes) ===\"\nnode \"$GSD_TOOLS\" query agent-skills gsd-planner 2>/dev/null | wc -c\necho \"=== planner-targeted contributions (schema-gate, tdd) ===\"\nnode -e \"const o=JSON.parse(require('fs').readFileSync('$SCRATCH/plan-pre-hooks.json','utf8')); const hooks=(o.activeHooks||o.hooks||[]); hooks.filter(h=>h.kind==='contribution'&&h.into==='planner').forEach(h=>{console.log('----- '+h.capId+' -----'); console.log((h.fragment&&h.fragment.inline||'').slice(0,600))})\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nGSD_TOOLS=\"/home/<USER>/Code/random/cipher-box/.claude/gsd-core/bin/gsd-tools.cjs\"\nSCRATCH=\"/private/tmp/claude-501/-Users-myankelev-Code-random-cipher-box/982eaacf-e163-496a-b611-eb3a6d0b51c4/scratchpad\"\nPHASE_DIR=\".planning/phases/71-share-invite-security-and-ipns-data-integrity-api\"\necho \"=== commit PATTERNS.md ===\"\nnode \"$GSD_TOOLS\" query commit \"docs(71): map implementation patterns\" --files \"$PHASE_DIR/71-PATTERNS.md\" 2>&1 | grep -E '\"committed\"|\"reason\"' || true\necho \"=== verify via git log ===\"\ngit log --oneline -1\ngit ls-files \"$PHASE_DIR/71-PATTERNS.md\"\necho \"=== planner skills (bytes) ===\"\nnode \"$GSD_TOOLS\" query agent-skills gsd-planner 2>/dev/null | wc -c\necho \"=== planner-targeted contributions (schema-gate, tdd) ===\"\nnode -e \"const o=JSON.parse(require('fs').readFileSync('$SCRATCH/plan-pre-hooks.json','utf8')); const hooks=(o.activeHooks||o.hooks||[]); hooks.filter(h=>h.kind==='contribution'&&h.into==='planner').forEach(h=>{console.log('----- '+h.capId+' -----'); console.log((h.fragment&&h.fragment.inline||'').slice(0,600))})\"",
   "description": "Commit PATTERNS.md, get planner skills and contributions"
 }
 ```
@@ -1229,7 +1230,7 @@ tool_use Bash
 id: toolu_01TijW9ngPV1VtVTQKyjrLwR
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nGSD_TOOLS=\"/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/bin/gsd-tools.cjs\"\nSCRATCH=\"/private/tmp/claude-501/-Users-myankelev-Code-random-cipher-box/982eaacf-e163-496a-b611-eb3a6d0b51c4/scratchpad\"\necho \"=== tdd_mode config ===\"\nnode \"$GSD_TOOLS\" query config-get workflow.tdd_mode 2>/dev/null || echo \"(unset)\"\necho \"=== top-level keys of render-hooks output ===\"\nnode -e \"const o=JSON.parse(require('fs').readFileSync('$SCRATCH/plan-pre-hooks.json','utf8')); console.log('keys:', Object.keys(o)); console.log('activeHooks is array:', Array.isArray(o.activeHooks)); if(Array.isArray(o.activeHooks)){console.log('activeHooks capIds:', o.activeHooks.map(h=>h.capId+':'+h.kind))}\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nGSD_TOOLS=\"/home/<USER>/Code/random/cipher-box/.claude/gsd-core/bin/gsd-tools.cjs\"\nSCRATCH=\"/private/tmp/claude-501/-Users-myankelev-Code-random-cipher-box/982eaacf-e163-496a-b611-eb3a6d0b51c4/scratchpad\"\necho \"=== tdd_mode config ===\"\nnode \"$GSD_TOOLS\" query config-get workflow.tdd_mode 2>/dev/null || echo \"(unset)\"\necho \"=== top-level keys of render-hooks output ===\"\nnode -e \"const o=JSON.parse(require('fs').readFileSync('$SCRATCH/plan-pre-hooks.json','utf8')); console.log('keys:', Object.keys(o)); console.log('activeHooks is array:', Array.isArray(o.activeHooks)); if(Array.isArray(o.activeHooks)){console.log('activeHooks capIds:', o.activeHooks.map(h=>h.capId+':'+h.kind))}\"",
   "description": "Check tdd_mode config and render-hooks structure"
 }
 ```
@@ -1263,7 +1264,7 @@ tool_use Bash
 id: toolu_0118ohJLMnPqTB1EE7oRWZKB
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nSCRATCH=\"/private/tmp/claude-501/-Users-myankelev-Code-random-cipher-box/982eaacf-e163-496a-b611-eb3a6d0b51c4/scratchpad\"\nnode -e \"const o=JSON.parse(require('fs').readFileSync('$SCRATCH/plan-pre-hooks.json','utf8')); const h=o.activeHooks.find(x=>x.capId==='schema-gate'); require('fs').writeFileSync('$SCRATCH/schema-gate-fragment.txt', h.fragment.inline)\"\nnode -e \"const o=JSON.parse(require('fs').readFileSync('$SCRATCH/plan-pre-hooks.json','utf8')); const h=o.activeHooks.find(x=>x.capId==='tdd'); require('fs').writeFileSync('$SCRATCH/tdd-fragment.txt', h.fragment.inline)\"\necho \"=== schema-gate full ===\"\ncat \"$SCRATCH/schema-gate-fragment.txt\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nSCRATCH=\"/private/tmp/claude-501/-Users-myankelev-Code-random-cipher-box/982eaacf-e163-496a-b611-eb3a6d0b51c4/scratchpad\"\nnode -e \"const o=JSON.parse(require('fs').readFileSync('$SCRATCH/plan-pre-hooks.json','utf8')); const h=o.activeHooks.find(x=>x.capId==='schema-gate'); require('fs').writeFileSync('$SCRATCH/schema-gate-fragment.txt', h.fragment.inline)\"\nnode -e \"const o=JSON.parse(require('fs').readFileSync('$SCRATCH/plan-pre-hooks.json','utf8')); const h=o.activeHooks.find(x=>x.capId==='tdd'); require('fs').writeFileSync('$SCRATCH/tdd-fragment.txt', h.fragment.inline)\"\necho \"=== schema-gate full ===\"\ncat \"$SCRATCH/schema-gate-fragment.txt\"",
   "description": "Save and print full schema-gate fragment"
 }
 ```
@@ -1364,7 +1365,7 @@ tool_use Bash
 id: toolu_01G3qwxbc3Dher9RrzrKfUDm
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== web invite.service.ts rootIpnsName assignment ===\"\ngrep -rn \"rootIpnsName\" apps/web/src/services/invite.service.ts 2>/dev/null\necho \"=== ShareDialog.tsx rootIpnsName assignment ===\"\ngrep -rn \"rootIpnsName\" apps/web/src/components/file-browser/ShareDialog.tsx 2>/dev/null\necho \"=== vaults: one row per user? (owner_id unique) ===\"\ngrep -n \"owner_id\\|ownerId\\|root_ipns_name\\|rootIpnsName\\|@Index\\|@Unique\" apps/api/src/vault/entities/vault.entity.ts 2>/dev/null\necho \"=== does createInvite/createShare currently copy dto.rootIpnsName verbatim? ===\"\ngrep -n \"rootIpnsName\" apps/api/src/shares/share-invite.service.ts apps/api/src/shares/shares.service.ts 2>/dev/null | head -20",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== web invite.service.ts rootIpnsName assignment ===\"\ngrep -rn \"rootIpnsName\" apps/web/src/services/invite.service.ts 2>/dev/null\necho \"=== ShareDialog.tsx rootIpnsName assignment ===\"\ngrep -rn \"rootIpnsName\" apps/web/src/components/file-browser/ShareDialog.tsx 2>/dev/null\necho \"=== vaults: one row per user? (owner_id unique) ===\"\ngrep -n \"owner_id\\|ownerId\\|root_ipns_name\\|rootIpnsName\\|@Index\\|@Unique\" apps/api/src/vault/entities/vault.entity.ts 2>/dev/null\necho \"=== does createInvite/createShare currently copy dto.rootIpnsName verbatim? ===\"\ngrep -n \"rootIpnsName\" apps/api/src/shares/share-invite.service.ts apps/api/src/shares/shares.service.ts 2>/dev/null | head -20",
   "description": "Verify planner's D-01 subfolder-sharing conflict claim"
 }
 ```

@@ -1,6 +1,6 @@
 > DEVELOPER
 
-Read /Users/noahdolevelixir/Code/rune/instructions/2026-04-23-pr-28-summary.md end-to-end. Using the "Documentation revision checklist" section
+Read /home/<USER>/Code/rune/instructions/2026-04-23-pr-28-summary.md end-to-end. Using the "Documentation revision checklist" section
    (ordered Critical → Important → Minor with a suggested editing order at the bottom), update every affected doc to match PR #28. Work top-down
   through the list, one file per subagent dispatch. Don't touch files marked Clean. Cross-reference the "File-level changelog" and "Part A/B/C"
   sections for the canonical facts (module names, commit SHAs, adapter ID schemes, threshold values). After each file lands, show me the diff;
@@ -12,7 +12,7 @@ tool_use Read
 id: toolu_01CcppKEUnsEeLAAvzY1qqiq
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-pr-28-summary.md"
+  "file_path": "/home/<USER>/Code/rune/instructions/2026-04-23-pr-28-summary.md"
 }
 ```
 
@@ -53,7 +53,7 @@ tool_use Bash
 id: toolu_01TULZinF7UoPHZr32sp4KdM
 ```json
 {
-  "command": "ls /Users/noahdolevelixir/Code/rune/docs/architecture/recursive-loop.md && wc -l /Users/noahdolevelixir/Code/rune/docs/architecture/recursive-loop.md",
+  "command": "ls /home/<USER>/Code/rune/docs/architecture/recursive-loop.md && wc -l /home/<USER>/Code/rune/docs/architecture/recursive-loop.md",
   "description": "Verify target file exists"
 }
 ```
@@ -63,10 +63,10 @@ id: toolu_01TULZinF7UoPHZr32sp4KdM
 tool_result
 id: toolu_01TULZinF7UoPHZr32sp4KdM
 ```
-/Users/noahdolevelixir/Code/rune/docs/architecture/recursive-loop.md  7.7K
+/home/<USER>/Code/rune/docs/architecture/recursive-loop.md  7.7K
 
 1 files, 0 dirs (1 .md)
-     170 /Users/noahdolevelixir/Code/rune/docs/architecture/recursive-loop.md
+     170 /home/<USER>/Code/rune/docs/architecture/recursive-loop.md
 ```
 
 > TOOL
@@ -77,7 +77,7 @@ id: toolu_01Xp5FkCGPXX74DU4KJPogQk
 {
   "description": "Update recursive-loop.md for PR #28",
   "subagent_type": "gsd-doc-writer",
-  "prompt": "You are updating a single documentation file to match PR #28 of the Rune repo. The authoritative source for what shipped is `/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-pr-28-summary.md`. Read that file end-to-end before editing.\n\n## Target file (edit-in-place, do not create new files)\n\n`/Users/noahdolevelixir/Code/rune/docs/architecture/recursive-loop.md`\n\n## Required changes (from the checklist's Critical section)\n\nAdd a top-level section titled **\"Hypernetwork Training: Round-1 and Round-2 Distillation\"** covering:\n\n1. **Round-1 vs Round-2 distinction:**\n   - Round-1: hypernet trained against the bare base model (existing behaviour).\n   - Round-2: hypernet trained against **25 per-bin oracle adapters** (4 pipeline phases × 6 benchmarks + 1 pooled `diagnose` bin = 25) used as teacher signals via KL + CE loss.\n\n2. **Oracle ID scheme:** `oracle_<bin_key>` where `bin_key = <phase>_<benchmark>` or `diagnose_pooled`. Set upstream by `libs/corpus-producer/src/corpus_producer/trainer_bridge.py`.\n\n3. **Round-2 adapter ID scheme:** `round2_<uuid[:8]>` with `task_type=\"round2_hypernet\"`, `generation=2`, and `parent_ids = json.dumps(sorted(oracle_ids))` for lineage tracking.\n\n4. **Functional-LoRA teacher mechanism:** the oracle is applied to the base model via the same `apply_functional_lora` context manager used for the student pass. The base model is never structurally mutated — no `PeftModel` wrappers, no `LoraLayer` replacements — eliminating PEFT hook-leakage risk between teacher and student passes.\n\n5. **OracleAdapterCache:** stores `LoraDict` tensor dicts (`{module: {\"A\": Tensor[L,r,in], \"B\": […]
+  "prompt": "You are updating a single documentation file to match PR #28 of the Rune repo. The authoritative source for what shipped is `/home/<USER>/Code/rune/instructions/2026-04-23-pr-28-summary.md`. Read that file end-to-end before editing.\n\n## Target file (edit-in-place, do not create new files)\n\n`/home/<USER>/Code/rune/docs/architecture/recursive-loop.md`\n\n## Required changes (from the checklist's Critical section)\n\nAdd a top-level section titled **\"Hypernetwork Training: Round-1 and Round-2 Distillation\"** covering:\n\n1. **Round-1 vs Round-2 distinction:**\n   - Round-1: hypernet trained against the bare base model (existing behaviour).\n   - Round-2: hypernet trained against **25 per-bin oracle adapters** (4 pipeline phases × 6 benchmarks + 1 pooled `diagnose` bin = 25) used as teacher signals via KL + CE loss.\n\n2. **Oracle ID scheme:** `oracle_<bin_key>` where `bin_key = <phase>_<benchmark>` or `diagnose_pooled`. Set upstream by `libs/corpus-producer/src/corpus_producer/trainer_bridge.py`.\n\n3. **Round-2 adapter ID scheme:** `round2_<uuid[:8]>` with `task_type=\"round2_hypernet\"`, `generation=2`, and `parent_ids = json.dumps(sorted(oracle_ids))` for lineage tracking.\n\n4. **Functional-LoRA teacher mechanism:** the oracle is applied to the base model via the same `apply_functional_lora` context manager used for the student pass. The base model is never structurally mutated — no `PeftModel` wrappers, no `LoraLayer` replacements — eliminating PEFT hook-leakage risk between teacher and student passes.\n\n5. **OracleAdapterCache:** stores `LoraDict` tensor dicts (`{module: {\"A\": Tensor[L,r,in], \"B\": […]
 
 > TOOL
 
@@ -241,7 +241,7 @@ tool_use Bash
 id: toolu_01AL6zQuwfpmUKPqXexF9xVh
 ```json
 {
-  "command": "ls /Users/noahdolevelixir/Code/rune/docs/article/methods.md && wc -l /Users/noahdolevelixir/Code/rune/docs/article/methods.md",
+  "command": "ls /home/<USER>/Code/rune/docs/article/methods.md && wc -l /home/<USER>/Code/rune/docs/article/methods.md",
   "description": "Verify target file exists"
 }
 ```
@@ -251,10 +251,10 @@ id: toolu_01AL6zQuwfpmUKPqXexF9xVh
 tool_result
 id: toolu_01AL6zQuwfpmUKPqXexF9xVh
 ```
-/Users/noahdolevelixir/Code/rune/docs/article/methods.md  35.6K
+/home/<USER>/Code/rune/docs/article/methods.md  35.6K
 
 1 files, 0 dirs (1 .md)
-     291 /Users/noahdolevelixir/Code/rune/docs/article/methods.md
+     291 /home/<USER>/Code/rune/docs/article/methods.md
 ```
 
 > TOOL
@@ -265,7 +265,7 @@ id: toolu_01L1bvP2SSaog3njcBrUTtjt
 {
   "description": "Update article/methods.md for PR #28",
   "subagent_type": "gsd-doc-writer",
-  "prompt": "You are updating a single documentation file to match PR #28 of the Rune repo. The authoritative source for what shipped is `/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-pr-28-summary.md`. Read that file end-to-end before editing.\n\n## Target file (edit-in-place)\n\n`/Users/noahdolevelixir/Code/rune/docs/article/methods.md`\n\nThis is the Methods section of a research-paper-style doc. Preserve its tone and register.\n\n## Required changes (from the checklist's Critical section)\n\n1. **Add a \"Stage 3: Round-2 Distillation\" subsection** under whatever the existing two-stage training pipeline section is called. Rename that parent section from \"Two-Stage Training Pipeline\" to \"Three-Stage Training Pipeline\" (or \"Multi-Stage\", if the existing wording is different — preserve the existing heading style). The new subsection must cover:\n   - Oracle teachers (25 per-bin oracle adapters; 4 phases × 6 benchmarks + 1 pooled diagnose).\n   - Functional-LoRA teacher mechanism (`apply_functional_lora` context manager; base model never mutated; no PeftModel/LoraLayer replacement; eliminates hook leakage between teacher and student passes).\n   - KL + CE distillation loss between student and teacher forward passes.\n   - Strict success gate: ≥ 4 of 6 benchmarks improved ≥ 2.0% Pass@1 AND no regression > 1.0%.\n   - Adapter lineage: `round2_<uuid[:8]>`, `task_type=\"round2_hypernet\"`, `generation=2`, `parent_ids = json.dumps(sorted(oracle_ids))`.\n\n2. **Correct numeric methodology values** to match `CLAUDE.md` canonical […]
+  "prompt": "You are updating a single documentation file to match PR #28 of the Rune repo. The authoritative source for what shipped is `/home/<USER>/Code/rune/instructions/2026-04-23-pr-28-summary.md`. Read that file end-to-end before editing.\n\n## Target file (edit-in-place)\n\n`/home/<USER>/Code/rune/docs/article/methods.md`\n\nThis is the Methods section of a research-paper-style doc. Preserve its tone and register.\n\n## Required changes (from the checklist's Critical section)\n\n1. **Add a \"Stage 3: Round-2 Distillation\" subsection** under whatever the existing two-stage training pipeline section is called. Rename that parent section from \"Two-Stage Training Pipeline\" to \"Three-Stage Training Pipeline\" (or \"Multi-Stage\", if the existing wording is different — preserve the existing heading style). The new subsection must cover:\n   - Oracle teachers (25 per-bin oracle adapters; 4 phases × 6 benchmarks + 1 pooled diagnose).\n   - Functional-LoRA teacher mechanism (`apply_functional_lora` context manager; base model never mutated; no PeftModel/LoraLayer replacement; eliminates hook leakage between teacher and student passes).\n   - KL + CE distillation loss between student and teacher forward passes.\n   - Strict success gate: ≥ 4 of 6 benchmarks improved ≥ 2.0% Pass@1 AND no regression > 1.0%.\n   - Adapter lineage: `round2_<uuid[:8]>`, `task_type=\"round2_hypernet\"`, `generation=2`, `parent_ids = json.dumps(sorted(oracle_ids))`.\n\n2. **Correct numeric methodology values** to match `CLAUDE.md` canonical […]
 
 > TOOL
 
@@ -819,7 +819,7 @@ tool_use Bash
 id: toolu_01Sa73n5QJ9ukc8KFxbRxyF8
 ```json
 {
-  "command": "ls /Users/noahdolevelixir/Code/rune/libs/model-training/README.md && wc -l /Users/noahdolevelixir/Code/rune/libs/model-training/README.md",
+  "command": "ls /home/<USER>/Code/rune/libs/model-training/README.md && wc -l /home/<USER>/Code/rune/libs/model-training/README.md",
   "description": "Verify target file exists"
 }
 ```
@@ -829,10 +829,10 @@ id: toolu_01Sa73n5QJ9ukc8KFxbRxyF8
 tool_result
 id: toolu_01Sa73n5QJ9ukc8KFxbRxyF8
 ```
-/Users/noahdolevelixir/Code/rune/libs/model-training/README.md  4.0K
+/home/<USER>/Code/rune/libs/model-training/README.md  4.0K
 
 1 files, 0 dirs (1 .md)
-      94 /Users/noahdolevelixir/Code/rune/libs/model-training/README.md
+      94 /home/<USER>/Code/rune/libs/model-training/README.md
 ```
 
 > TOOL
@@ -843,7 +843,7 @@ id: toolu_01A5KEqvgw4hc4hcgpJVUVzc
 {
   "description": "Update libs/model-training/README.md",
   "subagent_type": "gsd-doc-writer",
-  "prompt": "You are updating a single doc to match PR #28 of the Rune repo. Authoritative source: `/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-pr-28-summary.md`. Read it end-to-end before editing.\n\n## Target file (edit-in-place)\n\n`/Users/noahdolevelixir/Code/rune/libs/model-training/README.md`\n\nThis is the per-library README. Short, technical, module-focused. Preserve tone.\n\n## Required changes (from Important section of the checklist)\n\n1. **Extend the \"D2L Training Pipeline\" table** with new modules:\n   - `diff_loss.py` — `DiffAwareSFTTrainer` + `DiffWeightedDataCollator` (hunk-weighted token loss; identity-under-uniform-weights; fallback emits identity weights when side-channels/tokenizer missing).\n   - `d2l_diff.py` — RTK-style diff compression.\n   - `kill_switch.py` — `KillSwitchConfig`, `KillSwitchState`, `maybe_run_kill_switch`, `build_benchmark_evaluate_fn`; wired into `train_d2l_qwen3` via `kill_switch_evaluate_fn` kwarg. Default off.\n   - `training_common.py` — `mlflow_log_params` shared helper.\n   - `round2_config.py` — `Round2TrainConfig` (Pydantic, inherits `D2LTrainConfig`).\n   - `oracle_cache.py` — `_bin_key_for_record`, `lookup_oracle_path`, `audit_oracle_coverage`, `_load_oracle_as_lora_dict`, `OracleAdapterCache` (LRU, max 4 loaded, stores `LoraDict` tensor dicts).\n   - `round2_train.py` — `_apply_functional_lora`, `_teacher_forward_with_oracle`, `_compute_kl_ce_loss`, `_training_step_round2`, `train_d2l_qwen3_round2`, `register_round2_adapter`.\n   - `round2_gate.py` — `evaluate_round2_gate` strict success gate.\n\n2. **Add a dedicated section \"Round-2 Distillation\"** (this is the largest addition from the PR). Cover:\n   - Purpose: trains hypernetwork against per-bin oracle adapters as teacher signals instead of bare base model.\n   - 25 oracle bins (4 phases × 6 benchmarks + 1 pooled `diagnose_pooled`). Oracle IDs: `oracle_<bin_key>`.\n   - Round-2 adapter IDs: `round2_<uuid[:8]>`, `task_type=\"round2_hypernet\"`, `generation=2`, […]
+  "prompt": "You are updating a single doc to match PR #28 of the Rune repo. Authoritative source: `/home/<USER>/Code/rune/instructions/2026-04-23-pr-28-summary.md`. Read it end-to-end before editing.\n\n## Target file (edit-in-place)\n\n`/home/<USER>/Code/rune/libs/model-training/README.md`\n\nThis is the per-library README. Short, technical, module-focused. Preserve tone.\n\n## Required changes (from Important section of the checklist)\n\n1. **Extend the \"D2L Training Pipeline\" table** with new modules:\n   - `diff_loss.py` — `DiffAwareSFTTrainer` + `DiffWeightedDataCollator` (hunk-weighted token loss; identity-under-uniform-weights; fallback emits identity weights when side-channels/tokenizer missing).\n   - `d2l_diff.py` — RTK-style diff compression.\n   - `kill_switch.py` — `KillSwitchConfig`, `KillSwitchState`, `maybe_run_kill_switch`, `build_benchmark_evaluate_fn`; wired into `train_d2l_qwen3` via `kill_switch_evaluate_fn` kwarg. Default off.\n   - `training_common.py` — `mlflow_log_params` shared helper.\n   - `round2_config.py` — `Round2TrainConfig` (Pydantic, inherits `D2LTrainConfig`).\n   - `oracle_cache.py` — `_bin_key_for_record`, `lookup_oracle_path`, `audit_oracle_coverage`, `_load_oracle_as_lora_dict`, `OracleAdapterCache` (LRU, max 4 loaded, stores `LoraDict` tensor dicts).\n   - `round2_train.py` — `_apply_functional_lora`, `_teacher_forward_with_oracle`, `_compute_kl_ce_loss`, `_training_step_round2`, `train_d2l_qwen3_round2`, `register_round2_adapter`.\n   - `round2_gate.py` — `evaluate_round2_gate` strict success gate.\n\n2. **Add a dedicated section \"Round-2 Distillation\"** (this is the largest addition from the PR). Cover:\n   - Purpose: trains hypernetwork against per-bin oracle adapters as teacher signals instead of bare base model.\n   - 25 oracle bins (4 phases × 6 benchmarks + 1 pooled `diagnose_pooled`). Oracle IDs: `oracle_<bin_key>`.\n   - Round-2 adapter IDs: `round2_<uuid[:8]>`, `task_type=\"round2_hypernet\"`, `generation=2`, […]
 
 > TOOL
 
@@ -912,7 +912,7 @@ tool_use Bash
 id: toolu_01EauPAXZuhGEUJprH3bGBPy
 ```json
 {
-  "command": "ls /Users/noahdolevelixir/Code/rune/docs/plans/training_upgrade.md 2>&1 | head -2",
+  "command": "ls /home/<USER>/Code/rune/docs/plans/training_upgrade.md 2>&1 | head -2",
   "description": "Check if plan file exists"
 }
 ```
@@ -922,7 +922,7 @@ id: toolu_01EauPAXZuhGEUJprH3bGBPy
 tool_result
 id: toolu_01EauPAXZuhGEUJprH3bGBPy
 ```
-ls: /Users/noahdolevelixir/Code/rune/docs/plans/training_upgrade.md: No such file or directory
+ls: /home/<USER>/Code/rune/docs/plans/training_upgrade.md: No such file or directory
 ```
 
 > AGENT
@@ -973,7 +973,7 @@ tool_use Bash
 id: toolu_01A8mvShVe7YGpP9PHMX4uB4
 ```json
 {
-  "command": "ls /Users/noahdolevelixir/Code/rune/docs/implementation-plan.md && wc -l /Users/noahdolevelixir/Code/rune/docs/implementation-plan.md",
+  "command": "ls /home/<USER>/Code/rune/docs/implementation-plan.md && wc -l /home/<USER>/Code/rune/docs/implementation-plan.md",
   "description": "Verify target file"
 }
 ```
@@ -983,10 +983,10 @@ id: toolu_01A8mvShVe7YGpP9PHMX4uB4
 tool_result
 id: toolu_01A8mvShVe7YGpP9PHMX4uB4
 ```
-/Users/noahdolevelixir/Code/rune/docs/implementation-plan.md  26.1K
+/home/<USER>/Code/rune/docs/implementation-plan.md  26.1K
 
 1 files, 0 dirs (1 .md)
-     335 /Users/noahdolevelixir/Code/rune/docs/implementation-plan.md
+     335 /home/<USER>/Code/rune/docs/implementation-plan.md
 ```
 
 > TOOL
@@ -997,7 +997,7 @@ id: toolu_01Kgb9Lj7v97AP33WmgfBd26
 {
   "description": "Update docs/implementation-plan.md",
   "subagent_type": "gsd-doc-writer",
-  "prompt": "You are updating a single doc to match PR #28. Authoritative source: `/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-pr-28-summary.md` (read end-to-end first).\n\n## Target (edit-in-place)\n\n`/Users/noahdolevelixir/Code/rune/docs/implementation-plan.md`\n\n## Required changes (Critical priority)\n\n1. **Status table date:** The existing \"Status Summary\" table dates to `2026-04-05`. Update to today's date (`2026-04-23`). Add rows covering PR #28 elements if the table format supports it.\n\n2. **\"Recent Additions (post-plan)\" table:** Extend with PR #28 line-items, each a single row:\n   - Diff-aware SFT loss (`DiffAwareSFTTrainer`, `DiffWeightedDataCollator`).\n   - HPO overhaul: Optuna + Hyperband pruner, diff-restricted fitness metrics (`hunk_loss`, `hunk_accuracy`, `adapter_improvement`, `hunk_entropy`), task-level heldout split, 4-bit NF4 heldout evaluator.\n   - Kill-switch wiring into `train_d2l_qwen3` via `kill_switch_evaluate_fn` kwarg (default-disabled; trigger ≥5% HumanEval Pass@1 regression, 20–30 held-out tasks, k=5).\n   - Round-2 distillation loop (new modules: `round2_config.py`, `oracle_cache.py`, `round2_train.py`, `round2_gate.py`; CLIs: `scripts/train_round2.py`, `scripts/evaluate_round2.py`).\n   - 9-gap closure (workspace mypy, APPS stratification parity, SWE-Bench-Lite `score()` implemented, oracle validation runner `scripts/validate_oracles.py`, `task_description` propagation, S3 manifest upload, GPU-distributed corpus generation).\n   - Strict success gate (≥4/6 benchmarks ≥2.0% Pass@1, no regression >1.0%).\n\n3. **Phase 4 description** (hypernetwork training): update to reflect round-1 AND round-2 paths:\n   - Round-1: existing path (trains against bare base model).\n   - Round-2: trains against 25 per-bin oracle adapters (4 phases × 6 […]
+  "prompt": "You are updating a single doc to match PR #28. Authoritative source: `/home/<USER>/Code/rune/instructions/2026-04-23-pr-28-summary.md` (read end-to-end first).\n\n## Target (edit-in-place)\n\n`/home/<USER>/Code/rune/docs/implementation-plan.md`\n\n## Required changes (Critical priority)\n\n1. **Status table date:** The existing \"Status Summary\" table dates to `2026-04-05`. Update to today's date (`2026-04-23`). Add rows covering PR #28 elements if the table format supports it.\n\n2. **\"Recent Additions (post-plan)\" table:** Extend with PR #28 line-items, each a single row:\n   - Diff-aware SFT loss (`DiffAwareSFTTrainer`, `DiffWeightedDataCollator`).\n   - HPO overhaul: Optuna + Hyperband pruner, diff-restricted fitness metrics (`hunk_loss`, `hunk_accuracy`, `adapter_improvement`, `hunk_entropy`), task-level heldout split, 4-bit NF4 heldout evaluator.\n   - Kill-switch wiring into `train_d2l_qwen3` via `kill_switch_evaluate_fn` kwarg (default-disabled; trigger ≥5% HumanEval Pass@1 regression, 20–30 held-out tasks, k=5).\n   - Round-2 distillation loop (new modules: `round2_config.py`, `oracle_cache.py`, `round2_train.py`, `round2_gate.py`; CLIs: `scripts/train_round2.py`, `scripts/evaluate_round2.py`).\n   - 9-gap closure (workspace mypy, APPS stratification parity, SWE-Bench-Lite `score()` implemented, oracle validation runner `scripts/validate_oracles.py`, `task_description` propagation, S3 manifest upload, GPU-distributed corpus generation).\n   - Strict success gate (≥4/6 benchmarks ≥2.0% Pass@1, no regression >1.0%).\n\n3. **Phase 4 description** (hypernetwork training): update to reflect round-1 AND round-2 paths:\n   - Round-1: existing path (trains against bare base model).\n   - Round-2: trains against 25 per-bin oracle adapters (4 phases × 6 […]
 
 > TOOL
 
@@ -1103,7 +1103,7 @@ tool_use Bash
 id: toolu_01NNuvxhUu8ppC8nfCi9pDD2
 ```json
 {
-  "command": "wc -l /Users/noahdolevelixir/Code/rune/README.md /Users/noahdolevelixir/Code/rune/CLAUDE.md",
+  "command": "wc -l /home/<USER>/Code/rune/README.md /home/<USER>/Code/rune/CLAUDE.md",
   "description": "Check root doc sizes"
 }
 ```
@@ -1113,8 +1113,8 @@ id: toolu_01NNuvxhUu8ppC8nfCi9pDD2
 tool_result
 id: toolu_01NNuvxhUu8ppC8nfCi9pDD2
 ```
-     250 /Users/noahdolevelixir/Code/rune/README.md
-     107 /Users/noahdolevelixir/Code/rune/CLAUDE.md
+     250 /home/<USER>/Code/rune/README.md
+     107 /home/<USER>/Code/rune/CLAUDE.md
      357 total
 ```
 
@@ -1126,7 +1126,7 @@ id: toolu_01MkhpCyHyvwjss8HWh5e5rB
 {
   "description": "Update root README.md for PR #28",
   "subagent_type": "gsd-doc-writer",
-  "prompt": "You are updating a single doc to match PR #28 of the Rune repo. Authoritative source: `/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-pr-28-summary.md` (read end-to-end first).\n\n## Target (edit-in-place)\n\n`/Users/noahdolevelixir/Code/rune/README.md`\n\n## Required changes (Important tier)\n\n1. **Test count** (around line ~238): `433+` → **`776+`**. Any other occurrence of the test count should also be updated to 776+.\n\n2. **Status section date:** currently says `2026-04-05`. Update to `2026-04-23`. If there's a \"What's next\" list of unimplemented items, remove the items now implemented by PR #28: diff-aware loss, HPO overhaul, round-2 distillation, kill-switch wiring.\n\n3. **System Components table** — extend the `scripts/` row (or equivalent) to list:\n   - `phase_corpus_producer.py`\n   - `train_round2.py`\n   - `evaluate_round2.py`\n   - `validate_oracles.py`\n   - `train.sh`\n   - `optimization/run_training_hpo.py`\n\n4. **Training Pipeline section** — if there's a \"Two-Stage Training Pipeline\" section, rename to **\"Three-Stage Training Pipeline\"** or equivalent, and add a brief third-stage bullet covering round-2 oracle-teacher distillation:\n   - Trains hypernetwork against 25 per-bin oracle adapters (4 phases × 6 benchmarks + `diagnose_pooled`) as teacher signals.\n   - Functional-LoRA teacher mechanism (`apply_functional_lora` context — base model never mutated).\n   - Strict success gate: ≥ 4/6 benchmarks improved ≥ 2.0% Pass@1, no regression > 1.0%.\n   - CLIs: `scripts/train_round2.py`, `scripts/evaluate_round2.py`.\n\n5. **Adapter Registry section** […]
+  "prompt": "You are updating a single doc to match PR #28 of the Rune repo. Authoritative source: `/home/<USER>/Code/rune/instructions/2026-04-23-pr-28-summary.md` (read end-to-end first).\n\n## Target (edit-in-place)\n\n`/home/<USER>/Code/rune/README.md`\n\n## Required changes (Important tier)\n\n1. **Test count** (around line ~238): `433+` → **`776+`**. Any other occurrence of the test count should also be updated to 776+.\n\n2. **Status section date:** currently says `2026-04-05`. Update to `2026-04-23`. If there's a \"What's next\" list of unimplemented items, remove the items now implemented by PR #28: diff-aware loss, HPO overhaul, round-2 distillation, kill-switch wiring.\n\n3. **System Components table** — extend the `scripts/` row (or equivalent) to list:\n   - `phase_corpus_producer.py`\n   - `train_round2.py`\n   - `evaluate_round2.py`\n   - `validate_oracles.py`\n   - `train.sh`\n   - `optimization/run_training_hpo.py`\n\n4. **Training Pipeline section** — if there's a \"Two-Stage Training Pipeline\" section, rename to **\"Three-Stage Training Pipeline\"** or equivalent, and add a brief third-stage bullet covering round-2 oracle-teacher distillation:\n   - Trains hypernetwork against 25 per-bin oracle adapters (4 phases × 6 benchmarks + `diagnose_pooled`) as teacher signals.\n   - Functional-LoRA teacher mechanism (`apply_functional_lora` context — base model never mutated).\n   - Strict success gate: ≥ 4/6 benchmarks improved ≥ 2.0% Pass@1, no regression > 1.0%.\n   - CLIs: `scripts/train_round2.py`, `scripts/evaluate_round2.py`.\n\n5. **Adapter Registry section** […]
 
 > TOOL
 
@@ -1227,7 +1227,7 @@ tool_use Read
 id: toolu_01P33ECbngESNwMB4i1RTCiy
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/CLAUDE.md"
+  "file_path": "/home/<USER>/Code/rune/CLAUDE.md"
 }
 ```
 
@@ -1269,7 +1269,7 @@ id: toolu_01STXpaCLzg8LVs2LQCzARcj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/CLAUDE.md",
+  "file_path": "/home/<USER>/Code/rune/CLAUDE.md",
   "old_string": "uv run pytest                    # 314+ tests, ~30s on GPU",
   "new_string": "uv run pytest                    # 776+ tests, ~30s on GPU"
 }
@@ -1280,7 +1280,7 @@ id: toolu_01STXpaCLzg8LVs2LQCzARcj
 tool_result
 id: toolu_01STXpaCLzg8LVs2LQCzARcj
 ```
-The file /Users/noahdolevelixir/Code/rune/CLAUDE.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/CLAUDE.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1290,7 +1290,7 @@ id: toolu_0192Suhufec1K76q61VT25je
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/CLAUDE.md",
+  "file_path": "/home/<USER>/Code/rune/CLAUDE.md",
   "old_string": "- `scripts/rune_runner.py` — Single pipeline run (5-phase: decompose → plan → code → integrate → diagnose/repair) with DAG-ordered code execution\n- `scripts/swarm.py` — Multi-agent swarm orchestrator (agents + training pool + evolution + watchdog)\n- `scripts/e2e_test.py` — End-to-end test exercising full pipeline\n- `scripts/benchmark_challenging.py` — 3-task end-to-end benchmark\n- `scripts/optimization/run_optimization.py` — Bayesian parameter optimization (Optuna)\n- `scripts/experiment_harness.py` — Isolated adapter/prompt experiments (~15s/trial)\n- `scripts/swarm_workers.py` — Training pool manager (QLoRA in subprocess, vLLM sleep/wake)\n- `scripts/swarm_evolution.py` — Evolution worker (TIES/DARE merge, pruning, lineage)",
   "new_string": "- `scripts/rune_runner.py` — Single pipeline run (5-phase: decompose → plan → code → integrate → diagnose/repair) with DAG-ordered code execution\n- `scripts/swarm.py` — Multi-agent swarm orchestrator (agents + training pool + evolution + watchdog)\n- `scripts/e2e_test.py` — End-to-end test exercising full pipeline\n- `scripts/benchmark_challenging.py` — 3-task end-to-end benchmark\n- `scripts/optimization/run_optimization.py` — Bayesian parameter optimization (Optuna)\n- `scripts/optimization/run_training_hpo.py` — HPO overhaul (Optuna + Hyperband pruner, hunk-weighted metrics, 4-bit NF4 heldout eval)\n- `scripts/experiment_harness.py` — Isolated adapter/prompt experiments (~15s/trial)\n- `scripts/swarm_workers.py` — Training pool manager (QLoRA in subprocess, vLLM sleep/wake)\n- `scripts/swarm_evolution.py` — Evolution worker (TIES/DARE merge, pruning, lineage)\n- `scripts/train.sh` — Unified training CLI wrapper (threads warmup_ratio, LoRA overrides, NEFTune, diff-aware loss)\n- `scripts/phase_corpus_producer.py` — 25-bin oracle corpus producer (GPU sharding via `--shard IDX/TOTAL […]
 
@@ -1299,7 +1299,7 @@ id: toolu_0192Suhufec1K76q61VT25je
 tool_result
 id: toolu_0192Suhufec1K76q61VT25je
 ```
-The file /Users/noahdolevelixir/Code/rune/CLAUDE.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/CLAUDE.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1309,7 +1309,7 @@ id: toolu_01XqC26wBbgQ3hJqxsvfGmLj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/CLAUDE.md",
+  "file_path": "/home/<USER>/Code/rune/CLAUDE.md",
   "old_string": "- `libs/model-training/src/model_training/sakana_d2l.py` — Sakana Doc-to-LoRA adapter generation (HyperLoRA perceiver → PEFT adapter)\n- `libs/model-training/src/model_training/hypernetwork.py` — DocToLoraHypernetwork (Perceiver-based)\n- `libs/model-training/src/model_training/merging.py` — TIES/DARE adapter merging\n- `libs/adapter-registry/src/adapter_registry/registry.py` — AdapterRegistry (SQLite CRUD)\n- `libs/inference/src/inference/provider.py` — InferenceProvider ABC (with temperature/top_p/repetition_penalty)\n- `libs/shared/src/shared/sandbox.py` — SubprocessBackend for code execution",
   "new_string": "- `libs/model-training/src/model_training/sakana_d2l.py` — Sakana Doc-to-LoRA adapter generation (HyperLoRA perceiver → PEFT adapter)\n- `libs/model-training/src/model_training/hypernetwork.py` — DocToLoraHypernetwork (Perceiver-based)\n- `libs/model-training/src/model_training/merging.py` — TIES/DARE adapter merging\n- `libs/model-training/src/model_training/diff_loss.py` — `DiffAwareSFTTrainer` + `DiffWeightedDataCollator` (hunk-weighted token loss, identity fallback)\n- `libs/model-training/src/model_training/kill_switch.py` — Kill-switch wiring (≥5% HumanEval Pass@1 regression trigger, k=5, 20–30 held-out tasks)\n- `libs/model-training/src/model_training/training_common.py` — `mlflow_log_params` shared helper\n- `libs/model-training/src/model_training/round2_config.py` — `Round2TrainConfig` (Pydantic, inherits `D2LTrainConfig`)\n- `libs/model-training/src/model_training/oracle_cache.py` — `OracleAdapterCache` (LRU max 4, stores `LoraDict` tensor dicts), bin-key lookup, coverage audit\n- `libs/model-training/src/model_training/round2_train.py` — Round-2 training loop (`apply_functional_lora`, KL+CE loss, `train_d2l_qwen3_round2`, `register_round2_adapter`)\n- `libs/model-training/src/model_training/round2_gate.py` — `evaluate_round2_gate` strict success gate\n- `libs/adapter-registry/src/adapter_registry/registry.py` — AdapterRegistry (SQLite CRUD); reserved `task_type=\"round2_hypernet\"`, `generation=2`, `parent_ids=json.dumps(sorted(oracle_ids))`\n- `libs/corpus-producer/src/corpus_producer/trainer_bridge.py` — Sets oracle adapter IDs (`oracle_<bin_key>`)\n- `libs/corpus-producer/src/corpus_producer/s3_uploader.py` — S3 manifest upload (lazy boto3 import, graceful degradation)\n- `libs/inference/src/inference/provider.py` — InferenceProvider ABC (with temperature/top_p/repetition_penalty)\n- `libs/shared/src/shared/sandbox.py` — SubprocessBackend for code execution"
 }
@@ -1320,7 +1320,7 @@ id: toolu_01XqC26wBbgQ3hJqxsvfGmLj
 tool_result
 id: toolu_01XqC26wBbgQ3hJqxsvfGmLj
 ```
-The file /Users/noahdolevelixir/Code/rune/CLAUDE.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/CLAUDE.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1432,7 +1432,7 @@ tool_use Bash
 id: toolu_01GqWhGgiwr25Cw1dtCgpsNy
 ```json
 {
-  "command": "ls /Users/noahdolevelixir/Code/rune/libs/evaluation/README.md /Users/noahdolevelixir/Code/rune/libs/adapter-registry/README.md 2>&1 && wc -l /Users/noahdolevelixir/Code/rune/libs/evaluation/README.md /Users/noahdolevelixir/Code/rune/libs/adapter-registry/README.md",
+  "command": "ls /home/<USER>/Code/rune/libs/evaluation/README.md /home/<USER>/Code/rune/libs/adapter-registry/README.md 2>&1 && wc -l /home/<USER>/Code/rune/libs/evaluation/README.md /home/<USER>/Code/rune/libs/adapter-registry/README.md",
   "description": "Verify target files"
 }
 ```
@@ -1442,12 +1442,12 @@ id: toolu_01GqWhGgiwr25Cw1dtCgpsNy
 tool_result
 id: toolu_01GqWhGgiwr25Cw1dtCgpsNy
 ```
-/Users/noahdolevelixir/Code/rune/libs/adapter-registry/README.md  2.2K
-/Users/noahdolevelixir/Code/rune/libs/evaluation/README.md  2.4K
+/home/<USER>/Code/rune/libs/adapter-registry/README.md  2.2K
+/home/<USER>/Code/rune/libs/evaluation/README.md  2.4K
 
 2 files, 0 dirs (2 .md)
-      73 /Users/noahdolevelixir/Code/rune/libs/evaluation/README.md
-      53 /Users/noahdolevelixir/Code/rune/libs/adapter-registry/README.md
+      73 /home/<USER>/Code/rune/libs/evaluation/README.md
+      53 /home/<USER>/Code/rune/libs/adapter-registry/README.md
      126 total
 ```
 
@@ -1457,7 +1457,7 @@ tool_use Read
 id: toolu_01QRUkCT686TBsU4NE2B1Rhz
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/evaluation/README.md"
+  "file_path": "/home/<USER>/Code/rune/libs/evaluation/README.md"
 }
 ```
 
@@ -1518,7 +1518,7 @@ id: toolu_0156TUWw4xoMLU3rUTgA7xMs
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/evaluation/README.md",
+  "file_path": "/home/<USER>/Code/rune/libs/evaluation/README.md",
   "old_string": "| Benchmark | Source | Tasks |\n|-----------|--------|-------|\n| HumanEval+ | EvalPlus | Function-level code generation |\n| MBPP+ | EvalPlus | Python programming problems |\n| BigCodeBench | BigCodeBench | Complex coding tasks |",
   "new_string": "| Benchmark | Source | Tasks |\n|-----------|--------|-------|\n| HumanEval+ | EvalPlus | Function-level code generation |\n| MBPP+ | EvalPlus | Python programming problems |\n| APPS | APPS | Competitive programming (introductory, interview, competition tiers). Stratification now delegates to Plan A's canonical implementation (`benchmarks/apps.py::load_problems`) |\n| BigCodeBench | BigCodeBench | Complex coding tasks |\n| DS-1000 | DS-1000 | Data-science tasks across 7 libraries (NumPy, Pandas, SciPy, Matplotlib, sklearn, PyTorch, TensorFlow) |\n| LiveCodeBench | LiveCodeBench | Contamination-resistant competitive programming tasks from live contests |\n| SWE-Bench-Lite | SWE-Bench-Lite | Repository-level patch generation. `benchmarks/swe_bench.py::score()` is now implemented with an env-gated clone/apply/pytest pipeline (previously raised `NotImplementedError`) |\n\nThese six benchmarks (HumanEval, MBPP, APPS, BigCodeBench, DS-1000, LiveCodeBench) form the structure of the round-2 strict success gate: `evaluate_round2_gate` requires ≥ 4/6 benchmarks improved ≥ 2.0% Pass@1 with no regression > 1.0% on any benchmark."
 }
@@ -1529,7 +1529,7 @@ id: toolu_0156TUWw4xoMLU3rUTgA7xMs
 tool_result
 id: toolu_0156TUWw4xoMLU3rUTgA7xMs
 ```
-The file /Users/noahdolevelixir/Code/rune/libs/evaluation/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/libs/evaluation/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1616,7 +1616,7 @@ tool_use Read
 id: toolu_01XCecf26iGyWDjFwPcuvpks
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/adapter-registry/README.md"
+  "file_path": "/home/<USER>/Code/rune/libs/adapter-registry/README.md"
 }
 ```
 
@@ -1661,7 +1661,7 @@ id: toolu_01Fj1m4uBxVAfMLH6NpAFuxi
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/adapter-registry/README.md",
+  "file_path": "/home/<USER>/Code/rune/libs/adapter-registry/README.md",
   "old_string": "## Write-Once Policy\n\nWeight files (`.safetensors`) and their hashes are immutable after creation. Metadata fields (`pass_rate`, `fitness_score`, `is_archived`) are mutable. No `update()` or `overwrite()` method exists.",
   "new_string": "## Write-Once Policy\n\nWeight files (`.safetensors`) and their hashes are immutable after creation. Metadata fields (`pass_rate`, `fitness_score`, `is_archived`) are mutable. No `update()` or `overwrite()` method exists.\n\n## Adapter ID Conventions\n\n| Adapter class | ID pattern | Set by |\n|---------------|------------|--------|\n| Standard (QLoRA / round-1 hypernet output) | `<uuid>` | Training pipeline |\n| Oracle adapters | `oracle_<bin_key>` | `libs/corpus-producer/src/corpus_producer/trainer_bridge.py` |\n| Round-2 hypernetwork adapters | `round2_<uuid[:8]>` | `libs/model-training/src/model_training/round2_train.py::register_round2_adapter` |\n\n`bin_key` is `<phase>_<benchmark>` (e.g., `code_humaneval`, `plan_mbpp`) or `diagnose_pooled` — 25 bins total across 4 pipeline phases × 6 benchmarks plus one pooled diagnose bin.\n\n### Reserved `task_type` values\n\n| Value | Meaning |\n|-------|---------|\n| `round2_hypernet` | Adapter produced by the round-2 oracle-teacher distillation loop |\n| `oracle_<bin_key>` patterns | Per-bin oracle adapters trained for round-2 teaching |\n\n### Lineage semantics\n\n- `generation`: round-2 adapters set `generation=2`. Standard round-1 adapters are `generation=1` (or unset). Evolution-produced merges follow their own generational counter.\n- `parent_ids`: for round-2 adapters, `parent_ids = json.dumps(sorted(oracle_ids))` — the sorted list of teacher oracle IDs used during training. For merged adapters, this stores the source adapter […]
 
@@ -1670,7 +1670,7 @@ id: toolu_01Fj1m4uBxVAfMLH6NpAFuxi
 tool_result
 id: toolu_01Fj1m4uBxVAfMLH6NpAFuxi
 ```
-The file /Users/noahdolevelixir/Code/rune/libs/adapter-registry/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/libs/adapter-registry/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1768,7 +1768,7 @@ tool_use Bash
 id: toolu_017eq1XtxgJ3vtoimESoAosq
 ```json
 {
-  "command": "ls /Users/noahdolevelixir/Code/rune/libs/corpus-producer/ && ls /Users/noahdolevelixir/Code/rune/libs/corpus-producer/src/corpus_producer/ 2>/dev/null",
+  "command": "ls /home/<USER>/Code/rune/libs/corpus-producer/ && ls /home/<USER>/Code/rune/libs/corpus-producer/src/corpus_producer/ 2>/dev/null",
   "description": "Inspect corpus-producer layout"
 }
 ```
@@ -1803,7 +1803,7 @@ tool_use Bash
 id: toolu_018bhWJwnWbjkLgKxadtoMTy
 ```json
 {
-  "command": "grep -l \"phase_corpus_producer\" /Users/noahdolevelixir/Code/rune/scripts/*.py 2>/dev/null | head -3 && echo \"---\" && head -50 /Users/noahdolevelixir/Code/rune/libs/corpus-producer/src/corpus_producer/__init__.py",
+  "command": "grep -l \"phase_corpus_producer\" /home/<USER>/Code/rune/scripts/*.py 2>/dev/null | head -3 && echo \"---\" && head -50 /home/<USER>/Code/rune/libs/corpus-producer/src/corpus_producer/__init__.py",
   "description": "Find related script + inspect init"
 }
 ```
@@ -1813,7 +1813,7 @@ id: toolu_018bhWJwnWbjkLgKxadtoMTy
 tool_result
 id: toolu_018bhWJwnWbjkLgKxadtoMTy
 ```
-/Users/noahdolevelixir/Code/rune/scripts/phase_corpus_producer.py
+/home/<USER>/Code/rune/scripts/phase_corpus_producer.py
 ---
 """Corpus producer: self-distillation pipeline for phase-aware oracle training."""
 ```
@@ -1824,7 +1824,7 @@ tool_use Bash
 id: toolu_01C2bqfR7uYuAsPR3amkHUq2
 ```json
 {
-  "command": "head -30 /Users/noahdolevelixir/Code/rune/libs/corpus-producer/src/corpus_producer/pipeline_runner.py /Users/noahdolevelixir/Code/rune/libs/corpus-producer/src/corpus_producer/binning.py /Users/noahdolevelixir/Code/rune/libs/corpus-producer/src/corpus_producer/success_filter.py /Users/noahdolevelixir/Code/rune/libs/corpus-producer/src/corpus_producer/rationalization.py /Users/noahdolevelixir/Code/rune/libs/corpus-producer/src/corpus_producer/manifest.py /Users/noahdolevelixir/Code/rune/libs/corpus-producer/src/corpus_producer/trainer_bridge.py 2>&1 | head -150",
+  "command": "head -30 /home/<USER>/Code/rune/libs/corpus-producer/src/corpus_producer/pipeline_runner.py /home/<USER>/Code/rune/libs/corpus-producer/src/corpus_producer/binning.py /home/<USER>/Code/rune/libs/corpus-producer/src/corpus_producer/success_filter.py /home/<USER>/Code/rune/libs/corpus-producer/src/corpus_producer/rationalization.py /home/<USER>/Code/rune/libs/corpus-producer/src/corpus_producer/manifest.py /home/<USER>/Code/rune/libs/corpus-producer/src/corpus_producer/trainer_bridge.py 2>&1 | head -150",
   "description": "Read module docstrings for corpus-producer"
 }
 ```
@@ -1834,7 +1834,7 @@ id: toolu_01C2bqfR7uYuAsPR3amkHUq2
 tool_result
 id: toolu_01C2bqfR7uYuAsPR3amkHUq2
 ```
-/usr/bin/read: line 4: read: `/Users/noahdolevelixir/Code/rune/libs/corpus-producer/src/corpus_producer/pipeline_runner.py': not a valid identifier
+/usr/bin/read: line 4: read: `/home/<USER>/Code/rune/libs/corpus-producer/src/corpus_producer/pipeline_runner.py': not a valid identifier
 ```
 
 > TOOL
@@ -1843,7 +1843,7 @@ tool_use Read
 id: toolu_01T5sNtP6EFg3nQpSiLcgPoM
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/corpus-producer/src/corpus_producer/pipeline_runner.py",
+  "file_path": "/home/<USER>/Code/rune/libs/corpus-producer/src/corpus_producer/pipeline_runner.py",
   "offset": 1,
   "limit": 30
 }
@@ -1892,7 +1892,7 @@ tool_use Read
 id: toolu_013rQJVn7s6KeF91PJCZmLfi
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/corpus-producer/src/corpus_producer/binning.py",
+  "file_path": "/home/<USER>/Code/rune/libs/corpus-producer/src/corpus_producer/binning.py",
   "offset": 1,
   "limit": 30
 }
@@ -1941,7 +1941,7 @@ tool_use Read
 id: toolu_01FPaaq9KMH3REbaGQxtxrXV
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/corpus-producer/src/corpus_producer/trainer_bridge.py",
+  "file_path": "/home/<USER>/Code/rune/libs/corpus-producer/src/corpus_producer/trainer_bridge.py",
   "offset": 1,
   "limit": 30
 }
@@ -1990,7 +1990,7 @@ tool_use Bash
 id: toolu_01TSW2kD3AYjFNhrVZ7HgENq
 ```json
 {
-  "command": "grep -n \"oracle_<bin_key>\\|f\\\"oracle_\\|oracle_{\" /Users/noahdolevelixir/Code/rune/libs/corpus-producer/src/corpus_producer/trainer_bridge.py | head -5",
+  "command": "grep -n \"oracle_<bin_key>\\|f\\\"oracle_\\|oracle_{\" /home/<USER>/Code/rune/libs/corpus-producer/src/corpus_producer/trainer_bridge.py | head -5",
   "description": "Find oracle_<bin_key> pattern usage"
 }
 ```
@@ -2012,7 +2012,7 @@ tool_use Read
 id: toolu_01FmFXkT25JfS63d8XDHDLkw
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/corpus-producer/src/corpus_producer/trainer_bridge.py",
+  "file_path": "/home/<USER>/Code/rune/libs/corpus-producer/src/corpus_producer/trainer_bridge.py",
   "offset": 30,
   "limit": 100
 }
@@ -2073,7 +2073,7 @@ tool_use Write
 id: toolu_01UejeCg2uem8WudkfKHoLy8
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/corpus-producer/README.md",
+  "file_path": "/home/<USER>/Code/rune/libs/corpus-producer/README.md",
   "content": "# corpus-producer\n\nSelf-distillation pipeline that produces the 25-bin oracle training corpus used by the round-2 hypernetwork distillation loop.\n\n## Purpose\n\nRuns coding problems through the full 5-phase Rune pipeline (`scripts/rune_runner.py`) in subprocess mode, filters for successful completions, rationalizes phase artifacts into training records, and bins them by `(phase, benchmark)` into 25 oracle bins:\n\n- `<phase>_<benchmark>` for 4 phases × 6 benchmarks (e.g., `code_humaneval`, `plan_mbpp`)\n- `diagnose_pooled` for all diagnose-phase artifacts across benchmarks\n\nEach bin yields one oracle adapter, registered in the `AdapterRegistry` with `id = \"oracle_<bin_key>\"` by `trainer_bridge.invoke_bin_training`. These oracle adapters are the teacher signals for round-2 hypernetwork distillation (see `libs/model-training` round-2 modules).\n\n## Key Modules\n\n| Module | Purpose |\n|--------|---------|\n| `pipeline_runner.py` | Subprocess wrapper around `scripts/rune_runner.py`; runs one `(benchmark, problem)` pair end-to-end and parses per-phase artifacts |\n| `success_filter.py` | Filters phase artifacts by per-phase success criteria before training |\n| `rationalization.py` | Converts phase artifacts into training-ready (prompt, completion) records |\n| `binning.py` | `bin_artifacts` — groups artifacts into `<phase>_<benchmark>` / `diagnose_pooled` bins |\n| `manifest.py` | Writes JSONL manifests per bin for downstream trainer consumption |\n| `trainer_bridge.py` | `invoke_bin_training(bin_key, manifest_path)` — trains one oracle adapter with DeltaCoder warm-start defaults (rank=64, alpha=32, lr=2e-4, constant LR, diff-aware loss); sets the `oracle_<bin_key>` adapter […]
 
 > TOOL
@@ -2081,7 +2081,7 @@ id: toolu_01UejeCg2uem8WudkfKHoLy8
 tool_result
 id: toolu_01UejeCg2uem8WudkfKHoLy8
 ```
-File created successfully at: /Users/noahdolevelixir/Code/rune/libs/corpus-producer/README.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Code/rune/libs/corpus-producer/README.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2177,7 +2177,7 @@ tool_use Bash
 id: toolu_0111b3nWKTqjL4JfRucVxF7K
 ```json
 {
-  "command": "wc -l /Users/noahdolevelixir/Code/rune/docs/components-overview.md /Users/noahdolevelixir/Code/rune/docs/architecture/monorepo-mapping.md /Users/noahdolevelixir/Code/rune/docs/architecture/adapter-storage.md /Users/noahdolevelixir/Code/rune/docs/architecture/multi-gpu-strategy.md /Users/noahdolevelixir/Code/rune/docs/appendices/build-order.md",
+  "command": "wc -l /home/<USER>/Code/rune/docs/components-overview.md /home/<USER>/Code/rune/docs/architecture/monorepo-mapping.md /home/<USER>/Code/rune/docs/architecture/adapter-storage.md /home/<USER>/Code/rune/docs/architecture/multi-gpu-strategy.md /home/<USER>/Code/rune/docs/appendices/build-order.md",
   "description": "Check remaining file sizes"
 }
 ```
@@ -2187,11 +2187,11 @@ id: toolu_0111b3nWKTqjL4JfRucVxF7K
 tool_result
 id: toolu_0111b3nWKTqjL4JfRucVxF7K
 ```
-      19 /Users/noahdolevelixir/Code/rune/docs/components-overview.md
-     168 /Users/noahdolevelixir/Code/rune/docs/architecture/monorepo-mapping.md
-     124 /Users/noahdolevelixir/Code/rune/docs/architecture/adapter-storage.md
-     120 /Users/noahdolevelixir/Code/rune/docs/architecture/multi-gpu-strategy.md
-      35 /Users/noahdolevelixir/Code/rune/docs/appendices/build-order.md
+      19 /home/<USER>/Code/rune/docs/components-overview.md
+     168 /home/<USER>/Code/rune/docs/architecture/monorepo-mapping.md
+     124 /home/<USER>/Code/rune/docs/architecture/adapter-storage.md
+     120 /home/<USER>/Code/rune/docs/architecture/multi-gpu-strategy.md
+      35 /home/<USER>/Code/rune/docs/appendices/build-order.md
      466 total
 ```
 
@@ -2201,7 +2201,7 @@ tool_use Read
 id: toolu_01FvXbKNnm9MEu18YdMrAmBY
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/docs/components-overview.md"
+  "file_path": "/home/<USER>/Code/rune/docs/components-overview.md"
 }
 ```
 
@@ -2232,7 +2232,7 @@ id: toolu_01RKZ6dH9aFvobEMfemSjQVv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/docs/components-overview.md",
+  "file_path": "/home/<USER>/Code/rune/docs/components-overview.md",
   "old_string": "| **scripts/** | Fat orchestrator layer: 5-phase pipeline (`rune_runner.py`), swarm orchestrator (`swarm.py`), training pool, evolution worker. | Implemented (primary execution path) | -- |\n| **adapter-registry** | SQLite + filesystem store for LoRA adapter metadata with write-once enforcement, fitness queries, and lineage tracking. | Implemented | [API Reference](adapter-registry/api/index.md) |\n| **api-service** | FastAPI orchestrator providing HTTP endpoints for adapter management, session tracking, and service coordination. | Stubs (domain endpoints return 501; health checks work) | [API Reference](api-service/api/index.md) |\n| **evaluation** | Adapter benchmarking with OOD testing, Pass@k metrics, fitness scoring, and generalization delta computation. | Implemented | [API Reference](evaluation/api/index.md) |\n| **events-py** | Shared event envelope shapes (created/updated/deleted) and helpers used by Python services. | Implemented | [API Reference](events-py/api/index.md) |\n| **evolution-svc** | Adapter evaluation, evolution, promotion, and pruning service. REST stubs; evolution logic in `scripts/swarm_evolution.py`. | Stubs (endpoints return 501; logic in `scripts/swarm_evolution.py`) | [API Reference](evolution-svc/api/index.md) |\n| **inference** | Provider-agnostic inference interface with TransformersProvider, LlamaCppProvider, OllamaProvider, and VLLMProvider backends. | Implemented | [API Reference](inference/api/index.md) |\n| **model-training** | DocToLoraHypernetwork, D2L training pipeline, TIES/DARE adapter merging, QLoRA fine-tuning, and PEFT utilities. | Implemented | [API Reference](model-training/api/index.md) |\n| **rune-agent** | LangGraph state graph implementing the recursive […]
 
 > TOOL
@@ -2240,7 +2240,7 @@ id: toolu_01RKZ6dH9aFvobEMfemSjQVv
 tool_result
 id: toolu_01RKZ6dH9aFvobEMfemSjQVv
 ```
-The file /Users/noahdolevelixir/Code/rune/docs/components-overview.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/docs/components-overview.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2324,7 +2324,7 @@ id: toolu_01PaWV8brhifJkVnxZyRZZ9e
 {
   "description": "Update monorepo-mapping for PR #28",
   "subagent_type": "gsd-doc-writer",
-  "prompt": "You are updating a single doc to match PR #28. Authoritative source: `/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-pr-28-summary.md` (read first).\n\n## Target (edit-in-place)\n\n`/Users/noahdolevelixir/Code/rune/docs/architecture/monorepo-mapping.md`\n\n## Required changes (Important tier)\n\n1. **\"Extended Existing Components\" → `model-training` row:** add the 7 new modules from PR #28:\n   - `diff_loss.py` — `DiffAwareSFTTrainer` + `DiffWeightedDataCollator` (hunk-weighted token loss)\n   - `kill_switch.py` — kill-switch wiring\n   - `training_common.py` — `mlflow_log_params` shared helper\n   - `round2_config.py` — `Round2TrainConfig`\n   - `oracle_cache.py` — `OracleAdapterCache` (LRU max 4, `LoraDict` format)\n   - `round2_train.py` — round-2 training loop, functional-LoRA teacher, KL+CE loss\n   - `round2_gate.py` — `evaluate_round2_gate` strict success gate\n   Plus mention `d2l_diff.py` (RTK-style diff compression), `d2l_data.py` additions (`normalize_mined_pairs`, `pairs_to_chat_messages`, `task_description` propagation).\n\n2. **`scripts/` table:** add\n   - `phase_corpus_producer.py` — 25-bin oracle corpus producer; flags `--shard IDX/TOTAL --cuda-visible-devices DEVICES --s3-bucket --s3-prefix`.\n   - `train_round2.py` — round-2 oracle-teacher distillation CLI.\n   - `evaluate_round2.py` — strict success gate CLI (exit 0 PASS, 1 FAIL).\n   - `validate_oracles.py` — per-oracle validator (≥3% Pass@1 improvement).\n   - `train.sh` — unified training wrapper.\n   Update the `optimization/run_training_hpo.py` line with: HPO overhaul — Optuna + Hyperband pruner, hunk-weighted fitness metrics (`hunk_loss`, `hunk_accuracy`, `adapter_improvement`, `hunk_entropy`), task-level heldout split, 4-bit NF4 heldout evaluator with attention_mask threading.\n\n3. **\"Monorepo Layout\" tree:** add any missing scripts listed above […]
+  "prompt": "You are updating a single doc to match PR #28. Authoritative source: `/home/<USER>/Code/rune/instructions/2026-04-23-pr-28-summary.md` (read first).\n\n## Target (edit-in-place)\n\n`/home/<USER>/Code/rune/docs/architecture/monorepo-mapping.md`\n\n## Required changes (Important tier)\n\n1. **\"Extended Existing Components\" → `model-training` row:** add the 7 new modules from PR #28:\n   - `diff_loss.py` — `DiffAwareSFTTrainer` + `DiffWeightedDataCollator` (hunk-weighted token loss)\n   - `kill_switch.py` — kill-switch wiring\n   - `training_common.py` — `mlflow_log_params` shared helper\n   - `round2_config.py` — `Round2TrainConfig`\n   - `oracle_cache.py` — `OracleAdapterCache` (LRU max 4, `LoraDict` format)\n   - `round2_train.py` — round-2 training loop, functional-LoRA teacher, KL+CE loss\n   - `round2_gate.py` — `evaluate_round2_gate` strict success gate\n   Plus mention `d2l_diff.py` (RTK-style diff compression), `d2l_data.py` additions (`normalize_mined_pairs`, `pairs_to_chat_messages`, `task_description` propagation).\n\n2. **`scripts/` table:** add\n   - `phase_corpus_producer.py` — 25-bin oracle corpus producer; flags `--shard IDX/TOTAL --cuda-visible-devices DEVICES --s3-bucket --s3-prefix`.\n   - `train_round2.py` — round-2 oracle-teacher distillation CLI.\n   - `evaluate_round2.py` — strict success gate CLI (exit 0 PASS, 1 FAIL).\n   - `validate_oracles.py` — per-oracle validator (≥3% Pass@1 improvement).\n   - `train.sh` — unified training wrapper.\n   Update the `optimization/run_training_hpo.py` line with: HPO overhaul — Optuna + Hyperband pruner, hunk-weighted fitness metrics (`hunk_loss`, `hunk_accuracy`, `adapter_improvement`, `hunk_entropy`), task-level heldout split, 4-bit NF4 heldout evaluator with attention_mask threading.\n\n3. **\"Monorepo Layout\" tree:** add any missing scripts listed above […]
 
 > TOOL
 
@@ -2440,7 +2440,7 @@ tool_use Read
 id: toolu_01M1CTT8rc65imH3o9Nhx1CJ
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/docs/architecture/adapter-storage.md"
+  "file_path": "/home/<USER>/Code/rune/docs/architecture/adapter-storage.md"
 }
 ```
 
@@ -2490,7 +2490,7 @@ id: toolu_01CKKifkg9dJgHsrHc5Yad3H
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/docs/architecture/adapter-storage.md",
+  "file_path": "/home/<USER>/Code/rune/docs/architecture/adapter-storage.md",
   "old_string": "### Path Components\n\n| Component | Format | Example |\n|-----------|--------|---------|\n| Task type | Kebab-case task category | `bug-fix`, `feature-impl`, `refactor` |\n| Adapter ID | UUID v4 | `a1b2c3d4-e5f6-7890-abcd-ef1234567890` |\n| Version | Monotonically increasing integer | `v1`, `v2`, `v3` |",
   "new_string": "### Path Components\n\n| Component | Format | Example |\n|-----------|--------|---------|\n| Task type | Kebab-case task category | `bug-fix`, `feature-impl`, `refactor` |\n| Adapter ID | UUID v4 (or reserved pattern — see below) | `a1b2c3d4-e5f6-7890-abcd-ef1234567890` |\n| Version | Monotonically increasing integer | `v1`, `v2`, `v3` |\n\n### Adapter ID Naming Conventions\n\nNot every adapter ID is a raw UUID. Two reserved naming patterns carry semantic meaning encoded in the ID itself:\n\n| Adapter class | ID pattern | Set by | Purpose |\n|---------------|------------|--------|---------|\n| Standard / round-1 hypernet output | `<uuid>` (v4) | Training pipeline | General-purpose adapters |\n| Oracle adapters | `oracle_<bin_key>` | `libs/corpus-producer/src/corpus_producer/trainer_bridge.py::invoke_bin_training` | Per-bin teacher adapters for round-2 distillation |\n| Round-2 hypernet adapters | `round2_<uuid[:8]>` | `libs/model-training/src/model_training/round2_train.py::register_round2_adapter` | Hypernetwork adapters produced by oracle-teacher distillation |\n\n**Bin key structure.** Oracle adapters are produced per corpus bin. There are 25 bins:\n\n- `<phase>_<benchmark>` for 4 pipeline phases (`decompose`, `plan`, `code`, `integrate`) × 6 benchmarks (`humaneval`, `mbpp`, `apps`, […]
 
@@ -2499,7 +2499,7 @@ id: toolu_01CKKifkg9dJgHsrHc5Yad3H
 tool_result
 id: toolu_01CKKifkg9dJgHsrHc5Yad3H
 ```
-The file /Users/noahdolevelixir/Code/rune/docs/architecture/adapter-storage.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/docs/architecture/adapter-storage.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2509,7 +2509,7 @@ id: toolu_01Y7XXXzzH3PdprmW19z6UKB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/docs/architecture/adapter-storage.md",
+  "file_path": "/home/<USER>/Code/rune/docs/architecture/adapter-storage.md",
   "old_string": "| `source` | TEXT NOT NULL | 'distillation', 'evolution', 'manual' |",
   "new_string": "| `source` | TEXT NOT NULL | 'distillation', 'evolution', 'manual' |\n| `task_type` reserved values | — | `round2_hypernet` is reserved for round-2 distillation adapters; `oracle_<bin_key>` patterns are set for per-bin oracle adapters |"
 }
@@ -2520,7 +2520,7 @@ id: toolu_01Y7XXXzzH3PdprmW19z6UKB
 tool_result
 id: toolu_01Y7XXXzzH3PdprmW19z6UKB
 ```
-The file /Users/noahdolevelixir/Code/rune/docs/architecture/adapter-storage.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/docs/architecture/adapter-storage.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2530,7 +2530,7 @@ id: toolu_014DKuKJC1PUhohm99odfoVs
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/docs/architecture/adapter-storage.md",
+  "file_path": "/home/<USER>/Code/rune/docs/architecture/adapter-storage.md",
   "old_string": "### New Versions, Not Overwrites\n\nWhen the evolution operator produces a new adapter from one or more parents, it creates a new adapter entry with `parent_ids` (a JSON list) pointing to the sources. The original adapters remain unchanged. The version field tracks lineage — version 2 of an adapter is a successor to version 1, but version 1 still exists and is still queryable.",
   "new_string": "### New Versions, Not Overwrites\n\nWhen the evolution operator produces a new adapter from one or more parents, it creates a new adapter entry with `parent_ids` (a JSON list) pointing to the sources. The original adapters remain unchanged. The version field tracks lineage — version 2 of an adapter is a successor to version 1, but version 1 still exists and is still queryable.\n\n### Round-2 Lineage\n\nRound-2 hypernetwork adapters follow a specific lineage pattern distinct from evolution merges:\n\n- `generation = 2` — distinguishes round-2 adapters from round-1 output.\n- `parent_ids = json.dumps(sorted(oracle_ids))` — the sorted list of teacher oracle adapter IDs used during training (up to 25, one per bin).\n- `task_type = \"round2_hypernet\"` — reserved value identifying the adapter class.\n\n`get_lineage(id)` on a round-2 adapter walks the `parent_ids` chain […]
 
@@ -2539,7 +2539,7 @@ id: toolu_014DKuKJC1PUhohm99odfoVs
 tool_result
 id: toolu_014DKuKJC1PUhohm99odfoVs
 ```
-The file /Users/noahdolevelixir/Code/rune/docs/architecture/adapter-storage.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/docs/architecture/adapter-storage.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2633,7 +2633,7 @@ tool_use Read
 id: toolu_013baDi3iE5WFVj97FVfWyri
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/docs/architecture/multi-gpu-strategy.md"
+  "file_path": "/home/<USER>/Code/rune/docs/architecture/multi-gpu-strategy.md"
 }
 ```
 
@@ -2671,7 +2671,7 @@ id: toolu_0156k2ct7Sz7zzUNTT9APcsq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/docs/architecture/multi-gpu-strategy.md",
+  "file_path": "/home/<USER>/Code/rune/docs/architecture/multi-gpu-strategy.md",
   "old_string": "All parallelism settings are configurable in `services/lora-server/config.yaml` or via environment variables. The server defaults to single-GPU operation.",
   "new_string": "All parallelism settings are configurable via inference provider configuration (`libs/inference/`) or environment variables. (The standalone `services/lora-server/` service referenced in earlier revisions has been replaced by the provider-agnostic inference layer — `TransformersProvider`, `LlamaCppProvider`, `OllamaProvider`, `VLLMProvider`.) The default is single-GPU operation."
 }
@@ -2682,7 +2682,7 @@ id: toolu_0156k2ct7Sz7zzUNTT9APcsq
 tool_result
 id: toolu_0156k2ct7Sz7zzUNTT9APcsq
 ```
-The file /Users/noahdolevelixir/Code/rune/docs/architecture/multi-gpu-strategy.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/docs/architecture/multi-gpu-strategy.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2692,7 +2692,7 @@ id: toolu_012Cafka6meAvnaotjjuxAKA
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/docs/architecture/multi-gpu-strategy.md",
+  "file_path": "/home/<USER>/Code/rune/docs/architecture/multi-gpu-strategy.md",
   "old_string": "## GPU Lease Mechanism",
   "new_string": "## Corpus-Producer Sharding\n\nFor the round-2 distillation pipeline, the 25-bin oracle corpus is produced by running the full 5-phase Rune pipeline across a large problem set (see [Build Order](../appendices/build-order.md)). This workload is **embarrassingly parallel** across problems, so `scripts/phase_corpus_producer.py` supports direct multi-GPU scale-out via sharding rather than time-sharing.\n\n### Sharding Flags\n\n- `--shard IDX/TOTAL` — round-robin slice of problems for this shard (e.g. `--shard 0/4` takes problems 0, 4, 8, …; `--shard 1/4` takes 1, 5, 9, …).\n- `--cuda-visible-devices DEVICES` — sets `CUDA_VISIBLE_DEVICES` in each subprocess pipeline run, pinning the shard to one GPU.\n\nThe progress DB (`libs/corpus-producer/src/corpus_producer/progress_db.py`) is shared across shards with file locking, so restarts resume cleanly and shards never duplicate work.\n\n### Multi-GPU Example\n\n```bash\nfor i in 0 1 2 3; do\n    uv run scripts/phase_corpus_producer.py \\\n        --shard $i/4 --cuda-visible-devices $i \\\n        --out-dir data/phase_corpus &\ndone\nwait\n```\n\n### Corpus Parallelism vs Lease-Based Time-Sharing\n\nThese two patterns are **not interchangeable**:\n\n| Pattern | Parallelism type | When to use |\n|---------|------------------|-------------|\n| Corpus-producer sharding (`--shard`) | Data parallelism across independent problems; one GPU per shard for the full run | Oracle corpus generation (batch workload; no serving concurrency) |\n| GPU lease mechanism (below) | Time-sharing between serving […]
 
@@ -2701,7 +2701,7 @@ id: toolu_012Cafka6meAvnaotjjuxAKA
 tool_result
 id: toolu_012Cafka6meAvnaotjjuxAKA
 ```
-The file /Users/noahdolevelixir/Code/rune/docs/architecture/multi-gpu-strategy.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/docs/architecture/multi-gpu-strategy.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2711,7 +2711,7 @@ id: toolu_01L358hTD7dv3zdUG2JQDqCy
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/noahdolevelixir/Code/rune/docs/architecture/multi-gpu-strategy.md",
+  "file_path": "/home/<USER>/Code/rune/docs/architecture/multi-gpu-strategy.md",
   "old_string": "lora-server",
   "new_string": "inference layer"
 }
@@ -2722,7 +2722,7 @@ id: toolu_01L358hTD7dv3zdUG2JQDqCy
 tool_result
 id: toolu_01L358hTD7dv3zdUG2JQDqCy
 ```
-The file /Users/noahdolevelixir/Code/rune/docs/architecture/multi-gpu-strategy.md has been updated. All occurrences were successfully replaced. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/docs/architecture/multi-gpu-strategy.md has been updated. All occurrences were successfully replaced. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2766,7 +2766,7 @@ id: toolu_01ToKDCDm7VMrnbaQkHr5ke3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/docs/architecture/multi-gpu-strategy.md",
+  "file_path": "/home/<USER>/Code/rune/docs/architecture/multi-gpu-strategy.md",
   "old_string": "**Why does inference layer yield, not training-svc queue indefinitely?**",
   "new_string": "**Why does the inference layer yield, not training-svc queue indefinitely?**"
 }
@@ -2777,7 +2777,7 @@ id: toolu_01ToKDCDm7VMrnbaQkHr5ke3
 tool_result
 id: toolu_01ToKDCDm7VMrnbaQkHr5ke3
 ```
-The file /Users/noahdolevelixir/Code/rune/docs/architecture/multi-gpu-strategy.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/docs/architecture/multi-gpu-strategy.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2847,7 +2847,7 @@ tool_use Read
 id: toolu_01Gz99aaX6hkrUwJRAf1Xrai
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/docs/appendices/build-order.md"
+  "file_path": "/home/<USER>/Code/rune/docs/appendices/build-order.md"
 }
 ```
 
@@ -2877,7 +2877,7 @@ id: toolu_01BpFESHDcHJxZxbECnZE619
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/docs/appendices/build-order.md",
+  "file_path": "/home/<USER>/Code/rune/docs/appendices/build-order.md",
   "old_string": "| — | `scripts/` orchestration | ✅ Implemented | All above | rune_runner.py, swarm.py, swarm_workers.py, swarm_evolution.py |",
   "new_string": "| — | `scripts/` orchestration | ✅ Implemented | All above | rune_runner.py, swarm.py, swarm_workers.py, swarm_evolution.py |\n| 9 | `libs/corpus-producer` | ✅ Implemented | model-training, rune-agent, adapter-registry | 25-bin oracle corpus generation (4 phases × 6 benchmarks + `diagnose_pooled`); `oracle_<bin_key>` adapter IDs |\n| 10 | Oracle corpus production | ✅ Runnable | corpus-producer | Multi-GPU via `scripts/phase_corpus_producer.py --shard IDX/TOTAL --cuda-visible-devices DEVICES`; produces 25 oracle adapters registered as `oracle_<bin_key>` |\n| 11 | Oracle validation | ✅ Runnable | Oracle corpus | `scripts/validate_oracles.py` — asserts ≥ 3% Pass@1 improvement vs bare base on each oracle's bin benchmark |\n| 12 | Round-2 hypernetwork training | ✅ Implemented | Oracle corpus + round-1 hypernet | `scripts/train_round2.py` — functional-LoRA teacher, KL+CE loss, `OracleAdapterCache` (LRU max 4), startup gate (`min_oracle_coverage=0.8`); produces `round2_<uuid[:8]>` adapter |\n| 13 | Round-2 strict gate | ✅ Implemented | Round-2 adapter | `scripts/evaluate_round2.py` — `evaluate_round2_gate`: ≥ 4/6 benchmarks ≥ 2.0% Pass@1, no regression > 1.0%; exit 0 PASS, 1 FAIL |"
 }
@@ -2888,7 +2888,7 @@ id: toolu_01BpFESHDcHJxZxbECnZE619
 tool_result
 id: toolu_01BpFESHDcHJxZxbECnZE619
 ```
-The file /Users/noahdolevelixir/Code/rune/docs/appendices/build-order.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/docs/appendices/build-order.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2898,7 +2898,7 @@ id: toolu_01Et2sDxWxoVaPx3Xe9A3Qg6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/docs/appendices/build-order.md",
+  "file_path": "/home/<USER>/Code/rune/docs/appendices/build-order.md",
   "old_string": "    rune_agent --> scripts[\"scripts/ orchestration ✅\"]\n    training_svc --> scripts\n    evolution_svc --> scripts\n```",
   "new_string": "    rune_agent --> scripts[\"scripts/ orchestration ✅\"]\n    training_svc --> scripts\n    evolution_svc --> scripts\n    model_training --> corpus_producer[\"corpus-producer ✅\"]\n    rune_agent --> corpus_producer\n    adapter_registry --> corpus_producer\n    corpus_producer --> oracle_production[\"Oracle corpus production<br/>(phase_corpus_producer.py --shard)\"]\n    oracle_production --> oracle_validation[\"Oracle validation<br/>(validate_oracles.py)\"]\n    oracle_validation --> round2_training[\"Round-2 hypernet training<br/>(train_round2.py)\"]\n    hypernetwork --> round2_training\n    round2_training --> round2_gate[\"Round-2 strict gate<br/>(evaluate_round2.py)\"]\n```"
 }
@@ -2909,7 +2909,7 @@ id: toolu_01Et2sDxWxoVaPx3Xe9A3Qg6
 tool_result
 id: toolu_01Et2sDxWxoVaPx3Xe9A3Qg6
 ```
-The file /Users/noahdolevelixir/Code/rune/docs/appendices/build-order.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/docs/appendices/build-order.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2971,7 +2971,7 @@ tool_use Bash
 id: toolu_01NnmrxqWmYw5aZzzmkMBNMw
 ```json
 {
-  "command": "wc -l /Users/noahdolevelixir/Code/rune/docs/article/results.md /Users/noahdolevelixir/Code/rune/docs/article/discussion.md /Users/noahdolevelixir/Code/rune/docs/article/abstract.md /Users/noahdolevelixir/Code/rune/docs/article/index.md /Users/noahdolevelixir/Code/rune/docs/index.md /Users/noahdolevelixir/Code/rune/docs/swarm-architecture.md /Users/noahdolevelixir/Code/rune/docs/appendices/risk-matrix.md",
+  "command": "wc -l /home/<USER>/Code/rune/docs/article/results.md /home/<USER>/Code/rune/docs/article/discussion.md /home/<USER>/Code/rune/docs/article/abstract.md /home/<USER>/Code/rune/docs/article/index.md /home/<USER>/Code/rune/docs/index.md /home/<USER>/Code/rune/docs/swarm-architecture.md /home/<USER>/Code/rune/docs/appendices/risk-matrix.md",
   "description": "Check remaining file sizes"
 }
 ```
@@ -2981,13 +2981,13 @@ id: toolu_01NnmrxqWmYw5aZzzmkMBNMw
 tool_result
 id: toolu_01NnmrxqWmYw5aZzzmkMBNMw
 ```
-     184 /Users/noahdolevelixir/Code/rune/docs/article/results.md
-     129 /Users/noahdolevelixir/Code/rune/docs/article/discussion.md
-      11 /Users/noahdolevelixir/Code/rune/docs/article/abstract.md
-      32 /Users/noahdolevelixir/Code/rune/docs/article/index.md
-      21 /Users/noahdolevelixir/Code/rune/docs/index.md
-      62 /Users/noahdolevelixir/Code/rune/docs/swarm-architecture.md
-      13 /Users/noahdolevelixir/Code/rune/docs/appendices/risk-matrix.md
+     184 /home/<USER>/Code/rune/docs/article/results.md
+     129 /home/<USER>/Code/rune/docs/article/discussion.md
+      11 /home/<USER>/Code/rune/docs/article/abstract.md
+      32 /home/<USER>/Code/rune/docs/article/index.md
+      21 /home/<USER>/Code/rune/docs/index.md
+      62 /home/<USER>/Code/rune/docs/swarm-architecture.md
+      13 /home/<USER>/Code/rune/docs/appendices/risk-matrix.md
      452 total
 ```
 
@@ -3041,7 +3041,7 @@ id: toolu_018Jw5MmhQLWv3ttdBuPtxPM
 {
   "description": "Update docs/article/results.md",
   "subagent_type": "gsd-doc-writer",
-  "prompt": "You are updating a single doc to match PR #28. Authoritative source: `/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-pr-28-summary.md` (read end-to-end first).\n\n## Target (edit-in-place)\n\n`/Users/noahdolevelixir/Code/rune/docs/article/results.md`\n\nResearch-paper Results section. Preserve academic tone.\n\n## Required changes (Important tier)\n\n1. **Add round-2 strict gate** as a new evaluation criterion alongside the existing Phase 1 kill-switch discussion. Specifically:\n   - Gate criterion: ≥ 4 of 6 benchmarks improved ≥ 2.0% Pass@1 AND no regression > 1.0%.\n   - Required benchmarks: `humaneval`, `mbpp`, `apps`, `bigcodebench`, `ds_1000`, `livecodebench`.\n   - Verdict JSON: `passed`, `deltas`, `improved_count`, `max_regression`, `reasons`, `round2_adapter_id`, `scores`.\n   - Implemented by `round2_gate.evaluate_round2_gate`; enforced at `scripts/evaluate_round2.py` (exits 0 on PASS, 1 on FAIL — suitable for CI gating).\n\n2. **Benchmark list expansion**: wherever the doc lists 3 benchmark suites, expand to 6 (HumanEval, MBPP, APPS, BigCodeBench, DS-1000, LiveCodeBench).\n\n3. **MLflow schema additions**: add these fitness metrics from PR #28's HPO overhaul:\n   - `hunk_loss`\n   - `hunk_accuracy`\n   - `adapter_improvement`\n   - `hunk_entropy`\n\n4. **Phase 4 ablation structure**: add new ablation targets from PR #28:\n   - **Diff-aware loss vs uniform loss** (`DiffAwareSFTTrainer` vs baseline `SFTTrainer`).\n   - **Oracle fallback modes**: `oracle_fallback=\"skip\"` (default) vs `\"base_model\"` (ablation).\n   - **Round-2 vs round-1 Pass@1 delta** across the 6 benchmarks.\n\n5. **SWE-Bench-Lite note**: mention that `benchmarks/swe_bench.py::score()` is now implemented (previously raised […]
+  "prompt": "You are updating a single doc to match PR #28. Authoritative source: `/home/<USER>/Code/rune/instructions/2026-04-23-pr-28-summary.md` (read end-to-end first).\n\n## Target (edit-in-place)\n\n`/home/<USER>/Code/rune/docs/article/results.md`\n\nResearch-paper Results section. Preserve academic tone.\n\n## Required changes (Important tier)\n\n1. **Add round-2 strict gate** as a new evaluation criterion alongside the existing Phase 1 kill-switch discussion. Specifically:\n   - Gate criterion: ≥ 4 of 6 benchmarks improved ≥ 2.0% Pass@1 AND no regression > 1.0%.\n   - Required benchmarks: `humaneval`, `mbpp`, `apps`, `bigcodebench`, `ds_1000`, `livecodebench`.\n   - Verdict JSON: `passed`, `deltas`, `improved_count`, `max_regression`, `reasons`, `round2_adapter_id`, `scores`.\n   - Implemented by `round2_gate.evaluate_round2_gate`; enforced at `scripts/evaluate_round2.py` (exits 0 on PASS, 1 on FAIL — suitable for CI gating).\n\n2. **Benchmark list expansion**: wherever the doc lists 3 benchmark suites, expand to 6 (HumanEval, MBPP, APPS, BigCodeBench, DS-1000, LiveCodeBench).\n\n3. **MLflow schema additions**: add these fitness metrics from PR #28's HPO overhaul:\n   - `hunk_loss`\n   - `hunk_accuracy`\n   - `adapter_improvement`\n   - `hunk_entropy`\n\n4. **Phase 4 ablation structure**: add new ablation targets from PR #28:\n   - **Diff-aware loss vs uniform loss** (`DiffAwareSFTTrainer` vs baseline `SFTTrainer`).\n   - **Oracle fallback modes**: `oracle_fallback=\"skip\"` (default) vs `\"base_model\"` (ablation).\n   - **Round-2 vs round-1 Pass@1 delta** across the 6 benchmarks.\n\n5. **SWE-Bench-Lite note**: mention that `benchmarks/swe_bench.py::score()` is now implemented (previously raised […]
 
 > TOOL
 
@@ -3137,7 +3137,7 @@ id: toolu_014yRMaghKTm2zVwdmAdBRmz
 {
   "description": "Update docs/article/discussion.md",
   "subagent_type": "gsd-doc-writer",
-  "prompt": "You are updating a single doc to match PR #28. Authoritative source: `/Users/noahdolevelixir/Code/rune/instructions/2026-04-23-pr-28-summary.md` (read first).\n\n## Target (edit-in-place)\n\n`/Users/noahdolevelixir/Code/rune/docs/article/discussion.md`\n\nResearch-paper Discussion section. Preserve academic tone.\n\n## Required changes (Important tier)\n\n1. **\"Expected Contributions\" section:** add **round-2 oracle-teacher distillation via functional-LoRA teachers** as a new contribution (fifth contribution, or append to the existing list — whichever fits). One-paragraph framing:\n   - The round-2 distillation loop trains the hypernetwork against 25 per-bin oracle adapters (4 phases × 6 benchmarks + `diagnose_pooled`) as teacher signals via KL + CE loss.\n   - The functional-LoRA teacher mechanism applies oracles without structurally mutating the base model (`apply_functional_lora` context manager; no `PeftModel` wrappers, no `LoraLayer` replacements), which eliminates PEFT hook-leakage risk between teacher and student forward passes in the same training step.\n   - A strict success gate (`round2_gate.evaluate_round2_gate`) requires ≥ 4/6 benchmarks improved ≥ 2.0% Pass@1 with no regression > 1.0%.\n   - **Specified; empirical results TBD** — requires GPU operator runs to validate.\n\n2. **\"Pre-Validation Status\" infrastructure list:** expand to include PR #28 additions:\n   - Round-2 distillation CLI (`scripts/train_round2.py`).\n   - Oracle cache (`libs/model-training/src/model_training/oracle_cache.py::OracleAdapterCache`).\n   - Strict success gate (`round2_gate.evaluate_round2_gate`; `scripts/evaluate_round2.py`).\n   - Oracle validator (`scripts/validate_oracles.py`).\n   - S3 manifest upload (`libs/corpus-producer/src/corpus_producer/s3_uploader.py`).\n   - GPU-distributed corpus generation […]
+  "prompt": "You are updating a single doc to match PR #28. Authoritative source: `/home/<USER>/Code/rune/instructions/2026-04-23-pr-28-summary.md` (read first).\n\n## Target (edit-in-place)\n\n`/home/<USER>/Code/rune/docs/article/discussion.md`\n\nResearch-paper Discussion section. Preserve academic tone.\n\n## Required changes (Important tier)\n\n1. **\"Expected Contributions\" section:** add **round-2 oracle-teacher distillation via functional-LoRA teachers** as a new contribution (fifth contribution, or append to the existing list — whichever fits). One-paragraph framing:\n   - The round-2 distillation loop trains the hypernetwork against 25 per-bin oracle adapters (4 phases × 6 benchmarks + `diagnose_pooled`) as teacher signals via KL + CE loss.\n   - The functional-LoRA teacher mechanism applies oracles without structurally mutating the base model (`apply_functional_lora` context manager; no `PeftModel` wrappers, no `LoraLayer` replacements), which eliminates PEFT hook-leakage risk between teacher and student forward passes in the same training step.\n   - A strict success gate (`round2_gate.evaluate_round2_gate`) requires ≥ 4/6 benchmarks improved ≥ 2.0% Pass@1 with no regression > 1.0%.\n   - **Specified; empirical results TBD** — requires GPU operator runs to validate.\n\n2. **\"Pre-Validation Status\" infrastructure list:** expand to include PR #28 additions:\n   - Round-2 distillation CLI (`scripts/train_round2.py`).\n   - Oracle cache (`libs/model-training/src/model_training/oracle_cache.py::OracleAdapterCache`).\n   - Strict success gate (`round2_gate.evaluate_round2_gate`; `scripts/evaluate_round2.py`).\n   - Oracle validator (`scripts/validate_oracles.py`).\n   - S3 manifest upload (`libs/corpus-producer/src/corpus_producer/s3_uploader.py`).\n   - GPU-distributed corpus generation […]
 
 > TOOL
 
@@ -3148,7 +3148,7 @@ Done. Here is a summary of what was touched and any ambiguity.
 
 ---
 
-**Sections modified in `/Users/noahdolevelixir/Code/rune/docs/article/discussion.md`:**
+**Sections modified in `/home/<USER>/Code/rune/docs/article/discussion.md`:**
 
 1. **Research Status admonition (top)** — `433+` → `776+` (minor, consistent with Pre-Validation Status change).
 
@@ -3247,7 +3247,7 @@ tool_use Read
 id: toolu_01VuG1rWrLLaBkhW4uouBKLn
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/docs/article/abstract.md"
+  "file_path": "/home/<USER>/Code/rune/docs/article/abstract.md"
 }
 ```
 
@@ -3272,7 +3272,7 @@ id: toolu_011dL53c4pcGHFC2dnKLMU8V
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/docs/article/abstract.md",
+  "file_path": "/home/<USER>/Code/rune/docs/article/abstract.md",
   "old_string": "The **proposed** mechanism extends Doc-to-LoRA -- a hypernetwork architecture **validated** on document question-answering -- to code execution trajectories: sequences of generation attempts, execution results, and reflection steps. The hypernetwork maps trajectory inputs to LoRA adapter weights in a single forward pass. This trajectory modality extension has not been empirically validated; Doc-to-LoRA's applicability to code trajectories is the central open research question. An Evolution Operator governs the adapter lifecycle using a fitness function combining pass rate and generalization score, performing consolidate, update, forget, and merge operations. Cross-task transfer via adapter composition is a future research direction enabled by the adapter registry architecture but not the primary mechanism.",
   "new_string": "The **proposed** mechanism extends Doc-to-LoRA -- a hypernetwork architecture **validated** on document question-answering -- to code execution trajectories: sequences of generation attempts, execution results, and reflection steps. The hypernetwork maps trajectory inputs to LoRA adapter weights in a single forward pass. This trajectory modality extension has not been empirically validated; Doc-to-LoRA's applicability to code trajectories is the central open research question. An Evolution Operator governs the adapter lifecycle using a fitness function combining pass rate and generalization score, performing consolidate, update, forget, […]
 
@@ -3281,7 +3281,7 @@ id: toolu_011dL53c4pcGHFC2dnKLMU8V
 tool_result
 id: toolu_011dL53c4pcGHFC2dnKLMU8V
 ```
-The file /Users/noahdolevelixir/Code/rune/docs/article/abstract.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/docs/article/abstract.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3359,7 +3359,7 @@ tool_use Read
 id: toolu_01PcoykxshWKdy9y8w4csjWs
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/docs/index.md"
+  "file_path": "/home/<USER>/Code/rune/docs/index.md"
 }
 ```
 
@@ -3395,7 +3395,7 @@ id: toolu_0155qW4kLoTub4vCVRL9SvvG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/docs/index.md",
+  "file_path": "/home/<USER>/Code/rune/docs/index.md",
   "old_string": "## Core Subsystems\n\n- **Pipeline** — 5-phase coding pipeline with 18 Jinja2 templates, per-phase iteration, DAG-ordered code execution, and two-step diagnose/repair. Entry: `scripts/rune_runner.py`\n- **Adapter Registry** — SQLite + filesystem store for LoRA adapters with write-once enforcement, fitness queries, and lineage tracking. Entry: `libs/adapter-registry/`\n- **Hypernetwork** — Perceiver-based Doc-to-LoRA hypernetwork generating rank-8 LoRA adapters in a single forward pass. Entry: `libs/model-training/`",
   "new_string": "## Core Subsystems\n\n- **Pipeline** — 5-phase coding pipeline with 18 Jinja2 templates, per-phase iteration, DAG-ordered code execution, and two-step diagnose/repair. Entry: `scripts/rune_runner.py`\n- **Adapter Registry** — SQLite + filesystem store for LoRA adapters with write-once enforcement, fitness queries, and lineage tracking. Reserved ID patterns: `oracle_<bin_key>`, `round2_<uuid[:8]>`. Entry: `libs/adapter-registry/`\n- **Hypernetwork** — Perceiver-based Doc-to-LoRA hypernetwork generating rank-8 LoRA adapters in a single forward pass; trained in two rounds — round-1 against the bare base model, round-2 against per-bin oracle adapters as teacher signals. Entry: `libs/model-training/`\n- **Corpus Producer** — Self-distillation pipeline that produces the 25-bin oracle training corpus (4 phases × 6 benchmarks + `diagnose_pooled`) consumed by round-2 distillation. Entry: `libs/corpus-producer/`, CLI: `scripts/phase_corpus_producer.py`\n- **Oracle Adapters** — 25 per-bin teacher adapters registered as `oracle_<bin_key>`; functional-LoRA teachers for round-2 distillation.\n- **Kill-Switch** — Pass@1 regression guard wired […]
 
@@ -3404,7 +3404,7 @@ id: toolu_0155qW4kLoTub4vCVRL9SvvG
 tool_result
 id: toolu_0155qW4kLoTub4vCVRL9SvvG
 ```
-The file /Users/noahdolevelixir/Code/rune/docs/index.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/docs/index.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3487,7 +3487,7 @@ tool_use Read
 id: toolu_01YLE5YCkGb3LPEDHVUnDSjw
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/docs/swarm-architecture.md"
+  "file_path": "/home/<USER>/Code/rune/docs/swarm-architecture.md"
 }
 ```
 
@@ -3545,7 +3545,7 @@ id: toolu_011uei2HBScZWHycFSLKSYV3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/docs/swarm-architecture.md",
+  "file_path": "/home/<USER>/Code/rune/docs/swarm-architecture.md",
   "old_string": "## Evolution Strategy\n\nEvery `evolution_interval` seconds:\n\n1. For each task type with ≥5 adapters, TIES-merge the top 3\n2. Archive any adapter with fitness < 0.3\n3. New merged adapters inherit `generation = max(parents) + 1`",
   "new_string": "## Evolution Strategy\n\nEvery `evolution_interval` seconds:\n\n1. For each task type with ≥5 adapters, TIES-merge the top 3\n2. Archive any adapter with fitness < 0.3\n3. New merged adapters inherit `generation = max(parents) + 1`\n\n## Swarm Evolution vs Round-2 Distillation\n\nSwarm evolution and round-2 hypernetwork distillation are **two independent adapter lifecycle pipelines**. Do not confuse them:\n\n| Pipeline | What it operates on | Mechanism | Output |\n|----------|---------------------|-----------|--------|\n| **Swarm evolution** (`scripts/swarm_evolution.py`) | Pools of task-level adapters accumulated in the registry | Fitness-based TIES / DARE merge + pruning | New merged adapter with `generation = max(parents) + 1` |\n| **Round-2 distillation** (`scripts/train_round2.py`) | 25 per-bin oracle adapters as teacher signals | Functional-LoRA teacher + KL+CE loss training of the hypernetwork | New hypernetwork weights (`round2_<uuid[:8]>`, `task_type=\"round2_hypernet\"`, `generation=2`) |\n\nSwarm evolution composes existing adapters into better adapters. Round-2 distillation retrains the hypernetwork itself so that future single-pass generations are closer to oracle-quality. Round-2 depends on the oracle set produced by `libs/corpus-producer` (see `phase_corpus_producer.py`); […]
 
@@ -3554,7 +3554,7 @@ id: toolu_011uei2HBScZWHycFSLKSYV3
 tool_result
 id: toolu_011uei2HBScZWHycFSLKSYV3
 ```
-The file /Users/noahdolevelixir/Code/rune/docs/swarm-architecture.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/docs/swarm-architecture.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3642,7 +3642,7 @@ tool_use Read
 id: toolu_01GkGqBa3FV7tH6aXqbZ1HAf
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/docs/appendices/risk-matrix.md"
+  "file_path": "/home/<USER>/Code/rune/docs/appendices/risk-matrix.md"
 }
 ```
 
@@ -3668,7 +3668,7 @@ id: toolu_014bF1NEtvp36E2vo9R3c5YM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/docs/appendices/risk-matrix.md",
+  "file_path": "/home/<USER>/Code/rune/docs/appendices/risk-matrix.md",
   "old_string": "| **Catastrophic forgetting** | Phase 2 | Medium | Immutable adapter storage with write-once semantics enforced at the registry API level. No code path may overwrite an existing adapter. Adapters indexed by session ID and timestamp. | Performance on session-1 tasks degrades after session-50 adapters are added to the corpus; adapter file checksums change unexpectedly. |\n\n## How to Use This Matrix\n\nEach risk listed here should be monitored during the assigned phase via MLflow experiment tracking. Log the warning sign metrics as MLflow scalars at each evaluation step so degradation is visible before it becomes unrecoverable. If any warning sign is observed, stop training and reassess before continuing — there are no predefined fallback strategies, only stop-and-learn.",
   "new_string": "| **Catastrophic forgetting** | Phase 2 | Medium | Immutable adapter storage with write-once semantics enforced at the registry API level. No code path may overwrite an existing adapter. Adapters indexed by session ID and timestamp. | Performance on session-1 tasks degrades after session-50 adapters are added to the corpus; adapter file checksums change unexpectedly. |\n| **Oracle coverage gap** | Phase 4 (round-2) | Operational | `min_oracle_coverage=0.8` startup gate — `train_d2l_qwen3_round2` raises […]
 
@@ -3677,7 +3677,7 @@ id: toolu_014bF1NEtvp36E2vo9R3c5YM
 tool_result
 id: toolu_014bF1NEtvp36E2vo9R3c5YM
 ```
-The file /Users/noahdolevelixir/Code/rune/docs/appendices/risk-matrix.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/docs/appendices/risk-matrix.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3754,7 +3754,7 @@ tool_use Read
 id: toolu_01YJoivqX4Z4yLCvJQkzg8mU
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/docs/article/index.md"
+  "file_path": "/home/<USER>/Code/rune/docs/article/index.md"
 }
 ```
 
@@ -3805,7 +3805,7 @@ id: toolu_01RagWxK5KvAwLAowDKHexen
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/docs/article/index.md",
+  "file_path": "/home/<USER>/Code/rune/docs/article/index.md",
   "old_string": "!!! warning \"Research Status: Pre-Validation\"\n    Rune's infrastructure is built and tested (five-phase pipeline, benchmark\n    evaluation framework, 433+ tests passing). GPU training runs and adapter\n    evaluations have not been conducted. All performance claims are qualified\n    with a claim tier (validated/expected/proposed).",
   "new_string": "!!! warning \"Research Status: Pre-Validation\"\n    Rune's infrastructure is built and tested (five-phase pipeline, benchmark\n    evaluation framework, 776+ tests passing). GPU training runs and adapter\n    evaluations have not been conducted. All performance claims are qualified\n    with a claim tier (validated/expected/proposed)."
 }
@@ -3816,7 +3816,7 @@ id: toolu_01RagWxK5KvAwLAowDKHexen
 tool_result
 id: toolu_01RagWxK5KvAwLAowDKHexen
 ```
-The file /Users/noahdolevelixir/Code/rune/docs/article/index.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/docs/article/index.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3826,7 +3826,7 @@ id: toolu_01YFLeCih34y3C9Z8BadDLhj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/docs/article/index.md",
+  "file_path": "/home/<USER>/Code/rune/docs/article/index.md",
   "old_string": "proposes an experimental design for empirical validation using a tiered benchmark\nframework (HumanEval+, MBPP+, BigCodeBench), and discusses expected contributions\nand limitations honestly in terms of claim tier.",
   "new_string": "proposes an experimental design for empirical validation using a tiered benchmark\nframework across six suites (HumanEval, MBPP, APPS, BigCodeBench, DS-1000,\nLiveCodeBench), and discusses expected contributions and limitations honestly\nin terms of claim tier."
 }
@@ -3837,7 +3837,7 @@ id: toolu_01YFLeCih34y3C9Z8BadDLhj
 tool_result
 id: toolu_01YFLeCih34y3C9Z8BadDLhj
 ```
-The file /Users/noahdolevelixir/Code/rune/docs/article/index.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/docs/article/index.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL

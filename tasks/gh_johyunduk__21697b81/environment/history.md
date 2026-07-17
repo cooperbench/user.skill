@@ -25,7 +25,7 @@ tool_use Read
 id: toolu_01JuWCxknz77pjAAa3HuL6TM
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/objects/Poop.ts"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/objects/Poop.ts"
 }
 ```
 
@@ -109,7 +109,7 @@ tool_use Read
 id: toolu_01Nc7C6NtmDQFEiKB81UUUhb
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/objects/PoolablePoopBase.ts"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/objects/PoolablePoopBase.ts"
 }
 ```
 
@@ -226,7 +226,7 @@ tool_use Read
 id: toolu_01NNkFnDQc8e16FCJfPDKQuA
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "offset": 534,
   "limit": 120
 }
@@ -281,7 +281,7 @@ tool_use Read
 id: toolu_01WmV4Zn2xHc6KJWZvvca2Bp
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "offset": 712,
   "limit": 130
 }
@@ -339,7 +339,7 @@ tool_use Read
 id: toolu_01JqGr11U31DY8YU9hKgmVHB
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "offset": 326,
   "limit": 160
 }
@@ -401,7 +401,7 @@ tool_use Read
 id: toolu_013VwLrWYAVuymfJUzHKv9uL
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "offset": 647,
   "limit": 65
 }
@@ -547,7 +547,7 @@ tool_use Read
 id: toolu_01Lfb2wWRh9jvoLBjwiBVwBm
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/main.ts"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/main.ts"
 }
 ```
 
@@ -607,7 +607,7 @@ tool_use Read
 id: toolu_01LBpyYFEsxbHPjCEk2HzAgG
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "offset": 515,
   "limit": 20
 }
@@ -661,7 +661,7 @@ tool_use Read
 id: toolu_01CpAP4pyfXzHXWGKVm1p2a1
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/GlitchAbility.ts"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/GlitchAbility.ts"
 }
 ```
 
@@ -747,7 +747,7 @@ tool_use Read
 id: toolu_01XU2hBvWewnQRa6hNopdB8F
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "offset": 843,
   "limit": 95
 }
@@ -985,7 +985,7 @@ tool_use Read
 id: toolu_01X6UoXmVxMpe2oPonJYCsQQ
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "offset": 256,
   "limit": 70
 }
@@ -1052,7 +1052,7 @@ tool_use Bash
 id: toolu_01Ntono1LSJvh3CCNwc8Rd74
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game; for f in Mugi Sentinel Gumi Legacy Knight; do echo \"=== $f onUpdate 내부 객체 생성 여부 ===\"; awk '/onUpdate/,/^  [a-zA-Z]/' src/abilities/${f}Ability.ts 2>/dev/null | grep -n \"add\\.\\|new Phaser\\|tweens.add\\|graphics(\" | head -8; done",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game; for f in Mugi Sentinel Gumi Legacy Knight; do echo \"=== $f onUpdate 내부 객체 생성 여부 ===\"; awk '/onUpdate/,/^  [a-zA-Z]/' src/abilities/${f}Ability.ts 2>/dev/null | grep -n \"add\\.\\|new Phaser\\|tweens.add\\|graphics(\" | head -8; done",
   "description": "캐릭터 능력 onUpdate 내부 프레임당 객체 생성 점검"
 }
 ```
@@ -1085,7 +1085,7 @@ id: toolu_01KEAM3Xr7bdw1CxmiQSkxQC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/main.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/main.ts",
   "old_string": "      gravity: { y: 0, x: 0 },\n      debug: false, // 히트박스 on/off\n      fixedStep: false\n    }",
   "new_string": "      gravity: { y: 0, x: 0 },\n      debug: false, // 히트박스 on/off\n      // 고정 타임스텝(Phaser 기본) — 프레임 변동을 accumulator로 흡수해 낙하가 부드러움.\n      // 안티치트는 this.time.now(rAF 루프) 기준이라 물리 스텝과 무관 → 켜도 영향 없음.\n      fixedStep: true\n    }"
 }
@@ -1098,7 +1098,7 @@ id: toolu_019xpH5J8qFg9Ehmvxrs79Tu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/main.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/main.ts",
   "old_string": "  fps: {\n    smoothStep: false // 네이티브 리프레시 레이트 사용, raw delta로 프레임 타이밍 드리프트 방지\n  }",
   "new_string": "  fps: {\n    smoothStep: true // delta 스무딩으로 프레임 지터 흡수 → 모션 부드러움 (안티치트 ratio 허용폭 0.70~1.30 내라 안전)\n  }"
 }
@@ -1109,7 +1109,7 @@ id: toolu_019xpH5J8qFg9Ehmvxrs79Tu
 tool_result
 id: toolu_01KEAM3Xr7bdw1CxmiQSkxQC
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/main.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/main.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1117,7 +1117,7 @@ The file /Users/johyunduk/Projects/ddong-avoid-game/src/main.ts has been updated
 tool_result
 id: toolu_019xpH5J8qFg9Ehmvxrs79Tu
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/main.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/main.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1130,7 +1130,7 @@ tool_use Bash
 id: toolu_01BD7F6YYKbn5JyzNMSk2Rxf
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game; echo \"=== git 추적 여부 ===\"; git ls-files public/assets/illustrations_bak | head -3; echo \"추적 파일 수: $(git ls-files public/assets/illustrations_bak | wc -l | tr -d ' ')\"; echo \"=== 코드에서 illustrations_bak 참조 여부 (없어야 안전) ===\"; grep -rn \"illustrations_bak\" src/ public/ 2>/dev/null | grep -v \"Binary\" | head",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game; echo \"=== git 추적 여부 ===\"; git ls-files public/assets/illustrations_bak | head -3; echo \"추적 파일 수: $(git ls-files public/assets/illustrations_bak | wc -l | tr -d ' ')\"; echo \"=== 코드에서 illustrations_bak 참조 여부 (없어야 안전) ===\"; grep -rn \"illustrations_bak\" src/ public/ 2>/dev/null | grep -v \"Binary\" | head",
   "description": "_bak 폴더 git 추적 및 참조 여부 확인"
 }
 ```
@@ -1158,7 +1158,7 @@ tool_use Bash
 id: toolu_018YaLurEciLeEJF8tZ9PvBp
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game; git rm -r -q public/assets/illustrations_bak && echo \"제거 완료. 스테이징된 삭제 파일 수: $(git diff --cached --name-only | wc -l | tr -d ' ')\"; echo \"=== 타입 검사 ===\"; npx tsc --noEmit && echo \"✅ tsc 통과\"",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game; git rm -r -q public/assets/illustrations_bak && echo \"제거 완료. 스테이징된 삭제 파일 수: $(git diff --cached --name-only | wc -l | tr -d ' ')\"; echo \"=== 타입 검사 ===\"; npx tsc --noEmit && echo \"✅ tsc 통과\"",
   "description": "백업 폴더 git 제거 후 타입 검사"
 }
 ```
@@ -1225,7 +1225,7 @@ id: toolu_012m4y2Ei2E6TSz6DgP6MUno
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/main.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/main.ts",
   "old_string": "  render: {\n    antialias: true,\n    roundPixels: true\n  },",
   "new_string": "  render: {\n    antialias: true,\n    roundPixels: true,\n    // 배터리 모드에서 브라우저/OS가 WebGL 컨텍스트를 저전력 GPU·다운클럭으로 돌리는 것을 억제하는 힌트.\n    // 충전 시엔 매끄럽다가 배터리에서 버벅이는 throttle 증상 완화 (배터리 소모는 소폭 증가).\n    powerPreference: 'high-performance'\n  },"
 }
@@ -1236,7 +1236,7 @@ id: toolu_012m4y2Ei2E6TSz6DgP6MUno
 tool_result
 id: toolu_012m4y2Ei2E6TSz6DgP6MUno
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/main.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/main.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1245,7 +1245,7 @@ tool_use Bash
 id: toolu_01TLNDZDEr1gbMphLt44eKHz
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game; npx tsc --noEmit && echo \"✅ tsc 통과\"",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game; npx tsc --noEmit && echo \"✅ tsc 통과\"",
   "description": "타입 검사"
 }
 ```
@@ -1388,7 +1388,7 @@ tool_use Bash
 id: toolu_01Cd6fuVqLT1iRqRXXeN5AZN
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game; git add src/main.ts && git status --short && echo \"=== 원격/업스트림 ===\"; git rev-parse --abbrev-ref --symbolic-full-name @{u} 2>/dev/null || echo \"업스트림 없음\"",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game; git add src/main.ts && git status --short && echo \"=== 원격/업스트림 ===\"; git rev-parse --abbrev-ref --symbolic-full-name @{u} 2>/dev/null || echo \"업스트림 없음\"",
   "description": "스테이징 상태 및 업스트림 확인"
 }
 ```
@@ -1432,7 +1432,7 @@ tool_use Bash
 id: toolu_01A9MThLm6bD6LGiSy4tnmtX
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game; git commit -q -m \"$(cat <<'EOF'\nperf: 배터리 모드 낙하 버벅임 개선 + 빌드 용량 정리\n\n- 물리 fixedStep:true — 적응형 주사율/프레임 변동을 고정 스텝으로 흡수\n- smoothStep:true — delta 지터 추가 흡수\n- WebGL powerPreference:high-performance — 배터리 GPU 다운클럭 억제\n- illustrations_bak 24MB 백업 폴더 제거 (코드 미참조, dist 불필요 복사 방지)\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\nEOF\n)\" && git push origin dev 2>&1 | tail -5 && echo \"=== 최신 커밋 ===\" && git log --oneline -1",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game; git commit -q -m \"$(cat <<'EOF'\nperf: 배터리 모드 낙하 버벅임 개선 + 빌드 용량 정리\n\n- 물리 fixedStep:true — 적응형 주사율/프레임 변동을 고정 스텝으로 흡수\n- smoothStep:true — delta 지터 추가 흡수\n- WebGL powerPreference:high-performance — 배터리 GPU 다운클럭 억제\n- illustrations_bak 24MB 백업 폴더 제거 (코드 미참조, dist 불필요 복사 방지)\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\" && git push origin dev 2>&1 | tail -5 && echo \"=== 최신 커밋 ===\" && git log --oneline -1",
   "description": "커밋 후 origin/dev로 푸시"
 }
 ```
@@ -1481,7 +1481,7 @@ drwxr-xr-x@ 14 johyunduk  staff   448 May 17 23:19 sources
 drwxr-xr-x@ 11 johyunduk  staff   352 May 26 22:31 wiki
 === WIKI.md 존재? ===
 WIKI.md
-Shell cwd was reset to /Users/johyunduk/Projects/ddong-avoid-game
+Shell cwd was reset to /home/<USER>/Projects/ddong-avoid-game
 ```
 
 > TOOL
@@ -1490,7 +1490,7 @@ tool_use Read
 id: toolu_019pa6cnjFXo3P1DwXorRgGC
 ```json
 {
-  "file_path": "/Users/johyunduk/Documents/Obsidian/1. Projects/똥피하기/WIKI.md"
+  "file_path": "/home/<USER>/Documents/Obsidian/1. Projects/똥피하기/WIKI.md"
 }
 ```
 
@@ -1557,7 +1557,7 @@ wiki/캐릭터:
 레거시.md
 루트.md
 치비.md
-Shell cwd was reset to /Users/johyunduk/Projects/ddong-avoid-game
+Shell cwd was reset to /home/<USER>/Projects/ddong-avoid-game
 ```
 
 > TOOL
@@ -1584,7 +1584,7 @@ id: toolu_019pa6cnjFXo3P1DwXorRgGC
 17	└── archive/         ← 폐기된 기획
 18	```
 19	
-20	**외부 소스**: `/Users/johyunduk/Projects/ddong-avoid-game/` (코드, git log, docs/)
+20	**외부 소스**: `/home/<USER>/Projects/ddong-avoid-game/` (코드, git log, docs/)
 21	
 22	## 핵심 원칙
 23	
@@ -1608,7 +1608,7 @@ tool_use Read
 id: toolu_01EbtVd6niSomMXdZo3vbTBQ
 ```json
 {
-  "file_path": "/Users/johyunduk/Documents/Obsidian/1. Projects/똥피하기/wiki/INDEX.md"
+  "file_path": "/home/<USER>/Documents/Obsidian/1. Projects/똥피하기/wiki/INDEX.md"
 }
 ```
 
@@ -1666,7 +1666,7 @@ tool_use Read
 id: toolu_016bQRGSGPCttwfpPJvsMXXv
 ```json
 {
-  "file_path": "/Users/johyunduk/Documents/Obsidian/1. Projects/똥피하기/wiki/구현 현황.md"
+  "file_path": "/home/<USER>/Documents/Obsidian/1. Projects/똥피하기/wiki/구현 현황.md"
 }
 ```
 
@@ -1706,7 +1706,7 @@ tool_use Read
 id: toolu_016RsY4Y2bAxfqoAyq3xGXFC
 ```json
 {
-  "file_path": "/Users/johyunduk/Documents/Obsidian/1. Projects/똥피하기/wiki/log.md",
+  "file_path": "/home/<USER>/Documents/Obsidian/1. Projects/똥피하기/wiki/log.md",
   "limit": 30
 }
 ```
@@ -1757,7 +1757,7 @@ tool_use Write
 id: toolu_01UGj6qdusEEAzrycD2Q54ij
 ```json
 {
-  "file_path": "/Users/johyunduk/Documents/Obsidian/1. Projects/똥피하기/wiki/시스템/성능 최적화.md",
+  "file_path": "/home/<USER>/Documents/Obsidian/1. Projects/똥피하기/wiki/시스템/성능 최적화.md",
   "content": "---\nstatus: ✅ 완료\nupdated: 2026-06-02\ntags: [성능, 최적화, 렌더링, 물리]\n---\n\n# 성능 최적화\n\n> 게임 루프·렌더링·메모리 측면의 최적화 현황. 출처: `src/main.ts`, `src/scenes/GameScene.ts`, `src/objects/PoolablePoopBase.ts`\n\n## 오브젝트 풀링 (메모리)\n\n모든 똥은 생성/파괴 대신 **풀에서 재사용**한다. 게임 중 런타임 할당이 없어 GC pause로 인한 끊김을 방지한다.\n\n- 베이스: `src/objects/PoolablePoopBase.ts` — `reinit(x, y)`(재사용), `recycle()`(반환), 화면 밖이면 destroy 대신 비활성화\n- 일반 똥: `src/objects/Poop.ts` — 텍스처는 세션 시작 시 1회 평가(`AVAILABLE_TEXTURES`), 스폰마다 배열 생성/`Date()` 호출 없음\n- 그룹 상한(`maxSize`): 일반 60 / 금 20 / 다이아 20 / 토파즈 10 / 무지개 30\n- **prewarm**: `create()` 시점에 풀을 미리 채워(일반 36, 금/다이아 5, 토파즈/무지개 4) 게임 중 첫 스폰 히치 제거\n- 위치: `GameScene.ts:328~378`\n\n## 낙하 부드러움 — 배터리 모드 throttling 대응 (2026-06-02)\n\n**증상**: 충전 중엔 매끄럽지만 배터리로 돌리면 똥 낙하가 버벅임.\n**원인**: 코드 버그가 아니라 **기기 전력 관리**. 배터리 모드에서 CPU/GPU 다운클럭 + 디스플레이 적응형 주사율(ProMotion/LTPO)로 프레임 간격이 불규칙해지면서, 가변 타임스텝 물리가 그 지터를 낙하 거리에 그대로 노출.\n\n**조치** (`src/main.ts`):\n\n| 설정 | 변경 | 효과 |\n|------|------|------|\n| `arcade.fixedStep` | `false` → `true` | 고정 1/60 스텝 + accumulator로 프레임 변동 흡수 → 낙하 일정 (**결정타**) |\n| `fps.smoothStep` | `false` → `true` | delta 스무딩으로 프레임 지터 추가 흡수 |\n| `render.powerPreference` | 추가 `'high-performance'` | 배터리에서 WebGL 컨텍스트가 저전력 GPU·다운클럭으로 […]
 
 > TOOL
@@ -1767,7 +1767,7 @@ id: toolu_01S9YZ5jtgj8rHpgqXMLus5M
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Documents/Obsidian/1. Projects/똥피하기/wiki/구현 현황.md",
+  "file_path": "/home/<USER>/Documents/Obsidian/1. Projects/똥피하기/wiki/구현 현황.md",
   "old_string": "| ModeSelectScene 개편 | 보조 버튼 2×2 그리드 (`createNavButton` 헬퍼), 이야기 버튼 추가 | `src/scenes/ModeSelectScene.ts` |",
   "new_string": "| ModeSelectScene 개편 | 보조 버튼 2×2 그리드 (`createNavButton` 헬퍼), 이야기 버튼 추가 | `src/scenes/ModeSelectScene.ts` |\n| 성능 최적화 | 오브젝트 풀링·prewarm, 배터리 throttling 대응(fixedStep·smoothStep·powerPreference), 빌드 용량 정리 — [[성능 최적화]] 참고 | `src/main.ts`, `src/objects/PoolablePoopBase.ts`, `src/scenes/GameScene.ts` |"
 }
@@ -1780,7 +1780,7 @@ id: toolu_01SEc829bQbkuLkfzQ8YYMs1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Documents/Obsidian/1. Projects/똥피하기/wiki/INDEX.md",
+  "file_path": "/home/<USER>/Documents/Obsidian/1. Projects/똥피하기/wiki/INDEX.md",
   "old_string": "| [[시스템/배틀 시스템]] | ✅ 완료 | 실시간 1v1 대전, Supabase Realtime, RP·티어 |",
   "new_string": "| [[시스템/배틀 시스템]] | ✅ 완료 | 실시간 1v1 대전, Supabase Realtime, RP·티어 |\n| [[시스템/성능 최적화]] | ✅ 완료 | 오브젝트 풀링, 배터리 throttling 대응(fixedStep·powerPreference), 빌드 용량 정리 |"
 }
@@ -1793,7 +1793,7 @@ id: toolu_01GLBxrG8Mj9PJicZYb1DroJ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Documents/Obsidian/1. Projects/똥피하기/wiki/log.md",
+  "file_path": "/home/<USER>/Documents/Obsidian/1. Projects/똥피하기/wiki/log.md",
   "old_string": "---\n\n## [2026-05-26] Ingest | 치비 × 루트 듀엣 — And July 스타일",
   "new_string": "---\n\n## [2026-06-02] Ingest | 성능 최적화 — 배터리 모드 낙하 버벅임 개선\n\n- 증상: 충전 중엔 매끄러우나 배터리로 돌리면 똥 낙하 버벅임 → 원인은 코드 버그가 아닌 기기 전력 throttling(CPU/GPU 다운클럭 + 적응형 주사율)\n- `src/main.ts` 3곳 수정:\n  - `arcade.fixedStep` false→true (결정타: 고정 스텝 + accumulator로 프레임 변동 흡수)\n  - `fps.smoothStep` false→true (delta 지터 흡수)\n  - `render.powerPreference: 'high-performance'` 추가 (배터리 GPU 다운클럭 억제)\n- ⚠️ 모순 정정: 이전 주석의 \"fixedStep:false는 안티치트용\" 은 오해. 안티치트는 `this.time.now`(rAF) 기준이라 물리 스텝과 무관\n- `public/assets/illustrations_bak/` 24MB(PNG 19개) 제거 — 코드 미참조, Vite가 dist로 불필요 복사 방지\n- 신규 페이지 `wiki/시스템/성능 최적화.md` 생성, INDEX·구현 현황 갱신\n- 커밋: `90b5da5` (dev 브랜치 push 완료)\n\n---\n\n## [2026-05-26] Ingest | 치비 × 루트 듀엣 — And July 스타일"
 }
@@ -1804,7 +1804,7 @@ id: toolu_01GLBxrG8Mj9PJicZYb1DroJ
 tool_result
 id: toolu_01UGj6qdusEEAzrycD2Q54ij
 ```
-File created successfully at: /Users/johyunduk/Documents/Obsidian/1. Projects/똥피하기/wiki/시스템/성능 최적화.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Documents/Obsidian/1. Projects/똥피하기/wiki/시스템/성능 최적화.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1812,7 +1812,7 @@ File created successfully at: /Users/johyunduk/Documents/Obsidian/1. Projects/�
 tool_result
 id: toolu_01S9YZ5jtgj8rHpgqXMLus5M
 ```
-The file /Users/johyunduk/Documents/Obsidian/1. Projects/똥피하기/wiki/구현 현황.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Documents/Obsidian/1. Projects/똥피하기/wiki/구현 현황.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1820,7 +1820,7 @@ The file /Users/johyunduk/Documents/Obsidian/1. Projects/똥피하기/wiki/구�
 tool_result
 id: toolu_01SEc829bQbkuLkfzQ8YYMs1
 ```
-The file /Users/johyunduk/Documents/Obsidian/1. Projects/똥피하기/wiki/INDEX.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Documents/Obsidian/1. Projects/똥피하기/wiki/INDEX.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1828,7 +1828,7 @@ The file /Users/johyunduk/Documents/Obsidian/1. Projects/똥피하기/wiki/INDEX
 tool_result
 id: toolu_01GLBxrG8Mj9PJicZYb1DroJ
 ```
-The file /Users/johyunduk/Documents/Obsidian/1. Projects/똥피하기/wiki/log.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Documents/Obsidian/1. Projects/똥피하기/wiki/log.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1842,7 +1842,7 @@ id: toolu_01M3G67a2yjdrzqeChME5hqm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Documents/Obsidian/1. Projects/똥피하기/wiki/INDEX.md",
+  "file_path": "/home/<USER>/Documents/Obsidian/1. Projects/똥피하기/wiki/INDEX.md",
   "old_string": "tags: [index]\nupdated: 2026-05-19",
   "new_string": "tags: [index]\nupdated: 2026-06-02"
 }
@@ -1853,7 +1853,7 @@ id: toolu_01M3G67a2yjdrzqeChME5hqm
 tool_result
 id: toolu_01M3G67a2yjdrzqeChME5hqm
 ```
-The file /Users/johyunduk/Documents/Obsidian/1. Projects/똥피하기/wiki/INDEX.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Documents/Obsidian/1. Projects/똥피하기/wiki/INDEX.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1897,7 +1897,7 @@ tool_use Bash
 id: toolu_01P91bkgAdXhJKYWWe55Fa1G
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game; echo \"=== 브랜치 목록 ===\"; git branch -a; echo; echo \"=== feature/story가 dev에 머지됐나? (dev에 없는 feature/story 커밋) ===\"; git log dev..origin/feature/story --oneline 2>/dev/null | head -10 || git log dev..feature/story --oneline 2>/dev/null | head -10; echo; echo \"=== dev의 스토리 관련 파일 존재 여부 ===\"; ls src/data/storyLogs.ts src/scenes/StoryLogScene.ts src/utils/storyProgress.ts 2>/dev/null",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game; echo \"=== 브랜치 목록 ===\"; git branch -a; echo; echo \"=== feature/story가 dev에 머지됐나? (dev에 없는 feature/story 커밋) ===\"; git log dev..origin/feature/story --oneline 2>/dev/null | head -10 || git log dev..feature/story --oneline 2>/dev/null | head -10; echo; echo \"=== dev의 스토리 관련 파일 존재 여부 ===\"; ls src/data/storyLogs.ts src/scenes/StoryLogScene.ts src/utils/storyProgress.ts 2>/dev/null",
   "description": "스토리 브랜치 머지 상태 및 파일 확인"
 }
 ```
@@ -1947,7 +1947,7 @@ Exit code 1
 tool_result ERROR
 id: toolu_017JQpqKNJGWsqDpegZx8Atc
 ```
-<tool_use_error>Cancelled: parallel tool call Bash(cd /Users/johyunduk/Projects/ddong-avoid…) errored</tool_use_error>
+<tool_use_error>Cancelled: parallel tool call Bash(cd /home/<USER>/Projects/ddong-avoid…) errored</tool_use_error>
 ```
 
 > AGENT
@@ -1989,7 +1989,7 @@ SNS 기획.md
 ./sources/스토리/게임 스토리 구현 방법.md
 ./sources/스토리/스토리.md
 ./sources/스토리/스토리 공개 방식.md
-Shell cwd was reset to /Users/johyunduk/Projects/ddong-avoid-game
+Shell cwd was reset to /home/<USER>/Projects/ddong-avoid-game
 ```
 
 > AGENT
@@ -2002,7 +2002,7 @@ tool_use Read
 id: toolu_01MHxLMS2cdwYan89XZ8BL6P
 ```json
 {
-  "file_path": "/Users/johyunduk/Documents/Obsidian/1. Projects/똥피하기/sources/스토리/게임 스토리 구현 방법.md"
+  "file_path": "/home/<USER>/Documents/Obsidian/1. Projects/똥피하기/sources/스토리/게임 스토리 구현 방법.md"
 }
 ```
 
@@ -2057,7 +2057,7 @@ tool_use Read
 id: toolu_01BBJbsLbjoBjh7WHSP3G7Fo
 ```json
 {
-  "file_path": "/Users/johyunduk/Documents/Obsidian/1. Projects/똥피하기/sources/스토리/스토리 공개 방식.md"
+  "file_path": "/home/<USER>/Documents/Obsidian/1. Projects/똥피하기/sources/스토리/스토리 공개 방식.md"
 }
 ```
 
@@ -2109,7 +2109,7 @@ tool_use Bash
 id: toolu_01DASNTrmt7sP4sni8YWEAix
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game; echo \"=== feature/story storyLogs.ts 요약 (로그 id/제목) ===\"; git show feature/story:src/data/storyLogs.ts 2>/dev/null | grep -E \"id:|title:|season:|videoKey\" | head -50",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game; echo \"=== feature/story storyLogs.ts 요약 (로그 id/제목) ===\"; git show feature/story:src/data/storyLogs.ts 2>/dev/null | grep -E \"id:|title:|season:|videoKey\" | head -50",
   "description": "구현된 스토리 로그 데이터 확인"
 }
 ```
@@ -2288,7 +2288,7 @@ tool_use Read
 id: toolu_013TDWiisu5e4VKtZQEQdebo
 ```json
 {
-  "file_path": "/Users/johyunduk/Documents/Obsidian/1. Projects/똥피하기/wiki/캐릭터/레거시.md"
+  "file_path": "/home/<USER>/Documents/Obsidian/1. Projects/똥피하기/wiki/캐릭터/레거시.md"
 }
 ```
 
@@ -2350,7 +2350,7 @@ tool_use Read
 id: toolu_01XNUtkPCqQEAg9W5TSxFvJJ
 ```json
 {
-  "file_path": "/Users/johyunduk/Documents/Obsidian/1. Projects/똥피하기/wiki/캐릭터/치비.md"
+  "file_path": "/home/<USER>/Documents/Obsidian/1. Projects/똥피하기/wiki/캐릭터/치비.md"
 }
 ```
 
@@ -2446,7 +2446,7 @@ tool_use Write
 id: toolu_018ECfcbi6Lx8mSehHTxqhM3
 ```json
 {
-  "file_path": "/Users/johyunduk/Documents/Obsidian/1. Projects/똥피하기/wiki/스토리/캐릭터 도시에 모델.md",
+  "file_path": "/home/<USER>/Documents/Obsidian/1. Projects/똥피하기/wiki/스토리/캐릭터 도시에 모델.md",
   "content": "---\nstatus: 📋 기획\nupdated: 2026-06-02\ntags: [스토리, 전략, IP, 공개방식]\nsources: [스토리 공개 방식, 캐릭터 설정집, SNS 기획, 사업 방향성, character.ts]\n---\n\n# 캐릭터 도시에(Dossier) 드롭 모델\n\n> 스토리 공개 전략 v2. 2026-06-02 방향 재설정.\n> 한 캐릭터 = 자기완결적 콘텐츠 한 묶음(drop)을 최소 단위로 삼는다.\n\n## 결정 배경\n\n기존 설계([[스토리 공개 방식 (구버전)|sources/스토리/스토리 공개 방식.md]])는 **\"시즌 선형(TRASH→LEGACY) + 100% 옵셔널 텍스트\"** 였다. 그러나:\n\n- **스토리의 주임무 = 캐릭터 IP/브랜드 + 코어 팬 깊이** (유입·리텐션이 아님)\n- **제작 여력 = 중간** (끊임없는 콘텐츠 트레드밀은 무리)\n\n→ \"넓게 도달\"이 아니라 **\"소수가 캐릭터에 깊게 빠지게\"** 가 목표.\n→ 콘텐츠 단위를 **플롯(여정)이 아닌 캐릭터(인물)** 로 재정의해야 자산(음악·SNS·IP 인큐베이터)과 정렬된다.\n\n> ⚠️ 모순: `sources/스토리/스토리 공개 방식.md`(status: 확정)의 \"Season 1/2 선형 번호 + 치비 각성 여정 플롯\" 구조는 이 모델로 **대체됨**. sources는 읽기 전용이라 수정하지 않고 여기서 플래그. 세계관·\"옵셔널/텍스트/감정 절제\" 철학은 그대로 계승.\n\n## 모델 구조\n\n스토리 최소 단위 = **캐릭터 1명의 도시에**. 한 도시에 = 3개 레이어:\n\n| 레이어 | 산출물 | 목표 기여 | 사는 곳 |\n|--------|--------|----------|---------|\n| 노래 | Suno 트랙 1곡 | IP/브랜드 · 바이럴 | SNS/유튜브 (공개) |\n| SNS 포스트 | IMPORT_GATE 아카이브 엔트리 1~2개 | 참여 · 유입 | 인스타 (공개) |\n| 인게임 로그 | 해금 로그 3~4개 (캐릭터 스레드) | 코어 팬 깊이 | […]
 
 > TOOL
@@ -2454,7 +2454,7 @@ id: toolu_018ECfcbi6Lx8mSehHTxqhM3
 tool_result
 id: toolu_018ECfcbi6Lx8mSehHTxqhM3
 ```
-File created successfully at: /Users/johyunduk/Documents/Obsidian/1. Projects/똥피하기/wiki/스토리/캐릭터 도시에 모델.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Documents/Obsidian/1. Projects/똥피하기/wiki/스토리/캐릭터 도시에 모델.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2467,7 +2467,7 @@ tool_use Write
 id: toolu_01ChirB8ot1dJxzUYTfcBM1C
 ```json
 {
-  "file_path": "/Users/johyunduk/Documents/Obsidian/1. Projects/똥피하기/wiki/스토리/치비 도시에.md",
+  "file_path": "/home/<USER>/Documents/Obsidian/1. Projects/똥피하기/wiki/스토리/치비 도시에.md",
   "content": "---\nstatus: 📋 기획 (파일럿 초안)\nupdated: 2026-06-02\ntags: [스토리, 치비, 도시에, 파일럿]\nsources: [캐릭터 설정집, 세계관 설정, character.ts, 게임 스토리 구현 방법]\n---\n\n# 치비 도시에 — `DOSSIER: [MISSING]`\n\n> [[캐릭터 도시에 모델]]의 첫 파일럿. 세계관: 휴지통/폐기 공간. 치비 = CPU 신의 파편, 이름 복구 불가, 등급 판독 불가.\n> 척추 훅: **NAME: [MISSING]** + **손이 뜨거워지는 감각**. 둘 다 팬 참여를 유도하는 IP 핵심.\n\n---\n\n## ① 노래 컨셉 — Suno 방향 (공개 / IP 후크)\n\n치비 솔로 트랙. 듀엣(치비×루트, [[음악/치비×루트/And July 스타일]])은 후속 드롭으로 분리. 첫 드롭은 \"이름 없이 달리는 존재\"의 정체성을 단독으로 세운다.\n\n```\n[Suno Style]\ngenre: lo-fi alt R&B × indie ballad, 78 BPM\nmood: weightless, warm, quietly aching — not sad, just unnamed\ninstrument: warm 808, sparse piano, faint circuit-hum texture, breathy vocal\nstructure: 정적 verse → 달리기 시작하는 chorus에서 808 진입\n\n[핵심 가사 후크 — 설정·코드·음악 일관]\nVerse  \"나를 부르는 소리가 없어 / 그래서 멈출 이유도 없어\"\nPre    \"손끝이 뜨거워질 때만 / 내가 여기 있다는 걸 알아\"\nHook   \"이름이 없어도 달려 / 지워졌어도 남아 / 빛을 다루는 무언가로\"\n```\n\n> \"손끝이 뜨거워질 때만 내가 여기 있다는 걸 알아\" = 설정(CPU 과부하 열기) + 메커닉(각성=잠긴 능력 개방)을 한 줄로 운반.\n\n---\n\n## ② SNS 공개 포스트 — IMPORT_GATE 아카이브 톤 (공개 / 참여 후크)\n\n```\n> IMPORT_GATE // ARCHIVE ENTRY […]
 
 > TOOL
@@ -2475,7 +2475,7 @@ id: toolu_01ChirB8ot1dJxzUYTfcBM1C
 tool_result
 id: toolu_01ChirB8ot1dJxzUYTfcBM1C
 ```
-File created successfully at: /Users/johyunduk/Documents/Obsidian/1. Projects/똥피하기/wiki/스토리/치비 도시에.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Documents/Obsidian/1. Projects/똥피하기/wiki/스토리/치비 도시에.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2489,7 +2489,7 @@ id: toolu_01UzyEfpaLrCrvj62736p5x6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Documents/Obsidian/1. Projects/똥피하기/wiki/구현 현황.md",
+  "file_path": "/home/<USER>/Documents/Obsidian/1. Projects/똥피하기/wiki/구현 현황.md",
   "old_string": "### 1순위 — 스토리 영상 제작 및 머지\n`feature/story` 브랜치에 로그 시스템 구현 완료. 남은 작업:\n\n- [ ] 스토리 영상 제작 (일부 로그에만 적용 예정)\n  - 영상 있는 로그: `storyLogs.ts`의 해당 항목에 `videoKey`, `videoPath` 필드 채우면 자동 적용\n  - 영상 재생: 상세 패널 진입 시 자동 재생 (`this.add.video().play(true)`)\n- [ ] `feature/story` → `dev` 머지",
   "new_string": "### 1순위 — 스토리 재설계: 캐릭터 도시에 모델 (2026-06-02 방향 전환)\n\n스토리 공개 전략을 **시즌 선형 → 캐릭터 도시에(Dossier) 드롭**으로 재설정. → [[캐릭터 도시에 모델]]\n\n- 스토리 주임무 = 캐릭터 IP/브랜드 + 코어 팬 깊이 (유입·리텐션 아님), 제작 여력 = 중간\n- 단위 = 캐릭터 1명 = 노래(Suno) + SNS 포스트 + 인게임 로그 3~4개 (3-layer ARG 루프)\n- ⚠️ 모순: 구버전 `sources/스토리/스토리 공개 방식.md`(확정)의 선형 구조는 대체됨 (세계관·옵셔널 철학은 계승)\n\n**기술 재사용 / 데이터 교체**:\n- `StoryLogScene.ts`·`storyProgress.ts`(recordEvent 해금 엔진)는 그대로 활용\n- `storyLogs.ts` 데이터 모델만 \"시즌 선형\" → \"캐릭터 도시에\"로 재구성\n- **`feature/story` → `dev` 머지 보류**: 도시에 콘텐츠 구조 확정 후 재작성\n\n**남은 작업**:\n- [ ] 파일럿 [[치비 도시에]] 검토·확정 (노래 컨셉·SNS 포스트·로그 4부작 초안 완료)\n- [ ] 치비 도시에 → `storyLogs.ts` 데이터 반영 + 노래 가사 완성(음악 SKILL)\n- [ ] 후속 드롭: 치비×루트 듀엣 → 레거시 (공개 순서 [[SNS […]
 
@@ -2498,7 +2498,7 @@ id: toolu_01UzyEfpaLrCrvj62736p5x6
 tool_result
 id: toolu_01UzyEfpaLrCrvj62736p5x6
 ```
-The file /Users/johyunduk/Documents/Obsidian/1. Projects/똥피하기/wiki/구현 현황.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Documents/Obsidian/1. Projects/똥피하기/wiki/구현 현황.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2508,7 +2508,7 @@ id: toolu_011gaadMgL3CMdUKjDvB8NDS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Documents/Obsidian/1. Projects/똥피하기/wiki/INDEX.md",
+  "file_path": "/home/<USER>/Documents/Obsidian/1. Projects/똥피하기/wiki/INDEX.md",
   "old_string": "## 개념 페이지",
   "new_string": "## 스토리 페이지\n\n| 문서 | 상태 | 요약 |\n|------|------|------|\n| [[캐릭터 도시에 모델]] | 📋 기획 | 스토리 공개 전략 v2 — 캐릭터 1명=노래+SNS+인게임 로그 3-layer 드롭. 시즌 선형 대체 |\n| [[치비 도시에]] | 📋 파일럿 | 첫 파일럿 — `DOSSIER:[MISSING]`. 노래 컨셉·SNS 포스트·정체성 4부작 |\n\n> ⚠️ `sources/스토리/스토리 공개 방식.md`(구버전 선형 설계)는 [[캐릭터 도시에 모델]]로 대체됨\n\n---\n\n## 개념 페이지"
 }
@@ -2519,7 +2519,7 @@ id: toolu_011gaadMgL3CMdUKjDvB8NDS
 tool_result
 id: toolu_011gaadMgL3CMdUKjDvB8NDS
 ```
-The file /Users/johyunduk/Documents/Obsidian/1. Projects/똥피하기/wiki/INDEX.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Documents/Obsidian/1. Projects/똥피하기/wiki/INDEX.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2529,7 +2529,7 @@ id: toolu_01JQT7yTE94R7pZ7LBRvfk8S
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Documents/Obsidian/1. Projects/똥피하기/wiki/log.md",
+  "file_path": "/home/<USER>/Documents/Obsidian/1. Projects/똥피하기/wiki/log.md",
   "old_string": "---\n\n## [2026-06-02] Ingest | 성능 최적화 — 배터리 모드 낙하 버벅임 개선",
   "new_string": "---\n\n## [2026-06-02] Ingest | 스토리 재설계 — 캐릭터 도시에(Dossier) 모델 + 치비 파일럿\n\n- 스토리 공개 전략 v2 결정: **시즌 선형(TRASH→LEGACY) → 캐릭터 도시에 드롭**으로 전환\n  - 근거: 스토리 주임무 = 캐릭터 IP/브랜드 + 코어 팬 깊이(유입·리텐션 아님), 제작 여력 = 중간\n  - 단위 = 캐릭터 1명 = 노래(Suno) + SNS 포스트(IMPORT_GATE 아카이브) + 인게임 로그 3~4개\n  - 3-layer ARG 루프: SNS=떡밥 / 게임=단서 / 후속 드롭=해소\n- 신규 페이지: `wiki/스토리/캐릭터 도시에 모델.md`, `wiki/스토리/치비 도시에.md`\n- 치비 파일럿 작성: 척추 훅 = NAME:[MISSING] + 손이 뜨거워지는 감각\n  - 노래 컨셉(lo-fi alt R&B 78BPM), SNS 아카이브 포스트, 인게임 로그 4부작(TRASH-001~004 재구성)\n- ⚠️ 모순 플래그: `sources/스토리/스토리 공개 방식.md`(status:확정, 선형 설계) → 도시에 모델로 대체. sources 읽기전용이라 wiki에서 플래그. 세계관·옵셔널/감정절제 철학은 계승\n- 코드: `StoryLogScene.ts`·`storyProgress.ts` 재사용, `storyLogs.ts` 데이터만 재구성. feature/story 머지 보류\n- INDEX에 \"스토리 페이지\" 섹션 신설, 구현 현황 1순위 갱신\n\n---\n\n## [2026-06-02] Ingest | 성능 최적화 — 배터리 모드 낙하 버벅임 개선"
 }
@@ -2540,7 +2540,7 @@ id: toolu_01JQT7yTE94R7pZ7LBRvfk8S
 tool_result
 id: toolu_01JQT7yTE94R7pZ7LBRvfk8S
 ```
-The file /Users/johyunduk/Documents/Obsidian/1. Projects/똥피하기/wiki/log.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Documents/Obsidian/1. Projects/똥피하기/wiki/log.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2604,7 +2604,7 @@ tool_use Bash
 id: toolu_01XuTaMqGxNPUqiv3wKNNg39
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game; echo \"=== GameScene 입력/포인터/터치 처리 ===\"; grep -n \"pointer\\|touch\\|Pointer\\|input\\.\\|on('point\\|addPointer\\|setPollAlways\\|timeScale\\|physics.pause\\|physics.resume\" src/scenes/GameScene.ts; echo; echo \"=== Player 터치 관련 ===\"; grep -n \"touch\\|pointer\\|Pointer\\|setVelocity\\|leftKeyDown\\|rightKeyDown\" src/objects/Player.ts",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game; echo \"=== GameScene 입력/포인터/터치 처리 ===\"; grep -n \"pointer\\|touch\\|Pointer\\|input\\.\\|on('point\\|addPointer\\|setPollAlways\\|timeScale\\|physics.pause\\|physics.resume\" src/scenes/GameScene.ts; echo; echo \"=== Player 터치 관련 ===\"; grep -n \"touch\\|pointer\\|Pointer\\|setVelocity\\|leftKeyDown\\|rightKeyDown\" src/objects/Player.ts",
   "description": "터치/포인터 입력 처리 검색"
 }
 ```
@@ -2656,7 +2656,7 @@ tool_use Read
 id: toolu_01Vx7Bs7PocYRApbzpEsRVTQ
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/objects/Player.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/objects/Player.ts",
   "offset": 60,
   "limit": 70
 }
@@ -2740,7 +2740,7 @@ id: toolu_017Jt8M8Kwr6f3SaMm4ZQH4P
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/main.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/main.ts",
   "old_string": "  fps: {\n    smoothStep: true // delta 스무딩으로 프레임 지터 흡수 → 모션 부드러움 (안티치트 ratio 허용폭 0.70~1.30 내라 안전)\n  }",
   "new_string": "  fps: {\n    // fixedStep accumulator에는 가공된 평균 delta가 아닌 raw 경과시간을 먹여야\n    // 프레임레이트와 무관하게 낙하 속도가 일정해진다.\n    // smoothStep:true 시 터치 눌림(고fps)↔뗌(저fps)에 따라 낙하 속도가 출렁이는 문제 → false 유지.\n    smoothStep: false\n  }"
 }
@@ -2751,7 +2751,7 @@ id: toolu_017Jt8M8Kwr6f3SaMm4ZQH4P
 tool_result
 id: toolu_017Jt8M8Kwr6f3SaMm4ZQH4P
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/main.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/main.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2760,7 +2760,7 @@ tool_use Bash
 id: toolu_017JGXu4FyPzLBdg3URR1a45
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game; npx tsc --noEmit && echo \"✅ tsc 통과\"",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game; npx tsc --noEmit && echo \"✅ tsc 통과\"",
   "description": "타입 검사"
 }
 ```
@@ -2821,7 +2821,7 @@ id: toolu_01QKYDBiNnSwYRaPn4vG5BC4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/main.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/main.ts",
   "old_string": "  fps: {\n    // fixedStep accumulator에는 가공된 평균 delta가 아닌 raw 경과시간을 먹여야\n    // 프레임레이트와 무관하게 낙하 속도가 일정해진다.\n    // smoothStep:true 시 터치 눌림(고fps)↔뗌(저fps)에 따라 낙하 속도가 출렁이는 문제 → false 유지.\n    smoothStep: false\n  }",
   "new_string": "  fps: {\n    // 노트북 배터리 등 가변 프레임에서 시각적 부드러움을 위해 delta 스무딩 사용(Phaser 기본).\n    // 모바일의 \"터치 눌림→낙하 빨라짐\"은 smoothStep이 아니라 idle rAF 스로틀 + fps.min 클램프가\n    // 원인으로 추정 → ?fps 오버레이로 실측 후 fps.min/panicMax 보정 예정.\n    smoothStep: true\n  }"
 }
@@ -2832,7 +2832,7 @@ id: toolu_01QKYDBiNnSwYRaPn4vG5BC4
 tool_result
 id: toolu_01QKYDBiNnSwYRaPn4vG5BC4
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/main.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/main.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2848,7 +2848,7 @@ id: toolu_017Ysz1QTLYiUqoRFs5mawf4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "old_string": "  private bgMusic!: Phaser.Sound.BaseSound;",
   "new_string": "  private bgMusic!: Phaser.Sound.BaseSound;\n  private fpsText?: Phaser.GameObjects.Text;  // ?fps URL 파라미터 시에만 표시되는 디버그 오버레이"
 }
@@ -2859,7 +2859,7 @@ id: toolu_017Ysz1QTLYiUqoRFs5mawf4
 tool_result
 id: toolu_017Ysz1QTLYiUqoRFs5mawf4
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2869,7 +2869,7 @@ id: toolu_01S81ntbGZoSpECaxShKgWcD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "old_string": "    this.time.delayedCall(2500, () => {\n      this.tweens.add({ targets: hintText, alpha: 0, duration: 700, ease: 'Linear' });\n    });\n\n    // 💩 생성 타이머 (난이도별 초기 주기 사용)",
   "new_string": "    this.time.delayedCall(2500, () => {\n      this.tweens.add({ targets: hintText, alpha: 0, duration: 700, ease: 'Linear' });\n    });\n\n    // [디버그] ?fps URL 파라미터 시 실측 FPS 오버레이 (프레임레이트 진단용, 일반 플레이엔 비표시)\n    if (location.search.includes('fps')) {\n      this.fpsText = this.add.text(W / 2, 2, 'fps', {\n        fontSize: '12px', color: '#00ff41', fontFamily: 'monospace',\n        stroke: '#000000', strokeThickness: 3,\n      }).setOrigin(0.5, 0).setDepth(9999);\n    }\n\n    // 💩 생성 타이머 (난이도별 초기 주기 사용)"
 }
@@ -2880,7 +2880,7 @@ id: toolu_01S81ntbGZoSpECaxShKgWcD
 tool_result
 id: toolu_01S81ntbGZoSpECaxShKgWcD
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2890,7 +2890,7 @@ id: toolu_01GD6YHHH1hYzt49XpNKqWuz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "old_string": "  update() {\n    if (!this.gameOver) {\n      this.player.update();",
   "new_string": "  update() {\n    if (this.fpsText) {\n      // 입력 상태도 함께 표기 — 터치 눌림 ↔ 뗌 구간의 fps 차이를 한눈에 비교\n      const dir = (this.player?.body?.velocity.x ?? 0) !== 0 ? '◀▶' : '··';\n      this.fpsText.setText(`fps ${Math.round(this.game.loop.actualFps)} ${dir}`);\n    }\n\n    if (!this.gameOver) {\n      this.player.update();"
 }
@@ -2901,7 +2901,7 @@ id: toolu_01GD6YHHH1hYzt49XpNKqWuz
 tool_result
 id: toolu_01GD6YHHH1hYzt49XpNKqWuz
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2910,7 +2910,7 @@ tool_use Bash
 id: toolu_014AU15St6jgRV3eLUHsjXbH
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game; npx tsc --noEmit && echo \"✅ tsc 통과\"",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game; npx tsc --noEmit && echo \"✅ tsc 통과\"",
   "description": "타입 검사"
 }
 ```

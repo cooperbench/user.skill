@@ -102,7 +102,7 @@ tool_use Read
 id: toolu_0193fFPbwAAQh8UxGSBkgcFY
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "offset": 245,
   "limit": 120
 }
@@ -148,7 +148,7 @@ tool_use Read
 id: toolu_019ETrYjmjNiJnqMopXdjp7N
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "offset": 540,
   "limit": 180
 }
@@ -252,7 +252,7 @@ tool_use Read
 id: toolu_01TRGJpENKrAH6DFWZbu5gYL
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py",
   "offset": 130,
   "limit": 230
 }

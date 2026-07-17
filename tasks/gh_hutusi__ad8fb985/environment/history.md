@@ -12,7 +12,7 @@ tool_use Read
 id: toolu_011n9SqyAh9KyUfgXGnMfTWQ
 ```json
 {
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/identity-rework.md"
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/identity-rework.md"
 }
 ```
 
@@ -30,7 +30,7 @@ id: toolu_011n9SqyAh9KyUfgXGnMfTWQ
 7	  originSessionId: 9d9fe046-f715-4a3d-bf2a-9bd98356707e
 8	---
 9	
-10	Redesigning the online identity model (follow-up to [[multiplayer-project]]). Approved plan: `/Users/hutusi/.claude/plans/multiplayer-is-already-working-zazzy-alpaca.md`.
+10	Redesigning the online identity model (follow-up to [[multiplayer-project]]). Approved plan: `/home/<USER>/.claude/plans/multiplayer-is-already-working-zazzy-alpaca.md`.
 11	
 12	**Agreed model.** "guest" → renamed **Local Player** (logged out): many local (localStorage) profiles, local single-player worlds only, zero server calls, cannot create/join/invite online. **Account** (logged in): up to **5** server-side profiles (synced across devices), each owning up to **10** online worlds; can host/invite/join. On login, local worlds are **hidden-but-preserved** (never deleted, never auto-uploaded). The anonymous-guest server layer is deleted entirely — online == you have an account (a deliberate reversal of docs/online.md "Identity: guests first").
 13	
@@ -97,7 +97,7 @@ tool_use Read
 id: toolu_016PjTJm86un1qJPhKcbw2So
 ```json
 {
-  "file_path": "/Users/hutusi/.claude/plans/multiplayer-is-already-working-zazzy-alpaca.md"
+  "file_path": "/home/<USER>/.claude/plans/multiplayer-is-already-working-zazzy-alpaca.md"
 }
 ```
 
@@ -126,7 +126,7 @@ id: toolu_01A8qraoCJG9sEazJhSAmiYj
 ```json
 {
   "description": "Explore anonymous auth layer",
-  "prompt": "Explore the repository at /Users/hutusi/workspace/ai/david/monecraft (a Next.js 16 + TypeScript voxel game with online multiplayer, better-auth for accounts). Search breadth: very thorough.\n\nI'm planning \"Phase 3\" of an identity rework: completely removing the anonymous-guest auth layer so online play requires a real account. I need a precise inventory of everything that touches anonymity. Report:\n\n1. `lib/auth/server.ts` — the `anonymous()` better-auth plugin config, `onLinkAccount` callback (guest→account re-parenting), and anything else referencing anonymous.\n2. `lib/auth/client.ts` — `anonymousClient()`, `ensureSignedIn` and its anonymous sign-in path. List ALL callers of `ensureSignedIn` across the repo (grep for it).\n3. `isAnonymous` — every reference across the repo: db/schema.ts, db/ddl.ts, lib/online/http.ts (sessionUser), lib/online/worldsService.ts, UI components, tests. For each: file, line, what it does.\n4. `db/migrations/` — list all migration files and what each does (especially 0001 and 0002 from the profiles work). How are migrations applied (drizzle config, scripts in package.json)? Is there a journal/meta folder?\n5. `lib/auth/auth.test.ts` — what does it test (especially onLinkAccount)?\n6. Grep for `signIn.anonymous`, `anonymous` (case-insensitive) across lib/, app/, components/, db/, e2e/ — anything I've missed.\n7. `lib/online/worldsService.ts` — does any anonymous-gating exist today (rejecting anonymous users in createWorld/createInvite/mintTicket)? Report the current guard logic and the `guest-bar` mentioned in […]
+  "prompt": "Explore the repository at /home/<USER>/workspace/ai/david/monecraft (a Next.js 16 + TypeScript voxel game with online multiplayer, better-auth for accounts). Search breadth: very thorough.\n\nI'm planning \"Phase 3\" of an identity rework: completely removing the anonymous-guest auth layer so online play requires a real account. I need a precise inventory of everything that touches anonymity. Report:\n\n1. `lib/auth/server.ts` — the `anonymous()` better-auth plugin config, `onLinkAccount` callback (guest→account re-parenting), and anything else referencing anonymous.\n2. `lib/auth/client.ts` — `anonymousClient()`, `ensureSignedIn` and its anonymous sign-in path. List ALL callers of `ensureSignedIn` across the repo (grep for it).\n3. `isAnonymous` — every reference across the repo: db/schema.ts, db/ddl.ts, lib/online/http.ts (sessionUser), lib/online/worldsService.ts, UI components, tests. For each: file, line, what it does.\n4. `db/migrations/` — list all migration files and what each does (especially 0001 and 0002 from the profiles work). How are migrations applied (drizzle config, scripts in package.json)? Is there a journal/meta folder?\n5. `lib/auth/auth.test.ts` — what does it test (especially onLinkAccount)?\n6. Grep for `signIn.anonymous`, `anonymous` (case-insensitive) across lib/, app/, components/, db/, e2e/ — anything I've missed.\n7. `lib/online/worldsService.ts` — does any anonymous-gating exist today (rejecting anonymous users in createWorld/createInvite/mintTicket)? Report the current guard logic and the `guest-bar` mentioned in […]
 
 > TOOL
 
@@ -148,7 +148,7 @@ id: toolu_01Ln5wTz4WeMLLwWmTmZTMba
 ```json
 {
   "description": "Explore invite/join UI flow",
-  "prompt": "Explore the repository at /Users/hutusi/workspace/ai/david/monecraft (a Next.js 16 + TypeScript voxel game with online multiplayer). Search breadth: very thorough.\n\nI'm planning \"Phase 3\" of an identity rework: invites must require sign-in (no more silent anonymous-guest minting), and after signing in the user picks which online profile joins. Also removing the \"Play online as guest\" path from the menu UI. Report on the CURRENT state (post-PR-#46, which added account profiles):\n\n1. `app/join/[token]/page.tsx` (and any sibling files under app/join/) — full flow today: how it previews the invite (GET /api/invite/:token?), where `ensureSignedIn` is called, how the invite gets accepted, how it hands off into the game (query params? redirect to /?). Include the code.\n2. `components/menu/AccountPanel.tsx` — full current structure: the logged-out branch (Sign in / Register / \"Play online as guest\"), the guest (`user.isAnonymous`) branch, the signed-in branch, the `onAuthChange` prop. Which strings/buttons mention guest?\n3. `components/GameShell.tsx` — how it decides local vs account mode (the `onlineUser` probe), how `playOnline(profile, world, onlineProfile)` works, how a join-via-invite enters the shell (is there a pending-join token/param handling?), and how `requestJoinTicket` gets `profileId`.\n4. `components/menu/AccountProfileSelect.tsx` and `components/menu/OnlineWorldSelect.tsx` — their props/flow, since the invite flow will need to […]
+  "prompt": "Explore the repository at /home/<USER>/workspace/ai/david/monecraft (a Next.js 16 + TypeScript voxel game with online multiplayer). Search breadth: very thorough.\n\nI'm planning \"Phase 3\" of an identity rework: invites must require sign-in (no more silent anonymous-guest minting), and after signing in the user picks which online profile joins. Also removing the \"Play online as guest\" path from the menu UI. Report on the CURRENT state (post-PR-#46, which added account profiles):\n\n1. `app/join/[token]/page.tsx` (and any sibling files under app/join/) — full flow today: how it previews the invite (GET /api/invite/:token?), where `ensureSignedIn` is called, how the invite gets accepted, how it hands off into the game (query params? redirect to /?). Include the code.\n2. `components/menu/AccountPanel.tsx` — full current structure: the logged-out branch (Sign in / Register / \"Play online as guest\"), the guest (`user.isAnonymous`) branch, the signed-in branch, the `onAuthChange` prop. Which strings/buttons mention guest?\n3. `components/GameShell.tsx` — how it decides local vs account mode (the `onlineUser` probe), how `playOnline(profile, world, onlineProfile)` works, how a join-via-invite enters the shell (is there a pending-join token/param handling?), and how `requestJoinTicket` gets `profileId`.\n4. `components/menu/AccountProfileSelect.tsx` and `components/menu/OnlineWorldSelect.tsx` — their props/flow, since the invite flow will need to […]
 
 > TOOL
 
@@ -170,7 +170,7 @@ id: toolu_011EU9dxJJmVj2RanSMtySDw
 ```json
 {
   "description": "Explore docs, tickets, server keying",
-  "prompt": "Explore the repository at /Users/hutusi/workspace/ai/david/monecraft (a Next.js 16 + TypeScript voxel game with online multiplayer; separate WebSocket game server). Search breadth: very thorough.\n\nI'm planning \"Phase 3\" of an identity rework (accounts-only online; guests become local-only players). Two open design decisions need facts, plus a docs inventory. Report:\n\n1. **Save-slice keying**: How the game server keys per-player state. Find the game server code (likely server/ or similar), the join ticket format (what claims: sub, name, skinId, profileId?), where `ticket.sub` is used (per-player save slices, roster, kick/ban?), and the world save format's per-player sections. Files like lib/online/tickets.ts, server/*.ts, lib/game/save*.ts. I need to evaluate: keep keying by account `sub` vs re-key by `profileId`. Report exactly what would have to change for per-profile keying (server, save format version, protocol docs).\n2. **Guest-owned data**: In db/schema.ts — the `user` table (isAnonymous column?), `worlds` (ownerId, profileId nullable?), members/memberships table, invites table, cloud saves storage. How would one identify guest-owned rows (user.isAnonymous = true)? Are there FKs with cascade? Where do save blobs live (table? Vercel Blob?) and are they keyed by world or user?\n3. **Docs inventory**: docs/online.md (especially the \"Identity\" section — quote it), docs/protocol.md […]
+  "prompt": "Explore the repository at /home/<USER>/workspace/ai/david/monecraft (a Next.js 16 + TypeScript voxel game with online multiplayer; separate WebSocket game server). Search breadth: very thorough.\n\nI'm planning \"Phase 3\" of an identity rework (accounts-only online; guests become local-only players). Two open design decisions need facts, plus a docs inventory. Report:\n\n1. **Save-slice keying**: How the game server keys per-player state. Find the game server code (likely server/ or similar), the join ticket format (what claims: sub, name, skinId, profileId?), where `ticket.sub` is used (per-player save slices, roster, kick/ban?), and the world save format's per-player sections. Files like lib/online/tickets.ts, server/*.ts, lib/game/save*.ts. I need to evaluate: keep keying by account `sub` vs re-key by `profileId`. Report exactly what would have to change for per-profile keying (server, save format version, protocol docs).\n2. **Guest-owned data**: In db/schema.ts — the `user` table (isAnonymous column?), `worlds` (ownerId, profileId nullable?), members/memberships table, invites table, cloud saves storage. How would one identify guest-owned rows (user.isAnonymous = true)? Are there FKs with cascade? Where do save blobs live (table? Vercel Blob?) and are they keyed by world or user?\n3. **Docs inventory**: docs/online.md (especially the \"Identity\" section — quote it), docs/protocol.md […]
 
 > TOOL
 
@@ -191,15 +191,15 @@ tool_use Write
 id: toolu_01GYzYRSCRLmNBPbaWgvFoXx
 ```json
 {
-  "file_path": "/Users/hutusi/.claude/plans/continue-the-identity-rework-quizzical-mountain.md",
-  "content": "# Identity rework Phase 3 — retire the anonymous-guest layer\n\n## Context\n\nPhases 1–2 of the \"Local Players vs Accounts\" identity rework landed via PR #46 (merged to `main`). The new model: **Local Player** (logged out) = local profiles + local worlds, zero server calls; **Account** (logged in) = up to 5 server-side profiles, each owning up to 10 online worlds. Phase 2 was deliberately additive — the anonymous-guest layer (better-auth `anonymous()` plugin, \"Play online as guest\", guest invite-joins) still works.\n\nPhase 3 finishes the reversal of the old \"guests first\" design: **online play requires an account**. Remove the anonymous auth layer, drop guest UI paths, rewire invite links to require sign-in + profile pick, clean up guest-owned server data, rewrite the guest e2e as a real-account e2e, and update all docs.\n\nOriginal approved plan: `/Users/hutusi/.claude/plans/multiplayer-is-already-working-zazzy-alpaca.md` (Phase 3 section).\n\n## Open decisions (settle before implementation)\n\n1. **Existing guest-owned online worlds on the live deployment** — drop with release-note warning (default) vs one-time upgrade prompt.\n2. **Save-slice keying** — keep `ticket.sub = account id` (roster/kick at account level) vs re-key per-profile (touches game server + save format).\n\n## Scope (from approved plan §Phase 3, to be refined by exploration)\n\n1. Remove […]
+  "file_path": "/home/<USER>/.claude/plans/continue-the-identity-rework-quizzical-mountain.md",
+  "content": "# Identity rework Phase 3 — retire the anonymous-guest layer\n\n## Context\n\nPhases 1–2 of the \"Local Players vs Accounts\" identity rework landed via PR #46 (merged to `main`). The new model: **Local Player** (logged out) = local profiles + local worlds, zero server calls; **Account** (logged in) = up to 5 server-side profiles, each owning up to 10 online worlds. Phase 2 was deliberately additive — the anonymous-guest layer (better-auth `anonymous()` plugin, \"Play online as guest\", guest invite-joins) still works.\n\nPhase 3 finishes the reversal of the old \"guests first\" design: **online play requires an account**. Remove the anonymous auth layer, drop guest UI paths, rewire invite links to require sign-in + profile pick, clean up guest-owned server data, rewrite the guest e2e as a real-account e2e, and update all docs.\n\nOriginal approved plan: `/home/<USER>/.claude/plans/multiplayer-is-already-working-zazzy-alpaca.md` (Phase 3 section).\n\n## Open decisions (settle before implementation)\n\n1. **Existing guest-owned online worlds on the live deployment** — drop with release-note warning (default) vs one-time upgrade prompt.\n2. **Save-slice keying** — keep `ticket.sub = account id` (roster/kick at account level) vs re-key per-profile (touches game server + save format).\n\n## Scope (from approved plan §Phase 3, to be refined by exploration)\n\n1. Remove […]
 
 > TOOL
 
 tool_result
 id: toolu_01GYzYRSCRLmNBPbaWgvFoXx
 ```
-File created successfully at: /Users/hutusi/.claude/plans/continue-the-identity-rework-quizzical-mountain.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/plans/continue-the-identity-rework-quizzical-mountain.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -238,7 +238,7 @@ id: toolu_013biWvp1Z2b2Z4HL7qZuzqv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/plans/continue-the-identity-rework-quizzical-mountain.md",
+  "file_path": "/home/<USER>/.claude/plans/continue-the-identity-rework-quizzical-mountain.md",
   "old_string": "---\n\n*(Draft — awaiting exploration results to fill in exact file inventory, current gating state, and verification steps.)*",
   "new_string": "---\n\n## Confirmed facts (exploration pass 1 — auth layer)\n\n- **Only server gate landed in Phase 2**: `worldsService.ts:86` (`createProfile` rejects `owner.isAnonymous`). `createWorld` (:170), `createInvite` (:282), `mintTicket` (:347) are still guest-reachable — Phase 3 must add the account gate (or it becomes moot once anonymous sign-in is impossible; decide belt-and-braces vs rely on plugin removal).\n- **Anonymous plugin**: `lib/auth/server.ts:3,41-68` (`anonymous({ onLinkAccount })` — re-parents worlds/invites/members guest→account). Only plugin in the list.\n- **Client**: `lib/auth/client.ts:4,15,22` (anonymousClient), `:31,53-54` (`OnlineUser.isAnonymous`), `:57-65` (`ensureSignedIn` → `signIn.anonymous()`, the only such call site).\n- **`ensureSignedIn` callers**: `app/join/[token]/page.tsx:26`, `components/GameShell.tsx:172` (playOnline), `components/menu/AccountPanel.tsx:145` (\"Play online as guest\" handler), + test mock in `AccountPanel.test.tsx`.\n- **`isAnonymous` refs**: `db/schema.ts:31-32`, `db/ddl.ts:16`, migration `0000` (:37), `0001` backfill (`IS NOT TRUE`), `lib/online/http.ts:10,16-17`, `worldsService.ts:83,86`, `app/api/profiles/route.ts:19`, `GameShell.tsx:317` (account-mode flip), `AccountPanel.tsx:99,116-127,155`, tests (`auth.test.ts`, `worldsService.test.ts:167,183-187`, `AccountPanel.test.tsx`, `AccountProfileSelect.test.tsx:40`).\n- **Migrations**: manual `bun run db:migrate` (drizzle-kit); PGlite paths use `db/ddl.ts` SCHEMA_DDL instead — every schema change mirrors in `db/schema.ts` + `db/ddl.ts` + new migration `0003`. Guest-owned worlds always have `profile_id = NULL` (0001 backfill skipped guests).\n- **Cascade cleanup**: `DELETE FROM \"user\" WHERE is_anonymous IS TRUE` cascades sessions/accounts/worlds (→ their […]
 
@@ -247,7 +247,7 @@ id: toolu_013biWvp1Z2b2Z4HL7qZuzqv
 tool_result
 id: toolu_013biWvp1Z2b2Z4HL7qZuzqv
 ```
-The file /Users/hutusi/.claude/plans/continue-the-identity-rework-quizzical-mountain.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/continue-the-identity-rework-quizzical-mountain.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -265,7 +265,7 @@ id: toolu_01FgVCN1Zsqf8C3EqQCs7KC6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/plans/continue-the-identity-rework-quizzical-mountain.md",
+  "file_path": "/home/<USER>/.claude/plans/continue-the-identity-rework-quizzical-mountain.md",
   "old_string": "*(Draft — awaiting exploration results on the invite/join UI flow and docs/keying facts.)*",
   "new_string": "## Confirmed facts (exploration pass 2 — invite/join UI)\n\n- **`app/join/[token]/page.tsx`** (57 lines, sole file under app/join/): resolve preview (no-auth GET) → `ensureSignedIn()` (:26, silent guest mint) → `acceptInviteToken` → \"joined\" + `<Link href=\"/\">`. **No shell handoff** — no params/pending-join; success = the membership row exists. \"Deliberately unmagical\" per header comment.\n- **`POST /api/invite/[token]`** requires `sessionUser` (401), calls `acceptInvite(db, user.id, token)` — **memberships are account-level; `world_members` has no profileId** (`worldsService.ts:336`). So \"pick which profile joins\" only affects the play ticket (name/skin), not the membership.\n- **CRITICAL GAP**: `OnlineWorldSelect.tsx:49-51` filters `kind === \"mp\" && world.profileId === profile.id` — an invite-joined world (owner's profileId) is **invisible in account mode**; today it only surfaces in legacy `WorldSelect`'s \"Online Worlds\" (shows all mp worlds w/ \"Joined\" label, WorldSelect.tsx:155,282,270-330). Phase 3 removes that legacy section ⇒ must add joined (non-owned) worlds to the account-mode list.\n- **`AccountPanel.tsx`**: logged-out branch = \"Play online as guest\" (:138-156) + \"Sign in\" (:157). Guest branch (:117-127) = \"Keep my worlds — create account\" + \"Sign out\". Signup label switches on `user?.isAnonymous` (:99). `onAuthChange` fires after every auth mutation […]
 
@@ -274,7 +274,7 @@ id: toolu_01FgVCN1Zsqf8C3EqQCs7KC6
 tool_result
 id: toolu_01FgVCN1Zsqf8C3EqQCs7KC6
 ```
-The file /Users/hutusi/.claude/plans/continue-the-identity-rework-quizzical-mountain.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/continue-the-identity-rework-quizzical-mountain.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -291,7 +291,7 @@ tool_use Read
 id: toolu_015S2NDDfq7SmtWwbC1Tbcn2
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx"
 }
 ```
 
@@ -342,7 +342,7 @@ tool_use Read
 id: toolu_017GJZAdM6rCSJuZKBrLmHux
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx"
 }
 ```
 
@@ -384,7 +384,7 @@ tool_use Read
 id: toolu_016KhsCtCDVgbP8CPgHFxjMW
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/cloudSaves.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/cloudSaves.ts"
 }
 ```
 
@@ -501,7 +501,7 @@ id: toolu_01NptencHpohMTnx89fNP61M
 {
   "subagent_type": "Plan",
   "description": "Design Phase 3 implementation plan",
-  "prompt": "Design a detailed implementation plan for \"Phase 3\" of an identity rework in the repo /Users/hutusi/workspace/ai/david/monecraft (Next.js 16 App Router + React 19 + TypeScript strict + Bun; better-auth 1.6.23 + drizzle; separate Bun WebSocket game server in server/; tests via bun test + happy-dom, e2e via Playwright).\n\n# Goal\n\nRetire the anonymous-guest layer entirely: online play requires a real account. Guests become \"Local Players\" (logged out, local-only, zero server calls). Phases 1–2 already landed (PR #46, merged): server-side `profiles` table (max 5/account), per-profile online worlds (max 10/profile), account-mode menu (`AccountProfileSelect` → `OnlineWorldSelect`), all additive — the guest layer still works today.\n\n# Decisions already made by the user (fixed, do not revisit)\n\n1. **Cloud saves survive via a \"Play locally\" door**: `AccountProfileSelect` (account home) gains a \"Play locally\" button that drops a signed-in user into the local `ProfileSelect`/`WorldSelect` menus while staying signed in. Cloud-save upload/download UI stays in `WorldSelect`, gated on a real signed-in account (not `onlineUsed()`).\n2. **Guest data deleted via migration 0003**: `DELETE FROM \"user\" WHERE is_anonymous IS TRUE` (FKs cascade worlds/saveBlobs/memberships/invites), then `ALTER TABLE \"user\" DROP COLUMN \"is_anonymous\"`. Release-note it.\n3. **Keep account keying**: `ticket.sub` stays the […]
+  "prompt": "Design a detailed implementation plan for \"Phase 3\" of an identity rework in the repo /home/<USER>/workspace/ai/david/monecraft (Next.js 16 App Router + React 19 + TypeScript strict + Bun; better-auth 1.6.23 + drizzle; separate Bun WebSocket game server in server/; tests via bun test + happy-dom, e2e via Playwright).\n\n# Goal\n\nRetire the anonymous-guest layer entirely: online play requires a real account. Guests become \"Local Players\" (logged out, local-only, zero server calls). Phases 1–2 already landed (PR #46, merged): server-side `profiles` table (max 5/account), per-profile online worlds (max 10/profile), account-mode menu (`AccountProfileSelect` → `OnlineWorldSelect`), all additive — the guest layer still works today.\n\n# Decisions already made by the user (fixed, do not revisit)\n\n1. **Cloud saves survive via a \"Play locally\" door**: `AccountProfileSelect` (account home) gains a \"Play locally\" button that drops a signed-in user into the local `ProfileSelect`/`WorldSelect` menus while staying signed in. Cloud-save upload/download UI stays in `WorldSelect`, gated on a real signed-in account (not `onlineUsed()`).\n2. **Guest data deleted via migration 0003**: `DELETE FROM \"user\" WHERE is_anonymous IS TRUE` (FKs cascade worlds/saveBlobs/memberships/invites), then `ALTER TABLE \"user\" DROP COLUMN \"is_anonymous\"`. Release-note it.\n3. **Keep account keying**: `ticket.sub` stays the […]
 
 > TOOL
 
@@ -523,7 +523,7 @@ id: toolu_011xzHaAvv1RTCgtFcRbvWN4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/plans/continue-the-identity-rework-quizzical-mountain.md",
+  "file_path": "/home/<USER>/.claude/plans/continue-the-identity-rework-quizzical-mountain.md",
   "old_string": "## Open decisions (settle before implementation)\n\n1. **Existing guest-owned online worlds on the live deployment** — drop with release-note warning (default) vs one-time upgrade prompt.\n2. **Save-slice keying** — keep `ticket.sub = account id` (roster/kick at account level) vs re-key per-profile (touches game server + save format).",
   "new_string": "## Decisions (settled with the user, 2026-07-04)\n\n1. **Cloud saves — \"Play locally\" door.** `AccountProfileSelect` gains a \"Play locally\" button dropping a signed-in user into the local `ProfileSelect`/`WorldSelect` while staying signed in; cloud-save upload/download stays in `WorldSelect`, gated on a real signed-in account. (Fixes the post-#46 regression where accounts lost cloud-saves access.)\n2. **Guest data — delete via migration 0003.** `DELETE FROM \"user\" WHERE is_anonymous IS TRUE` (cascades worlds/blobs/memberships/invites) then drop the column. Release-note it.\n3. **Save-slice keying — keep account `sub`.** Zero ticket/server/protocol/save changes; per-profile keying deferred as its own future project.\n4. **Invite flow — unmagical + fix the list.** `/join/[token]`: preview → inline sign-in/register → accept → \"Open the game\". No profile pick on the page. Separately fix `OnlineWorldSelect` to also list member-role (joined) mp worlds with a \"Joined\" label — today joined worlds are invisible in account mode."
 }
@@ -534,7 +534,7 @@ id: toolu_011xzHaAvv1RTCgtFcRbvWN4
 tool_result
 id: toolu_011xzHaAvv1RTCgtFcRbvWN4
 ```
-The file /Users/hutusi/.claude/plans/continue-the-identity-rework-quizzical-mountain.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/continue-the-identity-rework-quizzical-mountain.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -551,7 +551,7 @@ tool_use Read
 id: toolu_018dB6sT9MPr4zbVZ39ciXgC
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/AccountPanel.tsx"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/AccountPanel.tsx"
 }
 ```
 
@@ -595,7 +595,7 @@ tool_use Read
 id: toolu_01FUUd4gjg27qYvmbRQq8SzE
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/app/join/[token]/page.tsx"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/app/join/[token]/page.tsx"
 }
 ```
 
@@ -636,7 +636,7 @@ tool_use Read
 id: toolu_01W8YR7KG85AzqbJMacnLaTx
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.tsx"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.tsx"
 }
 ```
 
@@ -684,7 +684,7 @@ tool_use Read
 id: toolu_01NQgLPHf9E3nLbaZ84FPB12
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/db/migrations/0001_account-profiles.sql"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/db/migrations/0001_account-profiles.sql"
 }
 ```
 
@@ -719,15 +719,15 @@ tool_use Write
 id: toolu_01C8PL7FwbkEET4cdhB5Ug52
 ```json
 {
-  "file_path": "/Users/hutusi/.claude/plans/continue-the-identity-rework-quizzical-mountain.md",
-  "content": "# Identity rework Phase 3 — retire the anonymous-guest layer (accounts-only online)\n\n## Context\n\nPhases 1–2 of the \"Local Players vs Accounts\" identity rework landed via PR #46 (merged). The model: **Local Player** (logged out) = local profiles/worlds, zero server calls; **Account** (logged in) = up to 5 server profiles (`MAX_ONLINE_PROFILES`), each owning up to 10 online worlds (`MAX_WORLDS_PER_PROFILE`). Phase 2 was deliberately additive — the anonymous-guest layer (better-auth `anonymous()` plugin, \"Play online as guest\", silent guest-minting on invite links) still works.\n\nPhase 3 completes the reversal of the old \"guests first\" design (`docs/online.md`): **online play requires an account**. It also fixes two gaps Phase 2 left: signed-in accounts lost access to the cloud-saves UI (it lives in the local `WorldSelect`, which account mode never shows), and invite-joined worlds are invisible in account mode (`OnlineWorldSelect` filters by owner `profileId`; memberships are account-level).\n\nOriginal approved plan: `/Users/hutusi/.claude/plans/multiplayer-is-already-working-zazzy-alpaca.md` (§Phase 3).\n\n## Decisions (settled with the user, 2026-07-04)\n\n1. **Cloud saves — \"Play locally\" door.** Account home gains a \"Play locally\" button into the local menus while staying signed in; cloud-save upload/download stays in `WorldSelect`, gated on a signed-in account.\n2. **Guest data — delete via migration 0003.** `DELETE FROM \"user\" […]
+  "file_path": "/home/<USER>/.claude/plans/continue-the-identity-rework-quizzical-mountain.md",
+  "content": "# Identity rework Phase 3 — retire the anonymous-guest layer (accounts-only online)\n\n## Context\n\nPhases 1–2 of the \"Local Players vs Accounts\" identity rework landed via PR #46 (merged). The model: **Local Player** (logged out) = local profiles/worlds, zero server calls; **Account** (logged in) = up to 5 server profiles (`MAX_ONLINE_PROFILES`), each owning up to 10 online worlds (`MAX_WORLDS_PER_PROFILE`). Phase 2 was deliberately additive — the anonymous-guest layer (better-auth `anonymous()` plugin, \"Play online as guest\", silent guest-minting on invite links) still works.\n\nPhase 3 completes the reversal of the old \"guests first\" design (`docs/online.md`): **online play requires an account**. It also fixes two gaps Phase 2 left: signed-in accounts lost access to the cloud-saves UI (it lives in the local `WorldSelect`, which account mode never shows), and invite-joined worlds are invisible in account mode (`OnlineWorldSelect` filters by owner `profileId`; memberships are account-level).\n\nOriginal approved plan: `/home/<USER>/.claude/plans/multiplayer-is-already-working-zazzy-alpaca.md` (§Phase 3).\n\n## Decisions (settled with the user, 2026-07-04)\n\n1. **Cloud saves — \"Play locally\" door.** Account home gains a \"Play locally\" button into the local menus while staying signed in; cloud-save upload/download stays in `WorldSelect`, gated on a signed-in account.\n2. **Guest data — delete via migration 0003.** `DELETE FROM \"user\" […]
 
 > TOOL
 
 tool_result
 id: toolu_01C8PL7FwbkEET4cdhB5Ug52
 ```
-The file /Users/hutusi/.claude/plans/continue-the-identity-rework-quizzical-mountain.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/continue-the-identity-rework-quizzical-mountain.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -802,7 +802,7 @@ id: toolu_01XQ8dR4aymSdgTVYySiXwSY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/plans/continue-the-identity-rework-quizzical-mountain.md",
+  "file_path": "/home/<USER>/.claude/plans/continue-the-identity-rework-quizzical-mountain.md",
   "old_string": "Branch `feat/account-only-online` off `main`; own PR against `hutusi/monecraft` `main`. Conventional commits, why-focused bodies, no attribution lines. Per-commit local verify = `bun run format` + `bun run lint` only; full gate once before the PR. Push/PR only when the user asks.",
   "new_string": "Branch `feat/account-only-online` off `main`; own PR against `hutusi/monecraft` `main`. Conventional commits, why-focused bodies, no attribution lines. Per-commit local verify = `bun run format` + `bun run lint` only; full gate once before the PR. **After all commits + the full gate: push the branch and open the PR** (`gh pr create --repo hutusi/monecraft --base main`, no AI-attribution in the description) — user pre-authorized this session."
 }
@@ -813,7 +813,7 @@ id: toolu_01XQ8dR4aymSdgTVYySiXwSY
 tool_result
 id: toolu_01XQ8dR4aymSdgTVYySiXwSY
 ```
-The file /Users/hutusi/.claude/plans/continue-the-identity-rework-quizzical-mountain.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/continue-the-identity-rework-quizzical-mountain.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -857,7 +857,7 @@ id: toolu_01Ayb5AuQ9ybbuyEiQcN7wUA
 ```
 User has approved your plan. You can now start coding. Start with updating your todo list if applicable
 
-Your plan has been saved to: /Users/hutusi/.claude/plans/continue-the-identity-rework-quizzical-mountain.md
+Your plan has been saved to: /home/<USER>/.claude/plans/continue-the-identity-rework-quizzical-mountain.md
 You can refer back to it if needed during implementation.
 
 ## Approved Plan (edited by user):
@@ -869,7 +869,7 @@ Phases 1–2 of the "Local Players vs Accounts" identity rework landed via PR #4
 
 Phase 3 completes the reversal of the old "guests first" design (`docs/online.md`): **online play requires an account**. It also fixes two gaps Phase 2 left: signed-in accounts lost access to the cloud-saves UI (it lives in the local `WorldSelect`, which account mode never shows), and invite-joined worlds are invisible in account mode (`OnlineWorldSelect` filters by owner `profileId`; memberships are account-level).
 
-Original approved plan: `/Users/hutusi/.claude/plans/multiplayer-is-already-working-zazzy-alpaca.md` (§Phase 3).
+Original approved plan: `/home/<USER>/.claude/plans/multiplayer-is-already-working-zazzy-alpaca.md` (§Phase 3).
 
 ## Decisions (settled with the user, 2026-07-04) […]
 
@@ -1128,7 +1128,7 @@ tool_use Read
 id: toolu_01K6AtjM83XSwD2UjGMFdAJv
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.test.tsx"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.test.tsx"
 }
 ```
 
@@ -1186,7 +1186,7 @@ id: toolu_01RYTHkYM7nX3p7RSQsfgm1m
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.tsx",
   "old_string": "/**\n * An account profile's online worlds: the account-mode counterpart to\n * WorldSelect. Lists only this profile's server-hosted (mp) worlds, creates new\n * ones (capped at MAX_WORLDS_PER_PROFILE), and copies/revokes invite links. All\n * worlds here live on the server and belong to `profile` via `world.profileId`.\n */",
   "new_string": "/**\n * An account profile's online worlds: the account-mode counterpart to\n * WorldSelect. Lists this profile's own server-hosted (mp) worlds plus every\n * world the account has joined by invite, creates new ones (capped at\n * MAX_WORLDS_PER_PROFILE), and copies/revokes invite links for owned worlds.\n */"
 }
@@ -1197,7 +1197,7 @@ id: toolu_01RYTHkYM7nX3p7RSQsfgm1m
 tool_result
 id: toolu_01RYTHkYM7nX3p7RSQsfgm1m
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1207,7 +1207,7 @@ id: toolu_01Wxc17vLJswJiG1pmwakSzi
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.tsx",
   "old_string": "  // Only this profile's server rooms (the account may own others under a\n  // different profile); listOnlineWorlds returns everything the account plays.\n  const refresh = useCallback(() => {\n    void listOnlineWorlds().then((all) => setWorlds((all ?? []).filter((world) => world.kind === \"mp\" && world.profileId === profile.id)));\n  }, [profile.id]);\n  useEffect(() => refresh(), [refresh]);\n\n  const atCap = (worlds?.length ?? 0) >= MAX_WORLDS_PER_PROFILE;",
   "new_string": "  // This profile's own rooms, plus joined ones. Joined worlds appear under\n  // every profile: membership is account-level and their profileId is the\n  // host's, so an owned-only filter would hide them everywhere.\n  const refresh = useCallback(() => {\n    void listOnlineWorlds().then((all) =>\n      setWorlds((all ?? []).filter((world) => world.kind === \"mp\" && (world.profileId === profile.id || world.role === \"member\")))\n    );\n  }, [profile.id]);\n  useEffect(() => refresh(), [refresh]);\n\n  // The server caps owned worlds only — joined ones must not eat the quota.\n  const atCap = (worlds?.filter((world) => world.profileId === profile.id).length ?? 0) >= MAX_WORLDS_PER_PROFILE;"
 }
@@ -1218,7 +1218,7 @@ id: toolu_01Wxc17vLJswJiG1pmwakSzi
 tool_result
 id: toolu_01Wxc17vLJswJiG1pmwakSzi
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1232,7 +1232,7 @@ id: toolu_014TLDRvnR28fq2Yo97zMwAk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.test.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.test.tsx",
   "old_string": "  test(\"lists only this profile's mp worlds and joins the chosen one\", async () => {\n    fake.worlds = [mpWorld(\"w1\", \"p1\"), mpWorld(\"w2\", \"p2\"), mpWorld(\"w3\", \"p1\", { kind: \"sp-cloud\" })];\n    const onPlay = mock();\n    render(<OnlineWorldSelect profile={profile} onPlay={onPlay} onBack={mock()} />);\n    await waitFor(() => expect(screen.getByText(\"W-w1\")).toBeTruthy());\n    expect(screen.queryByText(\"W-w2\")).toBeNull(); // a different profile's world\n    expect(screen.queryByText(\"W-w3\")).toBeNull(); // sp-cloud, not an online room\n\n    await userEvent.click(screen.getByTestId(\"online-world-w1\"));\n    expect(onPlay).toHaveBeenCalled();\n  });",
   "new_string": "  test(\"lists this profile's own mp worlds and joins the chosen one\", async () => {\n    fake.worlds = [mpWorld(\"w1\", \"p1\"), mpWorld(\"w2\", \"p2\"), mpWorld(\"w3\", \"p1\", { kind: \"sp-cloud\" })];\n    const onPlay = mock();\n    render(<OnlineWorldSelect profile={profile} onPlay={onPlay} onBack={mock()} />);\n    await waitFor(() => expect(screen.getByText(\"W-w1\")).toBeTruthy());\n    expect(screen.queryByText(\"W-w2\")).toBeNull(); // a different profile's world\n    expect(screen.queryByText(\"W-w3\")).toBeNull(); // sp-cloud, not an online room\n\n    await userEvent.click(screen.getByTestId(\"online-world-w1\"));\n    expect(onPlay).toHaveBeenCalled();\n  });\n\n  test(\"worlds joined by invite show under every profile, without owner actions\", async () => {\n    // Membership is account-level: the joined world carries the HOST's profile\n    // id, so it must surface via its member role, not a profileId match.\n    fake.worlds = [mpWorld(\"mine\", \"p1\"), mpWorld(\"theirs\", \"host-profile\", { role: \"member\" })];\n    render(<OnlineWorldSelect profile={profile} onPlay={mock()} onBack={mock()} />);\n    await waitFor(() => expect(screen.getByText(\"W-theirs\")).toBeTruthy());\n    expect(screen.getByText(/Joined/)).toBeTruthy();\n    // Invite management stays owner-only: exactly one card (the owned one) has […]
 
@@ -1241,7 +1241,7 @@ id: toolu_014TLDRvnR28fq2Yo97zMwAk
 tool_result
 id: toolu_014TLDRvnR28fq2Yo97zMwAk
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1251,7 +1251,7 @@ id: toolu_012yvtECYC3z9HnxyzUsRogW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.test.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.test.tsx",
   "old_string": "  test(\"New Online World is disabled at the per-profile world cap\", async () => {\n    fake.worlds = Array.from({ length: MAX_WORLDS_PER_PROFILE }, (_, i) => mpWorld(`w${i}`, \"p1\"));\n    render(<OnlineWorldSelect profile={profile} onPlay={mock()} onBack={mock()} />);\n    await waitFor(() => expect(screen.getByText(\"W-w0\")).toBeTruthy());\n    expect((screen.getByTestId(\"new-online-world\") as HTMLButtonElement).disabled).toBe(true);\n  });",
   "new_string": "  test(\"New Online World is disabled at the per-profile world cap\", async () => {\n    fake.worlds = Array.from({ length: MAX_WORLDS_PER_PROFILE }, (_, i) => mpWorld(`w${i}`, \"p1\"));\n    render(<OnlineWorldSelect profile={profile} onPlay={mock()} onBack={mock()} />);\n    await waitFor(() => expect(screen.getByText(\"W-w0\")).toBeTruthy());\n    expect((screen.getByTestId(\"new-online-world\") as HTMLButtonElement).disabled).toBe(true);\n  });\n\n  test(\"joined worlds don't count toward the create cap\", async () => {\n    // One short of the cap in owned worlds; joined ones must not tip it over\n    // (the server only counts owned worlds against the quota).\n    fake.worlds = [\n      ...Array.from({ length: MAX_WORLDS_PER_PROFILE - 1 }, (_, i) => mpWorld(`w${i}`, \"p1\")),\n      mpWorld(\"j1\", \"host-profile\", { role: \"member\" }),\n      mpWorld(\"j2\", \"host-profile\", { role: \"member\" })\n    ];\n    render(<OnlineWorldSelect profile={profile} onPlay={mock()} onBack={mock()} />);\n    await waitFor(() => expect(screen.getByText(\"W-j1\")).toBeTruthy());\n    expect((screen.getByTestId(\"new-online-world\") as HTMLButtonElement).disabled).toBe(false);\n  });"
 }
@@ -1262,7 +1262,7 @@ id: toolu_012yvtECYC3z9HnxyzUsRogW
 tool_result
 id: toolu_012yvtECYC3z9HnxyzUsRogW
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1374,7 +1374,7 @@ tool_use Read
 id: toolu_012ayehtMVduxHZiHoFRUv12
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/AccountProfileSelect.tsx"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/AccountProfileSelect.tsx"
 }
 ```
 
@@ -1420,7 +1420,7 @@ tool_use Read
 id: toolu_01J56VuEfvPzjtyDdJCowfNz
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/ProfileSelect.tsx"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/ProfileSelect.tsx"
 }
 ```
 
@@ -1468,7 +1468,7 @@ id: toolu_01MMtxR6xLKthJmc5iLDELJY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/AccountProfileSelect.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/AccountProfileSelect.tsx",
   "old_string": "/**\n * The signed-in account's home: its server-side profiles (name + skin), synced\n * across devices. The account-mode counterpart to ProfileSelect — picking a\n * profile shows that profile's online worlds. Local Players (logged out) never\n * see this; guests can't have profiles. Capped at MAX_ONLINE_PROFILES.\n */\n\ntype AccountProfileSelectProps = {\n  user: OnlineUser;\n  /** Enter an online profile: show its server-hosted worlds. */\n  onPlay: (profile: OnlineProfile) => void;\n  /** After signing out — the caller drops back to the local (logged-out) menu. */\n  onSignedOut: () => void;\n};\n\nexport default function AccountProfileSelect({ user, onPlay, onSignedOut }: AccountProfileSelectProps) {",
   "new_string": "/**\n * The signed-in account's home: its server-side profiles (name + skin), synced\n * across devices. The account-mode counterpart to ProfileSelect — picking a\n * profile shows that profile's online worlds. Local Players (logged out) never\n * see this. Capped at MAX_ONLINE_PROFILES. \"Play locally\" opens the browser's\n * local profiles/worlds (where cloud-save sync lives) without signing out.\n */\n\ntype AccountProfileSelectProps = {\n  user: OnlineUser;\n  /** Enter an online profile: show its server-hosted worlds. */\n  onPlay: (profile: OnlineProfile) => void;\n  /** Browse the local (browser) profiles and worlds while staying signed in. */\n  onPlayLocally: () […]
 
@@ -1477,7 +1477,7 @@ id: toolu_01MMtxR6xLKthJmc5iLDELJY
 tool_result
 id: toolu_01MMtxR6xLKthJmc5iLDELJY
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/AccountProfileSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/AccountProfileSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1487,7 +1487,7 @@ id: toolu_01QHQgNRVsRsV4aXjRYBcLs4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/AccountProfileSelect.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/AccountProfileSelect.tsx",
   "old_string": "      <button\n        className=\"mc-button menu-primary\"\n        data-testid=\"new-online-profile\"\n        disabled={atCap}\n        title={atCap ? `Profile limit reached (${MAX_ONLINE_PROFILES})` : undefined}\n        onClick={() => setCreating(true)}\n      >\n        {atCap ? `Profile limit reached (${MAX_ONLINE_PROFILES})` : \"New Profile\"}\n      </button>\n    </MenuScreen>",
   "new_string": "      <div className=\"menu-bottom-row\">\n        <button className=\"mc-button\" data-testid=\"play-locally\" onClick={onPlayLocally}>\n          Play locally\n        </button>\n        <button\n          className=\"mc-button menu-primary\"\n          data-testid=\"new-online-profile\"\n          disabled={atCap}\n          title={atCap ? `Profile limit reached (${MAX_ONLINE_PROFILES})` : undefined}\n          onClick={() => setCreating(true)}\n        >\n          {atCap ? `Profile limit reached (${MAX_ONLINE_PROFILES})` : \"New Profile\"}\n        </button>\n      </div>\n    </MenuScreen>"
 }
@@ -1498,7 +1498,7 @@ id: toolu_01QHQgNRVsRsV4aXjRYBcLs4
 tool_result
 id: toolu_01QHQgNRVsRsV4aXjRYBcLs4
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/AccountProfileSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/AccountProfileSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1508,7 +1508,7 @@ id: toolu_018tMoLmWtQ9UZcwVjgqzxZg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/ProfileSelect.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/ProfileSelect.tsx",
   "old_string": "type ProfileSelectProps = {\n  /** Enter a profile: select it and show its worlds. */\n  onPlay: (profileId: string) => void;\n  /** Fired when the account panel changes auth state (sign in/out/guest) so the\n   *  shell can flip into (or out of) account mode. */\n  onAuthChange?: () => void;\n};\n\n/** The top menu: pick a player profile, or create / rename / delete one. */\nexport default function ProfileSelect({ onPlay, onAuthChange }: ProfileSelectProps) {",
   "new_string": "type ProfileSelectProps = {\n  /** Enter a profile: select it and show its worlds. */\n  onPlay: (profileId: string) => void;\n  /** Fired when the account panel changes auth state (sign in/out) so the\n   *  shell can flip into (or out of) account mode. */\n  onAuthChange?: () => void;\n  /** Return to the account home — only offered while a signed-in account is\n   *  browsing its local worlds through the \"Play locally\" door. */\n  onBackToAccount?: () => void;\n};\n\n/** The top menu: pick a player profile, or create / rename / delete one. */\nexport default function ProfileSelect({ onPlay, onAuthChange, onBackToAccount }: ProfileSelectProps) {"
 }
@@ -1519,7 +1519,7 @@ id: toolu_018tMoLmWtQ9UZcwVjgqzxZg
 tool_result
 id: toolu_018tMoLmWtQ9UZcwVjgqzxZg
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/ProfileSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/ProfileSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1529,7 +1529,7 @@ id: toolu_011Bx6FoDDD89XysbrxoCpcQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/ProfileSelect.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/ProfileSelect.tsx",
   "old_string": "        {/* First run has no profile list to host the account controls, so surface\n            them here too — otherwise sign in / register is unreachable until a\n            local profile exists. (The list view renders its own panel below.) */}\n        {firstRun && <AccountPanel onAuthChange={onAuthChange} />}",
   "new_string": "        {/* First run has no profile list to host the account controls, so surface\n            them here too — otherwise sign in / register is unreachable until a\n            local profile exists. (The list view renders its own panel below.)\n            Same for the way back to account mode: without it, an account with\n            zero local profiles would be trapped on this create form. */}\n        {firstRun && <AccountPanel onAuthChange={onAuthChange} />}\n        {firstRun && onBackToAccount && (\n          <button type=\"button\" className=\"mc-button\" data-testid=\"back-to-account\" onClick={onBackToAccount}>\n            Back to account\n          </button>\n        )}"
 }
@@ -1540,7 +1540,7 @@ id: toolu_011Bx6FoDDD89XysbrxoCpcQ
 tool_result
 id: toolu_011Bx6FoDDD89XysbrxoCpcQ
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/ProfileSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/ProfileSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1550,7 +1550,7 @@ id: toolu_018DF7j7jVMzufAojUtxWX17
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/ProfileSelect.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/ProfileSelect.tsx",
   "old_string": "    <MenuScreen title=\"Select Profile\">\n      <AccountPanel onAuthChange={onAuthChange} />\n      <ul className=\"menu-list\">",
   "new_string": "    <MenuScreen title=\"Select Profile\">\n      <AccountPanel onAuthChange={onAuthChange} />\n      {onBackToAccount && (\n        <button type=\"button\" className=\"mc-button\" data-testid=\"back-to-account\" onClick={onBackToAccount}>\n          Back to account\n        </button>\n      )}\n      <ul className=\"menu-list\">"
 }
@@ -1561,7 +1561,7 @@ id: toolu_018DF7j7jVMzufAojUtxWX17
 tool_result
 id: toolu_018DF7j7jVMzufAojUtxWX17
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/ProfileSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/ProfileSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1575,7 +1575,7 @@ id: toolu_01NVoJ7bBquesnzBSq6eravV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx",
   "old_string": "  // The signed-in account (a real, non-anonymous one flips the menu into\n  // account mode). Offline-first: never asked until this browser went online.\n  const [onlineUser, setOnlineUser] = useState<OnlineUser | null>(null);\n  const refreshOnlineUser = useCallback(() => {\n    if (onlineUsed()) void currentUser().then(setOnlineUser);\n  }, []);",
   "new_string": "  // The signed-in account (a real, non-anonymous one flips the menu into\n  // account mode). Offline-first: never asked until this browser went online.\n  const [onlineUser, setOnlineUser] = useState<OnlineUser | null>(null);\n  // The \"Play locally\" door: a signed-in account browsing its local (browser)\n  // profiles/worlds — where cloud-save sync lives — without signing out.\n  const [browsingLocal, setBrowsingLocal] = useState(false);\n  const refreshOnlineUser = useCallback(() => {\n    if (onlineUsed())\n      void currentUser().then((user) => {\n        setOnlineUser(user);\n        if (!user) setBrowsingLocal(false); // signed out: the door has no \"back\"\n      });\n  }, []);"
 }
@@ -1586,7 +1586,7 @@ id: toolu_01NVoJ7bBquesnzBSq6eravV
 tool_result
 id: toolu_01NVoJ7bBquesnzBSq6eravV
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1596,7 +1596,7 @@ id: toolu_01YLQEES3EPBLKXp1qsykNGF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx",
   "old_string": "    // Resume the tab's world if one was being played and still exists.\n    const pointer = readSessionPointer();\n    const resume: Screen | null =\n      pointer && getProfile(pointer.profileId) && getWorld(pointer.worldId) ? { name: \"play\", profileId: pointer.profileId, worldId: pointer.worldId } : null;\n    // Microtask hop keeps this off the synchronous effect path (cascading-render lint).\n    queueMicrotask(() => {\n      if (resume) setScreen(resume);\n      setReady(true);\n    });",
   "new_string": "    // Resume the tab's world if one was being played and still exists.\n    const pointer = readSessionPointer();\n    const resume: Screen | null =\n      pointer && getProfile(pointer.profileId) && getWorld(pointer.worldId) ? { name: \"play\", profileId: pointer.profileId, worldId: pointer.worldId } : null;\n    // Microtask hop keeps this off the synchronous effect path (cascading-render lint).\n    queueMicrotask(() => {\n      if (resume) {\n        setScreen(resume);\n        // A resumed local world means the player came through the local menus —\n        // quitting should walk back out through them, even for a signed-in\n        // account, not jump abruptly to the account home.\n        setBrowsingLocal(true);\n      }\n      setReady(true);\n    });"
 }
@@ -1607,7 +1607,7 @@ id: toolu_01YLQEES3EPBLKXp1qsykNGF
 tool_result
 id: toolu_01YLQEES3EPBLKXp1qsykNGF
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1617,7 +1617,7 @@ id: toolu_01YJFc5Akvw8pQKUZzjN7tBa
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx",
   "old_string": "  // The profile-select screen is auth-aware: a signed-in account browses its\n  // synced online profiles; everyone else gets the local (browser) profiles.\n  if (onlineUser && !onlineUser.isAnonymous) {\n    return (\n      <AccountProfileSelect user={onlineUser} onPlay={(profile) => setScreen({ name: \"online-worlds\", profile })} onSignedOut={() => setOnlineUser(null)} />\n    );\n  }\n\n  return (\n    <ProfileSelect\n      onPlay={(profileId) => {\n        setActiveProfile(profileId);\n        setScreen({ name: \"world-select\", profileId });\n      }}\n      onAuthChange={refreshOnlineUser}\n    />\n  );",
   "new_string": "  // The profile-select screen is auth-aware: a signed-in account browses its\n  // synced online profiles (unless it stepped through the \"Play locally\" door);\n  // everyone else gets the local (browser) profiles.\n  const accountMode = onlineUser && !onlineUser.isAnonymous;\n  if (accountMode && !browsingLocal) {\n    return (\n      <AccountProfileSelect\n        user={onlineUser}\n        onPlay={(profile) => setScreen({ name: \"online-worlds\", profile })}\n        onPlayLocally={() => setBrowsingLocal(true)}\n        onSignedOut={() => setOnlineUser(null)}\n      />\n    );\n  }\n\n  return (\n    <ProfileSelect\n      onPlay={(profileId) => {\n        setActiveProfile(profileId);\n        setScreen({ name: \"world-select\", profileId });\n      }}\n      onAuthChange={refreshOnlineUser}\n      onBackToAccount={accountMode ? () => setBrowsingLocal(false) : undefined}\n    />\n  );"
 }
@@ -1628,7 +1628,7 @@ id: toolu_01YJFc5Akvw8pQKUZzjN7tBa
 tool_result
 id: toolu_01YJFc5Akvw8pQKUZzjN7tBa
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1641,7 +1641,7 @@ tool_use Read
 id: toolu_014oQQSRSWzWcjYHe8i4kCm8
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/AccountProfileSelect.test.tsx"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/AccountProfileSelect.test.tsx"
 }
 ```
 
@@ -1690,7 +1690,7 @@ tool_use Read
 id: toolu_011vpvM6zgYTM6Spk43PyPZ6
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/ProfileSelect.test.tsx"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/ProfileSelect.test.tsx"
 }
 ```
 
@@ -1769,7 +1769,7 @@ id: toolu_013PEvf2aofmtR1y7HwM3mPD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/AccountProfileSelect.test.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/AccountProfileSelect.test.tsx",
   "old_string": "  test(\"sign out clears the session and notifies the parent\", async () => {",
   "new_string": "  test(\"the Play locally door notifies the parent\", async () => {\n    fake.profiles = [];\n    const onPlayLocally = mock();\n    render(<AccountProfileSelect user={user} onPlay={mock()} onPlayLocally={onPlayLocally} onSignedOut={mock()} />);\n    await waitFor(() => expect(screen.getByText(/No profiles yet/)).toBeTruthy());\n\n    await userEvent.click(screen.getByTestId(\"play-locally\"));\n    expect(onPlayLocally).toHaveBeenCalled();\n  });\n\n  test(\"sign out clears the session and notifies the parent\", async () => {"
 }
@@ -1790,7 +1790,7 @@ id: toolu_01SrLGG32qxgZPDQd7omsnca
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/ProfileSelect.test.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/ProfileSelect.test.tsx",
   "old_string": "  test(\"first-run create enters the new profile\", async () => {",
   "new_string": "  test(\"Back to account renders only for the Play-locally door and fires\", async () => {\n    const user = userEvent.setup();\n    createProfile(\"Alice\", \"alex\");\n    const onBackToAccount = mock();\n    const { unmount } = render(<ProfileSelect onPlay={mock()} onBackToAccount={onBackToAccount} />);\n\n    await user.click(screen.getByTestId(\"back-to-account\"));\n    expect(onBackToAccount).toHaveBeenCalled();\n    unmount();\n\n    // Without the door (logged out) there is no account to go back to.\n    render(<ProfileSelect onPlay={mock()} />);\n    expect(screen.queryByTestId(\"back-to-account\")).toBeNull();\n  });\n\n  test(\"Back to account is reachable from the first-run create form too\", async () => {\n    // An account with zero local profiles lands on the create form — the way\n    // back must not require creating a local profile first.\n    const user = userEvent.setup();\n    const onBackToAccount = mock();\n    render(<ProfileSelect onPlay={mock()} onBackToAccount={onBackToAccount} />);\n    expect(screen.getByText(\"Create Your Profile\")).toBeTruthy();\n\n    await user.click(screen.getByTestId(\"back-to-account\"));\n    expect(onBackToAccount).toHaveBeenCalled();\n  });\n\n  test(\"first-run create enters the new profile\", async () => {"
 }
@@ -1801,7 +1801,7 @@ id: toolu_01SrLGG32qxgZPDQd7omsnca
 tool_result
 id: toolu_01SrLGG32qxgZPDQd7omsnca
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/ProfileSelect.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/ProfileSelect.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1810,7 +1810,7 @@ tool_use Read
 id: toolu_017DsssRK6U2aM8J5U4W3tHn
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/AccountProfileSelect.test.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/AccountProfileSelect.test.tsx",
   "offset": 70,
   "limit": 20
 }
@@ -1850,7 +1850,7 @@ id: toolu_01NDmLEdx1697se2SBsWprXf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/AccountProfileSelect.test.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/AccountProfileSelect.test.tsx",
   "old_string": "  test(\"sign out clears the session and notifies the parent\", async () => {",
   "new_string": "  test(\"the Play locally door notifies the parent\", async () => {\n    fake.profiles = [];\n    const onPlayLocally = mock();\n    render(<AccountProfileSelect user={user} onPlay={mock()} onPlayLocally={onPlayLocally} onSignedOut={mock()} />);\n    await waitFor(() => expect(screen.getByText(/No profiles yet/)).toBeTruthy());\n\n    await userEvent.click(screen.getByTestId(\"play-locally\"));\n    expect(onPlayLocally).toHaveBeenCalled();\n  });\n\n  test(\"sign out clears the session and notifies the parent\", async () => {"
 }
@@ -1861,7 +1861,7 @@ id: toolu_01NDmLEdx1697se2SBsWprXf
 tool_result
 id: toolu_01NDmLEdx1697se2SBsWprXf
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/AccountProfileSelect.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/AccountProfileSelect.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1979,7 +1979,7 @@ tool_use Write
 id: toolu_01QLoERZy5kbxKbD53JdAEgJ
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/app/join/[token]/page.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/app/join/[token]/page.tsx",
   "content": "\"use client\";\n\nimport { use, useEffect, useState } from \"react\";\nimport Link from \"next/link\";\nimport AccountPanel from \"@/components/menu/AccountPanel\";\nimport { currentUser, markOnlineUsed } from \"@/lib/auth/client\";\nimport { acceptInviteToken, resolveInviteToken } from \"@/lib/online/onlineClient\";\n\n/**\n * The invite-link landing page: resolves the token (so the world's name shows\n * before any sign-in), asks the visitor to sign in or register if they aren't,\n * accepts the membership, and points at the game — where the world now sits in\n * the account's online world list. Deliberately unmagical: joining a friend's\n * world is a short story on one page, not hidden state threading into the shell.\n */\nexport default function JoinPage({ params }: { params: Promise<{ token: string }> }) {\n  const { token } = use(params);\n  const [state, setState] = useState<\n    { phase: \"loading\" } | { phase: \"signin\"; worldName: string } | { phase: \"joined\"; worldName: string } | { phase: \"error\"; message: string }\n  >({ phase: \"loading\" });\n  // Bumped by AccountPanel after a sign-in/up so the effect below retries the\n  // accept. The accept lives HERE (not in onAuthChange): the phase flip\n  // unmounts the panel, and the effect owns the cancellation story.\n  const [authNonce, setAuthNonce] […]
 
 > TOOL
@@ -1987,7 +1987,7 @@ id: toolu_01QLoERZy5kbxKbD53JdAEgJ
 tool_result
 id: toolu_01QLoERZy5kbxKbD53JdAEgJ
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/app/join/[token]/page.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/app/join/[token]/page.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2076,7 +2076,7 @@ tool_use Read
 id: toolu_01Ait7DtTLthB7MLCtReeZ4d
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/WorldSelect.test.tsx"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/WorldSelect.test.tsx"
 }
 ```
 
@@ -2124,7 +2124,7 @@ id: toolu_01GUHjgb8aym4CCGfUE66k88
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx",
   "old_string": "import { readSave } from \"@/lib/game/save\";\nimport { pushSave } from \"@/lib/game/cloudSaves\";\nimport type { WorldType } from \"@/lib/world\";\nimport { onlineUsed } from \"@/lib/auth/client\";\nimport { createInviteLink, createOnlineWorld, listOnlineWorlds, revokeInviteLinks, type OnlineWorld } from \"@/lib/online/onlineClient\";\nimport { resolveSeed } from \"@/lib/game/worlds\";",
   "new_string": "import { readSave } from \"@/lib/game/save\";\nimport { pushSave } from \"@/lib/game/cloudSaves\";\nimport type { WorldType } from \"@/lib/world\";\nimport { createOnlineWorld, listOnlineWorlds, type OnlineWorld } from \"@/lib/online/onlineClient\";"
 }
@@ -2135,7 +2135,7 @@ id: toolu_01GUHjgb8aym4CCGfUE66k88
 tool_result
 id: toolu_01GUHjgb8aym4CCGfUE66k88
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2145,7 +2145,7 @@ id: toolu_01PppVT3BkWQq76rQfQQQ34e
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx",
   "old_string": "type WorldSelectProps = {\n  profile: Profile;\n  /** Enter a world (the shell records last-played and boots it). */\n  onPlay: (worldId: string) => void;\n  /** Join an online (server-hosted) world. */\n  onPlayOnline: (world: OnlineWorld) => void;\n  /** Materialize a cloud save (sp-cloud) as a local world and open it. */\n  onDownloadCloud: (world: OnlineWorld) => void;\n  /** Back to the profile list. */\n  onBack: () => void;\n};\n\n/** A profile's world list: pick a world, or create / rename / delete one. */\nexport default function WorldSelect({ profile, onPlay, onPlayOnline, onDownloadCloud, onBack }: WorldSelectProps) {\n  const [creating, setCreating] = useState(false);\n  const [creatingOnline, setCreatingOnline] = useState(false);\n  const [onlineWorlds, setOnlineWorlds] = useState<OnlineWorld[] | null>(null);\n  const [inviteCopied, setInviteCopied] = useState<string | null>(null);\n  const [inviteError, setInviteError] = useState<string | null>(null);\n  const [invitesRevoked, setInvitesRevoked] = useState<string | null>(null);\n  const [onlineCreateError, setOnlineCreateError] = useState<string | null>(null);\n  // Per-world (not single scalars): uploads run independently, so tracking one\n  // id would re-enable another card's button mid-flight and allow a double-upload.\n  const [uploading, setUploading] = useState<ReadonlySet<string>>(() => new Set());\n  const [uploadError, setUploadError] = useState<ReadonlySet<string>>(() => new Set());\n\n  // Online worlds appear only once this browser has used online features —\n  // […]
 
 > TOOL
@@ -2153,7 +2153,7 @@ id: toolu_01PppVT3BkWQq76rQfQQQ34e
 tool_result
 id: toolu_01PppVT3BkWQq76rQfQQQ34e
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2163,7 +2163,7 @@ id: toolu_0149wt4UYrCy5jtDNdgLoKzu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx",
   "old_string": "  if (creatingOnline) {\n    return (\n      <MenuScreen title={`${profile.name} — New Online World`}>\n        {onlineCreateError && <p className=\"account-error\">{onlineCreateError}</p>}\n        <CreateWorldForm\n          onCreate={(name, seed, worldType, gameMode, difficulty, hardcore) => {\n            // Same form, different home: the world row lives on the server and\n            // the game server hosts it — friends join by invite link.\n            setOnlineCreateError(null);\n            void createOnlineWorld({ name, seed: resolveSeed(seed), worldType, gameMode, difficulty, hardcore }).then((world) => {\n              if (world) {\n                setCreatingOnline(false);\n                onPlayOnline(world);\n              } else {\n                // Keep the form open so the entered settings aren't lost on a retry.\n                setOnlineCreateError(\"Couldn't create the online world — are you signed in and online?\");\n              }\n            });\n          }}\n          onCancel={() => setCreatingOnline(false)}\n        />\n      </MenuScreen>\n    );\n  }\n\n  const worlds = worldsForProfile(profile.id);",
   "new_string": "  const worlds = worldsForProfile(profile.id);"
 }
@@ -2174,7 +2174,7 @@ id: toolu_0149wt4UYrCy5jtDNdgLoKzu
 tool_result
 id: toolu_0149wt4UYrCy5jtDNdgLoKzu
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2184,7 +2184,7 @@ id: toolu_01Q4nP442kGwHBeAfifAxZWH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx",
   "old_string": "      const pushed = cloud && save ? await pushSave(cloud.id, save) : \"saved\";\n      if (cloud && pushed === \"saved\") {\n        linkWorldCloud(world.id, cloud.id);\n        refreshOnline();\n      } else {",
   "new_string": "      const pushed = cloud && save ? await pushSave(cloud.id, save) : \"saved\";\n      if (cloud && pushed === \"saved\") {\n        linkWorldCloud(world.id, cloud.id);\n        refreshCloud();\n      } else {"
 }
@@ -2195,7 +2195,7 @@ id: toolu_01Q4nP442kGwHBeAfifAxZWH
 tool_result
 id: toolu_01Q4nP442kGwHBeAfifAxZWH
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2205,7 +2205,7 @@ id: toolu_01GpMye2LnY8NUv4P4T1UNNw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx",
   "old_string": "  // Split the server world list: mp rooms stay in Online Worlds; sp-cloud saves\n  // not yet on this device become downloadable in the Cloud Saves section.\n  const mpWorlds = onlineWorlds?.filter((world) => world.kind === \"mp\") ?? [];\n  const linkedCloudIds = new Set(worlds.map((world) => world.cloudId).filter((id): id is string => Boolean(id)));\n  const cloudWorlds = onlineWorlds?.filter((world) => world.kind === \"sp-cloud\" && !linkedCloudIds.has(world.id)) ?? [];",
   "new_string": "  // Online (mp) rooms live in the account menu; here only the account's\n  // sp-cloud saves not yet on this device become downloadable.\n  const linkedCloudIds = new Set(worlds.map((world) => world.cloudId).filter((id): id is string => Boolean(id)));\n  const cloudWorlds = cloudWorldList?.filter((world) => world.kind === \"sp-cloud\" && !linkedCloudIds.has(world.id)) ?? [];"
 }
@@ -2216,7 +2216,7 @@ id: toolu_01GpMye2LnY8NUv4P4T1UNNw
 tool_result
 id: toolu_01GpMye2LnY8NUv4P4T1UNNw
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2226,7 +2226,7 @@ id: toolu_01SqSvCgyZc2yRjsyi7k8BXe
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx",
   "old_string": "                  <div className=\"menu-card-actions\">\n                    {onlineUsed() &&\n                      (world.cloudId ? (",
   "new_string": "                  <div className=\"menu-card-actions\">\n                    {cloudEnabled &&\n                      (world.cloudId ? ("
 }
@@ -2237,7 +2237,7 @@ id: toolu_01SqSvCgyZc2yRjsyi7k8BXe
 tool_result
 id: toolu_01SqSvCgyZc2yRjsyi7k8BXe
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2247,7 +2247,7 @@ id: toolu_01UqvMZ6Pm6uy6noiaWufDR6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx",
   "old_string": "      {onlineWorlds !== null && (\n        <section className=\"menu-online\">\n          <h3 className=\"menu-online-title\">Online Worlds</h3>\n          {mpWorlds.length === 0 ? (\n            <p className=\"menu-empty\">No online worlds yet — create one and share the invite link.</p>\n          ) : (\n            <ul className=\"menu-list\">\n              {mpWorlds.map((world) => (\n                <li key={world.id} className=\"menu-card\">\n                  <button className=\"menu-card-play\" data-testid={`online-world-${world.id}`} onClick={() => onPlayOnline(world)}>\n                    <span className=\"menu-card-name\">{world.name}</span>\n                    <span className=\"menu-card-sub\">\n                      {world.role === \"owner\" ? \"Your world\" : \"Joined\"} · Seed {world.seed}\n                    </span>\n                  </button>\n                  {world.role === \"owner\" && (\n                    <div className=\"menu-card-actions\">\n                      <button\n                        className=\"mc-button\"\n                        onClick={() => {\n                          setInvitesRevoked(null);\n                          setInviteError(null);\n                          setInviteCopied(null);\n                          void createInviteLink(world.id).then((link) => {\n                            const clipboard = navigator.clipboard;\n                            // Mint failure (offline/auth) or no clipboard: report it, don't lie.\n                            if (!link || !clipboard) return void setInviteError(world.id);\n                            // Only claim \"copied\" once the write actually resolves (it can reject, e.g. no focus).\n                            void clipboard\n                              .writeText(link)\n                              .then(() => setInviteCopied(world.id))\n                              .catch(() => setInviteError(world.id));\n                          });\n                        }}\n                      >\n                        {inviteError === world.id ? \"Copy failed\" : inviteCopied === world.id ? \"Link copied!\" : \"Copy invite\"}\n                      </button>\n                      <button\n                        className=\"mc-button\"\n                        title=\"Invalidate every invite link you've shared for this world\"\n                        onClick={() => {\n                          setInviteCopied(null);\n                          setInviteError(null);\n                          void revokeInviteLinks(world.id).then((count) => {\n                            if (count !== null) setInvitesRevoked(world.id);\n                          });\n                        }}\n                      >\n                        {invitesRevoked === world.id ? \"Links revoked\" : \"Revoke links\"}\n                      </button>\n                    </div>\n                  )}\n                </li>\n […]
 
 > TOOL
@@ -2255,7 +2255,7 @@ id: toolu_01UqvMZ6Pm6uy6noiaWufDR6
 tool_result
 id: toolu_01UqvMZ6Pm6uy6noiaWufDR6
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2265,7 +2265,7 @@ id: toolu_01NFLCms8kAifMEWUwZ2xqU1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx",
   "old_string": "          <WorldSelect\n            profile={profile}\n            onPlay={(worldId) => void playLocal(profile.id, worldId)}\n            onPlayOnline={(world) => void playOnline(profile, world, null)}\n            onDownloadCloud={(world) => void downloadCloud(profile.id, world)}\n            onBack={() => setScreen({ name: \"profile-select\" })}\n          />",
   "new_string": "          <WorldSelect\n            profile={profile}\n            onPlay={(worldId) => void playLocal(profile.id, worldId)}\n            onDownloadCloud={(world) => void downloadCloud(profile.id, world)}\n            cloudEnabled={onlineUser !== null}\n            onBack={() => setScreen({ name: \"profile-select\" })}\n          />"
 }
@@ -2276,7 +2276,7 @@ id: toolu_01NFLCms8kAifMEWUwZ2xqU1
 tool_result
 id: toolu_01NFLCms8kAifMEWUwZ2xqU1
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2316,7 +2316,7 @@ tool_use Read
 id: toolu_01HUhfbYPYtNrJxitnnKk7n9
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/WorldSelect.test.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/WorldSelect.test.tsx",
   "offset": 100,
   "limit": 68
 }
@@ -2368,7 +2368,7 @@ id: toolu_01LQgcrrE2RXj7FDGpWuLpiZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/WorldSelect.test.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/WorldSelect.test.tsx",
   "old_string": "  test(\"splits the server list by kind: mp joins, sp-cloud downloads; local worlds show upload vs synced\", async () => {\n    localStorage.setItem(\"minecraft_online_v1\", \"1\"); // opt into the online sections (onlineUsed())\n    const summary = (id: string, name: string, kind: \"mp\" | \"sp-cloud\") => ({\n      id,\n      name,\n      kind,\n      seed: 1,\n      worldType: \"default\",\n      gameMode: \"survival\",\n      difficulty: \"normal\",\n      hardcore: false,\n      worldgenVersion: 11,\n      role: \"owner\",\n      updatedAt: \"x\"\n    });\n    const originalFetch = globalThis.fetch;\n    globalThis.fetch = (async (url: string) =>\n      typeof url === \"string\" && url.includes(\"/api/worlds\")\n        ? ({\n            ok: true,\n            json: async () => ({ worlds: [summary(\"mp1\", \"Co-op World\", \"mp\"), summary(\"cloud1\", \"Cloud World\", \"sp-cloud\")] })\n          } as unknown as Response)\n        : ({ ok: false } as Response)) as typeof fetch;\n    try {\n      const user = userEvent.setup();\n      createWorld(\"p1\", \"Local\", \"1\", { uid: () => \"wl\" }); // no cloudId → Upload button\n      createWorld(\"p1\", \"Backed\", \"1\", { uid: () => \"ws\", cloudId: \"cloudX\" }); // linked → Synced badge\n\n      const onDownload = mock();\n      render(<WorldSelect profile={PROFILE} onPlay={mock()} onDownloadCloud={onDownload} cloudEnabled={false} onBack={mock()} />);\n\n      // The mp world lands in Online Worlds (join); the sp-cloud one is downloadable.\n      expect(await screen.findByTestId(\"online-world-mp1\")).toBeTruthy();\n      await user.click(screen.getByTestId(\"cloud-world-cloud1\"));\n      expect(onDownload).toHaveBeenCalledTimes(1);\n\n      // Local worlds: the unlinked one offers upload, the […]
 
 > TOOL
@@ -2376,7 +2376,7 @@ id: toolu_01LQgcrrE2RXj7FDGpWuLpiZ
 tool_result
 id: toolu_01LQgcrrE2RXj7FDGpWuLpiZ
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/WorldSelect.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/WorldSelect.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2386,7 +2386,7 @@ id: toolu_01M3DxZhUAMcn3GLhxcHUYDU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/WorldSelect.test.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/WorldSelect.test.tsx",
   "old_string": "      const user = userEvent.setup();\n      createWorld(\"p1\", \"Local\", \"1\", { uid: () => \"wl\" });\n      render(<WorldSelect profile={PROFILE} onPlay={mock()} onDownloadCloud={() => {}} cloudEnabled={false} onBack={mock()} />);\n\n      await user.click(await screen.findByRole(\"button\", { name: \"Upload to cloud\" }));",
   "new_string": "      const user = userEvent.setup();\n      createWorld(\"p1\", \"Local\", \"1\", { uid: () => \"wl\" });\n      render(<WorldSelect profile={PROFILE} onPlay={mock()} onDownloadCloud={() => {}} cloudEnabled={true} onBack={mock()} />);\n\n      await user.click(await screen.findByRole(\"button\", { name: \"Upload to cloud\" }));"
 }
@@ -2397,7 +2397,7 @@ id: toolu_01M3DxZhUAMcn3GLhxcHUYDU
 tool_result
 id: toolu_01M3DxZhUAMcn3GLhxcHUYDU
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/WorldSelect.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/WorldSelect.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2490,7 +2490,7 @@ tool_use Read
 id: toolu_01UgRJxzRzFoyEf93YnXNMuW
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/auth/client.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/auth/client.ts"
 }
 ```
 
@@ -2542,7 +2542,7 @@ tool_use Read
 id: toolu_01PGcxYNf4iF4obPzTRf7nBa
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/auth/server.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/auth/server.ts"
 }
 ```
 
@@ -2588,7 +2588,7 @@ tool_use Read
 id: toolu_01TjBiTvH1HGbsFL6VmurLKQ
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/online/http.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/online/http.ts"
 }
 ```
 
@@ -2634,7 +2634,7 @@ tool_use Read
 id: toolu_013ZV8YXfKYMyvCStuqVguLy
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/online/worldsService.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/online/worldsService.ts",
   "offset": 60,
   "limit": 70
 }
@@ -2682,7 +2682,7 @@ tool_use Read
 id: toolu_0166tKD1Wm31AJPUj8LwaQsQ
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/app/api/profiles/route.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/app/api/profiles/route.ts"
 }
 ```
 
@@ -2722,7 +2722,7 @@ tool_use Read
 id: toolu_01TpfhkAimyGWg3pCjaJxzV6
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/app/api/auth/[...all]/route.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/app/api/auth/[...all]/route.ts"
 }
 ```
 
@@ -2763,7 +2763,7 @@ tool_use Write
 id: toolu_01XGtp2qQ36c9mbfRK5FqS8Q
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/auth/client.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/auth/client.ts",
   "content": "\"use client\";\n\nimport { createAuthClient } from \"better-auth/react\";\n\n/**\n * Browser-side auth. Online play needs a signed-in account; logged-out Local\n * Players never call any of this, so plain offline single-player stays\n * account-free.\n *\n * The client itself constructs lazily: better-auth validates the base URL at\n * construction, which must not run at import time (component tests import\n * menu modules under happy-dom, where no real origin exists).\n */\ntype Client = ReturnType<typeof createAuthClient>;\n\nlet instance: Client | null = null;\n\nexport function authClient(): Client {\n  instance ??= createAuthClient({\n    baseURL: window.location.origin\n  });\n  return instance;\n}\n\nexport type OnlineUser = {\n  id: string;\n  name: string;\n  email: string;\n};\n\n/**\n * \"Has this browser ever used online features?\" Offline-first hinges on it:\n * until the player takes an online action, the menu makes NO auth requests —\n * so a dev/e2e server without a database never even sees a session fetch.\n */\nconst ONLINE_USED_KEY = \"minecraft_online_v1\";\n\nexport function onlineUsed(storage: Storage = localStorage): boolean {\n  return storage.getItem(ONLINE_USED_KEY) === \"1\";\n}\n\nexport function markOnlineUsed(storage: Storage = localStorage): void {\n  storage.setItem(ONLINE_USED_KEY, \"1\");\n}\n\n/** The signed-in account, or null. */\nexport async function currentUser(): Promise<OnlineUser | null> {\n  const { data } = await authClient().getSession();\n  if (!data?.user) return null;\n  const user […]
 
 > TOOL
@@ -2771,7 +2771,7 @@ id: toolu_01XGtp2qQ36c9mbfRK5FqS8Q
 tool_result
 id: toolu_01XGtp2qQ36c9mbfRK5FqS8Q
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/auth/client.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/auth/client.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2781,7 +2781,7 @@ id: toolu_01E8TMaRAqQ1nF4ty61PebAo
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/auth/server.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/auth/server.ts",
   "old_string": "import { betterAuth } from \"better-auth\";\nimport { drizzleAdapter } from \"better-auth/adapters/drizzle\";\nimport { anonymous } from \"better-auth/plugins\";\nimport { eq } from \"drizzle-orm\";\nimport { db, schema } from \"@/db\";\n\n/**\n * Server-side auth. Guests are first-class: the anonymous plugin mints a real\n * user (isAnonymous) on the first online action, so \"play now\" needs no form —\n * and when the guest later signs up (email/password or OAuth), onLinkAccount\n * re-parents everything they own onto the new account before the anonymous\n * user is deleted. That hook IS the \"guests keep their worlds\" promise; the\n * integration test in lib/auth/auth.test.ts exercises it end to end.\n *\n * Exposed as a factory so tests run the identical wiring against PGlite.\n */",
   "new_string": "import { betterAuth } from \"better-auth\";\nimport { drizzleAdapter } from \"better-auth/adapters/drizzle\";\nimport { db, schema } from \"@/db\";\n\n/**\n * Server-side auth: email/password accounts, nothing else. Online play is\n * accounts-only — logged-out Local Players never reach this layer, and the\n * anonymous-guest plugin that once minted throwaway users is gone.\n *\n * Exposed as a factory so tests run the identical wiring against PGlite\n * (lib/auth/auth.test.ts keeps that seam honest).\n */"
 } […]
@@ -2791,7 +2791,7 @@ id: toolu_01E8TMaRAqQ1nF4ty61PebAo
 tool_result
 id: toolu_01E8TMaRAqQ1nF4ty61PebAo
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/auth/server.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/auth/server.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2801,7 +2801,7 @@ id: toolu_01M8j51pMJNvXfgLbeha4vb2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/auth/server.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/auth/server.ts",
   "old_string": "    user: {\n      additionalFields: {\n        skinId: { type: \"string\", required: false }\n      }\n    },\n    plugins: [\n      anonymous({\n        onLinkAccount: async ({ anonymousUser, newUser }) => {\n          // Everything the guest owned moves to the upgraded account. The\n          // anonymous user row is deleted right after this hook, and the FKs\n          // cascade — so a missed table (or a partial failure) would silently\n          // destroy data. One transaction makes the re-parent all-or-nothing:\n          // if any statement throws, nothing moves and the guest survives.\n          const target = database as unknown as import(\"@/db\").Db;\n          const from = anonymousUser.user.id;\n          const to = newUser.user.id;\n          await target.transaction(async (tx) => {\n            await tx.update(schema.worlds).set({ ownerId: to }).where(eq(schema.worlds.ownerId, from));\n            await tx.update(schema.worldInvites).set({ createdBy: to }).where(eq(schema.worldInvites.createdBy, from));\n            // Memberships can collide if the new account already joined the same\n            // world; drop the guest's row in that case (the membership exists).\n            const memberships = await tx.select().from(schema.worldMembers).where(eq(schema.worldMembers.userId, from));\n            for (const membership of memberships) {\n              await tx\n                .insert(schema.worldMembers)\n                .values({ ...membership, userId: to })\n                .onConflictDoNothing();\n            }\n            await tx.delete(schema.worldMembers).where(eq(schema.worldMembers.userId, from));\n          });\n        }\n      })\n    ]\n  });",
   "new_string": "    user: {\n      additionalFields: {\n        skinId: { type: \"string\", required: false }\n      }\n    }\n  });"
 }
@@ -2812,7 +2812,7 @@ id: toolu_01M8j51pMJNvXfgLbeha4vb2
 tool_result
 id: toolu_01M8j51pMJNvXfgLbeha4vb2
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/auth/server.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/auth/server.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2822,7 +2822,7 @@ id: toolu_014bxRgVBTq7aCqhPmVNsMwW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/online/http.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/online/http.ts",
   "old_string": "export type SessionUser = { id: string; name: string; skinId: string | null; isAnonymous: boolean };\n\n/** The signed-in user, or null (routes answer 401). */\nexport async function sessionUser(request: Request): Promise<SessionUser | null> {\n  const session = await auth().api.getSession({ headers: request.headers as Headers });\n  if (!session?.user) return null;\n  const user = session.user as { id: string; name: string; skinId?: string | null; isAnonymous?: boolean | null };\n  return { id: user.id, name: user.name, skinId: user.skinId ?? null, isAnonymous: user.isAnonymous === true };\n}",
   "new_string": "export type SessionUser = { id: string; name: string; skinId: string | null };\n\n/** The signed-in user, or null (routes answer 401). */\nexport async function sessionUser(request: Request): Promise<SessionUser | null> {\n  const session = await auth().api.getSession({ headers: request.headers as Headers });\n  if (!session?.user) return null;\n  const user = session.user as { id: string; name: string; skinId?: string | null };\n  return { id: user.id, name: user.name, skinId: user.skinId ?? null };\n}"
 }
@@ -2833,7 +2833,7 @@ id: toolu_014bxRgVBTq7aCqhPmVNsMwW
 tool_result
 id: toolu_014bxRgVBTq7aCqhPmVNsMwW
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/online/http.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/online/http.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2847,7 +2847,7 @@ id: toolu_01VDRvGzRPDmyGXGGyx4USyE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/online/worldsService.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/online/worldsService.ts",
   "old_string": "/**\n * Creates an account profile. Guests can't (online identities are account-only,\n * see [[Local Player]]); the account is capped at MAX_ONLINE_PROFILES — a 6th\n * request is a `conflict` the UI reports as \"limit reached\".\n */\nexport async function createProfile(\n  db: Db,\n  owner: { id: string; isAnonymous: boolean },\n  input: { name: string; skinId?: string | null }\n): Promise<{ ok: true; profile: ProfileSummary } | Failure> {\n  if (owner.isAnonymous) return fail(\"forbidden\");\n  const name = input.name?.trim();\n  if (!name || name.length > MAX_PROFILE_NAME) return fail(\"invalid\");\n  // Count and insert under a per-account lock so two concurrent creates can't\n  // both slip past MAX_ONLINE_PROFILES.\n  return db.transaction(async (tx) => {\n    await tx.execute(lockAccount(owner.id));\n    const existing = await tx.select({ id: schema.profiles.id }).from(schema.profiles).where(eq(schema.profiles.ownerId, owner.id));\n    if (existing.length >= MAX_ONLINE_PROFILES) return fail(\"conflict\");\n    const [profile] = await tx\n      .insert(schema.profiles)\n      .values({ id: crypto.randomUUID(), ownerId: owner.id, name, skinId: input.skinId ?? null })\n      .returning();\n    return { ok: true, profile: toProfileSummary(profile) };\n  });\n}",
   "new_string": "/**\n * Creates an account profile. The account is capped at MAX_ONLINE_PROFILES —\n * a 6th request is a `conflict` the UI reports as \"limit reached\".\n */\nexport async function createProfile(\n  db: Db,\n  ownerId: string,\n  input: { name: string; skinId?: […]
 
@@ -2856,7 +2856,7 @@ id: toolu_01VDRvGzRPDmyGXGGyx4USyE
 tool_result
 id: toolu_01VDRvGzRPDmyGXGGyx4USyE
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/online/worldsService.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/online/worldsService.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2866,7 +2866,7 @@ id: toolu_01MHHTxVb6gMojAujkDo77Ze
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/app/api/profiles/route.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/app/api/profiles/route.ts",
   "old_string": "/** POST /api/profiles — create an account profile (guests can't; capped per account). */\nexport async function POST(request: Request) {\n  const user = await sessionUser(request);\n  if (!user) return unauthorized();\n  const body = (await request.json().catch(() => null)) as { name?: string; skinId?: string | null } | null;\n  if (!body) return failureResponse(\"invalid\");\n  const result = await createProfile(db(), { id: user.id, isAnonymous: user.isAnonymous }, { name: body.name ?? \"\", skinId: body.skinId ?? null });",
   "new_string": "/** POST /api/profiles — create an account profile (capped per account). */\nexport async function POST(request: Request) {\n  const user = await sessionUser(request);\n  if (!user) return unauthorized();\n  const body = (await request.json().catch(() => null)) as { name?: string; skinId?: string | null } | null;\n  if (!body) return failureResponse(\"invalid\");\n  const result = await createProfile(db(), user.id, { name: body.name ?? \"\", skinId: body.skinId ?? null });"
 }
@@ -2877,7 +2877,7 @@ id: toolu_01MHHTxVb6gMojAujkDo77Ze
 tool_result
 id: toolu_01MHHTxVb6gMojAujkDo77Ze
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/app/api/profiles/route.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/app/api/profiles/route.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2887,7 +2887,7 @@ id: toolu_01JpxZS4apM8HkfghdPZx7RP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/app/api/auth/[...all]/route.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/app/api/auth/[...all]/route.ts",
   "old_string": "/**\n * The better-auth mount: sign-in/up (email + anonymous guests), session,\n * sign-out — everything under /api/auth/* is handled by the library.",
   "new_string": "/**\n * The better-auth mount: sign-in/up (email/password), session, sign-out —\n * everything under /api/auth/* is handled by the library."
 }
@@ -2898,7 +2898,7 @@ id: toolu_01JpxZS4apM8HkfghdPZx7RP
 tool_result
 id: toolu_01JpxZS4apM8HkfghdPZx7RP
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/app/api/auth/[...all]/route.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/app/api/auth/[...all]/route.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2908,7 +2908,7 @@ id: toolu_01U2RWh4FQkZaqiCgxLwWrSs
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/AccountPanel.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/AccountPanel.tsx",
   "old_string": "import { authClient, currentUser, ensureSignedIn, markOnlineUsed, onlineUsed, type OnlineUser } from \"@/lib/auth/client\";\n\n/**\n * The account corner of the menu: shows who you are online, offers instant\n * guest play, and upgrades a guest to a real account without losing worlds\n * (the server re-parents them — see lib/auth/server.ts). Purely additive to\n * the offline game: with no online features touched, no account ever exists.\n */\ntype AccountPanelProps = {\n  /** Notified after any auth mutation (sign in/up/out, guest) so a parent shell\n   *  can react — e.g. flip the menu into account mode. */\n  onAuthChange?: () => void;\n};",
   "new_string": "import { authClient, currentUser, markOnlineUsed, onlineUsed, type OnlineUser } from \"@/lib/auth/client\";\n\n/**\n * The account corner of the menu: shows who you are online and hosts the\n * sign-in / register form — online play is accounts-only. Purely additive to\n * the offline game: with no online features touched, no account ever exists.\n */\ntype AccountPanelProps = {\n  /** Notified after any auth mutation (sign in/up/out) so a parent shell can\n   *  react — e.g. flip the menu into account mode. */\n  onAuthChange?: () => void;\n};"
 }
@@ -2919,7 +2919,7 @@ id: toolu_01U2RWh4FQkZaqiCgxLwWrSs
 tool_result
 id: toolu_01U2RWh4FQkZaqiCgxLwWrSs
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/AccountPanel.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/AccountPanel.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2929,7 +2929,7 @@ id: toolu_0154pPWTnFfHVg7dfYQwyWB5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/AccountPanel.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/AccountPanel.tsx",
   "old_string": "  const refresh = async () => {\n    setUser(await currentUser());\n    onAuthChange?.();\n  };\n  // Mirror submit / \"Play online as guest\": guard against a failed request (no\n  // unhandled rejection, a visible error) and against concurrent double-clicks.\n  const signOut = async () => {",
   "new_string": "  const refresh = async () => {\n    setUser(await currentUser());\n    onAuthChange?.();\n  };\n  // Mirror submit: guard against a failed request (no unhandled rejection, a\n  // visible error) and against concurrent double-clicks.\n  const signOut = async () => {"
 }
@@ -2940,7 +2940,7 @@ id: toolu_0154pPWTnFfHVg7dfYQwyWB5
 tool_result
 id: toolu_0154pPWTnFfHVg7dfYQwyWB5
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/AccountPanel.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/AccountPanel.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2950,7 +2950,7 @@ id: toolu_01YGK12wR9hGsqKu6p5TmDB9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/AccountPanel.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/AccountPanel.tsx",
   "old_string": "    setBusy(true);\n    setError(null);\n    markOnlineUsed();\n    // Sign-up (and sign-in) while holding a guest session links the account:\n    // the guest's worlds move over server-side before the guest is deleted.\n    try {",
   "new_string": "    setBusy(true);\n    setError(null);\n    // This form and the invite landing page are the only places that flip the\n    // offline-first flag — nothing else may trigger session probes.\n    markOnlineUsed();\n    try {"
 }
@@ -2961,7 +2961,7 @@ id: toolu_01YGK12wR9hGsqKu6p5TmDB9
 tool_result
 id: toolu_01YGK12wR9hGsqKu6p5TmDB9
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/AccountPanel.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/AccountPanel.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2971,7 +2971,7 @@ id: toolu_01V4PK3iM13JEisqqCaBnM9F
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/AccountPanel.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/AccountPanel.tsx",
   "old_string": "          <button type=\"submit\" className=\"mc-button\" disabled={busy}>\n            {mode === \"signup\" ? (user?.isAnonymous ? \"Create account (keeps your worlds)\" : \"Create account\") : \"Sign in\"}\n          </button>",
   "new_string": "          <button type=\"submit\" className=\"mc-button\" disabled={busy}>\n            {mode === \"signup\" ? \"Create account\" : \"Sign in\"}\n          </button>"
 }
@@ -2982,7 +2982,7 @@ id: toolu_01V4PK3iM13JEisqqCaBnM9F
 tool_result
 id: toolu_01V4PK3iM13JEisqqCaBnM9F
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/AccountPanel.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/AccountPanel.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2992,7 +2992,7 @@ id: toolu_01Cd2kooR27NB6SB4zdLbBa5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/AccountPanel.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/AccountPanel.tsx",
   "old_string": "      {user ? (\n        <>\n          <span className=\"account-status\">{user.isAnonymous ? \"Playing as guest\" : `Signed in as ${user.name}`}</span>\n          {user.isAnonymous ? (\n            <>\n              <button type=\"button\" className=\"mc-button\" onClick={() => setMode(\"signup\")} disabled={busy}>\n                Keep my worlds — create account\n              </button>\n              {/* A guest could previously never get back to the login screen; sign\n                  out drops to the \"Offline\" state where Sign in / register live. */}\n              <button type=\"button\" className=\"mc-button\" onClick={signOut} disabled={busy}>\n                Sign out\n              </button>\n            </>\n          ) : (\n            <button type=\"button\" className=\"mc-button\" onClick={signOut} disabled={busy}>\n              Sign out\n            </button>\n          )}\n          {error && <div className=\"account-error\">{error}</div>}\n        </>\n      ) : (\n        <>\n          <span className=\"account-status\">Offline</span>\n          <button\n            type=\"button\"\n            className=\"mc-button\"\n            onClick={async () => {\n              setBusy(true);\n              setError(null);\n              try {\n                await ensureSignedIn();\n                await refresh();\n              } catch {\n                setError(\"Couldn't reach the server — check your connection and try again.\");\n              } finally {\n                setBusy(false);\n              }\n            }}\n            disabled={busy}\n          >\n            Play online as guest\n          </button>\n          <button type=\"button\" className=\"mc-button\" onClick={() => setMode(\"signin\")}>\n            Sign in\n          </button>\n          {error && <div className=\"account-error\">{error}</div>}\n        </>\n      )}",
   "new_string": "      {user ? (\n        <>\n          <span className=\"account-status\">Signed in as {user.name}</span>\n          <button type=\"button\" className=\"mc-button\" onClick={signOut} disabled={busy}>\n            Sign out\n          </button>\n          {error && <div className=\"account-error\">{error}</div>}\n        </>\n      ) : (\n        <>\n          <span className=\"account-status\">Offline</span>\n          <button type=\"button\" className=\"mc-button\" onClick={() => setMode(\"signin\")}>\n            Sign in\n          </button>\n          {error […]
 
@@ -3001,7 +3001,7 @@ id: toolu_01Cd2kooR27NB6SB4zdLbBa5
 tool_result
 id: toolu_01Cd2kooR27NB6SB4zdLbBa5
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/AccountPanel.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/AccountPanel.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3015,7 +3015,7 @@ id: toolu_016owUnFuXissKV2DKQNAw4K
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx",
   "old_string": "import { currentUser, ensureSignedIn, onlineUsed, type OnlineUser } from \"@/lib/auth/client\";",
   "new_string": "import { currentUser, onlineUsed, type OnlineUser } from \"@/lib/auth/client\";"
 }
@@ -3026,7 +3026,7 @@ id: toolu_016owUnFuXissKV2DKQNAw4K
 tool_result
 id: toolu_016owUnFuXissKV2DKQNAw4K
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3036,7 +3036,7 @@ id: toolu_019Dcf663Nxp22CsHVM5U2Px
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx",
   "old_string": "type Screen =\n  | { name: \"profile-select\" }\n  | { name: \"world-select\"; profileId: string }\n  | { name: \"online-worlds\"; profile: OnlineProfile }\n  | { name: \"play\"; profileId: string; worldId: string }\n  // play-online carries the resolved player identity (a local Profile for a\n  // guest, or one derived from the account profile) plus that account profile\n  // (null for the guest path) so \"quit to worlds\" returns to the right list.\n  | { name: \"play-online\"; profile: Profile; world: OnlineWorld; session: NetworkSession; onlineProfile: OnlineProfile | null };",
   "new_string": "type Screen =\n  | { name: \"profile-select\" }\n  | { name: \"world-select\"; profileId: string }\n  | { name: \"online-worlds\"; profile: OnlineProfile }\n  | { name: \"play\"; profileId: string; worldId: string }\n  // play-online carries the play-usable identity derived from the account\n  // profile, plus that profile itself so \"quit to worlds\" returns to its list.\n  | { name: \"play-online\"; profile: Profile; world: OnlineWorld; session: NetworkSession; onlineProfile: OnlineProfile };"
 }
@@ -3047,7 +3047,7 @@ id: toolu_019Dcf663Nxp22CsHVM5U2Px
 tool_result
 id: toolu_019Dcf663Nxp22CsHVM5U2Px
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3057,7 +3057,7 @@ id: toolu_01KL9GUSqWmYwHjvhj2UrmZa
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx",
   "old_string": "  // The signed-in account (a real, non-anonymous one flips the menu into\n  // account mode). Offline-first: never asked until this browser went online.\n  const [onlineUser, setOnlineUser] = useState<OnlineUser | null>(null);",
   "new_string": "  // The signed-in account (its presence flips the menu into account mode).\n  // Offline-first: never asked until this browser went online.\n  const [onlineUser, setOnlineUser] = useState<OnlineUser | null>(null);"
 }
@@ -3068,7 +3068,7 @@ id: toolu_01KL9GUSqWmYwHjvhj2UrmZa
 tool_result
 id: toolu_01KL9GUSqWmYwHjvhj2UrmZa
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3078,7 +3078,7 @@ id: toolu_01DZE54xjQSd7BGZYgreEZio
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx",
   "old_string": "  /** Guest-or-account → ticket → socket → replica sync → play. When an account\n   *  profile is given, its id rides the ticket so the roster shows that profile. */\n  const playOnline = async (profile: Profile, world: OnlineWorld, onlineProfile: OnlineProfile | null) => {\n    if (joiningRef.current) return; // a join is already in flight\n    joiningRef.current = true;\n    setConnectError(null);\n    setConnecting(world.name);\n    const ticketProfileId = onlineProfile?.id;\n    try {\n      if (!(await ensureSignedIn())) throw new Error(\"sign-in failed\");\n      const grant = await requestJoinTicket(world.id, ticketProfileId);\n      if (!grant) throw new Error(\"could not get a join ticket (is the game server configured?)\");",
   "new_string": "  /** Account profile → ticket → socket → replica sync → play. The profile's id\n   *  rides the ticket so the roster shows that profile's name and skin. */\n  const playOnline = async (profile: Profile, world: OnlineWorld, onlineProfile: OnlineProfile) => {\n    if (joiningRef.current) return; // a join is already in flight\n    joiningRef.current = true;\n    setConnectError(null);\n    setConnecting(world.name);\n    const ticketProfileId = onlineProfile.id;\n    try {\n      // No sign-in pre-check: this is only reachable from account mode, and an\n      // expired session just fails the ticket mint into the dialog below.\n      const grant = await requestJoinTicket(world.id, ticketProfileId);\n […]
 
@@ -3087,7 +3087,7 @@ id: toolu_01DZE54xjQSd7BGZYgreEZio
 tool_result
 id: toolu_01DZE54xjQSd7BGZYgreEZio
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3097,7 +3097,7 @@ id: toolu_01Xhg4teYgdpEX38AFm52ZED
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx",
   "old_string": "  if (screen.name === \"play-online\") {\n    // Quit returns to the account profile's online worlds, or (guest path) the\n    // local world list the join came from.\n    const backToWorlds: Screen = screen.onlineProfile\n      ? { name: \"online-worlds\", profile: screen.onlineProfile }\n      : { name: \"world-select\", profileId: screen.profile.id };",
   "new_string": "  if (screen.name === \"play-online\") {\n    // Quit returns to the account profile's online worlds.\n    const backToWorlds: Screen = { name: \"online-worlds\", profile: screen.onlineProfile };"
 }
@@ -3108,7 +3108,7 @@ id: toolu_01Xhg4teYgdpEX38AFm52ZED
 tool_result
 id: toolu_01Xhg4teYgdpEX38AFm52ZED
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3118,7 +3118,7 @@ id: toolu_01RpjAbXka1cR5sBmk5j4hub
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx",
   "old_string": "  const accountMode = onlineUser && !onlineUser.isAnonymous;\n  if (accountMode && !browsingLocal) {",
   "new_string": "  const accountMode = onlineUser !== null;\n  if (accountMode && !browsingLocal) {"
 }
@@ -3129,7 +3129,7 @@ id: toolu_01RpjAbXka1cR5sBmk5j4hub
 tool_result
 id: toolu_01RpjAbXka1cR5sBmk5j4hub
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3142,7 +3142,7 @@ tool_use Read
 id: toolu_01U5hZXWc7M2GPrgD37Dn47q
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/auth/auth.test.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/auth/auth.test.ts"
 }
 ```
 
@@ -3188,7 +3188,7 @@ tool_use Read
 id: toolu_01LEUTMXRZXVvzUsa4zzWJ1h
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/AccountPanel.test.tsx"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/AccountPanel.test.tsx"
 }
 ```
 
@@ -3237,7 +3237,7 @@ tool_use Write
 id: toolu_0159agQCAA2ZZ8YVzsWEbAiQ
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/auth/auth.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/auth/auth.test.ts",
   "content": "import { afterAll, beforeAll, describe, expect, test } from \"bun:test\";\nimport { eq } from \"drizzle-orm\";\nimport { closeTestDb, createTestDb, type TestDb } from \"@/db/testDb\";\nimport { schema } from \"@/db\";\nimport { createAuth, type Auth } from \"./server\";\n\n/**\n * The integration test of the auth seam: the real better-auth wiring\n * (createAuth + drizzleAdapter) against real SQL (PGlite), not mocks. Online\n * play is accounts-only, so what must keep working is exactly email/password\n * sign-up/sign-in and the session shape the API routes read (id, name, and\n * the skinId additional field) — if a better-auth upgrade changes any of it,\n * this fails before any UI is built on it.\n */\n\nlet db: TestDb;\nlet auth: Auth;\n\nbeforeAll(async () => {\n  db = await createTestDb();\n  auth = createAuth(db as never, { baseURL: \"http://localhost:3000\", secret: \"test-secret-test-secret-test-secret\" });\n});\n\n// An unclosed PGlite leaks a pending WASM op that Bun flags as exit code 99.\nafterAll(async () => {\n  await closeTestDb(db);\n});\n\ndescribe(\"email/password accounts\", () => {\n  test(\"sign-up creates the user and a working session cookie\", async () => {\n    // returnHeaders (not asResponse): the test runner registers happy-dom,\n    // whose browser-faithful Response hides Set-Cookie from scripts.\n    const { headers } = await auth.api.signUpEmail({\n […]
 
 > TOOL
@@ -3245,7 +3245,7 @@ id: toolu_0159agQCAA2ZZ8YVzsWEbAiQ
 tool_result
 id: toolu_0159agQCAA2ZZ8YVzsWEbAiQ
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/auth/auth.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/auth/auth.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3254,7 +3254,7 @@ tool_use Write
 id: toolu_01QL3zNFjtrgJvgzfuFfWX7o
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/AccountPanel.test.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/AccountPanel.test.tsx",
   "content": "import { describe, expect, test, mock } from \"bun:test\";\nimport { render, screen, waitFor } from \"@testing-library/react\";\nimport userEvent from \"@testing-library/user-event\";\n\n// The panel talks to better-auth over fetch; component tests swap the client\n// module for a controllable fake so no network (or server) exists.\nconst fake = {\n  user: null as null | { id: string; name: string; email: string },\n  signOutRejects: false\n};\n\nvoid mock.module(\"@/lib/auth/client\", () => ({\n  authClient: () => ({\n    signUp: {\n      email: async ({ email, name }: { email: string; name: string }) => {\n        fake.user = { id: \"u-new\", name, email };\n        return { error: null };\n      }\n    },\n    signIn: {\n      email: async ({ email }: { email: string }) => {\n        fake.user = { id: \"u-known\", name: email.split(\"@\")[0], email };\n        return { error: null };\n      }\n    },\n    signOut: async () => {\n      if (fake.signOutRejects) throw new Error(\"network down\");\n      fake.user = null;\n      return { error: null };\n    }\n  }),\n  onlineUsed: () => true,\n  markOnlineUsed: () => {},\n  currentUser: async () => fake.user\n}));\n\nconst { default: AccountPanel } = await import(\"./AccountPanel\");\n\ndescribe(\"AccountPanel\", () => {\n  test(\"logged out offers Sign in only — no guest path\", async () => {\n    fake.user = null;\n    render(<AccountPanel />);\n […]
 
 > TOOL
@@ -3262,7 +3262,7 @@ id: toolu_01QL3zNFjtrgJvgzfuFfWX7o
 tool_result
 id: toolu_01QL3zNFjtrgJvgzfuFfWX7o
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/AccountPanel.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/AccountPanel.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3285,7 +3285,7 @@ id: toolu_01BrJ64VGwSMFQGfgxeZP3Ey
 167:  const acct = (id: string, isAnonymous = false) => ({ id, isAnonymous });
 170:    const a = await createProfile(asDb(), acct("alice"), { name: "Steve", skinId: "default" });
 171:    const b = await createProfile(asDb(), acct("alice"), { name: "Alex", skinId: "alex" });
-184:    await db.insert(schema.user).values({ id: "guest", name: "Guest", email: "guest@example.com", isAnonymous: true });
+184:    await db.insert(schema.user).values({ id: "guest", name: "Guest", email: "<REDACTED_EMAIL>", isAnonymous: true });
 185:    expect(await createProfile(asDb(), acct("guest", true), { name: "Nope" })).toMatchObject({ ok: false, error: "forbidden" });
 191:      expect((await createProfile(asDb(), acct("alice"), { name: `P${i}` })).ok).toBe(true);
 193:    expect(await createProfile(asDb(), acct("alice"), { name: "one too many" })).toMatchObject({ ok: false, error: "conflict" });
@@ -3302,7 +3302,7 @@ tool_use Read
 id: toolu_01QGbWKx6zWAVw6fzyEN3JhD
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/online/worldsService.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/online/worldsService.test.ts",
   "offset": 160,
   "limit": 45
 }
@@ -3337,7 +3337,7 @@ id: toolu_01QGbWKx6zWAVw6fzyEN3JhD
 181	  });
 182	
 183	  test("guests can't create a profile (online identities are account-only)", async () => {
-184	    await db.insert(schema.user).values({ id: "guest", name: "Guest", email: "guest@example.com", isAnonymous: true });
+184	    await db.insert(schema.user).values({ id: "guest", name: "Guest", email: "<REDACTED_EMAIL>", isAnonymous: true });
 185	    expect(await createProfile(asDb(), acct("guest", true), { name: […]
 
 > TOOL
@@ -3376,7 +3376,7 @@ id: toolu_01CG3tsQdsYEBzEKUgCAi9n9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/online/worldsService.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/online/worldsService.test.ts",
   "old_string": "describe(\"account profiles\", () => {\n  const acct = (id: string, isAnonymous = false) => ({ id, isAnonymous });\n\n  test(\"create, list (oldest first), and rename/reskin — all owner-scoped\", async () => {",
   "new_string": "describe(\"account profiles\", () => {\n  test(\"create, list (oldest first), and rename/reskin — all owner-scoped\", async () => {"
 }
@@ -3397,8 +3397,8 @@ id: toolu_01Ybw1SMHuPXmx9GAavdQDtp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/online/worldsService.test.ts",
-  "old_string": "  test(\"guests can't create a profile (online identities are account-only)\", async () => {\n    await db.insert(schema.user).values({ id: \"guest\", name: \"Guest\", email: \"guest@example.com\", isAnonymous: true });\n    expect(await createProfile(asDb(), acct(\"guest\", true), { name: \"Nope\" })).toMatchObject({ ok: false, error: \"forbidden\" });\n    expect(await listProfiles(asDb(), \"guest\")).toEqual([]);\n  });\n\n  test(\"an account is capped at MAX_ONLINE_PROFILES; blank/over-long names are rejected\", async () => {",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/online/worldsService.test.ts",
+  "old_string": "  test(\"guests can't create a profile (online identities are account-only)\", async () => {\n    await db.insert(schema.user).values({ id: \"guest\", name: \"Guest\", email: \"<REDACTED_EMAIL>\", isAnonymous: true });\n    expect(await createProfile(asDb(), acct(\"guest\", true), { name: \"Nope\" })).toMatchObject({ ok: false, error: \"forbidden\" });\n    expect(await listProfiles(asDb(), \"guest\")).toEqual([]);\n  });\n\n  test(\"an account is capped at MAX_ONLINE_PROFILES; blank/over-long names are rejected\", async () => {",
   "new_string": "  test(\"an account is capped at MAX_ONLINE_PROFILES; blank/over-long names are rejected\", async () => {"
 }
 ```
@@ -3417,7 +3417,7 @@ tool_use Read
 id: toolu_01DcdVkAyz7Xjgg7xsvsKMtf
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/online/worldsService.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/online/worldsService.test.ts",
   "offset": 164,
   "limit": 26
 }
@@ -3448,7 +3448,7 @@ id: toolu_01DcdVkAyz7Xjgg7xsvsKMtf
 181	  });
 182	
 183	  test("guests can't create a profile (online identities are account-only)", async () => {
-184	    await db.insert(schema.user).values({ id: "guest", name: "Guest", email: "guest@example.com", isAnonymous: true });
+184	    await db.insert(schema.user).values({ id: "guest", name: "Guest", email: "<REDACTED_EMAIL>", isAnonymous: true });
 185	    expect(await createProfile(asDb(), acct("guest", true), { name: "Nope" })).toMatchObject({ ok: false, error: "forbidden" });
 186	    expect(await listProfiles(asDb(), "guest")).toEqual([]);
 187	  });
@@ -3462,7 +3462,7 @@ id: toolu_01FKJ7PXjDSCZ5Dab8uxtYPh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/online/worldsService.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/online/worldsService.test.ts",
   "old_string": "describe(\"account profiles\", () => {\n  const acct = (id: string, isAnonymous = false) => ({ id, isAnonymous });\n\n  test(\"create, list (oldest first), and rename/reskin — all owner-scoped\", async () => {",
   "new_string": "describe(\"account profiles\", () => {\n  test(\"create, list (oldest first), and rename/reskin — all owner-scoped\", async () => {"
 }
@@ -3473,7 +3473,7 @@ id: toolu_01FKJ7PXjDSCZ5Dab8uxtYPh
 tool_result
 id: toolu_01FKJ7PXjDSCZ5Dab8uxtYPh
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/online/worldsService.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/online/worldsService.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3483,8 +3483,8 @@ id: toolu_012Xvx11SitziwoEkm1VsBYy
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/online/worldsService.test.ts",
-  "old_string": "  test(\"guests can't create a profile (online identities are account-only)\", async () => {\n    await db.insert(schema.user).values({ id: \"guest\", name: \"Guest\", email: \"guest@example.com\", isAnonymous: true });\n    expect(await createProfile(asDb(), acct(\"guest\", true), { name: \"Nope\" })).toMatchObject({ ok: false, error: \"forbidden\" });\n    expect(await listProfiles(asDb(), \"guest\")).toEqual([]);\n  });\n\n  test(\"an account is capped at MAX_ONLINE_PROFILES; blank/over-long names are rejected\", async () => {",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/online/worldsService.test.ts",
+  "old_string": "  test(\"guests can't create a profile (online identities are account-only)\", async () => {\n    await db.insert(schema.user).values({ id: \"guest\", name: \"Guest\", email: \"<REDACTED_EMAIL>\", isAnonymous: true });\n    expect(await createProfile(asDb(), acct(\"guest\", true), { name: \"Nope\" })).toMatchObject({ ok: false, error: \"forbidden\" });\n    expect(await listProfiles(asDb(), \"guest\")).toEqual([]);\n  });\n\n  test(\"an account is capped at MAX_ONLINE_PROFILES; blank/over-long names are rejected\", async () => {",
   "new_string": "  test(\"an account is capped at MAX_ONLINE_PROFILES; blank/over-long names are rejected\", async () => {"
 }
 ```
@@ -3494,7 +3494,7 @@ id: toolu_012Xvx11SitziwoEkm1VsBYy
 tool_result
 id: toolu_012Xvx11SitziwoEkm1VsBYy
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/online/worldsService.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/online/worldsService.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3538,7 +3538,7 @@ id: toolu_014HT3mtDwhgeMwY3UNvonv3
 ```
 2 | {
     ^
-SyntaxError: Export named 'currentUser' not found in module '/Users/hutusi/workspace/ai/david/monecraft/lib/auth/client.ts'.
+SyntaxError: Export named 'currentUser' not found in module '/home/<USER>/workspace/ai/david/monecraft/lib/auth/client.ts'.
       at requestImportModule (2:1)
 -------------------------------
 
@@ -3653,7 +3653,7 @@ components/menu/AccountPanel.test.tsx:
 1 | })
 2 | {
     ^
-SyntaxError: Export named 'currentUser' not found in module '/Users/hutusi/workspace/ai/david/monecraft/lib/auth/client.ts'.
+SyntaxError: Export named 'currentUser' not found in module '/home/<USER>/workspace/ai/david/monecraft/lib/auth/client.ts'.
       at requestImportModule (2:1)
 -------------------------------
 
@@ -3716,7 +3716,7 @@ components/menu/AccountPanel.test.tsx:
 1 | })
 2 | {
     ^
-SyntaxError: Export named 'currentUser' not found in module '/Users/hutusi/workspace/ai/david/monecraft/lib/auth/client.ts'.
+SyntaxError: Export named 'currentUser' not found in module '/home/<USER>/workspace/ai/david/monecraft/lib/auth/client.ts'.
       at requestImportModule (2:1)
 -------------------------------
 
@@ -3755,7 +3755,7 @@ id: toolu_01LQvG2D1peHWGtoEjKoVXVe
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/AccountProfileSelect.test.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/AccountProfileSelect.test.tsx",
   "old_string": "void mock.module(\"@/lib/auth/client\", () => ({\n  authClient: () => ({\n    signOut: async () => {\n      if (fake.signOutRejects) throw new Error(\"network down\");\n      fake.signedOut = true;\n      return { error: null };\n    }\n  })\n}));",
   "new_string": "// Mirror the real module's full export surface: bun's mock.module can't add\n// names to an already-created module namespace, so whichever test file mocks\n// this module first fixes the shape every later import sees.\nvoid mock.module(\"@/lib/auth/client\", () => ({\n  authClient: () => ({\n    signOut: async () => {\n      if (fake.signOutRejects) throw new Error(\"network down\");\n      fake.signedOut = true;\n      return { error: null };\n    }\n  }),\n  onlineUsed: () => true,\n  markOnlineUsed: () => {},\n  currentUser: async () => null\n}));"
 }
@@ -3766,7 +3766,7 @@ id: toolu_01LQvG2D1peHWGtoEjKoVXVe
 tool_result
 id: toolu_01LQvG2D1peHWGtoEjKoVXVe
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/AccountProfileSelect.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/AccountProfileSelect.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3846,7 +3846,7 @@ id: toolu_01L5r7rBURUmmzrRBTsU9zvE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.test.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.test.tsx",
   "old_string": "void mock.module(\"@/lib/online/onlineClient\", () => ({\n  listOnlineWorlds: async () => fake.worlds,\n  createOnlineWorld: async ({ name, profileId }: { name: string; profileId?: string }) => {\n    const created = mpWorld(`new-${fake.worlds.length}`, profileId ?? \"\", { name });\n    fake.worlds = [...fake.worlds, created];\n    return created;\n  },\n  createInviteLink: async () => \"http://localhost/join/tok\",\n  revokeInviteLinks: async () => 1\n}));",
   "new_string": "// Mirror the real module's full export surface: bun's mock.module can't add\n// names to an already-created module namespace, so whichever test file mocks\n// this module first fixes the shape every later import sees.\nvoid mock.module(\"@/lib/online/onlineClient\", () => ({\n  listOnlineWorlds: async () => fake.worlds,\n  createOnlineWorld: async ({ name, profileId }: { name: string; profileId?: string }) => {\n    const created = mpWorld(`new-${fake.worlds.length}`, profileId ?? \"\", { name });\n    fake.worlds = [...fake.worlds, created];\n    return created;\n  },\n  createInviteLink: async () => \"http://localhost/join/tok\",\n  revokeInviteLinks: async () => 1,\n  deleteOnlineWorld: async () => true,\n  resolveInviteToken: async () => null,\n  acceptInviteToken: async () => false,\n  requestJoinTicket: async () => null\n}));"
 }
@@ -3857,7 +3857,7 @@ id: toolu_01L5r7rBURUmmzrRBTsU9zvE
 tool_result
 id: toolu_01L5r7rBURUmmzrRBTsU9zvE
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3867,7 +3867,7 @@ id: toolu_01L8fxmnpM7bp9YpRZGfS2c6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/WorldSelect.test.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/WorldSelect.test.tsx",
   "old_string": "import { beforeEach, describe, expect, mock, test } from \"bun:test\";\nimport { render, screen } from \"@testing-library/react\";\nimport userEvent from \"@testing-library/user-event\";\nimport WorldSelect from \"@/components/menu/WorldSelect\";\nimport { createProfile, type Profile } from \"@/lib/game/profiles\";\nimport { createWorld, readWorlds } from \"@/lib/game/worlds\";\n\nconst PROFILE: Profile = { id: \"p1\", name: \"Tester\", skinId: \"default\", createdAt: 1 };\n\nbeforeEach(() => {\n  localStorage.clear();\n  // createWorld requires the owning profile to exist, so seed it with a known id.\n  createProfile(\"Tester\", \"default\", { uid: () => \"p1\" });\n});",
   "new_string": "import { beforeEach, describe, expect, mock, test } from \"bun:test\";\nimport { render, screen } from \"@testing-library/react\";\nimport userEvent from \"@testing-library/user-event\";\nimport { createProfile, type Profile } from \"@/lib/game/profiles\";\nimport { createWorld, readWorlds } from \"@/lib/game/worlds\";\nimport type { OnlineWorld } from \"@/lib/online/onlineClient\";\n\n// The cloud-save section talks to the server through onlineClient; swap the\n// module for a controllable fake so no network exists. Mirror the real\n// module's full export surface: bun's mock.module can't add names to an\n// already-created module namespace, so whichever test file mocks this module\n// first fixes the shape every later import sees.\nconst cloud = {\n  worlds: [] as OnlineWorld[],\n  createRejects: false,\n  listCalls: 0\n};\n\nvoid mock.module(\"@/lib/online/onlineClient\", () => ({\n  listOnlineWorlds: async () => {\n    cloud.listCalls += 1;\n    return […]
 
@@ -3876,7 +3876,7 @@ id: toolu_01L8fxmnpM7bp9YpRZGfS2c6
 tool_result
 id: toolu_01L8fxmnpM7bp9YpRZGfS2c6
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/WorldSelect.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/WorldSelect.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3890,7 +3890,7 @@ id: toolu_01Ddpe3dUzKjzGkemj3tQei8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/WorldSelect.test.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/WorldSelect.test.tsx",
   "old_string": "  test(\"with cloud enabled: sp-cloud saves download, mp rooms stay out, upload vs synced per local world\", async () => {\n    const summary = (id: string, name: string, kind: \"mp\" | \"sp-cloud\") => ({\n      id,\n      name,\n      kind,\n      seed: 1,\n      worldType: \"default\",\n      gameMode: \"survival\",\n      difficulty: \"normal\",\n      hardcore: false,\n      worldgenVersion: 11,\n      role: \"owner\",\n      updatedAt: \"x\"\n    });\n    const originalFetch = globalThis.fetch;\n    globalThis.fetch = (async (url: string) =>\n      typeof url === \"string\" && url.includes(\"/api/worlds\")\n        ? ({\n            ok: true,\n            json: async () => ({ worlds: [summary(\"mp1\", \"Co-op World\", \"mp\"), summary(\"cloud1\", \"Cloud World\", \"sp-cloud\")] })\n          } as unknown as Response)\n        : ({ ok: false } as Response)) as typeof fetch;\n    try {\n      const user = userEvent.setup();\n      createWorld(\"p1\", \"Local\", \"1\", { uid: () => \"wl\" }); // no cloudId → Upload button\n      createWorld(\"p1\", \"Backed\", \"1\", { uid: () => \"ws\", cloudId: \"cloudX\" }); // linked → Synced badge\n\n      const onDownload = mock();\n      render(<WorldSelect profile={PROFILE} onPlay={mock()} onDownloadCloud={onDownload} cloudEnabled={true} onBack={mock()} />);\n\n      // The sp-cloud save is downloadable; mp rooms live in the account menu now.\n      await user.click(await screen.findByTestId(\"cloud-world-cloud1\"));\n      expect(onDownload).toHaveBeenCalledTimes(1);\n      expect(screen.queryByTestId(\"online-world-mp1\")).toBeNull();\n      expect(screen.queryByText(\"Online Worlds\")).toBeNull();\n\n      // Local worlds: the unlinked one offers upload, the linked one reads Synced.\n      expect(screen.getByRole(\"button\", { name: […]
 
 > TOOL
@@ -3898,7 +3898,7 @@ id: toolu_01Ddpe3dUzKjzGkemj3tQei8
 tool_result
 id: toolu_01Ddpe3dUzKjzGkemj3tQei8
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/WorldSelect.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/WorldSelect.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4086,7 +4086,7 @@ tool_use Read
 id: toolu_01Ad9ErtijywuRh9Waieqqvr
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/db/schema.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/db/schema.ts",
   "offset": 1,
   "limit": 45
 }
@@ -4137,7 +4137,7 @@ tool_use Read
 id: toolu_015PcWLHUZBWTbFwjeUKzRLQ
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/db/ddl.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/db/ddl.ts",
   "offset": 1,
   "limit": 30
 }
@@ -4187,7 +4187,7 @@ id: toolu_014yb1De8hcUB8hDHy7Ek495
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/db/schema.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/db/schema.ts",
   "old_string": "/**\n * The online schema: better-auth's core tables (user/session/account/\n * verification, plus the anonymous plugin's isAnonymous and our skinId\n * additional field) and the game's own tables (worlds, memberships, invites).",
   "new_string": "/**\n * The online schema: better-auth's core tables (user/session/account/\n * verification, plus our skinId additional field) and the game's own tables\n * (worlds, memberships, invites, profiles)."
 }
@@ -4198,7 +4198,7 @@ id: toolu_014yb1De8hcUB8hDHy7Ek495
 tool_result
 id: toolu_014yb1De8hcUB8hDHy7Ek495
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/db/schema.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/db/schema.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4208,7 +4208,7 @@ id: toolu_01BGqUhzENFxoiPaLHAprQmX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/db/schema.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/db/schema.ts",
   "old_string": "  createdAt: timestamp(\"created_at\").notNull().defaultNow(),\n  updatedAt: timestamp(\"updated_at\").notNull().defaultNow(),\n  /** Anonymous-plugin flag: a guest identity that can upgrade in place. */\n  isAnonymous: boolean(\"is_anonymous\"),\n  /** Game profile: the player's skin palette id (additional field). */\n  skinId: text(\"skin_id\")\n});",
   "new_string": "  createdAt: timestamp(\"created_at\").notNull().defaultNow(),\n  updatedAt: timestamp(\"updated_at\").notNull().defaultNow(),\n  /** Game profile: the player's skin palette id (additional field). */\n  skinId: text(\"skin_id\")\n});"
 }
@@ -4219,7 +4219,7 @@ id: toolu_01BGqUhzENFxoiPaLHAprQmX
 tool_result
 id: toolu_01BGqUhzENFxoiPaLHAprQmX
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/db/schema.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/db/schema.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4229,7 +4229,7 @@ id: toolu_017GoV9vNf1vCegzu1etdqmV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/db/ddl.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/db/ddl.ts",
   "old_string": "      created_at timestamp NOT NULL DEFAULT now(),\n      updated_at timestamp NOT NULL DEFAULT now(),\n      is_anonymous boolean,\n      skin_id text\n    );",
   "new_string": "      created_at timestamp NOT NULL DEFAULT now(),\n      updated_at timestamp NOT NULL DEFAULT now(),\n      skin_id text\n    );"
 }
@@ -4240,7 +4240,7 @@ id: toolu_017GoV9vNf1vCegzu1etdqmV
 tool_result
 id: toolu_017GoV9vNf1vCegzu1etdqmV
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/db/ddl.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/db/ddl.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4280,7 +4280,7 @@ tool_use Read
 id: toolu_01XgZQBScv8wDctqRU5jiuCJ
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/db/migrations/0003_retire-anonymous-guests.sql"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/db/migrations/0003_retire-anonymous-guests.sql"
 }
 ```
 
@@ -4298,7 +4298,7 @@ tool_use Write
 id: toolu_0159t6mUgZj8R5SbeECEEGqq
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/db/migrations/0003_retire-anonymous-guests.sql",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/db/migrations/0003_retire-anonymous-guests.sql",
   "content": "-- The anonymous-guest layer is retired: online play is accounts-only. Guest\n-- users were cookie-bound throwaway identities; delete them before dropping\n-- the flag, and let the FKs cascade their sessions, accounts, worlds (and\n-- those worlds' members/invites/save blobs), memberships, and invites.\n-- Deploy order: ship the app build that no longer selects \"is_anonymous\"\n-- FIRST, then run this migration (an old build would error on the missing\n-- column; the new build simply ignores it until the migration runs).\nDELETE FROM \"user\" WHERE \"is_anonymous\" IS TRUE;--> statement-breakpoint\nALTER TABLE \"user\" DROP COLUMN \"is_anonymous\";\n"
 }
 ```
@@ -4308,7 +4308,7 @@ id: toolu_0159t6mUgZj8R5SbeECEEGqq
 tool_result
 id: toolu_0159t6mUgZj8R5SbeECEEGqq
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/db/migrations/0003_retire-anonymous-guests.sql has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/db/migrations/0003_retire-anonymous-guests.sql has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4352,7 +4352,7 @@ id: toolu_018EsmhpW4QnbGUUJuWFezNA
 ```json
 {
   "file_path": "/private/tmp/claude-501/-Users-hutusi-workspace-ai-david-monecraft/b817669a-a873-441f-8f32-85f90414f618/scratchpad/migrate-rehearsal.ts",
-  "content": "/** Rehearse migrations 0000→0003 on PGlite: seed a guest + account after 0002,\n *  run 0003, assert the guest cascade-deleted and the column dropped. */\nimport { PGlite } from \"@electric-sql/pglite\";\nimport { readFileSync } from \"node:fs\";\n\nconst dir = \"/Users/hutusi/workspace/ai/david/monecraft/db/migrations\";\nconst files = [\n  \"0000_online-foundation.sql\",\n  \"0001_account-profiles.sql\",\n  \"0002_profile-world-indexes.sql\",\n  \"0003_retire-anonymous-guests.sql\"\n];\n\nconst db = new PGlite();\nconst apply = async (file: string) => {\n  const sql = readFileSync(`${dir}/${file}`, \"utf8\");\n  for (const statement of sql.split(\"--> statement-breakpoint\")) {\n    const trimmed = statement.trim();\n    if (trimmed) await db.exec(trimmed);\n  }\n};\n\nawait apply(files[0]);\nawait apply(files[1]);\nawait apply(files[2]);\n\n// Seed: one guest (world + membership + invite), one real account (world).\nawait db.exec(`\n  INSERT INTO \"user\" (id, name, email, is_anonymous) VALUES\n    ('guest-1', 'Guest', 'g@x', true),\n    ('acct-1', 'Keeper', 'k@x', NULL);\n  INSERT INTO worlds (id, owner_id, kind, name, seed, worldgen_version) VALUES\n    ('gw', 'guest-1', 'mp', 'Guest Keep', 1, 11),\n    ('aw', 'acct-1', 'mp', 'Account Keep', 2, 11);\n  INSERT INTO world_members (world_id, user_id, role) VALUES\n    ('gw', 'guest-1', 'owner'),\n    ('aw', 'acct-1', 'owner'),\n    ('aw', 'guest-1', 'member');\n  INSERT INTO world_invites (id, world_id, token, created_by) VALUES\n    ('inv-1', 'gw', 'tok-1', 'guest-1');\n`);\n\nawait apply(files[3]);\n\nconst users = await db.query<{ id: string }>(`SELECT id FROM \"user\" ORDER BY id`);\nconst worlds = await db.query<{ id: string }>(`SELECT id FROM worlds ORDER BY id`);\nconst members = await […]
+  "content": "/** Rehearse migrations 0000→0003 on PGlite: seed a guest + account after 0002,\n *  run 0003, assert the guest cascade-deleted and the column dropped. */\nimport { PGlite } from \"@electric-sql/pglite\";\nimport { readFileSync } from \"node:fs\";\n\nconst dir = \"/home/<USER>/workspace/ai/david/monecraft/db/migrations\";\nconst files = [\n  \"0000_online-foundation.sql\",\n  \"0001_account-profiles.sql\",\n  \"0002_profile-world-indexes.sql\",\n  \"0003_retire-anonymous-guests.sql\"\n];\n\nconst db = new PGlite();\nconst apply = async (file: string) => {\n  const sql = readFileSync(`${dir}/${file}`, \"utf8\");\n  for (const statement of sql.split(\"--> statement-breakpoint\")) {\n    const trimmed = statement.trim();\n    if (trimmed) await db.exec(trimmed);\n  }\n};\n\nawait apply(files[0]);\nawait apply(files[1]);\nawait apply(files[2]);\n\n// Seed: one guest (world + membership + invite), one real account (world).\nawait db.exec(`\n  INSERT INTO \"user\" (id, name, email, is_anonymous) VALUES\n    ('guest-1', 'Guest', 'g@x', true),\n    ('acct-1', 'Keeper', 'k@x', NULL);\n  INSERT INTO worlds (id, owner_id, kind, name, seed, worldgen_version) VALUES\n    ('gw', 'guest-1', 'mp', 'Guest Keep', 1, 11),\n    ('aw', 'acct-1', 'mp', 'Account Keep', 2, 11);\n  INSERT INTO world_members (world_id, user_id, role) VALUES\n    ('gw', 'guest-1', 'owner'),\n    ('aw', 'acct-1', 'owner'),\n    ('aw', 'guest-1', 'member');\n  INSERT INTO world_invites (id, world_id, token, created_by) VALUES\n    ('inv-1', 'gw', 'tok-1', 'guest-1');\n`);\n\nawait apply(files[3]);\n\nconst users = await db.query<{ id: string }>(`SELECT id FROM \"user\" ORDER BY id`);\nconst worlds = await db.query<{ id: string }>(`SELECT id FROM worlds ORDER BY id`);\nconst members = await […]
 
 > TOOL
 
@@ -4454,7 +4454,7 @@ tool_use Read
 id: toolu_019EuysCBHwuVHYwNTKpu2mY
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts"
 }
 ```
 
@@ -4535,7 +4535,7 @@ tool_use Write
 id: toolu_01NdaAcBH7Ywn3CJUxuq75yE
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts",
   "content": "import { expect, test, type Page } from \"@playwright/test\";\nimport { acquirePointerLock } from \"./helpers\";\n\n/**\n * The full co-op journey against the real online stack: the Next app backed\n * by an in-process Postgres (DATABASE_URL=pglite://memory) plus the Bun game\n * server, both from playwright.config's webServer list — no Docker, no cloud.\n * Two isolated browser contexts play two ACCOUNTS (online play is\n * accounts-only): the host registers, creates an online profile and world\n * through the account menus, the friend registers on the invite landing page,\n * and the pair must see each other, share block edits, and chat.\n */\n\n/** Console/page errors collected like the smoke fixture does (favicon 404 is noise). */\nfunction watchErrors(page: Page, sink: string[]): void {\n  page.on(\"console\", (message) => {\n    if (message.type() !== \"error\") return;\n    if (message.text().includes(\"Failed to load resource\") && message.location().url.endsWith(\"/favicon.ico\")) return;\n    sink.push(`${message.text()} (${message.location().url})`);\n  });\n  page.on(\"pageerror\", (error) => sink.push(String(error)));\n}\n\n/** Booted, synced, and drawing: the bar every online entry must clear. */\nasync function waitForOnlineGame(page: Page): Promise<void> {\n  await page.waitForFunction(() => window.__monecraft !== undefined, undefined, { timeout: 30000 });\n  await page.waitForFunction(() => window.__monecraft!.net?.status() === \"online\", undefined, { timeout: 30000 });\n  await page.waitForFunction(() => window.__monecraft!.renderer.renderedTriangles() > 0, undefined, { timeout: 30000 […]
 
 > TOOL
@@ -4543,7 +4543,7 @@ id: toolu_01NdaAcBH7Ywn3CJUxuq75yE
 tool_result
 id: toolu_01NdaAcBH7Ywn3CJUxuq75yE
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4556,7 +4556,7 @@ tool_use Read
 id: toolu_01GA6mwoQgs1sPVicygzczeA
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/e2e/cloudSaves.e2e.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/e2e/cloudSaves.e2e.ts"
 }
 ```
 
@@ -4599,7 +4599,7 @@ id: toolu_01BhLv7mFP7QJjEFu9wfzkmm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/e2e/cloudSaves.e2e.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/e2e/cloudSaves.e2e.ts",
   "old_string": "/**\n * The single-player cloud-save round-trip through the WorldSelect menu, against\n * the real online stack (the Next app on DATABASE_URL=pglite://memory — no game\n * server needed; cloud saves are the /api/worlds blob API, not a WS session).\n *\n * A signed-in guest uploads a local world, then downloads it \"on another device\"\n * — simulated in one context by clearing this device's sync cursor, since guest\n * identities differ per browser context. The proof is that a distinctive edit\n * made before the upload survives the push → delete → pull cycle.\n */",
   "new_string": "/**\n * The single-player cloud-save round-trip through the WorldSelect menu, against\n * the real online stack (the Next app on DATABASE_URL=pglite://memory — no game\n * server needed; cloud saves are the /api/worlds blob API, not a WS session).\n *\n * A signed-in ACCOUNT steps through the \"Play locally\" door, uploads a local\n * world, then downloads it \"on another device\" — simulated in one context by\n * clearing this device's sync cursor. The proof is that a distinctive edit\n * made before the upload survives the push → delete → pull cycle.\n */"
 } […]
@@ -4609,7 +4609,7 @@ id: toolu_01BhLv7mFP7QJjEFu9wfzkmm
 tool_result
 id: toolu_01BhLv7mFP7QJjEFu9wfzkmm
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/e2e/cloudSaves.e2e.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/e2e/cloudSaves.e2e.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4619,9 +4619,9 @@ id: toolu_01N3Ew3D9Snc2ARyejLjxshp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/e2e/cloudSaves.e2e.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/e2e/cloudSaves.e2e.ts",
   "old_string": "    // ── sign in as a guest, then create a local world ────────────────────────\n    await page.getByRole(\"button\", { name: \"Play online as guest\" }).click();\n    await expect(page.getByText(\"Playing as guest\")).toBeVisible({ timeout: 15000 });\n    await page.getByTestId(\"profile-cloud-profile\").click();",
-  "new_string": "    // ── register an account, then reach the local menus through the door ────\n    await page.getByRole(\"button\", { name: \"Sign in\", exact: true }).click();\n    await page.getByRole(\"button\", { name: \"I need an account\" }).click();\n    await page.getByLabel(\"Email\").fill(\"cloudy@example.com\");\n    await page.getByLabel(\"Display name\").fill(\"Cloudy\");\n    await page.getByLabel(\"Password\").fill(\"hunter2hunter2\");\n    await page.getByRole(\"button\", { name: \"Create account\" }).click();\n\n    // Signing in flips the menu to the account home; cloud saves live with the\n    // LOCAL worlds, one \"Play locally\" click away.\n    await expect(page.getByText(\"Your Profiles\")).toBeVisible({ timeout: 15000 });\n    await page.getByTestId(\"play-locally\").click();\n    await page.getByTestId(\"profile-cloud-profile\").click();"
+  "new_string": "    // ── register an account, then reach the local menus through the door ────\n    await page.getByRole(\"button\", { name: \"Sign in\", exact: true }).click();\n    await page.getByRole(\"button\", { name: \"I need an account\" }).click();\n    await page.getByLabel(\"Email\").fill(\"<REDACTED_EMAIL>\");\n    await page.getByLabel(\"Display name\").fill(\"Cloudy\");\n    await page.getByLabel(\"Password\").fill(\"hunter2hunter2\");\n    await page.getByRole(\"button\", { name: \"Create account\" }).click();\n\n    // Signing in flips the menu to the account home; cloud saves live with the\n    // LOCAL worlds, one \"Play locally\" click away.\n    await expect(page.getByText(\"Your Profiles\")).toBeVisible({ timeout: 15000 });\n    await page.getByTestId(\"play-locally\").click();\n    await page.getByTestId(\"profile-cloud-profile\").click();"
 }
 ```
 
@@ -4630,7 +4630,7 @@ id: toolu_01N3Ew3D9Snc2ARyejLjxshp
 tool_result
 id: toolu_01N3Ew3D9Snc2ARyejLjxshp
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/e2e/cloudSaves.e2e.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/e2e/cloudSaves.e2e.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4682,7 +4682,7 @@ tool_use Read
 id: toolu_01Vi8FNub1XWJg3W3dx5CskL
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/online.md"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/online.md"
 }
 ```
 
@@ -4729,7 +4729,7 @@ id: toolu_01NynJb3TG8Sav6MiBiaUAbp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/online.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/online.md",
   "old_string": "Browser ──(cookies)── Next.js app          ── Neon/Postgres\n   │                   /api/auth/*   better-auth (guests + accounts)",
   "new_string": "Browser ──(cookies)── Next.js app          ── Neon/Postgres\n   │                   /api/auth/*   better-auth (accounts)"
 }
@@ -4740,7 +4740,7 @@ id: toolu_01NynJb3TG8Sav6MiBiaUAbp
 tool_result
 id: toolu_01NynJb3TG8Sav6MiBiaUAbp
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/online.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/online.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4750,7 +4750,7 @@ id: toolu_01X4ZZLoiGjuZSNynHPUKo2T
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/online.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/online.md",
   "old_string": "## Identity: guests first\n\n- \"Play online as guest\" (menu → Account panel) creates a real better-auth\n  user with `isAnonymous` — no form, instant play. Guests own worlds and\n  memberships like anyone else.\n- Upgrading (sign-up, or sign-in to an existing account, while holding the\n  guest session) triggers the anonymous plugin's `onLinkAccount` hook\n  (`lib/auth/server.ts`): worlds, memberships, and invites re-parent onto the\n  new account before the guest row is deleted. **This hook is the \"guests\n  keep their worlds\" promise** — `lib/auth/auth.test.ts` proves it against\n  the real better-auth flow on real SQL (PGlite), including the\n  duplicate-membership collision case.\n- Sessions are better-auth cookies; the game server never sees them.\n- The Account panel renders on the profile-select screen **and on the\n  first-run create-profile screen** (`components/menu/ProfileSelect.tsx`), so\n  sign in / register is reachable before any local profile exists; a guest can\n  **Sign out** back to the offline/login state.\n- When signed in as a real account the menu opens into an **account home**\n  (`components/menu/AccountProfileSelect.tsx`) listing that account's\n  server-side profiles (create/rename/delete, capped at `MAX_ONLINE_PROFILES`);\n  picking one shows its online worlds (`OnlineWorldSelect`, capped at\n  `MAX_WORLDS_PER_PROFILE`), and the join ticket carries the profile's name/skin.\n  Logged-out **Local Players** stay on the […]
 
 > TOOL
@@ -4758,7 +4758,7 @@ id: toolu_01X4ZZLoiGjuZSNynHPUKo2T
 tool_result
 id: toolu_01X4ZZLoiGjuZSNynHPUKo2T
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/online.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/online.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4768,7 +4768,7 @@ id: toolu_01AyE7GHsS2FqHEodqoKQVhN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/online.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/online.md",
   "old_string": "- **Upload** — a local world's card gets an \"Upload to cloud\" action once\n  you've gone online: it creates an `sp-cloud` world row, links it via",
   "new_string": "- **Upload** — a local world's card gets an \"Upload to cloud\" action while\n  signed in: it creates an `sp-cloud` world row, links it via"
 }
@@ -4779,7 +4779,7 @@ id: toolu_01AyE7GHsS2FqHEodqoKQVhN
 tool_result
 id: toolu_01AyE7GHsS2FqHEodqoKQVhN
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/online.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/online.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4789,7 +4789,7 @@ id: toolu_01VQ7mz5G9vE5tYiCEdG9JDp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/online.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/online.md",
   "old_string": "The menu's **Online Worlds** section (`WorldSelect`) lists every world the\nsigned-in user may play, creates new ones (same form as local worlds — the\nrow lives in Postgres, the game server hosts it), and mints invite links\n(`/join/<token>` — the landing page resolves the token, signs the visitor in\nas a guest if needed, and accepts the membership). Playing one runs\n`GameShell.playOnline`: ensure a session → `POST /api/worlds/:id/ticket` →\n`connectNetworkSession(gameServerUrl, ticket)` → mount the game on the\nsession's replica engine.",
   "new_string": "The account's per-profile world list (`OnlineWorldSelect`) shows owned and\njoined worlds, creates new ones (same form as local worlds — the row lives in\nPostgres, the game server hosts it), and mints invite links (`/join/<token>`\n— the landing page previews the world's name, asks the visitor to sign in or\nregister if they aren't, then accepts the membership; the world appears in\ntheir account's world list). Playing one runs `GameShell.playOnline`:\n`POST /api/worlds/:id/ticket` → `connectNetworkSession(gameServerUrl, ticket)`\n→ mount the game on the session's replica engine."
 }
@@ -4800,7 +4800,7 @@ id: toolu_01VQ7mz5G9vE5tYiCEdG9JDp
 tool_result
 id: toolu_01VQ7mz5G9vE5tYiCEdG9JDp
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/online.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/online.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4810,7 +4810,7 @@ id: toolu_01Qe4CkcssQS2ed4UyyqZqEQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/online.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/online.md",
   "old_string": "Full co-op on localhost: run all three, open two browser windows (one\nnormal, one private — separate guest identities), create an online world in\nthe first, and paste its invite link into the second.",
   "new_string": "Full co-op on localhost: run all three, open two browser windows (one\nnormal, one private — each registers its own account), create an online\nworld in the first, and paste its invite link into the second."
 }
@@ -4821,7 +4821,7 @@ id: toolu_01Qe4CkcssQS2ed4UyyqZqEQ
 tool_result
 id: toolu_01Qe4CkcssQS2ed4UyyqZqEQ
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/online.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/online.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4831,7 +4831,7 @@ id: toolu_01Xasq6aAUz3ZY9HCYrDH4Ap
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/online.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/online.md",
   "old_string": "Schema lives in `db/schema.ts` (drizzle); migrations are generated with\n`bunx drizzle-kit generate` and committed under `db/migrations/`. The PGlite\nfixture (`db/testDb.ts`) applies the same DDL in-memory so `bun test` needs\nno daemon; the auth integration test exercises every table, which keeps the\nfixture DDL and the schema module honest against each other.",
   "new_string": "Schema lives in `db/schema.ts` (drizzle); migrations are generated with\n`bunx drizzle-kit generate` and committed under `db/migrations/`. The PGlite\nfixture (`db/testDb.ts`) applies the same DDL in-memory so `bun test` needs\nno daemon; the auth integration test (`lib/auth/auth.test.ts`) runs the real\nbetter-auth wiring against it, which keeps the fixture DDL, the schema\nmodule, and the adapter honest against each other."
 }
@@ -4842,7 +4842,7 @@ id: toolu_01Xasq6aAUz3ZY9HCYrDH4Ap
 tool_result
 id: toolu_01Xasq6aAUz3ZY9HCYrDH4Ap
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/online.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/online.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4977,7 +4977,7 @@ tool_use Read
 id: toolu_012tMCvVpa4Vxsdd8LZD68yU
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/manual.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/manual.md",
   "offset": 640,
   "limit": 70
 }
@@ -5016,7 +5016,7 @@ id: toolu_01ArkMuG3tqHTLMn1ejhP7b1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/manual.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/manual.md",
   "old_string": "**Getting an identity.** The first online action signs you in as a **guest** —\none click, no form, from the **Account** panel on the profile screen (or\nautomatically when you accept an invite). Guests are real accounts: the worlds\nyou create and join are yours. When you want to keep them across browsers,\n**Create account** upgrades the guest in place — your worlds come with you.\n\n**Hosting.** On the world list, the **Online Worlds** section appears once\nyou've gone online. **New Online World** uses the same form as a local world\n(name, seed, world type, mode, difficulty); creating it connects you straight\nin. Press **Copy invite** on your world's card to put a join link on the\nclipboard — send it to your friends. Invite links expire after a while; copy a\nfresh one any time.\n\n**Joining.** Opening an invite link shows the world's name, signs you in (as a\nguest if you're new), and adds the world to your **Online Worlds** list — click\nits card to play. The world is yours to rejoin from that list from then on;\nthe link is only needed once.",
   "new_string": "**Getting an identity.** Online play needs an **account** — a one-time\nemail/password registration from the **Account** […]
 
@@ -5025,7 +5025,7 @@ id: toolu_01ArkMuG3tqHTLMn1ejhP7b1
 tool_result
 id: toolu_01ArkMuG3tqHTLMn1ejhP7b1
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/manual.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/manual.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5035,7 +5035,7 @@ id: toolu_01L7BcKhXDGyMxp9Do32ydk3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/tuning.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/tuning.md",
   "old_string": "- **`MAX_ONLINE_PROFILES`** (`5`) — profiles one signed-in account may create.\n  A profile is a cross-device identity (name + skin) that owns online worlds;\n  guests (anonymous) can't create any. Raising it grows the profile list and the\n  worlds an account can accumulate (`MAX_ONLINE_PROFILES × MAX_WORLDS_PER_PROFILE`).",
   "new_string": "- **`MAX_ONLINE_PROFILES`** (`5`) — profiles one signed-in account may create.\n  A profile is a cross-device identity (name + skin) that owns online worlds.\n  Raising it grows the profile list and the worlds an account can accumulate\n  (`MAX_ONLINE_PROFILES × MAX_WORLDS_PER_PROFILE`)."
 }
@@ -5056,7 +5056,7 @@ id: toolu_014bkHAiUVnrzf9VfWf8jVrJ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/README.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/README.md",
   "old_string": "Or play **online co-op** (2–8 players): host a server-backed world and share an invite link — friends join as one-click guests. See [docs/manual.md](docs/manual.md#playing-online).",
   "new_string": "Or play **online co-op** (2–8 players): host a server-backed world with a free account and share an invite link — friends register and join in a click. See [docs/manual.md](docs/manual.md#playing-online)."
 }
@@ -5127,7 +5127,7 @@ tool_use Read
 id: toolu_01W8s8kqS2SMGcPXAQTLvSYM
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/testing.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/testing.md",
   "offset": 14,
   "limit": 6
 }
@@ -5148,7 +5148,7 @@ tool_use Read
 id: toolu_01YPbbDY2ynRT4axHAb9VZNn
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/testing.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/testing.md",
   "offset": 48,
   "limit": 10
 }
@@ -5170,7 +5170,7 @@ id: toolu_01PC7cKZwVbcVcxQnPtK6bJG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/testing.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/testing.md",
   "old_string": "| Online accounts & worlds      | `lib/auth/auth.test.ts`, `lib/online/worldsService.test.ts`, `lib/net/tickets.test.ts`, `lib/game/cloudSaves.test.ts`, `components/menu/AccountPanel.test.tsx`                                                                                                | The guest→account upgrade re-parents worlds/memberships/invites (real better-auth on PGlite, incl. the duplicate-membership collision); membership/owner gating, idempotent invites with expiry/max-uses, LWW save-blob stale guard, mp-only verifiable join tickets (sign/tamper/expiry/garbage), gzip codec round-trip, the Account panel's offline→guest→upgrade flow, and account profiles (owner-scoped CRUD, the `MAX_ONLINE_PROFILES`/`MAX_WORLDS_PER_PROFILE` quotas, guests barred from creating profiles, profile-delete cascading its worlds, and a join ticket carrying the chosen profile's name+skin)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |",
   "new_string": "| Online accounts & worlds      | `lib/auth/auth.test.ts`, `lib/online/worldsService.test.ts`, `lib/net/tickets.test.ts`, `lib/game/cloudSaves.test.ts`, `components/menu/AccountPanel.test.tsx`                                                                                                | Email/password sign-up/sign-in and the session shape the routes read (id/name/skinId) through the real better-auth wiring on PGlite (online play is accounts-only — no guest layer); membership/owner gating, idempotent invites with expiry/max-uses, LWW save-blob stale guard, mp-only verifiable join tickets (sign/tamper/expiry/garbage), gzip codec round-trip, the Account panel's sign-in/register/sign-out flows (no guest path offered), and account profiles (owner-scoped CRUD, the `MAX_ONLINE_PROFILES`/`MAX_WORLDS_PER_PROFILE` quotas, profile-delete cascading its worlds, and a join ticket carrying the chosen profile's name+skin)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |"
 }
@@ -5181,7 +5181,7 @@ id: toolu_01PC7cKZwVbcVcxQnPtK6bJG
 tool_result
 id: toolu_01PC7cKZwVbcVcxQnPtK6bJG
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5191,7 +5191,7 @@ id: toolu_012KwWUnpmyi4DLkRse7JNPU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/testing.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/testing.md",
   "old_string": "| Menus                         | `components/menu/*.test.tsx`                                                                                                                                                                                                                                  | ProfileSelect / WorldSelect list + create + rename + delete + play callbacks and empty states; CreateWorldForm name / optional-seed / world-type + game-mode pickers submit; WorldSelect persists the chosen type and game mode; the account-mode home (`AccountProfileSelect` — online-profile list / create-and-enter / sign-out and the `MAX_ONLINE_PROFILES` cap disabling create) and `OnlineWorldSelect` (a profile's mp worlds filtered by `profileId`, create-and-enter, and the `MAX_WORLDS_PER_PROFILE` cap)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |",
   "new_string": "| Menus                         | `components/menu/*.test.tsx`                                                                                                                                                                                                                                  | ProfileSelect / WorldSelect list + create + rename + delete + play callbacks and empty states (incl. the \"Back to account\" door rendered only for a signed-in account, cloud-save upload/download gated on `cloudEnabled`, and no server fetch when logged out); CreateWorldForm name / optional-seed / world-type + game-mode pickers submit; WorldSelect persists the chosen type and game mode; the account-mode home (`AccountProfileSelect` — online-profile list / create-and-enter / sign-out / the \"Play locally\" door and the `MAX_ONLINE_PROFILES` cap disabling create) and `OnlineWorldSelect` (a profile's owned mp worlds plus the account's invite-joined ones labelled \"Joined\" without owner actions, create-and-enter, and the `MAX_WORLDS_PER_PROFILE` cap counting owned worlds only)                                                                                                                                                                                                                                                                                                                                                                                                                       |"
 }
@@ -5202,7 +5202,7 @@ id: toolu_012KwWUnpmyi4DLkRse7JNPU
 tool_result
 id: toolu_012KwWUnpmyi4DLkRse7JNPU
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5212,7 +5212,7 @@ id: toolu_01R54jm5LxmpABPduyym73zR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/testing.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/testing.md",
   "old_string": "| Browser E2E (multiplayer)     | `e2e/multiplayer.e2e.ts`                                                                                                                                                                                                                                      | The full co-op journey on the real online stack (Next app on `pglite://memory` + the Bun game server — both booted by `playwright.config.ts`, zero external services): two isolated contexts sign in as guests; the host creates an online world through the menus and mints an invite; the friend lands on `/join/<token>`, accepts, and enters from the Online Worlds list; both replicas see two players; a host block break — decided by the server, the replica's mining being cosmetic — reaches both block journals; chat round-trips into both chat logs; the roster lists both players and only the owner renders a Kick control; then the owner kicks the friend, who lands on the disconnect modal while the host's player count drops to one; zero console errors throughout. (Arrow/vehicle replication stays on the unit tests — `server/room.test.ts` + `NetworkSession.test.ts` — as driving them end-to-end is too environment-fragile.)                                                                                                                                                                                                                                                                       |\n| Browser E2E (cloud saves)     | `e2e/cloudSaves.e2e.ts`                                                                                                                                                                                                                                      | A signed-in guest's single-player cloud round-trip on the pglite stack: create a local world, place a distinctive Stone block in mid-air, Upload to cloud (the card flips to ☁ […]
 
 > TOOL
@@ -5231,7 +5231,7 @@ id: toolu_01B8KxCe2cuGjzjWRmv7qxxD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/testing.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/testing.md",
   "old_string": "zero external services): two isolated contexts sign in as guests; the host creates an online world through the menus and mints an invite; the friend lands on `/join/<token>`, accepts, and enters from the Online Worlds list; both replicas see two players;",
   "new_string": "zero external services): two isolated contexts register real accounts; the host signs up on the first-run screen, creates an online profile and world through the account menus, and mints an invite; the friend registers on the `/join/<token>` landing page itself, then enters the joined world (labelled \"Joined\") from the account world list; both replicas see two players;"
 }
@@ -5242,7 +5242,7 @@ id: toolu_01B8KxCe2cuGjzjWRmv7qxxD
 tool_result
 id: toolu_01B8KxCe2cuGjzjWRmv7qxxD
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5252,7 +5252,7 @@ id: toolu_01BnMPTZmQNV8qonUVZN7Duc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/testing.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/testing.md",
   "old_string": "| A signed-in guest's single-player cloud round-trip on the pglite stack: create a local world,",
   "new_string": "| A signed-in account's single-player cloud round-trip on the pglite stack, reached through the account home's \"Play locally\" door: create a local world,"
 }
@@ -5263,7 +5263,7 @@ id: toolu_01BnMPTZmQNV8qonUVZN7Duc
 tool_result
 id: toolu_01BnMPTZmQNV8qonUVZN7Duc
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5272,7 +5272,7 @@ tool_use Read
 id: toolu_019gNf8WRPbiyiQbjVxzNiRT
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md",
   "offset": 1,
   "limit": 35
 }
@@ -5301,7 +5301,7 @@ id: toolu_017B3p2aoHkctSSbBgbau257
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md",
   "old_string": "and join tickets now carry the **chosen profile's** name/skin, so the in-world roster shows the profile rather than the account. Guests (anonymous) can't create profiles — online identities are account-only. When signed in, the menu opens into an **account home** (`AccountProfileSelect`) listing your profiles (create/rename/delete), and inside each, its online worlds (`OnlineWorldSelect` — create/invite/join). Logged-out **Local Players** keep the browser-local profile flow unchanged, and single-player never touches the network. (Guests still reach online play via the legacy path until the anonymous layer is retired.)",
   "new_string": "and join tickets now carry the **chosen profile's** name/skin, so the in-world roster shows the profile rather than the account. When signed in, the menu opens into an **account home** (`AccountProfileSelect`) listing your profiles (create/rename/delete), and inside each, its online worlds (`OnlineWorldSelect` — create/invite/join). Logged-out **Local Players** keep the browser-local profile flow unchanged, and single-player never touches the network."
 }
@@ -5312,7 +5312,7 @@ id: toolu_017B3p2aoHkctSSbBgbau257
 tool_result
 id: toolu_017B3p2aoHkctSSbBgbau257
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5322,7 +5322,7 @@ id: toolu_01XgK42GbEHdyoAKnD1zo8k9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md",
   "old_string": "### Fixed\n\n- **Account menu — login reachable on first run, and a way out of guest mode**: the first-run menu (shown before any local profile exists) now surfaces the account panel, so **Sign in** / register is reachable without first creating a local profile — previously the create-profile form took over the whole screen and the login controls only appeared once a profile existed. And a **guest** now gets a **Sign out** button (beside \"Keep my worlds — create account\") that returns to the offline/login state — previously entering guest mode was a one-way trip with no path back to the login screen.",
   "new_string": "### Changed\n\n- **Online play is accounts-only — the anonymous guest layer is retired**: hosting, joining by invite, and cloud sync now all start with a one-time email/password registration; logged-out **Local Players** keep unlimited browser-local profiles and worlds with **zero** server calls. Opening an invite link (`/join/<token>`) still previews the world's name first, then asks you to sign in or register right on the page before accepting. Worlds you join by invite now appear in the account world list under **every** profile with a **Joined** tag […]
 
@@ -5331,7 +5331,7 @@ id: toolu_01XgK42GbEHdyoAKnD1zo8k9
 tool_result
 id: toolu_01XgK42GbEHdyoAKnD1zo8k9
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5475,7 +5475,7 @@ id: toolu_014A6NhenedHFPBTmhduPpVh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/save-format.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/save-format.md",
   "old_string": "`SaveData` (version 16) in `lib/game/types.ts`:",
   "new_string": "`SaveData` (version 17) in `lib/game/types.ts`. Since v17 the per-player\nfields below (inventory, equipped armor, selected slot, position, hearts/\nhunger, effects, xp, stats, advancements, spawn point, game mode, gameOver)\nlive inside `players: SavedPlayer[]` — a single `\"local\"` entry in\nsingle-player — while the world-level fields stay top-level (see the v17\nentry under [Version history](#version-history)). The field-by-field\ncontracts are unchanged:"
 }
@@ -5495,7 +5495,7 @@ tool_use Read
 id: toolu_018CqtpdKmh9Qo2mMVuCECZ3
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/save-format.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/save-format.md",
   "offset": 1,
   "limit": 6
 }
@@ -5521,7 +5521,7 @@ id: toolu_01RsCuKgmbXQ4zNqb1DiHwTU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/save-format.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/save-format.md",
   "old_string": "`SaveData` (version 16) in `lib/game/types.ts`:",
   "new_string": "`SaveData` (version 17) in `lib/game/types.ts`. Since v17 the per-player\nfields below (inventory, equipped armor, selected slot, position,\nhearts/hunger, effects, xp, stats, advancements, spawn point, game mode,\ngameOver) live inside `players: SavedPlayer[]` — a single `\"local\"` entry in\nsingle-player — while the world-level fields stay top-level (see the v17\nentry under Version history). The field-by-field contracts are unchanged:"
 }
@@ -5532,7 +5532,7 @@ id: toolu_01RsCuKgmbXQ4zNqb1DiHwTU
 tool_result
 id: toolu_01RsCuKgmbXQ4zNqb1DiHwTU
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/save-format.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/save-format.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5801,7 +5801,7 @@ id: toolu_0166RDfdKEsQ3qHyoCh64r6e
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/identity-rework.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/identity-rework.md",
   "old_string": "**RESUME HERE — Phase 3 in a NEW SESSION (own PR).** Key insight: **Phase 2 is fully ADDITIVE (guests untouched — no anonymous-gating landed), so #46 is safe to merge on its own; Phase 3 need NOT ship with it.** Phase 3 (branch off updated `main` after #46 merges, or continue): remove anonymous plugin/`onLinkAccount`/`ensureSignedIn`/`isAnonymous`; drop \"Play online as guest\" from `AccountPanel`; rewire `app/join/[token]` to require sign-in + pick a profile; **rewrite `e2e/multiplayer.e2e.ts` to use a real account** (this also fills the missing account-play e2e); handle existing guest-owned worlds; rewrite `docs/online.md` \"Identity: guests first\".\n\n**Open decisions to settle at Phase 3 planning:** (1) existing deployed guest-owned online worlds — drop with a release-note warning (default) vs a one-time upgrade prompt. (2) save-slice keying — currently `ticket.sub = account id` (roster/kick at account level); keep, or move to per-profile (touches the game server + save format).",
   "new_string": "**Phase 3 DONE → PR #47** (opened 2026-07-05, branch `feat/account-only-online` off merged #46). Accounts-only online: anonymous plugin/`ensureSignedIn`/`isAnonymous` removed; invite page = preview → inline AccountPanel sign-in → accept; `OnlineWorldSelect` now lists member-role (joined) worlds under every profile (\"Joined\" tag, quota counts owned only — joined […]
 
@@ -5810,7 +5810,7 @@ id: toolu_0166RDfdKEsQ3qHyoCh64r6e
 tool_result
 id: toolu_0166RDfdKEsQ3qHyoCh64r6e
 ```
-The file /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/identity-rework.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/identity-rework.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5820,7 +5820,7 @@ id: toolu_015vptr9obH6ifRYHahgyQuN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md",
   "old_string": "- [Identity rework](identity-rework.md) — \"Local Players vs Accounts\" redesign (MP v2 follow-up); all on branch feat/local-vs-account-identity → **PR #46** (Phase 1 + Phase 2 backend DONE; Phase 2 UI + Phase 3 = TODO NEXT)",
   "new_string": "- [Identity rework](identity-rework.md) — \"Local Players vs Accounts\" redesign; Phases 1–2 merged (#46), **Phase 3 (accounts-only online) DONE → PR #47 open**; after merge: deploy app THEN db:migrate (0003 deletes guest data), release-note the deletion"
 }
@@ -5840,7 +5840,7 @@ tool_use Read
 id: toolu_01MLbD2qqR1tjPeitLbNEBwg
 ```json
 {
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md"
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md"
 }
 ```
 
@@ -5864,7 +5864,7 @@ id: toolu_01JbgncZHgZtzhS9WKqavPcd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md",
   "old_string": "- [Identity rework](identity-rework.md) — \"Local Players vs Accounts\" redesign (MP v2 follow-up); all on branch feat/local-vs-account-identity → **PR #46** (Phase 1 + Phase 2 backend DONE; Phase 2 UI + Phase 3 = TODO NEXT)",
   "new_string": "- [Identity rework](identity-rework.md) — \"Local Players vs Accounts\" redesign; Phases 1–2 merged (#46), **Phase 3 (accounts-only online) DONE → PR #47 open**; after merge: deploy app THEN db:migrate (0003 deletes guest data), release-note the deletion"
 }
@@ -5875,7 +5875,7 @@ id: toolu_01JbgncZHgZtzhS9WKqavPcd
 tool_result
 id: toolu_01JbgncZHgZtzhS9WKqavPcd
 ```
-The file /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5946,7 +5946,7 @@ tool_result
 id: toolu_01UdzNxn8m9rq4vaxEg2pcgw
 ```
 completed	failure	Identity rework Phase 3: retire the anonymous-guest layer (accounts-only online)	CI	feat/account-only-online	pull_request	28719879624	13m16s	2026-07-04T21:15:19Z
-e2e	Run bun run test:e2e	2026-07-04T21:21:39.3885965Z ·······××F::error file=e2e/multiplayer.e2e.ts,title=[chromium] › e2e/multiplayer.e2e.ts:51:5 › two accounts share an online world via an invite link,line=133,col=57::  1) [chromium] › e2e/multiplayer.e2e.ts:51:5 › two accounts share an online world via an invite link %0A    Error: expect(locator).toBeVisible() failed%0A%0A    Locator: getByText('hello from the host')%0A    Expected: visible%0A    Timeout: 10000ms%0A    Error: element(s) not found%0A%0A    Call log:%0A      - Expect "toBeVisible" with timeout 10000ms%0A      - waiting for getByText('hello from the host')%0A%0A%0A      131 |   // ── chat round-trips, rendering in the other player's log ────────────────%0A      132 |   await host.evaluate(() => window.__monecraft!.net!.sendChat("hello from the host"));%0A    > 133 |   await expect(friend.getByText("hello from the host")).toBeVisible({ timeout: 10000 });%0A          |                                                         ^%0A      134 |   await friend.evaluate(() => window.__monecraft!.net!.sendChat("hi back"));%0A      135 |   await expect(host.getByText("hi back")).toBeVisible({ timeout: 10000 });%0A      136 |%0A        at /home/runner/work/monecraft/monecraft/e2e/multiplayer.e2e.ts:133:57
+e2e	Run bun run test:e2e	2026-07-04T21:21:39.3885965Z ·······××F::error file=e2e/multiplayer.e2e.ts,title=[chromium] › e2e/multiplayer.e2e.ts:51:5 › two accounts share an online world via an invite link,line=133,col=57::  1) [chromium] › e2e/multiplayer.e2e.ts:51:5 › two accounts share an online world via an invite link %0A    Error: expect(locator).toBeVisible() failed%0A%0A    Locator: getByText('hello from the host')%0A    Expected: visible%0A    Timeout: 10000ms%0A    Error: element(s) not found%0A%0A    Call log:%0A      - Expect "toBeVisible" with timeout 10000ms%0A      - waiting for getByText('hello from the host')%0A%0A%0A      131 |   // ── chat round-trips, rendering in the other player's log ────────────────%0A      132 |   await host.evaluate(() => window.__monecraft!.net!.sendChat("hello from the host"));%0A    > 133 |   await expect(friend.getByText("hello from the host")).toBeVisible({ timeout: 10000 });%0A          |                                                         ^%0A      134 |   await friend.evaluate(() => window.__monecraft!.net!.sendChat("hi back"));%0A      135 |   await expect(host.getByText("hi back")).toBeVisible({ timeout: 10000 });%0A      136 |%0A        at /home/<USER>/work/monecraft/monecraft/e2e/multiplayer.e2e.ts:133:57
 e2e	Run bun run test:e2e	2026-07-04T21:21:39.3927271Z ##[error]  1) [chromium] › e2e/multiplayer.e2e.ts:51:5 › two accounts share an online world via an invite link 
 e2e	Run bun run test:e2e	    Error: expect(locator).toBeVisible() failed
 e2e	Run bun run test:e2e	    Error: element(s) not found
@@ -6099,7 +6099,7 @@ pw-report
 pw-report/trace
 pw-report/data
 pw-report/trace/assets
-Shell cwd was reset to /Users/hutusi/workspace/ai/david/monecraft
+Shell cwd was reset to /home/<USER>/workspace/ai/david/monecraft
 ```
 
 > TOOL
@@ -6248,7 +6248,7 @@ Call log:
 
 ```yaml
 - text: Monecraft Create Your Profile Email
-- textbox "Email": host@example.com
+- textbox "Email": <REDACTED_EMAIL>
 - text: Display name
 - textbox "Display name": Hosta
 - text: Password
@@ -6284,7 +6284,7 @@ id: toolu_01BrUKqMDfFDzc1zQ65uty5C
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts",
   "old_string": "test(\"two accounts share an online world via an invite link\", async ({ browser }) => {\n  // Two production builds of the game plus a WebSocket handshake each; CI\n  // renders with software GL, so the whole journey gets a generous ceiling.\n  test.setTimeout(240000);\n  const errors: string[] = [];",
   "new_string": "test(\"two accounts share an online world via an invite link\", async ({ browser }) => {\n  // Two production builds of the game plus a WebSocket handshake each; CI\n  // renders with software GL, so the whole journey gets a generous ceiling.\n  test.setTimeout(240000);\n  const errors: string[] = [];\n  // The pglite webServer keeps its data across retries within one run, so a\n  // fixed email means every retry dies on \"User already exists\" — tag them.\n  const runTag = Date.now().toString(36);"
 }
@@ -6295,7 +6295,7 @@ id: toolu_01BrUKqMDfFDzc1zQ65uty5C
 tool_result
 id: toolu_01BrUKqMDfFDzc1zQ65uty5C
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6305,8 +6305,8 @@ id: toolu_01RnZmDPpgWuVBrXKjdYckfu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts",
-  "old_string": "  await signUp(host, \"Hosta\", \"host@example.com\");",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts",
+  "old_string": "  await signUp(host, \"Hosta\", \"<REDACTED_EMAIL>\");",
   "new_string": "  await signUp(host, \"Hosta\", `host-${runTag}@example.com`);"
 }
 ```
@@ -6316,7 +6316,7 @@ id: toolu_01RnZmDPpgWuVBrXKjdYckfu
 tool_result
 id: toolu_01RnZmDPpgWuVBrXKjdYckfu
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6326,8 +6326,8 @@ id: toolu_015mXB3ncdqgQWVbqoW4vBXf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts",
-  "old_string": "  await signUp(friend, \"Frienda\", \"friend@example.com\");",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts",
+  "old_string": "  await signUp(friend, \"Frienda\", \"<REDACTED_EMAIL>\");",
   "new_string": "  await signUp(friend, \"Frienda\", `friend-${runTag}@example.com`);"
 }
 ```
@@ -6337,7 +6337,7 @@ id: toolu_015mXB3ncdqgQWVbqoW4vBXf
 tool_result
 id: toolu_015mXB3ncdqgQWVbqoW4vBXf
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6347,7 +6347,7 @@ id: toolu_01P99tHSUo34NCPDHzMW7Bx7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts",
   "old_string": "  // ── chat round-trips, rendering in the other player's log ────────────────\n  await host.evaluate(() => window.__monecraft!.net!.sendChat(\"hello from the host\"));\n  await expect(friend.getByText(\"hello from the host\")).toBeVisible({ timeout: 10000 });\n  await friend.evaluate(() => window.__monecraft!.net!.sendChat(\"hi back\"));\n  await expect(host.getByText(\"hi back\")).toBeVisible({ timeout: 10000 });",
   "new_string": "  // ── chat round-trips, rendering in the other player's log ────────────────\n  // 30s like the block-edit poll: a slammed CI runner has been seen lagging\n  // the second page's connection by tens of seconds (10s flaked in CI).\n  await host.evaluate(() => window.__monecraft!.net!.sendChat(\"hello from the host\"));\n  await expect(friend.getByText(\"hello from the host\")).toBeVisible({ timeout: 30000 });\n  await friend.evaluate(() => window.__monecraft!.net!.sendChat(\"hi back\"));\n  await expect(host.getByText(\"hi back\")).toBeVisible({ timeout: 30000 });"
 }
@@ -6358,7 +6358,7 @@ id: toolu_01P99tHSUo34NCPDHzMW7Bx7
 tool_result
 id: toolu_01P99tHSUo34NCPDHzMW7Bx7
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6368,7 +6368,7 @@ id: toolu_01PHALdESeyEEDSCTVwWTqAH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts",
   "old_string": "  await host.evaluate((id) => window.__monecraft!.net!.kick(id), friendId);\n  await expect.poll(() => friend.evaluate(() => window.__monecraft!.net!.status()), { timeout: 15000 }).toBe(\"closed\");\n  await expect(friend.getByRole(\"alertdialog\", { name: \"Disconnected\" })).toBeVisible({ timeout: 10000 });\n  await expect.poll(() => host.evaluate(() => window.__monecraft!.engine.state.players.size), { timeout: 15000 }).toBe(1);",
   "new_string": "  await host.evaluate((id) => window.__monecraft!.net!.kick(id), friendId);\n  await expect.poll(() => friend.evaluate(() => window.__monecraft!.net!.status()), { timeout: 30000 }).toBe(\"closed\");\n  await expect(friend.getByRole(\"alertdialog\", { name: \"Disconnected\" })).toBeVisible({ timeout: 10000 });\n  await expect.poll(() => host.evaluate(() => window.__monecraft!.engine.state.players.size), { timeout: 30000 }).toBe(1);"
 }
@@ -6379,7 +6379,7 @@ id: toolu_01PHALdESeyEEDSCTVwWTqAH
 tool_result
 id: toolu_01PHALdESeyEEDSCTVwWTqAH
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6389,8 +6389,8 @@ id: toolu_01WgFHD7WToDFK6s6umycoV3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/e2e/cloudSaves.e2e.ts",
-  "old_string": "    // ── register an account, then reach the local menus through the door ────\n    await page.getByRole(\"button\", { name: \"Sign in\", exact: true }).click();\n    await page.getByRole(\"button\", { name: \"I need an account\" }).click();\n    await page.getByLabel(\"Email\").fill(\"cloudy@example.com\");",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/e2e/cloudSaves.e2e.ts",
+  "old_string": "    // ── register an account, then reach the local menus through the door ────\n    await page.getByRole(\"button\", { name: \"Sign in\", exact: true }).click();\n    await page.getByRole(\"button\", { name: \"I need an account\" }).click();\n    await page.getByLabel(\"Email\").fill(\"<REDACTED_EMAIL>\");",
   "new_string": "    // ── register an account, then reach the local menus through the door ────\n    // Unique per attempt: the pglite webServer keeps its data across retries\n    // within one run, and a re-registered email fails with \"already exists\".\n    await page.getByRole(\"button\", { name: \"Sign in\", exact: true }).click();\n    await page.getByRole(\"button\", { name: \"I need an account\" }).click();\n    await page.getByLabel(\"Email\").fill(`cloudy-${Date.now().toString(36)}@example.com`);"
 }
 ```
@@ -6400,7 +6400,7 @@ id: toolu_01WgFHD7WToDFK6s6umycoV3
 tool_result
 id: toolu_01WgFHD7WToDFK6s6umycoV3
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/e2e/cloudSaves.e2e.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/e2e/cloudSaves.e2e.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6414,7 +6414,7 @@ id: toolu_01SdC6Yw1VSJy5LNP5hM4R4Z
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/app/join/[token]/page.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/app/join/[token]/page.tsx",
   "old_string": "import { use, useEffect, useState } from \"react\";",
   "new_string": "import { use, useEffect, useRef, useState } from \"react\";"
 }
@@ -6425,7 +6425,7 @@ id: toolu_01SdC6Yw1VSJy5LNP5hM4R4Z
 tool_result
 id: toolu_01SdC6Yw1VSJy5LNP5hM4R4Z
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/app/join/[token]/page.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/app/join/[token]/page.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6435,7 +6435,7 @@ id: toolu_01MXGgWgYSGBtwvibmLEU4N8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/app/join/[token]/page.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/app/join/[token]/page.tsx",
   "old_string": "  // Bumped by AccountPanel after a sign-in/up so the effect below retries the\n  // accept. The accept lives HERE (not in onAuthChange): the phase flip\n  // unmounts the panel, and the effect owns the cancellation story.\n  const [authNonce, setAuthNonce] = useState(0);\n\n  useEffect(() => {\n    let cancelled = false;\n    // Landing on an invite IS an online action: without this mark, the shell's\n    // offline-first gate would never probe the session after \"Open the game\"\n    // and a freshly signed-in visitor would land back on the local menus.\n    markOnlineUsed();\n    void (async () => {\n      const invite = await resolveInviteToken(token);\n      if (!invite) return void (!cancelled && setState({ phase: \"error\", message: \"This invite link is invalid or has expired.\" }));\n      const user = await currentUser();\n      if (!user) return void (!cancelled && setState({ phase: \"signin\", worldName: invite.worldName }));\n      const accepted = await acceptInviteToken(token);\n      if (!accepted) return void (!cancelled && setState({ phase: \"error\", message: \"This invite could not be accepted (it may be used up).\" }));\n      if (!cancelled) setState({ phase: \"joined\", worldName: invite.worldName });\n    })();\n    return () => {\n      cancelled = true;\n    };\n  }, [token, authNonce]);",
   "new_string": "  // Bumped by AccountPanel after […]
 
@@ -6444,7 +6444,7 @@ id: toolu_01MXGgWgYSGBtwvibmLEU4N8
 tool_result
 id: toolu_01MXGgWgYSGBtwvibmLEU4N8
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/app/join/[token]/page.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/app/join/[token]/page.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6458,7 +6458,7 @@ id: toolu_01BoPzJxNpmnKze55WsSaTqo
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx",
   "old_string": "  // Cloud saves exist only for a signed-in account — offline-first: a\n  // logged-out Local Player triggers no fetch and sees no cloud section.\n  const refreshCloud = useCallback(() => {\n    if (cloudEnabled) void listOnlineWorlds().then(setCloudWorldList);\n  }, [cloudEnabled]);\n  useEffect(() => refreshCloud(), [refreshCloud]);",
   "new_string": "  // Cloud saves exist only for a signed-in account — offline-first: a\n  // logged-out Local Player triggers no fetch and sees no cloud section.\n  const refreshCloud = useCallback(() => {\n    if (cloudEnabled) void listOnlineWorlds().then(setCloudWorldList);\n    else setCloudWorldList(null); // signed out mid-screen: no stale account data\n  }, [cloudEnabled]);\n  useEffect(() => refreshCloud(), [refreshCloud]);"
 }
@@ -6469,7 +6469,7 @@ id: toolu_01BoPzJxNpmnKze55WsSaTqo
 tool_result
 id: toolu_01BoPzJxNpmnKze55WsSaTqo
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6479,7 +6479,7 @@ id: toolu_01M9G4UBheGq6b8mhYcMM9Cq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/WorldSelect.test.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/WorldSelect.test.tsx",
   "old_string": "  test(\"logged out (cloud disabled) the list is purely local — no fetch, no cloud buttons\", () => {",
   "new_string": "  test(\"cloud access flipping off clears the fetched cloud list\", async () => {\n    cloud.worlds = [summary(\"cloud1\", \"Cloud World\", \"sp-cloud\")];\n    const { rerender } = render(<WorldSelect profile={PROFILE} onPlay={mock()} onDownloadCloud={() => {}} cloudEnabled={true} onBack={mock()} />);\n    await waitFor(() => expect(screen.getByTestId(\"cloud-world-cloud1\")).toBeTruthy());\n\n    rerender(<WorldSelect profile={PROFILE} onPlay={mock()} onDownloadCloud={() => {}} cloudEnabled={false} onBack={mock()} />);\n    await waitFor(() => expect(screen.queryByTestId(\"cloud-world-cloud1\")).toBeNull());\n    expect(screen.queryByText(\"Cloud Saves\")).toBeNull();\n  });\n\n  test(\"logged out (cloud disabled) the list is purely local — no fetch, no cloud buttons\", () => {"
 }
@@ -6490,7 +6490,7 @@ id: toolu_01M9G4UBheGq6b8mhYcMM9Cq
 tool_result
 id: toolu_01M9G4UBheGq6b8mhYcMM9Cq
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/WorldSelect.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/WorldSelect.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6519,7 +6519,7 @@ id: toolu_01T5hwZ5pexYkjpn188pJ9xP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/WorldSelect.test.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/WorldSelect.test.tsx",
   "old_string": "import { render, screen } from \"@testing-library/react\";",
   "new_string": "import { render, screen, waitFor } from \"@testing-library/react\";"
 }
@@ -6530,7 +6530,7 @@ id: toolu_01T5hwZ5pexYkjpn188pJ9xP
 tool_result
 id: toolu_01T5hwZ5pexYkjpn188pJ9xP
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/WorldSelect.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/WorldSelect.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6576,7 +6576,7 @@ id: toolu_01LNtekRv1a8vDdfVnnC9W6Y
 ```
 Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
 
-/Users/hutusi/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx:67:19
+/home/<USER>/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx:67:19
   65 |     else setCloudWorldList(null); // signed out mid-screen: no stale account data
   66 |   }, [cloudEnabled]);
 > 67 |   useEffect(() => refreshCloud(), [refreshCloud]);
@@ -6597,7 +6597,7 @@ id: toolu_01UoAfMeV4zgXQftTjZLTLq1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx",
   "old_string": "  const refreshCloud = useCallback(() => {\n    if (cloudEnabled) void listOnlineWorlds().then(setCloudWorldList);\n    else setCloudWorldList(null); // signed out mid-screen: no stale account data\n  }, [cloudEnabled]);",
   "new_string": "  const refreshCloud = useCallback(() => {\n    if (cloudEnabled) void listOnlineWorlds().then(setCloudWorldList);\n  }, [cloudEnabled]);"
 }
@@ -6608,7 +6608,7 @@ id: toolu_01UoAfMeV4zgXQftTjZLTLq1
 tool_result
 id: toolu_01UoAfMeV4zgXQftTjZLTLq1
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6618,7 +6618,7 @@ id: toolu_01GVbwR71wozTMNP6DrCk9V9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx",
   "old_string": "  // Online (mp) rooms live in the account menu; here only the account's\n  // sp-cloud saves not yet on this device become downloadable.\n  const linkedCloudIds = new Set(worlds.map((world) => world.cloudId).filter((id): id is string => Boolean(id)));\n  const cloudWorlds = cloudWorldList?.filter((world) => world.kind === \"sp-cloud\" && !linkedCloudIds.has(world.id)) ?? [];",
   "new_string": "  // Online (mp) rooms live in the account menu; here only the account's\n  // sp-cloud saves not yet on this device become downloadable. Derived behind\n  // cloudEnabled so a list fetched before a sign-out can't linger as stale UI.\n  const linkedCloudIds = new Set(worlds.map((world) => world.cloudId).filter((id): id is string => Boolean(id)));\n  const cloudWorlds = cloudEnabled ? (cloudWorldList?.filter((world) => world.kind === \"sp-cloud\" && !linkedCloudIds.has(world.id)) ?? []) : [];"
 }
@@ -6629,7 +6629,7 @@ id: toolu_01GVbwR71wozTMNP6DrCk9V9
 tool_result
 id: toolu_01GVbwR71wozTMNP6DrCk9V9
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6733,7 +6733,7 @@ Here's the full picture on PR #47:
 - `verify` (lint/typecheck/format/test/build) ✅, Vercel ✅, CodeRabbit ✅
 - `e2e` ❌ — only the multiplayer spec, and the Playwright error contexts told the whole story:
   - **Attempt 1** was load flake, not a product bug: the friend was fully in-game (roster showed both players) but the ping badge read **26,515 ms** — the 2-core runner drowning under two software-GL browsers plus both servers — so the chat message missed the 10s assertion window, the tightest cross-wire wait in the file.
-  - **Retries 2–3** hit a real test bug I introduced: the pglite webServer keeps its data across retries within a run, so the fixed `host@example.com` failed with "User already exists" on every retry. The old guest flow minted fresh identities, so this never used to matter.
+  - **Retries 2–3** hit a real test bug I introduced: the pglite webServer keeps its data across retries within a run, so the fixed `<REDACTED_EMAIL>` failed with "User already exists" on every retry. The old guest flow minted fresh identities, so this never used to matter.
 
 **CodeRabbit review** — two minor findings, both legit:
 1. The join page re-resolved the invite after sign-in, so a transient failure could claim the already-validated link was invalid right after registering (and the stale "sign in to join" prompt lingered during the retry).
@@ -6883,7 +6883,7 @@ id: toolu_01RcfXPEGNYR7ZJHfswaxcqB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/identity-rework.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/identity-rework.md",
   "old_string": "**Phase 3 DONE → PR #47** (opened 2026-07-05, branch `feat/account-only-online` off merged #46).",
   "new_string": "**Phase 3 MERGED → PR #47** (merge commit `7297f80` on main, 2026-07-05; branch `feat/account-only-online`). ALL THREE PHASES COMPLETE — the rework is code-complete, pending prod rollout (below)."
 }
@@ -6894,7 +6894,7 @@ id: toolu_01RcfXPEGNYR7ZJHfswaxcqB
 tool_result
 id: toolu_01RcfXPEGNYR7ZJHfswaxcqB
 ```
-The file /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/identity-rework.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/identity-rework.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6904,7 +6904,7 @@ id: toolu_019UijsJzsfMPhqfVpwf6ZaV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/identity-rework.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/identity-rework.md",
   "old_string": "**Still pending after #47 merges:** run `bun run db:migrate` on prod (AFTER deploying), release notes must carry the guest-data deletion warning, and a manual visual check of AccountPanel rendered inside the join page's `.net-modal-box`.",
   "new_string": "**Still pending (prod rollout):** Vercel auto-deploys main → THEN run `bun run db:migrate` against prod Neon (0003 DELETES guest users + their worlds — deploy first, migrate second); next release's notes must carry the guest-data deletion warning; manual visual check of AccountPanel rendered inside the join page's `.net-modal-box`."
 }
@@ -6915,7 +6915,7 @@ id: toolu_019UijsJzsfMPhqfVpwf6ZaV
 tool_result
 id: toolu_019UijsJzsfMPhqfVpwf6ZaV
 ```
-The file /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/identity-rework.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/identity-rework.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6925,7 +6925,7 @@ id: toolu_013FYUCViYv9hi56d383ikYL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md",
   "old_string": "- [Identity rework](identity-rework.md) — \"Local Players vs Accounts\" redesign; Phases 1–2 merged (#46), **Phase 3 (accounts-only online) DONE → PR #47 open**; after merge: deploy app THEN db:migrate (0003 deletes guest data), release-note the deletion",
   "new_string": "- [Identity rework](identity-rework.md) — \"Local Players vs Accounts\" redesign **COMPLETE: all 3 phases merged** (#46 + #47, 2026-07-05); prod rollout pending: deploy THEN `db:migrate` (0003 deletes guest data), release-note the deletion"
 }
@@ -6936,7 +6936,7 @@ id: toolu_013FYUCViYv9hi56d383ikYL
 tool_result
 id: toolu_013FYUCViYv9hi56d383ikYL
 ```
-The file /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7042,7 +7042,7 @@ tool_use Read
 id: toolu_01CWqKumgvuP2UP8USZ6KQtV
 ```json
 {
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/multiplayer-project.md"
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/multiplayer-project.md"
 }
 ```
 
@@ -7089,7 +7089,7 @@ tool_use Read
 id: toolu_01DeL5HUVQXhiETJK4HfTx2f
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
   "offset": 130,
   "limit": 75
 }
@@ -7257,10 +7257,10 @@ id: toolu_01UYazntGX6o8EQYFjUMQrb7
 ci.yml
 ---
  VERSION │ STATUS   │ DESCRIPTION │ USER               │ DATE       
- v4      │ failed   │ Release     │ huziyong@gmail.com │ 17m44s ago 
- v3      │ failed   │ Release     │ huziyong@gmail.com │ 8h40m ago  
- v2      │ complete │ Release     │ huziyong@gmail.com │ 11h50m ago 
- v1      │ complete │ Release     │ huziyong@gmail.com │ 22h3m ago
+ v4      │ failed   │ Release     │ <REDACTED_EMAIL> │ 17m44s ago 
+ v3      │ failed   │ Release     │ <REDACTED_EMAIL> │ 8h40m ago  
+ v2      │ complete │ Release     │ <REDACTED_EMAIL> │ 11h50m ago 
+ v1      │ complete │ Release     │ <REDACTED_EMAIL> │ 22h3m ago
 ```
 
 > TOOL
@@ -7384,7 +7384,7 @@ tool_use Write
 id: toolu_01NQpF5pqfinMjHkRGNGLmNQ
 ```json
 {
-  "file_path": "/Users/hutusi/.claude/plans/continue-the-identity-rework-quizzical-mountain.md",
+  "file_path": "/home/<USER>/.claude/plans/continue-the-identity-rework-quizzical-mountain.md",
   "content": "# Post-merge follow-ups: Fly outage, guest-session window, profile labeling\n\n*(The Phase 3 plan this file previously held is executed and merged — PR #47, `7297f80`.)*\n\n## Context\n\nPost-merge testing on prod surfaced three issues:\n\n1. **\"join timed out\" on every online join.** DIAGNOSED — not a client bug and not caused by #47's code. Both Fly machines of `monecraft-server` are **stopped in a crash-loop** (exit 127, \"max restart count of 10\"). Fly releases v3 (yesterday) and v4 (~20 min before this plan) both **failed**: a bare `fly deploy` was run without `--config server/fly.toml --dockerfile server/Dockerfile`; with **no root Dockerfile in the repo**, flyctl's framework scanner generated a Bun/Next image (`bun run start`, internal port 3000) and shipped the **web app** to the game-server Fly app. `next start` needs `node`, absent from the `oven/bun` base → exit 127. The last good release (v2, protocol-v2 image) worked because it used both flags (documented in docs/deploy.md \"Updating a running deployment\").\n2. **\"Online profiles visible without signing in.\"** VERIFIED — not a server leak. All `/api/profiles*`/worlds routes still 401 without a session (`sessionUser` → `unauthorized()`), and the client only opens account mode when `currentUser()` returns a server-honored session. What was […]
 
 > TOOL
@@ -7392,7 +7392,7 @@ id: toolu_01NQpF5pqfinMjHkRGNGLmNQ
 tool_result
 id: toolu_01NQpF5pqfinMjHkRGNGLmNQ
 ```
-The file /Users/hutusi/.claude/plans/continue-the-identity-rework-quizzical-mountain.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/continue-the-identity-rework-quizzical-mountain.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7436,7 +7436,7 @@ id: toolu_01KCMuqa7i9DMBSBcMLVqn2x
 ```
 User has approved your plan. You can now start coding. Start with updating your todo list if applicable
 
-Your plan has been saved to: /Users/hutusi/.claude/plans/continue-the-identity-rework-quizzical-mountain.md
+Your plan has been saved to: /home/<USER>/.claude/plans/continue-the-identity-rework-quizzical-mountain.md
 You can refer back to it if needed during implementation.
 
 ## Approved Plan (edited by user):
@@ -7575,7 +7575,7 @@ tool_use Read
 id: toolu_01St6YtzvFyzwqMBAjdD41zm
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/package.json",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/package.json",
   "offset": 5,
   "limit": 18
 }
@@ -7612,7 +7612,7 @@ tool_use Read
 id: toolu_01N1Qj72USPgCpyYRw2i5NUh
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/app/menu.css",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/app/menu.css",
   "offset": 38,
   "limit": 15
 }
@@ -7647,7 +7647,7 @@ id: toolu_01W2LnfUkTx7bNpoxtWWgw4y
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/package.json",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/package.json",
   "old_string": "    \"server\": \"bun server/index.ts\",\n    \"db:migrate\": \"drizzle-kit migrate\"",
   "new_string": "    \"server\": \"bun server/index.ts\",\n    \"deploy:server\": \"fly deploy --config server/fly.toml --dockerfile server/Dockerfile\",\n    \"db:migrate\": \"drizzle-kit migrate\""
 }
@@ -7658,7 +7658,7 @@ id: toolu_01W2LnfUkTx7bNpoxtWWgw4y
 tool_result
 id: toolu_01W2LnfUkTx7bNpoxtWWgw4y
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7668,7 +7668,7 @@ id: toolu_01B351cyikMhdqu8ktxAkVso
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/app/menu.css",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/app/menu.css",
   "old_string": ".menu-empty {\n  text-align: center;\n  color: var(--mc-text-light);\n  font-size: 13px;\n  opacity: 0.85;\n  text-shadow: var(--mc-text-shadow);\n  padding: 18px 8px;\n}",
   "new_string": ".menu-empty {\n  text-align: center;\n  color: var(--mc-text-light);\n  font-size: 13px;\n  opacity: 0.85;\n  text-shadow: var(--mc-text-shadow);\n  padding: 18px 8px;\n}\n\n/* One-line hint under a screen title (which store these profiles live in). */\n.menu-note {\n  text-align: center;\n  color: var(--mc-text-light);\n  font-size: 12px;\n  opacity: 0.7;\n  text-shadow: var(--mc-text-shadow);\n  margin: -4px 0 10px;\n}"
 }
@@ -7679,7 +7679,7 @@ id: toolu_01B351cyikMhdqu8ktxAkVso
 tool_result
 id: toolu_01B351cyikMhdqu8ktxAkVso
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/app/menu.css has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/app/menu.css has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7689,7 +7689,7 @@ id: toolu_01B4ijzQ4engZb4U7yrYUCwR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/ProfileSelect.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/ProfileSelect.tsx",
   "old_string": "      <MenuScreen title={firstRun ? \"Create Your Profile\" : \"New Profile\"}>\n        {/* First run has no profile list to host the account controls, so surface\n            them here too — otherwise sign in / register is unreachable until a\n            local profile exists. (The list view renders its own panel below.)\n            Same for the way back to account mode: without it, an account with\n            zero local profiles would be trapped on this create form. */}\n        {firstRun && <AccountPanel onAuthChange={onAuthChange} />}",
   "new_string": "      <MenuScreen title={firstRun ? \"Create Your Profile\" : \"New Profile\"}>\n        {firstRun && <p className=\"menu-note\">A local player, stored in this browser — no account needed.</p>}\n        {/* First run has no profile list to host the account controls, so surface\n            them here too — otherwise sign in / register is unreachable until a\n            local profile exists. (The list view renders its own panel below.)\n            Same for the way back to account mode: without it, an account with\n            zero local profiles would be trapped on this create form. */}\n        {firstRun && <AccountPanel onAuthChange={onAuthChange} />}"
 }
@@ -7700,7 +7700,7 @@ id: toolu_01B4ijzQ4engZb4U7yrYUCwR
 tool_result
 id: toolu_01B4ijzQ4engZb4U7yrYUCwR
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/ProfileSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/ProfileSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7710,7 +7710,7 @@ id: toolu_017DeLfLFJ5fkW3dzFRcDWaq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/ProfileSelect.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/ProfileSelect.tsx",
   "old_string": "    <MenuScreen title=\"Select Profile\">\n      <AccountPanel onAuthChange={onAuthChange} />",
   "new_string": "    <MenuScreen title=\"Local Profiles\">\n      <p className=\"menu-note\">Stored in this browser — no account needed.</p>\n      <AccountPanel onAuthChange={onAuthChange} />"
 }
@@ -7721,7 +7721,7 @@ id: toolu_017DeLfLFJ5fkW3dzFRcDWaq
 tool_result
 id: toolu_017DeLfLFJ5fkW3dzFRcDWaq
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/ProfileSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/ProfileSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7731,7 +7731,7 @@ id: toolu_01BVBaKRiVisdDmHivJQsQ3H
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/AccountProfileSelect.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/AccountProfileSelect.tsx",
   "old_string": "    <MenuScreen title=\"Your Profiles\">\n      <div className=\"account-panel\">",
   "new_string": "    <MenuScreen title=\"Online Profiles\">\n      <p className=\"menu-note\">Synced to your account — available wherever you sign in.</p>\n      <div className=\"account-panel\">"
 }
@@ -7742,7 +7742,7 @@ id: toolu_01BVBaKRiVisdDmHivJQsQ3H
 tool_result
 id: toolu_01BVBaKRiVisdDmHivJQsQ3H
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/AccountProfileSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/AccountProfileSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7752,7 +7752,7 @@ id: toolu_01FHYW4Q5GV4F4Vu92wpBRdS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx",
   "old_string": "    <MenuScreen title={`${profile.name} — Worlds`}>",
   "new_string": "    <MenuScreen title={`${profile.name} — Local Worlds`}>"
 }
@@ -7763,7 +7763,7 @@ id: toolu_01FHYW4Q5GV4F4Vu92wpBRdS
 tool_result
 id: toolu_01FHYW4Q5GV4F4Vu92wpBRdS
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/WorldSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7795,7 +7795,7 @@ tool_use Read
 id: toolu_0172UjTopUUtWw5ffUrRA4tq
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/deploy.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/deploy.md",
   "offset": 146,
   "limit": 16
 }
@@ -7831,7 +7831,7 @@ id: toolu_01CqSWW7Jw83Gf2dTBB2uQSy
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/deploy.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/deploy.md",
   "old_string": "- **Game server:** `fly deploy --config server/fly.toml --dockerfile server/Dockerfile`.\n  Rooms drain to Postgres on the rollout; connected clients reconnect on their\n  back-off ladder and re-sync (they'll see a brief \"Reconnecting…\" badge).\n- **Schema change:** land the new migration, then run `bun run db:migrate`\n  against production **before** deploying the code that depends on it.",
   "new_string": "- **Game server:** `bun run deploy:server` (from the repo root — it wraps\n  `fly deploy --config server/fly.toml --dockerfile server/Dockerfile`).\n  Rooms drain to Postgres on the rollout; connected clients reconnect on their\n  back-off ladder and re-sync (they'll see a brief \"Reconnecting…\" badge).\n  **Never run a bare `fly deploy`**: there is no Dockerfile at the repo root, so\n  flyctl's framework scanner generates a Next.js web-app image (`bun run start`,\n  port 3000) and ships *that* to the game-server app — it crash-loops with\n  exit 127 (`next` needs `node`, absent from the `oven/bun` base) and takes\n  online play down until a correct redeploy.\n- **Schema change:** land the new migration, then run `bun run db:migrate`\n  against production **before** deploying the code that depends on it —\n  **unless the migration removes something the old code reads** (a dropped\n  column, like `0003`'s `is_anonymous`): […]
 
@@ -7840,7 +7840,7 @@ id: toolu_01CqSWW7Jw83Gf2dTBB2uQSy
 tool_result
 id: toolu_01CqSWW7Jw83Gf2dTBB2uQSy
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/deploy.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/deploy.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7850,7 +7850,7 @@ id: toolu_01FRHWwSpEZhZSQhFWbm8jwg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md",
   "old_string": "### Removed\n\n- **Anonymous guests**:",
   "new_string": "- **Menu labels say which store a profile lives in**: the browser-local list is now titled **Local Profiles** (\"Stored in this browser — no account needed\"), the account home **Online Profiles** (\"Synced to your account — available wherever you sign in\"), and a local profile's world list **Local Worlds** — the two profile kinds used to render identically with nothing saying whether a profile was local or synced.\n\n### Removed\n\n- **Anonymous guests**:"
 }
@@ -7900,7 +7900,7 @@ tool_use Read
 id: toolu_01QVrUvmvhphe6cY4Pwv7JtL
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md",
   "offset": 14,
   "limit": 10
 }
@@ -7927,7 +7927,7 @@ id: toolu_01SnrQT15BceX9hdGf6sgwyc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md",
   "old_string": "The account home gains a **\"Play locally\"** door into your local worlds (where cloud-save **Upload/Download** lives, now gated on being signed in) with a **\"Back to account\"** return — local worlds stay hidden-but-preserved while signed in, never deleted, never auto-uploaded.\n\n### Removed",
   "new_string": "The account home gains a **\"Play locally\"** door into your local worlds (where cloud-save **Upload/Download** lives, now gated on being signed in) with a **\"Back to account\"** return — local worlds stay hidden-but-preserved while signed in, never deleted, never auto-uploaded.\n- **Menu labels say which store a profile lives in**: the browser-local list is titled **Local Profiles** (\"Stored in this browser — no account needed\"), the account home **Online Profiles** (\"Synced to your account — available wherever you sign in\"), and a local profile's world list **Local Worlds** — the two profile kinds used to render identically, with nothing saying whether a profile was local or synced.\n\n### Removed"
 }
@@ -7938,7 +7938,7 @@ id: toolu_01SnrQT15BceX9hdGf6sgwyc
 tool_result
 id: toolu_01SnrQT15BceX9hdGf6sgwyc
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8193,9 +8193,9 @@ tool_result
 id: toolu_01HuEp8PVXwcfiTJUXuCNHEu
 ```
  VERSION │ STATUS   │ DESCRIPTION │ USER               │ DATE       
- v6      │ complete │ Release     │ huziyong@gmail.com │ 1m39s ago  
- v5      │ complete │ Release     │ huziyong@gmail.com │ 5m55s ago  
- v4      │ failed   │ Release     │ huziyong@gmail.com │ 38m11s ago 
+ v6      │ complete │ Release     │ <REDACTED_EMAIL> │ 1m39s ago  
+ v5      │ complete │ Release     │ <REDACTED_EMAIL> │ 5m55s ago  
+ v4      │ failed   │ Release     │ <REDACTED_EMAIL> │ 38m11s ago 
 ---
 [1mMachines[0m
  PROCESS │ ID             │ VERSION │ REGION │ STATE   │ ROLE │ CHECKS             │ LAST UPDATED         
@@ -8295,7 +8295,7 @@ id: toolu_01CxNsk7BwsLYgxXzzFdULJF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/identity-rework.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/identity-rework.md",
   "old_string": "**Still pending (prod rollout):** Vercel auto-deploys main → THEN run `bun run db:migrate` against prod Neon (0003 DELETES guest users + their worlds — deploy first, migrate second); next release's notes must carry the guest-data deletion warning; manual visual check of AccountPanel rendered inside the join page's `.net-modal-box`.",
   "new_string": "**Post-merge follow-ups (2026-07-05, PR #48 `fix/post-identity-followups`):** (1) prod \"join timed out\" = Fly OUTAGE, not code — a bare `fly deploy` (no --config/--dockerfile) let flyctl's scanner build the Next WEB-APP image (no root Dockerfile exists!) and ship it to monecraft-server → exit-127 crash-loop (next needs node, absent in oven/bun), both machines dead; FIXED by correct redeploy (v6, both machines healthy, WS probe 4000 \"invalid ticket\" = alive) + new `bun run deploy:server` script + deploy.md warning. (2) \"online profiles without signing in\" VERIFIED not a leak — it's the un-migrated-prod window: old guest cookies still honored, new build shows them the account home; closes when 0003 runs. (3) menu labels now name the store: Local Profiles / Online Profiles / Local Worlds (+ menu-note hints).\n\n**Still pending:** USER must run `DATABASE_URL='<neon>' bun run db:migrate` on prod (Vercel already deployed — correct […]
 
@@ -8304,7 +8304,7 @@ id: toolu_01CxNsk7BwsLYgxXzzFdULJF
 tool_result
 id: toolu_01CxNsk7BwsLYgxXzzFdULJF
 ```
-The file /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/identity-rework.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/identity-rework.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8384,7 +8384,7 @@ id: toolu_01Fw7ymCKe93kuRztZjDrRHU
 ```json
 {
   "description": "Explore sp-cloud world seams",
-  "prompt": "Explore /Users/hutusi/workspace/ai/david/monecraft (Next.js 16 + TS strict + Bun voxel game; drizzle/Postgres; better-auth accounts). Search breadth: thorough.\n\nContext: online play is accounts-only. Signed-in users pick an online profile (`AccountProfileSelect`) → `OnlineWorldSelect` lists that profile's `kind:\"mp\"` worlds (game-server hosted). Single-player \"cloud saves\" exist separately: local worlds (localStorage) can \"Upload to cloud\" creating `kind:\"sp-cloud\"` rows with gzipped SaveData blobs; playing stays client-side. I'm planning FIRST-CLASS single-player worlds in account mode: create/play sp-cloud worlds directly from `OnlineWorldSelect`, per profile, client-side engine, blob-synced, cross-device.\n\nReport precise facts (file:line + short excerpts):\n\n1. `lib/online/worldsService.ts`: `createWorld` — full signature, how `kind` is handled/validated, default kind, how the per-profile quota counts (which kinds count against MAX_WORLDS_PER_PROFILE), what `WorldSummary` contains (updatedAt? role? kind? profileId?). Also `renameWorld`, `deleteWorld` (owner gating), and `getSaveBlob`/`putSaveBlob` (who may read/write — owner? member? version/stale-guard headers).\n2. API routes under `app/api/worlds/`: POST /api/worlds (accepted body incl. kind/profileId), PATCH/DELETE /api/worlds/[id] (does a rename route exist?), GET/PUT /api/worlds/[id]/save.\n3. `lib/online/onlineClient.ts`: `createOnlineWorld` (params incl. kind), `deleteOnlineWorld`, is there a rename helper? `listOnlineWorlds` return shape.\n4. The local play path in `components/GameShell.tsx` + `hooks/useMinecraftGame` (find the actual file): \n   - How the `play` screen resolves the world: `getWorld(worldId)` from the localStorage manifest — […]
+  "prompt": "Explore /home/<USER>/workspace/ai/david/monecraft (Next.js 16 + TS strict + Bun voxel game; drizzle/Postgres; better-auth accounts). Search breadth: thorough.\n\nContext: online play is accounts-only. Signed-in users pick an online profile (`AccountProfileSelect`) → `OnlineWorldSelect` lists that profile's `kind:\"mp\"` worlds (game-server hosted). Single-player \"cloud saves\" exist separately: local worlds (localStorage) can \"Upload to cloud\" creating `kind:\"sp-cloud\"` rows with gzipped SaveData blobs; playing stays client-side. I'm planning FIRST-CLASS single-player worlds in account mode: create/play sp-cloud worlds directly from `OnlineWorldSelect`, per profile, client-side engine, blob-synced, cross-device.\n\nReport precise facts (file:line + short excerpts):\n\n1. `lib/online/worldsService.ts`: `createWorld` — full signature, how `kind` is handled/validated, default kind, how the per-profile quota counts (which kinds count against MAX_WORLDS_PER_PROFILE), what `WorldSummary` contains (updatedAt? role? kind? profileId?). Also `renameWorld`, `deleteWorld` (owner gating), and `getSaveBlob`/`putSaveBlob` (who may read/write — owner? member? version/stale-guard headers).\n2. API routes under `app/api/worlds/`: POST /api/worlds (accepted body incl. kind/profileId), PATCH/DELETE /api/worlds/[id] (does a rename route exist?), GET/PUT /api/worlds/[id]/save.\n3. `lib/online/onlineClient.ts`: `createOnlineWorld` (params incl. kind), `deleteOnlineWorld`, is there a rename helper? `listOnlineWorlds` return shape.\n4. The local play path in `components/GameShell.tsx` + `hooks/useMinecraftGame` (find the actual file): \n   - How the `play` screen resolves the world: `getWorld(worldId)` from the localStorage manifest — […]
 
 > TOOL
 
@@ -8412,7 +8412,7 @@ tool_use Write
 id: toolu_01D6CHoKn3FU6yKHMc2Vi82Y
 ```json
 {
-  "file_path": "/Users/hutusi/.claude/plans/continue-the-identity-rework-quizzical-mountain.md",
+  "file_path": "/home/<USER>/.claude/plans/continue-the-identity-rework-quizzical-mountain.md",
   "content": "# First-class single-player worlds in account mode (sp-cloud per profile)\n\n*(Previous plan in this file — Fly restore, guest-window migration, labeling — is executed; only the user-run prod migration and PR #48's merge remain from it.)*\n\n## Context\n\nSigned-in account mode can only create **online (mp) worlds** — server-hosted, game-server connection required even when playing alone. Single-player cloud sync exists but only as a two-step, account-level flow behind the \"Play locally\" door (local world → Upload to cloud → Download elsewhere). The user wants the natural model: **signed in, create a single-player world, it runs entirely client-side, and its save syncs to the DB so any signed-in computer can continue it** — first-class, per online profile.\n\nExploration confirms the backend already supports it end to end:\n- `worldsService.createWorld` (`lib/online/worldsService.ts:168`) accepts `kind: \"sp-cloud\"` **with** `profileId`; the per-profile quota (`:177-187`) counts kind-blind. Zero schema/migration changes.\n- Save-blob routes exist (`GET/PUT /api/worlds/[id]/save`, member-gated, LWW stale guard); transport is `lib/game/cloudSaves.ts` (`pushSave`/`pullCloudSaveIfNewer`).\n- The autosave push (`useMinecraftGame.ts:265-277` `syncCloudSave`) fires for any `WorldMeta.cloudId`-linked, non-online session — no changes needed.\n- Fabricated `WorldMeta` is an established pattern (`onlineWorldMeta`, `GameShell.tsx:44-58`, id `online:${id}`); ids are never parsed anywhere, so a `cloud:${id}` key is safe.\n- `mintTicket` refuses `kind !== […]
 
 > TOOL
@@ -8420,7 +8420,7 @@ id: toolu_01D6CHoKn3FU6yKHMc2Vi82Y
 tool_result
 id: toolu_01D6CHoKn3FU6yKHMc2Vi82Y
 ```
-The file /Users/hutusi/.claude/plans/continue-the-identity-rework-quizzical-mountain.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/continue-the-identity-rework-quizzical-mountain.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8465,7 +8465,7 @@ id: toolu_01TYkhtxGM1wP8x11uuzuK8S
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/plans/continue-the-identity-rework-quizzical-mountain.md",
+  "file_path": "/home/<USER>/.claude/plans/continue-the-identity-rework-quizzical-mountain.md",
   "old_string": "**Dependency**: the new e2e asserts \"Online Profiles\" (introduced by PR #48). **Merge #48 first**, then branch `feat/account-sp-worlds` off `main`. Own PR.",
   "new_string": "**Branching (user decision)**: create `feat/account-sp-worlds` **off `fix/post-identity-followups`** (stacked on its two commits — the new e2e asserts \"Online Profiles\", which that branch introduces). No need to wait for #48's merge; merge commits preserve SHAs, so once #48 lands the new PR's diff reduces to the feature commits. Rebase only if #48 changes under review."
 }
@@ -8476,7 +8476,7 @@ id: toolu_01TYkhtxGM1wP8x11uuzuK8S
 tool_result
 id: toolu_01TYkhtxGM1wP8x11uuzuK8S
 ```
-The file /Users/hutusi/.claude/plans/continue-the-identity-rework-quizzical-mountain.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/continue-the-identity-rework-quizzical-mountain.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8486,7 +8486,7 @@ id: toolu_015LxerZSehRq7f8W28gRwWB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/plans/continue-the-identity-rework-quizzical-mountain.md",
+  "file_path": "/home/<USER>/.claude/plans/continue-the-identity-rework-quizzical-mountain.md",
   "old_string": "## Commit slices (branch `feat/account-sp-worlds` off main after #48 merges)",
   "new_string": "## Commit slices (branch `feat/account-sp-worlds` off `fix/post-identity-followups`)"
 }
@@ -8497,7 +8497,7 @@ id: toolu_015LxerZSehRq7f8W28gRwWB
 tool_result
 id: toolu_015LxerZSehRq7f8W28gRwWB
 ```
-The file /Users/hutusi/.claude/plans/continue-the-identity-rework-quizzical-mountain.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/continue-the-identity-rework-quizzical-mountain.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8529,7 +8529,7 @@ id: toolu_017T7fzkP9WnGsUySws9UPhe
 ```
 User has approved your plan. You can now start coding. Start with updating your todo list if applicable
 
-Your plan has been saved to: /Users/hutusi/.claude/plans/continue-the-identity-rework-quizzical-mountain.md
+Your plan has been saved to: /home/<USER>/.claude/plans/continue-the-identity-rework-quizzical-mountain.md
 You can refer back to it if needed during implementation.
 
 ## Approved Plan (edited by user):
@@ -8692,7 +8692,7 @@ tool_use Read
 id: toolu_012cg35b89UfFpym2mU4134i
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.tsx"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.tsx"
 }
 ```
 
@@ -8740,7 +8740,7 @@ tool_use Write
 id: toolu_012fuLVVHqFnHYGtCpe8DT9R
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.tsx",
   "content": "\"use client\";\n\nimport { useCallback, useEffect, useState } from \"react\";\nimport CreateWorldForm from \"@/components/menu/CreateWorldForm\";\nimport MenuScreen from \"@/components/menu/MenuScreen\";\nimport { GAME_MODE_PRESETS, type GameMode } from \"@/lib/game/gameModes\";\nimport { DIFFICULTY_PRESETS, type Difficulty } from \"@/lib/game/difficulties\";\nimport { MAX_WORLDS_PER_PROFILE } from \"@/lib/game/config\";\nimport { resolveSeed, WORLD_TYPE_PRESETS } from \"@/lib/game/worlds\";\nimport type { WorldType } from \"@/lib/world\";\nimport { createOnlineWorld, deleteOnlineWorld, listOnlineWorlds, createInviteLink, revokeInviteLinks, type OnlineWorld } from \"@/lib/online/onlineClient\";\nimport type { OnlineProfile } from \"@/lib/online/profilesClient\";\n\n/**\n * An account profile's worlds: the account-mode counterpart to WorldSelect.\n * Two sections — Online Worlds (server-hosted mp rooms: this profile's own\n * plus every world the account joined by invite; invite links for owned ones)\n * and Singleplayer (sp-cloud worlds: played entirely client-side, saves\n * synced to the account so any signed-in device can continue them). Owned\n * worlds of both kinds share the MAX_WORLDS_PER_PROFILE quota.\n */\n\nfunction worldTypeLabel(id: WorldType): string {\n  return WORLD_TYPE_PRESETS.find((preset) => preset.id === id)?.label ?? id;\n}\nfunction gameModeLabel(id: GameMode): string {\n  return GAME_MODE_PRESETS.find((preset) => preset.id === id)?.label ?? id;\n}\nfunction difficultyLabel(id: Difficulty): string {\n  return DIFFICULTY_PRESETS.find((preset) => preset.id === id)?.label ?? id;\n}\n\n/** The shared \"mode · difficulty · type · seed\" tail of a world card. */\nfunction worldCardDetails(world: OnlineWorld): string {\n  return (\n    (world.hardcore ? \" […]
 
 > TOOL
@@ -8748,7 +8748,7 @@ id: toolu_012fuLVVHqFnHYGtCpe8DT9R
 tool_result
 id: toolu_012fuLVVHqFnHYGtCpe8DT9R
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8762,7 +8762,7 @@ id: toolu_01JzKLNiHCmjaFkgLA6kMsSf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx",
   "old_string": "type Screen =\n  | { name: \"profile-select\" }\n  | { name: \"world-select\"; profileId: string }\n  | { name: \"online-worlds\"; profile: OnlineProfile }\n  | { name: \"play\"; profileId: string; worldId: string }\n  // play-online carries the play-usable identity derived from the account\n  // profile, plus that profile itself so \"quit to worlds\" returns to its list.\n  | { name: \"play-online\"; profile: Profile; world: OnlineWorld; session: NetworkSession; onlineProfile: OnlineProfile };",
   "new_string": "type Screen =\n  | { name: \"profile-select\" }\n  | { name: \"world-select\"; profileId: string }\n  | { name: \"online-worlds\"; profile: OnlineProfile }\n  | { name: \"play\"; profileId: string; worldId: string }\n  // An account profile's singleplayer (sp-cloud) world: full local engine, no\n  // game server — the save syncs to the account as a cloud blob.\n  | { name: \"play-cloud\"; profile: OnlineProfile; world: OnlineWorld }\n  // play-online carries the play-usable identity derived from the account\n  // profile, plus that profile itself so \"quit to worlds\" returns to its list.\n  | { name: \"play-online\"; profile: Profile; world: OnlineWorld; session: NetworkSession; onlineProfile: OnlineProfile };"
 }
@@ -8773,7 +8773,7 @@ id: toolu_01JzKLNiHCmjaFkgLA6kMsSf
 tool_result
 id: toolu_01JzKLNiHCmjaFkgLA6kMsSf
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8783,7 +8783,7 @@ id: toolu_01MrvgypN5dFt2kdJLzD2uhh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx",
   "old_string": "/** Online worlds mount the same game subtree; the meta is a projection of the server row. */\nfunction onlineWorldMeta(world: OnlineWorld, profileId: string): WorldMeta {",
   "new_string": "/**\n * An account singleplayer world's meta: the `cloud:` id keys this device's\n * localStorage save cache, and `cloudId` makes the game hook's autosave sync\n * push every save up to the account blob.\n */\nfunction cloudWorldMeta(world: OnlineWorld, profileId: string): WorldMeta {\n  return { ...onlineWorldMeta(world, profileId), id: `cloud:${world.id}`, cloudId: world.id };\n}\n\n/** Online worlds mount the same game subtree; the meta is a projection of the server row. */\nfunction onlineWorldMeta(world: OnlineWorld, profileId: string): WorldMeta {"
 }
@@ -8794,7 +8794,7 @@ id: toolu_01MrvgypN5dFt2kdJLzD2uhh
 tool_result
 id: toolu_01MrvgypN5dFt2kdJLzD2uhh
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8804,7 +8804,7 @@ id: toolu_015QcjJoeGegq6aRKG8mg8nS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx",
   "old_string": "  /** Materialize a cloud save as a local world (linked by cloudId), then open it — the pull-on-open fills it in. */\n  const downloadCloud = async (profileId: string, world: OnlineWorld) => {",
   "new_string": "  /**\n   * Open an account singleplayer world: reconcile this device's save cache\n   * with the cloud blob (adopt the remote only when it advanced past our\n   * cursor), then boot the full local engine — no game server involved.\n   * Unlike local worlds there is no manifest entry and no session-resume\n   * pointer; a reload lands back on the menu (like play-online).\n   */\n  const playCloud = async (profile: OnlineProfile, world: OnlineWorld) => {\n    if (joiningRef.current) return;\n    joiningRef.current = true;\n    setConnecting(world.name);\n    try {\n      const decision = await pullCloudSaveIfNewer(world.id);\n      if (decision.adopt) writeSave(worldSaveKey(`cloud:${world.id}`), decision.save);\n    } catch {\n      // Offline or a bad blob → play this device's cache (or a fresh world).\n    } finally {\n      setConnecting(null);\n      joiningRef.current = false;\n    }\n    setScreen({ name: \"play-cloud\", profile, world });\n  };\n\n  /** Materialize a cloud save as a local world (linked by cloudId), then open it — the pull-on-open fills it in. */\n  const downloadCloud = async (profileId: string, world: OnlineWorld) […]
 
@@ -8813,7 +8813,7 @@ id: toolu_015QcjJoeGegq6aRKG8mg8nS
 tool_result
 id: toolu_015QcjJoeGegq6aRKG8mg8nS
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8823,7 +8823,7 @@ id: toolu_01Jid9AjmpiQrguYooxqDhpa
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx",
   "old_string": "  if (screen.name === \"play-online\") {",
   "new_string": "  if (screen.name === \"play-cloud\") {\n    const backToWorlds: Screen = { name: \"online-worlds\", profile: screen.profile };\n    return (\n      <MinecraftGame\n        key={`cloud:${screen.world.id}:${reloadNonce}`}\n        world={cloudWorldMeta(screen.world, screen.profile.id)}\n        profile={profileFromOnline(screen.profile)}\n        onQuitToWorlds={() => setScreen(backToWorlds)}\n        onDeleteWorld={() => {\n          // Hardcore game-over: delete the cloud world (row + blob) and this\n          // device's save cache, then return to the profile's world list.\n          void deleteOnlineWorld(screen.world.id);\n          try {\n            localStorage.removeItem(worldSaveKey(`cloud:${screen.world.id}`));\n          } catch {\n            // Cache cleanup only — never fatal.\n          }\n          setScreen(backToWorlds);\n        }}\n        onReloadWorld={() => setReloadNonce((nonce) => nonce + 1)}\n      />\n    );\n  }\n\n  if (screen.name === \"play-online\") {"
 }
@@ -8834,7 +8834,7 @@ id: toolu_01Jid9AjmpiQrguYooxqDhpa
 tool_result
 id: toolu_01Jid9AjmpiQrguYooxqDhpa
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8844,7 +8844,7 @@ id: toolu_01JmXimqeRUqKDdikRp43NpE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx",
   "old_string": "        <OnlineWorldSelect\n          profile={screen.profile}\n          onPlay={(world) => void playOnline(profileFromOnline(screen.profile), world, screen.profile)}\n          onBack={() => setScreen({ name: \"profile-select\" })}\n        />",
   "new_string": "        <OnlineWorldSelect\n          profile={screen.profile}\n          onPlayOnline={(world) => void playOnline(profileFromOnline(screen.profile), world, screen.profile)}\n          onPlayCloud={(world) => void playCloud(screen.profile, world)}\n          onBack={() => setScreen({ name: \"profile-select\" })}\n        />"
 }
@@ -8855,7 +8855,7 @@ id: toolu_01JmXimqeRUqKDdikRp43NpE
 tool_result
 id: toolu_01JmXimqeRUqKDdikRp43NpE
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8868,7 +8868,7 @@ tool_use Read
 id: toolu_0187iRtzf3aA74sbft9VNVzF
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.test.tsx"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.test.tsx"
 }
 ```
 
@@ -8918,7 +8918,7 @@ tool_use Write
 id: toolu_01RroyfgKNXMF8YnSnj6bMRq
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.test.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.test.tsx",
   "content": "import { describe, expect, test, mock } from \"bun:test\";\nimport { render, screen, waitFor } from \"@testing-library/react\";\nimport userEvent from \"@testing-library/user-event\";\nimport { MAX_WORLDS_PER_PROFILE } from \"@/lib/game/config\";\nimport type { OnlineWorld } from \"@/lib/online/onlineClient\";\n\n// Swap the online worlds client for a controllable fake — no network/game server.\nconst fake = { worlds: [] as OnlineWorld[], created: [] as Array<{ name: string; kind?: string; profileId?: string }>, deleted: [] as string[] };\n\nfunction mpWorld(id: string, profileId: string | null, overrides: Partial<OnlineWorld> = {}): OnlineWorld {\n  return {\n    id,\n    name: `W-${id}`,\n    kind: \"mp\",\n    seed: 1,\n    worldType: \"default\",\n    gameMode: \"survival\",\n    difficulty: \"normal\",\n    hardcore: false,\n    worldgenVersion: 11,\n    role: \"owner\",\n    profileId,\n    updatedAt: \"2026-07-04T00:00:00.000Z\",\n    ...overrides\n  } as OnlineWorld;\n}\n\n// Mirror the real module's full export surface: bun's mock.module can't add\n// names to an already-created module namespace, so whichever test file mocks\n// this module first fixes the shape every later import sees.\nvoid mock.module(\"@/lib/online/onlineClient\", () => ({\n  listOnlineWorlds: async () => fake.worlds,\n  createOnlineWorld: async ({ name, kind, profileId }: { name: string; kind?: \"mp\" | \"sp-cloud\"; profileId?: string }) => {\n    fake.created.push({ name, kind, profileId });\n    const created = mpWorld(`new-${fake.worlds.length}`, profileId ?? \"\", { name, kind: kind ?? \"mp\" });\n    fake.worlds = [...fake.worlds, created];\n    return created;\n […]
 
 > TOOL
@@ -8926,7 +8926,7 @@ id: toolu_01RroyfgKNXMF8YnSnj6bMRq
 tool_result
 id: toolu_01RroyfgKNXMF8YnSnj6bMRq
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9042,7 +9042,7 @@ tool_use Read
 id: toolu_01UkmsnHyJ7pf9Tk167L7nYW
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/online/worldsService.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/online/worldsService.test.ts",
   "offset": 185,
   "limit": 40
 }
@@ -9083,7 +9083,7 @@ id: toolu_01CDhpVdkzBxMiiYc7zFXUqv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/online/worldsService.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/online/worldsService.test.ts",
   "old_string": "    for (let i = 0; i < MAX_WORLDS_PER_PROFILE; i += 1) {\n      expect((await createWorld(asDb(), \"alice\", { name: `W${i}`, kind: \"mp\", seed: i, profileId: p.profile.id })).ok).toBe(true);\n    }\n    expect(await createWorld(asDb(), \"alice\", { name: \"over\", kind: \"mp\", seed: 99, profileId: p.profile.id })).toMatchObject({ ok: false, error: \"conflict\" });\n  });",
   "new_string": "    for (let i = 0; i < MAX_WORLDS_PER_PROFILE; i += 1) {\n      expect((await createWorld(asDb(), \"alice\", { name: `W${i}`, kind: \"mp\", seed: i, profileId: p.profile.id })).ok).toBe(true);\n    }\n    expect(await createWorld(asDb(), \"alice\", { name: \"over\", kind: \"mp\", seed: 99, profileId: p.profile.id })).toMatchObject({ ok: false, error: \"conflict\" });\n  });\n\n  test(\"singleplayer (sp-cloud) worlds attach to a profile and share its cap with mp\", async () => {\n    const p = await createProfile(asDb(), \"alice\", { name: \"Steve\" });\n    if (!p.ok) throw new Error(\"create failed\");\n    // A profile-owned singleplayer world is a first-class row…\n    const sp = await createWorld(asDb(), \"alice\", { name: \"Solo\", kind: \"sp-cloud\", seed: 1, profileId: p.profile.id });\n    expect(sp.ok).toBe(true);\n    if (sp.ok) expect(sp.world).toMatchObject({ kind: \"sp-cloud\", profileId: p.profile.id });\n\n    // …and the quota is kind-blind: mixed kinds fill the same cap, and the\n    // cap refuses BOTH kinds once full.\n    for (let i = 1; i < MAX_WORLDS_PER_PROFILE; […]
 
@@ -9092,7 +9092,7 @@ id: toolu_01CDhpVdkzBxMiiYc7zFXUqv
 tool_result
 id: toolu_01CDhpVdkzBxMiiYc7zFXUqv
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/online/worldsService.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/online/worldsService.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9132,7 +9132,7 @@ tool_use Write
 id: toolu_01RoAnKaZAbGKY8rZ7xi6sHq
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/e2e/accountSp.e2e.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/e2e/accountSp.e2e.ts",
   "content": "import { expect, test, type Page } from \"@playwright/test\";\n\n/**\n * Account-mode singleplayer, across devices: register an account, create a\n * singleplayer world under an online profile, prove it runs WITHOUT the game\n * server (no net session), edit and quit (the save pushes to the account\n * blob), then sign in from a completely fresh browser context — the \"other\n * computer\" — and continue the same world with the edit intact.\n *\n * Runs against the pglite webServer stack; the Bun game server is up but must\n * never be touched by this journey.\n */\n\nfunction watchErrors(page: Page, sink: string[]): void {\n  page.on(\"console\", (message) => {\n    if (message.type() !== \"error\") return;\n    if (message.text().includes(\"Failed to load resource\") && message.location().url.endsWith(\"/favicon.ico\")) return;\n    sink.push(`${message.text()} (${message.location().url})`);\n  });\n  page.on(\"pageerror\", (error) => sink.push(String(error)));\n}\n\n/** Booted and drawing (single-player: no `net`). */\nasync function waitForGame(page: Page): Promise<void> {\n  await page.waitForFunction(() => window.__monecraft !== undefined, undefined, { timeout: 30000 });\n  await page.waitForFunction(() => window.__monecraft!.renderer.renderedTriangles() > 0, undefined, { timeout: 30000 });\n}\n\ntest(\"an account singleplayer world plays offline-style and follows the account to a fresh device\", async ({ browser }) => {\n  test.setTimeout(180000);\n  const errors: string[] = [];\n  // Unique per attempt: the pglite […]
 
 > TOOL
@@ -9140,7 +9140,7 @@ id: toolu_01RoAnKaZAbGKY8rZ7xi6sHq
 tool_result
 id: toolu_01RoAnKaZAbGKY8rZ7xi6sHq
 ```
-File created successfully at: /Users/hutusi/workspace/ai/david/monecraft/e2e/accountSp.e2e.ts (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/ai/david/monecraft/e2e/accountSp.e2e.ts (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9216,7 +9216,7 @@ id: toolu_01Nva21UfWgYT3wczWtTGzeE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/online.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/online.md",
   "old_string": "- When signed in, the menu opens into an **account home**\n  (`components/menu/AccountProfileSelect.tsx`) listing that account's\n  server-side profiles (create/rename/delete, capped at `MAX_ONLINE_PROFILES`,\n  synced across devices); picking one shows its online worlds\n  (`OnlineWorldSelect`, capped at `MAX_WORLDS_PER_PROFILE` owned worlds), and\n  the join ticket carries the profile's name/skin. Worlds joined by invite are\n  account-level memberships, so they appear under **every** profile with a\n  \"Joined\" tag.",
   "new_string": "- When signed in, the menu opens into an **account home**\n  (`components/menu/AccountProfileSelect.tsx`) listing that account's\n  server-side profiles (create/rename/delete, capped at `MAX_ONLINE_PROFILES`,\n  synced across devices); picking one shows its worlds (`OnlineWorldSelect`)\n  in two sections: **Online Worlds** (server-hosted mp rooms; the join ticket\n  carries the profile's name/skin) and **Singleplayer** (`sp-cloud` worlds —\n  full client-side engine, **no game server**, saves synced to the account so\n  any signed-in device continues them). Owned worlds of both kinds share the\n  `MAX_WORLDS_PER_PROFILE` cap. Worlds joined by invite are account-level\n  memberships, so they appear under **every** profile with a \"Joined\" tag;\n  so do singleplayer saves uploaded from the local menus (`profileId` null —\n  account-level)."
 }
@@ -9227,7 +9227,7 @@ id: toolu_01Nva21UfWgYT3wczWtTGzeE
 tool_result
 id: toolu_01Nva21UfWgYT3wczWtTGzeE
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/online.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/online.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9237,7 +9237,7 @@ id: toolu_01ATRKtVaa8R3GvUKbtPDwTZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/online.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/online.md",
   "old_string": "**How it flows through the menu** (all opt-in per world):\n\n- **Upload** — a local world's card gets an \"Upload to cloud\" action while\n  signed in: it creates an `sp-cloud` world row, links it via\n  `WorldMeta.cloudId` (a local-manifest field, not part of the save format),\n  and pushes the current save. The card then reads \"☁ Synced\".",
   "new_string": "**How it flows through the menu** (all opt-in per world):\n\n- **Create in account mode** — the profile world screen's **New Singleplayer\n  World** makes an `sp-cloud` row owned by the profile and opens it directly:\n  the engine runs client-side against a device save cache keyed\n  `cloud:<world id>` (a fabricated `WorldMeta` with `cloudId` set, so the same\n  reconcile/push machinery below applies — no local-manifest entry needed).\n- **Upload** — a local world's card gets an \"Upload to cloud\" action while\n  signed in: it creates an `sp-cloud` world row (account-level, no profile),\n  links it via `WorldMeta.cloudId` (a local-manifest field, not part of the\n  save format), and pushes the current save. The card then reads \"☁ Synced\"."
 }
@@ -9248,7 +9248,7 @@ id: toolu_01ATRKtVaa8R3GvUKbtPDwTZ
 tool_result
 id: toolu_01ATRKtVaa8R3GvUKbtPDwTZ
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/online.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/online.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9258,7 +9258,7 @@ id: toolu_01V86AyankMMgDfD41pUH3D9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/online.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/online.md",
   "old_string": "The account's per-profile world list (`OnlineWorldSelect`) shows owned and\njoined worlds, creates new ones (same form as local worlds — the row lives in\nPostgres, the game server hosts it), and mints invite links (`/join/<token>`",
   "new_string": "The account's per-profile world list (`OnlineWorldSelect`) shows owned and\njoined online worlds plus the profile's singleplayer ones, creates new worlds\nof either kind (same form as local worlds — the row lives in Postgres; the\ngame server hosts only the mp kind), and mints invite links (`/join/<token>`"
 }
@@ -9269,7 +9269,7 @@ id: toolu_01V86AyankMMgDfD41pUH3D9
 tool_result
 id: toolu_01V86AyankMMgDfD41pUH3D9
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/online.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/online.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9279,7 +9279,7 @@ id: toolu_011atjLs6oafxjn99voHDp6z
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/manual.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/manual.md",
   "old_string": "**Hosting.** Pick an online profile to see its worlds. **New Online World**\nuses the same form as a local world (name, seed, world type, mode,\ndifficulty); creating it connects you straight in. Press **Copy invite** on\nyour world's card to put a join link on the clipboard — send it to your\nfriends. Invite links expire after a while; copy a fresh one any time.",
   "new_string": "**Hosting.** Pick an online profile to see its worlds. **New Online World**\nuses the same form as a local world (name, seed, world type, mode,\ndifficulty); creating it connects you straight in. Press **Copy invite** on\nyour world's card to put a join link on the clipboard — send it to your\nfriends. Invite links expire after a while; copy a fresh one any time.\n\n**Singleplayer, synced.** A profile can also hold **singleplayer** worlds\n(**New Singleplayer World** on the same screen): they play exactly like local\nworlds — entirely on your machine, no game-server connection — but the save\nlives with your account, so signing in on another computer picks up right\nwhere you left off. Online and singleplayer worlds share the same per-profile\nlimit."
 }
@@ -9290,7 +9290,7 @@ id: toolu_011atjLs6oafxjn99voHDp6z
 tool_result
 id: toolu_011atjLs6oafxjn99voHDp6z
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/manual.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/manual.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9430,7 +9430,7 @@ id: toolu_014uvNYcCUDjudHuDXSEZsn2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/e2e/accountSp.e2e.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/e2e/accountSp.e2e.ts",
   "old_string": "function watchErrors(page: Page, sink: string[]): void {\n  page.on(\"console\", (message) => {\n    if (message.type() !== \"error\") return;\n    if (message.text().includes(\"Failed to load resource\") && message.location().url.endsWith(\"/favicon.ico\")) return;\n    sink.push(`${message.text()} (${message.location().url})`);\n  });\n  page.on(\"pageerror\", (error) => sink.push(String(error)));\n}",
   "new_string": "function watchErrors(page: Page, sink: string[]): void {\n  page.on(\"console\", (message) => {\n    if (message.type() !== \"error\") return;\n    if (message.text().includes(\"Failed to load resource\")) {\n      const url = message.location().url;\n      if (url.endsWith(\"/favicon.ico\")) return;\n      // Opening a freshly created singleplayer world probes the cloud blob\n      // before the first push exists; the route's 404 (\"no-save\") is the\n      // by-design answer, but the browser still logs the failed fetch.\n      if (/\\/api\\/worlds\\/[^/]+\\/save$/.test(url)) return;\n    }\n    sink.push(`${message.text()} (${message.location().url})`);\n  });\n  page.on(\"pageerror\", (error) => sink.push(String(error)));\n}"
 }
@@ -9441,7 +9441,7 @@ id: toolu_014uvNYcCUDjudHuDXSEZsn2
 tool_result
 id: toolu_014uvNYcCUDjudHuDXSEZsn2
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/e2e/accountSp.e2e.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/e2e/accountSp.e2e.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9472,7 +9472,7 @@ id: toolu_01TA6KJcNkwA9rDuRNgvYkwF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/tuning.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/tuning.md",
   "old_string": "- **`MAX_WORLDS_PER_PROFILE`** (`10`) — online worlds one profile may own. The\n  11th create is refused server-side. Bounds save-blob storage per profile.",
   "new_string": "- **`MAX_WORLDS_PER_PROFILE`** (`10`) — worlds one profile may own, counting\n  online (mp) and synced singleplayer (sp-cloud) worlds together. The 11th\n  create of either kind is refused server-side. Bounds save-blob storage per\n  profile."
 }
@@ -9559,7 +9559,7 @@ id: toolu_01SBhfJoyTs1BcqBRt9dAdm4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/testing.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/testing.md",
   "old_string": "and `OnlineWorldSelect` (a profile's owned mp worlds plus the account's invite-joined ones labelled \"Joined\" without owner actions, create-and-enter, and the `MAX_WORLDS_PER_PROFILE` cap counting owned worlds only)",
   "new_string": "and `OnlineWorldSelect` (two sections — a profile's owned mp worlds plus the account's invite-joined ones labelled \"Joined\" without owner actions, and its Singleplayer sp-cloud worlds incl. account-level profile-less ones; create-and-enter for both kinds with sp-cloud sent explicitly; sp delete behind a confirm; and the `MAX_WORLDS_PER_PROFILE` cap counting owned worlds of both kinds while joined/account-level ones stay free)"
 }
@@ -9570,7 +9570,7 @@ id: toolu_01SBhfJoyTs1BcqBRt9dAdm4
 tool_result
 id: toolu_01SBhfJoyTs1BcqBRt9dAdm4
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9580,7 +9580,7 @@ id: toolu_013f2zYKcAgzhqJ1bH3U7M6z
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/testing.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/testing.md",
   "old_string": "| Browser E2E (cloud saves)     | `e2e/cloudSaves.e2e.ts`                                                                                                                                                                                                                                       | A signed-in account's single-player cloud round-trip on the pglite stack, reached through the account home's \"Play locally\" door: create a local world, place a distinctive Stone block in mid-air, Upload to cloud (the card flips to ☁ Synced), delete the local copy, clear this device's sync cursor (simulating a fresh device so the open-time reconcile adopts), then Download it from the Cloud Saves section — the placed block survives the push → delete → pull cycle",
   "new_string": "| Browser E2E (cloud saves)     | `e2e/cloudSaves.e2e.ts`, `e2e/accountSp.e2e.ts`                                                                                                                                                                                                               | A signed-in account's single-player cloud round-trip on the pglite stack, reached through the account home's \"Play locally\" door: create a local world, place a distinctive Stone block in mid-air, Upload to cloud (the card flips to ☁ Synced), delete the local copy, clear this device's sync cursor (simulating a fresh device so the open-time reconcile adopts), then Download it from the Cloud Saves section — the placed block survives the push → delete → pull cycle. And the account-mode singleplayer journey: create a Singleplayer world under an online profile, prove no game-server session exists (`window.__monecraft.net` […]
 
@@ -9589,7 +9589,7 @@ id: toolu_013f2zYKcAgzhqJ1bH3U7M6z
 tool_result
 id: toolu_013f2zYKcAgzhqJ1bH3U7M6z
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9643,7 +9643,7 @@ tool_use Read
 id: toolu_01PH8yXTF1LWQ9JxTi28biE5
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md",
   "offset": 5,
   "limit": 11
 }
@@ -9668,7 +9668,7 @@ id: toolu_01M49uP8LquB9BkdRnqFnEaf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md",
   "old_string": "## [Unreleased]\n\n### Added\n\n- **Cloud saves — single-player worlds across devices**:",
   "new_string": "## [Unreleased]\n\n### Added\n\n- **Singleplayer worlds in account mode**: an online profile's world screen now has two sections — **Online Worlds** (server-hosted co-op, as before) and **Singleplayer**. A **New Singleplayer World** plays exactly like a local world (full client-side engine, **no game-server connection** — join tickets only exist for the mp kind) but its save syncs to your account, so signing in on another computer continues the same world with the same open-time reconcile and last-write-wins rules as cloud saves. Online and singleplayer worlds share the per-profile `MAX_WORLDS_PER_PROFILE` limit (the create buttons now count both kinds, matching what the server always enforced); singleplayer cards get a Delete action; saves uploaded from the local menus (which belong to the account, not a profile) appear under every profile. Proven by a cross-device e2e: a world created and edited in one browser context is continued, edit intact, by a fresh context signing into the same account.\n- **Cloud saves — single-player worlds across devices**:"
 }
@@ -9679,7 +9679,7 @@ id: toolu_01M49uP8LquB9BkdRnqFnEaf
 tool_result
 id: toolu_01M49uP8LquB9BkdRnqFnEaf
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9828,7 +9828,7 @@ id: toolu_01UM8cEdQkbFb1PjfPFkUAdr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/identity-rework.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/identity-rework.md",
   "old_string": "**Still pending:** USER must run `DATABASE_URL='<neon>' bun run db:migrate` on prod (Vercel already deployed — correct order; 0003 DELETES guest users + worlds; also kills the lingering guest sessions behind issue 2); merge PR #48; next release notes carry the guest-data deletion warning; manual visual check of AccountPanel inside the join page's `.net-modal-box`.",
   "new_string": "**Account-mode singleplayer worlds (2026-07-05): BUILT on branch `feat/account-sp-worlds`** (stacked on `fix/post-identity-followups` per user — merge-commit SHAs make the PR diff collapse once #48 lands). OnlineWorldSelect = two sections (Online Worlds mp + Singleplayer sp-cloud per profile; profileId-null uploads show under every profile); GameShell `play-cloud` path (fabricated meta id `cloud:<id>` + cloudId → existing reconcile/autosave-push machinery untouched); client cap now counts both kinds (server always did); sp delete w/ confirm. Deliberately NO cache GC (would nuke another account's un-pushed offline progress in a shared browser). Cross-device e2e (`e2e/accountSp.e2e.ts`) proves no-game-server + marker sync into a fresh context. Full gate green (1132 tests, 22 e2e). UNPUSHED — awaiting user go-ahead.\n\n**Still pending:** USER must run `DATABASE_URL='<neon>' bun run db:migrate` on prod (Vercel already deployed — correct order; 0003 DELETES guest users + worlds; also kills the lingering guest […]
 
@@ -9837,7 +9837,7 @@ id: toolu_01UM8cEdQkbFb1PjfPFkUAdr
 tool_result
 id: toolu_01UM8cEdQkbFb1PjfPFkUAdr
 ```
-The file /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/identity-rework.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/identity-rework.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -9900,7 +9900,7 @@ id: toolu_01Huqj7KEctEU8rgmw7aWTuU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/identity-rework.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/identity-rework.md",
   "old_string": "Full gate green (1132 tests, 22 e2e). UNPUSHED — awaiting user go-ahead.",
   "new_string": "Full gate green (1132 tests, 22 e2e). PUSHED → **PR #49** (2026-07-05, stacked on #48 — merge #48 first, then #49's diff collapses to the 4 feature commits)."
 }
@@ -9911,7 +9911,7 @@ id: toolu_01Huqj7KEctEU8rgmw7aWTuU
 tool_result
 id: toolu_01Huqj7KEctEU8rgmw7aWTuU
 ```
-The file /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/identity-rework.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/identity-rework.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -10083,7 +10083,7 @@ id: toolu_01ANdsT2CYSYoUwdHiDN4kP4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx",
   "old_string": "        onDeleteWorld={() => {\n          // Hardcore game-over: delete the cloud world (row + blob) and this\n          // device's save cache, then return to the profile's world list.\n          void deleteOnlineWorld(screen.world.id);\n          try {\n            localStorage.removeItem(worldSaveKey(`cloud:${screen.world.id}`));\n          } catch {\n            // Cache cleanup only — never fatal.\n          }\n          setScreen(backToWorlds);\n        }}",
   "new_string": "        onDeleteWorld={() => {\n          // Hardcore game-over: delete the cloud world (row + blob), then this\n          // device's save cache — only after the server confirmed, so a failed\n          // delete (offline) leaves a still-playable world in the list rather\n          // than a hollow one that re-downloads its own game-over.\n          void deleteOnlineWorld(screen.world.id).then((deleted) => {\n            if (!deleted) return;\n            try {\n              localStorage.removeItem(worldSaveKey(`cloud:${screen.world.id}`));\n            } catch {\n              // Cache cleanup only — never fatal.\n            }\n          });\n          setScreen(backToWorlds);\n        }}"
 }
@@ -10094,7 +10094,7 @@ id: toolu_01ANdsT2CYSYoUwdHiDN4kP4
 tool_result
 id: toolu_01ANdsT2CYSYoUwdHiDN4kP4
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10104,7 +10104,7 @@ id: toolu_01JNShsRdTwREryTHKmJXBw4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.tsx",
   "old_string": "  const [confirmingDeleteId, setConfirmingDeleteId] = useState<string | null>(null);",
   "new_string": "  const [confirmingDeleteId, setConfirmingDeleteId] = useState<string | null>(null);\n  const [deleteFailedId, setDeleteFailedId] = useState<string | null>(null);"
 }
@@ -10115,7 +10115,7 @@ id: toolu_01JNShsRdTwREryTHKmJXBw4
 tool_result
 id: toolu_01JNShsRdTwREryTHKmJXBw4
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10125,7 +10125,7 @@ id: toolu_01Rpw3c1SqM7gPD3xPZXd8LN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.tsx",
   "old_string": "                          <button\n                            className=\"mc-button danger\"\n                            onClick={() =>\n                              void deleteOnlineWorld(world.id).then(() => {\n                                setConfirmingDeleteId(null);\n                                refresh();\n                              })\n                            }\n                          >\n                            Delete\n                          </button>",
   "new_string": "                          <button\n                            className=\"mc-button danger\"\n                            onClick={() =>\n                              void deleteOnlineWorld(world.id).then((deleted) => {\n                                setConfirmingDeleteId(null);\n                                // A failed delete would otherwise just re-list\n                                // the world as if nothing happened — say so.\n                                setDeleteFailedId(deleted ? null : world.id);\n                                if (deleted) refresh();\n                              })\n                            }\n                          >\n                            Delete\n                          </button>"
 }
@@ -10136,7 +10136,7 @@ id: toolu_01Rpw3c1SqM7gPD3xPZXd8LN
 tool_result
 id: toolu_01Rpw3c1SqM7gPD3xPZXd8LN
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10146,7 +10146,7 @@ id: toolu_01P2YJhNfFEM4vNnGsW5CBTX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.tsx",
   "old_string": "                        <div className=\"menu-card-actions\">\n                          <button className=\"mc-button\" onClick={() => setConfirmingDeleteId(world.id)}>\n                            Delete\n                          </button>\n                        </div>",
   "new_string": "                        <div className=\"menu-card-actions\">\n                          <button className=\"mc-button\" onClick={() => setConfirmingDeleteId(world.id)}>\n                            {deleteFailedId === world.id ? \"Delete failed — retry\" : \"Delete\"}\n                          </button>\n                        </div>"
 }
@@ -10157,7 +10157,7 @@ id: toolu_01P2YJhNfFEM4vNnGsW5CBTX
 tool_result
 id: toolu_01P2YJhNfFEM4vNnGsW5CBTX
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -10171,7 +10171,7 @@ id: toolu_01TLNHDJAp8MbmH7xCcnZirV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/online.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/online.md",
   "old_string": "— the landing page previews the world's name, asks the visitor to sign in or\nregister if they aren't, then accepts the membership; the world appears in\ntheir account's world list). Playing one runs `GameShell.playOnline`:\n`POST /api/worlds/:id/ticket` → `connectNetworkSession(gameServerUrl, ticket)`\n→ mount the game on the session's replica engine.",
   "new_string": "— the landing page previews the world's name, asks the visitor to sign in or\nregister if they aren't, then accepts the membership; the world appears in\ntheir account's world list). Playing an **online** one runs\n`GameShell.playOnline`: `POST /api/worlds/:id/ticket` →\n`connectNetworkSession(gameServerUrl, ticket)` → mount the game on the\nsession's replica engine. (A **singleplayer** world instead runs\n`GameShell.playCloud` — the cloud-save reconcile above and a full local\nengine, no ticket, no socket.)"
 }
@@ -10182,7 +10182,7 @@ id: toolu_01TLNHDJAp8MbmH7xCcnZirV
 tool_result
 id: toolu_01TLNHDJAp8MbmH7xCcnZirV
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/online.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/online.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10192,7 +10192,7 @@ id: toolu_011TXPcPqyJ4GjzyeFidzacj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.test.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.test.tsx",
   "old_string": "  deleteOnlineWorld: async (id: string) => {\n    fake.deleted.push(id);\n    fake.worlds = fake.worlds.filter((world) => world.id !== id);\n    return true;\n  },",
   "new_string": "  deleteOnlineWorld: async (id: string) => {\n    if (fake.deleteRejects) return false;\n    fake.deleted.push(id);\n    fake.worlds = fake.worlds.filter((world) => world.id !== id);\n    return true;\n  },"
 }
@@ -10203,7 +10203,7 @@ id: toolu_011TXPcPqyJ4GjzyeFidzacj
 tool_result
 id: toolu_011TXPcPqyJ4GjzyeFidzacj
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10213,7 +10213,7 @@ id: toolu_01Nifd96NnjEL625k56Bkh3R
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.test.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.test.tsx",
   "old_string": "const fake = { worlds: [] as OnlineWorld[], created: [] as Array<{ name: string; kind?: string; profileId?: string }>, deleted: [] as string[] };",
   "new_string": "const fake = {\n  worlds: [] as OnlineWorld[],\n  created: [] as Array<{ name: string; kind?: string; profileId?: string }>,\n  deleted: [] as string[],\n  deleteRejects: false\n};"
 }
@@ -10224,7 +10224,7 @@ id: toolu_01Nifd96NnjEL625k56Bkh3R
 tool_result
 id: toolu_01Nifd96NnjEL625k56Bkh3R
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10234,7 +10234,7 @@ id: toolu_017x7hKQQ3auxqXxf8P8iLcu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.test.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.test.tsx",
   "old_string": "  test(\"owned worlds of BOTH kinds count toward the create cap\", async () => {",
   "new_string": "  test(\"a failed delete keeps the world listed and says so\", async () => {\n    fake.worlds = [mpWorld(\"sp1\", \"p1\", { kind: \"sp-cloud\" })];\n    fake.deleteRejects = true;\n    renderSelect();\n    await waitFor(() => expect(screen.getByText(\"W-sp1\")).toBeTruthy());\n\n    await userEvent.click(screen.getByRole(\"button\", { name: \"Delete\" }));\n    await userEvent.click(screen.getAllByRole(\"button\", { name: \"Delete\" })[0]); // confirm\n    await waitFor(() => expect(screen.getByRole(\"button\", { name: \"Delete failed — retry\" })).toBeTruthy());\n    expect(screen.getByText(\"W-sp1\")).toBeTruthy(); // still listed, still playable\n    fake.deleteRejects = false;\n  });\n\n  test(\"owned worlds of BOTH kinds count toward the create cap\", async () => {"
 }
@@ -10245,7 +10245,7 @@ id: toolu_017x7hKQQ3auxqXxf8P8iLcu
 tool_result
 id: toolu_017x7hKQQ3auxqXxf8P8iLcu
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/OnlineWorldSelect.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10624,7 +10624,7 @@ id: toolu_01LKGiYGCyKtjJ99jSz8tDy4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/identity-rework.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/identity-rework.md",
   "old_string": "Full gate green (1132 tests, 22 e2e). PUSHED → **PR #49** (2026-07-05, stacked on #48 — merge #48 first, then #49's diff collapses to the 4 feature commits).",
   "new_string": "Full gate green (1132 tests, 22 e2e). **MERGED 2026-07-05: #48 (`2784b74`) then #49 (`a867546`), both CI-green with CodeRabbit findings addressed** (3 fixed in `c62a389`, 1 skipped: null-profileId mp rows impossible post-migration). Vercel auto-deploys the lot."
 }
@@ -10635,7 +10635,7 @@ id: toolu_01LKGiYGCyKtjJ99jSz8tDy4
 tool_result
 id: toolu_01LKGiYGCyKtjJ99jSz8tDy4
 ```
-The file /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/identity-rework.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/identity-rework.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10645,7 +10645,7 @@ id: toolu_01LkvdWkFHVWnRRzYaEYqnym
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/identity-rework.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/identity-rework.md",
   "old_string": "**Still pending:** USER must run `DATABASE_URL='<neon>' bun run db:migrate` on prod (Vercel already deployed — correct order; 0003 DELETES guest users + worlds; also kills the lingering guest sessions behind issue 2); merge PR #48; push `feat/account-sp-worlds` + open its PR (after #48); next release notes carry the guest-data deletion warning; manual visual check of AccountPanel inside the join page's `.net-modal-box`.",
   "new_string": "**Still pending:** USER must run `DATABASE_URL='<neon>' bun run db:migrate` on prod (applies 0001→0003 in one go — 0003 DELETES guest users + worlds and kills the lingering guest sessions; new code is already deployed = correct order); next release notes carry the guest-data deletion warning; manual visual checks (AccountPanel inside the join page's `.net-modal-box`; the new two-section profile world screen)."
 }
@@ -10656,7 +10656,7 @@ id: toolu_01LkvdWkFHVWnRRzYaEYqnym
 tool_result
 id: toolu_01LkvdWkFHVWnRRzYaEYqnym
 ```
-The file /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/identity-rework.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/identity-rework.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10666,7 +10666,7 @@ id: toolu_01ErxHAP1NddkebQNTcAzT4H
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md",
   "old_string": "- [Identity rework](identity-rework.md) — \"Local Players vs Accounts\" redesign **COMPLETE: all 3 phases merged** (#46 + #47, 2026-07-05); prod rollout pending: deploy THEN `db:migrate` (0003 deletes guest data), release-note the deletion",
   "new_string": "- [Identity rework](identity-rework.md) — \"Local Players vs Accounts\" **COMPLETE + follow-ups merged** (#46–#49 incl. account-mode singleplayer worlds, 2026-07-05); pending: USER runs prod `db:migrate` (0001→0003; 0003 deletes guest data — release-note it), manual visual passes"
 }
@@ -10677,7 +10677,7 @@ id: toolu_01ErxHAP1NddkebQNTcAzT4H
 tool_result
 id: toolu_01ErxHAP1NddkebQNTcAzT4H
 ```
-The file /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

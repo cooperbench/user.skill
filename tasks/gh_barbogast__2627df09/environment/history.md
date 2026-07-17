@@ -27,7 +27,7 @@ tool_use Read
 id: toolu_01KK81NvJ7CrggEUBPKv9gYj
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/spec.md"
+  "file_path": "/home/<USER>/git/paper-scan-processor/spec.md"
 }
 ```
 
@@ -80,7 +80,7 @@ tool_use Bash
 id: toolu_01ENfkUNMME5mNLL9HrvPZoy
 ```json
 {
-  "command": "ls -la /Users/ben/git/paper-scan-processor/CLAUDE.md 2>&1; echo \"---\"; find /Users/ben/git/paper-scan-processor -maxdepth 2 -iname \"CLAUDE.md\"",
+  "command": "ls -la /home/<USER>/git/paper-scan-processor/CLAUDE.md 2>&1; echo \"---\"; find /home/<USER>/git/paper-scan-processor -maxdepth 2 -iname \"CLAUDE.md\"",
   "description": "Check for existing CLAUDE.md"
 }
 ```
@@ -90,7 +90,7 @@ id: toolu_01ENfkUNMME5mNLL9HrvPZoy
 tool_result
 id: toolu_01ENfkUNMME5mNLL9HrvPZoy
 ```
-ls: /Users/ben/git/paper-scan-processor/CLAUDE.md: No such file or directory
+ls: /home/<USER>/git/paper-scan-processor/CLAUDE.md: No such file or directory
 ---
 ```
 
@@ -140,7 +140,7 @@ tool_use Read
 id: toolu_01GmRrXzVHa5sZzt3YGCnpAR
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/README.md"
+  "file_path": "/home/<USER>/git/paper-scan-processor/README.md"
 }
 ```
 
@@ -181,7 +181,7 @@ tool_use Write
 id: toolu_01Vgs4BtUfyjGGjBTVMEBjL3
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/CLAUDE.md",
+  "file_path": "/home/<USER>/git/paper-scan-processor/CLAUDE.md",
   "content": "# Paper Scan Processor\n\nWails desktop app (Go backend + React/TS frontend) for post-processing scanned PDFs. See `spec.md` for the full feature spec and implementation checklist — check it off as steps land.\n\n## Commands\n\n- Go tests: `go test ./...`\n- Frontend typecheck: `cd frontend && npm run tsc`\n- Frontend tests: `cd frontend && npm test`\n\nDon't run `wails dev`/`wails build` or try to screenshot the app — the user tests manually in the running app.\n\n## Conventions\n\n- Don't hand-edit `frontend/wailsjs/` bindings; Wails regenerates them from Go RPCs.\n- Break checklist work into small, independently reviewable steps (1a/1b/1c-style) unless a step is trivial.\n- Point out unrelated cleanups rather than folding them into feature commits; commit them separately.\n- Never `git commit` without an explicit go-ahead in the same turn — an earlier approval doesn't carry forward.\n"
 }
 ```
@@ -191,7 +191,7 @@ id: toolu_01Vgs4BtUfyjGGjBTVMEBjL3
 tool_result
 id: toolu_01Vgs4BtUfyjGGjBTVMEBjL3
 ```
-File created successfully at: /Users/ben/git/paper-scan-processor/CLAUDE.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/git/paper-scan-processor/CLAUDE.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

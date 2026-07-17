@@ -8,7 +8,7 @@ tool_use Bash
 id: toolu_01LeP6yvtjZ1kh7XLuEHimyG
 ```json
 {
-  "command": "ls /Users/sumeet/matrix/web/aether",
+  "command": "ls /home/<USER>/matrix/web/aether",
   "description": "List aether repo root"
 }
 ```
@@ -35,7 +35,7 @@ tool_use Bash
 id: toolu_01GGbdSVmfopopTnepLX18GN
 ```json
 {
-  "command": "ls /Users/sumeet/matrix/web/aether/services && echo \"---\" && cat /Users/sumeet/matrix/web/aether/docker-compose-prod.yml",
+  "command": "ls /home/<USER>/matrix/web/aether/services && echo \"---\" && cat /home/<USER>/matrix/web/aether/docker-compose-prod.yml",
   "description": "Explore services and prod compose"
 }
 ```
@@ -76,7 +76,7 @@ services:
       - WELL_API_KEY=${WELL_API_KEY}
       - BACKUP_REPO_URL=https://github.com/kungfusaini/vulkan-data.git
       - GIT_AUTHOR_NAME=Vulkan Backup Bot
-      - GIT_AUTHOR_EMAIL=backup@vulkan.sumeetsaini.com
+      - GIT_AUTHOR_EMAIL=<REDACTED_EMAIL>
       - VULKAN_GIT_TOKEN=${VULKAN_GIT_TOKEN}
       - PROJECTS_REPO_URL=${PROJECTS_REPO_URL}
       - PROJECTS_WEBHOOK_SECRET=${PROJECTS_WEBHOOK_SECRET}
@@ -174,7 +174,7 @@ tool_use Bash
 id: toolu_01NE3xz5zYjQTrbPRTAz4Wco
 ```json
 {
-  "command": "ls /Users/sumeet/matrix/web/aether/services/gateway && echo \"---\" && ls /Users/sumeet/matrix/web/aether/services/sumeetsaini_com",
+  "command": "ls /home/<USER>/matrix/web/aether/services/gateway && echo \"---\" && ls /home/<USER>/matrix/web/aether/services/sumeetsaini_com",
   "description": "Explore gateway and sumeetsaini service"
 }
 ```
@@ -215,7 +215,7 @@ tool_use Bash
 id: toolu_01P49UNf9WoPqhtqKT7qRRLE
 ```json
 {
-  "command": "ls /Users/sumeet/matrix/web/aether/services/gateway/conf.d && echo \"---\" && cat /Users/sumeet/matrix/web/aether/services/gateway/nginx-prod.conf | head -50",
+  "command": "ls /home/<USER>/matrix/web/aether/services/gateway/conf.d && echo \"---\" && cat /home/<USER>/matrix/web/aether/services/gateway/nginx-prod.conf | head -50",
   "description": "List gateway conf.d"
 }
 ```
@@ -268,7 +268,7 @@ tool_use Bash
 id: toolu_01Mgs9gJr9aPo7ZVzW1SQy4v
 ```json
 {
-  "command": "ls /Users/sumeet/matrix/web/aether/services/gateway/conf.d/prod && echo \"---common---\" && ls /Users/sumeet/matrix/web/aether/services/gateway/conf.d/common",
+  "command": "ls /home/<USER>/matrix/web/aether/services/gateway/conf.d/prod && echo \"---common---\" && ls /home/<USER>/matrix/web/aether/services/gateway/conf.d/common",
   "description": "List prod and common confs"
 }
 ```
@@ -302,7 +302,7 @@ tool_use Bash
 id: toolu_018xtJMbdJZ73Ni8NPzbBvqc
 ```json
 {
-  "command": "cat /Users/sumeet/matrix/web/aether/services/gateway/conf.d/prod/reliq.digital.conf /Users/sumeet/matrix/web/aether/services/gateway/conf.d/prod/upstreams.conf /Users/sumeet/matrix/web/aether/services/gateway/conf.d/prod/servers.conf",
+  "command": "cat /home/<USER>/matrix/web/aether/services/gateway/conf.d/prod/reliq.digital.conf /home/<USER>/matrix/web/aether/services/gateway/conf.d/prod/upstreams.conf /home/<USER>/matrix/web/aether/services/gateway/conf.d/prod/servers.conf",
   "description": "Read a sample site conf and upstreams"
 }
 ```
@@ -412,7 +412,7 @@ tool_use Bash
 id: toolu_01Ao3RJ8hmDReMz2xGzvXqBj
 ```json
 {
-  "command": "cat /Users/sumeet/matrix/web/aether/services/sumeetsaini_com/Dockerfile.prod && echo \"---\" && ls /Users/sumeet/matrix/web/aether/services/sumeetsaini_com/.github 2>/dev/null; ls /Users/sumeet/matrix/web/aether/services/sumeetsaini_com/.git 2>/dev/null; cat /Users/sumeet/matrix/web/aether/services/reliq/Dockerfile.prod 2>/dev/null || ls /Users/sumeet/matrix/web/aether/services/reliq",
+  "command": "cat /home/<USER>/matrix/web/aether/services/sumeetsaini_com/Dockerfile.prod && echo \"---\" && ls /home/<USER>/matrix/web/aether/services/sumeetsaini_com/.github 2>/dev/null; ls /home/<USER>/matrix/web/aether/services/sumeetsaini_com/.git 2>/dev/null; cat /home/<USER>/matrix/web/aether/services/reliq/Dockerfile.prod 2>/dev/null || ls /home/<USER>/matrix/web/aether/services/reliq",
   "description": "Inspect site dockerfile and reliq"
 }
 ```
@@ -431,7 +431,7 @@ COPY . /usr/share/nginx/html
 # Expose the standard Nginx port
 EXPOSE 80
 ---
-/Users/sumeet/matrix/web/aether/services/sumeetsaini_com/.git
+/home/<USER>/matrix/web/aether/services/sumeetsaini_com/.git
 reliq.digital
 reliqlabs
 reliqstudios

@@ -12,7 +12,7 @@ tool_use Bash
 id: toolu_01HvkCBTjihkSafTKifY6tR9
 ```json
 {
-  "command": "ls /Users/sumeet/matrix/web/aether/ && echo \"---services---\" && ls /Users/sumeet/matrix/web/aether/services/",
+  "command": "ls /home/<USER>/matrix/web/aether/ && echo \"---services---\" && ls /home/<USER>/matrix/web/aether/services/",
   "description": "List aether project structure"
 }
 ```
@@ -49,7 +49,7 @@ tool_use Bash
 id: toolu_01PvoXFeQhWh8m4cuohnA3EL
 ```json
 {
-  "command": "cat /Users/sumeet/matrix/web/aether/AGENTS.md 2>/dev/null | head -80 && echo \"---\" && ls /Users/sumeet/matrix/web/aether/services/sumeetsaini_com 2>/dev/null | head -20",
+  "command": "cat /home/<USER>/matrix/web/aether/AGENTS.md 2>/dev/null | head -80 && echo \"---\" && ls /home/<USER>/matrix/web/aether/services/sumeetsaini_com 2>/dev/null | head -20",
   "description": "Inspect aether docs and similar service"
 }
 ```

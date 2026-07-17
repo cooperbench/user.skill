@@ -1,12 +1,12 @@
 > SYSTEM
 
-# AGENTS.md instructions for /Users/alisha/Projects/wt/external-agents/kiro-windows-bug
+# AGENTS.md instructions for /home/<USER>/Projects/wt/external-agents/kiro-windows-bug
 
 <INSTRUCTIONS>
 ## Aliases
-- `test-repos` → `/Users/alisha/Projects/test-repos`
-- `entire frontend` → `/Users/alisha/Projects/devenv/entire.io`
-- `entire cli` → `/Users/alisha/Projects/devenv/cli`
+- `test-repos` → `/home/<USER>/Projects/test-repos`
+- `entire frontend` → `/home/<USER>/Projects/devenv/entire.io`
+- `entire cli` → `/home/<USER>/Projects/devenv/cli`
 
 
 Resolve aliases to their full paths before acting on any instruction.
@@ -42,8 +42,8 @@ tool_use exec_command
 id: call_W9i7j3Q2G4jVFBI0tOOJzUg9
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/alisha/.codex/superpowers/skills/using-superpowers/SKILL.md",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/superpowers/skills/using-superpowers/SKILL.md",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -56,7 +56,7 @@ id: call_hAvHfwTBGzjZy8qcgLpkLXEb
 ```json
 {
   "cmd": "sed -n '1,260p' docs/rfds/windows-e2e-design.md",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -69,7 +69,7 @@ id: call_g32KrxvR4CUQbpzha1g72A25
 ```json
 {
   "cmd": "sed -n '1,260p' docs/rfds/windows-e2e-design-timeline.md",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -179,7 +179,7 @@ id: call_UklmgVZyElWnU6OPnYRatwbx
 ```json
 {
   "cmd": "sed -n '261,520p' docs/rfds/windows-e2e-design.md",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -192,7 +192,7 @@ id: call_ufuYWD4vSJRTZT8lmKUPBk7N
 ```json
 {
   "cmd": "nl -ba e2e/agents/kiro.go | sed -n '1,220p'",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -205,7 +205,7 @@ id: call_CP55kzZyYoSMMteCtZr8PvLD
 ```json
 {
   "cmd": "nl -ba e2e/agents/pi.go | sed -n '1,220p'",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -218,7 +218,7 @@ id: call_fw6eiTy0GemkCdebYFHc7Pfa
 ```json
 {
   "cmd": "nl -ba e2e/agents/tmux.go | sed -n '1,260p'",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -231,7 +231,7 @@ id: call_vKnY1sDW5qbBPbQxOrX4fu5F
 ```json
 {
   "cmd": "nl -ba e2e/setup_test.go | sed -n '1,220p'",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -244,7 +244,7 @@ id: call_wnrHIeuPCxKfaqy4JSBO7BaQ
 ```json
 {
   "cmd": "nl -ba e2e/build.go | sed -n '1,220p'",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -557,7 +557,7 @@ id: call_ql8Sr8qviRmulvBu1WgTcsYI
 ```json
 {
   "cmd": "nl -ba e2e/lifecycle_test.go | sed -n '1,260p'",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -570,7 +570,7 @@ id: call_CoPot6riCCx9kEAQ59jdk68k
 ```json
 {
   "cmd": "nl -ba e2e/agents/agent.go | sed -n '1,220p'",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -583,7 +583,7 @@ id: call_kKLJFvbpfDsw3eP8oiPAv1ez
 ```json
 {
   "cmd": "nl -ba mise.toml | sed -n '1,220p'",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -762,7 +762,7 @@ id: call_iJlMaKwFcLn5A5fIN5FMrW9B
 ```json
 {
   "cmd": "rg -n \"Bootstrap\\(|StartSession\\(|RunPrompt\\(|Close\\(|ForEachAgent\\(\" e2e -g'*.go'",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -775,7 +775,7 @@ id: call_VnLBdY4nsdF63Yd7m4RY25R7
 ```json
 {
   "cmd": "nl -ba e2e/testutil/repo_state.go | sed -n '1,260p'",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -788,7 +788,7 @@ id: call_qQGm5nqXPbdxmiU6dUQJerHl
 ```json
 {
   "cmd": "nl -ba e2e/testutil/foreach_agent.go | sed -n '1,260p'",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -852,7 +852,7 @@ id: call_WrnUknqnKFrkO3FQiIQ0IJJO
 ```json
 {
   "cmd": "nl -ba e2e/testutil/repo.go | sed -n '1,320p'",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -865,7 +865,7 @@ id: call_jdFqEH4MQuzpTqWB1yGry1YP
 ```json
 {
   "cmd": "nl -ba e2e/testutil/artifacts.go | sed -n '1,220p'",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -878,7 +878,7 @@ id: call_72EJfgulf0kUsmvOHydqfZ4L
 ```json
 {
   "cmd": "nl -ba e2e/bootstrap/main.go | sed -n '1,220p'",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -1040,7 +1040,7 @@ id: call_Cr3WiBJFcMs9VfwKzv5E1anI
 ```json
 {
   "cmd": "nl -ba docs/rfds/windows-e2e-design.md | sed -n '1,340p'",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -1053,7 +1053,7 @@ id: call_fBhhdeXaL1I9xbK8Ejo7s2zn
 ```json
 {
   "cmd": "nl -ba docs/rfds/windows-e2e-design-timeline.md | sed -n '1,260p'",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -1119,9 +1119,9 @@ Output:
 
 **Findings**
 
-1. High: the `/test-e2e` `issue_comment` design is still unsafe once secrets are added. The doc treats `author_association` as the load-bearing control, but the workflow still resolves and checks out the PR head SHA from arbitrary refs, so a maintainer commenting on a malicious fork PR would run attacker code with repo secrets. That is exactly the path the doc says is acceptable for external contributors. See [windows-e2e-design.md](/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/docs/rfds/windows-e2e-design.md:219), [windows-e2e-design.md](/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/docs/rfds/windows-e2e-design.md:287), [windows-e2e-design.md](/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/docs/rfds/windows-e2e-design.md:334), and the timeline’s repeated approval of that assumption in [windows-e2e-design-timeline.md](/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/docs/rfds/windows-e2e-design-timeline.md:11). This needs a stronger boundary: either no secrets on `issue_comment`, or restrict secret-bearing runs to same-repo branches / manual dispatch only.
+1. High: the `/test-e2e` `issue_comment` design is still unsafe once secrets are added. The doc treats `author_association` as the load-bearing control, but the workflow still resolves and checks out the PR head SHA from arbitrary refs, so a maintainer commenting on a malicious fork PR would run attacker code with repo secrets. That is exactly the path the doc says is acceptable for external contributors. See [windows-e2e-design.md](/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/docs/rfds/windows-e2e-design.md:219), [windows-e2e-design.md](/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/docs/rfds/windows-e2e-design.md:287), [windows-e2e-design.md](/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/docs/rfds/windows-e2e-design.md:334), and the timeline’s repeated approval of that assumption in [windows-e2e-design-timeline.md](/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/docs/rfds/windows-e2e-design-timeline.md:11). This needs a stronger boundary: either no secrets on `issue_comment`, or restrict secret-bearing runs to same-repo branches / manual dispatch only.
 
-2. High: the auth follow-up plan relies on `Bootstrap()`, but nothing in the proposed execution path calls it. The RFD says the follow-up commit will “update `Bootstrap()` to write the appropriate config file”, yet the workflow only runs `mise run test:e2e:lifecycle`, `TestMain` does not invoke bootstrap, and the only existing caller is the standalone bootstrap helper. See [windows-e2e-design.md](/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/docs/rfds/windows-e2e-design.md:301), [setup_test.go](/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e/setup_test.go:19), and [main.go](/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e/bootstrap/main.go:12). As written, removing `E2E_NO_AUTH` later still leaves no mechanism to materialize auth config.
+2. High: the auth follow-up plan relies on `Bootstrap()`, but nothing in the proposed execution path calls it. The RFD says the follow-up commit will “update `Bootstrap()` to write the appropriate config file”, yet the workflow only runs `mise run test:e2e:lifecycle`, `TestMain` does not invoke bootstrap, and the only existing caller is the standalone bootstrap helper. See [windows-e2e-design.md](/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/docs/rfds/windows-e2e-design.md:301), [setup_test.go](/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e/setup_test.go:19), and [main.go](/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e/bootstrap/main.go:12). As written, removing `E2E_NO_AUTH` later still leaves no mechanism to materialize auth config.
 
 3. Medium: the ConPTY design assumes an append-only ANSI-stripped byte stream is “close enough” to tmux’s rendered pane, but the wait logic depends on current-screen […]
 
@@ -1139,8 +1139,8 @@ tool_use exec_command
 id: call_1xIyLN2MCFxvjaEoSbUx9992
 ```json
 {
-  "cmd": "sed -n '1,240p' /Users/alisha/.codex/superpowers/skills/brainstorming/SKILL.md",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "cmd": "sed -n '1,240p' /home/<USER>/.codex/superpowers/skills/brainstorming/SKILL.md",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -1153,7 +1153,7 @@ id: call_WkBov3z3U328p4ZdHd45IL8H
 ```json
 {
   "cmd": "git status --short docs/rfds/windows-e2e-design.md docs/rfds/windows-e2e-design-timeline.md",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -1259,7 +1259,7 @@ id: call_gwiQqIMR1Cpcuqy4tmY2GN7U
 ```json
 {
   "cmd": "sed -n '180,360p' docs/rfds/windows-e2e-design.md",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -1272,7 +1272,7 @@ id: call_PbuI0cDFyCjdtfJIjJ7nM47A
 ```json
 {
   "cmd": "tail -n 60 docs/rfds/windows-e2e-design-timeline.md",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -1342,7 +1342,7 @@ id: call_232YZ7Krj2sArEztOToIrNts
 ```json
 {
   "cmd": "sed -n '360,520p' docs/rfds/windows-e2e-design.md",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -1389,7 +1389,7 @@ id: call_aJlawsoCP46LpkOYkcCJDDLe
 ```json
 {
   "cmd": "sed -n '58,360p' docs/rfds/windows-e2e-design.md",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -1402,7 +1402,7 @@ id: call_gXgAHR2H4IQ8cH1VJzoGwavC
 ```json
 {
   "cmd": "tail -n 80 docs/rfds/windows-e2e-design-timeline.md",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -1478,7 +1478,7 @@ id: call_0vkWh1wX8YagiSy2ITmODKLl
 ```json
 {
   "cmd": "rg -n \"ANSI-strip|E2E_AGENT_AUTH_READY|E2E_NO_AUTH|workflow_dispatch|Bootstrap\\(\\)|rendered-screen|no-secrets|smoke|full\" docs/rfds/windows-e2e-design.md",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -1491,7 +1491,7 @@ id: call_9Luxbn6zJHXeg5KRWZMvdH2s
 ```json
 {
   "cmd": "sed -n '300,460p' docs/rfds/windows-e2e-design.md",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -1595,7 +1595,7 @@ id: call_Tb0cXnJFGxcRO93RxGZc3QwP
 ```json
 {
   "cmd": "git diff -- docs/rfds/windows-e2e-design.md docs/rfds/windows-e2e-design-timeline.md",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -1608,7 +1608,7 @@ id: call_4D7uqBGCDxhSrOlSxmVG6zrT
 ```json
 {
   "cmd": "git status --short docs/rfds/windows-e2e-design.md docs/rfds/windows-e2e-design-timeline.md",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -1676,14 +1676,14 @@ Plan updated
 
 > AGENT
 
-Updated [windows-e2e-design.md](/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/docs/rfds/windows-e2e-design.md) with the stricter design:
+Updated [windows-e2e-design.md](/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/docs/rfds/windows-e2e-design.md) with the stricter design:
 
 - `/test-e2e` is now explicitly smoke-only and no-secret.
 - Secret-bearing runs moved to `workflow_dispatch mode=full` and are rejected for fork refs.
 - `Bootstrap()` is now on the actual workflow path via a new `test:e2e:bootstrap` task.
 - ConPTY now requires rendered-screen semantics from v1 instead of ANSI-stripped history.
 
-I also appended a codex rationale entry to [windows-e2e-design-timeline.md](/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/docs/rfds/windows-e2e-design-timeline.md).
+I also appended a codex rationale entry to [windows-e2e-design-timeline.md](/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/docs/rfds/windows-e2e-design-timeline.md).
 
 I did not run tests; this was a doc-only update. One note: both docs currently show as untracked in git in this worktree.
 
@@ -1702,7 +1702,7 @@ id: call_YYgeAgCbrPyjHOt33FSsmJrt
 ```json
 {
   "cmd": "nl -ba docs/rfds/windows-e2e-design.md | sed -n '1,260p'",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -1715,7 +1715,7 @@ id: call_aTpY2zL2dGQBEsFqWZx293En
 ```json
 {
   "cmd": "nl -ba docs/rfds/windows-e2e-design.md | sed -n '260,520p'",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -1728,7 +1728,7 @@ id: call_cFgF7IEaLta7TRHhe6xnMU2s
 ```json
 {
   "cmd": "nl -ba e2e/testutil/repo.go | sed -n '100,240p'",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 9000
 }
@@ -1741,7 +1741,7 @@ id: call_oft9zArEO9ELI4yez4bhwWZl
 ```json
 {
   "cmd": "nl -ba e2e/bootstrap/main.go | sed -n '1,120p'",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 3000
 }
@@ -1754,7 +1754,7 @@ id: call_kJ65DkCQsxbCAAgbF5EgbzQN
 ```json
 {
   "cmd": "nl -ba mise.toml | sed -n '1,120p'",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -1981,7 +1981,7 @@ id: call_yMVQ8f1qF3FwTrSSEV64YSCL
 ```json
 {
   "cmd": "nl -ba e2e/agents/kiro.go | sed -n '56,120p'",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -1994,7 +1994,7 @@ id: call_HQLrd8jC0rAZYvQkIjm4pxig
 ```json
 {
   "cmd": "nl -ba e2e/agents/pi.go | sed -n '55,120p'",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -2111,10 +2111,10 @@ Output:
 Not quite, and the distinction matters.
 
 **Current repo behavior**
-As the code exists today, local e2e uses whatever agent CLIs are already installed and authenticated on the machine. `Kiro.RunPrompt` and `Pi.RunPrompt` both `LookPath(...)` the local binary and execute it with the current environment, minus only `ENTIRE_TEST_TTY` ([kiro.go](/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e/agents/kiro.go:62), [pi.go](/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e/agents/pi.go:61)). There is no CI bootstrap task implemented yet; `mise.toml` still only has `test:e2e:lifecycle` and still has the old Unix-only command wrapper ([mise.toml](/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/mise.toml:19)).
+As the code exists today, local e2e uses whatever agent CLIs are already installed and authenticated on the machine. `Kiro.RunPrompt` and `Pi.RunPrompt` both `LookPath(...)` the local binary and execute it with the current environment, minus only `ENTIRE_TEST_TTY` ([kiro.go](/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e/agents/kiro.go:62), [pi.go](/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e/agents/pi.go:61)). There is no CI bootstrap task implemented yet; `mise.toml` still only has `test:e2e:lifecycle` and still has the old Unix-only command wrapper ([mise.toml](/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/mise.toml:19)).
 
 **What the RFD now says it should become**
-Yes: locally, the default path should use your locally installed/authenticated agent CLIs. In CI full mode, it should still use the same CLIs, but authenticated via repo secrets materialized by `Bootstrap()` before tests run. That is now spelled out in the RFD’s smoke/full split and bootstrap flow ([windows-e2e-design.md](/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/docs/rfds/windows-e2e-design.md:299), [windows-e2e-design.md](/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/docs/rfds/windows-e2e-design.md:358), [main.go](/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e/bootstrap/main.go:12)).
+Yes: locally, the default path should use your locally installed/authenticated agent CLIs. In CI full mode, it should still use the same CLIs, but authenticated via repo secrets materialized by `Bootstrap()` before tests run. That is now spelled out in the RFD’s smoke/full split and bootstrap flow ([windows-e2e-design.md](/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/docs/rfds/windows-e2e-design.md:299), [windows-e2e-design.md](/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/docs/rfds/windows-e2e-design.md:358), [main.go](/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e/bootstrap/main.go:12)).
 
 **Where the RFD still does not match your requirement**
 If by “choose mac or windows locally” you mean “from one machine, select which OS to run,” then no: the design does not provide that, and realistically it cannot without a VM, remote runner, or similar. The host OS determines the path. What the design does support is:
@@ -2160,8 +2160,8 @@ tool_use exec_command
 id: call_VE2zf06qyxoBNIv0bxMm92Pd
 ```json
 {
-  "cmd": "sed -n '1,240p' /Users/alisha/.codex/superpowers/skills/writing-plans/SKILL.md",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "cmd": "sed -n '1,240p' /home/<USER>/.codex/superpowers/skills/writing-plans/SKILL.md",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -2173,8 +2173,8 @@ tool_use exec_command
 id: call_Hy43k2GoLSNqpDdQERyuAIpg
 ```json
 {
-  "cmd": "sed -n '1,260p' /Users/alisha/.codex/superpowers/skills/test-driven-development/SKILL.md",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "cmd": "sed -n '1,260p' /home/<USER>/.codex/superpowers/skills/test-driven-development/SKILL.md",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -2186,8 +2186,8 @@ tool_use exec_command
 id: call_4adeQEg3zNiiz48veL19MygK
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/alisha/.codex/superpowers/skills/verification-before-completion/SKILL.md",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/superpowers/skills/verification-before-completion/SKILL.md",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -2200,7 +2200,7 @@ id: call_9QU43Tlg64SRdZyCVBdC0Bmv
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 3000
 }
@@ -2388,7 +2388,7 @@ id: call_sSCPM62Yo7R1jofQmcRsBm5m
 ```json
 {
   "cmd": "rg --files e2e",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -2401,7 +2401,7 @@ id: call_o5h5r7XZcDVtID22manb9wtN
 ```json
 {
   "cmd": "sed -n '1,200p' e2e/go.mod",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 3000
 }
@@ -2414,7 +2414,7 @@ id: call_TPKEuIbUZxHEj8xEJvdYPL7f
 ```json
 {
   "cmd": "sed -n '1,220p' e2e/agents/tmux.go",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -2427,7 +2427,7 @@ id: call_YSpfVzC64RoyVzeG17hUogEu
 ```json
 {
   "cmd": "sed -n '1,220p' e2e/setup_test.go",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -2440,7 +2440,7 @@ id: call_376HOxG8lYb8KixiQnaVYa5a
 ```json
 {
   "cmd": "sed -n '1,220p' e2e/build.go",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -2723,7 +2723,7 @@ id: call_z27P8lsS2O9CQw3R376vi1i1
 ```json
 {
   "cmd": "ls -la .github/workflows",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 3000
 }
@@ -2736,7 +2736,7 @@ id: call_2DHQdSvk0p5rn9LVyz741c9G
 ```json
 {
   "cmd": "rg -n \"test:e2e:bootstrap|requireAgentAuth|translateKey|newInteractiveSession|configureCmdProcAttr\" -S",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -2800,7 +2800,7 @@ id: call_vC8N0Acqv4z2JvLzkdC0qjWY
 ```json
 {
   "cmd": "sed -n '1,240p' .github/workflows/ci.yml",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -2813,7 +2813,7 @@ id: call_yb4mlsqybG7IMwzepWMOsBD6
 ```json
 {
   "cmd": "sed -n '1,220p' .github/workflows/protocol-compliance.yml",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -2971,7 +2971,7 @@ id: call_2OiGOiroUA0FS535uN2KyZRk
 ```json
 {
   "cmd": "rg -n \"KIRO|kiro|PI_|pi auth|bootstrap|API_KEY|token|settings.json|auth\" agents e2e -g'*.go' -g'*.md' -g'*.json'",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -2984,7 +2984,7 @@ id: call_wHIplpPaCTmtOVAYtF5pHxNa
 ```json
 {
   "cmd": "rg -n \"kiro-cli-chat|pi\\b\" -S ..",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -3047,7 +3047,7 @@ id: call_y8lcckOeYlym2nw4ICzryCSq
 ```json
 {
   "cmd": "rg -n \"SIGV4|device-flow|oauth|AWS|AUTH|api key|API key|credential|credentials|token\" agents/entire-agent-kiro -g'*.md' -g'*.go'",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -3060,7 +3060,7 @@ id: call_MbZ7yZJmfAPl7P1wbGRFzV3M
 ```json
 {
   "cmd": "sed -n '1,180p' agents/entire-agent-kiro/AGENT.md",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -3120,7 +3120,7 @@ id: call_X0htsUdHwuQ9fmtV7NdYMNci
 ```json
 {
   "cmd": "rg -n \"\\[tasks\\..*env|^env = \\{|^env\\.|\\.env\\]\" -g'mise.toml' -g'*.toml' ..",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -3133,7 +3133,7 @@ id: call_4wWIFkv8cGtQzGPE4yBivvhu
 ```json
 {
   "cmd": "mise --version",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -3214,7 +3214,7 @@ id: call_ppXuQiKu79DEa9oTlDfUPGRN
 ```json
 {
   "cmd": "go test ./e2e/agents -run 'TestTranslateKey|TestRenderedScreen'",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -3227,7 +3227,7 @@ id: call_JY2HwLs0hI9b0BMdZTe3b67c
 ```json
 {
   "cmd": "go test -tags=e2e ./e2e -run 'TestAgentBinaryPath|TestShouldSkipAuthGatedTests|TestInteractiveSessionSkipReason'",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -3245,7 +3245,7 @@ Original token count: 39
 Output:
 FAIL	./e2e/agents [setup failed]
 # ./e2e/agents
-stat /Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e/e2e/agents: directory not found
+stat /home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e/e2e/agents: directory not found
 FAIL
 
 ```
@@ -3275,7 +3275,7 @@ id: call_s9ezCkQRtm4TwpNXUsHZjI5u
 ```json
 {
   "cmd": "go test ./agents -run 'TestTranslateKey|TestRenderedScreen'",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -3288,7 +3288,7 @@ id: call_0P4MPm7Jfx243I47TLStEVPN
 ```json
 {
   "cmd": "go test -tags=e2e . -run 'TestAgentBinaryPath|TestShouldSkipAuthGatedTests|TestInteractiveSessionSkipReason'",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -3350,7 +3350,7 @@ id: call_MWRPzNEoVwLIl5Nq5dlGEwJ5
 ```json
 {
   "cmd": "go test ./agents -run 'TestTranslateKey|TestRenderedScreen'",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -3363,7 +3363,7 @@ id: call_xK6kvnz2DxUJCIgS1f4aYy1q
 ```json
 {
   "cmd": "go test -tags=e2e . -run 'TestAgentBinaryPath|TestShouldSkipAuthGatedTests|TestInteractiveSessionSkipReason'",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -3438,7 +3438,7 @@ id: call_qNWdMtQuvUxXaGaWZSPCkvga
 ```json
 {
   "cmd": "rg -n \"kiro-cli|pi install|@mariozechner/pi-coding-agent|cli.kiro.dev|brew install|npm install -g\" -S .",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -3451,7 +3451,7 @@ id: call_PCMYQ8JwGrh1lu6crHfOcmyy
 ```json
 {
   "cmd": "sed -n '1,220p' e2e/README.md",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -3533,7 +3533,7 @@ id: call_1td5HYknbhXuzQpEPa9PaXYD
 ```json
 {
   "cmd": "go test ./agents -run 'TestLookPathAny|TestKiroBootstrap|TestPiBootstrap|TestTranslateKey|TestRenderedScreen'",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -3572,7 +3572,7 @@ id: call_tlmW32CIfzMQnPZ8dL8RotuF
 ```json
 {
   "cmd": "go test ./agents -run 'TestLookPathAny|TestKiroBootstrap|TestPiBootstrap|TestTranslateKey|TestRenderedScreen'",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -3585,7 +3585,7 @@ id: call_zlyADKI4ueyg2JUVIEVs2Taq
 ```json
 {
   "cmd": "go test -tags=e2e . -run 'TestAgentBinaryPath|TestShouldSkipAuthGatedTests|TestInteractiveSessionSkipReason'",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -3660,7 +3660,7 @@ id: call_oEcaGllfNwyZL6h82lvKEOPO
 ```json
 {
   "cmd": "sed -n '1,220p' e2e/entire/entire.go",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -3673,7 +3673,7 @@ id: call_zkPFbZsgHcBjo46RA0onLjYp
 ```json
 {
   "cmd": "sed -n '1,220p' README.md",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -3686,7 +3686,7 @@ id: call_61MX5KNYDFm9s81XEqmXpU6f
 ```json
 {
   "cmd": "ls -la bin",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 3000
 }
@@ -3813,7 +3813,7 @@ id: call_9hJMgW5T6YRB3WNUlxYBTSlQ
 ```json
 {
   "cmd": "rg -n \"go install .*entire|E2E_ENTIRE_BIN|\\bentire\\b.*install|github.com/entireio/cli/cmd/entire\" -S .github README.md e2e agents",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -3826,7 +3826,7 @@ id: call_k0CK7WHXrjwIJ4hBQAg6C2Ry
 ```json
 {
   "cmd": "git remote -v",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 3000
 }
@@ -3866,8 +3866,8 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 30
 Output:
-origin	git@github.com:entireio/external-agents.git (fetch)
-origin	git@github.com:entireio/external-agents.git (push)
+origin	<REDACTED_EMAIL>:entireio/external-agents.git (fetch)
+origin	<REDACTED_EMAIL>:entireio/external-agents.git (push)
 
 ```
 
@@ -3878,7 +3878,7 @@ id: call_1QPW5OsGeVeaFdlWHu1xjkVr
 ```json
 {
   "cmd": "sed -n '1,260p' e2e/agents/conpty_windows.go",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 9000
 }
@@ -4000,7 +4000,7 @@ id: call_MrEND75tLfZ56cOK83LTivLH
 ```json
 {
   "cmd": "gofmt -w e2e/agents/*.go e2e/*.go e2e/testutil/*.go e2e/entire/*.go e2e/bootstrap/*.go",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -4030,7 +4030,7 @@ id: call_7bETKFS6s3GhuRzAMGE2N9Mn
 ```json
 {
   "cmd": "go test ./agents",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -4043,7 +4043,7 @@ id: call_o0lht9NmrQBeHPiGcj88zlU0
 ```json
 {
   "cmd": "go test -tags=e2e . -run 'TestAgentBinaryPath|TestShouldSkipAuthGatedTests|TestInteractiveSessionSkipReason'",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -4056,7 +4056,7 @@ id: call_jhCUPjJBGmlYWICPsZ8UcJ1S
 ```json
 {
   "cmd": "GOOS=windows GOARCH=amd64 go test -c ./agents",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -4102,7 +4102,7 @@ Original token count: 46
 Output:
 FAIL	./agents [setup failed]
 # ./agents
-open /Users/alisha/Library/Caches/go-build/74/741fd0c6caccb246a7c21b5b58d6347f2488cca08d29b9f588eb8d329bc51882-d: operation not permitted
+open /home/<USER>/Library/Caches/go-build/74/741fd0c6caccb246a7c21b5b58d6347f2488cca08d29b9f588eb8d329bc51882-d: operation not permitted
 FAIL
 
 ```
@@ -4118,7 +4118,7 @@ id: call_8xchDHoy6FYaSOgSZ2JhcAas
 ```json
 {
   "cmd": "go test -c ./agents",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "shell": "zsh",
@@ -4142,7 +4142,7 @@ id: call_GvPtNpHNexfW4QfWMuf4Ph7j
 ```json
 {
   "cmd": "GOCACHE=/tmp/e2e-go-cache GOOS=windows GOARCH=amd64 go test -c ./agents",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -4177,7 +4177,7 @@ id: call_ZWty0GKGV3T5YfwFhVzuRTKe
 ```json
 {
   "cmd": "go mod download github.com/UserExistsError/conpty",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "sandbox_permissions": "require_escalated",
@@ -4214,7 +4214,7 @@ id: call_zm06L4M4boyxZznVtcfaxoIX
 ```json
 {
   "cmd": "GOCACHE=/tmp/e2e-go-cache GOOS=windows GOARCH=amd64 go test -c ./agents",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -4227,7 +4227,7 @@ id: call_3Xkp6eNRm7horlAD1gozFfRG
 ```json
 {
   "cmd": "mise run test:e2e:smoke",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -4244,7 +4244,7 @@ Process exited with code 1
 Original token count: 92
 Output:
 # github.com/entireio/external-agents/e2e/agents
-/Users/alisha/go/pkg/mod/github.com/!user!exists!error/conpty@v0.1.4/conpty.go:13:2: github.com/UserExistsError/conpty@v0.1.4 requires
+/home/<USER>/go/pkg/mod/github.com/!user!exists!error/conpty@v0.1.4/conpty.go:13:2: github.com/UserExistsError/conpty@v0.1.4 requires
 	golang.org/x/sys@v0.8.0: missing go.sum entry for go.mod file; to add it:
 	go mod download golang.org/x/sys
 FAIL	github.com/entireio/external-agents/e2e/agents [setup failed]
@@ -4285,7 +4285,7 @@ id: call_aPjqJlcGDrVF5HVvjxVGGCx6
 ```json
 {
   "cmd": "go mod download golang.org/x/sys",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "sandbox_permissions": "require_escalated",
@@ -4322,7 +4322,7 @@ id: call_Ud3heezDUWBC5H3NyErIgVrX
 ```json
 {
   "cmd": "GOCACHE=/tmp/e2e-go-cache GOOS=windows GOARCH=amd64 go test -c ./agents",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -4335,7 +4335,7 @@ id: call_4pkjmFVLh4OqGynaEtxFmnPI
 ```json
 {
   "cmd": "E2E_NO_AUTH=1 go test -tags=e2e -v -count=1 -run TestLifecycle ./...",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -4368,7 +4368,7 @@ Original token count: 143
 Output:
 FAIL	github.com/entireio/external-agents/e2e [setup failed]
 # github.com/entireio/external-agents/e2e
-open /Users/alisha/Library/Caches/go-build/98/9884ac7745eb2c89c0698223757608b830ab8d8f5e70634d1edce01f4763af47-a: operation not permitted
+open /home/<USER>/Library/Caches/go-build/98/9884ac7745eb2c89c0698223757608b830ab8d8f5e70634d1edce01f4763af47-a: operation not permitted
 testing: warning: no tests to run
 PASS
 ok  	github.com/entireio/external-agents/e2e/agents	0.336s [no tests to run]
@@ -4395,7 +4395,7 @@ id: call_QrOPKeMjrSpZJZhJ3OeiWQ7i
 ```json
 {
   "cmd": "go mod tidy",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -4408,7 +4408,7 @@ id: call_bu3FBPKvlFv7crAx7pwZn6o2
 ```json
 {
   "cmd": "GOCACHE=/tmp/e2e-go-cache E2E_NO_AUTH=1 go test -tags=e2e -v -count=1 -run TestLifecycle ./...",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -4424,16 +4424,16 @@ Wall time: 0.0000 seconds
 Process exited with code 1
 Original token count: 294
 Output:
-go: github.com/entireio/external-agents/e2e: open /Users/alisha/Library/Caches/go-build/98/9884ac7745eb2c89c0698223757608b830ab8d8f5e70634d1edce01f4763af47-a: operation not permitted
-go: github.com/entireio/external-agents/e2e/artifacts: open /Users/alisha/Library/Caches/go-build/c0/c0fb6893019bfc7311398d1441a5436d3549668d9cbb8626e0b006de3c9ab3d2-d: operation not permitted
-go: github.com/entireio/external-agents/e2e/artifacts/2026-04-28T16-54-57: open /Users/alisha/Library/Caches/go-build/b6/b6fed0bc979e3623dd8c9adbb31ef47e888542022cda64b59de2cbb1f9f90c97-d: operation not permitted
-go: github.com/entireio/external-agents/e2e/artifacts/2026-04-28T16-58-07: open /Users/alisha/Library/Caches/go-build/56/56e5f132c7be36555d7372cf84c8f033882406b7d884c3309adec0b65b631080-d: operation not permitted
+go: github.com/entireio/external-agents/e2e: open /home/<USER>/Library/Caches/go-build/98/9884ac7745eb2c89c0698223757608b830ab8d8f5e70634d1edce01f4763af47-a: operation not permitted
+go: github.com/entireio/external-agents/e2e/artifacts: open /home/<USER>/Library/Caches/go-build/c0/c0fb6893019bfc7311398d1441a5436d3549668d9cbb8626e0b006de3c9ab3d2-d: operation not permitted
+go: github.com/entireio/external-agents/e2e/artifacts/2026-04-28T16-54-57: open /home/<USER>/Library/Caches/go-build/b6/b6fed0bc979e3623dd8c9adbb31ef47e888542022cda64b59de2cbb1f9f90c97-d: operation not permitted
+go: github.com/entireio/external-agents/e2e/artifacts/2026-04-28T16-58-07: open /home/<USER>/Library/Caches/go-build/56/56e5f132c7be36555d7372cf84c8f033882406b7d884c3309adec0b65b631080-d: operation not permitted
 go: github.com/entireio/external-agents/e2e/testutil imports
 	github.com/stretchr/testify/assert imports
 	github.com/stretchr/testify/assert/yaml imports
 	gopkg.in/yaml.v3 tested by
 	gopkg.in/yaml.v3.test imports
-	gopkg.in/check.v1: open /Users/alisha/Library/Caches/go-build/0e/0ed7a47881dac781200c3473c9a0633c522b435bfa01b8c058c898e1809eb262-d: operation not permitted
+	gopkg.in/check.v1: open /home/<USER>/Library/Caches/go-build/0e/0ed7a47881dac781200c3473c9a0633c522b435bfa01b8c058c898e1809eb262-d: operation not permitted
 
 ```
 
@@ -4545,7 +4545,7 @@ id: call_CUcCgxz7Y2yTpNa7CmEhwjzx
 ```json
 {
   "cmd": "GOCACHE=/tmp/e2e-go-cache go mod tidy",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -4558,7 +4558,7 @@ id: call_gspKNwKD1mTz3Gak0aSQXXbc
 ```json
 {
   "cmd": "GOCACHE=/tmp/e2e-go-cache GOOS=windows GOARCH=amd64 go test -c ./agents",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -4603,7 +4603,7 @@ id: call_yaqEP1Vl2wFyGqv1TXXkXnDd
 ```json
 {
   "cmd": "GOCACHE=/tmp/e2e-go-cache GOOS=windows GOARCH=amd64 go mod tidy",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -4616,7 +4616,7 @@ id: call_7b3imO3KENDdhoWy8mL7AvMG
 ```json
 {
   "cmd": "sed -n '1,120p' go.mod",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -4629,7 +4629,7 @@ id: call_NxqTo2YZG1gTorCO9AewSvIQ
 ```json
 {
   "cmd": "sed -n '1,120p' go.sum",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -4710,7 +4710,7 @@ id: call_F4Iw84BXV8XqLmfD8WOucJ6w
 ```json
 {
   "cmd": "GOCACHE=/tmp/e2e-go-cache GOOS=windows GOARCH=amd64 go test -c ./agents",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -4770,7 +4770,7 @@ id: call_kZ1AJ5kan7UpNKlsmHDsIusU
 ```json
 {
   "cmd": "python3 -c \"import tomllib, pathlib; tomllib.loads(pathlib.Path('mise.toml').read_text())\"",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -4783,7 +4783,7 @@ id: call_dzal92aD0PpvNew7WqXjtCph
 ```json
 {
   "cmd": "ruby -e \"require 'yaml'; YAML.load_file('.github/workflows/e2e.yml')\"",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -4796,7 +4796,7 @@ id: call_ewYN4weXIIcq40MwgvnUK5K4
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -4879,7 +4879,7 @@ id: call_TR2hWAOfuNjDe8uJ7hIhYcm3
 ```json
 {
   "cmd": "rm e2e/agents.test.exe",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -4905,7 +4905,7 @@ id: call_0FAtGt3BlYBGiylORjsvOAjh
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -4988,7 +4988,7 @@ Plan updated
 
 > AGENT
 
-Implemented the harness and CI changes in [mise.toml](/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/mise.toml), [e2e/setup_test.go](/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e/setup_test.go), [e2e/lifecycle_test.go](/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e/lifecycle_test.go), the new Windows/session files under [e2e/agents](/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e/agents), and the new workflow [e2e.yml](/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/.github/workflows/e2e.yml).
+Implemented the harness and CI changes in [mise.toml](/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/mise.toml), [e2e/setup_test.go](/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e/setup_test.go), [e2e/lifecycle_test.go](/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e/lifecycle_test.go), the new Windows/session files under [e2e/agents](/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e/agents), and the new workflow [e2e.yml](/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/.github/workflows/e2e.yml).
 
 Behavior now is:
 
@@ -5023,8 +5023,8 @@ tool_use exec_command
 id: call_zRDIzNMVGA3h6vyxhP1uqdqC
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/alisha/.codex/superpowers/skills/finishing-a-development-branch/SKILL.md",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/superpowers/skills/finishing-a-development-branch/SKILL.md",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -5037,7 +5037,7 @@ id: call_NUnIBw6Phs6hkbAVzKVuhXAq
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -5050,7 +5050,7 @@ id: call_GyUF4gqpOfGETimbT6qTAfda
 ```json
 {
   "cmd": "git diff --stat",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -5187,7 +5187,7 @@ id: call_fFPSsNvTmIUyHR2SqyWxC5lr
 ```json
 {
   "cmd": "go test ./agents",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -5200,7 +5200,7 @@ id: call_pzPbnDSbSbQagNtbKe2kZy2G
 ```json
 {
   "cmd": "GOCACHE=/tmp/e2e-go-cache E2E_NO_AUTH=1 go test -tags=e2e -v -count=1 -run TestLifecycle ./...",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -5213,7 +5213,7 @@ id: call_1B8SQFIaX071KTIsK1QpQmEW
 ```json
 {
   "cmd": "GOCACHE=/tmp/e2e-go-cache GOOS=windows GOARCH=amd64 go test -c ./agents",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -5358,7 +5358,7 @@ id: call_ffPtsYwdStht5nlyIQ6QLtGV
 ```json
 {
   "cmd": "git add -A",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -5371,7 +5371,7 @@ id: call_pVozicRjCyu2sbEA8OahHmqR
 ```json
 {
   "cmd": "git commit -m \"feat: add windows e2e harness and workflow\"",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -5400,7 +5400,7 @@ Wall time: 0.0000 seconds
 Process exited with code 128
 Original token count: 54
 Output:
-fatal: Unable to create '/Users/alisha/Projects/external-agents/.git/worktrees/kiro-windows-bug/index.lock': File exists.
+fatal: Unable to create '/home/<USER>/Projects/external-agents/.git/worktrees/kiro-windows-bug/index.lock': File exists.
 
 Another git process seems to be running in this repository, or the lock file may be stale
 
@@ -5416,8 +5416,8 @@ tool_use exec_command
 id: call_eafKGeHcAinHbg8FyLEXIB2F
 ```json
 {
-  "cmd": "ls -l /Users/alisha/Projects/external-agents/.git/worktrees/kiro-windows-bug/index.lock",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "cmd": "ls -l /home/<USER>/Projects/external-agents/.git/worktrees/kiro-windows-bug/index.lock",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -5430,7 +5430,7 @@ id: call_4kYLw0l2tmFvDQEXh2zMqwNR
 ```json
 {
   "cmd": "ps -ax | rg \"git( |$)\"",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -5443,7 +5443,7 @@ id: call_okRONBxpfeJC44FPA8aG7ndm
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -5459,7 +5459,7 @@ Wall time: 0.0000 seconds
 Process exited with code 1
 Original token count: 29
 Output:
-ls: /Users/alisha/Projects/external-agents/.git/worktrees/kiro-windows-bug/index.lock: No such file or directory
+ls: /home/<USER>/Projects/external-agents/.git/worktrees/kiro-windows-bug/index.lock: No such file or directory
 
 ```
 
@@ -5531,7 +5531,7 @@ id: call_KwVBagwpk5yLEae4zk1yb7Sl
 ```json
 {
   "cmd": "rm -f e2e/agents.test.exe",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -5544,7 +5544,7 @@ id: call_UAPDt0JLn864XhPmINK7kMxt
 ```json
 {
   "cmd": "git rm --cached -f e2e/agents.test.exe",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -5557,7 +5557,7 @@ id: call_CT0tbd6PIOCCgv93OhcqEBIV
 ```json
 {
   "cmd": "git commit -m \"feat: add windows e2e harness and workflow\"",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -5586,7 +5586,7 @@ Wall time: 0.0000 seconds
 Process exited with code 128
 Original token count: 34
 Output:
-fatal: Unable to create '/Users/alisha/Projects/external-agents/.git/worktrees/kiro-windows-bug/index.lock': Operation not permitted
+fatal: Unable to create '/home/<USER>/Projects/external-agents/.git/worktrees/kiro-windows-bug/index.lock': Operation not permitted
 
 ```
 
@@ -5667,7 +5667,7 @@ id: call_iYkoEGN3gWqgnaDRVOybjegy
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -5680,7 +5680,7 @@ id: call_6773hbNvMUokfWYYQ8sMAkBp
 ```json
 {
   "cmd": "rm -f e2e/agents.test.exe && git rm -f e2e/agents.test.exe",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -5693,7 +5693,7 @@ id: call_LhXDBCquvXg95mxCCSctuA3w
 ```json
 {
   "cmd": "git commit -m \"chore: remove generated windows test binary\"",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -5723,7 +5723,7 @@ Wall time: 0.0000 seconds
 Process exited with code 128
 Original token count: 34
 Output:
-fatal: Unable to create '/Users/alisha/Projects/external-agents/.git/worktrees/kiro-windows-bug/index.lock': Operation not permitted
+fatal: Unable to create '/home/<USER>/Projects/external-agents/.git/worktrees/kiro-windows-bug/index.lock': Operation not permitted
 
 ```
 
@@ -5758,7 +5758,7 @@ id: call_wK9o8iBXVBSGjTTUtryhAspY
 ```json
 {
   "cmd": "git rm -f e2e/agents.test.exe",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -5774,7 +5774,7 @@ Wall time: 0.0000 seconds
 Process exited with code 128
 Original token count: 34
 Output:
-fatal: Unable to create '/Users/alisha/Projects/external-agents/.git/worktrees/kiro-windows-bug/index.lock': Operation not permitted
+fatal: Unable to create '/home/<USER>/Projects/external-agents/.git/worktrees/kiro-windows-bug/index.lock': Operation not permitted
 
 ```
 
@@ -5789,7 +5789,7 @@ id: call_c88D61TtPGZtwGHBxW9bHGeU
 ```json
 {
   "cmd": "git add -A",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -5815,7 +5815,7 @@ id: call_7qVb7lT77PuebjhJmIauns1O
 ```json
 {
   "cmd": "git commit -m \"chore: remove generated windows test binary\"",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -5848,7 +5848,7 @@ id: call_idgag1e1BqbNlX0sA3Qg2yJU
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 3000
 }
@@ -5861,7 +5861,7 @@ id: call_XK5FgxL1l00p211he8XkIzJl
 ```json
 {
   "cmd": "git log --oneline -2",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 3000
 }
@@ -5919,7 +5919,7 @@ id: call_xM33jd0kfd5irIvgF0XOiZWa
 ```json
 {
   "cmd": "sed -n '1,140p' mise.toml",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -5932,7 +5932,7 @@ id: call_QQmfxmlg1Njy7z8fsaWp0LLZ
 ```json
 {
   "cmd": "sed -n '1,260p' .github/workflows/e2e.yml",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -5945,7 +5945,7 @@ id: call_PHyE78xGqPSJWv1HZLqANzcF
 ```json
 {
   "cmd": "rg -n \"E2E_NO_AUTH|E2E_API_KEY_AUTH|requireAgentAuth|interactiveSessionSkipReason\" e2e -g'*.go'",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -6255,7 +6255,7 @@ id: call_ut4qJKPb1k1tI9Vm6oMsPB3f
 ```json
 {
   "cmd": "git branch --show-current",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -6268,7 +6268,7 @@ id: call_Fzl8IE51cJuFW5fpyuO8uFPr
 ```json
 {
   "cmd": "git status -sb",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -6281,7 +6281,7 @@ id: call_5hUl0fzCxFdiKMItCzPOiCaD
 ```json
 {
   "cmd": "git log --oneline -- .github/workflows/e2e.yml",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -6294,7 +6294,7 @@ id: call_oBCMPqS4zKjYqfHv6grlv9g6
 ```json
 {
   "cmd": "git rev-parse --abbrev-ref --symbolic-full-name @{u}",
-  "workdir": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug",
+  "workdir": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }

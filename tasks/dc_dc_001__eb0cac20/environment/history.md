@@ -177,7 +177,7 @@ tool_use exec_command
   "cmd": "set +e\nprintf '=== SWAP FILES ===\\n'; ls -lh /private/var/vm | sed -n '1,80p'; du -sh /private/var/vm 2>/dev/null\nprintf '\\n=== TOP LAUNCHAGENT PLISTS SUMMARY ===\\n'; for f in ~/Library/LaunchAgents/*.plist /Library/LaunchAgents/*.plist /Library/LaunchDaemons/*.plist; do [ -f \"$f\" ] || continue; echo '---' $f; plutil -p \"$f\" | egrep 'Label|Program|ProgramArguments|RunAtLoad|KeepAlive|StartInterval|StartCalendarInterval|WorkingDirectory' | sed -n '1,30p'; done\nprintf '\\n=== ACTIVE CUSTOM PIDS ===\\n'; ps -axo pid,ppid,%cpu,%mem,rss,etime,comm | egrep 'clash|mihomo|bedrock|frp|claude-to-im|tcptune|Macs Fan|GoogleUpdater|keystone|Logi|Rectangle|Notion|Lark|WeChat|QQ|Chrome|Claude|Codex|opencode' | sed -n '1,200p'\nprintf '\\n=== SPOTLIGHT STATUS ===\\n'; mdutil -s / 2>&1\nprintf '\\n=== LOCAL SNAPSHOTS ===\\n'; tmutil listlocalsnapshots / 2>&1 | sed -n '1,120p'\nprintf '\\n=== DISK I/O PROCESSES ===\\n'; iotop -P -n 1 -l 1 2>&1 | sed -n '1,80p'\nprintf '\\n=== CPU POWER SAMPLE ===\\n'; powermetrics --samplers cpu_power -n 1 -i 1000 2>&1 | sed -n '1,120p'\n",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000,
-  "workdir": "/Users/user_0a329be7/Desktop/识别"
+  "workdir": "/home/<USER>/Desktop/识别"
 }
 ```
 
@@ -196,7 +196,7 @@ tool_use exec_command
   "cmd": "set +e\nprintf '=== CACHE TOP ===\\n'; du -sh ~/Library/Caches/* 2>/dev/null | sort -hr | head -30\nprintf '\\n=== CLAUDE SUPPORT TOP ===\\n'; du -sh ~/Library/Application\\ Support/Claude/* 2>/dev/null | sort -hr | head -30\nprintf '\\n=== CHROME SUPPORT TOP ===\\n'; du -sh ~/Library/Application\\ Support/Google/Chrome/* 2>/dev/null | sort -hr | head -30\nprintf '\\n=== LIBRARY TOP ===\\n'; du -sh ~/Library/* 2>/dev/null | sort -hr | head -40\n",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
-  "workdir": "/Users/user_0a329be7/Desktop/识别"
+  "workdir": "/home/<USER>/Desktop/识别"
 }
 ```
 
@@ -335,7 +335,7 @@ tool_use exec_command
   "cmd": "set +e\nprintf '=== 5-SAMPLE CPU/POWER SNAPSHOT ===\\n'\nfor i in 1 2 3 4 5; do echo \"--- sample $i ---\"; ps -axo pid,ppid,%cpu,%mem,rss,comm -r | head -25; sleep 2; done\nprintf '\\n=== DISPLAY ===\\n'; system_profiler SPDisplaysDataType | sed -n '1,220p'\nprintf '\\n=== USB/THUNDERBOLT POWER RELEVANT ===\\n'; system_profiler SPUSBDataType SPThunderboltDataType | egrep -A8 -B2 'Product ID|Vendor ID|Current Available|Current Required|Extra Operating Current|Speed|Manufacturer|Device|Bus|Thunderbolt|USB' | sed -n '1,240p'\nprintf '\\n=== BLUETOOTH CONNECTED ===\\n'; system_profiler SPBluetoothDataType | sed -n '/Connected:/,/Not Connected:/p' | sed -n '1,160p'\nprintf '\\n=== POWER LOG WAKE/SLEEP RECENT ===\\n'; pmset -g log | egrep -i 'wake|sleep|darkwake|maintenance|prevent|assertion|hid|tcpkeepalive|handoff' | tail -120\nprintf '\\n=== NETWORK PROXY/VPN ===\\n'; scutil --proxy; networksetup -listallnetworkservices 2>/dev/null | sed -n '1,80p'\n",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000,
-  "workdir": "/Users/user_0a329be7/Desktop/识别"
+  "workdir": "/home/<USER>/Desktop/识别"
 }
 ```
 
@@ -421,7 +421,7 @@ frpc / bedrock proxy / ssh-frps-bridge 调查一下这几个是什么东西 并�
 
 位置：
 
-`/Users/user_0a329be7/Library/Application Support/frp-bedrock/frp_bedrock_proxy.py`
+`/home/<USER>/Library/Application Support/frp-bedrock/frp_bedrock_proxy.py`
 
 作用：
 
@@ -442,7 +442,7 @@ frpc / bedrock proxy / ssh-frps-bridge 调查一下这几个是什么东西 并�
 
 位置：
 
-`/Users/user_0a329be7/Library/LaunchAgents/com.wzy.frpc-bedrock.plist`
+`/home/<USER>/Library/LaunchAgents/com.wzy.frpc-bedrock.plist`
 
 作用：
 
@@ -463,7 +463,7 @@ frpc / bedrock proxy / ssh-frps-bridge 调查一下这几个是什么东西 并�
 
 位置：
 
-`/Users/user_0a329be7/Library/LaunchAgents/com.wzy.ssh-frps-bridge.plist`
+`/home/<USER>/Library/LaunchAgents/com.wzy.ssh-frps-bridge.plist`
 
 作用：
 
@@ -552,7 +552,7 @@ tool_use exec_command
   "cmd": "set +e\nprintf '=== CONFIG SUMMARY ===\\n'\nbase=\"$HOME/Library/Application Support/frp-bedrock\"\nfor f in \"$base/frpc.toml\" \"$base/env\" \"$base/frp_bedrock_proxy.py\"; do\n echo \"--- $f\"; [ -f \"$f\" ] && sed -E 's/(token|password|secret|auth|key|Authorization|ANTHROPIC_AUTH_TOKEN)([[:space:]_A-Za-z-]*[=:])[[:space:]]*.*/\\1\\2 [REDACTED]/Ig; s#(https?://)[^/@]+@#\\1[REDACTED]@#g' \"$f\" | sed -n '1,220p'; done\nprintf '\\n=== SSH ALIAS ALI ===\\n'\nfor f in \"$HOME/.ssh/config\" \"$HOME/.ssh/conf.d\"/*; do [ -f \"$f\" ] || continue; echo \"--- $f\"; awk 'BEGIN{show=0} /^[Hh]ost[[:space:]]+ali([[:space:]]|$)/{show=1} /^[Hh]ost[[:space:]]+/ && $2!=\"ali\"{if(show) exit} show{print}' \"$f\" | sed -E 's/(IdentityFile ).*/\\1[REDACTED]/; s/(User ).*/\\1[REDACTED]/' ; done\nprintf '\\n=== NOTION CANDIDATES ===\\n'\nfind /Applications \"$HOME/Applications\" \"$HOME/Library/Application Support\" \"$HOME/Library/Caches\" \"$HOME/Library/Preferences\" \"$HOME/Library/HTTPStorages\" \"$HOME/Library/Saved Application State\" \"$HOME/Library/Logs\" \"$HOME/Library/Cookies\" \"$HOME/Library/WebKit\" -maxdepth 3 \\( -iname '*notion*' -o -iname '*Notion*' \\) -print 2>/dev/null | sed -n '1,300p'\n",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000,
-  "workdir": "/Users/user_0a329be7/Desktop/识别"
+  "workdir": "/home/<USER>/Desktop/识别"
 }
 ```
 
@@ -571,7 +571,7 @@ tool_use exec_command
   "cmd": "set +e\nprintf '=== NOTION CANDIDATES ===\\n'\nfind /Applications \"$HOME/Applications\" \"$HOME/Library/Application Support\" \"$HOME/Library/Caches\" \"$HOME/Library/Preferences\" \"$HOME/Library/HTTPStorages\" \"$HOME/Library/Saved Application State\" \"$HOME/Library/Logs\" \"$HOME/Library/Cookies\" \"$HOME/Library/WebKit\" -maxdepth 4 \\( -iname '*notion*' -o -iname '*Notion*' \\) -print 2>/dev/null | sed -n '1,300p'\nprintf '\\n=== NOTION PROCESS ===\\n'\npgrep -afil 'Notion|notion' || true\nprintf '\\n=== LOGIN ITEMS ===\\n'\nosascript -e 'tell application \"System Events\" to get the name of every login item' 2>/dev/null\n",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
-  "workdir": "/Users/user_0a329be7/Desktop/识别"
+  "workdir": "/home/<USER>/Desktop/识别"
 }
 ```
 
@@ -590,7 +590,7 @@ tool_use exec_command
   "cmd": "set +e\nprintf '=== REMOVE NOTION LOGIN ITEM ===\\n'\nosascript <<'APPLESCRIPT'\ntell application \"System Events\"\n  repeat with li in login items\n    if name of li is \"Notion\" then delete li\n  end repeat\nend tell\nAPPLESCRIPT\nprintf 'login items now: '; osascript -e 'tell application \"System Events\" to get the name of every login item' 2>/dev/null\nprintf '\\n=== BROADER NOTION SEARCH ===\\n'\nmdfind 'kMDItemFSName == \"*Notion*\"cd || kMDItemFSName == \"*notion*\"cd' 2>/dev/null | sed -n '1,200p'\nprintf '\\n=== COMMON NOTION PATHS EXIST? ===\\n'\nfor p in \"/Applications/Notion.app\" \"$HOME/Applications/Notion.app\" \"$HOME/Library/Application Support/Notion\" \"$HOME/Library/Caches/Notion\" \"$HOME/Library/Caches/notion.id\" \"$HOME/Library/Preferences/notion.id.plist\" \"$HOME/Library/Saved Application State/notion.id.savedState\" \"$HOME/Library/HTTPStorages/notion.id\" \"$HOME/Library/WebKit/notion.id\" \"$HOME/Library/Cookies/notion.id.binarycookies\"; do [ -e \"$p\" ] && echo \"$p\" || true; done\n",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
-  "workdir": "/Users/user_0a329be7/Desktop/识别"
+  "workdir": "/home/<USER>/Desktop/识别"
 }
 ```
 
@@ -609,7 +609,7 @@ tool_use exec_command
   "cmd": "set +e\nosascript -e 'tell application \"System Events\" to delete login item \"Notion\"' 2>&1\nprintf 'login items now: '; osascript -e 'tell application \"System Events\" to get the name of every login item' 2>/dev/null\n",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000,
-  "workdir": "/Users/user_0a329be7/Desktop/识别"
+  "workdir": "/home/<USER>/Desktop/识别"
 }
 ```
 
@@ -628,7 +628,7 @@ tool_use exec_command
   "cmd": "set +e\nprintf '=== LAUNCHCTL STATUS ===\\n'\nfor label in com.wzy.bedrock-proxy com.wzy.frpc-bedrock com.wzy.ssh-frps-bridge; do\n  echo \"--- $label\"; launchctl print gui/$(id -u)/$label 2>/dev/null | egrep 'state =|program =|last exit code|pid =|runs =|active count|path =|working directory|throttle interval|keepalive|stdout|stderr' | sed -n '1,80p' || echo 'not loaded'\ndone\nprintf '\\n=== OUTBOUND CONNECTIONS ===\\n'\nlsof -nP -a -p 556 -i 2>/dev/null; lsof -nP -a -p 562 -i 2>/dev/null; pgrep -f 'ssh -NT.*17000' | while read p; do lsof -nP -a -p \"$p\" -i 2>/dev/null; done\nprintf '\\n=== RECENT LOG TAILS ===\\n'\nbase=\"$HOME/Library/Application Support/frp-bedrock\"\nfor f in local_proxy.out.log local_proxy.err.log frpc.out.log frpc.err.log ssh_bridge.out.log ssh_bridge.err.log; do echo \"--- $f\"; tail -20 \"$base/$f\" 2>/dev/null | sed -E 's/(token|password|secret|auth|key)[^[:space:]]*/\\1[REDACTED]/Ig'; done\n",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
-  "workdir": "/Users/user_0a329be7/Desktop/识别"
+  "workdir": "/home/<USER>/Desktop/识别"
 }
 ```
 

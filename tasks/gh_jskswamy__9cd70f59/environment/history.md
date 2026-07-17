@@ -132,7 +132,7 @@ Build succeeded. Let me verify the sandbox profile now grants write access for t
 
 > AGENT
 
-The fix is working. The key line: ``` (allow file-read* file-write* (subpath "/Users/subramk/.kube") (subpath "/Users/subramk/.docker") (subpath "/Users/subramk/.config/gcloud"))) ``` All three paths now get full read+write access in the seatbelt profile when using `--with k8s,docker,gcp`. This would have allowed `kubectl`, `docker buildx`, and `gcloud` to write their lock files, caches, and logs without the agent needing to escape via desktop-commander.
+The fix is working. The key line: ``` (allow file-read* file-write* (subpath "/home/<USER>/.kube") (subpath "/home/<USER>/.docker") (subpath "/home/<USER>/.config/gcloud"))) ``` All three paths now get full read+write access in the seatbelt profile when using `--with k8s,docker,gcp`. This would have allowed `kubectl`, `docker buildx`, and `gcloud` to write their lock files, caches, and logs without the agent needing to escape via desktop-commander.
 
 > AGENT
 

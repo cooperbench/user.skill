@@ -63,7 +63,7 @@ tool_use Read
 id: toolu_01GsxGK9nxrwXrTVaA8PczT3
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/__init__.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/__init__.py",
   "offset": 545,
   "limit": 25
 }
@@ -107,7 +107,7 @@ tool_use Read
 id: toolu_01Q6fqefH75ncGyMVeGrfmiD
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
   "offset": 450,
   "limit": 25
 }
@@ -151,7 +151,7 @@ tool_use Read
 id: toolu_013kMjPKChZ76azfAxepijc2
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py",
   "offset": 365,
   "limit": 20
 }
@@ -190,7 +190,7 @@ tool_use Read
 id: toolu_01LA36FEQ9zMqVMXqePjmcHG
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/ts/slot-card.ts",
+  "file_path": "/home/<USER>/projects/lock_code_manager/ts/slot-card.ts",
   "offset": 885,
   "limit": 40
 }
@@ -245,7 +245,7 @@ tool_use Read
 id: toolu_01LmLp19fnG6eYH3SAXWHHgz
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/ts/slot-card.ts",
+  "file_path": "/home/<USER>/projects/lock_code_manager/ts/slot-card.ts",
   "offset": 555,
   "limit": 55
 }
@@ -319,7 +319,7 @@ tool_use Read
 id: toolu_0168pvxwjQZRnHEoiohdbmVj
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/ts/generate-view.ts",
+  "file_path": "/home/<USER>/projects/lock_code_manager/ts/generate-view.ts",
   "offset": 325,
   "limit": 55
 }
@@ -397,7 +397,7 @@ tool_use Read
 id: toolu_01R1D3hDxUiJrPLeWR7cnUr9
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/__init__.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/__init__.py",
   "offset": 472,
   "limit": 12
 }

@@ -177,7 +177,7 @@ tool_use exec_command
   "cmd": "set +e\nprintf '=== SWAP FILES ===\\n'; ls -lh /private/var/vm | sed -n '1,80p'; du -sh /private/var/vm 2>/dev/null\nprintf '\\n=== TOP LAUNCHAGENT PLISTS SUMMARY ===\\n'; for f in ~/Library/LaunchAgents/*.plist /Library/LaunchAgents/*.plist /Library/LaunchDaemons/*.plist; do [ -f \"$f\" ] || continue; echo '---' $f; plutil -p \"$f\" | egrep 'Label|Program|ProgramArguments|RunAtLoad|KeepAlive|StartInterval|StartCalendarInterval|WorkingDirectory' | sed -n '1,30p'; done\nprintf '\\n=== ACTIVE CUSTOM PIDS ===\\n'; ps -axo pid,ppid,%cpu,%mem,rss,etime,comm | egrep 'clash|mihomo|bedrock|frp|claude-to-im|tcptune|Macs Fan|GoogleUpdater|keystone|Logi|Rectangle|Notion|Lark|WeChat|QQ|Chrome|Claude|Codex|opencode' | sed -n '1,200p'\nprintf '\\n=== SPOTLIGHT STATUS ===\\n'; mdutil -s / 2>&1\nprintf '\\n=== LOCAL SNAPSHOTS ===\\n'; tmutil listlocalsnapshots / 2>&1 | sed -n '1,120p'\nprintf '\\n=== DISK I/O PROCESSES ===\\n'; iotop -P -n 1 -l 1 2>&1 | sed -n '1,80p'\nprintf '\\n=== CPU POWER SAMPLE ===\\n'; powermetrics --samplers cpu_power -n 1 -i 1000 2>&1 | sed -n '1,120p'\n",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000,
-  "workdir": "/Users/user_0a329be7/Desktop/识别"
+  "workdir": "/home/<USER>/Desktop/识别"
 }
 ```
 
@@ -196,7 +196,7 @@ tool_use exec_command
   "cmd": "set +e\nprintf '=== CACHE TOP ===\\n'; du -sh ~/Library/Caches/* 2>/dev/null | sort -hr | head -30\nprintf '\\n=== CLAUDE SUPPORT TOP ===\\n'; du -sh ~/Library/Application\\ Support/Claude/* 2>/dev/null | sort -hr | head -30\nprintf '\\n=== CHROME SUPPORT TOP ===\\n'; du -sh ~/Library/Application\\ Support/Google/Chrome/* 2>/dev/null | sort -hr | head -30\nprintf '\\n=== LIBRARY TOP ===\\n'; du -sh ~/Library/* 2>/dev/null | sort -hr | head -40\n",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
-  "workdir": "/Users/user_0a329be7/Desktop/识别"
+  "workdir": "/home/<USER>/Desktop/识别"
 }
 ```
 

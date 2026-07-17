@@ -34,7 +34,7 @@ tool_use Read
 id: toolu_01V1Znd5mNXUeMTPxCYVED4p
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.tsx"
 }
 ```
 
@@ -92,7 +92,7 @@ tool_use Read
 id: toolu_012drgaEjXZHdERJ6qT2wA6N
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx"
 }
 ```
 
@@ -144,7 +144,7 @@ tool_use Read
 id: toolu_01MqLTHaGKfMrM5VtWZXByRT
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.ts"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.ts"
 }
 ```
 
@@ -216,7 +216,7 @@ tool_use Bash
 id: toolu_0191uFxgKn7x7pDiQuFhwfJH
 ```json
 {
-  "command": "grep -rn \"\\.path\" /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/ 2>/dev/null",
+  "command": "grep -rn \"\\.path\" /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/ 2>/dev/null",
   "description": "Grep for .path usages in DriveUploadMode components"
 }
 ```
@@ -226,13 +226,13 @@ id: toolu_0191uFxgKn7x7pDiQuFhwfJH
 tool_result
 id: toolu_0191uFxgKn7x7pDiQuFhwfJH
 ```
-/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx:19:        const own = assignments.fileOverrides.get(file.path) ?? null
-/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx:22:          <Box key={file.path} pl={4}>
-/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx:38:                onPick={() => onPick({ type: 'file', path: file.path })}
-/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx:39:                onClear={() => assignments.clearFileOverride(file.path)}
-/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.tsx:115:    onSelect({ driveFolderId: selected.id, path: selected.path })
-/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx:30:    else if (pickerTarget?.type === 'file') assignments.setFileOverride(pickerTarget.path, folder)
-/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx:30:        📁 {assignment ? assignment.path : 'Not assigned'}
+/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx:19:        const own = assignments.fileOverrides.get(file.path) ?? null
+/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx:22:          <Box key={file.path} pl={4}>
+/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx:38:                onPick={() => onPick({ type: 'file', path: file.path })}
+/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx:39:                onClear={() => assignments.clearFileOverride(file.path)}
+/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.tsx:115:    onSelect({ driveFolderId: selected.id, path: selected.path })
+/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx:30:    else if (pickerTarget?.type === 'file') assignments.setFileOverride(pickerTarget.path, folder)
+/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx:30:        📁 {assignment ? assignment.path : 'Not assigned'}
 ```
 
 > AGENT

@@ -302,13 +302,13 @@ Perfect! Now I have all the information I need. Let me compile a comprehensive r
 I've thoroughly researched the opensandbox-integration worktree and related code. Here are my findings:
 
 ### 1. Worktree Status
-- **Worktree Path**: `/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration`
+- **Worktree Path**: `/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration`
 - **Branch**: `worktree-opensandbox-integration`
 - **Latest Commit**: `095451b6` - "feat: add k8s local deploy targets, multi-LLM support, and fix memory limit"
 - **Exists**: Yes, fully functional worktree with extensive changes
 
 ### 2. Design Document
-**File**: `/Users/cyyeh/Desktop/duckdb-data-agent/docs/plans/2026-03-04-opensandbox-integration-design.md`
+**File**: `/home/<USER>/Desktop/duckdb-data-agent/docs/plans/2026-03-04-opensandbox-integration-design.md`
 
 **Goal**: Replace custom `ContainerManager` (Docker SDK) with OpenSandbox for container lifecycle management and add Kubernetes as a deployment target alongside Docker.
 
@@ -321,7 +321,7 @@ I've thoroughly researched the opensandbox-integration worktree and related code
 
 ### 3. Current Architecture (Main Branch)
 
-**File**: `/Users/cyyeh/Desktop/duckdb-data-agent/backend/app/container_manager.py` (364 lines)
+**File**: `/home/<USER>/Desktop/duckdb-data-agent/backend/app/container_manager.py` (364 lines)
 
 Uses Docker SDK directly with:
 - `ContainerConfig` dataclass with Docker-specific settings (runtime: "runsc", memory: "256m", network: "agent-sandbox")
@@ -1010,7 +1010,7 @@ tool_use Read
 id: toolu_01QzY9soFarD9TUjMyfz3hdb
 ```json
 {
-  "file_path": "/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/backend/app/sandbox_manager.py"
+  "file_path": "/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/backend/app/sandbox_manager.py"
 }
 ```
 
@@ -1069,7 +1069,7 @@ tool_use Read
 id: toolu_01PuxmUKeo6pfHsEahoPEcsR
 ```json
 {
-  "file_path": "/Users/cyyeh/Desktop/duckdb-data-agent/backend/app/container_manager.py"
+  "file_path": "/home/<USER>/Desktop/duckdb-data-agent/backend/app/container_manager.py"
 }
 ```
 
@@ -1247,7 +1247,7 @@ tool_use Read
 id: toolu_01Q6Xj8bwH2By8oF4ec476yq
 ```json
 {
-  "file_path": "/Users/cyyeh/Desktop/duckdb-data-agent/backend/app/agent.py",
+  "file_path": "/home/<USER>/Desktop/duckdb-data-agent/backend/app/agent.py",
   "limit": 50
 }
 ```
@@ -1302,7 +1302,7 @@ tool_use Read
 id: toolu_01RcknSPtBNSxSBsCMkFzL5G
 ```json
 {
-  "file_path": "/Users/cyyeh/Desktop/duckdb-data-agent/backend/app/main.py"
+  "file_path": "/home/<USER>/Desktop/duckdb-data-agent/backend/app/main.py"
 }
 ```
 
@@ -1371,7 +1371,7 @@ tool_use Read
 id: toolu_01LKC7ANGbg2uCtps6mjTzr5
 ```json
 {
-  "file_path": "/Users/cyyeh/Desktop/duckdb-data-agent/backend/app/config.py"
+  "file_path": "/home/<USER>/Desktop/duckdb-data-agent/backend/app/config.py"
 }
 ```
 
@@ -1441,7 +1441,7 @@ tool_use Read
 id: toolu_01T2yHopc4SA7rmn13Hoq9dF
 ```json
 {
-  "file_path": "/Users/cyyeh/Desktop/duckdb-data-agent/backend/pyproject.toml"
+  "file_path": "/home/<USER>/Desktop/duckdb-data-agent/backend/pyproject.toml"
 }
 ```
 
@@ -1454,7 +1454,7 @@ id: toolu_01T2yHopc4SA7rmn13Hoq9dF
      2→name = "duckdb-data-agent-backend"
      3→version = "0.1.0"
      4→description = ""
-     5→authors = ["ChihYu Yeh <chihyu.jimmy.yeh@gmail.com>"]
+     5→authors = ["ChihYu Yeh <<REDACTED_EMAIL>>"]
      6→readme = "README.md"
      7→package-mode = false
      8→
@@ -1493,7 +1493,7 @@ id: toolu_01WSZySWvaMXC7sphGVrUzvU
 ```json
 {
   "pattern": "container_manager",
-  "path": "/Users/cyyeh/Desktop/duckdb-data-agent/backend/app/agent.py",
+  "path": "/home/<USER>/Desktop/duckdb-data-agent/backend/app/agent.py",
   "output_mode": "content",
   "-C": 3
 }

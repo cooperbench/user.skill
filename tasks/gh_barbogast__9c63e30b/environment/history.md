@@ -27,7 +27,7 @@ tool_use Read
 id: toolu_01KK81NvJ7CrggEUBPKv9gYj
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/spec.md"
+  "file_path": "/home/<USER>/git/paper-scan-processor/spec.md"
 }
 ```
 

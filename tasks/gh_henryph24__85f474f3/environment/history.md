@@ -12,7 +12,7 @@ tool_use Bash
 id: toolu_019CGgiRQbrNeRh3tt5morgE
 ```json
 {
-  "command": "grep -n \"App\\.\" /Users/hungpq2412/neuralips26/main.tex | head -30",
+  "command": "grep -n \"App\\.\" /home/<USER>/neuralips26/main.tex | head -30",
   "description": "Find App. references in main.tex"
 }
 ```
@@ -32,7 +32,7 @@ tool_use Bash
 id: toolu_01QcT6LLDJeEUTvbRbxJJtEW
 ```json
 {
-  "command": "grep -n \"Full hyperparameters\" /Users/hungpq2412/neuralips26/main.tex",
+  "command": "grep -n \"Full hyperparameters\" /home/<USER>/neuralips26/main.tex",
   "description": "Find the specific paragraph"
 }
 ```
@@ -51,7 +51,7 @@ tool_use Bash
 id: toolu_014oKVChCuHfSye8C26K37E6
 ```json
 {
-  "command": "grep -n \"app:setup\" /Users/hungpq2412/neuralips26/main.tex | head -10",
+  "command": "grep -n \"app:setup\" /home/<USER>/neuralips26/main.tex | head -10",
   "description": "Find app:setup label"
 }
 ```
@@ -70,7 +70,7 @@ tool_use Bash
 id: toolu_017Y2m4BZFm2Pj6T7d3PCxjB
 ```json
 {
-  "command": "grep -n \"\\\\\\\\section\\|\\\\\\\\appendix\\|app:setup\\|app:deployment\\|app:lora_sweep\" /Users/hungpq2412/neuralips26/main.tex | head -30",
+  "command": "grep -n \"\\\\\\\\section\\|\\\\\\\\appendix\\|app:setup\\|app:deployment\\|app:lora_sweep\" /home/<USER>/neuralips26/main.tex | head -30",
   "description": "Check appendix structure and labels"
 }
 ```
@@ -118,7 +118,7 @@ tool_use Bash
 id: toolu_01PxZpPRkwPhK5g6Y18BdZkv
 ```json
 {
-  "command": "grep -n \"^\\\\\\\\section\\|^\\\\\\\\appendix\" /Users/hungpq2412/neuralips26/main.tex | head -20",
+  "command": "grep -n \"^\\\\\\\\section\\|^\\\\\\\\appendix\" /home/<USER>/neuralips26/main.tex | head -20",
   "description": "Find section boundaries"
 }
 ```
@@ -156,7 +156,7 @@ tool_use Read
 id: toolu_01VGr2CJ1RSxm4WwdChmKK9s
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 61,
   "limit": 170
 }
@@ -182,7 +182,7 @@ tool_use Read
 id: toolu_01WvHSPSiqbHHv9pH9u7wYPG
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 565,
   "limit": 100
 }
@@ -224,7 +224,7 @@ tool_use Bash
 id: toolu_016Zaq9WB2RsSDKPYvVkXxQe
 ```json
 {
-  "command": "awk 'NR==568' /Users/hungpq2412/neuralips26/main.tex | wc -w",
+  "command": "awk 'NR==568' /home/<USER>/neuralips26/main.tex | wc -w",
   "description": "Count words in conclusion paragraph"
 }
 ```
@@ -243,7 +243,7 @@ tool_use Bash
 id: toolu_01AeYzZyYyH3YyMEJyihmqPB
 ```json
 {
-  "command": "awk 'NR>=64 && NR<=79' /Users/hungpq2412/neuralips26/main.tex | wc -w",
+  "command": "awk 'NR>=64 && NR<=79' /home/<USER>/neuralips26/main.tex | wc -w",
   "description": "Count words in intro"
 }
 ```
@@ -267,7 +267,7 @@ id: toolu_01Xp2jLRmTD58L5quHYCeGgw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "Time series foundation models (TSFMs) such as MOMENT~\\citep{goswami2024moment}, TimesFM~\\citep{das2024timesfm}, Chronos~\\citep{ansari2024chronos}, Timer-XL~\\citep{liu2025timerxl,liu2024timer}, and Moirai~\\citep{woo2024moirai} now provide pretrained representations for time series, alongside further pretrained variants~\\citep{lee2024units, rasul2024lagllama, ekambaram2024ttm}, observability-domain deployments~\\citep{cohen2025toto}, tokenization-free flow-matching forecasters~\\citep{liu2025sundial}, and a parallel route that reprograms pretrained LLMs as forecasters~\\citep{jin2024timellm, zhou2023onefitsall, liu2024autotimes, pan2024s2ipllm, liu2024unitime}, with recent designs pushing to billion-parameter scales~\\citep{shi2024timemoe, liu2026timers1}. Using one of these backbones on a downstream task still requires attaching a lightweight adapter head that maps hidden states to predictions; this paper studies the adapter, holding the backbone fixed.",
   "new_string": "Time series foundation models (TSFMs) such as MOMENT~\\citep{goswami2024moment}, TimesFM~\\citep{das2024timesfm}, Chronos~\\citep{ansari2024chronos}, Timer-XL~\\citep{liu2025timerxl,liu2024timer}, and Moirai~\\citep{woo2024moirai} now provide pretrained representations for time series, alongside a growing ecosystem of pretrained variants and LLM-reprogrammed forecasters~\\citep{lee2024units, rasul2024lagllama, ekambaram2024ttm, cohen2025toto, liu2025sundial, jin2024timellm, zhou2023onefitsall, liu2024autotimes, pan2024s2ipllm, liu2024unitime, shi2024timemoe, liu2026timers1}. Using one of these backbones on a downstream task still requires attaching a lightweight adapter head that maps hidden states to predictions; this paper studies the adapter, holding the backbone fixed."
 }
@@ -278,7 +278,7 @@ id: toolu_01Xp2jLRmTD58L5quHYCeGgw
 tool_result
 id: toolu_01Xp2jLRmTD58L5quHYCeGgw
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -288,7 +288,7 @@ id: toolu_01X1bN7jFA8mYSijegfJnVLT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "{\\looseness=-1 We identified \\emph{normalization-induced routing collapse}: the same $(\\mu,\\sigma)$ stripping that lets TSFMs handle distribution shift removes the signal a downstream MoE router needs. Observation~\\ref{thm:mi_decomp} formalizes the loss, $R(\\mathcal{D})$ predicts it ($\\rho{=}{-}0.88$), eight causal controls rule out optimization/geometry/paradigm alternatives, and three interventions confirm it: RR-MoA ($54/54$), SR-MoA ($+13$--$42\\%$), Residual-IA\\textsuperscript{+} ($107/123$). \\textbf{Limitations:} specific to $(\\mu,\\sigma)$-stripping normalizers; classification, anomaly detection, and learned expert pools remain open.\\label{page:end_main}}",
   "new_string": "{\\looseness=-1 We identified \\emph{normalization-induced routing collapse}: the same $(\\mu,\\sigma)$ stripping that lets TSFMs handle distribution shift removes the signal a downstream MoE router needs. Observation~\\ref{thm:mi_decomp} formalizes the loss, $R(\\mathcal{D})$ predicts it ($\\rho{=}{-}0.88$), eight causal controls rule out optimization/geometry/paradigm alternatives, and three interventions confirm it: RR-MoA ($54/54$), SR-MoA ($+13$--$42\\%$), Residual-IA\\textsuperscript{+} ($107/123$). The diagnosis reframes a failure that prior MoE work treats as optimization (load balancing, z-loss, expert-choice) as one of \\emph{router input}: $11$ optimization-side rescues recover at most $10.9\\%$ MSE on the same grid where changing only the routing signal recovers $54$--$80\\%$, with the optimizer and frozen backbone untouched. Because $R(\\mathcal{D})$ is computable from raw windows alone, the fix comes with a pre-training go/no-go test, and the strictly frozen backbone preserves the multi-tenant deployment regime […]
 
@@ -297,7 +297,7 @@ id: toolu_01X1bN7jFA8mYSijegfJnVLT
 tool_result
 id: toolu_01X1bN7jFA8mYSijegfJnVLT
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -316,22 +316,22 @@ id: toolu_01VSu8Ztdi16fM9ZXHxFQvbM
 tool_result
 id: toolu_01VSu8Ztdi16fM9ZXHxFQvbM
 ```
-></Users/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmmi8.pfb></Us
-ers/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmmi9.pfb></Users/h
-ungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/hungpq
-2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmr5.pfb></Users/hungpq2412/L
-ibrary/texmf/fonts/type1/public/amsfonts/cm/cmr6.pfb></Users/hungpq2412/Library
-/texmf/fonts/type1/public/amsfonts/cm/cmr7.pfb></Users/hungpq2412/Library/texmf
-/fonts/type1/public/amsfonts/cm/cmr8.pfb></Users/hungpq2412/Library/texmf/fonts
-/type1/public/amsfonts/cm/cmr9.pfb></Users/hungpq2412/Library/texmf/fonts/type1
-/public/amsfonts/cm/cmsy10.pfb></Users/hungpq2412/Library/texmf/fonts/type1/pub
-lic/amsfonts/cm/cmsy5.pfb></Users/hungpq2412/Library/texmf/fonts/type1/public/a
-msfonts/cm/cmsy6.pfb></Users/hungpq2412/Library/texmf/fonts/type1/public/amsfon
-ts/cm/cmsy7.pfb></Users/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm
-/cmsy8.pfb></Users/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmsy
-9.pfb></Users/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmti7.pfb
-></Users/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmti8.pfb></Us
-ers/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmti9.pfb></Users/h
+></home/<USER>/Library/texmf/fonts/type1/public/amsfonts/cm/cmmi8.pfb></Us
+ers/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmmi9.pfb></home/<USER>
+ungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/<USER>
+2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmr5.pfb></home/<USER>/L
+ibrary/texmf/fonts/type1/public/amsfonts/cm/cmr6.pfb></home/<USER>/Library
+/texmf/fonts/type1/public/amsfonts/cm/cmr7.pfb></home/<USER>/Library/texmf
+/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/<USER>/Library/texmf/fonts
+/type1/public/amsfonts/cm/cmr9.pfb></home/<USER>/Library/texmf/fonts/type1
+/public/amsfonts/cm/cmsy10.pfb></home/<USER>/Library/texmf/fonts/type1/pub
+lic/amsfonts/cm/cmsy5.pfb></home/<USER>/Library/texmf/fonts/type1/public/a
+msfonts/cm/cmsy6.pfb></home/<USER>/Library/texmf/fonts/type1/public/amsfon
+ts/cm/cmsy7.pfb></home/<USER>/Library/texmf/fonts/type1/public/amsfonts/cm
+/cmsy8.pfb></home/<USER>/Library/texmf/fonts/type1/public/amsfonts/cm/cmsy
+9.pfb></home/<USER>/Library/texmf/fonts/type1/public/amsfonts/cm/cmti7.pfb
+></home/<USER>/Library/texmf/fonts/type1/public/amsfonts/cm/cmti8.pfb></Us
+ers/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmti9.pfb></home/<USER>
 ungpq2412/Library/texmf/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/lo
 cal/texlive/2026basic/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr
 /local/texlive/2026basic/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/l
@@ -387,7 +387,7 @@ tool_use Bash
 id: toolu_0124QvEh7XEPynZYyz8sTtao
 ```json
 {
-  "command": "awk 'NR==568' /Users/hungpq2412/neuralips26/main.tex | wc -w; awk 'NR>=64 && NR<=79' /Users/hungpq2412/neuralips26/main.tex | wc -w",
+  "command": "awk 'NR==568' /home/<USER>/neuralips26/main.tex | wc -w; awk 'NR>=64 && NR<=79' /home/<USER>/neuralips26/main.tex | wc -w",
   "description": "Count words after edit"
 }
 ```
@@ -516,7 +516,7 @@ Should the contribution bullet be reframed around this *path* (failure → rule-
 
 > DEVELOPER
 
-take a look at this paper @/Users/hungpq2412/Downloads/Vy_Nguyen_NeurIPS_2026\ \(35\).pdf
+take a look at this paper @/home/<USER>/Downloads/Vy_Nguyen_NeurIPS_2026\ \(35\).pdf
 
 > TOOL
 
@@ -524,7 +524,7 @@ tool_use Bash
 id: toolu_01VfUuypPTBTfUznhtVZcnqt
 ```json
 {
-  "command": "ls -la \"/Users/hungpq2412/Downloads/Vy_Nguyen_NeurIPS_2026 (35).pdf\"",
+  "command": "ls -la \"/home/<USER>/Downloads/Vy_Nguyen_NeurIPS_2026 (35).pdf\"",
   "description": "Check file exists and size"
 }
 ```
@@ -534,7 +534,7 @@ id: toolu_01VfUuypPTBTfUznhtVZcnqt
 tool_result
 id: toolu_01VfUuypPTBTfUznhtVZcnqt
 ```
--rw-r--r--@ 1 hungpq2412  staff  10731625 May  5 13:19 /Users/hungpq2412/Downloads/Vy_Nguyen_NeurIPS_2026 (35).pdf
+-rw-r--r--@ 1 hungpq2412  staff  10731625 May  5 13:19 /home/<USER>/Downloads/Vy_Nguyen_NeurIPS_2026 (35).pdf
 ```
 
 > TOOL
@@ -543,7 +543,7 @@ tool_use Read
 id: toolu_0164bhbx6DntTkbDXGh2S4Gc
 ```json
 {
-  "file_path": "/Users/hungpq2412/Downloads/Vy_Nguyen_NeurIPS_2026 (35).pdf",
+  "file_path": "/home/<USER>/Downloads/Vy_Nguyen_NeurIPS_2026 (35).pdf",
   "pages": "1-9"
 }
 ```
@@ -553,7 +553,7 @@ id: toolu_0164bhbx6DntTkbDXGh2S4Gc
 tool_result
 id: toolu_0164bhbx6DntTkbDXGh2S4Gc
 ```
-PDF pages extracted: 9 page(s) from /Users/hungpq2412/Downloads/Vy_Nguyen_NeurIPS_2026 (35).pdf (10.2MB)
+PDF pages extracted: 9 page(s) from /home/<USER>/Downloads/Vy_Nguyen_NeurIPS_2026 (35).pdf (10.2MB)
 ```
 
 > AGENT

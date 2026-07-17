@@ -1,6 +1,6 @@
 > DEVELOPER
 
-this is dispatch by entire.io /Users/melagiri/Downloads/screencapture-entire-io-dispatches-new-2026-05-09-07_36_24.png What do you think of this? Will such feature help code-insights?
+this is dispatch by entire.io /home/<USER>/Downloads/screencapture-entire-io-dispatches-new-2026-05-09-07_36_24.png What do you think of this? Will such feature help code-insights?
 
 > AGENT
 
@@ -12,7 +12,7 @@ tool_use Read
 id: toolu_01GMNf9aJQEevfP5HthQQKir
 ```json
 {
-  "file_path": "/Users/melagiri/Downloads/screencapture-entire-io-dispatches-new-2026-05-09-07_36_24.png"
+  "file_path": "/home/<USER>/Downloads/screencapture-entire-io-dispatches-new-2026-05-09-07_36_24.png"
 }
 ```
 

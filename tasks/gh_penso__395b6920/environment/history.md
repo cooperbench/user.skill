@@ -30,7 +30,7 @@ Perfect! Now I have all the information. Let me create a comprehensive summary d
 I've completed a thorough search of the web UI files related to the top bar/header area where issue creation happens. Here are my findings:
 
 ### 1. **Top Bar / Header Location**
-- **File**: `/Users/penso/tmp/molt/moltis/crates/web/src/templates/index.html` (lines 61-120)
+- **File**: `/home/<USER>/tmp/molt/moltis/crates/web/src/templates/index.html` (lines 61-120)
 - **Current HTML Structure**: The header is a simple semantic HTML5 `<header>` element with flex layout:
   ```html
   <header class="flex items-center gap-3 px-4 py-2.5 border-b border-[var(--border)] bg-[var(--surface)] shrink-0">
@@ -65,7 +65,7 @@ I've completed a thorough search of the web UI files related to the top bar/head
 ### 3. **Icon System**
 - **System Type**: CSS mask-image based (SVG-backed)
 - **Icon Classes**: All icons use CSS classes like `.icon-link`, `.icon-settings`, etc.
-- **CSS Location**: `/Users/penso/tmp/molt/moltis/crates/web/ui/input.css` (lines 1841-2148)
+- **CSS Location**: `/home/<USER>/tmp/molt/moltis/crates/web/ui/input.css` (lines 1841-2148)
 - **Icon Base Styling** (lines 1843-1862):
   ```css
   .icon {
@@ -82,7 +82,7 @@ tool_use Read
 id: toolu_01Mp6TXb8gf2WMZoycMYoQVx
 ```json
 {
-  "file_path": "/Users/penso/tmp/molt/moltis/crates/web/src/templates/index.html",
+  "file_path": "/home/<USER>/tmp/molt/moltis/crates/web/src/templates/index.html",
   "offset": 80,
   "limit": 30
 }
@@ -131,7 +131,7 @@ tool_use Read
 id: toolu_01M5ZMnSXT846jMdyvRe9gKx
 ```json
 {
-  "file_path": "/Users/penso/tmp/molt/moltis/crates/web/src/assets/css/layout.css",
+  "file_path": "/home/<USER>/tmp/molt/moltis/crates/web/src/assets/css/layout.css",
   "offset": 55,
   "limit": 50
 }
@@ -200,7 +200,7 @@ tool_use Bash
 id: toolu_01533MRzRjQUW8fZmCtftoJN
 ```json
 {
-  "command": "ls /Users/penso/tmp/molt/moltis/crates/web/src/assets/icons/masks/ | head -20",
+  "command": "ls /home/<USER>/tmp/molt/moltis/crates/web/src/assets/icons/masks/ | head -20",
   "description": "List existing icon mask files"
 }
 ```
@@ -243,7 +243,7 @@ id: toolu_01SLsMJ1Skmab75bGzouonPe
 ```json
 {
   "pattern": "\\.icon-link",
-  "path": "/Users/penso/tmp/molt/moltis/crates/web/ui/input.css",
+  "path": "/home/<USER>/tmp/molt/moltis/crates/web/ui/input.css",
   "output_mode": "content",
   "-n": true,
   "context": 2
@@ -269,7 +269,7 @@ id: toolu_01CejpcBpYxR2vdwXXbansxN
 ```json
 {
   "pattern": "\\.icon-document",
-  "path": "/Users/penso/tmp/molt/moltis/crates/web/ui/input.css",
+  "path": "/home/<USER>/tmp/molt/moltis/crates/web/ui/input.css",
   "output_mode": "content",
   "-n": true,
   "context": 2
@@ -298,7 +298,7 @@ tool_use Read
 id: toolu_01SHhxAzSdr4LPtUBorwspjs
 ```json
 {
-  "file_path": "/Users/penso/tmp/molt/moltis/crates/web/ui/input.css",
+  "file_path": "/home/<USER>/tmp/molt/moltis/crates/web/ui/input.css",
   "offset": 1920,
   "limit": 30
 }
@@ -351,7 +351,7 @@ tool_use Write
 id: toolu_01VnW7q3QSjS89bYZTdVmmAG
 ```json
 {
-  "file_path": "/Users/penso/tmp/molt/moltis/crates/web/src/assets/icons/masks/mask-github-issue.svg",
+  "file_path": "/home/<USER>/tmp/molt/moltis/crates/web/src/assets/icons/masks/mask-github-issue.svg",
   "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\" width=\"16\" height=\"16\"><path d=\"M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z\"/><path d=\"M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z\"/></svg>\n"
 }
 ```
@@ -361,7 +361,7 @@ id: toolu_01VnW7q3QSjS89bYZTdVmmAG
 tool_result
 id: toolu_01VnW7q3QSjS89bYZTdVmmAG
 ```
-File created successfully at: /Users/penso/tmp/molt/moltis/crates/web/src/assets/icons/masks/mask-github-issue.svg
+File created successfully at: /home/<USER>/tmp/molt/moltis/crates/web/src/assets/icons/masks/mask-github-issue.svg
 ```
 
 > TOOL
@@ -370,7 +370,7 @@ tool_use Write
 id: toolu_01G6h9NSwVPxhJjky2uytFXQ
 ```json
 {
-  "file_path": "/Users/penso/tmp/molt/moltis/crates/web/src/assets/icons/masks/ma[REDACTED_SK].svg",
+  "file_path": "/home/<USER>/tmp/molt/moltis/crates/web/src/assets/icons/masks/ma[REDACTED_SK].svg",
   "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\" width=\"16\" height=\"16\"><path d=\"M1.75 1h8.5c.966 0 1.75.784 1.75 1.75v5.5A1.75 1.75 0 0 1 10.25 10H7.061l-2.574 2.573A1.458 1.458 0 0 1 2 11.543V10h-.25A1.75 1.75 0 0 1 0 8.25v-5.5C0 1.784.784 1 1.75 1ZM1.5 2.75v5.5c0 .138.112.25.25.25h1a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h3.5a.25.25 0 0 0 .25-.25v-5.5a.25.25 0 0 0-.25-.25h-8.5a.25.25 0 0 0-.25.25Zm13 2a.25.25 0 0 0-.25-.25h-.5a.75.75 0 0 1 0-1.5h.5c.966 0 1.75.784 1.75 1.75v5.5A1.75 1.75 0 0 1 14.25 12H14v1.543a1.458 1.458 0 0 1-2.487 1.03L9.22 12.28a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l2.22 2.22v-2.19a.75.75 0 0 1 .75-.75h1a.25.25 0 0 0 .25-.25Z\"/></svg>\n"
 }
 ```
@@ -380,7 +380,7 @@ id: toolu_01G6h9NSwVPxhJjky2uytFXQ
 tool_result
 id: toolu_01G6h9NSwVPxhJjky2uytFXQ
 ```
-File created successfully at: /Users/penso/tmp/molt/moltis/crates/web/src/assets/icons/masks/ma[REDACTED_SK].svg
+File created successfully at: /home/<USER>/tmp/molt/moltis/crates/web/src/assets/icons/masks/ma[REDACTED_SK].svg
 ```
 
 > AGENT
@@ -394,7 +394,7 @@ id: toolu_01SRA1vg384sWfdHgRZKnrWc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/tmp/molt/moltis/crates/web/ui/input.css",
+  "file_path": "/home/<USER>/tmp/molt/moltis/crates/web/ui/input.css",
   "old_string": "  .icon-link {\n    -webkit-mask-image: url(\"./icons/masks/ma[REDACTED_SK].svg\");\n    mask-image: url(\"./icons/masks/ma[REDACTED_SK].svg\");\n  }",
   "new_string": "  .icon-link {\n    -webkit-mask-image: url(\"./icons/masks/ma[REDACTED_SK].svg\");\n    mask-image: url(\"./icons/masks/ma[REDACTED_SK].svg\");\n  }\n  .icon-github-issue {\n    -webkit-mask-image: url(\"./icons/masks/mask-github-issue.svg\");\n    mask-image: url(\"./icons/masks/mask-github-issue.svg\");\n  }\n  .icon-github-discussion {\n    -webkit-mask-image: url(\"./icons/masks/ma[REDACTED_SK].svg\");\n    mask-image: url(\"./icons/masks/ma[REDACTED_SK].svg\");\n  }"
 }
@@ -405,7 +405,7 @@ id: toolu_01SRA1vg384sWfdHgRZKnrWc
 tool_result
 id: toolu_01SRA1vg384sWfdHgRZKnrWc
 ```
-The file /Users/penso/tmp/molt/moltis/crates/web/ui/input.css has been updated successfully.
+The file /home/<USER>/tmp/molt/moltis/crates/web/ui/input.css has been updated successfully.
 ```
 
 > AGENT
@@ -419,7 +419,7 @@ id: toolu_01SN6xuzXXoy85PcT8heok8g
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/tmp/molt/moltis/crates/web/src/templates/index.html",
+  "file_path": "/home/<USER>/tmp/molt/moltis/crates/web/src/templates/index.html",
   "old_string": "    <a\n      href=\"https://github.com/moltis-org/moltis/issues/new/choose\"\n      target=\"_blank\"\n      rel=\"noopener noreferrer\"\n      class=\"header-link-btn\"\n      title=\"Report an issue\"\n    >\n      <span class=\"icon icon-link\"></span>\n      <span class=\"header-link-label\">Report issue</span>\n    </a>",
   "new_string": "    <a\n      href=\"https://github.com/moltis-org/moltis/issues/new/choose\"\n      target=\"_blank\"\n      rel=\"noopener noreferrer\"\n      class=\"header-link-btn\"\n      title=\"Report an issue\"\n    >\n      <span class=\"icon icon-github-issue\"></span>\n      <span class=\"header-link-label\">Issues</span>\n    </a>\n    <a\n      href=\"https://github.com/moltis-org/moltis/discussions\"\n      target=\"_blank\"\n      rel=\"noopener noreferrer\"\n      class=\"header-link-btn\"\n      title=\"Discussions\"\n    >\n      <span class=\"icon icon-github-discussion\"></span>\n      <span class=\"header-link-label\">Discussions</span>\n    </a>"
 }
@@ -430,7 +430,7 @@ id: toolu_01SN6xuzXXoy85PcT8heok8g
 tool_result
 id: toolu_01SN6xuzXXoy85PcT8heok8g
 ```
-The file /Users/penso/tmp/molt/moltis/crates/web/src/templates/index.html has been updated successfully.
+The file /home/<USER>/tmp/molt/moltis/crates/web/src/templates/index.html has been updated successfully.
 ```
 
 > AGENT
@@ -444,7 +444,7 @@ id: toolu_011N7uSwCA2XzegxcLoRuHq9
 ```json
 {
   "pattern": "icons/masks",
-  "path": "/Users/penso/tmp/molt/moltis/crates/web/ui/input.css",
+  "path": "/home/<USER>/tmp/molt/moltis/crates/web/ui/input.css",
   "output_mode": "content",
   "head_limit": 3
 }
@@ -468,7 +468,7 @@ tool_use Bash
 id: toolu_01WBph2pU252rm2AfDuR6uPU
 ```json
 {
-  "command": "ls -la /Users/penso/tmp/molt/moltis/crates/web/ui/icons 2>/dev/null || echo \"No icons dir in ui/\"",
+  "command": "ls -la /home/<USER>/tmp/molt/moltis/crates/web/ui/icons 2>/dev/null || echo \"No icons dir in ui/\"",
   "description": "Check if icons dir exists in ui/"
 }
 ```
@@ -491,7 +491,7 @@ tool_use Bash
 id: toolu_01DqMVDsNgRBSw9Nitt1NhBS
 ```json
 {
-  "command": "ls -la /Users/penso/tmp/molt/moltis/crates/web/ui/ | head -20",
+  "command": "ls -la /home/<USER>/tmp/molt/moltis/crates/web/ui/ | head -20",
   "description": "List ui directory contents"
 }
 ```
@@ -527,7 +527,7 @@ tool_use Read
 id: toolu_01WZNPqpDuxGCkVswJpDY7tG
 ```json
 {
-  "file_path": "/Users/penso/tmp/molt/moltis/crates/web/ui/vite.config.ts"
+  "file_path": "/home/<USER>/tmp/molt/moltis/crates/web/ui/vite.config.ts"
 }
 ```
 
@@ -576,7 +576,7 @@ tool_use Read
 id: toolu_011FBySBPwfwgW5uWULVBDMT
 ```json
 {
-  "file_path": "/Users/penso/tmp/molt/moltis/crates/web/ui/build.sh"
+  "file_path": "/home/<USER>/tmp/molt/moltis/crates/web/ui/build.sh"
 }
 ```
 
@@ -638,7 +638,7 @@ id: toolu_014sqKizPdeGvHFjWWYbjXUB
 ```json
 {
   "pattern": "icons/masks",
-  "path": "/Users/penso/tmp/molt/moltis/crates/web/src/assets/style.css",
+  "path": "/home/<USER>/tmp/molt/moltis/crates/web/src/assets/style.css",
   "output_mode": "content",
   "head_limit": 3
 }
@@ -660,7 +660,7 @@ tool_use Bash
 id: toolu_01Apa7G9hAHKaCAc3bs9Wknx
 ```json
 {
-  "command": "grep -o 'icons/masks/[^\")]*' /Users/penso/tmp/molt/moltis/crates/web/src/assets/style.css | head -5",
+  "command": "grep -o 'icons/masks/[^\")]*' /home/<USER>/tmp/molt/moltis/crates/web/src/assets/style.css | head -5",
   "description": "Extract icon mask paths from compiled CSS"
 }
 ```
@@ -689,7 +689,7 @@ tool_use Bash
 id: toolu_01SrsJF9fEzfodt9JZoJ8L4M
 ```json
 {
-  "command": "cd /Users/penso/tmp/molt/moltis/crates/web/ui && npm run build:css 2>&1",
+  "command": "cd /home/<USER>/tmp/molt/moltis/crates/web/ui && npm run build:css 2>&1",
   "description": "Rebuild Tailwind CSS"
 }
 ```
@@ -718,7 +718,7 @@ id: toolu_01UPmCGnpxwkLsduyRm3kBW5
 ```json
 {
   "pattern": "icon-github",
-  "path": "/Users/penso/tmp/molt/moltis/crates/web/src/assets/css/style.css",
+  "path": "/home/<USER>/tmp/molt/moltis/crates/web/src/assets/css/style.css",
   "output_mode": "content"
 }
 ```
@@ -742,7 +742,7 @@ tool_use Read
 id: toolu_017TjCzUJg4kazqzn3oh9j15
 ```json
 {
-  "file_path": "/Users/penso/tmp/molt/moltis/crates/web/src/templates/index.html",
+  "file_path": "/home/<USER>/tmp/molt/moltis/crates/web/src/templates/index.html",
   "offset": 88,
   "limit": 22
 }
@@ -787,7 +787,7 @@ tool_use Bash
 id: toolu_01CQkprrGAMBbBaUqdApyTVQ
 ```json
 {
-  "command": "cd /Users/penso/tmp/molt/moltis && cargo check -p moltis-web 2>&1 | tail -5",
+  "command": "cd /home/<USER>/tmp/molt/moltis && cargo check -p moltis-web 2>&1 | tail -5",
   "description": "Check moltis-web compiles",
   "timeout": 120000
 }
@@ -853,8 +853,8 @@ id: toolu_01NMBGt2F13iDcqSPV9Dkk1H
 <output>
 
 warning: `moltis-gateway` (lib) generated 47 warnings (run `cargo fix --lib -p moltis-gateway` to apply 6 suggestions)
-    Checking moltis-httpd v0.1.0 (/Users/penso/tmp/molt/moltis/crates/httpd)
-    Checking moltis-web v0.1.0 (/Users/penso/tmp/molt/moltis/crates/web)
+    Checking moltis-httpd v0.1.0 (/home/<USER>/tmp/molt/moltis/crates/httpd)
+    Checking moltis-web v0.1.0 (/home/<USER>/tmp/molt/moltis/crates/web)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 2m 47s
 </output>
 ```

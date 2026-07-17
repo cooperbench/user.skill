@@ -74,10 +74,10 @@ id: toolu_01U3AhWr88hUKExdyyDr44MD
 tool_result
 id: toolu_01U3AhWr88hUKExdyyDr44MD
 ```
-origin	git@github.com:hutusi/monecraft.git (fetch)
-origin	git@github.com:hutusi/monecraft.git (push)
-upstream	git@github.com:davidhu0527/monecraft.git (fetch)
-upstream	git@github.com:davidhu0527/monecraft.git (push)
+origin	<REDACTED_EMAIL>:hutusi/monecraft.git (fetch)
+origin	<REDACTED_EMAIL>:hutusi/monecraft.git (push)
+upstream	<REDACTED_EMAIL>:davidhu0527/monecraft.git (fetch)
+upstream	<REDACTED_EMAIL>:davidhu0527/monecraft.git (push)
 ---
 total 1976
 drwxr-xr-x   42 hutusi  staff    1344 Jul  7 12:52 .
@@ -116,7 +116,7 @@ tool_use Read
 id: toolu_01DNRmgfpW21SU6BSfj1SbCQ
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/deploy.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/deploy.md",
   "offset": 95,
   "limit": 70
 }
@@ -163,7 +163,7 @@ tool_use Read
 id: toolu_019Pq9pssoSBqEZp6UyfdoVT
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/.env.example"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/.env.example"
 }
 ```
 
@@ -207,7 +207,7 @@ tool_use Read
 id: toolu_0141LBbkw5NMi8nQo6sboJFz
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/server"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/server"
 }
 ```
 
@@ -216,7 +216,7 @@ id: toolu_0141LBbkw5NMi8nQo6sboJFz
 tool_result ERROR
 id: toolu_0141LBbkw5NMi8nQo6sboJFz
 ```
-EISDIR: illegal operation on a directory, read '/Users/hutusi/workspace/ai/david/monecraft/server'
+EISDIR: illegal operation on a directory, read '/home/<USER>/workspace/ai/david/monecraft/server'
 ```
 
 > TOOL
@@ -225,7 +225,7 @@ tool_use Bash
 id: toolu_01PhCY3bocBhhJcb3upWfRkF
 ```json
 {
-  "command": "ls -la /Users/hutusi/workspace/ai/david/monecraft/server; echo \"---grep origin---\"; grep -rniE \"origin|cors|allowlist|access-control\" /Users/hutusi/workspace/ai/david/monecraft/server 2>/dev/null | head -40",
+  "command": "ls -la /home/<USER>/workspace/ai/david/monecraft/server; echo \"---grep origin---\"; grep -rniE \"origin|cors|allowlist|access-control\" /home/<USER>/workspace/ai/david/monecraft/server 2>/dev/null | head -40",
   "description": "List server dir and grep for origin/CORS checks"
 }
 ```
@@ -261,7 +261,7 @@ tool_use Read
 id: toolu_01Cb4BxBrMJV8V91FLSMZuQu
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/server/index.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/server/index.ts"
 }
 ```
 
@@ -307,7 +307,7 @@ tool_use Read
 id: toolu_01Ad9NAZRixZoCjiFm5kG3Xc
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/online/onlineClient.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/online/onlineClient.ts",
   "offset": 55,
   "limit": 20
 }
@@ -346,7 +346,7 @@ tool_use Bash
 id: toolu_0175rW9Dpr3WXekUhc97AEKV
 ```json
 {
-  "command": "grep -niE \"vercel\\.app|ainaive|https?://[a-z]|play|live|demo|try it\" /Users/hutusi/workspace/ai/david/monecraft/README.md | head -30",
+  "command": "grep -niE \"vercel\\.app|ainaive|https?://[a-z]|play|live|demo|try it\" /home/<USER>/workspace/ai/david/monecraft/README.md | head -30",
   "description": "Check README for live-site links"
 }
 ```
@@ -430,7 +430,7 @@ tool_use Write
 id: toolu_01XD8MHZ7VP9RybZtVcdhWJx
 ```json
 {
-  "file_path": "/Users/hutusi/.claude/plans/i-want-to-use-atomic-toucan.md",
+  "file_path": "/home/<USER>/.claude/plans/i-want-to-use-atomic-toucan.md",
   "content": "# Plan: switch production domain to `mc.ainaive.com`\n\n## Context\n\nThe game is deployed at `monecraft.vercel.app` and we want the production domain to\nbe `mc.ainaive.com` (a subdomain of the user-owned `ainaive.com`). Goal: serve the\napp from the new domain, keep sign-in and online co-op working, and not break\ninvite links that were already shared under the old domain.\n\n**Key finding from exploration — the codebase is domain-agnostic.** There is exactly\none functional value coupled to the frontend origin; everything else is derived at\nruntime from `window.location.origin` or is decoupled from the web domain entirely:\n\n- Invite/join links: `lib/online/onlineClient.ts:66` → `` `${window.location.origin}/join/${token}` `` (auto-follows the serving domain)\n- Auth client base URL: `lib/auth/client.ts:20` → `window.location.origin` (auto)\n- Service-worker cache scope: `public/sw.js:42` → compares `self.location.origin` (auto)\n- Session cookies: host-only (no `domain`/`trustedOrigins`/`crossSubDomain` set) — re-issued on the new host; existing sign-ins simply re-login\n- Fly.io game server: `server/index.ts:74-99` does **no** Origin/CORS check — admission is purely the HMAC join ticket. **No server change needed.**\n- `NEXT_PUBLIC_GAME_SERVER_URL` points at Fly (`wss://monecraft-server.fly.dev`), independent of the web domain — **leave as-is.**\n\n**The one coupled value:** `BETTER_AUTH_URL` (read at `lib/auth/server.ts:18`). If it\ndoesn't match the serving origin, sign-in hangs (documented failure mode,\n`docs/deploy.md:191`). It must be updated to `https://mc.ainaive.com`.\n\nThere is no `vercel.json`/`vercel.ts`, no `middleware.ts`, and […]
 
 > TOOL
@@ -438,7 +438,7 @@ id: toolu_01XD8MHZ7VP9RybZtVcdhWJx
 tool_result
 id: toolu_01XD8MHZ7VP9RybZtVcdhWJx
 ```
-File created successfully at: /Users/hutusi/.claude/plans/i-want-to-use-atomic-toucan.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/plans/i-want-to-use-atomic-toucan.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -584,7 +584,7 @@ id: toolu_011w6DGzRsvH2XRucicxcHGf
 ```
 User has approved your plan. You can now start coding. Start with updating your todo list if applicable
 
-Your plan has been saved to: /Users/hutusi/.claude/plans/i-want-to-use-atomic-toucan.md
+Your plan has been saved to: /home/<USER>/.claude/plans/i-want-to-use-atomic-toucan.md
 You can refer back to it if needed during implementation.
 
 ## Approved Plan (edited by user):
@@ -617,7 +617,7 @@ tool_use Read
 id: toolu_01EZB6tgJBZce8VpZoQ7wbwB
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/deploy.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/deploy.md",
   "offset": 118,
   "limit": 30
 }
@@ -656,7 +656,7 @@ tool_use Read
 id: toolu_01KLPqf2rofJAHafjCW4R2pv
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md",
   "limit": 40
 }
 ```
@@ -687,7 +687,7 @@ id: toolu_01Fn2x8SzUjm1x3CRGpoz4L8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/deploy.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/deploy.md",
   "old_string": "| `BETTER_AUTH_URL`             | the deployed origin, e.g. `https://monecraft.vercel.app` |",
   "new_string": "| `BETTER_AUTH_URL`             | the deployed origin, e.g. `https://mc.ainaive.com`       |"
 }
@@ -698,7 +698,7 @@ id: toolu_01Fn2x8SzUjm1x3CRGpoz4L8
 tool_result
 id: toolu_01Fn2x8SzUjm1x3CRGpoz4L8
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/deploy.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/deploy.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -708,7 +708,7 @@ id: toolu_01SinjBaQK9dEriTMQH8RnsJ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/deploy.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/deploy.md",
   "old_string": "> **Ordering / chicken-and-egg:** `BETTER_AUTH_URL` is your Vercel origin and\n> `NEXT_PUBLIC_GAME_SERVER_URL` is your Fly origin, so each side wants the other's\n> URL. Both hostnames are predictable (`<project>.vercel.app`,\n> `<app>.fly.dev`), so set them up front. If you use a custom domain, set the env\n> var to the final URL and redeploy the web app once DNS is live. `NEXT_PUBLIC_*`\n> vars are inlined at build time — changing one needs a **redeploy**, not just an\n> env edit.",
   "new_string": "> **Ordering / chicken-and-egg:** `BETTER_AUTH_URL` is your Vercel origin and\n> `NEXT_PUBLIC_GAME_SERVER_URL` is your Fly origin, so each side wants the other's\n> URL. Both hostnames are predictable (`<project>.vercel.app`,\n> `<app>.fly.dev`), so set them up front. If you use a custom domain, set the env\n> var to the final URL and redeploy the web app once DNS is live. `NEXT_PUBLIC_*`\n> vars are inlined at build time — changing one needs a **redeploy**, not just an\n> env edit.\n\n### Custom domain\n\nThe production app runs at **`mc.ainaive.com`**. To point a custom domain at the\nVercel project:\n\n1. **Vercel → Settings → Domains** → add `mc.ainaive.com` and mark it the\n   **primary / production** domain.\n2. **DNS** at the domain's provider: add a `CNAME` record […]
 
@@ -717,7 +717,7 @@ id: toolu_01SinjBaQK9dEriTMQH8RnsJ
 tool_result
 id: toolu_01SinjBaQK9dEriTMQH8RnsJ
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/deploy.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/deploy.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -731,7 +731,7 @@ id: toolu_01ThZ2vvNGVYPkCoC8ndhnjo
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md",
   "old_string": "### Changed\n\n- **World saves move from localStorage to IndexedDB — big builds no longer risk the quota cliff**:",
   "new_string": "### Changed\n\n- **Production domain moves to `mc.ainaive.com`**: the app is served from `mc.ainaive.com` instead of `monecraft.vercel.app`; the old domain 308-redirects to it (path-preserving), so invite links already shared under `monecraft.vercel.app/join/<token>` keep working. No code change — the app derives its origin from the browser at runtime (invite links, auth client, service-worker cache scope all follow the serving domain), and the Fly game server does no Origin/CORS check, so nothing on the server side is touched. The one coupled value is the `BETTER_AUTH_URL` Vercel env var (now `https://mc.ainaive.com`, or sign-in hangs); `NEXT_PUBLIC_GAME_SERVER_URL` still points at the Fly server, unchanged. See docs/deploy.md → Custom domain.\n- **World saves move from localStorage to IndexedDB — big builds no longer risk the quota cliff**:"
 }
@@ -742,7 +742,7 @@ id: toolu_01ThZ2vvNGVYPkCoC8ndhnjo
 tool_result
 id: toolu_01ThZ2vvNGVYPkCoC8ndhnjo
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

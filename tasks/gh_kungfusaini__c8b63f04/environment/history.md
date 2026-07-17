@@ -8,7 +8,7 @@ tool_use Bash
 id: toolu_01LeP6yvtjZ1kh7XLuEHimyG
 ```json
 {
-  "command": "ls /Users/sumeet/matrix/web/aether",
+  "command": "ls /home/<USER>/matrix/web/aether",
   "description": "List aether repo root"
 }
 ```
@@ -35,7 +35,7 @@ tool_use Bash
 id: toolu_01GGbdSVmfopopTnepLX18GN
 ```json
 {
-  "command": "ls /Users/sumeet/matrix/web/aether/services && echo \"---\" && cat /Users/sumeet/matrix/web/aether/docker-compose-prod.yml",
+  "command": "ls /home/<USER>/matrix/web/aether/services && echo \"---\" && cat /home/<USER>/matrix/web/aether/docker-compose-prod.yml",
   "description": "Explore services and prod compose"
 }
 ```
@@ -76,7 +76,7 @@ services:
       - WELL_API_KEY=${WELL_API_KEY}
       - BACKUP_REPO_URL=https://github.com/kungfusaini/vulkan-data.git
       - GIT_AUTHOR_NAME=Vulkan Backup Bot
-      - GIT_AUTHOR_EMAIL=backup@vulkan.sumeetsaini.com
+      - GIT_AUTHOR_EMAIL=<REDACTED_EMAIL>
       - VULKAN_GIT_TOKEN=${VULKAN_GIT_TOKEN}
       - PROJECTS_REPO_URL=${PROJECTS_REPO_URL}
       - PROJECTS_WEBHOOK_SECRET=${PROJECTS_WEBHOOK_SECRET}
@@ -174,7 +174,7 @@ tool_use Bash
 id: toolu_01NE3xz5zYjQTrbPRTAz4Wco
 ```json
 {
-  "command": "ls /Users/sumeet/matrix/web/aether/services/gateway && echo \"---\" && ls /Users/sumeet/matrix/web/aether/services/sumeetsaini_com",
+  "command": "ls /home/<USER>/matrix/web/aether/services/gateway && echo \"---\" && ls /home/<USER>/matrix/web/aether/services/sumeetsaini_com",
   "description": "Explore gateway and sumeetsaini service"
 }
 ```
@@ -215,7 +215,7 @@ tool_use Bash
 id: toolu_01P49UNf9WoPqhtqKT7qRRLE
 ```json
 {
-  "command": "ls /Users/sumeet/matrix/web/aether/services/gateway/conf.d && echo \"---\" && cat /Users/sumeet/matrix/web/aether/services/gateway/nginx-prod.conf | head -50",
+  "command": "ls /home/<USER>/matrix/web/aether/services/gateway/conf.d && echo \"---\" && cat /home/<USER>/matrix/web/aether/services/gateway/nginx-prod.conf | head -50",
   "description": "List gateway conf.d"
 }
 ```
@@ -268,7 +268,7 @@ tool_use Bash
 id: toolu_01Mgs9gJr9aPo7ZVzW1SQy4v
 ```json
 {
-  "command": "ls /Users/sumeet/matrix/web/aether/services/gateway/conf.d/prod && echo \"---common---\" && ls /Users/sumeet/matrix/web/aether/services/gateway/conf.d/common",
+  "command": "ls /home/<USER>/matrix/web/aether/services/gateway/conf.d/prod && echo \"---common---\" && ls /home/<USER>/matrix/web/aether/services/gateway/conf.d/common",
   "description": "List prod and common confs"
 }
 ```
@@ -302,7 +302,7 @@ tool_use Bash
 id: toolu_018xtJMbdJZ73Ni8NPzbBvqc
 ```json
 {
-  "command": "cat /Users/sumeet/matrix/web/aether/services/gateway/conf.d/prod/reliq.digital.conf /Users/sumeet/matrix/web/aether/services/gateway/conf.d/prod/upstreams.conf /Users/sumeet/matrix/web/aether/services/gateway/conf.d/prod/servers.conf",
+  "command": "cat /home/<USER>/matrix/web/aether/services/gateway/conf.d/prod/reliq.digital.conf /home/<USER>/matrix/web/aether/services/gateway/conf.d/prod/upstreams.conf /home/<USER>/matrix/web/aether/services/gateway/conf.d/prod/servers.conf",
   "description": "Read a sample site conf and upstreams"
 }
 ```
@@ -412,7 +412,7 @@ tool_use Bash
 id: toolu_01Ao3RJ8hmDReMz2xGzvXqBj
 ```json
 {
-  "command": "cat /Users/sumeet/matrix/web/aether/services/sumeetsaini_com/Dockerfile.prod && echo \"---\" && ls /Users/sumeet/matrix/web/aether/services/sumeetsaini_com/.github 2>/dev/null; ls /Users/sumeet/matrix/web/aether/services/sumeetsaini_com/.git 2>/dev/null; cat /Users/sumeet/matrix/web/aether/services/reliq/Dockerfile.prod 2>/dev/null || ls /Users/sumeet/matrix/web/aether/services/reliq",
+  "command": "cat /home/<USER>/matrix/web/aether/services/sumeetsaini_com/Dockerfile.prod && echo \"---\" && ls /home/<USER>/matrix/web/aether/services/sumeetsaini_com/.github 2>/dev/null; ls /home/<USER>/matrix/web/aether/services/sumeetsaini_com/.git 2>/dev/null; cat /home/<USER>/matrix/web/aether/services/reliq/Dockerfile.prod 2>/dev/null || ls /home/<USER>/matrix/web/aether/services/reliq",
   "description": "Inspect site dockerfile and reliq"
 }
 ```
@@ -431,7 +431,7 @@ COPY . /usr/share/nginx/html
 # Expose the standard Nginx port
 EXPOSE 80
 ---
-/Users/sumeet/matrix/web/aether/services/sumeetsaini_com/.git
+/home/<USER>/matrix/web/aether/services/sumeetsaini_com/.git
 reliq.digital
 reliqlabs
 reliqstudios
@@ -531,7 +531,7 @@ tool_use Bash
 id: toolu_01UgW6gJWeGADBG4F9ousGvp
 ```json
 {
-  "command": "ls /Users/sumeet/matrix/web/aether/scripts",
+  "command": "ls /home/<USER>/matrix/web/aether/scripts",
   "description": "Check existing scripts"
 }
 ```
@@ -564,7 +564,7 @@ id: toolu_012oT2MQXSRmvkuwJA6qYJXZ
 tool_result
 id: toolu_012oT2MQXSRmvkuwJA6qYJXZ
 ```
--rw-------  1 sumeet  staff  54  6 Jun 09:17 /Users/sumeet/.config/cloudflare/token
+-rw-------  1 sumeet  staff  54  6 Jun 09:17 /home/<USER>/.config/cloudflare/token
 ```
 
 > TOOL
@@ -573,7 +573,7 @@ tool_use Write
 id: toolu_01TnsbE7SKHmNrbpEzBiz1kY
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/web/aether/scripts/cf-add-site.sh",
+  "file_path": "/home/<USER>/matrix/web/aether/scripts/cf-add-site.sh",
   "content": "#!/usr/bin/env bash\n# Add a new site to Cloudflare DNS.\n#\n# Usage:\n#   cf-add-site.sh <domain> <server-ip> [--no-mail] [--no-proxy]\n#\n# Creates:\n#   - A    @     -> <server-ip>   (proxied by default)\n#   - A    www   -> <server-ip>   (proxied by default)\n#   - MX   @     -> mail.sumeetsaini.com  (priority 10, DNS-only)  [unless --no-mail]\n#   - TXT  @     SPF: \"v=spf1 mx ~all\"                              [unless --no-mail]\n#\n# Requires:\n#   CF_API_TOKEN env var, or token in ~/.config/cloudflare/token\n#   jq, curl\n\nset -euo pipefail\n\nif [[ $# -lt 2 ]]; then\n    sed -n '2,12p' \"$0\"\n    exit 1\nfi\n\nDOMAIN=\"$1\"\nIP=\"$2\"\nshift 2\n\nWITH_MAIL=1\nPROXIED=true\nfor arg in \"$@\"; do\n    case \"$arg\" in\n        --no-mail)  WITH_MAIL=0 ;;\n        --no-proxy) PROXIED=false ;;\n        *) echo \"Unknown flag: $arg\" >&2; exit 1 ;;\n    esac\ndone\n\nTOKEN=\"${CF_API_TOKEN:-}\"\nif [[ -z \"$TOKEN\" && -r \"$HOME/.config/cloudflare/token\" ]]; then\n    TOKEN=\"$(cat \"$HOME/.config/cloudflare/token\")\"\nfi\nif [[ -z \"$TOKEN\" ]]; then\n    echo \"error: no CF_API_TOKEN env var and no ~/.config/cloudflare/token\" >&2\n    exit 1\nfi\n\nAPI=\"https://api.cloudflare.com/client/v4\"\nAUTH=(-H \"Authorization: Bearer $TOKEN\" -H \"Content-Type: application/json\")\n\ncf() {\n    curl -fsS \"${AUTH[@]}\" \"$@\"\n}\n\n# Find zone id (assumes zone == domain; for subdomains pass the apex)\nZONE_ID=\"$(cf \"$API/zones?name=$DOMAIN\" | jq -r '.result[0].id // empty')\"\nif [[ -z \"$ZONE_ID\" ]]; then\n    echo \"error: zone '$DOMAIN' not found in this Cloudflare account\" >&2\n    echo \"       (add the zone in the dashboard first, or pass the apex domain)\" >&2\n    exit 1\nfi\necho \"zone: $DOMAIN […]
 
 > TOOL
@@ -581,7 +581,7 @@ id: toolu_01TnsbE7SKHmNrbpEzBiz1kY
 tool_result
 id: toolu_01TnsbE7SKHmNrbpEzBiz1kY
 ```
-File created successfully at: /Users/sumeet/matrix/web/aether/scripts/cf-add-site.sh (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/matrix/web/aether/scripts/cf-add-site.sh (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -590,7 +590,7 @@ tool_use Bash
 id: toolu_01QHm9aW7CkPf5gpLthVfZ1G
 ```json
 {
-  "command": "chmod +x /Users/sumeet/matrix/web/aether/scripts/cf-add-site.sh && bash -n /Users/sumeet/matrix/web/aether/scripts/cf-add-site.sh && echo \"syntax ok\"",
+  "command": "chmod +x /home/<USER>/matrix/web/aether/scripts/cf-add-site.sh && bash -n /home/<USER>/matrix/web/aether/scripts/cf-add-site.sh && echo \"syntax ok\"",
   "description": "Mark executable and syntax-check"
 }
 ```
@@ -613,7 +613,7 @@ tool_use Write
 id: toolu_01MowLcBJ1AHh3DN3gPhZ4tw
 ```json
 {
-  "file_path": "/Users/sumeet/.claude/projects/-Users-sumeet-matrix-web-aether/memory/cloudflare_api_token.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-sumeet-matrix-web-aether/memory/cloudflare_api_token.md",
   "content": "---\nname: cloudflare-api-token\ndescription: Where the user's Cloudflare API token lives on disk and how scripts in the aether repo consume it\nmetadata:\n  type: reference\n---\n\nCloudflare API token is stored at `~/.config/cloudflare/token` (chmod 600, plaintext, one line).\n\nScripts in `matrix/web/aether/scripts/` that hit the Cloudflare API should read the token from `$CF_API_TOKEN` first, and fall back to reading that file. See `scripts/cf-add-site.sh` for the canonical pattern.\n\nToken scope: zone-level DNS edits across the user's Cloudflare account (used for adding new sites like babbi.world, reliq.digital, etc.).\n\nWhy: the user explicitly asked the token be remembered. Storing it on disk in a 600 file (instead of inside a memory file) keeps the secret out of every future LLM context window while preserving the convenience of \"scripts just work.\"\n\nHow to apply: when writing or running CLI tooling that needs Cloudflare API access in this repo, source the token from the file above rather than asking the user to paste it again. Never echo the token value into chat or commit it to git.\n"
 }
 ```
@@ -623,7 +623,7 @@ id: toolu_01MowLcBJ1AHh3DN3gPhZ4tw
 tool_result
 id: toolu_01MowLcBJ1AHh3DN3gPhZ4tw
 ```
-File created successfully at: /Users/sumeet/.claude/projects/-Users-sumeet-matrix-web-aether/memory/cloudflare_api_token.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-Users-sumeet-matrix-web-aether/memory/cloudflare_api_token.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -632,7 +632,7 @@ tool_use Bash
 id: toolu_013r3Y1FXbdXsRJJwFK2MNnU
 ```json
 {
-  "command": "ls /Users/sumeet/.claude/projects/-Users-sumeet-matrix-web-aether/memory/ 2>/dev/null",
+  "command": "ls /home/<USER>/.claude/projects/-Users-sumeet-matrix-web-aether/memory/ 2>/dev/null",
   "description": "Check if MEMORY.md exists"
 }
 ```
@@ -651,7 +651,7 @@ tool_use Write
 id: toolu_019w58xkv5kYDzrzQVBpyS56
 ```json
 {
-  "file_path": "/Users/sumeet/.claude/projects/-Users-sumeet-matrix-web-aether/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-sumeet-matrix-web-aether/memory/MEMORY.md",
   "content": "# Memory Index\n\n- [Cloudflare API token](cloudflare_api_token.md) — token lives at `~/.config/cloudflare/token`; scripts read `$CF_API_TOKEN` then fall back to that file\n"
 }
 ```
@@ -661,7 +661,7 @@ id: toolu_019w58xkv5kYDzrzQVBpyS56
 tool_result
 id: toolu_019w58xkv5kYDzrzQVBpyS56
 ```
-File created successfully at: /Users/sumeet/.claude/projects/-Users-sumeet-matrix-web-aether/memory/MEMORY.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-Users-sumeet-matrix-web-aether/memory/MEMORY.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -738,7 +738,7 @@ CNAME	autoconfig.reliq.digital	mail.reliq.digital	proxied=true	prio=-
 CNAME	autodiscover.reliq.digital	mail.reliq.digital	proxied=true	prio=-
 MX	reliq.digital	mail.reliq.digital	proxied=false	prio=10
 TXT	dkim._domainkey.reliq.digital	"v=DKIM1;k=rsa;t=s;s=email;p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAyYcxCPwnL//oxgFqF7hCx3taKECUX9S/S4CK8O5XpkiyepQN3BxXRVcsvO0aKyisQdZ1RObEuVGjzRdYnAhzPent1Tt2LjJpiRs7BegBVsoowOl/FVwkr+7tfuxtqrG6Exs1LfiJY8MocnuFvWcJJ8uDLqa76RzYgo8yMG/BbkhhiXQU9OiOGhm" "qjCCISizfzbR1vw1ara33u8WkKhU1GZxDFzWFpS35vm7pWoPXioB/3sSsfMD2Pnnbn+i+NJy3PC+muQ3RdjP+cb1GOB16j9VpKxWawLKeyE45Z+cGLtSKinyIctbQqQ1DXCMHirTlt8LPwZHTWaWRUxHzD+j+5QIDAQAB"	proxied=false	prio=-
-TXT	_dmarc.reliq.digital	"v=DMARC1; p=reject; rua=mailto:mailauth-reports@reliq.digital"	proxied=false	prio=-
+TXT	_dmarc.reliq.digital	"v=DMARC1; p=reject; rua=mailto:<REDACTED_EMAIL>"	proxied=false	prio=-
 TXT	reliq.digital	"google-site-verification=jKqRq1aSQdCYUrMjvqHJYwkNyOdJ4YYNIZ_lygfOWas"	proxied=false	prio=-
 TXT	reliq.digital	"v=spf1 ip4:49.12.43.116 ip6:2a01:4f8:c17:6484::/64 a mx ~all"	proxied=false	prio=-
 
@@ -758,7 +758,7 @@ tool_use Write
 id: toolu_01CprT4r7j6qgRqddfKZtCDr
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/web/aether/scripts/cf-add-site.sh",
+  "file_path": "/home/<USER>/matrix/web/aether/scripts/cf-add-site.sh",
   "content": "#!/usr/bin/env bash\n# Add a new site (web + mail) to Cloudflare DNS, matching the pattern\n# used by reliq.digital and the other sites in this account.\n#\n# Usage:\n#   cf-add-site.sh <domain> [--no-mail] [--no-proxy] [--ip4 X] [--ip6 Y]\n#\n# Defaults:\n#   ip4 = 49.12.43.116\n#   ip6 = 2a01:4f8:c17:6484::1\n#\n# Creates (web):\n#   A     @     -> ip4   (proxied)\n#   A     www   -> ip4   (proxied)\n#   AAAA  @     -> ip6   (proxied)\n#   AAAA  www   -> ip6   (proxied)\n#\n# Creates (mail, unless --no-mail):\n#   A     mail          -> ip4 (DNS-only; needed for SMTP)\n#   MX    @             -> mail.<domain>   (priority 10)\n#   CNAME autoconfig    -> mail.<domain>   (proxied)\n#   CNAME autodiscover  -> mail.<domain>   (proxied)\n#   TXT   @  SPF        -> \"v=spf1 ip4:<ip4> ip6:<ip6>/64 a mx ~all\"\n#\n# DKIM is NOT created here — grab the record from the Mailcow admin UI after\n# enabling the domain there, and add the TXT manually (or re-run with --dkim).\n#\n# Requires: jq, curl, and CF_API_TOKEN (env) or ~/.config/cloudflare/token\n\nset -euo pipefail\n\nDOMAIN=\"\"\nWITH_MAIL=1\nPROXIED=true\nIP4=\"49.12.43.116\"\nIP6=\"2a01:4f8:c17:6484::1\"\n\nwhile [[ $# -gt 0 ]]; do\n    case \"$1\" in\n        --no-mail)  WITH_MAIL=0; shift ;;\n        --no-proxy) PROXIED=false; shift ;;\n        --ip4)      IP4=\"$2\"; shift 2 ;;\n        --ip6)      IP6=\"$2\"; shift 2 ;;\n        -h|--help)  sed -n '2,28p' \"$0\"; exit 0 ;;\n        -*)         echo \"unknown flag: $1\" >&2; exit 1 ;;\n        *)          DOMAIN=\"$1\"; shift ;;\n    esac\ndone\n\nif [[ -z \"$DOMAIN\" […]
 
 > TOOL
@@ -766,7 +766,7 @@ id: toolu_01CprT4r7j6qgRqddfKZtCDr
 tool_result
 id: toolu_01CprT4r7j6qgRqddfKZtCDr
 ```
-The file /Users/sumeet/matrix/web/aether/scripts/cf-add-site.sh has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/matrix/web/aether/scripts/cf-add-site.sh has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -775,7 +775,7 @@ tool_use Bash
 id: toolu_01FRTJcwkU1kbg4eTH1ZtP4k
 ```json
 {
-  "command": "bash -n /Users/sumeet/matrix/web/aether/scripts/cf-add-site.sh && echo \"syntax ok\"",
+  "command": "bash -n /home/<USER>/matrix/web/aether/scripts/cf-add-site.sh && echo \"syntax ok\"",
   "description": "Syntax check"
 }
 ```
@@ -798,7 +798,7 @@ tool_use Bash
 id: toolu_01BwErQS3RGAXL5rNa3vUzmF
 ```json
 {
-  "command": "/Users/sumeet/matrix/web/aether/scripts/cf-add-site.sh babbi.world",
+  "command": "/home/<USER>/matrix/web/aether/scripts/cf-add-site.sh babbi.world",
   "description": "Run cf-add-site for babbi.world"
 }
 ```
@@ -883,7 +883,7 @@ Want me to scaffold the aether-side bits next (compose entry + `gateway/conf.d/p
 
 > DEVELOPER
 
-are you sure you can't do the dkim stuff like sureley you can add the babbi.world into mailcow? i would want one mail box me@babbi.world and then have *@babbi.world as any alias
+are you sure you can't do the dkim stuff like sureley you can add the babbi.world into mailcow? i would want one mail box <REDACTED_EMAIL> and then have *@babbi.world as any alias
 
 > AGENT
 
@@ -895,7 +895,7 @@ tool_use Bash
 id: toolu_016Wwuqm44Ux4bQpxmsDM3hh
 ```json
 {
-  "command": "cat /Users/sumeet/matrix/web/aether/docker-compose-mailcow.yml 2>/dev/null | head -40",
+  "command": "cat /home/<USER>/matrix/web/aether/docker-compose-mailcow.yml 2>/dev/null | head -40",
   "description": "Inspect mailcow compose"
 }
 ```
@@ -919,7 +919,7 @@ tool_use Bash
 id: toolu_01Y6nFVP7ukwHKfkKSS4TXB7
 ```json
 {
-  "command": "cat /Users/sumeet/matrix/web/aether/services/gateway/conf.d/prod/mail.sumeetsaini.com.conf 2>/dev/null",
+  "command": "cat /home/<USER>/matrix/web/aether/services/gateway/conf.d/prod/mail.sumeetsaini.com.conf 2>/dev/null",
   "description": "Check mailcow URL"
 }
 ```
@@ -980,7 +980,7 @@ tool_use Bash
 id: toolu_01TPH3NYjMoEcBqYxUQDT47w
 ```json
 {
-  "command": "grep -rn -i \"mailcow\\|MAILCOW_API\\|MAIL_API\" /Users/sumeet/matrix/web/aether --include=\"*.sh\" --include=\"*.yml\" --include=\".env*\" 2>/dev/null | head -20; echo \"---\"; ls ~/.config/ 2>/dev/null",
+  "command": "grep -rn -i \"mailcow\\|MAILCOW_API\\|MAIL_API\" /home/<USER>/matrix/web/aether --include=\"*.sh\" --include=\"*.yml\" --include=\".env*\" 2>/dev/null | head -20; echo \"---\"; ls ~/.config/ 2>/dev/null",
   "description": "Look for mailcow API key"
 }
 ```
@@ -990,25 +990,25 @@ id: toolu_01TPH3NYjMoEcBqYxUQDT47w
 tool_result
 id: toolu_01TPH3NYjMoEcBqYxUQDT47w
 ```
-/Users/sumeet/matrix/web/aether/docker-compose-mailcow.yml:1:# Mailcow Dockerized Integration
-/Users/sumeet/matrix/web/aether/docker-compose-mailcow.yml:5:  mailcowdockerized_mailcow-network:
-/Users/sumeet/matrix/web/aether/docker-compose-prod.yml:16:      - MAILCOW_HOST=mailcowdockerized-postfix-mailcow-1
-/Users/sumeet/matrix/web/aether/docker-compose-prod.yml:29:      - mailcowdockerized_mailcow-network
-/Users/sumeet/matrix/web/aether/docker-compose-prod.yml:92:      - mailcowdockerized_mailcow-network
-/Users/sumeet/matrix/web/aether/docker-compose-prod.yml:106:  mailcowdockerized_mailcow-network:
-/Users/sumeet/matrix/web/aether/scripts/cf-add-site.sh:25:# DKIM is NOT created here — grab the record from the Mailcow admin UI after
-/Users/sumeet/matrix/web/aether/scripts/cf-add-site.sh:130:echo "done. (DKIM still needs to be added from Mailcow admin after enabling the domain.)"
-/Users/sumeet/matrix/web/aether/.github/workflows/deploy.yml:173:                        -f docker-compose-mailcow.yml \
-/Users/sumeet/matrix/web/aether/.github/workflows/deploy.yml:178:          COMPOSE_FILES="-f docker-compose.yml -f docker-compose-prod.yml -f docker-compose-mailcow.yml -f docker-compose-plausible.yml"
-/Users/sumeet/matrix/web/aether/scripts/ssl-renewal-hook.sh:19:# Handle mailcow SSL renewal
-/Users/sumeet/matrix/web/aether/scripts/ssl-renewal-hook.sh:21:    echo "Updating mailcow SSL certificates..."
-/Users/sumeet/matrix/web/aether/scripts/ssl-renewal-hook.sh:22:    if [ -d "/opt/mailcow-dockerized/data/assets/ssl" ]; then
-/Users/sumeet/matrix/web/aether/scripts/ssl-renewal-hook.sh:23:        cp "$RENEWED_LINEAGE/fullchain.pem" /opt/mailcow-dockerized/data/assets/ssl/cert.pem
-/Users/sumeet/matrix/web/aether/scripts/ssl-renewal-hook.sh:24:        cp "$RENEWED_LINEAGE/privkey.pem" /opt/mailcow-dockerized/data/assets/ssl/key.pem
-/Users/sumeet/matrix/web/aether/scripts/ssl-renewal-hook.sh:26:        # Restart mailcow services that use SSL
-/Users/sumeet/matrix/web/aether/scripts/ssl-renewal-hook.sh:27:        cd /opt/mailcow-dockerized
-/Users/sumeet/matrix/web/aether/scripts/ssl-renewal-hook.sh:28:        docker compose restart nginx-mailcow postfix-mailcow dovecot-mailcow || echo "Warning: Could not restart mailcow SSL services"
-/Users/sumeet/matrix/web/aether/scripts/ssl-renewal-hook.sh:30:        echo "Warning: Mailcow SSL directory not found"
+/home/<USER>/matrix/web/aether/docker-compose-mailcow.yml:1:# Mailcow Dockerized Integration
+/home/<USER>/matrix/web/aether/docker-compose-mailcow.yml:5:  mailcowdockerized_mailcow-network:
+/home/<USER>/matrix/web/aether/docker-compose-prod.yml:16:      - MAILCOW_HOST=mailcowdockerized-postfix-mailcow-1
+/home/<USER>/matrix/web/aether/docker-compose-prod.yml:29:      - mailcowdockerized_mailcow-network
+/home/<USER>/matrix/web/aether/docker-compose-prod.yml:92:      - mailcowdockerized_mailcow-network
+/home/<USER>/matrix/web/aether/docker-compose-prod.yml:106:  mailcowdockerized_mailcow-network:
+/home/<USER>/matrix/web/aether/scripts/cf-add-site.sh:25:# DKIM is NOT created here — grab the record from the Mailcow admin UI after
+/home/<USER>/matrix/web/aether/scripts/cf-add-site.sh:130:echo "done. (DKIM still needs to be added from Mailcow admin after enabling the domain.)"
+/home/<USER>/matrix/web/aether/.github/workflows/deploy.yml:173:                        -f docker-compose-mailcow.yml \
+/home/<USER>/matrix/web/aether/.github/workflows/deploy.yml:178:          COMPOSE_FILES="-f docker-compose.yml -f docker-compose-prod.yml -f docker-compose-mailcow.yml -f docker-compose-plausible.yml"
+/home/<USER>/matrix/web/aether/scripts/ssl-renewal-hook.sh:19:# Handle mailcow SSL renewal
+/home/<USER>/matrix/web/aether/scripts/ssl-renewal-hook.sh:21:    echo "Updating mailcow SSL certificates..."
+/home/<USER>/matrix/web/aether/scripts/ssl-renewal-hook.sh:22:    if [ -d "/opt/mailcow-dockerized/data/assets/ssl" ]; then
+/home/<USER>/matrix/web/aether/scripts/ssl-renewal-hook.sh:23:        cp "$RENEWED_LINEAGE/fullchain.pem" /opt/mailcow-dockerized/data/assets/ssl/cert.pem
+/home/<USER>/matrix/web/aether/scripts/ssl-renewal-hook.sh:24:        cp "$RENEWED_LINEAGE/privkey.pem" /opt/mailcow-dockerized/data/assets/ssl/key.pem
+/home/<USER>/matrix/web/aether/scripts/ssl-renewal-hook.sh:26:        # Restart mailcow services that use SSL
+/home/<USER>/matrix/web/aether/scripts/ssl-renewal-hook.sh:27:        cd /opt/mailcow-dockerized
+/home/<USER>/matrix/web/aether/scripts/ssl-renewal-hook.sh:28:        docker compose restart nginx-mailcow postfix-mailcow dovecot-mailcow || echo "Warning: Could not restart mailcow SSL services"
+/home/<USER>/matrix/web/aether/scripts/ssl-renewal-hook.sh:30:        echo "Warning: Mailcow SSL directory not found"
 ---
 aerospace
 atuin
@@ -1062,16 +1062,16 @@ id: toolu_013H8B5fFY8LSiHxwwD2p9XJ
 tool_result
 id: toolu_013H8B5fFY8LSiHxwwD2p9XJ
 ```
-/Users/sumeet/matrix/data-annotation/quals/agentic-coding/test/opencode/packages/llm/test/cache-policy.test.ts
-/Users/sumeet/matrix/data-annotation/quals/agentic-coding/test/opencode/packages/llm/test/provider/anthropic-messages.test.ts
-/Users/sumeet/matrix/data-annotation/quals/agentic-coding/test/opencode/packages/llm/test/executor.test.ts
-/Users/sumeet/matrix/data-annotation/quals/agentic-coding/test/opencode/packages/llm/src/protocols/anthropic-messages.ts
-/Users/sumeet/matrix/data-annotation/quals/agentic-coding/test/opencode/packages/http-recorder/src/redaction.ts
-/Users/sumeet/matrix/data-annotation/quals/agentic-coding/test/opencode/packages/opencode/src/plugin/github-copilot/copilot.ts
-/Users/sumeet/matrix/data-annotation/quals/agentic-coding/test/opencode/packages/llm/AGENTS.md
-/Users/sumeet/matrix/data-annotation/quals/agentic-coding/test/opencode/packages/console/app/src/routes/zen/v1/messages.ts
-/Users/sumeet/matrix/data-annotation/quals/agentic-coding/test/opencode/packages/console/app/src/routes/zen/go/v1/messages.ts
-/Users/sumeet/matrix/data-annotation/quals/agentic-coding/test/opencode/packages/console/app/src/routes/zen/util/provider/anthropic.ts
+/home/<USER>/matrix/data-annotation/quals/agentic-coding/test/opencode/packages/llm/test/cache-policy.test.ts
+/home/<USER>/matrix/data-annotation/quals/agentic-coding/test/opencode/packages/llm/test/provider/anthropic-messages.test.ts
+/home/<USER>/matrix/data-annotation/quals/agentic-coding/test/opencode/packages/llm/test/executor.test.ts
+/home/<USER>/matrix/data-annotation/quals/agentic-coding/test/opencode/packages/llm/src/protocols/anthropic-messages.ts
+/home/<USER>/matrix/data-annotation/quals/agentic-coding/test/opencode/packages/http-recorder/src/redaction.ts
+/home/<USER>/matrix/data-annotation/quals/agentic-coding/test/opencode/packages/opencode/src/plugin/github-copilot/copilot.ts
+/home/<USER>/matrix/data-annotation/quals/agentic-coding/test/opencode/packages/llm/AGENTS.md
+/home/<USER>/matrix/data-annotation/quals/agentic-coding/test/opencode/packages/console/app/src/routes/zen/v1/messages.ts
+/home/<USER>/matrix/data-annotation/quals/agentic-coding/test/opencode/packages/console/app/src/routes/zen/go/v1/messages.ts
+/home/<USER>/matrix/data-annotation/quals/agentic-coding/test/opencode/packages/console/app/src/routes/zen/util/provider/anthropic.ts
 ```
 
 > AGENT
@@ -1084,7 +1084,7 @@ tool_use Write
 id: toolu_01LSsYMXJ6DQDsu1MEdXqsAX
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/web/aether/scripts/mailcow-add-domain.sh",
+  "file_path": "/home/<USER>/matrix/web/aether/scripts/mailcow-add-domain.sh",
   "content": "#!/usr/bin/env bash\n# Add a domain to Mailcow end-to-end:\n#   1. Create the domain (with a generous catchall budget)\n#   2. Create one real mailbox <local>@<domain>\n#   3. Create a catchall alias @<domain> -> <local>@<domain>\n#   4. Generate a DKIM key (selector \"dkim\", 2048 bits)\n#   5. Push the DKIM public key to Cloudflare as dkim._domainkey.<domain>\n#\n# Usage:\n#   mailcow-add-domain.sh <domain> [--local me] [--name \"Display Name\"]\n#                                  [--password STRING]   # else autogenerated\n#\n# Requires:\n#   - jq, curl, openssl\n#   - MAILCOW_API_KEY env or ~/.config/mailcow/token  (X-API-Key, read-write)\n#   - MAILCOW_HOST env (default: mail.sumeetsaini.com)\n#   - CF_API_TOKEN env or ~/.config/cloudflare/token (for the DKIM TXT push)\n#\n# Outputs the generated mailbox password to stdout (only place it appears).\n\nset -euo pipefail\n\nDOMAIN=\"\"\nLOCAL=\"me\"\nDISPLAY_NAME=\"\"\nPASSWORD=\"\"\nMAILCOW_HOST=\"${MAILCOW_HOST:-mail.sumeetsaini.com}\"\n\nwhile [[ $# -gt 0 ]]; do\n    case \"$1\" in\n        --local)    LOCAL=\"$2\"; shift 2 ;;\n        --name)     DISPLAY_NAME=\"$2\"; shift 2 ;;\n        --password) PASSWORD=\"$2\"; shift 2 ;;\n        -h|--help)  sed -n '2,20p' \"$0\"; exit 0 ;;\n        -*)         echo \"unknown flag: $1\" >&2; exit 1 ;;\n        *)          DOMAIN=\"$1\"; shift ;;\n    esac\ndone\n\n[[ -z \"$DOMAIN\" ]] && { echo \"usage: $0 <domain> [--local me] [--name '...'] [--password ...]\" >&2; exit 1; }\n[[ -z \"$DISPLAY_NAME\" ]] && DISPLAY_NAME=\"$LOCAL\"\n\nMAILCOW_KEY=\"${MAILCOW_API_KEY:-}\"\nif [[ -z \"$MAILCOW_KEY\" && -r \"$HOME/.config/mailcow/token\" ]]; then\n    MAILCOW_KEY=\"$(cat \"$HOME/.config/mailcow/token\")\"\nfi\n[[ -z \"$MAILCOW_KEY\" ]] && { echo \"error: no […]
 
 > TOOL
@@ -1092,7 +1092,7 @@ id: toolu_01LSsYMXJ6DQDsu1MEdXqsAX
 tool_result
 id: toolu_01LSsYMXJ6DQDsu1MEdXqsAX
 ```
-File created successfully at: /Users/sumeet/matrix/web/aether/scripts/mailcow-add-domain.sh (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/matrix/web/aether/scripts/mailcow-add-domain.sh (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1101,7 +1101,7 @@ tool_use Bash
 id: toolu_018VS4aeG68etG6GkHfSyKcU
 ```json
 {
-  "command": "chmod +x /Users/sumeet/matrix/web/aether/scripts/mailcow-add-domain.sh && bash -n /Users/sumeet/matrix/web/aether/scripts/mailcow-add-domain.sh && echo ok",
+  "command": "chmod +x /home/<USER>/matrix/web/aether/scripts/mailcow-add-domain.sh && bash -n /home/<USER>/matrix/web/aether/scripts/mailcow-add-domain.sh && echo ok",
   "description": "Syntax check"
 }
 ```
@@ -1153,7 +1153,7 @@ Once that's in place, I'll run:
 ./scripts/mailcow-add-domain.sh babbi.world --local me --name "Babbi"
 ```
 
-That single command will: create the domain, create `me@babbi.world` with a generated password, create `@babbi.world` catchall → `me@babbi.world`, generate a 2048-bit DKIM key, fetch the public key, delete the placeholder `_domainkey` TXT in Cloudflare, and add the real `dkim._domainkey.babbi.world` TXT. The mailbox password will print to your terminal once (only place it appears — copy it into a password manager).
+That single command will: create the domain, create `<REDACTED_EMAIL>` with a generated password, create `@babbi.world` catchall → `<REDACTED_EMAIL>`, generate a 2048-bit DKIM key, fetch the public key, delete the placeholder `_domainkey` TXT in Cloudflare, and add the real `dkim._domainkey.babbi.world` TXT. The mailbox password will print to your terminal once (only place it appears — copy it into a password manager).
 
 Drop the API key in and tell me to run.
 
@@ -1181,7 +1181,7 @@ id: toolu_01MeKgMhwX7SXoBWDj2tLocB
 tool_result
 id: toolu_01MeKgMhwX7SXoBWDj2tLocB
 ```
--rw-------  1 sumeet  staff  476  6 Jun 09:35 /Users/sumeet/.config/aether/env
+-rw-------  1 sumeet  staff  476  6 Jun 09:35 /home/<USER>/.config/aether/env
 ```
 
 > AGENT
@@ -1195,7 +1195,7 @@ id: toolu_01Fkof9MmqhebtiuH3gqhgrE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/sumeet/matrix/web/aether/scripts/cf-add-site.sh",
+  "file_path": "/home/<USER>/matrix/web/aether/scripts/cf-add-site.sh",
   "old_string": "# Requires: jq, curl, and CF_API_TOKEN (env) or ~/.config/cloudflare/token\n\nset -euo pipefail\n\nDOMAIN=\"\"\nWITH_MAIL=1\nPROXIED=true\nIP4=\"49.12.43.116\"\nIP6=\"2a01:4f8:c17:6484::1\"",
   "new_string": "# Requires: jq, curl, and CF_API_TOKEN — set in the env or in ~/.config/aether/env\n\nset -euo pipefail\n\n# Load shared secrets / defaults.\nif [[ -r \"$HOME/.config/aether/env\" ]]; then\n    set -a; . \"$HOME/.config/aether/env\"; set +a\nfi\n\nDOMAIN=\"\"\nWITH_MAIL=1\nPROXIED=true\nIP4=\"${SERVER_IP4:-49.12.43.116}\"\nIP6=\"${SERVER_IP6:-2a01:4f8:c17:6484::1}\""
 }
@@ -1206,7 +1206,7 @@ id: toolu_01Fkof9MmqhebtiuH3gqhgrE
 tool_result
 id: toolu_01Fkof9MmqhebtiuH3gqhgrE
 ```
-The file /Users/sumeet/matrix/web/aether/scripts/cf-add-site.sh has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/matrix/web/aether/scripts/cf-add-site.sh has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1216,7 +1216,7 @@ id: toolu_01QSyTQgveATKRXpqsaQ1occ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/sumeet/matrix/web/aether/scripts/cf-add-site.sh",
+  "file_path": "/home/<USER>/matrix/web/aether/scripts/cf-add-site.sh",
   "old_string": "TOKEN=\"${CF_API_TOKEN:-}\"\nif [[ -z \"$TOKEN\" && -r \"$HOME/.config/cloudflare/token\" ]]; then\n    TOKEN=\"$(cat \"$HOME/.config/cloudflare/token\")\"\nfi\nif [[ -z \"$TOKEN\" ]]; then\n    echo \"error: no CF_API_TOKEN env var and no ~/.config/cloudflare/token\" >&2\n    exit 1\nfi",
   "new_string": "TOKEN=\"${CF_API_TOKEN:-}\"\nif [[ -z \"$TOKEN\" ]]; then\n    echo \"error: CF_API_TOKEN not set (export it, or put it in ~/.config/aether/env)\" >&2\n    exit 1\nfi"
 }
@@ -1227,7 +1227,7 @@ id: toolu_01QSyTQgveATKRXpqsaQ1occ
 tool_result
 id: toolu_01QSyTQgveATKRXpqsaQ1occ
 ```
-The file /Users/sumeet/matrix/web/aether/scripts/cf-add-site.sh has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/matrix/web/aether/scripts/cf-add-site.sh has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1237,7 +1237,7 @@ id: toolu_01EwcusCeX2DUkJXvhhYFEsg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/sumeet/matrix/web/aether/scripts/mailcow-add-domain.sh",
+  "file_path": "/home/<USER>/matrix/web/aether/scripts/mailcow-add-domain.sh",
   "old_string": "# Requires:\n#   - jq, curl, openssl\n#   - MAILCOW_API_KEY env or ~/.config/mailcow/token  (X-API-Key, read-write)\n#   - MAILCOW_HOST env (default: mail.sumeetsaini.com)\n#   - CF_API_TOKEN env or ~/.config/cloudflare/token (for the DKIM TXT push)\n#\n# Outputs the generated mailbox password to stdout (only place it appears).\n\nset -euo pipefail\n\nDOMAIN=\"\"\nLOCAL=\"me\"\nDISPLAY_NAME=\"\"\nPASSWORD=\"\"\nMAILCOW_HOST=\"${MAILCOW_HOST:-mail.sumeetsaini.com}\"",
   "new_string": "# Requires:\n#   - jq, curl, openssl\n#   - MAILCOW_API_KEY, MAILCOW_HOST, CF_API_TOKEN — set in the env or in\n#     ~/.config/aether/env (sourced automatically).\n#\n# Outputs the generated mailbox password to stdout (only place it appears).\n\nset -euo pipefail\n\n# Load shared secrets / defaults.\nif [[ -r \"$HOME/.config/aether/env\" ]]; then\n    set -a; . \"$HOME/.config/aether/env\"; set +a\nfi\n\nDOMAIN=\"\"\nLOCAL=\"me\"\nDISPLAY_NAME=\"\"\nPASSWORD=\"\"\nMAILCOW_HOST=\"${MAILCOW_HOST:-mail.sumeetsaini.com}\""
 }
@@ -1248,7 +1248,7 @@ id: toolu_01EwcusCeX2DUkJXvhhYFEsg
 tool_result
 id: toolu_01EwcusCeX2DUkJXvhhYFEsg
 ```
-The file /Users/sumeet/matrix/web/aether/scripts/mailcow-add-domain.sh has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/matrix/web/aether/scripts/mailcow-add-domain.sh has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1258,7 +1258,7 @@ id: toolu_0121j2zwCUzY39VboVvX3znj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/sumeet/matrix/web/aether/scripts/mailcow-add-domain.sh",
+  "file_path": "/home/<USER>/matrix/web/aether/scripts/mailcow-add-domain.sh",
   "old_string": "MAILCOW_KEY=\"${MAILCOW_API_KEY:-}\"\nif [[ -z \"$MAILCOW_KEY\" && -r \"$HOME/.config/mailcow/token\" ]]; then\n    MAILCOW_KEY=\"$(cat \"$HOME/.config/mailcow/token\")\"\nfi\n[[ -z \"$MAILCOW_KEY\" ]] && { echo \"error: no MAILCOW_API_KEY env and no ~/.config/mailcow/token\" >&2; exit 1; }\n\nCF_TOKEN=\"${CF_API_TOKEN:-}\"\nif [[ -z \"$CF_TOKEN\" && -r \"$HOME/.config/cloudflare/token\" ]]; then\n    CF_TOKEN=\"$(cat \"$HOME/.config/cloudflare/token\")\"\nfi\n[[ -z \"$CF_TOKEN\" ]] && { echo \"error: no Cloudflare token available\" >&2; exit 1; }",
   "new_string": "MAILCOW_KEY=\"${MAILCOW_API_KEY:-}\"\n[[ -z \"$MAILCOW_KEY\" ]] && { echo \"error: MAILCOW_API_KEY not set (put it in ~/.config/aether/env)\" >&2; exit 1; }\n\nCF_TOKEN=\"${CF_API_TOKEN:-}\"\n[[ -z \"$CF_TOKEN\" ]] && { echo \"error: CF_API_TOKEN not set (put it in ~/.config/aether/env)\" >&2; exit 1; }"
 }
@@ -1269,7 +1269,7 @@ id: toolu_0121j2zwCUzY39VboVvX3znj
 tool_result
 id: toolu_0121j2zwCUzY39VboVvX3znj
 ```
-The file /Users/sumeet/matrix/web/aether/scripts/mailcow-add-domain.sh has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/matrix/web/aether/scripts/mailcow-add-domain.sh has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1282,7 +1282,7 @@ tool_use Bash
 id: toolu_01M3geTaNifGfAvbPRn273xw
 ```json
 {
-  "command": "rm -f ~/.config/cloudflare/token && rmdir ~/.config/cloudflare 2>/dev/null; ls ~/.config/cloudflare 2>/dev/null || echo \"cloudflare dir gone\"; bash -n /Users/sumeet/matrix/web/aether/scripts/cf-add-site.sh && bash -n /Users/sumeet/matrix/web/aether/scripts/mailcow-add-domain.sh && echo \"both syntax ok\"",
+  "command": "rm -f ~/.config/cloudflare/token && rmdir ~/.config/cloudflare 2>/dev/null; ls ~/.config/cloudflare 2>/dev/null || echo \"cloudflare dir gone\"; bash -n /home/<USER>/matrix/web/aether/scripts/cf-add-site.sh && bash -n /home/<USER>/matrix/web/aether/scripts/mailcow-add-domain.sh && echo \"both syntax ok\"",
   "description": "Remove old token file and recheck syntax"
 }
 ```
@@ -1302,7 +1302,7 @@ tool_use Write
 id: toolu_0195m5gVwstGc9sRnq4mc7CB
 ```json
 {
-  "file_path": "/Users/sumeet/.claude/projects/-Users-sumeet-matrix-web-aether/memory/aether_secrets_env.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-sumeet-matrix-web-aether/memory/aether_secrets_env.md",
   "content": "---\nname: aether-secrets-env\ndescription: Shared env file at ~/.config/aether/env holds Cloudflare + Mailcow API keys and server IPs for scripts in the aether repo\nmetadata:\n  type: reference\n---\n\nAll secrets and shared defaults for `matrix/web/aether/scripts/*.sh` live in **`~/.config/aether/env`** (chmod 600). Scripts auto-source it via:\n\n```sh\nif [[ -r \"$HOME/.config/aether/env\" ]]; then\n    set -a; . \"$HOME/.config/aether/env\"; set +a\nfi\n```\n\nVariables in that file:\n\n- `CF_API_TOKEN` — Cloudflare API token, scoped to Zone:DNS:Edit across the user's zones.\n- `MAILCOW_API_KEY` — read-write key from the Mailcow admin UI (Configuration → Access → API). Pasted in manually after running the script the first time.\n- `MAILCOW_HOST` — `mail.sumeetsaini.com`.\n- `SERVER_IP4` / `SERVER_IP6` — Hetzner box IPs (`49.12.43.116` / `2a01:4f8:c17:6484::1`); used as defaults by `cf-add-site.sh`.\n\nWhy: the user prefers a single env file over per-service token files. Less drift, one place to chmod 600, one place to add new secrets. Replaced the earlier `~/.config/cloudflare/token` approach.\n\nHow to apply: when writing or updating aether scripts that need an API credential, read it from `$VAR` (env) and rely on the shared sourcing pattern above — don't introduce per-tool token files or prompt the user to paste anything. New secrets should be added to `~/.config/aether/env` (and documented here).\n"
 }
 ```
@@ -1312,7 +1312,7 @@ id: toolu_0195m5gVwstGc9sRnq4mc7CB
 tool_result
 id: toolu_0195m5gVwstGc9sRnq4mc7CB
 ```
-File created successfully at: /Users/sumeet/.claude/projects/-Users-sumeet-matrix-web-aether/memory/aether_secrets_env.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-Users-sumeet-matrix-web-aether/memory/aether_secrets_env.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1321,7 +1321,7 @@ tool_use Write
 id: toolu_016xExAVQmgZradeqRbpmwRb
 ```json
 {
-  "file_path": "/Users/sumeet/.claude/projects/-Users-sumeet-matrix-web-aether/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-sumeet-matrix-web-aether/memory/MEMORY.md",
   "content": "# Memory Index\n\n- [Aether secrets env file](aether_secrets_env.md) — shared `~/.config/aether/env` holds `CF_API_TOKEN`, `MAILCOW_API_KEY`, server IPs; aether scripts auto-source it\n"
 }
 ```
@@ -1331,7 +1331,7 @@ id: toolu_016xExAVQmgZradeqRbpmwRb
 tool_result
 id: toolu_016xExAVQmgZradeqRbpmwRb
 ```
-The file /Users/sumeet/.claude/projects/-Users-sumeet-matrix-web-aether/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-sumeet-matrix-web-aether/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1340,7 +1340,7 @@ tool_use Bash
 id: toolu_013VrSLteHDAsS6QvtkRiZNK
 ```json
 {
-  "command": "rm /Users/sumeet/.claude/projects/-Users-sumeet-matrix-web-aether/memory/cloudflare_api_token.md && ls /Users/sumeet/.claude/projects/-Users-sumeet-matrix-web-aether/memory/",
+  "command": "rm /home/<USER>/.claude/projects/-Users-sumeet-matrix-web-aether/memory/cloudflare_api_token.md && ls /home/<USER>/.claude/projects/-Users-sumeet-matrix-web-aether/memory/",
   "description": "Remove stale memory file"
 }
 ```
@@ -1418,7 +1418,7 @@ tool_use Bash
 id: toolu_018D2y4EvcZL1XAAu9MkNZ24
 ```json
 {
-  "command": "/Users/sumeet/matrix/web/aether/scripts/mailcow-add-domain.sh babbi.world --local me --name \"Babbi\"",
+  "command": "/home/<USER>/matrix/web/aether/scripts/mailcow-add-domain.sh babbi.world --local me --name \"Babbi\"",
   "description": "Add babbi.world to mailcow + push DKIM to CF"
 }
 ```
@@ -1431,13 +1431,13 @@ id: toolu_018D2y4EvcZL1XAAu9MkNZ24
 Exit code 1
 mailcow: mail.sumeetsaini.com
 domain:  babbi.world
-mailbox: me@babbi.world
+mailbox: <REDACTED_EMAIL>
 adding domain...
   + domain babbi.world
 adding mailbox...
-  + mailbox me@babbi.world
+  + mailbox <REDACTED_EMAIL>
 adding catchall alias...
-  + @babbi.world -> me@babbi.world
+  + @babbi.world -> <REDACTED_EMAIL>
 generating DKIM key...
   ! DKIM key (selector=dkim, 2048): dkim_domain_or_sel_invalid babbi.world
 ```
@@ -1544,8 +1544,8 @@ tool_use Bash
 id: toolu_01B8YihigXynRV3aE1dUTqUp
 ```json
 {
-  "command": "set -a; . ~/.config/aether/env; set +a\nPW=$(openssl rand -base64 24 | tr -d '/+=' | cut -c1-24)\necho \"new password: $PW\"\ncurl -sS -X POST -H \"X-API-Key: $MAILCOW_API_KEY\" -H \"Content-Type: application/json\" \\\n  -d \"$(jq -nc --arg pw \"$PW\" '{items:[\"me@babbi.world\"],attr:{password:$pw,password2:$pw}}')\" \\\n  \"https://$MAILCOW_HOST/api/v1/edit/mailbox\" | jq .",
-  "description": "Set me@babbi.world password"
+  "command": "set -a; . ~/.config/aether/env; set +a\nPW=$(openssl rand -base64 24 | tr -d '/+=' | cut -c1-24)\necho \"new password: $PW\"\ncurl -sS -X POST -H \"X-API-Key: $MAILCOW_API_KEY\" -H \"Content-Type: application/json\" \\\n  -d \"$(jq -nc --arg pw \"$PW\" '{items:[\"<REDACTED_EMAIL>\"],attr:{password:$pw,password2:$pw}}')\" \\\n  \"https://$MAILCOW_HOST/api/v1/edit/mailbox\" | jq .",
+  "description": "Set <REDACTED_EMAIL> password"
 }
 ```
 
@@ -1564,7 +1564,7 @@ new password=[REDACTED]
       "mailbox",
       {
         "username": [
-          "me@babbi.world"
+          "<REDACTED_EMAIL>"
         ],
         "password": "*",
         "password2": "*"
@@ -1573,7 +1573,7 @@ new password=[REDACTED]
     ],
     "msg": [
       "mailbox_modified",
-      "me@babbi.world"
+      "<REDACTED_EMAIL>"
     ]
   }
 ]
@@ -1590,7 +1590,7 @@ id: toolu_01MxPgCuYGeu793zZSFFJyQS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/sumeet/matrix/web/aether/scripts/mailcow-add-domain.sh",
+  "file_path": "/home/<USER>/matrix/web/aether/scripts/mailcow-add-domain.sh",
   "old_string": "        danger|error)\n            if [[ \"$msg\" == *\"exists\"* || \"$msg\" == *\"already\"* ]]; then\n                echo \"  = $label (already exists)\"\n            else\n                echo \"  ! $label: $msg\" >&2\n                return 1\n            fi ;;",
   "new_string": "        danger|error)\n            # mailcow uses \"dkim_domain_or_sel_invalid\" when a DKIM already exists for\n            # that selector — treat it as \"already exists\" so the script stays idempotent.\n            if [[ \"$msg\" == *\"exists\"* || \"$msg\" == *\"already\"* || \"$msg\" == *\"dkim_domain_or_sel_invalid\"* ]]; then\n                echo \"  = $label (already exists)\"\n            else\n                echo \"  ! $label: $msg\" >&2\n                return 1\n            fi ;;"
 }
@@ -1601,7 +1601,7 @@ id: toolu_01MxPgCuYGeu793zZSFFJyQS
 tool_result
 id: toolu_01MxPgCuYGeu793zZSFFJyQS
 ```
-The file /Users/sumeet/matrix/web/aether/scripts/mailcow-add-domain.sh has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/matrix/web/aether/scripts/mailcow-add-domain.sh has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1610,7 +1610,7 @@ tool_use Bash
 id: toolu_01U4eemktoE2QVi626XLHFT4
 ```json
 {
-  "command": "/Users/sumeet/matrix/web/aether/scripts/mailcow-add-domain.sh babbi.world --local me --name \"Babbi\" 2>&1 | tail -25",
+  "command": "/home/<USER>/matrix/web/aether/scripts/mailcow-add-domain.sh babbi.world --local me --name \"Babbi\" 2>&1 | tail -25",
   "description": "Rerun to verify idempotency"
 }
 ```
@@ -1622,13 +1622,13 @@ id: toolu_01U4eemktoE2QVi626XLHFT4
 ```
 mailcow: mail.sumeetsaini.com
 domain:  babbi.world
-mailbox: me@babbi.world
+mailbox: <REDACTED_EMAIL>
 adding domain...
   = domain babbi.world (already exists)
 adding mailbox...
-  = mailbox me@babbi.world (already exists)
+  = mailbox <REDACTED_EMAIL> (already exists)
 adding catchall alias...
-  ! @babbi.world -> me@babbi.world: is_alias_or_mailbox @babbi.world
+  ! @babbi.world -> <REDACTED_EMAIL>: is_alias_or_mailbox @babbi.world
 ```
 
 > TOOL
@@ -1638,7 +1638,7 @@ id: toolu_016hrgJuBQPe2JMyAh1z6Gbs
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/sumeet/matrix/web/aether/scripts/mailcow-add-domain.sh",
+  "file_path": "/home/<USER>/matrix/web/aether/scripts/mailcow-add-domain.sh",
   "old_string": "            if [[ \"$msg\" == *\"exists\"* || \"$msg\" == *\"already\"* || \"$msg\" == *\"dkim_domain_or_sel_invalid\"* ]]; then",
   "new_string": "            if [[ \"$msg\" == *\"exists\"* || \"$msg\" == *\"already\"* \\\n                || \"$msg\" == *\"dkim_domain_or_sel_invalid\"* \\\n                || \"$msg\" == *\"is_alias_or_mailbox\"* ]]; then"
 }
@@ -1649,7 +1649,7 @@ id: toolu_016hrgJuBQPe2JMyAh1z6Gbs
 tool_result
 id: toolu_016hrgJuBQPe2JMyAh1z6Gbs
 ```
-The file /Users/sumeet/matrix/web/aether/scripts/mailcow-add-domain.sh has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/matrix/web/aether/scripts/mailcow-add-domain.sh has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1658,7 +1658,7 @@ tool_use Bash
 id: toolu_01LapQAgog2FBFmhngnw6vyY
 ```json
 {
-  "command": "/Users/sumeet/matrix/web/aether/scripts/mailcow-add-domain.sh babbi.world --local me --name \"Babbi\" 2>&1",
+  "command": "/home/<USER>/matrix/web/aether/scripts/mailcow-add-domain.sh babbi.world --local me --name \"Babbi\" 2>&1",
   "description": "Final idempotent rerun"
 }
 ```
@@ -1670,13 +1670,13 @@ id: toolu_01LapQAgog2FBFmhngnw6vyY
 ```
 mailcow: mail.sumeetsaini.com
 domain:  babbi.world
-mailbox: me@babbi.world
+mailbox: <REDACTED_EMAIL>
 adding domain...
   = domain babbi.world (already exists)
 adding mailbox...
-  = mailbox me@babbi.world (already exists)
+  = mailbox <REDACTED_EMAIL> (already exists)
 adding catchall alias...
-  = @babbi.world -> me@babbi.world (already exists)
+  = @babbi.world -> <REDACTED_EMAIL> (already exists)
 generating DKIM key...
   = DKIM key (selector=dkim, 2048) (already exists)
 fetching DKIM public key...
@@ -1686,7 +1686,7 @@ pushing DKIM TXT to Cloudflare (dkim._domainkey.babbi.world)...
 
 done.
 ================================================================
-  mailbox:  me@babbi.world
+  mailbox:  <REDACTED_EMAIL>
   password=[REDACTED]
   webmail:  https://mail.sumeetsaini.com/SOGo/
   IMAP/SMTP host: mail.sumeetsaini.com  (993 IMAPS, 465 SMTPS)
@@ -1696,7 +1696,7 @@ save the password somewhere safe — it is not stored.
 
 > AGENT
 
-Heads up — the script printed `rjyOGuTmgMTdzApzXTRQTSYG` at the end, but that's a misleading artifact: the mailbox already existed, so the password it generated was never actually applied. **The real password currently set on `me@babbi.world` is `OAb67Y0rwtGmt7TgVhx81EF2`** (from the explicit set I did earlier — save that one). Let me fix the script so it doesn't lie on re-runs:
+Heads up — the script printed `rjyOGuTmgMTdzApzXTRQTSYG` at the end, but that's a misleading artifact: the mailbox already existed, so the password it generated was never actually applied. **The real password currently set on `<REDACTED_EMAIL>` is `OAb67Y0rwtGmt7TgVhx81EF2`** (from the explicit set I did earlier — save that one). Let me fix the script so it doesn't lie on re-runs:
 
 > TOOL
 
@@ -1704,7 +1704,7 @@ tool_use Read
 id: toolu_01XbTR6aWqVNPSZiWd5Jw7K9
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/web/aether/scripts/mailcow-add-domain.sh",
+  "file_path": "/home/<USER>/matrix/web/aether/scripts/mailcow-add-domain.sh",
   "offset": 63,
   "limit": 35
 }
@@ -1754,7 +1754,7 @@ id: toolu_01SDSCG7gaUmLtF1YYHXPfxp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/sumeet/matrix/web/aether/scripts/mailcow-add-domain.sh",
+  "file_path": "/home/<USER>/matrix/web/aether/scripts/mailcow-add-domain.sh",
   "old_string": "# Mailcow's API returns 200 with a JSON array of {type, msg} envelopes even on errors,\n# so we have to look at .[0].type to know if a call actually succeeded.\nmc_post() {\n    local path=\"$1\" body=\"$2\" label=\"$3\"\n    local resp type msg\n    resp=\"$(mc -X POST \"$MC$path\" --data \"$body\")\"\n    type=\"$(echo \"$resp\" | jq -r '.[0].type // .type // \"unknown\"')\"\n    msg=\"$(echo \"$resp\"  | jq -r '.[0].msg  // .msg  // \"\" | if type==\"array\" then join(\" \") else . end')\"\n    case \"$type\" in\n        success) echo \"  + $label\" ;;\n        danger|error)\n            # mailcow uses \"dkim_domain_or_sel_invalid\" when a DKIM already exists for\n            # that selector — treat it as \"already exists\" so the script stays idempotent.\n            if [[ \"$msg\" == *\"exists\"* || \"$msg\" == *\"already\"* \\\n                || \"$msg\" == *\"dkim_domain_or_sel_invalid\"* \\\n                || \"$msg\" == *\"is_alias_or_mailbox\"* ]]; then\n                echo \"  = $label (already exists)\"\n            else\n                echo \"  ! $label: $msg\" >&2\n                return 1\n            fi ;;\n        *) echo \"  ? $label: $resp\" >&2 ;;\n    esac\n}",
   "new_string": "# Mailcow's API returns 200 with a JSON array of {type, msg} envelopes even on errors,\n# so we have to look at .[0].type to know if a call actually succeeded.\n# Sets LAST_RESULT to […]
 
@@ -1763,7 +1763,7 @@ id: toolu_01SDSCG7gaUmLtF1YYHXPfxp
 tool_result
 id: toolu_01SDSCG7gaUmLtF1YYHXPfxp
 ```
-The file /Users/sumeet/matrix/web/aether/scripts/mailcow-add-domain.sh has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/matrix/web/aether/scripts/mailcow-add-domain.sh has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1772,7 +1772,7 @@ tool_use Read
 id: toolu_01QsQHwPBWBqqKZ9dxmezMRQ
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/web/aether/scripts/mailcow-add-domain.sh",
+  "file_path": "/home/<USER>/matrix/web/aether/scripts/mailcow-add-domain.sh",
   "offset": 100,
   "limit": 50
 }
@@ -1825,7 +1825,7 @@ id: toolu_01FivALekxeHnGEVHSnn91Cq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/sumeet/matrix/web/aether/scripts/mailcow-add-domain.sh",
+  "file_path": "/home/<USER>/matrix/web/aether/scripts/mailcow-add-domain.sh",
   "old_string": "echo \"adding mailbox...\"\nmc_post /add/mailbox \"$(jq -nc \\\n    --arg local \"$LOCAL\" --arg d \"$DOMAIN\" --arg n \"$DISPLAY_NAME\" --arg pw \"$PASSWORD\" '{\n    local_part: $local, domain: $d, name: $n,\n    quota: \"3072\",\n    password: $pw, password2: $pw,\n    active: \"1\", force_pw_update: \"0\",\n    tls_enforce_in: \"1\", tls_enforce_out: \"1\"\n}')\" \"mailbox $LOCAL@$DOMAIN\"",
   "new_string": "echo \"adding mailbox...\"\nmc_post /add/mailbox \"$(jq -nc \\\n    --arg local \"$LOCAL\" --arg d \"$DOMAIN\" --arg n \"$DISPLAY_NAME\" --arg pw \"$PASSWORD\" '{\n    local_part: $local, domain: $d, name: $n,\n    quota: \"3072\",\n    password: $pw, password2: $pw,\n    active: \"1\", force_pw_update: \"0\",\n    tls_enforce_in: \"1\", tls_enforce_out: \"1\"\n}')\" \"mailbox $LOCAL@$DOMAIN\"\nMAILBOX_RESULT=\"$LAST_RESULT\""
 }
@@ -1836,7 +1836,7 @@ id: toolu_01FivALekxeHnGEVHSnn91Cq
 tool_result
 id: toolu_01FivALekxeHnGEVHSnn91Cq
 ```
-The file /Users/sumeet/matrix/web/aether/scripts/mailcow-add-domain.sh has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/matrix/web/aether/scripts/mailcow-add-domain.sh has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1845,7 +1845,7 @@ tool_use Read
 id: toolu_01QtNJTPKdLddTSBhaumHfW7
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/web/aether/scripts/mailcow-add-domain.sh",
+  "file_path": "/home/<USER>/matrix/web/aether/scripts/mailcow-add-domain.sh",
   "offset": 160,
   "limit": 30
 }
@@ -1883,7 +1883,7 @@ id: toolu_01PRoddT3HY6AXtpqE7TMGVp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/sumeet/matrix/web/aether/scripts/mailcow-add-domain.sh",
+  "file_path": "/home/<USER>/matrix/web/aether/scripts/mailcow-add-domain.sh",
   "old_string": "echo\necho \"done.\"\necho \"================================================================\"\necho \"  mailbox:  $LOCAL@$DOMAIN\"\necho \"  password: $PASSWORD\"\necho \"  webmail:  https://$MAILCOW_HOST/SOGo/\"\necho \"  IMAP/SMTP host: $MAILCOW_HOST  (993 IMAPS, 465 SMTPS)\"\necho \"================================================================\"\necho \"save the password somewhere safe — it is not stored.\"",
   "new_string": "echo\necho \"done.\"\necho \"================================================================\"\necho \"  mailbox:  $LOCAL@$DOMAIN\"\nif [[ \"$MAILBOX_RESULT\" == \"created\" ]]; then\n    echo \"  password: $PASSWORD\"\n    echo \"  (save it — it is not stored anywhere else)\"\nelse\n    echo \"  password: <unchanged; mailbox already existed>\"\n    echo \"  to reset: pass --password ... and call /edit/mailbox, or use the SOGo UI\"\nfi\necho \"  webmail:  https://$MAILCOW_HOST/SOGo/\"\necho \"  IMAP/SMTP host: $MAILCOW_HOST  (993 IMAPS, 465 SMTPS)\"\necho \"================================================================\""
 }
@@ -1894,7 +1894,7 @@ id: toolu_01PRoddT3HY6AXtpqE7TMGVp
 tool_result
 id: toolu_01PRoddT3HY6AXtpqE7TMGVp
 ```
-The file /Users/sumeet/matrix/web/aether/scripts/mailcow-add-domain.sh has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/matrix/web/aether/scripts/mailcow-add-domain.sh has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1903,7 +1903,7 @@ tool_use Bash
 id: toolu_019G1Vmtwo1pmiMpqZHGvdau
 ```json
 {
-  "command": "bash -n /Users/sumeet/matrix/web/aether/scripts/mailcow-add-domain.sh && /Users/sumeet/matrix/web/aether/scripts/mailcow-add-domain.sh babbi.world --local me --name \"Babbi\" 2>&1 | tail -20",
+  "command": "bash -n /home/<USER>/matrix/web/aether/scripts/mailcow-add-domain.sh && /home/<USER>/matrix/web/aether/scripts/mailcow-add-domain.sh babbi.world --local me --name \"Babbi\" 2>&1 | tail -20",
   "description": "Rerun to confirm honest output"
 }
 ```
@@ -1915,9 +1915,9 @@ id: toolu_019G1Vmtwo1pmiMpqZHGvdau
 ```
   = domain babbi.world (already exists)
 adding mailbox...
-  = mailbox me@babbi.world (already exists)
+  = mailbox <REDACTED_EMAIL> (already exists)
 adding catchall alias...
-  = @babbi.world -> me@babbi.world (already exists)
+  = @babbi.world -> <REDACTED_EMAIL> (already exists)
 generating DKIM key...
   = DKIM key (selector=dkim, 2048) (already exists)
 fetching DKIM public key...
@@ -1927,7 +1927,7 @@ pushing DKIM TXT to Cloudflare (dkim._domainkey.babbi.world)...
 
 done.
 ================================================================
-  mailbox:  me@babbi.world
+  mailbox:  <REDACTED_EMAIL>
   password: <unchanged; mailbox already existed>
   to reset: pass --password ... and call /edit/mailbox, or use the SOGo UI
   webmail:  https://mail.sumeetsaini.com/SOGo/
@@ -1974,8 +1974,8 @@ All clean. Final state:
 
 **Mailcow:**
 - Domain `babbi.world` added
-- Mailbox `me@babbi.world`, password **`OAb67Y0rwtGmt7TgVhx81EF2`** ← save this
-- Catchall `@babbi.world` → `me@babbi.world` (so *@babbi.world all lands in the same inbox)
+- Mailbox `<REDACTED_EMAIL>`, password **`OAb67Y0rwtGmt7TgVhx81EF2`** ← save this
+- Catchall `@babbi.world` → `<REDACTED_EMAIL>` (so *@babbi.world all lands in the same inbox)
 - DKIM key (selector `dkim`, 2048) generated
 
 **Cloudflare DNS (full):**
@@ -1984,7 +1984,7 @@ All clean. Final state:
 
 **Webmail / clients:** https://mail.sumeetsaini.com/SOGo/ • IMAPS `mail.sumeetsaini.com:993` • SMTPS `:465`
 
-You can send to her at `babbi@babbi.world`, `hi@babbi.world`, literally anything — it all routes to `me@babbi.world`. Want me to do the aether-side now (compose service block + gateway nginx conf + her separate site repo skeleton)?
+You can send to her at `<REDACTED_EMAIL>`, `<REDACTED_EMAIL>`, literally anything — it all routes to `<REDACTED_EMAIL>`. Want me to do the aether-side now (compose service block + gateway nginx conf + her separate site repo skeleton)?
 
 > DEVELOPER
 
@@ -2000,7 +2000,7 @@ tool_use Bash
 id: toolu_014kUe73VTj6sjWPS7WVZxD2
 ```json
 {
-  "command": "set -a; . ~/.config/aether/env; set +a\necho \"--- mailbox state ---\"\ncurl -sS -H \"X-API-Key: $MAILCOW_API_KEY\" \"https://$MAILCOW_HOST/api/v1/get/mailbox/me@babbi.world\" \\\n  | jq '{username, active, active_int, domain, attributes:(.attributes|{force_pw_update, tls_enforce_in, tls_enforce_out})}'\necho\necho \"--- domain state ---\"\ncurl -sS -H \"X-API-Key: $MAILCOW_API_KEY\" \"https://$MAILCOW_HOST/api/v1/get/domain/babbi.world\" \\\n  | jq '{domain_name, active, active_int, relayhost, backupmx}'",
+  "command": "set -a; . ~/.config/aether/env; set +a\necho \"--- mailbox state ---\"\ncurl -sS -H \"X-API-Key: $MAILCOW_API_KEY\" \"https://$MAILCOW_HOST/api/v1/get/mailbox/<REDACTED_EMAIL>\" \\\n  | jq '{username, active, active_int, domain, attributes:(.attributes|{force_pw_update, tls_enforce_in, tls_enforce_out})}'\necho\necho \"--- domain state ---\"\ncurl -sS -H \"X-API-Key: $MAILCOW_API_KEY\" \"https://$MAILCOW_HOST/api/v1/get/domain/babbi.world\" \\\n  | jq '{domain_name, active, active_int, relayhost, backupmx}'",
   "description": "Inspect mailbox + domain state"
 }
 ```
@@ -2012,7 +2012,7 @@ id: toolu_014kUe73VTj6sjWPS7WVZxD2
 ```
 --- mailbox state ---
 {
-  "username": "me@babbi.world",
+  "username": "<REDACTED_EMAIL>",
   "active": 1,
   "active_int": 1,
   "domain": "babbi.world",

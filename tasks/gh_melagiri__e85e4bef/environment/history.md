@@ -205,7 +205,7 @@ id: toolu_019QpDFKhxag92XC5pUrqHQd
   "description": "Explore code-insights session data, analysis pipeline, and reflect feature",
   "subagent_type": "Explore",
   "name": "codebase-explorer",
-  "prompt": "You are exploring the code-insights monorepo at /Users/melagiri/Workspace/codeInsights/code-insights to understand how the product captures and surfaces learnings from AI coding sessions.\n\nI need a thorough picture of these specific areas — read the actual source files:\n\n1. **Session Analysis Pipeline** — How does `code-insights insights` work? Trace from CLI command through to the LLM prompt and the structured output it produces. Which files are involved? What fields does the analysis output (facets, friction, patterns, prompt quality)?\n\n2. **Reflect Feature** — How does `code-insights reflect` work? What does it aggregate across sessions? What's the structure of reflect_snapshots in SQLite? What does it output to the user?\n\n3. **SQLite Schema** — Read the migration file(s) to understand ALL tables and key columns. Pay attention to: sessions, analysis, facets, reflect_snapshots, analysis_queue.\n\n4. **Export Feature** — Does code-insights have any export/knowledge-export capability? What formats? How is it used?\n\n5. **CLAUDE.md / docs/PRODUCT.md** — Read these to understand what the product already captures (friction categories, effective patterns, prompt quality, attribution, driver fields).\n\n6. **Session data shape** — What does a `ParsedSession` look like? What metadata is captured per session (project, tool, […]
+  "prompt": "You are exploring the code-insights monorepo at /home/<USER>/Workspace/codeInsights/code-insights to understand how the product captures and surfaces learnings from AI coding sessions.\n\nI need a thorough picture of these specific areas — read the actual source files:\n\n1. **Session Analysis Pipeline** — How does `code-insights insights` work? Trace from CLI command through to the LLM prompt and the structured output it produces. Which files are involved? What fields does the analysis output (facets, friction, patterns, prompt quality)?\n\n2. **Reflect Feature** — How does `code-insights reflect` work? What does it aggregate across sessions? What's the structure of reflect_snapshots in SQLite? What does it output to the user?\n\n3. **SQLite Schema** — Read the migration file(s) to understand ALL tables and key columns. Pay attention to: sessions, analysis, facets, reflect_snapshots, analysis_queue.\n\n4. **Export Feature** — Does code-insights have any export/knowledge-export capability? What formats? How is it used?\n\n5. **CLAUDE.md / docs/PRODUCT.md** — Read these to understand what the product already captures (friction categories, effective patterns, prompt quality, attribution, driver fields).\n\n6. **Session data shape** — What does a `ParsedSession` look like? What metadata is captured per session (project, tool, […]
 
 > TOOL
 
@@ -488,7 +488,7 @@ tool_use Bash
 id: toolu_01B7EFkbDnCAMhYjZry1RrY8
 ```json
 {
-  "command": "ls /Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/",
+  "command": "ls /home/<USER>/Workspace/codeInsights/code-insights/docs/plans/",
   "description": "List existing plan docs"
 }
 ```
@@ -509,7 +509,7 @@ tool_use Write
 id: toolu_01DnFJ3vu53AqEwCkLHcChmL
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/2026-04-20-codebase-knowledge-research.md",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/plans/2026-04-20-codebase-knowledge-research.md",
   "content": "# Codebase-Attached Knowledge — Research & Design Notes\n\n> Research conducted 2026-04-20. This doc captures competitive landscape, ecosystem patterns,\n> and strategic direction for a \"codebase-attached learnings\" feature in code-insights.\n\n---\n\n## The Idea\n\ncode-insights already extracts structured knowledge from AI coding sessions:\n- **Decisions** (situation, choice, reasoning, alternatives, trade-offs, revisit_when)\n- **Learnings** (symptom, root_cause, takeaway, applies_when)\n- **Friction hotspots** (9 categories, with attribution: user/AI/environmental)\n- **Effective patterns** (8 categories, with driver: user-driven/AI-driven/collaborative)\n- **Prompt quality insights** (5 dimensions, deficit/strength categories)\n- **Weekly reflect synthesis** (rules for CLAUDE.md, skill recommendations, working style)\n\nThe gap: all of this lives in `~/.code-insights/data.db` — a personal database tied to the developer, not the codebase. A developer who clones the repo gets none of it.\n\nThe vision: surface this accumulated knowledge as **repo-attached files** that travel with the codebase, serving both AI agents (as context/instructions) and humans (as architectural decision records and onboarding context).\n\n---\n\n## Competitive Landscape\n\n### entire.io\n\n- **What it is:** Git-native CLI (MIT, open source) that captures AI agent sessions alongside git commits.\n- **Storage model:** Dual-branch git strategy:\n  - Shadow branches (`entire/<hash>`) — ephemeral, local-only working refs\n  - Orphan metadata branch (`entire/checkpoints/v1`) — disconnected history branch accumulating all session metadata + transcripts\n  - Git commit trailer `Entire-Checkpoint: <hash>` […]
 
 > TOOL
@@ -517,7 +517,7 @@ id: toolu_01DnFJ3vu53AqEwCkLHcChmL
 tool_result
 id: toolu_01DnFJ3vu53AqEwCkLHcChmL
 ```
-File created successfully at: /Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/2026-04-20-codebase-knowledge-research.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Workspace/codeInsights/code-insights/docs/plans/2026-04-20-codebase-knowledge-research.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -573,7 +573,7 @@ tool_use Bash
 id: toolu_01ALUmSG7t8WL6G6XsFfsSpp
 ```json
 {
-  "command": "cat /Users/melagiri/Workspace/codeInsights/code-insights/.gitignore | grep -A2 -B2 \"plans\"",
+  "command": "cat /home/<USER>/Workspace/codeInsights/code-insights/.gitignore | grep -A2 -B2 \"plans\"",
   "description": "Check what gitignore rule covers plans/"
 }
 ```

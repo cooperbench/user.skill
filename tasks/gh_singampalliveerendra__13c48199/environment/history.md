@@ -33,7 +33,7 @@ tool_use Read
 id: toolu_01Km9LoTno8kyQsD7eEuFVif
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/harvest/[harvestId]/page.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/harvest/[harvestId]/page.tsx",
   "offset": 378,
   "limit": 10
 }
@@ -62,7 +62,7 @@ tool_use Read
 id: toolu_01LDGuqWqvbXgqkWM1KdnevC
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/produce/[id]/page.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/produce/[id]/page.tsx",
   "offset": 403,
   "limit": 8
 }
@@ -90,7 +90,7 @@ id: toolu_01WRDsN61YXvWvHrzT2vEZsF
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/harvest/[harvestId]/page.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/harvest/[harvestId]/page.tsx",
   "old_string": "              {L('Harvested on', 'కోసిన తేదీ')}: {new Date(harvest.harvested_at)",
   "new_string": "              {L('Harvest Date Time', 'కోత తేదీ సమయం')}: {new Date(harvest.harvested_at)"
 }
@@ -103,7 +103,7 @@ id: toolu_01Jf6k2tQrsCTBXFW33Qw29y
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/produce/[id]/page.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/produce/[id]/page.tsx",
   "old_string": "                {L('Harvested on', 'కోసిన తేదీ')}: {new Date(latestHarvest.at)",
   "new_string": "                {L('Harvest Date Time', 'కోత తేదీ సమయం')}: {new Date(latestHarvest.at)"
 }
@@ -114,7 +114,7 @@ id: toolu_01Jf6k2tQrsCTBXFW33Qw29y
 tool_result
 id: toolu_01WRDsN61YXvWvHrzT2vEZsF
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/harvest/[harvestId]/page.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/harvest/[harvestId]/page.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -122,7 +122,7 @@ The file /home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/harvest/[harve
 tool_result
 id: toolu_01Jf6k2tQrsCTBXFW33Qw29y
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/produce/[id]/page.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/produce/[id]/page.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

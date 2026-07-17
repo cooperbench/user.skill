@@ -1083,7 +1083,7 @@ EOF
 ## Step 6: Publish to npm
 
 ```bash
-cd /Users/melagiri/Workspace/codeInsights/code-insights/cli && npm publish
+cd /home/<USER>/Workspace/codeInsights/code-insights/cli && npm publish
 ```
 
 The `prepublishOnly` script in `package.json` handles building all packages and copying dashboard/server dist files automatically.
@@ -1113,7 +1113,7 @@ chore: bump version to vX.Y.Z
 
 {one-line summary of what changed}
 
-Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>
+Co-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>
 EOF
 )"
 
@@ -1151,10 +1151,10 @@ Run the full build and test suite:
 
 ```bash
 # Full workspace build (this is what prepublishOnly does)
-cd /Users/melagiri/Workspace/codeInsights/code-insights && pnpm build
+cd /home/<USER>/Workspace/codeInsights/code-insights && pnpm build
 
 # Run tests
-cd /Users/melagiri/Workspace/codeInsights/code-insights/cli && pnpm test
+cd /home/<USER>/Workspace/codeInsights/code-insights/cli && pnpm test
 ```
 
 **If build fails → STOP.** Show the error. Do not continue.

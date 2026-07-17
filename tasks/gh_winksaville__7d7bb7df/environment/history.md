@@ -8,7 +8,7 @@ tool_use Read
 id: toolu_015SBYPmG3Ff4u7bMwj5Ujqz
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md",
   "offset": 0,
   "limit": 60
 }
@@ -58,7 +58,7 @@ tool_use Bash
 id: toolu_01X8ygLjdPP2QJi4ZJStWrUo
 ```json
 {
-  "command": "ls /home/wink/data/prgs/rust/iiac-perf/src/",
+  "command": "ls /home/<USER>/data/prgs/rust/iiac-perf/src/",
   "description": "List iiac-perf src files"
 }
 ```
@@ -225,7 +225,7 @@ tool_use Read
 id: toolu_0126AzNxDpvqZrL3nWBCL2vN
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/iiac-perf/src/tprobe.rs"
+  "file_path": "/home/<USER>/data/prgs/rust/iiac-perf/src/tprobe.rs"
 }
 ```
 
@@ -273,7 +273,7 @@ tool_use Read
 id: toolu_011vqsLkgEpwCsc87iaitW1o
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/iiac-perf/src/tprobe2.rs"
+  "file_path": "/home/<USER>/data/prgs/rust/iiac-perf/src/tprobe2.rs"
 }
 ```
 
@@ -313,7 +313,7 @@ tool_use Bash
 id: toolu_01WfkWKgfGzTeGUZJwwBwmYy
 ```json
 {
-  "command": "ls /home/wink/data/prgs/rust/iiac-perf/src/benches/ && grep -rn \"zcr\" /home/wink/data/prgs/rust/iiac-perf/src/benches/ -l",
+  "command": "ls /home/<USER>/data/prgs/rust/iiac-perf/src/benches/ && grep -rn \"zcr\" /home/<USER>/data/prgs/rust/iiac-perf/src/benches/ -l",
   "description": "List iiac-perf benches and find zcr benches"
 }
 ```
@@ -342,12 +342,12 @@ zcr_mpsc_1t.rs
 zcr_mpsc_2t.rs
 zcr_with_1t.rs
 zcr_with_2t.rs
-/home/wink/data/prgs/rust/iiac-perf/src/benches/zcr_with_2t.rs
-/home/wink/data/prgs/rust/iiac-perf/src/benches/zcr_mpsc_2t.rs
-/home/wink/data/prgs/rust/iiac-perf/src/benches/mod.rs
-/home/wink/data/prgs/rust/iiac-perf/src/benches/zcr_common.rs
-/home/wink/data/prgs/rust/iiac-perf/src/benches/zcr_with_1t.rs
-/home/wink/data/prgs/rust/iiac-perf/src/benches/zcr_mpsc_1t.rs
+/home/<USER>/data/prgs/rust/iiac-perf/src/benches/zcr_with_2t.rs
+/home/<USER>/data/prgs/rust/iiac-perf/src/benches/zcr_mpsc_2t.rs
+/home/<USER>/data/prgs/rust/iiac-perf/src/benches/mod.rs
+/home/<USER>/data/prgs/rust/iiac-perf/src/benches/zcr_common.rs
+/home/<USER>/data/prgs/rust/iiac-perf/src/benches/zcr_with_1t.rs
+/home/<USER>/data/prgs/rust/iiac-perf/src/benches/zcr_mpsc_1t.rs
 ```
 
 > TOOL
@@ -356,7 +356,7 @@ tool_use Read
 id: toolu_016rdUb8eFNeB1StJDohou5k
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/iiac-perf/src/benches/zcr_with_2t.rs"
+  "file_path": "/home/<USER>/data/prgs/rust/iiac-perf/src/benches/zcr_with_2t.rs"
 }
 ```
 
@@ -410,7 +410,7 @@ tool_use Read
 id: toolu_017kcwAge2ps3CkLmGe4vP91
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/iiac-perf/src/benches/zcr_mpsc_2t.rs"
+  "file_path": "/home/<USER>/data/prgs/rust/iiac-perf/src/benches/zcr_mpsc_2t.rs"
 }
 ```
 
@@ -462,7 +462,7 @@ tool_use Read
 id: toolu_01H3jAVPXybRW4r3P519xXFd
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/iiac-perf/src/benches/zcr_common.rs"
+  "file_path": "/home/<USER>/data/prgs/rust/iiac-perf/src/benches/zcr_common.rs"
 }
 ```
 
@@ -542,7 +542,7 @@ tool_use Read
 id: toolu_01DfD5Vm8qmELzjqfQJNWoB6
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/src/spsc/v0/producer.rs"
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/src/spsc/v0/producer.rs"
 }
 ```
 
@@ -600,7 +600,7 @@ tool_use Read
 id: toolu_01K42u9H7Cs5axrpYXv4nrSo
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/src/spsc/v0/consumer.rs"
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/src/spsc/v0/consumer.rs"
 }
 ```
 
@@ -659,7 +659,7 @@ tool_use Read
 id: toolu_01CZADrWi1XoAk3LguWMC2Dz
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/src/mpsc/v0/producer.rs"
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/src/mpsc/v0/producer.rs"
 }
 ```
 
@@ -710,7 +710,7 @@ tool_use Read
 id: toolu_011FDJXiGjsrmHn7cCmcqXSi
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/src/mpsc/v0/consumer.rs"
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/src/mpsc/v0/consumer.rs"
 }
 ```
 
@@ -811,7 +811,7 @@ tool_use Read
 id: toolu_01Hj9H7HFHA8K7XmguVUAgoK
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/iiac-perf/src/benches/tp_pc.rs"
+  "file_path": "/home/<USER>/data/prgs/rust/iiac-perf/src/benches/tp_pc.rs"
 }
 ```
 
@@ -866,7 +866,7 @@ tool_use Bash
 id: toolu_01Y5gchVVmZwTymw46KXWaBL
 ```json
 {
-  "command": "grep -n \"core_for\\|pub struct RunCfg\" -A 15 /home/wink/data/prgs/rust/iiac-perf/src/harness.rs | head -60",
+  "command": "grep -n \"core_for\\|pub struct RunCfg\" -A 15 /home/<USER>/data/prgs/rust/iiac-perf/src/harness.rs | head -60",
   "description": "Show RunCfg and core_for"
 }
 ```
@@ -940,7 +940,7 @@ tool_use Read
 id: toolu_012SctQgYTicJYQnMMUeGaks
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/iiac-perf/src/benches/probe_mpsc_2t.rs"
+  "file_path": "/home/<USER>/data/prgs/rust/iiac-perf/src/benches/probe_mpsc_2t.rs"
 }
 ```
 
@@ -1077,7 +1077,7 @@ tool_use Bash
 id: toolu_01RDasQMXQxMCzCJM2ZYbG85
 ```json
 {
-  "command": "grep -n \"zcr\\|tp2\\|tp_pc\\|register\\|NAME\" /home/wink/data/prgs/rust/iiac-perf/src/benches/mod.rs | head -40",
+  "command": "grep -n \"zcr\\|tp2\\|tp_pc\\|register\\|NAME\" /home/<USER>/data/prgs/rust/iiac-perf/src/benches/mod.rs | head -40",
   "description": "Show bench registry"
 }
 ```
@@ -1122,7 +1122,7 @@ tool_use Bash
 id: toolu_01MMAZFQfuJJpW5JnMtCFUfb
 ```json
 {
-  "command": "command -v iiac-perf && iiac-perf --version 2>/dev/null; jj st -R /home/wink/data/prgs/rust/iiac-perf 2>&1 | head -10; ls /home/wink/data/prgs/rust/iiac-perf/AGENTS.md 2>&1",
+  "command": "command -v iiac-perf && iiac-perf --version 2>/dev/null; jj st -R /home/<USER>/data/prgs/rust/iiac-perf 2>&1 | head -10; ls /home/<USER>/data/prgs/rust/iiac-perf/AGENTS.md 2>&1",
   "description": "Check iiac-perf install and repo state"
 }
 ```
@@ -1133,7 +1133,7 @@ tool_use Read
 id: toolu_01F4ErRHntmQJbL18WUr276C
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/cycle-protocol.md"
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/cycle-protocol.md"
 }
 ```
 
@@ -1142,12 +1142,12 @@ id: toolu_01F4ErRHntmQJbL18WUr276C
 tool_result
 id: toolu_01MMAZFQfuJJpW5JnMtCFUfb
 ```
-/home/wink/.cargo/bin/iiac-perf
+/home/<USER>/.cargo/bin/iiac-perf
 iiac-perf 0.20.0
 The working copy has no changes.
 Working copy  (@) : soyrkzlz 455002bf (empty) (no description set)
 Parent commit (@-): wrxxkrrr 9a68a5b7 main | refactor: move chores-01..03 into notes/chores/
-/home/wink/data/prgs/rust/iiac-perf/AGENTS.md
+/home/<USER>/data/prgs/rust/iiac-perf/AGENTS.md
 ```
 
 > TOOL
@@ -1204,7 +1204,7 @@ tool_use Read
 id: toolu_01E1SDMt5RE9uqtcjLpHP1g8
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/versioning.md"
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/versioning.md"
 }
 ```
 
@@ -1262,7 +1262,7 @@ tool_use Bash
 id: toolu_01LRNvSiAqNt9s5diMH3kjTq
 ```json
 {
-  "command": "grep -n '^version' Cargo.toml; grep -n '^version' /home/wink/data/prgs/rust/iiac-perf/Cargo.toml; head -50 /home/wink/data/prgs/rust/iiac-perf/AGENTS.md",
+  "command": "grep -n '^version' Cargo.toml; grep -n '^version' /home/<USER>/data/prgs/rust/iiac-perf/Cargo.toml; head -50 /home/<USER>/data/prgs/rust/iiac-perf/AGENTS.md",
   "description": "Check versions and iiac-perf AGENTS.md intro"
 }
 ```
@@ -1578,7 +1578,7 @@ tool_use Bash
 id: toolu_01AVvCkHuiEnfXvXtNdGBsaE
 ```json
 {
-  "command": "sed -n 1,60p /home/wink/data/prgs/rust/iiac-perf/src/benches/mod.rs; sed -n 1,40p /home/wink/data/prgs/rust/iiac-perf/src/ticks.rs",
+  "command": "sed -n 1,60p /home/<USER>/data/prgs/rust/iiac-perf/src/benches/mod.rs; sed -n 1,40p /home/<USER>/data/prgs/rust/iiac-perf/src/ticks.rs",
   "description": "Read registry file and ticks API"
 }
 ```
@@ -1652,7 +1652,7 @@ tool_use Write
 id: toolu_01XnA9WAVFN86fAvqpRwNjB8
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/iiac-perf/src/benches/tp_zcr_with_2t.rs",
+  "file_path": "/home/<USER>/data/prgs/rust/iiac-perf/src/benches/tp_zcr_with_2t.rs",
   "content": "//! TProbe-decomposed variant of [`zcr_with_2t`][super::zcr_with_2t]:\n//! the same SPSC round-trip with each of the four protocol phases\n//! measured by its own [`TProbe`].\n//!\n//! Phases (main thread: `send req` / `recv resp`; worker: `recv\n//! req` / `send resp`) bracket the endpoint call with two\n//! [`crate::ticks::read_ticks`] reads, so each histogram isolates\n//! one side of the handoff:\n//!\n//! - `send` phases capture the producer's reserve + fill + commit\n//!   — including any stall acquiring peer-written cache lines.\n//! - `recv` phases capture the consumer's spin wait + read +\n//!   release, so they absorb the in-flight half-trip (the worker's\n//!   `recv req` also absorbs main's inter-iteration framing).\n//!\n//! Run back-to-back with [`tp_zcr_mpsc_2t`][super::tp_zcr_mpsc_2t]\n//! to localize the SPSC-vs-MPSC 2t gap (zc-ring-x1 Todo: explore\n//! why zcr-mpsc-2t measures faster than zcr-with-2t).\n//!\n//! Per-phase probing adds ~4 tick-read pairs + histogram records\n//! per round trip, so the harness-level mean is inflated vs the\n//! unprobed bench; the phase histograms themselves stay tight\n//! (each pair brackets only its endpoint call).\n\nuse std::hint::black_box;\nuse std::thread;\n\nuse zc_ring_x1::{Consumer, Producer};\n\nuse crate::benches::zcr_common::{Msg, STOP, leak_ring};\nuse crate::harness::{self, Bench, RunCfg};\nuse crate::pin;\nuse crate::ticks;\nuse crate::tprobe::TProbe;\n\n/// Registry name used on the CLI.\npub const NAME: &str = \"tp-zcr-with-2t\";\n\n/// Probed variant of `zcr-with-2t`. Main-thread probes live in\n/// the struct; the worker's travel back on […]
 
 > TOOL

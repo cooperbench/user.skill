@@ -239,7 +239,7 @@ tool_use Read
 id: toolu_bdrk_01AqJjn9QXgjjWX3UYRJHt34
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/.worktrees/pivot/internal/api/auth.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/.worktrees/pivot/internal/api/auth.go",
   "limit": 50
 }
 ```

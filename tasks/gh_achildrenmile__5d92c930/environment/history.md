@@ -46,7 +46,7 @@ tool_use Read
 id: toolu_01BZZJiz9jydmjrhSqvNQHrD
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/index.njk"
+  "file_path": "/home/<USER>/bosarsa/src/index.njk"
 }
 ```
 
@@ -73,7 +73,7 @@ id: toolu_01BZZJiz9jydmjrhSqvNQHrD
     16→  description: "Österreichischer Amateurfunkverein der Behörden und Organisationen mit Sicherheitsaufgaben"
     17→  url: "https://bosarsa.oeradio.at"
     18→  logo: "https://bosarsa.oeradio.at/logo.webp?v=2"
-    19→  email: "office@bos-arsa.at"
+    19→  email: "<REDACTED_EMAIL>"
     20→  address:
     21→    "@type": "PostalAddress"
     22→    streetAddress: "Buchengasse 3"
@@ -111,7 +111,7 @@ tool_use Read
 id: toolu_01B8rsuGWCPinYKRWAK6jM59
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/css/index.css"
+  "file_path": "/home/<USER>/bosarsa/src/css/index.css"
 }
 ```
 
@@ -170,7 +170,7 @@ tool_use Read
 id: toolu_018w9sMwZrsuv3A6c14i72cq
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/_includes/nav.njk"
+  "file_path": "/home/<USER>/bosarsa/src/_includes/nav.njk"
 }
 ```
 
@@ -264,7 +264,7 @@ id: toolu_012T5UhZD85sBfJ6q7NDsr4Q
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/index.njk",
+  "file_path": "/home/<USER>/bosarsa/src/index.njk",
   "old_string": "  <!-- Mitglied werden -->\n  <section class=\"section join\" id=\"mitglied\">",
   "new_string": "  <!-- Funkbetrieb -->\n  <section class=\"section section--alt\" id=\"funkbetrieb\">\n    <div class=\"container\">\n      <div class=\"section__header reveal\">\n        <span class=\"section__label\">Funkbetrieb</span>\n        <h2 class=\"section__title\">Unsere Übungsrunden</h2>\n        <div class=\"section__rule\"></div>\n        <p class=\"section__intro\">Regelmäßige Funkübungen stärken die Einsatzbereitschaft — damit im Ernstfall jeder Handgriff sitzt.</p>\n      </div>\n      <div class=\"schedule-grid\">\n        <div class=\"schedule-card reveal\">\n          <div class=\"schedule-card__icon\">\n            <i data-lucide=\"radio-tower\" style=\"width:24px;height:24px;\"></i>\n          </div>\n          <h3 class=\"schedule-card__title\">Krisenkommunikationsübung</h3>\n          <span class=\"schedule-card__badge\">Jeden Sonntag</span>\n          <div class=\"schedule-card__freq\">\n            <span>OE8XNK — 145.7625 MHz</span>\n            <span>−0,6 MHz Offset</span>\n          </div>\n          <p class=\"schedule-card__text\">Start ab 18:45 Lokalzeit auf der Gerlitzen (2m). Abfrage auf Kärntner Repeatern, dann Direktfrequenz. Österreichweit über den OE-Link-Verbund.</p>\n        </div>\n        <div class=\"schedule-card reveal\">\n          <div class=\"schedule-card__icon\">\n            <i data-lucide=\"globe\" style=\"width:24px;height:24px;\"></i>\n          </div>\n          <h3 class=\"schedule-card__title\">Notfunk Runde Österreich</h3>\n          <span class=\"schedule-card__badge\">Jeden 1. Mittwoch/Monat</span>\n          <div class=\"schedule-card__freq\">\n            <span>3643 kHz ± QRM</span>\n          </div>\n          <p class=\"schedule-card__text\">Monatliche Notfunk-Runde für ganz Österreich ab 17:15 UTC auf der Kurzwelle.</p>\n        </div>\n      </div>\n    </div>\n  </section>\n\n  <!-- Mitglied werden -->\n  <section class=\"section join\" id=\"mitglied\">"
 }
@@ -275,7 +275,7 @@ id: toolu_012T5UhZD85sBfJ6q7NDsr4Q
 tool_result
 id: toolu_012T5UhZD85sBfJ6q7NDsr4Q
 ```
-The file /home/achildrenmile/bosarsa/src/index.njk has been updated successfully.
+The file /home/<USER>/bosarsa/src/index.njk has been updated successfully.
 ```
 
 > TOOL
@@ -285,7 +285,7 @@ id: toolu_01UPzJ8JShYWmNcnoYh42w2b
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/_includes/nav.njk",
+  "file_path": "/home/<USER>/bosarsa/src/_includes/nav.njk",
   "old_string": "      <li><a href=\"{{ prefix }}ziele\">Ziele</a></li>\n      <li><a href=\"{{ prefix }}mitglied\">Mitglied werden</a></li>",
   "new_string": "      <li><a href=\"{{ prefix }}ziele\">Ziele</a></li>\n      <li><a href=\"{{ prefix }}funkbetrieb\">Funkbetrieb</a></li>\n      <li><a href=\"{{ prefix }}mitglied\">Mitglied werden</a></li>"
 }
@@ -296,7 +296,7 @@ id: toolu_01UPzJ8JShYWmNcnoYh42w2b
 tool_result
 id: toolu_01UPzJ8JShYWmNcnoYh42w2b
 ```
-The file /home/achildrenmile/bosarsa/src/_includes/nav.njk has been updated successfully.
+The file /home/<USER>/bosarsa/src/_includes/nav.njk has been updated successfully.
 ```
 
 > TOOL
@@ -306,7 +306,7 @@ id: toolu_019JciZSmmw5epeWabgiSgqH
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/css/index.css",
+  "file_path": "/home/<USER>/bosarsa/src/css/index.css",
   "old_string": "/* ===== Join Section ===== */",
   "new_string": "/* ===== Schedule (Funkbetrieb) ===== */\n.schedule-grid {\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  gap: 24px;\n}\n.schedule-card {\n  background: var(--white);\n  border: 1px solid var(--gray-100);\n  border-radius: var(--radius);\n  padding: 36px 28px;\n  transition: transform .25s, box-shadow .25s;\n  position: relative;\n}\n.schedule-card::after {\n  content: '';\n  position: absolute;\n  bottom: 0; left: 0; right: 0;\n  height: 3px;\n  background: var(--bos-gold);\n  transform: scaleX(0);\n  transform-origin: left;\n  transition: transform .35s;\n}\n.schedule-card:hover {\n  transform: translateY(-3px);\n  box-shadow: 0 8px 28px rgba(15,26,46,.08);\n}\n.schedule-card:hover::after { transform: scaleX(1); }\n.schedule-card__icon {\n  width: 48px; height: 48px;\n  display: flex; align-items: center; justify-content: center;\n  background: var(--polizei-navy); color: var(--bos-gold);\n  border-radius: var(--radius); margin-bottom: 18px;\n}\n.schedule-card__title {\n  font-size: 1.05rem; font-weight: 700;\n  color: var(--gray-900); margin-bottom: 10px;\n}\n.schedule-card__badge {\n  display: inline-block;\n  font-family: var(--font-mono);\n  font-size: .72rem;\n  font-weight: 600;\n  letter-spacing: 1px;\n  text-transform: uppercase;\n  color: var(--polizei-mid);\n  background: rgba(59,90,140,.08);\n  padding: 4px 12px;\n  border-radius: 100px;\n  margin-bottom: 16px;\n}\n.schedule-card__freq {\n  font-family: var(--font-mono);\n  font-size: .92rem;\n  font-weight: 600;\n  color: var(--bos-gold);\n  background: rgba(27,42,74,.04);\n  border-left: 3px solid var(--bos-gold);\n  padding: 10px 14px;\n  border-radius: 0 var(--radius) var(--radius) 0;\n  margin-bottom: 16px;\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.schedule-card__text {\n  color: var(--gray-500); font-size: .9rem; line-height: 1.6;\n}\n\n/* ===== Join Section ===== */"
 }
@@ -317,7 +317,7 @@ id: toolu_019JciZSmmw5epeWabgiSgqH
 tool_result
 id: toolu_019JciZSmmw5epeWabgiSgqH
 ```
-The file /home/achildrenmile/bosarsa/src/css/index.css has been updated successfully.
+The file /home/<USER>/bosarsa/src/css/index.css has been updated successfully.
 ```
 
 > AGENT
@@ -331,7 +331,7 @@ id: toolu_016hXvghtan3Hgg23MsZfPY5
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/css/index.css",
+  "file_path": "/home/<USER>/bosarsa/src/css/index.css",
   "old_string": "  .join__orgs { grid-template-columns: repeat(2, 1fr); }\n  .join__foerder { flex-direction: column; text-align: center; }\n}",
   "new_string": "  .join__orgs { grid-template-columns: repeat(2, 1fr); }\n  .join__foerder { flex-direction: column; text-align: center; }\n  .schedule-grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }\n}"
 }
@@ -342,7 +342,7 @@ id: toolu_016hXvghtan3Hgg23MsZfPY5
 tool_result
 id: toolu_016hXvghtan3Hgg23MsZfPY5
 ```
-The file /home/achildrenmile/bosarsa/src/css/index.css has been updated successfully.
+The file /home/<USER>/bosarsa/src/css/index.css has been updated successfully.
 ```
 
 > AGENT
@@ -387,7 +387,7 @@ id: toolu_0148k4uQvokdit7VVgAFcywS
 ```json
 {
   "pattern": "id=\"(ziele|funkbetrieb|mitglied)\"",
-  "path": "/home/achildrenmile/bosarsa/_site/index.html",
+  "path": "/home/<USER>/bosarsa/_site/index.html",
   "output_mode": "content"
 }
 ```

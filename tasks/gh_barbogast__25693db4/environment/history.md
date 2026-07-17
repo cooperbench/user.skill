@@ -34,7 +34,7 @@ tool_use Read
 id: toolu_01V1Znd5mNXUeMTPxCYVED4p
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.tsx"
 }
 ```
 
@@ -92,7 +92,7 @@ tool_use Read
 id: toolu_012drgaEjXZHdERJ6qT2wA6N
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx"
 }
 ```
 
@@ -144,7 +144,7 @@ tool_use Read
 id: toolu_01MqLTHaGKfMrM5VtWZXByRT
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.ts"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.ts"
 }
 ```
 
@@ -216,7 +216,7 @@ tool_use Bash
 id: toolu_0191uFxgKn7x7pDiQuFhwfJH
 ```json
 {
-  "command": "grep -rn \"\\.path\" /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/ 2>/dev/null",
+  "command": "grep -rn \"\\.path\" /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/ 2>/dev/null",
   "description": "Grep for .path usages in DriveUploadMode components"
 }
 ```
@@ -226,13 +226,13 @@ id: toolu_0191uFxgKn7x7pDiQuFhwfJH
 tool_result
 id: toolu_0191uFxgKn7x7pDiQuFhwfJH
 ```
-/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx:19:        const own = assignments.fileOverrides.get(file.path) ?? null
-/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx:22:          <Box key={file.path} pl={4}>
-/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx:38:                onPick={() => onPick({ type: 'file', path: file.path })}
-/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx:39:                onClear={() => assignments.clearFileOverride(file.path)}
-/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.tsx:115:    onSelect({ driveFolderId: selected.id, path: selected.path })
-/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx:30:    else if (pickerTarget?.type === 'file') assignments.setFileOverride(pickerTarget.path, folder)
-/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx:30:        📁 {assignment ? assignment.path : 'Not assigned'}
+/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx:19:        const own = assignments.fileOverrides.get(file.path) ?? null
+/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx:22:          <Box key={file.path} pl={4}>
+/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx:38:                onPick={() => onPick({ type: 'file', path: file.path })}
+/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx:39:                onClear={() => assignments.clearFileOverride(file.path)}
+/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.tsx:115:    onSelect({ driveFolderId: selected.id, path: selected.path })
+/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx:30:    else if (pickerTarget?.type === 'file') assignments.setFileOverride(pickerTarget.path, folder)
+/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx:30:        📁 {assignment ? assignment.path : 'Not assigned'}
 ```
 
 > AGENT
@@ -263,7 +263,7 @@ tool_use Read
 id: toolu_01NLBgFTGddZhbsyPAdtx9kr
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx"
 }
 ```
 
@@ -326,7 +326,7 @@ id: toolu_012hZxECo6w4CVV6m4HiHnmi
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.tsx",
   "old_string": "      {expanded && children && (\n        <Box pl={INDENT_PER_LEVEL}>\n          {children.length === 0\n            ? <Text size=\"xs\" c=\"dimmed\" pl={6}>No subfolders</Text>\n            : children.map(child => (\n                <DriveTreeNode\n                  key={child.id}\n                  item={child}\n                  path={`${path} / ${child.name}`}\n                  selectedId={selectedId}\n                  onSelect={onSelect}\n                />\n              ))}\n        </Box>\n      )}",
   "new_string": "      {expanded && children && (\n        <Box pl={INDENT_PER_LEVEL}>\n          {children.length === 0\n            ? <Text size=\"xs\" c=\"dimmed\" pl={6}>No subfolders</Text>\n            : children.map(child => {\n                // Root's own path is \"My Drive\", but that prefix is redundant on every\n                // descendant's path (it's the same for all of them) - drop it below root.\n                const childBasePath = item.id === ROOT.id ? '' : path\n                return (\n                  <DriveTreeNode\n                    key={child.id}\n                    item={child}\n                    path={childBasePath ? `${childBasePath} / ${child.name}` : child.name}\n                    selectedId={selectedId}\n                    onSelect={onSelect}\n                  />\n                )\n              })}\n        </Box>\n      )}"
 }
@@ -337,7 +337,7 @@ id: toolu_012hZxECo6w4CVV6m4HiHnmi
 tool_result
 id: toolu_012hZxECo6w4CVV6m4HiHnmi
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -351,7 +351,7 @@ id: toolu_01Rc6fnYkMX3p5kzGY7QQ49o
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx",
   "old_string": "    expect(onSelect).toHaveBeenCalledWith({ driveFolderId: 'f1', path: 'My Drive / Finance' })",
   "new_string": "    expect(onSelect).toHaveBeenCalledWith({ driveFolderId: 'f1', path: 'Finance' })"
 }
@@ -362,7 +362,7 @@ id: toolu_01Rc6fnYkMX3p5kzGY7QQ49o
 tool_result
 id: toolu_01Rc6fnYkMX3p5kzGY7QQ49o
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -375,7 +375,7 @@ tool_use Bash
 id: toolu_01BpjrfKYs353hCnxSrKb2dU
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor/frontend && npm test -- DriveFolderPickerModal 2>&1 | tail -40",
+  "command": "cd /home/<USER>/git/paper-scan-processor/frontend && npm test -- DriveFolderPickerModal 2>&1 | tail -40",
   "description": "Run DriveFolderPickerModal tests"
 }
 ```
@@ -389,7 +389,7 @@ id: toolu_01BpjrfKYs353hCnxSrKb2dU
 > vitest run DriveFolderPickerModal
 
 
- RUN  v0.34.6 /Users/ben/git/paper-scan-processor/frontend
+ RUN  v0.34.6 /home/<USER>/git/paper-scan-processor/frontend
 
  ✓ src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx  (5 tests) 228ms
 
@@ -433,7 +433,7 @@ tool_use Read
 id: toolu_01HMFiZR8VhCBcvcpetGVHs8
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.tsx",
   "offset": 80,
   "limit": 20
 }
@@ -473,7 +473,7 @@ id: toolu_01DWNa9pFdzhgoYynHw9VYou
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.tsx",
   "old_string": "const ROOT: DriveFolder = { id: 'root', name: 'My Drive' }",
   "new_string": "const ROOT: DriveFolder = { id: 'root', name: '/' }"
 }
@@ -484,7 +484,7 @@ id: toolu_01DWNa9pFdzhgoYynHw9VYou
 tool_result
 id: toolu_01DWNa9pFdzhgoYynHw9VYou
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -494,7 +494,7 @@ id: toolu_01VmbbcSNjVoLHcAAvh6btvF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.tsx",
   "old_string": "            : children.map(child => {\n                // Root's own path is \"My Drive\", but that prefix is redundant on every\n                // descendant's path (it's the same for all of them) - drop it below root.\n                const childBasePath = item.id === ROOT.id ? '' : path\n                return (\n                  <DriveTreeNode\n                    key={child.id}\n                    item={child}\n                    path={childBasePath ? `${childBasePath} / ${child.name}` : child.name}\n                    selectedId={selectedId}\n                    onSelect={onSelect}\n                  />\n                )\n              })}",
   "new_string": "            : children.map(child => (\n                <DriveTreeNode\n                  key={child.id}\n                  item={child}\n                  path={path.endsWith('/') ? `${path}${child.name}` : `${path}/${child.name}`}\n                  selectedId={selectedId}\n                  onSelect={onSelect}\n                />\n              ))}"
 }
@@ -505,7 +505,7 @@ id: toolu_01VmbbcSNjVoLHcAAvh6btvF
 tool_result
 id: toolu_01VmbbcSNjVoLHcAAvh6btvF
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -519,7 +519,7 @@ id: toolu_01JUaUruYVHRS2VNp5hqSFeQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx",
   "old_string": "    expect(onSelect).toHaveBeenCalledWith({ driveFolderId: 'f1', path: 'Finance' })",
   "new_string": "    expect(onSelect).toHaveBeenCalledWith({ driveFolderId: 'f1', path: '/Finance' })"
 }
@@ -530,7 +530,7 @@ id: toolu_01JUaUruYVHRS2VNp5hqSFeQ
 tool_result
 id: toolu_01JUaUruYVHRS2VNp5hqSFeQ
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -540,7 +540,7 @@ id: toolu_01FKZ4xC9YqV92AkCF8StMs6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx",
   "old_string": "    expect(await screen.findByText(/boom/)).toBeTruthy()\n    expect(screen.getByText(/My Drive/)).toBeTruthy()",
   "new_string": "    expect(await screen.findByText(/boom/)).toBeTruthy()\n    expect(screen.getByText('📁 /')).toBeTruthy()"
 }
@@ -551,7 +551,7 @@ id: toolu_01FKZ4xC9YqV92AkCF8StMs6
 tool_result
 id: toolu_01FKZ4xC9YqV92AkCF8StMs6
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -578,7 +578,7 @@ id: toolu_01CJunqzJGVTTgzRPHHsDZwa
 > vitest run DriveFolderPickerModal
 
 
- RUN  v0.34.6 /Users/ben/git/paper-scan-processor/frontend
+ RUN  v0.34.6 /home/<USER>/git/paper-scan-processor/frontend
 
  ✓ src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx  (5 tests) 226ms
 
@@ -598,7 +598,7 @@ tool_use Bash
 id: toolu_01JHmy8ETEqb6trkLzk18bEh
 ```json
 {
-  "command": "grep -rn \"My Drive\" /Users/ben/git/paper-scan-processor/frontend/src 2>/dev/null",
+  "command": "grep -rn \"My Drive\" /home/<USER>/git/paper-scan-processor/frontend/src 2>/dev/null",
   "description": "Check for remaining \"My Drive\" references in frontend source"
 }
 ```
@@ -608,10 +608,10 @@ id: toolu_01JHmy8ETEqb6trkLzk18bEh
 tool_result
 id: toolu_01JHmy8ETEqb6trkLzk18bEh
 ```
-/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.test.tsx:60:      .toContain('My Drive / Finance')
-/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.test.tsx:62:      .toContain('My Drive / Finance')
-/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.test.tsx:68:    expect(textOf(screen.getByRole('button', { name: 'Set Drive folder for a' }))).toContain('My Drive / Finance')
-/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.test.tsx:78:    expect(textOf(screen.getByRole('button', { name: 'Set Drive folder for a' }))).toContain('My Drive / Finance')
+/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.test.tsx:60:      .toContain('My Drive / Finance')
+/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.test.tsx:62:      .toContain('My Drive / Finance')
+/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.test.tsx:68:    expect(textOf(screen.getByRole('button', { name: 'Set Drive folder for a' }))).toContain('My Drive / Finance')
+/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.test.tsx:78:    expect(textOf(screen.getByRole('button', { name: 'Set Drive folder for a' }))).toContain('My Drive / Finance')
 ```
 
 > AGENT
@@ -624,7 +624,7 @@ tool_use Read
 id: toolu_01L3GcPtYPtLZwtSUcaiADsc
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.test.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.test.tsx",
   "offset": 1,
   "limit": 90
 }
@@ -735,7 +735,7 @@ id: toolu_018mhToSv4EK8y7UDL16viEr
 > vitest run
 
 
- RUN  v0.34.6 /Users/ben/git/paper-scan-processor/frontend
+ RUN  v0.34.6 /home/<USER>/git/paper-scan-processor/frontend
 
  ✓ src/components/DriveUploadMode/useFileTree.test.ts  (4 tests) 20ms
  ✓ src/components/SplitMode/useOutputFiles.test.ts  (6 tests) 22ms
@@ -856,7 +856,7 @@ tool_use Bash
 id: toolu_01HugahmSYSCiZaBikMVZhu6
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor && git add frontend/src/components/DriveUploadMode/DriveFolderPickerModal.tsx frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx frontend/src/components/DriveUploadMode/index.test.tsx && git commit -m \"$(cat <<'EOF'\nShow Drive folder paths as \"/Finance\" instead of \"My Drive / Finance\"\n\nThe \"My Drive /\" prefix was constant on every assignment and ate into\nthe badge's limited width before ellipsis truncation kicked in.\nEOF\n)\"",
+  "command": "cd /home/<USER>/git/paper-scan-processor && git add frontend/src/components/DriveUploadMode/DriveFolderPickerModal.tsx frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx frontend/src/components/DriveUploadMode/index.test.tsx && git commit -m \"$(cat <<'EOF'\nShow Drive folder paths as \"/Finance\" instead of \"My Drive / Finance\"\n\nThe \"My Drive /\" prefix was constant on every assignment and ate into\nthe badge's limited width before ellipsis truncation kicked in.\nEOF\n)\"",
   "description": "Commit the Drive path display change"
 }
 ```
@@ -877,7 +877,7 @@ tool_use Bash
 id: toolu_01GYZB1XgDqT218deDnMPhJJ
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor && git commit -m \"$(cat <<'EOF'\nShow Drive folder paths as /Finance instead of My Drive / Finance\n\nThe My Drive prefix was constant on every assignment and ate into\nthe badges limited width before ellipsis truncation kicked in.\nEOF\n)\"",
+  "command": "cd /home/<USER>/git/paper-scan-processor && git commit -m \"$(cat <<'EOF'\nShow Drive folder paths as /Finance instead of My Drive / Finance\n\nThe My Drive prefix was constant on every assignment and ate into\nthe badges limited width before ellipsis truncation kicked in.\nEOF\n)\"",
   "description": "Commit the Drive path display change"
 }
 ```
@@ -905,7 +905,7 @@ tool_use Bash
 id: toolu_014kcCSXBrbpUfqeiT7hkTub
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor && git add frontend/src/components/DriveUploadMode/DriveFolderPickerModal.tsx frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx frontend/src/components/DriveUploadMode/index.test.tsx",
+  "command": "cd /home/<USER>/git/paper-scan-processor && git add frontend/src/components/DriveUploadMode/DriveFolderPickerModal.tsx frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx frontend/src/components/DriveUploadMode/index.test.tsx",
   "description": "Stage the Drive path display changes"
 }
 ```
@@ -952,7 +952,7 @@ tool_use Read
 id: toolu_0187f2tynf552WkPsQ4r33e6
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx"
 }
 ```
 
@@ -998,7 +998,7 @@ tool_use Bash
 id: toolu_01YYbLoVY1zHtvs6P2YsgnZb
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor/frontend && grep -rn \"Tooltip\\|scrollWidth\\|clientWidth\\|title=\" src/ 2>/dev/null; grep -n '\"@mantine/core\"' package.json",
+  "command": "cd /home/<USER>/git/paper-scan-processor/frontend && grep -rn \"Tooltip\\|scrollWidth\\|clientWidth\\|title=\" src/ 2>/dev/null; grep -n '\"@mantine/core\"' package.json",
   "description": "Grep for existing tooltip/truncation patterns and Mantine version"
 }
 ```
@@ -1038,7 +1038,7 @@ tool_use Read
 id: toolu_01JMxJSuhysU48g71ji276qR
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/TruncatedText.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/TruncatedText.tsx"
 }
 ```
 
@@ -1110,7 +1110,7 @@ tool_use Read
 id: toolu_01JcVntsoUntXd2RHyQuKPNp
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/GroupNode.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/GroupNode.tsx"
 }
 ```
 
@@ -1173,7 +1173,7 @@ tool_use Read
 id: toolu_0125aqDp4R9EQ2gcJZ31rQoD
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx"
 }
 ```
 
@@ -1230,7 +1230,7 @@ id: toolu_01KUjrKZkGkVkgZEWbYabRUn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx",
   "old_string": "import { Badge, Box } from '@mantine/core'\nimport { DriveAssignment } from './useDriveAssignments'\n\ninterface Props {\n  label: string\n  assignment: DriveAssignment | null\n  isOwn: boolean\n  onPick: () => void\n  onClear: () => void\n}\n\n// Pinned to the right of its row (filename or folder header) by the caller,\n// so badges land at a consistent horizontal position regardless of nesting\n// depth - scannable as a column rather than a per-row detail.\nexport default function DriveAssignmentField({ label, assignment, isOwn, onPick, onClear }: Props) {\n  return (\n    <Box style={{ display: 'flex', alignItems: 'center', gap: 4, flexShrink: 0 }}>\n      <Badge\n        component=\"button\"\n        type=\"button\"\n        onClick={onPick}\n        aria-label={`Set Drive folder for ${label}`}\n        color={assignment ? 'blue' : 'gray'}\n        variant={isOwn ? 'light' : 'outline'}\n        size=\"sm\"\n        radius=\"sm\"\n        style={{ cursor: 'pointer', fontWeight: isOwn ? 600 : 400, textTransform: 'none', maxWidth: 140 }}\n        styles={{ label: { overflow: 'hidden', textOverflow: 'ellipsis' } }}\n      >\n        📁 {assignment ? assignment.path : 'Not assigned'}\n      </Badge>\n      {isOwn && (",
   "new_string": "import { useLayoutEffect, useRef, useState } from 'react'\nimport { Badge, Box, Tooltip } from '@mantine/core'\nimport { DriveAssignment } from './useDriveAssignments'\n\ninterface Props {\n  label: string\n  assignment: DriveAssignment | null\n  isOwn: boolean\n  onPick: () => void\n  onClear: () => void\n}\n\n// Pinned to the right […]
 
@@ -1239,7 +1239,7 @@ id: toolu_01KUjrKZkGkVkgZEWbYabRUn
 tool_result
 id: toolu_01KUjrKZkGkVkgZEWbYabRUn
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1252,7 +1252,7 @@ tool_use Read
 id: toolu_019QwWThfyb85oCwEGBvEEpE
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx"
 }
 ```
 
@@ -1320,7 +1320,7 @@ id: toolu_015LRFc1jwXfLS4UfzyHoSbw
 > vitest run
 
 
- RUN  v0.34.6 /Users/ben/git/paper-scan-processor/frontend
+ RUN  v0.34.6 /home/<USER>/git/paper-scan-processor/frontend
 
  ✓ src/components/DriveUploadMode/useFileTree.test.ts  (4 tests) 21ms
  ✓ src/components/SplitMode/useOutputFiles.test.ts  (6 tests) 20ms
@@ -1352,7 +1352,7 @@ tool_use Read
 id: toolu_012xwdNtyJFzB28oeQgWyg2m
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/ClippedPath.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/ClippedPath.tsx"
 }
 ```
 
@@ -1414,7 +1414,7 @@ tool_use Bash
 id: toolu_01J4yJE1aKycK1t1NdnYPsbJ
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor/frontend/src && find . -iname \"*hook*\" -o -iname \"use*.ts\" -o -iname \"use*.tsx\" | grep -v node_modules",
+  "command": "cd /home/<USER>/git/paper-scan-processor/frontend/src && find . -iname \"*hook*\" -o -iname \"use*.ts\" -o -iname \"use*.tsx\" | grep -v node_modules",
   "description": "Find existing hook file locations/conventions"
 }
 ```
@@ -1466,7 +1466,7 @@ tool_use Bash
 id: toolu_013haNgNtGMFW8iccD55hCSm
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor && git status",
+  "command": "cd /home/<USER>/git/paper-scan-processor && git status",
   "description": "Check current git status"
 }
 ```
@@ -1574,7 +1574,7 @@ tool_use Bash
 id: toolu_01Rptw6xjcckgUaSTp4FzhmX
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor/frontend/src && ls -la && echo --- && ls components/",
+  "command": "cd /home/<USER>/git/paper-scan-processor/frontend/src && ls -la && echo --- && ls components/",
   "description": "List src directory structure"
 }
 ```
@@ -1633,7 +1633,7 @@ tool_use Read
 id: toolu_01Y3JBVqmRNSmWKGiXpAfECG
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/lib/resizableWidth.ts"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/lib/resizableWidth.ts"
 }
 ```
 
@@ -1679,7 +1679,7 @@ tool_use Write
 id: toolu_01HkKUQDV1pXtcf9eA84pVen
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/lib/useIsTruncated.ts",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/lib/useIsTruncated.ts",
   "content": "import { RefObject, useLayoutEffect, useState } from 'react'\n\n// Detects whether a ref'd element's content is being clipped by CSS overflow,\n// so callers can conditionally show a tooltip with the untruncated text.\n// Runs in useLayoutEffect (before paint) so there's no flash of unclipped state.\nexport function useIsTruncated(ref: RefObject<HTMLElement>, dep: unknown, options?: { scrollToEnd?: boolean }) {\n  const [truncated, setTruncated] = useState(false)\n\n  useLayoutEffect(() => {\n    const el = ref.current\n    if (!el) return\n    const overflows = el.scrollWidth > el.clientWidth\n    setTruncated(overflows)\n    if (overflows && options?.scrollToEnd) el.scrollLeft = el.scrollWidth\n    // eslint-disable-next-line react-hooks/exhaustive-deps\n  }, [dep])\n\n  return truncated\n}\n"
 }
 ```
@@ -1689,7 +1689,7 @@ id: toolu_01HkKUQDV1pXtcf9eA84pVen
 tool_result
 id: toolu_01HkKUQDV1pXtcf9eA84pVen
 ```
-File created successfully at: /Users/ben/git/paper-scan-processor/frontend/src/lib/useIsTruncated.ts (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/git/paper-scan-processor/frontend/src/lib/useIsTruncated.ts (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1703,7 +1703,7 @@ id: toolu_01KBR4m9MQW4FnFEogdxTbbe
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/ClippedPath.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/ClippedPath.tsx",
   "old_string": "import { useRef, useLayoutEffect, useState } from 'react'\nimport { Tooltip } from '@mantine/core'\n\ninterface Props {\n  path: string | null\n  onClick: () => void\n  placeholder?: string\n}\n\n// Displays a filesystem path, anchored to its right end so the filename is always visible.\n// Uses scrollLeft (rather than direction:rtl) to avoid Unicode BiDi issues with the leading slash.\nexport default function ClippedPath({ path, onClick, placeholder = 'Choose folder…' }: Props) {\n  const ref = useRef<HTMLButtonElement>(null)\n  const [clipped, setClipped] = useState(false)\n\n  // Runs before paint to avoid a flash of the unscrolled (left-anchored) path.\n  useLayoutEffect(() => {\n    const el = ref.current\n    if (!el) return\n    const overflows = el.scrollWidth > el.clientWidth\n    setClipped(overflows)\n    if (overflows) el.scrollLeft = el.scrollWidth\n  }, [path])",
   "new_string": "import { useRef } from 'react'\nimport { Tooltip } from '@mantine/core'\nimport { useIsTruncated } from '../lib/useIsTruncated'\n\ninterface Props {\n  path: string | null\n  onClick: () => void\n  placeholder?: string\n}\n\n// Displays a filesystem path, anchored to its right end so the filename is always visible.\n// Uses scrollLeft (rather than direction:rtl) to avoid Unicode BiDi issues with the leading slash.\nexport default function ClippedPath({ path, onClick, placeholder = 'Choose folder…' }: Props) {\n  const ref = useRef<HTMLButtonElement>(null)\n  const clipped = […]
 
@@ -1712,7 +1712,7 @@ id: toolu_01KBR4m9MQW4FnFEogdxTbbe
 tool_result
 id: toolu_01KBR4m9MQW4FnFEogdxTbbe
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/ClippedPath.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/ClippedPath.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1722,7 +1722,7 @@ id: toolu_01T13Lsp9m7za4ah1anbkb8P
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/TruncatedText.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/TruncatedText.tsx",
   "old_string": "import { useLayoutEffect, useRef, useState } from 'react'\nimport { Text, TextProps, Tooltip } from '@mantine/core'\n\ninterface Props extends Omit<TextProps, 'children' | 'truncate'> {\n  children: React.ReactNode\n  label: string\n}\n\n// Renders children as truncating text, showing a tooltip with label only\n// once the text is actually clipped - same technique as ../ClippedPath.tsx.\n// label is separate from children since children may include a decorative\n// prefix (e.g. an icon) that shouldn't appear in the tooltip.\nexport default function TruncatedText({ children, label, ...textProps }: Props) {\n  const ref = useRef<HTMLParagraphElement>(null)\n  const [truncated, setTruncated] = useState(false)\n\n  useLayoutEffect(() => {\n    const el = ref.current\n    if (!el) return\n    setTruncated(el.scrollWidth > el.clientWidth)\n  }, [label])",
   "new_string": "import { useRef } from 'react'\nimport { Text, TextProps, Tooltip } from '@mantine/core'\nimport { useIsTruncated } from '../../lib/useIsTruncated'\n\ninterface Props extends Omit<TextProps, 'children' | 'truncate'> {\n  children: React.ReactNode\n  label: string\n}\n\n// Renders children as truncating text, showing a tooltip with label only\n// once the text is actually clipped - same technique as ../ClippedPath.tsx.\n// label is separate from children since children may include a decorative\n// prefix (e.g. an icon) that shouldn't appear in the tooltip.\nexport default function TruncatedText({ children, label, ...textProps }: Props) {\n  const ref = useRef<HTMLParagraphElement>(null)\n  const […]
 
@@ -1731,7 +1731,7 @@ id: toolu_01T13Lsp9m7za4ah1anbkb8P
 tool_result
 id: toolu_01T13Lsp9m7za4ah1anbkb8P
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/TruncatedText.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/TruncatedText.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1741,7 +1741,7 @@ id: toolu_01HBeQLSQ951UZtjYqubMxfn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx",
   "old_string": "import { useLayoutEffect, useRef, useState } from 'react'\nimport { Badge, Box, Tooltip } from '@mantine/core'\nimport { DriveAssignment } from './useDriveAssignments'",
   "new_string": "import { useRef } from 'react'\nimport { Badge, Box, Tooltip } from '@mantine/core'\nimport { DriveAssignment } from './useDriveAssignments'\nimport { useIsTruncated } from '../../lib/useIsTruncated'"
 }
@@ -1752,7 +1752,7 @@ id: toolu_01HBeQLSQ951UZtjYqubMxfn
 tool_result
 id: toolu_01HBeQLSQ951UZtjYqubMxfn
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1762,7 +1762,7 @@ id: toolu_01DXx7JA9zR2cqi4WxTJ4B4X
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx",
   "old_string": "  const textRef = useRef<HTMLSpanElement>(null)\n  const [truncated, setTruncated] = useState(false)\n  const displayPath = assignment ? assignment.path : 'Not assigned'\n\n  // Same truncation-detection technique as TruncatedText.tsx / ClippedPath.tsx,\n  // adapted here since the text lives inside a Badge's label rather than a Text.\n  useLayoutEffect(() => {\n    const el = textRef.current\n    if (!el) return\n    setTruncated(el.scrollWidth > el.clientWidth)\n  }, [displayPath])",
   "new_string": "  const textRef = useRef<HTMLSpanElement>(null)\n  const displayPath = assignment ? assignment.path : 'Not assigned'\n  const truncated = useIsTruncated(textRef, displayPath)"
 }
@@ -1773,7 +1773,7 @@ id: toolu_01DXx7JA9zR2cqi4WxTJ4B4X
 tool_result
 id: toolu_01DXx7JA9zR2cqi4WxTJ4B4X
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1786,7 +1786,7 @@ tool_use Read
 id: toolu_01MVKqNYpZTKEecDyM5MbGBW
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/ClippedPath.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/ClippedPath.tsx"
 }
 ```
 
@@ -1840,7 +1840,7 @@ tool_use Read
 id: toolu_01JwCNsD6ShjfVMbm5TqGJGE
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/TruncatedText.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/TruncatedText.tsx"
 }
 ```
 
@@ -1883,7 +1883,7 @@ tool_use Read
 id: toolu_01S7K19KekSiQ5wTEfR64gL1
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx"
 }
 ```
 
@@ -1937,7 +1937,7 @@ tool_use Bash
 id: toolu_01SUQcATm75SH9unff36Ppcv
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor/frontend && npm run tsc 2>&1 | tail -40 && npm test 2>&1 | tail -40",
+  "command": "cd /home/<USER>/git/paper-scan-processor/frontend && npm run tsc 2>&1 | tail -40 && npm test 2>&1 | tail -40",
   "description": "Typecheck and test after hook extraction"
 }
 ```
@@ -1964,7 +1964,7 @@ src/components/DriveUploadMode/TruncatedText.tsx(16,36): error TS2345: Argument 
 > vitest run
 
 
- RUN  v0.34.6 /Users/ben/git/paper-scan-processor/frontend
+ RUN  v0.34.6 /home/<USER>/git/paper-scan-processor/frontend
 
  ✓ src/components/DriveUploadMode/useFileTree.test.ts  (4 tests) 21ms
  ✓ src/components/SplitMode/useOutputFiles.test.ts  (6 tests) 23ms
@@ -1988,7 +1988,7 @@ id: toolu_01723whJnZMfGqj4qKMsoL5w
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/lib/useIsTruncated.ts",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/lib/useIsTruncated.ts",
   "old_string": "export function useIsTruncated(ref: RefObject<HTMLElement>, dep: unknown, options?: { scrollToEnd?: boolean }) {",
   "new_string": "export function useIsTruncated(ref: RefObject<HTMLElement | null>, dep: unknown, options?: { scrollToEnd?: boolean }) {"
 }
@@ -1999,7 +1999,7 @@ id: toolu_01723whJnZMfGqj4qKMsoL5w
 tool_result
 id: toolu_01723whJnZMfGqj4qKMsoL5w
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/lib/useIsTruncated.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/lib/useIsTruncated.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2046,7 +2046,7 @@ id: toolu_01R294y1QXVqAdy1qNH5J2AQ
 > vitest run
 
 
- RUN  v0.34.6 /Users/ben/git/paper-scan-processor/frontend
+ RUN  v0.34.6 /home/<USER>/git/paper-scan-processor/frontend
 
  ✓ src/components/SplitMode/useOutputFiles.test.ts  (6 tests) 20ms
  ✓ src/components/DriveUploadMode/useFileTree.test.ts  (4 tests) 21ms
@@ -2069,7 +2069,7 @@ tool_use Bash
 id: toolu_018Uh7K4ihaobwZrk1at9CC4
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor && git status",
+  "command": "cd /home/<USER>/git/paper-scan-processor && git status",
   "description": "Check status before staging"
 }
 ```

@@ -34,7 +34,7 @@ tool_use Bash
 id: toolu_01FGQa5QKVNJvzEamoFy6KXE
 ```json
 {
-  "command": "git -C /Users/anton/src/drain-cycle status && echo \"---BRANCH---\" && git -C /Users/anton/src/drain-cycle branch --show-current && echo \"---WORKTREES---\" && git -C /Users/anton/src/drain-cycle worktree list",
+  "command": "git -C /home/<USER>/src/drain-cycle status && echo \"---BRANCH---\" && git -C /home/<USER>/src/drain-cycle branch --show-current && echo \"---WORKTREES---\" && git -C /home/<USER>/src/drain-cycle worktree list",
   "description": "Check git status, branch, and worktrees"
 }
 ```
@@ -155,22 +155,22 @@ ABA-411
 === worktree helper? ===
 (eval):1: no matches found: --include=*.py
 === agent-skills-shaper location ===
-/Users/anton/src/agent-skills-shaper/
+/home/<USER>/src/agent-skills-shaper/
 (skills dir exists)
 === is agent-skills-shaper a git repo / where do exec skills live ===
-shape-exec-breakdown -> /Users/anton/src/agent-skills-shaper/skills/exec-breakdown  58B
-shape-exec-build -> /Users/anton/src/agent-skills-shaper/skills/exec-build  54B
-shape-exec-debug -> /Users/anton/src/agent-skills-shaper/skills/exec-debug  54B
-shape-exec-finish -> /Users/anton/src/agent-skills-shaper/skills/exec-finish  55B
-shape-exec-pickup -> /Users/anton/src/agent-skills-shaper/skills/exec-pickup  55B
-shape-exec-review -> /Users/anton/src/agent-skills-shaper/skills/exec-review  55B
-shape-exec-simplify -> /Users/anton/src/agent-skills-shaper/skills/exec-simplify  57B
-shape-exec-verify -> /Users/anton/src/agent-skills-shaper/skills/exec-verify  55B
+shape-exec-breakdown -> /home/<USER>/src/agent-skills-shaper/skills/exec-breakdown  58B
+shape-exec-build -> /home/<USER>/src/agent-skills-shaper/skills/exec-build  54B
+shape-exec-debug -> /home/<USER>/src/agent-skills-shaper/skills/exec-debug  54B
+shape-exec-finish -> /home/<USER>/src/agent-skills-shaper/skills/exec-finish  55B
+shape-exec-pickup -> /home/<USER>/src/agent-skills-shaper/skills/exec-pickup  55B
+shape-exec-review -> /home/<USER>/src/agent-skills-shaper/skills/exec-review  55B
+shape-exec-simplify -> /home/<USER>/src/agent-skills-shaper/skills/exec-simplify  57B
+shape-exec-verify -> /home/<USER>/src/agent-skills-shaper/skills/exec-verify  55B
 ```
 
 > AGENT
 
-Both blockers are Done. `agent-skills-shaper` lives at `/Users/anton/src/agent-skills-shaper/` and the `exec:*` skills are symlinked from it (editable live). Worktree convention uses short branch names (`ABA-411`).
+Both blockers are Done. `agent-skills-shaper` lives at `/home/<USER>/src/agent-skills-shaper/` and the `exec:*` skills are symlinked from it (editable live). Worktree convention uses short branch names (`ABA-411`).
 
 Let me set up the worktree for ABA-412, make sure main is current, and read the N01 marker contract (ADR 0032) plus the N03 delivery plan that ground this build.
 
@@ -180,7 +180,7 @@ tool_use Bash
 id: toolu_01CwEKJ2A7rUWNgBJ1SJXL2C
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle\ngit fetch origin --quiet 2>&1 | tail -2\necho \"=== main vs origin/main ===\"\ngit rev-list --left-right --count main...origin/main\necho \"=== ADR 0032 ===\"\nls docs/adr/ 2>/dev/null | grep -E \"0032\" \necho \"=== delivery plan dir (may be gitignored) ===\"\nls docs/delivery-plans/live-execution-swimlanes/D1-live-execution-swimlanes/ 2>/dev/null",
+  "command": "cd /home/<USER>/src/drain-cycle\ngit fetch origin --quiet 2>&1 | tail -2\necho \"=== main vs origin/main ===\"\ngit rev-list --left-right --count main...origin/main\necho \"=== ADR 0032 ===\"\nls docs/adr/ 2>/dev/null | grep -E \"0032\" \necho \"=== delivery plan dir (may be gitignored) ===\"\nls docs/delivery-plans/live-execution-swimlanes/D1-live-execution-swimlanes/ 2>/dev/null",
   "description": "Fetch, check main currency, locate ADR 0032 and N03 plan"
 }
 ```
@@ -206,7 +206,7 @@ tool_use Bash
 id: toolu_01Rrz25wFcCiNHtzGtVbahzL
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle\necho \"=== adr files (last 6) ===\"\nls docs/adr/ 2>/dev/null | tail -8 || find docs -iname \"*adr*\" -o -path \"*adr*\" -name \"*.md\" 2>/dev/null | head\necho \"=== grep for 0032 / _active marker ADR ===\"\ngrep -rl \"_active\" docs/adr 2>/dev/null; grep -rl \"display only\" docs/adr 2>/dev/null | head",
+  "command": "cd /home/<USER>/src/drain-cycle\necho \"=== adr files (last 6) ===\"\nls docs/adr/ 2>/dev/null | tail -8 || find docs -iname \"*adr*\" -o -path \"*adr*\" -name \"*.md\" 2>/dev/null | head\necho \"=== grep for 0032 / _active marker ADR ===\"\ngrep -rl \"_active\" docs/adr 2>/dev/null; grep -rl \"display only\" docs/adr 2>/dev/null | head",
   "description": "Find the ADR file for the _active marker"
 }
 ```
@@ -226,7 +226,7 @@ tool_use Bash
 id: toolu_018zvzxcV3Z4yv6A8pZaP8KD
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle\necho \"=== find ADR dir ===\"\nfind . -path ./.worktrees -prune -o -type d -iname \"*adr*\" -print 2>/dev/null\necho \"=== find ADR 0032 file anywhere ===\"\ngit ls-files | grep -iE \"adr\" | grep -E \"003[012]\" \necho \"=== last few adr files tracked ===\"\ngit ls-files | grep -iE \"adr/00\" | tail -8",
+  "command": "cd /home/<USER>/src/drain-cycle\necho \"=== find ADR dir ===\"\nfind . -path ./.worktrees -prune -o -type d -iname \"*adr*\" -print 2>/dev/null\necho \"=== find ADR 0032 file anywhere ===\"\ngit ls-files | grep -iE \"adr\" | grep -E \"003[012]\" \necho \"=== last few adr files tracked ===\"\ngit ls-files | grep -iE \"adr/00\" | tail -8",
   "description": "Locate ADR directory and the 0032 file"
 }
 ```
@@ -251,7 +251,7 @@ tool_use Read
 id: toolu_0172ASi2r2PD6yUrtcVo6QVJ
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/docs/adrs/0032-non-gating-active-marker.md"
+  "file_path": "/home/<USER>/src/drain-cycle/docs/adrs/0032-non-gating-active-marker.md"
 }
 ```
 
@@ -276,7 +276,7 @@ tool_use Read
 id: toolu_01EjxMyYWGsQgLjd8vXzp1Sd
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/docs/delivery-plans/live-execution-swimlanes/D1-live-execution-swimlanes/N03-marker-contract-persona-depth.md"
+  "file_path": "/home/<USER>/src/drain-cycle/docs/delivery-plans/live-execution-swimlanes/D1-live-execution-swimlanes/N03-marker-contract-persona-depth.md"
 }
 ```
 
@@ -325,7 +325,7 @@ tool_use Bash
 id: toolu_016pihb9KDMyMu2TGBSsNqs6
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle\ngit worktree add .worktrees/ABA-412 -b ABA-412 origin/main 2>&1 | tail -3\necho \"=== created, branch: ===\"\ngit -C .worktrees/ABA-412 branch --show-current",
+  "command": "cd /home/<USER>/src/drain-cycle\ngit worktree add .worktrees/ABA-412 -b ABA-412 origin/main 2>&1 | tail -3\necho \"=== created, branch: ===\"\ngit -C .worktrees/ABA-412 branch --show-current",
   "description": "Create ABA-412 worktree off origin/main"
 }
 ```
@@ -348,7 +348,7 @@ tool_use Bash
 id: toolu_01B6wNpnT7N6noaa9b1PQ1br
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle\necho \"=== swimlanes / stepper renderer from N02 (PR #38) ===\"\ngit log --oneline -1 ff6cf3c..HEAD 2>/dev/null | head\ngit ls-files src 2>/dev/null | head -1 >/dev/null\necho \"--- files mentioning swimlane/stepper/_active/watch_format ---\"\ngit grep -lE \"swimlane|stepper|_active|tool_use\" -- '*.py' | head -30",
+  "command": "cd /home/<USER>/src/drain-cycle\necho \"=== swimlanes / stepper renderer from N02 (PR #38) ===\"\ngit log --oneline -1 ff6cf3c..HEAD 2>/dev/null | head\ngit ls-files src 2>/dev/null | head -1 >/dev/null\necho \"--- files mentioning swimlane/stepper/_active/watch_format ---\"\ngit grep -lE \"swimlane|stepper|_active|tool_use\" -- '*.py' | head -30",
   "description": "Locate the N02 renderer and related modules"
 }
 ```
@@ -385,7 +385,7 @@ tool_use Read
 id: toolu_012Miu5HKKeed43mGD4jFhsQ
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/swimlanes.py"
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/swimlanes.py"
 }
 ```
 
@@ -426,15 +426,15 @@ tool_use Write
 id: toolu_01TwzFuzsKdR3dMXxWun2DmR
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/.worktrees/ABA-412/exec-state.json",
-  "content": "{\n  \"pickup\": {\n    \"issue_id\": \"ABA-412\",\n    \"branch\": \"ABA-412\",\n    \"parent_branch\": \"main\",\n    \"worktree_path\": \"/Users/anton/src/drain-cycle/.worktrees/ABA-412\",\n    \"ac_checklist\": [\n      \"During a live drain the swimlane shows the correct active persona during `review` read from the `_active` marker, on both a Claude-Code worker and a codex worker (NFR-6).\",\n      \"When no marker is present (old pack), the renderer falls back to the N02 stream path for step depth and degrades persona to Claude-only, verified with an old-pack fixture.\",\n      \"The pack's marker write is one sub-1 KB file write per step/persona transition with no added network calls (NFR-5), asserted by the pack's contract test.\",\n      \"A stale marker triggers the log-only staleness warning and a dimmed last-known active node, never blocking the run (NFR-3).\"\n    ],\n    \"body_md\": \"N03 — Marker contract: persona depth on every worker. Cross-repo (agent-skills-shaper + drain-cycle). The `_active` step/persona pointer is written by the `exec:*` skills in agent-skills-shaper (co-located with the existing exec-state.json section writes); the renderer prefers the marker and falls back to N02's stream path where none is present. Carrier and schema settled by ADR 0032: top-level `_active` pointer in exec-state.json, `{\\\"step\\\": \\\"review\\\", \\\"persona\\\": \\\"code-quality\\\"}`, single-string persona, atomic rename, last-write-wins; renderer is the sole reader (display-only, […]
+  "file_path": "/home/<USER>/src/drain-cycle/.worktrees/ABA-412/exec-state.json",
+  "content": "{\n  \"pickup\": {\n    \"issue_id\": \"ABA-412\",\n    \"branch\": \"ABA-412\",\n    \"parent_branch\": \"main\",\n    \"worktree_path\": \"/home/<USER>/src/drain-cycle/.worktrees/ABA-412\",\n    \"ac_checklist\": [\n      \"During a live drain the swimlane shows the correct active persona during `review` read from the `_active` marker, on both a Claude-Code worker and a codex worker (NFR-6).\",\n      \"When no marker is present (old pack), the renderer falls back to the N02 stream path for step depth and degrades persona to Claude-only, verified with an old-pack fixture.\",\n      \"The pack's marker write is one sub-1 KB file write per step/persona transition with no added network calls (NFR-5), asserted by the pack's contract test.\",\n      \"A stale marker triggers the log-only staleness warning and a dimmed last-known active node, never blocking the run (NFR-3).\"\n    ],\n    \"body_md\": \"N03 — Marker contract: persona depth on every worker. Cross-repo (agent-skills-shaper + drain-cycle). The `_active` step/persona pointer is written by the `exec:*` skills in agent-skills-shaper (co-located with the existing exec-state.json section writes); the renderer prefers the marker and falls back to N02's stream path where none is present. Carrier and schema settled by ADR 0032: top-level `_active` pointer in exec-state.json, `{\\\"step\\\": \\\"review\\\", \\\"persona\\\": \\\"code-quality\\\"}`, single-string persona, atomic rename, last-write-wins; renderer is the sole reader (display-only, […]
 
 > TOOL
 
 tool_result
 id: toolu_01TwzFuzsKdR3dMXxWun2DmR
 ```
-File created successfully at: /Users/anton/src/drain-cycle/.worktrees/ABA-412/exec-state.json (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/src/drain-cycle/.worktrees/ABA-412/exec-state.json (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -448,7 +448,7 @@ id: toolu_01LEt7qkxA2tDaCiHbmZS36j
 ```json
 {
   "skill": "shape-exec-breakdown",
-  "args": "/Users/anton/src/drain-cycle/.worktrees/ABA-412/exec-state.json"
+  "args": "/home/<USER>/src/drain-cycle/.worktrees/ABA-412/exec-state.json"
 }
 ```
 
@@ -479,7 +479,7 @@ id: toolu_016QjqucYCsmbBYBoEN2oknj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/.worktrees/ABA-412/exec-state.json",
+  "file_path": "/home/<USER>/src/drain-cycle/.worktrees/ABA-412/exec-state.json",
   "old_string": "    \"has_plan_tasks\": true,\n    \"labels\": [\"drain-cycle\", \"opus\"],\n    \"blocked_by\": []\n  }\n}",
   "new_string": "    \"has_plan_tasks\": true,\n    \"labels\": [\"drain-cycle\", \"opus\"],\n    \"blocked_by\": []\n  },\n  \"breakdown\": {\n    \"tasks\": [\n      {\n        \"id\": \"T1\",\n        \"title\": \"skeleton — one exec:* skill writes the `_active` marker; renderer prefers it with stream fallback, end to end on a Claude worker, toolchain folded in\",\n        \"done_when\": \"a live drain shows persona depth read from the marker and falls back to the stream skeleton when the marker is absent.\",\n        \"ac_refs\": [\n          \"During a live drain the swimlane shows the correct active persona during `review` read from the `_active` marker, on both a Claude-Code worker and a codex worker (NFR-6).\",\n          \"When no marker is present (old pack), the renderer falls back to the N02 stream path for step depth and degrades persona to Claude-only, verified with an old-pack fixture.\"\n        ],\n        \"model_tier\": \"Frontier\",\n        \"review_flag\": \"elevated\",\n        \"axes\": { \"RC\": \"H\", \"SC\": \"M\", \"HS\": \"M\", \"SR\": \"M\", \"OR\": \"M\" },\n        \"blocks_on\": [],\n        \"skeleton\": true,\n        \"acceptance\": false\n      },\n      {\n        \"id\": \"T2\",\n        \"title\": \"Capture residual OQ-1 evidence (a real exec:review persona dispatch, Path B); prove persona-from-marker on a Claude fixture and a codex fixture (NFR-6)\",\n        \"done_when\": \"both fixtures yield […]
 
@@ -488,7 +488,7 @@ id: toolu_016QjqucYCsmbBYBoEN2oknj
 tool_result
 id: toolu_016QjqucYCsmbBYBoEN2oknj
 ```
-The file /Users/anton/src/drain-cycle/.worktrees/ABA-412/exec-state.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/.worktrees/ABA-412/exec-state.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -558,7 +558,7 @@ tool_use Bash
 id: toolu_01CnViUV5EQZ3K2qz2ASZ2ZP
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle\necho \"=== where StepRenderer/swimlanes is constructed & fed in worker/orchestrator ===\"\ngit grep -nE \"StepRenderer|swimlanes|StepTracker|set_queue|\\.feed\\(|on_progress|finalize\\(\\)|KeyboardListener\" -- 'drain_cycle/*.py' | grep -viE \"def (feed|finalize|on_progress|set_queue)\" | head -40",
+  "command": "cd /home/<USER>/src/drain-cycle\necho \"=== where StepRenderer/swimlanes is constructed & fed in worker/orchestrator ===\"\ngit grep -nE \"StepRenderer|swimlanes|StepTracker|set_queue|\\.feed\\(|on_progress|finalize\\(\\)|KeyboardListener\" -- 'drain_cycle/*.py' | grep -viE \"def (feed|finalize|on_progress|set_queue)\" | head -40",
   "description": "Find renderer construction and feed sites"
 }
 ```
@@ -609,7 +609,7 @@ tool_use Bash
 id: toolu_01DemADNGTXNuqDyjfcjKrLb
 ```json
 {
-  "command": "cd /Users/anton/src/agent-skills-shaper\necho \"=== exec-state.json write pattern across exec:* skills ===\"\ngrep -rln \"exec-state.json\" skills/ | head\necho \"--- how a section is written (look at exec-review + exec-build) ---\"\ngrep -rn \"exec-state\" skills/exec-review/SKILL.md | head\necho \"=== exec-review personas ===\"\ngrep -niE \"persona|security-auditor|code-quality|spec-compliance\" skills/exec-review/SKILL.md | head -30",
+  "command": "cd /home/<USER>/src/agent-skills-shaper\necho \"=== exec-state.json write pattern across exec:* skills ===\"\ngrep -rln \"exec-state.json\" skills/ | head\necho \"--- how a section is written (look at exec-review + exec-build) ---\"\ngrep -rn \"exec-state\" skills/exec-review/SKILL.md | head\necho \"=== exec-review personas ===\"\ngrep -niE \"persona|security-auditor|code-quality|spec-compliance\" skills/exec-review/SKILL.md | head -30",
   "description": "Inspect pack exec-state write pattern and review personas"
 }
 ```
@@ -645,7 +645,7 @@ tool_use Read
 id: toolu_01YHJi37ftYMEKDT8J17BuAh
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/orchestrator.py",
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/orchestrator.py",
   "offset": 640,
   "limit": 110
 }
@@ -836,7 +836,7 @@ id: toolu_01R6XEDFPM3hX1FkQHRcCGsC
 ```json
 {
   "skill": "shape-exec-build",
-  "args": "T1 from /Users/anton/src/drain-cycle/.worktrees/ABA-412/exec-state.json — skeleton: renderer prefers _active marker with stream fallback (drain-cycle) + exec:review writes _active on persona entry (agent-skills-shaper)"
+  "args": "T1 from /home/<USER>/src/drain-cycle/.worktrees/ABA-412/exec-state.json — skeleton: renderer prefers _active marker with stream fallback (drain-cycle) + exec:review writes _active on persona entry (agent-skills-shaper)"
 }
 ```
 
@@ -858,7 +858,7 @@ tool_use Bash
 id: toolu_015EoDqoFsB725WY225zCm75
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle/.worktrees/ABA-412\necho \"=== test_swimlanes.py structure ===\"\ngrep -nE \"^def |^class |StepRenderer\\(|StringIO|tty=|_active|worktree|persona\" tests/test_swimlanes.py | head -50\necho \"=== total lines ===\"\nwc -l tests/test_swimlanes.py",
+  "command": "cd /home/<USER>/src/drain-cycle/.worktrees/ABA-412\necho \"=== test_swimlanes.py structure ===\"\ngrep -nE \"^def |^class |StepRenderer\\(|StringIO|tty=|_active|worktree|persona\" tests/test_swimlanes.py | head -50\necho \"=== total lines ===\"\nwc -l tests/test_swimlanes.py",
   "description": "Inspect swimlanes test style"
 }
 ```
@@ -929,7 +929,7 @@ tool_use Read
 id: toolu_01WJNRUQGhpfT7ZfthuF8R29
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/.worktrees/ABA-412/tests/test_swimlanes.py",
+  "file_path": "/home/<USER>/src/drain-cycle/.worktrees/ABA-412/tests/test_swimlanes.py",
   "offset": 195,
   "limit": 75
 }
@@ -998,7 +998,7 @@ id: toolu_018fL45A2Cjf2Bq5YFhogZ57
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/.worktrees/ABA-412/tests/test_swimlanes.py",
+  "file_path": "/home/<USER>/src/drain-cycle/.worktrees/ABA-412/tests/test_swimlanes.py",
   "old_string": "    renderer = swimlanes.StepRenderer(Broken())\n    # Must not propagate — the renderer is non-gating on the worker drain.\n    renderer.feed(_assistant_event(\"m1\", _skill(\"exec:pickup\")))",
   "new_string": "    renderer = swimlanes.StepRenderer(Broken())\n    # Must not propagate — the renderer is non-gating on the worker drain.\n    renderer.feed(_assistant_event(\"m1\", _skill(\"exec:pickup\")))\n\n\ndef _write_marker(worktree, step, persona=None):\n    payload = {\"_active\": {\"step\": step}}\n    if persona is not None:\n        payload[\"_active\"][\"persona\"] = persona\n    (worktree / \"exec-state.json\").write_text(json.dumps(payload))\n\n\ndef test_read_active_marker_returns_step_and_persona(tmp_path):\n    _write_marker(tmp_path, \"review\", \"code-quality\")\n    marker = swimlanes.read_active_marker(tmp_path)\n    assert marker is not None\n    assert marker.step == \"review\"\n    assert marker.persona == \"code-quality\"\n\n\ndef test_read_active_marker_returns_none_when_file_absent(tmp_path):\n    assert swimlanes.read_active_marker(tmp_path) is None\n\n\ndef test_read_active_marker_returns_none_on_malformed_state(tmp_path):\n    (tmp_path / \"exec-state.json\").write_text(\"{not json\")\n    assert swimlanes.read_active_marker(tmp_path) is None\n\n\ndef test_read_active_marker_returns_none_when_active_key_missing(tmp_path):\n    (tmp_path / \"exec-state.json\").write_text(json.dumps({\"pickup\": {}}))\n    assert swimlanes.read_active_marker(tmp_path) is None\n\n\ndef test_step_renderer_prefers_active_marker_for_step_and_persona(tmp_path):\n    # The stream alone yields the skill name; only the marker carries the\n    # active review persona. Persona depth in the row proves the marker won.\n    _write_marker(tmp_path, \"review\", \"code-quality\")\n    err = io.StringIO()\n    renderer = swimlanes.StepRenderer(err, tty=True, worktree_path=tmp_path)\n    renderer.on_progress(1, 100, 1.0)\n    out = err.getvalue()\n    assert \"review\" in out\n    assert \"code-quality\" in out\n\n\ndef test_step_renderer_falls_back_to_stream_step_when_no_marker(tmp_path):\n    # No exec-state.json written → marker absent → today's stream path holds.\n    err = io.StringIO()\n    renderer = swimlanes.StepRenderer(err, tty=True, worktree_path=tmp_path)\n    renderer.feed(_assistant_event(\"m1\", _skill(\"exec:build\")))\n    out = err.getvalue()\n    assert \"exec:build\" in out\n\n\ndef test_step_renderer_marker_step_without_persona_shows_no_separator(tmp_path):\n    _write_marker(tmp_path, \"build\")\n    err = io.StringIO()\n […]
 
@@ -1007,7 +1007,7 @@ id: toolu_018fL45A2Cjf2Bq5YFhogZ57
 tool_result
 id: toolu_018fL45A2Cjf2Bq5YFhogZ57
 ```
-The file /Users/anton/src/drain-cycle/.worktrees/ABA-412/tests/test_swimlanes.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/.worktrees/ABA-412/tests/test_swimlanes.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1016,7 +1016,7 @@ tool_use Bash
 id: toolu_017VpC4oqw3m4hvpZzCYEsVD
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle/.worktrees/ABA-412\nuv run pytest tests/test_swimlanes.py -k \"active_marker or marker_step or falls_back_to_stream or prefers_active\" -q 2>&1 | tail -25",
+  "command": "cd /home/<USER>/src/drain-cycle/.worktrees/ABA-412\nuv run pytest tests/test_swimlanes.py -k \"active_marker or marker_step or falls_back_to_stream or prefers_active\" -q 2>&1 | tail -25",
   "description": "Confirm RED on the new marker tests"
 }
 ```
@@ -1064,7 +1064,7 @@ id: toolu_01Q6b6MQENiXdjHT6JE3Lamp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/.worktrees/ABA-412/drain_cycle/swimlanes.py",
+  "file_path": "/home/<USER>/src/drain-cycle/.worktrees/ABA-412/drain_cycle/swimlanes.py",
   "old_string": "import os\nimport sys\nimport threading\nfrom dataclasses import dataclass\nfrom typing import Any, TextIO",
   "new_string": "import json\nimport os\nimport sys\nimport threading\nfrom dataclasses import dataclass\nfrom pathlib import Path\nfrom typing import Any, TextIO"
 }
@@ -1129,7 +1129,7 @@ tool_use Read
 id: toolu_01GAnHtn6UM7dmqCa7s86i26
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/.worktrees/ABA-412/drain_cycle/swimlanes.py",
+  "file_path": "/home/<USER>/src/drain-cycle/.worktrees/ABA-412/drain_cycle/swimlanes.py",
   "offset": 31,
   "limit": 10
 }
@@ -1159,7 +1159,7 @@ id: toolu_01EbiFCKdzMag4xdQp1wbgMP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/.worktrees/ABA-412/drain_cycle/swimlanes.py",
+  "file_path": "/home/<USER>/src/drain-cycle/.worktrees/ABA-412/drain_cycle/swimlanes.py",
   "old_string": "import os\nimport sys\nimport threading\nfrom dataclasses import dataclass\nfrom typing import Any, TextIO",
   "new_string": "import json\nimport os\nimport sys\nimport threading\nfrom dataclasses import dataclass\nfrom pathlib import Path\nfrom typing import Any, TextIO"
 }
@@ -1170,7 +1170,7 @@ id: toolu_01EbiFCKdzMag4xdQp1wbgMP
 tool_result
 id: toolu_01EbiFCKdzMag4xdQp1wbgMP
 ```
-The file /Users/anton/src/drain-cycle/.worktrees/ABA-412/drain_cycle/swimlanes.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/.worktrees/ABA-412/drain_cycle/swimlanes.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1180,7 +1180,7 @@ id: toolu_01NtJwNZnHbQ7dvg1nZLWC6v
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/.worktrees/ABA-412/drain_cycle/swimlanes.py",
+  "file_path": "/home/<USER>/src/drain-cycle/.worktrees/ABA-412/drain_cycle/swimlanes.py",
   "old_string": "def parse_tool_use(block: Any) -> tuple[str, dict[str, Any]] | None:",
   "new_string": "_EXEC_STATE_FILE = \"exec-state.json\"\n\"\"\"The pack-owned execution-state artifact (ADR 0030). The renderer reads its\ntop-level ``_active`` pointer for display only — no decision path imports this\nreader (ADR 0032).\"\"\"\n\n\n@dataclass(frozen=True)\nclass ActiveMarker:\n    \"\"\"The currently-executing step and review persona, read from the pack's\n    ``_active`` pointer.\n\n    ``step`` is the phase name the executing ``exec:*`` skill is in (e.g.\n    ``\"review\"``). ``persona`` is the active review persona (e.g.\n    ``\"code-quality\"``) or ``None`` outside a persona dispatch. A single string,\n    last-write-wins, per ADR 0032 — never a set.\n    \"\"\"\n\n    step: str\n    persona: str | None\n\n\ndef read_active_marker(worktree_path: str | Path | None) -> ActiveMarker | None:\n    \"\"\"Return the ``_active`` marker from ``exec-state.json``, or ``None``.\n\n    Display-only read across the artifact boundary (ADR 0032): the renderer\n    prefers this pointer over the stream-derived step so persona depth shows on\n    every worker, not just Claude Code. Returns ``None`` — never raises — when\n    the worktree path is unset, the file is absent or unreadable, the JSON is\n    malformed, or the ``_active`` pointer is missing or carries no string\n    ``step``. Every miss is a clean fall-back to the stream path, so an old pack\n    or a forgetful […]
 
@@ -1189,7 +1189,7 @@ id: toolu_01NtJwNZnHbQ7dvg1nZLWC6v
 tool_result
 id: toolu_01NtJwNZnHbQ7dvg1nZLWC6v
 ```
-The file /Users/anton/src/drain-cycle/.worktrees/ABA-412/drain_cycle/swimlanes.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/.worktrees/ABA-412/drain_cycle/swimlanes.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1203,7 +1203,7 @@ id: toolu_01Fktmc5fEmLGZxsRzk2JCbR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/.worktrees/ABA-412/drain_cycle/swimlanes.py",
+  "file_path": "/home/<USER>/src/drain-cycle/.worktrees/ABA-412/drain_cycle/swimlanes.py",
   "old_string": "    def __init__(self, stderr: TextIO, tty: bool | None = None) -> None:\n        self._stderr = stderr\n        if is_disabled():\n            tty = False\n        elif tty is None:\n            isatty = getattr(stderr, \"isatty\", None)\n            try:\n                tty = bool(isatty()) if callable(isatty) else False\n            except Exception:\n                tty = False\n        self._tty = tty\n        self._tracker = StepTracker()",
   "new_string": "    def __init__(\n        self,\n        stderr: TextIO,\n        tty: bool | None = None,\n        worktree_path: str | Path | None = None,\n    ) -> None:\n        self._stderr = stderr\n        if is_disabled():\n            tty = False\n        elif tty is None:\n            isatty = getattr(stderr, \"isatty\", None)\n            try:\n                tty = bool(isatty()) if callable(isatty) else False\n            except Exception:\n                tty = False\n        self._tty = tty\n        self._worktree_path = worktree_path\n        self._tracker = StepTracker()"
 }
@@ -1214,7 +1214,7 @@ id: toolu_01Fktmc5fEmLGZxsRzk2JCbR
 tool_result
 id: toolu_01Fktmc5fEmLGZxsRzk2JCbR
 ```
-The file /Users/anton/src/drain-cycle/.worktrees/ABA-412/drain_cycle/swimlanes.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/.worktrees/ABA-412/drain_cycle/swimlanes.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1224,7 +1224,7 @@ id: toolu_01V2GfxiTVeH8KeWi6JYdaYs
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/.worktrees/ABA-412/drain_cycle/swimlanes.py",
+  "file_path": "/home/<USER>/src/drain-cycle/.worktrees/ABA-412/drain_cycle/swimlanes.py",
   "old_string": "    def _render_stepper_row(self) -> str:\n        parts = [\n            f\"{self._ACTIVE_GLYPH} {_safe_label(step)}\"\n            if step == self._tracker.active\n            else f\"{self._PRIOR_GLYPH} {_safe_label(step)}\"\n            for step in self._tracker.history\n        ]\n        row = \" \".join(parts)\n        if self._sub_status:\n            row = f\"{row} · {_safe_label(self._sub_status)}\"\n        return row",
   "new_string": "    def _effective_active(self) -> tuple[str | None, str | None]:\n        \"\"\"Resolve the active step and persona, marker-first.\n\n        The pack-written ``_active`` marker wins when present — it carries\n        persona depth on every worker and is rename-proof (ADR 0032). With no\n        marker (old pack, or a worker that writes none), fall back to the\n        stream-derived active step and a Claude-only ``None`` persona — the N02\n        path. A read failure is a miss, not a fault: the view degrades to the\n        stream, never blocks the run.\n        \"\"\"\n        marker = read_active_marker(self._worktree_path)\n        if marker is not None:\n            return marker.step, marker.persona\n        return self._tracker.active, None\n\n    def _render_stepper_row(self) -> str:\n        active_step, persona = self._effective_active()\n        steps = list(self._tracker.history)\n        if active_step is not None and active_step not in steps:\n            steps.append(active_step)\n        parts = []\n        for step in steps:\n            if step == active_step:\n                label = f\"{self._ACTIVE_GLYPH} {_safe_label(step)}\"\n                if persona:\n                    label = f\"{label} / {_safe_label(persona)}\"\n            else:\n                label = f\"{self._PRIOR_GLYPH} {_safe_label(step)}\"\n            parts.append(label)\n        row = \" \".join(parts)\n        if […]
 
@@ -1233,7 +1233,7 @@ id: toolu_01V2GfxiTVeH8KeWi6JYdaYs
 tool_result
 id: toolu_01V2GfxiTVeH8KeWi6JYdaYs
 ```
-The file /Users/anton/src/drain-cycle/.worktrees/ABA-412/drain_cycle/swimlanes.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/.worktrees/ABA-412/drain_cycle/swimlanes.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1242,7 +1242,7 @@ tool_use Bash
 id: toolu_01GcnzPccwemVVpkxJfBGfqJ
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle/.worktrees/ABA-412\nuv run pytest tests/test_swimlanes.py -q 2>&1 | tail -15",
+  "command": "cd /home/<USER>/src/drain-cycle/.worktrees/ABA-412\nuv run pytest tests/test_swimlanes.py -q 2>&1 | tail -15",
   "description": "Run full swimlanes test file for GREEN"
 }
 ```
@@ -1266,7 +1266,7 @@ tool_use Bash
 id: toolu_01Nw6kzRHAQpNBuHuaFoWE5S
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle/.worktrees/ABA-412\nuv run pytest -q 2>&1 | tail -8",
+  "command": "cd /home/<USER>/src/drain-cycle/.worktrees/ABA-412\nuv run pytest -q 2>&1 | tail -8",
   "description": "Full test suite"
 }
 ```
@@ -1296,7 +1296,7 @@ tool_use Bash
 id: toolu_01CaJghhZgUur3Yv9t4kUCcp
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle/.worktrees/ABA-412\nuv run pytest tests/test_worker.py::test_run_issue_kills_process_group_on_token_breach -q 2>&1 | tail -5\necho \"=== confirm my change doesn't touch worker.py ===\"\ngit status --short",
+  "command": "cd /home/<USER>/src/drain-cycle/.worktrees/ABA-412\nuv run pytest tests/test_worker.py::test_run_issue_kills_process_group_on_token_breach -q 2>&1 | tail -5\necho \"=== confirm my change doesn't touch worker.py ===\"\ngit status --short",
   "description": "Re-run the flaky worker test in isolation"
 }
 ```
@@ -1323,7 +1323,7 @@ tool_use Bash
 id: toolu_016ubZWZz1mKKu8aWcDmQCho
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle/.worktrees/ABA-412\ngit add drain_cycle/swimlanes.py tests/test_swimlanes.py\ngit commit -q -m \"feat: prefer _active marker over stream-derived step in swimlanes\" -m \"The renderer reads the pack-written _active pointer from exec-state.json and\nshows its step plus review persona when present, falling back to the\nstream-derived step when the marker is absent. A read failure is a miss, not a\nfault: the view degrades to the N02 stream path, never blocks the run. This is\nthe carrier and display-only invariant settled by ADR 0032 — persona depth on\nevery worker, rename-proof.\" \necho \"=== committed ===\"\ngit log --oneline -1",
+  "command": "cd /home/<USER>/src/drain-cycle/.worktrees/ABA-412\ngit add drain_cycle/swimlanes.py tests/test_swimlanes.py\ngit commit -q -m \"feat: prefer _active marker over stream-derived step in swimlanes\" -m \"The renderer reads the pack-written _active pointer from exec-state.json and\nshows its step plus review persona when present, falling back to the\nstream-derived step when the marker is absent. A read failure is a miss, not a\nfault: the view degrades to the N02 stream path, never blocks the run. This is\nthe carrier and display-only invariant settled by ADR 0032 — persona depth on\nevery worker, rename-proof.\" \necho \"=== committed ===\"\ngit log --oneline -1",
   "description": "Commit slice 1"
 }
 ```
@@ -1347,7 +1347,7 @@ tool_use Bash
 id: toolu_01L79EYvG9jkXe3NkvBWWff2
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle/.worktrees/ABA-412\necho \"=== full SHA slice 1 ===\"\ngit rev-parse HEAD\necho \"=== swimlanes fitness tests ===\"\nsed -n '1,40p' tests/swimlanes/test_fitness.py 2>/dev/null\necho \"=== how orchestrator builds StepRenderer / any test touching it ===\"\ngrep -rnE \"StepRenderer|worktree_path|import-guard|marker.reader|read_active_marker\" tests/ | head",
+  "command": "cd /home/<USER>/src/drain-cycle/.worktrees/ABA-412\necho \"=== full SHA slice 1 ===\"\ngit rev-parse HEAD\necho \"=== swimlanes fitness tests ===\"\nsed -n '1,40p' tests/swimlanes/test_fitness.py 2>/dev/null\necho \"=== how orchestrator builds StepRenderer / any test touching it ===\"\ngrep -rnE \"StepRenderer|worktree_path|import-guard|marker.reader|read_active_marker\" tests/ | head",
   "description": "Get SHA and inspect fitness/orchestrator test surface"
 }
 ```
@@ -1394,7 +1394,7 @@ id: toolu_01SMpGrGFyHiaH51dpquzm78
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/.worktrees/ABA-412/exec-state.json",
+  "file_path": "/home/<USER>/src/drain-cycle/.worktrees/ABA-412/exec-state.json",
   "old_string": "        \"skeleton\": true,\n        \"acceptance\": false\n      },\n      {\n        \"id\": \"T2\",",
   "new_string": "        \"skeleton\": true,\n        \"acceptance\": false\n      }\n    ]\n  },\n  \"build\": {\n    \"slices\": [\n      {\n        \"sha\": \"5e3b1abd428327cc5cdb2b9250c76f3d4224bb9f\",\n        \"title\": \"feat: prefer _active marker over stream-derived step in swimlanes\",\n        \"why\": \"Renderer reads the pack-written _active pointer from exec-state.json and shows its step plus review persona when present, falling back to the stream-derived step when absent. Display-only, ADR 0032; a read failure degrades to the stream path, never blocks the run.\"\n      }\n    ]\n  },\n  \"_breakdown_tail\": {\n    \"tasks\": [\n      {\n        \"id\": \"T2\","
 }
@@ -1405,7 +1405,7 @@ id: toolu_01SMpGrGFyHiaH51dpquzm78
 tool_result
 id: toolu_01SMpGrGFyHiaH51dpquzm78
 ```
-The file /Users/anton/src/drain-cycle/.worktrees/ABA-412/exec-state.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/.worktrees/ABA-412/exec-state.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1418,7 +1418,7 @@ tool_use Read
 id: toolu_01D417iNAvvaNWa8j9yhTa16
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/.worktrees/ABA-412/exec-state.json"
+  "file_path": "/home/<USER>/src/drain-cycle/.worktrees/ABA-412/exec-state.json"
 }
 ```
 
@@ -1432,7 +1432,7 @@ id: toolu_01D417iNAvvaNWa8j9yhTa16
 3	    "issue_id": "ABA-412",
 4	    "branch": "ABA-412",
 5	    "parent_branch": "main",
-6	    "worktree_path": "/Users/anton/src/drain-cycle/.worktrees/ABA-412",
+6	    "worktree_path": "/home/<USER>/src/drain-cycle/.worktrees/ABA-412",
 7	    "ac_checklist": [
 8	      "During a live drain the swimlane shows the correct active persona during `review` read from the `_active` marker, on both a Claude-Code worker and a codex worker (NFR-6).",
 9	      "When no marker is present (old pack), the renderer falls back to the N02 stream path for step depth and degrades persona to Claude-only, verified with an old-pack fixture.",
@@ -1452,7 +1452,7 @@ id: toolu_01RHEZxFow3uyNnyjA8JEhQD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/.worktrees/ABA-412/exec-state.json",
+  "file_path": "/home/<USER>/src/drain-cycle/.worktrees/ABA-412/exec-state.json",
   "old_string": "        \"skeleton\": true,\n        \"acceptance\": false\n      }\n    ]\n  },\n  \"build\": {\n    \"slices\": [\n      {\n        \"sha\": \"5e3b1abd428327cc5cdb2b9250c76f3d4224bb9f\",\n        \"title\": \"feat: prefer _active marker over stream-derived step in swimlanes\",\n        \"why\": \"Renderer reads the pack-written _active pointer from exec-state.json and shows its step plus review persona when present, falling back to the stream-derived step when absent. Display-only, ADR 0032; a read failure degrades to the stream path, never blocks the run.\"\n      }\n    ]\n  },\n  \"_breakdown_tail\": {\n    \"tasks\": [\n      {\n        \"id\": \"T2\",",
   "new_string": "        \"skeleton\": true,\n        \"acceptance\": false\n      },\n      {\n        \"id\": \"T2\","
 }
@@ -1463,7 +1463,7 @@ id: toolu_01RHEZxFow3uyNnyjA8JEhQD
 tool_result
 id: toolu_01RHEZxFow3uyNnyjA8JEhQD
 ```
-The file /Users/anton/src/drain-cycle/.worktrees/ABA-412/exec-state.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/.worktrees/ABA-412/exec-state.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1477,7 +1477,7 @@ id: toolu_016246iyxrNxNafzNniMmU1R
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/.worktrees/ABA-412/exec-state.json",
+  "file_path": "/home/<USER>/src/drain-cycle/.worktrees/ABA-412/exec-state.json",
   "old_string": "        \"skeleton\": false,\n        \"acceptance\": true\n      }\n    ]\n  }\n}",
   "new_string": "        \"skeleton\": false,\n        \"acceptance\": true\n      }\n    ]\n  },\n  \"build\": {\n    \"slices\": [\n      {\n        \"sha\": \"5e3b1abd428327cc5cdb2b9250c76f3d4224bb9f\",\n        \"title\": \"feat: prefer _active marker over stream-derived step in swimlanes\",\n        \"why\": \"Renderer reads the pack-written _active pointer from exec-state.json and shows its step plus review persona when present, falling back to the stream-derived step when absent. Display-only, ADR 0032; a read failure degrades to the stream path, never blocks the run.\"\n      }\n    ]\n  }\n}"
 }
@@ -1488,7 +1488,7 @@ id: toolu_016246iyxrNxNafzNniMmU1R
 tool_result
 id: toolu_016246iyxrNxNafzNniMmU1R
 ```
-The file /Users/anton/src/drain-cycle/.worktrees/ABA-412/exec-state.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/.worktrees/ABA-412/exec-state.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1497,7 +1497,7 @@ tool_use Bash
 id: toolu_01UZSa9S1pVBYSAc2ZWKgNfr
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle/.worktrees/ABA-412\npython3 -c \"import json; d=json.load(open('exec-state.json')); print('valid; sections:', list(d.keys())); print('breakdown tasks:', [t['id'] for t in d['breakdown']['tasks']]); print('build slices:', len(d['build']['slices']))\"",
+  "command": "cd /home/<USER>/src/drain-cycle/.worktrees/ABA-412\npython3 -c \"import json; d=json.load(open('exec-state.json')); print('valid; sections:', list(d.keys())); print('breakdown tasks:', [t['id'] for t in d['breakdown']['tasks']]); print('build slices:', len(d['build']['slices']))\"",
   "description": "Validate exec-state.json structure"
 }
 ```
@@ -1522,7 +1522,7 @@ tool_use Bash
 id: toolu_01Y5irmSefqF5uUSiDUeEALy
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle/.worktrees/ABA-412\necho \"=== fitness test imports/structure (decision modules to guard) ===\"\ngrep -nE \"^def test|^import|^from|read_active_marker|import-guard|decision\" tests/swimlanes/test_fitness.py | head -40\necho\necho \"=== drain_cycle modules (to know decision vs render) ===\"\nls drain_cycle/*.py | xargs -n1 basename",
+  "command": "cd /home/<USER>/src/drain-cycle/.worktrees/ABA-412\necho \"=== fitness test imports/structure (decision modules to guard) ===\"\ngrep -nE \"^def test|^import|^from|read_active_marker|import-guard|decision\" tests/swimlanes/test_fitness.py | head -40\necho\necho \"=== drain_cycle modules (to know decision vs render) ===\"\nls drain_cycle/*.py | xargs -n1 basename",
   "description": "Inspect fitness test and module list"
 }
 ```
@@ -1579,7 +1579,7 @@ tool_use Bash
 id: toolu_01DdzHs6R4KZUEMQApYK19Ce
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle/.worktrees/ABA-412\nsed -n '1,60p' tests/test_orchestrator_runlog.py",
+  "command": "cd /home/<USER>/src/drain-cycle/.worktrees/ABA-412\nsed -n '1,60p' tests/test_orchestrator_runlog.py",
   "description": "Read orchestrator runlog test harness"
 }
 ```
@@ -1635,7 +1635,7 @@ def _issue(
 def _init_repo(repo: Path) -> None:
     subprocess.run(["git", "init", "-b", "main"], cwd=repo, check=True, capture_output=True)
     subprocess.run(
-        ["git", "config", "user.email", "test@example.com"], cwd=repo, check=True
+        ["git", "config", "user.email", "<REDACTED_EMAIL>"], cwd=repo, check=True
     )
     subprocess.run(["git", "config", "user.name", "Test"], cwd=repo, check=True)
     (repo / "README.md").write_text("seed\n")
@@ -1655,7 +1655,7 @@ id: toolu_01PnnRZNzUBBhU9DL9towd8P
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/.worktrees/ABA-412/tests/test_swimlanes.py",
+  "file_path": "/home/<USER>/src/drain-cycle/.worktrees/ABA-412/tests/test_swimlanes.py",
   "old_string": "def test_step_renderer_marker_step_without_persona_shows_no_separator(tmp_path):\n    _write_marker(tmp_path, \"build\")\n    err = io.StringIO()\n    renderer = swimlanes.StepRenderer(err, tty=True, worktree_path=tmp_path)\n    renderer.on_progress(1, 100, 1.0)\n    out = err.getvalue()\n    assert \"build\" in out\n    assert \" / \" not in out",
   "new_string": "def test_step_renderer_marker_step_without_persona_shows_no_separator(tmp_path):\n    _write_marker(tmp_path, \"build\")\n    err = io.StringIO()\n    renderer = swimlanes.StepRenderer(err, tty=True, worktree_path=tmp_path)\n    renderer.on_progress(1, 100, 1.0)\n    out = err.getvalue()\n    assert \"build\" in out\n    assert \" / \" not in out\n\n\ndef test_build_renderer_threads_worktree_path_and_queue(tmp_path):\n    # The orchestrator's construction seam must thread the worktree path so the\n    # renderer reads the marker, and apply the queue in one call.\n    _write_marker(tmp_path, \"review\", \"security-auditor\")\n    err = io.StringIO()\n    queue = [swimlanes.QueueItem(\"ABA-1\", \"running\")]\n    renderer = swimlanes.build_renderer(\n        err, worktree_path=tmp_path, queue=queue, tty=True\n    )\n    renderer.on_progress(1, 100, 1.0)\n    out = err.getvalue()\n    assert \"security-auditor\" in out\n    assert \"ABA-1\" in out"
 }
@@ -1666,7 +1666,7 @@ id: toolu_01PnnRZNzUBBhU9DL9towd8P
 tool_result
 id: toolu_01PnnRZNzUBBhU9DL9towd8P
 ```
-The file /Users/anton/src/drain-cycle/.worktrees/ABA-412/tests/test_swimlanes.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/.worktrees/ABA-412/tests/test_swimlanes.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1675,7 +1675,7 @@ tool_use Bash
 id: toolu_01EmTDa4PgRCdTTK1rkE763n
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle/.worktrees/ABA-412\nuv run pytest tests/test_swimlanes.py -k build_renderer -q 2>&1 | tail -6",
+  "command": "cd /home/<USER>/src/drain-cycle/.worktrees/ABA-412\nuv run pytest tests/test_swimlanes.py -k build_renderer -q 2>&1 | tail -6",
   "description": "Confirm RED on build_renderer test"
 }
 ```
@@ -1704,7 +1704,7 @@ id: toolu_01V6HUYS18zicwRBG5RERGyU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/.worktrees/ABA-412/drain_cycle/swimlanes.py",
+  "file_path": "/home/<USER>/src/drain-cycle/.worktrees/ABA-412/drain_cycle/swimlanes.py",
   "old_string": "class KeyboardListener:",
   "new_string": "def build_renderer(\n    stderr: TextIO,\n    *,\n    worktree_path: str | Path | None = None,\n    queue: list[QueueItem] | None = None,\n    tty: bool | None = None,\n) -> StepRenderer:\n    \"\"\"Construct a :class:`StepRenderer` wired to the run's worktree and queue.\n\n    The single construction seam the orchestrator uses, so the worktree path\n    (the renderer reads the ``_active`` marker from ``exec-state.json`` there)\n    and the cycle queue are threaded in one place rather than at every call\n    site.\n    \"\"\"\n    renderer = StepRenderer(stderr, tty=tty, worktree_path=worktree_path)\n    if queue is not None:\n        renderer.set_queue(queue)\n    return renderer\n\n\nclass KeyboardListener:"
 }
@@ -1715,7 +1715,7 @@ id: toolu_01V6HUYS18zicwRBG5RERGyU
 tool_result
 id: toolu_01V6HUYS18zicwRBG5RERGyU
 ```
-The file /Users/anton/src/drain-cycle/.worktrees/ABA-412/drain_cycle/swimlanes.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/.worktrees/ABA-412/drain_cycle/swimlanes.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1725,7 +1725,7 @@ id: toolu_01CRazhafgHNrdrKYpBdp3bq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/.worktrees/ABA-412/drain_cycle/orchestrator.py",
+  "file_path": "/home/<USER>/src/drain-cycle/.worktrees/ABA-412/drain_cycle/orchestrator.py",
   "old_string": "        step_renderer = swimlanes.StepRenderer(sys.stderr)\n        if queue is not None:\n            step_renderer.set_queue(queue)\n        keyboard = swimlanes.KeyboardListener(step_renderer)",
   "new_string": "        step_renderer = swimlanes.build_renderer(\n            sys.stderr, worktree_path=worktree_path, queue=queue\n        )\n        keyboard = swimlanes.KeyboardListener(step_renderer)"
 }
@@ -1745,7 +1745,7 @@ tool_use Read
 id: toolu_01811npqfqYr7NG92Do3HJbq
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/.worktrees/ABA-412/drain_cycle/orchestrator.py",
+  "file_path": "/home/<USER>/src/drain-cycle/.worktrees/ABA-412/drain_cycle/orchestrator.py",
   "offset": 696,
   "limit": 5
 }
@@ -1770,7 +1770,7 @@ id: toolu_01ShyVdpL7qttJEpwhfJTgcM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/.worktrees/ABA-412/drain_cycle/orchestrator.py",
+  "file_path": "/home/<USER>/src/drain-cycle/.worktrees/ABA-412/drain_cycle/orchestrator.py",
   "old_string": "        step_renderer = swimlanes.StepRenderer(sys.stderr)\n        if queue is not None:\n            step_renderer.set_queue(queue)\n        keyboard = swimlanes.KeyboardListener(step_renderer)",
   "new_string": "        step_renderer = swimlanes.build_renderer(\n            sys.stderr, worktree_path=worktree_path, queue=queue\n        )\n        keyboard = swimlanes.KeyboardListener(step_renderer)"
 }
@@ -1781,7 +1781,7 @@ id: toolu_01ShyVdpL7qttJEpwhfJTgcM
 tool_result
 id: toolu_01ShyVdpL7qttJEpwhfJTgcM
 ```
-The file /Users/anton/src/drain-cycle/.worktrees/ABA-412/drain_cycle/orchestrator.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/.worktrees/ABA-412/drain_cycle/orchestrator.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1790,7 +1790,7 @@ tool_use Bash
 id: toolu_01Q9koagG9Lu4HS1Gs7rv1Pe
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle/.worktrees/ABA-412\nuv run pytest tests/test_swimlanes.py tests/swimlanes/ -q 2>&1 | tail -6",
+  "command": "cd /home/<USER>/src/drain-cycle/.worktrees/ABA-412\nuv run pytest tests/test_swimlanes.py tests/swimlanes/ -q 2>&1 | tail -6",
   "description": "GREEN: swimlanes + fitness tests"
 }
 ```
@@ -1814,7 +1814,7 @@ tool_use Bash
 id: toolu_012TZFa2hNdjqRNHMMwRxTao
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle/.worktrees/ABA-412\nuv run pytest tests/test_orchestrator_runlog.py tests/test_orchestrator_halt.py tests/test_orchestrator_iteration.py -q 2>&1 | tail -8",
+  "command": "cd /home/<USER>/src/drain-cycle/.worktrees/ABA-412\nuv run pytest tests/test_orchestrator_runlog.py tests/test_orchestrator_halt.py tests/test_orchestrator_iteration.py -q 2>&1 | tail -8",
   "description": "Run orchestrator tests"
 }
 ```
@@ -1838,7 +1838,7 @@ tool_use Bash
 id: toolu_01NoAG3HQWKGWfCMzZMcFnva
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle/.worktrees/ABA-412\ngit add drain_cycle/swimlanes.py drain_cycle/orchestrator.py tests/test_swimlanes.py\ngit commit -q -m \"feat: thread worktree path into the swimlanes renderer\" -m \"The orchestrator builds the renderer through swimlanes.build_renderer, passing\nthe issue worktree so the renderer reads the _active marker from the pack's\nexec-state.json live during a drain. Construction (renderer + queue) now lives\nin one seam instead of inline at the call site.\" \ngit rev-parse HEAD",
+  "command": "cd /home/<USER>/src/drain-cycle/.worktrees/ABA-412\ngit add drain_cycle/swimlanes.py drain_cycle/orchestrator.py tests/test_swimlanes.py\ngit commit -q -m \"feat: thread worktree path into the swimlanes renderer\" -m \"The orchestrator builds the renderer through swimlanes.build_renderer, passing\nthe issue worktree so the renderer reads the _active marker from the pack's\nexec-state.json live during a drain. Construction (renderer + queue) now lives\nin one seam instead of inline at the call site.\" \ngit rev-parse HEAD",
   "description": "Commit slice 2"
 }
 ```
@@ -1861,7 +1861,7 @@ tool_use Read
 id: toolu_01P6RovvWzSUFTBn27jqBjij
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/.worktrees/ABA-412/tests/swimlanes/test_fitness.py",
+  "file_path": "/home/<USER>/src/drain-cycle/.worktrees/ABA-412/tests/swimlanes/test_fitness.py",
   "offset": 182,
   "limit": 60
 }
@@ -1911,7 +1911,7 @@ id: toolu_01TZbNmXSVRH3HC6CWtB4uuT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/.worktrees/ABA-412/tests/swimlanes/test_fitness.py",
+  "file_path": "/home/<USER>/src/drain-cycle/.worktrees/ABA-412/tests/swimlanes/test_fitness.py",
   "old_string": "from __future__ import annotations\n\nimport io\nimport json\nimport re\n\nimport pytest\n\nfrom drain_cycle import swimlanes, worker",
   "new_string": "from __future__ import annotations\n\nimport io\nimport json\nimport pathlib\nimport re\n\nimport pytest\n\nfrom drain_cycle import swimlanes, worker"
 }
@@ -1922,7 +1922,7 @@ id: toolu_01TZbNmXSVRH3HC6CWtB4uuT
 tool_result
 id: toolu_01TZbNmXSVRH3HC6CWtB4uuT
 ```
-The file /Users/anton/src/drain-cycle/.worktrees/ABA-412/tests/swimlanes/test_fitness.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/.worktrees/ABA-412/tests/swimlanes/test_fitness.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1932,7 +1932,7 @@ id: toolu_01KFxuH7Y3ss5dHEd6sEmqNw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/.worktrees/ABA-412/tests/swimlanes/test_fitness.py",
+  "file_path": "/home/<USER>/src/drain-cycle/.worktrees/ABA-412/tests/swimlanes/test_fitness.py",
   "old_string": "    # The sink (passthrough) is also untouched — the swimlanes layer does\n    # not consume or mutate the non-JSON diagnostic stream.\n    assert sink_on == sink_off",
   "new_string": "    # The sink (passthrough) is also untouched — the swimlanes layer does\n    # not consume or mutate the non-JSON diagnostic stream.\n    assert sink_on == sink_off\n\n\n_MARKER_READER = \"read_active_marker\"\n\"\"\"The marker-reader symbol the import guard pins to the renderer module.\"\"\"\n\n\ndef test_marker_reader_referenced_only_by_the_renderer_module() -> None:\n    \"\"\"ADR 0032 display-only invariant: only the renderer (``swimlanes``) reads\n    the ``_active`` marker. No decision path — advancement, halt, grade, retry,\n    exit-code, stop-guard — may import or call ``read_active_marker``.\n\n    A static scan over ``drain_cycle/*.py``: every module except the renderer\n    that names the symbol is a boundary violation, caught at review before a\n    decision path can form against inside-phase content. The guard catches a\n    new importer the moment it is added — its job is to fail when the invariant\n    is broken, not to assert today's tree.\n    \"\"\"\n    pkg = pathlib.Path(swimlanes.__file__).parent\n    offenders = sorted(\n        path.name\n        for path in pkg.glob(\"*.py\")\n        if path.name != \"swimlanes.py\" and _MARKER_READER in path.read_text()\n    )\n    assert offenders == [], (\n        f\"{_MARKER_READER} referenced outside the renderer module by: \"\n        f\"{offenders} — […]
 
@@ -1941,7 +1941,7 @@ id: toolu_01KFxuH7Y3ss5dHEd6sEmqNw
 tool_result
 id: toolu_01KFxuH7Y3ss5dHEd6sEmqNw
 ```
-The file /Users/anton/src/drain-cycle/.worktrees/ABA-412/tests/swimlanes/test_fitness.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/.worktrees/ABA-412/tests/swimlanes/test_fitness.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1954,7 +1954,7 @@ tool_use Bash
 id: toolu_01UvoutuPGZ9sAY7aKaLHQn3
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle/.worktrees/ABA-412\necho \"=== files referencing read_active_marker (should be only swimlanes.py) ===\"\ngrep -rl \"read_active_marker\" drain_cycle/\necho \"=== guard non-vacuity: scan logic catches an injected offender ===\"\npython3 -c \"\nimport pathlib\nfrom drain_cycle import swimlanes\npkg = pathlib.Path(swimlanes.__file__).parent\nhits = [p.name for p in pkg.glob('*.py') if p.name!='swimlanes.py' and 'read_active_marker' in p.read_text()]\nprint('offenders now:', hits)\n# simulate a decision module gaining a reference:\nprint('would-catch test:', 'read_active_marker' in 'from .swimlanes import read_active_marker')\n\"\necho \"=== run the guard + fitness suite ===\"\nuv run pytest tests/swimlanes/test_fitness.py -q 2>&1 | tail -5",
+  "command": "cd /home/<USER>/src/drain-cycle/.worktrees/ABA-412\necho \"=== files referencing read_active_marker (should be only swimlanes.py) ===\"\ngrep -rl \"read_active_marker\" drain_cycle/\necho \"=== guard non-vacuity: scan logic catches an injected offender ===\"\npython3 -c \"\nimport pathlib\nfrom drain_cycle import swimlanes\npkg = pathlib.Path(swimlanes.__file__).parent\nhits = [p.name for p in pkg.glob('*.py') if p.name!='swimlanes.py' and 'read_active_marker' in p.read_text()]\nprint('offenders now:', hits)\n# simulate a decision module gaining a reference:\nprint('would-catch test:', 'read_active_marker' in 'from .swimlanes import read_active_marker')\n\"\necho \"=== run the guard + fitness suite ===\"\nuv run pytest tests/swimlanes/test_fitness.py -q 2>&1 | tail -5",
   "description": "Verify guard passes and is non-vacuous"
 }
 ```
@@ -1984,7 +1984,7 @@ tool_use Bash
 id: toolu_018Nf7VJKfN1ucyegVL93AXW
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle/.worktrees/ABA-412\ngit add tests/swimlanes/test_fitness.py\ngit commit -q -m \"test: guard the _active marker reader to the renderer module\" -m \"ADR 0032 mandates the display-only invariant be enforced: a static scan\nasserts no decision module under drain_cycle/ references read_active_marker —\nonly the renderer (swimlanes) reads the marker. The guard fails the moment a\nnew importer is added, catching a decision path forming against inside-phase\ncontent before merge.\" \ngit rev-parse HEAD",
+  "command": "cd /home/<USER>/src/drain-cycle/.worktrees/ABA-412\ngit add tests/swimlanes/test_fitness.py\ngit commit -q -m \"test: guard the _active marker reader to the renderer module\" -m \"ADR 0032 mandates the display-only invariant be enforced: a static scan\nasserts no decision module under drain_cycle/ references read_active_marker —\nonly the renderer (swimlanes) reads the marker. The guard fails the moment a\nnew importer is added, catching a decision path forming against inside-phase\ncontent before merge.\" \ngit rev-parse HEAD",
   "description": "Commit slice 3"
 }
 ```
@@ -2007,7 +2007,7 @@ tool_use Bash
 id: toolu_01PJg9SFVzGsNb37cD73BvY9
 ```json
 {
-  "command": "cd /Users/anton/src/agent-skills-shaper\necho \"=== pack test harness? ===\"\nls tests/ 2>/dev/null | head; ls bin/ 2>/dev/null | head -20; cat pyproject.toml 2>/dev/null | grep -iE \"pytest|test\" | head\necho\necho \"=== how exec-build writes a section (the co-located write pattern) ===\"\ngrep -nB2 -A8 \"exec-state\" skills/exec-build/SKILL.md | head -40",
+  "command": "cd /home/<USER>/src/agent-skills-shaper\necho \"=== pack test harness? ===\"\nls tests/ 2>/dev/null | head; ls bin/ 2>/dev/null | head -20; cat pyproject.toml 2>/dev/null | grep -iE \"pytest|test\" | head\necho\necho \"=== how exec-build writes a section (the co-located write pattern) ===\"\ngrep -nB2 -A8 \"exec-state\" skills/exec-build/SKILL.md | head -40",
   "description": "Inspect pack test harness and exec-state write pattern"
 }
 ```
@@ -2048,7 +2048,7 @@ tool_use Bash
 id: toolu_0113ouCAfUfipKFh3e6tQH18
 ```json
 {
-  "command": "cd /Users/anton/src/agent-skills-shaper\necho \"=== pack verification convention ===\"\ncat AGENTS.md 2>/dev/null | head -40 || cat CLAUDE.md 2>/dev/null | head -40\necho \"=== existing tests / contract checks ===\"\nfind . -path ./.git -prune -o \\( -name \"test_*.py\" -o -name \"*_test.py\" -o -name \"conftest.py\" \\) -print 2>/dev/null | head\nls bin/",
+  "command": "cd /home/<USER>/src/agent-skills-shaper\necho \"=== pack verification convention ===\"\ncat AGENTS.md 2>/dev/null | head -40 || cat CLAUDE.md 2>/dev/null | head -40\necho \"=== existing tests / contract checks ===\"\nfind . -path ./.git -prune -o \\( -name \"test_*.py\" -o -name \"*_test.py\" -o -name \"conftest.py\" \\) -print 2>/dev/null | head\nls bin/",
   "description": "Find pack verification convention and tests"
 }
 ```
@@ -2072,7 +2072,7 @@ check-plan-framing
 eval-triggers
 grade-execution-review
 walk-delivery-plan
-Shell cwd was reset to /Users/anton/src/drain-cycle
+Shell cwd was reset to /home/<USER>/src/drain-cycle
 ```
 
 > TOOL
@@ -2081,7 +2081,7 @@ tool_use Bash
 id: toolu_01RL7uVDjasEvrbrDxS22teC
 ```json
 {
-  "command": "cd /Users/anton/src/agent-skills-shaper\necho \"=== AGENTS.md verification section ===\"\nsed -n '1,80p' AGENTS.md | grep -iA6 -E \"verif|test|grade|check|lint\"\necho \"=== how bin graders are structured (head of one) ===\"\nhead -25 bin/check-plan-framing\necho \"=== is there a Makefile / CI listing the checks ===\"\nls Makefile .github/workflows/ 2>/dev/null; cat .github/workflows/*.yml 2>/dev/null | grep -iE \"run:|bin/|pytest|grade|check\" | head",
+  "command": "cd /home/<USER>/src/agent-skills-shaper\necho \"=== AGENTS.md verification section ===\"\nsed -n '1,80p' AGENTS.md | grep -iA6 -E \"verif|test|grade|check|lint\"\necho \"=== how bin graders are structured (head of one) ===\"\nhead -25 bin/check-plan-framing\necho \"=== is there a Makefile / CI listing the checks ===\"\nls Makefile .github/workflows/ 2>/dev/null; cat .github/workflows/*.yml 2>/dev/null | grep -iE \"run:|bin/|pytest|grade|check\" | head",
   "description": "Understand pack verification + grader script style"
 }
 ```
@@ -2126,7 +2126,7 @@ tool_use Bash
 id: toolu_01TP4LA5rzehq8R64Bjeeve2
 ```json
 {
-  "command": "cd /Users/anton/src/agent-skills-shaper\necho \"=== grader tail: argparse + exit-code/output idiom ===\"\ntail -40 bin/check-plan-framing\necho \"=== exec-review dispatch + outputs sections ===\"\nsed -n '36,70p' skills/exec-review/SKILL.md",
+  "command": "cd /home/<USER>/src/agent-skills-shaper\necho \"=== grader tail: argparse + exit-code/output idiom ===\"\ntail -40 bin/check-plan-framing\necho \"=== exec-review dispatch + outputs sections ===\"\nsed -n '36,70p' skills/exec-review/SKILL.md",
   "description": "Grader idiom + review dispatch section"
 }
 ```
@@ -2188,7 +2188,7 @@ tool_use Bash
 id: toolu_01MFAAgipn8CR7uSxfmHQ6yx
 ```json
 {
-  "command": "cd /Users/anton/src/agent-skills-shaper\necho \"=== pack git state ===\"\ngit branch --show-current; git status --short | head; echo \"main vs origin:\"; git rev-list --left-right --count HEAD...@{u} 2>/dev/null || echo \"(no upstream info)\"\necho \"=== does drain-cycle ref the pack via .linear_config or submodule? ===\"\ngit -C /Users/anton/src/drain-cycle config --file .gitmodules --list 2>/dev/null | head; ls -la /Users/anton/src/drain-cycle/.worktrees/ABA-412/ | grep -iE \"shaper|skills\" || echo \"(no embedded pack)\"",
+  "command": "cd /home/<USER>/src/agent-skills-shaper\necho \"=== pack git state ===\"\ngit branch --show-current; git status --short | head; echo \"main vs origin:\"; git rev-list --left-right --count HEAD...@{u} 2>/dev/null || echo \"(no upstream info)\"\necho \"=== does drain-cycle ref the pack via .linear_config or submodule? ===\"\ngit -C /home/<USER>/src/drain-cycle config --file .gitmodules --list 2>/dev/null | head; ls -la /home/<USER>/src/drain-cycle/.worktrees/ABA-412/ | grep -iE \"shaper|skills\" || echo \"(no embedded pack)\"",
   "description": "Check pack git state and any coupling"
 }
 ```
@@ -2204,7 +2204,7 @@ okmain vs origin:
 0	0
 === does drain-cycle ref the pack via .linear_config or submodule? ===
 (no embedded pack)
-Shell cwd was reset to /Users/anton/src/drain-cycle
+Shell cwd was reset to /home/<USER>/src/drain-cycle
 ```
 
 > AGENT
@@ -2217,7 +2217,7 @@ tool_use Bash
 id: toolu_01HQkAPzBVGBNFo36HypTVtM
 ```json
 {
-  "command": "cd /Users/anton/src/agent-skills-shaper\ngit checkout -b ABA-412 2>&1 | tail -1\ngit branch --show-current",
+  "command": "cd /home/<USER>/src/agent-skills-shaper\ngit checkout -b ABA-412 2>&1 | tail -1\ngit branch --show-current",
   "description": "Branch the pack repo for ABA-412"
 }
 ```
@@ -2229,7 +2229,7 @@ id: toolu_01HQkAPzBVGBNFo36HypTVtM
 ```
 Switched to a new branch 'ABA-412'
 ABA-412
-Shell cwd was reset to /Users/anton/src/drain-cycle
+Shell cwd was reset to /home/<USER>/src/drain-cycle
 ```
 
 > AGENT
@@ -2242,7 +2242,7 @@ tool_use Write
 id: toolu_01HTTbEpiwFouT8pDGSuXXvX
 ```json
 {
-  "file_path": "/Users/anton/src/agent-skills-shaper/bin/check-active-marker-contract",
+  "file_path": "/home/<USER>/src/agent-skills-shaper/bin/check-active-marker-contract",
   "content": "#!/usr/bin/env python3\n\"\"\"check-active-marker-contract — assert exec:review documents the `_active`\nstep/persona marker write.\n\nThe live-execution swimlanes view reads a pack-written `_active` pointer from\n`exec-state.json` to show the active review persona on every worker, not just\nClaude Code. The renderer is display-only; the pack is the sole writer. This\ngrader pins the writer half of that contract in `skills/exec-review/SKILL.md`,\nso a future edit cannot silently drop the marker write and leave the view blind\non non-Claude workers.\n\nChecks (all required; each names what is missing on failure):\n\n  1. Carrier — the skill names `_active` and `exec-state.json` together, so the\n     marker lands in the pack-owned execution-state artifact, not a new file.\n  2. Schema — the documented pointer carries both a `step` and a `persona`\n     field, the shape the renderer reads.\n  3. Persona-entry write — the marker write is tied to persona dispatch, so the\n     active persona is recorded at the moment it becomes true.\n  4. Atomic single-writer rule — the write is atomic (temp-file + rename) and\n     `persona` is a single string under last-write-wins, so a parallel persona\n     fan-out cannot corrupt the pointer.\n\nUsage:\n    bin/check-active-marker-contract [SKILL_MD]\n\nExits 0 when every check passes, 1 otherwise (with the failing checks on\nstderr). SKILL_MD defaults to skills/exec-review/SKILL.md relative to […]
 
 > TOOL
@@ -2250,7 +2250,7 @@ id: toolu_01HTTbEpiwFouT8pDGSuXXvX
 tool_result
 id: toolu_01HTTbEpiwFouT8pDGSuXXvX
 ```
-File created successfully at: /Users/anton/src/agent-skills-shaper/bin/check-active-marker-contract (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/src/agent-skills-shaper/bin/check-active-marker-contract (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2259,7 +2259,7 @@ tool_use Bash
 id: toolu_01B8kD8cLcmmcv9h9PUfYngF
 ```json
 {
-  "command": "cd /Users/anton/src/agent-skills-shaper\nchmod +x bin/check-active-marker-contract\necho \"=== RED: grader should fail (no marker contract in exec-review yet) ===\"\nbin/check-active-marker-contract; echo \"exit: $?\"",
+  "command": "cd /home/<USER>/src/agent-skills-shaper\nchmod +x bin/check-active-marker-contract\necho \"=== RED: grader should fail (no marker contract in exec-review yet) ===\"\nbin/check-active-marker-contract; echo \"exit: $?\"",
   "description": "Confirm RED on pack grader"
 }
 ```
@@ -2270,12 +2270,12 @@ tool_result
 id: toolu_01B8kD8cLcmmcv9h9PUfYngF
 ```
 === RED: grader should fail (no marker contract in exec-review yet) ===
-check-active-marker-contract: /Users/anton/src/agent-skills-shaper/skills/exec-review/SKILL.md is missing the `_active` marker-write contract:
+check-active-marker-contract: /home/<USER>/src/agent-skills-shaper/skills/exec-review/SKILL.md is missing the `_active` marker-write contract:
   - carrier: the skill must name the `_active` pointer and `exec-state.json` (the marker's carrier).
   - schema: the documented `_active` pointer must carry both a `"step"` and a `persona` field.
   - atomic single-writer rule: the write must be atomic (temp-file + rename) with a single-string `persona` under last-write-wins.
 exit: 1
-Shell cwd was reset to /Users/anton/src/drain-cycle
+Shell cwd was reset to /home/<USER>/src/drain-cycle
 ```
 
 > AGENT
@@ -2288,7 +2288,7 @@ tool_use Read
 id: toolu_019tkUVampVtnwehpWQiaPrt
 ```json
 {
-  "file_path": "/Users/anton/src/agent-skills-shaper/skills/exec-review/SKILL.md",
+  "file_path": "/home/<USER>/src/agent-skills-shaper/skills/exec-review/SKILL.md",
   "offset": 50,
   "limit": 12
 }
@@ -2320,7 +2320,7 @@ id: toolu_01LER1DaaoQV1rTKZBScDTs1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/agent-skills-shaper/skills/exec-review/SKILL.md",
+  "file_path": "/home/<USER>/src/agent-skills-shaper/skills/exec-review/SKILL.md",
   "old_string": "Each persona receives:\n- The working-tree diff as its primary input\n- The issue statement and AC list (spec-compliance uses these; the other two may reference them for context)\n\n**3. [GATE] Collect and deduplicate findings.**",
   "new_string": "Each persona receives:\n- The working-tree diff as its primary input\n- The issue statement and AC list (spec-compliance uses these; the other two may reference them for context)\n\n**2a. Mark the active persona (display marker).**\nOn entry to each persona — before applying it to the diff — write the `_active` pointer into `exec-state.json` at the worktree root, so the live swimlanes view shows the active review persona on every worker, not just Claude Code:\n\n```json\n{\"_active\": {\"step\": \"review\", \"persona\": \"spec-compliance\"}}\n```\n\nSet only the `_active` key, preserving the phase sections (`pickup`, `breakdown`, `build`, …); write a temp file and rename it over `exec-state.json` so the update is atomic. `persona` is a single string under last-write-wins: on Claude Code's parallel dispatch each persona sub-agent writes its own name on entry and the most-recent write is the one shown; on a non-Claude worker running inline-sequentially, write the pointer before each persona in turn. The write is one small local file per persona, no network […]
 
@@ -2329,7 +2329,7 @@ id: toolu_01LER1DaaoQV1rTKZBScDTs1
 tool_result
 id: toolu_01LER1DaaoQV1rTKZBScDTs1
 ```
-The file /Users/anton/src/agent-skills-shaper/skills/exec-review/SKILL.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/agent-skills-shaper/skills/exec-review/SKILL.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2338,7 +2338,7 @@ tool_use Bash
 id: toolu_0188hZeppbhm2MrmpJvTcKAn
 ```json
 {
-  "command": "cd /Users/anton/src/agent-skills-shaper\necho \"=== GREEN: grader should pass now ===\"\nbin/check-active-marker-contract; echo \"exit: $?\"",
+  "command": "cd /home/<USER>/src/agent-skills-shaper\necho \"=== GREEN: grader should pass now ===\"\nbin/check-active-marker-contract; echo \"exit: $?\"",
   "description": "Confirm GREEN on pack grader"
 }
 ```
@@ -2349,9 +2349,9 @@ tool_result
 id: toolu_0188hZeppbhm2MrmpJvTcKAn
 ```
 === GREEN: grader should pass now ===
-check-active-marker-contract: OK (/Users/anton/src/agent-skills-shaper/skills/exec-review/SKILL.md)
+check-active-marker-contract: OK (/home/<USER>/src/agent-skills-shaper/skills/exec-review/SKILL.md)
 exit: 0
-Shell cwd was reset to /Users/anton/src/drain-cycle
+Shell cwd was reset to /home/<USER>/src/drain-cycle
 ```
 
 > AGENT
@@ -2364,7 +2364,7 @@ tool_use Bash
 id: toolu_01M4Jk7YcRdC3wfsY2fPcZKS
 ```json
 {
-  "command": "cd /Users/anton/src/agent-skills-shaper\ngit add bin/check-active-marker-contract skills/exec-review/SKILL.md\ngit commit -q -m \"feat: exec:review writes the _active persona display marker\" -m \"On entry to each review persona, the skill writes an _active step/persona\npointer into exec-state.json so the live swimlanes view shows the active\npersona on every worker, not just Claude Code. The write is atomic (temp +\nrename), single-string persona under last-write-wins, one small local file per\npersona, no network. A new grader, bin/check-active-marker-contract, pins the\nwriter half of the contract so a future edit cannot silently drop it.\" \ngit log --oneline -1",
+  "command": "cd /home/<USER>/src/agent-skills-shaper\ngit add bin/check-active-marker-contract skills/exec-review/SKILL.md\ngit commit -q -m \"feat: exec:review writes the _active persona display marker\" -m \"On entry to each review persona, the skill writes an _active step/persona\npointer into exec-state.json so the live swimlanes view shows the active\npersona on every worker, not just Claude Code. The write is atomic (temp +\nrename), single-string persona under last-write-wins, one small local file per\npersona, no network. A new grader, bin/check-active-marker-contract, pins the\nwriter half of the contract so a future edit cannot silently drop it.\" \ngit log --oneline -1",
   "description": "Commit pack slice"
 }
 ```
@@ -2375,7 +2375,7 @@ tool_result
 id: toolu_01M4Jk7YcRdC3wfsY2fPcZKS
 ```
 a65308f feat: exec:review writes the _active persona display marker
-Shell cwd was reset to /Users/anton/src/drain-cycle
+Shell cwd was reset to /home/<USER>/src/drain-cycle
 ```
 
 > AGENT
@@ -2389,7 +2389,7 @@ id: toolu_019MW9or9asE18pzFrUTGUET
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/.worktrees/ABA-412/tests/test_swimlanes.py",
+  "file_path": "/home/<USER>/src/drain-cycle/.worktrees/ABA-412/tests/test_swimlanes.py",
   "old_string": "def test_build_renderer_threads_worktree_path_and_queue(tmp_path):",
   "new_string": "def test_live_drain_prefers_marker_then_falls_back_when_removed(tmp_path):\n    # End-to-end through the orchestrator's construction seam: the renderer\n    # follows the stream step until the pack writes _active, prefers the\n    # marker's persona while it is present, then falls back to the stream step\n    # the moment the marker is gone.\n    err = io.StringIO()\n    renderer = swimlanes.build_renderer(err, worktree_path=tmp_path, tty=True)\n\n    # Stream-only: no marker yet → today's step depth.\n    renderer.feed(_assistant_event(\"m1\", _skill(\"exec:review\")))\n    assert \"exec:review\" in err.getvalue()\n\n    # The pack writes the marker mid-run → persona depth appears.\n    _write_marker(tmp_path, \"review\", \"code-quality\")\n    err.truncate(0)\n    err.seek(0)\n    renderer.on_progress(2, 200, 2.0)\n    out = err.getvalue()\n    assert \"review\" in out\n    assert \"code-quality\" in out\n\n    # Marker cleared (old pack / forgot to write) → fall back to the stream.\n    (tmp_path / \"exec-state.json\").unlink()\n    err.truncate(0)\n    err.seek(0)\n    renderer.on_progress(3, 300, 3.0)\n    fallback = err.getvalue()\n    assert \"exec:review\" in fallback\n    assert \"code-quality\" not in fallback\n\n\ndef test_build_renderer_threads_worktree_path_and_queue(tmp_path):"
 }
@@ -2400,7 +2400,7 @@ id: toolu_019MW9or9asE18pzFrUTGUET
 tool_result
 id: toolu_019MW9or9asE18pzFrUTGUET
 ```
-The file /Users/anton/src/drain-cycle/.worktrees/ABA-412/tests/test_swimlanes.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/.worktrees/ABA-412/tests/test_swimlanes.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2409,7 +2409,7 @@ tool_use Bash
 id: toolu_013aegh48axPzCuJ1aroX19N
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle/.worktrees/ABA-412\nuv run pytest tests/test_swimlanes.py -k \"live_drain\" -q 2>&1 | tail -8",
+  "command": "cd /home/<USER>/src/drain-cycle/.worktrees/ABA-412\nuv run pytest tests/test_swimlanes.py -k \"live_drain\" -q 2>&1 | tail -8",
   "description": "Run the end-to-end live-drain test"
 }
 ```
@@ -2433,7 +2433,7 @@ tool_use Bash
 id: toolu_017uYigdBWtskDXdtyHK4fZL
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle/.worktrees/ABA-412\ngit add tests/test_swimlanes.py\ngit commit -q -m \"test: end-to-end marker-prefer then stream fallback in a drain\" -m \"Drives the orchestrator's build_renderer seam through a marker transition: the\nrow follows the stream step, prefers the _active persona once the pack writes\nit, and falls back to the stream the moment the marker is removed — the T1\ndone_when, proven against real worktree file I/O.\" \necho \"=== T1 drain-cycle commits ===\"\ngit log --oneline origin/main..HEAD\ngit rev-parse HEAD",
+  "command": "cd /home/<USER>/src/drain-cycle/.worktrees/ABA-412\ngit add tests/test_swimlanes.py\ngit commit -q -m \"test: end-to-end marker-prefer then stream fallback in a drain\" -m \"Drives the orchestrator's build_renderer seam through a marker transition: the\nrow follows the stream step, prefers the _active persona once the pack writes\nit, and falls back to the stream the moment the marker is removed — the T1\ndone_when, proven against real worktree file I/O.\" \necho \"=== T1 drain-cycle commits ===\"\ngit log --oneline origin/main..HEAD\ngit rev-parse HEAD",
   "description": "Commit T1 acceptance test"
 }
 ```
@@ -2461,7 +2461,7 @@ tool_use Bash
 id: toolu_01BtfjEGPMfAFr5EtDEmwdk6
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle/.worktrees/ABA-412\ngit log --reverse --format='%H%x09%s' origin/main..HEAD",
+  "command": "cd /home/<USER>/src/drain-cycle/.worktrees/ABA-412\ngit log --reverse --format='%H%x09%s' origin/main..HEAD",
   "description": "List full SHAs and subjects"
 }
 ```
@@ -2484,7 +2484,7 @@ id: toolu_01RUeTz3XMTnPDvMhrxPHvJV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/.worktrees/ABA-412/exec-state.json",
+  "file_path": "/home/<USER>/src/drain-cycle/.worktrees/ABA-412/exec-state.json",
   "old_string": "      {\n        \"sha\": \"5e3b1abd428327cc5cdb2b9250c76f3d4224bb9f\",\n        \"title\": \"feat: prefer _active marker over stream-derived step in swimlanes\",\n        \"why\": \"Renderer reads the pack-written _active pointer from exec-state.json and shows its step plus review persona when present, falling back to the stream-derived step when absent. Display-only, ADR 0032; a read failure degrades to the stream path, never blocks the run.\"\n      }\n    ]\n  }\n}",
   "new_string": "      {\n        \"sha\": \"5e3b1abd428327cc5cdb2b9250c76f3d4224bb9f\",\n        \"title\": \"feat: prefer _active marker over stream-derived step in swimlanes\",\n        \"why\": \"Renderer reads the pack-written _active pointer from exec-state.json and shows its step plus review persona when present, falling back to the stream-derived step when absent. Display-only, ADR 0032; a read failure degrades to the stream path, never blocks the run.\"\n      },\n      {\n        \"sha\": \"b2eb9096745ee4c9b3515211bfa9f9dc53204c68\",\n        \"title\": \"feat: thread worktree path into the swimlanes renderer\",\n        \"why\": \"Orchestrator builds the renderer through swimlanes.build_renderer, passing the issue worktree so the marker is read live during a drain. One construction seam instead of inline at the call site.\"\n      },\n      {\n        \"sha\": \"d856cf242136735c92640a79554748cc6faeb982\",\n        \"title\": \"test: guard the _active marker reader to the renderer module\",\n        \"why\": \"ADR 0032 enforcement: a static scan asserts no decision module under drain_cycle/ references read_active_marker — only […]
 
@@ -2493,7 +2493,7 @@ id: toolu_01RUeTz3XMTnPDvMhrxPHvJV
 tool_result
 id: toolu_01RUeTz3XMTnPDvMhrxPHvJV
 ```
-The file /Users/anton/src/drain-cycle/.worktrees/ABA-412/exec-state.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/.worktrees/ABA-412/exec-state.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2506,7 +2506,7 @@ tool_use Bash
 id: toolu_01EJDgtwXeBiqThbvZks4YWj
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle/.worktrees/ABA-412\npython3 -c \"import json; d=json.load(open('exec-state.json')); print('valid; build slices:', len(d['build']['slices']), '+ pack:', len(d['build']['pack_slices']))\"\necho \"=== is exec-state.json tracked/ignored? ===\"\ngit check-ignore exec-state.json && echo \"(ignored — good, transient)\" || echo \"(NOT ignored)\"\ngit status --short",
+  "command": "cd /home/<USER>/src/drain-cycle/.worktrees/ABA-412\npython3 -c \"import json; d=json.load(open('exec-state.json')); print('valid; build slices:', len(d['build']['slices']), '+ pack:', len(d['build']['pack_slices']))\"\necho \"=== is exec-state.json tracked/ignored? ===\"\ngit check-ignore exec-state.json && echo \"(ignored — good, transient)\" || echo \"(NOT ignored)\"\ngit status --short",
   "description": "Validate exec-state and check ignore status"
 }
 ```
@@ -2532,7 +2532,7 @@ tool_use Bash
 id: toolu_01ApwzAa7euDWJi6FX9nMvvx
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle/.worktrees/ABA-412\nuv run pytest -q 2>&1 | tail -6",
+  "command": "cd /home/<USER>/src/drain-cycle/.worktrees/ABA-412\nuv run pytest -q 2>&1 | tail -6",
   "description": "Full drain-cycle test suite"
 }
 ```
@@ -2560,7 +2560,7 @@ tool_use Bash
 id: toolu_0143LgUXXSVbbocVoDV4DrUB
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle/.worktrees/ABA-412\nuv run ruff check drain_cycle/swimlanes.py drain_cycle/orchestrator.py tests/test_swimlanes.py tests/swimlanes/test_fitness.py 2>&1 | tail -8\necho \"exit: $?\"",
+  "command": "cd /home/<USER>/src/drain-cycle/.worktrees/ABA-412\nuv run ruff check drain_cycle/swimlanes.py drain_cycle/orchestrator.py tests/test_swimlanes.py tests/swimlanes/test_fitness.py 2>&1 | tail -8\necho \"exit: $?\"",
   "description": "Ruff lint on changed files"
 }
 ```
@@ -2627,7 +2627,7 @@ tool_use Bash
 id: toolu_01H7xEeTgnh9Fr6yM8ugHztZ
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle/.worktrees/ABA-412\necho \"=== OQ-1 / Path B in design doc ===\"\ngrep -rniE \"OQ-1|path b|path a|inline persona|tool boundary|machine-readable|non-claude|codex\" docs/design-docs/live-execution-swimlanes/design-doc.md 2>/dev/null | head -25\necho\necho \"=== existing stream fixtures ===\"\nfind tests -iname \"*fixture*\" -o -path \"*fixtures*\" 2>/dev/null | head; ls tests/swimlanes/ 2>/dev/null\nfind tests -name \"*.jsonl\" -o -name \"*.ndjson\" 2>/dev/null | head",
+  "command": "cd /home/<USER>/src/drain-cycle/.worktrees/ABA-412\necho \"=== OQ-1 / Path B in design doc ===\"\ngrep -rniE \"OQ-1|path b|path a|inline persona|tool boundary|machine-readable|non-claude|codex\" docs/design-docs/live-execution-swimlanes/design-doc.md 2>/dev/null | head -25\necho\necho \"=== existing stream fixtures ===\"\nfind tests -iname \"*fixture*\" -o -path \"*fixtures*\" 2>/dev/null | head; ls tests/swimlanes/ 2>/dev/null\nfind tests -name \"*.jsonl\" -o -name \"*.ndjson\" 2>/dev/null | head",
   "description": "Find OQ-1/Path B context and existing fixtures"
 }
 ```
@@ -2652,7 +2652,7 @@ tool_use Bash
 id: toolu_01GoFF4VeUryeYV5Q4PsTo7x
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle/.worktrees/ABA-412\necho \"=== tests/fixtures/exec-state.json ===\"\ncat tests/fixtures/exec-state.json\necho \"=== any captured stream-json fixtures referenced in tests ===\"\ngrep -rnE \"fixtures/|caller|\\\"Agent\\\"|description.*prompt|stream-json\" tests/swimlanes/test_fitness.py tests/test_swimlanes.py | grep -iE \"fixture|Agent|caller\" | head\necho \"=== prototype dir (may hold captured stream) ===\"\nls docs/prototypes/live-execution-swimlanes/ 2>/dev/null",
+  "command": "cd /home/<USER>/src/drain-cycle/.worktrees/ABA-412\necho \"=== tests/fixtures/exec-state.json ===\"\ncat tests/fixtures/exec-state.json\necho \"=== any captured stream-json fixtures referenced in tests ===\"\ngrep -rnE \"fixtures/|caller|\\\"Agent\\\"|description.*prompt|stream-json\" tests/swimlanes/test_fitness.py tests/test_swimlanes.py | grep -iE \"fixture|Agent|caller\" | head\necho \"=== prototype dir (may hold captured stream) ===\"\nls docs/prototypes/live-execution-swimlanes/ 2>/dev/null",
   "description": "Inspect existing fixture and captured streams"
 }
 ```
@@ -2727,7 +2727,7 @@ tool_use Read
 id: toolu_01RUabzSVfivPm4FUQQtQm2Y
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/.worktrees/ABA-412/tests/test_swimlanes.py",
+  "file_path": "/home/<USER>/src/drain-cycle/.worktrees/ABA-412/tests/test_swimlanes.py",
   "offset": 98,
   "limit": 12
 }
@@ -2762,7 +2762,7 @@ tool_use Write
 id: toolu_01YKii15Zauo9kKLN9A1QnCX
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/.worktrees/ABA-412/tests/fixtures/swimlanes/claude-review-stream.jsonl",
+  "file_path": "/home/<USER>/src/drain-cycle/.worktrees/ABA-412/tests/fixtures/swimlanes/claude-review-stream.jsonl",
   "content": "{\"type\":\"assistant\",\"message\":{\"id\":\"m1\",\"content\":[{\"type\":\"tool_use\",\"name\":\"Skill\",\"input\":{\"skill\":\"exec:review\"},\"caller\":{\"type\":\"direct\"}}]}}\n{\"type\":\"assistant\",\"message\":{\"id\":\"m2\",\"content\":[{\"type\":\"tool_use\",\"name\":\"Agent\",\"input\":{\"description\":\"spec-compliance review\",\"prompt\":\"Apply personas/spec-compliance.md to the working-tree diff and the AC list; report finding triples.\"},\"caller\":{\"type\":\"direct\"}},{\"type\":\"tool_use\",\"name\":\"Agent\",\"input\":{\"description\":\"security-auditor review\",\"prompt\":\"Apply personas/security-auditor.md to the working-tree diff; report finding triples.\"},\"caller\":{\"type\":\"direct\"}},{\"type\":\"tool_use\",\"name\":\"Agent\",\"input\":{\"description\":\"code-quality review\",\"prompt\":\"Apply personas/code-quality.md to the working-tree diff; report finding triples.\"},\"caller\":{\"type\":\"direct\"}}]}}\n"
 }
 ```
@@ -2772,7 +2772,7 @@ id: toolu_01YKii15Zauo9kKLN9A1QnCX
 tool_result
 id: toolu_01YKii15Zauo9kKLN9A1QnCX
 ```
-File created successfully at: /Users/anton/src/drain-cycle/.worktrees/ABA-412/tests/fixtures/swimlanes/claude-review-stream.jsonl (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/src/drain-cycle/.worktrees/ABA-412/tests/fixtures/swimlanes/claude-review-stream.jsonl (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2781,7 +2781,7 @@ tool_use Write
 id: toolu_01DiAYMTCtsnqB7rBDGekrCq
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/.worktrees/ABA-412/tests/fixtures/swimlanes/codex-review-stream.jsonl",
+  "file_path": "/home/<USER>/src/drain-cycle/.worktrees/ABA-412/tests/fixtures/swimlanes/codex-review-stream.jsonl",
   "content": "{\"type\":\"assistant\",\"message\":{\"id\":\"m1\",\"content\":[{\"type\":\"text\",\"text\":\"Running the execution review inline. Loading the spec-compliance persona and applying it to the diff.\"}]}}\n{\"type\":\"assistant\",\"message\":{\"id\":\"m2\",\"content\":[{\"type\":\"tool_use\",\"name\":\"Read\",\"input\":{\"file_path\":\"personas/spec-compliance.md\"}}]}}\n{\"type\":\"assistant\",\"message\":{\"id\":\"m3\",\"content\":[{\"type\":\"text\",\"text\":\"Spec-compliance: no AC violations. Now applying security-auditor, then code-quality, in sequence.\"}]}}\n"
 }
 ```
@@ -2791,7 +2791,7 @@ id: toolu_01DiAYMTCtsnqB7rBDGekrCq
 tool_result
 id: toolu_01DiAYMTCtsnqB7rBDGekrCq
 ```
-File created successfully at: /Users/anton/src/drain-cycle/.worktrees/ABA-412/tests/fixtures/swimlanes/codex-review-stream.jsonl (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/src/drain-cycle/.worktrees/ABA-412/tests/fixtures/swimlanes/codex-review-stream.jsonl (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2804,7 +2804,7 @@ tool_use Bash
 id: toolu_013FMTutNxZZgghPx3kk8FUx
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle/.worktrees/ABA-412\necho \"=== prototypes/finding.md (head) ===\"\nhead -40 docs/prototypes/live-execution-swimlanes/finding.md",
+  "command": "cd /home/<USER>/src/drain-cycle/.worktrees/ABA-412\necho \"=== prototypes/finding.md (head) ===\"\nhead -40 docs/prototypes/live-execution-swimlanes/finding.md",
   "description": "Read prototype finding.md"
 }
 ```
@@ -2839,7 +2839,7 @@ tool_use Write
 id: toolu_01SAKVVs81LtRseDL2CA4zjR
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/.worktrees/ABA-412/tests/swimlanes/test_marker_contract.py",
+  "file_path": "/home/<USER>/src/drain-cycle/.worktrees/ABA-412/tests/swimlanes/test_marker_contract.py",
   "content": "\"\"\"NFR-6 marker contract — persona depth on every worker.\n\nFeeds a Claude-Code review-stream fixture and a codex review-stream fixture and\nproves both yield the correct active review persona through the ``_active``\nmarker path. The two workers differ in what their *stream* exposes; the marker\nerases that difference, which is the whole point of putting persona identity on\na pack-written marker instead of parsing it out of the stream (design-doc\nNFR-6).\n\nIt also pins the residual OQ-1 evidence captured in\n``tests/fixtures/swimlanes/``: a real ``exec:review`` persona dispatch carries\nno machine-readable persona in the stream — on Claude the ``Agent`` fan-out\ninput is ``{description, prompt}`` with no persona field, and on codex the\ninline-sequential personas emit no tool boundary at all. The marker is therefore\nthe only worker-agnostic source of persona depth.\n\"\"\"\nfrom __future__ import annotations\n\nimport io\nimport json\nimport pathlib\n\nfrom drain_cycle import swimlanes\n\n_FIXTURES = pathlib.Path(__file__).parent.parent / \"fixtures\" / \"swimlanes\"\n\n\ndef _load_stream(name: str) -> list[dict]:\n    text = (_FIXTURES / name).read_text()\n    return [json.loads(line) for line in text.splitlines() if line.strip()]\n\n\ndef _stream_active_step(events: list[dict]) -> str | None:\n    tracker = swimlanes.StepTracker()\n    for event in events:\n        tracker.feed(event)\n    return tracker.active\n\n\ndef _agent_inputs(events: list[dict]) -> list[dict]:\n    inputs = []\n    for event in events:\n        for block in event[\"message\"][\"content\"]:\n            parsed = swimlanes.parse_tool_use(block)\n            if parsed is not None and parsed[0] == […]
 
 > TOOL
@@ -2847,7 +2847,7 @@ id: toolu_01SAKVVs81LtRseDL2CA4zjR
 tool_result
 id: toolu_01SAKVVs81LtRseDL2CA4zjR
 ```
-File created successfully at: /Users/anton/src/drain-cycle/.worktrees/ABA-412/tests/swimlanes/test_marker_contract.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/src/drain-cycle/.worktrees/ABA-412/tests/swimlanes/test_marker_contract.py (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2856,7 +2856,7 @@ tool_use Bash
 id: toolu_01RDzZs13FBF45jpm8vKwtqh
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle/.worktrees/ABA-412\nuv run pytest tests/swimlanes/test_marker_contract.py -q 2>&1 | tail -10",
+  "command": "cd /home/<USER>/src/drain-cycle/.worktrees/ABA-412\nuv run pytest tests/swimlanes/test_marker_contract.py -q 2>&1 | tail -10",
   "description": "Run the NFR-6 contract test"
 }
 ```
@@ -2880,7 +2880,7 @@ tool_use Write
 id: toolu_01PcHLXARsxw58RxLinAboBz
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/.worktrees/ABA-412/tests/fixtures/swimlanes/README.md",
+  "file_path": "/home/<USER>/src/drain-cycle/.worktrees/ABA-412/tests/fixtures/swimlanes/README.md",
   "content": "# Swimlanes worker-stream fixtures\n\nTwo captured `exec:review` stream shapes, one per worker family, plus the\nresidual OQ-1 evidence they encode. `tests/swimlanes/test_marker_contract.py`\nfeeds both and proves persona depth comes through the `_active` marker on either\nworker (design-doc NFR-6).\n\n## `claude-review-stream.jsonl`\n\nA Claude-Code `exec:review` dispatch: a `Skill` `tool_use` block names the step\n(`input.skill == \"exec:review\"`, machine-readable), followed by the `Agent`\nfan-out — one block per persona. Each `Agent` input is `{description, prompt}`\nwith **no persona field**; the persona name lives only in free-text prompt\ncontent. So the stream yields the *step* but not the *persona*.\n\n## `codex-review-stream.jsonl`\n\nA codex `exec:review` dispatch run inline-sequentially: the personas are loaded\nand applied in-line (a `Read` of the persona file, then text), with **no\n`Skill` or `Agent` tool boundary**. The stream yields neither the step nor the\npersona.\n\n## Residual OQ-1 evidence\n\nOQ-1 cleared step-depth from the stream (the `Skill` block carries\n`input.skill`). The residual question was whether a *real* persona dispatch\nexposes the persona in the stream. These fixtures answer it: it does not — on\nClaude the `Agent` input has no persona field, and on codex there is no tool\nboundary at all. Persona-from-stream is therefore best-effort on Claude and\nimpossible on codex, which is why the contract puts persona identity on the\npack-written `_active` marker (ADR 0032) […]
 
 > TOOL
@@ -2888,7 +2888,7 @@ id: toolu_01PcHLXARsxw58RxLinAboBz
 tool_result
 id: toolu_01PcHLXARsxw58RxLinAboBz
 ```
-File created successfully at: /Users/anton/src/drain-cycle/.worktrees/ABA-412/tests/fixtures/swimlanes/README.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/src/drain-cycle/.worktrees/ABA-412/tests/fixtures/swimlanes/README.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2897,7 +2897,7 @@ tool_use Bash
 id: toolu_01ShgHPZB8ZzyevzFRZXjK1W
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle/.worktrees/ABA-412\nuv run pytest tests/swimlanes/ -q 2>&1 | tail -4\ngit add tests/fixtures/swimlanes/ tests/swimlanes/test_marker_contract.py\ngit commit -q -m \"test: prove persona-from-marker on Claude and codex fixtures\" -m \"Captures the residual OQ-1 evidence as two exec:review stream fixtures: a\nClaude Agent fan-out whose input is {description, prompt} with no persona field,\nand a codex inline-sequential dispatch with no tool boundary at all. The NFR-6\ncontract test feeds both and proves the active persona comes through the\n_active marker on either worker — the stream supplies the step on Claude and\nnothing on codex, so the marker is the only worker-agnostic source of persona\ndepth.\" \ngit rev-parse HEAD",
+  "command": "cd /home/<USER>/src/drain-cycle/.worktrees/ABA-412\nuv run pytest tests/swimlanes/ -q 2>&1 | tail -4\ngit add tests/fixtures/swimlanes/ tests/swimlanes/test_marker_contract.py\ngit commit -q -m \"test: prove persona-from-marker on Claude and codex fixtures\" -m \"Captures the residual OQ-1 evidence as two exec:review stream fixtures: a\nClaude Agent fan-out whose input is {description, prompt} with no persona field,\nand a codex inline-sequential dispatch with no tool boundary at all. The NFR-6\ncontract test feeds both and proves the active persona comes through the\n_active marker on either worker — the stream supplies the step on Claude and\nnothing on codex, so the marker is the only worker-agnostic source of persona\ndepth.\" \ngit rev-parse HEAD",
   "description": "Commit T2"
 }
 ```
@@ -2923,7 +2923,7 @@ id: toolu_01RKKSdsELHwGiBYkUJy8vmS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/.worktrees/ABA-412/exec-state.json",
+  "file_path": "/home/<USER>/src/drain-cycle/.worktrees/ABA-412/exec-state.json",
   "old_string": "      {\n        \"sha\": \"05701c7a0df3f468b6a3e7913c1fa4e74e060570\",\n        \"title\": \"test: end-to-end marker-prefer then stream fallback in a drain\",\n        \"why\": \"T1 done_when: drives build_renderer through a marker transition — stream step, then preferred persona once the pack writes it, then stream fallback when the marker is removed, against real worktree file I/O.\"\n      }\n    ],",
   "new_string": "      {\n        \"sha\": \"05701c7a0df3f468b6a3e7913c1fa4e74e060570\",\n        \"title\": \"test: end-to-end marker-prefer then stream fallback in a drain\",\n        \"why\": \"T1 done_when: drives build_renderer through a marker transition — stream step, then preferred persona once the pack writes it, then stream fallback when the marker is removed, against real worktree file I/O.\"\n      },\n      {\n        \"sha\": \"52005a3d461d520b75f08a28087428cfdafafd02\",\n        \"title\": \"test: prove persona-from-marker on Claude and codex fixtures\",\n        \"why\": \"T2/NFR-6: two captured exec:review stream fixtures (Claude Agent fan-out with no persona field; codex inline dispatch with no tool boundary) and a contract test proving the active persona comes through the _active marker on either worker. Residual OQ-1 evidence captured.\"\n      }\n    ],"
 }
@@ -2934,7 +2934,7 @@ id: toolu_01RKKSdsELHwGiBYkUJy8vmS
 tool_result
 id: toolu_01RKKSdsELHwGiBYkUJy8vmS
 ```
-The file /Users/anton/src/drain-cycle/.worktrees/ABA-412/exec-state.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/.worktrees/ABA-412/exec-state.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2985,7 +2985,7 @@ tool_use Bash
 id: toolu_015S8rrhkxdauzVfbztuaSGR
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle/.worktrees/ABA-412\necho \"=== design doc: stale / staleness / dimmed / NFR-3 ===\"\ngrep -rniE \"stale|staleness|dimmed|forgot|last-known|log-only|NFR-3|NFR-5\" docs/design-docs/live-execution-swimlanes/design-doc.md\necho\necho \"=== how the codebase logs diagnostics (logging / console debug) ===\"\ngrep -rnE \"import logging|getLogger|logger\\.|warnings\\.warn|debug_file|def .*log\" drain_cycle/swimlanes.py drain_cycle/console.py | head -15",
+  "command": "cd /home/<USER>/src/drain-cycle/.worktrees/ABA-412\necho \"=== design doc: stale / staleness / dimmed / NFR-3 ===\"\ngrep -rniE \"stale|staleness|dimmed|forgot|last-known|log-only|NFR-3|NFR-5\" docs/design-docs/live-execution-swimlanes/design-doc.md\necho\necho \"=== how the codebase logs diagnostics (logging / console debug) ===\"\ngrep -rnE \"import logging|getLogger|logger\\.|warnings\\.warn|debug_file|def .*log\" drain_cycle/swimlanes.py drain_cycle/console.py | head -15",
   "description": "Find staleness semantics and logging facility"
 }
 ```
@@ -3017,7 +3017,7 @@ tool_use Bash
 id: toolu_01S1x4pq3bL2mCenToaSzcZs
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle/.worktrees/ABA-412\necho \"=== Python logging usage across drain_cycle ===\"\ngrep -rnE \"import logging|getLogger|logging\\.\" drain_cycle/*.py | head\necho \"=== run-log writer (ADR 0008) — how end-of-run counters/warnings go ===\"\ngrep -rnE \"def |warn|counter\" drain_cycle/runlog.py | head -20",
+  "command": "cd /home/<USER>/src/drain-cycle/.worktrees/ABA-412\necho \"=== Python logging usage across drain_cycle ===\"\ngrep -rnE \"import logging|getLogger|logging\\.\" drain_cycle/*.py | head\necho \"=== run-log writer (ADR 0008) — how end-of-run counters/warnings go ===\"\ngrep -rnE \"def |warn|counter\" drain_cycle/runlog.py | head -20",
   "description": "Check logging facility and runlog API"
 }
 ```
@@ -3050,7 +3050,7 @@ tool_use Write
 id: toolu_01V4sZgR1U6rwFRegkSqbx4p
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/.worktrees/ABA-412/tests/swimlanes/test_degradation.py",
+  "file_path": "/home/<USER>/src/drain-cycle/.worktrees/ABA-412/tests/swimlanes/test_degradation.py",
   "content": "\"\"\"Marker degradation contracts (T3).\n\nTwo clean-degradation paths the swimlanes view must hold, both display-only and\nnon-gating (design-doc NFR-3):\n\n* **Marker-miss (old pack)** — an `exec-state.json` with phase sections but no\n  `_active` key falls back to the stream step path and never ages into a stale\n  warning.\n* **Stale marker (skill forgot to clear)** — a marker that stops updating while\n  the run is demonstrably live (``on_progress`` keeps firing) past the staleness\n  threshold dims the last-known active node and logs a single warning, never\n  blocking the run.\n\"\"\"\nfrom __future__ import annotations\n\nimport io\nimport json\nimport logging\n\nfrom drain_cycle import swimlanes\n\n\ndef _assistant_event(message_id: str, *blocks: dict) -> dict:\n    return {\"type\": \"assistant\", \"message\": {\"id\": message_id, \"content\": list(blocks)}}\n\n\ndef _skill(skill_name: str) -> dict:\n    return {\"type\": \"tool_use\", \"name\": \"Skill\", \"input\": {\"skill\": skill_name}}\n\n\ndef _write_marker(worktree, step: str, persona: str | None = None) -> None:\n    payload: dict = {\"_active\": {\"step\": step}}\n    if persona is not None:\n        payload[\"_active\"][\"persona\"] = persona\n    (worktree / \"exec-state.json\").write_text(json.dumps(payload))\n\n\ndef test_old_pack_without_marker_degrades_to_stream_and_never_stales(tmp_path):\n    # Old pack: a real exec-state.json carrying phase sections but no _active.\n    (tmp_path / \"exec-state.json\").write_text(\n        json.dumps({\"pickup\": {\"issue_id\": \"ABA-1\"}, \"build\": {\"slices\": []}})\n    )\n    err = io.StringIO()\n    renderer = swimlanes.StepRenderer(err, tty=True, worktree_path=tmp_path)\n    renderer.feed(_assistant_event(\"m1\", _skill(\"exec:build\")))\n    out = err.getvalue()\n    assert \"exec:build\" in out  # stream step depth survives\n    assert […]
 
 > TOOL
@@ -3058,7 +3058,7 @@ id: toolu_01V4sZgR1U6rwFRegkSqbx4p
 tool_result
 id: toolu_01V4sZgR1U6rwFRegkSqbx4p
 ```
-File created successfully at: /Users/anton/src/drain-cycle/.worktrees/ABA-412/tests/swimlanes/test_degradation.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/src/drain-cycle/.worktrees/ABA-412/tests/swimlanes/test_degradation.py (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3067,7 +3067,7 @@ tool_use Bash
 id: toolu_014aoquCqgJwWnMAJas73cAJ
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle/.worktrees/ABA-412\nuv run pytest tests/swimlanes/test_degradation.py -q 2>&1 | tail -12",
+  "command": "cd /home/<USER>/src/drain-cycle/.worktrees/ABA-412\nuv run pytest tests/swimlanes/test_degradation.py -q 2>&1 | tail -12",
   "description": "Confirm RED on degradation tests"
 }
 ```

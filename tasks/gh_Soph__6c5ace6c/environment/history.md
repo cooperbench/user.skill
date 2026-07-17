@@ -181,7 +181,7 @@ tool_use Read
 id: toolu_014WkoMgLAZjo27VQY6CRFCs
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/auth/auth.go"
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth.go"
 }
 ```
 
@@ -238,7 +238,7 @@ tool_use Read
 id: toolu_013dfnCT6X4YRvQXkt25riDz
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/auth/auth_test.go"
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth_test.go"
 }
 ```
 
@@ -340,7 +340,7 @@ tool_use Read
 id: toolu_011Gr1RRgjSVmAnAi8ABssMh
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/syncer/syncer.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/syncer/syncer.go",
   "offset": 700,
   "limit": 80
 }
@@ -432,7 +432,7 @@ tool_use Read
 id: toolu_01F1FQCFF57ER26ns96qjYdk
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/syncer/git_http_backend_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/syncer/git_http_backend_test.go",
   "offset": 770,
   "limit": 15
 }
@@ -471,7 +471,7 @@ id: toolu_01F5R2bgMZ1qxXdzDLs9pw87
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/auth/auth.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth.go",
   "old_string": "import (\n\t\"context\"\n\t\"fmt\"\n\t\"net/http\"\n\t\"net/url\"\n\t\"os/exec\"\n\t\"strings\"\n\n\ttransporthttp \"github.com/go-git/go-git/v6/plumbing/transport/http\"\n)",
   "new_string": "import (\n\t\"context\"\n\t\"fmt\"\n\t\"net/http\"\n\t\"net/url\"\n\t\"os\"\n\t\"os/exec\"\n\t\"strings\"\n\n\ttransporthttp \"github.com/go-git/go-git/v6/plumbing/transport/http\"\n)"
 }
@@ -482,7 +482,7 @@ id: toolu_01F5R2bgMZ1qxXdzDLs9pw87
 tool_result
 id: toolu_01F5R2bgMZ1qxXdzDLs9pw87
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/auth/auth.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -492,7 +492,7 @@ id: toolu_01UGp32ZArzR7WmDjrVM31Rh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/auth/auth.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth.go",
   "old_string": "// GitCredentialFillCommand is replaceable for testing.\nvar GitCredentialFillCommand = func(ctx context.Context, input string) ([]byte, error) {\n\tcmd := exec.CommandContext(ctx, \"git\", \"credential\", \"fill\")\n\tcmd.Stdin = strings.NewReader(input)\n\treturn cmd.Output()\n}",
   "new_string": "// GitCredentialFillCommand is replaceable for testing.\nvar GitCredentialFillCommand = func(ctx context.Context, input string) ([]byte, error) {\n\tcmd := exec.CommandContext(ctx, \"git\", \"credential\", \"fill\")\n\tcmd.Stdin = strings.NewReader(input)\n\t// Disable git's interactive terminal prompt fallback. When no credential\n\t// helper has credentials for the host (e.g. a public repo on a server\n\t// the user has never authenticated against), git would otherwise drop\n\t// to an interactive username/password prompt on stderr. git-sync is a\n\t// non-interactive tool — failing here lets us cleanly fall back to\n\t// anonymous access. See issue #63.\n\tcmd.Env = append(os.Environ(), \"GIT_TERMINAL_PROMPT=0\")\n\treturn cmd.Output()\n}"
 }
@@ -503,7 +503,7 @@ id: toolu_01UGp32ZArzR7WmDjrVM31Rh
 tool_result
 id: toolu_01UGp32ZArzR7WmDjrVM31Rh
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/auth/auth.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -516,7 +516,7 @@ tool_use Read
 id: toolu_01XiNacqBXPELf8tYNgo9RP3
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/syncer/syncer.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/syncer/syncer.go",
   "offset": 722,
   "limit": 25
 }
@@ -606,7 +606,7 @@ tool_use Read
 id: toolu_01VPCRJZ8RVZhYDwZP99UzzT
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/auth/auth_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth_test.go",
   "offset": 1,
   "limit": 20
 }
@@ -646,7 +646,7 @@ id: toolu_013aKgrtjYmxAEGkiWsPsZNB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/auth/auth_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth_test.go",
   "old_string": "import (\n\t\"context\"\n\t\"errors\"\n\t\"fmt\"\n\t\"net/url\"\n\t\"os\"\n\t\"path/filepath\"\n\t\"strconv\"\n\t\"strings\"\n\t\"testing\"\n\t\"time\"\n\n\t\"github.com/go-git/go-git/v6/plumbing/transport\"\n\ttransporthttp \"github.com/go-git/go-git/v6/plumbing/transport/http\"\n\t\"github.com/zalando/go-keyring\"\n)",
   "new_string": "import (\n\t\"context\"\n\t\"errors\"\n\t\"fmt\"\n\t\"net/url\"\n\t\"os\"\n\t\"os/exec\"\n\t\"path/filepath\"\n\t\"strconv\"\n\t\"strings\"\n\t\"testing\"\n\t\"time\"\n\n\t\"github.com/go-git/go-git/v6/plumbing/transport\"\n\ttransporthttp \"github.com/go-git/go-git/v6/plumbing/transport/http\"\n\t\"github.com/zalando/go-keyring\"\n)"
 }
@@ -657,7 +657,7 @@ id: toolu_013aKgrtjYmxAEGkiWsPsZNB
 tool_result
 id: toolu_013aKgrtjYmxAEGkiWsPsZNB
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/auth/auth_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -667,7 +667,7 @@ id: toolu_01QwSzZPLTc5ju3CM5nndaFz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/auth/auth_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth_test.go",
   "old_string": "func TestCredentialService(t *testing.T) {",
   "new_string": "// TestGitCredentialFillNoTerminalPrompt verifies that the default\n// GitCredentialFillCommand does not fall back to an interactive terminal\n// prompt when no credential helper has credentials. Regression test for\n// issue #63 — git-sync would prompt for username/password on stderr when\n// syncing from a public repo on a host the user had not authenticated\n// against.\nfunc TestGitCredentialFillNoTerminalPrompt(t *testing.T) {\n\tif _, err := exec.LookPath(\"git\"); err != nil {\n\t\tt.Skip(\"git not installed\")\n\t}\n\n\t// Isolate from system and user git config so no credential.helper is\n\t// picked up from the test environment.\n\ttmpHome := t.TempDir()\n\tt.Setenv(\"HOME\", tmpHome)\n\tt.Setenv(\"XDG_CONFIG_HOME\", tmpHome)\n\tt.Setenv(\"GIT_CONFIG_NOSYSTEM\", \"1\")\n\tt.Setenv(\"GIT_CONFIG_GLOBAL\", filepath.Join(tmpHome, \"gitconfig-empty\"))\n\n\tctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)\n\tdefer cancel()\n\n\tinput := \"protocol=https\\nhost=test-git-sync.example.invalid\\n\\n\"\n\t_, err := GitCredentialFillCommand(ctx, input)\n\tif err == nil {\n\t\tt.Fatal(\"expected error when no credential helper is configured, got nil — git may have prompted or filled credentials unexpectedly\")\n\t}\n\tif ctx.Err() != nil {\n\t\tt.Fatal(\"git credential fill timed out — likely blocking on a terminal prompt instead of failing fast\")\n\t}\n}\n\nfunc TestCredentialService(t *testing.T) {"
 }
@@ -678,7 +678,7 @@ id: toolu_01QwSzZPLTc5ju3CM5nndaFz
 tool_result
 id: toolu_01QwSzZPLTc5ju3CM5nndaFz
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/auth/auth_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -726,7 +726,7 @@ id: toolu_012qKjYFkxgByez24HBC3TVp
 err: exit status 128
 out: 
 ctx.Err: <nil>
-Shell cwd was reset to /Users/soph/Work/entire/devenv/git-sync
+Shell cwd was reset to /home/<USER>/Work/entire/devenv/git-sync
 ```
 
 > AGENT
@@ -740,7 +740,7 @@ id: toolu_01UigmLBLPeNo3dhiVn3pM5y
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/auth/auth.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth.go",
   "old_string": "// GitCredentialFillCommand is replaceable for testing.\nvar GitCredentialFillCommand = func(ctx context.Context, input string) ([]byte, error) {\n\tcmd := exec.CommandContext(ctx, \"git\", \"credential\", \"fill\")\n\tcmd.Stdin = strings.NewReader(input)\n\t// Disable git's interactive terminal prompt fallback. When no credential\n\t// helper has credentials for the host (e.g. a public repo on a server\n\t// the user has never authenticated against), git would otherwise drop\n\t// to an interactive username/password prompt on stderr. git-sync is a\n\t// non-interactive tool — failing here lets us cleanly fall back to\n\t// anonymous access. See issue #63.\n\tcmd.Env = append(os.Environ(), \"GIT_TERMINAL_PROMPT=0\")\n\treturn cmd.Output()\n}",
   "new_string": "// newCredentialFillCmd builds the `git credential fill` invocation used by\n// GitCredentialFillCommand. Extracted so tests can inspect the command's\n// environment without exec'ing git.\nfunc newCredentialFillCmd(ctx context.Context, input string) *exec.Cmd {\n\tcmd := exec.CommandContext(ctx, \"git\", \"credential\", \"fill\")\n\tcmd.Stdin = strings.NewReader(input)\n\t// Disable git's interactive terminal prompt fallback. When no credential\n\t// helper has credentials for the host (e.g. a public repo on a server\n\t// the user has never authenticated against), git would otherwise drop\n\t// to an interactive username/password prompt on /dev/tty. git-sync is a\n\t// non-interactive tool — failing here lets us cleanly fall back to\n\t// anonymous access. See issue #63.\n\tcmd.Env = append(os.Environ(), \"GIT_TERMINAL_PROMPT=0\")\n\treturn cmd\n}\n\n// GitCredentialFillCommand is replaceable for testing.\nvar GitCredentialFillCommand = […]
 
@@ -749,7 +749,7 @@ id: toolu_01UigmLBLPeNo3dhiVn3pM5y
 tool_result
 id: toolu_01UigmLBLPeNo3dhiVn3pM5y
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/auth/auth.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -759,7 +759,7 @@ id: toolu_01Ggvs6jMyYGQaYWCiWtGuwY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/auth/auth_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth_test.go",
   "old_string": "// TestGitCredentialFillNoTerminalPrompt verifies that the default\n// GitCredentialFillCommand does not fall back to an interactive terminal\n// prompt when no credential helper has credentials. Regression test for\n// issue #63 — git-sync would prompt for username/password on stderr when\n// syncing from a public repo on a host the user had not authenticated\n// against.\nfunc TestGitCredentialFillNoTerminalPrompt(t *testing.T) {\n\tif _, err := exec.LookPath(\"git\"); err != nil {\n\t\tt.Skip(\"git not installed\")\n\t}\n\n\t// Isolate from system and user git config so no credential.helper is\n\t// picked up from the test environment.\n\ttmpHome := t.TempDir()\n\tt.Setenv(\"HOME\", tmpHome)\n\tt.Setenv(\"XDG_CONFIG_HOME\", tmpHome)\n\tt.Setenv(\"GIT_CONFIG_NOSYSTEM\", \"1\")\n\tt.Setenv(\"GIT_CONFIG_GLOBAL\", filepath.Join(tmpHome, \"gitconfig-empty\"))\n\n\tctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)\n\tdefer cancel()\n\n\tinput := \"protocol=https\\nhost=test-git-sync.example.invalid\\n\\n\"\n\t_, err := GitCredentialFillCommand(ctx, input)\n\tif err == nil {\n\t\tt.Fatal(\"expected error when no credential helper is configured, got nil — git may have prompted or filled credentials unexpectedly\")\n\t}\n\tif ctx.Err() != nil {\n\t\tt.Fatal(\"git credential fill timed out — likely blocking on a terminal prompt instead of failing fast\")\n\t}\n}",
   "new_string": "// TestCredentialFillCmdDisablesTerminalPrompt verifies that the git\n// credential fill invocation sets GIT_TERMINAL_PROMPT=0. Without this,\n// git falls back to an interactive username/password prompt on /dev/tty\n// when no credential helper has credentials — turning git-sync into an\n// interactive command. Regression test for issue #63.\nfunc TestCredentialFillCmdDisablesTerminalPrompt(t *testing.T) {\n\tcmd := newCredentialFillCmd(context.Background(), \"protocol=https\\nhost=example.com\\n\\n\")\n\n\tvar found bool\n\tfor […]
 
@@ -768,7 +768,7 @@ id: toolu_01Ggvs6jMyYGQaYWCiWtGuwY
 tool_result
 id: toolu_01Ggvs6jMyYGQaYWCiWtGuwY
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/auth/auth_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -782,7 +782,7 @@ id: toolu_01BDXF7eQ4E36dquMecSpcAp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/auth/auth_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth_test.go",
   "old_string": "\t\"os\"\n\t\"os/exec\"\n\t\"path/filepath\"",
   "new_string": "\t\"os\"\n\t\"path/filepath\""
 }
@@ -793,7 +793,7 @@ id: toolu_01BDXF7eQ4E36dquMecSpcAp
 tool_result
 id: toolu_01BDXF7eQ4E36dquMecSpcAp
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/auth/auth_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -902,7 +902,7 @@ tool_use Read
 id: toolu_014YAtuEg94XakoXfv3BWH1K
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/syncer/syncer.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/syncer/syncer.go",
   "offset": 355,
   "limit": 60
 }
@@ -1044,7 +1044,7 @@ tool_use Read
 id: toolu_0158VCASvohpXtKJUL1hkdhh
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/smarthttp.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/smarthttp.go",
   "offset": 60,
   "limit": 90
 }
@@ -1109,7 +1109,7 @@ tool_use Read
 id: toolu_017MpNVdjsk3Lvod1VvQtGLd
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/smarthttp.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/smarthttp.go",
   "offset": 260,
   "limit": 60
 }
@@ -1184,7 +1184,7 @@ tool_use Read
 id: toolu_01KX5NMF7FD1KHJ2RW62JcYQ
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/auth/auth.go"
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth.go"
 }
 ```
 
@@ -1358,7 +1358,7 @@ tool_use Read
 id: toolu_01WAUCbaC5DNpew41jdeQs7b
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/smarthttp.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/smarthttp.go",
   "offset": 154,
   "limit": 100
 }
@@ -1655,7 +1655,7 @@ tool_use Read
 id: toolu_01BdoghZzaDwDGw9cwCwRFTV
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/auth/auth_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth_test.go",
   "offset": 225,
   "limit": 100
 }
@@ -1730,7 +1730,7 @@ id: toolu_01BXFtn8bcNttsrfHoLemmEe
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/auth/auth_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth_test.go",
   "old_string": "func TestResolve(t *testing.T) {\n\tep, err := transport.ParseURL(\"https://example.com/repo.git\")\n\tif err != nil {\n\t\tt.Fatal(err)\n\t}\n\n\tsshEP := &url.URL{Scheme: \"ssh\", Host: \"example.com\", Path: \"/repo.git\"}\n\n\ttests := []struct {\n\t\tname     string\n\t\traw      Endpoint\n\t\tep       *url.URL\n\t\tmockCred func(ctx context.Context, input string) ([]byte, error)\n\t\twantType string // \"token\", \"basic\", \"nil\"\n\t\twantUser string\n\t\twantPass string\n\t\twantErr  bool\n\t}{\n\t\t{\n\t\t\tname:     \"bearer token set returns TokenAuth\",\n\t\t\traw:      Endpoint{BearerToken: \"my-bearer\"},\n\t\t\tep:       ep,\n\t\t\twantType: \"token\",\n\t\t\twantPass: \"my-bearer\",\n\t\t},\n\t\t{\n\t\t\tname:     \"token with username returns BasicAuth\",\n\t\t\traw:      Endpoint{Token: \"my-token\", Username: \"alice\"},\n\t\t\tep:       ep,\n\t\t\twantType: \"basic\",\n\t\t\twantUser: \"alice\",\n\t\t\twantPass: \"my-token\",\n\t\t},\n\t\t{\n\t\t\tname:     \"token without username returns BasicAuth with git\",\n\t\t\traw:      Endpoint{Token: \"my-token\"},\n\t\t\tep:       ep,\n\t\t\twantType: \"basic\",\n\t\t\twantUser: \"git\",\n\t\t\twantPass: \"my-token\",\n\t\t},\n\t\t{\n\t\t\tname:     \"nothing set non-HTTP endpoint returns nil\",\n\t\t\traw:      Endpoint{},\n\t\t\tep:       sshEP,\n\t\t\twantType: \"nil\",\n\t\t},\n\t\t{\n\t\t\tname: \"nothing set HTTP endpoint no credential helper returns nil\",\n\t\t\traw:  Endpoint{},\n\t\t\tep:   ep,\n\t\t\tmockCred: func(_ context.Context, _ string) ([]byte, error) {\n\t\t\t\treturn nil, errors.New(\"no helper\")\n\t\t\t},\n\t\t\twantType: \"nil\",\n\t\t},\n\t}\n\n\tfor _, tt := range tests {\n\t\tt.Run(tt.name, func(t *testing.T) {\n\t\t\t// Save and restore GitCredentialFillCommand.\n\t\t\torigCmd := GitCredentialFillCommand\n\t\t\tdefer func() { GitCredentialFillCommand = origCmd }()\n\n\t\t\tif tt.mockCred != nil {\n\t\t\t\tGitCredentialFillCommand = tt.mockCred\n\t\t\t} else {\n\t\t\t\t// Default mock: no credential helper.\n\t\t\t\tGitCredentialFillCommand = func(_ context.Context, _ string) ([]byte, error) {\n\t\t\t\t\treturn nil, errors.New(\"no helper\")\n\t\t\t\t}\n\t\t\t}\n\n\t\t\t// Also ensure ENTIRE_CONFIG_DIR points nowhere so EntireDB lookup\n\t\t\t// doesn't find anything.\n\t\t\tt.Setenv(\"ENTIRE_CONFIG_DIR\", t.TempDir())",
   "new_string": "func TestResolve(t *testing.T) {\n\tep, err := transport.ParseURL(\"https://example.com/repo.git\")\n\tif err != nil {\n\t\tt.Fatal(err)\n\t}\n\n\tsshEP := &url.URL{Scheme: \"ssh\", Host: \"example.com\", Path: \"/repo.git\"}\n\n\ttests := []struct {\n\t\tname     string\n\t\traw      Endpoint\n\t\tep       *url.URL\n\t\twantType string // […]
 
@@ -1739,7 +1739,7 @@ id: toolu_01BXFtn8bcNttsrfHoLemmEe
 tool_result
 id: toolu_01BXFtn8bcNttsrfHoLemmEe
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/auth/auth_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1748,7 +1748,7 @@ tool_use Read
 id: toolu_01UbbpiwUcHuAswWMTSFXFqg
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/auth/auth_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth_test.go",
   "offset": 325,
   "limit": 50
 }
@@ -1821,7 +1821,7 @@ tool_use Read
 id: toolu_011R9oT5Ci7cPU6dFNg2PqEp
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/auth/auth_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth_test.go",
   "offset": 122,
   "limit": 75
 }
@@ -1899,7 +1899,7 @@ id: toolu_01BkmnBrQFaxkpYGWxerRtfw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/auth/auth_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth_test.go",
   "old_string": "func TestCredentialFillInput(t *testing.T) {\n\tep := &url.URL{\n\t\tScheme: \"https\",\n\t\tHost:   \"github.com\",\n\t\tPath:   \"/owner/repo.git\",\n\t\tUser:   url.User(\"myuser\"),\n\t}\n\n\tgot := credentialFillInput(ep)\n\twant := \"protocol=https\\nhost=github.com\\npath=owner/repo.git\\nusername=myuser\\n\\n\"\n\tif got != want {\n\t\tt.Errorf(\"credentialFillInput returned:\\n%q\\nwant:\\n%q\", got, want)\n\t}\n}\n\nfunc TestCredentialFillInputNilEndpoint(t *testing.T) {\n\tgot := credentialFillInput(nil)\n\tif got != \"\" {\n\t\tt.Errorf(\"expected empty string for nil endpoint, got %q\", got)\n\t}\n}\n\nfunc TestCredentialFillInputEmptyHost(t *testing.T) {\n\tep := &url.URL{Scheme: \"https\"}\n\tgot := credentialFillInput(ep)\n\tif got != \"\" {\n\t\tt.Errorf(\"expected empty string for empty host, got %q\", got)\n\t}\n}\n\nfunc TestCredentialFillInputNoUser(t *testing.T) {\n\tep := &url.URL{\n\t\tScheme: \"https\",\n\t\tHost:   \"example.com\",\n\t\tPath:   \"/repo.git\",\n\t}\n\tgot := credentialFillInput(ep)\n\twant := \"protocol=https\\nhost=example.com\\npath=repo.git\\n\\n\"\n\tif got != want {\n\t\tt.Errorf(\"credentialFillInput returned:\\n%q\\nwant:\\n%q\", got, want)\n\t}\n}",
   "new_string": "func TestCredentialInput_FillQueryWithEmbeddedUser(t *testing.T) {\n\tep := &url.URL{\n\t\tScheme: \"https\",\n\t\tHost:   \"github.com\",\n\t\tPath:   \"/owner/repo.git\",\n\t\tUser:   url.User(\"myuser\"),\n\t}\n\n\tgot := credentialInput(ep, \"\", \"\")\n\twant := \"protocol=https\\nhost=github.com\\npath=owner/repo.git\\nusername=myuser\\n\\n\"\n\tif got != want {\n\t\tt.Errorf(\"credentialInput returned:\\n%q\\nwant:\\n%q\", got, want)\n\t}\n}\n\nfunc TestCredentialInput_NilEndpoint(t *testing.T) {\n\tgot := credentialInput(nil, \"\", \"\")\n\tif got != \"\" {\n\t\tt.Errorf(\"expected empty string for nil endpoint, got %q\", got)\n\t}\n}\n\nfunc TestCredentialInput_EmptyHost(t *testing.T) {\n\tep := &url.URL{Scheme: \"https\"}\n\tgot := credentialInput(ep, \"\", \"\")\n\tif got != \"\" {\n\t\tt.Errorf(\"expected empty string for empty host, got %q\", got)\n\t}\n}\n\nfunc TestCredentialInput_FillQueryNoUser(t *testing.T) {\n\tep := &url.URL{\n\t\tScheme: \"https\",\n\t\tHost:   \"example.com\",\n\t\tPath:   \"/repo.git\",\n\t}\n\tgot := credentialInput(ep, \"\", \"\")\n\twant := \"protocol=https\\nhost=example.com\\npath=repo.git\\n\\n\"\n\tif got != want {\n\t\tt.Errorf(\"credentialInput returned:\\n%q\\nwant:\\n%q\", got, want)\n\t}\n}\n\nfunc TestCredentialInput_ApproveRejectFormatIncludesUserAndPassword(t *testing.T) {\n\tep := &url.URL{\n\t\tScheme: \"https\",\n\t\tHost:   \"example.com\",\n\t\tPath:   \"/owner/repo.git\",\n\t}\n\tgot := credentialInput(ep, \"alice\", \"s3cret\")\n\twant := \"protocol=https\\nhost=example.com\\npath=owner/repo.git\\nusername=alice\\npassword=s3cret\\n\\n\"\n\tif got != want {\n\t\tt.Errorf(\"credentialInput returned:\\n%q\\nwant:\\n%q\", got, want)\n\t}\n}\n\nfunc TestCredentialInput_ExplicitUserOverridesURLUser(t *testing.T) {\n\tep := &url.URL{\n\t\tScheme: […]
 
@@ -1908,7 +1908,7 @@ id: toolu_01BkmnBrQFaxkpYGWxerRtfw
 tool_result
 id: toolu_01BkmnBrQFaxkpYGWxerRtfw
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/auth/auth_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1965,7 +1965,7 @@ tool_use Read
 id: toolu_01LhxhVbCkJZSMmfyTHeaoGA
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/auth/auth_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth_test.go",
   "offset": 418,
   "limit": 20
 }
@@ -2005,7 +2005,7 @@ id: toolu_01SCZ8cZxeCZQYTvpsaqd9oY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/auth/auth_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth_test.go",
   "old_string": "\t\t\t\tif ba.Password != tt.wantPass {\n\t\t\t\t\tt.Errorf(\"password = %q, want %q\", ba.Password, tt.wantPass)\n\t\t\t\t}\n\t\t\t}\n\t\t})\n\t}\n}\n\nfunc TestEndpointBaseURL(t *testing.T) {",
   "new_string": "\t\t\t\tif ba.Password != tt.wantPass {\n\t\t\t\t\tt.Errorf(\"password = %q, want %q\", ba.Password, tt.wantPass)\n\t\t\t\t}\n\t\t\t}\n\t\t})\n\t}\n}\n\n// recordedCredCall captures one invocation of GitCredentialCommand for assertion.\ntype recordedCredCall struct {\n\top    string\n\tinput string\n}\n\n// withRecordingHelper replaces GitCredentialCommand with one that appends\n// each call to calls and delegates to handler for the response.\nfunc withRecordingHelper(t *testing.T, calls *[]recordedCredCall, handler func(op, input string) ([]byte, error)) {\n\tt.Helper()\n\torig := GitCredentialCommand\n\tt.Cleanup(func() { GitCredentialCommand = orig })\n\tGitCredentialCommand = func(_ context.Context, op, input string) ([]byte, error) {\n\t\t*calls = append(*calls, recordedCredCall{op: op, input: input})\n\t\tif handler == nil {\n\t\t\treturn nil, nil\n\t\t}\n\t\treturn handler(op, input)\n\t}\n}\n\nfunc TestGitCredentialHelper_Lookup_ReturnsCredentials(t *testing.T) {\n\tep := &url.URL{Scheme: \"https\", Host: \"example.com\", Path: \"/owner/repo.git\"}\n\tvar calls []recordedCredCall\n\twithRecordingHelper(t, &calls, func(op, _ string) ([]byte, error) {\n\t\tif op != \"fill\" {\n\t\t\tt.Fatalf(\"expected fill, got %q\", op)\n\t\t}\n\t\treturn []byte(\"username=alice\\npassword=s3cret\\n\"), nil\n\t})\n\n\tuser, pass, ok, err := GitCredentialHelper{}.Lookup(context.Background(), ep)\n\tif err != nil {\n\t\tt.Fatalf(\"unexpected error: %v\", err)\n\t}\n\tif !ok {\n\t\tt.Fatal(\"expected ok=true\")\n\t}\n\tif user != \"alice\" || pass != \"s3cret\" {\n\t\tt.Errorf(\"got user=%q pass=%q, want alice/s3cret\", user, pass)\n\t}\n\tif len(calls) != 1 {\n\t\tt.Fatalf(\"expected 1 helper call, got %d\", len(calls))\n\t}\n\tif !strings.Contains(calls[0].input, \"protocol=https\\nhost=example.com\\n\") {\n\t\tt.Errorf(\"fill input missing host/protocol:\\n%q\", calls[0].input)\n\t}\n}\n\nfunc TestGitCredentialHelper_Lookup_HelperFailsReturnsNotFound(t *testing.T) {\n\tep := &url.URL{Scheme: \"https\", Host: \"example.com\"}\n\twithRecordingHelper(t, new([]recordedCredCall), func(_, _ string) ([]byte, error) {\n\t\treturn […]
 
@@ -2014,7 +2014,7 @@ id: toolu_01SCZ8cZxeCZQYTvpsaqd9oY
 tool_result
 id: toolu_01SCZ8cZxeCZQYTvpsaqd9oY
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/auth/auth_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2082,7 +2082,7 @@ tool_use Read
 id: toolu_01K1EUXhXzask6hmn8KG8Gcm
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/auth/auth.go"
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth.go"
 }
 ```
 
@@ -2139,7 +2139,7 @@ tool_use Write
 id: toolu_018As3e7KpgfdDz68wB6kZG2
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/auth/auth.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth.go",
   "content": "package auth\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\t\"net/http\"\n\t\"net/url\"\n\t\"os\"\n\t\"os/exec\"\n\t\"strings\"\n\n\ttransporthttp \"github.com/go-git/go-git/v6/plumbing/transport/http\"\n)\n\nconst defaultGitUsername = \"git\"\n\n// Method authorizes outbound HTTP requests for a remote. It is satisfied\n// by *transporthttp.BasicAuth and *transporthttp.TokenAuth, whose Authorizer\n// methods replaced the Method interface that go-git removed in v6 alpha.2.\ntype Method interface {\n\tAuthorizer(req *http.Request) error\n}\n\n// Endpoint holds the authentication-related fields for a remote.\ntype Endpoint struct {\n\tUsername      string\n\tToken         string\n\tBearerToken   string\n\tSkipTLSVerify bool\n}\n\n// Resolve resolves the auth method for the given endpoint configuration.\n// Order: explicit flags → Entire DB token → anonymous (with the git credential\n// helper deferred until the server returns 401, matching git's own behaviour).\nfunc Resolve(raw Endpoint, ep *url.URL) (Method, error) {\n\tif auth := explicitAuth(raw); auth != nil {\n\t\treturn auth, nil\n\t}\n\tif ep == nil {\n\t\treturn nil, nil //nolint:nilnil // nil signals no auth method found at this stage\n\t}\n\tif ep.Scheme != \"http\" && ep.Scheme != \"https\" {\n\t\treturn nil, nil //nolint:nilnil // nil signals no auth method found at this stage\n\t}\n\tif username, password, ok, err := LookupEntireDBCredential(raw, ep); err != nil {\n\t\treturn nil, err // issue #7: surface refresh failure explicitly\n\t} else if ok {\n\t\treturn &transporthttp.BasicAuth{Username: username, Password: password}, nil\n\t}\n\t// Note: we deliberately do not consult the git credential helper here.\n\t// Doing so eagerly would leak stored credentials to […]
 
 > TOOL
@@ -2147,7 +2147,7 @@ id: toolu_018As3e7KpgfdDz68wB6kZG2
 tool_result
 id: toolu_018As3e7KpgfdDz68wB6kZG2
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/auth/auth.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2225,7 +2225,7 @@ tool_use Read
 id: toolu_018yxAPeJAaZBXWSgi5Dvm51
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/syncer/auth_test.go"
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/syncer/auth_test.go"
 }
 ```
 
@@ -2299,7 +2299,7 @@ id: toolu_01KPDuEBeAHCDWzFfCw4XvWF
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/syncer/auth_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/syncer/auth_test.go",
   "old_string": "\toriginalFill := auth.GitCredentialFillCommand\n\tt.Cleanup(func() { auth.GitCredentialFillCommand = originalFill })\n\tauth.GitCredentialFillCommand = func(_ context.Context, input string) ([]byte, error) {\n\t\tt.Fatalf(\"unexpected git credential fill call with input %q\", input)\n\t\treturn nil, nil\n\t}",
   "new_string": "\toriginalCred := auth.GitCredentialCommand\n\tt.Cleanup(func() { auth.GitCredentialCommand = originalCred })\n\tauth.GitCredentialCommand = func(_ context.Context, op, input string) ([]byte, error) {\n\t\tt.Fatalf(\"unexpected git credential %s call with input %q\", op, input)\n\t\treturn nil, nil\n\t}"
 }
@@ -2310,7 +2310,7 @@ id: toolu_01KPDuEBeAHCDWzFfCw4XvWF
 tool_result
 id: toolu_01KPDuEBeAHCDWzFfCw4XvWF
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/syncer/auth_test.go has been updated. All occurrences were successfully replaced. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/syncer/auth_test.go has been updated. All occurrences were successfully replaced. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2319,7 +2319,7 @@ tool_use Read
 id: toolu_01Hg7mcUdMLGAwpf2f6QA8Jd
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/syncer/integration_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/syncer/integration_test.go",
   "offset": 1695,
   "limit": 30
 }
@@ -2368,7 +2368,7 @@ tool_use Read
 id: toolu_01RmGF5CKYNjk6eg4Wdrwwwc
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/syncer/integration_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/syncer/integration_test.go",
   "offset": 1668,
   "limit": 75
 }
@@ -2435,7 +2435,7 @@ id: toolu_0159A6bivDQ8i3uAAuGcfcgQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/syncer/integration_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/syncer/integration_test.go",
   "old_string": "\toriginalFill := auth.GitCredentialFillCommand\n\tt.Cleanup(func() {\n\t\tauth.GitCredentialFillCommand = originalFill\n\t})\n\tauth.GitCredentialFillCommand = func(_ context.Context, input string) ([]byte, error) {\n\t\tif !strings.Contains(input, \"protocol=http\\n\") {\n\t\t\tt.Fatalf(\"expected protocol in credential input, got %q\", input)\n\t\t}\n\t\tif !strings.Contains(input, \"host=\") {\n\t\t\tt.Fatalf(\"expected host in credential input, got %q\", input)\n\t\t}\n\t\tif !strings.Contains(input, \"path=repo.git\\n\") {\n\t\t\tt.Fatalf(\"expected repo path in credential input, got %q\", input)\n\t\t}\n\t\treturn []byte(\"username=\" + username + \"\\npassword=\" + password + \"\\n\\n\"), nil\n\t}",
   "new_string": "\toriginalCred := auth.GitCredentialCommand\n\tt.Cleanup(func() {\n\t\tauth.GitCredentialCommand = originalCred\n\t})\n\tauth.GitCredentialCommand = func(_ context.Context, op, input string) ([]byte, error) {\n\t\tif !strings.Contains(input, \"protocol=http\\n\") {\n\t\t\tt.Fatalf(\"expected protocol in credential input, got %q\", input)\n\t\t}\n\t\tif !strings.Contains(input, \"host=\") {\n\t\t\tt.Fatalf(\"expected host in credential input, got %q\", input)\n\t\t}\n\t\tif !strings.Contains(input, \"path=repo.git\\n\") {\n\t\t\tt.Fatalf(\"expected repo path in credential input, got %q\", input)\n\t\t}\n\t\tswitch op {\n\t\tcase \"fill\":\n\t\t\treturn []byte(\"username=\" + username + \"\\npassword=\" + password + \"\\n\\n\"), nil\n\t\tcase \"approve\", \"reject\":\n\t\t\t// Best-effort signaling — accept and return empty.\n\t\t\treturn nil, nil\n\t\tdefault:\n\t\t\tt.Fatalf(\"unexpected git credential op %q\", op)\n\t\t\treturn nil, nil\n\t\t}\n\t}"
 }
@@ -2446,7 +2446,7 @@ id: toolu_0159A6bivDQ8i3uAAuGcfcgQ
 tool_result
 id: toolu_0159A6bivDQ8i3uAAuGcfcgQ
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/syncer/integration_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/syncer/integration_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2563,7 +2563,7 @@ tool_use Read
 id: toolu_01A8u2sBp65LtwgUkmGuCXzC
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/smarthttp_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/smarthttp_test.go",
   "offset": 1,
   "limit": 75
 }
@@ -2670,7 +2670,7 @@ tool_use Read
 id: toolu_01H71J1iNtu2DPTmXaV83KuU
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/smarthttp_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/smarthttp_test.go",
   "offset": 440,
   "limit": 25
 }
@@ -2719,7 +2719,7 @@ id: toolu_01DJBGsvzvDw77oe5B8GaBBt
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Web/entire/devenv/git-sync/internal/gitproto/smarthttp_test.go",
+  "file_path": "/home/<USER>/Web/entire/devenv/git-sync/internal/gitproto/smarthttp_test.go",
   "old_string": "type roundTripperFunc func(*http.Request) (*http.Response, error)\n\nfunc (f roundTripperFunc) RoundTrip(req *http.Request) (*http.Response, error) {\n\treturn f(req)\n}",
   "new_string": "type roundTripperFunc func(*http.Request) (*http.Response, error)\n\nfunc (f roundTripperFunc) RoundTrip(req *http.Request) (*http.Response, error) {\n\treturn f(req)\n}\n\n// fakeCredentialHelper is a CredentialHelper used in tests. Configure lookup\n// behaviour via lookupUser/lookupPass/lookupOK/lookupErr; the call counters\n// let tests assert the helper's Approve/Reject lifecycle was driven correctly.\ntype fakeCredentialHelper struct {\n\tlookupUser string\n\tlookupPass string\n\tlookupOK   bool\n\tlookupErr  error\n\n\tlookupCalls  int\n\tapproveCalls int\n\trejectCalls  int\n\n\tlastApproveUser, lastApprovePass string\n\tlastRejectUser, lastRejectPass   string\n}\n\nfunc (h *fakeCredentialHelper) Lookup(_ context.Context, _ *url.URL) (string, string, bool, error) {\n\th.lookupCalls++\n\treturn h.lookupUser, h.lookupPass, h.lookupOK, h.lookupErr\n}\n\nfunc (h *fakeCredentialHelper) Approve(_ context.Context, _ *url.URL, user, pass string) {\n\th.approveCalls++\n\th.lastApproveUser, h.lastApprovePass = user, pass\n}\n\nfunc (h *fakeCredentialHelper) Reject(_ context.Context, _ *url.URL, user, pass string) {\n\th.rejectCalls++\n\th.lastRejectUser, h.lastRejectPass = user, pass\n}"
 }
@@ -2730,7 +2730,7 @@ id: toolu_01DJBGsvzvDw77oe5B8GaBBt
 tool_result ERROR
 id: toolu_01DJBGsvzvDw77oe5B8GaBBt
 ```
-<tool_use_error>File does not exist. Note: your current working directory is /Users/soph/Work/entire/devenv/git-sync.</tool_use_error>
+<tool_use_error>File does not exist. Note: your current working directory is /home/<USER>/Work/entire/devenv/git-sync.</tool_use_error>
 ```
 
 > TOOL
@@ -2740,7 +2740,7 @@ id: toolu_01Ru8KhQo24FBVpg26skSUQi
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/smarthttp_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/smarthttp_test.go",
   "old_string": "type roundTripperFunc func(*http.Request) (*http.Response, error)\n\nfunc (f roundTripperFunc) RoundTrip(req *http.Request) (*http.Response, error) {\n\treturn f(req)\n}",
   "new_string": "type roundTripperFunc func(*http.Request) (*http.Response, error)\n\nfunc (f roundTripperFunc) RoundTrip(req *http.Request) (*http.Response, error) {\n\treturn f(req)\n}\n\n// fakeCredentialHelper is a CredentialHelper used in tests. Configure lookup\n// behaviour via lookupUser/lookupPass/lookupOK/lookupErr; the call counters\n// let tests assert the helper's Approve/Reject lifecycle was driven correctly.\ntype fakeCredentialHelper struct {\n\tlookupUser string\n\tlookupPass string\n\tlookupOK   bool\n\tlookupErr  error\n\n\tlookupCalls  int\n\tapproveCalls int\n\trejectCalls  int\n\n\tlastApproveUser, lastApprovePass string\n\tlastRejectUser, lastRejectPass   string\n}\n\nfunc (h *fakeCredentialHelper) Lookup(_ context.Context, _ *url.URL) (string, string, bool, error) {\n\th.lookupCalls++\n\treturn h.lookupUser, h.lookupPass, h.lookupOK, h.lookupErr\n}\n\nfunc (h *fakeCredentialHelper) Approve(_ context.Context, _ *url.URL, user, pass string) {\n\th.approveCalls++\n\th.lastApproveUser, h.lastApprovePass = user, pass\n}\n\nfunc (h *fakeCredentialHelper) Reject(_ context.Context, _ *url.URL, user, pass string) {\n\th.rejectCalls++\n\th.lastRejectUser, h.lastRejectPass = user, pass\n}"
 }
@@ -2751,7 +2751,7 @@ id: toolu_01Ru8KhQo24FBVpg26skSUQi
 tool_result
 id: toolu_01Ru8KhQo24FBVpg26skSUQi
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/gitproto/smarthttp_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/smarthttp_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2765,7 +2765,7 @@ id: toolu_01JuH5VWEKTDHiDZjSTiTizR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Web/entire/devenv/git-sync/internal/gitproto/smarthttp_test.go",
+  "file_path": "/home/<USER>/Web/entire/devenv/git-sync/internal/gitproto/smarthttp_test.go",
   "old_string": "type roundTripperFunc func(*http.Request) (*http.Response, error)",
   "new_string": "// newAdvertisementResponse returns a 200 response shaped like a smart-HTTP\n// /info/refs advertisement, suitable for round-tripper fakes.\nfunc newAdvertisementResponse(req *http.Request, service string) *http.Response {\n\tres := &http.Response{\n\t\tStatusCode: http.StatusOK,\n\t\tRequest:    req,\n\t\tHeader:     make(http.Header),\n\t\tBody:       io.NopCloser(strings.NewReader(\"0000\")),\n\t}\n\tres.Header.Set(\"Content-Type\", \"application/x-\"+service+\"-advertisement\")\n\treturn res\n}\n\nfunc newUnauthorizedResponse(req *http.Request) *http.Response {\n\tres := &http.Response{\n\t\tStatusCode: http.StatusUnauthorized,\n\t\tRequest:    req,\n\t\tHeader:     make(http.Header),\n\t\tBody:       io.NopCloser(strings.NewReader(\"authentication required\")),\n\t}\n\tres.Header.Set(\"WWW-Authenticate\", `Basic realm=\"git\"`)\n\treturn res\n}\n\n// TestRequestInfoRefs_AnonymousSucceedsWithoutConsultingHelper verifies the\n// happy path: when the server accepts an unauthenticated request, we never\n// touch the credential helper.\nfunc TestRequestInfoRefs_AnonymousSucceedsWithoutConsultingHelper(t *testing.T) {\n\thelper := &fakeCredentialHelper{lookupOK: true, lookupUser: \"x\", lookupPass: \"y\"}\n\tvar authHeaders []string\n\tconn := NewHTTPConn(\n\t\t&url.URL{Scheme: \"https\", Host: \"example.com\", Path: \"/repo.git\"},\n\t\t\"src\", nil,\n\t\troundTripperFunc(func(req *http.Request) (*http.Response, error) {\n\t\t\tauthHeaders = append(authHeaders, req.Header.Get(\"Authorization\"))\n\t\t\treturn newAdvertisementResponse(req, \"git-upload-pack\"), nil\n\t\t}),\n\t)\n\tconn.CredentialHelper = helper\n\n\tif _, err := conn.RequestInfoRefs(context.Background(), \"git-upload-pack\", \"\"); err != nil {\n\t\tt.Fatalf(\"RequestInfoRefs: %v\", err)\n\t}\n\tif helper.lookupCalls != 0 {\n\t\tt.Errorf(\"expected 0 helper lookups on anonymous success, got %d\", helper.lookupCalls)\n\t}\n\tif len(authHeaders) != 1 || authHeaders[0] != \"\" {\n\t\tt.Errorf(\"expected exactly one anonymous request, got headers %v\", authHeaders)\n\t}\n}\n\n// TestRequestInfoRefs_OnUnauthorizedRetriesWithHelperCredentials verifies\n// the core fix: a 401 triggers a helper lookup, the request is retried with\n// those credentials, the helper is told the creds worked, and the conn\n// remembers the credentials for subsequent calls.\nfunc TestRequestInfoRefs_OnUnauthorizedRetriesWithHelperCredentials(t *testing.T) {\n\thelper := &fakeCredentialHelper{lookupUser: \"alice\", lookupPass: \"s3cret\", lookupOK: true}\n\n\tvar authHeaders []string\n\tattempts := 0\n\tconn […]
 
@@ -2774,7 +2774,7 @@ id: toolu_01JuH5VWEKTDHiDZjSTiTizR
 tool_result ERROR
 id: toolu_01JuH5VWEKTDHiDZjSTiTizR
 ```
-<tool_use_error>File does not exist. Note: your current working directory is /Users/soph/Work/entire/devenv/git-sync.</tool_use_error>
+<tool_use_error>File does not exist. Note: your current working directory is /home/<USER>/Work/entire/devenv/git-sync.</tool_use_error>
 ```
 
 > TOOL
@@ -2784,7 +2784,7 @@ id: toolu_01KbuJtMtPBz6X9UCQ6eu6dY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/smarthttp_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/smarthttp_test.go",
   "old_string": "// fakeCredentialHelper is a CredentialHelper used in tests. Configure lookup\n// behaviour via lookupUser/lookupPass/lookupOK/lookupErr; the call counters\n// let tests assert the helper's Approve/Reject lifecycle was driven correctly.\ntype fakeCredentialHelper struct {",
   "new_string": "// newAdvertisementResponse returns a 200 response shaped like a smart-HTTP\n// /info/refs advertisement, suitable for round-tripper fakes.\nfunc newAdvertisementResponse(req *http.Request, service string) *http.Response {\n\tres := &http.Response{\n\t\tStatusCode: http.StatusOK,\n\t\tRequest:    req,\n\t\tHeader:     make(http.Header),\n\t\tBody:       io.NopCloser(strings.NewReader(\"0000\")),\n\t}\n\tres.Header.Set(\"Content-Type\", \"application/x-\"+service+\"-advertisement\")\n\treturn res\n}\n\nfunc newUnauthorizedResponse(req *http.Request) *http.Response {\n\tres := &http.Response{\n\t\tStatusCode: http.StatusUnauthorized,\n\t\tRequest:    req,\n\t\tHeader:     make(http.Header),\n\t\tBody:       io.NopCloser(strings.NewReader(\"authentication required\")),\n\t}\n\tres.Header.Set(\"WWW-Authenticate\", `Basic realm=\"git\"`)\n\treturn res\n}\n\n// TestRequestInfoRefs_AnonymousSucceedsWithoutConsultingHelper verifies the\n// happy path: when the server accepts an unauthenticated request, we never\n// touch the credential helper.\nfunc TestRequestInfoRefs_AnonymousSucceedsWithoutConsultingHelper(t *testing.T) {\n\thelper := &fakeCredentialHelper{lookupOK: true, lookupUser: \"x\", lookupPass: \"y\"}\n\tvar authHeaders []string\n\tconn := NewHTTPConn(\n\t\t&url.URL{Scheme: \"https\", Host: \"example.com\", Path: \"/repo.git\"},\n\t\t\"src\", nil,\n\t\troundTripperFunc(func(req *http.Request) (*http.Response, error) {\n\t\t\tauthHeaders = append(authHeaders, req.Header.Get(\"Authorization\"))\n\t\t\treturn newAdvertisementResponse(req, \"git-upload-pack\"), nil\n\t\t}),\n\t)\n\tconn.CredentialHelper = helper\n\n\tif _, err := conn.RequestInfoRefs(context.Background(), \"git-upload-pack\", \"\"); err != nil {\n\t\tt.Fatalf(\"RequestInfoRefs: %v\", err)\n\t}\n\tif helper.lookupCalls != 0 {\n\t\tt.Errorf(\"expected 0 helper lookups on anonymous success, got %d\", helper.lookupCalls)\n\t}\n\tif len(authHeaders) != 1 || authHeaders[0] != \"\" {\n\t\tt.Errorf(\"expected exactly one anonymous request, got headers %v\", authHeaders)\n\t}\n}\n\n// TestRequestInfoRefs_OnUnauthorizedRetriesWithHelperCredentials verifies\n// the core fix: a 401 triggers a helper lookup, the request is retried with\n// those credentials, the helper is told the creds […]
 
@@ -2793,7 +2793,7 @@ id: toolu_01KbuJtMtPBz6X9UCQ6eu6dY
 tool_result
 id: toolu_01KbuJtMtPBz6X9UCQ6eu6dY
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/gitproto/smarthttp_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/smarthttp_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2871,7 +2871,7 @@ tool_use Read
 id: toolu_01P73KoqPZ63o1S2LrrwPA1L
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/smarthttp.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/smarthttp.go",
   "offset": 1,
   "limit": 160
 }
@@ -2936,7 +2936,7 @@ tool_use Read
 id: toolu_01UrZuX7GaMoUN2HJ2khvJiG
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/smarthttp.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/smarthttp.go",
   "offset": 160,
   "limit": 130
 }
@@ -2998,7 +2998,7 @@ id: toolu_01X7dNX7cafPLb1YXSr1WaUi
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/smarthttp.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/smarthttp.go",
   "old_string": "// AuthMethod authorizes outbound HTTP requests for a remote. It is satisfied\n// by *transporthttp.BasicAuth and *transporthttp.TokenAuth, whose Authorizer\n// methods replaced the AuthMethod interface that go-git removed in v6 alpha.2.\ntype AuthMethod interface {\n\tAuthorizer(req *http.Request) error\n}\n\n// HTTPConn represents a connection to a remote Git HTTP endpoint.\ntype HTTPConn struct {\n\tLabel       string\n\tEndpointURL *url.URL\n\tHTTP        *http.Client\n\tAuth        AuthMethod\n\n\t// FollowInfoRefsRedirect, when true, rewrites Endpoint.Scheme and\n\t// Endpoint.Host to the final URL returned by RequestInfoRefs after\n\t// HTTP redirects. Subsequent PostRPC* calls then target the\n\t// redirected host directly, matching vanilla git's smart-HTTP\n\t// behaviour for discovery-aware servers that 307 /info/refs to a\n\t// hosting replica. Endpoint.Path is never modified — it still\n\t// contains the repo path. Off by default to preserve behaviour for\n\t// callers that rely on Endpoint being stable.\n\tFollowInfoRefsRedirect bool",
   "new_string": "// AuthMethod authorizes outbound HTTP requests for a remote. It is satisfied\n// by *transporthttp.BasicAuth and *transporthttp.TokenAuth, whose Authorizer\n// methods replaced the AuthMethod interface that go-git removed in v6 alpha.2.\ntype AuthMethod interface {\n\tAuthorizer(req *http.Request) error\n}\n\n// CredentialHelper provides on-demand credentials when an HTTP request is\n// rejected with 401. Implementations typically wrap git's credential helper\n// protocol; see auth.GitCredentialHelper.\n//\n// Lookup must not block on user interaction — if no credentials are\n// available, return ok=false […]
 
@@ -3007,7 +3007,7 @@ id: toolu_01X7dNX7cafPLb1YXSr1WaUi
 tool_result
 id: toolu_01X7dNX7cafPLb1YXSr1WaUi
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/gitproto/smarthttp.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/smarthttp.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3021,7 +3021,7 @@ id: toolu_01RDhSEBJorBPjv89cotEdmE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/smarthttp.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/smarthttp.go",
   "old_string": "// RequestInfoRefs fetches /info/refs for the given service.\nfunc (c *HTTPConn) RequestInfoRefs(ctx context.Context, service string, gitProtocol string) ([]byte, error) {\n\treqURL := fmt.Sprintf(\"%s/info/refs?service=%s\", c.EndpointURL.String(), service)\n\treq, err := http.NewRequestWithContext(ctx, http.MethodGet, reqURL, nil)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"create info-refs request: %w\", err)\n\t}\n\treq.Header.Set(\"Accept\", \"*/*\")\n\treq.Header.Set(\"User-Agent\", capability.DefaultAgent())\n\treq.Header.Set(StatsPhaseHeader, service+\" info-refs\")\n\tif gitProtocol != \"\" {\n\t\treq.Header.Set(\"Git-Protocol\", gitProtocol)\n\t}\n\tApplyAuth(req, c.Auth)\n\n\tres, err := c.HTTP.Do(req)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"request info-refs: %w\", err)\n\t}\n\tdefer res.Body.Close()\n\tif err := httpError(res); err != nil {\n\t\treturn nil, err\n\t}\n\twantContentType := fmt.Sprintf(\"application/x-%s-advertisement\", service)",
   "new_string": "// RequestInfoRefs fetches /info/refs for the given service.\nfunc (c *HTTPConn) RequestInfoRefs(ctx context.Context, service string, gitProtocol string) ([]byte, error) {\n\tres, err := c.doInfoRefsRequest(ctx, service, gitProtocol, c.Auth)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\t// On 401, consult the credential helper as a fallback — but only when\n\t// no explicit auth was configured up front. Explicit auth that fails\n\t// is a real error the user needs to see, not something to paper over\n\t// with helper credentials.\n\tif res.StatusCode == http.StatusUnauthorized && c.Auth == nil && c.CredentialHelper != nil {\n\t\t_ = res.Body.Close()\n\t\tretryRes, retried, retryErr := c.retryWithCredentialHelper(ctx, service, gitProtocol)\n\t\tif retryErr != nil {\n\t\t\treturn nil, retryErr\n\t\t}\n\t\tif retried {\n\t\t\tres = retryRes\n\t\t} else {\n\t\t\t// Helper had no credentials — surface a fresh 401 since […]
 
@@ -3030,7 +3030,7 @@ id: toolu_01RDhSEBJorBPjv89cotEdmE
 tool_result
 id: toolu_01RDhSEBJorBPjv89cotEdmE
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/gitproto/smarthttp.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/smarthttp.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3044,7 +3044,7 @@ id: toolu_01BqUhAN29FL5v6ifVT448Bm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/smarthttp.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/smarthttp.go",
   "old_string": "// RequestInfoRefs fetches /info/refs for the given service.\nfunc (c *HTTPConn) RequestInfoRefs(ctx context.Context, service string, gitProtocol string) ([]byte, error) {\n\tres, err := c.doInfoRefsRequest(ctx, service, gitProtocol, c.Auth)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\t// On 401, consult the credential helper as a fallback — but only when\n\t// no explicit auth was configured up front. Explicit auth that fails\n\t// is a real error the user needs to see, not something to paper over\n\t// with helper credentials.\n\tif res.StatusCode == http.StatusUnauthorized && c.Auth == nil && c.CredentialHelper != nil {\n\t\t_ = res.Body.Close()\n\t\tretryRes, retried, retryErr := c.retryWithCredentialHelper(ctx, service, gitProtocol)\n\t\tif retryErr != nil {\n\t\t\treturn nil, retryErr\n\t\t}\n\t\tif retried {\n\t\t\tres = retryRes\n\t\t} else {\n\t\t\t// Helper had no credentials — surface a fresh 401 since the\n\t\t\t// original response body was already closed.\n\t\t\tres, err = c.doInfoRefsRequest(ctx, service, gitProtocol, nil)\n\t\t\tif err != nil {\n\t\t\t\treturn nil, err\n\t\t\t}\n\t\t}\n\t}\n\n\tdefer res.Body.Close()\n\tif err := httpError(res); err != nil {\n\t\treturn nil, err\n\t}\n\twantContentType := fmt.Sprintf(\"application/x-%s-advertisement\", service)",
   "new_string": "// RequestInfoRefs fetches /info/refs for the given service.\nfunc (c *HTTPConn) RequestInfoRefs(ctx context.Context, service string, gitProtocol string) ([]byte, error) {\n\tres, err := c.doInfoRefsRequest(ctx, service, gitProtocol, c.Auth)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\t// On 401, consult the credential helper as a fallback — but […]
 
@@ -3053,7 +3053,7 @@ id: toolu_01BqUhAN29FL5v6ifVT448Bm
 tool_result
 id: toolu_01BqUhAN29FL5v6ifVT448Bm
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/gitproto/smarthttp.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/smarthttp.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3067,7 +3067,7 @@ id: toolu_01WtoxWTP9uRdvaEQRBP6ang
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/smarthttp.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/smarthttp.go",
   "old_string": "// ApplyAuth applies the given auth method to an HTTP request. Errors from\n// the Authorizer (e.g. transient signing failures) are surfaced as request\n// failures by leaving the Authorization header unset; the upstream server\n// will reject with 401 and the caller logs the surrounding context.\nfunc ApplyAuth(req *http.Request, auth AuthMethod) {\n\tif auth == nil {\n\t\treturn\n\t}\n\t_ = auth.Authorizer(req) //nolint:errcheck // BasicAuth and TokenAuth never error; future authorizers should surface 401s instead\n}",
   "new_string": "// ApplyAuth applies the given auth method to an HTTP request. Errors from\n// the Authorizer (e.g. transient signing failures) are surfaced as request\n// failures by leaving the Authorization header unset; the upstream server\n// will reject with 401 and the caller logs the surrounding context.\nfunc ApplyAuth(req *http.Request, auth AuthMethod) {\n\tif auth == nil {\n\t\treturn\n\t}\n\t_ = auth.Authorizer(req) //nolint:errcheck // BasicAuth and TokenAuth never error; future authorizers should surface 401s instead\n}\n\n// doInfoRefsRequest issues a single /info/refs GET and returns the raw\n// response. Caller is responsible for closing the body. Extracted so the\n// 401-retry path can reissue the same request with different auth.\nfunc (c *HTTPConn) doInfoRefsRequest(ctx context.Context, service, gitProtocol string, auth AuthMethod) (*http.Response, error) {\n\treqURL := fmt.Sprintf(\"%s/info/refs?service=%s\", c.EndpointURL.String(), service)\n\treq, err := http.NewRequestWithContext(ctx, http.MethodGet, reqURL, […]
 
@@ -3076,7 +3076,7 @@ id: toolu_01WtoxWTP9uRdvaEQRBP6ang
 tool_result
 id: toolu_01WtoxWTP9uRdvaEQRBP6ang
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/gitproto/smarthttp.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/smarthttp.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3184,7 +3184,7 @@ tool_use Read
 id: toolu_01FYWp4EwMZpK41zKRPENoaQ
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/syncer/syncer.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/syncer/syncer.go",
   "offset": 340,
   "limit": 45
 }
@@ -3247,7 +3247,7 @@ id: toolu_01HuRNxg2fnQcJXzzRGi59qN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/syncer/syncer.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/syncer/syncer.go",
   "old_string": "\tstats.setSideDisplay(label, hostnameFromURL(raw.URL))\n\tclient := instrumentHTTPClient(httpClient, raw.SkipTLSVerify, label, stats)\n\tconn := gitproto.NewHTTPConnWithClient(ep, label, authMethod, client)\n\tconn.FollowInfoRefsRedirect = raw.FollowInfoRefsRedirect\n\treturn conn, nil\n}",
   "new_string": "\tstats.setSideDisplay(label, hostnameFromURL(raw.URL))\n\tclient := instrumentHTTPClient(httpClient, raw.SkipTLSVerify, label, stats)\n\tconn := gitproto.NewHTTPConnWithClient(ep, label, authMethod, client)\n\tconn.FollowInfoRefsRedirect = raw.FollowInfoRefsRedirect\n\t// When no explicit auth is configured, wire up the git credential helper\n\t// as a fallback that fires only on a 401 response. This matches git's\n\t// own behaviour and avoids leaking stored credentials to public repos.\n\tif authMethod == nil {\n\t\tconn.CredentialHelper = auth.GitCredentialHelper{}\n\t}\n\treturn conn, nil\n}"
 }
@@ -3258,7 +3258,7 @@ id: toolu_01HuRNxg2fnQcJXzzRGi59qN
 tool_result
 id: toolu_01HuRNxg2fnQcJXzzRGi59qN
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/syncer/syncer.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/syncer/syncer.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3692,7 +3692,7 @@ tool_use Read
 id: toolu_01DHGmStKMvoWRfJcDfSkhqm
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/auth/auth.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth.go",
   "offset": 38,
   "limit": 55
 }
@@ -3735,7 +3735,7 @@ id: toolu_01PvxTghhmBQkuCcrMkEsnKt
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/auth/auth.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth.go",
   "old_string": "\tif ep == nil {\n\t\treturn nil, nil //nolint:nilnil // nil signals no auth method found at this stage\n\t}\n\tif ep.Scheme != \"http\" && ep.Scheme != \"https\" {\n\t\treturn nil, nil //nolint:nilnil // nil signals no auth method found at this stage\n\t}",
   "new_string": "\tif !isHTTPEndpoint(ep) {\n\t\treturn nil, nil //nolint:nilnil // nil signals no auth method found at this stage\n\t}"
 }
@@ -3746,7 +3746,7 @@ id: toolu_01PvxTghhmBQkuCcrMkEsnKt
 tool_result
 id: toolu_01PvxTghhmBQkuCcrMkEsnKt
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/auth/auth.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3756,7 +3756,7 @@ id: toolu_01FjYpuEboamAEFkQm7YBeB7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/auth/auth.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth.go",
   "old_string": "// Lookup queries the git credential helper for credentials for ep. Returns\n// ok=false if no credentials are available (so the caller can surface a\n// clean 401 rather than block).\nfunc (GitCredentialHelper) Lookup(ctx context.Context, ep *url.URL) (username, password string, ok bool, err error) {\n\tif ep == nil {\n\t\treturn \"\", \"\", false, nil\n\t}\n\tif ep.Scheme != \"http\" && ep.Scheme != \"https\" {\n\t\t// git's credential helper protocol only knows about HTTP.\n\t\treturn \"\", \"\", false, nil\n\t}\n\tinput := credentialInput(ep, \"\", \"\")\n\tif input == \"\" {\n\t\treturn \"\", \"\", false, nil\n\t}\n\toutput, helperErr := GitCredentialCommand(ctx, \"fill\", input)\n\tif helperErr != nil {\n\t\t// Helper exited non-zero — typically means \"no credentials found\"\n\t\t// or \"terminal prompts disabled\" (when no helper has creds). Treat\n\t\t// both as \"no credentials available\" so the original 401 surfaces.\n\t\treturn \"\", \"\", false, nil\n\t}\n\tvalues := parseCredentialOutput(output)\n\tpassword = values[\"password\"]\n\tif password == \"\" {\n\t\treturn \"\", \"\", false, nil\n\t}\n\tusername = values[\"username\"]\n\tif username == \"\" {\n\t\tif ep.User != nil && ep.User.Username() != \"\" {\n\t\t\tusername = ep.User.Username()\n\t\t} else {\n\t\t\tusername = defaultGitUsername\n\t\t}\n\t}\n\treturn username, password, true, nil\n}",
   "new_string": "// Lookup queries the git credential helper for credentials for ep. Returns\n// ok=false if no credentials are available (so the caller can surface a\n// clean 401 rather than […]
 
@@ -3765,7 +3765,7 @@ id: toolu_01FjYpuEboamAEFkQm7YBeB7
 tool_result
 id: toolu_01FjYpuEboamAEFkQm7YBeB7
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/auth/auth.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3775,7 +3775,7 @@ id: toolu_017oTtRvpPSEwQae9yPNbzKJ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/auth/auth.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth.go",
   "old_string": "// Approve tells the helper the credentials worked, so it can persist them.\n// Best-effort: helper failures are swallowed.\nfunc (GitCredentialHelper) Approve(ctx context.Context, ep *url.URL, username, password string) {\n\tinput := credentialInput(ep, username, password)\n\tif input == \"\" {\n\t\treturn\n\t}\n\t_, _ = GitCredentialCommand(ctx, \"approve\", input)\n}\n\n// Reject tells the helper the credentials failed, so it can forget them.\n// Best-effort: helper failures are swallowed.\nfunc (GitCredentialHelper) Reject(ctx context.Context, ep *url.URL, username, password string) {\n\tinput := credentialInput(ep, username, password)\n\tif input == \"\" {\n\t\treturn\n\t}\n\t_, _ = GitCredentialCommand(ctx, \"reject\", input)\n}",
   "new_string": "// Approve tells the helper the credentials worked, so it can persist them.\n// Best-effort: helper failures are swallowed.\nfunc (GitCredentialHelper) Approve(ctx context.Context, ep *url.URL, username, password string) {\n\tinput := credentialInput(ep, username, password)\n\tif input == \"\" {\n\t\treturn\n\t}\n\t_, _ = GitCredentialCommand(ctx, \"approve\", input) //nolint:errcheck // best-effort signal\n}\n\n// Reject tells the helper the credentials failed, so it can forget them.\n// Best-effort: helper failures are swallowed.\nfunc (GitCredentialHelper) Reject(ctx context.Context, ep *url.URL, username, password string) {\n\tinput := credentialInput(ep, username, password)\n\tif input == \"\" {\n\t\treturn\n\t}\n\t_, _ = GitCredentialCommand(ctx, \"reject\", input) //nolint:errcheck // best-effort signal\n}"
 }
@@ -3786,7 +3786,7 @@ id: toolu_017oTtRvpPSEwQae9yPNbzKJ
 tool_result
 id: toolu_017oTtRvpPSEwQae9yPNbzKJ
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/auth/auth.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4102,7 +4102,7 @@ id: toolu_0148JJTECqTsA23HknxBbnNr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/smarthttp.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/smarthttp.go",
   "old_string": "\t\tif ok {\n\t\t\t_ = res.Body.Close()\n\t\t\tretryAuth := basicAuth{username: user, password: pass}\n\t\t\tres, err = c.doInfoRefsRequest(ctx, service, gitProtocol, retryAuth)\n\t\t\tif err != nil {\n\t\t\t\tc.CredentialHelper.Reject(ctx, c.EndpointURL, user, pass)\n\t\t\t\treturn nil, err\n\t\t\t}\n\t\t\tswitch {\n\t\t\tcase res.StatusCode == http.StatusUnauthorized:\n\t\t\t\tc.CredentialHelper.Reject(ctx, c.EndpointURL, user, pass)\n\t\t\tcase res.StatusCode >= http.StatusOK && res.StatusCode < http.StatusMultipleChoices:\n\t\t\t\tc.Auth = retryAuth\n\t\t\t\tc.CredentialHelper.Approve(ctx, c.EndpointURL, user, pass)\n\t\t\t}\n\t\t}",
   "new_string": "\t\tif ok {\n\t\t\t_ = res.Body.Close()\n\t\t\tretryAuth := basicAuth{username: user, password: pass}\n\t\t\tres, err = c.doInfoRefsRequest(ctx, service, gitProtocol, retryAuth)\n\t\t\tif err != nil {\n\t\t\t\tc.CredentialHelper.Reject(ctx, c.EndpointURL, user, pass)\n\t\t\t\treturn nil, err\n\t\t\t}\n\t\t\tswitch {\n\t\t\tcase res.StatusCode == http.StatusUnauthorized || res.StatusCode == http.StatusForbidden:\n\t\t\t\t// 401: server rejected the credentials.\n\t\t\t\t// 403: some token services (e.g. Cloudflare) return\n\t\t\t\t// \"Invalid or expired token\" as 403 rather than 401.\n\t\t\t\t// Since we only reach this branch when the initial\n\t\t\t\t// response was 401 (so the server requires auth),\n\t\t\t\t// a 403 on retry means the credentials themselves\n\t\t\t\t// didn't validate — reject them.\n\t\t\t\tc.CredentialHelper.Reject(ctx, c.EndpointURL, user, pass)\n\t\t\tcase res.StatusCode >= http.StatusOK && res.StatusCode < http.StatusMultipleChoices:\n\t\t\t\tc.Auth = retryAuth\n\t\t\t\tc.CredentialHelper.Approve(ctx, c.EndpointURL, user, pass)\n\t\t\t}\n\t\t}"
 }
@@ -4113,7 +4113,7 @@ id: toolu_0148JJTECqTsA23HknxBbnNr
 tool_result
 id: toolu_0148JJTECqTsA23HknxBbnNr
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/gitproto/smarthttp.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/smarthttp.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4127,7 +4127,7 @@ id: toolu_011kXMBcHCFZEvWfSJyzbnzD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/smarthttp_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/smarthttp_test.go",
   "old_string": "// TestRequestInfoRefs_DoesNotRetryWhenConnAlreadyAuthenticated verifies",
   "new_string": "// TestRequestInfoRefs_OnUnauthorizedRetry403CallsReject verifies that some\n// token services (notably Cloudflare) return 403 \"Invalid or expired token\"\n// instead of 401 when stored credentials have expired. Since we only reach\n// the retry path when the initial response was 401 (server required auth),\n// a 403 on retry indicates the helper's credentials themselves didn't\n// validate — reject them so the next run starts clean.\nfunc TestRequestInfoRefs_OnUnauthorizedRetry403CallsReject(t *testing.T) {\n\thelper := &fakeCredentialHelper{lookupUser: \"alice\", lookupPass: \"expired-token\", lookupOK: true}\n\tattempts := 0\n\tconn := NewHTTPConn(\n\t\t&url.URL{Scheme: \"https\", Host: \"example.com\", Path: \"/repo.git\"},\n\t\t\"src\", nil,\n\t\troundTripperFunc(func(req *http.Request) (*http.Response, error) {\n\t\t\tattempts++\n\t\t\tif attempts == 1 {\n\t\t\t\treturn newUnauthorizedResponse(req), nil\n\t\t\t}\n\t\t\t// Retry with helper creds — server says 403, expired token.\n\t\t\tres := &http.Response{\n\t\t\t\tStatusCode: http.StatusForbidden,\n\t\t\t\tRequest:    req,\n\t\t\t\tHeader:     make(http.Header),\n\t\t\t\tBody:       io.NopCloser(strings.NewReader(\"Invalid or expired token\")),\n\t\t\t}\n\t\t\treturn res, nil\n\t\t}),\n\t)\n\tconn.CredentialHelper = helper\n\n\t_, err := conn.RequestInfoRefs(context.Background(), \"git-upload-pack\", \"\")\n\tif err == nil {\n\t\tt.Fatal(\"expected error, got nil\")\n\t}\n\tif helper.rejectCalls != 1 {\n\t\tt.Errorf(\"expected 1 reject call on retry 403, got %d\", helper.rejectCalls)\n\t}\n\tif helper.approveCalls != 0 {\n\t\tt.Errorf(\"expected 0 approve calls, got %d\", helper.approveCalls)\n\t}\n\tif helper.lastRejectUser != \"alice\" || helper.lastRejectPass != \"expired-token\" {\n\t\tt.Errorf(\"reject called with wrong creds: user=%q pass=%q\", helper.lastRejectUser, helper.lastRejectPass)\n\t}\n}\n\n// TestRequestInfoRefs_DoesNotRetryWhenConnAlreadyAuthenticated verifies"
 }
@@ -4138,7 +4138,7 @@ id: toolu_011kXMBcHCFZEvWfSJyzbnzD
 tool_result
 id: toolu_011kXMBcHCFZEvWfSJyzbnzD
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/gitproto/smarthttp_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/smarthttp_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4232,7 +4232,7 @@ id: toolu_019KojY2d5sR5xqbwU7fSQ56
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/smarthttp_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/smarthttp_test.go",
   "old_string": "\thelper := &fakeCredentialHelper{lookupUser: \"alice\", lookupPass: \"expired-token\", lookupOK: true}",
   "new_string": "\thelper := &fakeCredentialHelper{lookupUser: \"user\", lookupPass: \"expired-token\", lookupOK: true}"
 }
@@ -4243,7 +4243,7 @@ id: toolu_019KojY2d5sR5xqbwU7fSQ56
 tool_result
 id: toolu_019KojY2d5sR5xqbwU7fSQ56
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/gitproto/smarthttp_test.go has been updated. All occurrences were successfully replaced. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/smarthttp_test.go has been updated. All occurrences were successfully replaced. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4253,7 +4253,7 @@ id: toolu_01U7Sawgpx5NRsNACPtmRscB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/smarthttp_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/smarthttp_test.go",
   "old_string": "\tif helper.lastRejectUser != \"alice\" || helper.lastRejectPass != \"expired-token\" {",
   "new_string": "\tif helper.lastRejectUser != \"user\" || helper.lastRejectPass != \"expired-token\" {"
 }
@@ -4264,7 +4264,7 @@ id: toolu_01U7Sawgpx5NRsNACPtmRscB
 tool_result
 id: toolu_01U7Sawgpx5NRsNACPtmRscB
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/gitproto/smarthttp_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/smarthttp_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL

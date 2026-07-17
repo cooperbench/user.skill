@@ -38,7 +38,7 @@ tool_use Bash
 
 tool_result Bash
 ```
-/Users/user_c042661f/Documents/Veas
+/home/<USER>/Documents/Veas
 Procfile
 README.md
 __pycache__
@@ -199,7 +199,7 @@ tool_use Bash
 
 tool_result Bash
 ```
-/Users/user_c042661f/.nvm/versions/node/v20.19.4/bin/railway
+/home/<USER>/.nvm/versions/node/v20.19.4/bin/railway
 railway 4.12.0
 ```
 
@@ -539,7 +539,7 @@ tool_result Bash
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/tools/write_tools.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/tools/write_tools.py",
   "limit": 50,
   "offset": 155
 }
@@ -1178,7 +1178,7 @@ app/services/hot_context_solo.py:1091:    lines += ["", "## New reactions since 
 tool_use Read
 ```json
 {
-  "file_path": "/Users/user_c042661f/Documents/Veas/app/services/hot_context_solo.py",
+  "file_path": "/home/<USER>/Documents/Veas/app/services/hot_context_solo.py",
   "offset": 670,
   "limit": 40
 }

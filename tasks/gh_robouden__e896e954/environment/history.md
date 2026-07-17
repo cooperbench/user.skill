@@ -79,7 +79,7 @@ tool_result
 id: toolu_01T9SRxyiQToWW4tjY5kR8oz
 ```
 Added stdio MCP server gitnexus with command: npx gitnexus mcp to user config
-File modified: /home/rob/.claude.json
+File modified: /home/<USER>/.claude.json
 ```
 
 > TOOL

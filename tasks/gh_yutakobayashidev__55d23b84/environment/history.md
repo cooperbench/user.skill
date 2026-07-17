@@ -277,7 +277,7 @@ tool_use Read
 id: toolu_01RELe3cqJTkZhc5AXt8PbjT
 ```json
 {
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix"
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix"
 }
 ```
 
@@ -373,7 +373,7 @@ id: toolu_01VdjpEJdLB64egizeQvtXcF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix",
   "old_string": "    taps = [\n      \"blacktop/tap\"\n      \"manaflow-ai/cmux\"\n      \"trasta298/tap\"\n    ];",
   "new_string": "    taps = [\n      \"blacktop/tap\"\n      \"manaflow-ai/cmux\"\n      \"steipete/tap\"\n      \"trasta298/tap\"\n    ];"
 }
@@ -384,7 +384,7 @@ id: toolu_01VdjpEJdLB64egizeQvtXcF
 tool_result
 id: toolu_01VdjpEJdLB64egizeQvtXcF
 ```
-The file /Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix has been updated successfully.
+The file /home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix has been updated successfully.
 ```
 
 > TOOL
@@ -394,7 +394,7 @@ id: toolu_01G3ESE4vEtjegq5WRnfRVYi
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix",
   "old_string": "    brews = [\n      \"blacktop/tap/ipsw\"\n      \"mas\"\n      \"trasta298/tap/keifu\"",
   "new_string": "    brews = [\n      \"blacktop/tap/ipsw\"\n      \"mas\"\n      \"steipete/tap/codexbar\"\n      \"trasta298/tap/keifu\""
 }
@@ -405,7 +405,7 @@ id: toolu_01G3ESE4vEtjegq5WRnfRVYi
 tool_result
 id: toolu_01G3ESE4vEtjegq5WRnfRVYi
 ```
-The file /Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix has been updated successfully.
+The file /home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix has been updated successfully.
 ```
 
 > AGENT
@@ -415,17 +415,17 @@ The file /Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/h
 > DEVELOPER
 
 yuta@M2-MacBook-Air  ~/ghq/github.com/yutakobayashidev/dotnix   main ✚  nix run .#switch
-warning: Git tree '/Users/yuta/ghq/github.com/yutakobayashidev/dotnix' is dirty
+warning: Git tree '/home/<USER>/ghq/github.com/yutakobayashidev/dotnix' is dirty
 Switching to darwin configuration...
 /run/current-system/sw/bin/darwin-rebuild: system activation must now be run as root
 Finished at 12:11:59 after 0s
  ✘ yuta@M2-MacBook-Air  ~/ghq/github.com/yutakobayashidev/dotnix   main ✚  sudo nix run .#switch
-warning: $HOME ('/Users/yuta') is not owned by you, falling back to the one defined in the 'passwd' file ('/var/root')
-warning: Git tree '/Users/yuta/ghq/github.com/yutakobayashidev/dotnix' is dirty
+warning: $HOME ('/home/<USER>') is not owned by you, falling back to the one defined in the 'passwd' file ('/var/root')
+warning: Git tree '/home/<USER>/ghq/github.com/yutakobayashidev/dotnix' is dirty
 Switching to darwin configuration...
-warning: $HOME ('/Users/yuta') is not owned by you, falling back to the one defined in the 'passwd' file ('/var/root')
+warning: $HOME ('/home/<USER>') is not owned by you, falling back to the one defined in the 'passwd' file ('/var/root')
 building the system configuration...
-warning: Git tree '/Users/yuta/ghq/github.com/yutakobayashidev/dotnix' is dirty
+warning: Git tree '/home/<USER>/ghq/github.com/yutakobayashidev/dotnix' is dirty
 evaluation warning: nix-index-database: flake output `hmModules` has been renamed to `homeModules`
 evaluation warning: 'system' has been renamed to/replaced by 'stdenv.hostPlatform.system'
 these 2 derivations will be built:
@@ -441,7 +441,7 @@ building '/nix/store/REDACTED.05.da529ac.drv'...
 
  ✘ yuta@M2-MacBook-Air  ~/ghq/github.com/yutakobayashidev/dotnix   main ✚  sudo darwin-rebuild switch --flake .#M2-MacBook-Air
 building the system configuration...
-warning: Git tree '/Users/yuta/ghq/github.com/yutakobayashidev/dotnix' is dirty
+warning: Git tree '/home/<USER>/ghq/github.com/yutakobayashidev/dotnix' is dirty
 Software Update Tool
 
 Finding available software
@@ -455,17 +455,17 @@ API Error: 400 {"type":"error","error":{"type":"invalid_request_error","message"
 > DEVELOPER
 
 yuta@M2-MacBook-Air  ~/ghq/github.com/yutakobayashidev/dotnix   main ✚  nix run .#switch
-warning: Git tree '/Users/yuta/ghq/github.com/yutakobayashidev/dotnix' is dirty
+warning: Git tree '/home/<USER>/ghq/github.com/yutakobayashidev/dotnix' is dirty
 Switching to darwin configuration...
 /run/current-system/sw/bin/darwin-rebuild: system activation must now be run as root
 Finished at 12:11:59 after 0s
  ✘ yuta@M2-MacBook-Air  ~/ghq/github.com/yutakobayashidev/dotnix   main ✚  sudo nix run .#switch
-warning: $HOME ('/Users/yuta') is not owned by you, falling back to the one defined in the 'passwd' file ('/var/root')
-warning: Git tree '/Users/yuta/ghq/github.com/yutakobayashidev/dotnix' is dirty
+warning: $HOME ('/home/<USER>') is not owned by you, falling back to the one defined in the 'passwd' file ('/var/root')
+warning: Git tree '/home/<USER>/ghq/github.com/yutakobayashidev/dotnix' is dirty
 Switching to darwin configuration...
-warning: $HOME ('/Users/yuta') is not owned by you, falling back to the one defined in the 'passwd' file ('/var/root')
+warning: $HOME ('/home/<USER>') is not owned by you, falling back to the one defined in the 'passwd' file ('/var/root')
 building the system configuration...
-warning: Git tree '/Users/yuta/ghq/github.com/yutakobayashidev/dotnix' is dirty
+warning: Git tree '/home/<USER>/ghq/github.com/yutakobayashidev/dotnix' is dirty
 evaluation warning: nix-index-database: flake output `hmModules` has been renamed to `homeModules`
 evaluation warning: 'system' has been renamed to/replaced by 'stdenv.hostPlatform.system'
 these 2 derivations will be built:
@@ -481,7 +481,7 @@ building '/nix/store/REDACTED.05.da529ac.drv'...
 
  ✘ yuta@M2-MacBook-Air  ~/ghq/github.com/yutakobayashidev/dotnix   main ✚  sudo darwin-rebuild switch --flake .#M2-MacBook-Air
 building the system configuration...
-warning: Git tree '/Users/yuta/ghq/github.com/yutakobayashidev/dotnix' is dirty
+warning: Git tree '/home/<USER>/ghq/github.com/yutakobayashidev/dotnix' is dirty
 Software Update Tool
 
 Finding available software
@@ -535,7 +535,7 @@ id: toolu_017ErwoWCKpR8HrTEvAPoxrN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix",
   "old_string": "      \"steipete/tap/codexbar\"\n      \"trasta298/tap/keifu\"",
   "new_string": "      \"trasta298/tap/keifu\""
 }
@@ -546,7 +546,7 @@ id: toolu_017ErwoWCKpR8HrTEvAPoxrN
 tool_result
 id: toolu_017ErwoWCKpR8HrTEvAPoxrN
 ```
-The file /Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix has been updated successfully.
+The file /home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix has been updated successfully.
 ```
 
 > TOOL
@@ -556,7 +556,7 @@ id: toolu_01U94MQkfv3z7oBxoqx3t1iw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix",
   "old_string": "      # AI / LLM\n      \"claude\"\n      \"codex-app\"",
   "new_string": "      # AI / LLM\n      \"claude\"\n      \"codex-app\"\n      \"codexbar\""
 }
@@ -567,7 +567,7 @@ id: toolu_01U94MQkfv3z7oBxoqx3t1iw
 tool_result
 id: toolu_01U94MQkfv3z7oBxoqx3t1iw
 ```
-The file /Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix has been updated successfully.
+The file /home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix has been updated successfully.
 ```
 
 > AGENT
@@ -590,7 +590,7 @@ tool_use Read
 id: toolu_0166KQQXSvkaTBDJz3YPr17h
 ```json
 {
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix",
   "limit": 15
 }
 ```

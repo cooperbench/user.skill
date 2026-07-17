@@ -98,7 +98,7 @@ tool_use Read
 id: toolu_01E2frRQtUW4SffjN4B3iTCd
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/shared/ipc.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/shared/ipc.ts"
 }
 ```
 
@@ -171,7 +171,7 @@ tool_use Read
 id: toolu_01Q3iwZZActL2zy8u2nfekVb
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/windows/factory.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/windows/factory.ts"
 }
 ```
 
@@ -181,7 +181,7 @@ tool_use Read
 id: toolu_0133E25J8XyNGNUAzKeoGZkC
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/index.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/index.ts"
 }
 ```
 
@@ -303,7 +303,7 @@ tool_use Read
 id: toolu_011faYAREfYjjtAwaPxQV6Kg
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/menu.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/menu.ts"
 }
 ```
 
@@ -370,7 +370,7 @@ tool_use Read
 id: toolu_015hxwXgX2aEegdPzZooLM6Q
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/shared/accelerators.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/shared/accelerators.ts"
 }
 ```
 
@@ -437,7 +437,7 @@ tool_use Read
 id: toolu_01SXi2JBiJ5hEkQ1XJwF6LgH
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/main.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/main.ts"
 }
 ```
 
@@ -505,7 +505,7 @@ tool_use Read
 id: toolu_01Mmtxnkh2cAzZM7thFEbpDM
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/index.html"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/index.html"
 }
 ```
 
@@ -587,7 +587,7 @@ tool_use Read
 id: toolu_01VvUyHvvDn5mvLhzCK7vjcA
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/locales/en.json"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/locales/en.json"
 }
 ```
 
@@ -635,7 +635,7 @@ tool_use Read
 id: toolu_01GyreD5ADtVTqBUuDqJxKdz
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/styles.css"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/styles.css"
 }
 ```
 
@@ -722,7 +722,7 @@ tool_use Read
 id: toolu_01NMr4qiD4FDwCAn1a1odVAE
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/router.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/router.ts"
 }
 ```
 
@@ -797,7 +797,7 @@ tool_use Read
 id: toolu_0144outuu8fQJwT88FpZsdrv
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/settings.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/settings.ts"
 }
 ```
 
@@ -860,7 +860,7 @@ tool_use Read
 id: toolu_01YTGV2N4tEhNGE5iSheJd9n
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/user-menu.tsx"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/user-menu.tsx"
 }
 ```
 
@@ -955,7 +955,7 @@ tool_use Read
 id: toolu_01Q9V5RFHJUzKPpdiNGLCQG5
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/entry.tsx"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/entry.tsx"
 }
 ```
 
@@ -1006,7 +1006,7 @@ tool_use Read
 id: toolu_01HsiMPT3qaU95HTU6xB5gB8
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/preload/preload.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/preload/preload.ts"
 }
 ```
 
@@ -1081,7 +1081,7 @@ id: toolu_015qNZATYwwcaXtjCDJnLDhZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/shared/ipc.ts",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/shared/ipc.ts",
   "old_string": "export type WindowKind = \"primary\" | \"secondary\" | \"hud\";",
   "new_string": "export type WindowKind = \"primary\" | \"settings\" | \"hud\";"
 }
@@ -1092,7 +1092,7 @@ id: toolu_015qNZATYwwcaXtjCDJnLDhZ
 tool_result
 id: toolu_015qNZATYwwcaXtjCDJnLDhZ
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/shared/ipc.ts has been updated successfully.
+The file /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/shared/ipc.ts has been updated successfully.
 ```
 
 > TOOL
@@ -1102,7 +1102,7 @@ id: toolu_016eSZuG6djS6KvQQVN991E5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/windows/factory.ts",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/windows/factory.ts",
   "old_string": "function secondaryOptions(): BrowserWindowConstructorOptions {\n  const isMac = process.platform === \"darwin\";\n  return {\n    ...baseWindowOptions(),\n    width: 720,\n    height: 540,\n    minWidth: 480,\n    minHeight: 360,\n    ...(isMac && { trafficLightPosition: { x: 16, y: 16 } }),\n  };\n}",
   "new_string": "function settingsOptions(): BrowserWindowConstructorOptions {\n  const isMac = process.platform === \"darwin\";\n  return {\n    ...baseWindowOptions(),\n    width: 720,\n    height: 640,\n    resizable: false,\n    maximizable: false,\n    fullscreenable: false,\n    minimizable: true,\n    ...(isMac && { trafficLightPosition: { x: 16, y: 16 } }),\n  };\n}"
 }
@@ -1113,7 +1113,7 @@ id: toolu_016eSZuG6djS6KvQQVN991E5
 tool_result
 id: toolu_016eSZuG6djS6KvQQVN991E5
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/windows/factory.ts has been updated successfully.
+The file /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/windows/factory.ts has been updated successfully.
 ```
 
 > TOOL
@@ -1123,7 +1123,7 @@ id: toolu_01BsssJurQ26WYdD8rxAZaNj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/windows/factory.ts",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/windows/factory.ts",
   "old_string": "function optionsForKind(kind: WindowKind): BrowserWindowConstructorOptions {\n  switch (kind) {\n    case \"secondary\":\n      return secondaryOptions();\n    case \"hud\":\n      return hudOptions();\n    default:\n      return primaryOptions();\n  }\n}",
   "new_string": "function optionsForKind(kind: WindowKind): BrowserWindowConstructorOptions {\n  switch (kind) {\n    case \"settings\":\n      return settingsOptions();\n    case \"hud\":\n      return hudOptions();\n    default:\n      return primaryOptions();\n  }\n}"
 }
@@ -1134,7 +1134,7 @@ id: toolu_01BsssJurQ26WYdD8rxAZaNj
 tool_result
 id: toolu_01BsssJurQ26WYdD8rxAZaNj
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/windows/factory.ts has been updated successfully.
+The file /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/windows/factory.ts has been updated successfully.
 ```
 
 > TOOL
@@ -1144,7 +1144,7 @@ id: toolu_013qrEYrRKwHBtuUu4AwxGFv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/index.ts",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/index.ts",
   "old_string": "  ipcMain.handle(IpcChannels.openWindow, async (_event, kind: unknown) => {\n    if (kind === \"secondary\") {\n      await openSecondaryWindow();\n    } else if (kind === \"hud\") {\n      await openHudWindow();\n    } else if (kind === \"primary\") {\n      await openPrimaryWindow();\n    }\n  });",
   "new_string": "  ipcMain.handle(IpcChannels.openWindow, async (_event, kind: unknown) => {\n    if (kind === \"settings\") {\n      showSettingsWindow();\n    } else if (kind === \"hud\") {\n      await openHudWindow();\n    } else if (kind === \"primary\") {\n      await openPrimaryWindow();\n    }\n  });"
 }
@@ -1155,7 +1155,7 @@ id: toolu_013qrEYrRKwHBtuUu4AwxGFv
 tool_result
 id: toolu_013qrEYrRKwHBtuUu4AwxGFv
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/index.ts has been updated successfully.
+The file /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/index.ts has been updated successfully.
 ```
 
 > TOOL
@@ -1165,7 +1165,7 @@ id: toolu_01XYybKPYAp61uSTYMjTpQA4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/index.ts",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/index.ts",
   "old_string": "type Kind = \"primary\" | \"secondary\" | \"hud\";",
   "new_string": "type Kind = \"primary\" | \"settings\" | \"hud\";"
 }
@@ -1176,7 +1176,7 @@ id: toolu_01XYybKPYAp61uSTYMjTpQA4
 tool_result
 id: toolu_01XYybKPYAp61uSTYMjTpQA4
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/index.ts has been updated successfully.
+The file /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/index.ts has been updated successfully.
 ```
 
 > TOOL
@@ -1186,7 +1186,7 @@ id: toolu_01BXngoeReoPt2GWdXa4k9Hm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/index.ts",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/index.ts",
   "old_string": "export function openSecondaryWindow(): Promise<BrowserWindow> {\n  return openKind(\"secondary\");\n}\n\nexport function openHudWindow(): Promise<BrowserWindow> {\n  return openKind(\"hud\");\n}",
   "new_string": "export function openSettingsWindow(): Promise<BrowserWindow> {\n  return openKind(\"settings\");\n}\n\nexport function openHudWindow(): Promise<BrowserWindow> {\n  return openKind(\"hud\");\n}\n\nfunction showSettingsWindow(): void {\n  const existing = findWindow(\"settings\");\n  if (existing) {\n    existing.show();\n    existing.focus();\n    return;\n  }\n  void openSettingsWindow();\n}"
 }
@@ -1197,7 +1197,7 @@ id: toolu_01BXngoeReoPt2GWdXa4k9Hm
 tool_result
 id: toolu_01BXngoeReoPt2GWdXa4k9Hm
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/index.ts has been updated successfully.
+The file /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/index.ts has been updated successfully.
 ```
 
 > TOOL
@@ -1207,7 +1207,7 @@ id: toolu_01WYiqtqGqAvhG3zX4XZBA7X
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/index.ts",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/index.ts",
   "old_string": "  Menu.setApplicationMenu(\n    buildApplicationMenu({\n      openSecondary: () => {\n        void openSecondaryWindow();\n      },\n      openHud: () => {\n        void openHudWindow();\n      },\n    })\n  );",
   "new_string": "  Menu.setApplicationMenu(\n    buildApplicationMenu({\n      openSettings: showSettingsWindow,\n      openHud: () => {\n        void openHudWindow();\n      },\n    })\n  );"
 }
@@ -1218,7 +1218,7 @@ id: toolu_01WYiqtqGqAvhG3zX4XZBA7X
 tool_result
 id: toolu_01WYiqtqGqAvhG3zX4XZBA7X
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/index.ts has been updated successfully.
+The file /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/index.ts has been updated successfully.
 ```
 
 > AGENT
@@ -1232,7 +1232,7 @@ id: toolu_0163JgNYyfJtGGsy9purfV6H
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/menu.ts",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/menu.ts",
   "old_string": "export interface MenuActions {\n  openHud: () => void;\n  openSecondary: () => void;\n}",
   "new_string": "export interface MenuActions {\n  openHud: () => void;\n  openSettings: () => void;\n}"
 }
@@ -1243,7 +1243,7 @@ id: toolu_0163JgNYyfJtGGsy9purfV6H
 tool_result
 id: toolu_0163JgNYyfJtGGsy9purfV6H
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/menu.ts has been updated successfully.
+The file /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/menu.ts has been updated successfully.
 ```
 
 > TOOL
@@ -1253,7 +1253,7 @@ id: toolu_01UPMYnVdAUDCUBb4iarvg3D
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/menu.ts",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/menu.ts",
   "old_string": "      { label: t(\"app.about\"), role: \"about\" },\n      { type: \"separator\" },\n      dispatchItem(\"settings\", t(\"app.preferences\")),\n      { type: \"separator\" },",
   "new_string": "      { label: t(\"app.about\"), role: \"about\" },\n      { type: \"separator\" },\n      {\n        label: t(\"app.preferences\"),\n        accelerator: ACCELERATORS.settings,\n        click: actions.openSettings,\n      },\n      { type: \"separator\" },"
 }
@@ -1264,7 +1264,7 @@ id: toolu_01UPMYnVdAUDCUBb4iarvg3D
 tool_result
 id: toolu_01UPMYnVdAUDCUBb4iarvg3D
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/menu.ts has been updated successfully.
+The file /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/menu.ts has been updated successfully.
 ```
 
 > TOOL
@@ -1274,7 +1274,7 @@ id: toolu_015Q2KzuNXZiAM9iVVQ7MXzx
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/menu.ts",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/menu.ts",
   "old_string": "  const fileMenu: MenuItemConstructorOptions = {\n    label: t(\"file.name\"),\n    submenu: [\n      {\n        label: t(\"file.newSecondary\"),\n        accelerator: ACCELERATORS.newThread,\n        click: actions.openSecondary,\n      },\n      {\n        label: t(\"file.newHud\"),\n        accelerator: \"CmdOrCtrl+Shift+H\",\n        click: actions.openHud,\n      },\n      { type: \"separator\" },\n      ...(isMac\n        ? []\n        : [\n            dispatchItem(\"settings\", t(\"file.settings\")),\n            { type: \"separator\" as const },\n          ]),\n      { label: t(\"file.close\"), role: \"close\" },\n    ],\n  };",
   "new_string": "  const fileMenu: MenuItemConstructorOptions = {\n    label: t(\"file.name\"),\n    submenu: [\n      {\n        label: t(\"file.newHud\"),\n        accelerator: \"CmdOrCtrl+Shift+H\",\n        click: actions.openHud,\n      },\n      { type: \"separator\" },\n      ...(isMac\n        ? []\n        : [\n            {\n              label: t(\"file.settings\"),\n              accelerator: ACCELERATORS.settings,\n              click: actions.openSettings,\n            },\n            { type: \"separator\" as const },\n          ]),\n      { label: t(\"file.close\"), role: \"close\" },\n    ],\n  };"
 }
@@ -1285,7 +1285,7 @@ id: toolu_015Q2KzuNXZiAM9iVVQ7MXzx
 tool_result
 id: toolu_015Q2KzuNXZiAM9iVVQ7MXzx
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/menu.ts has been updated successfully.
+The file /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/menu.ts has been updated successfully.
 ```
 
 > TOOL
@@ -1295,7 +1295,7 @@ id: toolu_01M2Tw5TXGv2oAJsRgKSWLzD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/shared/accelerators.ts",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/shared/accelerators.ts",
   "old_string": "export const ACCELERATORS = {\n  newThread: \"CmdOrCtrl+N\",\n  newWindow: \"CmdOrCtrl+Shift+N\",\n  settings: \"CmdOrCtrl+,\",\n  toggleSidebar: \"CmdOrCtrl+B\",\n} as const;",
   "new_string": "export const ACCELERATORS = {\n  newWindow: \"CmdOrCtrl+Shift+N\",\n  settings: \"CmdOrCtrl+,\",\n  toggleSidebar: \"CmdOrCtrl+B\",\n} as const;"
 }
@@ -1306,7 +1306,7 @@ id: toolu_01M2Tw5TXGv2oAJsRgKSWLzD
 tool_result
 id: toolu_01M2Tw5TXGv2oAJsRgKSWLzD
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/shared/accelerators.ts has been updated successfully.
+The file /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/shared/accelerators.ts has been updated successfully.
 ```
 
 > TOOL
@@ -1316,7 +1316,7 @@ id: toolu_016rgirYFLSrAdxDG9CHTJea
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/locales/en.json",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/locales/en.json",
   "old_string": "  \"file.name\": \"File\",\n  \"file.newSecondary\": \"New Window\",\n  \"file.newHud\": \"New HUD\",",
   "new_string": "  \"file.name\": \"File\",\n  \"file.newHud\": \"New HUD\","
 }
@@ -1327,7 +1327,7 @@ id: toolu_016rgirYFLSrAdxDG9CHTJea
 tool_result
 id: toolu_016rgirYFLSrAdxDG9CHTJea
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/locales/en.json has been updated successfully.
+The file /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/locales/en.json has been updated successfully.
 ```
 
 > AGENT
@@ -1341,7 +1341,7 @@ id: toolu_015czg3dE6NFrDVtikpB6Qf2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/main.ts",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/main.ts",
   "old_string": "function dispatchAction(name: AcceleratorName): void {\n  switch (name) {\n    case \"toggleSidebar\":\n      sidebar.toggle();\n      break;\n    case \"settings\":\n      router.navigate(\"settings\");\n      break;\n    case \"newThread\":\n      void window.lightfastBridge.openWindow(\"secondary\");\n      break;\n    case \"newWindow\":\n      void window.lightfastBridge.openWindow(\"primary\");\n      break;\n    default:\n      break;\n  }\n}",
   "new_string": "function dispatchAction(name: AcceleratorName): void {\n  switch (name) {\n    case \"toggleSidebar\":\n      sidebar.toggle();\n      break;\n    case \"settings\":\n      void window.lightfastBridge.openWindow(\"settings\");\n      break;\n    case \"newWindow\":\n      void window.lightfastBridge.openWindow(\"primary\");\n      break;\n    default:\n      break;\n  }\n}"
 }
@@ -1352,7 +1352,7 @@ id: toolu_015czg3dE6NFrDVtikpB6Qf2
 tool_result
 id: toolu_015czg3dE6NFrDVtikpB6Qf2
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/main.ts has been updated successfully.
+The file /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/main.ts has been updated successfully.
 ```
 
 > TOOL
@@ -1362,7 +1362,7 @@ id: toolu_01BAtJkpesgMCitd6mbMg2Rv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/user-menu.tsx",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/user-menu.tsx",
   "old_string": "          <DropdownMenu.Item\n            className=\"user-menu-item\"\n            onSelect={() => {\n              window.location.hash = \"#/settings\";\n            }}\n          >\n            <Settings size={14} className=\"user-menu-icon\" />\n            Settings\n          </DropdownMenu.Item>",
   "new_string": "          <DropdownMenu.Item\n            className=\"user-menu-item\"\n            onSelect={() => void window.lightfastBridge.openWindow(\"settings\")}\n          >\n            <Settings size={14} className=\"user-menu-icon\" />\n            Settings\n          </DropdownMenu.Item>"
 }
@@ -1373,7 +1373,7 @@ id: toolu_01BAtJkpesgMCitd6mbMg2Rv
 tool_result
 id: toolu_01BAtJkpesgMCitd6mbMg2Rv
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/user-menu.tsx has been updated successfully.
+The file /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/user-menu.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -1387,7 +1387,7 @@ id: toolu_01HMB7XxRchBgcKA3QweDoUX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/index.html",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/index.html",
   "old_string": "          <p class=\"content-hint\">\n            Press <kbd data-kbd-hint=\"toggleSidebar\"></kbd> to toggle the\n            sidebar,\n            <kbd data-kbd-hint=\"settings\"></kbd>\n            for settings,\n            <kbd data-kbd-hint=\"newThread\"></kbd>\n            for a new window.\n          </p>\n          <div class=\"actions\">\n            <button type=\"button\" class=\"action\" data-open-window=\"secondary\">\n              Open Secondary\n            </button>\n            <button type=\"button\" class=\"action\" data-open-window=\"hud\">\n              Open HUD\n            </button>\n          </div>",
   "new_string": "          <p class=\"content-hint\">\n            Press <kbd data-kbd-hint=\"toggleSidebar\"></kbd> to toggle the\n            sidebar, <kbd data-kbd-hint=\"settings\"></kbd> for settings.\n          </p>\n          <div class=\"actions\">\n            <button type=\"button\" class=\"action\" data-open-window=\"hud\">\n              Open HUD\n            </button>\n          </div>"
 }
@@ -1398,7 +1398,7 @@ id: toolu_01HMB7XxRchBgcKA3QweDoUX
 tool_result
 id: toolu_01HMB7XxRchBgcKA3QweDoUX
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/index.html has been updated successfully.
+The file /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/index.html has been updated successfully.
 ```
 
 > TOOL
@@ -1408,7 +1408,7 @@ id: toolu_01VD3RQ5VzG7CHsN6TvMqUrh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/index.html",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/index.html",
   "old_string": "        <section\n          class=\"content-inner settings-root\"\n          data-route-settings\n          data-kind-primary\n        ></section>\n        <section class=\"content-inner\" data-kind-secondary>\n          <h1>Secondary window</h1>\n          <p>\n            Separate 720&times;540 window for settings/about flows. Same\n            vibrancy backing, no sidebar. Opened from the primary window's menu\n            or <code>Cmd+N</code>.\n          </p>\n        </section>",
   "new_string": "        <section\n          class=\"content-inner settings-root\"\n          data-route-settings\n          data-kind-primary\n        ></section>\n        <section class=\"content-inner settings-window\" data-kind-settings>\n          <div class=\"titlebar-drag\"></div>\n          <div id=\"settings-root\"></div>\n        </section>"
 }
@@ -1419,7 +1419,7 @@ id: toolu_01VD3RQ5VzG7CHsN6TvMqUrh
 tool_result
 id: toolu_01VD3RQ5VzG7CHsN6TvMqUrh
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/index.html has been updated successfully.
+The file /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/index.html has been updated successfully.
 ```
 
 > AGENT
@@ -1433,7 +1433,7 @@ id: toolu_018yxRhhJVemsTtkY3u2BL1m
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/styles.css",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/styles.css",
   "old_string": ":root[data-window-kind=\"secondary\"] [data-kind-secondary],\n:root[data-window-kind=\"hud\"] [data-kind-hud] {\n  display: revert;\n}\n\n:root[data-window-kind=\"primary\"] [data-kind-secondary],\n:root[data-window-kind=\"primary\"] [data-kind-hud],\n:root[data-window-kind=\"secondary\"] [data-kind-primary],\n:root[data-window-kind=\"secondary\"] .sidebar,\n:root[data-window-kind=\"hud\"] [data-kind-primary],\n:root[data-window-kind=\"hud\"] .sidebar {\n  display: none;\n}",
   "new_string": ":root[data-window-kind=\"settings\"] [data-kind-settings],\n:root[data-window-kind=\"hud\"] [data-kind-hud] {\n  display: revert;\n}\n\n:root[data-window-kind=\"primary\"] [data-kind-settings],\n:root[data-window-kind=\"primary\"] [data-kind-hud],\n:root[data-window-kind=\"settings\"] [data-kind-primary],\n:root[data-window-kind=\"settings\"] .sidebar,\n:root[data-window-kind=\"hud\"] [data-kind-primary],\n:root[data-window-kind=\"hud\"] .sidebar {\n  display: none;\n}\n\n.settings-window {\n  display: none;\n  height: 100vh;\n  padding: 0;\n  background: transparent;\n}"
 }
@@ -1444,7 +1444,7 @@ id: toolu_018yxRhhJVemsTtkY3u2BL1m
 tool_result
 id: toolu_018yxRhhJVemsTtkY3u2BL1m
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/styles.css has been updated successfully.
+The file /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/styles.css has been updated successfully.
 ```
 
 > AGENT
@@ -1467,11 +1467,11 @@ id: toolu_01GVZqqrrDAEaANmcsGrjZCP
 tool_result
 id: toolu_01GVZqqrrDAEaANmcsGrjZCP
 ```
-> @lightfast/desktop@0.0.0 typecheck /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop
+> @lightfast/desktop@0.0.0 typecheck /home/<USER>/Code/@lightfastai/lightfast/apps/desktop
 > tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.node.json
 
 src/renderer/src/settings.ts(18,3): error TS2353: Object literal may only specify known properties, and 'newThread' does not exist in type 'Record<"newWindow" | "settings" | "toggleSidebar", string>'.
-/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop:
+/home/<USER>/Code/@lightfastai/lightfast/apps/desktop:
  ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @lightfast/desktop@0.0.0 typecheck: `tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.node.json`
 Exit status 2
 ```
@@ -1483,7 +1483,7 @@ id: toolu_014ReMVdC2719Zeym7T94Erw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/settings.ts",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/settings.ts",
   "old_string": "const SHORTCUT_LABELS: Record<AcceleratorName, string> = {\n  newThread: \"New window\",\n  newWindow: \"New primary window\",\n  settings: \"Open settings\",\n  toggleSidebar: \"Toggle sidebar\",\n};",
   "new_string": "const SHORTCUT_LABELS: Record<AcceleratorName, string> = {\n  newWindow: \"New primary window\",\n  settings: \"Open settings\",\n  toggleSidebar: \"Toggle sidebar\",\n};"
 }
@@ -1494,7 +1494,7 @@ id: toolu_014ReMVdC2719Zeym7T94Erw
 tool_result
 id: toolu_014ReMVdC2719Zeym7T94Erw
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/settings.ts has been updated successfully.
+The file /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/settings.ts has been updated successfully.
 ```
 
 > TOOL
@@ -1513,7 +1513,7 @@ id: toolu_013TFqBzeLG2sp5egJYp5Q1b
 tool_result
 id: toolu_013TFqBzeLG2sp5egJYp5Q1b
 ```
-> @lightfast/desktop@0.0.0 typecheck /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop
+> @lightfast/desktop@0.0.0 typecheck /home/<USER>/Code/@lightfastai/lightfast/apps/desktop
 > tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.node.json
 ```
 
@@ -1834,7 +1834,7 @@ id: toolu_013FY21jHHn4adwM83i8vYcz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/thoughts/shared/plans/2026-05-04-desktop-settings-floating-panel.md",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/thoughts/shared/plans/2026-05-04-desktop-settings-floating-panel.md",
   "old_string": "#### Automated Verification\n\n- [ ] Type checking passes: `pnpm --filter @lightfast/desktop typecheck`\n- [ ] Linting passes: `pnpm check` (Biome via root)\n- [ ] `grep -rn '\"secondary\"\\|newThread\\|openSecondary\\|newSecondary' apps/desktop/src` returns zero hits.\n- [ ] `grep -rn 'data-kind-secondary\\|data-open-window=\"secondary\"' apps/desktop/src` returns zero hits.\n\n#### Human Review\n\n- [ ] Run `cd apps/desktop && pnpm dev` → press Cmd+, → expect a 720×640 window opens with hidden-inset traffic lights, vibrancy backing, sized exactly 720×640, **not resizable** (cursor stays as arrow on edges).",
   "new_string": "#### Automated Verification\n\n- [x] Type checking passes: `pnpm --filter @lightfast/desktop typecheck`\n- [x] Linting passes: `pnpm check` (Biome via root) — modified files clean; 6 pre-existing lint errors on `user-menu.tsx` are unchanged from baseline.\n- [x] `grep -rn '\"secondary\"\\|newThread\\|openSecondary\\|newSecondary' apps/desktop/src` returns zero hits.\n- [x] `grep -rn 'data-kind-secondary\\|data-open-window=\"secondary\"' apps/desktop/src` returns zero hits.\n\n#### Human Review\n\n- [ ] Run `cd apps/desktop && pnpm dev` → press Cmd+, → expect a 720×640 window opens with hidden-inset traffic lights, vibrancy backing, sized exactly 720×640, **not resizable** (cursor stays as arrow on edges)."
 }
@@ -1856,7 +1856,7 @@ id: toolu_016nrWjqmmW6SLPinVx1mpEj
 tool_result
 id: toolu_013FY21jHHn4adwM83i8vYcz
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/thoughts/shared/plans/2026-05-04-desktop-settings-floating-panel.md has been updated successfully.
+The file /home/<USER>/Code/@lightfastai/lightfast/thoughts/shared/plans/2026-05-04-desktop-settings-floating-panel.md has been updated successfully.
 ```
 
 > TOOL
@@ -1904,7 +1904,7 @@ tool_use Read
 id: toolu_016maQRCKJo1WeQRE7iAqvFk
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/thoughts/shared/plans/2026-05-04-desktop-settings-floating-panel.md"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/thoughts/shared/plans/2026-05-04-desktop-settings-floating-panel.md"
 }
 ```
 
@@ -1935,7 +1935,7 @@ tool_use Read
 id: toolu_01XjApSNnNntQGQNp4T7sSSq
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/entry.tsx"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/entry.tsx"
 }
 ```
 
@@ -1986,7 +1986,7 @@ tool_use Read
 id: toolu_01E7Y2tfuXkY1bHTm58DUPX3
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/settings.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/settings.ts"
 }
 ```
 
@@ -2049,7 +2049,7 @@ tool_use Read
 id: toolu_01SHTUbs6uvrFAoULp85tW6h
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/user-menu.tsx"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/user-menu.tsx"
 }
 ```
 
@@ -2123,7 +2123,7 @@ tool_use Bash
 id: toolu_01Szh1gnDdDtNFBsThJyMp5C
 ```json
 {
-  "command": "ls /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/",
+  "command": "ls /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/",
   "description": "List react directory contents"
 }
 ```
@@ -2146,7 +2146,7 @@ tool_use Read
 id: toolu_01JMcXD7v8M1JbHfYhKBMqQ7
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/styles.css"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/styles.css"
 }
 ```
 
@@ -2233,7 +2233,7 @@ tool_use Read
 id: toolu_018oZ3qc8sUHDeftF8B1zaM3
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/app-shell.tsx"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/app-shell.tsx"
 }
 ```
 
@@ -2292,7 +2292,7 @@ tool_use Read
 id: toolu_01LziW9jE7VVEWacLbq7RjBt
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/account-card.tsx"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/account-card.tsx"
 }
 ```
 
@@ -2335,7 +2335,7 @@ tool_use Read
 id: toolu_01TJf5nqa27gzGBRWV5ZwgoX
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/main.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/main.ts"
 }
 ```
 
@@ -2452,7 +2452,7 @@ tool_use Bash
 id: toolu_01GTysgkRkavXFRUJPHKheUP
 ```json
 {
-  "command": "ls /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react 2>&1 && ls /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings 2>&1 || echo \"no settings dir yet\"",
+  "command": "ls /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react 2>&1 && ls /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings 2>&1 || echo \"no settings dir yet\"",
   "description": "Check current react dir layout"
 }
 ```
@@ -2467,7 +2467,7 @@ app-shell.tsx
 entry.tsx
 signed-out-shell.tsx
 user-menu.tsx
-ls: /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings: No such file or directory
+ls: /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings: No such file or directory
 no settings dir yet
 ```
 
@@ -2477,7 +2477,7 @@ tool_use Write
 id: toolu_01TNHjzUhcreEbY7k565yfsP
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/use-settings-snapshot.ts",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/use-settings-snapshot.ts",
   "content": "import { useEffect, useState } from \"react\";\nimport type { SettingsSnapshot } from \"../../../../shared/ipc\";\n\nexport function useSettingsSnapshot(): SettingsSnapshot {\n  const [snapshot, setSnapshot] = useState<SettingsSnapshot>(\n    () => window.lightfastBridge.settings\n  );\n  useEffect(() => window.lightfastBridge.onSettingsChanged(setSnapshot), []);\n  return snapshot;\n}\n"
 }
 ```
@@ -2487,7 +2487,7 @@ id: toolu_01TNHjzUhcreEbY7k565yfsP
 tool_result
 id: toolu_01TNHjzUhcreEbY7k565yfsP
 ```
-File created successfully at: /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/use-settings-snapshot.ts
+File created successfully at: /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/use-settings-snapshot.ts
 ```
 
 > TOOL
@@ -2496,7 +2496,7 @@ tool_use Write
 id: toolu_01D3BL5wh47QZirG9XFqyAQa
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/panes/account.tsx",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/panes/account.tsx",
   "content": "import { useTRPC } from \"@repo/app-trpc/react\";\nimport { useQuery } from \"@tanstack/react-query\";\nimport { LogOut } from \"lucide-react\";\n\nexport function Account() {\n  const trpc = useTRPC();\n  const query = useQuery(trpc.account.get.queryOptions());\n  const data = query.data;\n\n  return (\n    <section className=\"settings-section\">\n      <div className=\"settings-card\">\n        <div className=\"settings-row\">\n          <div className=\"account-identity\">\n            {data?.imageUrl ? (\n              <img\n                src={data.imageUrl}\n                alt=\"\"\n                className=\"account-avatar\"\n                width={40}\n                height={40}\n              />\n            ) : (\n              <div className=\"account-avatar account-avatar--placeholder\" />\n            )}\n            <div>\n              <div className=\"account-name\">{data?.fullName ?? \"—\"}</div>\n              <div className=\"account-email\">\n                {data?.primaryEmailAddress ?? \"\"}\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div className=\"settings-card\">\n        <div className=\"settings-row\">\n          <div className=\"settings-row__label\">Sign out of Lightfast</div>\n          <button\n            type=\"button\"\n            className=\"settings-button settings-button--destructive\"\n            onClick={() => void window.lightfastBridge.auth.signOut()}\n          >\n            <LogOut size={14} />\n            <span>Sign out</span>\n          </button>\n        </div>\n      </div>\n    </section>\n  );\n}\n"
 }
 ```
@@ -2506,7 +2506,7 @@ id: toolu_01D3BL5wh47QZirG9XFqyAQa
 tool_result
 id: toolu_01D3BL5wh47QZirG9XFqyAQa
 ```
-File created successfully at: /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/panes/account.tsx
+File created successfully at: /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/panes/account.tsx
 ```
 
 > TOOL
@@ -2515,7 +2515,7 @@ tool_use Write
 id: toolu_01NwXdsKQV3VwV9YMpTgijAk
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/panes/general.tsx",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/panes/general.tsx",
   "content": "import { useSettingsSnapshot } from \"../use-settings-snapshot\";\n\nconst TOGGLES = [\n  { key: \"launchAtLogin\", label: \"Launch at login\" },\n  { key: \"showInMenuBar\", label: \"Show in menu bar\" },\n  {\n    key: \"checkForUpdatesAutomatically\",\n    label: \"Check for updates automatically\",\n  },\n] as const;\n\nexport function General() {\n  const snapshot = useSettingsSnapshot();\n  return (\n    <section className=\"settings-section\">\n      <div className=\"settings-card\">\n        {TOGGLES.map(({ key, label }) => (\n          <div key={key} className=\"settings-row\">\n            <div className=\"settings-row__label\">{label}</div>\n            <label className=\"switch\">\n              <input\n                type=\"checkbox\"\n                checked={snapshot[key]}\n                onChange={(e) =>\n                  void window.lightfastBridge.updateSetting(\n                    key,\n                    e.target.checked\n                  )\n                }\n              />\n              <span className=\"switch__track\" />\n            </label>\n          </div>\n        ))}\n      </div>\n    </section>\n  );\n}\n"
 }
 ```
@@ -2525,7 +2525,7 @@ id: toolu_01NwXdsKQV3VwV9YMpTgijAk
 tool_result
 id: toolu_01NwXdsKQV3VwV9YMpTgijAk
 ```
-File created successfully at: /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/panes/general.tsx
+File created successfully at: /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/panes/general.tsx
 ```
 
 > TOOL
@@ -2534,7 +2534,7 @@ tool_use Write
 id: toolu_01E3STUuiZN3CWPpTpb6b7qu
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/panes/appearance.tsx",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/panes/appearance.tsx",
   "content": "import type { ThemeSource } from \"../../../../shared/ipc\";\nimport { useSettingsSnapshot } from \"../use-settings-snapshot\";\n\nconst THEME_OPTIONS: Array<{ value: ThemeSource; label: string }> = [\n  { value: \"system\", label: \"System\" },\n  { value: \"light\", label: \"Light\" },\n  { value: \"dark\", label: \"Dark\" },\n];\n\nexport function Appearance() {\n  const snapshot = useSettingsSnapshot();\n  return (\n    <section className=\"settings-section\">\n      <div className=\"settings-card\">\n        <div className=\"settings-row\">\n          <div className=\"settings-row__label\">Theme</div>\n          <div className=\"segmented\" role=\"group\">\n            {THEME_OPTIONS.map((option) => (\n              <button\n                key={option.value}\n                type=\"button\"\n                className={`segmented__button${snapshot.themeSource === option.value ? \" active\" : \"\"}`}\n                onClick={() =>\n                  void window.lightfastBridge.updateSetting(\n                    \"themeSource\",\n                    option.value\n                  )\n                }\n              >\n                {option.label}\n              </button>\n            ))}\n          </div>\n        </div>\n      </div>\n    </section>\n  );\n}\n"
 }
 ```
@@ -2544,7 +2544,7 @@ id: toolu_01E3STUuiZN3CWPpTpb6b7qu
 tool_result
 id: toolu_01E3STUuiZN3CWPpTpb6b7qu
 ```
-File created successfully at: /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/panes/appearance.tsx
+File created successfully at: /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/panes/appearance.tsx
 ```
 
 > TOOL
@@ -2553,7 +2553,7 @@ tool_use Write
 id: toolu_01MoMgLzdYmyHuZwffXkqqZD
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/panes/shortcuts.tsx",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/panes/shortcuts.tsx",
   "content": "import {\n  ACCELERATORS,\n  type AcceleratorName,\n  type FormatPlatform,\n  formatAccelerator,\n} from \"../../../../shared/accelerators\";\n\nconst SHORTCUT_LABELS: Record<AcceleratorName, string> = {\n  newWindow: \"New primary window\",\n  settings: \"Open settings\",\n  toggleSidebar: \"Toggle sidebar\",\n};\n\nexport function Shortcuts({ platform }: { platform: FormatPlatform }) {\n  const names = Object.keys(ACCELERATORS) as AcceleratorName[];\n  return (\n    <section className=\"settings-section\">\n      <div className=\"settings-card\">\n        {names.map((name) => (\n          <div key={name} className=\"settings-row\">\n            <div className=\"settings-row__label\">{SHORTCUT_LABELS[name]}</div>\n            <kbd className=\"settings-row__value\">\n              {formatAccelerator(ACCELERATORS[name], platform)}\n            </kbd>\n          </div>\n        ))}\n      </div>\n    </section>\n  );\n}\n"
 }
 ```
@@ -2563,7 +2563,7 @@ id: toolu_01MoMgLzdYmyHuZwffXkqqZD
 tool_result
 id: toolu_01MoMgLzdYmyHuZwffXkqqZD
 ```
-File created successfully at: /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/panes/shortcuts.tsx
+File created successfully at: /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/panes/shortcuts.tsx
 ```
 
 > TOOL
@@ -2572,7 +2572,7 @@ tool_use Write
 id: toolu_0158nvSbKKSUGsCQrUJee2Nb
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/SettingsWindow.tsx",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/SettingsWindow.tsx",
   "content": "import { Keyboard, Palette, Settings as Gear, User } from \"lucide-react\";\nimport { useState } from \"react\";\nimport type { FormatPlatform } from \"../../../../shared/accelerators\";\nimport { Account } from \"./panes/account\";\nimport { Appearance } from \"./panes/appearance\";\nimport { General } from \"./panes/general\";\nimport { Shortcuts } from \"./panes/shortcuts\";\n\ntype PaneId = \"account\" | \"general\" | \"appearance\" | \"shortcuts\";\n\nconst TABS: Array<{ id: PaneId; label: string; Icon: typeof User }> = [\n  { id: \"account\", label: \"Account\", Icon: User },\n  { id: \"general\", label: \"General\", Icon: Gear },\n  { id: \"appearance\", label: \"Appearance\", Icon: Palette },\n  { id: \"shortcuts\", label: \"Shortcuts\", Icon: Keyboard },\n];\n\nexport function SettingsWindow({ platform }: { platform: FormatPlatform }) {\n  const [pane, setPane] = useState<PaneId>(\"account\");\n  return (\n    <div className=\"settings-window__inner\">\n      <nav className=\"settings-toolbar\" role=\"tablist\">\n        {TABS.map(({ id, label, Icon }) => (\n          <button\n            key={id}\n            type=\"button\"\n            role=\"tab\"\n            aria-selected={pane === id}\n            className={`settings-toolbar__tab${pane === id ? \" active\" : \"\"}`}\n            onClick={() => setPane(id)}\n          >\n            <Icon size={20} className=\"settings-toolbar__icon\" aria-hidden />\n            <span className=\"settings-toolbar__label\">{label}</span>\n          </button>\n        ))}\n      </nav>\n      <div className=\"settings-pane\" role=\"tabpanel\">\n        {pane === \"account\" && <Account />}\n        {pane === \"general\" && <General />}\n        {pane === \"appearance\" && <Appearance />}\n        {pane === \"shortcuts\" && <Shortcuts platform={platform} />}\n      </div>\n    </div>\n  );\n}\n"
 }
 ```
@@ -2582,7 +2582,7 @@ id: toolu_0158nvSbKKSUGsCQrUJee2Nb
 tool_result
 id: toolu_0158nvSbKKSUGsCQrUJee2Nb
 ```
-File created successfully at: /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/SettingsWindow.tsx
+File created successfully at: /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/SettingsWindow.tsx
 ```
 
 > AGENT
@@ -2595,7 +2595,7 @@ tool_use Write
 id: toolu_0171mL6J1bZ1iGYFTBatMK1p
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/entry.tsx",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/entry.tsx",
   "content": "import { DesktopTRPCProvider } from \"@repo/app-trpc/desktop\";\nimport { StrictMode } from \"react\";\nimport { createRoot } from \"react-dom/client\";\nimport type { FormatPlatform } from \"../../../shared/accelerators\";\nimport { AppShell } from \"./app-shell\";\nimport { SettingsWindow } from \"./settings/SettingsWindow\";\nimport { UserMenu } from \"./user-menu\";\n\nconst appOrigin = window.lightfastBridge.appOrigin;\nconst platform = window.lightfastBridge.platform;\nconst formatPlatform: FormatPlatform =\n  platform === \"darwin\" || platform === \"linux\" || platform === \"win32\"\n    ? platform\n    : \"linux\";\n\nfunction Providers({ children }: { children: React.ReactNode }) {\n  return (\n    <StrictMode>\n      <DesktopTRPCProvider baseUrl={appOrigin}>{children}</DesktopTRPCProvider>\n    </StrictMode>\n  );\n}\n\nif (window.codexWindowType === \"settings\") {\n  const settingsContainer = document.getElementById(\"settings-root\");\n  if (settingsContainer) {\n    createRoot(settingsContainer).render(\n      <Providers>\n        <SettingsWindow platform={formatPlatform} />\n      </Providers>\n    );\n  }\n} else {\n  const container = document.getElementById(\"react-root\");\n  if (container) {\n    createRoot(container).render(\n      <Providers>\n        <AppShell />\n      </Providers>\n    );\n  }\n\n  const userMenuContainer = document.getElementById(\"user-menu-root\");\n  if (userMenuContainer) {\n    createRoot(userMenuContainer).render(\n      <Providers>\n        <UserMenu />\n      </Providers>\n    );\n  }\n}\n"
 }
 ```
@@ -2605,7 +2605,7 @@ id: toolu_0171mL6J1bZ1iGYFTBatMK1p
 tool_result
 id: toolu_0171mL6J1bZ1iGYFTBatMK1p
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/entry.tsx has been updated successfully.
+The file /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/entry.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -2619,7 +2619,7 @@ id: toolu_016NnaP4PU9JY5YN436BhYgD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/styles.css",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/styles.css",
   "old_string": ".auth-gate__primary-button:focus-visible,\n.auth-gate__secondary-button:focus-visible {\n  outline: 2px solid var(--color-accent);\n  outline-offset: 2px;\n}",
   "new_string": ".auth-gate__primary-button:focus-visible,\n.auth-gate__secondary-button:focus-visible {\n  outline: 2px solid var(--color-accent);\n  outline-offset: 2px;\n}\n\n/* Settings window */\n\n.settings-window__inner {\n  display: flex;\n  flex-direction: column;\n  height: 100vh;\n  background: transparent;\n}\n\n.settings-toolbar {\n  -webkit-app-region: drag;\n  display: flex;\n  gap: calc(var(--spacing) * 1);\n  justify-content: center;\n  align-items: flex-end;\n  padding: 36px calc(var(--spacing) * 4) calc(var(--spacing) * 2);\n  border-bottom: 1px solid var(--color-border);\n}\n\n.settings-toolbar__tab {\n  -webkit-app-region: no-drag;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 4px;\n  min-width: 72px;\n  padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 2);\n  font: inherit;\n  font-size: var(--text-sm);\n  color: var(--color-text-foreground-tertiary);\n  appearance: none;\n  cursor: default;\n  background: transparent;\n  border: 0;\n  border-radius: 6px;\n}\n\n.settings-toolbar__tab:hover {\n  color: var(--color-text-foreground-secondary);\n  background: var(--color-background-button-tertiary-hover);\n}\n\n.settings-toolbar__tab.active {\n  color: var(--color-text-foreground);\n  background: var(--color-background-button-tertiary-active);\n}\n\n.settings-toolbar__icon {\n  width: 20px;\n  height: 20px;\n}\n\n.settings-toolbar__label {\n  font-size: var(--text-sm);\n}\n\n.settings-pane {\n  flex: 1;\n  min-height: 0;\n  padding: calc(var(--spacing) * 5) calc(var(--spacing) * 6);\n  overflow-y: auto;\n}\n\n.settings-pane .settings-section {\n  max-width: none;\n  margin: 0 0 calc(var(--spacing) * 4);\n}\n\n/* Account pane */\n\n.account-identity {\n  display: flex;\n  gap: calc(var(--spacing) * 3);\n  align-items: center;\n}\n\n.account-avatar {\n  width: 40px;\n  height: 40px;\n  object-fit: cover;\n  background: var(--color-background-elevated-secondary);\n  border-radius: 50%;\n}\n\n.account-avatar--placeholder {\n  background: var(--color-background-elevated-primary-opaque);\n}\n\n.account-name {\n  font-size: var(--text-sm);\n  font-weight: 500;\n  color: var(--color-text-foreground);\n}\n\n.account-email {\n  font-size: var(--text-sm);\n  color: var(--color-text-foreground-tertiary);\n}\n\n.settings-button {\n  -webkit-app-region: no-drag;\n  display: inline-flex;\n  gap: calc(var(--spacing) * 1.5);\n  align-items: center;\n  padding: calc(var(--spacing) * 1) calc(var(--spacing) * 2.5);\n  font: […]
 
@@ -2628,7 +2628,7 @@ id: toolu_016NnaP4PU9JY5YN436BhYgD
 tool_result
 id: toolu_016NnaP4PU9JY5YN436BhYgD
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/styles.css has been updated successfully.
+The file /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/styles.css has been updated successfully.
 ```
 
 > AGENT
@@ -2651,12 +2651,12 @@ id: toolu_01Lx3jbSZUjKK7GuoeoY5f3d
 tool_result
 id: toolu_01Lx3jbSZUjKK7GuoeoY5f3d
 ```
-> @lightfast/desktop@0.0.0 typecheck /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop
+> @lightfast/desktop@0.0.0 typecheck /home/<USER>/Code/@lightfastai/lightfast/apps/desktop
 > tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.node.json
 
 src/renderer/src/react/settings/panes/appearance.tsx(1,34): error TS2307: Cannot find module '../../../../shared/ipc' or its corresponding type declarations.
 src/renderer/src/react/settings/panes/shortcuts.tsx(6,8): error TS2307: Cannot find module '../../../../shared/accelerators' or its corresponding type declarations.
-/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop:
+/home/<USER>/Code/@lightfastai/lightfast/apps/desktop:
  ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @lightfast/desktop@0.0.0 typecheck: `tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.node.json`
 Exit status 2
 ```
@@ -2667,7 +2667,7 @@ tool_use Bash
 id: toolu_017y9aDFnCRm4fmjh1RuVdDk
 ```json
 {
-  "command": "ls /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/",
+  "command": "ls /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/",
   "description": "Check desktop src layout"
 }
 ```
@@ -2690,7 +2690,7 @@ tool_use Bash
 id: toolu_01N9upktrdwiYbjD6Gyd6i3V
 ```json
 {
-  "command": "ls /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/",
+  "command": "ls /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/",
   "description": "Check renderer subfolder layout"
 }
 ```
@@ -2716,7 +2716,7 @@ id: toolu_01PXAk8Xj3pzT2HH1kpm8xA7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/panes/appearance.tsx",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/panes/appearance.tsx",
   "old_string": "import type { ThemeSource } from \"../../../../shared/ipc\";",
   "new_string": "import type { ThemeSource } from \"../../../../../shared/ipc\";"
 }
@@ -2727,7 +2727,7 @@ id: toolu_01PXAk8Xj3pzT2HH1kpm8xA7
 tool_result
 id: toolu_01PXAk8Xj3pzT2HH1kpm8xA7
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/panes/appearance.tsx has been updated successfully.
+The file /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/panes/appearance.tsx has been updated successfully.
 ```
 
 > TOOL
@@ -2737,7 +2737,7 @@ id: toolu_01T7Uih3P7wKgaQxKSBnaiuA
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/panes/shortcuts.tsx",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/panes/shortcuts.tsx",
   "old_string": "import {\n  ACCELERATORS,\n  type AcceleratorName,\n  type FormatPlatform,\n  formatAccelerator,\n} from \"../../../../shared/accelerators\";",
   "new_string": "import {\n  ACCELERATORS,\n  type AcceleratorName,\n  type FormatPlatform,\n  formatAccelerator,\n} from \"../../../../../shared/accelerators\";"
 }
@@ -2748,7 +2748,7 @@ id: toolu_01T7Uih3P7wKgaQxKSBnaiuA
 tool_result
 id: toolu_01T7Uih3P7wKgaQxKSBnaiuA
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/panes/shortcuts.tsx has been updated successfully.
+The file /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/panes/shortcuts.tsx has been updated successfully.
 ```
 
 > TOOL
@@ -2767,7 +2767,7 @@ id: toolu_016oxUSCqhhuoVmWCqP1ybYx
 tool_result
 id: toolu_016oxUSCqhhuoVmWCqP1ybYx
 ```
-> @lightfast/desktop@0.0.0 typecheck /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop
+> @lightfast/desktop@0.0.0 typecheck /home/<USER>/Code/@lightfastai/lightfast/apps/desktop
 > tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.node.json
 ```
 
@@ -2911,7 +2911,7 @@ tool_use Read
 id: toolu_01L1QYF8eX4DoZa5WoLn1BWv
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/SettingsWindow.tsx"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/SettingsWindow.tsx"
 }
 ```
 
@@ -2968,7 +2968,7 @@ id: toolu_01KhvDwifcfSBDLge9SZoLcp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/SettingsWindow.tsx",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/SettingsWindow.tsx",
   "old_string": "            className={`settings-toolbar__tab${pane === id ? \"active\" : \"\"}`}",
   "new_string": "            className={`settings-toolbar__tab${pane === id ? \" active\" : \"\"}`}"
 }
@@ -2979,7 +2979,7 @@ id: toolu_01KhvDwifcfSBDLge9SZoLcp
 tool_result
 id: toolu_01KhvDwifcfSBDLge9SZoLcp
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/SettingsWindow.tsx has been updated successfully.
+The file /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/SettingsWindow.tsx has been updated successfully.
 ```
 
 > TOOL
@@ -2989,7 +2989,7 @@ id: toolu_011j21YkQJKzVs6KpHpmZ2Nz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/panes/appearance.tsx",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/panes/appearance.tsx",
   "old_string": "                className={`segmented__button${snapshot.themeSource === option.value ? \"active\" : \"\"}`}",
   "new_string": "                className={`segmented__button${snapshot.themeSource === option.value ? \" active\" : \"\"}`}"
 }
@@ -3000,7 +3000,7 @@ id: toolu_011j21YkQJKzVs6KpHpmZ2Nz
 tool_result
 id: toolu_011j21YkQJKzVs6KpHpmZ2Nz
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/panes/appearance.tsx has been updated successfully.
+The file /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/panes/appearance.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -3074,7 +3074,7 @@ tool_use Bash
 id: toolu_01M8i3b3dC8EwQQjYNA7GFCU
 ```json
 {
-  "command": "find /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop -name 'biome.json*' -o -name 'biome.jsonc' 2>/dev/null; echo \"---ROOT---\"; ls /Users/jeevanpillay/Code/@lightfastai/lightfast/biome*",
+  "command": "find /home/<USER>/Code/@lightfastai/lightfast/apps/desktop -name 'biome.json*' -o -name 'biome.jsonc' 2>/dev/null; echo \"---ROOT---\"; ls /home/<USER>/Code/@lightfastai/lightfast/biome*",
   "description": "Find biome config files"
 }
 ```
@@ -3085,7 +3085,7 @@ tool_result
 id: toolu_01M8i3b3dC8EwQQjYNA7GFCU
 ```
 ---ROOT---
-/Users/jeevanpillay/Code/@lightfastai/lightfast/biome.jsonc
+/home/<USER>/Code/@lightfastai/lightfast/biome.jsonc
 ```
 
 > TOOL
@@ -3094,7 +3094,7 @@ tool_use Bash
 id: toolu_01R5y3YT3p1VvYCx1DaWCE95
 ```json
 {
-  "command": "grep -n \"noImgElement\\|useFilenamingConvention\\|useSemanticElements\\|noNoninteractiveElementToInteractiveRole\\|useSortedClasses\\|useSortedAttributes\\|filenamingConvention\" /Users/jeevanpillay/Code/@lightfastai/lightfast/biome.jsonc",
+  "command": "grep -n \"noImgElement\\|useFilenamingConvention\\|useSemanticElements\\|noNoninteractiveElementToInteractiveRole\\|useSortedClasses\\|useSortedAttributes\\|filenamingConvention\" /home/<USER>/Code/@lightfastai/lightfast/biome.jsonc",
   "description": "Inspect root biome.jsonc rule overrides"
 }
 ```
@@ -3113,7 +3113,7 @@ tool_use Bash
 id: toolu_01RxeocuHkiZTrECYY4ixviN
 ```json
 {
-  "command": "cat /Users/jeevanpillay/Code/@lightfastai/lightfast/biome.jsonc | head -60",
+  "command": "cat /home/<USER>/Code/@lightfastai/lightfast/biome.jsonc | head -60",
   "description": "View root biome.jsonc"
 }
 ```
@@ -3186,7 +3186,7 @@ tool_use Bash
 id: toolu_01ASxyd9xtKVw3o37YriywAp
 ```json
 {
-  "command": "mv /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/SettingsWindow.tsx /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/settings-window.tsx",
+  "command": "mv /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/SettingsWindow.tsx /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/settings-window.tsx",
   "description": "Rename SettingsWindow.tsx to kebab-case"
 }
 ```
@@ -3205,7 +3205,7 @@ tool_use Read
 id: toolu_01CBDYcwSZvBeeZ2LS4evSfz
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/settings-window.tsx"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/settings-window.tsx"
 }
 ```
 
@@ -3257,7 +3257,7 @@ id: toolu_01VUBtDS1JzK56GbteZjckmM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/settings-window.tsx",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/settings-window.tsx",
   "old_string": "    <div className=\"settings-window__inner\">\n      <nav className=\"settings-toolbar\" role=\"tablist\">\n        {TABS.map(({ id, label, Icon }) => (\n          <button\n            aria-selected={pane === id}\n            className={`settings-toolbar__tab${pane === id ? \" active\" : \"\"}`}\n            key={id}\n            onClick={() => setPane(id)}\n            role=\"tab\"\n            type=\"button\"\n          >\n            <Icon aria-hidden className=\"settings-toolbar__icon\" size={20} />\n            <span className=\"settings-toolbar__label\">{label}</span>\n          </button>\n        ))}\n      </nav>\n      <div className=\"settings-pane\" role=\"tabpanel\">\n        {pane === \"account\" && <Account />}\n        {pane === \"general\" && <General />}\n        {pane === \"appearance\" && <Appearance />}\n        {pane === \"shortcuts\" && <Shortcuts platform={platform} />}\n      </div>\n    </div>",
   "new_string": "    <div className=\"settings-window__inner\">\n      <div className=\"settings-toolbar\" role=\"tablist\">\n        {TABS.map(({ id, label, Icon }) => (\n          <button\n            aria-selected={pane === id}\n            className={\n              pane === id\n                ? \"settings-toolbar__tab active\"\n                : \"settings-toolbar__tab\"\n            }\n            key={id}\n            onClick={() => setPane(id)}\n            role=\"tab\"\n            type=\"button\"\n          >\n            <Icon aria-hidden className=\"settings-toolbar__icon\" size={20} />\n            <span className=\"settings-toolbar__label\">{label}</span>\n          </button>\n        ))}\n      </div>\n      <div className=\"settings-pane\" role=\"tabpanel\">\n        {pane === \"account\" && <Account />}\n        {pane === \"general\" && <General />}\n        {pane === \"appearance\" && <Appearance />}\n        {pane === \"shortcuts\" && <Shortcuts platform={platform} />}\n      </div>\n    </div>"
 }
@@ -3268,7 +3268,7 @@ id: toolu_01VUBtDS1JzK56GbteZjckmM
 tool_result
 id: toolu_01VUBtDS1JzK56GbteZjckmM
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/settings-window.tsx has been updated successfully.
+The file /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/settings-window.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -3282,7 +3282,7 @@ id: toolu_015Gv2vj53T8xsXsJwFA6sMC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/entry.tsx",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/entry.tsx",
   "old_string": "import { SettingsWindow } from \"./settings/SettingsWindow\";",
   "new_string": "import { SettingsWindow } from \"./settings/settings-window\";"
 }
@@ -3293,7 +3293,7 @@ id: toolu_015Gv2vj53T8xsXsJwFA6sMC
 tool_result
 id: toolu_015Gv2vj53T8xsXsJwFA6sMC
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/entry.tsx has been updated successfully.
+The file /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/entry.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -3306,7 +3306,7 @@ tool_use Read
 id: toolu_01HHgSFpULKnUfNsBaKxYJiv
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/panes/account.tsx"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/panes/account.tsx"
 }
 ```
 
@@ -3383,7 +3383,7 @@ id: toolu_01Qov9r6ybqoGyCb9pBxdn9D
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/panes/account.tsx",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/panes/account.tsx",
   "old_string": "          <div className=\"account-identity\">\n            {data?.imageUrl ? (\n              <img\n                alt=\"\"\n                className=\"account-avatar\"\n                height={40}\n                src={data.imageUrl}\n                width={40}\n              />\n            ) : (\n              <div className=\"account-avatar account-avatar--placeholder\" />\n            )}\n            <div>\n              <div className=\"account-name\">{data?.fullName ?? \"—\"}</div>\n              <div className=\"account-email\">\n                {data?.primaryEmailAddress ?? \"\"}\n              </div>\n            </div>\n          </div>",
   "new_string": "          <div className=\"account-identity\">\n            <div\n              aria-hidden\n              className={\n                data?.imageUrl\n                  ? \"account-avatar\"\n                  : \"account-avatar account-avatar--placeholder\"\n              }\n              style={\n                data?.imageUrl\n                  ? { backgroundImage: `url(\"${data.imageUrl}\")` }\n                  : undefined\n              }\n            />\n            <div>\n              <div className=\"account-name\">{data?.fullName ?? \"—\"}</div>\n              <div className=\"account-email\">\n                {data?.primaryEmailAddress ?? \"\"}\n              </div>\n            </div>\n          </div>"
 }
@@ -3394,7 +3394,7 @@ id: toolu_01Qov9r6ybqoGyCb9pBxdn9D
 tool_result
 id: toolu_01Qov9r6ybqoGyCb9pBxdn9D
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/panes/account.tsx has been updated successfully.
+The file /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/panes/account.tsx has been updated successfully.
 ```
 
 > TOOL
@@ -3403,7 +3403,7 @@ tool_use Read
 id: toolu_0141fnuPFVagTbffdsadGUjG
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/panes/appearance.tsx"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/panes/appearance.tsx"
 }
 ```
 
@@ -3460,7 +3460,7 @@ id: toolu_015GPBwerMyvr2Naf1Cb3Qtw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/panes/appearance.tsx",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/panes/appearance.tsx",
   "old_string": "          <div className=\"segmented\" role=\"group\">\n            {THEME_OPTIONS.map((option) => (\n              <button\n                className={`segmented__button${snapshot.themeSource === option.value ? \" active\" : \"\"}`}\n                key={option.value}\n                onClick={() =>\n                  void window.lightfastBridge.updateSetting(\n                    \"themeSource\",\n                    option.value\n                  )\n                }\n                type=\"button\"\n              >\n                {option.label}\n              </button>\n            ))}\n          </div>",
   "new_string": "          <div className=\"segmented\">\n            {THEME_OPTIONS.map((option) => (\n              <button\n                className={\n                  snapshot.themeSource === option.value\n                    ? \"segmented__button active\"\n                    : \"segmented__button\"\n                }\n                key={option.value}\n                onClick={() =>\n                  void window.lightfastBridge.updateSetting(\n                    \"themeSource\",\n                    option.value\n                  )\n                }\n                type=\"button\"\n              >\n                {option.label}\n              </button>\n            ))}\n          </div>"
 }
@@ -3471,7 +3471,7 @@ id: toolu_015GPBwerMyvr2Naf1Cb3Qtw
 tool_result
 id: toolu_015GPBwerMyvr2Naf1Cb3Qtw
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/panes/appearance.tsx has been updated successfully.
+The file /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/settings/panes/appearance.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -3513,7 +3513,7 @@ id: toolu_01KiRom71Un9EqsWUqVSjhir
 tool_result
 id: toolu_01KiRom71Un9EqsWUqVSjhir
 ```
-> @lightfast/desktop@0.0.0 typecheck /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop
+> @lightfast/desktop@0.0.0 typecheck /home/<USER>/Code/@lightfastai/lightfast/apps/desktop
 > tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.node.json
 ```
 
@@ -3528,7 +3528,7 @@ id: toolu_01YZLCSb5L7MhY3yd2b33Zm2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/styles.css",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/styles.css",
   "old_string": ".account-avatar {\n  width: 40px;\n  height: 40px;\n  object-fit: cover;\n  background: var(--color-background-elevated-secondary);\n  border-radius: 50%;\n}",
   "new_string": ".account-avatar {\n  flex-shrink: 0;\n  width: 40px;\n  height: 40px;\n  background-color: var(--color-background-elevated-secondary);\n  background-position: center;\n  background-size: cover;\n  border-radius: 50%;\n}"
 }
@@ -3539,7 +3539,7 @@ id: toolu_01YZLCSb5L7MhY3yd2b33Zm2
 tool_result
 id: toolu_01YZLCSb5L7MhY3yd2b33Zm2
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/styles.css has been updated successfully.
+The file /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/styles.css has been updated successfully.
 ```
 
 > TOOL
@@ -3713,7 +3713,7 @@ tool_use Bash
 id: toolu_01PGomudhnsAZNWohpkpkwDo
 ```json
 {
-  "command": "cd /tmp && rm -rf baseline-check && mkdir -p baseline-check/apps/desktop/src/renderer/src && cp /Users/jeevanpillay/Code/@lightfastai/lightfast/biome.jsonc baseline-check/ && git --git-dir=/Users/jeevanpillay/Code/@lightfastai/lightfast/.git show HEAD:apps/desktop/src/renderer/src/styles.css > baseline-check/apps/desktop/src/renderer/src/styles.css && pnpm exec biome check /tmp/baseline-check/apps/desktop/src/renderer/src/styles.css 2>&1 | grep -cE \"useSortedProperties\"; rm -rf /tmp/baseline-check",
+  "command": "cd /tmp && rm -rf baseline-check && mkdir -p baseline-check/apps/desktop/src/renderer/src && cp /home/<USER>/Code/@lightfastai/lightfast/biome.jsonc baseline-check/ && git --git-dir=/home/<USER>/Code/@lightfastai/lightfast/.git show HEAD:apps/desktop/src/renderer/src/styles.css > baseline-check/apps/desktop/src/renderer/src/styles.css && pnpm exec biome check /tmp/baseline-check/apps/desktop/src/renderer/src/styles.css 2>&1 | grep -cE \"useSortedProperties\"; rm -rf /tmp/baseline-check",
   "description": "Baseline useSortedProperties count with project biome.jsonc"
 }
 ```
@@ -3724,7 +3724,7 @@ tool_result
 id: toolu_01PGomudhnsAZNWohpkpkwDo
 ```
 0
-Shell cwd was reset to /Users/jeevanpillay/Code/@lightfastai/lightfast
+Shell cwd was reset to /home/<USER>/Code/@lightfastai/lightfast
 ```
 
 > TOOL
@@ -3733,7 +3733,7 @@ tool_use Bash
 id: toolu_012C9v7LTf7P6eN4jgNjooYt
 ```json
 {
-  "command": "cp /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/styles.css /tmp/styles-current.css && git show HEAD:apps/desktop/src/renderer/src/styles.css > /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/styles.css && pnpm exec biome check apps/desktop/src/renderer/src/styles.css 2>&1 | grep -cE \"useSortedProperties\"; cp /tmp/styles-current.css /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/styles.css; rm /tmp/styles-current.css",
+  "command": "cp /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/styles.css /tmp/styles-current.css && git show HEAD:apps/desktop/src/renderer/src/styles.css > /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/styles.css && pnpm exec biome check apps/desktop/src/renderer/src/styles.css 2>&1 | grep -cE \"useSortedProperties\"; cp /tmp/styles-current.css /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/styles.css; rm /tmp/styles-current.css",
   "description": "Run Biome on HEAD baseline at the original path"
 }
 ```
@@ -3795,7 +3795,7 @@ id: toolu_01NaDsDuVZ68qN9msMhcdi5b
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/thoughts/shared/plans/2026-05-04-desktop-settings-floating-panel.md",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/thoughts/shared/plans/2026-05-04-desktop-settings-floating-panel.md",
   "old_string": "#### Automated Verification\n\n- [ ] Type checking passes: `pnpm --filter @lightfast/desktop typecheck`\n- [ ] Linting passes: `pnpm check`\n- [ ] No new files reference the deleted `secondary` kind: `grep -rn '\"secondary\"' apps/desktop/src` is empty.",
   "new_string": "#### Automated Verification\n\n- [x] Type checking passes: `pnpm --filter @lightfast/desktop typecheck`\n- [x] Linting passes: `pnpm check` — new settings tree (`react/settings/**`, `entry.tsx`) is clean; the 13 pre-existing `useSortedProperties` findings in `styles.css` are unchanged from `HEAD` baseline.\n- [x] No new files reference the deleted `secondary` kind: `grep -rn '\"secondary\"' apps/desktop/src` is empty."
 }
@@ -3806,7 +3806,7 @@ id: toolu_01NaDsDuVZ68qN9msMhcdi5b
 tool_result
 id: toolu_01NaDsDuVZ68qN9msMhcdi5b
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/thoughts/shared/plans/2026-05-04-desktop-settings-floating-panel.md has been updated successfully.
+The file /home/<USER>/Code/@lightfastai/lightfast/thoughts/shared/plans/2026-05-04-desktop-settings-floating-panel.md has been updated successfully.
 ```
 
 > TOOL

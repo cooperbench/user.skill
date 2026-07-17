@@ -53,7 +53,7 @@ id: toolu_013MYs61ycuR7DXCZxqr59Vp
 {
   "subagent_type": "Explore",
   "description": "Investigate mise worktree trust",
-  "prompt": "I'm investigating a drain-cycle bug. A SessionEnd hook failed with this error:\n\n```\nmise ERROR error parsing config file: ~/src/drain-cycle/.worktrees/ABA-334/mise.toml\nmise ERROR Config files in ~/src/drain-cycle/.worktrees/ABA-334/mise.toml are not trusted.\nTrust them with `mise trust`.\n```\n\nInvestigate:\n1. Is there a `mise.toml` at the repo root (`/Users/anton/src/drain-cycle/mise.toml`)? Read it. Is the repo root itself trusted (look for `.mise` trust state, or anything indicating trust)?\n2. How are worktrees created in this repo? Search for the worktree-creation code (likely Python in the orchestrator, or a skill). When a worktree is created at `.worktrees/ABA-NNN/`, does the `mise.toml` get copied/symlinked into it? Does the creation code run `mise trust` on the new worktree?\n3. Search the codebase for any reference to `mise`, `mise trust`, `MISE_`, or mise config handling — especially in worktree setup, handoff, or hook code.\n4. Look at how `.worktrees/` is structured. Is `mise.toml` checked in (so it appears in each worktree) but un-trusted because trust is path-specific?\n\nReport file paths and line numbers. Explain why a freshly-created worktree would have an untrusted mise.toml and whether any existing code is supposed to trust it."
+  "prompt": "I'm investigating a drain-cycle bug. A SessionEnd hook failed with this error:\n\n```\nmise ERROR error parsing config file: ~/src/drain-cycle/.worktrees/ABA-334/mise.toml\nmise ERROR Config files in ~/src/drain-cycle/.worktrees/ABA-334/mise.toml are not trusted.\nTrust them with `mise trust`.\n```\n\nInvestigate:\n1. Is there a `mise.toml` at the repo root (`/home/<USER>/src/drain-cycle/mise.toml`)? Read it. Is the repo root itself trusted (look for `.mise` trust state, or anything indicating trust)?\n2. How are worktrees created in this repo? Search for the worktree-creation code (likely Python in the orchestrator, or a skill). When a worktree is created at `.worktrees/ABA-NNN/`, does the `mise.toml` get copied/symlinked into it? Does the creation code run `mise trust` on the new worktree?\n3. Search the codebase for any reference to `mise`, `mise trust`, `MISE_`, or mise config handling — especially in worktree setup, handoff, or hook code.\n4. Look at how `.worktrees/` is structured. Is `mise.toml` checked in (so it appears in each worktree) but un-trusted because trust is path-specific?\n\nReport file paths and line numbers. Explain why a freshly-created worktree would have an untrusted mise.toml and whether any existing code is supposed to trust it."
 }
 ```
 
@@ -70,7 +70,7 @@ I've thoroughly investigated the mise.toml trust issue in drain-cycle. Here are 
 
 ### 1. Root Repo mise.toml
 
-**File:** `/Users/anton/src/drain-cycle/mise.toml`
+**File:** `/home/<USER>/src/drain-cycle/mise.toml`
 
 **Contents:**
 ```toml
@@ -82,11 +82,11 @@ This is a tracked file in git (confirmed with `git ls-files`). There is no `.mis
 
 ### 2. Worktree Creation & Configuration
 
-**Worktree module:** `/Users/anton/src/drain-cycle/drain_cycle/worktree.py` (lines 48-87)
+**Worktree module:** `/home/<USER>/src/drain-cycle/drain_cycle/worktree.py` (lines 48-87)
 
 The `worktree.ensure()` function creates worktrees via `git worktree add`, which checks out *tracked files only*. Then `worktree.link_project_config()` (lines 105-153) symlinks gitignored project config into the worktree.
 
-**Current symlink configuration** (`/Users/anton/.drain-cycle/repos.yml`, lines 10-12):
+**Current symlink configuration** (`/home/<USER>/.drain-cycle/repos.yml`, lines 10-12):
 ```yaml
 worktree_config_paths:
   - .claude
@@ -97,13 +97,13 @@ worktree_config_paths:
 
 ### 3. The Bug Mechanism
 
-**Worktree state** (`/Users/anton/src/drain-cycle/.worktrees/ABA-334/`):
-- `.claude` → symlink to `/Users/anton/src/drain-cycle/.claude` ✓ (configured)
+**Worktree state** (`/home/<USER>/src/drain-cycle/.worktrees/ABA-334/`):
+- `.claude` → symlink to `/home/<USER>/src/drain-cycle/.claude` ✓ (configured)
 - `mise.toml` → regular file (copied by `git worktree add` because it's tracked) ✗ (not symlinked)
 
 When the spawned Claude session initializes in the worktree's cwd:
 
-1. **Mise reads the worktree's `mise.toml`** at path `/Users/anton/src/drain-cycle/.worktrees/ABA-334/mise.toml`
+1. **Mise reads the worktree's `mise.toml`** at path `/home/<USER>/src/drain-cycle/.worktrees/ABA-334/mise.toml`
 2. **Trust is path-specific in mise** — the root repo's `mise.toml` at […]
 
 > TOOL
@@ -121,7 +121,7 @@ I've traced the full lifecycle of `pr_urls` through the drain-cycle codebase and
 
 ### 1. **WHERE `pr_urls` IS WRITTEN**
 
-**File:** `/Users/anton/src/drain-cycle/drain_cycle/handoff.py:43-53`  
+**File:** `/home/<USER>/src/drain-cycle/drain_cycle/handoff.py:43-53`  
 **Function:** `write(worktree: Path, data: HandoffData)`  
 **Mechanism:** The finishing skill (invoked by the worker) writes `pr_urls` to `.drain-handoff.json`:
 ```python
@@ -130,11 +130,11 @@ payload["pr_urls"] = [{"title": pr.title, "url": pr.url} for pr in data.pr_urls]
 path.write_text(json.dumps(payload, indent=2))
 ```
 
-**Who writes it:** The finishing skill (`/shape:pr-finishing`, described in `/Users/anton/src/drain-cycle/drain_cycle/prompt.py:109-114`), which runs `gt`/`gh` to submit PRs and records the submitted URLs.
+**Who writes it:** The finishing skill (`/shape:pr-finishing`, described in `/home/<USER>/src/drain-cycle/drain_cycle/prompt.py:109-114`), which runs `gt`/`gh` to submit PRs and records the submitted URLs.
 
 ### 2. **WHERE `pr_urls` IS READ**
 
-**File:** `/Users/anton/src/drain-cycle/drain_cycle/orchestrator.py:779, 807`  
+**File:** `/home/<USER>/src/drain-cycle/drain_cycle/orchestrator.py:779, 807`  
 **Functions:** `handoff.read(worktree_path)` (lines 779, 807) and `handoff.read_partial(worktree_path)` (lines 671, 762, 817)  
 **Mechanism:** After each issue completes:
 - Line 779: `submitted = handoff.read(worktree_path) if stack else None` — reads the file to validate submission
@@ -154,7 +154,7 @@ Perfect. Now let me compile my findings.
 
 ### 1. Script Location and Summary
 
-**Location:** `/Users/anton/.claude/plugins/cache/openai-codex/codex/1.0.4/scripts/session-lifecycle-hook.mjs`
+**Location:** `/home/<USER>/.claude/plugins/cache/openai-codex/codex/1.0.4/scripts/session-lifecycle-hook.mjs`
 
 **What it does:** The script handles two lifecycle events:
 - **SessionStart** (lines 76-79, 118-120): Appends the `CODEX_COMPANION_SESSION_ID` and `CLAUDE_PLUGIN_DATA` environment variables to a shell export file for later retrieval.
@@ -186,7 +186,7 @@ tool_use Read
 id: toolu_01LtuoX8fGzxS7pr1mnziEJQ
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/handoff.py"
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/handoff.py"
 }
 ```
 
@@ -226,7 +226,7 @@ tool_use Read
 id: toolu_016cAEDVBUG7RAc4hALn3fpx
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/prompt.py"
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/prompt.py"
 }
 ```
 
@@ -270,7 +270,7 @@ tool_use Bash
 id: toolu_01GQodDVi3vbie5Xiy5KxCGD
 ```json
 {
-  "command": "ls -la /Users/anton/src/drain-cycle/.worktrees/ 2>/dev/null; echo \"---logs---\"; find /Users/anton/.drain-cycle -maxdepth 2 -type d 2>/dev/null | head -50; echo \"---mise trusted?---\"; cat /Users/anton/src/drain-cycle/mise.toml 2>/dev/null",
+  "command": "ls -la /home/<USER>/src/drain-cycle/.worktrees/ 2>/dev/null; echo \"---logs---\"; find /home/<USER>/.drain-cycle -maxdepth 2 -type d 2>/dev/null | head -50; echo \"---mise trusted?---\"; cat /home/<USER>/src/drain-cycle/mise.toml 2>/dev/null",
   "description": "List worktrees, drain-cycle logs dir, mise.toml"
 }
 ```
@@ -282,9 +282,9 @@ id: toolu_01GQodDVi3vbie5Xiy5KxCGD
 ```
 755  ABA-334/
 ---logs---
-/Users/anton/.drain-cycle
-/Users/anton/.drain-cycle/grades
-/Users/anton/.drain-cycle/runs
+/home/<USER>/.drain-cycle
+/home/<USER>/.drain-cycle/grades
+/home/<USER>/.drain-cycle/runs
 ---mise trusted?---
 [tools]
 python = "3.12"
@@ -300,7 +300,7 @@ tool_use Bash
 id: toolu_01UBbdjPyGpLXEgT9e2pwwcG
 ```json
 {
-  "command": "echo \"=== recent runs ===\"; ls -lt /Users/anton/.drain-cycle/runs/ | head -10; echo; echo \"=== worktree ABA-334 contents ===\"; ls -la /Users/anton/src/drain-cycle/.worktrees/ABA-334/ 2>/dev/null | head -40; echo; echo \"=== handoff in worktree? ===\"; cat /Users/anton/src/drain-cycle/.worktrees/ABA-334/.drain-handoff.json 2>/dev/null || echo \"(no .drain-handoff.json)\"",
+  "command": "echo \"=== recent runs ===\"; ls -lt /home/<USER>/.drain-cycle/runs/ | head -10; echo; echo \"=== worktree ABA-334 contents ===\"; ls -la /home/<USER>/src/drain-cycle/.worktrees/ABA-334/ 2>/dev/null | head -40; echo; echo \"=== handoff in worktree? ===\"; cat /home/<USER>/src/drain-cycle/.worktrees/ABA-334/.drain-handoff.json 2>/dev/null || echo \"(no .drain-handoff.json)\"",
   "description": "List runs and inspect leftover worktree"
 }
 ```
@@ -313,7 +313,7 @@ id: toolu_01UBbdjPyGpLXEgT9e2pwwcG
 === recent runs ===
 644  9e17380f-9527-40ef-8523-4e4358f12809-20260617T051541788266Z.json  6.5K
 644  9e17380f-9527-40ef-8523-4e4358f12809-20260617T051541788266Z-ABA-334.debug.log  348.4K
-755  latest -> /Users/anton/.drain-cycle/runs/9e17380f-9527-40ef-8523-4e4358f12809-20260617T051541788266Z-ABA-334.debug.log  108B
+755  latest -> /home/<USER>/.drain-cycle/runs/9e17380f-9527-40ef-8523-4e4358f12809-20260617T051541788266Z-ABA-334.debug.log  108B
 644  9e17380f-9527-40ef-8523-4e4358f12809-20260617T051541788266Z-ABA-401.debug.log  500.6K
 644  9e17380f-9527-40ef-8523-4e4358f12809-20260617T051541788266Z-ABA-400.debug.log  362.8K
 644  9e17380f-9527-40ef-8523-4e4358f12809-20260617T051541788266Z-ABA-399.debug.log  351.3K
@@ -330,7 +330,7 @@ id: toolu_01UBbdjPyGpLXEgT9e2pwwcG
 755  docs/
 755  drain_cycle/
 755  tests/
-755  .claude -> /Users/anton/src/drain-cycle/.claude  36B
+755  .claude -> /home/<USER>/src/drain-cycle/.claude  36B
 644  .drain-base  8B
 644  .drain-guard-tripped  52B
 644  .drain-guard.json  46B
@@ -361,7 +361,7 @@ tool_use Bash
 id: toolu_013wFAu21mcoQgBFMJU38ChG
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle\necho \"=== exec-state.json in ABA-334 worktree ===\"; cat .worktrees/ABA-334/exec-state.json 2>/dev/null\necho; echo \"=== .drain-guard-tripped ===\"; cat .worktrees/ABA-334/.drain-guard-tripped 2>/dev/null\necho; echo \"=== .drain-guard.json ===\"; cat .worktrees/ABA-334/.drain-guard.json 2>/dev/null\necho; echo \"=== .drain-base ===\"; cat .worktrees/ABA-334/.drain-base 2>/dev/null\necho; echo \"=== source grep: which filename does live source use? ===\"\ngrep -rn \"drain-handoff\\|exec-state\\|exec_state\\|HANDOFF_FILE\\|EXEC_STATE\" drain_cycle/ | head -40",
+  "command": "cd /home/<USER>/src/drain-cycle\necho \"=== exec-state.json in ABA-334 worktree ===\"; cat .worktrees/ABA-334/exec-state.json 2>/dev/null\necho; echo \"=== .drain-guard-tripped ===\"; cat .worktrees/ABA-334/.drain-guard-tripped 2>/dev/null\necho; echo \"=== .drain-guard.json ===\"; cat .worktrees/ABA-334/.drain-guard.json 2>/dev/null\necho; echo \"=== .drain-base ===\"; cat .worktrees/ABA-334/.drain-base 2>/dev/null\necho; echo \"=== source grep: which filename does live source use? ===\"\ngrep -rn \"drain-handoff\\|exec-state\\|exec_state\\|HANDOFF_FILE\\|EXEC_STATE\" drain_cycle/ | head -40",
   "description": "Read worktree state files and grep source for handoff filename"
 }
 ```
@@ -393,7 +393,7 @@ id: toolu_013wFAu21mcoQgBFMJU38ChG
     "issue_id": "ABA-334",
     "branch": "ABA-334",
     "parent_branch": "ABA-401",
-    "worktree_path": "/Users/anton/src/drain-cycle/.worktrees/ABA-334",
+    "worktree_path": "/home/<USER>/src/drain-cycle/.worktrees/ABA-334",
     "ac_checklist": [
       "`drain-cycle grade` reports: total tickets graded, pass-rate, any silent-Done violations by issue ID.",
       "Any silent-Done violation causes exit code ≠ 0.",
@@ -412,7 +412,7 @@ tool_use Read
 id: toolu_01MRy1gtsPoV25ewxLunGxbG
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/stop_guard.py"
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/stop_guard.py"
 }
 ```
 
@@ -450,7 +450,7 @@ tool_use Bash
 id: toolu_01K1Y8x6RGJW6hPhdagr58NR
 ```json
 {
-  "command": "echo \"=== find pr-finishing skill, check filename it writes ===\"\ngrep -rln \"exec-state.json\\|drain-handoff.json\" /Users/anton/.claude/plugins ~/.claude/skills 2>/dev/null | head; echo \"---\"\nfor f in $(grep -rln \"pr-finishing\\|pr_urls\" /Users/anton/.claude/plugins 2>/dev/null | grep -i finish | head -5); do echo \"## $f\"; grep -n \"exec-state\\|drain-handoff\\|pr_urls\" \"$f\" | head; done\necho \"=== ABA-398 ticket in run json: outcome ===\"\ncat /Users/anton/.drain-cycle/runs/9e17380f-9527-40ef-8523-4e4358f12809-20260617T051541788266Z.json 2>/dev/null",
+  "command": "echo \"=== find pr-finishing skill, check filename it writes ===\"\ngrep -rln \"exec-state.json\\|drain-handoff.json\" /home/<USER>/.claude/plugins ~/.claude/skills 2>/dev/null | head; echo \"---\"\nfor f in $(grep -rln \"pr-finishing\\|pr_urls\" /home/<USER>/.claude/plugins 2>/dev/null | grep -i finish | head -5); do echo \"## $f\"; grep -n \"exec-state\\|drain-handoff\\|pr_urls\" \"$f\" | head; done\necho \"=== ABA-398 ticket in run json: outcome ===\"\ncat /home/<USER>/.drain-cycle/runs/9e17380f-9527-40ef-8523-4e4358f12809-20260617T051541788266Z.json 2>/dev/null",
   "description": "Read stop_guard, locate skill filename, read run json"
 }
 ```
@@ -476,7 +476,7 @@ id: toolu_01K1Y8x6RGJW6hPhdagr58NR
       "finished_at": "2026-06-17T05:28:39.705997+00:00",
       "exit_code": 0,
       "final_linear_state": "Done",
-      "worktree_path": "/Users/anton/src/drain-cycle/.worktrees/ABA-398",
+      "worktree_path": "/home/<USER>/src/drain-cycle/.worktrees/ABA-398",
       "halt_reason": null,
       "duration_seconds": 774.9503841669648,
       "model": "claude-opus-4-7",
@@ -503,7 +503,7 @@ id: toolu_01K1Y8x6RGJW6hPhdagr58NR
       "finished_at": "2026-06-17T05:36:07.357707+00:00",
       "exit_code": 0,
       "final_linear_state": "Done",
-      "worktree_path": "/Users/anton/src/agent-skills-shaper/.worktrees/ABA-399",
+      "worktree_path": "/home/<USER>/src/agent-skills-shaper/.worktrees/ABA-399",
       "halt_reason": null,
       "duration_seconds": 445.06360900000436,
       "model": "claude-sonnet-4-6",
@@ -530,7 +530,7 @@ id: toolu_01K1Y8x6RGJW6hPhdagr58NR
       "finished_at": "2026-06-17T05:48:37.811210+00:00",
       "exit_code": 0,
       "final_linear_state": "Done",
-      "worktree_path": "/Users/anton/src/drain-cycle/.worktrees/ABA-400",
+      "worktree_path": "/home/<USER>/src/drain-cycle/.worktrees/ABA-400",
       "halt_reason": null,
       "duration_seconds": 748.1884246669943,
       "model": "claude-sonnet-4-6",
@@ -569,7 +569,7 @@ tool_use Bash
 id: toolu_01FF63fHXtJveG3NPCNVZduc
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle\necho \"=== current branch + recent log ===\"; git branch --show-current; git log --oneline -3\necho; echo \"=== local branches for rename stack ===\"; git branch -a | grep -E \"ABA-39[89]|ABA-40[01]|ABA-334\" \necho; echo \"=== open PRs ===\"; gh pr list --state all --limit 10 --json number,title,headRefName,state 2>/dev/null | head -60\necho; echo \"=== does main contain exec-state rename? ===\"; git grep -l \"exec-state\" origin/main -- drain_cycle/ 2>/dev/null || echo \"(origin/main: no exec-state in drain_cycle/)\"",
+  "command": "cd /home/<USER>/src/drain-cycle\necho \"=== current branch + recent log ===\"; git branch --show-current; git log --oneline -3\necho; echo \"=== local branches for rename stack ===\"; git branch -a | grep -E \"ABA-39[89]|ABA-40[01]|ABA-334\" \necho; echo \"=== open PRs ===\"; gh pr list --state all --limit 10 --json number,title,headRefName,state 2>/dev/null | head -60\necho; echo \"=== does main contain exec-state rename? ===\"; git grep -l \"exec-state\" origin/main -- drain_cycle/ 2>/dev/null || echo \"(origin/main: no exec-state in drain_cycle/)\"",
   "description": "Check rename stack merge state and PRs"
 }
 ```
@@ -671,7 +671,7 @@ tool_use Read
 id: toolu_01Mj3bCFsk18XTz9WH7Yvw6A
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/worktree.py"
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/worktree.py"
 }
 ```
 
@@ -726,7 +726,7 @@ tool_use Bash
 id: toolu_016jkwnvPATNQ2RYj9Koo7sT
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle; ls tests/ | grep -i worktree; echo \"---\"; grep -n \"def test_add\\|def add\\|shutil.which\\|import shutil\\|monkeypatch\\|subprocess\" tests/test_worktree*.py 2>/dev/null | head -20",
+  "command": "cd /home/<USER>/src/drain-cycle; ls tests/ | grep -i worktree; echo \"---\"; grep -n \"def test_add\\|def add\\|shutil.which\\|import shutil\\|monkeypatch\\|subprocess\" tests/test_worktree*.py 2>/dev/null | head -20",
   "description": "Find worktree test file and patterns"
 }
 ```
@@ -766,7 +766,7 @@ tool_use Write
 id: toolu_011AgxkG9NA1cLKVH3XJd5UV
 ```json
 {
-  "file_path": "/Users/anton/.claude/plans/my-previous-drain-cycle-run-sparkling-deer.md",
+  "file_path": "/home/<USER>/.claude/plans/my-previous-drain-cycle-run-sparkling-deer.md",
   "content": "# Silence the mise-trust error in fresh drain-cycle worktrees\n\n## Context\n\nThe previous drain run halted at ABA-334 with no `pr_urls` propagated. Investigation of\nthe run log (`~/.drain-cycle/runs/…20260617T051541…json`) and the leftover\n`.worktrees/ABA-334/` worktree established two **separate** facts:\n\n1. **The actual root cause (out of scope, handled via your own PRs).**\n   ABA-334 succeeded — PR #33 exists and the worktree holds a valid `exec-state.json`\n   (pr_urls + `outcome_verdict: pass` + `prep_verdict`). The halt was spurious: the\n   *worker* wrote the new §26 filename `exec-state.json` (the `/shape:pr-finishing`\n   skill was migrated live by ABA-399 in the shaper repo), while the *orchestrator* —\n   running the editable install off branch `ABA-398`, which predates the read-side\n   migration — still read `.drain-handoff.json` (`handoff.py:27`, `stop_guard.py:30`).\n   Name mismatch → stop-guard saw no handoff → blocked twice → tripped → chain halt.\n   The run-log `halt_reason` says it verbatim. The fix already exists in **PR #31**\n   (ABA-400, \"reads `exec-state.json` with legacy fallback\"); it simply wasn't deployed\n   because the run was draining the very stack that contains it. **Per your direction,\n   this plan does not touch any PR or the rename code — you will land that stack\n   yourself.**\n\n2. **The mise error is unrelated noise — but worth silencing.**\n   The […]
 
 > TOOL
@@ -774,7 +774,7 @@ id: toolu_011AgxkG9NA1cLKVH3XJd5UV
 tool_result
 id: toolu_011AgxkG9NA1cLKVH3XJd5UV
 ```
-File created successfully at: /Users/anton/.claude/plans/my-previous-drain-cycle-run-sparkling-deer.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/plans/my-previous-drain-cycle-run-sparkling-deer.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -814,7 +814,7 @@ id: toolu_01UoPRuUS9eaxkDq1pac8jCf
 ```
 User has approved your plan. You can now start coding. Start with updating your todo list if applicable
 
-Your plan has been saved to: /Users/anton/.claude/plans/my-previous-drain-cycle-run-sparkling-deer.md
+Your plan has been saved to: /home/<USER>/.claude/plans/my-previous-drain-cycle-run-sparkling-deer.md
 You can refer back to it if needed during implementation.
 
 ## Approved Plan (edited by user):
@@ -849,7 +849,7 @@ id: toolu_013YVQbQq3urCfPmqBeMgd91
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/worktree.py",
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/worktree.py",
   "old_string": "    (worktree_path / BASE_FILE).write_text(f\"{base}\\n\")\n    return worktree_path",
   "new_string": "    (worktree_path / BASE_FILE).write_text(f\"{base}\\n\")\n    _trust_mise(worktree_path)\n    return worktree_path"
 }
@@ -860,7 +860,7 @@ id: toolu_013YVQbQq3urCfPmqBeMgd91
 tool_result
 id: toolu_013YVQbQq3urCfPmqBeMgd91
 ```
-The file /Users/anton/src/drain-cycle/drain_cycle/worktree.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/drain_cycle/worktree.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -870,7 +870,7 @@ id: toolu_01NZo1t2Lq2Xa3GiQXRS7JL4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/worktree.py",
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/worktree.py",
   "old_string": "        if _is_registered_worktree(repo, worktree_path):\n            span.set_attribute(\"worktree.resumed\", True)\n            return WorktreeHandle(path=worktree_path, resumed=True)",
   "new_string": "        if _is_registered_worktree(repo, worktree_path):\n            span.set_attribute(\"worktree.resumed\", True)\n            _trust_mise(worktree_path)\n            return WorktreeHandle(path=worktree_path, resumed=True)"
 }
@@ -881,7 +881,7 @@ id: toolu_01NZo1t2Lq2Xa3GiQXRS7JL4
 tool_result
 id: toolu_01NZo1t2Lq2Xa3GiQXRS7JL4
 ```
-The file /Users/anton/src/drain-cycle/drain_cycle/worktree.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/drain_cycle/worktree.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -895,7 +895,7 @@ id: toolu_01ByQtAwzhRdNoiL6Kni7886
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/worktree.py",
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/worktree.py",
   "old_string": "def _is_gitignored(repo: Path, name: str) -> bool:",
   "new_string": "def _trust_mise(worktree_path: Path) -> None:\n    \"\"\"Best-effort ``mise trust`` for a worktree.\n\n    A git worktree checks out the repo's tracked ``mise.toml`` to a new path, but\n    mise trust is path-keyed, so the copy is untrusted even when the repo root is\n    trusted — every mise invocation in the worktree (e.g. a SessionEnd hook running\n    git there) then errors. Trusting the worktree's own config silences that.\n\n    No-op when mise is not installed, so repos that don't use mise are unaffected.\n    Failures are swallowed: trust is a convenience, never a reason to fail setup.\n    \"\"\"\n    if shutil.which(\"mise\") is None:\n        return\n    subprocess.run(\n        [\"mise\", \"trust\"],\n        cwd=str(worktree_path),\n        check=False,\n        capture_output=True,\n    )\n\n\ndef _is_gitignored(repo: Path, name: str) -> bool:"
 }
@@ -906,7 +906,7 @@ id: toolu_01ByQtAwzhRdNoiL6Kni7886
 tool_result
 id: toolu_01ByQtAwzhRdNoiL6Kni7886
 ```
-The file /Users/anton/src/drain-cycle/drain_cycle/worktree.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/drain_cycle/worktree.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -919,7 +919,7 @@ tool_use Read
 id: toolu_016t9FkNcsqmQRAXyizftHj3
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/tests/test_worktree.py",
+  "file_path": "/home/<USER>/src/drain-cycle/tests/test_worktree.py",
   "limit": 75
 }
 ```
@@ -980,7 +980,7 @@ id: toolu_018UUpsfoWMs1mE6AtUYFMX7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/tests/test_worktree.py",
+  "file_path": "/home/<USER>/src/drain-cycle/tests/test_worktree.py",
   "old_string": "def test_link_project_config_symlinks_gitignored_claude(tmp_path: Path) -> None:",
   "new_string": "def _spy_subprocess_run(monkeypatch: pytest.MonkeyPatch) -> list[list[str]]:\n    \"\"\"Record argv of every ``subprocess.run`` worktree makes.\n\n    The ``mise trust`` call is faked (never exec'd) so the test passes whether or\n    not mise is installed; all other commands (git) delegate to the real runner.\n    \"\"\"\n    real_run = subprocess.run\n    calls: list[list[str]] = []\n\n    def fake_run(args, **kwargs):  # type: ignore[no-untyped-def]\n        calls.append(list(args))\n        if args and args[0] == \"mise\":\n            return subprocess.CompletedProcess(args, 0, \"\", \"\")\n        return real_run(args, **kwargs)\n\n    monkeypatch.setattr(worktree.subprocess, \"run\", fake_run)\n    return calls\n\n\ndef test_add_trusts_mise_when_available(\n    tmp_path: Path, monkeypatch: pytest.MonkeyPatch\n) -> None:\n    \"\"\"When mise is on PATH, ``add`` runs ``mise trust`` in the new worktree so the\n    checked-out (path-keyed, untrusted) ``mise.toml`` stops erroring mise callers.\"\"\"\n    repo = tmp_path / \"repo\"\n    repo.mkdir()\n    _init_repo(repo)\n    monkeypatch.setattr(worktree.shutil, \"which\", lambda _: \"/usr/bin/mise\")\n    calls = _spy_subprocess_run(monkeypatch)\n\n    path = worktree.add(repo, \"ABA-X\")\n\n    mise_calls = [c for c in calls if c[:2] == [\"mise\", \"trust\"]]\n    assert mise_calls, \"expected a `mise trust` invocation\"\n    # The trust runs with the new worktree as cwd — verify by re-deriving the path.\n    assert path == repo / worktree.WORKTREE_DIR / \"ABA-X\"\n\n\ndef test_add_skips_mise_trust_when_not_installed(\n    tmp_path: Path, monkeypatch: pytest.MonkeyPatch\n) -> None:\n    \"\"\"No mise on PATH → no ``mise`` subprocess; ``add`` still returns […]
 
@@ -989,7 +989,7 @@ id: toolu_018UUpsfoWMs1mE6AtUYFMX7
 tool_result
 id: toolu_018UUpsfoWMs1mE6AtUYFMX7
 ```
-The file /Users/anton/src/drain-cycle/tests/test_worktree.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/tests/test_worktree.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1022,7 +1022,7 @@ tool_use Bash
 id: toolu_01KrnNqMneLJKNhL6bWK7t3H
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle\ncommand -v mise >/dev/null && echo \"mise present: $(mise --version)\" || { echo \"mise NOT installed — guard makes this a no-op\"; exit 0; }\necho \"=== before (raw git worktree, untrusted) ===\"\ngit worktree add -q -b tmp-mise-check .worktrees/tmp-mise-check main 2>&1\nmise ls --cd .worktrees/tmp-mise-check 2>&1 | grep -i \"trust\" && echo \">> untrusted (expected before fix)\" || echo \">> (no trust error already)\"\ngit worktree remove --force .worktrees/tmp-mise-check 2>&1\necho \"=== after (via drain_cycle.worktree.add, which trusts) ===\"\nuv run python -c \"\nfrom pathlib import Path\nfrom drain_cycle import worktree\np = worktree.add(Path('.').resolve(), 'tmp-mise-check')\nprint('created', p)\n\"\nmise ls --cd .worktrees/tmp-mise-check 2>&1 | grep -i \"not trusted\\|trust them\" && echo \">> STILL UNTRUSTED (fail)\" || echo \">> trusted, no error (pass)\"\ngit worktree remove --force .worktrees/tmp-mise-check 2>&1\necho \"done\"",
+  "command": "cd /home/<USER>/src/drain-cycle\ncommand -v mise >/dev/null && echo \"mise present: $(mise --version)\" || { echo \"mise NOT installed — guard makes this a no-op\"; exit 0; }\necho \"=== before (raw git worktree, untrusted) ===\"\ngit worktree add -q -b tmp-mise-check .worktrees/tmp-mise-check main 2>&1\nmise ls --cd .worktrees/tmp-mise-check 2>&1 | grep -i \"trust\" && echo \">> untrusted (expected before fix)\" || echo \">> (no trust error already)\"\ngit worktree remove --force .worktrees/tmp-mise-check 2>&1\necho \"=== after (via drain_cycle.worktree.add, which trusts) ===\"\nuv run python -c \"\nfrom pathlib import Path\nfrom drain_cycle import worktree\np = worktree.add(Path('.').resolve(), 'tmp-mise-check')\nprint('created', p)\n\"\nmise ls --cd .worktrees/tmp-mise-check 2>&1 | grep -i \"not trusted\\|trust them\" && echo \">> STILL UNTRUSTED (fail)\" || echo \">> trusted, no error (pass)\"\ngit worktree remove --force .worktrees/tmp-mise-check 2>&1\necho \"done\"",
   "description": "End-to-end mise-trust smoke test"
 }
 ```
@@ -1043,7 +1043,7 @@ Trust them with `mise trust`. See https://mise.jdx.dev/cli/trust.html for more i
 Traceback (most recent call last):
   File "<string>", line 4, in <module>
     p = worktree.add(Path('.').resolve(), 'tmp-mise-check')
-  File "/Users/anton/src/drain-cycle/drain_cycle/worktree.py", line 59, in add
+  File "/home/<USER>/src/drain-cycle/drain_cycle/worktree.py", line 59, in add
     _run_git(
     ~~~~~~~~^
         ["worktree", "add", "-b", identifier, str(worktree_path), base],
@@ -1052,11 +1052,11 @@ Traceback (most recent call last):
         ^^^^^^^^^
     )
     ^
-  File "/Users/anton/src/drain-cycle/drain_cycle/worktree.py", line 258, in _run_git
+  File "/home/<USER>/src/drain-cycle/drain_cycle/worktree.py", line 258, in _run_git
     raise RuntimeError(
     ...<2 lines>...
     )
-RuntimeError: git worktree add -b tmp-mise-check /Users/anton/src/drain-cycle/.worktrees/tmp-mise-check main failed (exit 255): Preparing worktree (new branch 'tmp-mise-check')
+RuntimeError: git worktree add -b tmp-mise-check /home/<USER>/src/drain-cycle/.worktrees/tmp-mise-check main failed (exit 255): Preparing worktree (new branch 'tmp-mise-check')
 fatal: a branch named 'tmp-mise-check' already exists
 >> trusted, no error (pass)
 fatal: '.worktrees/tmp-mise-check' is not a working tree
@@ -1073,7 +1073,7 @@ tool_use Bash
 id: toolu_0167pkJrYrmbzbfxCZvQtvjA
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle\ngit branch -D tmp-mise-check 2>&1 || true\ngit worktree prune\necho \"=== after (via drain_cycle.worktree.add, which trusts) ===\"\nuv run python -c \"\nfrom pathlib import Path\nfrom drain_cycle import worktree\np = worktree.add(Path('.').resolve(), 'tmp-mise-check')\nprint('created', p)\n\"\nmise ls --cd .worktrees/tmp-mise-check 2>&1 | grep -i \"not trusted\\|trust them\" && echo \">> STILL UNTRUSTED (FAIL)\" || echo \">> trusted, no error (PASS)\"\necho \"=== cleanup ===\"\ngit worktree remove --force .worktrees/tmp-mise-check 2>&1\ngit branch -D tmp-mise-check 2>&1\ngit worktree prune\ngit status --porcelain\necho \"clean\"",
+  "command": "cd /home/<USER>/src/drain-cycle\ngit branch -D tmp-mise-check 2>&1 || true\ngit worktree prune\necho \"=== after (via drain_cycle.worktree.add, which trusts) ===\"\nuv run python -c \"\nfrom pathlib import Path\nfrom drain_cycle import worktree\np = worktree.add(Path('.').resolve(), 'tmp-mise-check')\nprint('created', p)\n\"\nmise ls --cd .worktrees/tmp-mise-check 2>&1 | grep -i \"not trusted\\|trust them\" && echo \">> STILL UNTRUSTED (FAIL)\" || echo \">> trusted, no error (PASS)\"\necho \"=== cleanup ===\"\ngit worktree remove --force .worktrees/tmp-mise-check 2>&1\ngit branch -D tmp-mise-check 2>&1\ngit worktree prune\ngit status --porcelain\necho \"clean\"",
   "description": "Redo after-leg smoke test and clean up"
 }
 ```
@@ -1085,7 +1085,7 @@ id: toolu_0167pkJrYrmbzbfxCZvQtvjA
 ```
 Deleted branch tmp-mise-check (was 02707de).
 === after (via drain_cycle.worktree.add, which trusts) ===
-created /Users/anton/src/drain-cycle/.worktrees/tmp-mise-check
+created /home/<USER>/src/drain-cycle/.worktrees/tmp-mise-check
 >> trusted, no error (PASS)
 === cleanup ===
 Deleted branch tmp-mise-check (was 02707de).

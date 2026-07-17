@@ -8,7 +8,7 @@ tool_use Bash
 id: toolu_01TP419GcbMiR5CWCDpPyTEW
 ```json
 {
-  "command": "find /Users/hungpq2412/neuralips26 -name \"main.tex\" -not -path \"*/node_modules/*\" 2>/dev/null | head -5",
+  "command": "find /home/<USER>/neuralips26 -name \"main.tex\" -not -path \"*/node_modules/*\" 2>/dev/null | head -5",
   "description": "Find main.tex file"
 }
 ```
@@ -18,7 +18,7 @@ id: toolu_01TP419GcbMiR5CWCDpPyTEW
 tool_result
 id: toolu_01TP419GcbMiR5CWCDpPyTEW
 ```
-/Users/hungpq2412/neuralips26/main.tex
+/home/<USER>/neuralips26/main.tex
 ```
 
 > TOOL
@@ -27,7 +27,7 @@ tool_use Bash
 id: toolu_014ebuPZLZWzxEWKV3kHgjV1
 ```json
 {
-  "command": "grep -n \"section\\|Related Work\\|RelatedWork\" /Users/hungpq2412/neuralips26/main.tex | head -30",
+  "command": "grep -n \"section\\|Related Work\\|RelatedWork\" /home/<USER>/neuralips26/main.tex | head -30",
   "description": "Find section markers in main.tex"
 }
 ```
@@ -65,7 +65,7 @@ tool_use Read
 id: toolu_01QC1AzyexijCMjZDxNYLDVj
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 228,
   "limit": 15
 }
@@ -89,7 +89,7 @@ tool_use Bash
 id: toolu_014L6uHVXfhUP4CeXju8GVzJ
 ```json
 {
-  "command": "grep -n \"linenumber\\|lineno\\|nolinenumbers\" /Users/hungpq2412/neuralips26/main.tex | head -10",
+  "command": "grep -n \"linenumber\\|lineno\\|nolinenumbers\" /home/<USER>/neuralips26/main.tex | head -10",
   "description": "Check if line numbering is active"
 }
 ```
@@ -108,7 +108,7 @@ tool_use Bash
 id: toolu_01G8cT7Ra9aCmVeDC9Rrm9TX
 ```json
 {
-  "command": "grep -n \"lineno\\|linenum\\|\\\\\\\\linenumber\\|\\\\\\\\modulolinenumbers\" /Users/hungpq2412/neuralips26/*.sty 2>/dev/null | head -10; ls /Users/hungpq2412/neuralips26/*.sty 2>/dev/null",
+  "command": "grep -n \"lineno\\|linenum\\|\\\\\\\\linenumber\\|\\\\\\\\modulolinenumbers\" /home/<USER>/neuralips26/*.sty 2>/dev/null | head -10; ls /home/<USER>/neuralips26/*.sty 2>/dev/null",
   "description": "Check style files for line numbering"
 }
 ```
@@ -125,7 +125,7 @@ id: toolu_01G8cT7Ra9aCmVeDC9Rrm9TX
 409:    % transparently wrapping linenomath environments around amsmath
 417:                          {\linenomath\csname old#1\endcsname}%
 418:                          {\csname oldend#1\endcsname\endlinenomath}%
-/Users/hungpq2412/neuralips26/neurips_2026.sty
+/home/<USER>/neuralips26/neurips_2026.sty
 ```
 
 > TOOL
@@ -134,7 +134,7 @@ tool_use Bash
 id: toolu_0181SFZyGEdG8qZGW5JRv3fr
 ```json
 {
-  "command": "ls -la /Users/hungpq2412/neuralips26/main.pdf 2>/dev/null; find /Users/hungpq2412/neuralips26 -maxdepth 2 -name \"main.pdf\" 2>/dev/null",
+  "command": "ls -la /home/<USER>/neuralips26/main.pdf 2>/dev/null; find /home/<USER>/neuralips26 -maxdepth 2 -name \"main.pdf\" 2>/dev/null",
   "description": "Check for compiled PDF"
 }
 ```
@@ -144,8 +144,8 @@ id: toolu_0181SFZyGEdG8qZGW5JRv3fr
 tool_result
 id: toolu_0181SFZyGEdG8qZGW5JRv3fr
 ```
--rw-r--r--@ 1 hungpq2412  staff  910547 May  6 15:10 /Users/hungpq2412/neuralips26/main.pdf
-/Users/hungpq2412/neuralips26/main.pdf
+-rw-r--r--@ 1 hungpq2412  staff  910547 May  6 15:10 /home/<USER>/neuralips26/main.pdf
+/home/<USER>/neuralips26/main.pdf
 ```
 
 > TOOL
@@ -186,7 +186,7 @@ tool_use Bash
 id: toolu_01JnCU9SkqgSf1Jszn7DntpP
 ```json
 {
-  "command": "pdftotext -layout -f 3 -l 4 /Users/hungpq2412/neuralips26/main.pdf - 2>/dev/null | sed -n '1,200p'",
+  "command": "pdftotext -layout -f 3 -l 4 /home/<USER>/neuralips26/main.pdf - 2>/dev/null | sed -n '1,200p'",
   "description": "Get pages 3-4 with line numbers"
 }
 ```
@@ -240,7 +240,7 @@ tool_use Bash
 id: toolu_01E9D5bx5kgZ4Y7MXukSV5mt
 ```json
 {
-  "command": "pdftotext -layout -f 2 -l 3 /Users/hungpq2412/neuralips26/main.pdf - 2>/dev/null | sed -n '80,200p'",
+  "command": "pdftotext -layout -f 2 -l 3 /home/<USER>/neuralips26/main.pdf - 2>/dev/null | sed -n '80,200p'",
   "description": "Find Related Work section header in PDF"
 }
 ```
@@ -282,7 +282,7 @@ tool_use Read
 id: toolu_016tDJaAspGMJVYjDFW3HkCJ
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 241,
   "limit": 150
 }
@@ -312,7 +312,7 @@ tool_use Read
 id: toolu_01DMSLKujjH6S1XQVQpMM6nn
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 411,
   "limit": 160
 }

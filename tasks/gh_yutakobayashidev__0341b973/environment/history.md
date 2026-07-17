@@ -72,10 +72,10 @@ flake.lock:677:    "hashicorp-agent-skills": {
 flake.lock:1442:        "aws-agent-skills": "aws-agent-skills",
 flake.lock:1445:        "cloudflare-skills": "cloudflare-skills",
 flake.lock:1452:        "hashicorp-agent-skills": "hashicorp-agent-skills",
-nix/modules/home/agent-skills.nix:45:        path = inputs.cloudflare-skills;
-nix/modules/home/agent-skills.nix:50:        path = inputs.hashicorp-agent-skills;
-nix/modules/home/agent-skills.nix:58:      # AWS: skills from itsmostafa/aws-agent-skills
-nix/modules/home/agent-skills.nix:60:        path = inputs.aws-agent-skills;
+nix/modules/home/<USER>:45:        path = inputs.cloudflare-skills;
+nix/modules/home/<USER>:50:        path = inputs.hashicorp-agent-skills;
+nix/modules/home/<USER>:58:      # AWS: skills from itsmostafa/aws-agent-skills
+nix/modules/home/<USER>:60:        path = inputs.aws-agent-skills;
 ```
 
 > TOOL
@@ -84,7 +84,7 @@ tool_use Read
 id: toolu_017RPtK7fxKzMt31MUvz1RES
 ```json
 {
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/flake.nix",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/flake.nix",
   "offset": 55,
   "limit": 25
 }
@@ -96,7 +96,7 @@ tool_use Read
 id: toolu_01DfVAYJtt9D1THDneaY8DfQ
 ```json
 {
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/agent-skills.nix",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/<USER>",
   "offset": 40,
   "limit": 30
 }
@@ -182,7 +182,7 @@ id: toolu_01P3Pzg3zqznFDKy1D9zwL6k
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/flake.nix",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/flake.nix",
   "old_string": "    cloudflare-skills = {\n      url = \"github:cloudflare/skills\";\n      flake = false;\n    };\n    hashicorp-agent-skills = {\n      url = \"github:hashicorp/agent-skills\";\n      flake = false;\n    };\n",
   "new_string": ""
 }
@@ -195,7 +195,7 @@ id: toolu_01E8UcmPpJwvLKJjt5xv3tz5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/flake.nix",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/flake.nix",
   "old_string": "    aws-agent-skills = {\n      url = \"github:itsmostafa/aws-agent-skills\";\n      flake = false;\n    };\n",
   "new_string": ""
 }
@@ -208,7 +208,7 @@ id: toolu_01G5f2c8g8Cdfmbd4k5XkXCz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/agent-skills.nix",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/<USER>",
   "old_string": "      # Cloudflare: skills from cloudflare/skills\n      cloudflare = {\n        path = inputs.cloudflare-skills;\n        subdir = \"skills\";\n      };\n      # HashiCorp: skills from hashicorp/agent-skills (terraform/, packer/ at root)\n      hashicorp = {\n        path = inputs.hashicorp-agent-skills;\n        subdir = \".\";\n      };\n",
   "new_string": ""
 }
@@ -221,7 +221,7 @@ id: toolu_018vEZGk2yj82ue82NtRzNV7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/agent-skills.nix",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/<USER>",
   "old_string": "      # AWS: skills from itsmostafa/aws-agent-skills\n      aws = {\n        path = inputs.aws-agent-skills;\n        subdir = \"skills\";\n      };\n",
   "new_string": ""
 }
@@ -232,7 +232,7 @@ id: toolu_018vEZGk2yj82ue82NtRzNV7
 tool_result
 id: toolu_01P3Pzg3zqznFDKy1D9zwL6k
 ```
-The file /Users/yuta/ghq/github.com/yutakobayashidev/dotnix/flake.nix has been updated successfully.
+The file /home/<USER>/ghq/github.com/yutakobayashidev/dotnix/flake.nix has been updated successfully.
 ```
 
 > TOOL
@@ -240,7 +240,7 @@ The file /Users/yuta/ghq/github.com/yutakobayashidev/dotnix/flake.nix has been u
 tool_result
 id: toolu_01E8UcmPpJwvLKJjt5xv3tz5
 ```
-The file /Users/yuta/ghq/github.com/yutakobayashidev/dotnix/flake.nix has been updated successfully.
+The file /home/<USER>/ghq/github.com/yutakobayashidev/dotnix/flake.nix has been updated successfully.
 ```
 
 > TOOL
@@ -248,7 +248,7 @@ The file /Users/yuta/ghq/github.com/yutakobayashidev/dotnix/flake.nix has been u
 tool_result
 id: toolu_01G5f2c8g8Cdfmbd4k5XkXCz
 ```
-The file /Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/agent-skills.nix has been updated successfully.
+The file /home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/<USER> has been updated successfully.
 ```
 
 > TOOL
@@ -256,12 +256,12 @@ The file /Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/age
 tool_result
 id: toolu_018vEZGk2yj82ue82NtRzNV7
 ```
-The file /Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/agent-skills.nix has been updated successfully.
+The file /home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/<USER> has been updated successfully.
 ```
 
 > AGENT
 
-`flake.nix` と `nix/modules/home/agent-skills.nix` から以下の3つを削除しました：
+`flake.nix` と `nix/modules/home/<USER>` から以下の3つを削除しました：
 
 - `aws-agent-skills` (itsmostafa/aws-agent-skills)
 - `cloudflare-skills` (cloudflare/skills)

@@ -153,7 +153,7 @@ tool_use Bash
 id: toolu_01C3SarF2yLbCnxni61x1wjf
 ```json
 {
-  "command": "git commit -m \"$(cat <<'EOF'\n✨ feat: add full-Japanese PRD example\n\nAdd examples/06-japanese-document showcasing a complete Japanese product\nrequirements document, covering Mermaid flowchart and gantt diagrams,\nmultiple GFM tables, JSON code blocks, and quotes — to validate Noto Sans\nCJK JP rendering on a non-engineering business document.\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>\nEOF\n)\" && git status",
+  "command": "git commit -m \"$(cat <<'EOF'\n✨ feat: add full-Japanese PRD example\n\nAdd examples/06-japanese-document showcasing a complete Japanese product\nrequirements document, covering Mermaid flowchart and gantt diagrams,\nmultiple GFM tables, JSON code blocks, and quotes — to validate Noto Sans\nCJK JP rendering on a non-engineering business document.\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\" && git status",
   "description": "Commit staged changes"
 }
 ```
@@ -433,7 +433,7 @@ tool_use Bash
 id: toolu_01AYwRkHqMdcHnZQHSxeXMwr
 ```json
 {
-  "command": "git commit -m \"$(cat <<'EOF'\n✨ feat: add comparison screenshots to README\n\nAdd side-by-side screenshots comparing md2pdf with Pandoc and md-to-pdf\non the same Japanese PRD document, and replace the placeholder TODO at\nthe top of the README with the md2pdf hero image. Helps new readers\nimmediately see why md2pdf exists for the CJK + Mermaid combination.\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>\nEOF\n)\" && git status",
+  "command": "git commit -m \"$(cat <<'EOF'\n✨ feat: add comparison screenshots to README\n\nAdd side-by-side screenshots comparing md2pdf with Pandoc and md-to-pdf\non the same Japanese PRD document, and replace the placeholder TODO at\nthe top of the README with the md2pdf hero image. Helps new readers\nimmediately see why md2pdf exists for the CJK + Mermaid combination.\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\" && git status",
   "description": "Commit staged changes"
 }
 ```

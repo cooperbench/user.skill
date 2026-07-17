@@ -177,7 +177,7 @@ tool_use Read
 id: toolu_01DKv4xjA4LuyRDbL2G67XJS
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsalog/server/src/db/seed.ts",
+  "file_path": "/home/<USER>/bosarsalog/server/src/db/seed.ts",
   "offset": 270,
   "limit": 40
 }

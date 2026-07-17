@@ -1,6 +1,6 @@
 > SYSTEM
 
-# AGENTS.md instructions for /Users/tanishqpalandurkar/Projects/yyork
+# AGENTS.md instructions for /home/<USER>/Projects/yyork
 
 <INSTRUCTIONS>
 General instructions: follow these all the time.
@@ -15,11 +15,11 @@ General instructions: follow these all the time.
 
 </INSTRUCTIONS>
 <environment_context>
-  <cwd>/Users/tanishqpalandurkar/Projects/yyork</cwd>
+  <cwd>/home/<USER>/Projects/yyork</cwd>
   <shell>zsh</shell>
   <current_date>2026-06-09</current_date>
   <timezone>Asia/Kolkata</timezone>
-  <filesystem><workspace_roots><root>/Users/tanishqpalandurkar/Projects/yyork</root></workspace_roots><permission_profile type="disabled"><file_system type="unrestricted" /></permission_profile></filesystem>
+  <filesystem><workspace_roots><root>/home/<USER>/Projects/yyork</root></workspace_roots><permission_profile type="disabled"><file_system type="unrestricted" /></permission_profile></filesystem>
 </environment_context>
 
 > DEVELOPER
@@ -55,7 +55,7 @@ id: call_uuqLO9GkhymjdC5Lz7ZCXikD
 ```json
 {
   "cmd": "rg -n \"https-|preview|portless|yyork\\.localhost|localhost-preview|sessionId|projectName\" .",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -67,8 +67,8 @@ tool_use exec_command
 id: call_mIu6T4U3tOKjSTQf6EdphIE4
 ```json
 {
-  "cmd": "rg -n \"preview|portless|yyork\\.localhost|localhost-preview\" /Users/tanishqpalandurkar/.codex/memories/MEMORY.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "rg -n \"preview|portless|yyork\\.localhost|localhost-preview\" /home/<USER>/.codex/memories/MEMORY.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -81,7 +81,7 @@ id: call_FxinznBYTDsayN7nTJDGqqC2
 ```json
 {
   "cmd": "sed -n '1,220p' portless.json",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -94,7 +94,7 @@ id: call_C3kr87pzS6kj6g02TId0wGxg
 ```json
 {
   "cmd": "sed -n '1,220p' package.json",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -122,9 +122,9 @@ Total output lines: 503
 ./prds/canvas/BROWSER_PLAN.md:24:- Annotation and preview instrumentation must be vendored with yyork. User
 ./prds/canvas/BROWSER_PLAN.md:25:  preview apps must not install yyork, Agentation, or any annotation dependency.
 ./prds/canvas/BROWSER_PLAN.md:46:- `microsoft/vscode/extensions/simple-browser/preview-src/index.ts`
-./prds/canvas/BROWSER_PLAN.md:53:  - `web/src/features/home/components/molecules/canvas-web-preview.tsx`
-./prds/canvas/BROWSER_PLAN.md:54:  - `web/src/features/home/data/browser-preview.ts`
-./prds/canvas/BROWSER_PLAN.md:55:  - `web/src/features/home/data/browser-preview.unit.spec.ts`
+./prds/canvas/BROWSER_PLAN.md:53:  - `web/src/features/home/<USER>/molecules/canvas-web-preview.tsx`
+./prds/canvas/BROWSER_PLAN.md:54:  - `web/src/features/home/<USER>/browser-preview.ts`
+./prds/canvas/BROWSER_PLAN.md:55:  - `web/src/features/home/<USER>/browser-preview.unit.spec.ts`
 ./prds/canvas/BROWSER_PLAN.md:63:- Live iframe preview exists.
 ./prds/canvas/BROWSER_PLAN.md:67:  `https://yyork.localhost`.
 ./prds/canvas/BROWSER_PLAN.md:74:- History is React-local and does not know about SPA navigation inside previews.
@@ -150,11 +150,11 @@ Original token count: 2069
 Output:
 1:# Task Group: `Projects/yyork` in-app browser readiness, Agentation delivery, portless routing, and bundled Browser plugin internals [chronicle memory]
 2:scope: Use for recent `yyork` work around the Browser tab/IAB path, Agentation annotation delivery, portless-backed local routing, and local inspection of Codex’s bundled Browser plugin files when the user is tracing the real control path or debugging why preview behavior differs from the expected proxied app.
-3:applies_to: cwd=/Users/tanishqpalandurkar/Projects/yyork plus local Browser-plugin cache paths under /Users/tanishqpalandurkar/.codex/plugins/cache/openai-bundled/browser/*; reuse_rule=safe for similar yyork browser-preview and local Browser-plugin forensics on this machine, but re-open the current `yyork` dev scripts, preview host wiring, and installed plugin version before claiming exact runtime behavior
+3:applies_to: cwd=/home/<USER>/Projects/yyork plus local Browser-plugin cache paths under /home/<USER>/.codex/plugins/cache/openai-bundled/browser/*; reuse_rule=safe for similar yyork browser-preview and local Browser-plugin forensics on this machine, but re-open the current `yyork` dev scripts, preview host wiring, and installed plugin version before claiming exact runtime behavior
 26:- Agentation, annotations.go, canvas-web-preview.tsx, annotations.ts, internal/durabilityprovider/send.go, internal/durabilityprovider/zellij.go, staged annotations, batch delivery, markdown user message, Send to agent, severity, intent, selectedText, elementPath [chronicle memory]
 28:## Task 3: Assess IAB end-to-end readiness and debug missing Agentation in the Browser preview [chronicle memory]
-32:- extensions/chronicle/resources/2026-06-09T03-26-00-AQhM-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, rollout_path=/Users/tanishqpalandurkar/.codex/memories/extensions/chronicle/resources/2026-06-09T03-26-00-AQhM-10min-memory-summary.md, updated_at=2026-06-09T03:26:00+00:00, thread_id=None, portless-backed route shape, stale raw listener cleanup, missing preview asset, and dev-mode patch direction) [chronicle memory]
-33:- extensions/chronicle/resources/2026-06-09T03-16-00-bOOV-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, rollout_path=/Users/tanishqpalandurkar/.codex/memories/extensions/chronicle/resources/2026-06-09T03-16-00-bOOV-10min-memory-summary.md, updated_at=2026-06-09T03:16:00+00:00, thread_id=None, stale server/proxy diagnosis, `508 LOOP DETECTED`, and […]
+32:- extensions/chronicle/resources/2026-06-09T03-26-00-AQhM-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-09T03-26-00-AQhM-10min-memory-summary.md, updated_at=2026-06-09T03:26:00+00:00, thread_id=None, portless-backed route shape, stale raw listener cleanup, missing preview asset, and dev-mode patch direction) [chronicle memory]
+33:- extensions/chronicle/resources/2026-06-09T03-16-00-bOOV-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-09T03-16-00-bOOV-10min-memory-summary.md, updated_at=2026-06-09T03:16:00+00:00, thread_id=None, stale server/proxy diagnosis, `508 LOOP DETECTED`, and […]
 
 > TOOL
 
@@ -192,7 +192,7 @@ Output:
   "license": "MIT",
   "author": {
     "name": "yyopc",
-    "email": "itsyyopc@gmail.com",
+    "email": "<REDACTED_EMAIL>",
     "url": "https://github.com/yyopc"
   },
   "repository": {
@@ -252,7 +252,7 @@ id: call_bgXzPTotQabrA50uKD2YaM4L
 ```json
 {
   "cmd": "sed -n '1,380p' internal/server/browser_preview.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -265,7 +265,7 @@ id: call_qSm5O6PPPzOrsuNP1TGa72RI
 ```json
 {
   "cmd": "sed -n '380,620p' internal/server/browser_preview.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -278,7 +278,7 @@ id: call_KlUQI1sqRylztgOdKZO8j45g
 ```json
 {
   "cmd": "sed -n '1,240p' internal/server/browser_preview_test.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -290,8 +290,8 @@ tool_use exec_command
 id: call_NbYzOKEPvBKKROcVgfXn3UAp
 ```json
 {
-  "cmd": "sed -n '180,230p' web/src/features/home/components/organisms/canvas-panel.tsx && sed -n '520,650p' web/src/features/home/components/molecules/canvas-web-preview.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '180,230p' web/src/features/home/<USER>/organisms/canvas-panel.tsx && sed -n '520,650p' web/src/features/home/<USER>/molecules/canvas-web-preview.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -678,8 +678,8 @@ tool_use exec_command
 id: call_IaBkTs7ObAoJbUYaMct9ma98
 ```json
 {
-  "cmd": "sed -n '1,180p' web/src/features/home/components/molecules/canvas-web-preview.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,180p' web/src/features/home/<USER>/molecules/canvas-web-preview.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -691,8 +691,8 @@ tool_use exec_command
 id: call_YbDcHEzeU6JAF9lQx7r1lNSw
 ```json
 {
-  "cmd": "sed -n '140,190p' web/src/features/home/data/browser-preview.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '140,190p' web/src/features/home/<USER>/browser-preview.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -704,8 +704,8 @@ tool_use exec_command
 id: call_2MooGLXjp0cw9ZjuMamimZY1
 ```json
 {
-  "cmd": "sed -n '1,130p' web/src/features/home/data/workspace-preferences.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,130p' web/src/features/home/<USER>/workspace-preferences.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -718,7 +718,7 @@ id: call_2CCzFr3akOlJivsrNv200dVl
 ```json
 {
   "cmd": "sed -n '1,130p' internal/server/server.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -781,7 +781,7 @@ import {
 import {
   type AnnotationPayload,
   sendAnnotationsMutationOptions,
-} from '@/features/home/data/annotations';
+} from '@/features/home/<USER>/annotations';
 import {
   type BrowserDomEvent,
   type BrowserPreviewAgentationMessage,
@@ -791,7 +791,7 @@ import {
   isBrowserPreviewMessage,
   registerBrowserPreviewTarget,
   validatePreviewUrlInput,
-} from '@/features/home/data/browser-preview';
+} from '@/features/home/<USER>/browser-preview';
 
 interface WebPreviewContextValue {
   canGoBack: boolean;
@@ -888,12 +888,12 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 884
 Output:
-import { validatePreviewUrlInput } from '@/features/home/data/browser-preview';
-import { type CanvasTab, isCanvasTab } from '@/features/home/domain/canvas-tabs';
+import { validatePreviewUrlInput } from '@/features/home/<USER>/browser-preview';
+import { type CanvasTab, isCanvasTab } from '@/features/home/<USER>/canvas-tabs';
 import {
   type WorkerSessionState,
   workerSessionStates,
-} from '@/features/home/domain/session-workspace';
+} from '@/features/home/<USER>/session-workspace';
 
 const homeWorkspacePreferencesStorageKey =
   'yyork.home.workspace-preferences';
@@ -1060,7 +1060,7 @@ id: call_6hlAXVi0UfbjvMXh4FUS9E1H
 ```json
 {
   "cmd": "sed -n '130,190p' internal/server/server.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1073,7 +1073,7 @@ id: call_2MWvlUTSxrRq1kYjuHxWtyRu
 ```json
 {
   "cmd": "sed -n '420,470p' internal/server/server.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1086,7 +1086,7 @@ id: call_RQZntDMFaVKJJpPLrdVjIexL
 ```json
 {
   "cmd": "sed -n '130,175p' prds/canvas/BROWSER_PLAN.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 10000
 }
@@ -1099,7 +1099,7 @@ id: call_PinAYnK5cCgWvWBLTf7cXfN9
 ```json
 {
   "cmd": "sed -n '245,260p' prds/canvas/BROWSER_PLAN.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 10000
 }
@@ -1314,7 +1314,7 @@ id: call_K9mmKMCrvAl6KkNzFt6DWZVj
 ```json
 {
   "cmd": "rg -n \"handleDashboard|isBrowserPreviewHost|externalRequestHost|X-Forwarded-Host|previewHost\" internal/server internal/cli web/src/features/home -g '!**/*.map'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -1327,7 +1327,7 @@ id: call_T9VMjEYgJFIg4uelrHLOAZah
 ```json
 {
   "cmd": "sed -n '360,430p' internal/server/server.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1340,7 +1340,7 @@ id: call_UnyJDeqbcFQgl3Bd4pw7TuwE
 ```json
 {
   "cmd": "sed -n '1,220p' internal/cli/dev.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -1353,7 +1353,7 @@ id: call_7Tl7cMzAwsYjHDigXrYYltEF
 ```json
 {
   "cmd": "find . -maxdepth 3 -name 'portless.json' -o -name '*.portless*'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -1561,7 +1561,7 @@ id: call_ci4WJYcj5HWQ2pW5IAh6eSzz
 ```json
 {
   "cmd": "sed -n '240,360p' internal/server/browser_preview_test.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 14000
 }
@@ -1574,7 +1574,7 @@ id: call_HK04AyeBYvgbdmhe7jt8aXbz
 ```json
 {
   "cmd": "sed -n '1,130p' internal/cli/dev_test.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1587,7 +1587,7 @@ id: call_gFUF6lHvXz5w3SIDYt2PvWcK
 ```json
 {
   "cmd": "sed -n '130,210p' internal/cli/dev_test.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1599,8 +1599,8 @@ tool_use exec_command
 id: call_3KtdS8WqOALXGJzuGsOTu2RJ
 ```json
 {
-  "cmd": "rg -n \"projectName|CanvasTargetSummary|previewUrl|getCanvasPreviewTargetKey|target=|CanvasPanel\" web/src/features/home/components/organisms web/src/features/home/data/workspace.ts web/src/features/home/domain -g '*.tsx' -g '*.ts'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "rg -n \"projectName|CanvasTargetSummary|previewUrl|getCanvasPreviewTargetKey|target=|CanvasPanel\" web/src/features/home/<USER>/organisms web/src/features/home/<USER>/workspace.ts web/src/features/home/<USER> -g '*.tsx' -g '*.ts'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -1808,52 +1808,52 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 1375
 Output:
-web/src/features/home/data/workspace.ts:26:  projectName: z.string().optional().default(''),
-web/src/features/home/data/workspace.ts:154:      name: row.projectName || basename(row.projectPath),
-web/src/features/home/components/organisms/project-orchestrator-sidebar.tsx:706:            projectName={props.project.name}
-web/src/features/home/components/organisms/project-orchestrator-sidebar.tsx:1086:  projectName: string;
-web/src/features/home/components/organisms/project-orchestrator-sidebar.tsx:1092:        label={`Open ${props.projectName} actions`}
-web/src/features/home/components/organisms/project-orchestrator-sidebar.tsx:1097:                aria-label={`${props.projectName} actions`}
-web/src/features/home/components/organisms/project-orchestrator-sidebar.tsx:1390:  const projectNames = new Map(
-web/src/features/home/components/organisms/project-orchestrator-sidebar.tsx:1399:      label: projectNames.get(orchestrator.project) ?? 'Orchestrator',
-web/src/features/home/components/organisms/project-orchestrator-sidebar.stories.tsx:248:        <TopbarOrchestratorPanel projectName={activeProject.name} />
-web/src/features/home/components/organisms/project-orchestrator-sidebar.stories.tsx:468:          projectName={props.project.name}
-web/src/features/home/components/organisms/project-orchestrator-sidebar.stories.tsx:576:function TopbarOrchestratorPanel(props: { projectName: string }) {
-web/src/features/home/components/organisms/project-orchestrator-sidebar.stories.tsx:582:            {props.projectName}
-web/src/features/home/components/organisms/project-orchestrator-sidebar.stories.tsx:619:        eyebrow={props.projectName}
-web/src/features/home/components/organisms/project-orchestrator-sidebar.stories.tsx:637:  previewUrl: string;
-web/src/features/home/components/organisms/project-orchestrator-sidebar.stories.tsx:681:        <SelectedTargetWorkspacePanel target={target} />
-web/src/features/home/components/organisms/project-orchestrator-sidebar.stories.tsx:713:                projectName={project.name}
-web/src/features/home/components/organisms/project-orchestrator-sidebar.stories.tsx:762:  projectName: string;
-web/src/features/home/components/organisms/project-orchestrator-sidebar.stories.tsx:770:          aria-label={`Open ${props.projectName} Kanban`}
-web/src/features/home/components/organisms/project-orchestrator-sidebar.stories.tsx:772:          title={`Open ${props.projectName} Kanban`}
-web/src/features/home/components/organisms/project-orchestrator-sidebar.stories.tsx:917:            target={props.target}
-web/src/features/home/components/organisms/project-orchestrator-sidebar.stories.tsx:959:        <span className="truncate">{props.target.previewUrl}</span>
-web/src/features/home/components/organisms/project-orchestrator-sidebar.stories.tsx:1042:  const projectNames = new Map(
-web/src/features/home/components/organisms/project-orchestrator-sidebar.stories.tsx:1066:      previewUrl: 'http://localhost:3000',
-web/src/features/home/components/organisms/project-orchestrator-sidebar.stories.tsx:1071:  const projectName = projectNames.get(session.project) ?? session.project;
-web/src/features/home/components/organisms/project-orchestrator-sidebar.stories.tsx:1081:    eyebrow: `${projectName} / ${targetKind}`,
-web/src/features/home/components/organisms/project-orchestrator-sidebar.stories.tsx:1091:    previewUrl: 'http://localhost:3000',
-web/src/features/home/components/organisms/project-orchestrator-sidebar.stories.tsx:1188:          projectName={activeProject.name}
-web/src/features/home/components/organisms/project-orchestrator-sidebar.stories.tsx:1212:  projectName: string;
-web/src/features/home/components/organisms/project-orchestrator-sidebar.stories.tsx:1221:            {props.projectName}
-web/src/features/home/components/organisms/project-orchestrator-sidebar.stories.tsx:1472:  const projectNames = new Map(
-web/src/features/home/components/organisms/project-orchestrator-sidebar.stories.tsx:1479:      label: projectNames.get(orchestrator.project) ?? 'Orchestrator',
-web/src/features/home/components/organisms/canvas-panel.tsx:54:export interface CanvasTargetSummary {
-web/src/features/home/components/organisms/canvas-panel.tsx:57:  projectName?: string;
-web/src/features/home/components/organisms/canvas-panel.tsx:152:  target: CanvasTargetSummary;
-web/src/features/home/components/organisms/canvas-panel.tsx:166:export function CanvasPanel(props: {
-web/src/features/home/components/organisms/canvas-panel.tsx:168:  previewUrl?: string;
-web/src/features/home/components/organisms/canvas-panel.tsx:175:  target: CanvasTargetSummary;
-web/src/features/home/components/organisms/canvas-panel.tsx:194:            target={props.target}
-web/src/features/home/components/organisms/canvas-panel.tsx:202:            target={props.target}
-web/src/features/home/components/organisms/canvas-panel.tsx:207:            defaultUrl={props.previewUrl}
-web/src/features/home/components/organisms/canvas-panel.tsx:210:            previewName={props.target.projectName}
-web/src/features/home/components/organisms/canvas-panel.tsx:221:  target: CanvasTargetSummary;
-web/src/features/home/components/organisms/canvas-panel.tsx:289:        target={props.target}
-web/src/features/home/components/organisms/canvas-panel.tsx:300:  target: CanvasTargetSummary;
-web/src/features/home/components/organisms/canvas-panel.tsx:333:      target={props.target}
-web/src/features/home/components/organisms/canvas-panel.tsx:397:  target: CanvasTargetSummary;
+web/src/features/home/<USER>/workspace.ts:26:  projectName: z.string().optional().default(''),
+web/src/features/home/<USER>/workspace.ts:154:      name: row.projectName || basename(row.projectPath),
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.tsx:706:            projectName={props.project.name}
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.tsx:1086:  projectName: string;
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.tsx:1092:        label={`Open ${props.projectName} actions`}
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.tsx:1097:                aria-label={`${props.projectName} actions`}
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.tsx:1390:  const projectNames = new Map(
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.tsx:1399:      label: projectNames.get(orchestrator.project) ?? 'Orchestrator',
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.stories.tsx:248:        <TopbarOrchestratorPanel projectName={activeProject.name} />
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.stories.tsx:468:          projectName={props.project.name}
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.stories.tsx:576:function TopbarOrchestratorPanel(props: { projectName: string }) {
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.stories.tsx:582:            {props.projectName}
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.stories.tsx:619:        eyebrow={props.projectName}
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.stories.tsx:637:  previewUrl: string;
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.stories.tsx:681:        <SelectedTargetWorkspacePanel target={target} />
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.stories.tsx:713:                projectName={project.name}
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.stories.tsx:762:  projectName: string;
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.stories.tsx:770:          aria-label={`Open ${props.projectName} Kanban`}
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.stories.tsx:772:          title={`Open ${props.projectName} Kanban`}
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.stories.tsx:917:            target={props.target}
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.stories.tsx:959:        <span className="truncate">{props.target.previewUrl}</span>
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.stories.tsx:1042:  const projectNames = new Map(
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.stories.tsx:1066:      previewUrl: 'http://localhost:3000',
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.stories.tsx:1071:  const projectName = projectNames.get(session.project) ?? session.project;
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.stories.tsx:1081:    eyebrow: `${projectName} / ${targetKind}`,
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.stories.tsx:1091:    previewUrl: 'http://localhost:3000',
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.stories.tsx:1188:          projectName={activeProject.name}
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.stories.tsx:1212:  projectName: string;
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.stories.tsx:1221:            {props.projectName}
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.stories.tsx:1472:  const projectNames = new Map(
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.stories.tsx:1479:      label: projectNames.get(orchestrator.project) ?? 'Orchestrator',
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:54:export interface CanvasTargetSummary {
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:57:  projectName?: string;
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:152:  target: CanvasTargetSummary;
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:166:export function CanvasPanel(props: {
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:168:  previewUrl?: string;
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:175:  target: CanvasTargetSummary;
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:194:            target={props.target}
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:202:            target={props.target}
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:207:            defaultUrl={props.previewUrl}
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:210:            previewName={props.target.projectName}
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:221:  target: CanvasTargetSummary;
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:289:        target={props.target}
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:300:  target: CanvasTargetSummary;
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:333:      target={props.target}
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:397:  target: CanvasTargetSummary;
 
 ```
 
@@ -1867,8 +1867,8 @@ tool_use exec_command
 id: call_xGRABkh6tHmzfx5EU3OlLbHI
 ```json
 {
-  "cmd": "sed -n '45,75p' web/src/features/home/components/organisms/canvas-panel.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '45,75p' web/src/features/home/<USER>/organisms/canvas-panel.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 10000
 }
@@ -1880,8 +1880,8 @@ tool_use exec_command
 id: call_jmbs3nU3HEOvRYmqhyb9FCno
 ```json
 {
-  "cmd": "rg -n \"<CanvasPanel|CanvasPanel\\(\" web/src/features/home/components -g '*.tsx'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "rg -n \"<CanvasPanel|CanvasPanel\\(\" web/src/features/home/<USER> -g '*.tsx'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -1893,8 +1893,8 @@ tool_use exec_command
 id: call_hLvXP1x89KVScDU3DEOaF8Gs
 ```json
 {
-  "cmd": "rg -n \"canvasPreview|targetKey|selectedTarget|CanvasTargetSummary|projectName:\" web/src/features/home/components/organisms/project-orchestrator-sidebar.tsx web/src/features/home/components/organisms/terminal-panel.tsx web/src/features/home/data/workspace.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "rg -n \"canvasPreview|targetKey|selectedTarget|CanvasTargetSummary|projectName:\" web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.tsx web/src/features/home/<USER>/organisms/terminal-panel.tsx web/src/features/home/<USER>/workspace.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -1906,8 +1906,8 @@ tool_use exec_command
 id: call_6oVaBPMLWwL0kUufobpN3BOS
 ```json
 {
-  "cmd": "sed -n '130,175p' web/src/features/home/data/workspace.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '130,175p' web/src/features/home/<USER>/workspace.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1923,14 +1923,14 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 190
 Output:
-} from '@/features/home/data/session-files';
-import type { HomeWorkspaceCanvasReviewPreferences } from '@/features/home/data/workspace-preferences';
+} from '@/features/home/<USER>/session-files';
+import type { HomeWorkspaceCanvasReviewPreferences } from '@/features/home/<USER>/workspace-preferences';
 import {
   type CanvasTab,
   isCanvasTab,
-} from '@/features/home/domain/canvas-tabs';
+} from '@/features/home/<USER>/canvas-tabs';
 
-export type { CanvasTab } from '@/features/home/domain/canvas-tabs';
+export type { CanvasTab } from '@/features/home/<USER>/canvas-tabs';
 
 export interface CanvasTargetSummary {
   cwd?: string;
@@ -1967,7 +1967,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 26
 Output:
-web/src/features/home/components/organisms/canvas-panel.tsx:166:export function CanvasPanel(props: {
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:166:export function CanvasPanel(props: {
 
 ```
 
@@ -1981,8 +1981,8 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 50
 Output:
-web/src/features/home/data/workspace.ts:26:  projectName: z.string().optional().default(''),
-web/src/features/home/components/organisms/project-orchestrator-sidebar.tsx:1086:  projectName: string;
+web/src/features/home/<USER>/workspace.ts:26:  projectName: z.string().optional().default(''),
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.tsx:1086:  projectName: string;
 
 ```
 
@@ -2056,7 +2056,7 @@ id: call_zklDmVjnpJElBvl05F0jPMlW
 ```json
 {
   "cmd": "rg -n \"CanvasPanel|canvasPreview|canvasTab|targetKey|activeCanvas|selected.*target|CanvasTarget\" web/src -g '*.tsx' -g '*.ts'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 26000
 }
@@ -2068,8 +2068,8 @@ tool_use exec_command
 id: call_26W04wr2H8tQ4HXCSG4v9XYJ
 ```json
 {
-  "cmd": "sed -n '1,130p' web/src/features/home/domain/session-workspace.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,130p' web/src/features/home/<USER>/session-workspace.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -2081,8 +2081,8 @@ tool_use exec_command
 id: call_CcrX965Hx7yvuuSpnnpylKBQ
 ```json
 {
-  "cmd": "sed -n '1,90p' web/src/features/home/data/workspace.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,90p' web/src/features/home/<USER>/workspace.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 14000
 }
@@ -2095,7 +2095,7 @@ id: call_KIg89r8sUqYYOA1FN9PBUrl0
 ```json
 {
   "cmd": "rg -n \"sessionId|projectName|projectPath\" internal/server/sessions.go internal/store/sessions.go internal/session -g '*.go'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -2111,59 +2111,59 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 1615
 Output:
-web/src/features/home/pages/workspace-layout.tsx:36:  CanvasTargetSummary,
-web/src/features/home/pages/workspace-layout.tsx:89:  canvasTab: CanvasTab;
-web/src/features/home/pages/workspace-layout.tsx:103:  | { canvasTab: CanvasTab; type: 'canvas-tab' };
-web/src/features/home/pages/workspace-layout.tsx:110:    canvasTab: homeWorkspacePreferences.canvasTab ?? 'files',
-web/src/features/home/pages/workspace-layout.tsx:148:        canvasTab: action.canvasTab,
-web/src/features/home/pages/workspace-layout.tsx:179:    canvasTab,
-web/src/features/home/pages/workspace-layout.tsx:287:  const canvasTarget: CanvasTargetSummary = selectedTerminalSession
-web/src/features/home/pages/workspace-layout.tsx:299:  const canvasPreviewTargetKey = getCanvasPreviewTargetKey(canvasTarget);
-web/src/features/home/pages/workspace-layout.tsx:300:  const canvasPreviewUrl = getCanvasPreviewUrlForTarget(
-web/src/features/home/pages/workspace-layout.tsx:302:    canvasPreviewTargetKey
-web/src/features/home/pages/workspace-layout.tsx:399:    dispatchLayout({ canvasTab: tab, type: 'canvas-tab' });
-web/src/features/home/pages/workspace-layout.tsx:400:    updateHomeWorkspacePreferences({ canvasTab: tab });
-web/src/features/home/pages/workspace-layout.tsx:407:        canvasPreviewTargetKey,
-web/src/features/home/pages/workspace-layout.tsx:701:    canvasPreviewUrl,
-web/src/features/home/pages/workspace-layout.tsx:704:    canvasTab,
-web/src/features/home/pages/terminal-layout.tsx:5:import { CanvasPanel } from '@/features/home/components/organisms/canvas-panel';
-web/src/features/home/pages/terminal-layout.tsx:102:          <CanvasPanel
-web/src/features/home/pages/terminal-layout.tsx:103:            activeTab={context.canvasTab}
-web/src/features/home/pages/terminal-layout.tsx:104:            previewUrl={context.canvasPreviewUrl}
-web/src/features/home/pages/workspace-context.ts:5:  CanvasTargetSummary,
-web/src/features/home/pages/workspace-context.ts:21:  canvasPreviewUrl?: string;
-web/src/features/home/pages/workspace-context.ts:24:  canvasTab: CanvasTab;
-web/src/features/home/pages/workspace-context.ts:25:  canvasTarget: CanvasTargetSummary;
-web/src/features/home/components/organisms/canvas-panel.tsx:54:export interface CanvasTargetSummary {
-web/src/features/home/components/organisms/canvas-panel.tsx:152:  target: CanvasTargetSummary;
-web/src/features/home/components/organisms/canvas-panel.tsx:166:export function CanvasPanel(props: {
-web/src/features/home/components/organisms/canvas-panel.tsx:175:  target: CanvasTargetSummary;
-web/src/features/home/components/organisms/canvas-panel.tsx:221:  target: CanvasTargetSummary;
-web/src/features/home/components/organisms/canvas-panel.tsx:300:  target: CanvasTargetSummary;
-web/src/features/home/components/organisms/canvas-panel.tsx:397:  target: CanvasTargetSummary;
-web/src/features/home/data/workspace-preferences.unit.spec.ts:43:      canvasPreviewUrl: 'https://yyork.localhost/',
-web/src/features/home/data/workspace-preferences.unit.spec.ts:44:      canvasPreviewUrls: {
-web/src/features/home/data/workspace-preferences.unit.spec.ts:61:        canvasPreviewUrl: 'https://yyork.localhost/',
-web/src/features/home/data/workspace-preferences.unit.spec.ts:62:        canvasPreviewUrls: {
-web/src/features/home/data/workspace-preferences.unit.spec.ts:71:      canvasPreviewUrl: undefined,
-web/src/features/home/data/workspace-preferences.unit.spec.ts:72:      canvasPreviewUrls: {
-web/src/features/home/data/workspace-preferences.unit.spec.ts:91:      canvasPreviewUrl: 'https://google.com',
-web/src/features/home/data/workspace-preferences.unit.spec.ts:92:      canvasPreviewUrls: {
-web/src/features/home/data/workspace-preferences.unit.spec.ts:101:      canvasPreviewUrls: {
-web/src/features/home/data/workspace-preferences.unit.spec.ts:120:      canvasTab: 'browser',
-web/src/features/home/data/workspace-preferences.unit.spec.ts:126:      canvasTab: 'browser',
-web/src/features/home/data/workspace-preferences.unit.spec.ts:134:        canvasTab: 'terminal',
-web/src/features/home/components/organisms/main-topbar.tsx:28:    canvasTab,
-web/src/features/home/components/organisms/main-topbar.tsx:102:                  value={canvasTab}
-web/src/features/home/data/workspace-preferences.ts:15:  canvasPreviewUrls?: Record<string, string>;
-web/src/features/home/data/workspace-preferences.ts:16:  canvasPreviewUrl?: string;
-web/src/features/home/data/workspace-preferences.ts:18:  canvasTab?: CanvasTab;
-web/src/features/home/data/workspace-preferences.ts:113:    'canvasPreviewUrl' | 'canvasPreviewUrls'
-web/src/features/home/data/workspace-preferences.ts:115:  targetKey: string
-web/src/features/home/data/workspace-preferences.ts:117:  return preferences.canvasPreviewUrls?.[targetKey] ?? preferences.canvasPreviewUrl;
-web/src/features/home/data/workspace-preferences.ts:123:    'canvasPreviewUrl' | 'canvasPreviewUrls'
-web/src/features/home/data/workspace-preferences.ts:125:  targetKey: string,
-web/src/features/home/data/workspace-preferences.ts:127:): Pick<HomeWorkspacePreferences, 'canvasPreviewUrl' | 'canvasPreviewUrls'> […]
+web/src/features/home/<USER>/workspace-layout.tsx:36:  CanvasTargetSummary,
+web/src/features/home/<USER>/workspace-layout.tsx:89:  canvasTab: CanvasTab;
+web/src/features/home/<USER>/workspace-layout.tsx:103:  | { canvasTab: CanvasTab; type: 'canvas-tab' };
+web/src/features/home/<USER>/workspace-layout.tsx:110:    canvasTab: homeWorkspacePreferences.canvasTab ?? 'files',
+web/src/features/home/<USER>/workspace-layout.tsx:148:        canvasTab: action.canvasTab,
+web/src/features/home/<USER>/workspace-layout.tsx:179:    canvasTab,
+web/src/features/home/<USER>/workspace-layout.tsx:287:  const canvasTarget: CanvasTargetSummary = selectedTerminalSession
+web/src/features/home/<USER>/workspace-layout.tsx:299:  const canvasPreviewTargetKey = getCanvasPreviewTargetKey(canvasTarget);
+web/src/features/home/<USER>/workspace-layout.tsx:300:  const canvasPreviewUrl = getCanvasPreviewUrlForTarget(
+web/src/features/home/<USER>/workspace-layout.tsx:302:    canvasPreviewTargetKey
+web/src/features/home/<USER>/workspace-layout.tsx:399:    dispatchLayout({ canvasTab: tab, type: 'canvas-tab' });
+web/src/features/home/<USER>/workspace-layout.tsx:400:    updateHomeWorkspacePreferences({ canvasTab: tab });
+web/src/features/home/<USER>/workspace-layout.tsx:407:        canvasPreviewTargetKey,
+web/src/features/home/<USER>/workspace-layout.tsx:701:    canvasPreviewUrl,
+web/src/features/home/<USER>/workspace-layout.tsx:704:    canvasTab,
+web/src/features/home/<USER>/terminal-layout.tsx:5:import { CanvasPanel } from '@/features/home/<USER>/organisms/canvas-panel';
+web/src/features/home/<USER>/terminal-layout.tsx:102:          <CanvasPanel
+web/src/features/home/<USER>/terminal-layout.tsx:103:            activeTab={context.canvasTab}
+web/src/features/home/<USER>/terminal-layout.tsx:104:            previewUrl={context.canvasPreviewUrl}
+web/src/features/home/<USER>/workspace-context.ts:5:  CanvasTargetSummary,
+web/src/features/home/<USER>/workspace-context.ts:21:  canvasPreviewUrl?: string;
+web/src/features/home/<USER>/workspace-context.ts:24:  canvasTab: CanvasTab;
+web/src/features/home/<USER>/workspace-context.ts:25:  canvasTarget: CanvasTargetSummary;
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:54:export interface CanvasTargetSummary {
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:152:  target: CanvasTargetSummary;
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:166:export function CanvasPanel(props: {
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:175:  target: CanvasTargetSummary;
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:221:  target: CanvasTargetSummary;
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:300:  target: CanvasTargetSummary;
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:397:  target: CanvasTargetSummary;
+web/src/features/home/<USER>/workspace-preferences.unit.spec.ts:43:      canvasPreviewUrl: 'https://yyork.localhost/',
+web/src/features/home/<USER>/workspace-preferences.unit.spec.ts:44:      canvasPreviewUrls: {
+web/src/features/home/<USER>/workspace-preferences.unit.spec.ts:61:        canvasPreviewUrl: 'https://yyork.localhost/',
+web/src/features/home/<USER>/workspace-preferences.unit.spec.ts:62:        canvasPreviewUrls: {
+web/src/features/home/<USER>/workspace-preferences.unit.spec.ts:71:      canvasPreviewUrl: undefined,
+web/src/features/home/<USER>/workspace-preferences.unit.spec.ts:72:      canvasPreviewUrls: {
+web/src/features/home/<USER>/workspace-preferences.unit.spec.ts:91:      canvasPreviewUrl: 'https://google.com',
+web/src/features/home/<USER>/workspace-preferences.unit.spec.ts:92:      canvasPreviewUrls: {
+web/src/features/home/<USER>/workspace-preferences.unit.spec.ts:101:      canvasPreviewUrls: {
+web/src/features/home/<USER>/workspace-preferences.unit.spec.ts:120:      canvasTab: 'browser',
+web/src/features/home/<USER>/workspace-preferences.unit.spec.ts:126:      canvasTab: 'browser',
+web/src/features/home/<USER>/workspace-preferences.unit.spec.ts:134:        canvasTab: 'terminal',
+web/src/features/home/<USER>/organisms/main-topbar.tsx:28:    canvasTab,
+web/src/features/home/<USER>/organisms/main-topbar.tsx:102:                  value={canvasTab}
+web/src/features/home/<USER>/workspace-preferences.ts:15:  canvasPreviewUrls?: Record<string, string>;
+web/src/features/home/<USER>/workspace-preferences.ts:16:  canvasPreviewUrl?: string;
+web/src/features/home/<USER>/workspace-preferences.ts:18:  canvasTab?: CanvasTab;
+web/src/features/home/<USER>/workspace-preferences.ts:113:    'canvasPreviewUrl' | 'canvasPreviewUrls'
+web/src/features/home/<USER>/workspace-preferences.ts:115:  targetKey: string
+web/src/features/home/<USER>/workspace-preferences.ts:117:  return preferences.canvasPreviewUrls?.[targetKey] ?? preferences.canvasPreviewUrl;
+web/src/features/home/<USER>/workspace-preferences.ts:123:    'canvasPreviewUrl' | 'canvasPreviewUrls'
+web/src/features/home/<USER>/workspace-preferences.ts:125:  targetKey: string,
+web/src/features/home/<USER>/workspace-preferences.ts:127:): Pick<HomeWorkspacePreferences, 'canvasPreviewUrl' | 'canvasPreviewUrls'> […]
 
 > TOOL
 
@@ -2180,7 +2180,7 @@ import {
   type SessionActivity,
   toKanbanCardView,
   type WorkerSessionRecord,
-} from '@/features/home/domain/kanban-card-model';
+} from '@/features/home/<USER>/kanban-card-model';
 import {
   type SessionWorkspace,
   type TerminalSessionKind,
@@ -2188,13 +2188,13 @@ import {
   type WorkerSession,
   type WorkerSessionState,
   workerSessionStates,
-} from '@/features/home/domain/session-workspace-contract.generated';
+} from '@/features/home/<USER>/session-workspace-contract.generated';
 
 export {
   type SessionActivity,
   sessionActivityStates,
   type WorkerSessionRecord,
-} from '@/features/home/domain/kanban-card-model';
+} from '@/features/home/<USER>/kanban-card-model';
 export {
   type ProjectOrchestrator,
   type SessionWorkspace,
@@ -2203,7 +2203,7 @@ export {
   type WorkerSession,
   type WorkerSessionState,
   workerSessionStates,
-} from '@/features/home/domain/session-workspace-contract.generated';
+} from '@/features/home/<USER>/session-workspace-contract.generated';
 
 export interface KanbanCardData {
   activity: SessionActivity;
@@ -2262,7 +2262,7 @@ import {
   type SessionWorkspace,
   type WorkerSession,
   type WorkerSessionRecord,
-} from '@/features/home/domain/session-workspace';
+} from '@/features/home/<USER>/session-workspace';
 
 // ---------------------------------------------------------------------------
 // /api/sessions — the new SQLite-backed source of truth.
@@ -2346,8 +2346,8 @@ tool_use exec_command
 id: call_cWn5GuhOrVf9JBgsl2lQCz90
 ```json
 {
-  "cmd": "sed -n '260,315p' web/src/features/home/pages/workspace-layout.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '260,315p' web/src/features/home/<USER>/workspace-layout.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2359,8 +2359,8 @@ tool_use exec_command
 id: call_x8usxtwlHoS2pwnk7M07MYbo
 ```json
 {
-  "cmd": "sed -n '390,415p' web/src/features/home/pages/workspace-layout.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '390,415p' web/src/features/home/<USER>/workspace-layout.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2372,8 +2372,8 @@ tool_use exec_command
 id: call_b6uaFo3k67cG2FVvR2arftfB
 ```json
 {
-  "cmd": "sed -n '680,710p' web/src/features/home/pages/workspace-layout.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '680,710p' web/src/features/home/<USER>/workspace-layout.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2385,8 +2385,8 @@ tool_use exec_command
 id: call_Y3VHDRb6IeiLioYZXO2SszRc
 ```json
 {
-  "cmd": "sed -n '90,115p' web/src/features/home/pages/terminal-layout.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '90,115p' web/src/features/home/<USER>/terminal-layout.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2594,7 +2594,7 @@ id: call_Q6cRVJmiJgcEXensXzmvPL4M
 ```json
 {
   "cmd": "sed -n '1,70p' internal/server/sessions.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 10000
 }
@@ -2607,7 +2607,7 @@ id: call_xDVVZ1uVHfugrm3Hahkr1cAH
 ```json
 {
   "cmd": "rg -n \"ProjectName|projectName|project_name|NewSession|Create\\(\" internal/session internal/store internal/server -g '*.go'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -2620,7 +2620,7 @@ id: call_EpsP2tH7X4NYiZ9CJCgPT6rN
 ```json
 {
   "cmd": "rg -n \"project_name|projectName\" internal/store/migrations internal -g '*.sql' -g '*.go'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -2633,7 +2633,7 @@ id: call_7svZeGruuxRLDm9dqXFAs8PA
 ```json
 {
   "cmd": "sed -n '200,300p' internal/store/sessions.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2853,7 +2853,7 @@ id: call_2Jcb2OtpcZ7VMUJUZD1NYwR2
 ```json
 {
   "cmd": "nl -ba internal/server/browser_preview.go | sed -n '20,65p;225,315p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 14000
 }
@@ -2865,8 +2865,8 @@ tool_use exec_command
 id: call_06KkKO2kFdzrfagsnCVLyzIG
 ```json
 {
-  "cmd": "nl -ba web/src/features/home/components/organisms/canvas-panel.tsx | sed -n '204,214p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "nl -ba web/src/features/home/<USER>/organisms/canvas-panel.tsx | sed -n '204,214p'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -2878,8 +2878,8 @@ tool_use exec_command
 id: call_vEW2xEm7ODB04xlwcLchMvc2
 ```json
 {
-  "cmd": "nl -ba web/src/features/home/components/molecules/canvas-web-preview.tsx | sed -n '620,642p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "nl -ba web/src/features/home/<USER>/molecules/canvas-web-preview.tsx | sed -n '620,642p'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 9000
 }
@@ -2892,7 +2892,7 @@ id: call_BrfmUJcyhGeN4gcRRRM7YgIY
 ```json
 {
   "cmd": "nl -ba internal/cli/dev.go | sed -n '18,24p;123,151p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 10000
 }
@@ -2904,8 +2904,8 @@ tool_use exec_command
 id: call_yBLQVT22O3MYx6451iEQbcj1
 ```json
 {
-  "cmd": "nl -ba /Users/tanishqpalandurkar/.codex/memories/MEMORY.md | sed -n '1,3p;51,52p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "nl -ba /home/<USER>/.codex/memories/MEMORY.md | sed -n '1,3p;51,52p'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -3094,13 +3094,13 @@ Original token count: 421
 Output:
      1	# Task Group: `Projects/yyork` in-app browser readiness, Agentation delivery, portless routing, and bundled Browser plugin internals [chronicle memory]
      2	scope: Use for recent `yyork` work around the Browser tab/IAB path, Agentation annotation delivery, portless-backed local routing, and local inspection of Codex’s bundled Browser plugin files when the user is tracing the real control path or debugging why preview behavior differs from the expected proxied app.
-     3	applies_to: cwd=/Users/tanishqpalandurkar/Projects/yyork plus local Browser-plugin cache paths under /Users/tanishqpalandurkar/.codex/plugins/cache/openai-bundled/browser/*; reuse_rule=safe for similar yyork browser-preview and local Browser-plugin forensics on this machine, but re-open the current `yyork` dev scripts, preview host wiring, and installed plugin version before claiming exact runtime behavior
+     3	applies_to: cwd=/home/<USER>/Projects/yyork plus local Browser-plugin cache paths under /home/<USER>/.codex/plugins/cache/openai-bundled/browser/*; reuse_rule=safe for similar yyork browser-preview and local Browser-plugin forensics on this machine, but re-open the current `yyork` dev scripts, preview host wiring, and installed plugin version before claiming exact runtime behavior
     51	- The Browser-preview path in `yyork` depends on the proxied/preview route, not a raw loopback iframe: the missing bottom-right Agentation component was described as injected through the preview proxy script, with the expected bundle at `cmd/yyork/dashboard/app/yyork_browser/agentation.js` produced by `web/vite.preview.config.ts` [Task 2][Task 3] [chronicle memory]
     52	- The stable local route shape for this dev flow was `pnpm dev`/`portless run` plus `direnv`-mediated Go tooling, where `yyork.localhost` is the desired app URL and […]
 
 > AGENT
 
-The `https-` prefix comes from yyork’s fallback preview-host slugger, not from Portless. In [internal/server/browser_preview.go](/Users/tanishqpalandurkar/Projects/yyork/internal/server/browser_preview.go:265), `browserPreviewHostForOrigin()` builds:
+The `https-` prefix comes from yyork’s fallback preview-host slugger, not from Portless. In [internal/server/browser_preview.go](/home/<USER>/Projects/yyork/internal/server/browser_preview.go:265), `browserPreviewHostForOrigin()` builds:
 
 ```text
 {scheme}-{normalized-host}-preview.yyork.localhost
@@ -3112,9 +3112,9 @@ So `https://yyork.localhost/...` can become:
 https-yyork-localhost-preview.yyork.localhost
 ```
 
-But the intended yyork self-preview path is `yyork-preview.yyork.localhost`: [internal/server/browser_preview.go](/Users/tanishqpalandurkar/Projects/yyork/internal/server/browser_preview.go:304) special-cases `yyork.localhost`. Also, an explicit `previewName` wins first: [internal/server/browser_preview.go](/Users/tanishqpalandurkar/Projects/yyork/internal/server/browser_preview.go:251). So the URL you pasted suggests the registration got a name like `https://yyork.localhost`, or missed the self-preview path somehow.
+But the intended yyork self-preview path is `yyork-preview.yyork.localhost`: [internal/server/browser_preview.go](/home/<USER>/Projects/yyork/internal/server/browser_preview.go:304) special-cases `yyork.localhost`. Also, an explicit `previewName` wins first: [internal/server/browser_preview.go](/home/<USER>/Projects/yyork/internal/server/browser_preview.go:251). So the URL you pasted suggests the registration got a name like `https://yyork.localhost`, or missed the self-preview path somehow.
 
-For two agents: today the Browser panel sends only `previewName={projectName}`: [canvas-panel.tsx](/Users/tanishqpalandurkar/Projects/yyork/web/src/features/home/components/organisms/canvas-panel.tsx:206). The server stores preview targets in a map keyed by preview host. If two sessions in the same project both register `yyork-preview.yyork.localhost`, the later registration can overwrite the target for that host. Existing frames may keep what they already loaded, but reloads, navigations, and later proxied requests can route to the most recent target.
+For two agents: today the Browser panel sends only `previewName={projectName}`: [canvas-panel.tsx](/home/<USER>/Projects/yyork/web/src/features/home/<USER>/organisms/canvas-panel.tsx:206). The server stores preview targets in a map keyed by preview host. If two sessions in the same project both register `yyork-preview.yyork.localhost`, the later registration can overwrite the target for that host. Existing frames may keep what they already loaded, but reloads, navigations, and later proxied requests can route to the most recent target.
 
 Your proposed shape is the right direction. I’d make the frontend send a session-scoped preview name, probably:
 

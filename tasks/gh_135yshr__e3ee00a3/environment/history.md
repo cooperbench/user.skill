@@ -114,7 +114,7 @@ tool_use Read
 id: toolu_01HpeKcYCTWZHXbz4CZJVdvt
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/3d95f47f3d2974.md"
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/3d95f47f3d2974.md"
 }
 ```
 

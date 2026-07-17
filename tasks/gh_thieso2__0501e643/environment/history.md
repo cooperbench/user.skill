@@ -940,7 +940,7 @@ tool_use Bash
 id: toolu_01Lfq9V5JzSMeipv4hpjM7bm
 ```json
 {
-  "command": "ls /Users/thies/Projects/GitHub/Sandcastle/docker-compose.yml /Users/thies/Projects/GitHub/Sandcastle/installer/installer.sh.in /Users/thies/Projects/GitHub/Sandcastle/app/services/tailscale_manager.rb 2>&1",
+  "command": "ls /home/<USER>/Projects/GitHub/Sandcastle/docker-compose.yml /home/<USER>/Projects/GitHub/Sandcastle/installer/installer.sh.in /home/<USER>/Projects/GitHub/Sandcastle/app/services/tailscale_manager.rb 2>&1",
   "description": "Locate code files"
 }
 ```
@@ -958,9 +958,9 @@ DOCKYARD_POOL_BASE="10.89.0.0/16"
 tool_result
 id: toolu_01Lfq9V5JzSMeipv4hpjM7bm
 ```
-/Users/thies/Projects/GitHub/Sandcastle/app/services/tailscale_manager.rb
-/Users/thies/Projects/GitHub/Sandcastle/docker-compose.yml
-/Users/thies/Projects/GitHub/Sandcastle/installer/installer.sh.in
+/home/<USER>/Projects/GitHub/Sandcastle/app/services/tailscale_manager.rb
+/home/<USER>/Projects/GitHub/Sandcastle/docker-compose.yml
+/home/<USER>/Projects/GitHub/Sandcastle/installer/installer.sh.in
 ```
 
 > TOOL
@@ -980,7 +980,7 @@ tool_use Read
 id: toolu_01RwqyTC2FA2Fk3iT2vhmWWp
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/app/services/tailscale_manager.rb"
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/app/services/tailscale_manager.rb"
 }
 ```
 
@@ -1054,7 +1054,7 @@ tool_use Read
 id: toolu_01CsEduF4JQiwWi4z4fDhY9J
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/docker-compose.yml"
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/docker-compose.yml"
 }
 ```
 
@@ -1145,7 +1145,7 @@ tool_use Bash
 id: toolu_01HbNZAsFKL6w9sx5GjZdVXc
 ```json
 {
-  "command": "grep -n \"DOCKYARD_POOL_BASE\\|docker-compose\" /Users/thies/Projects/GitHub/Sandcastle/installer/installer.sh.in | head -40",
+  "command": "grep -n \"DOCKYARD_POOL_BASE\\|docker-compose\" /home/<USER>/Projects/GitHub/Sandcastle/installer/installer.sh.in | head -40",
   "description": "Search installer for compose / pool refs"
 }
 ```
@@ -1281,7 +1281,7 @@ tool_use Bash
 id: toolu_01TkfhRxjy9VdEvJHSzV3i4b
 ```json
 {
-  "command": "grep -n \"@@TEMPLATE\\|docker-compose.yml.template\\|env_file\" /Users/thies/Projects/GitHub/Sandcastle/installer/installer.sh.in | head -30",
+  "command": "grep -n \"@@TEMPLATE\\|docker-compose.yml.template\\|env_file\" /home/<USER>/Projects/GitHub/Sandcastle/installer/installer.sh.in | head -30",
   "description": "Find template marker"
 }
 ```
@@ -1292,7 +1292,7 @@ tool_use Bash
 id: toolu_01DzVhfJZmsDn8g5AVeXbeRL
 ```json
 {
-  "command": "ls /Users/thies/Projects/GitHub/Sandcastle/installer/templates/",
+  "command": "ls /home/<USER>/Projects/GitHub/Sandcastle/installer/templates/",
   "description": "List installer templates"
 }
 ```
@@ -1348,7 +1348,7 @@ tool_use Read
 id: toolu_012zqVvDMHgdXFwxZPw6oP2k
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/installer/templates/docker-compose.yml.template"
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/docker-compose.yml.template"
 }
 ```
 
@@ -1439,7 +1439,7 @@ tool_use Bash
 id: toolu_01PuuNBFVHS5DVr22HMeogDe
 ```json
 {
-  "command": "grep -n DOCKYARD_POOL_BASE /Users/thies/Projects/GitHub/Sandcastle/installer/templates/sandcastle.env.template 2>&1; echo ===; sed -n '700,720p;920,935p;1135,1185p;1255,1275p;1615,1635p' /Users/thies/Projects/GitHub/Sandcastle/installer/installer.sh.in",
+  "command": "grep -n DOCKYARD_POOL_BASE /home/<USER>/Projects/GitHub/Sandcastle/installer/templates/sandcastle.env.template 2>&1; echo ===; sed -n '700,720p;920,935p;1135,1185p;1255,1275p;1615,1635p' /home/<USER>/Projects/GitHub/Sandcastle/installer/installer.sh.in",
   "description": "Inspect installer .env writes"
 }
 ```
@@ -1464,7 +1464,7 @@ tool_use Read
 id: toolu_01MhgHgR6nfVYnu5QgNMJuNR
 ```json
 {
-  "file_path": "/Users/thies/.claude/projects/-Users-thies-Projects-GitHub-Sandcastle/memory/MEMORY.md"
+  "file_path": "/home/<USER>/.claude/projects/-Users-thies-Projects-GitHub-Sandcastle/memory/MEMORY.md"
 }
 ```
 
@@ -1494,7 +1494,7 @@ id: toolu_01R5X3LmVngH15JQLH2zM7YX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/.claude/projects/-Users-thies-Projects-GitHub-Sandcastle/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-thies-Projects-GitHub-Sandcastle/memory/MEMORY.md",
   "old_string": "## Conventions\n- **Never edit `installer/templates/dockyard.sh`** in the Sandcastle repo. Dockyard is an upstream project at `thieso2/dockyard`. If Sandcastle needs changes there, file an issue on that repo instead.",
   "new_string": "## Conventions\n- **Never edit `installer/templates/dockyard.sh`** in the Sandcastle repo. Dockyard is an upstream project — local checkout is at `../dockyard` (sibling of the Sandcastle repo) and origin is `thieso2/dockyard`. To change dockyard behavior, edit `../dockyard/src/*.sh` and commit there."
 }
@@ -1505,7 +1505,7 @@ id: toolu_01R5X3LmVngH15JQLH2zM7YX
 tool_result
 id: toolu_01R5X3LmVngH15JQLH2zM7YX
 ```
-The file /Users/thies/.claude/projects/-Users-thies-Projects-GitHub-Sandcastle/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-thies-Projects-GitHub-Sandcastle/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1514,7 +1514,7 @@ tool_use Bash
 id: toolu_014RJbNS21XjHA5Sai9Bv9qr
 ```json
 {
-  "command": "sed -n '700,720p;920,935p;1135,1185p;1255,1275p;1615,1635p' /Users/thies/Projects/GitHub/Sandcastle/installer/installer.sh.in",
+  "command": "sed -n '700,720p;920,935p;1135,1185p;1255,1275p;1615,1635p' /home/<USER>/Projects/GitHub/Sandcastle/installer/installer.sh.in",
   "description": "Re-read sections without bad eval"
 }
 ```
@@ -1601,7 +1601,7 @@ tool_use Bash
 id: toolu_01Y2aNhbJ244ao71S8XZ9Uhe
 ```json
 {
-  "command": "ls /Users/thies/Projects/GitHub/Sandcastle/installer/ /Users/thies/Projects/GitHub/Sandcastle/Makefile* /Users/thies/Projects/GitHub/Sandcastle/mise.toml 2>&1 | head -30; echo ---; grep -l 'installer.sh.in' /Users/thies/Projects/GitHub/Sandcastle/Makefile* /Users/thies/Projects/GitHub/Sandcastle/mise.toml /Users/thies/Projects/GitHub/Sandcastle/installer/Makefile 2>/dev/null; echo ---; ls /Users/thies/Projects/GitHub/Sandcastle/installer/",
+  "command": "ls /home/<USER>/Projects/GitHub/Sandcastle/installer/ /home/<USER>/Projects/GitHub/Sandcastle/Makefile* /home/<USER>/Projects/GitHub/Sandcastle/mise.toml 2>&1 | head -30; echo ---; grep -l 'installer.sh.in' /home/<USER>/Projects/GitHub/Sandcastle/Makefile* /home/<USER>/Projects/GitHub/Sandcastle/mise.toml /home/<USER>/Projects/GitHub/Sandcastle/installer/Makefile 2>/dev/null; echo ---; ls /home/<USER>/Projects/GitHub/Sandcastle/installer/",
   "description": "Find installer build script"
 }
 ```
@@ -1612,9 +1612,9 @@ tool_result ERROR
 id: toolu_01Y2aNhbJ244ao71S8XZ9Uhe
 ```
 Exit code 1
-(eval):1: no matches found: /Users/thies/Projects/GitHub/Sandcastle/Makefile*
+(eval):1: no matches found: /home/<USER>/Projects/GitHub/Sandcastle/Makefile*
 ---
-(eval):1: no matches found: /Users/thies/Projects/GitHub/Sandcastle/Makefile*
+(eval):1: no matches found: /home/<USER>/Projects/GitHub/Sandcastle/Makefile*
 ```
 
 > TOOL
@@ -1623,7 +1623,7 @@ tool_use Bash
 id: toolu_01YJ1GbhAECy8eqPMPqobWHV
 ```json
 {
-  "command": "ls /Users/thies/Projects/GitHub/Sandcastle/installer/; echo ---; cat /Users/thies/Projects/GitHub/Sandcastle/mise.toml 2>/dev/null | head -60",
+  "command": "ls /home/<USER>/Projects/GitHub/Sandcastle/installer/; echo ---; cat /home/<USER>/Projects/GitHub/Sandcastle/mise.toml 2>/dev/null | head -60",
   "description": "Inspect installer dir + mise tasks"
 }
 ```
@@ -1685,7 +1685,7 @@ tool_use Read
 id: toolu_01V5veW7CN4Jm1WAjZGMbLMC
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/installer/build.sh"
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/installer/build.sh"
 }
 ```
 
@@ -1753,7 +1753,7 @@ id: toolu_015uJazwbbsKzEV3dmUd93ST
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/installer/templates/docker-compose.yml.template",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/docker-compose.yml.template",
   "old_string": "  web:\n    image: ${APP_IMAGE}\n    runtime: runc\n    container_name: sandcastle-web\n    group_add:\n      - \"\\${DOCKER_GID:-988}\"\n    volumes:\n      - \\${DOCKER_SOCK}:/var/run/docker.sock\n      - ${DATA_MOUNT}:${DATA_MOUNT}\n    environment:",
   "new_string": "  web:\n    image: ${APP_IMAGE}\n    runtime: runc\n    container_name: sandcastle-web\n    group_add:\n      - \"\\${DOCKER_GID:-988}\"\n    volumes:\n      - \\${DOCKER_SOCK}:/var/run/docker.sock\n      - ${DATA_MOUNT}:${DATA_MOUNT}\n    env_file:\n      # Single source of truth for DOCKYARD_POOL_BASE — must match the value\n      # dockerd actually uses, otherwise Tailscale sidecar subnets land outside\n      # the host MASQUERADE rule and lose internet access.\n      - ${SANDCASTLE_HOME}/dockyard/etc/dockyard.env\n    environment:"
 }
@@ -1764,7 +1764,7 @@ id: toolu_015uJazwbbsKzEV3dmUd93ST
 tool_result
 id: toolu_015uJazwbbsKzEV3dmUd93ST
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/installer/templates/docker-compose.yml.template has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/installer/templates/docker-compose.yml.template has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1774,7 +1774,7 @@ id: toolu_01Nmq97MPHipZvAEzzkoGqJi
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/installer/templates/docker-compose.yml.template",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/docker-compose.yml.template",
   "old_string": "      GOOGLE_CLIENT_ID: \\${GOOGLE_CLIENT_ID:-}\n      GOOGLE_CLIENT_SECRET: \\${GOOGLE_CLIENT_SECRET:-}\n      DOCKYARD_POOL_BASE: \\${DOCKYARD_POOL_BASE:-10.89.0.0/16}\n      DOCKER_SOCK: \\${DOCKER_SOCK:-/var/run/docker.sock}",
   "new_string": "      GOOGLE_CLIENT_ID: \\${GOOGLE_CLIENT_ID:-}\n      GOOGLE_CLIENT_SECRET: \\${GOOGLE_CLIENT_SECRET:-}\n      DOCKER_SOCK: \\${DOCKER_SOCK:-/var/run/docker.sock}"
 }
@@ -1785,7 +1785,7 @@ id: toolu_01Nmq97MPHipZvAEzzkoGqJi
 tool_result
 id: toolu_01Nmq97MPHipZvAEzzkoGqJi
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/installer/templates/docker-compose.yml.template has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/installer/templates/docker-compose.yml.template has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1795,7 +1795,7 @@ id: toolu_017JPFSeFozyTYPu1q4B7haA
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/installer/templates/docker-compose.yml.template",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/docker-compose.yml.template",
   "old_string": "  worker:\n    image: ${APP_IMAGE}\n    runtime: runc\n    container_name: sandcastle-worker\n    command: [\"./bin/jobs\"]\n    group_add:\n      - \"\\${DOCKER_GID:-988}\"\n    volumes:\n      - \\${DOCKER_SOCK}:/var/run/docker.sock\n      - ${DATA_MOUNT}:${DATA_MOUNT}\n    environment:",
   "new_string": "  worker:\n    image: ${APP_IMAGE}\n    runtime: runc\n    container_name: sandcastle-worker\n    command: [\"./bin/jobs\"]\n    group_add:\n      - \"\\${DOCKER_GID:-988}\"\n    volumes:\n      - \\${DOCKER_SOCK}:/var/run/docker.sock\n      - ${DATA_MOUNT}:${DATA_MOUNT}\n    env_file:\n      - ${SANDCASTLE_HOME}/dockyard/etc/dockyard.env\n    environment:"
 }
@@ -1806,7 +1806,7 @@ id: toolu_017JPFSeFozyTYPu1q4B7haA
 tool_result
 id: toolu_017JPFSeFozyTYPu1q4B7haA
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/installer/templates/docker-compose.yml.template has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/installer/templates/docker-compose.yml.template has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1816,7 +1816,7 @@ id: toolu_01QnfooVw3YkXRXJp8dY4pqp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/installer/templates/docker-compose.yml.template",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/docker-compose.yml.template",
   "old_string": "      DB_PASSWORD: \\${DB_PASSWORD}\n      DOCKYARD_POOL_BASE: \\${DOCKYARD_POOL_BASE:-10.89.0.0/16}\n      SANDCASTLE_TCP_PORT_MIN: \\${SANDCASTLE_TCP_PORT_MIN:-${TCP_PORT_MIN}}",
   "new_string": "      DB_PASSWORD: \\${DB_PASSWORD}\n      SANDCASTLE_TCP_PORT_MIN: \\${SANDCASTLE_TCP_PORT_MIN:-${TCP_PORT_MIN}}"
 }
@@ -1827,7 +1827,7 @@ id: toolu_01QnfooVw3YkXRXJp8dY4pqp
 tool_result
 id: toolu_01QnfooVw3YkXRXJp8dY4pqp
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/installer/templates/docker-compose.yml.template has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/installer/templates/docker-compose.yml.template has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1841,7 +1841,7 @@ id: toolu_01DqhmQiFuXoPcpy2dvwgSyk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/installer/installer.sh.in",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/installer/installer.sh.in",
   "old_string": "DOCKER_GID=\"${DOCKER_GID}\"\nDOCKER_SOCK=\"${DOCKER_SOCK}\"\nDOCKYARD_POOL_BASE=\"${DOCKYARD_POOL_BASE}\"\nACME_EMAIL=\"${ACME_EMAIL:-}\"",
   "new_string": "DOCKER_GID=\"${DOCKER_GID}\"\nDOCKER_SOCK=\"${DOCKER_SOCK}\"\nACME_EMAIL=\"${ACME_EMAIL:-}\""
 }
@@ -1861,7 +1861,7 @@ tool_use Read
 id: toolu_01WqgeL5TiarhQ3h7gzXUdmW
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/installer/installer.sh.in",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/installer/installer.sh.in",
   "offset": 915,
   "limit": 25
 }
@@ -1905,7 +1905,7 @@ tool_use Read
 id: toolu_016KWjdVdZCivD62m16A8nEQ
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/installer/installer.sh.in",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/installer/installer.sh.in",
   "offset": 1125,
   "limit": 60
 }
@@ -1976,7 +1976,7 @@ id: toolu_01YE5v3xhXVMHRy4ttmBizZJ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/installer/installer.sh.in",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/installer/installer.sh.in",
   "old_string": "DOCKER_GID=\"${DOCKER_GID}\"\nDOCKER_SOCK=\"${DOCKER_SOCK}\"\nDOCKYARD_POOL_BASE=\"${DOCKYARD_POOL_BASE}\"\nACME_EMAIL=\"${ACME_EMAIL:-}\"\nGITHUB_CLIENT_ID=\"${GITHUB_CLIENT_ID:-}\"\nGITHUB_CLIENT_SECRET=\"${GITHUB_CLIENT_SECRET:-}\"\nGOOGLE_CLIENT_ID=\"${GOOGLE_CLIENT_ID:-}\"\nGOOGLE_CLIENT_SECRET=\"${GOOGLE_CLIENT_SECRET:-}\"\nEOF\n    chmod 600 \"$SANDCASTLE_HOME/.env\"\n    wrote \"$SANDCASTLE_HOME/.env\"",
   "new_string": "DOCKER_GID=\"${DOCKER_GID}\"\nDOCKER_SOCK=\"${DOCKER_SOCK}\"\nACME_EMAIL=\"${ACME_EMAIL:-}\"\nGITHUB_CLIENT_ID=\"${GITHUB_CLIENT_ID:-}\"\nGITHUB_CLIENT_SECRET=\"${GITHUB_CLIENT_SECRET:-}\"\nGOOGLE_CLIENT_ID=\"${GOOGLE_CLIENT_ID:-}\"\nGOOGLE_CLIENT_SECRET=\"${GOOGLE_CLIENT_SECRET:-}\"\nEOF\n    chmod 600 \"$SANDCASTLE_HOME/.env\"\n    wrote \"$SANDCASTLE_HOME/.env\""
 }
@@ -1987,7 +1987,7 @@ id: toolu_01YE5v3xhXVMHRy4ttmBizZJ
 tool_result
 id: toolu_01YE5v3xhXVMHRy4ttmBizZJ
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/installer/installer.sh.in has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/installer/installer.sh.in has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1997,7 +1997,7 @@ id: toolu_01TbTTXfoCwmxcvqJEwLVhih
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/installer/installer.sh.in",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/installer/installer.sh.in",
   "old_string": "  # Backfill DOCKYARD_POOL_BASE — required so docker-compose passes the correct subnet to Rails\n  grep -q '^DOCKYARD_POOL_BASE=' \"$SANDCASTLE_HOME/.env\" 2>/dev/null || \\\n    echo \"DOCKYARD_POOL_BASE=${DOCKYARD_POOL_BASE}\" >> \"$SANDCASTLE_HOME/.env\"\n  # Backfill SANDCASTLE_NAME — used for Tailscale sidecar machine names (sc-<name>)",
   "new_string": "  # NOTE: DOCKYARD_POOL_BASE is intentionally NOT written to .env. docker-compose\n  # loads it via env_file: from $SANDCASTLE_HOME/dockyard/etc/dockyard.env so\n  # Rails always sees the same value dockerd is actually using. Keeping it in\n  # .env risks divergence (a stale .env would make Tailscale sidecars land on\n  # subnets outside the host MASQUERADE rule and lose internet).\n  # Backfill SANDCASTLE_NAME — used for Tailscale sidecar machine names (sc-<name>)"
 }
@@ -2008,7 +2008,7 @@ id: toolu_01TbTTXfoCwmxcvqJEwLVhih
 tool_result
 id: toolu_01TbTTXfoCwmxcvqJEwLVhih
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/installer/installer.sh.in has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/installer/installer.sh.in has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2021,7 +2021,7 @@ tool_use Read
 id: toolu_0158wk4rwWuNd5KiBU2U3Vf7
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/installer/installer.sh.in",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/installer/installer.sh.in",
   "offset": 1615,
   "limit": 20
 }
@@ -2060,7 +2060,7 @@ tool_use Read
 id: toolu_01GCFigozY6digKbP7sjyjjv
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/installer/templates/sandcastle.env.template"
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/installer/templates/sandcastle.env.template"
 }
 ```
 
@@ -2086,7 +2086,7 @@ id: toolu_01GCFigozY6digKbP7sjyjjv
 15	# ─── Network & TLS ──────────────────────────────────────────────────────────
 16	SANDCASTLE_HOST=${host}
 17	SANDCASTLE_TLS_MODE=${tls_mode}
-18	#ACME_EMAIL=admin@example.com
+18	#ACME_EMAIL=<REDACTED_EMAIL>
 19	SANDCASTLE_HTTP_PORT=${http_port}
 20	SANDCASTLE_HTTPS_PORT=${https_port}
 21	
@@ -2124,7 +2124,7 @@ id: toolu_01WJ18Ej7BAqvJWMH54mFoGN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/installer/installer.sh.in",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/installer/installer.sh.in",
   "old_string": "  # Backfill vars that may be missing in older .env files\n  grep -q '^DOCKYARD_POOL_BASE=' \"$SANDCASTLE_HOME/.env\" 2>/dev/null || \\\n    echo \"DOCKYARD_POOL_BASE=${DOCKYARD_POOL_BASE}\" >> \"$SANDCASTLE_HOME/.env\"\n  if ! grep -q '^AR_ENCRYPTION_PRIMARY_KEY=' \"$SANDCASTLE_HOME/.env\" 2>/dev/null; then",
   "new_string": "  # Strip stale DOCKYARD_POOL_BASE from older .env files — it now lives only in\n  # dockyard.env (loaded by docker-compose via env_file). Keeping a duplicate in\n  # .env risked silent drift that broke Tailscale sidecar networking.\n  if grep -q '^DOCKYARD_POOL_BASE=' \"$SANDCASTLE_HOME/.env\" 2>/dev/null; then\n    sed -i '/^DOCKYARD_POOL_BASE=/d' \"$SANDCASTLE_HOME/.env\"\n    info \"Removed stale DOCKYARD_POOL_BASE from .env (now sourced from dockyard.env)\"\n  fi\n  if ! grep -q '^AR_ENCRYPTION_PRIMARY_KEY=' \"$SANDCASTLE_HOME/.env\" 2>/dev/null; then"
 }
@@ -2135,7 +2135,7 @@ id: toolu_01WJ18Ej7BAqvJWMH54mFoGN
 tool_result
 id: toolu_01WJ18Ej7BAqvJWMH54mFoGN
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/installer/installer.sh.in has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/installer/installer.sh.in has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2145,7 +2145,7 @@ id: toolu_01Gf9UieytYCku7T7TZcX2HF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/installer/installer.sh.in",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/installer/installer.sh.in",
   "old_string": "  # NOTE: DOCKYARD_POOL_BASE is intentionally NOT written to .env. docker-compose\n  # loads it via env_file: from $SANDCASTLE_HOME/dockyard/etc/dockyard.env so\n  # Rails always sees the same value dockerd is actually using. Keeping it in\n  # .env risks divergence (a stale .env would make Tailscale sidecars land on\n  # subnets outside the host MASQUERADE rule and lose internet).\n  # Backfill SANDCASTLE_NAME — used for Tailscale sidecar machine names (sc-<name>)",
   "new_string": "  # DOCKYARD_POOL_BASE lives only in dockyard.env (loaded by docker-compose via\n  # env_file:) — having it in .env too risked silent drift that broke Tailscale\n  # sidecar networking. Strip any leftover entry from older installs.\n  if grep -q '^DOCKYARD_POOL_BASE=' \"$SANDCASTLE_HOME/.env\" 2>/dev/null; then\n    sed -i '/^DOCKYARD_POOL_BASE=/d' \"$SANDCASTLE_HOME/.env\"\n    info \"Removed stale DOCKYARD_POOL_BASE from .env (now sourced from dockyard.env)\"\n  fi\n  # Backfill SANDCASTLE_NAME — used for Tailscale sidecar machine names (sc-<name>)"
 }
@@ -2156,7 +2156,7 @@ id: toolu_01Gf9UieytYCku7T7TZcX2HF
 tool_result
 id: toolu_01Gf9UieytYCku7T7TZcX2HF
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/installer/installer.sh.in has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/installer/installer.sh.in has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2170,7 +2170,7 @@ id: toolu_01RAkqyKipf4u2u2hKE1wQtt
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/app/services/tailscale_manager.rb",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/app/services/tailscale_manager.rb",
   "old_string": "  def subnet_for(user)\n    # 1. Use the subnet stored in the DB — stable across Docker/reinstalls\n    return user.tailscale_subnet if user.tailscale_subnet.present?\n\n    # 2. If the network already exists on Docker, read its actual subnet\n    begin\n      network = Docker::Network.get(\"sc-ts-net-#{user.name}\")\n      ipam = network.info.dig(\"IPAM\", \"Config\")\n      return ipam.first[\"Subnet\"] if ipam&.first\n    rescue Docker::Error::NotFoundError\n      # Network doesn't exist yet — fall through to generate a random /24\n    end\n\n    # 3. Generate a random /24 from the pool (first allocation)\n    base = ENV[\"DOCKYARD_POOL_BASE\"]\n    if base\n      parts = base.split(\"/\").first.split(\".\").map(&:to_i)\n    else\n      parts = [ 10, rand(1..254), 0, 0 ]\n    end\n    parts[2] = rand(1..254)\n    \"#{parts[0]}.#{parts[1]}.#{parts[2]}.0/24\"\n  end",
   "new_string": "  def subnet_for(user)\n    pool = ENV[\"DOCKYARD_POOL_BASE\"]\n\n    # 1. Use the subnet stored in the DB — but only if it still falls inside the\n    # current pool. If DOCKYARD_POOL_BASE changed (or was previously wrong), the\n    # stored subnet would be outside the host MASQUERADE rule and the sidecar\n    # would have no internet. Drop it and regenerate.\n    if user.tailscale_subnet.present?\n      if pool.blank? || subnet_in_pool?(user.tailscale_subnet, pool)\n        return user.tailscale_subnet\n      end\n      Rails.logger.warn(\n        \"TailscaleManager: stored subnet #{user.tailscale_subnet} for #{user.name} \" \\\n        \"is outside DOCKYARD_POOL_BASE #{pool} — regenerating\"\n      )\n      user.update_column(:tailscale_subnet, nil)\n    end\n\n    # 2. If the network already exists […]
 
@@ -2179,7 +2179,7 @@ id: toolu_01RAkqyKipf4u2u2hKE1wQtt
 tool_result
 id: toolu_01RAkqyKipf4u2u2hKE1wQtt
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/app/services/tailscale_manager.rb has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/app/services/tailscale_manager.rb has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2208,7 +2208,7 @@ id: toolu_01Ws9BxFxFAYyhB4H6RcBjKf
 [0;32m→[0m   Injecting: templates/dockyard.sh
 [0;32m→[0m   Injecting: docker-compose.yml.template
 [0;32m→[0m   Injecting: /docker/postgres/init-databases.sh
-[0;32m✓[0m Built: /Users/thies/Projects/GitHub/Sandcastle/installer.sh
+[0;32m✓[0m Built: /home/<USER>/Projects/GitHub/Sandcastle/installer.sh
 
 [0;32m→[0m Verify the output and test before committing!
 ```
@@ -2437,7 +2437,7 @@ tool_use Bash
 id: toolu_01K8XmQ2JABvr3F1u222QxJb
 ```json
 {
-  "command": "git commit -m \"$(cat <<'EOF'\nSource DOCKYARD_POOL_BASE from dockyard.env, not .env\n\nRails picked Tailscale sidecar subnets from DOCKYARD_POOL_BASE in /sandcastle/.env,\nwhich could drift from the value dockerd actually uses (in dockyard.env). When it\ndid, sidecars landed outside the host MASQUERADE rule and silently lost internet.\n\ndocker-compose now loads the value via env_file from dockyard/etc/dockyard.env so\nthe two cannot diverge. The installer no longer writes it to .env and strips any\nleftover entry on install/update. As defense-in-depth, TailscaleManager#subnet_for\nvalidates stored, existing-network, and freshly-generated subnets against the pool\nand regenerates if they fall outside it.\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>\nEOF\n)\" && git status",
+  "command": "git commit -m \"$(cat <<'EOF'\nSource DOCKYARD_POOL_BASE from dockyard.env, not .env\n\nRails picked Tailscale sidecar subnets from DOCKYARD_POOL_BASE in /sandcastle/.env,\nwhich could drift from the value dockerd actually uses (in dockyard.env). When it\ndid, sidecars landed outside the host MASQUERADE rule and silently lost internet.\n\ndocker-compose now loads the value via env_file from dockyard/etc/dockyard.env so\nthe two cannot diverge. The installer no longer writes it to .env and strips any\nleftover entry on install/update. As defense-in-depth, TailscaleManager#subnet_for\nvalidates stored, existing-network, and freshly-generated subnets against the pool\nand regenerates if they fall outside it.\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\" && git status",
   "description": "Commit fix"
 }
 ```
@@ -2906,7 +2906,7 @@ tool_use Bash
 id: toolu_01454bDoEhsXnHpej9tAth1D
 ```json
 {
-  "command": "grep -rn \"restore_from_state\\|restored Tailscale\" /Users/thies/Projects/GitHub/Sandcastle/app/ 2>/dev/null | head -20",
+  "command": "grep -rn \"restore_from_state\\|restored Tailscale\" /home/<USER>/Projects/GitHub/Sandcastle/app/ 2>/dev/null | head -20",
   "description": "Find ContainerSyncJob restore logic"
 }
 ```
@@ -2916,12 +2916,12 @@ id: toolu_01454bDoEhsXnHpej9tAth1D
 tool_result
 id: toolu_01454bDoEhsXnHpej9tAth1D
 ```
-/Users/thies/Projects/GitHub/Sandcastle/app/jobs/container_sync_job.rb:100:      Rails.logger.info("ContainerSyncJob: restored Tailscale for #{user.name} from saved auth key")
-/Users/thies/Projects/GitHub/Sandcastle/app/jobs/container_sync_job.rb:110:    tm.restore_from_state(user: user)
-/Users/thies/Projects/GitHub/Sandcastle/app/jobs/container_sync_job.rb:111:    Rails.logger.info("ContainerSyncJob: restored Tailscale for #{user.name} from saved state")
-/Users/thies/Projects/GitHub/Sandcastle/app/jobs/container_sync_job.rb:154:      TailscaleManager.new.restore_from_state(user: user.reload)
-/Users/thies/Projects/GitHub/Sandcastle/app/services/tailscale_manager.rb:22:  def restore_from_state(user:)
-/Users/thies/Projects/GitHub/Sandcastle/app/services/tailscale_manager.rb:558:      # Also used for restore_from_state: raw tailscaled exits without running
+/home/<USER>/Projects/GitHub/Sandcastle/app/jobs/container_sync_job.rb:100:      Rails.logger.info("ContainerSyncJob: restored Tailscale for #{user.name} from saved auth key")
+/home/<USER>/Projects/GitHub/Sandcastle/app/jobs/container_sync_job.rb:110:    tm.restore_from_state(user: user)
+/home/<USER>/Projects/GitHub/Sandcastle/app/jobs/container_sync_job.rb:111:    Rails.logger.info("ContainerSyncJob: restored Tailscale for #{user.name} from saved state")
+/home/<USER>/Projects/GitHub/Sandcastle/app/jobs/container_sync_job.rb:154:      TailscaleManager.new.restore_from_state(user: user.reload)
+/home/<USER>/Projects/GitHub/Sandcastle/app/services/tailscale_manager.rb:22:  def restore_from_state(user:)
+/home/<USER>/Projects/GitHub/Sandcastle/app/services/tailscale_manager.rb:558:      # Also used for restore_from_state: raw tailscaled exits without running
 ```
 
 > TOOL
@@ -2930,7 +2930,7 @@ tool_use Read
 id: toolu_01EAsp56E3UEiZXWjzfbDko4
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/app/jobs/container_sync_job.rb",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/app/jobs/container_sync_job.rb",
   "offset": 80,
   "limit": 80
 }

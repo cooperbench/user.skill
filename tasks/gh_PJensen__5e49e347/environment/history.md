@@ -1,9 +1,9 @@
 > SYSTEM
 
-# AGENTS.md instructions for /home/pjensen/Repos/JSHack
+# AGENTS.md instructions for /home/<USER>/Repos/JSHack
 
 <INSTRUCTIONS>
-@/home/pjensen/.codex/RTK.md
+@/home/<USER>/.codex/RTK.md
 
 --- project-doc ---
 
@@ -60,7 +60,7 @@ id: call_rf6Bv8022vGmwD9BUhpCaBX5
 ```json
 {
   "cmd": "pwd && rg -n \"mill|milling|cornmeal|food_corn|grain|valk|valkar|glyph|sound\" . --glob '!src/lib/**' --glob '!*.png' --glob '!*.jpg'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -72,8 +72,8 @@ tool_use exec_command
 id: call_hxo1O9eGp7vQDOjk0S6OxI0f
 ```json
 {
-  "cmd": "sed -n '1,220p' /home/pjensen/.codex/RTK.md",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/RTK.md",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -86,7 +86,7 @@ id: call_8Ey27IgYRAFsrrlHQlzUKg4p
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -105,7 +105,7 @@ Output:
 Warning: truncated output (original token count: 54049)
 Total output lines: 2020
 
-/home/pjensen/Repos/JSHack
+/home/<USER>/Repos/JSHack
 ./experiments/sensory-archetypes.html:654:                                <span class="option-label-main">Concepts only, no sound</span>
 ./experiments/sensory-archetypes.html:662:                                <span class="option-label-main">Fragmented sound</span>
 ./experiments/sensory-archetypes.html:680:                                    sound.</span>
@@ -188,7 +188,7 @@ id: call_ryvYEBSox9wuyksHmEUTG0U9
 ```json
 {
   "cmd": "rtk rg -n \"millGrain|mill:milled|millstone_grind|food_cornmeal|food_corn\\b|food_flour|food_wheat\" src tests/interaction.test.mjs tests/audioSoundsRegistry.test.mjs tests/classDisplayData.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -201,7 +201,7 @@ id: call_HjFe5uWjfCMZAeGyeQTzDkp0
 ```json
 {
   "cmd": "rtk rg -n \"valkyrie|valkarie|Valkyrie|classes|buildClassDisplayData|glyph\" src tests/classDisplayData.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -214,7 +214,7 @@ id: call_ZRIEFMwtyeg8JaGJBtGlX44I
 ```json
 {
   "cmd": "rtk rg -n \"audio:play|ambient:sound|resolveAudioPlayKey|interaction outcomes|soundId|sound:\" src/display src/rules tests/audioWiring.test.mjs tests/messageWiring.test.mjs tests/interaction.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -352,7 +352,7 @@ id: call_pHeecMGAvmLd6FJpOXH6qeFX
 ```json
 {
   "cmd": "rtk sed -n '740,830p' src/rules/content/interaction/interactPayloads.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -365,7 +365,7 @@ id: call_xYDopCbydh1dZufB32kannGi
 ```json
 {
   "cmd": "rtk sed -n '1,80p' src/rules/data/millingRecipes.js && rtk sed -n '90,140p' src/content/items/economy.js && rtk sed -n '100,180p' src/rules/content/interaction/interactPayloads.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -378,7 +378,7 @@ id: call_qawPnnJfYQCQhJLj10Ka4gJF
 ```json
 {
   "cmd": "rtk sed -n '300,350p' src/rules/data/classes.js && rtk sed -n '1,140p' src/main/classDisplayData.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -391,7 +391,7 @@ id: call_qcKj3aG3JtcybaggagaGrTz2
 ```json
 {
   "cmd": "rtk sed -n '1340,1370p' src/display/audio/audioWiring.js && rtk sed -n '210,235p' src/display/audio/audioWiring.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -680,7 +680,7 @@ id: call_8E5Ir7iOJdlZ700C8oPoFwk9
 ```json
 {
   "cmd": "rtk deno test --allow-read tests/interaction.test.mjs --filter millstone",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -693,7 +693,7 @@ id: call_ytkh9jnjkxTDjxRPgLBTnWyD
 ```json
 {
   "cmd": "rtk deno test --allow-read tests/audioSoundsRegistry.test.mjs --filter millstone",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -706,7 +706,7 @@ id: call_BTeNTnW2yUZqPVjiSvWcGRmg
 ```json
 {
   "cmd": "rtk deno test --allow-read tests/classDisplayData.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -777,7 +777,7 @@ id: call_nujbJsfvts5yFJuskzkmMhnq
 ```json
 {
   "cmd": "rtk rg -n \"function giveCraftedItem|giveCraftedItem|function consumeIdentityUnits|consumeIdentityUnits|getStackCount|createItemById|millstone|mill_chest\" src/rules/content/interaction/interactPayloads.js src/rules src/content tests --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -790,7 +790,7 @@ id: call_JN4PLp2JUehbHhokIbKCJJhZ
 ```json
 {
   "cmd": "rtk sed -n '360,410p' src/rules/archetypes/Overworld.js && rtk sed -n '1,120p' src/rules/utils/itemFactory.js && rtk sed -n '120,190p' src/rules/archetypes/TownGoods.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -803,7 +803,7 @@ id: call_g5dg2nb4O978UE9DdVBKrwpX
 ```json
 {
   "cmd": "rtk rg -n \"interact|InteractIntent|mode.*mill|recipe|itemId|millGrain|Interactable\" src/main.js src/main src/display src/rules/systems tests/interaction.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 26000
 }
@@ -955,7 +955,7 @@ id: call_8SoFpFNLqwzBGbDc6Q2vjk7Y
 ```json
 {
   "cmd": "rtk sed -n '300,350p' src/rules/content/interaction/interactPayloads.js && rtk sed -n '430,465p' src/rules/utils/inventoryFacade.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -968,7 +968,7 @@ id: call_0HFhXLNc56ZocNq9PqLvTjoW
 ```json
 {
   "cmd": "rtk sed -n '1,220p' src/rules/data/itemCatalogLoader.js && rtk rg -n \"food_cornmeal|food_flour|defineItem\\(\" src/rules/data/itemCatalog.js src/rules/data/itemCatalogLoader.js src/content/items src/rules/archetypes",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -981,7 +981,7 @@ id: call_ugEQwWK9Xd6eh38eormKZHqY
 ```json
 {
   "cmd": "rtk sed -n '1,100p' tests/classDisplayData.test.mjs && rtk sed -n '330,390p' src/rules/data/classes.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1166,7 +1166,7 @@ id: call_VxCShQxeZuOPxWkn2PNWNQyj
 ```json
 {
   "cmd": "rtk sed -n '1,220p' .agents/skills/using-entire/SKILL.md",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -1220,7 +1220,7 @@ id: call_nM6k895eWMLOJb9cMfTXAcv0
 ```json
 {
   "cmd": "rtk entire status",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1233,7 +1233,7 @@ id: call_BbVac0lf2bkSm6RzQ4cR3STp
 ```json
 {
   "cmd": "rtk git log --format='%H %s' -5 -- src/rules/content/interaction/interactPayloads.js src/rules/data/millingRecipes.js src/rules/data/classes.js tests/interaction.test.mjs tests/classDisplayData.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1246,7 +1246,7 @@ id: call_rl0hK3xpAeQzwb0ynPXWfGQY
 ```json
 {
   "cmd": "rtk git log --format='%H %b' -5 -- src/rules/content/interaction/interactPayloads.js src/rules/data/millingRecipes.js src/rules/data/classes.js tests/interaction.test.mjs tests/classDisplayData.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -1347,7 +1347,7 @@ id: call_8HXdOYCAKr9tBRM4IxuJ89Jg
 ```json
 {
   "cmd": "rtk entire explain --checkpoint c9311bff3601 --json --no-pager",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -1436,7 +1436,7 @@ id: call_vKCZrtBkyXSLMPyi1JnBTMrl
 ```json
 {
   "cmd": "rtk entire checkpoint explain c9311bff3601 --json --no-pager",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -1524,7 +1524,7 @@ id: call_EYAwcORwjFxckVeQLbyGlWb9
 ```json
 {
   "cmd": "rtk git show --stat --patch --find-renames --find-copies -- src/main/classDisplayData.js src/rules/data/classes.js src/rules/content/interaction/interactPayloads.js src/rules/data/millingRecipes.js src/display/audio/sounds.js tests/classDisplayData.test.mjs tests/interaction.test.mjs 5503a6efe75f31cece862fee51b48ce34ceefeba",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -1542,7 +1542,7 @@ Original token count: 2256
 Output:
 [rtk] /!\ No hook installed — run `rtk init -g` for automatic token savings
 commit 5503a6efe75f31cece862fee51b48ce34ceefeba
-Author: Pete Jensen <jensen.petej@gmail.com>
+Author: Pete Jensen <<REDACTED_EMAIL>>
 Date:   Mon Jul 6 00:00:00 2026 -0400
 
     feat: cornmeal, general store sign, valk glyph
@@ -1585,7 +1585,7 @@ id: call_gPmZCKRllpscAhlgwUQKYlmq
 ```json
 {
   "cmd": "rtk ls -l assets/audio/action_millstone_grind.mp3 && rtk rg -n \"action_millstone_grind|millstone_grind|wood_chop|sounds registry adopts descriptive weather filenames|action:wood_chop\" tests src/display/audio assets -S",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -1598,7 +1598,7 @@ id: call_DLfnuNuiAZlTsGZvEjy0zbHF
 ```json
 {
   "cmd": "rtk rg -n \"classDisplay|classes|glyph|icon|data-glyph|selectedClass|class-card|charCreation|buildClassDisplayData\" src/display/ui/charCreation.js src/main.js src/main src/display -S",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 26000
 }
@@ -1611,7 +1611,7 @@ id: call_5Opn45m0gcTiD2rkQoUDUvr9
 ```json
 {
   "cmd": "rtk rg -n \"defineItem\\(|registerItem|ITEM_CATALOG|getCatalogItem|_contentFood|content/items/index|from ['\\\"].*content/items\" src/rules src/content src/main.js tests/contentCatalogCanonical.test.mjs tests/itemMaterials.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -1729,7 +1729,7 @@ id: call_AN74ndE5tL6L5igLPMiQkrmT
 ```json
 {
   "cmd": "rtk sed -n '1,40p' src/display/ui/charCreation.js && rtk sed -n '650,710p' src/display/ui/charCreation.js && rtk sed -n '960,990p' src/display/ui/charCreation.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 14000
 }
@@ -1742,7 +1742,7 @@ id: call_0hspcRQinP6F9P7ghu8UKuA5
 ```json
 {
   "cmd": "rtk sed -n '1,90p' src/rules/data/itemCatalog.js && rtk sed -n '1,60p' src/content/items/index.js && rtk sed -n '1,60p' src/main.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1755,7 +1755,7 @@ id: call_Dp9blSvQNKVwLhWhXGt3se23
 ```json
 {
   "cmd": "rtk sed -n '80,115p' tests/audioSoundsRegistry.test.mjs && rtk sed -n '150,175p' tests/audioSoundsRegistry.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 10000
 }
@@ -1944,7 +1944,7 @@ id: call_uevwjePVxIh4L5kyJEJBEvYP
 ```json
 {
   "cmd": "rtk rg -n \"installContent|registerContent|content registry|from ['\\\"].*content/index|content/items/index|content/interactables|content/monsters\" src tests",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -1957,7 +1957,7 @@ id: call_bx1WfCCDVWDP1BcjAkc2E2gH
 ```json
 {
   "cmd": "rtk sed -n '120,220p' src/content/define.js && rtk sed -n '1,70p' src/content/registry.js && rtk sed -n '90,120p' src/rules/data/itemCatalog.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -1970,7 +1970,7 @@ id: call_pNtAfl8ucGB1bJPLa5qkcUdh
 ```json
 {
   "cmd": "rtk sed -n '1,230p' tests/audioWiring.test.mjs && rtk sed -n '1,80p' tests/interaction.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -2198,7 +2198,7 @@ id: call_0My2e1FazJID4e6z7mZ2MQXU
 ```json
 {
   "cmd": "rtk sed -n '370,405p' tests/audioSoundsRegistry.test.mjs && rtk rg -n \"sound|audio|millstone|millGrain\" src/content src/rules/data src/display/audio/sounds.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -2211,7 +2211,7 @@ id: call_w2qrNyEvWfmOOeTMhWXT9RJZ
 ```json
 {
   "cmd": "rtk sed -n '1,90p' src/content/install.js && rtk sed -n '260,320p' src/content/define.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2329,7 +2329,7 @@ id: call_7Ohtt6awcOnIeKEMWf4TTYhc
 ```json
 {
   "cmd": "rtk sed -n '1,110p' src/display/audio/sounds.js && rtk sed -n '1624,1710p' tests/interaction.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -2394,7 +2394,7 @@ id: call_nEjGf6a4pGC9zDtSFX66IviK
 ```json
 {
   "cmd": "rtk deno test --allow-read tests/interaction.test.mjs --filter millstone",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -2407,7 +2407,7 @@ id: call_X1SbNsmg4fyb5XBSWq4Xh2Vf
 ```json
 {
   "cmd": "rtk deno test --allow-read tests/audioSoundsRegistry.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -2420,7 +2420,7 @@ id: call_jcEWKlN7SMacXbBjfrill6cn
 ```json
 {
   "cmd": "rtk deno test --allow-read tests/classDisplayData.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -2433,7 +2433,7 @@ id: call_82VNeNgHiW430dTxoXsrpm92
 ```json
 {
   "cmd": "rtk deno test --allow-read tests/audioWiring.test.mjs --filter \"generic audio payload keys\"",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -2535,7 +2535,7 @@ id: call_ipT57l7ZLGHubrBabdGcpEbD
 ```json
 {
   "cmd": "rtk git diff -- src/display/ui/charCreation.js src/display/audio/sounds.js tests/interaction.test.mjs tests/audioSoundsRegistry.test.mjs tests/classDisplayData.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -2548,7 +2548,7 @@ id: call_CMI8TtPspJfUJja8kVDaQiA3
 ```json
 {
   "cmd": "rtk git status --short",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2614,9 +2614,9 @@ Output:
 Fixed all three.
 
 Changed:
-- [src/display/ui/charCreation.js](/home/pjensen/Repos/JSHack/src/display/ui/charCreation.js): character creation now renders `cls.glyph` before the decorative `icon`, so Valkyrie shows `@` instead of the wing icon.
-- [src/display/audio/sounds.js](/home/pjensen/Repos/JSHack/src/display/audio/sounds.js): added `millstone_grind` alias to the existing `action:millstone_grind` sound.
-- [tests/interaction.test.mjs](/home/pjensen/Repos/JSHack/tests/interaction.test.mjs): corn milling test now uses real catalog-created corn and asserts cornmeal is materialized.
+- [src/display/ui/charCreation.js](/home/<USER>/Repos/JSHack/src/display/ui/charCreation.js): character creation now renders `cls.glyph` before the decorative `icon`, so Valkyrie shows `@` instead of the wing icon.
+- [src/display/audio/sounds.js](/home/<USER>/Repos/JSHack/src/display/audio/sounds.js): added `millstone_grind` alias to the existing `action:millstone_grind` sound.
+- [tests/interaction.test.mjs](/home/<USER>/Repos/JSHack/tests/interaction.test.mjs): corn milling test now uses real catalog-created corn and asserts cornmeal is materialized.
 - Added tests covering the sound alias and glyph-vs-icon boundary.
 
 Verified:

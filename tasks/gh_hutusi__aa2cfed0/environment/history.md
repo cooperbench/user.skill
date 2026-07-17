@@ -15,7 +15,7 @@ id: toolu_01M8BvpbXCXPMDqK5Dg6HVfG
   "description": "Explore welcome page auth flow",
   "subagent_type": "Explore",
   "run_in_background": false,
-  "prompt": "Explore this repo (a Next.js 16 + React 19 voxel game at /Users/hutusi/workspace/ai/david/monecraft). The project recently shipped an \"identity rework\" (Local Players vs Accounts). A user reports: the welcome page has no \"sign up\" / \"create account\" option, so a new user cannot create an account.\n\nSearch thoroughness: very thorough.\n\nI need to understand:\n1. The welcome page / start screen UI component(s): where they live, what buttons/options they render (file paths + relevant JSX excerpts). Look for components named like Welcome, StartScreen, TitleScreen, MainMenu, AccountPanel, SignIn, Login, Auth, etc.\n2. The account/auth flow: how does an existing user sign in? Is there any sign-up/register/create-account UI anywhere (maybe reachable from a different screen)? Is there an API route for registration (look in app/api/ for routes like register, signup, account creation)? What auth mechanism is used (password, magic link, OAuth, etc.)?\n3. The \"Local Players vs Accounts\" model: what's a local player vs an account, how does the UI let you create/switch local players vs sign into an account?\n4. Any relevant docs: docs/online.md likely documents accounts/guests — summarize what it says about account creation/sign-up, and whether the docs claim […]
+  "prompt": "Explore this repo (a Next.js 16 + React 19 voxel game at /home/<USER>/workspace/ai/david/monecraft). The project recently shipped an \"identity rework\" (Local Players vs Accounts). A user reports: the welcome page has no \"sign up\" / \"create account\" option, so a new user cannot create an account.\n\nSearch thoroughness: very thorough.\n\nI need to understand:\n1. The welcome page / start screen UI component(s): where they live, what buttons/options they render (file paths + relevant JSX excerpts). Look for components named like Welcome, StartScreen, TitleScreen, MainMenu, AccountPanel, SignIn, Login, Auth, etc.\n2. The account/auth flow: how does an existing user sign in? Is there any sign-up/register/create-account UI anywhere (maybe reachable from a different screen)? Is there an API route for registration (look in app/api/ for routes like register, signup, account creation)? What auth mechanism is used (password, magic link, OAuth, etc.)?\n3. The \"Local Players vs Accounts\" model: what's a local player vs an account, how does the UI let you create/switch local players vs sign into an account?\n4. Any relevant docs: docs/online.md likely documents accounts/guests — summarize what it says about account creation/sign-up, and whether the docs claim […]
 
 > TOOL
 
@@ -49,7 +49,7 @@ tool_use Read
 id: toolu_01JU1p9Cvhgv541rdah2Uf13
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/AccountPanel.tsx"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/AccountPanel.tsx"
 }
 ```
 
@@ -93,7 +93,7 @@ tool_use Read
 id: toolu_01QrRQmut5eCU4yPcLrdtiNW
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/AccountPanel.test.tsx"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/AccountPanel.test.tsx"
 }
 ```
 
@@ -146,7 +146,7 @@ tool_use Bash
 id: toolu_01LZg4FiZnQqWLq4VnQJXFci
 ```json
 {
-  "command": "grep -n -i \"sign in\\|register\\|sign up\\|account panel\\|AccountPanel\" /Users/hutusi/workspace/ai/david/monecraft/docs/online.md /Users/hutusi/workspace/ai/david/monecraft/docs/testing.md /Users/hutusi/workspace/ai/david/monecraft/docs/manual.md | head -40",
+  "command": "grep -n -i \"sign in\\|register\\|sign up\\|account panel\\|AccountPanel\" /home/<USER>/workspace/ai/david/monecraft/docs/online.md /home/<USER>/workspace/ai/david/monecraft/docs/testing.md /home/<USER>/workspace/ai/david/monecraft/docs/manual.md | head -40",
   "description": "Find sign-in/register mentions in docs"
 }
 ```
@@ -156,15 +156,15 @@ id: toolu_01LZg4FiZnQqWLq4VnQJXFci
 tool_result
 id: toolu_01LZg4FiZnQqWLq4VnQJXFci
 ```
-/Users/hutusi/workspace/ai/david/monecraft/docs/online.md:29:  with sign-in/register. Logged-out **Local Players** keep any number of
-/Users/hutusi/workspace/ai/david/monecraft/docs/online.md:48:- The Account panel renders on the profile-select screen **and on the
-/Users/hutusi/workspace/ai/david/monecraft/docs/online.md:50:  sign in / register is reachable before any local profile exists.
-/Users/hutusi/workspace/ai/david/monecraft/docs/online.md:94:— the landing page previews the world's name, asks the visitor to sign in or
-/Users/hutusi/workspace/ai/david/monecraft/docs/online.md:95:register if they aren't, then accepts the membership; the world appears in
-/Users/hutusi/workspace/ai/david/monecraft/docs/online.md:147:normal, one private — each registers its own account), create an online
-/Users/hutusi/workspace/ai/david/monecraft/docs/manual.md:672:sign in (or register) if you aren't; the world then joins your account and
-/Users/hutusi/workspace/ai/david/monecraft/docs/testing.md:5:- **`bun test`** — unit, integration, and component tests, colocated as `*.test.ts[x]` next to the code they cover. The shared setup (`tests/setup.ts`, preloaded via `bunfig.toml`) registers happy-dom so React component tests run under the same runner; the game engine itself needs no DOM (see [architecture.md](architecture.md)).
-/Users/hutusi/workspace/ai/david/monecraft/docs/testing.md:17:| Online accounts & worlds      | `lib/auth/auth.test.ts`, `lib/online/worldsService.test.ts`, `lib/net/tickets.test.ts`, `lib/game/cloudSaves.test.ts`, `components/menu/AccountPanel.test.tsx`                                                                                                | Email/password sign-up/sign-in and the session shape the routes read (id/name/skinId) through the real better-auth wiring on PGlite (online play is accounts-only — no guest layer); membership/owner gating, idempotent invites with expiry/max-uses, LWW save-blob stale guard, mp-only verifiable join tickets (sign/tamper/expiry/garbage), gzip codec round-trip, the Account panel's sign-in/register/sign-out flows (no guest path offered), […]
+/home/<USER>/workspace/ai/david/monecraft/docs/online.md:29:  with sign-in/register. Logged-out **Local Players** keep any number of
+/home/<USER>/workspace/ai/david/monecraft/docs/online.md:48:- The Account panel renders on the profile-select screen **and on the
+/home/<USER>/workspace/ai/david/monecraft/docs/online.md:50:  sign in / register is reachable before any local profile exists.
+/home/<USER>/workspace/ai/david/monecraft/docs/online.md:94:— the landing page previews the world's name, asks the visitor to sign in or
+/home/<USER>/workspace/ai/david/monecraft/docs/online.md:95:register if they aren't, then accepts the membership; the world appears in
+/home/<USER>/workspace/ai/david/monecraft/docs/online.md:147:normal, one private — each registers its own account), create an online
+/home/<USER>/workspace/ai/david/monecraft/docs/manual.md:672:sign in (or register) if you aren't; the world then joins your account and
+/home/<USER>/workspace/ai/david/monecraft/docs/testing.md:5:- **`bun test`** — unit, integration, and component tests, colocated as `*.test.ts[x]` next to the code they cover. The shared setup (`tests/setup.ts`, preloaded via `bunfig.toml`) registers happy-dom so React component tests run under the same runner; the game engine itself needs no DOM (see [architecture.md](architecture.md)).
+/home/<USER>/workspace/ai/david/monecraft/docs/testing.md:17:| Online accounts & worlds      | `lib/auth/auth.test.ts`, `lib/online/worldsService.test.ts`, `lib/net/tickets.test.ts`, `lib/game/cloudSaves.test.ts`, `components/menu/AccountPanel.test.tsx`                                                                                                | Email/password sign-up/sign-in and the session shape the routes read (id/name/skinId) through the real better-auth wiring on PGlite (online play is accounts-only — no guest layer); membership/owner gating, idempotent invites with expiry/max-uses, LWW save-blob stale guard, mp-only verifiable join tickets (sign/tamper/expiry/garbage), gzip codec round-trip, the Account panel's sign-in/register/sign-out flows (no guest path offered), […]
 
 > TOOL
 
@@ -172,7 +172,7 @@ tool_use Read
 id: toolu_01F1TwWrssRrgELL1wNo9XwP
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md",
   "limit": 40
 }
 ```
@@ -201,7 +201,7 @@ tool_use Bash
 id: toolu_019gazn5ZzuCy4aruZTmNknL
 ```json
 {
-  "command": "grep -rn \"Sign in\\|I need an account\\|Create account\" /Users/hutusi/workspace/ai/david/monecraft/e2e/ /Users/hutusi/workspace/ai/david/monecraft/components/menu/ProfileSelect.test.tsx /Users/hutusi/workspace/ai/david/monecraft/app/join 2>/dev/null",
+  "command": "grep -rn \"Sign in\\|I need an account\\|Create account\" /home/<USER>/workspace/ai/david/monecraft/e2e/ /home/<USER>/workspace/ai/david/monecraft/components/menu/ProfileSelect.test.tsx /home/<USER>/workspace/ai/david/monecraft/app/join 2>/dev/null",
   "description": "Find button-label references in e2e and related tests"
 }
 ```
@@ -211,19 +211,19 @@ id: toolu_019gazn5ZzuCy4aruZTmNknL
 tool_result
 id: toolu_019gazn5ZzuCy4aruZTmNknL
 ```
-/Users/hutusi/workspace/ai/david/monecraft/e2e/accountSp.e2e.ts:52:    await a.getByRole("button", { name: "Sign in", exact: true }).click();
-/Users/hutusi/workspace/ai/david/monecraft/e2e/accountSp.e2e.ts:53:    await a.getByRole("button", { name: "I need an account" }).click();
-/Users/hutusi/workspace/ai/david/monecraft/e2e/accountSp.e2e.ts:57:    await a.getByRole("button", { name: "Create account" }).click();
-/Users/hutusi/workspace/ai/david/monecraft/e2e/accountSp.e2e.ts:104:    await b.getByRole("button", { name: "Sign in", exact: true }).click();
-/Users/hutusi/workspace/ai/david/monecraft/e2e/accountSp.e2e.ts:107:    await b.getByRole("button", { name: "Sign in" }).click(); // the form's submit
-/Users/hutusi/workspace/ai/david/monecraft/e2e/cloudSaves.e2e.ts:51:    await page.getByRole("button", { name: "Sign in", exact: true }).click();
-/Users/hutusi/workspace/ai/david/monecraft/e2e/cloudSaves.e2e.ts:52:    await page.getByRole("button", { name: "I need an account" }).click();
-/Users/hutusi/workspace/ai/david/monecraft/e2e/cloudSaves.e2e.ts:56:    await page.getByRole("button", { name: "Create account" }).click();
-/Users/hutusi/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts:33:  await page.getByRole("button", { name: "Sign in", exact: true }).click();
-/Users/hutusi/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts:34:  await page.getByRole("button", { name: "I need an account" }).click();
-/Users/hutusi/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts:38:  await page.getByRole("button", { name: "Create account" }).click();
-/Users/hutusi/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts:47:  // exact: "Create account" (panel) and "Create World" share the substring.
-/Users/hutusi/workspace/ai/david/monecraft/components/menu/ProfileSelect.test.tsx:31:    expect(screen.getByRole("button", { name: "Sign in" })).toBeTruthy();
+/home/<USER>/workspace/ai/david/monecraft/e2e/accountSp.e2e.ts:52:    await a.getByRole("button", { name: "Sign in", exact: true }).click();
+/home/<USER>/workspace/ai/david/monecraft/e2e/accountSp.e2e.ts:53:    await a.getByRole("button", { name: "I need an account" }).click();
+/home/<USER>/workspace/ai/david/monecraft/e2e/accountSp.e2e.ts:57:    await a.getByRole("button", { name: "Create account" }).click();
+/home/<USER>/workspace/ai/david/monecraft/e2e/accountSp.e2e.ts:104:    await b.getByRole("button", { name: "Sign in", exact: true }).click();
+/home/<USER>/workspace/ai/david/monecraft/e2e/accountSp.e2e.ts:107:    await b.getByRole("button", { name: "Sign in" }).click(); // the form's submit
+/home/<USER>/workspace/ai/david/monecraft/e2e/cloudSaves.e2e.ts:51:    await page.getByRole("button", { name: "Sign in", exact: true }).click();
+/home/<USER>/workspace/ai/david/monecraft/e2e/cloudSaves.e2e.ts:52:    await page.getByRole("button", { name: "I need an account" }).click();
+/home/<USER>/workspace/ai/david/monecraft/e2e/cloudSaves.e2e.ts:56:    await page.getByRole("button", { name: "Create account" }).click();
+/home/<USER>/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts:33:  await page.getByRole("button", { name: "Sign in", exact: true }).click();
+/home/<USER>/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts:34:  await page.getByRole("button", { name: "I need an account" }).click();
+/home/<USER>/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts:38:  await page.getByRole("button", { name: "Create account" }).click();
+/home/<USER>/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts:47:  // exact: "Create account" (panel) and "Create World" share the substring.
+/home/<USER>/workspace/ai/david/monecraft/components/menu/ProfileSelect.test.tsx:31:    expect(screen.getByRole("button", { name: "Sign in" })).toBeTruthy();
 ```
 
 > TOOL
@@ -232,7 +232,7 @@ tool_use Write
 id: toolu_014C3Qu6W5tFFxoxzBo58HbE
 ```json
 {
-  "file_path": "/Users/hutusi/.claude/plans/there-seem-not-sign-eager-lake.md",
+  "file_path": "/home/<USER>/.claude/plans/there-seem-not-sign-eager-lake.md",
   "content": "# Make \"Create account\" visible on the welcome page\n\n## Context\n\nA new user reports there's no way to sign up from the welcome page. Investigation confirms: sign-up **exists and works** (better-auth email/password, wired via `app/api/auth/[...all]/route.ts`), but it's undiscoverable. The logged-out `AccountPanel` (rendered on the first-run screen, the Local Profiles screen, and the `/join/<token>` invite page) shows only an \"Offline\" label and a single **\"Sign in\"** button. The signup form is only reachable by clicking \"Sign in\" and then an **\"I need an account\"** toggle inside the form. A component test (`AccountPanel.test.tsx:40-47`, \"logged out offers Sign in only\") locks in the current behavior, and `docs/online.md:48-50` claims \"sign in / register is reachable\" — true, but only implicitly.\n\nFix: add a first-class **\"Create account\"** button beside \"Sign in\" in the logged-out closed state. Because all three surfaces render the same `AccountPanel`, one change fixes them all. The in-form toggle stays (it's harmless and three e2e specs use it).\n\n## Changes\n\n### 1. `components/menu/AccountPanel.tsx` (the fix)\n\nIn the logged-out closed state (lines 121-128), add a second button after \"Sign in\":\n\n```tsx\n<button type=\"button\" className=\"mc-button\" onClick={() => setMode(\"signup\")}>\n  Create account\n</button>\n```\n\nLabel matches the form's existing submit button (line 98). No ambiguity risk: the […]
 
 > TOOL
@@ -240,7 +240,7 @@ id: toolu_014C3Qu6W5tFFxoxzBo58HbE
 tool_result
 id: toolu_014C3Qu6W5tFFxoxzBo58HbE
 ```
-File created successfully at: /Users/hutusi/.claude/plans/there-seem-not-sign-eager-lake.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/plans/there-seem-not-sign-eager-lake.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -290,7 +290,7 @@ id: toolu_01Ffjhs8891df2Yc2yqTVHne
 ```
 User has approved your plan. You can now start coding. Start with updating your todo list if applicable
 
-Your plan has been saved to: /Users/hutusi/.claude/plans/there-seem-not-sign-eager-lake.md
+Your plan has been saved to: /home/<USER>/.claude/plans/there-seem-not-sign-eager-lake.md
 You can refer back to it if needed during implementation.
 
 ## Approved Plan (edited by user):
@@ -317,7 +317,7 @@ id: toolu_01KNCHLAPxs6jnGqPX7u2o1u
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/AccountPanel.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/AccountPanel.tsx",
   "old_string": "          <span className=\"account-status\">Offline</span>\n          <button type=\"button\" className=\"mc-button\" onClick={() => setMode(\"signin\")}>\n            Sign in\n          </button>",
   "new_string": "          <span className=\"account-status\">Offline</span>\n          <button type=\"button\" className=\"mc-button\" onClick={() => setMode(\"signin\")}>\n            Sign in\n          </button>\n          <button type=\"button\" className=\"mc-button\" onClick={() => setMode(\"signup\")}>\n            Create account\n          </button>"
 }
@@ -328,7 +328,7 @@ id: toolu_01KNCHLAPxs6jnGqPX7u2o1u
 tool_result
 id: toolu_01KNCHLAPxs6jnGqPX7u2o1u
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/AccountPanel.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/AccountPanel.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -338,16 +338,16 @@ id: toolu_0175DqSyuMNjaGeQ7dvGdzU9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/AccountPanel.test.tsx",
-  "old_string": "  test(\"logged out offers Sign in only — no guest path\", async () => {\n    fake.user = null;\n    render(<AccountPanel />);\n    await waitFor(() => expect(screen.getByText(\"Offline\")).toBeTruthy());\n\n    expect(screen.getByRole(\"button\", { name: \"Sign in\" })).toBeTruthy();\n    expect(screen.queryByRole(\"button\", { name: /guest/i })).toBeNull();\n  });\n\n  test(\"registering through the sign-up form signs the account in\", async () => {\n    fake.user = null;\n    const onAuthChange = mock();\n    render(<AccountPanel onAuthChange={onAuthChange} />);\n    await waitFor(() => expect(screen.getByText(\"Offline\")).toBeTruthy());\n\n    await userEvent.click(screen.getByRole(\"button\", { name: \"Sign in\" }));\n    await userEvent.click(screen.getByRole(\"button\", { name: \"I need an account\" }));\n    await userEvent.type(screen.getByLabelText(\"Email\"), \"new@example.com\");\n    await userEvent.type(screen.getByLabelText(\"Display name\"), \"Newbie\");\n    await userEvent.type(screen.getByLabelText(\"Password\"), \"hunter2hunter2\");\n    await userEvent.click(screen.getByRole(\"button\", { name: \"Create account\" }));\n\n    await waitFor(() => expect(screen.getByText(\"Signed in as Newbie\")).toBeTruthy());\n    expect(onAuthChange).toHaveBeenCalled();\n  });",
-  "new_string": "  test(\"logged out offers Sign in and Create account — no guest path\", async () => {\n    fake.user = null;\n    render(<AccountPanel />);\n    await waitFor(() => expect(screen.getByText(\"Offline\")).toBeTruthy());\n\n    expect(screen.getByRole(\"button\", { name: \"Sign in\" })).toBeTruthy();\n    expect(screen.getByRole(\"button\", { name: \"Create account\" })).toBeTruthy();\n    expect(screen.queryByRole(\"button\", { name: /guest/i })).toBeNull();\n  });\n\n  test(\"registering through the sign-up form signs the account in\", async () => {\n    fake.user = null;\n    const onAuthChange = mock();\n    render(<AccountPanel onAuthChange={onAuthChange} />);\n    await waitFor(() => expect(screen.getByText(\"Offline\")).toBeTruthy());\n\n    await userEvent.click(screen.getByRole(\"button\", { name: \"Create account\" }));\n    await userEvent.type(screen.getByLabelText(\"Email\"), \"new@example.com\");\n    await userEvent.type(screen.getByLabelText(\"Display […]
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/AccountPanel.test.tsx",
+  "old_string": "  test(\"logged out offers Sign in only — no guest path\", async () => {\n    fake.user = null;\n    render(<AccountPanel />);\n    await waitFor(() => expect(screen.getByText(\"Offline\")).toBeTruthy());\n\n    expect(screen.getByRole(\"button\", { name: \"Sign in\" })).toBeTruthy();\n    expect(screen.queryByRole(\"button\", { name: /guest/i })).toBeNull();\n  });\n\n  test(\"registering through the sign-up form signs the account in\", async () => {\n    fake.user = null;\n    const onAuthChange = mock();\n    render(<AccountPanel onAuthChange={onAuthChange} />);\n    await waitFor(() => expect(screen.getByText(\"Offline\")).toBeTruthy());\n\n    await userEvent.click(screen.getByRole(\"button\", { name: \"Sign in\" }));\n    await userEvent.click(screen.getByRole(\"button\", { name: \"I need an account\" }));\n    await userEvent.type(screen.getByLabelText(\"Email\"), \"<REDACTED_EMAIL>\");\n    await userEvent.type(screen.getByLabelText(\"Display name\"), \"Newbie\");\n    await userEvent.type(screen.getByLabelText(\"Password\"), \"hunter2hunter2\");\n    await userEvent.click(screen.getByRole(\"button\", { name: \"Create account\" }));\n\n    await waitFor(() => expect(screen.getByText(\"Signed in as Newbie\")).toBeTruthy());\n    expect(onAuthChange).toHaveBeenCalled();\n  });",
+  "new_string": "  test(\"logged out offers Sign in and Create account — no guest path\", async () => {\n    fake.user = null;\n    render(<AccountPanel />);\n    await waitFor(() => expect(screen.getByText(\"Offline\")).toBeTruthy());\n\n    expect(screen.getByRole(\"button\", { name: \"Sign in\" })).toBeTruthy();\n    expect(screen.getByRole(\"button\", { name: \"Create account\" })).toBeTruthy();\n    expect(screen.queryByRole(\"button\", { name: /guest/i })).toBeNull();\n  });\n\n  test(\"registering through the sign-up form signs the account in\", async () => {\n    fake.user = null;\n    const onAuthChange = mock();\n    render(<AccountPanel onAuthChange={onAuthChange} />);\n    await waitFor(() => expect(screen.getByText(\"Offline\")).toBeTruthy());\n\n    await userEvent.click(screen.getByRole(\"button\", { name: \"Create account\" }));\n    await userEvent.type(screen.getByLabelText(\"Email\"), \"<REDACTED_EMAIL>\");\n    await userEvent.type(screen.getByLabelText(\"Display […]
 
 > TOOL
 
 tool_result
 id: toolu_0175DqSyuMNjaGeQ7dvGdzU9
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/AccountPanel.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/AccountPanel.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -360,7 +360,7 @@ tool_use Read
 id: toolu_01TTwAGwQ9coSFX6oGNR2CD9
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/ProfileSelect.test.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/ProfileSelect.test.tsx",
   "offset": 20,
   "limit": 20
 }
@@ -400,7 +400,7 @@ id: toolu_015w1g6cjz4rhPKWqM6fggNW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/ProfileSelect.test.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/ProfileSelect.test.tsx",
   "old_string": "    // Login / register must be reachable on first run, not hidden behind first\n    // creating a local profile.\n    expect(screen.getByRole(\"button\", { name: \"Sign in\" })).toBeTruthy();",
   "new_string": "    // Login / register must be reachable on first run, not hidden behind first\n    // creating a local profile.\n    expect(screen.getByRole(\"button\", { name: \"Sign in\" })).toBeTruthy();\n    expect(screen.getByRole(\"button\", { name: \"Create account\" })).toBeTruthy();"
 }
@@ -411,7 +411,7 @@ id: toolu_015w1g6cjz4rhPKWqM6fggNW
 tool_result
 id: toolu_015w1g6cjz4rhPKWqM6fggNW
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/ProfileSelect.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/ProfileSelect.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -424,7 +424,7 @@ tool_use Read
 id: toolu_01AvseR6rMNA8JVTexiDRT3i
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/online.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/online.md",
   "offset": 40,
   "limit": 20
 }
@@ -464,7 +464,7 @@ id: toolu_01R2N5WfuNA7FxvsKPRxPRfN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/online.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/online.md",
   "old_string": "- The Account panel renders on the profile-select screen **and on the\n  first-run create-profile screen** (`components/menu/ProfileSelect.tsx`), so\n  sign in / register is reachable before any local profile exists.",
   "new_string": "- The Account panel renders on the profile-select screen **and on the\n  first-run create-profile screen** (`components/menu/ProfileSelect.tsx`), so\n  sign in / register is reachable before any local profile exists. Logged out\n  it offers **Sign in** and **Create account** side by side (the form also has\n  an in-form toggle between the two modes)."
 }
@@ -475,7 +475,7 @@ id: toolu_01R2N5WfuNA7FxvsKPRxPRfN
 tool_result
 id: toolu_01R2N5WfuNA7FxvsKPRxPRfN
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/online.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/online.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -489,7 +489,7 @@ id: toolu_01UWKCZDc6TA7mYi6cR4hRzd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/testing.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/testing.md",
   "old_string": "the Account panel's sign-in/register/sign-out flows (no guest path offered)",
   "new_string": "the Account panel's sign-in/register/sign-out flows (Sign in and Create account both offered logged-out, no guest path)"
 }
@@ -509,7 +509,7 @@ tool_use Read
 id: toolu_01EZgZNMiT4VNM9YHqCDE83P
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/testing.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/testing.md",
   "offset": 15,
   "limit": 5
 }
@@ -531,7 +531,7 @@ id: toolu_015MUzaQzhLMPRsf4zJP3gZ5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/testing.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/testing.md",
   "old_string": "the Account panel's sign-in/register/sign-out flows (no guest path offered)",
   "new_string": "the Account panel's sign-in/register/sign-out flows (logged out offers both Sign in and a direct Create account entry, no guest path)"
 }
@@ -542,7 +542,7 @@ id: toolu_015MUzaQzhLMPRsf4zJP3gZ5
 tool_result
 id: toolu_015MUzaQzhLMPRsf4zJP3gZ5
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -556,7 +556,7 @@ id: toolu_016ahZEfMfz65cxZseeyYB7S
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md",
   "old_string": "## [Unreleased]\n\n## [0.14.0] - 2026-07-05",
   "new_string": "## [Unreleased]\n\n### Fixed\n\n- **Account menu — Create account is now a visible button**: the logged-out account panel (welcome/first-run screen, Local Profiles screen, and invite landing page) now shows **Create account** next to **Sign in**. Registration used to be hidden behind Sign in → \"I need an account\", so a new user saw no way to create an account; the in-form toggle between the two modes remains.\n\n## [0.14.0] - 2026-07-05"
 }
@@ -567,7 +567,7 @@ id: toolu_016ahZEfMfz65cxZseeyYB7S
 tool_result
 id: toolu_016ahZEfMfz65cxZseeyYB7S
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -605,7 +605,7 @@ tool_use Bash
 id: toolu_01Y7DxxScjL9F52zots7TNnf
 ```json
 {
-  "command": "bun run format >/dev/null 2>&1; git -C /Users/hutusi/workspace/ai/david/monecraft diff --stat; bun run lint 2>&1 | tail -5",
+  "command": "bun run format >/dev/null 2>&1; git -C /home/<USER>/workspace/ai/david/monecraft diff --stat; bun run lint 2>&1 | tail -5",
   "description": "Format, show diff stat, and lint"
 }
 ```
@@ -708,7 +708,7 @@ id: toolu_019WrRgnRwnsG9JVuw8vR5Wj
   "description": "Trace join flow and room keying",
   "subagent_type": "Explore",
   "run_in_background": false,
-  "prompt": "Explore this repo (/Users/hutusi/workspace/ai/david/monecraft): a Next.js voxel game with online co-op. Architecture: Next.js web app (Vercel) + Neon Postgres + a Bun WebSocket game server (Fly.io). Online worlds are server-hosted rooms; clients get short-lived signed join tickets and connect over ws. Docs: docs/online.md, docs/protocol.md.\n\nBug report (production): User A created an online world and sent an invite link. User B accepted and joined successfully — but the two players cannot see each other. Each sees the in-game player list as \"Players (1)\" and only themselves on the minimap. No errors reported. The e2e (e2e/multiplayer.e2e.ts) covers this exact flow locally and passes, asserting both replicas see two players.\n\nSearch thoroughness: very thorough.\n\nTrace and report the full path with file:line references:\n\n1. **World entry**: From the account world list (components/menu/OnlineWorldSelect.tsx or similar), what happens when a user clicks an online world (both owner and a \"Joined\" member)? How does the client decide mp-vs-singleplayer (MP v2 added account \"singleplayer\" worlds with NO server connection — could a joined mp world ever take the sp path?). Where is the world \"kind\" stored and checked?\n\n2. **Ticket minting**: the API route […]
+  "prompt": "Explore this repo (/home/<USER>/workspace/ai/david/monecraft): a Next.js voxel game with online co-op. Architecture: Next.js web app (Vercel) + Neon Postgres + a Bun WebSocket game server (Fly.io). Online worlds are server-hosted rooms; clients get short-lived signed join tickets and connect over ws. Docs: docs/online.md, docs/protocol.md.\n\nBug report (production): User A created an online world and sent an invite link. User B accepted and joined successfully — but the two players cannot see each other. Each sees the in-game player list as \"Players (1)\" and only themselves on the minimap. No errors reported. The e2e (e2e/multiplayer.e2e.ts) covers this exact flow locally and passes, asserting both replicas see two players.\n\nSearch thoroughness: very thorough.\n\nTrace and report the full path with file:line references:\n\n1. **World entry**: From the account world list (components/menu/OnlineWorldSelect.tsx or similar), what happens when a user clicks an online world (both owner and a \"Joined\" member)? How does the client decide mp-vs-singleplayer (MP v2 added account \"singleplayer\" worlds with NO server connection — could a joined mp world ever take the sp path?). Where is the world \"kind\" stored and checked?\n\n2. **Ticket minting**: the API route […]
 
 > TOOL
 
@@ -719,7 +719,7 @@ id: toolu_018HVJE7ci6tJeHU1SjLCw6y
   "description": "Explore deploy/infra scaling config",
   "subagent_type": "Explore",
   "run_in_background": false,
-  "prompt": "Explore this repo (/Users/hutusi/workspace/ai/david/monecraft): a Next.js voxel game (Vercel) with a Bun WebSocket game server deployed on Fly.io, Neon Postgres. Online co-op worlds are in-process \"rooms\" on the game server.\n\nBug (production): two users joined the same online world via invite; both connected fine but each sees only themselves (\"Players (1)\"). Hypothesis: their WebSocket connections landed on DIFFERENT game-server instances/machines, each hosting its own copy of the room — the game server keeps rooms in process memory, so any horizontal scaling breaks room affinity.\n\nSearch thoroughness: very thorough.\n\nInvestigate and report with file:line references:\n\n1. **fly.toml** (and any Dockerfile / fly config): app name, primary region, http_service / services config, auto_stop_machines, auto_start_machines, min_machines_running, and anything about machine count. Does fly.toml as committed imply more than one machine could serve traffic? Note: `fly deploy` by default creates 2 machines for new apps unless scaled down.\n\n2. **docs/deploy.md** (the deploy runbook): what does it instruct about scaling the Fly app (e.g., `fly scale count 1`)? Does it warn about the single-instance requirement? Quote the relevant section. Also which env/secrets the game server needs (DATABASE_URL, TICKET_SECRET/shared secret names, ADMIN_TOKEN...).\n\n3. **docs/online.md**: the ops […]
+  "prompt": "Explore this repo (/home/<USER>/workspace/ai/david/monecraft): a Next.js voxel game (Vercel) with a Bun WebSocket game server deployed on Fly.io, Neon Postgres. Online co-op worlds are in-process \"rooms\" on the game server.\n\nBug (production): two users joined the same online world via invite; both connected fine but each sees only themselves (\"Players (1)\"). Hypothesis: their WebSocket connections landed on DIFFERENT game-server instances/machines, each hosting its own copy of the room — the game server keeps rooms in process memory, so any horizontal scaling breaks room affinity.\n\nSearch thoroughness: very thorough.\n\nInvestigate and report with file:line references:\n\n1. **fly.toml** (and any Dockerfile / fly config): app name, primary region, http_service / services config, auto_stop_machines, auto_start_machines, min_machines_running, and anything about machine count. Does fly.toml as committed imply more than one machine could serve traffic? Note: `fly deploy` by default creates 2 machines for new apps unless scaled down.\n\n2. **docs/deploy.md** (the deploy runbook): what does it instruct about scaling the Fly app (e.g., `fly scale count 1`)? Does it warn about the single-instance requirement? Quote the relevant section. Also which env/secrets the game server needs (DATABASE_URL, TICKET_SECRET/shared secret names, ADMIN_TOKEN...).\n\n3. **docs/online.md**: the ops […]
 
 > TOOL
 
@@ -734,7 +734,7 @@ I have everything needed. Here is my report.
 
 **Bottom line:** The committed config is fully consistent with the bug. `server/fly.toml` never pins the app to a single machine, `fly launch`/`fly deploy` default to 2 machines (HA), `auto_stop_machines = 'off'` keeps both running, and rooms live in per-process memory with zero cross-instance coordination. Two ws connections to the same `wss://monecraft-server.fly.dev` hostname get load-balanced by Fly's edge onto different machines, each of which loads its own copy of the room from Postgres → each user sees only themselves. The runbook (`docs/deploy.md`, `docs/online.md`) never says "scale to 1 machine" and never warns that horizontal scaling breaks room affinity.
 
-## 1. Fly config — `/Users/hutusi/workspace/ai/david/monecraft/server/fly.toml`
+## 1. Fly config — `/home/<USER>/workspace/ai/david/monecraft/server/fly.toml`
 
 - `app = 'monecraft-server'` (line 6) → URL `https://monecraft-server.fly.dev`
 - `primary_region = 'ord'` (line 7)
@@ -807,7 +807,7 @@ tool_use Write
 id: toolu_014zLTkyqkSRwnS1Hp6vG546
 ```json
 {
-  "file_path": "/Users/hutusi/.claude/plans/there-seem-not-sign-eager-lake.md",
+  "file_path": "/home/<USER>/.claude/plans/there-seem-not-sign-eager-lake.md",
   "content": "# Fix co-op split-brain: two Fly machines each host their own copy of the room\n\n## Context\n\nTwo users joined the same online world (invite accepted, both connected cleanly), but each sees only themselves — \"Players (1)\", nobody else on the minimap. The application logic is provably correct: both users mint tickets for the same `wid` (`lib/online/worldsService.ts:345`, invite membership points at the owner's world id), connect to the same `NEXT_PUBLIC_GAME_SERVER_URL`, and within one process `RoomRegistry.getOrLoad` (`server/roomRegistry.ts:29-48`) can never create two rooms for one world (loading de-dupe, no eviction race). The e2e passes because it runs **one** server process.\n\n**Root cause (verified live):** rooms exist only in per-process memory (`server/roomRegistry.ts:14`, a plain `Map`, no cross-instance coordination), and the Fly app `monecraft-server` is running **2 machines** (`fly machine list`: `rough-dust-3207` + `green-snow-5758`, both started — the default HA pair `fly launch` creates). Fly's edge load-balances each WebSocket independently, so the two players landed on different machines, each of which loaded its own copy of the world from Postgres. Nothing in `server/fly.toml` caps the count (`min_machines_running = 1` is a floor, not a ceiling; `auto_stop_machines = 'off'` keeps both alive), and `docs/deploy.md` never instructs `fly scale count […]
 
 > TOOL
@@ -815,7 +815,7 @@ id: toolu_014zLTkyqkSRwnS1Hp6vG546
 tool_result
 id: toolu_014zLTkyqkSRwnS1Hp6vG546
 ```
-The file /Users/hutusi/.claude/plans/there-seem-not-sign-eager-lake.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/there-seem-not-sign-eager-lake.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -890,7 +890,7 @@ id: toolu_01XsC7tZSXR23wNF6CxTtSbR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/plans/there-seem-not-sign-eager-lake.md",
+  "file_path": "/home/<USER>/.claude/plans/there-seem-not-sign-eager-lake.md",
   "old_string": "## Workflow\n\nDocs-only repo change → commit straight to `main`: `docs(deploy): require a single game-server machine` with a body describing the incident and root cause. Ops command runs first (Part 1) so prod is fixed regardless of the commit. Update the multiplayer/roadmap memory notes afterward (prod verified two-player once the user confirms).",
   "new_string": "## Workflow\n\nOps command runs first (Part 1) so prod is fixed regardless of the commit. Then a branch **`fix/coop-single-instance`** off `main` with two focused commits (per user's choice — the PR doubles as the incident record):\n\n1. `docs(deploy): require a single game-server machine` — deploy.md runbook (scale step, pinned-bits, troubleshooting row, other-hosts note) + CHANGELOG entry; body describes the incident and root cause.\n2. `docs(online): clarify rooms are in-process state, not stateless` — online.md ops runbook + architecture.md wording.\n\nOpen a PR against `hutusi/monecraft` `main` (`gh pr create --repo hutusi/monecraft --base main`), description = incident summary + root cause + verification; no AI-attribution lines. Push/PR only after the user-approved plan (this choice authorizes it). Update the multiplayer/roadmap memory notes afterward (prod verified two-player once the user confirms)."
 }
@@ -901,7 +901,7 @@ id: toolu_01XsC7tZSXR23wNF6CxTtSbR
 tool_result
 id: toolu_01XsC7tZSXR23wNF6CxTtSbR
 ```
-The file /Users/hutusi/.claude/plans/there-seem-not-sign-eager-lake.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/there-seem-not-sign-eager-lake.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -937,7 +937,7 @@ id: toolu_01U5Cx9DRKSktvHY2CLZhqG3
 ```
 User has approved your plan. You can now start coding. Start with updating your todo list if applicable
 
-Your plan has been saved to: /Users/hutusi/.claude/plans/there-seem-not-sign-eager-lake.md
+Your plan has been saved to: /home/<USER>/.claude/plans/there-seem-not-sign-eager-lake.md
 You can refer back to it if needed during implementation.
 
 ## Approved Plan (edited by user):
@@ -977,7 +977,7 @@ tool_use Read
 id: toolu_0128MWUVadLxG6ThN9EFdC4W
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/deploy.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/deploy.md",
   "offset": 70,
   "limit": 60
 }
@@ -1022,7 +1022,7 @@ tool_use Bash
 id: toolu_01L3BYkA5gwYGfn7XG8vxMtJ
 ```json
 {
-  "command": "grep -n \"Troubleshooting\\|troubleshoot\\|## \" /Users/hutusi/workspace/ai/david/monecraft/docs/deploy.md",
+  "command": "grep -n \"Troubleshooting\\|troubleshoot\\|## \" /home/<USER>/workspace/ai/david/monecraft/docs/deploy.md",
   "description": "Find section layout of deploy.md"
 }
 ```
@@ -1050,7 +1050,7 @@ tool_use Read
 id: toolu_01Q3W19sKktPzVp99jRNb5Y8
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/deploy.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/deploy.md",
   "offset": 150,
   "limit": 48
 }
@@ -1091,7 +1091,7 @@ id: toolu_01LRYT5jKC3Avjiq6ahV32oV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/deploy.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/deploy.md",
   "old_string": "fly deploy --config server/fly.toml --dockerfile server/Dockerfile\n```\n\n`server/fly.toml` already pins the important bits: a single region (set\n`primary_region` to one near your players), **always\non** (`min_machines_running = 1`, `auto_stop_machines = \"off\"` — a room must keep\nticking while players are in it), a `/health` check, `PERSISTENCE = \"postgres\"`,\n`MAX_ROOMS = 6`, and a 2 GB VM (rooms are ~74 MB each). SIGTERM on a redeploy\ndrains every room to Postgres first, so a deploy loses at most the last 60 s\n(the dirty-persist interval), crash-safe.",
   "new_string": "fly deploy --config server/fly.toml --dockerfile server/Dockerfile\nfly scale count 1 --config server/fly.toml\n```\n\nThe `fly scale count 1` is **not optional**: `fly launch` provisions a\ntwo-machine HA pair by default, but rooms live in one process's memory\n(`server/roomRegistry.ts` — no cross-instance coordination), so the app must run\n**exactly one machine**. With two, Fly's edge load-balances each WebSocket\nindependently and players in the same world get split across two independent\ncopies of the room — everyone connects \"successfully\" and everyone is alone\n(see [Troubleshooting](#troubleshooting)). Confirm with\n`fly machine list --config server/fly.toml` → exactly one machine.\n\n`server/fly.toml` already pins the rest of the important bits: a single region\n(set `primary_region` to one near your players — it can't pin the machine\n_count_, which is runtime state, […]
 
@@ -1100,7 +1100,7 @@ id: toolu_01LRYT5jKC3Avjiq6ahV32oV
 tool_result
 id: toolu_01LRYT5jKC3Avjiq6ahV32oV
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/deploy.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/deploy.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1110,7 +1110,7 @@ id: toolu_0114FAaMwcJceo9BAqr9fcC4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/deploy.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/deploy.md",
   "old_string": "| Game server won't boot          | Missing `GAME_TICKET_SECRET` (it exits on start) or an unreachable `DATABASE_URL`. |",
   "new_string": "| Game server won't boot          | Missing `GAME_TICKET_SECRET` (it exits on start) or an unreachable `DATABASE_URL`. |\n| Players in the same world can't see each other — each shows \"Players (1)\" | More than one Fly machine (rooms are per-process; each machine hosts its own copy). Check `fly machine list --config server/fly.toml`; fix with `fly scale count 1 --config server/fly.toml`. |"
 }
@@ -1121,7 +1121,7 @@ id: toolu_0114FAaMwcJceo9BAqr9fcC4
 tool_result
 id: toolu_0114FAaMwcJceo9BAqr9fcC4
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/deploy.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/deploy.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1131,7 +1131,7 @@ id: toolu_01SBDpPSF5xsgNztC2Rb3txd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/deploy.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/deploy.md",
   "old_string": "runs a long-lived container with WebSocket ingress works. Swap `server/fly.toml`\nfor that platform's config; keep the container always-on (a room must keep ticking)\nand give it the same `DATABASE_URL` + `GAME_TICKET_SECRET`. Cloudflare Durable",
   "new_string": "runs a long-lived container with WebSocket ingress works. Swap `server/fly.toml`\nfor that platform's config; keep the container always-on (a room must keep ticking),\nrun **exactly one instance** (rooms are in-process — replicas or autoscaling split\nplayers in the same world into separate room copies), and give it the same\n`DATABASE_URL` + `GAME_TICKET_SECRET`. Cloudflare Durable"
 }
@@ -1142,7 +1142,7 @@ id: toolu_01SBDpPSF5xsgNztC2Rb3txd
 tool_result
 id: toolu_01SBDpPSF5xsgNztC2Rb3txd
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/deploy.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/deploy.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1155,7 +1155,7 @@ tool_use Read
 id: toolu_019cApVHcg7Rhuy8LD8nSUj2
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/online.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/online.md",
   "offset": 108,
   "limit": 18
 }
@@ -1192,7 +1192,7 @@ tool_use Read
 id: toolu_01XNMv9SYo5GaHrxaeE3P87A
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/online.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/online.md",
   "offset": 178,
   "limit": 50
 }
@@ -1235,7 +1235,7 @@ id: toolu_01Kso2FiP9uvmxNw6qXsaBp7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/online.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/online.md",
   "old_string": "`Room.kick` as the admin endpoint. It renders above the pause overlay, so the\nowner frees the cursor (Escape) and ejects a griefer without leaving. No\nweb→game admin bridge: the protocol path keeps the game server stateless.",
   "new_string": "`Room.kick` as the admin endpoint. It renders above the pause overlay, so the\nowner frees the cursor (Escape) and ejects a griefer without leaving. No\nweb→game admin bridge: the protocol path keeps the game server independent of\nthe web app (its only trust input is the signed ticket) — though the server\nitself is stateful: live rooms exist only in its process memory (see\n[Game server operations](#game-server-operations))."
 }
@@ -1246,7 +1246,7 @@ id: toolu_01Kso2FiP9uvmxNw6qXsaBp7
 tool_result
 id: toolu_01Kso2FiP9uvmxNw6qXsaBp7
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/online.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/online.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1256,7 +1256,7 @@ id: toolu_01Vot47ARHdpjpcxY31RVkLP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/online.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/online.md",
   "old_string": "`server/index.ts` (Bun, no build step — `bun server/index.ts`). One process\nhosts up to `MAX_ROOMS` worlds; each room is an authoritative `GameEngine`\non the drift-corrected 20 Hz ticker. Rooms load from Postgres on first join,\npersist every 60 s (when dirty), on last-leave, and on SIGTERM (deploys\ndrain, ≤60 s loss crash-safe); five idle minutes evicts a room from memory.\nSee [protocol.md](protocol.md) for the wire format.",
   "new_string": "`server/index.ts` (Bun, no build step — `bun server/index.ts`). One process\nhosts up to `MAX_ROOMS` worlds; each room is an authoritative `GameEngine`\non the drift-corrected 20 Hz ticker. Rooms load from Postgres on first join,\npersist every 60 s (when dirty), on last-leave, and on SIGTERM (deploys\ndrain, ≤60 s loss crash-safe); five idle minutes evicts a room from memory.\nSee [protocol.md](protocol.md) for the wire format.\n\n**Single instance, by design.** Rooms live in the process's memory\n(`server/roomRegistry.ts`) with no cross-instance coordination — Postgres holds\nworld *saves*, not live rooms. Run **exactly one** game-server instance:\nbehind a load balancer, a second instance loads its own independent copy of a\nworld on first join, silently splitting that world's players across copies\n(each connects fine and sees \"Players (1)\"). On Fly that means\n`fly scale count 1` — `fly launch` defaults to a two-machine […]
 
@@ -1265,7 +1265,7 @@ id: toolu_01Vot47ARHdpjpcxY31RVkLP
 tool_result
 id: toolu_01Vot47ARHdpjpcxY31RVkLP
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/online.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/online.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1278,7 +1278,7 @@ tool_use Bash
 id: toolu_01KC2rEdsyj4PT1aRFMEzvJf
 ```json
 {
-  "command": "grep -n -B2 -A2 \"stateless\" /Users/hutusi/workspace/ai/david/monecraft/docs/architecture.md",
+  "command": "grep -n -B2 -A2 \"stateless\" /home/<USER>/workspace/ai/david/monecraft/docs/architecture.md",
   "description": "Find stateless phrasing in architecture.md"
 }
 ```
@@ -1299,7 +1299,7 @@ id: toolu_01DbVzFxYncWMtM9BD2JKJYq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/architecture.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/architecture.md",
   "old_string": "The owner-only control rides `session.role` (from the `welcome`) and sends a `kick` message — no web→game admin bridge, keeping the game server stateless.",
   "new_string": "The owner-only control rides `session.role` (from the `welcome`) and sends a `kick` message — no web→game admin bridge, keeping the game server independent of the web app (live rooms are in-process state, so it runs as a single instance — see online.md's ops section)."
 }
@@ -1310,7 +1310,7 @@ id: toolu_01DbVzFxYncWMtM9BD2JKJYq
 tool_result
 id: toolu_01DbVzFxYncWMtM9BD2JKJYq
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/architecture.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/architecture.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1324,7 +1324,7 @@ id: toolu_015vUbmhgXn3E2syWmGoYgVn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md",
   "old_string": "## [Unreleased]\n\n### Fixed\n\n- **Account menu — Create account is now a visible button**:",
   "new_string": "## [Unreleased]\n\n### Fixed\n\n- **Online co-op — players in the same world couldn't see each other on prod** (each showed \"Players (1)\"): the deploy runbook now pins the Fly game server to a **single machine** (`fly scale count 1`) and documents the invariant. `fly launch` had provisioned the default two-machine HA pair; rooms live in one process's memory with no cross-instance coordination, so each machine hosted its own independent copy of the same world and the edge load-balancer split the players between them. Docs-only — no code change; the ops fix is one command on the live app.\n- **Account menu — Create account is now a visible button**:"
 }
@@ -1335,7 +1335,7 @@ id: toolu_015vUbmhgXn3E2syWmGoYgVn
 tool_result
 id: toolu_015vUbmhgXn3E2syWmGoYgVn
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1460,7 +1460,7 @@ tool_use Read
 id: toolu_01WVLP5wNkd8JrYhCd4AiLTk
 ```json
 {
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/multiplayer-project.md"
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/multiplayer-project.md"
 }
 ```
 
@@ -1491,7 +1491,7 @@ id: toolu_01C4qigiBsbsWtRXzWFw2Ge7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/multiplayer-project.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/multiplayer-project.md",
   "old_string": "**✅ MP v2 \"first-class co-op\" MERGED 2026-07-04: PR #44.**",
   "new_string": "**⚠️ PROD INCIDENT 2026-07-05 — co-op split-brain: two players in the same world each saw \"Players (1)\".** Root cause: the Fly app `monecraft-server` runs **2 machines** (the default HA pair from `fly launch`; visible-but-unflagged in the 2026-07-04 redeploy note above — \"2 machines region ord\"). Rooms are per-process memory (`server/roomRegistry.ts`), no cross-instance coordination, Fly edge load-balances each ws independently → each machine hosted its own copy of the world. App code provably correct (same `wid` tickets, same URL, in-process double-create impossible); e2e passes because it runs one server process. **Fix: `fly scale count 1 -a monecraft-server` — sandbox denied it (prod-destructive), USER MUST RUN IT; not yet confirmed done.** Docs PR #50 (https://github.com/hutusi/monecraft/pull/50, branch `fix/coop-single-instance`, 2 commits): deploy.md mandatory scale step + troubleshooting row, online.md \"Single instance, by design\" ops section, de-mislead \"stateless\" wording (architecture.md too), CHANGELOG. LESSON: the game server must run exactly ONE instance — never scale Fly horizontally; `min_machines_running=1` is a floor not a cap. Two-user prod re-test (\"Players (2)\") pending after the scale-down.\n\n**✅ MP v2 \"first-class co-op\" MERGED 2026-07-04: PR #44.**"
 }
@@ -1502,7 +1502,7 @@ id: toolu_01C4qigiBsbsWtRXzWFw2Ge7
 tool_result
 id: toolu_01C4qigiBsbsWtRXzWFw2Ge7
 ```
-The file /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/multiplayer-project.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/multiplayer-project.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1511,7 +1511,7 @@ tool_use Read
 id: toolu_01DfzJubi7ZtiWwwLufEeEyg
 ```json
 {
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md"
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md"
 }
 ```
 
@@ -1536,7 +1536,7 @@ id: toolu_014w9d1hmbRFzF18i98b2nnu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md",
   "old_string": "- [Multiplayer project](multiplayer-project.md) — **✅ SHIPPED: v0.13.0 (2026-07-04) + MP v2 co-op parity, both live on prod** (Vercel+Neon+Fly, ws handshake WELCOME). MP v2 rolled into v0.14.0 with the identity rework.",
   "new_string": "- [Multiplayer project](multiplayer-project.md) — **✅ SHIPPED: v0.13.0 (2026-07-04) + MP v2 co-op parity, both live on prod** (Vercel+Neon+Fly, ws handshake WELCOME). MP v2 rolled into v0.14.0 with the identity rework. **⚠️ 2026-07-05 split-brain incident: Fly must run exactly 1 machine (`fly scale count 1`) — user to run + re-test; docs PR #50.**"
 }
@@ -1547,7 +1547,7 @@ id: toolu_014w9d1hmbRFzF18i98b2nnu
 tool_result
 id: toolu_014w9d1hmbRFzF18i98b2nnu
 ```
-The file /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1634,7 +1634,7 @@ id: toolu_01WZB1JpnkLqTKAYPJRPnEbH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/multiplayer-project.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/multiplayer-project.md",
   "old_string": "**Fix: `fly scale count 1 -a monecraft-server` — sandbox denied it (prod-destructive), USER MUST RUN IT; not yet confirmed done.**",
   "new_string": "**Fix APPLIED 2026-07-05: app now runs exactly 1 machine (`rough-dust-3207`; `green-snow-5758` destroyed — scale-down + fresh image `deployment-50de627...` landed between checks; user's `fly scale count 1` confirmed no-op \"already scaled\"). /health stable (`rooms:2`) across repeated probes.**"
 }
@@ -1645,7 +1645,7 @@ id: toolu_01WZB1JpnkLqTKAYPJRPnEbH
 tool_result
 id: toolu_01WZB1JpnkLqTKAYPJRPnEbH
 ```
-The file /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/multiplayer-project.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/multiplayer-project.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1655,7 +1655,7 @@ id: toolu_01ReNXj4bzhC3iPmtBdq2r7R
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md",
   "old_string": "**⚠️ 2026-07-05 split-brain incident: Fly must run exactly 1 machine (`fly scale count 1`) — user to run + re-test; docs PR #50.**",
   "new_string": "**2026-07-05 split-brain incident RESOLVED: Fly scaled to 1 machine (invariant: never scale horizontally); docs PR #50; two-user re-test pending.**"
 }
@@ -1666,7 +1666,7 @@ id: toolu_01ReNXj4bzhC3iPmtBdq2r7R
 tool_result
 id: toolu_01ReNXj4bzhC3iPmtBdq2r7R
 ```
-The file /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1797,7 +1797,7 @@ id: toolu_01P9SsRswRk3T9vJ1a3h3tz7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/multiplayer-project.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/multiplayer-project.md",
   "old_string": "Docs PR #50 (https://github.com/hutusi/monecraft/pull/50, branch `fix/coop-single-instance`, 2 commits):",
   "new_string": "**Docs PR #50 MERGED 2026-07-05 (merge `3596a69`, local main synced, branch deleted local+remote).** The PR also carried `4abc9d3` (fix(menu): Create account button on the logged-out account panel — had been sitting unpushed on local main and rode along in the branch). PR contents:"
 }
@@ -1808,7 +1808,7 @@ id: toolu_01P9SsRswRk3T9vJ1a3h3tz7
 tool_result
 id: toolu_01P9SsRswRk3T9vJ1a3h3tz7
 ```
-The file /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/multiplayer-project.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/multiplayer-project.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1818,7 +1818,7 @@ id: toolu_01GGgiQkdN721MoVwPP4zwSD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md",
   "old_string": "**2026-07-05 split-brain incident RESOLVED: Fly scaled to 1 machine (invariant: never scale horizontally); docs PR #50; two-user re-test pending.**",
   "new_string": "**2026-07-05 split-brain incident RESOLVED: Fly scaled to 1 machine (invariant: never scale horizontally); docs PR #50 MERGED `3596a69` (carried the Create-account menu fix too); two-user re-test pending.**"
 }
@@ -1829,7 +1829,7 @@ id: toolu_01GGgiQkdN721MoVwPP4zwSD
 tool_result
 id: toolu_01GGgiQkdN721MoVwPP4zwSD
 ```
-The file /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

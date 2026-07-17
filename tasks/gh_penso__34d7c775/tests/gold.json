@@ -1,1 +1,8 @@
-{"point_id": "ed791c89-3b1f-46b9-8e56-2d948f24f0e5#1357", "developer": "gh:penso", "condition": "noprofile", "real": "Checking moltis-skills v0.1.0 (/Users/penso/.superset/worktrees/moltis/stealth-hovercraft/crates/skills)\nerror: unused import: `sync::Arc`\n --> crates/skills/src/discover.rs:3:5\n  |\n3 |     sync::Arc,\n  |     ^^^^^^^^^\n  |\n  = note: `-D unused-imports` implied by `-D warnings`\n  = help: to override `-D warnings` add `#[allow(unused_imports)]`\n\nerror: could not compile `moltis-skills` (lib) due to 1 previous error\nwarning: build failed, waiting for other jobs to finish...\n    Building [======================>  ] 489/510: llama-cpp-sys-2(build)", "prev_agent": "Pushed.", "gold_move": null}
+{
+  "point_id": "ed791c89-3b1f-46b9-8e56-2d948f24f0e5#1357",
+  "developer": "gh:penso",
+  "condition": "noprofile",
+  "real": "Checking moltis-skills v0.1.0 (/home/<USER>/.superset/worktrees/moltis/stealth-hovercraft/crates/skills)\nerror: unused import: `sync::Arc`\n --> crates/skills/src/discover.rs:3:5\n  |\n3 |     sync::Arc,\n  |     ^^^^^^^^^\n  |\n  = note: `-D unused-imports` implied by `-D warnings`\n  = help: to override `-D warnings` add `#[allow(unused_imports)]`\n\nerror: could not compile `moltis-skills` (lib) due to 1 previous error\nwarning: build failed, waiting for other jobs to finish...\n    Building [======================>  ] 489/510: llama-cpp-sys-2(build)",
+  "prev_agent": "Pushed.",
+  "gold_move": null
+}

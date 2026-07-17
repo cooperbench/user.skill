@@ -1,6 +1,6 @@
 > DEVELOPER
 
-Wave 16 Worker D in /Users/jhoetter/repos/bim-ai. You are not alone in the codebase: other workers and the parent may edit/commit concurrently. Do not revert edits made by others, do not touch unrelated dirty files, stage only your own changes, commit locally when done, and do not push.
+Wave 16 Worker D in /home/<USER>/repos/bim-ai. You are not alone in the codebase: other workers and the parent may edit/commit concurrently. Do not revert edits made by others, do not touch unrelated dirty files, stage only your own changes, commit locally when done, and do not push.
 
 Base context: HEAD was pushed at 8f2702166 (Schedule wave 16 tracker work). The tracker is spec/bim-integrity-rendering-sketch-methodology-tracker.md. Your ownership is rule suppression/tolerance policy, Advisor grouping/priority, profile presets, audience text, false-positive review workflow, and learning corpus: primary items BIR-A06, BIR-U01, BIR-U02, BIR-U03, BIR-U04, BIR-U05, BIR-U06.
 

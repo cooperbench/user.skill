@@ -1,6 +1,6 @@
 > DEVELOPER
 
-read the files from /Users/jobinlawrance/Project/tiny/files\ \(1\) and start /grill-with-docs
+read the files from /home/<USER>/Project/tiny/files\ \(1\) and start /grill-with-docs
 
 > TOOL
 
@@ -8,7 +8,7 @@ tool_use Bash
 id: toolu_01PKB6aFRRQVeSdV7NYAcFT4
 ```json
 {
-  "command": "ls -la \"/Users/jobinlawrance/Project/tiny/files (1)\"",
+  "command": "ls -la \"/home/<USER>/Project/tiny/files (1)\"",
   "description": "List files in target directory"
 }
 ```
@@ -65,7 +65,7 @@ tool_use Read
 id: toolu_01Q8fDh8W2uGZb2rAis3DTCi
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/README.md"
+  "file_path": "/home/<USER>/Project/tiny/files (1)/README.md"
 }
 ```
 
@@ -102,7 +102,7 @@ tool_use Read
 id: toolu_01TiYDEaj9tzmwZWDKwbdUt4
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/viewrr-pear-architecture.md"
+  "file_path": "/home/<USER>/Project/tiny/files (1)/viewrr-pear-architecture.md"
 }
 ```
 
@@ -145,7 +145,7 @@ tool_use Read
 id: toolu_012JXm2mLEJgUtm27ArmtwfB
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/ravencloak-bip39-issue.md"
+  "file_path": "/home/<USER>/Project/tiny/files (1)/ravencloak-bip39-issue.md"
 }
 ```
 
@@ -228,7 +228,7 @@ tool_use Write
 id: toolu_01UujH48BoU66r7niLT19vai
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/CONTEXT.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/CONTEXT.md",
   "content": "# viewrr — Context Glossary\n\nUbiquitous language for the viewrr P2P SVOD platform. Definitions only — no\nimplementation. When a term here conflicts with usage in a design doc, this file wins\n(or the conflict gets resolved and this file updated).\n\n---\n\n## Identity\n\nThe user's permanent cryptographic identity: an Ed25519 keypair. The `publicKey`\n**is** the account (the \"viewrr ID\"). Derived solely from the **Recovery Phrase** —\nnever from the Master Password. The server never holds any part of the secret.\n\n## Recovery Phrase\n\nA BIP39 mnemonic (12 words default, 24 optional) that is the **sole root of trust**\nfor an Identity. `mnemonic → seed → DHT.keyPair` is the one and only identity\nderivation. Entering the phrase on any device reproduces the exact same Identity.\nNever transmitted, stored, or logged.\n\n*Resolved Q1: the mnemonic — not the Master Password — is the identity root. The\nearlier `Argon2id(masterPassword)→keypair` derivation is retired; it would have made\nrecovery reconstruct a different keypair.*\n\n## Master Password\n\nA **local unlock secret only**. Encrypts the at-rest `secretKey` (and vaults) on a\nsingle device. Changing it re-encrypts the local blob and does **not** change the\nIdentity. Not synced, not the identity seed.\n"
 }
 ```
@@ -238,7 +238,7 @@ id: toolu_01UujH48BoU66r7niLT19vai
 tool_result
 id: toolu_01UujH48BoU66r7niLT19vai
 ```
-File created successfully at: /Users/jobinlawrance/Project/tiny/files (1)/CONTEXT.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Project/tiny/files (1)/CONTEXT.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -274,7 +274,7 @@ tool_use Write
 id: toolu_01SsbR6pmDGmXmkhwAGjJjD9
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0001-self-custody-clearkey-no-hardware-drm.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/docs/adr/0001-self-custody-clearkey-no-hardware-drm.md",
   "content": "# 0001 — Self-custody clear-key content protection, no hardware DRM\n\n**Status:** Accepted (2026-07-01)\n\n## Context\n\nviewrr's thesis is zero-infrastructure P2P, keypair identity, and \"the server never\nholds secrets.\" Content is delivered as AES-encrypted AV1 HLS segments over a\nHyperdrive swarm; the content key is sealed to the user's `publicKey` and opened\nwith their `secretKey` inside the Bare worklet (self-custody).\n\nTwo design docs also claimed Widevine L1 / FairPlay hardware DRM on the *same*\nstreams (black screen on capture, key never in app memory).\n\nThese are mutually exclusive:\n\n- Hardware DRM (L1/FairPlay) requires the platform **CDM to own the decrypt+render\n  path**, with keys delivered by a **license server** into a hardware TEE. The app\n  never sees the key, and the anti-capture guarantee exists only because the TEE owns\n  rendering.\n- Self-custody decrypts in app memory and feeds the player — this is, by definition,\n  clear-key / Widevine L3. No TEE, no black screen.\n- There is **no license server** in the architecture, and adding one (always-on,\n  key-holding) contradicts the zero-infra / self-custody thesis.\n\nviewrr's content is its own catalog + user-owned files, not third-party\nstudio-licensed content that contractually mandates L1.\n\n## Decision\n\n1. **Content protection = self-custody clear-key.** Content key sealed to `publicKey`,\n   opened with `secretKey` in […]
 
 > TOOL
@@ -282,7 +282,7 @@ id: toolu_01SsbR6pmDGmXmkhwAGjJjD9
 tool_result
 id: toolu_01SsbR6pmDGmXmkhwAGjJjD9
 ```
-File created successfully at: /Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0001-self-custody-clearkey-no-hardware-drm.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Project/tiny/files (1)/docs/adr/0001-self-custody-clearkey-no-hardware-drm.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -292,7 +292,7 @@ id: toolu_016tpmkJ125ccEz1RckNzaDx
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/CONTEXT.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/CONTEXT.md",
   "old_string": "A **local unlock secret only**. Encrypts the at-rest `secretKey` (and vaults) on a\nsingle device. Changing it re-encrypts the local blob and does **not** change the\nIdentity. Not synced, not the identity seed.",
   "new_string": "A **local unlock secret only**. Encrypts the at-rest `secretKey` (and vaults) on a\nsingle device. Changing it re-encrypts the local blob and does **not** change the\nIdentity. Not synced, not the identity seed.\n\n## Content Key\n\nA per-title 32-byte AES key. Sealed to the user's `publicKey` on entitlement, opened\nwith their `secretKey` inside the Bare worklet, then used to derive per-segment\nAES-128 keys + IVs via HKDF. This is **self-custody clear-key** protection — decrypt\nhappens in app memory. There is no hardware DRM and no license server (see\n`docs/adr/0001`). Anti-capture is limited to OS window flags + forensic watermark, not\ncryptographic prevention."
 }
@@ -303,7 +303,7 @@ id: toolu_016tpmkJ125ccEz1RckNzaDx
 tool_result
 id: toolu_016tpmkJ125ccEz1RckNzaDx
 ```
-The file /Users/jobinlawrance/Project/tiny/files (1)/CONTEXT.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/files (1)/CONTEXT.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -407,7 +407,7 @@ tool_use Write
 id: toolu_01BU9HQdUXzMJWdQQspMUhjQ
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0002-compose-desktop-libvlc-drop-electron.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/docs/adr/0002-compose-desktop-libvlc-drop-electron.md",
   "content": "# 0002 — Desktop client is Compose Multiplatform + libVLC, not Electron\n\n**Status:** Accepted (2026-07-01)\n\n## Context\n\nThe design docs contradicted each other on the desktop shell: the architecture doc\nassumed **Electron** (`systemPreferences.promptTouchID`, WebAuthn, `node-yubihsm`),\nwhile the README listed **Compose Multiplatform** covering Desktop.\n\nGoal: reduce total code and reuse one codebase. Codec direction is AV1 primary +\nH.264 fallback (AV2 deferred until hardware decode lands, ~2026-2027).\n\n## Decision\n\n1. **Desktop shell = Compose Multiplatform (JVM)** — shares the KMP codebase with\n   Android/iOS. Electron is dropped.\n2. **Video player = libVLC via vlcj** — Compose Desktop has no built-in player;\n   libVLC is codec-agnostic (AV1 today, AV2 free once VLC ships it) and avoids wiring\n   a JVM decode pipeline.\n3. **Codec = AV1 primary + H.264 fallback** for MVP. AV2 is a later config-add rung.\n4. A **segment-decrypt shim** is required regardless of player: the worklet decrypts\n   each clear-key segment in memory and feeds the player, because the content key is\n   deliberately absent from the HLS manifest.\n\n## Consequences\n\n- **Good:** One KMP codebase for Android + iOS + Desktop. Less code than a separate\n  Electron app. libVLC handles all codecs including future AV2.\n- **Good:** AV1 already delivers the \"less data\" goal without AV2's immaturity.\n- **Bad […]
 
 > TOOL
@@ -415,7 +415,7 @@ id: toolu_01BU9HQdUXzMJWdQQspMUhjQ
 tool_result
 id: toolu_01BU9HQdUXzMJWdQQspMUhjQ
 ```
-File created successfully at: /Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0002-compose-desktop-libvlc-drop-electron.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Project/tiny/files (1)/docs/adr/0002-compose-desktop-libvlc-drop-electron.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -454,7 +454,7 @@ tool_use Write
 id: toolu_01C5Sr84npwHmFgRcNZZw8nN
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0003-bare-worklet-embedding-per-platform.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/docs/adr/0003-bare-worklet-embedding-per-platform.md",
   "content": "# 0003 — Bare worklet embedding: bare-kit on mobile, subprocess on JVM desktop\n\n**Status:** Accepted (2026-07-01)\n\n## Context\n\nviewrr's entire P2P core is a **Bare worklet written in JavaScript**\n(Hyperswarm/Hyperdrive/Hyperbee/Autobase/HyperDHT). Native shells talk to it over a\ntyped RPC seam (hyperschema). The embedding mechanism is platform-specific:\n\n- Mobile (Android/iOS): `bare-kit` embeds Bare into the native app. Documented.\n- Desktop: once the shell became **Compose Multiplatform (JVM)** instead of Electron\n  (see `0002`), the worklet can no longer run in-process — a JVM cannot host Bare the\n  way an Electron/JS runtime could.\n\nRewriting the Hyper* stack in JVM (no mature impl) or switching to jvm-libp2p (loses\nall Hyper* data structures) were both rejected.\n\n## Decision\n\nRun the **same worklet JS on every platform**; only the launch mechanism differs.\n\n- **Mobile:** `bare-kit` in-app (unchanged).\n- **Desktop (JVM):** bundle the `bare` runtime binary per-OS, spawn it as a\n  **subprocess**, and communicate over a **local socket** (Unix-domain / loopback,\n  never TCP-exposed) using the same hyperschema RPC seam.\n\nThe JS core and RPC contract stay byte-identical across platforms.\n\n## Consequences\n\n- **Good:** Maximum code reuse — per-platform code is just \"how Bare is launched.\"\n- **Good:** RPC seam is the single, uniform integration surface everywhere.\n- **Security:** On desktop the `secretKey` lives in the […]
 
 > TOOL
@@ -462,7 +462,7 @@ id: toolu_01C5Sr84npwHmFgRcNZZw8nN
 tool_result
 id: toolu_01C5Sr84npwHmFgRcNZZw8nN
 ```
-File created successfully at: /Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0003-bare-worklet-embedding-per-platform.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Project/tiny/files (1)/docs/adr/0003-bare-worklet-embedding-per-platform.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -472,7 +472,7 @@ id: toolu_01DVRt9EYU4qySFc1zCFUzB5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0002-compose-desktop-libvlc-drop-electron.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/docs/adr/0002-compose-desktop-libvlc-drop-electron.md",
   "old_string": "  - **The Bare worklet can no longer run in-process.** Electron could host the JS P2P\n    core natively; a JVM app cannot. Desktop must embed Bare via subprocess/RPC (see\n    the worklet-embedding decision). This is the main new cost created by this choice.",
   "new_string": "  - **The Bare worklet can no longer run in-process.** Electron could host the JS P2P\n    core natively; a JVM app cannot. Desktop embeds Bare via a bundled subprocess +\n    local-socket RPC — resolved in `0003`. This is the main new cost of this choice."
 }
@@ -483,7 +483,7 @@ id: toolu_01DVRt9EYU4qySFc1zCFUzB5
 tool_result
 id: toolu_01DVRt9EYU4qySFc1zCFUzB5
 ```
-The file /Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0002-compose-desktop-libvlc-drop-electron.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/files (1)/docs/adr/0002-compose-desktop-libvlc-drop-electron.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -522,7 +522,7 @@ tool_use Write
 id: toolu_019fXoyqpX5CrM93Un3vahJF
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0004-ownership-model-not-rental.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/docs/adr/0004-ownership-model-not-rental.md",
   "content": "# 0004 — viewrr is a DRM-free ownership model, not enforceable rental\n\n**Status:** Accepted (2026-07-01)\n\n## Context\n\nThe docs described viewrr as \"SVOD\" (subscription VOD, Netflix-style) with retention\n\"indefinite while subscription active\" — implying access is revoked when a\nsubscription lapses.\n\nThe entitlement model makes that unenforceable:\n- The `contentKey` is sealed to the user's `publicKey` and stored in the user's own\n  vault; the server holds no `secretKey` and cannot delete or claw it back.\n- Playback is fully client-side and offline — no per-play license check.\n- Deleting the Ktor entitlement row does nothing to a client that already holds the\n  key and cached segments.\n\nEnforceable rental would require per-playback online license checks and a\nkey-issuing server — directly contradicting \"server never holds secrets,\" offline\nplayback, and zero-infra.\n\n## Decision\n\nviewrr is a **DRM-free ownership model**.\n\n- Acquiring a title grants a **permanent, self-custody** content key. Once acquired,\n  the title is owned forever.\n- A **Subscription** gates *what a user may newly acquire/download*, plus seeding\n  perks and storage tier. It does **not** revoke already-acquired titles.\n- \"SVOD / revoke on cancel\" language is removed from the spec. Retention tiers\n  (`Part 8`) govern *inactive-file cleanup*, not entitlement revocation.\n\n## Consequences\n\n- **Good:** Consistent with self-custody + offline + zero-infra. […]
 
 > TOOL
@@ -530,7 +530,7 @@ id: toolu_019fXoyqpX5CrM93Un3vahJF
 tool_result
 id: toolu_019fXoyqpX5CrM93Un3vahJF
 ```
-File created successfully at: /Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0004-ownership-model-not-rental.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Project/tiny/files (1)/docs/adr/0004-ownership-model-not-rental.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -540,7 +540,7 @@ id: toolu_01GHrBJTjtFxJrn6fk5XLosu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/CONTEXT.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/CONTEXT.md",
   "old_string": "There is no hardware DRM and no license server (see\n`docs/adr/0001`). Anti-capture is limited to OS window flags + forensic watermark, not\ncryptographic prevention.",
   "new_string": "There is no hardware DRM and no license server (see\n`docs/adr/0001`). Anti-capture is limited to OS window flags (forensic watermark\ndeferred out of MVP), not cryptographic prevention.\n\n## Entitlement\n\nThe **permanent** right to a title, embodied by a self-custody Content Key sealed to\nthe user's `publicKey`. Once acquired, a title is **owned forever** — the server\ncannot revoke it (it holds no `secretKey`). Playback is offline and client-side. See\n`docs/adr/0004`.\n\n## Subscription\n\nA gate on **what a user may newly acquire/download**, plus seeding perks and storage\ntier. A Subscription does **not** revoke already-owned Entitlements. viewrr is an\nownership model, not enforceable rental — despite legacy \"SVOD\" wording in older docs."
 }
@@ -551,7 +551,7 @@ id: toolu_01GHrBJTjtFxJrn6fk5XLosu
 tool_result
 id: toolu_01GHrBJTjtFxJrn6fk5XLosu
 ```
-The file /Users/jobinlawrance/Project/tiny/files (1)/CONTEXT.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/files (1)/CONTEXT.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -606,7 +606,7 @@ tool_use Write
 id: toolu_01XrnKSy2UNGyAWnaePuvCi9
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0005-neutral-infrastructure-user-hosted.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/docs/adr/0005-neutral-infrastructure-user-hosted.md",
   "content": "# 0005 — viewrr is neutral P2P infrastructure; content is user-hosted\n\n**Status:** Accepted (2026-07-01)\n\n## Context\n\nviewrr could be built as (1) a personal library, or (2) a content-distribution\nservice. The choice is Model 2, but framed as **neutral infrastructure**: users host\ntheir own files, the platform is protocol + metadata registry, not a publisher — the\nBitTorrent-client analogy, not a catalog service. The platform does not police the\nlegal rights of the files users host; content is encrypted to the owner's identity and\nleaks no PII.\n\nThe neutrality framing only holds for the **protocol/client**. Two parts of the\noriginal spec broke it by making viewrr the **origin host** and the **central index** —\nhistorically the two things that draw liability (indexes lose; protocols don't).\n\n## Decision\n\nviewrr is neutral infrastructure. To make that true (not merely asserted), three\nchanges are adopted:\n\n1. **NAS is not a content origin.** Content originates from users' own\n   devices/hosting. The NAS runs **DHT bootstrap + Ktor metadata registry** only, plus\n   an *optional paid backup* tier later. The \"origin seeder of all content variants\"\n   role is removed.\n2. **No central browseable catalog in MVP.** Discovery is **share-link + @handle +\n   follows** only. There is no viewrr-served search index of user content. […]
 
 > TOOL
@@ -614,7 +614,7 @@ id: toolu_01XrnKSy2UNGyAWnaePuvCi9
 tool_result
 id: toolu_01XrnKSy2UNGyAWnaePuvCi9
 ```
-File created successfully at: /Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0005-neutral-infrastructure-user-hosted.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Project/tiny/files (1)/docs/adr/0005-neutral-infrastructure-user-hosted.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -624,7 +624,7 @@ id: toolu_01SdTUcsja97i42P5LYoB6so
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/CONTEXT.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/CONTEXT.md",
   "old_string": "A Subscription does **not** revoke already-owned Entitlements. viewrr is an\nownership model, not enforceable rental — despite legacy \"SVOD\" wording in older docs.",
   "new_string": "A Subscription does **not** revoke already-owned Entitlements. viewrr is an\nownership model, not enforceable rental — despite legacy \"SVOD\" wording in older docs.\n(Subscriptions/payments are deferred out of MVP — see `docs/adr/0005`.)\n\n## NAS\n\nYour homelab node. Its viewrr role is **DHT bootstrap + Ktor metadata registry** only\n(plus an optional *paid* backup tier later). It is **not** a content origin/seeder —\ncontent originates from users' own devices. See `docs/adr/0005`. (Legacy docs calling\nthe NAS \"origin seeder of all content variants\" are superseded.)\n\n## Catalog\n\nThere is **no viewrr-hosted, browseable catalog** in MVP. Content discovery is by\n**share-link, @handle, and follows** only (\"private stash\"). TMDB metadata is optional\n**client-side** enrichment a user attaches to their own upload — never a\nplatform-served index. See `docs/adr/0005`.\n\n## Channel (phase 2)\n\nA creator-owned publishing space (SoundCloud/Dailymotion-style) for the creator's\n**own rights-cleared media**. Channels are the paid layer, deferred to phase 2 — a\ndistinct opt-in publishing model layered on top of the neutral infrastructure base.\nNot part of MVP."
 }
@@ -635,7 +635,7 @@ id: toolu_01SdTUcsja97i42P5LYoB6so
 tool_result
 id: toolu_01SdTUcsja97i42P5LYoB6so
 ```
-The file /Users/jobinlawrance/Project/tiny/files (1)/CONTEXT.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/files (1)/CONTEXT.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -683,7 +683,7 @@ tool_use Write
 id: toolu_01JvZyqkQjjaqXFdYQsWiea3
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0006-private-discovery-topics-and-pairing.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/docs/adr/0006-private-discovery-topics-and-pairing.md",
   "content": "# 0006 — Private discovery topics are secret-derived; pairing uses ephemeral secrets\n\n**Status:** Accepted (2026-07-01)\n\n## Context\n\nSeveral subsystems announced on Hyperswarm topics derived from the **public**\nidentity:\n- Private vault + multi-device sync: `Hyperswarm.join(userPublicKey)`\n- Notification mailbox: `hash(publicKey + ':notifications')`\n\n`publicKey` is world-readable (it is in the `@handle → publicKey` registry). So any\noutsider who knows a handle can compute these \"private\" topics — join the private-vault\nswarm (confirming device presence, timing activity, attempting connections/DoS) and\nobserve mailbox activity. This contradicts the `15.5` claim of \"no metadata: peers see\na topic hash, not who it belongs to.\"\n\n## Decision\n\n1. **Private vault / sync topic is secret-derived.** Derive it from a device-shared\n   secret (HKDF of `secretKey`, or a dedicated vault-sync key) that only the user's own\n   devices hold. Outsiders cannot compute or join it.\n2. **Device pairing (Vault Link) uses an ephemeral one-time secret.** The QR carries a\n   fresh pairing secret; the new device joins `hash(pairingSecret)`; device 1 sends the\n   encrypted vault/`secretKey` over that Noise channel; the pairing topic is torn down\n   afterward. The identity key is never the pairing rendezvous.\n3. **Mailbox — accept a documented limit for MVP.** Senders must reach a recipient\n   knowing only `@handle → publicKey`, so the mailbox topic […]
 
 > TOOL
@@ -691,7 +691,7 @@ id: toolu_01JvZyqkQjjaqXFdYQsWiea3
 tool_result
 id: toolu_01JvZyqkQjjaqXFdYQsWiea3
 ```
-File created successfully at: /Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0006-private-discovery-topics-and-pairing.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Project/tiny/files (1)/docs/adr/0006-private-discovery-topics-and-pairing.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -700,7 +700,7 @@ tool_use Write
 id: toolu_011RRNaS3ctdbK7r5tiGD2Jh
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0007-single-crypto-stack-libsodium-in-worklet.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/docs/adr/0007-single-crypto-stack-libsodium-in-worklet.md",
   "content": "# 0007 — Single crypto stack: libsodium in the Bare worklet, no JVM crypto lib\n\n**Status:** Accepted (2026-07-01)\n\n## Context\n\nThe desktop shell is Compose/JVM (`0002`), so a JVM crypto library such as Bouncy\nCastle was proposed to \"reduce code.\" All viewrr crypto is asymmetric + AEAD:\nEd25519 identity, NaCl `box` (X25519 + XSalsa20-Poly1305) to seal content keys,\nNoise + libsodium SecretStream transport, secretbox vaults, HKDF per-segment keys.\n\nBy existing invariant, all of this runs **inside the Bare worklet** via libsodium;\n\"keys never cross the RPC seam\" and the native shell receives only plaintext.\n\n## Decision\n\n**Keep libsodium in the worklet as the sole crypto stack. Do not add Bouncy Castle or\nany JVM-side crypto library.**\n\n- All key material and crypto operations stay in the worklet.\n- The native shell (JVM/Swift/Kotlin) does **zero** application crypto; it receives\n  plaintext over the RPC seam.\n- The only platform-side key ops are OS keystore wrapping of the at-rest `secretKey`\n  (Android Keystore / macOS Keychain / Secure Enclave) and biometric gating — platform\n  APIs, not a crypto library.\n\n## Consequences\n\n- **Good:** One audited crypto implementation, one language. No byte-for-byte interop\n  layer between libsodium and a JVM stack, which is exactly where silent crypto\n  mismatches hide (BC has no […]
 
 > TOOL
@@ -708,7 +708,7 @@ id: toolu_011RRNaS3ctdbK7r5tiGD2Jh
 tool_result
 id: toolu_011RRNaS3ctdbK7r5tiGD2Jh
 ```
-File created successfully at: /Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0007-single-crypto-stack-libsodium-in-worklet.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Project/tiny/files (1)/docs/adr/0007-single-crypto-stack-libsodium-in-worklet.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -776,7 +776,7 @@ id: toolu_01AuUbUXzuZrH5EcdsHePYap
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0005-neutral-infrastructure-user-hosted.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/docs/adr/0005-neutral-infrastructure-user-hosted.md",
   "old_string": "**Status:** Accepted (2026-07-01)",
   "new_string": "**Status:** Superseded by `0008` (2026-07-01) — point 2 (no central catalog) is\nreversed. Points 1 (NAS not a content origin) and 3 (payments deferred to phase-2)\nstill stand."
 }
@@ -787,7 +787,7 @@ id: toolu_01AuUbUXzuZrH5EcdsHePYap
 tool_result
 id: toolu_01AuUbUXzuZrH5EcdsHePYap
 ```
-The file /Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0005-neutral-infrastructure-user-hosted.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/files (1)/docs/adr/0005-neutral-infrastructure-user-hosted.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -796,7 +796,7 @@ tool_use Write
 id: toolu_012DP8Mm58UdC8quW6DeucQC
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0008-central-catalog-mesh-contributed.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/docs/adr/0008-central-catalog-mesh-contributed.md",
   "content": "# 0008 — Central searchable catalog, mesh-contributed; viewrr is the index\n\n**Status:** Accepted (2026-07-01). Supersedes `0005` point 2.\n\n## Context\n\nviewrr is positioned as a Netflix-alternative SVOD. The defining feature: **media\nfiles are decentralized (no central media server), but the catalog is centralized and\nsearchable.** Anything downloaded/cached by any peer in the mesh contributes its\nmetadata + availability to a central catalog, so the catalog grows organically from\nmesh activity and every title becomes findable.\n\nThis reverses `0005` point 2 (which removed the central catalog to preserve a neutral\nposture). The neutral-transport property still holds for the *files*; it does **not**\nhold for the *index* — hosting a searchable index of user-hosted third-party content\nis the historically seized layer (indexes lose; protocols don't).\n\n`0005` points 1 (NAS is not a content origin) and 3 (payments deferred) still stand.\n\n## Decision\n\n1. **Central catalog exists and is searchable**, powered by **ParadeDB / pg_search**\n   (BM25 full-text). pg_search returns to the MVP stack.\n2. **Content identity = TMDB ID → deterministic UUID v5** (already specced). Same title\n   from different uploaders maps to one catalog entry — dedup by content UUID.\n3. **Mesh-contributed:** when a client acquires/caches a UUID-identified title, it\n   upserts the catalog entry (metadata) and registers availability. Files […]
 
 > TOOL
@@ -804,7 +804,7 @@ id: toolu_012DP8Mm58UdC8quW6DeucQC
 tool_result
 id: toolu_012DP8Mm58UdC8quW6DeucQC
 ```
-File created successfully at: /Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0008-central-catalog-mesh-contributed.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Project/tiny/files (1)/docs/adr/0008-central-catalog-mesh-contributed.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -814,7 +814,7 @@ id: toolu_01P12LE4s9aBdfcFgohciJyt
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/CONTEXT.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/CONTEXT.md",
   "old_string": "## Catalog\n\nThere is **no viewrr-hosted, browseable catalog** in MVP. Content discovery is by\n**share-link, @handle, and follows** only (\"private stash\"). TMDB metadata is optional\n**client-side** enrichment a user attaches to their own upload — never a\nplatform-served index. See `docs/adr/0005`.",
   "new_string": "## Catalog\n\nThe **central, searchable index** of titles available in the mesh, powered by ParadeDB\n/ pg_search. Media files are decentralized (no central media server); the **catalog is\ncentralized**. Any peer acquiring a title contributes its metadata + availability, so\nthe catalog grows from mesh activity. Titles are keyed by **content UUID** (TMDB ID →\nUUID v5) so the same film from different uploaders dedups to one entry. viewrr *is* the\nindex — this is the product's core SVOD differentiator, and its main legal exposure\n(needs a takedown pipeline). See `docs/adr/0008` (supersedes the earlier \"no catalog\"\nstance in `0005`)."
 }
@@ -825,7 +825,7 @@ id: toolu_01P12LE4s9aBdfcFgohciJyt
 tool_result
 id: toolu_01P12LE4s9aBdfcFgohciJyt
 ```
-The file /Users/jobinlawrance/Project/tiny/files (1)/CONTEXT.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/files (1)/CONTEXT.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -860,7 +860,7 @@ id: toolu_01KKVdBKoXdCayFqPSZMTbCw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0008-central-catalog-mesh-contributed.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/docs/adr/0008-central-catalog-mesh-contributed.md",
   "old_string": "- **Open (see next decision):** whether availability records link a title to a\n  `publicKey` (deanonymizing users' libraries on the central server) or stay\n  pseudonymous. This is unresolved and gates the privacy posture.",
   "new_string": "- **Resolved:** availability is **pseudonymous**. The catalog stores **content\n  metadata only** (`contentUUID`, title, poster, tags — no `publicKey ↔ title`).\n  Peer discovery is via the **DHT** (`hash(contentUUID)` swarm), like BitTorrent;\n  the server never learns who holds what. New catalog rows are **validated against\n  TMDB** to prevent poisoning. Peer *selection* is client-side by Plus Code proximity +\n  uplink speed (`04`). No central who-watched-what DB exists."
 }
@@ -871,7 +871,7 @@ id: toolu_01KKVdBKoXdCayFqPSZMTbCw
 tool_result
 id: toolu_01KKVdBKoXdCayFqPSZMTbCw
 ```
-The file /Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0008-central-catalog-mesh-contributed.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/files (1)/docs/adr/0008-central-catalog-mesh-contributed.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -909,7 +909,7 @@ tool_use Write
 id: toolu_01AWAyEPj7RYTYcws6Nw5MBA
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0009-peer-selection-proximity-uplink.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/docs/adr/0009-peer-selection-proximity-uplink.md",
   "content": "# 0009 — Peer selection by Plus Code proximity + uplink speed\n\n**Status:** Accepted (2026-07-01)\n\n## Context\n\nA title (e.g. \"Interstellar 1080p\", keyed by `contentUUID`) may be held by many peers.\nAll copies of the same format are treated as **interchangeable sources** — there is no\n\"canonical bytes\" concept; a peer's file does not become the authoritative title. The\nquestion is purely *which source to pull from*.\n\n## Decision\n\nWhen a user requests a title, select the serving peer by:\n1. **Proximity** — nearest by Plus Code (location short code), then\n2. **Uplink speed** — fastest measured upload among nearby peers.\n\nPull the files from that peer. On drop/slowdown, use the **fallback chain** (`04`) to\nthe next-best peer. Selection is entirely **client-side** (no central reputation),\nconsistent with the pseudonymous, metadata-only catalog (`0008`).\n\n## Consequences\n\n- **Good:** Fast, local-first delivery; no central coordination or identity map.\n- **Residual risk (accepted for MVP):** with no canonical copy, a peer can seed a\n  **mislabeled** file under a popular `contentUUID`. Hyperdrive verifies bytes against\n  the drive's own hash, but not that the drive *is* the labeled title. Mitigation\n  (cheap, non-recentralizing): after pull, the client sanity-checks the file against\n  **TMDB metadata** (duration/resolution) and falls back to the next owner on mismatch.\n […]
 
 > TOOL
@@ -917,7 +917,7 @@ id: toolu_01AWAyEPj7RYTYcws6Nw5MBA
 tool_result
 id: toolu_01AWAyEPj7RYTYcws6Nw5MBA
 ```
-File created successfully at: /Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0009-peer-selection-proximity-uplink.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Project/tiny/files (1)/docs/adr/0009-peer-selection-proximity-uplink.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -931,7 +931,7 @@ id: toolu_01NTtkzN5KkjJz9NvVzZkznD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/CONTEXT.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/CONTEXT.md",
   "old_string": "## Channel (phase 2)",
   "new_string": "## Availability\n\nThe fact that some peer holds a given title. Discovered **P2P via the DHT**\n(`hash(contentUUID)` swarm), never from a central `publicKey ↔ title` table. All copies\nof the same format are interchangeable sources — no copy is canonical. See `docs/adr/0008`.\n\n## Peer Selection\n\nChoosing *which* available peer to pull from: **nearest by Plus Code**, then **fastest\nuplink**, with a fallback chain to the next-best peer. Entirely client-side. Governs\n*where to pull*, not *what is authentic*. See `docs/adr/0009`.\n\n## Channel (phase 2)"
 }
@@ -942,7 +942,7 @@ id: toolu_01NTtkzN5KkjJz9NvVzZkznD
 tool_result
 id: toolu_01NTtkzN5KkjJz9NvVzZkznD
 ```
-The file /Users/jobinlawrance/Project/tiny/files (1)/CONTEXT.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/files (1)/CONTEXT.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -983,7 +983,7 @@ id: toolu_01JnDDi2PuCZVt6KwixM2U6n
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0009-peer-selection-proximity-uplink.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/docs/adr/0009-peer-selection-proximity-uplink.md",
   "old_string": "  **TMDB metadata** (duration/resolution) and falls back to the next owner on mismatch.\n  [Pending user decision: enable sanity-check in MVP, or accept raw risk.]",
   "new_string": "  **TMDB metadata** (duration/resolution) and falls back to the next owner on mismatch.\n  **Decision: accepted as raw risk for MVP** — no sanity-check shipped; the TMDB\n  duration/resolution guard is a post-MVP hardening."
 }
@@ -994,7 +994,7 @@ id: toolu_01JnDDi2PuCZVt6KwixM2U6n
 tool_result
 id: toolu_01JnDDi2PuCZVt6KwixM2U6n
 ```
-The file /Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0009-peer-selection-proximity-uplink.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/files (1)/docs/adr/0009-peer-selection-proximity-uplink.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1035,7 +1035,7 @@ tool_use Write
 id: toolu_014Q7eU81jJgN9zwEdqFwSMG
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0010-operator-power-deindex-only-no-backdoor.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/docs/adr/0010-operator-power-deindex-only-no-backdoor.md",
   "content": "# 0010 — Operator power is de-index only; no backdoor; public catalog is TMDB-allowlisted\n\n**Status:** Accepted (2026-07-01)\n\n## Context\n\nviewrr hosts the central catalog index (`0008`) and will receive takedown notices.\nThe operator's stance: maximally decentralized, no ability to delete content, no\nbackdoor or key escrow, not legally the custodian of files.\n\n## Decision\n\n1. **The operator's only power is de-indexing** — removing a catalog row. This makes a\n   title unsearchable in the central catalog. It does **not** delete the file; the bytes\n   remain reachable via direct public link / `contentUUID` in the mesh.\n2. **No backdoor.** No admin decrypt, no key escrow, no operator-held secrets. Content\n   is encrypted to the user; the server cannot read private content. (Reaffirms the\n   self-custody invariant across `0001`/`0007`.)\n3. **Public catalog is TMDB-allowlisted.** A row may be public only if it matches a\n   TMDB title. Anything non-TMDB is **private-by-default** and never publicly indexed.\n4. **De-indexed / non-TMDB `contentUUID`s go on a blocklist** so mesh auto-contribution\n   cannot (re)insert them into the public catalog.\n\n## Consequences\n\n- **Good:** Clear, honest operator surface — one lever (de-index), no secret powers.\n- **CSAM / illegal content — architectural limit (must be understood):** the operator\n  **cannot detect or remove privately hosted content.** […]
 
 > TOOL
@@ -1043,7 +1043,7 @@ id: toolu_014Q7eU81jJgN9zwEdqFwSMG
 tool_result
 id: toolu_014Q7eU81jJgN9zwEdqFwSMG
 ```
-File created successfully at: /Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0010-operator-power-deindex-only-no-backdoor.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Project/tiny/files (1)/docs/adr/0010-operator-power-deindex-only-no-backdoor.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1052,7 +1052,7 @@ tool_use Write
 id: toolu_01ST8NtK4rbYXymFk8xXYmVm
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0011-multi-device-storage-pool.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/docs/adr/0011-multi-device-storage-pool.md",
   "content": "# 0011 — Multi-device storage pool (per-device ≥20% free space)\n\n**Status:** Accepted (2026-07-01). Open sub-decision: replication vs distribution +\nprivate-original durability (see Consequences).\n\n## Context\n\nA user's Identity (`0001`) spans multiple devices, discovered via the private,\nsecret-derived sync topic (`0006`). viewrr has no central media server (`0005` pt1),\nso a user's own devices must host that user's private vault **and** the public content\nthey seed.\n\n## Decision\n\n1. **Each device installation declares its free storage** and dedicates a **minimum\n   20%** of free space to viewrr.\n2. **The dedicated slices across a user's devices form a single user-scoped storage\n   pool.** The user's private content and their publicly-seeded content live in this\n   pool.\n3. The pool is the unit that hosts and seeds the user's catalogue — private (own\n   devices only) and public (mesh-visible) — with no central origin.\n\n## Consequences\n\n- **Good:** Storage scales with the user's own device fleet; no operator-hosted\n  storage. Fits self-custody + no-central-origin.\n- **Open sub-decision (to grill):** pool **replication vs distribution**:\n  - *Replicate* every file to all pooled devices → offline-tolerant, but total capacity\n    capped near the smallest device's slice.\n  - *Distribute/shard* across devices → more capacity, but a file is unavailable when\n    its host device is offline.\n  - **Durability […]
 
 > TOOL
@@ -1060,7 +1060,7 @@ id: toolu_01ST8NtK4rbYXymFk8xXYmVm
 tool_result
 id: toolu_01ST8NtK4rbYXymFk8xXYmVm
 ```
-File created successfully at: /Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0011-multi-device-storage-pool.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Project/tiny/files (1)/docs/adr/0011-multi-device-storage-pool.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1070,7 +1070,7 @@ id: toolu_0127uudzuHM7bWcu8oxw4ZQq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/CONTEXT.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/CONTEXT.md",
   "old_string": "## Channel (phase 2)",
   "new_string": "## Storage Pool\n\nThe union of storage slices contributed by a user's devices — each device dedicates\n**≥20% of free space**. The pool hosts and seeds that user's private vault and their\npublicly-seeded content. There is no central media server; a user's own device pool is\nthe origin for their content. See `docs/adr/0011`.\n\n## De-index\n\nThe operator's **only** moderation power: removing a title's row from the central\nCatalog so it is no longer searchable. It does **not** delete the file — bytes remain\nreachable via direct public link. No backdoor, no key escrow, no file deletion. See\n`docs/adr/0010`.\n\n## Channel (phase 2)"
 }
@@ -1081,7 +1081,7 @@ id: toolu_0127uudzuHM7bWcu8oxw4ZQq
 tool_result
 id: toolu_0127uudzuHM7bWcu8oxw4ZQq
 ```
-The file /Users/jobinlawrance/Project/tiny/files (1)/CONTEXT.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/files (1)/CONTEXT.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1119,7 +1119,7 @@ id: toolu_013Ms8f54AmgA4HQdBgiuPR3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0011-multi-device-storage-pool.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/docs/adr/0011-multi-device-storage-pool.md",
   "old_string": "**Status:** Accepted (2026-07-01). Open sub-decision: replication vs distribution +\nprivate-original durability (see Consequences).",
   "new_string": "**Status:** Accepted (2026-07-01). Durability sub-decision resolved (see Decision 4-6)."
 }
@@ -1130,7 +1130,7 @@ id: toolu_013Ms8f54AmgA4HQdBgiuPR3
 tool_result
 id: toolu_013Ms8f54AmgA4HQdBgiuPR3
 ```
-The file /Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0011-multi-device-storage-pool.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/files (1)/docs/adr/0011-multi-device-storage-pool.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1140,7 +1140,7 @@ id: toolu_011E91FSpCBqx9yzPsMNNTbf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0011-multi-device-storage-pool.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/docs/adr/0011-multi-device-storage-pool.md",
   "old_string": "3. The pool is the unit that hosts and seeds the user's catalogue — private (own\n   devices only) and public (mesh-visible) — with no central origin.",
   "new_string": "3. The pool is the unit that hosts and seeds the user's catalogue — private (own\n   devices only) and public (mesh-visible) — with no central origin.\n4. **Private originals: replication factor ≥2** across pooled devices whenever ≥2\n   exist. **Never RF=1** for private originals. Private originals are **never evicted**\n   and take pool priority; public cached content is **RF=1, LRU-evictable** (it is\n   re-fetchable from the mesh). When the pool nears capacity, evict public cache first.\n5. **Single-device users get a loud warning** (\"data is on one device only\") — no\n   silent data-loss risk. Overflow beyond pool capacity requires adding a device or the\n   backup tier; never a silent drop.\n6. **Encrypted backup tier is in MVP** as the single-device durability escape hatch.\n   The NAS stores the user's **ciphertext-only** originals (no key, no plaintext, no\n   backdoor — consistent with `0010`). Backup ships functionally in MVP on jobin-nas;\n   **billing is deferred to phase-2 payments** (`0005` pt3 intact — free/self-hosted\n   during MVP, monetized later)."
 }
@@ -1151,7 +1151,7 @@ id: toolu_011E91FSpCBqx9yzPsMNNTbf
 tool_result
 id: toolu_011E91FSpCBqx9yzPsMNNTbf
 ```
-The file /Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0011-multi-device-storage-pool.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/files (1)/docs/adr/0011-multi-device-storage-pool.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1165,7 +1165,7 @@ id: toolu_015b6VEJfM9pswqRjS9hZMTM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/CONTEXT.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/CONTEXT.md",
   "old_string": "## De-index",
   "new_string": "## Backup Tier\n\nAn optional durability service: the NAS stores a user's **ciphertext-only** private\noriginals (no key, no plaintext, no backdoor). It is the single-device durability escape\nhatch against total data loss. Ships functionally in MVP on jobin-nas; billing deferred\nto phase-2. See `docs/adr/0011`.\n\n## De-index"
 }
@@ -1176,7 +1176,7 @@ id: toolu_015b6VEJfM9pswqRjS9hZMTM
 tool_result
 id: toolu_015b6VEJfM9pswqRjS9hZMTM
 ```
-The file /Users/jobinlawrance/Project/tiny/files (1)/CONTEXT.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/files (1)/CONTEXT.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1211,7 +1211,7 @@ id: toolu_01EvHU948Sn7KH2wA5yXZBRo
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0002-compose-desktop-libvlc-drop-electron.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/docs/adr/0002-compose-desktop-libvlc-drop-electron.md",
   "old_string": "  - Biometric/hardware-key unlock (Touch ID / Windows Hello / YubiKey) needs JVM\n    paths, not Electron APIs.",
   "new_string": "  - Biometric/hardware-key unlock (Touch ID / Windows Hello / YubiKey) needs JVM\n    paths, not Electron APIs. **Resolved:** MVP desktop unlock = **master password only**\n    (the at-rest `secretKey` is already password-encrypted per `0001`; libsodium in the\n    worklet). Desktop biometric + OS-keystore hardware binding are **deferred post-MVP**,\n    added per-OS via native bridges (macOS LocalAuthentication+Keychain, Windows\n    Hello+DPAPI/TPM, Linux password+keyring). Mobile biometric (Android Keystore, iOS\n    Secure Enclave) is unaffected. Caveat: MVP desktop at-rest security = password\n    strength only (no TPM/Enclave binding) — hardened later."
 }
@@ -1222,7 +1222,7 @@ id: toolu_01EvHU948Sn7KH2wA5yXZBRo
 tool_result
 id: toolu_01EvHU948Sn7KH2wA5yXZBRo
 ```
-The file /Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0002-compose-desktop-libvlc-drop-electron.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/files (1)/docs/adr/0002-compose-desktop-libvlc-drop-electron.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1272,7 +1272,7 @@ id: toolu_012nsVUhmfENteB2UofreMft
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0009-peer-selection-proximity-uplink.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/docs/adr/0009-peer-selection-proximity-uplink.md",
   "old_string": "- **Residual risk (accepted for MVP):** with no canonical copy, a peer can seed a\n  **mislabeled** file under a popular `contentUUID`. Hyperdrive verifies bytes against\n  the drive's own hash, but not that the drive *is* the labeled title. Mitigation\n  (cheap, non-recentralizing): after pull, the client sanity-checks the file against\n  **TMDB metadata** (duration/resolution) and falls back to the next owner on mismatch.\n  **Decision: accepted as raw risk for MVP** — no sanity-check shipped; the TMDB\n  duration/resolution guard is a post-MVP hardening.",
   "new_string": "- **Residual risk — mislabeled file** under a popular `contentUUID`. Hyperdrive verifies\n  bytes against the drive's own hash, but not that the drive *is* the labeled title.\n  **Mitigations (now MVP — this is the catalogue-integrity defense, not anti-Sybil):**\n  1. **Client-side TMDB sanity-check (MVP):** after pull, verify file duration/resolution\n     against TMDB metadata; fall back to the next owner on mismatch. Catches gross fakes\n     automatically. (Promoted from deferred — the operator's actual concern is catalogue\n     poisoning, and this is its content-level fix.)\n  2. **Anonymous flagging (MVP):** users flag a bad copy; flag-count **de-prioritizes\n     that drive** in peer selection. No identity required, pseudonymity-preserving.\n  Both operate at the content level; account […]
 
@@ -1281,7 +1281,7 @@ id: toolu_012nsVUhmfENteB2UofreMft
 tool_result
 id: toolu_012nsVUhmfENteB2UofreMft
 ```
-The file /Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0009-peer-selection-proximity-uplink.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/files (1)/docs/adr/0009-peer-selection-proximity-uplink.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1290,7 +1290,7 @@ tool_use Write
 id: toolu_014wzaos3c8A5dQBiPTqVZYc
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0012-no-device-fingerprinting.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/docs/adr/0012-no-device-fingerprinting.md",
   "content": "# 0012 — No device/browser fingerprinting; catalogue integrity is data-layer, not identity-layer\n\n**Status:** Accepted (2026-07-01)\n\n## Context\n\nChrome/device fingerprinting was proposed to prevent spam accounts. The stated concern\nwas spam accounts **poisoning the catalogue**.\n\n## Decision\n\n**Do not build device or browser fingerprinting.** It is rejected because:\n\n- It contradicts the identity model — keypairs are permissionless and offline-\n  generatable (`0001`); account count cannot be gated without breaking self-custody.\n- It only touches the Vue **web** client (native apps have no browser fingerprint) and\n  is trivially bypassed.\n- It is a privacy regression (canvas/font/UA tracking) contradicting `0006`/`0010`, and\n  is weak/evadable with high false-positive collateral.\n- It targets the wrong layer: account count does not poison the catalogue.\n\n**Catalogue integrity is enforced at the data layer instead:**\n- **TMDB allowlist + server-fetched metadata** (`0008`): fake titles are rejected;\n  metadata comes from TMDB, not the client, so it cannot be stuffed. Accounts have no\n  arbitrary catalog write.\n- **Content-level checks** (`0009`): client-side TMDB sanity-check on pull + anonymous\n  flagging that de-prioritizes bad drives — handle the only residual (mislabeled bytes\n  under a valid UUID), which a single account can do as well as a thousand.\n\n## Consequences\n\n- **Good:** Catalogue is spam-resistant without tracking, PII, or capping […]
 
 > TOOL
@@ -1298,7 +1298,7 @@ id: toolu_014wzaos3c8A5dQBiPTqVZYc
 tool_result
 id: toolu_014wzaos3c8A5dQBiPTqVZYc
 ```
-File created successfully at: /Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0012-no-device-fingerprinting.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Project/tiny/files (1)/docs/adr/0012-no-device-fingerprinting.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1430,7 +1430,7 @@ tool_result
 id: toolu_019oRAgHsTT3ZVTbs9UgDJmE
 ```
 <persisted-output>
-Output too large (30.1KB). Full output saved to: /Users/jobinlawrance/.REDACTED.txt
+Output too large (30.1KB). Full output saved to: /home/<USER>/.REDACTED.txt
 
 Preview (first 2KB):
 name:	viewrr/viewrr
@@ -1729,7 +1729,7 @@ tool_use Bash
 id: toolu_018TDZnGb6qEKqF5PgHj56ym
 ```json
 {
-  "command": "cd REDACTED\nrm -rf viewrr.wiki\ngit clone git@github.com:viewrr/viewrr.wiki.git 2>&1 | tail -3",
+  "command": "cd REDACTED\nrm -rf viewrr.wiki\ngit clone <REDACTED_EMAIL>:viewrr/viewrr.wiki.git 2>&1 | tail -3",
   "description": "Clone viewrr wiki repo"
 }
 ```
@@ -1740,7 +1740,7 @@ tool_result
 id: toolu_018TDZnGb6qEKqF5PgHj56ym
 ```
 Cloning into 'viewrr.wiki'...
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > TOOL
@@ -1772,7 +1772,7 @@ drwxr-xr-x@ 12 jobinlawrance  wheel   384 Jul  1 22:01 .git
 -rw-r--r--@  1 jobinlawrance  wheel  1253 Jul  1 22:01 Home.md
 -rw-r--r--@  1 jobinlawrance  wheel  1640 Jul  1 22:01 Network.md
 -rw-r--r--@  1 jobinlawrance  wheel  2203 Jul  1 22:01 Serving.md
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -1943,7 +1943,7 @@ tool_use Bash
 id: toolu_017ZYVSKwWofgUvWnyHNr41S
 ```json
 {
-  "command": "cd REDACTED.wiki\ngit add -A && git -c user.email=\"jobinlawrance@gmail.com\" -c user.name=\"jobinlawrance\" commit -q -m \"Add P2P re-architecture proposal epic page + sidebar link\" && git push origin HEAD 2>&1 | tail -3\necho \"---\"; git log --oneline -1",
+  "command": "cd REDACTED.wiki\ngit add -A && git -c user.email=\"<REDACTED_EMAIL>\" -c user.name=\"jobinlawrance\" commit -q -m \"Add P2P re-architecture proposal epic page + sidebar link\" && git push origin HEAD 2>&1 | tail -3\necho \"---\"; git log --oneline -1",
   "description": "Commit and push wiki epic page"
 }
 ```
@@ -1957,7 +1957,7 @@ To github.com:viewrr/viewrr.wiki.git
    8541910..fc335d9  HEAD -> master
 ---
 fc335d9 Add P2P re-architecture proposal epic page + sidebar link
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -1993,7 +1993,7 @@ id: toolu_01AL6Dh9QgLDEaqWTDYkaz6E
 ```json
 {
   "file_path": "REDACTED.sh",
-  "content": "#!/usr/bin/env bash\nset -euo pipefail\nDIR=\"/Users/jobinlawrance/Project/tiny/files (1)\"\nADR=\"$DIR/docs/adr\"\n\necho \"== rename files ==\"\nfor f in \"$ADR\"/0*.md; do\n  b=$(basename \"$f\")\n  mv \"$f\" \"$ADR/p2p-$b\"\n  echo \"  p2p-$b\"\ndone\n\necho \"== fix path refs (docs/adr/000X -> docs/adr/p2p-000X) in ADRs + CONTEXT ==\"\nfor n in 0001 0002 0003 0004 0005 0006 0007 0008 0009 0010 0011 0012; do\n  # path references\n  sed -i '' \"s|docs/adr/$n|docs/adr/p2p-$n|g\" \"$ADR\"/p2p-*.md \"$DIR/CONTEXT.md\"\n  # bare backtick cross-refs `000X` -> `P2P-ADR 000X`\n  sed -i '' \"s|\\`$n\\`|\\`P2P-ADR $n\\`|g\" \"$ADR\"/p2p-*.md \"$DIR/CONTEXT.md\"\ndone\n\necho \"== verify ==\"\nls \"$ADR\"\necho \"--- sample cross-refs ---\"\ngrep -h \"P2P-ADR\\|docs/adr/p2p\" \"$ADR/p2p-0008-central-catalog-mesh-contributed.md\" | head -6\n"
+  "content": "#!/usr/bin/env bash\nset -euo pipefail\nDIR=\"/home/<USER>/Project/tiny/files (1)\"\nADR=\"$DIR/docs/adr\"\n\necho \"== rename files ==\"\nfor f in \"$ADR\"/0*.md; do\n  b=$(basename \"$f\")\n  mv \"$f\" \"$ADR/p2p-$b\"\n  echo \"  p2p-$b\"\ndone\n\necho \"== fix path refs (docs/adr/000X -> docs/adr/p2p-000X) in ADRs + CONTEXT ==\"\nfor n in 0001 0002 0003 0004 0005 0006 0007 0008 0009 0010 0011 0012; do\n  # path references\n  sed -i '' \"s|docs/adr/$n|docs/adr/p2p-$n|g\" \"$ADR\"/p2p-*.md \"$DIR/CONTEXT.md\"\n  # bare backtick cross-refs `000X` -> `P2P-ADR 000X`\n  sed -i '' \"s|\\`$n\\`|\\`P2P-ADR $n\\`|g\" \"$ADR\"/p2p-*.md \"$DIR/CONTEXT.md\"\ndone\n\necho \"== verify ==\"\nls \"$ADR\"\necho \"--- sample cross-refs ---\"\ngrep -h \"P2P-ADR\\|docs/adr/p2p\" \"$ADR/p2p-0008-central-catalog-mesh-contributed.md\" | head -6\n"
 }
 ```
 
@@ -2087,7 +2087,7 @@ id: toolu_01K1dhMuPGxDVf1dg5dNQUqx
   #130 updated
 --- verify #120 head ---
 **ADR 0001.** Migrate identity from server-side Keycloak/OIDC (#112–#115) to a client-only Ed25519 keypair.
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -2127,7 +2127,7 @@ id: toolu_01Lr3Rt6fkuQsLPRY1tN5m3M
 #130:
 **P2P-ADRs 0002 + 0007.**
 double-prefix check (should be empty):
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -2140,7 +2140,7 @@ tool_use Bash
 id: toolu_0122xRmbmfbVBCX15odZqZFs
 ```json
 {
-  "command": "cd REDACTED.wiki\nsed -i '' 's|`files(1)/docs/adr/`|`files(1)/docs/adr/p2p-*.md`|g; s|`files(1)/docs/adr/` and|`files(1)/docs/adr/p2p-*.md` and|g' P2P-Re-architecture.md\ngit add -A && git -c user.email=\"jobinlawrance@gmail.com\" -c user.name=\"jobinlawrance\" commit -q -m \"P2P epic: note p2p-* ADR filenames (avoid collision with shipped docs/adr)\" && git push origin HEAD 2>&1 | tail -2\necho \"--- refs now ---\"; grep -o \"files(1)/docs/adr/[^\\`]*\" P2P-Re-architecture.md | sort -u",
+  "command": "cd REDACTED.wiki\nsed -i '' 's|`files(1)/docs/adr/`|`files(1)/docs/adr/p2p-*.md`|g; s|`files(1)/docs/adr/` and|`files(1)/docs/adr/p2p-*.md` and|g' P2P-Re-architecture.md\ngit add -A && git -c user.email=\"<REDACTED_EMAIL>\" -c user.name=\"jobinlawrance\" commit -q -m \"P2P epic: note p2p-* ADR filenames (avoid collision with shipped docs/adr)\" && git push origin HEAD 2>&1 | tail -2\necho \"--- refs now ---\"; grep -o \"files(1)/docs/adr/[^\\`]*\" P2P-Re-architecture.md | sort -u",
   "description": "Update wiki filename refs and push"
 }
 ```
@@ -2154,7 +2154,7 @@ To github.com:viewrr/viewrr.wiki.git
    fc335d9..f761efe  HEAD -> master
 --- refs now ---
 files(1)/docs/adr/p2p-*.md
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -2297,7 +2297,7 @@ tool_use Bash
 id: toolu_0117ttHSCBfbpUvUfhsFkLgs
 ```json
 {
-  "command": "cd REDACTED\nrm -rf viewrr.main\ngit clone --depth 1 git@github.com:viewrr/viewrr.git viewrr.main 2>&1 | tail -2\necho \"--- docs/adr in repo ---\"\nls viewrr.main/docs/adr/ 2>&1 || echo \"no docs/adr dir\"\necho \"--- default branch ---\"\ncd viewrr.main && git branch --show-current",
+  "command": "cd REDACTED\nrm -rf viewrr.main\ngit clone --depth 1 <REDACTED_EMAIL>:viewrr/viewrr.git viewrr.main 2>&1 | tail -2\necho \"--- docs/adr in repo ---\"\nls viewrr.main/docs/adr/ 2>&1 || echo \"no docs/adr dir\"\necho \"--- default branch ---\"\ncd viewrr.main && git branch --show-current",
   "description": "Clone viewrr main, inspect docs/adr"
 }
 ```
@@ -2316,7 +2316,7 @@ Cloning into 'viewrr.main'...
 0005-client-stack.md
 --- default branch ---
 main
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -2329,7 +2329,7 @@ tool_use Bash
 id: toolu_01UtvVN9NdckwjVCbyJpQQmx
 ```json
 {
-  "command": "SRC=\"/Users/jobinlawrance/Project/tiny/files (1)\"\ncd REDACTED.main\ngit checkout -q -b docs/p2p-proposal\ncp \"$SRC\"/docs/adr/p2p-*.md docs/adr/\ncp \"$SRC\"/CONTEXT.md docs/adr/CONTEXT-p2p.md\ncat > docs/adr/p2p-INDEX.md <<'EOF'\n# P2P / Self-Custody Re-architecture — ADR set (proposal)\n\n> **Not shipped.** Design record for the P2P/self-custody migration epic\n> (milestone #20). Independent of the shipped ADRs `0001–0005` in this directory,\n> despite overlapping numbers — these are prefixed `p2p-`. See the wiki page\n> **P2P Re-architecture** and issues #120–#130.\n\n| P2P-ADR | Decision | Issue |\n|--------|----------|-------|\n| [p2p-0001](p2p-0001-self-custody-clearkey-no-hardware-drm.md) | Self-custody clear-key, no DRM/license server | #122 |\n| [p2p-0002](p2p-0002-compose-desktop-libvlc-drop-electron.md) | Compose Desktop + player; drop Electron | #130 |\n| [p2p-0003](p2p-0003-bare-worklet-embedding-per-platform.md) | Bare worklet embedding per platform | #121 |\n| [p2p-0004](p2p-0004-ownership-model-not-rental.md) | Ownership model, not rental | #123 |\n| [p2p-0005](p2p-0005-neutral-infrastructure-user-hosted.md) | Neutral infra (superseded by p2p-0008) | — |\n| [p2p-0006](p2p-0006-private-discovery-topics-and-pairing.md) | Secret-derived topics + pairing | #126 |\n| [p2p-0007](p2p-0007-single-crypto-stack-libsodium-in-worklet.md) | Single crypto stack (libsodium/worklet) | #130 |\n| [p2p-0008](p2p-0008-central-catalog-mesh-contributed.md) | Central catalog, pseudonymous DHT availability | #124 |\n| [p2p-0009](p2p-0009-peer-selection-proximity-uplink.md) | Peer selection: Plus Code + uplink | #125 |\n| [p2p-0010](p2p-0010-operator-power-deindex-only-no-backdoor.md) | De-index-only, no backdoor | #128 |\n| [p2p-0011](p2p-0011-multi-device-storage-pool.md) | Storage pool + encrypted backup | #127 |\n| [p2p-0012](p2p-0012-no-device-fingerprinting.md) | No device fingerprinting | #129 |\n\nGlossary: [CONTEXT-p2p.md](CONTEXT-p2p.md)\nEOF\ngit add -A\ngit -c user.email=\"jobinlawrance@gmail.com\" -c user.name=\"jobinlawrance\" commit -q -m \"docs: add P2P/self-custody […]
+  "command": "SRC=\"/home/<USER>/Project/tiny/files (1)\"\ncd REDACTED.main\ngit checkout -q -b docs/p2p-proposal\ncp \"$SRC\"/docs/adr/p2p-*.md docs/adr/\ncp \"$SRC\"/CONTEXT.md docs/adr/CONTEXT-p2p.md\ncat > docs/adr/p2p-INDEX.md <<'EOF'\n# P2P / Self-Custody Re-architecture — ADR set (proposal)\n\n> **Not shipped.** Design record for the P2P/self-custody migration epic\n> (milestone #20). Independent of the shipped ADRs `0001–0005` in this directory,\n> despite overlapping numbers — these are prefixed `p2p-`. See the wiki page\n> **P2P Re-architecture** and issues #120–#130.\n\n| P2P-ADR | Decision | Issue |\n|--------|----------|-------|\n| [p2p-0001](p2p-0001-self-custody-clearkey-no-hardware-drm.md) | Self-custody clear-key, no DRM/license server | #122 |\n| [p2p-0002](p2p-0002-compose-desktop-libvlc-drop-electron.md) | Compose Desktop + player; drop Electron | #130 |\n| [p2p-0003](p2p-0003-bare-worklet-embedding-per-platform.md) | Bare worklet embedding per platform | #121 |\n| [p2p-0004](p2p-0004-ownership-model-not-rental.md) | Ownership model, not rental | #123 |\n| [p2p-0005](p2p-0005-neutral-infrastructure-user-hosted.md) | Neutral infra (superseded by p2p-0008) | — |\n| [p2p-0006](p2p-0006-private-discovery-topics-and-pairing.md) | Secret-derived topics + pairing | #126 |\n| [p2p-0007](p2p-0007-single-crypto-stack-libsodium-in-worklet.md) | Single crypto stack (libsodium/worklet) | #130 |\n| [p2p-0008](p2p-0008-central-catalog-mesh-contributed.md) | Central catalog, pseudonymous DHT availability | #124 |\n| [p2p-0009](p2p-0009-peer-selection-proximity-uplink.md) | Peer selection: Plus Code + uplink | #125 |\n| [p2p-0010](p2p-0010-operator-power-deindex-only-no-backdoor.md) | De-index-only, no backdoor | #128 |\n| [p2p-0011](p2p-0011-multi-device-storage-pool.md) | Storage pool + encrypted backup | #127 |\n| [p2p-0012](p2p-0012-no-device-fingerprinting.md) | No device fingerprinting | #129 |\n\nGlossary: [CONTEXT-p2p.md](CONTEXT-p2p.md)\nEOF\ngit add -A\ngit -c user.email=\"<REDACTED_EMAIL>\" -c user.name=\"jobinlawrance\" commit -q -m \"docs: add P2P/self-custody […]
 
 > TOOL
 
@@ -2356,7 +2356,7 @@ be280dc docs: add P2P/self-custody proposal ADR set (epic #20)
  docs/adr/p2p-0012-no-device-fingerprinting.md      |  36 +++++++
  docs/adr/p2p-INDEX.md                              |  23 +++++
  14 files changed, 640 insertions(+)
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -2380,7 +2380,7 @@ tool_result
 id: toolu_01PxigX4yEEtU5jkm59Ba1HV
 ```
 https://github.com/viewrr/viewrr/pull/131
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -2393,7 +2393,7 @@ tool_use Bash
 id: toolu_01SZJvT4RDqP9t7pZBpvHRSB
 ```json
 {
-  "command": "cd REDACTED.wiki\nsed -i '' 's#`files(1)/docs/adr/p2p-\\*\\.md`#`docs/adr/p2p-*.md` (PR #131)#g; s#`files(1)/CONTEXT\\.md`#`docs/adr/CONTEXT-p2p.md`#g' P2P-Re-architecture.md\ngit add -A && git -c user.email=\"jobinlawrance@gmail.com\" -c user.name=\"jobinlawrance\" commit -q -m \"P2P epic: point design-record links at in-repo docs/adr (PR #131)\" && git push -q origin HEAD 2>&1 | tail -1\necho \"refs now:\"; grep -oE \"(docs/adr/[^\\` ]*|PR #131)\" P2P-Re-architecture.md | sort -u",
+  "command": "cd REDACTED.wiki\nsed -i '' 's#`files(1)/docs/adr/p2p-\\*\\.md`#`docs/adr/p2p-*.md` (PR #131)#g; s#`files(1)/CONTEXT\\.md`#`docs/adr/CONTEXT-p2p.md`#g' P2P-Re-architecture.md\ngit add -A && git -c user.email=\"<REDACTED_EMAIL>\" -c user.name=\"jobinlawrance\" commit -q -m \"P2P epic: point design-record links at in-repo docs/adr (PR #131)\" && git push -q origin HEAD 2>&1 | tail -1\necho \"refs now:\"; grep -oE \"(docs/adr/[^\\` ]*|PR #131)\" P2P-Re-architecture.md | sort -u",
   "description": "Update wiki links to in-repo path + PR"
 }
 ```
@@ -2411,7 +2411,7 @@ nothing to commit, working tree clean
 refs now:
 docs/adr/0001–0004
 docs/adr/p2p-*.md
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -2424,7 +2424,7 @@ tool_use Bash
 id: toolu_01XBvyPRjkQ9FKG5wd1wVbhG
 ```json
 {
-  "command": "cd REDACTED.wiki\nsed -i '' 's@`files(1)/docs/adr/p2p-\\*\\.md`@`docs/adr/p2p-*.md` (PR #131)@g; s@`files(1)/CONTEXT\\.md`@`docs/adr/CONTEXT-p2p.md`@g' P2P-Re-architecture.md\ngrep -n \"files(1)\\|docs/adr/p2p\\|PR #131\\|CONTEXT-p2p\" P2P-Re-architecture.md\ngit add -A && git -c user.email=\"jobinlawrance@gmail.com\" -c user.name=\"jobinlawrance\" commit -q -m \"P2P epic: point design-record links at in-repo docs/adr (PR #131)\" && git push -q origin HEAD 2>&1 | tail -1\necho \"committed+pushed\"",
+  "command": "cd REDACTED.wiki\nsed -i '' 's@`files(1)/docs/adr/p2p-\\*\\.md`@`docs/adr/p2p-*.md` (PR #131)@g; s@`files(1)/CONTEXT\\.md`@`docs/adr/CONTEXT-p2p.md`@g' P2P-Re-architecture.md\ngrep -n \"files(1)\\|docs/adr/p2p\\|PR #131\\|CONTEXT-p2p\" P2P-Re-architecture.md\ngit add -A && git -c user.email=\"<REDACTED_EMAIL>\" -c user.name=\"jobinlawrance\" commit -q -m \"P2P epic: point design-record links at in-repo docs/adr (PR #131)\" && git push -q origin HEAD 2>&1 | tail -1\necho \"committed+pushed\"",
   "description": "Redo wiki link update with @ delimiter"
 }
 ```
@@ -2437,7 +2437,7 @@ id: toolu_01XBvyPRjkQ9FKG5wd1wVbhG
 8:> **independent set** living in `docs/adr/p2p-*.md` (PR #131) — they are **not** the shipped
 42:12 P2P-ADRs + a context glossary live in `docs/adr/p2p-*.md` (PR #131) and `docs/adr/CONTEXT-p2p.md`.
 committed+pushed
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -2509,7 +2509,7 @@ REDACTED.main           be280dc [docs/p2p-proposal]
 REDACTED      3383afe [p2p/123-ownership]
 REDACTED        3383afe [p2p/128-deindex]
 REDACTED 3383afe [p2p/129-no-fingerprint]
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -2876,7 +2876,7 @@ tool_result
 id: toolu_01JMK8FTaUUo1XwqiSUFKi8Q
 ```
 === wiring: owner vs public predicate usage ===
-REDACTED.kt:74:    // discovery (browse/search/home/Stremio) but NOT deleted. See V14 + publicCatalogOp().
+REDACTED.kt:74:    // discovery (browse/search/home/<USER>) but NOT deleted. See V14 + publicCatalogOp().
 REDACTED.kt:64:            MediaItems.selectAll().where { MediaItems.showTitle.isNull() and publicCatalogOp() }.map { it.toRow() }.toList()
 REDACTED.kt:84:            MediaItems.selectAll().where { MediaItems.showTitle.isNotNull() and publicCatalogOp() }.map { it.toRow() }.toList()
 REDACTED.kt:67:        // #128: search is an OWNER surface — mirrors notDeindexedOp() (de-index only,
@@ -2889,7 +2889,7 @@ REDACTED.kt:73:        MediaItems.selectAll().where { notDeindexedOp() }.map { i
 === branch head ===
 2402108 refactor(catalog): split gate — owner de-index-only, public TMDB allowlist (#128)
 === running tests (this may take a bit) ===
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -2914,7 +2914,7 @@ id: toolu_01RxK5uDdVJYpUbhTGyAtBcP
 ```
 BUILD SUCCESSFUL in 8s
 EXIT:
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -2988,7 +2988,7 @@ id: toolu_015ySw269uaxyaLPzPS3k5Wz
 worktree wt-120-identity ready (branch p2p/120-identity off origin/main)
 --- java version in repo (Ed25519 native needs 15+) ---
 server/build.gradle.kts:21:    jvmToolchain(21)
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -3192,7 +3192,7 @@ id: toolu_01VCACZtZ8EGgHFPPVn613vZ
 ```
 worktree wt-reviews ready (branch feat/editorial-reviews off origin/main)
 --- existing http client / json / scheduler deps ---
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -3280,7 +3280,7 @@ REDACTED      abfa3fa [p2p/123-ownership]
 REDACTED        2402108 [p2p/128-deindex]
 REDACTED 9d707e9 [p2p/129-no-fingerprint]
 REDACTED            3383afe [feat/editorial-reviews]
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -3435,7 +3435,7 @@ id: toolu_011fzigqpPVFk6A6vkepgrH4
 ?? server/src/main/resources/db/migration/V14__editorial.sql
 ?? server/src/main/resources/editorial/
 === pushed? PR? ===
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -3523,7 +3523,7 @@ id: toolu_01Xrz6F3tYdqPX2YCK3A4Fe4
 
 === interfaces/abstractions smell check ===
   none
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > TOOL
@@ -3731,7 +3731,7 @@ V16__editorial.sql
 === new deps? (want none) ===
   no dep additions ✓
 === tests ===
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -3755,7 +3755,7 @@ tool_result
 id: toolu_017hY78BQXuSRVoVrhYenmzZ
 ```
 BUILD SUCCESSFUL in 557ms
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -3984,7 +3984,7 @@ id: toolu_01HoZuujBxGza4fWAP8LUEby
 44 tests completed, 1 failed
 FAILURE: Build failed with an exception.
 BUILD FAILED in 10s
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -4017,7 +4017,7 @@ BUILD FAILED in 4s
 === report xml ===
 <testcase name="storesAndReadsReviewsAndHighlights"
 message="org.jetbrains.exposed.v1.exceptions.UnsupportedByDialectException: INSERT IGNORE supported only on H2 v1.4.197+ with MODE=MYSQL., dialect: H2.
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -4043,7 +4043,7 @@ id: toolu_01KfqGK6VAmSfhxLkDHjmnkS
 reverted. status:
 === re-test ===
 BUILD SUCCESSFUL in 5s
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -4091,7 +4091,8 @@ id: toolu_01DrWmfyQsAqwfTqRMNZ4MBR
 tool_result
 id: toolu_01DrWmfyQsAqwfTqRMNZ4MBR
 ```
-Rebasing (1/1)Auto-merging server/src/main/kotlin/db/Tables.kt
+Rebasing (1/1)
+Auto-merging server/src/main/kotlin/db/Tables.kt
 CONFLICT (content): Merge conflict in server/src/main/kotlin/db/Tables.kt
 Auto-merging server/src/main/kotlin/media/MediaListRoutes.kt
 Auto-merging server/src/main/kotlin/scanner/MediaAdminRoutes.kt
@@ -4105,7 +4106,7 @@ Recorded preimage for 'server/src/main/kotlin/db/Tables.kt'
 Could not apply 98c3210... # feat: editorial ingest — critic review links + award/festival badges + TMDB star exposure
 === conflicts ===
 server/src/main/kotlin/db/Tables.kt
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -4190,7 +4191,7 @@ id: toolu_01RXzDXcWQjknUJDkD8EywFu
 72	    val overview = text("overview").nullable()
 73	<<<<<<< HEAD
 74	    // #128 (P2P moderation): operator de-index flag. true => hidden from public
-75	    // discovery (browse/search/home/Stremio) but NOT deleted. See V14 + publicCatalogOp().
+75	    // discovery (browse/search/home/<USER>) but NOT deleted. See V14 + publicCatalogOp().
 76	    val deindexed = bool("deindexed").default(false)
 77	=======
 78	    // V16 (editorial): TMDB star rating exposed on the media read endpoint. Null until scan/backfill.
@@ -4219,8 +4220,8 @@ id: toolu_019LJuWHhhMgJw8zCb5iMwjs
 {
   "replace_all": false,
   "file_path": "REDACTED.kt",
-  "old_string": "<<<<<<< HEAD\n    // #128 (P2P moderation): operator de-index flag. true => hidden from public\n    // discovery (browse/search/home/Stremio) but NOT deleted. See V14 + publicCatalogOp().\n    val deindexed = bool(\"deindexed\").default(false)\n=======\n    // V16 (editorial): TMDB star rating exposed on the media read endpoint. Null until scan/backfill.\n    val tmdbVoteAverage = float(\"tmdb_vote_average\").nullable()\n    val tmdbVoteCount = integer(\"tmdb_vote_count\").nullable()\n>>>>>>> 98c3210 (feat: editorial ingest — critic review links + award/festival badges + TMDB star exposure)",
-  "new_string": "    // #128 (P2P moderation): operator de-index flag. true => hidden from public\n    // discovery (browse/search/home/Stremio) but NOT deleted. See V14 + publicCatalogOp().\n    val deindexed = bool(\"deindexed\").default(false)\n    // V16 (editorial): TMDB star rating exposed on the media read endpoint. Null until scan/backfill.\n    val tmdbVoteAverage = float(\"tmdb_vote_average\").nullable()\n    val tmdbVoteCount = integer(\"tmdb_vote_count\").nullable()"
+  "old_string": "<<<<<<< HEAD\n    // #128 (P2P moderation): operator de-index flag. true => hidden from public\n    // discovery (browse/search/home/<USER>) but NOT deleted. See V14 + publicCatalogOp().\n    val deindexed = bool(\"deindexed\").default(false)\n=======\n    // V16 (editorial): TMDB star rating exposed on the media read endpoint. Null until scan/backfill.\n    val tmdbVoteAverage = float(\"tmdb_vote_average\").nullable()\n    val tmdbVoteCount = integer(\"tmdb_vote_count\").nullable()\n>>>>>>> 98c3210 (feat: editorial ingest — critic review links + award/festival badges + TMDB star exposure)",
+  "new_string": "    // #128 (P2P moderation): operator de-index flag. true => hidden from public\n    // discovery (browse/search/home/<USER>) but NOT deleted. See V14 + publicCatalogOp().\n    val deindexed = bool(\"deindexed\").default(false)\n    // V16 (editorial): TMDB star rating exposed on the media read endpoint. Null until scan/backfill.\n    val tmdbVoteAverage = float(\"tmdb_vote_average\").nullable()\n    val tmdbVoteCount = integer(\"tmdb_vote_count\").nullable()"
 }
 ```
 
@@ -4257,7 +4258,7 @@ id: toolu_012vmkL7SrTXJseNSfHAoBb7
 Successfully rebased and updated refs/heads/feat/editorial-reviews.
 === build+test after rebase ===
 BUILD SUCCESSFUL in 5s
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -4286,7 +4287,7 @@ mergeable=CONFLICTING status=DIRTY
 X Pull request viewrr/viewrr#136 is not mergeable: the merge commit cannot be cleanly created.
 To have the pull request merged after all the requirements have been met, add the `--auto` flag.
 #136 OPEN
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -4311,7 +4312,7 @@ id: toolu_01J6awbTj2PeMyToiDdjrdAy
 ```
 force-pushed ok
 mergeable=MERGEABLE status=CLEAN
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -4400,7 +4401,7 @@ server/src/main/kotlin/scanner/MediaExts.kt
 server/src/main/kotlin/scanner/ScannerScheduler.kt
 server/src/main/kotlin/scanner/LibraryWatcher.kt
 server/src/main/kotlin/scanner/LibraryRoutes.kt
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -4929,7 +4930,7 @@ tool_result
 id: toolu_01BSbaA3U5d961pYbm6ri7es
 ```
 BUILD SUCCESSFUL in 9s
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -4942,7 +4943,7 @@ tool_use Bash
 id: toolu_01BydyytbYVBr1UGsDo6DqKr
 ```json
 {
-  "command": "cd REDACTED\ngit add -A\ngit -c user.email=\"jobinlawrance@gmail.com\" -c user.name=\"jobinlawrance\" commit -q -m \"feat(editorial): periodic refresh loop\n\nEditorial ingest now runs on boot + every viewrr.editorial.refreshIntervalMinutes\n(default 360=6h; 0 disables, manual /admin/editorial/refresh only). Mirrors\nScannerScheduler's launch-loop idiom — no new dep, no cron framework.\"\ngit push -q -u origin feat/editorial-refresh 2>&1 | tail -1\nPR=$(gh pr create --repo viewrr/viewrr --base main --head feat/editorial-refresh \\\n  --title \"feat(editorial): periodic refresh loop\" \\\n  --body \"Completes the editorial ingest feature (#136 shipped it manual-only). Ingest now runs on boot + every \\`viewrr.editorial.refreshIntervalMinutes\\` (default 6h; 0 disables → manual \\`POST /admin/editorial/refresh\\` only). Reuses the app's existing launch-loop idiom (ScannerScheduler) — zero new deps, no cron framework, fire-and-forget + runCatching so a failed pass never kills the loop. Tests green.\" 2>&1 | tail -1)\necho \"PR: $PR\"\nsleep 2\ngh pr merge \"$PR\" --repo viewrr/viewrr --squash --delete-branch 2>&1 | tail -2\necho \"$PR\" | grep -oE '[0-9]+$' | xargs -I{} gh pr view {} --repo viewrr/viewrr --json state --jq '\"PR #{} \\(.state)\"'",
+  "command": "cd REDACTED\ngit add -A\ngit -c user.email=\"<REDACTED_EMAIL>\" -c user.name=\"jobinlawrance\" commit -q -m \"feat(editorial): periodic refresh loop\n\nEditorial ingest now runs on boot + every viewrr.editorial.refreshIntervalMinutes\n(default 360=6h; 0 disables, manual /admin/editorial/refresh only). Mirrors\nScannerScheduler's launch-loop idiom — no new dep, no cron framework.\"\ngit push -q -u origin feat/editorial-refresh 2>&1 | tail -1\nPR=$(gh pr create --repo viewrr/viewrr --base main --head feat/editorial-refresh \\\n  --title \"feat(editorial): periodic refresh loop\" \\\n  --body \"Completes the editorial ingest feature (#136 shipped it manual-only). Ingest now runs on boot + every \\`viewrr.editorial.refreshIntervalMinutes\\` (default 6h; 0 disables → manual \\`POST /admin/editorial/refresh\\` only). Reuses the app's existing launch-loop idiom (ScannerScheduler) — zero new deps, no cron framework, fire-and-forget + runCatching so a failed pass never kills the loop. Tests green.\" 2>&1 | tail -1)\necho \"PR: $PR\"\nsleep 2\ngh pr merge \"$PR\" --repo viewrr/viewrr --squash --delete-branch 2>&1 | tail -2\necho \"$PR\" | grep -oE '[0-9]+$' | xargs -I{} gh pr view {} --repo viewrr/viewrr --json state --jq '\"PR #{} \\(.state)\"'",
   "description": "Commit, push, open + merge editorial-refresh PR"
 }
 ```
@@ -4955,7 +4956,7 @@ id: toolu_01BydyytbYVBr1UGsDo6DqKr
 remote: 
 PR: https://github.com/viewrr/viewrr/pull/137
 PR #137 MERGED
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -5002,7 +5003,7 @@ tool_use Bash
 id: toolu_015UE1Cm4SrVCKQyvJNjwgXM
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"=== repo top ===\"; ls -1\necho \"=== go module? ===\"; test -f go.mod && head -1 go.mod || echo \"NO go.mod (still pre-code?)\"\necho \"=== local start/stop command files ===\"; grep -rlniE \"local.*stop|\\\"stop\\\"|compose.*down|func.*[Ss]top\" --include=*.go . 2>/dev/null | head",
+  "command": "cd /home/<USER>/Project/tiny\necho \"=== repo top ===\"; ls -1\necho \"=== go module? ===\"; test -f go.mod && head -1 go.mod || echo \"NO go.mod (still pre-code?)\"\necho \"=== local start/stop command files ===\"; grep -rlniE \"local.*stop|\\\"stop\\\"|compose.*down|func.*[Ss]top\" --include=*.go . 2>/dev/null | head",
   "description": "Check tiny repo state + locate local stop command"
 }
 ```
@@ -5061,7 +5062,7 @@ id: toolu_01P9dMuRTwCytuNgn21s9sxR
 ```json
 {
   "pattern": "local|compose|down|Stop",
-  "path": "/Users/jobinlawrance/Project/tiny/cmd",
+  "path": "/home/<USER>/Project/tiny/cmd",
   "output_mode": "files_with_matches",
   "glob": "*.go"
 }
@@ -5081,7 +5082,7 @@ tool_use Bash
 id: toolu_018TCLpNaRnsp6xm1gQMjqp5
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"=== cmd tree ===\"; find cmd -name '*.go' | head -30\necho \"=== files mentioning local stop / compose down ===\"; grep -rln -e \"local\" -e \"compose\" -e \"func.*Stop\" cmd internal --include=*.go 2>/dev/null | head -20",
+  "command": "cd /home/<USER>/Project/tiny\necho \"=== cmd tree ===\"; find cmd -name '*.go' | head -30\necho \"=== files mentioning local stop / compose down ===\"; grep -rln -e \"local\" -e \"compose\" -e \"func.*Stop\" cmd internal --include=*.go 2>/dev/null | head -20",
   "description": "Find local/stop/compose Go files"
 }
 ```
@@ -5117,7 +5118,7 @@ tool_use Read
 id: toolu_014aZeYqxBc4w9vmaTFW7txA
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/cmd/tr/local.go"
+  "file_path": "/home/<USER>/Project/tiny/cmd/tr/local.go"
 }
 ```
 
@@ -5189,7 +5190,7 @@ id: toolu_01ErtUvYveADU5YdrqsxeYxy
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/cmd/tr/local.go",
+  "file_path": "/home/<USER>/Project/tiny/cmd/tr/local.go",
   "old_string": "\t\t\t// No daemon means nothing is running — skip the compose call so we\n\t\t\t// don't hang on a dead socket.\n\t\t\tif !daemonUp(cmd.Context()) {\n\t\t\t\tfmt.Println(\"→ no Docker daemon reachable; nothing to stop\")\n\t\t\t\treturn nil\n\t\t\t}\n\t\t\treturn compose(cmd.Context(), \"down\")",
   "new_string": "\t\t\t// No daemon means nothing is running — skip the compose call so we\n\t\t\t// don't hang on a dead socket.\n\t\t\tif !daemonUp(cmd.Context()) {\n\t\t\t\tfmt.Println(\"→ no Docker daemon reachable; nothing to stop\")\n\t\t\t\treturn nil\n\t\t\t}\n\t\t\treturn stopStack(cmd.Context())"
 }
@@ -5200,7 +5201,7 @@ id: toolu_01ErtUvYveADU5YdrqsxeYxy
 tool_result
 id: toolu_01ErtUvYveADU5YdrqsxeYxy
 ```
-The file /Users/jobinlawrance/Project/tiny/cmd/tr/local.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/cmd/tr/local.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5213,7 +5214,7 @@ tool_use Read
 id: toolu_01RjhYCzsjqkp1EmYbjZfWUo
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/cmd/tr/local.go"
+  "file_path": "/home/<USER>/Project/tiny/cmd/tr/local.go"
 }
 ```
 
@@ -5279,7 +5280,7 @@ id: toolu_01L3rc3NNsTGLhAh4HmVCsAF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/cmd/tr/local.go",
+  "file_path": "/home/<USER>/Project/tiny/cmd/tr/local.go",
   "old_string": "\tc.Stdout = os.Stdout\n\tc.Stderr = os.Stderr\n\tc.Stdin = os.Stdin\n\treturn c.Run()\n}",
   "new_string": "\tc.Stdout = os.Stdout\n\tc.Stderr = os.Stderr\n\tc.Stdin = os.Stdin\n\treturn c.Run()\n}\n\n// stopStack brings the compose stack down with visibility.\n//\n// `docker compose down` with no timeout waits indefinitely on a container that is\n// slow to honour SIGTERM (e.g. ClickHouse flushing on shutdown), and its TTY progress\n// renderer freezes on the stuck step — which reads as a silent hang. We: (1) stream the\n// service logs so a slow shutdown is actually visible, (2) force `--progress plain` so\n// each Stopping/Removing step prints line-by-line, and (3) bound it with `--timeout` so\n// a stubborn container is SIGKILLed instead of hanging forever.\nfunc stopStack(ctx context.Context) error {\n\tlogsCtx, cancelLogs := context.WithCancel(ctx)\n\tdefer cancelLogs()\n\tgo func() {\n\t\tlc := exec.CommandContext(logsCtx, \"docker\", \"compose\", \"logs\", \"-f\", \"--tail\", \"20\")\n\t\tlc.Stdout, lc.Stderr = os.Stdout, os.Stderr\n\t\t_ = lc.Run() // ends when the containers are removed or logsCtx is cancelled\n\t}()\n\treturn compose(ctx, \"--progress\", \"plain\", \"down\", \"--timeout\", \"30\")\n}"
 }
@@ -5290,7 +5291,7 @@ id: toolu_01L3rc3NNsTGLhAh4HmVCsAF
 tool_result
 id: toolu_01L3rc3NNsTGLhAh4HmVCsAF
 ```
-The file /Users/jobinlawrance/Project/tiny/cmd/tr/local.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/cmd/tr/local.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5303,7 +5304,7 @@ tool_use Bash
 id: toolu_01BMZv8qzFvNPNieAVtphQPF
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngo build ./cmd/tr 2>&1 | head -15 && echo \"BUILD OK\"\ngo test ./cmd/tr/ 2>&1 | tail -15",
+  "command": "cd /home/<USER>/Project/tiny\ngo build ./cmd/tr 2>&1 | head -15 && echo \"BUILD OK\"\ngo test ./cmd/tr/ 2>&1 | tail -15",
   "description": "Build tr + run cmd/tr tests"
 }
 ```
@@ -5327,7 +5328,7 @@ tool_use Bash
 id: toolu_017YvG8Gegog48cHwUwZQXtz
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\nsed -n '/^func compose/,/^}/p' cmd/tr/local.go",
+  "command": "cd /home/<USER>/Project/tiny\nsed -n '/^func compose/,/^}/p' cmd/tr/local.go",
   "description": "Show compose() to verify arg placement"
 }
 ```
@@ -5382,7 +5383,7 @@ tool_use Bash
 id: toolu_01VNDqkGia8R78p1mZpXUz1o
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"=== docker daemon ===\"; timeout 15 docker info --format '{{.ServerVersion}} ({{.Name}})' 2>&1 | head -3 || echo \"daemon unreachable\"\necho \"=== colima ===\"; command -v colima >/dev/null && colima status 2>&1 | head -3 || echo \"no colima cmd\"\necho \"=== current compose ps ===\"; timeout 15 docker compose ps 2>&1 | head -10\necho \"=== what does local start run? ===\"; sed -n '/\"start\"/,/RunE/p' cmd/tr/local.go | head -20; grep -n '\"up\"' cmd/tr/local.go",
+  "command": "cd /home/<USER>/Project/tiny\necho \"=== docker daemon ===\"; timeout 15 docker info --format '{{.ServerVersion}} ({{.Name}})' 2>&1 | head -3 || echo \"daemon unreachable\"\necho \"=== colima ===\"; command -v colima >/dev/null && colima status 2>&1 | head -3 || echo \"no colima cmd\"\necho \"=== current compose ps ===\"; timeout 15 docker compose ps 2>&1 | head -10\necho \"=== what does local start run? ===\"; sed -n '/\"start\"/,/RunE/p' cmd/tr/local.go | head -20; grep -n '\"up\"' cmd/tr/local.go",
   "description": "Check daemon, colima, stack state, start command"
 }
 ```
@@ -5394,13 +5395,13 @@ id: toolu_01VNDqkGia8R78p1mZpXUz1o
 ```
 === docker daemon ===
  ()
-Cannot connect to the Docker daemon at unix:///Users/jobinlawrance/.colima/default/docker.sock. Is the docker daemon running?
+Cannot connect to the Docker daemon at unix:///home/<USER>/.colima/default/docker.sock. Is the docker daemon running?
 === colima ===
 time="2026-07-02T01:30:10+05:30" level=info msg="colima is running using macOS Virtualization.Framework"
 time="2026-07-02T01:30:10+05:30" level=info msg="arch: aarch64"
 time="2026-07-02T01:30:10+05:30" level=info msg="runtime: docker"
 === current compose ps ===
-Cannot connect to the Docker daemon at unix:///Users/jobinlawrance/.colima/default/docker.sock. Is the docker daemon running?
+Cannot connect to the Docker daemon at unix:///home/<USER>/.colima/default/docker.sock. Is the docker daemon running?
 === what does local start run? ===
 		Use:   "start",
 		Short: "Start the local dev stack via Docker Compose",
@@ -5435,7 +5436,7 @@ tool_use Bash
 id: toolu_01RgQmsDjvVLjpyiTJaNXSMf
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ntimeout 150 go run ./cmd/tr local start 2>&1 | tail -30; echo \"EXIT=${PIPESTATUS[0]}\"",
+  "command": "cd /home/<USER>/Project/tiny\ntimeout 150 go run ./cmd/tr local start 2>&1 | tail -30; echo \"EXIT=${PIPESTATUS[0]}\"",
   "description": "Run tr local start (recovers colima + brings stack up)"
 }
 ```
@@ -5463,7 +5464,7 @@ tool_use Bash
 id: toolu_011HTpw8FbHP11Nu2E1F331t
 ```json
 {
-  "command": "echo \"=== docker contexts ===\"; docker context ls 2>&1\necho \"=== current context ===\"; docker context show 2>&1\necho \"=== colima socket exists? ===\"; ls -l /Users/jobinlawrance/.colima/default/docker.sock 2>&1\necho \"=== DOCKER_HOST env ===\"; echo \"DOCKER_HOST=${DOCKER_HOST:-<unset>}\"\necho \"=== colima list ===\"; colima list 2>&1 | head",
+  "command": "echo \"=== docker contexts ===\"; docker context ls 2>&1\necho \"=== current context ===\"; docker context show 2>&1\necho \"=== colima socket exists? ===\"; ls -l /home/<USER>/.colima/default/docker.sock 2>&1\necho \"=== DOCKER_HOST env ===\"; echo \"DOCKER_HOST=${DOCKER_HOST:-<unset>}\"\necho \"=== colima list ===\"; colima list 2>&1 | head",
   "description": "Diagnose docker context/socket mismatch"
 }
 ```
@@ -5475,13 +5476,13 @@ id: toolu_011HTpw8FbHP11Nu2E1F331t
 ```
 === docker contexts ===
 NAME            DESCRIPTION                               DOCKER ENDPOINT                                           ERROR
-colima *        colima                                    unix:///Users/jobinlawrance/.colima/default/docker.sock   
+colima *        colima                                    unix:///home/<USER>/.colima/default/docker.sock   
 default         Current DOCKER_HOST based configuration   unix:///var/run/docker.sock                               
-desktop-linux   Docker Desktop                            unix:///Users/jobinlawrance/.docker/run/docker.sock       
+desktop-linux   Docker Desktop                            unix:///home/<USER>/.docker/run/docker.sock       
 === current context ===
 colima
 === colima socket exists? ===
-srw-------@ 1 jobinlawrance  staff  0 Jul  2 00:58 /Users/jobinlawrance/.colima/default/docker.sock
+srw-------@ 1 jobinlawrance  staff  0 Jul  2 00:58 /home/<USER>/.colima/default/docker.sock
 === DOCKER_HOST env ===
 DOCKER_HOST=<unset>
 === colima list ===
@@ -5531,7 +5532,7 @@ tool_use Bash
 id: toolu_01F1wayENSrvsnP5QwSLhWPo
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"=== tr local start ===\"; timeout 240 go run ./cmd/tr local start 2>&1 | tail -25; echo \"START_EXIT=${PIPESTATUS[0]}\"\necho \"=== ps ===\"; timeout 20 docker compose ps 2>&1 | head",
+  "command": "cd /home/<USER>/Project/tiny\necho \"=== tr local start ===\"; timeout 240 go run ./cmd/tr local start 2>&1 | tail -25; echo \"START_EXIT=${PIPESTATUS[0]}\"\necho \"=== ps ===\"; timeout 20 docker compose ps 2>&1 | head",
   "description": "tr local start, bring stack up"
 }
 ```
@@ -5571,7 +5572,7 @@ tool_use Bash
 id: toolu_0122GrbAoRG4Zt3PGvBvJG4D
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"=== tr local stop (new stopStack: logs stream + plain progress + timeout) ===\"\ntime (timeout 90 go run ./cmd/tr local stop 2>&1 | tail -40); echo \"STOP_EXIT=${PIPESTATUS[0]}\"\necho \"=== ps after ===\"; timeout 20 docker compose ps 2>&1 | head",
+  "command": "cd /home/<USER>/Project/tiny\necho \"=== tr local stop (new stopStack: logs stream + plain progress + timeout) ===\"\ntime (timeout 90 go run ./cmd/tr local stop 2>&1 | tail -40); echo \"STOP_EXIT=${PIPESTATUS[0]}\"\necho \"=== ps after ===\"; timeout 20 docker compose ps 2>&1 | head",
   "description": "Run tr local stop, observe new visibility + timing"
 }
 ```
@@ -5602,7 +5603,8 @@ tinyraven-1   | time=2026-07-01T20:01:57.619Z level=INFO msg="tinyraven listenin
 tinyraven-1   | time=2026-07-01T20:02:06.076Z level=INFO msg="shutting down, draining"
  Container tiny-tinyraven-1 Stopped 
  Container tiny-tinyraven-1 Removing 
-[Ktinyraven-1 exited with code 0
+
+[Ktinyraven-1 exited with code 0
  Container tiny-tinyraven-1 Removed 
  Container tiny-redis-1 Stopping 
  Container tiny-clickhouse-1 Stopping 
@@ -5645,7 +5647,7 @@ tool_use Bash
 id: toolu_0123MGGC2bvwXw9bTiwrN2Pk
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngrep -n 'colima started but\\|\"colima\", \"start\"\\|\"up\", \"-d\"\\|func ensure\\|func start\\|daemonUp(ctx)' cmd/tr/local.go",
+  "command": "cd /home/<USER>/Project/tiny\ngrep -n 'colima started but\\|\"colima\", \"start\"\\|\"up\", \"-d\"\\|func ensure\\|func start\\|daemonUp(ctx)' cmd/tr/local.go",
   "description": "Locate colima start function + up call lines"
 }
 ```
@@ -5672,7 +5674,7 @@ tool_use Read
 id: toolu_019FYmq7cxtpS6RZGQbZwk7B
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/cmd/tr/local.go",
+  "file_path": "/home/<USER>/Project/tiny/cmd/tr/local.go",
   "offset": 144,
   "limit": 12
 }
@@ -5708,7 +5710,7 @@ id: toolu_015dhLW9ZJ2Y1VubrFNpZCso
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/cmd/tr/local.go",
+  "file_path": "/home/<USER>/Project/tiny/cmd/tr/local.go",
   "old_string": "\tif !daemonUp(ctx) {\n\t\treturn fmt.Errorf(\"colima started but the Docker daemon is still unreachable\")\n\t}\n\treturn nil\n}",
   "new_string": "\tif !daemonUp(ctx) {\n\t\t// colima reports \"already running\" while its docker socket is wedged (VM up,\n\t\t// but the in-VM dockerd / socket-forward is dead). `colima start` no-ops in that\n\t\t// state, so a plain start can't recover it — restart the VM to rebuild the socket.\n\t\tfmt.Println(\"→ colima is up but the Docker daemon is unreachable; restarting colima…\")\n\t\tif err := run(ctx, \"colima\", \"restart\"); err != nil {\n\t\t\treturn fmt.Errorf(\"colima restart failed: %w\\n\"+\n\t\t\t\t\"if the VM is wedged, try: colima delete -f && colima start\", err)\n\t\t}\n\t\tif !daemonUp(ctx) {\n\t\t\treturn fmt.Errorf(\"colima restarted but the Docker daemon is still unreachable\")\n\t\t}\n\t}\n\treturn nil\n}"
 }
@@ -5719,7 +5721,7 @@ id: toolu_015dhLW9ZJ2Y1VubrFNpZCso
 tool_result
 id: toolu_015dhLW9ZJ2Y1VubrFNpZCso
 ```
-The file /Users/jobinlawrance/Project/tiny/cmd/tr/local.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/cmd/tr/local.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5733,7 +5735,7 @@ id: toolu_01KtbxzxVrPcvpa7WeVoq7Sw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/cmd/tr/local.go",
+  "file_path": "/home/<USER>/Project/tiny/cmd/tr/local.go",
   "old_string": "\t\t\treturn compose(cmd.Context(), \"up\", \"-d\")",
   "new_string": "\t\t\treturn compose(cmd.Context(), \"--progress\", \"plain\", \"up\", \"-d\")"
 }
@@ -5744,7 +5746,7 @@ id: toolu_01KtbxzxVrPcvpa7WeVoq7Sw
 tool_result
 id: toolu_01KtbxzxVrPcvpa7WeVoq7Sw
 ```
-The file /Users/jobinlawrance/Project/tiny/cmd/tr/local.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/cmd/tr/local.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5757,7 +5759,7 @@ tool_use Bash
 id: toolu_01D2LpJkJq2kw9GqHDwjcP3f
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngo build ./cmd/tr 2>&1 | head && echo \"BUILD OK\"\ngo vet ./cmd/tr 2>&1 | head\ngo test ./cmd/tr/ 2>&1 | tail -5",
+  "command": "cd /home/<USER>/Project/tiny\ngo build ./cmd/tr 2>&1 | head && echo \"BUILD OK\"\ngo vet ./cmd/tr 2>&1 | head\ngo test ./cmd/tr/ 2>&1 | tail -5",
   "description": "Build, vet, test after all three changes"
 }
 ```
@@ -5781,7 +5783,7 @@ tool_use Bash
 id: toolu_01JA6bhFH5U9wjN4GNeNkzfT
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"=== branch + status ===\"; git branch --show-current; git status --short cmd/tr/local.go\necho \"=== diff summary ===\"; git diff --stat cmd/tr/local.go\ngit add cmd/tr/local.go\ngit -c user.email=\"jobinlawrance@gmail.com\" -c user.name=\"jobinlawrance\" commit -q -m \"fix(local): make tr local stop/start visible + unhangable\n\n- stop: stream service logs + --progress plain + --timeout 30 so a slow\n  shutdown (e.g. ClickHouse/Redis flushing) is visible and bounded, not a\n  silent hang.\n- start: --progress plain on 'up -d' for the same line-by-line visibility.\n- start recovery: when colima reports running but the docker socket is wedged\n  (VM up, in-VM dockerd dead), 'colima start' no-ops; fall back to 'colima\n  restart' to rebuild the socket instead of erroring out.\" && echo \"committed\"\ngit log --oneline -1",
+  "command": "cd /home/<USER>/Project/tiny\necho \"=== branch + status ===\"; git branch --show-current; git status --short cmd/tr/local.go\necho \"=== diff summary ===\"; git diff --stat cmd/tr/local.go\ngit add cmd/tr/local.go\ngit -c user.email=\"<REDACTED_EMAIL>\" -c user.name=\"jobinlawrance\" commit -q -m \"fix(local): make tr local stop/start visible + unhangable\n\n- stop: stream service logs + --progress plain + --timeout 30 so a slow\n  shutdown (e.g. ClickHouse/Redis flushing) is visible and bounded, not a\n  silent hang.\n- start: --progress plain on 'up -d' for the same line-by-line visibility.\n- start recovery: when colima reports running but the docker socket is wedged\n  (VM up, in-VM dockerd dead), 'colima start' no-ops; fall back to 'colima\n  restart' to rebuild the socket instead of erroring out.\" && echo \"committed\"\ngit log --oneline -1",
   "description": "Commit the three local.go fixes"
 }
 ```
@@ -5821,7 +5823,7 @@ tool_use Bash
 id: toolu_016Chc1NFUPNwvUxeLAY8PSm
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngit push origin main 2>&1 | tail -4\necho \"---\"; git log --oneline -1; git status -sb | head -1",
+  "command": "cd /home/<USER>/Project/tiny\ngit push origin main 2>&1 | tail -4\necho \"---\"; git log --oneline -1; git status -sb | head -1",
   "description": "Push local main to origin"
 }
 ```
@@ -5859,7 +5861,7 @@ tool_use Bash
 id: toolu_01RURa9dandFYph3a9jP2h91
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"=== prod command files ===\"; grep -rln -e '\"prod\"' -e \"prod \" cmd/tr 2>/dev/null | head\necho \"=== prod start/stop/compose refs ===\"; grep -rn -e '\"prod\"' -e \"prodStop\\|prodStart\\|func.*[Pp]rod\" -e \"ssh\" -e \"dokploy\\|Dokploy\" cmd/tr 2>/dev/null | head -25",
+  "command": "cd /home/<USER>/Project/tiny\necho \"=== prod command files ===\"; grep -rln -e '\"prod\"' -e \"prod \" cmd/tr 2>/dev/null | head\necho \"=== prod start/stop/compose refs ===\"; grep -rn -e '\"prod\"' -e \"prodStop\\|prodStart\\|func.*[Pp]rod\" -e \"ssh\" -e \"dokploy\\|Dokploy\" cmd/tr 2>/dev/null | head -25",
   "description": "Locate tr prod command + how it stops/starts"
 }
 ```
@@ -5883,7 +5885,7 @@ tool_use Bash
 id: toolu_01CXfXqvUsoSqnCsgGs2XUJw
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"=== all cobra Use: strings ===\"; grep -rn 'Use:' cmd/tr | head -40\necho \"=== AddCommand registrations ===\"; grep -rn 'AddCommand' cmd/tr | head -30",
+  "command": "cd /home/<USER>/Project/tiny\necho \"=== all cobra Use: strings ===\"; grep -rn 'Use:' cmd/tr | head -40\necho \"=== AddCommand registrations ===\"; grep -rn 'AddCommand' cmd/tr | head -30",
   "description": "List all tr subcommands + hierarchy"
 }
 ```
@@ -5922,7 +5924,7 @@ tool_use Bash
 id: toolu_01DTAfSXyJSqf1gnv5sGuM1D
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"=== deploy.go (how prod deploy works) ===\"; sed -n '1,80p' cmd/tr/deploy.go\necho \"=== prod/compose refs in scripts+deploy dirs ===\"; grep -rln -e \"compose\" -e \"ssh\" -e \"dokploy\\|Dokploy\" -e \"DOCKER_HOST\" scripts deploy 2>/dev/null | head",
+  "command": "cd /home/<USER>/Project/tiny\necho \"=== deploy.go (how prod deploy works) ===\"; sed -n '1,80p' cmd/tr/deploy.go\necho \"=== prod/compose refs in scripts+deploy dirs ===\"; grep -rln -e \"compose\" -e \"ssh\" -e \"dokploy\\|Dokploy\" -e \"DOCKER_HOST\" scripts deploy 2>/dev/null | head",
   "description": "Read deploy.go + find prod compose/ssh mechanism"
 }
 ```
@@ -5996,7 +5998,7 @@ tool_use Bash
 id: toolu_01K2PSGCeydzipF9AiWeSNzh
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"=== remote/ssh/prod-host mechanism in code+config ===\"; grep -rniE \"DOCKER_HOST|ssh://|remote host|prod.*host|docker-compose.prod|dokploy\" cmd internal scripts 2>/dev/null | grep -v _test | head -15\necho \"=== prod compose services (top) ===\"; grep -nE \"^services:|^  [a-z].*:|image:\" deploy/docker-compose.prod.yml 2>/dev/null | head -25\necho \"=== README/docs mention of prod stop/start ===\"; grep -rniE \"tr prod|prod.*(stop|start)|dokploy\" README.md docs HANDOFF.md 2>/dev/null | head",
+  "command": "cd /home/<USER>/Project/tiny\necho \"=== remote/ssh/prod-host mechanism in code+config ===\"; grep -rniE \"DOCKER_HOST|ssh://|remote host|prod.*host|docker-compose.prod|dokploy\" cmd internal scripts 2>/dev/null | grep -v _test | head -15\necho \"=== prod compose services (top) ===\"; grep -nE \"^services:|^  [a-z].*:|image:\" deploy/docker-compose.prod.yml 2>/dev/null | head -25\necho \"=== README/docs mention of prod stop/start ===\"; grep -rniE \"tr prod|prod.*(stop|start)|dokploy\" README.md docs HANDOFF.md 2>/dev/null | head",
   "description": "Determine prod stack management mechanism"
 }
 ```

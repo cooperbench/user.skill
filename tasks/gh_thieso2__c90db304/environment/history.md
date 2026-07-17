@@ -1751,7 +1751,7 @@ entryPoints:
 certificatesResolvers:
   letsencrypt:
     acme:
-      email: "${ACME_EMAIL:-admin@sandcastle.rocks}"
+      email: "${ACME_EMAIL:-<REDACTED_EMAIL>}"
       storage: /data/acme.json
       httpChallenge:
         entryPoint: web

@@ -1,6 +1,6 @@
 > DEVELOPER
 
-read the files from /Users/jobinlawrance/Project/tiny/files\ \(1\) and start /grill-with-docs
+read the files from /home/<USER>/Project/tiny/files\ \(1\) and start /grill-with-docs
 
 > TOOL
 
@@ -8,7 +8,7 @@ tool_use Bash
 id: toolu_01PKB6aFRRQVeSdV7NYAcFT4
 ```json
 {
-  "command": "ls -la \"/Users/jobinlawrance/Project/tiny/files (1)\"",
+  "command": "ls -la \"/home/<USER>/Project/tiny/files (1)\"",
   "description": "List files in target directory"
 }
 ```
@@ -65,7 +65,7 @@ tool_use Read
 id: toolu_01Q8fDh8W2uGZb2rAis3DTCi
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/README.md"
+  "file_path": "/home/<USER>/Project/tiny/files (1)/README.md"
 }
 ```
 
@@ -102,7 +102,7 @@ tool_use Read
 id: toolu_01TiYDEaj9tzmwZWDKwbdUt4
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/viewrr-pear-architecture.md"
+  "file_path": "/home/<USER>/Project/tiny/files (1)/viewrr-pear-architecture.md"
 }
 ```
 
@@ -145,7 +145,7 @@ tool_use Read
 id: toolu_012JXm2mLEJgUtm27ArmtwfB
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/ravencloak-bip39-issue.md"
+  "file_path": "/home/<USER>/Project/tiny/files (1)/ravencloak-bip39-issue.md"
 }
 ```
 
